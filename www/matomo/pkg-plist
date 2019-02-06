@@ -14,7 +14,6 @@
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config/global.ini.php
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config/global.php
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config/manifest.inc.php
-@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/piwik.js
 %%WWWDIR%%/console
 %%WWWDIR%%/core/API/ApiRenderer.php
 %%WWWDIR%%/core/API/CORSHandler.php
@@ -56,6 +55,7 @@
 %%WWWDIR%%/core/ArchiveProcessor/Loader.php
 %%WWWDIR%%/core/ArchiveProcessor/Parameters.php
 %%WWWDIR%%/core/ArchiveProcessor/PluginsArchiver.php
+%%WWWDIR%%/core/ArchiveProcessor/PluginsArchiverException.php
 %%WWWDIR%%/core/ArchiveProcessor/Rules.php
 %%WWWDIR%%/core/Archiver/Request.php
 %%WWWDIR%%/core/AssetManager.php
@@ -140,6 +140,7 @@
 %%WWWDIR%%/core/DataTable/Filter/AddColumnsProcessedMetricsGoal.php
 %%WWWDIR%%/core/DataTable/Filter/AddSegmentByLabel.php
 %%WWWDIR%%/core/DataTable/Filter/AddSegmentByLabelMapping.php
+%%WWWDIR%%/core/DataTable/Filter/AddSegmentByRangeLabel.php
 %%WWWDIR%%/core/DataTable/Filter/AddSegmentBySegmentValue.php
 %%WWWDIR%%/core/DataTable/Filter/AddSegmentValue.php
 %%WWWDIR%%/core/DataTable/Filter/AddSummaryRow.php
@@ -376,6 +377,7 @@
 %%WWWDIR%%/core/Tracker/Db/Mysqli.php
 %%WWWDIR%%/core/Tracker/Db/Pdo/Mysql.php
 %%WWWDIR%%/core/Tracker/Db/Pdo/Pgsql.php
+%%WWWDIR%%/core/Tracker/Failures.php
 %%WWWDIR%%/core/Tracker/GoalManager.php
 %%WWWDIR%%/core/Tracker/Handler.php
 %%WWWDIR%%/core/Tracker/Handler/Factory.php
@@ -436,6 +438,7 @@
 %%WWWDIR%%/core/Updater/Migration/Db/Sql.php
 %%WWWDIR%%/core/Updater/Migration/Factory.php
 %%WWWDIR%%/core/Updater/Migration/Plugin/Activate.php
+%%WWWDIR%%/core/Updater/Migration/Plugin/Deactivate.php
 %%WWWDIR%%/core/Updater/Migration/Plugin/Factory.php
 %%WWWDIR%%/core/Updater/UpdateObserver.php
 %%WWWDIR%%/core/Updates.php
@@ -564,6 +567,8 @@
 %%WWWDIR%%/core/Updates/3.6.1-b2.php
 %%WWWDIR%%/core/Updates/3.6.1-b3.php
 %%WWWDIR%%/core/Updates/3.7.0-b1.php
+%%WWWDIR%%/core/Updates/3.8.0-b3.php
+%%WWWDIR%%/core/Updates/3.8.0-b4.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/UrlHelper.php
 %%WWWDIR%%/core/Validators/BaseValidator.php
@@ -572,6 +577,7 @@
 %%WWWDIR%%/core/Validators/Email.php
 %%WWWDIR%%/core/Validators/Exception.php
 %%WWWDIR%%/core/Validators/IdSite.php
+%%WWWDIR%%/core/Validators/IpRanges.php
 %%WWWDIR%%/core/Validators/NotEmpty.php
 %%WWWDIR%%/core/Validators/NumberRange.php
 %%WWWDIR%%/core/Validators/Regex.php
@@ -620,6 +626,7 @@
 %%WWWDIR%%/lang/dev.json
 %%WWWDIR%%/lang/el.json
 %%WWWDIR%%/lang/en.json
+%%WWWDIR%%/lang/eo.json
 %%WWWDIR%%/lang/es-ar.json
 %%WWWDIR%%/lang/es.json
 %%WWWDIR%%/lang/et.json
@@ -662,6 +669,9 @@
 %%WWWDIR%%/lang/vi.json
 %%WWWDIR%%/lang/zh-cn.json
 %%WWWDIR%%/lang/zh-tw.json
+%%WWWDIR%%/libs/Authenticator/LICENSE.md
+%%WWWDIR%%/libs/Authenticator/README.md
+%%WWWDIR%%/libs/Authenticator/TwoFactorAuthenticator.php
 %%WWWDIR%%/libs/HTML/Common2.php
 %%WWWDIR%%/libs/HTML/QuickForm2.php
 %%WWWDIR%%/libs/HTML/QuickForm2/Container.php
@@ -1328,6 +1338,10 @@
 %%WWWDIR%%/libs/bower_components/ngDialog/protractor.conf.js
 %%WWWDIR%%/libs/bower_components/ngDialog/server.js
 %%WWWDIR%%/libs/bower_components/ngDialog/yarn.lock
+%%WWWDIR%%/libs/bower_components/qrcode.js/LICENSE
+%%WWWDIR%%/libs/bower_components/qrcode.js/README.md
+%%WWWDIR%%/libs/bower_components/qrcode.js/bower.json
+%%WWWDIR%%/libs/bower_components/qrcode.js/qrcode.js
 %%WWWDIR%%/libs/bower_components/sprintf/LICENSE
 %%WWWDIR%%/libs/bower_components/sprintf/README.md
 %%WWWDIR%%/libs/bower_components/sprintf/bower.json
@@ -1409,6 +1423,8 @@
 %%WWWDIR%%/libs/jquery/themes/base/jquery-ui.min.css
 %%WWWDIR%%/libs/upgradephp/README
 %%WWWDIR%%/libs/upgradephp/upgrade.php
+%%WWWDIR%%/matomo.js
+%%WWWDIR%%/matomo.php
 %%WWWDIR%%/misc/How to install Matomo.html
 %%WWWDIR%%/misc/composer/build-xhprof.sh
 %%WWWDIR%%/misc/composer/clean-xhprof.sh
@@ -1417,7 +1433,6 @@
 %%WWWDIR%%/misc/cron/archive.sh
 %%WWWDIR%%/misc/cron/updatetoken.php
 %%WWWDIR%%/misc/gpl-3.0.txt
-%%WWWDIR%%/misc/internal-docs/content-tracking.md
 %%WWWDIR%%/misc/log-analytics/CONTRIBUTING.md
 %%WWWDIR%%/misc/log-analytics/LEGALNOTICE
 %%WWWDIR%%/misc/log-analytics/LICENSE.txt
@@ -1434,6 +1449,7 @@
 %%WWWDIR%%/misc/others/widget_example_lastvisits.html
 %%WWWDIR%%/misc/proxy-hide-piwik-url/README.md
 %%WWWDIR%%/misc/user/index.html
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/piwik.js
 %%WWWDIR%%/piwik.php
 %%WWWDIR%%/plugins/API/API.php
 %%WWWDIR%%/plugins/API/Controller.php
@@ -1764,17 +1780,24 @@
 %%WWWDIR%%/plugins/CoreAdminHome/CoreAdminHome.php
 %%WWWDIR%%/plugins/CoreAdminHome/CustomLogo.php
 %%WWWDIR%%/plugins/CoreAdminHome/Emails/JsTrackingCodeMissingEmail.php
+%%WWWDIR%%/plugins/CoreAdminHome/Emails/TrackingFailuresEmail.php
 %%WWWDIR%%/plugins/CoreAdminHome/Menu.php
 %%WWWDIR%%/plugins/CoreAdminHome/Model/DuplicateActionRemover.php
 %%WWWDIR%%/plugins/CoreAdminHome/OptOutManager.php
 %%WWWDIR%%/plugins/CoreAdminHome/SystemSettings.php
 %%WWWDIR%%/plugins/CoreAdminHome/Tasks.php
 %%WWWDIR%%/plugins/CoreAdminHome/Tasks/ArchivesToPurgeDistributedList.php
+%%WWWDIR%%/plugins/CoreAdminHome/Widgets/GetTrackingFailures.php
 %%WWWDIR%%/plugins/CoreAdminHome/angularjs/archiving/archiving.controller.js
 %%WWWDIR%%/plugins/CoreAdminHome/angularjs/branding/branding.controller.js
 %%WWWDIR%%/plugins/CoreAdminHome/angularjs/smtp/mail-smtp.controller.js
 %%WWWDIR%%/plugins/CoreAdminHome/angularjs/trackingcode/imagetrackingcode.controller.js
 %%WWWDIR%%/plugins/CoreAdminHome/angularjs/trackingcode/jstrackingcode.controller.js
+%%WWWDIR%%/plugins/CoreAdminHome/angularjs/trackingfailures/trackingfailures.controller.js
+%%WWWDIR%%/plugins/CoreAdminHome/angularjs/trackingfailures/trackingfailures.directive.html
+%%WWWDIR%%/plugins/CoreAdminHome/angularjs/trackingfailures/trackingfailures.directive.js
+%%WWWDIR%%/plugins/CoreAdminHome/angularjs/trackingfailures/trackingfailures.directive.less
+%%WWWDIR%%/plugins/CoreAdminHome/config/test.php
 %%WWWDIR%%/plugins/CoreAdminHome/javascripts/optOut.js
 %%WWWDIR%%/plugins/CoreAdminHome/javascripts/protocolCheck.js
 %%WWWDIR%%/plugins/CoreAdminHome/lang/ar.json
@@ -1787,6 +1810,7 @@
 %%WWWDIR%%/plugins/CoreAdminHome/lang/de.json
 %%WWWDIR%%/plugins/CoreAdminHome/lang/el.json
 %%WWWDIR%%/plugins/CoreAdminHome/lang/en.json
+%%WWWDIR%%/plugins/CoreAdminHome/lang/eo.json
 %%WWWDIR%%/plugins/CoreAdminHome/lang/es-ar.json
 %%WWWDIR%%/plugins/CoreAdminHome/lang/es.json
 %%WWWDIR%%/plugins/CoreAdminHome/lang/et.json
@@ -1830,10 +1854,13 @@
 %%WWWDIR%%/plugins/CoreAdminHome/stylesheets/generalSettings.less
 %%WWWDIR%%/plugins/CoreAdminHome/stylesheets/jsTrackingGenerator.css
 %%WWWDIR%%/plugins/CoreAdminHome/templates/_jsTrackingCodeMissingEmail.twig
+%%WWWDIR%%/plugins/CoreAdminHome/templates/_trackingFailuresEmail.twig
 %%WWWDIR%%/plugins/CoreAdminHome/templates/generalSettings.twig
+%%WWWDIR%%/plugins/CoreAdminHome/templates/getTrackingFailures.twig
 %%WWWDIR%%/plugins/CoreAdminHome/templates/home.twig
 %%WWWDIR%%/plugins/CoreAdminHome/templates/optOut.twig
 %%WWWDIR%%/plugins/CoreAdminHome/templates/trackingCodeGenerator.twig
+%%WWWDIR%%/plugins/CoreAdminHome/templates/trackingFailures.twig
 %%WWWDIR%%/plugins/CoreConsole/Commands/ClearCaches.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/CoreArchiver.php
 %%WWWDIR%%/plugins/CoreConsole/Commands/DevelopmentEnable.php
@@ -1960,6 +1987,7 @@
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/services/periods.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik-api.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik-api.spec.js
+%%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik-helper.spec.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik-url.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik.js
 %%WWWDIR%%/plugins/CoreHome/angularjs/common/services/piwik.spec.js
@@ -2380,6 +2408,7 @@
 %%WWWDIR%%/plugins/CoreUpdater/lang/zh-cn.json
 %%WWWDIR%%/plugins/CoreUpdater/lang/zh-tw.json
 %%WWWDIR%%/plugins/CoreUpdater/stylesheets/updateLayout.css
+%%WWWDIR%%/plugins/CoreUpdater/templates/_updateCommunicationEmail.twig
 %%WWWDIR%%/plugins/CoreUpdater/templates/layout.twig
 %%WWWDIR%%/plugins/CoreUpdater/templates/newVersionAvailable.twig
 %%WWWDIR%%/plugins/CoreUpdater/templates/runUpdaterAndExit_done.twig
@@ -2441,9 +2470,11 @@
 %%WWWDIR%%/plugins/CustomPiwikJs/TrackingCode/PluginTrackerFiles.php
 %%WWWDIR%%/plugins/CustomPiwikJs/config/config.php
 %%WWWDIR%%/plugins/CustomPiwikJs/lang/cs.json
+%%WWWDIR%%/plugins/CustomPiwikJs/lang/da.json
 %%WWWDIR%%/plugins/CustomPiwikJs/lang/de.json
 %%WWWDIR%%/plugins/CustomPiwikJs/lang/el.json
 %%WWWDIR%%/plugins/CustomPiwikJs/lang/en.json
+%%WWWDIR%%/plugins/CustomPiwikJs/lang/eo.json
 %%WWWDIR%%/plugins/CustomPiwikJs/lang/es.json
 %%WWWDIR%%/plugins/CustomPiwikJs/lang/fi.json
 %%WWWDIR%%/plugins/CustomPiwikJs/lang/fr.json
@@ -2568,6 +2599,7 @@
 %%WWWDIR%%/plugins/DBStats/lang/de.json
 %%WWWDIR%%/plugins/DBStats/lang/el.json
 %%WWWDIR%%/plugins/DBStats/lang/en.json
+%%WWWDIR%%/plugins/DBStats/lang/eo.json
 %%WWWDIR%%/plugins/DBStats/lang/es-ar.json
 %%WWWDIR%%/plugins/DBStats/lang/es.json
 %%WWWDIR%%/plugins/DBStats/lang/et.json
@@ -2638,6 +2670,7 @@
 %%WWWDIR%%/plugins/Dashboard/lang/de.json
 %%WWWDIR%%/plugins/Dashboard/lang/el.json
 %%WWWDIR%%/plugins/Dashboard/lang/en.json
+%%WWWDIR%%/plugins/Dashboard/lang/eo.json
 %%WWWDIR%%/plugins/Dashboard/lang/es-ar.json
 %%WWWDIR%%/plugins/Dashboard/lang/es.json
 %%WWWDIR%%/plugins/Dashboard/lang/et.json
@@ -2843,6 +2876,7 @@
 %%WWWDIR%%/plugins/Diagnostics/Controller.php
 %%WWWDIR%%/plugins/Diagnostics/Diagnostic/CronArchivingCheck.php
 %%WWWDIR%%/plugins/Diagnostics/Diagnostic/DbAdapterCheck.php
+%%WWWDIR%%/plugins/Diagnostics/Diagnostic/DbMaxPacket.php
 %%WWWDIR%%/plugins/Diagnostics/Diagnostic/DbOverSSLCheck.php
 %%WWWDIR%%/plugins/Diagnostics/Diagnostic/Diagnostic.php
 %%WWWDIR%%/plugins/Diagnostics/Diagnostic/DiagnosticResult.php
@@ -3219,6 +3253,7 @@
 %%WWWDIR%%/plugins/Goals/Columns/Metrics/AverageOrderRevenue.php
 %%WWWDIR%%/plugins/Goals/Columns/Metrics/AveragePrice.php
 %%WWWDIR%%/plugins/Goals/Columns/Metrics/AverageQuantity.php
+%%WWWDIR%%/plugins/Goals/Columns/Metrics/GoalConversionRate.php
 %%WWWDIR%%/plugins/Goals/Columns/Metrics/GoalSpecific/AverageOrderRevenue.php
 %%WWWDIR%%/plugins/Goals/Columns/Metrics/GoalSpecific/ConversionRate.php
 %%WWWDIR%%/plugins/Goals/Columns/Metrics/GoalSpecific/Conversions.php
@@ -3450,6 +3485,7 @@
 %%WWWDIR%%/plugins/Installation/lang/de.json
 %%WWWDIR%%/plugins/Installation/lang/el.json
 %%WWWDIR%%/plugins/Installation/lang/en.json
+%%WWWDIR%%/plugins/Installation/lang/eo.json
 %%WWWDIR%%/plugins/Installation/lang/es-ar.json
 %%WWWDIR%%/plugins/Installation/lang/es.json
 %%WWWDIR%%/plugins/Installation/lang/et.json
@@ -3528,6 +3564,7 @@
 %%WWWDIR%%/plugins/Intl/lang/dev.json
 %%WWWDIR%%/plugins/Intl/lang/el.json
 %%WWWDIR%%/plugins/Intl/lang/en.json
+%%WWWDIR%%/plugins/Intl/lang/eo.json
 %%WWWDIR%%/plugins/Intl/lang/es-ar.json
 %%WWWDIR%%/plugins/Intl/lang/es.json
 %%WWWDIR%%/plugins/Intl/lang/et.json
@@ -3577,9 +3614,11 @@
 %%WWWDIR%%/plugins/IntranetMeasurable/lang/de.json
 %%WWWDIR%%/plugins/IntranetMeasurable/lang/el.json
 %%WWWDIR%%/plugins/IntranetMeasurable/lang/en.json
+%%WWWDIR%%/plugins/IntranetMeasurable/lang/es.json
 %%WWWDIR%%/plugins/IntranetMeasurable/lang/fr.json
 %%WWWDIR%%/plugins/IntranetMeasurable/lang/it.json
 %%WWWDIR%%/plugins/IntranetMeasurable/lang/ja.json
+%%WWWDIR%%/plugins/IntranetMeasurable/lang/nl.json
 %%WWWDIR%%/plugins/IntranetMeasurable/lang/pt.json
 %%WWWDIR%%/plugins/IntranetMeasurable/lang/sq.json
 %%WWWDIR%%/plugins/IntranetMeasurable/lang/tr.json
@@ -3663,6 +3702,7 @@
 %%WWWDIR%%/plugins/LanguagesManager/templates/searchTranslation.twig
 %%WWWDIR%%/plugins/Live/API.php
 %%WWWDIR%%/plugins/Live/Categories/LiveCategory.php
+%%WWWDIR%%/plugins/Live/Categories/RealTimeVisitorsSubcategory.php
 %%WWWDIR%%/plugins/Live/Categories/VisitorLogSubcategory.php
 %%WWWDIR%%/plugins/Live/Controller.php
 %%WWWDIR%%/plugins/Live/Live.php
@@ -3775,14 +3815,23 @@
 %%WWWDIR%%/plugins/Live/templates/getVisitorProfilePopup.twig
 %%WWWDIR%%/plugins/Live/templates/index.twig
 %%WWWDIR%%/plugins/Live/templates/indexVisitorLog.twig
+%%WWWDIR%%/plugins/Login/API.php
 %%WWWDIR%%/plugins/Login/Auth.php
+%%WWWDIR%%/plugins/Login/Commands/UnblockBlockedIps.php
 %%WWWDIR%%/plugins/Login/Controller.php
 %%WWWDIR%%/plugins/Login/FormLogin.php
 %%WWWDIR%%/plugins/Login/FormResetPassword.php
 %%WWWDIR%%/plugins/Login/Login.php
+%%WWWDIR%%/plugins/Login/Menu.php
 %%WWWDIR%%/plugins/Login/PasswordResetter.php
+%%WWWDIR%%/plugins/Login/PasswordVerifier.php
+%%WWWDIR%%/plugins/Login/Security/BruteForceDetection.php
 %%WWWDIR%%/plugins/Login/SessionInitializer.php
+%%WWWDIR%%/plugins/Login/SystemSettings.php
+%%WWWDIR%%/plugins/Login/Tasks.php
 %%WWWDIR%%/plugins/Login/config/config.php
+%%WWWDIR%%/plugins/Login/config/test.php
+%%WWWDIR%%/plugins/Login/javascripts/bruteforcelog.js
 %%WWWDIR%%/plugins/Login/javascripts/login.js
 %%WWWDIR%%/plugins/Login/lang/am.json
 %%WWWDIR%%/plugins/Login/lang/ar.json
@@ -3839,7 +3888,10 @@
 %%WWWDIR%%/plugins/Login/stylesheets/login.less
 %%WWWDIR%%/plugins/Login/stylesheets/variables.less
 %%WWWDIR%%/plugins/Login/templates/_formErrors.twig
+%%WWWDIR%%/plugins/Login/templates/bruteForceLog.twig
+%%WWWDIR%%/plugins/Login/templates/confirmPassword.twig
 %%WWWDIR%%/plugins/Login/templates/login.twig
+%%WWWDIR%%/plugins/Login/templates/loginLayout.twig
 %%WWWDIR%%/plugins/Login/templates/resetPassword.twig
 %%WWWDIR%%/plugins/Marketplace/API.php
 %%WWWDIR%%/plugins/Marketplace/Api/Client.php
@@ -3925,6 +3977,7 @@
 %%WWWDIR%%/plugins/Marketplace/stylesheets/marketplace-widget.less
 %%WWWDIR%%/plugins/Marketplace/stylesheets/marketplace.less
 %%WWWDIR%%/plugins/Marketplace/stylesheets/plugin-details.less
+%%WWWDIR%%/plugins/Marketplace/templates/_updateCommunicationEmail.twig
 %%WWWDIR%%/plugins/Marketplace/templates/getNewPlugins.twig
 %%WWWDIR%%/plugins/Marketplace/templates/getNewPluginsAdmin.twig
 %%WWWDIR%%/plugins/Marketplace/templates/getPremiumFeatures.twig
@@ -4072,6 +4125,9 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/3Q.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/4Good.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Acer.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Advance.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Aiwa.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Akai.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Alcatel.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Amazon.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Apple.png
@@ -4089,11 +4145,14 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/BenQ.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Bitel.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Blaupunkt.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Bluboo.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Cat.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Celkon.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Cherry_Mobile.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/China Mobile.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/CnM.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/ComTrade_Tesla.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Comio.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Compal.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Compaq.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/ConCorde.png
@@ -4109,14 +4168,18 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Danew.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Dell.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Denver.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Dialog.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Digma.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/DoCoMo.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Doro.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/EKO.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Easypix.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Ericsson.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Essential.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Essentielb.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Evertek.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Evolveo.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/FNB.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Fly.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Freetel.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Fujitsu.png
@@ -4124,6 +4187,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Gigabyte.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Gigaset.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Gionee.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/GoMobile.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Google.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Gradiente.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Grundig.png
@@ -4138,6 +4202,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/INQ.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/IconBIT.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Ikea.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Impression.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Innos.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Intek.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Inverto.png
@@ -4146,6 +4211,8 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/KDDI.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Karbonn.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Kazam.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Kempler_&_Strauss.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Kogan.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Konrow.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Kyocera.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/LG.png
@@ -4157,6 +4224,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Lenovo.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Loewe.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/MSI.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/MTC.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Manta_Multimedia.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/MediaTek.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Medion.png
@@ -4169,10 +4237,12 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Mobiistar.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Motorola.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/MyPhone.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Myria.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/NEC.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/NGM.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Neffos.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Nexian.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Nextbit.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Nikon.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Nintendo.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Noblex.png
@@ -4200,6 +4270,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Sagem.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Samsung.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Sanyo.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Savio.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Sega.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Selevision.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Sencor.png
@@ -4213,6 +4284,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Spice.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/T-Mobile.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/TCL.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/TechPad.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/TechniSat.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/TechnoTrend.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Teclast.png
@@ -4224,10 +4296,15 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/TiPhone.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Tolino.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Toshiba.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Touchmate.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/TrekStor.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Tunisie_Telecom.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/UMIDIGI.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Uhappy.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Ulefone.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Unnecto.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Unonu.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Vernee.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Vertu.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Verykool.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Vestel.png
@@ -4236,6 +4313,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/ViewSonic.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Vivo.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Vodafone.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Vonino.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Voxtel.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Wiko.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Wileyfox.png
@@ -4249,6 +4327,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Zen.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Zonda.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Zopo.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Zync.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/bq.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/eTouch.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/i-mobile.png
@@ -4265,6 +4344,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AN.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AO.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AR.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AS.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AT.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AV.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/AW.png
@@ -4290,6 +4370,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CO.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CP.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CR.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CU.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/CY.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/DE.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/DF.png
@@ -4310,6 +4391,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/FW.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/GA.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/GE.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/HC.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/HJ.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/I1.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/I2.png
@@ -4350,6 +4432,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/NO.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/NP.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/NS.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/NT.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/NV.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OB.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OE.png
@@ -4357,6 +4440,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OI.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OM.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/ON.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OO.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OP.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OR.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OT.png
@@ -4366,6 +4450,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/PL.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/PM.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/PO.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/PP.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/PR.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/PS.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/PT.png
@@ -4698,6 +4783,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/os/DEB.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/os/DFB.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/os/FED.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/os/FIR.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/os/FOS.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/os/GNT.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/os/GTV.png
@@ -4707,6 +4793,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/os/IRI.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/os/KBT.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/os/KNO.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/os/KOS.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/os/LBT.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/os/LIN.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/os/MAC.png
@@ -5055,6 +5142,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/socials/livejournal.ru.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/socials/login.live.com.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/socials/login.tagged.com.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/socials/mastodon.social.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/socials/meinvz.net.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/socials/mixi.jp.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/socials/moikrug.ru.png
@@ -5113,6 +5201,8 @@
 %%WWWDIR%%/plugins/Morpheus/images/collapsed_arrows.png
 %%WWWDIR%%/plugins/Morpheus/images/configure-highlight.png
 %%WWWDIR%%/plugins/Morpheus/images/configure.png
+%%WWWDIR%%/plugins/Morpheus/images/contentimpression.png
+%%WWWDIR%%/plugins/Morpheus/images/contentinteraction.png
 %%WWWDIR%%/plugins/Morpheus/images/dashboard_h_bg.png
 %%WWWDIR%%/plugins/Morpheus/images/data_table_footer_active_item.png
 %%WWWDIR%%/plugins/Morpheus/images/datepicker_arr_l.png
@@ -5145,9 +5235,9 @@
 %%WWWDIR%%/plugins/Morpheus/images/link.png
 %%WWWDIR%%/plugins/Morpheus/images/loading-blue.gif
 %%WWWDIR%%/plugins/Morpheus/images/login-sprite.png
+%%WWWDIR%%/plugins/Morpheus/images/logo-dark.svg
 %%WWWDIR%%/plugins/Morpheus/images/logo-email.png
 %%WWWDIR%%/plugins/Morpheus/images/logo-header.png
-%%WWWDIR%%/plugins/Morpheus/images/logo-marketplace.png
 %%WWWDIR%%/plugins/Morpheus/images/logo.png
 %%WWWDIR%%/plugins/Morpheus/images/logo.svg
 %%WWWDIR%%/plugins/Morpheus/images/maximise.png
@@ -5287,6 +5377,7 @@
 %%WWWDIR%%/plugins/MultiSites/lang/de.json
 %%WWWDIR%%/plugins/MultiSites/lang/el.json
 %%WWWDIR%%/plugins/MultiSites/lang/en.json
+%%WWWDIR%%/plugins/MultiSites/lang/eo.json
 %%WWWDIR%%/plugins/MultiSites/lang/es-ar.json
 %%WWWDIR%%/plugins/MultiSites/lang/es.json
 %%WWWDIR%%/plugins/MultiSites/lang/et.json
@@ -5575,6 +5666,7 @@
 %%WWWDIR%%/plugins/Referrers/API.php
 %%WWWDIR%%/plugins/Referrers/Archiver.php
 %%WWWDIR%%/plugins/Referrers/Categories/AllReferrersSubcategory.php
+%%WWWDIR%%/plugins/Referrers/Categories/CampaignUrlBuilderSubcategory.php
 %%WWWDIR%%/plugins/Referrers/Categories/CampaignsSubcategory.php
 %%WWWDIR%%/plugins/Referrers/Categories/ReferrersCategory.php
 %%WWWDIR%%/plugins/Referrers/Categories/ReferrersOverviewSubcategory.php
@@ -5617,7 +5709,12 @@
 %%WWWDIR%%/plugins/Referrers/Social.php
 %%WWWDIR%%/plugins/Referrers/Tasks.php
 %%WWWDIR%%/plugins/Referrers/VisitorDetails.php
+%%WWWDIR%%/plugins/Referrers/Widgets/GetCampaignUrlBuilder.php
 %%WWWDIR%%/plugins/Referrers/Widgets/GetKeywordsForPage.php
+%%WWWDIR%%/plugins/Referrers/angularjs/campaign-builder/campaign-builder.controller.js
+%%WWWDIR%%/plugins/Referrers/angularjs/campaign-builder/campaign-builder.directive.html
+%%WWWDIR%%/plugins/Referrers/angularjs/campaign-builder/campaign-builder.directive.js
+%%WWWDIR%%/plugins/Referrers/angularjs/campaign-builder/campaign-builder.directive.less
 %%WWWDIR%%/plugins/Referrers/functions.php
 %%WWWDIR%%/plugins/Referrers/lang/am.json
 %%WWWDIR%%/plugins/Referrers/lang/ar.json
@@ -5632,6 +5729,7 @@
 %%WWWDIR%%/plugins/Referrers/lang/de.json
 %%WWWDIR%%/plugins/Referrers/lang/el.json
 %%WWWDIR%%/plugins/Referrers/lang/en.json
+%%WWWDIR%%/plugins/Referrers/lang/eo.json
 %%WWWDIR%%/plugins/Referrers/lang/es-ar.json
 %%WWWDIR%%/plugins/Referrers/lang/es.json
 %%WWWDIR%%/plugins/Referrers/lang/et.json
@@ -5675,6 +5773,7 @@
 %%WWWDIR%%/plugins/Referrers/lang/zh-cn.json
 %%WWWDIR%%/plugins/Referrers/lang/zh-tw.json
 %%WWWDIR%%/plugins/Referrers/templates/_visitorDetails.twig
+%%WWWDIR%%/plugins/Referrers/templates/campaignBuilder.twig
 %%WWWDIR%%/plugins/Resolution/API.php
 %%WWWDIR%%/plugins/Resolution/Archiver.php
 %%WWWDIR%%/plugins/Resolution/Columns/Configuration.php
@@ -6012,7 +6111,6 @@
 %%WWWDIR%%/plugins/SitesManager/templates/_displayJavascriptCode.twig
 %%WWWDIR%%/plugins/SitesManager/templates/dialogs/dialogs.html
 %%WWWDIR%%/plugins/SitesManager/templates/dialogs/remove-dialog.html
-%%WWWDIR%%/plugins/SitesManager/templates/displayJavascriptCode.twig
 %%WWWDIR%%/plugins/SitesManager/templates/global-settings.html
 %%WWWDIR%%/plugins/SitesManager/templates/globalSettings.twig
 %%WWWDIR%%/plugins/SitesManager/templates/help/excluded-ip-help.html
@@ -6129,6 +6227,8 @@
 %%WWWDIR%%/plugins/TagManager/Template/Tag/DriftTag.web.js
 %%WWWDIR%%/plugins/TagManager/Template/Tag/EmarsysTag.php
 %%WWWDIR%%/plugins/TagManager/Template/Tag/EmarsysTag.web.js
+%%WWWDIR%%/plugins/TagManager/Template/Tag/EtrackerTag.php
+%%WWWDIR%%/plugins/TagManager/Template/Tag/EtrackerTag.web.js
 %%WWWDIR%%/plugins/TagManager/Template/Tag/FacebookPixelTag.php
 %%WWWDIR%%/plugins/TagManager/Template/Tag/FacebookPixelTag.web.js
 %%WWWDIR%%/plugins/TagManager/Template/Tag/GoogleAnalyticsUniversalTag.php
@@ -6203,6 +6303,8 @@
 %%WWWDIR%%/plugins/TagManager/Template/Variable/DataLayerVariable.web.js
 %%WWWDIR%%/plugins/TagManager/Template/Variable/DomElementVariable.php
 %%WWWDIR%%/plugins/TagManager/Template/Variable/DomElementVariable.web.js
+%%WWWDIR%%/plugins/TagManager/Template/Variable/EtrackerConfigurationVariable.php
+%%WWWDIR%%/plugins/TagManager/Template/Variable/EtrackerConfigurationVariable.web.js
 %%WWWDIR%%/plugins/TagManager/Template/Variable/JavaScriptVariable.php
 %%WWWDIR%%/plugins/TagManager/Template/Variable/JavaScriptVariable.web.js
 %%WWWDIR%%/plugins/TagManager/Template/Variable/MatomoConfigurationVariable.php
@@ -6385,6 +6487,7 @@
 %%WWWDIR%%/plugins/TagManager/images/icons/drift.svg
 %%WWWDIR%%/plugins/TagManager/images/icons/emarsys.svg
 %%WWWDIR%%/plugins/TagManager/images/icons/error.svg
+%%WWWDIR%%/plugins/TagManager/images/icons/etracker.svg
 %%WWWDIR%%/plugins/TagManager/images/icons/form.svg
 %%WWWDIR%%/plugins/TagManager/images/icons/fullscreen.svg
 %%WWWDIR%%/plugins/TagManager/images/icons/honeybadger.svg
@@ -6493,8 +6596,11 @@
 %%WWWDIR%%/plugins/TagManager/templates/trackingCode.twig
 %%WWWDIR%%/plugins/TagManager/templates/trackingHelp.twig
 %%WWWDIR%%/plugins/Transitions/API.php
+%%WWWDIR%%/plugins/Transitions/Categories/TransitionsSubcategory.php
 %%WWWDIR%%/plugins/Transitions/Controller.php
 %%WWWDIR%%/plugins/Transitions/Transitions.php
+%%WWWDIR%%/plugins/Transitions/Widgets/GetTransitions.php
+%%WWWDIR%%/plugins/Transitions/angularjs/transitionswitcher/transitionswitcher.controller.js
 %%WWWDIR%%/plugins/Transitions/images/transitions_icon.png
 %%WWWDIR%%/plugins/Transitions/images/transitions_icon_hover.png
 %%WWWDIR%%/plugins/Transitions/javascripts/transitions.js
@@ -6538,6 +6644,46 @@
 %%WWWDIR%%/plugins/Transitions/stylesheets/_transitionColors.less
 %%WWWDIR%%/plugins/Transitions/stylesheets/transitions.less
 %%WWWDIR%%/plugins/Transitions/templates/renderPopover.twig
+%%WWWDIR%%/plugins/Transitions/templates/transitions.twig
+%%WWWDIR%%/plugins/TwoFactorAuth/API.php
+%%WWWDIR%%/plugins/TwoFactorAuth/Commands/Disable2FAForUser.php
+%%WWWDIR%%/plugins/TwoFactorAuth/Controller.php
+%%WWWDIR%%/plugins/TwoFactorAuth/Dao/RecoveryCodeDao.php
+%%WWWDIR%%/plugins/TwoFactorAuth/Dao/RecoveryCodeRandomGenerator.php
+%%WWWDIR%%/plugins/TwoFactorAuth/Dao/RecoveryCodeStaticGenerator.php
+%%WWWDIR%%/plugins/TwoFactorAuth/Dao/TwoFaSecretRandomGenerator.php
+%%WWWDIR%%/plugins/TwoFactorAuth/Dao/TwoFaSecretStaticGenerator.php
+%%WWWDIR%%/plugins/TwoFactorAuth/FormTwoFactorAuthCode.php
+%%WWWDIR%%/plugins/TwoFactorAuth/SystemSettings.php
+%%WWWDIR%%/plugins/TwoFactorAuth/TwoFactorAuth.php
+%%WWWDIR%%/plugins/TwoFactorAuth/TwoFactorAuthentication.php
+%%WWWDIR%%/plugins/TwoFactorAuth/Validator.php
+%%WWWDIR%%/plugins/TwoFactorAuth/angularjs/setuptwofactor/setuptwofactor.controller.js
+%%WWWDIR%%/plugins/TwoFactorAuth/config/test.php
+%%WWWDIR%%/plugins/TwoFactorAuth/javascripts/twofactorauth.js
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/ar.json
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/da.json
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/de.json
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/el.json
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/en.json
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/es.json
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/it.json
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/ja.json
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/nl.json
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/pl.json
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/pt.json
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/sq.json
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/sv.json
+%%WWWDIR%%/plugins/TwoFactorAuth/lang/tr.json
+%%WWWDIR%%/plugins/TwoFactorAuth/stylesheets/twofactorauth.less
+%%WWWDIR%%/plugins/TwoFactorAuth/templates/_setupTwoFactorAuth.twig
+%%WWWDIR%%/plugins/TwoFactorAuth/templates/_showRecoveryCodes.twig
+%%WWWDIR%%/plugins/TwoFactorAuth/templates/loginTwoFactorAuth.twig
+%%WWWDIR%%/plugins/TwoFactorAuth/templates/setupFinished.twig
+%%WWWDIR%%/plugins/TwoFactorAuth/templates/setupTwoFactorAuth.twig
+%%WWWDIR%%/plugins/TwoFactorAuth/templates/setupTwoFactorAuthStandalone.twig
+%%WWWDIR%%/plugins/TwoFactorAuth/templates/showRecoveryCodes.twig
+%%WWWDIR%%/plugins/TwoFactorAuth/templates/userSettings.twig
 %%WWWDIR%%/plugins/UserCountry/API.php
 %%WWWDIR%%/plugins/UserCountry/Archiver.php
 %%WWWDIR%%/plugins/UserCountry/Categories/LocationsCategory.php
@@ -7011,10 +7157,17 @@
 %%WWWDIR%%/plugins/UsersManager/Tasks.php
 %%WWWDIR%%/plugins/UsersManager/UserAccessFilter.php
 %%WWWDIR%%/plugins/UsersManager/UserPreferences.php
+%%WWWDIR%%/plugins/UsersManager/UserUpdater.php
 %%WWWDIR%%/plugins/UsersManager/UsersManager.php
+%%WWWDIR%%/plugins/UsersManager/angularjs/capabilities-edit/capabilities-edit.component.html
+%%WWWDIR%%/plugins/UsersManager/angularjs/capabilities-edit/capabilities-edit.component.js
+%%WWWDIR%%/plugins/UsersManager/angularjs/capabilities-edit/capabilities-edit.component.less
+%%WWWDIR%%/plugins/UsersManager/angularjs/capability-edit/capability-edit.component.html
+%%WWWDIR%%/plugins/UsersManager/angularjs/capability-edit/capability-edit.component.less
 %%WWWDIR%%/plugins/UsersManager/angularjs/paged-users-list/paged-users-list.component.html
 %%WWWDIR%%/plugins/UsersManager/angularjs/paged-users-list/paged-users-list.component.js
 %%WWWDIR%%/plugins/UsersManager/angularjs/paged-users-list/paged-users-list.component.less
+%%WWWDIR%%/plugins/UsersManager/angularjs/permissions-metadata/permissions-metadata.service.js
 %%WWWDIR%%/plugins/UsersManager/angularjs/personal-settings/anonymous-settings.controller.js
 %%WWWDIR%%/plugins/UsersManager/angularjs/personal-settings/personal-settings.controller.js
 %%WWWDIR%%/plugins/UsersManager/angularjs/user-edit-form/user-edit-form.component.html
@@ -7041,6 +7194,7 @@
 %%WWWDIR%%/plugins/UsersManager/lang/de.json
 %%WWWDIR%%/plugins/UsersManager/lang/el.json
 %%WWWDIR%%/plugins/UsersManager/lang/en.json
+%%WWWDIR%%/plugins/UsersManager/lang/eo.json
 %%WWWDIR%%/plugins/UsersManager/lang/es-ar.json
 %%WWWDIR%%/plugins/UsersManager/lang/es.json
 %%WWWDIR%%/plugins/UsersManager/lang/et.json
@@ -7235,6 +7389,7 @@
 %%WWWDIR%%/plugins/VisitorInterest/lang/de.json
 %%WWWDIR%%/plugins/VisitorInterest/lang/el.json
 %%WWWDIR%%/plugins/VisitorInterest/lang/en.json
+%%WWWDIR%%/plugins/VisitorInterest/lang/eo.json
 %%WWWDIR%%/plugins/VisitorInterest/lang/es-ar.json
 %%WWWDIR%%/plugins/VisitorInterest/lang/es.json
 %%WWWDIR%%/plugins/VisitorInterest/lang/et.json
@@ -7290,6 +7445,7 @@
 %%WWWDIR%%/plugins/VisitsSummary/lang/de.json
 %%WWWDIR%%/plugins/VisitsSummary/lang/el.json
 %%WWWDIR%%/plugins/VisitsSummary/lang/en.json
+%%WWWDIR%%/plugins/VisitsSummary/lang/eo.json
 %%WWWDIR%%/plugins/VisitsSummary/lang/es-ar.json
 %%WWWDIR%%/plugins/VisitsSummary/lang/es.json
 %%WWWDIR%%/plugins/VisitsSummary/lang/et.json
@@ -7401,6 +7557,7 @@
 %%WWWDIR%%/plugins/Widgetize/lang/de.json
 %%WWWDIR%%/plugins/Widgetize/lang/el.json
 %%WWWDIR%%/plugins/Widgetize/lang/en.json
+%%WWWDIR%%/plugins/Widgetize/lang/eo.json
 %%WWWDIR%%/plugins/Widgetize/lang/es-ar.json
 %%WWWDIR%%/plugins/Widgetize/lang/es.json
 %%WWWDIR%%/plugins/Widgetize/lang/et.json
@@ -7445,6 +7602,12 @@
 %%WWWDIR%%/plugins/Widgetize/templates/iframe_empty.twig
 %%WWWDIR%%/plugins/Widgetize/templates/index.twig
 %%WWWDIR%%/tests/README.md
+%%WWWDIR%%/vendor/JShrink/CONTRIBUTING.md
+%%WWWDIR%%/vendor/JShrink/LICENSE
+%%WWWDIR%%/vendor/JShrink/README.md
+%%WWWDIR%%/vendor/JShrink/composer.json
+%%WWWDIR%%/vendor/JShrink/phpunit.xml.dist
+%%WWWDIR%%/vendor/JShrink/src/JShrink/Minifier.php
 %%WWWDIR%%/vendor/autoload.php
 %%WWWDIR%%/vendor/composer/ClassLoader.php
 %%WWWDIR%%/vendor/composer/LICENSE
@@ -7665,6 +7828,7 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/HandlerWrapper.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/HipChatHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/IFTTTHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/InsightOpsHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/LogEntriesHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/LogglyHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/MailHandler.php
@@ -7703,11 +7867,15 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/MemoryUsageProcessor.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/MercurialProcessor.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/ProcessIdProcessor.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/ProcessorInterface.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/PsrLogMessageProcessor.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/TagProcessor.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/UidProcessor.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/WebProcessor.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Registry.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/ResettableInterface.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/SignalHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Utils.php
 %%WWWDIR%%/vendor/mustangostang/spyc/COPYING
 %%WWWDIR%%/vendor/mustangostang/spyc/README
 %%WWWDIR%%/vendor/mustangostang/spyc/Spyc.php
@@ -7896,6 +8064,7 @@
 %%WWWDIR%%/vendor/piwik/device-detector/Parser/VendorFragment.php
 %%WWWDIR%%/vendor/piwik/device-detector/README.md
 %%WWWDIR%%/vendor/piwik/device-detector/Yaml/Parser.php
+%%WWWDIR%%/vendor/piwik/device-detector/Yaml/Pecl.php
 %%WWWDIR%%/vendor/piwik/device-detector/Yaml/Spyc.php
 %%WWWDIR%%/vendor/piwik/device-detector/Yaml/Symfony.php
 %%WWWDIR%%/vendor/piwik/device-detector/autoload.php
@@ -7950,6 +8119,7 @@
 %%WWWDIR%%/vendor/psr/log/Psr/Log/LoggerTrait.php
 %%WWWDIR%%/vendor/psr/log/Psr/Log/NullLogger.php
 %%WWWDIR%%/vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/Test/TestLogger.php
 %%WWWDIR%%/vendor/psr/log/README.md
 %%WWWDIR%%/vendor/psr/log/composer.json
 %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Application.php
@@ -8047,21 +8217,53 @@
 %%WWWDIR%%/vendor/symfony/monolog-bridge/Symfony/Bridge/Monolog/README.md
 %%WWWDIR%%/vendor/symfony/monolog-bridge/Symfony/Bridge/Monolog/composer.json
 %%WWWDIR%%/vendor/symfony/monolog-bridge/Symfony/Bridge/Monolog/phpunit.xml.dist
+%%WWWDIR%%/vendor/symfony/polyfill-ctype/Ctype.php
+%%WWWDIR%%/vendor/symfony/polyfill-ctype/LICENSE
+%%WWWDIR%%/vendor/symfony/polyfill-ctype/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-ctype/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-ctype/composer.json
 %%WWWDIR%%/vendor/szymach/c-pchart/.scrutinizer.yml
+%%WWWDIR%%/vendor/szymach/c-pchart/CHANGELOG.md
 %%WWWDIR%%/vendor/szymach/c-pchart/LICENSE
 %%WWWDIR%%/vendor/szymach/c-pchart/README.md
-%%WWWDIR%%/vendor/szymach/c-pchart/behat.yml
-%%WWWDIR%%/vendor/szymach/c-pchart/change.log
+%%WWWDIR%%/vendor/szymach/c-pchart/codeception.yml
 %%WWWDIR%%/vendor/szymach/c-pchart/composer.json
-%%WWWDIR%%/vendor/szymach/c-pchart/features/basic.feature
-%%WWWDIR%%/vendor/szymach/c-pchart/features/fixtures/web/index.php
-%%WWWDIR%%/vendor/szymach/c-pchart/src/Behat/Context/BrowserContext.php
-%%WWWDIR%%/vendor/szymach/c-pchart/src/Behat/Context/DataContext.php
-%%WWWDIR%%/vendor/szymach/c-pchart/src/Behat/Context/DirectoryContext.php
-%%WWWDIR%%/vendor/szymach/c-pchart/src/Behat/Context/DrawContext.php
-%%WWWDIR%%/vendor/szymach/c-pchart/src/Behat/Context/MinkAwarePageContext.php
-%%WWWDIR%%/vendor/szymach/c-pchart/src/Behat/Fixtures/FixtureGenerator.php
-%%WWWDIR%%/vendor/szymach/c-pchart/src/Behat/Page/Index.php
+%%WWWDIR%%/vendor/szymach/c-pchart/coverage.sh
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/2d_pie.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/2d_ring.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/3d_pie.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/3d_ring.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/area.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/bar.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/barcode_128.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/barcode_39.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/best_fit.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/bubble.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/cache.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/contour.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/filled_spline.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/filled_step.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/line.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/plot.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/polar.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/progress.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/radar.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/scatter_best_fit.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/scatter_line.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/scatter_plot.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/scatter_spline.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/scatter_threshold.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/scatter_threshold_area.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/spline.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/split_path.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/spring.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/stacked_area.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/stacked_bar.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/step.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/stock.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/surface.md
+%%WWWDIR%%/vendor/szymach/c-pchart/doc/zone.md
+%%WWWDIR%%/vendor/szymach/c-pchart/phpcs.xml
 %%WWWDIR%%/vendor/szymach/c-pchart/src/Chart/Barcode128.php
 %%WWWDIR%%/vendor/szymach/c-pchart/src/Chart/Barcode39.php
 %%WWWDIR%%/vendor/szymach/c-pchart/src/Chart/BaseDraw.php
@@ -8097,7 +8299,7 @@
 %%WWWDIR%%/vendor/szymach/c-pchart/src/Resources/palettes/spring.color
 %%WWWDIR%%/vendor/szymach/c-pchart/src/Resources/palettes/summer.color
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/LICENSE.TXT
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/README.TXT
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/README.md
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/composer.json
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/config/tcpdf_config.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/aealarabiya.ctg.z
@@ -8142,12 +8344,6 @@
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tools/.htaccess
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tools/convert_fonts_examples.txt
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
-%%WWWDIR%%/vendor/tedivm/jshrink/LICENSE
-%%WWWDIR%%/vendor/tedivm/jshrink/README.md
-%%WWWDIR%%/vendor/tedivm/jshrink/composer.json
-%%WWWDIR%%/vendor/tedivm/jshrink/package.xml
-%%WWWDIR%%/vendor/tedivm/jshrink/phpunit.xml.dist
-%%WWWDIR%%/vendor/tedivm/jshrink/src/JShrink/Minifier.php
 %%WWWDIR%%/vendor/twig/twig/.php_cs.dist
 %%WWWDIR%%/vendor/twig/twig/CHANGELOG
 %%WWWDIR%%/vendor/twig/twig/LICENSE
@@ -8296,6 +8492,7 @@
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/NodeVisitorInterface.php
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/Parser.php
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/ParserInterface.php
+%%WWWDIR%%/vendor/twig/twig/lib/Twig/Profiler/Dumper/Base.php
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/Profiler/Dumper/Blackfire.php
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/Profiler/Dumper/Html.php
 %%WWWDIR%%/vendor/twig/twig/lib/Twig/Profiler/Dumper/Text.php
@@ -8374,6 +8571,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/Extension/InitRuntimeInterface.php
 %%WWWDIR%%/vendor/twig/twig/src/Extension/OptimizerExtension.php
 %%WWWDIR%%/vendor/twig/twig/src/Extension/ProfilerExtension.php
+%%WWWDIR%%/vendor/twig/twig/src/Extension/RuntimeExtensionInterface.php
 %%WWWDIR%%/vendor/twig/twig/src/Extension/SandboxExtension.php
 %%WWWDIR%%/vendor/twig/twig/src/Extension/StagingExtension.php
 %%WWWDIR%%/vendor/twig/twig/src/Extension/StringLoaderExtension.php
@@ -8474,6 +8672,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/NodeVisitor/SafeAnalysisNodeVisitor.php
 %%WWWDIR%%/vendor/twig/twig/src/NodeVisitor/SandboxNodeVisitor.php
 %%WWWDIR%%/vendor/twig/twig/src/Parser.php
+%%WWWDIR%%/vendor/twig/twig/src/Profiler/Dumper/BaseDumper.php
 %%WWWDIR%%/vendor/twig/twig/src/Profiler/Dumper/BlackfireDumper.php
 %%WWWDIR%%/vendor/twig/twig/src/Profiler/Dumper/HtmlDumper.php
 %%WWWDIR%%/vendor/twig/twig/src/Profiler/Dumper/TextDumper.php
@@ -8529,10 +8728,10 @@
 @dir %%WWWDIR%%/plugins/ExamplePlugin/screenshots
 @dir %%WWWDIR%%/plugins/ExampleTheme/images
 @dir %%WWWDIR%%/plugins/ExampleTheme/screenshots
+@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp
+@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp/cache
+@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp/cache/tracker
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config
 @dir %%WWWDIR%%/vendor/geoip2/geoip2/maxmind-db
 @dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Resources
 @dir %%WWWDIR%%/vendor/szymach/c-pchart/app/cache
-@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp/cache
-@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp/cache/tracker
-@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config
