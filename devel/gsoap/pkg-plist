@@ -170,6 +170,8 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/plugin/httpmd5.h
 %%DATADIR%%/plugin/httpmd5test.c
 %%DATADIR%%/plugin/httpmd5test.h
+%%DATADIR%%/plugin/httppipe.c
+%%DATADIR%%/plugin/httppipe.h
 %%DATADIR%%/plugin/httppost.c
 %%DATADIR%%/plugin/httppost.h
 %%DATADIR%%/plugin/httpposttest.c
