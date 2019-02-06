@@ -27,4 +27,12 @@ sysrc solr_enable="YES"
 And start it with:
 service solr start
 
+-----------------------------------------------------------------------
+
+If you update, make sure you update your %%LOCALBASE%%/etc/solr.in.sh
+The LOG4J_PROPS has changed.
+If you would like to change logging, copy:
+cp %%LOCALBASE%%/solr/server/resources/log4j2.xml /var/db/solr/
+Change it and make sure it is loaded in %%LOCALBASE%%/etc/solr.in.sh.
+
 =======================================================================
