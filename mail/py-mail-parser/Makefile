@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mail-parser
-PORTVERSION=	3.9.1
+PORTVERSION=	3.9.2
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,7 @@ RUN_DEPENDS=	msgconvert:mail/p5-Email-Outlook-Message \
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
