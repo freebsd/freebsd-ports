@@ -9,7 +9,7 @@ COMMENT=	Efficient tools for LiDAR processing
 
 LICENSE=	LGPL21
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 USE_GITHUB=	yes
 GH_TAGNAME=	8ff2694
 
