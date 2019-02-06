@@ -16,7 +16,7 @@ BUILD_DEPENDS=	a2x:textproc/asciidoc \
 	spdlog>=1.3.0:devel/spdlog
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=	cmake fuse python shebangfix
+USES=	cmake compiler:c11 fuse python shebangfix
 USE_RC_SUBR=	mfscgiserv \
 	mfschunkserver \
 	mfsmaster \
