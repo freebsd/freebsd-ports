@@ -64,6 +64,9 @@ THREADS_CONFIGURE_OFF=	--disable-multithread
 post-patch:
 	@${REINPLACE_CMD} -E '/gcctarget|link_with_cc/s/gcc[[:>:]]/$${CC}/' \
 		${WRKSRC}/build/make/configure.sh
+# Extract (snapshot) version from the port instead of CHANGELOG
+	@${REINPLACE_CMD} '/^git_version_id/s/""/"${DISTVERSIONFULL}"/' \
+		${WRKSRC}/build/make/version.sh
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vpx*
