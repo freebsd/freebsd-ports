@@ -3,7 +3,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	60.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source
@@ -30,7 +30,7 @@ BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
 
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
-USE_MOZILLA=	-webp
+USE_MOZILLA=	-webp -vpx
 
 USES=		tar:xz
 
