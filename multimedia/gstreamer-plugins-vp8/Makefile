@@ -1,7 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer vp8 codec plugin

@@ -1,25 +1,26 @@
 - Add missing targets when toolchain != generic-gnu
 - --version is a GNUism which BSD diff doesn't support
+- Skip bogus NEON check when soft-enabled on armv6
 
---- configure.orig	2018-01-24 22:25:44 UTC
+--- configure.orig	2019-02-04 17:02:33 UTC
 +++ configure
-@@ -101,6 +101,7 @@ EOF
- all_platforms="${all_platforms} arm64-android-gcc"
- all_platforms="${all_platforms} arm64-darwin-gcc"
+@@ -103,6 +103,7 @@ all_platforms="${all_platforms} arm64-darwin-gcc"
  all_platforms="${all_platforms} arm64-linux-gcc"
+ all_platforms="${all_platforms} arm64-win64-gcc"
+ all_platforms="${all_platforms} arm64-win64-vs15"
 +all_platforms="${all_platforms} armv6-linux-gcc"
  all_platforms="${all_platforms} armv7-android-gcc"   #neon Cortex-A8
  all_platforms="${all_platforms} armv7-darwin-gcc"    #neon Cortex-A8
  all_platforms="${all_platforms} armv7-linux-rvct"    #neon Cortex-A8
-@@ -116,6 +117,7 @@ all_platforms="${all_platforms} mips32-linux-gcc"
+@@ -116,6 +117,7 @@ all_platforms="${all_platforms} armv8-linux-gcc"
+ all_platforms="${all_platforms} mips32-linux-gcc"
  all_platforms="${all_platforms} mips64-linux-gcc"
- all_platforms="${all_platforms} ppc64-linux-gcc"
  all_platforms="${all_platforms} ppc64le-linux-gcc"
 +all_platforms="${all_platforms} sparc-linux-gcc"
  all_platforms="${all_platforms} sparc-solaris-gcc"
  all_platforms="${all_platforms} x86-android-gcc"
  all_platforms="${all_platforms} x86-darwin8-gcc"
-@@ -170,7 +170,7 @@ for t in ${all_targets}; do
+@@ -166,7 +168,7 @@ for t in ${all_targets}; do
      [ -f "${source_path}/${t}.mk" ] && enable_feature ${t}
  done
  
@@ -28,3 +29,13 @@
    die "diff missing: Try installing diffutils via your package manager."
  fi
  
+@@ -591,9 +593,6 @@ EOF
+ 
+     check_header vpx/vpx_integer.h -I${source_path} && enable_feature vpx_ports
+ 
+-    if enabled neon && ! enabled external_build; then
+-      check_header arm_neon.h || die "Unable to find arm_neon.h"
+-    fi
+ }
+ 
+ process_toolchain() {

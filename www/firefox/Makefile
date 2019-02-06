@@ -3,7 +3,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	65.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
 USE_GECKO=	gecko
 CONFLICTS_INSTALL=	firefox-esr
 MOZ_PKGCONFIG_FILES=	# empty
-USE_MOZILLA=	-hunspell
+USE_MOZILLA=	-hunspell -vpx
 
 USES=		tar:xz
 
