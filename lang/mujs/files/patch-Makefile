@@ -1,6 +1,36 @@
---- Makefile.orig	2018-07-30 13:35:39 UTC
+--- Makefile.orig	2018-09-11 10:47:31 UTC
 +++ Makefile
-@@ -49,9 +49,9 @@ OUT := build/$(build)
+@@ -15,7 +15,7 @@ endif
+ 
+ # Compiler flags for various configurations:
+ 
+-CFLAGS := -std=c99 -pedantic -Wall -Wextra -Wno-unused-parameter
++CFLAGS += -std=c99 -pedantic -Wall -Wextra -Wno-unused-parameter
+ 
+ ifeq "$(CC)" "clang"
+   CFLAGS += -Wunreachable-code
+@@ -24,14 +24,17 @@ endif
+ ifeq "$(shell uname)" "Linux"
+   HAVE_READLINE := yes
+ endif
++ifeq "$(shell uname)" "FreeBSD"
++  HAVE_READLINE := yes
++endif
+ 
+ ifeq "$(build)" "debug"
+-  CFLAGS += -g
++  #CFLAGS += -g
+ else ifeq "$(build)" "sanitize"
+-  CFLAGS += -pipe -g -fsanitize=address -fno-omit-frame-pointer
++  CFLAGS += -pipe -fsanitize=address -fno-omit-frame-pointer
+   LDFLAGS += -fsanitize=address
+ else
+-  CFLAGS += -Os
++  #CFLAGS += -Os
+   LDFLAGS += -Wl,-s
+ endif
+ 
+@@ -49,9 +52,9 @@ OUT := build/$(build)
  SRCS := $(wildcard js*.c utf*.c regexp.c)
  HDRS := $(wildcard js*.h mujs.h utf.h regexp.h)
  
@@ -12,7 +42,7 @@
  
  astnames.h: jsparse.h
  	grep -E '(AST|EXP|STM)_' jsparse.h | sed 's/^[^A-Z]*\(AST_\)*/"/;s/,.*/",/' | tr A-Z a-z > $@
-@@ -115,7 +115,7 @@ install-static: install-common
+@@ -115,7 +118,7 @@ install-static: install-common
  install-shared: install-common
  	install -m 755 build/release/libmujs.so $(DESTDIR)$(libdir)
  

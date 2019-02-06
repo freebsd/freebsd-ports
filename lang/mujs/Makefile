@@ -2,6 +2,7 @@
 
 PORTNAME=	mujs
 DISTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,7 @@ COMMENT=	Embeddable Javascript interpreter in C
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		gmake localbase:ldflags readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	ccxvii
 USE_LDCONFIG=	yes
