@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	inspectrum
-PORTVERSION=	g20180708
+PORTVERSION=	g20181201
 PORTREVISION=	1
-#PORTREVISION=	1
 #DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
 
@@ -22,7 +21,7 @@ CMAKE_INSTALL_PREFIX=   ${STAGEDIR}${PREFIX}
 USES=		cmake compiler:c++11-lang pkgconfig qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	miek
-GH_TAGNAME=	d844c921e51e6d3e4aaea46b622cfa1a38feadfe
+GH_TAGNAME=	cd115c22cf4d8d7d3ed18e549d6569abf71fa32c
 
 USE_QT=		core buildtools_build concurrent widgets
 USE_LDCONFIG=	yes
