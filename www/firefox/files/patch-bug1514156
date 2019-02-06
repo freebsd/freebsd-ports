@@ -42,14 +42,13 @@ diff --git gfx/gl/GLContextProviderEGL.cpp gfx/gl/GLContextProviderEGL.cpp
 index 774eb34a8e87..25aa779a7d64 100644
 --- gfx/gl/GLContextProviderEGL.cpp
 +++ gfx/gl/GLContextProviderEGL.cpp
-@@ -295,6 +295,35 @@ already_AddRefed<GLContext> GLContextEGLFactory::Create(
+@@ -295,6 +295,36 @@ already_AddRefed<GLContext> GLContextEGLFactory::Create(
    return gl.forget();
  }
  
 +#if defined(MOZ_WAYLAND)
 +/* static */ EGLSurface GLContextEGL::CreateEGLSurfaceForCompositorWidget(
-+    widget::CompositorWidget* aCompositorWidget, bool aForceAccelerated)
-+{
++    widget::CompositorWidget* aCompositorWidget, bool aForceAccelerated) {
 +  nsCString discardFailureId;
 +  if (!GLLibraryEGL::EnsureInitialized(false, &discardFailureId)) {
 +    gfxCriticalNote << "Failed to load EGL library 6!";
@@ -58,7 +57,11 @@ index 774eb34a8e87..25aa779a7d64 100644
 +
 +  MOZ_ASSERT(aCompositorWidget);
 +  EGLNativeWindowType window = GET_NATIVE_WINDOW_FROM_COMPOSITOR_WIDGET(aCompositorWidget);
-+  bool useWebRender = aCompositorWidget->GetCompositorOptions().UseWebRender();
++  if (!window) {
++    gfxCriticalNote << "window is null";
++    return EGL_NO_SURFACE;
++  }
++  const bool useWebRender = aCompositorWidget->GetCompositorOptions().UseWebRender();
 +
 +  EGLConfig config;
 +  if (!CreateConfig(&config, useWebRender)) {
@@ -67,9 +70,7 @@ index 774eb34a8e87..25aa779a7d64 100644
 +  }
 +
 +  EGLSurface surface = EGL_NO_SURFACE;
-+  if (window) {
-+    surface = mozilla::gl::CreateSurfaceFromNativeWindow(window, config);
-+  }
++  surface = mozilla::gl::CreateSurfaceFromNativeWindow(window, config);
 +
 +  return surface;
 +}
@@ -113,7 +114,7 @@ new file mode 100644
 index 000000000000..16245f59afbd
 --- /dev/null
 +++ gfx/webrender_bindings/RenderCompositorEGL.cpp
-@@ -0,0 +1,135 @@
+@@ -0,0 +1,132 @@
 +/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 +/* vim: set ts=8 sts=2 et sw=2 tw=80: */
 +/* This Source Code Form is subject to the terms of the Mozilla Public
@@ -153,11 +154,10 @@ index 000000000000..16245f59afbd
 +/* static */ already_AddRefed<gl::GLContext>
 +RenderCompositorEGL::CreateGLContext(RefPtr<widget::CompositorWidget> aWidget) {
 +  nsCString discardFailureId;
-+  //auto flags = gl::CreateContextFlags::PREFER_ES3;
 +
 +  // Create GLContext with dummy EGLSurface.
 +  RefPtr<gl::GLContext> gl =
-+      //gl::GLContextProviderEGL::CreateHeadless(flags, &discardFailureId); //XXX headless context did not work.
++      //XXX headless context did not work.
 +      gl::GLContextProviderEGL::CreateForCompositorWidget(aWidget, true);
 +  if (!gl) {
 +    gfxCriticalNote << "Failed GL context creation for WebRender: "
@@ -198,9 +198,8 @@ index 000000000000..16245f59afbd
 +bool RenderCompositorEGL::BeginFrame() {
 +
 +  if (mWidget->AsX11() && mWidget->AsX11()->WaylandRequestsUpdatingEGLSurface()) {
-+      mEGLSurface = CreateEGLSurface(mWidget);
-+      printf_stderr("RenderCompositorEGL::BeginFrame() mEGLSurface %p\n", mEGLSurface);
-+      gl::GLContextEGL::Cast(gl())->SetEGLSurfaceOverride(mEGLSurface);
++    mEGLSurface = CreateEGLSurface(mWidget);
++    gl::GLContextEGL::Cast(gl())->SetEGLSurfaceOverride(mEGLSurface);
 +  }
 +
 +  if (!mGL->MakeCurrent()) {
@@ -220,8 +219,7 @@ index 000000000000..16245f59afbd
 +
 +void RenderCompositorEGL::WaitForGPU() {}
 +
-+void RenderCompositorEGL::Pause() {
-+}
++void RenderCompositorEGL::Pause() {}
 +
 +bool RenderCompositorEGL::Resume() {
 +  return true;
@@ -402,20 +400,7 @@ diff --git widget/gtk/GtkCompositorWidget.cpp widget/gtk/GtkCompositorWidget.cpp
 index bc21d6c4d05e..f787e8c23797 100644
 --- widget/gtk/GtkCompositorWidget.cpp
 +++ widget/gtk/GtkCompositorWidget.cpp
-@@ -17,7 +17,11 @@ namespace widget {
- GtkCompositorWidget::GtkCompositorWidget(
-     const GtkCompositorWidgetInitData& aInitData,
-     const layers::CompositorOptions& aOptions, nsWindow* aWindow)
--    : CompositorWidget(aOptions), mWidget(aWindow) {
-+    : CompositorWidget(aOptions), mWidget(aWindow)
-+#ifdef MOZ_WAYLAND
-+    , mWaylandRequestsUpdatingEGLSurface(false)
-+#endif
-+    {
-   // If we have a nsWindow, then grab the already existing display connection
-   // If we don't, then use the init data to connect to the display
-   if (aWindow) {
-@@ -85,6 +86,18 @@ void GtkCompositorWidget::NotifyClientSizeChanged(
+@@ -85,6 +85,18 @@ void GtkCompositorWidget::NotifyClientSizeChanged(
    mClientSize = aClientSize;
  }
  
@@ -463,7 +448,7 @@ index fd0c71426c18..75e156dffb02 100644
   private:
    LayoutDeviceIntSize mClientSize;
 +#ifdef MOZ_WAYLAND
-+  bool mWaylandRequestsUpdatingEGLSurface;
++  bool mWaylandRequestsUpdatingEGLSurface = false;
 +#endif
  
    Display* mXDisplay;
@@ -484,7 +469,7 @@ diff --git widget/gtk/mozcontainer.cpp widget/gtk/mozcontainer.cpp
 index 8be1f133d39f..8461e7b9d470 100644
 --- widget/gtk/mozcontainer.cpp
 +++ widget/gtk/mozcontainer.cpp
-@@ -160,6 +160,7 @@ void moz_container_init(MozContainer *container) {
+@@ -159,6 +159,7 @@ void moz_container_init(MozContainer *container) {
    // We can draw to x11 window any time.
    container->ready_to_draw = GDK_IS_X11_DISPLAY(gdk_display_get_default());
    container->surface_needs_clear = true;
@@ -492,7 +477,7 @@ index 8be1f133d39f..8461e7b9d470 100644
  #endif
  }
  
-@@ -177,6 +178,9 @@ static void frame_callback_handler(void *data, struct wl_callback *callback,
+@@ -176,6 +177,9 @@ static void frame_callback_handler(void *data, struct wl_callback *callback,
                                     uint32_t time) {
    MozContainer *container = MOZ_CONTAINER(data);
    g_clear_pointer(&container->frame_callback_handler, wl_callback_destroy);
@@ -502,7 +487,7 @@ index 8be1f133d39f..8461e7b9d470 100644
    container->ready_to_draw = true;
  }
  
-@@ -210,6 +214,7 @@ static void moz_container_unmap_wayland(MozContainer *container) {
+@@ -208,6 +212,7 @@ static void moz_container_unmap_wayland(MozContainer *container) {
    g_clear_pointer(&container->frame_callback_handler, wl_callback_destroy);
  
    container->surface_needs_clear = true;
@@ -510,7 +495,7 @@ index 8be1f133d39f..8461e7b9d470 100644
    container->ready_to_draw = false;
  }
  
-@@ -548,4 +553,10 @@ gboolean moz_container_surface_needs_clear(MozContainer *container) {
+@@ -523,4 +528,10 @@ gboolean moz_container_surface_needs_clear(MozContainer *container) {
    container->surface_needs_clear = false;
    return state;
  }
@@ -533,7 +518,7 @@ index e9c218c1bc3e..1ed6f439805d 100644
    gboolean ready_to_draw;
  #endif
  };
-@@ -96,6 +97,7 @@ struct wl_egl_window *moz_container_get_wl_egl_window(
+@@ -96,6 +97,7 @@ struct wl_egl_window *moz_container_get_wl_egl_window(MozContainer *container);
  
  gboolean moz_container_has_wl_egl_window(MozContainer *container);
  gboolean moz_container_surface_needs_clear(MozContainer *container);
@@ -545,7 +530,7 @@ diff --git widget/gtk/nsWindow.cpp widget/gtk/nsWindow.cpp
 index 50e6354ea374..ceabbf583a42 100644
 --- widget/gtk/nsWindow.cpp
 +++ widget/gtk/nsWindow.cpp
-@@ -1885,6 +1885,11 @@ gboolean nsWindow::OnExposeEvent(cairo_t *cr) {
+@@ -1886,6 +1886,11 @@ gboolean nsWindow::OnExposeEvent(cairo_t *cr) {
    region.ScaleRoundOut(scale, scale);
  
    if (GetLayerManager()->AsKnowsCompositor() && mCompositorSession) {
@@ -557,7 +542,7 @@ index 50e6354ea374..ceabbf583a42 100644
      // We need to paint to the screen even if nothing changed, since if we
      // don't have a compositing window manager, our pixels could be stale.
      GetLayerManager()->SetNeedsComposite(true);
-@@ -6405,6 +6410,17 @@ bool nsWindow::WaylandSurfaceNeedsClear() {
+@@ -6599,6 +6604,17 @@ bool nsWindow::WaylandSurfaceNeedsClear() {
        "nsWindow::WaylandSurfaceNeedsClear(): We don't have any mContainer!");
    return false;
  }
@@ -579,7 +564,7 @@ diff --git widget/gtk/nsWindow.h widget/gtk/nsWindow.h
 index b528ebfdeccb..ea0be70d7eb2 100644
 --- widget/gtk/nsWindow.h
 +++ widget/gtk/nsWindow.h
-@@ -343,6 +343,7 @@ class nsWindow final : public nsBaseWidget {
+@@ -373,6 +373,7 @@ class nsWindow final : public nsBaseWidget {
    wl_display* GetWaylandDisplay();
    wl_surface* GetWaylandSurface();
    bool WaylandSurfaceNeedsClear();
