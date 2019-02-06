@@ -11,22 +11,19 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	BMP to HTML converter
 
-USE_SDL=	sdl
+LICENSE=	PD
 
-LDFLAGS+=	-L${LOCALBASE}/lib
-SDL_FLAGS=	-I${LOCALBASE}/include/SDL -I${LOCALBASE}/include
-EXTRA_LDFLAGS=	-lSDL -pthread
-DEFINES=	-D_REENTRANT
+USE_SDL=	sdl
 
 PLIST_FILES=	bin/bmp2html
 
-post-patch:
+post-extract:
 	@${RM} ${WRKSRC}/${PORTNAME}
 
 do-build:
-	${CC} ${CFLAGS} ${LDFLAGS} ${SDL_FLAGS} ${DEFINES} -c \
+	${CC} ${CFLAGS} `${SDL_CONFIG} --cflags` -c \
 		-o ${WRKSRC}/${PORTNAME}.o ${WRKSRC}/${PORTNAME}.c
-	${CC} ${CFLAGS} ${LDFLAGS} ${SDL_FLAGS} ${EXTRA_LDFLAGS} \
+	${CC} ${LDFLAGS} `${SDL_CONFIG} --libs` \
 		-o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.o
 
 do-install:
