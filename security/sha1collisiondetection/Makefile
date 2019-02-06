@@ -14,9 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BROKEN_aarch64=		fails to compile: generic selections are a C11-specific feature [-Werror,-Wc11-extensions]
 BROKEN_armv6=		fails to compile: generic selections are a C11-specific feature [-Werror,-Wc11-extensions]
 BROKEN_armv7=		fails to compile: generic selections are a C11-specific feature [-Werror,-Wc11-extensions]
-BROKEN_mips=		fails to compile: cc1: unrecognized command line option -std=c90
-BROKEN_mips64=		fails to compile: cc1: unrecognized command line option -std=c90
-BROKEN_powerpc64=	fails to compile: cc1: unrecognized command line option -std=c90
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cr-marcstevens
@@ -30,6 +27,10 @@ PLIST_FILES=	bin/sha1dcsum \
 		lib/libsha1detectcoll.so \
 		lib/libsha1detectcoll.so.0 \
 		lib/libsha1detectcoll.so.0.0.0
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/ -std=c90 / -std=c89 /' ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/sha1dcsum* ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/sha1dc
