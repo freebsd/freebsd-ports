@@ -10,6 +10,7 @@ MAINTAINER=	jt@ixsystems.com
 COMMENT=	Lumina Desktop Environment
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
 RUN_DEPENDS=	fluxbox>=0:x11-wm/fluxbox \
 		xscreensaver>=0:x11/xscreensaver \
