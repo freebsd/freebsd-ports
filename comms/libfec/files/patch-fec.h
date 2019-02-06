@@ -1,6 +1,6 @@
 --- fec.h.orig	2006-10-13 01:10:53 UTC
 +++ fec.h
-@@ -262,7 +262,7 @@ extern enum cpu_mode {UNKNOWN=0,PORT,MMX
+@@ -262,7 +262,7 @@ extern enum cpu_mode {UNKNOWN=0,PORT,MMX,SSE,SSE2,ALTI
  void find_cpu_mode(void); /* Call this once at startup to set Cpu_mode */
  
  /* Determine parity of argument: 1 = odd, 0 = even */
