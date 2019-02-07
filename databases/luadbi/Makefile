@@ -48,7 +48,7 @@ MYSQL_PLIST_FILES=	%%LUA_MODLIBDIR%%/dbd/mysql.so
 MYSQL_MAKE_ENV+=	MYSQL_LDFLAGS="-L${LOCALBASE}/lib/mysql -lmysqlclient"
 MYSQL_MAKE_ENV+=	MYSQL_INC="-I${LOCALBASE}/include/mysql"
 
-SQLITE3_USES=		sqlite:3
+SQLITE3_USES=		localbase:ldflags sqlite:3
 SQLITE3_ALL_TARGET=	sqlite3
 SQLITE3_PLIST_FILES=	%%LUA_MODLIBDIR%%/dbd/sqlite3.so
 SQLITE3_MAKE_ENV+=	SQLITE3_INC=""
