@@ -12,10 +12,10 @@ include/nextcloudsync/mirall/syncfileitem.h
 include/nextcloudsync/mirall/syncresult.h
 lib/libnextcloudsync.so
 lib/libnextcloudsync.so.0
-lib/libnextcloudsync.so.2.5.1
+lib/libnextcloudsync.so.2.5.2
 lib/nextcloud/libocsync.so
 lib/nextcloud/libocsync.so.0
-lib/nextcloud/libocsync.so.2.5.1
+lib/nextcloud/libocsync.so.2.5.2
 share/applications/nextcloud.desktop
 share/caja-python/extensions/syncstate-Nextcloud.py
 share/icons/hicolor/1024x1024/apps/Nextcloud.png
@@ -93,6 +93,7 @@ share/nextcloud/i18n/client_de.qm
 share/nextcloud/i18n/client_el.qm
 share/nextcloud/i18n/client_en.qm
 share/nextcloud/i18n/client_en_GB.qm
+share/nextcloud/i18n/client_eo.qm
 share/nextcloud/i18n/client_es.qm
 share/nextcloud/i18n/client_es_AR.qm
 share/nextcloud/i18n/client_es_CL.qm
