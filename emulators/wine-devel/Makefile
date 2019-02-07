@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	4.0
+DISTVERSION=	4.1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
-		http://mirrors.ibiblio.org/wine/source/4.0/
+		http://mirrors.ibiblio.org/wine/source/4.x/
 PKGNAMESUFFIX?=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -147,6 +147,8 @@ PLIST_SUB+=		WINE32="" WINE64="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSTAGING}
+BROKEN=		build regressions around GNUTLS integration
+
 MASTER_SITES+=	https://github.com/wine-staging/wine-staging/archive/:cho
 COMP_DIST=	v${DISTVERSION}.tar.gz
 DISTFILES+=	${COMP_DIST}:cho

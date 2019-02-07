@@ -2468,6 +2468,7 @@ lib/wine/libfaultrep.def
 lib/wine/libgdi32.def
 lib/wine/libgdiplus.def
 lib/wine/libglu32.def
+lib/wine/libhal.def
 lib/wine/libhid.def
 lib/wine/libhidclass.def
 lib/wine/libhlink.def
@@ -2486,6 +2487,7 @@ lib/wine/liblz32.def
 lib/wine/libmapi32.def
 lib/wine/libmf.def
 lib/wine/libmfplat.def
+lib/wine/libmfreadwrite.def
 lib/wine/libmfuuid.a
 lib/wine/libmlang.def
 lib/wine/libmpr.def
