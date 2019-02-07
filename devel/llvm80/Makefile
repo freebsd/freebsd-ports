@@ -62,11 +62,21 @@ CXXFLAGS+=	-DNDEBUG
 OPTIONS_DEFINE=	CLANG DOCS EXTRAS LIT LLD LLDB
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
-OPTIONS_DEFAULT=	CLANG EXTRAS LIT LLD LLDB
+OPTIONS_DEFAULT=	BE_STANDARD CLANG EXTRAS LIT LLD LLDB
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
+OPTIONS_SINGLE=		BACKENDS
+OPTIONS_SINGLE_BACKENDS=BE_FREEBSD BE_NATIVE BE_STANDARD
 OPTIONS_SUB=	yes
 
+BE_FREEBSD_DESC=	Backends for FreeBSD architectures
+BE_FREEBSD_CMAKE_ON=	-DLLVM_TARGETS_TO_BUILD="${FREEBSD_BACKENDS:ts;}"
+BE_NATIVE_DESC=		Backend(s) for this architecture (${NATIVE_BACKENDS})
+BE_NATIVE_CMAKE_ON=	-DLLVM_TARGETS_TO_BUILD="${NATIVE_BACKENDS:ts;}"
+BE_STANDARD_DESC=	All non-experimental backends
+.for BE in FREEBSD NATIVE STANDARD
+BE_${BE}_PLIST_FILES=	${_BE_LIBS_${BE}:O:S/$/.a/:S|^|${LLVM_PREFIX:S|${PREFIX}/||}/lib/libLLVM|}
+.endfor
 CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES=	${PATCHDIR}/clang
 CLANG_DISTFILES=	cfe-${DISTVERSION}.src${EXTRACT_SUFX}
@@ -299,6 +309,48 @@ MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		opt.1 tblgen.1
 
 .include <bsd.port.pre.mk>
+
+FREEBSD_BACKENDS=	AArch64 ARM Mips PowerPC Sparc X86
+.if ${ARCH} == amd64
+NATIVE_BACKENDS=	X86
+.elif ${ARCH} == arm64
+NATIVE_BACKENDS=	AAarch64
+.elif ${ARCH} == arm
+NATIVE_BACKENDS=	ARM
+.elif ${ARCH} == i386
+NATIVE_BACKENDS=	X86
+.elif ${ARCH} == mips
+NATIVE_BACKENDS=	Mips
+.elfi ${ARCH} == powerpc
+NATIVE_BACKENDS=	PowerPC
+.elfi ${ARCH} == riscv
+BROKEN_riscv=	No non-experimental native backend
+.endif
+STANDARD_BACKENDS=	${FREEBSD_BACKENDS} AMDGPU BPF Hexagon Lanai MSP430 \
+			NVPTX SystemZ WebAssembly XCore
+_BE_LIBS_COMMON=	CodeGen Desc Info
+_BE_LIBS_AArch64=	AsmParser AsmPrinter Disassembler Utils
+_BE_LIBS_AMDGPU=	AsmParser AsmPrinter Disassembler Utils
+_BE_LIBS_ARM=		AsmParser AsmPrinter Disassembler Utils
+_BE_LIBS_BPF=		AsmParser AsmPrinter Disassembler 
+_BE_LIBS_Hexagon=	AsmParser Disassembler
+_BE_LIBS_Lanai=		AsmParser AsmPrinter Disassembler
+_BE_LIBS_MSP430=	AsmParser AsmPrinter Disassembler
+_BE_LIBS_Mips=		AsmParser AsmPrinter Disassembler
+_BE_LIBS_NVPTX=		AsmPrinter
+_BE_LIBS_PowerPC=	AsmParser AsmPrinter Disassembler
+_BE_LIBS_Sparc=		AsmParser AsmPrinter Disassembler
+_BE_LIBS_SystemZ=	AsmParser AsmPrinter Disassembler
+_BE_LIBS_WebAssembly=	AsmParser AsmPrinter Disassembler
+_BE_LIBS_X86=		AsmParser AsmPrinter Disassembler Utils
+_BE_LIBS_XCore=		AsmPrinter Disassembler
+.for BE in FREEBSD NATIVE STANDARD
+.for BE_ARCH in ${${BE}_BACKENDS}
+_BE_LIBS_${BE}+=	${_BE_LIBS_COMMON:S/^/${BE_ARCH}/} \
+			${_BE_LIBS_${BE_ARCH}:S/^/${BE_ARCH}/}
+.endfor
+.endfor
+BE_PATTERN=${_BE_LIBS_STANDARD:O:S/$/.a/:ts|}
 
 # Use lld for armv6 on clang 7 and up to avoid binutils ld issues
 # PR: 235282
@@ -544,13 +596,15 @@ build-plist:
 	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
 	    -e 's|${LLVM_SUFFIX:C/\./\\./g}|%%LLVM_SUFFIX%%|' \
-	    -e 's|${LLVM_MAJOR}|%%LLVM_MAJOR%%|' \
+	    -e 's|\([^0-9]\)${LLVM_MAJOR}$$|\1%%LLVM_MAJOR%%|' \
+	    -e 's|\([^0-9]\)${LLVM_MAJOR}\([^0-9]\)|\1%%LLVM_MAJOR%%\2|' \
 	    | ${SORT} >> ${PLIST}.tmp
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
 	    -e 's|${LLVM_SUFFIX:C/\./\\./g}|%%LLVM_SUFFIX%%|' \
-	    -e 's|${LLVM_MAJOR}|%%LLVM_MAJOR%%|' \
+	    -e 's|\([^0-9]\)${LLVM_MAJOR}$$|\1%%LLVM_MAJOR%%|' \
+	    -e 's|\([^0-9]\)${LLVM_MAJOR}\([^0-9]\)|\1%%LLVM_MAJOR%%\2|' \
 	    | ${SORT} >> ${PLIST}.tmp
 	${AWK} '{ \
 	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(omp.h|ompt.h|${EXTRAS_PATTERN}|libclang_rt)/) {printf "%%%%CLANG%%%%"} \
@@ -562,7 +616,7 @@ build-plist:
 	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
 	    if ($$0 ~ /(lib.*omp|omp.h|ompt.h)/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /(LLVMgold)/) {printf "%%%%GOLD%%%%"} \
-	    if ($$0 !~ /(libclang_rt)/) {print}}' ${PLIST}.tmp >> ${PLIST}
+	    if ($$0 !~ /(libclang_rt)/ && $$0 !~ /(${BE_PATTERN})$$/) {print}}' ${PLIST}.tmp >> ${PLIST}
 	${ECHO_CMD} '@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
 	${ECHO_CMD} '@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
 	${RM} ${PLIST}.tmp
