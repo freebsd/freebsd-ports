@@ -11588,3 +11588,5 @@ net-mgmt/icli||2019-02-04|Removed, depends on expired net-mgmt/icinga-core
 net-mgmt/icinga-classicweb||2019-02-04|Has expired: Upstream EOLed Icinga 1.x from 2018-12-31
 net-mgmt/pnp-icinga||2019-02-04|Removed, depends on expired net-mgmt/icinga-classicweb
 sysutils/atf-allwinner|devel/atf-sun50i_a64|2019-02-05|Respect the ARM TF-A platform name
+sysutils/yum||2019-02-07|Has expired: Abandoned upstream, does not work with python3
+sysutils/createrepo||2019-02-07|Has expired: Abandoned upstream, does not work with python3
