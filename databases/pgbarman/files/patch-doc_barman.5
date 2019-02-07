@@ -1,12 +1,12 @@
---- doc/barman.5.orig	2016-09-26 15:32:17 UTC
+--- doc/barman.5.orig	2019-01-31 16:56:08 UTC
 +++ doc/barman.5
-@@ -17,7 +17,7 @@ The system\-level Barman configuration f
+@@ -17,7 +17,7 @@ The system\-level Barman configuration file is located
  .IP
  .nf
  \f[C]
 -/etc/barman.conf
 +%%PREFIX%%/etc/barman.conf
- \f[]
+ \f[R]
  .fi
  .PP
 @@ -25,7 +25,7 @@ or
@@ -15,44 +15,44 @@
  \f[C]
 -/etc/barman/barman.conf
 +%%PREFIX%%/etc/barman/barman.conf
- \f[]
+ \f[R]
  .fi
  .PP
 @@ -51,9 +51,9 @@ configurations.
- If the value of \f[C]configuration_files_directory\f[] is a directory,
- Barman reads all files with \f[C]\&.conf\f[] extension that exist in
- that folder.
--For example, if you set it to \f[C]/etc/barman.d\f[], you can specify
-+For example, if you set it to \f[C]%%PREFIX%%/etc/barman.d\f[], you can specify
+ If the value of \f[C]configuration_files_directory\f[R] is a directory,
+ Barman reads all files with \f[C].conf\f[R] extension that exist in that
+ folder.
+-For example, if you set it to \f[C]/etc/barman.d\f[R], you can specify
++For example, if you set it to \f[C]%%PREFIX%%/etc/barman.d\f[R], you can specify
  your PostgreSQL servers placing each section in a separate
--\f[C]\&.conf\f[] file inside the \f[C]/etc/barman.d\f[] folder.
-+\f[C]\&.conf\f[] file inside the \f[C]%%PREFIX%%/etc/barman.d\f[] folder.
+-\f[C].conf\f[R] file inside the \f[C]/etc/barman.d\f[R] folder.
++\f[C].conf\f[R] file inside the \f[C]%%PREFIX%%/etc/barman.d\f[R] folder.
  .SH OPTIONS
  .TP
  .B active
-@@ -608,7 +608,7 @@ Here is an example of configuration file
+@@ -625,7 +625,7 @@ Here is an example of configuration file:
  \f[C]
  [barman]
- ;\ Main\ directory
--barman_home\ =\ /var/lib/barman
-+barman_home\ =\ /var/barman
+ ; Main directory
+-barman_home = /var/lib/barman
++barman_home = /var/barman
  
- ;\ System\ user
- barman_user\ =\ barman
-@@ -628,13 +628,13 @@ reuse_backup\ =\ link
- description\ =\ \ "Main\ PostgreSQL\ Database"
+ ; System user
+ barman_user = barman
+@@ -645,13 +645,13 @@ reuse_backup = link
+ description =  \[dq]Main PostgreSQL Database\[dq]
  
- ;\ SSH\ options
--ssh_command\ =\ ssh\ postgres\@pg
-+ssh_command\ =\ ssh\ %%PGUSER%%\@pg
+ ; SSH options
+-ssh_command = ssh postgres\[at]pg
++ssh_command = ssh %%PGUSER%%\[at]pg
  
- ;\ PostgreSQL\ connection\ string
--conninfo\ =\ host=pg\ user=postgres
-+conninfo\ =\ host=pg\ user=%%PGUSER%%\ db=postgres
+ ; PostgreSQL connection string
+-conninfo = host=pg user=postgres
++conninfo = host=pg user=%%PGUSER%%
  
- ;\ PostgreSQL\ streaming\ connection\ string
--streaming_conninfo\ =\ host=pg\ user=postgres
-+streaming_conninfo\ =\ host=pg\ user=%%PGUSER%%
+ ; PostgreSQL streaming connection string
+-streaming_conninfo = host=pg user=postgres
++streaming_conninfo = host=pg user=%%PGUSER%%
  
- ;\ Minimum\ number\ of\ required\ backups\ (redundancy)
- minimum_redundancy\ =\ 1
+ ; Minimum number of required backups (redundancy)
+ minimum_redundancy = 1
