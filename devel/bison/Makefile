@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bison
-PORTVERSION=	3.2.2
+PORTVERSION=	3.3.2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
@@ -22,7 +22,7 @@ OPTIONS_SUB=	yes
 USES=		charsetfix localbase makeinfo perl5 tar:xz
 USE_PERL5=	build
 
-CONFIGURE_ARGS=	--disable-yacc
+CONFIGURE_ARGS=	--disable-yacc --enable-relocatable
 .ifdef QEMU_EMULATING
 # XXX bug 224740: configure hangs
 CONFIGURE_ENV=	gl_cv_func_printf_enomem=no
@@ -38,6 +38,6 @@ NLS_USES=		gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(docdir)\(/examples\)|$$(datarootdir)\1/bison|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|\(.*\) _Noreturn void|_Noreturn \1 void|' ${WRKSRC}/data/*.c ${WRKSRC}/lib/*.[ch]
+	@${REINPLACE_CMD} -e 's|\(.*\) _Noreturn void|_Noreturn \1 void|' ${WRKSRC}/data/skeletons/*.c ${WRKSRC}/lib/*.[ch]
 
 .include <bsd.port.mk>
