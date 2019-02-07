@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gollum-lib
-PORTVERSION=	4.2.7
-PORTREVISION=	2
+PORTVERSION=	4.2.10
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,11 +13,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-gemojione>=3.2:graphics/rubygem-gemojione \
-		rubygem-gollum-grit_adapter>=1.0:www/rubygem-gollum-grit_adapter \
+		rubygem-gollum-grit_adapter10>=1.0:www/rubygem-gollum-grit_adapter10 \
 		rubygem-nokogiri>=1.6.1:textproc/rubygem-nokogiri \
 		rubygem-rouge2>=2.1:textproc/rubygem-rouge2 \
 		rubygem-sanitize>=2.1:textproc/rubygem-sanitize \
-		rubygem-stringex>=2.6:devel/rubygem-stringex
+		rubygem-stringex>=2.6:devel/rubygem-stringex \
+		rubygem-twitter-text1=1.14.7:textproc/rubygem-twitter-text1
+
+USES=		gem
 
 OPTIONS_RADIO=	MARKUP
 OPTIONS_RADIO_MARKUP=	GITHUB GITLAB
@@ -31,9 +33,9 @@ GITLAB_DESC=	Use rubygem-gitlab-markup instead
 GITHUB_RUN_DEPENDS=	rubygem-github-markup>=1.6:textproc/rubygem-github-markup
 GITLAB_RUN_DEPENDS=	rubygem-gitlab-markup>=1.5:textproc/rubygem-gitlab-markup
 
-NO_ARCH=	yes
-USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 post-patch-GITLAB-on:
 # change runtime dependency from "github-markup >= 1.6" to "gitlab-markup ~> 1.5"
