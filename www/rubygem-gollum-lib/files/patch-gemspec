@@ -1,18 +1,13 @@
---- gollum-lib.gemspec.orig	2018-01-31 14:46:13 UTC
+--- gollum-lib.gemspec.orig	2019-02-07 15:46:07 UTC
 +++ gollum-lib.gemspec
-@@ -25,12 +25,12 @@ Gem::Specification.new do |s|
-     s.specification_version = 2
- 
-     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<gollum-grit_adapter>.freeze, ["~> 1.0"])
-+      s.add_runtime_dependency(%q<gollum-grit_adapter>.freeze, [">= 1.0"])
+@@ -29,8 +29,8 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<rouge>.freeze, ["~> 2.1"])
        s.add_runtime_dependency(%q<nokogiri>.freeze, [">= 1.6.1", "< 2.0"])
        s.add_runtime_dependency(%q<stringex>.freeze, ["~> 2.6"])
--      s.add_runtime_dependency(%q<sanitize>.freeze, ["~> 2.1"])
+-      s.add_runtime_dependency(%q<sanitize>.freeze, ["~> 2.1.1", ">= 2.1.1"])
 -      s.add_runtime_dependency(%q<github-markup>.freeze, ["~> 1.6"])
-+      s.add_runtime_dependency(%q<sanitize>.freeze, [">= 2.1"])
++      s.add_runtime_dependency(%q<sanitize>.freeze, [">= 2.1.1"])
 +      s.add_runtime_dependency(%q<github-markup>.freeze, [">= 1.6"])
        s.add_runtime_dependency(%q<gemojione>.freeze, ["~> 3.2"])
+       s.add_runtime_dependency(%q<twitter-text>.freeze, ["= 1.14.7"])
        s.add_development_dependency(%q<org-ruby>.freeze, ["~> 0.9.9"])
-       s.add_development_dependency(%q<kramdown>.freeze, ["~> 1.6.0"])
