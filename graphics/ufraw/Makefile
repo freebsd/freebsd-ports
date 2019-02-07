@@ -3,7 +3,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.22
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-extras
-USES=		compiler:c++11-lang gettext gmake jpeg pkgconfig autoreconf
+USES=		compiler:c++11-lang gettext gmake jpeg pkgconfig autoreconf gnome
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
@@ -58,6 +58,13 @@ GTK2_CONFIGURE_WITH=	gtk
 GNOME_USE=		GNOME=gconf2
 GNOME_CONFIGURE_ENABLE=	mime
 GNOME_VARS=		CATEGORIES+=gnome GCONF_SCHEMAS=${PORTNAME}.schemas
+
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MGTK2}
+PLIST_SUB+=	NOGTK2=""
+.else
+PLIST_SUB+=	NOGTK2="@comment "
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ufraw.desktop ${STAGEDIR}${DESKTOPDIR}
