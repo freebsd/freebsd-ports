@@ -3,7 +3,7 @@ Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
 Last-Update: 2010-12-18
 
---- lib/url.c.orig	2018-10-30 06:47:16 UTC
+--- lib/url.c.orig	2019-02-05 14:00:12 UTC
 +++ lib/url.c
 @@ -536,6 +536,10 @@ CURLcode Curl_init_userdefined(struct Cu
    set->fnmatch = ZERO_NULL;
@@ -13,6 +13,6 @@ Last-Update: 2010-12-18
 +  /* different handling of signals and threads */
 +  set->no_signal = TRUE;
 +#endif
+   set->http09_allowed = TRUE;
    set->httpversion =
  #ifdef USE_NGHTTP2
-     CURL_HTTP_VERSION_2TLS
