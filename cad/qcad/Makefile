@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qcad
-PORTVERSION=	3.21.3.11
+PORTVERSION=	3.21.3.15
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
-#PORTREVISION=	1
 CATEGORIES=	cad
 DIST_SUBDIR=	${PORTNAME}
 
@@ -50,6 +49,13 @@ QSCRIPTS=	bbox dwg2bmp dwg2pdf dwg2svg
 
 OPTIONS_DEFINE=	EXAMPLES
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CFLAGS_${ARCH}= -fPIC
+CXXFLAGS_${ARCH}= -fPIC
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
 		${WRKSRC}/src/core/RS.cpp
@@ -73,4 +79,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
