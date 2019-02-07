@@ -3,13 +3,12 @@
 
 PORTNAME=	pioneer
 DISTVERSION=	0.0.${GH_TAGNAME}
-PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	lightside@gmx.com
 COMMENT=	Space adventure game set in the Milky Way galaxy
 
-LICENSE=	APACHE20 GPLv3 MIT ZLIB CC-BY-SA-3.0 DejaVu GLEW IUP SIL
+LICENSE=	APACHE20 GPLv3 MIT ZLIB CC-BY-SA-3.0 DejaVu IUP SIL
 LICENSE_COMB=	multi
 LICENSE_NAME_DejaVu=	Bitstream Vera and Arev fonts license
 LICENSE_NAME_GLEW=	The OpenGL Extension Wrangler Library license
@@ -34,10 +33,10 @@ LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libpng.so:graphics/png \
 		libassimp.so:multimedia/assimp
 
-USES=		autoreconf compiler:c++11-lib gmake pkgconfig
+USES=		autoreconf compiler:c++11-lib gl gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	pioneerspacesim
-GH_TAGNAME=	20180203
+GH_TAGNAME=	20190203
 USE_GL=		gl
 USE_SDL=	image2 sdl2
 
@@ -58,18 +57,27 @@ DESKTOP_ENTRIES="Pioneer" "${COMMENT}" \
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		DOCS MODELCOMPILER NOGPUJOBS PROFILER SERVERAGENT
-OPTIONS_DEFAULT=	MODELCOMPILER
-DOCS_SUB_LIST=		QUICKSTART_PATH="${DOCSDIR}"
-DOCS_SUB_LIST_OFF=	QUICKSTART_PATH="https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${GH_TAGNAME}"
+OPTIONS_DEFINE=		DOCS EXTRA_WARNINGS EXTERNAL_GLEW EXTERNAL_LUA \
+		MODELCOMPILER NOGPUJOBS PROFILER
+OPTIONS_DEFAULT=	EXTERNAL_GLEW EXTERNAL_LUA MODELCOMPILER
+
+EXTERNAL_GLEW_DESC=	Use external libglew from graphics/glew
+EXTERNAL_LUA_DESC=	Use external liblua from lang/lua52
+EXTRA_WARNINGS_DESC=	Enable extra compiler warnings
 MODELCOMPILER_DESC=	Build/install modelcompiler tool
-MODELCOMPILER_PLIST_FILES=	bin/${PORTNAME}-modelcompiler
 NOGPUJOBS_DESC=		Disable EnableGPUJobs for config.ini by default
 PROFILER_DESC=		Build with internal profiler
+
+DOCS_SUB_LIST=		QUICKSTART_PATH="${DOCSDIR}"
+DOCS_SUB_LIST_OFF=	QUICKSTART_PATH="https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${GH_TAGNAME}"
+EXTERNAL_GLEW_CONFIGURE_WITH=	external-libglew
+EXTERNAL_GLEW_VARS_OFF=	LICENSE+=GLEW
+EXTERNAL_GLEW_USE=	GL=glew,glu
+EXTERNAL_LUA_CONFIGURE_WITH=	external-liblua
+EXTERNAL_LUA_USES=	lua:52
+EXTRA_WARNINGS_CONFIGURE_WITH=	extra-warnings
+MODELCOMPILER_PLIST_FILES=	bin/${PORTNAME}-modelcompiler
 PROFILER_CONFIGURE_ON=	--enable-profiler
-SERVERAGENT_DESC=	Build with server agent
-SERVERAGENT_CONFIGURE_WITH=	server-agent
-SERVERAGENT_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 .include <bsd.port.pre.mk>
 
@@ -79,7 +87,7 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 post-patch: .SILENT
-	${REINPLACE_CMD} -e '/^OPTIMISE=/d' \
+	${REINPLACE_CMD} -e '/^OPTIMISE=/d ; s|lua5\.2|lua-5.2|' \
 		${WRKSRC}/configure.ac
 
 post-patch-MODELCOMPILER-off: .SILENT
@@ -100,6 +108,9 @@ post-patch-PROFILER-off: .SILENT
 		${WRKSRC}/src/Makefile.am
 	${REINPLACE_CMD} -i '.p.bak' -e '/contrib\/profiler/d' \
 		${WRKSRC}/configure.ac
+
+post-configure:
+	${CP} ${FILESDIR}/buildopts.h ${WRKSRC}/src
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/application-icon/pngs/pioneer-256x256.png \
