@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	commit-patch
-PORTVERSION=	2.5.2
+PORTVERSION=	2.6
 CATEGORIES=	devel
 
 MAINTAINER=	lapo@lapo.it
@@ -21,6 +21,7 @@ SHEBANG_FILES=	commit-patch
 
 GH_ACCOUNT=	caldwell
 
+NO_ARCH=	yes
 PLIST_FILES=	bin/commit-partial bin/commit-patch \
 		share/emacs/site-lisp/commit-patch-buffer.el \
 		man/man1/commit-partial.1.gz man/man1/commit-patch.1.gz
