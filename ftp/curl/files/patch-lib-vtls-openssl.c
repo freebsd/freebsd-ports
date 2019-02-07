@@ -1,6 +1,6 @@
---- lib/vtls/openssl.c.orig	2018-10-27 13:34:01 UTC
+--- lib/vtls/openssl.c.orig	2019-02-05 14:00:12 UTC
 +++ lib/vtls/openssl.c
-@@ -3715,7 +3715,11 @@ static size_t Curl_ossl_version(char *bu
+@@ -3785,7 +3785,11 @@ static size_t Curl_ossl_version(char *bu
    unsigned long ssleay_value;
    sub[2]='\0';
    sub[1]='\0';
