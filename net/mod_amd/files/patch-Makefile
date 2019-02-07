@@ -1,0 +1,35 @@
+--- Makefile.orig	2015-10-26 15:12:15 UTC
++++ Makefile
+@@ -1,20 +1,19 @@
+ MODNAME = mod_amd.so
+ MODOBJ = mod_amd.o
+-MODCFLAGS = -Wall -Werror
++MODCFLAGS = -Wall
+ # MODLDFLAGS = -lssl
+ 
+-CC = gcc
+-CFLAGS = -fPIC -g -ggdb `pkg-config --cflags freeswitch` $(MODCFLAGS)
++CFLAGS += -fPIC `pkg-config --cflags freeswitch` $(MODCFLAGS)
+ LDFLAGS = `pkg-config --libs freeswitch` $(MODLDFLAGS)
+ 
+ .PHONY: all
+ all: $(MODNAME)
+ 
+ $(MODNAME): $(MODOBJ)
+-	@$(CC) -shared -o $@ $(MODOBJ) $(LDFLAGS)
++	$(CC) -shared -o $@ $(MODOBJ) $(LDFLAGS)
+ 
+ .c.o: $<
+-	@$(CC) $(CFLAGS) -o $@ -c $<
++	$(CC) $(CFLAGS) -o $@ -c $<
+ 
+ .PHONY: clean
+ clean:
+@@ -22,5 +21,5 @@ clean:
+ 
+ .PHONY: install
+ install: $(MODNAME)
+-	install -d $(DESTDIR)/usr/lib/freeswitch/mod
+-	install $(MODNAME) $(DESTDIR)/usr/lib/freeswitch/mod
++	install -d $(prefix)/lib/freeswitch/mod
++	install $(MODNAME) $(prefix)/lib/freeswitch/mod

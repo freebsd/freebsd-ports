@@ -470,6 +470,7 @@
     SUBDIR += miruo
     SUBDIR += mlvpn
     SUBDIR += mobile-broadband-provider-info
+    SUBDIR += mod_amd
     SUBDIR += mono-zeroconf
     SUBDIR += mopd
     SUBDIR += morebalance
