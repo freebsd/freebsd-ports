@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190204
+PORTVERSION=	s20190206
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	27427d0
+GH_TAGNAME=	3d53899
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.6.9 \
@@ -27,12 +27,11 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		backtrace-0.3.13 \
 		backtrace-sys-0.1.28 \
 		bindgen-0.47.1 \
-		bitflags-0.4.0 \
 		bitflags-1.0.4 \
 		bitstream-io-0.8.2 \
 		byteorder-1.3.1 \
 		cast-0.2.2 \
-		cc-1.0.28 \
+		cc-1.0.29 \
 		cexpr-0.3.4 \
 		cfg-if-0.1.6 \
 		clang-sys-0.26.4 \
@@ -49,17 +48,15 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		dav1d-sys-0.1.2 \
 		difference-2.0.0 \
 		either-1.5.0 \
-		encode_unicode-0.1.3 \
 		env_logger-0.6.0 \
 		error-chain-0.10.0 \
 		failure-0.1.5 \
-		fuchsia-cprng-0.1.0 \
+		fuchsia-cprng-0.1.1 \
 		glob-0.2.11 \
 		hashbrown-0.1.8 \
 		humantime-1.2.0 \
 		itertools-0.8.0 \
 		itoa-0.4.3 \
-		kernel32-sys-0.2.2 \
 		lazy_static-1.2.0 \
 		libc-0.2.48 \
 		libloading-0.5.0 \
@@ -68,7 +65,6 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		memoffset-0.2.1 \
 		metadeps-1.1.2 \
 		nasm-rs-0.1.4 \
-		nix-0.5.1 \
 		nodrop-0.1.13 \
 		nom-4.2.0 \
 		num-traits-0.2.6 \
@@ -92,12 +88,14 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.51 \
 		redox_termios-0.1.1 \
+		regex-0.2.11 \
 		regex-1.1.0 \
+		regex-syntax-0.5.6 \
 		regex-syntax-0.6.5 \
 		rustc-demangle-0.1.13 \
-		rustyline-1.0.0 \
 		ryu-0.2.7 \
 		same-file-1.0.4 \
+		scan_fmt-0.1.3 \
 		scopeguard-0.3.3 \
 		serde-1.0.87 \
 		serde_derive-1.0.87 \
@@ -118,9 +116,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		version_check-0.1.5 \
 		walkdir-2.2.7 \
 		which-2.0.1 \
-		winapi-0.2.8 \
 		winapi-0.3.6 \
-		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
