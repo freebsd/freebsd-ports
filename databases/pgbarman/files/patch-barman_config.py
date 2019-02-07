@@ -1,6 +1,6 @@
---- barman/config.py.orig	2016-09-23 12:56:55 UTC
+--- barman/config.py.orig	2019-01-31 16:56:08 UTC
 +++ barman/config.py
-@@ -520,8 +520,8 @@ class Config(object):
+@@ -566,8 +566,8 @@ class Config(object):
      """
      CONFIG_FILES = [
          '~/.barman.conf',
