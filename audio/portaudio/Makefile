@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--without-alsa
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES JACK PATEST SNDIO
 OPTIONS_SUB=	yes
 
