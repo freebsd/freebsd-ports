@@ -5,7 +5,7 @@
  		/* Initialize stats-client early so it can see all events. */
  		value = getenv(DOVECOT_STATS_WRITER_SOCKET_PATH);
 -		if (value != NULL)
-+		if (value != NULL && *value = '\0')
++		if (value != NULL && *value != '\0')
  			service->stats_client = stats_client_init(value, FALSE);
  	}
  
