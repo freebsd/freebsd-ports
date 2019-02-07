@@ -8,6 +8,7 @@
     SUBDIR += afterstep-stable
     SUBDIR += amiwm
     SUBDIR += antiwm
+    SUBDIR += aphelia
     SUBDIR += awesome
     SUBDIR += awesome-vicious
     SUBDIR += bbkeys
