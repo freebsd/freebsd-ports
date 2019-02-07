@@ -1,0 +1,8 @@
+A light, single-file, minimalist window manager for X11.
+
+This window manager is single-file and a super small binary with low
+resource consumption. Personally, I find it's useful for focused work
+where you aren't moving around too much and don't need multiple
+workspaces (it doesn't support them, obviously).
+
+WWW: https://github.com/vardy/aphelia
