@@ -1,0 +1,13 @@
+The purpose of this project is to provide a simple and reliable ffmpeg wrapper
+for working with video files. It takes care of producing platform-specific
+wheels that include the binary executables of ffmpeg. These can then be
+installed (and updated or uninstalled) easily with pip.
+
+It also provides simple generator functions for reading and writing data from/to
+ffmpeg, which reliably terminate the ffmpeg process when done.
+
+This library is used as the basis for the imageio ffmpeg plugin, but it can also
+be used by itself. Imageio provides a friendlier (higher level) API, and adds
+support for e.g. cameras and seeking.
+
+WWW: https://github.com/imageio/imageio-ffmpeg
