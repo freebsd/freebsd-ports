@@ -1,5 +1,5 @@
-TIMESTAMP = 1540632209
-SHA256 (2ndQuadrant-pglogical-2.2.1-REL2_2_0_GH0.tar.gz) = 47c5091f18194899abea70b902bbbd38f7ac18192cf618b90faa618f013d8d4b
-SIZE (2ndQuadrant-pglogical-2.2.1-REL2_2_0_GH0.tar.gz) = 251121
+TIMESTAMP = 1549492242
+SHA256 (2ndQuadrant-pglogical-REL2_2_1_GH0.tar.gz) = f5fdb7ce1655ee305b7cfed4d491c4130dcc222ce65895da5488b2c999d2a41d
+SIZE (2ndQuadrant-pglogical-REL2_2_1_GH0.tar.gz) = 259469
 SHA256 (2ndQuadrant-pglogical_dump-f66606d_GH0.tar.gz) = 09666d5927fe071c9a2ef64eb7028f793cfea10510a3d17e8ef4335349291e63
 SIZE (2ndQuadrant-pglogical_dump-f66606d_GH0.tar.gz) = 206722
