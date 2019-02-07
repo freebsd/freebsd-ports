@@ -1,13 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	spleen
-DISTVERSION=	1.0.3
-PORTREVISION=	1
+DISTVERSION=	1.0.4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/fcambus/spleen/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-font
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Monospaced bitmap fonts for Xorg and vt(4)
@@ -35,12 +32,8 @@ X11_DESC=		Install Xorg bitmap fonts
 # doesn't have this problem.
 VT_BUILD_DEPENDS=	vtfontcvt-ng:x11-fonts/vtfontcvt-ng
 
-X11_BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 X11_USES=		fonts
 X11_USES_OFF=		fonts:none
-
-post-patch:
-	@${REINPLACE_CMD} -E 's/^FONT "(.*)"$$/FONT \1/g' ${WRKSRC}/*.bdf
 
 do-build:
 	@${DO_NADA}
@@ -51,9 +44,6 @@ do-build-VT-on:
 .endfor
 
 do-build-X11-on:
-.for sz in 5x8 8x16 12x24 16x32 32x64
-	bdftopcf -t -o ${WRKSRC}/spleen-${sz}.pcf ${WRKSRC}/spleen-${sz}.bdf
-.endfor
 	${GZIP_CMD} ${WRKSRC}/*.pcf
 
 do-install:
