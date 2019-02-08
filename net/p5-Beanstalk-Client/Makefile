@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Perl API for beanstalkd, a distributed queue daemon
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-YAML-Syck>=0:textproc/p5-YAML-Syck \
 				p5-Class-Accessor>=0:devel/p5-Class-Accessor \
@@ -18,5 +21,6 @@ RUN_DEPENDS=	p5-YAML-Syck>=0:textproc/p5-YAML-Syck \
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
