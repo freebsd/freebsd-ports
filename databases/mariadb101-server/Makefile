@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.1.37
-PORTREVISION=	2
+PORTVERSION=	10.1.38
+PORTREVISION=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -21,9 +21,6 @@ LICENSE=	GPLv2
 LICENSE_NAME_PerconaFT=	PerconaFT patents license
 LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
 LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
-BROKEN_SSL=		openssl111
-BROKEN_SSL_REASON_openssl111=	Does not support OpenSSL 1.1, use MariaDB 10.2 or 10.3
 
 SUB_FILES=	pkg-message
 
@@ -193,9 +190,6 @@ IGNORE=		BASE_GSSAPI is not compatible with OpenSSL from ports. Use other GSSAPI
 
 .if ${OPSYS} == FreeBSD
 CMAKE_ARGS+=	-DWITH_JEMALLOC="system"
-. if ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
-BROKEN=	${BROKEN_SSL_REASON_openssl111}
-. endif
 .endif
 
 post-patch:
