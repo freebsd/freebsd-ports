@@ -321,9 +321,9 @@ NATIVE_BACKENDS=	ARM
 NATIVE_BACKENDS=	X86
 .elif ${ARCH} == mips
 NATIVE_BACKENDS=	Mips
-.elfi ${ARCH} == powerpc
+.elif ${ARCH:Mpowerpc*}
 NATIVE_BACKENDS=	PowerPC
-.elfi ${ARCH} == riscv
+.elif ${ARCH} == riscv
 BROKEN_riscv=	No non-experimental native backend
 .endif
 STANDARD_BACKENDS=	${FREEBSD_BACKENDS} AMDGPU BPF Hexagon Lanai MSP430 \
