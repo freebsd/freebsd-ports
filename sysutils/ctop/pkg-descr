@@ -1,0 +1,5 @@
+ctop provides a top-like overview of real-time metrics for multiple Docker
+containers as well as a single container view for inspecting a specific
+container.
+
+WWW: https://ctop.sh
