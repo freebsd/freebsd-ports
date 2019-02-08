@@ -101,3 +101,4 @@ share/locale/zh_CN/LC_MESSAGES/kcachegrind.mo
 share/locale/zh_CN/LC_MESSAGES/kcachegrind_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kcachegrind.mo
 share/locale/zh_TW/LC_MESSAGES/kcachegrind_qt.qm
+share/metainfo/org.kde.kcachegrind.appdata.xml
