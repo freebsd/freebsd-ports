@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	konsole:x11/konsole
 
-USES=		cmake gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	attica auth archive codecs completion config configwidgets \
 		coreaddons crash dbusaddons ecm globalaccel i18n iconthemes \
 		jobwidgets kio newstuff notifications notifyconfig parts \
