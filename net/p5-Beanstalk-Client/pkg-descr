@@ -1,4 +1,4 @@
 Beanstalk::Client provides a Perl API of protocol version 1.0 to the beanstalkd
 server, a fast, general-purpose, in-memory workqueue service by Keith Rarick.
 
-WWW: http://xph.us/software/beanstalkd/
+WWW: https://metacpan.org/release/Beanstalk-Client
