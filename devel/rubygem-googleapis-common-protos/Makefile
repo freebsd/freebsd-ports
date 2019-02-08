@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	googleapis-common-protos
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,9 @@ RUN_DEPENDS=	rubygem-google-protobuf>=3.0:devel/rubygem-google-protobuf \
 		rubygem-googleapis-common-protos-types>=1.0:devel/rubygem-googleapis-common-protos-types \
 		rubygem-grpc>=1.0:net/rubygem-grpc
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
