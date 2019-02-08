@@ -46,7 +46,7 @@ VM_ARCHS=	amd64 i386
 
 .include "${.CURDIR}/../quake3-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .for i in ${ARCH}
 .   if ${VM_ARCHS:M${i}} != ""
@@ -156,4 +156,4 @@ maint-gen-distfile:
 	tar cjf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}
 	${RM} -r ${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
