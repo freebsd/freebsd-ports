@@ -21,7 +21,7 @@
 #			as wheel.
 # nzbhydra2_dir:	Directory where nzbhydra lives.
 #			Default: %%PREFIX%%/share/nzbhydra2
-# nzbhydra2_datafolder:	Data directory for nzbhydra (DB, Logs, config)
+# nzbhydra2_data_dir:	Data directory for nzbhydra (DB, Logs, config)
 #			Default: %%PREFIX%%/nzbhydra2
 
 . /etc/rc.subr
@@ -35,14 +35,17 @@ load_rc_config ${name}
 : ${nzbhydra2_user:="nzbhydra2"}
 : ${nzbhydra2_group:="nzbhydra2"}
 : ${nzbhydra2_dir:="%%PREFIX%%/share/nzbhydra2"}
-: ${nzbhydra2_datafolder:="%%PREFIX%%/nzbhydra2"}
+: ${nzbhydra2_data_dir:="%%PREFIX%%/nzbhydra2"}
 
 pidfile="/var/run/nzbhydra2/nzbhydra2.pid"
 command="%%PYTHON_CMD%%"
-command_args="${nzbhydra2_dir}/nzbhydra2wrapper.py --datafolder ${nzbhydra2_datafolder} --pidfile ${pidfile} --daemon --nobrowser --java %%JAVA%%"
+command_args="${nzbhydra2_dir}/nzbhydra2wrapper.py --datafolder ${nzbhydra2_data_dir} --pidfile ${pidfile} --daemon --nobrowser --java %%JAVA%%"
+start_precmd=nzbhydra2_precmd
 
-start_precmd="prestart"
-prestart() {
+nzbhydra2_precmd() 
+{
+	export XDG_CONFIG_HOME=${nzbhydra2_data_dir}
+
 	if [ -f ${pidfile} ]; then
 		rm -f ${pidfile}
 		echo "Removing stale pidfile."
@@ -50,8 +53,8 @@ prestart() {
 		install -d -o ${nzbhydra2_user} -g ${nzbhydra2_group} ${pidfile%/*}
 	fi
 
-	if [ ! -d ${nzbhydra2_datadir} ]; then
-		install -d -o ${nzbhydra2_user} -g ${nzbhydra2_group} ${nzbhydra2_datadir}
+	if [ ! -d ${nzbhydra2_data_dir} ]; then
+		install -d -o ${nzbhydra2_user} -g ${nzbhydra2_group} ${nzbhydra2_data_dir}
 	fi
 }
 
