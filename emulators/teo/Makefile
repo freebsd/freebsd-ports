@@ -3,9 +3,9 @@
 
 PORTNAME=	teo
 PORTVERSION=	1.8.4
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	emulators
 MASTER_SITES=	SF/teoemulator/linux/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	nanard@free.fr
 COMMENT=	Thomson TO8 emulator
