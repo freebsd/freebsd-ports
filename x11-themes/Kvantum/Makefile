@@ -2,8 +2,7 @@
 
 PORTNAME=	Kvantum
 DISTVERSIONPREFIX=	V
-DISTVERSION=	0.10.8
-PORTREVISION=	1
+DISTVERSION=	0.10.9
 CATEGORIES=	x11-themes
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -21,7 +20,7 @@ qt5_PKGNAMESUFFIX=	-qt5
 qt4_PLIST=	pkg-plist.qt4
 qt5_PLIST=	pkg-plist.qt5
 
-USES=		compiler:c++11-lang qmake
+USES=		compiler:c++11-lang kde:5 qmake
 USE_XORG=	x11 xext
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
@@ -34,6 +33,7 @@ USES+=		qt:4
 USE_QT=		corelib gui svg rcc_build uic_build moc_build
 .elif ${FLAVOR} == qt5
 USES+=		qt:5
+USE_KDE=	windowsystem
 USE_QT=		core gui svg widgets x11extras buildtools_build \
 		linguisttools_build
 .endif
