@@ -1,0 +1,11 @@
+--- makefile.all.orig	2019-02-06 11:40:40 UTC
++++ makefile.all
+@@ -151,8 +151,6 @@ TEO_SRC_WIN_FILES =        \
+ 
+ # ------ compiler flags ------ 
+ 
+-CC = gcc
+-
+ WFLAGS = -Wall
+ 
+ ifdef PGCC
