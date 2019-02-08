@@ -3,18 +3,18 @@
 REDUCE is an interactive system for general algebraic computations of
 interest to mathematicians, scientists and engineers.
 
-CSL is a newer Lisp system that continues to evolve and is now written 
-completely in C++, which makes it very easy to port to a new machine. 
-Like PSL, it is a faithful implementation of Standard Lisp and has been 
-optimized for running REDUCE. It requires a very small memory partition 
-for its Lisp support. Furthermore, most of the REDUCE facilities are 
-supported as machine independent pseudocode, which is quite compact. In 
-the worst case, the performance of this system is about a factor of two 
-slower than PSL, though in many cases it matches PSL performance. 
-However, the memory use is smaller. All CSL versions are distributed with 
+CSL is a newer Lisp system that continues to evolve and is now written
+completely in C++, which makes it very easy to port to a new machine.
+Like PSL, it is a faithful implementation of Standard Lisp and has been
+optimized for running REDUCE. It requires a very small memory partition
+for its Lisp support. Furthermore, most of the REDUCE facilities are
+supported as machine independent pseudocode, which is quite compact. In
+the worst case, the performance of this system is about a factor of two
+slower than PSL, though in many cases it matches PSL performance.
+However, the memory use is smaller. All CSL versions are distributed with
 sufficient CSL support to run on the given computing system. This is also
-an ideal system for those wishing to embed algebraic calculations in a C 
-or C++ programming environment. The developer of CSL before it became 
+an ideal system for those wishing to embed algebraic calculations in a C
+or C++ programming environment. The developer of CSL before it became
 Open Source was Codemist Ltd.
 
 WWW: http://www.reduce-algebra.com/
