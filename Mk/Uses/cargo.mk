@@ -184,6 +184,8 @@ DEV_WARNING+=	"CARGO_CRATES=openssl-0.10.3 or older do not support OpenSSL 1.1.1
 .include "${USESDIR}/ssl.mk"
 CARGO_ENV+=	OPENSSL_LIB_DIR=${OPENSSLLIB} \
 		OPENSSL_INCLUDE_DIR=${OPENSSLINC}
+# Silence bogus QA warning about needing USES=ssl
+QA_ENV+=	USESSSL=yes
 .endif
 
 .if ${CARGO_CRATES:Mpkg-config-[0-9]*}
