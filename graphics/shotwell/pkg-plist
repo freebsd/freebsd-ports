@@ -1,13 +1,13 @@
 bin/shotwell
 lib/libshotwell-authenticator.so
 lib/libshotwell-authenticator.so.0
-lib/libshotwell-authenticator.so.0.30.1
+lib/libshotwell-authenticator.so.%%DISTVERSION%%
 lib/libshotwell-plugin-common.so
 lib/libshotwell-plugin-common.so.0
-lib/libshotwell-plugin-common.so.0.30.1
+lib/libshotwell-plugin-common.so.%%DISTVERSION%%
 lib/libshotwell-plugin-dev-1.0.so
 lib/libshotwell-plugin-dev-1.0.so.0
-lib/libshotwell-plugin-dev-1.0.so.0.30.1
+lib/libshotwell-plugin-dev-1.0.so.%%DISTVERSION%%
 lib/shotwell/plugins/builtin/libshotwell-publishing-extras.so
 lib/shotwell/plugins/builtin/libshotwell-publishing.so
 lib/shotwell/plugins/builtin/libshotwell-transitions.so
