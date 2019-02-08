@@ -4,7 +4,7 @@
      )
  endif(HAVE_BLKID)
 
-+if(NOT FREEBSD OR EXISTS "/usr/lib/libc++experimental.a")
++if(NOT FREEBSD)
 +
  # ceph_test_admin_socket_output
 
