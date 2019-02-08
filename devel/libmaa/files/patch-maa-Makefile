@@ -1,0 +1,24 @@
+Obtained from:	https://github.com/cheusov/libmaa/commit/3f91ed0c3c765ef3fae2b1aa64eaa79e2123a41a
+
+--- maa/Makefile.orig	2018-03-07 10:12:19 UTC
++++ maa/Makefile
+@@ -3,8 +3,6 @@
+ MKC_REQUIRE_PROGS +=	awk
+ 
+ ##################################################
+-.PATH: ${.OBJDIR}
+-
+ WARNS   ?=	4
+ #WARNERR ?=	yes
+ 
+@@ -20,8 +18,8 @@ SRCS =		xmalloc.c \
+ MKC_CHECK_SIZEOF  =	long
+ MKC_CHECK_HEADERS =	sys/resource.h alloca.h
+ 
+-arg.o: arggram.c
+-arggram.c: arggram.txt
++arg.o arg.os: ${.OBJDIR}/arggram.c arg.c
++${.OBJDIR}/arggram.c: arggram.txt
+ 	awk -f ${SRCDIR_maa}/arggram2c < ${SRCDIR_maa}/arggram.txt > $@
+ 
+ CFLAGS +=	-DMAA_MAJOR=${MAA_MAJOR}
