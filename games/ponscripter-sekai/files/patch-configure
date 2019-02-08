@@ -1,0 +1,11 @@
+--- configure.orig	2019-02-08 19:59:55 UTC
++++ configure
+@@ -606,7 +606,7 @@ then
+ 	_EOF
+     INTERNAL_SDL_MIXER=true
+     $CXX `$SDL_CONFIG --cflags` test.cc `$SDL_CONFIG --libs` -lSDL2_mixer -o mtest >/dev/null 2>&1
+-    ./mtest 2>/dev/null
++    true 2>/dev/null
+     case $? in
+     0) echo "yes"; INTERNAL_SDL_MIXER=false ;;
+     1) echo "no MP3" ;; 2) echo "no Ogg" ;; 3) echo "no Ogg or MP3" ;;
