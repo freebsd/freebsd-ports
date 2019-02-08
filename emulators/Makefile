@@ -135,6 +135,7 @@
     SUBDIR += stella
     SUBDIR += stonx
     SUBDIR += swine
+    SUBDIR += teo
     SUBDIR += tiemu3
     SUBDIR += tilem
     SUBDIR += tme

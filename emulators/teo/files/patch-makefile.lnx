@@ -1,0 +1,28 @@
+--- makefile.lnx.orig	2019-02-06 11:40:45 UTC
++++ makefile.lnx
+@@ -15,7 +15,7 @@ UNIX_TOOLS = 1
+ ifdef DEBUGMODE
+ 
+ # -- debugging build --
+-CFLAGS = -g -DDEBUG $(WFLAGS)
++CFLAGS += -g -DDEBUG $(WFLAGS)
+ LFLAGS = -g
+ DESCRIPTION = debugging
+ 
+@@ -23,14 +23,14 @@ else
+ ifdef PROFILEMODE
+ 
+ # -- profiling build --
+-CFLAGS = -pg $(WFLAGS) $(OFLAGS)
++CFLAGS += -pg $(WFLAGS) $(OFLAGS)
+ LFLAGS = -pg
+ DESCRIPTION = profiling
+ 
+ else
+ 
+ # -- optimised build --
+-CFLAGS = $(WFLAGS) $(OFLAGS)
++CFLAGS += $(WFLAGS)
+ LFLAGS = -s
+ DESCRIPTION = optimized
+ 
