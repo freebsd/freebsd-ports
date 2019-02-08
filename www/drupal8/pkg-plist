@@ -8206,6 +8206,7 @@
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.0.0-rc1-filled.standard.entity_test_update_mul_rev.php.gz
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.2.0.bare.standard_with_entity_test_revlog_enabled.php.gz
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.4.0.bare.standard.php.gz
+%%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.6.0-minimal-with-warm-caches.sql.gz
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.bare.standard.php.gz
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.block-content-uninstall.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.block-context-manager-2354889.php
@@ -8224,6 +8225,7 @@
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.seven-secondary-local-tasks-block-2569529.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.site-branding-into-block-2005546.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.stable-base-theme-2575421.php
+%%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.test-config-init.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.update-test-block-disabled-2513534.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.update-test-postupdate-enabled.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.update-test-postupdate-failing-enabled.php
@@ -9156,6 +9158,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/UpdateSchemaTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/UpdateScriptTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/UpdatesWith7xTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Update/WarmCacheUpdateFrom8dot6Test.php
 %%WWWDIR%%/core/modules/system/tests/src/FunctionalJavascript/Form/ElementsTableSelectTest.php
 %%WWWDIR%%/core/modules/system/tests/src/FunctionalJavascript/Form/RebuildTest.php
 %%WWWDIR%%/core/modules/system/tests/src/FunctionalJavascript/Form/TriggeringElementTest.php
