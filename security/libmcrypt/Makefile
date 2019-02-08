@@ -7,15 +7,17 @@ PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/mcrypt/Libmcrypt/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	john@essenz.com
 COMMENT=	Multi-cipher cryptographic library (used in PHP)
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
+
+USES=		libtool
+USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-static
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
-USES=		libtool
 
 .include <bsd.port.mk>
