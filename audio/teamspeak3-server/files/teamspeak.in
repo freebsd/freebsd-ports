@@ -18,20 +18,18 @@
 name="teamspeak"
 rcvar=teamspeak_enable
 
-db_dir=%%DBDIR%%
-log_dir=%%LOGDIR%%
-
-pidfile=%%DBDIR%%/teamspeak_server.pid
-procname=%%PREFIX%%/libexec/ts3server
-command=/usr/sbin/daemon
-command_args="-fp $pidfile -u teamspeak %%PREFIX%%/libexec/ts3server dbsqlpath=%%PREFIX%%/share/teamspeak/server/sql/ inifile=%%PREFIX%%/etc/teamspeak/ts3server.ini licensepath=%%PREFIX%%/etc/teamspeak/ logpath=$log_dir license_accepted=1"
-teamspeak_chdir=$db_dir
-required_dirs="$db_dir $log_dir"
-
-%%CD%%
 load_rc_config $name
 
-: ${teamspeak_enable="NO"}
+: ${teamspeak_enable:="NO"}
+: ${teamspeak_pidfile:="%%DBDIR%%/teamspeak_server.pid"}
+: ${teamspeak_db_dir:="%%DBDIR%%"}
+: ${teamspeak_log_dir:="%%LOGDIR%%"}
+
+procname=%%PREFIX%%/libexec/ts3server
+command=/usr/sbin/daemon
+command_args="-fp "$teamspeak_pidfile" -u teamspeak %%PREFIX%%/libexec/ts3server dbsqlpath=%%PREFIX%%/share/teamspeak/server/sql/ inifile=%%PREFIX%%/etc/teamspeak/ts3server.ini licensepath=%%PREFIX%%/etc/teamspeak/ logpath="$teamspeak_log_dir" license_accepted=1"
+teamspeak_chdir="$teamspeak_db_dir"
+required_dirs="$teamspeak_db_dir $teamspeak_log_dir"
 
 LD_LIBRARY_PATH=%%PREFIX%%/lib/teamspeak/server:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH
