@@ -234,6 +234,8 @@
     SUBDIR += geogram
     SUBDIR += geonext
     SUBDIR += gexpr
+    SUBDIR += gfan
+    SUBDIR += gfanlib
     SUBDIR += ggobi
     SUBDIR += gh-bc
     SUBDIR += giacxcas

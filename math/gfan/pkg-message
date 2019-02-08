@@ -1,0 +1,10 @@
+Gfan can also be linked to Sage, Singular or Soplex. I refrain to
+include those optional dependencies because Sage and Singular support
+is not documented in gfan's manual and Soplex has a very restrictive
+license (you can use or distribute it only if you are a member of a
+noncommercial and academic institution).
+
+If you feel you need any of those optional dependencies, please let
+me know and I will do my best to provide it as fast as possible.
+
+The mantainer.

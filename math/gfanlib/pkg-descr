@@ -1,0 +1,17 @@
+Gfan is a software package for computing Groebner fans and tropical
+varieties. These are polyhedral fans associated to polynomial ideals.
+The maximal cones of a Groebner fan are in bijection with the marked
+reduced Groebner bases of its defining ideal. The software computes
+all marked reduced Groebner bases of an ideal. Their union is a
+universal Greobner basis. The tropical variety of a polynomial ideal
+is a certain subcomplex of the Groebner fan. Gfan contains algorithms
+for computing this complex for general ideals and specialized
+algorithms for tropical curves, tropical hypersurfaces and tropical
+varieties of prime ideals.  In addition to the above core functions
+the package contains many tools which are useful in the study of
+Groebner bases, initial ideals and tropical geometry.
+
+This port provides only the static library libgfan.a: you can get the
+rest of the software package from the port math/gfan.
+
+WWW: http://home.math.au.dk/jensen/software/gfan/gfan.html
