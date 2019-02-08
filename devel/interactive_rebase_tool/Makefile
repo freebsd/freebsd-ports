@@ -9,7 +9,7 @@ COMMENT=	Improved sequence editor for Git
 
 LICENSE=	ISCL
 
-USES=		cargo ssl ncurses
+USES=		cargo ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	MitMaro
 GH_PROJECT=	git-interactive-rebase-tool
