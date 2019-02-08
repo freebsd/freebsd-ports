@@ -1,0 +1,7 @@
+This is the SoapySDR module for RTLSDR, an open source software defined radio
+(SDR) platform.
+
+SoapySDR is an open-source generalized C/C++ API and runtime library for
+interfacing with SDR devices.
+
+WWW: https://github.com/pothosware/SoapySDR
