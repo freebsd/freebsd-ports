@@ -1,0 +1,8 @@
+Xournal++ is a handwriting Notetaking software with PDF annotation support.
+Written in C++ with plattform independent GTK, supporting Linux, e.g. Ubuntu,
+Debian, Arch, Suse, macOS and Windows 10. Supports Pen input like Wacom Tablets.
+
+Xournal++ is an evolution, and a rewrite of the pdf annotating program Xournal
+that is also available as a port: graphics/xournal
+
+WWW: https://github.com/xournalpp/xournalpp
