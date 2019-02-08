@@ -19,4 +19,8 @@ GNU_CONFIGURE=	yes
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|MIX_INIT_FLUIDSYNTH|MIX_INIT_MID|g' \
+		${WRKSRC}/src/FileClasses/music/*.cpp
+
 .include <bsd.port.mk>
