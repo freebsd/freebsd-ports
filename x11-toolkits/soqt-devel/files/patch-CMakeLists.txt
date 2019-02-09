@@ -1,0 +1,29 @@
+--- CMakeLists.txt.orig	2019-02-09 16:08:58 UTC
++++ CMakeLists.txt
+@@ -47,7 +47,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ 
+ find_package(OpenGL REQUIRED)
+-find_package(Coin REQUIRED)
++find_package(Coin3D REQUIRED)
+ #find_package(superglu REQUIRED)
+ 
+ if(USE_QT5)
+@@ -119,7 +119,7 @@ else()
+ 	" HAVE_PTHREAD_TIMESPEC_NSEC)
+ endif()
+ 
+-set(CMAKE_REQUIRED_LIBRARIES Coin::Coin)
++set(CMAKE_REQUIRED_LIBRARIES Coin)
+ 
+ check_cxx_source_compiles("
+ 	#include <Inventor/SbImage.h>
+@@ -340,7 +340,7 @@ target_include_directories(${PROJECT_NAME}
+ 		${OPENGL_INCLUDE_DIR}
+ )
+ 
+-target_link_libraries(${PROJECT_NAME} Coin::Coin ${OPENGL_LIBRARIES} ${QT_LIBRARIES})
++target_link_libraries(${PROJECT_NAME} Coin ${OPENGL_LIBRARIES} ${QT_LIBRARIES})
+ 
+ if(X11_FOUND)
+ 	target_include_directories(${PROJECT_NAME} PUBLIC ${X11_INCLUDE_DIR})
