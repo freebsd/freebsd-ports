@@ -1,0 +1,8 @@
+--- server/CMakeLists.txt.orig	2019-02-09 19:33:21 UTC
++++ server/CMakeLists.txt
+@@ -36,4 +36,4 @@ target_link_libraries(SoapySDRServer ${S
+ install(TARGETS SoapySDRServer DESTINATION bin)
+ 
+ #install man pages for the application executable
+-install(FILES SoapySDRServer.1 DESTINATION share/man/man1)
++install(FILES SoapySDRServer.1 DESTINATION man/man1)
