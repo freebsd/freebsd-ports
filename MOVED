@@ -11590,3 +11590,4 @@ net-mgmt/pnp-icinga||2019-02-04|Removed, depends on expired net-mgmt/icinga-clas
 sysutils/atf-allwinner|devel/atf-sun50i_a64|2019-02-05|Respect the ARM TF-A platform name
 sysutils/yum||2019-02-07|Has expired: Abandoned upstream, does not work with python3
 sysutils/createrepo||2019-02-07|Has expired: Abandoned upstream, does not work with python3
+misc/soapysdr-hackrf|comms/soapysdrhackrf|2019-02-09|Move to the proper category/name
