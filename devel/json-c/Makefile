@@ -11,12 +11,14 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON (JavaScript Object Notation) implementation in C
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		autoreconf cpe gmake libtool pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		autoreconf cpe gmake libtool pathfix pkgconfig
 
 CPE_VENDOR=	json-c_project
 
