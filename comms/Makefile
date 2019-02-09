@@ -14,6 +14,7 @@
     SUBDIR += bfhist
     SUBDIR += bforce-kst
     SUBDIR += birda
+    SUBDIR += bladerf
     SUBDIR += bluegps
     SUBDIR += bluez-firmware
     SUBDIR += bpl+
