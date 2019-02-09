@@ -124,7 +124,6 @@ include/dns/zoneverify.h
 include/dns/zt.h
 include/dst/dst.h
 include/dst/gssapi.h
-include/dst/lib.h
 include/dst/result.h
 include/irs/context.h
 include/irs/dnsconf.h
@@ -177,8 +176,6 @@ include/isc/magic.h
 include/isc/md.h
 include/isc/mem.h
 include/isc/meminfo.h
-include/isc/msgcat.h
-include/isc/msgs.h
 include/isc/mutex.h
 include/isc/mutexblock.h
 include/isc/net.h
@@ -234,7 +231,6 @@ include/isccc/base64.h
 include/isccc/cc.h
 include/isccc/ccmsg.h
 include/isccc/events.h
-include/isccc/lib.h
 include/isccc/result.h
 include/isccc/sexpr.h
 include/isccc/symtab.h
