@@ -269,7 +269,7 @@ CONFIGURE_ARGS+=		\
 				${ICONV_CONFIGURE_BASE}
 ##############################################################################
 BIND911_RUN_DEPENDS=		bind911>=9.11.0.0:dns/bind911
-BIND912_RUN_DEPENDS=		bind911>=9.12.0.0:dns/bind912
+BIND912_RUN_DEPENDS=		bind912>=9.12.0.0:dns/bind912
 NSUPDATE_RUN_DEPENDS=		samba-nsupdate:dns/samba-nsupdate
 
 AVAHI_CONFIGURE_ENABLE=		avahi
