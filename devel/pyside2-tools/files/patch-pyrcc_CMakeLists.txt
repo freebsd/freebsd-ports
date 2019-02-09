@@ -1,0 +1,9 @@
+--- pyrcc/CMakeLists.txt.orig	2019-02-08 22:29:24 UTC
++++ pyrcc/CMakeLists.txt
+@@ -14,5 +14,5 @@ install(TARGETS pyside2-rcc RUNTIME DESTINATION bin)
+ # Man pages
+ if (NOT WIN32)
+     file(GLOB manpages "${CMAKE_CURRENT_SOURCE_DIR}/*.1")
+-    install(FILES ${manpages} DESTINATION share/man/man1)
++    install(FILES ${manpages} DESTINATION man/man1)
+ endif()

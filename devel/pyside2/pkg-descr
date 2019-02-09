@@ -1,0 +1,5 @@
+PySide is the Python Qt bindings project, providing access to the complete
+Qt 5.12+ framework as well as to generator tools for rapidly generating
+Python bindings for any C++ libraries.
+
+WWW: https://wiki.qt.io/Qt_for_Python

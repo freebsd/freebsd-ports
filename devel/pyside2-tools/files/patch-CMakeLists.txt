@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-02-08 21:32:23 UTC
++++ CMakeLists.txt
+@@ -60,7 +60,7 @@ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/pyside2u
+ # Man pages for pyside2-uic
+ if (NOT WIN32)
+     file(GLOB manpages "${CMAKE_CURRENT_SOURCE_DIR}/pyside2uic/*.1")
+-    install(FILES ${manpages} DESTINATION share/man/man1)
++    install(FILES ${manpages} DESTINATION man/man1)
+ endif()
+ 
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake"

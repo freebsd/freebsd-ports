@@ -1,0 +1,9 @@
+--- pylupdate/CMakeLists.txt.orig	2019-02-08 22:28:59 UTC
++++ pylupdate/CMakeLists.txt
+@@ -40,5 +40,5 @@ install(TARGETS pyside2-lupdate RUNTIME DESTINATION bi
+ # Man pages
+ if (NOT WIN32)
+     file(GLOB manpages "${CMAKE_CURRENT_SOURCE_DIR}/*.1")
+-    install(FILES ${manpages} DESTINATION share/man/man1)
++    install(FILES ${manpages} DESTINATION man/man1)
+ endif()
