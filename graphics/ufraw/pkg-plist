@@ -1,6 +1,6 @@
 bin/dcraw
 bin/nikon-curve
-%%NOGTK2%%bin/ufraw
+%%GTK2%%bin/ufraw
 bin/ufraw-batch
 man/man1/ufraw.1.gz
 share/applications/ufraw.desktop
