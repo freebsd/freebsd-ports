@@ -1,0 +1,4 @@
+The Soapy Pluto SDR project provides a plugin module to use the Pluto SDR device
+within the SoapySDR API and software that supports SoapySDR.
+
+WWW: https://github.com/pothosware/SoapyPlutoSDR/wiki
