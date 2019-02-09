@@ -238,6 +238,7 @@
     SUBDIR += py-molmod
     SUBDIR += py-netCDF4
     SUBDIR += py-obspy
+    SUBDIR += py-oddt
     SUBDIR += py-openpiv
     SUBDIR += py-paida
     SUBDIR += py-paramz
