@@ -1,0 +1,13 @@
+Use any SoapySDR supported device transparently over a local network link. The
+remote support feature can turn any SDR into a network peripheral.
+
+Potential use-cases for Soapy Remote:
+* share the SDR device over a network
+* use the device in multiple processes
+* or use the device on multiple hosts
+* a multi-threaded abstraction layer
+* aid in embedded-device development
+* or a work-around for software issues
+* adapt an IPv4 SDR for an IPv6 network
+
+WWW: https://github.com/pothosware/SoapyRemote/wiki
