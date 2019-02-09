@@ -263,6 +263,7 @@
     SUBDIR += skinlf
     SUBDIR += slingshot
     SUBDIR += soqt
+    SUBDIR += soqt-devel
     SUBDIR += swt
     SUBDIR += swt-devel
     SUBDIR += tepl
