@@ -2,6 +2,7 @@
 
 PORTNAME=	mod_maxminddb
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
@@ -18,8 +19,10 @@ GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 
-AP_FAST_BUILD=	yes
-AP_GENPLIST=	yes
-SRC_FILE=	src/${PORTNAME}.c
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LIBEXECDEST%%|${STAGEDIR}${PREFIX}/${APACHEMODDIR}|g' ${WRKSRC}/src/Makefile.am
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 
 .include <bsd.port.mk>
