@@ -420,9 +420,9 @@
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/cssref/cssref.html
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/cssref/fx_code_header.jpg
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/legal/THIRDPARTYLICENSEREADME.txt
-%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/lib/lucene-core-7.1.0.jar
-%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/lib/lucene-grouping-7.1.0.jar
-%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/lib/lucene-queryparser-7.1.0.jar
+%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/lib/lucene-core-7.4.0.jar
+%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/lib/lucene-grouping-7.4.0.jar
+%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/lib/lucene-queryparser-7.4.0.jar
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/nbproject/build-impl.xml
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/nbproject/configs/Build_index.properties
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/nbproject/genfiles.properties
@@ -1405,6 +1405,8 @@
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libfontmanager.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libfxplugins.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libglass.so
+%%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libglassgtk2.so
+%%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libglassgtk3.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libglib-lite.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libgstreamer-lite.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libhprof.so
@@ -1430,7 +1432,6 @@
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libjsig.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libjsound.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libjsoundalsa.so
-%%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libkcms.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/liblcms.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libmanagement.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libmlib_image.so
