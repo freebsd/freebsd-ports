@@ -1,0 +1,12 @@
+bin/iio_adi_xflow_check
+bin/iio_attr
+bin/iio_genxml
+bin/iio_info
+bin/iio_readdev
+bin/iio_reg
+bin/iio_writedev
+include/iio.h
+lib/libiio.so
+lib/libiio.so.0
+lib/libiio.so.0.17
+libdata/pkgconfig/libiio.pc

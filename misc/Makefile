@@ -216,6 +216,7 @@
     SUBDIR += lesspipe
     SUBDIR += libeatmydata
     SUBDIR += libemos
+    SUBDIR += libiio
     SUBDIR += libisocodes
     SUBDIR += libkeduvocdocument
     SUBDIR += liblxi
