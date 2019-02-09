@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-02-09 19:52:30 UTC
++++ CMakeLists.txt
+@@ -310,7 +310,7 @@ endif()
+ #set(SETUP_PY ${CMAKE_CURRENT_SOURCE_DIR}/bindings/python/setup.py)
+ #configure_file(python/setup.py.in ${SETUP_PY} @ONLY)
+ 
+-add_subdirectory(bindings)
++#add_subdirectory(bindings)
+ 
+ if (WITH_MATLAB_BINDINGS_API)
+ 	set(LIBIIO_EXTRA_HEADERS ${LIBIIO_EXTRA_HEADERS} bindings/matlab/iio-wrapper.h)
