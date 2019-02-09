@@ -1,4 +1,8 @@
 FreeCAD/Ext/freecad/__init__.py
+FreeCAD/Ext/PySide/QtCore.py
+FreeCAD/Ext/PySide/QtGui.py
+FreeCAD/Ext/PySide/QtSvg.py
+FreeCAD/Ext/PySide/__init__.py
 FreeCAD/Mod/AddonManager/AddonManager.py
 FreeCAD/Mod/AddonManager/AddonManagerGui.py
 FreeCAD/Mod/AddonManager/Init.py

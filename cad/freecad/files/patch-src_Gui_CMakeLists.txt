@@ -1,11 +1,11 @@
---- src/Gui/CMakeLists.txt.orig	2017-06-16 13:00:26 UTC
+--- src/Gui/CMakeLists.txt.orig	2019-02-08 22:48:01 UTC
 +++ src/Gui/CMakeLists.txt
-@@ -58,7 +58,7 @@ else(MSVC)
+@@ -57,7 +57,7 @@ else(MSVC)
          FreeCADApp
          ${COIN3D_LIBRARIES}
          ${Boost_LIBRARIES}
 -        ${OPENGL_gl_LIBRARY}
-+        ${OPENGL_gl_LIBRARY} -L%%LOCALBASE%%/lib
++        ${OPENGL_gl_LIBRARY} -L${CMAKE_INSTALL_PREFIX}/lib
          ${3DCONNEXION_LINKFLAGS}
      )
  endif(MSVC)
