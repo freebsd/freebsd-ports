@@ -168,6 +168,7 @@
     SUBDIR += smstools3
     SUBDIR += snap7
     SUBDIR += soapyairspy
+    SUBDIR += soapybladerf
     SUBDIR += soapyplutosdr
     SUBDIR += soapyremote
     SUBDIR += soapysdrhackrf
