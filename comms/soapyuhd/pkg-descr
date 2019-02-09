@@ -1,0 +1,6 @@
+The Soapy UHD project provides a plugin module to use UHD devices within the
+SoapySDR API and software that supports SoapySDR. In addition, the project
+provides a UHD module to use any SoapySDR device within the UHD API and UHD
+supported software.
+
+WWW: https://github.com/pothosware/SoapyUHD/wiki
