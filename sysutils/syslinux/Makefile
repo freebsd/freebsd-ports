@@ -6,7 +6,7 @@ PORTVERSION=	6.03
 CATEGORIES=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/utils/boot/syslinux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beastieboy@beastieboy.net
 COMMENT=	Boot loader for the Linux operating system
 
 LICENSE=	GPLv2
