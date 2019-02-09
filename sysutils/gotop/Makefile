@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gotop
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,9 +15,8 @@ BUILD_DEPENDS=	go:lang/go
 USE_GITHUB=	nodefault # the main code is in GH_TUPLE
 GH_ACCOUNT=	cjbassi
 GH_TUPLE=	cjbassi:gotop:${DISTVERSIONFULL}:main/src/github.com/cjbassi/gotop \
-		cjbassi:termui:e8dd23f:termui/src/github.com/cjbassi/termui \
 		docopt:docopt.go:ee0de3b:docopt/src/github.com/docopt/docopt-go \
-		shirou:gopsutil:v2.18.11:gopsutil/src/github.com/shirou/gopsutil \
+		shirou:gopsutil:v2.19.01:gopsutil/src/github.com/shirou/gopsutil \
 		golang:sys:37707fd:sys/src/golang.org/x/sys
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
