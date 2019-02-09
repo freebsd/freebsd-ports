@@ -59,13 +59,6 @@ GNOME_USE=		GNOME=gconf2
 GNOME_CONFIGURE_ENABLE=	mime
 GNOME_VARS=		CATEGORIES+=gnome GCONF_SCHEMAS=${PORTNAME}.schemas
 
-.include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MGTK2}
-PLIST_SUB+=	NOGTK2=""
-.else
-PLIST_SUB+=	NOGTK2="@comment "
-.endif
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ufraw.desktop ${STAGEDIR}${DESKTOPDIR}
 
