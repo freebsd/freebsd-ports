@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.62.0
+PORTVERSION=	7.64.0
 CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -43,8 +43,7 @@ THREADED_RESOLVER_DESC=	Threaded DNS resolver
 TLS_SRP_DESC=		TLS-SRP (Secure Remote Password) support
 
 CONFIGURE_ARGS=	--disable-werror \
-		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions \
-		--without-axtls
+		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} \
 		ac_cv_func_SSLv2_client_method=no
 GNU_CONFIGURE=	yes

@@ -6,9 +6,9 @@ Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
 Last-Update: 2010-12-19
 
---- configure.orig	2018-10-30 10:03:34 UTC
+--- configure.orig	2019-02-05 14:11:44 UTC
 +++ configure
-@@ -3652,9 +3652,10 @@ $as_echo "$as_me: LIBS note: LIBS should
+@@ -3637,9 +3637,10 @@ $as_echo "$as_me: LIBS note: LIBS should
        -I*)
          xc_bad_var_ldflags=yes
          ;;
@@ -22,7 +22,7 @@ Last-Update: 2010-12-19
      esac
    done
    if test $xc_bad_var_ldflags = yes; then
-@@ -3724,9 +3725,10 @@ $as_echo "$as_me: $xc_bad_var_msg librar
+@@ -3709,9 +3710,10 @@ $as_echo "$as_me: $xc_bad_var_msg librar
    xc_bad_var_cflags=no
    for xc_word in $CFLAGS; do
      case "$xc_word" in
@@ -36,7 +36,7 @@ Last-Update: 2010-12-19
        -U*)
          xc_bad_var_cflags=yes
          ;;
-@@ -17364,6 +17366,8 @@ $as_echo "$as_me: WARNING: compiler opti
+@@ -17193,6 +17195,8 @@ $as_echo "$as_me: WARNING: compiler opti
      tmp_CFLAGS="$CFLAGS"
      tmp_CPPFLAGS="$CPPFLAGS"
  
@@ -45,7 +45,7 @@ Last-Update: 2010-12-19
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -17394,6 +17398,7 @@ $as_echo "$as_me: WARNING: compiler opti
+@@ -17223,6 +17227,7 @@ $as_echo "$as_me: WARNING: compiler opti
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
@@ -53,7 +53,7 @@ Last-Update: 2010-12-19
  
      #
      if test "$want_debug" = "yes"; then
-@@ -17616,6 +17621,8 @@ $as_echo "$honor_optimize_option" >&6; }
+@@ -17445,6 +17450,8 @@ $as_echo "$honor_optimize_option" >&6; }
      #
      if test "$honor_optimize_option" = "yes"; then
  
@@ -62,7 +62,7 @@ Last-Update: 2010-12-19
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -17646,6 +17653,7 @@ $as_echo "$honor_optimize_option" >&6; }
+@@ -17475,6 +17482,7 @@ $as_echo "$honor_optimize_option" >&6; }
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
@@ -70,7 +70,7 @@ Last-Update: 2010-12-19
  
        if test "$want_optimize" = "yes"; then
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking if compiler accepts optimizer enabling options" >&5
-@@ -26970,30 +26978,30 @@ $as_echo "found" >&6; }
+@@ -26706,30 +26714,30 @@ $as_echo "found" >&6; }
      ;;
    off)
          LIB_RTMP="-lrtmp"
@@ -110,7 +110,7 @@ Last-Update: 2010-12-19
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -41444,9 +41452,10 @@ $as_echo "$as_me: LIBS note: LIBS should
+@@ -41169,9 +41177,10 @@ $as_echo "$as_me: LIBS note: LIBS should
        -I*)
          xc_bad_var_ldflags=yes
          ;;
@@ -124,7 +124,7 @@ Last-Update: 2010-12-19
      esac
    done
    if test $xc_bad_var_ldflags = yes; then
-@@ -41516,9 +41525,10 @@ $as_echo "$as_me: $xc_bad_var_msg librar
+@@ -41241,9 +41250,10 @@ $as_echo "$as_me: $xc_bad_var_msg librar
    xc_bad_var_cflags=no
    for xc_word in $CFLAGS; do
      case "$xc_word" in
