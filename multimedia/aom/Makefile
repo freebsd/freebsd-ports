@@ -25,8 +25,8 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	ENABLE_DOCS ENABLE_TESTS
 
 post-patch:
-# Extract (snapshot) version from GH_TAGNAME instead of CHANGELOG
-	@${REINPLACE_CMD} 's,$${AOM_ROOT}/CHANGELOG,${GH_TAGNAME:S/^v//},' \
+# Extract (snapshot) version from the port instead of CHANGELOG
+	@${REINPLACE_CMD} 's,$${AOM_ROOT}/CHANGELOG,${DISTVERSIONFULL:S/^v//},' \
 		${WRKSRC}/build/cmake/version.cmake
 
 .include <bsd.port.mk>
