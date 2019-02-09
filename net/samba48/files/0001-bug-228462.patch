@@ -13,25 +13,13 @@ FreeBSD Bug: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=228462
 Signed-off-by: Ralph Boehme <slow@samba.org>
 ---
  source3/modules/vfs_fruit.c | 32 ++++++++++++++++++++++++--------
- 1 file changed, 24 insertions(+), 8 deletions(-)
+ 1 file changed, 27 insertions(+), 4 deletions(-)
 
 diff --git a/source3/modules/vfs_fruit.c b/source3/modules/vfs_fruit.c
 index df3cd0c899e..d84e6991036 100644
 --- a/source3/modules/vfs_fruit.c
 +++ b/source3/modules/vfs_fruit.c
-@@ -485,8 +485,9 @@ static int adouble_path(TALLOC_CTX *ctx,
- 			struct smb_filename **ppsmb_fname_out);
- static AfpInfo *afpinfo_new(TALLOC_CTX *ctx);
- static ssize_t afpinfo_pack(const AfpInfo *ai, char *buf);
--static AfpInfo *afpinfo_unpack(TALLOC_CTX *ctx, const void *data);
--
-+static AfpInfo *afpinfo_unpack(TALLOC_CTX *ctx,
-+			       const void *data,
-+			       const struct smb_filename *smb_fname);
- 
- /**
-  * Return a pointer to an AppleDouble entry
-@@ -2073,13 +2074,17 @@ static ssize_t afpinfo_pack(const AfpInfo *ai, char *buf)
+@@ -2350,6 +2350,8 @@ static ssize_t afpinfo_pack(const AfpInf
  	return AFP_INFO_SIZE;
  }
  
@@ -40,17 +28,7 @@ index df3cd0c899e..d84e6991036 100644
  /**
   * Unpack a buffer into a AfpInfo structure
   *
-  * Buffer size must be at least AFP_INFO_SIZE
-  * Returns allocated AfpInfo struct
-  **/
--static AfpInfo *afpinfo_unpack(TALLOC_CTX *ctx, const void *data)
-+static AfpInfo *afpinfo_unpack(TALLOC_CTX *ctx,
-+			       const void *data,
-+			       const struct smb_filename *smb_fname)
- {
- 	AfpInfo *ai = talloc_zero(ctx, AfpInfo);
- 	if (ai == NULL) {
-@@ -2092,10 +2097,21 @@ static AfpInfo *afpinfo_unpack(TALLOC_CTX *ctx, const void *data)
+@@ -2369,10 +2371,20 @@ static AfpInfo *afpinfo_unpack(TALLOC_CT
  	memcpy(ai->afpi_FinderInfo, (const char *)data + 16,
  	       sizeof(ai->afpi_FinderInfo));
  
@@ -58,8 +36,7 @@ index df3cd0c899e..d84e6991036 100644
 -	    || ai->afpi_Version != AFP_Version) {
 -		DEBUG(1, ("Bad AfpInfo signature or version\n"));
 +	if (ai->afpi_Signature != AFP_Signature) {
-+		DBG_WARNING("Bad signature [%x] on [%s]\n",
-+			    ai->afpi_Signature, smb_fname_str_dbg(smb_fname));
++		DBG_WARNING("Bad AFP signature [%x]\n", ai->afpi_Signature);
 +
 +		if (ai->afpi_Signature != BROKEN_FREEBSD_AFP_Signature) {
 +			DBG_ERR("Bad AfpInfo signature\n");
@@ -75,100 +52,20 @@ index df3cd0c899e..d84e6991036 100644
  	}
  
  	return ai;
-@@ -4222,7 +4238,7 @@ static ssize_t fruit_pwrite_meta_stream(vfs_handle_struct *handle,
- 	size_t nwritten;
- 	bool ok;
- 
--	ai = afpinfo_unpack(talloc_tos(), data);
-+	ai = afpinfo_unpack(talloc_tos(), data, fsp->fsp_name);
- 	if (ai == NULL) {
- 		return -1;
- 	}
-@@ -4260,7 +4276,7 @@ static ssize_t fruit_pwrite_meta_netatalk(vfs_handle_struct *handle,
- 	int ret;
- 	bool ok;
- 
--	ai = afpinfo_unpack(talloc_tos(), data);
-+	ai = afpinfo_unpack(talloc_tos(), data, fsp->fsp_name);
- 	if (ai == NULL) {
- 		return -1;
- 	}
--- 
-2.16.3
-
-
-From 83ce03a278ec9d15b595f4daf8da1641d27ebdd6 Mon Sep 17 00:00:00 2001
-From: "Timur I. Bakeyev" <timur@iXsystems.com>
-Date: Fri, 1 Jun 2018 01:35:58 +0800
-Subject: [PATCH 2/2] vfs_streams_xattr: don't append 0 byte when creating
- xattr
-
-Upstream Samba always appends an internal 0-byte to xattrs to cope
-with filesytems or systems that don't support 0-byte sized xattrs.
-
-An older patch already remove this behaviour from the read and write
-code paths, but didn't remove it from the create codepath.
-
-FreeBSD Bug: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=228462
-
-Signed-off-by: Ralph Boehme <slow@samba.org>
----
- source3/modules/vfs_streams_xattr.c | 8 +-------
- 1 file changed, 1 insertion(+), 7 deletions(-)
-
-diff --git a/source3/modules/vfs_streams_xattr.c b/source3/modules/vfs_streams_xattr.c
-index 8714007cb8d..5f3dfb30beb 100644
---- a/source3/modules/vfs_streams_xattr.c
-+++ b/source3/modules/vfs_streams_xattr.c
-@@ -476,19 +476,13 @@ static int streams_xattr_open(vfs_handle_struct *handle,
- 		/*
- 		 * The attribute does not exist or needs to be truncated
- 		 */
--
--		/*
--		 * Darn, xattrs need at least 1 byte
--		 */
--		char null = '\0';
--
- 		DEBUG(10, ("creating or truncating attribute %s on file %s\n",
- 			   xattr_name, smb_fname->base_name));
- 
- 		ret = SMB_VFS_SETXATTR(fsp->conn,
- 				       smb_fname,
- 				       xattr_name,
--				       &null, sizeof(null),
-+				       NULL, 0,
- 				       flags & O_EXCL ? XATTR_CREATE : 0);
- 		if (ret != 0) {
- 			goto fail;
--- 
-2.16.3
-
-From daa9930fc10459f0567931622e2ffbb636e365f0 Mon Sep 17 00:00:00 2001
-From: Ralph Boehme <slow@samba.org>
-Date: Sat, 19 May 2018 01:35:45 +0200
-Subject: [PATCH] vfs_fruit: fixup broken AFP_Signatures
-
-FreeBSD Bug: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=228462
-
-Signed-off-by: Ralph Boehme <slow@samba.org>
----
- source3/modules/vfs_fruit.c | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/source3/modules/vfs_fruit.c b/source3/modules/vfs_fruit.c
-index d92049cc899..0594fd7a538 100644
---- a/source3/modules/vfs_fruit.c
-+++ b/source3/modules/vfs_fruit.c
-@@ -3935,10 +3935,16 @@ static ssize_t fruit_pread_meta_stream(vfs_handle_struct *handle,
+@@ -4171,9 +4183,20 @@ static ssize_t fruit_pread_meta_stream(v
  {
  	ssize_t nread;
  	int ret;
 +	char *p = (char *)data;
  
  	nread = SMB_VFS_NEXT_PREAD(handle, fsp, data, n, offset);
- 
- 	if (nread == n) {
+-	if (nread == -1 || nread == n) {
++
++	if (nread == -1) {
++		return -1;
++	}
++
++	if (nread == n) {
 +		if (offset == 0 && nread > 3 && p[0] == 0 && p[1] == 'F' && p[2] == 'P') {
 +			DBG_NOTICE("Fixing AFP_Info of [%s]\n",
 +				    fsp_str_dbg(fsp));
@@ -177,6 +74,3 @@ index d92049cc899..0594fd7a538 100644
  		return nread;
  	}
  
--- 
-2.17.0
-

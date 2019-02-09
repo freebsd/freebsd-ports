@@ -208,6 +208,7 @@ lib/samba4/private/libcli-spoolss-samba4.so
 lib/samba4/private/libcliauth-samba4.so
 lib/samba4/private/libcluster-samba4.so
 lib/samba4/private/libcmdline-credentials-samba4.so
+lib/samba4/private/libcmdline-contexts-samba4.so
 %%GSSAPI_BUILTIN%%lib/samba4/private/libcom_err-samba4.so.0
 lib/samba4/private/libcommon-auth-samba4.so
 %%AD_DC%%lib/samba4/private/libdb-glue-samba4.so
@@ -254,6 +255,7 @@ lib/samba4/private/libnpa-tstream-samba4.so
 lib/samba4/private/libnss-info-samba4.so
 %%AD_DC%%lib/samba4/private/libpac-samba4.so
 lib/samba4/private/libpopt-samba3-samba4.so
+lib/samba4/private/libpopt-samba3-cmdline-samba4.so
 lib/samba4/private/libprinting-migrate-samba4.so
 lib/samba4/private/libregistry-samba4.so
 lib/samba4/private/libreplace-samba4.so
@@ -378,6 +380,7 @@ lib/shared-modules/vfs/extd_audit.so
 lib/shared-modules/vfs/fake_perms.so
 lib/shared-modules/vfs/fruit.so
 lib/shared-modules/vfs/full_audit.so
+lib/shared-modules/vfs/glusterfs_fuse.so
 lib/shared-modules/vfs/linux_xfs_sgid.so
 lib/shared-modules/vfs/media_harmony.so
 lib/shared-modules/vfs/netatalk.so
@@ -1182,6 +1185,7 @@ man/man8/vfs_fileid.8.gz
 man/man8/vfs_fruit.8.gz
 man/man8/vfs_full_audit.8.gz
 man/man8/vfs_glusterfs.8.gz
+man/man8/vfs_glusterfs_fuse.8.gz
 man/man8/vfs_linux_xfs_sgid.8.gz
 man/man8/vfs_media_harmony.8.gz
 man/man8/vfs_netatalk.8.gz

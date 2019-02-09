@@ -1,4 +1,4 @@
---- source3/modules/vfs_streams_xattr.c.orig	2018-08-11 23:00:01 UTC
+--- source3/modules/vfs_streams_xattr.c.orig	2018-11-08 07:58:08 UTC
 +++ source3/modules/vfs_streams_xattr.c
 @@ -1,10 +1,10 @@
  /*
@@ -141,9 +141,9 @@
  	if (sbuf->st_ex_size == -1) {
  		TALLOC_FREE(smb_fname_base);
  		SET_STAT_INVALID(*sbuf);
-@@ -453,10 +508,10 @@ static int streams_xattr_open(vfs_handle
- 	pipe_fds[1] = -1;
- 	fakefd = pipe_fds[0];
+@@ -441,10 +496,10 @@ static int streams_xattr_open(vfs_handle
+ 		goto fail;
+ 	}
  
 -	status = get_ea_value(talloc_tos(), handle->conn, NULL,
 -			      smb_fname, xattr_name, &ea);
@@ -153,9 +153,30 @@
 -	DEBUG(10, ("get_ea_value returned %s\n", nt_errstr(status)));
 +	DEBUG(10, ("get_xattr_value returned %s\n", nt_errstr(status)));
  
- 	if (!NT_STATUS_IS_OK(status)
- 	    && !NT_STATUS_EQUAL(status, NT_STATUS_NOT_FOUND)) {
-@@ -625,8 +680,8 @@ static int streams_xattr_rename(vfs_hand
+ 	if (!NT_STATUS_IS_OK(status)) {
+ 		if (!NT_STATUS_EQUAL(status, NT_STATUS_NOT_FOUND)) {
+@@ -475,19 +530,13 @@ static int streams_xattr_open(vfs_handle
+ 		/*
+ 		 * The attribute does not exist or needs to be truncated
+ 		 */
+-
+-		/*
+-		 * Darn, xattrs need at least 1 byte
+-		 */
+-		char null = '\0';
+-
+ 		DEBUG(10, ("creating or truncating attribute %s on file %s\n",
+ 			   xattr_name, smb_fname->base_name));
+ 
+ 		ret = SMB_VFS_SETXATTR(fsp->conn,
+ 				       smb_fname,
+ 				       xattr_name,
+-				       &null, sizeof(null),
++				       NULL, 0,
+ 				       flags & O_EXCL ? XATTR_CREATE : 0);
+ 		if (ret != 0) {
+ 			goto fail;
+@@ -643,8 +692,8 @@ static int streams_xattr_rename(vfs_hand
  	}
  
  	/* read the old stream */
@@ -166,7 +187,7 @@
  	if (!NT_STATUS_IS_OK(status)) {
  		errno = ENOENT;
  		goto fail;
-@@ -713,14 +768,13 @@ static NTSTATUS walk_xattr_streams(vfs_h
+@@ -731,14 +780,13 @@ static NTSTATUS walk_xattr_streams(vfs_h
  			continue;
  		}
  
@@ -183,7 +204,7 @@
  				names[i],
  				smb_fname->base_name,
  				nt_errstr(status)));
-@@ -782,16 +836,17 @@ struct streaminfo_state {
+@@ -800,16 +848,17 @@ struct streaminfo_state {
  	NTSTATUS status;
  };
  
@@ -204,7 +225,7 @@
  		state->status = NT_STATUS_NO_MEMORY;
  		return false;
  	}
-@@ -911,14 +966,17 @@ static ssize_t streams_xattr_pwrite(vfs_
+@@ -929,14 +978,17 @@ static ssize_t streams_xattr_pwrite(vfs_
  				    files_struct *fsp, const void *data,
  				    size_t n, off_t offset)
  {
@@ -225,7 +246,7 @@
  
  	if (sio == NULL) {
  		return SMB_VFS_NEXT_PWRITE(handle, fsp, data, n, offset);
-@@ -928,6 +986,8 @@ static ssize_t streams_xattr_pwrite(vfs_
+@@ -946,6 +998,8 @@ static ssize_t streams_xattr_pwrite(vfs_
  		return -1;
  	}
  
@@ -234,7 +255,7 @@
  	/* Create an smb_filename with stream_name == NULL. */
  	smb_fname_base = synthetic_smb_fname(talloc_tos(),
  					sio->base,
-@@ -935,39 +995,55 @@ static ssize_t streams_xattr_pwrite(vfs_
+@@ -953,39 +1007,55 @@ static ssize_t streams_xattr_pwrite(vfs_
  					NULL,
  					fsp->fsp_name->flags);
  	if (smb_fname_base == NULL) {
@@ -311,7 +332,7 @@
  
  	if (ret == -1) {
  		return -1;
-@@ -980,15 +1056,17 @@ static ssize_t streams_xattr_pread(vfs_h
+@@ -998,15 +1068,17 @@ static ssize_t streams_xattr_pread(vfs_h
  				   files_struct *fsp, void *data,
  				   size_t n, off_t offset)
  {
@@ -334,7 +355,7 @@
  
  	if (sio == NULL) {
  		return SMB_VFS_NEXT_PREAD(handle, fsp, data, n, offset);
-@@ -998,6 +1076,8 @@ static ssize_t streams_xattr_pread(vfs_h
+@@ -1016,6 +1088,8 @@ static ssize_t streams_xattr_pread(vfs_h
  		return -1;
  	}
  
@@ -343,7 +364,7 @@
  	/* Create an smb_filename with stream_name == NULL. */
  	smb_fname_base = synthetic_smb_fname(talloc_tos(),
  					sio->base,
-@@ -1005,31 +1085,35 @@ static ssize_t streams_xattr_pread(vfs_h
+@@ -1023,31 +1097,35 @@ static ssize_t streams_xattr_pread(vfs_h
  					NULL,
  					fsp->fsp_name->flags);
  	if (smb_fname_base == NULL) {
@@ -392,7 +413,7 @@
  }
  
  struct streams_xattr_pread_state {
-@@ -1196,16 +1280,18 @@ static int streams_xattr_ftruncate(struc
+@@ -1214,16 +1292,18 @@ static int streams_xattr_ftruncate(struc
  					struct files_struct *fsp,
  					off_t offset)
  {
@@ -418,7 +439,7 @@
  
  	if (sio == NULL) {
  		return SMB_VFS_NEXT_FTRUNCATE(handle, fsp, offset);
-@@ -1215,6 +1301,8 @@ static int streams_xattr_ftruncate(struc
+@@ -1233,6 +1313,8 @@ static int streams_xattr_ftruncate(struc
  		return -1;
  	}
  
@@ -427,7 +448,7 @@
  	/* Create an smb_filename with stream_name == NULL. */
  	smb_fname_base = synthetic_smb_fname(talloc_tos(),
  					sio->base,
-@@ -1222,40 +1310,46 @@ static int streams_xattr_ftruncate(struc
+@@ -1240,40 +1322,46 @@ static int streams_xattr_ftruncate(struc
  					NULL,
  					fsp->fsp_name->flags);
  	if (smb_fname_base == NULL) {
@@ -490,7 +511,7 @@
  
  	if (ret == -1) {
  		return -1;
-@@ -1273,9 +1367,9 @@ static int streams_xattr_fallocate(struc
+@@ -1291,9 +1379,9 @@ static int streams_xattr_fallocate(struc
          struct stream_io *sio =
  		(struct stream_io *)VFS_FETCH_FSP_EXTENSION(handle, fsp);
  
