@@ -3,7 +3,7 @@
 
 PORTNAME=	dnsmasq
 DISTVERSION=	2.80
-PORTREVISION=	1	# leave this in even if 0 to avoid PORTEPOCH bumps
+PORTREVISION=	2	# leave this in even if 0 to avoid PORTEPOCH bumps
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \

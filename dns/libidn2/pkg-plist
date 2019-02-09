@@ -2,8 +2,8 @@ bin/idn2
 include/idn2.h
 lib/libidn2.a
 lib/libidn2.so
-lib/libidn2.so.4
-lib/libidn2.so.4.0.0
+lib/libidn2.so.0
+lib/libidn2.so.0.3.5
 libdata/pkgconfig/libidn2.pc
 man/man1/idn2.1.gz
 man/man3/idn2_check_version.3.gz
@@ -15,6 +15,7 @@ man/man3/idn2_register_ul.3.gz
 man/man3/idn2_strerror.3.gz
 man/man3/idn2_strerror_name.3.gz
 man/man3/idn2_to_ascii_4i.3.gz
+man/man3/idn2_to_ascii_4i2.3.gz
 man/man3/idn2_to_ascii_4z.3.gz
 man/man3/idn2_to_ascii_8z.3.gz
 man/man3/idn2_to_ascii_lz.3.gz
