@@ -170,6 +170,7 @@
     SUBDIR += soapyairspy
     SUBDIR += soapybladerf
     SUBDIR += soapyplutosdr
+    SUBDIR += soapyredpitaya
     SUBDIR += soapyremote
     SUBDIR += soapysdrhackrf
     SUBDIR += soapyuhd
