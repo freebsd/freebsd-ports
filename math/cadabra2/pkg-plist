@@ -4,7 +4,12 @@ bin/cadabra2
 bin/cadabra2cadabra
 bin/cadabra2html
 bin/cadabra2python
-lib/libcadabra_client.a
+man/man1/cadabra-server.1.gz
+man/man1/cadabra2-gtk.1.gz
+man/man1/cadabra2.1.gz
+man/man1/cadabra2cadabra.1.gz
+man/man1/cadabra2html.1.gz
+man/man1/cadabra2python.1.gz
 %%GUI%%share/applications/cadabra2-gtk.desktop
 %%GUI%%%%DATADIR%%/images/cadabra2-gtk.png
 %%GUI%%%%DATADIR%%/latex/preamble.tex
