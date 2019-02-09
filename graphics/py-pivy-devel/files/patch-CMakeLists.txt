@@ -1,0 +1,25 @@
+--- CMakeLists.txt.orig	2018-06-08 08:15:18 UTC
++++ CMakeLists.txt
+@@ -2,17 +2,17 @@ project(pivy_cmake_setup NONE)
+ cmake_minimum_required(VERSION 3.5)
+ 
+ 
+-find_package(Coin CONFIG REQUIRED)
++find_package(Coin3D REQUIRED)
+ 
+-if (Coin_INCLUDE_DIR)
++if (COIN3D_INCLUDE_DIR)
+     MESSAGE(STATUS "COIN_FOUND: " true)
+ else()
+     MESSAGE(STATUS "COIN_FOUND: " false)
+ endif()
+ 
+-MESSAGE(STATUS "COIN_INCLUDE_DIR: " ${Coin_INCLUDE_DIR})
+-MESSAGE(STATUS "COIN_LIB_DIR: " ${Coin_LIB_DIR})
+-MESSAGE(STATUS "COIN_VERSION: " ${Coin_VERSION})
++MESSAGE(STATUS "COIN_INCLUDE_DIR: " ${COIN3D_INCLUDE_DIRS})
++MESSAGE(STATUS "COIN_LIB_DIR: " ${COIN3D_LIBRARIES})
++# MESSAGE(STATUS "COIN_VERSION: " ${COIN3D_VERSION})
+ 
+ 
+ 
