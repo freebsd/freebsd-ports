@@ -458,7 +458,6 @@
     SUBDIR += smssend
     SUBDIR += snakemake
     SUBDIR += soapysdr
-    SUBDIR += soapysdr-hackrf
     SUBDIR += soapysdr-rtlsdr
     SUBDIR += solarized
     SUBDIR += spamcalc

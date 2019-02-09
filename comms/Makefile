@@ -169,6 +169,7 @@
     SUBDIR += soapyairspy
     SUBDIR += soapyplutosdr
     SUBDIR += soapyremote
+    SUBDIR += soapysdrhackrf
     SUBDIR += soapyuhd
     SUBDIR += spandsp
     SUBDIR += splat

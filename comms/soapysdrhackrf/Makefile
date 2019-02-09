@@ -3,7 +3,7 @@
 PORTNAME=	SoapyHackRF
 DISTVERSIONPREFIX=	soapy-hackrf-
 DISTVERSION=	0.3.3
-CATEGORIES=	misc hamradio
+CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Soapy SDR module for Hack RF
