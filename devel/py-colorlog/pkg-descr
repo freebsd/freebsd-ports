@@ -1,6 +1,16 @@
-It allows colors to be placed in the format string, which is mostly useful
-when paired with a StreamHandler that is outputting to a terminal.  This is
-accomplished by added a set of terminal color codes to the record before it
-is used to format the string.  Convenient for logging with colors support.
+colorlog.ColoredFormatter is a formatter for use with Python's logging module
+that outputs records using terminal colors.
 
-WWW: https://pypi.org/project/colorlog/
+The ColoredFormatter class takes several arguments:
+- format: The format string used to output the message (required).
+- datefmt: An optional date format passed to the base class. See
+  logging.Formatter.
+- reset: Implicitly adds a color reset code to the message output, unless the
+  output already ends with one. Defaults to True.
+- log_colors: A mapping of record level names to color names. The defaults can
+  be found in colorlog.default_log_colors.
+- secondary_log_colors: A mapping of names to log_colors style mappings,
+  defining additional colors that can be used in format strings.
+- style: Available on Python 3.2 and above. See logging.Formatter.
+
+WWW: https://github.com/borntyping/python-colorlog
