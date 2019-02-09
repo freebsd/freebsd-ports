@@ -1,6 +1,6 @@
---- cmake/version.cmake.orig	2018-12-07 05:19:36 UTC
+--- cmake/version.cmake.orig	2019-02-09 20:39:43 UTC
 +++ cmake/version.cmake
-@@ -4,7 +4,7 @@ set(CADABRA_VERSION_PATCH 2)
+@@ -4,7 +4,7 @@ set(CADABRA_VERSION_PATCH 4)
  set(CADABRA_VERSION_TWEAK 0)
  set(COPYRIGHT_YEARS "2001-2018")
  math(EXPR SYSTEM_BITS "${CMAKE_SIZEOF_VOID_P} * 8")

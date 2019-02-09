@@ -1,5 +1,3 @@
-TIMESTAMP = 1545586266
-SHA256 (kpeeters-cadabra2-2.2.4_GH0.tar.gz) = 2e75e5bf1763e55d795eb876bff61e1b5b359488a8b5db0b45eabd0d04df92c9
-SIZE (kpeeters-cadabra2-2.2.4_GH0.tar.gz) = 23960964
-SHA256 (5d52108df5b05eeba2ffbd7220776887297c2846.patch) = 91c1259345332b9fc4b52eafa1c510d2a851b99ca708fa25af5673cdf737be87
-SIZE (5d52108df5b05eeba2ffbd7220776887297c2846.patch) = 735
+TIMESTAMP = 1549747092
+SHA256 (kpeeters-cadabra2-2.2.5-5-gf10cac6b9a_GH0.tar.gz) = 9b998c2dab003fa36944bf261828d4c9ae3f75a760b1ac458c4a12757d506bf5
+SIZE (kpeeters-cadabra2-2.2.5-5-gf10cac6b9a_GH0.tar.gz) = 24065768
