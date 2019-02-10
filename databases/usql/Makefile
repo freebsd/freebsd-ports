@@ -2,7 +2,8 @@
 
 PORTNAME=	usql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.1-20
+DISTVERSIONSUFFIX=	-g114dc37
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,8 +17,9 @@ BUILD_DEPENDS=	go:lang/go
 USE_GITHUB=	yes
 GH_ACCOUNT=	xo
 
-GH_TUPLE=	xo:dburl:2406b5c:dburl/src/github.com/xo/dburl \
-		xo:terminfo:b44407a:terminfo/src/github.com/xo/terminfo \
+GH_TUPLE=	xo:dburl:98997a0:dburl/src/github.com/xo/dburl \
+		xo:terminfo:1a4775e:terminfo/src/github.com/xo/terminfo \
+		xo:tblfmt:e2122a1:tblfmt/src/github.com/xo/tblfmt \
 		xo:xoutil:46189f4:xoutil/src/github.com/xo/xoutil \
 		alecthomas:chroma:v0.3.0:chroma/src/github.com/alecthomas/chroma \
 		alecthomas:kingpin:v2.2.6:kingpin/src/github.com/alecthomas/kingpin \
@@ -34,7 +36,6 @@ GH_TUPLE=	xo:dburl:2406b5c:dburl/src/github.com/xo/dburl \
 		mattn:go-runewidth:v0.0.2:gorunewidth/src/github.com/mattn/go-runewidth \
 		mattn:go-sqlite3:v1.6.0:gosqlite3/src/github.com/mattn/go-sqlite3 \
 		olekukonko:tablewriter:b8a9be0:tablewriter/src/github.com/olekukonko/tablewriter \
-		xo:tblfmt:0b10999:tblfmt/src/github.com/xo/tblfmt \
 		zaf:temp:94e3859:temp/src/github.com/zaf/temp \
 		golang:crypto:650f4a3:crypto/src/golang.org/x/crypto
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
