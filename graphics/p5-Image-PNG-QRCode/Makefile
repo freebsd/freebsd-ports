@@ -2,6 +2,7 @@
 
 PORTNAME=	Image-PNG-QRCode
 DISTVERSION=	0.09
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,10 +13,6 @@ COMMENT=	Make a PNG image containing a QR code from text
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpng.so:graphics/png
-
-RUN_DEPENDS+=	p5-Carp>0:devel/p5-Carp
-RUN_DEPENDS+=	p5-Exporter>0:devel/p5-Exporter
-RUN_DEPENDS+=	p5-XSLoader>0:devel/p5-XSLoader
 
 USES=		perl5
 USE_PERL5=	configure
