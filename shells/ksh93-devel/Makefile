@@ -36,8 +36,6 @@ LDFLAGS+=	-lm
 MESON_BUILD_DIR=	build
 MAKE_ENV=	CCFLAGS="${CFLAGS}"
 
-STATIC_MAKE_ENV=	LDFLAGS+=-static
-
 BROKEN_aarch64=		Fails to compile: needs sbrk
 
 OPTIONS_DEFAULT=	KSH93
