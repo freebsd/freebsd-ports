@@ -1,5 +1,6 @@
 bin/ufdb-pstack
 bin/ufdbAnalyse
+bin/ufdbDLstatus
 bin/ufdbConvertDB
 bin/ufdbGenTable
 bin/ufdbUpdate
