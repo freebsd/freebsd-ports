@@ -22,7 +22,7 @@ c_PKGNAMESUFFIX=	-c
 cxx_PLIST=	${.CURDIR}/pkg-plist-cxx
 c_PLIST=	${.CURDIR}/pkg-plist-c
 
-USES=		autoreconf gmake libtool pkgconfig
+USES=		autoreconf compiler:c++11-lang gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 USE_LDCONFIG=	yes
