@@ -27,5 +27,5 @@ The work, log, and run directories are located at:
 Documentation
 =============
 Further documentation can be found in the official Nexus Book at:
-  http://books.sonatype.com/nexus-book/%%BOOKVERSION%%/reference/index.html
+  https://books.sonatype.com/nexus-book/%%BOOKVERSION%%/reference/index.html
 ========================================================================

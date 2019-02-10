@@ -1,16 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	nexus2
-PORTVERSION=	2.14.0
+PORTVERSION=	2.14.9
+DISTVERSIONSUFFIX=	01
 CATEGORIES=	devel www java
 MASTER_SITES=	http://download.sonatype.com/nexus/oss/
 PKGNAMESUFFIX=	-oss
-DISTNAME=	nexus-${PORTVERSION}-01-bundle
+DISTNAME=	nexus-${PORTVERSION}-${DISTVERSIONSUFFIX}-bundle
 
-MAINTAINER=	1983-01-06@gmx.net
+MAINTAINER=	michael.osipov@siemens.com
 COMMENT=	Maven (and others) artifacts repostory manager
 
 LICENSE=	EPL
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 PATCH_DEPENDS=	zip:archivers/zip
 RUN_DEPENDS=	javaservicewrapper:sysutils/javaservicewrapper
@@ -18,13 +21,12 @@ RUN_DEPENDS=	javaservicewrapper:sysutils/javaservicewrapper
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_TEST=	yes
-ONLY_FOR_ARCHS=	i386 amd64
-
-USE_JAVA=	yes
-JAVA_VERSION=	1.7+
 
 USES=		cpe
 CPE_VENDOR=	sonatype
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.7+
 
 USE_RC_SUBR=	${PORTNAME}
 
@@ -35,7 +37,7 @@ GROUPS=		${NEXUS_GROUP}
 
 # Change to Java rules
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-WRKSRC=		${WRKDIR}/nexus-${PORTVERSION}-01
+WRKSRC=		${WRKDIR}/nexus-${RELEASEVERSION}
 
 WRAPPER_DIR=	${PREFIX}/lib/javaservicewrapper
 WRAPPER_CMD=	${WRAPPER_DIR}/bin/wrapper
@@ -48,7 +50,9 @@ NEXUS_WORKDIR=	/var/${PORTNAME}
 
 ZIP_CMD?=	${LOCALBASE}/bin/zip
 
-NEXUS_CORE_JAR=	${WRKSRC}/nexus/WEB-INF/lib/nexus-core-${PORTVERSION}-01.jar
+RELEASEVERSION=	${PORTVERSION}-${DISTVERSIONSUFFIX}
+
+NEXUS_CORE_JAR=	${WRKSRC}/nexus/WEB-INF/lib/nexus-core-${RELEASEVERSION}.jar
 
 SUB_FILES=	pkg-message
 SUB_LIST=	NEXUS_RC=${PORTNAME} \
@@ -65,7 +69,8 @@ PLIST_SUB=	USER=${NEXUS_USER} \
 		GROUP=${NEXUS_GROUP} \
 		RUNDIR=${NEXUS_RUNDIR} \
 		LOGDIR=${NEXUS_LOGDIR} \
-		WORKDIR=${NEXUS_WORKDIR}
+		WORKDIR=${NEXUS_WORKDIR} \
+		VERSION=${RELEASEVERSION}
 
 # PATCH NOTES
 #   Several patches are necessary due to the following issues:
@@ -91,14 +96,14 @@ post-patch:
 		${WRKSRC}/conf/nexus.properties ${WRKSRC}/conf/wrapper.conf
 	@${FIND} ${WRKSRC} -name '*.bak' -delete -o -name '*.orig' -delete
 	@(cd ${FILESDIR}/nexus/WEB-INF/lib/nexus-core.jar \
-		&& ${ZIP_CMD} -urq ${NEXUS_CORE_JAR} META-INF)
+		&& ${ZIP_CMD} -r ${NEXUS_CORE_JAR} META-INF)
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	@(cd ${STAGEDIR}${DATADIR} && ${MV} conf ${STAGEDIR}${ETCDIR})
 	@(cd ${STAGEDIR}${ETCDIR} \
-		&& ${FIND} . -type f -exec ${MV} {} {}.sample \;)
+		&& ${FIND} . -type f -exec ${MV} '{}' '{}'.sample \;)
 	@${MKDIR} ${STAGEDIR}${NEXUS_RUNDIR}
 	@${MKDIR} ${STAGEDIR}${NEXUS_LOGDIR}
 	@${MKDIR} ${STAGEDIR}${NEXUS_WORKDIR}
