@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netdisco
-DISTVERSION=	2.039033
-PORTREVISION=	2
+DISTVERSION=	2.040003
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OLIVER
@@ -64,7 +63,7 @@ RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Socket6>=0.23:net/p5-Socket6 \
 		p5-Starman>=0.4008:www/p5-Starman \
 		p5-Sys-SigAction>=0:devel/p5-Sys-SigAction \
-		p5-SNMP-Info>=3.54:net-mgmt/p5-SNMP-Info \
+		p5-SNMP-Info>=3.64:net-mgmt/p5-SNMP-Info \
 		p5-SQL-Translator>=0.11018:databases/p5-SQL-Translator \
 		p5-Template-Toolkit>=2.24:www/p5-Template-Toolkit \
 		p5-Template-Plugin-CSV>=0.04:textproc/p5-Template-Plugin-CSV \
