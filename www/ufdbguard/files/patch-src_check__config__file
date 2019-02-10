@@ -4,12 +4,12 @@
     exit 1
  fi
  
--if [ ! -f $CONFIG.pre-v1.33 ]
+-if [ ! -f $CONFIG.pre-v1.34 ]
 -then
--   cp $CONFIG $CONFIG.pre-v1.33
--   if [ ! -f $CONFIG.pre-v1.33 ]
+-   cp $CONFIG $CONFIG.pre-v1.34
+-   if [ ! -f $CONFIG.pre-v1.34 ]
 -   then
--      echo "cannot copy configuration file to $CONFIG.pre-v1.33"
+-      echo "cannot copy configuration file to $CONFIG.pre-v1.34"
 -      exit 1
 -   fi
 -fi
@@ -21,7 +21,7 @@
     echo "It is recommended to verify all ACLs for the inclusion of these URL categories ******"
  fi
  
--echo "The original configuration file is saved in $CONFIG.pre-v1.33"
+-echo "The original configuration file is saved in $CONFIG.pre-v1.34"
  echo
  
  exit 0

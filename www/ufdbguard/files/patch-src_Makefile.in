@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2017-03-14 18:52:13 UTC
+--- src/Makefile.in.orig	2019-02-04 19:45:45 UTC
 +++ src/Makefile.in
-@@ -224,7 +224,7 @@ install.bin: ufdbGenTable ufdbAnalyse uf
+@@ -227,7 +227,7 @@ install.bin: ufdbGenTable ufdbAnalyse ufdbhttpd create
  	$(INSTALL_PROGRAM) ufdb_top_urls.pl $(DESTDIR)$(bindir)/ufdb_top_urls
  	$(INSTALL_PROGRAM) ufdb_top_users.pl $(DESTDIR)$(bindir)/ufdb_top_users
  	@if [ -f ufdbpeek ] ; then $(INSTALL_PROGRAM) ufdbpeek $(DESTDIR)$(bindir)/ufdbpeek ; fi
@@ -9,7 +9,7 @@
  
  install.pid::
  	if [ $(piddir) != /var/tmp ] ; then $(INSTALL) -d $(DESTDIR)$(piddir) ; fi
-@@ -235,10 +235,10 @@ install.update::
+@@ -239,10 +239,10 @@ install.update::
  
  install.security::
  	echo "Installing SSL root certificates"
@@ -20,5 +20,22 @@
 -	sh ./install_etcfiles.sh $(DESTDIR)$(cfgdir) $(DESTDIR)$(bindir) $(DESTDIR)$(syscfgfile)
 +	sh ./install_etcfiles.sh $(DESTDIR)$(cfgdir) $(DESTDIR)$(bindir)
  
- install.webmin::
- 	@echo
+ install.debug::
+ 	-if [ -x /usr/bin/debuginfo-install ] ; then /usr/bin/debuginfo-install glibc ; fi
+@@ -281,12 +281,12 @@ uninstall.bin::
+ 
+ install.mt::
+ 	cd mtserver ; $(MAKE)
+-	$(INSTALL_PROGRAM) mtserver/ufdbguardd  $(DESTDIR)$(bindir)/ufdbguardd
+-	$(INSTALL_PROGRAM) mtserver/ufdbgclient $(DESTDIR)$(bindir)/ufdbgclient
+-	$(INSTALL_PROGRAM) mtserver/ufdb-pstack $(DESTDIR)$(bindir)/ufdb-pstack
++	$(INSTALL_PROGRAM) ufdbguardd  $(DESTDIR)$(bindir)/ufdbguardd
++	$(INSTALL_PROGRAM) ufdbgclient $(DESTDIR)$(bindir)/ufdbgclient
++	$(INSTALL_PROGRAM) ufdb-pstack $(DESTDIR)$(bindir)/ufdb-pstack
+ 	-@echo "ignore the next error from chown when building a package as non-root user"
+ 	-$(RM) $(DESTDIR)$(bindir)/ufdbsignal ; \
+-		$(INSTALL_PROGRAM) mtserver/ufdbsignal  $(DESTDIR)$(bindir)/ufdbsignal  ; \
++		$(INSTALL_PROGRAM) ufdbsignal  $(DESTDIR)$(bindir)/ufdbsignal  ; \
+ 		chown root $(DESTDIR)$(bindir)/ufdbsignal  ;  \
+ 		chmod +s $(DESTDIR)$(bindir)/ufdbsignal
+ 
