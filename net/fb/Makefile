@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fb
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	net python
 MASTER_SITES=	http://paste.xinu.at/data/client/
 
