@@ -29,7 +29,7 @@ TEST_DEPENDS=	p5-Module-Implementation>=0:devel/p5-Module-Implementation \
 		p5-Test-Number-Delta>=0:devel/p5-Test-Number-Delta \
 		p5-Test-Requires>=0:devel/p5-Test-Requires
 
-USES=		perl5
+USES=		compiler:c11 perl5
 USE_PERL5=	modbuild
 
 post-install:
