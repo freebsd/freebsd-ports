@@ -2,7 +2,7 @@ bin/fkp-agent
 %%SITE_PERL%%/File/KeePass/Agent.pm
 %%SITE_PERL%%/File/KeePass/Agent/linux.pm
 %%SITE_PERL%%/File/KeePass/Agent/unix.pm
+%%PERL5_MAN1%%/fkp-agent.1.gz
 %%PERL5_MAN3%%/File::KeePass::Agent.3.gz
 %%PERL5_MAN3%%/File::KeePass::Agent::linux.3.gz
 %%PERL5_MAN3%%/File::KeePass::Agent::unix.3.gz
-%%PERL5_MAN1%%/fkp-agent.1.gz
