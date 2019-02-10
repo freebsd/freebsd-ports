@@ -2,29 +2,26 @@
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=233909
 # TODO: Upstream
 
---- certbot/compat.py.orig	2019-01-24 22:07:15 UTC
+--- certbot/compat.py.orig	2019-02-07 21:20:29 UTC
 +++ certbot/compat.py
-@@ -184,6 +184,12 @@ LINUX_DEFAULT_FOLDERS = {
+@@ -187,6 +187,11 @@ LINUX_DEFAULT_FOLDERS = {
+     'work': '/var/lib/letsencrypt',
      'logs': '/var/log/letsencrypt',
  }
- 
 +FREEBSD_DEFAULT_FOLDERS = {
 +    'config': '/usr/local/etc/letsencrypt',
 +    'work': '/var/db/letsencrypt',
 +    'logs': '/var/log/letsencrypt',
 +}
-+
+ 
+ 
  def get_default_folder(folder_type):
-     """
-     Return the relevant default folder for the current OS
-@@ -195,7 +201,13 @@ def get_default_folder(folder_type):
+@@ -200,8 +205,13 @@ def get_default_folder(folder_type):
  
      """
-     if 'fcntl' in sys.modules:
+     if os.name != 'nt':
 -        # Linux specific
 -        return LINUX_DEFAULT_FOLDERS[folder_type]
--    # Windows specific
--    return WINDOWS_DEFAULT_FOLDERS[folder_type]
 +        # Unix-like
 +        if sys.platform.startswith('freebsd') or sys.platform.startswith('dragonfly'):
 +            # FreeBSD specific
@@ -32,6 +29,6 @@
 +        else:
 +            # Linux specific
 +            return LINUX_DEFAULT_FOLDERS[folder_type]
-+    else:
-+        # Windows specific
-+        return WINDOWS_DEFAULT_FOLDERS[folder_type]
+     # Windows specific
+     return WINDOWS_DEFAULT_FOLDERS[folder_type]
+ 

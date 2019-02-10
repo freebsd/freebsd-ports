@@ -1,8 +1,8 @@
---- setup.py.orig	2018-12-05 23:47:59 UTC
+--- setup.py.orig	2019-02-07 21:20:31 UTC
 +++ setup.py
 @@ -39,7 +39,6 @@ install_requires = [
      'configobj',
-     'cryptography>=1.2',  # load_pem_x509_certificate
+     'cryptography>=1.2.3',  # load_pem_x509_certificate
      'josepy',
 -    'mock',
      'parsedatetime>=1.3',  # Calendar.parseDT
