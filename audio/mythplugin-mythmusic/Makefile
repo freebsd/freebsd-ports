@@ -3,8 +3,8 @@
 
 PORTNAME=	mythmusic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	29.1
-PORTREVISION=	2
+DISTVERSION=	30.0
+PORTREVISION=	0
 CATEGORIES=	audio
 PKGNAMEPREFIX=	mythplugin-
 
@@ -18,9 +18,9 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libmp3lame.so:audio/lame \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
-		libmyth-29.so:multimedia/mythtv
+		libmyth-30.so:multimedia/mythtv
 
-USES=	qt:5
+USES=		gmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 GH_PROJECT=	mythtv
@@ -28,8 +28,13 @@ USE_LDCONFIG=	yes
 USE_QT=		buildtools_build core gui qmake_build sql xml
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-all \
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}" --cxx="${CXX}" \
+		--disable-all \
 		--enable-mythmusic
+CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" \
+		QTDIR="${PREFIX}" PKG_CONFIG_PATH="${LOCALBASE}/libdata/pkgconfig"
+MAKE_ENV=	QTDIR="${PREFIX}" \
+		QMAKESPEC="${QMAKESPEC}"
 DESTDIRNAME=	INSTALL_ROOT
 PLIST_SUB=	MYTHSHARE="share/mythtv"
 WRKSRC_SUBDIR=	mythplugins

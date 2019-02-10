@@ -41,12 +41,4 @@
  }
  
  as_o(){
-@@ -8840,7 +8840,7 @@ INCDIR=\$(INSTALL_ROOT)$incdir
- BINDIR=\$(INSTALL_ROOT)$bindir
- DATADIR=\$(INSTALL_ROOT)$datadir
- MANDIR=\$(INSTALL_ROOT)$mandir
--CFLAGS=${CFLAGS} -DFF_API_OLD_DECODE_AUDIO=1 -w
-+CFLAGS=${CFLAGS} -DFF_API_OLD_DECODE_AUDIO=1 -I${prefix}/include -w
- endif # FFMPEG_CONFIG_MAK
- EOF
  
