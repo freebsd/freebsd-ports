@@ -150,6 +150,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/Web/Plugin/Device/Modules.pm
 %%SITE_PERL%%/App/Netdisco/Web/Plugin/Device/Neighbors.pm
 %%SITE_PERL%%/App/Netdisco/Web/Plugin/Device/Ports.pm
+%%SITE_PERL%%/App/Netdisco/Web/Plugin/Device/Vlans.pm
 %%SITE_PERL%%/App/Netdisco/Web/Plugin/Inventory.pm
 %%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/ApChannelDist.pm
 %%SITE_PERL%%/App/Netdisco/Web/Plugin/Report/ApClients.pm
@@ -386,6 +387,8 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/device/netmap.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/device/ports.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/device/ports_csv.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/device/vlans.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/device/vlans_csv.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/apchanneldist.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/apchanneldist_csv.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/report/apclients.tt
