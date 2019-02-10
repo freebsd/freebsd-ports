@@ -5,8 +5,8 @@ DISTVERSION=	5.12.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 MASTER_SITE_SUBDIR=	official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
-DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Python Qt bindings for Qt 5.12+
@@ -15,7 +15,7 @@ LICENSE=	LGPL3
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		git>0:devel/git
-LIB_DEPENDS=	libshiboken2-${PYTHON_VERSION}.so:devel/shiboken2@${PY_FLAVOR}
+LIB_DEPENDS=	# more later
 
 USES=		cmake gl python qt:5 tar:xz
 USE_GL=		gl
@@ -27,8 +27,19 @@ USE_QT=		3d buildtools_build charts core datavis3d declarative \
 		speech sql svg testlib uitools webchannel webengine \
 		websockets widgets x11extras xml xmlpatterns
 
-PLIST_SUB=	DISTVERSION=${DISTVERSION} \
-		PYTHON_VERSION=${PYTHON_VERSION}
+CMAKE_ARGS+=	"-DUSE_PYTHON_VERSION=${PYTHON_VER}"
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_MAJOR_VER} >= 3
+LIB_DEPENDS+=	libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR}
+PLIST_SUB+=	PYVERSTR=.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}
+.else
+LIB_DEPENDS+=	libshiboken2-${PYTHON_VERSION}.so:devel/shiboken2@${PY_FLAVOR}
+PLIST_SUB+=	PYVERSTR=-${PYTHON_VERSION}
+.endif
+
+PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 
 WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${DISTVERSION}/sources/pyside2
 
@@ -80,4 +91,4 @@ post-stage:
 		${STAGEDIR}/${PYTHON_SITELIBDIR}/libpyside \
 		${STAGEDIR}/${PYTHON_SITELIBDIR}/plugins
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
