@@ -3,7 +3,7 @@
 
 PORTNAME=	netdisco
 DISTVERSION=	2.039033
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OLIVER
@@ -15,7 +15,8 @@ COMMENT=	Network discovery/management tool with web console
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Net-SNMP>=6.0.1:net-mgmt/p5-Net-SNMP \
 		p5-Algorithm-Cron>=0.07:devel/p5-Algorithm-Cron \
 		p5-aliased>=0:devel/p5-aliased \
@@ -48,7 +49,6 @@ BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Module-Load>=0.32:devel/p5-Module-Load \
 		p5-Moo>=1.001000:devel/p5-Moo \
 		p5-MCE>=1.515:devel/p5-MCE \
-		p5-MIME-Base64>=0:converters/p5-MIME-Base64 \
 		p5-Net-DNS>=0.72:dns/p5-Net-DNS \
 		p5-perl-ldap>=0:net/p5-perl-ldap \
 		p5-Net-OpenSSH>=0:net/p5-Net-OpenSSH \
@@ -79,8 +79,6 @@ BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-YAML-LibYAML>=0.41:textproc/p5-YAML-LibYAML \
 		p5-IO-Socket-SSL>=2.048:security/p5-IO-Socket-SSL \
 		p5-File-Slurper>=0:devel/p5-File-Slurper
-
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USERS=		netdisco
 GROUPS=		netdisco
