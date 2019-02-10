@@ -1,0 +1,19 @@
+--- ext/cli/foreground.orig	2019-02-08 20:38:48.978660000 -0800
++++ ext/cli/foreground	2019-02-08 21:31:43.683308000 -0800
+@@ -1,6 +1,6 @@
+ #!/usr/bin/env bash
+ 
+-restartfile="/opt/puppetlabs/server/data/puppetserver/restartcounter"
++restartfile="/var/puppet/server/data/puppetserver/restartcounter"
+ cli_defaults=${INSTALL_DIR}/cli/cli-defaults.sh
+ 
+ if [ ! -e "${INSTALL_DIR}/ezbake-functions.sh" ]; then
+@@ -31,7 +31,7 @@
+          -Djava.security.egd=/dev/urandom \
+          -cp "$CLASSPATH" \
+          clojure.main -m puppetlabs.trapperkeeper.main \
+-         --config ${CONFIG} --bootstrap-config ${BOOTSTRAP_CONFIG} \
++         --config ${CONFIG} --bootstrap-config %%ETCDIR%%/services.d \
+          --restart-file "${restartfile}" \
+          ${TK_ARGS} \
+          ${@}"
