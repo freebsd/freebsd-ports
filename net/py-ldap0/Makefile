@@ -18,6 +18,7 @@ MAKE_ENV+=	INCLUDES=${LOCALBASE}/include
 WANT_OPENLDAP_SASL=yes
 
 USES=		python:2.7
+USE_LOCALE=	en_US.UTF-8
 USE_OPENLDAP=	yes
 USE_PYTHON=	autoplist distutils
 
