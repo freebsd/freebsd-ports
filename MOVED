@@ -11591,3 +11591,4 @@ sysutils/atf-allwinner|devel/atf-sun50i_a64|2019-02-05|Respect the ARM TF-A plat
 sysutils/yum||2019-02-07|Has expired: Abandoned upstream, does not work with python3
 sysutils/createrepo||2019-02-07|Has expired: Abandoned upstream, does not work with python3
 misc/soapysdr-hackrf|comms/soapysdrhackrf|2019-02-09|Move to the proper category/name
+math/wxMaxima|math/wxmaxima|2019-02-10|rename for consistency
