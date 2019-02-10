@@ -2,6 +2,7 @@
 
 PORTNAME=	Monitoring-Livestatus
 PORTVERSION=	0.80
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NIERLEIN
@@ -13,16 +14,9 @@ COMMENT=	Perl API for check_mk livestatus
 LICENSE=	GPLv1+
 LICENSE_FILE=	${WRKSRC}/README
 
-RUN_DEPENDS=	p5-Carp>=0:devel/p5-Carp \
-		p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS \
-		p5-Data-Dumper>=0:devel/p5-Data-Dumper \
-		p5-Digest-MD5>=0:security/p5-Digest-MD5 \
-		p5-Encode>=0:converters/p5-Encode \
-		p5-IO-Socket-IP>=0:net/p5-IO-Socket-IP \
-		p5-Socket>=0:net/p5-Socket \
-		p5-Storable>=0:devel/p5-Storable
-TEST_DEPENDS=	p5-Test-More-UTF8>=0:devel/p5-Test-More-UTF8 \
-		p5-Test-Simple>=0:devel/p5-Test-Simple
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS
+TEST_DEPENDS=	p5-Test-More-UTF8>=0:devel/p5-Test-More-UTF8
 
 USES=		perl5
 USE_PERL5=	configure
