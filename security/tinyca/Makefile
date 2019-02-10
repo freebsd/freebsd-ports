@@ -2,7 +2,7 @@
 
 PORTNAME=	tinyca
 PORTVERSION=	0.7.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://opsec.eu/src/${PORTNAME}/
 
@@ -13,8 +13,7 @@ LICENSE=	GPLv2+
 
 RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-Locale-gettext>=0:devel/p5-Locale-gettext \
-		zip:archivers/zip \
-		p5-MIME-Base64>=0:converters/p5-MIME-Base64
+		zip:archivers/zip
 
 USES=		perl5 tar:xz shebangfix ssl
 SHEBANG_FILES=	tinyca2
