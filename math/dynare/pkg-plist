@@ -623,6 +623,9 @@ lib/dynare/matlab/missing/corrcoef/sumskipnan.m
 lib/dynare/matlab/missing/corrcoef/tcdf.m
 lib/dynare/matlab/missing/ilu/ilu.m
 %%OCTAVE%%lib/dynare/matlab/missing/isfile/isfile.m
+lib/dynare/matlab/missing/is-row-column-matrix/iscolumn.m
+lib/dynare/matlab/missing/is-row-column-matrix/ismatrix.m
+lib/dynare/matlab/missing/is-row-column-matrix/isrow.m
 lib/dynare/matlab/missing/issquare/issquare.m
 lib/dynare/matlab/missing/nanmean/nanmean.m
 lib/dynare/matlab/missing/ordeig/ordeig.m
@@ -651,6 +654,9 @@ lib/dynare/matlab/missing/stats/stdnormal_pdf.m
 lib/dynare/matlab/missing/stats/wblcdf.m
 lib/dynare/matlab/missing/stats/wblinv.m
 lib/dynare/matlab/missing/stats/wblrnd.m
+lib/dynare/matlab/missing/strsplit/private/ischarint.m
+lib/dynare/matlab/missing/strsplit/private/ischarnum.m
+lib/dynare/matlab/missing/strsplit/strsplit.m
 lib/dynare/matlab/missing/struct2array/struct2array.m
 lib/dynare/matlab/missing/vec/vec.m
 lib/dynare/matlab/missing_DiffuseKalmanSmootherH1_Z.m
