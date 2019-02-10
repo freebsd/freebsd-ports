@@ -7,7 +7,6 @@ include/xtensor/xbroadcast.hpp
 include/xtensor/xbuffer_adaptor.hpp
 include/xtensor/xbuilder.hpp
 include/xtensor/xcomplex.hpp
-include/xtensor/xconcepts.hpp
 include/xtensor/xcontainer.hpp
 include/xtensor/xcsv.hpp
 include/xtensor/xdynamic_view.hpp

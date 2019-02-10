@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtensor
-DISTVERSION=	0.19.1
+DISTVERSION=	0.19.3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
