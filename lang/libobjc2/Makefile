@@ -3,6 +3,7 @@
 
 PORTNAME=	libobjc2
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	lang devel gnustep
 LICENSE=	MIT
 
@@ -15,7 +16,7 @@ USES=		cmake objc:compiler
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnustep
-GH_TAGNAME=	effdd15
+GH_TAGNAME=	0db500a
 
 SSP_UNSAFE=	yes
 
