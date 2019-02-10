@@ -3,7 +3,7 @@
 
 PORTNAME=	CIF-Client
 PORTVERSION=	0.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SAXJAZMAN/cif
@@ -17,7 +17,6 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor>=0.31:devel/p5-Class-Accessor \
-		p5-Compress-Raw-Zlib>=2.008:archivers/p5-Compress-Raw-Zlib \
 		p5-Config-Simple>=4.58:devel/p5-Config-Simple \
 		p5-Digest-SHA1>=2.11:security/p5-Digest-SHA1 \
 		p5-HTML-Table>=2.08:www/p5-HTML-Table \
