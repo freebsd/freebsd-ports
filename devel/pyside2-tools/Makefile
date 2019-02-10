@@ -16,8 +16,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		git>0:devel/git
-LIB_DEPENDS=	libshiboken2-${PYTHON_VERSION}.so:devel/shiboken2@${PY_FLAVOR} \
-		libpyside2-${PYTHON_VERSION}.so:devel/pyside2@${PY_FLAVOR}
+LIB_DEPENDS=	# more later
 
 USES=		cmake gl python qt:5 shebangfix tar:xz
 USE_GL=		gl
@@ -31,6 +30,18 @@ USE_QT=		3d buildtools_build charts core datavis3d declarative \
 SHEBANG_FILES=	pyside_tool.py pyside2-uic
 python_OLD_COMMAND=	"/usr/bin/env python"
 
+CMAKE_ARGS+=	"-DUSE_PYTHON_VERSION=${PYTHON_VER}"
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_MAJOR_VER} >= 3
+LIB_DEPENDS+=	libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
+		libpyside2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/pyside2@${PY_FLAVOR}
+.else
+LIB_DEPENDS+=	libshiboken2-${PYTHON_VERSION}.so:devel/shiboken2@${PY_FLAVOR} \
+		libpyside2-${PYTHON_VERSION}.so:devel/pyside2@${PY_FLAVOR}
+.endif
+
 WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${DISTVERSION}/sources/pyside2-tools
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
