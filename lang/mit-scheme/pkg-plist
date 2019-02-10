@@ -781,7 +781,7 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/xml/xml-w32.pkd
 %%MCRYPT%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmcrypt.so
 %%MHASH%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmhash.so
 %%OPENSSL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmd5.so
-%%POSTGRESQL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prpgsql.so
+%%PGSQL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prpgsql.so
 %%X11%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prx11.so
 man/man1/scheme.1.gz
 @dir lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib
