@@ -3,7 +3,7 @@
 
 PORTNAME=	gnatsweb
 PORTVERSION=	4.00
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases devel www
 MASTER_SITES=	GNU
 
@@ -12,8 +12,6 @@ COMMENT=	Gnatsweb, a GNATS web interface
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-RUN_DEPENDS=	p5-MIME-Base64>=0:converters/p5-MIME-Base64
 
 USES=		apache:run,2.2+ perl5 shebangfix
 SHEBANG_FILES=	gnatsweb.pl
