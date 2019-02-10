@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xeus-cling
-DISTVERSION=	0.4.10
+DISTVERSION=	0.4.11
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
