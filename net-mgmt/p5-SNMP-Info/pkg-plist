@@ -43,6 +43,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer2/Centillion.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Cisco.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/CiscoSB.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/Exinda.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/HP.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/HPVC.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/HP4000.pm
@@ -170,6 +171,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer2::Centillion.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::Cisco.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::CiscoSB.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer2::Exinda.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::HP.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::HP4000.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::HPVC.3.gz
