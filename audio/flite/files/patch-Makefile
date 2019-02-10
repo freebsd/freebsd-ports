@@ -1,0 +1,19 @@
+--- Makefile.orig	2017-12-25 15:13:21 UTC
++++ Makefile
+@@ -106,11 +106,11 @@ tags:
+ 
+ install:
+ 	@echo Installing 
+-	mkdir -p $(DESTDIR)$(INSTALLBINDIR)
+-	mkdir -p $(DESTDIR)$(INSTALLLIBDIR)
+-	mkdir -p $(DESTDIR)$(INSTALLINCDIR)
+-	$(INSTALL) -m 644 include/*.h $(DESTDIR)$(INSTALLINCDIR)
+-	@ $(MAKE) -C main --no-print-directory DESTDIR=$(DESTDIR) install
++	mkdir -p $(INSTALLBINDIR)
++	mkdir -p $(INSTALLLIBDIR)
++	mkdir -p $(INSTALLINCDIR)
++	$(INSTALL) -m 644 include/*.h $(INSTALLINCDIR)
++	@ $(MAKE) -C main --no-print-directory DESTDIR=${DESTDIR} install
+ 
+ time-stamp :
+ 	@ echo $(PROJECT_NAME) >.time-stamp
