@@ -882,7 +882,7 @@
     SUBDIR += wfmath
     SUBDIR += why3
     SUBDIR += wingz3
-    SUBDIR += wxMaxima
+    SUBDIR += wxmaxima
     SUBDIR += x12arima
     SUBDIR += xblas
     SUBDIR += xfce4-calculator-plugin

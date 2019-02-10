@@ -1,10 +1,9 @@
 # Created by: Nicola Vitale <nivit@email.it>
 # $FreeBSD$
 
-PORTNAME=	wxMaxima
-PORTVERSION=	17.05.1
+PORTNAME=	wxmaxima
+PORTVERSION=	19.02.0
 DISTVERSIONPREFIX=	Version-
-PORTREVISION=	0
 CATEGORIES=	math
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -14,15 +13,12 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	maxima:math/maxima
 
-GH_ACCOUNT=	andrejv
-GH_PROJECT=	${PORTNAME:tl}
-
-PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
-
-USE_GITHUB=	yes
 USES=		cmake desktop-file-utils gettext shared-mime-info
 USE_WX=		3.0
+USE_GITHUB=	yes
+GH_ACCOUNT=	wxMaxima-Developers
 
+PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
 WX_COMPS=	wx
 WX_CONF_ARGS=	absolute
 
