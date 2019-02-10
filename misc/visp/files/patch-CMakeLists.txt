@@ -1,8 +1,8 @@
 https://github.com/lagadic/visp/issues/423
 
---- CMakeLists.txt.orig	2018-08-18 08:03:58 UTC
+--- CMakeLists.txt.orig	2019-01-23 14:54:34 UTC
 +++ CMakeLists.txt
-@@ -605,7 +605,7 @@ if(UNIX)
+@@ -751,7 +751,7 @@ if(UNIX AND NOT ANDROID)
      )
      install(FILES
        ${VISP_BINARY_DIR}/doc/man/man1/visp-config.1.gz
