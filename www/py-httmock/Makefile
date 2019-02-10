@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	httmock
-PORTVERSION=	1.2.6
+PORTVERSION=	1.3.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://raw.githubusercontent.com/patrys/${PORTNAME}/${PORTVERSION}/:tests
