@@ -1,11 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	gabedit
-DISTVERSION=	2.5.0
-PORTREVISION=	2
+DISTVERSION=	2.5.1
 CATEGORIES=	science
-MASTER_SITES=	http://prdownloads.sourceforge.net/${PORTNAME}/
-DISTNAME=	GabeditSrc${DISTVERSION:S/.//g}
+#MASTER_SITES=	http://prdownloads.sourceforge.net/${PORTNAME}/ # old SF-based source
+#DISTNAME=	GabeditSrc${DISTVERSION:S/.//g}
+MASTER_SITES=	https://sites.google.com/site/allouchear/Home/gabedit/download/ # development version now on sites.google.com, browse to the same URL for details
+DISTNAME=	GabeditSrc${DISTVERSION:S/.//g}_061218
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical user interface for several chemistry software packages
@@ -19,10 +20,10 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 
-USES=		gettext-runtime gmake pkgconfig
+USES=		gettext-runtime gl gmake gnome pkgconfig
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango pangox-compat
 USE_GL=		gl glu
-USE_XORG=	x11
+USE_XORG=	ice sm x11 xmu xt
 INSTALLS_ICONS=	yes
 
 BINARY_ALIAS=	make=gmake
