@@ -24,3 +24,5 @@
 @dir(puppet,puppet,750) /var/log/puppetserver
 @dir(puppet,puppet,755) /var/puppet
 @dir(puppet,puppet,750) /var/puppet/server
+@dir(puppet,puppet,750) /var/puppet/server/data
+@dir(puppet,puppet,750) /var/run/puppetserver

@@ -15,7 +15,8 @@ RUN_DEPENDS=	bash>=0:shells/bash \
 		jruby>=9.1:lang/jruby \
 		puppet6>=0:sysutils/puppet6 \
 		rubygem-puppetserver-ca>=1:sysutils/rubygem-puppetserver-ca \
-		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
+		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet \
+		sudo>=1:security/sudo
 
 USES=		shebangfix
 USE_RC_SUBR=	puppetserver
@@ -42,7 +43,7 @@ post-patch:
 	ext/config/conf.d/web-routes.conf ext/config/conf.d/webserver.conf \
 	ext/config/conf.d/auth.conf ext/config/services.d/ca.cfg \
 	ext/system-config/services.d/bootstrap.cfg ext/bin/puppetserver \
-	ext/cli_defaults/cli-defaults.sh
+	ext/cli_defaults/cli-defaults.sh ext/cli/foreground
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
 		-e 's|%%RUBY_SITELIBDIR%%|${RUBY_SITELIBDIR}|' \
 		-e 's|%%RUBY_VER%%|${RUBY_VER}|' \
@@ -61,6 +62,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/puppet/code
 	@${MKDIR} ${STAGEDIR}/var/log/puppetserver
 	@${MKDIR} ${STAGEDIR}/var/puppet/server
+	@${MKDIR} ${STAGEDIR}/var/puppet/server/data
+	@${MKDIR} ${STAGEDIR}/var/run/puppetserver
 	${INSTALL_DATA} ${WRKSRC}/puppet-server-release.jar ${STAGEDIR}${DATADIR}/puppet-server-release.jar
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/global.conf ${STAGEDIR}${ETCDIR}/conf.d/global.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/logback.xml ${STAGEDIR}${ETCDIR}/logback.xml.sample
