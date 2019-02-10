@@ -11,7 +11,7 @@
  check_cxx(){
      log check_cxx "$@"
      cat > $TMPCXX
-@@ -559,6 +563,10 @@ CXXPPFLAGS=${CXXPPFLAGS#CXXPPFLAGS=}
+@@ -582,6 +586,10 @@ CXXPPFLAGS=${CXXPPFLAGS#CXXPPFLAGS=}
  OPENGLV=$(cat mythconfig.mak | grep -e "^CONFIG_OPENGL_VIDEO=yes")
  OPENGLES=$(cat mythconfig.mak | grep -e "^HAVE_GLES2_GL2_H=yes")
  
@@ -22,16 +22,3 @@
  EXTRALIBS=$(cat mythconfig.mak | grep -e "^EXTRALIBS=")
  EXTRALIBS=${EXTRALIBS#EXTRALIBS=}
  
-@@ -689,8 +697,10 @@ if enabled music ; then
-         echo "MythMusic requires FLAC."
-     fi
- 
--    if ! check_lib cdio/cdio.h cdio_open -lcdio || ! check_lib cdio/cdda.h cdio_cddap_open -lcdio_cdda || ! check_lib cdio/paranoia.h cdio_paranoia_init -lcdio_paranoia ; then
--        disable cdio
-+    if enabled cdio; then
-+       if ! check_lib cdio/cdio.h cdio_open -lcdio || ! check_lib cdio/paranoia/cdda.h cdio_cddap_open -lcdio_cdda || ! check_lib cdio/paranoia/paranoia.h cdio_paranoia_init -lcdio_paranoia ; then
-+         disable cdio
-+       fi
-     fi
- 
-     if ! check_lib lame/lame.h lame_init -lmp3lame ; then
