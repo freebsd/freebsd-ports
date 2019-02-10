@@ -2,7 +2,7 @@
 
 PORTNAME=	GraphQL
 PORTVERSION=	0.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETJ
@@ -22,7 +22,6 @@ RUN_DEPENDS=	p5-Moo>=0:devel/p5-Moo \
 		p5-Pegex>=0.64:devel/p5-Pegex \
 		p5-MooX-Thunking>=0.07:devel/p5-MooX-Thunking \
 		p5-JSON-MaybeXS>=1.003009:converters/p5-JSON-MaybeXS \
-		p5-JSON-PP>=2.92:converters/p5-JSON-PP \
 		p5-DateTime>=0:devel/p5-DateTime \
 		p5-DateTime-Format-ISO8601>=0:devel/p5-DateTime-Format-ISO8601
 TEST_DEPENDS=	p5-Test-Exception>=0.42:devel/p5-Test-Exception \
@@ -32,4 +31,11 @@ TEST_DEPENDS=	p5-Test-Exception>=0.42:devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502800
+BUILD_DEPENDS+=	p5-JSON-PP>=2.92:converters/p5-JSON-PP
+RUN_DEPENDS+=	p5-JSON-PP>=2.92:converters/p5-JSON-PP
+.endif
+
+.include <bsd.port.post.mk>
