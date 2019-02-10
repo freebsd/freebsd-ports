@@ -1,0 +1,23 @@
+--- main/Makefile.orig	2017-10-21 14:01:07 UTC
++++ main/Makefile
+@@ -133,15 +133,15 @@ $(BINDIR)/flite_${VOICE}: flite_main.o flite_lang_list
+ 
+ install:
+ #       The basic binaries
+-	@ $(INSTALL) -m 755 $(BINDIR)/flite $(DESTDIR)$(INSTALLBINDIR)
++	@ $(INSTALL) -m 755 -s $(BINDIR)/flite $(INSTALLBINDIR)
+ 	@ for i in $(VOICES) ; \
+ 	do \
+-	   $(INSTALL) $(BINDIR)/flite_$$i $(DESTDIR)$(INSTALLBINDIR); \
++	   $(INSTALL) -s $(BINDIR)/flite_$$i $(INSTALLBINDIR); \
+ 	done
+-	$(INSTALL) -m 755 $(BINDIR)/flite_time $(DESTDIR)$(INSTALLBINDIR)
++	$(INSTALL) -m 755 -s $(BINDIR)/flite_time $(INSTALLBINDIR)
+ #       The libraries: static and shared (if built)
+-	cp -pd $(flite_LIBS_deps) $(DESTDIR)$(INSTALLLIBDIR)
++	cp -pR $(flite_LIBS_deps) $(INSTALLLIBDIR)
+ ifdef SHFLAGS
+-	cp -pd $(SHAREDLIBS) $(VERSIONSHAREDLIBS) $(DESTDIR)$(INSTALLLIBDIR)
++	cp -pR $(SHAREDLIBS) $(VERSIONSHAREDLIBS) $(INSTALLLIBDIR)
+ endif
+ 

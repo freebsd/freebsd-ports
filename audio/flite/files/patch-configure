@@ -1,7 +1,7 @@
---- configure.orig	2009-08-14 22:50:59.000000000 +0200
-+++ configure	2010-09-09 15:07:27.000000000 +0200
-@@ -4079,7 +4079,7 @@
- OTHERLIBS=
+--- configure.orig	2017-10-21 14:01:07 UTC
++++ configure
+@@ -4213,7 +4213,7 @@ fi
+ 
  if test "$shared" = true; then
     case "$target_os" in
 -	linux*|k*bsd*-gnu|gnu*)
@@ -9,9 +9,9 @@
  		SHFLAGS="-fPIC"
          ;;
  	solaris*)
-@@ -4893,7 +4893,7 @@
- 	    AUDIODEFS=-DCST_AUDIO_ALSA
-             AUDIOLIBS=-lasound
+@@ -4413,7 +4413,7 @@ if test "x$AUDIODEFS" = x; then
+ 	    AUDIODEFS=-DCST_AUDIO_PULSEAUDIO
+             AUDIOLIBS='-lpulse-simple -lpulse'
  	    ;;
 -	*bsd)
 +	*bsd*)
