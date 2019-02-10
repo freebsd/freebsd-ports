@@ -5,7 +5,7 @@ PORTNAME=	diff
 PORTVERSION=	2.11
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.tribug.org/pub/tuhs/PDP-11/Distributions/ucb/2.11BSD/ \
+MASTER_SITES=	https://www.tuhs.org/Archive/Distributions/UCB/2.11BSD/ \
 		http://www.d20hobbies.com/2.11BSD/
 PKGNAMEPREFIX=	2bsd-
 DISTNAME=	file8
