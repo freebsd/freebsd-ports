@@ -3,7 +3,7 @@
 
 PORTNAME=	mit-scheme
 PORTVERSION=	9.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU/mit-scheme/stable.pkg/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${MIT_SCHEME_ARCH}
@@ -19,66 +19,33 @@ USES=		gmake
 WRKSRC=		${WRKDIR}/mit-scheme-${PORTVERSION}/src/
 
 OPTIONS_DEFINE=	GDBM MCRYPT MHASH OPENSSL PGSQL X11
+OPTIONS_SUB=	yes
 MCRYPT_DESC=	mcrypt library support
 MHASH_DESC=	mhash library support
 
+GDBM_CONFIGURE_ENABLE=		gdbm
+MCRYPT_CONFIGURE_ENABLE=	mcrypt
+MHASH_CONFIGURE_ENABLE=		mhash
+OPENSSL_CONFIGURE_ENABLE=	openssl
+PGSQL_CONFIGURE_ENABLE=		pgsql
+X11_CONFIGURE_ENABLE=		x11
+
+GDBM_CONFIGURE_WITH=	gdbm=${LOCALBASE}
+MCRYPT_CONFIGURE_WITH=	mcrypt=${LOCALBASE}
+MHASH_CONFIGURE_WITH=	mhash=${LOCALBASE}
+OPENSSL_CONFIGURE_WITH=	openssl
+PGSQL_CONFIGURE_WITH=	libpq=${LOCALBASE}
+X11_CONFIGURE_WITH=	x
+
+OPENSSL_USES=		ssl
+PGSQL_USES=		pgsql
+X11_USE=		xorg=x11
+
+GDBM_LIB_DEPENDS+=	libgdbm.so:databases/gdbm
+MHASH_LIB_DEPENDS+=	libmhash.so:security/mhash
+MCRYPT_LIB_DEPENDS+=	libmcrypt.so:security/libmcrypt
+
 .include <bsd.port.pre.mk>
-
-# TODO implement db4 support
-CONFIGURE_ARGS+=--without-db-4
-
-.if ${PORT_OPTIONS:MGDBM}
-PLIST_SUB+=	GDBM=""
-CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
-LIB_DEPENDS+=	libgdbm.so:databases/gdbm
-.else
-PLIST_SUB+=	GDBM="@comment "
-CONFIGURE_ARGS+=--without-gdbm
-.endif
-
-.if ${PORT_OPTIONS:MMHASH}
-PLIST_SUB+=	MHASH=""
-CONFIGURE_ARGS+=--with-mhash=${LOCALBASE}
-LIB_DEPENDS+=	libmhash.so:security/mhash
-.else
-PLIST_SUB+=	MHASH="@comment "
-CONFIGURE_ARGS+=--without-mhash
-.endif
-
-.if ${PORT_OPTIONS:MMCRYPT}
-PLIST_SUB+=	MCRYPT=""
-CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
-LIB_DEPENDS+=	libmcrypt.so:security/libmcrypt
-.else
-PLIST_SUB+=	MCRYPT="@comment "
-CONFIGURE_ARGS+=--without-mcrypt
-.endif
-
-.if ${PORT_OPTIONS:MOPENSSL}
-PLIST_SUB+=	OPENSSL=""
-CONFIGURE_ARGS+=--with-openssl
-.else
-PLIST_SUB+=	OPENSSL="@comment "
-CONFIGURE_ARGS+=--without-openssl
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-PLIST_SUB+=	POSTGRESQL=""
-CONFIGURE_ARGS+=--with-libpq=${LOCALBASE}
-USES+=		pgsql
-.else
-PLIST_SUB+=	POSTGRESQL="@comment "
-CONFIGURE_ARGS+=--without-libpq
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-PLIST_SUB+=	X11=""
-CONFIGURE_ARGS+=--with-x
-USE_XORG=	x11
-.else
-PLIST_SUB+=	X11="@comment "
-CONFIGURE_ARGS+=--without-x
-.endif
 
 .if ${ARCH} == amd64
 MIT_SCHEME_ARCH=x86-64
@@ -100,5 +67,8 @@ do-build:
 do-install:
 	@cd ${WRKDIR}/mit-scheme-${PORTVERSION}/src && ${MAKE_CMD} install DESTDIR=${STAGEDIR}
 	${INSTALL_MAN} ${WRKDIR}/mit-scheme-${PORTVERSION}/doc/scheme.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+
+	[ $$(${LS} ${STAGEDIR}${PREFIX}/lib/mit-scheme-${MIT_SCHEME_ARCH}/lib/ | wc -l) = 0 ] || \
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mit-scheme-${MIT_SCHEME_ARCH}/lib/*.so
 
 .include <bsd.port.post.mk>
