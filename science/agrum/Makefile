@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	agrum
-DISTVERSION=	0.13.6
+DISTVERSION=	0.14.1
 CATEGORIES=	science math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,11 +10,11 @@ COMMENT=	Graphical modeler for Bayesian networks, influence diagrams, etc
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake compiler:c++14-lang
 USE_GITLAB=	yes
 GL_ACCOUNT=	agrumery
 GL_PROJECT=	aGrUM
-GL_COMMIT=	df4f236e671e12fc887e9967eb74f5fb0c6cec52
+GL_COMMIT=	a9e534f9e862ef47c4563d2f7bb17d0869d04093
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	USE_SWIG
