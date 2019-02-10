@@ -2,7 +2,7 @@
 
 PORTNAME=	Iodef-Pb-Simple
 PORTVERSION=	0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SAXJAZMAN/iodef
@@ -22,7 +22,6 @@ RUN_DEPENDS=	p5-Class-Accessor>=0.34:devel/p5-Class-Accessor \
 		p5-Google-ProtocolBuffers>=0.08:devel/p5-Google-ProtocolBuffers \
 		p5-HTML-Table>=2.08:www/p5-HTML-Table \
 		p5-JSON-XS>=2.29:converters/p5-JSON-XS \
-		p5-MIME-Base64>=0.08:converters/p5-MIME-Base64 \
 		p5-Module-Install>=1.00:devel/p5-Module-Install \
 		p5-OSSP-uuid>=1.6.2:misc/p5-OSSP-uuid \
 		p5-Parse-Range>=0.96:math/p5-Parse-Range \
