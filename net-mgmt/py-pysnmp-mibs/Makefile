@@ -1,22 +1,23 @@
 # Created by: Martin Jackson <mhjacks@swbell.net>
 # $FreeBSD$
 
-PORTNAME=	snmp4-apps
-PORTVERSION=	0.4.1
+PORTNAME=	pysnmp-mibs
+PORTVERSION=	0.1.6
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP \
-		SF/pysnmp/pysnmp-apps/${PORTVERSION}
+		SF/pysnmp/pysnmp-mibs/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pysnmp-apps-${PORTVERSION}
 
 MAINTAINER=	mhjacks@swbell.net
-COMMENT=	Command line utilities for pysnmp4
+COMMENT=	Additional python MIB files for pysnmp and friends
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snmp4>=4.3.2:net-mgmt/py-snmp4@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysnmp>=4.3.2:net-mgmt/py-pysnmp@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

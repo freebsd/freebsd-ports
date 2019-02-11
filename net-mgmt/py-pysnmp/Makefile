@@ -1,13 +1,12 @@
 # Created by: Martin Jackson <mhjacks@swbell.net>
 # $FreeBSD$
 
-PORTNAME=	snmp4
+PORTNAME=	pysnmp
 PORTVERSION=	4.3.2
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP \
 		SF/pysnmp/pysnmp/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pysnmp-${PORTVERSION}
 
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	SNMP framework for Python
@@ -19,6 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.2:devel/py-pyasn1@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
