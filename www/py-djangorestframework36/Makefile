@@ -16,6 +16,7 @@ LICENSE=	BSD2CLAUSE
 USES=		python
 USE_PYTHON=	distutils autoplist
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}djangorestframework
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}djangorestframework \
+			${PYTHON_PKGNAMEPREFIX}dj21-djangorestframework
 
 .include <bsd.port.mk>

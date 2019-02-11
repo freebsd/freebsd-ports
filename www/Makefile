@@ -1517,6 +1517,17 @@
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
     SUBDIR += py-ddgr
+    SUBDIR += py-dj21-django-cors-headers
+    SUBDIR += py-dj21-django-debug-toolbar
+    SUBDIR += py-dj21-django-filter
+    SUBDIR += py-dj21-django-js-asset
+    SUBDIR += py-dj21-django-mptt
+    SUBDIR += py-dj21-django-tables2
+    SUBDIR += py-dj21-django-taggit
+    SUBDIR += py-dj21-django-taggit-serializer
+    SUBDIR += py-dj21-django-timezone-field
+    SUBDIR += py-dj21-djangorestframework
+    SUBDIR += py-dj21-drf-yasg
     SUBDIR += py-django
     SUBDIR += py-django-allauth
     SUBDIR += py-django-annotations
