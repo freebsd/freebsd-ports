@@ -26,7 +26,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/abi-compliance-checker.pl:devel/abi-compliance-c
 .else
 USE_PERL5=	run
 .endif
-USE_GCC=	4.8 # same as devel/elfutils
+USE_GCC=	yes	# same as devel/elfutils
 
 NO_BUILD=	yes
 
@@ -58,7 +58,7 @@ post-patch:
 		${WRKSRC}/modules/Internals/RegTests.pm
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
