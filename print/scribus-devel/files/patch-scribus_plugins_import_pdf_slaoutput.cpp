@@ -1,4 +1,4 @@
---- scribus/plugins/import/pdf/slaoutput.cpp.orig	2018-12-11 13:04:07 UTC
+--- scribus/plugins/import/pdf/slaoutput.cpp.orig	2019-01-10 06:21:56 UTC
 +++ scribus/plugins/import/pdf/slaoutput.cpp
 @@ -44,7 +44,7 @@ LinkSubmitForm::LinkSubmitForm(Object *actionObj)
  				{
@@ -397,6 +397,15 @@
  {
  //	qDebug() << "Draw Image Mask";
  	QImage * image = 0;
+@@ -2449,7 +2442,7 @@ void SlaOutputDev::drawImageMask(GfxState *state, Obje
+ 	int x, y, i, bit;
+ 	unsigned char *dest = 0;
+ 	unsigned char *buffer;
+-	Guchar *pix;
++	unsigned char *pix;
+ 	ImageStream * imgStr = new ImageStream(str, width, 1, 1);
+ 	imgStr->reset();
+ #ifdef WORDS_BIGENDIAN
 @@ -2512,8 +2505,7 @@ void SlaOutputDev::drawImageMask(GfxState *state, Obje
  			t++;
  		}
@@ -418,6 +427,32 @@
  {
  //	qDebug() << "Masked Image Components" << colorMap->getNumPixelComps();
  	ImageStream * imgStr = new ImageStream(str, width, colorMap->getNumPixelComps(), colorMap->getBits());
+@@ -2617,7 +2609,7 @@ void SlaOutputDev::drawSoftMaskedImage(GfxState *state
+ 	for (int y = 0; y < height; y++)
+ 	{
+ 		dest = (unsigned int *)(buffer + y * 4 * width);
+-		Guchar * pix = imgStr->getLine();
++		unsigned char * pix = imgStr->getLine();
+ 		colorMap->getRGBLine(pix, dest, width);
+ 	}
+ 	image = new QImage(buffer, width, height, QImage::Format_RGB32);
+@@ -2630,13 +2622,13 @@ void SlaOutputDev::drawSoftMaskedImage(GfxState *state
+ 	}
+ 	ImageStream *mskStr = new ImageStream(maskStr, maskWidth, maskColorMap->getNumPixelComps(), maskColorMap->getBits());
+ 	mskStr->reset();
+-	Guchar *mdest = 0;
++	unsigned char *mdest = 0;
+ 	unsigned char * mbuffer = new unsigned char[maskWidth * maskHeight];
+ 	memset(mbuffer, 0, maskWidth * maskHeight);
+ 	for (int y = 0; y < maskHeight; y++)
+ 	{
+-		mdest = (Guchar *)(mbuffer + y * maskWidth);
+-		Guchar * pix = mskStr->getLine();
++		mdest = (unsigned char *)(mbuffer + y * maskWidth);
++		unsigned char * pix = mskStr->getLine();
+ 		maskColorMap->getGrayLine(pix, mdest, maskWidth);
+ 	}
+ 	if ((maskWidth != width) || (maskHeight != height))
 @@ -2658,8 +2650,7 @@ void SlaOutputDev::drawSoftMaskedImage(GfxState *state
  			t++;
  		}
@@ -437,6 +472,33 @@
  {
  	ImageStream * imgStr = new ImageStream(str, width, colorMap->getNumPixelComps(), colorMap->getBits());
  	imgStr->reset();
+@@ -2760,7 +2751,7 @@ void SlaOutputDev::drawMaskedImage(GfxState *state, Ob
+ 	for (int y = 0; y < height; y++)
+ 	{
+ 		dest = (unsigned int *)(buffer + y * 4 * width);
+-		Guchar * pix = imgStr->getLine();
++		unsigned char * pix = imgStr->getLine();
+ 		colorMap->getRGBLine(pix, dest, width);
+ 	}
+ 	image = new QImage(buffer, width, height, QImage::Format_RGB32);
+@@ -2773,14 +2764,14 @@ void SlaOutputDev::drawMaskedImage(GfxState *state, Ob
+ 	}
+ 	ImageStream *mskStr = new ImageStream(maskStr, maskWidth, 1, 1);
+ 	mskStr->reset();
+-	Guchar *mdest = 0;
++	unsigned char *mdest = 0;
+ 	int invert_bit = maskInvert ? 1 : 0;
+ 	unsigned char * mbuffer = new unsigned char[maskWidth * maskHeight];
+ 	memset(mbuffer, 0, maskWidth * maskHeight);
+ 	for (int y = 0; y < maskHeight; y++)
+ 	{
+-		mdest = (Guchar *)(mbuffer + y * maskWidth);
+-		Guchar * pix = mskStr->getLine();
++		mdest = (unsigned char *)(mbuffer + y * maskWidth);
++		unsigned char * pix = mskStr->getLine();
+ 		for (int x = 0; x < maskWidth; x++)
+ 		{
+ 			if (pix[x] ^ invert_bit)
 @@ -2808,8 +2799,7 @@ void SlaOutputDev::drawMaskedImage(GfxState *state, Ob
  			t++;
  		}
@@ -456,6 +518,24 @@
  {
  	ImageStream * imgStr = new ImageStream(str, width, colorMap->getNumPixelComps(), colorMap->getBits());
  //	qDebug() << "Image Components" << colorMap->getNumPixelComps() << "Mask" << maskColors;
+@@ -2912,7 +2902,7 @@ void SlaOutputDev::drawImage(GfxState *state, Object *
+ 		for (int y = 0; y < height; y++)
+ 		{
+ 			QRgb *s = (QRgb*)(image->scanLine(y));
+-			Guchar *pix = imgStr->getLine();
++			unsigned char *pix = imgStr->getLine();
+ 			for (int x = 0; x < width; x++)
+ 			{
+ 				GfxRGB rgb;
+@@ -2940,7 +2930,7 @@ void SlaOutputDev::drawImage(GfxState *state, Object *
+ 		for (int y = 0; y < height; y++)
+ 		{
+ 			QRgb *s = (QRgb*)(image->scanLine(y));
+-			Guchar *pix = imgStr->getLine();
++			unsigned char *pix = imgStr->getLine();
+ 			for (int x = 0; x < width; x++)
+ 			{
+ 				if (colorMap->getNumPixelComps() == 4)
 @@ -2973,8 +2963,7 @@ void SlaOutputDev::drawImage(GfxState *state, Object *
  		delete image;
  		return;
@@ -608,7 +688,12 @@
  				: "(unnamed)");
  				goto err2;
  			}
-@@ -3488,7 +3477,7 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3484,11 +3473,11 @@ void SlaOutputDev::updateFont(GfxState *state)
+ 				if (n) {
+ 					codeToGID = (int *)gmallocn(n, sizeof(int));
+ 					memcpy(codeToGID, ((GfxCIDFont *)gfxFont)->getCIDToGID(),
+-					n * sizeof(Gushort));
++					n * sizeof(unsigned short));
  				}
  			} else {
  				if (fileName)
@@ -626,6 +711,15 @@
  				: "(unnamed)");
  				goto err2;
  			}
+@@ -3559,7 +3548,7 @@ void SlaOutputDev::updateFont(GfxState *state)
+ 	GooString *fileName;
+ 	char *tmpBuf;
+ 	int tmpBufLen;
+-	Gushort *codeToGID;
++	unsigned short *codeToGID;
+ 	DisplayFontParam *dfp;
+ 	double *textMat;
+ 	double m11, m12, m21, m22, fontSize;
 @@ -3604,7 +3593,7 @@ void SlaOutputDev::updateFont(GfxState *state)
  			}
  			if (!dfp)
@@ -705,7 +799,16 @@
  				goto err2;
  			}
  			break;
-@@ -3703,7 +3692,7 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3696,14 +3685,14 @@ void SlaOutputDev::updateFont(GfxState *state)
+ 				n = ((GfxCIDFont *)gfxFont)->getCIDToGIDLen();
+ 				if (n)
+ 				{
+-					codeToGID = (Gushort *)gmallocn(n, sizeof(Gushort));
+-					memcpy(codeToGID, ((GfxCIDFont *)gfxFont)->getCIDToGID(), n * sizeof(Gushort));
++					codeToGID = (unsigned short *)gmallocn(n, sizeof(unsigned short));
++					memcpy(codeToGID, ((GfxCIDFont *)gfxFont)->getCIDToGID(), n * sizeof(unsigned short));
+ 				}
+ 			}
  			else
  			{
  				if (fileName)
@@ -723,6 +826,15 @@
  				goto err2;
  			}
  			break;
+@@ -3775,7 +3764,7 @@ void SlaOutputDev::drawChar(GfxState *state, double x,
+ 			qPath.setFillRule(Qt::WindingFill);
+ 			for (int i = 0; i < fontPath->getLength(); ++i)
+ 			{
+-				Guchar f;
++				unsigned char f;
+ 				fontPath->getPoint(i, &x1, &y1, &f);
+ 				if (f & splashPathFirst)
+ 					qPath.moveTo(x1,y1);
 @@ -3793,8 +3782,7 @@ void SlaOutputDev::drawChar(GfxState *state, double x,
  				if (f & splashPathLast)
  					qPath.closeSubpath();

@@ -1,6 +1,14 @@
---- scribus/plugins/import/pdf/slaoutput.h.orig	2018-12-11 13:04:07 UTC
+--- scribus/plugins/import/pdf/slaoutput.h.orig	2019-01-10 06:21:56 UTC
 +++ scribus/plugins/import/pdf/slaoutput.h
-@@ -61,9 +61,9 @@ class LinkSubmitForm: public LinkAction (public)
+@@ -26,7 +26,6 @@ for which a new license (GPL+exception) is in place.
+ #include "selection.h"
+ #include "vgradient.h"
+ 
+-#include <poppler/goo/gtypes.h>
+ #include <poppler/Object.h>
+ #include <poppler/OutputDev.h>
+ #include <poppler/Gfx.h>
+@@ -61,9 +60,9 @@ class LinkSubmitForm: public LinkAction (public)
  	// Destructor.
  	virtual ~LinkSubmitForm();
  	// Was the LinkImportData created successfully?
@@ -12,7 +20,7 @@
  	GooString *getFileName() { return fileName; }
  	int getFlags() { return m_flags; }
  private:
-@@ -83,9 +83,9 @@ class LinkImportData: public LinkAction (public)
+@@ -83,9 +82,9 @@ class LinkImportData: public LinkAction (public)
  	// Destructor.
  	virtual ~LinkImportData();
  	// Was the LinkImportData created successfully?
@@ -24,7 +32,7 @@
  	GooString *getFileName() { return fileName; }
  private:
  	GooString *fileName;		// file name
-@@ -98,9 +98,9 @@ class SplashOutFontFileID: public SplashFontFileID
+@@ -98,9 +97,9 @@ class SplashOutFontFileID: public SplashFontFileID
  {
  public:
  
@@ -36,7 +44,7 @@
  	{
  		return ((SplashOutFontFileID *)id)->r.num == r.num && ((SplashOutFontFileID *)id)->r.gen == r.gen;
  	}
-@@ -115,18 +115,18 @@ class AnoOutputDev : public OutputDev
+@@ -115,18 +114,18 @@ class AnoOutputDev : public OutputDev
  public:
  	AnoOutputDev(ScribusDoc* doc, QStringList *importedColors);
  	virtual ~AnoOutputDev();
@@ -64,7 +72,7 @@
  
  	QString CurrColorText;
  	QString CurrColorFill;
-@@ -135,7 +135,7 @@ class AnoOutputDev : public OutputDev
+@@ -135,7 +134,7 @@ class AnoOutputDev : public OutputDev
  	GooString *m_fontName;
  	GooString *m_itemText;
  private:
@@ -73,7 +81,7 @@
  	ScribusDoc* m_doc;
  	QStringList *m_importedColors;
  };
-@@ -148,7 +148,7 @@ class SlaOutputDev : public OutputDev (public)
+@@ -148,7 +147,7 @@ class SlaOutputDev : public OutputDev (public)
  	virtual ~SlaOutputDev();
  	LinkAction* SC_getAction(AnnotWidget *ano);
  	LinkAction* SC_getAdditionalAction(const char *key, AnnotWidget *ano);
@@ -82,7 +90,7 @@
  	bool handleTextAnnot(Annot* annota, double xCoor, double yCoor, double width, double height);
  	bool handleLinkAnnot(Annot* annota, double xCoor, double yCoor, double width, double height);
  	bool handleWidgetAnnot(Annot* annota, double xCoor, double yCoor, double width, double height);
-@@ -156,15 +156,15 @@ class SlaOutputDev : public OutputDev (public)
+@@ -156,15 +155,15 @@ class SlaOutputDev : public OutputDev (public)
  	void handleActions(PageItem* ite, AnnotWidget *ano);
  	void startDoc(PDFDoc *doc, XRef *xrefA, Catalog *catA);
  
@@ -107,7 +115,7 @@
  	virtual void startPage(int pageNum, GfxState *, XRef *);
  	virtual void endPage();
  	// graphics state
-@@ -175,30 +175,30 @@ class SlaOutputDev : public OutputDev (public)
+@@ -175,30 +174,30 @@ class SlaOutputDev : public OutputDev (public)
  	virtual void stroke(GfxState *state);
  	virtual void fill(GfxState *state);
  	virtual void eoFill(GfxState *state);
@@ -149,7 +157,7 @@
  	{
  		return state->getFillColorSpace()->getMode() == csPattern;
  	}
-@@ -206,36 +206,36 @@ class SlaOutputDev : public OutputDev (public)
+@@ -206,36 +205,36 @@ class SlaOutputDev : public OutputDev (public)
  	virtual void endMaskClip(GfxState *state) { qDebug() << "End Mask Clip"; }
  
    //----- grouping operators
@@ -198,7 +206,7 @@
  	virtual void clearSoftMask(GfxState * /*state*/);
  
  	virtual void updateFillColor(GfxState *state);
-@@ -245,7 +245,7 @@ class SlaOutputDev : public OutputDev (public)
+@@ -245,7 +244,7 @@ class SlaOutputDev : public OutputDev (public)
  	virtual void beginTextObject(GfxState *state);
  	virtual void endTextObject(GfxState *state);
  	virtual void drawChar(GfxState *state, double /*x*/, double /*y*/, double /*dx*/, double /*dy*/, double /*originX*/, double /*originY*/, CharCode /*code*/, int /*nBytes*/, Unicode * /*u*/, int /*uLen*/);
@@ -207,7 +215,7 @@
  	virtual void endType3Char(GfxState * /*state*/);
  	virtual void type3D0(GfxState * /*state*/, double /*wx*/, double /*wy*/);
  	virtual void type3D1(GfxState * /*state*/, double /*wx*/, double /*wy*/, double /*llx*/, double /*lly*/, double /*urx*/, double /*ury*/);
-@@ -260,13 +260,13 @@ class SlaOutputDev : public OutputDev (public)
+@@ -260,13 +259,13 @@ class SlaOutputDev : public OutputDev (public)
  
  private:
  	void getPenState(GfxState *state);
@@ -225,7 +233,7 @@
  	bool checkClip();
  	bool pathIsClosed;
  	QString CurrColorFill;
-@@ -283,9 +283,9 @@ class SlaOutputDev : public OutputDev (public)
+@@ -283,9 +282,9 @@ class SlaOutputDev : public OutputDev (public)
  	struct groupEntry
  	{
  		QList<PageItem*> Items;

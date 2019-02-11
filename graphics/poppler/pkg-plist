@@ -5,6 +5,7 @@ include/poppler/BuiltinFontTables.h
 include/poppler/CMap.h
 include/poppler/CachedFile.h
 include/poppler/Catalog.h
+include/poppler/CertificateInfo.h
 include/poppler/CharCodeToUnicode.h
 include/poppler/CharTypes.h
 include/poppler/CompactFontTables.h
@@ -75,6 +76,7 @@ include/poppler/UnicodeMapTables.h
 include/poppler/UnicodeTypeTable.h
 include/poppler/ViewerPreferences.h
 include/poppler/XRef.h
+include/poppler/cpp/poppler-destination.h
 include/poppler/cpp/poppler-document.h
 include/poppler/cpp/poppler-embedded-file.h
 include/poppler/cpp/poppler-font.h
@@ -107,7 +109,6 @@ include/poppler/goo/gfile.h
 include/poppler/goo/gmem.h
 include/poppler/goo/grandom.h
 include/poppler/goo/gstrtod.h
-include/poppler/goo/gtypes.h
 include/poppler/poppler-config.h
 include/poppler/splash/Splash.h
 include/poppler/splash/SplashBitmap.h
@@ -131,10 +132,10 @@ include/poppler/splash/SplashXPath.h
 include/poppler/splash/SplashXPathScanner.h
 lib/libpoppler-cpp.so
 lib/libpoppler-cpp.so.0
-lib/libpoppler-cpp.so.0.5.0
+lib/libpoppler-cpp.so.0.7.0
 lib/libpoppler.so
-lib/libpoppler.so.83
-lib/libpoppler.so.83.0.0
+lib/libpoppler.so.85
+lib/libpoppler.so.85.0.0
 libdata/pkgconfig/poppler-cairo.pc
 libdata/pkgconfig/poppler-cpp.pc
 libdata/pkgconfig/poppler-splash.pc
