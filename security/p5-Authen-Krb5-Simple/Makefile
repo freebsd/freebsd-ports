@@ -9,7 +9,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	User/password authentication using Kerberose 5
 
-USES=		perl5
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+USES=		perl5 ssl
 USE_PERL5=	configure
 CONFIGURE_ENV=	GSSAPIBASEDIR="${GSSAPIBASEDIR}"
 
