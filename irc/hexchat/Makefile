@@ -3,8 +3,8 @@
 
 PORTNAME=	hexchat
 PORTVERSION=	2.14.2
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	irc gnome ipv6
 
 MAINTAINER=	pkubaj@anongoth.pl
@@ -21,11 +21,12 @@ LIB_DEPENDS=	libproxy.so:net/libproxy \
 RUN_DEPENDS=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:misc/iso-codes
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
-		libtool meson ninja pkgconfig shebangfix ssl
+		libtool meson ninja pkgconfig python:3.5+ shebangfix ssl
 USE_GNOME=	cairo gtk20 intltool libxml2
 USE_XORG=	x11
 USE_GITHUB=	yes
-MESON_ARGS=	-Dwith-ssl=true -Dwith-gtk=true
+
+MESON_ARGS=	-Dwith-ssl=true -Dwith-gtk=true -Dwith-python=python-${PYTHON_VER}
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
@@ -37,9 +38,9 @@ SUB_FILES=	pkg-message
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		CA_BUNDLE CANBERRA DBUS DOCS FISHLIM LUA NOTIFY \
-			PERL PYTHON TEXTFE SYSINFO
+			PERL TEXTFE SYSINFO
 
-OPTIONS_DEFAULT=	CA_BUNDLE CANBERRA DBUS NOTIFY PERL PYTHON
+OPTIONS_DEFAULT=	CA_BUNDLE CANBERRA DBUS NOTIFY PERL
 
 OPTIONS_SUB=	yes
 
@@ -66,14 +67,12 @@ NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 NOTIFY_MESON_TRUE=	with-libnotify
 PERL_MESON_TRUE=	with-perl
 PERL_USES=		perl5
-PYTHON_MESON_ON=	-Dwith-python=python-${PYTHON_VER}
-PYTHON_MESON_OFF=	-Dwith-python=false
-PYTHON_USES=		python:3.4+ shebangfix
-PYTHON_VARS=		SHEBANG_FILES=meson_post_install.py
-PYTHON_VARS+=		SHEBANG_FILES=plugins/perl/generate_header.py
-PYTHON_VARS+=		SHEBANG_FILES=src/common/make-te.py
 TEXTFE_MESON_TRUE=	with-text
 SYSINFO_MESON_TRUE=	with-sysinfo
+
+SHEBANG_FILES=	meson_post_install.py \
+		plugins/perl/generate_header.py \
+		src/common/make-te.py
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CA_BUNDLE%%|${CA_BUNDLE}|' \
