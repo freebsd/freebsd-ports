@@ -86,6 +86,10 @@ DEV_ERROR+=	"USE_GNOME=pkgconfig is unsupported, please use USES=pkgconfig"
 DEV_ERROR+=	"USE_ZOPE=yes is unsupported, please use USES=zope instead"
 .endif
 
+.if defined(USE_SDL) && ${USE_SDL} == yes
+DEV_ERROR+=	"USE_SDL=yes is unsupported, please use USE_SDL=sdl instead"
+.endif
+
 .if defined(USE_GITHUB) && defined(GH_COMMIT)
 DEV_ERROR+=	"GH_COMMIT is unsupported, please convert GHL-\>GH in MASTER_SITES and set GH_TAGNAME to tag or commit hash and remove GH_COMMIT"
 .endif
