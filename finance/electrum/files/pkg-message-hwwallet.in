@@ -7,7 +7,7 @@ Add a user to operator group:
 
 Edit your configuration:
 
-%%PREFIX%%/etc/devd/*_wallet.conf
+%%PREFIX%%/etc/devd/hardware_wallet.conf
 
 Then restart devd to load the new rules:
 

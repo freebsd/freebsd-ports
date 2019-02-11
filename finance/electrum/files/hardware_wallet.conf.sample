@@ -11,3 +11,13 @@
 #        match "type"            "ATTACH";
 #        action "/bin/chmod g=rw /dev/$cdev";
 #};
+
+## SatoshiLabs TREZOR
+#notify 301 {
+#        match "system"          "USB";
+#        match "subsystem"       "DEVICE";
+#        match "vendor"          "0x534c";
+#        match "product"         "0x0001";
+#        match "type"            "ATTACH";
+#        action "/bin/chmod g=rw /dev/$cdev";
+#};
