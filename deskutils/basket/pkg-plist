@@ -1,7 +1,7 @@
 bin/basket
 lib/libbasketcommon.so
 lib/libbasketcommon.so.5
-lib/libbasketcommon.so.5.12.0
+lib/libbasketcommon.so.%%QT5_VERSION%%
 %%QT_PLUGINDIR%%/basketthumbcreator.so
 %%QT_PLUGINDIR%%/kcm_basket.so
 %%DATADIR%%/backgrounds/abstract.png

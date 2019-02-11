@@ -32,4 +32,6 @@ USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	basket-notepads
 
+PLIST_SUB=	QT5_VERSION=${QT5_VERSION}
+
 .include <bsd.port.mk>
