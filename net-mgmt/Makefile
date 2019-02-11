@@ -317,10 +317,10 @@
     SUBDIR += py-pynsca
     SUBDIR += py-pynxos
     SUBDIR += py-pysmi
+    SUBDIR += py-pysnmp
+    SUBDIR += py-pysnmp-apps
+    SUBDIR += py-pysnmp-mibs
     SUBDIR += py-pyzabbix
-    SUBDIR += py-snmp4
-    SUBDIR += py-snmp4-apps
-    SUBDIR += py-snmp4-mibs
     SUBDIR += py-snmp_passpersist
     SUBDIR += py-yapsnmp
     SUBDIR += qkismet

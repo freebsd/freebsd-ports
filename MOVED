@@ -11592,3 +11592,6 @@ sysutils/yum||2019-02-07|Has expired: Abandoned upstream, does not work with pyt
 sysutils/createrepo||2019-02-07|Has expired: Abandoned upstream, does not work with python3
 misc/soapysdr-hackrf|comms/soapysdrhackrf|2019-02-09|Move to the proper category/name
 math/wxMaxima|math/wxmaxima|2019-02-10|rename for consistency
+net-mgmt/py-snmp4|net-mgmt/py-pysnmp|2019-02-11|Renamed to match upstream naming
+net-mgmt/py-snmp4-apps|net-mgmt/py-pysnmp-apps|2019-02-11|Renamed to match upstream naming
+net-mgmt/py-snmp4-mibs|net-mgmt/py-pysnmp-mibs|2019-02-11|Renamed to match upstream naming
