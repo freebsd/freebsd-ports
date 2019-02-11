@@ -1,4 +1,4 @@
---- configure.orig	2019-02-01 06:55:25 UTC
+--- configure.orig	2019-02-10 20:07:38 UTC
 +++ configure
 @@ -16302,27 +16302,9 @@ done
  		# problems start to show up.
@@ -79,7 +79,7 @@
  		DNS_GSSAPI_LIBS="$LIBS"
  
  		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: using GSSAPI from $use_gssapi/lib and $use_gssapi/include" >&5
-@@ -20880,7 +20822,7 @@ $as_echo "" >&6; }
+@@ -20864,7 +20806,7 @@ $as_echo "" >&6; }
  			# Check other locations for includes.
  			# Order is important (sigh).
  
