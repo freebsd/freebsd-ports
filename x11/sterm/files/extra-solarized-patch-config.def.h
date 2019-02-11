@@ -1,6 +1,6 @@
---- config.def.h.orig	2018-03-20 20:29:59 UTC
-+++ config.def.h
-@@ -84,31 +84,44 @@ unsigned int tabspaces = 8;
+--- config.def.h.orig	2019-02-09 12:50:41.000000000 +0100
++++ config.def.h	2019-02-11 13:45:28.209172000 +0100
+@@ -84,31 +84,44 @@
  
  /* Terminal colors (16 first used in escape sequence) */
  static const char *colorname[] = {
@@ -70,7 +70,7 @@
  };
  
  
-@@ -116,10 +129,10 @@ static const char *colorname[] = {
+@@ -116,10 +129,10 @@
   * Default colors (colorname index)
   * foreground, background, cursor, reverse cursor
   */
@@ -85,10 +85,10 @@
  
  /*
   * Default shape of cursor
-@@ -178,6 +191,7 @@ static Shortcut shortcuts[] = {
+@@ -178,6 +191,7 @@
  	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
+ 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
  	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
- 	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
 +	{ XK_ANY_MOD,           XK_F6,          swapcolors,     {.i =  0} },
  };
  
