@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sha1collisiondetection
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 DISTVERSIONPREFIX=	stable-v
 CATEGORIES=	security
 
@@ -15,28 +15,26 @@ BROKEN_aarch64=		fails to compile: generic selections are a C11-specific feature
 BROKEN_armv6=		fails to compile: generic selections are a C11-specific feature [-Werror,-Wc11-extensions]
 BROKEN_armv7=		fails to compile: generic selections are a C11-specific feature [-Werror,-Wc11-extensions]
 
+USES=		gmake libtool:build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	cr-marcstevens
 
-USES=		gmake libtool:build
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/sha1dcsum \
 		bin/sha1dcsum_partialcoll \
 		include/sha1dc/sha1.h \
 		lib/libsha1detectcoll.so \
-		lib/libsha1detectcoll.so.0 \
-		lib/libsha1detectcoll.so.0.0.0
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/ -std=c90 / -std=c89 /' ${WRKSRC}/Makefile
+		lib/libsha1detectcoll.so.1 \
+		lib/libsha1detectcoll.so.1.0.0
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/sha1dcsum* ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/sha1dc
 	${INSTALL_DATA} ${WRKSRC}/lib/sha1.h ${STAGEDIR}${PREFIX}/include/sha1dc
-	${INSTALL_LIB} ${WRKSRC}/bin/.libs/libsha1detectcoll.so.0.0.0 ${STAGEDIR}${PREFIX}/lib
-	${LN} -sf libsha1detectcoll.so.0.0.0 ${STAGEDIR}${PREFIX}/lib/libsha1detectcoll.so
-	${LN} -sf libsha1detectcoll.so.0.0.0 ${STAGEDIR}${PREFIX}/lib/libsha1detectcoll.so.0
+	${INSTALL_LIB} ${WRKSRC}/bin/.libs/libsha1detectcoll.so.1.0.0 ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libsha1detectcoll.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/libsha1detectcoll.so
+	${LN} -sf libsha1detectcoll.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/libsha1detectcoll.so.1
 
 .include <bsd.port.mk>
