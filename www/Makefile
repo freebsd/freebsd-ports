@@ -1627,6 +1627,7 @@
     SUBDIR += py-drf-yasg
     SUBDIR += py-dtflickr
     SUBDIR += py-evernote
+    SUBDIR += py-fake-useragent
     SUBDIR += py-falcon
     SUBDIR += py-fcgi
     SUBDIR += py-fedex
