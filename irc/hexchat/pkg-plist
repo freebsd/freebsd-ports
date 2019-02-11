@@ -4,7 +4,7 @@ include/hexchat-plugin.h
 lib/hexchat/plugins/checksum.so
 %%FISHLIM%%lib/hexchat/plugins/fishlim.so
 %%PERL%%lib/hexchat/plugins/perl.so
-%%PYTHON%%lib/hexchat/plugins/python.so
+lib/hexchat/plugins/python.so
 %%LUA%%%%LUA_LIBDIR%%/hexchat/plugins/lua.so
 %%SYSINFO%%lib/hexchat/plugins/sysinfo.so
 libdata/pkgconfig/hexchat-plugin.pc
