@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	electrum
-PORTVERSION=	3.3.2
-PORTREVISION=	1
+PORTVERSION=	3.3.3
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Electrum-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -15,9 +15,11 @@ COMMENT=	Easy to use Bitcoin client
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp-socks>=0.2:net/py-aiohttp-socks@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp-socks>0:net/py-aiohttp-socks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiorpcX>0:devel/py-aiorpcX@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ecdsa>=0.9:security/py-ecdsa@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonrpclib-pelix>0:devel/py-jsonrpclib-pelix@${PY_FLAVOR} \
@@ -25,41 +27,45 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp-socks>=0.2:net/py-aiohttp-socks@${PY
 		${PYTHON_PKGNAMEPREFIX}protobuf>=2.6.0:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyaes>0:security/py-pyaes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>=0:net/py-pysocks@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}QDarkStyle>2.6:textproc/py-QDarkStyle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qrcode>=5.1:textproc/py-qrcode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}secp256k1>0:math/py-secp256k1@${PY_FLAVOR}
-
-CONFLICTS_INSTALL=	electrum2-*
+		${PYTHON_PKGNAMEPREFIX}secp256k1>0:math/py-secp256k1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycryptodomex>0:security/py-pycryptodomex@${PY_FLAVOR}
 
 # Supports 3.4+ but aiorpcX is 3.6+
-USES=		desktop-file-utils pyqt:5 python:3.6+
-USE_PYQT=	gui_run sip widgets
-USE_PYTHON=	autoplist distutils optsuffix
+USES=		python:3.6+
+USE_PYTHON=	autoplist concurrent distutils
+
 PYDISTUTILS_PKGNAME=	Electrum
 NO_ARCH=	yes
 OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	LEDGER TREZOR
-OPTIONS_DEFAULT=LEDGER TREZOR
+OPTIONS_DEFINE=	GUI HARDWARE
+OPTIONS_DEFAULT=GUI HARDWARE
 
-LEDGER_DESC=	Enable LEDGER Bitcoin hardware wallet support
-TREZOR_DESC=	Enable TREZOR Bitcoin hardware wallet support
+GUI_USES=	desktop-file-utils pyqt:5
+GUI_USE=	PYQT=gui_run,sip,widgets
 
-LEDGER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}btchip-python>0:security/py-btchip-python@${PY_FLAVOR}
-TREZOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trezor>0:security/py-trezor@${PY_FLAVOR}
+HARDWARE_USE=	PYTHON=cython
+HARDWARE_DESC=	Enable Bitcoin hardware wallet support
 
-LEDGER_PLIST_FILES=	"@sample etc/devd/ledger_wallet.conf.sample"
-TREZOR_PLIST_FILES=	"@sample etc/devd/trezor_wallet.conf.sample"
+HARDWARE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}btchip-python>=0.1.26:security/py-btchip-python@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}trezor>=0.11.0:security/py-trezor@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}hidapi>=0:comms/py-hidapi@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}keepkey>0:security/py-keepkey@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}websocket-client>0:www/py-websocket-client@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}ckcc-protocol>=0.7.2:security/py-ckcc-protocol@${PY_FLAVOR}
 
-LEDGER_SUB_FILES=	pkg-message-hwwallet
-TREZOR_SUB_FILES=	pkg-message-hwwallet
+HARDWARE_PLIST_FILES=	"@sample etc/devd/hardware_wallet.conf.sample"
 
-post-install-LEDGER-on:
-	${INSTALL_DATA} ${FILESDIR}/ledger_wallet.conf.sample \
-		${STAGEDIR}${PREFIX}/etc/devd
+HARDWARE_SUB_FILES=	pkg-message-hwwallet
 
-post-install-TREZOR-on:
-	${INSTALL_DATA} ${FILESDIR}/trezor_wallet.conf.sample \
+post-patch-GUI-off:
+	@${REINPLACE_CMD} -e '/electrum\.desktop/d' ${WRKSRC}/setup.py
+
+post-install-HARDWARE-on:
+	${INSTALL_DATA} ${FILESDIR}/hardware_wallet.conf.sample \
 		${STAGEDIR}${PREFIX}/etc/devd
 
 .include <bsd.port.mk>
