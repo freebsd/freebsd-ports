@@ -4,18 +4,18 @@ PORTNAME=	django-cors-headers
 PORTVERSION=	2.4.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj21-
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Handles server headers required for Cross-Origin Resource Sharing
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>0:www/py-django111@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django21>0:www/py-django21@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj21-django-cors-headers
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-cors-headers
 
 .include <bsd.port.mk>
