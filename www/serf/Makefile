@@ -18,15 +18,15 @@ LIB_DEPENDS+=	libapr-1.so:devel/apr1
 USES=		scons ssl tar:bzip2 cpe
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS
-OPTIONS_RADIO=	KERBEROS
-OPTIONS_RADIO_KERBEROS= MIT HEIMDAL HEIMDAL_BASE
+OPTIONS_DEFINE=		DOCS
+OPTIONS_RADIO=		KERBEROS
+OPTIONS_RADIO_KERBEROS=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 
-HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
-HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
-MIT_DESC=		MIT Kerberos (security/krb5)
-MIT_LIB_DEPENDS=	libkrb5.so.3:security/krb5
-HEIMDAL_LIB_DEPENDS=	libkrb5.so.26:security/heimdal
+GSSAPI_BASE_DESC=		Heimdal Kerberos (base)
+GSSAPI_HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
+GSSAPI_MIT_DESC=		MIT Kerberos (security/krb5)
+GSSAPI_HEIMDAL_LIB_DEPENDS=	libkrb5.so.26:security/heimdal
+GSSAPI_MIT_LIB_DEPENDS=		libkrb5.so.3:security/krb5
 
 SCONS_ARGS=	APR=${LOCALBASE}/bin/apr-1-config
 SCONS_ARGS+=	APU=${LOCALBASE}/bin/apu-1-config
@@ -39,10 +39,10 @@ TEST_TARGET=	check  # some tests fail
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MHEIMDAL_BASE}
+.if ${PORT_OPTIONS:MGSSAPI_BASE}
 SCONS_ARGS+=	GSSAPI="/usr"
 .endif
-.if ${PORT_OPTIONS:MMIT} || ${PORT_OPTIONS:MHEIMDAL}
+.if ${PORT_OPTIONS:MGSSAPI_MIT} || ${PORT_OPTIONS:MGSAPI_HEIMDAL}
 SCONS_ARGS+=    GSSAPI="${LOCALBASE}"
 .endif
 
