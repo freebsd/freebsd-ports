@@ -1,0 +1,9 @@
+bin/qmidictl
+man/man1/qmidictl.1.gz
+man/man1/qmidictl.fr.1.gz
+share/applications/hildon/qmidictl.desktop
+share/icons/hicolor/26x26/hildon/qmidictl.png
+share/icons/hicolor/32x32/hildon/qmidictl.png
+share/icons/hicolor/48x48/hildon/qmidictl.png
+share/icons/hicolor/64x64/hildon/qmidictl.png
+share/metainfo/qmidictl.appdata.xml
