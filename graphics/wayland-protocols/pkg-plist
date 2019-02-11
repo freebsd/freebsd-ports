@@ -8,8 +8,10 @@ libdata/pkgconfig/wayland-protocols.pc
 %%DATADIR%%/unstable/input-timestamps/input-timestamps-unstable-v1.xml
 %%DATADIR%%/unstable/keyboard-shortcuts-inhibit/keyboard-shortcuts-inhibit-unstable-v1.xml
 %%DATADIR%%/unstable/linux-dmabuf/linux-dmabuf-unstable-v1.xml
+%%DATADIR%%/unstable/linux-explicit-synchronization/linux-explicit-synchronization-unstable-v1.xml
 %%DATADIR%%/unstable/pointer-constraints/pointer-constraints-unstable-v1.xml
 %%DATADIR%%/unstable/pointer-gestures/pointer-gestures-unstable-v1.xml
+%%DATADIR%%/unstable/primary-selection/primary-selection-unstable-v1.xml
 %%DATADIR%%/unstable/relative-pointer/relative-pointer-unstable-v1.xml
 %%DATADIR%%/unstable/tablet/tablet-unstable-v1.xml
 %%DATADIR%%/unstable/tablet/tablet-unstable-v2.xml
