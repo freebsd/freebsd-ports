@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pkg-config
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	pkg-config implementation for Ruby
 
 LICENSE=	LGPL21+
