@@ -3,6 +3,7 @@
 
 PORTNAME=	wsgiutils
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	devel textproc www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,5 +19,8 @@ USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '/data_files/d' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
