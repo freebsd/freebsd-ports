@@ -1790,6 +1790,7 @@ lib/webmin/virtual-server/lang/de
 lib/webmin/virtual-server/lang/en
 lib/webmin/virtual-server/lang/en_GB
 lib/webmin/virtual-server/lang/es
+lib/webmin/virtual-server/lang/es.UTF-8
 lib/webmin/virtual-server/lang/fi
 lib/webmin/virtual-server/lang/fr
 lib/webmin/virtual-server/lang/fr.UTF-8
