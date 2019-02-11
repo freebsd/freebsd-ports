@@ -706,6 +706,7 @@
     SUBDIR += pytone
     SUBDIR += qjackctl
     SUBDIR += qmidiarp
+    SUBDIR += qmidictl
     SUBDIR += qmpdclient
     SUBDIR += qsampler
     SUBDIR += qsynth

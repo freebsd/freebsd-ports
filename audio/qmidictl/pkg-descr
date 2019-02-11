@@ -1,0 +1,5 @@
+QmidiCtl is a MIDI remote controller application that sends MIDI data over the
+network, using UDP/IP multicast. Inspired by multimidicast and designed to be
+compatible with ipMIDI for Windows.
+
+WWW: https://qmidictl.sourceforge.io/
