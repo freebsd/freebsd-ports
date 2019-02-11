@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ladspa
-PORTVERSION=	1.13
-PORTREVISION=	1
+PORTVERSION=	1.15
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ladspa.org/download/
 DISTNAME=	ladspa_sdk_${PORTVERSION}
@@ -14,20 +13,20 @@ COMMENT=	Linux Audio Developer's Simple Plugin API
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-WRKSRC=		${WRKDIR}/ladspa_sdk
 USES=		gmake tar:tgz
 USE_LDCONFIG=	yes
+
+WRKSRC=		${WRKDIR}/ladspa_sdk_${PORTVERSION}
 PROGRAM_FILES=	analyseplugin applyplugin listplugins
 PLUGIN_FILES=	amp.so delay.so filter.so noise.so sine.so
 PLUGIN_DIR?=	${STAGEDIR}${PREFIX}/lib/ladspa/
-MAKEFILE=	makefile
 ALL_TARGET=	targets
 BUILD_WRKSRC=	${WRKSRC}/src
 
 post-patch:
 	${REINPLACE_CMD} -e 's,-ldl,,; s,-O3,${CFLAGS},; s,-Werror ,,; \
 		s,^CC,#CC,;s,^CPP,#CPP,;s,CPP,CXX,; s,^CXXFLAGS.*=,CXXFLAGS+=,' \
-		${WRKSRC}/src/makefile
+		${WRKSRC}/src/Makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/ladspa.h ${STAGEDIR}${PREFIX}/include
