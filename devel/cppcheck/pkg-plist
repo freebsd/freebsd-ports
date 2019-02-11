@@ -1,5 +1,6 @@
 bin/cppcheck
 %%DATADIR%%/avr.cfg
+%%DATADIR%%/boost.cfg
 %%DATADIR%%/bsd.cfg
 %%DATADIR%%/cppcheck-lib.cfg
 %%DATADIR%%/embedded_sql.cfg
@@ -9,10 +10,13 @@ bin/cppcheck
 %%DATADIR%%/microsoft_sal.cfg
 %%DATADIR%%/motif.cfg
 %%DATADIR%%/posix.cfg
+%%DATADIR%%/python.cfg
 %%DATADIR%%/qt.cfg
+%%DATADIR%%/ruby.cfg
 %%DATADIR%%/sdl.cfg
 %%DATADIR%%/sfml.cfg
 %%DATADIR%%/std.cfg
+%%DATADIR%%/tinyxml2.cfg
 %%DATADIR%%/windows.cfg
 %%DATADIR%%/wxwidgets.cfg
 %%DATADIR%%/zlib.cfg
