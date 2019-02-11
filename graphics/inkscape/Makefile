@@ -85,5 +85,8 @@ post-patch:
 	# Obtained from Arch Linux
 	@${REINPLACE_CMD} -e 's|gTrue|true|g' -e 's|gFalse|false|g' -e 's|GBool|bool|g' \
 		${WRKSRC}/src/extension/internal/pdfinput/pdf-parser.*
+	# Fix with poppler 0.73
+	@${REINPLACE_CMD} -E '/#include "goo\/gtypes.h"/d' \
+		${WRKSRC}/src/extension/internal/pdfinput/pdf-parser.h
 
 .include <bsd.port.mk>
