@@ -26,7 +26,7 @@ OPTIONS_SUB=	yes
 PKGINSTALL?=	${PKGDIR}/pkg-install${COMPONENT}
 USES+=		tar:bzip2 cpe
 .if !defined(NO_BUILD)
-USES+=	gmake
+USES+=		gmake
 GNU_CONFIGURE=	yes
 .endif
 
@@ -100,27 +100,27 @@ USES+=		pkgconfig
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS_DEFINE+=	INTDATE
-INTDATE_DESC=	Builds with 64-bit date/time type
+INTDATE_DESC=		Builds with 64-bit date/time type
 OPTIONS_DEFAULT+=	TZDATA INTDATE
 .endif
 
 .if !defined(SLAVE_ONLY)
 OPTIONS_DEFINE+=	NLS PAM GSSAPI OPTIMIZED_CFLAGS DEBUG DOCS
 . if ${DISTVERSION:R} == 9.2 || ${DISTVERSION:R} == 9.3
-  OPTIONS_RADIO= KRB5
-  OPTIONS_RADIO_KRB5= MIT_KRB5 HEIMDAL_KRB5
+  OPTIONS_RADIO=	KRB5
+  OPTIONS_RADIO_KRB5=	MIT_KRB5 HEIMDAL_KRB5
 . endif
 
-KRB5_DESC=	Build with kerberos provider support
-NLS_DESC=	Use internationalized messages
-PAM_DESC=	Build with PAM Support
-MIT_KRB5_DESC=	Build with MIT kerberos support
+KRB5_DESC=		Build with kerberos provider support
+NLS_DESC=		Use internationalized messages
+PAM_DESC=		Build with PAM Support
+MIT_KRB5_DESC=		Build with MIT kerberos support
 HEIMDAL_KRB5_DESC=	Builds with Heimdal kerberos
-GSSAPI_DESC=	Build with GSSAPI support
+GSSAPI_DESC=		Build with GSSAPI support
 OPTIMIZED_CFLAGS_DESC=	Builds with compiler optimizations (-O3)
 
 OPTIONS_DEFINE+=	SSL
-SSL_DESC=	Build with OpenSSL support
+SSL_DESC=		Build with OpenSSL support
 
 OPTIONS_DEFAULT+=	SSL
 .endif # !SLAVE_ONLY
@@ -128,36 +128,36 @@ OPTIONS_DEFAULT+=	SSL
 .if defined(CLIENT_ONLY)
 LIBEDIT_CONFIGURE_ON+=--with-libedit-preferred
 LIBEDIT_USES=		libedit
-LIBEDIT_USES_OFF=		readline
+LIBEDIT_USES_OFF=	readline
 .endif # CLIENT_ONLY
 
-SSL_USES=	ssl
-SSL_CONFIGURE_WITH=openssl
+SSL_USES=		ssl
+SSL_CONFIGURE_WITH=	openssl
 
 PAM_CONFIGURE_WITH=	pam
 
 XML_CONFIGURE_WITH=	libxml
 XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
-TZDATA_CONFIGURE_OFF=--with-system-tzdata=/usr/share/zoneinfo
+TZDATA_CONFIGURE_OFF=	--with-system-tzdata=/usr/share/zoneinfo
 
-INTDATE_CONFIGURE_OFF=--disable-integer-datetimes
+INTDATE_CONFIGURE_OFF=	--disable-integer-datetimes
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext
+NLS_USES=		gettext
 
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
 
-OPTIMIZED_CFLAGS_CFLAGS=	-O3 -funroll-loops
+OPTIMIZED_CFLAGS_CFLAGS=-O3 -funroll-loops
 
 DEBUG_CONFIGURE_ENABLE=	debug
 
-PLIST_SUB+=	PG_USER=${PG_USER} \
-		PG_GROUP=${PG_GROUP}
-SUB_LIST+=	PG_GROUP=${PG_GROUP} \
-		PG_USER=${PG_USER} \
-		PG_UID=${PG_UID}
+PLIST_SUB+=		PG_USER=${PG_USER} \
+			PG_GROUP=${PG_GROUP}
+SUB_LIST+=		PG_GROUP=${PG_GROUP} \
+			PG_USER=${PG_USER} \
+			PG_UID=${PG_UID}
 
 .include <bsd.port.options.mk>
 
@@ -184,7 +184,7 @@ PATCH_DIST_STRIP=-p1
 .  if ${PORT_OPTIONS:MDTRACE}
 CONFIGURE_ARGS+=--enable-dtrace
 LDFLAGS+=-lelf
-INSTALL_TARGET=install
+INSTALL_TARGET=	install
 .  endif
 
 .if ${PORT_OPTIONS:MGSSAPI}
