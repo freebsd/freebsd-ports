@@ -39,6 +39,7 @@ PORTDATA=	*
 
 OPTIONS_DEFINE=	SERVER VIDEOREC
 OPTIONS_DEFAULT=SERVER VIDEOREC
+OPTIONS_EXCLUDE_i386=	VIDEOREC  # some pascal issues preventing to use it
 
 SERVER_DESC=	Build server (requires haskell)
 VIDEOREC_DESC=	Enable video recording (requires ffmpeg)
