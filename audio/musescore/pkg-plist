@@ -62,6 +62,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/instruments_eu.qm
 %%DATADIR%%/locale/instruments_fa.qm
 %%DATADIR%%/locale/instruments_fi.qm
+%%DATADIR%%/locale/instruments_fil.qm
 %%DATADIR%%/locale/instruments_fo.qm
 %%DATADIR%%/locale/instruments_fr.qm
 %%DATADIR%%/locale/instruments_ga.qm
@@ -127,6 +128,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/mscore_eu.qm
 %%DATADIR%%/locale/mscore_fa.qm
 %%DATADIR%%/locale/mscore_fi.qm
+%%DATADIR%%/locale/mscore_fil.qm
 %%DATADIR%%/locale/mscore_fo.qm
 %%DATADIR%%/locale/mscore_fr.qm
 %%DATADIR%%/locale/mscore_ga.qm
@@ -192,6 +194,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/tours_eu.qm
 %%DATADIR%%/locale/tours_fa.qm
 %%DATADIR%%/locale/tours_fi.qm
+%%DATADIR%%/locale/tours_fil.qm
 %%DATADIR%%/locale/tours_fo.qm
 %%DATADIR%%/locale/tours_ga.qm
 %%DATADIR%%/locale/tours_gd.qm
@@ -251,7 +254,6 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/manual/plugins/connectorinfo.html
 %%DATADIR%%/manual/plugins/connectorinforeader.html
 %%DATADIR%%/manual/plugins/connectorinfowriter.html
-%%DATADIR%%/manual/plugins/cursor.html
 %%DATADIR%%/manual/plugins/durationelement.html
 %%DATADIR%%/manual/plugins/dynamic.html
 %%DATADIR%%/manual/plugins/element.html
