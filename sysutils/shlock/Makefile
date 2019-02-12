@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	shlock
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ISC/inn
 DISTNAME=	inn-${PORTVERSION}
@@ -12,20 +12,18 @@ COMMENT=	Create lock files for use in shell scripts
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_path_PERL="${TRUE}"
-CONFIGURE_ARGS=	--disable-shared
 ALL_TARGET=	all-lib
+CONFIGURE_ARGS=	--disable-shared
+CONFIGURE_ENV=	ac_cv_path_PERL="${TRUE}"
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/shlock man/man1/shlock.1.gz
 
 post-build:
-	@(cd ${WRKSRC}/backends && ${DO_MAKE_BUILD} shlock)
+	@${DO_MAKE_BUILD} -C ${WRKSRC}/backends shlock
 
 do-install:
-	(cd ${WRKSRC}/backends && ${WRKSRC}/libtool --mode=install \
-		${INSTALL_PROGRAM} shlock ${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/doc/man && ${INSTALL_MAN} shlock.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+	${INSTALL_PROGRAM} ${WRKSRC}/backends/shlock ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/man/shlock.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
