@@ -1,0 +1,6 @@
+Advanced Gtk+ Sequencer is capable of doing multi-channel editing, it contains
+an automation editor and you might want live export to audio files. There are
+sequencer machines as well a fully featured notation editor. Supporting
+copy & paste, resizing audio channels or align in-/output pads.
+
+WWW: https://nongnu.org/gsequencer/

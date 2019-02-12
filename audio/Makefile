@@ -245,6 +245,7 @@
     SUBDIR += gqradio
     SUBDIR += gradio
     SUBDIR += gramofile
+    SUBDIR += gsequencer
     SUBDIR += gsm
     SUBDIR += gsound
     SUBDIR += gstreamer-plugins-a52dec
