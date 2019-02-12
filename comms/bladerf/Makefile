@@ -11,7 +11,7 @@ COMMENT=	BladeRF USB 3.0 Superspeed software defined radio
 LICENSE=	MIT LGPL20 GPLv2
 LICENSE_COMB=	multi
 
-USES=		cmake libedit
+USES=		cmake compiler:c11 libedit
 USE_GITHUB=	yes
 GH_ACCOUNT=	Nuand
 GH_TUPLE=	analogdevicesinc:no-OS:0bba46e:x/thirdparty/analogdevicesinc/no-OS
