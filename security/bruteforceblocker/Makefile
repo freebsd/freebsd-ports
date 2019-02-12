@@ -3,11 +3,13 @@
 
 PORTNAME=	bruteforceblocker
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	danger@FreeBSD.org
 COMMENT=	Checks for SSH bruteforce and blocks given IPs
+
+LICENSE=	NONE
 
 RUN_DEPENDS=	p5-Unix-Syslog>=0:sysutils/p5-Unix-Syslog \
 		p5-Sys-Hostname-Long>=0:sysutils/p5-Sys-Hostname-Long \
