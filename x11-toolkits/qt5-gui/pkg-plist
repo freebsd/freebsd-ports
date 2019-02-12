@@ -1,4 +1,3 @@
-%%QT_BINDIR%%/qvkgen
 %%QT_INCDIR%%/QtAccessibilitySupport/%%FULLVER%%/QtAccessibilitySupport/private/qaccessiblebridgeutils_p.h
 %%QT_INCDIR%%/QtAccessibilitySupport/QtAccessibilitySupport
 %%QT_INCDIR%%/QtAccessibilitySupport/QtAccessibilitySupportDepends
@@ -109,8 +108,8 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qiconloader_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qimage_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qimagepixmapcleanuphooks_p.h
-%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qimagescale_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qimagereaderwriterhelpers_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qimagescale_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qinputcontrol_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qinputdevicemanager_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qinputdevicemanager_p_p.h
@@ -199,10 +198,10 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtextobject_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtextodfwriter_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtexttable_p.h
-%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtextureglyphcache_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtexturefiledata_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtexturefilehandler_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtexturefilereader_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtextureglyphcache_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtgui-config_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtguiglobal_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtouchdevice_p.h
@@ -742,6 +741,7 @@
 %%QT_CMAKEDIR%%/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5OpenGLExtensions/Qt5OpenGLExtensionsConfig.cmake
 %%QT_CMAKEDIR%%/Qt5OpenGLExtensions/Qt5OpenGLExtensionsConfigVersion.cmake
+%%QT_BINDIR%%/qvkgen
 %%QT_LIBDIR%%/libQt5AccessibilitySupport.a
 %%QT_LIBDIR%%/libQt5AccessibilitySupport.prl
 %%QT_LIBDIR%%/libQt5DeviceDiscoverySupport.a
@@ -818,12 +818,12 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/platforminputcontexts/libibusplatforminputcontextplugin.so.debug
 %%QT_PLUGINDIR%%/platforms/libqbsdfb.so
 %%DEBUG%%%%QT_PLUGINDIR%%/platforms/libqbsdfb.so.debug
-%%QT_PLUGINDIR%%/platforms/libqvnc.so
-%%DEBUG%%%%QT_PLUGINDIR%%/platforms/libqvnc.so.debug
 %%QT_PLUGINDIR%%/platforms/libqminimal.so
 %%DEBUG%%%%QT_PLUGINDIR%%/platforms/libqminimal.so.debug
 %%QT_PLUGINDIR%%/platforms/libqoffscreen.so
 %%DEBUG%%%%QT_PLUGINDIR%%/platforms/libqoffscreen.so.debug
+%%QT_PLUGINDIR%%/platforms/libqvnc.so
+%%DEBUG%%%%QT_PLUGINDIR%%/platforms/libqvnc.so.debug
 %%QT_PLUGINDIR%%/platforms/libqxcb.so
 %%DEBUG%%%%QT_PLUGINDIR%%/platforms/libqxcb.so.debug
 %%QT_PLUGINDIR%%/xcbglintegrations/libqxcb-egl-integration.so

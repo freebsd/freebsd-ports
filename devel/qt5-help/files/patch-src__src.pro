@@ -1,9 +1,9 @@
 Only enter the directories we want to build, otherwise we might fail due to
 missing dependencies.
 
---- src/src.pro.orig	2018-10-16 20:12:43 UTC
+--- src/src.pro.orig	2019-02-08 21:08:58 UTC
 +++ src/src.pro
-@@ -1,52 +1,3 @@
+@@ -1,54 +1,3 @@
  TEMPLATE = subdirs
  
 -qtHaveModule(widgets) {
@@ -29,7 +29,9 @@ missing dependencies.
 -    !android|android_app: SUBDIRS += qtplugininfo
 -}
 -
--config_clang: qtConfig(thread): SUBDIRS += qdoc
+-include($$OUT_PWD/qdoc/qtqdoc-config.pri)
+-QT_FOR_CONFIG += qdoc-private
+-qtConfig(qdoc): qtConfig(thread): SUBDIRS += qdoc
 -
 -!android|android_app: SUBDIRS += qtpaths
 -

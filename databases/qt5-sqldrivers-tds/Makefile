@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION=	1
 
 DB=		TDS
 DB_DESC=	TDS Database Connectivity

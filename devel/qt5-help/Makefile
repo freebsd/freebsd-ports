@@ -2,7 +2,6 @@
 
 PORTNAME=	help
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -16,11 +15,5 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 BUILD_WRKSRC=	${WRKSRC}/src/assistant
 INSTALL_WRKSRC=	${WRKSRC}/src/assistant
-
-post-install:
-# qcollectiongenerator was integrated into qhelpgenerator.
-# Instead of fixing 20 ports, simply provide it.
-	${RLN} ${STAGEDIR}${QT_BINDIR}/qhelpgenerator \
-		${STAGEDIR}${QT_BINDIR}/qcollectiongenerator
 
 .include <bsd.port.mk>

@@ -44,6 +44,7 @@
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeocameracapabilities_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeocameradata_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeocameratiles_p.h
+%%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeocameratiles_p_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeocodereply_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeocodingmanager_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeocodingmanagerengine_p.h
@@ -82,6 +83,7 @@
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeotiledmapreply_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeotiledmapreply_p_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeotiledmapscene_p.h
+%%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeotiledmapscene_p_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeotilefetcher_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeotilefetcher_p_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeotilerequestmanager_p.h
@@ -302,6 +304,7 @@
 %%QT_CMAKEDIR%%/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactoryGeoclue.cmake
 %%QT_CMAKEDIR%%/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactoryGeoclue2.cmake
 %%QT_CMAKEDIR%%/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactoryPoll.cmake
+%%QT_CMAKEDIR%%/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactorySerialNmea.cmake
 %%QT_CMAKEDIR%%/Qt5PositioningQuick/Qt5PositioningQuickConfig.cmake
 %%QT_CMAKEDIR%%/Qt5PositioningQuick/Qt5PositioningQuickConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5Location.prl
@@ -344,6 +347,8 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/position/libqtposition_geoclue2.so.debug
 %%QT_PLUGINDIR%%/position/libqtposition_positionpoll.so
 %%DEBUG%%%%QT_PLUGINDIR%%/position/libqtposition_positionpoll.so.debug
+%%QT_PLUGINDIR%%/position/libqtposition_serialnmea.so
+%%DEBUG%%%%QT_PLUGINDIR%%/position/libqtposition_serialnmea.so.debug
 %%QT_QMLDIR%%/Qt/labs/location/liblocationlabsplugin.so
 %%DEBUG%%%%QT_QMLDIR%%/Qt/labs/location/liblocationlabsplugin.so.debug
 %%QT_QMLDIR%%/Qt/labs/location/plugins.qmltypes

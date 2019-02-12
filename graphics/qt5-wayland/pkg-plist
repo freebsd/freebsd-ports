@@ -245,6 +245,7 @@
 %%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositor_DmaBufServerBufferIntegrationPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositor_DrmEglServerBufferIntegrationPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositor_QWaylandEglClientBufferIntegrationPlugin.cmake
+%%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositor_QWaylandEglStreamBufferIntegrationPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositor_QWaylandXCompositeEglClientBufferIntegrationPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositor_QWaylandXCompositeGlxClientBufferIntegrationPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5WaylandCompositor/Qt5WaylandCompositor_ShmServerBufferIntegrationPlugin.cmake
@@ -295,6 +296,8 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/wayland-graphics-integration-server/libqt-plugin-wayland-egl.so.debug
 %%QT_PLUGINDIR%%/wayland-graphics-integration-server/libshm-emulation-server.so
 %%DEBUG%%%%QT_PLUGINDIR%%/wayland-graphics-integration-server/libshm-emulation-server.so.debug
+%%QT_PLUGINDIR%%/wayland-graphics-integration-server/libwayland-eglstream-controller.so
+%%DEBUG%%%%QT_PLUGINDIR%%/wayland-graphics-integration-server/libwayland-eglstream-controller.so.debug
 %%QT_PLUGINDIR%%/wayland-graphics-integration-server/libxcomposite-egl.so
 %%DEBUG%%%%QT_PLUGINDIR%%/wayland-graphics-integration-server/libxcomposite-egl.so.debug
 %%QT_PLUGINDIR%%/wayland-graphics-integration-server/libxcomposite-glx.so

@@ -1,3 +1,4 @@
+%%QT_INCDIR%%/QtScript/%%FULLVER%%/QtScript/private/qtscript-config_p.h
 %%QT_INCDIR%%/QtScript/%%FULLVER%%/QtScript/private/qscriptable_p.h
 %%QT_INCDIR%%/QtScript/%%FULLVER%%/QtScript/private/qscriptactivationobject_p.h
 %%QT_INCDIR%%/QtScript/%%FULLVER%%/QtScript/private/qscriptast_p.h
@@ -41,6 +42,7 @@
 %%QT_INCDIR%%/QtScript/QtScript
 %%QT_INCDIR%%/QtScript/QtScriptDepends
 %%QT_INCDIR%%/QtScript/QtScriptVersion
+%%QT_INCDIR%%/QtScript/qtscript-config.h
 %%QT_INCDIR%%/QtScript/qscriptable.h
 %%QT_INCDIR%%/QtScript/qscriptclass.h
 %%QT_INCDIR%%/QtScript/qscriptclasspropertyiterator.h

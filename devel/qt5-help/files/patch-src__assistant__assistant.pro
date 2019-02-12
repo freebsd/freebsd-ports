@@ -3,19 +3,21 @@ missing dependencies.
 
 assistant/ is built in devel/qt5-assistant.
 
---- src/assistant/assistant.pro.orig	2018-10-12 10:07:26 UTC
+--- src/assistant/assistant.pro.orig	2019-01-15 05:20:10 UTC
 +++ src/assistant/assistant.pro
-@@ -3,13 +3,11 @@ TEMPLATE = subdirs
+@@ -3,7 +3,6 @@ TEMPLATE = subdirs
  
  SUBDIRS += \
             help \
 -           assistant \
-            qhelpgenerator
+            qhelpgenerator \
+            qcollectiongenerator
  
- assistant.depends = help
+@@ -11,7 +10,6 @@ assistant.depends = help
  qhelpgenerator.depends = help
  
  qtNomakeTools( \
 -    assistant \
      qhelpgenerator \
+     qcollectiongenerator \
  )
