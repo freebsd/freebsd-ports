@@ -13,7 +13,7 @@ COMMENT=	Simple Text Adventure, The Interpreter
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake iconv lua:51 pkgconfig
+USES=		cmake compiler:c++11-lang iconv lua:51 pkgconfig
 CMAKE_ARGS=	-DMANDIR=man
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
