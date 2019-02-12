@@ -1,7 +1,7 @@
---- Makefile.orig	2013-03-02 21:22:20 UTC
+--- Makefile.orig	2019-01-10 00:20:05 UTC
 +++ Makefile
 @@ -11,7 +11,7 @@ MAJOR=1
- MINOR=30
+ MINOR=31
  RELEASE=$(MAJOR).$(MINOR)
  
 -CC = gcc
@@ -9,7 +9,7 @@
  
  ifndef PREFIX
  PREFIX=/usr/local
-@@ -38,7 +38,7 @@ ifeq ($(ARCH),i686)
+@@ -38,18 +38,21 @@ ifeq ($(ARCH),i686)
    ARCH = x86
  endif
  
@@ -18,7 +18,22 @@
    CFLAGS += -fPIC
  endif
  
-@@ -64,10 +64,10 @@ ifdef D_USE_FREELISTS
+ ifeq ($(OS_TYPE),CYGWIN)
+ GC_CFLAGS += -L/usr/local/lib
+ else
+-GC_CFLAGS += -I/usr/local/include -L/usr/local/lib
++GC_CFLAGS += -I/usr/local/include
+ endif
+ 
+ ifdef D_USE_GC
+ CFLAGS += -DUSE_GC ${GC_CFLAGS}
++ifeq ($(OS_TYPE),FreeBSD)
++    LIBS += -L${LOCALBASE}/lib
++endif
+ LIBS += -lgc
+ ifeq ($(OS_TYPE),Linux)
+   LIBS += -ldl
+@@ -64,10 +67,10 @@ ifdef D_USE_FREELISTS
  CFLAGS += -DUSE_FREELISTS
  endif
  
@@ -32,16 +47,7 @@
  CFLAGS += -DD_MAJOR_VERSION=$(MAJOR) -DD_MINOR_VERSION=$(MINOR) -DD_BUILD_VERSION=\"$(D_BUILD_VERSION)\"
  
  CFLAGS += -Wall
-@@ -94,7 +94,7 @@ TEST_FILES = d/parser_tests d/baseline $
- PYTHON_FILES = d/python/Makefile d/python/*.py d/python/*.c d/python/*.h d/python/*.i d/python/README d/python/*.html d/python/contrib/d* d/python/tests/*.py
- VERILOG_FILES = d/verilog/Makefile d/verilog/verilog.g d/verilog/README d/verilog/ambig.c \
- d/verilog/main.c d/verilog/vparse.c d/verilog/vparse.h d/verilog/verilog_tests
--TAR_FILES = $(AUX_FILES) $(TEST_FILES) $(PYTHON_FILES) $(VERILOG_FILES) d/D_BUILD_VERSION \
-+TAR_FILES = $(AUX_FILES) $(TEST_FILES) $(PYTHON_FILES) $(VERILOG_FILES) \
- d/grammar.g d/sample.g d/my.g 
- 
- LIB_SRCS = arg.c parse.c scan.c symtab.c util.c read_binary.c dparse_tree.c
-@@ -141,7 +141,7 @@ endif
+@@ -143,7 +146,7 @@ endif
  
  ALL_SRCS = $(MAKE_PARSER_SRCS) $(BASE_SAMPLE_PARSER_SRCS) $(LIB_SRCS) $(MK_LIB_SRCS)
  

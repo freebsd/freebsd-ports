@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dparser
-PORTVERSION=	1.30
-PORTREVISION=	3
+PORTVERSION=	1.31
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/
-DISTNAME=	d-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but powerful tool for parsing
@@ -14,10 +12,12 @@ COMMENT=	Simple but powerful tool for parsing
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-WRKSRC=		${WRKDIR}/d
+USES=		gmake
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jplevyak
 
 EXTRACT_AFTER_ARGS=	--exclude "*my*"
-USES=		gmake
 MAKE_ARGS=	CC="${CC}" D_OPTIMIZE= PREFIX=${PREFIX}
 
 PORTDOCS=	*
@@ -29,10 +29,14 @@ OPTIONS_DEFINE=	BOEHM DOCS
 BOEHM_DESC=	Boehm garbage collector support
 
 BOEHM_LIB_DEPENDS=	libgc.so:devel/boehm-gc
-BOEHM_MAKE_ARGS=	D_USE_GC=1 \
-			GC_CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
+BOEHM_MAKE_ARGS=	D_USE_GC=1 LOCALBASE=${LOCALBASE}
 BOEHM_VARS=		LIBDPARSE=libdparse_gc.a
 BOEHM_VARS_OFF=		LIBDPARSE=libdparse.a
+
+TEST_TARGET=	test
+
+post-patch:
+	@${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/D_BUILD_VERSION
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/make_dparser ${STAGEDIR}${PREFIX}/bin
