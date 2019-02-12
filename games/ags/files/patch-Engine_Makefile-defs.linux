@@ -1,24 +1,13 @@
---- Engine/Makefile-defs.linux.orig	2017-02-07 22:37:22 UTC
+--- Engine/Makefile-defs.linux.orig	2019-02-12 12:39:10 UTC
 +++ Engine/Makefile-defs.linux
-@@ -1,7 +1,7 @@
+@@ -1,6 +1,6 @@
  INCDIR = ../Engine ../Common ../Common/libinclude ../Plugins
  LIBDIR =
--CFLAGS := -O2 -g -fsigned-char -Wfatal-errors -DNDEBUG -DAGS_RUNTIME_PATCH_ALLEGRO -DAGS_HAS_CD_AUDIO -DAGS_CASE_SENSITIVE_FILESYSTEM -DALLEGRO_STATICLINK -DLINUX_VERSION -DDISABLE_MPEG_AUDIO -DBUILTIN_PLUGINS -DRTLD_NEXT $(shell pkg-config --cflags freetype2) $(CFLAGS)
--CXXFLAGS := -fno-rtti -Wno-write-strings $(CXXFLAGS)
-+CFLAGS += -fsigned-char -Wfatal-errors -DNDEBUG -DAGS_RUNTIME_PATCH_ALLEGRO -DAGS_CASE_SENSITIVE_FILESYSTEM -DALLEGRO_STATICLINK -DLINUX_VERSION -DDISABLE_MPEG_AUDIO -DBUILTIN_PLUGINS -DRTLD_NEXT $(shell pkg-config --cflags freetype2)
-+CXXFLAGS += -std=c++11 -fno-rtti -Wno-write-strings
+-CFLAGS := -O2 -g -fsigned-char -Wfatal-errors -DNDEBUG -DALLEGRO_NO_FIX_ALIASES -DAGS_RUNTIME_PATCH_ALLEGRO -DAGS_HAS_CD_AUDIO -DAGS_CASE_SENSITIVE_FILESYSTEM -DALLEGRO_STATICLINK -DLINUX_VERSION -DDISABLE_MPEG_AUDIO -DBUILTIN_PLUGINS -DRTLD_NEXT $(shell pkg-config --cflags freetype2) $(CFLAGS)
++CFLAGS := -O2 -fsigned-char -Wfatal-errors -DNDEBUG -DALLEGRO_NO_FIX_ALIASES -DAGS_RUNTIME_PATCH_ALLEGRO -DAGS_CASE_SENSITIVE_FILESYSTEM -DALLEGRO_STATICLINK -DLINUX_VERSION -DDISABLE_MPEG_AUDIO -DBUILTIN_PLUGINS -DRTLD_NEXT $(shell pkg-config --cflags freetype2) $(CFLAGS)
+ CXXFLAGS := -fno-rtti -Wno-write-strings $(CXXFLAGS)
  LIBS := -rdynamic -laldmb -ldumb -Wl,-Bdynamic
  LIBS += $(shell pkg-config --libs allegro)
- LIBS += $(shell pkg-config --libs x11)
-@@ -16,7 +16,7 @@ else
- endif
- LIBS += $(shell pkg-config --libs vorbisfile)
- LIBS += $(shell pkg-config --libs freetype2)
--LIBS += -ldl -lpthread -lc -lm -lstdc++
-+LIBS += -lpthread -lc -lm -lstdc++
- 
- ifeq ($(ALLEGRO_MAGIC_DRV), 1)
-   CFLAGS += -DALLEGRO_MAGIC_DRV
 @@ -44,4 +44,4 @@ platform/linux/acpllnx.cpp \
  platform/util/pe.c \
  platform/util/libc.c
