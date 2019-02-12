@@ -1,6 +1,6 @@
-TIMESTAMP = 1549748621
-SHA256 (rust/2019-02-10/rustc-nightly-src.tar.xz) = c44843991c53bb3b561bde1b4e13d98c1e4724a01eafd8170b09e4c58570898f
-SIZE (rust/2019-02-10/rustc-nightly-src.tar.xz) = 93919644
+TIMESTAMP = 1549887074
+SHA256 (rust/2019-02-12/rustc-nightly-src.tar.xz) = 3ba65519ffbe72818d2c4f02433b49638ded4cb4da07e4d40c7e39b2a3e4ac66
+SIZE (rust/2019-02-12/rustc-nightly-src.tar.xz) = 93916720
 SHA256 (rust/2019-01-18/rustc-beta-x86_64-unknown-freebsd.tar.gz) = 0bce3c84e70f44497625ab844308775d0331d6717bb75f1e7ab2385cd38bdd00
 SIZE (rust/2019-01-18/rustc-beta-x86_64-unknown-freebsd.tar.gz) = 74800139
 SHA256 (rust/2019-01-18/rust-std-beta-x86_64-unknown-freebsd.tar.gz) = 98c135ad67ba8814869be04244440dd1edb6efff661d15c01300b785dd4af287
