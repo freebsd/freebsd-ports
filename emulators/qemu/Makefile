@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	2.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -19,15 +19,17 @@ LIB_DEPENDS?=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-HAS_CONFIGURE=	yes
-USES?=		cpe gmake pkgconfig bison perl5 python:2.7,build tar:xz
-USE_PERL5=	build
-MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
-.if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} != "-utils"
+.if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 USE_XORG=	pixman
 USE_GNOME+=	cairo glib20 libxml2
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 .endif
+
+USES?=		cpe gl gmake gnome pkgconfig bison perl5 python:2.7,build tar:xz
+USE_PERL5=	build
+
+HAS_CONFIGURE=	yes
+MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 
 OPTIONS_DEFINE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
 		VDE CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS \
@@ -61,7 +63,7 @@ PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_OFF=	--disable-vnc-png
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_OFF=	--disable-curl
-OPENGL_USE=	GL=yes
+OPENGL_USE=	GL=glu
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 USBREDIR_BUILD_DEPENDS=	usbredir>=0.6:net/usbredir
 USBREDIR_RUN_DEPENDS=	usbredir>=0.6:net/usbredir
@@ -88,7 +90,7 @@ WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
 		--extra-ldflags=-L\"${LOCALBASE}/lib\" --disable-libssh2 --enable-debug \
-		--prefix=${PREFIX} --cc=${CC} --enable-docs --disable-kvm \
+		--prefix=${PREFIX} --cc=${CC} --enable-netmap --enable-docs --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--enable-debug-info --python=${PYTHON_CMD} \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
