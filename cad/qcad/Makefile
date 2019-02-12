@@ -4,7 +4,7 @@
 PORTNAME=	qcad
 PORTVERSION=	3.21.3.15
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 DIST_SUBDIR=	${PORTNAME}
 
@@ -49,12 +49,8 @@ QSCRIPTS=	bbox dwg2bmp dwg2pdf dwg2svg
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-CFLAGS_${ARCH}= -fPIC
-CXXFLAGS_${ARCH}= -fPIC
-.endif
+CFLAGS_i386= -fPIC
+CXXFLAGS_i386= -fPIC
 
 pre-configure:
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
@@ -79,4 +75,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
