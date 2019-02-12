@@ -9,6 +9,7 @@ include/KF5/KConfigWidgets/KConfigDialogManager
 include/KF5/KConfigWidgets/KConfigViewStateSaver
 include/KF5/KConfigWidgets/KHelpClient
 include/KF5/KConfigWidgets/KLanguageButton
+include/KF5/KConfigWidgets/KLanguageName
 include/KF5/KConfigWidgets/KPasteTextAction
 include/KF5/KConfigWidgets/KRecentFilesAction
 include/KF5/KConfigWidgets/KStandardAction
@@ -24,6 +25,7 @@ include/KF5/KConfigWidgets/kconfigviewstatesaver.h
 include/KF5/KConfigWidgets/kconfigwidgets_export.h
 include/KF5/KConfigWidgets/khelpclient.h
 include/KF5/KConfigWidgets/klanguagebutton.h
+include/KF5/KConfigWidgets/klanguagename.h
 include/KF5/KConfigWidgets/kpastetextaction.h
 include/KF5/KConfigWidgets/krecentfilesaction.h
 include/KF5/KConfigWidgets/kstandardaction.h

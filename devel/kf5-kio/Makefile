@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kio
-DISTVERSION=	5.54.1 # Respin for bug 402665
-PORTREVISION=	1
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

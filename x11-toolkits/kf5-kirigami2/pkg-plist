@@ -63,9 +63,11 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/BannerImage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/CardsGridViewPrivate.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/CardsListViewPrivate.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/private/ContextDrawerActionItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/CornerShadow.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/DefaultListItemBackground.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/EdgeShadow.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/private/GlobalDrawerActionItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/PageActionPropertyGroup.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/PrivateActionToolButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/RefreshableScrollView.qml
