@@ -20,6 +20,6 @@
 -        test(info.localHost == "127.0.0.1");
 +        test(info.remoteHost == "127.0.0.1" || inFreeBSDJail());
 +        test(info.localHost == "127.0.0.1" || inFreeBSDJail());
-         test(info.localPort == getTestPort(current.adapter->getCommunicator()->getProperties(), 1));
+         test(info.localPort == TestHelper::getTestPort(current.adapter->getCommunicator()->getProperties(), 1));
  
          try

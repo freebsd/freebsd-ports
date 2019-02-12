@@ -34,12 +34,12 @@
      while(info):
          if isinstance(info, Ice.TCPEndpointInfo):
 @@ -119,7 +138,7 @@ def allTests(communicator):
-         test(tcpEndpoint.port == 12020)
+         test(tcpEndpoint.port == 15000)
  
      tcpEndpoint = getTCPEndpointInfo(publishedEndpoints[0].getInfo())
 -    test(tcpEndpoint.host == "127.0.0.1")
 +    test(tcpEndpoint.host == "127.0.0.1" or isFreeBSDJail())
-     test(tcpEndpoint.port == 12020)
+     test(tcpEndpoint.port == 15000)
  
      adapter.destroy()
 @@ -137,7 +156,7 @@ def allTests(communicator):
@@ -54,7 +54,7 @@
 @@ -147,7 +166,7 @@ def allTests(communicator):
  
      udp = base.ice_datagram().ice_getConnection().getEndpoint().getInfo()
-     test(udp.port == 12010)
+     test(udp.port == port)
 -    test(udp.host == defaultHost)
 +    test(udp.host == defaultHost or isFreeBSDJail())
  
