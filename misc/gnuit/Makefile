@@ -13,7 +13,11 @@ COMMENT=	GNU Interactive Tools - a file system browser for UNIX systems
 LICENSE=	GPLv3+ GFDL
 LICENSE_COMB=	multi
 
+DEPRECATED=	Upstream stale for 10 years, no users it appears
+EXPIRATION_DATE=2019-05-12
+
 USES=		ncurses
+
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--disable-transition
 INFO=		gnuit
