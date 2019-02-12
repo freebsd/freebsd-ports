@@ -4,6 +4,12 @@ lib/libkhotkeysprivate.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kcm_hotkeys.so
 %%QT_PLUGINDIR%%/kf5/kded/khotkeys.so
 share/dbus-1/interfaces/org.kde.khotkeys.xml
+share/doc/HTML/ca/kcontrol/khotkeys/document-open.png
+share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-action-command.png
+share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-action-dbus.png
+share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-action-keyboard.png
+share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-trigger-keyboard.png
+share/doc/HTML/ca/kcontrol/khotkeys/shortcuts-trigger-mouse.png
 share/doc/HTML/ca/kcontrol/khotkeys/groups-comment.png
 share/doc/HTML/ca/kcontrol/khotkeys/index.cache.bz2
 share/doc/HTML/ca/kcontrol/khotkeys/index.docbook
@@ -62,7 +68,6 @@ share/doc/HTML/uk/kcontrol/khotkeys/shortcuts-trigger-mouse.png
 share/kservices5/khotkeys.desktop
 share/locale/af/LC_MESSAGES/khotkeys.mo
 share/locale/ar/LC_MESSAGES/khotkeys.mo
-share/locale/ast/LC_MESSAGES/khotkeys.mo
 share/locale/be/LC_MESSAGES/khotkeys.mo
 share/locale/bg/LC_MESSAGES/khotkeys.mo
 share/locale/bn_IN/LC_MESSAGES/khotkeys.mo

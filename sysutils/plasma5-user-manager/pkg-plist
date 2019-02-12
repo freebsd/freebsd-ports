@@ -1,3 +1,4 @@
+etc/xdg/user-manager.categories
 %%QT_PLUGINDIR%%/user_manager.so
 share/kservices5/user_manager.desktop
 %%DATADIR%%/avatars/bluesstyle/Ada Lovelace.png
@@ -27,7 +28,6 @@ share/kservices5/user_manager.desktop
 %%DATADIR%%/avatars/konqui/Parley.png
 %%DATADIR%%/avatars/konqui/Rekonqui.png
 share/locale/ar/LC_MESSAGES/user_manager.mo
-share/locale/ast/LC_MESSAGES/user_manager.mo
 share/locale/bs/LC_MESSAGES/user_manager.mo
 share/locale/ca/LC_MESSAGES/user_manager.mo
 share/locale/ca@valencia/LC_MESSAGES/user_manager.mo
