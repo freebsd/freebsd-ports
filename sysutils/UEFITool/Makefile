@@ -3,8 +3,7 @@
 
 PORTNAME=	UEFITool
 DISTVERSIONPREFIX=	A
-DISTVERSION=	54
-PORTREVISION=	1
+DISTVERSION=	55
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@anongoth.pl
@@ -13,7 +12,7 @@ COMMENT=	UEFI images parser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE.md
 
-USES=		compiler:c++11-lang qmake:outsource qt:5
+USES=		compiler:c++11-lang gl qmake:outsource qt:5
 USE_GITHUB=	yes
 USE_GL=		gl
 USE_QT=		core gui widgets buildtools_build qmake_build
