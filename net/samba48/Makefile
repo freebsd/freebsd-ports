@@ -3,7 +3,7 @@
 
 PORTNAME=			${SAMBA4_BASENAME}48
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			0
+PORTREVISION=			1
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -101,7 +101,7 @@ OPTIONS_SINGLE=			GSSAPI
 OPTIONS_SINGLE_GSSAPI=		GSSAPI_BUILTIN GSSAPI_MIT
 
 OPTIONS_RADIO=			DNS ZEROCONF
-OPTIONS_RADIO_DNS=		NSUPDATE BIND911 BIND912
+OPTIONS_RADIO_DNS=		NSUPDATE BIND911 BIND912 BIND913
 OPTIONS_RADIO_ZEROCONF=		MDNSRESPONDER AVAHI
 ##############################################################################
 AD_DC_DESC=			Active Directory Domain Controller
@@ -127,6 +127,7 @@ GSSAPI_BUILTIN_DESC=		GSSAPI support via bundled Heimdal
 
 BIND911_DESC=			Use Bind 9.11 as AD DC DNS server frontend
 BIND912_DESC=			Use Bind 9.12 as AD DC DNS server frontend
+BIND913_DESC=			Use Bind 9.13 as AD DC DNS server frontend
 NSUPDATE_DESC=			Use samba NSUPDATE utility for AD DC
 ##############################################################################
 # XXX: Unconditional dependencies which can't be switched off(if present in
@@ -270,6 +271,7 @@ CONFIGURE_ARGS+=		\
 ##############################################################################
 BIND911_RUN_DEPENDS=		bind911>=9.11.0.0:dns/bind911
 BIND912_RUN_DEPENDS=		bind912>=9.12.0.0:dns/bind912
+BIND913_RUN_DEPENDS=		bind913>=9.13.0.0:dns/bind913
 NSUPDATE_RUN_DEPENDS=		samba-nsupdate:dns/samba-nsupdate
 
 AVAHI_CONFIGURE_ENABLE=		avahi
