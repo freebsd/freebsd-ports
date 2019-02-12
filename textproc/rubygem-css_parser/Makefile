@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	css_parser
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	textproc www rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
