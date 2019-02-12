@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fasttracker2
-DISTVERSION=	0.1-b132
+DISTVERSION=	0.1-b134
 CATEGORIES=	audio
 MASTER_SITES=	https://16-bits.org/ \
 		LOCAL/ehaupt
@@ -17,7 +17,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/src/LICENSE.txt
 LICENSE_FILE_CC-BY-NC-SA-4.0=	${WRKSRC}/src/gfxdata/bmp/LICENSE.txt
 
-USES=		dos2unix localbase:ldflags zip iconv:wchar_t
+USES=		dos2unix iconv:wchar_t localbase:ldflags sdl zip
 USE_SDL=	sdl2
 
 WRKSRC=		${WRKDIR}/ft2-clone-code
