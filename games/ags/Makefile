@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ags
-DISTVERSION=	3.4.3.0
+DISTVERSION=	3.4.3.1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/adventuregamestudio/ags/releases/download/v.${DISTVERSION}/
 DISTNAME=	ags_linux_v.${DISTVERSION}
