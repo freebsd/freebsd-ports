@@ -3,8 +3,7 @@
 PORTNAME=	gsequencer
 DISTVERSION=	2.1.53
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	gsequencer/2.1.x
+MASTER_SITES=	SAVANNAH/gsequencer/2.1.x
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Advanced Gtk+ sequencer
