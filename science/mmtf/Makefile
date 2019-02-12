@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mmtf
-DISTVERSION=	g20180730
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.0
 CATEGORIES=	science biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,6 @@ USES=		cmake compiler:c++11-lang localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	rcsb
 GH_PROJECT=	mmtf-cpp
-GH_TAGNAME=	63e58a9
 GH_TUPLE=	rcsb:mmtf:8c88834:x/mmtf_spec
 
 NO_BUILD=	yes
