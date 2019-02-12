@@ -38,6 +38,7 @@
 %%QT_MKSPECDIR%%/common/mac.conf
 %%QT_MKSPECDIR%%/common/mac/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/macx.conf
+%%QT_MKSPECDIR%%/common/msvc-based-version.conf
 %%QT_MKSPECDIR%%/common/msvc-desktop.conf
 %%QT_MKSPECDIR%%/common/msvc-version.conf
 %%QT_MKSPECDIR%%/common/nacl/g++-nacl32.conf
@@ -178,6 +179,7 @@
 %%QT_MKSPECDIR%%/features/data/cmake/Qt5PluginTarget.cmake.in
 %%QT_MKSPECDIR%%/features/data/configure.json
 %%QT_MKSPECDIR%%/features/data/dummy.cpp
+%%QT_MKSPECDIR%%/features/data/dumpvcvars.bat
 %%QT_MKSPECDIR%%/features/data/mac/objc_namespace.sh
 %%QT_MKSPECDIR%%/features/data/macros.cpp
 %%QT_MKSPECDIR%%/features/data/unix/findclasslist.pl
@@ -222,8 +224,6 @@
 %%QT_MKSPECDIR%%/features/qgltf.prf
 %%QT_MKSPECDIR%%/features/qlalr.prf
 %%QT_MKSPECDIR%%/features/qmake_use.prf
-%%QT_MKSPECDIR%%/features/qml1_module.prf
-%%QT_MKSPECDIR%%/features/qml1_plugin.prf
 %%QT_MKSPECDIR%%/features/qml_debug.prf
 %%QT_MKSPECDIR%%/features/qml_module.prf
 %%QT_MKSPECDIR%%/features/qml_plugin.prf
@@ -299,7 +299,6 @@
 %%QT_MKSPECDIR%%/features/vxworks.prf
 %%QT_MKSPECDIR%%/features/warn_off.prf
 %%QT_MKSPECDIR%%/features/warn_on.prf
-%%QT_MKSPECDIR%%/features/wasm/qt.prf
 %%QT_MKSPECDIR%%/features/wasm/wasm.prf
 %%QT_MKSPECDIR%%/features/wayland-scanner.prf
 %%QT_MKSPECDIR%%/features/win32/console.prf
@@ -451,6 +450,8 @@
 %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/wasm-emscripten/qmake.conf
 %%QT_MKSPECDIR%%/wasm-emscripten/qplatformdefs.h
+%%QT_MKSPECDIR%%/win32-arm64-msvc2017/qmake.conf
+%%QT_MKSPECDIR%%/win32-arm64-msvc2017/qplatformdefs.h
 %%QT_MKSPECDIR%%/win32-clang-g++/qmake.conf
 %%QT_MKSPECDIR%%/win32-clang-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/win32-clang-msvc/qmake.conf

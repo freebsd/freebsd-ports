@@ -1,0 +1,34 @@
+From f49c9a9921d5678628df394ebafa4e9b62b2af0e Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@FreeBSD.org>
+Date: Mon, 11 Feb 2019 07:14:23 +0100
+Subject: [PATCH] Define QT.phonon4qt5.module = phonon4qt5 for Qt5-5.12.1
+
+Summary:
+I think [1] broke the qt5_phonon.pri file [2] -- the library is no
+longer added to the linker arguments.
+
+[1] https://github.com/qt/qtbase/commit/e0926ca4260953a70cdb2a6f84da35517ead1349#diff-4b36b0980a641d6a8d8e640f89c45625
+[2] http://package22.nyi.freebsd.org/data/112amd64-default-PR235620PR235622/2019-02-09_20h17m10s/logs/auralquiz-1.0.0_2.log
+
+Reviewers: #freebsd, sitter, O4 phonon
+
+Differential Revision: https://phabricator.kde.org/D18919
+---
+ qt5_phonon.pri | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git qt5_phonon.pri qt5_phonon.pri
+index 5dfeac8f..54216690 100644
+--- qt5_phonon.pri
++++ qt5_phonon.pri
+@@ -5,6 +5,7 @@ QT.@PHONON_LIB_SONAME@.PATCH_VERSION = @PHONON_LIB_PATCH_VERSION@
+ QT.@PHONON_LIB_SONAME@.name = @PHONON_LIB_SONAME@
+ QT.@PHONON_LIB_SONAME@.bins =
+ QT.@PHONON_LIB_SONAME@.includes = @ABS_INCLUDE_INSTALL_DIR@
++QT.@PHONON_LIB_SONAME@.module = @PHONON_LIB_SONAME@
+ QT.@PHONON_LIB_SONAME@.private_includes =
+ QT.@PHONON_LIB_SONAME@.sources =
+ QT.@PHONON_LIB_SONAME@.libs = @ABS_LIB_INSTALL_DIR@
+-- 
+2.20.1
+

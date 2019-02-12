@@ -318,8 +318,8 @@ qtbase-pre-configure:
 # ports/194088.
 post-patch: qtbase-post-patch
 qtbase-post-patch:
-	${REINPLACE_CMD} -e "/DEFAULT_LIBDIRS=/ s,\\\\\"\\\\n,\\\\n${LOCALBASE}/lib&," \
-		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}//mkspecs/common/bsd/bsd.conf
 
 .      if ${PORTNAME} != "qmake"
 _QMAKE=			${CONFIGURE_WRKSRC}/bin/qmake
@@ -348,6 +348,8 @@ qt5-pre-configure:
 # occurrences of ${WRKSRC}/lib from .pc and .prl files when installing them.
 # See QTBUG-40825 and ports bugs 194088, 195105 and 198720.
 	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${CONFIGURE_WRKSRC}/lib' >> ${CONFIGURE_WRKSRC}/.qmake.cache
+	${ECHO_CMD} 'QMAKE_DEFAULT_LIBDIRS = ${LOCALBASE}/lib' >> ${CONFIGURE_WRKSRC}/.qmake.cache
+	${ECHO_CMD} 'QMAKE_DEFAULT_INCDIRS = ${LOCALBASE}/include' >> ${CONFIGURE_WRKSRC}/.qmake.cache
 
 post-install: qt-post-install
 qt-post-install:

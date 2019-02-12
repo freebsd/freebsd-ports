@@ -6379,6 +6379,7 @@
 %%QT_EXAMPLEDIR%%/widgets/statemachine/twowaybutton/main.cpp
 %%QT_EXAMPLEDIR%%/widgets/statemachine/twowaybutton/twowaybutton.pro
 %%QT_EXAMPLEDIR%%/widgets/tools/codecs/codecs.pro
+%%QT_EXAMPLEDIR%%/widgets/tools/codecs/codecs.qrc
 %%QT_EXAMPLEDIR%%/widgets/tools/codecs/doc/images/codecs-example.png
 %%QT_EXAMPLEDIR%%/widgets/tools/codecs/doc/src/codecs.qdoc
 %%QT_EXAMPLEDIR%%/widgets/tools/codecs/encodedfiles/iso-8859-1.txt
@@ -6387,6 +6388,9 @@
 %%QT_EXAMPLEDIR%%/widgets/tools/codecs/encodedfiles/utf-16be.txt
 %%QT_EXAMPLEDIR%%/widgets/tools/codecs/encodedfiles/utf-16le.txt
 %%QT_EXAMPLEDIR%%/widgets/tools/codecs/encodedfiles/utf-8.txt
+%%QT_EXAMPLEDIR%%/widgets/tools/codecs/encodingdialog.cpp
+%%QT_EXAMPLEDIR%%/widgets/tools/codecs/encodingdialog.h
+%%QT_EXAMPLEDIR%%/widgets/tools/codecs/images/editcopy.png
 %%QT_EXAMPLEDIR%%/widgets/tools/codecs/main.cpp
 %%QT_EXAMPLEDIR%%/widgets/tools/codecs/mainwindow.cpp
 %%QT_EXAMPLEDIR%%/widgets/tools/codecs/mainwindow.h
