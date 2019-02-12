@@ -3,8 +3,7 @@
 PORTNAME=	shiboken2
 DISTVERSION=	5.12.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_QT}
-MASTER_SITE_SUBDIR=	official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
+MASTER_SITES=	QT/official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
 DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
