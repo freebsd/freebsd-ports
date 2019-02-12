@@ -189,6 +189,7 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pmg_qt/forms/askpartial.ui
 %%PYTHON_SITELIBDIR%%/pmg_qt/forms/colors.ui
 %%PYTHON_SITELIBDIR%%/pmg_qt/forms/fetch.ui
+%%PYTHON_SITELIBDIR%%/pmg_qt/forms/load_aln.ui
 %%PYTHON_SITELIBDIR%%/pmg_qt/forms/load_mae.ui
 %%PYTHON_SITELIBDIR%%/pmg_qt/forms/load_map.ui
 %%PYTHON_SITELIBDIR%%/pmg_qt/forms/load_mtz.ui
@@ -279,9 +280,6 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pmg_tk/startup/apbs_tools.py
 %%PYTHON_SITELIBDIR%%/pmg_tk/startup/apbs_tools.pyc
 %%PYTHON_SITELIBDIR%%/pmg_tk/startup/apbs_tools.pyo
-%%PYTHON_SITELIBDIR%%/pmg_tk/startup/remote_pdb_load.py
-%%PYTHON_SITELIBDIR%%/pmg_tk/startup/remote_pdb_load.pyc
-%%PYTHON_SITELIBDIR%%/pmg_tk/startup/remote_pdb_load.pyo
 %%PYTHON_SITELIBDIR%%/pmg_tk/volume.py
 %%PYTHON_SITELIBDIR%%/pmg_tk/volume.pyc
 %%PYTHON_SITELIBDIR%%/pmg_tk/volume.pyo
@@ -682,6 +680,9 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/startup/README.txt
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/startup/lightingsettings_gui/__init__.py
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/startup/lightingsettings_gui/main.py
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/test/double.png
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/test/single-right.png
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/test/single.png
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/tut/1hpv.pdb
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/chempy/generate_amber.py
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/chempy/generate_mmff.py
@@ -974,6 +975,9 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pymol/selector.py
 %%PYTHON_SITELIBDIR%%/pymol/selector.pyc
 %%PYTHON_SITELIBDIR%%/pymol/selector.pyo
+%%PYTHON_SITELIBDIR%%/pymol/seqalign.py
+%%PYTHON_SITELIBDIR%%/pymol/seqalign.pyc
+%%PYTHON_SITELIBDIR%%/pymol/seqalign.pyo
 %%PYTHON_SITELIBDIR%%/pymol/setting.py
 %%PYTHON_SITELIBDIR%%/pymol/setting.pyc
 %%PYTHON_SITELIBDIR%%/pymol/setting.pyo
