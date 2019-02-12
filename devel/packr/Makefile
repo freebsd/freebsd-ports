@@ -2,7 +2,7 @@
 
 PORTNAME=	packr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.22.0
+DISTVERSION=	2.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
@@ -18,7 +18,6 @@ GH_ACCOUNT=	gobuffalo
 GH_SUBDIR=	src/github.com/gobuffalo/packr
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:toml/src/github.com/BurntSushi/toml \
-		davecgh:go-spew:v1.1.1:go_spew/src/github.com/davecgh/go-spew \
 		gobuffalo:buffalo-plugins:v1.11.0:buffalo_plugins/src/github.com/gobuffalo/buffalo-plugins \
 		gobuffalo:envy:v1.6.12:envy/src/github.com/gobuffalo/envy \
 		gobuffalo:events:v1.1.9:events/src/github.com/gobuffalo/events \
@@ -39,7 +38,6 @@ GH_TUPLE=	\
 		markbates:oncer:bf2de49:oncer/src/github.com/markbates/oncer \
 		markbates:safe:v1.0.1:safe/src/github.com/markbates/safe \
 		pkg:errors:v0.8.1:pkg/src/github.com/pkg/errors \
-		pmezard:go-difflib:v1.0.0:go_difflib/src/github.com/pmezard/go-difflib/difflib \
 		rogpeppe:go-internal:v1.1.0:go_internal/src/github.com/rogpeppe/go-internal \
 		sirupsen:logrus:v1.3.0:logrus/src/github.com/sirupsen/logrus \
 		spf13:cobra:v0.0.3:cobra/src/github.com/spf13/cobra \
