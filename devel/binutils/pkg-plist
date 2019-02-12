@@ -18,6 +18,7 @@ bin/strings
 bin/strip
 include/bfd.h
 include/bfdlink.h
+include/bfd_stdint.h
 include/diagnostics.h
 include/dis-asm.h
 %%GOLD%%include/plugin-api.h
