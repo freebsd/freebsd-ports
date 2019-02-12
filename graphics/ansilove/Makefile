@@ -37,7 +37,7 @@ post-install-EXAMPLES-on:
 
 do-test:
 	@cd ${WRKSRC}/examples/ && for f in *; do \
-		${WRKSRC}/${PORTNAME} -o "${WRKSRC}/$$f.png" "$$f"; \
+		${BUILD_WRKSRC}/${PORTNAME} -o "${WRKSRC}/$$f.png" "$$f"; \
 		${FILE} "${WRKSRC}/$$f.png" | ${GREP} -q 'PNG'; \
 	done
 
