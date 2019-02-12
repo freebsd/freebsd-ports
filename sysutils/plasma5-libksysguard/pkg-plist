@@ -46,10 +46,6 @@ share/locale/ar/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/ar/LC_MESSAGES/processcore.mo
 share/locale/ar/LC_MESSAGES/processui.mo
 share/locale/as/LC_MESSAGES/processui.mo
-share/locale/ast/LC_MESSAGES/ksgrd.mo
-share/locale/ast/LC_MESSAGES/ksysguardlsofwidgets.mo
-share/locale/ast/LC_MESSAGES/processcore.mo
-share/locale/ast/LC_MESSAGES/processui.mo
 share/locale/be/LC_MESSAGES/processcore.mo
 share/locale/be/LC_MESSAGES/processui.mo
 share/locale/be@latin/LC_MESSAGES/ksysguardlsofwidgets.mo

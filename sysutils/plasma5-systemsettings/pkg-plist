@@ -78,7 +78,6 @@ share/kservicetypes5/systemsettingsexternalapp.desktop
 share/kservicetypes5/systemsettingsview.desktop
 share/kxmlgui5/systemsettings/systemsettingsui.rc
 share/locale/ar/LC_MESSAGES/systemsettings.mo
-share/locale/ast/LC_MESSAGES/systemsettings.mo
 share/locale/be/LC_MESSAGES/systemsettings.mo
 share/locale/be@latin/LC_MESSAGES/systemsettings.mo
 share/locale/bg/LC_MESSAGES/systemsettings.mo

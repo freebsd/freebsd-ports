@@ -1,7 +1,6 @@
 bin/ksshaskpass
 man/man1/ksshaskpass.1.gz
 share/locale/ar/LC_MESSAGES/ksshaskpass.mo
-share/locale/ast/LC_MESSAGES/ksshaskpass.mo
 share/locale/bs/LC_MESSAGES/ksshaskpass.mo
 share/locale/ca/LC_MESSAGES/ksshaskpass.mo
 share/locale/ca@valencia/LC_MESSAGES/ksshaskpass.mo

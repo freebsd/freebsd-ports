@@ -22,10 +22,6 @@ share/locale/ar/LC_MESSAGES/libdiscover.mo
 share/locale/ar/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/ar/LC_MESSAGES/plasma-discover.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.discovernotifier.mo
-share/locale/ast/LC_MESSAGES/libdiscover.mo
-share/locale/ast/LC_MESSAGES/plasma-discover-notifier.mo
-share/locale/ast/LC_MESSAGES/plasma-discover.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.discovernotifier.mo
 share/locale/bg/LC_MESSAGES/libdiscover.mo
 share/locale/bs/LC_MESSAGES/libdiscover.mo
 share/locale/bs/LC_MESSAGES/plasma-discover.mo

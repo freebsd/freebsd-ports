@@ -17,8 +17,6 @@ share/kservices5/kcm_kscreen.desktop
 share/kservices5/plasma-applet-org.kde.kscreen.desktop
 share/locale/ar/LC_MESSAGES/kcm_displayconfiguration.mo
 share/locale/ar/LC_MESSAGES/kscreen.mo
-share/locale/ast/LC_MESSAGES/kcm_displayconfiguration.mo
-share/locale/ast/LC_MESSAGES/kscreen.mo
 share/locale/bs/LC_MESSAGES/kcm_displayconfiguration.mo
 share/locale/bs/LC_MESSAGES/kscreen.mo
 share/locale/ca/LC_MESSAGES/kcm_displayconfiguration.mo

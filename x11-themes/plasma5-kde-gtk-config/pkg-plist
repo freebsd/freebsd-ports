@@ -17,7 +17,6 @@ share/icons/hicolor/scalable/apps/kde-gtk-config.svgz
 share/kcm-gtk-module/preview.ui
 share/kservices5/kde-gtk-config.desktop
 share/locale/ar/LC_MESSAGES/kde-gtk-config.mo
-share/locale/ast/LC_MESSAGES/kde-gtk-config.mo
 share/locale/bs/LC_MESSAGES/kde-gtk-config.mo
 share/locale/ca/LC_MESSAGES/kde-gtk-config.mo
 share/locale/ca@valencia/LC_MESSAGES/kde-gtk-config.mo

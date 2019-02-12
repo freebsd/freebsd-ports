@@ -1,4 +1,5 @@
 bin/kmenuedit
+etc/xdg/kmenuedit.categories
 lib/libkdeinit5_kmenuedit.so
 share/applications/org.kde.kmenuedit.desktop
 share/doc/HTML/ca/kmenuedit/done.png
@@ -7,6 +8,7 @@ share/doc/HTML/ca/kmenuedit/index.docbook
 share/doc/HTML/ca/kmenuedit/itemname.png
 share/doc/HTML/ca/kmenuedit/new.png
 share/doc/HTML/ca/kmenuedit/reset.png
+share/doc/HTML/ca/kmenuedit/selecticon.png
 share/doc/HTML/ca/kmenuedit/selectinternet.png
 share/doc/HTML/de/kmenuedit/index.cache.bz2
 share/doc/HTML/de/kmenuedit/index.docbook
@@ -59,7 +61,6 @@ share/icons/hicolor/48x48/apps/kmenuedit.png
 share/kxmlgui5/kmenuedit/kmenueditui.rc
 share/locale/af/LC_MESSAGES/kmenuedit.mo
 share/locale/ar/LC_MESSAGES/kmenuedit.mo
-share/locale/ast/LC_MESSAGES/kmenuedit.mo
 share/locale/be/LC_MESSAGES/kmenuedit.mo
 share/locale/bg/LC_MESSAGES/kmenuedit.mo
 share/locale/bn/LC_MESSAGES/kmenuedit.mo

@@ -1,4 +1,5 @@
 bin/kscreen-doctor
+etc/xdg/libkscreen.categories
 include/KF5/KScreen/KScreen/Config
 include/KF5/KScreen/KScreen/ConfigMonitor
 include/KF5/KScreen/KScreen/ConfigOperation

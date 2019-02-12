@@ -272,8 +272,6 @@ share/kservices5/breezestyleconfig.desktop
 share/kstyle/themes/breeze.themerc
 share/locale/ar/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/ar/LC_MESSAGES/breeze_style_config.mo
-share/locale/ast/LC_MESSAGES/breeze_kwin_deco.mo
-share/locale/ast/LC_MESSAGES/breeze_style_config.mo
 share/locale/bs/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/bs/LC_MESSAGES/breeze_style_config.mo
 share/locale/ca/LC_MESSAGES/breeze_kwin_deco.mo
@@ -363,6 +361,7 @@ share/locale/zh_TW/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/zh_TW/LC_MESSAGES/breeze_style_config.mo
 share/metainfo/org.kde.breezedark.desktop.appdata.xml
 share/plasma/look-and-feel/org.kde.breezedark.desktop/contents/defaults
+share/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/fullscreenpreview.jpg
 share/plasma/look-and-feel/org.kde.breezedark.desktop/contents/previews/preview.png
 share/plasma/look-and-feel/org.kde.breezedark.desktop/metadata.desktop
 share/plasma/look-and-feel/org.kde.breezedark.desktop/metadata.json
