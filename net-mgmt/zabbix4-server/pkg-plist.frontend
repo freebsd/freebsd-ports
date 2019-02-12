@@ -404,6 +404,7 @@
 %%WWWDIR%%/include/classes/html/svg/CSvgGraphGrid.php
 %%WWWDIR%%/include/classes/html/svg/CSvgGraphLegend.php
 %%WWWDIR%%/include/classes/html/svg/CSvgGraphLine.php
+%%WWWDIR%%/include/classes/html/svg/CSvgGraphLineGroup.php
 %%WWWDIR%%/include/classes/html/svg/CSvgGraphPoints.php
 %%WWWDIR%%/include/classes/html/svg/CSvgGroup.php
 %%WWWDIR%%/include/classes/html/svg/CSvgLine.php
