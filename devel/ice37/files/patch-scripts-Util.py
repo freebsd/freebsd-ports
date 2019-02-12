@@ -1,48 +1,29 @@
---- scripts/Util.py.orig	2018-08-27 01:10:47 UTC
-+++ scripts/Util.py
-@@ -82,7 +82,7 @@ class Platform:
+--- scripts/Util.py.orig	2019-02-11 16:48:19.076747000 +0100
++++ scripts/Util.py	2019-02-11 19:16:32.768690000 +0100
+@@ -232,7 +232,7 @@
+         elif Mapping.getByName("cpp"):
+             cwd = Mapping.getByName("cpp").getPath()
  
-     def parseBuildVariables(self, variables):
-         # Run make to get the values of the given variables
--        output = run('make print V="{0}"'.format(" ".join(variables.keys())), cwd = toplevel)
-+        output = run('gmake print V="{0}"'.format(" ".join(variables.keys())), cwd = toplevel)
+-        output = run('make print V="{0}"'.format(" ".join(variables.keys())), cwd=cwd)
++        output = run('gmake print V="{0}"'.format(" ".join(variables.keys())), cwd=cwd)
          for l in output.split("\n"):
              match = re.match(r'^.*:.*: (.*) = (.*)', l)
              if match and match.group(1):
-@@ -199,6 +199,46 @@ class AIX(Platform):
+@@ -304,6 +304,27 @@
      def hasOpenSSL(self):
          return True
  
 +class FreeBSD(Platform):
 +
 +    def __init__(self):
-+        Platform.__init__(self)
-+
-+    def getFilters(self, config):
-+        filters = Platform.getFilters(self, config)
-+        #filters = (filters[0], filters[1] + ["Slice/*"])
-+        return filters
++        self.nugetPackageCache = None
 +
 +    def hasOpenSSL(self):
 +        return True
 +
-+    def getBinSubDir(self, mapping, process, current):
-+        buildPlatform = current.driver.configs[mapping].buildPlatform
-+        return "bin"
-+
-+    def getLibSubDir(self, mapping, process, current):
-+        buildPlatform = current.driver.configs[mapping].buildPlatform
-+
-+        # PHP module is always installed in the lib directory for the default build platform
-+        if isinstance(mapping, PhpMapping) and buildPlatform == self.getDefaultBuildPlatform():
-+            return "lib"
-+        return "lib"
-+
-+    def getBuildSubDir(self, name, current):
-+        return os.path.join("build", current.config.buildPlatform, current.config.buildConfig)
-+
 +    def getSliceDir(self, iceDir):
-+        return os.path.join(iceDir, "slice")
++        installDir = self.getInstallDir(mapping, current)
++        return os.path.join(installDir, "slice")
 +
 +    def getDefaultExe(self, name, config):
 +        if name == "icebox":
@@ -56,7 +37,24 @@
  class Linux(Platform):
  
      def __init__(self):
-@@ -434,6 +474,8 @@ if sys.platform == "darwin":
+@@ -1374,13 +1402,13 @@
+             if os.path.exists(translator):
+                 return translator + " " + args if args else translator
+             elif isinstance(platform, Windows):
+-                return os.path.join(os.path.dirname(sys.executable), "Scripts", "slice2py.exe")
++                return os.path.join(os.path.dirname(sys.executable), "Scripts", "slice2py.exe") + " " + args if args else translator
+             elif os.path.exists("/usr/local/bin/slice2py"):
+-                return "/usr/local/bin/slice2py"
++                return "/usr/local/bin/slice2py" + " " + args if args else translator
+             else:
+                 import slice2py
+                 return sys.executable + " " + os.path.normpath(
+-                            os.path.join(slice2py.__file__, "..", "..", "..", "..", "bin", "slice2py"))
++                            os.path.join(slice2py.__file__, "..", "..", "..", "..", "bin", "slice2py")) + " " + args if args else translator
+         else:
+             return Process.getCommandLine(self, current, args)
+ 
+@@ -3786,6 +3807,8 @@
      platform = Darwin()
  elif sys.platform.startswith("aix"):
      platform = AIX()
@@ -65,14 +63,3 @@
  elif sys.platform.startswith("linux") or sys.platform.startswith("gnukfreebsd"):
      platform = Linux()
  elif sys.platform == "win32" or sys.platform[:6] == "cygwin":
-@@ -1333,8 +1375,8 @@ class SliceTranslator(ProcessFromBinDir,
-                 return translator + " " + args if args else translator
-             elif isinstance(platform, Windows):
-                 return os.path.join(os.path.dirname(sys.executable), "Scripts", "slice2py.exe")
--            elif os.path.exists("/usr/local/bin/slice2py"):
--                return "/usr/local/bin/slice2py"
-+            elif os.path.exists("%%LOCALBASE%%/bin/slice2py"):
-+                return "%%LOCALBASE%%/bin/slice2py " + args if args else "%%LOCALBASE%%/bin/slice2py "
-             else:
-                 import slice2py
-                 return sys.executable + " " + os.path.normpath(
