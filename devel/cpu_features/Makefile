@@ -3,6 +3,7 @@
 PORTNAME=	cpu_features
 PORTVERSION=	0.2.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	skreuzer@FreeBSD.org
@@ -13,6 +14,8 @@ LICENSE=	APACHE20
 USES=	cmake:insource
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
+
+CFLAGS+=	-fPIC
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/list_cpu_features ${STAGEDIR}${PREFIX}/bin
