@@ -1,5 +1,5 @@
---- src/notification/notification.c.orig	2014-06-02 19:46:42.417311366 +0100
-+++ src/notification/notification.c	2014-06-02 19:46:50.130301442 +0100
+--- src/notification/notification.c.orig	2011-04-21 11:51:08 UTC
++++ src/notification/notification.c
 @@ -25,6 +25,7 @@
  #include <stdarg.h>
  #include <string.h>
