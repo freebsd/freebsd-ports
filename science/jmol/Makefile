@@ -3,9 +3,10 @@
 
 PORTNAME=	Jmol
 DISTVERSION=	14.29.31
+PORTREVISION=	1
 CATEGORIES=	science java
-MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/Version%20${DISTVERSION:R}/Jmol%20${DISTVERSION}/:src \
-		http://jmol.svn.sourceforge.net/viewvc/jmol/trunk/Jmol/selfSignedCertificate/:cert
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/Version%20${DISTVERSION:R}/${PORTNAME}%20${DISTVERSION}/:src \
+		http://${PORTNAME:tl}.svn.sourceforge.net/viewvc/${PORTNAME:tl}/trunk/${PORTNAME}/selfSignedCertificate/:cert
 DISTFILES=	${PORTNAME}-${DISTVERSION}-full${EXTRACT_SUFX}:src \
 		selfSignedCertificate.cer:cert \
 		selfSignedCertificate.store:cert
@@ -24,12 +25,13 @@ NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:tl}-${DISTVERSION}
 SIGN_DIR=	${WRKSRC}/selfSignedCertificate
-SUB_FILES=	${PORTNAME:tl}
+SUB_FILES=	${EXES}
 SUB_LIST=	JAVA=${JAVA}
 
+EXES=		${PORTNAME:tl} ${PORTNAME:tl}data
 JARS=		${PORTNAME}.jar ${PORTNAME}Data.jar ${PORTNAME}Lib.jar
 
-PLIST_FILES=	bin/${PORTNAME:tl} \
+PLIST_FILES=	${EXES:S/^/bin\//} \
 		${JARS:S/^/${JAVAJARDIR}\//}
 
 OPTIONS_DEFINE=	DOCS
@@ -47,7 +49,9 @@ post-patch:
 	@${REINPLACE_CMD} 's|<input message="private property file.*||' ${WRKSRC}/build.xml
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME:tl} ${STAGEDIR}${PREFIX}/bin
+.for exe in ${EXES}
+	${INSTALL_SCRIPT} ${WRKDIR}/${exe} ${STAGEDIR}${PREFIX}/bin
+.endfor
 .for jar in ${JARS}
 	${INSTALL_DATA} ${WRKSRC}/build/${jar} ${STAGEDIR}${JAVAJARDIR}
 .endfor
