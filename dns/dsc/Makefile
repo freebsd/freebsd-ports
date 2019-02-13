@@ -3,6 +3,7 @@
 
 PORTNAME=	dsc
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/dsc/ \
 		https://dns.company/files/dsc/
@@ -13,18 +14,16 @@ COMMENT=	Tool used for collecting and exploring statistics from DNS servers
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	libpcap>=1.8.1:net/libpcap			\
-		GeoIP>=1.6.12:net/GeoIP				\
-		p5-Proc-PID-File>=1.28:devel/p5-Proc-PID-File	\
-		p5-XML-Simple>=2.24:textproc/p5-XML-Simple	\
+RUN_DEPENDS=	libpcap>=1.8.1:net/libpcap \
+		p5-Proc-PID-File>=1.28:devel/p5-Proc-PID-File \
+		p5-XML-Simple>=2.24:textproc/p5-XML-Simple \
 		dsp>=2.0.0:dns/dsp
+LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
-DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
-EXPIRATION_DATE=2019-02-15
+USES=		gmake perl5 shebangfix
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-extra-cflags=-I${LOCALBASE}/include
-USES=		gmake perl5 shebangfix
 
 SUB_FILES=	pkg-message
 
