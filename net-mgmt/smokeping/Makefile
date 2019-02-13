@@ -80,9 +80,6 @@ GH_ACCOUNT=	oetiker
 GH_PROJECT=	SmokePing
 GH_TAGNAME=	9b2ecb9
 
-OPTIONS_DEFINE=	ECHOPING RADIUS TELNET DNS FPING EXAMPLES
-OPTIONS_DEFAULT=	FPING
-
 # We will take these from CPAN instead
 post-extract:
 	cd ${WRKSRC}/lib ; ${RM} BER.pm SNMP_util.pm SNMP_Session.pm
