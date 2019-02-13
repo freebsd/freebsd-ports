@@ -3,6 +3,7 @@
 
 PORTNAME=	libserialport
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libserialport/
 
