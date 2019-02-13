@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-filter
-DISTVERSION=	1.1.0
+DISTVERSION=	2.0.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj21-
@@ -12,10 +12,7 @@ COMMENT=	Dynamic filtering for querysets with Django
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django21>0:www/py-django21@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj21-djangorestframework>0:www/py-dj21-djangorestframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}coreapi>0:devel/py-coreapi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}coreschema>0:devel/py-coreschema@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django21>=1.11:www/py-django21@${PY_FLAVOR}
 
 USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
