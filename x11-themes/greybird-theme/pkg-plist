@@ -137,8 +137,8 @@ share/themes/Greybird/gtk-3.0/gtk.css
 share/themes/Greybird/gtk-3.0/gtk.gresource.xml
 share/themes/Greybird/gtk-3.0/settings.ini
 share/themes/Greybird/plank/dock.theme
-share/themes/Greybird/xfce-notify-4.0/gtk.css
-share/themes/Greybird/xfce-notify-4.0/gtkrc
+%%NOTIFYD%%share/themes/Greybird/xfce-notify-4.0/gtk.css
+%%NOTIFYD%%share/themes/Greybird/xfce-notify-4.0/gtkrc
 share/themes/Greybird/xfwm4/base-inactive.png
 share/themes/Greybird/xfwm4/base.png
 share/themes/Greybird/xfwm4/bottom-active.xpm
