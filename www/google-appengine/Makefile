@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-appengine
-DISTVERSION=	1.9.74
+DISTVERSION=	1.9.82
 CATEGORIES=	www devel python
 MASTER_SITES=	https://storage.googleapis.com/appengine-sdks/featured/
 DISTFILES=	${PORTNAME:S|-|_|}_${PORTVERSION}.zip
@@ -42,8 +42,8 @@ GAESCRIPTS=	_php_runtime.py _python_runtime.py api_server.py appcfg.py \
 
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.3:databases/py-MySQLdb@${PY_FLAVOR}
 
-PHP_USE=	mysql=server
-PHP_VARS=	gaedatadir+=php want_mysql_ver=56
+PHP_USES=	mysql:server
+PHP_VARS=	gaedatadir+=php
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
