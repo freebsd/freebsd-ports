@@ -2,11 +2,8 @@
 
 PORTNAME=	slurp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0
+DISTVERSION=	1.0.1
 CATEGORIES=	x11
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	74c4bdff012a.patch:-p1 7976828fe1a9.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Select a region in a Wayland compositor
