@@ -107,6 +107,7 @@
     SUBDIR += iboview
     SUBDIR += isaac-cfd
     SUBDIR += jdftx
+    SUBDIR += jmol
     SUBDIR += jstrack
     SUBDIR += kalzium
     SUBDIR += kst2
