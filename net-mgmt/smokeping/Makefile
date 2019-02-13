@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	smokeping
-PORTVERSION=	2.6.11
-PORTREVISION=	8
+PORTVERSION=	2.7.3
 CATEGORIES=	net-mgmt www
-MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
-		http://smokeping.cs.pu.edu.tw/pub/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Latency logging and graphing system
@@ -30,13 +27,20 @@ BUILD_DEPENDS=	p5-CGI-Fast>=0:www/p5-CGI-Fast \
 		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 		p5-Net-Telnet>=0:net/p5-Net-Telnet \
 		p5-Net-OpenSSH>=0:net/p5-Net-OpenSSH \
-		p5-perl-ldap>=0:net/p5-perl-ldap
+		p5-perl-ldap>=0:net/p5-perl-ldap \
+		p5-OrePAN2>=0:devel/p5-OrePAN2 \
+		curl>=0:ftp/curl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USES=		gmake perl5 autoreconf
 
 CONFLICTS_INSTALL=	nfsping
 
+SUB_FILES=	pkg-deinstall pkg-message
+SUB_LIST=	USERS=${USERS} \
+		GROUPS=${GROUPS}
+
 NO_ARCH=	yes
-USES=		gmake perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PERL=${PERL} PERL5LIB=${PREFIX}/smokeping/lib
 CONFIGURE_ARGS+=	\
@@ -53,26 +57,31 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 USERS=		smokeping
 GROUPS=		smokeping
 
-SUB_FILES=	pkg-deinstall pkg-message
-SUB_LIST=	USERS=${USERS} \
-		GROUPS=${GROUPS}
-
-FPING_DESC=	Support for fping probes
-ECHOPING_DESC=	Support for EchoPing probes
-CURL_DESC=	Support for Curl probes
-RADIUS_DESC=	Support for Radius probes
-TELNET_DESC=	Support for TelnetIOSPing probes
-DNS_DESC=	Support for AnotherDNS probes
-
-OPTIONS_DEFINE=	ECHOPING CURL RADIUS TELNET DNS FPING EXAMPLES
+OPTIONS_DEFINE=	ECHOPING RADIUS TELNET DNS FPING EXAMPLES
 OPTIONS_DEFAULT=	FPING
 
+FPING_DESC=	Support for fping probes
 FPING_RUN_DEPENDS=	${LOCALBASE}/sbin/fping:net/fping
+
+ECHOPING_DESC=	Support for EchoPing probes
 ECHOPING_RUN_DEPENDS=	${LOCALBASE}/bin/echoping:net/echoping
-CURL_RUN_DEPENDS=	${LOCALBASE}/bin/curl:ftp/curl
+
+RADIUS_DESC=	Support for Radius probes
 RADIUS_RUN_DEPENDS=	p5-Authen-Radius>=0:security/p5-Authen-Radius
+
+TELNET_DESC=	Support for TelnetIOSPing probes
 TELNET_RUN_DEPENDS=	p5-Net-Telnet>=0:net/p5-Net-Telnet
+
+DNS_DESC=	Support for AnotherDNS probes
 DNS_RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	oetiker
+GH_PROJECT=	SmokePing
+GH_TAGNAME=	9b2ecb9
+
+OPTIONS_DEFINE=	ECHOPING RADIUS TELNET DNS FPING EXAMPLES
+OPTIONS_DEFAULT=	FPING
 
 # We will take these from CPAN instead
 post-extract:
@@ -80,10 +89,14 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${WRKSRC}/doc/Makefile.in \
+		${WRKSRC}/doc/Makefile.am \
 		${WRKSRC}/bin/smokeping \
 		${WRKSRC}/bin/smokeping_cgi \
 		${WRKSRC}/bin/tSmoke
+	@for a in ${WRKSRC}/etc/*.dist; do \
+		${MV} $$a $${a%.dist}.sample; \
+	done
+	${MV} ${WRKSRC}/etc/config.dist.in ${WRKSRC}/etc/config.sample.in
 
 post-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/smokeping/htdocs/img

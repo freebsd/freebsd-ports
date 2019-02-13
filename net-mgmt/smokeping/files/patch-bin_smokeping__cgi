@@ -1,0 +1,21 @@
+--- bin/smokeping_cgi.orig	2018-02-02 21:14:55 UTC
++++ bin/smokeping_cgi
+@@ -5,8 +5,7 @@ use strict;
+ use warnings;
+ 
+ use lib (split /:/, q{}); # PERL5LIB
+-use FindBin;
+-use lib "$FindBin::RealBin/../lib";use lib "$FindBin::RealBin/../thirdparty/lib/perl5"; # LIBDIR
++use lib "/usr/local/smokeping/lib";
+ 
+ # don't bother with zombies
+ $SIG{CHLD} = 'IGNORE';
+@@ -17,7 +16,7 @@ use Smokeping;
+ 
+ use CGI::Fast;
+ 
+-my $cfg = (shift @ARGV) || "$FindBin::Bin/../etc/config";
++my $cfg = (shift @ARGV) || "/usr/local/etc/smokeping/config";
+ 
+ 
+ while (my $q = new CGI::Fast) {

@@ -1,0 +1,11 @@
+--- doc/smokeping_install.pod.orig	2018-02-02 21:14:55 UTC
++++ doc/smokeping_install.pod
+@@ -108,7 +108,7 @@ to finish your setup.
+ 
+ =head2 Configuration
+ 
+-Use the F<etc/config.dist> file as a template to create your own smokeping configuration file.
++Use the F<etc/config.sample> file as a template to create your own smokeping configuration file.
+ See L<smokeping_config> for details.
+ 
+ =over
