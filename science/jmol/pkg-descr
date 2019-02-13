@@ -1,0 +1,15 @@
+Jmol/JSmol is a molecular viewer for 3D chemical structures that runs in four
+independent modes: an HTML5-only web application utilizing jQuery, a Java
+applet, a stand-alone Java program (Jmol.jar), and a "headless" server-side
+component (JmolData.jar). Jmol can read many file types, including PDB, CIF,
+SDF, MOL, PyMOL PSE files, and Spartan files, as well as output from Gaussian,
+GAMESS, MOPAC, VASP, CRYSTAL, CASTEP, QuantumEspresso, VMD, and many other
+quantum chemistry programs. Files can be transferred directly from several
+databases, including RCSB, EDS, NCI, PubChem, and MaterialsProject. Multiple
+files can be loaded and compared. A rich scripting language and a well-developed
+web API allow easy customization of the user interface. Features include
+interactive animation and linear morphing. Jmol interfaces well with JSpecView
+for spectroscopy, JSME for 2D->3D conversion, POV-Ray for images, and CAD
+programs for 3D printing (VRML export).
+
+WWW: https://sourceforge.net/projects/jmol/
