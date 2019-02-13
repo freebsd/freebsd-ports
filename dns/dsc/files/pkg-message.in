@@ -1,7 +1,7 @@
 ###########################################
 
 Before you configure:
-To obtain MaxMind's GeoIP tables,
-run %%LOCALBASE%%/bin/geoipupdate.sh manually.
+To obtain MaxMind's GeoIP tables, install net/geoipupdate
+and run %%LOCALBASE%%/bin/geoipupdate manually.
 
 ###########################################
