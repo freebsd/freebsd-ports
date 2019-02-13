@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools411
 PORTVERSION=	4.11.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -21,7 +21,13 @@ BUILD_DEPENDS=	seabios>0:misc/seabios
 RUN_DEPENDS=	seabios>0:misc/seabios
 DOCS_BUILD_DEPENDS=markdown:textproc/markdown
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS SPICE
+OPTIONS_DEFAULT=	DOCS
+
+SPICE_DESC=		Enable SPICE protocol for QEMU
+SPICE_CONFIGURE_WITH=	extra-qemuu-configure-args="--enable-spice"
+SPICE_BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
+SPICE_LIB_DEPENDS=	libspice-server.so:devel/libspice-server
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64"
@@ -69,6 +75,10 @@ IGNORE=		only supported on FreeBSD
 
 .if ${OSVERSION} < 1200074
 IGNORE=		only supported on recent FreeBSD HEAD
+.endif
+
+.if ${PORT_OPTIONS:MSPICE} && ${OSVERSION} < 1300008
+BROKEN=	SPICE support requires FreeBSD version 13.0 or higher
 .endif
 
 post-patch:
