@@ -13,11 +13,10 @@ COMMENT=	Minimalistic x86 and x86-64 disassembler library
 LICENSE=	BSD2CLAUSE
 
 USES=		gmake libtool
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-sphinx-build --enable-shared
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-sphinx-build  --enable-shared
 
 INFO=		udis86
 PORTDOCS=	x86
@@ -51,6 +50,7 @@ CONFIGURE_ENV+=		PYTHON="${FALSE}"
 .endif
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/docs/manual/udis86.info ${STAGEDIR}${PREFIX}/${INFO_PATH}/
+	${INSTALL_DATA} ${WRKSRC}/docs/manual/udis86.info \
+		${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.mk>
