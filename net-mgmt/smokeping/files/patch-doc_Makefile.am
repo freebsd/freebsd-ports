@@ -1,0 +1,19 @@
+--- doc/Makefile.am.orig	2018-02-02 21:14:55 UTC
++++ doc/Makefile.am
+@@ -92,7 +92,7 @@ tSmoke.1: ../bin/tSmoke
+ smokeping_config.pod: ../lib/Smokeping.pm
+ 	$(AM_V_GEN)$(MAKEPOD) > $@
+ 
+-smokeping_examples.pod: ../lib/Smokeping/Examples.pm ../etc/config.dist
++smokeping_examples.pod: ../lib/Smokeping/Examples.pm ../etc/config.sample
+ 	$(AM_V_GEN)$(MKDIR) -p examples
+ 	$(AM_V_GEN)$(GENEX)
+ 
+@@ -116,6 +116,6 @@ iman7_DATA = $(MAN7)
+ 
+ EXAMPLES := $(wildcard examples/config.*)
+ 
+-etcdir = $(sysconfdir)/examples
++etcdir = /usr/local/share/examples/smokeping
+ etc_DATA = $(EXAMPLES)
+ 

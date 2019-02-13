@@ -1,0 +1,18 @@
+--- bin/smokeping.orig	2018-02-02 21:14:55 UTC
++++ bin/smokeping
+@@ -5,12 +5,11 @@ use strict;
+ use warnings;
+ 
+ use lib (split /:/, q{}); # PERL5LIB
+-use FindBin;
+-use lib "$FindBin::RealBin/../lib";use lib "$FindBin::RealBin/../thirdparty/lib/perl5"; # LIBDIR
++use lib "/usr/local/smokeping/lib";
+ 
+ use Smokeping;
+- 
+-Smokeping::main("$FindBin::RealBin/../etc/config");
++
++Smokeping::main("/usr/local/etc/smokeping/config"); 
+ 
+ =head1 NAME
+ 
