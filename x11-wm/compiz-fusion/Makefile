@@ -6,7 +6,7 @@ PORTVERSION=	0.8.8
 PORTREVISION=	2
 CATEGORIES=	x11-wm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	samy.mahmoudi@gmail.com
 COMMENT=	Metaport of compiz-fusion
 
 LICENSE=	GPLv2+ LGPL21+ MIT

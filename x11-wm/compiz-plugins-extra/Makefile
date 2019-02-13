@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	samy.mahmoudi@gmail.com
 COMMENT=	Plugins for Compiz Composite Window Manager
 
 LICENSE=	GPLv2+
