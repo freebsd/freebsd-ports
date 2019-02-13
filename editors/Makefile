@@ -38,7 +38,7 @@
     SUBDIR += emacs
     SUBDIR += emacs-devel
     SUBDIR += encryptpad
-    SUBDIR += featherpad 
+    SUBDIR += featherpad
     SUBDIR += fileobj
     SUBDIR += flim
     SUBDIR += focuswriter
@@ -251,6 +251,7 @@
     SUBDIR += web-mode
     SUBDIR += with-editor
     SUBDIR += wordgrinder
+    SUBDIR += wxhexeditor
     SUBDIR += xcoral
     SUBDIR += xed
     SUBDIR += xi-core
