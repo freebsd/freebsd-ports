@@ -1,6 +1,9 @@
 bin/version_compare
 include/libversion/config.h
+include/libversion/export.h
 include/libversion/version.h
+lib/cmake/libversion/libversionConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libversion/libversionConfig.cmake
 lib/libversion.a
 lib/libversion.so
 lib/libversion.so.0
