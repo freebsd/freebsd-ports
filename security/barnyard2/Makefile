@@ -3,7 +3,7 @@
 PORTNAME=	barnyard2
 PORTVERSION=	1.13
 DISTVERSIONPREFIX=	v2-
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -70,11 +70,6 @@ PORT_PCAP_CONFIGURE_ON=	--with-libpcap-includes=${LOCALBASE}/include \
 			--with-libpcap-libraries=${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBRO}
-DEPRECATED=	Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
-EXPIRATION_DATE=2019-02-15
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc|${LOCALBASE}/etc|' \
