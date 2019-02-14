@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export LC_ALL=en_US.UTF-8
+
+%%JAVA%% -jar %%JAVAJARDIR%%/%%PORTNAME%%-%%PORTVERSION%%-jar-with-dependencies.jar "$@"

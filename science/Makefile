@@ -173,6 +173,7 @@
     SUBDIR += openmx
     SUBDIR += opensim-core
     SUBDIR += openstructure
+    SUBDIR += opsin
     SUBDIR += p5-Algorithm-SVMLight
     SUBDIR += p5-Chemistry-3DBuilder
     SUBDIR += p5-Chemistry-Bond-Find
