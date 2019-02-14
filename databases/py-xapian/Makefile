@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian
-PORTVERSION=	1.4.9
-PORTREVISION=	1
+PORTVERSION=	1.4.10
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases python
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -29,10 +28,18 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lang libtool python tar:xz
 
-CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
+CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
+		--docdir=${DOCSDIR} \
+		--enable-shared \
 		--enable-static \
-		--without-csharp --without-java --without-lua --without-perl \
-		--without-php --without-ruby --without-tcl
+		--without-csharp \
+		--without-java \
+		--without-lua \
+		--without-perl \
+		--without-php \
+		--without-php7 \
+		--without-ruby \
+		--without-tcl
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
@@ -45,10 +52,12 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.4.8:textproc/py-sphinx@${PY
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} > 3000
-CONFIGURE_ARGS+=--with-python3 --without-python
+CONFIGURE_ARGS+=--with-python3 \
+		--without-python
 CONFIGURE_ENV+=	PYTHON3=${PYTHON_CMD}
 .else
-CONFIGURE_ARGS+=--with-python --without-python3
+CONFIGURE_ARGS+=--with-python \
+		--without-python3
 CONFIGURE_ENV+=	PYTHON2=${PYTHON_CMD}
 .endif
 
