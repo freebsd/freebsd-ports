@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsc
-PORTVERSION=	2.7.0
-PORTREVISION=	1
+PORTVERSION=	2.8.0
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/dsc/ \
 		https://dns.company/files/dsc/
@@ -26,9 +25,20 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-extra-cflags=-I${LOCALBASE}/include
 
 SUB_FILES=	pkg-message
+SHEBANG_FILES=	cron/upload-prep.pl
 
-USE_RC_SUBR=    dsc
+USE_RC_SUBR=	dsc
 
 OPTIONS_DEFINE=	DOCS
+
+post-extract:
+	${REINPLACE_CMD} -e 's|/usr/local/dsc/etc|${PREFIX}/etc/dsc|' \
+	    ${WRKSRC}/cron/upload-prep.pl
+	${REINPLACE_CMD} -e 's|/usr/local/|${PREFIX}/|' \
+	    ${WRKSRC}/cron/upload-rsync.sh \
+	    ${WRKSRC}/cron/upload-ssh.sh \
+	    ${WRKSRC}/cron/upload-x509.sh \
+	    ${WRKSRC}/src/dsc.conf.5.in \
+	    ${WRKSRC}/src/dsc.sh
 
 .include <bsd.port.mk>
