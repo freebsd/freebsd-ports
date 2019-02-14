@@ -1,2 +1,3 @@
-SHA256 (spamass-rules-20140707.tar.bz2) = d3c551e8d34985461ed0c2f0144424e6d297c6ca694ee75c64d5d0c614c93c50
-SIZE (spamass-rules-20140707.tar.bz2) = 356547
+TIMESTAMP = 1546420275
+SHA256 (spamass-rules-20190101.tar.bz2) = c044a4f556d92e113d649b3cfffbffc353646a3708ac9da77a51cd72287549d0
+SIZE (spamass-rules-20190101.tar.bz2) = 365346
