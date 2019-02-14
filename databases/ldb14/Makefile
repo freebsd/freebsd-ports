@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		ldb
-PORTVERSION=		1.4.3
+PORTVERSION=		1.4.4
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		databases
@@ -21,7 +21,6 @@ RUN_DEPENDS=		${LDB_DEPENDS}
 LDB_DEPENDS=		talloc>=2.1.14:devel/talloc \
 			tevent>=0.9.37:devel/tevent \
 			tdb>=1.3.16:databases/tdb \
-			lmdb>=0.9.16:databases/lmdb \
 			cmocka>=1.1.1:sysutils/cmocka \
 			popt>=0:devel/popt
 
@@ -67,7 +66,6 @@ LDB_BINS=		bin/ldbedit \
 
 LDB_LIBS=		lib/libldb.so \
 			lib/libldb.so.1 \
-			lib/ldb/libldb-mdb-int.so \
 			lib/ldb/libldb-key-value.so \
 			lib/ldb/libldb-cmdline.so \
 			lib/shared-modules/ldb/skel.so \
@@ -81,6 +79,12 @@ LDB_LIBS=		lib/libldb.so \
 			lib/shared-modules/ldb/ldap.so \
 			lib/shared-modules/ldb/asq.so \
 			lib/shared-modules/ldb/tdb.so
+
+# Only for 64-bit architectures
+.if ${ARCH} != i386
+LDB_DEPENDS+=		lmdb>=0.9.16:databases/lmdb
+LDB_LIBS+=		lib/ldb/libldb-mdb-int.so
+.endif
 
 PLIST_FILES=		include/ldb_version.h \
 			include/ldb_handlers.h \
@@ -146,6 +150,7 @@ CFLAGS+=		-fno-color-diagnostics
 .endif
 CONFIGURE_ENV+=		NOCOLOR=yes
 MAKE_ENV+=		NOCOLOR=yes
+
 
 LDB_MAN1=		man/man1/ldbadd.1.gz \
 			man/man1/ldbdel.1.gz \
