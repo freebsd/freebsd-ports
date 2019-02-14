@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opencart
-PORTVERSION=	3.0.2.0
+PORTVERSION=	3.0.3.1
 CATEGORIES=	www misc
 
 MAINTAINER=	wen@FreeBSD.org

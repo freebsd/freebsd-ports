@@ -36,6 +36,7 @@
 %%WWWDIR%%/admin/controller/event/language.php
 %%WWWDIR%%/admin/controller/event/statistics.php
 %%WWWDIR%%/admin/controller/event/theme.php
+%%WWWDIR%%/admin/controller/extension/advertise/google.php
 %%WWWDIR%%/admin/controller/extension/analytics/google.php
 %%WWWDIR%%/admin/controller/extension/captcha/basic.php
 %%WWWDIR%%/admin/controller/extension/captcha/google.php
@@ -47,6 +48,7 @@
 %%WWWDIR%%/admin/controller/extension/dashboard/order.php
 %%WWWDIR%%/admin/controller/extension/dashboard/recent.php
 %%WWWDIR%%/admin/controller/extension/dashboard/sale.php
+%%WWWDIR%%/admin/controller/extension/extension/advertise.php
 %%WWWDIR%%/admin/controller/extension/extension/analytics.php
 %%WWWDIR%%/admin/controller/extension/extension/captcha.php
 %%WWWDIR%%/admin/controller/extension/extension/dashboard.php
@@ -55,6 +57,7 @@
 %%WWWDIR%%/admin/controller/extension/extension/menu.php
 %%WWWDIR%%/admin/controller/extension/extension/module.php
 %%WWWDIR%%/admin/controller/extension/extension/payment.php
+%%WWWDIR%%/admin/controller/extension/extension/promotion.php
 %%WWWDIR%%/admin/controller/extension/extension/report.php
 %%WWWDIR%%/admin/controller/extension/extension/shipping.php
 %%WWWDIR%%/admin/controller/extension/extension/theme.php
@@ -170,7 +173,6 @@
 %%WWWDIR%%/admin/controller/extension/report/sale_shipping.php
 %%WWWDIR%%/admin/controller/extension/report/sale_tax.php
 %%WWWDIR%%/admin/controller/extension/shipping/auspost.php
-%%WWWDIR%%/admin/controller/extension/shipping/citylink.php
 %%WWWDIR%%/admin/controller/extension/shipping/ec_ship.php
 %%WWWDIR%%/admin/controller/extension/shipping/fedex.php
 %%WWWDIR%%/admin/controller/extension/shipping/flat.php
@@ -285,6 +287,7 @@
 %%WWWDIR%%/admin/language/en-gb/en-gb.png
 %%WWWDIR%%/admin/language/en-gb/error/not_found.php
 %%WWWDIR%%/admin/language/en-gb/error/permission.php
+%%WWWDIR%%/admin/language/en-gb/extension/advertise/google.php
 %%WWWDIR%%/admin/language/en-gb/extension/analytics/google.php
 %%WWWDIR%%/admin/language/en-gb/extension/captcha/basic.php
 %%WWWDIR%%/admin/language/en-gb/extension/captcha/google.php
@@ -296,6 +299,7 @@
 %%WWWDIR%%/admin/language/en-gb/extension/dashboard/order.php
 %%WWWDIR%%/admin/language/en-gb/extension/dashboard/recent.php
 %%WWWDIR%%/admin/language/en-gb/extension/dashboard/sale.php
+%%WWWDIR%%/admin/language/en-gb/extension/extension/advertise.php
 %%WWWDIR%%/admin/language/en-gb/extension/extension/analytics.php
 %%WWWDIR%%/admin/language/en-gb/extension/extension/captcha.php
 %%WWWDIR%%/admin/language/en-gb/extension/extension/dashboard.php
@@ -458,7 +462,6 @@
 %%WWWDIR%%/admin/language/en-gb/extension/report/sale_shipping.php
 %%WWWDIR%%/admin/language/en-gb/extension/report/sale_tax.php
 %%WWWDIR%%/admin/language/en-gb/extension/shipping/auspost.php
-%%WWWDIR%%/admin/language/en-gb/extension/shipping/citylink.php
 %%WWWDIR%%/admin/language/en-gb/extension/shipping/ec_ship.php
 %%WWWDIR%%/admin/language/en-gb/extension/shipping/fedex.php
 %%WWWDIR%%/admin/language/en-gb/extension/shipping/flat.php
@@ -553,6 +556,7 @@
 %%WWWDIR%%/admin/model/design/seo_url.php
 %%WWWDIR%%/admin/model/design/theme.php
 %%WWWDIR%%/admin/model/design/translation.php
+%%WWWDIR%%/admin/model/extension/advertise/google.php
 %%WWWDIR%%/admin/model/extension/dashboard/activity.php
 %%WWWDIR%%/admin/model/extension/dashboard/chart.php
 %%WWWDIR%%/admin/model/extension/dashboard/map.php
@@ -647,12 +651,14 @@
 %%WWWDIR%%/admin/model/user/api.php
 %%WWWDIR%%/admin/model/user/user.php
 %%WWWDIR%%/admin/model/user/user_group.php
+%%WWWDIR%%/admin/view/image/advertise/google/ad-preview.png
 %%WWWDIR%%/admin/view/image/checkmark.png
 %%WWWDIR%%/admin/view/image/logo.png
 %%WWWDIR%%/admin/view/image/payment/2checkout.png
 %%WWWDIR%%/admin/view/image/payment/alipay-cross-border.png
 %%WWWDIR%%/admin/view/image/payment/alipay.png
 %%WWWDIR%%/admin/view/image/payment/amazon.png
+%%WWWDIR%%/admin/view/image/payment/amazon_lpa.png
 %%WWWDIR%%/admin/view/image/payment/amazonpay.png
 %%WWWDIR%%/admin/view/image/payment/authorizenet.png
 %%WWWDIR%%/admin/view/image/payment/bcash.png
@@ -663,6 +669,7 @@
 %%WWWDIR%%/admin/view/image/payment/divido.png
 %%WWWDIR%%/admin/view/image/payment/eway.png
 %%WWWDIR%%/admin/view/image/payment/eway_au.jpg
+%%WWWDIR%%/admin/view/image/payment/eway_connect.png
 %%WWWDIR%%/admin/view/image/payment/firstdata.png
 %%WWWDIR%%/admin/view/image/payment/g2apay.png
 %%WWWDIR%%/admin/view/image/payment/globalpay.png
@@ -998,6 +1005,7 @@
 %%WWWDIR%%/admin/view/stylesheet/fonts/opencart.svg
 %%WWWDIR%%/admin/view/stylesheet/fonts/opencart.ttf
 %%WWWDIR%%/admin/view/stylesheet/fonts/opencart.woff
+%%WWWDIR%%/admin/view/stylesheet/googleshopping/stepper.css
 %%WWWDIR%%/admin/view/stylesheet/sass/_bootstrap-compass.scss
 %%WWWDIR%%/admin/view/stylesheet/sass/_bootstrap-mincer.scss
 %%WWWDIR%%/admin/view/stylesheet/sass/_bootstrap-sprockets.scss
@@ -1130,6 +1138,20 @@
 %%WWWDIR%%/admin/view/template/design/translation_list.twig
 %%WWWDIR%%/admin/view/template/error/not_found.twig
 %%WWWDIR%%/admin/view/template/error/permission.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google_ads.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google_campaign.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google_checklist.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google_connect.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google_mapping.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google_mapping_verify.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google_merchant.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google_popup_issues.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google_popup_product.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google_reports.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google_settings.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google_shipping_taxes.twig
+%%WWWDIR%%/admin/view/template/extension/advertise/google_steps.twig
 %%WWWDIR%%/admin/view/template/extension/analytics/google.twig
 %%WWWDIR%%/admin/view/template/extension/captcha/basic.twig
 %%WWWDIR%%/admin/view/template/extension/captcha/google.twig
@@ -1149,6 +1171,7 @@
 %%WWWDIR%%/admin/view/template/extension/dashboard/recent_info.twig
 %%WWWDIR%%/admin/view/template/extension/dashboard/sale_form.twig
 %%WWWDIR%%/admin/view/template/extension/dashboard/sale_info.twig
+%%WWWDIR%%/admin/view/template/extension/extension/advertise.twig
 %%WWWDIR%%/admin/view/template/extension/extension/analytics.twig
 %%WWWDIR%%/admin/view/template/extension/extension/captcha.twig
 %%WWWDIR%%/admin/view/template/extension/extension/dashboard.twig
@@ -1313,10 +1336,8 @@
 %%WWWDIR%%/admin/view/template/extension/payment/pp_braintree.twig
 %%WWWDIR%%/admin/view/template/extension/payment/pp_braintree_order.twig
 %%WWWDIR%%/admin/view/template/extension/payment/pp_braintree_order_ajax.twig
-%%WWWDIR%%/admin/view/template/extension/payment/pp_braintree_preferred.twig
 %%WWWDIR%%/admin/view/template/extension/payment/pp_express.twig
 %%WWWDIR%%/admin/view/template/extension/payment/pp_express_order.twig
-%%WWWDIR%%/admin/view/template/extension/payment/pp_express_preferred.twig
 %%WWWDIR%%/admin/view/template/extension/payment/pp_express_refund.twig
 %%WWWDIR%%/admin/view/template/extension/payment/pp_express_search.twig
 %%WWWDIR%%/admin/view/template/extension/payment/pp_express_transaction.twig
@@ -1382,7 +1403,6 @@
 %%WWWDIR%%/admin/view/template/extension/report/sale_tax_form.twig
 %%WWWDIR%%/admin/view/template/extension/report/sale_tax_info.twig
 %%WWWDIR%%/admin/view/template/extension/shipping/auspost.twig
-%%WWWDIR%%/admin/view/template/extension/shipping/citylink.twig
 %%WWWDIR%%/admin/view/template/extension/shipping/ec_ship.twig
 %%WWWDIR%%/admin/view/template/extension/shipping/fedex.twig
 %%WWWDIR%%/admin/view/template/extension/shipping/flat.twig
@@ -1561,6 +1581,7 @@
 %%WWWDIR%%/catalog/controller/event/statistics.php
 %%WWWDIR%%/catalog/controller/event/theme.php
 %%WWWDIR%%/catalog/controller/event/translation.php
+%%WWWDIR%%/catalog/controller/extension/advertise/google.php
 %%WWWDIR%%/catalog/controller/extension/analytics/google.php
 %%WWWDIR%%/catalog/controller/extension/captcha/basic.php
 %%WWWDIR%%/catalog/controller/extension/captcha/google.php
@@ -1731,6 +1752,7 @@
 %%WWWDIR%%/catalog/language/en-gb/en-gb.php
 %%WWWDIR%%/catalog/language/en-gb/en-gb.png
 %%WWWDIR%%/catalog/language/en-gb/error/not_found.php
+%%WWWDIR%%/catalog/language/en-gb/extension/advertise/google.php
 %%WWWDIR%%/catalog/language/en-gb/extension/captcha/basic.php
 %%WWWDIR%%/catalog/language/en-gb/extension/captcha/google.php
 %%WWWDIR%%/catalog/language/en-gb/extension/credit_card/sagepay_direct.php
@@ -1809,7 +1831,6 @@
 %%WWWDIR%%/catalog/language/en-gb/extension/recurring/pp_express.php
 %%WWWDIR%%/catalog/language/en-gb/extension/recurring/squareup.php
 %%WWWDIR%%/catalog/language/en-gb/extension/shipping/auspost.php
-%%WWWDIR%%/catalog/language/en-gb/extension/shipping/citylink.php
 %%WWWDIR%%/catalog/language/en-gb/extension/shipping/ec_ship.php
 %%WWWDIR%%/catalog/language/en-gb/extension/shipping/fedex.php
 %%WWWDIR%%/catalog/language/en-gb/extension/shipping/flat.php
@@ -1878,11 +1899,13 @@
 %%WWWDIR%%/catalog/model/design/layout.php
 %%WWWDIR%%/catalog/model/design/theme.php
 %%WWWDIR%%/catalog/model/design/translation.php
+%%WWWDIR%%/catalog/model/extension/advertise/google.php
 %%WWWDIR%%/catalog/model/extension/credit_card/squareup.php
 %%WWWDIR%%/catalog/model/extension/feed/google_base.php
 %%WWWDIR%%/catalog/model/extension/fraud/fraudlabspro.php
 %%WWWDIR%%/catalog/model/extension/fraud/ip.php
 %%WWWDIR%%/catalog/model/extension/fraud/maxmind.php
+%%WWWDIR%%/catalog/model/extension/module/amazon_login.php
 %%WWWDIR%%/catalog/model/extension/module/laybuy_layout.php
 %%WWWDIR%%/catalog/model/extension/module/pp_login.php
 %%WWWDIR%%/catalog/model/extension/openbay/amazon_listing.php
@@ -1947,7 +1970,6 @@
 %%WWWDIR%%/catalog/model/extension/payment/wechat_pay.php
 %%WWWDIR%%/catalog/model/extension/payment/worldpay.php
 %%WWWDIR%%/catalog/model/extension/shipping/auspost.php
-%%WWWDIR%%/catalog/model/extension/shipping/citylink.php
 %%WWWDIR%%/catalog/model/extension/shipping/ec_ship.php
 %%WWWDIR%%/catalog/model/extension/shipping/fedex.php
 %%WWWDIR%%/catalog/model/extension/shipping/flat.php
@@ -2132,6 +2154,12 @@
 %%WWWDIR%%/catalog/view/theme/default/template/common/search.twig
 %%WWWDIR%%/catalog/view/theme/default/template/common/success.twig
 %%WWWDIR%%/catalog/view/theme/default/template/error/not_found.twig
+%%WWWDIR%%/catalog/view/theme/default/template/extension/advertise/google_dynamic_remarketing_cart.twig
+%%WWWDIR%%/catalog/view/theme/default/template/extension/advertise/google_dynamic_remarketing_category.twig
+%%WWWDIR%%/catalog/view/theme/default/template/extension/advertise/google_dynamic_remarketing_home.twig
+%%WWWDIR%%/catalog/view/theme/default/template/extension/advertise/google_dynamic_remarketing_product.twig
+%%WWWDIR%%/catalog/view/theme/default/template/extension/advertise/google_dynamic_remarketing_purchase.twig
+%%WWWDIR%%/catalog/view/theme/default/template/extension/advertise/google_dynamic_remarketing_searchresults.twig
 %%WWWDIR%%/catalog/view/theme/default/template/extension/captcha/basic.twig
 %%WWWDIR%%/catalog/view/theme/default/template/extension/captcha/google.twig
 %%WWWDIR%%/catalog/view/theme/default/template/extension/credit_card/sagepay_direct_form.twig
@@ -2140,7 +2168,7 @@
 %%WWWDIR%%/catalog/view/theme/default/template/extension/credit_card/squareup.twig
 %%WWWDIR%%/catalog/view/theme/default/template/extension/module/account.twig
 %%WWWDIR%%/catalog/view/theme/default/template/extension/module/amazon_login.twig
-%%WWWDIR%%/catalog/view/theme/default/template/extension/module/amazon_pay.twig
+%%WWWDIR%%/catalog/view/theme/default/template/extension/module/amazon_login_error.twig
 %%WWWDIR%%/catalog/view/theme/default/template/extension/module/banner.twig
 %%WWWDIR%%/catalog/view/theme/default/template/extension/module/bestseller.twig
 %%WWWDIR%%/catalog/view/theme/default/template/extension/module/carousel.twig
@@ -2168,7 +2196,7 @@
 %%WWWDIR%%/catalog/view/theme/default/template/extension/payment/alipay_cross.twig
 %%WWWDIR%%/catalog/view/theme/default/template/extension/payment/amazon_login_pay_address.twig
 %%WWWDIR%%/catalog/view/theme/default/template/extension/payment/amazon_login_pay_confirm.twig
-%%WWWDIR%%/catalog/view/theme/default/template/extension/payment/amazon_login_pay_failure.twig
+%%WWWDIR%%/catalog/view/theme/default/template/extension/payment/amazon_login_pay_generic.twig
 %%WWWDIR%%/catalog/view/theme/default/template/extension/payment/amazon_login_pay_payment.twig
 %%WWWDIR%%/catalog/view/theme/default/template/extension/payment/authorizenet_aim.twig
 %%WWWDIR%%/catalog/view/theme/default/template/extension/payment/authorizenet_sim.twig
@@ -2414,7 +2442,6 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/cli_install.php
 %%WWWDIR%%/install/controller/3rd_party/extension.php
-%%WWWDIR%%/install/controller/3rd_party/maxmind.php
 %%WWWDIR%%/install/controller/3rd_party/openbay.php
 %%WWWDIR%%/install/controller/common/column_left.php
 %%WWWDIR%%/install/controller/common/footer.php
@@ -2431,7 +2458,6 @@
 %%WWWDIR%%/install/controller/startup/upgrade.php
 %%WWWDIR%%/install/controller/upgrade/upgrade.php
 %%WWWDIR%%/install/index.php
-%%WWWDIR%%/install/language/en-gb/3rd_party/maxmind.php
 %%WWWDIR%%/install/language/en-gb/3rd_party/openbay.php
 %%WWWDIR%%/install/language/en-gb/common/column_left.php
 %%WWWDIR%%/install/language/en-gb/common/footer.php
@@ -2443,7 +2469,6 @@
 %%WWWDIR%%/install/language/en-gb/install/step_3.php
 %%WWWDIR%%/install/language/en-gb/install/step_4.php
 %%WWWDIR%%/install/language/en-gb/upgrade/upgrade.php
-%%WWWDIR%%/install/model/3rd_party/maxmind.php
 %%WWWDIR%%/install/model/install/install.php
 %%WWWDIR%%/install/model/upgrade/1000.php
 %%WWWDIR%%/install/model/upgrade/1001.php
@@ -2456,12 +2481,12 @@
 %%WWWDIR%%/install/model/upgrade/1008.php
 %%WWWDIR%%/install/model/upgrade/1009.php
 %%WWWDIR%%/install/opencart.sql
+%%WWWDIR%%/install/view/image/amazon-pay.png
 %%WWWDIR%%/install/view/image/amazon.png
 %%WWWDIR%%/install/view/image/background.png
 %%WWWDIR%%/install/view/image/ebay.png
 %%WWWDIR%%/install/view/image/heading.png
 %%WWWDIR%%/install/view/image/logo.png
-%%WWWDIR%%/install/view/image/maxmind.gif
 %%WWWDIR%%/install/view/image/openbay_pro.gif
 %%WWWDIR%%/install/view/javascript/bootstrap/css/bootstrap-theme.css
 %%WWWDIR%%/install/view/javascript/bootstrap/css/bootstrap-theme.min.css
@@ -2513,7 +2538,6 @@
 %%WWWDIR%%/install/view/javascript/jquery/jquery-2.1.1.min.js
 %%WWWDIR%%/install/view/javascript/jquery/jquery-2.1.1.min.map
 %%WWWDIR%%/install/view/stylesheet/stylesheet.css
-%%WWWDIR%%/install/view/template/3rd_party/maxmind.twig
 %%WWWDIR%%/install/view/template/3rd_party/openbay.twig
 %%WWWDIR%%/install/view/template/common/column_left.twig
 %%WWWDIR%%/install/view/template/common/footer.twig
@@ -2529,6 +2553,7 @@
 %%WWWDIR%%/system/config/admin.php
 %%WWWDIR%%/system/config/catalog.php
 %%WWWDIR%%/system/config/default.php
+%%WWWDIR%%/system/config/googleshopping/googleshopping.php
 %%WWWDIR%%/system/config/index.html
 %%WWWDIR%%/system/config/install.php
 %%WWWDIR%%/system/engine/action.php
@@ -2565,6 +2590,14 @@
 %%WWWDIR%%/system/library/db/postgre.php
 %%WWWDIR%%/system/library/document.php
 %%WWWDIR%%/system/library/encryption.php
+%%WWWDIR%%/system/library/googleshopping/cron.php
+%%WWWDIR%%/system/library/googleshopping/cron_functions.php
+%%WWWDIR%%/system/library/googleshopping/exception/accessforbidden.php
+%%WWWDIR%%/system/library/googleshopping/exception/connection.php
+%%WWWDIR%%/system/library/googleshopping/googleshopping.php
+%%WWWDIR%%/system/library/googleshopping/library.php
+%%WWWDIR%%/system/library/googleshopping/traits/libraryloader.php
+%%WWWDIR%%/system/library/googleshopping/traits/storeloader.php
 %%WWWDIR%%/system/library/image.php
 %%WWWDIR%%/system/library/language.php
 %%WWWDIR%%/system/library/log.php
@@ -2786,7 +2819,40 @@
 %%WWWDIR%%/system/storage/session/.htaccess
 %%WWWDIR%%/system/storage/session/index.html
 %%WWWDIR%%/system/storage/upload/index.html
+%%WWWDIR%%/system/storage/vendor/autoload.php
+%%WWWDIR%%/system/storage/vendor/bin/pscss
+%%WWWDIR%%/system/storage/vendor/bin/pscss.bat
+%%WWWDIR%%/system/storage/vendor/composer/ClassLoader.php
+%%WWWDIR%%/system/storage/vendor/composer/LICENSE
+%%WWWDIR%%/system/storage/vendor/composer/autoload_classmap.php
+%%WWWDIR%%/system/storage/vendor/composer/autoload_files.php
+%%WWWDIR%%/system/storage/vendor/composer/autoload_namespaces.php
+%%WWWDIR%%/system/storage/vendor/composer/autoload_psr4.php
+%%WWWDIR%%/system/storage/vendor/composer/autoload_real.php
+%%WWWDIR%%/system/storage/vendor/composer/autoload_static.php
+%%WWWDIR%%/system/storage/vendor/composer/installed.json
 %%WWWDIR%%/system/storage/vendor/scss.inc.php
+%%WWWDIR%%/system/storage/vendor/symfony/polyfill-ctype/Ctype.php
+%%WWWDIR%%/system/storage/vendor/symfony/polyfill-ctype/LICENSE
+%%WWWDIR%%/system/storage/vendor/symfony/polyfill-ctype/README.md
+%%WWWDIR%%/system/storage/vendor/symfony/polyfill-ctype/bootstrap.php
+%%WWWDIR%%/system/storage/vendor/symfony/polyfill-ctype/composer.json
+@dir %%WWWDIR%%/system/storage/vendor/braintree/braintree_php
+@dir %%WWWDIR%%/system/storage/vendor/cardinity/cardinity-sdk-php
+@dir %%WWWDIR%%/system/storage/vendor/divido/divido-php
+@dir %%WWWDIR%%/system/storage/vendor/guzzlehttp/guzzle
+@dir %%WWWDIR%%/system/storage/vendor/guzzlehttp/log-subscriber
+@dir %%WWWDIR%%/system/storage/vendor/guzzlehttp/oauth-subscriber
+@dir %%WWWDIR%%/system/storage/vendor/guzzlehttp/ringphp
+@dir %%WWWDIR%%/system/storage/vendor/guzzlehttp/streams
+@dir %%WWWDIR%%/system/storage/vendor/klarna/kco_rest
+@dir %%WWWDIR%%/system/storage/vendor/leafo/scssphp
+@dir %%WWWDIR%%/system/storage/vendor/psr/log
+@dir %%WWWDIR%%/system/storage/vendor/react/promise
+@dir %%WWWDIR%%/system/storage/vendor/symfony/polyfill-mbstring
+@dir %%WWWDIR%%/system/storage/vendor/symfony/translation
+@dir %%WWWDIR%%/system/storage/vendor/symfony/validator
+@dir %%WWWDIR%%/system/storage/vendor/zoujingli/wechat-php-sdk
 @mode 0755
 @group www
 @owner www
