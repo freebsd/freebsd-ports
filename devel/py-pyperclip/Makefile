@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyperclip
-PORTVERSION=	1.5.27
+PORTVERSION=	1.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,9 @@ COMMENT=	Cross-platform clipboard module for Python
 
 LICENSE=	BSD3CLAUSE
 
-USES?=		python zip
+USES=		python
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
