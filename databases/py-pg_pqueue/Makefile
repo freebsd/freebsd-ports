@@ -14,6 +14,9 @@ COMMENT=	PostgreSQL PQ Protocol Modules
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Upstream no longer maintained
+EXPIRATION_DATE=2019-05-14
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 
