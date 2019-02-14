@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	yadifa
-DISTVERSION=	2.3.8
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-7713
+DISTVERSION=	2.3.9
+DISTVERSIONSUFFIX=	-8497
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/
 
@@ -13,8 +12,9 @@ COMMENT=	Authoritative nameserver with DNSSEC capabilities
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=	libtool ssl
+
 GNU_CONFIGURE=	yes
-USES=		libtool compiler:c11 ssl
 CONFIGURE_ARGS=	--localstatedir=/var
 
 OPTIONS_DEFINE=	CTRL DOCS EXAMPLES TCL RRL MESSAGES NSID
