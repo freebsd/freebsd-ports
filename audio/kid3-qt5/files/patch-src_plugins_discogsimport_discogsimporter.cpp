@@ -1,15 +1,13 @@
-Fix import of track duration from Discogs.
+Fix import of album title from Discogs. (fixed upstream: b3bd70)
 
---- src/plugins/discogsimport/discogsimporter.cpp.orig	2018-04-18 18:01:00 UTC
+--- src/plugins/discogsimport/discogsimporter.cpp.orig	2018-12-21 05:40:14 UTC
 +++ src/plugins/discogsimport/discogsimporter.cpp
-@@ -526,8 +526,8 @@ void DiscogsImporter::parseAlbumResults(const QByteArr
-       QRegExp titleRe(QLatin1String(
-         "class=\"tracklist_track_title\"[^>]*>([^<]+)<"));
-       QRegExp durationRe(QLatin1String(
--        "<td [^>]*class=\"tracklist_track_duration\"[^>]*>(?:<meta[^>]*>)?"
--        "(?:<span>)?(\\d+):(\\d+)</"));
-+        "<td [^>]*class=\"tracklist_track_duration\">"
-+        "(?:<meta[^>]*>)(?:\\s+<span>)(\\d+):(\\d+)</"));
-       QRegExp indexRe(QLatin1String("<td class=\"track_index\">([^<]+)$"));
-       QRegExp rowEndRe(QLatin1String("</td>[\\s\\r\\n]*</tr>"));
-       ImportTrackDataVector::iterator it = trackDataVector.begin();
+@@ -265,7 +265,7 @@ void DiscogsImporter::parseFindResults(const QByteArra
+ void DiscogsImporter::parseAlbumResults(const QByteArray& albumStr)
+ {
+   QRegExp nlSpaceRe(QLatin1String("[\r\n]+\\s*"));
+-  QRegExp atDiscogsRe(QLatin1String("\\s*\\([^)]+\\) at Discogs\n?$"));
++  QRegExp atDiscogsRe(QLatin1String("\\s*\\([^)]+\\) (?:at|\\|) Discogs\n?$"));
+   QString str = QString::fromUtf8(albumStr);
+ 
+   FrameCollection framesHdr;
