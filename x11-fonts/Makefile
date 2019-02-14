@@ -3,6 +3,7 @@
 
     COMMENT = X11 fonts and font utilities
 
+    SUBDIR += 3270font
     SUBDIR += Hasklig
     SUBDIR += alef
     SUBDIR += alegreya
