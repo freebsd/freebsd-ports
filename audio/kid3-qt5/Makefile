@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	kid3
-PORTVERSION=	3.6.2
-PORTREVISION?=	3
+PORTVERSION=	3.7.0
+PORTREVISION?=	0
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${SLAVE}
@@ -15,9 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
 
-USES=		cmake gnome pkgconfig
+USES=		cmake compiler:c++11-lang desktop-file-utils gnome pkgconfig qt:5
 USE_GNOME=	libxslt:build
 USE_LDCONFIG=	yes
+USE_QT=		core dbus gui multimedia network xml widgets \
+		buildtools_build linguisttools_build qmake_build
 
 CMAKE_ARGS=	-DWITH_DOCBOOKDIR="${LOCALBASE}/share/xsl/docbook" \
 		-DWITH_LIBDIR=lib \
@@ -31,28 +33,15 @@ PLIST_SUB+=	SHLIB_VER=${PORTVERSION}
 SLAVE?=		qt5
 .if ${SLAVE} == qt5
 # Qt5
-USES+=		desktop-file-utils
-PLIST_SUB+=	KDE="@comment " KF5="@comment " QT="" QT_SUFX="-qt"
+PLIST_SUB+=	KF5="@comment " QT="" QT_SUFX="-qt"
 KID3_APPS+=	QT
 .else
 # KF5
-PLIST_SUB+=	KDE="" QT="@comment " QT_SUFX=""
-KID3_APPS+=	KDE
-.endif
-
-# KF5 and Qt5
-USES+=		compiler:c++11-lang qt:5
-USE_QT+=	core dbus gui multimedia network xml widgets \
-		buildtools_build linguisttools_build qmake_build
-CMAKE_ON+=	WITH_QT5
-OPTIONS_EXCLUDE+=	PHONON
-
-.if ${SLAVE} == kf5
-# KF5 only
-USES+=		desktop-file-utils kde:5
+USES+=		kde:5
 USE_KDE+=	auth codecs config configwidgets coreaddons \
 		widgetsaddons xmlgui doctools_build ecm_build
-PLIST_SUB+=	KDE4="@comment " KF5=""
+PLIST_SUB+=	KF5="" QT="@comment " QT_SUFX=""
+KID3_APPS+=	KDE
 .endif
 
 .for s in kf5 qt5
@@ -61,7 +50,7 @@ CONFLICTS_INSTALL+=	kid3-${s}
 .  endif
 .endfor
 
-OPTIONS_DEFINE=		CLI ACOUSTID FLAC MP3 MP4 VORBIS TAGLIB PHONON TEST
+OPTIONS_DEFINE=		CLI ACOUSTID FLAC MP3 MP4 VORBIS TAGLIB TEST
 OPTIONS_DEFAULT=	CLI ACOUSTID FLAC MP3 MP4 VORBIS TAGLIB
 OPTIONS_SUB=		yes
 NO_OPTIONS_SORT=	yes
@@ -71,7 +60,7 @@ ACOUSTID_LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 ACOUSTID_CMAKE_BOOL=	WITH_CHROMAPRINT WITH_FFMPEG
 
 CLI_DESC=		Build and install command line utility
-CLI_USES=		python:3.4+,test readline
+CLI_USES=		python:3.5+,test readline
 CLI_VARS=		KID3_APPS+=CLI
 
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
@@ -82,9 +71,6 @@ MP3_CMAKE_BOOL=		WITH_ID3LIB
 
 MP4_LIB_DEPENDS=	libmp4v2.so:multimedia/mp4v2
 MP4_CMAKE_BOOL=		WITH_MP4V2
-
-PHONON_USE=		QT=phonon
-PHONON_CMAKE_BOOL=	WITH_PHONON
 
 TAGLIB_DESC=		Various audio formats support via Taglib
 TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
