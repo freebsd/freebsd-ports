@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian
-PORTVERSION=	1.4.9
-PORTREVISION=	1
+PORTVERSION=	1.4.10
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -27,29 +26,28 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lang libtool php:build tar:xz
 
-CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
+CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
+		--docdir=${DOCSDIR} \
+		--enable-shared \
 		--enable-static \
-		--with-php \
-		--without-csharp --without-java --without-lua --without-perl \
-		--without-python --without-python3 --without-ruby --without-tcl
+		--with-php7 \
+		--without-csharp \
+		--without-java \
+		--without-lua \
+		--without-perl \
+		--without-php \
+		--without-python \
+		--without-python3 \
+		--without-ruby \
+		--without-tcl
 CONFIGURE_ENV=	PHP_CONFIG=${LOCALBASE}/bin/php-config
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
 
-PLIST_SUB=	PHP_EXT_DIR=${PHP_EXT_DIR} PHP_MAJOR_VER=${PHP_VER:C|.$||}
-
-.include <bsd.port.pre.mk>
-
-.if ${PHP_VER} >= 70
-CONFIGURE_ARGS+=--with-php7 --without-php
-PLIST_SUB+=	PHP5="@comment " PHP7=""
-.else
-CONFIGURE_ARGS+=--with-php --without-php7
-PLIST_SUB+=	PHP5="" PHP7="@comment "
-.endif
+PLIST_SUB=	PHP_EXT_DIR=${PHP_EXT_DIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
