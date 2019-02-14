@@ -2,7 +2,7 @@
 
 PORTNAME=	calendarserver
 PORTVERSION=	9.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	CalendarServer-
 CATEGORIES=	    www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	memcached:databases/memcached \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.5.3:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}kerberos>=1.2.5:security/py-kerberos@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=16.0.0:security/py-openssl@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pg8000>=1.10.6:databases/py-pg8000@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pg8000-112>=1.10.6:databases/py-pg8000-112@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=4.3.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2016.7:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}service_identity>=16.0.0:security/py-service_identity@${PY_FLAVOR} \
