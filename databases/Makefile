@@ -802,6 +802,7 @@
     SUBDIR += py-oursql
     SUBDIR += py-peewee
     SUBDIR += py-pg8000
+    SUBDIR += py-pg8000-112
     SUBDIR += py-pg_pqueue
     SUBDIR += py-pgcli
     SUBDIR += py-pgdbconn
