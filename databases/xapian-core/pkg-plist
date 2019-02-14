@@ -55,7 +55,7 @@ lib/cmake/xapian/xapian-config-version.cmake
 lib/cmake/xapian/xapian-config.cmake
 lib/libxapian.so
 lib/libxapian.so.30
-lib/libxapian.so.30.6.1
+lib/libxapian.so.30.7.0
 libdata/pkgconfig/xapian-core.pc
 man/man1/copydatabase.1.gz
 man/man1/quest.1.gz
@@ -102,6 +102,9 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DPHWeight__inherit__graph.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1Database-members.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1Database.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseClosedError-members.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseClosedError.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseClosedError__inherit__graph.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseCorruptError-members.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseCorruptError.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseCorruptError__inherit__graph.png
@@ -117,6 +120,9 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseModifiedError-members.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseModifiedError.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseModifiedError__inherit__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseNotFoundError-members.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseNotFoundError.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseNotFoundError__inherit__graph.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseOpeningError-members.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseOpeningError.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/classXapian_1_1DatabaseOpeningError__inherit__graph.png
