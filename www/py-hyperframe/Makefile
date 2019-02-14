@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyperframe
-PORTVERSION=	5.0.0
+PORTVERSION=	5.2.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,7 @@ LICENSE=	MIT
 
 USES?=		python
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
