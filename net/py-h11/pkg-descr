@@ -1,0 +1,4 @@
+This is a little HTTP/1.1 library written from scratch in Python, heavily
+inspired by hyper-h2.
+
+WWW: https://pypi.org/project/h11/
