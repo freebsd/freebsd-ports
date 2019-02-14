@@ -10,12 +10,13 @@ COMMENT=	Graphical modeler for Bayesian networks, influence diagrams, etc
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++14-lang
+USES=		cmake
 USE_GITLAB=	yes
+USE_LDCONFIG=	yes
+
 GL_ACCOUNT=	agrumery
 GL_PROJECT=	aGrUM
 GL_COMMIT=	a9e534f9e862ef47c4563d2f7bb17d0869d04093
-USE_LDCONFIG=	yes
 
 CMAKE_OFF=	USE_SWIG
 
@@ -36,6 +37,7 @@ PYTHON_PLIST_SUB=	PYTHON_VER_MAJ=${PYTHON_VER:R}
 
 # use clang from ports because cmake can't find OpenMP with base clang, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=223678
 BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+RUN_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 CPP=		clang-cpp${LLVM_DEFAULT}
 CC=		clang${LLVM_DEFAULT}
 CXX=		clang++${LLVM_DEFAULT}
