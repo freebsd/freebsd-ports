@@ -1,0 +1,6 @@
+OPSIN is a Java library for IUPAC name-to-structure conversion offering high
+recall and precision on organic chemical nomenclature.
+Supported outputs are SMILES, CML (Chemical Markup Language) and InChI (IUPAC
+International Chemical Identifier).
+
+WWW: https://bitbucket.org/dan2097/opsin/src/default/
