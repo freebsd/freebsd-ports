@@ -1,5 +1,5 @@
 lib/postgresql/timescaledb-%%PORTVERSION%%.so
-%%NO_APACHEONLY%%lib/postgresql/timescaledb-tsl-%%PORTVERSION%%.so
+%%TSL%%lib/postgresql/timescaledb-tsl-%%PORTVERSION%%.so
 lib/postgresql/timescaledb.so
 share/postgresql/extension/timescaledb--0.1.0--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--0.10.0--%%PORTVERSION%%.sql
