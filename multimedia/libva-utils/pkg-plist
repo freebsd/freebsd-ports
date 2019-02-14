@@ -8,7 +8,13 @@ bin/mpeg2vaenc
 bin/mpeg2vldemo
 bin/putsurface
 %%WAYLAND%%bin/putsurface_wayland
+bin/sfcsample
 bin/vainfo
 bin/vavpp
 bin/vp8enc
 bin/vp9enc
+bin/vppblending
+bin/vppchromasitting
+bin/vppdenoise
+bin/vppscaling_csc
+bin/vppsharpness
