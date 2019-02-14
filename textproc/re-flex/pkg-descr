@@ -1,0 +1,8 @@
+RE/flex is a free and open-source alternative to the fast lexical analyzer
+Flex. RE/flex generates fast lexical analyzers for C++, also known as
+"scanners", "lexers", or "tokenizers". RE/flex offers many new useful features
+including Unicode support, indent/nodent/dedent anchors, word boundaries, lazy
+quantifiers (non-greedy, lazy repeats), and performance tuning options. The
+RE/flex software also includes a very fast stand-alone regex library for C++.
+
+WWW: https://www.genivia.com/reflex.html
