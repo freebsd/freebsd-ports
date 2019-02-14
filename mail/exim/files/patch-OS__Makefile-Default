@@ -1,0 +1,10 @@
+--- OS/Makefile-Default.orig	2019-01-30 14:59:52.000000000 +0100
++++ OS/Makefile-Default	2019-02-13 00:34:40.753182000 +0100
+@@ -242,6 +242,7 @@
+ # The default setting points to a template function that doesn't actually do
+ # any scanning, but just accepts the message.
+ 
++# HAVE_LOCAL_SCAN=no
+ LOCAL_SCAN_SOURCE=src/local_scan.c
+ 
+ # If you want to specify options for your local_scan() that can be set from
