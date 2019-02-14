@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getmail
-DISTVERSION=	5.9
+DISTVERSION=	5.11
 CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/getmail/old-versions/
 
