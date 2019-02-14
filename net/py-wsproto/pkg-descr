@@ -1,0 +1,12 @@
+A pure-Python implementation of a WebSocket protocol stack. It's written from
+the ground up to be embeddable in whatever program you choose to use, ensuring
+that you can communicate via WebSockets, as defined in RFC6455, regardless of
+your programming paradigm.
+
+This does not provide a parsing layer, a network layer, or any rules about
+concurrency. Instead, it's a purely in-memory solution, defined in terms of data
+actions and WebSocket frames. RFC6455 and Compression Extensions for WebSocket
+via RFC7692 are fully supported.
+
+WWW: https://pypi.org/project/wsproto/
+WWW: https://github.com/python-hyper/wsproto/

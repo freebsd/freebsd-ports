@@ -1142,6 +1142,7 @@
     SUBDIR += py-urllib3
     SUBDIR += py-wmi-query
     SUBDIR += py-wolframalpha
+    SUBDIR += py-wsproto
     SUBDIR += py-xmlrpc
     SUBDIR += py-zeroconf
     SUBDIR += py-zope.proxy
