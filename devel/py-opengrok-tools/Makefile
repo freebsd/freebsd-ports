@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.6.0:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR}
 
 # According to the vendor, Python3 is required
-USES=		python:3.6
+USES=		python:3.5+
 USE_PYTHON=	autoplist distutils noflavors
 
 USE_GITHUB=	yes
