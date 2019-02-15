@@ -6,4 +6,4 @@ Wizards enable the creation of new domains, and configuration & adjustment of a
 domain's resource allocation & virtual hardware. An embedded VNC client viewer
 presents a full graphical console to the guest domain.
 
-WWW: http://virt-manager.org
+WWW: https://virt-manager.org/

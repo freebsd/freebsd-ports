@@ -3,7 +3,7 @@
 PORTNAME=	virt-manager
 PORTVERSION=	2.1.0
 CATEGORIES=	deskutils net-mgmt
-MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/ \
+MASTER_SITES=	https://virt-manager.org/download/sources/${PORTNAME}/ \
 		LOCAL/jgh/deskutils/${PORTNAME}/
 
 MAINTAINER=	novel@FreeBSD.org
