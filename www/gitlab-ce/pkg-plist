@@ -2807,6 +2807,7 @@
 %%WWWDIR%%/app/assets/javascripts/pages/projects/snippets/new/index.js
 %%WWWDIR%%/app/assets/javascripts/pages/projects/snippets/show/index.js
 %%WWWDIR%%/app/assets/javascripts/pages/projects/tags/new/index.js
+%%WWWDIR%%/app/assets/javascripts/pages/projects/tags/releases/index.js
 %%WWWDIR%%/app/assets/javascripts/pages/projects/tree/show/index.js
 %%WWWDIR%%/app/assets/javascripts/pages/projects/wikis/components/delete_wiki_modal.vue
 %%WWWDIR%%/app/assets/javascripts/pages/projects/wikis/index.js
@@ -8946,6 +8947,7 @@
 %%WWWDIR%%/doc/user/project/integrations/prometheus_library/metrics.md
 %%WWWDIR%%/doc/user/project/integrations/prometheus_library/nginx.md
 %%WWWDIR%%/doc/user/project/integrations/prometheus_library/nginx_ingress.md
+%%WWWDIR%%/doc/user/project/integrations/prometheus_library/nginx_ingress_vts.md
 %%WWWDIR%%/doc/user/project/integrations/redmine.md
 %%WWWDIR%%/doc/user/project/integrations/samples/cloudwatch.yml
 %%WWWDIR%%/doc/user/project/integrations/services_templates.md
@@ -10991,6 +10993,7 @@
 %%WWWDIR%%/qa/spec/resource/api_fabricator_spec.rb
 %%WWWDIR%%/qa/spec/resource/base_spec.rb
 %%WWWDIR%%/qa/spec/resource/repository/push_spec.rb
+%%WWWDIR%%/qa/spec/resource/user_spec.rb
 %%WWWDIR%%/qa/spec/runtime/api/client_spec.rb
 %%WWWDIR%%/qa/spec/runtime/api/request_spec.rb
 %%WWWDIR%%/qa/spec/runtime/env_spec.rb
@@ -11864,6 +11867,7 @@
 %%WWWDIR%%/spec/features/projects/snippets/user_views_snippets_spec.rb
 %%WWWDIR%%/spec/features/projects/sub_group_issuables_spec.rb
 %%WWWDIR%%/spec/features/projects/tags/download_buttons_spec.rb
+%%WWWDIR%%/spec/features/projects/tags/user_edits_tags_spec.rb
 %%WWWDIR%%/spec/features/projects/tags/user_views_tags_spec.rb
 %%WWWDIR%%/spec/features/projects/tree/create_directory_spec.rb
 %%WWWDIR%%/spec/features/projects/tree/create_file_spec.rb
