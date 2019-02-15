@@ -4,7 +4,7 @@
 PORTNAME=	grass
 PORTVERSION=	7.6.0
 CATEGORIES=	databases geography
-MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
+MASTER_SITES=	https://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
 		http://grass.fbk.eu/%SUBDIR%/ \
 		http://grass.gis-lab.info/%SUBDIR%/ \
