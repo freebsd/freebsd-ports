@@ -1382,6 +1382,7 @@
     SUBDIR += libbonobo-reference
     SUBDIR += libbson
     SUBDIR += libburn
+    SUBDIR += libcbor
     SUBDIR += libccid
     SUBDIR += libcfg
     SUBDIR += libcfu

@@ -1,0 +1,15 @@
+libcbor is a C library for parsing and generating CBOR, the general-purpose
+schema-less binary data format.
+
+Main features:
+- Complete RFC conformance
+- Robust C99 implementation
+- Layered architecture offers both control and convenience
+- Flexible memory management
+- No shared global state - threading friendly
+- Proper handling of UTF-8
+- Full support for streams & incremental processing
+- Extensive documentation and test suite
+- No runtime dependencies, small footprint
+
+WWW: http://libcbor.org/
