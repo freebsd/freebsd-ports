@@ -12,4 +12,4 @@ TTH, Torrent BTIH, AICH, ED2K, GOST R 34.11-94, RIPEMD-160, HAS-160, EDON-R
 
 Perl wrapper is available as `security/p5-Crypt-RHash' port.
 
-WWW: http://rhash.anz.ru/
+WWW: http://rhash.sourceforge.net/
