@@ -3,7 +3,7 @@
 PORTNAME=	radarr
 PORTVERSION=	0.2.0.1293
 DISTVERSIONPREFIX=v
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Radarr/Radarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Radarr.develop.${PORTVERSION}.linux
