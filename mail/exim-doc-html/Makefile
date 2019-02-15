@@ -56,7 +56,7 @@ pre-everything::
 do-install:
 	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}
 .if ${DOCFORMAT} == "html"
-	${TAR} -C ${WRKSRC}/doc -cf - html | \
+	${TAR} -C ${WRKSRC}/exim-html-current/doc -cf - html | \
 		${TAR} --unlink -C ${STAGEDIR}${DOCSDIR} -xf -
 .elif ${DOCFORMAT} == "pdf"
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
