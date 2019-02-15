@@ -282,8 +282,6 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/LogTag.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/LogTag.java
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ShowSource.class
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ShowSource.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ValuesTag.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ValuesTag.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/filters/ExampleFilter.class
@@ -556,8 +554,6 @@
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/snp/snoop.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/snp/snoop.jsp
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/snp/snoop.jsp.html
-%%EXAMPLES%%%%T%%/webapps/examples/jsp/source.jsp
-%%EXAMPLES%%%%T%%/webapps/examples/jsp/source.jsp.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/tagplugin/choose.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/tagplugin/choose.jsp
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/tagplugin/choose.jsp.html
