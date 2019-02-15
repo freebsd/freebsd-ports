@@ -1,0 +1,28 @@
+# $FreeBSD$
+
+PORTNAME=	libcyaml
+DISTVERSION=	0.1.0
+CATEGORIES=	textproc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	C library for reading and writing YAML
+
+LICENSE=	ISCL
+
+LIB_DEPENDS=	libyaml.so:textproc/libyaml
+
+USES=		gmake localbase:ldflags
+USE_GITLAB=	yes
+GL_SITE=	https://git.zrythm.org
+GL_ACCOUNT=	zrythm
+GL_COMMIT=	3b568c9df39b5a95f1d652db43414fada3b1cc61
+USE_LDCONFIG=	yes
+
+PLIST_FILES=	include/cyaml/cyaml.h \
+		lib/libcyaml.a \
+		lib/libcyaml.so \
+		lib/libcyaml.so.0 \
+		lib/libcyaml.so.0.1.0 \
+		libdata/pkgconfig/libcyaml.pc
+
+.include <bsd.port.mk>
