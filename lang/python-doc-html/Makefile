@@ -22,14 +22,39 @@ NO_BUILD=	yes
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_VERSION}
 PLIST=		${WRKDIR}/pkg-plist.${DOCFORMAT}
 
+DOCFORMATS=	html pdf-a4 pdf-letter text
 DOCFORMAT?=	html
 
-.if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "pdf-a4" && ${DOCFORMAT} != "pdf-letter" && ${DOCFORMAT} != "text"
-IGNORE=		invalid value for DOCFORMAT: "${DOCFORMAT}", possible values are: text, html, pdf-a4, pdf-letter
+.if empty(DOCFORMATS:M${DOCFORMAT})
+IGNORE=		invalid value for DOCFORMAT: "${DOCFORMAT}", possible values are: ${DOCFORMATS:ts,:S/,/, /g}
 .endif
 
 .if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "text"
 WRKSRC=		${WRKDIR}/docs-pdf
+.endif
+
+.if make(all_python_versions)
+_VERS!=		${MAKE} -V _PYTHON_VERSIONS
+.endif
+
+all_python_versions:
+.for v in ${_VERS}
+	@${MAKE} -V PYTHON_PORTVERSION DEFAULT_VERSIONS=python=${v}
+.endfor
+
+.if make(makesum)
+ALL_PYTHON_VERSIONS!=	${MAKE} all_python_versions
+.endif
+
+.if make(makesum)
+MASTER_SITES=
+.for v in ${ALL_PYTHON_VERSIONS}
+MASTER_SITES+=	PYTHON/ftp/python/doc/${v}:${v:S/./x/g}
+.for f in ${DOCFORMATS}
+DISTFILES+=	python-${v}-docs-${f}${EXTRACT_SUFX}:${v:S/./x/g},DEFAULT
+.endfor
+.endfor
+MASTER_SITES+=	PYTHON/ftp/python/doc/current:DEFAULT
 .endif
 
 pre-install:
