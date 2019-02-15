@@ -85,11 +85,6 @@ APPID_CONFIGURE_ENV+=	luajit_CFLAGS="-I${LOCALBASE}/include/luajit-2.0" \
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MBARNYARD}
-DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
-EXPIRATION_DATE=2019-02-15
-.endif
-
 CONFIG_FILES=	classification.config gen-msg.map reference.config \
 		snort.conf threshold.conf unicode.map file_magic.conf
 
