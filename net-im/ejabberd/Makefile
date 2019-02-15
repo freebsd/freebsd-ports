@@ -2,6 +2,7 @@
 
 PORTNAME=	ejabberd
 PORTVERSION=	18.12.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
