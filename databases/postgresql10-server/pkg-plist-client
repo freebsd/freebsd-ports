@@ -379,6 +379,7 @@ include/postgresql/server/optimizer/geqo_recombination.h
 include/postgresql/server/optimizer/geqo_selection.h
 include/postgresql/server/optimizer/joininfo.h
 include/postgresql/server/optimizer/orclauses.h
+include/postgresql/server/optimizer/paramassign.h
 include/postgresql/server/optimizer/pathnode.h
 include/postgresql/server/optimizer/paths.h
 include/postgresql/server/optimizer/placeholder.h

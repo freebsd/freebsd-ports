@@ -468,6 +468,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Pontianak
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Pyongyang
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Qatar
+%%TZDATA%%%%DATADIR%%/timezone/Asia/Qostanay
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Qyzylorda
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Rangoon
 %%TZDATA%%%%DATADIR%%/timezone/Asia/Riyadh

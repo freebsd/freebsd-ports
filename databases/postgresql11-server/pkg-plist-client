@@ -384,6 +384,9 @@ include/postgresql/server/foreign/foreign.h
 include/postgresql/server/funcapi.h
 include/postgresql/server/getaddrinfo.h
 include/postgresql/server/getopt_long.h
+include/postgresql/server/jit/jit.h
+include/postgresql/server/jit/llvmjit.h
+include/postgresql/server/jit/llvmjit_emit.h
 include/postgresql/server/lib/binaryheap.h
 include/postgresql/server/lib/bipartite_match.h
 include/postgresql/server/lib/bloomfilter.h
@@ -442,6 +445,7 @@ include/postgresql/server/optimizer/geqo_recombination.h
 include/postgresql/server/optimizer/geqo_selection.h
 include/postgresql/server/optimizer/joininfo.h
 include/postgresql/server/optimizer/orclauses.h
+include/postgresql/server/optimizer/paramassign.h
 include/postgresql/server/optimizer/pathnode.h
 include/postgresql/server/optimizer/paths.h
 include/postgresql/server/optimizer/placeholder.h

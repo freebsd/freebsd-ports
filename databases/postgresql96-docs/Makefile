@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTREVISION=	2
+PORTREVISION=	0
 PKGNAMESUFFIX?=	${WANT_PGSQL_VER:S,.,,}-docs
 
 MAINTAINER=	pgsql@FreeBSD.org

@@ -1,8 +1,8 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION?=	9.4.20
-PORTREVISION=	1
+DISTVERSION?=	9.4.21
+PORTREVISION=	0
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
@@ -20,4 +20,4 @@ PG_USER?=	pgsql
 PG_GROUP?=	pgsql
 PG_UID?=	70
 
-.include "${.CURDIR}/../postgresql10-server/Makefile"
+.include "${.CURDIR}/../postgresql11-server/Makefile"
