@@ -1,0 +1,27 @@
+--- PySide2/QtWebEngineWidgets/CMakeLists.txt.orig	2019-02-15 00:09:13 UTC
++++ PySide2/QtWebEngineWidgets/CMakeLists.txt
+@@ -25,6 +25,7 @@ set(QtWebEngineWidgets_include_dirs
+                             ${Qt5Widgets_INCLUDE_DIRS}
+                             ${Qt5Network_INCLUDE_DIRS}
+                             ${Qt5WebChannel_INCLUDE_DIRS}
++                            ${Qt5WebEngineCore_INCLUDE_DIRS}
+                             ${Qt5WebEngineWidgets_INCLUDE_DIRS}
+                             ${SHIBOKEN_INCLUDE_DIR}
+                             ${libpyside_SOURCE_DIR}
+@@ -40,6 +41,7 @@ set(QtWebEngineWidgets_include_dirs
+ set(QtWebEngineWidgets_libraries      pyside2
+                             ${SHIBOKEN_PYTHON_LIBRARIES}
+                             ${SHIBOKEN_LIBRARY}
++                            ${Qt5WebEngineCore_LIBRARIES}
+                             ${Qt5WebEngineWidgets_LIBRARIES}
+                             ${Qt5Network_LIBRARIES}
+                             ${Qt5WebChannel_LIBRARIES}
+@@ -47,7 +49,7 @@ set(QtWebEngineWidgets_libraries      pyside2
+                             ${Qt5Gui_LIBRARIES}
+                             ${Qt5Core_LIBRARIES}
+                             )
+-set(QtWebEngineWidgets_deps QtGui QtWidgets QtNetwork QtWebChannel)
++set(QtWebEngineWidgets_deps QtGui QtWidgets QtNetwork QtWebChannel QtWebEngineCore)
+ create_pyside_module(NAME QtWebEngineWidgets
+                      INCLUDE_DIRS QtWebEngineWidgets_include_dirs
+                      LIBRARIES QtWebEngineWidgets_libraries
