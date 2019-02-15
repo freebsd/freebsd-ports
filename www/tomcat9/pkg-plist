@@ -35,6 +35,7 @@
 %%T%%/lib/tomcat-api.jar
 %%T%%/lib/tomcat-coyote.jar
 %%T%%/lib/tomcat-dbcp.jar
+%%T%%/lib/tomcat-i18n-cs.jar
 %%T%%/lib/tomcat-i18n-de.jar
 %%T%%/lib/tomcat-i18n-es.jar
 %%T%%/lib/tomcat-i18n-fr.jar
@@ -221,6 +222,7 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/HelloWorldExample.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/HelloWorldExample.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings.properties
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_cs.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_de.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_es.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_fr.properties
@@ -291,8 +293,6 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/LogTag.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/LogTag.java
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ShowSource.class
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ShowSource.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ValuesTag.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ValuesTag.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/filters/ExampleFilter.class
@@ -570,8 +570,6 @@
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/snp/snoop.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/snp/snoop.jsp
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/snp/snoop.jsp.html
-%%EXAMPLES%%%%T%%/webapps/examples/jsp/source.jsp
-%%EXAMPLES%%%%T%%/webapps/examples/jsp/source.jsp.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/tagplugin/choose.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/tagplugin/choose.jsp
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/tagplugin/choose.jsp.html
