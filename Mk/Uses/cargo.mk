@@ -134,16 +134,16 @@ CARGO_ENV+=	GETTEXT_BIN_DIR=${LOCALBASE}/bin \
 		GETTEXT_LIB_DIR=${LOCALBASE}/lib
 .endif
 
-.if ${CARGO_CRATES:Mlibc-[0-9]*}
+.for libc in ${CARGO_CRATES:Mlibc-[0-9]*}
 # FreeBSD 12.0 changed ABI: r318736 and r320043
 # https://github.com/rust-lang/libc/commit/78f93220d70e
 # https://github.com/rust-lang/libc/commit/969ad2b73cdc
-_libc_VER=	${CARGO_CRATES:Mlibc-[0-9]*:C/.*-//}
+_libc_VER=	${libc:C/.*-//}
 . if ${_libc_VER:R:R} == 0 && (${_libc_VER:R:E} < 2 || ${_libc_VER:R:E} == 2 && ${_libc_VER:E} < 38)
-DEV_WARNING+=	"CARGO_CRATES=libc-0.2.37 or older maybe unstable on FreeBSD 12.0. Consider updating to the latest version."
+DEV_WARNING+=	"CARGO_CRATES=${libc} may be unstable on FreeBSD 12.0. Consider updating to the latest version (higher than 0.2.37)."
 . endif
 .undef _libc_VER
-.endif
+.endfor
 
 .if ${CARGO_CRATES:Mlibgit2-sys-[0-9]*}
 # Use the system's libgit2 instead of building the bundled version
