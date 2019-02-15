@@ -28,7 +28,6 @@
 %%DSO%%%%HTTP_AUTH_PAM%%libexec/nginx/ngx_http_auth_pam_module.so
 %%DSO%%%%HTTP_EVAL%%libexec/nginx/ngx_http_eval_module.so
 %%DSO%%%%HTTP_FANCYINDEX%%libexec/nginx/ngx_http_fancyindex_module.so
-%%DSO%%%%HTTP_GEOIP%%libexec/nginx/ngx_http_geoip_module.so
 %%DSO%%%%HTTP%%%%HTTP_GEOIP2%%libexec/nginx/ngx_http_geoip2_module.so
 %%DSO%%%%STREAM%%%%HTTP_GEOIP2%%libexec/nginx/ngx_stream_geoip2_module.so
 %%DSO%%%%HTTP_IMAGE_FILTER%%libexec/nginx/ngx_http_image_filter_module.so

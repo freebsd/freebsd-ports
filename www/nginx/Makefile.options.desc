@@ -40,7 +40,6 @@ HTTP_FANCYINDEX_DESC=		3rd party http_fancyindex module
 HTTP_FLV_DESC=			Enable http_flv module
 HTTP_FOOTER_DESC=		3rd party http_footer module
 HTTP_GEOIP2_DESC=		3rd party geoip2 module
-HTTP_GEOIP_DESC=		Enable http_geoip module
 HTTP_GUNZIP_FILTER_DESC=	Enable http_gunzip_filter module
 HTTP_GZIP_STATIC_DESC=		Enable http_gzip_static module
 HTTP_IMAGE_FILTER_DESC=		Enable http_image_filter module
