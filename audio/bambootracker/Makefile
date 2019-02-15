@@ -3,8 +3,7 @@
 
 PORTNAME=	bambootracker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.4
-PORTREVISION=	2
+DISTVERSION=	0.1.5
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/ehaupt:extras
 DISTFILES=	${PORTNAME}-extras-${EXTRASVERSION}${EXTRACT_SUFX}:extras
@@ -16,7 +15,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		qmake qt:5 gl
-USE_QT=		buildtools core gui multimedia network widgets
+USE_QT=		buildtools core gui linguisttools_build multimedia network \
+		widgets
 USE_GL=		gl
 
 USE_GITHUB=	yes
