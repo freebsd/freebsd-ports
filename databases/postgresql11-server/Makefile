@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	11.1
+DISTVERSION?=	11.2
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
@@ -87,6 +87,11 @@ DTRACE_DESC=	Build with DTrace probes
 TZDATA_DESC=	Use internal timezone database
 XML_DESC=	Build with XML data type
 
+.if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
+OPTIONS_DEFINE+=LLVM
+LLVM_DESC=	Build with support for JIT-compiling expressions
+.endif
+
 .if ${DISTVERSION:C/([0-9]*).*/\1/} < 10
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
 OPTIONS_DEFINE+=	ICU
@@ -162,10 +167,23 @@ SUB_LIST+=		PG_GROUP=${PG_GROUP} \
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
-CFLAGS+=	-msse2
+USES+=		compiler:gcc-c++11-lib
 .endif
 
-.if !defined(SLAVE_ONLY)
+.if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
+.  if defined(SERVER_ONLY) && ${PORT_OPTIONS:MLLVM}
+LLVM_VERSION=		60
+BUILD_DEPENDS+=		llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+RUN_DEPENDS+=		llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+CONFIGURE_ENV+=		LLVM_CONFIG=${LOCALBASE}/bin/llvm-config60 CLANG=${LOCALBASE}/bin/clang60
+CONFIGURE_ARGS+=	--with-llvm
+PLIST_SUB+=		LLVM=""
+.  else
+PLIST_SUB+=		LLVM="@comment "
+CONFIGURE_ARGS+=	--without-llvm
+.  endif
+.endif
+
 .if ${DISTVERSION:C/([0-9]*).*/\1/} < 10
 .  if ( defined(SERVER_ONLY) && ${PORT_OPTIONS:MICU} ) || make(makesum)
 USES+=		autoreconf
@@ -174,8 +192,7 @@ PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 PATCHFILES+=	${ICU_PATCHFILE}:icu
 LIB_DEPENDS+=	libicudata.so:devel/icu
 .  endif
-.endif # not version 10
-.endif # !SLAVE_ONLY
+.endif # server && version < 10
 
 .if !defined(SLAVE_ONLY)
 

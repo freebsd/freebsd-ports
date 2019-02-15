@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-postgresql94
 
 CONFLICTS=	pgtcl-[0-9]* pgtcl-postgresql9[0123]-[0-9]*
