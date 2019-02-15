@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 DISTVERSION?=	10.7
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
@@ -18,8 +18,8 @@ INSTALL_DIRS?=	src/common src/timezone src/backend \
 		src/bin/pg_test_fsync src/bin/pg_test_timing \
 		src/bin/pg_waldump src/bin/pg_upgrade
 
-PG_USER?=	pgsql
-PG_GROUP?=	pgsql
+PG_USER?=	postgres
+PG_GROUP?=	postgres
 PG_UID?=	770
 
 .include "${.CURDIR}/../postgresql11-server/Makefile"
