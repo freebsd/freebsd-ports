@@ -1,0 +1,5 @@
+#!/bin/sh -
+# $FreeBSD$
+
+set -- $(echo "$*" | sed 's/--detach//')
+exec %%PREFIX%%/sbin/krb5kdc "$@"

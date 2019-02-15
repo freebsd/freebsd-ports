@@ -149,6 +149,7 @@ sbin/gss-server
 sbin/kadmin.local
 sbin/kadmind
 %%LDAP%%sbin/kdb5_ldap_util
+sbin/kdc
 sbin/kdb5_util
 sbin/kprop
 sbin/kpropd

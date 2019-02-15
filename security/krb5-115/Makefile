@@ -3,6 +3,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.15.5
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
@@ -109,6 +110,8 @@ PDF_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/pdf
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/krb5
+	@${SED} "s|%%PREFIX%%|${PREFIX}|" ${FILESDIR}/kdc.in > ${STAGEDIR}${PREFIX}/sbin/kdc; \
+	${CHMOD} +x ${STAGEDIR}${PREFIX}/sbin/kdc
 # html documentation
 .if ${PORT_OPTIONS:MKRB5_PDF}
 	pdf_files=`${FIND} ${PDF_DOC_DIR} ! -type d`
