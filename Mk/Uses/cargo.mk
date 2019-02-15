@@ -30,15 +30,12 @@ CARGO_VENDOR_DIR?=	${WRKSRC}/cargo-crates
 CARGO_CARGOTOML?=	${WRKSRC}/Cargo.toml
 CARGO_CARGOLOCK?=	${WRKSRC}/Cargo.lock
 
-# Define MASTER_SITES_CRATESIO for crates.io
-MASTER_SITES_CRATESIO=	https://crates.io/api/v1/crates
-
 # Save crates inside ${DISTDIR}/rust/crates by default.
 CARGO_DIST_SUBDIR?=	rust/crates
 
 # Generate list of DISTFILES.
 .for _crate in ${CARGO_CRATES}
-MASTER_SITES+=	${MASTER_SITES_CRATESIO}/${_crate:C/^(.*)-[0-9].*/\1/}/${_crate:C/^.*-([0-9].*)/\1/}/download?dummy=/:cargo_${_crate:S/-//g:S/.//g}
+MASTER_SITES+=	CRATESIO/${_crate:C/^(.*)-[0-9].*/\1/}/${_crate:C/^.*-([0-9].*)/\1/}:cargo_${_crate:S/-//g:S/.//g}
 DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}.tar.gz:cargo_${_crate:S/-//g:S/.//g}
 .endfor
 

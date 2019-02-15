@@ -130,6 +130,10 @@ MASTER_SITE_CRAN+= \
 MASTER_SITE_CRAN_ARCHIVE+= ${MASTER_SITE_CRAN:S,$,Archive/${PORTNAME}/,}
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_CRATESIO)
+MASTER_SITE_CRATESIO+=	https://crates.io/api/v1/crates/%SUBDIR%/download?dummy=/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_DEBIAN)
 MASTER_SITE_DEBIAN+= \
 	http://cdn.debian.net/debian/%SUBDIR%/ \
@@ -1240,6 +1244,7 @@ MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			BERLIOS:${PORTNAME:tl}.berlios \
 			CHEESESHOP:source/${DISTNAME:C/(.).*/\1/}/${DISTNAME:S/-${DISTVERSIONFULL}$//} \
+			CRATESIO:${PORTNAME}/${DISTVERSIONFULL} \
 			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
 			FARSIGHT:${PORTNAME} \
 			FESTIVAL:${PORTVERSION} \
