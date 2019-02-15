@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	granite
-DISTVERSION=	5.2.2
+DISTVERSION=	5.2.3
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -17,13 +17,14 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 RUN_DEPENDS=	contractor:sysutils/contractor \
 		gsettings-desktop-schemas>=3.28.1:devel/gsettings-desktop-schemas
 
-USES=		cmake gettext gnome pkgconfig tar:xz
+USES=		gettext gnome meson pkgconfig python:3.5+,build tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
-USE_GNOME=	glib20 gtk30 cairo introspection:build
+USE_GNOME=	cairo glib20 gtk30 introspection:build
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 CFLAGS+=	-Wno-return-type
 
 .include <bsd.port.mk>
