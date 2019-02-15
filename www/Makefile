@@ -2460,7 +2460,6 @@
     SUBDIR += webtrees
     SUBDIR += wgetpaste
     SUBDIR += wikicalc
-    SUBDIR += wml
     SUBDIR += woof
     SUBDIR += wordpress
     SUBDIR += wsdlpull
