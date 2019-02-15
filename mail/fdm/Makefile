@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fdm
-PORTVERSION=	1.9
-PORTREVISION=	2
+PORTVERSION=	2.0
 CATEGORIES=	mail
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -13,9 +12,10 @@ LICENSE=	ISCL
 
 LIB_DEPENDS=	libtdb.so:databases/tdb
 
+USES=		autoreconf:build ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	nicm
-USES=		autoreconf:build ssl
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 
