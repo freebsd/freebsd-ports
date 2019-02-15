@@ -7,6 +7,8 @@ bin/gdb%%VER%%
 man/man1/gdb%%VER%%.1.gz
 %%GDB_LINK%%%%KGDB%%man/man1/kgdb.1.gz
 %%KGDB%%man/man1/kgdb%%VER%%.1.gz
+%%LIBCXX%%%%DATADIR%%/auto-load/usr/lib/libc++.so.1-gdb.py
+%%LIBCXX%%%%DATADIR%%/auto-load/usr/lib/libc++.so.1-gdb.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/__init__.py
 %%PYTHON%%%%DATADIR%%/python/gdb/__init__.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/FrameDecorator.py
@@ -82,3 +84,9 @@ man/man1/gdb%%VER%%.1.gz
 %%DATADIR%%/syscalls/s390x-linux.xml
 %%DATADIR%%/syscalls/sparc-linux.xml
 %%DATADIR%%/syscalls/sparc64-linux.xml
+%%LIBCXX%%share/libcxx-gdbpy/libcxx/__init__.py
+%%LIBCXX%%share/libcxx-gdbpy/libcxx/__init__.pyc
+%%LIBCXX%%share/libcxx-gdbpy/libcxx/printers.py
+%%LIBCXX%%share/libcxx-gdbpy/libcxx/printers.pyc
+%%LIBCXX%%share/libcxx-gdbpy/libcxx/xmethods.py
+%%LIBCXX%%share/libcxx-gdbpy/libcxx/xmethods.pyc
