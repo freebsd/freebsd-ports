@@ -43,7 +43,7 @@ RUN_DEPENDS=	\
 	xml:textproc/xmlstarlet \
 	jq:textproc/jq \
 	flock:sysutils/flock \
-	virtualenv:devel/py-virtualenv@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}prettytable>=0:devel/py-prettytable@${PY_FLAVOR}
 
 USES=		cmake:noninja fuse gettext-runtime gmake pkgconfig python:2.7 \
