@@ -32,8 +32,10 @@ OPTIONS_SUB=		yes
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}dis3>0:devel/py-dis3@${PY_FLAVOR}
+DOCS_MAKE_ARGS=		SPHINXBUILD=sphinx-build-${PYTHON_VER}
 DOCS_USES=		gmake
 MANPAGES_BUILD_DEPENDS=	${DOCS_BUILD_DEPENDS}
+MANPAGES_MAKE_ARGS=	${DOCS_MAKE_ARGS}
 MANPAGES_USES=		gmake
 
 post-patch:
@@ -49,13 +51,13 @@ pre-build:
 
 do-install-MANPAGES-on:
 	@${MKDIR} ${STAGEDIR}${MANDIRS}/man1
-	( cd ${WRKSRC}/doc; ${GMAKE} man )
+	( cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${GMAKE} man ${MAKE_ARGS})
 	( cd ${WRKSRC}/doc/_build/man ; ${INSTALL_MAN} pyi-makespec.1 pyinstaller.1 \
 		${STAGEDIR}${MANDIRS}/man1 )
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc ; ${GMAKE} text )
+	(cd ${WRKSRC}/doc ; ${SETENV} ${MAKE_ENV} ${GMAKE} text ${MAKE_ARGS})
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/_build/text/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
