@@ -1008,6 +1008,7 @@
     SUBDIR += py-azure-cli-servicefabric
     SUBDIR += py-azure-cli-signalr
     SUBDIR += py-azure-cli-sql
+    SUBDIR += py-azure-cli-sqlvm
     SUBDIR += py-azure-cli-storage
     SUBDIR += py-azure-cli-telemetry
     SUBDIR += py-azure-cli-vm
