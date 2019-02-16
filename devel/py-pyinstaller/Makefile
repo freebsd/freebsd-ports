@@ -51,13 +51,13 @@ pre-build:
 
 do-install-MANPAGES-on:
 	@${MKDIR} ${STAGEDIR}${MANDIRS}/man1
-	( cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${GMAKE} man ${MAKE_ARGS})
+	( cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} man ${MAKE_ARGS})
 	( cd ${WRKSRC}/doc/_build/man ; ${INSTALL_MAN} pyi-makespec.1 pyinstaller.1 \
 		${STAGEDIR}${MANDIRS}/man1 )
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc ; ${SETENV} ${MAKE_ENV} ${GMAKE} text ${MAKE_ARGS})
+	(cd ${WRKSRC}/doc ; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} text ${MAKE_ARGS})
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/_build/text/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
