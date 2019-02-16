@@ -1,0 +1,15 @@
+aiofiles is an Apache2 licensed library, written in Python, for handling local
+disk files in asyncio applications.
+
+Ordinary local file IO is blocking, and cannot easily and portably made
+asynchronous. This means doing file IO may interfere with asyncio applications,
+which shouldn't block the executing thread. aiofiles helps with this by
+introducing asynchronous versions of files that support delegating operations to
+a separate thread pool.
+
+Features:
+- a file API very similar to Python's standard, blocking API
+- support for buffered and unbuffered binary files, and buffered text files
+- support for async/await (PEP 492) constructs
+
+WWW: https://github.com/Tinche/aiofiles
