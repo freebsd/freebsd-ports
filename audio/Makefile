@@ -906,6 +906,7 @@
     SUBDIR += zinf
     SUBDIR += zita-convolver
     SUBDIR += zita-resampler
+    SUBDIR += zrythm
     SUBDIR += zynaddsubfx
 
 .include <bsd.port.subdir.mk>
