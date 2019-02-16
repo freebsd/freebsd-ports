@@ -1,3 +1,3 @@
-TIMESTAMP = 1545039975
-SHA256 (cloudfoundry-bosh-bootloader-7.0.0-v7.0.0_GH0.tar.gz) = 7ef71c502b0de913272eea0fdee246440baea755dd45a9ff88974b4cba19ee58
-SIZE (cloudfoundry-bosh-bootloader-7.0.0-v7.0.0_GH0.tar.gz) = 8666737
+TIMESTAMP = 1550338837
+SHA256 (cloudfoundry-bosh-bootloader-7.2.0-v7.2.0_GH0.tar.gz) = 12939bd11bf72cd3fcac11635a894975bc0f4ed83dc8eb4df55b6974b4890796
+SIZE (cloudfoundry-bosh-bootloader-7.2.0-v7.2.0_GH0.tar.gz) = 8668239
