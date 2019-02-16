@@ -3,7 +3,7 @@
 PORTNAME=	libyubikey
 PORTVERSION=	1.13
 CATEGORIES=	security devel
-MASTER_SITES=	http://opensource.yubico.com/yubico-c/releases/
+MASTER_SITES=	https://developers.yubico.com/yubico-c/Releases/
 
 MAINTAINER=	matt@mjslabs.com
 COMMENT=	Library for decrypting and parsing YubiKey One-Time Passwords
