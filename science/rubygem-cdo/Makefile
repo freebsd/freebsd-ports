@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cdo
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
