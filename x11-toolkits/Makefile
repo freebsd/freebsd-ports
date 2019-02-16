@@ -103,6 +103,7 @@
     SUBDIR += libgnomeui
     SUBDIR += libgnomeui-reference
     SUBDIR += libgnomeuimm26
+    SUBDIR += libhandy
     SUBDIR += libsexy
     SUBDIR += libsexymm
     SUBDIR += libunique3
