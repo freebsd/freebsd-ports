@@ -4642,6 +4642,7 @@
     SUBDIR += py-google-apputils
     SUBDIR += py-googleapis-common-protos
     SUBDIR += py-grab
+    SUBDIR += py-graphql-core
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
     SUBDIR += py-grouch
