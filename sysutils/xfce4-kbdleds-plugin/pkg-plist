@@ -1,0 +1,6 @@
+lib/xfce4/panel-plugins/xfce4-kbdleds-plugin
+share/icons/hicolor/48x48/apps/kbdleds-plugin.png
+share/icons/hicolor/scalable/apps/kbdleds-plugin.svg
+%%NLS%%share/locale/ru/LC_MESSAGES/xfce4-kbdleds-plugin.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xfce4-kbdleds-plugin.mo
+share/xfce4/panel-plugins/kbdleds.desktop
