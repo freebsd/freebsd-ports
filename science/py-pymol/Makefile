@@ -17,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
-		${LOCALBASE}/include/mmtf.hpp:science/mmtf
+		${LOCALBASE}/include/mmtf.hpp:science/mmtf-cpp
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
 		libmsgpackc.so:devel/msgpack
