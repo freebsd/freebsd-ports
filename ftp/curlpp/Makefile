@@ -18,10 +18,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		cmake compiler:c++11-lang localbase pathfix
-USE_LDCONFIG=	yes
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
+USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	jpbarrette
 USE_GITHUB=	yes
