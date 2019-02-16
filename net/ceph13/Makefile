@@ -20,7 +20,7 @@ BUILD_DEPENDS=	\
 	bash:shells/bash \
 	git:devel/git \
 	yasm:devel/yasm \
-	sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
+	sphinx-build:textproc/py-sphinx \
 	gperf:devel/gperf \
 	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 LIB_DEPENDS=	\
