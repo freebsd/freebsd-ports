@@ -28,4 +28,6 @@ RUN_DEPENDS=	${PY_ENUM34} \
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
