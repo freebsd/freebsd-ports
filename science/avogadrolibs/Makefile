@@ -15,7 +15,7 @@ COMMENT=	Avogadro2 libraries for chemical editor and visualization applications
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/mmtf.hpp:science/mmtf
+BUILD_DEPENDS=	${LOCALBASE}/include/mmtf.hpp:science/mmtf-cpp
 
 USES=		cmake compiler:c++11-lang eigen:3,build,run # eigen needs to be 'run' because it is written into cmake files
 USE_GITHUB=	yes
