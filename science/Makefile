@@ -151,7 +151,7 @@
     SUBDIR += metaphysicl
     SUBDIR += minc2
     SUBDIR += mmdb2
-    SUBDIR += mmtf
+    SUBDIR += mmtf-cpp
     SUBDIR += mol2ps
     SUBDIR += molgif
     SUBDIR += molscript

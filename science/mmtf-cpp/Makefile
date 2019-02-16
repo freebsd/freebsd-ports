@@ -1,12 +1,13 @@
 # $FreeBSD$
 
-PORTNAME=	mmtf
+PORTNAME=	mmtf-cpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	science biology
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	C++ implementation of the MMTF API, decoder and encoder
+COMMENT=	C++ MMTF format API, decoder and encoder, for molecular structures
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,7 +17,6 @@ RUN_DEPENDS=	${LOCALBASE}/include/msgpack.hpp:devel/msgpack
 USES=		cmake compiler:c++11-lang localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	rcsb
-GH_PROJECT=	mmtf-cpp
 GH_TUPLE=	rcsb:mmtf:8c88834:x/mmtf_spec
 
 NO_BUILD=	yes
