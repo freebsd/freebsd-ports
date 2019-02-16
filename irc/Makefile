@@ -10,6 +10,7 @@
     SUBDIR += bitlbee
     SUBDIR += bitlbee-discord
     SUBDIR += bitlbee-facebook
+    SUBDIR += bitlbee-mastodon
     SUBDIR += bitlbee-steam
     SUBDIR += bnc
     SUBDIR += bopm
