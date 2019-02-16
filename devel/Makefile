@@ -4643,6 +4643,7 @@
     SUBDIR += py-googleapis-common-protos
     SUBDIR += py-grab
     SUBDIR += py-graphql-core
+    SUBDIR += py-graphql-relay
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
     SUBDIR += py-grouch

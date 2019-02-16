@@ -1,0 +1,8 @@
+Relay Library for GraphQL Python is a library to allow the easy creation of
+Relay-compliant servers using the GraphQL Python reference implementation of a
+GraphQL server.
+
+Note: The code is a exact port of the original graphql-relay js implementation
+from Facebook
+
+WWW: https://github.com/graphql-python/graphql-relay-py
