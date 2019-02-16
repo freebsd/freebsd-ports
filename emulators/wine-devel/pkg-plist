@@ -2560,6 +2560,7 @@ lib/wine/libsxs.def
 lib/wine/libt2embed.def
 lib/wine/libtapi32.def
 lib/wine/libucrtbase.def
+lib/wine/libuiautomationcore.def
 lib/wine/libunicows.def
 lib/wine/liburl.def
 lib/wine/liburlmon.def
