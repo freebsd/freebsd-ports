@@ -1,0 +1,13 @@
+Compiling the sample program
+============================
+
+sample.c can be compiled in the following way:
+
+cc -I%%PREFIX%%/include -pthread -lm %%DATADIR%%/Remotery.c %%EXAMPLESDIR%%/sample.c
+
+A precompiled sample program can be found at %%EXAMPLESDIR%%/sample.
+
+Using the Remote Web Viewer
+===========================
+
+Open %%DATADIR%%/index.html in a web browser.

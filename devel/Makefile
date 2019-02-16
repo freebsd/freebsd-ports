@@ -5491,6 +5491,7 @@
     SUBDIR += regexxer
     SUBDIR += relx
     SUBDIR += remake
+    SUBDIR += remotery
     SUBDIR += replay
     SUBDIR += replxx
     SUBDIR += resolv_wrapper
