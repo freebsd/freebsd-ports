@@ -3,7 +3,7 @@
 PORTNAME=	ykclient
 PORTVERSION=	2.15
 CATEGORIES=	security
-MASTER_SITES=	http://opensource.yubico.com/yubico-c-client/releases/
+MASTER_SITES=	https://developers.yubico.com/yubico-c-client/Releases/
 
 MAINTAINER=	matt@mjslabs.com
 COMMENT=	Yubico C client library

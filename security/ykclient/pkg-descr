@@ -1,4 +1,4 @@
 This project implements online validation of Yubikey OTPs. It is written in C
 and provides a shared library for use by other software.
 
-WWW: https://code.google.com/p/yubico-c-client
+WWW: https://developers.yubico.com/yubico-c-client/
