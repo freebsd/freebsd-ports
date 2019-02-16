@@ -3,7 +3,7 @@
 PORTNAME=	pam_yubico
 PORTVERSION=	2.26
 CATEGORIES=	security
-MASTER_SITES=	http://opensource.yubico.com/yubico-pam/releases/
+MASTER_SITES=	https://developers.yubico.com/yubico-pam/Releases/
 
 MAINTAINER=	matt@mjslabs.com
 COMMENT=	PAM module for authenticating with a Yubico YubiKey
