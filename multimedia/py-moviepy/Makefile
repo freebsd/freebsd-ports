@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	moviepy
-PORTVERSION=	0.2.3.5
-PORTREVISION=	2
+PORTVERSION=	1.0.0
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENCE.txt
 
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		${PYTHON_PKGNAMEPREFIX}decorator>=4.0.2:devel/py-decorator@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}imageio>=2.1.2:graphics/py-imageio@${PY_FLAVOR} \
 		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}proglog<=1.0.0:devel/py-proglog@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.8.1:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.11.2:misc/py-tqdm@${PY_FLAVOR} \
 
 USES=		python
@@ -32,4 +32,13 @@ IMAGEMAGICK7_DESC=	Use ImageMagick 7.x as backend
 IMAGEMAGICK6_RUN_DEPENDS=	convert:graphics/ImageMagick6
 IMAGEMAGICK7_RUN_DEPENDS=	convert:graphics/ImageMagick7
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 3400
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}imageio>=2.5:graphics/py-imageio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}imageio-ffmpeg>=0.2.0:graphics/py-imageio-ffmpeg@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}imageio24>=2.0:graphics/py-imageio24@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
