@@ -93,16 +93,6 @@
     SUBDIR += tribler
     SUBDIR += uhub
     SUBDIR += valknut
-    SUBDIR += verlihub
-    SUBDIR += verlihub-plugins
-    SUBDIR += verlihub-plugins-chatroom
-    SUBDIR += verlihub-plugins-floodprotect
-    SUBDIR += verlihub-plugins-forbid
-    SUBDIR += verlihub-plugins-iplog
-    SUBDIR += verlihub-plugins-isp
-    SUBDIR += verlihub-plugins-luascript
-    SUBDIR += verlihub-plugins-messanger
-    SUBDIR += verlihub-plugins-stats
     SUBDIR += vuze
     SUBDIR += xmrig
     SUBDIR += zetacoin
