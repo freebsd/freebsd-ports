@@ -478,6 +478,7 @@
     SUBDIR += doctorj
     SUBDIR += dolphin-plugins
     SUBDIR += dotconf
+    SUBDIR += double-conversion
     SUBDIR += doxygen
     SUBDIR += dparser
     SUBDIR += dprog
@@ -1414,7 +1415,6 @@
     SUBDIR += libdlna
     SUBDIR += libdnsres
     SUBDIR += libdombey
-    SUBDIR += libdouble-conversion
     SUBDIR += libdparse
     SUBDIR += libds
     SUBDIR += libdsp

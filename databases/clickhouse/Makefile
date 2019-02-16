@@ -5,7 +5,7 @@ PORTNAME=	clickhouse
 PORTVERSION=	18.14.18
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 
 MAINTAINER=	proler@gmail.com
@@ -18,9 +18,9 @@ ONLY_FOR_ARCHS_REASON=	"Only supported on amd64"
 
 BUILD_DEPENDS=	bash:shells/bash \
 		sparsehash>=0:devel/sparsehash \
-		cctz>=0:devel/cctz \
-		libdouble-conversion>=0:devel/libdouble-conversion
-LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools \
+		cctz>=0:devel/cctz
+LIB_DEPENDS=	libdouble-conversion.so:devel/double-conversion \
+		libtcmalloc.so:devel/google-perftools \
 		libodbc.so:databases/unixODBC \
 		libltdl.so:devel/libltdl \
 		libicudata.so:devel/icu \
