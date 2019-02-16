@@ -13,7 +13,7 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
 		fetchmail>=${PORTVERSION}:mail/fetchmail
 
-USES=		python shebangfix tar:xz
+USES=		python:2.7 shebangfix tar:xz
 
 FILESDIR=	${.CURDIR}/files
 
