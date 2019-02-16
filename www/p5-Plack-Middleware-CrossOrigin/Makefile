@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Plack-Middleware-CrossOrigin
-PORTVERSION=	0.012
+PORTVERSION=	0.013
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Plack>=0:www/p5-Plack
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
