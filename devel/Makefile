@@ -5112,6 +5112,7 @@
     SUBDIR += py-ruamel.yaml
     SUBDIR += py-rubymarshal
     SUBDIR += py-rwt
+    SUBDIR += py-rx
     SUBDIR += py-sanetime
     SUBDIR += py-sarge
     SUBDIR += py-schema
