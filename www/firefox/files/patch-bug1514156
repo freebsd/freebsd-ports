@@ -1,27 +1,16 @@
-commit 9b55d8d04f4b
-Author: Sotaro Ikeda <sotaro.ikeda.g@gmail.com>
-Date:   Thu Jan 3 22:36:09 2019 -0800
+commit 94f519f31849
+Author: sotaro <sotaro.ikeda.g@gmail.com>
+Date:   Tue Feb 12 16:32:51 2019 +0900
 
-    Bug 1514156 - Add RenderCompositorEGL for Wayland
+    Bug 1514156 - Add GLContextEGL::CreateEGLSurfaceForCompositorWidget() for Wayland r=jgilbert
+    
+    When GDK_BACKEND is wayland, widget is not fully mapped during creating CompositorSession. During CompositorSession creation, GLContextProviderEGL::CreateForCompositorWidget() creates GLContextEGL, but we could not create valid EGLSurface. We could create valid EGLSurface when widget is fully mapped. CreateEGLSurfaceForCompositorWidget() is used for creating valid EGLSurface after widget is fully mapped.
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D18654
 ---
- gfx/gl/GLContextEGL.h                          |   4 +
- gfx/gl/GLContextProviderEGL.cpp                |  29 ++++++
- gfx/webrender_bindings/RenderCompositor.cpp    |  12 +++
- gfx/webrender_bindings/RenderCompositorEGL.cpp | 135 +++++++++++++++++++++++++
- gfx/webrender_bindings/RenderCompositorEGL.h   |  54 ++++++++++
- gfx/webrender_bindings/moz.build               |  10 ++
- widget/gtk/CompositorWidgetChild.cpp           |   6 ++
- widget/gtk/CompositorWidgetChild.h             |   4 +-
- widget/gtk/CompositorWidgetParent.cpp          |   6 ++
- widget/gtk/CompositorWidgetParent.h            |   2 +
- widget/gtk/GtkCompositorWidget.cpp             |  15 ++-
- widget/gtk/GtkCompositorWidget.h               |   9 ++
- widget/gtk/PCompositorWidget.ipdl              |   1 +
- widget/gtk/mozcontainer.cpp                    |  11 ++
- widget/gtk/mozcontainer.h                      |   2 +
- widget/gtk/nsWindow.cpp                        |  16 +++
- widget/gtk/nsWindow.h                          |   1 +
- 17 files changed, 315 insertions(+), 2 deletions(-)
+ gfx/gl/GLContextEGL.h           |  4 ++++
+ gfx/gl/GLContextProviderEGL.cpp | 27 +++++++++++++++++++++++++++
+ 2 files changed, 31 insertions(+)
 
 diff --git gfx/gl/GLContextEGL.h gfx/gl/GLContextEGL.h
 index 95d5e0c02e23..adb37e59a9f7 100644
@@ -42,7 +31,7 @@ diff --git gfx/gl/GLContextProviderEGL.cpp gfx/gl/GLContextProviderEGL.cpp
 index 774eb34a8e87..25aa779a7d64 100644
 --- gfx/gl/GLContextProviderEGL.cpp
 +++ gfx/gl/GLContextProviderEGL.cpp
-@@ -295,6 +295,36 @@ already_AddRefed<GLContext> GLContextEGLFactory::Create(
+@@ -295,6 +295,33 @@ already_AddRefed<GLContext> GLContextEGLFactory::Create(
    return gl.forget();
  }
  
@@ -69,16 +58,41 @@ index 774eb34a8e87..25aa779a7d64 100644
 +    return EGL_NO_SURFACE;
 +  }
 +
-+  EGLSurface surface = EGL_NO_SURFACE;
-+  surface = mozilla::gl::CreateSurfaceFromNativeWindow(window, config);
-+
-+  return surface;
++  return mozilla::gl::CreateSurfaceFromNativeWindow(window, config);
 +}
 +#endif
 +
  GLContextEGL::GLContextEGL(CreateContextFlags flags, const SurfaceCaps& caps,
                             bool isOffscreen, EGLConfig config,
                             EGLSurface surface, EGLContext context)
+
+commit 0e2cb6d4e88d
+Author: sotaro <sotaro.ikeda.g@gmail.com>
+Date:   Tue Feb 12 16:33:31 2019 +0900
+
+    Bug 1514156 - Add RenderCompositorEGL for wayland r=nical
+    
+    When GDK_BACKEND is wayland, widget is not fully mapped during creating CompositorSession. Needs to create valid EGLSurface after widget is fully mapped.
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D18940
+---
+ gfx/webrender_bindings/RenderCompositor.cpp    |  12 +++
+ gfx/webrender_bindings/RenderCompositorEGL.cpp | 132 +++++++++++++++++++++++++
+ gfx/webrender_bindings/RenderCompositorEGL.h   |  54 ++++++++++
+ gfx/webrender_bindings/moz.build               |  10 ++
+ widget/gtk/CompositorWidgetChild.cpp           |   6 ++
+ widget/gtk/CompositorWidgetChild.h             |   4 +-
+ widget/gtk/CompositorWidgetParent.cpp          |   8 ++
+ widget/gtk/CompositorWidgetParent.h            |   2 +
+ widget/gtk/GtkCompositorWidget.cpp             |  12 +++
+ widget/gtk/GtkCompositorWidget.h               |  11 +++
+ widget/gtk/PCompositorWidget.ipdl              |   1 +
+ widget/gtk/mozcontainer.cpp                    |  11 +++
+ widget/gtk/mozcontainer.h                      |   2 +
+ widget/gtk/nsWindow.cpp                        |  16 +++
+ widget/gtk/nsWindow.h                          |   1 +
+ 15 files changed, 281 insertions(+), 1 deletion(-)
+
 diff --git gfx/webrender_bindings/RenderCompositor.cpp gfx/webrender_bindings/RenderCompositor.cpp
 index 051482fbabbf..a58268096a89 100644
 --- gfx/webrender_bindings/RenderCompositor.cpp
@@ -148,7 +162,7 @@ index 000000000000..16245f59afbd
 +  if (!gl) {
 +    return nullptr;
 +  }
-+  return MakeUnique<RenderCompositorEGL>(std::move(gl), std::move(aWidget));
++  return MakeUnique<RenderCompositorEGL>(gl, aWidget);
 +}
 +
 +/* static */ already_AddRefed<gl::GLContext>
@@ -186,7 +200,7 @@ index 000000000000..16245f59afbd
 +}
 +
 +RenderCompositorEGL::RenderCompositorEGL(
-+    RefPtr<gl::GLContext>&& aGL, RefPtr<widget::CompositorWidget>&& aWidget)
++    RefPtr<gl::GLContext> aGL, RefPtr<widget::CompositorWidget> aWidget)
 +    : RenderCompositor(std::move(aWidget)), mGL(aGL), mEGLSurface(EGL_NO_SURFACE) {
 +  MOZ_ASSERT(mGL);
 +}
@@ -274,8 +288,8 @@ index 000000000000..f12e16d974af
 +  static UniquePtr<RenderCompositor> Create(
 +      RefPtr<widget::CompositorWidget> aWidget);
 +
-+  RenderCompositorEGL(RefPtr<gl::GLContext>&& aGL,
-+                      RefPtr<widget::CompositorWidget>&& aWidget);
++  RenderCompositorEGL(RefPtr<gl::GLContext> aGL,
++                      RefPtr<widget::CompositorWidget> aWidget);
 +  virtual ~RenderCompositorEGL();
 +
 +  bool BeginFrame() override;
@@ -299,7 +313,7 @@ index 000000000000..f12e16d974af
 +
 +  void DestroyEGLSurface();
 +
-+  RefPtr<gl::GLContext> mGL;
++  const RefPtr<gl::GLContext> mGL;
 +  EGLSurface mEGLSurface;
 +};
 +
