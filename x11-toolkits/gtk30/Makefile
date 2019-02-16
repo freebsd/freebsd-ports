@@ -4,8 +4,7 @@
 # adwaita-icon-theme, gnome-themes-standard and mate-themes
 
 PORTNAME=	gtk
-PORTVERSION=	3.22.30
-PORTREVISION=	4
+PORTVERSION=	3.24.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	3
@@ -33,7 +32,6 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 introspection:build pango
-#gtk-update-icon-cache
 USES=		compiler:c11 gettext gmake gnome libtool localbase \
 		pathfix perl5 pkgconfig tar:xz
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
@@ -44,7 +42,7 @@ CPPFLAGS+=	-fno-omit-frame-pointer
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
-LIBVERSION=	0.2200.30
+LIBVERSION=	0.2404.1
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
@@ -84,6 +82,7 @@ WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols \
 WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
 WAYLAND_RUN_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
+WAYLAND_USES=		gl
 WAYLAND_USE=		GL=egl
 
 post-patch:

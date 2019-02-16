@@ -21,9 +21,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	horst3180
 GH_PROJECT=	arc-theme
 
-USES=		autoreconf pkgconfig
+USES=		autoreconf gnome pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 gtk30
 NO_ARCH=	yes
+CONFIGURE_ARGS=	--with-gnome=3.22
 
 .include <bsd.port.mk>

@@ -249,6 +249,9 @@ include/gtk-3.0/gtk/gtkentrycompletion.h
 include/gtk-3.0/gtk/gtkenums.h
 include/gtk-3.0/gtk/gtkeventbox.h
 include/gtk-3.0/gtk/gtkeventcontroller.h
+include/gtk-3.0/gtk/gtkeventcontrollerkey.h
+include/gtk-3.0/gtk/gtkeventcontrollermotion.h
+include/gtk-3.0/gtk/gtkeventcontrollerscroll.h
 include/gtk-3.0/gtk/gtkexpander.h
 include/gtk-3.0/gtk/gtkfilechooser.h
 include/gtk-3.0/gtk/gtkfilechooserbutton.h
@@ -270,6 +273,7 @@ include/gtk-3.0/gtk/gtkgesturemultipress.h
 include/gtk-3.0/gtk/gtkgesturepan.h
 include/gtk-3.0/gtk/gtkgesturerotate.h
 include/gtk-3.0/gtk/gtkgesturesingle.h
+include/gtk-3.0/gtk/gtkgesturestylus.h
 include/gtk-3.0/gtk/gtkgestureswipe.h
 include/gtk-3.0/gtk/gtkgesturezoom.h
 include/gtk-3.0/gtk/gtkglarea.h
@@ -425,6 +429,7 @@ lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-ti-er.so
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-ti-et.so
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-viqr.so
 %%WAYLAND%%lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-wayland.so
+%%WAYLAND%%lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-waylandgtk.so
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-xim.so
 %%CLOUDPRINT%%lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-cloudprint.so
 %%CUPS%%lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-cups.so
@@ -711,6 +716,9 @@ share/gir-1.0/Gtk-3.0.gir
 %%DATADIR%%-doc/html/gtk3/GtkEntryCompletion.html
 %%DATADIR%%-doc/html/gtk3/GtkEventBox.html
 %%DATADIR%%-doc/html/gtk3/GtkEventController.html
+%%DATADIR%%-doc/html/gtk3/GtkEventControllerKey.html
+%%DATADIR%%-doc/html/gtk3/GtkEventControllerMotion.html
+%%DATADIR%%-doc/html/gtk3/GtkEventControllerScroll.html
 %%DATADIR%%-doc/html/gtk3/GtkExpander.html
 %%DATADIR%%-doc/html/gtk3/GtkFileChooser.html
 %%DATADIR%%-doc/html/gtk3/GtkFileChooserButton.html
@@ -734,6 +742,7 @@ share/gir-1.0/Gtk-3.0.gir
 %%DATADIR%%-doc/html/gtk3/GtkGesturePan.html
 %%DATADIR%%-doc/html/gtk3/GtkGestureRotate.html
 %%DATADIR%%-doc/html/gtk3/GtkGestureSingle.html
+%%DATADIR%%-doc/html/gtk3/GtkGestureStylus.html
 %%DATADIR%%-doc/html/gtk3/GtkGestureSwipe.html
 %%DATADIR%%-doc/html/gtk3/GtkGestureZoom.html
 %%DATADIR%%-doc/html/gtk3/GtkGrid.html
