@@ -19,7 +19,6 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \
 		libflann_cpp.so:math/flann \
 		libfreetype.so:print/freetype2 \
-		libomp.so:devel/openmp \
 		libpcap.so:net/libpcap \
 		libtiff.so:graphics/tiff
 
