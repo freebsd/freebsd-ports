@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to provide access to Gmail via Python
 
-BUILD_DEPENDS=	py*-mechanize>=0:www/py-mechanize
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mechanize>=0:www/py-mechanize@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mechanize>=0:www/py-mechanize@${PY_FLAVOR}
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
