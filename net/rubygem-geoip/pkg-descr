@@ -1,6 +1,0 @@
-GeoIP searches a GeoIP database for a given host or IP address, and
-returns information about the country where the IP address is allocated.
-
-This is a GeoIP implementation for rubygems
-
-WWW: https://github.com/cjheath/geoip

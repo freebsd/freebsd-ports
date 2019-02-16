@@ -759,7 +759,6 @@
     SUBDIR += generatorrunner
     SUBDIR += gengetopt
     SUBDIR += genproto
-    SUBDIR += geoip-java
     SUBDIR += gettext
     SUBDIR += gettext-lint
     SUBDIR += gettext-msghack
@@ -851,7 +850,6 @@
     SUBDIR += go-raw
     SUBDIR += go-runewidth
     SUBDIR += go-slices
-    SUBDIR += go-sql-driver
     SUBDIR += go-tools
     SUBDIR += go-uuid
     SUBDIR += go-yaml

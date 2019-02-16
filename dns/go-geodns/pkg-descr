@@ -1,4 +1,0 @@
-GeoDNS is a DNS server with per-client targeted responses. It powers the NTP
-Pool system and other similar services.
-
-WWW: https://github.com/abh/geodns

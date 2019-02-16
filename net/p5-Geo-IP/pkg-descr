@@ -1,9 +1,0 @@
-This module looks up the country of an IP or hostname, using the free
-GeoIP Legacy file-based database. This database should be more complete
-and accurate than reverse DNS lookups.
-
-This module can be used to automatically select the geographically closest
-mirror, or to analyze your web server logs to determine the countries of
-your visiters.
-
-WWW: https://metacpan.org/release/Geo-IP

@@ -1,6 +1,0 @@
-%%SITE_ARCH%%/Geo/IP.pm
-%%SITE_ARCH%%/Geo/IP/Record.pm
-%%SITE_ARCH%%/Geo/IP/Record.pod
-%%SITE_ARCH%%/auto/Geo/IP/IP.so
-%%PERL5_MAN3%%/Geo::IP.3.gz
-%%PERL5_MAN3%%/Geo::IP::Record.3.gz

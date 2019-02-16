@@ -1,5 +1,0 @@
-bin/pgeodns
-%%SITE_PERL%%/Countries.pm
-%%SITE_PERL%%/GeoDNS.pm
-%%SITE_PERL%%/pgeodns.pl
-%%PERL5_MAN1%%/pgeodns.1.gz

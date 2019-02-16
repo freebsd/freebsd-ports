@@ -1,7 +1,0 @@
-This package wraps the libgeoip C library for access from Go
-(golang).
-
-You can download the free GeoLite Country database or you can
-subscribe to updates.
-
-WWW: https://github.com/abh/geoip
