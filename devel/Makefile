@@ -4291,6 +4291,7 @@
     SUBDIR += py-ZopeUndo
     SUBDIR += py-adb
     SUBDIR += py-aenum
+    SUBDIR += py-aiofiles
     SUBDIR += py-aioice
     SUBDIR += py-aiorpcX
     SUBDIR += py-aiortc
