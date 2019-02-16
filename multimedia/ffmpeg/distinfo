@@ -1,3 +1,5 @@
-TIMESTAMP = 1549745767
+TIMESTAMP = 1541460154
 SHA256 (ffmpeg-4.1.1.tar.xz) = 373749824dfd334d84e55dff406729edfd1606575ee44dd485d97d45ea4d2d86
 SIZE (ffmpeg-4.1.1.tar.xz) = 8893404
+SHA256 (0001-Add-ability-for-ffmpeg-to-run-svt-av1.patch) = ffe17691750a952591090e6f7396a6063a0c48907bc4023db15e088a7673528a
+SIZE (0001-Add-ability-for-ffmpeg-to-run-svt-av1.patch) = 20364

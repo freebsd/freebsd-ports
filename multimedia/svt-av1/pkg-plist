@@ -1,0 +1,7 @@
+bin/SvtAv1EncApp
+bin/SvtAv1EncSimpleApp
+include/svt-av1/EbApi.h
+include/svt-av1/EbErrorCodes.h
+include/svt-av1/EbTime.h
+lib/libSvtAv1Enc.so
+libdata/pkgconfig/SvtAv1Enc.pc
