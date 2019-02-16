@@ -3,7 +3,7 @@
 PORTNAME=	ykpers
 PORTVERSION=	1.19.0
 CATEGORIES=	security
-MASTER_SITES=	http://opensource.yubico.com/yubikey-personalization/releases/
+MASTER_SITES=	https://developers.yubico.com/yubikey-personalization/Releases/
 
 MAINTAINER=	matt@mjslabs.com
 COMMENT=	Library and tool for personalization of Yubico's YubiKey
