@@ -4389,6 +4389,7 @@
     SUBDIR += py-azure-mgmt-servicefabric
     SUBDIR += py-azure-mgmt-signalr
     SUBDIR += py-azure-mgmt-sql
+    SUBDIR += py-azure-mgmt-sqlvirtualmachine
     SUBDIR += py-azure-mgmt-storage
     SUBDIR += py-azure-mgmt-trafficmanager
     SUBDIR += py-azure-mgmt-web
