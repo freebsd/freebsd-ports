@@ -1,7 +1,13 @@
-This module is designed to support operations commonly performed on file
-specifications (usually called "file names", but not to be confused with
-the contents of a file, or Perl's file handles), such as concatenating
-several directory and file names into a single path, or determining
-whether a path is rooted.
+Cwd provides functions for determining the pathname of the current working
+directory. It is recommended that getcwd (or another *cwd() function) be used in
+all code to ensure portability. By default, it exports the functions cwd(),
+getcwd(), fastcwd(), and fastgetcwd() (and, on Win32, getdcwd()) into the
+caller's namespace.
+
+File::Spec is designed to support operations commonly performed on file
+specifications (usually called "file names", but not to be confused with the
+contents of a file, or Perl's file handles), such as concatenating several
+directory and file names into a single path, or determining whether a path is
+rooted.
 
 WWW: https://metacpan.org/release/PathTools
