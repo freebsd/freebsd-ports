@@ -42,7 +42,6 @@ PLIST_SUB=	SUFFIX="${SUFFIX}"
 CMAKE_OFF=	USE_OPENMP
 .else # parallel
 CMAKE_ON+=	USE_OPENMP
-LIB_DEPENDS+=	libomp.so:devel/openmp
 SUFFIX=		_omp
 .endif
 
