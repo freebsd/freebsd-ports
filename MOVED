@@ -11621,3 +11621,4 @@ net-p2p/verlihub-plugins-isp||2019-02-16|Has expired: Verlihub uses legacy GeoIP
 net-p2p/verlihub-plugins-luascript||2019-02-16|Has expired: Verlihub uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
 net-p2p/verlihub-plugins-messanger||2019-02-16|Has expired: Verlihub uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
 net-p2p/verlihub-plugins-stats||2019-02-16|Has expired: Verlihub uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+www/mod_geoip2||2019-02-16|Has expired: Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
