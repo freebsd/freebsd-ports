@@ -11609,3 +11609,5 @@ security/sguil||2019-02-16|Has expired: Uses legacy GeoIP 1 format which no long
 devel/go-sql-driver||2019-02-16|Has expired: Go source should not be packaged
 devel/geoip-java||2019-02-16|Has expired: Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
 dns/go-geodns||2019-02-16|Has expired: Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+devel/omniORB-4.1||2019-02-16|Has expired: Legacy version please consider using devel/omniORB
+devel/omniNotify||2019-02-16|Removed: Unmaintained upstream since 2004
