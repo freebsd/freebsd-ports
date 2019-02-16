@@ -1,0 +1,5 @@
+Imageio is a Python library that provides an easy interface to read and 
+write a wide range of image data, including animated images, volumetric data,
+and scientific formats.
+
+WWW: https://imageio.github.io/

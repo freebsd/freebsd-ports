@@ -845,6 +845,7 @@
     SUBDIR += py-gvgen
     SUBDIR += py-imageio
     SUBDIR += py-imageio-ffmpeg
+    SUBDIR += py-imageio24
     SUBDIR += py-imagesize
     SUBDIR += py-imgurpython
     SUBDIR += py-leather
