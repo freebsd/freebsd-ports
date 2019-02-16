@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli-container
-PORTVERSION=	0.3.11
+PORTVERSION=	0.3.13
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ COMMENT=	Microsoft Azure Command-Line Tools container Command Module
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerinstance>=1.2.1:devel/py-azure-mgmt-containerinstance@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerinstance>=1.4.0:devel/py-azure-mgmt-containerinstance@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-loganalytics>=0.2.0:devel/py-azure-mgmt-loganalytics@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-resource>=2.0.0:devel/py-azure-mgmt-resource@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-network>=2.4.0:devel/py-azure-mgmt-network@${PY_FLAVOR} \
