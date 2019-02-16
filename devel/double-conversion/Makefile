@@ -1,7 +1,7 @@
 # Created by: Waitman Gobble <waitman@waitman.net>
 # $FreeBSD$
 
-PORTNAME=	libdouble-conversion
+PORTNAME=	double-conversion
 PORTVERSION=	3.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
@@ -15,11 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 #BROKEN_aarch64=	Fails to build: Target architecture was not detected as supported by Double-Conversion
 
 USES=		cmake
-USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DCMAKE_POSITION_INDEPENDENT_CODE=1
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_PROJECT=	double-conversion
+USE_LDCONFIG=	yes
+
+CMAKE_ON=	BUILD_SHARED_LIBS
 
 .include <bsd.port.mk>
