@@ -814,6 +814,7 @@
     SUBDIR += glslang
     SUBDIR += glui
     SUBDIR += gmake
+    SUBDIR += gn
     SUBDIR += gnatcoll
     SUBDIR += gnatpython
     SUBDIR += gnome-builder
