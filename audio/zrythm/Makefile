@@ -2,6 +2,7 @@
 
 PORTNAME=	zrythm
 DISTVERSION=	g20190216
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,12 +42,11 @@ INSTALLS_ICONS=	yes
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
+MAKE_ARGS=	RELEASE=1
+
 PLIST_FILES=	bin/zrythm \
 		share/applications/zrythm.desktop \
 		share/fonts/zrythm/Segment7Standard/OFL.txt \
 		share/icons/hicolor/scalable/apps/z.svg
-
-post-install: # https://git.zrythm.org/zrythm/zrythm/issues/61
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/zrythm
 
 .include <bsd.port.mk>
