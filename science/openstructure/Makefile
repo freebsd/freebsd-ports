@@ -12,7 +12,7 @@ COMMENT=	Molecular modelling and visualization environment
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-DEPRECATED=		Qt4 has been EOL since december 2015
+DEPRECATED=		Qt4 has been EOL since december 2015 # the upstream promised to support Qt5 in the next release
 EXPIRATION_DATE=	2019-03-15
 
 BUILD_DEPENDS=	fftw3>0:math/fftw3
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 RUN_DEPENDS=	${PYNUMPY} \
 		bash:shells/bash
 
-USES=		cmake eigen:3 python pyqt:4 qt:4 shebangfix
+USES=		cmake eigen:3 gl python:2.7 pyqt:4 qt:4 shebangfix # I asked the upstream to make it python3-compatible
 SHEBANG_FILES=	scripts/dng.in scripts/ost.in scripts/ost_config.in
 USE_QT=		corelib gui network opengl xml qmake_build moc_build rcc_build uic_build
 USE_PYQT=	core gui
