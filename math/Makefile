@@ -728,6 +728,7 @@
     SUBDIR += py-matplotlib
     SUBDIR += py-mpmath
     SUBDIR += py-munkres
+    SUBDIR += py-munkres10
     SUBDIR += py-networkx
     SUBDIR += py-networkx1
     SUBDIR += py-numarray
