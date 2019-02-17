@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	amqp
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 CATEGORIES=	net pear
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
@@ -14,6 +14,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	librabbitmq.so:net/rabbitmq-c-devel
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	73
 
 .include <bsd.port.mk>
