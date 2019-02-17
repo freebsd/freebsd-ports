@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Term/Choose.pm
+%%SITE_PERL%%/Term/Choose/Constants.pm
+%%SITE_PERL%%/Term/Choose/LineFold.pm
+%%SITE_PERL%%/Term/Choose/LineFold/CharWidthAmbiguousWide.pm
+%%SITE_PERL%%/Term/Choose/LineFold/CharWidthDefault.pm
+%%SITE_PERL%%/Term/Choose/Linux.pm
+%%SITE_PERL%%/Term/Choose/Win32.pm
+%%PERL5_MAN3%%/Term::Choose.3.gz
