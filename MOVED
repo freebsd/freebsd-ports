@@ -11624,3 +11624,4 @@ net-p2p/verlihub-plugins-stats||2019-02-16|Has expired: Verlihub uses legacy Geo
 www/mod_geoip2|www/mod_maxminddb|2019-02-16|Has expired: Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
 devel/libdouble-conversion|devel/double-conversion|2019-02-16|Rename to match the project name on github and on most other systems, and in installed cmake files
 security/tmux-cssh||2019-02-17|Upstream has disappeared; sysutils/scct is an alternative
+net/GeoIP|net/libmaxminddb|2019-02-17|Has expired: Legacy databases no longer available. Switch to net/libmaxminddb instead
