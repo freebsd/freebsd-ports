@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	5.3.12
+PORTVERSION=	5.3.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -34,10 +34,10 @@ PLIST_SUB=	ILIASDATADIR=${ILIASDATADIR}
 SUB_FILES=	pkg-message
 SUB_LIST=	ILIASDATADIR=${ILIASDATADIR}
 
-OPTIONS_DEFINE=		SCORM2004 Checker Mail
+OPTIONS_DEFINE=		SCORM2004 CHECKER MAIL
 SCORM2004_USE=		php=json
-Checker_RUN_DEPENDS=	${LOCALBASE}/share/pear/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
-Mail_RUN_DEPENDS=	${LOCALBASE}/share/pear/Mail.php:mail/pear-Mail@${PHP_FLAVOR}
+CHERCKER_RUN_DEPENDS=	${LOCALBASE}/share/pear/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
+MAIL_RUN_DEPENDS=	${LOCALBASE}/share/pear/Mail.php:mail/pear-Mail@${PHP_FLAVOR}
 
 EXTRA_FILES=	%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/_mocha \
 		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/express \
