@@ -1,18 +1,18 @@
---- nuitka/build/SingleExe.scons.orig	2019-01-05 11:46:56 UTC
+--- nuitka/build/SingleExe.scons.orig	2019-02-16 07:51:41 UTC
 +++ nuitka/build/SingleExe.scons
-@@ -135,9 +135,9 @@ uninstalled_python = getBoolOption("unin
+@@ -138,9 +138,10 @@ uninstalled_python = getBoolOption("unin
  # Unstriped mode: Do not remove debug symbols.
  unstripped_mode = getBoolOption("unstripped_mode", False)
  
--# Clang compiler mode, forced on MacOS X and FreeBSD, optional on Linux.
-+# Clang compiler mode, forced on MacOS X and FreeBSD (unless PowerPC), optional on Linux.
+-# Clang compiler mode, forced on macOS X and FreeBSD, optional on Linux.
++# Clang compiler mode, forced on macOS and FreeBSD (excluding PowerPC), optional on Linux.
  clang_mode = getBoolOption("clang_mode", False)
--if macosx_target or "freebsd" in sys.platform:
-+if macosx_target or ("freebsd" in sys.platform and platform.machine() != "powerpc"):
+ if macosx_target or "freebsd" in sys.platform:
++if macosx_target or ("freebsd" in sys.platform and os.uname()[4] != "powerpc"):
      clang_mode = True
  
  # MinGW compiler mode, optional and interesting to Windows only.
-@@ -746,11 +746,11 @@ if gcc_mode and "clang" not in the_cc_na
+@@ -751,11 +752,11 @@ if gcc_mode and "clang" not in the_cc_na
      # binary if it's not high enough. This is esp. useful under Debian which
      # allows all compiler to exist next to each other and where g++ might not be
      # good enough, but g++-4.5 would be.
@@ -21,8 +21,8 @@
          sys.exit(
              """\
  The gcc compiler %s (version %s) doesn't have the sufficient \
--version (>= 4.4).""" % (the_compiler, gcc_version)
-+version (>= 4.2.1).""" % (the_compiler, gcc_version)
+-version (>= 4.4)."""
++version (>= 4.2.1)."""
+             % (the_compiler, gcc_version)
          )
  
-     # CondaCC or newer.
