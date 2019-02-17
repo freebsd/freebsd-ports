@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Term/TablePrint.pm
+%%SITE_PERL%%/Term/TablePrint/ProgressBar.pm
+%%PERL5_MAN3%%/Term::TablePrint.3.gz
