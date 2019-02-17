@@ -3,3 +3,5 @@ SHA256 (ffmpeg-4.1.1.tar.xz) = 373749824dfd334d84e55dff406729edfd1606575ee44dd48
 SIZE (ffmpeg-4.1.1.tar.xz) = 8893404
 SHA256 (0001-Add-ability-for-ffmpeg-to-run-svt-av1.patch) = ffe17691750a952591090e6f7396a6063a0c48907bc4023db15e088a7673528a
 SIZE (0001-Add-ability-for-ffmpeg-to-run-svt-av1.patch) = 20364
+SHA256 (0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch) = c8e8652924887eadbe3455af89f213a89b119d8e172fdad5a12d53fea64d1391
+SIZE (0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch) = 18613
