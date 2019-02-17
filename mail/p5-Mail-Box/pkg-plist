@@ -1,7 +1,6 @@
 %%SITE_PERL%%/Mail/Box-Cookbook.pod
 %%SITE_PERL%%/Mail/Box-Index.pod
 %%SITE_PERL%%/Mail/Box-Overview.pod
-%%SITE_PERL%%/Mail/Box-Shorts.pod
 %%SITE_PERL%%/Mail/Box.pm
 %%SITE_PERL%%/Mail/Box.pod
 %%SITE_PERL%%/Mail/Box/Collection.pm
@@ -92,7 +91,6 @@
 %%PERL5_MAN3%%/Mail::Box-Cookbook.3.gz
 %%PERL5_MAN3%%/Mail::Box-Index.3.gz
 %%PERL5_MAN3%%/Mail::Box-Overview.3.gz
-%%PERL5_MAN3%%/Mail::Box-Shorts.3.gz
 %%PERL5_MAN3%%/Mail::Box.3.gz
 %%PERL5_MAN3%%/Mail::Box::Collection.3.gz
 %%PERL5_MAN3%%/Mail::Box::Dir.3.gz
