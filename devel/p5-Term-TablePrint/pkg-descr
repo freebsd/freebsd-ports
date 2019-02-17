@@ -1,0 +1,18 @@
+Term::TablePrint shows a table and lets the user interactively browse it. It
+provides a cursor which highlights the row on which it is located. The user can
+scroll through the table with the different cursor keys.
+
+If the table has more rows than the terminal, the table is divided up on as many
+pages as needed automatically. If the cursor reaches the end of a page, the next
+page is shown automatically until the last page is reached. Also if the cursor
+reaches the topmost line, the previous page is shown automatically if it is not
+already the first one.
+
+If the terminal is too narrow to print the table, the columns are adjusted to
+the available width automatically.
+
+If the option table_expand is enabled and a row is selected with Return, each
+column of that row is output in its own line preceded by the column name. This
+might be useful if the columns were cut due to the too low terminal width.
+
+WWW: https://metacpan.org/release/Term-TablePrint

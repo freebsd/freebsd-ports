@@ -3504,6 +3504,7 @@
     SUBDIR += p5-Term-Size-Perl
     SUBDIR += p5-Term-Sk
     SUBDIR += p5-Term-Table
+    SUBDIR += p5-Term-TablePrint
     SUBDIR += p5-Term-Title
     SUBDIR += p5-Term-UI
     SUBDIR += p5-Term-VT102
