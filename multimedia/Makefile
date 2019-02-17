@@ -401,6 +401,7 @@
     SUBDIR += subtitleripper
     SUBDIR += subtools
     SUBDIR += svt-av1
+    SUBDIR += svt-vp9
     SUBDIR += swfdec-gnome
     SUBDIR += syncplay
     SUBDIR += szap-s2
