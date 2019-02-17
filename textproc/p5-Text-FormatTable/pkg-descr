@@ -1,8 +1,6 @@
 Text::FormatTable renders simple tables as text. You pass to the constructor
-a table format specification similar to LaTeX (e.g. "r|l|l") and you call
-methods to fill the table data and insert rules. After the data is filled,
-you render the table as text.
+(new) a table format specification similar to LaTeX (e.g. r|l|5l|R|20L) and you
+call methods to fill the table data and insert rules. After the data is filled,
+you call the render method and the table gets formatted as text.
 
 WWW: https://metacpan.org/release/Text-FormatTable
-
-Seamus Venasse <svenasse@polaris.ca>
