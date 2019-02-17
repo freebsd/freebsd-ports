@@ -2,6 +2,7 @@
 
 PORTNAME=	svt-av1
 PORTVERSION=	s20180215
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	requires AVX support and uses x86-64 assembly
+ONLY_FOR_ARCHS_REASON=	uses x86-64 assembly
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
@@ -26,9 +27,24 @@ GH_PROJECT=	SVT-AV1
 GH_TAGNAME=	37a5b96
 
 post-patch:
+# Default CFLAGS are already set by USES=cmake
+	@${REINPLACE_CMD} -i .flags -E -e 's/ -mavx//' \
+		-e 's/CMAKE_C_FLAGS "/&$${CMAKE_C_FLAGS} /' \
+		-e '/C_FLAGS_(RELEASE|DEBUG)/d' \
+		${WRKSRC}/CMakeLists.txt
+# Avoid lang/gcc* dependency
+	@${REINPLACE_CMD} -i .gcc -e 's/gcc-//' \
+		-e '/CMAKE_C/{ s/STREQUAL/MATCHES/; s/"GNU/&|Clang/; }' \
+		${WRKSRC}/CMakeLists.txt \
+		${WRKSRC}/Source/Lib/*/CMakeLists.txt
 # Avoid platform whitelists for generic non-Windows code
-	@${REINPLACE_CMD} 's/Linux/${OPSYS}/' ${WRKSRC}/CMakeLists.txt
-	@${GREP} -Flr '__linux__' ${WRKSRC} | ${XARGS} \
-		${REINPLACE_CMD} -i .opsys 's/__linux__/__${OPSYS}__/'
+	@${REINPLACE_CMD} -i .opsys 's/Linux/${OPSYS}/' \
+		${WRKSRC}/CMakeLists.txt \
+		${WRKSRC}/Source/Lib/*/CMakeLists.txt
+	@${GREP} -Flr '__linux' ${WRKSRC} | ${XARGS} \
+		${REINPLACE_CMD} -i .opsys 's/__linux/__${OPSYS}/'
+# Avoid -msse4.1 for (unused) function not under Source/Lib/ASM_SSE4_1/
+	@${REINPLACE_CMD} -e '/_sse4_1/,/}/d; /smmintrin\.h/d' \
+		${WRKSRC}/Source/Lib/Codec/EbInterPrediction.c
 
 .include <bsd.port.mk>
