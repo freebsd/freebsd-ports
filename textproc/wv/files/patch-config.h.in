@@ -1,6 +1,6 @@
---- config.h.in.orig	Sat Sep 13 09:37:53 2003
-+++ config.h.in	Sun Sep 14 18:13:35 2003
-@@ -38,9 +38,6 @@
+--- config.h.in.orig	2010-10-09 21:27:24 UTC
++++ config.h.in
+@@ -35,9 +35,6 @@
  /* Define if you have libxml2 */
  #undef HAVE_LIBXML2
  
