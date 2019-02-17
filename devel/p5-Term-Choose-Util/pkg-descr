@@ -1,0 +1,4 @@
+Term::Choose::Util provides some CLI related functions required by
+App::DBBrowser, App::YTDL and Term::TablePrint.
+
+WWW: https://metacpan.org/release/Term-Choose-Util
