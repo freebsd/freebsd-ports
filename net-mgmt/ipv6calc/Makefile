@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipv6calc
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 
