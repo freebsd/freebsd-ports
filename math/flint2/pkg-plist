@@ -47,6 +47,7 @@ include/flint/fq_mat.h
 include/flint/fq_mat_templates.h
 include/flint/fq_nmod.h
 include/flint/fq_nmod_mat.h
+include/flint/fq_nmod_mpoly.h
 include/flint/fq_nmod_poly.h
 include/flint/fq_nmod_poly_factor.h
 include/flint/fq_nmod_vec.h
@@ -96,5 +97,6 @@ include/flint/qadic.h
 include/flint/qadicxx.h
 include/flint/qsieve.h
 include/flint/templates.h
+include/flint/thread_pool.h
 include/flint/ulong_extras.h
 lib/libflint.so

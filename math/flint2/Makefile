@@ -1,12 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	flint2
-DISTVERSION=	g20180323
-PORTREVISION=	1
+DISTVERSION=	g20190210
 CATEGORIES=	math
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	95c58b723a9463c27d35e182dfcba6d347eca624.patch:-p1 # cmake fixes: https://github.com/wbhart/flint2/pull/459
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast library for number theory
@@ -28,7 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 USE_GITHUB=	yes
 GH_ACCOUNT=	wbhart
-GH_TAGNAME=	83008bd
+GH_TAGNAME=	2baa9bc
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
