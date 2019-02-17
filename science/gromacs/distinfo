@@ -1,3 +1,3 @@
-TIMESTAMP = 1548121616
-SHA256 (gromacs-2019.tar.gz) = c5b281a5f0b5b4eeb1f4c7d4dc72f96985b566561ca28acc9c7c16f6ee110d0b
-SIZE (gromacs-2019.tar.gz) = 33428725
+TIMESTAMP = 1550370018
+SHA256 (gromacs-2019.1.tar.gz) = b2c37ed2fcd0e64c4efcabdc8ee581143986527192e6e647a197c76d9c4583ec
+SIZE (gromacs-2019.1.tar.gz) = 33435278
