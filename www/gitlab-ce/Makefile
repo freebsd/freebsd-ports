@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	11.7.5
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -185,7 +186,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-vmstat>=2.3.0:sysutils/rubygem-vmstat \
 	rubygem-sys-filesystem>=1.1.6:sysutils/rubygem-sys-filesystem \
 	rubygem-net-ssh>=5.0:security/rubygem-net-ssh \
-	rubygem-sshkey>=1.9.0:security/rubygem-sshkey \
+	rubygem-sshkey1>=1.9.0:security/rubygem-sshkey1 \
 	rubygem-ed25519>=1.2:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
 	rubygem-gitaly-proto>=1.5.0:net/rubygem-gitaly-proto \
