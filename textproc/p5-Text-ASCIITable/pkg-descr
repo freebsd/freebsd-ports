@@ -1,5 +1,5 @@
-Pretty nifty if you want to output dynamic text to your console or
-other fixed-size-font displays, and at the same time it will display
-it in a nice human-readable, or "cool" way.
+Pretty nifty if you want to output dynamic text to your console or other
+fixed-size-font displays, and at the same time it will display it in a nice
+human-readable, or "cool" way.
 
 WWW: https://metacpan.org/release/Text-ASCIITable
