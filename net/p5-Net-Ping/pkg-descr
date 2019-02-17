@@ -1,0 +1,10 @@
+Net::Ping contains methods to test the reachability of remote hosts on a
+network. A ping object is first created with optional parameters, a variable
+number of hosts may be pinged multiple times and then the connection is closed.
+
+You may choose one of six different protocols to use for the ping. The "tcp"
+protocol is the default. Note that a live remote host may still fail to be
+pingable by one or more of these protocols. For example, www.microsoft.com is
+generally alive but not "icmp" pingable.
+
+WWW: https://metacpan.org/release/Net-Ping
