@@ -3,7 +3,7 @@
 
 PORTNAME=	brotli
 PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,15 +17,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		compiler:c++0x python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
-PLIST_FILES=	bin/brotli
-
 GH_ACCOUNT=	google
 USE_GITHUB=	yes
 
 SHEBANG_FILES=	python/bro.py
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/python/bro.py ${STAGEDIR}${PREFIX}/bin/brotli
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_brotli.so
 
 .include <bsd.port.mk>
