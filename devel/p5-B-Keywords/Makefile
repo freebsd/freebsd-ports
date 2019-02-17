@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	B-Keywords
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,9 @@ COMMENT=	Lists of reserved barewords and symbol names
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
