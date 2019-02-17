@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pbseqan
-DISTVERSION=	g20171002
+DISTVERSION=	g20171011
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -13,13 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 GH_PROJECT=	seqan
-GH_TAGNAME=	d01138731be5d54ef4948053493408075f19e0b1
+GH_TAGNAME=	21d95d737d8decb5cc3693b9065d81e831e7f57d
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/PacBio
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/PacBio
 	cd ${WRKSRC}/include/seqan && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/PacBio/seqan
 
