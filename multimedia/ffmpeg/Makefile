@@ -414,10 +414,11 @@ SVTAV1_LIB_DEPENDS=	libSvtAv1Enc.so:multimedia/svt-av1
 SVTAV1_CONFIGURE_ON=	--enable-libsvtav1
 SVTAV1_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-AV1/raw/37a5b96/ffmpeg_plugin/:svtav1
 SVTAV1_PATCHFILES=	0001-Add-ability-for-ffmpeg-to-run-svt-av1.patch:-p1:svtav1
-SVTAV1_PREVENTS=	SVTVP9
-SVTAV1_PREVENTS_MSG=	Both vendor patches cannot be applied at the same time
 .if make(makesum)
 .MAKEFLAGS:		WITH+=SVTAV1
+.else
+SVTAV1_PREVENTS=	SVTVP9
+SVTAV1_PREVENTS_MSG=	Only one SVT vendor patch can be applied at the same time
 .endif
 
 # svt-vp9
@@ -425,10 +426,11 @@ SVTVP9_LIB_DEPENDS=	libSvtVp9Enc.so:multimedia/svt-vp9
 SVTVP9_CONFIGURE_ON=	--enable-libsvtvp9
 SVTVP9_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-VP9/raw/2437369/ffmpeg_plugin/:svtvp9
 SVTVP9_PATCHFILES=	0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch:-p1:svtvp9
-SVTVP9_PREVENTS=	SVTAV1
-SVTVP9_PREVENTS_MSG=	${SVTAV1_PREVENTS_MSG}
 .if make(makesum)
 .MAKEFLAGS:		WITH+=SVTVP9
+.else
+SVTVP9_PREVENTS=	SVTAV1
+SVTVP9_PREVENTS_MSG=	${SVTAV1_PREVENTS_MSG}
 .endif
 
 # tensorflow
