@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	YAML-LibYAML
-DISTVERSION=	0.72
+DISTVERSION=	0.76
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	markun@onohara.to
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl YAML Serialization using XS and libyaml
 
 LICENSE=	ART10 GPLv1+
