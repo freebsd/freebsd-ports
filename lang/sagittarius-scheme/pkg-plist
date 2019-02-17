@@ -328,6 +328,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/net/server/monitor.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/packrat.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/peg.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/peg/chars.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/peg/derived.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/peg/primitives.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/pp.scm
@@ -389,6 +390,10 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/tls/types.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/totp.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/uri.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/uri-template.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/uri-template/conditions.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/uri-template/expander.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/uri-template/parser.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/uuid.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/websocket.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/websocket/conditions.scm
@@ -715,9 +720,16 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/html-lite.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/gap-buffer.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/compare.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/convert.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/jmespath.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/jmespath/compiler.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/jmespath/conditions.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/jmespath/parser.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/object-builder.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/parse.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/parser.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/patch.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/pointer.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/validators.scm
@@ -779,6 +791,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/thread-pool.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/deque.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/file.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/flexible-vector.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/hashtables.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/heap.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/list.scm
@@ -791,6 +804,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/uri.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/uri/http.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/uri/https.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/vector.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/www/cgi.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/www/fastcgi.scm
 %%DATADIR%%/%%PORTVERSION%%/template.c
