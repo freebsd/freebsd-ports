@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pegex
-PORTVERSION=	0.66
+PORTVERSION=	0.70
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:INGY
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-JSON-XS>=0:converters/p5-JSON-XS \
-		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML
+		p5-YAML-LibYAML>=0.74:textproc/p5-YAML-LibYAML
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
