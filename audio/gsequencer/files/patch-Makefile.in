@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2019-02-17 01:56:10 UTC
++++ Makefile.in
+@@ -5957,7 +5957,7 @@ nobase_include_HEADERS = $(libags_la_HEA
+ 
+ # doc
+ # docdir = $(datadir)/doc/gsequencer
+-doc_DATA = README ags_example.xml
++#doc_DATA = README ags_example.xml
+ 
+ # documentation
+ manpages = \
+@@ -23930,7 +23930,7 @@ install-data-local:
+ 	install -c -p -m 644 $(top_srcdir)/application-x-gsequencer.xml $(DESTDIR)/$(datadir)/mime/packages/gsequencer.xml
+ 	install -c -p -m 644 $(top_srcdir)/gsequencer.appdata.xml $(DESTDIR)/$(datadir)/metainfo/
+ 	mkdir -p $(DESTDIR)/$(docdir)/
+-	gzip -9 -c $(top_srcdir)/ChangeLog > $(DESTDIR)/$(docdir)/changelog.gz
++	#gzip -9 -c $(top_srcdir)/ChangeLog > $(DESTDIR)/$(docdir)/changelog.gz
+ 
+ fix-local-html: html
+ 	find $(top_srcdir)/docs/reference/libags/libags-html -name "*.html" -type f -exec sed -i 's/\.\.\/gobject/\/usr\/share\/doc\/libglib2.0-doc\/gobject/g' {} \;

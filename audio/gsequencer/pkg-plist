@@ -423,9 +423,9 @@ share/icons/hicolor/48x48/apps/gsequencer.png
 share/icons/hicolor/64x64/apps/gsequencer.png
 share/metainfo/gsequencer.appdata.xml
 share/mime/packages/gsequencer.xml
-share/xml/gsequencer/schema/dtd/2.1.53/ags_file.dtd
-share/xml/gsequencer/schema/dtd/2.1.53/ags_midi_file.dtd
-share/xml/gsequencer/schema/dtd/2.1.53/ags_osc_file.dtd
-share/xml/gsequencer/schema/dtd/2.1.53/ags_simple_file.dtd
+share/xml/gsequencer/schema/dtd/%%PORTVERSION%%/ags_file.dtd
+share/xml/gsequencer/schema/dtd/%%PORTVERSION%%/ags_midi_file.dtd
+share/xml/gsequencer/schema/dtd/%%PORTVERSION%%/ags_osc_file.dtd
+share/xml/gsequencer/schema/dtd/%%PORTVERSION%%/ags_simple_file.dtd
 share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags-simple.xsl
 share/xml/gsequencer/stylesheet/ags-xsl/midi-xml/ags.xsl
