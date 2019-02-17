@@ -1,5 +1,4 @@
-Text::TabularDisplay simplifies displaying textual data in a table.
-The output is identical to the columnar display of query results
-in the mysql text monitor.
+Text::TabularDisplay simplifies displaying textual data in a table. The output
+is identical to the columnar display of query results in the mysql text monitor.
 
 WWW: https://metacpan.org/release/Text-TabularDisplay
