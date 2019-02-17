@@ -1,3 +1,4 @@
+@comment %%WWWDIR%%/.babelrc.js
 %%WWWDIR%%/AUTHORS.md
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/README.md
@@ -13,6 +14,8 @@
 %%WWWDIR%%/l10n/.gitkeep
 %%WWWDIR%%/l10n/ast.js
 %%WWWDIR%%/l10n/ast.json
+%%WWWDIR%%/l10n/bg.js
+%%WWWDIR%%/l10n/bg.json
 %%WWWDIR%%/l10n/ca.js
 %%WWWDIR%%/l10n/ca.json
 %%WWWDIR%%/l10n/cs.js
@@ -219,32 +222,6 @@
 %%WWWDIR%%/vendor/christian-riesen/otp/tests/GoogleAuthenticatorTest.php
 %%WWWDIR%%/vendor/christian-riesen/otp/tests/OtpTest.php
 %%WWWDIR%%/vendor/christian-riesen/otp/tests/bootstrap.php
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/HEAD
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/ORIG_HEAD
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/config
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/description
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/hooks/applypatch-msg.sample
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/hooks/commit-msg.sample
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/hooks/fsmonitor-watchman.sample
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/hooks/post-update.sample
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/hooks/pre-applypatch.sample
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/hooks/pre-commit.sample
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/hooks/pre-push.sample
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/hooks/pre-rebase.sample
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/hooks/pre-receive.sample
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/hooks/prepare-commit-msg.sample
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/hooks/update.sample
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/index
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/info/exclude
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/info/refs
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/logs/HEAD
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/logs/refs/heads/master
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/logs/refs/remotes/origin/HEAD
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/objects/info/packs
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/packed-refs
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/refs/heads/master
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/refs/remotes/origin/HEAD
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.gitignore
 %%WWWDIR%%/vendor/christophwurst/nextcloud/.travis.yml
 %%WWWDIR%%/vendor/christophwurst/nextcloud/OCP/API.php
 %%WWWDIR%%/vendor/christophwurst/nextcloud/OCP/Accounts/IAccount.php
