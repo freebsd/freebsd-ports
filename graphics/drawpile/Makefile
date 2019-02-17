@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Drawpile
-DISTVERSION=	2.0.11
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libmicrohttpd.so:www/libmicrohttpd \
 		libminiupnpc.so:net/miniupnpc \
-		libsodium.so:security/libsodium
+		libsodium.so:security/libsodium \
+		libvpx.so:multimedia/libvpx
 
 USES=		cmake desktop-file-utils kde:5 pkgconfig qt:5 shared-mime-info
 USE_GITHUB=	yes
@@ -34,9 +34,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/desktop/drawpile-${SZ}x${SZ}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}/mimetypes/application-x-drawpile-recording.png
 	${INSTALL_DATA} ${WRKSRC}/desktop/drawpile-${SZ}x${SZ}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}/mimetypes/gnome-mime-application-x-drawpile-recording.png
 .endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/mimetypes
+	${GZIP_CMD} ${GZIP} < ${WRKSRC}/desktop/drawpile.svg > ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/mimetypes/drawpile.svgz
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
 	${INSTALL_DATA} ${WRKSRC}/desktop/x-drawpile.xml ${STAGEDIR}${PREFIX}/share/mime/packages
-	${INSTALL_DATA} ${WRKSRC}/desktop/drawpile.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/desktop/net.drawpile.drawpile.desktop ${STAGEDIR}${PREFIX}/share/applications
 	@${RM} ${STAGEDIR}${DOCSDIR}/COPYING
 
 .include <bsd.port.mk>

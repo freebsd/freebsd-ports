@@ -2,8 +2,7 @@ bin/drawpile
 bin/drawpile-%%PORTVERSION%%
 bin/drawpile-srv
 man/man1/drawpile-srv.1.gz
-share/appdata/drawpile.appdata.xml
-share/applications/drawpile.desktop
+share/applications/net.drawpile.drawpile.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/logins.md
@@ -97,6 +96,7 @@ share/drawpile/drawpile/theme/dark/transform-rotate.svg
 share/drawpile/drawpile/theme/dark/zoom-in.svg
 share/drawpile/drawpile/theme/dark/zoom-original.svg
 share/drawpile/drawpile/theme/dark/zoom-out.svg
+share/drawpile/drawpile/theme/dark/zoom-select.svg
 share/drawpile/drawpile/theme/icons.txt
 share/drawpile/drawpile/theme/light/application-exit.svg
 share/drawpile/drawpile/theme/light/application-menu.svg
@@ -165,6 +165,7 @@ share/drawpile/drawpile/theme/light/transform-rotate.svg
 share/drawpile/drawpile/theme/light/zoom-in.svg
 share/drawpile/drawpile/theme/light/zoom-original.svg
 share/drawpile/drawpile/theme/light/zoom-out.svg
+share/drawpile/drawpile/theme/light/zoom-select.svg
 share/icons/hicolor/128x128/apps/drawpile.png
 share/icons/hicolor/128x128/mimetypes/application-x-drawpile-recording.png
 share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-drawpile-recording.png
@@ -180,4 +181,6 @@ share/icons/hicolor/32x32/mimetypes/gnome-mime-application-x-drawpile-recording.
 share/icons/hicolor/64x64/apps/drawpile.png
 share/icons/hicolor/64x64/mimetypes/application-x-drawpile-recording.png
 share/icons/hicolor/64x64/mimetypes/gnome-mime-application-x-drawpile-recording.png
+share/icons/hicolor/scalable/mimetypes/drawpile.svgz
+share/metainfo/net.drawpile.drawpile.appdata.xml
 share/mime/packages/x-drawpile.xml
