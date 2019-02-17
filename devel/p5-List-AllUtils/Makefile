@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	List-AllUtils
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,12 +13,13 @@ LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-List-SomeUtils>=0.50:devel/p5-List-SomeUtils \
-		p5-List-UtilsBy>=0.10:devel/p5-List-UtilsBy \
+RUN_DEPENDS=	p5-List-SomeUtils>=0.56:devel/p5-List-SomeUtils \
+		p5-List-UtilsBy>=0.11:devel/p5-List-UtilsBy \
 		p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
