@@ -1,0 +1,5 @@
+Term::Choose supports to choose interactively from a list of items. It provides
+a functional interface ("SUBROUTINES") and an object-oriented interface
+("METHODS").
+
+WWW: https://metacpan.org/release/Term-Choose
