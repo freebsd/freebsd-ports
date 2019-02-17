@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sshkey
-PORTVERSION=	1.9.0
+PORTVERSION=	2.0.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,9 @@ COMMENT=	Generate private/public SSH keypairs using pure Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
