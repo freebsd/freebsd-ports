@@ -30,6 +30,7 @@
 %%WWWDIR%%/img/group.svg
 %%WWWDIR%%/img/phone.svg
 %%WWWDIR%%/img/social.svg
+%%WWWDIR%%/img/up.svg
 %%WWWDIR%%/js/chunks/0.js
 %%WWWDIR%%/js/chunks/0.js.map
 %%WWWDIR%%/js/chunks/1.js
@@ -88,6 +89,12 @@
 %%WWWDIR%%/js/chunks/122.js.map
 %%WWWDIR%%/js/chunks/123.js
 %%WWWDIR%%/js/chunks/123.js.map
+%%WWWDIR%%/js/chunks/124.js
+%%WWWDIR%%/js/chunks/124.js.map
+%%WWWDIR%%/js/chunks/125.js
+%%WWWDIR%%/js/chunks/125.js.map
+%%WWWDIR%%/js/chunks/126.js
+%%WWWDIR%%/js/chunks/126.js.map
 %%WWWDIR%%/js/chunks/13.js
 %%WWWDIR%%/js/chunks/13.js.map
 %%WWWDIR%%/js/chunks/14.js
