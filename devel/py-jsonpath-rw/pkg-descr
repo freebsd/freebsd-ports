@@ -1,0 +1,8 @@
+This library provides a robust and significantly extended implementation of
+JSONPath for Python.
+
+This library differs from other JSONPath implementations in that it is a full
+language implementation, meaning the JSONPath expressions are first class
+objects, easy to analyze, transform, parse, print, and extend.
+
+WWW: https://github.com/kennknowles/python-jsonpath-rw
