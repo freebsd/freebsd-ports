@@ -357,6 +357,7 @@
     SUBDIR += cons-test
     SUBDIR += containers
     SUBDIR += cook
+    SUBDIR += corrade
     SUBDIR += courier-unicode
     SUBDIR += coursier
     SUBDIR += covtool

@@ -1,0 +1,15 @@
+Corrade is a multiplatform utility library written in C++11/C++14.
+It's used as a base for the Magnum graphics engine, among other things.
+
+Features:
+* Low-level utilities to bridge platform differences when accessing OS
+  functionality, filesystem, console and environment
+* Lightweight container implementations, complementing STL features with focus
+  on compilation speed, ease of use and performance
+* Test framework emphasizing flexibility, extensibility, minimal use of macros
+  and clarity of diagnostic output
+* Plugin management library with static and dynamic plugins, dependency handling
+  and hot code reload
+* Signal/slot connection library with full type safety
+
+WWW: https://magnum.graphics/corrade/
