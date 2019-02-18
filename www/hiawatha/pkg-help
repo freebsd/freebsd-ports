@@ -11,6 +11,11 @@ Install cgi-wrapper(1), which can be used to run certain CGI programs
 with a different user than the webserver's user.  To function
 properly, the CGI wrapper binary needs to have the setuid bit set.
 
+LEFH
+Install the 'lefh' (Let's Encrypt For Hiawatha) tool to help in
+obtaining and maintaining Let's Encrypt certificates.  It needs PHP
+and also implies having MBEDTLS enabled.
+
 LOADCHECK
 Enable experimental support for MaxServerLoad.  When the host has
 a load higher than that value, Hiawatha will drop incoming connections.
