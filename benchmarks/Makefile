@@ -30,6 +30,7 @@
     SUBDIR += hs-criterion
     SUBDIR += hs-criterion-measurement
     SUBDIR += httperf
+    SUBDIR += hyperfine
     SUBDIR += imb
     SUBDIR += interbench
     SUBDIR += iorate
