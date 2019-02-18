@@ -717,6 +717,7 @@
     SUBDIR += py-gmpy
     SUBDIR += py-gmpy2
     SUBDIR += py-gnuplot
+    SUBDIR += py-grandalf
     SUBDIR += py-graphillion
     SUBDIR += py-igakit
     SUBDIR += py-igraph
