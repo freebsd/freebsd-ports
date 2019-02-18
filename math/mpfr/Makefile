@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mpfr
-PORTVERSION=	4.0.1
-PORTREVISION=	2
+PORTVERSION=	4.0.2
 CATEGORIES=	math devel
-MASTER_SITES=	https://www.mpfr.org/mpfr-current/ \
+MASTER_SITES=	https://www.mpfr.org/mpfr-${PORTVERSION}/ \
 		GNU
 DIST_SUBDIR=	${DISTNAME}
 
@@ -20,8 +19,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-PATCHLEVEL=	13
-PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
+#PATCHLEVEL=	13
+#PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
 
 USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
