@@ -1,0 +1,5 @@
+scatterplot3d: 3D Scatter Plot.
+
+Plots a three dimensional (3D) point cloud.
+
+WWW: https://cran.r-project.org/package=scatterplot3d
