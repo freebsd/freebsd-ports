@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sddm-freebsd-black-theme
-DISTVERSION=	1.2
-PORTREVISION=	1
+DISTVERSION=	1.3
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://bitbucket.org/rigoletto-freebsd/sddm-freebsd-black-theme/get/
 
@@ -17,7 +16,7 @@ RUN_DEPENDS=	montserrat>=0:x11-fonts/montserrat
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/rigoletto-freebsd-${PORTNAME}-2232270b8a94
+WRKSRC=		${WRKDIR}/rigoletto-freebsd-${PORTNAME}-f874b7e976e4
 PORTDOCS=	AUTHORS CHANGELOG TRADEMARKS
 PLIST_SUB=      THEMEDIR=${THEMEDIR_REL}
 SUB_FILES=	pkg-message
