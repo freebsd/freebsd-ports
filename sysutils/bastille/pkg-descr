@@ -1,0 +1,7 @@
+Bastille is a jail automation framework that allows you to
+quickly create and manage FreeBSD jails.
+
+The project focuses on secure defaults, automation and
+repeatable templates.
+
+WWW: https://bastillebsd.org
