@@ -1,0 +1,14 @@
+Lightweight and modular C++11/C++14 graphics middleware for games and data
+visualization.
+
+Features:
+* UTF-8-aware OS, filesystem and console abstraction
+* versatile vector math library
+* slim C++11 wrapper of Vulkan and OpenGL API families
+* shaders and primitives for fast prototyping
+* algorithms
+* debugging and automatic testing
+* always more than one way to do things
+* plugins
+
+WWW: https://magnum.graphics/
