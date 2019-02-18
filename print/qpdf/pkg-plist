@@ -8,6 +8,7 @@ include/qpdf/Constants.h
 include/qpdf/DLL.h
 include/qpdf/FileInputSource.hh
 include/qpdf/InputSource.hh
+include/qpdf/JSON.hh
 include/qpdf/Pipeline.hh
 include/qpdf/Pl_Buffer.hh
 include/qpdf/Pl_Concatenate.hh
@@ -25,11 +26,16 @@ include/qpdf/QPDFAnnotationObjectHelper.hh
 include/qpdf/QPDFDocumentHelper.hh
 include/qpdf/QPDFExc.hh
 include/qpdf/QPDFFormFieldObjectHelper.hh
+include/qpdf/QPDFNameTreeObjectHelper.hh
+include/qpdf/QPDFNumberTreeObjectHelper.hh
 include/qpdf/QPDFObjGen.hh
 include/qpdf/QPDFObject.hh
 include/qpdf/QPDFObjectHandle.hh
 include/qpdf/QPDFObjectHelper.hh
+include/qpdf/QPDFOutlineDocumentHelper.hh
+include/qpdf/QPDFOutlineObjectHelper.hh
 include/qpdf/QPDFPageDocumentHelper.hh
+include/qpdf/QPDFPageLabelDocumentHelper.hh
 include/qpdf/QPDFPageObjectHelper.hh
 include/qpdf/QPDFSystemError.hh
 include/qpdf/QPDFTokenizer.hh
@@ -42,7 +48,7 @@ include/qpdf/Types.h
 include/qpdf/qpdf-c.h
 lib/libqpdf.so
 lib/libqpdf.so.21
-lib/libqpdf.so.21.2.1
+lib/libqpdf.so.21.4.0
 libdata/pkgconfig/libqpdf.pc
 man/man1/fix-qdf.1.gz
 man/man1/qpdf.1.gz
