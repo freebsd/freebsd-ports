@@ -591,6 +591,7 @@
     SUBDIR += ocrad
     SUBDIR += ocre
     SUBDIR += ogre3d
+    SUBDIR += oidn
     SUBDIR += okular
     SUBDIR += open3d
     SUBDIR += opencollada

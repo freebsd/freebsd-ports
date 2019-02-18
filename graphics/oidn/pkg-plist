@@ -1,0 +1,13 @@
+bin/denoise
+include/OpenImageDenoise/oidn.h
+include/OpenImageDenoise/oidn.hpp
+include/OpenImageDenoise/version.h
+lib/cmake/OpenImageDenoise/OpenImageDenoiseConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/OpenImageDenoise/OpenImageDenoiseConfig.cmake
+lib/cmake/OpenImageDenoise/OpenImageDenoiseConfigVersion.cmake
+lib/libOpenImageDenoise.so
+lib/libOpenImageDenoise.so.0
+lib/libOpenImageDenoise.so.0.8.1
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/readme.pdf
