@@ -3,10 +3,11 @@
 
 PORTNAME=	opensonic
 PORTVERSION=	0.1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/opensnc/Open%20Sonic/${PORTVERSION}
 DISTNAME=	opensnc-src-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Game based on the "Sonic the Hedgehog" universe
@@ -25,10 +26,15 @@ DESKTOP_ENTRIES="${PORTNAME}" \
 		false
 
 USES=		cmake
-CONFIGURE_ENV+=	_ALLEGRO_LIBS="`allegro-config --libs`" \
+USE_GITHUB=	nodefault
+GH_TUPLE=	t6:loggcompat:4.4.2:loggcompat
+
+CONFIGURE_ENV=	_ALLEGRO_LIBS="`allegro-config --libs`" \
 		_ALLEGRO_VERSION="`allegro-config --version`"
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC_loggcompat}
+
+SUB_FILES=	opensonic
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin,${PREFIX}/bin,g' \
@@ -37,6 +43,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA}	${WRKSRC}/icon.png ${STAGEDIR}${PREFIX}/share/pixmaps/opensonic.png
-	${LN} -s ${DATADIR}/opensonic ${STAGEDIR}${PREFIX}/bin/opensonic
+	${INSTALL_SCRIPT} ${WRKDIR}/opensonic ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
