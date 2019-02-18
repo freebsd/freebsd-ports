@@ -25,7 +25,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils \
 		kde:5 mysql:client,embedded pkgconfig qt:5 shebangfix ssl
 
 USE_QT=		core concurrent declarative dbus gui location network phonon4 \
-		quickcontrols2 script scripttools sql svg webchannel webengine \
+		quickcontrols2 script scripttools sql svg webchannel \
 		webkit widgets xml \
 		buildtools_build qmake_build
 
@@ -49,8 +49,10 @@ CMAKE_OFF=	WITH_FFmpeg
 
 BROKEN_sparc64=	does not build (GCC-related error)
 
-OPTIONS_DEFINE=		IPOD MP3TUNES MTP
+OPTIONS_DEFINE=		IPOD MP3TUNES MTP QTWEBENGINE
 OPTIONS_DEFAULT=	IPOD MP3TUNES MTP
+OPTIONS_DEFAULT_amd64=	QTWEBENGINE
+OPTIONS_DEFAULT_i386=	QTWEBENGINE
 OPTIONS_SUB=		yes
 
 IPOD_DESC=		Apple iPod support
@@ -72,6 +74,10 @@ MP3TUNES_CMAKE_BOOL_OFF=	WITH_Libgcrypt
 
 MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 MTP_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Mtp
+
+QTWEBENGINE_DESC=	Add dependency on qt5-webengine
+QTWEBENGINE_USE=	qt=webengine
+QTWEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngine=true
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
