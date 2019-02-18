@@ -56,12 +56,12 @@ lib/libampache_account_login.so
 %%QT_QMLDIR%%/org/kde/amarok/qml/AppletHeader.qml
 %%QT_QMLDIR%%/org/kde/amarok/qml/libqml_plugin.so
 %%QT_QMLDIR%%/org/kde/amarok/qml/qmldir
-%%QT_QMLDIR%%/org/kde/amarok/wikipedia/libamarok_context_applet_wikipedia.so
-%%QT_QMLDIR%%/org/kde/amarok/wikipedia/qmldir
+%%QTWEBENGINE%%%%QT_QMLDIR%%/org/kde/amarok/wikipedia/libamarok_context_applet_wikipedia.so
+%%QTWEBENGINE%%%%QT_QMLDIR%%/org/kde/amarok/wikipedia/qmldir
 %%DATADIR%%/data/DefaultPlaylistLayouts.xml
 %%DATADIR%%/data/InfoParserLoading.html
-%%DATADIR%%/data/WikipediaCustomStyle.css
-%%DATADIR%%/data/bullet.gif
+%%QTWEBENGINE%%%%DATADIR%%/data/WikipediaCustomStyle.css
+%%QTWEBENGINE%%%%DATADIR%%/data/bullet.gif
 %%DATADIR%%/data/first_run_jingle.ogg
 %%DATADIR%%/data/hover_info_template.html
 %%DATADIR%%/data/podcast_directory.opml
@@ -433,8 +433,8 @@ share/kpackage/amarok/org.kde.amarok.lyrics/contents.rcc
 share/kpackage/amarok/org.kde.amarok.lyrics/metadata.json
 share/kpackage/amarok/org.kde.amarok.photos/contents.rcc
 share/kpackage/amarok/org.kde.amarok.photos/metadata.json
-share/kpackage/amarok/org.kde.amarok.wikipedia/contents.rcc
-share/kpackage/amarok/org.kde.amarok.wikipedia/metadata.json
+%%QTWEBENGINE%%share/kpackage/amarok/org.kde.amarok.wikipedia/contents.rcc
+%%QTWEBENGINE%%share/kpackage/amarok/org.kde.amarok.wikipedia/metadata.json
 share/kpackage/genericqml/org.kde.amarok.context/contents.rcc
 share/kpackage/genericqml/org.kde.amarok.context/metadata.json
 share/kservices5/ServiceMenus/amarok_append.desktop
