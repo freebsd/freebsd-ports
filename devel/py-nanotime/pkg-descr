@@ -1,0 +1,5 @@
+The nanotime module provides a time object that keeps time as the number of
+nanoseconds since the UNIX epoch. In other words, it is a 64bit UNIX timestamp
+with nanosecond precision.
+
+WWW: https://github.com/jbenet/nanotime/tree/master/python

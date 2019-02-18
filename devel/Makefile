@@ -4810,6 +4810,7 @@
     SUBDIR += py-mypy_extensions
     SUBDIR += py-nagioscheck
     SUBDIR += py-naiveBayesClassifier
+    SUBDIR += py-nanotime
     SUBDIR += py-natsort
     SUBDIR += py-natural
     SUBDIR += py-nbconvert
