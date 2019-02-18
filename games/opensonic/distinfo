@@ -1,2 +1,5 @@
+TIMESTAMP = 1549471447
 SHA256 (opensnc-src-0.1.4.tar.gz) = 3a4c3fa9538ee27c04b5ea848c9ad0a83f335471936d4617a18d3648c42588e9
 SIZE (opensnc-src-0.1.4.tar.gz) = 10525059
+SHA256 (t6-loggcompat-4.4.2_GH0.tar.gz) = 481fe569959eefa92d0babeca27709b2efcf7a815cd5c49596b6c0403db76a4e
+SIZE (t6-loggcompat-4.4.2_GH0.tar.gz) = 3105
