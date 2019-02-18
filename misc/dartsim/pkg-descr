@@ -1,0 +1,11 @@
+DART (Dynamic Animation and Robotics Toolkit) is a collaborative,
+cross-platform, open source library created by the Graphics Lab and Humanoid
+Robotics Lab at Georgia Institute of Technology with ongoing contributions from
+the Personal Robotics Lab at University of Washington and Open Source Robotics
+Foundation. The library provides data structures and algorithms for kinematic
+and dynamic applications in robotics and computer animation. DART is
+distinguished by its accuracy and stability due to its use of generalized
+coordinates to represent articulated rigid body systems and Featherstone's
+Articulated Body Algorithm to compute the dynamics of motion.
+
+WWW: https://dartsim.github.io/
