@@ -12,7 +12,7 @@ COMMENT=	General purpose 3D CAD modeller
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	pyside2-rcc:devel/pyside2-tools \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyside2-tools>0:devel/pyside2-tools@${PY_FLAVOR} \
 		swig3.0:devel/swig30
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
