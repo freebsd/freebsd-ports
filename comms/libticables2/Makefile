@@ -2,6 +2,7 @@
 
 PORTNAME=	libticables2
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.18
 
@@ -23,7 +24,9 @@ NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
-	@${REINPLACE_CMD} 's/libusb >= 0\.1\.[0-9]*/libusb-0.1/' \
+	@${REINPLACE_CMD} -e 's/libusb >= 0\.1\.[0-9]*/libusb-0.1/' \
 		${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's/cuad/cuau/' \
+		${WRKSRC}/src/linux/link_ser.c ${WRKSRC}/src/linux/link_gry.c
 
 .include <bsd.port.mk>
