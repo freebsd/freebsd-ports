@@ -1,0 +1,23 @@
+@sample %%ETCDIR%%/bastille.conf.sample %%ETCDIR%%/bastille.conf
+bin/bastille
+%%DATADIR%%/bootstrap.sh
+%%DATADIR%%/cmd.sh
+%%DATADIR%%/colors.pre.sh
+%%DATADIR%%/console.sh
+%%DATADIR%%/cp.sh
+%%DATADIR%%/create.sh
+%%DATADIR%%/destroy.sh
+%%DATADIR%%/freebsd_dist_fetch.sh
+%%DATADIR%%/htop.sh
+%%DATADIR%%/list.sh
+%%DATADIR%%/pkg.sh
+%%DATADIR%%/restart.sh
+%%DATADIR%%/service.sh
+%%DATADIR%%/start.sh
+%%DATADIR%%/stop.sh
+%%DATADIR%%/sysrc.sh
+%%DATADIR%%/template.sh
+%%DATADIR%%/top.sh
+%%DATADIR%%/update.sh
+%%DATADIR%%/upgrade.sh
+%%DATADIR%%/verify.sh
