@@ -4323,6 +4323,7 @@
     SUBDIR += py-args
     SUBDIR += py-arpeggio
     SUBDIR += py-arrow
+    SUBDIR += py-asciimatics
     SUBDIR += py-asn1crypto
     SUBDIR += py-aspects
     SUBDIR += py-aspyct

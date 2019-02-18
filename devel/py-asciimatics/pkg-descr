@@ -1,0 +1,13 @@
+Asciimatics is a package to help people create full-screen text UIs
+(from interactive forms to ASCII animations) on any platform.
+
+Features:
+* Coloured/styled text - including 256 colour terminals and unicode characters
+  (even CJK languages)
+* Cursor positioning
+* Keyboard input (without blocking or echoing) including unicode support
+* Mouse input (terminal permitting)
+* Detecting and handling when the console resizes
+* Screen scraping
+
+WWW: https://github.com/peterbrittain/asciimatics
