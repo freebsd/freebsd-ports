@@ -5,12 +5,24 @@ bin/ssi-cgi
 @sample %%ETCDIR%%/index.xslt.sample
 @sample %%ETCDIR%%/mimetype.conf.sample
 @sample %%ETCDIR%%/toolkit.conf.sample
+%%LEFH%%lib/hiawatha/letsencrypt/acmev2.php
+%%LEFH%%lib/hiawatha/letsencrypt/config.php
+%%LEFH%%lib/hiawatha/letsencrypt/hiawatha_config.php
+%%LEFH%%lib/hiawatha/letsencrypt/http.php
+%%LEFH%%lib/hiawatha/letsencrypt/https.php
+%%LEFH%%lib/hiawatha/letsencrypt/letsencrypt.conf
+%%LEFH%%lib/hiawatha/letsencrypt/letsencrypt.php
+%%LEFH%%lib/hiawatha/letsencrypt/logfile.php
+%%LEFH%%lib/hiawatha/letsencrypt/openssl.conf
+%%LEFH%%lib/hiawatha/letsencrypt/rsa.php
 %%CGIWRAPPER%%man/man1/cgi-wrapper.1.gz
 man/man1/hiawatha.1.gz
+%%LEFH%%man/man1/lefh.1.gz
 man/man1/ssi-cgi.1.gz
 man/man1/wigwam.1.gz
 %%CGIWRAPPER%%sbin/cgi-wrapper
 sbin/hiawatha
+%%LEFH%%sbin/lefh
 sbin/wigwam
 @sample %%WWWDIR%%/index.html.sample
 @dir /var/log/hiawatha

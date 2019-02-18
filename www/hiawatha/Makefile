@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hiawatha
-PORTVERSION=	10.8.4
+PORTVERSION=	10.9
 CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
@@ -12,21 +12,23 @@ COMMENT=	Advanced and secure webserver for Unix
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:insource compiler:c11
+USES=		cmake:insource compiler:c11 shebangfix
 USE_RC_SUBR=	hiawatha
+SHEBANG_FILES=	extra/letsencrypt/lefh.in
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_LOCALSTATEDIR=/var \
 		-DWEBROOT_DIR=${WWWDIR} \
 		-DWORK_DIR=/var/db/${PORTNAME}
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		CACHE CGIWRAPPER IPV6 LOADCHECK MBEDTLS MONITOR \
+OPTIONS_DEFINE=		CACHE CGIWRAPPER IPV6 LEFH LOADCHECK MBEDTLS MONITOR \
 			RPROXY TOMAHAWK TOOLKIT XSLT
 OPTIONS_DEFAULT=	CACHE CGIWRAPPER MBEDTLS RPROXY TOOLKIT XSLT
 OPTIONS_SUB=		yes
 
 CACHE_DESC=		Caching support
 CGIWRAPPER_DESC=	Install cgi-wrapper(1) (needs setuid bit)
+LEFH_DESC=		Install Let's Encrypt For Hiawatha script
 LOADCHECK_DESC=		Load check support (experimental)
 MONITOR_DESC=		Hiawatha Monitor support
 RPROXY_DESC=		Reverse proxy support
@@ -36,6 +38,8 @@ XSLT_DESC=		XSLT support
 
 CACHE_CMAKE_BOOL=	ENABLE_CACHE
 IPV6_CMAKE_BOOL=	ENABLE_IPV6
+LEFH_IMPLIES=		MBEDTLS
+LEFH_USES=		php:cli
 LOADCHECK_CMAKE_BOOL=	ENABLE_LOADCHECK
 MBEDTLS_CMAKE_BOOL=	ENABLE_TLS USE_SYSTEM_MBEDTLS
 MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
