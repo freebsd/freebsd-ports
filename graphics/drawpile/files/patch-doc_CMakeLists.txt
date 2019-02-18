@@ -1,5 +1,12 @@
---- doc/CMakeLists.txt.orig	2017-06-26 15:54:00 UTC
+--- doc/CMakeLists.txt.orig	2019-02-18 10:23:08 UTC
 +++ doc/CMakeLists.txt
+@@ -1,6 +1,5 @@
+ SET(base_files
+ 	../ChangeLog
+-	../COPYING
+ 	../README.md
+ 	openraster.txt
+ 	textloader.md
 @@ -20,6 +20,6 @@ if (UNIX AND NOT APPLE)
  		)
  	INSTALL (

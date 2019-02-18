@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Drawpile
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,25 +20,13 @@ USES=		cmake desktop-file-utils kde:5 pkgconfig qt:5 shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tl}
 USE_QT=		core gui multimedia network sql svg widgets buildtools_build linguisttools_build qmake_build
-USE_KDE=	archive
+USE_KDE=	archive dnssd
 
 OPTIONS_DEFINE=	DOCS
 
+PORTDOCS=	*
+
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
-post-install:
-.for SZ in 16 32 64 128 256
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}/apps ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}/mimetypes
-	${INSTALL_DATA} ${WRKSRC}/desktop/drawpile-${SZ}x${SZ}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}/apps/drawpile.png
-	${INSTALL_DATA} ${WRKSRC}/desktop/drawpile-${SZ}x${SZ}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}/mimetypes/application-x-drawpile-recording.png
-	${INSTALL_DATA} ${WRKSRC}/desktop/drawpile-${SZ}x${SZ}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}/mimetypes/gnome-mime-application-x-drawpile-recording.png
-.endfor
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/mimetypes
-	${GZIP_CMD} ${GZIP} < ${WRKSRC}/desktop/drawpile.svg > ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/mimetypes/drawpile.svgz
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
-	${INSTALL_DATA} ${WRKSRC}/desktop/x-drawpile.xml ${STAGEDIR}${PREFIX}/share/mime/packages
-	${INSTALL_DATA} ${WRKSRC}/desktop/net.drawpile.drawpile.desktop ${STAGEDIR}${PREFIX}/share/applications
-	@${RM} ${STAGEDIR}${DOCSDIR}/COPYING
 
 .include <bsd.port.mk>
