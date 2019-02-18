@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recursor
-DISTVERSION=	4.1.10
+DISTVERSION=	4.1.11
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -21,8 +21,6 @@ BROKEN_powerpc64=	fails to compile: dnslabeltext.cc: undefined reference to std:
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libboost_context.so:devel/boost-libs \
 		libprotobuf.so:devel/protobuf
-
-CONFLICTS_INSTALL=	powerdns-recursor40
 
 USES=		compiler:c++11-lib cpe gmake localbase:ldflags pkgconfig ssl tar:bzip2
 GNU_CONFIGURE=	YES
