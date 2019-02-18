@@ -1,0 +1,10 @@
+FrF2: Fractional Factorial Designs with 2-Level Factors
+
+Regular and non-regular Fractional Factorial 2-level designs can be 
+created. Furthermore, analysis tools for Fractional Factorial designs 
+with 2-level factors are offered (main effects and interaction plots for 
+all factors simultaneously, cube plot for looking at the simultaneous 
+effects of three factors, full or half normal plot, alias structure in a 
+more readable format than with the built-in function alias).
+
+WWW: https://CRAN.R-project.org/package=FrF2
