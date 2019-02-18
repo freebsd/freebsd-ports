@@ -1,0 +1,9 @@
+U-Boot loader for the SolidRun ClearFog Pro.
+
+Install the u-boot-spl.kwb file onto the boot disk using:
+
+  dd if=u-boot-spl.kwb of=/dev/whatever bs=512 seek=1
+
+The BootROM searches for U-Boot after the first 512 bytes.
+
+WWW: https://www.denx.de/wiki/U-Boot
