@@ -66,6 +66,7 @@
     SUBDIR += dahdi
     SUBDIR += dahdi-kmod
     SUBDIR += dahdi-kmod26
+    SUBDIR += dartsim
     SUBDIR += ddate
     SUBDIR += deco
     SUBDIR += dejagnu
