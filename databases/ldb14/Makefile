@@ -2,7 +2,7 @@
 
 PORTNAME=		ldb
 PORTVERSION=		1.4.4
-PORTREVISION=		0
+PORTREVISION=		1
 PORTEPOCH=		0
 CATEGORIES=		databases
 MASTER_SITES=		SAMBA
@@ -74,16 +74,16 @@ LDB_LIBS=		lib/libldb.so \
 			lib/shared-modules/ldb/rdn_name.so \
 			lib/shared-modules/ldb/paged_searches.so \
 			lib/shared-modules/ldb/paged_results.so \
-			lib/shared-modules/ldb/mdb.so \
 			lib/shared-modules/ldb/ldb.so \
 			lib/shared-modules/ldb/ldap.so \
 			lib/shared-modules/ldb/asq.so \
 			lib/shared-modules/ldb/tdb.so
 
 # Only for 64-bit architectures
-.if ${ARCH} != i386
+.if ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != mips && ${ARCH} != powerpc && ${ARCH} != powerpcspe
 LDB_DEPENDS+=		lmdb>=0.9.16:databases/lmdb
-LDB_LIBS+=		lib/ldb/libldb-mdb-int.so
+LDB_LIBS+=		lib/ldb/libldb-mdb-int.so \
+			lib/shared-modules/ldb/mdb.so
 .endif
 
 PLIST_FILES=		include/ldb_version.h \
