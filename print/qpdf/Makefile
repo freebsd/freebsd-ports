@@ -6,7 +6,7 @@ DISTVERSION=	8.4.0
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Command-line tools for transforming and inspecting PDF documents
 
 LICENSE=	ART20 APACHE20
