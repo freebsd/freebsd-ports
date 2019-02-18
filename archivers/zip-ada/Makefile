@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zip-ada
-PORTVERSION=	52
-PORTREVISION=	1
+DISTVERSION=	55
 CATEGORIES=	archivers
 MASTER_SITES=	SF/unzip-ada/
 DISTNAME=	zipada${PORTVERSION}
@@ -17,33 +16,11 @@ USES=		ada perl5 dos2unix zip
 USE_PERL5=	build
 WRKSRC=		${WRKDIR}/zip-ada
 MAKE_ENV+=	Build_Mode=Fast
-ZTOOLS=		zipada \
-		comp_zip \
-		find_zip \
-		rezip \
-		za_gnat \
-		rz_gnat \
-		bunzip \
-		lz \
-		lzma_dec \
-		lzma_enc \
-		lz77_stats \
-		random_data \
-		several_sizes
-DEMOS=		demo_csv_into_zip \
-		demo_zip \
-		demo_unzip \
-		test_unz_streams \
-		test_chunk \
-		ziptest \
-		zip_with_many_files \
-		test_zip_info_timing \
-		test_stream_performance \
-		test_extract \
-		test_extract_tb \
-		test_lz_scramble \
-		test_llhc \
-		test_lz77
+
+ZTOOLS=		bunzip bwt_dec bwt_enc comp_zip find_zip lzhuf \
+		lzma_dec lzma_enc rezip unzipada zipada
+
+DEMOS=		bwt_demo demo_csv_into_zip demo_unzip demo_zip
 
 OPTIONS_DEFINE=	EXAMPLES
 
