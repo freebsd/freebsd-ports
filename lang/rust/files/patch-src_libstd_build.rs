@@ -1,6 +1,6 @@
---- src/libstd/build.rs.orig	2018-09-03 18:29:12 UTC
+--- src/libstd/build.rs.orig	2019-01-16 09:30:27 UTC
 +++ src/libstd/build.rs
-@@ -94,13 +94,18 @@ fn build_libbacktrace(target: &str) -> Result<(), ()> 
+@@ -92,13 +92,18 @@ fn build_libbacktrace(target: &str) -> Result<(), ()> 
          .out_dir(&native.out_dir)
          .warnings(false)
          .file("../libbacktrace/alloc.c")
@@ -18,5 +18,5 @@
 +        build.file("../libbacktrace/backtrace.c");
 +    }
  
-     if target.contains("darwin") {
-         build.file("../libbacktrace/macho.c");
+     let any_debug = env::var("RUSTC_DEBUGINFO").unwrap_or_default() == "true" ||
+         env::var("RUSTC_DEBUGINFO_LINES").unwrap_or_default() == "true";

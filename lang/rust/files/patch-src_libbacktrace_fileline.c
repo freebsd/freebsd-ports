@@ -1,10 +1,10 @@
 This file is in the public domain.
 
---- src/libbacktrace/fileline.c.orig	2017-06-06 00:42:59 UTC
+--- src/libbacktrace/fileline.c.orig	2019-01-16 09:30:44 UTC
 +++ src/libbacktrace/fileline.c
-@@ -38,8 +38,39 @@ POSSIBILITY OF SUCH DAMAGE.  */
- #include <fcntl.h>
+@@ -39,8 +39,39 @@ POSSIBILITY OF SUCH DAMAGE.  */
  #include <stdlib.h>
+ #include <unistd.h>
  
 +#if defined(__DragonFly__) || defined(__FreeBSD__) || defined(__NetBSD__)
 +#include <sys/sysctl.h>

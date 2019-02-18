@@ -1,6 +1,6 @@
---- src/llvm/utils/llvm-build/llvmbuild/main.py.orig	2018-04-04 08:39:57 UTC
+--- src/llvm/utils/llvm-build/llvmbuild/main.py.orig	2018-12-13 15:33:50 UTC
 +++ src/llvm/utils/llvm-build/llvmbuild/main.py
-@@ -752,6 +752,8 @@ def add_magic_target_components(parser, project, opts)
+@@ -659,6 +659,8 @@ def add_magic_target_components(parser, project, opts)
      # We handle a few special cases of target names here for historical
      # reasons, as these are the names configure currently comes up with.
      native_target_name = { 'x86' : 'X86',
