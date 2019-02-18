@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: digdag
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# digdag_enable (bool):	Set to NO by default.
+#			Set it to YES to enable it.
+# digdag_user:		The user account the digdag daemon runs as.
+#			It uses 'digdag' user by default.
+#			Do not sets it as empty or it will run as root.
+# digdag_conf:		The configuration file digdag uses.    
+#			Default: %%PREFIX%%/etc/digdag.conf
+# digdag_logfile:	The log file digdag uses.
+#			Default: /var/log/digdag/digdag.log
+
+. /etc/rc.subr
+name="digdag"
+rcvar="${name}_enable"
+load_rc_config ${name}
+
+: ${digdag_enable:="NO"}
+: ${digdag_user:="digdag"}
+: ${digdag_conf:="%%PREFIX%%/etc/digdag.conf"}
+: ${digdag_logfile="/var/log/digdag/digdag.log"}
+
+command="/usr/sbin/daemon"
+pidfile=/var/run/digdag/digdag.pid
+procname="%%JAVA%%"
+digdag_flags="-f -p ${pidfile} ${name} server --log ${digdag_logfile} --config ${digdag_conf}"
+
+run_rc_command "$1"
