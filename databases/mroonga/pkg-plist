@@ -228,6 +228,7 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/source/tutorial/installation_check.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/tutorial/mode.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/tutorial/storage.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorial/tokenizer-list.inc
 %%PORTDOCS%%%%DOCSDIR%%/source/tutorial/wrapper.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/upgrade.rst
 %%DATADIR%%/install.sql
