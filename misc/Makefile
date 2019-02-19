@@ -29,6 +29,7 @@
     SUBDIR += birthday
     SUBDIR += bogosort
     SUBDIR += bottlerocket
+    SUBDIR += box2d
     SUBDIR += boxes
     SUBDIR += brs
     SUBDIR += bsod
