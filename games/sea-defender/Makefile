@@ -44,6 +44,9 @@ DESKTOP_ENTRIES="Sea Defender" \
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+	@${REINPLACE_CMD} -e '/typedef/ d' ${WRKSRC}/snoutlib/gldefs.h
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sea ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
