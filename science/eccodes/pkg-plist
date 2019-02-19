@@ -1,3 +1,4 @@
+bin/big2gribex
 bin/bufr_compare
 bin/bufr_compare_dir
 bin/bufr_copy
@@ -8,12 +9,16 @@ bin/bufr_get
 bin/bufr_index_build
 bin/bufr_ls
 bin/bufr_set
+bin/bufr_split_by_rdbSubtype
 bin/codes_bufr_filter
 bin/codes_count
 bin/codes_info
 bin/codes_parser
 bin/codes_split_file
+bin/gg_sub_area_check
+bin/grib1to2
 bin/grib2ppm
+bin/grib_check_gaussian_grid
 bin/grib_compare
 bin/grib_copy
 bin/grib_count
@@ -23,9 +28,12 @@ bin/grib_get
 bin/grib_get_data
 bin/grib_histogram
 bin/grib_index_build
+bin/grib_list_keys
 bin/grib_ls
 bin/grib_merge
+bin/grib_repair
 bin/grib_set
+bin/grib_to_json
 bin/grib_to_netcdf
 bin/gts_compare
 bin/gts_copy
@@ -13540,6 +13548,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib1/2.98.210.table
 %%DATADIR%%/definitions/grib1/2.98.211.table
 %%DATADIR%%/definitions/grib1/2.98.213.table
+%%DATADIR%%/definitions/grib1/2.98.215.table
 %%DATADIR%%/definitions/grib1/2.98.220.table
 %%DATADIR%%/definitions/grib1/2.98.228.table
 %%DATADIR%%/definitions/grib1/2.98.230.table
@@ -16545,6 +16554,8 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/9/5.9.table
 %%DATADIR%%/definitions/grib2/tables/9/6.0.table
 %%DATADIR%%/definitions/grib2/tables/9/stepType.table
+%%DATADIR%%/definitions/grib2/tables/local/ecmf/1.1.table
+%%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.230.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/4/1.2.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.1.0.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.10.0.table
