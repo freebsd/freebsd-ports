@@ -1014,6 +1014,7 @@
     SUBDIR += py-azure-cli-telemetry
     SUBDIR += py-azure-cli-vm
     SUBDIR += py-bcfg2
+    SUBDIR += py-bitrot
     SUBDIR += py-cdmi
     SUBDIR += py-croniter
     SUBDIR += py-crontab
