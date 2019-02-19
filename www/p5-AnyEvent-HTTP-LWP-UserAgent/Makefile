@@ -10,6 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for LWP::UserAgent interface using AnyEvent::HTTP
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	\
 	p5-AnyEvent>=5:devel/p5-AnyEvent \
 	p5-AnyEvent-HTTP>=2.1:www/p5-AnyEvent-HTTP \
@@ -20,5 +24,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
