@@ -1,0 +1,15 @@
+--- egg/Makefile.in.orig	2016-05-15 21:22:18 UTC
++++ egg/Makefile.in
+@@ -322,8 +322,11 @@ $(am__aclocal_m4_deps):
+ 	  $(EMACS) --batch \
+ 	    $(AM_ELCFLAGS) $(ELCFLAGS) \
+ 	    $$am__subdir_includes -L $(builddir) -L $(srcdir) \
+-	    --eval "(defun byte-compile-dest-file (f) \"$@\")" \
++	    --eval "(defun byte-compile-dest-file (f) \"/tmp/$@\")" \
+ 	    --eval "(unless (byte-compile-file \"$<\") (kill-emacs 1))"; \
++	    if [ -f "/tmp/$@" ]; then \
++		cp /tmp/$@ $@ && rm -f /tmp/$@; \
++	    fi; \
+ 	else :; fi
+ 
+ install-dist_lispLISP: $(dist_lisp_LISP) $(ELCFILES)
