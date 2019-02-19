@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Devel-PatchPerl
-PORTVERSION=	1.52
+PORTVERSION=	1.54
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,8 +18,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-pushd>=1:devel/p5-File-pushd \
 		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
