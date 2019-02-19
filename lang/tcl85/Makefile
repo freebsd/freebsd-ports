@@ -3,7 +3,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.5.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	TCLTK/tcl8_5 \
 		SF/tcl/Tcl/${PORTVERSION}
@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/../license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_DEFINE=	TCLMAN TZDATA THREADS
-OPTIONS_DEFAULT=THREADS
+OPTIONS_DEFAULT=TCLMAN TZDATA THREADS
 TCLMAN_DESC=	Install Tcl function manpages
 TZDATA_DESC=	Install Tcl timezone data
 OPTIONS_SUB=	yes
