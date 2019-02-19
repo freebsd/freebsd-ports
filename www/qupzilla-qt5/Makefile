@@ -13,6 +13,9 @@ COMMENT=	Web browser based on WebKit engine and Qt Framework
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Project continues as www/falkon
+EXPIRATION_DATE=	2019-02-28
+
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
 CONFLICTS_INSTALL=	${PORTNAME}-qt4*
