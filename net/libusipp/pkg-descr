@@ -1,0 +1,6 @@
+usi++ (UNIX Socket Interface) is a low-level network-library for
+sending/receiving IP, IP6, ARP etc. packets directly on RAW or PACKET sockets.
+It can also be used for network-monitoring and rapid development of pentesting
+tools. It requires libpcap and libdnet if you want the Layer2 DNET provider.
+
+WWW: https://github.com/stealth/libusipp
