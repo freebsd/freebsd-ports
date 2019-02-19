@@ -4,8 +4,8 @@ PORTNAME=	libfmt
 DISTVERSION=	5.3.0
 CATEGORIES=	devel
 
-MAINTAINER=	SlavaMikerov@gmail.com
-COMMENT=	Fmt is an open-source formatting library for C++
+MAINTAINER=	tobik@FreeBSD.org
+COMMENT=	Formatting library for C++
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
