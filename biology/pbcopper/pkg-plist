@@ -1,4 +1,5 @@
 include/pbcopper/PbcopperConfig.h
+include/pbcopper/PbcopperMakeUnique.h
 include/pbcopper/align/Seed.h
 include/pbcopper/align/Seeds.h
 include/pbcopper/align/internal/Seed-inl.h
@@ -23,7 +24,6 @@ include/pbcopper/cli/toolcontract/ResolvedToolContract.h
 include/pbcopper/cli/toolcontract/ResourceType.h
 include/pbcopper/cli/toolcontract/Task.h
 include/pbcopper/cli/toolcontract/TaskType.h
-include/pbcopper/cli/toolcontract/internal/Config-inl.h
 include/pbcopper/cli/toolcontract/internal/Driver-inl.h
 include/pbcopper/cli/toolcontract/internal/InputFileType-inl.h
 include/pbcopper/cli/toolcontract/internal/OutputFileType-inl.h
@@ -48,7 +48,6 @@ include/pbcopper/json/JSON.h
 include/pbcopper/json/internal/json.hpp
 include/pbcopper/logging/Logging.h
 include/pbcopper/logging/internal/Logging-inl.h
-include/pbcopper/meson.build
 include/pbcopper/parallel/FireAndForget.h
 include/pbcopper/parallel/WorkQueue.h
 include/pbcopper/qgram/Index.h
@@ -72,4 +71,8 @@ include/pbcopper/utility/internal/FileUtils-inl.h
 include/pbcopper/utility/internal/Stopwatch-inl.h
 include/pbcopper/utility/internal/StringUtils-inl.h
 include/pbcopper/utility/internal/SystemInfo-inl.h
-lib/libpbcopper.a
+lib/libpbcopper.so
+lib/libpbcopper.so.0
+lib/libpbcopper.so.0.4
+lib/libpbcopper.so.0.4.1
+libdata/pkgconfig/pbcopper.pc
