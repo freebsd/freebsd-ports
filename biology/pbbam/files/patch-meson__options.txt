@@ -1,0 +1,11 @@
+--- meson_options.txt.orig	2019-02-17 01:55:33 UTC
++++ meson_options.txt
+@@ -15,7 +15,7 @@ option('auto-validate',
+ 
+ option('tests',
+     type : 'boolean',
+-    value : true,
++    value : false,
+     description : 'Enable dependencies required for testing')
+ 
+ option('permissive-cigar',
