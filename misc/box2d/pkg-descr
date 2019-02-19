@@ -1,0 +1,24 @@
+Box2D is a 2D physics engine for games.
+
+Collision:
+* Continuous collision detection
+* Contact callbacks: begin, end, pre-solve, post-solve
+* Convex polygons and circles
+* Multiple shapes per body
+* One-shot contact manifolds
+* Dynamic tree broadphase
+* Efficient pair management
+* Fast broadphase AABB queries
+* Collision groups and categories
+
+Physics:
+* Continuous physics with time of impact solver
+* Persistent body-joint-contact graph
+* Island solution and sleep management
+* Contact, friction, and restitution
+* Stable stacking with a linear-time solver
+* Revolute, prismatic, distance, pulley, gear, mouse joint, other joint types
+* Joint limits, motors, and friction
+* Momentum decoupled position correction
+
+WWW: https://box2d.org/
