@@ -549,6 +549,7 @@
     SUBDIR += lximage-qt
     SUBDIR += lximageqt-l10n
     SUBDIR += magnum
+    SUBDIR += magnum-extras
     SUBDIR += magnum-plugins
     SUBDIR += mahotas
     SUBDIR += maim
