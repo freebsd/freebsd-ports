@@ -1,26 +1,42 @@
---- check_smartmon.orig	2015-07-22 17:32:58 UTC
-+++ check_smartmon
-@@ -59,7 +59,7 @@ def parseCmdLine(args):
-                         metavar="LEVEL", help="set verbosity level to LEVEL; defaults to 0 (quiet), \
-                                         possible values go up to 3")
-         parser.add_option("-t", "--type", action="store", dest="devtype", default="ata", metavar="DEVTYPE",
--                        help="type of device (ATA|SCSI)")
-+                        help="type of device (ata|scsi)")
-         parser.add_option("-w", "--warning-threshold", metavar="TEMP", action="store",
-                         type="int", dest="warningThreshold", default=55,
-                         help="set temperature warning threshold to given temperature (defaults to 55)")
-@@ -291,10 +291,10 @@ if __name__ == "__main__":
+--- check_smartmon.orig	2019-02-01 04:28:13.000000000 +0000
++++ check_smartmon	2019-02-04 22:27:35.297345000 +0000
+@@ -161,9 +161,12 @@ 
+                 lines = healthMessage.split("\n")
+                 getNext = 0
+                 for line in lines:
++                        vprint(3, "parseOutput: line is: '%s'" % line)
+                         if getNext:
+-                                statusLine = line
+-                                break
++                                if line <> "SMART STATUS RETURN: incomplete response, ATA output registers missing" and \
++                                   line <> "SMART Status not supported: Incomplete response, ATA output registers missing" :
++                                        statusLine = line
++                                        break
+                         elif line == "=== START OF READ SMART DATA SECTION ===":
+                                 getNext = 1
+                         # fi
+@@ -181,7 +184,7 @@ 
+                         parts = line.split()
+                         if len(parts):
+                                 # 194 is the temperature value id
+-                                if parts[0] == "194":
++                                if parts[0] == "194" or parts[0] == "190":
+                                         temperature = int(parts[9])
+                                         break
+                                 # fi
+@@ -225,6 +228,7 @@ 
+ 
+         # this is absolutely critical!
+         if healthStatus not in [ "PASSED", "OK" ]:
++                vprint(2, "Health status: %s" % healthStatus)
+                 return (2, "CRITICAL: device does not pass health status")
+         # fi
+ 
+@@ -287,6 +291,7 @@ 
+         # check device type, ATA is default
          vprint(2, "Get device type")
          devtype = options.devtype
++        vprint(2, "command line supplied device type is: %s" % devtype)
          if not devtype:
--                devtype = "ATA"
--
--        if device_re.search( device ):
--                devtype = "scsi"
-+                if device_re.search( device ):
-+                        devtype = "scsi"
-+                else:
-+                        devtype = "ata"
- 
-         vprint(1, "Device type: %s" % devtype)
- 
+                 if device_re.search( device ):
+                         devtype = "scsi"
