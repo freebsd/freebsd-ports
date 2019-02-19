@@ -1,20 +1,21 @@
---- client/CMakeLists.txt.orig	2017-04-04 19:11:32 UTC
+--- client/CMakeLists.txt.orig	2019-02-09 23:24:08 UTC
 +++ client/CMakeLists.txt
-@@ -43,11 +43,12 @@ IF(UNIX)
+@@ -44,12 +44,13 @@ IF(UNIX)
    SET_TARGET_PROPERTIES(mysql PROPERTIES ENABLE_EXPORTS TRUE)
  ENDIF(UNIX)
  
 +IF(NOT WITHOUT_SERVER)
  MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
  SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
- TARGET_LINK_LIBRARIES(mysqltest  ${CLIENT_LIB} pcre pcreposix)
+ TARGET_LINK_LIBRARIES(mysqltest  ${CLIENT_LIB} pcreposix pcre)
  SET_TARGET_PROPERTIES(mysqltest PROPERTIES ENABLE_EXPORTS TRUE)
--
 +ENDIF()
  
+-
  MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
  TARGET_LINK_LIBRARIES(mysqlcheck ${CLIENT_LIB})
-@@ -60,15 +61,19 @@ MYSQL_ADD_EXECUTABLE(mysqlimport mysqlim
+ 
+@@ -61,15 +62,19 @@ MYSQL_ADD_EXECUTABLE(mysqlimport mysqlimport.c)
  SET_SOURCE_FILES_PROPERTIES(mysqlimport.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqlimport ${CLIENT_LIB})
  
@@ -34,7 +35,7 @@
  
  MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc)
  TARGET_LINK_LIBRARIES(mysqlbinlog ${CLIENT_LIB})
-@@ -89,14 +94,21 @@ ENDIF(WIN32)
+@@ -90,14 +95,21 @@ ENDIF(WIN32)
  ADD_EXECUTABLE(async_example async_example.c)
  TARGET_LINK_LIBRARIES(async_example ${CLIENT_LIB})
  
@@ -48,7 +49,7 @@
    mysqladmin mysqlslap async_example)
    ADD_DEPENDENCIES(${t} GenError ${CLIENT_LIB})
  ENDFOREACH()
- 
++
 +IF(NOT WITHOUT_SERVER)
 +SET_TARGET_PROPERTIES (mysql_upgrade mysql_plugin PROPERTIES HAS_CXX TRUE)
 +FOREACH(t mysqltest mysql_upgrade mysql_plugin)
@@ -56,6 +57,6 @@
 +ENDFOREACH()
 +ENDIF()
 +
-+
+ 
  ADD_DEFINITIONS(-DHAVE_DLOPEN)
  
