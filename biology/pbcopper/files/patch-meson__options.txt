@@ -1,0 +1,7 @@
+--- meson_options.txt.orig	2019-02-17 22:34:29 UTC
++++ meson_options.txt
+@@ -1,3 +1,3 @@
+ option('build-examples', type : 'boolean', value : true,  description : 'Build pbcopper examples')
+ option('build-docs',     type : 'boolean', value : false, description : 'Build pbcopper docs')
+-option('tests',          type : 'boolean', value : true,  description : 'Enable dependencies required for testing')
++option('tests',          type : 'boolean', value : false,  description : 'Enable dependencies required for testing')
