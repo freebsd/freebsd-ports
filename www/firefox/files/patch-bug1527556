@@ -1,0 +1,31 @@
+commit ba954951557e
+Author: sotaro <sotaro.ikeda.g@gmail.com>
+Date:   Mon Feb 18 09:15:30 2019 +0000
+
+    Bug 1527556 - Change MAX_DISPLAY_CONNECTIONS to 3 r=stransky
+    
+    nsWaylandDisplay needs to be allocated for each calling thread(main thread, compositor thread and render thread)
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D20118
+    
+    --HG--
+    extra : moz-landing-system : lando
+---
+ widget/gtk/nsWaylandDisplay.cpp | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git widget/gtk/nsWaylandDisplay.cpp widget/gtk/nsWaylandDisplay.cpp
+index 4c2804be2831..ac01e1f50347 100644
+--- widget/gtk/nsWaylandDisplay.cpp
++++ widget/gtk/nsWaylandDisplay.cpp
+@@ -14,7 +14,9 @@
+ namespace mozilla {
+ namespace widget {
+ 
+-#define MAX_DISPLAY_CONNECTIONS 2
++// nsWaylandDisplay needs to be created for each calling thread(main thread,
++// compositor thread and render thread)
++#define MAX_DISPLAY_CONNECTIONS 3
+ 
+ static nsWaylandDisplay *gWaylandDisplays[MAX_DISPLAY_CONNECTIONS];
+ static StaticMutex gWaylandDisplaysMutex;
