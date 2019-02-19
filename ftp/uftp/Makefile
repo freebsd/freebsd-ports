@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uftp
-PORTVERSION=	4.9.7
+PORTVERSION=	4.9.9
 PORTEPOCH=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/uftp-multicast/source-tar
