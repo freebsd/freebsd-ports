@@ -9575,7 +9575,6 @@ devel/buildbot-pkg|devel/py-buildbot-pkg|2017-11-29|Rename to comply with PyPI s
 devel/buildbot-waterfall-view|devel/py-buildbot-waterfall-view|2017-11-29|Rename to comply with PyPI scheme
 devel/buildbot-worker|devel/py-buildbot-worker|2017-11-29|Rename to comply with PyPI scheme
 devel/buildbot-www|devel/py-buildbot-www|2017-11-29|Rename to comply with PyPI scheme
-emulators/ppsspp-devel|emulators/ppsspp|2017-11-29|Out of date: use emulators/ppsspp for now
 audio/shairport|audio/shairport-sync|2017-11-29|Has expired: Officially unmaintained upstream. Use audio/shairport-sync instead
 accessibility/py3-speech-dispatcher|accessibility/py-speech-dispatcher@py36|2017-11-30|Moved to a flavored, generic, version
 accessibility/py3-atspi|accessibility/py-atspi@py36|2017-11-30|Moved to a flavored, generic, version
