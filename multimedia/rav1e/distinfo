@@ -1,4 +1,4 @@
-TIMESTAMP = 1550266006
+TIMESTAMP = 1550505607
 SHA256 (rust/crates/aho-corasick-0.6.9.tar.gz) = 1e9a933f4e58658d7b12defcf96dc5c720f20832deebe3e0a19efd3b6aaeeb9e
 SIZE (rust/crates/aho-corasick-0.6.9.tar.gz) = 25979
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -205,5 +205,5 @@ SHA256 (rust/crates/wincolor-1.0.1.tar.gz) = 561ed901ae465d6185fa7864d63fbd5720d
 SIZE (rust/crates/wincolor-1.0.1.tar.gz) = 4737
 SHA256 (rust/crates/y4m-0.3.1.tar.gz) = 508a0bfb402457aef5303412238bc2782798c9032b9b7afaaceef7423af0c382
 SIZE (rust/crates/y4m-0.3.1.tar.gz) = 10990
-SHA256 (xiph-rav1e-s20190215-3da4937_GH0.tar.gz) = 09b187fd5a67b186718a1ba5be977a3f13d4fc131c32999e761e0638f6804caa
-SIZE (xiph-rav1e-s20190215-3da4937_GH0.tar.gz) = 339649
+SHA256 (xiph-rav1e-s20190218-9e4ea86_GH0.tar.gz) = 44a83e23cda5a467b6f38f686716a42d620ae9e5b168e09aecb57a67840b4948
+SIZE (xiph-rav1e-s20190218-9e4ea86_GH0.tar.gz) = 341035
