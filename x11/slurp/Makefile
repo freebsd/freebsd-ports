@@ -5,6 +5,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
 CATEGORIES=	x11
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	1e2d1952df1a.patch:-p1
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Select a region in a Wayland compositor
 
@@ -25,9 +28,8 @@ OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
+MANPAGES_MESON_ON=	-Dman-pages=enabled
+MANPAGES_MESON_OFF=	-Dman-pages=disabled
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
-
-post-patch-MANPAGES-off:
-	@${REINPLACE_CMD} -i '' "s/'scdoc/&-disabled/" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
