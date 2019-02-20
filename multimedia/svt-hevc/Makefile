@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS_REASON=	uses x86-64 assembly
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
-USES=		cmake
+USES=		cmake compiler:c11
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	Intel
