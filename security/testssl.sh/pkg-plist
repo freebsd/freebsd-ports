@@ -1,6 +1,7 @@
 bin/testssl.sh
 man/man1/testssl.1.gz
 %%DATADIR%%/etc/Apple.pem
+%%DATADIR%%/etc/Java.pem
 %%DATADIR%%/etc/Linux.pem
 %%DATADIR%%/etc/Microsoft.pem
 %%DATADIR%%/etc/Mozilla.pem
