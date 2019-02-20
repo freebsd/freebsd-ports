@@ -1,0 +1,8 @@
+--- meson_options.txt.orig	2019-02-17 22:53:47 UTC
++++ meson_options.txt
+@@ -1,4 +1,4 @@
+-option('tests',            type : 'boolean', value : true,  description : 'Enable dependencies required for testing')
++option('tests',            type : 'boolean', value : false,  description : 'Enable dependencies required for testing')
+ 
+ # python:
+ option('swig',             type : 'boolean', value : true,        description : 'Build UNANMITIY\'s SWIG interfacing code')

@@ -2,8 +2,7 @@
 
 PORTNAME=		unanimity
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.1.0
-PORTREVISION=		2
+DISTVERSION=		3.4.0
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,30 +13,31 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to compile: mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 
-# Sensitive to dependency versions, use latest commit for everything
-BUILD_DEPENDS=	pbseqan>=g20171002:biology/pbseqan \
-		pbbam>=g20180416:biology/pbbam \
-		pbcopper>=g20180413:biology/pbcopper
+# Very sensitive to pbbam and pbcopper versions!
+# Fully test new combinations and upgrade them together.
+BUILD_DEPENDS=	seqan>=2.4.0:biology/seqan \
+		swig30>=3.0:devel/swig30 \
+		${PYNUMPY}
 LIB_DEPENDS=	libhts.so:biology/htslib \
-		libboost_regex.so:devel/boost-libs
+		libboost_regex.so:devel/boost-libs \
+		libpbbam.so.0.18.0:biology/pbbam \
+		libpbcopper.so.0.4.1:biology/pbcopper
+RUN_DEPENDS=	${PYNUMPY}
 
-USES=		cmake:insource compiler:c++14-lang pkgconfig python
+# Meson needs BOOST_ROOT=${LOCALBASE}
+# https://github.com/mesonbuild/meson/issues/2239
+USES=		compiler:c++14-lang localbase meson pkgconfig python
+USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 
-CMAKE_ARGS+=	-DHTSLIB_INCLUDE_DIRS:STRING=${LOCALBASE}/include/htslib \
-		-DHTSLIB_LIBRARIES:STRING="-L${LOCALBASE}/lib -lhts" \
-		-DPacBioBAM_INCLUDE_DIRS:STRING=${LOCALBASE}/include/pbbam \
-		-DPacBioBAM_LIBRARIES:STRING="-L${LOCALBASE}/lib -lpbbam" \
-		-DSEQAN_INCLUDE_DIRS:STRING=${LOCALBASE}/include/PacBio \
-		-Dpbcopper_INCLUDE_DIRS=${LOCALBASE}/include \
-		-Dpbcopper_LIBRARIES="-L${LOCALBASE}/lib -lpbcopper"
 CFLAGS_i386=	-msse2 -Wno-c++11-narrowing
-
-PLIST_FILES=	bin/arrow bin/ccs bin/gcpp lib/libcc2.a lib/libunanimity.a
+LDFLAGS+=	-lexecinfo
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/src/libcc2.a ${WRKSRC}/src/libunanimity.a \
-		${STAGEDIR}${PREFIX}/lib
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libunanimity.so.3.0.0 \
+		${STAGEDIR}${PREFIX}/lib/libunanimity.so.3.0
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libunanimity.so.3.0.0 \
+		${STAGEDIR}${PREFIX}/lib/libunanimity.so.3
 
 .include <bsd.port.mk>
