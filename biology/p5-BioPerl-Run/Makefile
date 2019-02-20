@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	BioPerl-Run
-PORTVERSION=	1.007002
+PORTVERSION=	1.007003
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CJFIELDS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper modules for common bioinformatics tools
 
 LICENSE=	ART10 GPLv1+
@@ -17,6 +17,7 @@ LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
+		p5-Bio-Cluster>=0:biology/p5-Bio-Cluster \
 		p5-Bio-FeatureIO>=0:biology/p5-Bio-FeatureIO \
 		p5-BioPerl>=1.007000:biology/p5-BioPerl \
 		p5-Config-Any>=0:devel/p5-Config-Any \
@@ -29,25 +30,20 @@ CONFLICTS=	p5-bioperl-run-1.[13579]*
 
 OPTIONS_DEFINE=	DOCS
 
-NO_ARCH=	yes
 USES=		perl5 shebangfix
 USE_PERL5=	modbuild
+
+NO_ARCH=	yes
+
 SHEBANG_FILES=	scripts/*
 
-PORTDOCS=	*
-
-post-build:
-	(cd ${WRKSRC} && ${PERL} ./Build manifest)
-
 post-install:
-.for i in bioperl_application_installer multi_hmmsearch panalysis papplmaker run_neighbor run_protdist
+.for i in multi_hmmsearch panalysis papplmaker run_neighbor run_protdist
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/${i}.PLS ${STAGEDIR}${PREFIX}/bin/bp_${i}
 .endfor
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in AUTHORS Changes INSTALL.PROGRAMS README.md
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS Changes INSTALL.PROGRAMS README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
