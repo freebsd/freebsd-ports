@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File-BOM
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +20,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	modbuild
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
