@@ -30,6 +30,7 @@ post-patch:
 	@${REINPLACE_CMD} -i .flags -E -e 's/ -mavx//' \
 		-e 's/-O2 -flto //' \
 		-e '/C_FLAGS_(RELEASE|DEBUG)/d' \
+		-e '/NASM_FLAGS_DEBUG/d' \
 		${WRKSRC}/CMakeLists.txt
 # Avoid devel/yasm dependency
 	@${REINPLACE_CMD} -i .typo 's/MAKE_ASM_NASM_COMPILER/s&/' \
