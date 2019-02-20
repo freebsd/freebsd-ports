@@ -1,6 +1,6 @@
---- Build.PL.orig	2014-07-26 02:49:03 UTC
+--- Build.PL.orig	2019-02-08 19:53:38 UTC
 +++ Build.PL
-@@ -50,7 +50,8 @@ my $build = Module::Build->new(
+@@ -75,7 +75,8 @@ my $build = Module::Build->subclass(
      #create_makefile_pl  => 'passthrough'
  );
  
