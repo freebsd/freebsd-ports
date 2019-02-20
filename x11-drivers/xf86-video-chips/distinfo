@@ -1,3 +1,3 @@
-TIMESTAMP = 1546478745
-SHA256 (xorg/driver/xf86-video-chips-1.3.0.tar.bz2) = 972c4c206cf2047004e86db883cf20a6bac09754737e56b28d7f56f4c1f7da02
-SIZE (xorg/driver/xf86-video-chips-1.3.0.tar.bz2) = 420810
+TIMESTAMP = 1550523628
+SHA256 (xorg/driver/xf86-video-chips-1.4.0.tar.bz2) = 07f3e41e8f7e6ac24e62cfa94a1aa85f20f03ab375ad89e1a944a09df0f11fbf
+SIZE (xorg/driver/xf86-video-chips-1.4.0.tar.bz2) = 424095
