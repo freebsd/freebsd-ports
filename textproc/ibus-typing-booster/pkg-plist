@@ -398,6 +398,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotations/jgo_CM.xml
 %%DATADIR%%/data/annotations/jmc.xml
 %%DATADIR%%/data/annotations/jmc_TZ.xml
+%%DATADIR%%/data/annotations/jv.xml
 %%DATADIR%%/data/annotations/ka.xml
 %%DATADIR%%/data/annotations/ka_GE.xml
 %%DATADIR%%/data/annotations/kab.xml
