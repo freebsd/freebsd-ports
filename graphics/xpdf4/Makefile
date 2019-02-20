@@ -27,8 +27,7 @@ SUB_FILES=	xpdf-man.conf
 
 USES=		compiler:c++11-lang cmake localbase:ldflags \
 		desktop-file-utils qt:5
-USE_QT=		buildtools_build,concurrent,core,gui,network,printsupport,\
-		qmake_build,svg,widgets
+USE_QT=		buildtools_build,concurrent,core,gui,network,printsupport,qmake_build,svg,widgets
 CMAKE_ARGS+=	-DOPI_SUPPORT:BOOL=ON -DCMAKE_DISABLE_FIND_PACKAGE_Qt4:BOOL=ON \
 		-DUSE_LCMS:BOOL=OFF -DSYSTEM_XPDFRC=${PREFIX}/etc/xpdfrc \
 		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
