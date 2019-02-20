@@ -1,26 +1,26 @@
---- cmake-config.txt.orig	2017-08-08 16:22:50.000000000 -0700
-+++ cmake-config.txt	2017-09-17 21:03:21.838497000 -0700
-@@ -79,6 +79,7 @@
+--- cmake-config.txt.orig	2019-02-18 10:24:19.000000000 -0800
++++ cmake-config.txt	2019-02-19 18:15:45.359569000 -0800
+@@ -81,6 +81,7 @@
+ option(USE_EXCEPTIONS "use C++ exceptions" ON)
  option(USE_FIXEDPOINT "use fixed point (instead of floating point) arithmetic" OFF)
  option(SPLASH_CMYK "include support for CMYK rasterization" OFF)
- option(SPLASH_DEVICEN "include support for DeviceN rasterization" OFF)
 +option(USE_LIBPAPER "use libpaper" OFF)
- if (SPLASH_DEVICEN)
-   set(SPLASH_CMYK ON)
- endif ()
-@@ -235,9 +236,7 @@
+ option(SYSTEM_XPDFRC "full path for system-wide xpdfrc file" "")
+ if (SYSTEM_XPDFRC)
+   set(SYSTEM_XPDFRC_DEFINE "#define SYSTEM_XPDFRC \"${SYSTEM_XPDFRC}\"")
+@@ -200,9 +201,7 @@
    if (XPDFWIDGET_PRINTING)
-     set(QT_INCLUDES "${Qt5Widgets_INCLUDE_DIRS} ${Qt5PrintSupport_INCLUDE_DIRS}")
-     set(QT_DEFINITIONS "${Qt5Widgets_DEFINITIONS} ${Qt5PrintSupport_DEFINITIONS}")
+     set(QT_INCLUDES "${Qt5Widgets_INCLUDE_DIRS} ${Qt5Network_INCLUDE_DIRS} ${Qt5PrintSupport_INCLUDE_DIRS}")
+     set(QT_DEFINITIONS "${Qt5Widgets_DEFINITIONS} ${Qt5Network_DEFINITIONS} ${Qt5PrintSupport_DEFINITIONS}")
 -    if (APPLE)
--      set(QT_LIBRARIES Qt5::Widgets Qt5::PrintSupport "-framework ApplicationServices")
+-      set(QT_LIBRARIES Qt5::Widgets Qt5::Network Qt5::PrintSupport "-framework ApplicationServices")
 -    elseif (UNIX)
 +    if (CUPS)
-       set(QT_LIBRARIES Qt5::Widgets Qt5::PrintSupport cups)
+       set(QT_LIBRARIES Qt5::Widgets Qt5::Network Qt5::PrintSupport cups)
      else ()
-       set(QT_LIBRARIES Qt5::Widgets Qt5::PrintSupport)
-@@ -248,9 +247,7 @@
-     set(QT_LIBRARIES Qt5::Widgets)
+       set(QT_LIBRARIES Qt5::Widgets Qt5::Network Qt5::PrintSupport)
+@@ -213,9 +212,7 @@
+     set(QT_LIBRARIES Qt5::Widgets Qt5::Network)
    endif ()
    if (XPDFWIDGET_PRINTING)
 -    if (APPLE)
@@ -30,14 +30,21 @@
        set(EXTRA_QT_LIBRARIES cups)
      else ()
        set(EXTRA_QT_LIBRARIES "")
-@@ -278,10 +275,34 @@
- endif()
- 
- #--- look for libpaper
--find_library(HAVE_PAPER_H
--             NAMES paper libpaper
--             PATH_SUFFIXES lib64 lib
--)
+@@ -226,9 +223,7 @@
+ elseif(QT4_FOUND)
+   message(STATUS "Qt4 found")
+   if (XPDFWIDGET_PRINTING)
+-    if (APPLE)
+-      set(EXTRA_QT_LIBRARIES "-framework ApplicationServices")
+-    elseif (UNIX)
++    if (CUPS)
+       set(EXTRA_QT_LIBRARIES cups)
+     else ()
+       set(EXTRA_QT_LIBRARIES "")
+@@ -243,6 +238,29 @@
+              NAMES paper libpaper
+              PATH_SUFFIXES lib64 lib
+ )
 +if(USE_LIBPAPER)
 +  find_library(PAPER_LIBRARY
 +    NAMES paper libpaper
@@ -45,19 +52,14 @@
 +    ${PAPER_DIR}
 +    PATHS
 +    /usr/local
-+    /usr/freeware
 +  )
 +  find_path(PAPER_INCLUDE_DIR .h
 +    HINTS
 +    ${PAPER_DIR}
 +    PATHS
 +    /usr/local/include
-+    /usr/freeware/include
 +    PATH_SUFFIXES include
 +  )
-+endif()
-+
-+if (USE_LIBPAPER)
 + if (PAPER_INCLUDE_DIR AND PAPER_LIBRARY)
 +   set(HAVE_PAPER_H TRUE)
 +   message(STATUS "Found libpaper: ${PAPER_LIBRARY}")
@@ -66,6 +68,6 @@
 +  message(STATUS "libpaper not found")
 + endif ()
 +endif ()
- 
- #--- look for pthreads
- find_package(Threads)
+ if (PAPER_LIBRARY)
+   set(HAVE_PAPER_H TRUE)
+ else ()
