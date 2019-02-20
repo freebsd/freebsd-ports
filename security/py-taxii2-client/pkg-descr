@@ -1,0 +1,13 @@
+This port provides a minimal client implementation for the TAXII 2.0 server.
+It supports the following TAXII 2.0 API services:
+- Server Discovery
+- Get API Root Information
+- Get Status
+- Get Collections
+- Get a Collection
+- Get Objects
+- Add Objects
+- Get an Object
+- Get Object Manifests
+
+WWW: https://github.com/oasis-open/cti-taxii-client
