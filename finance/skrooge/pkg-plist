@@ -419,6 +419,7 @@ share/kservices5/sources/org.kde.skrooge-source-bitcoinaverage.desktop
 share/kservices5/sources/org.kde.skrooge-source-bitcoincharts.desktop
 share/kservices5/sources/org.kde.skrooge-source-coinmarketcap.desktop
 share/kservices5/sources/org.kde.skrooge-source-grandtrunk.desktop
+share/kservices5/sources/org.kde.skrooge-source-msn.desktop
 share/kservices5/sources/org.kde.skrooge-source-skrooge.desktop
 share/kservices5/sources/org.kde.skrooge-source-stooq.desktop
 share/kservices5/sources/org.kde.skrooge-source-yahoo.desktop
@@ -733,13 +734,11 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/html/default/budget_table.qml
 %%DATADIR%%/html/default/categories_period_table.html
 %%DATADIR%%/html/default/categories_period_table.qml
-%%DATADIR%%/html/default/categories_previous_period_table.html
 %%DATADIR%%/html/default/categories_variations.html
 %%DATADIR%%/html/default/categories_variations.qml
 %%DATADIR%%/html/default/categories_variations_issues.html
 %%DATADIR%%/html/default/categories_variations_issues.qml
 %%DATADIR%%/html/default/highlighted_operations.html
-%%DATADIR%%/html/default/highlighted_operations.qml
 %%DATADIR%%/html/default/income_vs_expenditure.qml
 %%DATADIR%%/html/default/income_vs_expenditure_table.html
 %%DATADIR%%/html/default/interests.html
