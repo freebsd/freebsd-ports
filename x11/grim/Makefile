@@ -6,7 +6,7 @@ DISTVERSION=	1.1
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	3d3600128fb4.patch:-p1
+PATCHFILES=	6994df611f55.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Grab images from a Wayland compositor
