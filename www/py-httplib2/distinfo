@@ -1,3 +1,3 @@
-TIMESTAMP = 1544176960
-SHA256 (httplib2-0.12.0.tar.gz) = f61fb838a94ce3b349aa32c92fd8430f7e3511afdb18bf9640d647e30c90a6d6
-SIZE (httplib2-0.12.0.tar.gz) = 218367
+TIMESTAMP = 1550646815
+SHA256 (httplib2-0.12.1.tar.gz) = 4ba6b8fd77d0038769bf3c33c9a96a6f752bc4cdf739701fdcaf210121f399d4
+SIZE (httplib2-0.12.1.tar.gz) = 218582
