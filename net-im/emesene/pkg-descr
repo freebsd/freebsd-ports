@@ -1,7 +1,0 @@
-emesene is an instant messenger capable of connecting to various
-networks and utilizing different graphical toolkits. Currently msn and
-xmpp (jabber) are supported through papyon and SleekXMPP, which allows
-emesene to connect to various IM services such as Windows Live
-Messenger, GTalk, Facebook Chat, etc.
-
-WWW: http://www.emesene.org/
