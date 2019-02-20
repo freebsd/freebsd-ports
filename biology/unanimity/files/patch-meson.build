@@ -1,0 +1,11 @@
+--- meson.build.orig	2019-02-17 22:59:57 UTC
++++ meson.build
+@@ -90,7 +90,7 @@ subdir('src')
+ 
+ if (not meson.is_subproject()) and get_option('swig')
+   uny_python_interp = find_program(get_option('PYTHON'), required : true)
+-  uny_swig = find_program('swig', required : true)
++  uny_swig = find_program('swig3.0', required : true)
+ 
+   uny_pv_ver = run_command(uny_python_interp, ['-c', 'import sys; sys.stdout.write(sys.version[:3])']).stdout()
+   message('Python version: ' + uny_pv_ver)
