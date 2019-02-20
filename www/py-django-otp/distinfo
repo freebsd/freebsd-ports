@@ -1,3 +1,3 @@
-TIMESTAMP = 1525112722
-SHA256 (django-otp-0.4.3.tar.gz) = fd9e787779c053ba77e47a6907539c01e8db41b09f99722793317ed9a4183b32
-SIZE (django-otp-0.4.3.tar.gz) = 42480
+TIMESTAMP = 1550694543
+SHA256 (django-otp-0.5.2.tar.gz) = 5756050ec09ecf8e6ce2b0f9f370ebd26249f326a1010a413b61c6a4c554f25f
+SIZE (django-otp-0.5.2.tar.gz) = 44175
