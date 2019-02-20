@@ -1,0 +1,4 @@
+Bio::Cluster is the BioPerl cluster modules. Classes and modules here describe
+the basic structure for a cluster of BioPerl objects.
+
+WWW: https://metacpan.org/release/Bio-Cluster
