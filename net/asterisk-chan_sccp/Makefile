@@ -14,7 +14,7 @@ COMMENT=	Replacement for the SCCP channel driver in Asterisk
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		iconv libtool
+USES=		autoreconf gettext-tools iconv libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	chan-sccp
 GH_PROJECT=	chan-sccp
