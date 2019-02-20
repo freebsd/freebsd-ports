@@ -5,7 +5,7 @@ PORTVERSION?=	1.0
 # Do not set PORTREVISION here.
 CATEGORIES?=	www audio
 
-MAINTAINER?=	multimedia@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 
 .include "Makefile.services"
 

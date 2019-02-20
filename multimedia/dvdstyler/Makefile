@@ -9,7 +9,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF
 DISTNAME=	DVDStyler-${PORTVERSION}
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WxWidgets frontend to dvd recoding and authoring programs
 
 LICENSE=	GPLv2

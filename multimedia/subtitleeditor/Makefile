@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle editor
 
 LICENSE=	GPLv3
