@@ -21,14 +21,6 @@ COMMENT=	GNU Compiler Collection
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-.if !defined(CROSS_TOOLCHAIN)
-.error Please define CROSS_TOOLCHAIN before building
-.endif
-
-.if !defined(CROSS_SYSROOT)
-.error Please define CROSS_SYSROOT before building
-.endif
-
 TARGETARCH=	${ARCH:S/amd64/x86_64/}
 GCC_TARGET=	${TARGETARCH}-unknown-${OPSYS:tl}${OSREL}
 
@@ -66,6 +58,12 @@ INSTALL_TARGET?=	install-gcc
 
 .if ${OSVERSION} >= 1200000
 CONFIGURE_ARGS+= --enable-initfini-array
+.endif
+
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	x86_64-unknown-${OPSYS:tl}${OSREL}
+.else
+CONFIGURE_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
