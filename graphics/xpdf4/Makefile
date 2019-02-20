@@ -25,6 +25,8 @@ USES=		compiler:c++11-lang cmake localbase:ldflags \
 		desktop-file-utils qt:5
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
+BUILD_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/d050000l.pfb:print/gsfonts
+RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/d050000l.pfb:print/gsfonts
 MANPREFIX=	${PREFIX}/share/xpdf
 SUB_FILES=	xpdf-man.conf
 USE_QT=		buildtools_build concurrent core gui network printsupport \
