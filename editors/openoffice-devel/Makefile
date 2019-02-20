@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	5
+#PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -118,8 +118,8 @@ AOOVERSION1=	4
 AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO420m1\(Build:9800\)
-SVNREVISION=	1847189
+AOOTAG=		AOO420m1\(Build:9820\)
+SVNREVISION=	1853744
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -152,7 +152,7 @@ CPE_VENDOR=	apache
 
 OPTIONS_DEFINE=		CRASHDUMP CUPS DBGUTIL DEBUG GNOME GNOMEVFS MMEDIA \
 			MYSQL PDFIMPORT REPORT_BUILDER SDK WIKI_PUBLISHER
-OPTIONS_DEFAULT=	CUPS GNOME MMEDIA PDFIMPORT WIKI_PUBLISHER
+OPTIONS_DEFAULT=	CUPS GNOME MMEDIA WIKI_PUBLISHER
 CRASHDUMP_DESC=		Enable crashdumps, sets WITH_DEBUG
 DBGUTIL_DESC=		Enable assertions, object counting. (non-production)
 DEBUG_DESC=		Compile with -O0, sets WITH_DEBUG
@@ -196,9 +196,7 @@ MYSQL_USES=			mysql
 SDK_CONFIGURE_ENABLE=		odk
 SDK_DISTFILES=			unowinreg.dll:unoreg
 
-# The current version of openoffice is not compatible with the changed API and
-# requirements of popller-0.7x. Switch to using bundled version for now.
-CONFIGURE_ARGS+=		--without-system-poppler
+PDFIMPORT_BROKEN=		PDFIMPORT is not compatible with poppler-0.7x API
 PDFIMPORT_CONFIGURE_ENABLE=	pdfimport
 
 REPORT_BUILDER_BROKEN=		REPORT_BUILDER option requires additional .jar files
