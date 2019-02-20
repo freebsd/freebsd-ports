@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	testssl.sh
-DISTVERSION=	3.0rc3
+DISTVERSION=	3.0rc4
 CATEGORIES=	security
 
 MAINTAINER=	tobik@FreeBSD.org
