@@ -3,6 +3,7 @@
 
 PORTNAME=	ilias
 PORTVERSION=	5.3.13
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -36,7 +37,7 @@ SUB_LIST=	ILIASDATADIR=${ILIASDATADIR}
 
 OPTIONS_DEFINE=		SCORM2004 CHECKER MAIL
 SCORM2004_USE=		php=json
-CHERCKER_RUN_DEPENDS=	${LOCALBASE}/share/pear/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
+CHECKER_RUN_DEPENDS=	${LOCALBASE}/share/pear/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
 MAIL_RUN_DEPENDS=	${LOCALBASE}/share/pear/Mail.php:mail/pear-Mail@${PHP_FLAVOR}
 
 EXTRA_FILES=	%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/_mocha \
