@@ -7,9 +7,6 @@ CATEGORIES=	graphics print
 MASTER_SITES=	https://xpdfreader-dl.s3.amazonaws.com/
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	4
-CONFLICTS_INSTALL=	xpdf3-* xpdf-*
-.else
-CONFLICTS_INSTALL=	xpdf3-*	xpdf4-*
 .endif
 
 MAINTAINER=	cy@FreeBSD.org
@@ -17,17 +14,21 @@ COMMENT=	Display PDF files and convert them to other formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libpng.so:graphics/png
-
 CONFLICTS_INSTALL=	xpdf
-
-MANPREFIX=	${PREFIX}/share/xpdf
-SUB_FILES=	xpdf-man.conf
+.if !defined(MASTERDIR)
+CONFLICTS_INSTALL+=	xpdf3-* xpdf-*
+.else
+CONFLICTS_INSTALL+=	xpdf3-*	xpdf4-*
+.endif
 
 USES=		compiler:c++11-lang cmake localbase:ldflags \
 		desktop-file-utils qt:5
-USE_QT=		buildtools_build,concurrent,core,gui,network,printsupport,qmake_build,svg,widgets
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libpng.so:graphics/png
+MANPREFIX=	${PREFIX}/share/xpdf
+SUB_FILES=	xpdf-man.conf
+USE_QT=		buildtools_build concurrent core gui network printsupport \
+		qmake_build svg widgets
 CMAKE_ARGS+=	-DOPI_SUPPORT:BOOL=ON -DCMAKE_DISABLE_FIND_PACKAGE_Qt4:BOOL=ON \
 		-DUSE_LCMS:BOOL=OFF -DSYSTEM_XPDFRC=${PREFIX}/etc/xpdfrc \
 		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
