@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-video-apm-1.2.5.tar.bz2) = 953b04320117b14c5b7efb37de45cef45592409f639c2aa87b7e2d77dc8d3d0f
-SIZE (xorg/driver/xf86-video-apm-1.2.5.tar.bz2) = 325277
+TIMESTAMP = 1550522074
+SHA256 (xorg/driver/xf86-video-apm-1.3.0.tar.bz2) = 808189b9a933fcad1761cb9cd498f9267dfbacee1059859282712e8598c3dc7e
+SIZE (xorg/driver/xf86-video-apm-1.3.0.tar.bz2) = 352759
