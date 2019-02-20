@@ -10,6 +10,8 @@ COMMENT=	Pacific Biosciences patched and stripped down SeqAn
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream merged into SeqAn project: Use biology/seqan
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 GH_PROJECT=	seqan
