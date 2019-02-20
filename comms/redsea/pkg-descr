@@ -1,0 +1,11 @@
+redsea is a lightweight command-line decoder for broadcast FM-RDS data,
+such as that provided from a software-defined radio (SDR). It can also
+decode raw ASCII bitstreams, the hex format provided by RDS Spy, and audio
+files containing multiplex signals. Decoded RDS groups are printed to the
+terminal as line-delimited JSON objects; optionally, undecoded hex blocks
+can be output instead.
+
+This program is intended to be used in combination with a separate source
+of demodulated FM multiplex signals, such as rtl-sdr.
+
+WWW: https://github.com/windytan/redsea/

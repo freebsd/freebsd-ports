@@ -1,0 +1,10 @@
+Don't forget to give redsea something to decode!  For output from a USB 
+software-defined radio stick, you may want to consider installing 
+comms/rtl-sdr or another SDR tool of your choice that can feed raw I/Q 
+data on stdout.  
+
+You can also provide redsea with hex data from RDS Spy, raw ASCII 
+bitstream, or an audio file containing a multiplexed FM signal.
+
+Fuller details are contained in the redsea wiki:
+https://github.com/windytan/redsea/wiki/Input-formats
