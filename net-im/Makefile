@@ -15,7 +15,6 @@
     SUBDIR += echat
     SUBDIR += ejabberd
     SUBDIR += ekiga
-    SUBDIR += emesene
     SUBDIR += empathy
     SUBDIR += farsight2
     SUBDIR += farstream
