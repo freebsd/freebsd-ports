@@ -3010,6 +3010,11 @@ you update your ports collection, before attempting any port upgrades.
 
 	portupgrade -f `pkg shlib -qR libperl.so.5.20`
 
+	  If, for some reason, this command fails at one point, it is safe to
+	  run it again, it will not rebuild what it already rebuilt, as the
+	  ports that have been rebuilt no longer depend on libperl.so.5.20 but
+	  on libperl.so.5.24.
+
   Portmaster users:
 	portmaster -o lang/perl5.24 lang/perl5.20
 
@@ -3020,6 +3025,11 @@ you update your ports collection, before attempting any port upgrades.
 	  can do so with:
 
 	portmaster -f `pkg shlib -qR libperl.so.5.20`
+
+	  If, for some reason, this command fails at one point, it is safe to
+	  run it again, it will not rebuild what it already rebuilt, as the
+	  ports that have been rebuilt no longer depend on libperl.so.5.20 but
+	  on libperl.so.5.24.
 
 20161102:
   AFFECTS: users of security/acme-client
