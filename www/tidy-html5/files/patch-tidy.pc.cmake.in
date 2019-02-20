@@ -1,0 +1,9 @@
+--- tidy.pc.cmake.in.orig	2017-11-25 13:54:41 UTC
++++ tidy.pc.cmake.in
+@@ -7,5 +7,5 @@ Name: @LIB_NAME@
+ Description: @LIBTIDY_DESCRIPTION@
+ URL: @LIBTIDY_URL@
+ Version: @LIBTIDY_VERSION@
+-Libs: -L${libdir} -l@LIB_NAME@
++Libs: -L${libdir} -l@LIB_NAME@5
+ Cflags: -I${includedir}

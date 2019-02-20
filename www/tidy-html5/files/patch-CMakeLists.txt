@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2015-11-18 19:02:54 UTC
+--- CMakeLists.txt.orig	2017-11-25 13:54:41 UTC
 +++ CMakeLists.txt
-@@ -42,7 +42,7 @@ option( BUILD_SHARED_LIB "Set OFF to NOT
- option( BUILD_TAB2SPACE  "Set ON to build utility app, tab2space" OFF )
- option( BUILD_SAMPLE_CODE "Set ON to build the sample code"       OFF )
+@@ -102,7 +102,7 @@ option( TIDY_COMPAT_HEADERS "Set ON to include compati
+ #   Allow building with non-default man page directory.
+ #------------------------------------------------------------------------
  if (NOT MAN_INSTALL_DIR)
 -    set(MAN_INSTALL_DIR share/man/man1)
 +    set(MAN_INSTALL_DIR man/man1)
  endif ()
- option( BUILD_DOCUMENTATION "Set ON to build the documentation"   OFF )
+ 
  
