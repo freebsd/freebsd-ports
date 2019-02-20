@@ -1,9 +1,0 @@
---- bakery-2.6.pc.in.orig	2008-03-18 10:47:08.000000000 +0100
-+++ bakery-2.6.pc.in	2008-08-08 02:10:39.000000000 +0200
-@@ -8,5 +8,5 @@ Description: C++ Application Framework f
- Requires: gtkmm-2.4 >= 2.4.0 gconfmm-2.6 >= 2.6.0 libglademm-2.4 >= 2.4.0 libxml++-2.6 >= 2.6.0 giomm-2.4 >= 2.16.0
- Version: @VERSION@
- Libs: -L${libdir} -lbakery-2.6
--Cflags: -I${includedir}/bakery-2.6 -I${libdir}/bakery-2.6/include
-+Cflags: -I${includedir}/bakery-2.6
- 

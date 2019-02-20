@@ -7,7 +7,6 @@
     SUBDIR += Xaw3d
     SUBDIR += Xmt
     SUBDIR += attica
-    SUBDIR += bakery
     SUBDIR += blt
     SUBDIR += bwidget
     SUBDIR += c++-gtk-utils
