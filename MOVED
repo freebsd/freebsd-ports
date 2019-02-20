@@ -11624,3 +11624,7 @@ devel/libdouble-conversion|devel/double-conversion|2019-02-16|Rename to match th
 security/tmux-cssh||2019-02-17|Upstream has disappeared; sysutils/scct is an alternative
 net/GeoIP|net/libmaxminddb|2019-02-17|Has expired: Legacy databases no longer available. Switch to net/libmaxminddb instead
 x11-toolkits/bakery||2019-02-20|Abandonware, no depend on
+net-im/telepathy-butterfly||2019-02-20|Abandoned non function MSN client
+net-im/papyon||2019-02-20|Abandoned non function MSN client
+net-im/emesene||2019-02-20|Abandoned non function MSN client
+net-im/pebrot||2019-02-20|Abandoned non function MSN client
