@@ -1,9 +1,0 @@
-Bakery is a C++ Framework for creating applications using Gtkmm.
-
-- provides a Document/View architecture, but it doesn't force you to
-  use the whole architecture.
-- provides default functionality, which can be easily customized.
-- makes it easy to start developing GTK+ applications.
-- gives your application structure.
-
-WWW: http://bakery.sourceforge.net/
