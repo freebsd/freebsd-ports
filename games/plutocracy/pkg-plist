@@ -1,8 +1,0 @@
-bin/plutocracy
-%%PYTHON_SITELIBDIR%%/plutocracy/__init__.py
-%%PYTHON_SITELIBDIR%%/plutocracy/__init__.pyc
-%%PYTHON_SITELIBDIR%%/plutocracy/__init__.pyo
-%%PYTHON_SITELIBDIR%%/plutocracy/api.so
-%%PYTHON_SITELIBDIR%%/plutocracy/cargo.py
-%%PYTHON_SITELIBDIR%%/plutocracy/cargo.pyc
-%%PYTHON_SITELIBDIR%%/plutocracy/cargo.pyo
