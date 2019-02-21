@@ -2,6 +2,7 @@
 
 PORTNAME=	falkon
 DISTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	KDE/stable/falkon/${DISTVERSION}/
 
@@ -12,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake desktop-file-utils kde:5 qt:5 ssl tar:xz
-USE_KDE=	ecm_build i18n wallet
+USE_KDE=	ecm_build i18n
 USE_QT=		core dbus declarative gui location network printsupport \
 		sql webchannel webengine widgets x11extras \
 		buildtools_build qmake_build linguist_build
