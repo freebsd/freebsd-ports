@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		openvpn
-DISTVERSION=		2.4.6
-PORTREVISION?=		3
+DISTVERSION=		2.4.7
+PORTREVISION?=		0
 CATEGORIES=		security net
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/
@@ -14,10 +14,11 @@ COMMENT?=		Secure IP/Ethernet tunnel daemon
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT.GPL
 
+USES=			cpe libtool pkgconfig shebangfix tar:xz
+
 CONFLICTS_INSTALL?=	openvpn-2.[!4].* openvpn-[!2].* openvpn-beta-[0-9]* openvpn-devel-[0-9]* openvpn-mbedtls-[0-9]*
 
 GNU_CONFIGURE=		yes
-USES=			cpe libtool pkgconfig shebangfix tar:xz
 SHEBANG_FILES=		sample/sample-scripts/verify-cn \
 			sample/sample-scripts/auth-pam.pl \
 			sample/sample-scripts/ucn.pl
