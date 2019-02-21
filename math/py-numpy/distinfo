@@ -1,7 +1,7 @@
-TIMESTAMP = 1541439997
-SHA256 (numpy-1.15.4.zip) = 3d734559db35aa3697dadcea492a423118c5c55d176da2f3be9c98d4803fc2a7
-SIZE (numpy-1.15.4.zip) = 4473522
-SHA256 (numpy-ref-1.15.4.pdf) = c05f5f70172018541d6159f8797e06e38ed3ca1de9dafc85964754b7ae2a7ccc
-SIZE (numpy-ref-1.15.4.pdf) = 4843444
-SHA256 (numpy-user-1.15.4.pdf) = a2827d1c1756c511566b66d2a1c00dec292e47ae98b1a7882a9fe4104ea3820d
-SIZE (numpy-user-1.15.4.pdf) = 596191
+TIMESTAMP = 1549058561
+SHA256 (numpy-1.16.1.zip) = 31d3fe5b673e99d33d70cfee2ea8fe8dccd60f265c3ed990873a88647e3dd288
+SIZE (numpy-1.16.1.zip) = 5070040
+SHA256 (numpy-ref-1.16.1.pdf) = 5296c4949c92d00ae2c94ce65b78369b8081995dc72447bb20b6518bfaed3552
+SIZE (numpy-ref-1.16.1.pdf) = 5175448
+SHA256 (numpy-user-1.16.1.pdf) = aa8c591eee4c537768854f19e3cf4b861280828c19eb9d2e6194ea230570ea75
+SIZE (numpy-user-1.16.1.pdf) = 592508
