@@ -7325,7 +7325,6 @@
 %%WWWDIR%%/core/modules/rest/tests/modules/rest_test_views/test_views/views.view.test_serializer_shared_path.yml
 %%WWWDIR%%/core/modules/rest/tests/src/Functional/AnonResourceTestTrait.php
 %%WWWDIR%%/core/modules/rest/tests/src/Functional/BasicAuthResourceTestTrait.php
-%%WWWDIR%%/core/modules/rest/tests/src/Functional/BasicAuthResourceWithInterfaceTranslationTestTrait.php
 %%WWWDIR%%/core/modules/rest/tests/src/Functional/BcTimestampNormalizerUnixTestTrait.php
 %%WWWDIR%%/core/modules/rest/tests/src/Functional/CookieResourceTestTrait.php
 %%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/Action/ActionResourceTestBase.php
@@ -7561,6 +7560,7 @@
 %%WWWDIR%%/core/modules/serialization/src/Normalizer/NormalizerBase.php
 %%WWWDIR%%/core/modules/serialization/src/Normalizer/NullNormalizer.php
 %%WWWDIR%%/core/modules/serialization/src/Normalizer/PrimitiveDataNormalizer.php
+%%WWWDIR%%/core/modules/serialization/src/Normalizer/SerializedColumnNormalizerTrait.php
 %%WWWDIR%%/core/modules/serialization/src/Normalizer/TimeStampItemNormalizerTrait.php
 %%WWWDIR%%/core/modules/serialization/src/Normalizer/TimestampItemNormalizer.php
 %%WWWDIR%%/core/modules/serialization/src/Normalizer/TypedDataNormalizer.php
