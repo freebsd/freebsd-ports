@@ -15,6 +15,8 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	sarnold
 
+PORTSCOUT=	limit:^[0-9].*$$
+
 MAKEFILE=	makefile
 MAKE_ENV=	CCC="${CXX}" LD="${CXX}" CFLAGS_DEBUG="${CXXFLAGS}"
 ALL_TARGET=	cccc

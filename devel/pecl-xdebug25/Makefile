@@ -15,9 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 IGNORE_WITH_PHP=	72 73
 
-CONFIGURE_ARGS=	--enable-xdebug
 USES=		php:pecl,zend
 
+CONFIGURE_ARGS=	--enable-xdebug
+
 SUB_FILES=	pkg-message
+
+PORTSCOUT=	limit=^2\.5\.
 
 .include <bsd.port.mk>
