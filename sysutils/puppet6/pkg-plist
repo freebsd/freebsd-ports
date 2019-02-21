@@ -1,6 +1,7 @@
 bin/puppet
 %%ETCDIR%%/auth.conf-dist
 %%ETCDIR%%/puppet.conf-dist
+lib/ruby/gems/%%RUBY_VER%%/specifications/puppet-%%PORTVERSION%%.gemspec
 %%RUBY_SITELIBDIR%%/hiera/puppet_function.rb
 %%RUBY_SITELIBDIR%%/hiera/scope.rb
 %%RUBY_SITELIBDIR%%/hiera_puppet.rb
