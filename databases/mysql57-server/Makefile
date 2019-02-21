@@ -159,6 +159,10 @@ CMAKE_ARGS+=		-DWITH_SSL=system
 CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}
 .endif
 
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+CXXFLAGS+=	-fpermissive
+.endif
+
 post-extract:
 	@${RM} -rv ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
 
