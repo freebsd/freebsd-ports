@@ -1,0 +1,15 @@
+--- SConscript.orig	2019-02-17 19:08:04 UTC
++++ SConscript
+@@ -364,11 +364,7 @@ def findLibs(env, conf):
+ 				FatalError("OpenGL framework not found or not installed")
+ 
+ 	if platform == "Linux" or platform == "FreeBSD":
+-		if not conf.CheckLib('X11'):
+-			FatalError("X11 development library not found or not installed")
+-
+-		if not conf.CheckLib('rt'):
+-			FatalError("librt not found or not installed")
++		pass
+ 	elif platform == "Windows":
+ 		#These need to go last
+ 		if not conf.CheckLib('gdi32') or not conf.CheckLib('winmm') or (not msvc and not conf.CheckLib('dxguid')):

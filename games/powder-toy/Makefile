@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	powder-toy
-PORTVERSION=	93.3
-PORTREVISION=	1
+PORTVERSION=	94.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -20,22 +19,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ThePowderToy
 GH_PROJECT=	The-Powder-Toy
 
-USES=		compiler:c++11-lang scons localbase:ldflags lua:51 pkgconfig
-USE_SDL=	sdl
-USE_XORG=	x11
+USES=		compiler:c++11-lang scons sdl localbase:ldflags lua:51 pkgconfig
+USE_SDL=	sdl2
 
 MAKE_ENV=	LINKFLAGS="${LINKFLAGS}"
 
 SUB_FILES=	${PORTNAME}.sh
 
 PORTDOCS=	README.md TODO
-
-DESKTOP_ENTRIES="The Powder Toy" \
-		"" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}.ico" \
-		"${PORTNAME}" \
-		"Game;Simulation;" \
-		""
 
 OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS SSE SSE3 OPENGL
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
@@ -56,7 +47,16 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/build/powder* ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/resources/powder.ico ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico
+	${INSTALL_DATA} ${WRKSRC}/resources/powder.desktop ${STAGEDIR}${PREFIX}/share/applications/powder-toy.desktop
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/appdata
+	${INSTALL_DATA} ${WRKSRC}/resources/powder.appdata.xml ${STAGEDIR}${PREFIX}/share/appdata/powder-toy.appdata.xml
+.for s in 16 24 32 48 128 256
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps
+	${INSTALL_DATA} ${WRKSRC}/resources/icon/powder-${s}.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps/powder-toy.png
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/resources/icon/powder-32.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/powder-toy.png
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
