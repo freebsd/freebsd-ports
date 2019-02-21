@@ -1,6 +1,6 @@
 --- src-stormbaancoureur/Makefile.orig	2009-12-01 03:23:51 UTC
 +++ src-stormbaancoureur/Makefile
-@@ -5,23 +5,20 @@ VERSION=2.1.6-generic
+@@ -5,23 +5,21 @@ VERSION=2.1.6-generic
  GLPREFIX=/usr
  PLIBPREFIX=/usr
  ODEPREFIX=/usr
@@ -15,9 +15,10 @@
 -  -I$(ODEPREFIX)/include \
 -  -I$(PLIBPREFIX)/include \
 +CXXFLAGS+=\
-+  -I$(LOCALBASE)/include \
    -I../src-common \
    -I. \
++  -I$(LOCALBASE)/include \
++  `pkg-config --cflags ode` \
    -DGAMEVERSION=$(VERSION) \
 -  -O2 -g -Wall
 +  -g -Wall
@@ -29,12 +30,12 @@
  
  
  OBJS=\
-@@ -39,15 +36,15 @@ OBJS=\
+@@ -39,15 +37,15 @@ OBJS=\
  
  
  LIBS=\
 -  $(ODEPREFIX)/$(LIBDIRNAME)/libode.a \
-+  $(LOCALBASE)/lib/libode.a \
++  `pkg-config --libs ode` \
    -lplibssgaux -lplibssg -lplibsg -lplibpu -lplibfnt -lplibul \
 -  -lglut -lGLU -lGL -lasound
 +  -lglut -lGLU -lGL $(ALSA_LIBS)
@@ -48,7 +49,7 @@
  	$(CXX) -o stormbaancoureur $(OBJS) $(LFLAGS) $(LIBS)
  
  staticworldobject.o: ../src-common/staticworldobject.cxx ../src-common/staticworldobject.h ../src-common/worldobject.h
-@@ -92,16 +89,15 @@ run: stormbaancoureur
+@@ -92,16 +90,15 @@ run: stormbaancoureur
  clean:
  	rm -f *.o stormbaancoureur
  
