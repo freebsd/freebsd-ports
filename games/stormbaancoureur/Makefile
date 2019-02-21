@@ -3,7 +3,7 @@
 
 PORTNAME=	stormbaancoureur
 PORTVERSION=	2.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.stolk.org/stormbaancoureur/download/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -13,16 +13,14 @@ COMMENT=	Simulated obstacle course for automobiles
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
-		${LOCALBASE}/lib/libode.a:devel/ode
+BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
+LIB_DEPENDS=	libode.so:devel/ode
 
-USES=		compiler
+USES=		compiler gl pkgconfig
 USE_GL=		gl glu glut
+USE_CXXSTD=	c++98
 
 MAKE_ENV=	DATADIR="${DATADIR}"
-
-CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
-CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 BUILD_WRKSRC=	${WRKSRC}/src-stormbaancoureur
 INSTALL_WRKSRC=	${WRKSRC}/src-stormbaancoureur
@@ -45,8 +43,10 @@ post-patch:
 		${WRKSRC}/src-stormbaancoureur/main.cxx
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
