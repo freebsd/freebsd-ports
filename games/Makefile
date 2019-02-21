@@ -745,7 +745,6 @@
     SUBDIR += pipenightdreams
     SUBDIR += pipepanic
     SUBDIR += pipewalker
-    SUBDIR += plutocracy
     SUBDIR += pmars
     SUBDIR += pmars-sdl
     SUBDIR += poker-engine
