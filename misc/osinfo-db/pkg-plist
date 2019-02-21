@@ -50,6 +50,8 @@ share/osinfo/device/xen.org/xen-vif.xml
 share/osinfo/device/xen.org/xen-vkbd.xml
 share/osinfo/device/xen.org/xen-vscsi.xml
 share/osinfo/device/xen.org/xen-vtpm.xml
+share/osinfo/install-script/centos.org/centos-kickstart-desktop.xml
+share/osinfo/install-script/centos.org/centos-kickstart-jeos.xml
 share/osinfo/install-script/debian.org/debian-preseed-desktop.xml
 share/osinfo/install-script/debian.org/debian-preseed-jeos.xml
 share/osinfo/install-script/fedoraproject.org/fedora-kickstart-desktop.xml
@@ -94,6 +96,7 @@ share/osinfo/os/apple.com/macosx-10.4.xml
 share/osinfo/os/apple.com/macosx-10.5.xml
 share/osinfo/os/apple.com/macosx-10.6.xml
 share/osinfo/os/apple.com/macosx-10.7.xml
+share/osinfo/os/archlinux.org/archlinux-rolling.xml
 share/osinfo/os/asianux.com/asianux-4.6.xml
 share/osinfo/os/asianux.com/asianux-4.7.xml
 share/osinfo/os/asianux.com/asianux-7.0.xml
@@ -286,6 +289,7 @@ share/osinfo/os/freebsd.org/freebsd-9.1.xml
 share/osinfo/os/freebsd.org/freebsd-9.2.xml
 share/osinfo/os/freebsd.org/freebsd-9.3.xml
 share/osinfo/os/freedos.org/freedos-1.2.xml
+share/osinfo/os/gentoo.org/gentoo-rolling.xml
 share/osinfo/os/gnome.org/gnome-3.6.xml
 share/osinfo/os/gnome.org/gnome-3.8.xml
 share/osinfo/os/gnome.org/gnome-continuous-3.10.xml
@@ -424,6 +428,7 @@ share/osinfo/os/opensuse.org/opensuse-factory.xml
 share/osinfo/os/opensuse.org/opensuse-tumbleweed.xml
 share/osinfo/os/opensuse.org/opensuse-unknown.xml
 share/osinfo/os/oracle.com/solaris-11.xml
+share/osinfo/os/pureos.net/pureos-8.xml
 share/osinfo/os/redhat.com/rhel-2.1.1.xml
 share/osinfo/os/redhat.com/rhel-2.1.2.xml
 share/osinfo/os/redhat.com/rhel-2.1.3.xml
@@ -587,6 +592,7 @@ share/osinfo/os/ubuntu.com/ubuntu-8.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-8.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-9.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-9.10.xml
+share/osinfo/os/voidlinux.org/voidlinux-rolling.xml
 share/osinfo/platform/linux-kvm.org/qemu-kvm-1.0.1.xml
 share/osinfo/platform/linux-kvm.org/qemu-kvm-1.0.xml
 share/osinfo/platform/linux-kvm.org/qemu-kvm-1.1.0.xml
