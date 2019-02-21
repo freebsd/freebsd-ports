@@ -102,6 +102,16 @@ BUILD_DEPENDS+=	gcc8:lang/gcc8
 USE_GCC=	yes
 .endif
 
+.if ${OPSYS} == FreeBSD && ${ARCH} == aarch64 && \
+	(${OSVERSION} < 1200502 || \
+	(${OSVERSION} > 1300000 && ${OSVERSION} < 1300006))
+IGNORE=	fails to run due to a bug in rtld, update to 12-STABLE r342847 or 13-CURRENT r342113
+.endif
+
+.ifdef QEMU_EMULATING
+IGNORE=	fails to build with qemu-user-static
+.endif
+
 X_PY_ENV=	HOME="${WRKDIR}" \
 		LIBGIT2_SYS_USE_PKG_CONFIG=1 \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1 \
