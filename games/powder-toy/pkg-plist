@@ -1,3 +1,11 @@
 bin/powder-toy
 libexec/powder-toy
-share/pixmaps/powder-toy.ico
+share/appdata/powder-toy.appdata.xml
+share/applications/powder-toy.desktop
+share/icons/hicolor/128x128/apps/powder-toy.png
+share/icons/hicolor/16x16/apps/powder-toy.png
+share/icons/hicolor/24x24/apps/powder-toy.png
+share/icons/hicolor/256x256/apps/powder-toy.png
+share/icons/hicolor/32x32/apps/powder-toy.png
+share/icons/hicolor/48x48/apps/powder-toy.png
+share/pixmaps/powder-toy.png

@@ -1,0 +1,12 @@
+--- resources/powder.desktop.orig	2019-02-17 19:08:04 UTC
++++ resources/powder.desktop
+@@ -3,7 +3,7 @@ Version=1.0
+ Encoding=UTF-8
+ Name=Powder Toy
+ Comment=Physics sandbox game
+-Exec=powder
+-Icon=powder
++Exec=powder-toy
++Icon=powder-toy
+ Type=Application
+ Categories=Game;Simulation;
