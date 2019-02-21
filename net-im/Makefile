@@ -58,6 +58,7 @@
     SUBDIR += libnice-gst010
     SUBDIR += libnice-gst1
     SUBDIR += libpurple
+    SUBDIR += libqmatrixclient
     SUBDIR += libqtelegram-ae
     SUBDIR += libsignon-glib
     SUBDIR += libstrophe
@@ -146,6 +147,7 @@
     SUBDIR += py-xmpppy-yahoo
     SUBDIR += qTox
     SUBDIR += qq
+    SUBDIR += quaternion
     SUBDIR += qxmpp
     SUBDIR += qxmpp-qt5
     SUBDIR += ramblercontacts

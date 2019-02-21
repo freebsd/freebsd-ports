@@ -1,0 +1,5 @@
+libQMatrixClient is a Qt5-based library to make IM clients for the
+Matrix protocol. It is the backbone of Quaternion, Spectral and some
+other projects.
+
+WWW: https://github.com/QMatrixClient/libqmatrixclient

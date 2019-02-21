@@ -1,0 +1,12 @@
+bin/quaternion
+share/QMatrixClient/quaternion/translations/quaternion_de_DE.qm
+share/QMatrixClient/quaternion/translations/quaternion_en.qm
+share/applications/quaternion.desktop
+share/icons/hicolor/128x128/apps/quaternion.png
+share/icons/hicolor/16x16/apps/quaternion.png
+share/icons/hicolor/22x22/apps/quaternion.png
+share/icons/hicolor/32x32/apps/quaternion.png
+share/icons/hicolor/48x48/apps/quaternion.png
+share/icons/hicolor/64x64/apps/quaternion.png
+share/icons/hicolor/scalable/apps/quaternion.svgz
+share/metainfo/com.github.quaternion.appdata.xml
