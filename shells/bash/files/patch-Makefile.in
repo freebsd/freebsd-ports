@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2018-05-25 12:47:09 UTC
++++ Makefile.in
+@@ -824,7 +824,9 @@ install:	.made installdirs
+ 		infodir=$(infodir) htmldir=$(htmldir) DESTDIR=$(DESTDIR) $@ )
+ 	-( cd $(DEFDIR) ; $(MAKE) $(MFLAGS) DESTDIR=$(DESTDIR) $@ )
+ 	-( cd $(PO_DIR) ; $(MAKE) $(MFLAGS) DESTDIR=$(DESTDIR) $@ )
++.if !$(STATIC_LD:M-static)
+ 	-( cd $(LOADABLES_DIR) && $(MAKE) $(MFLAGS) DESTDIR=$(DESTDIR) $@ )
++.endif
+ 
+ install-strip:
+ 	$(MAKE) $(MFLAGS) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' \
