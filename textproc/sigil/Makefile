@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sigil
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jonc@chen.org.nz
 COMMENT=	WYSIWYG ePub editor
 
 LICENSE=	GPLv3+
