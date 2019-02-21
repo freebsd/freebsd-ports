@@ -89,8 +89,6 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/ansible/inventory.local.tpl
 %%DATADIR%%/templates/ansible/inventory.remote.tpl
 %%DATADIR%%/templates/cbsd.conf.tpl
-%%DATADIR%%/templates/dhclient-exit-hooks
-%%DATADIR%%/templates/dhcp.conf
 %%DATADIR%%/templates/dhcpd-hook.sh
 %%DATADIR%%/templates/dhcpd.conf
 %%DATADIR%%/templates/empty.jconf
@@ -99,6 +97,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/initenv.conf
 %%DATADIR%%/templates/install-packages.sh
 %%DATADIR%%/templates/ip-by-mac.sh
+%%DATADIR%%/templates/master.conf
 %%DATADIR%%/templates/mount-project.sh
 %%DATADIR%%/templates/my.domain
 %%DATADIR%%/templates/my.domain.rev
@@ -107,6 +106,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/nsupdate-delete.txt
 %%DATADIR%%/templates/pf.conf
 %%DATADIR%%/templates/resolvconf.conf
-%%DATADIR%%/templates/resolver.conf
 %%DATADIR%%/templates/rndc.conf
 %%DATADIR%%/templates/setup-vm.sh
+%%DATADIR%%/templates/unbound.conf
+%%DATADIR%%/templates/unbound_cbsd.conf
