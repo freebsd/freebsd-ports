@@ -2,7 +2,7 @@ PulseAudio Preferences (paprefs) is a simple GTK based configuration dialog for
 the PulseAudio sound server.
 
 Please note that this program can only configure local servers, and requires
-that a special module module-gconf is loaded in the sound server. (Since
-PulseAudio 0.9.5 this modules is loaded by default.)
+that a special module module-gsettings is loaded in the sound server. (This
+require to build the audio/pulseaudio port with option GSETTINGS).
 
-WWW: http://0pointer.de/lennart/projects/paprefs/
+WWW: https://freedesktop.org/software/pulseaudio/paprefs/
