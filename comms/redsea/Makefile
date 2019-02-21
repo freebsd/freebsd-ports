@@ -24,7 +24,7 @@ OPTIONS_DEFINE=		DEMOD TMC
 OPTIONS_DEFAULT=	DEMOD TMC
 
 DEMOD_DESC=	Demodulation support via comms/liquid-dsp
-TMC_DESC=	TMC (traffic messages) support (may slow building)
+TMC_DESC=	Decoding support for TMC traffic messages (may slow building)
 
 DEMOD_CONFIGURE_WITH=	liquid
 DEMOD_LIB_DEPENDS=	libliquid.so:comms/liquid-dsp
