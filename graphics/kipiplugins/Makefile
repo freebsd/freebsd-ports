@@ -36,7 +36,6 @@ KVKONTAKTE_CMAKE_BOOL=	DIGIKAMSC_COMPILE_LIBKVKONTAKTE
 KVKONTAKTE_LIB_DEPENDS=	libKF5Vkontakte.so:net/libkvkontakte
 
 DISTNAME=	digikam-${PORTVERSION}
-DISTINFO_FILE=	${.CURDIR:H:H}/graphics/digikam/distinfo
 DESCR=		${.CURDIR:H:H}/graphics/digikam/pkg-descr
 
 PLIST_SUB=		SHLIB_VER=${DISTVERSION}
