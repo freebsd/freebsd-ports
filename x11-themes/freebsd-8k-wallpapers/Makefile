@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-8k-wallpapers
-DISTVERSION=	1.1
-PORTREVISION=	1
+DISTVERSION=	2.0
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://bitbucket.org/rigoletto-freebsd/freebsd-8k-wallpapers/get/
 
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/rigoletto-freebsd-${PORTNAME}-8b39ec278004
+WRKSRC=		${WRKDIR}/rigoletto-freebsd-${PORTNAME}-46b58624db37
 
 OPTIONS_DEFINE=	DOCS
 
@@ -38,8 +37,8 @@ THEMEDIR_REL=	share/wallpapers/${PORTNAME}-${SLAVEPORT}
 THEMEDIR=	${PREFIX}/${THEMEDIR_REL}
 
 .if ${SLAVEPORT:Mfreebsd}
-FREEBSD_COLORS=	FreeBSD-Blue FreeBSD-Green FreeBSD-Purple \
-		FreeBSD-Red FreeBSD-Yellow
+FREEBSD_COLORS=	FreeBSD-Blue FreeBSD-Green FreeBSD-Grey \
+		FreeBSD-Purple FreeBSD-Red FreeBSD-Yellow
 .endif
 
 do-install:
