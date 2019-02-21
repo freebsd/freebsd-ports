@@ -3,17 +3,18 @@
 
 PORTNAME=	crashtest
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.stolk.org/crashtest/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Educational crash simulator
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:devel/ode \
-		${LOCALBASE}/lib/libplibul.a:x11-toolkits/plib
-LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+BUILD_DEPENDS=	${LOCALBASE}/lib/libplibul.a:x11-toolkits/plib
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libode.so:devel/ode
 
+USES=		gl pkgconfig
 USE_GL=		gl glu
 
 BUILD_WRKSRC=	${WRKSRC}/src-crashtest

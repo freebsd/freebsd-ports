@@ -11,13 +11,14 @@
  
  #PLIBPREFIX=$(HOME)
  #ODEPREFIX=$(HOME)
-@@ -10,15 +9,13 @@ CXX=g++
+@@ -10,19 +9,17 @@ CXX=g++
  
  # END OF CUSTOM SETTINGS
  
 -CXXFLAGS=\
+-  -I$(ODEPREFIX)/include \
 +CXXFLAGS+=\
-   -I$(ODEPREFIX)/include \
++  `pkg-config --cflags ode` \
    -I$(PLIBPREFIX)/include \
 -  -I../src-common \
 -  -O2 -g -Wall
@@ -30,3 +31,8 @@
  
  OBJS=staticworldobject.o crashtest.o dynamicobject.o cartobject.o
  
+-LIBS= $(ODEPREFIX)/lib/libode.a -lplibssgaux -lplibssg -lplibsg -lplibpu -lplibfnt -lplibul -lGLU -lGL `fltk-config --use-gl --use-images --ldflags`
++LIBS= `pkg-config --libs ode` -lplibssgaux -lplibssg -lplibsg -lplibpu -lplibfnt -lplibul -lGLU -lGL `fltk-config --use-gl --use-images --ldflags`
+ 
+ 
+ all: crashtest
