@@ -12,4 +12,4 @@ Also, wiggle will (in some cases) detect changes that have already been
 applied, and will ignore them.
 							-- Neil Brown
 
-WWW: http://git.neil.brown.name/git?p=wiggle.git;a=summary
+WWW: https://github.com/neilbrown/wiggle
