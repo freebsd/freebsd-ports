@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	cpdup
-PORTVERSION=	1.18
+PORTVERSION=	1.20
 CATEGORIES=	sysutils
-MASTER_SITES=	http://apollo.backplane.com/FreeSrc/ \
-		http://utenti.gufi.org/~gmarco/files/distfiles/
+MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/ \
+		https://www.madpilot.net/~mad/
 
 MAINTAINER=	gmarco@gufi.org
 COMMENT=	Comprehensive filesystem mirroring and backup program
 
 LICENSE=	BSD2CLAUSE # clarified by Matthew Dillon himself
 
-USES=		tar:tgz
+USES=		tar:xz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
