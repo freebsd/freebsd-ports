@@ -3,5 +3,4 @@ to be processed in specific perion of time. Few examples are: web server can
 limit requsets number to a page or you may want to receive no more than 10 SMS
 messages on your GSM Phone per hour. Applications of this method are unlimited.
 
-
 WWW: https://metacpan.org/release/Algorithm-FloodControl
