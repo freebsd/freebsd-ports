@@ -19,6 +19,8 @@ MAKE_ARGS=	DOCSDIR="${DOCSDIR}"
 
 OPTIONS_DEFINE=	DOCS
 
+CXXFLAGS+=	-Wno-error=sign-compare
+
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/gh-pages/refman.pdf ${STAGEDIR}${DOCSDIR}
