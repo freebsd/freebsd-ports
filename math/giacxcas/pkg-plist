@@ -3,6 +3,7 @@ bin/en_cas_help
 bin/es_cas_help
 bin/fr_cas_help
 bin/giac
+bin/hevea2mml
 bin/icas
 bin/pgiac
 bin/xcas
@@ -25,6 +26,8 @@ include/giac/giacPCH.h
 include/giac/giacintl.h
 include/giac/global.h
 include/giac/gmp_replacements.h
+include/giac/graphe.h
+include/giac/graphtheory.h
 include/giac/help.h
 include/giac/identificateur.h
 include/giac/ifactor.h
@@ -43,6 +46,7 @@ include/giac/modpoly.h
 include/giac/monomial.h
 include/giac/moyal.h
 include/giac/myostream.h
+include/giac/nautywrapper.h
 include/giac/optimization.h
 include/giac/pari.h
 include/giac/permu.h
