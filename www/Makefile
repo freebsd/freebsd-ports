@@ -150,7 +150,6 @@
     SUBDIR += erlang-mochiweb
     SUBDIR += erlang-mochiweb-basho
     SUBDIR += erlang-webmachine
-    SUBDIR += erwn
     SUBDIR += fabio
     SUBDIR += falkon
     SUBDIR += fancybox
