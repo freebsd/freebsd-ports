@@ -1,0 +1,22 @@
+Lark can parse any context-free grammar, FAST and EASY!
+
+For beginners, Lark is not just another parser. It can parse any grammar you
+throw at it, no matter how complicated or ambiguous, and do so efficiently. It
+also constructs a parse-tree for you, without additional code on your part.
+
+For Experts, Lark lets you choose between Earley and LALR(1), to trade-off power
+and speed. It also contains a CYK parser and unique features such as a
+contextual-lexer.
+
+Lark can:
+- Parse all context-free grammars, and handle any ambiguity
+- Build a parse-tree automagically, no construction code required
+- Outperform all other Python libraries when using LALR(1) (Yes, including PLY)
+- Run on every Python interpreter (it's pure-python)
+- Generate a stand-alone parser (for LALR(1) grammars)
+- And many more features. Read ahead and find out.
+
+Most importantly, Lark will save you time and prevent you from getting parsing
+headaches.
+
+WWW: https://github.com/lark-parser/lark
