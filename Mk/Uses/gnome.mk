@@ -67,8 +67,9 @@ IGNORE=	USES=gnome takes no arguments
 .endif
 
 # non-version specific components
-_USE_GNOME_ALL= esound intlhack intltool introspection \
-		referencehack gnomeprefix
+_USE_GNOME_ALL= esound intltool introspection \
+		referencehack gnomemimedata \
+		gnomeprefix
 
 # GNOME 2 components
 _USE_GNOME_ALL+= atk cairo \
@@ -235,7 +236,7 @@ gconf2_LIB_DEPENDS=	libgconf-2.so:devel/gconf2
 gconf2_USE_GNOME_IMPL=	orbit2 libxml2 gtk20
 
 gnomevfs2_LIB_DEPENDS=	libgnomevfs-2.so:devel/gnome-vfs
-gnomevfs2_USE_GNOME_IMPL=gconf2
+gnomevfs2_USE_GNOME_IMPL=gconf2 gnomemimedata
 
 libgnomecanvas_LIB_DEPENDS=	libgnomecanvas-2.so:graphics/libgnomecanvas
 libgnomecanvas_USE_GNOME_IMPL=	libglade2 libartlgpl2
