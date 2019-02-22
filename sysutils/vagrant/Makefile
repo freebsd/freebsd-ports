@@ -4,6 +4,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.2.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
@@ -54,7 +55,7 @@ PLIST_SUB+=	GEMS_DIR="lib/ruby/gems/${RUBY_VER}/" \
 		PORTVERSION="${PORTVERSION}"
 NO_ARCH=	yes
 
-RUBYGEM_ARGS=	--no-ri --no-rdoc -l --no-update-sources \
+RUBYGEM_ARGS=	-l --no-document --no-update-sources \
 		--install-dir ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} \
 		--ignore-dependencies --bindir=${STAGEDIR}${PREFIX}/bin
 GEM_ENV+=	RB_USER_INSTALL=yes
@@ -68,7 +69,8 @@ do-build:
 		${GEM_ENV} ${RUBYGEMBIN} build vagrant.gemspec)
 	(cd ${WRKSRC}; ${SETENV} VAGRANT_INSTALLER_ENV=yes \
 		${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} \
-		${GEMFILES} -- --build-args ${CONFIGURE_ARGS})
+		${GEMFILES} -- ${CONFIGURE_ARGS})
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/build_info
 	${MKDIR} ${STAGEDIR}${DATADIR}/embedded/rgloader
 	${INSTALL_DATA} ${FILESDIR}/cacert.pem \
 		${STAGEDIR}${DATADIR}/embedded/cacert.pem
