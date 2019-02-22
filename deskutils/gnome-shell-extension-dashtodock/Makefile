@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-shell-extension-dashtodock
 PORTVERSION=	65
+DISTVERSIONPREFIX=	extensions.gnome.org-v
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome
 
@@ -25,7 +26,6 @@ GLIB_SCHEMAS=	org.gnome.shell.extensions.dash-to-dock.gschema.xml
 
 GH_ACCOUNT=	micheleg
 GH_PROJECT=	dash-to-dock
-GH_TAGNAME=	extensions.gnome.org-v${PORTVERSION}
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 
