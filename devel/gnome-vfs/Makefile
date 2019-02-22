@@ -25,7 +25,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libdbus-1.so:devel/dbus
 
 USES+=		gettext gmake gnome libtool:keepla pathfix pkgconfig ssl
-USE_GNOME=	gconf2 intlhack referencehack
+USE_GNOME=	gconf2 gnomemimedata intlhack referencehack
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -13,7 +13,7 @@ COMMENT=	Collection of chemical MIME types for UNIX desktops
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc:graphics/librsvg2
 
 USES=		gettext-tools gmake pathfix pkgconfig tar:bzip2 shared-mime-info
-USE_GNOME=	intlhack libxslt:build
+USE_GNOME=	gnomemimedata intlhack libxslt:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-update-database
 CPPFLAGS+=	-I${LOCALBASE}/include
