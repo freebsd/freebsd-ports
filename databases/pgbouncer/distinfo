@@ -1,3 +1,3 @@
-TIMESTAMP = 1523524075
-SHA256 (pgbouncer-1.8.1.tar.gz) = fa8bde2a2d2c8c80d53a859f8e48bc6713cf127e31c77d8f787bbc1d673e8dc8
-SIZE (pgbouncer-1.8.1.tar.gz) = 465930
+TIMESTAMP = 1550794333
+SHA256 (pgbouncer-1.9.0.tar.gz) = 39eca9613398636327e79cbcbd5b41115035bca9ca1bd3725539646468825f04
+SIZE (pgbouncer-1.9.0.tar.gz) = 469300
