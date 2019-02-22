@@ -421,7 +421,7 @@ share/icons/hicolor/128x128/apps/gsequencer.png
 share/icons/hicolor/32x32/apps/gsequencer.png
 share/icons/hicolor/48x48/apps/gsequencer.png
 share/icons/hicolor/64x64/apps/gsequencer.png
-share/metainfo/gsequencer.appdata.xml
+share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 share/mime/packages/gsequencer.xml
 share/xml/gsequencer/schema/dtd/%%PORTVERSION%%/ags_file.dtd
 share/xml/gsequencer/schema/dtd/%%PORTVERSION%%/ags_midi_file.dtd
