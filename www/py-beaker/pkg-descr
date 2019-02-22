@@ -20,4 +20,4 @@ Features
     * Fine-grained toggling of back-ends, keys, and expiration per
       Cache object
 
-WWW: http://beaker.groovie.org/
+WWW: https://beaker.readthedocs.io/en/latest/
