@@ -4745,6 +4745,7 @@
     SUBDIR += py-kjbuckets
     SUBDIR += py-knack
     SUBDIR += py-kqueue
+    SUBDIR += py-lark-parser
     SUBDIR += py-lazr.config
     SUBDIR += py-lazr.delegates
     SUBDIR += py-lazy
