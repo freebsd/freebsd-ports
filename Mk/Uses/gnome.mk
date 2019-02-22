@@ -67,7 +67,7 @@ IGNORE=	USES=gnome takes no arguments
 .endif
 
 # non-version specific components
-_USE_GNOME_ALL= esound intltool introspection \
+_USE_GNOME_ALL= esound intlhack intltool introspection \
 		referencehack gnomemimedata \
 		gnomeprefix
 
