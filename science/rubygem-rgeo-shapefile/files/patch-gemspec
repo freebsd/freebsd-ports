@@ -1,4 +1,4 @@
---- rgeo-shapefile.gemspec.orig	2019-01-06 14:54:40 UTC
+--- rgeo-shapefile.gemspec.orig	2019-02-22 06:37:52 UTC
 +++ rgeo-shapefile.gemspec
 @@ -23,7 +23,7 @@ Gem::Specification.new do |s|
  
@@ -6,6 +6,6 @@
        s.add_runtime_dependency(%q<rgeo>.freeze, [">= 1.0"])
 -      s.add_runtime_dependency(%q<dbf>.freeze, ["~> 3.0"])
 +      s.add_runtime_dependency(%q<dbf>.freeze, [">= 3.0"])
-       s.add_development_dependency(%q<bundler>.freeze, ["~> 1.6"])
        s.add_development_dependency(%q<minitest>.freeze, ["~> 5.3"])
        s.add_development_dependency(%q<rake>.freeze, ["~> 12.0"])
+     else
