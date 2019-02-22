@@ -1,18 +1,13 @@
-The fundamental package needed for scientific computing with Python is
-called NumPy.  This package contains:
+NumPy is the fundamental package for scientific computing with Python. It
+contains among other things:
+- a powerful N-dimensional array object
+- sophisticated (broadcasting) functions
+- tools for integrating C/C++ and Fortran code
+- useful linear algebra, Fourier transform, and random number capabilities
 
-    * a powerful N-dimensional array object
-    * sophisticated (broadcasting) functions
-    * basic linear algebra functions
-    * basic Fourier transforms
-    * sophisticated random number capabilities
-    * tools for integrating Fortran code.
-
-NumPy derives from the old Numeric code base and can be used as a
-replacement for Numeric.   It also adds the features introduced by numarray
-and can also be used to replace numarray.
-
-Note:	Development for Numeric has ceased, and users should transisition to
-	NumPy as quickly as possible.
+Besides its obvious scientific uses, NumPy can also be used as an efficient
+multi-dimensional container of generic data. Arbitrary data-types can be
+defined. This allows NumPy to seamlessly and speedily integrate with a wide
+variety of databases.
 
 WWW: https://www.numpy.org/
