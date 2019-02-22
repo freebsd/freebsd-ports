@@ -26,7 +26,7 @@ USES=		pkgconfig libtool tar:xz perl5 gmake
 USE_PERL5=	build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFLICTS_INSTALL=	gdnsd-1.[0-9]*
+CONFLICTS_INSTALL=	gdnsd-1.[0-9]* gdnsd3-3.[0-9]*
 
 USE_RC_SUBR=	gdnsd
 
