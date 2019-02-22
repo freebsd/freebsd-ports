@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-8k-wallpapers
-DISTVERSION=	2.0
+DISTVERSION=	2.1
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://bitbucket.org/rigoletto-freebsd/freebsd-8k-wallpapers/get/
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/rigoletto-freebsd-${PORTNAME}-46b58624db37
+WRKSRC=		${WRKDIR}/rigoletto-freebsd-${PORTNAME}-2afc45f41224
 
 OPTIONS_DEFINE=	DOCS
 
