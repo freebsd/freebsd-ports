@@ -1,5 +1,0 @@
---- configure.orig	Wed Mar  2 09:35:03 2005
-+++ configure	Mon Mar  7 16:54:07 2005
-@@ -1983 +1983 @@
--    CFLAGS="-g -O2"
-+    #CFLAGS="-g -O2"
