@@ -52,7 +52,6 @@
     SUBDIR += flameshot
     SUBDIR += freemind
     SUBDIR += freeplane
-    SUBDIR += fusenshi
     SUBDIR += ganttproject
     SUBDIR += ganyremote
     SUBDIR += gbirthday

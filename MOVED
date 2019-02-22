@@ -11629,3 +11629,6 @@ net-im/papyon||2019-02-20|Abandoned non function MSN client
 net-im/emesene||2019-02-20|Abandoned non function MSN client
 net-im/pebrot||2019-02-20|Abandoned non function MSN client
 games/plutocracy||2019-02-21|Has expired: broken, upstream gone
+x11-toolkits/gtksourceview|x11-toolkits/gtksourceview4|2019-02-22|Old version not depended on
+deskutils/fusenshi||2019-02-22|Abandonware, not depended on
+www/erwn||2019-02-22|Abandonware, not depended on
