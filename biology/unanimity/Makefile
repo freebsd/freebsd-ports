@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYNUMPY}
 
 # Meson needs BOOST_ROOT=${LOCALBASE}
 # https://github.com/mesonbuild/meson/issues/2239
-USES=		compiler:c++14-lang localbase meson pkgconfig python
+USES=		compiler:c++14-lang localbase meson pkgconfig python:2.7
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
