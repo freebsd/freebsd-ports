@@ -1042,17 +1042,6 @@ bin/bp_unflatten_seq
 %%PERL5_MAN3%%/Bio::UpdateableSeqI.3.gz
 %%PERL5_MAN3%%/Bio::WebAgent.3.gz
 %%PERL5_MAN3%%/BioPerl.3.gz
-%%DATADIR%%/README
-%%DATADIR%%/biblio.dia
-%%DATADIR%%/bio_liveseq_variation.dia
-%%DATADIR%%/bio_map.dia
-%%DATADIR%%/bio_restriction.dia
-%%DATADIR%%/bioperl.dia
-%%DATADIR%%/coordinatemapper.dia
-%%DATADIR%%/map_proposal.txt
-%%DATADIR%%/maps_and_markers.dia
-%%DATADIR%%/popgen.dia
-%%DATADIR%%/population_proposal.txt
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/Changes
 %%PORTDOCS%%%%DOCSDIR%%/MANIFEST

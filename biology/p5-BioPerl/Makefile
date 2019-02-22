@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	BioPerl
-PORTVERSION=	1.007004
+PORTVERSION=	1.007005
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CDRAUG
@@ -61,10 +61,6 @@ SQLITETEST_RUN_DEPENDS=	p5-DBD-SQLite>=1:databases/p5-DBD-SQLite
 SQLITETEST_BUILD_DEPENDS=	p5-DBD-SQLite>=1:databases/p5-DBD-SQLite
 
 SHEBANG_FILES=	examples/*.pl examples/*/*.pl
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}/models && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
