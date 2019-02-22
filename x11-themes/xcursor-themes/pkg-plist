@@ -105,6 +105,7 @@ share/icons/whiteglass/cursors/circle
 share/icons/whiteglass/cursors/cross
 share/icons/whiteglass/cursors/cross_reverse
 share/icons/whiteglass/cursors/crosshair
+share/icons/whiteglass/cursors/dnd-none
 share/icons/whiteglass/cursors/dot
 share/icons/whiteglass/cursors/dot_box_mask
 share/icons/whiteglass/cursors/double_arrow
@@ -113,7 +114,9 @@ share/icons/whiteglass/cursors/draft_small
 share/icons/whiteglass/cursors/draped_box
 share/icons/whiteglass/cursors/exchange
 share/icons/whiteglass/cursors/fleur
+share/icons/whiteglass/cursors/grab
 share/icons/whiteglass/cursors/gumby
+share/icons/whiteglass/cursors/hand
 share/icons/whiteglass/cursors/hand1
 share/icons/whiteglass/cursors/hand2
 share/icons/whiteglass/cursors/left_ptr
@@ -125,6 +128,7 @@ share/icons/whiteglass/cursors/lr_angle
 share/icons/whiteglass/cursors/pencil
 share/icons/whiteglass/cursors/pirate
 share/icons/whiteglass/cursors/plus
+share/icons/whiteglass/cursors/pointer
 share/icons/whiteglass/cursors/question_arrow
 share/icons/whiteglass/cursors/right_ptr
 share/icons/whiteglass/cursors/right_side
