@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	check_mk_agent
-DISTVERSION=	1.5.0p11
+DISTVERSION=	1.5.0p12
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://mathias-kettner.de/support/${DISTVERSION}/
 DISTNAME=	check-mk-raw-${DISTVERSION}.cre
