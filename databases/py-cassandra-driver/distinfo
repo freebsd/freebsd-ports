@@ -1,3 +1,3 @@
-TIMESTAMP = 1542618758
-SHA256 (cassandra-driver-3.16.0.tar.gz) = 42bcb167a90da6604081872ef609a327a63273842da81120fc462de031155abe
-SIZE (cassandra-driver-3.16.0.tar.gz) = 229652
+TIMESTAMP = 1550691903
+SHA256 (cassandra-driver-3.17.0.tar.gz) = 6d42e11fd5879f12b1600e4c0f604e4432f472d030e80176b833c99c9cf989fc
+SIZE (cassandra-driver-3.17.0.tar.gz) = 230053
