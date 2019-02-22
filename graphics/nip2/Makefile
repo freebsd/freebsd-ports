@@ -21,7 +21,7 @@ USES=		bison desktop-file-utils dos2unix gettext gmake gnome pkgconfig \
 		shared-mime-info
 
 DOS2UNIX_GLOB=	*.def
-USE_GNOME=	cairo gdkpixbuf2 gnomemimedata gtk20 libxml2
+USE_GNOME=	cairo gdkpixbuf2 gtk20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-update-desktop
 LDFLAGS+=	-lm
