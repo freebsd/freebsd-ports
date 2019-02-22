@@ -370,6 +370,7 @@
     SUBDIR += py-YABT
     SUBDIR += py-cinder
     SUBDIR += py-colorbrewer
+    SUBDIR += py-colored
     SUBDIR += py-crudini
     SUBDIR += py-emoji
     SUBDIR += py-fast-histogram
