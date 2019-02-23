@@ -117,7 +117,6 @@ bin/istioctl
 %%DATADIR%%/kubernetes/helm/istio/charts/grafana/templates/deployment.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/grafana/templates/grafana-ports-mtls.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/grafana/templates/pvc.yaml
-%%DATADIR%%/kubernetes/helm/istio/charts/grafana/templates/secret.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/grafana/templates/service.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/grafana/values.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/ingress/Chart.yaml
@@ -133,7 +132,6 @@ bin/istioctl
 %%DATADIR%%/kubernetes/helm/istio/charts/kiali/templates/configmap.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/kiali/templates/deployment.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/kiali/templates/ingress.yaml
-%%DATADIR%%/kubernetes/helm/istio/charts/kiali/templates/secrets.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/kiali/templates/service.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/kiali/templates/serviceaccount.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/mixer/Chart.yaml
