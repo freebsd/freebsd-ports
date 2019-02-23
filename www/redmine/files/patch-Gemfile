@@ -4,8 +4,8 @@
    abort "Redmine requires Bundler 1.5.0 or higher (you're using #{Bundler::VERSION}).\nPlease update with 'gem update bundler'."
  end
  
--gem "rails", "4.2.8"
-+gem "rails", ">= 4.2.8"
+-gem "rails", "4.2.11"
++gem "rails", ">= 4.2.11"
  gem "addressable", "2.4.0" if RUBY_VERSION < "2.0"
  if RUBY_VERSION < "2.1"
    gem "public_suffix", (RUBY_VERSION < "2.0" ? "~> 1.4" : "~> 2.0.5")
@@ -30,9 +30,9 @@
 -gem "i18n", "~> 0.7.0"
 +gem "i18n", ">= 0.7"
  gem "ffi", "1.9.14", :platforms => :mingw if RUBY_VERSION < "2.0"
+ gem "xpath", "< 3.2.0" if RUBY_VERSION < "2.3"
  
- # Request at least rails-html-sanitizer 1.0.3 because of security advisories
-@@ -33,76 +33,15 @@ gem "rbpdf", "~> 1.19.3"
+@@ -33,76 +33,15 @@ gem "rbpdf", "~> 1.19.6"
  
  # Optional gem for LDAP authentication
  group :ldap do
@@ -50,7 +50,7 @@
 -platforms :mri, :mingw, :x64_mingw do
 -  # Optional gem for exporting the gantt to a PNG file, not supported with jruby
 -  group :rmagick do
--    gem "rmagick", ">= 2.14.0"
+-    gem "rmagick", "~> 2.16.0"
 -  end
 -
 -  # Optional Markdown support, not for JRuby
@@ -104,7 +104,7 @@
 -  # TODO: remove this after upgrading to Rails 5
 -  gem "test_after_commit", "~> 0.4.2"
 -  # For running UI tests
--  gem "capybara"
+-  gem "capybara", '~> 2.13'
 -  gem "selenium-webdriver", "~> 2.53.4"
 -end
 -

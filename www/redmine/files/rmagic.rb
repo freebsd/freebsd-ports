@@ -1,1 +1,1 @@
-gem "rmagick", ">= 2.14.0"
+gem "rmagick", "~> 2.16.0"
