@@ -11633,3 +11633,4 @@ x11-toolkits/gtksourceview|x11-toolkits/gtksourceview4|2019-02-22|Old version no
 deskutils/fusenshi||2019-02-22|Abandonware, not depended on
 www/erwn||2019-02-22|Abandonware, not depended on
 textproc/scrollkeeper|textproc/rarian|2019-02-23|rarian replaced scrollkeeper long ago
+devel/eggdbus||2019-02-23|Abandonned since 2009, not depended on
