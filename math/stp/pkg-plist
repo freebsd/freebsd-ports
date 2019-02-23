@@ -6,7 +6,7 @@ lib/cmake/STP/STPConfigVersion.cmake
 lib/cmake/STP/STPTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/STP/STPTargets.cmake
 lib/libstp.so
-lib/libstp.so.2.1
+lib/libstp.so.2.3
 %%PYTHON_SITELIBDIR%%/stp/__init__.py
 %%PYTHON_SITELIBDIR%%/stp/library_path.py
 %%PYTHON_SITELIBDIR%%/stp/stp.py
