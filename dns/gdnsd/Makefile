@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 USES=		pkgconfig libtool tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFLICTS_INSTALL=	gdnsd2-2.[0-9]*
+CONFLICTS_INSTALL=	gdnsd2-2.[0-9]* gdnsd3-3.[0-9]*
 
 USE_RC_SUBR=	gdnsd
 
