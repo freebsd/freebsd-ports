@@ -13,6 +13,9 @@ MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Pluggable Authentication Module for Kerberos 5
 
 CONFLICTS=		pam_krb5-rh-2.*
+LICENSE=		BSD3CLAUSE GPLv1+
+LICENSE_COMB=		dual
+LICENSE_FILE=		${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=		yes
 INSTALL_TARGET=		install-strip
