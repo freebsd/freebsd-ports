@@ -11,7 +11,7 @@ LICENSE=	ISCL
 
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
-USES=		gmake localbase:ldflags
+USES=		compiler:c11 gmake localbase:ldflags
 USE_GITLAB=	yes
 GL_SITE=	https://git.zrythm.org
 GL_ACCOUNT=	zrythm
