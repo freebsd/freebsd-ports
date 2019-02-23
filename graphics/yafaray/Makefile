@@ -7,7 +7,7 @@ DISTVERSION=	3.3.0-15
 DISTVERSIONSUFFIX=	-g67f6586
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Montecarlo raytracing engine
 
 LICENSE=	GPLv2 LGPL21
@@ -43,8 +43,6 @@ QT_DESC=	Enable Qt Gui build
 QT_USES=	qt:5
 QT_CMAKE_BOOL=	WITH_QT
 QT_USE=		QT=core,gui,widgets,qmake_build,buildtools_build,qmake_build
-
-.include <bsd.port.options.mk>
 
 post-install:
 	@${RM} ${STAGEDIR}${DOCSDIR}/LICENSES
