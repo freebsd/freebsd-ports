@@ -1,7 +1,0 @@
-Galago is a desktop presence framework, designed to transmit presence
-information between programs. To put it in simpler terms, it takes
-information on who is online and their away/idle states from an instant
-messenger (such as gaim) or other similar programs and lets other
-programs (such as Ximian's Evolution) to make use of it.
-
-WWW: http://www.galago-project.org/
