@@ -1,11 +1,11 @@
---- install_iplike.sh.in.orig	2010-01-05 19:52:07.000000000 +0000
-+++ install_iplike.sh.in	2010-01-05 19:53:15.000000000 +0000
-@@ -5,7 +5,7 @@
- libdir="@libdir@"
+--- install_iplike.sh.in.orig	2019-02-23 16:38:40 UTC
++++ install_iplike.sh.in
+@@ -1,7 +1,7 @@
+ #!/bin/sh
  
- [ -z "$PG_DATABASE" ] && PG_DATABASE="opennms"
--[ -z "$PG_USER"     ] && PG_USER="postgres"
-+[ -z "$PG_USER"     ] && PG_USER="pgsql"
- [ -z "$PG_HOST"     ] && PG_HOST="localhost"
- [ -z "$PG_PORT"     ] && PG_PORT="5432"
- [ -z "$PG_PSQL"     ] && PG_PSQL="@PSQL_BINDIR@/psql"
+ [ -z "$PG_DATABASE"  ] && PG_DATABASE="opennms"
+-[ -z "$PG_USER"      ] && PG_USER="postgres"
++[ -z "$PG_USER"      ] && PG_USER="pgsql"
+ [ -z "$PG_HOST"      ] && PG_HOST="localhost"
+ [ -z "$PG_PORT"      ] && PG_PORT="5432"
+ [ -z "$PG_PSQL"      ] && PG_PSQL="@PSQL_BINDIR@/psql"
