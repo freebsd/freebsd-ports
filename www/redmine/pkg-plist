@@ -1722,6 +1722,7 @@
 %%WWWDIR%%/test/fixtures/files/import_dates.csv
 %%WWWDIR%%/test/fixtures/files/import_iso8859-1.csv
 %%WWWDIR%%/test/fixtures/files/import_issues.csv
+%%WWWDIR%%/test/fixtures/files/import_issues_utf8_with_bom.csv
 %%WWWDIR%%/test/fixtures/files/import_subtasks.csv
 %%WWWDIR%%/test/fixtures/files/invalid-Shift_JIS.csv
 %%WWWDIR%%/test/fixtures/files/iso8859-1.txt
