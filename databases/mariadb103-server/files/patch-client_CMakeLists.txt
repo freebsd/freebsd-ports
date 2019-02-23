@@ -1,6 +1,6 @@
---- client/CMakeLists.txt.orig	2017-05-14 23:13:15 UTC
+--- client/CMakeLists.txt.orig	2019-02-20 07:59:09 UTC
 +++ client/CMakeLists.txt
-@@ -35,6 +35,8 @@ COPY_OPENSSL_DLLS(copy_openssl_client)
+@@ -36,6 +36,8 @@ COPY_OPENSSL_DLLS(copy_openssl_client)
  SET(CLIENT_LIB mariadbclient mysys)
  
  ADD_DEFINITIONS(${SSL_DEFINES})
@@ -9,19 +9,20 @@
  MYSQL_ADD_EXECUTABLE(mysql completion_hash.cc mysql.cc readline.cc
                             ${CMAKE_SOURCE_DIR}/sql/sql_string.cc)
  TARGET_LINK_LIBRARIES(mysql ${CLIENT_LIB})
-@@ -43,11 +45,6 @@ IF(UNIX)
+@@ -44,12 +46,7 @@ IF(UNIX)
    SET_TARGET_PROPERTIES(mysql PROPERTIES ENABLE_EXPORTS TRUE)
  ENDIF(UNIX)
  
 -MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
 -SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
--TARGET_LINK_LIBRARIES(mysqltest  ${CLIENT_LIB} pcre pcreposix)
+-TARGET_LINK_LIBRARIES(mysqltest  ${CLIENT_LIB} pcreposix pcre)
 -SET_TARGET_PROPERTIES(mysqltest PROPERTIES ENABLE_EXPORTS TRUE)
--
  
+-
  MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
  TARGET_LINK_LIBRARIES(mysqlcheck ${CLIENT_LIB})
-@@ -60,16 +57,6 @@ MYSQL_ADD_EXECUTABLE(mysqlimport mysqlim
+ 
+@@ -61,16 +58,6 @@ MYSQL_ADD_EXECUTABLE(mysqlimport mysqlimport.c)
  SET_SOURCE_FILES_PROPERTIES(mysqlimport.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqlimport ${CLIENT_LIB})
  
@@ -38,7 +39,7 @@
  MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc)
  TARGET_LINK_LIBRARIES(mysqlbinlog ${CLIENT_LIB})
  
-@@ -89,14 +76,34 @@ ENDIF(WIN32)
+@@ -90,12 +77,32 @@ ENDIF(WIN32)
  ADD_EXECUTABLE(async_example async_example.c)
  TARGET_LINK_LIBRARIES(async_example ${CLIENT_LIB})
  
@@ -50,9 +51,9 @@
 -FOREACH(t mysql mysqltest mysqltest mysqlcheck mysqldump mysqlimport mysql_upgrade mysqlshow mysql_plugin mysqlbinlog
 +FOREACH(t mysql mysqlcheck mysqldump mysqlimport mysqlshow mysqlbinlog
    mysqladmin mysqlslap async_example)
-   ADD_DEPENDENCIES(${t} GenError ${CLIENT_LIB})
- ENDFOREACH()
- 
++  ADD_DEPENDENCIES(${t} GenError ${CLIENT_LIB})
++ENDFOREACH()
++
 +ENDIF()
 +
 +MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
@@ -71,8 +72,6 @@
 +PROPERTIES HAS_CXX TRUE)
 +
 +FOREACH(t mysqltest mysql_plugin mysql_upgrade)
-+  ADD_DEPENDENCIES(${t} GenError ${CLIENT_LIB})
-+ENDFOREACH()
-+
- ADD_DEFINITIONS(-DHAVE_DLOPEN)
+   ADD_DEPENDENCIES(${t} GenError ${CLIENT_LIB})
+ ENDFOREACH()
  

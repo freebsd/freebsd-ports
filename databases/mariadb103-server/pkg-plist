@@ -239,8 +239,6 @@ man/man1/resolveip.1.gz
 %%WSREP%%man/man1/wsrep_sst_mysqldump.1.gz
 %%WSREP%%man/man1/wsrep_sst_rsync.1.gz
 %%WSREP%%man/man1/wsrep_sst_rsync_wan.1.gz
-%%WSREP%%man/man1/wsrep_sst_xtrabackup-v2.1.gz
-%%WSREP%%man/man1/wsrep_sst_xtrabackup.1.gz
 man/man8/mysqld.8.gz
 %%DATADIR%%/binary-configure
 %%DATADIR%%/fill_help_tables.sql
