@@ -1,0 +1,11 @@
+--- examples/RF_Amp/Makefile.am.orig	2019-02-23 08:55:55 UTC
++++ examples/RF_Amp/Makefile.am
+@@ -1,7 +1,7 @@
+ 
+ SUBDIRS = model sym
+ 
+-exampledir = $(docdir)/examples/RF_Amp/
++exampledir = $(datadir)/examples/lepton-eda/RF_Amp/
+ 
+ example_DATA = 5980-2396E.pdf MSA-2643.cir MSA-2643.sch \
+ 	Q1.cir Q1.sch Q2.cir Q2.sch README Simulation.cmd gafrc
