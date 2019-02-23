@@ -3,10 +3,13 @@
 
 PORTNAME=	librsvg
 PORTVERSION=	2.45.5
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME \
+		CRATESIO/libc/0.2.49:libc
 PKGNAMESUFFIX=	2-rust
-DIST_SUBDIR=	gnome2
+DISTFILES=	gnome2/${DISTNAME}${EXTRACT_SUFX} \
+		rust/crates/libc-0.2.49.tar.gz:libc
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
@@ -44,5 +47,12 @@ post-patch:
 # Disable vendor checksums
 	@${REINPLACE_CMD} -e 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/vendor/*/.cargo-checksum.json
+# Replace vendored libc crate with libc-0.2.49 for tier 2 arch support
+	${RM} -r ${WRKSRC}/vendor/libc
+	${MV} ${WRKDIR}/libc-0.2.49 ${WRKSRC}/vendor/libc
+	@${ECHO_CMD} '{"files":{}}' > ${WRKSRC}/vendor/libc/.cargo-checksum.json
+
+pre-configure:
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/cargo update
 
 .include <bsd.port.mk>
