@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdirstat
-PORTVERSION=	3.1.3
-PORTREVISION=	1
+PORTVERSION=	3.1.4
 CATEGORIES=	sysutils kde
 MASTER_SITES=	https://bitbucket.org/jeromerobert/k4dirstat/get/
 DISTNAME=	k4dirstat-${PORTVERSION}
@@ -16,12 +15,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake cpe desktop-file-utils gettext-tools kde:5 qt:5 tar:bzip2
 
-WRKSRC=		${WRKDIR}/jeromerobert-k4dirstat-fcf698417d42
+WRKSRC=		${WRKDIR}/jeromerobert-k4dirstat-0fd87f361645
 
 CPE_VENDOR=	kdirstat_project
 USE_KDE=	auth codecs completion config configwidgets coreaddons doctools \
 		i18n iconthemes jobwidgets kio service widgetsaddons xmlgui
-USE_QT=		buildtools core gui dbus network qmake widgets xml
+USE_QT=		buildtools_build core gui dbus network qmake_build widgets xml
 
 post-patch:
 	@${REINPLACE_CMD} -e \
