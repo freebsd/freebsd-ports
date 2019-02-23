@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dlib
-DISTVERSION=	19.13
-PORTREVISION=	1
+DISTVERSION=	19.16
 CATEGORIES=	science devel math python
 MASTER_SITES=	http://dlib.net/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +11,6 @@ COMMENT=	Machine learning framework written in C++ (python bindings)
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/dlib/LICENSE.txt
-
-BROKEN_aarch64=		fails to build: CMake Error at test_for_avx/CMakeLists.txt:17 (if): if given arguments: "EQUAL" "0" "AND" "compile_result": Unknown arguments specified
-BROKEN_armv6=		fails to build: CMake Error at test_for_avx/CMakeLists.txt:17 (if): if given arguments: "EQUAL" "0" "AND" "compile_result": Unknown arguments specified
-BROKEN_armv7=		fails to build: CMake Error at test_for_avx/CMakeLists.txt:17 (if): if given arguments: "EQUAL" "0" "AND" "compile_result": Unknown arguments specified
 
 BUILD_DEPENDS=		cmake:devel/cmake
 LIB_DEPENDS=		${PY_BOOST}
@@ -54,7 +49,7 @@ BLASLAPACK_USES=	blaslapack
 BLASLAPACK_VARS_OFF=	blaslapackargs="--no DLIB_USE_BLAS --no DLIB_USE_LAPACK --no DLIB_USE_MKL_FFT"
 
 AVX_VARS=		avxargs="--yes USE_AVX_INSTRUCTIONS"
-AVX_VARS_OFF=		avxargs="--no AVX_IS_AVAILABLE_ON_HOST"
+AVX_VARS_OFF=		avxargs="--no USE_AVX_INSTRUCTIONS"
 
 PYDISTUTILS_BUILDARGS=	--set BOOST_PYTHON_SUFFIX:STRING=${PYTHON_SUFFIX} ${X11ARGS} ${JPEGARGS} ${PNGARGS} ${GIFARGS} ${SQLITEARGS} ${BLASLAPACKARGS} ${AVXARGS} ${BLASLAPACK}
 
