@@ -2,7 +2,7 @@
 
 PORTNAME=	bitlbee
 PORTVERSION=	3.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		LOCAL/brix
@@ -33,9 +33,9 @@ OPTIONS_SINGLE_EVENTS=	GLIB LIBEVENT
 OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS NSS
 
 OPTIONS_MULTI=		PROTO
-OPTIONS_MULTI_PROTO=	LIBPURPLE JABBER MSN OSCAR SKYPE TWITTER YAHOO
+OPTIONS_MULTI_PROTO=	LIBPURPLE JABBER MSN OSCAR SKYPE TWITTER
 
-LIBPURPLE_PREVENTS=	JABBER MSN OSCAR SKYPE TWITTER YAHOO
+LIBPURPLE_PREVENTS=	JABBER MSN OSCAR SKYPE TWITTER
 LIBPURPLE_PREVENTS_MSG=	If libpurple is enabled, all native protocols must be disabled
 
 OTR_DESC=		Off-the-Record Messaging support
@@ -44,18 +44,18 @@ MSN_DESC=		Microsoft Messenger support
 OSCAR_DESC=		OSCAR (ICQ) support
 SKYPE_DESC=		Skype support
 TWITTER_DESC=		Twitter support
-YAHOO_DESC=		Yahoo! Messenger support
 GLIB_DESC=		Use glib as event handler
 LIBEVENT_DESC=		Use libevent as event handler
 LIBEVENT_BROKEN=	bitlbee w/ libevent fails to start as daemon or fork
 
-OPTIONS_DEFAULT=	GLIB GNUTLS JABBER OSCAR OTR TWITTER YAHOO
+OPTIONS_DEFAULT=	GLIB GNUTLS JABBER OSCAR OTR TWITTER
 
 CONFIGURE_ARGS=		--config=/var/db/bitlbee \
 			--pcdir=${PREFIX}/libdata/pkgconfig \
 			--prefix=${PREFIX} \
 			--mandir=${MANPREFIX}/man \
-			--strip=1
+			--strip=1 \
+			--yahoo=0
 
 DEBUG_CONFIGURE_ON=	--debug=1
 GLIB_CONFIGURE_ON=	--events=glib
@@ -85,7 +85,6 @@ SKYPE_CONFIGURE_ON=	--skype=1
 SKYPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Skype4Py>0:net-im/py-skype4py@${PY_FLAVOR}
 SKYPE_USES=		python:2.7
 TWITTER_CONFIGURE_OFF=	--twitter=0
-YAHOO_CONFIGURE_OFF=	--yahoo=0
 
 USERS=		bitlbee
 GROUPS=		bitlbee
