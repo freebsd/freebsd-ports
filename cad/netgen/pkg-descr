@@ -5,4 +5,4 @@ representation (BRep) from STL file format. The connection to a geometry
 kernel allows the handling of IGES and STEP files. NETGEN contains modules
 for mesh optimization and hierarchical mesh refinement.
 
-WWW: http://www.hpfem.jku.at/netgen/
+WWW: https://ngsolve.org/
