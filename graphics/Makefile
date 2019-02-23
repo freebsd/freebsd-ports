@@ -273,7 +273,6 @@
     SUBDIR += glexcess
     SUBDIR += glfw
     SUBDIR += glfw2
-    SUBDIR += glitz
     SUBDIR += gliv
     SUBDIR += glosm
     SUBDIR += glpng
