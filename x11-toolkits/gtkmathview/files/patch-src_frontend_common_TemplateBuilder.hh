@@ -1,6 +1,6 @@
---- src/frontend/common/TemplateBuilder.hh.orig	2013-10-04 14:50:03.000000000 +0200
-+++ src/frontend/common/TemplateBuilder.hh	2013-10-04 14:55:16.000000000 +0200
-@@ -47,12 +47,12 @@
+--- src/frontend/common/TemplateBuilder.hh.orig	2007-08-17 10:02:34 UTC
++++ src/frontend/common/TemplateBuilder.hh
+@@ -47,12 +47,12 @@ class TemplateBuilder : public Builder (protected)
    SmartPtr<typename ElementBuilder::type>
    getElement(const typename Model::Element& el) const
    {
