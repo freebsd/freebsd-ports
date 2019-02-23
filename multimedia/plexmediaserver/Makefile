@@ -4,7 +4,7 @@
 PORTNAME=	plexmediaserver
 PORTVERSION?=	1.14.1.5488
 DISTVERSIONSUFFIX?=cc260c476
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	multimedia
 MASTER_SITES?=	https://downloads.plex.tv/plex-media-server/${DISTVERSION}-${DISTVERSIONSUFFIX}/
 DISTNAME?=	PlexMediaServer-${DISTVERSION}-${DISTVERSIONSUFFIX}-freebsd-${ARCH}
@@ -58,8 +58,6 @@ post-patch-RELAY-off:
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}/${DATADIR})
-	# Python fix for older releases of Plex
-	${INSTALL} -lrs ${STAGEDIR}/${DATADIR}/libpython2.7.so.1 ${STAGEDIR}/${DATADIR}/libpython2.7.so
 	# Workaround for space in binary name
 	${INSTALL} -lrs ${STAGEDIR}/${DATADIR}/Plex\ Media\ Server ${STAGEDIR}/${DATADIR}/Plex_Media_Server
 
