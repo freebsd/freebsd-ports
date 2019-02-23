@@ -4,6 +4,7 @@ include/aluminum/base.hpp
 include/aluminum/internal.hpp
 include/aluminum/mempool.hpp
 include/aluminum/mpi_impl.hpp
+include/aluminum/profiling.hpp
 include/aluminum/progress.hpp
 include/aluminum/tuning_params.hpp
 include/aluminum/utils.hpp
