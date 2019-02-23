@@ -1,0 +1,24 @@
+--- configure.orig	2008-07-09 07:28:25 UTC
++++ configure
+@@ -11280,7 +11280,7 @@ if ( `test \( \( x${ac_cv_lib_avutil_av_rescale+set} =
+ 	# build embedded ffmpeg
+ 	echo "${MAKE-make}-ing prerequisite ffmpeg libraries" && \
+ 	( cd ./ffmpeg/ && \
+-	./configure --cc=${CC} --enable-gpl ${ac_my_ffmpeg_cfg_lib_switch} --enable-pthreads --enable-swscale --disable-ffserver --disable-ffplay && \
++	./configure --cc=${CC} --enable-gpl ${ac_my_ffmpeg_cfg_lib_switch} --enable-pthreads --enable-swscale --disable-ffserver --disable-ffplay --extra-cflags=-I%%LOCALBASE%%/include --extra-ldflags=-L%%LOCALBASE%%/lib --disable-demuxer=v4l2 --disable-mmx && \
+ 	ln -s libavcodec/avcodec.h ./ && \
+ 	ln -s libavcodec/dsputil.h ./ && \
+ 	ln -s libavformat/avformat.h ./ && \
+@@ -11296,10 +11296,10 @@ if ( `test \( \( x${ac_cv_lib_avutil_av_rescale+set} =
+ 	ln -s libswscale/swscale.h ./ && \
+ 	ln -s libswscale/rgb2rgb.h ./ && \
+ 	ln -s libavdevice/avdevice.h ./ && \
+-	${MAKE-make} )
++	${MAKE-gmake} )
+ 	# try to link it statically, or reset cache, set static_avcodec=no
+ 	top_srcdir=`pwd`
+-	ac_my_ldflags_save=${LDFLAGS} ; LDFLAGS="${LDFLAGS} -L$top_srcdir/ffmpeg/libavcodec -L$top_srcdir/ffmpeg/libavformat -L$top_srcdir/ffmpeg/libavutil -L$top_srcdir/ffmpeg/libswscale -L$top_srcdir/ffmpeg/libavdevice"
++	ac_my_ldflags_save=${LDFLAGS} ; LDFLAGS="-L$top_srcdir/ffmpeg/libavcodec -L$top_srcdir/ffmpeg/libavformat -L$top_srcdir/ffmpeg/libavutil -L$top_srcdir/ffmpeg/libswscale -L$top_srcdir/ffmpeg/libavdevice ${LDFLAGS}"
+ 	ac_my_cflags_save=${CFLAGS} ; CFLAGS="${CFLAGS} -I $top_srcdir -I$top_srcdir/ffmpeg/libavcodec -I$top_srcdir/ffmpeg/libavformat -I$top_srcdir/ffmpeg/libavutil -I$top_srcdir/ffmpeg/libswscale -I$top_srcdir/ffmpeg/libavdevice"
+ 
+ 
