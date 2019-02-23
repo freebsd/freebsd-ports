@@ -1,6 +1,6 @@
---- src/frontend/common/TemplateElementIterator.hh.orig	2013-10-04 14:59:19.000000000 +0200
-+++ src/frontend/common/TemplateElementIterator.hh	2013-10-04 14:59:40.000000000 +0200
-@@ -43,7 +43,7 @@
+--- src/frontend/common/TemplateElementIterator.hh.orig	2007-08-17 10:02:34 UTC
++++ src/frontend/common/TemplateElementIterator.hh
+@@ -43,7 +43,7 @@ class GMV_MathView_EXPORT TemplateElementIterator : pu
    findValidNodeForward(const typename Model::Node& p0) const
    {
      for (typename Model::Node p = p0; p; p = Model::getNextSibling(p))

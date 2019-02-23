@@ -1,9 +1,10 @@
---- mathmlsvg/main.cc.orig	2013-10-04 15:04:01.000000000 +0200
-+++ mathmlsvg/main.cc	2013-10-04 15:04:19.000000000 +0200
-@@ -18,6 +18,7 @@
+--- mathmlsvg/main.cc.orig	2007-08-17 10:02:46 UTC
++++ mathmlsvg/main.cc
+@@ -18,6 +18,8 @@
  
  #include <config.h>
  
++#include <cstring>
 +#include <unistd.h>
  #include <cassert>
  #include <fstream>

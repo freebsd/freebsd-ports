@@ -19,15 +19,15 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 		libgmetadom_gdome_cpp_smart.so:textproc/gmetadom
 
 GNU_CONFIGURE=	yes
-USES=		compiler gmake libtool pathfix pkgconfig
+USES=		compiler:c++11-lang gmake gnome libtool localbase:ldflags \
+		pathfix pkgconfig
 USE_GNOME=	gtk20 libxml2 pangox-compat
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_clang=	-Wno-c++11-narrowing
+CXXFLAGS_gcc=	-Wno-error=narrowing
 
 post-patch:
 	@${REINPLACE_CMD} '/-lstdc++/d' ${WRKSRC}/src/Makefile.in \
