@@ -6,7 +6,7 @@ PORTVERSION=	2.12.8
 CATEGORIES=	lang java
 MASTER_SITES=	http://www.scala-lang.org/files/archive/
 
-MAINTAINER=	jan0sch@mykolab.com
+MAINTAINER=	freebsd-ports@jan0sch.de
 COMMENT=	Scala Programming Language
 
 LICENSE=	APACHE20
