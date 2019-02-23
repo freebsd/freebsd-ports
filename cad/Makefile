@@ -58,6 +58,7 @@
     SUBDIR += layouteditor
     SUBDIR += ldraw
     SUBDIR += leocad
+    SUBDIR += lepton-eda
     SUBDIR += libopencad
     SUBDIR += librecad
     SUBDIR += libredwg

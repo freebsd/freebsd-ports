@@ -1,0 +1,8 @@
+--- examples/TwoStageAmp/Makefile.am.orig	2019-02-23 08:55:55 UTC
++++ examples/TwoStageAmp/Makefile.am
+@@ -1,4 +1,4 @@
+-exampledir = $(docdir)/examples/TwoStageAmp/
++exampledir = $(datadir)/examples/lepton-eda/TwoStageAmp/
+ 
+ nobase_example_DATA = \
+ 	Simulation.cmd TwoStageAmp.sch spice.netlist gafrc \

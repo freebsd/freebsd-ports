@@ -1,0 +1,8 @@
+--- examples/gTAG/Makefile.am.orig	2019-02-23 08:55:55 UTC
++++ examples/gTAG/Makefile.am
+@@ -1,4 +1,4 @@
+-exampledir = $(docdir)/examples/gTAG/
++exampledir = $(datadir)/examples/lepton-eda/gTAG/
+ 
+ example_DATA = 7414-1.sym attribs gafrc copyleft.sym crdist.sh \
+ 	     cy7c64603-52nc.sym gTAG-consio.ps gTAG-consio.sch \
