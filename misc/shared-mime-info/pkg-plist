@@ -3,10 +3,11 @@ libdata/pkgconfig/shared-mime-info.pc
 man/man1/update-mime-database.1.gz
 share/locale/ar/LC_MESSAGES/shared-mime-info.mo
 share/locale/as/LC_MESSAGES/shared-mime-info.mo
+share/locale/ast/LC_MESSAGES/shared-mime-info.mo
 share/locale/az/LC_MESSAGES/shared-mime-info.mo
+share/locale/be/LC_MESSAGES/shared-mime-info.mo
 share/locale/be@latin/LC_MESSAGES/shared-mime-info.mo
 share/locale/bg/LC_MESSAGES/shared-mime-info.mo
-share/locale/bg_BG/LC_MESSAGES/shared-mime-info.mo
 share/locale/bn_IN/LC_MESSAGES/shared-mime-info.mo
 share/locale/ca/LC_MESSAGES/shared-mime-info.mo
 share/locale/ca@valencia/LC_MESSAGES/shared-mime-info.mo
@@ -21,10 +22,10 @@ share/locale/es/LC_MESSAGES/shared-mime-info.mo
 share/locale/et/LC_MESSAGES/shared-mime-info.mo
 share/locale/eu/LC_MESSAGES/shared-mime-info.mo
 share/locale/fa/LC_MESSAGES/shared-mime-info.mo
-share/locale/fa_IR/LC_MESSAGES/shared-mime-info.mo
 share/locale/fi/LC_MESSAGES/shared-mime-info.mo
 share/locale/fo/LC_MESSAGES/shared-mime-info.mo
 share/locale/fr/LC_MESSAGES/shared-mime-info.mo
+share/locale/fur/LC_MESSAGES/shared-mime-info.mo
 share/locale/ga/LC_MESSAGES/shared-mime-info.mo
 share/locale/gl/LC_MESSAGES/shared-mime-info.mo
 share/locale/gu/LC_MESSAGES/shared-mime-info.mo
@@ -67,7 +68,6 @@ share/locale/ta/LC_MESSAGES/shared-mime-info.mo
 share/locale/te/LC_MESSAGES/shared-mime-info.mo
 share/locale/th/LC_MESSAGES/shared-mime-info.mo
 share/locale/tr/LC_MESSAGES/shared-mime-info.mo
-share/locale/ru_RU/LC_MESSAGES/shared-mime-info.mo
 share/locale/uk/LC_MESSAGES/shared-mime-info.mo
 share/locale/vi/LC_MESSAGES/shared-mime-info.mo
 share/locale/wa/LC_MESSAGES/shared-mime-info.mo
