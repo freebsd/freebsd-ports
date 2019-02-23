@@ -63,7 +63,6 @@
     SUBDIR += libsignon-glib
     SUBDIR += libstrophe
     SUBDIR += libtelepathy
-    SUBDIR += libyahoo2
     SUBDIR += licq
     SUBDIR += licq-icq
     SUBDIR += licq-jabber
@@ -144,7 +143,6 @@
     SUBDIR += py-unmessage
     SUBDIR += py-xmpppy
     SUBDIR += py-xmpppy-irc
-    SUBDIR += py-xmpppy-yahoo
     SUBDIR += qTox
     SUBDIR += qq
     SUBDIR += quaternion
