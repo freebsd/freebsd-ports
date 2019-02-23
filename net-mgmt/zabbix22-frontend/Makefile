@@ -17,17 +17,11 @@ USE_PHP=	bcmath ctype gd pcre snmp sockets mbstring session dom xml \
 		xmlreader xmlwriter simplexml gettext ldap
 USES+=		php:web
 
-OPTIONS_DEFINE=	MYSQL MYSQLI PGSQL SQLITE ORACLE
+OPTIONS_DEFINE=	MYSQLI PGSQL SQLITE ORACLE
 OPTIONS_DEFAULT=	MYSQLI
 MYSQLI_DESC=	MySQLI backend
 
-MYSQL_VARS=	IGNORE_WITH_PHP+="71 72 73"
-
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
-.endif
 
 .if ${PORT_OPTIONS:MMYSQLI}
 USE_PHP+=	mysqli
