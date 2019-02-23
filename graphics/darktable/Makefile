@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	2.4.4
-PORTREVISION=	3
+PORTVERSION=	2.6.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -29,7 +28,7 @@ ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE instructions and 64-bit address space
 
 USES=		cmake compiler:c++11-lib desktop-file-utils	\
-		jpeg pkgconfig sqlite tar:xz
+		gl gnome jpeg pkgconfig sqlite tar:xz
 USE_GL=		glu
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 USE_XORG=	ice sm x11 xext xrandr
@@ -52,6 +51,7 @@ CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=1
 CMAKE_ARGS+=	-DBUILD_CMSTEST:BOOL=ON
 CMAKE_ARGS+=	-DUSE_KWALLET:BOOL=ON
 LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-fopenmp
 
 COLORD_LIB_DEPENDS=	libcolord.so:graphics/colord \
 			libcolord-gtk.so:graphics/colord-gtk
@@ -109,13 +109,6 @@ CXX=		clang++${LLVM_VER}
 # Depend on devel/openmp instead of the full LLVM at runtime. Required
 # for a consistent libomp experience.
 LIB_DEPENDS+=	libomp.so.0:devel/openmp
-
-# Last but not least, there is a second change or regression in CMake
-# 3.4.x: CMAKE_EXE_LINKER_FLAGS is not passed to TRY_COMPILE by default
-# anymore. The CMP0056 policy must be explicitly set to NEW to ensure
-# linker flags are passed.
-# See: https://cmake.org/cmake/help/v3.4/policy/CMP0056.html
-CMAKE_ARGS+=	-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW
 .endif
 
 .if defined(WITH_DEBUG)
