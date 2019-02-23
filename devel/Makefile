@@ -1772,6 +1772,7 @@
     SUBDIR += mercurialeclipse
     SUBDIR += mergify
     SUBDIR += meson
+    SUBDIR += mill
     SUBDIR += mime
     SUBDIR += mimir
     SUBDIR += mingw32-bin-msvcrt
