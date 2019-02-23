@@ -4,10 +4,6 @@ PORTNAME=	svt-av1
 PORTVERSION=	s20180222
 CATEGORIES=	multimedia
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
-PATCHFILES+=	89.diff:-p1
-PATCHFILES+=	103.diff:-p1
-
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Scalable AV1 encoder
 
@@ -27,7 +23,7 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	OpenVisualCloud
 GH_PROJECT=	SVT-AV1
-GH_TAGNAME=	425ba77
+GH_TAGNAME=	df11eb0
 
 post-patch:
 # Default CFLAGS are already set by USES=cmake
