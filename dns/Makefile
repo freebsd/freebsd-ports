@@ -76,6 +76,7 @@
     SUBDIR += fpdns
     SUBDIR += gdnsd
     SUBDIR += gdnsd2
+    SUBDIR += gdnsd3
     SUBDIR += gen6dns
     SUBDIR += getdns
     SUBDIR += hesiod

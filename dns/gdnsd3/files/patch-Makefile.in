@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2015-03-02 14:36:56 UTC
++++ Makefile.in
+@@ -2552,12 +2552,6 @@ install-exec-hook-top:
+ 	$(MKDIR_P) "$(DESTDIR)$(GDNSD_DEFPATH_CONFIG)/geoip";
+ 	$(MKDIR_P) "$(DESTDIR)$(GDNSD_DEFPATH_RUN)";
+ 	$(MKDIR_P) "$(DESTDIR)$(GDNSD_DEFPATH_STATE)";
+-	@id gdnsd >/dev/null 2>&1; if test $$? -ne 0; then \
+-		echo; \
+-		echo === READ ME ===; \
+-		echo The default user \"gdnsd\" \(for privdrop when executed as root\) does not seem to exist yet!; \
+-		echo; \
+-	fi
+ src/zscan_rfc1035.c: src/zscan_rfc1035.rl
+ 	$(AM_V_GEN)$(RAGEL) -G2 -o $@ $(srcdir)/src/zscan_rfc1035.rl
+ libgdnsd/bopts.h: Makefile
