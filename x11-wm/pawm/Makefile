@@ -13,6 +13,8 @@ COMMENT=	The Puto Amo Window Manager
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/GPL
 
+BROKEN=		Does not start 'BUG [35339] [pawindow_init]'
+
 USE_XORG=	x11 xft xrandr xrender xpm
 USES=		cmake pkgconfig tar:bzip2
 CMAKE_ARGS=	-DCMAKE_CONFIG_PREFIX:STRING="${PREFIX}/etc" \
