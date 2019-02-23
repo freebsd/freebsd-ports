@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gotop
-DISTVERSION=	2.0.2
+DISTVERSION=	3.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
