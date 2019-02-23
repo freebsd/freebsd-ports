@@ -75,8 +75,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 #    installed  with USE_GCC
 CONFIGURE_ARGS+=	--disable-ntl
 
-INFO=		giac_us giac_es
-
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
