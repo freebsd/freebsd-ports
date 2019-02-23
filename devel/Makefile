@@ -506,7 +506,6 @@
     SUBDIR += editline
     SUBDIR += efivar
     SUBDIR += efl
-    SUBDIR += eggdbus
     SUBDIR += egypt
     SUBDIR += eiffelstudio
     SUBDIR += elf
