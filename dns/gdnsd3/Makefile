@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	gdnsd
-PORTVERSION=	2.4.2
+PORTVERSION=	3.0.0
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/gdnsd/gdnsd/releases/download/v${PORTVERSION}/ \
 		ZI \
 		http://gdnsd.scaleengine.net/gdnsd/
-PKGNAMESUFFIX=	2
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Authoritative-only GeoIP-aware DNS server
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libev.so:devel/libev
-BUILD_DEPENDS=	ragel>0:devel/ragel
+LIB_DEPENDS=	libev.so:devel/libev \
+		libsodium.so:security/libsodium \
+		liburcu.so:sysutils/liburcu
 
 FETCH_ARGS=	-Fpr
 
@@ -26,32 +27,34 @@ USES=		pkgconfig libtool tar:xz perl5 gmake
 USE_PERL5=	build
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFLICTS_INSTALL=	gdnsd-1.[0-9]* gdnsd3-3.[0-9]*
+CONFLICTS_INSTALL=	gdnsd-1.[0-9]* gdnsd2-2.[0-9]*
 
 USE_RC_SUBR=	gdnsd
 
 USERS?=		gdnsd
 GROUPS?=	gdnsd
 
-OPTIONS_DEFINE=	DOCS MAXMINDDB URCU
+OPTIONS_DEFINE=	DOCS MAXMINDDB
 OPTIONS_DEFAULT=MAXMINDDB
 
 MAXMINDDB_DESC=		Enable GeoIP1 + GeoIP2 Support
 MAXMINDDB_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
-URCU_DESC=		Read-Copy-Update Support (Faster Zone Parsing)
-URCU_CONFIGURE_WITH=	urcu
-URCU_LIB_DEPENDS=	liburcu.so:sysutils/liburcu
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
+CONFIGURE_ARGS+=--without-hardening
+CFLAGS+=	-fstack-protector-strong -fexceptions -ftrapv
+LDFLAGS+=	-Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${localstatedir}/lib/$${PACKAGE_NAME}|/var/db/${PORTNAME}|g' \
 		${WRKSRC}/configure
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/libgdnsd.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/plugin_*.so
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/gdnsd/geoip \
 		${STAGEDIR}${PREFIX}/etc/gdnsd/zones \
 		${STAGEDIR}/var/run/gdnsd
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,0 +1,28 @@
+************************************************************************
+As of version 3.0.0, gdnsd no longer has the ability to bind to
+privileged ports and then drop privileges.  As a result, you must use
+mac_portacl to allow the gdnsd user to bind to 53 udp/tcp.
+
+Please execute the following commands to prep this system to run gdnsd:
+
+echo "# required for gdnsd3">>/boot/loader.conf.local
+echo 'mac_portacl_load="YES"' >>/boot/loader.conf.local
+echo 'accf_dns_load="YES"' >>/boot/loader.conf.local
+echo 'accf_data_load="YES"' >>/boot/loader.conf.local
+
+echo "# required for gdnsd3">>/etc/sysctl.conf.local
+echo "security.mac.portacl.suser_exempt=1">>/etc/sysctl.conf.local
+echo "security.mac.portacl.port_high=1023">>/etc/sysctl.conf.local
+echo "net.inet.ip.portrange.reservedlow=0">>/etc/sysctl.conf.local
+echo "net.inet.ip.portrange.reservedhigh=0">>/etc/sysctl.conf.local
+echo "security.mac.portacl.rules=uid:179:udp:53,uid:179:tcp:53">>/etc/sysctl.conf.local
+
+Then, either reboot or run the following commands to implement the above
+changes:
+
+kldload mac_portacl
+kldload accf_dns
+kldload accf_data
+service sysctl reload
+
+************************************************************************

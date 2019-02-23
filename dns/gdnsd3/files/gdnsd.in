@@ -23,19 +23,39 @@ rcvar=gdnsd_enable
 # set defaults
 load_rc_config $name
 : ${gdnsd_enable:="NO"}
+: ${gdnsd_user:="gdnsd"}
+: ${gdnsd_group:="gdnsd"}
 : ${gdnsd_flags:=""}
 
 command="%%PREFIX%%/sbin/gdnsd"
-command_args="start"
+command_args="daemonize"
 procname=${command}
+start_precmd="gdnsd_prestart"
 restart_precmd="gdnsd_checkconf"
+restart_cmd="gdnsd_restart"
 reload_cmd="gdnsd_reload"
 reload_precmd="gdnsd_checkconf"
+stats_cmd="gdnsd_stats"
 configtest_cmd="gdnsd_checkconf"
-extra_commands="reload configtest"
+extra_commands="stats reload configtest"
+
+gdnsd_prestart()
+{
+  if ! kldstat -q -m mac_portacl; then
+    warn "mac_portacl module not loaded, please review pkg-message"
+  fi
+
+  install -d -o ${gdnsd_user} -g ${gdnsd_group} -m 700 /var/run/gdnsd
+}
+
 gdnsd_reload()
 {
-  ${command} ${gdnsd_flags} reload-zones
+  gdnsdctl reload-zones
+}
+
+gdnsd_restart()
+{
+  gdnsdctl replace
 }
 
 gdnsd_checkconf()
@@ -43,5 +63,9 @@ gdnsd_checkconf()
   ${command} ${gdnsd_flags} checkconf
 }
 
-run_rc_command "$1"
+gdnsd_stats()
+{
+  gdnsdctl stats
+}
 
+run_rc_command "$1"
