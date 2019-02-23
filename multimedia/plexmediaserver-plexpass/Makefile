@@ -10,6 +10,8 @@ DISTNAME=	PlexMediaServer-${DISTVERSION}-${DISTVERSIONSUFFIX}-FreeBSD-${ARCH}
 
 MAINTAINER=	feld@FreeBSD.org
 
+BROKEN=	Plex broke the build on FreeBSD
+
 USE_RC_SUBR=	${PORTNAME}_plexpass
 
 MASTERDIR=${.CURDIR}/../plexmediaserver
