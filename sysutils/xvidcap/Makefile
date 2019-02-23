@@ -33,7 +33,7 @@ MANLANG=		"" de es it
 
 GNU_CONFIGURE=		yes
 # --export-dynamic fixes libglade problems
-LDFLAGS+=		-L${LOCALBASE}/lib  -Wl,--export-dynamic -lz
+LDFLAGS+=		-Wl,--export-dynamic -lz
 
 .if !defined(CFLAGS) || ${CFLAGS:M-fno-strict-aliasing*} == ""
 CFLAGS+=	-O2 -fno-strict-aliasing
