@@ -11635,3 +11635,5 @@ www/erwn||2019-02-22|Abandonware, not depended on
 textproc/scrollkeeper|textproc/rarian|2019-02-23|rarian replaced scrollkeeper long ago
 devel/eggdbus||2019-02-23|Abandonned since 2009, not depended on
 devel/libgalago||2019-02-23|Abandonned since 2006, not depended on
+net-im/libyahoo2||2019-02-23|Yahoo messenger has been discontinued in July 17, 2018
+net-im/py-xmpppy-yahoo||2019-02-23|Yahoo messenger has been discontinued in July 17, 2018

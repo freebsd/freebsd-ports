@@ -1,5 +1,0 @@
-The Y!M transport is a dynamic gateway that allows XMPP/Jabber
-users to connect to Yahoo! Messenger using their Groupchat and MUC clients.
-It is based on xmpppy and curphoo Python libraries.
-
-WWW: http://xmpppy.sourceforge.net/yahoo/
