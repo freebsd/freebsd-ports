@@ -1456,7 +1456,6 @@
     SUBDIR += libfwsi
     SUBDIR += libg19
     SUBDIR += libg19draw
-    SUBDIR += libgalago
     SUBDIR += libgamepad
     SUBDIR += libgdata
     SUBDIR += libgee
