@@ -7,7 +7,7 @@ CATEGORIES=	lang lisp java
 MASTER_SITES=	https://download.clojure.org/install/
 DISTNAME=	clojure-tools-${PORTVERSION}
 
-MAINTAINER=	jan0sch@mykolab.com
+MAINTAINER=	freebsd-ports@jan0sch.de
 COMMENT=	Dynamic programming language for the JVM
 
 LICENSE=	EPL
