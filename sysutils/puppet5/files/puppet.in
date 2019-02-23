@@ -30,7 +30,7 @@ unset puppet_flags
 pidfile="${puppet_rundir}/agent.pid"
 start_precmd="install -d -o puppet -g puppet ${pidfile%/*}"
 
-PATH="${PATH}:/usr/local/bin"
+PATH="${PATH}:%%PREFIX%%/bin:%%PREFIX%%/sbin"
 
 # An UTF-8 locale is required
 : LC_ALL=${LC_ALL:=C.UTF-8}
