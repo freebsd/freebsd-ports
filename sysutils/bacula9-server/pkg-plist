@@ -43,6 +43,7 @@ sbin/dbcheck
 %%DATADIR%%/btraceback.gdb
 %%DATADIR%%/btraceback.mdb
 %%DATADIR%%/create_bacula_database
+%%DATADIR%%/isworm
 %%DATADIR%%/tapealert
 %%MYSQL%%%%DATADIR%%/create_mysql_database
 %%PGSQL%%%%DATADIR%%/create_postgresql_database
