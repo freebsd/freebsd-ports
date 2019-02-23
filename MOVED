@@ -11632,3 +11632,4 @@ games/plutocracy||2019-02-21|Has expired: broken, upstream gone
 x11-toolkits/gtksourceview|x11-toolkits/gtksourceview4|2019-02-22|Old version not depended on
 deskutils/fusenshi||2019-02-22|Abandonware, not depended on
 www/erwn||2019-02-22|Abandonware, not depended on
+textproc/scrollkeeper|textproc/rarian|2019-02-23|rarian replaced scrollkeeper long ago
