@@ -2,6 +2,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	4.10.12
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	4
