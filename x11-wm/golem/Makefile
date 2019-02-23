@@ -12,6 +12,7 @@ COMMENT=	Small window manager with themes and plugins
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		All plugins fail to load with Undefined symbol "display"
 BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol: display in readonly segment
 
 USES=		gmake perl5 tar:bzip2
