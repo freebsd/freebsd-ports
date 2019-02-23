@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cryptominisat
-DISTVERSION=	5.6.3
-PORTREVISION=	1
+DISTVERSION=	5.6.8
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -32,8 +31,10 @@ post-patch:
 		-e 's|$${CMAKE_CXX_COMPILER}|${CXX}|' \
 		-e 's|$${PY_C_CONFIG}||' \
 		-e 's|$${PY_LD_CONFIG}||' \
+		-e 's|$${CMS_FULL_VERSION}|${PORTVERSION}|' \
 		-e 's|$${APPLE}||' ${WRKSRC}/setup.py.in
 	${CP} ${WRKSRC}/setup.py.in ${WRKSRC}/setup.py
+	${CP} ${WRKSRC}/src/pycryptosat.cpp.in ${WRKSRC}/src/pycryptosat.cpp
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pycryptosat.so
