@@ -57,6 +57,7 @@ include/dlib/bsp/bsp_abstract.h
 include/dlib/byte_orderer.h
 include/dlib/byte_orderer/byte_orderer_kernel_1.h
 include/dlib/byte_orderer/byte_orderer_kernel_abstract.h
+include/dlib/cassert
 include/dlib/clustering.h
 include/dlib/clustering/bottom_up_cluster.h
 include/dlib/clustering/bottom_up_cluster_abstract.h
@@ -69,6 +70,7 @@ include/dlib/clustering/spectral_cluster_abstract.h
 include/dlib/cmake_utils/add_global_compiler_switch.cmake
 include/dlib/cmake_utils/check_if_avx_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/check_if_neon_available.cmake
+include/dlib/cmake_utils/check_if_sse4_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/find_blas.cmake
 include/dlib/cmake_utils/set_compiler_specific_options.cmake
 include/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
@@ -119,6 +121,7 @@ include/dlib/cpp_tokenizer/cpp_tokenizer_kernel_c.h
 include/dlib/crc32.h
 include/dlib/crc32/crc32_kernel_1.h
 include/dlib/crc32/crc32_kernel_abstract.h
+include/dlib/cstring
 include/dlib/cuda/cpu_dlib.h
 include/dlib/cuda/cublas_dlibapi.h
 include/dlib/cuda/cuda_data_ptr.h
@@ -157,6 +160,8 @@ include/dlib/disjoint_subsets/disjoint_subsets.h
 include/dlib/disjoint_subsets/disjoint_subsets_abstract.h
 include/dlib/disjoint_subsets/disjoint_subsets_sized.h
 include/dlib/disjoint_subsets/disjoint_subsets_sized_abstract.h
+include/dlib/dlib_basic_cpp_build_tutorial.txt
+include/dlib/dlib_include_path_tutorial.txt
 include/dlib/dnn.h
 include/dlib/dnn/core.h
 include/dlib/dnn/core_abstract.h
@@ -267,6 +272,7 @@ include/dlib/filtering/kalman_filter_abstract.h
 include/dlib/filtering/rls_filter.h
 include/dlib/filtering/rls_filter_abstract.h
 include/dlib/float_details.h
+include/dlib/fstream
 include/dlib/general_hash/count_bits.h
 include/dlib/general_hash/count_bits_abstract.h
 include/dlib/general_hash/general_hash.h
@@ -471,15 +477,20 @@ include/dlib/interfaces/cmd_line_parser_option.h
 include/dlib/interfaces/enumerable.h
 include/dlib/interfaces/map_pair.h
 include/dlib/interfaces/remover.h
+include/dlib/iomanip
+include/dlib/iosfwd
 include/dlib/iosockstream.h
 include/dlib/iosockstream/iosockstream.h
 include/dlib/iosockstream/iosockstream_abstract.h
+include/dlib/iostream
 include/dlib/is_kind.h
+include/dlib/istream
 include/dlib/java/java_array.h
 include/dlib/java/swig_api.h
 include/dlib/linker.h
 include/dlib/linker/linker_kernel_1.h
 include/dlib/linker/linker_kernel_abstract.h
+include/dlib/locale
 include/dlib/logger.h
 include/dlib/logger/extra_logger_headers.h
 include/dlib/logger/logger_config_file.h
@@ -643,6 +654,7 @@ include/dlib/optimization/optimization_stop_strategies.h
 include/dlib/optimization/optimization_stop_strategies_abstract.h
 include/dlib/optimization/optimization_trust_region.h
 include/dlib/optimization/optimization_trust_region_abstract.h
+include/dlib/ostream
 include/dlib/pipe.h
 include/dlib/pipe/pipe_kernel_1.h
 include/dlib/pipe/pipe_kernel_abstract.h
@@ -742,6 +754,7 @@ include/dlib/sqlite/sqlite.h
 include/dlib/sqlite/sqlite_abstract.h
 include/dlib/sqlite/sqlite_tools.h
 include/dlib/sqlite/sqlite_tools_abstract.h
+include/dlib/sstream
 include/dlib/stack.h
 include/dlib/stack/stack_kernel_1.h
 include/dlib/stack/stack_kernel_abstract.h
@@ -783,6 +796,11 @@ include/dlib/stl_checked.h
 include/dlib/stl_checked/std_vector_c.h
 include/dlib/stl_checked/std_vector_c_abstract.h
 include/dlib/string.h
+include/dlib/string/cassert
+include/dlib/string/iomanip
+include/dlib/string/iosfwd
+include/dlib/string/iostream
+include/dlib/string/locale
 include/dlib/string/string.h
 include/dlib/string/string_abstract.h
 include/dlib/svm.h
@@ -790,6 +808,8 @@ include/dlib/svm/active_learning.h
 include/dlib/svm/active_learning_abstract.h
 include/dlib/svm/assignment_function.h
 include/dlib/svm/assignment_function_abstract.h
+include/dlib/svm/auto.h
+include/dlib/svm/auto_abstract.h
 include/dlib/svm/cross_validate_assignment_trainer.h
 include/dlib/svm/cross_validate_assignment_trainer_abstract.h
 include/dlib/svm/cross_validate_graph_labeling_trainer.h
@@ -1014,6 +1034,7 @@ libdata/pkgconfig/dlib-1.pc
 @dir include/dlib/cmake_utils/test_for_cuda
 @dir include/dlib/cmake_utils/test_for_cudnn
 @dir include/dlib/cmake_utils/test_for_neon
+@dir include/dlib/cmake_utils/test_for_sse4
 @dir include/dlib/external/libpng/arm
 @dir include/dlib/test/blas_bindings
 @dir include/dlib/test/examples
