@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190219
+PORTVERSION=	s20190222
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	baec5d3
+GH_TAGNAME=	03378c3
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.6.10 \
@@ -47,7 +47,7 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		csv-core-0.1.5 \
 		dav1d-sys-0.1.2 \
 		difference-2.0.0 \
-		either-1.5.0 \
+		either-1.5.1 \
 		env_logger-0.6.0 \
 		error-chain-0.10.0 \
 		failure-0.1.5 \
@@ -58,7 +58,7 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		itertools-0.8.0 \
 		itoa-0.4.3 \
 		lazy_static-1.2.0 \
-		libc-0.2.48 \
+		libc-0.2.49 \
 		libloading-0.5.0 \
 		log-0.4.6 \
 		memchr-2.2.0 \
