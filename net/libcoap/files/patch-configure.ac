@@ -1,0 +1,11 @@
+--- configure.ac.orig	2019-02-23 16:30:54 UTC
++++ configure.ac
+@@ -616,7 +616,7 @@ case $host in
+     #AC_SUBST(OS_MACOS)
+     ;;
+ 
+-    *-freebsd1*)
++    *freebsd*)
+     AC_MSG_RESULT([FreeBSD-1x])
+     ADDITIONAL_CFLAGS="-D_GNU_SOURCE"
+     ;;

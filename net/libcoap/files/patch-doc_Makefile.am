@@ -1,0 +1,33 @@
+--- doc/Makefile.am.orig	2019-02-23 16:40:11 UTC
++++ doc/Makefile.am
+@@ -68,8 +68,8 @@ man-page-build: man-page-start
+ 	echo '    <tab type="user" visible="yes" url="@ref deprecated" title="Deprecated Items" intro=""/>' >> $(top_builddir)/doc/insert_file ;\
+ 	## Create and Update the DoxygenLayout.xml file
+ 	$(DOXYGEN) -l ;\
+-	$(SED) -i 's/<tab type="pages" visible="yes" /<tab type="pages" visible="no" /g' $(top_builddir)/doc/DoxygenLayout.xml ;\
+-	$(SED) -i '/<tab type="examples" visible=.*/r insert_file' $(top_builddir)/doc/DoxygenLayout.xml ;\
++	$(SED) -i '' 's/<tab type="pages" visible="yes" /<tab type="pages" visible="no" /g' $(top_builddir)/doc/DoxygenLayout.xml ;\
++	$(SED) -i '' '/<tab type="examples" visible=.*/r insert_file' $(top_builddir)/doc/DoxygenLayout.xml ;\
+ 	$(RM) $(top_builddir)/doc/insert_file ;\
+ 	## Fix up man html files, fixing links, UC Name and Synopsis
+ 	for FILE in $${MAN_FILES} ; do \
+@@ -77,8 +77,8 @@ man-page-build: man-page-start
+ 		if [ -f $(top_builddir)/man/$${BASE}.html ]; then \
+ 			cp -f $(top_builddir)/man/$${BASE}.html $(top_builddir)/doc/man_html/$${BASE}.html ;\
+ 			## Correct case sensitive Name and Synopsis
+-			$(SED) -i 's^<h2>Name</h2>^<h2>NAME</h2>^g' $(top_builddir)/doc/man_html/$${BASE}.html ;\
+-			$(SED) -i 's^<h2>Synopsis</h2>^<h2>SYNOPSIS</h2>^g' $(top_builddir)/doc/man_html/$${BASE}.html ;\
++			$(SED) -i '' 's^<h2>Name</h2>^<h2>NAME</h2>^g' $(top_builddir)/doc/man_html/$${BASE}.html ;\
++			$(SED) -i '' 's^<h2>Synopsis</h2>^<h2>SYNOPSIS</h2>^g' $(top_builddir)/doc/man_html/$${BASE}.html ;\
+ 		else \
+ 			echo "ERROR: $(top_builddir)/man/$${BASE}.html not found!";\
+ 			exit 1 ;\
+@@ -87,7 +87,7 @@ man-page-build: man-page-start
+ 			EBASE=`basename $${ENTRY} | cut -d . -f1` ;\
+ 			MANUAL=`egrep -B 1 "^====" $${ENTRY} | head -1` ;\
+ 			SECTION=`echo $${MANUAL} | cut -d\( -f2 | cut -d\) -f1` ;\
+-			$(SED) -i "s^<span class=\"strong\"><strong>$${EBASE}</strong></span>($${SECTION})^<a href=\"man_$${EBASE}.html\" target=\"_self\"><span class=\"strong\"><strong>$${EBASE}</strong></span>($${SECTION})</a>^g" $(top_builddir)/doc/man_html/$${BASE}.html ;\
++			$(SED) -i '' "s^<span class=\"strong\"><strong>$${EBASE}</strong></span>($${SECTION})^<a href=\"man_$${EBASE}.html\" target=\"_self\"><span class=\"strong\"><strong>$${EBASE}</strong></span>($${SECTION})</a>^g" $(top_builddir)/doc/man_html/$${BASE}.html ;\
+ 		done ;\
+ 		echo "finalized addition $${BASE}.html" ;\
+ 	done

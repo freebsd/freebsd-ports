@@ -361,6 +361,7 @@
     SUBDIR += libbgpdump
     SUBDIR += libcapn
     SUBDIR += libcmis
+    SUBDIR += libcoap
     SUBDIR += libdmapsharing
     SUBDIR += libdnet
     SUBDIR += libexosip2
