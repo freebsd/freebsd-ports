@@ -1,6 +1,6 @@
-TIMESTAMP = 1540446187
-SHA256 (rdkit-rdkit-Release_2018_09_1_GH0.tar.gz) = 61c14652a05a6f6b216ff099381c4dd32048861ba9d96f75a017084e81848baa
-SIZE (rdkit-rdkit-Release_2018_09_1_GH0.tar.gz) = 54640418
+TIMESTAMP = 1550904051
+SHA256 (rdkit-rdkit-Release_2018_09_2_GH0.tar.gz) = 02d805c579797cdbe127fdcf659fb82e7ad4d3b29ecd421b995d2f87b69962d3
+SIZE (rdkit-rdkit-Release_2018_09_2_GH0.tar.gz) = 54644792
 SHA256 (schrodinger-maeparser-1.0.0_GH0.tar.gz) = f21e49d25fda5fb2ba4d698f104aa3fbfdd131d92f0807f3e617c15ebfc314aa
 SIZE (schrodinger-maeparser-1.0.0_GH0.tar.gz) = 26292
 SHA256 (schrodinger-coordgenlibs-ede3191_GH0.tar.gz) = 85b1ab66647a523a87bee584533fa81315ea82fde42542aa59e1e08bdf734471
