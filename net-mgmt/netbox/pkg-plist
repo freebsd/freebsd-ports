@@ -74,6 +74,7 @@
 %%DATADIR%%/circuits/tables.py
 %%DATADIR%%/circuits/tests/__init__.py
 %%DATADIR%%/circuits/tests/test_api.py
+%%DATADIR%%/circuits/tests/test_views.py
 %%DATADIR%%/circuits/urls.py
 %%DATADIR%%/circuits/views.py
 %%DATADIR%%/dcim/__init__.py
@@ -163,6 +164,7 @@
 %%DATADIR%%/dcim/migrations/0066_cables.py
 %%DATADIR%%/dcim/migrations/0067_device_type_remove_qualifiers.py
 %%DATADIR%%/dcim/migrations/0068_rack_new_fields.py
+%%DATADIR%%/dcim/migrations/0069_deprecate_nullablecharfield.py
 %%DATADIR%%/dcim/migrations/__init__.py
 %%DATADIR%%/dcim/models.py
 %%DATADIR%%/dcim/signals.py
@@ -172,6 +174,7 @@
 %%DATADIR%%/dcim/tests/test_forms.py
 %%DATADIR%%/dcim/tests/test_models.py
 %%DATADIR%%/dcim/tests/test_natural_ordering.py
+%%DATADIR%%/dcim/tests/test_views.py
 %%DATADIR%%/dcim/urls.py
 %%DATADIR%%/dcim/views.py
 %%DATADIR%%/extras/__init__.py
@@ -218,6 +221,7 @@
 %%DATADIR%%/extras/tests/test_api.py
 %%DATADIR%%/extras/tests/test_customfields.py
 %%DATADIR%%/extras/tests/test_tags.py
+%%DATADIR%%/extras/tests/test_views.py
 %%DATADIR%%/extras/urls.py
 %%DATADIR%%/extras/views.py
 %%DATADIR%%/extras/webhooks.py
@@ -271,6 +275,7 @@
 %%DATADIR%%/ipam/tests/__init__.py
 %%DATADIR%%/ipam/tests/test_api.py
 %%DATADIR%%/ipam/tests/test_models.py
+%%DATADIR%%/ipam/tests/test_views.py
 %%DATADIR%%/ipam/urls.py
 %%DATADIR%%/ipam/views.py
 %%DATADIR%%/manage.py
@@ -300,6 +305,7 @@
 %%DATADIR%%/project-static/bootstrap-3.3.7-dist/js/bootstrap.js
 %%DATADIR%%/project-static/bootstrap-3.3.7-dist/js/bootstrap.min.js
 %%DATADIR%%/project-static/bootstrap-3.3.7-dist/js/npm.js
+%%DATADIR%%/project-static/clipboard-2.0.4.min.js
 %%DATADIR%%/project-static/css/base.css
 %%DATADIR%%/project-static/font-awesome-4.7.0/css/font-awesome.css
 %%DATADIR%%/project-static/font-awesome-4.7.0/css/font-awesome.min.css
@@ -460,6 +466,7 @@
 %%DATADIR%%/secrets/tests/__init__.py
 %%DATADIR%%/secrets/tests/test_api.py
 %%DATADIR%%/secrets/tests/test_models.py
+%%DATADIR%%/secrets/tests/test_views.py
 %%DATADIR%%/secrets/urls.py
 %%DATADIR%%/secrets/views.py
 %%DATADIR%%/templates/404.html
@@ -679,6 +686,7 @@
 %%DATADIR%%/tenancy/tables.py
 %%DATADIR%%/tenancy/tests/__init__.py
 %%DATADIR%%/tenancy/tests/test_api.py
+%%DATADIR%%/tenancy/tests/test_views.py
 %%DATADIR%%/tenancy/urls.py
 %%DATADIR%%/tenancy/views.py
 %%DATADIR%%/users/__init__.py
@@ -757,5 +765,6 @@
 %%DATADIR%%/virtualization/tables.py
 %%DATADIR%%/virtualization/tests/__init__.py
 %%DATADIR%%/virtualization/tests/test_api.py
+%%DATADIR%%/virtualization/tests/test_views.py
 %%DATADIR%%/virtualization/urls.py
 %%DATADIR%%/virtualization/views.py
