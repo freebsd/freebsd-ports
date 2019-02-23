@@ -419,7 +419,6 @@
     SUBDIR += xfindproxy
     SUBDIR += xfishtank
     SUBDIR += xforward
-    SUBDIR += xfree86_xkb_xml
     SUBDIR += xfwp
     SUBDIR += xgamma
     SUBDIR += xgc
