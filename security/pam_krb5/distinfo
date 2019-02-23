@@ -1,2 +1,3 @@
-SHA256 (pam-krb5-4.7.tar.gz) = 9b4ff52d0456939a0fe6d6676a965a6c2351d9f2c011de8402bfc12c547a7412
-SIZE (pam-krb5-4.7.tar.gz) = 557325
+TIMESTAMP = 1550939913
+SHA256 (pam-krb5-4.8.tar.gz) = 3abb458b4b3aa200d414bd2b859b3daabddd55954f753c988b41cedf95932649
+SIZE (pam-krb5-4.8.tar.gz) = 611954
