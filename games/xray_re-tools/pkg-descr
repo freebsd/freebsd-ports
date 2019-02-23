@@ -1,9 +1,10 @@
 Portable (POSIX) subset of the X-Ray unofficial toolset used for modding the
 S.T.A.L.K.E.R. game series by GSC Game World.  Currently includes standalone
-converter utility which is useful for casual gamers to unpack game resources.
+converter utility which is useful for casual gamers to unpack game resources
+in order to adjust various game parameters.
 
-Usage examples, first for Russian release version of Shadow of Chernobyl and
-second for Clear Sky and Call of Pripyat:
+Usage examples, the first for Russian release version of Shadow of Chernobyl
+and the second for Clear Sky and Call of Pripyat:
 
   $ xr_converter -unpack /path/to/gamedata.db0 -2947ru -dir ./put_it_here
   $ xr_converter -unpack /path/to/resources.db0 -xdb -dir ./put_it_here
