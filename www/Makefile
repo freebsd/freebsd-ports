@@ -1862,6 +1862,7 @@
     SUBDIR += py-splinter
     SUBDIR += py-spyne
     SUBDIR += py-sseclient
+    SUBDIR += py-starlette
     SUBDIR += py-surl
     SUBDIR += py-swapper
     SUBDIR += py-textile
