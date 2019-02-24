@@ -1,6 +1,6 @@
---- media/audio/audio_manager.cc.orig	2017-12-15 02:04:21.000000000 +0100
-+++ media/audio/audio_manager.cc	2017-12-24 17:10:24.736979000 +0100
-@@ -94,7 +94,7 @@
+--- media/audio/audio_manager.cc.orig	2019-01-30 02:18:05.000000000 +0100
++++ media/audio/audio_manager.cc	2019-02-01 10:05:43.833445000 +0100
+@@ -48,7 +48,7 @@
    }
  #endif
  
@@ -9,7 +9,7 @@
    void set_app_name(const std::string& app_name) { app_name_ = app_name; }
    const std::string& app_name() const { return app_name_; }
  #endif
-@@ -229,7 +229,7 @@
+@@ -59,7 +59,7 @@
    std::unique_ptr<base::win::ScopedCOMInitializer> com_initializer_for_testing_;
  #endif
  
@@ -18,8 +18,8 @@
    std::string app_name_;
  #endif
  
-@@ -313,7 +313,7 @@
-   GetHelper()->StartHangTimer(std::move(task_runner));
+@@ -128,7 +128,7 @@
+   return Create(std::move(audio_thread), GetHelper()->fake_log_factory());
  }
  
 -#if defined(OS_LINUX)

@@ -1,7 +1,7 @@
---- chrome/common/chrome_switches.cc.orig	2018-02-24 16:25:10.000000000 +0100
-+++ chrome/common/chrome_switches.cc	2018-03-03 22:30:18.421438000 +0100
-@@ -998,12 +998,12 @@
- const char kEnableWaylandServer[] = "enable-wayland-server";
+--- chrome/common/chrome_switches.cc.orig	2019-01-30 02:17:48.000000000 +0100
++++ chrome/common/chrome_switches.cc	2019-01-31 23:25:33.468702000 +0100
+@@ -940,12 +940,12 @@
+ const char kAllowNaClSocketAPI[]            = "allow-nacl-socket-api";
  #endif
  
 -#if defined(OS_WIN) || defined(OS_LINUX)

@@ -194,7 +194,6 @@ bin/chrome
 %%DATADIR%%/resources/inspector/audits2_worker.js
 %%DATADIR%%/resources/inspector/audits2_worker/audits2_worker_module.js
 %%DATADIR%%/resources/inspector/bindings_test_runner/bindings_test_runner_module.js
-%%DATADIR%%/resources/inspector/browser_console/browser_console_module.js
 %%DATADIR%%/resources/inspector/browser_debugger/browser_debugger_module.js
 %%DATADIR%%/resources/inspector/changes/changes_module.js
 %%DATADIR%%/resources/inspector/cm/cm_module.js
@@ -256,8 +255,8 @@ bin/chrome
 %%DATADIR%%/resources/inspector/emulated_devices/iPhone6Plus-portrait.svg
 %%DATADIR%%/resources/inspector/event_listeners/event_listeners_module.js
 %%DATADIR%%/resources/inspector/extensions_test_runner/extensions_test_runner_module.js
-%%DATADIR%%/resources/inspector/formatter_worker.js
 %%DATADIR%%/resources/inspector/formatter/formatter_module.js
+%%DATADIR%%/resources/inspector/formatter_worker.js
 %%DATADIR%%/resources/inspector/har_importer/har_importer_module.js
 %%DATADIR%%/resources/inspector/heap_profiler_test_runner/heap_profiler_test_runner_module.js
 %%DATADIR%%/resources/inspector/heap_snapshot_model/heap_snapshot_model_module.js
@@ -323,6 +322,8 @@ bin/chrome
 %%DEBUG%%%%DATADIR%%/libVkLayer_parameter_validation.so
 %%DEBUG%%%%DATADIR%%/libVkLayer_threading.so
 %%DEBUG%%%%DATADIR%%/libVkLayer_unique_objects.so
+%%DEBUG%%%%DATADIR%%/libmalloc_wrapper.so
+%%DEBUG%%%%DATADIR%%/libtest_shared_library.so
 %%DRIVER%%bin/chromedriver
 man/man1/chrome.1.gz
 share/applications/chromium-browser.desktop

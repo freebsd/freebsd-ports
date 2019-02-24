@@ -1,5 +1,5 @@
---- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2018-12-12 22:56:23.000000000 +0100
-+++ third_party/blink/renderer/platform/fonts/font_cache.h	2018-12-29 13:18:26.483036000 +0100
+--- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2019-01-30 02:18:16.000000000 +0100
++++ third_party/blink/renderer/platform/fonts/font_cache.h	2019-02-02 11:22:47.863990000 +0100
 @@ -157,7 +157,7 @@
    sk_sp<SkFontMgr> FontManager() { return font_manager_; }
    static void SetFontManager(sk_sp<SkFontMgr>);
@@ -18,7 +18,16 @@
    struct PlatformFallbackFont {
      String name;
      CString filename;
-@@ -291,7 +291,7 @@
+@@ -230,7 +230,7 @@
+   static void GetFontForCharacter(UChar32,
+                                   const char* preferred_locale,
+                                   PlatformFallbackFont*);
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
+ 
+   scoped_refptr<SimpleFontData> FontDataFromFontPlatformData(
+       const FontPlatformData*,
+@@ -291,12 +291,12 @@
                                     const FontFaceCreationParams&,
                                     CString& name);
  
@@ -27,6 +36,12 @@
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,
+                                                 FontFallbackPriority);
+-#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_FUCHSIA)
++#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+ 
+   scoped_refptr<SimpleFontData> FallbackOnStandardFontStyle(const FontDescription&,
+                                                      UChar32);
 @@ -327,7 +327,7 @@
    bool is_test_font_mgr_ = false;
  #endif  // defined(OS_WIN)

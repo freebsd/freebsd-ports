@@ -1,5 +1,5 @@
---- build/config/compiler/BUILD.gn.orig	2018-12-12 22:56:02.000000000 +0100
-+++ build/config/compiler/BUILD.gn	2018-12-16 01:04:15.942884000 +0100
+--- build/config/compiler/BUILD.gn.orig	2019-01-30 02:17:39.000000000 +0100
++++ build/config/compiler/BUILD.gn	2019-01-31 21:56:18.122280000 +0100
 @@ -53,7 +53,7 @@
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
@@ -18,23 +18,16 @@
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -391,15 +391,6 @@
-       "-Wl,-z,now",
-       "-Wl,-z,relro",
-     ]
--
--    # Compiler instrumentation can introduce dependencies in DSOs to symbols in
--    # the executable they are loaded into, so they are unresolved at link-time.
--    if (!using_sanitizer && !is_safestack) {
--      ldflags += [
--        "-Wl,-z,defs",
--        "-Wl,--as-needed",
--      ]
--    }
-   }
+@@ -393,7 +393,7 @@
  
-   # Linux-specific compiler flags setup.
-@@ -502,7 +493,7 @@
+     # Compiler instrumentation can introduce dependencies in DSOs to symbols in
+     # the executable they are loaded into, so they are unresolved at link-time.
+-    if (!using_sanitizer) {
++    if (!using_sanitizer && !is_bsd) {
+       ldflags += [
+         "-Wl,-z,defs",
+         "-Wl,--as-needed",
+@@ -501,7 +501,7 @@
      }
    }
  
@@ -43,7 +36,7 @@
      cflags += [
        # TODO(hans): Remove this once Clang generates better optimized debug info
        # by default. https://crbug.com/765793
-@@ -793,7 +784,7 @@
+@@ -808,7 +808,7 @@
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -52,21 +45,26 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1498,13 +1489,6 @@
-         cflags += [
-           # TODO(thakis): https://crbug.com/753973
-           "-Wno-enum-compare-switch",
--
+@@ -1488,11 +1488,13 @@
+       if (current_toolchain == host_toolchain || !use_xcode_clang) {
+         # Flags NaCl (Clang 3.7) and Xcode 9.2 (Clang clang-900.0.39.2) do not
+         # recognize.
+-        cflags += [
 -          # Ignore warnings about MSVC optimization pragmas.
 -          # TODO(thakis): Only for no_chromium_code? http://crbug.com/505314
 -          "-Wno-ignored-pragma-optimize",
--
--          # TODO(hans): https://crbug.com/890307
--          "-Wno-defaulted-function-deleted",
-         ]
-       }
-     }
-@@ -1691,7 +1675,7 @@
+-        ]
++        if (!is_bsd) {
++          cflags += [
++            # Ignore warnings about MSVC optimization pragmas.
++            # TODO(thakis): Only for no_chromium_code? http://crbug.com/505314
++            "-Wno-ignored-pragma-optimize",
++          ]
++        }
+         if (is_fuchsia) {
+           cflags += [
+             # TODO(hans): https://crbug.com/890307
+@@ -1684,7 +1686,7 @@
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -75,16 +73,16 @@
      arflags = [ "-T" ]
    }
  }
-@@ -2264,7 +2248,7 @@
-         # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
-         cflags += [ "-gdwarf-3" ]
+@@ -2269,7 +2271,7 @@
+       # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
+       # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
+       if (!is_nacl || is_clang) {
+-        cflags += [ "-g2" ]
++        cflags += [ "-g0" ]
        }
--      cflags += [ "-g2" ]
-+      cflags += [ "-g0" ]
      }
      if (use_debug_fission && !is_nacl && !is_android) {
-       # NOTE: Some Chrome OS builds globally set |use_debug_fission| to true,
-@@ -2284,7 +2268,7 @@
+@@ -2290,7 +2292,7 @@
      # DWARF info may be corrupt; offsets in a range list entry are in different
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
      if (!is_mac && !is_ios && !is_nacl && current_cpu != "x86" &&

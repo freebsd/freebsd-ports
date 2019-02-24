@@ -1,12 +1,21 @@
---- base/process/process_metrics_freebsd.cc.orig	2018-08-01 00:08:25.000000000 +0200
-+++ base/process/process_metrics_freebsd.cc	2018-08-04 21:48:06.554728000 +0200
-@@ -14,11 +14,14 @@
+--- base/process/process_metrics_freebsd.cc.orig	2019-02-06 23:06:36.000000000 +0100
++++ base/process/process_metrics_freebsd.cc	2019-02-08 19:11:07.753223000 +0100
+@@ -5,6 +5,7 @@
+ #include "base/process/process_metrics.h"
+ 
+ #include <stddef.h>
++#include <sys/types.h>
+ #include <sys/sysctl.h>
+ #include <sys/user.h>
+ #include <unistd.h>
+@@ -14,11 +15,15 @@
  #include "base/process/process_metrics_iocounters.h"
  #include "base/stl_util.h"
  
 +#include <unistd.h> /* getpagesize() */
 +#include <fcntl.h>  /* O_RDONLY */
 +#include <kvm.h>
++#include <libutil.h>
 +
  namespace base {
  
@@ -17,7 +26,7 @@
  
  // static
  std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
-@@ -67,6 +70,65 @@
+@@ -67,6 +72,95 @@
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
@@ -75,6 +84,36 @@
 +  meminfo->swap_free = (swap_total - swap_used) * pagesizeKB;
 +
 +  return true;
++}
++
++int ProcessMetrics::GetOpenFdCount() const {
++  struct kinfo_file * kif;
++  int cnt;
++
++  if ((kif = kinfo_getfile(process_, &cnt)) == NULL)
++    return -1;
++
++  free(kif);
++
++  return cnt;
++}
++
++int ProcessMetrics::GetOpenFdSoftLimit() const {
++  struct kinfo_proc *info;
++  size_t length;
++  int total_count = 0;
++  int mib[] = { CTL_KERN, KERN_MAXFILESPERPROC };
++
++  length = sizeof(total_count);
++
++  if (sysctl(mib, arraysize(mib), &total_count, &length, NULL, 0) < 0) {
++    total_count = -1;
++    goto out;
++  }
++
++out:
++  free(info);
++  return total_count;
 +}
 +
 +uint64_t ProcessMetrics::GetVmSwapBytes() const {

@@ -1,5 +1,5 @@
---- net/socket/udp_socket_posix.cc.orig	2018-12-12 22:56:10.000000000 +0100
-+++ net/socket/udp_socket_posix.cc	2019-01-09 23:47:20.865195000 +0100
+--- net/socket/udp_socket_posix.cc.orig	2019-01-30 02:18:08.000000000 +0100
++++ net/socket/udp_socket_posix.cc	2019-02-01 23:56:02.678455000 +0100
 @@ -68,7 +68,7 @@
  const base::TimeDelta kActivityMonitorMsThreshold =
      base::TimeDelta::FromMilliseconds(100);
@@ -18,7 +18,7 @@
  
  #if defined(OS_MACOSX) && !defined(OS_IOS)
  
-@@ -632,13 +632,13 @@
+@@ -641,13 +641,13 @@
  }
  
  void UDPSocketPosix::SetMsgConfirm(bool confirm) {
@@ -34,7 +34,7 @@
  }
  
  int UDPSocketPosix::AllowAddressReuse() {
-@@ -653,17 +653,20 @@
+@@ -662,17 +662,20 @@
    DCHECK_CALLED_ON_VALID_THREAD(thread_checker_);
    int value = broadcast ? 1 : 0;
    int rv;
@@ -57,7 +57,7 @@
    rv = setsockopt(socket_, SOL_SOCKET, SO_BROADCAST, &value, sizeof(value));
  
    return rv == 0 ? OK : MapSystemError(errno);
-@@ -901,19 +904,24 @@
+@@ -934,19 +937,24 @@
    if (multicast_interface_ != 0) {
      switch (addr_family_) {
        case AF_INET: {
@@ -76,7 +76,7 @@
 -#endif  //  !defined(OS_MACOSX)
 +#endif  //  !defined(OS_MACOSX) || defined(OS_BSD)
          int rv = setsockopt(socket_, IPPROTO_IP, IP_MULTICAST_IF,
-+#ifdef defined(OS_BSD)
++#if defined(OS_BSD)
 +                            reinterpret_cast<const char*>(&mreq.imr_interface.s_addr),
 +                            sizeof(mreq.imr_interface.s_addr));
 +#else
@@ -85,7 +85,7 @@
          if (rv)
            return MapSystemError(errno);
          break;
-@@ -975,7 +983,7 @@
+@@ -1008,7 +1016,7 @@
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;
  
@@ -94,7 +94,7 @@
        ip_mreq mreq = {};
        int error = GetIPv4AddressFromIndex(socket_, multicast_interface_,
                                            &mreq.imr_interface.s_addr);
-@@ -1023,9 +1031,18 @@
+@@ -1056,9 +1064,18 @@
      case IPAddress::kIPv4AddressSize: {
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;

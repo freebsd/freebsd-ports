@@ -1,6 +1,6 @@
---- base/BUILD.gn.orig	2018-12-03 21:16:32.000000000 +0100
-+++ base/BUILD.gn	2018-12-05 13:50:51.133919000 +0100
-@@ -1182,7 +1182,7 @@
+--- base/BUILD.gn.orig	2019-02-06 23:06:36.000000000 +0100
++++ base/BUILD.gn	2019-02-08 20:14:26.420625000 +0100
+@@ -1176,7 +1176,7 @@
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -9,7 +9,7 @@
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
-@@ -1208,7 +1208,7 @@
+@@ -1202,7 +1202,7 @@
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
        ]
        deps += [ "//base/allocator:tcmalloc" ]
@@ -18,7 +18,7 @@
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
      } else if (is_android && use_allocator == "none") {
        sources += [
-@@ -1740,6 +1740,33 @@
+@@ -1739,6 +1739,33 @@
      }
    }
  
@@ -27,11 +27,10 @@
 +      "files/file_path_watcher_linux.cc",
 +      "files/file_util_linux.cc",
 +      "process/memory_linux.cc",
-+      "process/process_linux.cc",
 +      "process/process_handle_linux.cc",
 +      "process/process_iterator_linux.cc",
 +      "process/process_metrics_linux.cc",
-+      "sys_info_linux.cc"
++      "system/sys_info_linux.cc"
 +    ]
 +    sources += [
 +      "files/file_path_watcher_kqueue.cc",
@@ -41,18 +40,19 @@
 +      "process/process_handle_freebsd.cc",
 +      "process/process_iterator_freebsd.cc",
 +      "process/process_metrics_freebsd.cc",
-+      "sys_info_freebsd.cc",
++      "system/sys_info_freebsd.cc",
 +    ]
 +    libs = [
 +      "execinfo", # logging.cc
-+      "kvm"       # process_metrics_freebsd
++      "kvm",      # process_metrics_freebsd
++      "util"      # process_metrics_freebsd
 +    ]
 +  }
 +
    # iOS
    if (is_ios) {
      set_sources_assignment_filter([])
-@@ -2753,6 +2780,12 @@
+@@ -2761,6 +2788,12 @@
      ]
      set_sources_assignment_filter(sources_assignment_filter)
    }

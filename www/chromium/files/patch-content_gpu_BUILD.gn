@@ -1,6 +1,6 @@
---- content/gpu/BUILD.gn.orig	2018-06-13 00:10:17.000000000 +0200
-+++ content/gpu/BUILD.gn	2018-07-19 12:07:20.670815000 +0200
-@@ -127,7 +127,7 @@
+--- content/gpu/BUILD.gn.orig	2019-01-04 22:49:40.191544000 +0100
++++ content/gpu/BUILD.gn	2019-01-04 22:50:06.857572000 +0100
+@@ -131,7 +131,7 @@
  
    # Use DRI on desktop Linux builds.
    if (current_cpu != "s390x" && current_cpu != "ppc64" && is_desktop_linux &&

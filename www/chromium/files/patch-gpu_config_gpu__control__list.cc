@@ -1,18 +1,18 @@
---- gpu/config/gpu_control_list.cc.orig	2017-12-15 02:04:19.000000000 +0100
-+++ gpu/config/gpu_control_list.cc	2017-12-24 16:25:45.151636000 +0100
+--- gpu/config/gpu_control_list.cc.orig	2019-01-30 02:18:02.000000000 +0100
++++ gpu/config/gpu_control_list.cc	2019-02-01 09:25:50.964382000 +0100
 @@ -16,7 +16,11 @@
  #include "base/values.h"
  #include "build/build_config.h"
- #include "gpu/config/gpu_info.h"
+ #include "gpu/config/gpu_util.h"
 +#if defined(OS_BSD)
 +#include <re2/re2.h>
 +#else
  #include "third_party/re2/src/re2/re2.h"
-+#endif
++#endif // defined(OS_BSD)
  
  namespace gpu {
  namespace {
-@@ -211,7 +215,7 @@
+@@ -213,7 +217,7 @@
  GpuControlList::GLType GpuControlList::More::GetDefaultGLType() {
  #if defined(OS_CHROMEOS)
    return kGLTypeGL;
@@ -21,7 +21,7 @@
    return kGLTypeGL;
  #elif defined(OS_MACOSX)
    return kGLTypeGL;
-@@ -644,7 +648,7 @@
+@@ -683,7 +687,7 @@
    return kOsAndroid;
  #elif defined(OS_FUCHSIA)
    return kOsFuchsia;

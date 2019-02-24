@@ -1,5 +1,5 @@
---- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2018-12-12 22:56:23.000000000 +0100
-+++ third_party/blink/renderer/platform/fonts/font_cache.cc	2018-12-29 13:18:26.479678000 +0100
+--- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2019-01-30 02:18:16.000000000 +0100
++++ third_party/blink/renderer/platform/fonts/font_cache.cc	2019-02-01 14:43:30.711803000 +0100
 @@ -65,7 +65,7 @@
  
  SkFontMgr* FontCache::static_font_manager_ = nullptr;
@@ -15,6 +15,6 @@
    const AtomicString& family = FontCache::SystemFontFamily();
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   if (family.IsEmpty() || family == FontFamilyNames::system_ui)
+   if (family.IsEmpty() || family == font_family_names::kSystemUi)
      return nullptr;
  #else

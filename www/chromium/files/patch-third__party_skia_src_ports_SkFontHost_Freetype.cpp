@@ -1,15 +1,15 @@
---- third_party/skia/src/ports/SkFontHost_FreeType.cpp.orig	2018-07-20 01:19:49.019547000 +0200
-+++ third_party/skia/src/ports/SkFontHost_FreeType.cpp	2018-07-20 01:24:40.435966000 +0200
-@@ -99,8 +99,6 @@
-     FreeTypeLibrary()
+--- third_party/skia/src/ports/SkFontHost_FreeType.cpp.orig	2019-01-30 02:20:41.000000000 +0100
++++ third_party/skia/src/ports/SkFontHost_FreeType.cpp	2019-02-01 13:08:18.165178000 +0100
+@@ -121,8 +121,6 @@
          : fGetVarDesignCoordinates(nullptr)
+         , fGetVarAxisFlags(nullptr)
          , fLibrary(nullptr)
 -        , fIsLCDSupported(false)
 -        , fLCDExtra(0)
      {
          if (FT_New_Library(&gFTMemory, &fLibrary)) {
              return;
-@@ -147,12 +145,7 @@
+@@ -182,12 +180,7 @@
          }
  #endif
  
@@ -23,7 +23,7 @@
      }
      ~FreeTypeLibrary() {
          if (fLibrary) {
-@@ -161,8 +154,6 @@
+@@ -196,8 +189,6 @@
      }
  
      FT_Library library() { return fLibrary; }
@@ -32,7 +32,7 @@
  
      // FT_Get_{MM,Var}_{Blend,Design}_Coordinates were added in FreeType 2.7.1.
      // Prior to this there was no way to get the coordinates out of the FT_Face.
-@@ -173,8 +164,6 @@
+@@ -214,8 +205,6 @@
  
  private:
      FT_Library fLibrary;
@@ -41,7 +41,7 @@
  
      // FT_Library_SetLcdFilterWeights was introduced in FreeType 2.4.0.
      // The following platforms provide FreeType of at least 2.4.0.
-@@ -660,17 +649,6 @@
+@@ -713,17 +702,6 @@
          rec->fTextSize = SkIntToScalar(1 << 14);
      }
  
@@ -56,12 +56,12 @@
 -        unref_ft_library();
 -    }
 -
-     SkPaint::Hinting h = rec->getHinting();
-     if (SkPaint::kFull_Hinting == h && !isLCD(*rec)) {
+     SkFontHinting h = rec->getHinting();
+     if (kFull_SkFontHinting == h && !isLCD(*rec)) {
          // collapse full->normal hinting if we're not doing LCD
-@@ -1063,11 +1041,11 @@
+@@ -1137,11 +1115,11 @@
  void SkScalerContext_FreeType::updateGlyphIfLCD(SkGlyph* glyph) {
-     if (isLCD(fRec)) {
+     if (glyph->fMaskFormat == SkMask::kLCD16_Format) {
          if (fLCDIsVert) {
 -            glyph->fHeight += gFTLibrary->lcdExtra();
 -            glyph->fTop -= gFTLibrary->lcdExtra() >> 1;

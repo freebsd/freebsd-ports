@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	71.0.3578.98
-PORTREVISION=	2
+PORTVERSION=	72.0.3626.119
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/cpm/chromium/:fonts
@@ -182,7 +181,6 @@ DEBUG_VARS_OFF=		BUILDTYPE=Release \
 			GN_ARGS+=remove_webcore_debug_symbols=true \
 			WANTSPACE="a fair amount of free disk space (~ 6.5GB)"
 
-DRIVER_BUILD_DEPENDS=	git:devel/git
 DRIVER_MAKE_ARGS=	chromedriver
 
 KERBEROS_VARS=		GN_ARGS+=use_kerberos=true
@@ -214,6 +212,13 @@ TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX} \
 PLIST_SUB+=	NOT_AARCH64="@comment "
 .else
 PLIST_SUB+=	NOT_AARCH64=""
+.endif
+
+# Make better javascript with java
+.if ${ARCH} == amd64 && !defined(GN_ONLY)
+JAVA_BUILD=	yes
+JAVA_VERSION=	1.8
+USE_JAVA=	yes
 .endif
 
 # Allow relocations against read-only segments (override lld default)
@@ -268,6 +273,12 @@ do-configure:
 	# Setup nodejs dependency
 	@${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin
 	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin/node
+
+	# Setup java dependency on amd64
+.if ${ARCH} == amd64
+	@${MKDIR} ${WRKDIR}/bin
+	${LN} -sf ${LOCALBASE}/openjdk8/bin/java ${WRKDIR}/bin/java
+.endif
 .endif
 
 do-test-TEST-on:

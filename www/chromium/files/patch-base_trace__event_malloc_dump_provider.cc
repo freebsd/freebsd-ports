@@ -1,6 +1,6 @@
---- base/trace_event/malloc_dump_provider.cc.orig	2017-08-02 18:33:27.773657000 +0200
-+++ base/trace_event/malloc_dump_provider.cc	2017-08-02 18:34:48.019053000 +0200
-@@ -21,6 +21,8 @@
+--- base/trace_event/malloc_dump_provider.cc.orig	2019-01-30 02:17:39.000000000 +0100
++++ base/trace_event/malloc_dump_provider.cc	2019-01-31 22:27:52.377125000 +0100
+@@ -17,6 +17,8 @@
  
  #if defined(OS_MACOSX)
  #include <malloc/malloc.h>
@@ -9,8 +9,8 @@
  #else
  #include <malloc.h>
  #endif
-@@ -243,6 +245,9 @@
-   allocated_objects_count = main_heap_info.block_count;
+@@ -132,6 +134,9 @@
+   }
  #elif defined(OS_FUCHSIA)
  // TODO(fuchsia): Port, see https://crbug.com/706592.
 +#elif defined(OS_BSD)

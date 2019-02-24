@@ -1,6 +1,6 @@
---- third_party/webrtc/rtc_base/stringutils.h.orig	2017-09-07 00:56:34.723687000 +0200
-+++ third_party/webrtc/rtc_base/stringutils.h	2017-09-07 01:34:35.259034000 +0200
-@@ -23,11 +23,11 @@
+--- third_party/webrtc/rtc_base/stringutils.h.orig	2019-01-30 02:20:38.000000000 +0100
++++ third_party/webrtc/rtc_base/stringutils.h	2019-02-01 16:59:24.656841000 +0100
+@@ -25,11 +25,11 @@
  #endif  // WEBRTC_WIN
  
  #if defined(WEBRTC_POSIX)
@@ -12,6 +12,6 @@
  #include <alloca.h>
 -#endif  // !BSD
 +#endif  // !WEBRTC_BSD
+ #include <strings.h>
  #endif  // WEBRTC_POSIX
  
- #include <string>
