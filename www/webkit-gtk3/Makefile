@@ -25,6 +25,10 @@ LIB_DEPENDS=	libenchant.so:textproc/enchant \
 		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS=	geoclue>=0:net/geoclue
 
+DEPRECATED=	Known and unfixed security issues
+EXPIRATION_DATE=2019-03-24
+FORBIDDEN=	Known and unfixed security issues
+
 PORTSCOUT=	limit:^2\.4\.
 
 BINARY_ALIAS=	python=${PYTHON_CMD}

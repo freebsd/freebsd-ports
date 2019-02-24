@@ -30,6 +30,10 @@ LIB_DEPENDS=	libenchant.so:textproc/enchant \
 		libgstreamer-1.0.so:multimedia/gstreamer1
 RUN_DEPENDS=	geoclue>=0:net/geoclue
 
+DEPRECATED=	Known and unfixed security issues
+EXPIRATION_DATE=2019-03-24
+FORBIDDEN=	Known and unfixed security issues
+
 PORTSCOUT=	limit:^2\.4\.
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
