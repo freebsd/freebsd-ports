@@ -13,6 +13,8 @@ COMMENT=	Communications package for the X Window system
 USES=		imake
 USE_XORG=	x11 xext xpm xmu xaw xt sm ice
 
+MAKE_JOBS_UNSAFE=	yes
+
 PLIST_FILES=	bin/seyon lib/X11/app-defaults/Seyon \
 		lib/X11/app-defaults/Seyon-color lib/X11/seyon.help \
 		man/man1/${PORTNAME}.1.gz
