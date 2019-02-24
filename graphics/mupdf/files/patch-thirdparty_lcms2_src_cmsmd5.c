@@ -9,7 +9,7 @@
  {
      do {
  
-@@ -42,7 +42,7 @@ void byteReverse(cmsUInt8Number * buf, c
+@@ -42,7 +42,7 @@ void byteReverse(cmsUInt8Number * buf, cmsUInt32Number
  }
  
  #else
@@ -18,7 +18,7 @@
  #endif
  
  
-@@ -196,7 +196,7 @@ void MD5add(cmsHANDLE Handle, cmsUInt8Nu
+@@ -196,7 +196,7 @@ void MD5add(cmsHANDLE Handle, cmsUInt8Number* buf, cms
          }
  
          memmove(p, buf, t);
@@ -27,7 +27,7 @@
  
          MD5_Transform(ctx->buf, (cmsUInt32Number *) ctx->in);
          buf += t;
-@@ -205,7 +205,7 @@ void MD5add(cmsHANDLE Handle, cmsUInt8Nu
+@@ -205,7 +205,7 @@ void MD5add(cmsHANDLE Handle, cmsUInt8Number* buf, cms
  
      while (len >= 64) {
          memmove(ctx->in, buf, 64);
@@ -36,7 +36,7 @@
          MD5_Transform(ctx->buf, (cmsUInt32Number *) ctx->in);
          buf += 64;
          len -= 64;
-@@ -232,21 +232,21 @@ void MD5finish(cmsProfileID* ProfileID, 
+@@ -232,21 +232,21 @@ void MD5finish(cmsProfileID* ProfileID,  cmsHANDLE Han
      if (count < 8) {
  
          memset(p, 0, count);

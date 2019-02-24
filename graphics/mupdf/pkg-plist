@@ -1,6 +1,7 @@
 bin/mjsgen
 bin/mujstest
 bin/mupdf
+bin/mupdf-gl
 bin/muraster
 bin/mutool
 include/mupdf/fitz.h
@@ -80,10 +81,10 @@ include/mupdf/pdf/resource.h
 include/mupdf/pdf/widget.h
 include/mupdf/pdf/xref.h
 include/mupdf/ucdn.h
-lib/libmupdf.so
-lib/libmupdf.so.%%SOVERSION%%
 lib/libmupdf-third.so
 lib/libmupdf-third.so.%%SOVERSION%%
+lib/libmupdf.so
+lib/libmupdf.so.%%SOVERSION%%
 man/man1/mupdf.1.gz
 man/man1/mutool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
