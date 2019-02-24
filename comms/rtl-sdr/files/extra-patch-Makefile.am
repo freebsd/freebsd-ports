@@ -1,8 +1,8 @@
---- Makefile.am.orig	2012-08-23 18:26:27.000000000 +0200
-+++ Makefile.am	2012-08-23 18:26:39.000000000 +0200
-@@ -15,29 +15,4 @@
+--- Makefile.am.orig	2019-02-20 23:16:25.926790000 +0100
++++ Makefile.am	2019-02-20 23:16:48.243426000 +0100
+@@ -21,29 +21,4 @@
  
- EXTRA_DIST = git-version-gen
+ EXTRA_DIST = git-version-gen .version
  
 -if HAVE_DOXYGEN
 -
@@ -23,7 +23,7 @@
 -	cd $(DESTDIR)$(doc_htmldir) && tar xf html.tar --strip-components 1 && rm -f html.tar
 -
 -uninstall-hook:
--	cd $(DESTDIR) && rm -rf $(doc_htmldir)
+-	rm -rf $(DESTDIR)/$(doc_htmldir)
 -
 -DX_CLEAN = doc/{html,latex}/* doc/html.tar
 -
