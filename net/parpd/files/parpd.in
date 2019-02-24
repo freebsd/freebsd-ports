@@ -33,12 +33,10 @@ eval ": \${${name}_enable:='NO'}"
 eval ": \${${name}_flags:=%%PREFIX%%/etc/${name}.conf}"
 eval "config_file=\$${name}_flags"
 
-[ -s "$config_file" ] ||  err 1 "Missing configuration file '$config_file'"
-
-if get_pidfile_from_conf pidfile "$config_file"; then
+if [ -s "$config_file" ] && get_pidfile_from_conf pidfile "$config_file"; then
   pidfile="$_pidfile_from_conf"
 else
-  err 1 "$config_file does not specify an pidfile"
+  pidfile="/var/run/parpd.pid"
 fi
 
 eval "unset ${name}_flags"
