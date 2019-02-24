@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcddgmp.so:math/cddlib \
 		libgmp.so:math/gmp
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake localbase
 
-CFLAGS+=	-I${LOCALBASE}/include -DGMPRATIONAL
+CFLAGS+=	-DGMPRATIONAL
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
