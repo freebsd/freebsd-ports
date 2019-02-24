@@ -1,0 +1,10 @@
+HPX (High Performance ParalleX) is a general purpose C++ runtime system for
+parallel and distributed applications of any scale. It strives to provide a
+unified programming model which transparently utilizes the available resources
+to achieve unprecedented levels of scalability. This library strictly adheres to
+the C++11 Standard and leverages the Boost C++ Libraries which makes HPX easy to
+use, highly optimized, and very portable. HPX is developed for conventional
+architectures including Linux-based systems, Windows, Mac, and the BlueGene/Q,
+as well as accelerators such as the Xeon Phi.
+
+WWW: https://stellar-group.org/libraries/hpx/
