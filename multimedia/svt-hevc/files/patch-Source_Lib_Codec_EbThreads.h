@@ -1,5 +1,3 @@
-FreeBSD (unlike DragonFly) didn't try to be compatible with GNU libc at first.
-
 In file included from Source/Lib/Codec/EbEncDecProcess.c:9:
 In file included from Source/Lib/Codec/EbTransforms.h:14:
 In file included from Source/Lib/Codec/EbSequenceControlSet.h:10:
@@ -9,16 +7,18 @@ extern    cpu_set_t                   groupAffinity;
 
 --- Source/Lib/Codec/EbThreads.h.orig	2019-02-14 00:36:54 UTC
 +++ Source/Lib/Codec/EbThreads.h
-@@ -95,7 +95,12 @@ extern    EB_BOOL                  alternateGroups;
+@@ -95,7 +95,14 @@ extern    EB_BOOL                  alternateGroups;
  #else
  #define __USE_GNU
  #define _GNU_SOURCE
 +#ifdef __FreeBSD__
-+#include <pthread_np.h>
 +#define cpu_set_t cpuset_t
 +#else
  #include <sched.h>
 +#endif
  #include <pthread.h>
++#if defined(__DragonFly__) || defined(__FreeBSD__)
++#include <pthread_np.h>
++#endif
  extern    cpu_set_t                   groupAffinity;
  #define EB_CREATETHREAD(type, pointer, nElements, pointerClass, threadFunction, threadContext) \
