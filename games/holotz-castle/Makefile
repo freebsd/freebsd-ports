@@ -19,14 +19,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
-USES=		gmake desthack
+USES=		desthack gl gmake gnome sdl
+USE_CXXSTD=	c++98
 USE_GL=		gl
 USE_SDL=	image mixer sdl ttf
 MAKE_ARGS=	HC_BASE=${PREFIX}/share/${PORTNAME}/ \
 		HC_BIN_DIR=${PREFIX}/bin/
 MAKE_JOBS_UNSAFE=	yes
-
-CXXFLAGS+=	-Wno-reserved-user-defined-literal
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
