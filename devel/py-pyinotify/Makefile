@@ -16,4 +16,6 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify
 USES=		python
 USE_PYTHON=	distutils py3kplist
 
+NO_ARCH=	YES
+
 .include <bsd.port.mk>
