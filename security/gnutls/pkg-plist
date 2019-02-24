@@ -1173,15 +1173,6 @@ man/man3/gnutls_x509_trust_list_remove_trust_mem.3.gz
 man/man3/gnutls_x509_trust_list_verify_crt.3.gz
 man/man3/gnutls_x509_trust_list_verify_crt2.3.gz
 man/man3/gnutls_x509_trust_list_verify_named_crt.3.gz
-%%PORTDOCS%%%%DOCSDIR%%/gnutls-client-server-use-case.png
-%%PORTDOCS%%%%DOCSDIR%%/gnutls-handshake-sequence.png
-%%PORTDOCS%%%%DOCSDIR%%/gnutls-handshake-state.png
-%%PORTDOCS%%%%DOCSDIR%%/gnutls-internals.png
-%%PORTDOCS%%%%DOCSDIR%%/gnutls-layers.png
-%%PORTDOCS%%%%DOCSDIR%%/gnutls-logo.png
-%%PORTDOCS%%%%DOCSDIR%%/gnutls-modauth.png
-%%PORTDOCS%%%%DOCSDIR%%/gnutls-x509.png
-%%PORTDOCS%%%%DOCSDIR%%/pkcs11-vision.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-alert.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-cert-select-pkcs11.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex-cert-select.c
