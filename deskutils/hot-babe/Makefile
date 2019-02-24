@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://dindinx.net/hotbabe/downloads/ \
 		LOCAL/novel
 
-MAINTAINER=	novel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small utility which displays the system activity in a special way
 
 USES=		pkgconfig tar:bzip2

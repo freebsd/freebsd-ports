@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://darkshed.net/files/c_cpp/fbcmd/
 
-MAINTAINER=	novel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commandline utility for controlling fluxbox
 
 LICENSE=	MIT

@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://andy-shev.github.com/LogJam/download/
 
-MAINTAINER=	novel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 interface to livejournals, ie www.livejournal.com
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \

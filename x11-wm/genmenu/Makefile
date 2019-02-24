@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://gtk.no/archive/genmenu/
 
-MAINTAINER=	novel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generating menus for Bbox, Fbox, Obox, WM and E
 
 RUN_DEPENDS=	bash:shells/bash

@@ -9,7 +9,7 @@ MASTER_SITES=	http://perso.wanadoo.fr/alltrax/ \
 		LOCAL/novel
 DISTNAME=	${PORTNAME}2_0.2-1
 
-MAINTAINER=	novel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analog clock plugin for gkrellm2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2

@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.minimalinux.org/arena/
 
-MAINTAINER=	novel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C-like scripting language with automatic memory management
 
 GNU_CONFIGURE=	yes
