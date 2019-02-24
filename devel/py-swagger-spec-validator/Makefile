@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	swagger-spec-validator
-DISTVERSION=	2.3.1
+DISTVERSION=	2.4.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
