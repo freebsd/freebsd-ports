@@ -2,26 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	cingb
-PORTVERSION=	0.31
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.32
 CATEGORIES=	emulators
-MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Yet another Nintendo GameBoy(tm) emulator
+MAINTAINER=	0mp@FreeBSD.org
+COMMENT=	Yet another Nintendo Game Boy emulator
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:bzip2
 USE_XORG=	x11 xext xv
+USE_GITHUB=	yes
+GH_ACCOUNT=	nakal
+
 MAKE_ENV=	X11BASE="${LOCALBASE}"
 ALL_TARGET=	standard
 
-PORTDOCS=	README README.FAQ
-PLIST_FILES=	bin/cingb bin/cingb_conf
 LDFLAGS+=	-lpthread
 
-OPTIONS_DEFINE=	DOCS
+PLIST_FILES=	bin/cingb \
+		bin/cingb_conf \
+		man/man6/cingb.6.gz
+PORTDOCS=	README.FAQ README.md
+
+OPTIONS_DEFINE=	DEBUG DOCS
+OPTIONS_SUB=	yes
+DEBUG_ALL_TARGET+=	debug
+DEBUG_PLIST_FILES=	bin/cingb_deb
+DEBUG_PORTDOCS=	DEBUGGER
 
 .include <bsd.port.pre.mk>
 
@@ -53,10 +63,16 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cingb ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/cingb_conf ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/freebsd/cingb.6 ${STAGEDIR}${MANPREFIX}/man/man6/
+
+do-install-DEBUG-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/DEBUGGER ${STAGEDIR}${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/cingb_deb ${STAGEDIR}${PREFIX}/bin
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.FAQ ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
