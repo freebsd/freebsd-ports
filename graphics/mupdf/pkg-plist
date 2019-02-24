@@ -1,8 +1,6 @@
 bin/mjsgen
 bin/mujstest
 bin/mupdf
-bin/mupdf-gl
-bin/mupdf-x11-curl
 bin/muraster
 bin/mutool
 include/mupdf/fitz.h
@@ -64,7 +62,6 @@ include/mupdf/memento.h
 include/mupdf/pdf-tools.h
 include/mupdf/pdf.h
 include/mupdf/pdf/annot.h
-include/mupdf/pdf/appearance.h
 include/mupdf/pdf/clean.h
 include/mupdf/pdf/cmap.h
 include/mupdf/pdf/crypt.h
@@ -85,8 +82,8 @@ include/mupdf/pdf/xref.h
 include/mupdf/ucdn.h
 lib/libmupdf.so
 lib/libmupdf.so.%%SOVERSION%%
-lib/libmupdfthird.so
-lib/libmupdfthird.so.%%SOVERSION%%
+lib/libmupdf-third.so
+lib/libmupdf-third.so.%%SOVERSION%%
 man/man1/mupdf.1.gz
 man/man1/mutool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
@@ -98,10 +95,12 @@ man/man1/mutool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/coding-overview.html
 %%PORTDOCS%%%%DOCSDIR%%/coding-progressive.html
 %%PORTDOCS%%%%DOCSDIR%%/coding-style.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/bbox-device.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/create-thumbnail.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/draw-device.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/draw-document.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/example.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/fix-s22pdf.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/jpx-to-pdf.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/multi-threaded.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/pdf-create-lowlevel.js
