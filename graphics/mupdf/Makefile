@@ -27,6 +27,9 @@ USE_GL=		gl glut
 CPE_VENDOR=	artifex
 USE_LDCONFIG=	yes
 
+# pkg-config to avoid the conflict with openjpeg15
+CFLAGS+=	`pkg-config --cflags libopenjp2`
+
 MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes \
 		XCFLAGS+="-I${WRKSRC}/include/mupdf -fPIC" \
 		XLIBS+="-L${LOCALBASE}/lib -L${WRKSRC}/build/release" \
