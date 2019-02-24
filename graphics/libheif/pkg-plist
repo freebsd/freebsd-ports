@@ -1,7 +1,7 @@
-bin/heif-convert
-bin/heif-enc
-bin/heif-info
-bin/heif-thumbnailer
+%%EXAMPLES%%bin/heif-convert
+%%EXAMPLES%%bin/heif-enc
+%%EXAMPLES%%bin/heif-info
+%%EXAMPLES%%bin/heif-thumbnailer
 include/libheif/heif.h
 include/libheif/heif_cxx.h
 include/libheif/heif_plugin.h
@@ -11,5 +11,5 @@ lib/libheif.so
 lib/libheif.so.1
 lib/libheif.so.1.3.2
 libdata/pkgconfig/libheif.pc
-share/mime/packages/heif.xml
-share/thumbnailers/heif.thumbnailer
+%%EXAMPLES%%share/mime/packages/heif.xml
+%%EXAMPLES%%share/thumbnailers/heif.thumbnailer
