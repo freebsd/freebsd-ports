@@ -3,11 +3,12 @@
 PORTNAME=	svt-hevc
 DISTVERSIONPREFIX=	v
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	ad0942db4ce4.patch:-p1
+PATCHFILES+=	87e168e78620.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Scalable HEVC encoder
