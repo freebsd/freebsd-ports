@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	convmv
-PORTVERSION=	2.03
+PORTVERSION=	2.05
 CATEGORIES=	converters perl5
 MASTER_SITES=	http://www.j3e.de/linux/convmv/ \
 		http://www.sfr-fresh.com/unix/privat/
