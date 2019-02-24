@@ -15,7 +15,8 @@
 %%QT_INCDIR%%/QtTextToSpeech/qvoice.h
 %%QT_CMAKEDIR%%/Qt5TextToSpeech/Qt5TextToSpeechConfig.cmake
 %%QT_CMAKEDIR%%/Qt5TextToSpeech/Qt5TextToSpeechConfigVersion.cmake
-%%QT_CMAKEDIR%%/Qt5TextToSpeech/Qt5TextToSpeech_QTextToSpeechPluginSpeechd.cmake
+%%FLITE%%%%QT_CMAKEDIR%%/Qt5TextToSpeech/Qt5TextToSpeech_QTextToSpeechEngineFlite.cmake
+%%SPEECHD%%%%QT_CMAKEDIR%%/Qt5TextToSpeech/Qt5TextToSpeech_QTextToSpeechPluginSpeechd.cmake
 %%QT_LIBDIR%%/libQt5TextToSpeech.prl
 %%QT_LIBDIR%%/libQt5TextToSpeech.so
 %%QT_LIBDIR%%/libQt5TextToSpeech.so.5
@@ -24,6 +25,8 @@
 %%DEBUG%%%%QT_LIBDIR%%/libQt5TextToSpeech.so.%%FULLVER%%.debug
 %%QT_MKSPECDIR%%/modules/qt_lib_texttospeech.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_texttospeech_private.pri
-%%QT_PLUGINDIR%%/texttospeech/libqtexttospeech_speechd.so
-%%DEBUG%%%%QT_PLUGINDIR%%/texttospeech/libqtexttospeech_speechd.so.debug
+%%FLITE%%%%QT_PLUGINDIR%%/texttospeech/libqttexttospeech_flite.so
+%%FLITE%%%%DEBUG%%%%QT_PLUGINDIR%%/texttospeech/libqttexttospeech_flite.so.debug
+%%SPEECHD%%%%QT_PLUGINDIR%%/texttospeech/libqtexttospeech_speechd.so
+%%SPEECHD%%%%DEBUG%%%%QT_PLUGINDIR%%/texttospeech/libqtexttospeech_speechd.so.debug
 libdata/pkgconfig/Qt5TextToSpeech.pc
