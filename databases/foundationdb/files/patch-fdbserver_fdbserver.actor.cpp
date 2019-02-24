@@ -1,4 +1,4 @@
---- fdbserver/fdbserver.actor.cpp.orig	2018-08-01 01:25:10 UTC
+--- fdbserver/fdbserver.actor.cpp.orig	2019-01-09 22:28:32 UTC
 +++ fdbserver/fdbserver.actor.cpp
 @@ -60,7 +60,7 @@
  #define BOOST_DATE_TIME_NO_LIB
@@ -17,7 +17,7 @@
  
  enum {
  	OPT_CONNFILE, OPT_SEEDCONNFILE, OPT_SEEDCONNSTRING, OPT_ROLE, OPT_LISTEN, OPT_PUBLICADDR, OPT_DATAFOLDER, OPT_LOGFOLDER, OPT_PARENTPID, OPT_NEWCONSOLE, OPT_NOBOX, OPT_TESTFILE, OPT_RESTARTING, OPT_RANDOMSEED, OPT_KEY, OPT_MEMLIMIT, OPT_STORAGEMEMLIMIT, OPT_MACHINEID, OPT_DCID, OPT_MACHINE_CLASS, OPT_BUGGIFY, OPT_VERSION, OPT_CRASHONERROR, OPT_HELP, OPT_NETWORKIMPL, OPT_NOBUFSTDOUT, OPT_BUFSTDOUTERR, OPT_TRACECLOCK, OPT_NUMTESTERS, OPT_DEVHELP, OPT_ROLLSIZE, OPT_MAXLOGS, OPT_MAXLOGSSIZE, OPT_KNOB, OPT_TESTSERVERS, OPT_TEST_ON_SERVERS, OPT_METRICSCONNFILE, OPT_METRICSPREFIX,
-@@ -351,7 +352,7 @@ public:
+@@ -353,7 +354,7 @@ class WorldReadablePermissions { (public)
  			throw platform_error();
  		}
  		permission.set_permissions( &sa );
@@ -26,7 +26,7 @@
  		// There is nothing to do here, since the default permissions are fine
  #else
  		#error Port me!
-@@ -361,7 +362,7 @@ public:
+@@ -363,7 +364,7 @@ class WorldReadablePermissions { (public)
  	virtual ~WorldReadablePermissions() {
  #ifdef _WIN32
  		LocalFree( sa.lpSecurityDescriptor );

@@ -1,4 +1,4 @@
---- flow/ThreadPrimitives.h.orig	2018-08-01 01:25:10 UTC
+--- flow/ThreadPrimitives.h.orig	2019-01-09 22:28:32 UTC
 +++ flow/ThreadPrimitives.h
 @@ -25,7 +25,7 @@
  #include "Error.h"
@@ -9,7 +9,7 @@
  #include <semaphore.h>
  #endif
  
-@@ -63,11 +63,11 @@ public:
+@@ -63,11 +63,11 @@ class ThreadSpinLock { (public)
  #endif
  	}
  	void leave() {
@@ -23,12 +23,12 @@
  	__sync_synchronize();
  #endif
  #if VALGRIND
-@@ -117,6 +117,8 @@ private:
+@@ -116,6 +116,8 @@ class Event { (private)
+ #ifdef _WIN32
  	void* ev;
  #elif defined(__linux__)
- 	sem_t sem;
-+#elif defined(__FreeBSD__)
 +	sem_t sem;
++#elif defined(__FreeBSD__)
+ 	sem_t sem;
  #elif defined(__APPLE__)
  	mach_port_t self;
- 	semaphore_t sem;

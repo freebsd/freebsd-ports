@@ -1,4 +1,4 @@
---- Makefile.orig	2018-08-01 01:25:10 UTC
+--- Makefile.orig	2019-01-09 22:28:32 UTC
 +++ Makefile
 @@ -6,6 +6,8 @@ TOPDIR := $(shell pwd)
  
@@ -9,16 +9,19 @@
  else
    $(error Not prepared to compile on $(ARCH))
  endif
-@@ -15,7 +17,7 @@ ifeq ($(MONO),)
+@@ -15,11 +17,7 @@ ifeq ($(MONO),)
    MONO := /usr/bin/mono
  endif
  
--MCS := $(shell which dmcs)
-+MCS := $(shell which mcs)
+-DMCS := $(shell which dmcs)
+ MCS := $(shell which mcs)
+-ifneq ($(DMCS),)
+-  MCS := $(DMCS)
+-endif
  ifeq ($(MCS),)
    MCS := /usr/bin/dmcs
  endif
-@@ -40,6 +42,15 @@ ifeq ($(PLATFORM),Linux)
+@@ -45,6 +43,15 @@ ifeq ($(PLATFORM),Linux)
    DLEXT := so
    java_DLEXT := so
    TARGET_LIBC_VERSION ?= 2.11
@@ -34,7 +37,7 @@
  else ifeq ($(PLATFORM),Darwin)
    PLATFORM := osx
  
-@@ -92,7 +103,7 @@ STATIC_LIBS :=
+@@ -108,7 +115,7 @@ STATIC_LIBS :=
  VPATH += $(addprefix :,$(filter-out lib,$(patsubst -L%,%,$(filter -L%,$(LDFLAGS)))))
  
  CS_PROJECTS := flow/actorcompiler flow/coveragetool fdbclient/vexillographer
@@ -43,7 +46,7 @@
  OTHER_PROJECTS := bindings/python bindings/ruby bindings/go
  
  CS_MK_GENERATED := $(CS_PROJECTS:=/generated.mk)
-@@ -101,7 +112,7 @@ CPP_MK_GENERATED := $(CPP_PROJECTS:=/gen
+@@ -117,7 +124,7 @@ CPP_MK_GENERATED := $(CPP_PROJECTS:=/generated.mk)
  MK_GENERATED := $(CS_MK_GENERATED) $(CPP_MK_GENERATED)
  
  # build/valgrind.mk needs to be included before any _MK_GENERATED (which in turn includes local.mk)
@@ -52,7 +55,7 @@
  
  ALL_MAKEFILES := Makefile $(MK_INCLUDE) $(patsubst %/generated.mk,%/local.mk,$(MK_GENERATED))
  
-@@ -111,7 +122,7 @@ TARGETS =
+@@ -127,7 +134,7 @@ TARGETS =
  
  default: fdbserver fdbbackup fdbcli fdb_c fdb_python fdb_python_sdist
  
@@ -61,7 +64,7 @@
  
  # These are always defined and ready to use. Any target that uses them and needs them up to date
  #  should depend on versions.target
-@@ -133,11 +144,11 @@ Makefiles: $(MK_GENERATED)
+@@ -149,11 +156,11 @@ Makefiles: $(MK_GENERATED)
  
  $(CS_MK_GENERATED): build/csprojtom4.py build/csproj.mk Makefile
  	@echo "Creating       $@"

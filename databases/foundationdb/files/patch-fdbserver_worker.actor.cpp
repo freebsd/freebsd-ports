@@ -1,4 +1,4 @@
---- fdbserver/worker.actor.cpp.orig	2018-08-01 01:25:10 UTC
+--- fdbserver/worker.actor.cpp.orig	2019-01-09 22:28:32 UTC
 +++ fdbserver/worker.actor.cpp
 @@ -39,7 +39,7 @@
  #include "fdbclient/ClientWorkerInterface.h"
@@ -9,7 +9,7 @@
  #ifdef USE_GPERFTOOLS
  #include "gperftools/profiler.h"
  #endif
-@@ -267,7 +267,7 @@ ACTOR Future<Void> registrationClient( R
+@@ -272,7 +272,7 @@ ACTOR Future<Void> registrationClient( Reference<Async
  	}
  }
  
@@ -18,7 +18,7 @@
  //A set of threads that should be profiled
  std::set<std::thread::id> profiledThreads;
  
-@@ -279,7 +279,7 @@ int filter_in_thread(void *arg) {
+@@ -284,7 +284,7 @@ int filter_in_thread(void *arg) {
  
  //Enables the calling thread to be profiled
  void registerThreadForProfiling() {
@@ -27,7 +27,7 @@
  	//Not sure if this is actually needed, but a call to backtrace was advised here:
  	//http://groups.google.com/group/google-perftools/browse_thread/thread/0dfd74532e038eb8/2686d9f24ac4365f?pli=1
  	profiledThreads.insert(std::this_thread::get_id());
-@@ -293,7 +293,7 @@ void registerThreadForProfiling() {
+@@ -298,7 +298,7 @@ void registerThreadForProfiling() {
  void updateCpuProfiler(ProfilerRequest req) {
  	switch (req.type) {
  	case ProfilerRequest::Type::GPROF:
