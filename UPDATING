@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190224:
+  AFFECTS: users of security/gnutls
+  AUTHOR: tijl@FreeBSD.org
+
+  GnuTLS now looks for its configuration files in PREFIX/etc (/usr/local/etc)
+  instead of /etc.  If the following files exist they have to be moved.  On a
+  default installation these files do not exist.
+
+  /etc/gnutls/default-priorities
+  /etc/gnutls/pkcs11.conf
+  /etc/tpasswd
+  /etc/tpasswd.conf
+
 20190215:
   AFFECTS: users of net-im/ejabberd
   AUTHOR: ashish@FreeBSD.org
