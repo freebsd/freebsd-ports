@@ -32,6 +32,8 @@ DOCLANG?=	en
 PORTDATA=	*
 DATADIR=	${PREFIX}/share/gimp
 
+MAKE_JOBS_UNSAFE=	yes
+
 SHEBANG_FILES=	tools/xml2po.py
 
 post-patch:

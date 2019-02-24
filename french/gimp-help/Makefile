@@ -4,7 +4,7 @@
 CATEGORIES=	french graphics
 
 MAINTAINER=	liangtai.s16@gmail.com
-COMMENT=	The GIMP User Manual in French
+COMMENT=	GIMP User Manual in French
 
 LICENSE=	GFDL
 

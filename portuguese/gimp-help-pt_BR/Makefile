@@ -4,7 +4,7 @@
 CATEGORIES=	portuguese graphics
 
 MAINTAINER=	liangtai.s16@gmail.com
-COMMENT=	The GIMP User Manual in Brazilian Portuguese
+COMMENT=	GIMP User Manual in Brazilian Portuguese
 
 LICENSE=	GFDL
 

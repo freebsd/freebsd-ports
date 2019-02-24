@@ -4,7 +4,7 @@
 CATEGORIES=	misc graphics
 
 MAINTAINER=	liangtai.s16@gmail.com
-COMMENT=	The GIMP User Manual in Dutch
+COMMENT=	GIMP User Manual in Dutch
 
 LICENSE=	GFDL
 

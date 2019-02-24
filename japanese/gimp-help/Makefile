@@ -4,7 +4,7 @@
 CATEGORIES=	japanese graphics
 
 MAINTAINER=	liangtai.s16@gmail.com
-COMMENT=	The GIMP User Manual in Japanese
+COMMENT=	GIMP User Manual in Japanese
 
 LICENSE=	GFDL
 

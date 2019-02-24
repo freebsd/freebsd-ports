@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 PKGNAMESUFFIX=	-html
 
 MAINTAINER=	liangtai.s16@gmail.com
-COMMENT=	The meta port for GIMP User Manual
+COMMENT=	Meta port for the GIMP User Manual
 
 LICENSE=	GFDL
 
