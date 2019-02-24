@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Infrastructure plugin for the Catalyst authentication framework
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Catalyst-Plugin-Session>=0.10:www/p5-Catalyst-Plugin-Session \
 		p5-Catalyst-Runtime>=0:www/p5-Catalyst-Runtime \
@@ -32,5 +35,6 @@ PORTSCOUT=	skipv:0.100091,0.100092
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
