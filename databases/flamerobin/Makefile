@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI administration tool for firebird database
 
+DEPRECATED=	Abandonware since 2009, does not work with newer version of wxGTK
+EXPIRATION_DATE=	2019-03-24
+
 LICENSE=	expat
 LICENSE_NAME=	FlameRobin Expat
 LICENSE_FILE=	${WRKSRC}/docs/fr_license.html
