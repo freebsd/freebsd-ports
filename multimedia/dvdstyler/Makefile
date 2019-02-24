@@ -3,7 +3,7 @@
 
 PORTNAME=	dvdstyler
 PORTVERSION=	2.9.6
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
@@ -23,7 +23,10 @@ BUILD_DEPENDS=	zip:archivers/zip \
 		docbook-xml>=4.1.2:textproc/docbook-xml \
 		xmlto:textproc/xmlto
 LIB_DEPENDS=	libexif.so:graphics/libexif \
-		libavcodec.so:multimedia/ffmpeg
+		libavcodec.so:multimedia/ffmpeg \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libdbus-1.so:devel/dbus
 RUN_DEPENDS=	zip:archivers/zip \
 		wxsvg>=1.2:graphics/wxsvg \
 		dvdauthor:multimedia/dvdauthor \
@@ -31,7 +34,8 @@ RUN_DEPENDS=	zip:archivers/zip \
 		mkisofs:sysutils/cdrtools \
 		growisofs:sysutils/dvd+rw-tools
 
-USES=		autoreconf compiler:c++11-lib gettext gmake pkgconfig tar:bzip2
+USES=		autoreconf compiler:c++11-lib gettext gmake jpeg pkgconfig tar:bzip2
+
 USE_CXXSTD=	gnu++11
 USE_WX=		3.0
 WX_CONF_ARGS=	absolute
