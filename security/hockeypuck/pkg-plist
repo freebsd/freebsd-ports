@@ -1,0 +1,4 @@
+bin/hockeypuck
+bin/hockeypuck-dump
+bin/hockeypuck-load
+bin/hockeypuck-pbuild

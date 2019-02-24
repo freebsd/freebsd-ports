@@ -550,7 +550,7 @@ _tss:*:601:601:daemon:0:0:TrouSerS user:/var/empty:/usr/sbin/nologin
 _pkcs11:*:602:602:daemon:0:0:opencryptoki user:/var/empty:/usr/sbin/nologin
 _acme:*:603:603::0:0:ACME client user:/var/empty:/usr/sbin/nologin
 # free: 604
-# free: 605
+_hockeypuck:*:605:605::0:0:hockeypuck pgp keyserver user:/var/empty:/usr/sbin/nologin
 # free: 606
 # free: 607
 # free: 608

@@ -1,0 +1,25 @@
+#!/bin/sh
+# Created by: Michiel van Baak <michiel@vanbaak.eu>
+#
+# $FreeBSD$
+#
+# PROVIDE: hockeypuck
+# REQUIRE: DAEMON
+
+. /etc/rc.subr
+
+name="hockeypuck"
+rcvar=hockeypuck_enable
+load_rc_config $name
+
+: ${hockeypuck_enable:=NO}
+: ${hockeypuck_user="_hockeypuck"}
+: ${hockeypuck_group="_hockeypuck"}
+
+command="/usr/local/bin/hockeypuck"
+command_args="-config /usr/local/etc/hockeypuck.conf"
+pidfile="/var/run/hockeypuck.pid"
+
+start_cmd="/usr/sbin/daemon -f -p ${pidfile} -u ${hockeypuck_user} ${command} ${command_args}"
+
+run_rc_command "$1"

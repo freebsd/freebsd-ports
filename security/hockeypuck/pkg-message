@@ -1,0 +1,9 @@
+
+Hockeypuck needs a configuration file before it can be used.
+For more information about configuration details see:
+https://hockeypuck.github.io/configuration.html
+
+If this hockeypuck install is to be used in the sks-keyserver.net pools
+it needs to be populated with a current dump of the keys in the network.
+For more information on populating the database see:
+https://hockeypuck.github.io/populating.html

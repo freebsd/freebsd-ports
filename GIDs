@@ -545,7 +545,7 @@ _tss:*:601:
 _pkcs11:*:602:
 _acme:*:603:
 # free: 604
-# free: 605
+_hockeypuck:*:605:
 # free: 606
 # free: 607
 # free: 608
