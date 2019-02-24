@@ -59,6 +59,7 @@ CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--with-desktop-dir=${PREFIX}/share \
 		--docdir=${PREFIX}/share/doc/gimp \
 		--with-icc-directory=${LOCALBASE}/share/color/icc \
+		--without-webkit \
 		--enable-default-binary
 CONFIGURE_ENV=	GIMP_THREAD_LIBS=-lpthread
 LIBS+=		-lexecinfo
@@ -73,7 +74,7 @@ PLIST_SUB+=	LIBVER=0.1000.${PORTVERSION:E}
 
 USES+=		desktop-file-utils
 
-OPTIONS_DEFINE?=	AA GHOSTSCRIPT HELPBROWSER \
+OPTIONS_DEFINE?=	AA GHOSTSCRIPT \
 			LIBHEIF LIBMNG OPENEXR OPENJPEG SIMD WEBP WMF
 OPTIONS_DEFAULT=	AA LIBMNG OPENEXR OPENJPEG SIMD WEBP WMF
 OPTIONS_SUB=		yes
@@ -102,11 +103,6 @@ LIBHEIF_CONFIGURE_WITH=	libheif
 
 GHOSTSCRIPT_USES=		ghostscript
 GHOSTSCRIPT_CONFIGURE_WITH=	gs
-
-HELPBROWSER_DESC=		Internal help browser and web page plugin
-HELPBROWSER_LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2 \
-				libsoup-2.4.so:devel/libsoup
-HELPBROWSER_CONFIGURE_WITH=	webkit
 
 LIBMNG_LIB_DEPENDS=	libmng.so:graphics/libmng
 LIBMNG_CONFIGURE_WITH=	libmng

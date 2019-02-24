@@ -371,7 +371,6 @@ libexec/gimp/2.2/plug-ins/gradient-map/gradient-map
 libexec/gimp/2.2/plug-ins/grid/grid
 libexec/gimp/2.2/plug-ins/guillotine/guillotine
 libexec/gimp/2.2/plug-ins/help/help
-%%HELPBROWSER%%libexec/gimp/2.2/plug-ins/help-browser/help-browser
 libexec/gimp/2.2/plug-ins/hot/hot
 libexec/gimp/2.2/plug-ins/ifs-compose/ifs-compose
 libexec/gimp/2.2/plug-ins/imagemap/imagemap
@@ -407,7 +406,6 @@ libexec/gimp/2.2/plug-ins/van-gogh-lic/van-gogh-lic
 libexec/gimp/2.2/plug-ins/warp/warp
 libexec/gimp/2.2/plug-ins/wavelet-decompose/wavelet-decompose
 libexec/gimp/2.2/plug-ins/web-browser/web-browser
-%%HELPBROWSER%%libexec/gimp/2.2/plug-ins/web-page/web-page
 man/man1/gimp-2.10.1.gz
 man/man1/gimp.1.gz
 man/man1/gimptool-2.0.1.gz
