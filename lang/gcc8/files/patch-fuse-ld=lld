@@ -11,6 +11,7 @@ Date:   Thu Nov 8 22:05:27 2018 +0000
     
     git-svn-id: svn+ssh://gcc.gnu.org/svn/gcc/trunk@265940 138bc75d-0d04-0410-961f-82ee72b054a4
 
+--- UTC
 diff --git a/gcc/collect2.c b/gcc/collect2.c
 index a96af137a44..6463ff7b645 100644
 --- gcc/collect2.c
