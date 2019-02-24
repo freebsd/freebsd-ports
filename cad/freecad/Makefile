@@ -32,7 +32,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 RUN_DEPENDS=	pivy-devel>0:graphics/py-pivy-devel@${PY_FLAVOR}
 
 USES=		dos2unix compiler:c++11-lib cmake gl eigen:3 fortran jpeg \
-		python:2.7 localbase qt:5
+		localbase:ldflags python:2.7 localbase qt:5
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
