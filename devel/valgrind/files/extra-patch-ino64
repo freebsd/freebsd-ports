@@ -5,10 +5,10 @@ Subject: [PATCH v2] ino64 support
 
 ---
  coregrind/m_syswrap/priv_syswrap-freebsd.h |  4 ++
- coregrind/m_syswrap/syswrap-freebsd.c      | 65 ++++++++++++++++++++++++++++++
- include/vki/vki-freebsd.h                  | 56 +++++++++++++++++++++++++
+ coregrind/m_syswrap/syswrap-freebsd.c      | 65 ++++++++++++++++++++++
+ include/vki/vki-freebsd.h                  | 54 ++++++++++++++++++
  include/vki/vki-scnums-freebsd.h           |  4 ++
- 4 files changed, 129 insertions(+)
+ 4 files changed, 127 insertions(+)
 
 diff --git a/coregrind/m_syswrap/priv_syswrap-freebsd.h b/coregrind/m_syswrap/priv_syswrap-freebsd.h
 index 63d122f..715ad48 100644
@@ -54,7 +54,7 @@ index bf6b1f1..978e98e 100644
 +PRE(sys_fstat64)
 +{
 +   PRINT("sys_fstat64 ( %ld, %#lx )", ARG1, ARG2);
-+   PRE_REG_READ2(long, "fstat", unsigned long, fd, struct stat *, buf);
++   PRE_REG_READ2(long, "fstat", unsigned long, fd, struct stat64 *, buf);
 +   PRE_MEM_WRITE( "fstat(buf)", ARG2, sizeof(struct vki_stat64) );
 +}
 +
@@ -148,10 +148,10 @@ index bf6b1f1..978e98e 100644
  
  };
 diff --git a/include/vki/vki-freebsd.h b/include/vki/vki-freebsd.h
-index aee453e..f20833a 100644
+index aee453e..318a207 100644
 --- a/include/vki/vki-freebsd.h
 +++ b/include/vki/vki-freebsd.h
-@@ -367,6 +367,38 @@ struct vki_stat {
+@@ -367,6 +367,36 @@ struct vki_stat {
  	unsigned int :(8 / 2) * (16 - (int)sizeof(struct vki_timespec));
  };
  
@@ -177,20 +177,18 @@ index aee453e..f20833a 100644
 +	vki_time_t	st_ctime;
 +	long		st_ctime_nsec;
 +#endif
++	struct vki_timespec	st_birthtim;
 +	vki_off_t	st_size;
 +	vki_blkcnt_t	st_blocks;
 +	vki_blksize_t	st_blksize;
 +	vki_fflags_t	st_flags;
 +	vki_uint64_t	st_gen;
 +	vki_int64_t	st_spare[10];
-+//	struct vki_timespec	st_birthtimespec;
-+//	unsigned int :(8 / 2) * (16 - (int)sizeof(struct vki_timespec));
-+//	unsigned int :(8 / 2) * (16 - (int)sizeof(struct vki_timespec));
 +};
  
  //----------------------------------------------------------------------
  // From linux-2.6.8.1/include/linux/sched.h
-@@ -941,6 +973,30 @@ struct vki_statfs {
+@@ -941,6 +971,30 @@ struct vki_statfs {
  	char		f_mntonname[VKI_MNAMELEN];
  };
  
