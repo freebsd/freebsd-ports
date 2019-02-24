@@ -53,10 +53,6 @@ CFLAGS_armv7+=	-no-integrated-as
 
 LDFLAGS_i386+=	-Wl,-z,notext
 
-.if ${OSVERSION} >= 1300000 #Hopefully transient linker issue on head
-LLD_UNSAFE=	yes
-.endif
-
 # Extra build options for debugging
 # =================================
 
