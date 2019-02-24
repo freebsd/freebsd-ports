@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zathura
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+DISTVERSION=	0.4.3
 CATEGORIES=	graphics print
 MASTER_SITES=	https://pwmt.org/projects/zathura/download/ \
 		http://www.madpilot.net/~mad/pwmt.org/
@@ -20,14 +19,14 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 
-USES=		meson ninja compiler:c11 pkgconfig python tar:xz
+USES=		compiler:c11 gettext-tools:build gnome meson ninja \
+		pkgconfig python sqlite tar:xz
 USE_GNOME=	glib20 gtk30 gdkpixbuf2
+INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	NLS SQLITE
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	SQLITE
 
 SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 SQLITE_MESON_ARGS_OFF=	-Denable-sqlite=false
-NLS_USES=		gettext
 
 .include <bsd.port.mk>

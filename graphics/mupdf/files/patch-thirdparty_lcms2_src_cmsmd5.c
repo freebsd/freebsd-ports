@@ -1,4 +1,4 @@
---- thirdparty/lcms2/src/cmsmd5.c.orig	2018-10-31 19:49:39 UTC
+--- thirdparty/lcms2/src/cmsmd5.c.orig	2018-01-23 19:37:31 UTC
 +++ thirdparty/lcms2/src/cmsmd5.c
 @@ -29,7 +29,7 @@
  #ifdef CMS_USE_BIG_ENDIAN
@@ -9,7 +9,7 @@
  {
      do {
  
-@@ -42,7 +42,7 @@ void byteReverse(cmsUInt8Number * buf, cmsUInt32Number
+@@ -42,7 +42,7 @@ void byteReverse(cmsUInt8Number * buf, c
  }
  
  #else
@@ -18,7 +18,7 @@
  #endif
  
  
-@@ -196,7 +196,7 @@ void MD5add(cmsHANDLE Handle, cmsUInt8Number* buf, cms
+@@ -196,7 +196,7 @@ void MD5add(cmsHANDLE Handle, cmsUInt8Nu
          }
  
          memmove(p, buf, t);
@@ -27,7 +27,7 @@
  
          MD5_Transform(ctx->buf, (cmsUInt32Number *) ctx->in);
          buf += t;
-@@ -205,7 +205,7 @@ void MD5add(cmsHANDLE Handle, cmsUInt8Number* buf, cms
+@@ -205,7 +205,7 @@ void MD5add(cmsHANDLE Handle, cmsUInt8Nu
  
      while (len >= 64) {
          memmove(ctx->in, buf, 64);
@@ -36,7 +36,7 @@
          MD5_Transform(ctx->buf, (cmsUInt32Number *) ctx->in);
          buf += 64;
          len -= 64;
-@@ -232,21 +232,21 @@ void MD5finish(cmsProfileID* ProfileID,  cmsHANDLE Han
+@@ -232,21 +232,21 @@ void MD5finish(cmsProfileID* ProfileID, 
      if (count < 8) {
  
          memset(p, 0, count);
