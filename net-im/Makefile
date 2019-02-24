@@ -12,6 +12,7 @@
     SUBDIR += corebird
     SUBDIR += cutegram
     SUBDIR += diligent
+    SUBDIR += dino
     SUBDIR += echat
     SUBDIR += ejabberd
     SUBDIR += ekiga
