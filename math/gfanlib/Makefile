@@ -16,11 +16,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/cdd/cdd.h:math/cddlib
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake localbase
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/cdd
+CPPFLAGS+=	-I${LOCALBASE}/include/cdd
 
 CONFIGURE_WRKSRC=	${WRKSRC}/gfanlib
 BUILD_WRKSRC=		${WRKSRC}/gfanlib
