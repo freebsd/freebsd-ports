@@ -1,0 +1,11 @@
+--- Makefile.orig	2019-02-24 17:24:37 UTC
++++ Makefile
+@@ -9,7 +9,7 @@ MANDIR ?= $(PREFIX)/share/man/man1
+ # see http://lv2plug.in/pages/filesystem-hierarchy-standard.html, don't use libdir
+ LV2DIR ?= $(PREFIX)/lib/lv2
+ 
+-OPTIMIZATIONS ?= -msse -msse2 -mfpmath=sse -ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only -DNDEBUG
++OPTIMIZATIONS ?= $(PORT_SIMD_FLAGS) -ffast-math -fomit-frame-pointer -fno-finite-math-only -DNDEBUG
+ CFLAGS ?= -Wall -g -Wno-unused-function
+ STRIP  ?= strip
+ 
