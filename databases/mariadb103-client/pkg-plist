@@ -49,7 +49,8 @@ lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.so
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
-@comment lib/mysql/plugin/client_ed25519.so
+@comment lib/mysql/plugin/caching_sha2_password.so
+lib/mysql/plugin/client_ed25519.so
 lib/mysql/plugin/daemon_example.ini
 lib/mysql/plugin/dialog.so
 lib/mysql/plugin/mysql_clear_password.so
