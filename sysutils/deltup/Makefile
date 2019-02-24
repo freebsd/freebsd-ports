@@ -11,7 +11,7 @@ MASTER_SITES=	http://deltup.org/e107_files/downloads/ \
 		http://www.bzip.org/${BZIP2_103}/:bzip2103src
 DISTFILES+=	${DISTNAME}.tar.gz ${BZIP2_102_SOURCE}:bzip2102src ${BZIP2_103_SOURCE}:bzip2103src
 
-MAINTAINER=	novel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Source delta update program
 
 RUN_DEPENDS=	bdelta:misc/bdelta \
