@@ -2,14 +2,11 @@
 
 ##########################################################################
 #   Script description:
-#       
-#   Arguments:
-#       
-#   Returns:
+#       Run standard kallisto test data
 #       
 #   History:
 #   Date        Name        Modification
-#   2016-03-21  Charlie &   Begin
+#   2016-03-21  J Bacon     Begin
 ##########################################################################
 
 usage()

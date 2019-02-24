@@ -1,0 +1,25 @@
+--- CMakeLists.txt.orig	2018-12-20 14:20:05 UTC
++++ CMakeLists.txt
+@@ -34,22 +34,6 @@ ELSE(LINK MATCHES shared)
+     message("shared build")
+ ENDIF(LINK MATCHES static)
+ 
+-
+-include(ExternalProject)
+-ExternalProject_Add(htslib
+-    PREFIX ${PROJECT_SOURCE_DIR}/ext/htslib
+-    SOURCE_DIR ${PROJECT_SOURCE_DIR}/ext/htslib
+-    BUILD_IN_SOURCE 1
+-    CONFIGURE_COMMAND autoheader && autoconf && ${PROJECT_SOURCE_DIR}/ext/htslib/configure 
+-        --prefix=${PREFIX} --disable-bz2 --disable-lzma --disable-libcurl
+-    BUILD_COMMAND make lib-static
+-    INSTALL_COMMAND ""
+-)
+-
+-include_directories(${htslib_PREFIX}/src/htslib)
+-
+-
+-
+ # add_compile_options(-Wdeprecated-register)
+ 
+ add_subdirectory(src)
