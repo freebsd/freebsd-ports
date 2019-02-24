@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rtl-sdr
-PORTVERSION=	20170919
+PORTVERSION=	0.6.0
+PORTEPOCH=	1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
-		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Commandline tool that performs SDR with RTL2832-based USB sticks
@@ -13,6 +12,11 @@ COMMENT=	Commandline tool that performs SDR with RTL2832-based USB sticks
 LICENSE=	GPLv2
 
 USES=		autoreconf gmake pkgconfig libtool pathfix tar:tgz
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	steve-m
+GH_PROJECT=	librtlsdr
+
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
