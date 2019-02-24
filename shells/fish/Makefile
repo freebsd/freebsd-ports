@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fish
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/fish-shell/fish-shell/releases/download/${PORTVERSION}/
 
