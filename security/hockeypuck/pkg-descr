@@ -1,0 +1,10 @@
+Hockeypuck implements the HKP draft protocol specification,
+as well as several extensions to the protocol supported by SKS.
+
+Public key material conforming to RFC 4880 is supported by the keyserver,
+as are RFC 6637 ECC keys.
+As-of-yet unsupported key material, such as recent Ed25519 signing keys,
+may be distributed by Hockeypuck, however Hockeypuck is not able to
+validate them yet.
+
+WWW: https://hockeypuck.github.io
