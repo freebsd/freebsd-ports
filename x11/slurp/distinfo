@@ -1,5 +1,3 @@
-TIMESTAMP = 1550003063
-SHA256 (emersion-slurp-v1.0.1_GH0.tar.gz) = 3e44401ff3ecf78bd147e1e3d40cc571973da7f4e0f26ce3cd70b60e2c270b67
-SIZE (emersion-slurp-v1.0.1_GH0.tar.gz) = 13421
-SHA256 (d2f908e55f7c.patch) = 46b8770b471859a277b0b65f8ef25244752f72dff28bcd8e9c1030444c91a51e
-SIZE (d2f908e55f7c.patch) = 1112
+TIMESTAMP = 1550947672
+SHA256 (emersion-slurp-v1.1.0_GH0.tar.gz) = a2f3eefc3b4cfe8cc069542643be52ab7a6175ed8600d57b62f1309fde158082
+SIZE (emersion-slurp-v1.1.0_GH0.tar.gz) = 14484
