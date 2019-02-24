@@ -4,7 +4,7 @@
 CATEGORIES=	misc graphics
 
 MAINTAINER=	liangtai.s16@gmail.com
-COMMENT=	The GIMP User Manual in Slovenian
+COMMENT=	GIMP User Manual in Slovenian
 
 LICENSE=	GFDL
 

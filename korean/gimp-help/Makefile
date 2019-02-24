@@ -4,7 +4,7 @@
 CATEGORIES=	korean graphics
 
 MAINTAINER=	liangtai.s16@gmail.com
-COMMENT=	The GIMP User Manual in Korean
+COMMENT=	GIMP User Manual in Korean
 
 LICENSE=	GFDL
 

@@ -4,7 +4,7 @@
 CATEGORIES=	misc graphics spanish
 
 MAINTAINER=	liangtai.s16@gmail.com
-COMMENT=	The GIMP User Manual in Spanish
+COMMENT=	GIMP User Manual in Spanish
 
 LICENSE=	GFDL
 

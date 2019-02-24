@@ -4,7 +4,7 @@
 CATEGORIES=	german graphics
 
 MAINTAINER=	liangtai.s16@gmail.com
-COMMENT=	The GIMP User Manual in German
+COMMENT=	GIMP User Manual in German
 
 LICENSE=	GFDL
 

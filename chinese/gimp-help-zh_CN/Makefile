@@ -4,7 +4,7 @@
 CATEGORIES=	chinese graphics
 
 MAINTAINER=	liangtai.s16@gmail.com
-COMMENT=	The GIMP User Manual in Simplified Chinese
+COMMENT=	GIMP User Manual in Simplified Chinese
 
 LICENSE=	GFDL
 
