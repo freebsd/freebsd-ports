@@ -12,17 +12,3 @@
      clang_mode = True
  
  # MinGW compiler mode, optional and interesting to Windows only.
-@@ -751,11 +752,11 @@ if gcc_mode and "clang" not in the_cc_na
-     # binary if it's not high enough. This is esp. useful under Debian which
-     # allows all compiler to exist next to each other and where g++ might not be
-     # good enough, but g++-4.5 would be.
--    if gcc_version < "4.4":
-+    if gcc_version < "4.2.1":
-         sys.exit(
-             """\
- The gcc compiler %s (version %s) doesn't have the sufficient \
--version (>= 4.4)."""
-+version (>= 4.2.1)."""
-             % (the_compiler, gcc_version)
-         )
- 
