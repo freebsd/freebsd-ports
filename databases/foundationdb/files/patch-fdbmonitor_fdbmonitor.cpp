@@ -1,4 +1,4 @@
---- fdbmonitor/fdbmonitor.cpp.orig	2018-08-01 01:25:10 UTC
+--- fdbmonitor/fdbmonitor.cpp.orig	2019-01-09 22:28:32 UTC
 +++ fdbmonitor/fdbmonitor.cpp
 @@ -35,6 +35,10 @@
  #include <linux/limits.h>
@@ -20,7 +20,7 @@
  typedef int fdb_fd_set;
  #endif
  
-@@ -83,7 +87,7 @@ void monitor_fd( fdb_fd_set list, int fd
+@@ -83,7 +87,7 @@ void monitor_fd( fdb_fd_set list, int fd, int* maxfd, 
  	FD_SET( fd, list );
  	if ( fd > *maxfd )
  		*maxfd = fd;
@@ -29,7 +29,7 @@
  	/* ignore maxfd */
  	struct kevent ev;
  	EV_SET( &ev, fd, EVFILT_READ, EV_ADD, 0, 0, cmd );
-@@ -94,7 +98,7 @@ void monitor_fd( fdb_fd_set list, int fd
+@@ -94,7 +98,7 @@ void monitor_fd( fdb_fd_set list, int fd, int* maxfd, 
  void unmonitor_fd( fdb_fd_set list, int fd ) {
  #ifdef __linux__
  	FD_CLR( fd, list );
@@ -38,7 +38,7 @@
  	struct kevent ev;
  	EV_SET( &ev, fd, EVFILT_READ, EV_DELETE, 0, 0, NULL );
  	kevent( list, &ev, 1, NULL, 0, NULL ); // FIXME: check?
-@@ -188,7 +192,7 @@ const char* get_value_multi(const CSimpl
+@@ -188,7 +192,7 @@ const char* get_value_multi(const CSimpleIni& ini, con
  }
  
  double timer() {
@@ -47,7 +47,7 @@
  	struct timespec ts;
  	clock_gettime(CLOCK_MONOTONIC, &ts);
  	return double(ts.tv_sec) + (ts.tv_nsec * 1e-9);
-@@ -822,7 +826,7 @@ void read_child_output( Command* cmd, in
+@@ -824,7 +828,7 @@ void read_child_output( Command* cmd, int pipe_idx, fd
  	}
  }
  
@@ -56,7 +56,7 @@
  void watch_conf_dir( int kq, int* confd_fd, std::string confdir ) {
  	struct kevent ev;
  	std::string original = confdir;
-@@ -839,7 +843,7 @@ void watch_conf_dir( int kq, int* confd_
+@@ -841,7 +845,7 @@ void watch_conf_dir( int kq, int* confd_fd, std::strin
  		std::string child = confdir;
  
  		/* Find the nearest existing ancestor */
@@ -65,7 +65,7 @@
  			child = confdir;
  			confdir = parentDirectory(confdir);
  		}
-@@ -876,7 +880,7 @@ void watch_conf_file( int kq, int* conff
+@@ -878,7 +882,7 @@ void watch_conf_file( int kq, int* conff_fd, const cha
  	}
  
  	/* Open and watch */
@@ -74,7 +74,7 @@
  	if ( *conff_fd >= 0 ) {
  		EV_SET( &ev, *conff_fd, EVFILT_VNODE, EV_ADD | EV_CLEAR, NOTE_WRITE | NOTE_ATTRIB, 0, NULL );
  		kevent( kq, &ev, 1, NULL, 0, NULL );
-@@ -983,7 +987,7 @@ std::unordered_map<int, std::unordered_s
+@@ -985,7 +989,7 @@ std::unordered_map<int, std::unordered_set<std::string
  
  int main(int argc, char** argv) {
  	std::string lockfile = "/var/run/fdbmonitor.pid";
@@ -83,7 +83,7 @@
  
  	std::vector<const char *> additional_watch_paths;
  
-@@ -1065,7 +1069,7 @@ int main(int argc, char** argv) {
+@@ -1067,7 +1071,7 @@ int main(int argc, char** argv) {
  	/* only linux needs this, but... */
  	int maxfd = 0;
  
@@ -92,7 +92,7 @@
  	fd_set rfds;
  	watched_fds = &rfds;
  
-@@ -1080,12 +1084,12 @@ int main(int argc, char** argv) {
+@@ -1082,12 +1086,12 @@ int main(int argc, char** argv) {
  	CSimpleIniA* ini = NULL;
  
  	if (daemonize) {
@@ -107,7 +107,7 @@
  #pragma GCC diagnostic pop
  #endif
  			log_err("daemon", errno, "Unable to daemonize");
-@@ -1138,12 +1142,12 @@ int main(int argc, char** argv) {
+@@ -1140,12 +1144,12 @@ int main(int argc, char** argv) {
  	snprintf(pid_buf, sizeof(pid_buf), "%d\n", getpid());
  	ssize_t ign = write(lockfile_fd, pid_buf, strlen(pid_buf));
  
@@ -122,7 +122,7 @@
  	int kq = kqueue();
  	if ( kq < 0 ) {
  		log_err( "kqueue", errno, "Unable to create kqueue" );
-@@ -1174,7 +1178,7 @@ int main(int argc, char** argv) {
+@@ -1176,7 +1180,7 @@ int main(int argc, char** argv) {
  
  #endif
  
@@ -131,7 +131,7 @@
  	signal(SIGCHLD, child_handler);
  #endif
  
-@@ -1188,11 +1192,11 @@ int main(int argc, char** argv) {
+@@ -1190,11 +1194,11 @@ int main(int argc, char** argv) {
  	/* normal will be restored in our main loop in the call to
  	   pselect, but none blocks all signals while processing events */
  	sigprocmask(SIG_SETMASK, &full_mask, &normal_mask);
@@ -145,7 +145,7 @@
  	struct stat st_buf;
  	struct timespec mtimespec;
  
-@@ -1251,7 +1255,7 @@ int main(int argc, char** argv) {
+@@ -1253,7 +1257,7 @@ int main(int argc, char** argv) {
  
  			load_conf(confpath.c_str(), uid, gid, &normal_mask, &rfds, &maxfd);
  			reload_additional_watches = false;
@@ -154,7 +154,7 @@
  			load_conf( confpath.c_str(), uid, gid, &normal_mask, watched_fds, &maxfd );
  			watch_conf_file( kq, &conff_fd, confpath.c_str() );
  			watch_conf_dir( kq, &confd_fd, confdir );
-@@ -1289,7 +1293,7 @@ int main(int argc, char** argv) {
+@@ -1291,7 +1295,7 @@ int main(int argc, char** argv) {
  		if(nfds == 0) {
  			reload = true;
  		}

@@ -1,6 +1,6 @@
---- fdbrpc/Platform.cpp.orig	2018-08-01 01:25:10 UTC
+--- fdbrpc/Platform.cpp.orig	2019-01-09 22:28:32 UTC
 +++ fdbrpc/Platform.cpp
-@@ -87,7 +87,7 @@ int eraseDirectoryRecursive(std::string 
+@@ -87,7 +87,7 @@ int eraseDirectoryRecursive(std::string const& dir) {
  	__eraseDirectoryRecurseiveCount = 0;
  #ifdef _WIN32
  	system( ("rd /s /q \"" + dir + "\"").c_str() );
@@ -9,7 +9,7 @@
  	int error =
  		nftw(dir.c_str(),
  			[](const char *fpath, const struct stat *sb, int typeflag, struct FTW *ftwbuf) -> int {
-@@ -122,8 +122,8 @@ std::string getDefaultConfigPath() {
+@@ -123,8 +123,8 @@ std::string getDefaultConfigPath() {
  	return _filepath + "\\foundationdb";
  #elif defined(__linux__)
  	return "/etc/foundationdb";

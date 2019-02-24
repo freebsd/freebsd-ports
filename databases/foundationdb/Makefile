@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	foundationdb
-PORTVERSION=	5.2.8
-PORTREVISION=	2
+PORTVERSION=	6.0.18
+PORTREVISION=	0
 CATEGORIES=	databases
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -25,8 +25,8 @@ GH_ACCOUNT=	apple
 USE_RC_SUBR=	foundationdb
 SHEBANG_FILES=	build/csprojtom4.py build/link-wrapper.sh build/vcxprojtom4.py \
 		bindings/c/generate_asm.py
-MAKE_ENV+=	PYTHON=${PYTHON_CMD}
-CXXFLAGS+=	-Wno-varargs
+MAKE_ENV+=	PYTHON=${PYTHON_CMD} TLS_DISABLED=yes
+CXXFLAGS+=	-Wno-varargs -DTLS_DISABLED
 
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
@@ -40,6 +40,7 @@ PLIST_SUB+=	DB_USER=${USERS} \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/foundationdb.conf
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/flow/Platform.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/fdbbackup ${STAGEDIR}${PREFIX}/bin
