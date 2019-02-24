@@ -51,6 +51,8 @@ CFLAGS_i386+=	-mstack-alignment=16 -mstackrealign
 CFLAGS_armv6+=	-no-integrated-as
 CFLAGS_armv7+=	-no-integrated-as
 
+LDFLAGS_i386+=	-Wl,-z,notext
+
 # Extra build options for debugging
 # =================================
 
