@@ -1,0 +1,12 @@
+loccount is a re-implementation of David A. Wheeler's sloccount tool
+in Go. It is faster, handles more different languages, can report LLOC
+as well as SLOC, and can do COCOMO II as well as COCOMO I estimates. Because
+it's one source file in Go, it is easier to maintain and extend than the
+multi-file, multi-language implementation of the original.
+
+The algorithms are largely unchanged and can be expected to produce
+identical numbers for languages supported by both tools. Python is
+an exception; loccount corrects buggy counting of single-quote multiline
+literals in sloccount 2.26.
+
+WWW: http://www.catb.org/esr/loccount/

@@ -1696,6 +1696,7 @@
     SUBDIR += lmdbg
     SUBDIR += lndir
     SUBDIR += lnphost
+    SUBDIR += loccount
     SUBDIR += lockfree-malloc
     SUBDIR += log4c
     SUBDIR += log4cplus
