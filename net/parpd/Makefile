@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	parpd
-DISTVERSION=	1.1
+DISTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.iks-jena.de/pub/mitarb/lutz/parpd/
 
@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:tgz
 USE_RC_SUBR=	parpd
-NO_TEST=	yes
 
+NO_TEST=	yes
 PLIST_FILES=	sbin/parpd man/man8/parpd.8.gz
 
 do-install:
