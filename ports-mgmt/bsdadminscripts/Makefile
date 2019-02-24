@@ -11,6 +11,9 @@ COMMENT=	Collection of administration scripts
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Upstream stale nearly 10 years, no longer works properly, use ports-mgmt/bsdadminscripts2 instead
+EXPIRATION_DATE=	2019-03-31
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 
