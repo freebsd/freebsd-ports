@@ -13,11 +13,9 @@ COMMENT=	LV2 plugin bundle from Open Music Kontrollers
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to build: cc1: unrecognized command line option -std=gnu11
-
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
-USES=		cmake pkgconfig
+USES=		cmake compiler:c11 pkgconfig
 PLIST_FILES=	lib/lv2/orbit.lv2/manifest.ttl \
 		lib/lv2/orbit.lv2/orbit.so \
 		lib/lv2/orbit.lv2/orbit.ttl
