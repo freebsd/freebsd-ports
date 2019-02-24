@@ -1,21 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	libxls
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	math devel
-MASTER_SITES=	SF/${PORTNAME}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Extract Cell Data From Excel xls files
 
 LICENSE=	BSD2CLAUSE
 
-USES=	zip libtool
+USES=	libtool
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-WRKSRC=	${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
