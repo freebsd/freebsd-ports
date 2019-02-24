@@ -1,6 +1,6 @@
---- gpu/ipc/common/gpu_memory_buffer_support.h.orig	2018-07-19 13:55:08.335420000 +0200
-+++ gpu/ipc/common/gpu_memory_buffer_support.h	2018-07-19 13:56:28.243213000 +0200
-@@ -17,7 +17,7 @@
+--- gpu/ipc/common/gpu_memory_buffer_support.h.orig	2019-01-30 02:18:02.000000000 +0100
++++ gpu/ipc/common/gpu_memory_buffer_support.h	2019-02-01 09:40:47.746184000 +0100
+@@ -16,7 +16,7 @@
  #include "ui/gfx/geometry/size.h"
  #include "ui/gfx/gpu_memory_buffer.h"
  
@@ -9,16 +9,7 @@
  namespace gfx {
  class ClientNativePixmapFactory;
  }
-@@ -29,7 +29,7 @@
- class GPU_EXPORT GpuMemoryBufferSupport {
-  public:
-   GpuMemoryBufferSupport();
--#if defined(OS_LINUX) || defined(USE_OZONE)
-+#if defined(OS_LINUX) || defined(OS_BSD) || defined(USE_OZONE)
-   GpuMemoryBufferSupport(std::unique_ptr<gfx::ClientNativePixmapFactory>
-                              client_native_pixmap_factory);
- #endif
-@@ -43,7 +43,7 @@
+@@ -38,7 +38,7 @@
    bool IsNativeGpuMemoryBufferConfigurationSupported(gfx::BufferFormat format,
                                                       gfx::BufferUsage usage);
  
@@ -27,7 +18,7 @@
    gfx::ClientNativePixmapFactory* client_native_pixmap_factory() {
      return client_native_pixmap_factory_.get();
    }
-@@ -66,7 +66,7 @@
+@@ -61,7 +61,7 @@
        const GpuMemoryBufferImpl::DestructionCallback& callback);
  
   private:

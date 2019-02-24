@@ -7,7 +7,7 @@
 +#if !defined(__FreeBSD__)
  		bool noConfig = stat("SwiftShader.ini", &status) != 0;
 +#else
-+                bool noConfig = false;
++               bool noConfig = false;
 +#endif
  		newConfig = !noConfig && abs((int)status.st_mtime - lastModified) > 1;
  

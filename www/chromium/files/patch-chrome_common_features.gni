@@ -1,20 +1,14 @@
---- chrome/common/features.gni.orig	2017-09-05 21:05:14.000000000 +0200
-+++ chrome/common/features.gni	2017-09-07 15:11:34.649303000 +0200
-@@ -46,7 +46,7 @@
-       is_android || is_mac || (is_desktop_linux && use_dbus)
+--- chrome/common/features.gni.orig	2019-01-30 02:17:49.000000000 +0100
++++ chrome/common/features.gni	2019-01-31 23:22:21.293971000 +0100
+@@ -41,9 +41,9 @@
+                                 (is_desktop_linux && use_dbus) || is_chromeos
  
    enable_one_click_signin =
 -      is_win || is_mac || (is_linux && !is_chromeos && !is_chromecast)
 +      is_win || is_mac || is_bsd || (is_linux && !is_chromeos && !is_chromecast)
  
-   # Indicates if Exo should use ozone gamepad. If this is false, exo will use
-   # /device/gamepad as backend.
-@@ -60,7 +60,7 @@
-   # Specify --mash to chrome to have chrome start the mash environment.
-   enable_package_mash_services = is_chromeos
- 
--  enable_service_discovery = enable_mdns || is_mac
-+  enable_service_discovery = enable_mdns || is_mac || is_bsd
+-  enable_service_discovery = (enable_mdns && !is_android && !is_ios) || is_mac
++  enable_service_discovery = (enable_mdns && !is_android && !is_ios) || is_mac || is_bsd
  
    # Enables use of the session service, which is enabled by default.
    # Android stores them separately on the Java side.

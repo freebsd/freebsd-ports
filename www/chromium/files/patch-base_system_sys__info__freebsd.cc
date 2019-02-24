@@ -1,5 +1,5 @@
---- base/sys_info_freebsd.cc.orig	2017-12-15 02:04:05.000000000 +0100
-+++ base/sys_info_freebsd.cc	2017-12-23 21:51:22.626194000 +0100
+--- base/system/sys_info_freebsd.cc.orig	2017-12-15 02:04:05.000000000 +0100
++++ base/system/sys_info_freebsd.cc	2017-12-23 21:51:22.626194000 +0100
 @@ -13,26 +13,58 @@
  namespace base {
  

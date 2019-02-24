@@ -1,11 +1,11 @@
---- net/features.gni.orig	2018-12-03 21:17:07.000000000 +0100
-+++ net/features.gni	2018-12-14 00:32:48.565388000 +0100
+--- net/features.gni.orig	2019-01-30 02:18:08.000000000 +0100
++++ net/features.gni	2019-02-01 10:21:10.600808000 +0100
 @@ -27,7 +27,7 @@
    disable_brotli_filter = false
  
    # Multicast DNS.
--  enable_mdns = is_win || is_linux || is_fuchsia
-+  enable_mdns = is_win || is_linux || is_fuchsia || is_bsd
+-  enable_mdns = is_win || is_linux || is_fuchsia || is_mac || is_ios
++  enable_mdns = is_win || is_linux || is_fuchsia || is_mac || is_ios || is_bsd
  
    # Reporting not used on iOS.
    enable_reporting = !is_ios

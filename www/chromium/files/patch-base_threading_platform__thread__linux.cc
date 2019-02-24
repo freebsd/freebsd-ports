@@ -1,6 +1,6 @@
---- base/threading/platform_thread_linux.cc.orig	2017-07-25 21:04:48.000000000 +0200
-+++ base/threading/platform_thread_linux.cc	2017-08-01 22:36:09.953380000 +0200
-@@ -19,7 +19,9 @@
+--- base/threading/platform_thread_linux.cc.orig	2019-01-30 02:17:39.000000000 +0100
++++ base/threading/platform_thread_linux.cc	2019-02-01 16:31:27.360883000 +0100
+@@ -18,7 +18,9 @@
  
  #if !defined(OS_NACL) && !defined(OS_AIX)
  #include <pthread.h>
@@ -10,9 +10,18 @@
  #include <sys/resource.h>
  #include <sys/time.h>
  #include <sys/types.h>
-@@ -130,7 +132,7 @@
-   ThreadIdNameManager::GetInstance()->SetName(CurrentId(), name);
-   tracked_objects::ThreadData::InitializeThreadContext(name);
+@@ -99,7 +101,7 @@
+ 
+ Optional<bool> CanIncreaseCurrentThreadPriorityForPlatform(
+     ThreadPriority priority) {
+-#if !defined(OS_NACL)
++#if !defined(OS_NACL) && !defined(OS_BSD)
+   // A non-zero soft-limit on RLIMIT_RTPRIO is required to be allowed to invoke
+   // pthread_setschedparam in SetCurrentThreadPriorityForPlatform().
+   struct rlimit rlim;
+@@ -141,7 +143,7 @@
+ void PlatformThread::SetName(const std::string& name) {
+   ThreadIdNameManager::GetInstance()->SetName(name);
  
 -#if !defined(OS_NACL) && !defined(OS_AIX)
 +#if !defined(OS_NACL) && !defined(OS_AIX) && !defined(OS_BSD)
