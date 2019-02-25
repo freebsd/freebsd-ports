@@ -1,0 +1,29 @@
+--------------------------
+|diff --git a/tree-walk.c b/tree-walk.c
+|index 8f5090862b..b24d5b0d99 100644
+|--- a/tree-walk.c
+|+++ b/tree-walk.c
+--------------------------
+Patching file git-core/tree-walk.c using Plan A...
+Hunk #1 failed at 45.
+Hmm...  Looks like a unified diff to me...
+1 out of 1 hunks failed--saving rejects to helper/tree-walk.patched.c.rej
+
+--- helper/tree-walk.c.patch.orig	2018-12-26 23:01:43 UTC
++++ helper/tree-walk.c.patch
+@@ -2,12 +2,12 @@ diff --git a/tree-walk.c b/tree-walk.c
+ index 8f5090862b..b24d5b0d99 100644
+ --- a/tree-walk.c
+ +++ b/tree-walk.c
+-@@ -45,7 +45,7 @@ static int decode_tree_entry(struct tree_desc *desc, const char *buf, unsigned l
++@@ -47,7 +47,7 @@ static int decode_tree_entry(struct tree_desc *desc, c
+  
+  	/* Initialize the descriptor entry */
+  	desc->entry.path = path;
+ -	desc->entry.mode = canon_mode(mode);
+ +	desc->entry.mode = mode;
+- 	desc->entry.oid  = (const struct object_id *)(path + len);
++ 	desc->entry.pathlen = len - 1;
++ 	hashcpy(desc->entry.oid.hash, (const unsigned char *)path + len);
+  
+- 	return 0;
