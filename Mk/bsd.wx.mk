@@ -405,8 +405,14 @@ _WX_VER=		${ver}
 # Set variables.
 #
 
-WX_CONFIG?=		${LOCALBASE}/bin/wxgtk2${_WX_UC}-${_WX_VER}-config
-WXRC_CMD?=		${LOCALBASE}/bin/wxrc-gtk2${_WX_UC}-${_WX_VER}
+.if ${_WX_VER:R} == 3
+_GTKVER=	3
+.else
+_GTKVER=	2
+.endif
+
+WX_CONFIG?=		${LOCALBASE}/bin/wxgtk${_GTKVER}${_WX_UC}-${_WX_VER}-config
+WXRC_CMD?=		${LOCALBASE}/bin/wxrc-gtk${_GTKVER}${_WX_UC}-${_WX_VER}
 WX_VERSION?=		${_WX_VER}
 
 .endif		# _WX_Need_Version

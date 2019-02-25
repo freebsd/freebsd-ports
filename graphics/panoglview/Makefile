@@ -3,7 +3,7 @@
 
 PORTNAME=	panoglview
 PORTVERSION=	0.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	SF/hugin/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +20,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include -ftemplate-depth-64
 LIBS+=		-L${LOCALBASE}/lib -lGLU -lGL
 
-USE_WX=		2.8 3.0
+USE_WX=		3.0
 WX_COMPS=	wx
 WX_CONF_ARGS=	relative
 

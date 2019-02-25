@@ -3,6 +3,7 @@
 
 PORTNAME=	wammu
 PORTVERSION=	0.44
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dl.cihar.com/wammu/v0/ \
 		http://dl.cihar.com.nyud.net/wammu/v0/
