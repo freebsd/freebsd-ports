@@ -1,0 +1,35 @@
+--- src/share/mh/add_revoker.orig	2018-10-16 16:24:55 UTC
++++ src/share/mh/add_revoker
+@@ -71,12 +71,12 @@ else
+ 
+     # download the key from the keyserver as the monkeysphere user
+     log verbose "searching keyserver $KEYSERVER for revoker keyID $revokerKeyID..."
+-    su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg --quiet --keyserver "$KEYSERVER" --recv-key "0x${revokerKeyID}!" \
++    su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg2 --quiet --keyserver "$KEYSERVER" --recv-key "0x${revokerKeyID}!" \
+ 	|| failure "Could not receive a key with this ID from keyserver '$KEYSERVER'."
+ 
+     # get the full fingerprint of new revoker key
+     log debug "getting fingerprint of revoker key..."
+-    fingerprint=$(su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg --list-key --with-colons --with-fingerprint "${revokerKeyID}" \
++    fingerprint=$(su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg2 --list-key --with-colons --with-fingerprint "${revokerKeyID}" \
+ 	| awk -F: '/^fpr:/{ if (ok) { print $10 }; ok=0 } /^pub:/{ ok=1 }')
+ 
+     # test that there is only a single fingerprint
+@@ -90,7 +90,7 @@ EOF
+     fi
+ 
+     log info "revoker key found:"
+-    su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg --fingerprint "0x${fingerprint}!"
++    su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg2 --fingerprint "0x${fingerprint}!"
+ 
+     if [ "$PROMPT" = "true" ] ; then
+ 	printf "Are you sure you want to add the above key as a revoker\nof the key '$keyID'? (Y/n) " >&2
+@@ -104,7 +104,7 @@ EOF
+ 
+     # export the new key to the host keyring
+     log debug "loading revoker key into host keyring..."
+-    su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg --quiet --export "0x${fingerprint}!" \
++    su_monkeysphere_user "GNUPGHOME=$tmpDir" gpg2 --quiet --export "0x${fingerprint}!" \
+ 	| gpg_host --import
+ fi
+ 

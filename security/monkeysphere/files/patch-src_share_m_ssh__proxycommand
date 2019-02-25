@@ -1,0 +1,11 @@
+--- src/share/m/ssh_proxycommand.orig	2018-10-16 16:24:55 UTC
++++ src/share/m/ssh_proxycommand
+@@ -301,7 +301,7 @@ EOF
+ 
+ 	log info <<EOF
+ Run the following command for more info about the found keys:
+-gpg --check-sigs --list-options show-uid-validity =${userID}
++gpg2 --check-sigs --list-options show-uid-validity =${userID}
+ EOF
+ 
+ 	# FIXME: should we do anything extra here if the retrieved

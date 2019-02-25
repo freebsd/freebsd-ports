@@ -1,0 +1,49 @@
+--- src/monkeysphere-host.orig	2018-10-16 16:24:55 UTC
++++ src/monkeysphere-host
+@@ -71,7 +71,7 @@ EOF
+ 
+ # function to interact with the gpg keyring
+ gpg_host() {
+-    GNUPGHOME="$GNUPGHOME_HOST" LC_ALL=C gpg --no-auto-check-trustdb --trust-model=always --no-greeting --quiet --no-tty --fixed-list-mode "$@"
++    GNUPGHOME="$GNUPGHOME_HOST" LC_ALL=C gpg2 --no-auto-check-trustdb --trust-model=always --no-greeting --quiet --no-tty --fixed-list-mode "$@"
+ }
+ 
+ # list the info about the a key, in colon format, to stdout
+@@ -297,10 +297,10 @@ show_key() {
+     trap cleanup EXIT
+ 
+     # import the host key into the tmp dir
+-    gpg --quiet --import <"$HOST_KEY_FILE"
++    gpg2 --quiet --import <"$HOST_KEY_FILE"
+ 
+     # get the gpg fingerprint
+-    if gpg --quiet --list-keys \
++    if gpg2 --quiet --list-keys \
+ 	--with-colons --with-fingerprint "$id" \
+ 	| awk -F: '/^fpr:/{ if (ok) { print $10 } ; ok=0 } /^pub:/{ ok=1 }' > "$GNUPGHOME"/fingerprint ; then
+ 	fingerprint=$(cat "$GNUPGHOME"/fingerprint)
+@@ -311,13 +311,13 @@ show_key() {
+     # list the host key info
+     # FIXME: make no-show-keyring work so we don't have to do the grep'ing
+     # FIXME: can we show uid validity somehow?
+-    gpg --list-keys --list-options show-unusable-uids "$fingerprint" 2>/dev/null \
++    gpg2 --list-keys --list-options show-unusable-uids "$fingerprint" 2>/dev/null \
+         | egrep -v "^${GNUPGHOME}/pubring.(gpg|kbx)$" \
+         | egrep -v '^-+$' \
+         | grep -v '^$'
+ 
+     # list revokers, if there are any
+-    revokers=$(gpg --list-keys --with-colons --fixed-list-mode "$fingerprint" \
++    revokers=$(gpg2 --list-keys --with-colons --fixed-list-mode "$fingerprint" \
+ 	| awk -F: '/^rvk:/{ print $10 }' )
+     if [ "$revokers" ] ; then
+ 	echo "The following keys are allowed to revoke this host key:"
+@@ -331,7 +331,7 @@ show_key() {
+ 
+     # list the ssh fingerprint
+     printf "ssh fingerprint: %s\n" \
+-    "$(gpg --export --no-armor "$fingerprint" 2>/dev/null | "$SYSSHAREDIR/keytrans" openpgp2sshfpr "$fingerprint")"
++    "$(gpg2 --export --no-armor "$fingerprint" 2>/dev/null | "$SYSSHAREDIR/keytrans" openpgp2sshfpr "$fingerprint")"
+ 
+     # remove the tmp file
+     trap - EXIT

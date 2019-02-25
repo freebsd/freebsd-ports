@@ -1,0 +1,20 @@
+--- src/monkeysphere.orig	2018-10-16 16:24:55 UTC
++++ src/monkeysphere
+@@ -62,7 +62,7 @@ EOF
+ 
+ # user gpg command to define common options
+ gpg_user() {
+-    LC_ALL=C "${GPG:-gpg}" --fixed-list-mode --no-greeting --quiet --no-tty "$@"
++    LC_ALL=C "${GPG:-gpg2}" --fixed-list-mode --no-greeting --quiet --no-tty "$@"
+ }
+ 
+ # output the ssh fingerprint of a gpg key
+@@ -92,7 +92,7 @@ check_gpg_sec_key_id() {
+     case $(echo "$gpgSecOut" | grep -c '^sec:') in
+ 	0)
+ 	    failure "No secret keys found.  Create an OpenPGP key with the following command:
+- gpg --gen-key"
++ gpg2 --gen-key"
+ 	    ;;
+ 	1)
+ 	    echo "$gpgSecOut" | cut -d: -f5

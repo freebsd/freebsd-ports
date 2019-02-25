@@ -1,0 +1,11 @@
+--- src/share/m/gen_subkey.orig	2018-10-16 16:24:55 UTC
++++ src/share/m/gen_subkey
+@@ -46,7 +46,7 @@ Type '$PGRM help' for usage."
+ 
+     # determine which keyType to use from gpg version
+     keyType=7
+-    case $(gpg --version | head -1 | awk '{ print $3 }' | cut -d. -f1) in
++    case $(gpg2 --version | head -1 | awk '{ print $3 }' | cut -d. -f1) in
+ 	1)
+ 	    if is_gpg_version_greater_equal 1.4.10 ; then
+ 		keyType=8
