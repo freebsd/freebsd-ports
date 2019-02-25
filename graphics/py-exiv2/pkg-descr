@@ -7,4 +7,4 @@ It is designed as a high level interface to the functionalities offered by
 exiv2 (and is built on top of it). Using python's built-in data types and
 standard modules, it provides easy manipulation of image metadata.
 
-WWW: http://tilloy.net/dev/pyexiv2/
+WWW: https://launchpad.net/pyexiv2
