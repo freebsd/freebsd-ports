@@ -1,0 +1,9 @@
+A command-line reference-implementation client for SSL Labs API, designed
+for automated and/or bulk testing.
+
+SSL Labs API expose the complete SSL/TLS server testing functionality in
+a programmatic fashion, allowing for scheduled and bulk assessment. They are
+making their API available to encourage site operators to regularly test
+servers configurations.
+
+WWW: https://www.ssllabs.com/projects/ssllabs-apis/

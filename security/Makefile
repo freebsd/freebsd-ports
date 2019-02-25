@@ -1276,6 +1276,7 @@
     SUBDIR += sshguard
     SUBDIR += sshpass
     SUBDIR += ssl-admin
+    SUBDIR += ssllabs-scan
     SUBDIR += sslscan
     SUBDIR += sslsniffer
     SUBDIR += sslsplit
