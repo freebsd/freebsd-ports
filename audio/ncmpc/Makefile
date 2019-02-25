@@ -41,8 +41,7 @@ MANPAGES_MESON_TRUE=	manual
 MANPAGES_USES=		python:build
 
 NLS_LDFLAGS=		-lintl
-NLS_MESON_OFF=		-Dnls=disabled
-NLS_MESON_ON=		-Dnls=enabled
+NLS_MESON_ENABLED=	nls
 NLS_USES=		gettext
 
 .include <bsd.port.mk>

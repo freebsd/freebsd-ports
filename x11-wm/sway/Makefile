@@ -35,20 +35,17 @@ OPTIONS_DEFAULT=MANPAGES PIXBUF SUID X11
 OPTIONS_SUB=	yes
 
 MANPAGES_BUILD_DEPENDS=	scdoc>=1.8.1:textproc/scdoc
-MANPAGES_MESON_ON=	-Dman-pages=enabled
-MANPAGES_MESON_OFF=	-Dman-pages=disabled
+MANPAGES_MESON_ENABLED=	man-pages
 
 PIXBUF_USE=		GNOME=gdkpixbuf2
-PIXBUF_MESON_ON=	-Dgdk-pixbuf=enabled
-PIXBUF_MESON_OFF=	-Dgdk-pixbuf=disabled
+PIXBUF_MESON_ENABLED=	gdk-pixbuf
 
 SUID_DESC=		setuid bit on "sway" binary (required for DRM session)
 SUID_PLIST_SUB=		MAYBE_SUID="@(,,4755) "
 SUID_PLIST_SUB_OFF=	MAYBE_SUID=""
 
 X11_USE=		XORG=xcb
-X11_MESON_ON=		-Dxwayland=enabled
-X11_MESON_OFF=		-Dxwayland=disabled
+X11_MESON_ENABLED=	xwayland
 
 post-patch:
 # Let @sample handle default files under etc/
