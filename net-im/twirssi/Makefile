@@ -7,7 +7,7 @@ MASTER_SITES=	http://twirssi.com/
 EXTRACT_SUFX=	.pl
 EXTRACT_ONLY=
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twitter script to irssi
 
 LICENSE=	GPLv2
