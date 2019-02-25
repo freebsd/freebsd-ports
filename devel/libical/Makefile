@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libical
-PORTVERSION=	3.0.3
-PORTREVISION=	2
+PORTVERSION=	3.0.4
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libical/libical/releases/download/v${PORTVERSION}/
 
@@ -29,5 +28,7 @@ USE_GNOME=	introspection:build glib20 libxml2
 CMAKE_ARGS+=	-DGOBJECT_INTROSPECTION=true \
 		-DICAL_GLIB_VAPI=true \
 		-DICAL_BUILD_DOCS=false
+
+PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
