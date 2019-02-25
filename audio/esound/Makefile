@@ -14,6 +14,9 @@ COMMENT=	Sound library for enlightenment package
 
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2019-03-25
+
 USES=		alias libtool:keepla pathfix pkgconfig:both tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=  yes
