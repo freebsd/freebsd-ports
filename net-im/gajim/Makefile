@@ -3,6 +3,7 @@
 
 PORTNAME=	gajim
 DISTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/1.1/
 
@@ -17,10 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cssutils>=1.0.2:www/py-cssutils@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}nbxmpp>=0.6.9:net-im/py-nbxmpp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}precis_i18n>=1.0.0:textproc/py-precis_i18n@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=0.12:security/py-openssl@${PY_FLAVOR} \
-		# These are implicit dependencies, not listed in setup.py \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
-		# This dependency doesn't seems needed anymore. Leave for now \
 		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${PY_FLAVOR}
 
 USES=		cpe dos2unix gnome python:3.5+ tar:bzip2
