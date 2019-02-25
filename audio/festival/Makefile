@@ -3,6 +3,7 @@
 
 PORTNAME=	festival
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	FESTIVAL
 DISTFILES=	${DISTNAME}-release.tar.gz	\
@@ -25,9 +26,8 @@ PATCH_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/audio/festival/patch
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
 
-OPTIONS_DEFINE=	NAS ESD
-OPTIONS_DEFAULT=NAS ESD
-ESD_DESC=	${ESOUND_DESC}
+OPTIONS_DEFINE=	NAS
+OPTIONS_DEFAULT=NAS
 
 CXXFLAGS+=	-DFTLIBDIR=${LOCALBASE}/share/festival/lib
 CONFIGURE_WRKSRC=${WRKDIR}/festival
@@ -62,8 +62,8 @@ post-patch::
 	${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g'	\
 		${WRKSRC}/*/config/systems/default.mak
 
-.for m in nas esd
-${m:tu}_LIB_DEPENDS=	lib${m:nas=audio}.so:audio/${m:esd=esound}
+.for m in nas
+${m:tu}_LIB_DEPENDS=	lib${m:nas=audio}.so:audio/${m}
 post-patch-${m:tu}-on:
 	${REINPLACE_CMD} -e 's,# INCLUDE_MODULES += ${m:tu}_AUDIO,INCLUDE_MODULES += ${m:tu}_AUDIO,' \
 		${WRKDIR}/*/config/config.in
