@@ -6,6 +6,7 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/deploy/dovecot.sh
 %%EXAMPLESDIR%%/deploy/exim4.sh
 %%EXAMPLESDIR%%/deploy/fritzbox.sh
+%%EXAMPLESDIR%%/deploy/gitlab.sh
 %%EXAMPLESDIR%%/deploy/haproxy.sh
 %%EXAMPLESDIR%%/deploy/keychain.sh
 %%EXAMPLESDIR%%/deploy/kong.sh
@@ -14,6 +15,7 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/deploy/nginx.sh
 %%EXAMPLESDIR%%/deploy/opensshd.sh
 %%EXAMPLESDIR%%/deploy/pureftpd.sh
+%%EXAMPLESDIR%%/deploy/qiniu.sh
 %%EXAMPLESDIR%%/deploy/ssh.sh
 %%EXAMPLESDIR%%/deploy/strongswan.sh
 %%EXAMPLESDIR%%/deploy/unifi.sh
@@ -21,6 +23,7 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/deploy/vsftpd.sh
 %%EXAMPLESDIR%%/dnsapi/README.md
 %%EXAMPLESDIR%%/dnsapi/dns_acmedns.sh
+%%EXAMPLESDIR%%/dnsapi/dns_active24.sh
 %%EXAMPLESDIR%%/dnsapi/dns_ad.sh
 %%EXAMPLESDIR%%/dnsapi/dns_ali.sh
 %%EXAMPLESDIR%%/dnsapi/dns_autodns.sh
@@ -28,6 +31,7 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/dnsapi/dns_azure.sh
 %%EXAMPLESDIR%%/dnsapi/dns_cf.sh
 %%EXAMPLESDIR%%/dnsapi/dns_cloudns.sh
+%%EXAMPLESDIR%%/dnsapi/dns_conoha.sh
 %%EXAMPLESDIR%%/dnsapi/dns_cx.sh
 %%EXAMPLESDIR%%/dnsapi/dns_cyon.sh
 %%EXAMPLESDIR%%/dnsapi/dns_da.sh
@@ -35,15 +39,20 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dnsimple.sh
 %%EXAMPLESDIR%%/dnsapi/dns_do.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dp.sh
+%%EXAMPLESDIR%%/dnsapi/dns_dpi.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dreamhost.sh
 %%EXAMPLESDIR%%/dnsapi/dns_duckdns.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dyn.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dynu.sh
 %%EXAMPLESDIR%%/dnsapi/dns_euserv.sh
+%%EXAMPLESDIR%%/dnsapi/dns_exoscale.sh
 %%EXAMPLESDIR%%/dnsapi/dns_freedns.sh
 %%EXAMPLESDIR%%/dnsapi/dns_gandi_livedns.sh
+%%EXAMPLESDIR%%/dnsapi/dns_gcloud.sh
 %%EXAMPLESDIR%%/dnsapi/dns_gd.sh
+%%EXAMPLESDIR%%/dnsapi/dns_gdnsdk.sh
 %%EXAMPLESDIR%%/dnsapi/dns_he.sh
+%%EXAMPLESDIR%%/dnsapi/dns_hostingde.sh
 %%EXAMPLESDIR%%/dnsapi/dns_infoblox.sh
 %%EXAMPLESDIR%%/dnsapi/dns_inwx.sh
 %%EXAMPLESDIR%%/dnsapi/dns_ispconfig.sh
@@ -51,21 +60,33 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/dnsapi/dns_knot.sh
 %%EXAMPLESDIR%%/dnsapi/dns_lexicon.sh
 %%EXAMPLESDIR%%/dnsapi/dns_linode.sh
+%%EXAMPLESDIR%%/dnsapi/dns_linode_v4.sh
 %%EXAMPLESDIR%%/dnsapi/dns_loopia.sh
 %%EXAMPLESDIR%%/dnsapi/dns_lua.sh
 %%EXAMPLESDIR%%/dnsapi/dns_me.sh
 %%EXAMPLESDIR%%/dnsapi/dns_myapi.sh
+%%EXAMPLESDIR%%/dnsapi/dns_mydnsjp.sh
+%%EXAMPLESDIR%%/dnsapi/dns_namecheap.sh
 %%EXAMPLESDIR%%/dnsapi/dns_namecom.sh
 %%EXAMPLESDIR%%/dnsapi/dns_namesilo.sh
+%%EXAMPLESDIR%%/dnsapi/dns_neodigit.sh
+%%EXAMPLESDIR%%/dnsapi/dns_netcup.sh
 %%EXAMPLESDIR%%/dnsapi/dns_nsone.sh
 %%EXAMPLESDIR%%/dnsapi/dns_nsupdate.sh
 %%EXAMPLESDIR%%/dnsapi/dns_ovh.sh
 %%EXAMPLESDIR%%/dnsapi/dns_pdns.sh
+%%EXAMPLESDIR%%/dnsapi/dns_pointhq.sh
 %%EXAMPLESDIR%%/dnsapi/dns_selectel.sh
 %%EXAMPLESDIR%%/dnsapi/dns_servercow.sh
 %%EXAMPLESDIR%%/dnsapi/dns_tele3.sh
 %%EXAMPLESDIR%%/dnsapi/dns_unoeuro.sh
 %%EXAMPLESDIR%%/dnsapi/dns_vscale.sh
 %%EXAMPLESDIR%%/dnsapi/dns_yandex.sh
-%%EXAMPLESDIR%%/dnsapi/dns_zonomi.sh
 %%EXAMPLESDIR%%/dnsapi/dns_zilore.sh
+%%EXAMPLESDIR%%/dnsapi/dns_zonomi.sh
+@sample(acme,acme,0640) /var/db/acme/.acme.sh/account.conf.sample
+/var/db/acme/.acme.sh/deploy
+/var/db/acme/.acme.sh/dnsapi
+@dir(acme,acme,0750) /var/db/acme/.acme.sh
+@dir(acme,acme,0750) /var/db/acme/certs
+@dir(acme,acme,0750) /var/db/acme
