@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	codespell
-PORTVERSION=	1.8
+PORTVERSION=	1.14
 CATEGORIES=	textproc
 
 MAINTAINER=	gjb@FreeBSD.org
