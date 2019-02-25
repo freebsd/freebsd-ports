@@ -111,9 +111,9 @@ _WX_Definitions_Done=	yes
 
 _WX_COMPS_ALL=		wx contrib python
 _WX_DEP_TYPES_ALL=	build lib run
-_WX_VERS_ALL=		2.8 3.0
-_WX_VERS_UC_ALL=	2.8 3.0
-_WX_VERS_SKIP=		3.0
+_WX_VERS_ALL=		2.8 3.0 3.1
+_WX_VERS_UC_ALL=	2.8 3.0 3.1
+_WX_VERS_SKIP=		3.0 3.1
 _WX_VERS_LISTS=		WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
 
 #
