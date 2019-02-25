@@ -24,7 +24,8 @@ USE_GL=		gl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_inotify_init=no
 CONFIGURE_ARGS=	--disable-v4l --disable-v4l2 --disable-v4lconvert \
-		--without-doxygen --with-cpuflags=none --disable-musicbrainz
+		--without-doxygen --with-cpuflags=none --disable-musicbrainz \
+		--disable-esd
 USE_LDCONFIG=	yes
 LLD_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
@@ -36,7 +37,7 @@ LDFLAGS+=	-Wl,--add-needed
 
 INFO=		gmerlin
 
-OPTIONS_DEFINE=		ALSA CDDB CDIO ESOUND JACK JPEG LIBVISUAL \
+OPTIONS_DEFINE=		ALSA CDDB CDIO JACK JPEG LIBVISUAL \
 			OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME TIFF DOCS
 OPTIONS_DEFAULT=	CDDB JACK JPEG LIBVISUAL \
 			OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME TIFF
@@ -49,8 +50,6 @@ CDDB_CONFIGURE_OFF=	--disable-cddb
 CDIO_LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
 			libcdio_cdda.so:sysutils/libcdio-paranoia
 CDIO_CONFIGURE_OFF=	--disable-libcdio
-ESOUND_USE=		gnome=esound
-ESOUND_CONFIGURE_OFF=	--disable-esd
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_OFF=	--disable-jack
 JPEG_USES=		jpeg

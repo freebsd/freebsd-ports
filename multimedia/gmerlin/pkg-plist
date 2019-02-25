@@ -124,7 +124,6 @@ lib/gmerlin/plugins/fv_zoom.so
 %%ALSA%%lib/gmerlin/plugins/i_alsa.so
 %%CDIO%%lib/gmerlin/plugins/i_cdaudio.so
 lib/gmerlin/plugins/i_edl.so
-%%ESOUND%%lib/gmerlin/plugins/i_esd.so
 %%JACK%%lib/gmerlin/plugins/i_jack.so
 %%QUICKTIME%%lib/gmerlin/plugins/i_lqt.so
 lib/gmerlin/plugins/i_mikmod.so
@@ -146,7 +145,6 @@ lib/gmerlin/plugins/iw_pnm.so
 lib/gmerlin/plugins/iw_tga.so
 %%TIFF%%lib/gmerlin/plugins/iw_tiff.so
 %%ALSA%%lib/gmerlin/plugins/oa_alsa.so
-%%ESOUND%%lib/gmerlin/plugins/oa_esd.so
 %%JACK%%lib/gmerlin/plugins/oa_jack.so
 lib/gmerlin/plugins/oa_oss.so
 %%PULSEAUDIO%%lib/gmerlin/plugins/oa_pulse.so
