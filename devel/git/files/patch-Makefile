@@ -1,6 +1,6 @@
---- Makefile.orig	2018-06-21 17:18:50 UTC
+--- Makefile.orig	2019-02-24 16:31:46 UTC
 +++ Makefile
-@@ -518,16 +518,16 @@ ARFLAGS = rcs
+@@ -535,16 +535,16 @@ ARFLAGS = rcs
  
  prefix = $(HOME)
  bindir = $(prefix)/bin
@@ -22,7 +22,7 @@
  ETC_GITCONFIG = $(sysconfdir)/gitconfig
  ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
  lib = lib
-@@ -1326,9 +1326,9 @@ EXTLIBS += -lz
+@@ -1383,9 +1383,9 @@ EXTLIBS += -lz
  
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl
@@ -35,7 +35,7 @@
  	else
  		OPENSSL_LINK =
  	endif
-@@ -2151,7 +2151,7 @@ git-instaweb: git-instaweb.sh GIT-SCRIPT-DEFINES
+@@ -2234,7 +2234,7 @@ git-instaweb: git-instaweb.sh GIT-SCRIPT-DEFINES
  	chmod +x $@+ && \
  	mv $@+ $@
  else # NO_PERL
@@ -44,3 +44,12 @@
  	$(QUIET_GEN)$(RM) $@ $@+ && \
  	sed -e '1s|#!.*/sh|#!$(SHELL_PATH_SQ)|' \
  	    -e 's|@@REASON@@|NO_PERL=$(NO_PERL)|g' \
+@@ -2250,7 +2250,7 @@ ifndef NO_PYTHON
+ $(SCRIPT_PYTHON_GEN): GIT-CFLAGS GIT-PREFIX GIT-PYTHON-VARS
+ $(SCRIPT_PYTHON_GEN): % : %.py
+ 	$(QUIET_GEN)$(RM) $@ $@+ && \
+-	sed -e '1s|#!.*python|#!$(PYTHON_PATH_SQ)|' \
++	sed -e '1s|#!.*python.*|#!$(PYTHON_PATH_SQ)|' \
+ 	    $< >$@+ && \
+ 	chmod +x $@+ && \
+ 	mv $@+ $@
