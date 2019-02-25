@@ -7,8 +7,8 @@ bin/dbus-send
 bin/dbus-test-tool
 bin/dbus-update-activation-environment
 bin/dbus-uuidgen
-etc/dbus-1/session.conf
-etc/dbus-1/system.conf
+@sample %%ETCDIR%%-1/session.conf.sample
+@sample %%ETCDIR%%-1/system.conf.sample
 include/dbus-%%VERSION%%/dbus/dbus-address.h
 include/dbus-%%VERSION%%/dbus/dbus-bus.h
 include/dbus-%%VERSION%%/dbus/dbus-connection.h
@@ -26,11 +26,13 @@ include/dbus-%%VERSION%%/dbus/dbus-syntax.h
 include/dbus-%%VERSION%%/dbus/dbus-threads.h
 include/dbus-%%VERSION%%/dbus/dbus-types.h
 include/dbus-%%VERSION%%/dbus/dbus.h
+lib/cmake/DBus1/DBus1Config.cmake
+lib/cmake/DBus1/DBus1ConfigVersion.cmake
 lib/dbus-%%VERSION%%/include/dbus/dbus-arch-deps.h
 lib/libdbus-1.a
 lib/libdbus-1.so
 lib/libdbus-1.so.3
-lib/libdbus-1.so.3.14.10
+lib/libdbus-1.so.3.19.9
 libdata/pkgconfig/dbus-1.pc
 @(,%%GROUPS%%,4750) libexec/dbus-daemon-launch-helper
 %%MANPAGES%%man/man1/dbus-cleanup-sockets.1.gz
@@ -42,11 +44,13 @@ libdata/pkgconfig/dbus-1.pc
 %%MANPAGES%%man/man1/dbus-test-tool.1.gz
 %%MANPAGES%%man/man1/dbus-update-activation-environment.1.gz
 %%MANPAGES%%man/man1/dbus-uuidgen.1.gz
-share/dbus-1/session.conf
-share/dbus-1/system.conf
+%%DATADIR%%-1/session.conf
+%%DATADIR%%-1/system.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/GetAllMatchRules.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-session-disable-stats.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-system-enable-stats.conf
+share/xml/dbus-1/busconfig.dtd
+share/xml/dbus-1/introspect.dtd
 @dir share/dbus-1/system-services
 @dir share/dbus-1/services
 @dir share/dbus-1/session.d
@@ -54,5 +58,3 @@ share/dbus-1/system.conf
 @dir /var/lib/dbus
 @dir /var/lib
 @dir /var/run/dbus
-@comment The following line may be removed after 2018-01-01
-@postexec [ -f /var/lib/dbus/machine-id -o ! -f /var/db/dbus/machine-id ] || cp -p /var/db/dbus/machine-id /var/lib/dbus/
