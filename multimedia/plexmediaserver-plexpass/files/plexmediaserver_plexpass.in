@@ -40,11 +40,23 @@ stop_postcmd=plex_stop_postcmd
 
 plex_precmd()
 {
+	#Set identification variables for FreeNAS; with fallback to FreeBSD
+	if [ -f "/etc/version" ]; then
+	  export PLEX_MEDIA_SERVER_INFO_VENDOR="$(cat /etc/version|cut -d- -f1)"
+	  export PLEX_MEDIA_SERVER_INFO_DEVICE=NAS
+	  export PLEX_MEDIA_SERVER_INFO_MODEL="$(uname -m)"
+	  export PLEX_MEDIA_SERVER_INFO_PLATFORM_VERSION="$(cat /etc/version|cut -d- -f2-)"
+	else
+	  export PLEX_MEDIA_SERVER_INFO_VENDOR=FreeBSD
+	  export PLEX_MEDIA_SERVER_INFO_DEVICE=PC
+	  export PLEX_MEDIA_SERVER_INFO_MODEL="$(uname -m)"
+	  export PLEX_MEDIA_SERVER_INFO_PLATFORM_VERSION="$(uname -r)"
+	fi
 	export SUPPORT_PATH="${%%PORTNAME%%_support_path}"
 	export HOME="${%%PORTNAME%%_support_path}/Plex Media Server"
 	export PYTHONHOME="%%DATADIR%%/Resources/Python"
 	export SCRIPTPATH="%%DATADIR%%"
-	export LD_LIBRARY_PATH="%%PREFIX%%/lib/compat:${SCRIPTPATH}"
+	export LD_LIBRARY_PATH="${SCRIPTPATH}/lib"
 	export PLEX_MEDIA_SERVER_HOME="${SCRIPTPATH}"
 	export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=${%%PORTNAME%%_maxplugins}
 	export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=${%%PORTNAME%%_support_path}
