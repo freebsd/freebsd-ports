@@ -755,7 +755,7 @@ lib/libwx_gtk3u_stc-3.0.so.0.4.0
 lib/libwx_gtk3u_xrc-3.0.so
 lib/libwx_gtk3u_xrc-3.0.so.0
 lib/libwx_gtk3u_xrc-3.0.so.0.4.0
-lib/wx/3.0/web-extensions/webkit2_extu-3.0.so
+%%WEBKIT%%lib/wx/3.0/web-extensions/webkit2_extu-3.0.so
 lib/wx/include/gtk3-unicode-3.0/wx/setup.h
 share/aclocal/wxwin30.m4
 share/bakefile/presets/wx30.bkl
