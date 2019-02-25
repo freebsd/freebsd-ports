@@ -70,6 +70,7 @@ bin/hmaptool%%LLVM_SUFFIX%%
 %%LLDB%%bin/lldb-vscode%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-apply-replacements%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-change-namespace%%LLVM_SUFFIX%%
+%%EXTRAS%%bin/clang-doc%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-include-fixer%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-modernize%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-query%%LLVM_SUFFIX%%
@@ -117,6 +118,7 @@ llvm%%LLVM_SUFFIX%%/bin/bugpoint
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-check
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-cl
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-cpp
+%%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/clang-doc
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-extdef-mapping
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-format
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-import-test
@@ -2849,7 +2851,7 @@ llvm%%LLVM_SUFFIX%%/lib/libOptRemarks.so.%%LLVM_MAJOR%%
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangCodeGen.a
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangCrossTU.a
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/lib/libclangDaemon.a
-%%CLANG%%%%DOCS%%llvm%%LLVM_SUFFIX%%/lib/libclangDoc.a
+%%EXTRAS%%llvm%%LLVM_SUFFIX%%/lib/libclangDoc.a
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangDriver.a
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangDynamicASTMatchers.a
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangEdit.a
