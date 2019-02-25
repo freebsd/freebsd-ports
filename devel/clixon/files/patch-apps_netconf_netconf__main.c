@@ -1,6 +1,6 @@
---- apps/netconf/netconf_main.c.orig	2018-11-07 19:13:50 UTC
+--- apps/netconf/netconf_main.c.orig	2019-02-21 19:04:04 UTC
 +++ apps/netconf/netconf_main.c
-@@ -294,7 +294,7 @@ static int
+@@ -312,7 +312,7 @@ static int
  timeout_fn(int s,
  	   void *arg)
  {
