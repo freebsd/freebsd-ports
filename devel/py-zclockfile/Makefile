@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	zclockfile
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	zc.lockfile-${PORTVERSION}
+DISTNAME=	zc.lockfile-${DISTVERSION}
 DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
@@ -16,8 +15,9 @@ COMMENT=	Basic inter-process locks
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python zip
+USES=		python
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
