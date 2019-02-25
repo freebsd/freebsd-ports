@@ -3,7 +3,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.6.1
-PORTREVISION=	43
+PORTREVISION=	44
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	LOCAL/ahze
 # http://sourceforge.net/forum/forum.php?thread_id=1839453&forum_id=59136
@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--enable-ffmpeg=${LOCALBASE} \
 		--enable-mp4live \
 		--disable-static
 
-OPTIONS_DEFINE=		ESOUND IPV6 NAS OPTIMIZED_CFLAGS XVID DOCS
+OPTIONS_DEFINE=		IPV6 NAS OPTIMIZED_CFLAGS XVID DOCS
 OPTIONS_DEFAULT=	XVID
 
 DOC_FILES=	${PORTDOCS}
@@ -48,13 +48,6 @@ PORTDOCS=	MAINREADME.html MP4LIVE_INTERNALS.html MPEG4IP_Guide.pdf \
 
 .include <bsd.port.options.mk>
 
-###
-## Auto detect possible extensions
-###
-# esound
-.if exists(${LOCALBASE}/bin/esd-config) && empty(PORT_OPTIONS:MESOUND)
-PORT_OPTIONS+=	ESOUND
-.endif
 # nas
 .if exists(${LOCALBASE}/lib/libaudio.so) && empty(PORT_OPTIONS:MNAS)
 PORT_OPTIONS+=	NAS
@@ -64,13 +57,6 @@ PORT_OPTIONS+=	NAS
 PORT_OPTIONS+=	XVID
 .endif
 
-###
-## Enable extensions based on user choices
-###
-# esound
-.if ${PORT_OPTIONS:MESOUND}
-USE_GNOME+=	esound
-.endif
 # nas
 .if ${PORT_OPTIONS:MNAS}
 LIB_DEPENDS+=	libaudio.so:audio/nas

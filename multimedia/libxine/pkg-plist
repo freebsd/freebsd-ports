@@ -54,7 +54,6 @@ lib/libxine.so.2.7.0
 %%PLUGINSDIR%%/post/xineplug_post_switch.so
 %%PLUGINSDIR%%/post/xineplug_post_tvtime.so
 %%PLUGINSDIR%%/post/xineplug_post_visualizations.so
-%%ESOUND%%%%PLUGINSDIR%%/xineplug_ao_out_esd.so
 %%JACK%%%%PLUGINSDIR%%/xineplug_ao_out_jack.so
 %%PLUGINSDIR%%/xineplug_ao_out_oss.so
 %%PULSEAUDIO%%%%PLUGINSDIR%%/xineplug_ao_out_pulseaudio.so
