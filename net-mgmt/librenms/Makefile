@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.47
+PORTVERSION=	1.48.1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
 DISTFILES=	${PORTNAME}-vendor-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}:vendor
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
 
 LICENSE=	GPLv3
@@ -18,7 +18,7 @@ USES=		python${PY_MYSQL} shebangfix
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-RELEASE_TIMESTAMP=	1546180156
+RELEASE_TIMESTAMP=	1548881623
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
@@ -111,6 +111,10 @@ OTHER_DIRS=	storage/app/public \
 		storage/logs \
 		vendor/amenadiel/jpgraph/tests/_output \
 		vendor/amenadiel/jpgraph/tests/_support/_generated \
+		vendor/doctrine/common/lib/vendor/doctrine-build-common \
+		vendor/doctrine/dbal/lib/vendor/Symfony/Component/Console \
+		vendor/doctrine/dbal/lib/vendor/doctrine-build-common \
+		vendor/doctrine/dbal/lib/vendor/doctrine-common \
 		vendor/laravel/laravel/bootstrap/cache \
 		vendor/laravel/laravel/storage/app/public \
 		vendor/laravel/laravel/storage/framework/cache \

@@ -32,7 +32,11 @@ PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 For a fresh install, you need to create an APP_KEY:
 
 cd %%WWWDIR%%
-cp -i .env.sample .env
+cp -i .env.example .env
+
+It is also a good idea to:
+cd %%WWWDIR%%
+./validate
 
 You might need to set your database details in that file
 Then run:
