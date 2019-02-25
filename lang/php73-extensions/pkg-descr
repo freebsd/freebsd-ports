@@ -1,4 +1,4 @@
-This is a "meta-port" to install the extensions for PHP 7.1.
+This is a "meta-port" to install the extensions for PHP 7.3.
 
 Defaults to:
 ctype, dom, filter, hash, iconv, json, pdo, pdo_sqlite, phar, posix,
