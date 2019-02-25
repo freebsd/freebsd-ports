@@ -16,10 +16,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake
 MAKE_ENV=	PCDIR="${STAGEDIR}${PREFIX}/libdata/pkgconfig"
 TEST_TARGET=	check
-PLIST_FILES=	bin/scdoc \
-		libdata/pkgconfig/scdoc.pc \
-		man/man1/scdoc.1.gz \
-		man/man5/scdoc.5.gz
+PLIST_FILES=	bin/${PORTNAME} \
+		libdata/pkgconfig/${PORTNAME}.pc \
+		man/man1/${PORTNAME}.1.gz \
+		man/man5/${PORTNAME}.5.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,share/man,man,' \
