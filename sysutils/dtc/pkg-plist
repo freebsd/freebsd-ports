@@ -5,10 +5,10 @@ bin/fdtdump
 bin/fdtget
 bin/fdtoverlay
 bin/fdtput
-lib/libfdt-1.4.6.so
-lib/libfdt.a
-lib/libfdt.so
-lib/libfdt.so.1
 include/fdt.h
 include/libfdt.h
 include/libfdt_env.h
+lib/libfdt-1.4.7.so
+lib/libfdt.a
+lib/libfdt.so
+lib/libfdt.so.1
