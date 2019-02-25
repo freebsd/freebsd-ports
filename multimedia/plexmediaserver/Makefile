@@ -40,7 +40,7 @@ RELAY_DESC=	Install Plex Relay daemon
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
+RUN_DEPENDS?=	${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
 .endif
 
 post-patch:
