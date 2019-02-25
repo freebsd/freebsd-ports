@@ -11,13 +11,3 @@
      }
      $output['db_schema']   = dbIsConnected() ? get_db_schema() : '?';
      $output['php_ver']     = phpversion();
-@@ -1719,6 +1723,9 @@ function set_numeric($value, $default = 
- 
- function check_git_exists()
- {
-+    # installed from package; git not involved
-+    return false;
-+
-     exec('git > /dev/null 2>&1', $response, $exit_code);
-     if ($exit_code === 1) {
-         return true;
