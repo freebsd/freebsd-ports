@@ -36,6 +36,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:www/py-beautifulsoup@${
 		webkit-gtk3>=2.4.8:www/webkit-gtk3 \
 		yelp>=3.14.1:x11/yelp
 
+DEPRECATED=	Uses webkit-gtk3 which has security issues
+EXPIRATION_DATE=2019-03-24
+
 SHEBANG_FILES=	bin/variety data/scripts/*
 
 USES=	desktop-file-utils gettext python:2.7 shebangfix gnome

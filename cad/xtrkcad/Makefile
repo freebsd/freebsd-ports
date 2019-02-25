@@ -17,6 +17,9 @@ LIB_DEPENDS=	libcmocka.so:sysutils/cmocka \
 		libsoup-2.4.so:devel/libsoup \
 		libwebkitgtk-1.0.so:www/webkit-gtk2
 
+DEPRECATED=	Uses webkit-gtk2 which has security issues
+EXPIRATION_DATE=2019-03-24
+
 USES=		cmake gnome pkgconfig
 USE_GNOME=	gdkpixbuf2 gtk20 cairo
 

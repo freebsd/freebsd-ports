@@ -19,6 +19,10 @@ LIB_DEPENDS=	libmpd.so:audio/libmpd \
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:audio/gmpc
 RUN_DEPENDS=	gmpc:audio/gmpc
 
+DEPRECATED=	Uses webkit-gtk2 which has security issues
+EXPIRATION_DATE=2019-03-24
+
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	intltool glib20 gtk20
 USES=		gettext gmake libtool pkgconfig
