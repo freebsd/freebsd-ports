@@ -2,9 +2,10 @@
 
 GEANY_VER=		1.34
 GEANY_PLUGINS_GTK2=	debugger \
-			devhelp \
 			geanypy \
 			multiterm
+
+GEANY_PLUGINS_GTK3=	markdown
 
 GEANY_PLUGINS_ALL=	addons \
 			autoclose \
@@ -24,7 +25,6 @@ GEANY_PLUGINS_ALL=	addons \
 			lipsum \
 			lua \
 			macro \
-			markdown \
 			miniscript \
 			numberedbookmarks \
 			overview \
@@ -43,7 +43,6 @@ GEANY_PLUGINS_ALL=	addons \
 			updatechecker \
 			vc \
 			vimode \
-			webhelper \
 			workbench \
 			xmlsnippets
 
@@ -55,7 +54,6 @@ commander_DESC=		command panel for rapid access to any action
 ctags_DESC=		generate and query ctags files
 debugger_DESC=		debugging support (via GDB currently)
 defineformat_DESC=	on-the-fly \#define formatter
-devhelp_DESC=		API documentation browser
 doc_DESC=		execute command on the word at cursor position
 geanypy_DESC=		support for Python plugins
 extrasel_DESC=		additional selection tools
@@ -89,7 +87,6 @@ updatechecker_DESC=	check for new version of Geany
 utilslib_DESC=		utility library
 vc_DESC=		access to different version-control systems
 vimode_DESC=		vim-mode plugin for Geany written by a guy who does not use Vim
-webhelper_DESC=		web development facilities
 workbench_DESC=		manage multiple projects in geany
 xmlsnippets_DESC=	XML/HTML tag autocompletion
 
