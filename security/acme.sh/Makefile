@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	acme.sh
-PORTVERSION=	2.7.9
-PORTREVISION=	1
+PORTVERSION=	2.8.0
 CATEGORIES=	security
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -36,14 +35,18 @@ WGET_RUN_DEPENDS=	wget:ftp/wget
 
 PORTDOCS=	README.md
 
-SUB_FILES=	pkg-install pkg-message
+SUB_FILES=	pkg-message
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/deploy ${STAGEDIR}${EXAMPLESDIR}/dnsapi
+	${MKDIR} ${STAGEDIR}/var/db/acme/.acme.sh ${STAGEDIR}/var/db/acme/certs
 	( cd ${WRKSRC} && ${COPYTREE_BIN} deploy ${STAGEDIR}${EXAMPLESDIR} )
 	( cd ${WRKSRC} && ${COPYTREE_BIN} dnsapi ${STAGEDIR}${EXAMPLESDIR} )
 	${INSTALL_DATA} ${FILESDIR}/acme.sh.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/account.conf.sample ${STAGEDIR}/var/db/acme/.acme.sh
+	${RLN} ${STAGEDIR}/${EXAMPLESDIR}/deploy ${STAGEDIR}/var/db/acme/.acme.sh
+	${RLN} ${STAGEDIR}/${EXAMPLESDIR}/dnsapi ${STAGEDIR}/var/db/acme/.acme.sh
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
