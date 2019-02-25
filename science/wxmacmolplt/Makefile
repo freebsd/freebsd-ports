@@ -9,6 +9,8 @@ CATEGORIES=	science
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical user interface principally for the GAMESS program
 
+BROKEN=		depends on wxgtk 3.1 which as not been hooked to the framework
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

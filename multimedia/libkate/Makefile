@@ -3,7 +3,7 @@
 
 PORTNAME=	libkate
 PORTVERSION=	0.4.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/kate/
 

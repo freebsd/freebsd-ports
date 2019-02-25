@@ -12,6 +12,8 @@ COMMENT=	Infinite evolving crowdsourced artwork
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Requires wxGTK 3.1 which is not added to the framework
+
 BUILD_DEPENDS=	flam3-animate:graphics/flam3
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl \

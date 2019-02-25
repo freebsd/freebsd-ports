@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_WX=		2.8 3.0
+USE_WX=		3.0
 USES=		compiler:c++11-lib gmake pkgconfig
 
 CXXFLAGS+=	-std=c++11

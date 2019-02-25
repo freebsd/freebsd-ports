@@ -3,7 +3,7 @@
 
 PORTNAME=	quisk
 PORTVERSION=	4.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://james.ahlstrom.name/quisk/ \
 		LOCAL/db

@@ -3,9 +3,9 @@
 PORTNAME=	wx
 PORTVERSION=	3.0.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits
-PKGNAMESUFFIX=	30-gtk2
+PKGNAMESUFFIX=	30-gtk3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The wxWidgets GUI toolkit with GTK+ bindings
@@ -26,7 +26,7 @@ GH_PROJECT=	wxWidgets
 USES=		compiler:c++11-lib gl gmake gnome iconv jpeg localbase pkgconfig
 USE_XORG=	x11 sm xxf86vm xinerama
 USE_GL=		gl glu
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-zlib=sys \
 		--with-expat=sys \
 		--with-opengl \
-		--with-gtk \
+		--with-gtk=3 \
 		--without-gnomevfs \
 		--disable-epollloop \
 		--disable-joystick \
@@ -67,7 +67,7 @@ MSPACK_CONFIGURE_WITH=	libmspack
 MSPACK_LIB_DEPENDS=	libmspack.so:archivers/libmspack
 
 WEBKIT_CONFIGURE_ENABLE=	webview
-WEBKIT_LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
+WEBKIT_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 .include <bsd.port.pre.mk>
 

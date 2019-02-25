@@ -2,6 +2,7 @@
 
 PORTNAME=	passwordsafe
 DISTVERSION=	1.03BETA
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	brnrd@FreeBSD.org
