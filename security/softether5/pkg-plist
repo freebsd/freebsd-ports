@@ -1,0 +1,20 @@
+bin/vpnbridge
+bin/vpnclient
+bin/vpncmd
+bin/vpnserver
+lib/libcedar.so
+lib/libmayaqua.so
+libexec/softether/vpnbridge/hamcore.se2
+libexec/softether/vpnbridge/vpnbridge
+libexec/softether/vpnclient/hamcore.se2
+libexec/softether/vpnclient/vpnclient
+libexec/softether/vpncmd/hamcore.se2
+libexec/softether/vpncmd/vpncmd
+libexec/softether/vpnserver/hamcore.se2
+libexec/softether/vpnserver/vpnserver
+@dir libexec/softether/vpnbridge
+@dir libexec/softether/vpnclient
+@dir libexec/softether/vpncmd
+@dir libexec/softether/vpnserver
+@dir %%SE_DBDIR%%
+@dir %%SE_LOGDIR%%
