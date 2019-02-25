@@ -9,7 +9,6 @@ lib/golem/plugins/pier.so
 lib/golem/plugins/session.so
 lib/golem/plugins/setroot.so
 lib/golem/plugins/simple_menus.so
-%%ESOUND%%lib/golem/plugins/sound.so
 lib/golem/plugins/start_slide.so
 lib/golem/plugins/tasklist.so
 lib/golem/plugins/wmclass_defs.so
@@ -28,7 +27,6 @@ man/man1/golem.1.gz
 %%DATADIR%%/plugins/session/rc
 %%DATADIR%%/plugins/setroot/rc
 %%DATADIR%%/plugins/simple_menus/rc
-%%ESOUND%%%%DATADIR%%/plugins/sound/rc
 %%DATADIR%%/plugins/start_slide/README
 %%DATADIR%%/plugins/start_slide/rc
 %%DATADIR%%/plugins/tasklist/rc
