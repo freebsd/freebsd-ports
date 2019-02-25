@@ -27,6 +27,7 @@ include/ikos/ar/semantic/function.hpp
 include/ikos/ar/semantic/intrinsic.hpp
 include/ikos/ar/semantic/statement.hpp
 include/ikos/ar/semantic/statement_visitor.hpp
+include/ikos/ar/semantic/symbol_table.hpp
 include/ikos/ar/semantic/type.hpp
 include/ikos/ar/semantic/type_visitor.hpp
 include/ikos/ar/semantic/value.hpp
