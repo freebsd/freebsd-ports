@@ -20,6 +20,9 @@ BUILD_DEPENDS=	p5-Cairo>=0:graphics/p5-Cairo \
 		${LOCALBASE}/libdata/pkgconfig/webkit-1.0.pc:www/webkit-gtk2
 RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2
 
+DEPRECATED=	Uses webkit-gtk2 which has security issues
+EXPIRATION_DATE=2019-03-24
+
 MAKE_JOBS_UNSAFE=	yes
 
 # blocked since 2010.  Remove to see if it works on all systems again

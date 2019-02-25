@@ -17,6 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 
+DEPRECATED=	Uses webkit-gtk2 which has security issues
+EXPIRATION_DATE=2019-03-24
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix pkgconfig python:2.7 tar:bzip2

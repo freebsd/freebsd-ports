@@ -15,6 +15,9 @@ LIB_DEPENDS?=	libwebkitgtk-1.0.so:www/webkit-gtk2 \
 		libfreetype.so:print/freetype2 \
 		libsoup-2.4.so:devel/libsoup
 
+DEPRECATED=	Uses webkit-gtk2 which has security issues
+EXPIRATION_DATE=2019-03-24
+
 USES=		gmake pkgconfig
 USE_GNOME?=	gtk20 cairo gdkpixbuf2
 

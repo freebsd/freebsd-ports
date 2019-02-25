@@ -21,6 +21,9 @@ LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
 		libwebkitgtk-1.0.so:www/webkit-gtk2
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
+DEPRECATED=	Uses webkit-gtk2 which has security issues
+EXPIRATION_DATE=2019-03-24
+
 USE_GNOME=	gtk20
 USES=		desktop-file-utils pkgconfig
 INSTALLS_ICONS=	yes

@@ -4,6 +4,9 @@ PORTNAME=	vimb-gtk3
 
 LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 
+DEPRECATED=	Uses webkit-gtk3 which has security issues
+EXPIRATION_DATE=2019-03-24
+
 MAKE_ENV=	GTK="3"
 USE_GNOME=	gtk30
 

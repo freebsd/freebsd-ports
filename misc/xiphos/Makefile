@@ -24,6 +24,9 @@ LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3 \
 		libenchant.so:textproc/enchant
 RUN_DEPENDS=	yelp:x11/yelp
 
+DEPRECATED=	Uses webkit-gtk3 which has security issues
+EXPIRATION_DATE=2019-03-24
+
 USES=		gettext gnome pkgconfig waf
 USE_GNOME=	cairo gtkhtml4 intlhack gtk30 gconf2 libgsf \
 		gtk-update-icon-cache

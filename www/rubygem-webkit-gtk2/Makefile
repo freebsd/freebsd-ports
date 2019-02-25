@@ -14,6 +14,9 @@ LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 RUN_DEPENDS=	rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject-introspection \
 		rubygem-gtk2>=${PORTVERSION}:x11-toolkits/rubygem-gtk2
 
+DEPRECATED=	Uses webkit-gtk2 which has security issues
+EXPIRATION_DATE=2019-03-24
+
 USES=		gem
 USE_RUBY=	yes
 

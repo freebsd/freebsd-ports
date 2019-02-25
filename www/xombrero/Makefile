@@ -14,6 +14,9 @@ LICENSE=	ISCL
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libsoup-2.4.so:devel/libsoup
 
+DEPRECATED=	Uses either webkit-gtk2 or webkit-gtk3 which has security issues
+EXPIRATION_DATE=2019-03-24
+
 USES=		desktop-file-utils groff pkgconfig perl5 tar:tgz
 USE_PERL5=	build
 INSTALLS_ICONS=	yes

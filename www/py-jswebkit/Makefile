@@ -14,6 +14,9 @@ COMMENT=	WebKit/JavaScriptCore Python bindings
 
 LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 
+DEPRECATED=	Uses webkit-gtk2 which has security issues
+EXPIRATION_DATE=2019-03-24
+
 USES=		pkgconfig python:2.7
 USE_PYTHON=	distutils autoplist cython cython_run
 WRKSRC=		${WRKDIR}/python-${PORTNAME}-${PORTVERSION}
