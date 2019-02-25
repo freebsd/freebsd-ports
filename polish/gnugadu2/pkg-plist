@@ -11,7 +11,6 @@ lib/gg2/libhistory_external_plugin.so
 lib/gg2/libignore_main_plugin.so
 %%JABBER%%lib/gg2/libjabber_plugin.so
 lib/gg2/libsms_plugin.so
-%%ESOUND%%lib/gg2/libsound_esd_plugin.so
 lib/gg2/libsound_external_plugin.so
 lib/gg2/libsound_oss_plugin.so
 %%TLEN%%lib/gg2/libtlen_plugin.so

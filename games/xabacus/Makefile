@@ -3,6 +3,7 @@
 
 PORTNAME=	xabacus
 PORTVERSION=	8.0.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.tux.org/~bagleyd/abacus/ \
 		http://ftp.tux.org/pub/tux/bagleyd/xabacus/
@@ -17,19 +18,15 @@ USES=		tar:bzip2
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_x_app_defaults=${PREFIX}/lib/X11/app-defaults
-CONFIGURE_ARGS=	--without-nas
+CONFIGURE_ARGS=	--without-nas --with-rplay --without-esound
 INSTALLS_ICONS=	yes
 
 DESKTOP_ENTRIES="XAbacus" "" "abacus" "${PORTNAME}" "" ""
 
-OPTIONS_DEFINE=		ESOUND MOTIF
+OPTIONS_DEFINE=		MOTIF
 OPTIONS_DEFAULT=	MOTIF
 
-ESOUND_LIB_DEPENDS_OFF=	librplay.so:audio/rplay
-ESOUND_USE=		gnome=esound
-ESOUND_CONFIGURE_ON=	--without-rplay --with-esound
-ESOUND_CONFIGURE_OFF=	--with-rplay --without-esound
-ESOUND_LDFLAGS=		-L${LOCALBASE}/lib -laudiofile
+LIB_DEPENDS=	librplay.so:audio/rplay
 MOTIF_USES=		motif
 MOTIF_CONFIGURE_WITH=	motif
 

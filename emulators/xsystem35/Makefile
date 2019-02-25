@@ -3,7 +3,7 @@
 
 PORTNAME=	xsystem35
 DISTVERSION=	1.7.3-pre5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators games
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
@@ -17,12 +17,10 @@ LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libltdl.so:devel/libltdl \
 		libfreetype.so:print/freetype2
 
-OPTIONS_DEFINE=	ESOUND DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_DEFINE_i386=	MMX
 OPTIONS_DEFAULT_i386=	${MACHINE_CPU:tu:MMMX}
 
-ESOUND_USE=	GNOME=esound
-ESOUND_CONFIGURE_ON=--enable-audio=oss,esd --with-default-output=esd
 MMX_BUILD_DEPENDS=nasm:devel/nasm
 MMX_CONFIGURE_ENABLE=mmx
 

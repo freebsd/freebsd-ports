@@ -3,7 +3,7 @@
 
 PORTNAME=	gnugadu2
 PORTVERSION=	2.3.0
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/ggadu/gg2/${PORTVERSION}
 DISTNAME=	gg2-${PORTVERSION}
@@ -43,9 +43,10 @@ CONFIGURE_ARGS=	--disable-esdtest \
 		--without-arts \
 		--without-gnutls \
 		--without-perl \
-		--without-remote
+		--without-remote \
+		--without-esd
 
-OPTIONS_DEFINE=	DBUS DOCKAPP DOCKLET ESOUND \
+OPTIONS_DEFINE=	DBUS DOCKAPP DOCKLET \
 		GTKSPELL JABBER TLEN XOSD
 OPTIONS_DEFAULT=DOCKLET
 OPTIONS_SUB=	yes
@@ -75,9 +76,6 @@ DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 			libdbus-glib-1.so:devel/dbus-glib
 DBUS_CONFIGURE_WITH=	dbus
 DBUS_CONFIGURE_ON=	--with-dbus-dir=${PREFIX}/share/dbus-1/services
-
-ESOUND_USE=	GNOME=esound
-ESOUND_CONFIGURE_WITH=	esd
 
 XOSD_LIB_DEPENDS=	libxosd.so:misc/xosd
 XOSD_USE=		XORG=xext,xinerama
