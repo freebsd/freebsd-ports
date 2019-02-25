@@ -1,3 +1,3 @@
-TIMESTAMP = 1534456766
-SHA256 (VirusTotal-yara-v3.8.1_GH0.tar.gz) = 283527711269354d3c60e2705f7f74b1f769d2d35ddba8f7f9ce97d0fd5cb1ca
-SIZE (VirusTotal-yara-v3.8.1_GH0.tar.gz) = 715968
+TIMESTAMP = 1550914197
+SHA256 (VirusTotal-yara-v3.9.0_GH0.tar.gz) = ebe7fab0abadb90449a62afbd24e196e18b177efe71ffd8bf22df95c5386f64d
+SIZE (VirusTotal-yara-v3.9.0_GH0.tar.gz) = 749159
