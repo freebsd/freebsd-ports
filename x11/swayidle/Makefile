@@ -25,8 +25,7 @@ OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
-MANPAGES_MESON_ON=	-Dman-pages=enabled
-MANPAGES_MESON_OFF=	-Dman-pages=disabled
+MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

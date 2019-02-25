@@ -29,12 +29,10 @@ OPTIONS_DEFINE=	MANPAGES PIXBUF
 OPTIONS_DEFAULT=MANPAGES PIXBUF
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
-MANPAGES_MESON_ON=	-Dman-pages=enabled
-MANPAGES_MESON_OFF=	-Dman-pages=disabled
+MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
 
 PIXBUF_USE=		GNOME=gdkpixbuf2
-PIXBUF_MESON_ON=	-Dgdk-pixbuf=enabled
-PIXBUF_MESON_OFF=	-Dgdk-pixbuf=disabled
+PIXBUF_MESON_ENABLED=	gdk-pixbuf
 
 .include <bsd.port.mk>

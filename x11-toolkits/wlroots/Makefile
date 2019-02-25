@@ -40,8 +40,7 @@ X11_LIB_DEPENDS=libxcb-errors.so:x11/xcb-util-errors \
 		libxcb-icccm.so:x11/xcb-util-wm
 X11_RUN_DEPENDS=Xwayland:x11-servers/xwayland
 X11_USE=	XORG=x11,xcb
-X11_MESON_ON=	-Dx11-backend=enabled  -Dxcb-icccm=enabled  -Dxwayland=enabled
-X11_MESON_OFF=	-Dx11-backend=disabled -Dxcb-icccm=disabled -Dxwayland=disabled
+X11_MESON_ENABLED=x11-backend xcb-icccm xwayland
 
 post-patch:
 # Ignore unused dependencies

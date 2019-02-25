@@ -27,18 +27,15 @@ OPTIONS_SINGLE_VULKAN=	GLSLANG SHADERC
 
 GLSLANG_DESC=		glslang SPIR-V compiler
 GLSLANG_BUILD_DEPENDS=	glslang>0:devel/glslang
-GLSLANG_MESON_ON=	-Dglslang=enabled
-GLSLANG_MESON_OFF=	-Dglslang=disabled
+GLSLANG_MESON_ENABLED=	glslang
 GLSLANG_IMPLIES=	VULKAN
 
 LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
-LCMS2_MESON_ON=		-Dlcms=enabled
-LCMS2_MESON_OFF=	-Dlcms=disabled
+LCMS2_MESON_ENABLED=		lcms
 
 SHADERC_DESC=		libshaderc SPIR-V compiler
 SHADERC_LIB_DEPENDS=	libshaderc_shared.so:graphics/shaderc
-SHADERC_MESON_ON=	-Dshaderc=enabled
-SHADERC_MESON_OFF=	-Dshaderc=disabled
+SHADERC_MESON_ENABLED=	shaderc
 SHADERC_IMPLIES=	VULKAN
 
 TEST_MESON_TRUE=	tests
@@ -46,8 +43,7 @@ TEST_MESON_TRUE=	tests
 VULKAN_DESC=		Vulkan-based renderer
 VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
-VULKAN_MESON_ON=	-Dvulkan=enabled
-VULKAN_MESON_OFF=	-Dvulkan=disabled
+VULKAN_MESON_ENABLED=	vulkan
 
 post-patch:
 # Extract (snapshot) version from port version instead of meson.build

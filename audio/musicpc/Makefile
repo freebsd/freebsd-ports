@@ -23,13 +23,11 @@ OPTIONS_DEFAULT=	DOCS ICONV
 
 DOCS_USES=	python:env
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
-DOCS_MESON_ON=	-Ddocumentation=enabled
-DOCS_MESON_OFF=	-Ddocumentation=disabled
+DOCS_MESON_ENABLED=	documentation
 
 ICONV_USES=	iconv
 ICONV_LDFLAGS=	-L${ICONV_PREFIX}/lib ${ICONV_LIB}
-ICONV_MESON_ON=	-Diconv=enabled
-ICONV_MESON_OFF=	-Diconv=disabled
+ICONV_MESON_ENABLED=	iconv
 
 PORTDOCS=	AUTHORS README.rst NEWS
 
