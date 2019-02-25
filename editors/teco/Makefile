@@ -13,7 +13,7 @@ COMMENT=	Powerful and compact editor with nongraphical user interface
 
 LICENSE=	BSD3CLAUSE
 
-CFLAGS+=	-Wno-pointer-sign -Wno-expansion-to-defined -Wno-int-to-pointer-cast
+CFLAGS+=	-Wno-pointer-sign -Wno-int-to-pointer-cast
 MAKEFILE=	makefile
 
 WRKSRC=		${WRKDIR}/tecoc${PORTVERSION}
