@@ -8,7 +8,7 @@ include/dbus-%%VERSION%%/dbus/dbus-gvalue-parse-variant.h
 lib/libdbus-glib-1.a
 lib/libdbus-glib-1.so
 lib/libdbus-glib-1.so.2
-lib/libdbus-glib-1.so.2.3.3
+lib/libdbus-glib-1.so.2.3.4
 libdata/pkgconfig/dbus-glib-1.pc
 libexec/dbus-bash-completion-helper
 man/man1/dbus-binding-tool.1.gz
