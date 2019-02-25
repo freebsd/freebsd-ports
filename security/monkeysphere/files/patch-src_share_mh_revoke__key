@@ -1,0 +1,29 @@
+--- src/share/mh/revoke_key.orig	2018-10-16 16:24:55 UTC
++++ src/share/mh/revoke_key
+@@ -72,11 +72,11 @@ y
+     else
+     # note: we're not using the gpg_host function because we actually
+     # want to use gpg's UI in this case, so we want to omit --no-tty
+-	revcert=$(GNUPGHOME="$GNUPGHOME_HOST" gpg --no-greeting --quiet --armor --gen-revoke "0x${keyID}!") \
++	revcert=$(GNUPGHOME="$GNUPGHOME_HOST" gpg2 --no-greeting --quiet --armor --gen-revoke "0x${keyID}!") \
+ 	    || failure "Failed to generate revocation certificate!"
+     fi
+ 
+-    # if you run gpg --gen-revoke but cancel it or quit in the middle,
++    # if you run gpg2 --gen-revoke but cancel it or quit in the middle,
+     # it returns success, but emits no revocation certificate:
+     if ! [ "$revcert" ] ; then
+ 	failure "Revocation canceled."
+@@ -94,9 +94,9 @@ y
+ 	    printf "Not publishing.\n" >&2
+ 	else
+ 	    local newhome=$(msmktempdir)
+-	    GNUPGHOME="$newhome" gpg --no-tty --quiet --import < "$HOST_KEY_FILE"
+-	    GNUPGHOME="$newhome" gpg --no-tty --quiet --import <<< "$revcert"
+-	    GNUPGHOME="$newhome" gpg --keyserver "$KEYSERVER" --send-keys "0x${keyID}!"
++	    GNUPGHOME="$newhome" gpg2 --no-tty --quiet --import < "$HOST_KEY_FILE"
++	    GNUPGHOME="$newhome" gpg2 --no-tty --quiet --import <<< "$revcert"
++	    GNUPGHOME="$newhome" gpg2 --keyserver "$KEYSERVER" --send-keys "0x${keyID}!"
+ 	    rm -rf "$newhome"
+ 	fi
+     fi

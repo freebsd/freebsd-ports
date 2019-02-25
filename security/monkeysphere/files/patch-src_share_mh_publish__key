@@ -1,0 +1,20 @@
+--- src/share/mh/publish_key.orig	2018-10-16 16:24:55 UTC
++++ src/share/mh/publish_key
+@@ -46,7 +46,7 @@ trap cleanup EXIT
+ 
+ # import the key into the tmp dir
+ su_monkeysphere_user \
+-    gpg --quiet --import <"$HOST_KEY_FILE"
++    gpg2 --quiet --import <"$HOST_KEY_FILE"
+ 
+ ANCHORFILE=""
+ for anchorfile in "${SYSCONFIGDIR}/monkeysphere-host-x509-anchors.crt" "${SYSCONFIGDIR}/monkeysphere-x509-anchors.crt"; do
+@@ -59,7 +59,7 @@ done
+ # publish key
+ log debug "publishing key with the following gpg command line and options:"
+ su_monkeysphere_user \
+-    gpg --keyserver "$KEYSERVER" ${ANCHORFILE:+--keyserver-options "ca-cert-file=$ANCHORFILE"} --send-keys "0x${keyID}!"
++    gpg2 --keyserver "$KEYSERVER" ${ANCHORFILE:+--keyserver-options "ca-cert-file=$ANCHORFILE"} --send-keys "0x${keyID}!"
+ 
+ # remove the tmp file
+ trap - EXIT

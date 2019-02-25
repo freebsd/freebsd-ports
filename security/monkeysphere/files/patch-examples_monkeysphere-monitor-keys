@@ -1,0 +1,11 @@
+--- examples/monkeysphere-monitor-keys.orig	2018-10-16 16:24:55 UTC
++++ examples/monkeysphere-monitor-keys
+@@ -31,7 +31,7 @@
+ 
+ # FIXME: does this handle revocations and re-keying?  if a sysadmin
+ # switches over to this arrangement, how will the system check for
+-# revocations?  Scheduling a simple gpg --refresh should handle
++# revocations?  Scheduling a simple gpg2 --refresh should handle
+ # revocations.  I'm not sure how to best handle re-keyings.
+ 
+ use strict;

@@ -1,0 +1,34 @@
+--- examples/make-x509-certreqs.orig	2018-10-16 16:24:55 UTC
++++ examples/make-x509-certreqs
+@@ -69,12 +69,12 @@ EOF
+ gencertreq() {
+     keyid="$1"
+     
+-    timestamp=$(gpg --fixed-list-mode --with-colons --list-keys "0x$keyid!" | grep ^pub: | cut -f6 -d:)
++    timestamp=$(gpg2 --fixed-list-mode --with-colons --list-keys "0x$keyid!" | grep ^pub: | cut -f6 -d:)
+     
+     san=''
+     primary=''
+ # find all the $proto-using User IDs:
+-    uids=$(gpg --fixed-list-mode --with-colons --list-keys "0x$keyid!" | \
++    uids=$(gpg2 --fixed-list-mode --with-colons --list-keys "0x$keyid!" | \
+         grep '^uid:' | cut -f10 -d: | \
+         grep '^'"${proto}"'\\x3a//' | \
+         sed -r -e 's!^'"${proto}"'\\x3a//!!' -e 's!:[0-9]+$!!')
+@@ -83,7 +83,7 @@ gencertreq() {
+     printf "Certificate Request for TLS WWW server %s\n[OpenPGP key %s]\n" "$primary" "$keyid"
+     openssl req -text -new \
+         -config <(get_openssl_config "$timestamp" "$uids") \
+-        -key <(gpg --export-secret-key "$keyid" | openpgp2ssh "$keyid") \
++        -key <(gpg2 --export-secret-key "$keyid" | openpgp2ssh "$keyid") \
+         -subj "/CN=${primary}/"
+ }
+ 
+@@ -92,6 +92,6 @@ export GNUPGHOME=/var/lib/monkeysphere/host
+ # default to looking for https keys.
+ proto="${1:-https}"
+ 
+-for fpr in $(gpg --fixed-list-mode --with-colons --fingerprint --list-secret-keys "${proto}://" | awk -F: '/^fpr:/{ if (ok) { print $10 } ; ok=0 } /^sec:/{ ok=1 }'); do
++for fpr in $(gpg2 --fixed-list-mode --with-colons --fingerprint --list-secret-keys "${proto}://" | awk -F: '/^fpr:/{ if (ok) { print $10 } ; ok=0 } /^sec:/{ ok=1 }'); do
+     gencertreq "$fpr"
+ done

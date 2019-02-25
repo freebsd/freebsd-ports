@@ -1,0 +1,11 @@
+--- src/share/m/subkey_to_ssh_agent.orig	2018-10-16 16:24:55 UTC
++++ src/share/m/subkey_to_ssh_agent
+@@ -54,7 +54,7 @@ subkey_to_ssh_agent() {
+ 
+ 	if [ -z "$secretkeys" ]; then
+ 	    failure "You have no secret keys in your keyring!
+-You might want to run 'gpg --gen-key'."
++You might want to run 'gpg2 --gen-key'."
+ 	fi
+ 
+         # $2 regex means "is some kind of valid, or at least not invalid"

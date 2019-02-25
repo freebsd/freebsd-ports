@@ -1,0 +1,20 @@
+--- src/monkeysphere-authentication.orig	2018-10-16 16:24:55 UTC
++++ src/monkeysphere-authentication
+@@ -73,7 +73,7 @@ gpg_core() {
+     GNUPGHOME="$GNUPGHOME_CORE"
+     export GNUPGHOME
+ 
+-    gpg --fixed-list-mode --no-greeting --quiet --no-tty "$@"
++    gpg2 --fixed-list-mode --no-greeting --quiet --no-tty "$@"
+ }
+ 
+ # function to interact with the gpg sphere keyring
+@@ -81,7 +81,7 @@ gpg_sphere() {
+     GNUPGHOME="$GNUPGHOME_SPHERE"
+     export GNUPGHOME
+  
+-    su_monkeysphere_user gpg --fixed-list-mode --no-greeting --quiet --no-tty "$@"
++    su_monkeysphere_user gpg2 --fixed-list-mode --no-greeting --quiet --no-tty "$@"
+ }
+ 
+ check_openpgp2ssh_sanity() {

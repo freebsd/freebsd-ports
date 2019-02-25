@@ -1,0 +1,20 @@
+--- src/share/keytrans.orig	2019-01-17 11:12:48 UTC
++++ src/share/keytrans
+@@ -20,7 +20,7 @@
+ 
+ # Usage:
+ 
+-# pem2openpgp 'ssh://'$(hostname -f) < /etc/ssh/ssh_host_rsa_key | gpg --import
++# pem2openpgp 'ssh://'$(hostname -f) < /etc/ssh/ssh_host_rsa_key | gpg2 --import
+ 
+ 
+ 
+@@ -35,7 +35,7 @@
+ 
+ # Example usage:
+ 
+-# gpg --export-secret-subkeys --export-options export-reset-subkey-passwd $KEYID | \
++# gpg2 --export-secret-subkeys --export-options export-reset-subkey-passwd $KEYID | \
+ #  openpgp2ssh $KEYID | ssh-add /dev/stdin
+ 
+ 
