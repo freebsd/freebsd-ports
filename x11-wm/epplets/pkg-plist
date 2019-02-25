@@ -20,7 +20,6 @@ bin/E-Pants.epplet
 bin/E-Pinger.epplet
 bin/E-PlayCD.epplet
 bin/E-Power.epplet
-%%ESOUND%%bin/E-SD.epplet
 bin/E-ScreenSave.epplet
 bin/E-ScreenShoot.epplet
 bin/E-Slides.epplet
@@ -143,9 +142,6 @@ share/e16/epplet_data/E-Power/E-Power-Bat-60.png
 share/e16/epplet_data/E-Power/E-Power-Bat-70.png
 share/e16/epplet_data/E-Power/E-Power-Bat-80.png
 share/e16/epplet_data/E-Power/E-Power-Bat-90.png
-%%ESOUND%%share/e16/epplet_data/E-SD/ABOUT/MAIN
-%%ESOUND%%share/e16/epplet_data/E-SD/E-SD_minitime.png
-%%ESOUND%%share/e16/epplet_data/E-SD/E-SD_standby.png
 share/e16/epplet_data/E-ScreenSave/ABOUT/MAIN
 share/e16/epplet_data/E-ScreenShoot/ABOUT/E_ScreenShoot_buttons.png
 share/e16/epplet_data/E-ScreenShoot/ABOUT/E_ScreenShoot_cloak.png
@@ -194,7 +190,6 @@ share/e16/epplet_icons/E-Pants.icon
 share/e16/epplet_icons/E-Pinger.icon
 share/e16/epplet_icons/E-PlayCD.icon
 share/e16/epplet_icons/E-Power.icon
-%%ESOUND%%share/e16/epplet_icons/E-SD.icon
 share/e16/epplet_icons/E-ScreenSave.icon
 share/e16/epplet_icons/E-ScreenShoot.icon
 share/e16/epplet_icons/E-Slides.icon

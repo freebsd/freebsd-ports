@@ -3,7 +3,7 @@
 
 PORTNAME=	icewm
 PORTVERSION=	1.3.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTVERSION}
 
@@ -22,13 +22,14 @@ USE_GNOME=	gdkpixbuf2
 USE_XORG=	ice sm x11 xext xrender
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-guievents \
+		--with-icesound=oss \
 		--with-cfgdir=${DATADIR} \
 		--with-libdir=${DATADIR} \
 		--with-kdedatadir=${LOCALBASE}/share \
 		--with-docdir=${PREFIX}/share/doc \
 		--with-mkfontdir=${NONEXISTENT}
 
-OPTIONS_DEFINE=		BEASTIE ESOUND GNOME LITE MENUFIX NLS XFT XINERAMA \
+OPTIONS_DEFINE=		BEASTIE GNOME LITE MENUFIX NLS XFT XINERAMA \
 			XRANDR DOCS
 OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT=	BEASTIE MENUFIX XFT XINERAMA XRANDR
@@ -36,9 +37,6 @@ OPTIONS_DEFAULT_i386=	ASM
 OPTIONS_SUB=		yes
 
 BEASTIE_DESC=		Use Beastie'fied startup button
-ESOUND_USE=		GNOME=esound
-ESOUND_CONFIGURE_ON=	--with-icesound=esound
-ESOUND_CONFIGURE_OFF=	--with-icesound=oss
 GNOME_DESC=		Display GNOME 2 menus
 GNOME_USE=		GNOME=gnomedesktop,libgnomeui
 GNOME_CONFIGURE_ENABLE=	menus-gnome2
