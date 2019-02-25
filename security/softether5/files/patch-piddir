@@ -5,7 +5,7 @@
  
  	// File name generation
 -	Format(name, sizeof(name), "%s/.%s", dir, tmp);
-+	Format(name, sizeof(name), "/var/db/softether/.%s", tmp);
++	Format(name, sizeof(name), "%%SE_DBDIR%%/.%s", tmp);
  
  	fd = open(name, O_WRONLY);
  	if (fd == -1)
@@ -14,7 +14,7 @@
  	BinToStr(tmp1, sizeof(tmp1), hash, sizeof(hash));
  
 -	Format(name, size, "%s/.pid_%s", dir, tmp1);
-+	Format(name, size, "/var/db/softether/.pid_%s", tmp1);
++	Format(name, size, "%%SE_DBDIR%%/.pid_%s", tmp1);
  }
  
  // Delete the PID file
@@ -23,7 +23,7 @@
  	BinToStr(tmp1, sizeof(tmp1), hash, sizeof(hash));
  
 -	Format(name, size, "%s/.ctl_%s", dir, tmp1);
-+	Format(name, size, "/var/db/softether/.ctl_%s", tmp1);
++	Format(name, size, "%%SE_DBDIR%%/.ctl_%s", tmp1);
  }
  
  // Write the CTL file

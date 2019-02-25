@@ -5,7 +5,7 @@
  
  		GetExeDirW(exedir, sizeof(exedir));
 -		CombinePathW(dirname, sizeof(dirname), exedir, L"chain_certs");
-+		CombinePathW(dirname, sizeof(dirname), L"/var/db/softether", L"chain_certs");
++		CombinePathW(dirname, sizeof(dirname), L"%%SE_DBDIR%%", L"chain_certs");
  		MakeDirExW(dirname);
  
  		if (auto_save)
@@ -14,7 +14,7 @@
  	GetExeDirW(exedir, sizeof(exedir));
  
 -	CombinePathW(dirname, sizeof(dirname), exedir, L"chain_certs");
-+	CombinePathW(dirname, sizeof(dirname), L"/var/db/softether", L"chain_certs");
++	CombinePathW(dirname, sizeof(dirname), L"%%SE_DBDIR%%", L"chain_certs");
  
  	MakeDirExW(dirname);
  
@@ -25,7 +25,7 @@
  	GetExeDirW(exedir, sizeof(exedir));
  
 -	CombinePathW(dirname, sizeof(dirname), exedir, L"chain_certs");
-+	CombinePathW(dirname, sizeof(dirname), L"/var/db/softether", L"chain_certs");
++	CombinePathW(dirname, sizeof(dirname), L"%%SE_DBDIR%%", L"chain_certs");
  
  	MakeDirExW(dirname);
  

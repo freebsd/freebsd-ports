@@ -20,7 +20,7 @@ load_rc_config ${name}
 
 command="%%PREFIX%%/libexec/softether/vpnbridge/vpnbridge"
 
-datadir="/var/db/softether"
+datadir="%%SE_DBDIR%%"
 
 start_precmd="${name}_precmd"
 start_cmd="${command} start"
