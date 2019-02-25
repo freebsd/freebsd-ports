@@ -2,17 +2,17 @@
 
 Notes:
 
- * See the documentation at http://mathias-kettner.de/checkmk_livestatus.html
+ * See the documentation at https://mathias-kettner.com/checkmk_livestatus.html
 
- * Requires that net-mgmt/nagios be built with WITH_EVENT_BROKER=yes or
-   livestatus.o will never be loaded...
+ * Requires Nagios (net-mgmt/nagios, or net-mgmt/nagios4) be built with event
+   broker support enabled, or 'livestatus.o' will never be loaded. This is
+   the default for net-mgmt/nagios4.
 
  * unixcat (for use with reading from the socket and/or inetd(8) support)
-   moved from %%PREFIX%%/bin
-   to %%PREFIX%%/lib/mk-livestatus
+   moved from %%PREFIX%%/bin to %%PREFIX%%/lib/mk-livestatus
    in order to avoid a conflict with sysutils/ucspi-unix
 
- * livecheck was removed in 1.2.3.i5,
-   Please adjust your "broker_module=..." directive in etc/nagios/nagios.cfg!
+ * livecheck was removed in 1.2.3.i5. Please adjust your "broker_module=..."
+   directive in %%PREFIX%%/etc/nagios/nagios.cfg!
 
 =============================================================================
