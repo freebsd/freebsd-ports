@@ -6,7 +6,6 @@ lib/libao.so
 lib/libao.so.4
 lib/libao.so.4.1.0
 lib/ao/plugins-4/liboss.so
-%%ESOUND%%lib/ao/plugins-4/libesd.so
 %%NAS%%lib/ao/plugins-4/libnas.so
 %%PULSEAUDIO%%lib/ao/plugins-4/libpulse.so
 %%SNDIO%%lib/ao/plugins-4/libsndio.so
