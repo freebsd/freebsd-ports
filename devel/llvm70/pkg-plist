@@ -2798,7 +2798,7 @@ llvm%%LLVM_SUFFIX%%/lib/libLTO.so.%%LLVM_MAJOR%%
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangCodeGen.a
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangCrossTU.a
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/lib/libclangDaemon.a
-%%CLANG%%%%DOCS%%llvm%%LLVM_SUFFIX%%/lib/libclangDoc.a
+%%EXTRAS%%llvm%%LLVM_SUFFIX%%/lib/libclangDoc.a
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangDriver.a
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangDynamicASTMatchers.a
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangEdit.a
