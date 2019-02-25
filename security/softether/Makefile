@@ -36,7 +36,7 @@ OPTIONS_DEFINE=	DOCS UNLOCK
 UNLOCK_DESC=	Unlock regional lockout (JP and CN)
 UNLOCK_EXTRA_PATCHES=	${FILESDIR}/extra-patch-unrestrict-enterprise-functions
 
-CONFLICTS_INSTALL=	softether-devel
+CONFLICTS_INSTALL=	softether-devel-4.* softether5
 PORTDOCS=	AUTHORS.TXT ChangeLog LICENSE README THIRD_PARTY.TXT WARNING.TXT
 
 LOGDIR?=	/var/log/softether
