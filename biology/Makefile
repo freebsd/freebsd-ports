@@ -3,6 +3,7 @@
 
     COMMENT = Biology
 
+    SUBDIR += abyss
     SUBDIR += artemis
     SUBDIR += avida
     SUBDIR += babel
