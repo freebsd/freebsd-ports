@@ -7,6 +7,9 @@ CATEGORIES=	audio
 
 COMMENT=	Gstreamer enlightenment sound library plugin
 
+DEPRECATED=	Depends on audio/esound
+EXPIRATION_DATE=	2019-03-25
+
 GST_PLUGIN=	esound
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins

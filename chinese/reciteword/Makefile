@@ -15,6 +15,9 @@ DISTFILES=	${DISTNAME}.tar.bz2 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Education software to help people to study English
 
+DEPRECATED=	depends on audio/esound
+EXPIRATION_DATE=	2019-03-25
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
