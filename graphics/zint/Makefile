@@ -14,11 +14,11 @@ COMMENT=	Zint Barcode Generator
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	skipv:2.6.3
-
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake qt:5
+PORTSCOUT=	skipv:2.6.3
+
+USES=		cmake compiler:c++11-lang qt:5
 USE_LDCONFIG=	yes
 USE_QT=		buildtools_build qmake_build uitools_build core gui widgets
 
