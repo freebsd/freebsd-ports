@@ -30,8 +30,7 @@ post-patch:
 	@${LN} -s ${WRKSRC} ${WRKSRC}/src/gitlab.com/gitlab-org/gitlab-pages
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} GOCACHE=${WRKSRC}/go CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 \
-		GOPATH=${WRKSRC} GOCACHE=off \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOPATH=${WRKSRC} \
 		go build -o gitlab-pages \
 		--ldflags="-X main.VERSION=${PORTVERSION} -X main.REVISION=${GITHASH}"
 
