@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yara
-PORTVERSION=	3.8.1
+PORTVERSION=	3.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -11,14 +11,16 @@ COMMENT=	Malware identification and classification tool
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libjansson.so:devel/jansson
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	VirusTotal
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-magic --enable-dotnet --enable-macho --enable-dex
+CONFIGURE_ARGS=	--enable-cuckoo --enable-dex --enable-dotnet --enable-macho --enable-magic
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-USES=		alias autoreconf libtool pathfix ssl
+USES=		alias autoreconf libtool localbase pathfix ssl
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-isystem ${OPENSSLINC}
 LIBS+=		-L${OPENSSLLIB}

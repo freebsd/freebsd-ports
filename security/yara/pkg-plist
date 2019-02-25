@@ -24,6 +24,7 @@ include/yara/rules.h
 include/yara/scan.h
 include/yara/scanner.h
 include/yara/sizedstr.h
+include/yara/stack.h
 include/yara/stopwatch.h
 include/yara/stream.h
 include/yara/strutils.h
@@ -33,7 +34,7 @@ include/yara/utils.h
 lib/libyara.a
 lib/libyara.so
 lib/libyara.so.3
-lib/libyara.so.3.8.1
+lib/libyara.so.3.9.0
 libdata/pkgconfig/yara.pc
 man/man1/yara.1.gz
 man/man1/yarac.1.gz

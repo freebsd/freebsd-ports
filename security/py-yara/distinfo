@@ -1,3 +1,3 @@
-TIMESTAMP = 1534456750
-SHA256 (yara-python-3.8.1.tar.gz) = 8c76531e89806c0309586dd4863a972d12f1d5d63261c6d4b9331a99859fd1d8
-SIZE (yara-python-3.8.1.tar.gz) = 355542
+TIMESTAMP = 1550914627
+SHA256 (VirusTotal-yara-python-v3.9.0_GH0.tar.gz) = 5f6f599aa0216966d47c2faaefd1418a42fcab0462c07298c3fa4a82805dd8f5
+SIZE (VirusTotal-yara-python-v3.9.0_GH0.tar.gz) = 31624
