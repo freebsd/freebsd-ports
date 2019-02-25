@@ -5,4 +5,4 @@ point. SPP accurately estimates the RTT experienced by any application's
 traffic without needing modifications to the application itself
 or the routers along the path.
 
-WWW: http://caia.swin.edu.au/tools/spp/
+WWW: https://bitbucket.org/caia-swin/spp
