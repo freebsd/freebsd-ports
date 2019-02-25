@@ -8,4 +8,4 @@ be generated. Two output formats are implemented: POSIX and GNU
 
 Input files can optionally be preprocessed before analyzing.
 
-WWW: https://savannah.gnu.org/projects/cflow
+WWW: https://www.gnu.org/software/cflow/
