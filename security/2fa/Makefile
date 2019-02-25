@@ -23,10 +23,10 @@ PLIST_FILES=	bin/2fa
 PORTDOCS=	README.md
 
 do-build:
-	@cd ${WRKSRC}/${GH_SUBDIR} && ${SETENV} ${MAKE_ENV} GOCACHE=off GOPATH=${WRKSRC} go build -o ${PORTNAME}
+	@cd ${WRKSRC}/${GH_SUBDIR} && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build -o ${PORTNAME}
 
 do-test:
-	@cd ${WRKSRC}/${GH_SUBDIR} && ${SETENV} ${MAKE_ENV} GOCACHE=off GOPATH=${WRKSRC} go test
+	@cd ${WRKSRC}/${GH_SUBDIR} && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go test
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
