@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	auto-admin
-DISTVERSION=	0.4.6
+DISTVERSION=	0.4.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 

@@ -8,6 +8,7 @@ sbin/auto-add-to-group
 sbin/auto-adduser
 sbin/auto-admin
 sbin/auto-amd-nfs-setup
+sbin/auto-amend-fstab
 sbin/auto-append-line
 sbin/auto-ask
 sbin/auto-autofs-nfs-setup
@@ -15,6 +16,8 @@ sbin/auto-backup-file
 sbin/auto-binary-pkgsrc-setup
 sbin/auto-change-group-gid
 sbin/auto-change-group-ownership
+sbin/auto-change-nfsd-count
+sbin/auto-change-ownership
 sbin/auto-change-primary-group
 sbin/auto-change-uid
 sbin/auto-clean-disk
@@ -25,8 +28,8 @@ sbin/auto-config-snd-driver
 sbin/auto-db-dir
 sbin/auto-denyhosts-remove-ip
 sbin/auto-denyhosts-setup
-sbin/auto-detect-intel-gpu
-sbin/auto-detect-nvidia-gpu
+sbin/auto-detect-gpu
+sbin/auto-detect-laptops
 sbin/auto-disable-host-key-prompt
 sbin/auto-disable-service
 sbin/auto-disable-tcp-timestamps
@@ -50,6 +53,7 @@ sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
 sbin/auto-lock-user
 sbin/auto-mount-any
+sbin/auto-nfs-restart
 sbin/auto-os-release
 sbin/auto-ostype
 sbin/auto-package-installed
