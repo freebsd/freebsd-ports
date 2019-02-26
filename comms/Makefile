@@ -27,6 +27,7 @@
     SUBDIR += conserver
     SUBDIR += conserver-com
     SUBDIR += cqrlog
+    SUBDIR += cubicsdr
     SUBDIR += cutecom
     SUBDIR += cwdaemon
     SUBDIR += cwstudio

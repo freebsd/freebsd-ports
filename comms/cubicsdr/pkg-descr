@@ -1,0 +1,15 @@
+What is CubicSDR ?
+
+CubicSDR is the software portion of Software Defined Radio.
+By Using hardware that converts RF spectrum into a digital
+stream we are able to build complex radios to do many types
+of functions in software instead of traditional hardware.
+
+What can I do with CubicSDR ?
+
+Paired with a supported hardware receiver, you can use CubicSDR
+to explore the RF world around you. Discover Satellite transmissions,
+Amateur Radio, Rail, Areonautical, Shortwave, or any number of
+possible signals floating through the air.
+
+WWW: https://cubicsdr.readthedocs.io/en/latest/
