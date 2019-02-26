@@ -1,3 +1,5 @@
-TIMESTAMP = 1541653793
-SHA256 (ofiwg-libfabric-v1.6.2_GH0.tar.gz) = ba9021f0a476aca94217304caf339fbad8ab983a82d6c0d99f430e44ecac8174
-SIZE (ofiwg-libfabric-v1.6.2_GH0.tar.gz) = 1593998
+TIMESTAMP = 1551158275
+SHA256 (ofiwg-libfabric-v1.7.0rc3-281-g85a686840_GH0.tar.gz) = ecec5ac5e86fb79d85bdef8a766e9a2161bb393975d98888950a1ff9d01cfe59
+SIZE (ofiwg-libfabric-v1.7.0rc3-281-g85a686840_GH0.tar.gz) = 1856372
+SHA256 (a088f58fac6708b42b810f3746f538ab7452eeb2.patch) = 8e6aa82f6a9ef46eaa43e94c5f37c9ad509e96356ae12dc0bcdf350122835aad
+SIZE (a088f58fac6708b42b810f3746f538ab7452eeb2.patch) = 635

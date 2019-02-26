@@ -13,7 +13,7 @@ include/rdma/fi_tagged.h
 include/rdma/fi_trigger.h
 lib/libfabric.so
 lib/libfabric.so.1
-lib/libfabric.so.1.9.15
+lib/libfabric.so.1.10.0
 libdata/pkgconfig/libfabric.pc
 man/man1/fi_info.1.gz
 man/man1/fi_pingpong.1.gz
@@ -98,6 +98,7 @@ man/man3/fi_mr_reg.3.gz
 man/man3/fi_mr_regattr.3.gz
 man/man3/fi_mr_regv.3.gz
 man/man3/fi_msg.3.gz
+man/man3/fi_nic.3.gz
 man/man3/fi_open.3.gz
 man/man3/fi_open_ops.3.gz
 man/man3/fi_passive_ep.3.gz
@@ -148,7 +149,11 @@ man/man3/fi_writemsg.3.gz
 man/man3/fi_writev.3.gz
 man/man7/fabric.7.gz
 man/man7/fi_direct.7.gz
+man/man7/fi_hook.7.gz
+man/man7/fi_mrail.7.gz
 man/man7/fi_provider.7.gz
+man/man7/fi_rstream.7.gz
 %%RXM%%man/man7/fi_rxm.7.gz
 %%SOCKETS%%man/man7/fi_sockets.7.gz
+%%SOCKETS%%man/man7/fi_tcp.7.gz
 %%UDP%%man/man7/fi_udp.7.gz
