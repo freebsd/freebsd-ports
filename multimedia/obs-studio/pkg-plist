@@ -96,6 +96,7 @@ lib/libobs.so
 lib/libobs.so.0
 lib/libobsglad.so
 lib/libobsglad.so.0
+lib/obs-plugins/decklink-ouput-ui.so
 lib/obs-plugins/frontend-tools.so
 lib/obs-plugins/image-source.so
 lib/obs-plugins/linux-capture.so
@@ -113,6 +114,7 @@ lib/obs-plugins/text-freetype2.so
 lib/obs-scripting/_obspython.so
 lib/obs-scripting/obslua.so
 lib/obs-scripting/obspython.py
+libdata/pkgconfig/libobs.pc
 share/applications/obs.desktop
 share/icons/hicolor/256x256/apps/obs.png
 share/obs/libobs/bicubic_scale.effect
@@ -132,7 +134,11 @@ share/obs/libobs/format_conversion.effect
 share/obs/libobs/lanczos_scale.effect
 share/obs/libobs/opaque.effect
 share/obs/libobs/premultiplied_alpha.effect
+share/obs/libobs/repeat.effect
 share/obs/libobs/solid.effect
+share/obs/obs-plugins/decklink-ouput-ui/.keepme
+share/obs/obs-plugins/frontend-tools/locale/ar-SA.ini
+share/obs/obs-plugins/frontend-tools/locale/bg-BG.ini
 share/obs/obs-plugins/frontend-tools/locale/bn-BD.ini
 share/obs/obs-plugins/frontend-tools/locale/ca-ES.ini
 share/obs/obs-plugins/frontend-tools/locale/cs-CZ.ini
@@ -143,6 +149,7 @@ share/obs/obs-plugins/frontend-tools/locale/en-US.ini
 share/obs/obs-plugins/frontend-tools/locale/es-ES.ini
 share/obs/obs-plugins/frontend-tools/locale/et-EE.ini
 share/obs/obs-plugins/frontend-tools/locale/eu-ES.ini
+share/obs/obs-plugins/frontend-tools/locale/fa-IR.ini
 share/obs/obs-plugins/frontend-tools/locale/fi-FI.ini
 share/obs/obs-plugins/frontend-tools/locale/fil-PH.ini
 share/obs/obs-plugins/frontend-tools/locale/fr-FR.ini
@@ -155,6 +162,7 @@ share/obs/obs-plugins/frontend-tools/locale/ja-JP.ini
 share/obs/obs-plugins/frontend-tools/locale/ka-GE.ini
 share/obs/obs-plugins/frontend-tools/locale/ko-KR.ini
 share/obs/obs-plugins/frontend-tools/locale/lt-LT.ini
+share/obs/obs-plugins/frontend-tools/locale/mn-MN.ini
 share/obs/obs-plugins/frontend-tools/locale/ms-MY.ini
 share/obs/obs-plugins/frontend-tools/locale/nb-NO.ini
 share/obs/obs-plugins/frontend-tools/locale/nl-NL.ini
@@ -167,6 +175,7 @@ share/obs/obs-plugins/frontend-tools/locale/sk-SK.ini
 share/obs/obs-plugins/frontend-tools/locale/sr-CS.ini
 share/obs/obs-plugins/frontend-tools/locale/sr-SP.ini
 share/obs/obs-plugins/frontend-tools/locale/sv-SE.ini
+share/obs/obs-plugins/frontend-tools/locale/th-TH.ini
 share/obs/obs-plugins/frontend-tools/locale/tl-PH.ini
 share/obs/obs-plugins/frontend-tools/locale/tr-TR.ini
 share/obs/obs-plugins/frontend-tools/locale/uk-UA.ini
@@ -206,6 +215,7 @@ share/obs/obs-plugins/image-source/locale/it-IT.ini
 share/obs/obs-plugins/image-source/locale/ja-JP.ini
 share/obs/obs-plugins/image-source/locale/ka-GE.ini
 share/obs/obs-plugins/image-source/locale/ko-KR.ini
+share/obs/obs-plugins/image-source/locale/mn-MN.ini
 share/obs/obs-plugins/image-source/locale/ms-MY.ini
 share/obs/obs-plugins/image-source/locale/nb-NO.ini
 share/obs/obs-plugins/image-source/locale/nl-NL.ini
@@ -455,6 +465,7 @@ share/obs/obs-plugins/obs-filters/color_grade_filter.effect
 share/obs/obs-plugins/obs-filters/color_key_filter.effect
 share/obs/obs-plugins/obs-filters/crop_filter.effect
 share/obs/obs-plugins/obs-filters/locale/ar-SA.ini
+share/obs/obs-plugins/obs-filters/locale/bg-BG.ini
 share/obs/obs-plugins/obs-filters/locale/bn-BD.ini
 share/obs/obs-plugins/obs-filters/locale/ca-ES.ini
 share/obs/obs-plugins/obs-filters/locale/cs-CZ.ini
@@ -543,6 +554,7 @@ share/obs/obs-plugins/obs-libfdk/locale/vi-VN.ini
 share/obs/obs-plugins/obs-libfdk/locale/zh-CN.ini
 share/obs/obs-plugins/obs-libfdk/locale/zh-TW.ini
 share/obs/obs-plugins/obs-outputs/locale/ar-SA.ini
+share/obs/obs-plugins/obs-outputs/locale/bg-BG.ini
 share/obs/obs-plugins/obs-outputs/locale/bn-BD.ini
 share/obs/obs-plugins/obs-outputs/locale/ca-ES.ini
 share/obs/obs-plugins/obs-outputs/locale/cs-CZ.ini
@@ -566,6 +578,7 @@ share/obs/obs-plugins/obs-outputs/locale/it-IT.ini
 share/obs/obs-plugins/obs-outputs/locale/ja-JP.ini
 share/obs/obs-plugins/obs-outputs/locale/ka-GE.ini
 share/obs/obs-plugins/obs-outputs/locale/ko-KR.ini
+share/obs/obs-plugins/obs-outputs/locale/mn-MN.ini
 share/obs/obs-plugins/obs-outputs/locale/nb-NO.ini
 share/obs/obs-plugins/obs-outputs/locale/nl-NL.ini
 share/obs/obs-plugins/obs-outputs/locale/pl-PL.ini
@@ -693,6 +706,7 @@ share/obs/obs-plugins/obs-x264/locale/it-IT.ini
 share/obs/obs-plugins/obs-x264/locale/ja-JP.ini
 share/obs/obs-plugins/obs-x264/locale/ka-GE.ini
 share/obs/obs-plugins/obs-x264/locale/ko-KR.ini
+share/obs/obs-plugins/obs-x264/locale/mn-MN.ini
 share/obs/obs-plugins/obs-x264/locale/nb-NO.ini
 share/obs/obs-plugins/obs-x264/locale/nl-NL.ini
 share/obs/obs-plugins/obs-x264/locale/pl-PL.ini
@@ -737,6 +751,7 @@ share/obs/obs-plugins/rtmp-services/locale/it-IT.ini
 share/obs/obs-plugins/rtmp-services/locale/ja-JP.ini
 share/obs/obs-plugins/rtmp-services/locale/ka-GE.ini
 share/obs/obs-plugins/rtmp-services/locale/ko-KR.ini
+share/obs/obs-plugins/rtmp-services/locale/mn-MN.ini
 share/obs/obs-plugins/rtmp-services/locale/nb-NO.ini
 share/obs/obs-plugins/rtmp-services/locale/nl-NL.ini
 share/obs/obs-plugins/rtmp-services/locale/pl-PL.ini
@@ -760,6 +775,7 @@ share/obs/obs-plugins/rtmp-services/locale/zh-TW.ini
 share/obs/obs-plugins/rtmp-services/package.json
 share/obs/obs-plugins/rtmp-services/services.json
 share/obs/obs-plugins/text-freetype2/locale/ar-SA.ini
+share/obs/obs-plugins/text-freetype2/locale/bg-BG.ini
 share/obs/obs-plugins/text-freetype2/locale/bn-BD.ini
 share/obs/obs-plugins/text-freetype2/locale/ca-ES.ini
 share/obs/obs-plugins/text-freetype2/locale/cs-CZ.ini
@@ -782,6 +798,7 @@ share/obs/obs-plugins/text-freetype2/locale/it-IT.ini
 share/obs/obs-plugins/text-freetype2/locale/ja-JP.ini
 share/obs/obs-plugins/text-freetype2/locale/ka-GE.ini
 share/obs/obs-plugins/text-freetype2/locale/ko-KR.ini
+share/obs/obs-plugins/text-freetype2/locale/mn-MN.ini
 share/obs/obs-plugins/text-freetype2/locale/ms-MY.ini
 share/obs/obs-plugins/text-freetype2/locale/nb-NO.ini
 share/obs/obs-plugins/text-freetype2/locale/nl-NL.ini
@@ -803,6 +820,8 @@ share/obs/obs-plugins/text-freetype2/locale/vi-VN.ini
 share/obs/obs-plugins/text-freetype2/locale/zh-CN.ini
 share/obs/obs-plugins/text-freetype2/locale/zh-TW.ini
 share/obs/obs-plugins/text-freetype2/text_default.effect
+share/obs/obs-studio/authors/AUTHORS
+share/obs/obs-studio/images/overflow.png
 share/obs/obs-studio/license/gplv2.txt
 share/obs/obs-studio/locale.ini
 share/obs/obs-studio/locale/af-ZA.ini
@@ -833,6 +852,7 @@ share/obs/obs-studio/locale/ja-JP.ini
 share/obs/obs-studio/locale/ka-GE.ini
 share/obs/obs-studio/locale/ko-KR.ini
 share/obs/obs-studio/locale/lt-LT.ini
+share/obs/obs-studio/locale/mn-MN.ini
 share/obs/obs-studio/locale/ms-MY.ini
 share/obs/obs-studio/locale/nb-NO.ini
 share/obs/obs-studio/locale/nl-NL.ini
@@ -867,6 +887,7 @@ share/obs/obs-studio/themes/Acri/checkbox_unchecked.png
 share/obs/obs-studio/themes/Acri/checkbox_unchecked_disabled.png
 share/obs/obs-studio/themes/Acri/checkbox_unchecked_focus.png
 share/obs/obs-studio/themes/Acri/cogwheel.png
+share/obs/obs-studio/themes/Acri/cogwheel_2x.png
 share/obs/obs-studio/themes/Acri/down_arrow.png
 share/obs/obs-studio/themes/Acri/minus.png
 share/obs/obs-studio/themes/Acri/mute.png
@@ -884,6 +905,7 @@ share/obs/obs-studio/themes/Acri/up_arrow.png
 share/obs/obs-studio/themes/Acri/updown.png
 share/obs/obs-studio/themes/Dark.qss
 share/obs/obs-studio/themes/Dark/cogwheel.png
+share/obs/obs-studio/themes/Dark/cogwheel_2x.png
 share/obs/obs-studio/themes/Dark/collapse.png
 share/obs/obs-studio/themes/Dark/down_arrow.png
 share/obs/obs-studio/themes/Dark/expand.png

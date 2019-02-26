@@ -1,12 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	obs-studio
-DISTVERSION=	22.0.3
-PORTREVISION=	5
+DISTVERSION=	23.0.0
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	5cf2b5fbf925412620e2a40552d6348203851cb3.patch:-p1 # obs-libfdk: Compatibility fix for new API
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
@@ -35,7 +31,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libv4l2.so:multimedia/libv4l \
 		libx264.so:multimedia/libx264
 
-USES=		cmake compiler:c++11-lib lua pkgconfig python:3.4+ qt:5
+USES=		cmake compiler:c++11-lib gl lua pkgconfig python:3.4+ qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	obsproject
 USE_QT=		core gui widgets x11extras buildtools_build imageformats_run qmake_build
