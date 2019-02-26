@@ -16,6 +16,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 USES=		cmake compiler:c11 sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	FNA-XNA
+USE_LDCONFIG=	yes
 USE_SDL=	sdl2
 
 CMAKE_ON=	FFMPEG
