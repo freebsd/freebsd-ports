@@ -2,7 +2,7 @@
 
 PORTNAME=	rust-bindgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.47.2
+DISTVERSION=	0.47.3
 CATEGORIES=	devel
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -21,8 +21,8 @@ PLIST_FILES=	bin/bindgen
 CARGO_CRATES=	aho-corasick-0.6.8 \
 		ansi_term-0.11.0 \
 		atty-0.2.11 \
-		backtrace-0.3.9 \
-		backtrace-sys-0.1.24 \
+		backtrace-0.3.11 \
+		backtrace-sys-0.1.28 \
 		bitflags-1.0.4 \
 		byteorder-1.2.7 \
 		cc-1.0.25 \
@@ -32,7 +32,7 @@ CARGO_CRATES=	aho-corasick-0.6.8 \
 		clap-2.32.0 \
 		diff-0.1.11 \
 		env_logger-0.6.0 \
-		failure-0.1.3 \
+		failure-0.1.5 \
 		glob-0.2.11 \
 		hashbrown-0.1.7 \
 		humantime-1.1.1 \
@@ -50,7 +50,7 @@ CARGO_CRATES=	aho-corasick-0.6.8 \
 		redox_termios-0.1.1 \
 		regex-1.0.5 \
 		regex-syntax-0.6.2 \
-		rustc-demangle-0.1.9 \
+		rustc-demangle-0.1.13 \
 		scopeguard-0.3.3 \
 		shlex-0.1.1 \
 		strsim-0.7.0 \
