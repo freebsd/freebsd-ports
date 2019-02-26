@@ -1653,6 +1653,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/img/sogo-compact.svg
 GNUstep/Local/Library/SOGo/WebServerResources/img/sogo-full.svg
 GNUstep/Local/Library/SOGo/WebServerResources/img/sogo-logo.png
 GNUstep/Local/Library/SOGo/WebServerResources/img/sogo.ico
+GNUstep/Local/Library/SOGo/WebServerResources/img/voice_over_off.svg
 GNUstep/Local/Library/SOGo/WebServerResources/js/Administration.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Administration.js.map
 GNUstep/Local/Library/SOGo/WebServerResources/js/Administration.services.js
@@ -1756,6 +1757,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler.js.map
 GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler.services.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler.services.js.map
+GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler/Attendees.service.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler/Calendar.service.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler/CalendarController.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler/CalendarListController.js
@@ -1771,6 +1773,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler/sgCalendarListEvent.d
 GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler/sgCalendarListItem.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler/sgCalendarMonthDay.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler/sgCalendarMonthEvent.directive.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler/sgCalendarPrintStylesheet.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler/sgCalendarScrollView.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler/sgCategoryStylesheet.directive.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Scheduler/sgDraggableCalendarBlock.directive.js
