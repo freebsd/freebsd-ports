@@ -1,0 +1,12 @@
+include/F3DAudio.h
+include/FACT.h
+include/FACT3D.h
+include/FAPO.h
+include/FAPOBase.h
+include/FAPOFX.h
+include/FAudio.h
+include/FAudioFX.h
+lib/cmake/FAudio/FAudio-config.cmake
+lib/cmake/FAudio/FAudio-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/FAudio/FAudio-targets.cmake
+lib/libFAudio.so

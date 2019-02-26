@@ -151,6 +151,7 @@
     SUBDIR += fabla2-lv2
     SUBDIR += fapg
     SUBDIR += fasttracker2
+    SUBDIR += faudio
     SUBDIR += faust
     SUBDIR += faust-lv2
     SUBDIR += faustlive
