@@ -1,0 +1,218 @@
+commit 1579a88e491f
+Author: sotaro <sotaro.ikeda.g@gmail.com>
+Date:   Mon Feb 25 12:15:50 2019 +0000
+
+    Bug 1527804 - Trigger composite from frame_callback_handler() r=stransky
+    
+    Bug 1514156 expects that nsWindow::OnExposeEvent() is called after frame_callback_handler() called. But it did not happen during opening add-ons(gecko profiler). Then we need to trigger rendering directly from frame_callback_handler() call.
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D20272
+    
+    --HG--
+    extra : moz-landing-system : lando
+---
+ widget/gtk/mozcontainer.cpp | 20 +++++++++----------
+ widget/gtk/mozcontainer.h   |  7 +++++--
+ widget/gtk/nsWindow.cpp     | 48 ++++++++++++++++++++++++++++++---------------
+ widget/gtk/nsWindow.h       |  4 +++-
+ 4 files changed, 50 insertions(+), 29 deletions(-)
+
+diff --git widget/gtk/mozcontainer.cpp widget/gtk/mozcontainer.cpp
+index 77ac02e2a049..efe5f7ba86e3 100644
+--- widget/gtk/mozcontainer.cpp
++++ widget/gtk/mozcontainer.cpp
+@@ -160,7 +160,7 @@ void moz_container_init(MozContainer *container) {
+   // We can draw to x11 window any time.
+   container->ready_to_draw = GDK_IS_X11_DISPLAY(gdk_display_get_default());
+   container->surface_needs_clear = true;
+-  container->egl_surface_needs_update = false;
++  container->inital_draw_cb = nullptr;
+ #endif
+ }
+ 
+@@ -178,12 +178,18 @@ static void frame_callback_handler(void *data, struct wl_callback *callback,
+                                    uint32_t time) {
+   MozContainer *container = MOZ_CONTAINER(data);
+   g_clear_pointer(&container->frame_callback_handler, wl_callback_destroy);
+-  if (!container->ready_to_draw) {
+-    container->egl_surface_needs_update = true;
++  if (!container->ready_to_draw && container->inital_draw_cb) {
++    container->inital_draw_cb();
+   }
+   container->ready_to_draw = true;
+ }
+ 
++void moz_container_set_initial_draw_callback(
++    MozContainer *container,
++    std::function<void(void)> inital_draw_cb) {
++  container->inital_draw_cb = inital_draw_cb;
++}
++
+ static const struct wl_callback_listener frame_listener = {
+     frame_callback_handler};
+ 
+@@ -214,8 +220,8 @@ static void moz_container_unmap_wayland(MozContainer *container) {
+   g_clear_pointer(&container->frame_callback_handler, wl_callback_destroy);
+ 
+   container->surface_needs_clear = true;
+-  container->egl_surface_needs_update = false;
+   container->ready_to_draw = false;
++  container->inital_draw_cb = nullptr;
+ }
+ 
+ static gint moz_container_get_scale(MozContainer *container) {
+@@ -560,12 +566,6 @@ gboolean moz_container_surface_needs_clear(MozContainer *container) {
+   container->surface_needs_clear = false;
+   return state;
+ }
+-
+-gboolean moz_container_egl_surface_needs_update(MozContainer *container){
+-  gboolean state = container->egl_surface_needs_update;
+-  container->egl_surface_needs_update = false;
+-  return state;
+-}
+ #endif
+ 
+ void moz_container_force_default_visual(MozContainer *container) {
+diff --git widget/gtk/mozcontainer.h widget/gtk/mozcontainer.h
+index ae6d656646c8..51be814ef975 100644
+--- widget/gtk/mozcontainer.h
++++ widget/gtk/mozcontainer.h
+@@ -9,6 +9,7 @@
+ #define __MOZ_CONTAINER_H__
+ 
+ #include <gtk/gtk.h>
++#include <functional>
+ 
+ /*
+  * MozContainer
+@@ -77,8 +78,8 @@ struct _MozContainer {
+   struct wl_egl_window *eglwindow;
+   struct wl_callback *frame_callback_handler;
+   gboolean surface_needs_clear;
+-  gboolean egl_surface_needs_update;
+   gboolean ready_to_draw;
++  std::function<void(void)> inital_draw_cb;
+ #endif
+   gboolean force_default_visual;
+ };
+@@ -97,7 +98,9 @@ struct wl_egl_window *moz_container_get_wl_egl_window(
+ 
+ gboolean moz_container_has_wl_egl_window(MozContainer *container);
+ gboolean moz_container_surface_needs_clear(MozContainer *container);
+-gboolean moz_container_egl_surface_needs_update(MozContainer *container);
++void moz_container_set_initial_draw_callback(
++    MozContainer *container,
++    std::function<void(void)> inital_draw_cb);
+ #endif
+ 
+ #endif /* __MOZ_CONTAINER_H__ */
+diff --git widget/gtk/nsWindow.cpp widget/gtk/nsWindow.cpp
+index acb957d3fb55..54b121ec5514 100644
+--- widget/gtk/nsWindow.cpp
++++ widget/gtk/nsWindow.cpp
+@@ -675,6 +675,12 @@ void nsWindow::Destroy() {
+     gFocusWindow = nullptr;
+   }
+ 
++#ifdef MOZ_WAYLAND
++  if (mContainer) {
++    moz_container_set_initial_draw_callback(mContainer, nullptr);
++  }
++#endif
++
+   GtkWidget *owningWidget = GetMozContainerWidget();
+   if (mShell) {
+     gtk_widget_destroy(mShell);
+@@ -1860,6 +1866,23 @@ static bool ExtractExposeRegion(LayoutDeviceIntRegion &aRegion, cairo_t *cr) {
+   return true;
+ }
+ 
++#ifdef MOZ_WAYLAND
++void nsWindow::WaylandEGLSurfaceForceRedraw() {
++  MOZ_RELEASE_ASSERT(NS_IsMainThread());
++
++  if (mIsDestroyed) {
++    return;
++  }
++
++  if (CompositorBridgeChild* remoteRenderer = GetRemoteRenderer()) {
++    if (mCompositorWidgetDelegate) {
++      mCompositorWidgetDelegate->RequestsUpdatingEGLSurface();
++    }
++    remoteRenderer->SendForcePresent();
++  }
++}
++#endif
++
+ gboolean nsWindow::OnExposeEvent(cairo_t *cr) {
+   // Send any pending resize events so that layout can update.
+   // May run event loop.
+@@ -1888,11 +1911,6 @@ gboolean nsWindow::OnExposeEvent(cairo_t *cr) {
+   region.ScaleRoundOut(scale, scale);
+ 
+   if (GetLayerManager()->AsKnowsCompositor() && mCompositorSession) {
+-#ifdef MOZ_WAYLAND
+-    if(mCompositorWidgetDelegate && WaylandRequestsUpdatingEGLSurface()) {
+-      mCompositorWidgetDelegate->RequestsUpdatingEGLSurface();
+-    }
+-#endif
+     // We need to paint to the screen even if nothing changed, since if we
+     // don't have a compositing window manager, our pixels could be stale.
+     GetLayerManager()->SetNeedsComposite(true);
+@@ -3454,6 +3472,15 @@ nsresult nsWindow::Create(nsIWidget *aParent, nsNativeWidget aNativeParent,
+       // Create a container to hold child windows and child GtkWidgets.
+       GtkWidget *container = moz_container_new();
+       mContainer = MOZ_CONTAINER(container);
++#ifdef MOZ_WAYLAND
++      if (!mIsX11Display && ComputeShouldAccelerate()) {
++        RefPtr<nsWindow> self(this);
++        moz_container_set_initial_draw_callback(mContainer,
++            [self]() -> void {
++              self->WaylandEGLSurfaceForceRedraw();
++            });
++      }
++#endif
+ 
+       // "csd" style is set when widget is realized so we need to call
+       // it explicitly now.
+@@ -6564,17 +6591,6 @@ bool nsWindow::WaylandSurfaceNeedsClear() {
+       "nsWindow::WaylandSurfaceNeedsClear(): We don't have any mContainer!");
+   return false;
+ }
+-
+-bool nsWindow::WaylandRequestsUpdatingEGLSurface() {
+-  if (mContainer) {
+-    return moz_container_egl_surface_needs_update(MOZ_CONTAINER(mContainer));
+-  }
+-
+-  NS_WARNING(
+-      "nsWindow::WaylandSurfaceNeedsClear(): We don't have any mContainer!");
+-  return false;
+-}
+-
+ #endif
+ 
+ #ifdef MOZ_X11
+diff --git widget/gtk/nsWindow.h widget/gtk/nsWindow.h
+index 5d119b4911e1..dbced693be1c 100644
+--- widget/gtk/nsWindow.h
++++ widget/gtk/nsWindow.h
+@@ -245,6 +245,9 @@ class nsWindow final : public nsBaseWidget {
+ 
+   void DispatchContextMenuEventFromMouseEvent(uint16_t domButton,
+                                               GdkEventButton* aEvent);
++#ifdef MOZ_WAYLAND
++  void WaylandEGLSurfaceForceRedraw();
++#endif
+ 
+  public:
+   void ThemeChanged(void);
+@@ -342,7 +345,6 @@ class nsWindow final : public nsBaseWidget {
+   wl_display* GetWaylandDisplay();
+   wl_surface* GetWaylandSurface();
+   bool WaylandSurfaceNeedsClear();
+-  bool WaylandRequestsUpdatingEGLSurface();
+ #endif
+   virtual void GetCompositorWidgetInitData(
+       mozilla::widget::CompositorWidgetInitData* aInitData) override;
