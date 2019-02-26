@@ -2,7 +2,7 @@
 
 PORTNAME=	openal-soft
 PORTVERSION=	1.19.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://openal-soft.org/openal-releases/
 
@@ -37,12 +37,12 @@ OPTIONS_DEFINE=		EXAMPLES CONFIG JACK OSS PORTAUDIO PULSEAUDIO SDL SNDIO
 OPTIONS_DEFAULT=	OSS
 OPTIONS_SUB=		yes
 
-CONFIG_DESC=		Install configuration utility (needs Qt 4.x)
+CONFIG_DESC=		Install configuration utility (needs Qt 5)
 
 CONFIG_CMAKE_BOOL_OFF=	ALSOFT_NO_CONFIG_UTIL
-CONFIG_CMAKE_ON=	-DALSOFT_NO_QT5:BOOL=ON
-CONFIG_USES=		qt:4
-CONFIG_USE=		QT=corelib,gui,qmake_build,moc_build,rcc_build,uic_build
+CONFIG_CMAKE_ON=	-DALSOFT_NO_QT5:BOOL=OFF
+CONFIG_USES=		qt:5
+CONFIG_USE=		QT=core,gui,widgets,buildtools_build,qmake_build
 
 JACK_CMAKE_BOOL=	ALSOFT_REQUIRE_JACK ALSOFT_BACKEND_JACK
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
@@ -61,13 +61,6 @@ SDL_USE=		SDL=sdl2
 
 SNDIO_CMAKE_BOOL=	ALSOFT_REQUIRE_SNDIO ALSOFT_BACKEND_SNDIO
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCONFIG}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/openal|${ETCDIR}|' \
