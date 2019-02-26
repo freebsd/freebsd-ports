@@ -144,7 +144,7 @@ _WX_FILE_python_3.0=	${PYTHON_SITELIBDIR}/wx-3.0-gtk3/wx/__init__.py
 
 # wxgtk 3.1
 _WX_PORT_wx_3.1=	x11-toolkits/wxgtk31
-_WX_LIB_wx_3.0=		wx_baseu-3.1
+_WX_LIB_wx_3.1=		wx_baseu-3.1
 
 # Set _WX_SHVER_comp_ver to 0 and _WX_FILE_comp_ver for libs appropiately.
 # Set _WX_DEPTYPE_comp_ver for "python" to "run", and others to "lib".
