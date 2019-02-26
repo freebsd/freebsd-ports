@@ -22,9 +22,6 @@ OPTIONS_DEFINE=	EXAMPLES
 # (although not elegant) solution.
 CFLAGS+=	-DSTDC_HEADERS
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/^\ttest -f.*todorc.*\n//' ${WRKSRC}/doc/Makefile.in
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for file in scripts.sh scripts.tcsh todorc.example
