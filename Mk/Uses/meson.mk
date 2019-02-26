@@ -13,8 +13,8 @@
 # Variables for ports:
 # MESON_ARGS		- Arguments passed to meson
 #			format: -Denable_foo=true
-# MESON_BUILD_DIR	- Path to the build directory
-#			Default: ${WRKSRC}/_build
+# MESON_BUILD_DIR	- Path to the build directory relative to ${WRKSRC}
+#			Default: _build
 #
 # MAINTAINER: gnome@FreeBSD.org
 
