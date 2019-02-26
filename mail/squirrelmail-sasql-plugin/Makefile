@@ -15,7 +15,7 @@ USE_SM_COMPAT=	yes
 USE_GENERIC_PKGMESSAGE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/\(\$$imap_server_type == \'cyrus\'\)/\1 || \$$imap_server_type == \'courier\'/g" \
+	@${REINPLACE_CMD} -e "s/\($$imap_server_type == 'cyrus'\)/\1 || \$$imap_server_type == 'courier'/g" \
 		-e 's/session_register/sqsession_register/g' \
 		${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/sasql_hooks.php
 	-@${RM} ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/*.bak ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/.cvsignore
