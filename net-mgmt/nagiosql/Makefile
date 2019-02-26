@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/NagiosQL%20${PORTVERSION}/
 
-MAINTAINER=	chris@smartt.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based administration tool for Nagios
 
 LICENSE=	GPLv2
