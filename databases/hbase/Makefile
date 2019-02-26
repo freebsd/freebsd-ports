@@ -10,7 +10,7 @@ MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION} \
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
 DIST_SUBDIR=	hadoop
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Hadoop database, a distributed, scalable, big data store
 
 LICENSE=	APACHE20
