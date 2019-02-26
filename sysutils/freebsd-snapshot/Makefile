@@ -3,7 +3,7 @@
 
 PORTNAME=	freebsd-snapshot
 DISTVERSION=	20091208.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://people.freebsd.org/~rse/dist/
 
