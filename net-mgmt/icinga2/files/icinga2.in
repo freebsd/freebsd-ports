@@ -32,12 +32,14 @@ load_rc_config "${name}"
 : ${icinga2_enable:="NO"}
 : ${icinga2_configfile="%%PREFIX%%/etc/${name}/${name}.conf"}
 : ${icinga2_mkvar:="NO"}
+: ${icinga2_user:="%%ICINGA2USER%%"}
+: ${icinga2_group:="%%ICINGA2GROUP%%"}
+: ${icinga2_webgroup:="www"}
+
 
 command="%%PREFIX%%/sbin/${name}"
 procname="/usr/local/lib/icinga2/sbin/icinga2"
 extra_commands="reload checkconfig configtest"
-icinga2_user="%%ICINGA2USER%%"
-icinga2_group="%%ICINGA2GROUP%%"
 
 icinga2_cachedir="/var/cache/${name}"
 icinga2_libdir="/var/lib/${name}"
@@ -98,14 +100,16 @@ start_precmd() {
         fi
     done
 
-    install -d -o ${icinga2_user} -g www "${icinga2_rundir}/cmd"
+    install -d -o ${icinga2_user} -g ${icinga2_webgroup} "${icinga2_rundir}/cmd"
+
 
   fi
 
   chown -R ${icinga2_user}:${icinga2_group} "${icinga2_libdir}"
   chown -R ${icinga2_user}:${icinga2_group} "${icinga2_spooldir}"
   chown -R ${icinga2_user}:${icinga2_group} "${icinga2_cachedir}"
-  chown -R ${icinga2_user}:www "${icinga2_rundir}/cmd"
+  chown -R ${icinga2_user}:${icinga2_webgroup} "${icinga2_rundir}/cmd"
+
 
   if ! icinga2_checkconfig; then
     return 1
