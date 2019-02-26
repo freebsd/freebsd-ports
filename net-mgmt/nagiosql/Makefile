@@ -3,6 +3,7 @@
 
 PORTNAME=	nagiosql
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/NagiosQL%20${PORTVERSION}/
 
@@ -37,15 +38,15 @@ CURL_USE=	PHP=curl
 FTP_USE=	PHP=ftp
 
 post-patch:
-	${REINPLACE_CMD} -e "s|\'/etc/nagiosql/|\'${ETCDIR}/|g" \
+	${REINPLACE_CMD} -e "s|'/etc/nagiosql/|'${ETCDIR}/|g" \
 		-e "s|/opt/nagios/etc/objects/|${LOCALBASE}/etc/nagios/objects/|" \
 		-e "s|/opt/nagios/bin/nagios|${LOCALBASE}/bin/nagios|" \
 		-e "s|/var/nagios/nagios.lock|/var/spool/nagios/nagios.lock|" \
 		-e "s|/var/nagios/rw/nagios.cmd|/var/spool/nagios/rw/nagios.cmd|" \
 		-e "s|nagios/etc/|etc/nagios/|" \
 		-e "s|nagiosql/etc/|${ETCDIR}/|" \
-		-e "s|\>/etc/nagiosql|\>${ETCDIR}|g" \
-		-e "s|\>/etc/nagios/|\>${LOCALBASE}/etc/nagios/|g" \
+		-e "s|>/etc/nagiosql|>${ETCDIR}|g" \
+		-e "s|>/etc/nagios/|>${LOCALBASE}/etc/nagios/|g" \
 		${WRKSRC}-${PORTVERSION}/install/sql/nagiosQL_v32_db_mysql.sql
 
 	${REINPLACE_CMD} -e "s|\"/etc/|\"${LOCALBASE}/etc/|" \
