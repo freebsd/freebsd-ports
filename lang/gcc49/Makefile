@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.9.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -15,6 +15,7 @@ LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
 DEPRECATED=	Unsupported by upstream. Use GCC 7 or newer instead.
+EXPIRATION_DATE=2018-04-26
 ONLY_FOR_ARCHS=	amd64 armv6 i386 powerpc powerpc64 sparc64
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
@@ -22,18 +23,18 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpc.so:math/mpc
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
-
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
+
+USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
+USE_BINUTILS=	yes
+USE_PERL5=	build
 
 CPE_VENDOR=	gnu
 
 GCC_VERSION=	${PORTVERSION}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
-USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
-USE_BINUTILS=	yes
-USE_PERL5=	build
 SSP_UNSAFE=	yes
 
 OPTIONS_DEFINE=		BOOTSTRAP
