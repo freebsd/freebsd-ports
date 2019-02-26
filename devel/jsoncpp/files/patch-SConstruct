@@ -38,7 +38,7 @@
  if 'TarGz' in env['BUILDERS']:
  	class SrcDistAdder:
  		def __init__( self, env ):
-@@ -164,7 +170,7 @@ env['SRCDIST_ADD'] = SrcDistAdder( env )
+@@ -164,11 +170,11 @@ env['SRCDIST_ADD'] = SrcDistAdder( env )
  env['SRCDIST_TARGET'] = os.path.join( DIST_DIR, 'jsoncpp-src-%s.tar.gz' % env['JSONCPP_VERSION'] )
                        
  env_testing = env.Clone( )
@@ -47,6 +47,11 @@
  
  def buildJSONExample( env, target_sources, target_name ):
      env = env.Clone()
+-    env.Append( CPPPATH = ['#'] )
++    #env.Append( CPPPATH = ['#'] )
+     exe = env.Program( target=target_name,
+                        source=target_sources )
+     env['SRCDIST_ADD']( source=[target_sources] )
 @@ -187,14 +193,14 @@ def buildUnitTests( env, target_sources,
      env.AlwaysBuild( check_alias_target )
  
