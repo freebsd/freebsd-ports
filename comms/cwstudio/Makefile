@@ -2,7 +2,7 @@
 
 PORTNAME=	cwstudio
 DISTVERSION=	0.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SOURCEFORGE/cwstudio
 
@@ -15,7 +15,7 @@ USES+=		ncurses
 USE_WX=		3.0+
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-wx-config=${LOCALBASE}/bin/wxgtk2u-3.0-config
+CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 
 PLIST_FILES=	bin/cwcli \
 		bin/cwcurses \
