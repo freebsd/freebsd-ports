@@ -1,0 +1,2 @@
+bin/semaphore
+@sample %%ETCDIR%%/semaphore_config.json.sample
