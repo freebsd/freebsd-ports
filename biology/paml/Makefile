@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paml
-PORTVERSION=	4.9h
+PORTVERSION=	4.9i
 CATEGORIES=	biology
 MASTER_SITES=	http://abacus.gene.ucl.ac.uk/software/
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -13,6 +13,7 @@ COMMENT=	Phylogenetic Analysis by Maximum Likelihood (PAML)
 LICENSE=	GPLv3
 
 USES=		dos2unix gmake tar:tgz
+
 DOS2UNIX_GLOB=	*.HKYG5 *.aa *.c *.ctl *.dat *.nexus *.nuc *.phy *.result *.tre \
 		*.trees *.txt *.xml paupblock paupend
 
