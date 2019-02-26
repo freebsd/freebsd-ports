@@ -3,4 +3,4 @@ It helps you to easily build a complex configuration with all options,
 manage and use them. NagiosQL is based on a webserver with PHP, MySQL and
 file access to the Nagios configuration files.
 
-WWW: http://www.nagiosql.org/
+WWW: https://sourceforge.net/projects/nagiosql/
