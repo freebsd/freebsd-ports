@@ -2,7 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	5.01.9669
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 PKGNAMESUFFIX=	5
 
@@ -72,7 +72,7 @@ post-patch:
 		-e "s|@save_binary|${SE_DBDIR}/save_binary|" \
 		-e "s|@lang|${SE_DBDIR}/lang|" \
 		-e "s|@azureserver|${SE_DBDIR}/azureserver|" \
-		-e "s|@server_log|${DIR}/server|" \
+		-e "s|@server_log|${SE_LOGDIR}/server|" \
 		-e "s|@security_log|${SE_LOGDIR}/security|" \
 		-e "s|@packet_log|${SE_LOGDIR}/packet|" \
 		-e "s|@secure_nat_log|${SE_LOGDIR}/secure_nat|" \
