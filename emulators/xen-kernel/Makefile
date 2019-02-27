@@ -53,7 +53,7 @@ IGNORE=		only supported on FreeBSD
 .endif
 
 .if ${OSVERSION} < 1200074
-IGNORE=		only supported on recent FreeBSD HEAD
+IGNORE=		only supported on FreeBSD 12.0 or newer
 .endif
 
 # The ports native 'build' target cannot be used because it sets
