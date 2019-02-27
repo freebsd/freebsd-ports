@@ -1,6 +1,6 @@
---- imake.c.orig	2013-07-23 06:53:04.000000000 +0200
-+++ imake.c	2013-08-31 14:57:48.000000000 +0200
-@@ -531,6 +531,14 @@
+--- imake.c.orig	2013-08-17 10:11:50 UTC
++++ imake.c
+@@ -531,6 +531,14 @@ init(void)
  				AddCppArg(p);
  			}
  	}
@@ -15,7 +15,7 @@
  	if ((p = getenv("IMAKECPP")))
  		cpp = p;
  	if ((p = getenv("IMAKEMAKE")))
-@@ -1142,29 +1150,17 @@
+@@ -1142,29 +1150,17 @@ get_binary_format(FILE *inFile)
    int mib[2];
    size_t len;
    int osrel = 0;
