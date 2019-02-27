@@ -104,6 +104,7 @@ lib/ceph/mgr/dashboard/__init__.py
 lib/ceph/mgr/dashboard/base.html
 lib/ceph/mgr/dashboard/cephfs_clients.py
 lib/ceph/mgr/dashboard/clients.html
+lib/ceph/mgr/dashboard/config_options.html
 lib/ceph/mgr/dashboard/filesystem.html
 lib/ceph/mgr/dashboard/health.html
 lib/ceph/mgr/dashboard/module.py

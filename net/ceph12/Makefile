@@ -3,9 +3,9 @@
 
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.2.7
-PORTREVISION=	3
+DISTVERSION=	12.2.11
 CATEGORIES=	net
+PKGNAMESUFFIX=	12
 
 MAINTAINER=	wjw@digiware.nl
 COMMENT=	Ceph delivers object, block, and file storage in a unified system
@@ -104,7 +104,7 @@ post-patch:
 
 pre-configure:
 	${LN} -s ${CONFIGURE_WRKSRC} ${WRKSRC}/build
-	${CP} files/file-git_version ${WRKSRC}/src/.git_version
+	${CP} ${FILESDIR}/file-git_version ${WRKSRC}/src/.git_version
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ceph
