@@ -76,7 +76,7 @@
     SUBDIR += cagibi
     SUBDIR += calendarsupport
     SUBDIR += ccxstream
-    SUBDIR += ceph
+    SUBDIR += ceph12
     SUBDIR += ceph13
     SUBDIR += cf
     SUBDIR += charm
