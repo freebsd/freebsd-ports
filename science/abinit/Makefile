@@ -38,4 +38,7 @@ MPI_VARS=			FFLAGS+=-I${LOCALBASE}/include FCFLAGS+=-I${LOCALBASE}/include
 MPI_LDFLAGS=			${LOCALBASE}/lib/libmpich.so ${LOCALBASE}/lib/libmpicxx.so ${LOCALBASE}/lib/libmpifort.so
 MPI_LIB_DEPENDS=		libmpi.so:net/mpich
 
+do-test:
+	@cd ${WRKSRC}/tests && ./configure && ${GMAKE} check
+
 .include <bsd.port.mk>
