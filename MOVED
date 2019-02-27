@@ -10323,8 +10323,6 @@ vietnamese/kde4-l10||2018-07-17|Has expired: broken for more than three years
 graphics/projectm-libvisual|graphics/libprojectm|2018-07-17|Code of projectm-libvisual was merged into graphics/libprojectm
 graphics/yafray|graphics/yafaray|2018-07-20|Project renamed
 lang/spec.alpha||2018-07-21|Unused in the ports tree
-sysutils/xen-tools|sysutils/xen-tools47|2018-07-23|Renamed to support multiple versions
-emulators/xen-kernel|emulators/xen-kernel47|2018-07-23|Renamed to support multiple versions
 emulators/xen||2018-07-23|Removed to support multiple versions
 devel/py-levenshtein|devel/py-python-Levenshtein|2018-07-28|Remove the duplicate
 comms/xwota||2018-07-28|Has expired: No server message and no upstream releases
@@ -11640,3 +11638,5 @@ net-im/py-xmpppy-yahoo||2019-02-23|Yahoo messenger has been discontinued in July
 graphics/glitz||2019-02-23|Development stopped in 2008, not depended on
 x11/xfree86_xkb_xml||2019-02-24|The project is discontinued
 devel/rtichoke|devel/radian|2019-02-26|Project is renamed
+sysutils/xen-tools411|sysutils/xen-tools|2019-02-27|Rename in preparation for having a single Xen port
+emulators/xen-kernel411|emulators/xen-kernel|2019-02-27|Rename in preparation for having a single Xen port
