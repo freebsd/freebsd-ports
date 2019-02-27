@@ -69,7 +69,7 @@ IGNORE=		only supported on FreeBSD
 .endif
 
 .if ${OSVERSION} < 1200074
-IGNORE=		only supported on recent FreeBSD HEAD
+IGNORE=		only supported on FreeBSD 12.0 or newer
 .endif
 
 .if ${PORT_OPTIONS:MSPICE} && ${OSVERSION} < 1300008
