@@ -3,6 +3,7 @@
 
 PORTNAME=	abinit
 DISTVERSION=	8.10.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://www.abinit.org/sites/default/files/packages/
 
@@ -20,8 +21,21 @@ RUN_DEPENDS=	atompaw:science/atompaw
 
 USES=		fortran gmake localbase:ldflags
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --disable-static
 
+CONFIGURE_ENV=	CC_LDFLAGS="${LDFLAGS}" CXX_LDFLAGS="${LDFLAGS}" FC_LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-shared --disable-static
 FCFLAGS+=	-ffree-line-length-none
+
+OPTIONS_DEFINE=			OPENMP MPI
+OPTIONS_DEFAULT=		OPENMP MPI
+
+OPENMP_CONFIGURE_ENABLE=	openmp
+OPENMP_LDFLAGS=			${LOCALBASE}/lib/libomp.so
+OPENMP_LIB_DEPENDS=		libomp.so:devel/openmp
+
+MPI_CONFIGURE_ENABLE=		mpi
+MPI_VARS=			FFLAGS+=-I${LOCALBASE}/include FCFLAGS+=-I${LOCALBASE}/include
+MPI_LDFLAGS=			${LOCALBASE}/lib/libmpich.so ${LOCALBASE}/lib/libmpicxx.so ${LOCALBASE}/lib/libmpifort.so
+MPI_LIB_DEPENDS=		libmpi.so:net/mpich
 
 .include <bsd.port.mk>
