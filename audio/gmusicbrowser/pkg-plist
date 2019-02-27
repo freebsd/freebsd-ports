@@ -11,6 +11,8 @@ man/man1/gmusicbrowser.man.gz
 %%NLS%%share/locale/it/LC_MESSAGES/gmusicbrowser.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gmusicbrowser.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/gmusicbrowser.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/gmusicbrowser.mo
+%%NLS%%share/locale/ms_MY/LC_MESSAGES/gmusicbrowser.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gmusicbrowser.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gmusicbrowser.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gmusicbrowser.mo
