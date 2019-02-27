@@ -139,6 +139,7 @@
     SUBDIR += numix-theme
     SUBDIR += openbox-arc-theme
     SUBDIR += openbox-themes
+    SUBDIR += papirus-icon-theme
     SUBDIR += plank-theme-moka
     SUBDIR += plasma5-breeze
     SUBDIR += plasma5-breeze-gtk
