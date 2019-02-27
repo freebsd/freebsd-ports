@@ -13,7 +13,7 @@ CPPFLAGS+=	-DWITH_ICONV -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 USES=		iconv
 
-CONFLICTS_INSTALL=	unrar-[0-9]* zh-unrar-[0-9]*
+CONFLICTS_INSTALL=	unrar
 
 post-install:
 	@${ECHO_MSG} "===> Added iconv support, see new switches:"

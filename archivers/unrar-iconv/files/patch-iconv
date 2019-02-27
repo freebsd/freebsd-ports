@@ -1,6 +1,6 @@
---- cmddata.cpp.orig	2017-04-28 17:28:45 UTC
+--- cmddata.cpp.orig	2019-02-24 19:07:17 UTC
 +++ cmddata.cpp
-@@ -172,6 +172,34 @@ void CommandData::ParseDone()
+@@ -166,6 +166,34 @@ void CommandData::ParseDone()
    // Suppress the copyright message and final end of line for 'lb' and 'vb'.
    if ((CmdChar=='L' || CmdChar=='V') && Command[1]=='B')
      BareOutput=true;
@@ -35,7 +35,7 @@
  }
  
  
-@@ -895,6 +923,22 @@ void CommandData::ProcessSwitch(const wc
+@@ -909,6 +937,22 @@ void CommandData::ProcessSwitch(const wc
        else
          wcsncpyz(CommentFile,Switch+1,ASIZE(CommentFile));
        break;
@@ -58,7 +58,9 @@
      case '?' :
        OutHelp(RARX_SUCCESS);
        break;
-@@ -980,7 +1024,11 @@ void CommandData::OutHelp(RAR_EXIT ExitC
+--- cmdmix.cpp.orig	2019-02-24 19:07:17 UTC
++++ cmdmix.cpp
+@@ -63,7 +63,11 @@ void CommandData::OutHelp(RAR_EXIT ExitC
      MCHelpSwAT,MCHelpSwAC,MCHelpSwAD,MCHelpSwAG,MCHelpSwAI,MCHelpSwAP,
      MCHelpSwCm,MCHelpSwCFGm,MCHelpSwCL,MCHelpSwCU,
      MCHelpSwDH,MCHelpSwEP,MCHelpSwEP3,MCHelpSwF,MCHelpSwIDP,MCHelpSwIERR,
@@ -71,7 +73,7 @@
      MCHelpSwO,MCHelpSwOC,MCHelpSwOL,MCHelpSwOR,MCHelpSwOW,MCHelpSwP,
      MCHelpSwPm,MCHelpSwR,MCHelpSwRI,MCHelpSwSC,MCHelpSwSL,MCHelpSwSM,
      MCHelpSwTA,MCHelpSwTB,MCHelpSwTN,MCHelpSwTO,MCHelpSwTS,MCHelpSwU,
---- global.hpp.orig	2017-04-28 17:28:46 UTC
+--- global.hpp.orig	2019-02-24 19:07:20 UTC
 +++ global.hpp
 @@ -9,6 +9,17 @@
  
@@ -79,19 +81,19 @@
  
 +#ifdef WITH_ICONV
 +#define OPT_DEFAULT "IGNORE"	/* ignore unrepresentable chars */
-+
+ 
 +#define ENC_MAXLEN 32		/* encoding name maximum length */
 +#define OPT_MAXLEN 9		/* strlen("TRANSLIT") */
- 
-+EXTVAR iconv_t h_E2I;			/* ExtToInt handler */
-+EXTVAR iconv_t h_I2E;			/* IntToExt handler */
++ 
++EXTVAR iconv_t h_E2I;		/* ExtToInt handler */
++EXTVAR iconv_t h_I2E;		/* IntToExt handler */
 +EXTVAR char encInt[ENC_MAXLEN];	/* internal (archive) encoding */
 +EXTVAR char encExt[ENC_MAXLEN];	/* external (filesystem) encoding */
 +EXTVAR char encOpt[OPT_MAXLEN];	/* encoding option (ignore/translit) */
 +#endif
  
  #endif
---- loclang.hpp.orig	2017-04-28 17:28:46 UTC
+--- loclang.hpp.orig	2019-02-24 19:07:20 UTC
 +++ loclang.hpp
 @@ -8,7 +8,7 @@
  #define   MRegTo             L"\nRegistered to %s\n"
@@ -102,7 +104,7 @@
  #define   MBeta              L"beta"
  #define   Mx86               L"x86"
  #define   Mx64               L"x64"
-@@ -324,7 +324,7 @@
+@@ -323,7 +323,7 @@
  #define   MProcessArc        L"\n\nProcessing archive %s"
  #define   MCorrectingName    L"\nWARNING: Attempting to correct the invalid file name"
  #define   MUnpCannotMerge    L"\nWARNING: You need to start extraction from a previous volume to unpack %s"
@@ -111,7 +113,7 @@
  #define   MSubHeadCorrupt    L"\nERROR: Corrupt data header found, ignored"
  #define   MSubHeadUnknown    L"\nWARNING: Unknown data header format, ignored"
  #define   MSubHeadDataCRC    L"\nERROR: Corrupt %s data block"
-@@ -352,6 +352,12 @@
+@@ -351,6 +351,12 @@
  #define   MSHelpCmdV         L"\n  -v      Verbosely list contents of archive" 
  #define   MRecVolLimit       L"\nTotal number of usual and recovery volumes must not exceed %d"
  #define   MVolumeNumber      L"volume %d"
@@ -122,11 +124,11 @@
 +#define   MIconvCannotOpen   L"\nCannot open iconv to convert between '%s' and '%s' with option '%s'"
 +#endif
  #define   MCannotDelete      L"\nCannot delete %s"
+ #define   MRecycleFailed     L"\nCannot move some files and folders to Recycle Bin"
  #define   MCalcCRC           L"\nCalculating the checksum"
- #define   MTooLargeSFXArc    L"\nWARNING: Too large SFX archive. Windows cannot run the executable file exceeding 4 GB."
---- os.hpp.orig	2017-04-28 17:28:46 UTC
+--- os.hpp.orig	2019-02-27 23:24:23 UTC
 +++ os.hpp
-@@ -150,6 +150,10 @@
+@@ -170,6 +170,10 @@
  #include <locale.h>
  
  
@@ -137,7 +139,7 @@
  #ifdef  S_IFLNK
  #define SAVE_LINKS
  #endif
---- strfn.cpp.orig	2017-04-28 17:28:47 UTC
+--- strfn.cpp.orig	2019-02-24 19:07:23 UTC
 +++ strfn.cpp
 @@ -14,6 +14,19 @@ const wchar *NullToEmpty(const wchar *St
  
