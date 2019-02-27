@@ -19,14 +19,14 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
 		libfreetype.so:print/freetype2	\
 		libftgl.so:graphics/ftgl
 
-USES=		fortran gmake libtool pkgconfig tar:bzip2
+USES=		compiler:c11 fortran gl gmake gnome libtool localbase:ldflags \
+		pkgconfig tar:bzip2
 USE_XORG=	x11
 USE_GNOME=	gtk20 intltool cairo
-USE_GL=		yes
+USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc --disable-python-module
-CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	${CFLAGS}
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
