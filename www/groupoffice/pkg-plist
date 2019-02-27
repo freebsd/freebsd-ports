@@ -155,7 +155,6 @@
 %%WWWDIR%%/go/base/model/Group.php
 %%WWWDIR%%/go/base/model/Grouped.php
 %%WWWDIR%%/go/base/model/Holiday.php
-%%WWWDIR%%/go/base/model/LinkFolder.php
 %%WWWDIR%%/go/base/model/ModelCache.php
 %%WWWDIR%%/go/base/model/ModelCollection.php
 %%WWWDIR%%/go/base/model/ModelType.php
@@ -2938,6 +2937,7 @@
 %%WWWDIR%%/modules/projects2/views/Extjs3/IncomeDialog.js
 %%WWWDIR%%/modules/projects2/views/Extjs3/IncomeGrid.js
 %%WWWDIR%%/modules/projects2/views/Extjs3/InvoiceDialog.js
+%%WWWDIR%%/modules/projects2/views/Extjs3/InvoiceProjectDialog.js
 %%WWWDIR%%/modules/projects2/views/Extjs3/InvoiceablePanel.js
 %%WWWDIR%%/modules/projects2/views/Extjs3/MergeDialog.js
 %%WWWDIR%%/modules/projects2/views/Extjs3/OfficeTimePanel.js
@@ -7826,6 +7826,7 @@
 %%WWWDIR%%/views/Extjs3/javascript/go/usersettings/LookAndFeelPanel.js
 %%WWWDIR%%/views/Extjs3/javascript/go/usersettings/UserSettingsDialog.js
 %%WWWDIR%%/views/Extjs3/javascript/go/util.js
+%%WWWDIR%%/views/Extjs3/javascript/go/util/Cookies.js
 %%WWWDIR%%/views/Extjs3/javascript/go/util/Format.js
 %%WWWDIR%%/views/Extjs3/javascript/grids/CheckColumn.js
 %%WWWDIR%%/views/Extjs3/javascript/grids/ColumnRenderers.js
