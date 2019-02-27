@@ -3,6 +3,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.7.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -78,7 +79,6 @@ DNS_RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS
 USE_GITHUB=	yes
 GH_ACCOUNT=	oetiker
 GH_PROJECT=	SmokePing
-GH_TAGNAME=	9b2ecb9
 
 # We will take these from CPAN instead
 post-extract:

@@ -50,6 +50,7 @@ man/man3/Smokeping_probes_FPing6.3.gz
 man/man3/Smokeping_probes_FPingContinuous.3.gz
 man/man3/Smokeping_probes_FTPtransfer.3.gz
 man/man3/Smokeping_probes_IOSPing.3.gz
+man/man3/Smokeping_probes_IRTT.3.gz
 man/man3/Smokeping_probes_LDAP.3.gz
 man/man3/Smokeping_probes_NFSping.3.gz
 man/man3/Smokeping_probes_OpenSSHEOSPing.3.gz
@@ -145,6 +146,7 @@ smokeping/lib/Smokeping/probes/FPing6.pm
 smokeping/lib/Smokeping/probes/FPingContinuous.pm
 smokeping/lib/Smokeping/probes/FTPtransfer.pm
 smokeping/lib/Smokeping/probes/IOSPing.pm
+smokeping/lib/Smokeping/probes/IRTT.pm
 smokeping/lib/Smokeping/probes/LDAP.pm
 smokeping/lib/Smokeping/probes/NFSping.pm
 smokeping/lib/Smokeping/probes/OpenSSHEOSPing.pm
