@@ -210,6 +210,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/toolchains/polygons_remove_from_boundary.xml
 %%DATADIR%%/toolchains/shapes_select_delete.xml
 %%DATADIR%%/toolchains/sieve_and_clump.xml
+%%DATADIR%%/toolchains/ta_summits.xml
 %%DATADIR%%/toolchains/temperature_downscaling.xml
 %%DATADIR%%/toolchains/temperature_downscaling_bulk.xml
 %%DATADIR%%/toolchains/terrain_analysis.xml
