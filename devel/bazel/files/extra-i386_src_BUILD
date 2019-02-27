@@ -1,11 +1,11 @@
---- src/BUILD.orig	2019-01-08 10:17:38.552913000 +0000
-+++ src/BUILD	2019-01-08 10:18:35.379310000 +0000
-@@ -174,7 +174,7 @@
-                    "//src/java_tools/singlejar:SingleJar_deploy.jar",
-                ],
-                "//conditions:default": [
--                   "//src/tools/singlejar:singlejar_local",
-+                   "//src/java_tools/singlejar:SingleJar_deploy.jar",
-                ],
-            }) +
-            jdk,
+--- src/BUILD.orig	1980-01-01 00:00:00.000000000 +0000
++++ src/BUILD	2019-02-06 14:36:18.532824000 +0000
+@@ -131,7 +131,7 @@
+ ] + select({
+     "//src/conditions:arm": [],
+     "//conditions:default": [
+-        "//src/tools/singlejar:singlejar_local",
++        "//src/java_tools/singlejar:SingleJar_deploy.jar",
+     ],
+ })
+ 
