@@ -4,6 +4,7 @@
 PORTNAME=	nfdump
 PORTVERSION=	1.6.17
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	pi@FreeBSD.org
@@ -13,16 +14,17 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/BSD-license.txt
 
 USES=		autoreconf libtool pkgconfig
-GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	phaag
 
+GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
+
 #flow-tools support
 OPTIONS_DEFINE=		DOCS FT2NFDUMP NFPROFILE FIXTIMEBUG READPCAP NFTRACK \
-			SFLOW NFDUMP15 NSEL
+			SFLOW NFDUMP15 NSEL INFLUXDB
 OPTIONS_DEFAULT=	NFPROFILE
 
 FT2NFDUMP_DESC=		With Flow-tools to nfdump converter
@@ -33,6 +35,7 @@ NFTRACK_DESC=		With PortTracker support
 SFLOW_DESC=		Build sflow collector daemon also
 NFDUMP15_DESC=		Enable compatibility with version 1.5
 NSEL_DESC=		Read and process ASA/NSEL/NEL event data
+INFLUXDB_DESC=		Enable stats to InfluxDB
 
 post-patch:
 	${REINPLACE_CMD} 's|-ggdb||' ${WRKSRC}/bin/Makefile.am
@@ -108,11 +111,19 @@ PLIST_FILES+=	bin/sfcapd man/man1/sfcapd.1.gz
 CONFIGURE_ARGS+=	--disable-sflow
 .endif
 
+#influxdb support
+.if ${PORT_OPTIONS:MINFLUXDB}
+CONFIGURE_ARGS+=	--enable-influxdb
+LIB_DEPENDS+=		libcurl.so:ftp/curl
+.else
+CONFIGURE_ARGS+=	--disable-influxdb
+.endif
+
 do-install:
 .for binary in nfanon nfcapd nfdump nfexpire nfreplay
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/${binary} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/bin/.libs/libnfdump-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/bin/.libs/libnfdump-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib
 
 .if ${PORT_OPTIONS:MNFPROFILE}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/nfprofile ${STAGEDIR}${PREFIX}/bin
