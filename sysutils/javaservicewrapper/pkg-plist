@@ -34,6 +34,9 @@ bin/javaservicewrapper
 %%DATADIR%%/test/backgroundthreads.conf
 %%DATADIR%%/test/childwrapper
 %%DATADIR%%/test/childwrapper.conf
+%%DATADIR%%/test/common/matchOutput
+%%DATADIR%%/test/common/report
+%%DATADIR%%/test/common/resourcelimit
 %%DATADIR%%/test/daemonthreads
 %%DATADIR%%/test/daemonthreads.conf
 %%DATADIR%%/test/defaultstripquotes-01-none
@@ -89,6 +92,10 @@ bin/javaservicewrapper
 %%DATADIR%%/test/javaadditionalfile-07-envvars
 %%DATADIR%%/test/javaadditionalfile-07-envvars.conf
 %%DATADIR%%/test/javaadditionalfile-07-envvars.param
+%%DATADIR%%/test/jvmencoding
+%%DATADIR%%/test/jvmencoding.conf
+%%DATADIR%%/test/jvmencoding2
+%%DATADIR%%/test/jvmencoding2.conf
 %%DATADIR%%/test/loadedgcoutput
 %%DATADIR%%/test/loadedgcoutput.conf
 %%DATADIR%%/test/loadedlogoutput
@@ -127,6 +134,11 @@ bin/javaservicewrapper
 %%DATADIR%%/test/postshutdowngc.conf
 %%DATADIR%%/test/quickcomplete
 %%DATADIR%%/test/quickcomplete.conf
+%%DATADIR%%/test/resourcelimit_data
+%%DATADIR%%/test/resourcelimit_data.conf
+%%DATADIR%%/test/resourcelimit_nofile
+%%DATADIR%%/test/resourcelimit_nofile.conf
+%%DATADIR%%/test/resourcelimit.conf
 %%DATADIR%%/test/restarter
 %%DATADIR%%/test/restarter.conf
 %%DATADIR%%/test/shutdownhook
