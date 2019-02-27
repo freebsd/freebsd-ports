@@ -2,6 +2,7 @@
 
 PORTNAME=	xrootd
 DISTVERSION=	4.8.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://xrootd.org/download/v${DISTVERSION}/
 
@@ -18,7 +19,7 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPL
 
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	librados.so:net/ceph
+LIB_DEPENDS=	librados.so:net/ceph12
 
 USES=		cmake gnome localbase:ldflags pkgconfig readline shebangfix ssl
 SHEBANG_GLOB=	*.sh
