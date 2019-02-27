@@ -1,6 +1,6 @@
---- ./imakemdep.h.orig	2012-03-08 06:47:32.000000000 +0100
-+++ ./imakemdep.h	2013-06-12 20:22:52.058999526 +0200
-@@ -380,7 +383,7 @@
+--- imakemdep.h.orig	2013-08-17 10:11:06 UTC
++++ imakemdep.h
+@@ -365,7 +365,7 @@ const char *cpp_argv[ARGUMENTS] = {
      defined(__GNUC__) || defined(__GLIBC__)
  #    ifdef __i386__
  	"-D__i386__",
