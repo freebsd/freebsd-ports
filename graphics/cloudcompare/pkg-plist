@@ -32,6 +32,7 @@ share/applications/cloudcompare.desktop
 %%DATADIR%%/shaders/SSAO/ssao.frag
 %%DATADIR%%/shaders/SSAO/ssao.vert
 %%DATADIR%%/translations/CloudCompare_fr.qm
+%%DATADIR%%/translations/CloudCompare_ja.qm
 %%DATADIR%%/translations/CloudCompare_pt.qm
 %%DATADIR%%/translations/CloudCompare_ru.qm
 share/pixmaps/ccViewer.png

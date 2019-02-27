@@ -2,7 +2,7 @@
 
 PORTNAME=	cloudcompare
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.1
+DISTVERSION=	2.10.2
 CATEGORIES=	graphics
 
 MAINTAINER=	neel@neelc.org
