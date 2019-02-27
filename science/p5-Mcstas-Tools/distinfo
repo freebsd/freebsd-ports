@@ -1,2 +1,5 @@
-SHA256 (mcstas-tools-perl-2.2a-src.tar.gz) = ccb35ca79075c7a4556c2cd246becb8437c7ddfabae1e1946dddc092e01f2f73
-SIZE (mcstas-tools-perl-2.2a-src.tar.gz) = 256717
+TIMESTAMP = 1546522722
+SHA256 (mcstas-tools-perl-2.5-src.tar.gz) = 9bca4b97351661d2fee14d5d23ac0d1b4c846e9c8161de667e247ae5ec422661
+SIZE (mcstas-tools-perl-2.5-src.tar.gz) = 223795
+SHA256 (mcstas-tools-perl-cmdline-2.5-src.tar.gz) = b5cdf4c46b056fcf35939778b6ddf5542498ecbff213f1be839c8b81fa9d5df6
+SIZE (mcstas-tools-perl-cmdline-2.5-src.tar.gz) = 76353
