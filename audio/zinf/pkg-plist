@@ -5,7 +5,6 @@ lib/zinf/plugins/cd.lmc
 lib/zinf/plugins/cd.pmo
 lib/zinf/plugins/cmdline.ui
 lib/zinf/plugins/download.ui
-%%ESOUND%%lib/zinf/plugins/esound.pmo
 lib/zinf/plugins/http.pmi
 lib/zinf/plugins/id3lib.mdf
 lib/zinf/plugins/irman.ui
