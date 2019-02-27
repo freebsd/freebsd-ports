@@ -11639,3 +11639,4 @@ net-im/libyahoo2||2019-02-23|Yahoo messenger has been discontinued in July 17, 2
 net-im/py-xmpppy-yahoo||2019-02-23|Yahoo messenger has been discontinued in July 17, 2018
 graphics/glitz||2019-02-23|Development stopped in 2008, not depended on
 x11/xfree86_xkb_xml||2019-02-24|The project is discontinued
+devel/rtichoke|devel/radian|2019-02-26|Project is renamed
