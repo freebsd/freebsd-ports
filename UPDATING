@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190227:
+  AFFECTS: users of security/softether, security/softether-devel
+  AUTHOR: meta@FreeBSD.org
+
+  These ports' bridge, client, server daemon unintendedly had spit out
+  chain_certs (certificate chain) directory on libexec directory until
+  r494024.
+
+  If your ${PREFIX}/libexec/softether/chain_certs directory is empty, you
+  can remove the directory safely. If the directory is not empty, move it
+  to ${SE_DBDIR} when upgrading softether. Following commands should help:
+
+      service softether_(bridge|cleint|server) stop
+      (portmaster, portupgrade or pkg upgrade)
+      mv ${PREFIX}/libexec/softether/chain_certs ${SE_DBDIR}/
+      service softether_(bridge|cleint|server) start
+
+  With the default Makefile settings, ${SE_DBDIR} is set to /var/db/softether.
+
 20190224:
   AFFECTS: users of security/gnutls
   AUTHOR: tijl@FreeBSD.org
