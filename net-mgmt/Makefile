@@ -204,6 +204,7 @@
     SUBDIR += nsca27
     SUBDIR += nsca27-client
     SUBDIR += nstat
+    SUBDIR += nsd_exporter
     SUBDIR += nstreams
     SUBDIR += nvidia_gpu_prometheus_exporter
     SUBDIR += observium
