@@ -14,6 +14,9 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64
 
+DEPRECATED=	This port is about to be removed, please update to a newer Xen version
+EXPIRATION_DATE=2019-07-01
+
 USES=		cpe gmake python:2.7,build
 
 # We need to use ld from ports because the version in base doesn't

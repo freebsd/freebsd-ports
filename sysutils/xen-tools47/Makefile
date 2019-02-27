@@ -26,6 +26,9 @@ OPTIONS_DEFINE=	DOCS
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64"
 
+DEPRECATED=	This port is about to be removed, please update to a newer Xen version
+EXPIRATION_DATE=2019-07-01
+
 USES=		cpe gettext gmake libtool localbase:ldflags perl5 pkgconfig \
 		python:2.7 shebangfix
 USE_GNOME=	glib20
