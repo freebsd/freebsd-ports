@@ -1,8 +1,6 @@
-diff --git src/Cedar/Server.c src/Cedar/Server.c
-index 2a100ec..ee58f37 100644
---- src/Cedar/Server.c
+--- src/Cedar/Server.c.orig	2016-04-24 14:49:31 UTC
 +++ src/Cedar/Server.c
-@@ -10859,23 +10859,7 @@ bool SiCheckCurrentRegion(CEDAR *c, char *r)
+@@ -10822,23 +10822,7 @@ bool SiCheckCurrentRegion(CEDAR *c, char
  // 
  bool SiIsEnterpriseFunctionsRestrictedOnOpenSource(CEDAR *c)
  {
