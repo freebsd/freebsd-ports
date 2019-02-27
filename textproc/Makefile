@@ -1700,6 +1700,7 @@
     SUBDIR += scr2txt
     SUBDIR += scss
     SUBDIR += scws
+    SUBDIR += sd
     SUBDIR += sdcv
     SUBDIR += sdf
     SUBDIR += sdif
