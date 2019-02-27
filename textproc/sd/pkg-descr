@@ -1,0 +1,16 @@
+sd is an intuitive find & replace tool.
+
+Features:
+- Painless regular expressions.  sd uses regex syntax that you
+  already know from JavaScript and Python.  Forget about dealing
+  with quirks of sed or awk - get productive immediately.
+- String-literal mode.  Non-regex find & replace.  No more backslashes
+  or remembering which characters are special and need to be escaped.
+- Easy to read, easy to write.  Find & replace expressions are split
+  up, which makes them easy to read and write.  No more messing with
+  unclosed and escaped slashes.
+- Smart, common-sense defaults.  Smart-cased regular expressions
+  also come with a sane syntax that's not opt-in.  Defaults follow
+  common sense and are tailored for typical daily use.
+
+WWW: https://github.com/chmln/sd
