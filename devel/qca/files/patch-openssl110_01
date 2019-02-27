@@ -1,0 +1,44 @@
+Revert a change to the 2.1 branch that conflicts with a more extensive one from
+the master branch (159e144abf, "Disable missed openssl cipher suites"). That
+one is more extensive and is necessary for a clean backport of the upstream
+change adding support for OpenSSL 1.1.0.
+---
+From ecec3886ac73a5cfc8eb1f5929171afb89b204c3 Mon Sep 17 00:00:00 2001
+From: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date: Mon, 25 Feb 2019 13:31:51 +0100
+Subject: [PATCH 1/2] Revert "tlsunittest: disable some ciphers"
+
+This reverts commit 89800d4341a3346cee53bc28e18d9a3972e33378.
+---
+ unittest/tls/tlsunittest.cpp | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+diff --git a/unittest/tls/tlsunittest.cpp b/unittest/tls/tlsunittest.cpp
+index fb8fa10..74c0b18 100644
+--- unittest/tls/tlsunittest.cpp
++++ unittest/tls/tlsunittest.cpp
+@@ -69,9 +69,7 @@ void TLSUnitTest::testCipherList()
+ 	QVERIFY( cipherList.contains("TLS_DHE_DSS_WITH_AES_128_CBC_SHA") );
+ 	QVERIFY( cipherList.contains("TLS_RSA_WITH_AES_128_CBC_SHA") );
+ 	QVERIFY( cipherList.contains("TLS_RSA_WITH_RC4_128_SHA") );
+-
+-	// Fedora 22 has no TLS_RSA_WITH_RC4_128_MD5
+-	// QVERIFY( cipherList.contains("TLS_RSA_WITH_RC4_128_MD5") );
++	QVERIFY( cipherList.contains("TLS_RSA_WITH_RC4_128_MD5") );
+ 
+ 	// Fedora 20 openssl has no this cipher suites.
+ 	// I just believe that F20 has the most strict patent rules
+@@ -98,9 +96,7 @@ void TLSUnitTest::testCipherList()
+ 	QVERIFY( cipherList.contains("SSL_DHE_DSS_WITH_AES_128_CBC_SHA") );
+ 	QVERIFY( cipherList.contains("SSL_RSA_WITH_AES_128_CBC_SHA") );
+ 	QVERIFY( cipherList.contains("SSL_RSA_WITH_RC4_128_SHA") );
+-
+-	// Fedora 22 has no SSL_RSA_WITH_RC4_128_MD5
+-	// QVERIFY( cipherList.contains("SSL_RSA_WITH_RC4_128_MD5") );
++	QVERIFY( cipherList.contains("SSL_RSA_WITH_RC4_128_MD5") );
+ 
+ 	// QVERIFY( cipherList.contains("SSL_DHE_RSA_WITH_DES_CBC_SHA") );
+ 	// QVERIFY( cipherList.contains("SSL_DHE_DSS_WITH_DES_CBC_SHA") );
+-- 
+2.20.1
+

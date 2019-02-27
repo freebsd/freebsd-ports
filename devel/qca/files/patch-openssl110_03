@@ -1,7 +1,325 @@
-This is an extract of upstream commit 
-    https://cgit.kde.org/qca.git/commit/?id=d58e20ee652038dc4ec4fe4765dc3639ed735526
+The upstream commit is d58e20ee65, "Add support for OpenSSL 1.1.0" by
+the same author below. This is a backport for a commit that only
+landed in QCA's master branch.
 
---- plugins/qca-ossl/qca-ossl.cpp.orig	2017-02-06 12:29:44 UTC
+Instead of backporting the vanilla commit from upstream, grab the
+OpenSUSE version created by the same author of the upstream change: it
+resolves some conflicts due to the fact that the upstream commit was
+applied on top of commit 57878ff44 ("Add support for AES GCM and AES
+CCM modes"), which is not present in the 2.1 branch that version 2.1.3
+is based on.
+---
+From 32bab34def80e08ca0b0d3a75f521369a8ee9ff0 Mon Sep 17 00:00:00 2001
+From: Fabian Vogt <fabian@ritter-vogt.de>
+Date: Sat, 16 Dec 2017 22:29:40 +0100
+Subject: [PATCH 3/3] Add support for OpenSSL 1.1.0
+
+Test Plan:
+Ran the testsuite with OpenSSL 1.1.0g and 1.0.2j, all passed.
+Using this code with kdeconnect and okteta successfully on my system now.
+
+Reviewers: iromanov
+
+Differential Revision: https://phabricator.kde.org/D9416
+---
+ plugins/qca-ossl/ossl110-compat.h | 283 ++++++++++++++++++
+ plugins/qca-ossl/qca-ossl.cpp     | 587 +++++++++++++++++++++++++-------------
+ unittest/tls/tlsunittest.cpp      |  35 +--
+ 3 files changed, 687 insertions(+), 218 deletions(-)
+ create mode 100644 plugins/qca-ossl/ossl110-compat.h
+
+diff --git a/plugins/qca-ossl/ossl110-compat.h b/plugins/qca-ossl/ossl110-compat.h
+new file mode 100644
+index 0000000..ec15475
+--- /dev/null
++++ plugins/qca-ossl/ossl110-compat.h
+@@ -0,0 +1,283 @@
++/*
++ * Copyright (C) 2017 Gabriel Souza Franco <gabrielfrancosouza@gmail.com>
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ *
++ * This library is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * Lesser General Public License for more details.
++ *
++ * You should have received a copy of the GNU Lesser General Public
++ * License along with this library; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
++ *
++ */
++
++#ifndef OSSL110COMPAT_H
++#define OSSL110COMPAT_H
++
++#include <openssl/evp.h>
++#include <openssl/hmac.h>
++#include <openssl/rsa.h>
++#include <openssl/dsa.h>
++
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#define RSA_F_RSA_METH_DUP 161
++
++static void DSA_SIG_get0(const DSA_SIG *sig, const BIGNUM **pr, const BIGNUM **ps)
++{
++    if (pr)
++        *pr = sig->r;
++    if (ps)
++        *ps = sig->s;
++}
++
++static int DSA_SIG_set0(DSA_SIG *sig, BIGNUM *r, BIGNUM *s)
++{
++    if (!sig) return 0;
++    sig->r = r;
++    sig->s = s;
++    return 1;
++}
++
++static void DSA_get0_pqg(const DSA *dsa, const BIGNUM **p, const BIGNUM **q, const BIGNUM **g)
++{
++    if (p)
++        *p = dsa->p;
++    if (q)
++        *q = dsa->q;
++    if (g)
++        *g = dsa->g;
++}
++
++static int DSA_set0_pqg(DSA *dsa, BIGNUM *p, BIGNUM *q, BIGNUM *g)
++{
++    if (!dsa) return 0;
++    dsa->p = p;
++    dsa->q = q;
++    dsa->g = g;
++    return 1;
++}
++
++static void RSA_get0_key(const RSA *rsa, const BIGNUM **n, const BIGNUM **e, const BIGNUM **d)
++{
++    if (n)
++        *n = rsa->n;
++    if (e)
++        *e = rsa->e;
++    if (d)
++        *d = rsa->d;
++}
++
++static int RSA_set0_key(RSA *rsa, BIGNUM *n, BIGNUM *e, BIGNUM *d)
++{
++    if (!rsa) return 0;
++    rsa->n = n;
++    rsa->e = e;
++    rsa->d = d;
++    return 1;
++}
++
++static void RSA_get0_factors(const RSA *rsa, const BIGNUM **p, const BIGNUM **q)
++{
++    if (p)
++        *p = rsa->p;
++    if (q)
++        *q = rsa->q;
++}
++
++static int RSA_set0_factors(RSA *rsa, BIGNUM *p, BIGNUM *q)
++{
++    if (!rsa) return 0;
++    rsa->p = p;
++    rsa->q = q;
++    return 1;
++}
++
++static void DH_get0_pqg(const DH *dh, const BIGNUM **p, const BIGNUM **q, const BIGNUM **g)
++{
++    if (p)
++        *p = dh->p;
++    if (q)
++        *q = dh->q;
++    if (g)
++        *g = dh->g;
++}
++
++static int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g)
++{
++    if (!dh) return 0;
++    dh->p = p;
++    dh->q = q;
++    dh->g = g;
++    return 1;
++}
++
++static void DH_get0_key(const DH *dh, const BIGNUM **pub_key, const BIGNUM **priv_key)
++{
++    if (pub_key)
++        *pub_key = dh->pub_key;
++    if (priv_key)
++        *priv_key = dh->priv_key;
++}
++
++static int DH_set0_key(DH *dh, BIGNUM *pub_key, BIGNUM *priv_key)
++{
++    if (!dh) return 0;
++    dh->pub_key = pub_key;
++    dh->priv_key = priv_key;
++    return 1;
++}
++
++static void DSA_get0_key(const DSA *dsa, const BIGNUM **pub_key, const BIGNUM **priv_key)
++{
++    if (pub_key)
++        *pub_key = dsa->pub_key;
++    if (priv_key)
++        *priv_key = dsa->priv_key;
++}
++
++static int DSA_set0_key(DSA *dsa, BIGNUM *pub_key, BIGNUM *priv_key)
++{
++    if (!dsa) return 0;
++    dsa->pub_key = pub_key;
++    dsa->priv_key = priv_key;
++    return 1;
++}
++
++static void X509_SIG_getm(const X509_SIG *sig, X509_ALGOR **palg, ASN1_OCTET_STRING **pdigest)
++{
++    if (palg)
++        *palg = sig->algor;
++    if (pdigest)
++        *pdigest = sig->digest;
++}
++
++static void X509_REQ_get0_signature(const X509_REQ *req, const ASN1_BIT_STRING **psig, const X509_ALGOR **palg)
++{
++    if (psig)
++        *psig = req->signature;
++    if (palg)
++        *palg = req->sig_alg;
++}
++
++static void X509_CRL_get0_signature(const X509_CRL *crl, const ASN1_BIT_STRING **psig, const X509_ALGOR **palg)
++{
++    if (psig)
++        *psig = crl->signature;
++    if (palg)
++        *palg = crl->sig_alg;
++}
++
++static RSA_METHOD *RSA_meth_dup(const RSA_METHOD *meth)
++{
++    if (!meth)
++        return NULL;
++
++    RSA_METHOD *_meth = (RSA_METHOD *) OPENSSL_malloc(sizeof(*_meth));
++
++    if (!_meth)
++    {
++        RSAerr(RSA_F_RSA_METH_DUP, ERR_R_MALLOC_FAILURE);
++        return NULL;
++    }
++
++    memcpy(_meth, meth, sizeof(*_meth));
++    _meth->name = strdup(meth->name);
++    if (!_meth->name) {
++        OPENSSL_free(_meth);
++        RSAerr(RSA_F_RSA_METH_DUP, ERR_R_MALLOC_FAILURE);
++        return NULL;
++    }
++
++    return _meth;
++}
++
++static int RSA_meth_set_priv_enc(RSA_METHOD *rsa, int (*priv_enc) (int flen, const unsigned char *from,
++    unsigned char *to, RSA *rsa, int padding))
++{
++    if (!rsa) return 0;
++    rsa->rsa_priv_enc = priv_enc;
++    return 1;
++}
++
++static int RSA_meth_set_priv_dec(RSA_METHOD *rsa, int (*priv_dec) (int flen, const unsigned char *from,
++    unsigned char *to, RSA *rsa, int padding))
++{
++    if (!rsa) return 0;
++    rsa->rsa_priv_dec = priv_dec;
++    return 1;
++}
++
++static int RSA_meth_set_sign(RSA_METHOD *meth, int (*sign) (int type, const unsigned char *m,
++    unsigned int m_length, unsigned char *sigret, unsigned int *siglen, const RSA *rsa))
++{
++    if (!meth) return 0;
++    meth->rsa_sign = sign;
++    return 1;
++}
++
++static int RSA_meth_set_verify(RSA_METHOD *meth, int (*verify) (int dtype, const unsigned char *m,
++    unsigned int m_length, const unsigned char *sigbuf, unsigned int siglen, const RSA *rsa))
++{
++    if (!meth) return 0;
++    meth->rsa_verify = verify;
++    return 1;
++}
++
++static int RSA_meth_set_finish(RSA_METHOD *meth, int (*finish) (RSA *rsa))
++{
++    if (!meth) return 0;
++    meth->finish = finish;
++    return 1;
++}
++
++static HMAC_CTX *HMAC_CTX_new()
++{
++    HMAC_CTX *ctx = (HMAC_CTX *) OPENSSL_malloc(sizeof(HMAC_CTX));
++    if (ctx)
++        HMAC_CTX_init(ctx);
++    return ctx;
++}
++
++static void HMAC_CTX_free(HMAC_CTX *ctx)
++{
++    if (!ctx)
++        return;
++    HMAC_CTX_cleanup(ctx);
++    EVP_MD_CTX_cleanup(&ctx->i_ctx);
++    EVP_MD_CTX_cleanup(&ctx->o_ctx);
++    EVP_MD_CTX_cleanup(&ctx->md_ctx);
++    OPENSSL_free(ctx);
++}
++
++#define ASN1_STRING_get0_data(...) (const unsigned char*)ASN1_STRING_data(__VA_ARGS__)
++
++#define EVP_MD_CTX_new(...) EVP_MD_CTX_create(__VA_ARGS__)
++#define EVP_MD_CTX_free(...) EVP_MD_CTX_destroy(__VA_ARGS__)
++
++#define EVP_PKEY_up_ref(pkey) CRYPTO_add(&(pkey)->references, 1, CRYPTO_LOCK_EVP_PKEY)
++#define X509_up_ref(cert) CRYPTO_add(&(cert)->references, 1, CRYPTO_LOCK_X509)
++#define X509_CRL_up_ref(crl) CRYPTO_add(&(crl)->references, 1, CRYPTO_LOCK_X509_CRL)
++
++#define EVP_PKEY_id(pky) (pky)->type
++#define EVP_PKEY_get0_DSA(pky) (pky)->pkey.dsa
++#define EVP_PKEY_get0_RSA(pky) (pky)->pkey.rsa
++#define EVP_PKEY_get0_DH(pky) (pky)->pkey.dh
++
++#define X509_CRL_get0_lastUpdate X509_CRL_get_lastUpdate
++#define X509_CRL_get0_nextUpdate X509_CRL_get_nextUpdate
++
++#define X509_REQ_get_signature_nid(req) OBJ_obj2nid((req)->sig_alg->algorithm)
++#define X509_CRL_get_signature_nid(crl) OBJ_obj2nid((crl)->sig_alg->algorithm)
++
++#define X509_REVOKED_get0_serialNumber(rev) (rev)->serialNumber
++#define X509_REVOKED_get0_revocationDate(rev) (rev)->revocationDate
++
++#endif // OPENSSL_VERSION_NUMBER < 0x10100000L
++
++#endif // OSSL110COMPAT_H
+diff --git a/plugins/qca-ossl/qca-ossl.cpp b/plugins/qca-ossl/qca-ossl.cpp
+index f0b9431..3bbbfdc 100644
+--- plugins/qca-ossl/qca-ossl.cpp
 +++ plugins/qca-ossl/qca-ossl.cpp
 @@ -1,6 +1,7 @@
  /*
@@ -11,18 +329,16 @@ This is an extract of upstream commit
   *
   * This library is free software; you can redistribute it and/or
   * modify it under the terms of the GNU Lesser General Public
-@@ -38,6 +39,10 @@
+@@ -38,6 +39,8 @@
  #include <openssl/pkcs12.h>
  #include <openssl/ssl.h>
  
-+extern "C" {
-+#include "libcrypto-compat.h"
-+}
++#include "ossl110-compat.h"
 +
  #ifndef OSSL_097
  // comment this out if you'd rather use openssl 0.9.6
  #define OSSL_097
-@@ -52,6 +57,73 @@
+@@ -52,6 +55,16 @@
  	((_STACK*) (1 ? p : (type*)0))
  #endif
  
@@ -33,70 +349,13 @@ This is an extract of upstream commit
 +// OpenSSL 1.1.0 compatibility macros
 +#ifdef OSSL_110
 +#define M_ASN1_IA5STRING_new() ASN1_IA5STRING_new()
-+#else
-+static HMAC_CTX *HMAC_CTX_new() { return new HMAC_CTX(); }
-+static void HMAC_CTX_free(HMAC_CTX *x) { free(x); }
-+static void EVP_PKEY_up_ref(EVP_PKEY *x) { CRYPTO_add(&x->references, 1, CRYPTO_LOCK_EVP_PKEY); }
-+static void X509_up_ref(X509 *x) { CRYPTO_add(&x->references, 1, CRYPTO_LOCK_X509); }
-+static void X509_CRL_up_ref(X509_CRL *x) { CRYPTO_add(&x->references, 1, CRYPTO_LOCK_X509_CRL); }
-+static DSA *EVP_PKEY_get0_DSA(EVP_PKEY *x) { return x->pkey.dsa; }
-+static DH *EVP_PKEY_get0_DH(EVP_PKEY *x) { return x->pkey.dh; }
-+static int RSA_meth_set_sign(RSA_METHOD *meth,
-+                      int (*sign) (int type, const unsigned char *m,
-+                                   unsigned int m_length,
-+                                   unsigned char *sigret, unsigned int *siglen,
-+                                   const RSA *rsa))
-+{
-+    meth->rsa_sign = sign;
-+    return 1;
-+}
-+int RSA_meth_set_verify(RSA_METHOD *meth,
-+                        int (*verify) (int dtype, const unsigned char *m,
-+                                       unsigned int m_length,
-+                                       const unsigned char *sigbuf,
-+                                       unsigned int siglen, const RSA *rsa))
-+{
-+    meth->rsa_verify = verify;
-+    return 1;
-+}
-+void X509_REQ_get0_signature(const X509_REQ *req, const ASN1_BIT_STRING **psig,
-+                             const X509_ALGOR **palg)
-+{
-+    if (psig != NULL)
-+        *psig = req->signature;
-+    if (palg != NULL)
-+        *palg = req->sig_alg;
-+}
-+int X509_REQ_get_signature_nid(const X509_REQ *req)
-+{
-+    return OBJ_obj2nid(req->sig_alg->algorithm);
-+}
-+void X509_CRL_get0_signature(const X509_CRL *crl, const ASN1_BIT_STRING **psig,
-+                             const X509_ALGOR **palg)
-+{
-+    if (psig != NULL)
-+        *psig = crl->signature;
-+    if (palg != NULL)
-+        *palg = crl->sig_alg;
-+}
-+int X509_CRL_get_signature_nid(const X509_CRL *crl)
-+{
-+    return OBJ_obj2nid(crl->sig_alg->algorithm);
-+}
-+const ASN1_INTEGER *X509_REVOKED_get0_serialNumber(const X509_REVOKED *x)
-+{
-+    return x->serialNumber;
-+}
-+const ASN1_TIME *X509_REVOKED_get0_revocationDate(const X509_REVOKED *x)
-+{
-+    return x->revocationDate;
-+}
++#define RSA_F_RSA_EAY_PRIVATE_DECRYPT RSA_F_RSA_OSSL_PRIVATE_DECRYPT
 +#endif
 +
  using namespace QCA;
  
  namespace opensslQCAPlugin {
-@@ -93,7 +165,7 @@ static QByteArray bio2ba(BIO *b)
+@@ -93,7 +106,7 @@ static QByteArray bio2ba(BIO *b)
  	return buf;
  }
  
@@ -105,7 +364,7 @@ This is an extract of upstream commit
  {
  	SecureArray buf(BN_num_bytes(n) + 1);
  	buf[0] = 0; // positive
-@@ -109,7 +181,7 @@ static BIGNUM *bi2bn(const BigInteger &n)
+@@ -109,7 +122,7 @@ static BIGNUM *bi2bn(const BigInteger &n)
  
  // take lowest bytes of BIGNUM to fit
  // pad with high byte zeroes to fit
@@ -114,26 +373,21 @@ This is an extract of upstream commit
  {
  	SecureArray buf(BN_num_bytes(n));
  	BN_bn2bin(n, (unsigned char *)buf.data());
-@@ -127,8 +199,16 @@ static SecureArray dsasig_der_to_raw(const SecureArray
+@@ -127,8 +140,11 @@ static SecureArray dsasig_der_to_raw(const SecureArray &in)
  	const unsigned char *inp = (const unsigned char *)in.data();
  	d2i_DSA_SIG(&sig, &inp, in.size());
  
 -	SecureArray part_r = bn2fixedbuf(sig->r, 20);
 -	SecureArray part_s = bn2fixedbuf(sig->s, 20);
 +	const BIGNUM *bnr, *bns;
-+
-+#ifdef OSSL_110
 +	DSA_SIG_get0(sig, &bnr, &bns);
-+#else
-+	bnr = sig->r; bns = sig->s;
-+#endif
 +
 +	SecureArray part_r = bn2fixedbuf(bnr, 20);
 +	SecureArray part_s = bn2fixedbuf(bns, 20);
  	SecureArray result;
  	result.append(part_r);
  	result.append(part_s);
-@@ -143,13 +223,21 @@ static SecureArray dsasig_raw_to_der(const SecureArray
+@@ -143,12 +159,16 @@ static SecureArray dsasig_raw_to_der(const SecureArray &in)
  		return SecureArray();
  
  	DSA_SIG *sig = DSA_SIG_new();
@@ -147,35 +401,30 @@ This is an extract of upstream commit
 -	sig->s = BN_bin2bn((const unsigned char *)part_s.data(), part_s.size(), NULL);
 +	bnr = BN_bin2bn((const unsigned char *)part_r.data(), part_r.size(), NULL);
 +	bns = BN_bin2bn((const unsigned char *)part_s.data(), part_s.size(), NULL);
- 
-+#ifdef OSSL_110
++
 +	if(DSA_SIG_set0(sig, bnr, bns) == 0)
 +		return SecureArray();
 +	// Not documented what happens in the failure case, free bnr and bns?
-+#else
-+	sig->r = bnr; sig->s = bns;
-+#endif
-+
+ 
  	int len = i2d_DSA_SIG(sig, NULL);
  	SecureArray result(len);
- 	unsigned char *p = (unsigned char *)result.data();
-@@ -1004,29 +1092,39 @@ class opensslHashContext : public HashContext (public)
+@@ -1004,29 +1024,39 @@ public:
  	opensslHashContext(const EVP_MD *algorithm, Provider *p, const QString &type) : HashContext(p, type)
  	{
  		m_algorithm = algorithm;
 -		EVP_DigestInit( &m_context, m_algorithm );
 +		m_context = EVP_MD_CTX_new();
 +		EVP_DigestInit( m_context, m_algorithm );
- 	}
- 
++	}
++
 +	opensslHashContext(const opensslHashContext &other)
 +	    : HashContext(other)
 +	{
 +		m_algorithm = other.m_algorithm;
 +		m_context = EVP_MD_CTX_new();
 +		EVP_MD_CTX_copy_ex(m_context, other.m_context);
-+	}
-+
+ 	}
+ 
  	~opensslHashContext()
  	{
 -		EVP_MD_CTX_cleanup(&m_context);
@@ -205,7 +454,7 @@ This is an extract of upstream commit
  		return a;
  	}
  
-@@ -1037,7 +1135,7 @@ class opensslHashContext : public HashContext (public)
+@@ -1037,7 +1067,7 @@ public:
  
  protected:
  	const EVP_MD *m_algorithm;
@@ -214,15 +463,15 @@ This is an extract of upstream commit
  };
  
  
-@@ -1047,9 +1145,23 @@ class opensslPbkdf1Context : public KDFContext (public
+@@ -1047,7 +1077,21 @@ public:
  	opensslPbkdf1Context(const EVP_MD *algorithm, Provider *p, const QString &type) : KDFContext(p, type)
  	{
  		m_algorithm = algorithm;
 -		EVP_DigestInit( &m_context, m_algorithm );
 +		m_context = EVP_MD_CTX_new();
 +		EVP_DigestInit( m_context, m_algorithm );
- 	}
- 
++	}
++
 +	opensslPbkdf1Context(const opensslPbkdf1Context &other)
 +	    : KDFContext(other)
 +	{
@@ -234,12 +483,10 @@ This is an extract of upstream commit
 +	~opensslPbkdf1Context()
 +	{
 +		EVP_MD_CTX_free(m_context);
-+	}
-+
+ 	}
+ 
  	Provider::Context *clone() const
- 	{
- 		return new opensslPbkdf1Context( *this );
-@@ -1081,16 +1193,16 @@ class opensslPbkdf1Context : public KDFContext (public
+@@ -1081,16 +1125,16 @@ public:
  		  DK = Tc<0..dkLen-1>
  		*/
  		// calculate T_1
@@ -262,7 +509,7 @@ This is an extract of upstream commit
  		}
  
  		// shrink a to become DK, of the required length
-@@ -1136,19 +1248,19 @@ class opensslPbkdf1Context : public KDFContext (public
+@@ -1136,19 +1180,19 @@ public:
  		  DK = Tc<0..dkLen-1>
  		*/
  		// calculate T_1
@@ -288,7 +535,7 @@ This is an extract of upstream commit
  			++(*iterationCount);
  		}
  
-@@ -1163,7 +1275,7 @@ class opensslPbkdf1Context : public KDFContext (public
+@@ -1163,7 +1207,7 @@ public:
  
  protected:
  	const EVP_MD *m_algorithm;
@@ -297,7 +544,7 @@ This is an extract of upstream commit
  };
  
  class opensslPbkdf2Context : public KDFContext
-@@ -1231,12 +1343,28 @@ class opensslHMACContext : public MACContext (public)
+@@ -1231,12 +1275,28 @@ public:
  	opensslHMACContext(const EVP_MD *algorithm, Provider *p, const QString &type) : MACContext(p, type)
  	{
  		m_algorithm = algorithm;
@@ -306,8 +553,8 @@ This is an extract of upstream commit
 +#ifndef OSSL_110
 +		HMAC_CTX_init( m_context );
 +#endif
- 	}
- 
++	}
++
 +	opensslHMACContext(const opensslHMACContext &other)
 +	    : MACContext(other)
 +	{
@@ -319,8 +566,8 @@ This is an extract of upstream commit
 +	~opensslHMACContext()
 +	{
 +		HMAC_CTX_free(m_context);
-+	}
-+
+ 	}
+ 
  	void setup(const SymmetricKey &key)
  	{
 -		HMAC_Init_ex( &m_context, key.data(), key.size(), m_algorithm, 0 );
@@ -328,7 +575,7 @@ This is an extract of upstream commit
  	}
  
  	KeyLength keyLength() const
-@@ -1246,14 +1374,18 @@ class opensslHMACContext : public MACContext (public)
+@@ -1246,14 +1306,18 @@ public:
  
  	void update(const MemoryRegion &a)
  	{
@@ -350,7 +597,7 @@ This is an extract of upstream commit
  		*out = sa;
  	}
  
-@@ -1263,7 +1395,7 @@ class opensslHMACContext : public MACContext (public)
+@@ -1263,7 +1327,7 @@ public:
  	}
  
  protected:
@@ -359,7 +606,7 @@ This is an extract of upstream commit
  	const EVP_MD *m_algorithm;
  };
  
-@@ -1277,7 +1409,7 @@ class EVPKey
+@@ -1277,7 +1341,7 @@ class EVPKey
  public:
  	enum State { Idle, SignActive, SignError, VerifyActive, VerifyError };
  	EVP_PKEY *pkey;
@@ -368,7 +615,7 @@ This is an extract of upstream commit
  	State state;
  	bool raw_type;
  	SecureArray raw;
-@@ -1287,19 +1419,23 @@ class EVPKey
+@@ -1287,19 +1351,23 @@ public:
  		pkey = 0;
  		raw_type = false;
  		state = Idle;
@@ -393,7 +640,7 @@ This is an extract of upstream commit
  	}
  
  	void reset()
-@@ -1322,8 +1458,8 @@ class EVPKey
+@@ -1322,8 +1390,8 @@ public:
  		else
  		{
  			raw_type = false;
@@ -404,7 +651,7 @@ This is an extract of upstream commit
  				state = SignError;
  		}
  	}
-@@ -1339,8 +1475,8 @@ class EVPKey
+@@ -1339,8 +1407,8 @@ public:
  		else
  		{
  			raw_type = false;
@@ -415,7 +662,7 @@ This is an extract of upstream commit
  				state = VerifyError;
  		}
  	}
-@@ -1352,7 +1488,7 @@ class EVPKey
+@@ -1352,7 +1420,7 @@ public:
  			if (raw_type)
  				raw += in;
  			else
@@ -424,7 +671,7 @@ This is an extract of upstream commit
  					state = SignError;
  		}
  		else if(state == VerifyActive)
-@@ -1360,7 +1496,7 @@ class EVPKey
+@@ -1360,7 +1428,7 @@ public:
  			if (raw_type)
  				raw += in;
  			else
@@ -433,17 +680,13 @@ This is an extract of upstream commit
  					state = VerifyError;
  		}
  	}
-@@ -1373,17 +1509,24 @@ class EVPKey
+@@ -1373,17 +1441,20 @@ public:
  			unsigned int len = out.size();
  			if (raw_type)
  			{
 -				if (pkey->type == EVP_PKEY_RSA)
-+				int type;
-+#ifdef OSSL_110
-+				type = EVP_PKEY_id(pkey);
-+#else
-+				type = pkey->type;
-+#endif
++				int type = EVP_PKEY_id(pkey);
++
 +				if (type == EVP_PKEY_RSA)
  				{
 +					RSA *rsa = EVP_PKEY_get0_RSA(pkey);
@@ -461,7 +704,7 @@ This is an extract of upstream commit
  				{
  					state = SignError;
  					return SecureArray ();
-@@ -1395,7 +1538,7 @@ class EVPKey
+@@ -1395,7 +1466,7 @@ public:
  				}
  			}
  			else {
@@ -470,17 +713,12 @@ This is an extract of upstream commit
  				{
  					state = SignError;
  					return SecureArray();
-@@ -1418,16 +1561,24 @@ class EVPKey
+@@ -1418,16 +1489,19 @@ public:
  				SecureArray out(EVP_PKEY_size(pkey));
  				int len = 0;
  
 -				if (pkey->type == EVP_PKEY_RSA) {
-+				int type;
-+#ifdef OSSL_110
-+				type = EVP_PKEY_type(EVP_PKEY_id(pkey));
-+#else
-+				type = pkey->type;
-+#endif
++				int type = EVP_PKEY_id(pkey);
 +
 +				if (type == EVP_PKEY_RSA) {
 +					RSA *rsa = EVP_PKEY_get0_RSA(pkey);
@@ -498,7 +736,7 @@ This is an extract of upstream commit
  				{
  					state = VerifyError;
  					return false;
-@@ -1447,7 +1598,7 @@ class EVPKey
+@@ -1447,7 +1521,7 @@ public:
  			}
  			else
  			{
@@ -507,7 +745,7 @@ This is an extract of upstream commit
  				{
  					state = VerifyError;
  					return false;
-@@ -1561,9 +1712,11 @@ static bool make_dlgroup(const QByteArray &seed, int b
+@@ -1561,9 +1635,11 @@ static bool make_dlgroup(const QByteArray &seed, int bits, int counter, DLParams
  		return false;
  	if(ret_counter != counter)
  		return false;
@@ -522,7 +760,7 @@ This is an extract of upstream commit
  	DSA_free(dsa);
  	return true;
  }
-@@ -1826,10 +1979,11 @@ class RSAKey : public RSAContext (public)
+@@ -1826,10 +1902,11 @@ public:
  			return;
  
  		// extract the public key into DER format
@@ -536,7 +774,7 @@ This is an extract of upstream commit
  		p = (unsigned char *)result.data();
  
  		// put the DER public key back into openssl
-@@ -1852,7 +2006,7 @@ class RSAKey : public RSAContext (public)
+@@ -1852,7 +1929,7 @@ public:
  
  	virtual int maximumEncryptSize(EncryptionAlgorithm alg) const
  	{
@@ -545,7 +783,7 @@ This is an extract of upstream commit
  		int size = 0;
  		switch(alg)
  		{
-@@ -1867,7 +2021,7 @@ class RSAKey : public RSAContext (public)
+@@ -1867,7 +1944,7 @@ public:
  
  	virtual SecureArray encrypt(const SecureArray &in, EncryptionAlgorithm alg)
  	{
@@ -554,7 +792,7 @@ This is an extract of upstream commit
  		SecureArray buf = in;
  		int max = maximumEncryptSize(alg);
  
-@@ -1900,7 +2054,7 @@ class RSAKey : public RSAContext (public)
+@@ -1900,7 +1977,7 @@ public:
  
  	virtual bool decrypt(const SecureArray &in, SecureArray *out, EncryptionAlgorithm alg)
  	{
@@ -563,7 +801,7 @@ This is an extract of upstream commit
  		SecureArray result(RSA_size(rsa));
  		int pad;
  
-@@ -2021,14 +2175,10 @@ class RSAKey : public RSAContext (public)
+@@ -2021,14 +2098,10 @@ public:
  		evp.reset();
  
  		RSA *rsa = RSA_new();
@@ -581,7 +819,7 @@ This is an extract of upstream commit
  			RSA_free(rsa);
  			return;
  		}
-@@ -2036,7 +2186,7 @@ class RSAKey : public RSAContext (public)
+@@ -2036,7 +2109,7 @@ public:
  		// When private key has no Public Exponent (e) or Private Exponent (d)
  		// need to disable blinding. Otherwise decryption will be broken.
  		// http://www.mail-archive.com/openssl-users@openssl.org/msg63530.html
@@ -590,7 +828,7 @@ This is an extract of upstream commit
  			RSA_blinding_off(rsa);
  
  		evp.pkey = EVP_PKEY_new();
-@@ -2049,10 +2199,7 @@ class RSAKey : public RSAContext (public)
+@@ -2049,10 +2122,7 @@ public:
  		evp.reset();
  
  		RSA *rsa = RSA_new();
@@ -602,7 +840,7 @@ This is an extract of upstream commit
  		{
  			RSA_free(rsa);
  			return;
-@@ -2065,27 +2212,42 @@ class RSAKey : public RSAContext (public)
+@@ -2065,27 +2135,42 @@ public:
  
  	virtual BigInteger n() const
  	{
@@ -650,7 +888,7 @@ This is an extract of upstream commit
  	}
  
  private slots:
-@@ -2134,10 +2296,12 @@ class DSAKeyMaker : public QThread (public)
+@@ -2134,10 +2219,12 @@ public:
  	virtual void run()
  	{
  		DSA *dsa = DSA_new();
@@ -667,7 +905,7 @@ This is an extract of upstream commit
  		{
  			DSA_free(dsa);
  			return;
-@@ -2212,10 +2376,11 @@ class DSAKey : public DSAContext (public)
+@@ -2212,10 +2299,11 @@ public:
  			return;
  
  		// extract the public key into DER format
@@ -681,7 +919,7 @@ This is an extract of upstream commit
  		p = (unsigned char *)result.data();
  
  		// put the DER public key back into openssl
-@@ -2244,7 +2409,7 @@ class DSAKey : public DSAContext (public)
+@@ -2244,7 +2332,7 @@ public:
  		else
  			transformsig = false;
  
@@ -690,7 +928,7 @@ This is an extract of upstream commit
  	}
  
  	virtual void startVerify(SignatureAlgorithm, SignatureFormat format)
-@@ -2255,7 +2420,7 @@ class DSAKey : public DSAContext (public)
+@@ -2255,7 +2343,7 @@ public:
  		else
  			transformsig = false;
  
@@ -699,7 +937,7 @@ This is an extract of upstream commit
  	}
  
  	virtual void update(const MemoryRegion &in)
-@@ -2305,13 +2470,14 @@ class DSAKey : public DSAContext (public)
+@@ -2305,13 +2393,14 @@ public:
  		evp.reset();
  
  		DSA *dsa = DSA_new();
@@ -720,7 +958,7 @@ This is an extract of upstream commit
  		{
  			DSA_free(dsa);
  			return;
-@@ -2327,12 +2493,13 @@ class DSAKey : public DSAContext (public)
+@@ -2327,12 +2416,13 @@ public:
  		evp.reset();
  
  		DSA *dsa = DSA_new();
@@ -739,7 +977,7 @@ This is an extract of upstream commit
  		{
  			DSA_free(dsa);
  			return;
-@@ -2345,17 +2512,26 @@ class DSAKey : public DSAContext (public)
+@@ -2345,17 +2435,26 @@ public:
  
  	virtual DLGroup domain() const
  	{
@@ -769,7 +1007,7 @@ This is an extract of upstream commit
  	}
  
  private slots:
-@@ -2404,9 +2580,10 @@ class DHKeyMaker : public QThread (public)
+@@ -2404,9 +2503,10 @@ public:
  	virtual void run()
  	{
  		DH *dh = DH_new();
@@ -783,7 +1021,7 @@ This is an extract of upstream commit
  		{
  			DH_free(dh);
  			return;
-@@ -2478,12 +2655,15 @@ class DHKey : public DHContext (public)
+@@ -2478,11 +2578,14 @@ public:
  		if(!sec)
  			return;
  
@@ -796,14 +1034,13 @@ This is an extract of upstream commit
 +		const BIGNUM *bnp, *bng, *bnpub_key;
 +		DH_get0_pqg(orig, &bnp, NULL, &bng);
 +		DH_get0_key(orig, &bnpub_key, NULL);
- 
++
 +		DH_set0_key(dh, BN_dup(bnpub_key), NULL);
 +		DH_set0_pqg(dh, BN_dup(bnp), NULL, BN_dup(bng));
-+
+ 
  		evp.reset();
  
- 		evp.pkey = EVP_PKEY_new();
-@@ -2498,10 +2678,13 @@ class DHKey : public DHContext (public)
+@@ -2498,10 +2601,13 @@ public:
  
  	virtual SymmetricKey deriveKey(const PKeyBase &theirs)
  	{
@@ -820,7 +1057,7 @@ This is an extract of upstream commit
  		if(ret <= 0)
  			return SymmetricKey();
  		result.resize(ret);
-@@ -2531,12 +2714,13 @@ class DHKey : public DHContext (public)
+@@ -2531,12 +2637,13 @@ public:
  		evp.reset();
  
  		DH *dh = DH_new();
@@ -839,7 +1076,7 @@ This is an extract of upstream commit
  		{
  			DH_free(dh);
  			return;
-@@ -2552,11 +2736,12 @@ class DHKey : public DHContext (public)
+@@ -2552,11 +2659,12 @@ public:
  		evp.reset();
  
  		DH *dh = DH_new();
@@ -856,7 +1093,7 @@ This is an extract of upstream commit
  		{
  			DH_free(dh);
  			return;
-@@ -2569,17 +2754,26 @@ class DHKey : public DHContext (public)
+@@ -2569,17 +2677,26 @@ public:
  
  	virtual DLGroup domain() const
  	{
@@ -886,7 +1123,7 @@ This is an extract of upstream commit
  	}
  
  private slots:
-@@ -2618,10 +2812,14 @@ class QCA_RSA_METHOD (public)
+@@ -2618,10 +2735,14 @@ public:
  	{
  		key = _key;
  		RSA_set_method(rsa, rsa_method());
@@ -903,7 +1140,7 @@ This is an extract of upstream commit
  	}
  
  	RSA_METHOD *rsa_method()
-@@ -2630,12 +2828,16 @@ class QCA_RSA_METHOD (public)
+@@ -2630,12 +2751,16 @@ public:
  
  		if(!ops)
  		{
@@ -926,19 +1163,7 @@ This is an extract of upstream commit
  		}
  		return ops;
  	}
-@@ -2654,7 +2856,11 @@ class QCA_RSA_METHOD (public)
- 		}
- 		else
- 		{
-+#if OPENSSL_VERSION_NUMBER > 0x10100000L
-+			RSAerr(RSA_F_RSA_OSSL_PRIVATE_DECRYPT, RSA_R_UNKNOWN_PADDING_TYPE);
-+#else
- 			RSAerr(RSA_F_RSA_EAY_PRIVATE_DECRYPT, RSA_R_UNKNOWN_PADDING_TYPE);
-+#endif
- 			return -1;
- 		}
- 
-@@ -2675,6 +2881,7 @@ class QCA_RSA_METHOD (public)
+@@ -2675,6 +2800,7 @@ public:
  		return -1;
  	}
  
@@ -946,7 +1171,7 @@ This is an extract of upstream commit
  	static int rsa_sign(int type, const unsigned char *m, unsigned int m_len, unsigned char *sigret, unsigned int *siglen, const RSA *rsa)
  	{
  		QCA_RSA_METHOD *self = (QCA_RSA_METHOD *)RSA_get_app_data(rsa);
-@@ -2691,7 +2898,6 @@ class QCA_RSA_METHOD (public)
+@@ -2691,7 +2817,6 @@ public:
  		}
  		else
  		{
@@ -954,7 +1179,7 @@ This is an extract of upstream commit
  			// make X509 packet
  			X509_SIG sig;
  			ASN1_TYPE parameter;
-@@ -2765,6 +2971,7 @@ class QCA_RSA_METHOD (public)
+@@ -2765,6 +2890,7 @@ public:
  
  		return 1;
  	}
@@ -962,7 +1187,7 @@ This is an extract of upstream commit
  
  	static int rsa_finish(RSA *rsa)
  	{
-@@ -2866,21 +3073,22 @@ class MyPKeyContext : public PKeyContext (public)
+@@ -2866,21 +2992,22 @@ public:
  	PKeyBase *pkeyToBase(EVP_PKEY *pkey, bool sec) const
  	{
  		PKeyBase *nk = 0;
@@ -988,7 +1213,7 @@ This is an extract of upstream commit
  		{
  			DHKey *c = new DHKey(provider());
  			c->evp.pkey = pkey;
-@@ -2898,8 +3106,10 @@ class MyPKeyContext : public PKeyContext (public)
+@@ -2898,8 +3025,10 @@ public:
  	{
  		EVP_PKEY *pkey = get_pkey();
  
@@ -1000,7 +1225,7 @@ This is an extract of upstream commit
  			return QByteArray();
  
  		BIO *bo = BIO_new(BIO_s_mem());
-@@ -2912,8 +3122,10 @@ class MyPKeyContext : public PKeyContext (public)
+@@ -2912,8 +3041,10 @@ public:
  	{
  		EVP_PKEY *pkey = get_pkey();
  
@@ -1012,7 +1237,7 @@ This is an extract of upstream commit
  			return QString();
  
  		BIO *bo = BIO_new(BIO_s_mem());
-@@ -2978,9 +3190,10 @@ class MyPKeyContext : public PKeyContext (public)
+@@ -2978,9 +3109,10 @@ public:
  			return SecureArray();
  
  		EVP_PKEY *pkey = get_pkey();
@@ -1024,7 +1249,7 @@ This is an extract of upstream commit
  			return SecureArray();
  
  		BIO *bo = BIO_new(BIO_s_mem());
-@@ -3007,9 +3220,10 @@ class MyPKeyContext : public PKeyContext (public)
+@@ -3007,9 +3139,10 @@ public:
  			return QString();
  
  		EVP_PKEY *pkey = get_pkey();
@@ -1036,7 +1261,7 @@ This is an extract of upstream commit
  			return QString();
  
  		BIO *bo = BIO_new(BIO_s_mem());
-@@ -3110,11 +3324,18 @@ class X509Item (public)
+@@ -3110,11 +3243,18 @@ public:
  			crl = from.crl;
  
  			if(cert)
@@ -1057,7 +1282,7 @@ This is an extract of upstream commit
  		}
  
  		return *this;
-@@ -3220,7 +3441,7 @@ class X509Item (public)
+@@ -3220,7 +3360,7 @@ public:
  //
  // This code is mostly taken from OpenSSL v0.9.5a
  // by Eric Young
@@ -1066,7 +1291,7 @@ This is an extract of upstream commit
  {
  	QDateTime qdt;
  	char *v;
-@@ -3318,7 +3539,7 @@ class MyCertContext : public CertContext (public)
+@@ -3318,7 +3458,7 @@ public:
  
  	void fromX509(X509 *x)
  	{
@@ -1075,7 +1300,7 @@ This is an extract of upstream commit
  		item.cert = x;
  		make_props();
  	}
-@@ -3349,7 +3570,7 @@ class MyCertContext : public CertContext (public)
+@@ -3349,7 +3489,7 @@ public:
  		if(priv.key()->type() == PKey::RSA)
  			md = EVP_sha1();
  		else if(priv.key()->type() == PKey::DSA)
@@ -1084,7 +1309,7 @@ This is an extract of upstream commit
  		else
  			return false;
  
-@@ -3480,7 +3701,7 @@ class MyCertContext : public CertContext (public)
+@@ -3480,7 +3620,7 @@ public:
  
  		const MyCertContext *our_cc = this;
  		X509 *x = our_cc->item.cert;
@@ -1093,52 +1318,56 @@ This is an extract of upstream commit
  		sk_X509_push(untrusted_list, x);
  
  		const MyCertContext *other_cc = static_cast<const MyCertContext *>(other);
-@@ -3595,14 +3816,31 @@ class MyCertContext : public CertContext (public)
+@@ -3595,14 +3735,30 @@ public:
  				p.policies = get_cert_policies(ex);
  		}
  
 -		if (x->signature)
-+#if OPENSSL_VERSION_NUMBER >= 0x10002000L
 +#ifdef OSSL_110
 +		const
 +#endif
 +		ASN1_BIT_STRING *signature;
 +
++#if OPENSSL_VERSION_NUMBER < 0x10002000L
++		signature = x->signature;
++#else
 +		X509_get0_signature(&signature, NULL, x);
++#endif
++
 +		if(signature)
  		{
+-			p.sig = QByteArray(x->signature->length, 0);
+-			for (int i=0; i< x->signature->length; i++)
+-				p.sig[i] = x->signature->data[i];
 +			p.sig = QByteArray(signature->length, 0);
 +			for (int i=0; i< signature->length; i++)
 +				p.sig[i] = signature->data[i];
-+		}
-+
-+		switch( X509_get_signature_nid(x) )
-+#else
-+		if(x->signature)
-+		{
- 			p.sig = QByteArray(x->signature->length, 0);
- 			for (int i=0; i< x->signature->length; i++)
- 				p.sig[i] = x->signature->data[i];
  		}
  
- 		switch( OBJ_obj2nid(x->cert_info->signature->algorithm) )
+-		switch( OBJ_obj2nid(x->cert_info->signature->algorithm) )
++
++#if OPENSSL_VERSION_NUMBER < 0x10002000L
++		switch ( OBJ_obj2nid(x->sig_alg->algorithm) )
++#else
++		switch( X509_get_signature_nid(x) )
 +#endif
  		{
  		case NID_sha1WithRSAEncryption:
  			p.sigalgo = QCA::EMSA3_SHA1;
-@@ -3634,7 +3872,11 @@ class MyCertContext : public CertContext (public)
+@@ -3634,7 +3790,11 @@ public:
  			p.sigalgo = QCA::EMSA3_SHA512;
  			break;
  		default:
-+#if OPENSSL_VERSION_NUMBER >= 0x10002000L
-+			qDebug() << "Unknown signature value: " << X509_get_signature_nid(x);
+-			qDebug() << "Unknown signature value: " << OBJ_obj2nid(x->cert_info->signature->algorithm);
++#if OPENSSL_VERSION_NUMBER < 0x10002000L
++			qDebug() << "Unknown signature value: " << OBJ_obj2nid(x->sig_alg->algorithm);
 +#else
- 			qDebug() << "Unknown signature value: " << OBJ_obj2nid(x->cert_info->signature->algorithm);
++			qDebug() << "Unknown signature value: " << X509_get_signature_nid(x);
 +#endif
  			p.sigalgo = QCA::SignatureUnknown;
  		}
  
-@@ -3751,7 +3993,7 @@ class MyCAContext : public CAContext (public)
+@@ -3751,7 +3911,7 @@ public:
  		if(privateKey -> key()->type() == PKey::RSA)
  			md = EVP_sha1();
  		else if(privateKey -> key()->type() == PKey::DSA)
@@ -1147,7 +1376,7 @@ This is an extract of upstream commit
  		else
  			return 0;
  
-@@ -3934,7 +4176,7 @@ class MyCSRContext : public CSRContext (public)
+@@ -3934,7 +4094,7 @@ public:
  		if(priv.key()->type() == PKey::RSA)
  			md = EVP_sha1();
  		else if(priv.key()->type() == PKey::DSA)
@@ -1156,7 +1385,7 @@ This is an extract of upstream commit
  		else
  			return false;
  
-@@ -4095,14 +4337,17 @@ class MyCSRContext : public CSRContext (public)
+@@ -4095,14 +4255,17 @@ public:
  
  		sk_X509_EXTENSION_pop_free(exts, X509_EXTENSION_free);
  
@@ -1179,7 +1408,7 @@ This is an extract of upstream commit
  		{
  		case NID_sha1WithRSAEncryption:
  			p.sigalgo = QCA::EMSA3_SHA1;
-@@ -4122,7 +4367,7 @@ class MyCSRContext : public CSRContext (public)
+@@ -4122,7 +4285,7 @@ public:
  			p.sigalgo = QCA::EMSA1_SHA1;
  			break;
  		default:
@@ -1188,7 +1417,7 @@ This is an extract of upstream commit
  			p.sigalgo = QCA::SignatureUnknown;
  		}
  
-@@ -4186,7 +4431,7 @@ class MyCRLContext : public CRLContext (public)
+@@ -4186,7 +4349,7 @@ public:
  
  	void fromX509(X509_CRL *x)
  	{
@@ -1197,7 +1426,16 @@ This is an extract of upstream commit
  		item.crl = x;
  		make_props();
  	}
-@@ -4238,8 +4483,8 @@ class MyCRLContext : public CRLContext (public)
+@@ -4231,15 +4394,15 @@ public:
+ 
+ 		issuer = get_cert_name(X509_CRL_get_issuer(x));
+ 
+-		p.thisUpdate = ASN1_UTCTIME_QDateTime(X509_CRL_get_lastUpdate(x), NULL);
+-		p.nextUpdate = ASN1_UTCTIME_QDateTime(X509_CRL_get_nextUpdate(x), NULL);
++		p.thisUpdate = ASN1_UTCTIME_QDateTime(X509_CRL_get0_lastUpdate(x), NULL);
++		p.nextUpdate = ASN1_UTCTIME_QDateTime(X509_CRL_get0_nextUpdate(x), NULL);
+ 
+ 		STACK_OF(X509_REVOKED)* revokeStack  = X509_CRL_get_REVOKED(x);
  
  		for (int i = 0; i < sk_X509_REVOKED_num(revokeStack); ++i) {
  			X509_REVOKED *rev = sk_X509_REVOKED_value(revokeStack, i);
@@ -1208,7 +1446,7 @@ This is an extract of upstream commit
  			QCA::CRLEntry::Reason reason = QCA::CRLEntry::Unspecified;
  			int pos = X509_REVOKED_get_ext_by_NID(rev, NID_crl_reason, -1);
  			if (pos != -1) {
-@@ -4288,13 +4533,18 @@ class MyCRLContext : public CRLContext (public)
+@@ -4288,13 +4451,18 @@ public:
  			p.revoked.append(thisEntry);
  		}
  
@@ -1232,7 +1470,7 @@ This is an extract of upstream commit
  		{
  		case NID_sha1WithRSAEncryption:
  			p.sigalgo = QCA::EMSA3_SHA1;
-@@ -4326,7 +4576,7 @@ class MyCRLContext : public CRLContext (public)
+@@ -4326,7 +4494,7 @@ public:
  			p.sigalgo = QCA::EMSA3_SHA512;
  			break;
  		default:
@@ -1241,7 +1479,7 @@ This is an extract of upstream commit
  			p.sigalgo = QCA::SignatureUnknown;
  		}
  
-@@ -4487,21 +4737,21 @@ Validity MyCertContext::validate(const QList<CertConte
+@@ -4487,21 +4655,21 @@ Validity MyCertContext::validate(const QList<CertContext*> &trusted, const QList
  	{
  		const MyCertContext *cc = static_cast<const MyCertContext *>(trusted[n]);
  		X509 *x = cc->item.cert;
@@ -1266,7 +1504,7 @@ This is an extract of upstream commit
  		crl_list.append(x);
  	}
  
-@@ -4526,7 +4776,7 @@ Validity MyCertContext::validate(const QList<CertConte
+@@ -4526,7 +4694,7 @@ Validity MyCertContext::validate(const QList<CertContext*> &trusted, const QList
  	int ret = X509_verify_cert(ctx);
  	int err = -1;
  	if(!ret)
@@ -1275,7 +1513,7 @@ This is an extract of upstream commit
  
  	// cleanup
  	X509_STORE_CTX_free(ctx);
-@@ -4560,21 +4810,21 @@ Validity MyCertContext::validate_chain(const QList<Cer
+@@ -4560,21 +4728,21 @@ Validity MyCertContext::validate_chain(const QList<CertContext*> &chain, const Q
  	{
  		const MyCertContext *cc = static_cast<const MyCertContext *>(trusted[n]);
  		X509 *x = cc->item.cert;
@@ -1300,7 +1538,7 @@ This is an extract of upstream commit
  		crl_list.append(x);
  	}
  
-@@ -4599,7 +4849,7 @@ Validity MyCertContext::validate_chain(const QList<Cer
+@@ -4599,7 +4767,7 @@ Validity MyCertContext::validate_chain(const QList<CertContext*> &chain, const Q
  	int ret = X509_verify_cert(ctx);
  	int err = -1;
  	if(!ret)
@@ -1309,7 +1547,7 @@ This is an extract of upstream commit
  
  	// grab the chain, which may not be fully populated
  	STACK_OF(X509) *xchain = X509_STORE_CTX_get_chain(ctx);
-@@ -4663,7 +4913,7 @@ class MyPKCS12Context : public PKCS12Context (public)
+@@ -4663,7 +4831,7 @@ public:
  			for(int n = 1; n < chain.count(); ++n)
  			{
  				X509 *x = static_cast<const MyCertContext *>(chain[n])->item.cert;
@@ -1318,7 +1556,7 @@ This is an extract of upstream commit
  				sk_X509_push(ca, x);
  			}
  		}
-@@ -5398,7 +5648,7 @@ class MyTLSContext : public TLSContext (public)
+@@ -5398,7 +5566,7 @@ public:
  		OpenSSL_add_ssl_algorithms();
  		SSL_CTX *ctx = 0;
  		switch (version) {
@@ -1327,7 +1565,7 @@ This is an extract of upstream commit
  		case TLS::SSL_v2:
  			ctx = SSL_CTX_new(SSLv2_client_method());
  			break;
-@@ -5429,8 +5679,8 @@ class MyTLSContext : public TLSContext (public)
+@@ -5429,8 +5597,8 @@ public:
  		STACK_OF(SSL_CIPHER) *sk = SSL_get_ciphers(ssl);
  		QStringList cipherList;
  		for(int i = 0; i < sk_SSL_CIPHER_num(sk); ++i) {
@@ -1338,7 +1576,7 @@ This is an extract of upstream commit
  		}
  
  		SSL_free(ssl);
-@@ -5807,13 +6057,15 @@ class MyTLSContext : public TLSContext (public)
+@@ -5807,13 +5975,15 @@ public:
  	{
  		SessionInfo sessInfo;
  
@@ -1358,7 +1596,7 @@ This is an extract of upstream commit
  			sessInfo.version = TLS::SSL_v2;
  		else {
  			qDebug("unexpected version response");
-@@ -5821,7 +6073,7 @@ class MyTLSContext : public TLSContext (public)
+@@ -5821,7 +5991,7 @@ public:
  		}
  
  		sessInfo.cipherSuite = cipherIDtoString( sessInfo.version,
@@ -1367,7 +1605,7 @@ This is an extract of upstream commit
  
  		sessInfo.cipherMaxBits = SSL_get_cipher_bits(ssl, &(sessInfo.cipherBits));
  
-@@ -6393,7 +6645,7 @@ class MyMessageContext : public MessageContext (public
+@@ -6393,7 +6563,7 @@ public:
  			for(int n = 0; n < nonroots.count(); ++n)
  			{
  				X509 *x = static_cast<MyCertContext *>(nonroots[n].context())->item.cert;
@@ -1376,7 +1614,7 @@ This is an extract of upstream commit
  				sk_X509_push(other_certs, x);
  			}
  
-@@ -6435,7 +6687,7 @@ class MyMessageContext : public MessageContext (public
+@@ -6435,7 +6605,7 @@ public:
  
  			other_certs = sk_X509_new_null();
  			X509 *x = static_cast<MyCertContext *>(target.context())->item.cert;
@@ -1385,7 +1623,7 @@ This is an extract of upstream commit
  			sk_X509_push(other_certs, x);
  
  			bi = BIO_new(BIO_s_mem());
-@@ -6498,7 +6750,7 @@ class MyMessageContext : public MessageContext (public
+@@ -6498,7 +6668,7 @@ public:
  			for(int n = 0; n < untrusted_list.count(); ++n)
  			{
  				X509 *x = static_cast<MyCertContext *>(untrusted_list[n].context())->item.cert;
@@ -1394,7 +1632,7 @@ This is an extract of upstream commit
  				sk_X509_push(other_certs, x);
  			}
  
-@@ -6749,14 +7001,27 @@ class opensslCipherContext : public CipherContext (pub
+@@ -6749,14 +6919,27 @@ public:
  	opensslCipherContext(const EVP_CIPHER *algorithm, const int pad, Provider *p, const QString &type) : CipherContext(p, type)
  	{
  		m_cryptoAlgorithm = algorithm;
@@ -1424,7 +1662,7 @@ This is an extract of upstream commit
  	}
  
  	void setup(Direction dir,
-@@ -6769,20 +7034,20 @@ class opensslCipherContext : public CipherContext (pub
+@@ -6769,20 +6952,20 @@ public:
  			m_cryptoAlgorithm = EVP_des_ede();
  		}
  		if (Encode == m_direction) {
@@ -1452,7 +1690,7 @@ This is an extract of upstream commit
  	}
  
  	Provider::Context *clone() const
-@@ -6792,7 +7057,7 @@ class opensslCipherContext : public CipherContext (pub
+@@ -6792,7 +6975,7 @@ public:
  
  	int blockSize() const
  	{
@@ -1461,7 +1699,7 @@ This is an extract of upstream commit
  	}
  
  	bool update(const SecureArray &in, SecureArray *out)
-@@ -6805,7 +7070,7 @@ class opensslCipherContext : public CipherContext (pub
+@@ -6805,7 +6988,7 @@ public:
  		out->resize(in.size()+blockSize());
  		int resultLength;
  		if (Encode == m_direction) {
@@ -1470,7 +1708,7 @@ This is an extract of upstream commit
  									   (unsigned char*)out->data(),
  									   &resultLength,
  									   (unsigned char*)in.data(),
-@@ -6813,7 +7078,7 @@ class opensslCipherContext : public CipherContext (pub
+@@ -6813,7 +6996,7 @@ public:
  				return false;
  			}
  		} else {
@@ -1479,7 +1717,7 @@ This is an extract of upstream commit
  									   (unsigned char*)out->data(),
  									   &resultLength,
  									   (unsigned char*)in.data(),
-@@ -6830,13 +7095,13 @@ class opensslCipherContext : public CipherContext (pub
+@@ -6830,13 +7013,13 @@ public:
  		out->resize(blockSize());
  		int resultLength;
  		if (Encode == m_direction) {
@@ -1495,7 +1733,7 @@ This is an extract of upstream commit
  										 (unsigned char*)out->data(),
  										 &resultLength)) {
  				return false;
-@@ -6871,7 +7136,7 @@ class opensslCipherContext : public CipherContext (pub
+@@ -6871,7 +7054,7 @@ public:
  
  
  protected:
@@ -1504,3 +1742,61 @@ This is an extract of upstream commit
  	const EVP_CIPHER *m_cryptoAlgorithm;
  	Direction m_direction;
  	int m_pad;
+diff --git a/unittest/tls/tlsunittest.cpp b/unittest/tls/tlsunittest.cpp
+index 38caf2d..ba8ed94 100644
+--- unittest/tls/tlsunittest.cpp
++++ unittest/tls/tlsunittest.cpp
+@@ -60,14 +60,16 @@ void TLSUnitTest::testCipherList()
+ 	QCA::TLS *tls = new QCA::TLS(QCA::TLS::Stream, 0, "qca-ossl");
+ 	QStringList cipherList = tls->supportedCipherSuites(QCA::TLS::TLS_v1);
+ 	QVERIFY( cipherList.contains("TLS_DHE_RSA_WITH_AES_256_CBC_SHA") );
+-	QVERIFY( cipherList.contains("TLS_DHE_DSS_WITH_AES_256_CBC_SHA") );
+ 	QVERIFY( cipherList.contains("TLS_RSA_WITH_AES_256_CBC_SHA") );
+-	QVERIFY( cipherList.contains("TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA") );
+-	QVERIFY( cipherList.contains("TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA") );
+-	QVERIFY( cipherList.contains("TLS_RSA_WITH_3DES_EDE_CBC_SHA") );
+ 	QVERIFY( cipherList.contains("TLS_DHE_RSA_WITH_AES_128_CBC_SHA") );
+-	QVERIFY( cipherList.contains("TLS_DHE_DSS_WITH_AES_128_CBC_SHA") );
+-	QVERIFY( cipherList.contains("TLS_RSA_WITH_AES_128_CBC_SHA") );
++
++	// openSUSE TW OpenSSL 1.1 does not have this
++	// QVERIFY( cipherList.contains("TLS_DHE_DSS_WITH_AES_256_CBC_SHA") );
++	// QVERIFY( cipherList.contains("TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA") );
++	// QVERIFY( cipherList.contains("TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA") );
++	// QVERIFY( cipherList.contains("TLS_RSA_WITH_3DES_EDE_CBC_SHA") );
++	// QVERIFY( cipherList.contains("TLS_RSA_WITH_AES_128_CBC_SHA") );
++	// QVERIFY( cipherList.contains("TLS_DHE_DSS_WITH_AES_128_CBC_SHA") );
+ 
+ 	// Fedora 26 openssl has no this cipher suites.
+ 	// QVERIFY( cipherList.contains("TLS_RSA_WITH_RC4_128_SHA") );
+@@ -89,16 +91,17 @@ void TLSUnitTest::testCipherList()
+ 	// QVERIFY( cipherList.contains("TLS_RSA_EXPORT_WITH_RC2_CBC_40_MD5") );
+ 	// QVERIFY( cipherList.contains("TLS_RSA_EXPORT_WITH_RC4_40_MD5") );
+ 
+-	cipherList = tls->supportedCipherSuites(QCA::TLS::SSL_v3);
+-	QVERIFY( cipherList.contains("SSL_DHE_RSA_WITH_AES_256_CBC_SHA") );
+-	QVERIFY( cipherList.contains("SSL_DHE_DSS_WITH_AES_256_CBC_SHA") );
+-	QVERIFY( cipherList.contains("SSL_RSA_WITH_AES_256_CBC_SHA") );
+-	QVERIFY( cipherList.contains("SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA") );
+-	QVERIFY( cipherList.contains("SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA") );
+-	QVERIFY( cipherList.contains("SSL_RSA_WITH_3DES_EDE_CBC_SHA") );
+-	QVERIFY( cipherList.contains("SSL_DHE_RSA_WITH_AES_128_CBC_SHA") );
+-	QVERIFY( cipherList.contains("SSL_DHE_DSS_WITH_AES_128_CBC_SHA") );
+-	QVERIFY( cipherList.contains("SSL_RSA_WITH_AES_128_CBC_SHA") );
++	// OpenSSL 1.1 in openSUSE TW has it disabled by default
++	// cipherList = tls->supportedCipherSuites(QCA::TLS::SSL_v3);
++	// QVERIFY( cipherList.contains("SSL_DHE_RSA_WITH_AES_256_CBC_SHA") );
++	// QVERIFY( cipherList.contains("SSL_DHE_DSS_WITH_AES_256_CBC_SHA") );
++	// QVERIFY( cipherList.contains("SSL_RSA_WITH_AES_256_CBC_SHA") );
++	// QVERIFY( cipherList.contains("SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA") );
++	// QVERIFY( cipherList.contains("SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA") );
++	// QVERIFY( cipherList.contains("SSL_RSA_WITH_3DES_EDE_CBC_SHA") );
++	// QVERIFY( cipherList.contains("SSL_DHE_RSA_WITH_AES_128_CBC_SHA") );
++	// QVERIFY( cipherList.contains("SSL_DHE_DSS_WITH_AES_128_CBC_SHA") );
++	// QVERIFY( cipherList.contains("SSL_RSA_WITH_AES_128_CBC_SHA") );
+ 
+ 	// QVERIFY( cipherList.contains("SSL_DHE_RSA_WITH_DES_CBC_SHA") );
+ 	// QVERIFY( cipherList.contains("SSL_DHE_DSS_WITH_DES_CBC_SHA") );
+-- 
+2.15.0
+
