@@ -1,0 +1,11 @@
+=========================================================================
+Don't forget to run nsd-control-setup to generate the required
+certificates and then ensure the user this process runs as can read them.
+
+The default user is nobody.  You can change the user (or group) by running:
+% sysrc nsd_exporter_user="user"
+% sysrc nsd_exporter_group="group"
+
+Be aware that any user with access to the certificates can run all of the
+nsd-control commands.
+=========================================================================

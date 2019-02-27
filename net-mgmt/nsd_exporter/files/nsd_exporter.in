@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# PROVIDE: nsd_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# nsd_exporter_enable (bool):          Set to NO by default.
+#               Set it to YES to enable nsd_exporter.
+# nsd_exporter_user (string):          Set user that nsd_exporter will run under
+#               Default is "nobody".
+# nsd_exporter_group (string):         Set group that nsd_exporter will run under
+#               Default is "nobody".
+# nsd_exporter_args (string):          Set extra arguments to pass to nsd_exporter
+#               Default is "".
+# nsd_exporter_listen_address (string):Set ip:port that nsd_exporter will listen on
+#               Default is ":9132".
+
+. /etc/rc.subr
+
+name=nsd_exporter
+rcvar=nsd_exporter_enable
+
+load_rc_config $name
+
+: ${nsd_exporter_enable:="NO"}
+: ${nsd_exporter_user:="nobody"}
+: ${nsd_exporter_group:="nobody"}
+: ${nsd_exporter_args:=""}
+: ${nsd_exporter_listen_address:=":9132"}
+: ${nsd_exporter_control_cert:="%%LOCALBASE%%/etc/nsd/nsd_control.pem"}
+: ${nsd_exporter_control_ca:="%%LOCALBASE%%/etc/nsd/nsd_server.pem"}
+: ${nsd_exporter_control_key:="%%LOCALBASE%%/etc/nsd/nsd_control.key"}
+: ${nsd_exporter_nsd_address:="127.0.0.1:8952"}
+: ${nsd_exporter_restart_delay:="10"}
+
+
+pidfile=/var/run/nsd_exporter.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/nsd_exporter"
+command_args="-rp ${pidfile} -S -R ${nsd_exporter_restart_delay} \
+    -T ${name} ${procname} \
+    -cert ${nsd_exporter_control_cert} \
+    -ca ${nsd_exporter_control_ca} \
+    -key ${nsd_exporter_control_key} \
+    -nsd-address ${nsd_exporter_nsd_address} \
+    -listen-address ${nsd_exporter_listen_address} \
+    ${nsd_exporter_args}"
+required_files="${nsd_exporter_control_cert} ${nsd_exporter_control_ca} ${nsd_exporter_control_key}"
+
+start_precmd=nsd_exporter_startprecmd
+
+nsd_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install -o ${nsd_exporter_user} -g ${nsd_exporter_group} /dev/null ${pidfile};
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
