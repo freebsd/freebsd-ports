@@ -1,0 +1,11 @@
+radian is an improved console for the R program with multiline editing and
+rich syntax highlight and more...
+
+Under the hood, radian is built on top of the python library prompt-toolkit.
+One would consider radian as a ipython clone for R, though its layout and
+keybinds are actually more similar to those of julia.
+
+radian is still under active developement, users should use it at their own
+risks.
+
+WWW: https://github.com/randy3k/radian

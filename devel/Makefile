@@ -5489,6 +5489,7 @@
     SUBDIR += racer
     SUBDIR += racerd
     SUBDIR += radare2
+    SUBDIR += radian
     SUBDIR += ragel
     SUBDIR += raknet
     SUBDIR += range-v3
@@ -5528,7 +5529,6 @@
     SUBDIR += rpm-spec-mode.el
     SUBDIR += rsvndump
     SUBDIR += rth
-    SUBDIR += rtichoke
     SUBDIR += ruby-bsearch
     SUBDIR += ruby-build
     SUBDIR += ruby-gems
