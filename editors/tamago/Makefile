@@ -14,7 +14,9 @@ COMMENT=	Egg V4, Multilingual Input Method for Emacsen
 LICENSE=	GPLv2
 
 USES=		emacs
-EMACS_FLAVORS_EXCLUDE=	devel_full # fails to build
+# Fails to build with Emacs 27.
+# Temporarily disable devel_full and devel_nox.
+EMACS_FLAVORS_EXCLUDE=	devel_full devel_nox
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrs-allbsd
 
