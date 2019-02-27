@@ -35,8 +35,7 @@ bin/squirrel-sql
 %%DATADIR%%/lib/jackson-databind-2.6.3.jar
 %%DATADIR%%/lib/javahelp.jar
 %%DATADIR%%/lib/javax.activation.jar
-%%DATADIR%%/lib/jcommon.jar
-%%DATADIR%%/lib/jfreechart.jar
+%%DATADIR%%/lib/jfreechart-1.5.0.jar
 %%DATADIR%%/lib/jide-oss.jar
 %%DATADIR%%/lib/jmeld.jar
 %%DATADIR%%/lib/log4j.jar
@@ -471,10 +470,6 @@ bin/squirrel-sql
 %%DATADIR%%/plugins/syntax/doc/readme.html
 %%DATADIR%%/plugins/syntax/doc/standard-nbm-license.txt
 %%DATADIR%%/plugins/syntax/doc/toolspopup.jpg
-%%DATADIR%%/plugins/userscript.jar
-%%DATADIR%%/plugins/userscript/doc/changes.txt
-%%DATADIR%%/plugins/userscript/doc/licence.txt
-%%DATADIR%%/plugins/userscript/doc/readme.txt
 %%DATADIR%%/plugins/vertica.jar
 %%DATADIR%%/plugins/vertica/doc/changes.txt
 %%DATADIR%%/plugins/vertica/doc/images/1-db-objects.png
