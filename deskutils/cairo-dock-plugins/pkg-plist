@@ -40,7 +40,6 @@ lib/cairo-dock/libcd-system-monitor.so
 lib/cairo-dock/libcd-systray.so
 lib/cairo-dock/libcd-tomboy.so
 lib/cairo-dock/libcd-weather.so
-%%WEBLETS%%lib/cairo-dock/libcd-weblets.so
 lib/cairo-dock/libcd-wifi.so
 %%GNOME_INTEGRATION%%lib/cairo-dock/libcd_gnome-integration.so
 %%KEYBOARD_INDICATOR%%lib/cairo-dock/libcd-keyboard-indicator.so
@@ -443,9 +442,6 @@ lib/cairo-dock/libcd-wifi.so
 %%DATADIR%%/plug-ins/weather/themes/Classic/preview
 %%DATADIR%%/plug-ins/weather/themes/Classic/readme
 %%DATADIR%%/plug-ins/weather/weather.conf
-%%WEBLETS%%%%DATADIR%%/plug-ins/weblets/icon.png
-%%WEBLETS%%%%DATADIR%%/plug-ins/weblets/preview.jpg
-%%WEBLETS%%%%DATADIR%%/plug-ins/weblets/weblets.conf
 %%DATADIR%%/plug-ins/wifi/default.svg
 %%DATADIR%%/plug-ins/wifi/icon.png
 %%DATADIR%%/plug-ins/wifi/no-signal.svg
