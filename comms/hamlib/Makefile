@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hamlib
-PORTVERSION=	3.1
-PORTREVISION=	2
+PORTVERSION=	3.3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 
@@ -15,32 +14,32 @@ LICENSE=	LGPL20
 BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-INFO=		hamlib
-USES=		autoreconf libtool:keepla pathfix perl5 pathfix pkgconfig python shebangfix tcl
+USES=		autoreconf libtool:keepla pathfix perl5 pathfix pkgconfig python readline shebangfix tcl
 USE_PYTHON=	py3kplist
-SHEBANG_FILES=	bindings/perltest.pl
 USE_PERL5=	build run
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+
 # $TCL_INCLUDE_SPEC
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+SHEBANG_FILES=	bindings/perltest.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl-binding \
 		--with-tcl-binding --with-tcl=${TCL_LIBDIR} \
+		--with-libusb \
 		--with-python-binding --without-rigmatrix
+CONFIGURE_ENV=	LIBUSB_LIBS="-lusb"
 PLIST_SUB=	VER=${PORTVERSION} TCL_VER=${TCL_VER}
 INSTALL_TARGET=	install-strip
 BINARY_ALIAS=	swig=swig3.0
+INFO=		hamlib
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' \
-		-e 's|%%TCL_LIBDIR%%|${TCL_LIBDIR}|g' \
 		${WRKSRC}/bindings/Makefile.am
-	@${REINPLACE_CMD} -e 's|%%TCLSH%%|${TCLSH}|g' \
-		${WRKSRC}/bindings/tcltest.tcl
 post-build:
 	${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' \
 		${STAGEDIR}${WRKSRC}/bindings/Hamlib-pl.mk

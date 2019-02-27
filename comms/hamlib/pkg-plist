@@ -16,8 +16,8 @@ lib/libhamlib++.a
 lib/libhamlib++.la
 lib/libhamlib++.so
 lib/libhamlib++.so.2
-lib/libhamlib++.so.2.1.1
-lib/libhamlib.so.2.1.1
+lib/libhamlib++.so.2.1.3
+lib/libhamlib.so.2.1.3
 lib/libhamlib.a
 lib/libhamlib.la
 lib/libhamlib.so
@@ -48,10 +48,14 @@ share/aclocal/hamlib.m4
 %%PORTDOCS%%%%DOCSDIR%%/PLAN
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.betatester
+%%PORTDOCS%%%%DOCSDIR%%/README.developer
 %%PORTDOCS%%%%DOCSDIR%%/README.win32
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/Hamlib_design.png
-%%PORTDOCS%%%%DOCSDIR%%/hamlib.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/pytest.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/perltest.pl
+%%PORTDOCS%%%%DOCSDIR%%/examples/tcltest.tcl
+%%PORTDOCS%%%%DOCSDIR%%/html/Hamlib_design.png
+%%PORTDOCS%%%%DOCSDIR%%/html/hamlib.html
 man/man1/rigctl.1.gz
 man/man1/rigctld.1.gz
 man/man1/rigmem.1.gz
@@ -59,3 +63,6 @@ man/man1/rigsmtr.1.gz
 man/man1/rigswr.1.gz
 man/man1/rotctl.1.gz
 man/man1/rotctld.1.gz
+man/man7/hamlib-primer.7.gz
+man/man7/hamlib-utilities.7.gz
+man/man7/hamlib.7.gz
