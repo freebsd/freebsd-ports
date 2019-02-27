@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmusicbrowser
-PORTVERSION=	1.1.13
+PORTVERSION=	1.1.15
 CATEGORIES=	audio
 MASTER_SITES=	http://gmusicbrowser.org/download/
 
@@ -13,16 +13,17 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	p5-Gtk2>=1.0:x11-toolkits/p5-Gtk2
 
+USES=		shebangfix
+SHEBANG_FILES=	*.pl
+
 NO_BUILD=	yes
 
 PORTDOCS=	AUTHORS COPYING README NEWS INSTALL layout_doc.html
 PORTDATA=	*
 
-USES=		shebangfix
-SHEBANG_FILES=	*.pl
-
 OPTIONS_DEFINE=	GSTREAMER DBUS WEBKIT NLS LIBNOTIFY DOCS
-OPTIONS_DEFAULT=LIBNOTIFY
+OPTIONS_DEFAULT=	GSTREAMER DBUS LIBNOTIFY
+OPTIONS_SUB=	yes
 
 LIBNOTIFY_DESC=	Desktop notification
 WEBKIT_DESC=	Enable embedded web browser
@@ -32,7 +33,6 @@ DBUS_RUN_DEPENDS=	p5-Net-DBus>=1.0:devel/p5-Net-DBus
 WEBKIT_RUN_DEPENDS=	p5-Gtk2-WebKit>=0:www/p5-Gtk2-WebKit
 LIBNOTIFY_RUN_DEPENDS=	p5-Gtk2-Notify>=0.05:devel/p5-Gtk2-Notify
 NLS_RUN_DEPENDS=	p5-Locale-gettext>=1.0:devel/p5-Locale-gettext
-OPTIONS_SUB=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
