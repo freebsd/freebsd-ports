@@ -92,7 +92,6 @@ lib/ADM_plugins6/autoScripts/dvd.py
 lib/ADM_plugins6/autoScripts/lib/ADM_imageInfo.py
 lib/ADM_plugins6/autoScripts/lib/ADM_image.py
 %%VPX%%lib/ADM_plugins6/videoDecoders/libADM_vd_vpx.so
-%%ESD%%lib/ADM_plugins6/audioDevices/libADM_av_esd.so
 %%FAAC%%lib/ADM_plugins6/audioEncoders/libADM_ae_faac.so
 %%FAAD%%lib/ADM_plugins6/audioDecoder/libADM_ad_faad.so
 %%JACK%%lib/ADM_plugins6/audioDevices/libADM_av_jack.so
