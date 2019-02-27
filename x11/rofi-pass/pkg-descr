@@ -1,0 +1,15 @@
+A bash script to handle Simple Password Store in a convenient way
+using rofi.
+
+Features:
+- Open URLs of entries with hotkey
+- Add new Entries to Password Storage
+- Edit existing Entries
+- Generate new passwords for entries
+- Inline view, which can copy/type individual entries
+- Move/Delete existing entries
+- Type any field from entry
+- Auto-typing of user and/or password fields
+- Generating OTPs
+
+WWW: https://github.com/carnager/rofi-pass
