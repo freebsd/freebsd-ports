@@ -25,11 +25,12 @@
 %%WWWDIR%%/images/unsplash-stars.jpeg
 %%WWWDIR%%/index.php
 %%WWWDIR%%/js/bootstrap.min.js
-%%WWWDIR%%/js/jquery-1.10.2.min.js
+%%WWWDIR%%/js/jquery-3.3.1.min.js
 %%WWWDIR%%/lang/ca.inc.php
 %%WWWDIR%%/lang/cn.inc.php
 %%WWWDIR%%/lang/cs.inc.php
 %%WWWDIR%%/lang/de.inc.php
+%%WWWDIR%%/lang/ee.inc.php
 %%WWWDIR%%/lang/el.inc.php
 %%WWWDIR%%/lang/en.inc.php
 %%WWWDIR%%/lang/es.inc.php
@@ -66,6 +67,14 @@
 %%WWWDIR%%/lib/vendor/ReCaptcha/RequestMethod.php
 %%WWWDIR%%/lib/vendor/ReCaptcha/RequestParameters.php
 %%WWWDIR%%/lib/vendor/ReCaptcha/Response.php
+%%WWWDIR%%/lib/vendor/ron-maxweb/pwned-passwords/composer.json
+%%WWWDIR%%/lib/vendor/ron-maxweb/pwned-passwords/ISSUE_TEMPLATE.md
+%%WWWDIR%%/lib/vendor/ron-maxweb/pwned-passwords/LICENSE
+%%WWWDIR%%/lib/vendor/ron-maxweb/pwned-passwords/PULL_REQUEST_TEMPLATE.md
+%%WWWDIR%%/lib/vendor/ron-maxweb/pwned-passwords/readme.md
+%%WWWDIR%%/lib/vendor/ron-maxweb/pwned-passwords/src/PwnedPasswords/providers/LaravelServiceProvider.php
+%%WWWDIR%%/lib/vendor/ron-maxweb/pwned-passwords/src/PwnedPasswords/providers/SilexServiceProvider.php
+%%WWWDIR%%/lib/vendor/ron-maxweb/pwned-passwords/src/PwnedPasswords/PwnedPasswords.php
 %%WWWDIR%%/LICENCE
 %%WWWDIR%%/menu.php
 %%WWWDIR%%/pages/change.php
@@ -76,3 +85,4 @@
 %%WWWDIR%%/pages/sendtoken.php
 %%WWWDIR%%/pages/setquestions.php
 %%WWWDIR%%/README.md
+%%WWWDIR%%/scripts/encrypt_answers.php
