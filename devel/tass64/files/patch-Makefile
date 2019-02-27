@@ -1,0 +1,20 @@
+--- Makefile.orig	2019-02-17 21:21:56 UTC
++++ Makefile
+@@ -24,8 +24,6 @@ mandir = $(datarootdir)/man
+ man1dir = $(mandir)/man1
+ docdir = $(datarootdir)/doc/$(TARGET)
+ 
+-.SILENT:
+-
+ $(TARGET): $(OBJ)
+ 	$(CC) $(LDFLAGS) $(OBJ) $(LDLIBS) -o $@
+ 
+@@ -204,6 +202,8 @@ wchar.o: wchar.c wchar.h inttypes.h
+ wctype.o: wctype.c wctype.h
+ 
+ .PHONY: all clean distclean install install-strip uninstall install-man install-doc
++
++all: $(TARGET)
+ 
+ clean:
+ 	-rm -f $(OBJ)
