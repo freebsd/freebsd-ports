@@ -31,9 +31,9 @@
  
  client:
  	-mkdir -p $(BIN_PATH)
-+	sed -i '' -e 's%# libpath%site.addsitedir\("${PREFIX}/lib/syncplay"\)%' syncplayClient.py
++	sed -i '' -e 's%# libpath%import site; site.addsitedir\("${PREFIX}/lib/syncplay"\)%' syncplayClient.py
  	cp syncplayClient.py $(BIN_PATH)/syncplay
--	sed -i -e 's%# libpath%site.addsitedir\("${PREFIX}/lib/syncplay"\)%' $(BIN_PATH)/syncplay
+-	sed -i -e '/# libpath/ a\import site\nsite.addsitedir\("${PREFIX}/lib/syncplay"\)' $(BIN_PATH)/syncplay
  	chmod 755 $(BIN_PATH)/syncplay
  	cp syncplayClient.py $(LIB_PATH)/syncplay/
  	cp resources/syncplay.desktop $(APP_SHORTCUT_PATH)/
@@ -50,9 +50,9 @@
  
  server:
  	-mkdir -p $(BIN_PATH)
-+	sed -i '' -e 's%# libpath%site.addsitedir\("${PREFIX}/lib/syncplay"\)%' syncplayServer.py
++	sed -i '' -e 's%# libpath%import site; site.addsitedir\("${PREFIX}/lib/syncplay"\)%' syncplayServer.py
  	cp syncplayServer.py $(BIN_PATH)/syncplay-server
--	sed -i -e 's%# libpath%site.addsitedir\("${PREFIX}/lib/syncplay"\)%' $(BIN_PATH)/syncplay-server
+-	sed -i -e '/# libpath/ a\import site\nsite.addsitedir\("${PREFIX}/lib/syncplay"\)' $(BIN_PATH)/syncplay-server
  	chmod 755 $(BIN_PATH)/syncplay-server
  	cp syncplayServer.py $(LIB_PATH)/syncplay/
  	cp resources/syncplay-server.desktop $(APP_SHORTCUT_PATH)/
