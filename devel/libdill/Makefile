@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdill
-DISTVERSION=	2.13
+DISTVERSION=	2.14
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
