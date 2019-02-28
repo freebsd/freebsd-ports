@@ -21,6 +21,7 @@ CONFLICTS_INSTALL=	cake
 
 OPTIONS_DEFINE=	EXAMPLES
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
