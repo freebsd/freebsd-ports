@@ -1,5 +1,0 @@
-Rack::Cors provides support for Cross-Origin Resource Sharing (CORS) for
-Rack compatible web applications. The CORS spec allows web applications
-to make cross domain AJAX calls without using workarounds such as JSONP.
-
-WWW: https://github.com/cyu/rack-cors
