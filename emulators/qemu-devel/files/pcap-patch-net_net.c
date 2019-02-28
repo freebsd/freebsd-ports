@@ -1,6 +1,6 @@
---- net/net.c.orig	2016-04-14 20:19:54 UTC
+--- net/net.c.orig	2018-04-24 16:30:47 UTC
 +++ net/net.c
-@@ -48,6 +48,11 @@
+@@ -52,6 +52,11 @@
  #include "net/filter.h"
  #include "qapi/string-output-visitor.h"
  
@@ -12,7 +12,7 @@
  /* Net bridge is currently not supported for W32. */
  #if !defined(_WIN32)
  # define CONFIG_NET_BRIDGE
-@@ -931,7 +936,223 @@ static int net_init_nic(const NetClientO
+@@ -929,7 +934,225 @@ static int net_init_nic(const Netdev *netdev, const ch
      return idx;
  }
  
@@ -22,7 +22,7 @@
 +#include <net/bpf.h>
 +#endif
 +#include <pcap.h>
-+
+ 
 +struct PCAPState {
 +    NetClientState     nc;
 +    pcap_t            *handle;
@@ -75,7 +75,7 @@
 +}
 +
 +static NetClientInfo net_pcap_info = {
-+    .type = NET_CLIENT_OPTIONS_KIND_PCAP,
++    .type = NET_CLIENT_DRIVER_PCAP,
 +    .size = sizeof(struct PCAPState),
 +    .receive = pcap_receive,
 +//    .receive_raw = pcap_receive_raw,
@@ -87,10 +87,10 @@
 + * ... -net pcap,ifname="..."
 + */
 +
-+int net_init_pcap(const NetClientOptions *opts,
++int net_init_pcap(const Netdev *netdev,
 +    const char *name, NetClientState *peer, Error **errp)
 +{
-+    const NetdevPcapOptions *pcap_opts = opts->u.pcap.data;
++    const NetdevPcapOptions *pcap_opts;
 +    NetClientState *nc;
 +    struct PCAPState *s;
 +    const char *ifname;
@@ -100,6 +100,8 @@
 +#endif
 +    int i;
 +
++    assert(netdev->type == NET_CLIENT_DRIVER_PCAP);
++    pcap_opts = &netdev->u.pcap;
 +    if (!pcap_opts->has_ifname)
 +        return -1;
 +
@@ -113,13 +115,13 @@
 +        fprintf(stderr, "qemu: pcap_create: %s\n", errbuf);
 +        goto fail;
 +    }
- 
++ 
 +#ifdef __FreeBSD__
 +    /*
 +     * We want to avoid passing oversize packets to the guest, which
 +     * at least on FreeBSD can happen if the host interface uses tso
 +     * (seen with an em(4) in this case) - so find out the host
-+     * interface's mtu and assume the guest is configured the same.
++    * interface's mtu and assume the guest is configured the same.
 +     */
 +    s->max_eth_frame_size = 1514;
 +    i = socket(AF_INET, SOCK_DGRAM, 0);
@@ -147,7 +149,7 @@
 +        pcap_perror(s->handle, (char *)"qemu: pcap_set_promisc:");
 +        goto fail;
 +    }
-+    if (pcap_activate(s->handle) != 0) {
++   if (pcap_activate(s->handle) != 0) {
 +        pcap_perror(s->handle, (char *)"qemu: pcap_activate:");
 +        goto fail;
 +    }
@@ -233,16 +235,16 @@
 +
 +#endif
 + 
- static int (* const net_client_init_fun[NET_CLIENT_OPTIONS_KIND__MAX])(
-     const NetClientOptions *opts,
+ static int (* const net_client_init_fun[NET_CLIENT_DRIVER__MAX])(
+     const Netdev *netdev,
      const char *name,
-@@ -952,6 +1172,9 @@ static int (* const net_client_init_fun[
- #ifdef CONFIG_NET_BRIDGE
-         [NET_CLIENT_OPTIONS_KIND_BRIDGE]    = net_init_bridge,
+@@ -955,6 +1178,9 @@ static int (* const net_client_init_fun[NET_CLIENT_DRI
  #endif
-+#ifdef CONFIG_PCAP
-+	[NET_CLIENT_OPTIONS_KIND_PCAP]      = net_init_pcap,
+ #ifdef CONFIG_L2TPV3
+         [NET_CLIENT_DRIVER_L2TPV3]    = net_init_l2tpv3,
 +#endif
-         [NET_CLIENT_OPTIONS_KIND_HUBPORT]   = net_init_hubport,
- #ifdef CONFIG_VHOST_NET_USED
-         [NET_CLIENT_OPTIONS_KIND_VHOST_USER] = net_init_vhost_user,
++#ifdef CONFIG_PCAP
++	[NET_CLIENT_DRIVER_PCAP]      = net_init_pcap,
+ #endif
+ };
+ 
