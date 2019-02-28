@@ -90,8 +90,8 @@ HTTP_AUTH_PAM_GH_TUPLE=		sto:ngx_http_auth_pam_module:v1.5.1:auth_pam
 HTTP_AUTH_PAM_VARS=		DSO_EXTMODS+=auth_pam
 
 HTTP_DAV_EXT_IMPLIES=		HTTP_DAV
-HTTP_DAV_EXT_LIB_DEPENDS=	libexpat.so:textproc/expat2
-HTTP_DAV_EXT_GH_TUPLE=		arut:nginx-dav-ext-module:v0.1.0:dav_ext
+HTTP_DAV_EXT_USE=		GNOME=libxml2
+HTTP_DAV_EXT_GH_TUPLE=		arut:nginx-dav-ext-module:v3.0.0:dav_ext
 HTTP_DAV_EXT_CONFIGURE_ON=	--add-module=${WRKSRC_dav_ext}
 
 HTTP_EVAL_GH_TUPLE=		openresty:nginx-eval-module:582bd25:eval
