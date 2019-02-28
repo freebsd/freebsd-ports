@@ -1,0 +1,6 @@
+This module implements a Canvas-based clock widget for perl-Tk with
+lots of options to change the appearance.
+
+Both analog and digital clocks are implemented.
+
+WWW: https://metacpan.org/release/Tk-Clock

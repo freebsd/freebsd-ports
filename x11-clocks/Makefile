@@ -26,6 +26,7 @@
     SUBDIR += mouseclock
     SUBDIR += oclock
     SUBDIR += osdclock
+    SUBDIR += p5-Tk-Clock
     SUBDIR += pclock
     SUBDIR += rclock
     SUBDIR += stopwatch
