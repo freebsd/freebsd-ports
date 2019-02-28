@@ -14,7 +14,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
-MAKE_ENV=	PCDIR="${STAGEDIR}${PREFIX}/libdata/pkgconfig"
 TEST_TARGET=	check
 PLIST_FILES=	bin/${PORTNAME} \
 		libdata/pkgconfig/${PORTNAME}.pc \
@@ -23,6 +22,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,share/man,man,' \
+		-e '/pkgconfig/s,lib,libdata,' \
 		-e '/BIN/s,install -Dm755,${INSTALL_PROGRAM},' \
 		-e '/MAN/s,install -Dm644,${INSTALL_MAN},' \
 		-e '/PC/s,install -Dm644,${INSTALL_DATA},' \
