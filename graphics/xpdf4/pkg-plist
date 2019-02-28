@@ -7,8 +7,8 @@ libexec/xpdf/pdftopng
 libexec/xpdf/pdftoppm
 libexec/xpdf/pdftops
 libexec/xpdf/pdftotext
-libexec/xpdf/xpdf
-bin/xpdf
+%%GUI%%libexec/xpdf/xpdf
+%%GUI%%bin/xpdf
 %%DESKTOPDIR%%/xpdf.desktop
 etc/man.d/xpdf.conf
 %%DATADIR%%/man/man1/pdfdetach.1.gz
@@ -20,6 +20,6 @@ etc/man.d/xpdf.conf
 %%DATADIR%%/man/man1/pdftoppm.1.gz
 %%DATADIR%%/man/man1/pdftops.1.gz
 %%DATADIR%%/man/man1/pdftotext.1.gz
-%%DATADIR%%/man/man1/xpdf.1.gz
+%%GUI%%%%DATADIR%%/man/man1/xpdf.1.gz
 %%DATADIR%%/man/man5/xpdfrc.5.gz
 @sample etc/xpdfrc.sample

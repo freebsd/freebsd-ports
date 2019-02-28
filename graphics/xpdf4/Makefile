@@ -2,6 +2,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	4.01
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	https://xpdfreader-dl.s3.amazonaws.com/
@@ -22,15 +23,13 @@ CONFLICTS_INSTALL+=	xpdf3-*	xpdf4-*
 .endif
 
 USES=		compiler:c++11-lang cmake localbase:ldflags \
-		desktop-file-utils qt:5
+		desktop-file-utils
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/d050000l.pfb:print/gsfonts
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/d050000l.pfb:print/gsfonts
 MANPREFIX=	${PREFIX}/share/xpdf
 SUB_FILES=	xpdf-man.conf
-USE_QT=		buildtools_build concurrent core gui network printsupport \
-		qmake_build svg widgets
 CMAKE_ARGS+=	-DOPI_SUPPORT:BOOL=ON -DCMAKE_DISABLE_FIND_PACKAGE_Qt4:BOOL=ON \
 		-DUSE_LCMS:BOOL=OFF -DSYSTEM_XPDFRC=${PREFIX}/etc/xpdfrc \
 		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
@@ -41,8 +40,8 @@ CMAKE_ARGS+=	-DOPI_SUPPORT:BOOL=ON -DCMAKE_DISABLE_FIND_PACKAGE_Qt4:BOOL=ON \
 
 PLIST_SUB=		DESKTOPDIR="${DESKTOPDIR}"
 
-OPTIONS_DEFINE=		TYPE1 LIBPAPER PRINT
-OPTIONS_DEFAULT=	TYPE1 PRINT
+OPTIONS_DEFINE=		TYPE1 LIBPAPER PRINT GUI
+OPTIONS_DEFAULT=	TYPE1 PRINT GUI
 OPTIONS_SUB=		yes
 
 TYPE1_CMAKE_BOOL=	TYPE1
@@ -51,6 +50,12 @@ TYPE1_RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/d050000l.pfb:print/gsfon
 
 LIBPAPER_CMAKE_BOOL=	USE_LIBPAPER
 LIBPAPER_LIB_DEPENDS=	libpaper.so:print/libpaper
+
+GUI_CMAKE_OFF=		-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets=1
+GUI_DESC=		QT5 interface
+GUI_CMAKE_ARGS+=	-DNO_TEXT_SELECT:BOOL=OFF
+GUI_USES=		qt:5
+GUI_USE=		QT=buildtools_build,qmake_build,concurrent,core,gui,widgets,printsupport,svg,network,printsupport
 
 PRINT_CMAKE_ON=		-DXPDFWIDGET_PRINTING:BOOL=ON -DCUPS:BOOL=ON
 PRINT_CMAKE_OFF=	-DXPDFWIDGET_PRINTING:BOOL=OFF -DCUPS:BOOL=OFF
