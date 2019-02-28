@@ -12,6 +12,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Racoon2 IPsec daemon
 
 CONFLICTS=	racoon2-[0-9]*
+BROKEN_FreeBSD_12=	Will not build with openssl111
+BROKEN_FreeBSD_13=	Will not build with openssl111
 
 USES=		perl5 tar:tgz ssl
 CONFIGURE_ARGS+=	--disable-kinkd
