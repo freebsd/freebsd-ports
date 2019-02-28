@@ -272,6 +272,7 @@ lib/lmms/libzynaddsubfx.so
 lib/libqx11embedcontainer.a
 man/man1/lmms.1.gz
 share/applications/lmms.desktop
+share/bash-completion/completions/lmms
 share/icons/hicolor/128x128/apps/lmms.png
 share/icons/hicolor/128x128/mimetypes/application-x-lmms-project.png
 share/icons/hicolor/128x128@2/apps/lmms.png
@@ -312,6 +313,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-lmms-project.svg
 %%DATADIR%%/locale/fr.qm
 %%DATADIR%%/locale/gl.qm
 %%DATADIR%%/locale/hu_HU.qm
+%%DATADIR%%/locale/id.qm
 %%DATADIR%%/locale/it.qm
 %%DATADIR%%/locale/ja.qm
 %%DATADIR%%/locale/ko.qm
