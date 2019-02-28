@@ -1,35 +1,25 @@
---- configure.orig	2016-04-14 20:19:53 UTC
+--- configure.orig	2018-12-11 17:44:34 UTC
 +++ configure
-@@ -245,7 +245,7 @@ DSOSUF=".so"
+@@ -393,7 +393,7 @@ DSOSUF=".so"
  LDFLAGS_SHARED="-shared"
  modules="no"
  prefix="/usr/local"
 -mandir="\${prefix}/share/man"
 +mandir="\${prefix}/man"
  datadir="\${prefix}/share"
+ firmwarepath="\${prefix}/share/qemu-firmware"
  qemu_docdir="\${prefix}/share/doc/qemu"
- bindir="\${prefix}/bin"
-@@ -316,6 +316,10 @@ virglrenderer=""
- tpm="yes"
- libssh2=""
- vhdx=""
-+quorum="no"
+@@ -469,6 +469,9 @@ numa=""
+ tcmalloc="no"
+ jemalloc="no"
+ replication="yes"
 +pcap="no"
 +pcap_create="no"
 +bpf="no"
- numa=""
- tcmalloc="no"
- jemalloc="no"
-@@ -575,7 +579,7 @@ FreeBSD)
-   audio_drv_list="oss"
-   audio_possible_drivers="oss sdl pa"
-   # needed for kinfo_getvmmap(3) in libutil.h
--  LIBS="-lutil $LIBS"
-+  LIBS="-lprocstat -lkvm -lelf -lutil $LIBS"
-   netmap=""  # enable netmap autodetect
-   HOST_VARIANT_DIR="freebsd"
- ;;
-@@ -878,6 +882,10 @@ for opt do
+ vxhs=""
+ bochs="yes"
+ cloop="yes"
+@@ -1097,6 +1100,10 @@ for opt do
    ;;
    --enable-vnc-png) vnc_png="yes"
    ;;
@@ -39,17 +29,8 @@
 +  ;;
    --disable-slirp) slirp="no"
    ;;
-   --disable-uuid) uuid="no"
-@@ -2157,7 +2165,7 @@ if test "$gtk" != "no"; then
-             gtk_cflags="$gtk_cflags $x11_cflags"
-             gtk_libs="$gtk_libs $x11_libs"
-         fi
--        libs_softmmu="$gtk_libs $libs_softmmu"
-+        libs_softmmu="$gtk_libs -lintl $libs_softmmu"
-         gtk="yes"
-     elif test "$gtk" = "yes"; then
-         feature_not_found "gtk" "Install gtk2 or gtk3 devel"
-@@ -2384,6 +2392,14 @@ if ! check_include "ifaddrs.h" ; then
+   --disable-vde) vde="no"
+@@ -2860,6 +2867,14 @@ if ! check_include "ifaddrs.h" ; then
  fi
  
  ##########################################
@@ -64,13 +45,25 @@
  # VTE probe
  
  if test "$vte" != "no"; then
-@@ -2526,6 +2542,50 @@ EOF
+@@ -4466,11 +4481,6 @@ fi
+ if test "$docs" != "no" ; then
+   if has makeinfo && has pod2man; then
+     docs=yes
+-  else
+-    if test "$docs" = "yes" ; then
+-      feature_not_found "docs" "Install texinfo and Perl/perl-podlators"
+-    fi
+-    docs=no
+   fi
+ fi
+ 
+@@ -4984,7 +4994,51 @@ if test "$debug_stack_usage" = "yes"; then
    fi
  fi
  
 +##########################################
 +# pcap probe
-+
+ 
 +if test "$pcap" = "yes" -a "$pcap" != "no"; then
 +  cat > $TMPC << EOF
 +#include <pcap.h>
@@ -112,33 +105,19 @@
 +  fi
 +  libs_softmmu="$libpcap $libs_softmmu"
 +fi # test "$pcap"
- 
++
  ##########################################
- # VNC SASL detection
-@@ -3857,14 +3917,7 @@ fi
+ # check if we have open_by_handle_at
  
- # Check if tools are available to build documentation.
- if test "$docs" != "no" ; then
--  if has makeinfo && has pod2man; then
-     docs=yes
--  else
--    if test "$docs" = "yes" ; then
--      feature_not_found "docs" "Install texinfo and Perl/perl-podlators"
--    fi
--    docs=no
--  fi
- fi
- 
- # Search for bswap_32 function
-@@ -4769,6 +4834,7 @@ echo "Audio drivers     $audio_drv_list"
+@@ -6005,6 +6059,7 @@ echo "Audio drivers     $audio_drv_list"
  echo "Block whitelist (rw) $block_drv_rw_whitelist"
  echo "Block whitelist (ro) $block_drv_ro_whitelist"
  echo "VirtFS support    $virtfs"
 +echo "pcap support      $pcap"
+ echo "Multipath support $mpath"
  echo "VNC support       $vnc"
  if test "$vnc" = "yes" ; then
-     echo "VNC SASL support  $vnc_sasl"
-@@ -4950,6 +5016,15 @@ fi
+@@ -6240,6 +6295,15 @@ fi
  if test "$profiler" = "yes" ; then
    echo "CONFIG_PROFILER=y" >> $config_host_mak
  fi
@@ -154,13 +133,13 @@
  if test "$slirp" = "yes" ; then
    echo "CONFIG_SLIRP=y" >> $config_host_mak
    echo "CONFIG_SMBD_COMMAND=\"$smbd\"" >> $config_host_mak
-@@ -5153,6 +5228,9 @@ fi
- if test "$have_ifaddrs_h" = "yes" ; then
-     echo "HAVE_IFADDRS_H=y" >> $config_host_mak
- fi
+@@ -6470,6 +6534,9 @@ fi
+ # if this macro is set.
+ if test "$have_fsxattr" = "yes" ; then
+     echo "HAVE_FSXATTR=y" >> $config_host_mak
++fi
 +if test "$have_ifaddrs_h" = "yes" ; then
 +    echo "HAVE_IFADDRS_H=y" >> $config_host_mak
-+fi
- if test "$vte" = "yes" ; then
-   echo "CONFIG_VTE=y" >> $config_host_mak
-   echo "VTE_CFLAGS=$vte_cflags" >> $config_host_mak
+ fi
+ if test "$have_copy_file_range" = "yes" ; then
+     echo "HAVE_COPY_FILE_RANGE=y" >> $config_host_mak

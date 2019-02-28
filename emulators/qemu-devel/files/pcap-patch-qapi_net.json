@@ -1,0 +1,56 @@
+--- qapi/net.json.orig	2018-04-24 16:30:47 UTC
++++ qapi/net.json
+@@ -388,6 +388,19 @@
+     '*helper': 'str' } }
+ 
+ ##
++# @NetdevPcapOptions:
++#
++# Use ifname as a source to capture
++#
++# @ifname: #required to determine which interface to capture
++#
++# Since: 1.2
++##
++{ 'struct': 'NetdevPcapOptions',
++  'data': {
++    '*ifname':     'str' } }
++
++##
+ # @NetdevHubPortOptions:
+ #
+ # Connect two or more net clients through a software hub.
+@@ -454,7 +467,7 @@
+ ##
+ { 'enum': 'NetClientDriver',
+   'data': [ 'none', 'nic', 'user', 'tap', 'l2tpv3', 'socket', 'vde',
+-            'bridge', 'hubport', 'netmap', 'vhost-user' ] }
++            'bridge', 'hubport', 'netmap', 'vhost-user', 'pcap' ] }
+ 
+ ##
+ # @Netdev:
+@@ -478,6 +491,7 @@
+     'user':     'NetdevUserOptions',
+     'tap':      'NetdevTapOptions',
+     'l2tpv3':   'NetdevL2TPv3Options',
++    'pcap':     'NetdevPcapOptions',
+     'socket':   'NetdevSocketOptions',
+     'vde':      'NetdevVdeOptions',
+     'bridge':   'NetdevBridgeOptions',
+@@ -514,7 +528,7 @@
+ ##
+ { 'enum': 'NetLegacyOptionsType',
+   'data': ['none', 'nic', 'user', 'tap', 'l2tpv3', 'socket', 'vde',
+-           'bridge', 'netmap', 'vhost-user'] }
++           'bridge', 'netmap', 'vhost-user', 'pcap'] }
+ 
+ ##
+ # @NetLegacyOptions:
+@@ -532,6 +546,7 @@
+     'user':     'NetdevUserOptions',
+     'tap':      'NetdevTapOptions',
+     'l2tpv3':   'NetdevL2TPv3Options',
++    'pcap':     'NetdevPcapOptions',
+     'socket':   'NetdevSocketOptions',
+     'vde':      'NetdevVdeOptions',
+     'bridge':   'NetdevBridgeOptions',
