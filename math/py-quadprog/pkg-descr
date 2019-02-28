@@ -1,0 +1,6 @@
+Solve a strictly convex quadratic program:
+
+Minimize     1/2 x^T G x - a^T x
+Subject to   C.T x >= b
+
+WWW: https://pypi.org/project/quadprog
