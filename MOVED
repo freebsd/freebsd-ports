@@ -11641,3 +11641,6 @@ devel/rtichoke|devel/radian|2019-02-26|Project is renamed
 sysutils/xen-tools411|sysutils/xen-tools|2019-02-27|Rename in preparation for having a single Xen port
 emulators/xen-kernel411|emulators/xen-kernel|2019-02-27|Rename in preparation for having a single Xen port
 net/ceph|net/ceph12|2019-02-27|Make room for other ceph versions
+devel/rubygem-grape0|devel/rubygem-grape|2019-02-28|Has expired: Use devel/rubygem-grape instead
+www/rubygem-jwt1|www/rubygem-jwt|2019-02-28|Has expired: Use www/rubygem-jwt instead
+www/rubygem-rack-cors0|www/rubygem-rack-cors|2019-02-28|Has expired: Use www/rubygem-rack-cors instead
