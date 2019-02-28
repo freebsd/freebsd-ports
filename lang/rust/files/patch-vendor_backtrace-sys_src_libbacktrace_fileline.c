@@ -1,7 +1,7 @@
 This file is in the public domain.
 
---- src/libbacktrace/fileline.c.orig	2019-01-16 09:30:44 UTC
-+++ src/libbacktrace/fileline.c
+--- vendor/backtrace-sys/src/libbacktrace/fileline.c.orig	2019-01-16 09:30:44 UTC
++++ vendor/backtrace-sys/src/libbacktrace/fileline.c
 @@ -39,8 +39,39 @@ POSSIBILITY OF SUCH DAMAGE.  */
  #include <stdlib.h>
  #include <unistd.h>

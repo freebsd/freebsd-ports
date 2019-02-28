@@ -1,0 +1,35 @@
+commit f8f381bf03b5
+Author: Emilio Cobos Álvarez <emilio@crisal.io>
+Date:   Sun Jan 13 21:42:38 2019 +0100
+
+    Bug 1519629 - Document a few more macros.
+---
+ servo/components/style/gecko/regen_atoms.py            | 1 +
+ servo/components/style/gecko_string_cache/namespace.rs | 2 ++
+ 2 files changed, 3 insertions(+)
+
+diff --git servo/components/style/gecko/regen_atoms.py servo/components/style/gecko/regen_atoms.py
+index dfc2252aa899..b6f68fceb7d5 100755
+--- mozilla-release/servo/components/style/gecko/regen_atoms.py
++++ mozilla-release/servo/components/style/gecko/regen_atoms.py
+@@ -203,6 +203,7 @@ RULE_TEMPLATE = ('("{atom}") =>\n  '
+ 
+ MACRO = '''
+ #[macro_export]
++/// Returns a static atom by passing the literal string it represents.
+ macro_rules! atom {{
+ {}
+ }}
+diff --git servo/components/style/gecko_string_cache/namespace.rs servo/components/style/gecko_string_cache/namespace.rs
+index 4aa4accaf1d4..725e1da21692 100644
+--- mozilla-release/servo/components/style/gecko_string_cache/namespace.rs
++++ mozilla-release/servo/components/style/gecko_string_cache/namespace.rs
+@@ -11,6 +11,8 @@ use std::borrow::Borrow;
+ use std::fmt;
+ use std::ops::Deref;
+ 
++/// In Gecko namespaces are just regular atoms, so this is a simple macro to
++/// forward one macro to the other.
+ #[macro_export]
+ macro_rules! ns {
+     () => {
