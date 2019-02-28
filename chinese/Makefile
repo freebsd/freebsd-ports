@@ -102,6 +102,7 @@
     SUBDIR += scim-fcitx
     SUBDIR += scim-pinyin
     SUBDIR += scim-tables
+    SUBDIR += sourcehanserif-tc-otf
     SUBDIR += sunpinyin
     SUBDIR += tin
     SUBDIR += tintin++
