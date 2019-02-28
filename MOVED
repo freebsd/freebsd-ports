@@ -11644,3 +11644,4 @@ net/ceph|net/ceph12|2019-02-27|Make room for other ceph versions
 devel/rubygem-grape0|devel/rubygem-grape|2019-02-28|Has expired: Use devel/rubygem-grape instead
 www/rubygem-jwt1|www/rubygem-jwt|2019-02-28|Has expired: Use www/rubygem-jwt instead
 www/rubygem-rack-cors0|www/rubygem-rack-cors|2019-02-28|Has expired: Use www/rubygem-rack-cors instead
+databases/py-sqlparse01|databases/py-sqlparse020|2019-02-28|Removed: Use databases/py-sqlparse020, if you need sqlparse for py-twext
