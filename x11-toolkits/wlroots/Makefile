@@ -1,11 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	wlroots
-DISTVERSION=	0.4
+DISTVERSION=	0.4.1
 CATEGORIES=	x11-toolkits
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	0b336431757c.patch:-p1 # version bump
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library
