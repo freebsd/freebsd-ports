@@ -14,10 +14,10 @@ LIB_DEPENDS=	libsnappy.so:archivers/snappy
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		autoreconf compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	kubo
 
-USES=		autoreconf compiler:c++11-lang
 CONFIGURE_ARGS=	--with-snappy=${LOCALBASE}
 GNU_CONFIGURE=	yes
 
