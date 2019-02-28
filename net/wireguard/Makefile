@@ -2,6 +2,7 @@
 
 PORTNAME=	wireguard
 PORTVERSION=	0.0.20190227
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://git.zx2c4.com/WireGuard/snapshot/
 DISTNAME=	WireGuard-${PORTVERSION}
