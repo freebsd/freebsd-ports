@@ -3,7 +3,7 @@
 @@ -41,7 +41,6 @@
  #include <string.h>
  #include <ctype.h>
- #include <bsdxml.h>
+ #include <expat.h>
 -#include <domalloc.h>
  
  /*
