@@ -3,6 +3,7 @@
 PORTNAME=	spotifyd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -111,7 +112,7 @@ CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		lazy_static-1.2.0 \
 		lazycell-1.2.1 \
 		lewton-0.9.3 \
-		libc-0.2.48 \
+		libc-0.2.49 \
 		libdbus-sys-0.1.5 \
 		libflate-0.1.19 \
 		libpulse-sys-0.0.0 \

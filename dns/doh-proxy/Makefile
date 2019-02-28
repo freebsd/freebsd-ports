@@ -3,7 +3,7 @@
 
 PORTNAME=	doh-proxy
 DISTVERSION=	0.1.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	dns
 
 MAINTAINER=	mat@FreeBSD.org
@@ -47,7 +47,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.1.0 \
 		lazycell-0.6.0 \
-		libc-0.2.43 \
+		libc-0.2.49 \
 		lock_api-0.1.3 \
 		log-0.4.4 \
 		memoffset-0.2.1 \

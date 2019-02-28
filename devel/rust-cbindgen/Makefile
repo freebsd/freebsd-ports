@@ -3,6 +3,7 @@
 PORTNAME=	cbindgen
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	rust-
 
@@ -28,7 +29,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		itoa-0.4.3 \
-		libc-0.2.47 \
+		libc-0.2.49 \
 		log-0.4.6 \
 		proc-macro2-0.4.25 \
 		quote-0.6.10 \

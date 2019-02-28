@@ -3,6 +3,7 @@
 PORTNAME=	rust-bindgen
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.47.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -37,7 +38,7 @@ CARGO_CRATES=	aho-corasick-0.6.8 \
 		hashbrown-0.1.7 \
 		humantime-1.1.1 \
 		lazy_static-1.1.0 \
-		libc-0.2.43 \
+		libc-0.2.49 \
 		libloading-0.5.0 \
 		log-0.4.5 \
 		memchr-2.1.0 \

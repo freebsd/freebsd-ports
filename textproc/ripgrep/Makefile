@@ -5,7 +5,7 @@
 
 PORTNAME=	ripgrep
 DISTVERSION=	0.10.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -44,7 +44,7 @@ CARGO_CRATES=	aho-corasick-0.6.8 \
 		glob-0.2.11 \
 		itoa-0.4.2 \
 		lazy_static-1.1.0 \
-		libc-0.2.43 \
+		libc-0.2.49 \
 		lock_api-0.1.3 \
 		log-0.4.5 \
 		memchr-2.0.2 \

@@ -3,7 +3,7 @@
 PORTNAME=	kak-lsp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -64,7 +64,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		jsonrpc-core-8.0.1 \
 		languageserver-types-0.53.0 \
 		lazy_static-1.2.0 \
-		libc-0.2.45 \
+		libc-0.2.49 \
 		libflate-0.1.19 \
 		lock_api-0.1.5 \
 		log-0.3.9 \

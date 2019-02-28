@@ -3,6 +3,7 @@
 PORTNAME=	sandboxfs
 DISTVERSIONPREFIX=	sandboxfs-
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -41,7 +42,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		kernel32-sys-0.2.2 \
 		lazy_static-0.2.11 \
 		lazy_static-1.2.0 \
-		libc-0.2.48 \
+		libc-0.2.49 \
 		log-0.3.9 \
 		log-0.4.6 \
 		memchr-2.1.3 \

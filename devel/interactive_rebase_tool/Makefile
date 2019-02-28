@@ -2,6 +2,7 @@
 
 PORTNAME=	interactive_rebase_tool
 DISTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -23,7 +24,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		curl-sys-0.4.13 \
 		git2-0.7.5 \
 		idna-0.1.5 \
-		libc-0.2.43 \
+		libc-0.2.49 \
 		libgit2-sys-0.7.10 \
 		libssh2-sys-0.2.11 \
 		libz-sys-1.0.25 \

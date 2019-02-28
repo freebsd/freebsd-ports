@@ -4,7 +4,7 @@ PORTNAME=	admiral
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0-7
 DISTVERSIONSUFFIX=	-g5a9f33b
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -21,7 +21,7 @@ CARGO_CRATES=	ansi_term-0.10.2 \
 		atty-0.2.6 \
 		bitflags-1.0.1 \
 		clap-2.29.2 \
-		libc-0.2.42 \
+		libc-0.2.49 \
 		num_cpus-1.8.0 \
 		quote-0.3.15 \
 		redox_syscall-0.1.37 \

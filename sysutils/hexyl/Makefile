@@ -3,7 +3,7 @@
 PORTNAME=	hexyl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -26,7 +26,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		clap-2.32.0 \
 		ctrlc-3.1.1 \
 		kernel32-sys-0.2.2 \
-		libc-0.2.46 \
+		libc-0.2.49 \
 		nix-0.11.0 \
 		redox_syscall-0.1.50 \
 		redox_termios-0.1.1 \

@@ -2,7 +2,7 @@
 
 PORTNAME=	rabbiteer
 DISTVERSION=	1.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 
 MAINTAINER=	dch@FreeBSD.org
@@ -40,7 +40,7 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		idna-0.1.5 \
 		kernel32-sys-0.2.2 \
-		libc-0.2.43 \
+		libc-0.2.49 \
 		log-0.3.9 \
 		log-0.4.5 \
 		matches-0.1.8 \
