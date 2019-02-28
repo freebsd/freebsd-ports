@@ -16,6 +16,6 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-PLIST_FILES+=	bin/asciidoctor bin/asciidoctor-safe
+PLIST_FILES=	bin/asciidoctor bin/asciidoctor-safe
 
 .include <bsd.port.mk>
