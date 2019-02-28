@@ -7,6 +7,11 @@ share/locale/pl/LC_MESSAGES/xournalpp.mo
 share/locale/zh/LC_MESSAGES/xournalpp.mo
 share/locale/zh_HK/LC_MESSAGES/xournalpp.mo
 share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
+%%DATADIR%%/plugins/Example/main.lua
+%%DATADIR%%/plugins/Example/plugin.ini
+%%DATADIR%%/plugins/Example/var_dump.lua
+%%DATADIR%%/plugins/ToggleGrid/plugin.ini
+%%DATADIR%%/plugins/ToggleGrid/togglegrid.lua
 %%DATADIR%%/ui/about.glade
 %%DATADIR%%/ui/exportSettings.glade
 %%DATADIR%%/ui/fillTransparency.glade
@@ -16,6 +21,9 @@ share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
 %%DATADIR%%/ui/icons/hicolor/index.theme
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/addPage.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/arrow-draw.svg
+%%DATADIR%%/ui/icons/hicolor/scalable/actions/audio-playback-pause.svg
+%%DATADIR%%/ui/icons/hicolor/scalable/actions/audio-playback-stop.svg
+%%DATADIR%%/ui/icons/hicolor/scalable/actions/audio-record.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/centerPage.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/circle-draw.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/coordinate-system-draw.svg
@@ -35,7 +43,6 @@ share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/nextAnnotatedPage.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/object-play.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/object-select.svg
-%%DATADIR%%/ui/icons/hicolor/scalable/actions/rec.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/rect-draw.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/rect-select.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/ruler.svg
@@ -60,6 +67,8 @@ share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
 %%DATADIR%%/ui/iconsDark/hicolor/icon-theme.cache
 %%DATADIR%%/ui/iconsDark/hicolor/index.theme
 %%DATADIR%%/ui/iconsDark/hicolor/scalable/actions/arrow-draw.svg
+%%DATADIR%%/ui/iconsDark/hicolor/scalable/actions/audio-playback-pause.svg
+%%DATADIR%%/ui/iconsDark/hicolor/scalable/actions/audio-playback-stop.svg
 %%DATADIR%%/ui/iconsDark/hicolor/scalable/actions/circle-draw.svg
 %%DATADIR%%/ui/iconsDark/hicolor/scalable/actions/coordinate-system-draw.svg
 %%DATADIR%%/ui/iconsDark/hicolor/scalable/actions/fill.svg
@@ -88,6 +97,8 @@ share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
 %%DATADIR%%/ui/pixmaps/xopt.svg
 %%DATADIR%%/ui/pixmaps/xournalpp.png
 %%DATADIR%%/ui/pixmaps/xournalpp.svg
+%%DATADIR%%/ui/plugin.glade
+%%DATADIR%%/ui/pluginEntry.glade
 %%DATADIR%%/ui/settings.glade
 %%DATADIR%%/ui/settingsButtonConfig.glade
 %%DATADIR%%/ui/texdialog.glade
