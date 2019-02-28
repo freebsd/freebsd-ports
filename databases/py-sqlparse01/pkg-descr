@@ -1,4 +1,0 @@
-sqlparse is a non-validating SQL parser module. It provides support for
-parsing, splitting and formatting SQL statements.
-
-WWW: https://github.com/andialbrecht/sqlparse
