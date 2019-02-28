@@ -3,6 +3,7 @@
 PORTNAME=	hyperfine
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -41,7 +42,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		kernel32-sys-0.2.2 \
 		lazy_static-0.2.11 \
 		lazy_static-1.2.0 \
-		libc-0.2.43 \
+		libc-0.2.49 \
 		lock_api-0.1.5 \
 		memchr-2.1.1 \
 		num-0.1.42 \

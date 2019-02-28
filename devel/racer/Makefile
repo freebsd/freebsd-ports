@@ -4,6 +4,7 @@
 PORTNAME=	racer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.17
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	beyert@cs.ucr.edu
@@ -54,7 +55,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		itoa-0.4.3 \
 		lazy_static-1.2.0 \
 		lazycell-1.2.0 \
-		libc-0.2.44 \
+		libc-0.2.49 \
 		lock_api-0.1.5 \
 		log-0.4.6 \
 		memchr-2.1.1 \

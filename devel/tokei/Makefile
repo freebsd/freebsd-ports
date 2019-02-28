@@ -3,7 +3,7 @@
 PORTNAME=	tokei
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -65,7 +65,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		itoa-0.4.3 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.2.0 \
-		libc-0.2.46 \
+		libc-0.2.49 \
 		linked-hash-map-0.5.1 \
 		lock_api-0.1.5 \
 		log-0.4.6 \

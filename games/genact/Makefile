@@ -2,7 +2,7 @@
 
 PORTNAME=	genact
 DISTVERSION=	0.6.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -48,7 +48,7 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		kernel32-sys-0.2.2 \
 		lazy_static-0.2.11 \
 		lazy_static-1.0.1 \
-		libc-0.2.42 \
+		libc-0.2.49 \
 		libloading-0.4.3 \
 		log-0.3.9 \
 		log-0.4.1 \

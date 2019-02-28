@@ -3,6 +3,7 @@
 PORTNAME=	alacritty
 PORTVERSION=	0.2.9
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	zeising@FreeBSD.org
@@ -143,7 +144,7 @@ CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		khronos_api-3.0.0 \
 		lazy_static-1.2.0 \
 		lazycell-1.2.1 \
-		libc-0.2.48 \
+		libc-0.2.49 \
 		libflate-0.1.19 \
 		libloading-0.5.0 \
 		libz-sys-1.0.25 \

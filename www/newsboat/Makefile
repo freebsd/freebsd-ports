@@ -3,6 +3,7 @@
 
 PORTNAME=	newsboat
 PORTVERSION=	2.14.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://newsboat.org/releases/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -49,7 +50,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		fuchsia-zircon-sys-0.3.3 \
 		idna-0.1.5 \
 		lazy_static-1.2.0 \
-		libc-0.2.45 \
+		libc-0.2.49 \
 		lock_api-0.1.5 \
 		matches-0.1.8 \
 		memchr-2.1.2 \

@@ -4,7 +4,7 @@
 PORTNAME=	websocat
 DISTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -51,7 +51,7 @@ CARGO_CRATES=	arrayvec-0.4.7 \
 		language-tags-0.2.2 \
 		lazy_static-1.1.0 \
 		lazycell-1.2.0 \
-		libc-0.2.43 \
+		libc-0.2.49 \
 		lock_api-0.1.4 \
 		log-0.3.9 \
 		log-0.4.6 \

@@ -2,7 +2,7 @@
 
 PORTNAME=	potnet
 DISTVERSION=	0.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -41,7 +41,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		humantime-1.1.1 \
 		itoa-0.4.3 \
 		lazy_static-1.1.0 \
-		libc-0.2.43 \
+		libc-0.2.49 \
 		log-0.4.6 \
 		memchr-2.1.1 \
 		proc-macro2-0.4.20 \
