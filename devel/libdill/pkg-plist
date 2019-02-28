@@ -2,7 +2,7 @@ include/libdill.h
 include/libdillimpl.h
 lib/libdill.so
 lib/libdill.so.20
-lib/libdill.so.20.4.0
+lib/libdill.so.20.5.0
 libdata/pkgconfig/libdill.pc
 man/man3/brecv.3.gz
 man/man3/brecvl.3.gz
