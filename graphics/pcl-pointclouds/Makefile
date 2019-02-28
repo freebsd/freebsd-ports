@@ -55,12 +55,16 @@ VTK_CMAKE_BOOL=		WITH_VTK
 VTK_LIB_DEPENDS=	libvtkCommonCore-8.1.so:math/vtk8
 VTK_BROKEN=		VTK has missing ompxx symbols: https://gitlab.kitware.com/vtk/vtk/issues/17444
 
+.if !exists(/usr/lib/libstdc++.so)
 # use clang from ports because cmake can't find OpenMP with base clang, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=223678
 # This should also be an port option, but PCL fails to build w/out OpenMP: https://github.com/PointCloudLibrary/pcl/issues/2638
 BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 CPP=		clang-cpp${LLVM_DEFAULT}
 CC=		clang${LLVM_DEFAULT}
 CXX=		clang++${LLVM_DEFAULT}
+.else
+USE_GCC=	yes
+.endif
 
 post-patch:  # 10 doesn't have std::sqrt, switching to ::sqrt from math.h
 	@${GREP} -rl std::sqrt ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e 's|::std::sqrt|::sqrt|g ; s|std::sqrt|::sqrt|g'
