@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2019-02-28 06:57:42 UTC
++++ src/CMakeLists.txt
+@@ -14,7 +14,7 @@ include_directories (
+ add_subdirectory (xoj-preview-extractor)
+ 
+ # Used for both util and xournalpp targets
+-add_definitions (-g -Wreturn-type -Wuninitialized -Wunused-value -Wunused-variable)
++add_definitions (-Wreturn-type -Wuninitialized -Wunused-value -Wunused-variable)
+ 
+ if (WIN32)
+   # optimize for size (the Windows .exe is really big)
