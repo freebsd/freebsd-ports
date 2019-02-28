@@ -440,6 +440,9 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence_latin1.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence_latin1.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence_multiline.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence_multiline.rc
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence_multiline.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence_utf8.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence_utf8.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/import_error.py
@@ -547,6 +550,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/member_checks_ignore_none.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/member_checks_ignore_none.rc
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/member_checks_ignore_none.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/member_checks_inference_improvements.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/member_checks_no_hints.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/member_checks_no_hints.rc
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/member_checks_no_hints.txt
@@ -608,10 +612,15 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/nested_blocks_issue1088.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/no_classmethod_decorator.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/no_classmethod_decorator.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/no_else_raise.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/no_else_raise.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/no_else_return.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/no_else_return.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/no_name_in_module.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/no_name_in_module.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/no_self_argument_py37.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/no_self_argument_py37.rc
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/no_self_argument_py37.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/no_self_use.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/no_self_use.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/no_self_use_py3.py
@@ -635,6 +644,9 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/not_async_context_manager.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/not_async_context_manager.rc
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/not_async_context_manager.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/not_async_context_manager_py37.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/not_async_context_manager_py37.rc
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/not_async_context_manager_py37.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/not_callable.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/not_callable.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/not_context_manager.py
@@ -662,7 +674,15 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/raising_non_exception_py3.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/raising_self.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/raising_self.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/recursion_error_2667.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/recursion_error_2667.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/recursion_error_940.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/recursion_error_crash.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/recursion_error_crash.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/recursion_error_crash_2683.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/recursion_error_crash_2683.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/recursion_error_crash_astroid_623.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/recursion_error_crash_astroid_623.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/redefine_in_handler.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/redefine_in_handler.rc
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/redefine_in_handler.txt
@@ -729,6 +749,8 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/string_formatting_disable.rc
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/string_formatting_disable.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/string_formatting_failed_inference.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/string_formatting_failed_inference_py35.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/string_formatting_failed_inference_py35.rc
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/string_formatting_py27.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/string_formatting_py27.rc
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/string_formatting_py27.txt
@@ -808,6 +830,8 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/trailing_whitespaces.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/try_except_raise.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/try_except_raise.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/try_except_raise_crash.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/try_except_raise_crash.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unbalanced_tuple_unpacking.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unbalanced_tuple_unpacking.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unbalanced_tuple_unpacking_py30.py
@@ -849,6 +873,9 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unrecognized_inline_option.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unsubscriptable_value.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unsubscriptable_value.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/unsubscriptable_value_py37.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/unsubscriptable_value_py37.rc
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/unsubscriptable_value_py37.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unsupported_assignment_operation.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unsupported_assignment_operation.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unsupported_binary_operation.py
@@ -876,6 +903,9 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unused_typing_imports.rc
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unused_variable.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unused_variable.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/unused_variable_py36.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/unused_variable_py36.rc
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/unused_variable_py36.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/used_before_assignment_488.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/used_before_assignment_issue1081.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/used_before_assignment_issue1081.txt
@@ -913,6 +943,8 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/with_used_before_assign.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/with_using_generator.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/with_using_generator.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/wrong_exception_operation.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/wrong_exception_operation.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/wrong_import_order.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/wrong_import_order.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/wrong_import_order2.py
@@ -1101,6 +1133,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/dummy/another.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/dummy/dummy.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/dummy_plugin.rc
+%%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/dummy_plugin/dummy_conf_plugin.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/dummy_plugin/dummy_plugin.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/empty.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/func_block_disable_msg.py
