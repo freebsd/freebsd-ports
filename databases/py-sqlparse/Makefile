@@ -13,10 +13,11 @@ COMMENT=	Non-validating SQL parser for Python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}sqlparse01 ${PYTHON_PKGNAMEPREFIX}sqlparse020
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}sqlparse020
+
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist concurrent distutils
-USES=		python
 
 .include <bsd.port.mk>
