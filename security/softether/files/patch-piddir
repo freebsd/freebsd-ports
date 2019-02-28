@@ -1,6 +1,6 @@
---- src/Mayaqua/Unix.c.orig	2019-02-03 19:43:50 UTC
+--- src/Mayaqua/Unix.c.orig	2019-02-28 08:10:54 UTC
 +++ src/Mayaqua/Unix.c
-@@ -774,7 +774,7 @@ void *UnixNewSingleInstance(char *instance_name)
+@@ -927,7 +927,7 @@ void *UnixNewSingleInstance(char *instance_name)
  	GetExeDir(dir, sizeof(dir));
  
  	// File name generation
@@ -9,8 +9,8 @@
  
  	fd = open(name, O_WRONLY);
  	if (fd == -1)
-@@ -2194,7 +2194,7 @@ void UnixGenPidFileName(char *name, UINT size)
- 	Md5(hash, exe_name, StrLen(exe_name));
+@@ -2385,7 +2385,7 @@ void UnixGenPidFileName(char *name, UINT size)
+ 	Hash(hash, exe_name, StrLen(exe_name), false);
  	BinToStr(tmp1, sizeof(tmp1), hash, sizeof(hash));
  
 -	Format(name, size, "%s/.pid_%s", dir, tmp1);
@@ -18,8 +18,8 @@
  }
  
  // Delete the PID file
-@@ -2239,7 +2239,7 @@ void UnixGenCtlFileName(char *name, UINT size)
- 	Md5(hash, exe_name, StrLen(exe_name));
+@@ -2430,7 +2430,7 @@ void UnixGenCtlFileName(char *name, UINT size)
+ 	Hash(hash, exe_name, StrLen(exe_name), false);
  	BinToStr(tmp1, sizeof(tmp1), hash, sizeof(hash));
  
 -	Format(name, size, "%s/.ctl_%s", dir, tmp1);
