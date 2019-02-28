@@ -9,6 +9,8 @@
 %%SITE_PERL%%/GraphQL/Language/Receiver.pm
 %%SITE_PERL%%/GraphQL/Plugin/Convert.pm
 %%SITE_PERL%%/GraphQL/Plugin/Convert/Test.pm
+%%SITE_PERL%%/GraphQL/Plugin/Type.pm
+%%SITE_PERL%%/GraphQL/Plugin/Type/DateTime.pm
 %%SITE_PERL%%/GraphQL/Role/Abstract.pm
 %%SITE_PERL%%/GraphQL/Role/Composite.pm
 %%SITE_PERL%%/GraphQL/Role/FieldDeprecation.pm
@@ -46,6 +48,8 @@
 %%PERL5_MAN3%%/GraphQL::Language::Receiver.3.gz
 %%PERL5_MAN3%%/GraphQL::Plugin::Convert.3.gz
 %%PERL5_MAN3%%/GraphQL::Plugin::Convert::Test.3.gz
+%%PERL5_MAN3%%/GraphQL::Plugin::Type.3.gz
+%%PERL5_MAN3%%/GraphQL::Plugin::Type::DateTime.3.gz
 %%PERL5_MAN3%%/GraphQL::Role::Abstract.3.gz
 %%PERL5_MAN3%%/GraphQL::Role::Composite.3.gz
 %%PERL5_MAN3%%/GraphQL::Role::FieldDeprecation.3.gz
