@@ -1261,6 +1261,7 @@
     SUBDIR += ppower4
     SUBDIR += print-n-times
     SUBDIR += pugixml
+    SUBDIR += pup
     SUBDIR += pure-csv
     SUBDIR += pure-xml
     SUBDIR += py-Chameleon
