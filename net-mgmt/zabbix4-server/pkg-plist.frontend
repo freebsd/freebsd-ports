@@ -39,6 +39,7 @@
 %%WWWDIR%%/app/controllers/CControllerMediatypeEnable.php
 %%WWWDIR%%/app/controllers/CControllerMediatypeList.php
 %%WWWDIR%%/app/controllers/CControllerMediatypeUpdate.php
+%%WWWDIR%%/app/controllers/CControllerMenuPopup.php
 %%WWWDIR%%/app/controllers/CControllerPopupGeneric.php
 %%WWWDIR%%/app/controllers/CControllerPopupHttpStep.php
 %%WWWDIR%%/app/controllers/CControllerPopupMedia.php
