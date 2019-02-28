@@ -1,14 +1,2 @@
-%%WWWDIR%%/images/IMAGE_LICENCES.md
-%%WWWDIR%%/images/cook_female-32x32.png
-%%WWWDIR%%/images/cook_male-32x32.png
-%%WWWDIR%%/images/cyberchef-128x128.png
-%%WWWDIR%%/images/cyberchef-256x256.png
-%%WWWDIR%%/images/cyberchef-32x32.png
-%%WWWDIR%%/images/cyberchef-512x512.png
-%%WWWDIR%%/images/cyberchef-64x64.png
-%%WWWDIR%%/images/favicon.ico
-%%WWWDIR%%/images/file-128x128.png
-%%WWWDIR%%/images/file-32x32.png
-%%WWWDIR%%/images/fork_me.png
-%%WWWDIR%%/images/gitter-badge.svg
-%%WWWDIR%%/index.html
+%%WWWDIR%%/CyberChef.js
+%%WWWDIR%%/cyberchef.htm
