@@ -1,0 +1,51 @@
+https://github.com/BurntSushi/ripgrep/commit/968491f8e93e
+
+--- Cargo.toml.orig	2018-09-07 18:07:52 UTC
++++ Cargo.toml
+@@ -72,7 +72,6 @@ serde = "1.0.77"
+ serde_derive = "1.0.77"
+ 
+ [features]
+-avx-accel = ["grep/avx-accel"]
+ simd-accel = ["grep/simd-accel"]
+ pcre2 = ["grep/pcre2"]
+ 
+--- grep-searcher/Cargo.toml.orig	2018-09-07 18:07:52 UTC
++++ grep-searcher/Cargo.toml
+@@ -13,7 +13,7 @@ keywords = ["regex", "grep", "egrep", "search", "patte
+ license = "Unlicense/MIT"
+ 
+ [dependencies]
+-bytecount = "0.3.2"
++bytecount = "0.5"
+ encoding_rs = "0.8.6"
+ encoding_rs_io = "0.1.2"
+ grep-matcher = { version = "0.1.1", path = "../grep-matcher" }
+@@ -26,10 +26,8 @@ grep-regex = { version = "0.1.1", path = "../grep-rege
+ regex = "1.0.5"
+ 
+ [features]
+-avx-accel = [
+-  "bytecount/avx-accel",
+-]
+-simd-accel = [
+-  "bytecount/simd-accel",
+-  "encoding_rs/simd-accel",
+-]
++default = ["bytecount/runtime-dispatch-simd"]
++simd-accel = ["encoding_rs/simd-accel"]
++
++# This feature is DEPRECATED. Runtime dispatch is used for SIMD now.
++avx-accel = []
+--- grep/Cargo.toml.orig	2018-09-07 18:07:52 UTC
++++ grep/Cargo.toml
+@@ -32,6 +32,8 @@ default-features = false
+ features = ["suggestions"]
+ 
+ [features]
+-avx-accel = ["grep-searcher/avx-accel"]
+ simd-accel = ["grep-searcher/simd-accel"]
+ pcre2 = ["grep-pcre2"]
++
++# This feature is DEPRECATED. Runtime dispatch is used for SIMD now.
++avx-accel = []

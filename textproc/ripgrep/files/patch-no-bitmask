@@ -1,0 +1,663 @@
+Workaround from Firefox 67 until Rust 1.34 update
+
+https://github.com/hsivonen/packed_simd/commit/3541e3818fdc
+
+--- cargo-crates/packed_simd-0.3.3/src/api.rs.orig	2019-02-05 20:18:53 UTC
++++ cargo-crates/packed_simd-0.3.3/src/api.rs
+@@ -1,7 +1,5 @@
+ //! Implements the Simd<[T; N]> APIs
+ 
+-#[macro_use]
+-mod bitmask;
+ crate mod cast;
+ #[macro_use]
+ mod cmp;
+@@ -41,7 +39,7 @@ crate mod into_bits;
+ 
+ macro_rules! impl_i {
+     ([$elem_ty:ident; $elem_n:expr]: $tuple_id:ident, $mask_ty:ident
+-     | $ielem_ty:ident, $ibitmask_ty:ident | $test_tt:tt | $($elem_ids:ident),*
++     | $ielem_ty:ident | $test_tt:tt | $($elem_ids:ident),*
+      | From: $($from_vec_ty:ident),* | $(#[$doc:meta])*) => {
+         impl_minimal_iuf!([$elem_ty; $elem_n]: $tuple_id | $ielem_ty | $test_tt
+                           | $($elem_ids),* | $(#[$doc])*);
+@@ -95,7 +93,6 @@ macro_rules! impl_i {
+         );
+         impl_cmp_partial_ord!([$elem_ty; $elem_n]: $tuple_id | $test_tt);
+         impl_cmp_ord!([$elem_ty; $elem_n]: $tuple_id | $test_tt | (0, 1));
+-        impl_bitmask!($tuple_id | $ibitmask_ty | (-1, 0) | $test_tt);
+ 
+         test_select!($elem_ty, $mask_ty, $tuple_id, (1, 2) | $test_tt);
+         test_cmp_partial_ord_int!([$elem_ty; $elem_n]: $tuple_id | $test_tt);
+@@ -105,7 +102,7 @@ macro_rules! impl_i {
+ 
+ macro_rules! impl_u {
+     ([$elem_ty:ident; $elem_n:expr]: $tuple_id:ident, $mask_ty:ident
+-     | $ielem_ty:ident, $ibitmask_ty:ident | $test_tt:tt | $($elem_ids:ident),*
++     | $ielem_ty:ident | $test_tt:tt | $($elem_ids:ident),*
+      | From: $($from_vec_ty:ident),* | $(#[$doc:meta])*) => {
+         impl_minimal_iuf!([$elem_ty; $elem_n]: $tuple_id | $ielem_ty | $test_tt
+                           | $($elem_ids),* | $(#[$doc])*);
+@@ -158,8 +155,6 @@ macro_rules! impl_u {
+         );
+         impl_cmp_partial_ord!([$elem_ty; $elem_n]: $tuple_id | $test_tt);
+         impl_cmp_ord!([$elem_ty; $elem_n]: $tuple_id | $test_tt | (0, 1));
+-        impl_bitmask!($tuple_id | $ibitmask_ty | ($ielem_ty::max_value(), 0) |
+-                      $test_tt);
+ 
+         test_select!($elem_ty, $mask_ty, $tuple_id, (1, 2) | $test_tt);
+         test_cmp_partial_ord_int!([$elem_ty; $elem_n]: $tuple_id | $test_tt);
+@@ -227,8 +222,7 @@ macro_rules! impl_f {
+ }
+ 
+ macro_rules! impl_m {
+-    ([$elem_ty:ident; $elem_n:expr]: $tuple_id:ident
+-     | $ielem_ty:ident, $ibitmask_ty:ident
++    ([$elem_ty:ident; $elem_n:expr]: $tuple_id:ident | $ielem_ty:ident
+      | $test_tt:tt | $($elem_ids:ident),* | From: $($from_vec_ty:ident),*
+      | $(#[$doc:meta])*) => {
+         impl_minimal_mask!(
+@@ -271,7 +265,6 @@ macro_rules! impl_m {
+             [$elem_ty; $elem_n]: $tuple_id | $test_tt | (false, true)
+         );
+         impl_shuffle1_dyn!([$elem_ty; $elem_n]: $tuple_id | $test_tt);
+-        impl_bitmask!($tuple_id | $ibitmask_ty | (true, false) | $test_tt);
+ 
+         test_cmp_partial_ord_mask!([$elem_ty; $elem_n]: $tuple_id | $test_tt);
+         test_shuffle1_dyn_mask!([$elem_ty; $elem_n]: $tuple_id | $test_tt);
+--- cargo-crates/packed_simd-0.3.3/src/api/bitmask.rs.orig	2019-02-05 20:18:53 UTC
++++ cargo-crates/packed_simd-0.3.3/src/api/bitmask.rs
+@@ -1,82 +0,0 @@
+-//! Bitmask API
+-
+-macro_rules! impl_bitmask {
+-    ($id:ident | $ibitmask_ty:ident | ($set:expr, $clear:expr)
+-     | $test_tt:tt) => {
+-        impl $id {
+-            /// Creates a bitmask with the MSB of each vector lane.
+-            ///
+-            /// If the vector has less than 8 lanes, the bits that do not
+-            /// correspond to any vector lanes are cleared.
+-            #[inline]
+-            pub fn bitmask(self) -> $ibitmask_ty {
+-                unsafe { codegen::llvm::simd_bitmask(self.0) }
+-            }
+-        }
+-
+-        test_if! {
+-            $test_tt:
+-            paste::item! {
+-                #[cfg(not(any(
+-                    // FIXME: https://github.com/rust-lang-nursery/packed_simd/issues/210
+-                    all(target_arch = "mips", target_endian = "big"),
+-                    all(target_arch = "mips64", target_endian = "big"),
+-                    target_arch = "sparc64",
+-                    target_arch = "s390x",
+-                )))]
+-                pub mod [<$id _bitmask>] {
+-                    use super::*;
+-                    #[cfg_attr(not(target_arch = "wasm32"), test)]
+-                    #[cfg_attr(target_arch = "wasm32", wasm_bindgen_test)]
+-                    fn bitmask() {
+-                        // clear all lanes
+-                        let vec = $id::splat($clear as _);
+-                        let bitmask: $ibitmask_ty = 0;
+-                        assert_eq!(vec.bitmask(), bitmask);
+-
+-                        // set even lanes
+-                        let mut vec = $id::splat($clear as _);
+-                        for i in 0..$id::lanes() {
+-                            if i % 2 == 0 {
+-                                vec = vec.replace(i, $set as _);
+-                            }
+-                        }
+-                        // create bitmask with even lanes set:
+-                        let mut bitmask: $ibitmask_ty = 0;
+-                        for i in 0..$id::lanes() {
+-                            if i % 2 == 0 {
+-                                bitmask |= 1 << i;
+-                            }
+-                        }
+-                        assert_eq!(vec.bitmask(), bitmask);
+-
+-
+-                        // set odd lanes
+-                        let mut vec = $id::splat($clear as _);
+-                        for i in 0..$id::lanes() {
+-                            if i % 2 != 0 {
+-                                vec = vec.replace(i, $set as _);
+-                            }
+-                        }
+-                        // create bitmask with odd lanes set:
+-                        let mut bitmask: $ibitmask_ty = 0;
+-                        for i in 0..$id::lanes() {
+-                            if i % 2 != 0 {
+-                                bitmask |= 1 << i;
+-                            }
+-                        }
+-                        assert_eq!(vec.bitmask(), bitmask);
+-
+-                        // set all lanes
+-                        let vec = $id::splat($set as _);
+-                        let mut bitmask: $ibitmask_ty = 0;
+-                        for i in 0..$id::lanes() {
+-                            bitmask |= 1 << i;
+-                        }
+-                        assert_eq!(vec.bitmask(), bitmask);
+-                    }
+-                }
+-            }
+-        }
+-    };
+-}
+--- cargo-crates/packed_simd-0.3.3/src/codegen/llvm.rs.orig	2019-01-31 22:44:03 UTC
++++ cargo-crates/packed_simd-0.3.3/src/codegen/llvm.rs
+@@ -96,6 +96,4 @@ extern "platform-intrinsic" {
+ 
+     crate fn simd_gather<T, P, M>(value: T, pointers: P, mask: M) -> T;
+     crate fn simd_scatter<T, P, M>(value: T, pointers: P, mask: M);
+-
+-    crate fn simd_bitmask<T, U>(value: T) -> U;
+ }
+--- cargo-crates/packed_simd-0.3.3/src/v128.rs.orig	2019-01-31 22:44:03 UTC
++++ cargo-crates/packed_simd-0.3.3/src/v128.rs
+@@ -3,40 +3,40 @@
+ 
+ use crate::*;
+ 
+-impl_i!([i8; 16]: i8x16, m8x16 | i8, u16 | test_v128 |
++impl_i!([i8; 16]: i8x16, m8x16 | i8 | test_v128 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15 |
+         From: |
+         /// A 128-bit vector with 16 `i8` lanes.
+ );
+-impl_u!([u8; 16]: u8x16, m8x16 | u8, u16 | test_v128 |
++impl_u!([u8; 16]: u8x16, m8x16 | u8 | test_v128 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15 |
+         From: |
+         /// A 128-bit vector with 16 `u8` lanes.
+ );
+-impl_m!([m8; 16]: m8x16 | i8, u16 | test_v128 |
++impl_m!([m8; 16]: m8x16 | i8 | test_v128 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15 |
+         From: m16x16 |
+         /// A 128-bit vector mask with 16 `m8` lanes.
+ );
+ 
+-impl_i!([i16; 8]: i16x8, m16x8 | i16, u8 | test_v128 | x0, x1, x2, x3, x4, x5, x6, x7 |
++impl_i!([i16; 8]: i16x8, m16x8 | i16 | test_v128 | x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: i8x8, u8x8 |
+         /// A 128-bit vector with 8 `i16` lanes.
+ );
+-impl_u!([u16; 8]: u16x8, m16x8 | u16, u8 | test_v128 | x0, x1, x2, x3, x4, x5, x6, x7 |
++impl_u!([u16; 8]: u16x8, m16x8 | u16| test_v128 | x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: u8x8 |
+         /// A 128-bit vector with 8 `u16` lanes.
+ );
+-impl_m!([m16; 8]: m16x8 | i16, u8 | test_v128 | x0, x1, x2, x3, x4, x5, x6, x7 |
++impl_m!([m16; 8]: m16x8 | i16 | test_v128 | x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: m8x8, m32x8 |
+         /// A 128-bit vector mask with 8 `m16` lanes.
+ );
+ 
+-impl_i!([i32; 4]: i32x4, m32x4 | i32, u8 | test_v128 | x0, x1, x2, x3 |
++impl_i!([i32; 4]: i32x4, m32x4 | i32 | test_v128 | x0, x1, x2, x3 |
+         From: i8x4, u8x4, i16x4, u16x4  |
+         /// A 128-bit vector with 4 `i32` lanes.
+ );
+-impl_u!([u32; 4]: u32x4, m32x4 | u32, u8 | test_v128 | x0, x1, x2, x3 |
++impl_u!([u32; 4]: u32x4, m32x4 | u32| test_v128 | x0, x1, x2, x3 |
+         From: u8x4, u16x4 |
+         /// A 128-bit vector with 4 `u32` lanes.
+ );
+@@ -44,16 +44,16 @@ impl_f!([f32; 4]: f32x4, m32x4 | f32 | test_v128 | x0,
+         From: i8x4, u8x4, i16x4, u16x4 |
+         /// A 128-bit vector with 4 `f32` lanes.
+ );
+-impl_m!([m32; 4]: m32x4 | i32, u8 | test_v128 | x0, x1, x2, x3 |
++impl_m!([m32; 4]: m32x4 | i32 | test_v128 | x0, x1, x2, x3 |
+         From: m8x4, m16x4, m64x4 |
+         /// A 128-bit vector mask with 4 `m32` lanes.
+ );
+ 
+-impl_i!([i64; 2]: i64x2, m64x2 | i64, u8 | test_v128 | x0, x1 |
++impl_i!([i64; 2]: i64x2, m64x2 | i64 | test_v128 | x0, x1 |
+         From: i8x2, u8x2, i16x2, u16x2, i32x2, u32x2 |
+         /// A 128-bit vector with 2 `i64` lanes.
+ );
+-impl_u!([u64; 2]: u64x2, m64x2 | u64, u8 | test_v128 | x0, x1 |
++impl_u!([u64; 2]: u64x2, m64x2 | u64 | test_v128 | x0, x1 |
+         From: u8x2, u16x2, u32x2 |
+         /// A 128-bit vector with 2 `u64` lanes.
+ );
+@@ -61,20 +61,20 @@ impl_f!([f64; 2]: f64x2, m64x2 | f64 | test_v128 | x0,
+         From: i8x2, u8x2, i16x2, u16x2, i32x2, u32x2, f32x2 |
+         /// A 128-bit vector with 2 `f64` lanes.
+ );
+-impl_m!([m64; 2]: m64x2 | i64, u8 | test_v128 | x0, x1 |
++impl_m!([m64; 2]: m64x2 | i64 | test_v128 | x0, x1 |
+         From: m8x2, m16x2, m32x2, m128x2 |
+         /// A 128-bit vector mask with 2 `m64` lanes.
+ );
+ 
+-impl_i!([i128; 1]: i128x1, m128x1 | i128, u8 | test_v128 | x0 |
++impl_i!([i128; 1]: i128x1, m128x1 | i128 | test_v128 | x0 |
+         From: /*i8x1, u8x1, i16x1, u16x1, i32x1, u32x1, i64x1, u64x1 */ | // FIXME: unary small vector types
+         /// A 128-bit vector with 1 `i128` lane.
+ );
+-impl_u!([u128; 1]: u128x1, m128x1 | u128, u8 | test_v128 | x0 |
++impl_u!([u128; 1]: u128x1, m128x1 | u128 | test_v128 | x0 |
+         From: /*u8x1, u16x1, u32x1, u64x1 */ | // FIXME: unary small vector types
+         /// A 128-bit vector with 1 `u128` lane.
+ );
+-impl_m!([m128; 1]: m128x1 | i128, u8 | test_v128 | x0 |
++impl_m!([m128; 1]: m128x1 | i128 | test_v128 | x0 |
+         From: /*m8x1, m16x1, m32x1, m64x1 */ | // FIXME: unary small vector types
+         /// A 128-bit vector mask with 1 `m128` lane.
+ );
+--- cargo-crates/packed_simd-0.3.3/src/v16.rs.orig	2019-01-31 22:44:03 UTC
++++ cargo-crates/packed_simd-0.3.3/src/v16.rs
+@@ -2,15 +2,15 @@
+ 
+ use crate::*;
+ 
+-impl_i!([i8; 2]: i8x2, m8x2 | i8, u8 | test_v16 | x0, x1 |
++impl_i!([i8; 2]: i8x2, m8x2 | i8 | test_v16 | x0, x1 |
+         From: |
+         /// A 16-bit vector with 2 `i8` lanes.
+ );
+-impl_u!([u8; 2]: u8x2, m8x2 | u8, u8 | test_v16 | x0, x1 |
++impl_u!([u8; 2]: u8x2, m8x2 | u8 | test_v16 | x0, x1 |
+         From: |
+         /// A 16-bit vector with 2 `u8` lanes.
+ );
+-impl_m!([m8; 2]: m8x2 | i8, u8 | test_v16 | x0, x1 |
++impl_m!([m8; 2]: m8x2 | i8 | test_v16 | x0, x1 |
+         From: m16x2, m32x2, m64x2, m128x2 |
+         /// A 16-bit vector mask with 2 `m8` lanes.
+ );
+--- cargo-crates/packed_simd-0.3.3/src/v256.rs.orig	2019-01-31 22:44:03 UTC
++++ cargo-crates/packed_simd-0.3.3/src/v256.rs
+@@ -3,46 +3,46 @@
+ 
+ use crate::*;
+ 
+-impl_i!([i8; 32]: i8x32, m8x32 | i8, u32 | test_v256 |
++impl_i!([i8; 32]: i8x32, m8x32 | i8 | test_v256 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15,
+         x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31 |
+         From: |
+         /// A 256-bit vector with 32 `i8` lanes.
+ );
+-impl_u!([u8; 32]: u8x32, m8x32 | u8, u32 | test_v256 |
++impl_u!([u8; 32]: u8x32, m8x32 | u8 | test_v256 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15,
+         x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31 |
+         From: |
+         /// A 256-bit vector with 32 `u8` lanes.
+ );
+-impl_m!([m8; 32]: m8x32 | i8, u32 | test_v256 |
++impl_m!([m8; 32]: m8x32 | i8 | test_v256 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15,
+         x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31 |
+         From:  |
+         /// A 256-bit vector mask with 32 `m8` lanes.
+ );
+ 
+-impl_i!([i16; 16]: i16x16, m16x16 | i16, u16 | test_v256 |
++impl_i!([i16; 16]: i16x16, m16x16 | i16 | test_v256 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15 |
+         From: i8x16, u8x16 |
+         /// A 256-bit vector with 16 `i16` lanes.
+ );
+-impl_u!([u16; 16]: u16x16, m16x16 | u16, u16 | test_v256 |
++impl_u!([u16; 16]: u16x16, m16x16 | u16 | test_v256 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15 |
+         From: u8x16 |
+         /// A 256-bit vector with 16 `u16` lanes.
+ );
+-impl_m!([m16; 16]: m16x16 | i16, u16 | test_v256 |
++impl_m!([m16; 16]: m16x16 | i16 | test_v256 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15 |
+         From: m8x16 |
+         /// A 256-bit vector mask with 16 `m16` lanes.
+ );
+ 
+-impl_i!([i32; 8]: i32x8, m32x8 | i32, u8 | test_v256 | x0, x1, x2, x3, x4, x5, x6, x7  |
++impl_i!([i32; 8]: i32x8, m32x8 | i32 | test_v256 | x0, x1, x2, x3, x4, x5, x6, x7  |
+         From: i8x8, u8x8, i16x8, u16x8 |
+         /// A 256-bit vector with 8 `i32` lanes.
+ );
+-impl_u!([u32; 8]: u32x8, m32x8 | u32, u8 | test_v256 | x0, x1, x2, x3, x4, x5, x6, x7 |
++impl_u!([u32; 8]: u32x8, m32x8 | u32 | test_v256 | x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: u8x8, u16x8 |
+         /// A 256-bit vector with 8 `u32` lanes.
+ );
+@@ -50,16 +50,16 @@ impl_f!([f32; 8]: f32x8, m32x8 | f32 | test_v256 | x0,
+         From: i8x8, u8x8, i16x8, u16x8 |
+         /// A 256-bit vector with 8 `f32` lanes.
+ );
+-impl_m!([m32; 8]: m32x8 | i32, u8 | test_v256 | x0, x1, x2, x3, x4, x5, x6, x7 |
++impl_m!([m32; 8]: m32x8 | i32 | test_v256 | x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: m8x8, m16x8 |
+         /// A 256-bit vector mask with 8 `m32` lanes.
+ );
+ 
+-impl_i!([i64; 4]: i64x4, m64x4 | i64, u8 | test_v256 | x0, x1, x2, x3 |
++impl_i!([i64; 4]: i64x4, m64x4 | i64 | test_v256 | x0, x1, x2, x3 |
+         From: i8x4, u8x4, i16x4, u16x4, i32x4, u32x4 |
+         /// A 256-bit vector with 4 `i64` lanes.
+ );
+-impl_u!([u64; 4]: u64x4, m64x4 | u64, u8 | test_v256 | x0, x1, x2, x3 |
++impl_u!([u64; 4]: u64x4, m64x4 | u64 | test_v256 | x0, x1, x2, x3 |
+         From: u8x4, u16x4, u32x4 |
+         /// A 256-bit vector with 4 `u64` lanes.
+ );
+@@ -67,20 +67,20 @@ impl_f!([f64; 4]: f64x4, m64x4 | f64 | test_v256 | x0,
+         From: i8x4, u8x4, i16x4, u16x4, i32x4, u32x4, f32x4 |
+         /// A 256-bit vector with 4 `f64` lanes.
+ );
+-impl_m!([m64; 4]: m64x4 | i64, u8 | test_v256 | x0, x1, x2, x3 |
++impl_m!([m64; 4]: m64x4 | i64 | test_v256 | x0, x1, x2, x3 |
+         From: m8x4, m16x4, m32x4 |
+         /// A 256-bit vector mask with 4 `m64` lanes.
+ );
+ 
+-impl_i!([i128; 2]: i128x2, m128x2 | i128, u8 | test_v256 | x0, x1 |
++impl_i!([i128; 2]: i128x2, m128x2 | i128 | test_v256 | x0, x1 |
+         From: i8x2, u8x2, i16x2, u16x2, i32x2, u32x2, i64x2, u64x2 |
+         /// A 256-bit vector with 2 `i128` lanes.
+ );
+-impl_u!([u128; 2]: u128x2, m128x2 | u128, u8 | test_v256 | x0, x1 |
++impl_u!([u128; 2]: u128x2, m128x2 | u128 | test_v256 | x0, x1 |
+         From: u8x2, u16x2, u32x2, u64x2 |
+         /// A 256-bit vector with 2 `u128` lanes.
+ );
+-impl_m!([m128; 2]: m128x2 | i128, u8 | test_v256 | x0, x1 |
++impl_m!([m128; 2]: m128x2 | i128 | test_v256 | x0, x1 |
+         From: m8x2, m16x2, m32x2, m64x2 |
+         /// A 256-bit vector mask with 2 `m128` lanes.
+ );
+--- cargo-crates/packed_simd-0.3.3/src/v32.rs.orig	2019-01-31 22:44:03 UTC
++++ cargo-crates/packed_simd-0.3.3/src/v32.rs
+@@ -2,28 +2,28 @@
+ 
+ use crate::*;
+ 
+-impl_i!([i8; 4]: i8x4, m8x4 | i8, u8 | test_v32 | x0, x1, x2, x3 |
++impl_i!([i8; 4]: i8x4, m8x4 | i8 | test_v32 | x0, x1, x2, x3 |
+         From: |
+         /// A 32-bit vector with 4 `i8` lanes.
+ );
+-impl_u!([u8; 4]: u8x4, m8x4 | u8, u8 | test_v32 | x0, x1, x2, x3 |
++impl_u!([u8; 4]: u8x4, m8x4 | u8 | test_v32 | x0, x1, x2, x3 |
+         From: |
+         /// A 32-bit vector with 4 `u8` lanes.
+ );
+-impl_m!([m8; 4]: m8x4 | i8, u8 | test_v32 | x0, x1, x2, x3 |
++impl_m!([m8; 4]: m8x4 | i8 | test_v32 | x0, x1, x2, x3 |
+         From: m16x4, m32x4, m64x4 |
+         /// A 32-bit vector mask with 4 `m8` lanes.
+ );
+ 
+-impl_i!([i16; 2]: i16x2, m16x2 | i16, u8 | test_v32 | x0, x1 |
++impl_i!([i16; 2]: i16x2, m16x2 | i16 | test_v32 | x0, x1 |
+         From: i8x2, u8x2 |
+         /// A 32-bit vector with 2 `i16` lanes.
+ );
+-impl_u!([u16; 2]: u16x2, m16x2 | u16, u8 | test_v32 | x0, x1 |
++impl_u!([u16; 2]: u16x2, m16x2 | u16 | test_v32 | x0, x1 |
+         From: u8x2 |
+         /// A 32-bit vector with 2 `u16` lanes.
+ );
+-impl_m!([m16; 2]: m16x2 | i16, u8 | test_v32 | x0, x1 |
++impl_m!([m16; 2]: m16x2 | i16 | test_v32 | x0, x1 |
+         From: m8x2, m32x2, m64x2, m128x2 |
+         /// A 32-bit vector mask with 2 `m16` lanes.
+ );
+--- cargo-crates/packed_simd-0.3.3/src/v512.rs.orig	2019-01-31 22:44:03 UTC
++++ cargo-crates/packed_simd-0.3.3/src/v512.rs
+@@ -3,7 +3,7 @@
+ 
+ use crate::*;
+ 
+-impl_i!([i8; 64]: i8x64, m8x64 | i8, u64 | test_v512 |
++impl_i!([i8; 64]: i8x64, m8x64 | i8 | test_v512 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15,
+         x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31,
+         x32, x33, x34, x35, x36, x37, x38, x39, x40, x41, x42, x43, x44, x45, x46, x47,
+@@ -11,7 +11,7 @@ impl_i!([i8; 64]: i8x64, m8x64 | i8, u64 | test_v512 |
+         From: |
+         /// A 512-bit vector with 64 `i8` lanes.
+ );
+-impl_u!([u8; 64]: u8x64, m8x64 | u8, u64 | test_v512 |
++impl_u!([u8; 64]: u8x64, m8x64 | u8 | test_v512 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15,
+         x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31,
+         x32, x33, x34, x35, x36, x37, x38, x39, x40, x41, x42, x43, x44, x45, x46, x47,
+@@ -19,7 +19,7 @@ impl_u!([u8; 64]: u8x64, m8x64 | u8, u64 | test_v512 |
+         From: |
+         /// A 512-bit vector with 64 `u8` lanes.
+ );
+-impl_m!([m8; 64]: m8x64 | i8, u64 | test_v512 |
++impl_m!([m8; 64]: m8x64 | i8 | test_v512 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15,
+         x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31,
+         x32, x33, x34, x35, x36, x37, x38, x39, x40, x41, x42, x43, x44, x45, x46, x47,
+@@ -28,31 +28,31 @@ impl_m!([m8; 64]: m8x64 | i8, u64 | test_v512 |
+         /// A 512-bit vector mask with 64 `m8` lanes.
+ );
+ 
+-impl_i!([i16; 32]: i16x32, m16x32 | i16, u32 | test_v512 |
++impl_i!([i16; 32]: i16x32, m16x32 | i16 | test_v512 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15,
+         x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31 |
+         From: i8x32, u8x32 |
+         /// A 512-bit vector with 32 `i16` lanes.
+ );
+-impl_u!([u16; 32]: u16x32, m16x32 | u16, u32 | test_v512 |
++impl_u!([u16; 32]: u16x32, m16x32 | u16 | test_v512 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15,
+         x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31 |
+         From: u8x32 |
+         /// A 512-bit vector with 32 `u16` lanes.
+ );
+-impl_m!([m16; 32]: m16x32 | i16, u32 | test_v512 |
++impl_m!([m16; 32]: m16x32 | i16 | test_v512 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15,
+         x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31 |
+         From: m8x32 |
+         /// A 512-bit vector mask with 32 `m16` lanes.
+ );
+ 
+-impl_i!([i32; 16]: i32x16, m32x16 | i32, u16 | test_v512 |
++impl_i!([i32; 16]: i32x16, m32x16 | i32 | test_v512 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15 |
+         From: i8x16, u8x16, i16x16, u16x16 |
+         /// A 512-bit vector with 16 `i32` lanes.
+ );
+-impl_u!([u32; 16]: u32x16, m32x16 | u32, u16 | test_v512 |
++impl_u!([u32; 16]: u32x16, m32x16 | u32 | test_v512 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15 |
+         From: u8x16, u16x16 |
+         /// A 512-bit vector with 16 `u32` lanes.
+@@ -62,17 +62,17 @@ impl_f!([f32; 16]: f32x16, m32x16 | f32 | test_v512 |
+         From: i8x16, u8x16, i16x16, u16x16 |
+         /// A 512-bit vector with 16 `f32` lanes.
+ );
+-impl_m!([m32; 16]: m32x16 | i32, u16 | test_v512 |
++impl_m!([m32; 16]: m32x16 | i32 | test_v512 |
+         x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15 |
+         From: m8x16, m16x16 |
+         /// A 512-bit vector mask with 16 `m32` lanes.
+ );
+ 
+-impl_i!([i64; 8]: i64x8, m64x8 | i64, u8 | test_v512 | x0, x1, x2, x3, x4, x5, x6, x7 |
++impl_i!([i64; 8]: i64x8, m64x8 | i64 | test_v512 | x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: i8x8, u8x8, i16x8, u16x8, i32x8, u32x8 |
+         /// A 512-bit vector with 8 `i64` lanes.
+ );
+-impl_u!([u64; 8]: u64x8, m64x8 | u64, u8 | test_v512 | x0, x1, x2, x3, x4, x5, x6, x7 |
++impl_u!([u64; 8]: u64x8, m64x8 | u64 | test_v512 | x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: u8x8, u16x8, u32x8 |
+         /// A 512-bit vector with 8 `u64` lanes.
+ );
+@@ -80,20 +80,20 @@ impl_f!([f64; 8]: f64x8, m64x8 | f64 | test_v512 | x0,
+         From: i8x8, u8x8, i16x8, u16x8, i32x8, u32x8, f32x8 |
+         /// A 512-bit vector with 8 `f64` lanes.
+ );
+-impl_m!([m64; 8]: m64x8 | i64, u8 | test_v512 | x0, x1, x2, x3, x4, x5, x6, x7 |
++impl_m!([m64; 8]: m64x8 | i64 | test_v512 | x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: m8x8, m16x8, m32x8 |
+         /// A 512-bit vector mask with 8 `m64` lanes.
+ );
+ 
+-impl_i!([i128; 4]: i128x4, m128x4 | i128, u8 | test_v512 | x0, x1, x2, x3 |
++impl_i!([i128; 4]: i128x4, m128x4 | i128 | test_v512 | x0, x1, x2, x3 |
+         From: i8x4, u8x4, i16x4, u16x4, i32x4, u32x4, i64x4, u64x4 |
+         /// A 512-bit vector with 4 `i128` lanes.
+ );
+-impl_u!([u128; 4]: u128x4, m128x4 | u128, u8 | test_v512 | x0, x1, x2, x3 |
++impl_u!([u128; 4]: u128x4, m128x4 | u128 | test_v512 | x0, x1, x2, x3 |
+         From: u8x4, u16x4, u32x4, u64x4 |
+         /// A 512-bit vector with 4 `u128` lanes.
+ );
+-impl_m!([m128; 4]: m128x4 | i128, u8 | test_v512 | x0, x1, x2, x3 |
++impl_m!([m128; 4]: m128x4 | i128 | test_v512 | x0, x1, x2, x3 |
+         From: m8x4, m16x4, m32x4, m64x4 |
+         /// A 512-bit vector mask with 4 `m128` lanes.
+ );
+--- cargo-crates/packed_simd-0.3.3/src/v64.rs.orig	2019-02-05 20:18:53 UTC
++++ cargo-crates/packed_simd-0.3.3/src/v64.rs
+@@ -3,41 +3,41 @@
+ 
+ use super::*;
+ 
+-impl_i!([i8; 8]: i8x8, m8x8 | i8, u8 | test_v64 | x0, x1, x2, x3, x4, x5, x6, x7 |
++impl_i!([i8; 8]: i8x8, m8x8 | i8 | test_v64 | x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: |
+         /// A 64-bit vector with 8 `i8` lanes.
+ );
+-impl_u!([u8; 8]: u8x8, m8x8 | u8, u8 | test_v64 | x0, x1, x2, x3, x4, x5, x6, x7 |
++impl_u!([u8; 8]: u8x8, m8x8 | u8 | test_v64 | x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: |
+         /// A 64-bit vector with 8 `u8` lanes.
+ );
+-impl_m!([m8; 8]: m8x8 | i8, u8 | test_v64 | x0, x1, x2, x3, x4, x5, x6, x7 |
++impl_m!([m8; 8]: m8x8 | i8 | test_v64 | x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: m16x8, m32x8 |
+         /// A 64-bit vector mask with 8 `m8` lanes.
+ );
+ 
+-impl_i!([i16; 4]: i16x4, m16x4 | i16, u8 | test_v64 | x0, x1, x2, x3 |
++impl_i!([i16; 4]: i16x4, m16x4 | i16 | test_v64 | x0, x1, x2, x3 |
+         From: i8x4, u8x4 |
+         /// A 64-bit vector with 4 `i16` lanes.
+ );
+-impl_u!([u16; 4]: u16x4, m16x4 | u16, u8 | test_v64 | x0, x1, x2, x3 |
++impl_u!([u16; 4]: u16x4, m16x4 | u16 | test_v64 | x0, x1, x2, x3 |
+         From: u8x4 |
+         /// A 64-bit vector with 4 `u16` lanes.
+ );
+-impl_m!([m16; 4]: m16x4 | i16, u8 | test_v64 | x0, x1, x2, x3 |
++impl_m!([m16; 4]: m16x4 | i16 | test_v64 | x0, x1, x2, x3 |
+         From: m8x4, m32x4, m64x4 |
+         /// A 64-bit vector mask with 4 `m16` lanes.
+ );
+ 
+-impl_i!([i32; 2]: i32x2, m32x2 | i32, u8 | test_v64 | x0, x1 |
++impl_i!([i32; 2]: i32x2, m32x2 | i32 | test_v64 | x0, x1 |
+         From: i8x2, u8x2, i16x2, u16x2 |
+         /// A 64-bit vector with 2 `i32` lanes.
+ );
+-impl_u!([u32; 2]: u32x2, m32x2 | u32, u8 | test_v64 | x0, x1 |
++impl_u!([u32; 2]: u32x2, m32x2 | u32 | test_v64 | x0, x1 |
+         From: u8x2, u16x2 |
+         /// A 64-bit vector with 2 `u32` lanes.
+ );
+-impl_m!([m32; 2]: m32x2 | i32, u8 | test_v64 | x0, x1 |
++impl_m!([m32; 2]: m32x2 | i32 | test_v64 | x0, x1 |
+         From: m8x2, m16x2, m64x2, m128x2 |
+         /// A 64-bit vector mask with 2 `m32` lanes.
+ );
+@@ -47,15 +47,15 @@ impl_f!([f32; 2]: f32x2, m32x2 | f32 | test_v64 | x0, 
+ );
+ 
+ /*
+-impl_i!([i64; 1]: i64x1, m64x1 | i64, u8 | test_v64 | x0 |
++impl_i!([i64; 1]: i64x1, m64x1 | i64 | test_v64 | x0 |
+         From: /*i8x1, u8x1, i16x1, u16x1, i32x1, u32x1*/ |  // FIXME: primitive to vector conversion
+         /// A 64-bit vector with 1 `i64` lanes.
+ );
+-impl_u!([u64; 1]: u64x1, m64x1 | u64, u8 | test_v64 | x0 |
++impl_u!([u64; 1]: u64x1, m64x1 | u64 | test_v64 | x0 |
+         From: /*u8x1, u16x1, u32x1*/ | // FIXME: primitive to vector conversion
+         /// A 64-bit vector with 1 `u64` lanes.
+ );
+-impl_m!([m64; 1]: m64x1 | i64, u8 | test_v64 | x0 |
++impl_m!([m64; 1]: m64x1 | i64 | test_v64 | x0 |
+         From: /*m8x1, m16x1, m32x1, */ m128x1 | // FIXME: unary small vector types
+         /// A 64-bit vector mask with 1 `m64` lanes.
+ );
+--- cargo-crates/packed_simd-0.3.3/src/vSize.rs.orig	2019-01-31 22:44:03 UTC
++++ cargo-crates/packed_simd-0.3.3/src/vSize.rs
+@@ -3,50 +3,50 @@
+ use crate::codegen::pointer_sized_int::{isize_, usize_};
+ use crate::*;
+ 
+-impl_i!([isize; 2]: isizex2, msizex2 | isize_, u8 | test_v128 |
++impl_i!([isize; 2]: isizex2, msizex2 | isize_ | test_v128 |
+         x0, x1|
+         From: |
+         /// A vector with 2 `isize` lanes.
+ );
+ 
+-impl_u!([usize; 2]: usizex2, msizex2 | usize_, u8 | test_v128 |
++impl_u!([usize; 2]: usizex2, msizex2 | usize_ | test_v128 |
+         x0, x1|
+         From: |
+         /// A vector with 2 `usize` lanes.
+ );
+-impl_m!([msize; 2]: msizex2 | isize_, u8 | test_v128 |
++impl_m!([msize; 2]: msizex2 | isize_ | test_v128 |
+         x0, x1 |
+         From: |
+         /// A vector mask with 2 `msize` lanes.
+ );
+ 
+-impl_i!([isize; 4]: isizex4, msizex4 | isize_, u8 | test_v256 |
++impl_i!([isize; 4]: isizex4, msizex4 | isize_ | test_v256 |
+         x0, x1, x2, x3 |
+         From: |
+         /// A vector with 4 `isize` lanes.
+ );
+-impl_u!([usize; 4]: usizex4, msizex4 | usize_, u8 | test_v256 |
++impl_u!([usize; 4]: usizex4, msizex4 | usize_ | test_v256 |
+         x0, x1, x2, x3|
+         From: |
+         /// A vector with 4 `usize` lanes.
+ );
+-impl_m!([msize; 4]: msizex4 | isize_, u8 | test_v256 |
++impl_m!([msize; 4]: msizex4 | isize_ | test_v256 |
+         x0, x1, x2, x3 |
+         From: |
+         /// A vector mask with 4 `msize` lanes.
+ );
+ 
+-impl_i!([isize; 8]: isizex8, msizex8 | isize_, u8 | test_v512 |
++impl_i!([isize; 8]: isizex8, msizex8 | isize_ | test_v512 |
+         x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: |
+         /// A vector with 4 `isize` lanes.
+ );
+-impl_u!([usize; 8]: usizex8, msizex8 | usize_, u8 | test_v512 |
++impl_u!([usize; 8]: usizex8, msizex8 | usize_ | test_v512 |
+         x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: |
+         /// A vector with 8 `usize` lanes.
+ );
+-impl_m!([msize; 8]: msizex8 | isize_, u8 | test_v512 |
++impl_m!([msize; 8]: msizex8 | isize_ | test_v512 |
+         x0, x1, x2, x3, x4, x5, x6, x7 |
+         From: |
+         /// A vector mask with 8 `msize` lanes.

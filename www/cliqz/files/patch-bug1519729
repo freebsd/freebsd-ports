@@ -1,0 +1,131 @@
+commit 9bdfa9fecaf1
+Author: Simon Sapin <simon.sapin@exyr.org>
+Date:   Fri Jan 11 14:02:28 2019 +0100
+
+    Bug 1519729 - Remove unused macro. r=emilio
+    
+    Cherry-picks a commit from https://github.com/servo/servo/pull/22674
+---
+ servo/components/style_traits/values.rs | 18 ------------------
+ 1 file changed, 18 deletions(-)
+
+diff --git servo/components/style_traits/values.rs servo/components/style_traits/values.rs
+index 6da235c07b64..2851082c22e0 100644
+--- mozilla-release/servo/components/style_traits/values.rs
++++ mozilla-release/servo/components/style_traits/values.rs
+@@ -158,24 +158,6 @@ where
+     }
+ }
+ 
+-#[macro_export]
+-macro_rules! serialize_function {
+-    ($dest: expr, $name: ident($( $arg: expr, )+)) => {
+-        serialize_function!($dest, $name($($arg),+))
+-    };
+-    ($dest: expr, $name: ident($first_arg: expr $( , $arg: expr )*)) => {
+-        {
+-            $dest.write_str(concat!(stringify!($name), "("))?;
+-            $first_arg.to_css($dest)?;
+-            $(
+-                $dest.write_str(", ")?;
+-                $arg.to_css($dest)?;
+-            )*
+-            $dest.write_char(')')
+-        }
+-    }
+-}
+-
+ /// Convenience wrapper to serialise CSS values separated by a given string.
+ pub struct SequenceWriter<'a, 'b: 'a, W: 'b> {
+     inner: &'a mut CssWriter<'b, W>,
+
+commit 9d5e559547d0
+Author: Simon Sapin <simon.sapin@exyr.org>
+Date:   Fri Jan 11 14:03:44 2019 +0100
+
+    Bug 1519729 - Document public macros. r=emilio
+    
+    Undocumented public macros emit warnings in nightly-2019-01-11,
+    and we #![deny] that warning.
+    
+    Cherry-picks a commit from https://github.com/servo/servo/pull/22674
+---
+ servo/components/style/properties/properties.mako.rs | 17 ++++++++++++++++-
+ servo/components/style_traits/values.rs              |  2 +-
+ 2 files changed, 17 insertions(+), 2 deletions(-)
+
+diff --git servo/components/style/properties/properties.mako.rs servo/components/style/properties/properties.mako.rs
+index 2d91273be15a..9220c3b1a665 100644
+--- mozilla-release/servo/components/style/properties/properties.mako.rs
++++ mozilla-release/servo/components/style/properties/properties.mako.rs
+@@ -3821,7 +3821,14 @@ impl AliasId {
+     }
+ }
+ 
+-// NOTE(emilio): Callers are responsible to deal with prefs.
++/// Call the given macro with tokens like this for each longhand and shorthand properties
++/// that is enabled in content:
++///
++/// ```
++/// [CamelCaseName, SetCamelCaseName, PropertyId::Longhand(LonghandId::CamelCaseName)],
++/// ```
++///
++/// NOTE(emilio): Callers are responsible to deal with prefs.
+ #[macro_export]
+ macro_rules! css_properties_accessors {
+     ($macro_name: ident) => {
+@@ -3844,6 +3851,14 @@ macro_rules! css_properties_accessors {
+     }
+ }
+ 
++/// Call the given macro with tokens like this for each longhand properties:
++///
++/// ```
++/// { snake_case_ident, true }
++/// ```
++///
++/// … where the boolean indicates whether the property value type
++/// is wrapped in a `Box<_>` in the corresponding `PropertyDeclaration` variant.
+ #[macro_export]
+ macro_rules! longhand_properties_idents {
+     ($macro_name: ident) => {
+diff --git servo/components/style_traits/values.rs servo/components/style_traits/values.rs
+index 2851082c22e0..0d7ee3f506ce 100644
+--- mozilla-release/servo/components/style_traits/values.rs
++++ mozilla-release/servo/components/style_traits/values.rs
+@@ -432,7 +432,7 @@ impl_to_css_for_predefined_type!(::cssparser::RGBA);
+ impl_to_css_for_predefined_type!(::cssparser::Color);
+ impl_to_css_for_predefined_type!(::cssparser::UnicodeRange);
+ 
+-#[macro_export]
++/// Define an enum type with unit variants that each corrsepond to a CSS keyword.
+ macro_rules! define_css_keyword_enum {
+     (pub enum $name:ident { $($variant:ident = $css:expr,)+ }) => {
+         #[allow(missing_docs)]
+
+commit 2b08ae08b260
+Author: lqd <remy.rakic+github@gmail.com>
+Date:   Fri Jan 11 16:35:26 2019 +0100
+
+    Bug 1519729 - Typo fix in new doc-comment. r=emilio
+    
+    Cherry-picks a commit from https://github.com/servo/servo/pull/22674
+    
+    Co-Authored-By: SimonSapin <simon.sapin@exyr.org>
+---
+ servo/components/style_traits/values.rs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git servo/components/style_traits/values.rs servo/components/style_traits/values.rs
+index 0d7ee3f506ce..582e34eb3db0 100644
+--- mozilla-release/servo/components/style_traits/values.rs
++++ mozilla-release/servo/components/style_traits/values.rs
+@@ -432,7 +432,7 @@ impl_to_css_for_predefined_type!(::cssparser::RGBA);
+ impl_to_css_for_predefined_type!(::cssparser::Color);
+ impl_to_css_for_predefined_type!(::cssparser::UnicodeRange);
+ 
+-/// Define an enum type with unit variants that each corrsepond to a CSS keyword.
++/// Define an enum type with unit variants that each correspond to a CSS keyword.
+ macro_rules! define_css_keyword_enum {
+     (pub enum $name:ident { $($variant:ident = $css:expr,)+ }) => {
+         #[allow(missing_docs)]

@@ -1,5 +1,5 @@
---- src/libcompiler_builtins/build.rs.orig	2019-01-16 09:30:44 UTC
-+++ src/libcompiler_builtins/build.rs
+--- vendor/compiler_builtins/build.rs.orig	2019-01-16 09:30:44 UTC
++++ vendor/compiler_builtins/build.rs
 @@ -308,6 +308,10 @@ mod c {
                  ],
              );

@@ -5,7 +5,7 @@
 
 PORTNAME=	ripgrep
 DISTVERSION=	0.10.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -27,7 +27,7 @@ CARGO_CRATES=	aho-corasick-0.6.8 \
 		atty-0.2.11 \
 		base64-0.9.2 \
 		bitflags-1.0.4 \
-		bytecount-0.3.2 \
+		bytecount-0.5.1 \
 		byteorder-1.2.6 \
 		cc-1.0.24 \
 		cfg-if-0.1.5 \
@@ -36,7 +36,7 @@ CARGO_CRATES=	aho-corasick-0.6.8 \
 		crossbeam-channel-0.2.4 \
 		crossbeam-epoch-0.5.2 \
 		crossbeam-utils-0.5.0 \
-		encoding_rs-0.8.6 \
+		encoding_rs-0.8.16 \
 		encoding_rs_io-0.1.2 \
 		fnv-1.0.6 \
 		fuchsia-zircon-0.3.3 \
@@ -53,6 +53,7 @@ CARGO_CRATES=	aho-corasick-0.6.8 \
 		nodrop-0.1.12 \
 		num_cpus-1.8.0 \
 		owning_ref-0.3.3 \
+		packed_simd-0.3.3 \
 		parking_lot-0.6.4 \
 		parking_lot_core-0.3.0 \
 		pcre2-0.1.0 \
@@ -113,17 +114,9 @@ PORTDOCS=	CHANGELOG.md FAQ.md GUIDE.md
 OPTIONS_DEFINE=	DOCS PCRE2 SIMD
 OPTIONS_DEFAULT=PCRE2
 
-OPTIONS_DEFINE_amd64=	AVX
-OPTIONS_DEFINE_i386=	AVX
-
 OPTIONS_DEFAULT_aarch64=SIMD
 OPTIONS_DEFAULT_amd64=	${OPTIONS_DEFAULT_i386}
 OPTIONS_DEFAULT_i386=	${MACHINE_CPU:tu:S/SSE2/SIMD/}
-
-AVX_DESC=	${SSE_DESC:S/SSE/AVX/}
-
-AVX_VARS=	CARGO_FEATURES+=avx-accel RUSTFLAGS+="-C target-feature=+avx"
-AVX_IMPLIES=	SIMD
 
 PCRE2_DESC=	${PCRE_DESC} version 2
 PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
@@ -133,7 +126,7 @@ PCRE2_VARS=	CARGO_FEATURES+=pcre2
 # unstable features similar to how lang/rust bootstraps. www/firefox
 # uses the same hack when building with --enable-rust-simd.
 SIMD_MAKE_ENV=	RUSTC_BOOTSTRAP=1
-SIMD_VARS=	CARGO_FEATURES+=simd-accel ${SIMD_VARS_${ARCH}${PORT_OPTIONS:MAVX}}
+SIMD_VARS=	CARGO_FEATURES+=simd-accel ${SIMD_VARS_${ARCH}}
 SIMD_VARS_i386=	RUSTFLAGS+="-C target-feature=+sse2"
 
 post-patch:
