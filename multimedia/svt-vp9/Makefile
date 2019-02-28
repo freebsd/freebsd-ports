@@ -47,7 +47,7 @@ post-patch:
 	@${REINPLACE_CMD} -i .opsys 's/Linux/${OPSYS}/' \
 		${WRKSRC}/CMakeLists.txt \
 		${WRKSRC}/Source/Lib/*/CMakeLists.txt
-	@${GREP} -Flr '__linux' ${WRKSRC} | ${XARGS} \
+	@${GREP} --exclude='*/third_party/*' -Flr '__linux' ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -i .opsys -E 's/__linux(__)?/__${OPSYS}__/'
 
 .include <bsd.port.mk>
