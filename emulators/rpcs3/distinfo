@@ -21,3 +21,5 @@ SHA256 (zeux-pugixml-v1.9_GH0.tar.gz) = 7ac060048bf00da4b3902cf411f0ba9f048cdc55
 SIZE (zeux-pugixml-v1.9_GH0.tar.gz) = 555480
 SHA256 (1e28a22860c0.patch) = d3724271593ea91093e4adfcb98a4ada9741a9204961a3737f60461bdcf13393
 SIZE (1e28a22860c0.patch) = 1052
+SHA256 (ff31ccc1eddf.patch) = 3c94e3e7fd45d8e8272d52c9db6d9a0b1654dc35be35b7865e2f64ce35c65254
+SIZE (ff31ccc1eddf.patch) = 1149
