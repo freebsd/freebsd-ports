@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.26
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-additions
@@ -99,13 +100,11 @@ VBOX_LIBS=	VBoxEGL.so \
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xorg-server.pc:x11-servers/xorg-server
+BUILD_DEPENDS+=	${LOCALBASE}/include/xorg/compiler.h:x11-servers/xorg-server
 RUN_DEPENDS+=	xrandr:x11/xrandr
-USE_XORG+=	xorgproto x11 xcursor xext xmu xorg-server xrandr xt
+USE_XORG+=	xorgproto x11 xcursor xext xmu xrandr xt
 USES+=		pkgconfig
 VBOX_WITH_X11=	1
-XORG_DRV_ABI=	pkgconf --modversion xorg-server | \
-		${SED} -E -e 's/\.[0-9]+$$//' -e 's/\.//'
 .else
 VBOX_WITH_X11=
 .endif
@@ -119,9 +118,7 @@ KMK_ARCH=	freebsd.${ARCH}
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Config.kmk \
-		${PATCHDIR}/extrapatch-src-VBox-Additions-x11-vboxvideo-Makefile.kmk \
-		${PATCHDIR}/extrapatch-src-VBox-Additions-x11-x11include-xorg-server-1.17.1-compiler.h
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Config.kmk
 .if ${COMPILER_FEATURES:Mlibc++}
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-x11-VBoxClient-Makefile.kmk
 .endif
@@ -136,6 +133,10 @@ post-patch:
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS = ${VBOX_WITH_X11}' >> \
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_GCC_std = -std=c++11' >> ${WRKSRC}/LocalConfig.kmk
+.if ${PORT_OPTIONS:MX11}
+	@${ECHO} 'VBOX_USE_SYSTEM_XORG_HEADERS = 1' >> \
+	    ${WRKSRC}/LocalConfig.kmk
+.endif
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
 	    -e 's| -fno-merge-constants||' \
@@ -149,7 +150,9 @@ post-patch:
 	    ${WRKSRC}/kBuild/units/qt5.kmk ${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
 	    ${WRKSRC}/src/VBox/Additions/common/crOpenGL/load.c \
 	    ${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
-	    ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop
+	    ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
+	    ${WRKSRC}/src/VBox/Additions/x11/vboxmouse/Makefile.kmk \
+	    ${WRKSRC}/src/VBox/Additions/x11/vboxvideo/Makefile.kmk
 	@${REINPLACE_CMD} \
 	    -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' \
 	    ${WRKSRC}/configure
@@ -193,10 +196,10 @@ do-install-X11-on:
 	    ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
 	    ${STAGEDIR}${PREFIX}/share/autostart/
 	${MKDIR} ${STAGEDIR}${VIDEODIR}
-	${INSTALL_DATA} ${VBOX_BIN}/vboxvideo_drv_$$(${XORG_DRV_ABI}).so \
+	${INSTALL_DATA} ${VBOX_BIN}/vboxvideo_drv_system.so \
 	    ${STAGEDIR}${VIDEODIR}/vboxvideo_drv.so
 	${MKDIR} ${STAGEDIR}${INPUTDIR}
-	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_$$(${XORG_DRV_ABI}).so \
+	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_system.so \
 	    ${STAGEDIR}${INPUTDIR}/vboxmouse_drv.so
 
 do-install-OPENGL-on:
