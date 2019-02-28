@@ -1854,6 +1854,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/ffap.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/filecache.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/filecache.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/fileloop.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/fileloop.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/filenotify.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/filenotify.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/files-x.el.gz
@@ -2313,6 +2315,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/lao.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/misc-lang.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/misc-lang.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/language/pinyin.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/language/pinyin.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/romanian.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/romanian.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/sinhala.el.gz
@@ -2647,8 +2651,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/mpc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/msb.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/msb.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/multifile.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/multifile.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mwheel.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mwheel.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/ange-ftp.el.gz
@@ -2775,6 +2777,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-ftp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-gvfs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-gvfs.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-integration.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-integration.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-rclone.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-rclone.elc
@@ -4017,6 +4021,7 @@ share/metainfo/emacs.appdata.xml
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/minibuf.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-25.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-26.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-27.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/msdos.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/msdos.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/nsgui.h
