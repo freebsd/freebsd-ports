@@ -18,6 +18,7 @@ load_rc_config "${name}"
 
 : ${opentsdb_enable:=NO}
 : ${opentsdb_user:=opentsdb}
+: ${opentsdb_jvmargs:=-enableassertions -enablesystemassertions}
 : ${opentsdb_opts:=tsd 2> %%OPENTSDB_LOGDIR%%/error.log 1> %%OPENTSDB_LOGDIR%%/tsdb.log}
 
 pidfile="%%OPENTSDB_RUNDIR%%/${name}.pid"
@@ -27,5 +28,6 @@ procname="daemon*"
 command="/usr/sbin/daemon"
 command_args="-P ${pidfile} ${opentsdb_daemon} ${opentsdb_opts}"
 
-run_rc_command "$1"
+export JVMARGS=${opentsdb_jvmargs}
 
+run_rc_command "$1"
