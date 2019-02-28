@@ -1,4 +1,4 @@
-TIMESTAMP = 1547397238
+TIMESTAMP = 1551392433
 SHA256 (nginx-1.15.8.tar.gz) = a8bdafbca87eb99813ae4fcac1ad0875bf725ce19eb265d28268c309b2b40787
 SIZE (nginx-1.15.8.tar.gz) = 1027862
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -107,8 +107,8 @@ SHA256 (SpiderLabs-ModSecurity-nginx-ecb255a_GH0.tar.gz) = 5db295eec3936ab2bd519
 SIZE (SpiderLabs-ModSecurity-nginx-ecb255a_GH0.tar.gz) = 31087
 SHA256 (nbs-system-naxsi-0.56_GH0.tar.gz) = 0a66dcadd32432460fab180be9f2efe24e911e3798917b2787ee710e02901eb4
 SIZE (nbs-system-naxsi-0.56_GH0.tar.gz) = 192120
-SHA256 (nginx-njs-0.2.7_GH0.tar.gz) = e386f391b8dda7e6396418109270b30bd44c507767c67d9f041d45fe3f0348a9
-SIZE (nginx-njs-0.2.7_GH0.tar.gz) = 287458
+SHA256 (nginx-njs-0.2.8_GH0.tar.gz) = 193af60a2c0f45d23d0c8f057f3758f2ef166a379322669b241c5792a7eea377
+SIZE (nginx-njs-0.2.8_GH0.tar.gz) = 300750
 SHA256 (FRiCKLE-ngx_postgres-1.0rc7_GH0.tar.gz) = c942e674a7273ab87caab4dcad626ab54852be192c29b1add50d2cb535e3cbb9
 SIZE (FRiCKLE-ngx_postgres-1.0rc7_GH0.tar.gz) = 40742
 SHA256 (openresty-rds-csv-nginx-module-v0.09_GH0.tar.gz) = 896be99c0cad50218417800a159e43ec088d6b58c099472ed3b3d7f179d6c0ea
