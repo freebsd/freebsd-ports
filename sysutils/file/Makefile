@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	file
-PORTVERSION=	5.34
+PORTVERSION=	5.36
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
@@ -20,8 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsect-man5
 MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
 TEST_TARGET=	check
-
-CONFLICTS=	tct-[0-9]*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(datadir)/misc|$$(datadir)/${PORTNAME}|g' \
