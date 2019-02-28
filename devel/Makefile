@@ -5129,6 +5129,7 @@
     SUBDIR += py-rx
     SUBDIR += py-sanetime
     SUBDIR += py-sarge
+    SUBDIR += py-schedule
     SUBDIR += py-schema
     SUBDIR += py-schematics-patched
     SUBDIR += py-scripttest
