@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysnmp
-PORTVERSION=	4.3.2
+PORTVERSION=	4.4.9
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP \
 		SF/pysnmp/pysnmp/${PORTVERSION}
