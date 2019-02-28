@@ -37,7 +37,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/commons-lang-2.4.jar
 %%DATADIR%%/lib/commons-logging-1.2.jar
 %%DATADIR%%/lib/commons-net-3.6.jar
-%%DATADIR%%/lib/delight-nashorn-sandbox-0.1.16.jar
+%%DATADIR%%/lib/delight-rhino-sandbox-0.0.9.jar
 %%DATADIR%%/lib/eddsa-0.2.0.jar
 %%DATADIR%%/lib/error_prone_annotations-2.3.1.jar
 %%DATADIR%%/lib/extensions.jar
@@ -98,8 +98,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/markdown4j-2.2-cj-1.1.jar
 %%DATADIR%%/lib/markdownj-core-0.4.2-SNAPSHOT.jar
 %%DATADIR%%/lib/microba.jar
-%%DATADIR%%/lib/miglayout-core-5.1.jar
-%%DATADIR%%/lib/miglayout-swing-5.1.jar
+%%DATADIR%%/lib/miglayout-core-5.2.jar
+%%DATADIR%%/lib/miglayout-swing-5.2.jar
 %%DATADIR%%/lib/mutability-annotations-compat.jar
 %%DATADIR%%/lib/nanoxml-2.2.3.jar
 %%DATADIR%%/lib/netty-buffer-4.1.30.Final.jar
@@ -118,7 +118,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/picocontainer-1.2.jar
 %%DATADIR%%/lib/platform-api.jar
 %%DATADIR%%/lib/platform-impl.jar
-%%DATADIR%%/lib/proxy-vole-1.0.5.jar
+%%DATADIR%%/lib/proxy-vole-1.0.6.jar
 %%DATADIR%%/lib/pty4j-0.8.6.jar
 %%DATADIR%%/lib/purejavacomm-0.0.11.1.jar
 %%DATADIR%%/lib/resources.jar
@@ -201,7 +201,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/CSS/lib/resources_en.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/database-impl.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/database-openapi.jar
-%%DATADIR%%/plugins/DatabaseTools/lib/dekaf-single-2.0.0.386.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/dekaf-single-2.0.0.387.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/jdbc-console.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/resources_en.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/unidecode-0.0.7.jar
@@ -600,8 +600,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/xslt-debugger/lib/rmi-stubs.jar
 %%DATADIR%%/plugins/xslt-debugger/lib/rt/saxon.jar
 %%DATADIR%%/plugins/xslt-debugger/lib/rt/saxon9he.jar
-%%DATADIR%%/plugins/xslt-debugger/lib/rt/serializer.jar
-%%DATADIR%%/plugins/xslt-debugger/lib/rt/xalan.jar
+%%DATADIR%%/plugins/xslt-debugger/lib/rt/serializer-2.7.2.jar
+%%DATADIR%%/plugins/xslt-debugger/lib/rt/xalan-2.7.2.jar
 %%DATADIR%%/plugins/xslt-debugger/lib/rt/xslt-debugger-engine-impl.jar
 %%DATADIR%%/plugins/xslt-debugger/lib/xslt-debugger-engine.jar
 %%DATADIR%%/plugins/xslt-debugger/lib/xslt-debugger.jar
