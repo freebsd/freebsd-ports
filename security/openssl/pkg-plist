@@ -1630,6 +1630,7 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/X509_check_ip.3.gz
 %%MAN3%%man/man3/X509_check_ip_asc.3.gz
 %%MAN3%%man/man3/X509_check_private_key.3.gz
+%%MAN3%%man/man3/X509_cmp_time.3.gz
 %%MAN3%%man/man3/X509_free.3.gz
 %%MAN3%%man/man3/X509_new.3.gz
 %%MAN3%%man/man3/X509_verify_cert.3.gz
