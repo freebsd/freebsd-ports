@@ -1,23 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	acalc
-PORTVERSION=	0.21
-DISTVERSIONPREFIX=	${PORTNAME}-
+PORTVERSION=	0.22
+DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
 MAINTAINER=	andrey.nik.ponomarenko@gmail.com
-COMMENT=	Simple and pretty Qt4-based expression calculator
+COMMENT=	Simple and pretty Qt5-based expression calculator
 
 LICENSE=	BSD4CLAUSE
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
+USES=		qmake compiler:c++14-lang qt:5 tar:xz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	anpp
 
-USES=		qmake qt:4
-USE_QT=		corelib gui moc_build rcc_build uic_build
+USE_QT=		core gui widgets buildtools_build linguisttools_build qmake_build
+
 WRKSRC_SUBDIR=	aCalc/aCalc
 
 PLIST_FILES=	bin/acalc share/pixmaps/Calculator-50.png
