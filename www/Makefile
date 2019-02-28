@@ -1705,6 +1705,7 @@
     SUBDIR += py-hyperlink
     SUBDIR += py-imdbpy
     SUBDIR += py-internetarchive
+    SUBDIR += py-instabot
     SUBDIR += py-jonpy
     SUBDIR += py-jsonfield
     SUBDIR += py-jswebkit
