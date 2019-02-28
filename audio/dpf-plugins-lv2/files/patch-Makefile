@@ -1,27 +1,18 @@
---- Makefile.orig	2018-08-18 06:07:42 UTC
+--- Makefile.orig	2019-02-28 06:54:29 UTC
 +++ Makefile
-@@ -109,17 +109,17 @@ endif
+@@ -113,13 +113,13 @@ clean:
  # --------------------------------------------------------------
  
  install:
 -	install -d $(DESTDIR)$(PREFIX)/lib/ladspa/
--	install -d $(DESTDIR)$(PREFIX)/lib/dssi/
 +	#install -d $(DESTDIR)$(PREFIX)/lib/ladspa/
-+	#install -d $(DESTDIR)$(PREFIX)/lib/dssi/
+ 	install -d $(DESTDIR)$(PREFIX)/lib/dssi/
  	install -d $(DESTDIR)$(PREFIX)/lib/lv2/
--	install -d $(DESTDIR)$(PREFIX)/lib/vst/
-+	#install -d $(DESTDIR)$(PREFIX)/lib/vst/
+ 	install -d $(DESTDIR)$(PREFIX)/lib/vst/
+ 	install -d $(DESTDIR)$(PREFIX)/bin/
  
--	cp bin/*-ladspa.* $(DESTDIR)$(PREFIX)/lib/ladspa/
--	cp bin/*-dssi.*   $(DESTDIR)$(PREFIX)/lib/dssi/
--	cp bin/*-vst.*    $(DESTDIR)$(PREFIX)/lib/vst/
-+	#cp bin/*-ladspa.* $(DESTDIR)$(PREFIX)/lib/ladspa/
-+	#cp bin/*-dssi.*   $(DESTDIR)$(PREFIX)/lib/dssi/
-+	#cp bin/*-vst.*    $(DESTDIR)$(PREFIX)/lib/vst/
- 
- ifeq ($(HAVE_DGL),true)
--	cp -r bin/*-dssi  $(DESTDIR)$(PREFIX)/lib/dssi/
-+	#cp -r bin/*-dssi  $(DESTDIR)$(PREFIX)/lib/dssi/
- endif
- 	cp -r bin/*.lv2   $(DESTDIR)$(PREFIX)/lib/lv2/
+-	install -m 644 bin/*-ladspa.* $(DESTDIR)$(PREFIX)/lib/ladspa/
++	#install -m 644 bin/*-ladspa.* $(DESTDIR)$(PREFIX)/lib/ladspa/
+ 	install -m 644 bin/*-dssi.*   $(DESTDIR)$(PREFIX)/lib/dssi/
+ 	install -m 644 bin/*-vst.*    $(DESTDIR)$(PREFIX)/lib/vst/
  

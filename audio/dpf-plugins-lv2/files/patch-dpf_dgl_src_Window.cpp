@@ -1,4 +1,4 @@
---- dpf/dgl/src/Window.cpp.orig	2018-08-18 05:40:10 UTC
+--- dpf/dgl/src/Window.cpp.orig	2019-02-28 06:54:29 UTC
 +++ dpf/dgl/src/Window.cpp
 @@ -51,6 +51,10 @@ extern "C" {
  #include "../StandaloneWindow.hpp"
@@ -11,8 +11,8 @@
  #define FOR_EACH_WIDGET(it) \
    for (std::list<Widget*>::iterator it = fWidgets.begin(); it != fWidgets.end(); ++it)
  
-@@ -1151,7 +1155,12 @@ bool Window::openFileBrowser(const FileB
- 
+@@ -1216,7 +1220,12 @@ bool Window::openFileBrowser(const FileB
+ #  ifdef DISTRHO_OS_LINUX
      if (startDir.isEmpty())
      {
 +#if defined(__FreeBSD__)
