@@ -12,6 +12,8 @@ COMMENT=	GNUstep example applications
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 USES=		gnustep
 USE_GNUSTEP=	back build
 
