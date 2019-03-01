@@ -10,8 +10,6 @@ COMMENT=	C++ implementation of the Jupyter kernel protocol
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to configure
-
 BUILD_DEPENDS=	cppzmq>0:net/cppzmq \
 		nlohmann-json>0:devel/nlohmann-json \
 		xtl-quant-stack>0:devel/xtl-quant-stack
