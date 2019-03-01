@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shapelib
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.0
 CATEGORIES=	devel geography
 MASTER_SITES=	https://download.osgeo.org/shapelib/ \
 		LOCAL/sunpoet
@@ -13,23 +13,21 @@ COMMENT=	C API for reading and writing ArcView Shapefiles
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	DOCS PROJ
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
+
+USES=		libtool localbase pathfix
 
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		libtool localbase pathfix
-
-PROJ_CONFIGURE_OFF=	--with-proj-cflags="" --with-proj-libs=""
-PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/shptest ${STAGEDIR}${PREFIX}/bin/
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/web/*.html ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/web/* ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
