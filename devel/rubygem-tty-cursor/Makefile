@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tty-cursor
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
