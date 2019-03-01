@@ -1,6 +1,6 @@
-IPy is a Python module for handling IPv4 and IPv6 Addresses and Networks in
-a fashion similar to perl's Net::IP and friends. The IP class allows a
-comfortable parsing and handling for most notations in use for IPv4 and IPv6
-Addresses and Networks.
+IPy is a Python module for handling IPv4 and IPv6 Addresses and Networks in a
+fashion similar to perl's Net::IP and friends. The IP class allows a comfortable
+parsing and handling for most notations in use for IPv4 and IPv6 Addresses and
+Networks.
 
-WWW: https://pypi.org/project/IPy/
+WWW: https://github.com/autocracy/python-ipy
