@@ -1,15 +1,15 @@
---- configure.ac.orig	2018-10-06 15:40:00 UTC
+--- configure.ac.orig	2019-02-11 17:35:17 UTC
 +++ configure.ac
-@@ -307,7 +307,11 @@ PKG_CHECK_MODULES([OPENSSL], [openssl], 
+@@ -322,7 +322,11 @@ PKG_CHECK_MODULES([OPENSSL], [openssl], [
  	AC_CHECK_LIB([ssl], [SSL_library_init], [
  		LIBS="$LIBS -lssl -lcrypto"
  	], [
+-		AC_MSG_ERROR([The OpenSSL library was not found])
 +		AC_CHECK_LIB([ssl], [OPENSSL_init_ssl], [
 +			LIBS="$LIBS -lssl -lcrypto"
 +		], [
 +			AC_MSG_ERROR([The OpenSSL library was not found])
 +		])
--		AC_MSG_ERROR([The OpenSSL library was not found])
  	])
  ])
  

@@ -87,8 +87,16 @@ include/irssi/src/fe-common/irc/module-formats.h
 include/irssi/src/fe-common/irc/module.h
 include/irssi/src/fe-common/irc/notifylist/module-formats.h
 include/irssi/src/fe-common/irc/notifylist/module.h
+include/irssi/src/fe-text/gui-printtext.h
+include/irssi/src/fe-text/gui-windows.h
+include/irssi/src/fe-text/mainwindows.h
+include/irssi/src/fe-text/statusbar.h
 include/irssi/src/fe-text/statusbar-item.h
+include/irssi/src/fe-text/term.h
+include/irssi/src/fe-text/textbuffer-view.h
+include/irssi/src/fe-text/textbuffer.h
 include/irssi/src/irc/core/bans.h
+include/irssi/src/irc/core/channel-events.h
 include/irssi/src/irc/core/channel-rejoin.h
 include/irssi/src/irc/core/ctcp.h
 include/irssi/src/irc/core/irc-cap.h
@@ -126,6 +134,8 @@ include/irssi/src/lib-config/iconfig.h
 include/irssi/src/lib-config/module.h
 %%PROXY%%lib/irssi/modules/libirc_proxy.a
 %%PROXY%%lib/irssi/modules/libirc_proxy.so
+%%OTR%%lib/irssi/modules/libotr_core.a
+%%OTR%%lib/irssi/modules/libotr_core.so
 %%PERL%%%%SITE_ARCH%%/Irssi.pm
 %%PERL%%%%SITE_ARCH%%/Irssi/Irc.pm
 %%PERL%%%%SITE_ARCH%%/Irssi/TextUI.pm
@@ -136,6 +146,7 @@ include/irssi/src/lib-config/module.h
 %%PERL%%%%SITE_ARCH%%/auto/Irssi/UI/UI.so
 man/man1/irssi.1.gz
 %%CAPSICUM%%%%PORTDOCS%%%%DOCSDIR%%/capsicum.txt
+%%PORTDOCS%%%%DOCSDIR%%/design.html
 %%PORTDOCS%%%%DOCSDIR%%/design.txt
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
@@ -210,6 +221,7 @@ man/man1/irssi.1.gz
 %%DATADIR%%/help/notify
 %%DATADIR%%/help/op
 %%DATADIR%%/help/oper
+%%DATADIR%%/help/otr
 %%DATADIR%%/help/part
 %%DATADIR%%/help/ping
 %%DATADIR%%/help/query
