@@ -1005,6 +1005,7 @@
     SUBDIR += py-azure-cli-resource
     SUBDIR += py-azure-cli-role
     SUBDIR += py-azure-cli-search
+    SUBDIR += py-azure-cli-security
     SUBDIR += py-azure-cli-servicebus
     SUBDIR += py-azure-cli-servicefabric
     SUBDIR += py-azure-cli-signalr
