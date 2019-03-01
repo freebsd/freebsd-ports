@@ -992,6 +992,7 @@
     SUBDIR += py-azure-cli-iot
     SUBDIR += py-azure-cli-iotcentral
     SUBDIR += py-azure-cli-keyvault
+    SUBDIR += py-azure-cli-kusto
     SUBDIR += py-azure-cli-lab
     SUBDIR += py-azure-cli-maps
     SUBDIR += py-azure-cli-monitor
