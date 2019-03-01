@@ -13,6 +13,8 @@ COMMENT=	Free peak fitting software
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	boost-libs>=1.35:devel/boost-libs \
 		swig3.0:devel/swig30 \
 		gnuplot:math/gnuplot
