@@ -14,6 +14,7 @@
     SUBDIR += bind911
     SUBDIR += bind912
     SUBDIR += bind913
+    SUBDIR += bind914
     SUBDIR += bindgraph
     SUBDIR += bundy
     SUBDIR += c-ares

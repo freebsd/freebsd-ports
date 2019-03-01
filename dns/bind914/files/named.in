@@ -1,0 +1,451 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: named
+# REQUIRE: %%NAMED_REQUIRE%%
+# BEFORE: %%NAMED_BEFORE%%
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable BIND:
+# named_enable (bool):		    Run named, the DNS server (or NO).
+# named_program (str):		    Path to named, if you want a different one.
+# named_conf (str):		    Path to the configuration file
+# named_flags (str):		    Use this for flags OTHER than -u and -c
+# named_uid (str):		    User to run named as
+# named_chrootdir (str):	    Chroot directory (or "" not to auto-chroot it)
+#				    Historically, was /var/named
+# named_chroot_autoupdate (bool):   Automatically install/update chrooted
+# 				    components of named.
+# named_symlink_enable (bool):	    Symlink the chrooted pid file
+# named_wait (bool):		    Wait for working name service before exiting
+# named_wait_host (str):	    Hostname to check if named_wait is enabled
+# named_auto_forward (str):	    Set up forwarders from /etc/resolv.conf
+# named_auto_forward_only (str):    Do "forward only" instead of "forward first"
+%%NATIVE_PKCS11%%# named_pkcs11_engine (str):	    Path to the PKCS#11 library to use.
+#
+
+. /etc/rc.subr
+
+name=named
+desc="named BIND startup script"
+rcvar=named_enable
+
+load_rc_config ${name}
+
+extra_commands=reload
+
+start_precmd=named_prestart
+start_postcmd=named_poststart
+reload_cmd=named_reload
+stop_cmd=named_stop
+stop_postcmd=named_poststop
+
+named_enable=${named_enable:-"NO"}
+named_program=${named_program:-"%%PREFIX%%/sbin/named"}
+named_conf=${named_conf:-"%%ETCDIR%%/named.conf"}
+named_flags=${named_flags:-""}
+named_uid=${named_uid:-"bind"}
+named_chrootdir=${named_chrootdir:-""}
+named_chroot_autoupdate=${named_chroot_autoupdate:-"YES"}
+named_symlink_enable=${named_symlink_enable:-"YES"}
+named_wait=${named_wait:-"NO"}
+named_wait_host=${named_wait_host:-"localhost"}
+named_auto_forward=${named_auto_forward:-"NO"}
+named_auto_forward_only=${named_auto_forward_only:-"NO"}
+%%NATIVE_PKCS11%%named_pkcs11_engine=${named_pkcs11_engine:-""}
+
+# Not configuration variables but having them here keeps rclint happy
+required_dirs="${named_chrootdir}"
+_named_confdirroot="${named_conf%/*}"
+_named_confdir="${named_chrootdir}${_named_confdirroot}"
+_named_program_root="${named_program%/sbin/named}"
+_openssl_engines="%%ENGINES%%"
+
+# Needed if named.conf and rndc.conf are moved or if rndc.conf is used
+rndc_conf=${rndc_conf:-"$_named_confdir/rndc.conf"}
+rndc_key=${rndc_key:-"$_named_confdir/rndc.key"}
+
+# If running in a chroot cage, ensure that the appropriate files
+# exist inside the cage, as well as helper symlinks into the cage
+# from outside.
+#
+# As this is called after the is_running and required_dir checks
+# are made in run_rc_command(), we can safely assume ${named_chrootdir}
+# exists and named isn't running at this point (unless forcestart
+# is used).
+#
+chroot_autoupdate()
+{
+	local file
+
+	# If it's the first time around, fiddle with things and move the
+	# current configuration to the chroot.
+	if [ -d ${_named_confdirroot} -a ! -d ${_named_confdir} ]; then
+		warn "named chroot: Moving current configuration in the chroot!"
+		install -d ${_named_confdir%/*}
+		mv ${_named_confdirroot} ${_named_confdir}
+	fi
+
+	# Create (or update) the chroot directory structure
+	#
+	if [ -r %%PREFIX%%/etc/mtree/BIND.chroot.dist ]; then
+		mtree -deU -f %%PREFIX%%/etc/mtree/BIND.chroot.dist \
+		    -p ${named_chrootdir}
+	else
+		warn "%%PREFIX%%/etc/mtree/BIND.chroot.dist missing,"
+		warn "${named_chrootdir} directory structure not updated"
+	fi
+	if [ -r %%PREFIX%%/etc/mtree/BIND.chroot.local.dist ]; then
+		mkdir -p ${named_chrootdir}%%PREFIX%%
+		mtree -deU -f %%PREFIX%%/etc/mtree/BIND.chroot.local.dist \
+		    -p ${named_chrootdir}%%PREFIX%%
+	else
+		warn "%%PREFIX%%/etc/mtree/BIND.chroot.local.dist missing,"
+		warn "${named_chrootdir}%%PREFIX%% directory structure not updated"
+	fi
+
+	# Create (or update) the configuration directory symlink
+	#
+	if [ ! -L "${_named_confdirroot}" ]; then
+		if [ -d "${_named_confdirroot}" ]; then
+			warn "named chroot: ${_named_confdirroot} is a directory!"
+		elif [ -e "${_named_confdirroot}" ]; then
+			warn "named chroot: ${_named_confdirroot} exists!"
+		else
+			ln -s ${_named_confdir} ${_named_confdirroot}
+		fi
+	else
+		# Make sure it points to the right place.
+		ln -shf ${_named_confdir} ${_named_confdirroot}
+	fi
+
+	# Mount a devfs in the chroot directory if needed
+	#
+	if [ `${SYSCTL_N} security.jail.jailed` -eq 0 ]; then
+		umount ${named_chrootdir}/dev 2>/dev/null
+		devfs_domount ${named_chrootdir}/dev devfsrules_hide_all
+		devfs -m ${named_chrootdir}/dev rule apply path null unhide
+		devfs -m ${named_chrootdir}/dev rule apply path random unhide
+	else
+		if [ -c ${named_chrootdir}/dev/null -a \
+		    -c ${named_chrootdir}/dev/random ]; then
+			info "named chroot: using pre-mounted devfs."
+		else
+			err 1 "named chroot: devfs cannot be mounted from " \
+				"within a jail. Thus a chrooted named cannot " \
+				"be run from within a jail.  Either mount the " \
+				"devfs with null and random from the host, or " \
+				"run named without chrooting it, set " \
+				"named_chrootdir=\"\" in /etc/rc.conf."
+		fi
+	fi
+
+	# The OpenSSL engines should be present in the chroot, named loads them
+	# after chrooting.
+	if [ -d ${_openssl_engines} ]; then
+		mkdir -p ${named_chrootdir}${_openssl_engines}
+		if can_mount nullfs ; then
+			mount -t nullfs ${_openssl_engines} ${named_chrootdir}${_openssl_engines}
+		else
+			warn "named chroot: cannot nullfs mount OpenSSL" \
+				"engines into the chroot, will copy the shared" \
+				"libraries instead."
+			cp -f ${_openssl_engines}/*.so ${named_chrootdir}${_openssl_engines}
+		fi
+	fi
+
+	# Copy and/or update key files to the chroot /etc
+	#
+	for file in localtime protocols services; do
+		if [ -r /etc/${file} ] && \
+			! cmp -s /etc/${file} "${named_chrootdir}/etc/${file}"; then
+			cp -p /etc/${file} "${named_chrootdir}/etc/${file}"
+		fi
+	done
+}
+
+# Make symlinks to the correct pid file
+#
+make_symlinks()
+{
+	checkyesno named_symlink_enable &&
+	    ln -fs "${named_chrootdir}${pidfile}" ${pidfile} &&
+	    ln -fs "${named_chrootdir}${sessionkeyfile}" ${sessionkeyfile}
+}
+
+named_poststart()
+{
+	make_symlinks
+
+	if checkyesno named_wait; then
+		until ${_named_program_root}/bin/host ${named_wait_host} >/dev/null 2>&1; do
+			echo "	Waiting for nameserver to resolve ${named_wait_host}"
+			sleep 1
+		done
+	fi
+}
+
+named_reload()
+{
+	# This is a one line function, but ${named_program} is not defined early
+	# enough to be there when the reload_cmd variable is defined up there.
+	rndc reload
+}
+
+find_pidfile()
+{
+	if get_pidfile_from_conf pid-file ${named_conf}; then
+		pidfile="${_pidfile_from_conf}"
+	else
+		pidfile="/var/run/named/pid"
+	fi
+}
+
+find_sessionkeyfile()
+{
+	if get_pidfile_from_conf session-keyfile ${named_conf}; then
+		sessionkeyfile="${_pidfile_from_conf}"
+	else
+		sessionkeyfile="/var/run/named/session.key"
+	fi
+}
+
+named_stop()
+{
+	find_pidfile
+
+	# This duplicates an undesirably large amount of code from the stop
+	# routine in rc.subr in order to use rndc to shut down the process,
+	# and to give it a second chance in case rndc fails.
+	rc_pid=$(check_pidfile ${pidfile} ${command})
+	if [ -z "${rc_pid}" ]; then
+		[ -n "${rc_fast}" ] && return 0
+		_run_rc_notrunning
+		return 1
+	fi
+	echo 'Stopping named.'
+	if rndc stop; then
+		wait_for_pids ${rc_pid}
+	else
+		echo -n 'rndc failed, trying kill: '
+		kill -TERM ${rc_pid}
+		wait_for_pids ${rc_pid}
+	fi
+}
+
+named_poststop()
+{
+	if [ -n "${named_chrootdir}" ]; then
+		# if using OpenSSL from ports, unmount OpenSSL engines, if they
+		# were not mounted but only copied, do nothing.
+		if [ -d ${_openssl_engines} ]; then
+			if can_mount nullfs; then
+				umount ${named_chrootdir}${_openssl_engines}
+			fi
+		fi
+		if [ -c ${named_chrootdir}/dev/null ]; then
+			# unmount /dev
+			if [ `${SYSCTL_N} security.jail.jailed` -eq 0 ]; then
+				umount ${named_chrootdir}/dev 2>/dev/null || true
+			else
+				warn "named chroot:" \
+					"cannot unmount devfs from inside jail!"
+			fi
+		fi
+	fi
+}
+
+can_mount()
+{
+	local kld
+	kld=$1
+	if ! load_kld $kld; then
+		return 1
+	fi
+	if [ `${SYSCTL_N} security.jail.jailed` -eq 0 ] ||
+		[ `${SYSCTL_N} security.jail.mount_allowed` -eq 1 ] ||
+		[ `${SYSCTL_N} security.jail.mount_${kld}_allowed` -eq 1 ] ; then
+		return 0
+	fi
+	return 1
+}
+
+create_file()
+{
+	if [ -e "$1" ]; then
+		unlink $1
+	fi
+	install -o root -g wheel -m 0644 /dev/null $1
+}
+
+rndc()
+{
+	if [ -z "${rndc_flags}" ]; then
+		if [ -s "${rndc_conf}" ] ; then
+			rndc_flags="-c ${rndc_conf}"
+		elif [ -s "${rndc_key}" ] ; then
+			rndc_flags="-k ${rndc_key}"
+		else
+			rndc_flags=""
+		fi
+	fi
+
+	${_named_program_root}/sbin/rndc ${rndc_flags} "$@"
+}
+
+named_prestart()
+{
+	find_pidfile
+	find_sessionkeyfile
+
+	if [ -n "${named_pidfile}" ]; then
+		warn 'named_pidfile: now determined from the conf file'
+	fi
+
+	if [ -n "${named_sessionkeyfile}" ]; then
+		warn 'named_sessionkeyfile: now determined from the conf file'
+	fi
+
+	piddir=`/usr/bin/dirname ${pidfile}`
+	if [ ! -d ${piddir} ]; then
+		install -d -o ${named_uid} -g ${named_uid} ${piddir}
+	fi
+
+	sessionkeydir=`/usr/bin/dirname ${sessionkeyfile}`
+	if [ ! -d ${sessionkeydir} ]; then
+		install -d -o ${named_uid} -g ${named_uid} ${sessionkeydir}
+	fi
+
+	command_args="-u ${named_uid:=root} -c ${named_conf} ${command_args}"
+
+%%NATIVE_PKCS11%%	if [ -z "${named_pkcs11_engine}"]; then
+%%NATIVE_PKCS11%%		err 3 "named_pkcs11_engine has to be set to the PKCS#11 engine's library you want to use"
+%%NATIVE_PKCS11%%	elif [ ! -f ${named_pkcs11_engine} ]; then
+%%NATIVE_PKCS11%%		err 3 "named_pkcs11_engine the PKCS#11 engine's library you want to use doesn't exist"
+%%NATIVE_PKCS11%%	else
+%%NATIVE_PKCS11%%		mkdir -p ${named_chrootdir}${named_pkcs11_engine%/*}
+%%NATIVE_PKCS11%%		cp -p ${named_pkcs11_engine} ${named_chrootdir}${named_pkcs11_engine}
+%%NATIVE_PKCS11%%		command_args="-E ${named_pkcs11_engine} ${command_args}"
+%%NATIVE_PKCS11%%	fi
+
+	local line nsip firstns
+
+	# Is the user using a sandbox?
+	#
+	if [ -n "${named_chrootdir}" ]; then
+		rc_flags="${rc_flags} -t ${named_chrootdir}"
+		checkyesno named_chroot_autoupdate && chroot_autoupdate
+
+		case "${altlog_proglist}" in
+		  *named*)
+		    ;;
+		  *)
+		    warn 'Using chroot without setting altlog_proglist, logging may not'
+		    warn 'work correctly.  Run sysrc altlog_proglist+=named'
+		    ;;
+		esac
+	else
+		named_symlink_enable=NO
+	fi
+
+	# Create an rndc.key file for the user if none exists
+	#
+	confgen_command="${_named_program_root}/sbin/rndc-confgen -a -b256 -u ${named_uid} \
+	    -c ${_named_confdir}/rndc.key"
+	if [ -s "${_named_confdir}/rndc.conf" ]; then
+		unset confgen_command
+	fi
+	if [ -s "${_named_confdir}/rndc.key" ]; then
+		case `stat -f%Su ${_named_confdir}/rndc.key` in
+		root|${named_uid}) ;;
+		*) ${confgen_command} ;;
+		esac
+	else
+		${confgen_command}
+	fi
+
+	local checkconf
+
+	checkconf="${_named_program_root}/sbin/named-checkconf"
+	if ! checkyesno named_chroot_autoupdate && [ -n "${named_chrootdir}" ]; then
+		checkconf="${checkconf} -t ${named_chrootdir}"
+	fi
+
+	# Create a forwarder configuration based on /etc/resolv.conf
+	if checkyesno named_auto_forward; then
+		if [ ! -s /etc/resolv.conf ]; then
+			warn "named_auto_forward enabled, but no /etc/resolv.conf"
+
+			# Empty the file in case it is included in named.conf
+			[ -s "${_named_confdir}/auto_forward.conf" ] &&
+			    create_file ${_named_confdir}/auto_forward.conf
+
+			${checkconf} ${named_conf} ||
+			    err 3 'named-checkconf for ${named_conf} failed'
+			return
+		fi
+
+		create_file /var/run/naf-resolv.conf
+		create_file /var/run/auto_forward.conf
+
+		echo '	forwarders {' > /var/run/auto_forward.conf
+
+		while read line; do
+			case "${line}" in
+			'nameserver '*|'nameserver	'*)
+				nsip=${line##nameserver[         ]}
+
+				if [ -z "${firstns}" ]; then
+					if [ ! "${nsip}" = '127.0.0.1' ]; then
+						echo 'nameserver 127.0.0.1'
+						echo "		${nsip};" >> /var/run/auto_forward.conf
+					fi
+
+					firstns=1
+				else
+					[ "${nsip}" = '127.0.0.1' ] && continue
+					echo "		${nsip};" >> /var/run/auto_forward.conf
+				fi
+				;;
+			esac
+
+			echo ${line}
+		done < /etc/resolv.conf > /var/run/naf-resolv.conf
+
+		echo '	};' >> /var/run/auto_forward.conf
+		echo '' >> /var/run/auto_forward.conf
+		if checkyesno named_auto_forward_only; then
+			echo "	forward only;" >> /var/run/auto_forward.conf
+		else
+			echo "	forward first;" >> /var/run/auto_forward.conf
+		fi
+
+		if cmp -s /etc/resolv.conf /var/run/naf-resolv.conf; then
+			unlink /var/run/naf-resolv.conf
+		else
+			[ -e /etc/resolv.conf ] && unlink /etc/resolv.conf
+			mv /var/run/naf-resolv.conf /etc/resolv.conf
+		fi
+
+		if cmp -s ${_named_confdir}/auto_forward.conf \
+		    /var/run/auto_forward.conf; then
+			unlink /var/run/auto_forward.conf
+		else
+			[ -e "${_named_confdir}/auto_forward.conf" ] &&
+			    unlink ${_named_confdir}/auto_forward.conf
+			mv /var/run/auto_forward.conf \
+			    ${_named_confdir}/auto_forward.conf
+		fi
+	else
+		# Empty the file in case it is included in named.conf
+		[ -s "${_named_confdir}/auto_forward.conf" ] &&
+		    create_file ${_named_confdir}/auto_forward.conf
+	fi
+
+	${checkconf} ${named_conf} || err 3 "named-checkconf for ${named_conf} failed"
+}
+
+run_rc_command "$1"
