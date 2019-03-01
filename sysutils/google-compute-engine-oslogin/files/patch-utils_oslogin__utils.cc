@@ -1,4 +1,4 @@
---- utils/oslogin_utils.cc.orig	2018-11-13 21:29:55 UTC
+--- utils/oslogin_utils.cc.orig	2019-01-24 19:28:43 UTC
 +++ utils/oslogin_utils.cc
 @@ -23,8 +23,7 @@
  #include <iostream>
@@ -18,7 +18,7 @@
  
  #include "oslogin_utils.h"
  
-@@ -279,7 +277,7 @@ bool ValidatePasswd(struct passwd* result, BufferManag
+@@ -292,7 +290,7 @@ bool ValidatePasswd(struct passwd* result, BufferManag
      }
    }
    if (strlen(result->pw_shell) == 0) {
