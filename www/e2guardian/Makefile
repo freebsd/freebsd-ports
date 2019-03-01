@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e2guardian
-PORTVERSION=	5.2.2
+PORTVERSION=	5.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -17,13 +17,16 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 USES=		autoreconf compiler:c++11-lang libtool pkgconfig python
 USE_GITHUB=	yes
 
+USE_CXXSTD=	c++11
 USE_RC_SUBR=	e2guardian
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-logdir=/var/log \
 		--with-piddir=/var/run
 
-OPTIONS_DEFINE=	CLISCAN CLAMD ICAP KAV AVAST NTLM DNS EMAIL DEBUG DOCS SSL
+OPTIONS_RADIO=	AV
+OPTIONS_RADIO_AV=AVAST CLAMD KAV
+OPTIONS_DEFINE=	CLISCAN ICAP NTLM DNS EMAIL DEBUG DOCS SSL_MITM
 OPTIONS_DEFAULT=CLAMD DNS
 OPTIONS_SUB=	yes
 
@@ -36,6 +39,7 @@ NTLM_DESC=	Include NTLM authentication plugin
 DNS_DESC=	Include DNS authetication plugin
 EMAIL_DESC=	Enable e-mail reporting support
 DEBUG_DESC=	Enable debug build mode
+SSL_MITM_DESC=	Enable support for the SSL MITM plugin
 
 CONFDIR=	${PREFIX}/etc/e2guardian
 
@@ -43,19 +47,20 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 
 CLISCAN_CONFIGURE_ENABLE=	commandline
-CLAMD_CONFIGURE_ENABLE=		clamd=yes
-CLAMD_RUN_DEPENDS=		${LOCALBASE}/sbin/clamd:security/clamav
+CLAMD_CONFIGURE_ENABLE=		clamd
+CLAMD_RUN_DEPENDS=		clamav>=0:security/clamav
 ICAP_CONFIGURE_ENABLE=		icap
 KAV_CONFIGURE_ENABLE=		kavd
 AVAST_CONFIGURE_ENABLE=		avastd
 NTLM_CONFIGURE_ENABLE=		ntlm
-NTLM_RUN_DEPENDS=		${LOCALBASE}/bin/iconv:converters/libiconv
 NTLM_USES=			iconv
 DNS_CONFIGURE_ENABLE=		dnsauth
 EMAIL_CONFIGURE_ENABLE=		email
-DEBUG_CONFIGURE_ENABLE=		dgdebug
-SSL_LDFLAGS=			-lssl -lcrypto
-SSL_CFLAGS=			-D__SSLMITM -D__SSLCERT
+DEBUG_CONFIGURE_WITH=		dgdebug
+SSL_MITM_USES=			ssl
+SSL_MITM_CONFIGURE_ENABLE=	sslmitm
+SSL_MITM_CONFIGURE_ENV=		OPENSSL_LIBS="-lssl -lcrypto" \
+				OPENSSL_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}"
 
 .include <bsd.port.options.mk>
 
@@ -84,6 +89,7 @@ post-install:
 		${STAGEDIR}${ETCDIR}/lists/bannedrooms/default.sample
 	@${MV} ${STAGEDIR}${ETCDIR}/lists/bannedsitelistwithbypass \
 		${STAGEDIR}${ETCDIR}/lists/bannedsitelistwithbypass.sample
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/lists/contentscanners
 	@${MV} ${STAGEDIR}${ETCDIR}/lists/exceptionvirusextensionlist.sample \
 		${STAGEDIR}${ETCDIR}/lists/contentscanners/
 	@${MV} ${STAGEDIR}${ETCDIR}/lists/exceptionvirussiteiplist.sample \

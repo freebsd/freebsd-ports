@@ -10,7 +10,7 @@
 %%ICAP%%@sample %%ETCDIR%%/contentscanners/icapscan.conf.sample
 %%CLISCAN%%@sample %%ETCDIR%%/contentscanners/commandlinescan.conf.sample
 %%KAV%%@sample %%ETCDIR%%/contentscanners/kavdscan.conf.sample
-%%AVAST%%@sample %%ETCDIR%%/contentscanners/avastd.conf.sample
+%%AVAST%%@sample %%ETCDIR%%/contentscanners/avastdscan.conf.sample
 @sample %%ETCDIR%%/downloadmanagers/default.conf.sample
 @sample %%ETCDIR%%/e2guardian.conf.sample
 @sample %%ETCDIR%%/e2guardianf1.conf.sample
