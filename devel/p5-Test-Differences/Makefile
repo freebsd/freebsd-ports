@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Differences
-PORTVERSION=	0.640
+PORTVERSION=	0.650
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -21,8 +21,9 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0.24:devel/p5-Capture-Tiny
 
 PORTSCOUT=	skipv:0.4801
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
