@@ -282,7 +282,6 @@ AUTHOR: kde@FreeBSD.org
   to
       USES=cmake:<args>,noninja
 
-
 20170417:
 AUTHOR:	kwm@FreeBSD.org
 
@@ -1882,7 +1881,6 @@ AUTHOR: makc@FreeBSD.org
    In-source build (equivalent to plain USE_CMAKE=yes) can be used if
    project doesn't support out-of-source build.
 
-
 20130319:
 AUTHOR: bapt@FreeBSD.org
 
@@ -2806,7 +2804,6 @@ AUTHOR: edwin@FreeBSD.org
 
   Use "make -V MASTER_SITES" to see the differences.
 
-
 20050313:
 AUTHOR: ahze@FreeBSD.org, kwm@FreeBSD.org
   The following changes were committed:
@@ -3415,7 +3412,6 @@ AUTHOR:	gnome@FreeBSD.org
 
 	Hopefully galeon2 can catch up to peoples' expectations from
 	galeon1 soon, and we can remove the GTK1 ports altogether.
-
 
 20040204:
 AUTHOR:	portmgr@FreeBSD.org
