@@ -2,7 +2,7 @@
 
 PORTNAME=	pysmi
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP \
 		SF/pysmi/pysmi/${PORTVERSION}
@@ -13,8 +13,6 @@ COMMENT=	SNMP/SMI MIB parsing in Python
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysnmp>=0:net-mgmt/py-pysnmp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ply>=0:devel/py-ply@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=0:devel/py-ply@${PY_FLAVOR}
 
 USES=		python
@@ -28,9 +26,6 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 BASEDOCS=	CHANGES.rst README.md THANKS.txt TODO.txt
-
-post-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test)
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
