@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sxhkd
-PORTVERSION=	0.5.9
+PORTVERSION=	0.6.0
 CATEGORIES=	x11
 
 MAINTAINER=	o.hushchenkov@gmail.com
