@@ -1,0 +1,7 @@
+libfido2 provides library functionality and command-line tools to communicate
+with a FIDO device over USB, and to verify attestation and assertion signatures.
+
+libfido2 supports the FIDO U2F (CTAP 1) and FIDO 2.0 (CTAP 2) protocols.
+
+WWW: https://developers.yubico.com/libfido2/
+WWW: https://github.com/Yubico/libfido2
