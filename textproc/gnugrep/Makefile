@@ -16,6 +16,7 @@ CONFLICTS=	bsd-grep-[0-9]*
 
 USES=		charsetfix cpe tar:xz
 GNU_CONFIGURE=	yes
+TEST_TARGET=	check
 
 INFO=		grep
 CPE_VENDOR=	gnu
@@ -43,7 +44,7 @@ PCRE_USES=		pkgconfig
 PCRE_CONFIGURE_ENABLE=	perl-regexp
 
 post-patch:
-	@${REINPLACE_CMD} 's:@grep@:${LOCALBASE}/bin/&:' ${WRKSRC}/src/egrep.sh
+	@${REINPLACE_CMD} 's:@grep@:${PREFIX}/bin/&:' ${WRKSRC}/src/egrep.sh
 	@${REINPLACE_CMD} 's|mkinstalldirs = .*|mkinstalldirs = ${MKDIR}|g' \
 		${WRKSRC}/po/Makefile.in.in
 
