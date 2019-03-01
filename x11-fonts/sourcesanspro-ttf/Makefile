@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sourcesanspro
-PORTVERSION=	2.020
-DISTVERSIONSUFFIX=	R-ro/1.075R-it
+PORTVERSION=	2.045
+DISTVERSIONSUFFIX=	R-ro/1.095R-it
 CATEGORIES=	x11-fonts
 PKGNAMESUFFIX=	-ttf
 
@@ -15,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 PORTSCOUT=	skipv:variable-fonts
 
+USES=		fonts
+
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		fonts
 
 FONTNAME=	SourceSansPro
 SUB_FILES=	pkg-message
