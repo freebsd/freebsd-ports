@@ -3,7 +3,7 @@
 
 PORTNAME=	portaudio
 PORTVERSION=	19.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.portaudio.com/archives/
@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-cxx \
 		--without-alsa
+MAKE_ARGS=	EXAMPLES=""
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_JOBS_UNSAFE=	yes
@@ -42,16 +43,14 @@ PORTEXAMPLES=	*
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_WITH=	jack
 
+PATEST_MAKE_ARGS_OFF=	SELFTESTS="" TESTS=""
+
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_CONFIGURE_WITH=	sndio
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/src/hostapi/sndio
 	@${CP} ${FILESDIR}/pa_sndio.c ${WRKSRC}/src/hostapi/sndio
-
-post-patch:
-	@${REINPLACE_CMD} -i '' '/EXAMPLES =/,/bin\/paex_write_sine_nonint/s/^/#/' \
-		${WRKSRC}/Makefile.in
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libportaudio.so \
@@ -67,7 +66,10 @@ post-install-DOXYGEN-on:
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/bindings/cpp/example/*.cxx \
+		${WRKSRC}/examples/*.c ${WRKSRC}/examples/*.cpp \
+		${STAGEDIR}${EXAMPLESDIR}
 
 post-install-PATEST-on:
 .for f in pa_m* paqa_* patest*
