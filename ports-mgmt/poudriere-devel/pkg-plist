@@ -46,6 +46,7 @@ man/man8/poudriere-version.8.gz
 %%DATADIR%%/awk/parse_MOVED.awk
 %%DATADIR%%/awk/processonelog2.awk
 %%DATADIR%%/awk/siginfo_buildtime.awk
+%%DATADIR%%/awk/unique_pkgnames_from_flavored_origins.awk
 %%DATADIR%%/api.sh
 %%DATADIR%%/bulk.sh
 %%DATADIR%%/common.sh
