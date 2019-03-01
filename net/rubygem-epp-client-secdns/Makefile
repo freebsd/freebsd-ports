@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	epp-client-secdns
-PORTVERSION=	0.15.1
+PORTVERSION=	0.15.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
