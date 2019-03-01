@@ -13,4 +13,4 @@ stagit is a static Git web page generator with the following features:
   very fast, simple and requires little resources (because the content
   is static), only a HTTP file server is required.
 
-WWW: http://git.2f30.org/stagit/log.html
+WWW: https://codemadness.org/git/stagit/log.html

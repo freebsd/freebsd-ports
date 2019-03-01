@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	stagit
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	www
-MASTER_SITES=	http://dl.2f30.org/releases/
+MASTER_SITES=	https://codemadness.org/releases/stagit/
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Static Git page generator
