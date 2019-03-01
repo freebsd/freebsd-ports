@@ -1,0 +1,6 @@
+This is the Microsoft Azure Kusto Management Client Library.
+
+Azure Resource Manager (ARM) is the next generation of management APIs that
+replace the old Azure Service Management (ASM).
+
+WWW: https://pypi.org/project/azure-mgmt-kusto/
