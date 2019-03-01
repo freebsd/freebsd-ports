@@ -5,7 +5,8 @@ PORTNAME=	ctorrent
 PORTVERSION=	3.3.2
 PORTREVISION=	3
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://www.rahul.net/dholmes/ctorrent/
+MASTER_SITES=	SF/dtorrent/dtorrent/${PORTVERSION} \
+		http://www.rahul.net/dholmes/ctorrent/
 DISTNAME=	${PORTNAME}-dnh${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
