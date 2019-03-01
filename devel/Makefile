@@ -4392,6 +4392,7 @@
     SUBDIR += py-azure-mgmt-reservations
     SUBDIR += py-azure-mgmt-resource
     SUBDIR += py-azure-mgmt-search
+    SUBDIR += py-azure-mgmt-security
     SUBDIR += py-azure-mgmt-servicebus
     SUBDIR += py-azure-mgmt-servicefabric
     SUBDIR += py-azure-mgmt-signalr
