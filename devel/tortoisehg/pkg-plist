@@ -149,6 +149,12 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/pbranch.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/pbranch.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/pbranch.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/phabreview.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/phabreview.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/phabreview.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/phabreview_ui.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/phabreview_ui.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/phabreview_ui.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/postreview.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/postreview.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/postreview.pyo
@@ -573,6 +579,7 @@ share/pixmaps/tortoisehg/icons/scalable/actions/visualdiff.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/help-browser.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/help-readme.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/hg.svg
+share/pixmaps/tortoisehg/icons/scalable/apps/phabricator.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/preferences-desktop-font.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/system-file-manager.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/thg.svg
