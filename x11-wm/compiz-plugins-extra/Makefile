@@ -3,7 +3,7 @@
 
 PORTNAME=	compiz-plugins-extra
 PORTVERSION=	0.8.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -23,13 +23,16 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz \
 		${LOCALBASE}/libdata/pkgconfig/compiz-text.pc:x11-wm/compiz-plugins-main
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake gl gnome libtool:keepla pathfix pkgconfig tar:bzip2
-USE_GL=		gl
+USES=		gettext-runtime gettext-tools gmake gl gnome libtool:keepla pathfix pkgconfig tar:bzip2
+USE_GL=		glu
 USE_CSTD=	gnu89
 USE_GNOME=	gconf2 gdkpixbuf2 intltool libxslt
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xinerama xorgproto xrandr xrender
 USE_LDCONFIG=	yes
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--enable-schemas
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
@@ -59,16 +62,6 @@ GCONF_SCHEMAS=	compiz-3d.schemas \
 		compiz-trailfocus.schemas \
 		compiz-wallpaper.schemas \
 		compiz-widget.schemas
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--enable-schemas
-
-OPTIONS_DEFINE=		NLS
-OPTIONS_DEFAULT=	NLS
-
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext-runtime gettext-tools
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'	\
