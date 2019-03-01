@@ -7,7 +7,7 @@
  #
  
 -if("${AOM_TARGET_CPU}" MATCHES "^arm")
-+if("${AOM_TARGET_CPU}" MATCHES "^armv[78]")
++if("${AOM_TARGET_CPU}" MATCHES "^arm" AND NOT "${AOM_TARGET_CPU}" MATCHES "^armv6")
    set(ARCH_ARM 1)
    set(RTCD_ARCH_ARM "yes")
  
