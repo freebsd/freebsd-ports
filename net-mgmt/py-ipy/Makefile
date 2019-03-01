@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipy
-PORTVERSION=	0.83
+PORTVERSION=	1.00
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +14,10 @@ COMMENT=	Python module for handling IPv4 and IPv6 Addresses and Networks
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NO_ARCH=	yes
-USE_PYTHON=	autoplist concurrent distutils
 USES=		python
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 do-test:
 	${PYTHON_CMD} ${WRKSRC}/test/test_IPy.py
