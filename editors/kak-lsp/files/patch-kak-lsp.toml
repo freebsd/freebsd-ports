@@ -1,6 +1,6 @@
 --- kak-lsp.toml.orig	2019-01-14 07:08:28 UTC
 +++ kak-lsp.toml
-@@ -52,11 +52,16 @@ filetypes = ["python"]
+@@ -52,11 +52,22 @@ filetypes = ["python"]
  roots = ["requirements.txt", "setup.py", ".git", ".hg"]
  command = "pyls"
  
@@ -17,10 +17,16 @@
 -args = ["--init={\"cacheDirectory\":\"/tmp/cquery\"}"]
 +roots = ["compile_commands.json", ".ccls", ".git"]
 +command = "ccls"
++# With completion.detailedLabel turned on ccls embeds type
++# signatures and other metadata in completion entries.  Kak-lsp
++# does not filter them, so they appear alongside the selected entry,
++# which is not very convenient.  It is recommended that you disable
++# it.
++args = ["--init={\"completion\":{\"detailedLabel\":false}}"]
  
  [language.haskell]
  filetypes = ["haskell"]
-@@ -64,11 +69,17 @@ roots = ["Setup.hs", "stack.yaml", "*.cabal"]
+@@ -64,11 +75,17 @@ roots = ["Setup.hs", "stack.yaml", "*.cabal"]
  command = "hie"
  args = ["--lsp"]
  
