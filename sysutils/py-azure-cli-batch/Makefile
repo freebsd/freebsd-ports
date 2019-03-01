@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli-batch
-PORTVERSION=	3.4.1
+PORTVERSION=	4.0.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,8 @@ COMMENT=	Microsoft Azure Command-Line Tools Batch Command Module
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-mgmt-batch>=5.0.1:devel/py-azure-mgmt-batch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-batch>=5.1.0:devel/py-azure-batch@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-mgmt-batch>=6.0.0:devel/py-azure-mgmt-batch@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-batch>=6.0.0:devel/py-azure-batch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cli-core>=0:sysutils/py-azure-cli-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-keyvault>=1.1.0:devel/py-azure-mgmt-keyvault@${PY_FLAVOR}
 
