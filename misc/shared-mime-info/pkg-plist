@@ -96,5 +96,6 @@ share/mime/packages/freedesktop.org.xml
 @unexec rm -fr %D/share/mime/message 2>/dev/null || true
 @unexec rm -fr %D/share/mime/inode 2>/dev/null || true
 @unexec rm -fr %D/share/mime/image 2>/dev/null || true
+@unexec rm -fr %D/share/mime/font 2>/dev/null || true
 @unexec rm -fr %D/share/mime/audio 2>/dev/null || true
 @unexec rm -fr %D/share/mime/application 2>/dev/null || true

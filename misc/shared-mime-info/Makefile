@@ -3,6 +3,7 @@
 
 PORTNAME=	shared-mime-info
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://people.freedesktop.org/~hadess/
 
