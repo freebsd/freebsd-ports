@@ -10,13 +10,6 @@ man/man1/bspwm.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bspwmrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/external_rules/bspwmrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/external_rules/external_rules
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/external_rules/pseudo_automatic_mode/README.md
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/external_rules/pseudo_automatic_mode/external_rules
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loop/bspwmrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loop/profile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loop/sxhkdrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loop/wm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loop/xinitrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/overlapping_borders/bspwmrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/panel/bspwmrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/panel/panel

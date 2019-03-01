@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bspwm
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	x11-wm
 
 MAINTAINER=	o.hushchenkov@gmail.com
