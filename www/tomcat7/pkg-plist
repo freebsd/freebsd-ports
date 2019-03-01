@@ -1,5 +1,8 @@
+%%T%%/BUILDING.txt
+%%T%%/CONTRIBUTING.md
 %%T%%/LICENSE
 %%T%%/NOTICE
+%%T%%/README.md
 %%T%%/RELEASE-NOTES
 %%T%%/RUNNING.txt
 %%T%%/bin/bootstrap.jar
@@ -34,6 +37,7 @@
 %%T%%/lib/tomcat-i18n-es.jar
 %%T%%/lib/tomcat-i18n-fr.jar
 %%T%%/lib/tomcat-i18n-ja.jar
+%%T%%/lib/tomcat-i18n-ru.jar
 %%T%%/lib/tomcat-jdbc.jar
 %%T%%/lib/tomcat-util.jar
 %%T%%/lib/tomcat7-websocket.jar
