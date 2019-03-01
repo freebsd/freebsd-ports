@@ -1,0 +1,28 @@
+**********************************************************************
+*            _  _____ _____ _____ _   _ _____ ___ ___  _   _         *
+*           / \|_   _|_   _| ____| \ | |_   _|_ _/ _ \| \ | |        *
+*          / _ \ | |   | | |  _| |  \| | | |  | | | | |  \| |        *
+*         / ___ \| |   | | | |___| |\  | | |  | | |_| | |\  |        *
+*        /_/   \_\_|   |_| |_____|_| \_| |_| |___\___/|_| \_|        *
+*                                                                    *
+*   BIND requires configuration of rndc, including a "secret" key.   *
+*    The easiest, and most secure way to configure rndc is to run    *
+*   'rndc-confgen -a' to generate the proper conf file, with a new   *
+*            random key, and appropriate file permissions.           *
+*                                                                    *
+*     The %%PREFIX%%/etc/rc.d/named script will do that for you.     *
+*                                                                    *
+*      If using syslog to log the BIND9 activity, and using a        *
+*     chroot'ed installation, you will need to tell syslog to        *
+*       install a log socket in the BIND9 chroot by running:         *
+*                                                                    *
+*            # sysrc altlog_proglist+=named                          *
+*                                                                    *
+*    And then restarting syslogd with: service syslogd restart       *
+*                                                                    *
+*                                                                    *
+*   THIS IS A DEVELOPMENT VERSION OF BIND, IT MAY EAT YOUR DATA      *
+*                                                                    *
+*                                                                    *
+*                                                                    *
+**********************************************************************

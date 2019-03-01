@@ -7,21 +7,17 @@ PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 # dns/bind-tools here
 PORTREVISION=	0
 .else
-# XXX: correct version
-# dns/bind9xx here
+# dns/bind913 here
 PORTREVISION=	0
 .endif
 CATEGORIES=	dns net ipv6
-# XXX: put the ISC master_site
-#MASTER_SITES=	ISC/bind9/${ISCVERSION}
-MASTER_SITES=	LOCAL/mat/bind
+MASTER_SITES=	ISC/bind9/${ISCVERSION}
 .if defined(BIND_TOOLS_SLAVE)
 PKGNAMESUFFIX=	-tools
 .else
-PKGNAMESUFFIX=	9-devel
+PKGNAMESUFFIX=	914
 .endif
-# XXX: correct DISTNAME.
-#DISTNAME=	${PORTNAME}-${ISCVERSION}
+DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
 .if defined(BIND_TOOLS_SLAVE)
@@ -35,16 +31,9 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
-# XXX: remove tar:bz2
-USES=	compiler:c11 cpe libedit ssl tar:bz2
+USES=	compiler:c11 cpe libedit ssl
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.15.0a0.2019.02.22
-# XXX: Remove gitlab
-USE_GITLAB=	yes
-GL_SITE=	https://gitlab.isc.org
-GL_ACCOUNT=	isc-projects
-GL_PROJECT=	bind9
-GL_COMMIT=	a111c8d7391cfb5dc87e0a9c95ae64b498769ce0
+ISCVERSION=	9.14.0rc1
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -61,13 +50,11 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--sysconfdir=${ETCDIR}
 ETCDIR=		${PREFIX}/etc/namedb
 
-# XXX: Add -devel
-CONFLICTS=	bind911 bind912 bind913 bind914
+CONFLICTS=	bind911 bind912 bind13 bind9-devel
 
 .if defined(BIND_TOOLS_SLAVE)
 CONFIGURE_ARGS+=	--disable-shared
-# XXX: Change to the correct version
-CONFLICTS+=		bind9-devel
+CONFLICTS+=		bind914
 .else
 USE_RC_SUBR=	named
 SUB_FILES=	pkg-message named.conf
@@ -88,7 +75,7 @@ OPTIONS_RADIO_CRYPTO=	NATIVE_PKCS11
 .if !defined(BIND_TOOLS_SLAVE)
 OPTIONS_DEFAULT+=	DLZ_FILESYSTEM LMDB TCP_FASTOPEN
 OPTIONS_DEFINE+=	DOCS \
-			OVERRIDECACHE PORTREVISION QUERYTRACE LMDB DNSTAP \
+			MINCACHE PORTREVISION QUERYTRACE LMDB DNSTAP \
 			START_LATE TUNING_LARGE TCP_FASTOPEN
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
@@ -115,7 +102,7 @@ GSSAPI_MIT_DESC=	Using security/krb5
 GSSAPI_NONE_DESC=	Disable
 LARGE_FILE_DESC=	64-bit file support
 LMDB_DESC=		Use LMDB for zone management
-OVERRIDECACHE_DESC=	Use the override-cache patch
+MINCACHE_DESC=		Use the mincachettl patch
 NATIVE_PKCS11_DESC=	Use PKCS\#11 native API (**READ HELP**)
 PORTREVISION_DESC=	Show PORTREVISION in the version string
 PYTHON_DESC=		Build with Python utilities
@@ -174,7 +161,7 @@ LARGE_FILE_CONFIGURE_ENABLE=	largefile
 LMDB_CONFIGURE_WITH=	lmdb=${LOCALBASE}
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
-OVERRIDECACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
+MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 
 NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
 
@@ -211,14 +198,7 @@ SUB_LIST+=	ENGINES=/usr/lib/engines
 SUB_LIST+=	ENGINES=${LOCALBASE}/lib/engines
 .endif
 
-# XXX: Remove
-post-extract:
-	echo "SRCID=${GL_COMMIT}" > ${WRKSRC}/srcid
-
-# XXX: Remove first REINPLACE_CMD
 post-patch:
-	@${REINPLACE_CMD} -e '/RELEASETYPE=/s#$$#-${GL_COMMIT}#' \
-		${WRKSRC}/version
 .if defined(BIND_TOOLS_SLAVE)
 	@${REINPLACE_CMD} -e 's#^SUBDIRS.*#SUBDIRS = lib bin#' \
 		-e 's#isc-config.sh installdirs#installdirs#' \
