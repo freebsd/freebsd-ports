@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_image
 PORTVERSION=	1.2.12
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 DISTNAME=	SDL_image-${PORTVERSION}
@@ -12,12 +12,14 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple library to load images of various formats as SDL surfaces
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool pkgconfig pathfix
+USES=		gmake libtool localbase pkgconfig pathfix sdl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lm
+CONFIGURE_ARGS=	--disable-jpg-shared --disable-png-shared \
+		--disable-tif-shared --disable-webp-shared
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	JPEG PNG TIFF WEBP
