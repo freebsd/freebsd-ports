@@ -10,3 +10,5 @@ lib/cmake/FAudio/FAudio-config.cmake
 lib/cmake/FAudio/FAudio-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/FAudio/FAudio-targets.cmake
 lib/libFAudio.so
+lib/libFAudio.so.0
+lib/libFAudio.so.0.19.03
