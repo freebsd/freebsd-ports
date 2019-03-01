@@ -16,7 +16,6 @@ These will explain how to use ports and packages.
 If you would like to search for a port, you can do so easily by
 saying (in /usr/ports):
 
-
 	make search name="<name>"
 	or:
 	make search key="<keyword>"
@@ -37,4 +36,3 @@ and the individual ports will also use up lots of space in their work
 subdirectories unless you remember to "make clean" after you're done
 building a given port.  /usr/ports/distfiles can also be periodically
 cleaned without ill-effect.
-

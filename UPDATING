@@ -111,9 +111,9 @@ you update your ports collection, before attempting any port upgrades.
   in the FreeBSD ports tree. It will also replace the previous 2.18 LTR
   in the QGIS package repositories in February 2019 [1].
 
-  Beside, the latest QT4 version 4.8.7 has been EOL since December 2015
+  Beside, the latest Qt4 version 4.8.7 has been EOL since December 2015
   and its expiration date on FreeBSD is set to March, 15th 2019.
-  Because QGIS 2 is based on QT4 and Python2, it was decided to not create
+  Because QGIS 2 is based on Qt4 and Python2, it was decided to not create
   a legacy port for QGIS 2, after graphics/qgis changed to QGIS 3.
 
   For users moving over from the 2.18 LTR there is a huge list of new
@@ -122,7 +122,6 @@ you update your ports collection, before attempting any port upgrades.
   plugin usage carefully. Before moving over, if you have not already
   done so, take a look at the changelogs from versions 3.0, 3.2, and
   3.4 [2][3][4] to understand the full scope of changes in the 3.x release.
-
 
   [1] https://qgis.org/en/site/getinvolved/development/roadmap.html#release-schedule
   [2] http://changelog.qgis.org/en/qgis/version/3.0.0/
@@ -659,7 +658,6 @@ you update your ports collection, before attempting any port upgrades.
    > y
 
   Application key [base64:P62La9V........qw=] set successfully.
-
 
 20180901:
   AFFECTS: users of samba46
@@ -2688,7 +2686,6 @@ you update your ports collection, before attempting any port upgrades.
   this version of tinc requires all nodes in the VPN to be linked with a
   version of OpenSSL or LibreSSL that supports the AES256 and SHA256
   algorithms.
-
 
 20170120:
   AFFECTS: users of databases/mysql56-server
@@ -5707,7 +5704,6 @@ you update your ports collection, before attempting any port upgrades.
 
   This is all that is needed to continue using an existing Fedora 10 Linux base
   and userland.
-
 
 20141208:
   AFFECTS: users of ports-mgmt/poudriere, ports-mgmt/poudriere-devel
@@ -9422,7 +9418,6 @@ you update your ports collection, before attempting any port upgrades.
     or
   # pkg install -fR lang/ghc
 
-
 20121218:
   AFFECTS: users of icu
   AUTHOR: bapt@FreeBSD.org
@@ -10460,7 +10455,6 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -r ghc
     or
   # portupgrade -fr lang/ghc
-
 
 20120531:
   AFFECTS: users of graphics/png
@@ -12305,7 +12299,6 @@ or
   routines were moved from liblutil to libldap.  If you previously built
   the library with "FETCH" support, this would cause libldap to depend on
   FreeBSD's libfetch.so library.
-
 
   As of 20110402, a local change have been introduced so OpenLDAP libraries
   link against libfetch.so when FETCH is enabled.  Normally, no further user
