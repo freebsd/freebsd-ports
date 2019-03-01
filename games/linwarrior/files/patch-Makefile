@@ -9,7 +9,7 @@
  
  # Automatic searching for source files.
  # Objects to compile are all sources (cpp) and put the .o below build-dir.
-@@ -20,18 +20,17 @@ ifneq (,$(findstring Win,$(OS)))
+@@ -20,40 +20,38 @@ ifneq (,$(findstring Win,$(OS)))
  	LIMITER=$(dir \file)
  	CFLAGS+= -static-libgcc
  else
@@ -29,12 +29,30 @@
 -CFLAGS += -Wp,-M,-MP,-MT,$@,-MF,dep/$(subst /,-,$@).d
  
  # Print warnings when compiling.
- CFLAGS += -Wall
-@@ -40,7 +39,6 @@ CFLAGS += -Wall
- CFLAGS += $(INCLUDES)
+-CFLAGS += -Wall
++CXXFLAGS += -Wall
+ 
+ # Use the given includepathes.
+-CFLAGS += $(INCLUDES)
++CXXFLAGS += $(INCLUDES)
  
  # Optimizations.
 -CFLAGS += -O1 -funroll-loops
  
  # Default makefile Target.
  all: $(TARGET)
+ 
+ # For executable we need all sources compiled to objects.
+ $(TARGET): $(OBJECTS)
+-	$(CPP) -o $(TARGET) $(OBJECTS) $(LIBRARIES)
++	$(CXX) -o $(TARGET) $(OBJECTS) ${LDFLAGS} $(LIBRARIES)
+ 
+ # Compile all Source files, creates output directories as necessary.
+ build/%.o: %.cpp
+ 	$(shell $(MKDIR) build 2>/dev/null)
+ 	$(shell $(MKDIR) $(dir $@) 2>/dev/null)
+-	$(CPP) $(CFLAGS) -c $< -o $@
++	$(CXX) $(CXXFLAGS) -c $< -o $@
+ 
+ # IDE may call makefile with target "build" instead of "all".
+ build: all
