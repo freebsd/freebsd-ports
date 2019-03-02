@@ -66,7 +66,7 @@ typedef struct {
   fluid_midi_parser_t *parser;
 } fluid_sndio_midi_driver_t;
 
-int delete_fluid_sndio_audio_driver(fluid_audio_driver_t* p);
+//void delete_fluid_sndio_audio_driver(fluid_audio_driver_t* p);
 
 /* local utilities */
 static void* fluid_sndio_audio_run(void* d);
@@ -76,7 +76,7 @@ static void* fluid_sndio_audio_run2(void* d);
 void
 fluid_sndio_audio_driver_settings(fluid_settings_t* settings)
 {
-  fluid_settings_register_str(settings, "audio.sndio.device", "default", 0, NULL, NULL);
+  fluid_settings_register_str(settings, "audio.sndio.device", "default", 0);
 }
 
 /*
@@ -109,7 +109,7 @@ new_fluid_sndio_audio_driver(fluid_settings_t* settings, fluid_synth_t* synth)
   dev->data = NULL;
   dev->cont = 1;
 
-  if (!fluid_settings_getstr(settings, "audio.sndio.device", &devname)) {
+  if (!fluid_settings_dupstr(settings, "audio.sndio.device", &devname)) {
     devname = NULL;
   }
 
@@ -210,7 +210,7 @@ new_fluid_sndio_audio_driver2(fluid_settings_t* settings, fluid_audio_func_t fun
   dev->data = data;
   dev->cont = 1;
 
-  if (!fluid_settings_getstr(settings, "audio.sndio.device", &devname)) {
+  if (!fluid_settings_dupstr(settings, "audio.sndio.device", &devname)) {
     devname = NULL;
   }
 
@@ -286,19 +286,19 @@ error_recovery:
 /*
  * delete_fluid_sndio_audio_driver
  */
-int
+void
 delete_fluid_sndio_audio_driver(fluid_audio_driver_t* p)
 {
   fluid_sndio_audio_driver_t* dev = (fluid_sndio_audio_driver_t*) p;
 
   if (dev == NULL) {
-    return FLUID_OK;
+    return;
   }
   dev->cont = 0;
   if (dev->thread) {
     if (pthread_join(dev->thread, NULL)) {
       FLUID_LOG(FLUID_ERR, "Failed to join the audio thread");
-      return FLUID_FAILED;
+      return;
     }
   }
   if (dev->hdl) {
@@ -308,7 +308,7 @@ delete_fluid_sndio_audio_driver(fluid_audio_driver_t* p)
     FLUID_FREE(dev->buffer);
   }
   FLUID_FREE(dev);
-  return FLUID_OK;
+  return;
 }
 
 /*
@@ -372,17 +372,17 @@ fluid_sndio_audio_run2(void* d)
 
 void fluid_sndio_midi_driver_settings(fluid_settings_t* settings)
 {
-  fluid_settings_register_str(settings, "midi.sndio.device", "default", 0, NULL, NULL);
+  fluid_settings_register_str(settings, "midi.sndio.device", "default", 0);
 }
 
-int
+void
 delete_fluid_sndio_midi_driver(fluid_midi_driver_t *addr)
 {
   int err;
   fluid_sndio_midi_driver_t *dev = (fluid_sndio_midi_driver_t *)addr;
 
   if (dev == NULL) {
-    return FLUID_OK;
+    return;
   }
   dev->status = FLUID_MIDI_DONE;
 
@@ -391,11 +391,11 @@ delete_fluid_sndio_midi_driver(fluid_midi_driver_t *addr)
     err = pthread_cancel(dev->thread);
     if (err) {
       FLUID_LOG(FLUID_ERR, "Failed to cancel the midi thread");
-      return FLUID_FAILED;
+      return;
     }
     if (pthread_join(dev->thread, NULL)) {
       FLUID_LOG(FLUID_ERR, "Failed to join the midi thread");
-      return FLUID_FAILED;
+      return;
     }
   }
   if (dev->hdl != NULL) {
@@ -405,7 +405,7 @@ delete_fluid_sndio_midi_driver(fluid_midi_driver_t *addr)
     delete_fluid_midi_parser(dev->parser);
   }
   FLUID_FREE(dev);
-  return FLUID_OK;
+  return;
 }
 
 void *
@@ -493,7 +493,7 @@ new_fluid_sndio_midi_driver(fluid_settings_t *settings,
   }
 
   /* get the device name. if none is specified, use the default device. */
-  if (!fluid_settings_getstr(settings, "midi.sndio.device", &device)) {
+  if (!fluid_settings_dupstr(settings, "midi.sndio.device", &device)) {
 	device = NULL;
   }
 

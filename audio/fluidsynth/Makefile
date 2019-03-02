@@ -2,9 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	fluidsynth
-PORTVERSION=	1.1.11
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.3
 CATEGORIES=	audio
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	6ac6e5983f4169c7a418866319e5bde424d4434c.patch:-p1 \
+		a92ba4528f0a848e355556010dcc9456b54cd705.patch:-p1
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
@@ -12,19 +16,18 @@ COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cmake gnome pkgconfig
+USE_GITHUB=	yes
 GH_ACCOUNT=	FluidSynth
+USE_GNOME=	glib20
+USE_LDCONFIG=	yes
+
+CMAKE_OFF=	enable-midishare
+LDFLAGS+=	-lpthread
 
 OPTIONS_DEFINE=	JACK ALSA DBUS LADSPA LASH PORTAUDIO PULSEAUDIO READLINE \
 		SNDFILE SNDIO
 OPTIONS_DEFAULT=	JACK READLINE
-
-USES=		cmake pkgconfig tar:bzip2
-USE_GITHUB=	yes
-USE_GNOME=	glib20
-USE_LDCONFIG=	yes
-CMAKE_ARGS=	-Denable-ladcca:BOOL=FALSE \
-		-Denable-midishare:BOOL=FALSE
-LDFLAGS+=	-lpthread
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_BOOL=	enable-jack
@@ -59,13 +62,5 @@ SNDIO_CMAKE_BOOL=	enable-sndio
 
 post-patch:
 	${CP} ${FILESDIR}/fluid_sndio.c ${WRKSRC}/src/drivers/
-	@${REINPLACE_CMD} -e \
-		'/Linux/s|^|#| ; \
-		 /_init_lib_suffix/s|"64"|""| ; \
-		 /CMAKE_C_FLAGS_RELEASE/s|-O2|| ; \
-		 s|enable_midishare|enable-midishare| ; \
-		 s|$${LIB_INSTALL_DIR}$${LIB_SUFFIX}/pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e \
-		's|share/man|man|' ${WRKSRC}/cmake_admin/DefaultDirs.cmake
 
 .include <bsd.port.mk>
