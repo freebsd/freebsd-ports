@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.7.5
-PORTREVISION=	1
+PORTVERSION=	11.8.0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -18,11 +17,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # for the options
 MY_DEPENDS=	git>=2.16.2:devel/git \
 	gitlab-shell>=8.4.4:devel/gitlab-shell \
-	gitlab-workhorse>=8.0.2:www/gitlab-workhorse \
-	gitaly>=1.12.2:devel/gitaly \
-	gitlab-pages>=1.3.1:www/gitlab-pages \
+	gitlab-workhorse>=8.3.1:www/gitlab-workhorse \
+	gitaly>=1.20.0:devel/gitaly \
+	gitlab-pages>=1.5.0:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
-	npm>=4.3.0:www/npm \
 	yarn>=1.10.0:www/yarn \
 	rubygem-rails50>=5.0.7.1:www/rubygem-rails50 \
 	rubygem-rails-deprecated_sanitizer-rails50>=1.0.3:devel/rubygem-rails-deprecated_sanitizer-rails50 \
@@ -86,10 +84,9 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-unf>=0.1.4:textproc/rubygem-unf \
 	rubygem-seed-fu>=2.3.7:databases/rubygem-seed-fu \
 	rubygem-html-pipeline>=2.8:textproc/rubygem-html-pipeline \
-	rubygem-deckar01-task_list>=2.0.0:www/rubygem-deckar01-task_list \
+	rubygem-deckar01-task_list>=2.2.0:www/rubygem-deckar01-task_list \
 	rubygem-gitlab-markup>=1.6.5:textproc/rubygem-gitlab-markup \
 	rubygem-github-markup17>=1.7.0:textproc/rubygem-github-markup17 \
-	rubygem-redcarpet>=3.4:textproc/rubygem-redcarpet \
 	rubygem-commonmarker>=0.17:textproc/rubygem-commonmarker \
 	rubygem-redcloth>=4.3.2:www/rubygem-redcloth \
 	rubygem-rdoc>=6.0:devel/rubygem-rdoc \
@@ -99,9 +96,9 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-asciidoctor>=1.5.8:textproc/rubygem-asciidoctor \
 	rubygem-asciidoctor-plantuml>=0.0.8:textproc/rubygem-asciidoctor-plantuml \
 	rubygem-rouge>=3.1:textproc/rubygem-rouge \
-	rubygem-truncato>=0.7.9:textproc/rubygem-truncato \
+	rubygem-truncato>=0.7.11:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=2.7.0:devel/rubygem-bootstrap_form \
-	rubygem-nokogiri>=1.8.5:textproc/rubygem-nokogiri \
+	rubygem-nokogiri>=1.10.1:textproc/rubygem-nokogiri \
 	rubygem-escape_utils>=1.1:textproc/rubygem-escape_utils \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
 	rubygem-diffy31>=3.1.0:textproc/rubygem-diffy31 \
@@ -113,17 +110,17 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-state_machines-activerecord>=0.5.1:databases/rubygem-state_machines-activerecord \
 	rubygem-acts-as-taggable-on>=5.0:www/rubygem-acts-as-taggable-on \
 	rubygem-sidekiq>=5.2.1:devel/rubygem-sidekiq \
-	rubygem-sidekiq-cron0>=0.6.0:devel/rubygem-sidekiq-cron0 \
+	rubygem-sidekiq-cron>=1.0.0:devel/rubygem-sidekiq-cron \
 	rubygem-redis-namespace>=1.6.0:databases/rubygem-redis-namespace \
 	rubygem-gitlab-sidekiq-fetcher>=0.4.0:devel/rubygem-gitlab-sidekiq-fetcher \
-	rubygem-rufus-scheduler342>=3.4.0:devel/rubygem-rufus-scheduler342 \
+	rubygem-fugit>=1.1:devel/rubygem-fugit \
 	rubygem-httparty>=0.13.3:www/rubygem-httparty \
 	rubygem-rainbow>=3.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=0:devel/rubygem-ruby-progressbar \
 	rubygem-settingslogic>=2.0.9:devel/rubygem-settingslogic \
 	rubygem-re2>=1.1.1:devel/rubygem-re2 \
 	rubygem-version_sorter21>=2.1.0:textproc/rubygem-version_sorter21 \
-	rubygem-js_regex>=2.2.1:textproc/rubygem-js_regex \
+	rubygem-js_regex>=3.1.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
 	rubygem-redis-rails-rails50>=5.0.1:www/rubygem-redis-rails-rails50 \
 	rubygem-redis3>=3.2:databases/rubygem-redis3 \
@@ -136,7 +133,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-hangouts-chat>=0.0.5:net/rubygem-hangouts-chat \
 	rubygem-asana>=0.8.1:www/rubygem-asana \
 	rubygem-ruby-fogbugz021>=0.2.1:devel/rubygem-ruby-fogbugz021 \
-	rubygem-kubeclient>=4.0.0:www/rubygem-kubeclient \
+	rubygem-kubeclient>=4.2.2:www/rubygem-kubeclient \
 	rubygem-sanitize>=4.6:textproc/rubygem-sanitize \
 	rubygem-babosa>=1.0.2:textproc/rubygem-babosa \
 	rubygem-loofah>=2.2:textproc/rubygem-loofah \
@@ -175,6 +172,8 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-peek-rblineprof-rails50>=0.2.0:devel/rubygem-peek-rblineprof-rails50 \
 	rubygem-peek-redis-rails50>=1.2.0:devel/rubygem-peek-redis-rails50 \
 	rubygem-prometheus-client-mmap>=0.9.4:devel/rubygem-prometheus-client-mmap \
+	rubygem-opentracing04>=0.4.3:devel/rubygem-opentracing04 \
+	rubygem-jaeger-client>=0.10.0:devel/rubygem-jaeger-client \
 	rubygem-octokit>=4.9:net/rubygem-octokit \
 	rubygem-mail_room>=0.9.1:mail/rubygem-mail_room \
 	rubygem-email_reply_trimmer>=0.1:mail/rubygem-email_reply_trimmer \
@@ -189,7 +188,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-sshkey1>=1.9.0:security/rubygem-sshkey1 \
 	rubygem-ed25519>=1.2:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly-proto>=1.5.0:net/rubygem-gitaly-proto \
+	rubygem-gitaly-proto>=1.10.0:net/rubygem-gitaly-proto \
 	rubygem-grpc>=1.15.0:net/rubygem-grpc \
 	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
 	rubygem-google-protobuf>=3.6:devel/rubygem-google-protobuf \
@@ -211,7 +210,7 @@ OPTIONS_DEFAULT=	PGSQL
 PGSQL_DESC=	Default PostgreSQL support (preferred)
 MYSQL_DESC=	Optional MySQL support
 
-PGSQL_RUN_DEPENDS=	rubygem-pg018>=0.18.2:databases/rubygem-pg018 \
+PGSQL_RUN_DEPENDS=	rubygem-pg>=1.1.0:databases/rubygem-pg \
 	rubygem-peek-pg-rails50>=1.3.0:databases/rubygem-peek-pg-rails50
 MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0.4.5:databases/rubygem-mysql2 \
 	rubygem-peek-mysql2-rails50>=1.2.0:databases/rubygem-peek-mysql2-rails50
@@ -222,7 +221,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	c5b5b18b3f1c5b683ceb4471e667d675de9200eb
+GL_COMMIT=	ce13864265ed3b3f7be6437921bb9773a0cf2fa2
 
 USERS=	git
 GROUPS=	git
