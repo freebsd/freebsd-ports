@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kubeclient
-PORTVERSION=	4.0.0
+PORTVERSION=	4.2.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
