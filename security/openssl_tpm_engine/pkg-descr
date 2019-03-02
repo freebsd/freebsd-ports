@@ -1,3 +1,8 @@
-This package contains 2 sets of code, a command-line utility used to
-generate a TSS key blob and write it to disk and an OpenSSL engine
-which interfaces with the TSS API.
+This is a forked version of OpenSSL TPM engine from the original
+upstream, TrouSerS project.
+
+This package contains two sets of code, a command-line utility used to
+generate a TSS key blob and write it to disk and an OpenSSL engine which
+interfaces with the TSS API.
+
+WWW: https://github.com/mgerstner/openssl_tpm_engine
