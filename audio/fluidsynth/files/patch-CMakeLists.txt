@@ -1,22 +1,22 @@
---- CMakeLists.txt.orig	2018-05-06 07:05:11 UTC
+--- CMakeLists.txt.orig	2019-02-03 07:13:31 UTC
 +++ CMakeLists.txt
-@@ -68,6 +68,7 @@ option ( enable-midishare "compile MidiS
- option ( enable-oss "compile OSS support (if it is available)" on )
+@@ -71,6 +71,7 @@ option ( enable-dsound "compile DirectSound support (i
+ option ( enable-winmidi "compile Windows MIDI support (if it is available)" on )
  option ( enable-pkgconfig "use pkg-config to locate fluidsynth's (mostly optional) dependencies" on )
  option ( enable-pulseaudio "compile PulseAudio support (if it is available)" on )
 +option ( enable-sndio "compile Sndio support (if it is available)" on )
  option ( enable-readline "compile readline lib line editing (if it is available)" on )
+ option ( enable-threads "enable multi-threading support (such as parallel voice synthesis)" on )
  
- # Platform specific options
-@@ -358,6 +359,11 @@ else(NOT enable-pkgconfig)
+@@ -481,6 +482,11 @@ else(NOT enable-pkgconfig)
+     else ( enable-pulseaudio )
      unset_pkg_config ( PULSE )
      endif ( enable-pulseaudio )
- 
++
 +    unset ( SNDIO_SUPPORT CACHE )
 +    if ( enable-sndio )
 +      set ( SNDIO_SUPPORT 1 )
 +    endif ( enable-sndio )
-+
+ 
      unset ( ALSA_SUPPORT CACHE )
      if ( enable-alsa )
-     pkg_check_modules ( ALSA alsa>=0.9.1 )

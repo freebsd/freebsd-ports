@@ -3,11 +3,11 @@ include/fluidsynth.h
 include/fluidsynth/audio.h
 include/fluidsynth/event.h
 include/fluidsynth/gen.h
+include/fluidsynth/ladspa.h
 include/fluidsynth/log.h
 include/fluidsynth/midi.h
 include/fluidsynth/misc.h
 include/fluidsynth/mod.h
-include/fluidsynth/ramsfont.h
 include/fluidsynth/seq.h
 include/fluidsynth/seqbind.h
 include/fluidsynth/settings.h
@@ -18,7 +18,7 @@ include/fluidsynth/types.h
 include/fluidsynth/version.h
 include/fluidsynth/voice.h
 lib/libfluidsynth.so
-lib/libfluidsynth.so.1
-lib/libfluidsynth.so.1.7.2
+lib/libfluidsynth.so.2
+lib/libfluidsynth.so.2.1.0
 libdata/pkgconfig/fluidsynth.pc
 man/man1/fluidsynth.1.gz

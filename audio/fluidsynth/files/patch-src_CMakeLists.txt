@@ -1,7 +1,7 @@
---- src/CMakeLists.txt.orig	2012-08-16 04:01:13 UTC
+--- src/CMakeLists.txt.orig	2018-12-30 11:42:00 UTC
 +++ src/CMakeLists.txt
-@@ -47,6 +47,11 @@ if ( PULSE_SUPPORT )
-   include_directories ( ${PULSE_INCLUDEDIR} ${PULSE_INCLUDE_DIRS} )
+@@ -50,6 +50,11 @@ if ( PULSE_SUPPORT )
+   include_directories ( ${PULSE_INCLUDE_DIRS} )
  endif ( PULSE_SUPPORT )
  
 +if ( SNDIO_SUPPORT )
@@ -11,16 +11,16 @@
 +
  if ( ALSA_SUPPORT )
    set ( fluid_alsa_SOURCES drivers/fluid_alsa.c )
-   include_directories ( ${ALSA_INCLUDEDIR} ${ALSA_INCLUDE_DIRS} )
-@@ -244,6 +249,7 @@ add_library ( libfluidsynth
+   include_directories ( ${ALSA_INCLUDE_DIRS} )
+@@ -247,6 +252,7 @@ add_library ( libfluidsynth-OBJ OBJECT
      ${fluid_oss_SOURCES}
      ${fluid_portaudio_SOURCES}
      ${fluid_pulse_SOURCES}
 +    ${fluid_sndio_SOURCES}
-     ${fluid_windows_SOURCES}
+     ${fluid_dsound_SOURCES}
+     ${fluid_winmidi_SOURCES}
      ${libfluidsynth_SOURCES}
-     ${public_HEADERS}
-@@ -286,6 +292,7 @@ target_link_libraries ( libfluidsynth
+@@ -314,6 +320,7 @@ target_link_libraries ( libfluidsynth
      ${JACK_LIBRARIES}
      ${ALSA_LIBRARIES}
      ${PULSE_LIBRARIES}
