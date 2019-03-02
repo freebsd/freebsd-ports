@@ -2,8 +2,7 @@
 
 PORTNAME=	spotifyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.4
-PORTREVISION=	2
+DISTVERSION=	0.2.5
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -19,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Spotifyd
 GH_TUPLE=	plietar:rust-alsa:8c63543fa0ccd971cf15f5675293d19febd6f79e:alsa \
 		plietar:dns-parser:1d3e5a5591bc72eb061c23bd426c4a25f2f73791:dnsparser \
-		librespot-org:librespot:d2cadec4190a44572b1d5d5daed4f0eda1c2b921:librespot \
+		librespot-org:librespot:daeeeaa122fc2d71edf11e562e23038db4210b39:librespot \
 		plietar:rust-mdns:66a74033da6c9f1a06e7b0a29f4544fd189d6479:mdns \
 		awmath:rust-crypto:394c247254dbe2ac5d44483232cf335d10cf0260:rustcrypto \
 		plietar:rust-tremor:5958cc302e78f535dad90e9665da981ddff4000a:tremor
