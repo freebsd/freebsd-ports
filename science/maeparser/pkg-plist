@@ -1,8 +1,11 @@
 include/maeparser/Buffer.hpp
 include/maeparser/MaeBlock.hpp
+include/maeparser/MaeConstants.hpp
 include/maeparser/MaeParser.hpp
 include/maeparser/MaeParserConfig.hpp
 include/maeparser/Reader.hpp
 lib/cmake/maeparser-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/maeparser-config.cmake
 lib/libmaeparser.so
+lib/libmaeparser.so.1
+lib/libmaeparser.so.1.1
