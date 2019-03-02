@@ -1,5 +1,7 @@
+%%PFD%%bin/pfd
 bin/yad
 %%ICONBROWSER%%bin/yad-icon-browser
+%%PFD%%man/man1/pfd.1.gz
 man/man1/yad.1.gz
 share/aclocal/yad.m4
 %%ICONBROWSER%%share/applications/yad-icon-browser.desktop
@@ -10,6 +12,7 @@ share/icons/hicolor/32x32/apps/yad.png
 share/icons/hicolor/48x48/apps/yad.png
 share/icons/hicolor/96x96/apps/yad.png
 %%NLS%%share/locale/de/LC_MESSAGES/yad.mo
+%%NLS%%share/locale/es/LC_MESSAGES/yad.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/yad.mo
 %%NLS%%share/locale/it/LC_MESSAGES/yad.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/yad.mo
