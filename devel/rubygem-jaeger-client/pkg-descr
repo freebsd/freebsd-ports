@@ -1,0 +1,3 @@
+OpenTracing Tracer implementation for Jaeger in Ruby.
+
+WWW: https://github.com/salemove/jaeger-client-ruby
