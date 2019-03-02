@@ -20,5 +20,5 @@ include/coordgen/sketcherMinimizerRing.h
 include/coordgen/sketcherMinimizerStretchInteraction.h
 lib/libcoordgen.so
 lib/libcoordgen.so.1
-lib/libcoordgen.so.1.2
+lib/libcoordgen.so.1.2.1
 share/coordgen/templates.mae
