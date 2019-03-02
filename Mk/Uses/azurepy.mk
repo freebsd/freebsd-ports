@@ -10,7 +10,7 @@ _INCLUDE_USES_AZUREPY_MK=	yes
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}azure-cli-base>=0:sysutils/py-azure-cli-base@${PY_FLAVOR}
 
-POST_PLIST=	trim-backports-namespace
+POST_PLIST=	trim-azure-namespace
 
 _USES_install+=	701:remove-common-files
 remove-common-files:
@@ -25,7 +25,7 @@ remove-common-files:
 		${STAGEDIR}${PYTHON_SITELIBDIR}/azure/mgmt/__pycache__ \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/azure/mgmt/datalake/__pycache__
 
-trim-backports-namespace:
+trim-azure-namespace:
 	@${REINPLACE_CMD} -e '/azure\/__init__.py*/d' \
 		-e '/azure\/cli\/__init__.py*/d' \
 		-e '/azure\/cli\/command_modules\/__init__.py*/d' \
