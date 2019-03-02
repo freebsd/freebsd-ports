@@ -1,0 +1,7 @@
+This is pen, a load balancer for UDP and TCP based protocols such as
+DNS, HTTP or SMTP. It allows several servers to appear as one to the
+outside and automatically detects servers that are down and distributes
+clients among the available servers. This gives high availability and
+scalable performance.
+
+WWW: http://siag.nu/pen/
