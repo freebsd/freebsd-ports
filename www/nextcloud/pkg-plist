@@ -1,7 +1,8 @@
 @(,%%NEXTCLOUD_GROUPNAME%%,644) %%WWWDIR%%/.htaccess
 @(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,664) %%WWWDIR%%/.user.ini
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/.user.ini
 %%WWWDIR%%/3rdparty/.drone.yml
-%%WWWDIR%%/3rdparty/.gitignore
 %%WWWDIR%%/3rdparty/LICENSE INFO
 %%WWWDIR%%/3rdparty/README.md
 %%WWWDIR%%/3rdparty/autoload.php
@@ -860,7 +861,6 @@
 %%WWWDIR%%/3rdparty/aws/aws-sdk-php/src/data/xray/2016-04-12/api-2.json.php
 %%WWWDIR%%/3rdparty/aws/aws-sdk-php/src/data/xray/2016-04-12/paginators-1.json.php
 %%WWWDIR%%/3rdparty/aws/aws-sdk-php/src/functions.php
-%%WWWDIR%%/3rdparty/bantu/ini-get-wrapper/.gitignore
 %%WWWDIR%%/3rdparty/bantu/ini-get-wrapper/.scrutinizer.yml
 %%WWWDIR%%/3rdparty/bantu/ini-get-wrapper/LICENSE
 %%WWWDIR%%/3rdparty/bantu/ini-get-wrapper/README.md
@@ -910,7 +910,6 @@
 %%WWWDIR%%/3rdparty/doctrine/annotations/lib/Doctrine/Common/Annotations/SimpleAnnotationReader.php
 %%WWWDIR%%/3rdparty/doctrine/annotations/lib/Doctrine/Common/Annotations/TokenParser.php
 %%WWWDIR%%/3rdparty/doctrine/cache/.coveralls.yml
-%%WWWDIR%%/3rdparty/doctrine/cache/.gitignore
 %%WWWDIR%%/3rdparty/doctrine/cache/LICENSE
 %%WWWDIR%%/3rdparty/doctrine/cache/README.md
 %%WWWDIR%%/3rdparty/doctrine/cache/UPGRADE.md
@@ -938,7 +937,6 @@
 %%WWWDIR%%/3rdparty/doctrine/cache/lib/Doctrine/Common/Cache/WinCacheCache.php
 %%WWWDIR%%/3rdparty/doctrine/cache/lib/Doctrine/Common/Cache/XcacheCache.php
 %%WWWDIR%%/3rdparty/doctrine/cache/lib/Doctrine/Common/Cache/ZendDataCache.php
-%%WWWDIR%%/3rdparty/doctrine/collections/.gitignore
 %%WWWDIR%%/3rdparty/doctrine/collections/LICENSE
 %%WWWDIR%%/3rdparty/doctrine/collections/lib/Doctrine/Common/Collections/AbstractLazyCollection.php
 %%WWWDIR%%/3rdparty/doctrine/collections/lib/Doctrine/Common/Collections/ArrayCollection.php
@@ -1246,7 +1244,6 @@
 %%WWWDIR%%/3rdparty/doctrine/dbal/lib/Doctrine/DBAL/Types/VarDateTimeType.php
 %%WWWDIR%%/3rdparty/doctrine/dbal/lib/Doctrine/DBAL/Version.php
 %%WWWDIR%%/3rdparty/doctrine/dbal/lib/Doctrine/DBAL/VersionAwarePlatformDriver.php
-%%WWWDIR%%/3rdparty/doctrine/inflector/.gitignore
 %%WWWDIR%%/3rdparty/doctrine/inflector/LICENSE
 %%WWWDIR%%/3rdparty/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php
 %%WWWDIR%%/3rdparty/doctrine/lexer/README.md
@@ -1444,7 +1441,6 @@
 %%WWWDIR%%/3rdparty/guzzlehttp/streams/src/StreamDecoratorTrait.php
 %%WWWDIR%%/3rdparty/guzzlehttp/streams/src/StreamInterface.php
 %%WWWDIR%%/3rdparty/guzzlehttp/streams/src/Utils.php
-%%WWWDIR%%/3rdparty/icewind/searchdav/.gitignore
 %%WWWDIR%%/3rdparty/icewind/searchdav/LICENSE
 %%WWWDIR%%/3rdparty/icewind/searchdav/src/Backend/ISearchBackend.php
 %%WWWDIR%%/3rdparty/icewind/searchdav/src/Backend/SearchPropertyDefinition.php
@@ -1470,7 +1466,6 @@
 %%WWWDIR%%/3rdparty/icewind/searchdav/src/XML/QueryDiscoverResponse.php
 %%WWWDIR%%/3rdparty/icewind/searchdav/src/XML/Scope.php
 %%WWWDIR%%/3rdparty/icewind/searchdav/src/XML/SupportedQueryGrammar.php
-%%WWWDIR%%/3rdparty/icewind/streams/.gitignore
 %%WWWDIR%%/3rdparty/icewind/streams/src/CallbackWrapper.php
 %%WWWDIR%%/3rdparty/icewind/streams/src/CountWrapper.php
 %%WWWDIR%%/3rdparty/icewind/streams/src/Directory.php
@@ -1631,7 +1626,6 @@
 %%WWWDIR%%/3rdparty/league/flysystem/src/Util/ContentListingFormatter.php
 %%WWWDIR%%/3rdparty/league/flysystem/src/Util/MimeType.php
 %%WWWDIR%%/3rdparty/league/flysystem/src/Util/StreamHasher.php
-%%WWWDIR%%/3rdparty/lukasreschke/id3parser/.gitignore
 %%WWWDIR%%/3rdparty/lukasreschke/id3parser/README.md
 %%WWWDIR%%/3rdparty/lukasreschke/id3parser/composer.json
 %%WWWDIR%%/3rdparty/lukasreschke/id3parser/src/ID3Parser.php
@@ -1768,7 +1762,6 @@
 %%WWWDIR%%/3rdparty/microsoft/azure-storage-common/src/Common/Models/SignedIdentifier.php
 %%WWWDIR%%/3rdparty/microsoft/azure-storage-common/src/Common/Models/TransactionalMD5Trait.php
 %%WWWDIR%%/3rdparty/microsoft/azure-storage-common/src/Common/SharedAccessSignatureHelper.php
-%%WWWDIR%%/3rdparty/mtdowling/jmespath.php/.gitignore
 %%WWWDIR%%/3rdparty/mtdowling/jmespath.php/CHANGELOG.md
 %%WWWDIR%%/3rdparty/mtdowling/jmespath.php/LICENSE
 %%WWWDIR%%/3rdparty/mtdowling/jmespath.php/Makefile
@@ -2104,12 +2097,10 @@
 %%WWWDIR%%/3rdparty/patchwork/utf8/src/Patchwork/Utf8/data/to.bestfit949.ser
 %%WWWDIR%%/3rdparty/patchwork/utf8/src/Patchwork/Utf8/data/to.bestfit950.ser
 %%WWWDIR%%/3rdparty/patchwork/utf8/src/Patchwork/Utf8/data/translit_extra.ser
-%%WWWDIR%%/3rdparty/pear/archive_tar/.gitignore
 %%WWWDIR%%/3rdparty/pear/archive_tar/Archive/Tar.php
 %%WWWDIR%%/3rdparty/pear/archive_tar/README.md
 %%WWWDIR%%/3rdparty/pear/archive_tar/composer.json
 %%WWWDIR%%/3rdparty/pear/archive_tar/package.xml
-%%WWWDIR%%/3rdparty/pear/console_getopt/.gitignore
 %%WWWDIR%%/3rdparty/pear/console_getopt/Console/Getopt.php
 %%WWWDIR%%/3rdparty/pear/console_getopt/LICENSE
 %%WWWDIR%%/3rdparty/pear/console_getopt/README.rst
@@ -2122,12 +2113,10 @@
 %%WWWDIR%%/3rdparty/pear/pear-core-minimal/src/PEAR/Error.php
 %%WWWDIR%%/3rdparty/pear/pear-core-minimal/src/PEAR/ErrorStack.php
 %%WWWDIR%%/3rdparty/pear/pear-core-minimal/src/System.php
-%%WWWDIR%%/3rdparty/pear/pear_exception/.gitignore
 %%WWWDIR%%/3rdparty/pear/pear_exception/LICENSE
 %%WWWDIR%%/3rdparty/pear/pear_exception/PEAR/Exception.php
 %%WWWDIR%%/3rdparty/pear/pear_exception/composer.json
 %%WWWDIR%%/3rdparty/pear/pear_exception/package.xml
-%%WWWDIR%%/3rdparty/php-opencloud/openstack/.gitignore
 %%WWWDIR%%/3rdparty/php-opencloud/openstack/.php_cs.dist
 %%WWWDIR%%/3rdparty/php-opencloud/openstack/.scrutinizer.yml
 %%WWWDIR%%/3rdparty/php-opencloud/openstack/CODE_OF_CONDUCT.md
@@ -2311,7 +2300,6 @@
 %%WWWDIR%%/3rdparty/pimple/pimple/src/Pimple/Psr11/ServiceLocator.php
 %%WWWDIR%%/3rdparty/pimple/pimple/src/Pimple/ServiceIterator.php
 %%WWWDIR%%/3rdparty/pimple/pimple/src/Pimple/ServiceProviderInterface.php
-%%WWWDIR%%/3rdparty/psr/container/.gitignore
 %%WWWDIR%%/3rdparty/psr/container/LICENSE
 %%WWWDIR%%/3rdparty/psr/container/README.md
 %%WWWDIR%%/3rdparty/psr/container/composer.json
@@ -2868,7 +2856,6 @@
 %%WWWDIR%%/3rdparty/punic/punic/code/data/zh/units.json
 %%WWWDIR%%/3rdparty/punic/punic/composer.json
 %%WWWDIR%%/3rdparty/punic/punic/punic.php
-%%WWWDIR%%/3rdparty/react/promise/.gitignore
 %%WWWDIR%%/3rdparty/react/promise/LICENSE
 %%WWWDIR%%/3rdparty/react/promise/src/CancellablePromiseInterface.php
 %%WWWDIR%%/3rdparty/react/promise/src/Deferred.php
@@ -2882,7 +2869,6 @@
 %%WWWDIR%%/3rdparty/react/promise/src/UnhandledRejectionException.php
 %%WWWDIR%%/3rdparty/react/promise/src/functions.php
 %%WWWDIR%%/3rdparty/react/promise/src/functions_include.php
-%%WWWDIR%%/3rdparty/sabre/dav/.gitignore
 %%WWWDIR%%/3rdparty/sabre/dav/CHANGELOG.md
 %%WWWDIR%%/3rdparty/sabre/dav/CONTRIBUTING.md
 %%WWWDIR%%/3rdparty/sabre/dav/LICENSE
@@ -3119,7 +3105,6 @@
 %%WWWDIR%%/3rdparty/sabre/dav/lib/DAVACL/Xml/Request/PrincipalMatchReport.php
 %%WWWDIR%%/3rdparty/sabre/dav/lib/DAVACL/Xml/Request/PrincipalPropertySearchReport.php
 %%WWWDIR%%/3rdparty/sabre/dav/lib/DAVACL/Xml/Request/PrincipalSearchPropertySetReport.php
-%%WWWDIR%%/3rdparty/sabre/event/.gitignore
 %%WWWDIR%%/3rdparty/sabre/event/CHANGELOG.md
 %%WWWDIR%%/3rdparty/sabre/event/LICENSE
 %%WWWDIR%%/3rdparty/sabre/event/README.md
@@ -3135,7 +3120,6 @@
 %%WWWDIR%%/3rdparty/sabre/event/lib/Version.php
 %%WWWDIR%%/3rdparty/sabre/event/lib/coroutine.php
 %%WWWDIR%%/3rdparty/sabre/event/phpunit.xml.dist
-%%WWWDIR%%/3rdparty/sabre/http/.gitignore
 %%WWWDIR%%/3rdparty/sabre/http/CHANGELOG.md
 %%WWWDIR%%/3rdparty/sabre/http/LICENSE
 %%WWWDIR%%/3rdparty/sabre/http/README.md
@@ -3163,7 +3147,6 @@
 %%WWWDIR%%/3rdparty/sabre/http/lib/Util.php
 %%WWWDIR%%/3rdparty/sabre/http/lib/Version.php
 %%WWWDIR%%/3rdparty/sabre/http/lib/functions.php
-%%WWWDIR%%/3rdparty/sabre/uri/.gitignore
 %%WWWDIR%%/3rdparty/sabre/uri/CHANGELOG.md
 %%WWWDIR%%/3rdparty/sabre/uri/LICENSE
 %%WWWDIR%%/3rdparty/sabre/uri/README.md
@@ -3171,7 +3154,6 @@
 %%WWWDIR%%/3rdparty/sabre/uri/lib/InvalidUriException.php
 %%WWWDIR%%/3rdparty/sabre/uri/lib/Version.php
 %%WWWDIR%%/3rdparty/sabre/uri/lib/functions.php
-%%WWWDIR%%/3rdparty/sabre/vobject/.gitignore
 %%WWWDIR%%/3rdparty/sabre/vobject/LICENSE
 %%WWWDIR%%/3rdparty/sabre/vobject/README.md
 %%WWWDIR%%/3rdparty/sabre/vobject/composer.json
@@ -3253,7 +3235,6 @@
 %%WWWDIR%%/3rdparty/sabre/vobject/lib/timezonedata/windowszones.php
 %%WWWDIR%%/3rdparty/sabre/vobject/resources/schema/xcal.rng
 %%WWWDIR%%/3rdparty/sabre/vobject/resources/schema/xcard.rng
-%%WWWDIR%%/3rdparty/sabre/xml/.gitignore
 %%WWWDIR%%/3rdparty/sabre/xml/CHANGELOG.md
 %%WWWDIR%%/3rdparty/sabre/xml/LICENSE
 %%WWWDIR%%/3rdparty/sabre/xml/README.md
@@ -3454,7 +3435,6 @@
 %%WWWDIR%%/3rdparty/swiftmailer/swiftmailer/lib/preferences.php
 %%WWWDIR%%/3rdparty/swiftmailer/swiftmailer/lib/swift_required.php
 %%WWWDIR%%/3rdparty/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php
-%%WWWDIR%%/3rdparty/symfony/console/.gitignore
 %%WWWDIR%%/3rdparty/symfony/console/Application.php
 %%WWWDIR%%/3rdparty/symfony/console/CHANGELOG.md
 %%WWWDIR%%/3rdparty/symfony/console/Command/Command.php
@@ -3537,7 +3517,6 @@
 %%WWWDIR%%/3rdparty/symfony/console/Tester/CommandTester.php
 %%WWWDIR%%/3rdparty/symfony/console/composer.json
 %%WWWDIR%%/3rdparty/symfony/console/phpunit.xml.dist
-%%WWWDIR%%/3rdparty/symfony/debug/.gitignore
 %%WWWDIR%%/3rdparty/symfony/debug/BufferingLogger.php
 %%WWWDIR%%/3rdparty/symfony/debug/CHANGELOG.md
 %%WWWDIR%%/3rdparty/symfony/debug/Debug.php
@@ -3570,7 +3549,6 @@
 %%WWWDIR%%/3rdparty/symfony/debug/Resources/ext/tests/003.phpt
 %%WWWDIR%%/3rdparty/symfony/debug/composer.json
 %%WWWDIR%%/3rdparty/symfony/debug/phpunit.xml.dist
-%%WWWDIR%%/3rdparty/symfony/event-dispatcher/.gitignore
 %%WWWDIR%%/3rdparty/symfony/event-dispatcher/CHANGELOG.md
 %%WWWDIR%%/3rdparty/symfony/event-dispatcher/ContainerAwareEventDispatcher.php
 %%WWWDIR%%/3rdparty/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php
@@ -3593,7 +3571,6 @@
 %%WWWDIR%%/3rdparty/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
 %%WWWDIR%%/3rdparty/symfony/polyfill-mbstring/bootstrap.php
 %%WWWDIR%%/3rdparty/symfony/polyfill-mbstring/composer.json
-%%WWWDIR%%/3rdparty/symfony/process/.gitignore
 %%WWWDIR%%/3rdparty/symfony/process/CHANGELOG.md
 %%WWWDIR%%/3rdparty/symfony/process/Exception/ExceptionInterface.php
 %%WWWDIR%%/3rdparty/symfony/process/Exception/InvalidArgumentException.php
@@ -3675,7 +3652,6 @@
 %%WWWDIR%%/3rdparty/symfony/routing/Router.php
 %%WWWDIR%%/3rdparty/symfony/routing/RouterInterface.php
 %%WWWDIR%%/3rdparty/symfony/routing/composer.json
-%%WWWDIR%%/3rdparty/symfony/translation/.gitignore
 %%WWWDIR%%/3rdparty/symfony/translation/CHANGELOG.md
 %%WWWDIR%%/3rdparty/symfony/translation/Catalogue/AbstractOperation.php
 %%WWWDIR%%/3rdparty/symfony/translation/Catalogue/MergeOperation.php
@@ -3822,7 +3798,6 @@
 %%WWWDIR%%/apps-pkg/activity/js/templates/unkownLink.handlebars
 %%WWWDIR%%/apps-pkg/activity/js/templates/userLocal.handlebars
 %%WWWDIR%%/apps-pkg/activity/js/templates/userRemote.handlebars
-%%WWWDIR%%/apps-pkg/activity/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/activity/l10n/af.js
 %%WWWDIR%%/apps-pkg/activity/l10n/af.json
 %%WWWDIR%%/apps-pkg/activity/l10n/ar.js
@@ -3950,6 +3925,8 @@
 %%WWWDIR%%/apps-pkg/activity/l10n/no-php
 %%WWWDIR%%/apps-pkg/activity/l10n/pl.js
 %%WWWDIR%%/apps-pkg/activity/l10n/pl.json
+%%WWWDIR%%/apps-pkg/activity/l10n/ps.js
+%%WWWDIR%%/apps-pkg/activity/l10n/ps.json
 %%WWWDIR%%/apps-pkg/activity/l10n/pt_BR.js
 %%WWWDIR%%/apps-pkg/activity/l10n/pt_BR.json
 %%WWWDIR%%/apps-pkg/activity/l10n/pt_PT.js
@@ -4110,7 +4087,6 @@
 %%WWWDIR%%/apps-pkg/comments/js/templates/view.handlebars
 %%WWWDIR%%/apps-pkg/comments/js/vendor/At.js/dist/js/jquery.atwho.min.js
 %%WWWDIR%%/apps-pkg/comments/js/vendor/Caret.js/dist/jquery.caret.min.js
-%%WWWDIR%%/apps-pkg/comments/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/comments/l10n/af.js
 %%WWWDIR%%/apps-pkg/comments/l10n/af.json
 %%WWWDIR%%/apps-pkg/comments/l10n/af_ZA.js
@@ -4267,6 +4243,8 @@
 %%WWWDIR%%/apps-pkg/comments/l10n/pa.json
 %%WWWDIR%%/apps-pkg/comments/l10n/pl.js
 %%WWWDIR%%/apps-pkg/comments/l10n/pl.json
+%%WWWDIR%%/apps-pkg/comments/l10n/ps.js
+%%WWWDIR%%/apps-pkg/comments/l10n/ps.json
 %%WWWDIR%%/apps-pkg/comments/l10n/pt_BR.js
 %%WWWDIR%%/apps-pkg/comments/l10n/pt_BR.json
 %%WWWDIR%%/apps-pkg/comments/l10n/pt_PT.js
@@ -4351,7 +4329,6 @@
 %%WWWDIR%%/apps-pkg/dav/css/schedule-response.css
 %%WWWDIR%%/apps-pkg/dav/js/schedule-response.js
 %%WWWDIR%%/apps-pkg/dav/js/settings-admin-caldav.js
-%%WWWDIR%%/apps-pkg/dav/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/dav/l10n/bg.js
 %%WWWDIR%%/apps-pkg/dav/l10n/bg.json
 %%WWWDIR%%/apps-pkg/dav/l10n/bg_BG.js
@@ -4680,7 +4657,6 @@
 %%WWWDIR%%/apps-pkg/encryption/js/encryption.js
 %%WWWDIR%%/apps-pkg/encryption/js/settings-admin.js
 %%WWWDIR%%/apps-pkg/encryption/js/settings-personal.js
-%%WWWDIR%%/apps-pkg/encryption/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/encryption/l10n/ar.js
 %%WWWDIR%%/apps-pkg/encryption/l10n/ar.json
 %%WWWDIR%%/apps-pkg/encryption/l10n/ast.js
@@ -4902,7 +4878,6 @@
 %%WWWDIR%%/apps-pkg/federatedfilesharing/js/external.js
 %%WWWDIR%%/apps-pkg/federatedfilesharing/js/settings-admin.js
 %%WWWDIR%%/apps-pkg/federatedfilesharing/js/settings-personal.js
-%%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/ar.js
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/ar.json
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/ast.js
@@ -5085,7 +5060,6 @@
 %%WWWDIR%%/apps-pkg/federation/css/settings-admin.css
 %%WWWDIR%%/apps-pkg/federation/img/app.svg
 %%WWWDIR%%/apps-pkg/federation/js/settings-admin.js
-%%WWWDIR%%/apps-pkg/federation/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/federation/l10n/ar.js
 %%WWWDIR%%/apps-pkg/federation/l10n/ar.json
 %%WWWDIR%%/apps-pkg/federation/l10n/ast.js
@@ -5508,6 +5482,8 @@
 %%WWWDIR%%/apps-pkg/files/l10n/pa.json
 %%WWWDIR%%/apps-pkg/files/l10n/pl.js
 %%WWWDIR%%/apps-pkg/files/l10n/pl.json
+%%WWWDIR%%/apps-pkg/files/l10n/ps.js
+%%WWWDIR%%/apps-pkg/files/l10n/ps.json
 %%WWWDIR%%/apps-pkg/files/l10n/pt_BR.js
 %%WWWDIR%%/apps-pkg/files/l10n/pt_BR.json
 %%WWWDIR%%/apps-pkg/files/l10n/pt_PT.js
@@ -5607,7 +5583,6 @@
 %%WWWDIR%%/apps-pkg/files/templates/list.php
 %%WWWDIR%%/apps-pkg/files/templates/recentlist.php
 %%WWWDIR%%/apps-pkg/files/templates/simplelist.php
-%%WWWDIR%%/apps-pkg/files_external/3rdparty/.gitignore
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/autoload.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/composer.json
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/composer.lock
@@ -5619,7 +5594,6 @@
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/composer/autoload_real.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/composer/autoload_static.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/composer/installed.json
-%%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/.gitignore
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/LICENSE.txt
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/README.md
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/composer.json
@@ -5678,7 +5652,6 @@
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Wrapped/Server.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/smb/src/Wrapped/Share.php
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/streams-dummy/composer.json
-%%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/streams/.gitignore
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/streams/.travis.yml
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/streams/LICENCE
 %%WWWDIR%%/apps-pkg/files_external/3rdparty/icewind/streams/README.md
@@ -5720,7 +5693,6 @@
 %%WWWDIR%%/apps-pkg/files_external/js/templates.js
 %%WWWDIR%%/apps-pkg/files_external/js/templates/credentialsDialog.handlebars
 %%WWWDIR%%/apps-pkg/files_external/js/templates/mountOptionsDropDown.handlebars
-%%WWWDIR%%/apps-pkg/files_external/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/files_external/l10n/af_ZA.js
 %%WWWDIR%%/apps-pkg/files_external/l10n/af_ZA.json
 %%WWWDIR%%/apps-pkg/files_external/l10n/ar.js
@@ -6438,7 +6410,6 @@
 %%WWWDIR%%/apps-pkg/files_sharing/js/sharetabview.js
 %%WWWDIR%%/apps-pkg/files_sharing/js/templates.js
 %%WWWDIR%%/apps-pkg/files_sharing/js/templates/files_drop.handlebars
-%%WWWDIR%%/apps-pkg/files_sharing/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/files_sharing/l10n/af_ZA.js
 %%WWWDIR%%/apps-pkg/files_sharing/l10n/af_ZA.json
 %%WWWDIR%%/apps-pkg/files_sharing/l10n/ar.js
@@ -7036,7 +7007,6 @@
 %%WWWDIR%%/apps-pkg/files_texteditor/js/merged.json
 %%WWWDIR%%/apps-pkg/files_texteditor/js/public-share.js
 %%WWWDIR%%/apps-pkg/files_texteditor/js/sidebarpreview.js
-%%WWWDIR%%/apps-pkg/files_texteditor/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/ast.js
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/ast.json
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/az.js
@@ -7183,7 +7153,6 @@
 %%WWWDIR%%/apps-pkg/files_trashbin/img/app.svg
 %%WWWDIR%%/apps-pkg/files_trashbin/js/app.js
 %%WWWDIR%%/apps-pkg/files_trashbin/js/filelist.js
-%%WWWDIR%%/apps-pkg/files_trashbin/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/files_trashbin/l10n/af.js
 %%WWWDIR%%/apps-pkg/files_trashbin/l10n/af.json
 %%WWWDIR%%/apps-pkg/files_trashbin/l10n/af_ZA.js
@@ -7447,7 +7416,6 @@
 %%WWWDIR%%/apps-pkg/files_versions/js/versioncollection.js
 %%WWWDIR%%/apps-pkg/files_versions/js/versionmodel.js
 %%WWWDIR%%/apps-pkg/files_versions/js/versionstabview.js
-%%WWWDIR%%/apps-pkg/files_versions/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/files_versions/l10n/af.js
 %%WWWDIR%%/apps-pkg/files_versions/l10n/af.json
 %%WWWDIR%%/apps-pkg/files_versions/l10n/ar.js
@@ -7707,8 +7675,6 @@
 %%WWWDIR%%/apps-pkg/firstrunwizard/js/activate.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/js/firstrunwizard.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/js/jquery.colorbox.js
-%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/.gitignore
-%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ast.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ast.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/bg.js
@@ -7728,6 +7694,8 @@
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/el.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/en_GB.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/en_GB.json
+%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/eo.js
+%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/eo.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/es.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/es.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/es_419.js
@@ -7920,7 +7888,6 @@
 %%WWWDIR%%/apps-pkg/gallery/js/vendor/modified-eventsource-polyfill/eventsource-polyfill.js
 %%WWWDIR%%/apps-pkg/gallery/js/vendor/nextcloud/newfilemenu.js
 %%WWWDIR%%/apps-pkg/gallery/js/vendor/nextcloud/share.js
-%%WWWDIR%%/apps-pkg/gallery/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/gallery/l10n/ar.js
 %%WWWDIR%%/apps-pkg/gallery/l10n/ar.json
 %%WWWDIR%%/apps-pkg/gallery/l10n/ast.js
@@ -8139,7 +8106,6 @@
 %%WWWDIR%%/apps-pkg/gallery/vendor/composer/autoload_real.php
 %%WWWDIR%%/apps-pkg/gallery/vendor/composer/autoload_static.php
 %%WWWDIR%%/apps-pkg/gallery/vendor/composer/installed.json
-%%WWWDIR%%/apps-pkg/gallery/vendor/symfony/yaml/.gitignore
 %%WWWDIR%%/apps-pkg/gallery/vendor/symfony/yaml/CHANGELOG.md
 %%WWWDIR%%/apps-pkg/gallery/vendor/symfony/yaml/Dumper.php
 %%WWWDIR%%/apps-pkg/gallery/vendor/symfony/yaml/Escaper.php
@@ -8215,7 +8181,6 @@
 %%WWWDIR%%/apps-pkg/logreader/js/Search.js
 %%WWWDIR%%/apps-pkg/logreader/js/index.js
 %%WWWDIR%%/apps-pkg/logreader/js/unserialize.js
-%%WWWDIR%%/apps-pkg/logreader/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/logreader/l10n/ast.js
 %%WWWDIR%%/apps-pkg/logreader/l10n/ast.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/ca.js
@@ -8232,6 +8197,8 @@
 %%WWWDIR%%/apps-pkg/logreader/l10n/el.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/en_GB.js
 %%WWWDIR%%/apps-pkg/logreader/l10n/en_GB.json
+%%WWWDIR%%/apps-pkg/logreader/l10n/eo.js
+%%WWWDIR%%/apps-pkg/logreader/l10n/eo.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/es.js
 %%WWWDIR%%/apps-pkg/logreader/l10n/es.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/es_419.js
@@ -8349,7 +8316,6 @@
 %%WWWDIR%%/apps-pkg/lookup_server_connector/composer/composer/autoload_static.php
 %%WWWDIR%%/apps-pkg/lookup_server_connector/lib/BackgroundJobs/RetryJob.php
 %%WWWDIR%%/apps-pkg/lookup_server_connector/lib/UpdateLookupServer.php
-%%WWWDIR%%/apps-pkg/nextcloud_announcements/.gitattributes
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/COPYING
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/appinfo/app.php
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/appinfo/certificate.crt
@@ -8358,7 +8324,6 @@
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/img/app-dark.svg
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/img/app.svg
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/js/admin.js
-%%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/af.js
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/af.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/ar.js
@@ -8509,7 +8474,6 @@
 %%WWWDIR%%/apps-pkg/notifications/img/notifications.svg
 %%WWWDIR%%/apps-pkg/notifications/js/notifications.js
 %%WWWDIR%%/apps-pkg/notifications/js/notifications.js.map
-%%WWWDIR%%/apps-pkg/notifications/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/notifications/l10n/af.js
 %%WWWDIR%%/apps-pkg/notifications/l10n/af.json
 %%WWWDIR%%/apps-pkg/notifications/l10n/ar.js
@@ -8665,7 +8629,6 @@
 %%WWWDIR%%/apps-pkg/oauth2/css/setting-admin.css
 %%WWWDIR%%/apps-pkg/oauth2/js/oauth2.js
 %%WWWDIR%%/apps-pkg/oauth2/js/oauth2.js.map
-%%WWWDIR%%/apps-pkg/oauth2/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/oauth2/l10n/af.js
 %%WWWDIR%%/apps-pkg/oauth2/l10n/af.json
 %%WWWDIR%%/apps-pkg/oauth2/l10n/ar.js
@@ -8799,7 +8762,6 @@
 %%WWWDIR%%/apps-pkg/password_policy/css/settings-admin.css
 %%WWWDIR%%/apps-pkg/password_policy/img/app.svg
 %%WWWDIR%%/apps-pkg/password_policy/js/settings-admin.js
-%%WWWDIR%%/apps-pkg/password_policy/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/password_policy/l10n/af.js
 %%WWWDIR%%/apps-pkg/password_policy/l10n/af.json
 %%WWWDIR%%/apps-pkg/password_policy/l10n/ast.js
@@ -8820,6 +8782,8 @@
 %%WWWDIR%%/apps-pkg/password_policy/l10n/el.json
 %%WWWDIR%%/apps-pkg/password_policy/l10n/en_GB.js
 %%WWWDIR%%/apps-pkg/password_policy/l10n/en_GB.json
+%%WWWDIR%%/apps-pkg/password_policy/l10n/eo.js
+%%WWWDIR%%/apps-pkg/password_policy/l10n/eo.json
 %%WWWDIR%%/apps-pkg/password_policy/l10n/es.js
 %%WWWDIR%%/apps-pkg/password_policy/l10n/es.json
 %%WWWDIR%%/apps-pkg/password_policy/l10n/es_419.js
@@ -8998,7 +8962,6 @@
 %%WWWDIR%%/apps-pkg/serverinfo/js/Chart.min.js
 %%WWWDIR%%/apps-pkg/serverinfo/js/script.js
 %%WWWDIR%%/apps-pkg/serverinfo/js/smoothie.js
-%%WWWDIR%%/apps-pkg/serverinfo/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/serverinfo/l10n/af.js
 %%WWWDIR%%/apps-pkg/serverinfo/l10n/af.json
 %%WWWDIR%%/apps-pkg/serverinfo/l10n/ar.js
@@ -9151,7 +9114,6 @@
 %%WWWDIR%%/apps-pkg/sharebymail/css/settings-admin.css
 %%WWWDIR%%/apps-pkg/sharebymail/img/app.svg
 %%WWWDIR%%/apps-pkg/sharebymail/js/settings-admin.js
-%%WWWDIR%%/apps-pkg/sharebymail/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/ast.js
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/ast.json
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/ca.js
@@ -9286,7 +9248,6 @@
 %%WWWDIR%%/apps-pkg/support/img/signature.svg
 %%WWWDIR%%/apps-pkg/support/img/system-info.svg
 %%WWWDIR%%/apps-pkg/support/js/admin.js
-%%WWWDIR%%/apps-pkg/support/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/support/l10n/af.js
 %%WWWDIR%%/apps-pkg/support/l10n/af.json
 %%WWWDIR%%/apps-pkg/support/l10n/bg.js
@@ -9372,7 +9333,6 @@
 %%WWWDIR%%/apps-pkg/survey_client/img/app-dark.svg
 %%WWWDIR%%/apps-pkg/survey_client/img/app.svg
 %%WWWDIR%%/apps-pkg/survey_client/js/admin.js
-%%WWWDIR%%/apps-pkg/survey_client/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/survey_client/l10n/ast.js
 %%WWWDIR%%/apps-pkg/survey_client/l10n/ast.json
 %%WWWDIR%%/apps-pkg/survey_client/l10n/bg.js
@@ -9520,7 +9480,6 @@
 %%WWWDIR%%/apps-pkg/systemtags/js/systemtagsfilelist.js
 %%WWWDIR%%/apps-pkg/systemtags/js/systemtagsinfoview.js
 %%WWWDIR%%/apps-pkg/systemtags/js/systemtagsinfoviewtoggleview.js
-%%WWWDIR%%/apps-pkg/systemtags/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/systemtags/l10n/ar.js
 %%WWWDIR%%/apps-pkg/systemtags/l10n/ar.json
 %%WWWDIR%%/apps-pkg/systemtags/l10n/ast.js
@@ -9729,7 +9688,6 @@
 %%WWWDIR%%/apps-pkg/theming/js/3rdparty/jscolor/jscolor.js
 %%WWWDIR%%/apps-pkg/theming/js/3rdparty/jscolor/jscolor.min.js
 %%WWWDIR%%/apps-pkg/theming/js/settings-admin.js
-%%WWWDIR%%/apps-pkg/theming/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/theming/l10n/af.js
 %%WWWDIR%%/apps-pkg/theming/l10n/af.json
 %%WWWDIR%%/apps-pkg/theming/l10n/ar.js
@@ -9876,7 +9834,6 @@
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/css/style.css
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/js/settings.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/js/settings.js.map
-%%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/af.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/af.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/ast.js
@@ -10032,7 +9989,6 @@
 %%WWWDIR%%/apps-pkg/updatenotification/js/legacy-notification.js
 %%WWWDIR%%/apps-pkg/updatenotification/js/updatenotification.js
 %%WWWDIR%%/apps-pkg/updatenotification/js/updatenotification.js.map
-%%WWWDIR%%/apps-pkg/updatenotification/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/updatenotification/l10n/af.js
 %%WWWDIR%%/apps-pkg/updatenotification/l10n/af.json
 %%WWWDIR%%/apps-pkg/updatenotification/l10n/ar.js
@@ -10270,7 +10226,6 @@
 %%WWWDIR%%/apps-pkg/user_ldap/js/wizard/wizardTabGroupFilter.js
 %%WWWDIR%%/apps-pkg/user_ldap/js/wizard/wizardTabLoginFilter.js
 %%WWWDIR%%/apps-pkg/user_ldap/js/wizard/wizardTabUserFilter.js
-%%WWWDIR%%/apps-pkg/user_ldap/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/user_ldap/l10n/ach.js
 %%WWWDIR%%/apps-pkg/user_ldap/l10n/ach.json
 %%WWWDIR%%/apps-pkg/user_ldap/l10n/ady.js
@@ -10602,7 +10557,6 @@
 %%WWWDIR%%/apps-pkg/workflowengine/js/templates/operation.handlebars
 %%WWWDIR%%/apps-pkg/workflowengine/js/templates/operations.handlebars
 %%WWWDIR%%/apps-pkg/workflowengine/js/usergroupmembershipplugin.js
-%%WWWDIR%%/apps-pkg/workflowengine/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/ast.js
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/ast.json
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/bg.js
@@ -10625,6 +10579,8 @@
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/el.json
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/en_GB.js
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/en_GB.json
+%%WWWDIR%%/apps-pkg/workflowengine/l10n/eo.js
+%%WWWDIR%%/apps-pkg/workflowengine/l10n/eo.json
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/es.js
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/es.json
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/es_419.js
@@ -11300,6 +11256,13 @@
 %%WWWDIR%%/core/doc/user/_images/anonym_upload.png
 %%WWWDIR%%/core/doc/user/_images/anonym_uploaded_files.png
 %%WWWDIR%%/core/doc/user/_images/apps_menu.png
+%%WWWDIR%%/core/doc/user/_images/calendar_application.png
+%%WWWDIR%%/core/doc/user/_images/calendar_create.gif
+%%WWWDIR%%/core/doc/user/_images/calendar_dropdown.png
+%%WWWDIR%%/core/doc/user/_images/calendar_editing.png
+%%WWWDIR%%/core/doc/user/_images/calendar_new-event_month.gif
+%%WWWDIR%%/core/doc/user/_images/calendar_new-event_week.gif
+%%WWWDIR%%/core/doc/user/_images/calendar_settings.png
 %%WWWDIR%%/core/doc/user/_images/cardbook_icon.png
 %%WWWDIR%%/core/doc/user/_images/contact_bottombar.png
 %%WWWDIR%%/core/doc/user/_images/contact_manageaddressbook.png
@@ -11940,6 +11903,7 @@
 %%WWWDIR%%/core/skeleton/Documents/About.txt
 %%WWWDIR%%/core/skeleton/Documents/Nextcloud Flyer.pdf
 %%WWWDIR%%/core/skeleton/Documents/User Data Manifesto.pdf
+%%WWWDIR%%/core/skeleton/Nextcloud Manual.pdf
 %%WWWDIR%%/core/skeleton/Nextcloud.mp4
 %%WWWDIR%%/core/skeleton/Nextcloud.png
 %%WWWDIR%%/core/skeleton/Photos/Coast.jpg
@@ -11975,7 +11939,6 @@
 %%WWWDIR%%/core/templates/update.admin.php
 %%WWWDIR%%/core/templates/update.use-cli.php
 %%WWWDIR%%/core/templates/update.user.php
-%%WWWDIR%%/core/vendor/.gitignore
 %%WWWDIR%%/core/vendor/DOMPurify/.bower.json
 %%WWWDIR%%/core/vendor/DOMPurify/LICENSE
 %%WWWDIR%%/core/vendor/DOMPurify/dist/purify.min.js
@@ -12072,6 +12035,8 @@
 %%WWWDIR%%/lib/composer/composer/autoload_real.php
 %%WWWDIR%%/lib/composer/composer/autoload_static.php
 %%WWWDIR%%/lib/composer/composer/installed.json
+%%WWWDIR%%/lib/l10n/af.js
+%%WWWDIR%%/lib/l10n/af.json
 %%WWWDIR%%/lib/l10n/ar.js
 %%WWWDIR%%/lib/l10n/ar.json
 %%WWWDIR%%/lib/l10n/ast.js
@@ -12294,10 +12259,12 @@
 %%WWWDIR%%/lib/private/AppFramework/Middleware/Security/Exceptions/NotAdminException.php
 %%WWWDIR%%/lib/private/AppFramework/Middleware/Security/Exceptions/NotConfirmedException.php
 %%WWWDIR%%/lib/private/AppFramework/Middleware/Security/Exceptions/NotLoggedInException.php
+%%WWWDIR%%/lib/private/AppFramework/Middleware/Security/Exceptions/ReloadExecutionException.php
 %%WWWDIR%%/lib/private/AppFramework/Middleware/Security/Exceptions/SecurityException.php
 %%WWWDIR%%/lib/private/AppFramework/Middleware/Security/Exceptions/StrictCookieMissingException.php
 %%WWWDIR%%/lib/private/AppFramework/Middleware/Security/PasswordConfirmationMiddleware.php
 %%WWWDIR%%/lib/private/AppFramework/Middleware/Security/RateLimitingMiddleware.php
+%%WWWDIR%%/lib/private/AppFramework/Middleware/Security/ReloadExecutionMiddleware.php
 %%WWWDIR%%/lib/private/AppFramework/Middleware/Security/SameSiteCookieMiddleware.php
 %%WWWDIR%%/lib/private/AppFramework/Middleware/Security/SecurityMiddleware.php
 %%WWWDIR%%/lib/private/AppFramework/Middleware/SessionMiddleware.php
@@ -13383,8 +13350,6 @@
 %%WWWDIR%%/settings/l10n/ko.json
 %%WWWDIR%%/settings/l10n/lt_LT.js
 %%WWWDIR%%/settings/l10n/lt_LT.json
-%%WWWDIR%%/settings/l10n/lv.js
-%%WWWDIR%%/settings/l10n/lv.json
 %%WWWDIR%%/settings/l10n/nb.js
 %%WWWDIR%%/settings/l10n/nb.json
 %%WWWDIR%%/settings/l10n/nl.js
@@ -13395,8 +13360,6 @@
 %%WWWDIR%%/settings/l10n/pt_BR.json
 %%WWWDIR%%/settings/l10n/pt_PT.js
 %%WWWDIR%%/settings/l10n/pt_PT.json
-%%WWWDIR%%/settings/l10n/ro.js
-%%WWWDIR%%/settings/l10n/ro.json
 %%WWWDIR%%/settings/l10n/ru.js
 %%WWWDIR%%/settings/l10n/ru.json
 %%WWWDIR%%/settings/l10n/sk.js
