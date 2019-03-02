@@ -15,17 +15,18 @@ COMMENT=	German hunspell dictionaries
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+BROKEN_armv6=	fails to install: hunspell-capmain-plus_de_DE.tmp: Error 1
+BROKEN_armv7=	fails to install: hunspell-capmain-plus_de_DE.tmp: Error 1
+
 BUILD_DEPENDS=	aspell:textproc/aspell \
 		gsed:textproc/gsed \
 		hunspell:textproc/hunspell
 
-BROKEN_armv6=		fails to install: hunspell-capmain-plus_de_DE.tmp: Error 1
-BROKEN_armv7=		fails to install: hunspell-capmain-plus_de_DE.tmp: Error 1
-
 USES=		gmake perl5 shebangfix tar:bzip2
+USE_PERL5=	build
+
 ALL_TARGET=	hunspell-all
 NO_ARCH=	yes
-USE_PERL5=	build
 SHEBANG_FILES=	bin/*.pl
 
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
