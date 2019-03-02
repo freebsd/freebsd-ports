@@ -3,6 +3,7 @@
 
 PORTNAME=	gron
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -19,6 +20,7 @@ GH_TUPLE=	fatih:color:v1.7.0:color \
 		mattn:go-isatty:v0.0.6:isatty \
 		nwidger:jsoncolor:75a6de4:jsoncolor \
 		pkg:errors:v0.8.1:pkg_errors
+GO_BUILDFLAGS=	-ldflags="-X main.gronVersion=${PORTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}
 
