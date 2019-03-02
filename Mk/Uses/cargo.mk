@@ -74,6 +74,10 @@ RUSTFLAGS+=	${CFLAGS:M-march=*:S/-march=/-C target-cpu=/}
 RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
 .endif
 
+.if ${ARCH} == powerpc64
+USE_GCC?=	yes
+.endif
+
 # Helper to shorten cargo calls.
 CARGO_CARGO_RUN= \
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${CARGO_ENV} \
