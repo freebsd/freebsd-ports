@@ -1,0 +1,7 @@
+Make JSON greppable!
+
+gron transforms JSON into discrete assignments to make it easier to grep for
+what you want and see the absolute 'path' to it. It eases the exploration of
+APIs that return large blobs of JSON but have terrible documentation.
+
+WWW: https://github.com/tomnomnom/gron
