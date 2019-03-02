@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-protobuf
-PORTVERSION=	3.6.1
+PORTVERSION=	3.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Ruby extension to Google Protocol Buffers
 
 LICENSE=	BSD3CLAUSE
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
