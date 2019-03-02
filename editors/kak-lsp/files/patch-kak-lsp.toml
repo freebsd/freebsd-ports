@@ -8,13 +8,13 @@
 +#filetypes = ["c", "cpp"]
 +#roots = ["compile_commands.json", ".cquery"]
 +#command = "cquery"
-+#args = ["--init={\"cacheDirectory\":\"/tmp/cquery\"}"]
++#args = ["--init={\"cacheDirectory\":\"/tmp/cquery\",\"highlight\":{\"enabled\":true}}"]
 +
  [language.c_cpp]
  filetypes = ["c", "cpp"]
 -roots = ["compile_commands.json", ".cquery"]
 -command = "cquery"
--args = ["--init={\"cacheDirectory\":\"/tmp/cquery\"}"]
+-args = ["--init={\"cacheDirectory\":\"/tmp/cquery\",\"highlight\":{\"enabled\":true}}"]
 +roots = ["compile_commands.json", ".ccls", ".git"]
 +command = "ccls"
 +# With completion.detailedLabel turned on ccls embeds type
