@@ -24,7 +24,7 @@ CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP2 DOCS REDIS JAVA PYTHON MONGO CURL JAVA_MOD AMQP
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP2 DOCS REDIS JAVA PYTHON MONGO CURL JAVA_MOD AMQP RIEMANN
 OPTIONS_DEFAULT=	CURL JSON
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
@@ -38,6 +38,7 @@ JAVA_MOD_DESC=		Build with Java modules (needs Maven / Internet access)
 PYTHON_DESC=		Build with Python 3.6 support
 CURL_DESC=		Build with Curl HTTP support
 AMQP_DESC=		Build with AMQP support
+RIEMANN_DESC=		Build with Riemann support
 
 USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl \
 		gettext-runtime python:3.6,build shebangfix
@@ -182,6 +183,10 @@ CURL_CONFIGURE_OFF=		--with-libcurl=off
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
 CURL_PLIST_FILES=		lib/syslog-ng/libhttp.so
 
+RIEMANN_CONFIGURE_ON=		--enable-riemann
+RIEMANN_CONFIGURE_OFF=		--disable-riemann
+RIEMANN_LIB_DEPENDS=		libriemann-client.so:net-mgmt/riemann-c-client
+RIEMANN_PLIST_FILES=		lib/syslog-ng/libriemann.so
 
 .include <bsd.port.pre.mk>
 
