@@ -2,7 +2,7 @@
 
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	3.6.10
+DISTVERSION=	4.0.6
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/ \
@@ -10,28 +10,30 @@ MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
-MAINTAINER=	dev@dudu.ro
+MAINTAINER=	dev.ashevchuk@gmail.com
 COMMENT=	Distributed document-oriented "NoSQL" database
 
 # mongodb is AGPLv3, C++ driver is APACHE20
 LICENSE=	AGPLv3 APACHE20
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	amd64 aarch64
+ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64 and aarch64 (i386 deprecated in v3)"
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.4.4:devel/py-cheetah@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing>=3.6.2:devel/py-typing@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
+		${LOCALBASE}/bin/ar:devel/binutils
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpcre.so:devel/pcre \
+		libcurl.so:ftp/curl \
 		libsnappy.so:archivers/snappy
-
-CONFLICTS_BUILD=	mongo-cxx-driver
-CONFLICTS_INSTALL=	mongodb34 mongodb40
 
 USES=		compiler:c++14-lang cpe python:2.7,build scons shebangfix
 USE_RC_SUBR=	mongod
+
+CONFLICTS_BUILD=	mongo-cxx-driver
+CONFLICTS_INSTALL=	mongodb3[46]
 
 SHEBANG_FILES=	src/mongo/installer/compass/install_compass.in
 python_OLD_CMD=	@python_interpreter@
@@ -41,7 +43,7 @@ MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--cxx-std=14 --libc++ \
 		--runtime-hardening=on \
 		--disable-warnings-as-errors \
-		VERBOSE=on
+		VERBOSE=on AR=${PREFIX}/bin/ar
 
 USERS=		mongodb
 GROUPS=		mongodb
@@ -74,7 +76,7 @@ PORTSCOUT=	limitw:1,even
 CPE_PRODUCT=	mongodb
 
 post-install:
-.for f in mongo mongod mongoperf mongos
+.for f in mongo mongod mongos
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 	${CP} ${WRKSRC}/rpm/mongod.conf ${STAGEDIR}${PREFIX}/etc/mongodb.conf.sample

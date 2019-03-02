@@ -1,0 +1,18 @@
+--- src/third_party/mozjs-45/SConscript.orig	2019-01-18 20:35:17 UTC
++++ src/third_party/mozjs-45/SConscript
+@@ -97,7 +97,6 @@ env.Prepend(CPPPATH=[
+ sources = [
+     "extract/js/src/builtin/RegExp.cpp",
+     "extract/js/src/frontend/Parser.cpp",
+-    "extract/js/src/jit/ProcessExecutableMemory.cpp",
+     "extract/js/src/jsarray.cpp",
+     "extract/js/src/jsatom.cpp",
+     "extract/js/src/jsmath.cpp",
+@@ -112,6 +111,7 @@ sources = [
+ 
+ if env['TARGET_ARCH'] == 'x86_64' and not env.TargetOSIs('solaris'):
+     sources.extend([
++        "extract/js/src/jit/ProcessExecutableMemory.cpp",
+         "extract/js/src/jit/x86-shared/Disassembler-x86-shared.cpp",
+     ])
+ 

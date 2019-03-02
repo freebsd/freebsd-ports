@@ -1,0 +1,32 @@
+--- SConstruct.orig	2018-01-04 23:28:55 UTC
++++ SConstruct
+@@ -922,9 +922,9 @@ if has_option('variables-help'):
+     print(env_vars.GenerateHelpText(env))
+     Exit(0)
+ 
+-unknown_vars = env_vars.UnknownVariables()
+-if unknown_vars:
+-    env.FatalError("Unknown variables specified: {0}", ", ".join(unknown_vars.keys()))
++#unknown_vars = env_vars.UnknownVariables()
++#if unknown_vars:
++#    env.FatalError("Unknown variables specified: {0}", ", ".join(unknown_vars.keys()))
+ 
+ def set_config_header_define(env, varname, varval = 1):
+     env['CONFIG_HEADER_DEFINES'][varname] = varval
+@@ -1612,7 +1612,7 @@ if env.TargetOSIs('posix'):
+             # If runtime hardening is requested, then build anything
+             # destined for an executable with the necessary flags for PIE.
+             env.AppendUnique(
+-                PROGCCFLAGS=['-fPIE'],
++                PROGCCFLAGS=['-fpic'],
+                 PROGLINKFLAGS=['-pie'],
+             )
+ 
+@@ -1626,7 +1626,7 @@ if env.TargetOSIs('posix'):
+                          "-Wno-unknown-pragmas",
+                          "-Winvalid-pch"] )
+     # env.Append( " -Wconversion" ) TODO: this doesn't really work yet
+-    if env.TargetOSIs('linux', 'darwin', 'solaris'):
++    if env.TargetOSIs('linux', 'darwin', 'solaris', 'freebsd'):
+         if not has_option("disable-warnings-as-errors"):
+             env.Append( CCFLAGS=["-Werror"] )
