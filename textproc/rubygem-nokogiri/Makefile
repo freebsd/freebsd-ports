@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error \
-		libunwind.so:devel/libunwind
+		libgpg-error.so:security/libgpg-error
 RUN_DEPENDS=	rubygem-pkg-config>=1.1.7:devel/rubygem-pkg-config
 
 USES=		gem gnome pkgconfig gettext-runtime
