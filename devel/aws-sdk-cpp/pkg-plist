@@ -258,6 +258,8 @@ include/aws/alexaforbusiness/model/GetContactRequest.h
 include/aws/alexaforbusiness/model/GetContactResult.h
 include/aws/alexaforbusiness/model/GetDeviceRequest.h
 include/aws/alexaforbusiness/model/GetDeviceResult.h
+include/aws/alexaforbusiness/model/GetInvitationConfigurationRequest.h
+include/aws/alexaforbusiness/model/GetInvitationConfigurationResult.h
 include/aws/alexaforbusiness/model/GetProfileRequest.h
 include/aws/alexaforbusiness/model/GetProfileResult.h
 include/aws/alexaforbusiness/model/GetRoomRequest.h
@@ -289,6 +291,8 @@ include/aws/alexaforbusiness/model/Profile.h
 include/aws/alexaforbusiness/model/ProfileData.h
 include/aws/alexaforbusiness/model/PutConferencePreferenceRequest.h
 include/aws/alexaforbusiness/model/PutConferencePreferenceResult.h
+include/aws/alexaforbusiness/model/PutInvitationConfigurationRequest.h
+include/aws/alexaforbusiness/model/PutInvitationConfigurationResult.h
 include/aws/alexaforbusiness/model/PutRoomSkillParameterRequest.h
 include/aws/alexaforbusiness/model/PutRoomSkillParameterResult.h
 include/aws/alexaforbusiness/model/PutSkillAuthorizationRequest.h
@@ -708,6 +712,7 @@ include/aws/apigatewayv2/ApiGatewayV2Request.h
 include/aws/apigatewayv2/ApiGatewayV2_EXPORTS.h
 include/aws/apigatewayv2/model/AccessLogSettings.h
 include/aws/apigatewayv2/model/Api.h
+include/aws/apigatewayv2/model/ApiMapping.h
 include/aws/apigatewayv2/model/AuthorizationType.h
 include/aws/apigatewayv2/model/Authorizer.h
 include/aws/apigatewayv2/model/AuthorizerType.h
@@ -4146,6 +4151,7 @@ include/aws/cur/model/PutReportDefinitionRequest.h
 include/aws/cur/model/PutReportDefinitionResult.h
 include/aws/cur/model/ReportDefinition.h
 include/aws/cur/model/ReportFormat.h
+include/aws/cur/model/ReportVersioning.h
 include/aws/cur/model/SchemaElement.h
 include/aws/cur/model/TimeUnit.h
 include/aws/datapipeline/DataPipelineClient.h
@@ -6154,6 +6160,8 @@ include/aws/ec2/model/ModifyInstanceCapacityReservationAttributesRequest.h
 include/aws/ec2/model/ModifyInstanceCapacityReservationAttributesResponse.h
 include/aws/ec2/model/ModifyInstanceCreditSpecificationRequest.h
 include/aws/ec2/model/ModifyInstanceCreditSpecificationResponse.h
+include/aws/ec2/model/ModifyInstanceEventStartTimeRequest.h
+include/aws/ec2/model/ModifyInstanceEventStartTimeResponse.h
 include/aws/ec2/model/ModifyInstancePlacementRequest.h
 include/aws/ec2/model/ModifyInstancePlacementResponse.h
 include/aws/ec2/model/ModifyLaunchTemplateRequest.h
@@ -11722,6 +11730,9 @@ include/aws/mediaconvert/model/EmbeddedConvert608To708.h
 include/aws/mediaconvert/model/EmbeddedDestinationSettings.h
 include/aws/mediaconvert/model/EmbeddedSourceSettings.h
 include/aws/mediaconvert/model/Endpoint.h
+include/aws/mediaconvert/model/EsamManifestConfirmConditionNotification.h
+include/aws/mediaconvert/model/EsamSettings.h
+include/aws/mediaconvert/model/EsamSignalProcessingNotification.h
 include/aws/mediaconvert/model/F4vMoovPlacement.h
 include/aws/mediaconvert/model/F4vSettings.h
 include/aws/mediaconvert/model/FileGroupSettings.h
@@ -11804,6 +11815,7 @@ include/aws/mediaconvert/model/HlsInitializationVectorInManifest.h
 include/aws/mediaconvert/model/HlsKeyProviderType.h
 include/aws/mediaconvert/model/HlsManifestCompression.h
 include/aws/mediaconvert/model/HlsManifestDurationFormat.h
+include/aws/mediaconvert/model/HlsOfflineEncrypted.h
 include/aws/mediaconvert/model/HlsOutputSelection.h
 include/aws/mediaconvert/model/HlsProgramDateTime.h
 include/aws/mediaconvert/model/HlsSegmentControl.h
@@ -11819,6 +11831,7 @@ include/aws/mediaconvert/model/InputDecryptionSettings.h
 include/aws/mediaconvert/model/InputDenoiseFilter.h
 include/aws/mediaconvert/model/InputFilterEnable.h
 include/aws/mediaconvert/model/InputPsiControl.h
+include/aws/mediaconvert/model/InputRotate.h
 include/aws/mediaconvert/model/InputTemplate.h
 include/aws/mediaconvert/model/InputTimecodeSource.h
 include/aws/mediaconvert/model/InsertableImage.h
@@ -11848,6 +11861,7 @@ include/aws/mediaconvert/model/M2tsForceTsVideoEbpOrder.h
 include/aws/mediaconvert/model/M2tsNielsenId3.h
 include/aws/mediaconvert/model/M2tsPcrControl.h
 include/aws/mediaconvert/model/M2tsRateMode.h
+include/aws/mediaconvert/model/M2tsScte35Esam.h
 include/aws/mediaconvert/model/M2tsScte35Source.h
 include/aws/mediaconvert/model/M2tsSegmentationMarkers.h
 include/aws/mediaconvert/model/M2tsSegmentationStyle.h
@@ -12454,6 +12468,10 @@ include/aws/mediastore/model/PutCorsPolicyRequest.h
 include/aws/mediastore/model/PutCorsPolicyResult.h
 include/aws/mediastore/model/PutLifecyclePolicyRequest.h
 include/aws/mediastore/model/PutLifecyclePolicyResult.h
+include/aws/mediastore/model/StartAccessLoggingRequest.h
+include/aws/mediastore/model/StartAccessLoggingResult.h
+include/aws/mediastore/model/StopAccessLoggingRequest.h
+include/aws/mediastore/model/StopAccessLoggingResult.h
 include/aws/mediatailor/MediaTailorClient.h
 include/aws/mediatailor/MediaTailorEndpoint.h
 include/aws/mediatailor/MediaTailorErrorMarshaller.h
@@ -13590,6 +13608,8 @@ include/aws/pinpoint/model/ImportJobsResponse.h
 include/aws/pinpoint/model/Include.h
 include/aws/pinpoint/model/ItemResponse.h
 include/aws/pinpoint/model/JobStatus.h
+include/aws/pinpoint/model/ListTagsForResourceRequest.h
+include/aws/pinpoint/model/ListTagsForResourceResult.h
 include/aws/pinpoint/model/Message.h
 include/aws/pinpoint/model/MessageBody.h
 include/aws/pinpoint/model/MessageConfiguration.h
@@ -13640,8 +13660,11 @@ include/aws/pinpoint/model/SetDimension.h
 include/aws/pinpoint/model/SimpleEmail.h
 include/aws/pinpoint/model/SimpleEmailPart.h
 include/aws/pinpoint/model/SourceType.h
+include/aws/pinpoint/model/TagResourceRequest.h
+include/aws/pinpoint/model/TagsModel.h
 include/aws/pinpoint/model/TreatmentResource.h
 include/aws/pinpoint/model/Type.h
+include/aws/pinpoint/model/UntagResourceRequest.h
 include/aws/pinpoint/model/UpdateAdmChannelRequest.h
 include/aws/pinpoint/model/UpdateAdmChannelResult.h
 include/aws/pinpoint/model/UpdateApnsChannelRequest.h
