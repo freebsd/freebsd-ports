@@ -98,6 +98,10 @@ CONFIGURE_ARGS+=--disable-dtrace
 .endif
 .endif
 
+.if ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
+BROKEN=		does not detect and buid the openssl*.rb bits
+.endif
+
 # keep in sync with all platforms where libunwind is available
 .if (${ARCH} == amd64 || ${ARCH} == i386)
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
