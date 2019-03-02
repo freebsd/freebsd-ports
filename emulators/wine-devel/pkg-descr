@@ -5,7 +5,11 @@ without the performance or memory usage penalties of an emulator, with
 a similar look and feel to other applications on your desktop.
 
 Many applications already work, more or less, including versions of
-Microsoft Office and several games.
+Microsoft Office and many games.
+
+Use this port for 32-bit Windows binaries in an i386 environment or
+64-bit Windows binaries in an amd64 environment; emulators/i386-wine-devel
+for 32-bit Windows binaries in an amd64 environment.
 
 WWW: http://www.winehq.org/
 
