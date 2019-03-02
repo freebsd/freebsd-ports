@@ -38,7 +38,7 @@ post-patch:
 		-e '/NASM_FLAGS_DEBUG/d' \
 		${WRKSRC}/CMakeLists.txt
 # Avoid devel/yasm dependency
-	@${REINPLACE_CMD} -i .typo 's/MAKE_ASM_NASM_COMPILER/s&/' \
+	@${REINPLACE_CMD} -i .typo 's/[[:<:]]MAKE_ASM_NASM_COMPILER/C&/' \
 		${WRKSRC}/CMakeLists.txt
 # Avoid lang/gcc* dependency
 	@${REINPLACE_CMD} -i .gcc -e 's/gcc-//' \
