@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mybb
-DISTVERSION=	1.8.19
+DISTVERSION=	1.8.20
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
