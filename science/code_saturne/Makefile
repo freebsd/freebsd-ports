@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	code_saturne
-PORTVERSION=	5.3.1
-PORTREVISION=	3
+PORTVERSION=	5.3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science parallel
 
@@ -26,8 +25,10 @@ GH_ACCOUNT=	code-saturne
 
 USES=		autoreconf bison fortran gettext gnome gmake iconv libtool	\
 		pyqt:5 python:2.7 shebangfix
+
 USE_GNOME=	libxml2
 USE_PYQT=	core gui sip widgets xml_build
+SHEBANG_FILES=	install_saturne.py tests/unittests.py bin/*.py build-aux/*.py
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -86,6 +87,8 @@ pre-configure:
 	${FLEX} -o ${WRKSRC}/src/mei/mei_scanner.c ${WRKSRC}/src/mei/mei_scanner.l
 	${LOCALBASE}/bin/bison --defines=${WRKSRC}/src/mei/mei_parser.h	\
 		-o ${WRKSRC}/src/mei/mei_parser.c ${WRKSRC}/src/mei/mei_parser.y
+	${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|'	\
+		${WRKSRC}/Makefile.am
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
