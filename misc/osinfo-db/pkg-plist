@@ -67,6 +67,7 @@ share/osinfo/install-script/opensuse.org/opensuse-autoyast-desktop.xml
 share/osinfo/install-script/opensuse.org/opensuse-autoyast-jeos.xml
 share/osinfo/install-script/redhat.com/rhel-kickstart-desktop.xml
 share/osinfo/install-script/redhat.com/rhel-kickstart-jeos.xml
+share/osinfo/install-script/ubuntu.com/ubuntu-preseed-desktop.xml
 share/osinfo/install-script/ubuntu.com/ubuntu-preseed-jeos.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
@@ -346,6 +347,7 @@ share/osinfo/os/microsoft.com/win-2k.xml
 share/osinfo/os/microsoft.com/win-2k12.xml
 share/osinfo/os/microsoft.com/win-2k12r2.xml
 share/osinfo/os/microsoft.com/win-2k16.xml
+share/osinfo/os/microsoft.com/win-2k19.xml
 share/osinfo/os/microsoft.com/win-2k3.xml
 share/osinfo/os/microsoft.com/win-2k3r2.xml
 share/osinfo/os/microsoft.com/win-2k8.xml
