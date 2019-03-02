@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord-session_store
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -18,8 +18,9 @@ RUN_DEPENDS=	rubygem-actionpack4>=4.0.0:www/rubygem-actionpack4 \
 		rubygem-rack>=1.5.2:www/rubygem-rack \
 		rubygem-railties4>=4.0.0:www/rubygem-railties4
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
