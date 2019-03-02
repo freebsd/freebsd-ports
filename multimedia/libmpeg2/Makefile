@@ -15,6 +15,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-shared
+LDFLAGS_armv6=	-Wl,-z,notext
+LDFLAGS_armv7=	-Wl,-z,notext
 
 PORTDOCS=	libmpeg2.txt README
 
