@@ -1,8 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	svt-av1
-PORTVERSION=	s20180226
+PORTVERSION=	s20180228
 CATEGORIES=	multimedia
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	c0775cca46e2.patch:-p1 c04aa81ff487.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Scalable AV1 encoder
@@ -23,7 +26,7 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	OpenVisualCloud
 GH_PROJECT=	SVT-AV1
-GH_TAGNAME=	32e2f1c
+GH_TAGNAME=	a6c1f81
 CMAKE_OFF=	BUILD_TESTING # no useful tests yet
 
 post-patch:
