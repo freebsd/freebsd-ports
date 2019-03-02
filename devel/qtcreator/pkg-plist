@@ -1438,6 +1438,7 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/qtquick-properties.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/quick-buttons.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/quick-components.html
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/quick-converting-ui-projects.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/quick-connections-backend.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/quick-dynamic-properties.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/quick-export-to-qml.html
