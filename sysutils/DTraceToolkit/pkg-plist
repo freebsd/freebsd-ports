@@ -1,7 +1,9 @@
+bin/dtruss
 bin/hotkernel
 bin/opensnoop
 bin/procsystime
 bin/shellsnoop
+man/man1/dtruss.1.gz
 man/man1/hotkernel.1.gz
 man/man1/opensnoop.1.gz
 man/man1/procsystime.1.gz
