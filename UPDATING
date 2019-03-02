@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190302:
+  AFFECTS: users of sysutils/paladin
+  AUTHOR: Ryan Westlund <rlwestlund@gmail.com>
+
+  The way paladin parses its config file has changed, please
+  check the provided sample config.
+
 20190227:
   AFFECTS: users of security/softether, security/softether-devel
   AUTHOR: meta@FreeBSD.org

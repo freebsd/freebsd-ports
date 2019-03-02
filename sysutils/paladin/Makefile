@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	paladin
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	rwestlun@gmail.com
