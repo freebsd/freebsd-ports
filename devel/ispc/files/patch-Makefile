@@ -1,6 +1,15 @@
---- Makefile.orig	2016-07-08 11:13:52 UTC
+--- Makefile.orig	2019-01-19 01:23:04 UTC
 +++ Makefile
-@@ -241,16 +241,16 @@ dirs:
+@@ -113,7 +113,7 @@ endif
+ ifneq ($(NVPTX_ENABLED), 0)
+     LLVM_COMPONENTS+=nvptx
+ endif
+-LLVM_LIBS=$(shell $(LLVM_CONFIG) --libs $(LLVM_COMPONENTS))
++LLVM_LIBS=$(shell $(LLVM_CONFIG) --libs $(LLVM_COMPONENTS)) -lexecinfo
+ 
+ CLANG=clang
+ CLANG_LIBS = -lclangFrontend -lclangDriver \
+@@ -249,16 +249,16 @@ dirs:
  	@/bin/mkdir -p objs
  
  llvm_check:
