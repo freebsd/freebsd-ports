@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	17.1.20190111
+PORTVERSION=	17.1.20190222
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME:tl}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME:tl}-epl-${PORTVERSION}
