@@ -27,6 +27,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymongo>=3.0:databases/pymongo@${PY_FLAVOR}
 
 CONFLICTS_BUILD=	mongo-cxx-driver
+CONFLICTS_INSTALL=	mongodb36 mongodb40
 
 CHOSEN_COMPILER_TYPE=	clang
 
