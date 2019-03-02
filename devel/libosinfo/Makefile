@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosinfo
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
 MASTER_SITES=	https://releases.pagure.org/libosinfo/
 
