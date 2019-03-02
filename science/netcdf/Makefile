@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf
-PORTVERSION=	4.6.2
+PORTVERSION=	4.6.3
 DISTVERSIONPREFIX=	c-
 CATEGORIES=	science
 MASTER_SITES=	https://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
@@ -46,6 +46,7 @@ SZIP_LIBS=		-lsz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl ||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/ int fileno(FILE\*);/d' ${WRKSRC}/libdispatch/d*.c ${WRKSRC}/ncgen/ncgen* ${WRKSRC}/ncgen3/ncgen* ${WRKSRC}/oc2/ocdump.c
 
 post-build-DOXYGEN-on:
 	cd ${WRKSRC}/docs/ && ${LOCALBASE}/bin/doxygen .

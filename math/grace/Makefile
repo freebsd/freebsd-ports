@@ -3,7 +3,7 @@
 
 PORTNAME=	grace
 PORTVERSION=	5.1.25
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math print
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/graphics/grace/src/stable/ \
 		ftp://ftp.ntua.gr/pub/graphics/grace/src/stable/ \
