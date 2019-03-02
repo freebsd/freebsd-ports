@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
+BROKEN_i386=	Type mismatch in argument 'block_displ', see https://github.com/abinit/abinit/issues/19
 
 LIB_DEPENDS=	liblapack.so:math/lapack \
 		libblas.so:math/blas
