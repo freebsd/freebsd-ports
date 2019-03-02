@@ -1,20 +1,20 @@
---- _support/makegen.go.orig	2018-11-23 11:12:56 UTC
+--- _support/makegen.go.orig	2019-02-14 18:35:35 UTC
 +++ _support/makegen.go
-@@ -225,7 +225,7 @@ var templateText = `
+@@ -230,7 +230,7 @@ var templateText = `
  # These variables may be overriden at runtime by top-level make
  PREFIX ?= /usr/local
  INSTALL_DEST_DIR := $(DESTDIR)$(PREFIX)/bin/
 -BUNDLE_FLAGS ?= --deployment
 +BUNDLE_FLAGS ?= --local
  ASSEMBLY_ROOT ?= {{ .BuildDir }}/assembly
+ BUILD_TAGS := tracer_static tracer_static_jaeger
  
- unexport GOROOT
-@@ -245,7 +245,7 @@ build: ../.ruby-bundle
+@@ -251,7 +251,7 @@ build: ../.ruby-bundle
  # _build. Hence the '../' in front.
- ../.ruby-bundle: {{ .SourceDir }}/ruby/Gemfile.lock {{ .SourceDir }}/ruby/Gemfile
- 	cd {{ .SourceDir }}/ruby && bundle config # for debugging
--	cd {{ .SourceDir }}/ruby && bundle install $(BUNDLE_FLAGS)
-+	cd {{ .SourceDir }}/ruby && rm Gemfile.lock && bundle install $(BUNDLE_FLAGS)
- 	cd {{ .SourceDir }}/ruby && bundle show gitaly-proto # sanity check
+ ../.ruby-bundle:  {{ .GitalyRubyDir }}/Gemfile.lock  {{ .GitalyRubyDir }}/Gemfile
+ 	cd  {{ .GitalyRubyDir }} && bundle config # for debugging
+-	cd  {{ .GitalyRubyDir }} && bundle install $(BUNDLE_FLAGS)
++	cd  {{ .GitalyRubyDir }} && rm Gemfile.lock && bundle install $(BUNDLE_FLAGS)
+ 	cd  {{ .GitalyRubyDir }} && bundle show gitaly-proto # sanity check
  	touch $@
  
