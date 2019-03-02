@@ -2,7 +2,7 @@
 
 PORTNAME=	mkl-dnn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.4
+DISTVERSION=	0.18
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,18 +15,10 @@ BROKEN_i386=	error: shift count >= width of type (and other errors), see https:/
 
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 USE_LDCONFIG=	yes
-
-PLIST_FILES=	include/mkldnn.h \
-		include/mkldnn.hpp \
-		include/mkldnn_debug.h \
-		include/mkldnn_types.h \
-		lib/libmkldnn.so \
-		lib/libmkldnn.so.0 \
-		lib/libmkldnn.so.${DISTVERSION}.0
 
 OPTIONS_DEFINE=		OPENMP
 
@@ -38,6 +30,9 @@ BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 CPP=		clang-cpp${LLVM_DEFAULT}
 CC=		clang${LLVM_DEFAULT}
 CXX=		clang++${LLVM_DEFAULT}
+
+post-install:
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
 
 do-test: # some tests are known to fail: https://github.com/intel/mkl-dnn/issues/350
 	@${REINPLACE_CMD} 's| /bin/bash | ${LOCALBASE}/bin/bash |' ${WRKSRC}/tests/CMakeLists.txt
