@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	qhull
-PORTVERSION=	2015.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	7.2.1
+PORTEPOCH=	1
 CATEGORIES=	math
-MASTER_SITES=	http://www.qhull.org/download/
-DISTNAME=	${PORTNAME}-2015-src-7.2.0
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Qhull computes convex hulls, Delaunay triangulations, and halfspaces
@@ -15,18 +15,16 @@ LICENSE_NAME=	Qhull License
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cmake tar:tgz
+USES=		cmake
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-CONFLICTS=	qhull-1.0* afni-[0-9]* qhull5-*
+CONFLICTS=	qhull afni qhull5
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-CMakeLists.txt
+PORTDOCS=	*
 
-post-patch:
-	${REINPLACE_CMD} -e 's#share/man/man#man/man#g' \
-		${WRKSRC}/CMakeLists.txt
+DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-CMakeLists.txt
 
 .include <bsd.port.mk>
