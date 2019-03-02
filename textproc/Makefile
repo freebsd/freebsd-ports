@@ -1604,6 +1604,7 @@
     SUBDIR += rubygem-multi_xml
     SUBDIR += rubygem-nokogiri
     SUBDIR += rubygem-nokogiri-diff
+    SUBDIR += rubygem-nokogiri18
     SUBDIR += rubygem-nokogumbo
     SUBDIR += rubygem-octopress-escape-code
     SUBDIR += rubygem-opml
