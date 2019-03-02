@@ -4,6 +4,7 @@
 PORTNAME=	grib_api
 PORTVERSION=	1.28.0
 DISTVERSIONSUFFIX=	-Source
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/3473437/ \
 		LOCAL/sunpoet

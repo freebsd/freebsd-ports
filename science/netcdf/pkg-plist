@@ -5,13 +5,14 @@ bin/ncgen
 bin/ncgen3
 include/netcdf.h
 include/netcdf_aux.h
+include/netcdf_filter.h
 include/netcdf_mem.h
 include/netcdf_meta.h
 lib/libnetcdf.a
 lib/libnetcdf.settings
 lib/libnetcdf.so
-lib/libnetcdf.so.13
-lib/libnetcdf.so.13.1.1
+lib/libnetcdf.so.15
+lib/libnetcdf.so.15.0.0
 libdata/pkgconfig/netcdf.pc
 man/man1/nccopy.1.gz
 man/man1/ncdump.1.gz
