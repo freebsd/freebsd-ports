@@ -1,8 +1,8 @@
 Regressed by https://svnweb.freebsd.org/changeset/base/324815
 
-gfx/skia/skia/src/core/SkCpu.cpp:81:37: error: use of undeclared identifier 'AT_HWCAP'
+gfx/skia/skia/src/core/SkCpu.cpp:81:27: error: use of undeclared identifier 'getauxval'
         uint32_t hwcaps = getauxval(AT_HWCAP);
-                                    ^
+                          ^
 
 --- mozilla-release/gfx/skia/skia/src/core/SkCpu.cpp.orig	2019-02-27 22:18:23 UTC
 +++ mozilla-release/gfx/skia/skia/src/core/SkCpu.cpp
