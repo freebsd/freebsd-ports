@@ -3,7 +3,7 @@
 
 PORTNAME=	dtrace-toolkit
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	dteske@FreeBSD.org
@@ -77,16 +77,24 @@ SHEBANG_FILES=	Apps/shellsnoop \
 
 NO_BUILD=	yes
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1200031
+# lstat calls are no longer available on 12.0+
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-dtruss
+.endif
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${TAR} --exclude '*.orig' -cf - . ) | \
 		(cd ${STAGEDIR}${DATADIR}/ && ${TAR} xvf -)
+	${RLN} ${STAGEDIR}${DATADIR}/dtruss ${STAGEDIR}${PREFIX}/bin/dtruss
 	${RLN} ${STAGEDIR}${DATADIR}/hotkernel ${STAGEDIR}${PREFIX}/bin/hotkernel
 	${RLN} ${STAGEDIR}${DATADIR}/procsystime ${STAGEDIR}${PREFIX}/bin/procsystime
 	${RLN} ${STAGEDIR}${DATADIR}/opensnoop ${STAGEDIR}${PREFIX}/bin/opensnoop
 	${RLN} ${STAGEDIR}${DATADIR}/Apps/shellsnoop ${STAGEDIR}${PREFIX}/bin/shellsnoop
 
-.for MANPAGE in hotkernel procsystime opensnoop shellsnoop
+.for MANPAGE in dtruss hotkernel procsystime opensnoop shellsnoop
 	${INSTALL_MAN} ${WRKSRC}/Man/man1m/${MANPAGE}.1m \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/${MANPAGE}.1
 .endfor
