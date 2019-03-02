@@ -1,0 +1,12 @@
+include/mkldnn.h
+include/mkldnn.hpp
+include/mkldnn_debug.h
+include/mkldnn_types.h
+include/mkldnn_version.h
+lib/cmake/mkldnn/mkldnn-config-version.cmake
+lib/cmake/mkldnn/mkldnn-config.cmake
+lib/cmake/mkldnn/mkldnn-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/mkldnn/mkldnn-targets.cmake
+lib/libmkldnn.so
+lib/libmkldnn.so.0
+lib/libmkldnn.so.0.18.0.0
