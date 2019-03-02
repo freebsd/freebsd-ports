@@ -25,6 +25,7 @@ share/unicode/cldr/common/annotations/en_001.xml
 share/unicode/cldr/common/annotations/en_AU.xml
 share/unicode/cldr/common/annotations/en_CA.xml
 share/unicode/cldr/common/annotations/en_GB.xml
+share/unicode/cldr/common/annotations/en_IN.xml
 share/unicode/cldr/common/annotations/es.xml
 share/unicode/cldr/common/annotations/es_419.xml
 share/unicode/cldr/common/annotations/es_MX.xml
@@ -51,6 +52,7 @@ share/unicode/cldr/common/annotations/id.xml
 share/unicode/cldr/common/annotations/is.xml
 share/unicode/cldr/common/annotations/it.xml
 share/unicode/cldr/common/annotations/ja.xml
+share/unicode/cldr/common/annotations/jv.xml
 share/unicode/cldr/common/annotations/ka.xml
 share/unicode/cldr/common/annotations/kab.xml
 share/unicode/cldr/common/annotations/kk.xml
@@ -86,6 +88,7 @@ share/unicode/cldr/common/annotations/sd.xml
 share/unicode/cldr/common/annotations/si.xml
 share/unicode/cldr/common/annotations/sk.xml
 share/unicode/cldr/common/annotations/sl.xml
+share/unicode/cldr/common/annotations/so.xml
 share/unicode/cldr/common/annotations/sq.xml
 share/unicode/cldr/common/annotations/sr.xml
 share/unicode/cldr/common/annotations/sr_Cyrl.xml
@@ -113,6 +116,7 @@ share/unicode/cldr/common/annotations/zu.xml
 share/unicode/cldr/common/annotationsDerived/af.xml
 share/unicode/cldr/common/annotationsDerived/am.xml
 share/unicode/cldr/common/annotationsDerived/ar.xml
+share/unicode/cldr/common/annotationsDerived/ar_SA.xml
 share/unicode/cldr/common/annotationsDerived/as.xml
 share/unicode/cldr/common/annotationsDerived/ast.xml
 share/unicode/cldr/common/annotationsDerived/az.xml
@@ -135,6 +139,7 @@ share/unicode/cldr/common/annotationsDerived/en_001.xml
 share/unicode/cldr/common/annotationsDerived/en_AU.xml
 share/unicode/cldr/common/annotationsDerived/en_CA.xml
 share/unicode/cldr/common/annotationsDerived/en_GB.xml
+share/unicode/cldr/common/annotationsDerived/en_IN.xml
 share/unicode/cldr/common/annotationsDerived/es.xml
 share/unicode/cldr/common/annotationsDerived/es_419.xml
 share/unicode/cldr/common/annotationsDerived/es_MX.xml
@@ -156,16 +161,19 @@ share/unicode/cldr/common/annotationsDerived/hi.xml
 share/unicode/cldr/common/annotationsDerived/hr.xml
 share/unicode/cldr/common/annotationsDerived/hu.xml
 share/unicode/cldr/common/annotationsDerived/hy.xml
+share/unicode/cldr/common/annotationsDerived/ia.xml
 share/unicode/cldr/common/annotationsDerived/id.xml
 share/unicode/cldr/common/annotationsDerived/is.xml
 share/unicode/cldr/common/annotationsDerived/it.xml
 share/unicode/cldr/common/annotationsDerived/ja.xml
+share/unicode/cldr/common/annotationsDerived/jv.xml
 share/unicode/cldr/common/annotationsDerived/ka.xml
 share/unicode/cldr/common/annotationsDerived/kab.xml
 share/unicode/cldr/common/annotationsDerived/kk.xml
 share/unicode/cldr/common/annotationsDerived/km.xml
 share/unicode/cldr/common/annotationsDerived/kn.xml
 share/unicode/cldr/common/annotationsDerived/ko.xml
+share/unicode/cldr/common/annotationsDerived/ku.xml
 share/unicode/cldr/common/annotationsDerived/ky.xml
 share/unicode/cldr/common/annotationsDerived/lo.xml
 share/unicode/cldr/common/annotationsDerived/lt.xml
@@ -186,6 +194,7 @@ share/unicode/cldr/common/annotationsDerived/pl.xml
 share/unicode/cldr/common/annotationsDerived/ps.xml
 share/unicode/cldr/common/annotationsDerived/pt.xml
 share/unicode/cldr/common/annotationsDerived/pt_PT.xml
+share/unicode/cldr/common/annotationsDerived/qu.xml
 share/unicode/cldr/common/annotationsDerived/ro.xml
 share/unicode/cldr/common/annotationsDerived/root.xml
 share/unicode/cldr/common/annotationsDerived/ru.xml
@@ -193,11 +202,13 @@ share/unicode/cldr/common/annotationsDerived/sd.xml
 share/unicode/cldr/common/annotationsDerived/si.xml
 share/unicode/cldr/common/annotationsDerived/sk.xml
 share/unicode/cldr/common/annotationsDerived/sl.xml
+share/unicode/cldr/common/annotationsDerived/so.xml
 share/unicode/cldr/common/annotationsDerived/sq.xml
 share/unicode/cldr/common/annotationsDerived/sr.xml
 share/unicode/cldr/common/annotationsDerived/sr_Cyrl.xml
 share/unicode/cldr/common/annotationsDerived/sr_Cyrl_BA.xml
 share/unicode/cldr/common/annotationsDerived/sr_Latn.xml
+share/unicode/cldr/common/annotationsDerived/sr_Latn_BA.xml
 share/unicode/cldr/common/annotationsDerived/sv.xml
 share/unicode/cldr/common/annotationsDerived/sw.xml
 share/unicode/cldr/common/annotationsDerived/ta.xml
