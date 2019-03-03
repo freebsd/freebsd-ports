@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.28.1
+PORTVERSION=	0.28.2
 CATEGORIES?=	mail
 MASTER_SITES=	https://notmuchmail.org/releases/
 
