@@ -309,6 +309,7 @@
     SUBDIR += py-napalm
     SUBDIR += py-napalm-logs
     SUBDIR += py-ncclient
+    SUBDIR += py-nxapi-plumbing
     SUBDIR += py-pdagent
     SUBDIR += py-prometheus-client
     SUBDIR += py-pyIOSXR
