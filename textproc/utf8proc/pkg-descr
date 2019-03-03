@@ -6,4 +6,4 @@ characters "Hyphen" (U+2010), "Minus" (U+2212) and
 "Hyphen-Minus" (U+002D, ASCII Minus) all into the ASCII minus sign, to
 make them equal for comparisons.
 
-WWW: http://julialang.org/utf8proc/
+WWW: https://juliastrings.github.io/utf8proc/
