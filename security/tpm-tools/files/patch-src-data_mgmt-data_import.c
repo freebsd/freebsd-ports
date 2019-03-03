@@ -1,6 +1,23 @@
 --- src/data_mgmt/data_import.c.orig	2017-02-21 02:12:00 UTC
 +++ src/data_mgmt/data_import.c
-@@ -372,7 +372,7 @@ readX509Cert( const char  *a_pszFile,
+@@ -39,6 +39,16 @@
+ #include <openssl/evp.h>
+ #include <openssl/err.h>
+ 
++#if OPENSSL_VERSION_NUMBER < 0x1010000fL
++#define	RSA_get0_n(x)	((x)->n)
++#define	RSA_get0_e(x)	((x)->e)
++#define	RSA_get0_d(x)	((x)->d)
++#define	RSA_get0_p(x)	((x)->p)
++#define	RSA_get0_q(x)	((x)->q)
++#define	RSA_get0_dmp1(x)	((x)->dmp1)
++#define	RSA_get0_dmq1(x)	((x)->dmq1)
++#define	RSA_get0_iqmp(x)	((x)->iqmp)
++#endif
+ 
+ /*
+  * Global variables
+@@ -372,7 +382,7 @@ readX509Cert( const char  *a_pszFile,
  		goto out;
  	}
  
@@ -9,7 +26,7 @@
  		logError( TOKEN_RSA_KEY_ERROR );
  
  		X509_free( pX509 );
-@@ -691,8 +691,8 @@ createRsaPubKeyObject( RSA               *a_pRsa,
+@@ -691,8 +701,8 @@ createRsaPubKeyObject( RSA               *a_pRsa,
  
  	int  rc = -1;
  
@@ -20,7 +37,7 @@
  
  	CK_RV  rv;
  
-@@ -732,8 +732,8 @@ createRsaPubKeyObject( RSA               *a_pRsa,
+@@ -732,8 +742,8 @@ createRsaPubKeyObject( RSA               *a_pRsa,
  	}
  
  	// Get binary representations of the RSA key information
@@ -31,7 +48,7 @@
  
  	// Create the RSA public key object
  	rv = createObject( a_hSession, tAttr, ulAttrCount, a_hObject );
-@@ -760,14 +760,14 @@ createRsaPrivKeyObject( RSA               *a_pRsa,
+@@ -760,14 +770,14 @@ createRsaPrivKeyObject( RSA               *a_pRsa,
  
  	int  rc = -1;
  
@@ -54,7 +71,7 @@
  
  	CK_RV  rv;
  
-@@ -821,14 +821,14 @@ createRsaPrivKeyObject( RSA               *a_pRsa,
+@@ -821,14 +831,14 @@ createRsaPrivKeyObject( RSA               *a_pRsa,
  	}
  
  	// Get binary representations of the RSA key information
