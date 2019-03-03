@@ -10,7 +10,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: sunpoet@FreeBSD.org
 
   Google Noto Fonts family has been converted to several ports. x11-fonts/noto
-  is a meta port with includes 1 old port and 5 new ports as follows:
+  is a meta port which includes 1 old port and 5 new ports as follows:
   - x11-fonts/noto-basic (was noto-lite): basic fonts set with emoji
   - x11-fonts/noto-extra: extra fonts set
   - x11-fonts/noto-jp: Japanese fonts set
