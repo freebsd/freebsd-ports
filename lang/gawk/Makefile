@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	GNU version of Awk
+COMMENT=	GNU version of AWK scripting language
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
