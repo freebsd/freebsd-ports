@@ -1,11 +1,11 @@
---- lib/Makefile.am.orig	2012-05-17 17:50:39 UTC
+--- lib/Makefile.am.orig	2017-02-21 02:23:56 UTC
 +++ lib/Makefile.am
 @@ -44,7 +44,7 @@ libtpm_utils_la_SOURCES	=	tpm_utils.c \
  #
  # TSPI interface library
  libtpm_tspi_la_SOURCES	=	tpm_tspi.c
--libtpm_tspi_la_LIBADD	=	libtpm_utils.la -ldl
-+libtpm_tspi_la_LIBADD	=	libtpm_utils.la
+-libtpm_tspi_la_LIBADD	=	libtpm_utils.la -ldl @INTLLIBS@
++libtpm_tspi_la_LIBADD	=	libtpm_utils.la @INTLLIBS@
  
  #
  # PKCS#11 interface library

@@ -1,4 +1,4 @@
---- src/tpm_mgmt/tpm_nvwrite.c.orig	2011-08-17 12:20:35 UTC
+--- src/tpm_mgmt/tpm_nvwrite.c.orig	2017-02-21 01:23:57 UTC
 +++ src/tpm_mgmt/tpm_nvwrite.c
 @@ -33,6 +33,7 @@ static BOOL nvindex_set;
  static unsigned int nvindex;
@@ -8,7 +8,7 @@
  static int fillvalue = -1;
  static const char *filename;
  static BOOL passWellKnown;
-@@ -60,6 +61,7 @@ static int parse(const int aOpt, const c
+@@ -60,6 +61,7 @@ static int parse(const int aOpt, const char *aArg)
  		if (parseHexOrDecimal(aArg, &length, 0, UINT_MAX,
  				      "length of data") != 0)
  			return -1;
