@@ -26,6 +26,6 @@ CMAKE_ARGS=	-DKLF_INSTALL_POST_UPDATEMIMEDATABASE=off \
 
 post-patch:
 	${REINPLACE_CMD} '/CMAKE_SYSTEM_NAME STREQUAL/s,Linux,FreeBSD,' \
-		${WRKSRC}/src/klftools/CMakeLists.txt
+	    ${WRKSRC}/src/klftools/CMakeLists.txt
 
 .include <bsd.port.mk>
