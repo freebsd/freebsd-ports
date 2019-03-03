@@ -1,17 +1,15 @@
 @postunexec if [ ! -s %D/%%ETCDIR%%/proxy.pac ]; then rm -f %D/%%ETCDIR%%/proxy.pac; fi
-bin/header_rewrite_test
-bin/traffic_cop
+bin/traffic_cache_tool
 bin/traffic_crashlog
 bin/traffic_ctl
 bin/traffic_layout
-bin/traffic_line
 bin/traffic_logcat
 bin/traffic_logstats
 bin/traffic_manager
-bin/traffic_sac
 bin/traffic_server
 bin/traffic_top
 bin/traffic_via
+%%WCCP%%bin/traffic_wccp
 bin/trafficserver
 bin/tspush
 bin/tsxs
@@ -25,7 +23,6 @@ bin/tsxs
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/access#ssl_forbidden
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/cache#not_in_cache
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/cache#read_error
-@(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/congestion#retryAfter
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/connect#dns_failed
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/connect#failed_connect
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/connect#hangup
@@ -46,14 +43,9 @@ bin/tsxs
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/transcoding#unsupported
 @(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default/urlrouting#no_mapping
 @sample %%ETCDIR%%/cache.config.sample
-@sample %%ETCDIR%%/cluster.config.sample
-@sample %%ETCDIR%%/congestion.config.sample
 @sample %%ETCDIR%%/hosting.config.sample
-@sample %%ETCDIR%%/icp.config.sample
 @sample %%ETCDIR%%/ip_allow.config.sample
-@sample %%ETCDIR%%/log_hosts.config.sample
-@sample %%ETCDIR%%/logs_xml.config.sample
-@sample %%ETCDIR%%/metrics.config.sample
+@sample %%ETCDIR%%/logging.yaml.sample
 @sample %%ETCDIR%%/parent.config.sample
 @sample %%ETCDIR%%/plugin.config.sample
 @sample %%ETCDIR%%/records.config.sample
@@ -61,97 +53,124 @@ bin/tsxs
 @sample %%ETCDIR%%/socks.config.sample
 @sample %%ETCDIR%%/splitdns.config.sample
 @sample %%ETCDIR%%/ssl_multicert.config.sample
-@sample %%ETCDIR%%/stats.config.xml.sample
+@sample %%ETCDIR%%/ssl_server_name.yaml.sample
 @sample %%ETCDIR%%/storage.config.sample
-@sample %%ETCDIR%%/vaddrs.config.sample
 @sample %%ETCDIR%%/volume.config.sample
-include/atscppapi/Async.h
-include/atscppapi/AsyncHttpFetch.h
-include/atscppapi/AsyncTimer.h
-include/atscppapi/CaseInsensitiveStringComparator.h
-include/atscppapi/ClientRequest.h
-include/atscppapi/GlobalPlugin.h
-include/atscppapi/GzipDeflateTransformation.h
-include/atscppapi/GzipInflateTransformation.h
-include/atscppapi/Headers.h
-include/atscppapi/HttpMethod.h
-include/atscppapi/HttpStatus.h
-include/atscppapi/HttpVersion.h
-include/atscppapi/InterceptPlugin.h
-include/atscppapi/Logger.h
-include/atscppapi/Mutex.h
-include/atscppapi/Plugin.h
-include/atscppapi/PluginInit.h
-include/atscppapi/RemapPlugin.h
-include/atscppapi/Request.h
-include/atscppapi/Response.h
-include/atscppapi/Stat.h
-include/atscppapi/Transaction.h
-include/atscppapi/TransactionPlugin.h
-include/atscppapi/TransformationPlugin.h
-include/atscppapi/Url.h
-include/atscppapi/noncopyable.h
-include/atscppapi/shared_ptr.h
-include/atscppapi/utils.h
 include/ts/apidefs.h
 include/ts/experimental.h
 include/ts/mgmtapi.h
 include/ts/remap.h
 include/ts/ts.h
-lib/libatscppapi.so
-lib/libatscppapi.so.6
-lib/libatscppapi.so.%%PORTVERSION%%
+include/tscpp/api/Async.h
+include/tscpp/api/AsyncHttpFetch.h
+include/tscpp/api/AsyncTimer.h
+include/tscpp/api/CaseInsensitiveStringComparator.h
+include/tscpp/api/ClientRequest.h
+include/tscpp/api/Continuation.h
+include/tscpp/api/GlobalPlugin.h
+include/tscpp/api/GzipDeflateTransformation.h
+include/tscpp/api/GzipInflateTransformation.h
+include/tscpp/api/Headers.h
+include/tscpp/api/HttpMethod.h
+include/tscpp/api/HttpStatus.h
+include/tscpp/api/HttpVersion.h
+include/tscpp/api/InterceptPlugin.h
+include/tscpp/api/Logger.h
+include/tscpp/api/Plugin.h
+include/tscpp/api/PluginInit.h
+include/tscpp/api/RemapPlugin.h
+include/tscpp/api/Request.h
+include/tscpp/api/Response.h
+include/tscpp/api/Stat.h
+include/tscpp/api/Transaction.h
+include/tscpp/api/TransactionPlugin.h
+include/tscpp/api/TransformationPlugin.h
+include/tscpp/api/Url.h
+include/tscpp/api/noncopyable.h
+include/tscpp/api/utils.h
+include/tscpp/util/TextView.h
 lib/libtsconfig.so
-lib/libtsconfig.so.6
+lib/libtsconfig.so.8
 lib/libtsconfig.so.%%PORTVERSION%%
+lib/libtscore.so
+lib/libtscore.so.8
+lib/libtscore.so.%%PORTVERSION%%
+lib/libtscppapi.so
+lib/libtscppapi.so.8
+lib/libtscppapi.so.%%PORTVERSION%%
+lib/libtscpputil.so
+lib/libtscpputil.so.8
+lib/libtscpputil.so.%%PORTVERSION%%
 lib/libtsmgmt.so
-lib/libtsmgmt.so.6
+lib/libtsmgmt.so.8
 lib/libtsmgmt.so.%%PORTVERSION%%
-lib/libtsutil.so
-lib/libtsutil.so.6
-lib/libtsutil.so.%%PORTVERSION%%
 libdata/pkgconfig/trafficserver.pc
-libexec/trafficserver/AsyncHttpFetch.so
-libexec/trafficserver/AsyncHttpFetchStreaming.so
-libexec/trafficserver/AsyncTimer.so
-libexec/trafficserver/ClientRedirect.so
-libexec/trafficserver/ClientRequest.so
-libexec/trafficserver/CustomErrorRemapPlugin.so
-libexec/trafficserver/CustomResponse.so
-libexec/trafficserver/GlobalHookPlugin.so
-libexec/trafficserver/GzipTransformationPlugin.so
-libexec/trafficserver/HelloWorldPlugin.so
-libexec/trafficserver/InternalTransactionHandling.so
-libexec/trafficserver/LoggerExample.so
-libexec/trafficserver/MultipleTransactionHookPlugins.so
-libexec/trafficserver/NullTransformationPlugin.so
-libexec/trafficserver/PostBuffer.so
-libexec/trafficserver/RemapPlugin.so
-libexec/trafficserver/ServerResponse.so
-libexec/trafficserver/StatExample.so
-libexec/trafficserver/TimeoutExamplePlugin.so
-libexec/trafficserver/TransactionHookPlugin.so
-libexec/trafficserver/boom.so
-libexec/trafficserver/cacheurl.so
+%%IMAGEMAGICK%%libexec/trafficserver/WebpTransform.so
+libexec/trafficserver/access_control.so
+libexec/trafficserver/acme.so
+libexec/trafficserver/authproxy.so
+libexec/trafficserver/background_fetch.so
+libexec/trafficserver/balancer.so
+libexec/trafficserver/buffer_upload.so
+libexec/trafficserver/cache_promote.so
+libexec/trafficserver/cache_range_requests.so
+libexec/trafficserver/cachekey.so
+libexec/trafficserver/certifier.so
+libexec/trafficserver/collapsed_forwarding.so
+libexec/trafficserver/combo_handler.so
+libexec/trafficserver/compress.so
 libexec/trafficserver/conf_remap.so
-libexec/trafficserver/gzip.so
+libexec/trafficserver/custom_redirect.so
+libexec/trafficserver/escalate.so
+libexec/trafficserver/esi.so
+libexec/trafficserver/fq_pacing.so
+libexec/trafficserver/generator.so
+libexec/trafficserver/geoip_acl.so
+libexec/trafficserver/header_freq.so
+libexec/trafficserver/header_normalize.so
 libexec/trafficserver/header_rewrite.so
-libexec/trafficserver/intercept.so
+libexec/trafficserver/hipes.so
+libexec/trafficserver/hook-trace.so
+libexec/trafficserver/inliner.so
 libexec/trafficserver/libloader.so
+%%IMAGEMAGICK%%libexec/trafficserver/magick.so
+%%MEMCACHED%%libexec/trafficserver/memcached_remap.so
+libexec/trafficserver/metalink.so
+libexec/trafficserver/money_trace.so
+libexec/trafficserver/mp4.so
+libexec/trafficserver/multiplexer.so
+libexec/trafficserver/prefetch.so
 libexec/trafficserver/regex_remap.so
+libexec/trafficserver/regex_revalidate.so
+libexec/trafficserver/remap_purge.so
+libexec/trafficserver/remap_stats.so
+libexec/trafficserver/s3_auth.so
+libexec/trafficserver/server_push_preload.so
+libexec/trafficserver/ssl_cert_loader.so
+libexec/trafficserver/sslheaders.so
+libexec/trafficserver/stale_while_revalidate.so
 libexec/trafficserver/stats_over_http.so
+libexec/trafficserver/stream_editor.so
+libexec/trafficserver/system_stats.so
 libexec/trafficserver/tcpinfo.so
-%%SITE_PERL%%/Apache/TS.pm
-%%SITE_PERL%%/Apache/TS.pm.in
-%%SITE_PERL%%/Apache/TS/AdminClient.pm
-%%SITE_PERL%%/Apache/TS/Config.pm
-%%SITE_PERL%%/Apache/TS/Config/Records.pm
-%%PERL5_MAN3%%/Apache::TS.3.gz
-%%PERL5_MAN3%%/Apache::TS::AdminClient.3.gz
-%%PERL5_MAN3%%/Apache::TS::Config::Records.3.gz
+libexec/trafficserver/test_cppapi.so
+libexec/trafficserver/tls_bridge.so
+libexec/trafficserver/traffic_dump.so
+libexec/trafficserver/tslua.so
+libexec/trafficserver/tsmemcache.so
+libexec/trafficserver/url_sig.so
+libexec/trafficserver/xdebug.so
+lib/perl5/amd64-freebsd-thread-multi/auto/Apache/TS/.packlist
+lib/perl5/amd64-freebsd-thread-multi/perllocal.pod
+lib/perl5/Apache/TS.pm
+lib/perl5/Apache/TS/AdminClient.pm
+lib/perl5/Apache/TS/Config.pm
+lib/perl5/Apache/TS/Config/Records.pm
+man/man3/Apache::TS.3.gz
+man/man3/Apache::TS::AdminClient.3.gz
+man/man3/Apache::TS::Config::Records.3.gz
 @dir(,,) libexec/trafficserver
 @dir(,,) include/ts
-@dir(,,) include/atscppapi
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/snapshots
