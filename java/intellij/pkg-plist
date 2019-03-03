@@ -113,7 +113,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/cucumber-java-1.2.5.jar
 %%IDEA_HOME%%/lib/delight-rhino-sandbox-0.0.9.jar
 %%IDEA_HOME%%/lib/dexlib2-2.2.1.jar
-%%IDEA_HOME%%/lib/ecj-4.7.2.jar
+%%IDEA_HOME%%/lib/ecj-4.10.jar
 %%IDEA_HOME%%/lib/eddsa-0.2.0.jar
 %%IDEA_HOME%%/lib/error_prone_annotations-2.3.1.jar
 %%IDEA_HOME%%/lib/extensions.jar
@@ -220,6 +220,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/purejavacomm-0.0.11.1.jar
 %%IDEA_HOME%%/lib/resources.jar
 %%IDEA_HOME%%/lib/resources_en.jar
+%%IDEA_HOME%%/lib/rhino-1.7.10.jar
 %%IDEA_HOME%%/lib/rngom-20051226-patched.jar
 %%IDEA_HOME%%/lib/rt/debugger-agent.jar
 %%IDEA_HOME%%/lib/sa-jdwp-1.12.jar
