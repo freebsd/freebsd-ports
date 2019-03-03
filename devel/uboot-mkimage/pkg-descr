@@ -1,4 +1,0 @@
-mkimage adds a header to a kernel image with information and checksums for
-the u-boot bootloader used in embedded systems.
-
-WWW: http://www.denx.de/wiki/U-Boot/WebHome

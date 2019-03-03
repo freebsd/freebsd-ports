@@ -11644,3 +11644,17 @@ devel/rubygem-grape0|devel/rubygem-grape|2019-02-28|Has expired: Use devel/rubyg
 www/rubygem-jwt1|www/rubygem-jwt|2019-02-28|Has expired: Use www/rubygem-jwt instead
 www/rubygem-rack-cors0|www/rubygem-rack-cors|2019-02-28|Has expired: Use www/rubygem-rack-cors instead
 databases/py-sqlparse01|databases/py-sqlparse020|2019-02-28|Removed: Use databases/py-sqlparse020, if you need sqlparse for py-twext
+devel/uboot-mkimage|sysutils/u-boot-tools|2019-03-03|Has expired: Use sysutils/u-boot-tools
+graphics/clutter-gtk|graphics/clutter-gtk3|2019-03-03|Has expired: 0.10.x is unmaintained upstream and unused in the ports tree
+databases/puppetdb4|databases/puppetdb5|2019-03-03|Has expired: Puppet 4 has reached EOL
+sysutils/puppet4|sysutils/puppet5|2019-03-03|Has expired: Puppet 4 has reached EOL
+sysutils/puppetserver|sysutils/puppetserver5|2019-03-03|Has expired: Puppet 4 has reached EOL
+www/qupzilla-qt5|www/falkon|2019-03-03|Has expired: Project continues as www/falkon
+databases/puppetdb-terminus4|databases/puppetdb-terminus5|2019-03-03|Has expired: Puppet 4 has reached EOL
+sysutils/bacula-client|sysutils/bacula9-client|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
+net-mgmt/nagios-check_bacula|net-mgmt/nagios-check_bacula9|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
+security/kc|security/kc24|2019-03-03|Has expired: Versions 2.4.x use incompatible database format
+sysutils/bacula-server|sysutils/bacula9-server|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
+sysutils/bacula-docs|sysutils/bacula9-docs|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-docs
+sysutils/bacula-client-static|sysutils/bacula9-client-static|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
+sysutils/bacula-bat|sysutils/bacula9-bat|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server

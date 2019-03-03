@@ -1918,7 +1918,6 @@
     SUBDIR += qt5-webview
     SUBDIR += quark
     SUBDIR += qupzilla-qt4
-    SUBDIR += qupzilla-qt5
     SUBDIR += qutebrowser
     SUBDIR += radicale
     SUBDIR += radicale2
