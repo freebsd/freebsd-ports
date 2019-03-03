@@ -5,7 +5,7 @@ MANDIR=	${MANPREFIX}/man/man
 
 CFLAGS=	-I${.CURDIR:H}/jxrgluelib -I${.CURDIR:H}/jxrtestlib
 CFLAGS+=-I${.CURDIR:H}/image/sys -I${.CURDIR:H}/common/include
-CFLAGS+=-Wno-extra-tokens -D__ANSI__ -DDISABLE_PERF_MEASUREMENT
+CFLAGS+=-D__ANSI__ -DDISABLE_PERF_MEASUREMENT
 
 LDADD=	-L${.CURDIR:H}/jxrgluelib -Wl,-rpath-link=${.CURDIR:H}/libjpegxr -ljxrglue
 

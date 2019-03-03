@@ -14,7 +14,6 @@ SRCS+=	JXRTest.c JXRTestBmp.c JXRTestHdr.c JXRTestPnm.c	\
 CFLAGS+=	-I. -I${.CURDIR:H}/common/include -I${.CURDIR:H}/image/sys
 CFLAGS+=	-I${.CURDIR:H}/jxrtestlib
 CFLAGS+=	-D__ANSI__ -DDISABLE_PERF_MEASUREMENT
-CFLAGS+=	-Wno-extra-tokens
 
 LDADD=	-L${.CURDIR:H}/libjpegxr -ljpegxr -lm
 
