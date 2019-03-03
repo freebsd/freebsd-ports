@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190303:
+  AFFECTS: users of x11-fonts/noto*
+  AUTHOR: sunpoet@FreeBSD.org
+
+  Google Noto Fonts family has been converted to several ports. x11-fonts/noto
+  is a meta port with includes 1 old port and 5 new ports as follows:
+  - x11-fonts/noto-basic (was noto-lite): basic fonts set with emoji
+  - x11-fonts/noto-extra: extra fonts set
+  - x11-fonts/noto-jp: Japanese fonts set
+  - x11-fonts/noto-kr: Korean fonts set
+  - x11-fonts/noto-sc: Simplified Chinese fonts set
+  - x11-fonts/noto-tc: Traditional Chinese fonts set
+
 20190302:
   AFFECTS: users of sysutils/paladin
   AUTHOR: Ryan Westlund <rlwestlund@gmail.com>
