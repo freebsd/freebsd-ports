@@ -62,7 +62,7 @@ lib/libtcd.so.1
 lib/libxtide.a
 lib/libxtide.so
 lib/libxtide.so.1
-lib/libxtide.so.1.0.1
+lib/libxtide.so.1.0.2
 man/man1/tide.1.gz
 %%X11%%man/man1/xtide.1.gz
 man/man8/xttpd.8.gz
