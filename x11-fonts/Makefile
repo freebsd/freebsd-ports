@@ -164,6 +164,7 @@
     SUBDIR += noto
     SUBDIR += noto-basic
     SUBDIR += noto-extra
+    SUBDIR += noto-jp
     SUBDIR += nucleus
     SUBDIR += ohsnap
     SUBDIR += oldschool-pc-fonts
