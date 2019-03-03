@@ -27,6 +27,8 @@ MAKE_ENV=	CGO_CFLAGS="-I${LOCALBASE}/include" CGO_LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/${PORTNAME}
 
+PORTSCOUT=	skipv:nightly.*
+
 do-build:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME} && \
 		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go install ./...
