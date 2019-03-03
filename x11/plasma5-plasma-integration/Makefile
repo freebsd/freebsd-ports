@@ -2,7 +2,7 @@
 
 PORTNAME=	plasma-integration
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -34,7 +34,7 @@ NOTO_DESC=	KDE default font
 LIGHT_DESC=	Use noto-light
 BIG_DESC=	Use complete noto
 
-LIGHT_RUN_DEPENDS=	noto-lite>=0:x11-fonts/noto-lite
+LIGHT_RUN_DEPENDS=	noto-basic>=0:x11-fonts/noto-basic
 BIG_RUN_DEPENDS=	noto>=0:x11-fonts/noto
 
 .include <bsd.port.mk>
