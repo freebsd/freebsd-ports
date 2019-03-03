@@ -11658,3 +11658,4 @@ sysutils/bacula-server|sysutils/bacula9-server|2019-03-03|Has expired: Unsupport
 sysutils/bacula-docs|sysutils/bacula9-docs|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-docs
 sysutils/bacula-client-static|sysutils/bacula9-client-static|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
 sysutils/bacula-bat|sysutils/bacula9-bat|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
+x11-fonts/noto-lite|x11-fonts/noto-basic|2019-03-03|Rename for reorganizing noto* ports
