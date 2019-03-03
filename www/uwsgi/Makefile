@@ -48,6 +48,8 @@ JSON_LIB_DEPENDS=	libjansson.so:devel/jansson
 PCRE_VARS=		BUILDCONF_PCRE=true
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 
+PSGI_USES=		perl5
+
 XML_VARS=		BUILDCONF_XML=libxml2
 XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
