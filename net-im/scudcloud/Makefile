@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 GH_ACCOUNT=	raelgc
 
 HUNSPELL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hunspell>0:textproc/py-hunspell@${PY_FLAVOR} \
-			qupzilla:www/qupzilla-qt5
+			falkon:www/falkon
 
 INSTALLS_ICONS=	yes
 
