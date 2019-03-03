@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PHP_Timer
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.1
 CATEGORIES=	devel pear
 
 MAINTAINER=	joneum@FreeBSD.org
