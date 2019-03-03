@@ -8,7 +8,7 @@ MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	GNU grep
+COMMENT=	GNU version of popular pattern matching utility
 
 LICENSE=	GPLv3+
 
