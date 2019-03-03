@@ -1,0 +1,12 @@
+Noto Sans CJK and Noto Serif CJK comprehensively cover Simplified Chinese,
+Traditional Chinese, Japanese, and Korean in a unified font family. This
+includes the full coverage of CJK Ideographs with variation support for 4
+regions, Kangxi radicals, Japanese Kana, Korean Hangul, and other CJK symbols
+and letters in the Basic Multilingual Plane of Unicode. It also provides limited
+coverage of CJK Ideographs in Plane 2 of Unicode as necessary to support
+standards from China and Japan.
+
+This port is the set of Japanese fonts which supports all of the kanji in JIS X
+0208, JIS X 0213, and JIS X 0212 to include all kanji in Adobe-Japan1-6.
+
+WWW: https://www.google.com/get/noto/
