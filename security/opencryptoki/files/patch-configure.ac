@@ -1,0 +1,98 @@
+--- configure.ac.orig	2018-11-16 14:53:03 UTC
++++ configure.ac
+@@ -12,6 +12,9 @@ dnl Checks for header files.
+ AC_DISABLE_STATIC
+ LT_INIT
+ 
++AC_DEFINE(_BSD_SOURCE, 1, BSD functions)
++AC_DEFINE(__BSD_VISIBLE, 1, BSD extensions)
++
+ AC_HEADER_STDC
+ AC_CHECK_HEADER_STDBOOL
+ AC_CHECK_HEADERS([arpa/inet.h fcntl.h libintl.h limits.h locale.h malloc.h \
+@@ -77,18 +80,27 @@ fi
+ AC_CHECK_LIB([itm], [_ITM_commitTransaction], [itm=yes], [itm=no])
+ 
+ OPENLDAP_LIBS=
+-AC_CHECK_HEADERS([lber.h ldap.h],
++if test "x$enable_icsftok" = "xyes"; then
++    AC_CHECK_HEADERS([lber.h ldap.h],
+                 [OPENLDAP_LIBS="-llber -lldap"],
+                 [AC_MSG_ERROR([lber.h and ldap.h are missing. Please install
+                               'openldap-devel'.])])
+-LIBS="$LIBS $OPENLDAP_LIBS"
++    LIBS="$LIBS $OPENLDAP_LIBS"
++fi
+ AC_SUBST([OPENLDAP_LIBS])
+ 
+ dnl Define custom variables
+ 
+-lockdir=$localstatedir/lock/opencryptoki
++AC_ARG_WITH([lockdir],
++	[AS_HELP_STRING([--with-lockdir],[lock directory])],
++	[lockdir=$withval],
++	[lockdir=$localstatedir/lock/opencryptoki])
+ AC_SUBST(lockdir)
+ 
++AC_ARG_WITH([logdir],
++	[AS_HELP_STRING([--with-logdir],[log directory])],
++	[logdir=$withval],
++	[logdir=$localstatedir/log/opencryptoki])
+ logdir=$localstatedir/log/opencryptoki
+ AC_SUBST(logdir)
+ 
+@@ -225,6 +237,19 @@ AC_ARG_WITH([systemd],
+ 	[],
+ 	[with_systemd=no])
+ 
++dnl --- check for pkcs11 user
++AC_ARG_WITH([pkcs11user],
++	AC_HELP_STRING([--with-pkcs11user[[=USER]]], [set pkcs11 user [[pkcs11]]]),
++	[pkcs11_user=$withval],
++	[pkcs11_user=pkcs11])
++dnl --- check for pkcs11 group
++AC_ARG_WITH(pkcs11group,
++	AC_HELP_STRING([--with-pkcs11group[[=GROUP]]], [set pkcs11 group [[pkcs11]]]),
++	[pkcs11_group=$withval],
++	[pkcs11_group=pkcs11])
++AC_SUBST(PKCS11USER, $pkcs11_user)
++AC_SUBST(PKCS11GROUP, $pkcs11_group)
++
+ dnl ---
+ dnl ---
+ dnl --- Now that we have all the options, let's check for a valid build
+@@ -598,12 +623,31 @@ else
+ fi
+ AM_CONDITIONAL([ENABLE_LOCKS], [test "x$enable_locks" = "xyes"])
+ 
+-CFLAGS="$CFLAGS -DPKCS64 -D_XOPEN_SOURCE=600 -Wall -Wextra"
++CFLAGS="$CFLAGS \
++ -Wall \
++ -Wextra \
++ -Wno-pointer-sign \
++"
++CPPFX=' \
++ -DCONFIG_PATH=\"$(localstatedir)/lib/opencryptoki\" \
++ -DSBIN_PATH=\"$(sbindir)\" \
++ -DLIB_PATH=\"$(libdir)\" \
++ -DLOCKDIR_PATH=\"$(lockdir)\" \
++ -DOCK_CONFDIR=\"$(sysconfdir)/opencryptoki\" \
++ -DOCK_LOGDIR=\"$(logdir)\" \
++'
++CPPFLAGS="$CPPFLAGS \
++ -DPKCS64 \
++ -D_XOPEN_SOURCE=600 \
++ $CPPFX \
++ -DPKCS11USER=\\\"${pkcs11_user}\\\" \
++ -DPKCS11GROUP=\\\"${pkcs11_group}\\\" \
++"
+ 
+-CFLAGS+=' -DCONFIG_PATH=\"$(localstatedir)/lib/opencryptoki\" -DSBIN_PATH=\"$(sbindir)\" -DLIB_PATH=\"$(libdir)\" -DLOCKDIR_PATH=\"$(lockdir)\" -DOCK_CONFDIR=\"$(sysconfdir)/opencryptoki\" -DOCK_LOGDIR=\"$(logdir)\"'
+-
+ # At this point, CFLAGS is set to something sensible
+ AC_PROG_CC
++
++AC_SUBST(FPIC, $lt_prog_compiler_pic)
+ 
+ AC_CONFIG_MACRO_DIRS([m4])
+ 

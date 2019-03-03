@@ -1,6 +1,6 @@
---- usr/lib/pkcs11/common/btree.c.orig	2016-04-29 17:26:45 UTC
-+++ usr/lib/pkcs11/common/btree.c
-@@ -30,7 +30,7 @@
+--- usr/lib/common/btree.c.orig	2018-11-16 14:53:03 UTC
++++ usr/lib/common/btree.c
+@@ -18,7 +18,7 @@
  
  
  #include <stdio.h>
