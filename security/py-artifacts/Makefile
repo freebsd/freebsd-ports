@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	artifacts
-PORTVERSION=	20190113
+PORTVERSION=	20190227
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/ForensicArtifacts/artifacts/releases/download/${PORTVERSION}/
@@ -15,8 +15,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
-		yapf:textproc/py-yapf
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
