@@ -1,4 +1,0 @@
-@sample %%ETCDIR%%/bat.conf.sample
-man/man1/bat.1.gz
-sbin/bat
-

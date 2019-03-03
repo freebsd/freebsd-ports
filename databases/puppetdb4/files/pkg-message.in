@@ -1,6 +1,0 @@
-If this is a new installation, please run the follow to setup your SSL/puppetdb
-server:
-
-%%PREFIX%%/bin/puppetdb ssl-setup
-
-Please also remember to add puppetdb_enable="YES" into your rc.conf.
