@@ -1,6 +1,6 @@
---- src/tpm_mgmt/tpm_present.c.orig	2012-05-17 17:49:58 UTC
+--- src/tpm_mgmt/tpm_present.c.orig	2017-02-21 01:23:57 UTC
 +++ src/tpm_mgmt/tpm_present.c
-@@ -168,9 +168,10 @@ static BOOL confirmLifeLock(TSS_HCONTEXT
+@@ -168,9 +168,10 @@ static BOOL confirmLifeLock(TSS_HCONTEXT hContext, TSS
  	TSS_HPOLICY hTpmPolicy;
  	char *pwd = NULL;
  	int pswd_len;
