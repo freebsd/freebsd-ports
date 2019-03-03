@@ -1,4 +1,21 @@
-Noto is Google's font family that aims to support all the world's languages.
-Its design goal is to achieve visual harmonization across languages.
+When text is rendered by a computer, sometimes characters are displayed as
+"tofu". They are little boxes to indicate your device doesn't have a font to
+display the text.
 
-WWW: http://www.google.com/get/noto/
+Google has been developing a font family called Noto, which aims to support all
+languages with a harmonious look and feel. Noto is Google's answer to tofu. The
+name noto is to convey the idea that Google's goal is to see no more "tofu".
+Noto has multiple styles and weights, and is freely available to all. The
+comprehensive set of fonts and tools used in our development is available in our
+GitHub repositories.
+
+x11-fonts/noto is a meta port which includes:
+- x11-fonts/noto-basic: basic fonts set with emoji
+- x11-fonts/noto-extra: extra fonts set
+- x11-fonts/noto-jp: Japanese fonts set
+- x11-fonts/noto-kr: Korean fonts set
+- x11-fonts/noto-sc: Simplified Chinese fonts set
+- x11-fonts/noto-tc: Traditional Chinese fonts set
+
+WWW: https://www.google.com/get/noto/
+WWW: https://github.com/googlei18n?q=noto
