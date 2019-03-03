@@ -2,6 +2,7 @@
 
 PORTNAME=	google-fonts
 DISTVERSION=	0.0.0.20190118
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	dg@syrec.org
@@ -13,7 +14,7 @@ LICENSE_COMB=	multi
 RUN_DEPENDS=	anonymous-pro>0:x11-fonts/anonymous-pro \
 		comfortaa-ttf>0:x11-fonts/comfortaa-ttf \
 		croscorefonts>0:x11-fonts/croscorefonts-fonts-ttf \
-		noto-lite>0:x11-fonts/noto-lite \
+		noto-basic>0:x11-fonts/noto-basic \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf \
 		sourcecodepro-ttf>0:x11-fonts/sourcecodepro-ttf \
 		sourcesanspro-ttf>0:x11-fonts/sourcesanspro-ttf \
