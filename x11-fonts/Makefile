@@ -163,6 +163,7 @@
     SUBDIR += nexfontsel
     SUBDIR += noto
     SUBDIR += noto-basic
+    SUBDIR += noto-extra
     SUBDIR += nucleus
     SUBDIR += ohsnap
     SUBDIR += oldschool-pc-fonts
