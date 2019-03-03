@@ -1,15 +1,16 @@
---- setup.py.orig	2017-03-28 11:25:30 UTC
+--- setup.py.orig	2019-03-02 23:56:14 UTC
 +++ setup.py
-@@ -46,7 +46,7 @@ BINARIES_NAME = {
+@@ -46,7 +46,8 @@ BINARIES_NAME = {
      # binary remote name: binary local name
-     'clasp-3.1.3': 'clasp',
+     'clasp-3.1.1': 'clasp',
      'gringo-3.0.5': 'gringo3',
--    'gringo-4.5.3': 'gringo4',
+-    'gringo-5.3.0': 'gringo4',
 +    'gringo-4.5.3': 'gringo',
++    'gringo-5.3.0': 'gringo',
  }
  
  BASE_URL_PLATFORM_SPECIFIC_SUBPATHS = {
-@@ -142,7 +142,7 @@ class install(_install):
+@@ -138,7 +139,7 @@ class install(_install):
      def run(self):
          """Call superclass run method, then downloads the binaries"""
          _install.run(self)
