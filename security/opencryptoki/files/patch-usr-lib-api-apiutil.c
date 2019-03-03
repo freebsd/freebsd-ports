@@ -1,6 +1,6 @@
---- usr/lib/pkcs11/api/apiutil.c.orig	2016-04-29 17:26:45 UTC
-+++ usr/lib/pkcs11/api/apiutil.c
-@@ -298,10 +298,10 @@
+--- usr/lib/api/apiutil.c.orig	2018-11-16 14:53:03 UTC
++++ usr/lib/api/apiutil.c
+@@ -19,10 +19,10 @@
  #include <string.h>
  #include <strings.h>
  #include <unistd.h>
@@ -12,7 +12,7 @@
  
  #include <sys/ipc.h>
  
-@@ -314,7 +314,6 @@
+@@ -35,7 +35,6 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <fcntl.h>
