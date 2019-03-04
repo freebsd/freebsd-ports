@@ -11,6 +11,8 @@ COMMENT=	Intel(R) Math Kernel Library for Deep Neural Networks
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	Intel MKL-DNN supports Intel 64 architecture and compatible architectures
 BROKEN_i386=	error: shift count >= width of type (and other errors), see https://github.com/intel/mkl-dnn/issues/315
 
 TEST_DEPENDS=	bash:shells/bash
