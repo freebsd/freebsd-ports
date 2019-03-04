@@ -743,6 +743,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/af.xml
 %%DATADIR%%/data/annotationsDerived/am.xml
 %%DATADIR%%/data/annotationsDerived/ar.xml
+%%DATADIR%%/data/annotationsDerived/ar_SA.xml
 %%DATADIR%%/data/annotationsDerived/as.xml
 %%DATADIR%%/data/annotationsDerived/ast.xml
 %%DATADIR%%/data/annotationsDerived/az.xml
@@ -786,10 +787,12 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/hr.xml
 %%DATADIR%%/data/annotationsDerived/hu.xml
 %%DATADIR%%/data/annotationsDerived/hy.xml
+%%DATADIR%%/data/annotationsDerived/ia.xml
 %%DATADIR%%/data/annotationsDerived/id.xml
 %%DATADIR%%/data/annotationsDerived/is.xml
 %%DATADIR%%/data/annotationsDerived/it.xml
 %%DATADIR%%/data/annotationsDerived/ja.xml
+%%DATADIR%%/data/annotationsDerived/jv.xml
 %%DATADIR%%/data/annotationsDerived/ka.xml
 %%DATADIR%%/data/annotationsDerived/kab.xml
 %%DATADIR%%/data/annotationsDerived/kk.xml
@@ -823,11 +826,13 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/si.xml
 %%DATADIR%%/data/annotationsDerived/sk.xml
 %%DATADIR%%/data/annotationsDerived/sl.xml
+%%DATADIR%%/data/annotationsDerived/so.xml
 %%DATADIR%%/data/annotationsDerived/sq.xml
-%%DATADIR%%/data/annotationsDerived/sr_Cyrl_BA.xml
-%%DATADIR%%/data/annotationsDerived/sr_Cyrl.xml
-%%DATADIR%%/data/annotationsDerived/sr_Latn.xml
 %%DATADIR%%/data/annotationsDerived/sr.xml
+%%DATADIR%%/data/annotationsDerived/sr_Cyrl.xml
+%%DATADIR%%/data/annotationsDerived/sr_Cyrl_BA.xml
+%%DATADIR%%/data/annotationsDerived/sr_Latn.xml
+%%DATADIR%%/data/annotationsDerived/sr_Latn_BA.xml
 %%DATADIR%%/data/annotationsDerived/sv.xml
 %%DATADIR%%/data/annotationsDerived/sw.xml
 %%DATADIR%%/data/annotationsDerived/ta.xml
