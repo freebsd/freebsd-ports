@@ -476,8 +476,6 @@
     SUBDIR += monast
     SUBDIR += mongoose
     SUBDIR += mongrel2
-    SUBDIR += moodle31
-    SUBDIR += moodle34
     SUBDIR += moodle35
     SUBDIR += moodle36
     SUBDIR += mozplugger
