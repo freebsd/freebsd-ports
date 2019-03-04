@@ -1,0 +1,411 @@
+--- libraries/containers/include/containers.h
++++ libraries/containers/include/containers.h
+@@ -35,7 +35,6 @@
+ 
+ #ifdef __GLASGOW_HASKELL__
+ # define USE_ST_MONAD 1
+-# define USE_UNBOXED_ARRAYS 1
+ #endif
+ 
+ #endif
+
+From cbdb2dcf8ff0702d0a52f8fc3ee0288c9dde0e92 Mon Sep 17 00:00:00 2001
+From: Peter Trommler <ptrommler@acm.org>
+Date: Fri, 28 Dec 2018 22:30:34 +0100
+Subject: [PATCH] RTS: Use ELF v1 convention on all powerpc64 systems
+
+---
+ rts/StgCRun.c | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/rts/StgCRun.c b/rts/StgCRun.c
+index 92b0696c2b..4480198564 100644
+--- rts/StgCRun.c
++++ rts/StgCRun.c
+@@ -749,7 +749,6 @@ StgRunIsImplementedInAssembler(void)
+ 
+ #if defined(powerpc64_HOST_ARCH)
+ 
+-#if defined(linux_HOST_OS)
+ static void GNUC3_ATTRIBUTE(used)
+ StgRunIsImplementedInAssembler(void)
+ {
+@@ -871,10 +870,6 @@ StgRunIsImplementedInAssembler(void)
+         : : "i"(RESERVED_C_STACK_BYTES+304 /*stack frame size*/));
+ }
+ 
+-#else // linux_HOST_OS
+-#error Only Linux support for power64 right now.
+-#endif
+-
+ #endif
+ 
+ #if defined(powerpc64le_HOST_ARCH)
+
+
+
+
+From f4399ce96514ab58d766de999896780e93c886c6 Mon Sep 17 00:00:00 2001
+From: Peter Trommler <ptrommler@acm.org>
+Date: Fri, 28 Dec 2018 23:52:31 +0100
+Subject: [PATCH] PPC NCG: Make calling convention more general
+
+All operating systems except AIX and Darwin follow the ELF
+specification.
+---
+ compiler/nativeGen/PPC/CodeGen.hs | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+diff --git a/compiler/nativeGen/PPC/CodeGen.hs b/compiler/nativeGen/PPC/CodeGen.hs
+index efd9591c71..56e3bc280b 100644
+--- compiler/nativeGen/PPC/CodeGen.hs
++++ compiler/nativeGen/PPC/CodeGen.hs
+@@ -1565,18 +1565,17 @@ genCCall target dest_regs argsAndHints
+                 = panic "genCall: Wrong number of arguments/results for fabs"
+ 
+ -- TODO: replace 'Int' by an enum such as 'PPC_64ABI'
+-data GenCCallPlatform = GCPLinux | GCPDarwin | GCPLinux64ELF !Int | GCPAIX
++data GenCCallPlatform = GCP32ELF | GCP64ELF !Int | GCPAIX | GCPDarwin
+ 
+ platformToGCP :: Platform -> GenCCallPlatform
+ platformToGCP platform = case platformOS platform of
+-    OSLinux  -> case platformArch platform of
+-        ArchPPC           -> GCPLinux
+-        ArchPPC_64 ELF_V1 -> GCPLinux64ELF 1
+-        ArchPPC_64 ELF_V2 -> GCPLinux64ELF 2
+-        _ -> panic "PPC.CodeGen.platformToGCP: Unknown Linux"
+     OSAIX    -> GCPAIX
+     OSDarwin -> GCPDarwin
+-    _ -> panic "PPC.CodeGen.platformToGCP: not defined for this OS"
++    _ -> case platformArch platform of
++            ArchPPC           -> GCP32ELF
++            ArchPPC_64 ELF_V1 -> GCP64ELF 1
++            ArchPPC_64 ELF_V2 -> GCP64ELF 2
++	    _ -> panic "platformToGCP: Not PowerPC"
+ 
+ 
+ genCCall'
+
+
+
+-- 
+2.19.2
+
+From fa2128cb78a8b365d822c23b8da19fa14ac23ce3 Mon Sep 17 00:00:00 2001
+From: Peter Trommler <ptrommler@acm.org>
+Date: Fri, 28 Dec 2018 23:55:35 +0100
+Subject: [PATCH] PPC NCG: Make `stackHeaderSize` more general
+
+---
+ compiler/nativeGen/PPC/Instr.hs | 13 ++++++-------
+ 1 file changed, 6 insertions(+), 7 deletions(-)
+
+diff --git a/compiler/nativeGen/PPC/Instr.hs b/compiler/nativeGen/PPC/Instr.hs
+index 8eb5e8fa8d..ce421ed4bf 100644
+--- compiler/nativeGen/PPC/Instr.hs
++++ compiler/nativeGen/PPC/Instr.hs
+@@ -573,15 +573,14 @@ ppc_mkLoadInstr dflags reg delta slot
+ stackFrameHeaderSize :: DynFlags -> Int
+ stackFrameHeaderSize dflags
+   = case platformOS platform of
+-      OSLinux  -> case platformArch platform of
+-                             -- header + parameter save area
+-        ArchPPC           -> 64 -- TODO: check ABI spec
+-        ArchPPC_64 ELF_V1 -> 48 + 8 * 8
+-        ArchPPC_64 ELF_V2 -> 32 + 8 * 8
+-        _ -> panic "PPC.stackFrameHeaderSize: Unknown Linux"
+       OSAIX    -> 24 + 8 * 4
+       OSDarwin -> 64 -- TODO: check ABI spec
+-      _ -> panic "PPC.stackFrameHeaderSize: not defined for this OS"
++      _ -> case platformArch platform of
++                             -- header + parameter save area
++             ArchPPC           -> 64 -- TODO: check ABI spec
++             ArchPPC_64 ELF_V1 -> 48 + 8 * 8
++             ArchPPC_64 ELF_V2 -> 32 + 8 * 8
++             _ -> panic "PPC.stackFrameHeaderSize: not defined for this OS"
+      where platform = targetPlatform dflags
+ 
+ -- | The maximum number of bytes required to spill a register. PPC32
+
+
+
+-- 
+2.19.2
+
+From 3472824eee7c616aaf755c147ef2c3e4d79fbec4 Mon Sep 17 00:00:00 2001
+From: Peter Trommler <ptrommler@acm.org>
+Date: Sat, 29 Dec 2018 10:12:48 +0100
+Subject: [PATCH] PPC NCG: GOT declaration for all 64-bit ELF systems
+
+---
+ compiler/nativeGen/PIC.hs | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/compiler/nativeGen/PIC.hs b/compiler/nativeGen/PIC.hs
+index 2f300c4614..7be7a860f7 100644
+--- compiler/nativeGen/PIC.hs
++++ compiler/nativeGen/PIC.hs
+@@ -527,19 +527,17 @@ pprGotDeclaration _ _ OSAIX
+                  ]
+ 
+ 
+--- PPC 64 ELF v1 needs a Table Of Contents (TOC) on Linux
+-pprGotDeclaration _ (ArchPPC_64 ELF_V1) OSLinux
++-- PPC 64 ELF v1 needs a Table Of Contents (TOC)
++pprGotDeclaration _ (ArchPPC_64 ELF_V1) _
+         = text ".section \".toc\",\"aw\""
+ -- In ELF v2 we also need to tell the assembler that we want ABI
+ -- version 2. This would normally be done at the top of the file
+ -- right after a file directive, but I could not figure out how
+ -- to do that.
+-pprGotDeclaration _ (ArchPPC_64 ELF_V2) OSLinux
++pprGotDeclaration _ (ArchPPC_64 ELF_V2) _
+         = vcat [ text ".abiversion 2",
+                  text ".section \".toc\",\"aw\""
+                ]
+-pprGotDeclaration _ (ArchPPC_64 _) _
+-        = panic "pprGotDeclaration: ArchPPC_64 only Linux supported"
+ 
+ -- Emit GOT declaration
+ -- Output whatever needs to be output once per .s file.
+
+
+
+-- 
+2.19.2
+
+From 749e343ef07aeeb71fe38c432f1b88ad8a6d2a58 Mon Sep 17 00:00:00 2001
+From: Peter Trommler <ptrommler@acm.org>
+Date: Sat, 29 Dec 2018 10:14:12 +0100
+Subject: [PATCH] PPC NCG: Register definitions for all 64-bit systems
+
+---
+ compiler/nativeGen/PPC/Regs.hs | 11 +++--------
+ 1 file changed, 3 insertions(+), 8 deletions(-)
+
+diff --git a/compiler/nativeGen/PPC/Regs.hs b/compiler/nativeGen/PPC/Regs.hs
+index 227517be88..7a6d6ed8e5 100644
+--- compiler/nativeGen/PPC/Regs.hs
++++ compiler/nativeGen/PPC/Regs.hs
+@@ -229,12 +229,8 @@ allArgRegs = map regSingle [3..10]
+ 
+ -- these are the regs which we cannot assume stay alive over a C call.
+ callClobberedRegs :: Platform -> [Reg]
+-callClobberedRegs platform
+-  = case platformOS platform of
+-    OSAIX    -> map regSingle (0:[2..12] ++ map fReg [0..13])
+-    OSDarwin -> map regSingle (0:[2..12] ++ map fReg [0..13])
+-    OSLinux  -> map regSingle (0:[2..13] ++ map fReg [0..13])
+-    _        -> panic "PPC.Regs.callClobberedRegs: not defined for this architecture"
++callClobberedRegs _platform
++  = map regSingle (0:[2..12] ++ map fReg [0..13])
+ 
+ 
+ allMachRegNos   :: [RegNo]
+@@ -265,11 +261,10 @@ allFPArgRegs platform
+     = case platformOS platform of
+       OSAIX    -> map (regSingle . fReg) [1..13]
+       OSDarwin -> map (regSingle . fReg) [1..13]
+-      OSLinux  -> case platformArch platform of
++      _        -> case platformArch platform of
+         ArchPPC      -> map (regSingle . fReg) [1..8]
+         ArchPPC_64 _ -> map (regSingle . fReg) [1..13]
+         _            -> panic "PPC.Regs.allFPArgRegs: unknown PPC Linux"
+-      _        -> panic "PPC.Regs.allFPArgRegs: not defined for this architecture"
+ 
+ fits16Bits :: Integral a => a -> Bool
+ fits16Bits x = x >= -32768 && x < 32768
+
+
+
+-- 
+2.19.2
+
+From 19731a77ed203870f76a53eaf01758efbb5144d3 Mon Sep 17 00:00:00 2001
+From: Peter Trommler <ptrommler@acm.org>
+Date: Sun, 13 Jan 2019 15:16:28 +0100
+Subject: [PATCH] PPC NCG: Emit type declaration on all ELF systems
+
+---
+ compiler/nativeGen/PPC/Ppr.hs | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/compiler/nativeGen/PPC/Ppr.hs b/compiler/nativeGen/PPC/Ppr.hs
+index 2f64d82ee5..82726d90d9 100644
+--- compiler/nativeGen/PPC/Ppr.hs
++++ compiler/nativeGen/PPC/Ppr.hs
+@@ -142,9 +142,8 @@ pprGloblDecl lbl
+ pprTypeAndSizeDecl :: CLabel -> SDoc
+ pprTypeAndSizeDecl lbl
+   = sdocWithPlatform $ \platform ->
+-    if platformOS platform == OSLinux && externallyVisibleCLabel lbl
+-    then text ".type " <>
+-         ppr lbl <> text ", @object"
++    if osElfTarget (platformOS platform) && externallyVisibleCLabel lbl
++    then text "\t.type " <> ppr lbl <> text ", @object"
+     else empty
+ 
+ pprLabel :: CLabel -> SDoc
+-- 
+2.19.2
+
+--- compiler/nativeGen/PPC/CodeGen.hs.orig	2018-09-16 22:53:54.000000000 +0200
++++ compiler/nativeGen/PPC/CodeGen.hs	2019-01-17 10:03:25.018164000 +0100
+@@ -1047,7 +1047,7 @@ genJump tree
+ 
+ genJump' :: CmmExpr -> GenCCallPlatform -> NatM InstrBlock
+ 
+-genJump' tree (GCPLinux64ELF 1)
++genJump' tree (GCP64ELF 1)
+   = do
+         (target,code) <- getSomeReg tree
+         return (code
+@@ -1057,7 +1057,7 @@ genJump' tree (GCPLinux64ELF 1)
+                `snocOL` LD II64 r11 (AddrRegImm target (ImmInt 16))
+                `snocOL` BCTR [] Nothing)
+ 
+-genJump' tree (GCPLinux64ELF 2)
++genJump' tree (GCP64ELF 2)
+   = do
+         (target,code) <- getSomeReg tree
+         return (code
+@@ -1667,7 +1667,7 @@ genCCall' dflags gcp target dest_regs args
+             Right dyn -> do -- implement call through function pointer
+                 (dynReg, dynCode) <- getSomeReg dyn
+                 case gcp of
+-                     GCPLinux64ELF 1 -> return ( dynCode
++                     GCP64ELF 1 -> return ( dynCode
+                        `appOL`  codeBefore
+                        `snocOL` ST spFormat toc (AddrRegImm sp (ImmInt 40))
+                        `snocOL` LD II64 r11 (AddrRegImm dynReg (ImmInt 0))
+@@ -1677,7 +1677,7 @@ genCCall' dflags gcp target dest_regs args
+                        `snocOL` BCTRL usedRegs
+                        `snocOL` LD spFormat toc (AddrRegImm sp (ImmInt 40))
+                        `appOL`  codeAfter)
+-                     GCPLinux64ELF 2 -> return ( dynCode
++                     GCP64ELF 2 -> return ( dynCode
+                        `appOL`  codeBefore
+                        `snocOL` ST spFormat toc (AddrRegImm sp (ImmInt 24))
+                        `snocOL` MR r12 dynReg
+@@ -1715,9 +1715,9 @@ genCCall' dflags gcp target dest_regs args
+         initialStackOffset = case gcp of
+                              GCPAIX          -> 24
+                              GCPDarwin       -> 24
+-                             GCPLinux        -> 8
+-                             GCPLinux64ELF 1 -> 48
+-                             GCPLinux64ELF 2 -> 32
++                             GCP32ELF   -> 8
++                             GCP64ELF 1 -> 48
++                             GCP64ELF 2 -> 32
+                              _ -> panic "genCall': unknown calling convention"
+             -- size of linkage area + size of arguments, in bytes
+         stackDelta finalStack = case gcp of
+@@ -1727,12 +1727,12 @@ genCCall' dflags gcp target dest_regs args
+                                 GCPDarwin ->
+                                     roundTo 16 $ (24 +) $ max 32 $ sum $
+                                     map (widthInBytes . typeWidth) argReps
+-                                GCPLinux -> roundTo 16 finalStack
+-                                GCPLinux64ELF 1 ->
++                                GCP32ELF -> roundTo 16 finalStack
++                                GCP64ELF 1 ->
+                                     roundTo 16 $ (48 +) $ max 64 $ sum $
+                                     map (roundTo 8 . widthInBytes . typeWidth)
+                                         argReps
+-                                GCPLinux64ELF 2 ->
++                                GCP64ELF 2 ->
+                                     roundTo 16 $ (32 +) $ max 64 $ sum $
+                                     map (roundTo 8 . widthInBytes . typeWidth)
+                                         argReps
+@@ -1765,13 +1765,14 @@ genCCall' dflags gcp target dest_regs args
+         -- link editor replaces the NOP instruction with a load of the TOC
+         -- from the stack to restore the TOC.
+         maybeNOP = case gcp of
++           GCP32ELF        -> nilOL
+            -- See Section 3.9.4 of OpenPower ABI
+            GCPAIX          -> unitOL NOP
+            -- See Section 3.5.11 of PPC64 ELF v1.9
+-           GCPLinux64ELF 1 -> unitOL NOP
++           GCP64ELF 1      -> unitOL NOP
+            -- See Section 2.3.6 of PPC64 ELF v2
+-           GCPLinux64ELF 2 -> unitOL NOP
+-           _               -> nilOL
++           GCP64ELF 2      -> unitOL NOP
++           _               -> panic "maybeNOP: Unknown PowerPC 64-bit ABI"
+ 
+         passArguments [] _ _ stackOffset accumCode accumUsed = return (stackOffset, accumCode, accumUsed)
+         passArguments ((arg,arg_ty):args) gprs fprs stackOffset
+@@ -1806,7 +1807,7 @@ genCCall' dflags gcp target dest_regs args
+                                                `snocOL` storeWord vr_hi gprs stackOffset
+                                                `snocOL` storeWord vr_lo (drop 1 gprs) (stackOffset+4))
+                                          ((take 2 gprs) ++ accumUsed)
+-                    GCPLinux ->
++                    GCP32ELF ->
+                         do let stackOffset' = roundTo 8 stackOffset
+                                stackCode = accumCode `appOL` code
+                                    `snocOL` ST II32 vr_hi (AddrRegImm sp (ImmInt stackOffset'))
+@@ -1826,7 +1827,7 @@ genCCall' dflags gcp target dest_regs args
+                                _ -> -- only one or no regs left
+                                    passArguments args [] fprs (stackOffset'+8)
+                                                  stackCode accumUsed
+-                    GCPLinux64ELF _ -> panic "passArguments: 32 bit code"
++                    GCP64ELF _ -> panic "passArguments: 32 bit code"
+ 
+         passArguments ((arg,rep):args) gprs fprs stackOffset accumCode accumUsed
+             | reg : _ <- regs = do
+@@ -1841,9 +1842,9 @@ genCCall' dflags gcp target dest_regs args
+                                      -- ... so does the PowerOpen ABI.
+                                      GCPAIX    -> stackOffset + stackBytes
+                                      -- ... the SysV ABI 32-bit doesn't.
+-                                     GCPLinux -> stackOffset
++                                     GCP32ELF -> stackOffset
+                                      -- ... but SysV ABI 64-bit does.
+-                                     GCPLinux64ELF _ -> stackOffset + stackBytes
++                                     GCP64ELF _ -> stackOffset + stackBytes
+                 passArguments args
+                               (drop nGprs gprs)
+                               (drop nFprs fprs)
+@@ -1868,14 +1869,14 @@ genCCall' dflags gcp target dest_regs args
+                                    -- The 32bit PowerOPEN ABI is happy with
+                                    -- 32bit-alignment as well...
+                                    stackOffset
+-                               GCPLinux
++                               GCP32ELF
+                                    -- ... the SysV ABI requires 8-byte
+                                    -- alignment for doubles.
+                                 | isFloatType rep && typeWidth rep == W64 ->
+                                    roundTo 8 stackOffset
+                                 | otherwise ->
+                                    stackOffset
+-                               GCPLinux64ELF _ ->
++                               GCP64ELF _ ->
+                                    -- Everything on the stack is mapped to
+                                    -- 8-byte aligned doublewords
+                                    stackOffset
+@@ -1886,7 +1887,7 @@ genCCall' dflags gcp target dest_regs args
+                          -- "Single precision floating point values
+                          -- are mapped to the second word in a single
+                          -- doubleword"
+-                         GCPLinux64ELF 1 -> stackOffset' + 4
++                         GCP64ELF 1 -> stackOffset' + 4
+                          _               -> stackOffset'
+                      | otherwise = stackOffset'
+ 
+@@ -1925,7 +1926,7 @@ genCCall' dflags gcp target dest_regs args
+                           FF64 -> (2, 1, 8, fprs)
+                           II64 -> panic "genCCall' passArguments II64"
+                           FF80 -> panic "genCCall' passArguments FF80"
+-                      GCPLinux ->
++                      GCP32ELF ->
+                           case cmmTypeFormat rep of
+                           II8  -> (1, 0, 4, gprs)
+                           II16 -> (1, 0, 4, gprs)
+@@ -1935,7 +1936,7 @@ genCCall' dflags gcp target dest_regs args
+                           FF64 -> (0, 1, 8, fprs)
+                           II64 -> panic "genCCall' passArguments II64"
+                           FF80 -> panic "genCCall' passArguments FF80"
+-                      GCPLinux64ELF _ ->
++                      GCP64ELF _ ->
+                           case cmmTypeFormat rep of
+                           II8  -> (1, 0, 8, gprs)
+                           II16 -> (1, 0, 8, gprs)
+--- CodeGen.hs.orig	2018-09-16 22:53:54.000000000 +0200

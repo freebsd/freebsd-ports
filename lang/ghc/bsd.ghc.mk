@@ -7,6 +7,13 @@
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 
+GHC_VERSION_MAJOR=	${GHC_VERSION:S/./ /g:[1]}
+GHC_VERSION_MINOR=	${GHC_VERSION:S/./ /g:[2]}
+
+.if ${GHC_VERSION_MAJOR} >= 8 && ${GHC_VERSION_MINOR} >= 6
+ONLY_FOR_ARCHS+=	powerpc64
+.endif
+
 DATADIR=	${PREFIX}/share/ghc-${GHC_VERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}
 
@@ -83,6 +90,8 @@ GHC_ARCH=		${ARCH:S/amd64/x86_64/:C/armv.*/arm/}
 .if empty(PORT_OPTIONS:MBOOT)
 .  if ${ARCH} == armv6 || ${ARCH} == armv7
 BOOT_GHC_VERSION=	8.4.2
+.  elif ${ARCH} == powerpc64
+BOOT_GHC_VERSION=	8.6.3
 .  else
 BOOT_GHC_VERSION=	8.4.3
 .  endif
@@ -119,6 +128,15 @@ IGNORE=	lang/ghc on ARM requires at least __FreeBSD_version 1200064
 
 .  ifdef QEMU_EMULATING
 IGNORE=	qemu-user-static isn't able to build lang/ghc, but it builds fine on a real hardware
+.  endif
+.endif
+
+.if ${ARCH} == powerpc64
+USE_GCC=	yes
+CONFIGURE_ENV+=	STRIP=${LOCALBASE}/bin/strip
+
+.  if ${OSVERSION} < 1200086
+IGNORE=	lang/ghc on powerpc64 requires at least __FreeBSD_version 1200086
 .  endif
 .endif
 
@@ -164,9 +182,9 @@ MAKE_ENV+=	PATH=${SLAVES_PREFIX}/bin:${PATH}
 CONFIGURE_ENV+=	PATH=${SLAVES_PREFIX}/bin:${PATH}
 
 post-extract:
-# don't use the "wrap" trick on arches that use post-ino64 bootstrap binaries (arm*)
+# Use the "wrap" trick on arches that have to use pre-ino64 bootstrap binaries
 .if empty(PORT_OPTIONS:MBOOT) && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200031 && \
-    ${ARCH} != aarch64 && ${ARCH} != armv6 && ${ARCH} != armv7
+    (${ARCH} == amd64 || ${ARCH} == i386)
 	@${REINPLACE_CMD} -e 's|@SettingsCCompilerLinkFlags@|& -Wl,--wrap=readdir_r,--wrap=stat,--wrap=lstat,--wrap=fstat,--wrap=mknod|' ${BOOT_DIR}/settings.in
 .endif
 
@@ -222,7 +240,7 @@ pre-configure: apply-slist
 	@${MKDIR} ${TMPDIR}
 .if empty(PORT_OPTIONS:MBOOT) && ${OPSYS} == FreeBSD && \
     ${OSVERSION} >= 1200031 && \
-    ${ARCH} != aarch64 && ${ARCH} != armv6 && ${ARCH} != armv7
+    (${ARCH} == amd64 || ${ARCH} == i386)
 	${CC} ${CFLAGS} -c -o ${BOOT_DIR}/wrap.o ${PATCHDIR}/wrap.c
 	for x in ${BOOT_DIR}/rts/dist/build/libCffi*.a; do \
 	    ${AR} q $$x ${BOOT_DIR}/wrap.o; ${RANLIB} $$x; \
