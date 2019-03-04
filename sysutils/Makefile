@@ -851,6 +851,7 @@
     SUBDIR += panicmail
     SUBDIR += parafly
     SUBDIR += parallel
+    SUBDIR += pass-otp
     SUBDIR += password-store
     SUBDIR += passwordsafe
     SUBDIR += patchelf

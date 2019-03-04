@@ -1,0 +1,9 @@
+A pass extension for managing one-time-password (OTP) tokens.
+
+Features:
+- managing and generating OTP tokens
+- inserting new OTP key URI
+- validating OTP URI
+- appending OTP URI to existing password files
+
+WWW: https://github.com/tadfisher/pass-otp
