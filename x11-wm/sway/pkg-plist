@@ -13,6 +13,7 @@ bin/swaynag
 %%MANPAGES%%man/man5/sway-output.5.gz
 %%MANPAGES%%man/man5/sway.5.gz
 %%MANPAGES%%man/man5/swaynag.5.gz
+%%MANPAGES%%man/man7/sway-ipc.7.gz
 share/backgrounds/sway/Sway_Wallpaper_Blue_1136x640.png
 share/backgrounds/sway/Sway_Wallpaper_Blue_1136x640_Portrait.png
 share/backgrounds/sway/Sway_Wallpaper_Blue_1366x768.png
