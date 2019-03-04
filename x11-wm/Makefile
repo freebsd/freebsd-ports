@@ -83,6 +83,7 @@
     SUBDIR += mcwm
     SUBDIR += metacity
     SUBDIR += muffin
+    SUBDIR += musca
     SUBDIR += mutter
     SUBDIR += nickleby
     SUBDIR += obapps
