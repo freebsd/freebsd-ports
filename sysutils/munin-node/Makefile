@@ -3,7 +3,6 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
-PORTREVISION=	3
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
@@ -27,7 +26,7 @@ RUN_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
 
 USES=		gmake perl5 shebangfix cpe
 REINPLACE_ARGS=	-i ""
-SHEBANG_FILES=	node/bin/munindoc node/sbin/munin-node node/sbin/munin-sched \
+SHEBANG_FILES=	node/bin/munindoc node/sbin/munin-node \
 		node/sbin/munin-run node/sbin/munin-node-configure
 
 .include "${.CURDIR}/../munin-common/munin.mk"
@@ -57,7 +56,7 @@ JAVA_BUILD=	yes
 JAVA_RUN=	yes
 
 SUB_FILES=	pkg-message plugins.conf
-USE_RC_SUBR=	munin-asyncd munin-node munin-sched
+USE_RC_SUBR=	munin-asyncd munin-node
 
 PORTSCOUT=	ignore:1
 
@@ -84,7 +83,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/plugins.conf \
 		${STAGEDIR}${ETCDIR}/plugins.conf.sample
 	(cd ${WRKSRC}/node/blib/bindoc; \
-		${INSTALL_MAN} munin-node-configure.1 munin-node.1 munin-run.1 munin-sched.1 munindoc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1; \
+		${INSTALL_MAN} munin-node-configure.1 munin-node.1 munin-run.1 munindoc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1; \
 	)
 	(cd ${WRKSRC}/build/doc; \
 		${INSTALL_MAN} munin-node.conf.5 ${STAGEDIR}${MAN5PREFIX}/man/man5; \
