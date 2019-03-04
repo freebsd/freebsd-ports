@@ -1,3 +1,3 @@
-TIMESTAMP = 1540947814
-SHA256 (GoogleCloudPlatform-compute-image-packages-2.8.6-20181011_GH0.tar.gz) = c9fb44fb8c4bbde108a2aeba44f11938c7840256ca078804ec3c720a47e79144
-SIZE (GoogleCloudPlatform-compute-image-packages-2.8.6-20181011_GH0.tar.gz) = 147405
+TIMESTAMP = 1551668922
+SHA256 (GoogleCloudPlatform-compute-image-packages-2.8.13-20190124_GH0.tar.gz) = 09637f951245729c66eb5b7b9ed49bead31349b29829baf5c8a4e5d45405a2f4
+SIZE (GoogleCloudPlatform-compute-image-packages-2.8.13-20190124_GH0.tar.gz) = 126211
