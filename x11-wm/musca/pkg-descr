@@ -1,0 +1,11 @@
+Musca is a simple window manager for X11 allowing both tiling and stacking
+modes.  It's similar to ratpoison but more friendly to the mouse and using
+a simpler keyboard navigation.  There are no built in status bars, panels,
+or window decorations save for thin window borders to indicate focus.
+
+Window navigation can be mouse click to focus or entirely keyboard driven.
+Window tiling is manual but simple, and there are no restrictions on how
+you divide up the screen.  It uses dwm's dmenu utility for launching apps
+and running various built in commands not mapped to hot keys.
+
+WWW: https://launchpad.net/musca
