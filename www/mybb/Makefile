@@ -11,7 +11,7 @@ COMMENT=	PHP-based bulletin board / discussion forum system
 LICENSE=	GPLv3
 
 USE_GITHUB=	yes
-GH_TAGNAME=	${PORTNAME}_1819
+GH_TAGNAME=	${PORTNAME}_1820
 
 USES=		cpe mysql php:web
 NO_BUILD=	yes
