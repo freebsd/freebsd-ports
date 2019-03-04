@@ -2,4 +2,4 @@ Getopt::EX extends the basic function of Getopt family to
 support user-definable option aliases, and dynamic module which works
 together with the script through option interface.
 
-WWW: https://github.com/kaz-utashiro/greple/tree/master/lib/Getopt
+WWW: https://metacpan.org/release/Getopt-EX

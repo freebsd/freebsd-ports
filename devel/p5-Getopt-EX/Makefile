@@ -1,9 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	Getopt-EX
-PORTVERSION=	7.1.20170330
+PORTVERSION=	1.15.0
 DISTVERSIONPREFIX=	v
+PORTEPOCH=	1
 CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:UTASHIRO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -12,14 +15,8 @@ COMMENT=	Getopt Extender
 LICENSE=	ART10
 
 USES=		perl5
-USE_PERL5=	run
-USE_GITHUB=	yes
-GH_TUPLE=	kaz-utashiro:greple:084c10e
-NO_BUILD=	yes
-NO_ARCH=	yes
+USE_PERL5=	modbuildtiny
 
-do-install:
-	cd ${WRKSRC}/lib && \
-	    ${COPYTREE_SHARE} Getopt ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

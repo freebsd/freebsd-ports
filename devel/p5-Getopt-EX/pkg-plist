@@ -5,3 +5,14 @@
 %%SITE_PERL%%/Getopt/EX/Loader.pm
 %%SITE_PERL%%/Getopt/EX/Long.pm
 %%SITE_PERL%%/Getopt/EX/Module.pm
+%%SITE_PERL%%/Getopt/EX/Numbers.pm
+%%SITE_PERL%%/Getopt/EX/Util.pm
+%%PERL5_MAN3%%/Getopt::EX.3.gz
+%%PERL5_MAN3%%/Getopt::EX::Colormap.3.gz
+%%PERL5_MAN3%%/Getopt::EX::Func.3.gz
+%%PERL5_MAN3%%/Getopt::EX::LabeledParam.3.gz
+%%PERL5_MAN3%%/Getopt::EX::Loader.3.gz
+%%PERL5_MAN3%%/Getopt::EX::Long.3.gz
+%%PERL5_MAN3%%/Getopt::EX::Module.3.gz
+%%PERL5_MAN3%%/Getopt::EX::Numbers.3.gz
+%%PERL5_MAN3%%/Getopt::EX::Util.3.gz
