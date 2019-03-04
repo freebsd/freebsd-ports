@@ -1,0 +1,13 @@
+requests-aws4auth is Amazon Web Services version 4 authentication for the Python
+Requests library.
+
+Features:
+- Requests authentication for all AWS services that support AWS auth v4
+- Independent signing key objects
+- Automatic regeneration of keys when scope date boundary is passed
+- Support for STS temporary credentials
+
+Implements header-based authentication, GET URL parameter and POST parameter
+authentication are not supported.
+
+WWW: https://github.com/sam-washington/requests-aws4auth
