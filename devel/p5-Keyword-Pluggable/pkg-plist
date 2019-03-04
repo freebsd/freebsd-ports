@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Keyword/Pluggable.pm
+%%SITE_ARCH%%/auto/Keyword/Pluggable/Pluggable.so
+%%PERL5_MAN3%%/Keyword::Pluggable.3.gz
