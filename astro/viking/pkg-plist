@@ -19,6 +19,7 @@ share/icons/hicolor/48x48/apps/viking.png
 %%NLS%%share/locale/ja/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/jv/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/viking.mo
@@ -38,4 +39,5 @@ share/pixmaps/viking.png
 %%DATADIR%%/external_tools.xml
 %%DATADIR%%/goto_tools.xml
 %%DATADIR%%/latlontz.txt
+%%DATADIR%%/routing.xml
 %%DATADIR%%/maps.xml
