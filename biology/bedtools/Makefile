@@ -17,6 +17,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	arq5x
 GH_PROJECT=	bedtools2
 
+post-extract:
+# Avoid conflict with C++20 <version> by adding .txt suffix
+	@${MV} ${WRKSRC}/src/utils/gzstream/version \
+		${WRKSRC}/src/utils/gzstream/version.txt
+
 pre-build:
 	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|@\$$(CXX)|$$(CXX)|g' \
