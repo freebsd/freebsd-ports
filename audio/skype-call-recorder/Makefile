@@ -31,5 +31,9 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's,date --utc,TZ=UTC date,' \
 		${WRKSRC}/makeversion
+# Avoid conflict with C++20 <version> by adding .txt suffix
+	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
+	@${REINPLACE_CMD} -i .c++20 's,src/version,&.txt,' \
+		${WRKSRC}/makeversion
 
 .include <bsd.port.mk>
