@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	liberation-fonts-ttf
-PORTVERSION=	2.00.4
+PORTVERSION=	2.00.5
 PORTEPOCH=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/liberationfonts/liberation-fonts/files/2579281/
+MASTER_SITES=	https://github.com/liberationfonts/liberation-fonts/files/2926169/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Liberation fonts from Red Hat to replace MS TTF fonts
