@@ -2,6 +2,7 @@
 
 PORTNAME=	clover
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	lang
 
 COMMENT=	Mesa "Clover" OpenCL library
@@ -30,9 +31,9 @@ MESA_INSTALL_WRKSRC=	src/gallium/targets/opencl src/gallium/targets/pipe-loader
 .include "${MASTERDIR}/Makefile.targets"
 
 pre-configure:
-	@if [ -e ${LOCALBASE}/bin/llvm-config${MESA_LLVM_VER} ] && \
-		! [ -e ${LOCALBASE}/bin/clang${MESA_LLVM_VER} ]; then \
-		${ECHO_MSG} "Your llvm${MESA_LLVM_VER} is not built with clang support, which is required."; \
+	@if [ -e ${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT} ] && \
+		! [ -e ${LOCALBASE}/bin/clang${LLVM_DEFAULT} ]; then \
+		${ECHO_MSG} "Your llvm${LLVM_DEFAULT} is not built with clang support, which is required."; \
 		${FALSE}; \
 	fi
 

@@ -17,7 +17,7 @@ CONFIGURE_ARGS+=	--disable-dri --disable-egl --disable-gbm \
 MESA_BUILD_WRKSRC=	src/util src/compiler src/mapi src/mesa
 LDFLAGS_i386=		-Wl,-znotext
 
-.if "${MESA_LLVM_VER}" != ""
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Marm*} || ${ARCH} == i386 || ${ARCH:Mpowerpc*}
 CONFIGURE_ARGS+=	--enable-osmesa-gallium
 MESA_BUILD_WRKSRC+=	src/gallium
 MESA_INSTALL_WRKSRC=	src/gallium/state_trackers/osmesa src/gallium/targets/osmesa
