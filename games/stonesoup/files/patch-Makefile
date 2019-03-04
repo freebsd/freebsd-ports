@@ -1,6 +1,6 @@
---- Makefile.orig	2016-04-30 03:53:03 UTC
+--- Makefile.orig	2019-03-04 02:25:24 UTC
 +++ Makefile
-@@ -72,7 +72,7 @@
+@@ -75,7 +75,7 @@
  #    them; you can also ask for a package with convenience libraries instead --
  #    we'll try to provide them somewhere in the near future.
  
@@ -9,49 +9,16 @@
  
  # Disable GNU Make implicit rules and variables. Leaving them enabled will slow
  # down MinGW and Cygwin builds by a very VERY noticeable degree. Besides, we have
-@@ -106,23 +106,17 @@ include Makefile.obj
- # Which C++ standard to support
- STDFLAG = -std=c++11
- 
--CFOTHERS := -pipe $(EXTERNAL_FLAGS)
-+CFOTHERS := $(CFLAGS)
- CFWARN := 
- CFWARN_L := -Wall -Wformat-security -Wundef
- 
- DEFINES := $(EXTERNAL_DEFINES)
- 
--ifndef ANDROID
--LDFLAGS :=
--endif
--
- #
- # The GCC and GXX variables are set later.
- #
- AR = ar
- RANLIB = ranlib
--CC = $(GCC)
--CXX = $(GXX)
- RM = rm -f
- COPY = cp
- COPY_R = cp -r
-@@ -511,16 +505,6 @@ ifneq ($(GCC_VER),)
- GCC_VER_SUFFIX:=-$(GCC_VER)
+@@ -114,7 +114,7 @@ ifdef ANDROID
+ NOSSE := Yes
  endif
  
--# Attempt to use a full compiler name, to make
--# distcc builds work nicely.
--LMACH := $(shell gcc -dumpmachine)-
--ifeq ($(LMACH),-)
--LMACH :=
--endif
--ifeq ($(shell which $(LMACH)gcc$(GCC_VER_SUFFIX) > /dev/null 2> /dev/null && echo "Yes"),)
--LMACH :=
--endif
--
- ifneq ($(FORCE_CC),)
- GCC := $(FORCE_CC)
- HOSTCC := $(FORCE_CC)
-@@ -574,15 +558,6 @@ ifdef USE_ICC
+-CFOTHERS := -pipe $(EXTERNAL_FLAGS)
++CFOTHERS := $(EXTERNAL_FLAGS)
+ ifndef NOSSE
+ # force SSE2 dependency, so as to avoid both x87 indeterminacies, and 
+ # to prevent lua from using non-standard rounding methods.
+@@ -513,15 +513,6 @@ ifdef USE_ICC
  
  # Some very good optimization flags.
    CFOPTIMIZE := -O2 -parallel
@@ -66,17 +33,8 @@
 -  endif
  endif
  
- ifdef LTO
-@@ -660,7 +635,7 @@ ifndef BUILD_LUA
- endif
- ifndef BUILD_LUA
-   ifndef LUA_PACKAGE
--    LUA_PACKAGE = lua5.1
-+    LUA_PACKAGE = lua-5.1
-   endif
-   INCLUDES_L += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-I | sed -e 's/-I/-isystem /')
-   CFLAGS_L  += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-other)
-@@ -673,7 +648,7 @@ endif
+ # Define this to automatically generate code optimized for your machine
+@@ -635,7 +626,7 @@ endif
  
  ifndef BUILD_SQLITE
    ifeq ($(shell grep -q sqlite3_prepare $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
@@ -85,7 +43,7 @@
      LIBS += $(SQLITE_LIB)
      ifneq ($(shell grep -q sqlite3_prepare_v2 $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
        DEFINES_L += -DANCIENT_SQLITE
-@@ -830,7 +805,7 @@ ifndef NOWIZARD
+@@ -798,7 +789,7 @@ ifndef NOWIZARD
  DEFINES += -DWIZARD
  endif
  ifdef NO_OPTIMIZE
