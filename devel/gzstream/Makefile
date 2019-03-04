@@ -20,11 +20,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	lib/lib${PORTNAME}.so lib/lib${PORTNAME}.so.0 \
 		include/${PORTNAME}.h
 ALL_TARGET=	default
-CFLAGS+=	-fPIC -I.
+CFLAGS+=	-fPIC -iquote.
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/=/?=/;s/\.a/.so/g;s/CPPFL/CXXFL/g;\
 		s/{AR}/{CC} $${CFLAGS} -lz -shared -Wl,-soname=lib${PORTNAME}.so.0 -o/' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e '/gzstream\.h/y/<>/""/' ${WRKSRC}/gzstream.C
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0
