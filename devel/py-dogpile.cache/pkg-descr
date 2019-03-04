@@ -7,4 +7,4 @@ idea of "allow one creator to write while others read" in the abstract.
 Overall, dogpile.cache is intended as a replacement to the Beaker caching
 system, the internals of which are written by the same author.
 
-WWW: https://bitbucket.org/zzzeek/dogpile.cache
+WWW: https://github.com/sqlalchemy/dogpile.cache
