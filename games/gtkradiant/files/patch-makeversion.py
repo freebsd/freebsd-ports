@@ -11,6 +11,16 @@
  
  def get_version():
    # version
+@@ -68,9 +66,6 @@ def radiant_makeversion(append_about):
+   f = open('include/RADIANT_MAJOR', 'w')
+   f.write(major)
+   f.close()
+-  f = open('include/version', 'w')
+-  f.write(line)
+-  f.close()
+   # aboutmsg
+   aboutfile = 'include/aboutmsg.default'
+   if ( os.environ.has_key('RADIANT_ABOUTMSG') ):
 @@ -82,7 +80,7 @@
      line = f.readline()
      f.close()
