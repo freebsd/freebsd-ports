@@ -1,5 +1,5 @@
---- mailestd/Makefile.orig	2016-09-02 20:16:03.000000000 +0900
-+++ mailestd/Makefile	2016-09-05 13:12:14.868757000 +0900
+--- mailestd/Makefile.orig	2018-07-12 00:25:58 UTC
++++ mailestd/Makefile
 @@ -1,10 +1,8 @@
  MAILESTD_MT=	#
  
@@ -12,7 +12,7 @@
  CFLAGS+=	-DHAVE_LIBESTDRAFT -DMONITOR_KQUEUE
  .if defined(__objdir) && exists(${.CURDIR}/../libestdraft/${__objdir})
  LIBESTDRAFTOBJ=	${.CURDIR}/../libestdraft/${__objdir}
-@@ -27,13 +25,14 @@
+@@ -27,13 +25,14 @@ LDADD+=		-lpthread
  DPADD+=		${LIBPTHREAD}
  .endif
  
