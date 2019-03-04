@@ -52,6 +52,11 @@ SHL3=	${PORTVERSION}
 SHL2=	${SHL3:R}
 SHL1=	${SHL2:R}
 
+post-patch:
+# Avoid conflict with C++20 <version> by ignoring <...> under WRKSRC
+	@${REINPLACE_CMD} -i .c++20 '/utilities/s/-I/-iquote/' \
+		${WRKSRC}/FEI_mv/*/Makefile
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/hypre/include/* ${STAGEDIR}${PREFIX}/include
 	${INSTALL_LIB} ${WRKSRC}/hypre/lib/libHYPRE-${SHL3}.so	\
