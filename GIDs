@@ -176,7 +176,7 @@ archiva:*:232:
 _ntp:*:233:
 kafka:*:234:
 openhab:*:235:
-# free: 236
+rspamd:*:236:
 # free: 237
 # free: 238
 # free: 239

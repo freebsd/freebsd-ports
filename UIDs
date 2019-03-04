@@ -126,7 +126,7 @@ mlvpn:*:176:176::0:0:mlVPN pseudo-user:/var/run/mlvpn:/usr/sbin/nologin
 _mdnsd:*:177:177::0:0:Multicast DNS Daemon:/var/empty:/usr/sbin/nologin
 otpw:*:178:178::0:0:OTPW pseudo-user:/var/lib/otpw:/usr/sbin/nologin
 gdnsd:*:179:179::0:0:gDNSd pseudo-user:/nonexistent:/usr/sbin/nologin
-# free: 180
+# free: 180, GID used
 nagios:*:181:181::0:0:Nagios pseudo-user:/var/spool/nagios:/usr/sbin/nologin
 noc:*:182:182::0:0:NOC pseudo-user:/usr/local/noc:/bin/sh
 icinga:*:183:183::0:0:Icinga pseudo-user:/var/spool/icinga:/usr/sbin/nologin
@@ -174,14 +174,14 @@ postgrey:*:225:225::0:0:Postgrey Owner:/nonexistent:/usr/sbin/nologin
 sqlgrey:*:226:226::0:0:SQLgrey Owner:/nonexistent:/usr/sbin/nologin
 _hfm:*:227:227::0:0:hfm daemon:/nonexistent:/usr/sbin/nologin
 osrm:*:228:228::0:0:osrm:/nonexistent:/usr/sbin/nologin
-# free: 229
+# free: 229, GID used
 carbon:*:230:230::0:0:osrm:/nonexistent:/usr/sbin/nologin
 foundationdb:*:231:231::0:0:foundationdb:/nonexistent:/usr/sbin/nologin
 archiva:*:232:232::0:0:Archiva Daemon User:/usr/local/archiva:/bin/sh
 _ntp:*:233:233::0:0:NTP Daemon:/var/empty:/usr/sbin/nologin
 kafka:*:234:234::0:0:Apache Kafka user:/nonexistent:/usr/sbin/nologin
 openhab:*:235:235::0:0:openHAB user:/var/db/openhab2/home:/usr/sbin/nologin
-# free: 236
+rspamd:*:236:236::0:0:rspamd pseudo-user:/nonexistent:/usr/sbin/nologin
 # free: 237
 # free: 238
 # free: 239
