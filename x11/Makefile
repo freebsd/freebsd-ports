@@ -63,6 +63,7 @@
     SUBDIR += evilvte
     SUBDIR += fbdesk
     SUBDIR += fbpanel
+    SUBDIR += find-cursor
     SUBDIR += fireflies
     SUBDIR += florence
     SUBDIR += flruler
