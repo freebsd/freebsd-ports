@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxsession
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/lxde/LXSession%20%28session%20manager%29/LXSession%200.5.x/
 
@@ -21,17 +20,15 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libpolkit-agent-1.so:sysutils/polkit \
 		libck-connector.so:sysutils/consolekit2
 
-USES=		autoreconf gmake localbase pkgconfig tar:xz
+USES=		autoreconf gmake gnome localbase pkgconfig tar:xz
 USE_GNOME=	glib20 gtk20 intltool cairo gdkpixbuf2 libxslt
-GNU_CONFIGURE=	yes
 USE_XORG=	x11
-USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
 
-SUB_FILES=	pkg-message
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-buildin-clipboard \
 		--enable-buildin-polkit
+INSTALL_TARGET=	install-strip
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	NLS UPOWER
 OPTIONS_SUB=	yes
@@ -42,6 +39,11 @@ UPOWER_LIB_DEPENDS=	libupower-glib.so:sysutils/upower
 UPOWER_DESC=	Suspend/Hibernate support
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		's|/usr/lib64/kde4|%%QT4_LIBDIR%%|g ; \
+		 s|/usr/lib/kde4|%%QT5_LIBDIR%%|g' \
+		 ${WRKSRC}/lxsession/environement.c \
+		 ${WRKSRC}/lxsession/environement.vala
 	@${FIND} ${WRKSRC} -type f | ${XARGS} \
 		${REINPLACE_CMD} -e 's|/etc/xdg|${PREFIX}/etc/xdg|g ;\
 			s|%%PREFIX%%|${PREFIX}| ;\
