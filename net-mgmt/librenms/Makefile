@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.48.1
+PORTVERSION=	1.49
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -18,7 +18,7 @@ USES=		python${PY_MYSQL} shebangfix
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-RELEASE_TIMESTAMP=	1548881623
+RELEASE_TIMESTAMP=	1551670633
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
@@ -97,7 +97,7 @@ SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PYTHON_CMD}
 ROOT_FILES=	.env.example addhost.php adduser.php alerts.php artisan billing-calculate.php \
 		build-base.php build.sql check-services.php composer.json \
 		composer.lock config.php.default config_to_json.php cronic daily.php daily.sh \
-		delhost.php discovery-wrapper.py discovery.php dist-pollers.php irc.php \
+		delhost.php discovery-wrapper.py discovery.php dist-pollers.php irc.php lnms \
 		librenms-service.py mkdocs.yml pbin.sh phpunit.xml ping.php poll-billing.php poller.php poller-service.py \
 		poller-wrapper.py readmegen.yml renamehost.php services-wrapper.py snmp-scan.py \
 		snmptrap.php syslog.php validate.php
@@ -107,17 +107,17 @@ ROOT_DIRS=	LibreNMS app bootstrap config contrib database doc html includes lice
 # these are directories which require a generic @DIR entry in pkg-plist
 OTHER_DIRS=	storage/app/public \
 		storage/debugbar \
+		storage/framework/cache/data \
 		storage/framework/testing \
 		storage/logs \
+		tests/Browser/console \
+		tests/Browser/screenshots \
 		vendor/amenadiel/jpgraph/tests/_output \
 		vendor/amenadiel/jpgraph/tests/_support/_generated \
-		vendor/doctrine/common/lib/vendor/doctrine-build-common \
-		vendor/doctrine/dbal/lib/vendor/Symfony/Component/Console \
-		vendor/doctrine/dbal/lib/vendor/doctrine-build-common \
-		vendor/doctrine/dbal/lib/vendor/doctrine-common \
 		vendor/laravel/laravel/bootstrap/cache \
 		vendor/laravel/laravel/storage/app/public \
 		vendor/laravel/laravel/storage/framework/cache \
+		vendor/laravel/laravel/storage/framework/cache/data \
 		vendor/laravel/laravel/storage/framework/sessions \
 		vendor/laravel/laravel/storage/framework/testing \
 		vendor/laravel/laravel/storage/framework/views \
@@ -153,6 +153,8 @@ do-install:
 	(cd ${WRKDIR}/${PORTNAME}-vendor-${PORTVERSION} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/vendor)
 # Make daily.sh executable
 	${CHMOD} 0755 ${STAGEDIR}/${WWWDIR}/daily.sh
+# lnms does not fall into any other +x category
+	${CHMOD} 0755 ${STAGEDIR}/${WWWDIR}/lnms
 # Files in scripts dir should be executable
 	${FIND} ${STAGEDIR}/${WWWDIR}/scripts -type f -exec ${CHMOD} +x {} \;
 # Ensure PHP and Python scripts are executable
