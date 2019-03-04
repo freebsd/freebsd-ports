@@ -27,4 +27,10 @@ LDFLAGS_powerpc=	-losgDB
 LDFLAGS_powerpcspe=	-losgDB
 LDFLAGS_sparc64=	-losgDB
 
+post-patch:
+# Avoid conflict with C++20 <version> by adding .txt suffix
+	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
+	@${REINPLACE_CMD} -Ei .c++20 '/file|set_prop/s/version[[:>:]]/&.txt/' \
+		${WRKSRC}/CMakeLists.txt
+
 .include <bsd.port.mk>
