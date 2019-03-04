@@ -1,0 +1,6 @@
+Keyword::Pluggable lets you implement new keywords in pure Perl. To do this, you
+need to write a module and call Keyword::Pluggable::define in your import
+method. Any keywords defined this way will be available in the scope that's
+currently being compiled. The scope can be lexical, packaged, and global.
+
+WWW: https://metacpan.org/release/Keyword-Pluggable
