@@ -47,6 +47,11 @@ SQLITE_USES=	sqlite
 
 TRE_LIB_DEPENDS=	libtre.so:textproc/libtre
 
+post-patch:
+# Avoid conflict with C++20 <version> by adding -bin suffix
+	@${REINPLACE_CMD} -i .c++20 's/version /version-bin /' \
+		${WRKSRC}/include/CMakeLists.txt
+
 post-patch-GNUTLS-on:
 	${LN} -s ${WRKSRC}/modules/extra/m_ssl_gnutls.cpp ${WRKSRC}/modules/
 
