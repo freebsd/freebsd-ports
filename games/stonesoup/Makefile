@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.23.0
+PORTVERSION=	0.23.1
 CATEGORIES=	games
 
 MAINTAINER=	lifanov@FreeBSD.org
@@ -37,13 +37,17 @@ PLIST_SUB=	SAVEDIR="${SAVEDIR}"
 
 MAKE_ARGS=	prefix=${PREFIX} \
 		DATADIR=${DATADIR} \
-		SAVEDIR=${SAVEDIR} \
 		DESTDIR=${STAGEDIR} \
+		FORCE_CC=${CC} \
+		FORCE_CXX=${CXX} \
 		INSTALL_UGRP=root:games \
+		LUA_PACKAGE=lua-5.1 \
 		NO_AUTO_OPT=YesPlease \
 		NO_OPTIMIZE=YesPlease \
 		NO_TRY_GOLD=YesPlease \
+		NOSSE=YesPlease \
 		POSIX=YesPlease \
+		SAVEDIR=${SAVEDIR} \
 		SQLITE_INCLUDE_DIR=${LOCALBASE}/include \
 		SQLITE_LIB=-lsqlite3 \
 		V=yes
