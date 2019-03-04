@@ -61,4 +61,4 @@ libdata/pkgconfig/libcutl.pc
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/version
+%%PORTDOCS%%%%DOCSDIR%%/version.txt

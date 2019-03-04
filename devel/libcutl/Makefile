@@ -35,4 +35,10 @@ CONFIGURE_ARGS=	--disable-static \
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+# Avoid conflict with C++20 <version> by adding .txt suffix
+	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
+	@${REINPLACE_CMD} -i .c++20 '/doc_DATA/s/version/&.txt/' \
+		${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
