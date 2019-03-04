@@ -60,6 +60,10 @@ post-patch:
 		 /NGX_HTTP_LOG_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_ERROR_LOG_PATH/s|mkdir|${TRUE}|' \
 		${WRKSRC}/vendor/nginx-1.15.8/auto/install
+# Avoid conflict with C++20 <version> by adding .txt suffix
+	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
+	@${REINPLACE_CMD} -Ei .c++20 '/test|cat/s/[[:<:]]version/&.txt/' \
+		${WRKSRC}/version-gen.sh
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/groonga-httpd
