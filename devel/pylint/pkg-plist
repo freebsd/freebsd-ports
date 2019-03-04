@@ -1160,6 +1160,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/syntax_error.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/test_pylintrc_comments.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/try_finally_disable_msg_crash.py
+%%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/unused_variable.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/wildcard.py
 %%PYTHON_SITELIBDIR%%/pylint/test/regrtest_data/wrong_import_position.py
 %%PYTHON_SITELIBDIR%%/pylint/test/test_func.py
