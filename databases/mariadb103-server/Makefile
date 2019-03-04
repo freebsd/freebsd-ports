@@ -29,7 +29,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SLAVEDIRS=	databases/mariadb102-client
 USES=		bison:build cmake:insource,noninja compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql
-SHEBANG_FILES=	scripts/*.sh storage/rocksdb/myrocks_hotbackup
+SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
 DOCSDIR=	${PREFIX}/share/doc/mysql
 
