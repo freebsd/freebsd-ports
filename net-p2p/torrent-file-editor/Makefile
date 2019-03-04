@@ -41,4 +41,9 @@ DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 .endif
 
+post-patch:
+# Avoid conflict with C++20 <version> by adding .txt suffix
+	@${REINPLACE_CMD} -i .c++20 '/file/s/version/&.txt/' \
+		${WRKSRC}/Version.cmake ${WRKSRC}/Dmg.cmake
+
 .include <bsd.port.mk>
