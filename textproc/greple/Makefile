@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	greple
-PORTVERSION=	7.1.20170401
-DISTVERSIONPREFIX=	v
+PORTVERSION=	8.3304
 CATEGORIES=	textproc
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -13,14 +12,15 @@ LICENSE_NAME=	GREPLE License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	${SITE_PERL}/Getopt/EX.pm:devel/p5-Getopt-EX
+RUN_DEPENDS=	p5-Getopt-EX>=1.15.0,1:devel/p5-Getopt-EX
 
 USES=		perl5 shebangfix
 USE_PERL5=	run
-SHEBANG_FILES=	bin/${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	kaz-utashiro
 GH_TAGNAME=	5ad6491
+
+SHEBANG_FILES=	bin/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
 
