@@ -1,0 +1,3 @@
+<configuration>
+  <dllmap dll="sqlite3" target="%%LOCALBASE%%/lib/libsqlite3.so" os="freebsd"/>
+</configuration>

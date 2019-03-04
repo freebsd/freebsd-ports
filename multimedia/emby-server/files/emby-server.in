@@ -22,36 +22,32 @@
 # %%RC_NAME%%_data_dir: Directory where %%PORTNAME%% configuration
 #			data is stored.
 #			Default: /var/db/%%PORTNAME%%
+# %%RC_NAME%%_ffdetect: Path of the ffdetect binary.
+#			Default: %%PREFIX%%/lib/emby-server/bin/ffdetect
 # %%RC_NAME%%_ffmpeg: Path of the ffmpeg binary.
-#			Default: %%PEFIX%%/lib/emby-server/bin/ffmpeg
+#			Default: %%PREFIX%%/lib/emby-server/bin/ffmpeg
 # %%RC_NAME%%_ffprobe: Path of the ffprobe binary.
-#			Default: %%PEFIX%%/lib/emby-server/bin/ffprobe
+#			Default: %%PREFIX%%/lib/emby-server/bin/ffprobe
 
 . /etc/rc.subr
 name=%%RC_NAME%%
 rcvar=${name}_enable
 load_rc_config ${name}
 
-[ -z "${emby_server_user}" ] && %%RC_NAME%%_user=%%USER%%
-[ -z "${emby_server_group}" ] && %%RC_NAME%%_group=%%GROUP%%
-[ -z "${emby_server_data_dir}" ] && %%RC_NAME%%_data_dir=/var/db/%%PORTNAME%%
-[ -z "${emby_server_ffmpeg}" ] && %%RC_NAME%%_ffmpeg=%%PREFIX%%/lib/emby-server/bin/ffmpeg
-[ -z "${emby_server_ffprobe}" ] && %%RC_NAME%%_ffprobe=%%PREFIX%%/lib/emby-server/bin/ffprobe
-
 : ${%%RC_NAME%%_enable:="no"}
 : ${%%RC_NAME%%_user:="%%USER%%"}
 : ${%%RC_NAME%%_group:="%%GROUP%%"}
 : ${%%RC_NAME%%_data_dir:="/var/db/%%PORTNAME%%"}
+: ${%%RC_NAME%%_ffdetect:="%%PREFIX%%/lib/emby-server/bin/ffdetect"}
 : ${%%RC_NAME%%_ffmpeg:="%%PREFIX%%/lib/emby-server/bin/ffmpeg"}
 : ${%%RC_NAME%%_ffprobe:="%%PREFIX%%/lib/emby-server/bin/ffprobe"}
-
-export LD_LIBRARY_PATH=%%PREFIX%%/lib/emby-server/lib
 
 pidfile="/var/run/%%PORTNAME%%.pid"
 procname="%%LOCALBASE%%/bin/mono"
 command="/usr/sbin/daemon"
 command_args="-f -p ${pidfile} ${procname} %%PREFIX%%/lib/emby-server/system/EmbyServer.exe \
 	-os freebsd \
+	-ffdetect ${%%RC_NAME%%_ffdetect} \
 	-ffmpeg ${%%RC_NAME%%_ffmpeg} \
 	-ffprobe ${%%RC_NAME%%_ffprobe} \
 	-programdata ${%%RC_NAME%%_data_dir} \
@@ -71,4 +67,3 @@ stop_postcmd=%%RC_NAME%%_postcmd
 }
 
 run_rc_command "$1"
-
