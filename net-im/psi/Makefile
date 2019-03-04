@@ -40,4 +40,10 @@ ENCHANT_DESC=	Use Enchant for spell checking
 ENCHANT_LIB_DEPENDS=	libenchant.so:textproc/enchant
 ENCHANT_CMAKE_BOOL=	USE_ENCHANT
 
+post-patch:
+# Avoid conflict with C++20 <version> by adding .txt suffix
+	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
+	@${REINPLACE_CMD} -i .c++20 's,SOURCE_DIR}/version,&.txt,' \
+		${WRKSRC}/CMakeLists.txt
+
 .include <bsd.port.mk>
