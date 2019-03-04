@@ -15,7 +15,6 @@ bin/munindoc
 %%SITE_PERL%%/Munin/Node/Configure/PluginList.pm
 %%SITE_PERL%%/Munin/Node/Logger.pm
 %%SITE_PERL%%/Munin/Node/OS.pm
-%%SITE_PERL%%/Munin/Node/ProxySpooler.pm
 %%SITE_PERL%%/Munin/Node/SNMPConfig.pm
 %%SITE_PERL%%/Munin/Node/Server.pm
 %%SITE_PERL%%/Munin/Node/Service.pm
@@ -29,7 +28,6 @@ bin/munindoc
 man/man1/munin-node-configure.1.gz
 man/man1/munin-node.1.gz
 man/man1/munin-run.1.gz
-man/man1/munin-sched.1.gz
 man/man1/munindoc.1.gz
 man/man3/Munin::Node::Config.3.gz
 man/man3/Munin::Node::Configure::Debug.3.gz
@@ -39,7 +37,6 @@ man/man3/Munin::Node::Configure::Plugin.3.gz
 man/man3/Munin::Node::Configure::PluginList.3.gz
 man/man3/Munin::Node::Logger.3.gz
 man/man3/Munin::Node::OS.3.gz
-man/man3/Munin::Node::ProxySpooler.3.gz
 man/man3/Munin::Node::SNMPConfig.3.gz
 man/man3/Munin::Node::Server.3.gz
 man/man3/Munin::Node::Service.3.gz
@@ -55,7 +52,6 @@ man/man8/munin.8.gz
 sbin/munin-node
 sbin/munin-node-configure
 sbin/munin-run
-sbin/munin-sched
 %%DATADIR%%/munin-async
 %%DATADIR%%/munin-asyncd
 %%JAVA%%%%DATADIR%%/munin-jmx-plugins.jar

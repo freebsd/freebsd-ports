@@ -1,6 +1,6 @@
---- Makefile.orig	2018-12-19 20:56:49 UTC
+--- Makefile.orig	2019-02-28 14:43:36 UTC
 +++ Makefile
-@@ -96,60 +96,47 @@ install: install-master-prime install-common-prime ins
+@@ -95,60 +95,47 @@ install: install-master-prime install-common-prime ins
  
  install-pre: $(MAKEFILES)
  	@$(CHECKUSER)
@@ -88,7 +88,7 @@
  
  # Not ready to be installed yet
  # $(INSTALL) -m 0755 build/master/_bin/munin-gather $(LIBDIR)/
-@@ -159,36 +146,30 @@ install-node-plugins: install-plugins-prime
+@@ -158,36 +145,30 @@ install-node-plugins: install-plugins-prime
  install-plugins-prime: install-plugins build $(PLUGINS) $(MAKEFILES)
  	@$(CHECKGROUP)
  
@@ -136,7 +136,7 @@
  		fi \
  	done
  
-@@ -199,14 +180,14 @@ install-plugins-java: build-plugins-java
+@@ -198,14 +179,14 @@ install-plugins-java: build-plugins-java
  install-async-prime: install-async
  
  install-async:
@@ -155,7 +155,7 @@
  
  
  install-common-prime: build-common install-common
-@@ -519,7 +500,7 @@ t/install:
+@@ -518,7 +499,7 @@ t/install:
  
  # This builds */Build from Build.PL
  %/Build: %/Build.PL
@@ -164,7 +164,7 @@
  
  build-%: %/Build
  	cd $* && $(PERL) Build
-@@ -535,6 +516,7 @@ install-%: %/Build
+@@ -534,6 +515,7 @@ install-%: %/Build
  		--install_path script=$(BINDIR) \
  		--install_path sbin=$(SBINDIR) \
  		--install_path bindoc=$(MANDIR)/man1 \
