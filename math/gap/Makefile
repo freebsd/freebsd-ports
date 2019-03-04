@@ -46,6 +46,9 @@ PLIST_FILES=	bin/gap
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/sh|/bin/sh|' \
 	    ${WRKSRC}/pkg/happrime/make_tarball
+# Avoid conflict with C++20 <version> by ignoring <...> under WRKSRC
+	@${REINPLACE_CMD} -i .c++20 's/-I/-iquote/' \
+		${WRKSRC}/pkg/*/Makefile.in
 
 post-build:
 	cd ${WRKSRC}/pkg/simpcomp && \
