@@ -3,7 +3,7 @@
 
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
@@ -33,7 +33,7 @@ ALL_GALLIUM_DRIVERS=	FREEDRENO R300 R600 RADEONSI SVGA SWRAST VC4
 ALL_VULKAN_DRIVERS=	INTEL RADEON
 
 DRI_DRIVERS=		SWRAST	# classic swrast
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Marm*} || ${ARCH} == i386 || ${ARCH:Mpowerpc*}
+.if "${MESA_LLVM_VER}" != ""
 GALLIUM_DRIVERS=	SWRAST	# llvmpipe
 .else
 GALLIUM_DRIVERS=	""
@@ -43,8 +43,15 @@ VULKAN_DRIVERS=		#
 .if ${ARCH} == amd64 || ${ARCH} == i386 \
  || ${ARCH} == powerpc || ${ARCH} == powerpc64
 DRI_DRIVERS+=		RADEON R200
-GALLIUM_DRIVERS+=	R300 R600 RADEONSI
+GALLIUM_DRIVERS+=	R600
+. if "${MESA_LLVM_VER}" != "" && (${ARCH} == amd64 || ${ARCH} == i386)
+# https://cgit.freedesktop.org/mesa/mesa/commit/?id=58952675f6d4
+GALLIUM_DRIVERS+=	R300
+. endif
+. if "${MESA_LLVM_VER}" != ""	# until PPC gets LLVM in base
+GALLIUM_DRIVERS+=	RADEONSI
 VULKAN_DRIVERS+=	RADEON
+. endif
 .endif
 .if ${ARCH} == amd64 || ${ARCH} == i386
 DRI_DRIVERS+=		I915 I965

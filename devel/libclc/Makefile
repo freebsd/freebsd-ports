@@ -3,7 +3,7 @@
 
 PORTNAME=	libclc
 DISTVERSION=	0.3.0.20180518
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>=4.0:devel/llvm${LLVM_DEFAULT} \
+BUILD_DEPENDS=	llvm${LLVMVER}>=4.0:devel/llvm${LLVMVER} \
 		libedit>=0:devel/libedit
 
 USE_GITHUB=	yes
@@ -24,6 +24,9 @@ GH_TAGNAME=	a2118d5
 USES=		gmake python:2.7,build gmake
 USE_LDCONFIG=	yes
 MAKE_ENV=	MAKE=${GMAKE} DESTDIR=${STAGEDIR}
+
+LLVMVER=	${MESA_LLVM_VER:U60}
+
 ALL_TARGET=
 
 post-patch:
@@ -34,7 +37,7 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${CONFIGURE_ARGS} -g make \
-		--with-llvm-config=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT} \
+		--with-llvm-config=${LOCALBASE}/bin/llvm-config${LLVMVER} \
 		--pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--prefix=${PREFIX}
 
