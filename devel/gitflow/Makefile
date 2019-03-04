@@ -1,8 +1,8 @@
-# Created by: Nicolas Embriz <nbari@dalmp.com>
+# Created by: Nicolas Embriz <nbari@tequila.io>
 # $FreeBSD$
 
 PORTNAME=	gitflow
-PORTVERSION=	1.11.0
+PORTVERSION=	1.12.1
 CATEGORIES=	devel
 
 MAINTAINER=	nbari@tequila.io
