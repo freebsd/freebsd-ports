@@ -122,6 +122,7 @@
     SUBDIR += mate-icon-theme
     SUBDIR += mate-icon-theme-faenza
     SUBDIR += mate-themes
+    SUBDIR += materia-gtk-theme
     SUBDIR += metacity-aluminumalloy-cryogenic-theme
     SUBDIR += metacity-aluminumalloy-smog-theme
     SUBDIR += metacity-aluminumalloy-toxic-theme
