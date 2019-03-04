@@ -13,3 +13,5 @@ SHA256 (ghc-8.4.2-boot-armv6-freebsd.tar.xz) = 61d3a4486dbb904b05a735e98f23a49c2
 SIZE (ghc-8.4.2-boot-armv6-freebsd.tar.xz) = 107368936
 SHA256 (ghc-8.4.2-boot-armv7-freebsd.tar.xz) = eedb9416870bfe82315155751871e31e815b718b381ccf4f7e45a99a6ad7c94d
 SIZE (ghc-8.4.2-boot-armv7-freebsd.tar.xz) = 110153548
+SHA256 (ghc-8.6.3-boot-powerpc64-freebsd.tar.xz) = fb9bd4bad3a54722b7012c0a531cbdfe71b3b20a0b92cbd52195a526dc5ccde4
+SIZE (ghc-8.6.3-boot-powerpc64-freebsd.tar.xz) = 112652192
