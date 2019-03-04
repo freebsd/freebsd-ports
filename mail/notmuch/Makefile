@@ -60,6 +60,11 @@ DOXYGEN_CONFIGURE_WITH=	api-docs
 MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 MANPAGES_CONFIGURE_WITH=	docs
 
+post-patch:
+# Avoid conflict with C++20 <version> by ignoring <...> under WRKSRC
+	@${REINPLACE_CMD} -i .c++20 's/-I$$(srcdir)/-iquote$$(srcdir)/' \
+		${WRKSRC}/*/Makefile.local
+
 # Install bash completions without incurring a dependcy on
 # shells/bash-completion.  Also avoid automatic installation of
 # info pages on FreeBSD 10.
