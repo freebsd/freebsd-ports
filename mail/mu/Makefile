@@ -3,8 +3,8 @@
 
 PORTNAME=	mu
 PORTVERSION=	1.0
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -16,11 +16,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libxapian.so:databases/xapian-core \
 		libgmime-2.6.so:mail/gmime26
 
-USES=		autoreconf compiler:c++14-lang gettext-runtime gmake \
+USES=		autoreconf compiler:c++14-lang gettext-runtime gmake gnome \
 		libtool makeinfo pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	djcb
 USE_GNOME=	glib20
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk --disable-mu4e
 INSTALL_TARGET=	install-strip
