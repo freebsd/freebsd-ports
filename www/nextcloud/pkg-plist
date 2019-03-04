@@ -1,7 +1,5 @@
 @(,%%NEXTCLOUD_GROUPNAME%%,644) %%WWWDIR%%/.htaccess
 @(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,664) %%WWWDIR%%/.user.ini
-%%WWWDIR%%/.htaccess
-%%WWWDIR%%/.user.ini
 %%WWWDIR%%/3rdparty/.drone.yml
 %%WWWDIR%%/3rdparty/LICENSE INFO
 %%WWWDIR%%/3rdparty/README.md
