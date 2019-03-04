@@ -34,4 +34,8 @@ PARA_CONFIGURE_OFF=	--enable-thread-model=none
 
 INSTALL_TARGET=	install-strip
 
+post-patch:
+# Avoid conflict with C++20 <version> by ignoring <...> under WRKSRC
+	@${REINPLACE_CMD} -i .c++20 's/-I/-iquote/g' ${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
