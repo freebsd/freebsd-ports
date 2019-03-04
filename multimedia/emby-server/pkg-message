@@ -1,18 +1,5 @@
-Emby Server uses FFmpeg for transcoding and ImageMagick for
-generating thumbnails. The default ports/pkg builds of FFmpeg
-and ImageMagick on FreeBSD have a number of options which
-could be SET/UNSET to improve your Emby Server experience.
-
-It is recommended to recompile the multimedia/ffmpeg package
-from ports with the following options ENABLED (SET):
- - ASS (required for subtitle rendering)
- - LAME (required for mp3 audio transcoding, disabled by default due to mp3 licensing restrictions)
- - OPUS (required for opus audio codec support)
- - X265 (required for H.265 video codec support
-
-It is recommended to recompile the graphics/ImageMagick package
-from ports with the following options DISABLED (UNSET):
- - 16BIT_PIXEL (to increase thumbnail generation performance)
+It is recommended to recompile this port from source
+with the LAME option enabled to support mp3 transcoding.
 
 If you had mediabrowser installed before the project was
 renamed to emby-server, you may want to rename the user and
