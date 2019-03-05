@@ -11,6 +11,8 @@ COMMENT=	Consul cross-DC KV replication daemon
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USES=		compiler
