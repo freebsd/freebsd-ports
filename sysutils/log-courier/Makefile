@@ -10,6 +10,8 @@ COMMENT=	Lightweight log shipper with Logstash integration
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	go:lang/go
 
 USES=		go gmake
