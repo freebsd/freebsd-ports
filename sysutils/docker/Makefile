@@ -11,6 +11,8 @@ COMMENT=		Open-source application container engine
 
 LICENSE=		APACHE20
 
+BROKEN=			fails to build
+
 PLIST_FILES=		bin/docker
 
 USE_GITHUB=		yes
