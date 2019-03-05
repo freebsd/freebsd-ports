@@ -6,6 +6,6 @@ CATEGORIES=	net ipv6
 
 MASTERDIR=	${.CURDIR}/../wireshark
 
-OPTIONS_EXCLUDE=	GTK2 GTK3 QT5
+OPTIONS_EXCLUDE=	GUI
 
 .include "${MASTERDIR}/Makefile"

@@ -1,0 +1,10 @@
+--- wsutil/CMakeLists.txt.orig	2019-03-05 00:29:38 UTC
++++ wsutil/CMakeLists.txt
+@@ -261,6 +261,7 @@ add_custom_command(OUTPUT libwsutil.abi.
+ target_link_libraries(wsutil
+ 	PUBLIC
+ 	${CMAKE_DL_LIBS}
++	-lm
+ 	${APPLE_CORE_FOUNDATION_LIBRARY}
+ 	${GMODULE2_LIBRARIES}
+ 	${GLIB2_LIBRARIES}
