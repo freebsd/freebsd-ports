@@ -39,10 +39,15 @@ command_interpreter=%%PYTHON_CMD%%
 start_precmd=${name}_prestart
 stop_postcmd=${name}_poststop
 
+
 deluge_web_prestart()
 {
 	if [ "$deluge_web_user" = 'asjklasdfjklasdf' ]; then
 		err 1 "You must set deluge_web_user to a real, unprivileged user"
+	fi
+	deluge_web_home=$(pw user show ${deluge_web_user} | cut -d : -f 9)
+	if [ -z ${deluge_web_home} ]; then
+		err 1 "deluge_web_user does not have a valid home directory."
 	fi
 
 	if [ ! -d "/var/run/${name}" ]; then
@@ -52,14 +57,13 @@ deluge_web_prestart()
 		mkdir -p /var/run/${name}
 	fi
 
-	if [ ! -d "/home/${deluge_web_user}/.python-eggs" ]; then
-		mkdir -p /home/${deluge_web_user}/.python-eggs
-	fi
+	if [ ! -d "${deluge_web_home}/.python-eggs" ]; then
+		mkdir ${deluge_web_home}/.python-eggs
+		chown -R $deluge_web_user ${deluge_web_home}/.python-eggs
 
 	chmod 0755 /var/run/${name}
 	chown -R $deluge_web_user /var/run/${name}
-	chown -R $deluge_web_user /home/${deluge_web_user}/.python-eggs
-	export PYTHON_EGG_CACHE="/home/${deluge_web_user}/.python-eggs"
+	export PYTHON_EGG_CACHE="${deluge_web_home}/.python-eggs"
 }
 
 deluge_web_poststop()
@@ -72,7 +76,7 @@ load_rc_config $name
 
 : ${deluge_web_enable:="NO"}
 : ${deluge_web_user:="asjklasdfjklasdf"}
-: ${deluge_web_confdir:="/home/${deluge_web_user}/.config/deluge"}
+: ${deluge_web_confdir:="${deluge_web_home}/.config/deluge"}
 : ${deluge_web_loglevel:="error"}
 : ${deluge_web_logfile:="/var/tmp/${name}.log"}
 
