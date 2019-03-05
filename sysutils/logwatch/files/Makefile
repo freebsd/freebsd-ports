@@ -53,6 +53,7 @@ install:
 	daemon \
 	denyhosts \
 	dnssec \
+	dovecot \
 	dpkg \
 	emerge \
 	eventlog \
@@ -76,6 +77,7 @@ install:
 	qmail-send-current \
 	qmail-smtpd-current \
 	resolver \
+	rsnapshot \
 	rt314 \
 	samba \
 	secure \
@@ -158,6 +160,7 @@ install:
 	qmail-smtpd \
 	raid \
 	resolver \
+	rsnapshot \
 	rt314 \
 	samba \
 	saslauthd \
@@ -184,7 +187,6 @@ install:
 	xntpd \
 	yum \
 	zz-disk_space \
-	zz-fortune \
 	zz-network \
 	zz-runtime \
 	zz-sys \

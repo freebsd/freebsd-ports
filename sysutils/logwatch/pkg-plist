@@ -9,6 +9,7 @@ etc/logwatch/defaults/logfiles/cron.conf
 etc/logwatch/defaults/logfiles/daemon.conf
 etc/logwatch/defaults/logfiles/denyhosts.conf
 etc/logwatch/defaults/logfiles/dnssec.conf
+etc/logwatch/defaults/logfiles/dovecot.conf
 etc/logwatch/defaults/logfiles/dpkg.conf
 etc/logwatch/defaults/logfiles/emerge.conf
 etc/logwatch/defaults/logfiles/eventlog.conf
@@ -32,6 +33,7 @@ etc/logwatch/defaults/logfiles/qmail-pop3ds-current.conf
 etc/logwatch/defaults/logfiles/qmail-send-current.conf
 etc/logwatch/defaults/logfiles/qmail-smtpd-current.conf
 etc/logwatch/defaults/logfiles/resolver.conf
+etc/logwatch/defaults/logfiles/rsnapshot.conf
 etc/logwatch/defaults/logfiles/rt314.conf
 etc/logwatch/defaults/logfiles/samba.conf
 etc/logwatch/defaults/logfiles/secure.conf
@@ -111,6 +113,7 @@ etc/logwatch/defaults/services/qmail-smtpd.conf
 etc/logwatch/defaults/services/qmail.conf
 etc/logwatch/defaults/services/raid.conf
 etc/logwatch/defaults/services/resolver.conf
+etc/logwatch/defaults/services/rsnapshot.conf
 etc/logwatch/defaults/services/rt314.conf
 etc/logwatch/defaults/services/samba.conf
 etc/logwatch/defaults/services/saslauthd.conf
@@ -137,7 +140,6 @@ etc/logwatch/defaults/services/windows.conf
 etc/logwatch/defaults/services/xntpd.conf
 etc/logwatch/defaults/services/yum.conf
 etc/logwatch/defaults/services/zz-disk_space.conf
-etc/logwatch/defaults/services/zz-fortune.conf
 etc/logwatch/defaults/services/zz-network.conf
 etc/logwatch/defaults/services/zz-runtime.conf
 etc/logwatch/defaults/services/zz-sys.conf
@@ -222,6 +224,7 @@ libexec/logwatch/defaults/services/qmail-send
 libexec/logwatch/defaults/services/qmail-smtpd
 libexec/logwatch/defaults/services/raid
 libexec/logwatch/defaults/services/resolver
+libexec/logwatch/defaults/services/rsnapshot
 libexec/logwatch/defaults/services/rt314
 libexec/logwatch/defaults/services/samba
 libexec/logwatch/defaults/services/saslauthd
@@ -248,7 +251,6 @@ libexec/logwatch/defaults/services/windows
 libexec/logwatch/defaults/services/xntpd
 libexec/logwatch/defaults/services/yum
 libexec/logwatch/defaults/services/zz-disk_space
-libexec/logwatch/defaults/services/zz-fortune
 libexec/logwatch/defaults/services/zz-network
 libexec/logwatch/defaults/services/zz-runtime
 libexec/logwatch/defaults/services/zz-sys
