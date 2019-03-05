@@ -9,6 +9,8 @@ COMMENT=	Collect logs locally in preparation for processing elsewhere!
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	go:lang/go
 
 USES=		go
