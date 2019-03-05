@@ -1,0 +1,4 @@
+This module ships the new Icinga PHP library and is used by some Icinga Web 2
+modules.
+
+WWW: https://github.com/Icinga/icingaweb2-module-ipl
