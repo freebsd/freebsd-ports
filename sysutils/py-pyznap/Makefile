@@ -2,7 +2,7 @@
 
 PORTNAME=		pyznap
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.1.0
+DISTVERSION=		1.1.2
 CATEGORIES=		sysutils python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
@@ -17,6 +17,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configparser>3.5.0:devel/py-configparser@${P
 		mbuffer:misc/mbuffer \
 		pv:sysutils/pv
 
+#TEST_DEPENDS=	${YPTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
+#		${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR} \
+#		faketime:devel/faketime
+
 USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
@@ -29,5 +33,11 @@ SUB_LIST=	BINDIR=${PREFIX}/bin ETCDIR=${PREFIX}/etc
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/etc/pyznap/|${PREFIX}/etc/pyznap/|g' ${WRKSRC}/${PORTNAME}/main.py
+
+# upstream does not support selecting/deselecting tests from setuptools
+# zfs tests work on the host but not in a poudriere jail
+# ssh tests fail as priv/pub key auth is required to be set up in advance
+#do-test:
+#	@${CD} ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
