@@ -14,6 +14,8 @@ COMMENT=	Perl5 interface to the wxWidgets cross-platform GUI toolkit
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-ExtUtils-XSpp>=0.16.03:devel/p5-ExtUtils-XSpp \
 		p5-Alien-wxWidgets>=0.25:x11-toolkits/p5-Alien-wxWidgets
