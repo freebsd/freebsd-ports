@@ -12,6 +12,8 @@ COMMENT=	Docker containment system
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	go>=1.4:lang/go \
 		bash:shells/bash \
 		sqlite3:databases/sqlite3
