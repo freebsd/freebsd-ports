@@ -14,7 +14,7 @@ COMMENT=	SQL database-based mail system (POP3 and IMAP)
 LICENSE=	GPLv2
 
 DEPRECATED=	Please use mail/dbmail which uses latest version of 3.X
-EXPIRATIONN_DATE=	2019-04-04
+EXPIRATION_DATE=	2019-04-04
 
 LIB_DEPENDS=	libgmime-2.0.so:mail/gmime2
 
