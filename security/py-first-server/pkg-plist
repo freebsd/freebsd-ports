@@ -36,7 +36,9 @@
 %%WWWDIR%%/rest/views.py
 %%WWWDIR%%/utilities/__init__.py
 %%WWWDIR%%/utilities/engine_shell.py
+%%WWWDIR%%/utilities/migrate_data.py
 %%WWWDIR%%/utilities/mongo_to_django_orm.py
+%%WWWDIR%%/utilities/mysql_import.sql
 %%WWWDIR%%/utilities/test_engine.py
 %%WWWDIR%%/utilities/user_shell.py
 %%WWWDIR%%/www/__init__.py
