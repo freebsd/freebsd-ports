@@ -1,3 +1,3 @@
-TIMESTAMP = 1547339518
-SHA256 (wireshark-2.6.6.tar.xz) = 487933ea075bdbb25d8df06017d9c4f49fc20eb7f6ec80af086718ed5550e863
-SIZE (wireshark-2.6.6.tar.xz) = 28407404
+TIMESTAMP = 1551565540
+SHA256 (wireshark-3.0.0.tar.xz) = bc4f30f5b2e94f3a696fef9de44673cdf402db90aac5299966da647f708f009e
+SIZE (wireshark-3.0.0.tar.xz) = 30953760
