@@ -4,10 +4,9 @@ servers. It implements IEEE 802.11 access point management, IEEE
 RADIUS authentication server. The current version supports Linux
 (Host AP, madwifi, mac80211-based drivers) and FreeBSD (net80211).
 
-To use the ports version instead of the base, add:
+Add the following to /etc/rc.conf to use the ports version instead
+of the base version:
 
     hostapd_program="/usr/local/sbin/hostapd"
-
-to /etc/rc.conf
 
 WWW: https://w1.fi/hostapd/

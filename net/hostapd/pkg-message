@@ -1,0 +1,4 @@
+Add the following to /etc/rc.conf to use the ports version instead
+of the base version:
+
+    hostapd_program="/usr/local/sbin/hostapd"
