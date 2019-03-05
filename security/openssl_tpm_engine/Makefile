@@ -4,6 +4,7 @@
 PORTNAME=	openssl_tpm_engine
 PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${LOCALBASE}/sbin/tcsd:security/trousers
 LIB_DEPENDS=	libtspi.so:security/trousers
 
-USES=		autoreconf gmake libtool localbase ssl
+USES=		autoreconf gmake libtool localbase ssl pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
