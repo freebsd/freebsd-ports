@@ -26,7 +26,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	vrtadmin
 GH_PROJECT=	FIRST-server
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	flavors
 
 NO_BUILD=	yes
