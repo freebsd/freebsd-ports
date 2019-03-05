@@ -1,6 +1,6 @@
---- src/unix/emacs/mozc.el.orig	2015-02-15 04:18:31.000000000 +0900
-+++ src/unix/emacs/mozc.el	2015-02-19 04:01:46.000000000 +0900
-@@ -1538,7 +1538,7 @@
+--- src/unix/emacs/mozc.el.orig	2019-03-04 18:35:55 UTC
++++ src/unix/emacs/mozc.el
+@@ -1540,7 +1540,7 @@ Return the new value of `mozc-session-seq'."
  
  ;;;; Communication with Mozc server through the helper process
  
@@ -9,7 +9,7 @@
    "Helper program's name or path to the helper program.
  The helper program helps Emacs communicate with Mozc server,
  which doesn't understand S-expression.")
-@@ -1973,12 +1973,12 @@
+@@ -1975,12 +1975,12 @@ INPUT-METHOD is not used."
    "Deactivate function `mozc-mode' via LEIM."
    (mozc-mode nil))
  
@@ -28,7 +28,7 @@
  
  (defun mozc-leim-register-input-method ()
    "Register function `mozc-mode' as an input method of LEIM.
-@@ -1994,10 +1994,10 @@
+@@ -1996,10 +1996,10 @@ Do nothing if LEIM is not available."
  ;; Register mozc-mode as an input method after the init file has been read
  ;; so the user has a chance to specify `mozc-leim-title' in the init file
  ;; after loading this file.

@@ -1,10 +1,10 @@
-TIMESTAMP = 1483299024
-SHA256 (ken_all-20161031.zip) = a363eefa9867c497b12bf5a603f64426af7bd938733c2925dd2747150d2cdd42
-SIZE (ken_all-20161031.zip) = 1685061
-SHA256 (jigyosyo-20161031.zip) = 1a8d9cf30421a5bdfbccb6e3d9fc4f141895821ac0275425a60ad858e38c2a43
-SIZE (jigyosyo-20161031.zip) = 754418
-SHA256 (hrs-allbsd-mozc-v2.20.2677.102.02_GH0.tar.gz) = 55fff5f29aae002a0e0ed445a039c543174313e57f78a040f86b2793976e24f0
-SIZE (hrs-allbsd-mozc-v2.20.2677.102.02_GH0.tar.gz) = 37575296
+TIMESTAMP = 1551724666
+SHA256 (ken_all-20181228.zip) = 814257c9c93d4393bedb4025542a4b54def16fd6e88268b03e29fe6d19ba10da
+SIZE (ken_all-20181228.zip) = 1687342
+SHA256 (jigyosyo-20181228.zip) = 9d3b7a11c1b851c70a41f4dc6cf3bffd800f3cf254bcad1d65ea0829fc67bb5d
+SIZE (jigyosyo-20181228.zip) = 763205
+SHA256 (hrs-allbsd-mozc-v2.23.2815.102.00_GH0.tar.gz) = 9e9415c4dcd261308177592d944a5e6d72fc75cef8e28384072966a1ba4446fc
+SIZE (hrs-allbsd-mozc-v2.23.2815.102.00_GH0.tar.gz) = 36711684
 SHA256 (hiroyuki-komatsu-japanese-usage-dictionary-e5b3425_GH0.tar.gz) = 2af954cd844c6a3113449d7dca37e36b769ecb2b49d3a54318a3bdee1a75af56
 SIZE (hiroyuki-komatsu-japanese-usage-dictionary-e5b3425_GH0.tar.gz) = 71050
 SHA256 (e-kato-macuim-v0.6.16.2.1_GH0.tar.gz) = ae999a2f02379bd049484a22684c37be5eb1f4db9763fa79885c4981502336e9

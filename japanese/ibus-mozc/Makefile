@@ -1,7 +1,6 @@
 # Created by: Daichi GOTO <daichi@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	15
 PKGNAMEPREFIX=	ja-ibus-
 
 COMMENT=	Mozc engine for IBus

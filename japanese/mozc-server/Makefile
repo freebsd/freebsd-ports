@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mozc
-PORTVERSION=	2.20.2677.102.02
+PORTVERSION=	2.23.2815.102.00
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	14
 CATEGORIES=	japanese
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	ninja:devel/ninja \
-		gyp:devel/py-gyp
+		gyp:devel/py-gyp@${PY_FLAVOR}
 EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		libzinnia.so:japanese/zinnia
@@ -48,11 +47,11 @@ LICENSE_PERMS_NAISTL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE_NAISTL=	${WRKSRC}/src/data/dictionary_oss/README.txt
 LICENSE_DISTFILES_NAISTL=${DISTNAME}${EXTRACT_SUFX}
 .elif ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
-USES+=		qt:5
+USES+=		qt:5 gnome
 USE_GNOME=	glib20 gtk20
 USE_QT=		buildtools core gui widgets
 .elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
-USES+=		gettext-runtime
+USES+=		gettext-runtime gnome
 USE_XORG=	xcb
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
@@ -100,6 +99,8 @@ BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
 BUILD_MOZC_CMD_BUILD=	${BUILD_MOZC_CMD} build -c ${BUILD_MODE} ${_MAKE_JOBS}
 BUILD_GYP_CMD=	${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/gyp
 
+post-extract:	# XXX: do not activate fcitx5
+	${RM} -r ${WRKSRC}/src/unix/fcitx5
 post-patch:
 	${FIND} ${BUILD_WRKSRC} \( -name '*.gyp' -o -name '*.gypi' \) -exec \
 	    ${REINPLACE_CMD} "s,'python','${PYTHON_CMD}',g" {} \;
@@ -138,8 +139,8 @@ GYP_DEFINES+=	use_libibus=0 \
 
 MASTER_SITES+=	LOCAL/kuriyama:zipcode
 DISTFILES+= \
-	ken_all-20161031.zip:zipcode \
-	jigyosyo-20161031.zip:zipcode
+	ken_all-20181228.zip:zipcode \
+	jigyosyo-20181228.zip:zipcode
 
 PLIST_FILES+=	bin/mozc \
 		bin/mozc_server \
@@ -215,7 +216,7 @@ GYP_DEFINES+=	use_libibus=1 \
 LIB_DEPENDS+=	libibus-1.0.so:textproc/ibus
 RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
 		mozc_tool:japanese/mozc-tool \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:devel/py-notify
+		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:devel/py-notify@${PY_FLAVOR}
 
 PLIST_FILES+=	libexec/mozc_renderer \
 		libexec/ibus-engine-mozc \
@@ -269,13 +270,15 @@ RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
 		mozc_tool:japanese/mozc-tool
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-unix-uim-mozc.cc \
-		${PATCHDIR}/extra-patch-src-unix-uim-uim.gyp
+		${PATCHDIR}/extra-patch-src-unix-uim-uim.gyp \
+		${PATCHDIR}/extra-patch-src-unix-uim-key_translator.h \
+		${PATCHDIR}/extra-patch-src-unix-uim-key_translator.cc
 PLIST_FILES+=	lib/uim/plugin/libuim-mozc.so \
 		%%DATADIR%%/mozc.scm \
 		%%DATADIR%%/mozc-custom.scm \
 		%%DATADIR%%/mozc-key-custom.scm \
 		%%DATADIR%%/pixmaps/mozc.png \
-		"@postexec ${LOCALBASE}/bin/uim-module-manager --register mozc" \
+		"@postexec ${SETENV} MOZC_NOLOG=true ${LOCALBASE}/bin/uim-module-manager --register mozc" \
 		"@preunexec ${LOCALBASE}/bin/uim-module-manager --unregister mozc"
 
 GYP_OPTIONS+=	--noqt
@@ -310,9 +313,10 @@ do-install-uim_mozc:
 
 # fcitx_mozc
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
-GYP_OPTIONS+=	--noqt --use_fcitx
+GYP_OPTIONS+=	--noqt
 GYP_DEFINES+=	use_libibus=0 \
-		enable_gtk_renderer=0
+		enable_gtk_renderer=0 \
+		use_fcitx="YES"
 
 LIB_DEPENDS+=	libfcitx-core.so:chinese/fcitx
 RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
