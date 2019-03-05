@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	drm-current-kmod
-PORTVERSION=	4.16.g20181210
+PORTVERSION=	4.16.g20190305
 CATEGORIES=	graphics kld
 
 MAINTAINER=	jmd@FreeBSD.org
-COMMENT=	DRM modules for the linuxkpi-based KMS components (development version)
+COMMENT=	DRM modules for the linuxkpi-based KMS components
 
 LICENSE=	BSD2CLAUSE MIT GPLv2
 LICENSE_COMB=	multi
@@ -25,7 +25,7 @@ USES=		kmod uidfix compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	kms-drm
-GH_TAGNAME=	b5ef47b
+GH_TAGNAME=	78e51d0
 
 .include <bsd.port.options.mk>
 
