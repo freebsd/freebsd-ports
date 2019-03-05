@@ -1,0 +1,41 @@
+--- Makefile.in.orig	2014-12-18 13:53:53 UTC
++++ Makefile.in
+@@ -84,7 +84,6 @@ JOHN_OBJS = \
+ 	base64.o base64_convert.o \
+ 	md4.o sha2.o \
+ 	dynamic_fmt.o dynamic_parser.o dynamic_preloads.o dynamic_utils.o dynamic_big_crypt.o \
+-	ssh2john.o \
+ 	pfx2john.o \
+ 	unrarcmd.o unrarfilter.o unrarhlp.o unrar.o unrarppm.o unrarvm.o \
+ 	rar2john.o \
+@@ -132,7 +131,7 @@ GENMKVPWD_OBJS = \
+ 	genmkvpwd.o mkvlib.o memory.o miscnl.o path.o memdbg.o
+ 
+ PROJ = ../run/john@EXE_EXT@ ../run/unshadow@EXE_EXT@ ../run/unafs@EXE_EXT@ ../run/unique@EXE_EXT@ ../run/undrop@EXE_EXT@ \
+-	../run/ssh2john@EXE_EXT@ ../run/rar2john@EXE_EXT@ ../run/zip2john@EXE_EXT@ \
++	../run/rar2john@EXE_EXT@ ../run/zip2john@EXE_EXT@ \
+ 	../run/genmkvpwd@EXE_EXT@ ../run/mkvcalcproba@EXE_EXT@ ../run/calc_stat@EXE_EXT@ \
+ 	../run/tgtsnarf@EXE_EXT@ ../run/racf2john@EXE_EXT@ ../run/hccap2john@EXE_EXT@ \
+ 	../run/pwsafe2john@EXE_EXT@ ../run/raw2dyna@EXE_EXT@ ../run/keepass2john@EXE_EXT@ ../run/pfx2john@EXE_EXT@ \
+@@ -305,10 +304,6 @@ miscnl.o: misc.c
+ 	$(RM) ../run/undrop
+ 	$(LN) john ../run/undrop
+ 
+-../run/ssh2john: ../run/john
+-	$(RM) ../run/ssh2john
+-	$(LN) john ../run/ssh2john
+-
+ ../run/putty2john: ../run/john
+ 	$(RM) ../run/putty2john
+ 	$(LN) john ../run/putty2john
+@@ -396,10 +391,6 @@ miscnl.o: misc.c
+ ../run/undrop.exe: symlink.c
+ 	$(CC) symlink.c -o ../run/undrop.exe
+ 	$(STRIP) ../run/undrop.exe
+-
+-../run/ssh2john.exe: symlink.c
+-	$(CC) symlink.c -o ../run/ssh2john.exe
+-	$(STRIP) ../run/ssh2john.exe
+ 
+ ../run/putty2john.exe: symlink.c
+ 	$(CC) symlink.c -o ../run/putty2john.exe
