@@ -15,10 +15,10 @@ bin/quantlib-config
 %%EXAMPLES%%bin/GlobalOptimizer
 %%EXAMPLES%%bin/LatentModel
 %%EXAMPLES%%bin/MarketModels
+%%EXAMPLES%%bin/MulticurveBootstrapping
 %%EXAMPLES%%bin/MultidimIntegral
 %%EXAMPLES%%bin/Replication
 %%EXAMPLES%%bin/Repo
-%%EXAMPLES%%bin/SwapValuation
 %%BENCHMARK%%bin/quantlib-benchmark
 %%EXAMPLES%%man/man1/BasketLosses.1.gz
 %%EXAMPLES%%man/man1/BermudanSwaption.1.gz
@@ -36,9 +36,9 @@ bin/quantlib-config
 %%EXAMPLES%%man/man1/LatentModel.1.gz
 %%EXAMPLES%%man/man1/MarketModels.1.gz
 %%EXAMPLES%%man/man1/MultidimIntegral.1.gz
+%%EXAMPLES%%man/man1/MulticurveBootstrapping.1.gz
 %%EXAMPLES%%man/man1/Replication.1.gz
 %%EXAMPLES%%man/man1/Repo.1.gz
-%%EXAMPLES%%man/man1/SwapValuation.1.gz
 %%BENCHMARK%%man/man1/quantlib-benchmark.1.gz
 include/ql/cashflows/all.hpp
 include/ql/cashflows/averagebmacoupon.hpp
@@ -100,6 +100,10 @@ include/ql/experimental/barrieroption/vannavolgabarrierengine.hpp
 include/ql/experimental/barrieroption/vannavolgadoublebarrierengine.hpp
 include/ql/experimental/barrieroption/vannavolgainterpolation.hpp
 include/ql/experimental/barrieroption/wulinyongdoublebarrierengine.hpp
+include/ql/experimental/basismodels/all.hpp
+include/ql/experimental/basismodels/swaptioncfs.hpp
+include/ql/experimental/basismodels/tenoroptionletvts.hpp
+include/ql/experimental/basismodels/tenorswaptionvts.hpp
 include/ql/experimental/callablebonds/all.hpp
 include/ql/experimental/callablebonds/blackcallablebondengine.hpp
 include/ql/experimental/callablebonds/callablebondconstantvol.hpp
@@ -264,6 +268,9 @@ include/ql/experimental/finitedifferences/modtriplebandlinearop.hpp
 include/ql/experimental/finitedifferences/riskneutraldensitycalculator.hpp
 include/ql/experimental/finitedifferences/squarerootprocessrndcalculator.hpp
 include/ql/experimental/finitedifferences/vanillavppoption.hpp
+include/ql/experimental/futures/all.hpp
+include/ql/experimental/futures/overnightindexfuture.hpp
+include/ql/experimental/futures/overnightindexfutureratehelper.hpp
 include/ql/experimental/fx/all.hpp
 include/ql/experimental/fx/blackdeltacalculator.hpp
 include/ql/experimental/fx/deltavolquote.hpp
@@ -299,7 +306,6 @@ include/ql/experimental/math/levyflightdistribution.hpp
 include/ql/experimental/math/moorepenroseinverse.hpp
 include/ql/experimental/math/multidimintegrator.hpp
 include/ql/experimental/math/multidimquadrature.hpp
-include/ql/experimental/math/numericaldifferentiation.hpp
 include/ql/experimental/math/particleswarmoptimization.hpp
 include/ql/experimental/math/piecewisefunction.hpp
 include/ql/experimental/math/piecewiseintegral.hpp
@@ -387,6 +393,7 @@ include/ql/indexes/ibor/euribor.hpp
 include/ql/indexes/ibor/eurlibor.hpp
 include/ql/indexes/ibor/fedfunds.hpp
 include/ql/indexes/ibor/gbplibor.hpp
+include/ql/indexes/ibor/bibor.hpp
 include/ql/indexes/ibor/jibar.hpp
 include/ql/indexes/ibor/jpylibor.hpp
 include/ql/indexes/ibor/libor.hpp
@@ -397,7 +404,9 @@ include/ql/indexes/ibor/pribor.hpp
 include/ql/indexes/ibor/robor.hpp
 include/ql/indexes/ibor/seklibor.hpp
 include/ql/indexes/ibor/shibor.hpp
+include/ql/indexes/ibor/sofr.hpp
 include/ql/indexes/ibor/sonia.hpp
+include/ql/indexes/ibor/thbfix.hpp
 include/ql/indexes/ibor/tibor.hpp
 include/ql/indexes/ibor/trlibor.hpp
 include/ql/indexes/ibor/usdlibor.hpp
@@ -702,6 +711,8 @@ include/ql/methods/finitedifferences/operators/fdmlinearopiterator.hpp
 include/ql/methods/finitedifferences/operators/fdmlinearoplayout.hpp
 include/ql/methods/finitedifferences/operators/firstderivativeop.hpp
 include/ql/methods/finitedifferences/operators/ninepointlinearop.hpp
+include/ql/methods/finitedifferences/operators/nthorderderivativeop.hpp
+include/ql/methods/finitedifferences/operators/numericaldifferentiation.hpp
 include/ql/methods/finitedifferences/operators/secondderivativeop.hpp
 include/ql/methods/finitedifferences/operators/secondordermixedderivativeop.hpp
 include/ql/methods/finitedifferences/operators/triplebandlinearop.hpp
@@ -714,6 +725,7 @@ include/ql/methods/finitedifferences/schemes/hundsdorferscheme.hpp
 include/ql/methods/finitedifferences/schemes/impliciteulerscheme.hpp
 include/ql/methods/finitedifferences/schemes/methodoflinesscheme.hpp
 include/ql/methods/finitedifferences/schemes/modifiedcraigsneydscheme.hpp
+include/ql/methods/finitedifferences/schemes/trbdf2scheme.hpp
 include/ql/methods/finitedifferences/solvers/all.hpp
 include/ql/methods/finitedifferences/solvers/fdm2dblackscholessolver.hpp
 include/ql/methods/finitedifferences/solvers/fdm1dimsolver.hpp
@@ -1279,6 +1291,7 @@ include/ql/time/calendars/sweden.hpp
 include/ql/time/calendars/switzerland.hpp
 include/ql/time/calendars/taiwan.hpp
 include/ql/time/calendars/target.hpp
+include/ql/time/calendars/thailand.hpp
 include/ql/time/calendars/turkey.hpp
 include/ql/time/calendars/ukraine.hpp
 include/ql/time/calendars/unitedkingdom.hpp
@@ -1319,6 +1332,7 @@ include/ql/utilities/steppingiterator.hpp
 include/ql/utilities/tracing.hpp
 include/ql/utilities/vectors.hpp
 include/ql/auto_link.hpp
+include/ql/auto_ptr.hpp
 include/ql/cashflow.hpp
 include/ql/compounding.hpp
 include/ql/config.hpp
@@ -1329,6 +1343,7 @@ include/ql/errors.hpp
 include/ql/exchangerate.hpp
 include/ql/exercise.hpp
 include/ql/event.hpp
+include/ql/functional.hpp
 include/ql/grid.hpp
 include/ql/handle.hpp
 include/ql/index.hpp
@@ -1347,6 +1362,7 @@ include/ql/quantlib.hpp
 include/ql/quote.hpp
 include/ql/rebatedexercise.hpp
 include/ql/settings.hpp
+include/ql/shared_ptr.hpp
 include/ql/stochasticprocess.hpp
 include/ql/termstructure.hpp
 include/ql/timegrid.hpp
@@ -1358,7 +1374,6 @@ include/ql/volatilitymodel.hpp
 lib/libQuantLib.so
 lib/libQuantLib.so.0
 lib/libQuantLib.so.0.0.0
-lib/libQuantLib.la
 lib/libQuantLib.a
 libdata/pkgconfig/quantlib.pc
 man/man1/quantlib-config.1.gz
