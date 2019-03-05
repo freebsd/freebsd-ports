@@ -11,6 +11,8 @@ COMMENT=	Tool for capturing and replaying live HTTP traffic
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
