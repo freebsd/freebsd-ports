@@ -1,0 +1,5 @@
+Typed AST is a fork of the CPython 2.7 and 3.6 ast modules with the ability to
+parse PEP 484 type comments. The primary goals of Typed AST are correctness and
+speed.
+
+WWW: https://github.com/python/typed_ast

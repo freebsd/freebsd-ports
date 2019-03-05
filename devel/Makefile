@@ -5240,6 +5240,7 @@
     SUBDIR += py-txaio
     SUBDIR += py-typechecks
     SUBDIR += py-typed-ast
+    SUBDIR += py-typed-ast12
     SUBDIR += py-typing
     SUBDIR += py-typing-extensions
     SUBDIR += py-tzlocal
