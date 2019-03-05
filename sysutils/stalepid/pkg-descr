@@ -14,4 +14,4 @@ If all those conditions are met, the stalepid utility will remove the
 file specified by the pidfile argument, thus allowing the next invocation
 of the server to proceed normally.
 
-WWW: http://devel.ringlet.net/sysutils/stalepid/
+WWW: https://devel.ringlet.net/sysutils/stalepid/

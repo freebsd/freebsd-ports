@@ -1,0 +1,25 @@
+--- Makefile.orig	2017-02-17 15:31:21 UTC
++++ Makefile
+@@ -29,7 +29,7 @@ MAN1=		stalepid.1
+ LOCALBASE?=	/usr/local
+ PREFIX?=	${LOCALBASE}
+ BINDIR?=	${PREFIX}/bin
+-MANDIR?=	${PREFIX}/share/man/man
++MANDIR?=	${PREFIX}/man/man
+ 
+ MAN1Z=		${MAN1}.gz
+ 
+@@ -39,11 +39,11 @@ RM?=		rm -f
+ MV?=		mv -f
+ 
+ BINOWN?=	root
+-BINGRP?=	root
++BINGRP?=	wheel
+ BINMODE?=	755
+ 
+ SHAREOWN?=	root
+-SHAREGRP?=	root
++SHAREGRP?=	wheel
+ SHAREMODE?=	644
+ 
+ INSTALL_DATA?=	install -c -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE}
