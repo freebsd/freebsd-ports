@@ -3,31 +3,46 @@
 
 PORTNAME=	harbour
 PORTVERSION=	3.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}-project/source/${PORTVERSION}
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Open source Clipper-compatible compiler
 
+LICENSE=	GPLv2
+
 BROKEN_mips=		does not build: clang: Command not found
 BROKEN_mips64=		does not build: clang: Command not found
 # XXX MCL 20181112
 #BROKEN_powerpc64=	does not build: clang: Command not found
 BROKEN_sparc64=		does not compile: assertion failed
+BROKEN_SSL=				libressl libressl-devel openssl111
+BROKEN_SSL_REASON_libressl=		Needs an old version of OpenSSL (older than 1.1)
+BROKEN_SSL_REASON_libressl-devel=	Needs an old version of OpenSSL (older than 1.1)
+BROKEN_SSL_REASON_openssl111=		Needs an older version of OpenSSL (older than 1.1)
 
 LIB_DEPENDS=	libslang.so:devel/libslang2\
 		libpcre.so:devel/pcre
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PORTDOCS=	*.txt *.hbd NEWS INSTALL TODO COPYING ChangeLog
-
 USES=		bison gmake shebangfix ssl
+
 SHEBANG_FILES=	bin/hb3rdpat.hbs
 SHEBANG_LANG=	hbrun
-hbrun_OLD_CMD=	/usr/bin/hbrun
-hbrun_CMD=	${PREFIX}/bin/hbrun
+
+OPTIONS_DEFINE=	MYSQL SQLITE FIREBIRD PGSQL DOCS
+OPTIONS_SUB=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
+BROKEN=	Needs an older version of OpenSSL (older than 1.1)
+.endif
+
+PORTDOCS=	*.txt *.hbd NEWS INSTALL TODO COPYING ChangeLog
+
 USE_LDCONFIG=	${LOCALBASE}/lib/harbour
 
 HB_WITH_ALLEGRO=	no
@@ -87,9 +102,6 @@ MAKE_ENV=	HB_ARCHITECTURE=${HB_ARCH} \
 		HB_USER_CFLAGS=${HB_USER_CFLAGS} \
 		HB_USER_LDFLAGS=${HB_USER_LDFLAGS}
 
-OPTIONS_DEFINE=	MYSQL SQLITE FIREBIRD PGSQL DOCS
-OPTIONS_SUB=	yes
-
 DOCS_MAKE_ENV=		HB_INSTALL_DOC=${HB_INSTALL_DOC}
 DOCS_MAKE_ENV_OFF=	HB_INSTALL_DOC=no
 PGSQL_USES=	pgsql
@@ -108,8 +120,6 @@ SQLITE_MAKE_ENV_OFF=	HB_WITH_SQLITE3=no
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|utmp.h|utmpx.h|g' ${WRKSRC}/src/rtl/gtcrs/gtcrs.h
-
-.include <bsd.port.pre.mk>
 
 # override default for gcc-based archs
 .if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
