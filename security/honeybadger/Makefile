@@ -7,6 +7,8 @@ CATEGORIES=	security
 MAINTAINER=	shawn.webb@hardenedbsd.org
 COMMENT=	Quantum Insert detector and 0-day catcher
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	go:lang/go
 
 USE_GITHUB=	yes
