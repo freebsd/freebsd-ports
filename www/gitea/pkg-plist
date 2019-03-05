@@ -1855,6 +1855,7 @@ sbin/gitea
 %%DATADIR%%/public/vendor/plugins/emojify/images/zap.png
 %%DATADIR%%/public/vendor/plugins/emojify/images/zero.png
 %%DATADIR%%/public/vendor/plugins/emojify/images/zzz.png
+%%DATADIR%%/public/vendor/plugins/es6-promise/es6-promise.auto.min.js
 %%DATADIR%%/public/vendor/plugins/gitgraph/LICENSE
 %%DATADIR%%/public/vendor/plugins/gitgraph/gitgraph.css
 %%DATADIR%%/public/vendor/plugins/gitgraph/gitgraph.js
