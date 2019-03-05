@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	first-server
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTVERSIONPREFIX=	v
 
@@ -12,6 +12,7 @@ COMMENT=	Function Identification and Recovery Signature Tool
 
 LICENSE=	GPLv2
 
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}capstone>0:devel/py-capstone@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mysqlclient>=1.3.8:databases/py-mysqlclient@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}django>=1.11.4:www/py-django@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}werkzeug>=0.11.11:www/py-werkzeug@${PY_FLAVOR}
