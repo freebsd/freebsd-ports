@@ -72,6 +72,7 @@
 %%WWWDIR%%/application/controllers/SchemaController.php
 %%WWWDIR%%/application/controllers/SelfServiceController.php
 %%WWWDIR%%/application/controllers/ServiceController.php
+%%WWWDIR%%/application/controllers/ServiceapplyrulesController.php
 %%WWWDIR%%/application/controllers/ServicegroupController.php
 %%WWWDIR%%/application/controllers/ServicegroupsController.php
 %%WWWDIR%%/application/controllers/ServicesController.php
@@ -936,6 +937,7 @@
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_155.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_156.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_157.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_158.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_77.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_78.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_79.sql
