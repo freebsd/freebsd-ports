@@ -149,10 +149,6 @@ lib/zorba/core/%%FULLVERSION%%/org/expath/ns/libfile_2.0.so
 %%DOXYGEN%%%%DOCSDIR%%/cxx/html/rtab_l.gif
 %%DOXYGEN%%%%DOCSDIR%%/cxx/html/rtab_r.gif
 %%DOXYGEN%%%%DOCSDIR%%/cxx/html/terminal.png
-%%DOXYGEN%%%%PORTDOCS%%@dir %%DOCSDIR%%/java/html
-%%DOXYGEN%%%%PORTDOCS%%@dir %%DOCSDIR%%/php/html
-%%DOXYGEN%%%%PORTDOCS%%@dir %%DOCSDIR%%/python/html
-%%DOXYGEN%%%%PORTDOCS%%@dir %%DOCSDIR%%/ruby/html
 %%DOXYGEN%%%%PORTDOCS%%@dir %%DOCSDIR%%/zorba/xqdoc
 %%PORTDOCS%%%%DOCSDIR%%/xqdoc/generator/xqdoc-html.xq
 %%PORTDOCS%%%%DOCSDIR%%/xqdoc/generator/xqdoc-xml.xq

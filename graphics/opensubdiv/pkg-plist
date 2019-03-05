@@ -632,7 +632,6 @@ lib/libosdGPU.so.%%LIBVERS%%
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/folderclosed.png
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/folderopen.png
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions.html
-%%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_a.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_b.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_c.html
@@ -644,7 +643,6 @@ lib/libosdGPU.so.%%LIBVERS%%
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_f.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_func.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_func.js
-%%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_func_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_func_b.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_func_c.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_func_d.html
@@ -663,6 +661,7 @@ lib/libosdGPU.so.%%LIBVERS%%
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_func_t.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_func_u.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_func_v.html
+%%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_func_~.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_g.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_h.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_i.html
@@ -700,6 +699,7 @@ lib/libosdGPU.so.%%LIBVERS%%
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_vars_u.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_vars_v.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_w.html
+%%PORTDOCS%%%%DOCSDIR%%/doxy_html/functions_~.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/hierarchy.js
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/index.html

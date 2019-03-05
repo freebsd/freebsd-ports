@@ -1247,7 +1247,6 @@ libdata/pkgconfig/cppunit.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/folderclosed.png
 %%DOXYGEN%%%%DOCSDIR%%/html/folderopen.png
 %%DOXYGEN%%%%DOCSDIR%%/html/functions.html
-%%DOXYGEN%%%%DOCSDIR%%/html/functions_0x7e.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_b.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_c.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_d.html
@@ -1256,7 +1255,6 @@ libdata/pkgconfig/cppunit.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_eval.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_f.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_func.html
-%%DOXYGEN%%%%DOCSDIR%%/html/functions_func_0x7e.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_func_b.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_func_c.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_func_d.html
@@ -1276,6 +1274,7 @@ libdata/pkgconfig/cppunit.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_func_u.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_func_w.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_func_x.html
+%%DOXYGEN%%%%DOCSDIR%%/html/functions_func_~.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_g.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_h.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_i.html
@@ -1292,6 +1291,7 @@ libdata/pkgconfig/cppunit.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_vars.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_w.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_x.html
+%%DOXYGEN%%%%DOCSDIR%%/html/functions_~.html
 %%DOXYGEN%%%%DOCSDIR%%/html/globals.html
 %%DOXYGEN%%%%DOCSDIR%%/html/globals_defs.html
 %%DOXYGEN%%%%DOCSDIR%%/html/globals_func.html
