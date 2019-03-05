@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190301
+PORTVERSION=	s20190304
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	57e4f92
+GH_TAGNAME=	64cf7a9
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.6.10 \
@@ -34,11 +34,10 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		cast-0.2.2 \
 		cc-1.0.30 \
 		cexpr-0.3.4 \
-		cfg-if-0.1.6 \
+		cfg-if-0.1.7 \
 		clang-sys-0.26.4 \
 		clap-2.32.0 \
 		cloudabi-0.0.3 \
-		cmake-0.1.35 \
 		criterion-0.2.10 \
 		criterion-plot-0.3.0 \
 		crossbeam-deque-0.2.0 \
@@ -56,6 +55,7 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		glob-0.2.11 \
 		hashbrown-0.1.8 \
 		humantime-1.2.0 \
+		interpolate_name-0.2.1 \
 		itertools-0.8.0 \
 		itoa-0.4.3 \
 		lazy_static-1.3.0 \
@@ -67,7 +67,7 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		metadeps-1.1.2 \
 		nasm-rs-0.1.4 \
 		nodrop-0.1.13 \
-		nom-4.2.1 \
+		nom-4.2.2 \
 		num-traits-0.2.6 \
 		num_cpus-1.10.0 \
 		paste-0.1.4 \
@@ -122,7 +122,7 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		winapi-util-0.1.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		wincolor-1.0.1 \
-		y4m-0.3.1
+		y4m-0.3.2
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
