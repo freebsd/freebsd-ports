@@ -3,7 +3,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	2.2.18
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
 PKGNAMESUFFIX=	22
@@ -13,7 +13,15 @@ COMMENT=	SQL database-based mail system (POP3 and IMAP)
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Please use mail/dbmail which uses latest version of 3.X
+EXPIRATIONN_DATE=	2019-04-04
+
 LIB_DEPENDS=	libgmime-2.0.so:mail/gmime2
+
+USES=		gmake gnome libtool pkgconfig ssl
+USE_LDCONFIG=	${PREFIX}/lib/dbmail
+USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
+USE_GNOME=	glib20
 
 CONFLICTS=	dbmail-3.*
 
@@ -25,7 +33,7 @@ SIEVE_DESC=	Support for Sieve mail sorting language
 
 OPTIONS_SUB=	yes
 
-MYSQL_USE=	MYSQL=yes
+MYSQL_USES=	mysql
 MYSQL_CONFIGURE_WITH=	mysql
 SQLITE_USES=	sqlite:3
 SQLITE_CONFIGURE_WITH=	sqlite
@@ -38,11 +46,6 @@ LDAP_USE=		OPENLDAP=yes
 INSTALL_TARGET=	install-strip
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig ssl
-USE_LDCONFIG=	${PREFIX}/lib/dbmail
-USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
-USE_GNOME=	glib20
-
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
@@ -72,22 +75,18 @@ DATABASE+=	postgresql
 DATABASE+=	sqlite
 .endif
 
-post-patch:
-	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -r
-	@${FIND} ${WRKSRC} -name *.orig -type f -delete
-
 post-configure:
-	@${REINPLACE_CMD} -i.orig 's!/etc/dbmail.conf!${PREFIX}/etc/dbmail.conf!g' \
+	${REINPLACE_CMD} -i.orig 's!/etc/dbmail.conf!${PREFIX}/etc/dbmail.conf!g' \
 				${WRKSRC}/dbmail.h
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${STAGEDIR}${PREFIX}/etc/dbmail.conf-dist
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@for f in ${DATABASE}; do \
+	${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${STAGEDIR}${PREFIX}/etc/dbmail.conf-dist
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	for f in ${DATABASE}; do \
 	  ${MKDIR} ${STAGEDIR}${DATADIR}/$$f ; \
 	  ${INSTALL_DATA} ${WRKSRC}/sql/$$f/* ${STAGEDIR}${DATADIR}/$$f; \
 	done
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

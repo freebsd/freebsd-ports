@@ -1,6 +1,6 @@
---- configure.bak	2012-05-16 09:40:52.000000000 +0100
-+++ configure	2012-05-16 10:02:02.000000000 +0100
-@@ -2967,7 +2967,7 @@
+--- configure.orig	2012-01-20 08:14:04 UTC
++++ configure
+@@ -2967,7 +2967,7 @@ ldapprefixes="/usr /usr/local"
  sieveprefixes="/usr /usr/local"
  
  
