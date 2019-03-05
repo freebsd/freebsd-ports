@@ -12,9 +12,11 @@
 name=strongswan
 rcvar=strongswan_enable
 
-extra_commands="reload statusall"
-
 load_rc_config $name
+
+: ${strongswan_enable:=NO}
+
+extra_commands="reload statusall"
 
 command="%%PREFIX%%/sbin/ipsec"
 

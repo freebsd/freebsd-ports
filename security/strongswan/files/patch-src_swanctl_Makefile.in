@@ -1,0 +1,11 @@
+--- src/swanctl/Makefile.in.orig	2019-01-18 17:24:51 UTC
++++ src/swanctl/Makefile.in
+@@ -1065,7 +1065,7 @@ install-data-local: swanctl.conf
+ 	test -e "$(DESTDIR)$(swanctldir)/bliss" || $(INSTALL) -d -m 750 "$(DESTDIR)$(swanctldir)/bliss" || true
+ 	test -e "$(DESTDIR)$(swanctldir)/pkcs8" || $(INSTALL) -d -m 750 "$(DESTDIR)$(swanctldir)/pkcs8" || true
+ 	test -e "$(DESTDIR)$(swanctldir)/pkcs12" || $(INSTALL) -d -m 750 "$(DESTDIR)$(swanctldir)/pkcs12" || true
+-	test -e "$(DESTDIR)$(swanctldir)/swanctl.conf" || $(INSTALL) -m 640 $(srcdir)/swanctl.conf $(DESTDIR)$(swanctldir)/swanctl.conf || true
++	test -e "$(DESTDIR)$(swanctldir)/swanctl.conf" || $(INSTALL) -m 640 $(srcdir)/swanctl.conf $(DESTDIR)$(swanctldir)/swanctl.conf.sample || true
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
