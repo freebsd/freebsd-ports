@@ -40,6 +40,9 @@ CFLAGS+=	-DJOHN_SYSTEMWIDE=1 \
 # release, just hold the horses and wait for corresponding -jumbo one, which
 # usually does not take too long to appear.
 #
+# Starting from the next version, community-enhanced (jumbo) should be added
+# as an optional feature, as suggested by Alexander himself.
+#
 PORTSCOUT=	limit:.*-jumbo
 
 BINARIES=	calc_stat cprepair genmkvpwd john luks2john mkvcalcproba \
@@ -47,7 +50,7 @@ BINARIES=	calc_stat cprepair genmkvpwd john luks2john mkvcalcproba \
 
 BINLINKS=	base64conv dmg2john gpg2john hccap2john keepass2john \
 		keychain2john keyring2john keystore2john kwallet2john \
-		pfx2john putty2john pwsafe2john racf2john rar2john ssh2john \
+		pfx2john putty2john pwsafe2john racf2john rar2john \
 		truecrypt_volume2john unafs undrop unique unshadow zip2john
 
 PORTDOCS=	*

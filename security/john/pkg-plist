@@ -20,7 +20,6 @@ bin/pwsafe2john
 bin/racf2john
 bin/rar2john
 bin/raw2dyna
-bin/ssh2john
 bin/tgtsnarf
 bin/truecrypt_volume2john
 bin/uaf2john
