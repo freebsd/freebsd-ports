@@ -4,7 +4,7 @@
 PORTNAME=	xtide
 PORTVERSION=	2.15.2
 CATEGORIES=	astro geography
-MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
+MASTER_SITES=	https://flaterco.com/files/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME_TCD}${EXTRACT_SUFX} \
 		${DISTNAME_HARM}${EXTRACT_SUFX}
@@ -18,15 +18,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		compiler:c++0x gmake libtool localbase tar:bzip2
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_tcd_h=yes \
 		ac_cv_lib_tcd_get_tide_db_header=yes
-INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
-
 CFLAGS+=	-Wno-deprecated-declarations
 CPPFLAGS+=	-I${WRKSRC_TCD} $$(libpng-config --I_opts)
 LDFLAGS+=	-L${WRKSRC_TCD}/.libs $$(libpng-config --L_opts)
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		WVS X11
 OPTIONS_DEFAULT=	X11
@@ -34,7 +34,7 @@ OPTIONS_SUB=		yes
 
 WVS_DESC=		Use world vector shoreline data (37MB)
 WVS_DISTFILES=		${DISTNAME_WVS}${EXTRACT_SUFX}
-X11_USE=		xorg=xaw,xpm
+X11_USE=		xorg=ice,sm,x11,xaw,xext,xmu,xpm,xt
 X11_CONFIGURE_WITH=	x
 X11_DESKTOP_ENTRIES=	"XTide" "" "xtide" "xtide" "" ""
 
