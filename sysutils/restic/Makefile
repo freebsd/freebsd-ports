@@ -11,6 +11,8 @@ COMMENT=	Fast, secure, efficient backup program
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+
 USES=		go
 USE_GITHUB=	yes
 
