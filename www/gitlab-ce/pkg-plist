@@ -4842,6 +4842,7 @@
 %%WWWDIR%%/app/validators/namespace_path_validator.rb
 %%WWWDIR%%/app/validators/project_path_validator.rb
 %%WWWDIR%%/app/validators/public_url_validator.rb
+%%WWWDIR%%/app/validators/sha_validator.rb
 %%WWWDIR%%/app/validators/top_level_group_validator.rb
 %%WWWDIR%%/app/validators/url_validator.rb
 %%WWWDIR%%/app/validators/variable_duplicates_validator.rb
@@ -10098,7 +10099,9 @@
 %%WWWDIR%%/lib/gitlab/dependency_linker/godeps_json_linker.rb
 %%WWWDIR%%/lib/gitlab/dependency_linker/json_linker.rb
 %%WWWDIR%%/lib/gitlab/dependency_linker/method_linker.rb
+%%WWWDIR%%/lib/gitlab/dependency_linker/package.rb
 %%WWWDIR%%/lib/gitlab/dependency_linker/package_json_linker.rb
+%%WWWDIR%%/lib/gitlab/dependency_linker/parser/gemfile.rb
 %%WWWDIR%%/lib/gitlab/dependency_linker/podfile_linker.rb
 %%WWWDIR%%/lib/gitlab/dependency_linker/podspec_json_linker.rb
 %%WWWDIR%%/lib/gitlab/dependency_linker/podspec_linker.rb
@@ -11334,6 +11337,7 @@
 %%WWWDIR%%/spec/controllers/profiles/two_factor_auths_controller_spec.rb
 %%WWWDIR%%/spec/controllers/profiles_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/artifacts_controller_spec.rb
+%%WWWDIR%%/spec/controllers/projects/autocomplete_sources_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/avatars_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/badges_controller_spec.rb
 %%WWWDIR%%/spec/controllers/projects/blame_controller_spec.rb
@@ -13677,6 +13681,7 @@
 %%WWWDIR%%/spec/lib/gitlab/dependency_linker/gemspec_linker_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/dependency_linker/godeps_json_linker_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/dependency_linker/package_json_linker_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/dependency_linker/parser/gemfile_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/dependency_linker/podfile_linker_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/dependency_linker/podspec_json_linker_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/dependency_linker/podspec_linker_spec.rb
@@ -14586,6 +14591,7 @@
 %%WWWDIR%%/spec/policies/ci/pipeline_schedule_policy_spec.rb
 %%WWWDIR%%/spec/policies/ci/trigger_policy_spec.rb
 %%WWWDIR%%/spec/policies/clusters/cluster_policy_spec.rb
+%%WWWDIR%%/spec/policies/commit_policy_spec.rb
 %%WWWDIR%%/spec/policies/concerns/policy_actor_spec.rb
 %%WWWDIR%%/spec/policies/deploy_key_policy_spec.rb
 %%WWWDIR%%/spec/policies/deploy_token_policy_spec.rb
@@ -15192,6 +15198,7 @@
 %%WWWDIR%%/spec/support/helpers/features/notes_helpers.rb
 %%WWWDIR%%/spec/support/helpers/features/responsive_table_helpers.rb
 %%WWWDIR%%/spec/support/helpers/features/sorting_helpers.rb
+%%WWWDIR%%/spec/support/helpers/file_mover_helpers.rb
 %%WWWDIR%%/spec/support/helpers/filter_spec_helper.rb
 %%WWWDIR%%/spec/support/helpers/filtered_search_helpers.rb
 %%WWWDIR%%/spec/support/helpers/fixture_helpers.rb
@@ -15449,6 +15456,7 @@
 %%WWWDIR%%/spec/validators/namespace_path_validator_spec.rb
 %%WWWDIR%%/spec/validators/project_path_validator_spec.rb
 %%WWWDIR%%/spec/validators/public_url_validator_spec.rb
+%%WWWDIR%%/spec/validators/sha_validator_spec.rb
 %%WWWDIR%%/spec/validators/url_validator_spec.rb
 %%WWWDIR%%/spec/validators/variable_duplicates_validator_spec.rb
 %%WWWDIR%%/spec/views/admin/dashboard/index.html.haml_spec.rb
