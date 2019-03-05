@@ -5586,7 +5586,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/function_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/functional_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/functions.html
-%%DOXYGEN%%%%DOCSDIR%%/functions_0x7e.html
 %%DOXYGEN%%%%DOCSDIR%%/functions_b.html
 %%DOXYGEN%%%%DOCSDIR%%/functions_c.html
 %%DOXYGEN%%%%DOCSDIR%%/functions_d.html
@@ -5594,7 +5593,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/functions_enum.html
 %%DOXYGEN%%%%DOCSDIR%%/functions_f.html
 %%DOXYGEN%%%%DOCSDIR%%/functions_func.html
-%%DOXYGEN%%%%DOCSDIR%%/functions_func_0x7e.html
 %%DOXYGEN%%%%DOCSDIR%%/functions_func_b.html
 %%DOXYGEN%%%%DOCSDIR%%/functions_func_c.html
 %%DOXYGEN%%%%DOCSDIR%%/functions_func_d.html

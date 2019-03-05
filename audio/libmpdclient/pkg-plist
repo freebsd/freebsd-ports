@@ -97,6 +97,8 @@ share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/message_8h_source.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/mixer_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/mixer_8h_source.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/mount_8h.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/mount_8h_source.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/nav_f.png
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/nav_g.png
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/nav_h.png
@@ -127,6 +129,8 @@ share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/send_8h_source.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/settings_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/settings_8h_source.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/socket_8h.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/socket_8h_source.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/song_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/song_8h_source.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/splitbar.png
@@ -143,6 +147,7 @@ share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/structmpd__directory.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/structmpd__entity.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/structmpd__message.html
+%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/structmpd__mount.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/structmpd__output.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/structmpd__pair-members.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/structmpd__pair.html
@@ -161,5 +166,3 @@ share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/tabs.css
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/tag_8h.html
 %%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/tag_8h_source.html
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/socket_8h.html
-%%PORTDOCS%%%%DOXYGEN%%%%DOCSDIR%%/html/socket_8h_source.html

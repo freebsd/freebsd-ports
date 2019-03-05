@@ -32,6 +32,7 @@ CONFIGURE_ARGS+=	--enable-scalar \
 MPICC?=			${LOCALBASE}/mpi/openmpi/bin/mpicc
 MPICXX?=		${LOCALBASE}/mpi/openmpi/bin/mpic++
 
+DOXYGEN_BROKEN=		fails to build
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 OPENMPI_CONFIGURE_ENABLE=	parform

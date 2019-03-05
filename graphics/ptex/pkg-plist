@@ -226,7 +226,6 @@ include/ptex/PtexWriter.h
 %%PORTDOCS%%%%DOCSDIR%%/folderclosed.png
 %%PORTDOCS%%%%DOCSDIR%%/folderopen.png
 %%PORTDOCS%%%%DOCSDIR%%/functions.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_a.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_b.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_c.html
@@ -236,7 +235,6 @@ include/ptex/PtexWriter.h
 %%PORTDOCS%%%%DOCSDIR%%/functions_eval.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_f.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_func.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_func_b.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_func_c.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_func_d.html
@@ -257,6 +255,7 @@ include/ptex/PtexWriter.h
 %%PORTDOCS%%%%DOCSDIR%%/functions_func_u.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_func_v.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_func_w.html
+%%PORTDOCS%%%%DOCSDIR%%/functions_func_~.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_g.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_h.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_i.html
@@ -297,6 +296,7 @@ include/ptex/PtexWriter.h
 %%PORTDOCS%%%%DOCSDIR%%/functions_vars_z.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_w.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_z.html
+%%PORTDOCS%%%%DOCSDIR%%/functions_~.html
 %%PORTDOCS%%%%DOCSDIR%%/globals.html
 %%PORTDOCS%%%%DOCSDIR%%/globals_defs.html
 %%PORTDOCS%%%%DOCSDIR%%/globals_enum.html
@@ -349,8 +349,8 @@ include/ptex/PtexWriter.h
 %%PORTDOCS%%%%DOCSDIR%%/structPtexCache_1_1Stats.html
 %%PORTDOCS%%%%DOCSDIR%%/structPtexFilter_1_1Options-members.html
 %%PORTDOCS%%%%DOCSDIR%%/structPtexFilter_1_1Options.html
-%%PORTDOCS%%%%DOCSDIR%%/structPtexHalf.html
 %%PORTDOCS%%%%DOCSDIR%%/structPtexHalf-members.html
+%%PORTDOCS%%%%DOCSDIR%%/structPtexHalf.html
 %%PORTDOCS%%%%DOCSDIR%%/structPtexMainWriter_1_1LevelRec-members.html
 %%PORTDOCS%%%%DOCSDIR%%/structPtexMainWriter_1_1LevelRec.html
 %%PORTDOCS%%%%DOCSDIR%%/structPtexReaderCache_1_1MruList-members.html

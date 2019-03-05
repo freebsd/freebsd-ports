@@ -59,6 +59,7 @@ RDOC_DESC=		Build and install Rdoc indexes
 EDIT_DESC=		Which line editing lib to use
 LIBEDIT_DESC=		Use libedit
 READLINE_DESC=		Use libreadline
+CAPIDOCS_BROKEN=	bad plist
 CAPIDOCS_BUILD_DEPENDS=	doxygen>=1.8.13,2:devel/doxygen \
 			dot:graphics/graphviz
 CAPIDOCS_CONFIGURE_ENABLE=	install-capi
