@@ -2,7 +2,7 @@
 
 PORTNAME=	coursier
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.0-M12
 CATEGORIES=	devel java
 
 MAINTAINER=	jhyphenkeck@gmail.com
