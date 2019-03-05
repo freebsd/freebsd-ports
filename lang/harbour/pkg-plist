@@ -273,6 +273,7 @@ lib/harbour/libhbrdd.a
 lib/harbour/libhbrtl.a
 lib/harbour/libhbsix.a
 lib/harbour/libhbsms.a
+lib/harbour/libsqlite3.a
 %%SQLITE%%lib/harbour/libhbsqlit3.a
 lib/harbour/libhbssl.a
 lib/harbour/libhbtip.a
