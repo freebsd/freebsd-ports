@@ -3,6 +3,7 @@
 
 PORTNAME=	xdg-utils
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://portland.freedesktop.org/download/
 
