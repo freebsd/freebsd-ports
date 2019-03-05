@@ -1,10 +1,10 @@
---- rulefiles/linux/ignore.d.server/postfix.orig	2018-05-30 21:59:13 UTC
+--- rulefiles/linux/ignore.d.server/postfix.orig	2019-03-01 15:22:43 UTC
 +++ rulefiles/linux/ignore.d.server/postfix
 @@ -60,7 +60,7 @@
  ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtp\[[[:digit:]]+\]: warning: [^[:space:]]+ offered null AUTH mechanism list$
  ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtp\[[[:digit:]]+\]: warning: mailer loop: best MX for [^[:space:]]+ is local$
  ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtp\[[[:digit:]]+\]: warning: no MX host for [^[:space:]]+ has a valid (A|address) record$
--^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: ((Anonymous|Trusted|Verified) )?TLS connection established (to|from) [^[:space:]]+: (TLSv1|SSLv[23]) with cipher [^[:space:]]+ \([/[:digit:]]+ bits\)$
+-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: ((Anonymous|Trusted|Verified) )?TLS connection established (to|from) [^[:space:]]+: (TLSv1(\.[[:digit:]])?|SSLv[23]) with cipher [^[:space:]]+ \([/[:digit:]]+ bits\)$
 +^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: ((Anonymous|Trusted|Verified) )?TLS connection established (to|from) [^[:space:]]+: (TLSv1(\.[[:digit:]])?|SSLv[23]) with cipher [^[:space:]]+ \([/[:digit:]]+ bits\)( key-exchange [^[:space:]]+ server-signature [^[:space:]]+ \([/[:digit:]]+ bits\) server-digest [^[:space:]]+)?$
  ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: (Peer|Server) certificate could not be verified$
  ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: Unverified: subject_CN=.*$
