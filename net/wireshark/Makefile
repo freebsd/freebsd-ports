@@ -80,7 +80,7 @@ SSHDUMP_DESC=		Build sshdump extcap tool
 CISCODUMP_DESC=		Build ciscodump extcap tool
 
 GUI_USES=		qt:5
-GUI_USE=	qt=core,gui,multimedia,widgets,printsupport,svg,buildtools_build,linguisttools_build
+GUI_USE=	qt=core,gui,multimedia,widgets,printsupport,svg,buildtools_build,linguisttools_build,qmake_build
 
 LUA_USES=		lua:5[1-2]
 KRB_BASE_USES=		gssapi
