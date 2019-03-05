@@ -116,27 +116,21 @@ find_catport()
 	fi
 }
 
-find_expired() # [category [port]]
+find_expired()
 {
-	EXPVAR=EXPIRATION_DATE
-
-	# Called bare, just discovers categories
-	if [ -z "$1" ]; then
-		for category in $(make -C ${PORTSDIR} -VSUBDIR); do
-			find_expired $category
+	for category in $(make -C ${PORTSDIR} -V SUBDIR); do
+		for port in $(make -C ${PORTSDIR}/${category} -V SUBDIR); do
+			DATE="$(make -C ${PORTSDIR}/${category}/${port} -V EXPIRATION_DATE)"
+			if [ -n "${DATE}" -a ! "${DATE}" \> "${TODAY}" ] ; then
+				if [ "$1" = 1 ] ; then
+					echo -n "${DATE} ${category}/${port}: "
+					make -C ${PORTSDIR}/${category}/${port} -V DEPRECATED
+				else
+					echo "${category}/${port}"
+				fi
+			fi
 		done
-	elif [ -z "$2" ]; then
-		for port in $(make -C ${PORTSDIR}/$1 -VSUBDIR); do
-			find_expired $1 $port
-		done
-	else
-		DATE="$(make -C${PORTSDIR}/$1/$2 -V${EXPVAR})"
-		[ -n "$DATE" ] || return
-		if [ ! "$DATE" \> "${TODAY}" ]; then
-			echo "${DATE} $1/$2: ";
-			make -C${PORTSDIR}/$1/$2 -VDEPRECATED
-		fi
-	fi
+	done
 }
 
 # create temporary checkout directory
@@ -496,7 +490,7 @@ if [ ${1} = "-F" ] ; then
 	if [ ${#} -ne 1 ] ; then
 		usage
 	fi
-	find_expired
+	find_expired 1
 	exit
 fi
 
@@ -504,7 +498,7 @@ if [ ${1} = "-a" ] ; then
 	if [ ${#} -ne 1 ] ; then
 		usage
 	fi
-	${0} `find_expired |cut -f 2 -d ' ' |cut -f 1 -d :`
+	${0} `find_expired 0`
 	exit
 fi
 
