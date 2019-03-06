@@ -51,6 +51,7 @@ TREMOR_LIB_DEPENDS_OFF=	libvorbisfile.so:audio/libvorbis
 post-patch:
 	@${REINPLACE_CMD} -e '/^ifdef DEBUG/,/^$$/d' \
 		-e 's/$$STRIPFLAG/${STRIP}/' \
+		-e 's/_maltivec/_altivec/g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's/$$(LIBS)/$$(LDFLAGS) &/' \
 		${WRKSRC}/src/Makefile.ponscripter
