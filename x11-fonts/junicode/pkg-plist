@@ -2,9 +2,7 @@
 %%FONTSDIR%%/Junicode-BoldItalic.ttf
 %%FONTSDIR%%/Junicode-Italic.ttf
 %%FONTSDIR%%/Junicode.ttf
+%%FONTSDIR%%/FoulisGreek.ttf
 %%PORTDOCS%%%%DOCSDIR%%/Junicode.pdf
-%%PORTDOCS%%%%DOCSDIR%%/Junicode.tex
 %%PORTDOCS%%%%DOCSDIR%%/aelfric_job.pdf
-%%PORTDOCS%%%%DOCSDIR%%/aelfric_job.tex
 %%PORTDOCS%%%%DOCSDIR%%/homer_sample.pdf
-%%PORTDOCS%%%%DOCSDIR%%/homer_sample.tex
