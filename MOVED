@@ -4048,7 +4048,6 @@ sysutils/sarah||2013-03-03|Has expired: No more upstream, no more public distfil
 www/igal||2013-03-03|Has expired: No more upstream, no more public distfiles, consider using www/llgal
 finance/tinyerp-server||2013-03-03|Has expired: No more upstream, no more public distfiles, consider using finance/openerp-server
 ports-mgmt/portcheck||2013-03-03|Has expired: No more upstream, no more public distfiles
-security/sslproxy||2013-03-03|Has expired: Abandoned upstream
 x11-themes/e17-theme-darkness||2013-03-03|Has expired: No more public distfiles
 x11-themes/e17-theme-cthulhain||2013-03-03|Has expired: Dead upstream since 2008
 x11-servers/driglide||2013-03-03|Has expired: 3dfx is dead, fails to compile on recent versions of FreeBSD

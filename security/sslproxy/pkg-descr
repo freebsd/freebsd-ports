@@ -1,0 +1,15 @@
+SSLproxy is a proxy for SSL/TLS encrypted network connections. It is intended to
+be used for decrypting and diverting network traffic to other programs, such as
+UTM services, for deep SSL inspection.
+
+SSLproxy is designed to transparently terminate connections that are redirected
+to it using a network address translation engine. SSLproxy then terminates
+SSL/TLS and initiates a new SSL/TLS connection to the original destination
+address. Packets received on the client side are decrypted and sent to the
+program listening on a port given in the proxy specification. SSLproxy inserts
+in the first packet the address and port it is expecting to receive the packets
+back from the program. Upon receiving the packets back, SSLproxy re-encrypts and
+sends them to their original destination. The return traffic follows the same
+path back to the client in reverse order.
+
+WWW: https://github.com/sonertari/SSLproxy
