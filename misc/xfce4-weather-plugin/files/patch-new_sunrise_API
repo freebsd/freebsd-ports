@@ -1,0 +1,673 @@
+From cc20f088a694613bc2d7551070208dfb9221f9d7 Mon Sep 17 00:00:00 2001
+From: Olivier Duchateau <duchateau.olivier@gmail.com>
+Date: Sat, 2 Mar 2019 18:57:09 +0100
+Subject: [PATCH] Use the latest sunrise API (2.0)
+
+---
+ panel-plugin/weather-data.c    |  12 +--
+ panel-plugin/weather-data.h    |   2 +-
+ panel-plugin/weather-parsers.c | 185 +++++++++++++++++----------------
+ panel-plugin/weather-summary.c |  20 ++--
+ panel-plugin/weather.c         | 103 +++++++++++-------
+ panel-plugin/weather.h         |   3 +
+ 6 files changed, 184 insertions(+), 141 deletions(-)
+
+diff --git a/panel-plugin/weather-data.c b/panel-plugin/weather-data.c
+index cbc7da5..008a60c 100644
+--- panel-plugin/weather-data.c
++++ panel-plugin/weather-data.c
+@@ -105,25 +105,25 @@ double_to_string(const gdouble val,
+ 
+ 
+ gchar *
+-format_date(const time_t date_t,
++format_date(time_t date_t,
+             gchar *format,
+             gboolean local)
+ {
+     struct tm *tm;
+-    time_t t = date_t;
+     gchar buf[40];
+     size_t size;
+ 
++    if (format == NULL)
++        format = "%Y-%m-%d %H:%M:%S";
++
+     if (G_LIKELY(local))
+-        tm = localtime(&t);
++        tm = localtime(&date_t);
+     else
+-        tm = gmtime(&t);
++        tm = gmtime(&date_t);
+ 
+     /* A year <= 1970 means date has not been set */
+     if (G_UNLIKELY(tm == NULL) || tm->tm_year <= 70)
+         return g_strdup("-");
+-    if (format == NULL)
+-        format = "%Y-%m-%d %H:%M:%S";
+     size = strftime(buf, 40, format, tm);
+     return (size ? g_strdup(buf) : g_strdup("-"));
+ }
+diff --git a/panel-plugin/weather-data.h b/panel-plugin/weather-data.h
+index 73f5195..63be6aa 100644
+--- panel-plugin/weather-data.h
++++ panel-plugin/weather-data.h
+@@ -103,7 +103,7 @@ gdouble string_to_double(const gchar *str,
+ gchar *double_to_string(gdouble val,
+                         const gchar *format);
+ 
+-gchar *format_date(const time_t t,
++gchar *format_date(time_t t,
+                    gchar *format,
+                    gboolean local);
+ 
+diff --git a/panel-plugin/weather-parsers.c b/panel-plugin/weather-parsers.c
+index d23df2c..ef6f269 100644
+--- panel-plugin/weather-parsers.c
++++ panel-plugin/weather-parsers.c
+@@ -35,6 +35,9 @@
+ #include <stdlib.h>
+ #include <string.h>
+ 
++#include <libxml/parser.h>
++#include <libxml/tree.h>
++
+ 
+ #define DATA(node)                                                  \
+     ((gchar *) xmlNodeListGetString(node->doc, node->children, 1))
+@@ -71,6 +74,28 @@ my_timegm(struct tm *tm)
+ }
+ 
+ 
++/*
++ * Remove offset of timezone, in order to keep previous
++ * date format (before the new API, 2.x).
++ */
++static gchar *
++remove_timezone_offset(gchar *date)
++{
++    GRegex *re = NULL;
++    const gchar *pattern = "[+-][0-9]{2}:[0-9]{2}";
++    gchar *res;
++
++    re = g_regex_new(pattern, 0, 0, NULL);
++    if (re != NULL && g_regex_match(re, date, 0, NULL)) {
++        res = g_regex_replace(re, date, -1, 0, "Z", 0, NULL);
++    } else {
++        res = date;
++    }
++    g_regex_unref(re);
++    return res;
++}
++
++
+ xml_time *
+ get_timeslice(xml_weather *wd,
+               const time_t start_t,
+@@ -128,9 +153,10 @@ parse_timestring(const gchar *ts,
+     time_t t;
+     struct tm tm;
+ 
+-    memset(&t, 0, sizeof(time_t));
+-    if (G_UNLIKELY(ts == NULL))
++    if (G_UNLIKELY(ts == NULL)) {
++        memset(&t, 0, sizeof(time_t));
+         return t;
++    }
+ 
+     /* standard format */
+     if (format == NULL)
+@@ -141,15 +167,22 @@ parse_timestring(const gchar *ts,
+     memset(&tm, 0, sizeof(struct tm));
+     tm.tm_isdst = -1;
+ 
+-    if (G_UNLIKELY(strptime(ts, format, &tm) == NULL))
+-        return t;
+-
+-    if (local)
+-        t = mktime(&tm);
+-    else
+-        t = my_timegm(&tm);
++    if (strptime(ts, format, &tm) != NULL) {
++        if (local)
++            t = mktime(&tm);
++        else
++            t = my_timegm(&tm);
+ 
+-    return t;
++        if (t < 0) {
++            memset(&t, 0, sizeof(time_t));
++            return t;
++        } else {
++            return t;
++        }
++    } else {
++        memset(&t, 0, sizeof(time_t));
++        return t;
++    }
+ }
+ 
+ 
+@@ -365,83 +398,14 @@ parse_weather(xmlNode *cur_node,
+ }
+ 
+ 
+-static void
+-parse_astro_location(xmlNode *cur_node,
+-                     xml_astro *astro)
+-{
+-    xmlNode *child_node;
+-    gchar *sunrise, *sunset, *moonrise, *moonset;
+-    gchar *never_rises, *never_sets;
+-
+-    for (child_node = cur_node->children; child_node;
+-         child_node = child_node->next) {
+-        if (NODE_IS_TYPE(child_node, "sun")) {
+-            never_rises = PROP(child_node, "never_rise");
+-            if (never_rises &&
+-                (!strcmp(never_rises, "true") ||
+-                 !strcmp(never_rises, "1")))
+-                astro->sun_never_rises = TRUE;
+-            else
+-                astro->sun_never_rises = FALSE;
+-            xmlFree(never_rises);
+-
+-            never_sets = PROP(child_node, "never_set");
+-            if (never_sets &&
+-                (!strcmp(never_sets, "true") ||
+-                 !strcmp(never_sets, "1")))
+-                astro->sun_never_sets = TRUE;
+-            else
+-                astro->sun_never_sets = FALSE;
+-            xmlFree(never_sets);
+-
+-            sunrise = PROP(child_node, "rise");
+-            astro->sunrise = parse_timestring(sunrise, NULL, FALSE);
+-            xmlFree(sunrise);
+-
+-            sunset = PROP(child_node, "set");
+-            astro->sunset = parse_timestring(sunset, NULL, FALSE);
+-            xmlFree(sunset);
+-        }
+-
+-        if (NODE_IS_TYPE(child_node, "moon")) {
+-            never_rises = PROP(child_node, "never_rise");
+-            if (never_rises &&
+-                (!strcmp(never_rises, "true") ||
+-                 !strcmp(never_rises, "1")))
+-                astro->moon_never_rises = TRUE;
+-            else
+-                astro->moon_never_rises = FALSE;
+-            xmlFree(never_rises);
+-
+-            never_sets = PROP(child_node, "never_set");
+-            if (never_sets &&
+-                (!strcmp(never_sets, "true") ||
+-                 !strcmp(never_sets, "1")))
+-                astro->moon_never_sets = TRUE;
+-            else
+-                astro->moon_never_sets = FALSE;
+-            xmlFree(never_sets);
+-
+-            moonrise = PROP(child_node, "rise");
+-            astro->moonrise = parse_timestring(moonrise, NULL, FALSE);
+-            xmlFree(moonrise);
+-
+-            moonset = PROP(child_node, "set");
+-            astro->moonset = parse_timestring(moonset, NULL, FALSE);
+-            xmlFree(moonset);
+-
+-            astro->moon_phase = PROP(child_node, "phase");
+-        }
+-    }
+-}
+-
+-
+ static xml_astro *
+ parse_astro_time(xmlNode *cur_node)
+ {
+     xmlNode *child_node;
+     xml_astro *astro;
+-    gchar *date;
++    gchar *date, *sunrise, *sunset, *moonrise, *moonset;
++    gboolean sun_rises = FALSE, sun_sets = FALSE;
++    gboolean moon_rises = FALSE, moon_sets = FALSE;
+ 
+     astro = g_slice_new0(xml_astro);
+     if (G_UNLIKELY(astro == NULL))
+@@ -452,15 +416,61 @@ parse_astro_time(xmlNode *cur_node)
+     xmlFree(date);
+ 
+     for (child_node = cur_node->children; child_node;
+-         child_node = child_node->next)
+-        if (NODE_IS_TYPE(child_node, "location"))
+-            parse_astro_location(child_node, astro);
++         child_node = child_node->next) {
++        if (child_node->type == XML_ELEMENT_NODE) {
++            if (NODE_IS_TYPE(child_node, "sunrise")) {
++                sunrise = remove_timezone_offset(PROP(child_node, "time"));
++                astro->sunrise = parse_timestring(sunrise, NULL, FALSE);
++                xmlFree(sunrise);
++                sun_rises = TRUE;
++            }
++
++            if (NODE_IS_TYPE(child_node, "moonset")) {
++                moonset = remove_timezone_offset(PROP(child_node, "time"));
++                astro->moonset = parse_timestring(moonset, NULL, FALSE);
++                xmlFree(moonset);
++                moon_sets = TRUE;
++            }
++
++            if (NODE_IS_TYPE(child_node, "sunset")) {
++                sunset = remove_timezone_offset(PROP(child_node, "time"));
++                astro->sunset = parse_timestring(sunset, NULL, FALSE);
++                xmlFree(sunset);
++                sun_sets = TRUE;
++            }
++
++            if (NODE_IS_TYPE(child_node, "moonrise")) {
++                moonrise = remove_timezone_offset(PROP(child_node, "time"));
++                astro->moonrise = parse_timestring(moonrise, NULL, FALSE);
++                xmlFree(moonrise);
++                moon_rises = TRUE;
++            }
++        }
++    }
++
++    if (sun_rises)
++        astro->sun_never_rises = FALSE;
++    else
++        astro->sun_never_rises = TRUE;
++    if (sun_sets)
++        astro->sun_never_sets = FALSE;
++    else
++        astro->sun_never_sets = TRUE;
++
++    if (moon_rises)
++        astro->moon_never_rises = FALSE;
++    else
++        astro->moon_never_rises = TRUE;
++    if (moon_sets)
++        astro->moon_never_sets = FALSE;
++    else
++        astro->moon_never_sets = TRUE;
+     return astro;
+ }
+ 
+ 
+ /*
+- * Look at https://api.met.no/weatherapi/sunrise/1.1/schema for information
++ * Look at https://api.met.no/weatherapi/sunrise/2.0/schema for information
+  * of elements and attributes to expect.
+  */
+ gboolean
+@@ -475,7 +485,8 @@ parse_astrodata(xmlNode *cur_node,
+         return FALSE;
+ 
+     g_assert(cur_node != NULL);
+-    if (G_UNLIKELY(cur_node == NULL || !NODE_IS_TYPE(cur_node, "astrodata")))
++    if (G_UNLIKELY(cur_node == NULL ||
++        !NODE_IS_TYPE(cur_node, "location")))
+         return FALSE;
+ 
+     for (child_node = cur_node->children; child_node;
+diff --git a/panel-plugin/weather-summary.c b/panel-plugin/weather-summary.c
+index bd9b05b..44d1874 100644
+--- panel-plugin/weather-summary.c
++++ panel-plugin/weather-summary.c
+@@ -417,12 +417,12 @@ create_summary_tab(plugin_data *data)
+             value = g_strdup(_("\tSunset:\t\tThe sun never sets today.\n"));
+             APPEND_TEXT_ITEM_REAL(value);
+         } else {
+-            sunrise = format_date(data->current_astro->sunrise, NULL, TRUE);
++            sunrise = format_date(data->current_astro->sunrise, NULL, FALSE);
+             value = g_strdup_printf(_("\tSunrise:\t\t%s\n"), sunrise);
+             g_free(sunrise);
+             APPEND_TEXT_ITEM_REAL(value);
+ 
+-            sunset = format_date(data->current_astro->sunset, NULL, TRUE);
++            sunset = format_date(data->current_astro->sunset, NULL, FALSE);
+             value = g_strdup_printf(_("\tSunset:\t\t%s\n\n"), sunset);
+             g_free(sunset);
+             APPEND_TEXT_ITEM_REAL(value);
+@@ -445,12 +445,12 @@ create_summary_tab(plugin_data *data)
+                 g_strdup(_("\tMoonset:\tThe moon never sets today.\n"));
+             APPEND_TEXT_ITEM_REAL(value);
+         } else {
+-            moonrise = format_date(data->current_astro->moonrise, NULL, TRUE);
++            moonrise = format_date(data->current_astro->moonrise, NULL, FALSE);
+             value = g_strdup_printf(_("\tMoonrise:\t%s\n"), moonrise);
+             g_free(moonrise);
+             APPEND_TEXT_ITEM_REAL(value);
+ 
+-            moonset = format_date(data->current_astro->moonset, NULL, TRUE);
++            moonset = format_date(data->current_astro->moonset, NULL, FALSE);
+             value = g_strdup_printf(_("\tMoonset:\t%s\n"), moonset);
+             g_free(moonset);
+             APPEND_TEXT_ITEM_REAL(value);
+@@ -699,13 +699,13 @@ forecast_day_header_tooltip_text(xml_astro *astro)
+                                     "Sunset: The sun never sets this day."
+                                     "</small></tt>\n"));
+         else {
+-            sunrise = format_date(astro->sunrise, NULL, TRUE);
++            sunrise = format_date(astro->sunrise, NULL, FALSE);
+             g_string_append_printf(text, _("<tt><small>"
+                                            "Sunrise: %s"
+                                            "</small></tt>\n"), sunrise);
+             g_free(sunrise);
+ 
+-            sunset = format_date(astro->sunset, NULL, TRUE);
++            sunset = format_date(astro->sunset, NULL, FALSE);
+             g_string_append_printf(text, _("<tt><small>"
+                                            "Sunset:  %s"
+                                            "</small></tt>\n\n"), sunset);
+@@ -732,13 +732,13 @@ forecast_day_header_tooltip_text(xml_astro *astro)
+                               "Moonset: The moon never sets this day."
+                               "</small></tt>\n"));
+         else {
+-            moonrise = format_date(astro->moonrise, NULL, TRUE);
++            moonrise = format_date(astro->moonrise, NULL, FALSE);
+             g_string_append_printf(text, _("<tt><small>"
+                                            "Moonrise: %s"
+                                            "</small></tt>\n"), moonrise);
+             g_free(moonrise);
+ 
+-            moonset = format_date(astro->moonset, NULL, TRUE);
++            moonset = format_date(astro->moonset, NULL, FALSE);
+             g_string_append_printf(text, _("<tt><small>"
+                                            "Moonset:  %s"
+                                            "</small></tt>"), moonset);
+@@ -1084,10 +1084,10 @@ update_summary_subtitle(plugin_data *data)
+     time(&now_t);
+ #ifdef HAVE_UPOWER_GLIB
+     if (data->upower_on_battery)
+-        date_format = "%Y-%m-%d %H:%M %z (%Z)";
++        date_format = "%Y-%m-%d %H:%M:%S (%Z)";
+     else
+ #endif
+-        date_format = "%Y-%m-%d %H:%M:%S %z (%Z)";
++        date_format = "%Y-%m-%d %H:%M:%S (%Z)";
+     date = format_date(now_t, date_format, TRUE);
+     title = g_strdup_printf("%s\n%s", data->location_name, date);
+     g_free(date);
+diff --git a/panel-plugin/weather.c b/panel-plugin/weather.c
+index 752de48..c398381 100644
+--- panel-plugin/weather.c
++++ panel-plugin/weather.c
+@@ -26,6 +26,9 @@
+ #include <libxfce4util/libxfce4util.h>
+ #include <libxfce4ui/libxfce4ui.h>
+ 
++#include <libxml/parser.h>
++#include <libxml/tree.h>
++
+ #include "weather-parsers.h"
+ #include "weather-data.h"
+ #include "weather.h"
+@@ -47,12 +50,6 @@
+ #define CONN_RETRY_INTERVAL_SMALL (10)
+ #define CONN_RETRY_INTERVAL_LARGE (10 * 60)
+ 
+-/* met.no sunrise API returns data for up to 30 days in the future and
+-   will return an error page if too many days are requested. Let's
+-   play it safe and request fewer than that, since we can only get a
+-   10 days forecast too. */
+-#define ASTRODATA_MAX_DAYS 25
+-
+ /* power saving update interval in seconds used as a precaution to
+    deal with suspend/resume events etc., when nothing needs to be
+    updated earlier: */
+@@ -81,6 +78,7 @@
+     g_free(locname);                            \
+     g_free(lat);                                \
+     g_free(lon);                                \
++    g_free(offset);                             \
+     if (keyfile)                                \
+         g_key_file_free(keyfile);
+ 
+@@ -269,6 +267,19 @@ update_timezone(plugin_data *data)
+ }
+ 
+ 
++void
++update_offset(plugin_data *data)
++{
++    GDateTime *dt;
++
++    dt = g_date_time_new_now_local();
++    if (G_LIKELY(data->offset))
++        g_free(data->offset);
++
++    data->offset = g_date_time_format(dt, "%:z");
++}
++
++
+ void
+ update_icon(plugin_data *data)
+ {
+@@ -481,7 +492,7 @@ cb_astro_update(SoupSession *session,
+ {
+     plugin_data *data = user_data;
+     xmlDoc *doc;
+-    xmlNode *root_node;
++    xmlNode *root_node, *child_node;
+     time_t now_t;
+     gboolean parsing_error = TRUE;
+ 
+@@ -492,13 +503,19 @@ cb_astro_update(SoupSession *session,
+         doc = get_xml_document(msg);
+         if (G_LIKELY(doc)) {
+             root_node = xmlDocGetRootElement(doc);
+-            if (G_LIKELY(root_node))
+-                if (parse_astrodata(root_node, data->astrodata)) {
+-                    /* schedule next update */
+-                    data->astro_update->attempt = 0;
+-                    data->astro_update->last = now_t;
+-                    parsing_error = FALSE;
++            if (G_LIKELY(root_node)) {
++                for (child_node = root_node->children; child_node;
++                     child_node = child_node->next) {
++                    if (child_node->type == XML_ELEMENT_NODE) {
++                        if (parse_astrodata(child_node, data->astrodata)) {
++                            /* schedule next update */
++                            data->astro_update->attempt = 0;
++                            data->astro_update->last = now_t;
++                            parsing_error = FALSE;
++                        }
++                    }
+                 }
++            }
+             xmlFreeDoc(doc);
+         }
+         if (parsing_error)
+@@ -580,8 +597,8 @@ update_handler(plugin_data *data)
+ {
+     gchar *url;
+     gboolean night_time;
+-    time_t now_t, end_t;
+-    struct tm now_tm, end_tm;
++    time_t now_t;
++    struct tm now_tm;
+ 
+     g_assert(data != NULL);
+     if (G_UNLIKELY(data == NULL))
+@@ -616,26 +633,22 @@ update_handler(plugin_data *data)
+         data->astro_update->next = time_calc_hour(now_tm, 1);
+         data->astro_update->started = TRUE;
+ 
+-        /* calculate date range for request */
+-        end_t = time_calc_day(now_tm, ASTRODATA_MAX_DAYS);
+-        end_tm = *localtime(&end_t);
+-
+         /* build url */
+-        url = g_strdup_printf("https://api.met.no/weatherapi/sunrise/1.1/?"
+-                              "lat=%s;lon=%s;"
+-                              "from=%04d-%02d-%02d;"
+-                              "to=%04d-%02d-%02d",
++        url = g_strdup_printf("https://api.met.no/weatherapi"
++                              "/sunrise/2.0/?lat=%s&lon=%s&"
++                              "date=%04d-%02d-%02d&"
++                              "offset=%s&days=%u",
+                               data->lat, data->lon,
+                               now_tm.tm_year + 1900,
+                               now_tm.tm_mon + 1,
+                               now_tm.tm_mday,
+-                              end_tm.tm_year + 1900,
+-                              end_tm.tm_mon + 1,
+-                              end_tm.tm_mday);
++                              data->offset,
++                              data->forecast_days);
+ 
+         /* start receive thread */
+         g_message(_("getting %s"), url);
+-        weather_http_queue_request(data->session, url, cb_astro_update, data);
++        weather_http_queue_request(data->session, url,
++                                   cb_astro_update, data);
+         g_free(url);
+     }
+ 
+@@ -647,10 +660,10 @@ update_handler(plugin_data *data)
+         data->weather_update->started = TRUE;
+ 
+         /* build url */
+-        url =
+-            g_strdup_printf("https://api.met.no/weatherapi"
+-                            "/locationforecastlts/1.3/?lat=%s;lon=%s;msl=%d",
+-                            data->lat, data->lon, data->msl);
++        url = g_strdup_printf("https://api.met.no/weatherapi"
++                              "/locationforecastlts/1.3/?lat=%s&lon=%s&"
++                              "msl=%d",
++                              data->lat, data->lon, data->msl);
+ 
+         /* start receive thread */
+         g_message(_("getting %s"), url);
+@@ -707,7 +720,7 @@ schedule_next_wakeup(plugin_data *data)
+ 
+     next_day_t = day_at_midnight(now_t, 1);
+     diff = difftime(next_day_t, now_t);
+-	data->next_wakeup_reason = "current astro data update";
++    data->next_wakeup_reason = "current astro data update";
+     SCHEDULE_WAKEUP_COMPARE(data->astro_update->next,
+                             "astro data download");
+     SCHEDULE_WAKEUP_COMPARE(data->weather_update->next,
+@@ -853,6 +866,12 @@ xfceweather_read_config(XfcePanelPlugin *plugin,
+         data->timezone = g_strdup(value);
+     }
+ 
++    value = xfce_rc_read_entry(rc, "offset", NULL);
++    if (value) {
++        g_free(data->offset);
++        data->offset = g_strdup(value);
++    }
++
+     value = xfce_rc_read_entry(rc, "geonames_username", NULL);
+     if (value) {
+         g_free(data->geonames_username);
+@@ -975,6 +994,8 @@ xfceweather_write_config(XfcePanelPlugin *plugin,
+ 
+     xfce_rc_write_entry(rc, "timezone", data->timezone);
+ 
++    xfce_rc_write_entry(rc, "offset", data->offset);
++
+     if (data->geonames_username)
+         xfce_rc_write_entry(rc, "geonames_username", data->geonames_username);
+ 
+@@ -1076,6 +1097,7 @@ write_cache_file(plugin_data *data)
+     CACHE_APPEND("location_name=%s\n", data->location_name);
+     CACHE_APPEND("lat=%s\n", data->lat);
+     CACHE_APPEND("lon=%s\n", data->lon);
++    CACHE_APPEND("offset=%s\n", data->offset);
+     g_string_append_printf(out, "msl=%d\n", data->msl);
+     g_string_append_printf(out, "timeslices=%d\n", wd->timeslices->len);
+     if (G_LIKELY(data->weather_update)) {
+@@ -1190,7 +1212,7 @@ read_cache_file(plugin_data *data)
+     xml_location *loc = NULL;
+     xml_astro *astro = NULL;
+     time_t now_t = time(NULL), cache_date_t;
+-    gchar *file, *locname = NULL, *lat = NULL, *lon = NULL, *group = NULL;
++    gchar *file, *locname = NULL, *lat = NULL, *lon = NULL, *group = NULL, *offset = NULL;
+     gchar *timestring;
+     gint msl, num_timeslices = 0, i, j;
+ 
+@@ -1225,7 +1247,8 @@ read_cache_file(plugin_data *data)
+     locname = g_key_file_get_string(keyfile, group, "location_name", NULL);
+     lat = g_key_file_get_string(keyfile, group, "lat", NULL);
+     lon = g_key_file_get_string(keyfile, group, "lon", NULL);
+-    if (locname == NULL || lat == NULL || lon == NULL) {
++    offset = g_key_file_get_string(keyfile, group, "offset", NULL);
++    if (locname == NULL || lat == NULL || lon == NULL || offset == NULL) {
+         CACHE_FREE_VARS();
+         weather_debug("Required values are missing in the cache file, "
+                       "reading cache file aborted.");
+@@ -1236,7 +1259,8 @@ read_cache_file(plugin_data *data)
+         num_timeslices = g_key_file_get_integer(keyfile, group,
+                                                 "timeslices", &err);
+     if (err || strcmp(lat, data->lat) || strcmp(lon, data->lon) ||
+-        msl != data->msl || num_timeslices < 1) {
++        strcmp(offset, data->offset) || msl != data->msl ||
++        num_timeslices < 1) {
+         CACHE_FREE_VARS();
+         weather_debug("The required values are not present in the cache file "
+                       "or do not match the current plugin data. Reading "
+@@ -1404,6 +1428,9 @@ update_weatherdata_with_reset(plugin_data *data)
+     /* set location timezone */
+     update_timezone(data);
+ 
++    /* set the offset of timezone */
++    update_offset(data);
++
+     /* clear update times */
+     init_update_infos(data);
+ 
+@@ -1709,9 +1736,9 @@ weather_get_tooltip_text(const plugin_data *data)
+             sunval = g_strdup(_("The sun never sets today."));
+         } else {
+             sunrise = format_date(data->current_astro->sunrise,
+-                                  "%H:%M:%S", TRUE);
++                                  "%H:%M:%S", FALSE);
+             sunset = format_date(data->current_astro->sunset,
+-                                 "%H:%M:%S", TRUE);
++                                 "%H:%M:%S", FALSE);
+             sunval =
+                 g_strdup_printf(_("The sun rises at %s and sets at %s."),
+                                 sunrise, sunset);
+@@ -1999,6 +2026,7 @@ xfceweather_free(XfcePanelPlugin *plugin,
+     g_free(data->location_name);
+     g_free(data->scrollbox_font);
+     g_free(data->timezone);
++    g_free(data->offset);
+     g_free(data->timezone_initial);
+     g_free(data->geonames_username);
+ 
+@@ -2170,6 +2198,7 @@ weather_construct(XfcePanelPlugin *plugin)
+ 
+     xfceweather_read_config(plugin, data);
+     update_timezone(data);
++    update_offset(data);
+     read_cache_file(data);
+     update_current_conditions(data, TRUE);
+     scrollbox_set_visible(data);
+diff --git a/panel-plugin/weather.h b/panel-plugin/weather.h
+index b1849a9..31ab9fb 100644
+--- panel-plugin/weather.h
++++ panel-plugin/weather.h
+@@ -114,6 +114,7 @@ typedef struct {
+     gchar *lon;
+     gint msl;
+     gchar *timezone;
++    gchar *offset;
+     gchar *timezone_initial;
+     gint cache_file_max_age;
+     gboolean night_time;
+@@ -144,6 +145,8 @@ gchar *get_cache_directory(void);
+ 
+ void update_timezone(plugin_data *data);
+ 
++void update_offset(plugin_data *data);
++
+ void update_icon(plugin_data *data);
+ 
+ void update_scrollbox(plugin_data *data,
+-- 
+2.20.1
+
