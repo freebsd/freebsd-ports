@@ -18,9 +18,9 @@ lib/libcmumps.so.4
 lib/libdmumps.a
 lib/libdmumps.so
 lib/libdmumps.so.4
-%%WITH_LIBSEQ%%lib/libmpiseq.a
-%%WITH_LIBSEQ%%lib/libmpiseq.so
-%%WITH_LIBSEQ%%lib/libmpiseq.so.4
+lib/libmpiseq.a
+lib/libmpiseq.so
+lib/libmpiseq.so.4
 lib/libmumps_common.a
 lib/libmumps_common.so
 lib/libmumps_common.so.4
