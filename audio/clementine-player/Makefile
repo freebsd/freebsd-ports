@@ -24,12 +24,6 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libechonest5.so:audio/libechonest \
 		libcryptopp.so:security/cryptopp
 
-BROKEN_powerpc64=	fails to compile: tagreader.cpp: undefined reference to TagLib::String::String
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	clementine-player
-GH_PROJECT=	Clementine
-
 USES=		cmake \
 		compiler:c++11-lib \
 		desktop-file-utils \
@@ -40,6 +34,10 @@ USES=		cmake \
 		gl
 
 USE_CXXSTD=	c++11
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	clementine-player
+GH_PROJECT=	Clementine
 
 USE_GL=		gl glew glu
 USE_XORG=	x11
@@ -102,7 +100,6 @@ OPTIONS_DEFINE=		AMAZON \
 			SKYDRIVE \
 			VISUALISATION \
 			WIIMOTEDEV
-
 
 AMAZON_DESC=		Amazon Drive support
 AUDIOCD_DESC=		Devices: Audio CD support
