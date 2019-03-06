@@ -61,6 +61,7 @@ lib/avkys/libWarp.so
 lib/avkys/libWave.so
 lib/avkys/submodules/ACapsConvert/libffmpegav.so
 lib/avkys/submodules/ACapsConvert/libffmpegsw.so
+lib/avkys/submodules/ACapsConvert/libgstreamer.so
 lib/avkys/submodules/AudioDevice/libalsa.so
 lib/avkys/submodules/AudioDevice/libjack.so
 lib/avkys/submodules/AudioDevice/liboss.so
@@ -75,17 +76,12 @@ lib/avkys/submodules/VideoCapture/libffmpeg.so
 lib/avkys/submodules/VideoCapture/libgstreamer.so
 lib/avkys/submodules/VideoCapture/libv4l2sys.so
 lib/avkys/submodules/VideoCapture/libv4lutils.so
-lib/avkys/submodules/VirtualCamera/libffmpeg.so
-lib/avkys/submodules/VirtualCamera/libgstreamer.so
-lib/avkys/submodules/VirtualCamera/libv4l2sys.so
-lib/avkys/submodules/VirtualCamera/libv4lutils.so
 lib/libavkys.so
 lib/libavkys.so.8
-lib/libavkys.so.8.1
-lib/libavkys.so.8.1.0
+lib/libavkys.so.8.5
+lib/libavkys.so.8.5.0
 %%QT_QMLDIR%%/AkQml/libAkQml.so
 %%QT_QMLDIR%%/AkQml/qmldir
-man/man1/webcamoid.1.gz
 share/applications/webcamoid.desktop
 share/icons/hicolor/128x128/apps/webcamoid.png
 share/icons/hicolor/16x16/apps/webcamoid.png
