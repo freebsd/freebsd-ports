@@ -9,7 +9,7 @@ COMMENT=	Unit testing framework for handling automated tests in C++
 
 LICENSE=	LGPL3
 
-USES=		autoreconf gmake libtool pathfix
+USES=		autoreconf compiler:c++11-lang gmake libtool pathfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
