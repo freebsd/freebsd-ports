@@ -1,23 +1,16 @@
---- Makefile.orig	2018-07-19 01:55:24 UTC
+--- Makefile.orig	2019-03-06 02:33:55 UTC
 +++ Makefile
-@@ -264,11 +264,11 @@ links : bindir
- #########################################################
+@@ -296,10 +296,10 @@ links : bindir
+ #############################################################
  
  install : 
--	@if test -d bin ; then mkdir -p $(PREFIX)/bin ; \
-+	@if test -d bin ; then mkdir -p $(DESTDIR)$(PREFIX)/bin ; \
+-	mkdir -p $(PREFIX)/bin ; \
++	mkdir -p $(DESTDIR)$(PREFIX)/bin ; \
  	for x in `find * ! -path "test-suite/*" -name *.x -type f` ; do \
--		cp $$x $(PREFIX)/bin/ ; done ; \
-+		cp $$x $(DESTDIR)$(PREFIX)/bin/ ; done ; \
- 	fi
--	@echo 'Quantum ESPRESSO binaries installed in $(PREFIX)/bin'
-+	@echo 'Quantum ESPRESSO binaries installed in $(DESTDIR)$(PREFIX)/bin'
+-		cp -v $$x $(PREFIX)/bin/ ; done
+-	@echo -e '\nQuantum ESPRESSO binaries are installed in $(PREFIX)/bin\n'
++		cp -v $$x $(DESTDIR)$(PREFIX)/bin/ ; done
++	@echo -e '\nQuantum ESPRESSO binaries are installed in $(DESTDIR)$(PREFIX)/bin\n'
  
  #########################################################
  # Run test-suite for numerical regression testing
-@@ -376,3 +376,5 @@ doc_clean :
- depend: libiotk
- 	@echo 'Checking dependencies...'
- 	- ( if test -x install/makedeps.sh ; then install/makedeps.sh ; fi)
-+
-+.PHONY: install
