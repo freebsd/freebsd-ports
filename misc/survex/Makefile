@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	survex
-DISTVERSION=	1.2.37
-PORTREVISION=	1
+DISTVERSION=	1.2.38
 CATEGORIES=	misc
 MASTER_SITES=	https://survex.com/software/${DISTVERSION}/
 
