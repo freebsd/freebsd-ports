@@ -280,8 +280,10 @@ sbin/rt-externalize-attachments
 sbin/rt-fulltext-indexer
 sbin/rt-importer
 sbin/rt-ldapimport
+sbin/rt-munge-attachments
 sbin/rt-passwd
 sbin/rt-preferences-viewer
+sbin/rt-search-attributes
 sbin/rt-serializer
 sbin/rt-server
 sbin/rt-server.fcgi
@@ -294,6 +296,7 @@ sbin/rt-validate-aliases
 sbin/rt-validator
 sbin/standalone_httpd
 @group wheel
+%%PORTDOCS%%%%DOCSDIR%%/GDPR.pod
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-2.0
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.0
@@ -310,6 +313,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/automating_rt.pod
 %%PORTDOCS%%%%DOCSDIR%%/backups.pod
 %%PORTDOCS%%%%DOCSDIR%%/charts.pod
+%%PORTDOCS%%%%DOCSDIR%%/custom_roles.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/approvals.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/articles_introduction.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/assets/tutorial.pod
@@ -339,6 +343,10 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/images/create-setowner-action.png
 %%PORTDOCS%%%%DOCSDIR%%/images/current-search.png
 %%PORTDOCS%%%%DOCSDIR%%/images/customize-dashboards-menu.png
+%%PORTDOCS%%%%DOCSDIR%%/images/customroles-apply-to-queue.png
+%%PORTDOCS%%%%DOCSDIR%%/images/customroles-assign-on-ticket-create.png
+%%PORTDOCS%%%%DOCSDIR%%/images/customroles-create-a-customrole.png
+%%PORTDOCS%%%%DOCSDIR%%/images/customroles-query-builder.png
 %%PORTDOCS%%%%DOCSDIR%%/images/dashboard-chart.png
 %%PORTDOCS%%%%DOCSDIR%%/images/dashboard-content-invoices.png
 %%PORTDOCS%%%%DOCSDIR%%/images/dashboard-content.png
@@ -591,6 +599,7 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/4.4.2/schema.SQLite
 %%DOCSDIR%%/upgrade/4.4.2/schema.mysql
 %%DOCSDIR%%/upgrade/generate-rtaddressregexp
+%%DOCSDIR%%/upgrade/reset-sequences
 %%DOCSDIR%%/upgrade/sanity-check-stylesheets
 %%DOCSDIR%%/upgrade/shrink-cgm-table
 %%DOCSDIR%%/upgrade/shrink-transactions-table
@@ -707,6 +716,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Groups/Memberships.html
 %%DATADIR%%/html/Admin/Groups/Modify.html
 %%DATADIR%%/html/Admin/Groups/UserRights.html
+%%DATADIR%%/html/Admin/Groups/autohandler
 %%DATADIR%%/html/Admin/Groups/index.html
 %%DATADIR%%/html/Admin/Queues/CustomField.html
 %%DATADIR%%/html/Admin/Queues/CustomFields.html
@@ -914,6 +924,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/MakeClicky
 %%DATADIR%%/html/Elements/Menu
 %%DATADIR%%/html/Elements/MessageBox
+%%DATADIR%%/html/Elements/Modal
 %%DATADIR%%/html/Elements/MyAdminQueues
 %%DATADIR%%/html/Elements/MyAssets
 %%DATADIR%%/html/Elements/MyRT
@@ -1071,6 +1082,8 @@ sbin/standalone_httpd
 %%DATADIR%%/html/NoAuth/rss/dhandler
 %%DATADIR%%/html/Prefs/AboutMe.html
 %%DATADIR%%/html/Prefs/DashboardsInMenu.html
+%%DATADIR%%/html/Prefs/Elements/EditAboutMe
+%%DATADIR%%/html/Prefs/Elements/ShowAboutMe
 %%DATADIR%%/html/Prefs/MyRT.html
 %%DATADIR%%/html/Prefs/Other.html
 %%DATADIR%%/html/Prefs/QueueList.html
@@ -1162,6 +1175,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Elements/GotoTicket
 %%DATADIR%%/html/SelfService/Elements/Header
 %%DATADIR%%/html/SelfService/Elements/MyRequests
+%%DATADIR%%/html/SelfService/Elements/RequestUpdate
 %%DATADIR%%/html/SelfService/Elements/SearchArticle
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/CustomFieldValues
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/Users
@@ -1169,7 +1183,10 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Helpers/Upload/Add
 %%DATADIR%%/html/SelfService/Helpers/Upload/Delete
 %%DATADIR%%/html/SelfService/Prefs.html
+%%DATADIR%%/html/SelfService/Search/Results.tsv
 %%DATADIR%%/html/SelfService/Update.html
+%%DATADIR%%/html/SelfService/User/Elements/RelatedData
+%%DATADIR%%/html/SelfService/User/RelatedData.tsv
 %%DATADIR%%/html/SelfService/index.html
 %%DATADIR%%/html/Ticket/Attachment/WithHeaders/dhandler
 %%DATADIR%%/html/Ticket/Attachment/dhandler
@@ -1238,9 +1255,11 @@ sbin/standalone_httpd
 %%DATADIR%%/html/User/Elements/Portlets/ExtraInfo
 %%DATADIR%%/html/User/Elements/Portlets/InactiveTickets
 %%DATADIR%%/html/User/Elements/Portlets/UserAssets
+%%DATADIR%%/html/User/Elements/RelatedData
 %%DATADIR%%/html/User/Elements/TicketList
 %%DATADIR%%/html/User/Elements/UserInfo
 %%DATADIR%%/html/User/History.html
+%%DATADIR%%/html/User/RelatedData.tsv
 %%DATADIR%%/html/User/Search.html
 %%DATADIR%%/html/User/Summary.html
 %%DATADIR%%/html/Widgets/BulkEdit
@@ -1311,6 +1330,7 @@ sbin/standalone_httpd
 %%DATADIR%%/po/pt.po
 %%DATADIR%%/po/pt_BR.po
 %%DATADIR%%/po/pt_PT.po
+%%DATADIR%%/po/ro.po
 %%DATADIR%%/po/rt.pot
 %%DATADIR%%/po/ru.po
 %%DATADIR%%/po/sk.po
@@ -1606,6 +1626,7 @@ sbin/standalone_httpd
 %%DATADIR%%/static/css/base/print.css
 %%DATADIR%%/static/css/base/record.css
 %%DATADIR%%/static/css/base/rights-editor.css
+%%DATADIR%%/static/css/base/shredder.css
 %%DATADIR%%/static/css/base/superfish-navbar.css
 %%DATADIR%%/static/css/base/superfish-vertical.css
 %%DATADIR%%/static/css/base/superfish.css
@@ -1717,7 +1738,7 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/forms.js
 %%DATADIR%%/static/js/history-folding.js
 %%DATADIR%%/static/js/i18n.js
-%%DATADIR%%/static/js/jquery-1.11.3.min.js
+%%DATADIR%%/static/js/jquery-1.12.4p1.min.js
 %%DATADIR%%/static/js/jquery-ui-patch-datepicker.js
 %%DATADIR%%/static/js/jquery-ui-timepicker-addon.js
 %%DATADIR%%/static/js/jquery-ui.min.js
