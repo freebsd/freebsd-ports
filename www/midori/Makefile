@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	midori
-PORTVERSION=	0.7.0
+PORTVERSION=	8.0
 CATEGORIES=	www xfce
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -14,6 +14,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	rsvg-convert:graphics/librsvg2 \
 		valac:lang/vala
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
+		libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup \
 		libsoup-gnome-2.4.so:devel/libsoup-gnome \
 		libp11-kit.so:security/p11-kit \
@@ -22,7 +23,7 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		cmake desktop-file-utils gettext gnome localbase:ldflags \
+USES=		cmake desktop-file-utils gettext gnome libarchive localbase:ldflags \
 		pkgconfig sqlite tar:bzip2
 USE_GNOME=	cairo glib20 gtk30 intltool introspection libxml2
 USE_XORG=	xscrnsaver
@@ -38,7 +39,7 @@ PLIST_SUB=	VERSION="${PORTVERSION:R}"
 USE_GITHUB=	yes
 GH_ACCOUNT=	midori-browser
 GH_PROJECT=	core
-GH_TAGNAME=	v7
+GH_TAGNAME=	v${PORTVERSION}
 
 OPTIONS_DEFINE=		ZEITGEIST
 OPTIONS_SUB=		yes

@@ -13,11 +13,13 @@ lib/midori/libcolorful-tabs.so
 lib/midori/libsession.so
 lib/midori/libstatus-clock.so
 lib/midori/libstatusbar-features.so
+lib/midori/libweb-extensions.so
 lib/midori/session.plugin
 lib/midori/status-clock.plugin
 lib/midori/statusbar-features.plugin
-share/appdata/midori.appdata.xml
+lib/midori/web-extensions.plugin
 share/applications/org.midori_browser.Midori.desktop
+share/metainfo/midori.appdata.xml
 %%DOCSDIR%%/COPYING
 share/gir-1.0/Midori-0.6.gir
 share/icons/hicolor/16x16/apps/midori.png
