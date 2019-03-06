@@ -125,10 +125,10 @@
  TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
  TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME) network stdc++ supc++
 - else if1of ($(KBUILD_TARGET), freebsd openbsd)
-+TEMPLATE_VBOXMAINEXE_LDFLAGS.freebsd     = -Wl,-z,noexecstack,-z,relro $(VBOX_LD_as_needed)
 + else if1of ($(KBUILD_TARGET), freebsd)
  TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
  TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME)
++TEMPLATE_VBOXMAINEXE_LDFLAGS.freebsd     = -Wl,-z,noexecstack,-z,relro $(VBOX_LD_as_needed)
  TEMPLATE_VBOXMAINEXE_INCS               += \
 +	/usr/local/include
 +TEMPLATE_VBOXMAINEXE_LIBPATH            += \
