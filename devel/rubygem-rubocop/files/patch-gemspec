@@ -1,0 +1,11 @@
+--- rubocop.gemspec.orig	2019-03-06 16:21:42 UTC
++++ rubocop.gemspec
+@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<powerpack>.freeze, ["~> 0.1"])
+       s.add_runtime_dependency(%q<rainbow>.freeze, [">= 2.2.2", "< 4.0"])
+       s.add_runtime_dependency(%q<ruby-progressbar>.freeze, ["~> 1.7"])
+-      s.add_runtime_dependency(%q<unicode-display_width>.freeze, ["~> 1.4.0"])
++      s.add_runtime_dependency(%q<unicode-display_width>.freeze, ["~> 1.4"])
+       s.add_development_dependency(%q<bundler>.freeze, ["~> 1.3"])
+       s.add_development_dependency(%q<rack>.freeze, [">= 2.0"])
+     else
