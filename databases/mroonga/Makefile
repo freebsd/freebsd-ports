@@ -25,6 +25,12 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		DOCS
 
+post-patch:
+# Avoid conflict with C++20 <version> by adding .txt suffix
+	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
+	@${REINPLACE_CMD} -i .c++20 's,srcdir)/version[[:>:]],&.txt,' \
+		${WRKSRC}/Makefile.in
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mysql/plugin/ha_mroonga.so.0.0.0
 
