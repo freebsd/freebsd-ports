@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2018-10-29 07:55:02 UTC
++++ src/Makefile.in
+@@ -22,7 +22,7 @@ prefix		= @prefix@
+ exec_prefix	= @exec_prefix@
+ datarootdir	= @datarootdir@
+ BIN_DIR		= $(prefix)/bin
+-MAN_DIR		= $(datarootdir)/man
++MAN_DIR		= $(prefix)/man
+ DOC_DIR		= $(datarootdir)/doc/most
+ SYS_INITFILE	= @sysconfdir@/most.conf
+ MKINSDIR	= ../autoconf/mkinsdir.sh
