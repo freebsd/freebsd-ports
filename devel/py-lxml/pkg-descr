@@ -6,4 +6,4 @@ lxml is a Python binding for libxml2 and libxslt. Its aim:
   * Safe (no segfaults).
   * No manual memory management!
 
-WWW: http://lxml.de/
+WWW: https://lxml.de/
