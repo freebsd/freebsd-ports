@@ -1067,7 +1067,6 @@ sbin/standalone_httpd
 %%DATADIR%%/po/ja.po
 %%DATADIR%%/po/lt.po
 %%DATADIR%%/po/lv.po
-%%DATADIR%%/po/mk.po
 %%DATADIR%%/po/nb.po
 %%DATADIR%%/po/nl.po
 %%DATADIR%%/po/nn.po
@@ -1076,6 +1075,7 @@ sbin/standalone_httpd
 %%DATADIR%%/po/pt.po
 %%DATADIR%%/po/pt_BR.po
 %%DATADIR%%/po/pt_PT.po
+%%DATADIR%%/po/ro.po
 %%DATADIR%%/po/rt.pot
 %%DATADIR%%/po/ru.po
 %%DATADIR%%/po/sk.po
@@ -1475,7 +1475,7 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/forms.js
 %%DATADIR%%/static/js/history-folding.js
 %%DATADIR%%/static/js/i18n.js
-%%DATADIR%%/static/js/jquery-1.9.1.min.js
+%%DATADIR%%/static/js/jquery-1.12.4p1.min.js
 %%DATADIR%%/static/js/jquery-ui-1.10.0.custom.min.js
 %%DATADIR%%/static/js/jquery-ui-patch-datepicker.js
 %%DATADIR%%/static/js/jquery-ui-timepicker-addon.js
