@@ -1,3 +1,3 @@
-TIMESTAMP = 1522234890
-SHA256 (CommonMark-0.7.5.tar.gz) = 4dfbbd1dbc669a9b71a015032b2bbe5c4b019ca8b6ca410d89cf7020de46d2c0
-SIZE (CommonMark-0.7.5.tar.gz) = 88702
+TIMESTAMP = 1548509035
+SHA256 (commonmark-0.8.1.tar.gz) = abcbc854e0eae5deaf52ae5e328501b78b4a0758bf98ac8bb792fce993006084
+SIZE (commonmark-0.8.1.tar.gz) = 90795
