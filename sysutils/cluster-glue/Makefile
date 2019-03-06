@@ -2,7 +2,7 @@
 
 PORTNAME=	cluster-glue
 PORTVERSION=	1.0.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hg.linux-ha.org/glue/archive/
 DISTNAME=	0a7add1d9996
@@ -16,20 +16,12 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LIB
 
-BROKEN=		fails to build
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2019-03-05
-
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libnet.so:net/libnet
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-fatal-warnings \
-		--with-initdir=${PREFIX}/etc/rc.d \
-		--with-ocf-root=${PREFIX}/etc/ocf
-INSTALL_TARGET=	install-strip
-USES=		autoreconf gettext gmake libtool localbase perl5 pkgconfig python shebangfix tar:bz2 ssl
+USES=		autoreconf gettext gmake gnome libtool localbase perl5 pkgconfig python shebangfix \
+		tar:bz2 ssl
 SHEBANG_FILES=	lib/plugins/stonith/external/ibmrsa-telnet \
 		lib/plugins/stonith/external/vmware \
 		lib/plugins/stonith/external/xen0-ha.in \
@@ -40,12 +32,17 @@ USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	ha_logd
 WRKSRC=		${WRKDIR}/Reusable-Cluster-Components-glue--${DISTNAME}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-fatal-warnings \
+		--with-initdir=${PREFIX}/etc/rc.d \
+		--with-ocf-root=${PREFIX}/etc/ocf
+INSTALL_TARGET=	install-strip
 
 USERS=		hacluster
 GROUPS=		haclient
 
 OPTIONS_DEFINE=		DOCS DRAC3 HPI IPMI MANPAGES SNMP
-OPTIONS_DEFAULT=	DRAC3 HPI IPMI MANPAGES SNMP
+OPTIONS_DEFAULT=	DRAC3 IPMI MANPAGES SNMP
 OPTIONS_SUB=		yes
 
 DRAC3_CONFIGURE_OFF=	ac_cv_header_curl_curl_h=no
