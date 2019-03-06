@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgtkmm-2.0.so:x11-toolkits/gtkmm20
 RUN_DEPENDS=	fbsetbg:x11-wm/fluxbox
 
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		compiler:c11 pathfix pkgconfig
 PLIST_FILES=	bin/fluxbg \
 		bin/fluxbgd \
 		bin/fluxbg_conf
