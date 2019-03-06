@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		sbws
-PORTVERSION=		1.0.2
-PORTREVISION=		2
+PORTVERSION=		1.0.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=		net python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -26,8 +25,10 @@ USE_PYTHON=	autoplist distutils concurrent flavors
 CPE_VENDOR=	torproject
 GH_ACCOUNT=	torproject
 
-SHEBANG_FILES=	tests/testnets/simple.common/03-network-in-ready-state.py \
-		tests/testnets/simple-ipv4/03-network-in-ready-state.py \
-		tests/testnets/simple-ipv6/03-network-in-ready-state.py
+SHEBANG_FILES=	setup.py \
+		scripts/tools/get-per-relay-budget.py \
+		scripts/tools/sbws-http-server.py \
+		scripts/tools/scale-v3bw-with-budget.py \
+		tests/integration/net/wait.py
 
 .include <bsd.port.mk>
