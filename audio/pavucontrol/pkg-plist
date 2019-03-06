@@ -5,6 +5,7 @@ share/applications/pavucontrol.desktop
 share/locale/as/LC_MESSAGES/pavucontrol.mo
 share/locale/bn_IN/LC_MESSAGES/pavucontrol.mo
 share/locale/ca/LC_MESSAGES/pavucontrol.mo
+share/locale/ca@valencia/LC_MESSAGES/pavucontrol.mo
 share/locale/cs/LC_MESSAGES/pavucontrol.mo
 share/locale/da/LC_MESSAGES/pavucontrol.mo
 share/locale/de/LC_MESSAGES/pavucontrol.mo
@@ -14,13 +15,17 @@ share/locale/fi/LC_MESSAGES/pavucontrol.mo
 share/locale/fr/LC_MESSAGES/pavucontrol.mo
 share/locale/gu/LC_MESSAGES/pavucontrol.mo
 share/locale/hi/LC_MESSAGES/pavucontrol.mo
+share/locale/hr/LC_MESSAGES/pavucontrol.mo
 share/locale/hu/LC_MESSAGES/pavucontrol.mo
 share/locale/it/LC_MESSAGES/pavucontrol.mo
 share/locale/ja/LC_MESSAGES/pavucontrol.mo
 share/locale/kn/LC_MESSAGES/pavucontrol.mo
+share/locale/ko/LC_MESSAGES/pavucontrol.mo
+share/locale/lt/LC_MESSAGES/pavucontrol.mo
 share/locale/ml/LC_MESSAGES/pavucontrol.mo
 share/locale/mr/LC_MESSAGES/pavucontrol.mo
 share/locale/nl/LC_MESSAGES/pavucontrol.mo
+share/locale/nn/LC_MESSAGES/pavucontrol.mo
 share/locale/or/LC_MESSAGES/pavucontrol.mo
 share/locale/pa/LC_MESSAGES/pavucontrol.mo
 share/locale/pl/LC_MESSAGES/pavucontrol.mo
@@ -37,4 +42,5 @@ share/locale/th/LC_MESSAGES/pavucontrol.mo
 share/locale/tr/LC_MESSAGES/pavucontrol.mo
 share/locale/uk/LC_MESSAGES/pavucontrol.mo
 share/locale/zh_CN/LC_MESSAGES/pavucontrol.mo
+share/locale/zh_TW/LC_MESSAGES/pavucontrol.mo
 %%DATADIR%%/pavucontrol.glade
