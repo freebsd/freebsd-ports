@@ -1,0 +1,11 @@
+--- strings.gemspec.orig	2019-03-06 16:43:08 UTC
++++ strings.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<strings-ansi>.freeze, ["~> 0.1.0"])
+       s.add_runtime_dependency(%q<unicode_utils>.freeze, ["~> 1.4.0"])
+-      s.add_runtime_dependency(%q<unicode-display_width>.freeze, ["~> 1.4.0"])
++      s.add_runtime_dependency(%q<unicode-display_width>.freeze, ["~> 1.4"])
+       s.add_development_dependency(%q<bundler>.freeze, ["~> 1.15"])
+       s.add_development_dependency(%q<rake>.freeze, ["~> 10.0"])
+       s.add_development_dependency(%q<rspec>.freeze, ["~> 3.0"])
