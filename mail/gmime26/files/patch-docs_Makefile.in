@@ -1,7 +1,7 @@
---- docs/Makefile.in.orig
+--- docs/Makefile.in.orig	2019-03-06 13:29:08 UTC
 +++ docs/Makefile.in
-@@ -201,7 +201,7 @@
- target_alias = @target_alias@
+@@ -377,7 +377,7 @@ target_vendor = @target_vendor@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -SUBDIRS = reference tutorial

@@ -51,8 +51,12 @@ include/gmime-2.6/gmime/gmime-utils.h
 include/gmime-2.6/gmime/gmime-version.h
 include/gmime-2.6/gmime/gmime.h
 include/gmime-2.6/gmime/internet-address.h
+%%GINTRO%%lib/girepository-1.0/GMime-2.6.typelib
 lib/libgmime-2.6.a
 lib/libgmime-2.6.so
 lib/libgmime-2.6.so.0
 lib/libgmime-2.6.so.0.623.0
 libdata/pkgconfig/gmime-2.6.pc
+%%GINTRO%%share/gir-1.0/GMime-2.6.gir
+%%VALA%%share/vala/vapi/gmime-2.6.deps
+%%VALA%%share/vala/vapi/gmime-2.6.vapi
