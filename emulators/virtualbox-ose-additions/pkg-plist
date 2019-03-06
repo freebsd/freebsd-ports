@@ -19,4 +19,3 @@ sbin/mount_vboxvfs
 %%X11%%share/autostart/vboxclient.desktop
 /%%KMODDIR%%/vboxguest.ko
 /%%KMODDIR%%/vboxvfs.ko
-%%DEBUG%%/%%KMODDIR%%/vboxguest.ko.symbols

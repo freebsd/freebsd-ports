@@ -3,7 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-additions
@@ -15,6 +15,10 @@ COMMENT=	VirtualBox additions for FreeBSD guests
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+ONLY_FOR_ARCHS=	amd64 i386
+USES=		compiler:c++11-lang cpe iconv kmod python:build tar:bzip2
+USE_RC_SUBR=	vboxguest vboxservice
+
 BUILD_DEPENDS=	yasm:devel/yasm \
 		kmk:devel/kBuild \
 		xsltproc:textproc/libxslt
@@ -24,9 +28,6 @@ CPE_PRODUCT=	vm_virtualbox
 
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
-USE_RC_SUBR=	vboxguest vboxservice
-USES=		compiler:c++11-lang cpe iconv kmod python:build tar:bzip2
-ONLY_FOR_ARCHS=	i386 amd64
 MAKE_JOBS_UNSAFE=	yes
 
 HAS_CONFIGURE=	yes
@@ -50,9 +51,22 @@ OPTIONS_DEFINE=	DBUS DEBUG OPENGL X11
 OPTIONS_DEFAULT=	DBUS X11
 OPTIONS_SUB=	yes
 
+OPENGL_DESC=		3D pass-through support (requires X11)
+
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
+DEBUG_CONFIGURE_ON=	--build-debug
+DEBUG_VARS=		KMK_BUILDTYPE=debug
+DEBUG_VARS_OFF=		KMK_BUILDTYPE=release
 OPENGL_CONFIGURE_OFF=	--disable-opengl
+OPENGL_IMPLIES=		X11
+OPENGL_USE=		GL=gl,glu XORG=xcomposite,xdamage,xfixes
+OPENGL_USES=		gl
+X11_BUILD_DEPENDS=	${LOCALBASE}/include/xorg/compiler.h:x11-servers/xorg-server
+X11_RUN_DEPENDS=	xrandr:x11/xrandr
+X11_USE=		XORG=x11,xcursor,xext,xorgproto,xmu,xrandr,xt
+X11_USES=		pkgconfig
+X11_VARS=		VBOX_WITH_X11=1
 
 .include <bsd.port.options.mk>
 
@@ -60,10 +74,6 @@ OPENGL_CONFIGURE_OFF=	--disable-opengl
 CONFLICTS_INSTALL+=	virtualbox-ose-additions-nox11-[0-9]*
 .else
 CONFLICTS_INSTALL+=	virtualbox-ose-additions-[0-9]*
-.endif
-
-.if ${PORT_OPTIONS:MOPENGL} && empty(PORT_OPTIONS:MX11)
-BROKEN=		OPENGL requires X11 support. Run 'make config' again!
 .endif
 
 VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
@@ -76,19 +86,10 @@ VBOX_SBINS=	VBoxControl \
 
 BUILD_WRKSRC=	${VBOX_BIN}/src
 
-KMK_BUILDTYPE=	release
-KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
-KMK_FLAGS=
-
-.if ${PORT_OPTIONS:MDEBUG}
-KMK_FLAGS+=	BUILD_TYPE=debug
-KMK_BUILDTYPE=	debug
-MAKE_ARGS+=	DEBUG_FLAGS="-O1 -g"
-.endif
+KMK_ARCH=	freebsd.${ARCH:S/i386/x86/}
+KMK_CONFIG+=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
 
 .if ${PORT_OPTIONS:MOPENGL}
-USE_XORG=	xcomposite xdamage xfixes
-USE_GL=		gl
 VBOX_LIBS=	VBoxEGL.so \
 		VBoxOGL.so \
 		VBoxOGLarrayspu.so \
@@ -100,19 +101,8 @@ VBOX_LIBS=	VBoxEGL.so \
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-BUILD_DEPENDS+=	${LOCALBASE}/include/xorg/compiler.h:x11-servers/xorg-server
-RUN_DEPENDS+=	xrandr:x11/xrandr
-USE_XORG+=	xorgproto x11 xcursor xext xmu xrandr xt
-USES+=		pkgconfig
-VBOX_WITH_X11=	1
 .else
 VBOX_WITH_X11=
-.endif
-
-.if ${ARCH} == i386
-KMK_ARCH=	freebsd.x86
-.else
-KMK_ARCH=	freebsd.${ARCH}
 .endif
 
 .include <bsd.port.pre.mk>
@@ -133,10 +123,6 @@ post-patch:
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS = ${VBOX_WITH_X11}' >> \
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_GCC_std = -std=c++11' >> ${WRKSRC}/LocalConfig.kmk
-.if ${PORT_OPTIONS:MX11}
-	@${ECHO} 'VBOX_USE_SYSTEM_XORG_HEADERS = 1' >> \
-	    ${WRKSRC}/LocalConfig.kmk
-.endif
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
 	    -e 's| -fno-merge-constants||' \
@@ -163,9 +149,16 @@ post-patch:
 	@${ECHO} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 
+post-patch-OPENGL-on:
+	@${ECHO} 'VBOX_USE_SYSTEM_GL_HEADERS = 1' >> ${WRKSRC}/LocalConfig.kmk
+
+post-patch-X11-on:
+	@${ECHO} 'VBOX_USE_SYSTEM_XORG_HEADERS = 1' >> \
+	    ${WRKSRC}/LocalConfig.kmk
+
 pre-build:
 	cd ${WRKSRC} && ${SH} -c \
-	    '. env.sh && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}'
+	    ". env.sh && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk"
 
 do-install:
 	${MKDIR} ${STAGEDIR}${KMODDIR}
@@ -175,10 +168,6 @@ do-install:
 	${INSTALL_LIB} ${VBOX_BIN}/pam_vbox.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_PROGRAM} ${VBOX_SBINS:S|^|${VBOX_BIN}/|} \
 	    ${STAGEDIR}${PREFIX}/sbin/
-
-do-install-DEBUG-on:
-	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko.symbols \
-	    ${STAGEDIR}${KMODDIR}
 
 do-install-X11-on:
 	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxClient ${STAGEDIR}${PREFIX}/bin/
