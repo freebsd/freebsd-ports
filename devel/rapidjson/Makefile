@@ -34,24 +34,14 @@ EXAMPLES_CMAKE_BOOL=	RAPIDJSON_BUILD_EXAMPLES
 DATADIR=	${PREFIX}/share/doc/RapidJSON
 PORTDATA=	*
 
-.include <bsd.port.pre.mk>
-
-CXXFLAGS+=	-Wno-c++98-compat # for EXAMPLES option, due to this bug: https://github.com/miloyip/rapidjson/issues/761
-CXXFLAGS_powerpc=	-Wno-error
-CXXFLAGS_powerpcspe=	-Wno-error
-CXXFLAGS_powerpc64=	-Wno-error
-CXXFLAGS_sparc64=	-Wno-error
-.if ${CHOSEN_COMPILER_TYPE} == clang
-CXXFLAGS+=	-Wno-zero-as-null-pointer-constant
-.endif
+CXXFLAGS+=	-Wno-error
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|DOC_INSTALL_DIR}/examples"|CMAKE_INSTALL_PREFIX}/share/examples/${PORTNAME}"| ; s| -march=native||' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/example/CMakeLists.txt ${WRKSRC}/test/unittest/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|.*travis.*||' ${WRKSRC}/CMakeLists.txt   # travis_doc breaks cmake: see https://github.com/miloyip/rapidjson/issues/715
 	@${REINPLACE_CMD} -e 's|add_subdirectory.*googletest.*|link_directories(${LOCALBASE}/lib)|' ${WRKSRC}/test/CMakeLists.txt
 
 post-install:
 	@${RM} -r ${STAGEDIR}${EXAMPLESDIR}/CMake*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
