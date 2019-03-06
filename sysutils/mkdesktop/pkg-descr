@@ -1,8 +1,11 @@
-Installing a FreeBSD desktop from scratch can be messy : you often
+Installing a FreeBSD desktop from scratch can be messy: you often
 forget the correct steps/packages. The mkdesktop script helps to
-standardize the process as much as possible per user, with plenty of
-flexibility as well as modularity. The script sets up X & your desktop,
-configures emulation layers (Wine / Linuxulator) if so desired, and
-then configures the essential system files under /etc and /boot.
+standardize the process, with plenty of flexibility as well as
+modularity. The script :
+
+Configures X and your desktop;
+Configures emulation layers (Wine / Linuxulator);
+Configures essential system files under /etc and /boot;
+Configures the SLiM login manager.
 
 WWW: https://github.com/bourne-again/mkdesktop
