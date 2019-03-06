@@ -1,9 +1,0 @@
-TRIQS (Toolbox for Research on Interacting Quantum Systems) is a scientific
-project providing a set of C++ and Python libraries to develop new tools for
-the study of interacting quantum systems.
-
-The goal of this toolkit is to provide high level, efficient and simple to use
-libraries in C++ and Python, and to promote the use of modern programming
-techniques.
-
-WWW: https://triqs.github.io/triqs/master/index.html

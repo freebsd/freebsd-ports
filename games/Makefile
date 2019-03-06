@@ -613,7 +613,6 @@
     SUBDIR += mt_dolphin_ia
     SUBDIR += mt_gtk_client
     SUBDIR += mtaserver
-    SUBDIR += mudmagic
     SUBDIR += multimc
     SUBDIR += mvdsv
     SUBDIR += nInvaders

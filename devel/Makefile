@@ -539,7 +539,6 @@
     SUBDIR += elixir-gettext
     SUBDIR += elixir-hex
     SUBDIR += elixir-inflex
-    SUBDIR += elixir-lager_logger
     SUBDIR += elixir-libring
     SUBDIR += elixir-make
     SUBDIR += elixir-math
@@ -876,7 +875,6 @@
     SUBDIR += gperf
     SUBDIR += gpm
     SUBDIR += gprbuild
-    SUBDIR += gpsim
     SUBDIR += gputils
     SUBDIR += gradle
     SUBDIR += gradle4
@@ -922,7 +920,6 @@
     SUBDIR += hg-git
     SUBDIR += hgreviewboard
     SUBDIR += hgsvn
-    SUBDIR += hgview
     SUBDIR += hhdate
     SUBDIR += highlighterkit
     SUBDIR += hive

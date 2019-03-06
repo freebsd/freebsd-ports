@@ -1,3 +1,0 @@
-#!/bin/sh
-
-CLASSPATH=`classpath`:%%JYTHON_JAR%% java org.tn5250j.My5250 "$@"
