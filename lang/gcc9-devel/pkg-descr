@@ -1,6 +1,6 @@
-GCC, the GNU Compiler Collection, supports a number of languages.  This
-port installs the C, C++, and Fortran front ends as gcc9, g++9, gfortran9,
-respectively.
+GCC, the GNU Compiler Collection, supports a number of languages.
+This port installs the C, C++, and Fortran front ends as gcc9, g++9,
+and gfortran9, respectively.
 
 WWW: https://gcc.gnu.org
 
