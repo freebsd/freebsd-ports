@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-weather-plugin
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	misc xfce geography
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libfreetype.so:print/freetype2
 
 USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
-USE_GNOME=	cairo glib20 gtk30 intlhack intltool libxml2
+USE_GNOME=	cairo glib20 gtk30 intltool libxml2
 USE_XFCE=	panel
 USE_LDCONFIG=	yes
 
