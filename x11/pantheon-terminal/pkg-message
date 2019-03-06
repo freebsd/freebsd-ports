@@ -1,5 +1,0 @@
-pantheon-terminal requires linprocfs(5) to be mounted. If you don't
-have it mounted already, please add this line to /etc/fstab and run
-`mount linproc`:
-
-  linproc /compat/linux/proc linprocfs rw 0 0

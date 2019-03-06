@@ -61,7 +61,6 @@
     SUBDIR += datawarrior
     SUBDIR += dcl
     SUBDIR += devisor
-    SUBDIR += dft_tools
     SUBDIR += dftbplus
     SUBDIR += dkh
     SUBDIR += dlib-cpp
@@ -310,7 +309,6 @@
     SUBDIR += teem
     SUBDIR += tfel
     SUBDIR += tinker
-    SUBDIR += triqs
     SUBDIR += udunits
     SUBDIR += v_sim
     SUBDIR += vipster

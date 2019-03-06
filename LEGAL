@@ -184,7 +184,7 @@ sharefonts-*		x11-fonts/sharefonts	Shareware: cannot be distributed without prio
 shorten-*		audio/shorten		May not be sold.  May not be distributed if modified
 sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible patent issues
 simian-*		devel/simian		Have to agree to license before download
-skype*			net-im/skype		Redistribution prohibited
+skype4*			net-im/skype4		Redistribution prohibited
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
 stuffit*		archivers/stuffit	Only unmodified original package can be distributed
 susv2.tar.bz2		misc/susv2		Redistribution of the documents is not permitted

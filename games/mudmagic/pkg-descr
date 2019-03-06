@@ -1,6 +1,0 @@
-The Mud Magic Mud Client is written in GTK+ and supports MXP, MSP,
-MCCP, and ZMP with PCRE regular expression handling and Python script
-engine. The plugins shipped with the client currently include an
-automapper, note system, and database front end.
-
-WWW: http://www.mudmagic.com/mud-client/

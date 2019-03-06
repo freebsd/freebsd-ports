@@ -112,7 +112,6 @@
     SUBDIR += pidgin-privacy-please
     SUBDIR += pidgin-rocketchat
     SUBDIR += pidgin-sipe
-    SUBDIR += pidgin-skype
     SUBDIR += pidgin-skypeweb
     SUBDIR += pidgin-twitter
     SUBDIR += pidgin-window_merge
@@ -160,8 +159,6 @@
     SUBDIR += sayaka
     SUBDIR += scudcloud
     SUBDIR += sendxmpp
-    SUBDIR += skype
-    SUBDIR += skype-devel
     SUBDIR += skype4
     SUBDIR += slack-term
     SUBDIR += ssh-chat

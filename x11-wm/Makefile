@@ -33,7 +33,6 @@
     SUBDIR += e-module-cpu
     SUBDIR += e-module-deskshow
     SUBDIR += e-module-everything-places
-    SUBDIR += e-module-everything-websearch
     SUBDIR += e-module-mem
     SUBDIR += e-module-rmb
     SUBDIR += e-module-wlan

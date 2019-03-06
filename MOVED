@@ -11662,3 +11662,20 @@ devel/cpuflags||2019-03-04|Has expired: does not recognize modern CPUs; use -mar
 www/moodle31|www/moodle35|2019-03-04|Has expired: Upstream no longer maintained
 www/moodle34|www/moodle35|2019-03-04|Has expired: Upstream no longer maintained
 net/wireshark-qt5|net/wireshark|2019-03-05|Only GUI for wireshark is Qt5
+devel/elixir-lager_logger||2019-03-06|Has expired: Broken for more than 6 months
+devel/gpsim||2019-03-06|Has expired: Broken for more than 6 months
+devel/hgview||2019-03-06|Has expired: Broken for more than 6 months
+games/mudmagic||2019-03-06|Has expired: Broken for more than 6 months
+math/mumps-mpich||2019-03-06|Has expired: Broken for more than 6 months
+math/sdpara||2019-03-06|Has expired: Broken for more than 6 months
+net/tn5250j||2019-03-06|Has expired: Broken for more than 6 months
+net-im/pidgin-skype||2019-03-06|Has expired: Broken for more than 6 months
+net-im/skype||2019-03-06|Has expired: Broken for more than 6 months
+net-im/skype-devel||2019-03-06|Has expired: Broken for more than 6 months
+science/dft_tools||2019-03-06|Has expired: Broken for more than 6 months
+science/triqs||2019-03-06|Has expired: Broken for more than 6 months
+security/hamachi||2019-03-06|Has expired: Broken for more than 6 months
+textproc/elixir-ex_doc||2019-03-06|Has expired: Broken for more than 6 months
+x11/altyo||2019-03-06|Has expired: Broken for more than 6 months
+x11/pantheon-terminal||2019-03-06|Has expired: Broken for more than 6 months
+x11-wm/e-module-everything-websearch||2019-03-06|Has expired: Broken for more than 6 months
