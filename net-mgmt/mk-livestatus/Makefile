@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mk-livestatus
-PORTVERSION=	1.2.8p24
+PORTVERSION=	1.2.8p25
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://mathias-kettner.de/download/
 DIST_SUBDIR=	check_mk
@@ -11,6 +11,8 @@ MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Nagios event broker module
 
 LICENSE=	GPLv2
+
+USES=		compiler:c++11-lang
 
 GNU_CONFIGURE=	yes
 
