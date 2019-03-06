@@ -51,7 +51,8 @@ share/aclocal/hamlib.m4
 %%PORTDOCS%%%%DOCSDIR%%/README.developer
 %%PORTDOCS%%%%DOCSDIR%%/README.win32
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/examples/pytest.py
+%%PYTHON2%%%%PORTDOCS%%%%DOCSDIR%%/examples/pytest.py
+%%PYTHON3%%%%PORTDOCS%%%%DOCSDIR%%/examples/py3test.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/perltest.pl
 %%PORTDOCS%%%%DOCSDIR%%/examples/tcltest.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/Hamlib_design.png
