@@ -29,4 +29,11 @@ MAKE_JOBS_UNSAFE=	yes
 
 CMAKE_ARGS=	-DWITHOUT_EERIE:BOOL=ON
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# disable sse on non-x86 archs
+.if ${ARCH} != amd64 && ${ARCH} != i386
+EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-CMakeLists.txt
+.endif
+
+.include <bsd.port.post.mk>
