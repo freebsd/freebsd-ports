@@ -3,6 +3,7 @@
 
 PORTNAME=	torsocks
 DISTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	https://people.torproject.org/~dgoulet/${PORTNAME}/
 
