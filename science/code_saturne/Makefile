@@ -4,6 +4,7 @@
 PORTNAME=	code_saturne
 PORTVERSION=	5.3.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	science parallel
 
 MAINTAINER=	thierry@FreeBSD.org
