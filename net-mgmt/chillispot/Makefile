@@ -12,19 +12,14 @@ MASTER_SITES=	http://www.chillispot.info/download/ \
 MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	Wireless LAN Access Point Controller
 
-BROKEN_mips=		fails to build: error: nested functions are disabled, use -fnested-functions to re-enable
-BROKEN_mips64=		fails to build: error: nested functions are disabled, use -fnested-functions to re-enable
-BROKEN_powerpc64=	fails to build: error: nested functions are disabled, use -fnested-functions to re-enable
-
 CONFLICTS=	coovachilli-[0-9]*
 
-USES=		shebangfix
+USES=		compiler:nestedfct shebangfix
 SHEBANG_FILES=	doc/hotspotlogin.cgi
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=-sysconfdir=${PREFIX}/etc
 USE_RC_SUBR=	chillispot
 SUB_FILES=	pkg-message installguide.txt
-USE_GCC=	any
 
 OPTIONS_DEFINE=	APACHE RADIUS
 OPTIONS_SINGLE=	RADIUS
@@ -36,6 +31,10 @@ OPENRADIUS_DESC=depend on OpenRADIUS
 APACHE_USE=	apache_run=22+
 FREERADIUS_RUN_DEPENDS=	radiusd:net/freeradius
 OPENRADIUS_RUN_DEPENDS=	radiusd:net/openradius
+
+.if exists(/usr/lib/libstdc++.so)
+CFLAGS+=	-fnested-functions
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
