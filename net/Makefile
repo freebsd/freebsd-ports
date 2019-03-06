@@ -452,6 +452,7 @@
     SUBDIR += mailimporter
     SUBDIR += malo-firmware-kmod
     SUBDIR += mdns-repeater
+    SUBDIR += measurement-kit
     SUBDIR += mediastreamer
     SUBDIR += mediatomb
     SUBDIR += megatools

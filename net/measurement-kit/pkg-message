@@ -1,0 +1,11 @@
+If you need Measurement-Kit to query for GeoIP data, please consider installing
+'net/geoipupdate' and updating your local databases:
+
+  # pkg install net/geoipupdate
+  # geoipupdate
+
+Once you are done, Measurement-Kit can properly show country codes - but you
+still must change your nettest options and specify the database file to be
+used by 'geoip_country_path'.
+
+Consider creating a cron job in order to keep your databases up to date.

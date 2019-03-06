@@ -1,0 +1,11 @@
+Measurement Kit is a C++14 library that implements open network measurement
+methodologies (performance, censorship, etc.) on Unix-like operating systems
+such as Android, iOS, Linux, and macOS.
+
+It is meant to be embedded by third party applications with specific network
+measurement needs and/or to be used by researchers to implement novel
+network measurement tools. It started as a common engine to implement the
+mobile versions of OONI and Neubot, and since then has grown to include also
+the implementation of Portolan traceroute and NDT tests.
+
+WWW: https://measurement-kit.github.io/
