@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	most
-PORTVERSION=	5.0.0
-PORTREVISION=	2
+PORTVERSION=	5.1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
+MASTER_SITES=	http://www.jedsoft.org/releases/most/ \
 		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -15,20 +14,12 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libslang.so:devel/libslang2
 
-USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-mmap
-MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/most man/man1/most.1.gz
-PORTDOCS=	README changes.txt lesskeys.rc most-fun.txt most.doc most.rc
-
-PORTSCOUT=	skipv:5.0.0a
+PORTDOCS=	README changes.txt lesskeys.rc most-fun.txt most.rc most.txt
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|' \
-		${WRKSRC}/src/jdmacros.h
 
 .include <bsd.port.mk>
