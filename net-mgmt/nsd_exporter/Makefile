@@ -3,6 +3,7 @@
 
 PORTNAME=	nsd_exporter
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	zi@FreeBSD.org
