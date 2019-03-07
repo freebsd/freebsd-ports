@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	polybar
-DISTVERSION=	3.3.0
+DISTVERSION=	3.3.0-36
+DISTVERSIONSUFFIX=	-g25ef029
 CATEGORIES=	x11
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -23,10 +24,12 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 # compiler:c++11-lang is needed for powerpc64
 USES=		cmake compiler:c++11-lang gnome localbase:ldflags \
 		pkgconfig python:2.7,build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jaagr
 GH_TUPLE=	jaagr:i3ipcpp:v0.7.1-4-gd4e4786:i3ipcpp/lib/i3ipcpp \
 		jaagr:xpp:1.4.0-4-gbf6ff36:xpp/lib/xpp
+
 USE_GNOME=	cairo
 USE_XORG=	xcb
 
