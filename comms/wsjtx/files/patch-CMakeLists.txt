@@ -1,56 +1,20 @@
---- CMakeLists.txt.orig	2018-06-14 13:07:32 UTC
+--- CMakeLists.txt.orig	2019-02-25 04:11:18 UTC
 +++ CMakeLists.txt
-@@ -1,5 +1,4 @@
- cmake_minimum_required (VERSION 2.8.10 FATAL_ERROR)
--
- if (APPLE)
-   #
-   # The following variables define the portability and compatability attributes of the Mac OS X build
-@@ -132,6 +131,12 @@ if (CMAKE_BUILD_TYPE MATCHES "[Dd][Ee][B
-   set (is_debug_build 1)
- endif ()
- 
-+if (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+  set (FREEBSD TRUE)
-+  link_directories("/usr/lib" "${LOCALBASE}/lib")
-+  include_directories("/usr/include" "${LOCALBASE}/include")
-+endif()
-+
+@@ -23,7 +23,7 @@ source tarball." )
+ #
+ # Find_library (USB_LIBRARY NAMES libusb.a usb)
+ Find_program (PATCH_EXECUTABLE patch REQUIRED)
+-Find_package (Git REQUIRED)
++#Find_package (Git REQUIRED)
  
  #
- # Options & features
-@@ -850,7 +855,19 @@ endif ()
- #
- # OpenMP
- #
--find_package (OpenMP)
-+#    OpenMP_C_FLAGS - flags to add to the C compiler for OpenMP support
-+#    OpenMP_CXX_FLAGS - flags to add to the CXX compiler for OpenMP support
-+#    OpenMP_Fortran_FLAGS - flags to add to the Fortran compiler for OpenMP support
-+#    OPENMP_FOUND - true if openmp is detected
-+
-+if (FREEBSD)
-+  set (OpenMP_C_FLAGS "-openmp")
-+  set (OpenMP_CXX_FLAGS "-openmp")
-+  set (OpenMP_Fortran_FLAGS "-openmp")
-+  set (OPENMP_FOUND TRUE)
-+else()
-+  find_package (OpenMP)
-+endif()
- 
- #
- # fftw3 single precision library
-@@ -1297,6 +1314,13 @@ else (${OPENMP_FOUND} OR APPLE)
-   target_link_libraries (jt9 wsjt_fort wsjt_cxx Qt5::Core)
- endif (${OPENMP_FOUND} OR APPLE)
- 
-+if(FREEBSD)
-+   set (extraLIBS "ltdl" "usb")
-+ else()
-+   set (extraLIBS "")
-+endif()
-+  
-+
- # build the main application
- add_executable (wsjtx MACOSX_BUNDLE
-   ${wsjtx_CXXSRCS}
+ # extra C flags to minimize hamlib excutable sizes
+@@ -91,7 +91,7 @@ ExternalProject_Add (hamlib
+   URL_HASH MD5=${hamlib_md5sum}
+   UPDATE_COMMAND ./bootstrap
+   PATCH_COMMAND ${PATCH_EXECUTABLE} -p1 -N < ${CMAKE_CURRENT_SOURCE_DIR}/hamlib.patch
+-  CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --disable-shared --enable-static --without-cxx-binding ${EXTRA_FLAGS} # LIBUSB_LIBS=${USB_LIBRARY}
++  CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --disable-shared --enable-static --without-cxx-binding --without-readline ${EXTRA_FLAGS} # LIBUSB_LIBS=${USB_LIBRARY}
+   BUILD_COMMAND $(MAKE) all V=1 # $(MAKE) is ExternalProject_Add() magic to do recursive make
+   INSTALL_COMMAND $(MAKE) install-strip V=1 DESTDIR=""
+   STEP_TARGETS update install

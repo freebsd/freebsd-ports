@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wsjtx
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
@@ -12,44 +11,37 @@ COMMENT=	Weak signal ham radio communication package
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
+		autoconf>=2.69:devel/autoconf \
+		automake>=1.16.1:devel/automake \
 		a2x:textproc/asciidoc \
+		libtool:devel/libtool \
 		${LOCALBASE}/share/xsl/docbook:textproc/docbook-xsl
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
-		libhamlib.so:comms/hamlib \
 		libxslt.so:textproc/libxslt \
 		libomp.so:devel/openmp
 
-MAKE_JOBS_UNSAFE=	yes
-USES=		cmake compiler:c++11-lib dos2unix fortran pkgconfig \
-		qt:5 readline tar:tgz
-USE_GL=		yes
+USES=		cmake compiler:c++11-lib fortran gl \
+		makeinfo pkgconfig qt:5 tar:tgz
+USE_GL=		glu
 USE_QT=		core gui buildtools network qmake_build widgets \
-		multimedia concurrent printsupport serialport
-CMAKE_ARGS+=	-DPORT_BUILDING::STRING="ON" \
-		-DCMAKE_PREFIX_PATH+=${LOCALBASE}/wsjtx/lib \
+		multimedia concurrent printsupport serialport sql
+
+CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH+=${LOCALBASE}/wsjtx/lib \
 		-DLOCALBASE::STRING="${LOCALBASE}"
-WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-BROKEN_i386=	does not build on i386 due to openmp
+post-patch:
+	${CP} ${FILESDIR}/wsjtx.patch ${WRKSRC}
+	${CP} ${FILESDIR}/hamlib.patch ${WRKSRC}
 
-#
-# This nonsense is because wsjtx is shipped with a copy of hamlib
-# as well as wsjtx
-#
-.include <bsd.port.pre.mk>
+do-install:
+	(cd ${CONFIGURE_WRKSRC};${MAKE} -f Makefile DESTDIR=${STAGEDIR} install)
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
-EXTRA_PATCHES+=	${FILESDIR}/add_clogf
-.endif
+post-install:
+.for f in fcal fmeasure fmtave ft8code jt4code jt65code jt9 jt9code \
+	message_aggregator msk144code qra64code qra64sim udp_daemon wsjtx wsprd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
+.endfor
 
-do-extract:
-# clogf is only present in FreeBSD 12
-	${TAR} xf ${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} -C${WRKDIR}
-	${TAR} xf ${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/wsjtx.tgz -C${WRKDIR}
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
-	${CP} ${FILESDIR}/clogf.c ${WRKDIR}/wsjtx
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

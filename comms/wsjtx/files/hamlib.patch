@@ -1,0 +1,10 @@
+--- hamlib/configure.ac.orig	2019-02-24 18:41:47.000000000 -0500
++++ hamlib/configure.ac	2019-03-03 22:03:13.673990000 -0500
+@@ -317,6 +317,7 @@
+ 
+ AC_MSG_RESULT([$cf_with_libusb])
+ 
++LIBUSB_LIBS="-lusb"
+ LIBUSB=""
+ AC_ARG_VAR([LIBUSB_CFLAGS], [C compiler flags for libusb, overriding configure defaults])
+ AC_ARG_VAR([LIBUSB_LIBS], [linker flags for libusb, overriding configure check (useful for specifying static libusb-1.0.a (see INSTALL))])

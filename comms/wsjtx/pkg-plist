@@ -11,6 +11,7 @@ bin/msk144code
 bin/qra64code
 bin/qra64sim
 bin/rigctl-wsjtx
+bin/rigctlcom-wsjtx
 bin/rigctld-wsjtx
 bin/udp_daemon
 bin/wsjtx
@@ -20,6 +21,9 @@ man/man1/jt65code.1.gz
 man/man1/jt9.1.gz
 man/man1/jt9code.1.gz
 man/man1/message_aggregator.1.gz
+man/man1/rigctl-wsjtx.1.gz
+man/man1/rigctlcom-wsjtx.1.gz
+man/man1/rigctld-wsjtx.1.gz
 man/man1/udp_daemon.1.gz
 man/man1/wsjtx.1.gz
 man/man1/wsprd.1.gz
