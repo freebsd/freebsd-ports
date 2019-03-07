@@ -1,0 +1,101 @@
+# $FreeBSD$
+
+LLVM_COMMANDS=	\
+		bugpoint \
+		dsymutil \
+		llc \
+		lli \
+		llvm-ar \
+		llvm-as \
+		llvm-bcanalyzer \
+		llvm-cat \
+		llvm-cfi-verify \
+		llvm-config \
+		llvm-cov \
+		llvm-cvtres \
+		llvm-cxxmap \
+		llvm-diff \
+		llvm-dis \
+		llvm-dlltool \
+		llvm-dwarfdump \
+		llvm-dwp \
+		llvm-elfabi \
+		llvm-exegesis \
+		llvm-extract \
+		llvm-link \
+		llvm-mc \
+		llvm-mca \
+		llvm-modextract \
+		llvm-mt \
+		llvm-nm \
+		llvm-objcopy \
+		llvm-objdump \
+		llvm-opt-report \
+		llvm-pdbutil \
+		llvm-profdata \
+		llvm-ranlib \
+		llvm-rc \
+		llvm-readelf \
+		llvm-readobj \
+		llvm-rtdyld \
+		llvm-size \
+		llvm-split \
+		llvm-stress \
+		llvm-strings \
+		llvm-strip \
+		llvm-symbolizer \
+		llvm-tblgen \
+		llvm-undname \
+		llvm-xray \
+		macho-dump \
+		opt \
+		sancov
+
+CLANG_COMMANDS=	\
+		c-index-test \
+		clang \
+		clang++ \
+		clang-check \
+		clang-cpp \
+		clang-extdef-mapping \
+		clang-format \
+		clang-import-test \
+		clang-offload-bundler \
+		diagtool \
+		hmaptool \
+		scan-build \
+		scan-view
+
+EXTRAS_COMMANDS= \
+		clang-apply-replacements \
+		clang-change-namespace \
+		clang-doc \
+		clang-include-fixer \
+		clang-modernize \
+		clang-query \
+		clang-rename \
+		clang-reorder-fields \
+		clang-tidy \
+		clangd \
+		find-all-symbols \
+		modularize
+
+LIT_COMMANDS=	\
+		FileCheck \
+		lit \
+		llvm-lit
+
+LLD_COMMANDS=	\
+		ld.lld \
+		ld64.lld \
+		lld \
+		lld-link \
+		wasm-ld
+
+LLDB_COMMANDS=	\
+		lldb \
+		lldb-argdumper \
+		lldb-mi \
+		lldb-server \
+		lldb-test \
+		lldb-vscode

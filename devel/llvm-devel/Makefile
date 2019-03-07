@@ -132,54 +132,7 @@ GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
 PLIST_SUB+=	LLVM_MAJOR=${LLVM_MAJOR} \
 		LLVM_RELEASE=${LLVM_RELEASE}
 
-COMMANDS=	bugpoint \
-		dsymutil \
-		llc \
-		lli \
-		llvm-ar \
-		llvm-as \
-		llvm-bcanalyzer \
-		llvm-cat \
-		llvm-cfi-verify \
-		llvm-config \
-		llvm-cov \
-		llvm-cvtres \
-		llvm-cxxmap \
-		llvm-diff \
-		llvm-dis \
-		llvm-dlltool \
-		llvm-dwarfdump \
-		llvm-dwp \
-		llvm-elfabi \
-		llvm-exegesis \
-		llvm-extract \
-		llvm-link \
-		llvm-mc \
-		llvm-modextract \
-		llvm-mt \
-		llvm-nm \
-		llvm-objcopy \
-		llvm-objdump \
-		llvm-opt-report \
-		llvm-pdbutil \
-		llvm-profdata \
-		llvm-ranlib \
-		llvm-rc \
-		llvm-readelf \
-		llvm-readobj \
-		llvm-rtdyld \
-		llvm-size \
-		llvm-split \
-		llvm-stress \
-		llvm-strings \
-		llvm-strip \
-		llvm-symbolizer \
-		llvm-tblgen \
-		llvm-undname \
-		llvm-xray \
-		macho-dump \
-		opt \
-		sancov
+COMMANDS=	${LLVM_COMMANDS}
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
 MAN1SRCS+=	bugpoint.1 \
@@ -216,17 +169,6 @@ STRIP_LIBS=	BugpointPasses.so \
 		${LIBNAME}.0 \
 		libLTO.so
 
-EXTRAS_COMMANDS= \
-		clang-apply-replacements \
-		clang-change-namespace \
-		clang-include-fixer \
-		clang-modernize \
-		clang-query \
-		clang-rename \
-		clang-reorder-fields \
-		clang-tidy \
-		find-all-symbols \
-		modularize
 EXTRAS_LIBS=	\
 		libclangApplyReplacements \
 		libclangIncludeFixer \
@@ -261,20 +203,7 @@ CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/arm64/aarch64/}-portbld-${OPSYS:tl}${
 # ----------- end of sync block --------------------
 
 .if ${PORT_OPTIONS:MCLANG}
-COMMANDS+=	c-index-test \
-		clang \
-		clang++ \
-		clang-check \
-		clang-cpp \
-		clang-extdef-mapping \
-		clang-format \
-		clang-import-test \
-		clang-offload-bundler \
-		clangd \
-		diagtool \
-		hmaptool \
-		scan-build \
-		scan-view
+COMMANDS+=	${CLANG_COMMANDS}
 MAN1SRCS+=	clang.1 \
 		diagtool.1 \
 		scan-build.1
@@ -286,48 +215,29 @@ USES+=	gnome
 COMPILER_RT_PATTERN=	(sanitizer|include.xray)
 .endif
 
+.if ${PORT_OPTIONS:MEXTRAS}
+COMMANDS+=	${EXTRAS_COMMANDS}
+MAN1SRCS+=	extraclangtools.1
+PORTDOCS+=	clang-tools
+.endif
+
 .if ${PORT_OPTIONS:MLIT}
 MAN1SRCS+=	lit.1 FileCheck.1
-LIT_COMMANDS=	lit llvm-lit FileCheck
 .endif
 
 .if ${PORT_OPTIONS:MLLD}
-COMMANDS+=	ld.lld \
-		ld64.lld \
-		wasm-ld
+COMMANDS+=	${LLD_COMMANDS}
+PORTDOCS+=	lld
 .endif
 
 .if ${PORT_OPTIONS:MLLDB}
-COMMANDS+=	lldb \
-		lldb-argdumper \
-		lldb-instr \
-		lldb-mi \
-		lldb-server \
-		lldb-test \
-		lldb-vscode
+COMMANDS+=	${LLDB_COMMANDS}
 .endif
 
 OPENMP_PATTERN=	lib[ig]*omp|omp.h|ompt.h|omp-tools.h
 
-.if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
-# Hack to disable COMPILER_RT in plist of unsupported architectures
-PLIST_SUB+=	COMPILER_RT="@comment "
-.else
-.endif
-
-.if ! ${OPTIONS_DEFINE:MGOLD}
-# Hack to disable GOLD in plist of unsupported architectures
-PLIST_SUB+=	GOLD="@comment "
-.else
-.endif
-
-.if ! ${OPTIONS_DEFINE:MOPENMP}
-# Hack to disable OPENMP in plist of unsupported architectures
-PLIST_SUB+=	OPENMP="@comment "
-.else
-.endif
-
 .include <bsd.port.pre.mk>
+.include "${.CURDIR}/Makefile.COMMANDS"
 
 .if defined(WITH_DEBUG)
 CMAKE_BUILD_TYPE=	RelWithDebInfo
@@ -404,16 +314,22 @@ _COMPILER_RT_LIBS+= \
 	libclang_rt.ubsan_standalone_cxx-i386.a
 .endif
 
-.if ${PORT_OPTIONS:MEXTRAS}
-COMMANDS+=	${EXTRAS_COMMANDS}
-MAN1SRCS+=	extraclangtools.1
-PORTDOCS+=	clang-tools
+.if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
+# Hack to disable COMPILER_RT in plist of unsupported architectures
+PLIST_SUB+=	COMPILER_RT="@comment "
+.else
 .endif
 
-.if ${PORT_OPTIONS:MLLD}
-COMMANDS+=	lld \
-		lld-link
-PORTDOCS+=	lld
+.if ! ${OPTIONS_DEFINE:MGOLD}
+# Hack to disable GOLD in plist of unsupported architectures
+PLIST_SUB+=	GOLD="@comment "
+.else
+.endif
+
+.if ! ${OPTIONS_DEFINE:MOPENMP}
+# Hack to disable OPENMP in plist of unsupported architectures
+PLIST_SUB+=	OPENMP="@comment "
+.else
 .endif
 
 post-patch:
