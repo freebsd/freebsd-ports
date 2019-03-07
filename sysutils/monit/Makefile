@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	monit
-PORTVERSION=	5.25.2
+PORTVERSION=	5.25.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://mmonit.com/monit/dist/
 
