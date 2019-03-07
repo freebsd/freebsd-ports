@@ -1,3 +1,0 @@
-#!/bin/sh
-
-cd %%DATADIR%%/res && exec %%DATADIR%%/res/pealauncher "$@"

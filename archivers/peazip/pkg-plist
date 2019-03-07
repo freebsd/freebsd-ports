@@ -1,5 +1,4 @@
 bin/pea
-bin/pealauncher
 bin/peazip
 share/applications/peazip.desktop
 share/pixmaps/peazip.png
@@ -52,7 +51,6 @@ share/pixmaps/peazip.png
 %%DATADIR%%/res/lang/uz.txt
 %%DATADIR%%/res/lang/vn.txt
 %%DATADIR%%/res/pea
-%%DATADIR%%/res/pealauncher
 %%DATADIR%%/res/themes/classic.theme.7z
 %%DATADIR%%/res/themes/experience.theme.7z
 %%DATADIR%%/res/themes/firecrystal.theme.7z
