@@ -11,6 +11,7 @@ include/csapi/admin.h
 include/csapi/administrative_contact.h
 include/csapi/appservice_room_directory.h
 include/csapi/banning.h
+include/csapi/capabilities.h
 include/csapi/content-repo.h
 include/csapi/create_room.h
 include/csapi/definitions/auth_data.h
@@ -24,6 +25,7 @@ include/csapi/definitions/push_ruleset.h
 include/csapi/definitions/room_event_filter.h
 include/csapi/definitions/sync_filter.h
 include/csapi/definitions/user_identifier.h
+include/csapi/definitions/wellknown/full.h
 include/csapi/definitions/wellknown/homeserver.h
 include/csapi/definitions/wellknown/identity_server.h
 include/csapi/device_management.h
@@ -54,8 +56,10 @@ include/csapi/registration.h
 include/csapi/report_content.h
 include/csapi/room_send.h
 include/csapi/room_state.h
+include/csapi/room_upgrades.h
 include/csapi/rooms.h
 include/csapi/search.h
+include/csapi/sso_login_redirect.h
 include/csapi/tags.h
 include/csapi/third_party_lookup.h
 include/csapi/third_party_membership.h
@@ -79,9 +83,11 @@ include/events/eventloader.h
 include/events/receiptevent.h
 include/events/redactionevent.h
 include/events/roomavatarevent.h
+include/events/roomcreateevent.h
 include/events/roomevent.h
 include/events/roommemberevent.h
 include/events/roommessageevent.h
+include/events/roomtombstoneevent.h
 include/events/simplestateevents.h
 include/events/stateevent.h
 include/events/typingevent.h
@@ -98,8 +104,10 @@ include/joinstate.h
 include/logging.h
 include/networkaccessmanager.h
 include/networksettings.h
+include/qt_connection_util.h
 include/room.h
 include/settings.h
+include/syncdata.h
 include/user.h
 include/util.h
 lib/cmake/QMatrixClient/QMatrixClientConfig.cmake
