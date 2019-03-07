@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dcd
-PORTVERSION=	0.9.13
+PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=	v
 PORTREVISION?=	0
 CATEGORIES?=	devel
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 		${LOCALBASE}/lib/d/libmir-core.a:devel/mir-core \
 		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator
 
+USES=		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	dlang-community
 GH_PROJECT=	DCD

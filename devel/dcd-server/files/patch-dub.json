@@ -1,14 +1,15 @@
---- dub.json.orig	2018-09-17 00:04:32.000000000 -0500
-+++ dub.json	2018-11-05 23:03:35.519595000 -0500
-@@ -6,12 +6,8 @@
+--- dub.json.orig	2019-02-10 20:32:05.000000000 +0000
++++ dub.json	2019-03-06 06:24:55.670149000 +0000
+@@ -6,13 +6,8 @@
      "Brian Schott"
    ],
    "license": "GPL-3.0",
 -  "dependencies": {
--    "dsymbol": "~>0.4.8",
--    "libdparse": "~>0.9.8",
--    "msgpack-d": "~>1.0.0-beta.3",
--    "stdx-allocator": "~>2.77.2"
+-    "dsymbol": "~>0.6.0",
+-    "libdparse": "~>0.11.2",
+-    "msgpack-d": "~>1.0.0-beta.7",
+-    "stdx-allocator": "~>2.77.5",
+-    "emsi_containers": "0.8.0-alpha.11"
 -  },
 +  "libs": ["dsymbol","dparse","emsi_containers","msgpack-d","mir-core","stdx-allocator"],
 +  "lflags": ["-L%%LOCALBASE%%/lib/d"],
