@@ -1,32 +1,50 @@
-# Created by: Yuan-Chung Hsiao (ychsiao@ychsiao.idv.tw)
 # $FreeBSD$
 
 PORTNAME=	websvn
-PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	devel www
-MASTER_SITES=	http://websvn.tigris.org/files/documents/1380/49056/
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	ychsiao@ychsiao.org
-COMMENT=	Subversion repository web frontend
+MAINTAINER=	michael.osipov@siemens.com
+COMMENT=	Online Subversion repository browser
 
-LICENSE=	GPLv2+
+LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		cpe
-USE_PHP=	iconv pcre xml
-NO_BUILD=	yes
+RUN_DEPENDS=	${LOCALBASE}/bin/svn:devel/subversion \
+		${PEARDIR}/Archive/Tar.php:devel/pear@${PHP_FLAVOR} \
+		${PEARDIR}/geshi.php:devel/pear-geshi@${PHP_FLAVOR} \
+		${PEARDIR}/Text/Diff.php:devel/pear-Text_Diff@${PHP_FLAVOR}
 
-WEBSVNDIR?=	${WWWDIR_REL}
+USES=		php:flavors cpe
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}php
+
+USE_PHP=	iconv pcre xml mbstring
+
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+PEARDIR?=	${LOCALBASE}/share/pear
 
 SUB_FILES=	pkg-message
-SUB_LIST+=	WEBSVNDIR="${WEBSVNDIR}"
-PLIST_SUB+=	WEBSVNDIR="${WEBSVNDIR}"
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+post-patch:
+	@${REINPLACE_CMD} -E \
+		-e 's|^// \$$config->setSvnConfigDir.+|$$config->setSvnConfigDir('"'"'${ETCDIR}/subversion'"'"')\;|' \
+		-e 's|^// \$$config->setSVNCommandPath.+|$$config->setSVNCommandPath('"'"'${LOCALBASE}/bin'"'"')\;|' \
+		-e 's|^// \$$config->useGeshi.+|$$config->useGeshi()\;|' \
+	${WRKSRC}/include/distconfig.php
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${WEBSVNDIR}
-	(cd ${WRKSRC} \
-	    && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/${WEBSVNDIR})
-	${FIND} ${STAGEDIR}${PREFIX}/${WEBSVNDIR} -type f -exec ${CHMOD} 644 {} +
+	@(cd ${WRKSRC} \
+		&& ${RM} README.md changes.txt include/.gitignore)
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@(cd ${WRKSRC} \
+		&& ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/subversion
 
 .include <bsd.port.mk>

@@ -1,4 +1,7 @@
 ----------------------------------------------------
-To setup websvn, please edit the configuration file:
-%%PREFIX%%/%%WEBSVNDIR%%/include/config.php
+To setup WebSVN, please edit the configuration file:
+%%WWWDIR%%/include/config.php
+
+and modify your web server's configuration to serve
+WebSVN actually!
 ----------------------------------------------------
