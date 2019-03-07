@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	d-scanner
-PORTVERSION=	0.5.11
+PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator \
 		rdmd:lang/dlang-tools
 
+USES=		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	dlang-community
 GH_PROJECT=	D-Scanner
