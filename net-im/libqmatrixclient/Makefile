@@ -11,7 +11,7 @@ COMMENT=	Matrix IM support library using Qt technologies
 LICENSE=	LGPL21
 LICENSE_FILES=	${WRKSRC}/COPYING
 
-USES=	cmake qt:5 tar:xz
+USES=	cmake compiler:c++11-lang qt:5 tar:xz
 USE_QT=	core gui network \
 	buildtools_build qmake_build
 
