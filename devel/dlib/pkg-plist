@@ -4,10 +4,10 @@ include/d/dlib/audio/sample.d
 include/d/dlib/audio/sound.d
 include/d/dlib/audio/synth.d
 include/d/dlib/audio/unmanaged.d
+include/d/dlib/coding/hash.d
 include/d/dlib/coding/package.d
 include/d/dlib/coding/varint.d
 include/d/dlib/coding/zlib.d
-include/d/dlib/container/aarray.d
 include/d/dlib/container/array.d
 include/d/dlib/container/bst.d
 include/d/dlib/container/buffer.d
@@ -19,7 +19,6 @@ include/d/dlib/container/queue.d
 include/d/dlib/container/stack.d
 include/d/dlib/core/bitio.d
 include/d/dlib/core/compound.d
-include/d/dlib/core/fiber.d
 include/d/dlib/core/memory.d
 include/d/dlib/core/oop.d
 include/d/dlib/core/ownership.d
@@ -98,7 +97,6 @@ include/d/dlib/image/resampling/nearest.d
 include/d/dlib/image/signal2d.d
 include/d/dlib/image/transform.d
 include/d/dlib/image/unmanaged.d
-include/d/dlib/math/affine.d
 include/d/dlib/math/combinatorics.d
 include/d/dlib/math/complex.d
 include/d/dlib/math/decomposition.d
@@ -129,9 +127,12 @@ include/d/dlib/network/url.d
 include/d/dlib/package.d
 include/d/dlib/serialization/package.d
 include/d/dlib/serialization/xml.d
+include/d/dlib/text/common.d
+include/d/dlib/text/encodings.d
 include/d/dlib/text/lexer.d
 include/d/dlib/text/package.d
 include/d/dlib/text/slicelexer.d
+include/d/dlib/text/unmanagedstring.d
 include/d/dlib/text/utf16.d
 include/d/dlib/text/utf8.d
 include/d/dlib/text/utils.d
