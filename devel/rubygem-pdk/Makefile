@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdk
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
