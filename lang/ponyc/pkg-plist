@@ -18,7 +18,7 @@ lib/pony/%%VERSION%%/packages/buffered/benchmarks/main.pony
 lib/pony/%%VERSION%%/packages/buffered/buffered.pony
 lib/pony/%%VERSION%%/packages/buffered/reader.pony
 lib/pony/%%VERSION%%/packages/buffered/writer.pony
-lib/pony/%%VERSION%%/packages/builtin/_partial_arithmetic.pony
+lib/pony/%%VERSION%%/packages/builtin/_arithmetic.pony
 lib/pony/%%VERSION%%/packages/builtin/_to_string.pony
 lib/pony/%%VERSION%%/packages/builtin/ambient_auth.pony
 lib/pony/%%VERSION%%/packages/builtin/any.pony
@@ -27,6 +27,7 @@ lib/pony/%%VERSION%%/packages/builtin/asio_event.pony
 lib/pony/%%VERSION%%/packages/builtin/bool.pony
 lib/pony/%%VERSION%%/packages/builtin/builtin.pony
 lib/pony/%%VERSION%%/packages/builtin/compare.pony
+lib/pony/%%VERSION%%/packages/builtin/disposable_actor.pony
 lib/pony/%%VERSION%%/packages/builtin/do_not_optimise.pony
 lib/pony/%%VERSION%%/packages/builtin/env.pony
 lib/pony/%%VERSION%%/packages/builtin/float.pony
@@ -163,6 +164,8 @@ lib/pony/%%VERSION%%/packages/ponytest/pony_test.pony
 lib/pony/%%VERSION%%/packages/ponytest/test_helper.pony
 lib/pony/%%VERSION%%/packages/ponytest/test_list.pony
 lib/pony/%%VERSION%%/packages/ponytest/unit_test.pony
+lib/pony/%%VERSION%%/packages/process/_pipe.pony
+lib/pony/%%VERSION%%/packages/process/_process.pony
 lib/pony/%%VERSION%%/packages/process/_test.pony
 lib/pony/%%VERSION%%/packages/process/auth.pony
 lib/pony/%%VERSION%%/packages/process/process_monitor.pony
