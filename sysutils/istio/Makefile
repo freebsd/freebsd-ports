@@ -10,6 +10,8 @@ COMMENT=	Open platform to connect, manage, and secure microservices
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to build
+
 RUN_DEPENDS=	kubectl:sysutils/kubectl
 
 USES=		go
