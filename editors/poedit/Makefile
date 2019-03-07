@@ -14,7 +14,7 @@ COMMENT=	Gettext catalogs (.po files) editor
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	zip:archivers/zip
-LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell \
+LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3 \
 		libboost_thread.so:devel/boost-libs \
 		libicui18n.so:devel/icu \
 		liblucene++.so:textproc/luceneplusplus
