@@ -1,9 +1,12 @@
 include/liblcf/command_codes.h
 include/liblcf/data.h
+include/liblcf/encoder.h
 include/liblcf/enum_tags.h
+include/liblcf/flag_set.h
 include/liblcf/ini.h
 include/liblcf/inireader.h
 include/liblcf/lcf_options.h
+include/liblcf/lcf_saveopt.h
 include/liblcf/ldb_chunks.h
 include/liblcf/ldb_reader.h
 include/liblcf/ldb_terrain_flags.h
@@ -18,6 +21,7 @@ include/liblcf/lsd_reader.h
 include/liblcf/lsd_savepicture_flags.h
 include/liblcf/reader_lcf.h
 include/liblcf/reader_struct.h
+include/liblcf/reader_struct_impl.h
 include/liblcf/reader_util.h
 include/liblcf/reader_xml.h
 include/liblcf/rpg_actor.h
@@ -56,11 +60,14 @@ include/liblcf/rpg_rect.h
 include/liblcf/rpg_save.h
 include/liblcf/rpg_saveactor.h
 include/liblcf/rpg_savecommonevent.h
+include/liblcf/rpg_saveeasyrpgdata.h
 include/liblcf/rpg_saveeventcommands.h
 include/liblcf/rpg_saveeventdata.h
 include/liblcf/rpg_saveinventory.h
 include/liblcf/rpg_savemapevent.h
+include/liblcf/rpg_savemapeventbase.h
 include/liblcf/rpg_savemapinfo.h
+include/liblcf/rpg_savepanorama.h
 include/liblcf/rpg_savepartylocation.h
 include/liblcf/rpg_savepicture.h
 include/liblcf/rpg_savescreen.h
@@ -83,6 +90,7 @@ include/liblcf/rpg_troopmember.h
 include/liblcf/rpg_trooppage.h
 include/liblcf/rpg_trooppagecondition.h
 include/liblcf/rpg_variable.h
+include/liblcf/scope_guard.h
 include/liblcf/writer_lcf.h
 include/liblcf/writer_xml.h
 lib/cmake/liblcf/FindEXPAT.cmake
@@ -91,3 +99,8 @@ lib/cmake/liblcf/liblcf-config.cmake
 lib/liblcf.so
 lib/liblcf.so.0
 libdata/pkgconfig/liblcf.pc
+share/mime/application/x-ldb.xml
+share/mime/application/x-lmt.xml
+share/mime/application/x-lmu.xml
+share/mime/application/x-lsd.xml
+share/mime/packages/liblcf.xml
