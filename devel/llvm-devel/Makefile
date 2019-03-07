@@ -15,6 +15,7 @@ LICENSE+=	LLVM2
 LICENSE_FILE_LLVM2=	${WRKSRC}/LICENSE.TXT
 LICENSE_NAME_LLVM2= 	Apache License 2.0 with LLVM Exceptions
 LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE:=	${LICENSE:NARM}
 
 LLVM_SUFFIX=	-devel
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
@@ -116,6 +117,7 @@ LLDB_GH_PROJECT=	lldb:lldb
 LLDB_GH_SUBDIR=		tools/lldb:lldb
 LLDB_GH_TAGNAME=	${LLDB_COMMIT}:lldb
 LLDB_IMPLIES=		CLANG
+LLDB_PORTDOCS=		lldb
 LLDB_VARS=		_USES_PYTHON=python:2.7
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
@@ -298,11 +300,14 @@ COMMANDS+=	ld.lld \
 .if ${PORT_OPTIONS:MLLDB}
 COMMANDS+=	lldb \
 		lldb-argdumper \
+		lldb-instr \
 		lldb-mi \
 		lldb-server \
 		lldb-test \
 		lldb-vscode
 .endif
+
+OPENMP_PATTERN=	lib[ig]*omp|omp.h|ompt.h|omp-tools.h
 
 .if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
 # Hack to disable COMPILER_RT in plist of unsupported architectures
@@ -531,13 +536,13 @@ build-plist:
 	    -e 's|${LLVM_MAJOR:C/\./\\./}|%%LLVM_MAJOR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
 	awk '{ \
-	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /omp.h|${EXTRAS_PATTERN}|libclang_rt/) {printf "%%%%CLANG%%%%"} \
+	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /${OPENMP_PATTERN}|${EXTRAS_PATTERN}|libclang_rt/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
 	    if ($$0 ~ /lld|wasm-ld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
 	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
-	    if ($$0 ~ /(lib[ig]*omp|omp.h|ompt.h)/) {printf "%%%%OPENMP%%%%"} \
+	    if ($$0 ~ /(${OPENMP_PATTERN})/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /libclang_rt/) {print} \
 	}' ${PLIST}.tmp >> ${PLIST}
