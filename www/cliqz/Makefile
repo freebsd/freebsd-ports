@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cliqz
-DISTVERSION=	1.24.2
-PORTREVISION=	2
+DISTVERSION=	1.25.2
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/cdn.cliqz.com/browser-f/APT/:amazon \
 		http://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/${CLIQZ_LAST_BUILD_ID}/:cliqz
@@ -68,7 +67,7 @@ USE_LDCONFIG=	yes
 CLIQZ_CHANNEL=		release
 # If the DISTVERSION is updated, make sure to update the last build id from
 # fetch -qo - https://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/lastbuildid
-CLIQZ_LAST_BUILD_ID=	20190124094133
+CLIQZ_LAST_BUILD_ID=	20190218161723
 CLIQZ_ICON=		${PORTNAME}.png
 CLIQZ_ICON_SRC=		${WRKSRC}/mozilla-release/browser/branding/${PORTNAME}/default48.png
 MOZ_DESKTOP=		${WRKSRC}/mozilla-release/toolkit/mozapps/installer/linux/rpm/mozilla.desktop
@@ -113,7 +112,7 @@ do-install:
 	@${CHMOD} 755 ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${PORTNAME}
 
 post-install:
-	${LN} -sf ${PREFIX}/lib/${PORTNAME}/${PORTNAME}-bin ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${RLN} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${PORTNAME}-bin ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${CLIQZ_DESKTOP} ${STAGEDIR}${PREFIX}/share/applications/
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	@${CP} ${CLIQZ_ICON_SRC} ${STAGEDIR}${PREFIX}/share/pixmaps/${CLIQZ_ICON}
