@@ -20,6 +20,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/db/languages/hu
 %%DATADIR%%/db/languages/it
 %%DATADIR%%/db/languages/ja
+%%DATADIR%%/db/languages/ko
 %%DATADIR%%/db/languages/nb-NO
 %%DATADIR%%/db/languages/nl
 %%DATADIR%%/db/languages/nl-BE
@@ -28,10 +29,12 @@ man/man8/lynis.8.gz
 %%DATADIR%%/db/languages/pt
 %%DATADIR%%/db/languages/ru
 %%DATADIR%%/db/languages/se
+%%DATADIR%%/db/languages/sk
 %%DATADIR%%/db/languages/tr
 %%DATADIR%%/db/malware-susp.db
 %%DATADIR%%/db/malware.db
 %%DATADIR%%/db/sbl.db
+%%DATADIR%%/db/software-eol.db
 %%DATADIR%%/db/tests.db
 @mode 0400
 %%DATADIR%%/include/binaries
