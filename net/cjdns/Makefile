@@ -12,6 +12,7 @@ COMMENT=	Routing engine designed for security, scalability, speed
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
 BROKEN_armv6=		fails to build: Killing runaway build after 21600 seconds with no output
 BROKEN_armv7=		fails to build: Killing runaway build after 21600 seconds with no output
 
