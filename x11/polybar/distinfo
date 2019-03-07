@@ -1,6 +1,6 @@
-TIMESTAMP = 1545654715
-SHA256 (jaagr-polybar-3.3.0_GH0.tar.gz) = d64da066a90aa9ab026a22e05d634af0b3870ed6dd83787fae1506b7e9282be5
-SIZE (jaagr-polybar-3.3.0_GH0.tar.gz) = 247001
+TIMESTAMP = 1551892928
+SHA256 (jaagr-polybar-3.3.0-36-g25ef029_GH0.tar.gz) = 542b7aca64efbd574049e954ba894597ef955b15e712c766eead82b39fc404e2
+SIZE (jaagr-polybar-3.3.0-36-g25ef029_GH0.tar.gz) = 250002
 SHA256 (jaagr-i3ipcpp-v0.7.1-4-gd4e4786_GH0.tar.gz) = 2154bf1a0b0a211bddcf5904ba97f99eb86ef6faded5dd864858e2a1a2389cec
 SIZE (jaagr-i3ipcpp-v0.7.1-4-gd4e4786_GH0.tar.gz) = 191511
 SHA256 (jaagr-xpp-1.4.0-4-gbf6ff36_GH0.tar.gz) = 9d1f52ee19c925d5900dd49f135f495fbf3a573d80a93876679f08ff41ff2c71
