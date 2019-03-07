@@ -22,7 +22,7 @@ USE_GNOME=	cairo gtk30
 USE_GL=		gl
 
 INSTALLS_ICONS=	yes
-MAKE_ARGS=	debug=0
+MAKE_ARGS=	debug=0 werror=0
 DESKTOP_ENTRIES="Goxel" "${COMMENT}" "${PORTNAME}" \
 	"${PORTNAME}" "Graphics;3DGraphics;" false
 
