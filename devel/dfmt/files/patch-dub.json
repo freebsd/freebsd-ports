@@ -5,7 +5,7 @@
      "targetType": "autodetect",
      "license": "BSL-1.0",
 -    "dependencies": {
--      "libdparse": "~>0.9.10"
+-      "libdparse": "~>0.10.12"
 -    },
 +    "libs": ["dparse","stdx-allocator"],
 +    "lflags": ["-L%%LOCALBASE%%/lib/d"],
