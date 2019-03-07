@@ -111,53 +111,7 @@ PLIST_SUB+=	LLVM_RELEASE=${LLVM_RELEASE} \
 		LLVM_SUFFIX=${LLVM_SUFFIX} \
 		LLVM_MAJOR=${LLVM_MAJOR}
 
-COMMANDS=	bugpoint \
-		dsymutil \
-		llc \
-		lli \
-		llvm-ar \
-		llvm-as \
-		llvm-bcanalyzer \
-		llvm-cat \
-		llvm-cfi-verify \
-		llvm-config \
-		llvm-cov \
-		llvm-cvtres \
-		llvm-diff \
-		llvm-dis \
-		llvm-dlltool \
-		llvm-dwarfdump \
-		llvm-dwp \
-		llvm-exegesis \
-		llvm-extract \
-		llvm-link \
-		llvm-mc \
-		llvm-mca \
-		llvm-modextract \
-		llvm-mt \
-		llvm-nm \
-		llvm-objcopy \
-		llvm-objdump \
-		llvm-opt-report \
-		llvm-pdbutil \
-		llvm-profdata \
-		llvm-ranlib \
-		llvm-rc \
-		llvm-readelf \
-		llvm-readobj \
-		llvm-rtdyld \
-		llvm-size \
-		llvm-split \
-		llvm-stress \
-		llvm-strings \
-		llvm-strip \
-		llvm-symbolizer \
-		llvm-tblgen \
-		llvm-undname \
-		llvm-xray \
-		macho-dump \
-		opt \
-		sancov
+COMMANDS=	${LLVM_COMMANDS}
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
 STRIP_LIBS=	BugpointPasses.so \
@@ -165,18 +119,6 @@ STRIP_LIBS=	BugpointPasses.so \
 		${LIBNAME}.0 \
 		libLTO.so
 
-EXTRAS_COMMANDS+= \
-		clang-apply-replacements \
-		clang-change-namespace \
-		clang-include-fixer \
-		clang-modernize \
-		clang-query \
-		clang-rename \
-		clang-reorder-fields \
-		clang-tidy \
-		clangd \
-		find-all-symbols \
-		modularize
 EXTRAS_LIBS=	libclangApplyReplacements \
 		libclangChangeNamespace \
 		libclangDaemon \
@@ -215,19 +157,7 @@ CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/arm64/aarch64/}-portbld-${OPSYS:tl}${
 # ----------- end of sync block --------------------
 
 .if ${PORT_OPTIONS:MCLANG}
-COMMANDS+=	c-index-test \
-		clang \
-		clang++ \
-		clang-check \
-		clang-cpp \
-		clang-format \
-		clang-func-mapping \
-		clang-import-test \
-		clang-offload-bundler \
-		diagtool \
-		hmaptool \
-		scan-build \
-		scan-view
+COMMANDS+=	${CLANG_COMMANDS}
 MAN1SRCS+=	clang.1 \
 		diagtool.1 \
 		scan-build.1
@@ -242,35 +172,26 @@ USES+=		gnome
 COMPILER_RT_PATTERN=	(_blacklist.txt|sanitizer|include.xray)
 .endif
 
+.if ${PORT_OPTIONS:MEXTRAS}
+COMMANDS+=	${EXTRAS_COMMANDS}
+MAN1SRCS+=	extraclangtools.1
+PORTDOCS+=	clang-tools
+SHEBANG_FILES+=	tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py \
+		tools/clang/tools/extra/clang-tidy/tool/run-clang-tidy.py \
+		tools/clang/tools/extra/include-fixer/find-all-symbols/tool/run-find-all-symbols.py
+.endif
+
 .if ${PORT_OPTIONS:MLIT}
 MAN1SRCS+=	lit.1 FileCheck.1
-LIT_COMMANDS=	lit llvm-lit FileCheck
+.endif
+
+.if ${PORT_OPTIONS:MLLD}
+COMMANDS+=	${LLD_COMMANDS}
+PORTDOCS+=	lld
 .endif
 
 .if ${PORT_OPTIONS:MLLDB}
-COMMANDS+=	lldb \
-		lldb-argdumper \
-		lldb-mi \
-		lldb-server \
-		lldb-test
-.endif
-
-.if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
-# Hack to disable COMPILER_RT in plist of unsupported architectures
-PLIST_SUB+=	COMPILER_RT="@comment "
-.else
-.endif
-
-.if ! ${OPTIONS_DEFINE:MGOLD}
-# Hack to disable GOLD in plist of unsupported architectures
-PLIST_SUB+=	GOLD="@comment "
-.else
-.endif
-
-.if ! ${OPTIONS_DEFINE:MOPENMP}
-# Hack to disable OPENMP in plist of unsupported architectures
-PLIST_SUB+=	OPENMP="@comment "
-.else
+COMMANDS+=	${LLDB_COMMANDS}
 .endif
 
 MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
@@ -285,6 +206,7 @@ MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		opt.1 tblgen.1
 
 .include <bsd.port.pre.mk>
+.include "${.CURDIR}/Makefile.COMMANDS"
 
 _CRTLIBDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 _CRTBLDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/share
@@ -350,24 +272,6 @@ _COMPILER_RT_LIBS+= \
 	libclang_rt.ubsan_standalone_cxx-i386.a
 .endif
 
-.if ${PORT_OPTIONS:MEXTRAS}
-COMMANDS+=	${EXTRAS_COMMANDS}
-MAN1SRCS+=	extraclangtools.1
-PORTDOCS+=	clang-tools
-SHEBANG_FILES+=	tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py \
-		tools/clang/tools/extra/clang-tidy/tool/run-clang-tidy.py \
-		tools/clang/tools/extra/include-fixer/find-all-symbols/tool/run-find-all-symbols.py
-.endif
-
-.if ${PORT_OPTIONS:MLLD}
-COMMANDS+=	ld.lld \
-		ld64.lld \
-		lld \
-		lld-link \
-		wasm-ld
-PORTDOCS+=	lld
-.endif
-
 .if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
@@ -376,6 +280,24 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99
 BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+.endif
+
+.if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
+# Hack to disable COMPILER_RT in plist of unsupported architectures
+PLIST_SUB+=	COMPILER_RT="@comment "
+.else
+.endif
+
+.if ! ${OPTIONS_DEFINE:MGOLD}
+# Hack to disable GOLD in plist of unsupported architectures
+PLIST_SUB+=	GOLD="@comment "
+.else
+.endif
+
+.if ! ${OPTIONS_DEFINE:MOPENMP}
+# Hack to disable OPENMP in plist of unsupported architectures
+PLIST_SUB+=	OPENMP="@comment "
+.else
 .endif
 
 post-extract-CLANG-on:
@@ -543,51 +465,5 @@ check-commands:
 .for command in ${COMMANDS}
 	test -e ${STAGEDIR}${LLVM_PREFIX}/bin/${command}
 .endfor
-
-.if make(svn-patch-llvm)
-.if !defined(PATCH_REV)
-.error svn-patch-llvm requires that PATCH_REV be set
-.endif
-_PATCH_FILE=${FILESDIR}/patch-svn-${PATCH_REV}
-_LLVM_BASE=http://llvm.org/svn/llvm-project/llvm/trunk
-svn-patch-llvm:
-	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
-	svn diff -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
-.endif
-
-.if make(svn-patch-clang)
-.if !defined(PATCH_REV)
-.error svn-patch-clang requires that PATCH_REV be set
-.endif
-_PATCH_FILE=${FILESDIR}/clang/patch-svn-${PATCH_REV}
-_LLVM_BASE=http://llvm.org/svn/llvm-project/cfe/trunk
-svn-patch-clang:
-	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
-	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
-	    ${SED} -E -e 's;^(---|\+\+\+) ;\1 tools/clang/;' >> ${_PATCH_FILE}
-.endif
-
-.if make(svn-patch-compiler-rt)
-.if !defined(PATCH_REV)
-.error svn-patch-compiler-rt requires that PATCH_REV be set
-.endif
-_PATCH_FILE=${FILESDIR}/compiler-rt/patch-svn-${PATCH_REV}
-_LLVM_BASE=http://llvm.org/svn/llvm-project/compiler-rt/trunk
-svn-patch-compiler-rt:
-	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
-	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | \
-	    ${SED} -E -e 's;^(---|\+\+\+) ;\1 tools/compiler-rt/;' >> ${_PATCH_FILE}
-.endif
-
-.if make(svn-patch-lldb)
-.if !defined(PATCH_REV)
-.error svn-patch-lldb requires that PATCH_REV be set
-.endif
-_PATCH_FILE=${FILESDIR}/lldb/patch-svn-${PATCH_REV}
-_LLVM_BASE=http://llvm.org/svn/llvm-project/lldb/trunk
-svn-patch-lldb:
-	svn log -c ${PATCH_REV} ${_LLVM_BASE} >> ${_PATCH_FILE}
-	svn diff -c ${PATCH_REV} ${_LLVM_BASE} | >> ${_PATCH_FILE}
-.endif
 
 .include <bsd.port.post.mk>
