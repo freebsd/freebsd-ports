@@ -2,6 +2,7 @@
 
 PORTNAME=	clixon
 PORTVERSION=	3.9.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	dcornejo@netgate.com
