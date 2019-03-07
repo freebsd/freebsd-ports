@@ -7,7 +7,7 @@ MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}-rtm
 
 MAINTAINER=	meta@FreeBSD.org
-COMMENT=	Softether VPN solution
+COMMENT=	SoftEther VPN 4 (RTM version)
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
