@@ -1,0 +1,23 @@
+CudaText is a cross-platform text editor, written in Lazarus. It is fully
+open source. Features include:
+- Syntax highlight for many languages: C, C++, JavaScript, HTML, CSS, PHP,
+  Python, XML etc. 200+ syntax lexers exist.
+- Code tree (tree structure of functions/classes/etc in source).
+- Code folding.
+- Multi-carets and multi-selections.
+- Find/Replace with reg. ex.
+- Plugins in Python language. Plugins can do lot of things.
+- Configs in JSON. Supports lexer-specific configs.
+- Tabbed UI.
+- Split each tab.
+- Split view for 2/3/4/6 files.
+- Simple auto-completion (fixed list) for some lexers.
+- Command palette (ST3 style).
+- Minimap.
+- Micromap.
+- Show unprinted whitespace.
+- Support for many encodings.
+- Customizable hotkeys.
+- Binary/Hex viewer for files of unlimited size.
+
+WWW: http://uvviewsoft.com/
