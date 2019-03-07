@@ -265,11 +265,8 @@ LDFLAGS+=	-lc++
 USE_GCC=	yes
 #.endif
 
-.if ${ARCH} == aarch64
-BROKEN=		cmake/admDetermineSystem.cmake:78: CPU not supported
-.elif ${ARCH} == powerpc || ${ARCH} == sparc64
-BROKEN=		Does not compile on powerpc or sparc64
-.endif
+NOT_FOR_ARCHS=		aarch64 powerpc powerpc64 powerpcspe sparc64
+NOT_FOR_ARCHS_REASON=	cmake/admDetermineSystem.cmake:78: CPU not supported
 
 post-patch:
 	@${MKDIR} ${CONFIGURE_WRKSRC}/config
