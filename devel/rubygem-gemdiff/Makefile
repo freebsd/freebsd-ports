@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gemdiff
-PORTVERSION=	2.5.4
+PORTVERSION=	2.5.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
