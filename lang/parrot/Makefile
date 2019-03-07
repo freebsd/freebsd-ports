@@ -23,8 +23,8 @@ OPTIONS_DEFINE=	DOCS
 
 ALL_TARGET=	installable
 CONFIGURE_ARGS=	--cc=${CC} --cxx=${CXX} --link=${CXX} \
-		--ccflags="${CFLAGS} -I${LOCALBASE}/include" \
-		--ld=${CC} --ldflags="${LDFLAGS} -L${LIBDIR} -L${LOCALBASE}/lib" \
+		--ccflags="${CFLAGS}" \
+		--ld=${CC} --ldflags="${LDFLAGS}" \
 		--gc=gms --inline --optimize --parrot_is_shared --verbose \
 		--prefix=${PREFIX} \
 		--icu-config=${LOCALBASE}/bin/icu-config \
@@ -35,7 +35,7 @@ INSTALL_TARGET=	install-dev
 TEST_TARGET=	test
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES=		bison gmake perl5 shebangfix tar:bzip2
+USES=		bison gmake localbase:ldflags perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	tools/dev/create_language.pl \
 		tools/dev/gen_makefile.pl \
 		tools/dev/pprof2cg.pl \
