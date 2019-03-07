@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	transmission-remote-gui
-PORTVERSION=	5.15.4
+PORTVERSION=	5.16.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -24,6 +23,7 @@ USE_FPC=	cairo chm fcl-base fcl-image fcl-json fcl-net pasjpeg rtl-objpas \
 WRKSRC=		${WRKDIR}/transgui-${PORTVERSION}
 PLIST_FILES=	bin/transgui
 SUB_FILES=	pkg-message
+LLD_UNSAFE=	yes
 
 LAZARUS_PROJECT_FILES=	transgui.lpi
 LAZBUILD_ARGS=		-d
