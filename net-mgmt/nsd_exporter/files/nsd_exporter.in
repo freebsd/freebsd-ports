@@ -39,9 +39,9 @@ load_rc_config $name
 
 pidfile=/var/run/nsd_exporter.pid
 command="/usr/sbin/daemon"
-procname="%%PREFIX%%/bin/nsd_exporter"
-command_args="-rp ${pidfile} -S -R ${nsd_exporter_restart_delay} \
-    -T ${name} ${procname} \
+nsd_exporter_command="%%PREFIX%%/bin/nsd_exporter"
+command_args="-rP ${pidfile} -S -R ${nsd_exporter_restart_delay} \
+    -T ${name} ${nsd_exporter_command} \
     -cert ${nsd_exporter_control_cert} \
     -ca ${nsd_exporter_control_ca} \
     -key ${nsd_exporter_control_key} \
