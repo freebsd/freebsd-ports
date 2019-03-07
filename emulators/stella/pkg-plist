@@ -32,7 +32,6 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping_remap.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/jr_pacman.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher.png
-%%PORTDOCS%%%%DOCSDIR%%/graphics/launcher_filter.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher_options_files.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher_options_snapshots.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher_override.png
@@ -57,13 +56,11 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_video_tv.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/pacman.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/qwertz.png
-%%PORTDOCS%%%%DOCSDIR%%/graphics/rom_browser.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/romaudit.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/rominfo_1x_large.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/rominfo_1x_small.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/rominfo_2x_small.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/secret_quest.png
-%%PORTDOCS%%%%DOCSDIR%%/graphics/select_romdir.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/space_invaders.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/timemachine.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
