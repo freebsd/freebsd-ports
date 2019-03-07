@@ -47,8 +47,8 @@ FPC_DEFAULT?=		3.0.4
 GCC_DEFAULT?=		8
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
-# Possible values: 1.8.4
-LAZARUS_DEFAULT?=	1.8.4
+# Possible values: 2.0.0
+LAZARUS_DEFAULT?=	2.0.0
 .if ${ARCH} == amd64
 # Possible values: c6, c6_64, c7
 LINUX_DEFAULT?=		c6_64
