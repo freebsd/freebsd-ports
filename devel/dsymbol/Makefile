@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsymbol
-PORTVERSION=	0.4.8
+PORTVERSION=	0.6.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 		${LOCALBASE}/lib/d/libemsi_containers.a:devel/containers \
 		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator
 
+USES=		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	dlang-community
 
