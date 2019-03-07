@@ -1,0 +1,6 @@
+BEMENU_RUN
+When enabled the bundled bemenu-run utility will also be installed.
+It behaves badly on FreeBSD with Wayland and might hang and not
+release bemenu's key grab when executing a program.  It is recommended
+to instead install x11/dmenu and use its dmenu_path script with
+bemenu as a substitute.

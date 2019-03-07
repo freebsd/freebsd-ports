@@ -1,0 +1,9 @@
+bin/bemenu
+%%BEMENU_RUN%%bin/bemenu-run
+include/bemenu.h
+%%NCURSES%%lib/bemenu/bemenu-renderer-curses.so
+%%WAYLAND%%lib/bemenu/bemenu-renderer-wayland.so
+%%X11%%lib/bemenu/bemenu-renderer-x11.so
+lib/libbemenu.so
+lib/libbemenu.so.0
+lib/libbemenu.so.0.1.0

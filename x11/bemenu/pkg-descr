@@ -1,0 +1,9 @@
+Dynamic menu library and client program inspired by dmenu, a
+minimalistic menu that reads a newline separated list of items from
+stdin and shows them as a menu on the top of the screen.  When the
+user selects one item or types any text and presses Enter, their
+choice is printed to stdout.
+
+Bemenu comes with Ncurses, Wayland, and X11 backends.
+
+WWW: https://github.com/Cloudef/bemenu
