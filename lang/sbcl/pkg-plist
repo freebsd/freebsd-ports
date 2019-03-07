@@ -79,6 +79,7 @@ lib/sbcl/sb-cover/sb-cover.asd
 lib/sbcl/sb-cover/test-data-1.lisp
 lib/sbcl/sb-cover/test-data-2.lisp
 lib/sbcl/sb-cover/test-data-3.lisp
+lib/sbcl/sb-cover/test-data-4.lisp
 lib/sbcl/sb-cover/test-data-branching-forms.lisp
 lib/sbcl/sb-cover/tests.lisp
 lib/sbcl/sb-executable/sb-executable.asd

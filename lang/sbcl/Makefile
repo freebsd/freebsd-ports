@@ -7,7 +7,7 @@
 # [1] x11-wm/stumpwm
 
 PORTNAME=	sbcl
-DISTVERSION=	1.4.16
+DISTVERSION=	1.5.0
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
