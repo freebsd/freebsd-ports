@@ -1,4 +1,4 @@
-YAPET is a curses based password manager using the Blowfish encryption
+YAPET is a curses based password manager using AES-256 encryption
 algorithm to store passwords encrypted on disk.
 
 WWW: https://yapet.guengel.ch/
