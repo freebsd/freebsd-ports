@@ -21,6 +21,7 @@
     SUBDIR += bbdock
     SUBDIR += bbrun
     SUBDIR += beforelight
+    SUBDIR += bemenu
     SUBDIR += bgrot
     SUBDIR += bgs
     SUBDIR += bitmap
