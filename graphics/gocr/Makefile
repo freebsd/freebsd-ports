@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gocr
-PORTVERSION=	0.50
-PORTREVISION=	2
+PORTVERSION=	0.52
 CATEGORIES=	graphics
 MASTER_SITES=	http://www-e.uni-magdeburg.de/jschulen/ocr/
 
@@ -15,6 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
 USES=		gmake
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-netpbm=${LOCALBASE}
 MAKE_ARGS=	prefix=${PREFIX} exec_prefix=${PREFIX} DESTDIR=${DESTDIR}
