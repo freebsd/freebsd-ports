@@ -6,7 +6,7 @@ PORTVERSION=	2.3.9.9
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.alhem.net/Sockets/ \
-		http://www.netfence.it/Sockets/
+		https://www.netfence.it/Sockets/
 
 MAINTAINER=	ml@netfence.it
 COMMENT=	C++ wrapper for BSD-style sockets
