@@ -3,7 +3,7 @@
 PORTNAME=	dspdfviewer
 PORTVERSION=	1.15.1
 DISTVERSIONPREFIX=v
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 
 MAINTAINER=	santhosh.raju@gmail.com
@@ -39,6 +39,11 @@ CFLAGS+=	-Wno-error=undefined-func-template
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200039
 CFLAGS+=	-Wno-error=zero-as-null-pointer-constant
+.endif
+
+# Fixes build failure for Clang 8.0.0
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300014
+CFLAGS+=       -Wno-error=extra-semi-stmt
 .endif
 
 CFLAGS+=	-Wno-error=redundant-parens
