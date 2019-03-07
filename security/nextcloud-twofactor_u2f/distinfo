@@ -1,3 +1,3 @@
-TIMESTAMP = 1550424992
-SHA256 (nextcloud/twofactor_u2f-v2.1.1/twofactor_u2f.tar.gz) = 5288ae3b1b55b7f09e82a1c0ee8efbd849171c9ff44b93131b6c05c13676e421
-SIZE (nextcloud/twofactor_u2f-v2.1.1/twofactor_u2f.tar.gz) = 650612
+TIMESTAMP = 1551988707
+SHA256 (nextcloud/twofactor_u2f-v2.1.2/twofactor_u2f.tar.gz) = aad32baf2d8bc2cb48ef59370c138965388d37457b7a5799573500fdf026ecc2
+SIZE (nextcloud/twofactor_u2f-v2.1.2/twofactor_u2f.tar.gz) = 701121
