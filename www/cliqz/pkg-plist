@@ -28,6 +28,7 @@ lib/cliqz/libmozavcodec.so
 lib/cliqz/libmozavutil.so
 lib/cliqz/libmozgtk.so
 lib/cliqz/libmozsqlite3.so
+lib/cliqz/libmozwayland.so
 lib/cliqz/libnspr4.so
 lib/cliqz/libnss3.so
 lib/cliqz/libnssckbi.so
