@@ -17,8 +17,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USES=		fpc iconv lazarus:flavors
-USE_FPC=	cairo chm fcl-base fcl-image fcl-json fcl-net pasjpeg rtl-objpas \
-		rtl-extra x11
+USE_FPC=	cairo chm fcl-base fcl-image fcl-json fcl-net fcl-xml pasjpeg \
+		rtl-objpas rtl-extra x11
 
 WRKSRC=		${WRKDIR}/transgui-${PORTVERSION}
 PLIST_FILES=	bin/transgui
