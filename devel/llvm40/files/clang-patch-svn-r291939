@@ -1,0 +1,199 @@
+r291939 | malcolm.parsons | 2017-01-13 19:55:32 +0100 (Fri, 13 Jan 2017) | 1 line
+
+Remove unused lambda captures. NFC
+
+Index: tools/clang/lib/AST/CXXInheritance.cpp
+===================================================================
+--- tools/clang/lib/AST/CXXInheritance.cpp	(revision 291938)
++++ tools/clang/lib/AST/CXXInheritance.cpp	(revision 291939)
+@@ -88,7 +88,7 @@ bool CXXRecordDecl::isDerivedFrom(const CXXRecordD
+   const CXXRecordDecl *BaseDecl = Base->getCanonicalDecl();
+   // FIXME: Capturing 'this' is a workaround for name lookup bugs in GCC 4.7.
+   return lookupInBases(
+-      [this, BaseDecl](const CXXBaseSpecifier *Specifier, CXXBasePath &Path) {
++      [BaseDecl](const CXXBaseSpecifier *Specifier, CXXBasePath &Path) {
+         return FindBaseClass(Specifier, Path, BaseDecl);
+       },
+       Paths);
+@@ -109,7 +109,7 @@ bool CXXRecordDecl::isVirtuallyDerivedFrom(const C
+   const CXXRecordDecl *BaseDecl = Base->getCanonicalDecl();
+   // FIXME: Capturing 'this' is a workaround for name lookup bugs in GCC 4.7.
+   return lookupInBases(
+-      [this, BaseDecl](const CXXBaseSpecifier *Specifier, CXXBasePath &Path) {
++      [BaseDecl](const CXXBaseSpecifier *Specifier, CXXBasePath &Path) {
+         return FindVirtualBaseClass(Specifier, Path, BaseDecl);
+       },
+       Paths);
+Index: tools/clang/lib/AST/MicrosoftMangle.cpp
+===================================================================
+--- tools/clang/lib/AST/MicrosoftMangle.cpp	(revision 291938)
++++ tools/clang/lib/AST/MicrosoftMangle.cpp	(revision 291939)
+@@ -2997,7 +2997,7 @@ void MicrosoftMangleContextImpl::mangleStringLiter
+   // N.B. The length is in terms of bytes, not characters.
+   Mangler.mangleNumber(SL->getByteLength() + SL->getCharByteWidth());
+ 
+-  auto GetLittleEndianByte = [&Mangler, &SL](unsigned Index) {
++  auto GetLittleEndianByte = [&SL](unsigned Index) {
+     unsigned CharByteWidth = SL->getCharByteWidth();
+     uint32_t CodeUnit = SL->getCodeUnit(Index / CharByteWidth);
+     unsigned OffsetInCodeUnit = Index % CharByteWidth;
+@@ -3004,7 +3004,7 @@ void MicrosoftMangleContextImpl::mangleStringLiter
+     return static_cast<char>((CodeUnit >> (8 * OffsetInCodeUnit)) & 0xff);
+   };
+ 
+-  auto GetBigEndianByte = [&Mangler, &SL](unsigned Index) {
++  auto GetBigEndianByte = [&SL](unsigned Index) {
+     unsigned CharByteWidth = SL->getCharByteWidth();
+     uint32_t CodeUnit = SL->getCodeUnit(Index / CharByteWidth);
+     unsigned OffsetInCodeUnit = (CharByteWidth - 1) - (Index % CharByteWidth);
+Index: tools/clang/lib/CodeGen/CGOpenMPRuntime.cpp
+===================================================================
+--- tools/clang/lib/CodeGen/CGOpenMPRuntime.cpp	(revision 291938)
++++ tools/clang/lib/CodeGen/CGOpenMPRuntime.cpp	(revision 291939)
+@@ -4006,8 +4006,8 @@ void CGOpenMPRuntime::emitTaskCall(CodeGenFunction
+     DepTaskArgs[5] = CGF.Builder.getInt32(0);
+     DepTaskArgs[6] = llvm::ConstantPointerNull::get(CGF.VoidPtrTy);
+   }
+-  auto &&ThenCodeGen = [this, Loc, &Data, TDBase, KmpTaskTQTyRD,
+-                        NumDependencies, &TaskArgs,
++  auto &&ThenCodeGen = [this, &Data, TDBase, KmpTaskTQTyRD, NumDependencies,
++                        &TaskArgs,
+                         &DepTaskArgs](CodeGenFunction &CGF, PrePostActionTy &) {
+     if (!Data.Tied) {
+       auto PartIdFI = std::next(KmpTaskTQTyRD->field_begin(), KmpTaskTPartId);
+@@ -4562,7 +4562,7 @@ void CGOpenMPRuntime::emitReduction(CodeGenFunctio
+       }
+       if (XExpr) {
+         auto *VD = cast<VarDecl>(cast<DeclRefExpr>(*ILHS)->getDecl());
+-        auto &&AtomicRedGen = [BO, VD, IPriv,
++        auto &&AtomicRedGen = [BO, VD,
+                                Loc](CodeGenFunction &CGF, const Expr *XExpr,
+                                     const Expr *EExpr, const Expr *UpExpr) {
+           LValue X = CGF.EmitLValue(XExpr);
+@@ -4572,7 +4572,7 @@ void CGOpenMPRuntime::emitReduction(CodeGenFunctio
+           CGF.EmitOMPAtomicSimpleUpdateExpr(
+               X, E, BO, /*IsXLHSInRHSPart=*/true,
+               llvm::AtomicOrdering::Monotonic, Loc,
+-              [&CGF, UpExpr, VD, IPriv, Loc](RValue XRValue) {
++              [&CGF, UpExpr, VD, Loc](RValue XRValue) {
+                 CodeGenFunction::OMPPrivateScope PrivateScope(CGF);
+                 PrivateScope.addPrivate(
+                     VD, [&CGF, VD, XRValue, Loc]() -> Address {
+@@ -5988,8 +5988,8 @@ void CGOpenMPRuntime::emitTargetCall(CodeGenFuncti
+                         OffloadError);
+ 
+   // Fill up the pointer arrays and transfer execution to the device.
+-  auto &&ThenGen = [&Ctx, &BasePointers, &Pointers, &Sizes, &MapTypes, Device,
+-                    OutlinedFnID, OffloadError, OffloadErrorQType,
++  auto &&ThenGen = [&BasePointers, &Pointers, &Sizes, &MapTypes, Device,
++                    OutlinedFnID, OffloadError,
+                     &D](CodeGenFunction &CGF, PrePostActionTy &) {
+     auto &RT = CGF.CGM.getOpenMPRuntime();
+     // Emit the offloading arrays.
+@@ -6275,8 +6275,8 @@ void CGOpenMPRuntime::emitTargetDataCalls(
+   // Generate the code for the opening of the data environment. Capture all the
+   // arguments of the runtime call by reference because they are used in the
+   // closing of the region.
+-  auto &&BeginThenGen = [&D, &CGF, Device, &Info, &CodeGen, &NoPrivAction](
+-      CodeGenFunction &CGF, PrePostActionTy &) {
++  auto &&BeginThenGen = [&D, Device, &Info, &CodeGen](CodeGenFunction &CGF,
++                                                      PrePostActionTy &) {
+     // Fill up the arrays with all the mapped variables.
+     MappableExprsHandler::MapBaseValuesArrayTy BasePointers;
+     MappableExprsHandler::MapValuesArrayTy Pointers;
+@@ -6322,8 +6322,7 @@ void CGOpenMPRuntime::emitTargetDataCalls(
+   };
+ 
+   // Generate code for the closing of the data region.
+-  auto &&EndThenGen = [&CGF, Device, &Info](CodeGenFunction &CGF,
+-                                            PrePostActionTy &) {
++  auto &&EndThenGen = [Device, &Info](CodeGenFunction &CGF, PrePostActionTy &) {
+     assert(Info.isValid() && "Invalid data environment closing arguments.");
+ 
+     llvm::Value *BasePointersArrayArg = nullptr;
+@@ -6401,7 +6400,7 @@ void CGOpenMPRuntime::emitTargetDataStandAloneCall
+          "Expecting either target enter, exit data, or update directives.");
+ 
+   // Generate the code for the opening of the data environment.
+-  auto &&ThenGen = [&D, &CGF, Device](CodeGenFunction &CGF, PrePostActionTy &) {
++  auto &&ThenGen = [&D, Device](CodeGenFunction &CGF, PrePostActionTy &) {
+     // Fill up the arrays with all the mapped variables.
+     MappableExprsHandler::MapBaseValuesArrayTy BasePointers;
+     MappableExprsHandler::MapValuesArrayTy Pointers;
+Index: tools/clang/lib/CodeGen/CGOpenMPRuntimeNVPTX.cpp
+===================================================================
+--- tools/clang/lib/CodeGen/CGOpenMPRuntimeNVPTX.cpp	(revision 291938)
++++ tools/clang/lib/CodeGen/CGOpenMPRuntimeNVPTX.cpp	(revision 291939)
+@@ -533,8 +533,7 @@ void CGOpenMPRuntimeNVPTX::emitGenericParallelCall
+     ArrayRef<llvm::Value *> CapturedVars, const Expr *IfCond) {
+   llvm::Function *Fn = cast<llvm::Function>(OutlinedFn);
+ 
+-  auto &&L0ParallelGen = [this, Fn, &CapturedVars](CodeGenFunction &CGF,
+-                                                   PrePostActionTy &) {
++  auto &&L0ParallelGen = [this, Fn](CodeGenFunction &CGF, PrePostActionTy &) {
+     CGBuilderTy &Bld = CGF.Builder;
+ 
+     // Prepare for parallel region. Indicate the outlined function.
+@@ -565,8 +564,8 @@ void CGOpenMPRuntimeNVPTX::emitGenericParallelCall
+ 
+   auto &&SeqGen = [this, Fn, &CapturedVars, &Args](CodeGenFunction &CGF,
+                                                    PrePostActionTy &) {
+-    auto &&CodeGen = [this, Fn, &CapturedVars, &Args](CodeGenFunction &CGF,
+-                                                      PrePostActionTy &Action) {
++    auto &&CodeGen = [this, Fn, &CapturedVars](CodeGenFunction &CGF,
++                                               PrePostActionTy &Action) {
+       Action.Enter(CGF);
+ 
+       llvm::SmallVector<llvm::Value *, 16> OutlinedFnArgs;
+Index: tools/clang/lib/CodeGen/CGStmtOpenMP.cpp
+===================================================================
+--- tools/clang/lib/CodeGen/CGStmtOpenMP.cpp	(revision 291938)
++++ tools/clang/lib/CodeGen/CGStmtOpenMP.cpp	(revision 291939)
+@@ -986,7 +986,7 @@ void CodeGenFunction::EmitOMPReductionClauseInit(
+                         OriginalBaseLValue);
+         // Store the address of the original variable associated with the LHS
+         // implicit variable.
+-        PrivateScope.addPrivate(LHSVD, [this, OASELValueLB]() -> Address {
++        PrivateScope.addPrivate(LHSVD, [OASELValueLB]() -> Address {
+           return OASELValueLB.getAddress();
+         });
+         // Emit reduction copy.
+@@ -1040,9 +1040,8 @@ void CodeGenFunction::EmitOMPReductionClauseInit(
+             *this, OrigVD->getType(), ASELValue.getType(), OriginalBaseLValue);
+         // Store the address of the original variable associated with the LHS
+         // implicit variable.
+-        PrivateScope.addPrivate(LHSVD, [this, ASELValue]() -> Address {
+-          return ASELValue.getAddress();
+-        });
++        PrivateScope.addPrivate(
++            LHSVD, [ASELValue]() -> Address { return ASELValue.getAddress(); });
+         // Emit reduction copy.
+         bool IsRegistered = PrivateScope.addPrivate(
+             OrigVD, [this, OrigVD, PrivateVD, BaseLValue, ASELValue,
+@@ -2633,7 +2632,7 @@ void CodeGenFunction::EmitOMPTaskBasedDirective(co
+   for (const auto *C : S.getClausesOfKind<OMPDependClause>())
+     for (auto *IRef : C->varlists())
+       Data.Dependences.push_back(std::make_pair(C->getDependencyKind(), IRef));
+-  auto &&CodeGen = [PartId, &S, &Data, CS, &BodyGen, &LastprivateDstsOrigs](
++  auto &&CodeGen = [&Data, CS, &BodyGen, &LastprivateDstsOrigs](
+       CodeGenFunction &CGF, PrePostActionTy &Action) {
+     // Set proper addresses for generated private copies.
+     OMPPrivateScope Scope(CGF);
+@@ -3250,7 +3249,7 @@ static void EmitOMPAtomicCaptureExpr(CodeGenFuncti
+     NewVValType = XRValExpr->getType();
+     auto *ERValExpr = IsXLHSInRHSPart ? RHS : LHS;
+     auto &&Gen = [&CGF, &NewVVal, UE, ExprRValue, XRValExpr, ERValExpr,
+-                  IsSeqCst, IsPostfixUpdate](RValue XRValue) -> RValue {
++                  IsPostfixUpdate](RValue XRValue) -> RValue {
+       CodeGenFunction::OpaqueValueMapping MapExpr(CGF, ERValExpr, ExprRValue);
+       CodeGenFunction::OpaqueValueMapping MapX(CGF, XRValExpr, XRValue);
+       RValue Res = CGF.EmitAnyExpr(UE);
+@@ -3277,7 +3276,7 @@ static void EmitOMPAtomicCaptureExpr(CodeGenFuncti
+     NewVValType = X->getType().getNonReferenceType();
+     ExprRValue = convertToType(CGF, ExprRValue, E->getType(),
+                                X->getType().getNonReferenceType(), Loc);
+-    auto &&Gen = [&CGF, &NewVVal, ExprRValue](RValue XRValue) -> RValue {
++    auto &&Gen = [&NewVVal, ExprRValue](RValue XRValue) -> RValue {
+       NewVVal = XRValue;
+       return ExprRValue;
+     };

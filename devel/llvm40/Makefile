@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	4.0.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -62,6 +62,7 @@ CLANG_DESC=	Build clang
 CLANG_EXTRA_PATCHES= \
 	${PATCHDIR}/clang-patch-fformat_extensions.diff \
 	${PATCHDIR}/clang-patch-fopenmp.diff \
+	${PATCHDIR}/clang-patch-svn-r291939 \
 	${PATCHDIR}/clang-patch-tools_clang_lib_Headers_CMakeLists.txt \
 	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format.py \
 	${PATCHDIR}/clang-patch-tools_clang_tools_clang-format_clang-format-sublime.py \
