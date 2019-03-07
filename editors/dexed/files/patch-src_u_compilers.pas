@@ -1,5 +1,5 @@
---- src/ce_compilers.pas	2017-07-14 05:55:36 UTC
-+++ src/ce_compilers.pas
+--- src/u_compilers.pas	2017-07-14 05:55:36 UTC
++++ src/u_compilers.pas
 @@ -674,6 +674,7 @@ begin
        fPaths.DmdPhobosPath := path + '\src\phobos';
    end;

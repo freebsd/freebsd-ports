@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	dexed
-PORTVERSION=	3.6.21
+PORTVERSION=	3.7.4
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
 CATEGORIES=	editors
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -30,7 +29,7 @@ GH_ACCOUNT=	BBasile
 
 USES=		fpc lazarus:flavors
 USE_FPC=	chm fcl-base fcl-db fcl-image fcl-json fcl-net fcl-registry \
-		fcl-stl fcl-web fcl-xml numlib openssl pasjpeg rtl-objpas \
+		fcl-stl fcl-web fcl-xml numlib opengl openssl pasjpeg rtl-objpas \
 		regexpr rtl-extra x11
 USE_XORG=	x11
 
@@ -47,6 +46,7 @@ D_INCLUDE_DIR=	${LOCALBASE}/include/d
 LAZARUS_PROJECT_FILES=	anchordocking/anchordocking.lpk lazproj/dexed.lpi
 
 LAZBUILD_ARGS=	-d
+LLD_UNSAFE=	yes
 
 LDMD2_CMD=	${LOCALBASE}/bin/ldmd2
 
@@ -64,8 +64,8 @@ post-patch:
 				-e 's|%%D_LIB_DIR%%|${D_LIB_DIR}|g' \
 					-e 's|%%D_INCLUDE_DIR%%|${D_INCLUDE_DIR}|g' \
 						 ${WRKSRC}/dastworx/build.sh
-	${REINPLACE_CMD} -e 's|LINUX|UNIX|g' ${WRKSRC}/src/ce_common.pas ${WRKSRC}/src/ce_dcd.pas
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/src/ce_compilers.pas
+	${REINPLACE_CMD} -e 's|LINUX|UNIX|g' ${WRKSRC}/src/u_common.pas ${WRKSRC}/src/u_dcd.pas
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/src/u_compilers.pas
 
 post-configure:
 	@${MKDIR} ${WRKSRC}/tmppcp
