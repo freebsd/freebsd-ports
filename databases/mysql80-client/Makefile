@@ -9,9 +9,6 @@ COMMENT=	Multithreaded SQL database (client)
 
 LICENSE+=	LGPL21
 
-BROKEN_powerpc64=	does not build: reports unsupported compiler
-BROKEN_sparc64=		does not build: reports unsupported compiler
-
 MASTERDIR=	${.CURDIR}/../mysql80-server
 
 PKGMESSAGE=	${.CURDIR}/pkg-message
