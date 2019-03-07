@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	re-flex
-PORTVERSION=	1.0.12
+PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -19,6 +19,8 @@ GH_ACCOUNT=	Genivia
 GH_PROJECT=	RE-flex
 
 GNU_CONFIGURE=	yes
+
+TEST_TARGET=	test
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/reflex
