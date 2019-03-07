@@ -14,7 +14,8 @@ COMMENT=	Perl Interface to the Google LevelDB NoSQL database
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BROKEN_aarch64=	does not build: error: Please implement AtomicPointer for this platform
+NOT_FOR_ARCHS=		aarch64 powerpc powerpc64 powerpcspe
+NOT_FOR_ARCHS_REASON=	does not build: Please implement AtomicPointer for this platform
 BROKEN_sparc64=	does not build: unrecognized command line options
 
 LIB_DEPENDS=	libleveldb.so:databases/leveldb
