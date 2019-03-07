@@ -2,5 +2,5 @@
 +++ source/dub/version_.d
 @@ -1,2 +1,2 @@
  module dub.version_;
--enum dubVersion = "v1.12.0";
+-enum dubVersion = "v1.14.0";
 +enum dubVersion = "v%%PORTVERSION%%";
