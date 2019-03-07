@@ -17,6 +17,7 @@ man/man1/%%PORTNAME%%-migrate.1.gz
 man/man1/%%PORTNAME%%-mount.1.gz
 man/man1/%%PORTNAME%%-prune.1.gz
 man/man1/%%PORTNAME%%-rebuild-index.1.gz
+man/man1/%%PORTNAME%%-recover.1.gz
 man/man1/%%PORTNAME%%-restore.1.gz
 man/man1/%%PORTNAME%%-self-update.1.gz
 man/man1/%%PORTNAME%%-snapshots.1.gz
