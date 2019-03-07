@@ -2,17 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	xlrd
-PORTVERSION=	1.0.0
+PORTVERSION=	1.2.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dikshie@sfc.wide.ad.jp
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Reading data and formatting information from Excel files
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
