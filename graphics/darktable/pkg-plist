@@ -23,6 +23,7 @@ lib/darktable/plugins/imageio/storage/libfacebook.so
 lib/darktable/plugins/imageio/storage/libgallery.so
 lib/darktable/plugins/imageio/storage/liblatex.so
 lib/darktable/plugins/imageio/storage/libpicasa.so
+lib/darktable/plugins/imageio/storage/libpiwigo.so
 lib/darktable/plugins/libashift.so
 lib/darktable/plugins/libatrous.so
 lib/darktable/plugins/libbasecurve.so
@@ -360,12 +361,14 @@ share/icons/hicolor/scalable/apps/darktable-3.svg
 share/icons/hicolor/scalable/apps/darktable.svg
 %%NLS%%share/locale/ca/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/de/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/es/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/darktable.mo
