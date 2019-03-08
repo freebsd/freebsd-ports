@@ -2,55 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	john
+# NB: starting from the next version, community-enhanced (jumbo) patch
+# should be offered as an option (suggested by Solar Designer himself).
 DISTVERSION=	1.8.0-jumbo-1
 PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/j/ \
 		http://mirrors.kernel.org/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
-		http://distro.ibiblio.org/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
-		http://gd.tuwien.ac.at/opsys/linux/openwall/projects/john/${DISTVERSION:C/-.*//}/
+		http://distro.ibiblio.org/openwall/projects/john/${DISTVERSION:C/-.*//}/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Featureful Unix password cracker
 
 LICENSE=	GPLv2
 
-BROKEN_SSL=	openssl111
-
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-BROKEN_aarch64=	Fails to build: Cannot detect CPU architechture
-BROKEN_mips64=	Fails to build: Cannot detect CPU architechture
+BROKEN_aarch64=	cannot detect CPU architecture
+BROKEN_mips64=	cannot detect CPU architecture
 
 USES=		gmake shebangfix ssl tar:xz
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+CONFIGURE_ENV=	CFLAGS_EXTRA="-DJOHN_SYSTEMWIDE=1" \
+		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
 SHEBANG_FILES=	../run/*.pl ../run/*.rb ../run/benchmark-unify ../run/relbench
 WRKSRC_SUBDIR=	src
 
 ALL_TARGET=	default
-CFLAGS+=	-DJOHN_SYSTEMWIDE=1 \
-		-DJOHN_SYSTEMWIDE_HOME=\\\"${DATADIR}\\\" \
-		-DJOHN_SYSTEMWIDE_EXEC=\\\"${LOCALBASE}/libexec/${PORTNAME}\\\"
-
-# We prefer -jumbo (community-enhanced) versions instead of vanilla releases
-# due to the sad fact that `-jumbo-???' suffixed versions *precede* official
-# ones per pkg_version(1) -t check.  So, when Alexander rolls out new "plain"
-# release, just hold the horses and wait for corresponding -jumbo one, which
-# usually does not take too long to appear.
-#
-# Starting from the next version, community-enhanced (jumbo) should be added
-# as an optional feature, as suggested by Alexander himself.
-#
-PORTSCOUT=	limit:.*-jumbo
 
 BINARIES=	calc_stat cprepair genmkvpwd john luks2john mkvcalcproba \
 		raw2dyna SIPdump tgtsnarf uaf2john vncpcap2john wpapcap2john
 
 BINLINKS=	base64conv dmg2john gpg2john hccap2john keepass2john \
 		keychain2john keyring2john keystore2john kwallet2john \
-		pfx2john putty2john pwsafe2john racf2john rar2john \
+		putty2john pwsafe2john racf2john rar2john \
 		truecrypt_volume2john unafs undrop unique unshadow zip2john
 
 PORTDOCS=	*
@@ -63,6 +49,7 @@ post-extract:
 		${WRKSRC}/ssh_fmt_plug.c \
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/params.h
 # Replace methods and types that were marked deprecated by OpenSSL 0.9.7
 # and removed in OpenSSL 1.1.0 and LibreSSL
 	@${REINPLACE_CMD} -e 's|des_string_to_key|DES_string_to_key|' \

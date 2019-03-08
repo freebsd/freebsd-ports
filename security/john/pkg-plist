@@ -14,7 +14,6 @@ bin/keystore2john
 bin/kwallet2john
 bin/luks2john
 bin/mkvcalcproba
-bin/pfx2john
 bin/putty2john
 bin/pwsafe2john
 bin/racf2john
