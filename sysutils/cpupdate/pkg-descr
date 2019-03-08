@@ -2,7 +2,7 @@ x86 CPU microcode utility for BSD.
 
 At the moment, it is for Intel processors only.
 
-Note: update FreeBSD to OSVERSION level 1101507 for 11.x or 1200055 for 12.0+
+Note: update FreeBSD to 11.2-RELEASE or 12.0-RELEASE or newer
 before building/using this utility if your microcode update brings
 new CPU features like Indirect Branch Restricted Speculation (IBRS).
 
