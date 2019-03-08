@@ -1680,6 +1680,7 @@
     SUBDIR += liteide
     SUBDIR += llbuild
     SUBDIR += llnextgen
+    SUBDIR += llvm
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
     SUBDIR += llvm35
