@@ -19,9 +19,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libuv.so:devel/libuv \
 		librhash.so:security/rhash
 
-USE_QT=		core gui widgets buildtools_build qmake_build
-USES=		cmake:run,insource desktop-file-utils libarchive \
+USES=		cmake:run,insource compiler:c++11-lang desktop-file-utils libarchive \
 		shared-mime-info qt:5
+USE_QT=		core gui widgets buildtools_build qmake_build
 CMAKE_OFF=	BUILD_CursesDialog \
 		CMake_SPHINX_DEPEND_ON_EXECUTABLES
 CMAKE_ON=	BUILD_QtDialog \
