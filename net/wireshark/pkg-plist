@@ -748,7 +748,7 @@ man/man4/wireshark-filter.4.gz
 %%DATADIR%%/ipmap.html
 %%DATADIR%%/manuf
 %%DATADIR%%/mergecap.html
-%%DATADIR%%/mmdbresolve.html
+%%MAXMIND%%%%DATADIR%%/mmdbresolve.html
 %%DATADIR%%/pdml2html.xsl
 %%DATADIR%%/profiles/Bluetooth/colorfilters
 %%DATADIR%%/profiles/Bluetooth/preferences
