@@ -4,7 +4,7 @@ toolchain technologies.
 This port includes Clang (a C/C++/Objective-C compiler), LLD (a linker),
 LLDB (a debugger), and the LLVM infrastructure these are built on.
 
-Do not depend on this port.
+Ports developers: do not depend on this port from other ports.
 
 WWW: http://llvm.org/
 
