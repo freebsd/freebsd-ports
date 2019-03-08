@@ -1,0 +1,8 @@
+Spectral is a glossy cross-platform client for Matrix, the decentralized 
+communication protocol for instant messaging. Spectral is a Matrix client 
+with the maximum features available while keeping a simple, clean and 
+modern design. It is a Qt-based client as beautiful as Electron apps 
+(e.g. Riot.im Web) while using far less resources and still being 
+considered as "native".
+
+WWW: https://gitlab.com/b0/spectral
