@@ -161,6 +161,7 @@
     SUBDIR += sendxmpp
     SUBDIR += skype4
     SUBDIR += slack-term
+    SUBDIR += spectral
     SUBDIR += ssh-chat
     SUBDIR += talkatu
     SUBDIR += teamwords

@@ -1,0 +1,8 @@
+bin/spectral
+share/applications/org.eu.encom.spectral.desktop
+share/icons/hicolor/128x128/apps/org.eu.encom.spectral.png
+share/icons/hicolor/16x16/apps/org.eu.encom.spectral.png
+share/icons/hicolor/256x256/apps/org.eu.encom.spectral.png
+share/icons/hicolor/32x32/apps/org.eu.encom.spectral.png
+share/icons/hicolor/512x512/apps/org.eu.encom.spectral.png
+share/metainfo/org.eu.encom.spectral.appdata.xml

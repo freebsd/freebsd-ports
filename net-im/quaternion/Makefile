@@ -15,8 +15,8 @@ LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5 \
 		libsecret-1.so:security/libsecret
 BUILD_DEPENDS=	libqmatrixclient>=0.5:net-im/libqmatrixclient
 
-USES=	cmake compiler:c++17-lang gettext-runtime gnome \
-	localbase:ldflags qt:5 tar:xz
+USES=		cmake compiler:c++17-lang gettext-runtime gnome \
+		localbase:ldflags qt:5 tar:xz
 USE_GNOME=	glib20
 USE_QT=		core dbus declarative gui multimedia network widgets \
 		buildtools_build linguist_build qmake_build
