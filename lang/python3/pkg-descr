@@ -3,5 +3,6 @@ often compared to Tcl, Perl or Scheme.
 This is a meta port to the Python 3.x interpreter and provides symbolic links
 to bin/python3, bin/pydoc3, bin/idle3 and so on to allow compatibility with
 minor version agnostic python scripts.
+Do not depend on this port.
 
 WWW: https://www.python.org/
