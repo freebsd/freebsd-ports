@@ -1,17 +1,3 @@
---I--
-For correct operation, shared memory support has to be enabled
-in Chromium by performing the following command as root:
-
-    # sysctl kern.ipc.shm_allow_removed=1
-
-To preserve this setting across reboots, append the following
-to /etc/sysctl.conf:
-
-    kern.ipc.shm_allow_removed=1
-
-FreeBSD 11.0-RELEASE and newer have this set by default.
-
---II--
 Chromium has a known problem of hanging tabs. The bug has been fixed
 in r337328. Therefore, it is recommended to upgrade the system after
 the correction date.
