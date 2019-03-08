@@ -314,7 +314,7 @@
 %%DATADIR%%/tables/sl-si-g1.utb
 %%DATADIR%%/tables/sl.tbl
 %%DATADIR%%/tables/sot-za-g1.ctb
-%%DATADIR%%/tables/spaces.ctb
+%%DATADIR%%/tables/spaces.uti
 %%DATADIR%%/tables/sr-chardefs.cti
 %%DATADIR%%/tables/sr-g1.ctb
 %%DATADIR%%/tables/sr.tbl
@@ -342,6 +342,7 @@
 %%DATADIR%%/tables/unicode-braille.utb
 %%DATADIR%%/tables/unicodedefs.cti
 %%DATADIR%%/tables/unicode.dis
+%%DATADIR%%/tables/unicode-without-blank.dis
 %%DATADIR%%/tables/uni-text.dis
 %%DATADIR%%/tables/ur-pk-g1.utb
 %%DATADIR%%/tables/ur-pk-g2.ctb
@@ -384,7 +385,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.17
-lib/liblouis.so.17.0.0
+lib/liblouis.so.17.0.1
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
