@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-gollum-lib
-PORTVERSION=	4.2.7.5
+PORTVERSION=	4.2.7.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
