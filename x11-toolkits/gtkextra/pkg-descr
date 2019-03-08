@@ -1,0 +1,5 @@
+GtkExtra is a useful set of widgets for creating GUI's for the X
+Window System using GTK+ 2.0. You can use it complementary to GTK+ 2.0
+and it is written in C.
+
+WWW: http://gtkextra.sourceforge.net/
