@@ -1,10 +1,6 @@
---- src/cpp/core/CMakeLists.txt.orig	2017-11-16 21:40:37 UTC
+--- src/cpp/core/CMakeLists.txt.orig	2019-02-16 02:00:24 UTC
 +++ src/cpp/core/CMakeLists.txt
-@@ -143,16 +143,17 @@ if (UNIX)
-    }
-    "
-    HAVE_SCANDIR_POSIX)
--
+@@ -156,12 +156,14 @@ if (UNIX)
     # platform introspection
     check_symbol_exists(SA_NOCLDWAIT "signal.h" HAVE_SA_NOCLDWAIT)
     check_symbol_exists(SO_PEERCRED "sys/socket.h" HAVE_SO_PEERCRED)
@@ -18,6 +14,6 @@
        set(HAVE_PROCSELF TRUE)
 -   endif()
 +   #endif()
-    configure_file (${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
-                    ${CMAKE_CURRENT_BINARY_DIR}/config.h)
  
+    # find packages and libraries
+    find_library(PTHREAD_LIBRARIES pthread)
