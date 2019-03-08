@@ -1,0 +1,58 @@
+From f4e988761fec7d7a75c2789e752b5419b4a84213 Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@FreeBSD.org>
+Date: Fri, 2 Nov 2018 13:15:41 +0100
+Subject: [PATCH] Don't redefine nulltpr on FreeBSD
+
+FreeBSDs `/usr/include/sys/_null.h` defines
+
+```
+    [...]
+    #if __cplusplus >= 201103L
+    #define NULL    nullptr
+    [...]
+```
+
+This leads to compilation errors:
+```
+    core/libs/dimg/loaders/pgfloader.cpp:295:27: error: use of undeclared identifier 'NULL'
+                            NULL,
+                            ^
+    /usr/include/sys/_null.h:37:14: note: expanded from macro 'NULL'
+    #define NULL    nullptr
+                    ^
+    core/libs/pgfutils/libpgf/PGFplatform.h:488:20: note: expanded from macro 'nullptr'
+    #define nullptr                         NULL
+                                            ^
+    core/libs/dimg/loaders/pgfloader.cpp:455:26: error: use of undeclared identifier 'NULL'
+                            NULL,
+                            ^
+    /usr/include/sys/_null.h:37:14: note: expanded from macro 'NULL'
+    #define NULL    nullptr
+                    ^
+    core/libs/pgfutils/libpgf/PGFplatform.h:488:20: note: expanded from macro 'nullptr'
+    #define nullptr                         NULL
+                                            ^
+    2 errors generated.
+    ninja: build stopped: subcommand failed.
+```
+---
+ core/libs/pgfutils/libpgf/PGFplatform.h | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/core/libs/pgfutils/libpgf/PGFplatform.h b/core/libs/pgfutils/libpgf/PGFplatform.h
+index ee803c36f4..e8df6d99ba 100644
+--- core/libs/pgfutils/libpgf/PGFplatform.h
++++ core/libs/pgfutils/libpgf/PGFplatform.h
+@@ -485,7 +485,9 @@ __inline int MulDiv(int nNumber, int nNumerator, int nDenominator) {
+ #define FSFromStart			SEEK_SET
+ #define FSFromCurrent		SEEK_CUR
+ #define FSFromEnd			SEEK_END
++#if !(defined(__FreeBSD__) && (__cplusplus >= 201103L))
+ #define nullptr				NULL
++#endif
+ 
+ //-------------------------------------------------------------------------------
+ // IO Error constants
+-- 
+2.19.1
+
