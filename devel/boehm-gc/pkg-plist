@@ -25,7 +25,7 @@ lib/libcord.so.1.4.0
 lib/libgc.a
 lib/libgc.so
 lib/libgc.so.1
-lib/libgc.so.1.4.2
+lib/libgc.so.1.4.3
 lib/libgccpp.a
 lib/libgccpp.so
 lib/libgccpp.so.1

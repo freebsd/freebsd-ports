@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gc
-PORTVERSION=	8.0.2
+PORTVERSION=	8.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/ \
 		https://github.com/ivmai/bdwgc/releases/download/v${PORTVERSION}/
@@ -21,11 +21,12 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 
-GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig
+USE_LDCONFIG=	yes
+
 CPE_VENDOR=	boehm-demers-weiser
 CPE_PRODUCT=	garbage_collector
-USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 # NOTE: do not --disable-static, static is useful for e.g. lang/crystal
@@ -49,7 +50,7 @@ PLIST_FILES=	${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
-		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.4.2,} \
+		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.4.3,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
