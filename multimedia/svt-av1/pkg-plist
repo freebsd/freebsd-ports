@@ -1,7 +1,11 @@
 bin/SvtAv1EncApp
 bin/SvtAv1EncSimpleApp
-include/svt-av1/EbApi.h
-include/svt-av1/EbErrorCodes.h
-include/svt-av1/EbTime.h
+include/svt-av1/EbSvtAv1.h
+include/svt-av1/EbSvtAv1Dec.h
+include/svt-av1/EbSvtAv1Enc.h
+include/svt-av1/EbSvtAv1ErrorCodes.h
+include/svt-av1/EbSvtAv1ExtFrameBuf.h
+include/svt-av1/EbSvtAv1Formats.h
+include/svt-av1/EbSvtAv1Time.h
 lib/libSvtAv1Enc.so
 libdata/pkgconfig/SvtAv1Enc.pc
