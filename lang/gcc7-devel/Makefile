@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	7.4.1.s20190228
+PORTVERSION=	7.4.1.s20190307
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -64,9 +64,7 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 
 .elif ${ARCH} == powerpc64
 CONFIGURE_ENV+=	UNAME_m="powerpc64"
-USE_GCC=	5	# This port requires at least GCC 4.9, and we need
-			# to ensure not to cause a dependency on itself (so
-			# USE_GCC=yes or USE_GCC=X+ are not an option).
+MAKE_ARGS+=	CFLAGS_FOR_TARGET="-O1" CXXFLAGS_FOR_TARGET="-O1" BOOT_CFLAGS="-O1" # PR235975
 
 .elif ${ARCH} == powerpcspe
 CONFIGURE_ARGS+=	--with-cpu=8548 --enable-e500_double --without-fp
