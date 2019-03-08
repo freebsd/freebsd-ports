@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libssh2.so:security/libssh2
 
-USES=		dos2unix gl kde:5 qmake qt:5 ssl
+USES=		compiler:c++0x dos2unix gl kde:5 qmake qt:5 ssl
 DOS2UNIX_FILES=	3rdparty/3rdparty.pri
 USE_GL=		gl
 USE_GITHUB=	yes
