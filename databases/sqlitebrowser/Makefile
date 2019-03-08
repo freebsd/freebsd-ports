@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlitebrowser
-PORTVERSION=	3.10.1
-PORTREVISION=	3
+PORTVERSION=	3.11.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -19,8 +18,8 @@ LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 
 USES=		compiler:c++11-lang cmake desktop-file-utils gnome qt:5 sqlite
 CMAKE_ARGS+=	-DQT_INCLUDE_DIR=${QT_INCDIR} -DQT_LIBRARY_DIR=${QT_LIBDIR}
-USE_QT=		core gui network printsupport testlib widgets \
-		buildtools_build linguisttools_build qmake_build
+USE_QT=		core concurrent gui network printsupport testlib widgets \
+		buildtools_build linguisttools_build qmake_build xml
 USE_GITHUB=	yes
 
 INSTALLS_ICONS=	yes
