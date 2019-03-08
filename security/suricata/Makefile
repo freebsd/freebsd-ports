@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	suricata
-DISTVERSION=	4.1.2
-PORTREVISION=	3
+DISTVERSION=	4.1.3
 CATEGORIES=	security
 MASTER_SITES=	https://www.openinfosecfoundation.org/download/
 
@@ -24,6 +23,7 @@ CONFLICTS_INSTALL=libhtp
 
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 
@@ -99,7 +99,8 @@ PRELUDE_LIB_DEPENDS=		libprelude.so:security/libprelude \
 PRELUDE_CONFIGURE_ENABLE=	prelude
 PRELUDE_CONFIGURE_ON=		--with-libprelude-prefix=${LOCALBASE}
 
-PYTHON_USES=			python:2.7
+PYTHON_USES=			python
+PYTHON_USE=			PYTHON=py3kplist
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 PYTHON_BUILD_DEPENDS=		${PYTHON_RUN_DEPENDS}
@@ -134,6 +135,10 @@ LOGS_DIR?=	/var/log/${PORTNAME}
 
 pre-patch:
 	@${CP} ${FILESDIR}/ax_check_compile_flag.m4 ${WRKSRC}/m4
+
+post-patch-PYTHON-on:
+	@${REINPLACE_CMD} -e "/AC_PATH_PROGS.*HAVE_PYTHON/ s/python[^,]*,/${PYTHON_VERSION},/g" \
+		${WRKSRC}/configure.ac
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${CONFIG_DIR}
