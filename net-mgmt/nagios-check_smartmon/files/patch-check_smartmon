@@ -1,6 +1,6 @@
---- check_smartmon.orig	2019-02-01 04:28:13.000000000 +0000
-+++ check_smartmon	2019-02-04 22:27:35.297345000 +0000
-@@ -161,9 +161,12 @@ 
+--- check_smartmon.orig	2019-03-04 20:08:28 UTC
++++ check_smartmon
+@@ -161,9 +161,12 @@ def parseOutput(healthMessage, temperatureMessage, dev
                  lines = healthMessage.split("\n")
                  getNext = 0
                  for line in lines:
@@ -15,7 +15,7 @@
                          elif line == "=== START OF READ SMART DATA SECTION ===":
                                  getNext = 1
                          # fi
-@@ -181,7 +184,7 @@ 
+@@ -181,7 +184,7 @@ def parseOutput(healthMessage, temperatureMessage, dev
                          parts = line.split()
                          if len(parts):
                                  # 194 is the temperature value id
@@ -24,7 +24,43 @@
                                          temperature = int(parts[9])
                                          break
                                  # fi
-@@ -225,6 +228,7 @@ 
+@@ -190,9 +193,11 @@ def parseOutput(healthMessage, temperatureMessage, dev
+         # if devType == ata
+ 
+         if devType == "scsi":
+-                stat_re = re.compile( r'SMART Health Status:' )
++                vprint(3, "parseOutput: searching for 'SMART Health Status' section")
++                stat_re = re.compile( r'SMART Health Status:|SMART overall-health self-assessment test result:' )
+                 lines = healthMessage.split("\n")
+                 for line in lines:
++                        vprint(3, "parseOutput: line is: '%s'" % line)
+                         if stat_re.search( line ):
+                                parts = line.split()
+                                healthStatus = parts[-1]
+@@ -201,14 +206,20 @@ def parseOutput(healthMessage, temperatureMessage, dev
+                 # done
+ 
+                 # get temperature from temperatureMessage
+-                stat_re = re.compile( r'Current Drive Temperature:' )
++                temperature = 0
++                vprint(3, "parseOutput: searching for temperature line section")
++                stat_re = re.compile( r'Current Drive Temperature:|Temperature_Celsius' )
+                 lines = temperatureMessage.split("\n")
+                 for line in lines:
++                        vprint(3, "parseOutput: line is: '%s'" % line)
+                         if stat_re.search( line ):
+                                parts = line.split()
+-                               temperature = int(parts[-2])
++                               vprint(3, "parseOutput: we are very keen on this line: '%s'" % line)
++                               temperature = int(parts[-3])
++                               vprint(3, "parseOutput: Is this the temperature? '%s'" % temperature)
+                                break
+                        # fi
++                
+                 # done
+                                 
+         # if devType == scsi
+@@ -225,6 +236,7 @@ def createReturnInfo(healthStatus, temperature, warnin
  
          # this is absolutely critical!
          if healthStatus not in [ "PASSED", "OK" ]:
@@ -32,11 +68,11 @@
                  return (2, "CRITICAL: device does not pass health status")
          # fi
  
-@@ -287,6 +291,7 @@ 
+@@ -287,6 +299,7 @@ if __name__ == "__main__":
          # check device type, ATA is default
          vprint(2, "Get device type")
          devtype = options.devtype
 +        vprint(2, "command line supplied device type is: %s" % devtype)
          if not devtype:
-                 if device_re.search( device ):
-                         devtype = "scsi"
+                 devtype = "ATA"
+ 
