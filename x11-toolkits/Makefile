@@ -43,6 +43,7 @@
     SUBDIR += gtkada
     SUBDIR += gtkada3
     SUBDIR += gtkdatabox
+    SUBDIR += gtkextra
     SUBDIR += gtkglarea2
     SUBDIR += gtkglext
     SUBDIR += gtkglextmm
