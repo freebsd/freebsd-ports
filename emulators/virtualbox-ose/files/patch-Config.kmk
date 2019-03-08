@@ -1,4 +1,4 @@
---- Config.kmk.orig	2019-01-25 18:24:01 UTC
+--- Config.kmk.orig	2019-01-14 14:53:56 UTC
 +++ Config.kmk
 @@ -445,11 +445,11 @@ ifn1of ($(KBUILD_TARGET), win darwin)
   # Enable OSS audio support.
@@ -75,7 +75,7 @@
   endif
   # branding
   VBOX_BRAND_LICENSE_HTML             := $(PATH_ROOT)/doc/License-gpl-2.0.html
-@@ -4556,7 +4552,7 @@ TEMPLATE_VBOXR0DRV_CFLAGS              =  \
+@@ -4541,7 +4537,7 @@ TEMPLATE_VBOXR0DRV_CFLAGS              =  \
  	-O2 -ffreestanding -fno-strict-aliasing -fno-common -finline-limit=8000 \
  	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
  	-nostdinc -std=c99
@@ -84,34 +84,20 @@
  TEMPLATE_VBOXR0DRV_CFLAGS.amd64        = -m64 --param inline-unit-growth=100 --param large-function-growth=1000 \
  	-fno-omit-frame-pointer -mcmodel=kernel -mno-red-zone -mfpmath=387 -mno-sse -mno-sse2 -mno-mmx \
  	-mno-3dnow -msoft-float -fno-asynchronous-unwind-tables -Wundef
-@@ -4857,6 +4853,7 @@ TEMPLATE_VBOXR3EXE_LDFLAGS.x86         = -m32
- TEMPLATE_VBOXR3EXE_LDFLAGS.amd64       = -m64
- TEMPLATE_VBOXR3EXE_LDFLAGS.sparc32     = -m32
- TEMPLATE_VBOXR3EXE_LDFLAGS.sparc64     = -m64
-+TEMPLATE_VBOXR3EXE_LDFLAGS.freebsd     = -Wl,-z,noexecstack,-z,relro $(VBOX_LD_as_needed)
- TEMPLATE_VBOXR3EXE_LDFLAGS.linux       = -Wl,-z,noexecstack,-z,relro $(VBOX_LD_as_needed)
- TEMPLATE_VBOXR3EXE_LDFLAGS.solaris     = -Wl,-z,ignore # same as VBOX_LD_as_needed
- TEMPLATE_VBOXR3EXE_LDFLAGS.debug       = $(VBOX_GCC_SANITIZER_FLAGS)
-@@ -4889,10 +4886,17 @@ TEMPLATE_VBOXR3EXE_LIBPATH            += \
- TEMPLATE_VBOXR3EXE_CFLAGS             += -fno-pic
- TEMPLATE_VBOXR3EXE_CXXFLAGS           += -fno-pic
- TEMPLATE_VBOXR3EXE_LDFLAGS            += -fno-pic
-- else if1of ($(KBUILD_TARGET), freebsd openbsd)
-+ else if1of ($(KBUILD_TARGET), freebsd)
+@@ -4878,12 +4874,8 @@ TEMPLATE_VBOXR3EXE_LDFLAGS            += -fno-pic
  TEMPLATE_VBOXR3EXE_TOOL                = GXX3
  TEMPLATE_VBOXR3EXE_LIBS                = pthread
  TEMPLATE_VBOXR3EXE_INCS               += \
-+	/usr/local/include
-+TEMPLATE_VBOXR3EXE_LIBPATH            += \
-+	/usr/local/lib
-+ else if1of ($(KBUILD_TARGET), openbsd)
-+TEMPLATE_VBOXR3EXE_TOOL                = GXX3
-+TEMPLATE_VBOXR3EXE_LIBS                = pthread
-+TEMPLATE_VBOXR3EXE_INCS               += \
- 	/usr/include \
- 	/usr/X11R6/include \
+-	/usr/include \
+-	/usr/X11R6/include \
  	/usr/local/include
-@@ -5183,7 +5187,7 @@ ifeq ($(KBUILD_TARGET),win) # No CRT!
+ TEMPLATE_VBOXR3EXE_LIBPATH            += \
+-	/usr/lib \
+-	/usr/X11R6/lib \
+ 	/usr/local/lib
+  else ifeq ($(KBUILD_TARGET),netbsd)
+ TEMPLATE_VBOXR3EXE_TOOL                = GXX3
+@@ -5168,7 +5160,7 @@ ifeq ($(KBUILD_TARGET),win) # No CRT!
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.win.amd64 = $(TEMPLATE_VBOXR3EXE_LDFLAGS.win.amd64) /entry:suplibHardenedWindowsMain
   TEMPLATE_VBOXR3HARDENEDEXE_LIBS.x86       = $(NOT_SUCH_VARIABLE)
   TEMPLATE_VBOXR3HARDENEDEXE_LIBS.amd64     = $(NOT_SUCH_VARIABLE)
@@ -120,31 +106,22 @@
   # We want to keep the RPATH on Solaris to be able to find libgcc_1/libstdc++ within $(VBOX_WITH_RUNPATH)
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS       = $(filter-out '$(VBOX_GCC_RPATH_OPT)%,$(TEMPLATE_VBOXR3EXE_LDFLAGS))
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.linux = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBOXR3EXE_LDFLAGS.linux))
-@@ -5710,10 +5714,18 @@ TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTI
-  else ifeq ($(KBUILD_TARGET),haiku)
- TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
- TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME) network stdc++ supc++
-- else if1of ($(KBUILD_TARGET), freebsd openbsd)
-+ else if1of ($(KBUILD_TARGET), freebsd)
+@@ -5699,12 +5691,8 @@ TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTI
  TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
  TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME)
-+TEMPLATE_VBOXMAINEXE_LDFLAGS.freebsd     = -Wl,-z,noexecstack,-z,relro $(VBOX_LD_as_needed)
  TEMPLATE_VBOXMAINEXE_INCS               += \
-+	/usr/local/include
-+TEMPLATE_VBOXMAINEXE_LIBPATH            += \
-+	/usr/local/lib
-+ else if1of ($(KBUILD_TARGET), openbsd)
-+TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
-+TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME)
-+TEMPLATE_VBOXMAINEXE_INCS               += \
- 	/usr/include \
- 	/usr/X11R6/include \
+-	/usr/include \
+-	/usr/X11R6/include \
  	/usr/local/include
-@@ -6252,13 +6264,10 @@ ifdef VBOX_WITH_QTGUI
-    TEMPLATE_VBOXQTGUIEXE_LIBPATH += \
+ TEMPLATE_VBOXMAINEXE_LIBPATH            += \
+-	/usr/lib \
+-	/usr/X11R6/lib \
+ 	/usr/local/lib
+  else ifeq ($(KBUILD_TARGET),netbsd)
+ TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
+@@ -6238,12 +6226,8 @@ ifdef VBOX_WITH_QTGUI
  	$(VBOX_LIBPATH_X11)
     ifeq ($(KBUILD_TARGET),freebsd)
-+    TEMPLATE_VBOXQTGUIEXE_LDFLAGS += -Wl,-z,noexecstack,-z,relro $(VBOX_LD_as_needed)
      TEMPLATE_VBOXQTGUIEXE_INCS += \
 -	/usr/include \
 -	/usr/X11R6/include \
@@ -155,26 +132,20 @@
  	/usr/local/lib
     endif
     ifeq ($(KBUILD_TARGET),solaris)
-@@ -6477,10 +6486,17 @@ TEMPLATE_VBoxBldProg_TOOL                = GXX3
- TEMPLATE_VBoxBldProg_LIBS                = network iconv
- TEMPLATE_VBoxBldProg_LIBPATH            += \
- 	/boot/common/lib
-- else if1of ($(KBUILD_HOST), freebsd openbsd)
-+ else if1of ($(KBUILD_HOST), freebsd)
+@@ -6466,12 +6450,8 @@ TEMPLATE_VBoxBldProg_LIBPATH            += \
  TEMPLATE_VBoxBldProg_TOOL                = GXX3
  TEMPLATE_VBoxBldProg_LIBS                = pthread
  TEMPLATE_VBoxBldProg_INCS               += \
-+	/usr/local/include
-+TEMPLATE_VBoxBldProg_LIBPATH            += \
-+	/usr/local/lib
-+ else if1of ($(KBUILD_HOST), openbsd)
-+TEMPLATE_VBoxBldProg_TOOL                = GXX3
-+TEMPLATE_VBoxBldProg_LIBS                = pthread
-+TEMPLATE_VBoxBldProg_INCS               += \
- 	/usr/include \
- 	/usr/X11R6/include \
+-	/usr/include \
+-	/usr/X11R6/include \
  	/usr/local/include
-@@ -6887,6 +6903,7 @@ TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.darwin  += \
+ TEMPLATE_VBoxBldProg_LIBPATH            += \
+-	/usr/lib \
+-	/usr/X11R6/lib \
+ 	/usr/local/lib
+  else ifeq ($(KBUILD_HOST),netbsd)
+ TEMPLATE_VBoxBldProg_TOOL                = GXX3
+@@ -6872,6 +6852,7 @@ TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.darwin  += \
  	-current_version $(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD) \
  	-compatibility_version $(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD)
  TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.linux    = -Wl,--no-as-needed
