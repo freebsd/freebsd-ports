@@ -123,6 +123,11 @@ XOAP_USE=		gnome=libxml2
 PLIST_FILES+=		lib/conky/libcairo_imlib2_helper.so
 .endif
 
+# disable apm on non-x86 archs
+.if ${ARCH} != amd64 && ${ARCH} != i386
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src_CMakeLists.txt
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/^#\(set(RELEASE true\)/\1/' \
 		-e 's/-D_POSIX_C_SOURCE=200809L/& -D__BSD_VISIBLE=1 -D_XOPEN_SOURCE=700/' \
