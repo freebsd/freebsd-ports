@@ -59,7 +59,8 @@ OPTIONS_DEFINE=	DOCS #OPENMP
 #OPENMP_USES=	compiler:openmp
 
 post-extract:
-	@${RM} ${WRKSRC}/pfx_fmt_plug.c ${WRKSRC}/ssh_fmt_plug.c
+	@${RM} ${WRKSRC}/pfx_fmt_plug.c ${WRKSRC}/rawSHA0_fmt_plug.c \
+		${WRKSRC}/ssh_fmt_plug.c \
 
 post-patch:
 # Replace methods and types that were marked deprecated by OpenSSL 0.9.7
