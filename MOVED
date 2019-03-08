@@ -5273,7 +5273,6 @@ devel/qt4-declarative|x11-toolkits/qt4-declarative|2014-01-06|Moved to unify wit
 devel/qt4-qtestlib|devel/qt4-testlib|2014-01-06|Renamed to unify with Qt 5
 x11/qt4-opengl|graphics/qt4-opengl|2014-01-06|Moved to unify with Qt 5
 graphics/wings-devel|graphics/wings|2014-01-07|Obsoleted by the main port
-devel/llvm|devel/llvm32|2014-01-08|Has expired: Migrate to devel/llvm32 or newer
 devel/reflex|textproc/reflex|2014-01-08|Duplicate
 devel/hs-hat||2014-01-09|Upstream has vanished
 devel/hs-hdoc||2014-01-09|Removed
