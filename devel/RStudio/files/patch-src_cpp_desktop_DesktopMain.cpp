@@ -1,14 +1,23 @@
---- src/cpp/desktop/DesktopMain.cpp.orig	2018-05-16 18:21:36 UTC
+--- src/cpp/desktop/DesktopMain.cpp.orig	2019-02-16 02:00:24 UTC
 +++ src/cpp/desktop/DesktopMain.cpp
-@@ -40,6 +40,7 @@
+@@ -41,6 +41,7 @@
  #include "DesktopProgressActivator.hpp"
  #include "DesktopNetworkProxyFactory.hpp"
  #include "DesktopActivationOverlay.hpp"
 +#include "global-setenv.h"
  
- QProcess* pRSessionProcess;
- QString sharedSecret;
-@@ -262,6 +263,7 @@ bool useChromiumDevtools()
+ #ifdef _WIN32
+ #include <Windows.h>
+@@ -324,7 +325,7 @@ QString inferDefaultRenderingEngine()
+ 
+ #endif
+ 
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)
+ 
+ QString inferDefaultRenderingEngine()
+ {
+@@ -383,6 +384,7 @@ void initializeRenderingEngine(std::vect
  
  int main(int argc, char* argv[])
  {

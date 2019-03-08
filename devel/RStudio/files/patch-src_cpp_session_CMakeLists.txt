@@ -1,4 +1,4 @@
---- src/cpp/session/CMakeLists.txt.orig	2018-05-16 18:21:36 UTC
+--- src/cpp/session/CMakeLists.txt.orig	2019-02-16 02:00:24 UTC
 +++ src/cpp/session/CMakeLists.txt
 @@ -25,9 +25,9 @@ endif()
  if(NOT EXISTS "${RSTUDIO_DEPENDENCIES_DIR}/common/mathjax-26")
@@ -13,40 +13,38 @@
  
  # we often install embedded versions of these packages but don't do so currently
  
-@@ -42,19 +42,19 @@ if(NOT EXISTS "${RSTUDIO_DEPENDENCIES_DI
- endif()
+@@ -39,18 +39,18 @@ endif()
+ # endif()
  
- # verify libclang is installed
+ # verify libclang is installed (Windows only)
 -if(WIN32)
--   set(LIBCLANG_VERSION "3.4")
--else()
--   set(LIBCLANG_VERSION "3.5")
--endif()
--set(LIBCLANG_DIR "${RSTUDIO_DEPENDENCIES_DIR}/common/libclang/${LIBCLANG_VERSION}")
--if(NOT EXISTS "${LIBCLANG_DIR}")
--  message(FATAL_ERROR "libclang ${LIBCLANG_VERSION} not found  (re-run install-dependencies script to install)")
--endif()
--set(LIBCLANG_HEADERS_DIR "${RSTUDIO_DEPENDENCIES_DIR}/common/libclang/builtin-headers")
--if(NOT EXISTS "${LIBCLANG_HEADERS_DIR}")
--  message(FATAL_ERROR "libclang builtin-headers not found  (re-run install-dependencies script to install)")
+-   set(LIBCLANG_VERSION "5.0.2")
+-   set(LIBCLANG_DIR "${RSTUDIO_DEPENDENCIES_DIR}/common/libclang/${LIBCLANG_VERSION}")
+-   if(NOT EXISTS "${LIBCLANG_DIR}")
+-      message(FATAL_ERROR "libclang ${LIBCLANG_VERSION} not found  (re-run install-dependencies script to install)")
+-   endif()
+-
+-   set(LIBCLANG_HEADERS_DIR "${RSTUDIO_DEPENDENCIES_DIR}/common/libclang/builtin-headers")
+-   if(NOT EXISTS "${LIBCLANG_HEADERS_DIR}")
+-      message(FATAL_ERROR "libclang builtin-headers not found  (re-run install-dependencies script to install)")
+-   endif()
 -endif()
 +#if(WIN32)
-+#   set(LIBCLANG_VERSION "3.4")
-+#else()
-+#   set(LIBCLANG_VERSION "3.5")
++#   set(LIBCLANG_VERSION "5.0.2")
++#   set(LIBCLANG_DIR "${RSTUDIO_DEPENDENCIES_DIR}/common/libclang/${LIBCLANG_VERSION}")
++#   if(NOT EXISTS "${LIBCLANG_DIR}")
++#      message(FATAL_ERROR "libclang ${LIBCLANG_VERSION} not found  (re-run install-dependencies script to install)")
++#   endif()
++#
++#   set(LIBCLANG_HEADERS_DIR "${RSTUDIO_DEPENDENCIES_DIR}/common/libclang/builtin-headers")
++#   if(NOT EXISTS "${LIBCLANG_HEADERS_DIR}")
++#      message(FATAL_ERROR "libclang builtin-headers not found  (re-run install-dependencies script to install)")
++#   endif()
 +#endif()
-+set(LIBCLANG_DIR ${CMAKE_INSTALL_PREFIX})
-+#if(NOT EXISTS "${LIBCLANG_DIR}")
-+#  message(FATAL_ERROR "libclang ${LIBCLANG_VERSION} not found  (re-run install-dependencies script to install)")
-+#endif()
-+set(LIBCLANG_HEADERS_DIR "${CMAKE_INSTALL_PREFIX}/include")
-+#if(NOT EXISTS "${LIBCLANG_HEADERS_DIR}")
-+#  message(FATAL_ERROR "libclang builtin-headers not found  (re-run install-dependencies script to install)")
-+#endif()
- 
  
  # include files
-@@ -362,6 +362,9 @@ endif()
+ file(GLOB_RECURSE SESSION_HEADER_FILES "*.h*")
+@@ -364,6 +364,9 @@ endif()
  # define executable
  add_executable(rsession ${SESSION_SOURCE_FILES} ${SESSION_HEADER_FILES})
  
@@ -56,40 +54,20 @@
  # skip libR RPATH at development time
  if(RSTUDIO_DEVELOPMENT OR RSTUDIO_RUN_IN_PLACE)
     set_target_properties(rsession PROPERTIES SKIP_BUILD_RPATH TRUE)
-@@ -474,11 +477,11 @@ if (NOT RSTUDIO_SESSION_WIN64)
-            DESTINATION ${RSTUDIO_INSTALL_SUPPORTING}/resources)
+@@ -486,11 +489,11 @@ else()
+    set(PANDOC_VERSION "2.3.1" CACHE INTERNAL "Pandoc version")
+ endif()
  
-    # install pandoc
--   set(PANDOC_BIN "${RSTUDIO_DEPENDENCIES_DIR}/common/pandoc/2.2.1")
--   file(GLOB PANDOC_FILES "${PANDOC_BIN}/pandoc*")
--   install(FILES ${PANDOC_FILES}
--           PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
--           DESTINATION  ${RSTUDIO_INSTALL_BIN}/pandoc)
-+   #set(PANDOC_BIN "${RSTUDIO_DEPENDENCIES_DIR}/common/pandoc/2.2.1")
-+   #file(GLOB PANDOC_FILES "${PANDOC_BIN}/pandoc*")
-+   #install(FILES ${PANDOC_FILES}
-+   #        PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
-+   #        DESTINATION  ${RSTUDIO_INSTALL_BIN}/pandoc)
+-set(PANDOC_BIN "${RSTUDIO_DEPENDENCIES_DIR}/common/pandoc/${PANDOC_VERSION}")
+-file(GLOB PANDOC_FILES "${PANDOC_BIN}/pandoc*")
+-install(FILES ${PANDOC_FILES}
+-        PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+-        DESTINATION  ${RSTUDIO_INSTALL_BIN}/pandoc)
++#set(PANDOC_BIN "${RSTUDIO_DEPENDENCIES_DIR}/common/pandoc/${PANDOC_VERSION}")
++#file(GLOB PANDOC_FILES "${PANDOC_BIN}/pandoc*")
++#install(FILES ${PANDOC_FILES}
++#        PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
++#        DESTINATION  ${RSTUDIO_INSTALL_BIN}/pandoc)
  
-    # install rmarkdown package
-    # file(GLOB RMARKDOWN_PACKAGE "${RSTUDIO_DEPENDENCIES_DIR}/common/rmarkdown*.tar.gz")
-@@ -524,14 +527,14 @@ if (NOT RSTUDIO_SESSION_WIN64)
-       install(PROGRAMS ${LIBCLANG_64_FILES}
-               DESTINATION  ${RSTUDIO_INSTALL_BIN}/rsclang/x86_64)
-    else()
--      file(GLOB_RECURSE LIBCLANG_FILES "${LIBCLANG_DIR}/libclang.*")
--      install(PROGRAMS ${LIBCLANG_FILES}
--              DESTINATION  ${RSTUDIO_INSTALL_BIN}/rsclang)
-+      #file(GLOB_RECURSE LIBCLANG_FILES "${LIBCLANG_DIR}/libclang.*")
-+      #install(PROGRAMS ${LIBCLANG_FILES}
-+      #        DESTINATION  ${RSTUDIO_INSTALL_BIN}/rsclang)
-    endif()
- 
-    # install libclang builtin-headers
--   install(DIRECTORY "${RSTUDIO_DEPENDENCIES_DIR}/common/libclang/builtin-headers"
--           DESTINATION "${RSTUDIO_INSTALL_SUPPORTING}/resources/libclang")
-+   #install(DIRECTORY "${RSTUDIO_DEPENDENCIES_DIR}/common/libclang/builtin-headers"
-+   #        DESTINATION "${RSTUDIO_INSTALL_SUPPORTING}/resources/libclang")
- 
-    # install winpty on windows
-    if(WIN32)
+ # install rmarkdown package
+ # file(GLOB RMARKDOWN_PACKAGE "${RSTUDIO_DEPENDENCIES_DIR}/common/rmarkdown*.tar.gz")

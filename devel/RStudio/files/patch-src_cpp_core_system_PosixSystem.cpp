@@ -1,6 +1,6 @@
---- src/cpp/core/system/PosixSystem.cpp.orig	2018-05-16 18:21:36 UTC
+--- src/cpp/core/system/PosixSystem.cpp.orig	2019-02-16 02:00:24 UTC
 +++ src/cpp/core/system/PosixSystem.cpp
-@@ -36,6 +36,7 @@
+@@ -37,6 +37,7 @@
  #include <ifaddrs.h>
  #include <sys/socket.h>
  #include <netdb.h>
@@ -8,7 +8,7 @@
  
  #include <uuid/uuid.h>
  
-@@ -45,13 +46,22 @@
+@@ -46,13 +47,22 @@
  #include <libproc.h>
  #endif
  
@@ -32,7 +32,7 @@
  #include <boost/thread.hpp>
  #include <boost/format.hpp>
  #include <boost/lexical_cast.hpp>
-@@ -569,7 +579,35 @@ Error getOpenFds(std::vector<unsigned in
+@@ -575,7 +585,35 @@ Error getOpenFds(std::vector<uint32_t>* 
     return getOpenFds(getpid(), pFds);
  }
  
@@ -66,10 +66,10 @@
 +   return Success();
 +}
 +#elif !defined(__APPLE__)
- Error getOpenFds(pid_t pid, std::vector<unsigned int>* pFds)
+ Error getOpenFds(pid_t pid, std::vector<uint32_t>* pFds)
  {
     std::string pidStr = safe_convert::numberToString(pid);
-@@ -859,7 +897,11 @@ Error executablePath(const char * argv0,
+@@ -920,7 +958,11 @@ Error executablePath(const char * argv0,
  
  #elif defined(HAVE_PROCSELF)
  
@@ -81,7 +81,7 @@
  
  #else
  
-@@ -1296,7 +1338,7 @@ Error osResourceLimit(ResourceLimit limi
+@@ -1395,7 +1437,7 @@ Error osResourceLimit(ResourceLimit limi
        case CpuLimit:
           *pLimit = RLIMIT_CPU;
           break;
@@ -90,7 +90,7 @@
        case NiceLimit:
           *pLimit = RLIMIT_NICE;
           break;
-@@ -1369,7 +1411,7 @@ Error systemInformation(SysInfo* pSysInf
+@@ -1468,7 +1510,7 @@ Error systemInformation(SysInfo* pSysInf
  {
     pSysInfo->cores = boost::thread::hardware_concurrency();
  
@@ -99,7 +99,7 @@
     struct sysinfo info;
     if (::sysinfo(&info) == -1)
        return systemError(errno, ERROR_LOCATION);
-@@ -1402,7 +1444,7 @@ void toPids(const std::vector<std::strin
+@@ -1501,7 +1543,7 @@ void toPids(const std::vector<std::strin
  
  } // anonymous namespace
  
@@ -108,7 +108,7 @@
  core::Error pidof(const std::string& process, std::vector<PidType>* pPids)
  {
     // use pidof to capture pids
-@@ -1711,7 +1753,7 @@ Error restrictCoreDumps()
+@@ -1908,7 +1950,7 @@ Error restrictCoreDumps()
        return error;
  
     // no ptrace core dumps permitted
@@ -117,7 +117,7 @@
     int res = ::prctl(PR_SET_DUMPABLE, 0);
     if (res == -1)
        return systemError(errno, ERROR_LOCATION);
-@@ -1722,7 +1764,7 @@ Error restrictCoreDumps()
+@@ -1919,7 +1961,7 @@ Error restrictCoreDumps()
  
  Error enableCoreDumps()
  {
@@ -126,7 +126,7 @@
     int res = ::prctl(PR_SET_DUMPABLE, 1);
     if (res == -1)
        return systemError(errno, ERROR_LOCATION);
-@@ -1748,7 +1790,7 @@ void printCoreDumpable(const std::string
+@@ -1945,7 +1987,7 @@ void printCoreDumpable(const std::string
     ostr << "  hard limit: " << rLimitHard << std::endl;
  
     // ptrace

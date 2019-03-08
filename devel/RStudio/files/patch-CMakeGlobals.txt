@@ -1,22 +1,28 @@
---- CMakeGlobals.txt.orig	2018-06-07 06:50:17 UTC
+--- CMakeGlobals.txt.orig	2019-02-18 00:38:08 UTC
 +++ CMakeGlobals.txt
-@@ -84,14 +84,16 @@ endif()
+@@ -74,17 +74,19 @@ endif()
  
  # record git revision hash (cache it since we don't use this in development
  # mode and we don't want it to force rebuilds there)
--if(NOT RSTUDIO_SESSION_WIN64 AND NOT RSTUDIO_GIT_REVISION_HASH)
+-if(NOT RSTUDIO_GIT_REVISION_HASH)
 -   find_program(GIT_EXECUTABLE git)
 -   if(GIT_EXECUTABLE)
--      exec_program(git ARGS rev-parse HEAD
--                   OUTPUT_VARIABLE RSTUDIO_GIT_REVISION_HASH)
+-      execute_process(
+-         COMMAND git rev-parse HEAD
+-         WORKING_DIRECTORY "${ROOT_SRC_DIR}"
+-         OUTPUT_VARIABLE RSTUDIO_GIT_REVISION_HASH
+-         OUTPUT_STRIP_TRAILING_WHITESPACE)
 -      SET(RSTUDIO_GIT_REVISION_HASH "${RSTUDIO_GIT_REVISION_HASH}" CACHE STRING "Git Revision Hash")
 -   endif()
 -endif()
-+#if(NOT RSTUDIO_SESSION_WIN64 AND NOT RSTUDIO_GIT_REVISION_HASH)
++#if(NOT RSTUDIO_GIT_REVISION_HASH)
 +#   find_program(GIT_EXECUTABLE git)
 +#   if(GIT_EXECUTABLE)
-+#      exec_program(git ARGS rev-parse HEAD
-+#                   OUTPUT_VARIABLE RSTUDIO_GIT_REVISION_HASH)
++#      execute_process(
++#         COMMAND git rev-parse HEAD
++#         WORKING_DIRECTORY "${ROOT_SRC_DIR}"
++#         OUTPUT_VARIABLE RSTUDIO_GIT_REVISION_HASH
++#         OUTPUT_STRIP_TRAILING_WHITESPACE)
 +#      SET(RSTUDIO_GIT_REVISION_HASH "${RSTUDIO_GIT_REVISION_HASH}" CACHE STRING "Git Revision Hash")
 +#   endif()
 +#endif()
