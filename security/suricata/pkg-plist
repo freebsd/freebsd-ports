@@ -35,7 +35,7 @@ man/man1/suricata.1.gz
 %%DOCSDIR%%/Setting_up_IPSinline_for_Linux.txt
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/Third_Party_Installation_Guides.txt
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata-4.1.2-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/config/__init__.py
@@ -122,7 +122,7 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/util.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.0.3-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.0.4-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.pyc
 @sample %%ETCDIR%%/classification.config.sample
