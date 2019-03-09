@@ -29,6 +29,9 @@ CMAKE_ARGS=	-DOPTION_BUILD_SHARED_LIBS:BOOL=ON \
 		-DPREFIX_INCLUDE:PATH=${PREFIX}/include/fltk-devel \
 		-DPREFIX_LIB:PATH=${PREFIX}/lib/fltk-devel
 
+DEPRECATED=	Older than x11-toolkits/fltk -- there is no point in having old snapshots
+EXPIRATION_DATE=	2019-03-31
+
 SNAPSHOT_VERS=	10370
 PORTEXAMPLES=	*
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
