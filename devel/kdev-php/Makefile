@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdev-php
-DISTVERSION=	5.3.1
-PORTREVISION=	1
+DISTVERSION=	5.3.2
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/kdevelop/${DISTVERSION}/src
 DIST_SUBDIR=	KDE/kdevelop
