@@ -1,5 +1,10 @@
-This perl library aims to provide as many tools to make it as simple
-as possible to calculate distances between geographic points, and
-anything that can be derived from that.
+GIS::Distance calculates distances between geographic points on, at the moment,
+planet Earth. Various "FORMULAS" are available that provide different levels of
+accuracy versus speed.
+
+GIS::Distance::Fast, a separate distribution, ships with C implmentations of
+some of the formulas shipped with GIS::Distance. If you're looking for speed
+then install it and the ::Fast formulas will be automatically used by this
+module.
 
 WWW: https://metacpan.org/release/GIS-Distance
