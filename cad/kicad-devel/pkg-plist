@@ -32,10 +32,7 @@ share/appdata/kicad.appdata.xml
 %%DESKTOPDIR%%/pcbcalculator.desktop
 %%DESKTOPDIR%%/pcbnew.desktop
 %%PORTDOCS%%%%DOCSDIR%%/scripts/ddr3_length_match.py
-%%PORTDOCS%%%%DOCSDIR%%/scripts/get_libngspice_so.sh
 %%PORTDOCS%%%%DOCSDIR%%/scripts/lib_convert.py
-%%PORTDOCS%%%%DOCSDIR%%/scripts/mk_macos_icons.py
-%%PORTDOCS%%%%DOCSDIR%%/scripts/mk_mime_icons.py
 %%PORTDOCS%%%%DOCSDIR%%/scripts/test_kicad_plugin.py
 %%PORTDOCS%%%%DOCSDIR%%/scripts/test_plugin.py
 share/icons/hicolor/128x128/apps/bitmap2component.png
