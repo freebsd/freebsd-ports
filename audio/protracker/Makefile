@@ -17,7 +17,7 @@ USES=		localbase:ldflags sdl
 USE_SDL=	sdl2
 
 SVN_URL=	https://svn.code.sf.net/p/protracker/code/trunk
-SVN_REV=	162
+SVN_REV=	165
 
 LDFLAGS+=	-lSDL2 -lm
 
