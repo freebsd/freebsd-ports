@@ -11,10 +11,13 @@ COMMENT=	Message creator and parser for the NTLM authentication
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
+DEPRECATED=	Use net/rubygem-rubyntlm instead
+EXPIRATION_DATE=2019-03-31
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PORTSCOUT=	limit:^0\.5\.
 
