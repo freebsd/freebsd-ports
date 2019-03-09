@@ -3,7 +3,7 @@
 
 PORTNAME=	o2em
 PORTVERSION=	1.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators games
 MASTER_SITES=	SF/${PORTNAME}/OldFiles:1 \
 		http://o2em.sourceforge.net/files/:2

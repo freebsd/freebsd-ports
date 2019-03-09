@@ -3,6 +3,7 @@
 
 PORTNAME=	alex4
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/allegator/Alex4/source%20and%20data/ \
 		SF/lifanov-ports-distfiles/games/${PORTNAME}/:icons
