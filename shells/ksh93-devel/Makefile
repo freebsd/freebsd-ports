@@ -14,25 +14,27 @@ PORTNAME=	ksh93
 PORTVERSION=	${AST_COMMIT_DATE}
 CATEGORIES=	shells
 PKGNAMESUFFIX=	-devel
-HASH=		dd1f44d
-AST_COMMIT_DATE=	2019.02.26
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Development branch of AT&T KornShell 93
 
 LICENSE=	EPL
 
+USES=		compiler:c11 meson ninja
+
+HASH=		dd1f44d
+AST_COMMIT_DATE=	2019.02.26
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	att
 GH_PROJECT=	ast
 GH_TAGNAME=	${HASH}
 
-KSH93_CONFLICTS=	ksh93-*
 KSH_CONFLICTS=		pdksh-*
+KSH93_CONFLICTS=	ksh93-2*
 
-USES=		compiler:c11 meson ninja
 FETCH_ENV=	HTTP_AUTH=basic:*:I\ accept\ www.opensource.org/licenses/cpl:.
-LDFLAGS+=	-lm 
+LDFLAGS+=	-lm
 MESON_BUILD_DIR=	build
 MAKE_ENV=	CCFLAGS="${CFLAGS}"
 
@@ -54,6 +56,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' ${WRKSRC}/src/lib/libast/include/sfio*.h ${WRKSRC}/src/lib/libast/sfio/*.c
 .if ${PORT_OPTIONS:MKSH93}
 	@${MV} ${WRKSRC}/src/cmd/ksh93/ksh.1 ${WRKSRC}/src/cmd/ksh93/ksh93.1
+.endif
+.if ${PORT_OPTIONS:MKSH}
+	@# Keep portlint happy
 .endif
 
 .include <bsd.port.mk>
