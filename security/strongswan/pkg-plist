@@ -74,6 +74,7 @@
 @sample %%ETCDIR%%.d/charon/x509.conf.sample
 %%XAUTH%%@sample %%ETCDIR%%.d/charon/xauth-eap.conf.sample
 %%XAUTHGEN%%@sample %%ETCDIR%%.d/charon/xauth-generic.conf.sample
+%%XAUTH%%@sample %%ETCDIR%%.d/charon/xauth-pam.conf.sample
 @sample %%ETCDIR%%.d/charon/xcbc.conf.sample
 %%PKI%%@sample %%ETCDIR%%.d/pki.conf.sample
 %%SQL%%@sample %%ETCDIR%%.d/pool.conf.sample
@@ -252,6 +253,8 @@ lib/ipsec/plugins/libstrongswan-x509.so
 %%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.so
 %%IKEV1%%lib/ipsec/plugins/libstrongswan-xauth-generic.la
 %%IKEV1%%lib/ipsec/plugins/libstrongswan-xauth-generic.so
+%%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-pam.la
+%%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-pam.so
 lib/ipsec/plugins/libstrongswan-xcbc.la
 lib/ipsec/plugins/libstrongswan-xcbc.so
 libexec/ipsec/_copyright
@@ -356,6 +359,7 @@ sbin/ipsec
 %%DATADIR%%/templates/config/plugins/x509.conf
 %%XAUTH%%%%DATADIR%%/templates/config/plugins/xauth-eap.conf
 %%XAUTHGEN%%%%DATADIR%%/templates/config/plugins/xauth-generic.conf
+%%XAUTH%%%%DATADIR%%/templates/config/plugins/xauth-pam.conf
 %%DATADIR%%/templates/config/plugins/xcbc.conf
 %%DATADIR%%/templates/config/strongswan.conf
 %%DATADIR%%/templates/config/strongswan.d/charon-logging.conf
