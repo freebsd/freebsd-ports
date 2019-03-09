@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Remove argument that doesn't exist on mongodb 3.6+
+ARGS="$(echo -n ${@} | /usr/bin/sed 's,--nohttpinterface,,')"
+
+%%PREFIX%%/bin/mongod ${ARGS} &
