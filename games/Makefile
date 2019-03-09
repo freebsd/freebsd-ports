@@ -161,6 +161,7 @@
     SUBDIR += cleanq3
     SUBDIR += cockatrice
     SUBDIR += coffeebreak
+    SUBDIR += colobot
     SUBDIR += colorcode
     SUBDIR += columns
     SUBDIR += concentration
