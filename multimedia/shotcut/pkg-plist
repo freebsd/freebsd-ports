@@ -2,6 +2,7 @@ bin/shotcut
 share/applications/org.shotcut.Shotcut.desktop
 share/icons/hicolor/64x64/apps/org.shotcut.Shotcut.png
 share/icons/hicolor/64x64/apps/shotcut.png
+share/man/man1/shotcut.1
 share/metainfo/org.shotcut.Shotcut.appdata.xml
 share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/export-edl/export-edl.js
@@ -65,6 +66,8 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/brightness/meta_movit.qml
 %%DATADIR%%/qml/filters/brightness/ui.qml
 %%DATADIR%%/qml/filters/brightness/ui_movit.qml
+%%DATADIR%%/qml/filters/chromahold/meta.qml
+%%DATADIR%%/qml/filters/chromahold/ui.qml
 %%DATADIR%%/qml/filters/color/meta.qml
 %%DATADIR%%/qml/filters/color/meta_frei0r_coloradj.qml
 %%DATADIR%%/qml/filters/color/meta_movit.qml
@@ -103,12 +106,19 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/keyspillm0pup/ui.qml
 %%DATADIR%%/qml/filters/lenscorrection/meta.qml
 %%DATADIR%%/qml/filters/lenscorrection/ui.qml
+%%DATADIR%%/qml/filters/levels/meta.qml
+%%DATADIR%%/qml/filters/levels/ui.qml
 %%DATADIR%%/qml/filters/lines/meta.qml
 %%DATADIR%%/qml/filters/lines/ui.qml
 %%DATADIR%%/qml/filters/lut3d/meta.qml
 %%DATADIR%%/qml/filters/lut3d/ui.qml
 %%DATADIR%%/qml/filters/mask/meta.qml
 %%DATADIR%%/qml/filters/mask/ui.qml
+%%DATADIR%%/qml/filters/mask_alphaspot/meta.qml
+%%DATADIR%%/qml/filters/mask_alphaspot/ui.qml
+%%DATADIR%%/qml/filters/mask_apply/meta.qml
+%%DATADIR%%/qml/filters/mask_shape/meta.qml
+%%DATADIR%%/qml/filters/mask_shape/ui.qml
 %%DATADIR%%/qml/filters/mirror/meta.qml
 %%DATADIR%%/qml/filters/mirror/meta_movit.qml
 %%DATADIR%%/qml/filters/mirror/ui.qml
@@ -175,6 +185,16 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/waveform/ui.qml
 %%DATADIR%%/qml/filters/waveform/vui.qml
 %%DATADIR%%/qml/filters/webvfx/meta.qml
+%%DATADIR%%/qml/filters/webvfx/templates/plain/Basic/Blank HTML/blank.html
+%%DATADIR%%/qml/filters/webvfx/templates/plain/OpenShot/Blue Middle Bar/blue_middle_bar.html
+%%DATADIR%%/qml/filters/webvfx/templates/plain/OpenShot/Blue Middle Bar/blue_middle_bar.svg
+%%DATADIR%%/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 1/creative_commons_music_1.html
+%%DATADIR%%/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 1/creative_commons_music_1.svg
+%%DATADIR%%/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 2/creative_commons_music_2.html
+%%DATADIR%%/qml/filters/webvfx/templates/plain/OpenShot/Creative Commons Music 2/creative_commons_music_2.svg
+%%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Blank with Web Animations/web-animations.html
+%%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Simple Scroll/simple_scroll.html
+%%DATADIR%%/qml/filters/webvfx/templates/webvfx/Basic/Simple Scroll/simple_scroll_ui.qml
 %%DATADIR%%/qml/filters/webvfx/ui.qml
 %%DATADIR%%/qml/filters/webvfx_circular_frame/filter-demo.html
 %%DATADIR%%/qml/filters/webvfx_circular_frame/meta.qml
@@ -183,6 +203,10 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%DATADIR%%/qml/filters/webvfx_ruttetraizer/ruttetraizer.html
 %%DATADIR%%/qml/filters/webvfx_ruttetraizer/three.js
 %%DATADIR%%/qml/filters/webvfx_ruttetraizer/ui.qml
+%%DATADIR%%/qml/filters/webvfx_swirl/meta.qml
+%%DATADIR%%/qml/filters/webvfx_swirl/shaderkit.js
+%%DATADIR%%/qml/filters/webvfx_swirl/swirl.html
+%%DATADIR%%/qml/filters/webvfx_swirl/ui.qml
 %%DATADIR%%/qml/filters/webvfx_threejs_text/Detector.js
 %%DATADIR%%/qml/filters/webvfx_threejs_text/GeometryUtils.js
 %%DATADIR%%/qml/filters/webvfx_threejs_text/fonts/gentilis_bold.typeface.js
@@ -252,6 +276,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%NLS%%%%DATADIR%%/translations/shotcut_de.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_el.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_en.qm
+%%NLS%%%%DATADIR%%/translations/shotcut_en_GB.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_es.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_et.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_fi.qm
