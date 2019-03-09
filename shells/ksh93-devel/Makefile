@@ -1,15 +1,5 @@
 # $FreeBSD$
 
-# Make sure that your configuration DOES NOT set ANY gcc-related
-# variables.  ksh93 will not compile if you set even the seemingly
-# most unrelated variable related to gcc configuration.  This means
-# especially any flag which attempts to set the cputype.  Setting the
-# cputype does absolutely nothing except cause systems to fail in
-# horrible ways.  For any modern processor, setting the cputype only
-# serves to expose gcc bugs and does nothing to speed up any known
-# program.  If you are really unconvinced, go ahead but do not
-# complain to me about it.
-
 PORTNAME=	ksh93
 PORTVERSION=	${AST_COMMIT_DATE}
 CATEGORIES=	shells
