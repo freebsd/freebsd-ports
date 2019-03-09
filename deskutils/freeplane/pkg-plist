@@ -4,7 +4,7 @@ bin/freeplane
 %%DATADIR%%/core/org.freeplane.core/lib/commons-codec-1.8.jar
 %%DATADIR%%/core/org.freeplane.core/lib/commons-io-2.4.jar
 %%DATADIR%%/core/org.freeplane.core/lib/commons-lang-2.6.jar
-%%DATADIR%%/core/org.freeplane.core/lib/freeplane_mac-1.7.4.jar
+%%DATADIR%%/core/org.freeplane.core/lib/freeplane_mac-%%PORTVERSION%%.jar
 %%DATADIR%%/core/org.freeplane.core/lib/freeplaneeditor-%%PORTVERSION%%.jar
 %%DATADIR%%/core/org.freeplane.core/lib/freeplaneosgi-%%PORTVERSION%%.jar
 %%DATADIR%%/core/org.freeplane.core/lib/freeplaneviewer.jar
