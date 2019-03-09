@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	unifi5
-PORTVERSION=	5.9.29
-PORTREVISION=	1
+PORTVERSION=	5.10.19
+PORTREVISION=	0
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}/
 DISTNAME=	unifi_sysvinit_all
