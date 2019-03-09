@@ -44,6 +44,8 @@
 %%DATADIR%%/library/CPU_NXP_6800.lib
 %%DATADIR%%/library/CPU_NXP_68000.dcm
 %%DATADIR%%/library/CPU_NXP_68000.lib
+%%DATADIR%%/library/CPU_NXP_IMX.dcm
+%%DATADIR%%/library/CPU_NXP_IMX.lib
 %%DATADIR%%/library/CPU_PowerPC.dcm
 %%DATADIR%%/library/CPU_PowerPC.lib
 %%DATADIR%%/library/Comparator.dcm
@@ -86,6 +88,8 @@
 %%DATADIR%%/library/Driver_Display.lib
 %%DATADIR%%/library/Driver_FET.dcm
 %%DATADIR%%/library/Driver_FET.lib
+%%DATADIR%%/library/Driver_Haptic.dcm
+%%DATADIR%%/library/Driver_Haptic.lib
 %%DATADIR%%/library/Driver_LED.dcm
 %%DATADIR%%/library/Driver_LED.lib
 %%DATADIR%%/library/Driver_Motor.dcm
@@ -128,6 +132,8 @@
 %%DATADIR%%/library/Interface_Ethernet.lib
 %%DATADIR%%/library/Interface_Expansion.dcm
 %%DATADIR%%/library/Interface_Expansion.lib
+%%DATADIR%%/library/Interface_HDMI.dcm
+%%DATADIR%%/library/Interface_HDMI.lib
 %%DATADIR%%/library/Interface_HID.dcm
 %%DATADIR%%/library/Interface_HID.lib
 %%DATADIR%%/library/Interface_LineDriver.dcm
@@ -280,6 +286,8 @@
 %%DATADIR%%/library/RF_Amplifier.lib
 %%DATADIR%%/library/RF_Bluetooth.dcm
 %%DATADIR%%/library/RF_Bluetooth.lib
+%%DATADIR%%/library/RF_Filter.dcm
+%%DATADIR%%/library/RF_Filter.lib
 %%DATADIR%%/library/RF_GPS.dcm
 %%DATADIR%%/library/RF_GPS.lib
 %%DATADIR%%/library/RF_GSM.dcm
@@ -342,6 +350,8 @@
 %%DATADIR%%/library/Sensor_Touch.lib
 %%DATADIR%%/library/Sensor_Voltage.dcm
 %%DATADIR%%/library/Sensor_Voltage.lib
+%%DATADIR%%/library/Simulation_SPICE.dcm
+%%DATADIR%%/library/Simulation_SPICE.lib
 %%DATADIR%%/library/Switch.dcm
 %%DATADIR%%/library/Switch.lib
 %%DATADIR%%/library/Timer.dcm
