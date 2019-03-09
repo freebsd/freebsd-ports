@@ -12,7 +12,7 @@ COMMENT=	Ruby binding to the Ed25519 (RFC 8032)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
