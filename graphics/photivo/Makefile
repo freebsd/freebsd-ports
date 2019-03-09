@@ -3,7 +3,7 @@
 
 PORTNAME=	photivo
 PORTVERSION=	0.0.2015.03.21
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	https://storage.googleapis.com/google-code-archive-source/v2/code.google.com/${PORTNAME}/
 DISTNAME=	source-archive
@@ -25,7 +25,8 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 USES=		cmake compiler:c++11-lib desktop-file-utils dos2unix \
 		gettext-runtime gnome jpeg pkgconfig zip
 USE_GNOME=	glib20
-DOS2UNIX_FILES=	Sources/ptImage.cpp Sources/ptCheck.cpp Sources/filemgmt/ptFileMgrWindow.h
+DOS2UNIX_FILES=	Sources/ptImage.cpp Sources/ptCheck.cpp Sources/filemgmt/ptFileMgrWindow.h \
+		Sources/ptImageHelper.h Sources/ptMainWindow.h
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
