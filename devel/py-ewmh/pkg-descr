@@ -1,0 +1,5 @@
+An implementation of EWMH (Extended Window Manager Hints) for python 2
+and 3, based on Xlib. It allows EWMH-compliant window managers (most
+modern WMs) to be queried and controlled.
+
+WWW: https://github.com/parkouss/pyewmh
