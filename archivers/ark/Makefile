@@ -2,7 +2,7 @@
 
 PORTNAME=	ark
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -23,13 +23,17 @@ USE_QT=		concurrent core dbus gui network widgets xml \
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	7ZIP RAR ZIP DOCS
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+OPTIONS_DEFAULT=	7ZIP ZIP DOCS
+OPTIONS_DEFAULT_i386=	RAR
+OPTIONS_DEFAULT_amd64=	RAR
 OPTIONS_SUB=		YES
 
-7ZIP_DESC=	Support for 7-Zip archives
+# The 7ZIP and RAR options only need runtime dependencies;
+# the port builds identically with or without them.
+7ZIP_DESC=	Support for 7-Zip archives (runtime)
 7ZIP_RUN_DEPENDS=	7z:archivers/p7zip
 
-RAR_DESC=	Support for RAR archives
+RAR_DESC=	Support for RAR archives (runtime)
 RAR_RUN_DEPENDS=	unrar:archivers/unrar \
 			rar:archivers/rar
 
