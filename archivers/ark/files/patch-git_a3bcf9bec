@@ -1,0 +1,26 @@
+commit a3bcf9becddd5725725089add15fbae39c79757e
+Author: Elvis Angelaccio <elvis.angelaccio@kde.org>
+Date:   Sat Mar 9 13:05:35 2019 +0100
+
+    Fix creation of tar archives
+
+    Usage of QString::compare() breaks the creation of tar archives, because
+    `zst` is "bigger" than `tar` which means ark would use the `zstd` filter
+    even when creating a simple tar archive.
+
+    BUG: 405136
+    FIXED-IN: 19.03.80
+
+diff --git a/plugins/libarchive/readwritelibarchiveplugin.cpp b/plugins/libarchive/readwritelibarchiveplugin.cpp
+index 38f62881..e83d0087 100644
+--- plugins/libarchive/readwritelibarchiveplugin.cpp
++++ plugins/libarchive/readwritelibarchiveplugin.cpp
+@@ -352,7 +352,7 @@ bool ReadWriteLibarchivePlugin::initializeNewFileWriterFilters(const Compression
+         qCDebug(ARK) << "Detected lz4 compression for new file";
+         ret = archive_write_add_filter_lz4(m_archiveWriter.data());
+ #ifdef HAVE_ZSTD_SUPPORT
+-    } else if (filename().rightRef(3).compare(QLatin1String("zst"), Qt::CaseInsensitive)) {
++    } else if (filename().right(3).toUpper() == QLatin1String("ZST")) {
+         qCDebug(ARK) << "Detected zstd compression for new file";
+         ret = archive_write_add_filter_zstd(m_archiveWriter.data());
+ #endif
