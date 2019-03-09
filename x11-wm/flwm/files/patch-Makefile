@@ -1,0 +1,12 @@
+--- Makefile.orig	2015-12-14 18:44:42 UTC
++++ Makefile
+@@ -5,7 +5,8 @@ VERSION = 1.16
+ 
+ CXXFILES = main.C Frame.C Menu.C FrameWindow.C Desktop.C Hotkeys.C
+ 
+-LIBS = -lfltk
++CPPFLAGS += -DFL_LIBRARY $(shell $(LOCALBASE)/bin/fltk-config --cxxflags)
++LIBS += $(shell $(LOCALBASE)/bin/fltk-config --ldflags)
+ 
+ MANPAGE = 1
+ 
