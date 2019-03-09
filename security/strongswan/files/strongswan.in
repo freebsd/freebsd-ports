@@ -7,33 +7,91 @@
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 
+# strongswan_enable (bool):
+#	Set it to "YES" to enable strongswan
+#	Default is "NO"
+# strongswan_interface (string):
+#	Set the control interface to use.
+#	Valid options are:
+#	"stroke" for the old ipsec/startr interface
+#	"vici" for the newer swanctl intrface
+#	Default is "stroke"
+
 . /etc/rc.subr
 
 name=strongswan
+desc="Strongswan IPsec startup script"
 rcvar=strongswan_enable
 
 load_rc_config $name
 
 : ${strongswan_enable:=NO}
+: ${strongswan_interface:="stroke"}
 
 extra_commands="reload statusall"
 
-command="%%PREFIX%%/sbin/ipsec"
+charon_command=%%PREFIX%%/libexec/ipsec/charon
+charon_pidfile=/var/run/charon.pid
+swanctl_command=%%PREFIX%%/sbin/swanctl
 
-start_precmd="strongswan_precmd"
-stop_cmd="strongswan_cmd"
-status_cmd="strongswan_cmd"
-reload_cmd="strongswan_cmd"
-statusall_cmd="strongswan_cmd"
+case $strongswan_interface in
+[Ss][Tt][Rr][Oo][Kk][Ee])
+	# "stroke"
+	command="%%PREFIX%%/sbin/ipsec"
+	start_precmd=command_args=start
+	stop_cmd="${command} stop"
+	status_cmd="${command} status"
+	reload_cmd="${command} reload"
+	statusall_cmd="${command} statusall"
+	;;
 
-strongswan_precmd()
+[Vv][Ii][Cc][Ii])
+	# "vici"
+	command=/usr/sbin/daemon
+	pidfile=/var/run/daemon-charon.pid
+	command_args="-S -P ${pidfile} ${charon_command} --use-syslog"
+
+	required_files=${charon_command}
+	extra_commands="reload statusall"
+
+	start_postcmd=${name}_swanctl_poststart
+	status_cmd="${swanctl_command} --stats"
+	reload_cmd=${name}_swanctl_reload
+	statusall_cmd=${name}_swanctl_statusall
+	;;
+
+	*)
+	# "default"
+	warn "\$strongswan_interface setting is invalid - options supported are \"stroke\" or \"vici\"."
+	exit 1
+	;;
+esac
+
+strongswan_swanctl_poststart()
 {
-	command_args=${rc_arg}
+	local _waitmax=5
+
+	# Need to wait for charon to finish startup,
+	# else vici socket is unreadable
+	while [ ! -f ${charon_pidfile} ] && [ ${_waitmax} -gt 0 ]; do
+		sleep 1
+		_waitmax=$((_waitmax - 1))
+	done
+
+	${swanctl_command} --load-all --noprompt
 }
 
-strongswan_cmd()
+strongswan_swanctl_reload()
 {
-	${command} ${rc_arg}
+	${swanctl_command} --reload-settings
+	${swanctl_command} --load-all --noprompt
+}
+
+strongswan_swanctl_statusall()
+{
+	${swanctl_command} --stats
+	${swanctl_command} --list-conns
+	${swanctl_command} --list-sas
 }
 
 run_rc_command "$1"
