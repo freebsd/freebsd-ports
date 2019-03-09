@@ -17,4 +17,4 @@ to another (using a dictionary, like between the 1-letter code and the 3-letter
 code of proteins) 2) conversion of number format according to any localized
 number format 3) sort mass lists.
 
-WWW: http://massxpert.tuxfamily.org/
+WWW: https://salsa.debian.org/debichem-team/massxpert

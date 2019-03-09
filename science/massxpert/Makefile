@@ -2,18 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	massxpert
-PORTVERSION=	3.4.0
-PORTREVISION=	12
+DISTVERSION=	3.6.1
 CATEGORIES=	science
-MASTER_SITES=	http://download.tuxfamily.org/massxpert/source/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	massXpert software for (bio)chemists
 
 LICENSE=	GPLv3
-
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS=	libpcre.so:devel/pcre \
@@ -22,13 +18,15 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USE_GCC=	any
-USES=		cmake gettext qt:4 tar:bzip2
+USES=		cmake gettext gnome qt:5 tar:bzip2
+USE_GITLAB=	yes
+GL_SITE=	https://salsa.debian.org/
+GL_ACCOUNT=	debichem-team
+GL_COMMIT=	c229f4a1abde3c20b83a90e50f9c5d79104dfa5f
+USE_GCC=	any # build breaks in clang
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
 USE_GNOME=	glib20
-USE_QT=		corelib gui xml rcc_build qmake_build uic_build moc_build \
-		svg
+USE_QT=		core gui svg xml widgets buildtools_build qmake_build
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
