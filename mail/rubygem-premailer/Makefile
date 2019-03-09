@@ -16,9 +16,10 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-css_parser>=1.6.0:textproc/rubygem-css_parser \
 		rubygem-htmlentities>=4.0.0:textproc/rubygem-htmlentities
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/premailer
 
