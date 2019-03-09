@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
 
-MAINTAINER=	bdrewery@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Memory debugging and profiling tool
 
 BB_COMMIT=	ce1acb28953f
