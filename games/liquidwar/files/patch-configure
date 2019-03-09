@@ -1,8 +1,8 @@
---- configure.orig	Sun Mar 11 09:05:03 2007
-+++ configure	Sun Mar 11 09:05:54 2007
-@@ -5345,9 +5345,9 @@
- if test "${ac_cv_prog_PYTHON+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+--- configure.orig	2018-12-23 19:04:36 UTC
++++ configure
+@@ -3787,9 +3787,9 @@ $as_echo_n "checking for $ac_word... " >&6; }
+ if ${ac_cv_prog_PYTHON+:} false; then :
+   $as_echo_n "(cached) " >&6
  else
 -  if test -n "$PYTHON"; then
 -  ac_cv_prog_PYTHON="$PYTHON" # Let the user override the test.
@@ -13,7 +13,7 @@
  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
  for as_dir in $PATH
  do
-@@ -5364,7 +5364,7 @@
+@@ -3807,7 +3807,7 @@ IFS=$as_save_IFS
  
    test -z "$ac_cv_prog_PYTHON" && ac_cv_prog_PYTHON="no"
  fi
@@ -21,4 +21,4 @@
 +#fi
  PYTHON=$ac_cv_prog_PYTHON
  if test -n "$PYTHON"; then
-   echo "$as_me:$LINENO: result: $PYTHON" >&5
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PYTHON" >&5
