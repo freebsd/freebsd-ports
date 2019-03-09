@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	allegro
-DISTVERSION=	4.4.2
-PORTREVISION=	8
+DISTVERSION=	4.4.3.1
 CATEGORIES=	devel
-MASTER_SITES=	SF/alleg/allegro/${PORTVERSION}
+MASTER_SITES=	https://github.com/liballeg/allegro5/releases/download/${DISTVERSION}/
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Cross-platform library for games and multimedia programming
@@ -15,31 +14,29 @@ LICENSE_NAME=	Giftware
 LICENSE_FILE=	${WRKSRC}/docs/txt/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-# Required for building libloadpng.a and liballeggl.a
-BUILD_DEPENDS=	png>0:graphics/png \
-		libGLU>0:graphics/libGLU
 LIB_DEPENDS=	libogg.so:audio/libogg \
+		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
 
-USES=		cmake:insource makeinfo pkgconfig
-USE_XORG=	ice sm x11 xpm xext xcursor xxf86vm xxf86dga
+USES=		cmake gl makeinfo pkgconfig
+USE_GL=		gl glu
+USE_XORG=	ice sm x11 xcursor xext xpm xxf86dga xxf86vm
 USE_LDCONFIG=	yes
 
 INFO=		allegro
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-PLIST_SUB=	SHLIB_VER="${PORTVERSION}"
-CMAKE_ARGS=	-DDOCDIR="${DOCSDIR}" \
-		-DWANT_MODULES=off \
-		-DWANT_LOGG=on \
-		-DWANT_EXAMPLES=off
+PLIST_SUB=	SHLIB_VER="${PORTVERSION:R}"
+CMAKE_ARGS=	-DDOCDIR="${DOCSDIR}"
+CMAKE_OFF=	WANT_EXAMPLES WANT_MODULES
+CMAKE_ON=	WANT_LOGG
 
 # Wrong versioning upstream
 PORTSCOUT=	ignore:1
 
-OPTIONS_DEFINE=	EXAMPLES DOCS
-OPTIONS_MULTI=	AUDIO
+OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_MULTI=		AUDIO
 OPTIONS_MULTI_AUDIO=	ALSA JACK OSS SNDIO
 OPTIONS_DEFAULT=	OSS
 
@@ -69,7 +66,7 @@ post-patch-JACK-on:
 		${WRKSRC}/src/unix/jack.c
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/man/*.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/
+	${INSTALL_MAN} ${INSTALL_WRKSRC}/docs/man/*.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/
 
 post-install-EXAMPLES-on:
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})

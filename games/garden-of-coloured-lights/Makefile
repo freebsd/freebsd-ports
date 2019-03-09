@@ -3,6 +3,7 @@
 
 PORTNAME=	garden-of-coloured-lights
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/garden/garden/${PORTVERSION}/
 DISTNAME=	garden-${PORTVERSION}

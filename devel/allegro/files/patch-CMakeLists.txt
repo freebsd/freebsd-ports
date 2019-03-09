@@ -1,15 +1,15 @@
---- CMakeLists.txt.orig	2011-03-24 23:18:50 UTC
+--- CMakeLists.txt.orig	2019-02-02 19:28:46 UTC
 +++ CMakeLists.txt
 @@ -66,7 +66,7 @@ if(WIN32)
  endif(WIN32)
  
- set(ALLEGRO_VERSION 4.4.2)
+ set(ALLEGRO_VERSION 4.4.3)
 -string(REGEX MATCH "^[0-9]+[.][0-9]+" ALLEGRO_SOVERSION ${ALLEGRO_VERSION})
-+string(REGEX MATCH "^[0-9]" ALLEGRO_SOVERSION ${ALLEGRO_VERSION})
++string(REGEX MATCH "^[0-9]+" ALLEGRO_SOVERSION ${ALLEGRO_VERSION})
  
  # Mac OS X -compatibility_version.
  # XXX doesn't seem to work
-@@ -408,6 +408,7 @@ option(WANT_OSS "Build OSS support" on)
+@@ -403,6 +403,7 @@ option(WANT_OSS "Build OSS support" on)
  option(WANT_ALSA "Build ALSA support" on)
  option(WANT_JACK "Build JACK support" on)
  option(WANT_SGIAUDIO "Build SGI audio support" on)
@@ -17,7 +17,7 @@
  
  if(ALLEGRO_UNIX) # not MACOSX
      find_package(Threads)
-@@ -471,6 +472,17 @@ if(ALLEGRO_UNIX) # not MACOSX
+@@ -466,6 +467,17 @@ if(ALLEGRO_UNIX) # not MACOSX
          endif(SGIAUDIO_FOUND)
      endif(WANT_SGIAUDIO)
  
@@ -35,12 +35,12 @@
      # aRts is obsolete
      # esd is obsolete
  endif(ALLEGRO_UNIX)
-@@ -961,7 +973,7 @@ if(UNIX)
-             @ONLY
-             )
-         install(FILES ${LIBRARY_OUTPUT_PATH}/pkgconfig/${name}${lib_type}.pc
--                DESTINATION "lib${LIB_SUFFIX}/pkgconfig"
-+                DESTINATION "libdata/pkgconfig"
-                 )
-     endforeach(name)
- endif(UNIX)
+@@ -744,7 +756,7 @@ endif(BEOS)
+ 
+ # On Unix/Mac we don't ever use a -static postfix.
+ if(CMAKE_BUILD_TYPE STREQUAL Debug)
+-    set(BUILD_TYPE_SUFFIX -debug)
++    set(BUILD_TYPE_SUFFIX "")
+ elseif(CMAKE_BUILD_TYPE STREQUAL Profile)
+     set(BUILD_TYPE_SUFFIX -profile)
+ else()

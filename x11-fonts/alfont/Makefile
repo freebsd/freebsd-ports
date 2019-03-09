@@ -3,6 +3,7 @@
 
 PORTNAME=	alfont
 PORTVERSION=	2.0.9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://opensnc.sourceforge.net/alfont/mirror/
