@@ -1,5 +1,5 @@
-This distribution re-implements some, but not all, of the formulas that
-come with GIS::Distance in the C programming language.  C code is
-generally much faster than the perl equivilent.
+This distribution re-implements some, but not all, of the formulas that come
+with GIS::Distance in the C programming language. C code is generally much
+faster than the perl equivilent.
 
 WWW: https://metacpan.org/release/GIS-Distance-Fast
