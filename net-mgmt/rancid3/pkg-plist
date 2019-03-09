@@ -2,16 +2,20 @@ bin/rancid-cvs
 bin/rancid-run
 etc/periodic/hourly/200.rancid
 lib/rancid/acos.pm
+lib/rancid/aeos.pm
 lib/rancid/arbor.pm
+lib/rancid/arcos.pm
 lib/rancid/ciscowlc.pm
 %%COMWARE%%lib/rancid/cmw.pm
-lib/rancid/aeos.pm
 lib/rancid/bigip.pm
 lib/rancid/dell.pm
 lib/rancid/edgemax.pm
 lib/rancid/edgerouter.pm
 lib/rancid/exos.pm
 lib/rancid/foundry.pm
+lib/rancid/fortigate.pm
+lib/rancid/fss2.pm
+lib/rancid/fxos.pm
 lib/rancid/ios.pm
 lib/rancid/iossb.pm
 lib/rancid/iosshtech.pm
@@ -23,6 +27,7 @@ lib/rancid/panos.pm
 lib/rancid/rbt.pm
 lib/rancid/rancid.pm
 lib/rancid/sros.pm
+lib/rancid/vrp.pm
 lib/rancid/wavesvros.pm
 libexec/rancid/a10login
 libexec/rancid/alogin
@@ -46,8 +51,8 @@ libexec/rancid/erancid
 libexec/rancid/f10rancid
 libexec/rancid/f5rancid
 libexec/rancid/flogin
-libexec/rancid/fnrancid
 libexec/rancid/fnlogin
+libexec/rancid/fxlogin
 libexec/rancid/hlogin
 libexec/rancid/hpuifilter
 libexec/rancid/hrancid
@@ -109,7 +114,6 @@ man/man1/f10rancid.1.gz
 man/man1/f5rancid.1.gz
 man/man1/flogin.1.gz
 man/man1/fnlogin.1.gz
-man/man1/fnrancid.1.gz
 man/man1/hlogin.1.gz
 man/man1/hrancid.1.gz
 man/man1/htlogin.1.gz
