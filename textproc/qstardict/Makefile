@@ -2,48 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	qstardict
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+DISTVERSIONPREFIX=	qstardict-
+DISTVERSION=	1.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://qstardict.ylsoftware.com/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Qt 4 based dictionary program (stardict clone)
+COMMENT=	Qt based dictionary program (stardict clone)
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
-USES=		dos2unix pkgconfig qmake qt:4 tar:bzip2
-USE_QT=		corelib gui network xml uic_build moc_build rcc_build
+USES=		gl gnome pkgconfig qmake qt:5 tar:bzip2
+USE_GL=		gl
 USE_GNOME=	glib20
+USE_QT=		core dbus gui network printsupport widgets xml \
+		buildtools_build linguisttools_build qmake_build
 USE_XORG=	x11
-DOS2UNIX_FILES=	qstardict.pri
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	a-rodin
+
+QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX}
+
+OPTIONS_DEFINE=	DOCS
 
 # Path to dictionaries installed by stardict-* ports
 DICPATH=	${LOCALBASE}/share/stardict/dic
 
-OPTIONS_DEFINE=	DBUS DOCS NLS
-OPTIONS_DEFAULT=DBUS
-OPTIONS_SUB=	yes
-
-DBUS_USES=	qt:4
-DBUS_USE=	QT=dbus
-DBUS_QMAKE_OFF=	NO_DBUS=1
-
-NLS_QMAKE_OFF=	NO_TRANSLATIONS=1
-
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|g" \
-		${WRKSRC}/qstardict.pri
-	@${REINPLACE_CMD} -e "s|/usr/share/stardict/dic|${DICPATH}|g" \
-		-e "s|glib.*\.h|glib.h|g" \
+	${REINPLACE_CMD} '/m_dictDirs/s|/usr/share/stardict/dic|${PREFIX}/share/stardict/dic|g' \
 		${WRKSRC}/plugins/stardict/stardict.cpp
-
-post-patch-DOCS-off:
-	@${REINPLACE_CMD} -e "/^INSTALLS/s|docs||g" \
-		${WRKSRC}/qstardict.pro
 
 .include <bsd.port.mk>
