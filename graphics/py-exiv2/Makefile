@@ -21,6 +21,9 @@ USE_LDCONFIG=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS+=	prefix=${PREFIX} use_env=1 BOOSTLIB="${PY_BOOST_LIB}"
 
+DEPRECATED=	py-exiv2 has been deprecated in favour of GExiv2
+EXPIRATION_DATE=	20190331
+
 post-patch:
 	${REINPLACE_CMD} -e 's|python_inc_path\]|python_inc_path,\
 	"${PREFIX}/include"\]|' -e 's|LIBS=libs|LIBS=libs,\
