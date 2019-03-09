@@ -3,5 +3,5 @@ include/nghttp2/nghttp2ver.h
 lib/libnghttp2.a
 lib/libnghttp2.so
 lib/libnghttp2.so.14
-lib/libnghttp2.so.14.17.1
+lib/libnghttp2.so.14.17.2
 libdata/pkgconfig/libnghttp2.pc
