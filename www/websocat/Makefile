@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	websocat
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -19,40 +18,45 @@ GH_ACCOUNT=	vi
 
 CARGO_FEATURES=	ssl seqpacket
 
-CARGO_CRATES=	arrayvec-0.4.7 \
-		atty-0.2.11 \
+CARGO_CRATES=	MacTypes-sys-2.1.0 \
+		arc-swap-0.3.7 \
+		arrayvec-0.4.10 \
+		autocfg-0.1.2 \
+		base64-0.10.1 \
 		base64-0.9.3 \
-		bitflags-0.9.1 \
 		bitflags-1.0.4 \
-		byteorder-1.2.7 \
-		bytes-0.4.10 \
-		cc-1.0.25 \
-		cfg-if-0.1.6 \
+		byteorder-1.3.1 \
+		bytes-0.4.11 \
+		cc-1.0.30 \
+		cfg-if-0.1.7 \
 		clap-2.32.0 \
 		cloudabi-0.0.3 \
 		core-foundation-0.5.1 \
 		core-foundation-sys-0.5.1 \
-		crossbeam-deque-0.6.1 \
-		crossbeam-epoch-0.5.2 \
-		crossbeam-utils-0.5.0 \
-		derivative-1.0.1 \
-		env_logger-0.5.13 \
+		crossbeam-deque-0.7.1 \
+		crossbeam-epoch-0.7.1 \
+		crossbeam-queue-0.1.2 \
+		crossbeam-utils-0.6.5 \
+		derivative-1.0.2 \
+		env_logger-0.6.0 \
+		fnv-1.0.6 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
+		fuchsia-cprng-0.1.1 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		futures-0.1.25 \
+		heck-0.3.1 \
 		httparse-1.3.3 \
-		humantime-1.1.1 \
 		hyper-0.10.15 \
 		idna-0.1.5 \
 		iovec-0.1.2 \
 		kernel32-sys-0.2.2 \
 		language-tags-0.2.2 \
-		lazy_static-1.1.0 \
-		lazycell-1.2.0 \
-		libc-0.2.49 \
-		lock_api-0.1.4 \
+		lazy_static-1.3.0 \
+		lazycell-1.2.1 \
+		libc-0.2.50 \
+		lock_api-0.1.5 \
 		log-0.3.9 \
 		log-0.4.6 \
 		matches-0.1.8 \
@@ -65,93 +69,90 @@ CARGO_CRATES=	arrayvec-0.4.7 \
 		miow-0.3.3 \
 		native-tls-0.2.2 \
 		net2-0.2.33 \
-		nodrop-0.1.12 \
-		num_cpus-1.8.0 \
-		openssl-0.10.15 \
+		nodrop-0.1.13 \
+		num_cpus-1.10.0 \
+		openssl-0.10.19 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.39 \
-		owning_ref-0.3.3 \
-		parking_lot-0.6.4 \
-		parking_lot_core-0.3.1 \
+		openssl-sys-0.9.42 \
+		owning_ref-0.4.0 \
+		parking_lot-0.7.1 \
+		parking_lot_core-0.4.0 \
 		percent-encoding-1.0.1 \
 		pkg-config-0.3.14 \
-		proc-macro2-0.4.20 \
-		quick-error-1.2.2 \
-		quote-0.3.15 \
-		quote-0.6.9 \
-		rand-0.5.5 \
-		rand_core-0.2.2 \
-		rand_core-0.3.0 \
+		proc-macro2-0.4.27 \
+		quote-0.6.11 \
+		rand-0.6.5 \
+		rand_chacha-0.1.1 \
+		rand_core-0.3.1 \
+		rand_core-0.4.0 \
+		rand_hc-0.1.0 \
+		rand_isaac-0.1.1 \
+		rand_jitter-0.1.3 \
+		rand_os-0.1.3 \
+		rand_pcg-0.1.2 \
+		rand_xorshift-0.1.1 \
+		rdrand-0.4.0 \
 		readwrite-0.1.1 \
-		redox_syscall-0.1.40 \
-		redox_termios-0.1.1 \
+		redox_syscall-0.1.51 \
 		remove_dir_all-0.5.1 \
 		rustc_version-0.2.3 \
 		safemem-0.3.0 \
-		schannel-0.1.14 \
-		scoped-tls-0.1.2 \
+		schannel-0.1.15 \
 		scopeguard-0.3.3 \
-		security-framework-0.2.1 \
-		security-framework-sys-0.2.1 \
+		security-framework-0.2.2 \
+		security-framework-sys-0.2.3 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
 		sha1-0.6.0 \
-		slab-0.4.1 \
-		slab_typesafe-0.1.2 \
-		smallvec-0.6.5 \
-		smart-default-0.2.0 \
+		signal-hook-0.1.8 \
+		slab-0.4.2 \
+		slab_typesafe-0.1.3 \
+		smallvec-0.6.9 \
+		smart-default-0.3.0 \
 		socket2-0.3.8 \
 		stable_deref_trait-1.1.1 \
-		structopt-0.2.12 \
-		structopt-derive-0.2.12 \
-		syn-0.11.11 \
-		syn-0.15.17 \
-		synom-0.11.3 \
-		tempfile-3.0.4 \
-		termcolor-1.0.4 \
-		termion-1.5.1 \
+		structopt-0.2.14 \
+		structopt-derive-0.2.14 \
+		syn-0.15.27 \
+		tempfile-3.0.7 \
 		textwrap-0.10.0 \
-		time-0.1.40 \
-		tokio-0.1.11 \
+		time-0.1.42 \
+		tk-listen-0.2.1 \
+		tokio-0.1.16 \
 		tokio-codec-0.1.1 \
-		tokio-core-0.1.17 \
-		tokio-current-thread-0.1.3 \
-		tokio-executor-0.1.5 \
-		tokio-file-unix-0.4.2 \
-		tokio-fs-0.1.4 \
-		tokio-io-0.1.10 \
-		tokio-process-0.1.6 \
-		tokio-reactor-0.1.6 \
-		tokio-signal-0.1.5 \
+		tokio-current-thread-0.1.5 \
+		tokio-executor-0.1.6 \
+		tokio-file-unix-0.5.1 \
+		tokio-fs-0.1.6 \
+		tokio-io-0.1.12 \
+		tokio-process-0.2.3 \
+		tokio-reactor-0.1.9 \
+		tokio-signal-0.2.7 \
 		tokio-stdin-stdout-0.1.5 \
-		tokio-tcp-0.1.2 \
-		tokio-threadpool-0.1.8 \
-		tokio-timer-0.2.7 \
-		tokio-tls-0.2.0 \
-		tokio-udp-0.1.2 \
-		tokio-uds-0.1.5 \
-		tokio-uds-0.2.3 \
+		tokio-sync-0.1.3 \
+		tokio-tcp-0.1.3 \
+		tokio-threadpool-0.1.12 \
+		tokio-timer-0.2.10 \
+		tokio-tls-0.2.1 \
+		tokio-udp-0.1.3 \
+		tokio-uds-0.2.5 \
 		traitobject-0.1.0 \
 		typeable-0.1.2 \
 		unicase-1.4.2 \
 		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.7 \
+		unicode-normalization-0.1.8 \
+		unicode-segmentation-1.2.1 \
 		unicode-width-0.1.5 \
-		unicode-xid-0.0.4 \
 		unicode-xid-0.1.0 \
-		unreachable-1.0.0 \
-		url-1.7.1 \
+		url-1.7.2 \
 		vcpkg-0.2.6 \
 		version_check-0.1.5 \
-		void-1.0.2 \
-		websocket-0.21.1 \
+		websocket-0.22.3 \
 		winapi-0.2.8 \
 		winapi-0.3.6 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.1 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		wincolor-1.0.1 \
 		ws2_32-sys-0.2.1
 
 PLIST_FILES=	bin/websocat
