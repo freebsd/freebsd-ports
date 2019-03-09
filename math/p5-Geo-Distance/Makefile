@@ -2,21 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-Distance
-PORTVERSION=	0.20
-PORTREVISION=	1
+PORTVERSION=	0.21
 CATEGORIES=	math perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Calculate Distances and Closest Locations
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Test-Fatal>=0.007:devel/p5-Test-Fatal
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-GIS-Distance>=0.11:math/p5-GIS-Distance
+TEST_DEPENDS=	p5-Test2-Suite>=0.000094:devel/p5-Test2-Suite
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
