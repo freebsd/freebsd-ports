@@ -1,5 +1,5 @@
-The Geo::Distance::XS module provides faster C implementations of the
-distance calculations found in Geo::Distance.  See the documentation for
-that module for usage.
+The Geo::Distance::XS module provides faster C implementations of the distance
+calculations found in Geo::Distance. See the documentation for that module for
+usage.
 
 WWW: https://metacpan.org/release/Geo-Distance-XS
