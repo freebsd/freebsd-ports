@@ -3,6 +3,7 @@
 
 PORTNAME=	x2goclient
 PORTVERSION=	4.1.0.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
@@ -12,11 +13,6 @@ COMMENT=	Qt client for the X2Go system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build
-
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 # Avoid clash with libssh from base
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
 LIB_DEPENDS=	libcups.so:print/cups \
@@ -24,10 +20,11 @@ LIB_DEPENDS=	libcups.so:print/cups \
 RUN_DEPENDS=	nxproxy:net/nxproxy \
 		x2goclient-cli:net/x2goclient-cli
 
-USES=		qmake qt:4
+USES=		gl qmake qt:5
+USE_GL=		gl
 USE_XORG=	x11 xpm
-USE_QT=		corelib gui network svg \
-		linguisttools_build moc_build rcc_build uic_build
+USE_QT=		core gui network svg widgets x11extras  \
+		buildtools_build linguisttools_build qmake_build
 QMAKE_ARGS=	QMAKE_LRELEASE="${LRELEASE}"
 
 OPTIONS_DEFINE=		DOCS LDAP
