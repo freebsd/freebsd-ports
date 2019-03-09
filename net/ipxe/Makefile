@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipxe
-PORTVERSION=	20180825
-PORTREVISION=	2
+PORTVERSION=	20190307
 CATEGORIES=	net
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -26,7 +25,7 @@ USE_GITHUB=	yes
 #   A: iPXE uses a rolling release model, in which every commit is intended
 #      to be production-ready.  You should always use the latest code.
 #
-GH_TAGNAME=	133f4c47baef6002b2ccb4904a035cda2303c6e5
+GH_TAGNAME=	b28ccfc725c9a52401aaa09de0734a44bd44a02d
 USE_PERL5=	build
 
 ALL_TARGET=	bin/ipxe.dsk bin/ipxe.lkrn bin/ipxe.pxe bin/ipxe.usb bin/undionly.kpxe
