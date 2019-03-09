@@ -2011,6 +2011,8 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/OPENSSL_INIT_free.3.gz
 %%MAN3%%man/man3/OPENSSL_INIT_new.3.gz
 %%MAN3%%man/man3/OPENSSL_INIT_set_config_appname.3.gz
+%%MAN3%%man/man3/OPENSSL_INIT_set_config_file_flags.3.gz
+%%MAN3%%man/man3/OPENSSL_INIT_set_config_filename.3.gz
 %%MAN3%%man/man3/OPENSSL_LH_COMPFUNC.3.gz
 %%MAN3%%man/man3/OPENSSL_LH_DOALL_FUNC.3.gz
 %%MAN3%%man/man3/OPENSSL_LH_HASHFUNC.3.gz
