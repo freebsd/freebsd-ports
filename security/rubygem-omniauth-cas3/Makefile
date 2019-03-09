@@ -16,8 +16,9 @@ RUN_DEPENDS=	rubygem-addressable>=2.3:www/rubygem-addressable \
 		rubygem-nokogiri>=1.7.1:textproc/rubygem-nokogiri \
 		rubygem-omniauth>=1.2:security/rubygem-omniauth
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
