@@ -4,6 +4,7 @@
 PORTNAME=	qconf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,11 +13,9 @@ COMMENT=	Tool to create configure script for qmake-based project
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
-USES=		qmake:no_env qt:4 tar:bzip2
-USE_QT=		corelib xml moc_build qmake_build rcc_build
+USES=		qmake:no_env qt:5 tar:bzip2
+USE_QT=		core gui xml \
+		buildtools_build qmake_build
 HAS_CONFIGURE=	yes
 MAKE_ARGS=	INSTALL_ROOT="${STAGEDIR}"
 
