@@ -3,14 +3,15 @@ man/man1/audacity.1.gz
 share/appdata/audacity.appdata.xml
 share/applications/audacity.desktop
 %%DATADIR%%/EQDefaultCurves.xml
+%%DATADIR%%/include/audacity/ComponentInterface.h
 %%DATADIR%%/include/audacity/ConfigInterface.h
 %%DATADIR%%/include/audacity/EffectAutomationParameters.h
 %%DATADIR%%/include/audacity/EffectInterface.h
-%%DATADIR%%/include/audacity/IdentInterface.h
 %%DATADIR%%/include/audacity/ImporterInterface.h
 %%DATADIR%%/include/audacity/ModuleInterface.h
 %%DATADIR%%/include/audacity/PluginInterface.h
 %%DATADIR%%/include/audacity/Types.h
+%%DATADIR%%/nyquist/aud-do-support.lsp
 %%DATADIR%%/nyquist/dspprims.lsp
 %%DATADIR%%/nyquist/envelopes.lsp
 %%DATADIR%%/nyquist/equalizer.lsp
@@ -73,6 +74,7 @@ share/applications/audacity.desktop
 %%DATADIR%%/plug-ins/pluck.ny
 %%DATADIR%%/plug-ins/rhythmtrack.ny
 %%DATADIR%%/plug-ins/rissetdrum.ny
+%%DATADIR%%/plug-ins/rms.ny
 %%DATADIR%%/plug-ins/sample-data-export.ny
 %%DATADIR%%/plug-ins/sample-data-import.ny
 %%DATADIR%%/plug-ins/tremolo.ny

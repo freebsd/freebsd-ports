@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 DISTVERSIONPREFIX=	Audacity-
-PORTREVISION=	5
 CATEGORIES=	audio
 
 MAINTAINER=	xxjack12xx@gmail.com
@@ -25,7 +24,9 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libsoxr.so:audio/libsoxr \
 		libsndfile.so:audio/libsndfile
 
-USES=		autoreconf compiler:c++11-lib cpe desktop-file-utils gettext-tools gmake iconv libtool pkgconfig shared-mime-info shebangfix dos2unix localbase
+USES=		autoreconf compiler:c++11-lib cpe desktop-file-utils dos2unix \
+		gettext-tools gmake gnome iconv libtool localbase pkgconfig \
+		shared-mime-info shebangfix
 GNU_CONFIGURE=	yes
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
@@ -39,8 +40,9 @@ DOS2UNIX_GLOB=	Makefile.* *.c* *.h
 SHEBANG_FILES=	lib-src/lv2/build
 USE_GITHUB=	yes
 
-OPTIONS_DEFINE=	NLS DEBUG DOCS DYNLOAD FFMPEG FLAC ID3TAG LADSPA LAME LV2 \
-		MAD MOD_SCRIPT_PIPE MOD_NYQ_BENCH SBSMS SOUNDTOUCH TWOLAME VAMP VORBIS VST
+OPTIONS_DEFINE=	DEBUG DOCS DYNLOAD FFMPEG FLAC ID3TAG LADSPA LAME LV2 MAD \
+		MOD_NYQ_BENCH MOD_SCRIPT_PIPE NLS SBSMS SOUNDTOUCH STATIC_WX \
+		TWOLAME VAMP VORBIS VST
 OPTIONS_DEFAULT=	FLAC ID3TAG LADSPA MAD \
 			SBSMS SOUNDTOUCH TWOLAME VAMP VORBIS VST
 
@@ -57,6 +59,7 @@ MOD_SCRIPT_PIPE_DESC=	mod-script-pipe scripting support
 MOD_NYQ_BENCH_DESC=	Enable Nyquist Workbench
 SBSMS_DESC=	Use libsbsms for pitch and tempo changing
 SOUNDTOUCH_DESC=	Use libSoundTouch for pitch and tempo changing
+STATIC_WX_DESC=	Link wx statically
 TAGLIB_DESC=	Use TagLib for metadata support
 TWOLAME_DESC=	Use libtwolame for MP2 export support
 VAMP_DESC=	Vamp plug-in support
@@ -127,6 +130,8 @@ SOUNDTOUCH_CONFIGURE_WITH=	soundtouch=system
 SOUNDTOUCH_LIB_DEPENDS=	libSoundTouch.so:audio/soundtouch
 
 SSE_CONFIGURE_ENABLE=	sse
+
+STATIC_WX_ENABLE=	static-wx
 
 TWOLAME_CONFIGURE_WITH=	libtwolame=system
 TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
