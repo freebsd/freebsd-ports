@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clutter
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
