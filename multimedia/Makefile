@@ -459,6 +459,7 @@
     SUBDIR += webcamd
     SUBDIR += webcamoid
     SUBDIR += webvfx-qt5
+    SUBDIR += wf-recorder
     SUBDIR += win32-codecs
     SUBDIR += winff
     SUBDIR += x264
