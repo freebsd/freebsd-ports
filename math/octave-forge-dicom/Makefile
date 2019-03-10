@@ -12,6 +12,8 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
+BROKEN=		does not build with octave>=5.1.0
+
 LIB_DEPENDS+=	libgdcmCommon.so:devel/gdcm
 
 # OCTSRC is the name of the directory of the package.

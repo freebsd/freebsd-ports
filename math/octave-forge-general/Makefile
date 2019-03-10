@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-general
 PORTVERSION=	2.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

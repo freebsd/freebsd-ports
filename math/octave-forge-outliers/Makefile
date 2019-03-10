@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-outliers
 PORTVERSION=	0.13.9
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

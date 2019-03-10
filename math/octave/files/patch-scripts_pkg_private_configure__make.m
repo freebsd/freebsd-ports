@@ -1,6 +1,6 @@
---- scripts/pkg/private/configure_make.m.orig	2018-04-30 17:03:56 UTC
+--- scripts/pkg/private/configure_make.m.orig	2019-02-23 17:33:37 UTC
 +++ scripts/pkg/private/configure_make.m
-@@ -87,7 +87,7 @@ function configure_make (desc, packdir, 
+@@ -91,7 +91,7 @@ function configure_make (desc, packdir, verbose)
      endif
  
      if (exist (fullfile (src, "Makefile"), "file"))

@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-mapping
 PORTVERSION=	1.2.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
