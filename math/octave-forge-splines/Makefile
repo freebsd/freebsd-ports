@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-splines
 PORTVERSION=	1.3.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

@@ -1,6 +1,6 @@
---- libinterp/corefcn/sysdep.cc.orig	2018-04-30 17:03:56 UTC
+--- libinterp/corefcn/sysdep.cc.orig	2019-02-23 17:33:37 UTC
 +++ libinterp/corefcn/sysdep.cc
-@@ -58,6 +58,10 @@ along with Octave; see the file COPYING.
+@@ -58,6 +58,10 @@ along with Octave; see the file COPYING.  If not, see
  #  include <omp.h>
  #endif
  
@@ -11,7 +11,7 @@
  #include "cmd-edit.h"
  #include "file-ops.h"
  #include "lo-mappers.h"
-@@ -92,6 +96,7 @@ along with Octave; see the file COPYING.
+@@ -92,6 +96,7 @@ along with Octave; see the file COPYING.  If not, see
  static void
  BSD_init (void)
  {
