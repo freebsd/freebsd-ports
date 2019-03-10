@@ -8,6 +8,7 @@ share/drawpile/drawpile/i18n/drawpile_de.qm
 share/drawpile/drawpile/i18n/drawpile_fi.qm
 share/drawpile/drawpile/i18n/drawpile_ja.qm
 share/drawpile/drawpile/i18n/drawpile_ru.qm
+share/drawpile/drawpile/i18n/drawpile_vi.qm
 share/drawpile/drawpile/i18n/drawpile_zh.qm
 share/drawpile/drawpile/palettes/Breeze.gpl
 share/drawpile/drawpile/palettes/DB32.gpl
@@ -84,8 +85,11 @@ share/drawpile/drawpile/theme/dark/object-flip-vertical.svg
 share/drawpile/drawpile/theme/dark/object-locked.svg
 share/drawpile/drawpile/theme/dark/object-rotate-left.svg
 share/drawpile/drawpile/theme/dark/object-rotate-right.svg
+share/drawpile/drawpile/theme/dark/security-high.svg
+share/drawpile/drawpile/theme/dark/security-medium.svg
 share/drawpile/drawpile/theme/dark/select-rectangular.svg
 share/drawpile/drawpile/theme/dark/transform-rotate.svg
+share/drawpile/drawpile/theme/dark/window-pin.svg
 share/drawpile/drawpile/theme/dark/zoom-in.svg
 share/drawpile/drawpile/theme/dark/zoom-original.svg
 share/drawpile/drawpile/theme/dark/zoom-out.svg
@@ -153,8 +157,11 @@ share/drawpile/drawpile/theme/light/object-flip-vertical.svg
 share/drawpile/drawpile/theme/light/object-locked.svg
 share/drawpile/drawpile/theme/light/object-rotate-left.svg
 share/drawpile/drawpile/theme/light/object-rotate-right.svg
+share/drawpile/drawpile/theme/light/security-high.svg
+share/drawpile/drawpile/theme/light/security-medium.svg
 share/drawpile/drawpile/theme/light/select-rectangular.svg
 share/drawpile/drawpile/theme/light/transform-rotate.svg
+share/drawpile/drawpile/theme/light/window-pin.svg
 share/drawpile/drawpile/theme/light/zoom-in.svg
 share/drawpile/drawpile/theme/light/zoom-original.svg
 share/drawpile/drawpile/theme/light/zoom-out.svg
