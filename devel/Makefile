@@ -3381,6 +3381,7 @@
     SUBDIR += p5-Set-Tiny
     SUBDIR += p5-Shape
     SUBDIR += p5-Shell-Base
+    SUBDIR += p5-Shell-Config-Generate
     SUBDIR += p5-Shell-EnvImporter
     SUBDIR += p5-Shell-Guess
     SUBDIR += p5-Shell-Parser
