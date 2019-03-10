@@ -1946,6 +1946,7 @@
     SUBDIR += p5-Algorithm-Permute
     SUBDIR += p5-Algorithm-SVM
     SUBDIR += p5-Alias
+    SUBDIR += p5-Alien-Base-ModuleBuild
     SUBDIR += p5-Alien-Build
     SUBDIR += p5-Alien-SDL
     SUBDIR += p5-Alzabo

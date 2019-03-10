@@ -1,0 +1,5 @@
+Module::Build subclass for building Alien:: modules and their libraries
+
+For new development use Alien::Build and alienfile instead.
+
+WWW: https://metacpan.org/pod/Alien::Base::ModuleBuild

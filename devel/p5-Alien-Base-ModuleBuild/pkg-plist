@@ -1,0 +1,15 @@
+%%SITE_PERL%%/Alien/Base/ModuleBuild.pm
+%%SITE_PERL%%/Alien/Base/ModuleBuild/API.pod
+%%SITE_PERL%%/Alien/Base/ModuleBuild/Authoring.pod
+%%SITE_PERL%%/Alien/Base/ModuleBuild/Cabinet.pm
+%%SITE_PERL%%/Alien/Base/ModuleBuild/FAQ.pod
+%%SITE_PERL%%/Alien/Base/ModuleBuild/File.pm
+%%SITE_PERL%%/Alien/Base/ModuleBuild/Repository.pm
+%%SITE_PERL%%/Alien/Base/ModuleBuild/Repository/FTP.pm
+%%SITE_PERL%%/Alien/Base/ModuleBuild/Repository/HTTP.pm
+%%SITE_PERL%%/Alien/Base/ModuleBuild/Repository/Local.pm
+%%SITE_PERL%%/Alien/Base/ModuleBuild/Utils.pm
+%%PERL5_MAN3%%/Alien::Base::ModuleBuild.3.gz
+%%PERL5_MAN3%%/Alien::Base::ModuleBuild::API.3.gz
+%%PERL5_MAN3%%/Alien::Base::ModuleBuild::Authoring.3.gz
+%%PERL5_MAN3%%/Alien::Base::ModuleBuild::FAQ.3.gz
