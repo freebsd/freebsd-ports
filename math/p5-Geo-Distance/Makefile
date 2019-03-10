@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-Distance
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	math perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-GIS-Distance>=0.11:math/p5-GIS-Distance
+RUN_DEPENDS=	p5-Const-Fast>=0.014:devel/p5-Const-Fast \
+		p5-GIS-Distance>=0.13:math/p5-GIS-Distance
 TEST_DEPENDS=	p5-Test2-Suite>=0.000094:devel/p5-Test2-Suite
 
 USES=		perl5
