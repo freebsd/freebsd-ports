@@ -13,6 +13,8 @@ COMMENT=	Amateur Radio logging application
 
 LICENSE=	GPLv2
 
+BROKEN=		Fatal: (10022) Can't find unit GL used by TAOpenGL
+
 LIB_DEPENDS=	libhamlib.so:comms/hamlib
 
 USES=		fpc lazarus:flavors shebangfix ssl:run dos2unix mysql
