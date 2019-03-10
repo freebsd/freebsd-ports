@@ -3,7 +3,7 @@
 PORTNAME=		libheif
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.3.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		graphics
 
 MAINTAINER=		me@sebastiansteinmetz.ch
