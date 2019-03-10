@@ -3382,6 +3382,7 @@
     SUBDIR += p5-Shape
     SUBDIR += p5-Shell-Base
     SUBDIR += p5-Shell-EnvImporter
+    SUBDIR += p5-Shell-Guess
     SUBDIR += p5-Shell-Parser
     SUBDIR += p5-Shell-Source
     SUBDIR += p5-ShipIt
