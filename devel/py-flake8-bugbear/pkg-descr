@@ -1,0 +1,5 @@
+flake8-bugbear is a plugin for Flake8 finding likely bugs and design problems in
+your program. It contains warnings that don't belong in pyflakes and
+pycodestyle.
+
+WWW: https://github.com/PyCQA/flake8-bugbear
