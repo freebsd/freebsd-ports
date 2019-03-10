@@ -1,6 +1,6 @@
 --- libsrc/csg/Makefile.in.orig	2014-10-06 11:04:37 UTC
 +++ libsrc/csg/Makefile.in
-@@ -285,7 +285,7 @@ meshsurf.hpp solid.hpp triapprox.hpp csg
+@@ -285,7 +285,7 @@ meshsurf.hpp solid.hpp triapprox.hpp csgeom.hpp edgefl
  polyhedra.hpp specpoin.hpp csg.hpp explicitcurve2d.hpp identify.hpp   \
  revolution.hpp spline3d.hpp vscsg.hpp
  

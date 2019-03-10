@@ -1,6 +1,6 @@
---- libsrc/visualization/Makefile.in.orig	2016-04-21 11:00:04 UTC
+--- libsrc/visualization/Makefile.in.orig	2014-10-06 11:04:37 UTC
 +++ libsrc/visualization/Makefile.in
-@@ -275,7 +275,7 @@ noinst_HEADERS = meshdoc.hpp mvdraw.hpp 
+@@ -275,7 +275,7 @@ noinst_HEADERS = meshdoc.hpp mvdraw.hpp vispar.hpp \
  visual.hpp vssolution.hpp
  
  include_HEADERS = soldata.hpp
