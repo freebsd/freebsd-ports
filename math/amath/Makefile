@@ -13,6 +13,9 @@ COMMENT=	Simple command line calculator
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
+NOT_FOR_ARCHS_REASON=	Must define endianness
+
 USES=		gmake
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 HAS_CONFIGURE=	yes
