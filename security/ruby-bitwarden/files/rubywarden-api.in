@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# Created by: Mark Felder <feld@FreeBSD.org>
+# $FreeBSD$
+#
+
+# PROVIDE: rubywarden-api
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable `rubywarden-api':
+#
+# rubywarden_api_enable="YES"
+
+. /etc/rc.subr
+name=rubywarden_api
+
+rcvar=rubywarden_api_enable
+load_rc_config ${name}
+
+: ${rubywarden_api_enable:=NO}
+: ${rubywarden_api_port:=4567}
+: ${rubywarden_api_signups:=NO}
+: ${rubywarden_api_user:=www}
+: ${rubywarden_api_group:=www}
+: ${rubywarden_api_chdir=/usr/local/www/rubywarden}
+
+pidfile="/var/run/rubywarden/${name}.pid"
+procname=%%RUBY_WITH_SUFFIX%%
+command="%%PREFIX%%/bin/rackup"
+command_args="-P ${pidfile} -p ${rubywarden_api_port} -E production config.ru 2>&1 | logger -t rubywarden &"
+start_precmd="start_precmd"
+
+start_precmd()
+{
+        if [ ! -e /var/run/rubywarden ] ; then
+                install -d -o ${rubywarden_api_user} -g ${rubywarden_api_group} /var/run/rubywarden;
+        fi
+
+        checkyesno rubywarden_api_signups
+        if [ "$?" -eq 0 ]; then
+                export ALLOW_SIGNUPS=1
+                echo "Bitwarden Signups Enabled"
+        fi
+}
+
+run_rc_command "$1"
