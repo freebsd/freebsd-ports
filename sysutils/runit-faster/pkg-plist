@@ -34,6 +34,7 @@ bin/svmod
 @sample %%RUNITDIR%%/core-services/92-nfs.sh.sample
 %%RUNITDIR%%/core-services/93-ctld.sh
 %%RUNITDIR%%/core-services/95-mount-late.sh
+%%RUNITDIR%%/core-services/95-swap-late.sh
 %%RUNITDIR%%/core-services/99-binmisc.sh
 %%RUNITDIR%%/core-services/99-start-jails.sh
 %%RUNITDIR%%/ctrlaltdel
