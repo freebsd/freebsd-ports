@@ -2,7 +2,7 @@
 
 PORTNAME=	diorite
 PORTVERSION=	0.2.1
-PORTREVSION=	1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel
 
 MAINTAINER=	ports@FreeBSD.org
