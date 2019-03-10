@@ -234,6 +234,7 @@
     SUBDIR += bouml-doc
     SUBDIR += bpython
     SUBDIR += breakpad
+    SUBDIR += brz
     SUBDIR += bsdbuild
     SUBDIR += bsdcflow
     SUBDIR += bsdowl
