@@ -1,0 +1,8 @@
+The Web Application Description Language is an XML vocabulary for
+describing the capabilities of HTTP resources. wadllib can be used in
+conjunction with an HTTP library to navigate and manipulate those
+resources.
+
+This project is also part of https://launchpad.net/lazr
+
+WWW: https://launchpad.net/wadllib
