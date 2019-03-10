@@ -1,0 +1,7 @@
+launchpadlib is an open-source Python library that lets you treat the
+HTTP resources published by Launchpad's web service as Python objects
+responding to a standard set of commands. With launchpadlib you can
+integrate your applications into Launchpad without knowing a lot about
+HTTP client programming.
+
+WWW: https://help.launchpad.net/API/launchpadlib

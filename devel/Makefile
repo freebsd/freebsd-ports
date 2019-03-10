@@ -4754,6 +4754,7 @@
     SUBDIR += py-knack
     SUBDIR += py-kqueue
     SUBDIR += py-lark-parser
+    SUBDIR += py-launchpadlib
     SUBDIR += py-lazr.config
     SUBDIR += py-lazr.delegates
     SUBDIR += py-lazr.restfulclient
