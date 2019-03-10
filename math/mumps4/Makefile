@@ -1,9 +1,8 @@
 # Created by: Pedro Giffuni
 # $FreeBSD$
 
-PORTNAME=	mumps
-PORTVERSION=	4.10.0	# Please do not upgrade to 5+: if needed repocopy to math/mumps5
-PORTREVISION=	12
+PORTNAME=	mumps4
+PORTVERSION=	4.10.0	# Please do not upgrade to 5+: use math/mumps
 CATEGORIES=	math
 MASTER_SITES=	http://mumps.enseeiht.fr/		\
 		http://graal.ens-lyon.fr/MUMPS/		\
@@ -39,7 +38,7 @@ USE_LDCONFIG=	yes
 VEM=		${PORTVERSION:R:R}
 LIBS=		cmumps dmumps mumps_common pord smumps zmumps
 
-CONFLICTS=	mumps-5*
+CONFLICTS=	mumps-edf-5*
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math
@@ -96,13 +95,16 @@ pre-build:
 .endif
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/lib/lib*.a ${STAGEDIR}${PREFIX}/lib
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/lib/lib*.a ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	${INSTALL_LIB} ${WRKSRC}/lib/lib*.so.${VEM} ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libseq/libmpiseq.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libseq/libmpiseq.a ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	${INSTALL_LIB} ${WRKSRC}/libseq/libmpiseq*.so.${VEM} ${STAGEDIR}${PREFIX}/lib
 .for lib in ${LIBS}
-	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf lib${lib}.so.${VEM} ${STAGEDIR}${PREFIX}/lib/lib${lib}.so)
+	(cd ${STAGEDIR}${PREFIX}/lib &&	\
+		${LN} -sf lib${lib}.so.${VEM} ${STAGEDIR}${PREFIX}/lib/lib${lib}4.so)
 . endfor
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/userguide_${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}

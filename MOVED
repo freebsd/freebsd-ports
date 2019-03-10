@@ -11679,3 +11679,4 @@ x11/altyo||2019-03-06|Has expired: Broken for more than 6 months
 x11/pantheon-terminal||2019-03-06|Has expired: Broken for more than 6 months
 x11-wm/e-module-everything-websearch||2019-03-06|Has expired: Broken for more than 6 months
 net-mgmt/py-pysnmp-apps|net-mgmt/py-snmpclitools|2019-02-15|Renamed upstream
+math/mumps|math/mumps4|2019-03-10|MUMPS 4 is the legacy version
