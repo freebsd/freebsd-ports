@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Cockatrice
-PORTVERSION=	2.6.2.g2018.12.21
-PORTREVISION=	2
+PORTVERSION=	2.7.0
 CATEGORIES=	games
 
 MAINTAINER=	sbruno@FreeBSD.org
@@ -15,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USES=		cmake compiler:c++11-lib qt:5
-USE_QT=		buildtools_build concurrent core network qmake_build widgets
+USE_QT=		buildtools_build concurrent core network qmake_build websockets widgets
 USE_GITHUB=	yes
-GH_TAGNAME=	2018-12-20-Release-2.6.2
+GH_TAGNAME=	2019-03-04-Release-2.7.0
 
 INSTALLS_ICONS=	yes
 DATADIR=	${PREFIX}/share/${PORTNAME:tl}
@@ -36,7 +35,7 @@ COCKATRICE_CMAKE_ON=	-DWITH_CLIENT=ON -DWITH_ORACLE=ON
 COCKATRICE_CMAKE_OFF=	-DWITH_CLIENT=OFF -DWITH_ORACLE=OFF
 
 COCKATRICE_USE=		qt=multimedia,printsupport,svg,linguisttools_build,gui
-SERVATRICE_USE=		qt=sql,sql-mysql,websockets
+SERVATRICE_USE=		qt=sql,sql-mysql
 SERVATRICE_USE+=	RC_SUBR=servatrice
 
 MYSQL_USES+=		mysql:server
