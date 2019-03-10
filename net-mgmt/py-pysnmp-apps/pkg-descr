@@ -1,5 +1,0 @@
-PySNMP is fully functional SNMP v1, v2c and v3 engine (agent and manager)
-written entirely in Python.  The -apps distribution contains command-line
-workalikes for snmpwalk, snmpget, etc. written using the PySNMP module.
-
-WWW: http://snmplabs.com/pysnmp/
