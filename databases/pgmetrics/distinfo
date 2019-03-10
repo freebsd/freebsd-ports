@@ -1,6 +1,6 @@
-TIMESTAMP = 1550247358
-SHA256 (rapidloop-pgmetrics-v1.6.0_GH0.tar.gz) = 02db73b3529d269c0655dadd8ec65827c8174980c83cf5d396da18147d7a451a
-SIZE (rapidloop-pgmetrics-v1.6.0_GH0.tar.gz) = 39665
+TIMESTAMP = 1552237342
+SHA256 (rapidloop-pgmetrics-v1.6.1_GH0.tar.gz) = d64fecd64d0db073c070e1ccab0e45191168bec535a0d1fb8150abe92c700ce8
+SIZE (rapidloop-pgmetrics-v1.6.1_GH0.tar.gz) = 42808
 SHA256 (dustin-go-humanize-bb3d318650d4_GH0.tar.gz) = 2528a929daba61ff84ee81b397321b022b2f1cc134068f0afac5edaeb4894894
 SIZE (dustin-go-humanize-bb3d318650d4_GH0.tar.gz) = 16387
 SHA256 (howeyc-gopass-bf9dde6d0d2c_GH0.tar.gz) = 4f69179eda2622017750b469868d78c72e9c83da8c8af4d06d758b0876515dfb
