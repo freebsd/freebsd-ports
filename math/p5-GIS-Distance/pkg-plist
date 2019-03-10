@@ -4,6 +4,7 @@
 %%SITE_PERL%%/GIS/Distance/GreatCircle.pm
 %%SITE_PERL%%/GIS/Distance/Haversine.pm
 %%SITE_PERL%%/GIS/Distance/MathTrig.pm
+%%SITE_PERL%%/GIS/Distance/Null.pm
 %%SITE_PERL%%/GIS/Distance/Polar.pm
 %%SITE_PERL%%/GIS/Distance/Vincenty.pm
 %%PERL5_MAN3%%/GIS::Distance.3.gz
@@ -12,5 +13,6 @@
 %%PERL5_MAN3%%/GIS::Distance::GreatCircle.3.gz
 %%PERL5_MAN3%%/GIS::Distance::Haversine.3.gz
 %%PERL5_MAN3%%/GIS::Distance::MathTrig.3.gz
+%%PERL5_MAN3%%/GIS::Distance::Null.3.gz
 %%PERL5_MAN3%%/GIS::Distance::Polar.3.gz
 %%PERL5_MAN3%%/GIS::Distance::Vincenty.3.gz
