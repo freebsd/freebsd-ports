@@ -1,0 +1,6 @@
+A self-contained, easily reusable library for parsing, manipulating,
+and generating URIs.
+
+This project is also part of https://launchpad.net/lazr
+
+WWW: https://launchpad.net/lazr.uri
