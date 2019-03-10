@@ -1,0 +1,7 @@
+A programmable client library that takes advantage of the commonalities
+among lazr.restful web services to provide added functionality on top of
+wadllib.
+
+This project is also part of https://launchpad.net/lazr
+
+WWW: https://launchpad.net/lazr.uri
