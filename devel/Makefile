@@ -4595,6 +4595,7 @@
     SUBDIR += py-five.localsitemanager
     SUBDIR += py-fixtures
     SUBDIR += py-flake8
+    SUBDIR += py-flake8-bugbear
     SUBDIR += py-flake8-builtins
     SUBDIR += py-flake8-docstrings
     SUBDIR += py-flake8-import-order
