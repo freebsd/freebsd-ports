@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flask-marshmallow
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,5 +21,11 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	SQLALCHEMY
+SQLALCHEMY_DESC=SQLAlchemy support
+
+SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask-sqlalchemy>=0:databases/py-flask-sqlalchemy@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}marshmallow-sqlalchemy>=0.13.0:databases/py-marshmallow-sqlalchemy@${PY_FLAVOR}
 
 .include <bsd.port.mk>
