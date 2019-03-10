@@ -4,7 +4,7 @@
 PORTNAME=	speedcrunch
 PORTVERSION=	0.12.0
 DISTVERSIONSUFFIX=	-${BB_COMMIT}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
@@ -17,16 +17,16 @@ USES=		cmake qt:5
 
 BB_ACCOUNT=	heldercorreia
 BB_PROJECT=	${PORTNAME}
-BB_COMMIT=	7f2565d6a0ad
+BB_COMMIT=	c0fc9c68d292
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
-USE_QT=		buildtools_build qmake_build core gui help widgets
+USE_QT=		buildtools_build qmake_build core gui help sql widgets
 USE_XORG=	x11
 
 post-patch:
-# Remove custom options for compiler warnings
-	@${REINPLACE_CMD} -e 's|-W[-_[:alnum:]]*||g' \
+	@${REINPLACE_CMD} -e 's|-W[-_[:alnum:]]*|| ; s|metainfo|appdata| \
+	    ; s|master|${PORTVERSION}-git-${BB_COMMIT}|' \
 		${CMAKE_SOURCE_PATH}/CMakeLists.txt
 
 .include <bsd.port.mk>
