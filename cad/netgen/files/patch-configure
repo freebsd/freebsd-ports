@@ -1,6 +1,6 @@
 --- configure.orig	2014-10-06 11:04:36 UTC
 +++ configure
-@@ -9219,7 +9219,7 @@ $as_echo_n "checking whether the $compil
+@@ -9219,7 +9219,7 @@ $as_echo_n "checking whether the $compiler linker ($LD
    hardcode_minus_L=no
    hardcode_shlibpath_var=unsupported
    inherit_rpath=no
@@ -45,7 +45,7 @@
        else
  	ld_shlibs=no
        fi
-@@ -10142,7 +10142,7 @@ $as_echo "$lt_cv_irix_exported_symbol" >
+@@ -10142,7 +10142,7 @@ $as_echo "$lt_cv_irix_exported_symbol" >&6; }
  	hardcode_direct_absolute=yes
  	if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
  	  archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'

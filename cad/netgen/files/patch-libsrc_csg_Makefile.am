@@ -1,6 +1,6 @@
 --- libsrc/csg/Makefile.am.orig	2014-08-29 09:54:06 UTC
 +++ libsrc/csg/Makefile.am
-@@ -5,7 +5,7 @@ polyhedra.hpp specpoin.hpp csg.hpp expli
+@@ -5,7 +5,7 @@ polyhedra.hpp specpoin.hpp csg.hpp explicitcurve2d.hpp
  revolution.hpp spline3d.hpp vscsg.hpp
  
  

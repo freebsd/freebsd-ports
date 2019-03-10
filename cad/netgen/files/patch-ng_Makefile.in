@@ -9,7 +9,7 @@
  netgen_SOURCES = demoview.cpp ngappinit.cpp onetcl.cpp parallelfunc.cpp ngpkg.cpp demoview.hpp parallelfunc.hpp togl_1_7.h
  @NGMKL_TRUE@MKL_LIBS = -L$(MKLROOT)/lib/intel64  -lmkl_intel_lp64 -lmkl_gnu_thread -lmkl_core -lmkl_def
  # -lpardiso500-GNU472-X86-64 -lgfortran
-@@ -312,7 +312,7 @@ netgen_LDADD = $(top_builddir)/libsrc/vi
+@@ -312,7 +312,7 @@ netgen_LDADD = $(top_builddir)/libsrc/visualization/li
  	$(top_builddir)/libsrc/csg/libcsg.la \
  	$(top_builddir)/libsrc/interface/libinterface.la \
  	$(top_builddir)/libsrc/meshing/libmesh.la \

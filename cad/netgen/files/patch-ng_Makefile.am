@@ -8,7 +8,7 @@
  
  
  if NGGUI
-@@ -22,7 +22,7 @@ netgen_LDADD = $(top_builddir)/libsrc/vi
+@@ -22,7 +22,7 @@ netgen_LDADD = $(top_builddir)/libsrc/visualization/li
  	$(top_builddir)/libsrc/csg/libcsg.la \
  	$(top_builddir)/libsrc/interface/libinterface.la \
  	$(top_builddir)/libsrc/meshing/libmesh.la \
