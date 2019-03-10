@@ -23,7 +23,7 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libfontconfig.so:x11-fonts/fontconfig \
-		devel/double-conversion
+		libdouble-conversion.so:devel/double-conversion
 
 CONFLICTS=	openscad
 
