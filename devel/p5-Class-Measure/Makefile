@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Class-Measure
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create, compare, and convert units of measurement
 
 LICENSE=	ART10 GPLv1+
