@@ -4756,6 +4756,7 @@
     SUBDIR += py-lark-parser
     SUBDIR += py-lazr.config
     SUBDIR += py-lazr.delegates
+    SUBDIR += py-lazr.uri
     SUBDIR += py-lazy
     SUBDIR += py-lazy-object-proxy
     SUBDIR += py-libiocage
