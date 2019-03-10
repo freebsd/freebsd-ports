@@ -1,13 +1,17 @@
 %%SITE_ARCH%%/GIS/Distance/Fast.pm
+%%SITE_ARCH%%/GIS/Distance/Fast/ALT.pm
 %%SITE_ARCH%%/GIS/Distance/Fast/Cosine.pm
 %%SITE_ARCH%%/GIS/Distance/Fast/GreatCircle.pm
 %%SITE_ARCH%%/GIS/Distance/Fast/Haversine.pm
+%%SITE_ARCH%%/GIS/Distance/Fast/Null.pm
 %%SITE_ARCH%%/GIS/Distance/Fast/Polar.pm
 %%SITE_ARCH%%/GIS/Distance/Fast/Vincenty.pm
 %%SITE_ARCH%%/auto/GIS/Distance/Fast/Fast.so
 %%PERL5_MAN3%%/GIS::Distance::Fast.3.gz
+%%PERL5_MAN3%%/GIS::Distance::Fast::ALT.3.gz
 %%PERL5_MAN3%%/GIS::Distance::Fast::Cosine.3.gz
 %%PERL5_MAN3%%/GIS::Distance::Fast::GreatCircle.3.gz
 %%PERL5_MAN3%%/GIS::Distance::Fast::Haversine.3.gz
+%%PERL5_MAN3%%/GIS::Distance::Fast::Null.3.gz
 %%PERL5_MAN3%%/GIS::Distance::Fast::Polar.3.gz
 %%PERL5_MAN3%%/GIS::Distance::Fast::Vincenty.3.gz
