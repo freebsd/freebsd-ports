@@ -381,7 +381,7 @@
     SUBDIR += mprime
     SUBDIR += mtrxmath
     SUBDIR += multichoose
-    SUBDIR += mumps-edf
+    SUBDIR += mumps
     SUBDIR += mumps4
     SUBDIR += muparser
     SUBDIR += nanoflann

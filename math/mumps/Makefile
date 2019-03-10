@@ -32,7 +32,7 @@ MUMPSVERSION=	${PORTVERSION:R}
 LIBS=		cmumps dmumps mumps_common pord smumps zmumps
 PLIST_SUB=	VE=${VEM} MUMPSVERSION=${MUMPSVERSION}
 
-CONFLICTS=	mumps-4* mumps-mpich-4*
+CONFLICTS=	mumps4-4*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
