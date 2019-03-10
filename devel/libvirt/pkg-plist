@@ -70,7 +70,9 @@ lib/libvirt.so
 lib/libvirt.so.0
 lib/libvirt.so.%%SHLIB_VER%%
 %%NSS%%lib/libnss_libvirt.so.1
+%%NSS%%lib/libnss_libvirt_guest.so.1
 %%NSS%%lib/nss_libvirt.so.1
+%%NSS%%lib/nss_libvirt_guest.so.1
 libdata/pkgconfig/libvirt-admin.pc
 libdata/pkgconfig/libvirt-lxc.pc
 libdata/pkgconfig/libvirt-qemu.pc
