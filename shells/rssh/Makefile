@@ -13,6 +13,9 @@ COMMENT=	Restricted Secure SHell only for sftp/scp/rdist/rsync/CVS
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Abandoned by upstream
+EXPIRATION_DATE=	2019-06-11
+
 GNU_CONFIGURE=	yes
 
 USES=		cpe
