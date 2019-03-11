@@ -142,6 +142,7 @@ include/FL/glut.H
 include/FL/mac.H
 include/FL/math.h
 include/FL/names.h
+include/FL/platform.H
 include/FL/win32.H
 include/FL/x.H
 lib/libfltk.a
