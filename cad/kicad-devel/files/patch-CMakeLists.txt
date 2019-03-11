@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2019-03-11 16:59:38.982264000 +0100
++++ CMakeLists.txt	2019-03-11 17:00:47.354215000 +0100
+@@ -668,8 +668,8 @@ if( KICAD_SCRIPTING OR KICAD_SCRIPTING_MODULES )
+         set( PythonLibs_FIND_VERSION 3.3 )
+     else()
+         # force a python version < 3.0
+-        set( PythonInterp_FIND_VERSION 2.6 )
+-        set( PythonLibs_FIND_VERSION 2.6 )
++        set( PythonInterp_FIND_VERSION 2.7 )
++        set( PythonLibs_FIND_VERSION 2.7 )
+     endif()
+ 
+     find_package( PythonInterp )
+@@ -711,7 +711,7 @@ if( KICAD_SCRIPTING OR KICAD_SCRIPTING_MODULES )
+     if( KICAD_SCRIPTING_PYTHON3 )
+         find_package( PythonLibs 3.3 REQUIRED )
+     else()
+-        find_package( PythonLibs 2.6 REQUIRED )
++        find_package( PythonLibs 2.7 REQUIRED )
+     endif()
+ 
+     if( KICAD_SCRIPTING_WXPYTHON )
