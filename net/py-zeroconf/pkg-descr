@@ -1,3 +1,7 @@
-A pure python implementation of multicast DNS service discovery
+A pure Python implementation of multicast DNS service discovery.
+
+Compatible with:
+- Bonjour
+- Avahi
 
 WWW: https://github.com/jstasiak/python-zeroconf
