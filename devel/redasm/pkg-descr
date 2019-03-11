@@ -1,0 +1,5 @@
+REDasm is an interactive, multiarchitecture disassembler written in modern
+C++11 using Qt5 as UI Framework.  Its core is modular and it can be easily
+extended in order to support new file formats and instruction sets.
+
+WWW: https://redasm.io/
