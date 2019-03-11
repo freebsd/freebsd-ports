@@ -44,7 +44,7 @@ include/saml/util/SAMLConstants.h
 include/saml/version.h
 lib/libsaml.so
 lib/libsaml.so.10
-lib/libsaml.so.10.0.0
+lib/libsaml.so.10.0.1
 libdata/pkgconfig/opensaml.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
