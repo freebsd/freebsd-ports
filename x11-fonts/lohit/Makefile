@@ -2,7 +2,7 @@
 
 PORTNAME=	Lohit
 PORTVERSION=	20140220
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://releases.pagure.org/lohit/
 DISTNAME=	lohit-ttf-${PORTVERSION}

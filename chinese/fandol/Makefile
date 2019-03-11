@@ -3,6 +3,7 @@
 
 PORTNAME=	fandol
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	http://mirrors.ctan.org/fonts/
 DISTNAME=	${PORTNAME}

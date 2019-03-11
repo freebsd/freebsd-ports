@@ -3,6 +3,7 @@
 
 PORTNAME=	league-gothic
 DISTVERSION=	g20140319
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	flo@snakeoilproductions.net

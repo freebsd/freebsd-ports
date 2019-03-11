@@ -3,7 +3,7 @@
 
 PORTNAME=	alef
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://alef.hagilda.com/
 PKGNAMESUFFIX=	-webfont
@@ -15,8 +15,7 @@ COMMENT=	Free multi-lingual font designed for screens
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKDIR}/OFL-license.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/mkfontdir:x11-fonts/mkfontdir \
-		${LOCALBASE}/bin/mkfontscale:x11-fonts/mkfontscale
+BUILD_DEPENDS=	${LOCALBASE}/bin/mkfontscale:x11-fonts/mkfontscale
 
 USES=		zip
 NO_BUILD=	yes

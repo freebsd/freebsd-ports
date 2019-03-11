@@ -3,7 +3,7 @@
 
 PORTNAME=	unfonts
 PORTVERSION=	1.0.2.080608
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	https://kldp.net/unfonts/release/
 PKGNAMESUFFIX=	-${FONTCAT}

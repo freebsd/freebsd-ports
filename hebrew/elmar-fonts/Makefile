@@ -3,7 +3,7 @@
 
 PORTNAME=	elmar
 PORTVERSION=	3.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	hebrew x11-fonts
 MASTER_SITES=	ftp://ftp.elmar.co.il/Portable/fonts/
 PKGNAMESUFFIX=	-fonts

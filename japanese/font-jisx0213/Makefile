@@ -3,7 +3,7 @@
 
 PORTNAME=	jisx0213
 PORTVERSION=	20040425
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www12.ocn.ne.jp/~imamura/ \
 		LOCAL/hrs:yagi

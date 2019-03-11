@@ -3,7 +3,7 @@
 
 PORTNAME=	vietunicode-web1
 PORTVERSION=	2004.04.30
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	SF/vietunicode/VietFonts-Web1/Web1%20Package%20v2004
 DISTNAME=	VietFontsWeb1_ttf

@@ -3,7 +3,7 @@
 
 PORTNAME=	artwiz-ru
 PORTVERSION=	20041031
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	russian x11-fonts
 MASTER_SITES=	http://dev.gentoo.org/~sergey/ \
 		LOCAL/novel

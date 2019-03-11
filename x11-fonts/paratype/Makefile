@@ -3,6 +3,7 @@
 
 PORTNAME=	paratype
 PORTVERSION=	2.005
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.paratype.com/uni/public/
 DISTFILES=	PTSans.zip PTSerif.zip PTMono.zip

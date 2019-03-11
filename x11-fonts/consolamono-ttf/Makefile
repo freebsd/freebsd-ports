@@ -2,7 +2,7 @@
 
 PORTNAME=	consolamono-ttf
 PORTVERSION=	20130127
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://fontlibrary.org/assets/downloads/consolamono/61cc2afcc4eca96efe7c6ebf178d39df/
 DISTNAME=	consolamono

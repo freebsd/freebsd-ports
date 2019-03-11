@@ -3,7 +3,7 @@
 
 PORTNAME=	isabella-ttf
 PORTVERSION=	1.202
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.thibault.org/fonts/isabella/
 DISTNAME=	Isabella-${PORTVERSION}-ttf

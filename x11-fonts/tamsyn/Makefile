@@ -2,6 +2,7 @@
 
 PORTNAME=	tamsyn-font
 DISTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fial.com/~scott/tamsyn-font/download/
 

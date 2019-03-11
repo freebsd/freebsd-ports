@@ -3,6 +3,7 @@
 
 PORTNAME=	GentiumBasic
 PORTVERSION=	1102
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://software.sil.org/downloads/gentium/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

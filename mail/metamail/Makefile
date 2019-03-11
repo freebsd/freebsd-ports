@@ -3,7 +3,7 @@
 
 PORTNAME=	metamail
 PORTVERSION=	2.7
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.funet.fi/pub/unix/mail/metamail/ \
 		ftp://ftp.research.telcordia.com/pub/nsb/
@@ -24,9 +24,9 @@ OPTIONS_SUB=	yes
 
 X11_DESC=		X11 hebrew font support
 X11_BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
-			mkfontscale:x11-fonts/mkfontscale
+			mkfontscale>=0:x11-fonts/mkfontscale
 X11_RUN_DEPENDS=	xloadimage:x11/xloadimage \
-			mkfontdir:x11-fonts/mkfontdir
+			mkfontscale>=0:x11-fonts/mkfontscale
 X11_USE=		XORG=x11
 X11_EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile-x11
 X11_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Makefile-nox11

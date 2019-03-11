@@ -2,6 +2,7 @@
 
 PORTNAME=	spleen
 DISTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/fcambus/spleen/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-font

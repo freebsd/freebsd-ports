@@ -3,7 +3,7 @@
 
 PORTNAME=	hanyangfonts
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	http://ftp.kaist.ac.kr/hangul/fonts/ \
 		ftp://ftp.kaist.ac.kr/hangul/fonts/ \

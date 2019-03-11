@@ -3,7 +3,7 @@
 
 PORTNAME=	baekmukfonts
 PORTVERSION=	2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://ftp.mizi.com/pub/baekmuk/obsoletes/ \
 		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
@@ -18,7 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Hangul fonts for X11(baekmuk)
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
-		mkfontdir:x11-fonts/mkfontdir \
 		mkfontscale:x11-fonts/mkfontscale
 
 FONTLIST=	batang10 batang10b batang12 batang12b batang14 batang14b \

@@ -3,7 +3,7 @@
 
 PORTNAME=	profont
 PORTVERSION=	400
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fonts
 MASTER_SITES=	LOCAL/tobik \
 		http://tobiasjung.name/downloadfile.php?file=profont-x11.zip?dummy/

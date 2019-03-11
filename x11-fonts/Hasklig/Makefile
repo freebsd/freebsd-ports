@@ -3,6 +3,7 @@
 
 PORTNAME=	Hasklig
 DISTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/i-tu/Hasklig/releases/download/${PORTVERSION}/
 

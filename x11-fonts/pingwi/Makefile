@@ -3,7 +3,7 @@
 
 PORTNAME=	pingwi
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.pingwinsoft.ru/system/uploads/16/original/ \
 		http://fbsd.zlonet.ru/distfiles/

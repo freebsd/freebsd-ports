@@ -3,7 +3,7 @@
 
 PORTNAME=	anonymous-pro
 PORTVERSION=	1.002
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.marksimonson.com/assets/content/fonts/
 DISTNAME=	AnonymousPro-${PORTVERSION}

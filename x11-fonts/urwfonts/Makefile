@@ -2,7 +2,7 @@
 
 PORTNAME=	urwfonts
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 DISTNAME=	urw-fonts

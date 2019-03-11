@@ -3,7 +3,7 @@
 
 PORTNAME=	ae_fonts_mono
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	arabic x11-fonts
 MASTER_SITES=	SF/arabeyes/Fonts/ae_fonts
 DISTNAME=	${PORTNAME}

@@ -3,7 +3,7 @@
 
 PORTNAME=	cyr-rfx-${CYR_RFX_ENCODING}
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fonts ukrainian russian
 MASTER_SITES=	ftp://ftp.ptc.spbu.ru/mirror/ftp.inp.nsk.su/%SUBDIR%/ \
 		ftp://ftp.inp.nsk.su/%SUBDIR%/
@@ -14,7 +14,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Cyrillic X11 bitmap fonts from CYR-RFX project
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
-		mkfontdir:x11-fonts/mkfontdir
+		mkfontscale>=0:x11-fonts/mkfontscale
 
 USES=		fonts
 USE_XORG=	x11

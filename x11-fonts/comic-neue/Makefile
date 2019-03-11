@@ -2,6 +2,7 @@
 
 PORTNAME=	comic-neue
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/crozynski/comicneue/archive/v${PORTVERSION}/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/vice-emu/releases
 
@@ -12,7 +13,6 @@ COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
-		mkfontdir:x11-fonts/mkfontdir \
 		mkfontscale:x11-fonts/mkfontscale \
 		xa65:devel/xa65
 LIB_DEPENDS=	libpng.so:graphics/png \

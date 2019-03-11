@@ -3,7 +3,7 @@
 
 PORTNAME=	baekmukfonts
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean
 MASTER_SITES=	http://kldp.net/frs/download.php/1429/
 PKGNAMESUFFIX=	-ttf

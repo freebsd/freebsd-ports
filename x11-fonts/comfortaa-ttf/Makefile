@@ -2,6 +2,7 @@
 
 PORTNAME=	comfortaa-ttf
 PORTVERSION=	3.001
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://orig00.deviantart.net/40a3/f/2017/093/d/4/
 DISTNAME=	comfortaa___font_by_aajohan-d1qr019

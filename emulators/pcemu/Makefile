@@ -3,7 +3,7 @@
 
 PORTNAME=	pcemu
 PORTVERSION=	1.01b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/joerg
 DISTNAME=	pcemu1.01alpha
@@ -12,8 +12,7 @@ MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	8086 PC emulator, by David Hedley
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
-RUN_DEPENDS=	mkfontdir:x11-fonts/mkfontdir \
-		mkfontscale:x11-fonts/mkfontscale
+RUN_DEPENDS=	mkfontscale:x11-fonts/mkfontscale
 
 USE_XORG=	x11 xext
 USES=		dos2unix

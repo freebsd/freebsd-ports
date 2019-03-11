@@ -2,7 +2,7 @@
 
 PORTNAME=	moveable-type-fonts
 PORTVERSION=	20100801
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://s3.amazonaws.com/theleague-production/fonts/
 DISTFILES=	junction.zip \

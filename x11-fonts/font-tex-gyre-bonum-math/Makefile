@@ -2,6 +2,7 @@
 
 PORTNAME=	font-tex-gyre-bonum-math
 DISTVERSION=	1.005
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.gust.org.pl/projects/e-foundry/tg-math/download/
 DISTNAME=	${PORTNAME:S/font-//:S/-//:S/-//}-${DISTVERSION:S/.//}

@@ -3,7 +3,7 @@
 
 PORTNAME=	fonts-indic
 PORTVERSION=	2.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://gentoo.osuosl.org/distfiles/
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	elisa10
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.wheel.gr.jp/~dai/software/
 PKGNAMEPREFIX=	ja-font-

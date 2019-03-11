@@ -3,6 +3,7 @@
 
 PORTNAME=	datalegreya
 PORTVERSION=	0.2017.03.29
+PORTREVISION=	1
 CATEGORIES=	x11-fonts math textproc
 
 MAINTAINER=	thierry@FreeBSD.org

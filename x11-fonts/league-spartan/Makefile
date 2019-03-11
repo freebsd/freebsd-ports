@@ -3,6 +3,7 @@
 
 PORTNAME=	league-spartan
 DISTVERSION=	g20140922
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	flo@snakeoilproductions.net

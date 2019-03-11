@@ -2,6 +2,7 @@
 
 PORTNAME=	nanumfonts
 PORTVERSION=	20160201
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	http://appdown.naver.com/naver/font/NanumFont/setup/ \
 		LOCAL/jkim

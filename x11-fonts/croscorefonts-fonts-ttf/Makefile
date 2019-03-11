@@ -3,6 +3,7 @@
 
 PORTNAME=	croscorefonts
 PORTVERSION=	1.31.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://gsdview.appspot.com/chromeos-localmirror/distfiles/ \
 		LOCAL/sunpoet

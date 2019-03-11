@@ -3,6 +3,7 @@
 
 PORTNAME=	stixfonts
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	thierry@FreeBSD.org

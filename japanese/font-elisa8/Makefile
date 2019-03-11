@@ -3,7 +3,7 @@
 
 PORTNAME=	elisa8
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.bsdbbq.org/~toshi/distfiles/
 PKGNAMEPREFIX=	ja-font-

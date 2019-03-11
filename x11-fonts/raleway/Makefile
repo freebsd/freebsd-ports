@@ -3,6 +3,7 @@
 
 PORTNAME=	raleway
 DISTVERSION=	g20140205
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	flo@snakeoilproductions.net

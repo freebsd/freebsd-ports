@@ -3,7 +3,7 @@
 
 PORTNAME=	artwiz-aleczapka-de
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/artwizaleczapka/iso-8859-1/${PORTVERSION}
 

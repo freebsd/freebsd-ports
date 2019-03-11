@@ -3,6 +3,7 @@
 
 PORTNAME=	junicode
 DISTVERSION=	1.002
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/

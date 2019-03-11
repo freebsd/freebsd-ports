@@ -2,6 +2,7 @@
 
 PORTNAME=	font-tex-gyre-termes-math
 DISTVERSION=	1.543
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.gust.org.pl/projects/e-foundry/tg-math/download/
 DISTNAME=	${PORTNAME:S/font-//:S/-//:S/-//}-${DISTVERSION:S/.//}
