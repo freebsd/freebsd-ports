@@ -123,6 +123,7 @@ WILDMIDI_MESON_ON=	-Dwildmidi=enabled
 WILDMIDI_LIB_DEPENDS=	libWildMidi.so:audio/wildmidi
 
 # Encoder plugins
+VORBISENC_IMPLIES=	VORBIS
 VORBISENC_MESON_ON=	-Dvorbisenc=enabled
 VORBISENC_LIB_DEPENDS=	libvorbisenc.so:audio/libvorbis
 LAME_MESON_ON=		-Dlame=enabled
