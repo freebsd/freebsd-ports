@@ -270,7 +270,6 @@ include/pkcs11/eddsa.h
 include/pkcs11/pkcs11.h
 include/pkcs11/pkcs11f.h
 include/pkcs11/pkcs11t.h
-lib/filter-aaaa.so
 lib/libbind9.a
 lib/libdns.a
 lib/libirs.a
@@ -278,6 +277,7 @@ lib/libisc.a
 lib/libisccc.a
 lib/libisccfg.a
 lib/libns.a
+lib/named/filter-aaaa.so
 man/man1/arpaname.1.gz
 man/man1/bind9-config.1.gz
 man/man1/delv.1.gz
