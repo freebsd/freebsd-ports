@@ -4,7 +4,7 @@
 PORTNAME=	kibana
 PORTVERSION=	6.5.4
 DISTVERSIONSUFFIX=	-linux-x86_64
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		http://artifacts.elastic.co/downloads/kibana/
@@ -33,8 +33,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config/kibana.yml ${STAGEDIR}${ETCDIR}/kibana.yml.sample
 	(cd ${WRKSRC} && \
 		${RM} -r config node optimize && \
-		${COPYTREE_BIN} bin ${STAGEDIR}${WWWDIR} && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} "-not -name bin -type d")
+		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} && \
+		${COPYTREE_BIN} bin ${STAGEDIR}${WWWDIR})
 	${INSTALL} -lrs ${STAGEDIR}${ETCDIR} ${STAGEDIR}${WWWDIR}/config
 
 post-install:
