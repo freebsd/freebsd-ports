@@ -8,4 +8,4 @@ FLTK is designed to be small and modular enough to be statically linked,
 but works fine as a shared library.  FLTK also includes an excellent UI
 builder called FLUID that can be used to create applications in minutes.
 
-WWW: http://www.fltk.org/
+WWW: https://www.fltk.org/

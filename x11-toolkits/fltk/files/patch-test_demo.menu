@@ -1,0 +1,11 @@
+--- test/demo.menu.orig	2019-03-03 08:40:23 UTC
++++ test/demo.menu
+@@ -77,7 +77,7 @@
+ 	@o:Font Tests...:@of
+ 		@of:Fonts:fonts
+ 		@of:UTF-8:utf8
+-	@o:HelpDialog:help
++	@o:HelpDialog:help_dialog
+ 	@o:Input Choice:input_choice
+ 	@o:Preferences:preferences
+ 	@o:Threading:threads
