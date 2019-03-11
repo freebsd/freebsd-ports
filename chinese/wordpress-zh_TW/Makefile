@@ -14,6 +14,7 @@ COMMENT=	State-of-the-art semantic personal publishing platform
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN=		unfetchable
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		php:web
