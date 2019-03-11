@@ -18,8 +18,6 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL20+ =	${EDELIB_WRKSRC}/COPYING
 
-BROKEN=		fails to build
-
 BUILD_DEPENDS=	doxygen:devel/doxygen \
 		jam:devel/jam
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
@@ -79,6 +77,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|"\(panel-applets\)"|"../../lib/ede/\1"|' \
 		${WRKSRC}/ede-panel/Panel.cpp
+	@${REINPLACE_CMD} -e \
+		's| int direction| uint direction|' \
+		${WRKSRC}/pekwm/ActionHandler.??
 
 pre-configure:
 	@(cd ${EDELIB_WRKSRC} \
