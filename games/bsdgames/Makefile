@@ -2,10 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	bsdgames
-PORTVERSION=	5.2.2
+PORTVERSION=	5.5.0
 PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	LOCAL/swills
+MASTER_SITES=	https://github.com/DragonFlyBSD/DragonFlyBSD/archive/ \
+		https://deb.debian.org/debian/pool/main/b/bsdgames/
+DISTFILES=	v${PORTVERSION}.zip \
+		${PORTNAME}_2.17.orig.tar.gz
 
 MAINTAINER=	jockl@pianojockl.org
 COMMENT=	Traditional BSD games taken from DragonFly BSD
@@ -73,17 +76,12 @@ post-install:
 	@${TOUCH} ${STAGEDIR}/var/games/atc_score
 	@${FIND} ${STAGEDIR}/var/games -type f -exec ${MV} {} {}.sample \;
 
-dist:
-	${FETCH_CMD} -o- https://github.com/DragonFlyBSD/DragonFlyBSD/archive/v${PORTVERSION}.zip | \
-		${TAR_CMD} xfv - DragonFlyBSD-${PORTVERSION}/games/\*
-	${MV} DragonFlyBSD-${PORTVERSION}/games bsdgames-${PORTVERSION}
-	${RMDIR} DragonFlyBSD-${PORTVERSION}
-	${TAR_CMD} -cvf bsdgames-${PORTVERSION}.tar bsdgames-${PORTVERSION}
-	${XZ_CMD} -v bsdgames-${PORTVERSION}.tar
-	@${ECHO_CMD}
-	@${ECHO_CMD} '======================================='
-	@${ECHO_CMD} ' UPLOAD THE DISTFILE BEFORE YOU FORGET '
-	@${ECHO_CMD} '======================================='
-	@${ECHO_CMD} 'bsdgames-${PORTVERSION} can be deleted!'
+do-extract:
+	${MKDIR} ${WRKDIR}
+	${TAR} -xzf ${DISTDIR}/v${PORTVERSION}.zip -C ${WRKDIR}
+	${TAR} -xzf ${DISTDIR}/${PORTNAME}_2.17.orig.tar.gz -C ${WRKDIR}
+	${MV} ${WRKDIR}/DragonFlyBSD-${PORTVERSION}/games  ${WRKSRC}
+	${MV} ${WRKDIR}/bsd-games-2.17/sail/*.[ch] ${WRKSRC}/sail/
+	${MV} ${WRKDIR}/bsd-games-2.17/sail/pathnames.h.in ${WRKSRC}/sail/pathnames.h
 
 .include <bsd.port.post.mk>

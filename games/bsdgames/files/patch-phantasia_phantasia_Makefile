@@ -1,0 +1,11 @@
+--- phantasia/phantasia/Makefile.orig	2019-03-07 17:21:59 UTC
++++ phantasia/phantasia/Makefile
+@@ -21,7 +21,7 @@ FILESDIR=	/var/games/phantasia
+ 
+ .ORDER: monsters ${DATAFILES}
+ monsters ${DATAFILES}: monsters.asc setup.c
+-	${.OBJDIR}/../setup/setup.nx -m ${.CURDIR}/../monsters.asc
++	${.OBJDIR}/../setup/setup -m ${.CURDIR}/../monsters.asc
+ 
+ beforeinstall:
+ .for file in ${DATAFILES}

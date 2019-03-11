@@ -1,4 +1,4 @@
---- boggle/boggle/extern.h.orig	2018-06-15 14:40:00 UTC
+--- boggle/boggle/extern.h.orig	2019-03-07 16:44:58 UTC
 +++ boggle/boggle/extern.h
 @@ -33,6 +33,7 @@
   */
