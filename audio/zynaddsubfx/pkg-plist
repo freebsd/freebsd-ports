@@ -1,10 +1,7 @@
 %%GUI%%bin/zynaddsubfx
 %%GUI%%bin/zynaddsubfx-ext-gui
-%%DSSI%%lib/dssi/libzynaddsubfx_dssi.so
 lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX.so
 lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX.ttl
-%%GUI%%lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX_ui.so
-%%GUI%%lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX_ui.ttl
 lib/lv2/ZynAddSubFX.lv2/manifest.ttl
 lib/lv2/ZynAddSubFX.lv2/presets.ttl
 lib/lv2/ZynAddSubFX.lv2presets/Arpeggios.ttl
@@ -67,6 +64,9 @@ lib/lv2/ZynReverb.lv2/ZynReverb.so
 lib/lv2/ZynReverb.lv2/ZynReverb.ttl
 lib/lv2/ZynReverb.lv2/manifest.ttl
 lib/lv2/ZynReverb.lv2/presets.ttl
+%%GUI%%lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX_ui.so
+%%GUI%%lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX_ui.ttl
+%%DSSI%%lib/dssi/libzynaddsubfx_dssi.so
 lib/vst/ZynAddSubFX.so
 lib/vst/ZynAlienWah.so
 lib/vst/ZynChorus.so
@@ -76,6 +76,7 @@ lib/vst/ZynEcho.so
 lib/vst/ZynPhaser.so
 lib/vst/ZynReverb.so
 %%GUI%%share/applications/zynaddsubfx-jack.desktop
+%%GUI%%share/applications/zynaddsubfx-jack-multi.desktop
 %%GUI%%share/applications/zynaddsubfx-alsa.desktop
 %%GUI%%share/applications/zynaddsubfx-oss.desktop
 share/pixmaps/zynaddsubfx.svg
@@ -84,7 +85,7 @@ share/pixmaps/zynaddsubfx.svg
 %%DATADIR%%/banks/Arpeggios/0003-Arpeggio3.xiz
 %%DATADIR%%/banks/Arpeggios/0004-Arpeggio4.xiz
 %%DATADIR%%/banks/Arpeggios/0005-Arpeggio5.xiz
-%%DATADIR%%/banks/Arpeggios/0006-Aporggio6.xiz
+%%DATADIR%%/banks/Arpeggios/0006-Arpeggio6.xiz
 %%DATADIR%%/banks/Arpeggios/0007-Arpeggio7.xiz
 %%DATADIR%%/banks/Arpeggios/0008-Arpeggio8.xiz
 %%DATADIR%%/banks/Arpeggios/0009-Arpeggio9.xiz
