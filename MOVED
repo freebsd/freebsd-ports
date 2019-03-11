@@ -2969,7 +2969,6 @@ x11/wmmsg||2011-12-28|Has expired: No more public distfiles
 x11-toolkits/libgtkeditor||2011-12-28|Has expired: No longer supported upstream, not depended upon anymore
 misc/demoniac||2011-12-28|Has expired: No more upstream, no more public distfiles
 databases/clip||2011-12-28|Has expired: No upstream development for a long time
-x11-toolkits/gtkextra||2011-12-28|Has expired: no longer supported upstream, no more depend on
 www/xpi-mousegestures||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 2
 www/xpi-mozex||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 3
 sysutils/duplicity05||2012-01-01|Has expired: This version is out of date, and the 0.6.x branch is considered stable
@@ -9031,7 +9030,6 @@ net/py-pysimplesoap|net/py-soap2py|2017-03-13|Rename to match upstream naming
 games/trigger-data|games/trigger-rally|2017-03-15|Merged into games/trigger-rally
 devel/py-setuptools27|devel/py27-setuptools|2017-03-16|Renamed to better match other python ports
 devel/py-setuptools33|devel/py33-setuptools|2017-03-16|Renamed to better match other python ports
-devel/py-setuptools34|devel/py34-setuptools|2017-03-16|Renamed to better match other python ports
 devel/py-setuptools35|devel/py35-setuptools|2017-03-16|Renamed to better match other python ports
 devel/py-setuptools36|devel/py36-setuptools|2017-03-16|Renamed to better match other python ports
 devel/rubygem-devise-rails4|devel/rubygem-devise|2017-03-16|Has expired: Please use devel/rubygem-devise instead
@@ -9582,8 +9580,6 @@ databases/py3-apsw|databases/py-apsw@py36|2017-11-30|Moved to a flavored, generi
 databases/py3-bsddb3|databases/py-bsddb3@py36|2017-11-30|Moved to a flavored, generic, version
 databases/py3-mysqlclient|databases/py-mysqlclient@py36|2017-11-30|Moved to a flavored, generic, version
 databases/py3-psycopg2|databases/py-psycopg2@py36|2017-11-30|Moved to a flavored, generic, version
-databases/py34-gdbm|databases/py-gdbm@py34|2017-11-30|Moved to a flavored, generic, version
-databases/py34-sqlite3|databases/py-sqlite3@py34|2017-11-30|Moved to a flavored, generic, version
 databases/py35-gdbm|databases/py-gdbm@py35|2017-11-30|Moved to a flavored, generic, version
 databases/py35-sqlite3|databases/py-sqlite3@py35|2017-11-30|Moved to a flavored, generic, version
 databases/py36-gdbm|databases/py-gdbm@py36|2017-11-30|Moved to a flavored, generic, version
@@ -9664,7 +9660,6 @@ devel/py3-voluptuous|devel/py-voluptuous@py36|2017-11-30|Moved to a flavored, ge
 devel/py3-wcwidth|devel/py-wcwidth@py36|2017-11-30|Moved to a flavored, generic, version
 devel/py3-xdg|devel/py-xdg@py36|2017-11-30|Moved to a flavored, generic, version
 devel/py3-yaml|devel/py-yaml@py36|2017-11-30|Moved to a flavored, generic, version
-devel/py34-setuptools|devel/py-setuptools@py34|2017-11-30|Moved to a flavored, generic, version
 devel/py35-setuptools|devel/py-setuptools@py35|2017-11-30|Moved to a flavored, generic, version
 devel/py36-setuptools|devel/py-setuptools@py36|2017-11-30|Moved to a flavored, generic, version
 dns/py3-dnspython|dns/py-dnspython@py36|2017-11-30|Moved to a flavored, generic, version
@@ -9716,7 +9711,6 @@ textproc/py3-texttable|textproc/py-texttable@py36|2017-11-30|Moved to a flavored
 www/py3-cssutils|www/py-cssutils@py36|2017-11-30|Moved to a flavored, generic, version
 www/py3-httplib2|www/py-httplib2@py36|2017-11-30|Moved to a flavored, generic, version
 www/py3-requests|www/py-requests@py36|2017-11-30|Moved to a flavored, generic, version
-x11-toolkits/py34-tkinter|x11-toolkits/py-tkinter@py34|2017-11-30|Moved to a flavored, generic, version
 x11-toolkits/py35-tkinter|x11-toolkits/py-tkinter@py35|2017-11-30|Moved to a flavored, generic, version
 x11-toolkits/py36-tkinter|x11-toolkits/py-tkinter@py36|2017-11-30|Moved to a flavored, generic, version
 security/py-rekall_gui||2017-11-30|Has expired: PoC that is no longer supported
@@ -9991,10 +9985,8 @@ devel/alf||2018-03-02|Has expired: Abandonware, unused in the ports tree
 net/remmina-plugin-gnome|net/remmina-plugin-secret|2018-03-04|Renamed upstream
 databases/php71-memcache|databases/php-memcache@php71|2018-03-08|Merge into a flavorized version
 databases/php72-memcache|databases/php-memcache@php72|2018-03-08|Merge into a flavorized version
-ftp/php56-fastdfs|ftp/php-fastdfs@php56|2018-03-08|Merge into flavorized version
 ftp/php71-fastdfs|ftp/php-fastdfs@php71|2018-03-08|Merge into flavorized version
 ftp/php72-fastdfs|ftp/php-fastdfs@php72|2018-03-08|Merge into flavorized version
-www/unit-php56|www/unit-php@php56|2018-03-08|Merge into flavorized version
 www/unit-php71|www/unit-php@php71|2018-03-08|Merge into flavorized version
 www/unit-php72|www/unit-php@php72|2018-03-08|Merge into flavorized version
 databases/php70-memcached|databases/php-memcached|2018-03-08|Move to flavorized version
@@ -10248,7 +10240,6 @@ math/digitizer|graphics/engauge-digitizer|2018-06-20|The previously deleted port
 multimedia/qt5-phonon4|multimedia/phonon@qt5|2018-06-21|Moved to a flavored version
 multimedia/qt5-phonon4-designerplugin|multimedia/phonon-designerplugin@qt5|2018-06-21|Moved to a flavored version
 multimedia/qt5-phonon4-gstreamer|multimedia/phonon-gstreamer@qt5|2018-06-21|Moved to a flavored version
-multimedia/qt5-phonon4-vlc|multimedia/phonon-vlc@qt5|2018-06-21|Moved to a flavored version
 net/libproxy-gnome|net/libproxy-gnome2|2018-06-22|Renamed to make slave names consistent
 www/npapi-vlc||2018-06-22|Removed, depends on expired www/libxul
 www/libxul||2018-06-22|Has expired: NPAPI are no longer supported
@@ -11578,7 +11569,6 @@ net-mgmt/icinga||2019-02-04|Removed, depends on expired net-mgmt/icinga-core
 net-mgmt/icli||2019-02-04|Removed, depends on expired net-mgmt/icinga-core
 net-mgmt/icinga-classicweb||2019-02-04|Has expired: Upstream EOLed Icinga 1.x from 2018-12-31
 net-mgmt/pnp-icinga||2019-02-04|Removed, depends on expired net-mgmt/icinga-classicweb
-sysutils/atf-allwinner|devel/atf-sun50i_a64|2019-02-05|Respect the ARM TF-A platform name
 sysutils/yum||2019-02-07|Has expired: Abandoned upstream, does not work with python3
 sysutils/createrepo||2019-02-07|Has expired: Abandoned upstream, does not work with python3
 www/wml||2019-02-08|Removing to be properly added back with svn copy
@@ -11677,8 +11667,7 @@ textproc/elixir-ex_doc||2019-03-06|Has expired: Broken for more than 6 months
 x11/altyo||2019-03-06|Has expired: Broken for more than 6 months
 x11/pantheon-terminal||2019-03-06|Has expired: Broken for more than 6 months
 x11-wm/e-module-everything-websearch||2019-03-06|Has expired: Broken for more than 6 months
-net-mgmt/py-pysnmp-apps|net-mgmt/py-snmpclitools|2019-02-15|Renamed upstream
-math/mumps|math/mumps4|2019-03-10|MUMPS 4 is the legacy version
+net-mgmt/py-pysnmp-apps|net-mgmt/py-snmpclitools|2019-03-06|Renamed upstream
 math/mumps-edf|math/mumps|2019-03-10|Use mumps-edf as MUMPS 5
 textproc/soprano||2019-03-11|Has expired: Qt4 has been EOL since december 2015
 x11-fonts/mkfontdir|x11-fonts/mkfontscale|2019-03-11|Merged into one package
