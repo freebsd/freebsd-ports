@@ -1,4 +1,5 @@
 %%SITE_PERL%%/GIS/Distance.pm
+%%SITE_PERL%%/GIS/Distance/ALT.pm
 %%SITE_PERL%%/GIS/Distance/Constants.pm
 %%SITE_PERL%%/GIS/Distance/Cosine.pm
 %%SITE_PERL%%/GIS/Distance/GreatCircle.pm
@@ -8,6 +9,7 @@
 %%SITE_PERL%%/GIS/Distance/Polar.pm
 %%SITE_PERL%%/GIS/Distance/Vincenty.pm
 %%PERL5_MAN3%%/GIS::Distance.3.gz
+%%PERL5_MAN3%%/GIS::Distance::ALT.3.gz
 %%PERL5_MAN3%%/GIS::Distance::Constants.3.gz
 %%PERL5_MAN3%%/GIS::Distance::Cosine.3.gz
 %%PERL5_MAN3%%/GIS::Distance::GreatCircle.3.gz
