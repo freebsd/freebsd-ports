@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sway
-DISTVERSION=	1.0-rc5
+DISTVERSION=	1.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org

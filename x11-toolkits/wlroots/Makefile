@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wlroots
-DISTVERSION=	0.4.1
+DISTVERSION=	0.5.0
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
