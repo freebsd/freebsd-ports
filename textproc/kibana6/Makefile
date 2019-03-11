@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kibana
-PORTVERSION=	6.4.2
+PORTVERSION=	6.5.4
 DISTVERSIONSUFFIX=	-linux-x86_64
 PORTREVISION=	0
 CATEGORIES=	textproc www
@@ -35,14 +35,17 @@ do-install:
 		${RM} -r config node optimize && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 	${INSTALL} -lrs ${STAGEDIR}${ETCDIR} ${STAGEDIR}${WWWDIR}/config
-	${CHMOD} +x ${STAGEDIR}${WWWDIR}/bin/*
 
 post-install:
 	${ECHO} "@sample ${ETCDIR}/kibana.yml.sample" >> ${TMPPLIST}
 	${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	${REINPLACE_CMD} -e "s|\(${WWWDIR}/bin/.*\)|@mode 0755 \1|" ${TMPPLIST}
 	${ECHO} "@dir(www,www) ${WWWDIR}/data" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/plugins" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/ui/public/factories" >> ${TMPPLIST}
+	${ECHO} "@dir ${WWWDIR}/src/core/public/injected_metadata/__fixtures__/frozen_object_mutation" >> ${TMPPLIST}
+	${ECHO} "@dir ${WWWDIR}/src/server/http/integration_tests" >> ${TMPPLIST}
+	${ECHO} "@dir ${WWWDIR}/src/type_definitions" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
