@@ -1,0 +1,16 @@
+--- phantasia/setup/Makefile.orig	2019-03-07 17:21:37 UTC
++++ phantasia/setup/Makefile
+@@ -2,6 +2,7 @@
+ 
+ PROG=	setup
+ SRCS=	phantglobs.c setup.c
++MK_MAN= no
+ 
+ # for floor()
+ LDADD+=	-lm
+@@ -13,4 +14,4 @@ build-tools: setup.nx
+ # this setup is used in place, it is not installed anywhere
+ install:
+ 
+-.include <bsd.hostprog.mk>
++.include <bsd.prog.mk>

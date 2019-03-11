@@ -1,4 +1,4 @@
---- backgammon/teachgammon/Makefile.orig	2018-06-15 14:40:00 UTC
+--- backgammon/teachgammon/Makefile.orig	2019-03-07 17:01:43 UTC
 +++ backgammon/teachgammon/Makefile
 @@ -1,7 +1,7 @@
  #	@(#)Makefile	8.1 (Berkeley) 5/31/93

@@ -1,4 +1,4 @@
---- boggle/dictfiles/Makefile.orig	2018-06-15 14:40:00 UTC
+--- boggle/dictfiles/Makefile.orig	2018-11-23 03:38:50 UTC
 +++ boggle/dictfiles/Makefile
 @@ -13,9 +13,9 @@ FILESDIR=	${SHAREDIR}/games/boggle
  CLEANFILES=	dictindex dictionary

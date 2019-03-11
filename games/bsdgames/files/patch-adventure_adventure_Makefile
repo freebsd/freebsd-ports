@@ -1,0 +1,10 @@
+--- adventure/adventure/Makefile.orig	2019-03-07 17:13:52 UTC
++++ adventure/adventure/Makefile
+@@ -9,6 +9,6 @@ MAN=	adventure.6
+ CLEANFILES=data.c
+ 
+ data.c: glorkz setup.c
+-	${.OBJDIR}/../setup/setup.nx ${.CURDIR}/../glorkz > data.c
++	${.OBJDIR}/../setup/setup ${.CURDIR}/../glorkz > data.c
+ 
+ .include <bsd.prog.mk>

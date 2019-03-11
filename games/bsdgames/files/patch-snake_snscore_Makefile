@@ -1,4 +1,4 @@
---- snake/snscore/Makefile.orig	2018-06-15 14:40:00 UTC
+--- snake/snscore/Makefile.orig	2018-11-23 03:38:50 UTC
 +++ snake/snscore/Makefile
 @@ -3,7 +3,7 @@
  

@@ -1,3 +1,5 @@
-TIMESTAMP = 1538837076
-SHA256 (bsdgames-5.2.2.tar.xz) = f80bcac0838e9cee60b4c6ab86dee95ba039034691ddf1c28ce26d3a05943f15
-SIZE (bsdgames-5.2.2.tar.xz) = 1773360
+TIMESTAMP = 1552233173
+SHA256 (v5.5.0.zip) = c6afd51d0283e9d5f0911f046824bddf41926c277ce995ab78e128b32737e400
+SIZE (v5.5.0.zip) = 169083630
+SHA256 (bsdgames_2.17.orig.tar.gz) = 066f924aef6c1c5ea946f588e36f303021f5dfc093944738f025d8edbc6fff60
+SIZE (bsdgames_2.17.orig.tar.gz) = 2563311

@@ -1,0 +1,15 @@
+--- adventure/setup/Makefile.orig	2019-03-07 16:48:05 UTC
++++ adventure/setup/Makefile
+@@ -2,10 +2,11 @@
+ 
+ PROG=	setup
+ CFLAGS+=-I${.CURDIR}/..
++MK_MAN= no
+ 
+ build-tools: setup.nx
+ 
+ # this setup is used in place, it is not installed anywhere
+ install:
+ 
+-.include <bsd.hostprog.mk>
++.include <bsd.prog.mk>
