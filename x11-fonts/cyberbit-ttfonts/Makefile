@@ -3,7 +3,7 @@
 
 PORTNAME=	cyberbit-ttfonts
 PORTVERSION=	2.0.20050220
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/cyberbit/
 DISTFILES=	Cyberbit.ZIP 97CyberBase.Doc 97CyberBit.Doc 97CyberCJK.Doc \

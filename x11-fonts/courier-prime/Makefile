@@ -2,6 +2,7 @@
 
 PORTNAME=	courier-prime
 PORTVERSION=	g20180831
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://quoteunquoteapps.com/downloads/
 DISTNAME=	${PORTNAME}

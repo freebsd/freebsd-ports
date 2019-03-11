@@ -3,6 +3,7 @@
 
 PORTNAME=	liberation-fonts-ttf
 PORTVERSION=	2.00.5
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/liberationfonts/liberation-fonts/files/2926169/

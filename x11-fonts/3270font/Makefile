@@ -3,6 +3,7 @@
 PORTNAME=	3270font
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://s3.amazonaws.com/${PORTNAME}/ \
 		https://github.com/rbanffy/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/

@@ -2,6 +2,7 @@
 
 PORTNAME=	vollkorn-ttf
 PORTVERSION=	4.105
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://vollkorn-typeface.com/download/
 DISTNAME=	vollkorn-${PORTVERSION:S|.|-|}

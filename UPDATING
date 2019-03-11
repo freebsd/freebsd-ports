@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20190311:
+  AFFECTS: users of x11/xorg, x11-fonts/mkfontscale, x11-fonts/mkfontdir
+  AUTHOR: zeising@FreeBSD.org
+
+  The x11-fonts/mkfontdir port has been removed and the functionality
+  has been merged into x11-fonts/mkfontscale.  This might cause issues
+  with upgrading.  If you get conflicts between mkfontscale and mkfontdir
+  please remove mkfontdir before upgrading.
+
+  To do this, simply run the following:
+      pkg delete -f mkfontdir
+
+20190311:
   AFFECTS: users of www/igal2
   AUTHOR: rodrigo@freebsd.org
 

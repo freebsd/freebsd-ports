@@ -3,6 +3,7 @@
 
 PORTNAME=	mgopen
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	DEBIAN/pool/main/f/fonts-mgopen
 DISTNAME=	fonts-mgopen_${PORTVERSION}.orig

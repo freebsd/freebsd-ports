@@ -152,7 +152,6 @@
     SUBDIR += mgopen
     SUBDIR += mkbold
     SUBDIR += mkbold-mkitalic
-    SUBDIR += mkfontdir
     SUBDIR += mkfontscale
     SUBDIR += mkitalic
     SUBDIR += mondulkiri

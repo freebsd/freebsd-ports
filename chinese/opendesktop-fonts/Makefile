@@ -3,7 +3,7 @@
 
 PORTNAME=	opendesktop-fonts
 PORTVERSION=	1.4.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES?=	LOCAL/chinsan/fonts
 

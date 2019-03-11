@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=	--with-fontrootdir=${PREFIX}/share/fonts
 CONFIGURE_ENV+=	FONTROOTDIR=${PREFIX}/share/fonts
 .    if !defined(NOFONT)
 USES+=	fonts
-BUILD_DEPENDS+=	mkfontdir:x11-fonts/mkfontdir \
+BUILD_DEPENDS+=	mkfontscale>=0:x11-fonts/mkfontscale \
 				bdftopcf:x11-fonts/bdftopcf
 PLIST_FILES+=	"@comment ${FONTSDIR}/fonts.dir" \
 				"@comment ${FONTSDIR}/fonts.scale"

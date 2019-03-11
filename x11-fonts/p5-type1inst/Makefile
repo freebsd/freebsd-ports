@@ -3,7 +3,7 @@
 
 PORTNAME=	type1inst
 PORTVERSION=	0.6.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fonts perl5
 MASTER_SITES=	SUNSITE/X11/xutils
 PKGNAMEPREFIX=	p5-
@@ -21,8 +21,7 @@ SHEBANG_FILES=	type1inst t1embed
 OPTIONS_DEFINE=	DOCS X11
 OPTIONS_DEFAULT=X11
 
-X11_RUN_DEPENDS=	${LOCALBASE}/bin/mkfontdir:x11-fonts/mkfontdir \
-			${LOCALBASE}/bin/mkfontscale:x11-fonts/mkfontscale
+X11_RUN_DEPENDS=	${LOCALBASE}/bin/mkfontscale:x11-fonts/mkfontscale
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_SCRIPT} type1inst t1embed \

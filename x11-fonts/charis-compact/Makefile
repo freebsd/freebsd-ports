@@ -3,7 +3,7 @@
 
 PORTNAME=	CharisSILCompact
 PORTVERSION=	4.114
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 #unfortunately, the SIL server embeds timestamps in the distfile, so we use a static local copy
 .if defined(MAINTAINER_MODE)

@@ -3,7 +3,7 @@
 
 PORTNAME=	tv-fonts
 PORTVERSION=	1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://dl.bytesex.org/releases/${PORTNAME}/
 
@@ -11,7 +11,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Number of fonts which are useful for TV applications
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
-		mkfontdir:x11-fonts/mkfontdir
+		mkfontscale>=0:x11-fonts/mkfontscale
 
 USES=		gmake fonts tar:bzip2
 MAKE_JOBS_UNSAFE=	yes

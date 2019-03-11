@@ -3,7 +3,7 @@
 
 PORTNAME=	kaistfonts
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 PKGNAMESUFFIX=	-ksc

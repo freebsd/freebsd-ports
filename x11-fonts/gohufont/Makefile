@@ -2,6 +2,7 @@
 
 PORTNAME=	gohufont
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://font.gohu.org/
 

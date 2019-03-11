@@ -2,6 +2,7 @@
 
 PORTNAME=	plex-ttf
 DISTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/IBM/plex/releases/download/v${DISTVERSION}/TrueType${EXTRACT_SUFX}?dummy=/
 

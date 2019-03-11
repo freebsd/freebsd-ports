@@ -2,7 +2,7 @@
 
 PORTNAME=	suxus
 PORTVERSION=	1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://oldhome.schmorp.de/marc/data/ \
 		http://www.atarininja.org/distfiles/

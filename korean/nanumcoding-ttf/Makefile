@@ -2,7 +2,7 @@
 
 PORTNAME=	nanumcoding
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean
 MASTER_SITES=	http://dev.naver.com/frs/download.php/441/ \
 		LOCAL/jkim

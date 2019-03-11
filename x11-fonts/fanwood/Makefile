@@ -2,6 +2,7 @@
 
 PORTNAME=	fanwood
 DISTVERSION=	g20110526
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	flo@snakeoilproductions.net

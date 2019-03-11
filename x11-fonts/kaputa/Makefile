@@ -3,7 +3,7 @@
 
 PORTNAME=	kaputa
 PORTVERSION=	1.000
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.kaputa.com/slword/
 DISTNAME=	${PORTNAME}unicode

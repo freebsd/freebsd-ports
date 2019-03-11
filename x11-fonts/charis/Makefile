@@ -3,7 +3,7 @@
 
 PORTNAME=	CharisSIL
 PORTVERSION=	4.114
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?&format=file&media_id=${MEDIA_ID}&filename=/ \
 		LOCAL/bf

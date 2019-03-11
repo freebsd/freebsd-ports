@@ -2,7 +2,7 @@
 
 PORTNAME=	bitter
 PORTVERSION=	20130930
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.huertatipografica.com/free_download/eo0pZGbJPxy2YyRkWQXx?dummy=
 

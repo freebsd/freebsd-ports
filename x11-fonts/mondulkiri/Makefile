@@ -3,7 +3,7 @@
 
 PORTNAME=	mondulkiri
 PORTVERSION=	2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/khmer/Fonts%20-%20Mondulkiri/Mondulkiri%20Unicode%20Fonts%20v2E3s/
 DISTNAME=	Mondulkiri_Unicode_fonts_V2E3s

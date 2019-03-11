@@ -3,7 +3,7 @@
 
 PORTNAME=	artwiz-fonts
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://kobyla.info/soft/distfiles/ \
 		LOCAL/garga/artwiz/

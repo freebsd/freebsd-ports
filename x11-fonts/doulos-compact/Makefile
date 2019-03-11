@@ -3,7 +3,7 @@
 
 PORTNAME=	DoulosSILCompact
 PORTVERSION=	4.110
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 #unfortunately, the SIL server embeds timestamps in the distfile, so we use a static local copy
 .if defined(MAINTAINER_MODE)

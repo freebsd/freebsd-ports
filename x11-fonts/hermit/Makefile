@@ -2,6 +2,7 @@
 
 PORTNAME=	hermit
 DISTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://pcaro.es/d/
 PKGNAMESUFFIX=	-font

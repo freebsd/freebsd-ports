@@ -2,7 +2,7 @@
 
 PORTNAME=	crosextrafonts
 PORTVERSION=	20130214
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://gsdview.appspot.com/chromeos-localmirror/distfiles/
 PKGNAMESUFFIX=	-caladea

@@ -3,7 +3,7 @@
 
 PORTNAME=	CJKUnifonts
 PORTVERSION=	0.2.20080216.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	LOCAL/chinsan/fonts/:uming \
 		LOCAL/chinsan/fonts/:ukai

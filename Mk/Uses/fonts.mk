@@ -54,8 +54,7 @@ IGNORE=	USES=fonts - invalid ARGS (${fonts_ARGS})
 RUN_DEPENDS+=	fc-cache:x11-fonts/fontconfig
 .endif
 .if !empty(fonts_ARGS:Mfontsdir) || !empty(fonts_ARGS:Mfcfontsdir)
-RUN_DEPENDS+=	mkfontdir:x11-fonts/mkfontdir \
-		mkfontscale:x11-fonts/mkfontscale
+RUN_DEPENDS+=	mkfontscale:x11-fonts/mkfontscale
 .endif
 
 FONTNAME?=	${PORTNAME}

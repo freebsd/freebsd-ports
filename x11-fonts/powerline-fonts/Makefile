@@ -2,6 +2,7 @@
 
 PORTNAME=	powerline-fonts
 PORTVERSION=	0.0.0.2017.07.26
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	swills@FreeBSD.org

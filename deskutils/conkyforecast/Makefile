@@ -3,7 +3,7 @@
 
 PORTNAME=	conkyforecast
 PORTVERSION=	2.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpadlibrarian.net/70673352/ \
 		LOCAL/vg

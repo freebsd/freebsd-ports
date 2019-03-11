@@ -2,7 +2,7 @@
 
 PORTNAME=	symbola
 PORTVERSION=	7.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://users.teilar.gr/~g1951d/
 DISTNAME=	Symbola

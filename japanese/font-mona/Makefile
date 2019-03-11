@@ -3,7 +3,7 @@
 
 PORTNAME=	mona
 PORTVERSION=	2.90
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SF/monafont/monafont/monafont-${PORTVERSION}
 PKGNAMEPREFIX=	ja-font-
@@ -13,7 +13,7 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	12,14,16-dot Kanji fonts
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
-		mkfontdir:x11-fonts/mkfontdir
+		mkfontscale>=0:x11-fonts/mkfontscale
 
 USES=		fonts perl5 tar:bzip2
 USE_PERL5=	build

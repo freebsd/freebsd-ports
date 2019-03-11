@@ -2,7 +2,7 @@
 
 PORTNAME=	crosextrafonts-carlito
 PORTVERSION=	20130920
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://gsdview.appspot.com/chromeos-localmirror/distfiles/
 

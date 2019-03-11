@@ -2,7 +2,7 @@
 
 PORTNAME=	proggy_fonts-ttf
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://upperbounds.net/download/
 DISTFILES=	ProggyClean.ttf.zip ProggySquare.ttf.zip \
