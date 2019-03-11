@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		docker
-PORTVERSION=		18.09.1
+PORTVERSION=		18.09.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=		sysutils
 
@@ -10,8 +10,6 @@ MAINTAINER=		lifanov@FreeBSD.org
 COMMENT=		Open-source application container engine
 
 LICENSE=		APACHE20
-
-BROKEN=			fails to build
 
 PLIST_FILES=		bin/docker
 
