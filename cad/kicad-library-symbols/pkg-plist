@@ -56,6 +56,8 @@
 %%DATADIR%%/library/CPU_NXP_6800.lib
 %%DATADIR%%/library/CPU_NXP_68000.dcm
 %%DATADIR%%/library/CPU_NXP_68000.lib
+%%DATADIR%%/library/CPU_NXP_IMX.dcm
+%%DATADIR%%/library/CPU_NXP_IMX.lib
 %%DATADIR%%/library/CPU_PowerPC.dcm
 %%DATADIR%%/library/CPU_PowerPC.lib
 %%DATADIR%%/library/CPU.dcm
@@ -76,6 +78,8 @@
 %%DATADIR%%/library/Driver_Display.lib
 %%DATADIR%%/library/Driver_FET.dcm
 %%DATADIR%%/library/Driver_FET.lib
+%%DATADIR%%/library/Driver_Haptic.dcm
+%%DATADIR%%/library/Driver_Haptic.lib
 %%DATADIR%%/library/Driver_LED.dcm
 %%DATADIR%%/library/Driver_LED.lib
 %%DATADIR%%/library/Driver_Motor.dcm
@@ -92,6 +96,8 @@
 %%DATADIR%%/library/DSP_Motorola.lib
 %%DATADIR%%/library/DSP_Texas.dcm
 %%DATADIR%%/library/DSP_Texas.lib
+%%DATADIR%%/library/Fiber_Optic.dcm
+%%DATADIR%%/library/Fiber_Optic.lib
 %%DATADIR%%/library/Filter.dcm
 %%DATADIR%%/library/Filter.lib
 %%DATADIR%%/library/FPGA_Lattice.dcm
@@ -124,6 +130,8 @@
 %%DATADIR%%/library/Interface_Ethernet.lib
 %%DATADIR%%/library/Interface_Expansion.dcm
 %%DATADIR%%/library/Interface_Expansion.lib
+%%DATADIR%%/library/Interface_HDMI.dcm
+%%DATADIR%%/library/Interface_HDMI.lib
 %%DATADIR%%/library/Interface_HID.dcm
 %%DATADIR%%/library/Interface_HID.lib
 %%DATADIR%%/library/Interface_LineDriver.dcm
@@ -178,6 +186,8 @@
 %%DATADIR%%/library/MCU_Microchip_PIC24.lib
 %%DATADIR%%/library/MCU_Microchip_PIC32.dcm
 %%DATADIR%%/library/MCU_Microchip_PIC32.lib
+%%DATADIR%%/library/MCU_Microchip_SAMD.dcm
+%%DATADIR%%/library/MCU_Microchip_SAMD.lib
 %%DATADIR%%/library/MCU_Microchip_SAME.dcm
 %%DATADIR%%/library/MCU_Microchip_SAME.lib
 %%DATADIR%%/library/MCU_Microchip_SAML.dcm
@@ -296,8 +306,12 @@
 %%DATADIR%%/library/RF_Amplifier.lib
 %%DATADIR%%/library/RF_Bluetooth.dcm
 %%DATADIR%%/library/RF_Bluetooth.lib
+%%DATADIR%%/library/RF_Filter.dcm
+%%DATADIR%%/library/RF_Filter.lib
 %%DATADIR%%/library/RF_GPS.dcm
 %%DATADIR%%/library/RF_GPS.lib
+%%DATADIR%%/library/RF_GSM.dcm
+%%DATADIR%%/library/RF_GSM.lib
 %%DATADIR%%/library/RF_Mixer.dcm
 %%DATADIR%%/library/RF_Mixer.lib
 %%DATADIR%%/library/RF_Module.dcm
@@ -340,6 +354,8 @@
 %%DATADIR%%/library/Sensor_Voltage.lib
 %%DATADIR%%/library/Sensor.dcm
 %%DATADIR%%/library/Sensor.lib
+%%DATADIR%%/library/Simulation_SPICE.dcm
+%%DATADIR%%/library/Simulation_SPICE.lib
 %%DATADIR%%/library/Switch.dcm
 %%DATADIR%%/library/Switch.lib
 %%DATADIR%%/library/Timer_PLL.dcm
