@@ -11680,3 +11680,4 @@ x11-wm/e-module-everything-websearch||2019-03-06|Has expired: Broken for more th
 net-mgmt/py-pysnmp-apps|net-mgmt/py-snmpclitools|2019-02-15|Renamed upstream
 math/mumps|math/mumps4|2019-03-10|MUMPS 4 is the legacy version
 math/mumps-edf|math/mumps|2019-03-10|Use mumps-edf as MUMPS 5
+textproc/soprano||2019-03-11|Has expired: Qt4 has been EOL since december 2015
