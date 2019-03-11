@@ -7,9 +7,10 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	FIO - flexible IO tester
+COMMENT=	Flexible IO tester
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake tar:bzip2
 
