@@ -9,6 +9,17 @@
    set(WL_DEBUG_FLAGS "-DNDEBUG -DNOPARACHUTE")
  elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
    set(WL_OPTIMIZE_FLAGS "-O3")
+@@ -179,8 +179,8 @@ endif()
+ # Turn some warnings into errors.
+ wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=format-security")
+ wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=return-type")
+-wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=shadow")
+-wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=uninitialized")
++wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Wshadow")
++wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Wuninitialized")
+ 
+ IF (WIN32)
+   add_definitions(-DMINGW_HAS_SECURE_API)
 @@ -225,7 +225,7 @@ if (NOT DEFINED WL_VERSION)
  else (NOT DEFINED WL_VERSION)
    add_custom_target (
