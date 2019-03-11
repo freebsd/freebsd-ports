@@ -1,0 +1,6 @@
+Provides an object interface for a GPS point (e.g. Position, Velocity and
+Time).
+
+This is a re-write of Net::GPSD::Point with the goal of being more re-usable.
+
+WWW: https://metacpan.org/release/GPS-Point
