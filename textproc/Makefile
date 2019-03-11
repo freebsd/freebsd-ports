@@ -1731,7 +1731,6 @@
     SUBDIR += smu
     SUBDIR += so-hunspell
     SUBDIR += soothsayer
-    SUBDIR += soprano
     SUBDIR += source-highlight
     SUBDIR += sowing
     SUBDIR += spellutils
