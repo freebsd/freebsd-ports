@@ -87,10 +87,10 @@ include/xmltooling/validation/ValidatorSuite.h
 include/xmltooling/version.h
 lib/libxmltooling-lite.so
 lib/libxmltooling-lite.so.8
-lib/libxmltooling-lite.so.8.0.3
+lib/libxmltooling-lite.so.8.0.4
 lib/libxmltooling.so
 lib/libxmltooling.so.8
-lib/libxmltooling.so.8.0.3
+lib/libxmltooling.so.8.0.4
 libdata/pkgconfig/xmltooling-lite.pc
 libdata/pkgconfig/xmltooling.pc
 share/xml/xmltooling/catalog.xml

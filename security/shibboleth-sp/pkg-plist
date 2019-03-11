@@ -92,7 +92,7 @@ include/shibsp/util/TemplateParameters.h
 include/shibsp/version.h
 lib/libshibsp.so
 lib/libshibsp.so.8
-lib/libshibsp.so.8.0.3
+lib/libshibsp.so.8.0.4
 lib/shibboleth/adfs.so
 lib/shibboleth/adfs-lite.so
 %%MEMCACHED%%lib/shibboleth/memcache-store.so
@@ -104,7 +104,7 @@ lib/shibboleth/plugins.so
 %%FASTCGI%%lib/shibboleth/shibresponder
 lib/libshibsp-lite.so
 lib/libshibsp-lite.so.8
-lib/libshibsp-lite.so.8.0.3
+lib/libshibsp-lite.so.8.0.4
 libdata/pkgconfig/shibsp-lite.pc
 libdata/pkgconfig/shibsp.pc
 sbin/shibd
