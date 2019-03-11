@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	julia
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.0
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/julia/releases/download/v${PORTVERSION}/
@@ -28,8 +28,9 @@ BUILD_DEPENDS=	patchelf:sysutils/patchelf \
 		pcre2-config:devel/pcre2 \
 		cmake:devel/cmake
 
-USES=		gmake compiler:c++11-lib fortran python:2.7,build perl5
+USES=		gmake compiler:c++11-lib fortran python:2.7,build perl5 shebangfix
 USE_LDCONFIG=	yes
+#SHEBANG_FILES==	${WRKSRC}/share/julia/stdlib/v1.1/Pkg/bin/loop.sh
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
