@@ -7,8 +7,8 @@ bin/texi2any
 bin/texi2dvi
 bin/texi2pdf
 bin/texindex
-lib/texinfo/MiscXS.a
 lib/texinfo/MiscXS.so
+lib/texinfo/Parsetexi.so
 man/man1/info.1.gz
 man/man1/install-info.1.gz
 man/man1/makeinfo.1.gz
@@ -37,6 +37,7 @@ man/man5/texinfo.5.gz
 %%NLS%%share/locale/eo/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/es/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/es/LC_MESSAGES/texinfo_document.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/he/LC_MESSAGES/texinfo.mo
@@ -55,6 +56,7 @@ man/man5/texinfo.5.gz
 %%NLS%%share/locale/pl/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/pt.us-ascii/LC_MESSAGES/texinfo_document.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/pt_BR.us-ascii/LC_MESSAGES/texinfo_document.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/texinfo.mo
@@ -92,15 +94,16 @@ man/man5/texinfo.5.gz
 %%DATADIR%%/Texinfo/Convert/TextContent.pm
 %%DATADIR%%/Texinfo/Convert/UnFilled.pm
 %%DATADIR%%/Texinfo/Convert/Unicode.pm
-%%DATADIR%%/Texinfo/Convert/XSParagraph/TestXS.pm
 %%DATADIR%%/Texinfo/Documentlanguages.pm
 %%DATADIR%%/Texinfo/Encoding.pm
 %%DATADIR%%/Texinfo/MiscXS.pm
 %%DATADIR%%/Texinfo/ModulePath.pm
 %%DATADIR%%/Texinfo/Parser.pm
+%%DATADIR%%/Texinfo/ParserNonXS.pm
 %%DATADIR%%/Texinfo/Report.pm
 %%DATADIR%%/Texinfo/Structuring.pm
 %%DATADIR%%/Texinfo/Transformations.pm
+%%DATADIR%%/Texinfo/XS/parsetexi/Parsetexi.pm
 %%DATADIR%%/Texinfo/XSLoader.pm
 %%DATADIR%%/htmlxref.cnf
 %%DATADIR%%/init/book.pm
