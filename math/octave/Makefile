@@ -3,6 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	math java
 MASTER_SITES=	GNU
 
@@ -37,7 +38,9 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libfreetype.so:print/freetype2 \
 		libdrm.so:graphics/libdrm \
 		libOSMesa.so:graphics/libosmesa \
-		libsundials_arkode.so:math/sundials
+		libsundials_arkode.so:math/sundials \
+		libportaudio.so:audio/portaudio
+#		libsndfile.so:audio/libsndfile # Commented out until this port no longer has vulnerabilities.
 
 USES=		charsetfix fortran gmake libtool perl5 pkgconfig qt:5 readline \
 		tar:xz compiler:c++14-lang \
