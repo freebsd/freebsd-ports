@@ -1,8 +1,8 @@
 bin/qtel
 include/svxlink/AsyncQtApplication.h
 %%STATIC%%lib/libasyncqt.a
-lib/libasyncqt.so.1.4.0
-lib/libasyncqt.so.1.4
+lib/libasyncqt.so.1.5.0
+lib/libasyncqt.so.1.5
 lib/libasyncqt.so
 share/applications/qtel.desktop
 share/qtel/translations/qtel_sv.qm

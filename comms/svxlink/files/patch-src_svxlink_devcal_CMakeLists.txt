@@ -1,9 +1,9 @@
---- src/svxlink/devcal/CMakeLists.txt.orig	2015-11-22 16:03:59 UTC
+--- src/svxlink/devcal/CMakeLists.txt.orig	2018-03-04 18:59:29 UTC
 +++ src/svxlink/devcal/CMakeLists.txt
-@@ -18,3 +18,6 @@ set_target_properties(devcal PROPERTIES
- #set_target_properties(noisegen PROPERTIES
- #  RUNTIME_OUTPUT_DIRECTORY ${RUNTIME_OUTPUT_DIRECTORY}
- #)
+@@ -21,3 +21,6 @@ set_target_properties(devcal PROPERTIES
+ 
+ # Install targets
+ install(TARGETS devcal DESTINATION ${BIN_INSTALL_DIR})
 +
 +# Install targets
 +install(TARGETS devcal DESTINATION ${BIN_INSTALL_DIR})
