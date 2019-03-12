@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	leanprover
 USE_LDCONFIG=	yes
