@@ -13,8 +13,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 WRKSRC_SUBDIR=	src-qt5
+USES=		compiler:c++11-lang gmake pkgconfig qmake ssl qt:5 tar:xz
 USE_QT=		core buildtools_build gui network qmake websockets widgets svg concurrent
-USES=		gmake pkgconfig qt:5 tar:xz qmake ssl
 USE_GL+=	gl
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
