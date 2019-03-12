@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File-Flock-Retry
-PORTVERSION=	0.62
+PORTVERSION=	0.630
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	p5-File-Slurper>=0:devel/p5-File-Slurper \
 		p5-File-chdir>=0:devel/p5-File-chdir
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
