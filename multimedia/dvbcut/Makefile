@@ -20,11 +20,12 @@ LIB_DEPENDS=	liba52.so:audio/liba52 \
 		libavutil.so:multimedia/ffmpeg
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USES=		compiler:c++11-lang desktop-file-utils pkgconfig \
+		qmake:outsource shared-mime-info
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	bernhardu
 GH_PROJECT=	dvbcut-deb
-
-USES=		qmake:outsource pkgconfig desktop-file-utils shared-mime-info
 
 CXXFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libavcodec \
