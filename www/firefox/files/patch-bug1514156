@@ -98,7 +98,7 @@ index 051482fbabbf..a58268096a89 100644
 --- gfx/webrender_bindings/RenderCompositor.cpp
 +++ gfx/webrender_bindings/RenderCompositor.cpp
 @@ -16,6 +16,10 @@
- #include "mozilla/webrender/RenderCompositorANGLE.h"
+ #  include "mozilla/webrender/RenderCompositorANGLE.h"
  #endif
  
 +#ifdef MOZ_WAYLAND
@@ -509,7 +509,7 @@ index 8be1f133d39f..8461e7b9d470 100644
    container->ready_to_draw = false;
  }
  
-@@ -523,4 +528,10 @@ gboolean moz_container_surface_needs_clear(MozContainer *container) {
+@@ -555,6 +560,12 @@ gboolean moz_container_surface_needs_clear(MozContainer *container) {
    container->surface_needs_clear = false;
    return state;
  }
@@ -520,6 +520,8 @@ index 8be1f133d39f..8461e7b9d470 100644
 +  return state;
 +}
  #endif
+ 
+ void moz_container_force_default_visual(MozContainer *container) {
 diff --git widget/gtk/mozcontainer.h widget/gtk/mozcontainer.h
 index e9c218c1bc3e..1ed6f439805d 100644
 --- widget/gtk/mozcontainer.h
@@ -531,11 +533,11 @@ index e9c218c1bc3e..1ed6f439805d 100644
 +  gboolean egl_surface_needs_update;
    gboolean ready_to_draw;
  #endif
- };
-@@ -96,6 +97,7 @@ struct wl_egl_window *moz_container_get_wl_egl_window(MozContainer *container);
- 
- gboolean moz_container_has_wl_egl_window(MozContainer *container);
+   gboolean force_default_visual;
+@@ -100,6 +101,7 @@ gboolean moz_container_has_wl_egl_window(MozContainer *container);
  gboolean moz_container_surface_needs_clear(MozContainer *container);
+ void moz_container_scale_changed(MozContainer *container,
+                                  GtkAllocation *aAllocation);
 +gboolean moz_container_egl_surface_needs_update(MozContainer *container);
  #endif
  
