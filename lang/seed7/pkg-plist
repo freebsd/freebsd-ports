@@ -87,6 +87,7 @@ lib/seed7/lib/console.s7i
 lib/seed7/lib/crc32.s7i
 lib/seed7/lib/cronos16.s7i
 lib/seed7/lib/cronos27.s7i
+lib/seed7/lib/csv.s7i
 lib/seed7/lib/deflate.s7i
 lib/seed7/lib/des.s7i
 lib/seed7/lib/dialog.s7i
