@@ -60,10 +60,10 @@ INSTALL_TARGET?=	install-gcc
 CONFIGURE_ARGS+= --enable-initfini-array
 .endif
 
-.if ${ARCH} == "amd64"
+.if ${HOSTARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-unknown-${OPSYS:tl}${OSREL}
 .else
-CONFIGURE_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
+CONFIGURE_TARGET=	${HOSTARCH}-unknown-${OPSYS:tl}${OSREL}
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
