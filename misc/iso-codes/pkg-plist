@@ -971,6 +971,8 @@ share/locale/zh_HK/LC_MESSAGES/iso_3166.mo
 share/locale/zh_HK/LC_MESSAGES/iso_4217.mo
 share/locale/zh_HK/LC_MESSAGES/iso_639-2.mo
 share/locale/zh_HK/LC_MESSAGES/iso_639.mo
+share/locale/zh_Hant/LC_MESSAGES/iso_639-5.mo
+share/locale/zh_Hant/LC_MESSAGES/iso_639_5.mo
 share/locale/zh_TW/LC_MESSAGES/iso_15924.mo
 share/locale/zh_TW/LC_MESSAGES/iso_3166-1.mo
 share/locale/zh_TW/LC_MESSAGES/iso_3166-2.mo
