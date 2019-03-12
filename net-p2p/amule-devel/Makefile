@@ -19,8 +19,8 @@ LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 
 CONFLICTS=	amule-[0-9]*
 
-USES=		bison desktop-file-utils desktop-file-utils gmake \
-		localbase:ldflags perl5 pkgconfig shebangfix tar:bzip2
+USES=		bison compiler:c++11-lang desktop-file-utils desktop-file-utils \
+		gmake localbase:ldflags perl5 pkgconfig shebangfix tar:bzip2
 USE_PERL5=	build
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
