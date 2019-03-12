@@ -1,0 +1,6 @@
+Portfmt is a tool for formatting FreeBSD Ports Collection Makefiles.
+
+For the time being portfmt concentrates on formatting individual
+variables as such it does not move variables to preferred positions.
+
+WWW: https://github.com/t6/portfmt
