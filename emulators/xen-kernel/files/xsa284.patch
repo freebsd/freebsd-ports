@@ -1,0 +1,31 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: gnttab: set page refcount for copy-on-grant-transfer
+
+Commit 5cc77f9098 ("32-on-64: Fix domain address-size clamping,
+implement"), which introduced this functionality, took care of clearing
+the old page's PGC_allocated, but failed to set the bit (and install the
+associated reference) on the newly allocated one. Furthermore the "mfn"
+local variable was never updated, and hence the wrong MFN was passed to
+guest_physmap_add_page() (and back to the destination domain) in this
+case, leading to an IOMMU mapping into an unowned page.
+
+Ideally the code would use assign_pages(), but the call to
+gnttab_prepare_for_transfer() sits in the middle of the actions
+mirroring that function.
+
+This is XSA-284.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Acked-by: George Dunlap <george.dunlap@citrix.com>
+
+--- a/xen/common/grant_table.c
++++ b/xen/common/grant_table.c
+@@ -2183,6 +2183,8 @@ gnttab_transfer(
+             page->count_info &= ~(PGC_count_mask|PGC_allocated);
+             free_domheap_page(page);
+             page = new_page;
++            page->count_info = PGC_allocated | 1;
++            mfn = page_to_mfn(page);
+         }
+ 
+         spin_lock(&e->page_alloc_lock);

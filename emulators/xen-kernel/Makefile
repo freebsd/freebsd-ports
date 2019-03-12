@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.11.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
@@ -45,6 +45,29 @@ EXTRA_PATCHES+=	${FILESDIR}/0001-x86-mtrr-introduce-mask-to-get-VCNT-from-MTRRca
 EXTRA_PATCHES+=	${FILESDIR}/0001-x86-replace-usage-in-the-linker-script.patch:-p1
 # Fix PVH Dom0 build with shadow paging
 EXTRA_PATCHES+= ${FILESDIR}/0001-x86-pvh-change-the-order-of-the-iommu-initialization.patch:-p1
+# Forward dom0 lapic EOIs to underlying hardware
+EXTRA_PATCHES+=	${FILESDIR}/0001-x86-dom0-propagate-PVH-vlapic-EOIs-to-hardware.patch:-p1
+# Fix deadlock in IO-APIC gsi mapping
+EXTRA_PATCHES+=	${FILESDIR}/0001-pvh-dom0-fix-deadlock-in-GSI-mapping.patch:-p1
+# Fix for migration/save
+EXTRA_PATCHES+=	${FILESDIR}/0001-x86-mm-locks-remove-trailing-whitespace.patch:-p1 \
+		${FILESDIR}/0002-x86-mm-locks-convert-some-macros-to-inline-functions.patch:-p1 \
+		${FILESDIR}/0003-x86-mm-locks-apply-a-bias-to-lock-levels-for-control.patch:-p1
+
+# XSA-284
+EXTRA_PATCHES+=	${FILESDIR}/xsa284.patch:-p1
+# XSA-287
+EXTRA_PATCHES+=	${FILESDIR}/xsa287-4.11.patch:-p1
+# XSA-290
+EXTRA_PATCHES+=	${FILESDIR}/xsa290-4.11-1.patch:-p1 \
+		${FILESDIR}/xsa290-4.11-2.patch:-p1
+# XSA-292
+EXTRA_PATCHES+=	${FILESDIR}/xsa292.patch:-p1
+# XSA-293
+EXTRA_PATCHES+=	${FILESDIR}/xsa293-4.11-1.patch:-p1 \
+		${FILESDIR}/xsa293-4.11-2.patch:-p1
+# XSA-294
+EXTRA_PATCHES+=	${FILESDIR}/xsa294-4.11.patch:-p1
 
 .include <bsd.port.options.mk>
 

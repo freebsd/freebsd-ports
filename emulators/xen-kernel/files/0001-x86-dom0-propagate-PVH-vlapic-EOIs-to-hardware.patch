@@ -1,0 +1,39 @@
+From 19d2bce1c3cbfdc636c142cdf0ae38795f2202dd Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Thu, 14 Feb 2019 14:41:03 +0100
+Subject: [PATCH for-4.12] x86/dom0: propagate PVH vlapic EOIs to hardware
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Current check for MSI EIO is missing a special case for PVH Dom0,
+which doesn't have a hvm_irq_dpci struct but requires EIOs to be
+forwarded to the physical lapic for passed-through devices.
+
+Add a short-circuit to allow EOIs from PVH Dom0 to be propagated.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+---
+Cc: Jan Beulich <jbeulich@suse.com>
+Cc: Juergen Gross <jgross@suse.com>
+---
+ xen/drivers/passthrough/io.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/xen/drivers/passthrough/io.c b/xen/drivers/passthrough/io.c
+index a6eb8a4336..4290c7c710 100644
+--- a/xen/drivers/passthrough/io.c
++++ b/xen/drivers/passthrough/io.c
+@@ -869,7 +869,8 @@ static int _hvm_dpci_msi_eoi(struct domain *d,
+ 
+ void hvm_dpci_msi_eoi(struct domain *d, int vector)
+ {
+-    if ( !iommu_enabled || !hvm_domain_irq(d)->dpci )
++    if ( !iommu_enabled ||
++         (!hvm_domain_irq(d)->dpci && !is_hardware_domain(d)) )
+        return;
+ 
+     spin_lock(&d->event_lock);
+-- 
+2.17.2 (Apple Git-113)
+

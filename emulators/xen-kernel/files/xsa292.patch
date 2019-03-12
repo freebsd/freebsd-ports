@@ -1,0 +1,95 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86/mm: properly flush TLB in switch_cr3_cr4()
+
+The CR3 values used for contexts run with PCID enabled uniformly have
+CR3.NOFLUSH set, resulting in the CR3 write itself to not cause any
+flushing at all. When the second CR4 write is skipped or doesn't do any
+flushing, there's nothing so far which would purge TLB entries which may
+have accumulated again if the PCID doesn't change; the "just in case"
+flush only affects the case where the PCID actually changes. (There may
+be particularly many TLB entries re-accumulated in case of a watchdog
+NMI kicking in during the critical time window.)
+
+Suppress the no-flush behavior of the CR3 write in this particular case.
+
+Similarly the second CR4 write may not cause any flushing of TLB entries
+established again while the original PCID was still in use - it may get
+performed because of unrelated bits changing. The flush of the old PCID
+needs to happen nevertheless.
+
+At the same time also eliminate a possible race with lazy context
+switch: Just like for CR4, CR3 may change at any time while interrupts
+are enabled, due to the __sync_local_execstate() invocation from the
+flush IPI handler. It is for that reason that the CR3 read, just like
+the CR4 one, must happen only after interrupts have been turned off.
+
+This is XSA-292.
+
+Reported-by: Sergey Dyasli <sergey.dyasli@citrix.com>
+Reported-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Tested-by: Sergey Dyasli <sergey.dyasli@citrix.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+---
+v3: Adjust comments. Drop old_cr4 from the PGE check in the expression
+    controlling the invocation of invpcid_flush_single_context(), as PGE
+    is always clear there.
+v2: Decouple invpcid_flush_single_context() from 2nd CR4 write.
+
+--- a/xen/arch/x86/flushtlb.c
++++ b/xen/arch/x86/flushtlb.c
+@@ -103,9 +103,8 @@ static void do_tlb_flush(void)
+ 
+ void switch_cr3_cr4(unsigned long cr3, unsigned long cr4)
+ {
+-    unsigned long flags, old_cr4;
++    unsigned long flags, old_cr4, old_pcid;
+     u32 t;
+-    unsigned long old_pcid = cr3_pcid(read_cr3());
+ 
+     /* This non-reentrant function is sometimes called in interrupt context. */
+     local_irq_save(flags);
+@@ -133,15 +132,38 @@ void switch_cr3_cr4(unsigned long cr3, u
+          */
+         invpcid_flush_all_nonglobals();
+ 
++    /*
++     * If we don't change PCIDs, the CR3 write below needs to flush this very
++     * PCID, even when a full flush was performed above, as we are currently
++     * accumulating TLB entries again from the old address space.
++     * NB: Clearing the bit when we don't use PCID is benign (as it is clear
++     * already in that case), but allows the if() to be more simple.
++     */
++    old_pcid = cr3_pcid(read_cr3());
++    if ( old_pcid == cr3_pcid(cr3) )
++        cr3 &= ~X86_CR3_NOFLUSH;
++
+     write_cr3(cr3);
+ 
+     if ( old_cr4 != cr4 )
+         write_cr4(cr4);
+-    else if ( old_pcid != cr3_pcid(cr3) )
+-        /*
+-         * Make sure no TLB entries related to the old PCID created between
+-         * flushing the TLB and writing the new %cr3 value remain in the TLB.
+-         */
++
++    /*
++     * Make sure no TLB entries related to the old PCID created between
++     * flushing the TLB and writing the new %cr3 value remain in the TLB.
++     *
++     * The write to CR4 just above has performed a wider flush in certain
++     * cases, which therefore get excluded here. Since that write is
++     * conditional, note in particular that it won't be skipped if PCIDE
++     * transitions from 1 to 0. This is because the CR4 write further up will
++     * have been skipped in this case, as PCIDE and PGE won't both be set at
++     * the same time.
++     *
++     * Note also that PGE is always clear in old_cr4.
++     */
++    if ( old_pcid != cr3_pcid(cr3) &&
++         !(cr4 & X86_CR4_PGE) &&
++         (old_cr4 & X86_CR4_PCIDE) <= (cr4 & X86_CR4_PCIDE) )
+         invpcid_flush_single_context(old_pcid);
+ 
+     post_flush(t);

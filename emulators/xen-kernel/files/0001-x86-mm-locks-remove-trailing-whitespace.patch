@@ -1,0 +1,101 @@
+From 468937da985661e5cd1d6b2df6d6ab2d1fb1e5e4 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Roger=20Pau=20Monn=C3=A9?= <roger.pau@citrix.com>
+Date: Tue, 12 Mar 2019 12:21:03 +0100
+Subject: [PATCH 1/3] x86/mm-locks: remove trailing whitespace
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+No functional change.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Reviewed-by: George Dunlap <george.dunlap@citrix.com>
+---
+ xen/arch/x86/mm/mm-locks.h | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
+
+diff --git a/xen/arch/x86/mm/mm-locks.h b/xen/arch/x86/mm/mm-locks.h
+index e5fceb2d2e..6c15b9a4cc 100644
+--- a/xen/arch/x86/mm/mm-locks.h
++++ b/xen/arch/x86/mm/mm-locks.h
+@@ -3,11 +3,11 @@
+  *
+  * Spinlocks used by the code in arch/x86/mm.
+  *
+- * Copyright (c) 2011 Citrix Systems, inc. 
++ * Copyright (c) 2011 Citrix Systems, inc.
+  * Copyright (c) 2007 Advanced Micro Devices (Wei Huang)
+  * Copyright (c) 2006-2007 XenSource Inc.
+  * Copyright (c) 2006 Michael A Fetterman
+- * 
++ *
+  * This program is free software; you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+  * the Free Software Foundation; either version 2 of the License, or
+@@ -41,7 +41,7 @@ static inline void mm_lock_init(mm_lock_t *l)
+     l->unlock_level = 0;
+ }
+ 
+-static inline int mm_locked_by_me(mm_lock_t *l) 
++static inline int mm_locked_by_me(mm_lock_t *l)
+ {
+     return (l->lock.recurse_cpu == current->processor);
+ }
+@@ -67,7 +67,7 @@ do {                                \
+ 
+ static inline void _mm_lock(mm_lock_t *l, const char *func, int level, int rec)
+ {
+-    if ( !((mm_locked_by_me(l)) && rec) ) 
++    if ( !((mm_locked_by_me(l)) && rec) )
+         __check_lock_level(level);
+     spin_lock_recursive(&l->lock);
+     if ( l->lock.recurse_cnt == 1 )
+@@ -186,7 +186,7 @@ static inline void mm_unlock(mm_lock_t *l)
+     spin_unlock_recursive(&l->lock);
+ }
+ 
+-static inline void mm_enforce_order_unlock(int unlock_level, 
++static inline void mm_enforce_order_unlock(int unlock_level,
+                                             unsigned short *recurse_count)
+ {
+     if ( recurse_count )
+@@ -310,7 +310,7 @@ declare_mm_rwlock(altp2m);
+ #define gfn_locked_by_me(p,g) p2m_locked_by_me(p)
+ 
+ /* PoD lock (per-p2m-table)
+- * 
++ *
+  * Protects private PoD data structs: entry and cache
+  * counts, page lists, sweep parameters. */
+ 
+@@ -322,7 +322,7 @@ declare_mm_lock(pod)
+ 
+ /* Page alloc lock (per-domain)
+  *
+- * This is an external lock, not represented by an mm_lock_t. However, 
++ * This is an external lock, not represented by an mm_lock_t. However,
+  * pod code uses it in conjunction with the p2m lock, and expecting
+  * the ordering which we enforce here.
+  * The lock is not recursive. */
+@@ -338,13 +338,13 @@ declare_mm_order_constraint(page_alloc)
+  * For shadow pagetables, this lock protects
+  *   - all changes to shadow page table pages
+  *   - the shadow hash table
+- *   - the shadow page allocator 
++ *   - the shadow page allocator
+  *   - all changes to guest page table pages
+  *   - all changes to the page_info->tlbflush_timestamp
+- *   - the page_info->count fields on shadow pages 
+- * 
+- * For HAP, it protects the NPT/EPT tables and mode changes. 
+- * 
++ *   - the page_info->count fields on shadow pages
++ *
++ * For HAP, it protects the NPT/EPT tables and mode changes.
++ *
+  * It also protects the log-dirty bitmap from concurrent accesses (and
+  * teardowns, etc). */
+ 
+-- 
+2.17.2 (Apple Git-113)
+

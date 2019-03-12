@@ -1,0 +1,115 @@
+From 603ad88fe8a681a2c5408c3f432d7083dd1c41b1 Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Mon, 28 Jan 2019 15:22:45 +0100
+Subject: [PATCH] pvh/dom0: fix deadlock in GSI mapping
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+The current GSI mapping code can cause the following deadlock:
+
+(XEN) *** Dumping CPU0 host state: ***
+(XEN) ----[ Xen-4.12.0-rc  x86_64  debug=y   Tainted:  C   ]----
+[...]
+(XEN) Xen call trace:
+(XEN)    [<ffff82d080239852>] vmac.c#_spin_lock_cb+0x32/0x70
+(XEN)    [<ffff82d0802ed40f>] vmac.c#hvm_gsi_assert+0x2f/0x60 <- pick hvm.irq_lock
+(XEN)    [<ffff82d080255cc9>] io.c#hvm_dirq_assist+0xd9/0x130 <- pick event_lock
+(XEN)    [<ffff82d080255b4b>] io.c#dpci_softirq+0xdb/0x120
+(XEN)    [<ffff82d080238ce6>] softirq.c#__do_softirq+0x46/0xa0
+(XEN)    [<ffff82d08026f955>] domain.c#idle_loop+0x35/0x90
+(XEN)
+[...]
+(XEN) *** Dumping CPU3 host state: ***
+(XEN) ----[ Xen-4.12.0-rc  x86_64  debug=y   Tainted:  C   ]----
+[...]
+(XEN) Xen call trace:
+(XEN)    [<ffff82d08023985d>] vmac.c#_spin_lock_cb+0x3d/0x70
+(XEN)    [<ffff82d080281fc8>] vmac.c#allocate_and_map_gsi_pirq+0xc8/0x130 <- pick event_lock
+(XEN)    [<ffff82d0802f44c0>] vioapic.c#vioapic_hwdom_map_gsi+0x80/0x130
+(XEN)    [<ffff82d0802f4399>] vioapic.c#vioapic_write_redirent+0x119/0x1c0 <- pick hvm.irq_lock
+(XEN)    [<ffff82d0802f4075>] vioapic.c#vioapic_write+0x35/0x40
+(XEN)    [<ffff82d0802e96a2>] vmac.c#hvm_process_io_intercept+0xd2/0x230
+(XEN)    [<ffff82d0802e9842>] vmac.c#hvm_io_intercept+0x22/0x50
+(XEN)    [<ffff82d0802dbe9b>] emulate.c#hvmemul_do_io+0x21b/0x3c0
+(XEN)    [<ffff82d0802db302>] emulate.c#hvmemul_do_io_buffer+0x32/0x70
+(XEN)    [<ffff82d0802dcd29>] emulate.c#hvmemul_do_mmio_buffer+0x29/0x30
+(XEN)    [<ffff82d0802dcc19>] emulate.c#hvmemul_phys_mmio_access+0xf9/0x1b0
+(XEN)    [<ffff82d0802dc6d0>] emulate.c#hvmemul_linear_mmio_access+0xf0/0x180
+(XEN)    [<ffff82d0802de971>] emulate.c#hvmemul_linear_mmio_write+0x21/0x30
+(XEN)    [<ffff82d0802de742>] emulate.c#linear_write+0xa2/0x100
+(XEN)    [<ffff82d0802dce15>] emulate.c#hvmemul_write+0xb5/0x120
+(XEN)    [<ffff82d0802babba>] vmac.c#x86_emulate+0x132aa/0x149a0
+(XEN)    [<ffff82d0802c04f9>] vmac.c#x86_emulate_wrapper+0x29/0x70
+(XEN)    [<ffff82d0802db570>] emulate.c#_hvm_emulate_one+0x50/0x140
+(XEN)    [<ffff82d0802e9e31>] vmac.c#hvm_emulate_one_insn+0x41/0x100
+(XEN)    [<ffff82d080345066>] guest_4.o#sh_page_fault__guest_4+0x976/0xd30
+(XEN)    [<ffff82d08030cc69>] vmac.c#vmx_vmexit_handler+0x949/0xea0
+(XEN)    [<ffff82d08031411a>] vmac.c#vmx_asm_vmexit_handler+0xfa/0x270
+
+In order to solve it move the vioapic_hwdom_map_gsi outside of the
+locked region in vioapic_write_redirent. vioapic_hwdom_map_gsi will
+not access any of the vioapic fields, so there's no need to call the
+function holding the hvm.irq_lock.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Reviewed-by: Wei Liu <wei.liu2@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+Release-acked-by: Juergen Gross <jgross@suse.com>
+---
+ xen/arch/x86/hvm/vioapic.c | 32 ++++++++++++++++++--------------
+ 1 file changed, 18 insertions(+), 14 deletions(-)
+
+diff --git a/xen/arch/x86/hvm/vioapic.c b/xen/arch/x86/hvm/vioapic.c
+index 2b74f92d51..2d71c33c1c 100644
+--- a/xen/arch/x86/hvm/vioapic.c
++++ b/xen/arch/x86/hvm/vioapic.c
+@@ -236,20 +236,6 @@ static void vioapic_write_redirent(
+ 
+     *pent = ent;
+ 
+-    if ( is_hardware_domain(d) && unmasked )
+-    {
+-        int ret;
+-
+-        ret = vioapic_hwdom_map_gsi(gsi, ent.fields.trig_mode,
+-                                    ent.fields.polarity);
+-        if ( ret )
+-        {
+-            /* Mask the entry again. */
+-            pent->fields.mask = 1;
+-            unmasked = 0;
+-        }
+-    }
+-
+     if ( gsi == 0 )
+     {
+         vlapic_adjust_i8259_target(d);
+@@ -266,6 +252,24 @@ static void vioapic_write_redirent(
+ 
+     spin_unlock(&d->arch.hvm.irq_lock);
+ 
++    if ( is_hardware_domain(d) && unmasked )
++    {
++        /*
++         * NB: don't call vioapic_hwdom_map_gsi while holding hvm.irq_lock
++         * since it can cause deadlocks as event_lock is taken by
++         * allocate_and_map_gsi_pirq, and that will invert the locking order
++         * used by other parts of the code.
++         */
++        int ret = vioapic_hwdom_map_gsi(gsi, ent.fields.trig_mode,
++                                        ent.fields.polarity);
++        if ( ret )
++        {
++            gprintk(XENLOG_ERR,
++                    "unable to bind gsi %u to hardware domain: %d\n", gsi, ret);
++            unmasked = 0;
++        }
++    }
++
+     if ( gsi == 0 || unmasked )
+         pt_may_unmask_irq(d, NULL);
+ }
+-- 
+2.17.2 (Apple Git-113)
+

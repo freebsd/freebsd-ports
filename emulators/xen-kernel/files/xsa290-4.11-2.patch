@@ -1,0 +1,71 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86/mm: add explicit preemption checks to L3 (un)validation
+
+When recursive page tables are used at the L3 level, unvalidation of a
+single L4 table may incur unvalidation of two levels of L3 tables, i.e.
+a maximum iteration count of 512^3 for unvalidating an L4 table. The
+preemption check in free_l2_table() as well as the one in
+_put_page_type() may never be reached, so explicit checking is needed in
+free_l3_table().
+
+When recursive page tables are used at the L4 level, the iteration count
+at L4 alone is capped at 512^2. As soon as a present L3 entry is hit
+which itself needs unvalidation (and hence requiring another nested loop
+with 512 iterations), the preemption checks added here kick in, so no
+further preemption checking is needed at L4 (until we decide to permit
+5-level paging for PV guests).
+
+The validation side additions are done just for symmetry.
+
+This is part of XSA-290.
+
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+
+--- a/xen/arch/x86/mm.c
++++ b/xen/arch/x86/mm.c
+@@ -1581,6 +1581,13 @@ static int alloc_l3_table(struct page_in
+     for ( i = page->nr_validated_ptes; i < L3_PAGETABLE_ENTRIES;
+           i++, partial = 0 )
+     {
++        if ( i > page->nr_validated_ptes && hypercall_preempt_check() )
++        {
++            page->nr_validated_ptes = i;
++            rc = -ERESTART;
++            break;
++        }
++
+         if ( is_pv_32bit_domain(d) && (i == 3) )
+         {
+             if ( !(l3e_get_flags(pl3e[i]) & _PAGE_PRESENT) ||
+@@ -1882,15 +1889,25 @@ static int free_l3_table(struct page_inf
+ 
+     pl3e = map_domain_page(_mfn(pfn));
+ 
+-    do {
++    for ( ; ; )
++    {
+         rc = put_page_from_l3e(pl3e[i], pfn, partial, 0);
+         if ( rc < 0 )
+             break;
++
+         partial = 0;
+-        if ( rc > 0 )
+-            continue;
+-        pl3e[i] = unadjust_guest_l3e(pl3e[i], d);
+-    } while ( i-- );
++        if ( rc == 0 )
++            pl3e[i] = unadjust_guest_l3e(pl3e[i], d);
++
++        if ( !i-- )
++            break;
++
++        if ( hypercall_preempt_check() )
++        {
++            rc = -EINTR;
++            break;
++        }
++    }
+ 
+     unmap_domain_page(pl3e);
+ 

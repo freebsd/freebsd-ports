@@ -1,0 +1,260 @@
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Subject: x86/pv: Don't have %cr4.fsgsbase active behind a guest kernels back
+
+Currently, a 64bit PV guest can appear to set and clear FSGSBASE in %cr4, but
+the bit remains set in hardware.  Therefore, the {RD,WR}{FS,GS}BASE are usable
+even when the guest kernel believes that they are disabled.
+
+The FSGSBASE feature isn't currently supported in Linux, and its context
+switch path has some optimisations which rely on userspace being unable to use
+the WR{FS,GS}BASE instructions.  Xen's current behaviour undermines this
+expectation.
+
+In 64bit PV guest context, always load the guest kernels setting of FSGSBASE
+into %cr4.  This requires adjusting how Xen uses the {RD,WR}{FS,GS}BASE
+instructions.
+
+ * Delete the cpu_has_fsgsbase helper.  It is no longer safe, as users need to
+   check %cr4 directly.
+ * The raw __rd{fs,gs}base() helpers are only safe to use when %cr4.fsgsbase
+   is set.  Comment this property.
+ * The {rd,wr}{fs,gs}{base,shadow}() and read_msr() helpers are updated to use
+   the current %cr4 value to determine which mechanism to use.
+ * toggle_guest_mode() and save_segments() are update to avoid reading
+   fs/gsbase if the values in hardware cannot be stale WRT struct vcpu.  A
+   consequence of this is that the write_cr() path needs to cache the current
+   bases, as subsequent context switches will skip saving the values.
+ * write_cr4() is updated to ensure that the shadow %cr4.fsgsbase value is
+   observed in a safe way WRT the hardware setting, if an interrupt happens to
+   hit in the middle.
+ * pv_make_cr4() is updated for 64bit PV guests to use the guest kernels
+   choice of FSGSBASE.
+
+This is part of XSA-293
+
+Reported-by: Andy Lutomirski <luto@kernel.org>
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+
+diff --git a/xen/arch/x86/domain.c b/xen/arch/x86/domain.c
+index 675152a..29f892c 100644
+--- a/xen/arch/x86/domain.c
++++ b/xen/arch/x86/domain.c
+@@ -1433,7 +1433,8 @@ static void save_segments(struct vcpu *v)
+     regs->fs = read_sreg(fs);
+     regs->gs = read_sreg(gs);
+ 
+-    if ( cpu_has_fsgsbase && !is_pv_32bit_vcpu(v) )
++    /* %fs/%gs bases can only be stale if WR{FS,GS}BASE are usable. */
++    if ( (read_cr4() & X86_CR4_FSGSBASE) && !is_pv_32bit_vcpu(v) )
+     {
+         v->arch.pv_vcpu.fs_base = __rdfsbase();
+         if ( v->arch.flags & TF_kernel_mode )
+diff --git a/xen/arch/x86/pv/domain.c b/xen/arch/x86/pv/domain.c
+index 3965959..228a174 100644
+--- a/xen/arch/x86/pv/domain.c
++++ b/xen/arch/x86/pv/domain.c
+@@ -140,6 +140,16 @@ unsigned long pv_make_cr4(const struct vcpu *v)
+     if ( d->arch.vtsc || (v->arch.pv_vcpu.ctrlreg[4] & X86_CR4_TSD) )
+         cr4 |= X86_CR4_TSD;
+ 
++    /*
++     * The {RD,WR}{FS,GS}BASE are only useable in 64bit code segments.  While
++     * we must not have CR4.FSGSBASE set behind the back of a 64bit PV kernel,
++     * we do leave it set in 32bit PV context to speed up Xen's context switch
++     * path.
++     */
++    if ( !is_pv_32bit_domain(d) &&
++         !(v->arch.pv_vcpu.ctrlreg[4] & X86_CR4_FSGSBASE) )
++        cr4 &= ~X86_CR4_FSGSBASE;
++
+     return cr4;
+ }
+ 
+@@ -375,7 +385,8 @@ void toggle_guest_mode(struct vcpu *v)
+ {
+     ASSERT(!is_pv_32bit_vcpu(v));
+ 
+-    if ( cpu_has_fsgsbase )
++    /* %fs/%gs bases can only be stale if WR{FS,GS}BASE are usable. */
++    if ( read_cr4() & X86_CR4_FSGSBASE )
+     {
+         if ( v->arch.flags & TF_kernel_mode )
+             v->arch.pv_vcpu.gs_base_kernel = __rdgsbase();
+diff --git a/xen/arch/x86/pv/emul-priv-op.c b/xen/arch/x86/pv/emul-priv-op.c
+index 4abbc14..312c1ee 100644
+--- a/xen/arch/x86/pv/emul-priv-op.c
++++ b/xen/arch/x86/pv/emul-priv-op.c
+@@ -786,6 +786,17 @@ static int write_cr(unsigned int reg, unsigned long val,
+     }
+ 
+     case 4: /* Write CR4 */
++        /*
++         * If this write will disable FSGSBASE, refresh Xen's idea of the
++         * guest bases now that they can no longer change.
++         */
++        if ( (curr->arch.pv_vcpu.ctrlreg[4] & X86_CR4_FSGSBASE) &&
++             !(val & X86_CR4_FSGSBASE) )
++        {
++            curr->arch.pv_vcpu.fs_base = __rdfsbase();
++            curr->arch.pv_vcpu.gs_base_kernel = __rdgsbase();
++        }
++
+         curr->arch.pv_vcpu.ctrlreg[4] = pv_fixup_guest_cr4(curr, val);
+         write_cr4(pv_make_cr4(curr));
+         ctxt_switch_levelling(curr);
+@@ -835,14 +846,15 @@ static int read_msr(unsigned int reg, uint64_t *val,
+     case MSR_FS_BASE:
+         if ( is_pv_32bit_domain(currd) )
+             break;
+-        *val = cpu_has_fsgsbase ? __rdfsbase() : curr->arch.pv_vcpu.fs_base;
++        *val = (read_cr4() & X86_CR4_FSGSBASE) ? __rdfsbase()
++                                               : curr->arch.pv_vcpu.fs_base;
+         return X86EMUL_OKAY;
+ 
+     case MSR_GS_BASE:
+         if ( is_pv_32bit_domain(currd) )
+             break;
+-        *val = cpu_has_fsgsbase ? __rdgsbase()
+-                                : curr->arch.pv_vcpu.gs_base_kernel;
++        *val = (read_cr4() & X86_CR4_FSGSBASE) ? __rdgsbase()
++                                               : curr->arch.pv_vcpu.gs_base_kernel;
+         return X86EMUL_OKAY;
+ 
+     case MSR_SHADOW_GS_BASE:
+diff --git a/xen/arch/x86/setup.c b/xen/arch/x86/setup.c
+index ecb0149..a353d76 100644
+--- a/xen/arch/x86/setup.c
++++ b/xen/arch/x86/setup.c
+@@ -1567,7 +1567,7 @@ void __init noreturn __start_xen(unsigned long mbi_p)
+ 
+     cr4_pv32_mask = mmu_cr4_features & XEN_CR4_PV32_BITS;
+ 
+-    if ( cpu_has_fsgsbase )
++    if ( boot_cpu_has(X86_FEATURE_FSGSBASE) )
+         set_in_cr4(X86_CR4_FSGSBASE);
+ 
+     if ( opt_invpcid && cpu_has_invpcid )
+diff --git a/xen/include/asm-x86/cpufeature.h b/xen/include/asm-x86/cpufeature.h
+index b237da1..861cb0a 100644
+--- a/xen/include/asm-x86/cpufeature.h
++++ b/xen/include/asm-x86/cpufeature.h
+@@ -90,7 +90,6 @@
+ #define cpu_has_xsaves          boot_cpu_has(X86_FEATURE_XSAVES)
+ 
+ /* CPUID level 0x00000007:0.ebx */
+-#define cpu_has_fsgsbase        boot_cpu_has(X86_FEATURE_FSGSBASE)
+ #define cpu_has_bmi1            boot_cpu_has(X86_FEATURE_BMI1)
+ #define cpu_has_hle             boot_cpu_has(X86_FEATURE_HLE)
+ #define cpu_has_avx2            boot_cpu_has(X86_FEATURE_AVX2)
+diff --git a/xen/include/asm-x86/msr.h b/xen/include/asm-x86/msr.h
+index afbeb7f..1ba6ee3 100644
+--- a/xen/include/asm-x86/msr.h
++++ b/xen/include/asm-x86/msr.h
+@@ -120,6 +120,14 @@ static inline uint64_t rdtsc_ordered(void)
+ 			  : "=a" (low), "=d" (high) \
+ 			  : "c" (counter))
+ 
++/*
++ * On hardware supporting FSGSBASE, the value loaded into hardware is the
++ * guest kernel's choice for 64bit PV guests (Xen's choice for Idle, HVM and
++ * 32bit PV).
++ *
++ * Therefore, the {RD,WR}{FS,GS}BASE instructions are only safe to use if
++ * %cr4.fsgsbase is set.
++ */
+ static inline unsigned long __rdfsbase(void)
+ {
+     unsigned long base;
+@@ -150,7 +158,7 @@ static inline unsigned long rdfsbase(void)
+ {
+     unsigned long base;
+ 
+-    if ( cpu_has_fsgsbase )
++    if ( read_cr4() & X86_CR4_FSGSBASE )
+         return __rdfsbase();
+ 
+     rdmsrl(MSR_FS_BASE, base);
+@@ -162,7 +170,7 @@ static inline unsigned long rdgsbase(void)
+ {
+     unsigned long base;
+ 
+-    if ( cpu_has_fsgsbase )
++    if ( read_cr4() & X86_CR4_FSGSBASE )
+         return __rdgsbase();
+ 
+     rdmsrl(MSR_GS_BASE, base);
+@@ -174,7 +182,7 @@ static inline unsigned long rdgsshadow(void)
+ {
+     unsigned long base;
+ 
+-    if ( cpu_has_fsgsbase )
++    if ( read_cr4() & X86_CR4_FSGSBASE )
+     {
+         asm volatile ( "swapgs" );
+         base = __rdgsbase();
+@@ -188,7 +196,7 @@ static inline unsigned long rdgsshadow(void)
+ 
+ static inline void wrfsbase(unsigned long base)
+ {
+-    if ( cpu_has_fsgsbase )
++    if ( read_cr4() & X86_CR4_FSGSBASE )
+ #ifdef HAVE_AS_FSGSBASE
+         asm volatile ( "wrfsbase %0" :: "r" (base) );
+ #else
+@@ -200,7 +208,7 @@ static inline void wrfsbase(unsigned long base)
+ 
+ static inline void wrgsbase(unsigned long base)
+ {
+-    if ( cpu_has_fsgsbase )
++    if ( read_cr4() & X86_CR4_FSGSBASE )
+ #ifdef HAVE_AS_FSGSBASE
+         asm volatile ( "wrgsbase %0" :: "r" (base) );
+ #else
+@@ -212,7 +220,7 @@ static inline void wrgsbase(unsigned long base)
+ 
+ static inline void wrgsshadow(unsigned long base)
+ {
+-    if ( cpu_has_fsgsbase )
++    if ( read_cr4() & X86_CR4_FSGSBASE )
+     {
+         asm volatile ( "swapgs\n\t"
+ #ifdef HAVE_AS_FSGSBASE
+diff --git a/xen/include/asm-x86/processor.h b/xen/include/asm-x86/processor.h
+index 2bd9e69..8e253dc 100644
+--- a/xen/include/asm-x86/processor.h
++++ b/xen/include/asm-x86/processor.h
+@@ -305,11 +305,31 @@ static inline unsigned long read_cr4(void)
+ 
+ static inline void write_cr4(unsigned long val)
+ {
++    struct cpu_info *info = get_cpu_info();
++
+     /* No global pages in case of PCIDs enabled! */
+     ASSERT(!(val & X86_CR4_PGE) || !(val & X86_CR4_PCIDE));
+ 
+-    get_cpu_info()->cr4 = val;
+-    asm volatile ( "mov %0,%%cr4" : : "r" (val) );
++    /*
++     * On hardware supporting FSGSBASE, the value in %cr4 is the kernel's
++     * choice for 64bit PV guests, which impacts whether Xen can use the
++     * instructions.
++     *
++     * The {rd,wr}{fs,gs}base() helpers use info->cr4 to work out whether it
++     * is safe to execute the {RD,WR}{FS,GS}BASE instruction, falling back to
++     * the MSR path if not.  Some users require interrupt safety.
++     *
++     * If FSGSBASE is currently or about to become clear, reflect this in
++     * info->cr4 before updating %cr4, so an interrupt which hits in the
++     * middle won't observe FSGSBASE set in info->cr4 but clear in %cr4.
++     */
++    info->cr4 = val & (info->cr4 | ~X86_CR4_FSGSBASE);
++
++    asm volatile ( "mov %[val], %%cr4"
++                   : "+m" (info->cr4) /* Force ordering without a barrier. */
++                   : [val] "r" (val) );
++
++    info->cr4 = val;
+ }
+ 
+ /* Clear and set 'TS' bit respectively */
