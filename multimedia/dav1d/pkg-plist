@@ -7,5 +7,5 @@ include/dav1d/picture.h
 include/dav1d/version.h
 lib/libdav1d.so
 lib/libdav1d.so.1
-lib/libdav1d.so.1.0.0
+lib/libdav1d.so.1.0.1
 libdata/pkgconfig/dav1d.pc
