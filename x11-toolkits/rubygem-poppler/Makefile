@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poppler
-PORTVERSION=	3.3.3
+PORTVERSION=	3.3.4
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
