@@ -1,16 +1,19 @@
---- src/doc/man/CMakeLists.txt.orig	2015-11-22 16:03:59 UTC
+--- src/doc/man/CMakeLists.txt.orig	2018-03-04 18:59:29 UTC
 +++ src/doc/man/CMakeLists.txt
-@@ -1,9 +1,16 @@
+@@ -1,11 +1,18 @@
  # Set up which man pages to build and install
 +if(QT_ONLY)
 +  set(MAN_PAGES qtel.1)
 +else(QT_ONLY)
- set(MAN_PAGES svxlink.1 remotetrx.1 siglevdetcal.1 svxlink.conf.5
-   ModuleHelp.conf.5 remotetrx.conf.5 ModuleParrot.conf.5 ModuleEchoLink.conf.5
+ set(MAN_PAGES svxlink.1 svxlink.conf.5 remotetrx.1 remotetrx.conf.5
+-  siglevdetcal.1 devcal.1 svxreflector.1 svxreflector.conf.5 qtel.1
++  siglevdetcal.1 devcal.1 svxreflector.1 svxreflector.conf.5 
+   ModuleHelp.conf.5 ModuleParrot.conf.5 ModuleEchoLink.conf.5
    ModuleTclVoiceMail.conf.5 ModuleDtmfRepeater.conf.5
--  ModulePropagationMonitor.conf.5 ModuleSelCallEnc.conf.5 qtel.1 devcal.1
-+  ModulePropagationMonitor.conf.5 ModuleSelCallEnc.conf.5 devcal.1
- )
+   ModulePropagationMonitor.conf.5 ModuleSelCallEnc.conf.5
+   ModuleFrn.conf.5
+-)
++ )
 +if(USE_QT)
 +  set(MAN_PAGES ${MAN_PAGES} qtel.1)
 +endif(USE_QT)
@@ -18,7 +21,7 @@
  
  # Search for the gzip and groff programs. Error out if not found.
  include(FindGZIP)
-@@ -29,11 +36,11 @@ if(GROFF_TOOL AND GZIP_TOOL)
+@@ -31,11 +38,11 @@ if(GROFF_TOOL AND GZIP_TOOL)
        DESTINATION ${MAN_INSTALL_DIR}/man${sec}
        OPTIONAL
      )

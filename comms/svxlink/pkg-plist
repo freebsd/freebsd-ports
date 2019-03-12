@@ -1,92 +1,102 @@
 bin/devcal
-bin/svxlink
 bin/remotetrx
 bin/siglevdetcal
-@sample etc/svxlink/svxlink.d/ModuleHelp.conf.sample
-@sample etc/svxlink/svxlink.d/ModuleParrot.conf.sample
-@sample etc/svxlink/svxlink.d/ModuleEchoLink.conf.sample
-@sample etc/svxlink/svxlink.d/ModuleTclVoiceMail.conf.sample
-@sample etc/svxlink/svxlink.d/ModuleDtmfRepeater.conf.sample
-@sample etc/svxlink/svxlink.d/ModuleMetarInfo.conf.sample
-@sample etc/svxlink/svxlink.d/ModulePropagationMonitor.conf.sample
-@sample etc/svxlink/svxlink.d/ModuleSelCallEnc.conf.sample
-@sample etc/svxlink/svxlink.conf.sample
-@sample etc/svxlink/TclVoiceMail.conf.sample
-@sample etc/svxlink/.procmailrc.sample
-@sample etc/svxlink/remotetrx.conf.sample
+bin/svxlink
+bin/svxreflector
+@sample %%ETCDIR%%/.procmailrc.sample
+@sample %%ETCDIR%%/TclVoiceMail.conf.sample
+@sample %%ETCDIR%%/gpio.conf.sample
+@sample %%ETCDIR%%/remotetrx.conf.sample
+@sample %%ETCDIR%%/svxlink.conf.sample
+@sample %%ETCDIR%%/svxlink.d/ModuleDtmfRepeater.conf.sample
+@sample %%ETCDIR%%/svxlink.d/ModuleEchoLink.conf.sample
+@sample %%ETCDIR%%/svxlink.d/ModuleFrn.conf.sample
+@sample %%ETCDIR%%/svxlink.d/ModuleHelp.conf.sample
+@sample %%ETCDIR%%/svxlink.d/ModuleMetarInfo.conf.sample
+@sample %%ETCDIR%%/svxlink.d/ModuleParrot.conf.sample
+@sample %%ETCDIR%%/svxlink.d/ModulePropagationMonitor.conf.sample
+@sample %%ETCDIR%%/svxlink.d/ModuleSelCallEnc.conf.sample
+@sample %%ETCDIR%%/svxlink.d/ModuleTclVoiceMail.conf.sample
+@sample %%ETCDIR%%/svxreflector.conf.sample
 include/svxlink/AsyncApplication.h
-include/svxlink/AsyncFdWatch.h
-include/svxlink/AsyncTimer.h
-include/svxlink/AsyncIpAddress.h
-include/svxlink/AsyncTcpClient.h
-include/svxlink/AsyncDnsLookup.h
-include/svxlink/AsyncUdpSocket.h
-include/svxlink/AsyncTcpServer.h
-include/svxlink/AsyncTcpConnection.h
-include/svxlink/AsyncConfig.h
-include/svxlink/AsyncSerial.h
-include/svxlink/AsyncFileReader.h
 include/svxlink/AsyncAtTimer.h
-include/svxlink/AsyncExec.h
-include/svxlink/AsyncCppApplication.h
-include/svxlink/AsyncAudioSource.h
-include/svxlink/AsyncAudioSink.h
-include/svxlink/AsyncAudioProcessor.h
+include/svxlink/AsyncAudioAmp.h
 include/svxlink/AsyncAudioClipper.h
 include/svxlink/AsyncAudioCompressor.h
-include/svxlink/AsyncAudioFilter.h
-include/svxlink/AsyncSigCAudioSink.h
-include/svxlink/AsyncSigCAudioSource.h
-include/svxlink/AsyncAudioIO.h
-include/svxlink/AsyncAudioSplitter.h
-include/svxlink/AsyncAudioDelayLine.h
-include/svxlink/AsyncAudioValve.h
-include/svxlink/AsyncAudioAmp.h
-include/svxlink/AsyncAudioSelector.h
-include/svxlink/AsyncAudioPassthrough.h
-include/svxlink/AsyncAudioMixer.h
-include/svxlink/AsyncAudioFifo.h
 include/svxlink/AsyncAudioDebugger.h
-include/svxlink/AsyncAudioPacer.h
-include/svxlink/AsyncAudioReader.h
 include/svxlink/AsyncAudioDecimator.h
-include/svxlink/AsyncAudioInterpolator.h
-include/svxlink/AsyncAudioStreamStateDetector.h
-include/svxlink/AsyncAudioEncoder.h
 include/svxlink/AsyncAudioDecoder.h
-include/svxlink/AsyncAudioRecorder.h
-include/svxlink/AsyncAudioJitterFifo.h
-include/svxlink/AsyncAudioDeviceFactory.h
+include/svxlink/AsyncAudioDelayLine.h
 include/svxlink/AsyncAudioDevice.h
-include/svxlink/CppStdCompat.h
-include/svxlink/common.h
-include/svxlink/EchoLinkDirectory.h
-include/svxlink/EchoLinkDispatcher.h
-include/svxlink/EchoLinkQso.h
-include/svxlink/EchoLinkStationData.h
-include/svxlink/EchoLinkProxy.h
+include/svxlink/AsyncAudioDeviceFactory.h
+include/svxlink/AsyncAudioEncoder.h
+include/svxlink/AsyncAudioFifo.h
+include/svxlink/AsyncAudioFilter.h
 include/svxlink/AsyncAudioGenerator.h
+include/svxlink/AsyncAudioIO.h
+include/svxlink/AsyncAudioInterpolator.h
+include/svxlink/AsyncAudioJitterFifo.h
+include/svxlink/AsyncAudioMixer.h
 include/svxlink/AsyncAudioNoiseAdder.h
+include/svxlink/AsyncAudioPacer.h
+include/svxlink/AsyncAudioPassthrough.h
+include/svxlink/AsyncAudioProcessor.h
+include/svxlink/AsyncAudioReader.h
+include/svxlink/AsyncAudioRecorder.h
+include/svxlink/AsyncAudioSelector.h
+include/svxlink/AsyncAudioSink.h
+include/svxlink/AsyncAudioSource.h
+include/svxlink/AsyncAudioSplitter.h
+include/svxlink/AsyncAudioStreamStateDetector.h
+include/svxlink/AsyncAudioValve.h
+include/svxlink/AsyncConfig.h
+include/svxlink/AsyncCppApplication.h
+include/svxlink/AsyncDnsLookup.h
+include/svxlink/AsyncExec.h
+include/svxlink/AsyncFdWatch.h
+include/svxlink/AsyncFileReader.h
+include/svxlink/AsyncFramedTcpConnection.h
+include/svxlink/AsyncIpAddress.h
+include/svxlink/AsyncMsg.h
 include/svxlink/AsyncPty.h
 include/svxlink/AsyncPtyStreamBuf.h
-lib/libasynccore.so.1.4.0
-lib/libasynccore.so.1.4
-lib/libasynccore.so
-lib/libasynccpp.so.1.4.0
-lib/libasynccpp.so.1.4
-lib/libasynccpp.so
-lib/libasyncaudio.so.1.4.0
-lib/libasyncaudio.so.1.4
+include/svxlink/AsyncSerial.h
+include/svxlink/AsyncSigCAudioSink.h
+include/svxlink/AsyncSigCAudioSource.h
+include/svxlink/AsyncTcpClient.h
+include/svxlink/AsyncTcpClientBase.h
+include/svxlink/AsyncTcpConnection.h
+include/svxlink/AsyncTcpServer.h
+include/svxlink/AsyncTcpServerBase.h
+include/svxlink/AsyncTimer.h
+include/svxlink/AsyncUdpSocket.h
+include/svxlink/CppStdCompat.h
+include/svxlink/EchoLinkDirectory.h
+include/svxlink/EchoLinkDispatcher.h
+include/svxlink/EchoLinkProxy.h
+include/svxlink/EchoLinkQso.h
+include/svxlink/EchoLinkStationData.h
+include/svxlink/common.h
 lib/libasyncaudio.so
-lib/svxlink/ModuleHelp.so
-lib/svxlink/ModuleParrot.so
-lib/svxlink/ModuleEchoLink.so
-lib/svxlink/ModuleTcl.so
-lib/svxlink/ModuleDtmfRepeater.so
-lib/svxlink/ModuleMetarInfo.so
-lib/libecholib.so.1.3.2
-lib/libecholib.so.1.3
+lib/libasyncaudio.so.1.5
+lib/libasyncaudio.so.1.5.0
+lib/libasynccore.so
+lib/libasynccore.so.1.5
+lib/libasynccore.so.1.5.0
+lib/libasynccpp.so
+lib/libasynccpp.so.1.5
+lib/libasynccpp.so.1.5.0
 lib/libecholib.so
+lib/libecholib.so.1.3
+lib/libecholib.so.1.3.3
+lib/libsvxmisc.a
+lib/svxlink/ModuleDtmfRepeater.so
+lib/svxlink/ModuleEchoLink.so
+lib/svxlink/ModuleFrn.so
+lib/svxlink/ModuleHelp.so
+lib/svxlink/ModuleMetarInfo.so
+lib/svxlink/ModuleParrot.so
+lib/svxlink/ModuleTcl.so
 %%STATIC%%lib/libasyncaudio.a
 %%STATIC%%lib/libasynccore.a
 %%STATIC%%lib/libasynccpp.a
@@ -102,6 +112,7 @@ lib/libecholib.so
 %%DATADIR%%/events.d/Help.tcl
 %%DATADIR%%/events.d/Parrot.tcl
 %%DATADIR%%/events.d/EchoLink.tcl
+%%DATADIR%%/events.d/Frn.tcl
 %%DATADIR%%/events.d/Tcl.tcl.example
 %%DATADIR%%/events.d/TclVoiceMail.tcl
 %%DATADIR%%/events.d/DtmfRepeater.tcl
@@ -113,20 +124,25 @@ lib/libecholib.so
 %%DATADIR%%/modules.d/ModulePropagationMonitor.tcl
 %%DATADIR%%/modules.d/ModuleSelCallEnc.tcl
 man/man1/devcal.1.gz
-man/man1/svxlink.1.gz
 man/man1/remotetrx.1.gz
 man/man1/siglevdetcal.1.gz
-man/man5/svxlink.conf.5.gz
+man/man1/svxlink.1.gz
+man/man1/svxreflector.1.gz
+man/man5/ModuleDtmfRepeater.conf.5.gz
+man/man5/ModuleEchoLink.conf.5.gz
+man/man5/ModuleFrn.conf.5.gz
 man/man5/ModuleHelp.conf.5.gz
 man/man5/ModuleParrot.conf.5.gz
-man/man5/ModuleEchoLink.conf.5.gz
-man/man5/ModuleTclVoiceMail.conf.5.gz
-man/man5/ModuleDtmfRepeater.conf.5.gz
 man/man5/ModulePropagationMonitor.conf.5.gz
 man/man5/ModuleSelCallEnc.conf.5.gz
+man/man5/ModuleTclVoiceMail.conf.5.gz
 man/man5/remotetrx.conf.5.gz
+man/man5/svxlink.conf.5.gz
+man/man5/svxreflector.conf.5.gz
+sbin/svxlink_gpio_down
+sbin/svxlink_gpio_up
 @dir %%DATADIR%%/sounds
-@dir /var/spool/svxlink/voice_mail
-@dir /var/spool/svxlink/qso_recorder
 @dir /var/spool/svxlink/propagation_monitor
+@dir /var/spool/svxlink/qso_recorder
+@dir /var/spool/svxlink/voice_mail
 @dir /var/spool/svxlink

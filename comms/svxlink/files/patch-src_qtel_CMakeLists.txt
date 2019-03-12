@@ -1,6 +1,6 @@
---- src/qtel/CMakeLists.txt.orig	2015-11-22 16:03:59 UTC
+--- src/qtel/CMakeLists.txt.orig	2018-03-04 18:59:29 UTC
 +++ src/qtel/CMakeLists.txt
-@@ -16,7 +16,14 @@ set(FORMS MainWindowBase.ui ComDialogBas
+@@ -16,7 +16,14 @@ set(FORMS MainWindowBase.ui ComDialogBase.ui SettingsD
  set(RESOURCES qtel.qrc)
  
  # Libraries
@@ -8,9 +8,9 @@
 +find_library(ASYNCCORE_LIB asynccore ${LIB_INSTALL_DIR})
 +find_library(ASYNCAUDIO_LIB asyncaudio ${LIB_INSTALL_DIR})
 +find_library(ECHOLIB_LIB echolib ${LIB_INSTALL_DIR})
-+set(LIBS ${LIBS} ${ECHOLIB_LIB} asyncqt ${ASYNCAUDIO_LIB} ${ASYNCCORE_LIB})
++set(LIBS ${LIBS} ${ECHOLIB_LIB} asyncqt ${ASYNCAUDIO_LIB} ${ASYNCCORE_LIB} svxmisc)
 +else(QT_ONLY)
- set(LIBS ${LIBS} echolib asyncqt asyncaudio asynccore)
+ set(LIBS ${LIBS} echolib asyncqt asyncaudio asynccore svxmisc)
 +endif(QT_ONLY)
  
  # Find the GSM codec library and include directory

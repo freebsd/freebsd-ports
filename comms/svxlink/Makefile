@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	svxlink
-PORTVERSION=	15.11
-PORTREVISION=	6
+PORTVERSION=	17.12.2
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -79,16 +78,22 @@ post-patch-OSS-on:
 post-install:
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/.procmailrc \
 		${STAGEDIR}${PREFIX}/etc/svxlink/.procmailrc.sample
+	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/gpio.conf \
+		${STAGEDIR}${PREFIX}/etc/svxlink/gpio.conf.sample
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/TclVoiceMail.conf \
 		${STAGEDIR}${PREFIX}/etc/svxlink/TclVoiceMail.conf.sample
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/remotetrx.conf \
 		${STAGEDIR}${PREFIX}/etc/svxlink/remotetrx.conf.sample
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.conf \
 		${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.conf.sample
+	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/svxreflector.conf \
+		${STAGEDIR}${PREFIX}/etc/svxlink/svxreflector.conf.sample
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleDtmfRepeater.conf \
 		${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleDtmfRepeater.conf.sample
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleEchoLink.conf \
 		${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleEchoLink.conf.sample
+	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleFrn.conf \
+		${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleFrn.conf.sample
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleHelp.conf \
 		${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleHelp.conf.sample
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleMetarInfo.conf \
@@ -102,5 +107,10 @@ post-install:
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleTclVoiceMail.conf \
 		${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleTclVoiceMail.conf.sample
 .endif
-
+.if ${PORTNAME}==qtel
+post-install:
+	${RM}	${STAGEDIR}${PREFIX}/include/svxlink/CppStdCompat.h
+	${RM}	${STAGEDIR}${PREFIX}/include/svxlink/common.h
+	${RM}	${STAGEDIR}${PREFIX}/lib/libsvxmisc.a
+.endif
 .include <bsd.port.mk>

@@ -1,14 +1,15 @@
---- src/async/qt/CMakeLists.txt.orig	2015-11-22 16:03:59 UTC
+--- src/async/qt/CMakeLists.txt.orig	2019-03-12 00:30:56 UTC
 +++ src/async/qt/CMakeLists.txt
-@@ -6,7 +6,12 @@ set(LIBSRC AsyncQtApplication.cpp AsyncQ
+@@ -6,7 +6,12 @@ set(LIBSRC AsyncQtApplication.cpp AsyncQtDnsLookupWork
  
  set(QTHEADERS AsyncQtApplication.h AsyncQtTimer.h AsyncQtDnsLookupWorker.h)
  
+-set(LIBS ${LIBS} asynccore)
 +if(QT_ONLY)
 +find_library(ASYNCCORE_LIB asynccore ${LIB_INSTALL_DIR})
 +set(LIBS ${LIBS} ${ASYNCCORE_LIB})
 +else(QT_ONLY)
- set(LIBS ${LIBS} asynccore)
++ set(LIBS ${LIBS} asynccore)
 +endif(QT_ONLY)
  
  # Copy exported include files to the global include directory

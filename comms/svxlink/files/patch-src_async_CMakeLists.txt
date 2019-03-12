@@ -1,10 +1,11 @@
---- src/async/CMakeLists.txt.orig	2015-11-22 16:03:59 UTC
+--- src/async/CMakeLists.txt.orig	2018-03-04 18:59:29 UTC
 +++ src/async/CMakeLists.txt
 @@ -1,7 +1,9 @@
 +if(NOT QT_ONLY)
  add_subdirectory(core)
- add_subdirectory(cpp)
+-add_subdirectory(cpp)
  add_subdirectory(audio)
++add_subdirectory(cpp)
 +add_subdirectory(demo)
 +endif(NOT QT_ONLY)
  if(USE_QT)

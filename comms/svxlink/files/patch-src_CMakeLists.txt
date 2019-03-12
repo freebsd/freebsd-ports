@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2015-11-22 16:03:59 UTC
+--- src/CMakeLists.txt.orig	2018-03-04 18:59:29 UTC
 +++ src/CMakeLists.txt
-@@ -37,6 +37,7 @@ set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_B
+@@ -37,6 +37,7 @@ set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin
  list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules/")
  
  # Optional parts
@@ -21,7 +21,15 @@
  # Warnings should be enabled for GCC. Also turning off the NDEBUG flag
  # since that remove asserts.
  if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
-@@ -87,6 +82,15 @@ if(NOT DEFINED INCLUDE_INSTALL_DIR)
+@@ -73,7 +68,6 @@ if(NOT CMAKE_BUILD_TYPE)
+       FORCE)
+ endif(NOT CMAKE_BUILD_TYPE)
+ 
+-
+ ##############################################################################
+ # Install targets properties setup
+ ##############################################################################
+@@ -87,6 +81,18 @@ if(NOT DEFINED INCLUDE_INSTALL_DIR)
    set(INCLUDE_INSTALL_DIR ${CMAKE_INSTALL_FULL_INCLUDEDIR})
  endif(NOT DEFINED INCLUDE_INSTALL_DIR)
  
@@ -30,19 +38,29 @@
 +  ${PROJECT_INCLUDE_DIR}
 +  ${CMAKE_BINARY_DIR}
 +if(QT_ONLY)
-+  ${INCLUDE_INSTALL_DIR}/svxlink
++  ${CMAKE_SOURCE_DIR}/echolib
++  ${CMAKE_SOURCE_DIR}/async/audio
++  ${CMAKE_SOURCE_DIR}/async/core
++  ${INCLUDE_INSTALL_DIR}/svxlink/svxlink
 +endif(QT_ONLY)
 +)
 +
  # Where to install libraries
  if(NOT DEFINED LIB_INSTALL_DIR)
    #set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX})
-@@ -324,10 +328,12 @@ include(FindCHOWN)
+@@ -327,21 +333,24 @@ set(LIBS ${LIBS} ${SIGC2_LIBRARIES})
+ # Find the chown utility
+ include(FindCHOWN)
  
+-set(SVXLINK_USER "svxlink" CACHE STRING "Set SvxLink system user")
+-set(SVXLINK_GROUP "daemon" CACHE STRING "Set SvxLink system group")
+-message(STATUS "SvxLink user = ${SVXLINK_USER}")
+-message(STATUS "SvxLink group = ${SVXLINK_GROUP}")
+-
  # Add directories to build
  add_subdirectory(async)
-+if(NOT QT_ONLY)
  add_subdirectory(misc)
++if(NOT QT_ONLY)
  add_subdirectory(echolib)
  add_subdirectory(locationinfo)
  add_subdirectory(svxlink)
@@ -50,3 +68,13 @@
  if(USE_QT)
    add_subdirectory(qtel)
  endif(USE_QT)
+ add_subdirectory(doc)
++
++set(SVXLINK_USER "svxlink" CACHE STRING "Set SvxLink system user")
++set(SVXLINK_GROUP "daemon" CACHE STRING "Set SvxLink system group")
++message(STATUS "SvxLink user = ${SVXLINK_USER}")
++message(STATUS "SvxLink group = ${SVXLINK_GROUP}")
++
+ 
+ # Experimental CPack package building
+ set(CPACK_SET_DESTDIR "ON")
