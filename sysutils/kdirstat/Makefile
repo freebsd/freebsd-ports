@@ -13,7 +13,8 @@ COMMENT=	KDE utility that sums up disk usage for directory trees
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake cpe desktop-file-utils gettext-tools kde:5 qt:5 tar:bzip2
+USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext-tools \
+		kde:5 qt:5 tar:bzip2
 
 WRKSRC=		${WRKDIR}/jeromerobert-k4dirstat-0fd87f361645
 
