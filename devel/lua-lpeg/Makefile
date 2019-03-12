@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lpeg
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.inf.puc-rio.br/~roberto/lpeg/ \
 		LOCAL/sunpoet
@@ -13,10 +12,11 @@ COMMENT=	PEG-based pattern-matching library for Lua
 
 LICENSE=	MIT
 
+USES=		lua
+
 ALL_TARGET=	linux
 MAKE_ARGS=	CC=${CC} LUADIR=${LUA_INCDIR}
 MAKEFILE=	${WRKSRC}/makefile
-USES?=		lua
 
 PLIST_FILES=	${LUA_MODLIBDIR}/lpeg.so \
 		${LUA_MODSHAREDIR}/re.lua
