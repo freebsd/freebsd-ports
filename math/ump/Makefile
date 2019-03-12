@@ -13,7 +13,7 @@ COMMENT=	Graphical, easy to use math program
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		compiler:c++11-lang gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 USE_GL=		glu
 
