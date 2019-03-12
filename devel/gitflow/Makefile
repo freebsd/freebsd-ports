@@ -3,6 +3,7 @@
 
 PORTNAME=	gitflow
 PORTVERSION=	1.12.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	nbari@tequila.io
