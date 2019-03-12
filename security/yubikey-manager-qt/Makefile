@@ -14,11 +14,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yubikey-manager>0:security/py-yubikey-manager@${PY_FLAVOR} \
 		pyotherside-qt5>0:devel/pyotherside-qt5
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yubikey-manager>0:security/py-yubikey-manager@${PY_FLAVOR} \
 		pyotherside-qt5>0:devel/pyotherside-qt5
 
-USES=		gl pkgconfig python:3.5+ qt:5 qmake shebangfix
+USES=		compiler:c++11-lang gl pkgconfig python:3.5+ qt:5 qmake \
+		shebangfix
 USE_GL=		gl
 USE_QT=		core declarative graphicaleffects gui network quickcontrols \
 		quickcontrols2 svg widgets buildtools_build
