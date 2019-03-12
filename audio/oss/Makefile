@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oss
-DISTVERSION=	4.2-build2017
+DISTVERSION=	4.2-build2019
 CATEGORIES=	audio
 MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
