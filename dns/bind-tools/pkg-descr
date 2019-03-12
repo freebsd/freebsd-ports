@@ -5,4 +5,5 @@ It also includes various dnssec related tools:
 	dnssec-dsfromkey, dnssec-importkey, dnssec-keyfromlabel, dnssec-keygen,
 	dnssec-revoke, dnssec-settime, dnssec-signzone, dnssec-verify
 
-WWW: https://www.isc.org/software/bind
+WWW: https://www.isc.org/downloads/bind/
+
