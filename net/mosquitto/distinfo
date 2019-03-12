@@ -1,3 +1,3 @@
-TIMESTAMP = 1545122205
-SHA256 (mosquitto-1.5.5.tar.gz) = fcdb47e340864c545146681af7253399cc292e41775afd76400fda5b0d23d668
-SIZE (mosquitto-1.5.5.tar.gz) = 431998
+TIMESTAMP = 1551386128
+SHA256 (mosquitto-1.5.8.tar.gz) = 78d7e70c3794dc3a1d484b4f2f8d3addebe9c2da3f5a1cebe557f7d13beb0da4
+SIZE (mosquitto-1.5.8.tar.gz) = 442834
