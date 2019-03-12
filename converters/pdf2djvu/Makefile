@@ -3,6 +3,7 @@
 PORTNAME=	pdf2djvu
 PORTVERSION=	0.9.12
 CATEGORIES=	converters
+MASTER_SITES=	https://github.com/jwilk/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	samy.mahmoudi@gmail.com
 COMMENT=	Creates DjVu files from PDF files
@@ -17,9 +18,6 @@ LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
 USES=		autoreconf:build compiler:c++11-lang gettext-tools \
 		gmake iconv localbase pkgconfig tar:xz
 USE_CXXSTD=	c++11
-
-USE_GITHUB=	yes
-GH_TUPLE=	jwilk:${PORTNAME}:${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/pdf2djvu
