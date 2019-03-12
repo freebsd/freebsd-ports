@@ -12,7 +12,7 @@ COMMENT=	KDE thumbnail generator for fb2 files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake kde:5 qt:5
+USES=		cmake compiler:c++11-lang kde:5 qt:5
 USE_KDE=	archive ecm_build kio
 USE_QT=		buildtools_build qmake_build gui
 
