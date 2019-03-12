@@ -12,8 +12,6 @@ COMMENT=	Collect logs locally and send to remote logstash
 
 LICENSE=	APACHE20
 
-BROKEN_i386=	fails to build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	elastic
 
