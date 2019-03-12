@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-ObjectDriver
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,8 +22,9 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
 		p5-Test-Exception>=0:devel/p5-Test-Exception
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuildtiny
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
