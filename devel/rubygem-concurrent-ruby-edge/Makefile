@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	concurrent-ruby-edge
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Bleeding edge features for concurrent-ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-concurrent-ruby>=1.1.1:devel/rubygem-concurrent-ruby
+RUN_DEPENDS=	rubygem-concurrent-ruby>=1.1.5:devel/rubygem-concurrent-ruby
 
 USES=		gem
 USE_RUBY=	yes
