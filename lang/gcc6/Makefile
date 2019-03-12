@@ -174,9 +174,8 @@ post-stage:
 	${RM} ${WRKDIR}/PLIST.lib
 
 .if ${ARCH} == powerpc64 && ${PORT_OPTIONS:MMULTILIB}
-	${MKDIR} ${STAGEDIR}${TARGLIB32}/gcc${SUFFIX}
-	${MV} ${STAGEDIR}${PREFIX}/lib/lib32/* ${STAGEDIR}${TARGLIB32}/gcc${SUFFIX}
-	${RMDIR} ${STAGEDIR}${PREFIX}/lib/lib32
+	${MKDIR} ${STAGEDIR}${TARGLIB32}
+	${MV} ${STAGEDIR}${PREFIX}/lib/lib32 ${STAGEDIR}${TARGLIB32}/gcc${SUFFIX}
 .endif
 
 .for d in ${TARGLIB:S/^${PREFIX}\///} ${TARGLIB32:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
