@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	svgwrite
-PORTVERSION=	1.1.12
+PORTVERSION=	1.2.1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER=	george@m5p.com
 COMMENT=	Python library to create SVG drawings
 
 LICENSE=	MIT
