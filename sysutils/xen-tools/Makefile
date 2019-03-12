@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.11.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -23,6 +23,7 @@ DOCS_BUILD_DEPENDS=markdown:textproc/markdown
 
 OPTIONS_DEFINE=		DOCS SPICE
 OPTIONS_DEFAULT=	DOCS
+OPTIONS_SUB=		yes
 
 SPICE_DESC=		Enable SPICE protocol for QEMU
 SPICE_CONFIGURE_WITH=	extra-qemuu-configure-args="--enable-spice"
@@ -49,7 +50,8 @@ EXTRA_PATCHES+=	${FILESDIR}/0001-docs-use-the-make-wildcard-function-instead-of-
 # Fix hvmloader build with LLVM LD
 EXTRA_PATCHES+=	${FILESDIR}/0001-hvmloader-fix-build-with-LLVM-Linker.patch:-p1
 
-CONFIGURE_ARGS+= --with-system-seabios=${LOCALBASE}/share/seabios/bios.bin
+CONFIGURE_ARGS+=	--with-system-seabios=${LOCALBASE}/share/seabios/bios.bin \
+			--mandir=${MANPREFIX}/man
 
 SHEBANG_FILES=	tools/misc/xen-ringwatch \
 		tools/misc/xencov_split \
