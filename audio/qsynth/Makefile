@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qsynth
-PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTVERSION=	0.5.5
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -17,8 +16,8 @@ LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 
 USES=		compiler:c++11-lang gmake pkgconfig qt:5
 USE_CXXSTD=	c++11
-USE_QT=		core gui widgets x11extras buildtools_build linguisttools_build \
-		qmake_build
+USE_QT=		core gui network widgets x11extras buildtools_build \
+		linguisttools_build qmake_build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_ac_cv_qmake=${QMAKE} \
