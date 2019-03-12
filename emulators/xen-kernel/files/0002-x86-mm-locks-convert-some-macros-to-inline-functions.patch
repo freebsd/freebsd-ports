@@ -1,0 +1,210 @@
+From 45e260afe7ee0e6b18a7e64173a081eec6e056aa Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Tue, 12 Mar 2019 12:24:37 +0100
+Subject: [PATCH 2/3] x86/mm-locks: convert some macros to inline functions
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+And rename to have only one prefix underscore where applicable.
+
+No functional change.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Reviewed-by: George Dunlap <george.dunlap@citrix.com>
+---
+ xen/arch/x86/mm/mm-locks.h | 98 ++++++++++++++++++++------------------
+ 1 file changed, 52 insertions(+), 46 deletions(-)
+
+diff --git a/xen/arch/x86/mm/mm-locks.h b/xen/arch/x86/mm/mm-locks.h
+index 6c15b9a4cc..d3497713e9 100644
+--- a/xen/arch/x86/mm/mm-locks.h
++++ b/xen/arch/x86/mm/mm-locks.h
+@@ -29,7 +29,6 @@
+ 
+ /* Per-CPU variable for enforcing the lock ordering */
+ DECLARE_PER_CPU(int, mm_lock_level);
+-#define __get_lock_level()  (this_cpu(mm_lock_level))
+ 
+ DECLARE_PERCPU_RWLOCK_GLOBAL(p2m_percpu_rwlock);
+ 
+@@ -46,43 +45,47 @@ static inline int mm_locked_by_me(mm_lock_t *l)
+     return (l->lock.recurse_cpu == current->processor);
+ }
+ 
++static inline int _get_lock_level(void)
++{
++    return this_cpu(mm_lock_level);
++}
++
+ /*
+  * If you see this crash, the numbers printed are order levels defined
+  * in this file.
+  */
+-#define __check_lock_level(l)                           \
+-do {                                                    \
+-    if ( unlikely(__get_lock_level() > (l)) )           \
+-    {                                                   \
+-        printk("mm locking order violation: %i > %i\n", \
+-               __get_lock_level(), (l));                \
+-        BUG();                                          \
+-    }                                                   \
+-} while(0)
+-
+-#define __set_lock_level(l)         \
+-do {                                \
+-    __get_lock_level() = (l);       \
+-} while(0)
++static inline void _check_lock_level(int l)
++{
++    if ( unlikely(_get_lock_level() > l) )
++    {
++        printk("mm locking order violation: %i > %i\n", _get_lock_level(), l);
++        BUG();
++    }
++}
++
++static inline void _set_lock_level(int l)
++{
++    this_cpu(mm_lock_level) = l;
++}
+ 
+ static inline void _mm_lock(mm_lock_t *l, const char *func, int level, int rec)
+ {
+     if ( !((mm_locked_by_me(l)) && rec) )
+-        __check_lock_level(level);
++        _check_lock_level(level);
+     spin_lock_recursive(&l->lock);
+     if ( l->lock.recurse_cnt == 1 )
+     {
+         l->locker_function = func;
+-        l->unlock_level = __get_lock_level();
++        l->unlock_level = _get_lock_level();
+     }
+     else if ( (unlikely(!rec)) )
+-        panic("mm lock already held by %s", l->locker_function);
+-    __set_lock_level(level);
++        panic("mm lock already held by %s\n", l->locker_function);
++    _set_lock_level(level);
+ }
+ 
+ static inline void _mm_enforce_order_lock_pre(int level)
+ {
+-    __check_lock_level(level);
++    _check_lock_level(level);
+ }
+ 
+ static inline void _mm_enforce_order_lock_post(int level, int *unlock_level,
+@@ -92,12 +95,12 @@ static inline void _mm_enforce_order_lock_post(int level, int *unlock_level,
+     {
+         if ( (*recurse_count)++ == 0 )
+         {
+-            *unlock_level = __get_lock_level();
++            *unlock_level = _get_lock_level();
+         }
+     } else {
+-        *unlock_level = __get_lock_level();
++        *unlock_level = _get_lock_level();
+     }
+-    __set_lock_level(level);
++    _set_lock_level(level);
+ }
+ 
+ 
+@@ -118,12 +121,12 @@ static inline void _mm_write_lock(mm_rwlock_t *l, const char *func, int level)
+ {
+     if ( !mm_write_locked_by_me(l) )
+     {
+-        __check_lock_level(level);
++        _check_lock_level(level);
+         percpu_write_lock(p2m_percpu_rwlock, &l->lock);
+         l->locker = get_processor_id();
+         l->locker_function = func;
+-        l->unlock_level = __get_lock_level();
+-        __set_lock_level(level);
++        l->unlock_level = _get_lock_level();
++        _set_lock_level(level);
+     }
+     l->recurse_count++;
+ }
+@@ -134,13 +137,13 @@ static inline void mm_write_unlock(mm_rwlock_t *l)
+         return;
+     l->locker = -1;
+     l->locker_function = "nobody";
+-    __set_lock_level(l->unlock_level);
++    _set_lock_level(l->unlock_level);
+     percpu_write_unlock(p2m_percpu_rwlock, &l->lock);
+ }
+ 
+ static inline void _mm_read_lock(mm_rwlock_t *l, int level)
+ {
+-    __check_lock_level(level);
++    _check_lock_level(level);
+     percpu_read_lock(p2m_percpu_rwlock, &l->lock);
+     /* There's nowhere to store the per-CPU unlock level so we can't
+      * set the lock level. */
+@@ -181,7 +184,7 @@ static inline void mm_unlock(mm_lock_t *l)
+     if ( l->lock.recurse_cnt == 1 )
+     {
+         l->locker_function = "nobody";
+-        __set_lock_level(l->unlock_level);
++        _set_lock_level(l->unlock_level);
+     }
+     spin_unlock_recursive(&l->lock);
+ }
+@@ -194,10 +197,10 @@ static inline void mm_enforce_order_unlock(int unlock_level,
+         BUG_ON(*recurse_count == 0);
+         if ( (*recurse_count)-- == 1 )
+         {
+-            __set_lock_level(unlock_level);
++            _set_lock_level(unlock_level);
+         }
+     } else {
+-        __set_lock_level(unlock_level);
++        _set_lock_level(unlock_level);
+     }
+ }
+ 
+@@ -287,21 +290,24 @@ declare_mm_lock(altp2mlist)
+ 
+ #define MM_LOCK_ORDER_altp2m                 40
+ declare_mm_rwlock(altp2m);
+-#define p2m_lock(p)                             \
+-    do {                                        \
+-        if ( p2m_is_altp2m(p) )                 \
+-            mm_write_lock(altp2m, &(p)->lock);  \
+-        else                                    \
+-            mm_write_lock(p2m, &(p)->lock);     \
+-        (p)->defer_flush++;                     \
+-    } while (0)
+-#define p2m_unlock(p)                           \
+-    do {                                        \
+-        if ( --(p)->defer_flush == 0 )          \
+-            p2m_unlock_and_tlb_flush(p);        \
+-        else                                    \
+-            mm_write_unlock(&(p)->lock);        \
+-    } while (0)
++
++static inline void p2m_lock(struct p2m_domain *p)
++{
++    if ( p2m_is_altp2m(p) )
++        mm_write_lock(altp2m, &p->lock);
++    else
++        mm_write_lock(p2m, &p->lock);
++    p->defer_flush++;
++}
++
++static inline void p2m_unlock(struct p2m_domain *p)
++{
++    if ( --p->defer_flush == 0 )
++        p2m_unlock_and_tlb_flush(p);
++    else
++        mm_write_unlock(&p->lock);
++}
++
+ #define gfn_lock(p,g,o)       p2m_lock(p)
+ #define gfn_unlock(p,g,o)     p2m_unlock(p)
+ #define p2m_read_lock(p)      mm_read_lock(p2m, &(p)->lock)
+-- 
+2.17.2 (Apple Git-113)
+

@@ -1,0 +1,317 @@
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Subject: x86/pv: Rewrite guest %cr4 handling from scratch
+
+The PV cr4 logic is almost impossible to follow, and leaks bits into guest
+context which definitely shouldn't be visible (in particular, VMXE).
+
+The biggest problem however, and source of the complexity, is that it derives
+new real and guest cr4 values from the current value in hardware - this is
+context dependent and an inappropriate source of information.
+
+Rewrite the cr4 logic to be invariant of the current value in hardware.
+
+First of all, modify write_ptbase() to always use mmu_cr4_features for IDLE
+and HVM contexts.  mmu_cr4_features *is* the correct value to use, and makes
+the ASSERT() obviously redundant.
+
+For PV guests, curr->arch.pv.ctrlreg[4] remains the guests view of cr4, but
+all logic gets reworked in terms of this and mmu_cr4_features only.
+
+Two masks are introduced; bits which the guest has control over, and bits
+which are forwarded from Xen's settings.  One guest-visible change here is
+that Xen's VMXE setting is no longer visible at all.
+
+pv_make_cr4() follows fairly closely from pv_guest_cr4_to_real_cr4(), but
+deliberately starts with mmu_cr4_features, and only alters the minimal subset
+of bits.
+
+The boot-time {compat_,}pv_cr4_mask variables are removed, as they are a
+remnant of the pre-CPUID policy days.  pv_fixup_guest_cr4() gains a related
+derivation from the policy.
+
+Another guest visible change here is that a 32bit PV guest can now flip
+FSGSBASE in its view of CR4.  While the {RD,WR}{FS,GS}BASE instructions are
+unusable outside of a 64bit code segment, the ability to modify FSGSBASE
+matches real hardware behaviour, and avoids the need for any 32bit/64bit
+differences in the logic.
+
+Overall, this patch shouldn't have a practical change in guest behaviour.
+VMXE will disappear from view, and an inquisitive 32bit kernel can now see
+FSGSBASE changing, but this new logic is otherwise bug-compatible with before.
+
+This is part of XSA-293
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+
+diff --git a/xen/arch/x86/domain.c b/xen/arch/x86/domain.c
+index b1e50d1..675152a 100644
+--- a/xen/arch/x86/domain.c
++++ b/xen/arch/x86/domain.c
+@@ -733,49 +733,6 @@ int arch_domain_soft_reset(struct domain *d)
+     return ret;
+ }
+ 
+-/*
+- * These are the masks of CR4 bits (subject to hardware availability) which a
+- * PV guest may not legitimiately attempt to modify.
+- */
+-static unsigned long __read_mostly pv_cr4_mask, compat_pv_cr4_mask;
+-
+-static int __init init_pv_cr4_masks(void)
+-{
+-    unsigned long common_mask = ~X86_CR4_TSD;
+-
+-    /*
+-     * All PV guests may attempt to modify TSD, DE and OSXSAVE.
+-     */
+-    if ( cpu_has_de )
+-        common_mask &= ~X86_CR4_DE;
+-    if ( cpu_has_xsave )
+-        common_mask &= ~X86_CR4_OSXSAVE;
+-
+-    pv_cr4_mask = compat_pv_cr4_mask = common_mask;
+-
+-    /*
+-     * 64bit PV guests may attempt to modify FSGSBASE.
+-     */
+-    if ( cpu_has_fsgsbase )
+-        pv_cr4_mask &= ~X86_CR4_FSGSBASE;
+-
+-    return 0;
+-}
+-__initcall(init_pv_cr4_masks);
+-
+-unsigned long pv_guest_cr4_fixup(const struct vcpu *v, unsigned long guest_cr4)
+-{
+-    unsigned long hv_cr4 = real_cr4_to_pv_guest_cr4(read_cr4());
+-    unsigned long mask = is_pv_32bit_vcpu(v) ? compat_pv_cr4_mask : pv_cr4_mask;
+-
+-    if ( (guest_cr4 & mask) != (hv_cr4 & mask) )
+-        printk(XENLOG_G_WARNING
+-               "d%d attempted to change %pv's CR4 flags %08lx -> %08lx\n",
+-               current->domain->domain_id, v, hv_cr4, guest_cr4);
+-
+-    return (hv_cr4 & mask) | (guest_cr4 & ~mask);
+-}
+-
+ #define xen_vcpu_guest_context vcpu_guest_context
+ #define fpu_ctxt fpu_ctxt.x
+ CHECK_FIELD_(struct, vcpu_guest_context, fpu_ctxt);
+@@ -789,7 +746,7 @@ int arch_set_info_guest(
+     struct domain *d = v->domain;
+     unsigned long cr3_gfn;
+     struct page_info *cr3_page;
+-    unsigned long flags, cr4;
++    unsigned long flags;
+     unsigned int i;
+     int rc = 0, compat;
+ 
+@@ -978,9 +935,8 @@ int arch_set_info_guest(
+     v->arch.pv_vcpu.ctrlreg[0] &= X86_CR0_TS;
+     v->arch.pv_vcpu.ctrlreg[0] |= read_cr0() & ~X86_CR0_TS;
+ 
+-    cr4 = v->arch.pv_vcpu.ctrlreg[4];
+-    v->arch.pv_vcpu.ctrlreg[4] = cr4 ? pv_guest_cr4_fixup(v, cr4) :
+-        real_cr4_to_pv_guest_cr4(mmu_cr4_features);
++    v->arch.pv_vcpu.ctrlreg[4] =
++        pv_fixup_guest_cr4(v, v->arch.pv_vcpu.ctrlreg[4]);
+ 
+     memset(v->arch.debugreg, 0, sizeof(v->arch.debugreg));
+     for ( i = 0; i < 8; i++ )
+diff --git a/xen/arch/x86/mm.c b/xen/arch/x86/mm.c
+index 6509035..08634b7 100644
+--- a/xen/arch/x86/mm.c
++++ b/xen/arch/x86/mm.c
+@@ -505,33 +505,13 @@ void make_cr3(struct vcpu *v, mfn_t mfn)
+         v->arch.cr3 |= get_pcid_bits(v, false);
+ }
+ 
+-unsigned long pv_guest_cr4_to_real_cr4(const struct vcpu *v)
+-{
+-    const struct domain *d = v->domain;
+-    unsigned long cr4;
+-
+-    cr4 = v->arch.pv_vcpu.ctrlreg[4] & ~X86_CR4_DE;
+-    cr4 |= mmu_cr4_features & (X86_CR4_PSE | X86_CR4_SMEP | X86_CR4_SMAP |
+-                               X86_CR4_OSXSAVE | X86_CR4_FSGSBASE);
+-
+-    if ( d->arch.pv_domain.pcid )
+-        cr4 |= X86_CR4_PCIDE;
+-    else if ( !d->arch.pv_domain.xpti )
+-        cr4 |= X86_CR4_PGE;
+-
+-    cr4 |= d->arch.vtsc ? X86_CR4_TSD : 0;
+-
+-    return cr4;
+-}
+-
+ void write_ptbase(struct vcpu *v)
+ {
+     struct cpu_info *cpu_info = get_cpu_info();
+     unsigned long new_cr4;
+ 
+     new_cr4 = (is_pv_vcpu(v) && !is_idle_vcpu(v))
+-              ? pv_guest_cr4_to_real_cr4(v)
+-              : ((read_cr4() & ~(X86_CR4_PCIDE | X86_CR4_TSD)) | X86_CR4_PGE);
++              ? pv_make_cr4(v) : mmu_cr4_features;
+ 
+     if ( is_pv_vcpu(v) && v->domain->arch.pv_domain.xpti )
+     {
+@@ -550,8 +530,6 @@ void write_ptbase(struct vcpu *v)
+         switch_cr3_cr4(v->arch.cr3, new_cr4);
+         cpu_info->pv_cr3 = 0;
+     }
+-
+-    ASSERT(is_pv_vcpu(v) || read_cr4() == mmu_cr4_features);
+ }
+ 
+ /*
+diff --git a/xen/arch/x86/pv/domain.c b/xen/arch/x86/pv/domain.c
+index b75ff6b..3965959 100644
+--- a/xen/arch/x86/pv/domain.c
++++ b/xen/arch/x86/pv/domain.c
+@@ -97,6 +97,52 @@ static void release_compat_l4(struct vcpu *v)
+     v->arch.guest_table_user = pagetable_null();
+ }
+ 
++unsigned long pv_fixup_guest_cr4(const struct vcpu *v, unsigned long cr4)
++{
++    const struct cpuid_policy *p = v->domain->arch.cpuid;
++
++    /* Discard attempts to set guest controllable bits outside of the policy. */
++    cr4 &= ~((p->basic.tsc     ? 0 : X86_CR4_TSD)      |
++             (p->basic.de      ? 0 : X86_CR4_DE)       |
++             (p->feat.fsgsbase ? 0 : X86_CR4_FSGSBASE) |
++             (p->basic.xsave   ? 0 : X86_CR4_OSXSAVE));
++
++    /* Masks expected to be disjoint sets. */
++    BUILD_BUG_ON(PV_CR4_GUEST_MASK & PV_CR4_GUEST_VISIBLE_MASK);
++
++    /*
++     * A guest sees the policy subset of its own choice of guest controllable
++     * bits, and a subset of Xen's choice of certain hardware settings.
++     */
++    return ((cr4 & PV_CR4_GUEST_MASK) |
++            (mmu_cr4_features & PV_CR4_GUEST_VISIBLE_MASK));
++}
++
++unsigned long pv_make_cr4(const struct vcpu *v)
++{
++    const struct domain *d = v->domain;
++    unsigned long cr4 = mmu_cr4_features &
++        ~(X86_CR4_PCIDE | X86_CR4_PGE | X86_CR4_TSD);
++
++    /*
++     * PCIDE or PGE depends on the PCID/XPTI settings, but must not both be
++     * set, as it impacts the safety of TLB flushing.
++     */
++    if ( d->arch.pv_domain.pcid )
++        cr4 |= X86_CR4_PCIDE;
++    else if ( !d->arch.pv_domain.xpti )
++        cr4 |= X86_CR4_PGE;
++
++    /*
++     * TSD is needed if either the guest has elected to use it, or Xen is
++     * virtualising the TSC value the guest sees.
++     */
++    if ( d->arch.vtsc || (v->arch.pv_vcpu.ctrlreg[4] & X86_CR4_TSD) )
++        cr4 |= X86_CR4_TSD;
++
++    return cr4;
++}
++
+ int switch_compat(struct domain *d)
+ {
+     struct vcpu *v;
+@@ -191,7 +237,7 @@ int pv_vcpu_initialise(struct vcpu *v)
+     /* PV guests by default have a 100Hz ticker. */
+     v->periodic_period = MILLISECS(10);
+ 
+-    v->arch.pv_vcpu.ctrlreg[4] = real_cr4_to_pv_guest_cr4(mmu_cr4_features);
++    v->arch.pv_vcpu.ctrlreg[4] = pv_fixup_guest_cr4(v, 0);
+ 
+     if ( is_pv_32bit_domain(d) )
+     {
+diff --git a/xen/arch/x86/pv/emul-priv-op.c b/xen/arch/x86/pv/emul-priv-op.c
+index ce2ec76..4abbc14 100644
+--- a/xen/arch/x86/pv/emul-priv-op.c
++++ b/xen/arch/x86/pv/emul-priv-op.c
+@@ -32,6 +32,7 @@
+ #include <asm/hypercall.h>
+ #include <asm/mc146818rtc.h>
+ #include <asm/p2m.h>
++#include <asm/pv/domain.h>
+ #include <asm/pv/traps.h>
+ #include <asm/shared.h>
+ #include <asm/traps.h>
+@@ -785,8 +786,8 @@ static int write_cr(unsigned int reg, unsigned long val,
+     }
+ 
+     case 4: /* Write CR4 */
+-        curr->arch.pv_vcpu.ctrlreg[4] = pv_guest_cr4_fixup(curr, val);
+-        write_cr4(pv_guest_cr4_to_real_cr4(curr));
++        curr->arch.pv_vcpu.ctrlreg[4] = pv_fixup_guest_cr4(curr, val);
++        write_cr4(pv_make_cr4(curr));
+         ctxt_switch_levelling(curr);
+         return X86EMUL_OKAY;
+     }
+diff --git a/xen/include/asm-x86/domain.h b/xen/include/asm-x86/domain.h
+index ec81d78..c8aa8a5 100644
+--- a/xen/include/asm-x86/domain.h
++++ b/xen/include/asm-x86/domain.h
+@@ -610,17 +610,6 @@ bool update_secondary_system_time(struct vcpu *,
+ void vcpu_show_execution_state(struct vcpu *);
+ void vcpu_show_registers(const struct vcpu *);
+ 
+-/* Clean up CR4 bits that are not under guest control. */
+-unsigned long pv_guest_cr4_fixup(const struct vcpu *, unsigned long guest_cr4);
+-
+-/* Convert between guest-visible and real CR4 values. */
+-unsigned long pv_guest_cr4_to_real_cr4(const struct vcpu *v);
+-
+-#define real_cr4_to_pv_guest_cr4(c)                         \
+-    ((c) & ~(X86_CR4_PGE | X86_CR4_PSE | X86_CR4_TSD |      \
+-             X86_CR4_OSXSAVE | X86_CR4_SMEP |               \
+-             X86_CR4_FSGSBASE | X86_CR4_SMAP | X86_CR4_PCIDE))
+-
+ #define domain_max_vcpus(d) (is_hvm_domain(d) ? HVM_MAX_VCPUS : MAX_VIRT_CPUS)
+ 
+ static inline struct vcpu_guest_context *alloc_vcpu_guest_context(void)
+diff --git a/xen/include/asm-x86/pv/domain.h b/xen/include/asm-x86/pv/domain.h
+index 4fea764..4e4710c 100644
+--- a/xen/include/asm-x86/pv/domain.h
++++ b/xen/include/asm-x86/pv/domain.h
+@@ -59,6 +59,23 @@ int pv_vcpu_initialise(struct vcpu *v);
+ void pv_domain_destroy(struct domain *d);
+ int pv_domain_initialise(struct domain *d);
+ 
++/*
++ * Bits which a PV guest can toggle in its view of cr4.  Some are loaded into
++ * hardware, while some are fully emulated.
++ */
++#define PV_CR4_GUEST_MASK \
++    (X86_CR4_TSD | X86_CR4_DE | X86_CR4_FSGSBASE | X86_CR4_OSXSAVE)
++
++/* Bits which a PV guest may observe from the real hardware settings. */
++#define PV_CR4_GUEST_VISIBLE_MASK \
++    (X86_CR4_PAE | X86_CR4_MCE | X86_CR4_OSFXSR | X86_CR4_OSXMMEXCPT)
++
++/* Given a new cr4 value, construct the resulting guest-visible cr4 value. */
++unsigned long pv_fixup_guest_cr4(const struct vcpu *v, unsigned long cr4);
++
++/* Create a cr4 value to load into hardware, based on vcpu settings. */
++unsigned long pv_make_cr4(const struct vcpu *v);
++
+ #else  /* !CONFIG_PV */
+ 
+ #include <xen/errno.h>
+@@ -68,6 +85,8 @@ static inline int pv_vcpu_initialise(struct vcpu *v) { return -EOPNOTSUPP; }
+ static inline void pv_domain_destroy(struct domain *d) {}
+ static inline int pv_domain_initialise(struct domain *d) { return -EOPNOTSUPP; }
+ 
++static inline unsigned long pv_make_cr4(const struct vcpu *v) { return ~0ul; }
++
+ #endif	/* CONFIG_PV */
+ 
+ void paravirt_ctxt_switch_from(struct vcpu *v);

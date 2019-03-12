@@ -1,0 +1,328 @@
+From 67620c1ccb13f7b58645f48248ba1f408b021fdc Mon Sep 17 00:00:00 2001
+From: George Dunlap <george.dunlap@citrix.com>
+Date: Fri, 18 Jan 2019 15:00:34 +0000
+Subject: [PATCH] steal_page: Get rid of bogus struct page states
+
+The original rules for `struct page` required the following invariants
+at all times:
+
+- refcount > 0 implies owner != NULL
+- PGC_allocated implies refcount > 0
+
+steal_page, in a misguided attempt to protect against unknown races,
+violates both of these rules, thus introducing other races:
+
+- Temporarily, the count_info has the refcount go to 0 while
+  PGC_allocated is set
+
+- It explicitly returns the page PGC_allocated set, but owner == NULL
+  and page not on the page_list.
+
+The second one meant that page_get_owner_and_reference() could return
+NULL even after having successfully grabbed a reference on the page,
+leading the caller to leak the reference (since "couldn't get ref" and
+"got ref but no owner" look the same).
+
+Furthermore, rather than grabbing a page reference to ensure that the
+owner doesn't change under its feet, it appears to rely on holding
+d->page_alloc lock to prevent this.
+
+Unfortunately, this is ineffective: page->owner remains non-NULL for
+some time after the count has been set to 0; meaning that it would be
+entirely possible for the page to be freed and re-allocated to a
+different domain between the page_get_owner() check and the count_info
+check.
+
+Modify steal_page to instead follow the appropriate access discipline,
+taking the page through series of states similar to being freed and
+then re-allocated with MEMF_no_owner:
+
+- Grab an extra reference to make sure we don't race with anyone else
+  freeing the page
+
+- Drop both references and PGC_allocated atomically, so that (if
+successful), anyone else trying to grab a reference will fail
+
+- Attempt to reset Xen's mappings
+
+- Reset the rest of the state.
+
+Then, modify the two callers appropriately:
+
+- Leave count_info alone (it's already been cleared)
+- Call free_domheap_page() directly if appropriate
+- Call assign_pages() rather than open-coding a partial assign
+
+With all callers to assign_pages() now passing in pages with the
+type_info field clear, tighten the respective assertion there.
+
+This is XSA-287.
+
+Signed-off-by: George Dunlap <george.dunlap@citrix.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+---
+ xen/arch/x86/mm.c        | 84 ++++++++++++++++++++++++++++------------
+ xen/common/grant_table.c | 20 +++++-----
+ xen/common/memory.c      | 19 +++++----
+ xen/common/page_alloc.c  |  2 +-
+ 4 files changed, 83 insertions(+), 42 deletions(-)
+
+diff --git a/xen/arch/x86/mm.c b/xen/arch/x86/mm.c
+index 6509035a5c..d8ff58c901 100644
+--- a/xen/arch/x86/mm.c
++++ b/xen/arch/x86/mm.c
+@@ -3966,70 +3966,106 @@ int donate_page(
+     return -EINVAL;
+ }
+ 
++/*
++ * Steal page will attempt to remove `page` from domain `d`.  Upon
++ * return, `page` will be in a state similar to the state of a page
++ * returned from alloc_domheap_page() with MEMF_no_owner set:
++ * - refcount 0
++ * - type count cleared
++ * - owner NULL
++ * - page caching attributes cleaned up
++ * - removed from the domain's page_list
++ *
++ * If MEMF_no_refcount is not set, the domain's tot_pages will be
++ * adjusted.  If this results in the page count falling to 0,
++ * put_domain() will be called.
++ *
++ * The caller should either call free_domheap_page() to free the
++ * page, or assign_pages() to put it back on some domain's page list.
++ */
+ int steal_page(
+     struct domain *d, struct page_info *page, unsigned int memflags)
+ {
+     unsigned long x, y;
+     bool drop_dom_ref = false;
+-    const struct domain *owner = dom_xen;
++    const struct domain *owner;
++    int rc;
+ 
+     if ( paging_mode_external(d) )
+         return -EOPNOTSUPP;
+ 
+-    spin_lock(&d->page_alloc_lock);
+-
+-    if ( is_xen_heap_page(page) || ((owner = page_get_owner(page)) != d) )
++    /* Grab a reference to make sure the page doesn't change under our feet */
++    rc = -EINVAL;
++    if ( !(owner = page_get_owner_and_reference(page)) )
+         goto fail;
+ 
++    if ( owner != d || is_xen_heap_page(page) )
++        goto fail_put;
++
+     /*
+-     * We require there is just one reference (PGC_allocated). We temporarily
+-     * drop this reference now so that we can safely swizzle the owner.
++     * We require there are exactly two references -- the one we just
++     * took, and PGC_allocated. We temporarily drop both these
++     * references so that the page becomes effectively non-"live" for
++     * the domain.
+      */
+     y = page->count_info;
+     do {
+         x = y;
+-        if ( (x & (PGC_count_mask|PGC_allocated)) != (1 | PGC_allocated) )
+-            goto fail;
+-        y = cmpxchg(&page->count_info, x, x & ~PGC_count_mask);
++        if ( (x & (PGC_count_mask|PGC_allocated)) != (2 | PGC_allocated) )
++            goto fail_put;
++        y = cmpxchg(&page->count_info, x, x & ~(PGC_count_mask|PGC_allocated));
+     } while ( y != x );
+ 
+     /*
+-     * With the sole reference dropped temporarily, no-one can update type
+-     * information. Type count also needs to be zero in this case, but e.g.
+-     * PGT_seg_desc_page may still have PGT_validated set, which we need to
+-     * clear before transferring ownership (as validation criteria vary
+-     * depending on domain type).
++     * NB this is safe even if the page ends up being given back to
++     * the domain, because the count is zero: subsequent mappings will
++     * cause the cache attributes to be re-instated inside
++     * get_page_from_l1e().
++     */
++    if ( (rc = cleanup_page_cacheattr(page)) )
++    {
++        /*
++         * Couldn't fixup Xen's mappings; put things the way we found
++         * it and return an error
++         */
++        page->count_info |= PGC_allocated | 1;
++        goto fail;
++    }
++
++    /*
++     * With the reference count now zero, nobody can grab references
++     * to do anything else with the page.  Return the page to a state
++     * that it might be upon return from alloc_domheap_pages with
++     * MEMF_no_owner set.
+      */
++    spin_lock(&d->page_alloc_lock);
++
+     BUG_ON(page->u.inuse.type_info & (PGT_count_mask | PGT_locked |
+                                       PGT_pinned));
+     page->u.inuse.type_info = 0;
+-
+-    /* Swizzle the owner then reinstate the PGC_allocated reference. */
+     page_set_owner(page, NULL);
+-    y = page->count_info;
+-    do {
+-        x = y;
+-        BUG_ON((x & (PGC_count_mask|PGC_allocated)) != PGC_allocated);
+-    } while ( (y = cmpxchg(&page->count_info, x, x | 1)) != x );
++    page_list_del(page, &d->page_list);
+ 
+     /* Unlink from original owner. */
+     if ( !(memflags & MEMF_no_refcount) && !domain_adjust_tot_pages(d, -1) )
+         drop_dom_ref = true;
+-    page_list_del(page, &d->page_list);
+ 
+     spin_unlock(&d->page_alloc_lock);
++
+     if ( unlikely(drop_dom_ref) )
+         put_domain(d);
++
+     return 0;
+ 
++ fail_put:
++    put_page(page);
+  fail:
+-    spin_unlock(&d->page_alloc_lock);
+     gdprintk(XENLOG_WARNING, "Bad steal mfn %" PRI_mfn
+              " from d%d (owner d%d) caf=%08lx taf=%" PRtype_info "\n",
+              mfn_x(page_to_mfn(page)), d->domain_id,
+              owner ? owner->domain_id : DOMID_INVALID,
+              page->count_info, page->u.inuse.type_info);
+-    return -EINVAL;
++    return rc;
+ }
+ 
+ static int __do_update_va_mapping(
+diff --git a/xen/common/grant_table.c b/xen/common/grant_table.c
+index c0585d33f4..656fad1b42 100644
+--- a/xen/common/grant_table.c
++++ b/xen/common/grant_table.c
+@@ -2179,7 +2179,7 @@ gnttab_transfer(
+             rcu_unlock_domain(e);
+         put_gfn_and_copyback:
+             put_gfn(d, gop.mfn);
+-            page->count_info &= ~(PGC_count_mask|PGC_allocated);
++            /* The count_info has already been cleaned */
+             free_domheap_page(page);
+             goto copyback;
+         }
+@@ -2202,10 +2202,9 @@ gnttab_transfer(
+ 
+             copy_domain_page(page_to_mfn(new_page), mfn);
+ 
+-            page->count_info &= ~(PGC_count_mask|PGC_allocated);
++            /* The count_info has already been cleared */
+             free_domheap_page(page);
+             page = new_page;
+-            page->count_info = PGC_allocated | 1;
+             mfn = page_to_mfn(page);
+         }
+ 
+@@ -2245,12 +2244,17 @@ gnttab_transfer(
+          */
+         spin_unlock(&e->page_alloc_lock);
+         okay = gnttab_prepare_for_transfer(e, d, gop.ref);
+-        spin_lock(&e->page_alloc_lock);
+ 
+-        if ( unlikely(!okay) || unlikely(e->is_dying) )
++        if ( unlikely(!okay || assign_pages(e, page, 0, MEMF_no_refcount)) )
+         {
+-            bool_t drop_dom_ref = !domain_adjust_tot_pages(e, -1);
++            bool drop_dom_ref;
+ 
++            /*
++             * Need to grab this again to safely free our "reserved"
++             * page in the page total
++             */
++            spin_lock(&e->page_alloc_lock);
++            drop_dom_ref = !domain_adjust_tot_pages(e, -1);
+             spin_unlock(&e->page_alloc_lock);
+ 
+             if ( okay /* i.e. e->is_dying due to the surrounding if() */ )
+@@ -2263,10 +2267,6 @@ gnttab_transfer(
+             goto unlock_and_copyback;
+         }
+ 
+-        page_list_add_tail(page, &e->page_list);
+-        page_set_owner(page, e);
+-
+-        spin_unlock(&e->page_alloc_lock);
+         put_gfn(d, gop.mfn);
+ 
+         TRACE_1D(TRC_MEM_PAGE_GRANT_TRANSFER, e->domain_id);
+diff --git a/xen/common/memory.c b/xen/common/memory.c
+index 4fb7962c79..f71163221f 100644
+--- a/xen/common/memory.c
++++ b/xen/common/memory.c
+@@ -675,20 +675,22 @@ static long memory_exchange(XEN_GUEST_HANDLE_PARAM(xen_memory_exchange_t) arg)
+          * Success! Beyond this point we cannot fail for this chunk.
+          */
+ 
+-        /* Destroy final reference to each input page. */
++        /*
++         * These pages have already had owner and reference cleared.
++         * Do the final two steps: Remove from the physmap, and free
++         * them.
++         */
+         while ( (page = page_list_remove_head(&in_chunk_list)) )
+         {
+             unsigned long gfn;
+ 
+-            if ( !test_and_clear_bit(_PGC_allocated, &page->count_info) )
+-                BUG();
+             mfn = page_to_mfn(page);
+             gfn = mfn_to_gmfn(d, mfn_x(mfn));
+             /* Pages were unshared above */
+             BUG_ON(SHARED_M2P(gfn));
+             if ( guest_physmap_remove_page(d, _gfn(gfn), mfn, 0) )
+                 domain_crash(d);
+-            put_page(page);
++            free_domheap_page(page);
+         }
+ 
+         /* Assign each output page to the domain. */
+@@ -761,13 +763,16 @@ static long memory_exchange(XEN_GUEST_HANDLE_PARAM(xen_memory_exchange_t) arg)
+      * chunks succeeded.
+      */
+  fail:
+-    /* Reassign any input pages we managed to steal. */
++    /*
++     * Reassign any input pages we managed to steal.  NB that if the assign
++     * fails again, we're on the hook for freeing the page, since we've already
++     * cleared PGC_allocated.
++     */
+     while ( (page = page_list_remove_head(&in_chunk_list)) )
+         if ( assign_pages(d, page, 0, MEMF_no_refcount) )
+         {
+             BUG_ON(!d->is_dying);
+-            if ( test_and_clear_bit(_PGC_allocated, &page->count_info) )
+-                put_page(page);
++            free_domheap_page(page);
+         }
+ 
+  dying:
+diff --git a/xen/common/page_alloc.c b/xen/common/page_alloc.c
+index 482f0988f7..52da7762e3 100644
+--- a/xen/common/page_alloc.c
++++ b/xen/common/page_alloc.c
+@@ -2221,7 +2221,7 @@ int assign_pages(
+     for ( i = 0; i < (1 << order); i++ )
+     {
+         ASSERT(page_get_owner(&pg[i]) == NULL);
+-        ASSERT((pg[i].count_info & ~(PGC_allocated | 1)) == 0);
++        ASSERT(!pg[i].count_info);
+         page_set_owner(&pg[i], d);
+         smp_wmb(); /* Domain pointer must be visible before updating refcnt. */
+         pg[i].count_info = PGC_allocated | 1;
+-- 
+2.20.1
+

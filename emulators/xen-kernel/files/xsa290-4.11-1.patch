@@ -1,0 +1,237 @@
+From: Jan Beulich <jbeulich@suse.com>
+Subject: x86/mm: also allow L2 (un)validation to be preemptible
+
+Commit c612481d1c ("x86/mm: Plumbing to allow any PTE update to fail
+with -ERESTART") added assertions next to the {alloc,free}_l2_table()
+invocations to document (and validate in debug builds) that L2
+(un)validations are always preemptible.
+
+The assertion in free_page_type() was now observed to trigger when
+recursive L2 page tables get cleaned up.
+
+In particular put_page_from_l2e()'s assumption that _put_page_type()
+would always succeed is now wrong, resulting in a partially un-validated
+page left in a domain, which has no other means of getting cleaned up
+later on. If not causing any problems earlier, this would ultimately
+trigger the check for ->u.inuse.type_info having a zero count when
+freeing the page during cleanup after the domain has died.
+
+As a result it should be considered a mistake to not have extended
+preemption fully to L2 when it was added to L3/L4 table handling, which
+this change aims to correct.
+
+The validation side additions are done just for symmetry.
+
+This is part of XSA-290.
+
+Reported-by: Manuel Bouyer <bouyer@antioche.eu.org>
+Tested-by: Manuel Bouyer <bouyer@antioche.eu.org>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+
+--- a/xen/arch/x86/mm.c
++++ b/xen/arch/x86/mm.c
+@@ -1126,7 +1126,7 @@ get_page_from_l1e(
+ define_get_linear_pagetable(l2);
+ static int
+ get_page_from_l2e(
+-    l2_pgentry_t l2e, unsigned long pfn, struct domain *d)
++    l2_pgentry_t l2e, unsigned long pfn, struct domain *d, int partial)
+ {
+     unsigned long mfn = l2e_get_pfn(l2e);
+     int rc;
+@@ -1141,7 +1141,8 @@ get_page_from_l2e(
+         return -EINVAL;
+     }
+ 
+-    rc = get_page_and_type_from_mfn(_mfn(mfn), PGT_l1_page_table, d, 0, 0);
++    rc = get_page_and_type_from_mfn(_mfn(mfn), PGT_l1_page_table, d,
++                                    partial, false);
+     if ( unlikely(rc == -EINVAL) && get_l2_linear_pagetable(l2e, pfn, d) )
+         rc = 0;
+ 
+@@ -1295,8 +1296,11 @@ void put_page_from_l1e(l1_pgentry_t l1e,
+  * NB. Virtual address 'l2e' maps to a machine address within frame 'pfn'.
+  * Note also that this automatically deals correctly with linear p.t.'s.
+  */
+-static int put_page_from_l2e(l2_pgentry_t l2e, unsigned long pfn)
++static int put_page_from_l2e(l2_pgentry_t l2e, unsigned long pfn,
++                             int partial, bool defer)
+ {
++    int rc = 0;
++
+     if ( !(l2e_get_flags(l2e) & _PAGE_PRESENT) || (l2e_get_pfn(l2e) == pfn) )
+         return 1;
+ 
+@@ -1311,13 +1315,27 @@ static int put_page_from_l2e(l2_pgentry_
+     else
+     {
+         struct page_info *pg = l2e_get_page(l2e);
+-        int rc = _put_page_type(pg, false, mfn_to_page(_mfn(pfn)));
++        struct page_info *ptpg = mfn_to_page(_mfn(pfn));
+ 
+-        ASSERT(!rc);
+-        put_page(pg);
++        if ( unlikely(partial > 0) )
++        {
++            ASSERT(!defer);
++            rc = _put_page_type(pg, true, ptpg);
++        }
++        else if ( defer )
++        {
++            current->arch.old_guest_ptpg = ptpg;
++            current->arch.old_guest_table = pg;
++        }
++        else
++        {
++            rc = _put_page_type(pg, true, ptpg);
++            if ( likely(!rc) )
++                put_page(pg);
++        }
+     }
+ 
+-    return 0;
++    return rc;
+ }
+ 
+ static int put_page_from_l3e(l3_pgentry_t l3e, unsigned long pfn,
+@@ -1487,11 +1505,12 @@ static int alloc_l2_table(struct page_in
+     unsigned long  pfn = mfn_x(page_to_mfn(page));
+     l2_pgentry_t  *pl2e;
+     unsigned int   i;
+-    int            rc = 0;
++    int            rc = 0, partial = page->partial_pte;
+ 
+     pl2e = map_domain_page(_mfn(pfn));
+ 
+-    for ( i = page->nr_validated_ptes; i < L2_PAGETABLE_ENTRIES; i++ )
++    for ( i = page->nr_validated_ptes; i < L2_PAGETABLE_ENTRIES;
++          i++, partial = 0 )
+     {
+         if ( i > page->nr_validated_ptes && hypercall_preempt_check() )
+         {
+@@ -1501,23 +1520,33 @@ static int alloc_l2_table(struct page_in
+         }
+ 
+         if ( !is_guest_l2_slot(d, type, i) ||
+-             (rc = get_page_from_l2e(pl2e[i], pfn, d)) > 0 )
++             (rc = get_page_from_l2e(pl2e[i], pfn, d, partial)) > 0 )
+             continue;
+ 
+-        if ( unlikely(rc == -ERESTART) )
++        if ( rc == -ERESTART )
+         {
+             page->nr_validated_ptes = i;
+-            break;
++            page->partial_pte = partial ?: 1;
+         }
+-
+-        if ( rc < 0 )
++        else if ( rc == -EINTR && i )
++        {
++            page->nr_validated_ptes = i;
++            page->partial_pte = 0;
++            rc = -ERESTART;
++        }
++        else if ( rc < 0 && rc != -EINTR )
+         {
+             gdprintk(XENLOG_WARNING, "Failure in alloc_l2_table: slot %#x\n", i);
+-            while ( i-- > 0 )
+-                if ( is_guest_l2_slot(d, type, i) )
+-                    put_page_from_l2e(pl2e[i], pfn);
+-            break;
++            if ( i )
++            {
++                page->nr_validated_ptes = i;
++                page->partial_pte = 0;
++                current->arch.old_guest_ptpg = NULL;
++                current->arch.old_guest_table = page;
++            }
+         }
++        if ( rc < 0 )
++            break;
+ 
+         pl2e[i] = adjust_guest_l2e(pl2e[i], d);
+     }
+@@ -1797,28 +1826,50 @@ static int free_l2_table(struct page_inf
+     struct domain *d = page_get_owner(page);
+     unsigned long pfn = mfn_x(page_to_mfn(page));
+     l2_pgentry_t *pl2e;
+-    unsigned int  i = page->nr_validated_ptes - 1;
+-    int err = 0;
++    int rc = 0, partial = page->partial_pte;
++    unsigned int i = page->nr_validated_ptes - !partial;
+ 
+     pl2e = map_domain_page(_mfn(pfn));
+ 
+-    ASSERT(page->nr_validated_ptes);
+-    do {
+-        if ( is_guest_l2_slot(d, page->u.inuse.type_info, i) &&
+-             put_page_from_l2e(pl2e[i], pfn) == 0 &&
+-             i && hypercall_preempt_check() )
++    for ( ; ; )
++    {
++        if ( is_guest_l2_slot(d, page->u.inuse.type_info, i) )
++            rc = put_page_from_l2e(pl2e[i], pfn, partial, false);
++        if ( rc < 0 )
++            break;
++
++        partial = 0;
++
++        if ( !i-- )
++            break;
++
++        if ( hypercall_preempt_check() )
+         {
+-           page->nr_validated_ptes = i;
+-           err = -ERESTART;
++            rc = -EINTR;
++            break;
+         }
+-    } while ( !err && i-- );
++    }
+ 
+     unmap_domain_page(pl2e);
+ 
+-    if ( !err )
++    if ( rc >= 0 )
++    {
+         page->u.inuse.type_info &= ~PGT_pae_xen_l2;
++        rc = 0;
++    }
++    else if ( rc == -ERESTART )
++    {
++        page->nr_validated_ptes = i;
++        page->partial_pte = partial ?: -1;
++    }
++    else if ( rc == -EINTR && i < L2_PAGETABLE_ENTRIES - 1 )
++    {
++        page->nr_validated_ptes = i + 1;
++        page->partial_pte = 0;
++        rc = -ERESTART;
++    }
+ 
+-    return err;
++    return rc;
+ }
+ 
+ static int free_l3_table(struct page_info *page)
+@@ -2138,7 +2189,7 @@ static int mod_l2_entry(l2_pgentry_t *pl
+             return -EBUSY;
+         }
+ 
+-        if ( unlikely((rc = get_page_from_l2e(nl2e, pfn, d)) < 0) )
++        if ( unlikely((rc = get_page_from_l2e(nl2e, pfn, d, 0)) < 0) )
+             return rc;
+ 
+         nl2e = adjust_guest_l2e(nl2e, d);
+@@ -2157,7 +2208,8 @@ static int mod_l2_entry(l2_pgentry_t *pl
+         return -EBUSY;
+     }
+ 
+-    put_page_from_l2e(ol2e, pfn);
++    put_page_from_l2e(ol2e, pfn, 0, true);
++
+     return rc;
+ }
+ 

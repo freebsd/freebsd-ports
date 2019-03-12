@@ -1,0 +1,71 @@
+From: Jan Beulich <JBeulich@suse.com>
+Subject: x86/pv: _toggle_guest_pt() may not skip TLB flush for shadow mode guests
+
+For shadow mode guests (e.g. PV ones forced into that mode as L1TF
+mitigation, or during migration) update_cr3() -> sh_update_cr3() may
+result in a change to the (shadow) root page table (compared to the
+previous one when running the same vCPU with the same PCID). This can,
+first and foremost, be a result of memory pressure on the shadow memory
+pool of the domain. Shadow code legitimately relies on the original
+(prior to commit 5c81d260c2 ["xen/x86: use PCID feature"]) behavior of
+the subsequent CR3 write to flush the TLB of entries still left from
+walks with an earlier, different (shadow) root page table.
+
+Restore the flushing behavior, also for the second CR3 write on the exit
+path to guest context when XPTI is active. For the moment accept that
+this will introduce more flushes than are strictly necessary - no flush
+would be needed when the (shadow) root page table doesn't actually
+change, but this information isn't readily (i.e. without introducing a
+layering violation) available here.
+
+This is XSA-294.
+
+Reported-by: XXX PERSON <XXX EMAIL>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Tested-by: Juergen Gross <jgross@suse.com>
+Reviewed-by: Andrew Cooper <andrew.cooper3@citrix.com>
+
+diff --git a/xen/arch/x86/pv/domain.c b/xen/arch/x86/pv/domain.c
+index b75ff6b..528413a 100644
+--- a/xen/arch/x86/pv/domain.c
++++ b/xen/arch/x86/pv/domain.c
+@@ -296,21 +296,35 @@ int pv_domain_initialise(struct domain *d)
+ static void _toggle_guest_pt(struct vcpu *v)
+ {
+     const struct domain *d = v->domain;
++    struct cpu_info *cpu_info = get_cpu_info();
++    unsigned long cr3;
+ 
+     v->arch.flags ^= TF_kernel_mode;
+     update_cr3(v);
+     if ( d->arch.pv_domain.xpti )
+     {
+-        struct cpu_info *cpu_info = get_cpu_info();
+-
+         cpu_info->root_pgt_changed = true;
+         cpu_info->pv_cr3 = __pa(this_cpu(root_pgt)) |
+                            (d->arch.pv_domain.pcid
+                             ? get_pcid_bits(v, true) : 0);
+     }
+ 
+-    /* Don't flush user global mappings from the TLB. Don't tick TLB clock. */
+-    write_cr3(v->arch.cr3);
++    /*
++     * Don't flush user global mappings from the TLB. Don't tick TLB clock.
++     *
++     * In shadow mode, though, update_cr3() may need to be accompanied by a
++     * TLB flush (for just the incoming PCID), as the top level page table may
++     * have changed behind our backs. To be on the safe side, suppress the
++     * no-flush unconditionally in this case. The XPTI CR3 write, if enabled,
++     * will then need to be a flushing one too.
++     */
++    cr3 = v->arch.cr3;
++    if ( shadow_mode_enabled(d) )
++    {
++        cr3 &= ~X86_CR3_NOFLUSH;
++        cpu_info->pv_cr3 &= ~X86_CR3_NOFLUSH;
++    }
++    write_cr3(cr3);
+ 
+     if ( !(v->arch.flags & TF_kernel_mode) )
+         return;
