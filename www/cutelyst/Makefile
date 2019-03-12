@@ -11,7 +11,7 @@ COMMENT=	C++/Qt web framework
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake localbase qt:5
+USES=		cmake compiler:c++11-lang localbase qt:5
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_QT=		qmake_build buildtools_build \
