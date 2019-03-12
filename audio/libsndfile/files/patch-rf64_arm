@@ -1,0 +1,49 @@
+From: Erik de Castro Lopez <erikd@mega-nerd.com>
+Date: Tue, 20 Jun 2017 00:00:00 +0200
+Subject: fix RF64 on armel/armhf archs
+
+Origin: upstream
+Applied-Upstream: 9d470ee5577d3ccedb1c28c7e0a7295ba17feaf5
+Last-Update: 2017-06-20
+---
+ src/rf64.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/src/rf64.c b/src/rf64.c
+index c373bb0..60a3309 100644
+--- src/rf64.c
++++ src/rf64.c
+@@ -339,6 +339,12 @@ rf64_read_header (SF_PRIVATE *psf, int *blockalign, int *framesperblock)
+ 					} ;
+ 				break ;
+ 
++			case JUNK_MARKER :
++			case PAD_MARKER :
++				psf_log_printf (psf, "%M : %d\n", marker, chunk_size) ;
++				psf_binheader_readf (psf, "j", chunk_size) ;
++				break ;
++
+ 			default :
+ 					if (chunk_size >= 0xffff0000)
+ 					{	psf_log_printf (psf, "*** Unknown chunk marker (%X) at position %D with length %u. Exiting parser.\n", marker, psf_ftell (psf) - 8, chunk_size) ;
+@@ -659,7 +665,7 @@ rf64_write_header (SF_PRIVATE *psf, int calc_length)
+ 
+ 	if (wpriv->rf64_downgrade && psf->filelength < RIFF_DOWNGRADE_BYTES)
+ 	{	psf_binheader_writef (psf, "etm8m", RIFF_MARKER, (psf->filelength < 8) ? 8 : psf->filelength - 8, WAVE_MARKER) ;
+-		psf_binheader_writef (psf, "m4884", JUNK_MARKER, 20, 0, 0, 0, 0) ;
++		psf_binheader_writef (psf, "m4z", JUNK_MARKER, 24, 24) ;
+ 		add_fact_chunk = 1 ;
+ 		}
+ 	else
+@@ -735,9 +741,10 @@ rf64_write_header (SF_PRIVATE *psf, int calc_length)
+ 
+ #endif
+ 
++	/* Padding may be needed if string data sizes change. */
+ 	pad_size = psf->dataoffset - 16 - psf->header.indx ;
+ 	if (pad_size >= 0)
+-		psf_binheader_writef (psf, "m4z", PAD_MARKER, pad_size, make_size_t (pad_size)) ;
++		psf_binheader_writef (psf, "m4z", PAD_MARKER, (unsigned int) pad_size, make_size_t (pad_size)) ;
+ 
+ 	if (wpriv->rf64_downgrade && (psf->filelength < RIFF_DOWNGRADE_BYTES))
+ 		psf_binheader_writef (psf, "tm8", data_MARKER, psf->datalength) ;
