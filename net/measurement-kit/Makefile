@@ -2,7 +2,7 @@
 
 PORTNAME=		measurement-kit
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.9.3
+DISTVERSION=		0.9.4
 CATEGORIES=		net devel
 
 MAINTAINER=	egypcio@FreeBSD.org
