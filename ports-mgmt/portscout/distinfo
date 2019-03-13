@@ -1,2 +1,3 @@
-SHA256 (portscout-0.8.1.tar.gz) = fec03f53a64e44e44debbbebe985e61f8603729145899c152286ecd5effe8b65
-SIZE (portscout-0.8.1.tar.gz) = 56079
+TIMESTAMP = 1552485071
+SHA256 (freebsd-portscout-0.8.1.2_GH0.tar.gz) = c709ec73229e6abce56dd5cee1af0aca6362552676601b386b6b3d5365b588e8
+SIZE (freebsd-portscout-0.8.1.2_GH0.tar.gz) = 57138
