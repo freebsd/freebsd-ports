@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmatroska
-PORTVERSION=	1.4.9
-PORTREVISION=	2
+PORTVERSION=	1.5.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/
