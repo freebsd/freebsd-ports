@@ -1,0 +1,14 @@
+Source Han Sans: A new open source Pan-CJK typeface family from Adobe
+
+This is Source Han Sans (JP), which supports all four variants in this family
+but prioritizes Japanese Kanji over other three.
+
+"Source Han Sans, available in seven weights, is a typeface family which
+provides full support for Japanese, Korean, Traditional Chinese, and Simplified
+Chinese, all in one font. It also includes Latin, Greek, and Cyrillic glyphs
+from our popular Source Sans family. All told, each font weight in the family
+has a total of 65,535 glyphs (the maximum supported in the OpenType format), and
+the entire family rounds out at just under half a million total glyphs."
+--- The Typekit Blog, Adobe
+
+WWW: https://github.com/adobe-fonts/source-han-sans
