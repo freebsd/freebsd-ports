@@ -1,6 +1,6 @@
---- ./sys/unix/Makefile.src.orig	2015-11-12 08:51:56.000000000 +0100
-+++ ./sys/unix/Makefile.src	2016-01-20 14:51:33.282986884 +0100
-@@ -149,13 +149,24 @@
+--- sys/unix/Makefile.src.orig	2018-04-27 05:07:22.000000000 -0700
++++ sys/unix/Makefile.src	2019-03-12 14:55:40.550273000 -0700
+@@ -151,13 +151,24 @@
  # directories.  The ones given below is the usual spot for linux systems.
  # The paths are for glibconfig.h and gnomesupport.h respectively.
  #
@@ -26,7 +26,7 @@
  
  # The Qt and Be window systems are written in C++, while the rest of
  # NetHack is standard C.  If using Qt, uncomment the LINK line here to get
-@@ -222,8 +233,27 @@
+@@ -245,8 +256,27 @@
  
  #
  #
@@ -56,35 +56,39 @@
  
  # on some systems the termcap library is in -ltermcap or -lcurses
  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
-@@ -239,23 +269,23 @@
- # WINTTYLIB = -lcurses
+@@ -263,16 +293,19 @@
  # WINTTYLIB = -lcurses16
  # WINTTYLIB = -lncurses
--#WINTTYLIB = -ltermlib
+ #WINTTYLIB = -ltermlib
 +WINTTYLIB = -lncurses -L${LOCALBASE}/lib
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
 -WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
++#WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
 +WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -L${LOCALBASE}/lib
  # WINX11LIB = -lXaw -lXmu -lXt -lX11
  # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
  # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
  #
- # libraries for Qt
+ # libraries for Qt 3
 -WINQTLIB = -L$(QTDIR)/lib -lqt
++#WINQTLIB = -L$(QTDIR)/lib -lqt
 +WINQTLIB = ${QTCFGLIBS} ${LIBQT}
  #
- # libraries for KDE (with Qt)
+ # libraries for Qt 4
+ WINQT4LIB = `pkg-config QtGui --libs`
+@@ -281,7 +314,8 @@
  WINKDELIB = -lkdecore -lkdeui -lXext
  #
  # libraries for Gnome
 -WINGNOMELIB = -lgnomeui -lgnome -lart_lgpl -lgtk -lgdk -lpopt
++#WINGNOMELIB = -lgnomeui -lgnome -lart_lgpl -lgtk -lgdk -lpopt
 +WINGNOMELIB = $(shell ${GNOME_CONFIG} --libs gnomeui) ${LDFLAGS}
  #
  # libraries for Gem port
  WINGEMLIB = -le_gem -lgem
-@@ -263,7 +293,16 @@
+@@ -289,7 +323,16 @@
  # libraries for BeOS 
  WINBELIB = -lbe
  
@@ -102,7 +106,7 @@
  
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
-@@ -296,7 +335,7 @@
+@@ -322,7 +365,7 @@
  LIBS =
  
  # make NetHack
@@ -111,9 +115,9 @@
  # GAME     = nethack.prg
  
  # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
-@@ -482,13 +521,13 @@
+@@ -548,13 +591,13 @@
  
- # Qt windowport meta-object-compiler output
+ # Qt 3 windowport meta-object-compiler output
  qt_kde0.moc: ../include/qt_kde0.h
 -	$(QTDIR)/bin/moc -o qt_kde0.moc ../include/qt_kde0.h
 +	${MOC} -o qt_kde0.moc ../include/qt_kde0.h
@@ -126,5 +130,5 @@
 -	$(QTDIR)/bin/moc -o qttableview.moc ../include/qttableview.h
 +	${MOC} -o qttableview.moc ../include/qttableview.h
  
- $(MAKEDEFS): ../util/makedefs.c  $(CONFIG_H) ../include/permonst.h \
- 		../include/objclass.h ../include/monsym.h \
+ # Qt 4 windowport meta-object-compiler output
+ qt4kde0.moc : ../win/Qt4/qt4kde0.h

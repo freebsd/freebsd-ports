@@ -1,6 +1,6 @@
---- ./sys/unix/Makefile.top.orig	2015-11-18 21:54:59.000000000 +0100
-+++ ./sys/unix/Makefile.top	2016-01-20 14:57:30.972963262 +0100
-@@ -18,18 +18,18 @@
+--- sys/unix/Makefile.top.orig	2018-04-27 05:07:22.000000000 -0700
++++ sys/unix/Makefile.top	2019-03-12 15:05:31.025765000 -0700
+@@ -20,18 +20,18 @@
  
  # make NetHack
  #PREFIX	 = /usr
@@ -24,7 +24,7 @@
  # VARDIRPERM = 0755
  
  # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else HACKDIR
-@@ -39,10 +39,11 @@
+@@ -41,10 +41,11 @@
  # therefore there should not be anything in HACKDIR that you want to keep
  # (if there is, you'll have to do the installation by hand or modify the
  # instructions)
@@ -39,25 +39,23 @@
  
  # per discussion in Install.X11 and Install.Qt
  #VARDATND = 
-@@ -53,7 +54,7 @@
+@@ -55,7 +56,7 @@
  # for BeOS
  # VARDATND = beostiles
  # for Gnome
--# VARDATND = x11tiles pet_mark.xbm pilemark.xpm rip.xpm mapbg.xpm
+-# VARDATND = x11tiles pet_mark.xbm pilemark.xbm rip.xpm mapbg.xpm
 +VARDATND = x11tiles pet_mark.xbm pilemark.xbm rip.xpm mapbg.xpm
  
  VARDATD = bogusmon data engrave epitaph oracles options quest.dat rumors
  VARDAT = $(VARDATD) $(VARDATND)
-@@ -201,56 +202,34 @@
+@@ -203,52 +204,33 @@
  		-e '}' 					\
  	  	-e '$$s/.*/nodlb/p' < dat/options` ;	\
  	$(MAKE) dofiles-$${target-nodlb}
--	(cd dat ; cp symbols $(INSTDIR) )
 -	cp src/$(GAME) $(INSTDIR)
 -	cp util/recover $(INSTDIR)
 -	-if test -n '$(SHELLDIR)'; then rm -f $(SHELLDIR)/$(GAME); fi
-+	(cd dat ; cp symbols ${DESTDIR}$(INSTDIR) )
-+	cp src/$(GAME) ${DESTDIR}$(INSTDIR)/$(GAME)
++	cp src/$(GAME)  ${DESTDIR}$(INSTDIR)/$(GAME)
 +	cp util/recover ${DESTDIR}$(INSTDIR)
 +	-if test -n '${DESTDIR}$(SHELLDIR)'; then rm -f ${DESTDIR}$(SHELLDIR)/$(GAME); fi
  	if test -n '$(SHELLDIR)'; then \
@@ -75,10 +73,7 @@
 -	if test -n '$(SHELLDIR)'; then \
 -		$(CHGRP) $(GAMEGRP) $(SHELLDIR)/$(GAME); \
 -		chmod $(EXEPERM) $(SHELLDIR)/$(GAME); fi
--	-( cd $(INSTDIR) ; $(CHOWN) $(GAMEUID) symbols ; \
--			$(CHGRP) $(GAMEGRP) symbols ; \
--			chmod $(FILEPERM) symbols )
-+		> ${DESTDIR}$(SHELLDIR)/$(GAME) ; fi
++		>  ${DESTDIR}$(SHELLDIR)/$(GAME) ; fi
  
  dofiles-dlb: check-dlb
 -	( cd dat ; cp nhdat $(DATNODLB) $(INSTDIR) )
@@ -115,7 +110,7 @@
  	touch $(VARDIR)/perm $(VARDIR)/record
  # and a reminder
  	@echo You may also want to install the man pages via the doc Makefile.
-@@ -262,23 +241,16 @@
+@@ -260,23 +242,16 @@
  	true; $(PREINSTALL)
  # set up the directories
  # not all mkdirs have -p; those that don't will create a -p directory
