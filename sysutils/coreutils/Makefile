@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	coreutils
-PORTVERSION=	8.30
-PORTREVISION=	1
+PORTVERSION=	8.31
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	GNU
 
@@ -16,10 +15,9 @@ CONFLICTS=	idutils-[0-9]*
 
 USES=		cpe gmake iconv perl5 charsetfix tar:xz
 CPE_VENDOR=	gnu
-USE_PERL5=	build	# build - required for tests and man page generation
+USE_PERL5=	build	# required for tests and man page generation
 USE_LDCONFIG=	yes
-
-MAKE_JOBS_UNSAFE=	yes
+TEST_TARGET=	check
 
 GNU_CONFIGURE=	yes
 # A rather nasty hack to stop gnustat from conflicting with base gstat
@@ -51,8 +49,5 @@ post-build:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/g* \
 		${STAGEDIR}${PREFIX}/libexec/coreutils/libstdbuf.so
-
-#regression-test: build
-#	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check)
 
 .include <bsd.port.mk>
