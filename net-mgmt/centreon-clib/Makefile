@@ -10,7 +10,7 @@ COMMENT=	Common library of all Centreon projects written in C or C++
 
 LICENSE=	AGPLv3
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	centreon
