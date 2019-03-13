@@ -3,8 +3,7 @@
 
 PORTNAME=	libmesh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
-PORTREVISION=	3
+DISTVERSION=	1.4.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -62,8 +61,6 @@ post-install:
 		Make.common \
 		contrib \
 		libdata/pkgconfig/Make.common # https://github.com/libMesh/libmesh/issues/1539
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmesh_opt.so.0.0.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmetaphysicl.so.0.0.0
 
 post-install-EXAMPLES-on:
 	# https://github.com/libMesh/libmesh/issues/1541
