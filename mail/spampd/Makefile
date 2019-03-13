@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spampd
-PORTVERSION=	2.51
+PORTVERSION=	2.53
 CATEGORIES=	mail perl5
 
 MAINTAINER=	des@FreeBSD.org
