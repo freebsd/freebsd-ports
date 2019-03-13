@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 RUN_DEPENDS=	adb:devel/android-tools-adb
 
-USES=		meson pkgconfig sdl
+USES=		compiler:c++11-lang meson pkgconfig sdl
 USE_SDL=	sdl2
 
 USE_GITHUB=	yes
