@@ -3,8 +3,8 @@
 
 PORTNAME=	gxneur
 PORTVERSION=	0.17.0
-PORTREVISION=	2
 DISTVERSIONSUFFIX=.orig
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/~andrew-crew-kuznetsov/+archive/xneur-stable/+files/
 DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	xneur:deskutils/xneur
 RUN_DEPENDS=	xneur:deskutils/xneur
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		compiler:c++11-lang pkgconfig
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GNOME=	gconf2 gtk20 libglade2
 INSTALLS_ICONS=	yes
