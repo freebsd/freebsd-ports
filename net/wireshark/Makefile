@@ -21,11 +21,13 @@ COMMENT?=	Powerful network analyzer/capture tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+CONFLICTS_INSTALL?=	wireshark-lite-[0-9]* tshark-[0-9]* tshark-lite-[0-9]*
+
 DATADIR_NAME=	wireshark
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 
 USES=		alias cmake cpe compiler:c++11-lang gettext-runtime \
-		libtool localbase pathfix \
+		libtool localbase pathfix localbase:ldflags \
 		perl5 pkgconfig python:3.4+ ssl tar:xz
 USE_PERL5=	build
 USE_GNOME=	glib20 libxml2
@@ -187,5 +189,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/applications|${DESKTOPDIR}|g ; \
 		s|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|lua$${LUA_INC_SUFFIX}|lua-${LUA_VER}|g' \
+	    	${WRKSRC}/cmake/modules/FindLUA.cmake
 
 .include <bsd.port.mk>
