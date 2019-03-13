@@ -2,12 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	portscout
-PORTVERSION=	0.8.1
-PORTREVISION=	11
+PORTVERSION=	0.8.1.2
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
-		http://www.atarininja.org/~wxs/distfiles/ \
-		http://www.inerd.com/software/${PORTNAME}/
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Tool to scan for new versions of FreeBSD ports
@@ -23,6 +19,10 @@ RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-libwww>=0:www/p5-libwww \
 		p5-JSON>0:converters/p5-JSON
 
+USES=		perl5 shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	freebsd
+
 OPTIONS_DEFINE=		DOCS HTTPS
 OPTIONS_DEFAULT=	HTTPS PGSQL
 
@@ -30,7 +30,6 @@ OPTIONS_MULTI=		DATABASE
 OPTIONS_MULTI_DATABASE=	SQLITE PGSQL
 
 DATABASE_DESC=	Database Backends
-USES=		perl5 shebangfix
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -56,10 +55,6 @@ pre-everything::
 	@${ECHO_MSG} "| is therefore recommended only for use with light workloads. |"
 	@${ECHO_MSG} "+-------------------------------------------------------------+"
 .endif
-
-post-extract:
-	@${CP} ${FILESDIR}/files-Portscout-SiteHandler-GitHub.pm ${WRKSRC}/Portscout/SiteHandler/GitHub.pm
-	@${CP} ${FILESDIR}/files-Portscout-SiteHandler-PyPI.pm ${WRKSRC}/Portscout/SiteHandler/PyPI.pm
 
 pre-install:
 	@${REINPLACE_CMD} -e "s#^\(templates .*\)/etc#\1/share#"	\
