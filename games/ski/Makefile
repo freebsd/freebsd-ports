@@ -11,7 +11,7 @@ COMMENT=	Skiing simulation with curses interface in python
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.2+:run
+USES=		python:3.2+,run
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
