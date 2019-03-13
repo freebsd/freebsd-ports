@@ -12,8 +12,6 @@ man/man1/vtun.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.Setup
 %%PORTDOCS%%%%DOCSDIR%%/README.Shaper
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-@unexec rm -rf "/var/log/vtund"
-@unexec rm -rf "/var/lock/vtund"
-@unexec rmdir "/var/lock/vtund" >/dev/null 2>&1 || :
-@unexec rmdir "/var/lock" >/dev/null 2>&1 || :
-@unexec rmdir "/var/log/vtund" >/dev/null 2>&1 || :
+@dir /var/log/vtund
+@dir /var/lock/vtund
+@dir /var/lock
