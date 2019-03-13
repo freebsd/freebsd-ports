@@ -7,8 +7,8 @@ MASTER_SITES=	LOCAL/glewis/bootstrap-openjdk11
 PKGNAMEPREFIX=	bootstrap-
 DISTNAME=	${JDK_PORT}-${JDK_ARCH}-${PORTVERSION}
 
-MAINTAINER=	jkim@FreeBSD.org
-COMMENT=	Java Development Kit 8
+MAINTAINER=	java@FreeBSD.org
+COMMENT=	Java Development Kit 11
 
 LICENSE=	GPLv2
 
