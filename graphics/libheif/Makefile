@@ -13,7 +13,8 @@ COMMENT=		Libheif is an ISO/IEC 23008-12:2017 HEIF file format de- and encoder
 LICENSE=		LGPL3+
 LICENSE_FILE_LGPL3+=	${WRKSRC}/COPYING
 
-USES=			autoreconf libtool localbase pkgconfig shebangfix
+USES=			autoreconf compiler:c++11-lang libtool localbase pkgconfig \
+			shebangfix
 USE_GITHUB=		yes
 GH_ACCOUNT=		strukturag
 GH_PROJECT=		libheif
