@@ -47,7 +47,6 @@ LLVM_COMMANDS=	\
 		llvm-tblgen \
 		llvm-undname \
 		llvm-xray \
-		macho-dump \
 		opt \
 		sancov
 
@@ -71,7 +70,6 @@ EXTRAS_COMMANDS= \
 		clang-change-namespace \
 		clang-doc \
 		clang-include-fixer \
-		clang-modernize \
 		clang-query \
 		clang-rename \
 		clang-reorder-fields \
