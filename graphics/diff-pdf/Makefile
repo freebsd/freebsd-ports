@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpoppler.so:graphics/poppler \
 		libpoppler-glib.so:graphics/poppler-glib
 
-USES=		autoreconf pkgconfig
+USES=		autoreconf compiler:c++11-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	vslavik
 GNU_CONFIGURE=	yes
