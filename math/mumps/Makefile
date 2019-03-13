@@ -32,8 +32,6 @@ MUMPSVERSION=	${PORTVERSION:R}
 LIBS=		cmumps dmumps mumps_common pord smumps zmumps
 PLIST_SUB=	VE=${VEM} MUMPSVERSION=${MUMPSVERSION}
 
-CONFLICTS=	mumps4-4*
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 MAKE_JOBS_UNSAFE=yes
@@ -54,12 +52,10 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:net/mpich2	\
 		${LOCALBASE}/lib/libblacs.a:math/blacs	\
 		${LOCALBASE}/lib/libscalapack.a:math/scalapack
 PLIST_SUB+=	WITH_LIBSEQ="@comment "
-CONFLICTS+=	mumps-5*
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libscotch.a:cad/scotch
 PLIST_SUB+=	WITH_LIBSEQ=""
 LIBS+=		mpiseq
-CONFLICTS+=	mumps-mpich-5*
 .endif
 
 pre-configure:
