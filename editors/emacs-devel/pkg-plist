@@ -31,7 +31,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/ERC-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/ETAGS.EBNF
 %%DATADIR%%/%%EMACS_VER%%/etc/ETAGS.README
-%%DATADIR%%/%%EMACS_VER%%/etc/GNUS-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/HELLO
 %%DATADIR%%/%%EMACS_VER%%/etc/HISTORY
 %%DATADIR%%/%%EMACS_VER%%/etc/JOKES
