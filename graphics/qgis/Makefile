@@ -87,6 +87,8 @@ USE_QT=		3d buildtools_build core concurrent dbus declarative \
 USE_PYQT=	core gui network qml qscintilla2 sip sql svg xml webkit_run
 USE_LDCONFIG=	yes
 
+CONFLICTS_INSTALL=	qgis-ltr
+
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
 
