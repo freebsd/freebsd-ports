@@ -73,6 +73,7 @@
     SUBDIR += p5-GPS-Point
     SUBDIR += p5-Geo-METAR
     SUBDIR += p5-Misc-Quality
+    SUBDIR += p5-Net-GPSD3
     SUBDIR += p5-Starlink-AST
     SUBDIR += p5-Weather-Underground
     SUBDIR += phoon

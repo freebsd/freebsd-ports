@@ -1,0 +1,4 @@
+Net::GPSD3 provides an object client interface to the gpsd server daemon
+utilizing the version 3 protocol.
+
+WWW: https://metacpan.org/release/Net-GPSD3
