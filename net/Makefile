@@ -902,6 +902,7 @@
     SUBDIR += p5-XPC
     SUBDIR += p5-ZMQ-FFI
     SUBDIR += p5-ZeroMQ
+    SUBDIR += p5-ip2location-perl
     SUBDIR += p5-ldap2pf
     SUBDIR += p5-ldap2pw
     SUBDIR += p5-perl-ldap
