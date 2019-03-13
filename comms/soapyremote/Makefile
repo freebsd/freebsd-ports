@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
 		libSoapySDR.so:misc/soapysdr
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	pothosware
 
