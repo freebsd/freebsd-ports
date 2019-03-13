@@ -5,8 +5,8 @@ DISTVERSIONPREFIX=	${PORTNAME}-gold-
 DISTVERSION=	0.1.12
 DISTVERSIONSUFFIX=	-alpha
 CATEGORIES=	games
-MASTER_SITES=	https://colobot.info/files/music/
-DISTFILES=	colobot-music_ogg_0.1.12-alpha.tar.gz
+MASTER_SITES=	https://colobot.info/files/music/:music
+DISTFILES=	colobot-music_ogg_0.1.12-alpha.tar.gz:music
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Educational game aiming to teach programming to kids
