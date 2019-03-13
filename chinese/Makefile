@@ -103,6 +103,7 @@
     SUBDIR += scim-pinyin
     SUBDIR += scim-tables
     SUBDIR += sourcehansans-sc-otf
+    SUBDIR += sourcehansans-tc-otf
     SUBDIR += sourcehanserif-sc-otf
     SUBDIR += sourcehanserif-tc-otf
     SUBDIR += sunpinyin
