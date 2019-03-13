@@ -58,11 +58,4 @@ post-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.pre.mk>
-
-# disable sse on non-x86 archs
-.if ${ARCH} != amd64 && ${ARCH} != i386
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-GNUmakefile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
