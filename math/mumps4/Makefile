@@ -38,8 +38,6 @@ USE_LDCONFIG=	yes
 VEM=		${PORTVERSION:R:R}
 LIBS=		cmumps dmumps mumps_common pord smumps zmumps
 
-CONFLICTS=	mumps-edf-5*
-
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math
 .endif
