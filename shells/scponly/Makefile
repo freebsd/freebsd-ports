@@ -3,7 +3,7 @@
 
 PORTNAME=	scponly
 PORTVERSION=	4.8.20110526
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	shells security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-snapshots
 DISTNAME=	${PORTNAME}-20110526
@@ -13,9 +13,9 @@ COMMENT=	Tiny shell that only permits scp and sftp
 
 LICENSE=	BSD2CLAUSE
 
-PORTDOCS=	BUILDING-JAILS.TXT INSTALL README SECURITY
-
 USES=		tar:tgz
+
+PORTDOCS=	BUILDING-JAILS.TXT INSTALL README SECURITY
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	WILDCARDS GFTP CHROOT RSYNC SCP SVN SVNSERVE UNISON WINSCP \
@@ -34,7 +34,8 @@ WINSCP_DESC=	WinSCP support
 OPTIONS_SUB=	yes
 
 .if !exists(/usr/bin/sftp)
-BUILD_DEPENDS=	${LOCALBASE}/bin/sftp:security/openssh-portable
+BUILD_DEPENDS+=	openssh-portable>0:security/openssh-portable
+RUN_DEPENDS+=	openssh-portable>0:security/openssh-portable
 .endif
 DEFAULT_CHDIR_CONFIGURE_ON=	--with-default-chdir=${SCPONLY_DEFAULT_CHDIR}
 WILDCARDS_CONFIGURE_ENABLE=	wildcards
@@ -42,17 +43,19 @@ GFTP_CONFIGURE_ENABLE=		gftp-compat
 CHROOT_CONFIGURE_ENABLE=	chrooted-binary
 CHROOT_USE=			RC_SUBR=scponlyc
 RSYNC_BUILD_DEPENDS=		rsync:net/rsync
+RSYNC_RUN_DEPENDS=		rsync:net/rsync
 RSYNC_CONFIGURE_ENABLE=		rsync-compat
 SCP_CONFIGURE_ENABLE=		scp-compat
 SVN_CONFIGURE_ENABLE=		svn-compat
 SVN_BUILD_DEPENDS=		svn:devel/subversion
+SVN_RUN_DEPENDS=		svn:devel/subversion
 SVNSERVE_BUILD_DEPENDS=		svn:devel/subversion
+SVNSERVE_RUN_DEPENDS=		svn:devel/subversion
 SVNSERVE_CONFIGURE_ENABLE=	svnserv-compat
 UNISON_BUILD_DEPENDS=		unison:net/unison
+UNISON_RUN_DEPENDS=		unison:net/unison
 UNISON_CONFIGURE_ENABLE=	unison-compat
 WINSCP_CONFIGURE_ENABLE=	winscp-compat
-
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 post-patch:
 	@${ECHO_MSG} "In addition to knobs available from the OPTIONS dialog,"
