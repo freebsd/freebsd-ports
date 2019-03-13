@@ -1,7 +1,7 @@
-TIMESTAMP = 1490895941
-SHA256 (arduino/arduino-Arduino-1.6.18-b439a77_GH0.tar.gz) = ded6eebe1b58834df432e8d49f01a8c1aeb1328479f244075db7f76c12019f37
-SIZE (arduino/arduino-Arduino-1.6.18-b439a77_GH0.tar.gz) = 48187661
+TIMESTAMP = 1552437121
+SHA256 (arduino/arduino-Arduino-1.6.18-b439a77_GH0.tar.gz) = 70191e9badd0986b697326d4640da1d24090f0c72a7e8c8f783bcb1ca63121a4
+SIZE (arduino/arduino-Arduino-1.6.18-b439a77_GH0.tar.gz) = 48187647
 SHA256 (arduino/arduino-ArduinoCore-sam-fc57f2e_GH0.tar.gz) = 3d374e7c7037d317f5da73c95361033b81e6cc12330a7623b20ad2f084bff247
 SIZE (arduino/arduino-ArduinoCore-sam-fc57f2e_GH0.tar.gz) = 38839710
-SHA256 (arduino/arduino-ArduinoCore-samd-1.6.12_GH0.tar.gz) = fefa0cb0871033451aa0ea08b6a9b4587acdd800b6064a9d47233be7b6368ce8
-SIZE (arduino/arduino-ArduinoCore-samd-1.6.12_GH0.tar.gz) = 3321356
+SHA256 (arduino/arduino-ArduinoCore-samd-1.6.12_GH0.tar.gz) = 24527ad183696357be6c97ce8da1c777f9664266452d6ad717b2ec582f08def3
+SIZE (arduino/arduino-ArduinoCore-samd-1.6.12_GH0.tar.gz) = 3323979
