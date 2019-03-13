@@ -4,6 +4,7 @@
 PORTNAME=	redasm
 PORTVERSION=	2.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -13,7 +14,6 @@ LICENSE=	GPLv3
 
 USES=		cmake compiler:c++11-lang qt:5
 USE_QT=		buildtools_build qmake_build core gui network webengine
-USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	REDasmOrg
@@ -27,6 +27,9 @@ PLIST_FILES=	bin/REDasm lib/LibREDasm.so
 post-patch:
 	@${REINPLACE_CMD} -e 's,formats\.size(),formatsCount,' \
 		${WRKSRC}/mainwindow.cpp
+	@${REINPLACE_CMD} -e '/Git/s,find_package,#&, ; \
+		/CMAKE_INSTALL_RPATH/s,\.,${PREFIX}/lib, ; \
+		s|unknown|b47ed30|' ${WRKSRC}/CMakeLists.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/REDasm ${STAGEDIR}${PREFIX}/bin
