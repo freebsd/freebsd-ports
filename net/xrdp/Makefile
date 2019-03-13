@@ -69,7 +69,7 @@ pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./bootstrap
 
 post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/startwm.sh ${STAGEDIR}${ETCDIR}/startwm.sh
+	${INSTALL_SCRIPT} ${FILESDIR}/startwm.sh ${STAGEDIR}${ETCDIR}
 
 post-stage:
 	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/rsakeys.ini
