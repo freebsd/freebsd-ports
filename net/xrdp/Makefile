@@ -17,7 +17,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:devel/nasm
-RUN_DEPENDS=	${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp \
+RUN_DEPENDS=	xterm:x11/xterm \
+		${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp \
 		${LOCALBASE}/lib/pulse-12.2/modules/module-xrdp-sink.so:audio/pulseaudio-module-xrdp
 
 USES=		autoreconf:build jpeg localbase libtool pkgconfig ssl
@@ -66,6 +67,9 @@ post-extract:
 
 pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./bootstrap
+
+post-install:
+	@${INSTALL_SCRIPT} ${FILESDIR}/startwm.sh ${STAGEDIR}${ETCDIR}/startwm.sh
 
 post-stage:
 	@${RM} ${STAGEDIR}${PREFIX}/etc/xrdp/rsakeys.ini
