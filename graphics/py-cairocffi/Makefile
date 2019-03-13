@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR} \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distutils cffi py3kplist
+USE_PYTHON=	distutils py3kplist
 USE_GNOME=	cairo
 
 .include <bsd.port.mk>
