@@ -4,3 +4,5 @@ using this module are generic enough that it is flexible to
 use the data for your own applications, such as CGI, simple
 text-only report generator, feeding RDBMS, data for Perl/Tk-based
 GUI application, etc.
+
+WWW: https://metacpan.org/release/Apache-ParseLog
