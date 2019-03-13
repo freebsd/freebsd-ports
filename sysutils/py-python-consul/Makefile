@@ -20,7 +20,11 @@ RUN_DEPENDS=	${LOCALBASE}/bin/consul:sysutils/consul \
 				${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six@${PY_FLAVOR}
 
-USES=	python:2.7-3.6+
+IGNORE=	${IGNORE_${FLAVOR}}
+IGNORE_py35=	Does not work with Python 3.5
+
+# 2.7 or 3.6+, but it cannot be expressed right now.
+USES=	python
 
 USE_PYTHON=	distutils autoplist
 
