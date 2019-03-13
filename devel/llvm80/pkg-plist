@@ -46,7 +46,6 @@ bin/llvm-symbolizer%%LLVM_SUFFIX%%
 bin/llvm-tblgen%%LLVM_SUFFIX%%
 bin/llvm-undname%%LLVM_SUFFIX%%
 bin/llvm-xray%%LLVM_SUFFIX%%
-bin/macho-dump%%LLVM_SUFFIX%%
 bin/opt%%LLVM_SUFFIX%%
 bin/sancov%%LLVM_SUFFIX%%
 %%CLANG%%bin/c-index-test%%LLVM_SUFFIX%%
@@ -66,7 +65,6 @@ bin/hmaptool%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-change-namespace%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-doc%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-include-fixer%%LLVM_SUFFIX%%
-%%EXTRAS%%bin/clang-modernize%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-query%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-rename%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-reorder-fields%%LLVM_SUFFIX%%
