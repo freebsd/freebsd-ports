@@ -906,6 +906,7 @@
     SUBDIR += pysvg
     SUBDIR += qcomicbook
     SUBDIR += qgis
+    SUBDIR += qgis-ltr
     SUBDIR += qiv
     SUBDIR += qslim
     SUBDIR += qt4-iconengines
