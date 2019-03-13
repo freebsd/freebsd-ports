@@ -6,7 +6,7 @@ PORTVERSION=	1.7.20050716
 PORTREVISION=	8
 CATEGORIES=	science
 MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
-
+PKGNAMESUFFIX=	-devel
 DISTNAME=	ct17a15
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,13 +15,12 @@ COMMENT=	Drawing organic molecules easily and store them (developer version)
 LIB_DEPENDS=	libEMF.so:graphics/libemf
 RUN_DEPENDS=	transfig:print/transfig
 
+USES=		compiler:c++11-lang gettext gmake pkgconfig tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.7alpha15/
 USE_GNOME=	gtk20
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig tar:tgz
 CONFIGURE_ARGS=	--enable-emf=yes
-PKGNAMESUFFIX=	-devel
 MAKE_ARGS+=	MAKE=${MAKE_CMD}
 MAKE_JOBS_UNSAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libEMF
