@@ -52,6 +52,7 @@ post-patch:
 		-e 's/pushd/cd/; s/popd/cd -/' \
 		-e 's/-Os //; /=.*-fexcess-precision/d' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} 's/ -msse2 -g0//' ${WRKSRC}/${MAKEFILE}
 
 post-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
