@@ -11671,3 +11671,4 @@ net-mgmt/py-pysnmp-apps|net-mgmt/py-snmpclitools|2019-03-06|Renamed upstream
 math/mumps-edf|math/mumps|2019-03-10|Use mumps-edf as MUMPS 5
 textproc/soprano||2019-03-11|Has expired: Qt4 has been EOL since december 2015
 x11-fonts/mkfontdir|x11-fonts/mkfontscale|2019-03-11|Merged into one package
+emulators/ppsspp-devel|emulators/ppsspp|2019-03-14|Out of date: use emulators/ppsspp for now
