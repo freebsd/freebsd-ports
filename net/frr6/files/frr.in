@@ -13,7 +13,7 @@
 # You may also wish to use the following variables to fine-tune startup:
 #  frr_flags=""
 #  frr_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd eigrpd babeld bfdd staticd"
-#  frr_vysh_boot="YES"
+#  frr_vtysh_boot="YES"
 # Per daemon tuning may be done with daemon_name_flags
 #  zebra_flags="-P 0"
 #  bgpd_flags="-nrP 0" and so on
@@ -90,16 +90,25 @@ do_cmd()
 	local ret
 	ret=0
 	frr_cmd=$1
+	if checkyesno frr_vtysh_boot && ( [ ${frr_cmd} = "restart" ] || [ ${frr_cmd} = "start" ] ); then
+		echo "Checking intergrated config..."
+		daemon="vtysh"
+		daemon_flags=""
+		command=%%PREFIX%%/bin/${daemon}
+		check_config
+	fi
 	for daemon in ${frr_daemons}; do
 	    command=%%PREFIX%%/sbin/${daemon}
-	    required_files=%%ETCDIR%%/${daemon}.conf
 	    pidfile=/var/run/frr/${daemon}.pid
-	    if [ ${frr_cmd} = "restart" ] || [ ${frr_cmd} = "start" ]; then
-		check_config
-	    fi
-	    if [ ${frr_cmd} = "start" ] && ! [ -f ${required_files} ]; then
-			continue
-	    fi
+		if ! checkyesno frr_vtysh_boot; then
+ 			required_files=%%ETCDIR%%/${daemon}.conf
+			if [ ${frr_cmd} = "restart" ] || [ ${frr_cmd} = "start" ]; then
+ 				check_config
+			fi
+			if [ ${frr_cmd} = "start" ] && ! [ -f ${required_files} ]; then
+				continue
+			fi
+		fi
 	    if [ ${frr_cmd} = "stop" ] && [ -z $(check_process ${command}) ]; then
 			continue
 	    fi
@@ -108,7 +117,7 @@ do_cmd()
 	    _rc_restart_done=false
 	    run_rc_command "$1" || ret=1
 	done
-	if checkyesno frr_vtysh_boot; then
+	if checkyesno frr_vtysh_boot && ( [ ${frr_cmd} = "restart" ] || [ ${frr_cmd} = "start" ] ); then
 	    echo "Booting for integrated-vtysh-config..."
 	    %%PREFIX%%/bin/vtysh -b
 	fi
