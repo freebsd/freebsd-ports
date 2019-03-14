@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.12
-PORTREVISION=	1
+PORTVERSION=	1.12.1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://golang.org/dl/
@@ -61,7 +60,9 @@ do-build:
 		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:tl} \
 		GO386=${GO386} \
 		${SH} make.bash -v
-	${RM} -r ${WRKSRC}/pkg/obj
+	${RM} -r ${WRKSRC}/pkg/obj \
+	    ${WRKSRC}/pkg/bootstrap \
+	    ${WRKSRC}/pkg/${OPSYS:tl}_${GOARCH}/cmd
 
 do-install:
 	@${CP} -a ${WRKSRC} ${STAGEDIR}${PREFIX}
