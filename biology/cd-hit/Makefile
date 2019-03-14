@@ -1,33 +1,29 @@
 # $FreeBSD$
 
-PORTNAME=	cd-hit
-PORTVERSION=	4.6.6
-PORTREVISION=	5
+PORTNAME=		cd-hit
 DISTVERSIONPREFIX=	V
-CATEGORIES=	biology
+DISTVERSION=		4.8.1
+CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Clustering and comparing protein or nucleotide sequences
 
 LICENSE=	GPLv2
 
+USES=		compiler:openmp gmake shebangfix
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	weizhongli
 GH_PROJECT=	cdhit
-
-USES=		compiler:openmp gmake shebangfix
 SHEBANG_FILES=	${WRKSRC}/*.pl
 
 MAKE_FLAGS=	openmp=yes
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|g++|${CXX}|g' \
-		-e 's|\$$(PREFIX)|$${DESTDIR}$${PREFIX}/bin|g' \
-		${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} \
 		-e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
-		${WRKSRC}/*.pl
+		${WRKSRC}/cd-hit-2d-para.pl \
+		${WRKSRC}/cd-hit-para.pl
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX}/bin && \
