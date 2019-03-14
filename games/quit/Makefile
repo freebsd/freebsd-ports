@@ -5,15 +5,14 @@ PORTNAME=	quit
 PORTVERSION=	1.2a
 PORTREVISION=	1
 CATEGORIES?=	games
-MASTER_SITES=	http://megaui.net/fukuchi/archive/shortshort/
+MASTER_SITES=	https://fukuchi.org/archive/shortshort/
 
 MAINTAINER?=	meta@FreeBSD.org
 COMMENT=	Bicycle with trailers like "sl"
 
-MANLANG=	ja
-
 USES=		ncurses
 
+MANLANG=	ja
 OPTIONS_DEFINE=	DOCS
 
 do-build:
