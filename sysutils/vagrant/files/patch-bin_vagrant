@@ -1,5 +1,5 @@
---- bin/vagrant.orig	2018-11-16 19:25:33 UTC
-+++ bin/vagrant
+--- bin/vagrant.orig	2019-02-27 15:35:56.000000000 +0000
++++ bin/vagrant	2019-03-11 03:50:43.415883000 +0000
 @@ -5,6 +5,9 @@
  # initializing which have historically resulted in stack traces.
  Signal.trap("INT") { abort }
@@ -10,3 +10,14 @@
  # Disable exception reporting by default if available
  if Thread.respond_to?(:report_on_exception=)
    Thread.report_on_exception = false
+@@ -16,7 +19,9 @@
+ 
+ # These will be the options that are passed to initialize the Vagrant
+ # environment.
+-opts = {}
++opts = {
++  :ca_cert => '@PREFIX@/share/certs/ca-root-nss.crt'
++}
+ 
+ if idx = argv.index("--")
+   argv_extra = argv.slice(idx+1, argv.length-2)

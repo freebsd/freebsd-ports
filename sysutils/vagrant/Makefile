@@ -4,6 +4,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.2.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
@@ -35,7 +36,9 @@ RUN_DEPENDS=	rubygem-bcrypt_pbkdf>=1.0.0:security/rubygem-bcrypt_pbkdf \
 		rubygem-winrm>=2.1:sysutils/rubygem-winrm \
 		rubygem-winrm-elevated>=1.1:sysutils/rubygem-winrm-elevated \
 		rubygem-winrm-fs>=1.0:sysutils/rubygem-winrm-fs \
-		rubygem-ruby_dep>=0:devel/rubygem-ruby_dep
+		rubygem-ruby_dep>=0:devel/rubygem-ruby_dep \
+		ca_root_nss>=0:security/ca_root_nss \
+		curl:ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
@@ -71,8 +74,6 @@ do-build:
 		${GEMFILES} -- ${CONFIGURE_ARGS})
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/build_info
 	${MKDIR} ${STAGEDIR}${DATADIR}/embedded/rgloader
-	${INSTALL_DATA} ${FILESDIR}/cacert.pem \
-		${STAGEDIR}${DATADIR}/embedded/cacert.pem
 	${INSTALL_SCRIPT} ${FILESDIR}/loader.rb \
 		${STAGEDIR}${DATADIR}/embedded/rgloader/loader.rb
 
