@@ -13,12 +13,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	zip:archivers/zip
-
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libopenal.so:audio/openal-soft \
 		libmpeg2.so:multimedia/libmpeg2
 
-USES=		desktop-file-utils gettext gl gmake \
+USES=		compiler:c11 desktop-file-utils gettext gl gmake \
 		gnome localbase pkgconfig shared-mime-info
 
 USE_SDL=	sdl2
