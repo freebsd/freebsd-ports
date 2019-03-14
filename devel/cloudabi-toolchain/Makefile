@@ -3,6 +3,7 @@
 
 PORTNAME=	cloudabi-toolchain
 PORTVERSION=	1.11
+PORTREVISON=	1
 CATEGORIES=	devel
 MASTER_SITES=	# None
 DISTFILES=	# None
@@ -12,13 +13,11 @@ COMMENT=	C and C++ toolchain for CloudABI
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	clang${LLVM_SUFFIX}:devel/llvm${LLVM_SUFFIX} \
-		lld${LLVM_SUFFIX}:devel/llvm${LLVM_SUFFIX} \
+RUN_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
+		lld${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		pkgconf:devel/pkgconf
 
 CONFLICTS=	cloudabi-binutils-*
-
-LLVM_SUFFIX=	50
 
 CLOUDABI_ARCHS=	aarch64-unknown-cloudabi armv6-unknown-cloudabi-eabihf \
 		armv7-unknown-cloudabi-eabihf i686-unknown-cloudabi \
@@ -35,7 +34,7 @@ SHELL_TOOLS=	man pkg-config
 PLIST_FILES+=	bin/${arch}-${tool}
 . endfor
 PLIST_FILES+=	bin/${arch}-cc bin/${arch}-c++ bin/${arch}-ld \
-		llvm${LLVM_SUFFIX}/${arch}
+		llvm${LLVM_DEFAULT}/${arch}
 .endfor
 
 do-build:
@@ -47,27 +46,27 @@ do-build:
 .endfor
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/llvm${LLVM_SUFFIX}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/llvm${LLVM_DEFAULT}
 .for arch in ${CLOUDABI_ARCHS}
 . for tool in ${BASE_TOOLS}
 	@${LN} -s /usr/bin/${tool} \
 		${STAGEDIR}${PREFIX}/bin/${arch}-${tool}
 . endfor
 . for tool in ${LLVM_TOOLS}
-	@${LN} -s ../llvm${LLVM_SUFFIX}/bin/llvm-${tool} \
+	@${LN} -s ../llvm${LLVM_DEFAULT}/bin/llvm-${tool} \
 		${STAGEDIR}${PREFIX}/bin/${arch}-${tool}
 . endfor
 . for tool in ${SHELL_TOOLS}
 	${INSTALL_SCRIPT} ${WRKDIR}/${arch}-${tool} \
 		${STAGEDIR}${PREFIX}/bin/${arch}-${tool}
 . endfor
-	@${LN} -s ../llvm${LLVM_SUFFIX}/bin/clang \
+	@${LN} -s ../llvm${LLVM_DEFAULT}/bin/clang \
 		${STAGEDIR}${PREFIX}/bin/${arch}-cc
-	@${LN} -s ../llvm${LLVM_SUFFIX}/bin/clang++ \
+	@${LN} -s ../llvm${LLVM_DEFAULT}/bin/clang++ \
 		${STAGEDIR}${PREFIX}/bin/${arch}-c++
-	@${LN} -s ../llvm${LLVM_SUFFIX}/bin/lld \
+	@${LN} -s ../llvm${LLVM_DEFAULT}/bin/lld \
 		${STAGEDIR}${PREFIX}/bin/${arch}-ld
-	@${LN} -s ../${arch} ${STAGEDIR}${PREFIX}/llvm${LLVM_SUFFIX}/${arch}
+	@${LN} -s ../${arch} ${STAGEDIR}${PREFIX}/llvm${LLVM_DEFAULT}/${arch}
 .endfor
 
 .include <bsd.port.post.mk>
