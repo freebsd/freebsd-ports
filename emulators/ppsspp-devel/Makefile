@@ -10,15 +10,7 @@ GH_TUPLE=	hrydgard:glslang:9983f99e:glslang/ext/glslang \
 		KhronosGroup:SPIRV-Cross:be7425e:SPIRV/ext/SPIRV-Cross \
 		Kingcom:armips:v0.10.0-28-g7885552:armips/ext/armips
 
-CMAKE_OFF=	USE_DISCORD
-
 MASTERDIR=	${.CURDIR}/../ppsspp
 DISTINFO_FILE?=	${.CURDIR}/distinfo
-
-pre-patch:	slave-pre-patch
-slave-pre-patch:
-# Avoid copying entire ${PATCHDIR} just for removed code
-	@${REINPLACE_CMD} -e '/SIMULATOR/s/ARM_DEVICE/ARM/' \
-		${WRKSRC}/CMakeLists.txt
 
 .include "${MASTERDIR}/Makefile"
