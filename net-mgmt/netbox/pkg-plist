@@ -212,6 +212,7 @@
 %%DATADIR%%/extras/migrations/0014_configcontexts.py
 %%DATADIR%%/extras/migrations/0015_remove_useraction.py
 %%DATADIR%%/extras/migrations/0016_exporttemplate_add_cable.py
+%%DATADIR%%/extras/migrations/0017_exporttemplate_mime_type_length.py
 %%DATADIR%%/extras/migrations/__init__.py
 %%DATADIR%%/extras/models.py
 %%DATADIR%%/extras/querysets.py

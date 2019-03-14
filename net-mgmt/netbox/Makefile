@@ -2,7 +2,7 @@
 
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.7
+DISTVERSION=	2.5.8
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	kai@FreeBSD.org
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django21>=2.1.5:www/py-django21@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}dj21-django-taggit-serializer>=0.1.7:www/py-dj21-django-taggit-serializer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj21-django-timezone-field>=3.0:www/py-dj21-django-timezone-field@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj21-djangorestframework>=3.9.0:www/py-dj21-djangorestframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj21-drf-yasg>=1.11.1:www/py-dj21-drf-yasg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj21-drf-yasg>=1.14.0:www/py-dj21-drf-yasg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gfm>=0.1.4:textproc/py-gfm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphviz>=0.10.1:graphics/py-graphviz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=2.6.11:textproc/py-markdown@${PY_FLAVOR} \
