@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	games
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	101c68e22921.patch:-p1 4fb1180d2b54.patch:-p1 2fd934702f8b.patch:-p1
+PATCHFILES+=	101c68e22921.patch:-p1 4fb1180d2b54.patch:-p1 25e752f272d0.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	NScripter-like novel-game interpreter with Unicode support
