@@ -1542,6 +1542,7 @@
     SUBDIR += py-django-caching-app-plugins
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
+    SUBDIR += py-django-common-helpers
     SUBDIR += py-django-configurations
     SUBDIR += py-django-constance
     SUBDIR += py-django-contact-form
