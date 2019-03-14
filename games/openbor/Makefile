@@ -89,6 +89,8 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's/\.openbor/.${PKGBASE}/' \
 		${WRKSRC}/sdl/sdlport.c
+	@${REINPLACE_CMD} -e 's/__builtin_unreachable/__unreachable/' \
+		${WRKSRC}/source/gamelib/loadimg.c
 	@${GREP} -Flr 'malloc.h' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		's,malloc\.h,stdlib.h,'
 	@${REINPLACE_CMD} -e 's/^function \(.*\) {/\1() {/' \
