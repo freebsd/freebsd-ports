@@ -969,6 +969,5 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/vagrant.gemspec
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/version.txt
 %%GEMS_DIR%%specifications/vagrant-%%PORTVERSION%%.gemspec
-%%DATADIR%%/embedded/cacert.pem
 %%DATADIR%%/embedded/rgloader/loader.rb
 @dir %%GEMS_DIR%%extensions
