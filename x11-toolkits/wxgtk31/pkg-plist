@@ -765,7 +765,7 @@ lib/libwx_gtk3u_stc-3.1.so.2.0.0
 lib/libwx_gtk3u_xrc-3.1.so
 lib/libwx_gtk3u_xrc-3.1.so.2
 lib/libwx_gtk3u_xrc-3.1.so.2.0.0
-lib/wx/3.1.2/web-extensions/webkit2_extu-3.1.2.so
+%%WEBKIT%%lib/wx/3.1.2/web-extensions/webkit2_extu-3.1.2.so
 lib/wx/include/gtk3-unicode-3.1/wx/setup.h
 share/aclocal/wxwin31.m4
 share/bakefile/presets/wx31.bkl
