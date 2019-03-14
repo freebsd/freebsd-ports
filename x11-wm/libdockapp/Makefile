@@ -2,26 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	libdockapp
-PORTVERSION=	0.6.2
-PORTREVISION=	5
+PORTVERSION=	0.7.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	LOCAL/xride
+MASTER_SITES=	https://www.dockapps.net/download/
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Standard library for Window Maker dock apps
 
-OPTIONS_DEFINE=	EXAMPLES
-OPTIONS_SUB=	yes
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool fonts tar:bzip2
+BUILD_DEPENDS=	mkfontdir:x11-fonts/mkfontscale
+
+USES=		autoreconf fonts libtool pkgconfig
 USE_LDCONFIG=	yes
-USE_XORG=	xext xpm
+USE_XORG=	fontutil x11 xext xpm
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-font --without-examples
 
+WRKSRC=		${WRKDIR}/dockapps-b9baa8f
+
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-.for file in fonts.alias *.pcf.gz
+.for file in *.pcf.gz
 	${INSTALL_DATA} ${WRKSRC}/fonts/${file} ${STAGEDIR}${FONTSDIR}
 .endfor
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
@@ -29,11 +35,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/basic
-.for file in Imakefile README *.c *.xpm
+.for file in README *.c *.xpm
 	${INSTALL_DATA} ${WRKSRC}/examples/basic/${file} ${STAGEDIR}${EXAMPLESDIR}/basic
 .endfor
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/rectangles
-.for file in Imakefile *.c
+.for file in *.c
 	${INSTALL_DATA} ${WRKSRC}/examples/rectangles/${file} ${STAGEDIR}${EXAMPLESDIR}/rectangles
 .endfor
 
