@@ -2,8 +2,8 @@
 
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.7.5
-PORTREVISION?=	1
+DISTVERSION?=	1.8.0
+PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -22,13 +22,10 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
-GH_TUPLE?=	hrydgard:glslang:29619b23:glslang/ext/glslang \
-		hrydgard:${PORTNAME}-lang:7ea29e4:lang/assets/lang \
+GH_TUPLE?=	hrydgard:glslang:9983f99e:glslang/ext/glslang \
+		hrydgard:${PORTNAME}-lang:18e0d46:lang/assets/lang \
 		KhronosGroup:SPIRV-Cross:be7425e:SPIRV/ext/SPIRV-Cross \
-		Kingcom:armips:v0.10.0-22-g9efe336:armips/ext/armips \
-		Kingcom:tinyformat:Release-2.0.1-7-gb7f5a22:tinyformat/ext/armips/ext/tinyformat \
-		Tencent:rapidjson:v1.1.0-415-g73063f50:rapidjson/ext/rapidjson \
-		discordapp:discord-rpc:v3.3.0-15-g3d3ae71:discord_rpc/ext/discord-rpc
+		Kingcom:armips:v0.10.0-28-g7885552:armips/ext/armips
 
 CONFLICTS_INSTALL=	${PORTNAME}-*
 
@@ -38,6 +35,7 @@ EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 USE_GL=		gl glew glu
 USE_SDL=	sdl2 # joystick
 CMAKE_ON=	USE_SYSTEM_FFMPEG USE_SYSTEM_LIBZIP
+CMAKE_OFF=	USE_DISCORD
 SUB_FILES=	pkg-message
 PORTDATA=	assets ${PORTNAME}
 
