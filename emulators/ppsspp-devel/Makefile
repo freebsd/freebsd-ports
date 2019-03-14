@@ -8,8 +8,7 @@ PKGNAMESUFFIX?=	-devel
 GH_TUPLE=	hrydgard:glslang:9983f99e:glslang/ext/glslang \
 		hrydgard:${PORTNAME}-lang:18e0d46:lang/assets/lang \
 		KhronosGroup:SPIRV-Cross:be7425e:SPIRV/ext/SPIRV-Cross \
-		Kingcom:armips:v0.10.0-28-g7885552:armips/ext/armips \
-		Kingcom:tinyformat:Release-2.0.1-7-gb7f5a22:tinyformat/ext/armips/ext/tinyformat
+		Kingcom:armips:v0.10.0-28-g7885552:armips/ext/armips
 
 CMAKE_OFF=	USE_DISCORD
 
