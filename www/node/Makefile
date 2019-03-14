@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	11.10.1
+PORTVERSION=	11.11.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -12,7 +12,6 @@ COMMENT=	V8 JavaScript for client and server
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	fails to build: KeyError: 'action'
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64
 
 OPTIONS_DEFINE=		BUNDLED_SSL DOCS NLS DTRACE
@@ -27,6 +26,7 @@ OPTIONS_EXCLUDE_aarch64=	DTRACE
 # dt_modtext:/usr/src/cddl/contrib/opensolaris/lib/libdtrace/common/dt_link.c(820): arm not implemented
 OPTIONS_EXCLUDE_armv6=		DTRACE
 OPTIONS_EXCLUDE_armv7=		DTRACE
+OPTIONS_EXCLUDE_powerpc64=	DTRACE
 
 BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation
 BUNDLED_SSL_USES_OFF=		ssl
@@ -56,7 +56,9 @@ SHEBANG_FILES=	tools/specialize_node_d.py tools/genv8constants.py
 
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 REINPLACE_ARGS=	-i ''
-MAKE_ENV+=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
+MAKE_ENV+=	CC.host=${CC} CFLAGS.host="${CFLAGS}" \
+		CXX.host=${CXX} CXXFLAGS.host="${CXXFLAGS}" \
+		LINK.host=${CXX} LDFLAGS.host="${LDFLAGS}"
 
 LIB_DEPENDS+=	libcares.so:dns/c-ares\
 		libuv.so:devel/libuv \
