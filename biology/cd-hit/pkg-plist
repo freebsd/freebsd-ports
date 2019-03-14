@@ -1,7 +1,9 @@
+bin/FET.pl
 bin/cd-hit
 bin/cd-hit-2d
 bin/cd-hit-2d-para.pl
 bin/cd-hit-454
+bin/cd-hit-clstr_2_blm8.pl
 bin/cd-hit-div
 bin/cd-hit-div.pl
 bin/cd-hit-est
@@ -11,6 +13,8 @@ bin/clstr2tree.pl
 bin/clstr2txt.pl
 bin/clstr2xml.pl
 bin/clstr_cut.pl
+bin/clstr_list.pl
+bin/clstr_list_sort.pl
 bin/clstr_merge.pl
 bin/clstr_merge_noorder.pl
 bin/clstr_quality_eval.pl

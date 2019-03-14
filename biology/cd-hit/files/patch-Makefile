@@ -1,0 +1,92 @@
+--- Makefile.orig	2019-02-28 20:13:59 UTC
++++ Makefile
+@@ -1,6 +1,6 @@
+-CC = g++ -Wall -ggdb
+-CC = g++ -pg
+-CC = g++
++CXX ?= g++ -Wall -ggdb
++CXX ?= g++ -pg
++CXX ?= g++
+ 
+ # default with OpenMP
+ # with OpenMP
+@@ -47,7 +47,7 @@ PROGS = cd-hit cd-hit-est cd-hit-2d cd-h
+ CCFLAGS := $(CPPFLAGS) $(CCFLAGS) $(CXXFLAGS)
+ 
+ .c++.o:
+-	$(CC) $(CCFLAGS) -c $<
++	$(CXX) $(CCFLAGS) -c $<
+ 
+ all: $(PROGS)
+ 
+@@ -57,52 +57,53 @@ clean:
+ # programs
+ 
+ cd-hit: cdhit-common.o cdhit-utility.o cdhit.o
+-	$(CC) $(CCFLAGS) cdhit.o cdhit-common.o cdhit-utility.o $(LDFLAGS) cd-hit
++	$(CXX) $(CCFLAGS) cdhit.o cdhit-common.o cdhit-utility.o $(LDFLAGS) cd-hit
+ 
+ cd-hit-2d: cdhit-common.o cdhit-utility.o cdhit-2d.o
+-	$(CC) $(CCFLAGS) cdhit-2d.o cdhit-common.o cdhit-utility.o $(LDFLAGS) cd-hit-2d
++	$(CXX) $(CCFLAGS) cdhit-2d.o cdhit-common.o cdhit-utility.o $(LDFLAGS) cd-hit-2d
+ 
+ cd-hit-est: cdhit-common.o cdhit-utility.o cdhit-est.o
+-	$(CC) $(CCFLAGS) cdhit-est.o cdhit-common.o cdhit-utility.o $(LDFLAGS) cd-hit-est
++	$(CXX) $(CCFLAGS) cdhit-est.o cdhit-common.o cdhit-utility.o $(LDFLAGS) cd-hit-est
+ 
+ cd-hit-est-2d: cdhit-common.o cdhit-utility.o cdhit-est-2d.o
+-	$(CC) $(CCFLAGS) cdhit-est-2d.o cdhit-common.o cdhit-utility.o $(LDFLAGS) cd-hit-est-2d
++	$(CXX) $(CCFLAGS) cdhit-est-2d.o cdhit-common.o cdhit-utility.o $(LDFLAGS) cd-hit-est-2d
+ 
+ cd-hit-div: cdhit-common.o cdhit-utility.o cdhit-div.o
+-	$(CC) $(CCFLAGS) cdhit-div.o cdhit-common.o cdhit-utility.o $(LDFLAGS) cd-hit-div
++	$(CXX) $(CCFLAGS) cdhit-div.o cdhit-common.o cdhit-utility.o $(LDFLAGS) cd-hit-div
+ 
+ cd-hit-454: cdhit-common.o cdhit-utility.o cdhit-454.o
+-	$(CC) $(CCFLAGS) cdhit-454.o cdhit-common.o cdhit-utility.o $(LDFLAGS) cd-hit-454
++	$(CXX) $(CCFLAGS) cdhit-454.o cdhit-common.o cdhit-utility.o $(LDFLAGS) cd-hit-454
+ 
+ # objects
+ cdhit-common.o: cdhit-common.c++ cdhit-common.h
+-	$(CC) $(CCFLAGS) cdhit-common.c++ -c
++	$(CXX) $(CCFLAGS) cdhit-common.c++ -c
+ 
+ cdhit-utility.o: cdhit-utility.c++ cdhit-utility.h
+-	$(CC) $(CCFLAGS) cdhit-utility.c++ -c
++	$(CXX) $(CCFLAGS) cdhit-utility.c++ -c
+ 
+ cdhit.o: cdhit.c++ cdhit-utility.h
+-	$(CC) $(CCFLAGS) cdhit.c++ -c
++	$(CXX) $(CCFLAGS) cdhit.c++ -c
+ 
+ cdhit-2d.o: cdhit-2d.c++ cdhit-utility.h
+-	$(CC) $(CCFLAGS) cdhit-2d.c++ -c
++	$(CXX) $(CCFLAGS) cdhit-2d.c++ -c
+ 
+ cdhit-est.o: cdhit-est.c++ cdhit-utility.h
+-	$(CC) $(CCFLAGS) cdhit-est.c++ -c
++	$(CXX) $(CCFLAGS) cdhit-est.c++ -c
+ 
+ cdhit-est-2d.o: cdhit-est-2d.c++ cdhit-utility.h
+-	$(CC) $(CCFLAGS) cdhit-est-2d.c++ -c
++	$(CXX) $(CCFLAGS) cdhit-est-2d.c++ -c
+ 
+ cdhit-div.o: cdhit-div.c++ cdhit-common.h
+-	$(CC) $(CCFLAGS) cdhit-div.c++ -c
++	$(CXX) $(CCFLAGS) cdhit-div.c++ -c
+ 
+ cdhit-454.o: cdhit-454.c++ cdhit-common.h
+-	$(CC) $(CCFLAGS) cdhit-454.c++ -c
++	$(CXX) $(CCFLAGS) cdhit-454.c++ -c
+ 
+-PREFIX ?= /usr/local/bin
++PREFIX ?= /usr/local
+ 
+ install:
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
+ 	for prog in $(PROGS); do \
+-		install -m 0755 $$prog $(PREFIX); \
++		install -m 0755 $$prog $(DESTDIR)$(PREFIX)/bin; \
+ 	done
+-	install -m 0755 *.pl $(PREFIX);
++	install -m 0755 *.pl $(DESTDIR)$(PREFIX)/bin
