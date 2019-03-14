@@ -1,0 +1,9 @@
+OSSIM is an open source, C++ (mostly), geospatial image processing library used
+by government, commercial, educational, and private entities throughout the
+solar system. It has been in active development since the last millenium. This
+repository contains the full OSSIM package including core library, applications,
+tests, and build system. It does not contain the OSSIM plugins and other
+OSSIM-related code such as java-bindings (ossim-oms), and GUI. Those are
+available for individually cloning. Refer to the root github page for ossimlabs.
+
+WWW: https://github.com/ossimlabs/ossim
