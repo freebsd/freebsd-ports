@@ -1,12 +1,12 @@
 TIMESTAMP = 1552318961
 SHA256 (ppsspp.1) = 64a7cca4c3a5fc6ad5b63399edef9056b0c85ea68fed00fb7e97f4b2724e503b
 SIZE (ppsspp.1) = 1598
-SHA256 (hrydgard-ppsspp-v1.7.5-560-g624587c59_GH0.tar.gz) = 28e101957f5fdd2a45ab09435bd948d06386d642178a299605768c186940f6d2
-SIZE (hrydgard-ppsspp-v1.7.5-560-g624587c59_GH0.tar.gz) = 19635237
+SHA256 (hrydgard-ppsspp-v1.7.5-571-g1bedb97bc_GH0.tar.gz) = e5f7a25ea615b59802b8813f369c047ce34608b286bf89e45af43a488c3b8c36
+SIZE (hrydgard-ppsspp-v1.7.5-571-g1bedb97bc_GH0.tar.gz) = 19639001
 SHA256 (hrydgard-glslang-9983f99e_GH0.tar.gz) = cf5cef6113b13461881c6d1a962900b4f2c1b9d53db723620034d1b61f9c4d4c
 SIZE (hrydgard-glslang-9983f99e_GH0.tar.gz) = 2493444
-SHA256 (hrydgard-ppsspp-lang-f97aa5d_GH0.tar.gz) = 00cc9ff29c78c233a8d8c2db7b63bd885de112ac1cbec00f2a686da513fad257
-SIZE (hrydgard-ppsspp-lang-f97aa5d_GH0.tar.gz) = 536819
+SHA256 (hrydgard-ppsspp-lang-18e0d46_GH0.tar.gz) = 660424581e8c9c7d454534c696c2d4737336d7ef827ae65799eb3fb0926536ae
+SIZE (hrydgard-ppsspp-lang-18e0d46_GH0.tar.gz) = 537066
 SHA256 (KhronosGroup-SPIRV-Cross-be7425e_GH0.tar.gz) = a5a06eee313583289f697689a3b79579b6f3dc40c766520e905047dfa94aade1
 SIZE (KhronosGroup-SPIRV-Cross-be7425e_GH0.tar.gz) = 537750
 SHA256 (Kingcom-armips-v0.10.0-28-g7885552_GH0.tar.gz) = 040a8d01b1c0e65b77ede9dd6713b6f6290346a29d300138454335362a396d6c
