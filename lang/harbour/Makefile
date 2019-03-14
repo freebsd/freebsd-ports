@@ -3,7 +3,7 @@
 
 PORTNAME=	harbour
 PORTVERSION=	3.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}-project/source/${PORTVERSION}
 
@@ -34,12 +34,6 @@ SHEBANG_LANG=	hbrun
 
 OPTIONS_DEFINE=	MYSQL SQLITE FIREBIRD PGSQL DOCS
 OPTIONS_SUB=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
-BROKEN=	Needs an older version of OpenSSL (older than 1.1)
-.endif
 
 PORTDOCS=	*.txt *.hbd NEWS INSTALL TODO COPYING ChangeLog
 
@@ -116,6 +110,12 @@ MYSQL_MAKE_ENV_OFF=	HB_WITH_MYSQL=no
 SQLITE_USES=	sqlite
 SQLITE_MAKE_ENV=	HB_WITH_SQLITE3=${LOCALBASE}/include
 SQLITE_MAKE_ENV_OFF=	HB_WITH_SQLITE3=no
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
+BROKEN=	Needs an older version of OpenSSL (older than 1.1)
+.endif
 
 post-patch:
 	${REINPLACE_CMD} \
