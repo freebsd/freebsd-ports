@@ -15,7 +15,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pkgconf>=1.3.90:devel/pkgconf
+BUILD_DEPENDS=	pkgconf>=1.5.0:devel/pkgconf
 LIB_DEPENDS=	libpkgconf.so:devel/pkgconf
 
 USES=		perl5
