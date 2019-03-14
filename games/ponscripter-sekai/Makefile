@@ -6,6 +6,9 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	6
 CATEGORIES=	games
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	101c68e22921.patch:-p1 4fb1180d2b54.patch:-p1 2fd934702f8b.patch:-p1
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	NScripter-like novel-game interpreter with Unicode support
 
@@ -51,7 +54,6 @@ TREMOR_LIB_DEPENDS_OFF=	libvorbisfile.so:audio/libvorbis
 post-patch:
 	@${REINPLACE_CMD} -e '/^ifdef DEBUG/,/^$$/d' \
 		-e 's/$$STRIPFLAG/${STRIP}/' \
-		-e 's/_maltivec/_altivec/g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's/$$(LIBS)/$$(LDFLAGS) &/' \
 		${WRKSRC}/src/Makefile.ponscripter
