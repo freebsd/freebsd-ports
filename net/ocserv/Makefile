@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ocserv
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.3
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/ \
-		LOCAL/cpm
+MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
 MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Server implementing the AnyConnect SSL VPN protocol
