@@ -1,0 +1,23 @@
+nsysctl (new sysctl) is a sysctl(8) utility clone to get or set kernel
+state with libxo, sysctlmibinfo and extra options; improvements:
+
+ * sysctlmibinfo(3) provides a simple API to the sysctl MIB,
+ * all code about "opaque values" is in opaque.c,
+ * output via libxo(3) in human and machine readable formats,
+ * output is explicitly indicated by the options,
+ * new option -D show all properties,
+ * update option -e specific sep as a separator,
+ * new option -F show flags,
+ * new option -I show internal nodes,
+ * new option -l show label,
+ * new option -r show tag-root with libxo,
+ * new option -m show format string,
+ * delete option -n simply do not use -N,
+ * updated option -N force to show name,
+ * new option -p show [property-name]: property-value,
+ * new option -S show magic nodes with -a,
+ * new option -V if "showable" display value, otherwise hide the state,
+ * new option -v force to show value,
+ * new option -y show id.
+
+WWW: https://gitlab.com/alfix/nsysctl/
