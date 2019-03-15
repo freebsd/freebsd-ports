@@ -3,7 +3,7 @@
 
 PORTNAME=	mimedefang
 PORTVERSION=	2.83
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/ \
 		http://fossies.org/linux/misc/
@@ -20,10 +20,6 @@ BUILD_DEPENDS=	\
 	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
 	spamassassin>=3.0:mail/spamassassin
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-OPTIONS_DEFINE=	CLAMAV EXAMPLES DOCS
-OPTIONS_DEFAULT=	CLAMAV
-CLAMAV_DESC=	Enable Clamav
 
 USES=		perl5 shebangfix
 perl_OLD_CMD=	perl
@@ -52,15 +48,20 @@ PLIST_SUB+=	USER="${MIMEDEFANG_USER}" \
 
 CONFIG_FILES=	mimedefang-filter sa-mimedefang.cf mimedefang-ip-key
 
+OPTIONS_DEFINE=	CLAMAV EXAMPLES DOCS
+OPTIONS_DEFAULT=	CLAMAV
+
+CLAMAV_DESC=	Enable Clamav
+
+CLAMAV_BUILD_DEPENDS=		clamscan:security/clamav
+CLAMAV_RUN_DEPENDS=		clamscan:security/clamav
+CLAMAV_CONFIGURE_ENABLE=	antivirus clamav clamd
+
 .include <bsd.port.options.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 CONFIGURE_ARGS+=	--with-milterinc=${MILTERBASE}/include --with-milterlib=${MILTERBASE}/lib
-
-CLAMAV_BUILD_DEPENDS+=		clamscan:security/clamav
-CLAMAV_RUN_DEPENDS+=		clamscan:security/clamav
-CLAMAV_CONFIGURE_ENABLE+=	antivirus clamav clamd
 
 post-patch:
 	@${REINPLACE_CMD} -e '/fgrep -e/d' ${WRKSRC}/configure
