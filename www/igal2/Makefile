@@ -3,7 +3,7 @@
 
 PORTNAME=	igal2
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www graphics
 MASTER_SITES=	http://igal.trexler.at/
 
@@ -29,17 +29,10 @@ IMAGICK_DESC=	${IMAGEMAGICK_DESC}
 IMAGICK_NOX11_DESC=Without X11 support
 IMAGICK_X11_DESC=With X11 support
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MIMAGICK_X11}
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6
-.endif
-
-.if ${PORT_OPTIONS:MIMAGICK_NOX11}
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6-nox11
-.endif
-
 EXIF_RUN_DEPENDS=	p5-Image-ExifTool>=7.0:graphics/p5-Image-ExifTool
+
+IMAGICK_X11_RUN_DEPENDS=	${LOCALBASE}/bin/convert:graphics/ImageMagick6
+IMAGICK_NOX11_RUN_DEPENDS=	${LOCALBASE}/bin/convert:graphics/ImageMagick6-nox11
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LIBDIR%%|${PREFIX}/lib/igal2|' ${WRKSRC}/igal2
@@ -47,4 +40,4 @@ post-patch:
 post-install:
 	${LN} -sf igal2 ${STAGEDIR}${PREFIX}/bin/igal
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
