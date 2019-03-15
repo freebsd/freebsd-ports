@@ -1,0 +1,13 @@
+PHIDL is an open-source GDS-based CAD tool for Python 2 and 3 which extends
+and simplifies the excellent gdspy.  It strives to simplify GDSII geometry
+creation by making the design process layout-driven, rather than
+coordinate-driven.  The base installation includes a large library of
+simple shapes (e.g. rectangles, circles), photonic structures (e.g. sine
+curve waveguides), and superconducting nanowire shapes (e.g. single
+photon detectors) which are fully parameterized. It also has a built-in
+quick-plotting function based on Qt (or matplotlib) which allows you view
+the state of any GDS object, useful when scripting geometry-making
+functions. It also has a very thorough tutorial as well which will walk you
+through the process of getting acquainted with PHIDL.
+
+WWW: https://github.com/amccaugh/phidl
