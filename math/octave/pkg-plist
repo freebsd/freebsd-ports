@@ -785,10 +785,10 @@ libdata/pkgconfig/octave.pc
 libdata/pkgconfig/octinterp.pc
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/octave-gui
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/octave-svgconvert
-man/man1/mkoctfile.1.gz
-man/man1/octave-cli.1.gz
-man/man1/octave-config.1.gz
-man/man1/octave.1.gz
+%%PORTDOCS%%man/man1/mkoctfile.1.gz
+%%PORTDOCS%%man/man1/octave-cli.1.gz
+%%PORTDOCS%%man/man1/octave-config.1.gz
+%%PORTDOCS%%man/man1/octave.1.gz
 share/applications/org.octave.Octave.desktop
 %%PORTDOCS%%%%DOCSDIR%%/liboctave.ps
 %%PORTDOCS%%%%DOCSDIR%%/octave.ps
@@ -805,7 +805,7 @@ share/icons/hicolor/48x48/apps/octave.png
 share/icons/hicolor/512x512/apps/octave.png
 share/icons/hicolor/64x64/apps/octave.png
 share/icons/hicolor/scalable/apps/octave.svg
-share/info/dir
+%%PORTDOCS%%share/info/dir
 share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/data/penny.mat
 %%DATADIR%%/%%OCTAVE_VERSION%%/doc/octave_interpreter.qch
