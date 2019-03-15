@@ -276,7 +276,3 @@ GNUstep/System/Library/Libraries/libGNUMail.so
 GNUstep/System/Library/Libraries/libGNUMail.so.%%MAJORVERSION%%
 GNUstep/System/Library/Libraries/libGNUMail.so.1.2.3
 GNUstep/System/Tools/GNUMail
-GNUstep/System/Applications/GNUMail.app/Resources/English.lproj/FindWindow.gorm/data.classes
-GNUstep/System/Applications/GNUMail.app/Resources/English.lproj/FindWindow.gorm/data.info
-GNUstep/System/Applications/GNUMail.app/Resources/English.lproj/FindWindow.gorm/objects.gorm
-
