@@ -6,7 +6,7 @@ COMMENT=	VAAPI wrapper for GLX
 
 MASTERDIR=	${.CURDIR}/../libva
 
-OPTIONS_SLAVE=	GLX X11
+OPTIONS_SLAVE=	GLX ${GLX_IMPLIES}
 OPTIONS_EXCLUDE=WAYLAND
 
 post-install:	slave-post-install
