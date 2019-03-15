@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libudev.so:devel/libudev-devd \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		qmake:outsource pkgconfig qt:5
+USES=		compiler:c++11-lang pkgconfig qmake:outsource qt:5
 USE_GNOME=	gtk30 cairo gdkpixbuf2
 USE_QT=		buildtools_build core gui widgets dbus
 USE_XORG=	x11 xext xrender
