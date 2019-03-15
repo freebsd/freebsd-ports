@@ -675,6 +675,7 @@
     SUBDIR += postgis22
     SUBDIR += postgis23
     SUBDIR += postgis24
+    SUBDIR += postgis25
     SUBDIR += postgres-xl
     SUBDIR += postgresql-cstore_fdw
     SUBDIR += postgresql-jdbc
