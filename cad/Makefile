@@ -80,6 +80,7 @@
     SUBDIR += pdnmesh
     SUBDIR += py-gdspy
     SUBDIR += py-lcapy
+    SUBDIR += py-phidl
     SUBDIR += py-pycam
     SUBDIR += py-pyfda
     SUBDIR += python-gdsii
