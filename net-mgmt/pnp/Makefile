@@ -3,7 +3,7 @@
 
 PORTNAME=	pnp
 PORTVERSION=	0.6.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/pnp4nagios/PNP-0.6
 DISTNAME=	pnp4nagios-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -24,6 +24,8 @@ OPTIONS_DEFINE=	PDF EXAMPLES
 OPTIONS_DEFAULT=	PDF
 PDF_DESC=	Use built-in fpdf library to produce PDF views
 
+PDF_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-disable-pdf
+
 .include <bsd.port.options.mk>
 
 USE_PHP=	gd iconv json pcre session simplexml sockets xml zlib
@@ -41,8 +43,6 @@ PNP_RRDS=	${PNP_STATE}/rrd
 PNP_SPOOL=	${PNP_STATE}/perfspool
 PNP_URL?=	${NAGIOSHTMURL}/pnp
 FPDF_DIR?=	share/fpdf
-
-PDF_EXTRA_PATCHES_OFF+=	${FILESDIR}/extra-patch-disable-pdf
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	\
