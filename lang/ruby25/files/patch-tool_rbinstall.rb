@@ -1,4 +1,4 @@
---- tool/rbinstall.rb.orig	2017-10-30 05:45:20 UTC
+--- tool/rbinstall.rb.orig	2019-02-05 12:15:47 UTC
 +++ tool/rbinstall.rb
 @@ -325,6 +325,7 @@ bindir = CONFIG["bindir", true]
  libdir = CONFIG[CONFIG.fetch("libdirname", "libdir"), true]
@@ -17,7 +17,7 @@
      install pc, pkgconfigdir, :mode => $data_mode
    end
  end
-@@ -699,136 +700,6 @@ end
+@@ -762,130 +763,6 @@ end
  
  # :startdoc:
  
@@ -25,17 +25,7 @@
 -  install_default_gem('lib', srcdir)
 -end
 -install?(:ext, :arch, :gem, :'default-gems', :'default-gems-arch') do
--  install_default_gem('ext', srcdir) do |path|
--    # assume that gemspec and extconf.rb are placed in the same directory
--    success = false
--    begin
--      IO.foreach(File.dirname(path[(srcdir.size+1)..-1]) + "/Makefile") do |l|
--        break success = true if /^TARGET\s*=/ =~ l
--      end
--    rescue Errno::ENOENT
--    end
--    success
--  end
+-  install_default_gem('ext', srcdir)
 -end
 -
 -def load_gemspec(file)
@@ -62,8 +52,12 @@
 -  makedirs(default_spec_dir)
 -
 -  gems = Dir.glob("#{srcdir}/#{dir}/**/*.gemspec").map {|src|
--    next if block_given? and !yield(src)
--    load_gemspec(src)
+-    spec = load_gemspec(src)
+-    file_collector = RbInstall::Specs::FileCollector.new(src)
+-    files = file_collector.collect
+-    next if files.empty?
+-    spec.files = files
+-    spec
 -  }
 -  gems.compact.sort_by(&:name).each do |gemspec|
 -    full_name = "#{gemspec.name}-#{gemspec.version}"
