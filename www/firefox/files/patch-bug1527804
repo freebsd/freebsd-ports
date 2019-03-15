@@ -96,10 +96,10 @@ index ae6d656646c8..51be814ef975 100644
  #endif
    gboolean force_default_visual;
  };
-@@ -97,7 +98,9 @@ struct wl_egl_window *moz_container_get_wl_egl_window(
- 
- gboolean moz_container_has_wl_egl_window(MozContainer *container);
+@@ -101,7 +102,9 @@ gboolean moz_container_has_wl_egl_window(MozContainer *container);
  gboolean moz_container_surface_needs_clear(MozContainer *container);
+ void moz_container_scale_changed(MozContainer *container,
+                                  GtkAllocation *aAllocation);
 -gboolean moz_container_egl_surface_needs_update(MozContainer *container);
 +void moz_container_set_initial_draw_callback(
 +    MozContainer *container,
