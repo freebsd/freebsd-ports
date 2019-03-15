@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		qmake
+USES=		compiler:c++11-lang gl qmake
 USE_GL=		gl
 
 USE_GITHUB=	yes
