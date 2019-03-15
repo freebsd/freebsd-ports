@@ -1,14 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	Package-Stash
-PORTVERSION=	0.37
-PORTREVISION=	1
+PORTVERSION=	0.38
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:DOY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Routines for manipulating stashes
 
 LICENSE=	ART10 GPLv1+
@@ -23,5 +21,7 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

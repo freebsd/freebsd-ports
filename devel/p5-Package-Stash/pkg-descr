@@ -1,3 +1,5 @@
-Routines for manipulating stashes
+Manipulating stashes (Perl's symbol tables) is occasionally necessary, but
+incredibly messy, and easy to get wrong. This module hides all of that behind a
+simple API.
 
 WWW: https://metacpan.org/release/Package-Stash
