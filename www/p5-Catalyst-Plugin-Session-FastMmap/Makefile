@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	FastMmap sessions for Catalyst
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Cache-FastMmap>0:devel/p5-Cache-FastMmap \
 		p5-Catalyst-Runtime>2.99:www/p5-Catalyst-Runtime \
@@ -23,5 +26,6 @@ RUN_DEPENDS=	p5-Cache-FastMmap>0:devel/p5-Cache-FastMmap \
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
