@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# PROVIDE: caronade
+# REQUIRE: networking
+
+. /etc/rc.subr
+
+name="caronade"
+rcvar="caronade_enable"
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -o /var/log/caronade.log %%PREFIX%%/bin/caronade -config %%PREFIX%%/etc/caronade/caronade.yaml"
+
+load_rc_config $name
+
+: ${caronade_enable:="NO"}
+: ${caronade_chdir:="%%PREFIX%%/caronade"}
+
+run_rc_command "$1"
