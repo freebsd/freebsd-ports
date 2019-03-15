@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pcb
-PORTVERSION=	20140316
-PORTREVISION=	2
+PORTVERSION=	4.2.0
+PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -12,21 +12,26 @@ COMMENT=	X11 interactive printed circuit board layout system
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	m4>=1.4.11:devel/m4 \
+		${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:devel/dbus
 LIB_DEPENDS=	libgd.so:graphics/gd \
-		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
+		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 RUN_DEPENDS=	m4>=1.4.11:devel/m4 \
 		${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:devel/dbus
 
-CONFLICTS=	gts-[0-9]*
+USES=		gl gmake gnome pkgconfig tk:run shared-mime-info \
+		desktop-file-utils
+USE_GL=		gl glu
+USE_GNOME=	intltool cairo pangox-compat
+USE_XORG=	x11 xrender xinerama
 
-USES=		gmake pkgconfig tk:run shared-mime-info desktop-file-utils
-USE_GNOME=	intltool
+CONFLICTS=	gts-[0-9]*
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	INSTALL_DATA="${BSD_INSTALL_DATA}"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+LDFLAGS+=	-lpthread
 
 PORTDOCS=	\
 	pcb.html pcb.pdf refcard.pdf pad.png puller.png thermal.png	\

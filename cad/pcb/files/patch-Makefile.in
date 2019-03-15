@@ -1,15 +1,15 @@
---- Makefile.in.orig	2014-03-17 03:14:44 UTC
-+++ Makefile.in
-@@ -362,11 +362,11 @@ target_alias = @target_alias@
+--- Makefile.in.orig	2019-02-02 19:08:13.000000000 +0900
++++ Makefile.in	2019-03-15 23:13:00.469139000 +0900
+@@ -353,11 +353,11 @@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
--DIRS = w32 intl gts src data lib newlib example tools tutorial README_FILES po tests
+-DIRS = w32 win32 intl gts src data lib newlib example tools tutorial README_FILES po tests
 +DIRS = intl gts src data lib newlib example tools tutorial README_FILES po tests
  SUBDIRS = ${DIRS} @DOC@
  DIST_SUBDIRS = ${DIRS} doc
  INTLTOOL_FILES = intltool-extract.in intltool-merge.in  intltool-update.in
--EXTRA_DIST = config.rpath globalconst.h README.git README.w32 icon-theme-installer $(INTLTOOL_FILES)
+-EXTRA_DIST = config.rpath globalconst.h README.git README.w32 README.win32 icon-theme-installer $(INTLTOOL_FILES)
 +EXTRA_DIST = config.rpath globalconst.h README.git icon-theme-installer $(INTLTOOL_FILES)
  DISTCLEANFILES = configure.lineno intltool-extract intltool-merge intltool-update po/.intltool-merge-cache
  MAINTAINERCLEANFILES = $(INTLTOOL_FILES)
