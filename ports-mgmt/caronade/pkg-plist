@@ -1,0 +1,9 @@
+bin/caronade
+caronade/static/caronade.min.css
+caronade/static/favicon-32.png
+caronade/static/favicon-96.png
+caronade/templates/index.html
+caronade/work/portlint.mk
+caronade/work/poudriere.mk
+%%ETCDIR%%/caronade.yaml.sample
+@dir caronade/builds
