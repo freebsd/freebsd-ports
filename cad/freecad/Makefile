@@ -29,7 +29,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libmed.so:french/med \
 		libshiboken2-${PYTHON_VERSION}.so:devel/shiboken2@${PY_FLAVOR} \
 		libhdf5.so:science/hdf5
-RUN_DEPENDS=	pivy-devel>0:graphics/py-pivy-devel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy-devel>0:graphics/py-pivy-devel@${PY_FLAVOR}
 
 USES=		dos2unix compiler:c++11-lib cmake gl eigen:3 fortran jpeg \
 		localbase:ldflags python:2.7 localbase qt:5
