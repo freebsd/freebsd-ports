@@ -1,3 +1,6 @@
-Faster and more correct implementation of the Package::Stash API.
+Package::Stash::XS is a backend for Package::Stash, which provides the
+functionality in a way that's less buggy and much faster. It will be used by
+default if it's installed, and should be preferred in all environments with a
+compiler.
 
 WWW: https://metacpan.org/release/Package-Stash-XS
