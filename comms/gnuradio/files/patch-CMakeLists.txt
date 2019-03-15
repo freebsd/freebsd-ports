@@ -1,20 +1,18 @@
---- CMakeLists.txt.orig	2018-06-13 21:42:48 UTC
+--- CMakeLists.txt.orig	2019-03-09 13:28:14 UTC
 +++ CMakeLists.txt
-@@ -144,6 +144,10 @@ ELSEIF(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
- ELSE()
-     message(warning "C++ standard could not be set because compiler is not GNU, Clang or MSVC.")
- ENDIF()
-+#
-+# This is a workaround for a missing -lgsl -L in the swig build somewhere
-+# it needs to be properly fixed. - db
-+link_directories("/usr/lib" "${LOCALBASE}/lib")
+@@ -31,6 +31,7 @@ cmake_minimum_required(VERSION 3.8)
+ project(gnuradio CXX C)
+ enable_testing()
+ option(BUILD_SHARED_LIBS "Build shared libraries" ON)
++cmake_policy(SET CMP0002 OLD)
  
- IF(CMAKE_C_COMPILER_ID STREQUAL "GNU")
-     SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99")
-@@ -264,6 +268,14 @@ string(REPLACE "\n" " \\n" COMPILER_INFO ${COMPILER_IN
- ########################################################################
- include(GrPlatform) #define LIB_SUFFIX
- set(GR_RUNTIME_DIR     bin CACHE PATH "Path to install all binaries")
+ # Make sure our local CMake Modules path comes first
+ list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake/Modules)
+@@ -64,6 +65,15 @@ set(GCC_MIN_VERSION "4.8.4")
+ set(CLANG_MIN_VERSION "3.4.0")
+ set(APPLECLANG_MIN_VERSION "500")
+ set(MSVC_MIN_VERSION "1800")
++
 +########################################################################
 +# FreeBSD libdata vs. lib
 +#
@@ -23,63 +21,6 @@
 +else()
 +set(GR_PKGCONFIG_DIR      lib${LIB_SUFFIX})
 +endif()
- set(GR_LIBRARY_DIR     lib${LIB_SUFFIX} CACHE PATH "Path to install libraries")
- set(GR_INCLUDE_DIR     include CACHE PATH "Path to install header files")
- set(GR_DATA_DIR        share CACHE PATH "Base location for data")
-@@ -349,6 +361,42 @@ add_custom_target(uninstall
- include(GrBoost)
  
  ########################################################################
-+# FreeBSD iconv
-+########################################################################
-+if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+  message( "-- Adding iconv for FreeBSD")
-+message ("-- ICONV_LIB = ${ICONV_LIB}")
-+
-+  set (ICONV_INCLUDE_DIR ${ICONV_PREFIX}/include)
-+  if (${ICONV_LIB} STREQUAL "X-liconv")
-+      find_library(ICONV_LIBRARY
-+      NAMES iconv
-+      PATHS ${ICONV_PREFIX}/lib
-+    )
-+  else()
-+    find_library(ICONV_LIBRARY
-+      NAMES c
-+      PATHS ${ICONV_PREFIX}/lib
-+    )
-+  endif()
-+
-+message ("-- LIBICONV_PLUG = ${LIBICONV_PLUG}")
-+message ("-- ICONV_PREFIX = ${ICONV_PREFIX}")
-+message ("-- ICONV_INCLUDE_DIRS = ${ICONV_INCLUDE_DIRS}")
-+message ("-- ICONV_INCLUDE_DIR = ${ICONV_INCLUDE_DIR}")
-+message ("-- ICONV_LIB_DIRS = ${ICONV_LIB_DIRS}")
-+message ("-- ICONV_LIBRARY = ${ICONV_LIBRARY}")
-+else()
-+  find_path(ICONV_INCLUDE_DIR
-+    NAMES iconv.h
-+    PATHS ${ICONV_INCLUDE_DIRS}
-+  )
-+  find_library(ICONV_LIBRARY
-+    NAMES iconv
-+    PATHS ${ICONV_LIB_DIRS}
-+  )
-+endif()
-+########################################################################
- # Enable python component
- ########################################################################
- find_package(PythonLibs ${GR_PYTHON_MIN_VERSION})
-@@ -500,11 +548,13 @@ GR_LOGGING()
- ########################################################################
- # Distribute the README file
- ########################################################################
-+if(ENABLE_DOCS)
- install(
-     FILES README.md README.hacking CHANGELOG.md
-     DESTINATION ${GR_PKG_DOC_DIR}
-     COMPONENT "docs"
- )
-+endif()
- 
- ########################################################################
- # The following dependency libraries are needed by all gr modules:
+ # Configure CMake policies
