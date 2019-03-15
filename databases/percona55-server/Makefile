@@ -2,7 +2,7 @@
 
 PORTNAME?=	percona
 DISTVERSION=	5.5.61-38.13
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.5/Percona-Server-${DISTVERSION}/source/tarball/
 PKGNAMESUFFIX?=	55-server
@@ -53,7 +53,7 @@ SHEBANG_FILES=	scripts/*.pl* scripts/*.sh
 
 .if ${PORT_OPTIONS:MOPENSSL}
 CMAKE_ARGS+=	-DWITH_SSL=system
-OPENSSL_USES=	ssl
+USES+=		ssl
 .endif
 .if ${PORT_OPTIONS:MFASTMTX}
 CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
