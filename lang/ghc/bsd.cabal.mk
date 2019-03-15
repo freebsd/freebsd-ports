@@ -54,7 +54,7 @@ GHC_LIB_DOCSDIR_REL=	share/doc/ghc-${GHC_VERSION}/html/libraries
 
 CABAL_LIBDIR=		${PREFIX}/lib/cabal/ghc-${GHC_VERSION}
 CABAL_LIBSUBDIR=	${PACKAGE}
-CABAL_ARCH=		${ARCH:S/amd64/x86_64/:C/armv.*/arm/}
+CABAL_ARCH=		${ARCH:S/amd64/x86_64/:C/armv.*/arm/:S/powerpc64/ppc64/}
 CABAL_ARCHSUBDIR=	${CABAL_ARCH}-freebsd-ghc-${GHC_VERSION}
 CABAL_LIBDIR_REL=	${CABAL_LIBDIR:S,^${PREFIX}/,,}
 
