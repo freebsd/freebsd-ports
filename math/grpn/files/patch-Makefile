@@ -1,0 +1,38 @@
+--- Makefile.orig	2018-11-24 02:18:17 UTC
++++ Makefile
+@@ -3,11 +3,11 @@
+ # Please read the next few lines and enter the correct values.
+ 
+ # where to install GRPN
+-PREFIX = /usr/local
+-MANDIR = ${PREFIX}/man
++PREFIX ?= /usr/local
++MANDIR ?= ${MANPREFIX}/man
+ 
+ # What compiler should be used
+-CC = gcc 
++CC ?= gcc
+ 
+ # NOTE:
+ #
+@@ -16,10 +16,8 @@ CC = gcc 
+ # add -DUSE_GNOME if you want to make grpn GNOME compliant.
+ 
+ 
+-CFLAGS = -Wall -g -O2 -I/usr/X11/include -DUSE_PANGO `pkg-config --cflags gtk+-2.0` -DGTK_VER_1_1
++CFLAGS += -Wall -DUSE_PANGO `pkg-config --cflags gtk+-2.0` -DGTK_VER_1_1
+ 
+-DFLAGS =  -L/usr/X11/lib 
+-
+ # end of user configurable section
+ 
+ 
+@@ -32,6 +30,8 @@ OBJS = test_gtk_ver.o real.o complex.o matrix.o number
+ 	error.o help.o mode.o undo.o
+ 
+ LIBS   = `pkg-config --libs gtk+-2.0` -lX11 -lm
++
++all: grpn
+ 
+ grpn:	$(OBJS)
+ 	$(CC) $(DFLAGS) -o $@ $(OBJS) $(LIBS) 

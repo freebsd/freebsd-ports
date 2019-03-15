@@ -265,6 +265,7 @@
     SUBDIR += gretl
     SUBDIR += gri
     SUBDIR += gringo
+    SUBDIR += grpn
     SUBDIR += gsl
     SUBDIR += hexcalc
     SUBDIR += hipmcl
