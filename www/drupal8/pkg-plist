@@ -8899,8 +8899,10 @@
 %%WWWDIR%%/core/modules/system/tests/modules/twig_theme_test/templates/twig-registry-loader-test-extend.html.twig
 %%WWWDIR%%/core/modules/system/tests/modules/twig_theme_test/templates/twig-registry-loader-test-include.html.twig
 %%WWWDIR%%/core/modules/system/tests/modules/twig_theme_test/templates/twig-registry-loader-test.html.twig
+%%WWWDIR%%/core/modules/system/tests/modules/twig_theme_test/templates/twig-theme-test-embed-tag-embedded.html.twig
 %%WWWDIR%%/core/modules/system/tests/modules/twig_theme_test/templates/twig_namespace_test.html.twig
 %%WWWDIR%%/core/modules/system/tests/modules/twig_theme_test/templates/twig_theme_test.attach_library.html.twig
+%%WWWDIR%%/core/modules/system/tests/modules/twig_theme_test/templates/twig_theme_test.embed_tag.html.twig
 %%WWWDIR%%/core/modules/system/tests/modules/twig_theme_test/templates/twig_theme_test.file_url.html.twig
 %%WWWDIR%%/core/modules/system/tests/modules/twig_theme_test/templates/twig_theme_test.filter.html.twig
 %%WWWDIR%%/core/modules/system/tests/modules/twig_theme_test/templates/twig_theme_test.link_generator.html.twig
@@ -9126,6 +9128,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/ThemeTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/ThemeTokenTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/TwigDebugMarkupTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/TwigEnvironmentTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/TwigExtensionTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/TwigLoaderTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Theme/TwigRegistryLoaderTest.php
