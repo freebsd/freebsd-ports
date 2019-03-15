@@ -1,26 +1,25 @@
 # $FreeBSD$
 
 PORTNAME=	gnuradio
-PORTVERSION=	3.7.13.4
-PORTREVISION=	4
+#MASTER_SITES=	http://gnuradio.org/releases/gnuradio/
+# Temporary git version
+DISTVERSION=	3.8.g20190309
 CATEGORIES=	comms astro hamradio
-MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
-		LOCAL/db
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio Software defined radio
 
 LICENSE=	GPLv3
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 BROKEN_aarch64=		fails to compile: /usr/lib/clang/5.0.0/include/mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 BROKEN_armv6=		fails to compile: /usr/lib/clang/5.0.0/include/mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 BROKEN_armv7=		fails to compile: /usr/lib/clang/5.0.0/include/mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/lxml:devel/py-lxml@${PY_FLAVOR} \
 		${PYNUMPY} \
+		${PYTHON_SITELIBDIR}/yaml/__init__.py:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/gi/__init__.py:devel/py-gobject3@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/cairo/__init__.py:graphics/py-cairo@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/ephem/__init__.py:astro/pyephem@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/mako/__init__.py:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/six.py:devel/py-six@${PY_FLAVOR} \
@@ -31,11 +30,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		sdl-config:devel/sdl12 \
 		swig3.0:devel/swig30 \
 		xdg-open:devel/xdg-utils
-LIB_DEPENDS=	libcppunit.so:devel/cppunit \
-		libcodec2.so:audio/codec2 \
+LIB_DEPENDS=	libcodec2.so:audio/codec2 \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
-		libqwt.so:x11-toolkits/qwt5 \
+		libgmpxx.so:math/gmp \
+		libqwt6.so:x11-toolkits/qwt6 \
 		${PY_BOOST} \
 		liblog4cpp.so:devel/log4cpp \
 		libportaudio.so:audio/portaudio \
@@ -47,11 +46,17 @@ LIB_DEPENDS=	libcppunit.so:devel/cppunit \
 		liborc-0.4.so:devel/orc
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	gnuradio
+GH_PROJECT=	gnuradio volk:volk
+GH_TAGNAME=	a664001 d250816:volk
+
 # USES=compiler:c11 is necessary because base GCC fails:
 # volk/lib/volk_cpu.c: In function 'i_can_has_3dnow':
 # volk/lib/volk_cpu.c:62: error: can't find a register in class 'BREG' while reloading 'asm'
 # volk/lib/volk_cpu.c:62: error: 'asm' operand has impossible constraints
-USES=		cmake compiler:c11 fortran iconv perl5 pkgconfig pyqt:4 python:2.7 qt:4 shebangfix
+USES=		cmake compiler:c11 desktop-file-utils fortran gnome iconv \
+		perl5 pkgconfig pyqt:5 python qt:5 shared-mime-info shebangfix
 SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-ctrlport-monitor \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-perf-monitorx
@@ -65,19 +70,19 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_RPATH:STRING="${LOCALBASE}/lib/gcc${_GCC_VER}" \
 		-DXMLTO_EXECUTABLE:STRING=minixmlto
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=	--debug-output --trace
-MAJOR_SUB_VER=	${PORTVERSION}
+MAJOR_SUB_VER=	3.8
+#MAJOR_SUB_VER=	${PORTVERSION}
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
 USE_GNOME=	pygtk2
 USE_PYQT=	core gui opengl
-USE_WX=		3.0+
-USE_QT=		corelib gui xml qmake moc_build rcc_build uic_build
+USE_WX=		3.0
+USE_QT=		buildtools core gui xml qmake widgets
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_LDCONFIG=	yes
-PLIST_SUB+=	MAJOR_VERSION="3"
-PLIST_SUB+=	MAJOR_SUB_VER="${MAJOR_SUB_VER}"
-LIBSTRIP_FILES=	analog atsc audio blocks channels digital dtv fcd fec fft\
-		filter noaa pager pmt qtgui runtime trellis video-sdl\
-		vocoder wavelet wxgui
+PLIST_SUB+=	MAJOR_SUB_VER="${MAJOR_SUB_VER}"git
+LIBSTRIP_FILES=	analog audio blocks channels digital dtv fec fft\
+		filter pmt qtgui runtime trellis video-sdl\
+		vocoder wavelet
 
 OPTIONS_DEFINE=		DOCS UHD TESTING DOXYGEN
 # Unfortunately building docs on i386 fails
@@ -107,7 +112,6 @@ UHD_CMAKE_OFF=	-DENABLE_GR_UHD:STRING="OFF"
 
 TESTING_CMAKE_ON=	-DENABLE_TESTING:STRING="ON"
 TESTING_CMAKE_OFF=	-DENABLE_TESTING:STRING="OFF"
-TESTING_BUILD_DEPENDS=	cppunit-config:devel/cppunit
 
 .include <bsd.port.pre.mk>
 
@@ -122,6 +126,10 @@ PLIST_SUB+=	UHD="@comment "
 PATCH_FILES=	docs/doxygen/Doxyfile.in \
 		gr-fec/lib/CMakeLists.txt
 
+post-extract:
+	@${RMDIR} ${WRKSRC}/volk
+	@${MV} ${WRKSRC_volk} ${WRKSRC}/volk
+
 post-patch:
 	@${FIND} ${WRKSRC}/.. -name CMakeLists.txt | \
 	    ${XARGS} ${REINPLACE_CMD} -e \
@@ -134,7 +142,7 @@ post-patch:
 
 post-install:
 .for a in ${LIBSTRIP_FILES}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnuradio-${a}.so.${MAJOR_SUB_VER}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnuradio-${a}.so.${MAJOR_SUB_VER}git
 .endfor
 
 .include <bsd.port.post.mk>
