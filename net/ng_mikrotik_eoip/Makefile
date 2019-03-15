@@ -19,6 +19,8 @@ PTABLE_DESC=	Use O(1) lookup for tunnel hooks
 # which increases memory usage for each node by 65536*sizeof(hook_p). You probably want
 # this option if you have many tunnels with single remote IP.
 
+PTABLE_MAKE_ARGS=	NO_LINEAR_HOOK_LOOKUP=1
+
 KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR} \
 		PORTNAME=${PORTNAME}
@@ -28,8 +30,6 @@ PLIST_SUB+=	KMODDIR=${KMODDIR} \
 .if !exists(${SRC_BASE}/sys/sys/module.h)
 IGNORE=		requires kernel source files
 .endif
-
-PTABLE_MAKE_ARGS=	NO_LINEAR_HOOK_LOOKUP=1
 
 do-install:
 	${MKDIR} "${STAGEDIR}${KMODDIR}"
