@@ -1,0 +1,56 @@
+From f3069a581c0f96b62c59b06a43b57561f7418813 Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Fri, 15 Mar 2019 09:27:19 +0100
+Subject: [PATCH] xen-mapcache: use MAP_FIXED flag so the mmap address hint is
+ always honored
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Or if it's not possible to honor the hinted address an error is returned
+instead. This makes it easier to spot the actual failure, instead of
+failing later on when the caller of xen_remap_bucket realizes the
+mapping has not been created at the requested address.
+
+Also note that at least on FreeBSD using MAP_FIXED will cause mmap to
+try harder to honor the passed address.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+---
+Cc: Stefano Stabellini <sstabellini@kernel.org>
+Cc: Anthony Perard <anthony.perard@citrix.com>
+Cc: Paul Durrant <paul.durrant@citrix.com>
+Cc: Igor Druzhinin <igor.druzhinin@citrix.com>
+Cc: Paolo Bonzini <pbonzini@redhat.com>
+Cc: Richard Henderson <rth@twiddle.net>
+Cc: Eduardo Habkost <ehabkost@redhat.com>
+Cc: "Michael S. Tsirkin" <mst@redhat.com>
+Cc: Marcel Apfelbaum <marcel.apfelbaum@gmail.com>
+Cc: xen-devel@lists.xenproject.org
+---
+ hw/i386/xen/xen-mapcache.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/hw/i386/xen/xen-mapcache.c b/hw/i386/xen/xen-mapcache.c
+index 349f72d00c..0e2870b320 100644
+--- a/hw/i386/xen/xen-mapcache.c
++++ b/hw/i386/xen/xen-mapcache.c
+@@ -185,8 +185,14 @@ static void xen_remap_bucket(MapCacheEntry *entry,
+     }
+ 
+     if (!dummy) {
++        /*
++         * If the caller has requested the mapping at a specific address use
++         * MAP_FIXED to make sure it's honored. Note that with MAP_FIXED at
++         * least FreeBSD will try harder to honor the passed address.
++         */
+         vaddr_base = xenforeignmemory_map2(xen_fmem, xen_domid, vaddr,
+-                                           PROT_READ | PROT_WRITE, 0,
++                                           PROT_READ | PROT_WRITE,
++                                           vaddr ? MAP_FIXED : 0,
+                                            nb_pfn, pfns, err);
+         if (vaddr_base == NULL) {
+             perror("xenforeignmemory_map2");
+-- 
+2.17.2 (Apple Git-113)
+
