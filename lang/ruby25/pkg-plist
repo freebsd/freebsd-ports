@@ -6907,7 +6907,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/lockfile_contents-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/lockfile_version-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/missing_version_message-c.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/BundlerVersionFinder/without_filtering-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Command/add_common_option-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Command/add_extra_args-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Command/add_option-i.ri
@@ -7388,7 +7387,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/spec-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/spec_file-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/unpack-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/verify_spec_name-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/verify_spec-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/windows_stub_script-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/wrappers-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/write_build_info_file-i.ri
