@@ -13,12 +13,14 @@ COMMENT=	Open-source electronics prototyping platform
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../license.txt
 
+JSSC_DEP=		${JAVA_HOME}/jre/lib/ext/jssc-2.8.0.jar:comms/java-simple-serial-connector
+BUILD_DEPENDS+=	${JSSC_DEP}
 LIB_DEPENDS=	liblistSerialsj.so:devel/listserialc \
 		libastylej-arduino.so:devel/libastylej-arduino
 RUN_DEPENDS=	arduino-builder:devel/arduino-builder \
 		arduino-tools>=1.6.12:devel/arduino-tools \
 		bash:shells/bash \
-		${JAVA_HOME}/jre/lib/ext/jssc-2.8.0.jar:comms/java-simple-serial-connector
+		${JSSC_DEP}
 
 CONFLICTS=	arduino-[0-9]*
 
