@@ -3,7 +3,7 @@
 PORTNAME=	tigervnc
 PORTVERSION=	1.9.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net x11-servers
 
 MAINTAINER=	meta@FreeBSD.org
@@ -36,58 +36,30 @@ GH_ACCOUNT=	TigerVNC
 USE_XORG+=	ice pixman sm x11 xau xdamage xdmcp xext xfixes xfont xkbfile \
 		xorg-macros xorgproto xrandr xrender xtrans xtst
 
-CFLAGS+=	-fPIC
-
 OPTIONS_DEFINE=		GNUTLS NLS PAM VIEWER DOCS
 OPTIONS_DEFAULT=	GNUTLS PAM VIEWER
+OPTIONS_SUB=		yes
 VIEWER_DESC=		Build vncviewer
 
-.include <bsd.port.options.mk>
+GNUTLS_CMAKE_BOOL=	ENABLE_GNUTLS
+GNUTLS_CONFIGURE_ARGS=	--enable-glx-tls
+GNUTLS_LIB_DEPENDS=	libtasn1.so:security/libtasn1 \
+			libgcrypt.so:security/libgcrypt \
+			libgpg-error.so:security/libgpg-error \
+			libgnutls.so:security/gnutls
+PAM_CMAKE_BOOL=	ENABLE_PAM
+VIEWER_CMAKE_BOOL=	BUILD_VIEWER
+VIEWER_BUILD_DEPENDS=	convert:graphics/ImageMagick7 # to generate icons during build
+VIEWER_LIB_DEPENDS=	libpng.so:graphics/png \
+			libfltk.so:x11-toolkits/fltk
+VIEWER_INSTALLS_ICONS=	yes
+VIEWER_DESKTOP_ENTRIES=	"TigerVNC viewer" "Connect to VNC server and display remote desktop" \
+				"${PORTNAME}" "vncviewer" "Network;" false
+VIEWER_USE=	xorg=xcursor,xfixes,xft,xinerama
+NLS_CMAKE_BOOL=	ENABLE_NLS
+NLS_USES=	gettext
 
-CMAKE_ARGS=	-G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=${STAGE}${PREFIX}
-
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libtasn1.so:security/libtasn1 \
-		libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error \
-		libgnutls.so:security/gnutls
-CONFIGURE_ARGS+=	--enable-glx-tls
-CMAKE_ARGS+=	-DENABLE_GNUTLS=1
-.else
-CMAKE_ARGS+=	-DENABLE_GNUTLS=0
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CMAKE_ARGS+=	-DENABLE_NLS=1
-PLIST_SUB+=	NLS=""
-.else
-CMAKE_ARGS+=	-DENABLE_NLS=0
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPAM}
-CMAKE_ARGS+=	-DENABLE_PAM=1
-.else
-CMAKE_ARGS+=	-DENABLE_PAM=0
-.endif
-
-.if ${PORT_OPTIONS:MVIEWER}
-CMAKE_ARGS+=	-DBUILD_VIEWER=1
-LIB_DEPENDS+=	libpng.so:graphics/png \
-		libfltk.so:x11-toolkits/fltk
-# ImageMagick is required to generate icons during build process
-BUILD_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6
-USE_XORG+=	xcursor xfixes xft xinerama
-PLIST_SUB+=	VIEWER=""
-INSTALLS_ICONS=	yes
-DESKTOP_ENTRIES=	"TigerVNC viewer" "Connect to VNC server and display remote desktop" \
-			"${PORTNAME}" "vncviewer" "Network;" false
-.else
-CMAKE_ARGS+=	-DBUILD_VIEWER=0
-PLIST_SUB+=	VIEWER="@comment "
-.endif
-
+CMAKE_ARGS+=	-G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=${STAGE}${PREFIX}
 MAKE_ARGS+=	TIGERVNC_SRCDIR=${WRKSRC}
 CONFIGURE_ARGS+=	\
 		--prefix=${PREFIX} --mandir=${PREFIX}/man/ \
@@ -112,7 +84,8 @@ CONFIGURE_ARGS+=	\
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
-TIGERVNC_XORG_PATCH_VER=	${MAKE} -C "${PORTSDIR}/x11-servers/xorg-server" -V PORTVERSION:R:S,\.,,g
+TIGERVNC_XORG_PATCH_VER=	${MAKE} -C "${.CURDIR}/../../x11-servers/xorg-server" -V PORTVERSION:R:S,\.,,g
+XORG_WRKSRC=	${MAKE} -C ${.CURDIR}/../../x11-servers/xorg-server -VWRKSRC
 
 # import from x11-server/xorg-server/Makefile
 .if ${SSL_DEFAULT} == base
@@ -123,13 +96,11 @@ TIGERVNC_XORG_PATCH_VER=	${MAKE} -C "${PORTSDIR}/x11-servers/xorg-server" -V POR
 CONFIGURE_ENV=	SHA1_LIB="-L/usr/lib -lcrypto" SHA1_CFLAGS="-I/usr/include"
 .endif
 
-XORG_WRKDIR=	${MAKE} -C ${PORTSDIR}/x11-servers/xorg-server -VWRKSRC
-
 pre-patch:
-	@${CP} -R `${XORG_WRKDIR}`/ ${WRKSRC}/unix/xserver/
+	@${CP} -R $$(${XORG_WRKSRC})/ ${WRKSRC}/unix/xserver/
 
 post-patch:
-	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${WRKSRC}/unix/xserver`${TIGERVNC_XORG_PATCH_VER}`.patch
+	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${WRKSRC}/unix/xserver$$(${TIGERVNC_XORG_PATCH_VER}).patch
 
 post-configure:
 	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${AUTORECONF} -fiv
