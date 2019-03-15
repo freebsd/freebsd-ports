@@ -417,6 +417,7 @@
     SUBDIR += mhash
     SUBDIR += mindterm-binary
     SUBDIR += minisign
+    SUBDIR += mkp224o
     SUBDIR += modsecurity3
     SUBDIR += monkeysphere
     SUBDIR += morphis

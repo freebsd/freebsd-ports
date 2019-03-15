@@ -1,0 +1,6 @@
+mkp224o is a vanity address generator for ed25519 onion services.
+
+This tool generates vanity ed25519 (hidden service version 3, formely known as
+proposal 224) onion addresses.
+
+WWW: https://github.com/cathugger/mkp224o
