@@ -108,6 +108,9 @@ GNASH_RENDERERS+=	agg
 IGNORE=		support for OpenGL is currently broken, use option AGG
 GNASH_RENDERERS+=	ogl
 LIB_DEPENDS+=		libgdkglext-x11-1.0.so:x11-toolkits/gtkglext
+. if ${PORT_OPTIONS:MVAAPI}
+LIB_DEPENDS+=		libva-glx.so:multimedia/libva-glx
+. endif
 .endif
 
 .if ${PORT_OPTIONS:MCAIRO}
