@@ -7,6 +7,7 @@
 share/ECM/cmake/ECMConfig.cmake
 share/ECM/cmake/ECMConfigVersion.cmake
 share/ECM/find-modules/ECMFindModuleHelpersStub.cmake
+share/ECM/find-modules/FindCanberra.cmake
 share/ECM/find-modules/FindEGL.cmake
 share/ECM/find-modules/FindGLIB2.cmake
 share/ECM/find-modules/FindGperf.cmake
@@ -82,6 +83,7 @@ share/ECM/toolchain/deployment-file.json.in
 share/ECM/toolchain/hasMainSymbol.cmake
 share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/ExtraCMakeModules.qch
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindCanberra.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindEGL.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindGLIB2.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindGperf.rst.txt
@@ -164,6 +166,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/up-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/up.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/websupport.js
+%%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindCanberra.html
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindEGL.html
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindGLIB2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindGperf.html

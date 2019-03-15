@@ -17,7 +17,7 @@ LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 
 USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig \
 		qt:5 tar:xz
-USE_KDE=	archive ecm i18n
+USE_KDE=	archive coreaddons ecm i18n
 USE_QT=		buildtools_build core qmake_build xml
 
 # Frameworks ports install localization files that conflict with some

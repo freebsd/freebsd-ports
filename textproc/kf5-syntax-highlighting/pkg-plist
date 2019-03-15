@@ -2,6 +2,7 @@ bin/kate-syntax-highlighter
 etc/xdg/org_kde_ksyntaxhighlighting.categories
 include/KF5/KSyntaxHighlighting/AbstractHighlighter
 include/KF5/KSyntaxHighlighting/Definition
+include/KF5/KSyntaxHighlighting/DefinitionDownloader
 include/KF5/KSyntaxHighlighting/FoldingRegion
 include/KF5/KSyntaxHighlighting/Format
 include/KF5/KSyntaxHighlighting/Repository
@@ -10,6 +11,7 @@ include/KF5/KSyntaxHighlighting/SyntaxHighlighter
 include/KF5/KSyntaxHighlighting/Theme
 include/KF5/KSyntaxHighlighting/abstracthighlighter.h
 include/KF5/KSyntaxHighlighting/definition.h
+include/KF5/KSyntaxHighlighting/definitiondownloader.h
 include/KF5/KSyntaxHighlighting/foldingregion.h
 include/KF5/KSyntaxHighlighting/format.h
 include/KF5/KSyntaxHighlighting/ksyntaxhighlighting_export.h

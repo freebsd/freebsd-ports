@@ -10,6 +10,7 @@ include/KF5/KAuth/kauth.h
 include/KF5/KAuth/kauth_export.h
 include/KF5/KAuth/kauthaction.h
 include/KF5/KAuth/kauthactionreply.h
+include/KF5/KAuth/kauthcore_export.h
 include/KF5/KAuth/kauthexecutejob.h
 include/KF5/KAuth/kauthhelpersupport.h
 include/KF5/KAuth/kauthobjectdecorator.h
@@ -24,6 +25,9 @@ lib/cmake/KF5Auth/KF5AuthToolsTargets.cmake
 lib/libKF5Auth.so
 lib/libKF5Auth.so.5
 lib/libKF5Auth.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libKF5AuthCore.so
+lib/libKF5AuthCore.so.5
+lib/libKF5AuthCore.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libexec/kauth/kauth-policy-gen
 %%QT_PLUGINDIR%%/kauth/backend/kauth_backend_plugin.so
 %%QT_PLUGINDIR%%/kauth/helper/kauth_helper_plugin.so
