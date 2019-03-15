@@ -16,7 +16,7 @@ BUILD_DEPENDS=	cmake:devel/cmake \
 LIB_DEPENDS=	libCoin.so:graphics/Coin \
 		libSoQt.so:x11-toolkits/soqt-devel
 
-USES=		compiler:c11 python:2.7 qt:5
+USES=		compiler:c11 python qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeCAD
 USE_PYTHON=	autoplist distutils
