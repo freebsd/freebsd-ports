@@ -41,7 +41,7 @@ CONFIGURE_ARGS=	--with-readline\
 		--datadir="${PREFIX}"\
 		--localstatedir="${PREFIX}"
 CONFIGURE_ENV=	ac_cv_header_sys_timeb_h=no
-CPPFLAGS+=	-std=gnu89 ${IODBC_CPPFLAGS}
+CPPFLAGS+=	-std=gnu89
 LDFLAGS+=	-lexecinfo
 MAKE_ENV=	PATH=${LOCALBASE}/bin:${PATH}\
 		ISQL=isql-vt
@@ -79,10 +79,10 @@ PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
 .if ${PORT_OPTIONS:MIODBC}
 CONFIGURE_ARGS+=--with-iodbc=${LOCALBASE}
 LIB_DEPENDS+=	libiodbc.so:databases/libiodbc
-IODBC_CPPFLAGS=	-I${LOCALBASE}/include/libiodbc
+CPPFLAGS+=	-I${LOCALBASE}/include/libiodbc
 PLIST_SUB+=	WITH_IODBC=""
 .else
-IODBC_CPPFLAGS=	-I../../libsrc/odbcsdk/include
+CPPFLAGS+=	-I../../libsrc/odbcsdk/include
 PLIST_SUB+=	WITH_IODBC="@comment "
 .endif
 
