@@ -18,6 +18,7 @@ share/zsh/site-functions/_vifm
 %%DATADIR%%/colors/juef-zenburn.vifm
 %%DATADIR%%/colors/reicheltd-light.vifm
 %%DATADIR%%/vifm-help.txt
+%%DATADIR%%/vifm-media
 %%DATADIR%%/vifmrc
 %%DATADIR%%/vifmrc-osx
 %%DATADIR%%/vim-doc/doc/tags

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vifm
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -12,9 +12,11 @@ COMMENT=	Ncurses based file manager with vi like keybindings
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		desktop-file-utils gmake ncurses
+USES=		desktop-file-utils gmake ncurses shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gtk
+
+SHEBANG_FILES=	data/vifm-media
 
 USE_GITHUB=	yes
 
