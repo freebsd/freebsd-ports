@@ -22,6 +22,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/AbstractItemViewHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/AbstractListItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/Action.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/ActionTextField.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ActionToolBar.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ApplicationHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ApplicationItem.qml
@@ -56,9 +57,6 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionIconGroup.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionMenuItem.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionMenuItemBase.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionMenuItemQt510.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionMenuItemQt59.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionsMenu.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/BannerImage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/CardsGridViewPrivate.qml

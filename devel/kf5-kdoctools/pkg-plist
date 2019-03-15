@@ -7,6 +7,8 @@ lib/cmake/KF5DocTools/KF5DocToolsConfigVersion.cmake
 lib/cmake/KF5DocTools/KF5DocToolsMacros.cmake
 lib/cmake/KF5DocTools/KF5DocToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5DocTools/KF5DocToolsTargets.cmake
+lib/cmake/KF5DocTools/KF5DocToolsToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KF5DocTools/KF5DocToolsToolsTargets.cmake
 lib/libKF5DocTools.so
 lib/libKF5DocTools.so.5
 lib/libKF5DocTools.so.%%KDE_FRAMEWORKS_VERSION%%
@@ -318,6 +320,7 @@ share/kf5/kdoctools/customization/eo/lang.entities
 share/kf5/kdoctools/customization/eo/strings.entities
 share/kf5/kdoctools/customization/eo/user.entities
 share/kf5/kdoctools/customization/es/catalog.xml
+share/kf5/kdoctools/customization/es/entities/ccbysa4-notice.docbook
 share/kf5/kdoctools/customization/es/entities/fdl-notice.docbook
 share/kf5/kdoctools/customization/es/entities/gpl-notice.docbook
 share/kf5/kdoctools/customization/es/entities/help-menu.docbook
@@ -327,6 +330,7 @@ share/kf5/kdoctools/customization/es/entities/lgpl-notice.docbook
 share/kf5/kdoctools/customization/es/entities/report-bugs.docbook
 share/kf5/kdoctools/customization/es/entities/underArtisticLicense.docbook
 share/kf5/kdoctools/customization/es/entities/underBSDLicense.docbook
+share/kf5/kdoctools/customization/es/entities/underCCBYSA4.docbook
 share/kf5/kdoctools/customization/es/entities/underFDL.docbook
 share/kf5/kdoctools/customization/es/entities/underGPL.docbook
 share/kf5/kdoctools/customization/es/entities/underLGPL.docbook
