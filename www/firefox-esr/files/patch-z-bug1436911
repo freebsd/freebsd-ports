@@ -81,7 +81,7 @@ deleted file mode 100644
 index 808b797d9bee..000000000000
 --- dom/ipc/ContentPrefs.cpp
 +++ /dev/null
-@@ -1,360 +0,0 @@
+@@ -1,361 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 -/* vim: set ts=8 sts=2 et sw=2 tw=80: */
 -/* This Source Code Form is subject to the terms of the Mozilla Public
@@ -223,6 +223,7 @@ index 808b797d9bee..000000000000
 -    "javascript.options.strict.debug",
 -    "javascript.options.throw_on_asmjs_validation_failure",
 -    "javascript.options.throw_on_debuggee_would_run",
+-    "javascript.options.unboxed_objects",
 -    "javascript.options.wasm",
 -    "javascript.options.wasm_baselinejit",
 -    "javascript.options.wasm_ionjit",
