@@ -10523,8 +10523,6 @@ editors/latexila|editors/gnome-latex|2018-10-05|Project was renamed
 math/arpack|math/arpack-ng|2018-10-06|math/arpack is the old, unmaintained version, math/arpack-ng should be used instead
 net-p2p/libtorrent-rasterbar-python|net-p2p/py-libtorrent-rasterbar|2018-10-06|Rename to the canonical name for a python port
 biology/tinker|science/tinker|2018-10-06|Move to proper category
-net-im/telepathy-qt4|net-im/telepathy-qt@qt4|2018-10-07|Moved to flavored version
-net-im/telepathy-qt5|net-im/telepathy-qt@qt5|2018-10-07|Moved to flavored version
 graphics/gegl3|graphics/gegl|2018-10-07|Replaced old gegl version with the newer version
 www/mediawiki129|www/mediawiki131|2018-10-08|Has expired: Deprecated by upstream
 devel/pecl-xdebug26|devel/pecl-xdebug|2018-10-09|Renamed because 2.6 is the new default
@@ -11674,3 +11672,5 @@ security/qtkeychain@qt4||2019-03-16|Qt4 deprecation
 security/qtkeychain@qt5|security/qtkeychain|2019-03-16|Flavor has been removed
 deskutils/znotes@qt4||2019-03-16|Qt4 deprecation
 deskutils/znotes@qt5|deskutils/znotes|2019-03-16|Flavor has been removed
+net-im/telepathy-qt@qt4||2019-03-16|Qt4 deprecation
+net-im/telepathy-qt@qt5|net-im/telepathy-qt|2019-03-16|Flavor has been removed

@@ -2,6 +2,7 @@
 
 PORTNAME=	ktp-common-internals
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,7 +10,7 @@ COMMENT=	KDE Telepathy internal library
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libsignon-qt5.so:sysutils/signon-qt5 \
-		libtelepathy-qt5.so:net-im/telepathy-qt@qt5 \
+		libtelepathy-qt5.so:net-im/telepathy-qt \
 		libtelepathy-logger-qt.so:net-im/telepathy-logger-qt5 \
 		libotr.so:security/libotr \
 		libaccounts-qt5.so:net-im/libaccounts-qt5 \

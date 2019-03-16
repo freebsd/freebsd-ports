@@ -2,7 +2,7 @@
 
 PORTNAME=	telepathy-logger-qt4
 PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	KDE/stable/${PORTNAME:C/4$//}/${PORTVERSION}/src
 DISTNAME=	${PORTNAME:C/4$//}-${PORTVERSION}
@@ -18,8 +18,8 @@ EXPIRATION_DATE=	2019-03-15
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libtelepathy-glib.so:net-im/telepathy-glib \
-		libtelepathy-logger.so:net-im/telepathy-logger \
-		libtelepathy-qt4.so:net-im/telepathy-qt@qt4
+		libtelepathy-logger.so:net-im/telepathy-logger
+BROKEN=		libtelepathy-qt4.so:net-im/telepathy-qt@qt4 removed
 
 USES=		bison:build cmake pkgconfig python:2.7,build qt:4 tar:bzip2
 USE_GNOME=	glib20 libxml2
