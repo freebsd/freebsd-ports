@@ -4,7 +4,7 @@
 PORTNAME=	clementine
 DISTVERSION=	1.3.1-661
 DISTVERSIONSUFFIX=	-g4ff370ce1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-player
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libchromaprint.so:audio/chromaprint \
 		libprotobuf.so:devel/protobuf \
 		libqca-qt5.so:devel/qca@qt5 \
-		libqjson-qt5.so:devel/qjson@qt5 \
+		libqjson-qt5.so:devel/qjson \
 		libfftw3.so:math/fftw3 \
 		libechonest5.so:audio/libechonest \
 		libcryptopp.so:security/cryptopp
