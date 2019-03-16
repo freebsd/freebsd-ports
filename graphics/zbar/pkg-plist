@@ -7,8 +7,6 @@ include/zbar/Exception.h
 include/zbar/Image.h
 include/zbar/ImageScanner.h
 include/zbar/Processor.h
-%%QT4%%include/zbar/QZBar.h
-%%QT4%%include/zbar/QZBarImage.h
 include/zbar/Scanner.h
 include/zbar/Symbol.h
 include/zbar/Video.h
@@ -22,12 +20,7 @@ lib/libzbar.so.0.2.0
 %%GTK2%%lib/libzbargtk.so
 %%GTK2%%lib/libzbargtk.so.0
 %%GTK2%%lib/libzbargtk.so.0.0.2
-%%QT4%%lib/libzbarqt.a
-%%QT4%%lib/libzbarqt.so
-%%QT4%%lib/libzbarqt.so.0
-%%QT4%%lib/libzbarqt.so.0.0.2
 %%GTK2%%libdata/pkgconfig/zbar-gtk.pc
-%%QT4%%libdata/pkgconfig/zbar-qt.pc
 libdata/pkgconfig/zbar.pc
 %%V4L%%man/man1/zbarcam.1.gz
 %%V6%%man/man1/zbarimg.1.gz

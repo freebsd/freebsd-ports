@@ -3,7 +3,7 @@
 
 PORTNAME=	zbar
 PORTVERSION=	0.10
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -17,9 +17,9 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS=	--with-jpeg=yes
+CONFIGURE_ARGS=	--with-jpeg=yes --with-qt=no
 
-OPTIONS_DEFINE=	X11 V4L PYTHON GTK2 QT4 DOCS
+OPTIONS_DEFINE=	X11 V4L PYTHON GTK2 DOCS
 OPTIONS_DEFAULT=X11 V7
 OPTIONS_RADIO=	IMAGEMAGICK
 OPTIONS_RADIO_IMAGEMAGICK=	V6 V7
@@ -58,19 +58,8 @@ GTK2_USE=	GNOME=gtk20
 GTK2_CONFIGURE_ON=	--with-gtk=yes
 GTK2_CONFIGURE_OFF=	--with-gtk=no
 
-QT4_USES=	qt:4
-QT4_USE=	QT=gui,moc_build
-QT4_CONFIGURE_ON=	--with-qt=yes
-QT4_CONFIGURE_OFF=	--with-qt=no
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-.include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MQT4}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} '/^install-data-am: /s/install-dist_docDATA//' \
