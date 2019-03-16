@@ -1,5 +1,5 @@
 bin/function_grep.pl
-%%STAGING%%bin/msidb
+bin/msidb
 bin/msiexec
 bin/notepad
 bin/regedit
@@ -87,6 +87,8 @@ include/wine/windows/adshlp.h
 include/wine/windows/advpub.h
 include/wine/windows/af_irda.h
 include/wine/windows/amaudio.h
+include/wine/windows/amsi.h
+include/wine/windows/amsi.idl
 include/wine/windows/amstream.h
 include/wine/windows/amstream.idl
 include/wine/windows/amvideo.h
@@ -993,6 +995,7 @@ lib/wine/adsldp.dll.so
 lib/wine/adsldpc.dll.so
 lib/wine/advapi32.dll.so
 lib/wine/advpack.dll.so
+lib/wine/amsi.dll.so
 lib/wine/amstream.dll.so
 lib/wine/api-ms-win-appmodel-identity-l1-1-0.dll.so
 lib/wine/api-ms-win-appmodel-runtime-l1-1-1.dll.so
@@ -1439,6 +1442,7 @@ lib/wine/fakedlls/adsldp.dll
 lib/wine/fakedlls/adsldpc.dll
 lib/wine/fakedlls/advapi32.dll
 lib/wine/fakedlls/advpack.dll
+lib/wine/fakedlls/amsi.dll
 lib/wine/fakedlls/amstream.dll
 lib/wine/fakedlls/api-ms-win-appmodel-identity-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-appmodel-runtime-l1-1-1.dll
@@ -1993,7 +1997,7 @@ lib/wine/fakedlls/mshta.exe
 lib/wine/fakedlls/mshtml.dll
 lib/wine/fakedlls/mshtml.tlb
 lib/wine/fakedlls/msi.dll
-%%STAGING%%lib/wine/fakedlls/msidb.exe
+lib/wine/fakedlls/msidb.exe
 lib/wine/fakedlls/msident.dll
 lib/wine/fakedlls/msiexec.exe
 lib/wine/fakedlls/msimg32.dll
@@ -2678,7 +2682,7 @@ lib/wine/mshta.exe.so
 lib/wine/mshtml.dll.so
 lib/wine/mshtml.tlb.so
 lib/wine/msi.dll.so
-%%STAGING%%lib/wine/msidb.exe.so
+lib/wine/msidb.exe.so
 lib/wine/msident.dll.so
 lib/wine/msiexec.exe.so
 lib/wine/msimg32.dll.so
