@@ -445,7 +445,7 @@
 %%SEAHUBDIR%%/media/assets/scripts/app/views/file-comment.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/file-comments.7f3423873020.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/file-comments.js
-%%SEAHUBDIR%%/media/assets/scripts/app/views/fileupload.cc2741e44499.js
+%%SEAHUBDIR%%/media/assets/scripts/app/views/fileupload.88a6a8139191.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/fileupload.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/folder-perm.be46700663d0.js
 %%SEAHUBDIR%%/media/assets/scripts/app/views/folder-perm.js
@@ -601,11 +601,11 @@
 %%SEAHUBDIR%%/media/assets/scripts/dist/i18n/zh-tw/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.ac5ad85d01a3.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/main.5897fed17daa.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/main.ab85388732be.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/main.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/orgadmin-main.706c264cbe87.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/orgadmin-main.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.f2eb21ad4153.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.0595783a6bcf.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.js
 %%SEAHUBDIR%%/media/assets/scripts/file-tree.ef19875b8f54.js
 %%SEAHUBDIR%%/media/assets/scripts/file-tree.js
