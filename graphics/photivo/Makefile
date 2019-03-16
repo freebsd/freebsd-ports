@@ -3,7 +3,7 @@
 
 PORTNAME=	photivo
 PORTVERSION=	0.0.2015.03.21
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	https://storage.googleapis.com/google-code-archive-source/v2/code.google.com/${PORTNAME}/
 DISTNAME=	source-archive
@@ -23,29 +23,15 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libfftw3.so:math/fftw3
 
 USES=		cmake compiler:c++11-lib desktop-file-utils dos2unix \
-		gettext-runtime gnome jpeg pkgconfig zip
+		gettext-runtime gnome jpeg pkgconfig qt:5 zip
 USE_GNOME=	glib20
+USE_QT=		qmake_build buildtools_build core gui network widgets
 DOS2UNIX_FILES=	Sources/ptImage.cpp Sources/ptCheck.cpp Sources/filemgmt/ptFileMgrWindow.h \
 		Sources/ptImageHelper.h Sources/ptMainWindow.h
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-FLAVORS=	qt5 qt4
-
-qt4_CONFLICTS_INSTALL=	${PORTNAME}
-qt4_PKGNAMESUFFIX=	-qt4
-qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt4
-
-.if ${FLAVOR:U} == qt4
-DEPRECATED=	Qt4 has been EOL since december 2015
-EXPIRATION_DATE=2019-03-15
-USES+=		qt:4
-USE_QT=		qmake_build moc_build rcc_build uic_build corelib gui network
-CMAKE_ON=	FORCE_QT4
-.else
-USES+=		qt:5
-USE_QT=		qmake_build buildtools_build core gui network widgets
-.endif
+CONFLICTS_INSTALL=	${PORTNAME}-qt4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,#define cimg_use_openmp 1,//&,' \
