@@ -94,15 +94,10 @@ lib/libthriftnb-%%PORTVERSION%%.so
 lib/libthriftnb.a
 lib/libthriftnb.so
 lib/libthriftnb.so.0
-%%QT4%%lib/libthriftqt-%%PORTVERSION%%.so
-%%QT4%%lib/libthriftqt.a
-%%QT4%%lib/libthriftqt.so
-%%QT4%%lib/libthriftqt.so.0
 lib/libthriftz-%%PORTVERSION%%.so
 lib/libthriftz.a
 lib/libthriftz.so
 lib/libthriftz.so.0
 libdata/pkgconfig/thrift-nb.pc
-%%QT4%%libdata/pkgconfig/thrift-qt.pc
 libdata/pkgconfig/thrift-z.pc
 libdata/pkgconfig/thrift.pc
