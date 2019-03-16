@@ -165,9 +165,9 @@ bin/xyzpdb
 %%DATADIR%%/test/ice.xyz
 %%DATADIR%%/test/ifabp.dat
 %%DATADIR%%/test/ifabp.key
-%%DATADIR%%/test/ifabp.log
 %%DATADIR%%/test/ifabp.run
 %%DATADIR%%/test/ifabp.xyz
+%%DATADIR%%/test/ifapb.log
 %%DATADIR%%/test/nitrogen.arc
 %%DATADIR%%/test/nitrogen.key
 %%DATADIR%%/test/nitrogen.log
