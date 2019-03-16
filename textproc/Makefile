@@ -1865,7 +1865,6 @@
     SUBDIR += xsv
     SUBDIR += xsv-rs
     SUBDIR += xwindiff
-    SUBDIR += xxdiff-scripts
     SUBDIR += y2l
     SUBDIR += yali
     SUBDIR += yamcha
