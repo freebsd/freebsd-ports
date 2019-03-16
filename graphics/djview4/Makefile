@@ -3,7 +3,7 @@
 
 PORTNAME=	djview
 PORTVERSION=	4.10.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/djvu/DjView/${PORTVERSION:R}
 
@@ -19,32 +19,16 @@ LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 USES=		autoreconf desktop-file-utils gettext-runtime gmake libtool \
-		localbase pkgconfig webplugin:native
+		localbase pkgconfig qt:5 webplugin:native
 USE_GL=		gl
+USE_QT=		core gui network opengl printsupport widgets \
+		buildtools_build linguisttools_build qmake_build
 USE_XORG=	sm ice xext xt
 USE_GNOME=	glib20
 CONFIGURE_ENV=	LRELEASE="${LRELEASE}" LUPDATE="${LUPDATE}"
 
 WEBPLUGIN_DIR=		${PREFIX}/lib/djview4/plugins
 WEBPLUGIN_FILES=	nsdejavu.so
-
-OPTIONS_SINGLE=	QT
-OPTIONS_SINGLE_QT=	QT4 QT5
-OPTIONS_DEFAULT=	QT5
-QT_DESC=		Qt toolkit
-
-QT4_USES=	qt:4
-QT4_USE=	QT=corelib,gui,network,opengl,linguisttools_build,moc_build,qmake_build,rcc_build,uic_build
-QT4_USE+=	XORG=x11
-QT5_USES=	qt:5
-QT5_USE=	QT=core,gui,network,opengl,printsupport,widgets,buildtools_build,linguisttools_build,qmake_build
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT4}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 post-patch:
 # Use prebuilt icons, without using conversion tool
