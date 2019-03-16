@@ -11674,3 +11674,5 @@ deskutils/znotes@qt4||2019-03-16|Qt4 deprecation
 deskutils/znotes@qt5|deskutils/znotes|2019-03-16|Flavor has been removed
 net-im/telepathy-qt@qt4||2019-03-16|Qt4 deprecation
 net-im/telepathy-qt@qt5|net-im/telepathy-qt|2019-03-16|Flavor has been removed
+graphics/fracplanet@qt4||2019-03-16|Qt4 deprecation
+graphics/fracplanet@qt5|graphics/fracplanet|2019-03-16|Flavor has been removed
