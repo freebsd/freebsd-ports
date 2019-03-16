@@ -12,7 +12,7 @@ COMMENT=	Qt WebKit implementation (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-c6-qt47-webkit-[0-9]*
 
-DESCR=		${.CURDIR}/../../devel/qt4/pkg-descr
+DESCR=		${.CURDIR}/../../devel/linux-c6-qt47/pkg-descr
 ONLY_FOR_ARCHS=	amd64
 RPMVERSION=	6.el7
 USES=		linux:c7

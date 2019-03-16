@@ -14,7 +14,7 @@ COMMENT=	Cross-platform application and UI framework (Linux CentOS ${LINUX_DIST_
 CONFLICTS=	linux-c6-qt47-x11-[0-9]*
 
 DATADIR=	${PREFIX}/usr/share/${PORTNAME}4
-DESCR=		${.CURDIR}/../../devel/${PORTNAME}4/pkg-descr
+DESCR=		${.CURDIR}/../../devel/linux-c6-qt47/pkg-descr
 LINUXNAME=	${PORTNAME}${PKGNAMESUFFIX}
 RPMVERSION=	15.el7_4
 USES=		linux:c7
