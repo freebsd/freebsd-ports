@@ -210,8 +210,6 @@ share/doc/HTML/en/kcontrol/windowspecific/window-matching-tbird-main.png
 share/doc/HTML/en/kcontrol/windowspecific/window-matching-tbird-reminder.png
 share/doc/HTML/es/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/es/kcontrol/desktop/index.docbook
-share/doc/HTML/id/kcontrol/desktop/index.cache.bz2
-share/doc/HTML/id/kcontrol/desktop/index.docbook
 share/doc/HTML/it/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/it/kcontrol/desktop/index.docbook
 share/doc/HTML/it/kcontrol/kwindecoration/index.cache.bz2
@@ -868,6 +866,7 @@ share/locale/it/LC_MESSAGES/kwin_scripts.mo
 share/locale/ja/LC_MESSAGES/kcm-kwin-scripts.mo
 share/locale/ja/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/ja/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/ja/LC_MESSAGES/kcmkwincommon.mo
 share/locale/ja/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/ja/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/ja/LC_MESSAGES/kcmkwinrules.mo
