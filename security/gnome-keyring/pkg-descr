@@ -1,5 +1,5 @@
 Gnome-keyring is a program that keep password and other secrets for
-users. It is run as a damon in the session, similar to ssh-agent, and
+users. It is run as a daemon in the session, similar to ssh-agent, and
 other applications can locate it by an environment variable.
 
 The program can manage several keyrings, each with its own master
