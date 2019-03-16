@@ -753,8 +753,6 @@ include/ace/Process_Semaphore.h
 include/ace/Process_Semaphore.inl
 include/ace/Profile_Timer.h
 include/ace/Profile_Timer.inl
-%%QT4%%include/ace/QtReactor/ACE_QtReactor_export.h
-%%QT4%%include/ace/QtReactor/QtReactor.h
 include/ace/RB_Tree.cpp
 include/ace/RB_Tree.h
 include/ace/RB_Tree.inl
@@ -1302,9 +1300,6 @@ lib/libACE_INet.so.%%VERSION%%
 lib/libACE_Monitor_Control.so
 lib/libACE_Monitor_Control.so.6
 lib/libACE_Monitor_Control.so.%%VERSION%%
-%%QT4%%lib/libACE_QtReactor.so
-%%QT4%%lib/libACE_QtReactor.so.6
-%%QT4%%lib/libACE_QtReactor.so.%%VERSION%%
 lib/libACE_RLECompression.so
 lib/libACE_RLECompression.so.6
 lib/libACE_RLECompression.so.%%VERSION%%
@@ -1339,7 +1334,6 @@ libdata/pkgconfig/ACE_ETCL_Parser.pc
 libdata/pkgconfig/ACE_HTBP.pc
 libdata/pkgconfig/ACE_INet.pc
 %%SSL%%libdata/pkgconfig/ACE_INet_SSL.pc
-%%QT4%%libdata/pkgconfig/ACE_QtReactor.pc
 libdata/pkgconfig/ACE_RMCast.pc
 %%SSL%%libdata/pkgconfig/ACE_SSL.pc
 libdata/pkgconfig/ACE_TMCast.pc
