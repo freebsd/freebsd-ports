@@ -2,7 +2,7 @@
 
 PORTNAME=	qtcurve
 DISTVERSION=	1.9.0-rc1
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	x11-themes
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -15,13 +15,12 @@ PATCHDIR=	${MASTERDIR}/none
 
 OPTIONS_RADIO=		QT5
 OPTIONS_RADIO_QT5=	KF5 QT5
-OPTIONS_DEFINE=		GTK2 QT4
+OPTIONS_DEFINE=		GTK2
 OPTIONS_DEFAULT=	GTK2 QT5
 
 GTK2_RUN_DEPENDS=	gtk2-qtcurve-theme>=${PORTVERSION}:x11-themes/qtcurve-gtk2
 KF5_DESC=		KDE Frameworks 5 + Qt 5 toolkit support
 KF5_RUN_DEPENDS=	kf5-style-qtcurve>=${PORTVERSION}:x11-themes/qtcurve-kf5
-QT4_RUN_DEPENDS=	qt4-style-qtcurve>=${PORTVERSION}:x11-themes/qtcurve-qt4
 QT5_RUN_DEPENDS=	qt5-style-qtcurve>=${PORTVERSION}:x11-themes/qtcurve-qt5
 
 .else # !defined(QTCURVE_SLAVE)
@@ -35,13 +34,13 @@ GH_TAGNAME=	a1ec5f8
 USES=		compiler:c++11-lib cmake:insource pkgconfig
 USE_XORG=	x11 xcb
 
-.for i in gtk2 kf5 qt4 qt5
+.for i in gtk2 kf5 qt5
 WITH_${i}=	Off
 .endfor
 WITH_${QTCURVE_SLAVE}=	On
 
 CMAKE_ARGS+=	-DENABLE_GTK2=${WITH_gtk2} \
-		-DENABLE_QT4=${WITH_qt4} \
+		-DENABLE_QT4=Off \
 		-DENABLE_QT5=${WITH_qt5} \
 		-DQTC_QT4_ENABLE_KDE=Off \
 		-DQTC_QT5_ENABLE_KDE=${WITH_kf5}
@@ -82,16 +81,6 @@ USE_KDE=	archive completion config configwidgets coreaddons \
 USE_QT=		core dbus gui printsupport svg widgets x11extras \
 		buildtools_build qmake_build
 BUILD_WRKSRC=	${WRKSRC}/qt5
-.endif
-
-.if ${QTCURVE_SLAVE} == "qt4"
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
-PKGNAMEPREFIX=	qt4-style-
-USES+=		qt:4
-USE_QT=		corelib dbus gui svg moc_build qmake_build rcc_build uic_build
-PLIST_FILES=	${QT_PLUGINDIR_REL}/styles/qtcurve.so
 .endif
 
 .if ${QTCURVE_SLAVE} == "qt5"
