@@ -11683,3 +11683,7 @@ multimedia/gstreamer1-qt@qt4||2019-03-16|Qt4 deprecation
 multimedia/gstreamer1-qt@qt5|multimedia/gstreamer1-qt|2019-03-16|Flavor has been removed
 x11-toolkits/qwt6@qt4||2019-03-16|Qt4 deprecation
 x11-toolkits/qwt6@qt5|x11-toolkits/qwt6|2019-03-16|Flavor has been removed
+devel/eric6@qt4_py27||2019-03-16|Qt4 deprecation
+devel/eric6@qt4_py35||2019-03-16|Qt4 deprecation
+devel/eric6@qt4_py36||2019-03-16|Qt4 deprecation
+devel/eric6@qt4_py37||2019-03-16|Qt4 deprecation
