@@ -556,72 +556,6 @@ share/hal/fdi/preprobe/10osvendor/20-hplip-devices.fdi
 %%DATADIR%%/testpage.py
 %%DATADIR%%/timedate.py
 %%DATADIR%%/toolbox.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/__init__.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/aboutdialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/aboutdialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/aligndialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/aligndialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/cleandialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/cleandialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/colorcaldialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/colorcaldialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/devicesetupdialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/devicesetupdialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/deviceuricombobox.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/devmgr5.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/devmgr5_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/fabgrouptable.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/fabnametable.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/fabwindow.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/fabwindow_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/faxsetupdialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/faxsetupdialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/filetable.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/firmwaredialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/firmwaredialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/infodialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/infodialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/linefeedcaldialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/linefeedcaldialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/loadpapergroupbox.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/makecopiesdialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/makecopiesdialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/mimetypesdialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/mimetypesdialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/nodevicesdialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/nodevicesdialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/plugindiagnose.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/plugindiagnose_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/plugindialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/plugindialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/pluginlicensedialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/pluginlicensedialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/pqdiagdialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/pqdiagdialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/printdialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/printdialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/printernamecombobox.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/printsettingsdialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/printsettingsdialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/printsettingstoolbox.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/printtestpagedialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/printtestpagedialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/queuesconf.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/readonlyradiobutton.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/sendfaxdialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/sendfaxdialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/settingsdialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/settingsdialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/setupdialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/setupdialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/systemtray.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/systrayframe.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/systrayframe_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/ui_utils.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/upgradedialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/upgradedialog_base.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/wifisetupdialog.py
-%%X11%%%%QT4%%%%DATADIR%%/ui4/wifisetupdialog_base.py
 %%X11%%%%QT5%%%%DATADIR%%/ui5/__init__.py
 %%X11%%%%QT5%%%%DATADIR%%/ui5/aboutdialog.py
 %%X11%%%%QT5%%%%DATADIR%%/ui5/aboutdialog_base.py
@@ -1819,7 +1753,7 @@ share/ppd/HP/hp-psc_950xi.ppd.gz
 @dir %%DATADIR%%/data/images/64x64
 @dir %%DATADIR%%/data/images/devices
 @dir %%DATADIR%%/data/images/other
-%%X11%%%%QT4%%@dir %%DATADIR%%/ui4/plugins
+%%X11%%@dir %%DATADIR%%/ui4/plugins
 %%X11%%%%QT5%%@dir %%DATADIR%%/ui5/plugins
 @dir /var/lib/hp
 @dir /var/lib
