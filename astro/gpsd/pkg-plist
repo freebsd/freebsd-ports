@@ -15,10 +15,6 @@ bin/lcdgps
 %%X11%%bin/xgpsspeed
 include/gps.h
 include/libgpsmm.h
-%%QTBIND%%lib/libQgpsmm.prl
-%%QTBIND%%lib/libQgpsmm.so
-%%QTBIND%%lib/libQgpsmm.so.23
-%%QTBIND%%lib/libQgpsmm.so.23.0.0
 lib/libgps.so
 lib/libgps.so.23
 lib/libgps.so.23.0.0
@@ -64,7 +60,6 @@ man/man8/gpsinit.8.gz
 %%PYTHON_SITELIBDIR%%/gps/misc.pyc
 %%PYTHON_SITELIBDIR%%/gps/misc.pyo
 %%PYTHON_SITELIBDIR%%/gps/packet.so
-%%QTBIND%%libdata/pkgconfig/Qgpsmm.pc
 libdata/pkgconfig/libgps.pc
 sbin/gpsd
 sbin/gpsdctl
