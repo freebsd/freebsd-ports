@@ -592,7 +592,6 @@
     SUBDIR += opendx
     SUBDIR += openexr
     SUBDIR += openfx-arena
-    SUBDIR += openfx-io
     SUBDIR += openfx-misc
     SUBDIR += opengl-man
     SUBDIR += opengv
