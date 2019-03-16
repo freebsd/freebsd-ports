@@ -3,7 +3,7 @@
 
 PORTNAME=	avidemux
 PORTVERSION=	${AVIDEMUX_VERSION}
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-plugins
 
@@ -26,11 +26,6 @@ CMAKE_ARGS+=	-DPLUGIN_UI=ALL
 .if ${PORT_OPTIONS:MCLI}
 BUILD_DEPENDS+=	${LOCALBASE}/include/avidemux/2.6/cli/config.h:multimedia/avidemux-cli
 RUN_DEPENDS+=	${LOCALBASE}/include/avidemux/2.6/cli/config.h:multimedia/avidemux-cli
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-BUILD_DEPENDS+=	${LOCALBASE}/include/avidemux/2.6/qt4/config.h:multimedia/avidemux-qt4
-RUN_DEPENDS+=	${LOCALBASE}/include/avidemux/2.6/qt4/config.h:multimedia/avidemux-qt4
 .endif
 
 .if ${PORT_OPTIONS:MGTK3}
