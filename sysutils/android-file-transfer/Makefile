@@ -43,7 +43,7 @@ QT5_PLIST_FILES=	bin/android-file-transfer \
 		share/metainfo/android-file-transfer.appdata.xml
 
 post-patch:
-	@${REINPLACE_CMD} '/set.*AFT_VERSION/s/".*"/"${GH_TAGNAME}"/' \
+	@${REINPLACE_CMD} '/set.*AFT_VERSION/s/".*"/"${DISTVERSIONFULL}"/' \
 		${WRKSRC}/CMakeLists.txt
 
 post-patch-CLI-off:
