@@ -24,7 +24,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgif.so:graphics/giflib \
 		libpng16.so:graphics/png
 
-USES=		compiler:features gmake iconv jpeg
+USES=		compiler:features gmake iconv jpeg pkgconfig
 USE_XORG=	xext x11 xrender xtst xi xt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-jdk${JDK_MAJOR_VERSION}u-jdk-${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}-${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
