@@ -4079,7 +4079,6 @@ net-p2p/transmission25|net-p2p/transmission|2013-03-09|gtk version is now fine
 net-p2p/transmission25-cli|net-p2p/transmission-cli|2013-03-09|gtk version is now fine
 net-p2p/transmission25-daemon|net-p2p/transmission-daemon|2013-03-09|gtk version is now fine
 net-p2p/transmission25-gtk2|net-p2p/transmission-gtk2|2013-03-09|gtk version is now fine
-net-p2p/transmission25-qt4|net-p2p/transmission-qt4|2013-03-09|gtk version is now fine
 www/transmission25-web|www/transmission-web|2013-03-09|gtk version is now fine
 net-p2p/transmission-gtk2|net-p2p/transmission-gtk|2013-03-09|Now uses GTK 3
 ftp/proma||2013-03-09|Has expired: Broken for more than 6 months
@@ -10279,8 +10278,6 @@ textproc/kibana46|textproc/kibana5|2018-07-10|Has expired: End of Life was 2018-
 print/cups-connector|print/cloud-print-connector|2018-07-11|Project renamed upstream
 net/wpa_gui|net/wpa_supplicant_gui|2018-07-12|Rename to wpa_supplicant_gui for ease of search
 lang/gcc47|lang/gcc6|2018-07-15|Has expired: Unsupported by upstream. Use GCC 6 or newer instead
-net-p2p/transmission-qt4|net-p2p/transmission-qt@qt4|2018-07-15|Moved into flavored version
-net-p2p/transmission-qt5|net-p2p/transmission-qt@qt5|2018-07-15|Moved into flavored version
 java/jaf||2018-07-16|Included in JRE since 1.6 version
 net/p5-ZConf-Bookmarks||2018-07-16|Has expired: Unmaintained
 net/p5-ZConf||2018-07-16|Has expired: Unmaintained
@@ -11679,3 +11676,5 @@ graphics/photivo@qt4||2019-03-16|Qt4 deprecation
 graphics/photivo@qt5|graphics/photivo|2019-03-16|Flavor has been removed
 archivers/quazip@qt4||2019-03-16|Qt4 deprecation
 archivers/quazip@qt5|archivers/quazip|2019-03-16|Flavor has been removed
+net-p2p/transmission@qt4||2019-03-16|Qt4 deprecation
+net-p2p/transmission@qt5|net-p2p/transmission-qt|2019-03-16|Flavor has been removed
