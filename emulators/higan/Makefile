@@ -3,7 +3,7 @@
 
 PORTNAME=	higan
 PORTVERSION=	106
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators games
 MASTER_SITES=	http://download.byuu.org/ \
 		http://www.cyberbotx.com/higan/
@@ -14,23 +14,25 @@ COMMENT=	Nintendo multi-system emulator
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		7z:p7zip compiler:c++14-lang gmake pkgconfig
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+USES=		7z:p7zip compiler:c++14-lang gettext gmake gnome pkgconfig
+USE_GNOME=	cairo gdkpixbuf2 gtk20 gtksourceview2
 USE_XORG=	x11 xext
 USE_CSTD=	c99
 USE_CXXSTD=	c++14
 USE_GCC=	yes
 
 MAKEFILE=	GNUmakefile
-MAKE_ENV=	compiler="${CXX}"
+MAKE_ENV=	compiler="${CXX}" hiro="gtk"
 
 OPTIONS_DEFINE=		DEBUG
-OPTIONS_SINGLE=		GUI
-OPTIONS_SINGLE_GUI=	GTK2 QT4
 OPTIONS_MULTI=		VIDEO SOUND INPUT
 OPTIONS_MULTI_VIDEO=	GLX SDL XSHM XV
 OPTIONS_MULTI_SOUND=	AO OPENAL OSS PULSEAUDIO
 OPTIONS_MULTI_INPUT=	INPUT_SDL INPUT_X
-OPTIONS_DEFAULT=	GTK2 GLX XSHM XV SDL \
+OPTIONS_DEFAULT=	GLX XSHM XV SDL \
 			OSS INPUT_SDL INPUT_X
 
 XSHM_DESC=		Build XShm video driver
@@ -38,15 +40,6 @@ XV_DESC=		Build Xv video driver
 INPUT_SDL_DESC=		Build SDL input driver
 INPUT_X_DESC=		Build X input driver
 
-GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2
-GTK2_MAKE_ENV=	hiro="gtk"
-GTK2_USE=	GNOME=cairo,gdkpixbuf2,gtk20,gtksourceview2
-GTK2_USES=	gettext
-
-QT4_MAKE_ENV=	hiro="qt"
-QT4_USES=	qt:4
-QT4_USE=	QT=corelib,gui,moc_build
 
 GLX_USE=	GL=gl
 GLX_VARS=	VIDEO_DRIVER+=video.glx
@@ -75,13 +68,6 @@ INPUT_SDL_USE=	SDL=sdl
 INPUT_SDL_VARS=	INPUT_DRIVER+=input.sdl
 
 INPUT_X_VARS=	INPUT_DRIVER+=input.xlib
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT4}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 post-patch:
 	${REINPLACE_CMD} \
