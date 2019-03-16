@@ -10225,9 +10225,6 @@ net/syncthing-cli|net/syncthing|2018-06-18|Has expired: Included in net/syncthin
 x11-themes/adwaita-common||2018-06-19|Move to flavored version
 net-p2p/qbittorrent-nox11|net-p2p/qbittorrent@nox|2018-06-20|Moved to a flavored version
 math/digitizer|graphics/engauge-digitizer|2018-06-20|The previously deleted port math/digitizer is now graphics/engauge-digitizer
-multimedia/qt5-phonon4|multimedia/phonon@qt5|2018-06-21|Moved to a flavored version
-multimedia/qt5-phonon4-designerplugin|multimedia/phonon-designerplugin@qt5|2018-06-21|Moved to a flavored version
-multimedia/qt5-phonon4-gstreamer|multimedia/phonon-gstreamer@qt5|2018-06-21|Moved to a flavored version
 net/libproxy-gnome|net/libproxy-gnome2|2018-06-22|Renamed to make slave names consistent
 www/npapi-vlc||2018-06-22|Removed, depends on expired www/libxul
 www/libxul||2018-06-22|Has expired: NPAPI are no longer supported
@@ -11687,3 +11684,9 @@ devel/eric6@qt4_py27||2019-03-16|Qt4 deprecation
 devel/eric6@qt4_py35||2019-03-16|Qt4 deprecation
 devel/eric6@qt4_py36||2019-03-16|Qt4 deprecation
 devel/eric6@qt4_py37||2019-03-16|Qt4 deprecation
+multimedia/phonon@qt4||2019-03-16|Qt4 deprecation
+multimedia/phonon@qt5|multimedia/phonon|2019-03-16|Flavor has been removed
+multimedia/phonon-designerplugin@qt4||2019-03-16|Qt4 deprecation
+multimedia/phonon-designerplugin@qt5|multimedia/phonon-designerplugin|2019-03-16|Flavor has been removed
+multimedia/phonon-gstreamer@qt4||2019-03-16|Qt4 deprecation
+multimedia/phonon-gstreamer@qt5|multimedia/phonon-gstreamer|2019-03-16|Flavor has been removed
