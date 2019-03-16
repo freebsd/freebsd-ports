@@ -47,7 +47,6 @@
     SUBDIR += gens
     SUBDIR += gngb
     SUBDIR += gngeo
-    SUBDIR += gns3
     SUBDIR += gxemul
     SUBDIR += hatari
     SUBDIR += hercules

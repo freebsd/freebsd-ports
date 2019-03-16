@@ -1,5 +1,0 @@
-Graphical Cisco network simulator using Dynamips, Dynagen and Pemu.
-Important notice: users have to provide their own Cisco IOS/IPS/PIX/ASA/JunOS
-to use with GNS3.
-
-WWW: http://www.gns3.net
