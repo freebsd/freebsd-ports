@@ -1,6 +1,0 @@
---- dpkgfiles/armory.orig	2015-06-10 21:49:31 UTC
-+++ dpkgfiles/armory
-@@ -1,2 +1,2 @@
- #!/bin/sh
--exec python /usr/lib/armory/ArmoryQt.py "$@"
-+exec python %%LOCALBASE%%/lib/armory/ArmoryQt.py "$@"

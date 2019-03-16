@@ -21,7 +21,6 @@
     SUBDIR += chemeq
     SUBDIR += clustal-omega
     SUBDIR += clustalw
-    SUBDIR += clustalx
     SUBDIR += consed
     SUBDIR += cytoscape
     SUBDIR += ddocent

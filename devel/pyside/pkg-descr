@@ -1,7 +1,0 @@
-PySide is Python library to create cross-platform graphical user interfaces
-by providing access to the underlying Qt framework. PySide and its complete
-generation toolchain is available under LGPL license. This allows developers
-to create Qt and Qt Quick applications in Python programming language at no
-cost.
-
-WWW: http://qt-project.org/wiki/PySide

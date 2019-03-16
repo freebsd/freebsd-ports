@@ -1,6 +1,0 @@
-Structure Synth is an application for creating 3D structures from
-a set of user specified rules. It is an attempt to make a 3D version
-of Context Free. The resulting structures can be viewed in the
-integrated OpenGL viewer or exported to various formats.
-
-WWW: http://structuresynth.sourceforge.net

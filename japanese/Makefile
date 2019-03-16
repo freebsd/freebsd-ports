@@ -223,7 +223,6 @@
     SUBDIR += py-tegaki-gtk
     SUBDIR += py-zinnia
     SUBDIR += qkc
-    SUBDIR += qt4-codecs-jp
     SUBDIR += quit
     SUBDIR += roget-fpw
     SUBDIR += rogue_s

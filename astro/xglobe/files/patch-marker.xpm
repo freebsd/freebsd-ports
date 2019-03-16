@@ -1,9 +1,0 @@
---- marker.xpm.orig	1998-11-20 17:16:30 UTC
-+++ marker.xpm
-@@ -1,5 +1,5 @@
- /* XPM */
--static char * marker_xpm[] = {
-+static const char * marker_xpm[] = {
- "7 7 3 1",
- " 	c None",
- ".	c #000000",

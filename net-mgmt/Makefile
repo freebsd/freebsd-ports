@@ -159,7 +159,6 @@
     SUBDIR += nagios-snmp-plugins-extras
     SUBDIR += nagios-spamd-plugin
     SUBDIR += nagios4
-    SUBDIR += nagiosagent
     SUBDIR += nagiosgraph
     SUBDIR += nagiosql
     SUBDIR += nagircbot
@@ -325,7 +324,6 @@
     SUBDIR += py-snmp_passpersist
     SUBDIR += py-snmpclitools
     SUBDIR += py-yapsnmp
-    SUBDIR += qkismet
     SUBDIR += rackmonkey
     SUBDIR += rancid3
     SUBDIR += rate

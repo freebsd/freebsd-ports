@@ -1,9 +1,0 @@
-QCT - Qt/PyQt based commit tool
-
-Primary goals:
-
-  1. Platform agnostic (Linux, Windows, MacOS, Cygwin -- and FreeBSD now)
-  2. VCS agnostic (bazaar, cvs, git, mercurial, monotone, perforce, subversion)
-  3. Good keyboard navigation, keep the typical work-flow simple
-
-WWW: http://qct.sourceforge.net/

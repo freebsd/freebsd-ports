@@ -1,5 +1,0 @@
-Qt Script Generator is a tool that generates Qt bindings for Qt
-Script. With the generated bindings you get access to substantial
-portions of the Qt API from within Qt Script.
-
-WWW: http://qtscriptgenerator.googlecode.com

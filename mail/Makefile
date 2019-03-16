@@ -548,7 +548,6 @@
     SUBDIR += pysieved
     SUBDIR += pyzor
     SUBDIR += qconfirm
-    SUBDIR += qgmailnotifier
     SUBDIR += qmail
     SUBDIR += qmail-activedir
     SUBDIR += qmail-auditor

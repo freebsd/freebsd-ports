@@ -92,7 +92,6 @@
     SUBDIR += indexinfo
     SUBDIR += jabref
     SUBDIR += kde_poster
-    SUBDIR += kpdftool
     SUBDIR += latex-beamer
     SUBDIR += latex-biber
     SUBDIR += latex-ltablex
@@ -222,7 +221,6 @@
     SUBDIR += rubygem-rbpdf
     SUBDIR += rubygem-rbpdf-font
     SUBDIR += rubygem-ttfunk
-    SUBDIR += scribus
     SUBDIR += scribus-devel
     SUBDIR += sgf2tex
     SUBDIR += splix

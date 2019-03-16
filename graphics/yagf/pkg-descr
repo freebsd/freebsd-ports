@@ -1,7 +1,0 @@
-YAGF is a graphical interface for text recognition
-programs on the Linux platform. With YAGF you can scan images via
-XSane, perform images preprocessing and recognize texts
-from a single command centre. YAGF also makes it easy to
-scan and recognize several images sequentially.
-
-WWW: https://sourceforge.net/projects/yagf-ocr/

@@ -31,7 +31,6 @@
     SUBDIR += apt-cacher-ng
     SUBDIR += archiva
     SUBDIR += aria2
-    SUBDIR += aria2fe
     SUBDIR += asql
     SUBDIR += august
     SUBDIR += awffull
@@ -100,7 +99,6 @@
     SUBDIR += csstidy
     SUBDIR += ctemplate
     SUBDIR += cutelyst
-    SUBDIR += cutycapt
     SUBDIR += davical
     SUBDIR += davix
     SUBDIR += dddbl
@@ -1828,7 +1826,6 @@
     SUBDIR += py-pywikibot
     SUBDIR += py-qp
     SUBDIR += py-qpy
-    SUBDIR += py-qt4-webkit
     SUBDIR += py-qt5-webchannel
     SUBDIR += py-qt5-webengine
     SUBDIR += py-qt5-webkit
@@ -1910,7 +1907,6 @@
     SUBDIR += qdecoder
     SUBDIR += qhttpengine
     SUBDIR += qooxdoo
-    SUBDIR += qt4-webkit
     SUBDIR += qt5-webchannel
     SUBDIR += qt5-webengine
     SUBDIR += qt5-webkit
@@ -1918,7 +1914,6 @@
     SUBDIR += qt5-websockets-qml
     SUBDIR += qt5-webview
     SUBDIR += quark
-    SUBDIR += qupzilla-qt4
     SUBDIR += qutebrowser
     SUBDIR += radicale
     SUBDIR += radicale2

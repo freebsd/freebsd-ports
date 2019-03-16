@@ -105,7 +105,6 @@
     SUBDIR += plasma5-kwin
     SUBDIR += plwm
     SUBDIR += pwm
-    SUBDIR += qlwm
     SUBDIR += qtile
     SUBDIR += ratmen
     SUBDIR += ratmenu
