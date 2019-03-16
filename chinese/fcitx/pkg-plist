@@ -19,18 +19,6 @@ include/fcitx-gclient/fcitxclient.h
 include/fcitx-gclient/fcitxconnection.h
 include/fcitx-gclient/fcitxinputmethod.h
 include/fcitx-gclient/fcitxkbd.h
-%%QT4%%include/fcitx-qt/fcitxqt_export.h
-%%QT4%%include/fcitx-qt/fcitxqtconfiguifactory.h
-%%QT4%%include/fcitx-qt/fcitxqtconfiguiplugin.h
-%%QT4%%include/fcitx-qt/fcitxqtconfiguiwidget.h
-%%QT4%%include/fcitx-qt/fcitxqtconnection.h
-%%QT4%%include/fcitx-qt/fcitxqtformattedpreedit.h
-%%QT4%%include/fcitx-qt/fcitxqtinputcontextproxy.h
-%%QT4%%include/fcitx-qt/fcitxqtinputmethoditem.h
-%%QT4%%include/fcitx-qt/fcitxqtinputmethodproxy.h
-%%QT4%%include/fcitx-qt/fcitxqtkeyboardlayout.h
-%%QT4%%include/fcitx-qt/fcitxqtkeyboardproxy.h
-%%QT4%%include/fcitx-qt/fcitxqtkeysequencewidget.h
 include/fcitx-utils/bitset.h
 include/fcitx-utils/desktop-parse.h
 include/fcitx-utils/handler-table.h
@@ -114,7 +102,6 @@ lib/fcitx/fcitx-xkb.so
 lib/fcitx/fcitx-xkbdbus.so
 lib/fcitx/libexec/comp-spell-dict
 lib/fcitx/libexec/fcitx-po-parser
-%%QT4%%lib/fcitx/libexec/fcitx-qt-gui-wrapper
 lib/fcitx/libexec/fcitx-scanner
 lib/girepository-1.0/Fcitx-1.0.typelib
 %%GTK2%%lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-fcitx.so
@@ -123,7 +110,6 @@ lib/girepository-1.0/Fcitx-1.0.typelib
 %%GTK3%%lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-fcitx.so
 %%GTK3%%@postexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
 %%GTK3%%@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
-%%QT4%%lib/qt4/plugins/inputmethods/qtim-fcitx.so
 lib/libfcitx-config.so
 lib/libfcitx-config.so.4
 lib/libfcitx-config.so.4.1
@@ -133,15 +119,11 @@ lib/libfcitx-core.so.0.3
 lib/libfcitx-gclient.so
 lib/libfcitx-gclient.so.1
 lib/libfcitx-gclient.so.0.2
-%%QT4%%lib/libfcitx-qt.so
-%%QT4%%lib/libfcitx-qt.so.0
-%%QT4%%lib/libfcitx-qt.so.0.1
 lib/libfcitx-utils.so
 lib/libfcitx-utils.so.0
 lib/libfcitx-utils.so.0.1
 libdata/pkgconfig/fcitx-config.pc
 libdata/pkgconfig/fcitx-gclient.pc
-%%QT4%%libdata/pkgconfig/fcitx-qt.pc
 libdata/pkgconfig/fcitx-utils.pc
 libdata/pkgconfig/fcitx.pc
 man/man1/createPYMB.1.gz
