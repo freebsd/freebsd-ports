@@ -3,7 +3,7 @@
 
 PORTNAME=	linkchecker
 PORTVERSION=	9.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	LinkChecker-${PORTVERSION}
@@ -24,7 +24,7 @@ CPE_VENDOR=	bastian_kleineidam
 USE_PYTHON=	distutils autoplist
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=		CLAMAV EXAMPLES GTK2 LOGIN NLS QT4 \
+OPTIONS_DEFINE=		CLAMAV EXAMPLES GTK2 LOGIN NLS \
 			SQLITE3 SYNTAX
 OPTIONS_DEFAULT=	SQLITE3 SYNTAX
 OPTIONS_SUB=		yes
@@ -35,9 +35,6 @@ GTK2_USE=		gnome=pygtk2
 LOGIN_DESC=		Login form submission
 LOGIN_RUN_DEPENDS=	twill>=0:www/twill
 NLS_USES=		gettext
-QT4_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-noqt-setup.py
-QT4_USES=		pyqt:4
-QT4_USE=		PYQT=core_run,gui_run,help_run,qscintilla2_run,sql_run
 SQLITE3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 SYNTAX_DESC=		HTML/CSS syntax check
 SYNTAX_RUN_DEPENDS=\
@@ -45,11 +42,6 @@ SYNTAX_RUN_DEPENDS=\
 		${PYTHON_PKGNAMEPREFIX}utidylib>=0.2:www/py-utidylib@${PY_FLAVOR}
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT4}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
