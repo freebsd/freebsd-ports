@@ -11676,3 +11676,5 @@ net-im/telepathy-qt@qt4||2019-03-16|Qt4 deprecation
 net-im/telepathy-qt@qt5|net-im/telepathy-qt|2019-03-16|Flavor has been removed
 graphics/fracplanet@qt4||2019-03-16|Qt4 deprecation
 graphics/fracplanet@qt5|graphics/fracplanet|2019-03-16|Flavor has been removed
+graphics/photivo@qt4||2019-03-16|Qt4 deprecation
+graphics/photivo@qt5|graphics/photivo|2019-03-16|Flavor has been removed
