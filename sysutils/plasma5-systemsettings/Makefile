@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	systemsettings
-DISTVERSION=	${KDE_PLASMA_VERSION}
+DISTVERSION=	${KDE_PLASMA_VERSION}.2
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
