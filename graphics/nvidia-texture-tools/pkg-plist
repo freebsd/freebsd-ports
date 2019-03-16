@@ -1,6 +1,5 @@
 bin/nvassemble
 bin/nvcompress
-%%COMPRESSUI%%bin/nvcompressui
 bin/nvddsinfo
 bin/nvdecompress
 bin/nvimgdiff
