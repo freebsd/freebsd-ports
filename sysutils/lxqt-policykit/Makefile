@@ -3,7 +3,7 @@
 
 PORTNAME=	lxqt-policykit
 PORTVERSION=	0.13.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	LXQT
 
@@ -12,7 +12,7 @@ COMMENT=	PolicyKit authentication agent
 
 LICENSE=	LGPL21+
 
-LIB_DEPENDS=	libpolkit-qt5-agent-1.so:sysutils/polkit-qt@qt5 \
+LIB_DEPENDS=	libpolkit-qt5-agent-1.so:sysutils/polkit-qt \
 		libpolkit-agent-1.so:sysutils/polkit
 
 USES=	cmake compiler:c++11-lib gettext-runtime kde:5 qt:5 \
