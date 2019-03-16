@@ -2,7 +2,7 @@
 
 PORTNAME=	dxirc
 PORTVERSION=	1.30.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -18,7 +18,7 @@ INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		NLS LUA ENCHANT NOTIFY
 OPTIONS_SINGLE=		GUI
-OPTIONS_SINGLE_GUI=	FOX16 QT4 QT5
+OPTIONS_SINGLE_GUI=	FOX16 QT5
 OPTIONS_DEFAULT=	LUA QT5
 OPTIONS_SUB=		yes
 
@@ -41,21 +41,9 @@ NLS_CMAKE_BOOL=		WITH_NLS
 
 NOTIFY_RUN_DEPENDS=	notify-send:devel/libnotify
 
-QT4_USES=	qt:4
-QT4_USE=		QT=corelib,gui,network \
-			QT=moc_build,rcc_build,uic_build,qmake_build
-QT4_CMAKE_ON=		-DQT5:BOOL=OFF
-
 QT5_USES=	qt:5
 QT5_USE=		QT=core,gui,multimedia,network,widgets \
 			QT=buildtools_build,qmake_build
 QT5_CMAKE_ON=		-DQT5:BOOL=ON
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT4}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 .include <bsd.port.mk>
