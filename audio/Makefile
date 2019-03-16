@@ -406,7 +406,6 @@
     SUBDIR += libinstpatch
     SUBDIR += libkcddb
     SUBDIR += libkcompactdisc
-    SUBDIR += liblastfm
     SUBDIR += liblastfm-qt5
     SUBDIR += liblo
     SUBDIR += liblscp
