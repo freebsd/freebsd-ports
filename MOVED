@@ -11676,6 +11676,6 @@ archivers/quazip@qt5|archivers/quazip|2019-03-16|Flavor has been removed
 net-p2p/transmission@qt4||2019-03-16|Qt4 deprecation
 net-p2p/transmission@qt5|net-p2p/transmission-qt|2019-03-16|Flavor has been removed
 x11-themes/Kvantum@qt4||2019-03-16|Qt4 deprecation
-x11-themes/Kvantum@qt5|2019-03-16|Flavor has been removed
+x11-themes/Kvantum@qt5|x11-themes/Kvantum|2019-03-16|Flavor has been removed
 devel/qjson@qt4||2019-03-16|Qt4 deprecation
 devel/qjson@qt5|devel/qjson|2019-03-16|Flavor has been removed
