@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	OpenVisualCloud
 GH_PROJECT=	SVT-AV1
-GH_TAGNAME=	b114a03
+GH_TAGNAME=	39aad81
 CMAKE_OFF=	BUILD_TESTING # no useful tests yet
 
 post-patch:
