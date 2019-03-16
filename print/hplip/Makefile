@@ -35,7 +35,8 @@ CONFIGURE_ARGS=	--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
 		--with-mimedir=${PREFIX}/share/cups/mime \
 		--with-docdir=${DOCSDIR} \
 		--with-htmldir=${DOCSDIR} \
-		--with-drvdir=${PREFIX}/share/cups/drv
+		--with-drvdir=${PREFIX}/share/cups/drv \
+		--disable-qt4
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
@@ -68,17 +69,6 @@ XSANE_RUN_DEPENDS=	xsane:graphics/xsane
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MQT4} && ${PORT_OPTIONS:MX11}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
-USES+=			pyqt:4
-USE_PYQT=		core_run dbussupport_run gui_run sip
-CONFIGURE_ARGS+=	--enable-qt4
-.else
-CONFIGURE_ARGS+=	--disable-qt4
-.endif
-
 .if ${PORT_OPTIONS:MQT5} && ${PORT_OPTIONS:MX11}
 USES+=			pyqt:5
 USE_PYQT=		core_run dbussupport_run gui_run sip widgets_run
@@ -87,7 +77,7 @@ CONFIGURE_ARGS+=	--enable-qt5
 CONFIGURE_ARGS+=	--disable-qt5
 .endif
 
-.if ${PORT_OPTIONS:MX11} && ! ${PORT_OPTIONS:MQT4} && ! ${PORT_OPTIONS:MQT5}
+.if ${PORT_OPTIONS:MX11} && ! ${PORT_OPTIONS:MQT5}
 BROKEN=			The X11 option requires one of the QT4 or QT5 options
 .endif
 
