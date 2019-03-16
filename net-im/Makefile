@@ -145,7 +145,6 @@ PORTREVISION=	1
     SUBDIR += qTox
     SUBDIR += qq
     SUBDIR += quaternion
-    SUBDIR += qxmpp
     SUBDIR += qxmpp-qt5
     SUBDIR += ricochet
     SUBDIR += rubygem-discordrb-webhooks-blackst0ne
