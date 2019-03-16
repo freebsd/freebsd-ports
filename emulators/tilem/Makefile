@@ -8,7 +8,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Emulator for the Z80 series of Texas Instruments calculators
+COMMENT=	Texas Instruments Z80 series calculator emulator
 
 LICENSE=	GPLv3
 
