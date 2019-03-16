@@ -10441,8 +10441,6 @@ devel/libbobcat||2018-08-21|Has expired: Broken for more than 5 months
 net-p2p/dogecoin||2018-08-21|Has expired: Broken for more than 5 months
 misc/freebsd-doc-sr||2018-08-23|Removed
 www/py-django18|www/py-django111|2018-08-25|Has expired: End of Live since 01/04/2018
-x11-themes/qt4-style-Kvantum|x11-themes/Kvantum@qt4|2018-08-26|Moved to flavored version
-x11-themes/qt5-style-Kvantum|x11-themes/Kvantum@qt5|2018-08-26|Moved to flavored version
 devel/gps||2018-08-28|Has expired: Depends on obsolete LLVM 3.8
 net-mgmt/ocsinventory-ng|net-mgmt/ocsinventory-server|2018-08-30|split port
 www/py-buku|www/buku|2018-09-01|Moved to correct directory, port is not a python library
@@ -11678,3 +11676,5 @@ archivers/quazip@qt4||2019-03-16|Qt4 deprecation
 archivers/quazip@qt5|archivers/quazip|2019-03-16|Flavor has been removed
 net-p2p/transmission@qt4||2019-03-16|Qt4 deprecation
 net-p2p/transmission@qt5|net-p2p/transmission-qt|2019-03-16|Flavor has been removed
+x11-themes/Kvantum@qt4||2019-03-16|Qt4 deprecation
+x11-themes/Kvantum@qt5|2019-03-16|Flavor has been removed
