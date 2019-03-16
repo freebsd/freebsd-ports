@@ -193,7 +193,6 @@
     SUBDIR += twpsk
     SUBDIR += uarduno
     SUBDIR += uartlirc
-    SUBDIR += ubertooth
     SUBDIR += uhd
     SUBDIR += uird
     SUBDIR += unixcw
