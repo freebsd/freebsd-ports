@@ -1363,7 +1363,6 @@ PORTREVISION=	1
     SUBDIR += yubico-piv-tool
     SUBDIR += yubikey-manager-qt
     SUBDIR += yubikey-personalization-gui
-    SUBDIR += yubikey-piv-manager
     SUBDIR += yubioath-desktop
     SUBDIR += zebedee
     SUBDIR += zenmap
