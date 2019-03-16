@@ -1,7 +1,7 @@
-xxHash is an extremely fast non-cryptographic hash algorithm, running at RAM
-speed limits.  It is proposed in two flavors, 32 and 64 bits. It successfully
-completes the SMHasher test suite which evaluates collision, dispersion and
-randomness qualities of hash functions. Code is highly portable, and hashes are
-identical on all platforms (little / big endian).
- 
-WWW: http://www.xxhash.com/
+xxHash is an extremely fast non-cryptographic hash algorithm, working at speeds
+close to RAM limits. It is proposed in two flavors, 32 and 64 bits. It
+successfully completes the SMHasher test suite which evaluates collision,
+dispersion and randomness qualities of hash functions. Code is highly portable,
+and hashes are identical on all platforms (little / big endian).
+
+WWW: https://cyan4973.github.io/xxHash/
