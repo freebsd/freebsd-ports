@@ -4,7 +4,7 @@
 PORTNAME=	fbreader
 PORTVERSION=	0.99.6
 DISTVERSIONSUFFIX=	-freebsdport
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 
 MAINTAINER=	johannes@perceivon.net
@@ -27,35 +27,16 @@ STATUS=		debug
 STATUS=		release
 .endif
 
-USES=		compiler gmake iconv localbase pkgconfig sqlite
+USES=		compiler gmake gnome iconv localbase pkgconfig sqlite
+USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	do_install
 
 MAKE_ENV+=	TARGET_ARCH=desktop TARGET_STATUS=${STATUS} \
 		ROOTDIR=${WRKSRC} INSTALLDIR=${PREFIX} LIBDIR=${PREFIX}/lib \
-		LD="${CXX}"
+		LD="${CXX}" UI_TYPE=gtk
 MAKE_ARGS+=	MAKE=${MAKE_CMD} LIBDIR=${PREFIX}/lib
-
-OPTIONS_SINGLE=		GUI
-OPTIONS_SINGLE_GUI=	GTK2 QT4
-OPTIONS_DEFAULT=	GTK2
-OPTIONS_SUB=		yes
-
-GTK2_USE=	gnome=gtk20
-GTK2_MAKE_ENV=	UI_TYPE=gtk
-
-QT4_USES=	qt:4
-QT4_USE=	qt=gui,corelib,imageformats,network,moc_build
-QT4_LIBS=	-L${QT_LIBDIR}
-QT4_MAKE_ENV=	UI_TYPE=qt4
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT4}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC/d;/^LD/d;/QTINCLUDE/s,-I.*$$,-I${QT_INCDIR},' \
