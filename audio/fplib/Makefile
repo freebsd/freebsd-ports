@@ -18,9 +18,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libsamplerate.so:audio/libsamplerate \
 		libtag.so:audio/taglib
 
+USES=		cmake compiler:c++11-lang localbase:ldflags
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES=		cmake localbase:ldflags
 
 GH_ACCOUNT=	lastfm
 GH_PROJECT=	Fingerprinter
