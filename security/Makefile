@@ -1,4 +1,5 @@
 # $FreeBSD$
+PORTREVISION=	1
 #
 
     COMMENT = Security tools
