@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_SSL=		openssl111 libressl libressl-devel
 BROKEN_SSL_REASON=	Node.js 6.x LTS requires OpenSSL 1.0.2 or the BUNDLED_SSL option enabled
+DEPRECATED=		Node.js 6.x LTS reaches end-of-life on 2019-04-30, see https://github.com/nodejs/Release
+EXPIRATION_DATE=	2019-04-30
 ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc64
 
 OPTIONS_DEFINE=		BUNDLED_SSL DOCS NLS DTRACE
