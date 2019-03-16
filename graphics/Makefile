@@ -62,7 +62,6 @@
     SUBDIR += autopano-sift-c
     SUBDIR += autotrace
     SUBDIR += aview
-    SUBDIR += ayam
     SUBDIR += azpainter
     SUBDIR += backfract
     SUBDIR += barbecue
