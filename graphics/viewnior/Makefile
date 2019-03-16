@@ -18,8 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	xsisqox
 GH_PROJECT=	Viewnior
 
-USES=		autoreconf desktop-file-utils gmake libtool pkgconfig \
-		gettext-tools
+USES=		autoreconf compiler:c++11-lang desktop-file-utils gettext-tools \
+		gmake libtool pkgconfig
 USE_GNOME=	glib20 gtk20 gdkpixbuf2 intltool intlhack
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
