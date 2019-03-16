@@ -3,7 +3,7 @@
 
 PORTNAME=	kbibtex
 DISTVERSION=	0.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases kde
 MASTER_SITES=	KDE/stable/KBibTeX/${DISTVERSION}/
 
@@ -11,7 +11,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Bibliography editor for KDE
 
 LIB_DEPENDS=	libicuuc.so:devel/icu \
-		libqca-qt5.so:devel/qca@qt5 \
+		libqca-qt5.so:devel/qca \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
 		libqoauth-qt5.so:net/qoauth-qt5

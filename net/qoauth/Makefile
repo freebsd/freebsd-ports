@@ -4,7 +4,7 @@
 PORTNAME=	qoauth
 PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net devel security
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 
-LIB_DEPENDS=	libqca.so:devel/qca@qt4
+BROKEN=		Missingd libqca.so:devel/qca@qt4
 
 USES=		qmake:outsource qt:4
 USE_LDCONFIG=	yes

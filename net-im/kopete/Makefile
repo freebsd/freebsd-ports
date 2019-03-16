@@ -2,6 +2,7 @@
 
 PORTNAME=	kopete
 PORTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,7 +12,7 @@ BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 LIB_DEPENDS=    libidn.so:dns/libidn \
 		libjasper.so:graphics/jasper \
 		libotr.so:security/libotr \
-		libqca-qt5.so:devel/qca@qt5 \
+		libqca-qt5.so:devel/qca \
 		libv4l2.so:multimedia/libv4l
 
 USES=		cmake compiler:c++11-lang jpeg kde:5 qt:5 shebangfix \

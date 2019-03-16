@@ -3,7 +3,7 @@
 
 PORTNAME=	leechcraft
 PORTVERSION=	0.6.70
-PORTREVISION=	42
+PORTREVISION=	43
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.leechcraft.org/LeechCraft/0.6.70/
 
@@ -73,10 +73,10 @@ AZOTH_LIB_DEPENDS=	libQtMultimediaKit.so:multimedia/qt4-mobility \
 			libkqoauth.so:security/kqoauth \
 			libotr.so.5:security/libotr \
 			libpurple.so:net-im/libpurple \
-			libqca.so:devel/qca@qt4 \
 			libqxmpp.so:net-im/qxmpp \
 			libspeex.so:audio/speex
 AZOTH_USES=		desktop-file-utils
+AZOTH_BROKEN=		Missing libqca.so:devel/qca@qt4
 
 BITTORRENT_DESC=	Full-featured BitTorrent client plugin
 BITTORRENT_CMAKE_ON=	-DENABLE_TORRENT:BOOL=true
