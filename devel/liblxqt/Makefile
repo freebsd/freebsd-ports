@@ -3,7 +3,7 @@
 
 PORTNAME=	liblxqt
 PORTVERSION=	0.13.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	LXQT
 
@@ -12,7 +12,7 @@ COMMENT=	Shared library for LXQt applications
 
 LICENSE=	LGPL21+
 
-LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt@qt5
+LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt
 
 USES=	cmake compiler:c++11-lib gettext kde:5 lxqt \
 	pkgconfig qt:5 tar:xz

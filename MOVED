@@ -10082,7 +10082,6 @@ security/py-zxcvbn-python|security/py-zxcvbn|2018-04-13|Renamed upstream
 devel/py-libusb115|devel/py-libusb1|2018-04-14|Unused and unmaintained upstream
 devel/qca-qt5|devel/qca@qt5|2018-04-14|Moved to a flavoured version
 devel/qjson-qt5|devel/qjson@qt5|2018-04-14|Moved to a flavoured version
-sysutils/polkit-qt5|sysutils/polkit-qt@qt5|2018-04-14|Moved to flavoured version
 multimedia/gstreamer1-qt4|multimedia/gstreamer1-qt@qt4|2018-04-14|Moved to a flavoured version
 multimedia/gstreamer1-qt5|multimedia/gstreamer1-qt@qt5|2018-04-14|Moved to a flavoured version
 www/mod_antiloris||2018-04-16|Apache 2.2 End of Life
@@ -11671,3 +11670,5 @@ math/mumps-edf|math/mumps|2019-03-10|Use mumps-edf as MUMPS 5
 textproc/soprano||2019-03-11|Has expired: Qt4 has been EOL since december 2015
 x11-fonts/mkfontdir|x11-fonts/mkfontscale|2019-03-11|Merged into one package
 emulators/ppsspp-devel|emulators/ppsspp|2019-03-14|Out of date: use emulators/ppsspp for now
+sysutils/polkit-qt@qt4||2019-03-16|Qt4 deprecation
+sysutils/polkit-qt@qt5|sysutils/polkit-qt|2019-03-16|Flavor has been removed
