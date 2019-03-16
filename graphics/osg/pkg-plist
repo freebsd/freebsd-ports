@@ -738,7 +738,6 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_png.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_pnm.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_pov.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_pvr.so
-%%QT4%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_qfont.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_revisions.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_rgb.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_rot.so
