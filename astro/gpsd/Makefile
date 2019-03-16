@@ -3,6 +3,7 @@
 
 PORTNAME=	gpsd
 PORTVERSION=	3.17
+PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	SAVANNAH
 
@@ -20,7 +21,7 @@ SHEBANG_FILES=	*.py gps/*.py gegps xgps gpscat xgpsspeed gpsprof \
 		gpsfake
 
 MAKE_ARGS=	prefix="${PREFIX}" mandir="man" pkgconfig="libdata/pkgconfig" \
-		manbuild=no target_python="${PYTHON_CMD}"
+		manbuild=no target_python="${PYTHON_CMD}" qt=no
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 PLIST_SUB=	PYTHON_EGGINFO=gps-${PORTVERSION}.egg-info
 
@@ -29,7 +30,7 @@ OPTIONS_DEFINE=	AIVDM ASHTECH CPPBIND DBUS EARTHMATE EVERMORE FURY FV18 GARMIN \
 		NETFEED NMEA0183 NTP NTPSHM NTRIP OCEANSERVER ONCORE \
 		PASSTHROUGH PPS PROFILING RECONFIGURE RTCM104V2 RTCM104V3 \
 		SHMEXPORT SIRF SOCKEXPORT SUPERSTARII TIMING TNT TRIPMATE \
-		TSIP QTBIND UBLOX USB X11
+		TSIP UBLOX USB X11
 OPTIONS_DEFAULT= AIVDM ASHTECH CPPBIND EARTHMATE EVERMORE FURY FV18 GARMIN \
 		GARMINTXT GEOSTAR GPSCLOCK ITRAX NAVCOM NCURSES NETFEED \
 		NMEA0183 NTP NTPSHM NTRIP OCEANSERVER ONCORE PASSTHROUGH \
@@ -73,7 +74,6 @@ TIMING_DESC=		Build latency timing support
 TNT_DESC=		True North Technologies support
 TRIPMATE_DESC=		DeLorme TripMate support
 TSIP_DESC=		Trimble TSIP support
-QTBIND_DESC=		build QT bindings
 UBLOX_DESC=		u-blox protocol support
 USB_DESC=		libusb support for USB devices
 
@@ -131,12 +131,6 @@ TIMING_MAKE_ARGS_OFF=	timing=no
 # Client-side options
 NCURSES_MAKE_ARGS_OFF=	ncurses=no
 NCURSES_USES=		ncurses
-QTBIND_USES=		qt:4
-QTBIND_USE=		QT=network,corelib
-QTBIND_MAKE_ARGS=	qt=yes
-QTBIND_MAKE_ARGS_OFF=	qt=no
-QTBIND_PLIST_SUB=	QTBIND=""
-QTBIND_PLIST_SUB_OFF=	QTBIND="@comment "
 RECONFIGURE_MAKE_ARGS_OFF=	reconfigure=no
 CPPBIND_MAKE_ARGS_OFF=	libgpsmm=no
 X11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR} \
@@ -146,12 +140,6 @@ X11_USE=	GNOME=gtk30
 
 # Build control
 PROFILING_MAKE_ARGS=	profiling=yes
-
-.include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MQTBIND}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 # generates .py[co] files for installed modules
 # if that's not done, ${PYTHON_SITELIBDIR}/gps will be polluted
