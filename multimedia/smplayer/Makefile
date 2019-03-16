@@ -3,6 +3,7 @@
 
 PORTNAME=	smplayer
 DISTVERSION=	18.10.0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
@@ -13,7 +14,9 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
 USES=		cpe compiler:c++11-lang desktop-file-utils dos2unix gmake \
-		qmake tar:bzip2
+		qmake qt:5 tar:bzip2
+USE_QT=		buildtools_build linguisttools_build \
+		core dbus gui network script widgets xml
 USE_XORG=	x11
 
 CPE_VENDOR=	ricardo_villalba
@@ -27,12 +30,10 @@ QMAKE_ARGS=	"DEFINES_DISABLED+=MPLAYER2_SUPPORT"
 PORTDOCS=	Changelog Not_so_obvious_things.txt \
 		Readme.txt Release_notes.txt Watching_TV.txt
 
-OPTIONS_SINGLE=		TOOLKIT
-OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
 OPTIONS_MULTI=		ENGINE
 OPTIONS_MULTI_ENGINE=	MPLAYER MPV
 OPTIONS_DEFINE=		DOCS DEBUG SKINS THEMES
-OPTIONS_DEFAULT=	QT5 MPV SKINS THEMES
+OPTIONS_DEFAULT=	MPV SKINS THEMES
 
 TOOLKIT_DESC=	Qt toolkit version
 ENGINE_DESC=	Multimedia engine
@@ -40,14 +41,6 @@ MPLAYER_DESC=	Allow to use MPlayer as multimedia engine
 MPV_DESC=	Allow to use mpv as multimedia engine
 SKINS_DESC=	Install additional skins
 THEMES_DESC=	Install additional themes
-
-QT4_USES=	qt:4
-QT4_USE=	qt=moc_build,linguisttools_build,rcc_build,uic_build
-QT4_USE+=	qt=corelib,dbus,gui,network,script,xml
-
-QT5_USES=	qt:5
-QT5_USE=	qt=buildtools_build,linguisttools_build
-QT5_USE+=	qt=core,dbus,gui,network,script,widgets,xml
 
 MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 MPLAYER_QMAKE_OFF=	"DEFINES_DISABLED+=MPLAYER_SUPPORT"
@@ -62,13 +55,6 @@ THEMES_RUN_DEPENDS=	smplayer-themes>=0:multimedia/smplayer-themes
 PORTSCOUT=	site:http://sourceforge.net/projects/smplayer/files/Unstable/releases/
 
 SUB_FILES=	pkg-message
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT4}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|&& $$(QMAKE) $$(QMAKE_OPTS)||; \
