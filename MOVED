@@ -11681,3 +11681,5 @@ devel/libdbusmenu-qt@qt4||2019-03-16|Qt4 deprecation
 devel/libdbusmenu-qt@qt5|devel/libdbusmenu-qt|2019-03-16|Flavor has been removed
 multimedia/gstreamer1-qt@qt4||2019-03-16|Qt4 deprecation
 multimedia/gstreamer1-qt@qt5|multimedia/gstreamer1-qt|2019-03-16|Flavor has been removed
+x11-toolkits/qwt6@qt4||2019-03-16|Qt4 deprecation
+x11-toolkits/qwt6@qt5|x11-toolkits/qwt6|2019-03-16|Flavor has been removed

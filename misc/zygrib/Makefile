@@ -2,7 +2,7 @@
 
 PORTNAME=	zygrib
 DISTVERSION=	8.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.zygrib.org/getfile.php?file=
 DISTNAME=	zyGrib-${DISTVERSION}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libjasper.so:graphics/jasper \
 		libnova.so:astro/libnova \
 		libpng16.so:graphics/png \
 		libproj.so:graphics/proj \
-		libqwt6.so:x11-toolkits/qwt6@qt5
+		libqwt6.so:x11-toolkits/qwt6
 
 USES=		gmake localbase tar:tgz qt:5
 USE_QT=		core gui network printsupport widgets xml buildtools_build qmake_build
