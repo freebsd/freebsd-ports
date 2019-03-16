@@ -1,5 +1,4 @@
 bin/browser
-%%QT4%%bin/silex
 bin/silock
 bin/silodiff
 bin/silofile
