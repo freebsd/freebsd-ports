@@ -10075,8 +10075,6 @@ devel/libkgapi|devel/libkgapi-kde4|2018-04-11|Make room for KDE updates
 finance/libalkimia|finance/alkimia-qt4|2018-04-13|Project renamed
 security/py-zxcvbn-python|security/py-zxcvbn|2018-04-13|Renamed upstream
 devel/py-libusb115|devel/py-libusb1|2018-04-14|Unused and unmaintained upstream
-multimedia/gstreamer1-qt4|multimedia/gstreamer1-qt@qt4|2018-04-14|Moved to a flavoured version
-multimedia/gstreamer1-qt5|multimedia/gstreamer1-qt@qt5|2018-04-14|Moved to a flavoured version
 www/mod_antiloris||2018-04-16|Apache 2.2 End of Life
 www/mod_auth_imap2||2018-04-16|Apache 2.2 End of Life
 www/mod_authn_sasl||2018-04-16|Apache 2.2 End of Life
@@ -11681,3 +11679,5 @@ x11-themes/adwaita@qt4||2019-03-16|Qt4 deprecation
 x11-themes/adwaita@qt5|x11-themes/adwaita-qt|2019-03-16|Flavor has been removed
 devel/libdbusmenu-qt@qt4||2019-03-16|Qt4 deprecation
 devel/libdbusmenu-qt@qt5|devel/libdbusmenu-qt|2019-03-16|Flavor has been removed
+multimedia/gstreamer1-qt@qt4||2019-03-16|Qt4 deprecation
+multimedia/gstreamer1-qt@qt5|multimedia/gstreamer1-qt|2019-03-16|Flavor has been removed
