@@ -1,5 +1,7 @@
 # $FreeBSD$
 
+BROKEN=		Not supported
+PKGNAMESUFFIX=	-qt4
 PORTNAME=	qtcurve
 PORTREVISION=	0
 
