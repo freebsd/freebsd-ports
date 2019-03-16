@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.8.0.a1.20180920
-PORTREVISION=	3
+PORTVERSION=	1.9.0.a1.20180920
+PORTREVISION=	0
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -10,7 +10,7 @@ MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system dev version
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libevent.so:devel/libevent \
@@ -26,6 +26,9 @@ USE_PERL5=	build run
 USE_GNOME=	glib20
 
 CONFLICTS_INSTALL=	rspamd
+
+USERS=		rspamd
+GROUPS=		rspamd
 
 OPTIONS_DEFINE=		GPERF GD CGP TORCH_BLAS
 OPTIONS_DEFINE_amd64=	HYPERSCAN
@@ -60,7 +63,7 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DGIT_ID=${GH_TAGNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
-GH_TAGNAME=	571ce4f
+GH_TAGNAME=	76fafe01d
 
 DEBUG_FLAGS=	-g -O0
 WITH_DEBUG=	yes

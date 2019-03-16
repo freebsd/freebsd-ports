@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190314:
+  AFFECTS: users of mail/rspamd, mail/rspamd-devel
+  AUTHOR: vsevolod@FreeBSD.org
+
+  User and group that rspamd run as are changed from nobody:nobody to
+  rspamd:rspamd. Unless it is clean install you need to execute following
+  command.
+
+  # chown -R rspamd:rspamd /var/db/rspamd /var/log/rspamd /var/run/rspamd
+
 20190311:
   AFFECTS: users of x11/xorg, x11-fonts/mkfontscale, x11-fonts/mkfontdir
   AUTHOR: zeising@FreeBSD.org

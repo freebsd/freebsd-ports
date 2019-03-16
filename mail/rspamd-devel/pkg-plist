@@ -520,8 +520,8 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/js/main.js
 %%DATADIR%%/www/plugins.txt
 %%DATADIR%%/www/react-index.html
-@owner nobody
-@group nobody
+@owner rspamd
+@group rspamd
 @dir /var/db/rspamd
 @dir /var/log/rspamd
 @dir /var/run/rspamd

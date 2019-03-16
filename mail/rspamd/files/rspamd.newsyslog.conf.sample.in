@@ -8,4 +8,4 @@
 # See newsyslog.conf(5) for details.
 #
 # logfilename          [owner:group]    mode count size when  flags [/pid_file] [sig_num]
-/var/log/rspamd/rspamd.log	nobody:nobody	644   7	   *	@T00  JC    /var/run/rspamd/rspamd.pid 30
+/var/log/rspamd/rspamd.log	rspamd:rspamd	644   7	   *	@T00  JC    /var/run/rspamd/rspamd.pid 30
