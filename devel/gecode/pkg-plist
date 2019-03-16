@@ -671,9 +671,6 @@ lib/libgecodeflatzinc.so.%%SHLIB_VERSION%%.0
 lib/libgecodefloat.so
 lib/libgecodefloat.so.%%SHLIB_VERSION%%
 lib/libgecodefloat.so.%%SHLIB_VERSION%%.0
-%%GIST%%lib/libgecodegist.so
-%%GIST%%lib/libgecodegist.so.%%SHLIB_VERSION%%
-%%GIST%%lib/libgecodegist.so.%%SHLIB_VERSION%%.0
 lib/libgecodeint.so
 lib/libgecodeint.so.%%SHLIB_VERSION%%
 lib/libgecodeint.so.%%SHLIB_VERSION%%.0
