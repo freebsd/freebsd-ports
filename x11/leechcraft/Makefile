@@ -3,7 +3,7 @@
 
 PORTNAME=	leechcraft
 PORTVERSION=	0.6.70
-PORTREVISION=	43
+PORTREVISION=	44
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.leechcraft.org/LeechCraft/0.6.70/
 
@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 
-LIB_DEPENDS=	libqwt6.so:x11-toolkits/qwt6@qt4 \
-		libpcre.so:devel/pcre \
+BROKEN=		Missing libqwt6.so:x11-toolkits/qwt6@qt4 
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libboost_program_options.so:devel/boost-libs
 
 #LC_REV=		1526-g7fdb92a

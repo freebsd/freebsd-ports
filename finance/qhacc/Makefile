@@ -3,7 +3,7 @@
 
 PORTNAME=	qhacc
 PORTVERSION=	4.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 
-LIB_DEPENDS=	libgpgme.so:security/gpgme \
-		libqwt6.so:x11-toolkits/qwt6@qt4
+LIB_DEPENDS=	libgpgme.so:security/gpgme 
+BROKEN=		Missing libqwt6.so:x11-toolkits/qwt6@qt4
 
 USES=		compiler:c++11-lib qmake:norecursive qt:4 tar:tgz
 USE_QT=		corelib gui sql moc_build rcc_build uic_build
