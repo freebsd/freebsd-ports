@@ -2,7 +2,7 @@
 
 PORTNAME=	mupen64plus-qt
 DISTVERSION=	1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 
 MAINTAINER=	maintainer@hasting.email
@@ -10,7 +10,7 @@ COMMENT=	Basic launcher for Mupen64Plus
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libquazip5.so:archivers/quazip@qt5
+LIB_DEPENDS=	libquazip5.so:archivers/quazip
 RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-audio-sdl.so:emulators/mupen64plus-audio-sdl \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-input-sdl.so:emulators/mupen64plus-input-sdl \

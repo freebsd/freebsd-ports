@@ -10016,7 +10016,6 @@ www/phpmp||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs t
 www/lionwiki||2018-03-08|Has expired: Unmaintained, all www files wrongly belongs to www user
 databases/php-memcached|databases/pecl-memcached|2018-03-10|Remove duplicate port, use databases/pecl-memcached instead
 emulators/i386-wine-staging|emulators/i386-wine-devel|2018-03-10|Broken for months, abandoned upstream
-archivers/quazip-qt5|archivers/quazip@qt5|2018-03-11|Moved to a flavoured version
 devel/go-json-rest||2018-03-11|Go libraries aren't allowed (GH/ant0ine/go-json-rest)
 devel/libdbusmenu-qt5|devel/libdbusmenu-qt@qt5|2018-03-12|Moved to a flavoured version
 finance/electrum2|finance/electrum|2018-03-13|Has expired: Vulnerable legacy port, please use finance/electrum instead
@@ -11678,3 +11677,5 @@ graphics/fracplanet@qt4||2019-03-16|Qt4 deprecation
 graphics/fracplanet@qt5|graphics/fracplanet|2019-03-16|Flavor has been removed
 graphics/photivo@qt4||2019-03-16|Qt4 deprecation
 graphics/photivo@qt5|graphics/photivo|2019-03-16|Flavor has been removed
+archivers/quazip@qt4||2019-03-16|Qt4 deprecation
+archivers/quazip@qt5|archivers/quazip|2019-03-16|Flavor has been removed
