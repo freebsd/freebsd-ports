@@ -1,23 +1,24 @@
 # $FreeBSD$
 
 PORTNAME=	FreeCAD
-DISTVERSION=	0.17-13541 # git rev-list --count
-DISTVERSIONSUFFIX=	-g9948ee4f1
-PORTREVISION=	6
+DISTVERSION=	0.18
+# use these for bugfixes/snapshots
+# DISTVERSION=	0.18-16093 # git rev-list --count
+# DISTVERSIONSUFFIX=	-g690774c0e
 CATEGORIES=	cad
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
 
 LICENSE=	LGPL20+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyside2-tools>0:devel/pyside2-tools@${PY_FLAVOR} \
 		swig3.0:devel/swig30
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
 		${PY_BOOST} \
-		libpyside2-${PYTHON_VERSION}.so:devel/pyside2@${PY_FLAVOR} \
+		libpyside2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/pyside2@${PY_FLAVOR} \
 		libCoin.so:graphics/Coin \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
@@ -27,12 +28,12 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libboost_thread.so:devel/boost-libs \
 		libarea.so:devel/libarea \
 		libmed.so:french/med \
-		libshiboken2-${PYTHON_VERSION}.so:devel/shiboken2@${PY_FLAVOR} \
+		libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
 		libhdf5.so:science/hdf5
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy-devel>0:graphics/py-pivy-devel@${PY_FLAVOR}
 
 USES=		dos2unix compiler:c++11-lib cmake gl eigen:3 fortran jpeg \
-		localbase:ldflags python:2.7 localbase qt:5
+		localbase:ldflags pkgconfig python:3.6 localbase qt:5
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
@@ -48,7 +49,12 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DHDF5_INCLUDE_DIRS="${LOCALBASE}/include/hdf5-18"	\
 		-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include/hdf5-18"	\
 		-DCMAKE_C_FLAGS="-I${LOCALBASE}/include/hdf5-18"	\
-		-DHDF5_LIBRARIES="-lhdf5-18" -DBUILD_QT5="ON"
+		-DHDF5_LIBRARIES="-lhdf5-18" -DBUILD_QT5="ON" \
+		-DPYTHON_LIBRARY="${PYTHONBASE}/lib/libpython${PYTHON_VER}${PYTHON_ABIVER}.so" \
+		-DPYTHON_INCLUDE_DIR="${PYTHON_INCLUDEDIR}" \
+		-DPYTHON_PACKAGES_PATH="${PYTHON_SITELIBDIR}" \
+		-DPYTHON_EXECUTABLE="${PYTHON_CMD}" \
+		-DBUILD_ASSEMBLY="OFF" -DBUILD_FLAT_MESH="ON"
 CFLAGS+=	-I${LOCALBASE}/include/hdf5-18
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
