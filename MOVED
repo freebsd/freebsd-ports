@@ -10077,7 +10077,6 @@ finance/libalkimia|finance/alkimia-qt4|2018-04-13|Project renamed
 security/py-zxcvbn-python|security/py-zxcvbn|2018-04-13|Renamed upstream
 devel/py-libusb115|devel/py-libusb1|2018-04-14|Unused and unmaintained upstream
 devel/qca-qt5|devel/qca@qt5|2018-04-14|Moved to a flavoured version
-devel/qjson-qt5|devel/qjson@qt5|2018-04-14|Moved to a flavoured version
 multimedia/gstreamer1-qt4|multimedia/gstreamer1-qt@qt4|2018-04-14|Moved to a flavoured version
 multimedia/gstreamer1-qt5|multimedia/gstreamer1-qt@qt5|2018-04-14|Moved to a flavoured version
 www/mod_antiloris||2018-04-16|Apache 2.2 End of Life
@@ -11678,3 +11677,5 @@ net-p2p/transmission@qt4||2019-03-16|Qt4 deprecation
 net-p2p/transmission@qt5|net-p2p/transmission-qt|2019-03-16|Flavor has been removed
 x11-themes/Kvantum@qt4||2019-03-16|Qt4 deprecation
 x11-themes/Kvantum@qt5|2019-03-16|Flavor has been removed
+devel/qjson@qt4||2019-03-16|Qt4 deprecation
+devel/qjson@qt5|devel/qjson|2019-03-16|Flavor has been removed

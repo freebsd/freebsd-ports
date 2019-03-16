@@ -4,7 +4,7 @@ PORTNAME=	amarok
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9.0-277
 DISTVERSIONSUFFIX=	-gd50ecc430c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libfftw3.so:math/fftw3 \
 		liblastfm5.so:audio/liblastfm-qt5 \
-		libqjson-qt5.so:devel/qjson@qt5 \
+		libqjson-qt5.so:devel/qjson \
 		libqca-qt5.so:devel/qca@qt5 \
 		libtag.so:audio/taglib \
 		libtag-extras.so:audio/taglib-extras
