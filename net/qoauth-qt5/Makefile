@@ -4,7 +4,7 @@
 PORTNAME=	qoauth
 PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net devel security
 PKGNAMESUFFIX=	-qt5
 
@@ -14,7 +14,7 @@ COMMENT=	Qt5 support for OAuth-powered network services
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libqca-qt5.so:devel/qca@qt5
+LIB_DEPENDS=	libqca-qt5.so:devel/qca
 
 USES=		compiler:c++11-lang qmake:outsource qt:5
 USE_LDCONFIG=	yes

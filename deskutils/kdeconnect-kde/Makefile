@@ -2,7 +2,7 @@
 
 PORTNAME=	kdeconnect-kde
 DISTVERSION=	1.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/stable/kdeconnect/${DISTVERSION}/src/
 DIST_SUBDIR=	KDE
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfakekey.so:x11/libfakekey \
-		libqca-qt5.so:devel/qca@qt5
+		libqca-qt5.so:devel/qca
 RUN_DEPENDS=	sshpass:security/sshpass \
 		sshfs:sysutils/fusefs-sshfs
 

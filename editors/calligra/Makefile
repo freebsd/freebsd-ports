@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra
 DISTVERSION=	3.1.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 		libpng.so:graphics/png \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
 		libpoppler.so:graphics/poppler \
-		libqca-qt5.so:devel/qca@qt5 \
+		libqca-qt5.so:devel/qca \
 		librevenge-0.0.so:textproc/librevenge \
 		libtiff.so:graphics/tiff \
 		libvisio-0.1.so:textproc/libvisio01 \

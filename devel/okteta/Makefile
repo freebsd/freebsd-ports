@@ -2,7 +2,7 @@
 
 PORTNAME=	okteta
 DISTVERSION=	0.25.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
@@ -10,7 +10,7 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE hex editor
 
-LIB_DEPENDS=	libqca-qt5.so:devel/qca@qt5
+LIB_DEPENDS=	libqca-qt5.so:devel/qca
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 \
 		shared-mime-info tar:xz
