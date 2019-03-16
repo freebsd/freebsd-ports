@@ -3,7 +3,7 @@
   the stage directory and that the game can actually find its assets
   at runtime
 
---- makefile.orig	2018-04-22 07:16:24 UTC
+--- makefile.orig	2019-03-16 12:57:53 UTC
 +++ makefile
 @@ -22,7 +22,7 @@ PO_PROG   = po_creator
  TILE_PROG = tile_creator
@@ -18,11 +18,11 @@
  ifeq ($(DEV),1)
  CFLAGS += -Werror -g
  endif
-+CFLAGS += $(shell sdl-config --cflags)
++CFLAGS += $(shell sdl2-config --cflags)
  
  DEFINES = -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DDEV=$(DEV) -DINSTALL_PATH=\"$(DATA_DIR)\" -DLOCALE_DIR=\"$(LOCALE_DIR)\" -DUNIX=$(UNIX)
  ifndef NO_PAK
-@@ -103,11 +104,11 @@ endif
+@@ -104,11 +105,11 @@ endif
  all : $(PROG) makefile.dep $(ED_PROG) $(PAK_PROG) $(LOCALE_MO) $(PO_PROG)
  
  makefile.dep : src/*/*.h src/*.h
@@ -36,10 +36,10 @@
  
  %.mo: %.po
  	msgfmt -c -o $@ $<
-@@ -148,37 +149,37 @@ ifeq ($(DEV),1)
+@@ -148,37 +149,37 @@ install: all buildpak
+ ifeq ($(DEV),1)
  	echo Cannot install if DEV is set to 1!
  else
- 	$(MAKE) buildpak
 -	mkdir -p $(BIN_DIR)
 -	mkdir -p $(DATA_DIR)
 -	mkdir -p $(DOC_DIR)

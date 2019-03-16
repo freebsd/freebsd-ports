@@ -4,16 +4,16 @@
  	#include <windows.h>
  #endif
  
--#include "SDL/SDL.h"
--#include "SDL/SDL_endian.h"
--#include "SDL/SDL_image.h"
--#include "SDL/SDL_mixer.h"
--#include "SDL/SDL_ttf.h"
-+#include <SDL/SDL.h>
-+#include <SDL/SDL_endian.h>
-+#include <SDL/SDL_image.h>
-+#include <SDL/SDL_mixer.h>
-+#include <SDL/SDL_ttf.h>
+-#include "SDL2/SDL.h"
+-#include "SDL2/SDL_endian.h"
+-#include "SDL2/SDL_image.h"
+-#include "SDL2/SDL_mixer.h"
+-#include "SDL2/SDL_ttf.h"
++#include <SDL.h>
++#include <SDL_endian.h>
++#include <SDL_image.h>
++#include <SDL_mixer.h>
++#include <SDL_ttf.h>
  
  #include "structs.h"
  #include "i18n.h"
