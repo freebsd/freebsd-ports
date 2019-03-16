@@ -3,6 +3,7 @@
 
 PORTNAME=	kaffeine
 DISTVERSION=	2.0.16-2
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 

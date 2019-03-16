@@ -304,13 +304,13 @@ paths_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/qtpaths
 pixeltool_PORT=		graphics/${_QT_RELNAME}-pixeltool
 pixeltool_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/pixeltool
 
-phonon_PORT=		multimedia/phonon@${_QT_RELNAME}
+phonon_PORT=		multimedia/phonon
 phonon_LIB=		libphonon.so
 
-phonon4_PORT=		multimedia/phonon@${_QT_RELNAME}
+phonon4_PORT=		multimedia/phonon
 phonon4_LIB=		libphonon4${_QT_RELNAME}.so
 
-phonon-gst_PORT=	multimedia/phonon-gstreamer@${_QT_RELNAME}
+phonon-gst_PORT=	multimedia/phonon-gstreamer
 phonon-gst_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/phonon_backend/libphonon_gstreamer.so
 
 plugininfo_PORT=	sysutils/${_QT_RELNAME}-qtplugininfo
