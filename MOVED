@@ -10018,8 +10018,6 @@ databases/php-memcached|databases/pecl-memcached|2018-03-10|Remove duplicate por
 emulators/i386-wine-staging|emulators/i386-wine-devel|2018-03-10|Broken for months, abandoned upstream
 archivers/quazip-qt5|archivers/quazip@qt5|2018-03-11|Moved to a flavoured version
 devel/go-json-rest||2018-03-11|Go libraries aren't allowed (GH/ant0ine/go-json-rest)
-security/qtkeychain-qt4|security/qtkeychain@qt4|2018-03-12|Moved to a flavoured version
-security/qtkeychain-qt5|security/qtkeychain@qt5|2018-03-12|Moved to a flavoured version
 devel/libdbusmenu-qt5|devel/libdbusmenu-qt@qt5|2018-03-12|Moved to a flavoured version
 finance/electrum2|finance/electrum|2018-03-13|Has expired: Vulnerable legacy port, please use finance/electrum instead
 math/py-gsl|math/py-pygsl|2018-03-13|Rename to match PyPI naming
@@ -11672,3 +11670,5 @@ x11-fonts/mkfontdir|x11-fonts/mkfontscale|2019-03-11|Merged into one package
 emulators/ppsspp-devel|emulators/ppsspp|2019-03-14|Out of date: use emulators/ppsspp for now
 sysutils/polkit-qt@qt4||2019-03-16|Qt4 deprecation
 sysutils/polkit-qt@qt5|sysutils/polkit-qt|2019-03-16|Flavor has been removed
+security/qtkeychain@qt4||2019-03-16|Qt4 deprecation
+security/qtkeychain@qt5|security/qtkeychain|2019-03-16|Flavor has been removed

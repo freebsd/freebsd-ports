@@ -4,7 +4,7 @@
 PORTNAME=	owncloudclient
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 
 MAINTAINER=	yonas@fizk.net
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
-		libqt5keychain.so:security/qtkeychain@qt5
+		libqt5keychain.so:security/qtkeychain
 
 USES=		cmake:noninja compiler:c++11-lib gmake iconv kde:5 \
 		localbase:ldflags pkgconfig qt:5 sqlite

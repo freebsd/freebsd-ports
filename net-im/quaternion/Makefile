@@ -3,6 +3,7 @@
 PORTNAME=	Quaternion
 DISTVERSION=	0.0.9.4
 DISTVERSIONSUFFIX=	-beta1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -11,7 +12,7 @@ COMMENT=	Matrix IM client based on Qt technologies
 LICENSE=	GPLv3
 LICENSE_FILES=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5 \
+LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain \
 		libsecret-1.so:security/libsecret
 BUILD_DEPENDS=	libqmatrixclient>=0.5:net-im/libqmatrixclient
 
