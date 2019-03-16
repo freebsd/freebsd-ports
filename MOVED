@@ -10226,8 +10226,6 @@ net/syncthing-discosrv|net/syncthing|2018-06-18|Has expired: Included in net/syn
 net/syncthing-inotify|net/syncthing|2018-06-18|Has expired: Included in net/syncthing now
 net/syncthing-cli|net/syncthing|2018-06-18|Has expired: Included in net/syncthing now
 x11-themes/adwaita-common||2018-06-19|Move to flavored version
-x11-themes/adwaita-qt4|x11-themes/adwaita-qt@qt4|2018-06-19|Move to flavored version
-x11-themes/adwaita-qt5|x11-themes/adwaita-qt@qt5|2018-06-19|Move to flavored version
 net-p2p/qbittorrent-nox11|net-p2p/qbittorrent@nox|2018-06-20|Moved to a flavored version
 math/digitizer|graphics/engauge-digitizer|2018-06-20|The previously deleted port math/digitizer is now graphics/engauge-digitizer
 multimedia/qt5-phonon4|multimedia/phonon@qt5|2018-06-21|Moved to a flavored version
@@ -11680,3 +11678,5 @@ devel/qjson@qt4||2019-03-16|Qt4 deprecation
 devel/qjson@qt5|devel/qjson|2019-03-16|Flavor has been removed
 devel/qca@qt4||2019-03-16|Qt4 deprecation
 devel/qca@qt5|devel/qca|2019-03-16|Flavor has been removed
+x11-themes/adwaita@qt4||2019-03-16|Qt4 deprecation
+x11-themes/adwaita@qt5|x11-themes/adwaita-qt|2019-03-16|Flavor has been removed
