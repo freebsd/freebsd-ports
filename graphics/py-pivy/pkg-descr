@@ -1,8 +1,0 @@
-A Python binding for Coin
-
-Pivy is a Coin binding for Python. Coin is a high-level 3D graphics library
-with a C++ Application Programming Interface. Coin uses scene-graph data
-structures to render real-time graphics suitable for mostly all kinds of
-scientific and engineering visualization applications.
-
-WWW: https://pypi.org/project/Pivy/
