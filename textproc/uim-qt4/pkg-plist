@@ -1,7 +1,0 @@
-bin/uim-chardict-qt4
-bin/uim-im-switcher-qt4
-bin/uim-pref-qt4
-bin/uim-toolbar-qt4
-lib/qt4/plugins/inputmethods/libuiminputcontextplugin.so
-libexec/uim-candwin-qt4
-%%DATADIR%%/helperdata/bushu.t

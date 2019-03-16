@@ -1,8 +1,0 @@
-Qt wrapper around the Telepathy Logger client library.
-
-Telepathy is a D-Bus framework for unifying real time communication,
-including instant messaging, voice calls and video calls. It abstracts
-differences between protocols to provide a unified interface for
-applications.
-
-WWW: http://community.kde.org/KTp

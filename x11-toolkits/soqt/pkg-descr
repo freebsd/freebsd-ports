@@ -1,7 +1,0 @@
-SoQt is a Qt GUI component toolkit library for Coin.  It is also compatible
-with SGI and TGS Open Inventor, and the API is based on the API of the
-InventorXt GUI component toolkit.
-
-Qt4 is used in this version.
-
-WWW: https://bitbucket.org/Coin3D/coin/wiki/Home

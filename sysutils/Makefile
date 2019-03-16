@@ -35,7 +35,6 @@
     SUBDIR += anacron
     SUBDIR += and
     SUBDIR += android-file-transfer
-    SUBDIR += android-file-transfer-qt4
     SUBDIR += android-file-transfer-qt5
     SUBDIR += ansible
     SUBDIR += ansible1
@@ -75,7 +74,6 @@
     SUBDIR += backuppc-devel
     SUBDIR += backuppc4
     SUBDIR += backupuser
-    SUBDIR += bacula9-bat
     SUBDIR += bacula9-client
     SUBDIR += bacula9-client-static
     SUBDIR += bacula9-docs
@@ -86,12 +84,9 @@
     SUBDIR += bareos-client-static
     SUBDIR += bareos-docs
     SUBDIR += bareos-server
-    SUBDIR += bareos-traymonitor
-    SUBDIR += bareos16-bat
     SUBDIR += bareos16-client
     SUBDIR += bareos16-client-static
     SUBDIR += bareos16-server
-    SUBDIR += bareos16-traymonitor
     SUBDIR += bastille
     SUBDIR += batmon
     SUBDIR += battmond
@@ -918,7 +913,6 @@
     SUBDIR += pmt
     SUBDIR += policykit
     SUBDIR += policykit-gnome
-    SUBDIR += policykit-qt
     SUBDIR += polkit
     SUBDIR += polkit-gnome
     SUBDIR += polkit-qt
@@ -1073,15 +1067,12 @@
     SUBDIR += qdirstat
     SUBDIR += qjail
     SUBDIR += qlogtools
-    SUBDIR += qpxtool
     SUBDIR += qsudo
-    SUBDIR += qsynergy
     SUBDIR += qt5-qtdiag
     SUBDIR += qt5-qtpaths
     SUBDIR += qt5-qtplugininfo
     SUBDIR += qtpass
     SUBDIR += quicksynergy
-    SUBDIR += qzeitgeist
     SUBDIR += racktables
     SUBDIR += radeontool
     SUBDIR += radeontop
@@ -1238,7 +1229,6 @@
     SUBDIR += scterc
     SUBDIR += sd-agent
     SUBDIR += sdparm
-    SUBDIR += searchmonkey
     SUBDIR += seatools
     SUBDIR += sec
     SUBDIR += serf
@@ -1422,7 +1412,6 @@
     SUBDIR += ufs_copy
     SUBDIR += uhidd
     SUBDIR += uif2iso
-    SUBDIR += unetbootin
     SUBDIR += unieject
     SUBDIR += uniutils
     SUBDIR += unquote

@@ -1,6 +1,0 @@
-kQOAuth is a library written in C++ for Qt that implements the OAuth 1.0
-authentication specification RFC 5849 (http://tools.ietf.org/html/rfc5849).
-Greetings go to Dominik Kapusta for writing the original OAuth library
-using Qt, QOAuth (http://blog.ayoy.net/2009/6/24/oauth).
-
-WWW: https://github.com/kypeli/kQOAuth/

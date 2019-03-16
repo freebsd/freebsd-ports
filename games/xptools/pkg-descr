@@ -1,7 +1,0 @@
-The X-Plane Scenery Tools (XPTools) code base is the source code tree for all
-of the Laminar Research scenery creation/editing tools.  This code does not
-include X-Plane and the "X-Apps" (PlaneMaker, WorldMaker, AirfoilMaker, and
-Briefer).  It does include source to the ac3d x-plane plugin, WED, the various
-tools, and our global scenery generator.
-
-WWW: https://developer.x-plane.com/code/

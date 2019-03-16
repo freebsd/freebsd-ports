@@ -1,9 +1,0 @@
-bin/textroom
-share/applications/textroom.desktop
-share/hunspell/tr.aff
-share/hunspell/tr.dic
-share/pixmaps/textroom.png
-share/sounds/keyany.wav
-share/sounds/keyenter.wav
-%%DATADIR%%/textroom-txr-mime.xml
-%%DATADIR%%/words.txt

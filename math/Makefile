@@ -803,11 +803,8 @@
     SUBDIR += qhull5
     SUBDIR += qposases
     SUBDIR += qrupdate
-    SUBDIR += qtiplot
     SUBDIR += qtiplot-doc
-    SUBDIR += qtoctave
     SUBDIR += qwtplot3d
-    SUBDIR += qwtplot3d-qt4
     SUBDIR += randlib
     SUBDIR += rapid
     SUBDIR += reduce

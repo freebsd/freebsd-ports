@@ -1,9 +1,0 @@
-Stellarium is a free open source planetarium for your computer.  It shows a
-realistic sky in 3D, just like what you see with the naked eye, binoculars,
-or a telescope.  It is being used in planetarium projectors.  Just set your
-coordinates and go.
-
-This is legacy version based on Qt 4.  For the latest Qt 5 based one please
-install `astro/stellarium' port instead.
-
-WWW: http://www.stellarium.org/

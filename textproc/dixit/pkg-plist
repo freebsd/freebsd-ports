@@ -1,4 +1,0 @@
-bin/dixit
-@(%%DB_OWNER%%,%%DB_GROUP%%,%%DB_MODE%%) %%DB_DIR%%/%%_DB_F%%
-%%DB_DIR%%/LICENSE.GPL3
-@dir %%DB_DIR%%

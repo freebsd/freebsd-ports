@@ -1,6 +1,0 @@
-KPDFTool is a Qt based frontend for GhostView and ImageMagick to
-perform basic operations with PDF and PS (PostScript) files such
-as merging or extracting pages, as well as protecting the text
-from copying.
-
-WWW: http://www.kde-apps.org/content/show.php?content=33194

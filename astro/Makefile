@@ -93,7 +93,6 @@
     SUBDIR += py-spacetrack
     SUBDIR += pyephem
     SUBDIR += pyweather
-    SUBDIR += qlandkartegt
     SUBDIR += qmapshack
     SUBDIR += readosm
     SUBDIR += rmap
@@ -108,7 +107,6 @@
     SUBDIR += starplot
     SUBDIR += stars
     SUBDIR += stellarium
-    SUBDIR += stellarium-qt4
     SUBDIR += sunclock
     SUBDIR += sunwait
     SUBDIR += swe
@@ -126,7 +124,6 @@
     SUBDIR += xearth
     SUBDIR += xeartk
     SUBDIR += xephem
-    SUBDIR += xglobe
     SUBDIR += xmoontool
     SUBDIR += xphoon
     SUBDIR += xplanet

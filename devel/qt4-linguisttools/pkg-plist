@@ -1,6 +1,0 @@
-%%QT_BINDIR%%/lconvert
-%%DEBUG%%%%QT_BINDIR%%/lconvert.debug
-%%QT_BINDIR%%/lrelease
-%%DEBUG%%%%QT_BINDIR%%/lrelease.debug
-%%QT_BINDIR%%/lupdate
-%%DEBUG%%%%QT_BINDIR%%/lupdate.debug

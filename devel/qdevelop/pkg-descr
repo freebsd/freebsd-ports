@@ -1,7 +1,0 @@
-QDevelop is a development environment entirely dedicated to Qt4.
-QDevelop is not a Kdevelop like or reduced. It's an independent IDE dedicated
-to Qt and is totally independent of KDevelop. Less complete, but faster,
-light and especially multi-platforms. QDevelop and KDevelop have different
-code sources.
-
-WWW: http://code.google.com/p/qdevelop/

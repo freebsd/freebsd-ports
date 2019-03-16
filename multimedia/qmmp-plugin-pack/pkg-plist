@@ -1,7 +1,0 @@
-%%SRCONV%%lib/qmmp/Effect/libsrconverter.so
-%%FFVIDEO%%lib/qmmp/Engines/libffvideo.so
-%%HISTORY%%lib/qmmp/General/libhistory.so
-%%FFAP%%lib/qmmp/Input/libffap.so
-%%MPG123%%lib/qmmp/Input/libmpg123.so
-%%XMP%%lib/qmmp/Input/libxmp.so
-%%GOOM%%lib/qmmp/Visual/libgoom.so

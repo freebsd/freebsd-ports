@@ -15,7 +15,6 @@
     SUBDIR += libreoffice
     SUBDIR += libtlen
     SUBDIR += mythes
-    SUBDIR += qfaktury
     SUBDIR += qnapi
     SUBDIR += tleenx2
     SUBDIR += trf
