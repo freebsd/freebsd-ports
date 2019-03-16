@@ -2,7 +2,7 @@
 
 PORTNAME=	choqok
 DISTVERSION=	1.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION:R}/src
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libqjson-qt5.so:devel/qjson@qt5 \
 		libqca-qt5.so:devel/qca@qt5 \
 		libqoauth-qt5.so:net/qoauth-qt5 \
-		libtelepathy-qt5.so:net-im/telepathy-qt@qt5
+		libtelepathy-qt5.so:net-im/telepathy-qt
 
 USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
