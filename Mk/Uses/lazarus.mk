@@ -5,14 +5,12 @@
 #
 # Feature:      lazarus
 # Usage:        USES=lazarus
-# Valid ARGS:   (none), gtk2, qt4, qt5, flavors
+# Valid ARGS:   (none), gtk2, qt5, flavors
 #
 # (none)    - This automatically build lazarus-app with gtk2 interface
 #
 # gtk2      - This automatically build lazarus-app with gtk2 interface
 #     
-# qt4       - This automatically build lazarus-app with qt4 interface
-#
 # qt5       - This automatically build lazarus-app with qt5 interface
 #                
 # flavors   - This automatically build lazarus-app with flavors feature
@@ -51,13 +49,13 @@ _INCLUDE_USES_LAZARUS_MK=   yes
 WARNING+=	"DEFAULT_LAZARUS_VER is defined, consider using DEFAULT_VERSIONS=lazarus=${DEFAULT_LAZARUS_VER} instead"
 .endif
 
-.if ${lazarus_ARGS:Ngtk2:Nqt4:Nqt5:Nflavors}
-IGNORE=		Unknown argument for USES=lazarus: ${lazarus_ARGS:Ngtk2:Nqt4:Nqt5:Nflavors}
+.if ${lazarus_ARGS:Ngtk2:Nqt5:Nflavors}
+IGNORE=		Unknown argument for USES=lazarus: ${lazarus_ARGS:Ngtk2:Nqt5:Nflavors}
 .endif
 
 .if !empty(LAZARUS_NO_FLAVORS)
-.if ${LAZARUS_NO_FLAVORS:Ngtk2:Nqt4:Nqt5}
-IGNORE=         Unknown argument for LAZARUS_NO_FLAVORS: ${LAZARUS_NO_FLAVORS:Ngtk2:Nqt4:Nqt5}
+.if ${LAZARUS_NO_FLAVORS:Ngtk2:Nqt5}
+IGNORE=         Unknown argument for LAZARUS_NO_FLAVORS: ${LAZARUS_NO_FLAVORS:Ngtk2:Nqt5}
 .endif
 .endif
 
@@ -80,7 +78,7 @@ BUILDNAME=		${LAZARUS_ARCH}-${OPSYS:tl}
 LCL_UNITS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}
 MKINSTDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/fpmkinst/${BUILDNAME}
 
-LAZARUS_FLAVORS=	gtk2 qt4 qt5
+LAZARUS_FLAVORS=	gtk2 qt5
 
 .if ${lazarus_ARGS:Mflavors}
 .	if defined(LAZARUS_NO_FLAVORS)
@@ -107,12 +105,6 @@ LIB_DEPENDS+=	libglib-2.0.so:devel/glib20 \
 		libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2
 LCL_PLATFORM=	gtk2
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus
-.endif
-
-.if ${lazarus_ARGS:Mqt4} || ${FLAVOR} == qt4
-LIB_DEPENDS+=	libQt4Pas.so:x11-toolkits/qt4pas
-LCL_PLATFORM=	qt
-BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-qt4
 .endif
 
 .if ${lazarus_ARGS:Mqt5} || ${FLAVOR} == qt5

@@ -25,10 +25,9 @@ The Lazarus RAD was installed
    by default:
 
    editors/lazarus
-   editors/lazarus-qt4
    editors/lazarus-qt5
 
-   You can added those ports if you want support for gtk2, qt4 or qt5
+   You can added those ports if you want support for gtk2, or qt5
    interfaces. Please look at net-p2p/transmission-remote-gui like a example of
    how use it
 
