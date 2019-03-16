@@ -10,7 +10,6 @@ share/cmake/Modules/FindXerces.cmake
 @cwd %%APPHOME%%
 bin/animatecamera
 bin/appleseed.cli
-%%STUDIO%%bin/appleseed.studio
 bin/convertmany.py
 bin/convertmeshfile
 bin/dumpmetadata
@@ -100,14 +99,6 @@ lib/libappleseed.so
 %%PORTEXAMPLES%%samples/python/basic/output/preserve.txt
 schemas/project.xsd
 schemas/settings.xsd
-%%STUDIO%%seexpr/clouds/blue_clouds.se
-%%STUDIO%%seexpr/geometric/checkers.se
-%%STUDIO%%seexpr/geometric/dots.se
-%%STUDIO%%seexpr/gradients/horizontal.se
-%%STUDIO%%seexpr/gradients/vertical.se
-%%STUDIO%%seexpr/noise/fbm.se
-%%STUDIO%%seexpr/noise/noise.se
-%%STUDIO%%seexpr/noise/turbulence.se
 settings/appleseed.cli.xml
 settings/appleseed.studio.xml
 settings/appleseed.tools.xml
