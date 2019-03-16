@@ -1,5 +1,4 @@
 %%GTK2%%bin/hotot
-%%QT4%%bin/hotot-qt
 %%GTK2%%%%PYTHON_SITELIBDIR%%/hotot/__init__.py
 %%GTK2%%%%PYTHON_SITELIBDIR%%/hotot/__init__.pyc
 %%GTK2%%%%PYTHON_SITELIBDIR%%/hotot/agent.py
@@ -17,7 +16,6 @@
 %%GTK2%%%%PYTHON_SITELIBDIR%%/hotot/view.py
 %%GTK2%%%%PYTHON_SITELIBDIR%%/hotot/view.pyc
 %%GTK2%%share/applications/hotot.desktop
-%%QT4%%share/applications/hotot-qt.desktop
 share/hotot/_locales/bg/messages.json
 share/hotot/_locales/bg/timestring.js
 share/hotot/_locales/bn/messages.json
