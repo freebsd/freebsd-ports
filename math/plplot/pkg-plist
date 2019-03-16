@@ -19,7 +19,6 @@ include/plplot/plstrm.h
 include/plplot/plxwd.h
 include/plplot/qsastime.h
 include/plplot/qsastimedll.h
-%%QT4%%include/plplot/qt.h
 %%TCLTK%%include/plplot/tclMatrix.h
 %%WXGTK%%include/plplot/wxPLplot_nanosec.h
 %%WXGTK%%include/plplot/wxPLplotstream.h
@@ -51,9 +50,6 @@ lib/libplplotcxx.so.13.0.0
 %%FORTRAN%%lib/libplplotf95.so
 %%FORTRAN%%lib/libplplotf95.so.13
 %%FORTRAN%%lib/libplplotf95.so.13.0.0
-%%QT4%%lib/libplplotqt.so
-%%QT4%%lib/libplplotqt.so.2
-%%QT4%%lib/libplplotqt.so.2.0.2
 %%TCLTK%%lib/libplplottcltk.so
 %%TCLTK%%lib/libplplottcltk.so.13
 %%TCLTK%%lib/libplplottcltk.so.13.0.0
@@ -71,7 +67,6 @@ lib/libqsastime.so.0.0.1
 %%TCLTK%%lib/libtclmatrix.so.10.3.0
 libdata/pkgconfig/plplot-c++.pc
 %%FORTRAN%%libdata/pkgconfig/plplot-f95.pc
-%%QT4%%libdata/pkgconfig/plplot-qt.pc
 %%TCLTK%%libdata/pkgconfig/plplot-tcl.pc
 %%TCLTK%%libdata/pkgconfig/plplot-tcl_Main.pc
 %%WXGTK%%libdata/pkgconfig/plplot-wxwidgets.pc
@@ -91,8 +86,6 @@ lib/plplot/drivers/ps.driver_info
 lib/plplot/drivers/ps.so
 lib/plplot/drivers/psttf.driver_info
 lib/plplot/drivers/psttf.so
-%%QT4%%lib/plplot/drivers/qt.driver_info
-%%QT4%%lib/plplot/drivers/qt.so
 lib/plplot/drivers/svg.driver_info
 lib/plplot/drivers/svg.so
 %%TCLTK%%lib/plplot/drivers/tk.driver_info
@@ -148,11 +141,7 @@ man/man1/pltek.1.gz
 %%DATADIR%%/examples/Makefile
 %%DATADIR%%/examples/c++/CMakeLists.txt
 %%DATADIR%%/examples/c++/Makefile
-%%QT4%%%%DATADIR%%/examples/c++/README.qt_example
 %%DATADIR%%/examples/c++/plc++demos.h
-%%QT4%%%%DATADIR%%/examples/c++/qt_PlotWindow.cpp
-%%QT4%%%%DATADIR%%/examples/c++/qt_PlotWindow.h
-%%QT4%%%%DATADIR%%/examples/c++/qt_example.cpp
 %%WXGTK%%%%DATADIR%%/examples/c++/wxPLplotDemo.cpp
 %%DATADIR%%/examples/c++/x00.cc
 %%DATADIR%%/examples/c++/x01.cc
@@ -233,7 +222,6 @@ man/man1/pltek.1.gz
 %%DATADIR%%/examples/c/x33c.c
 %%DATADIR%%/examples/c/x34c.c
 %%DATADIR%%/examples/cmake/modules/language_support.cmake
-%%QT4%%%%DATADIR%%/examples/cmake/modules/ndp_UseQt4.cmake
 %%DATADIR%%/examples/cmake/modules/pkg-config.cmake
 %%DATADIR%%/examples/cmake/modules/plplot_configure.cmake
 %%DATADIR%%/examples/cmake/modules/plplot_functions.cmake
