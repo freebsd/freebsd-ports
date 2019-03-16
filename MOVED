@@ -11690,3 +11690,4 @@ multimedia/phonon-designerplugin@qt4||2019-03-16|Qt4 deprecation
 multimedia/phonon-designerplugin@qt5|multimedia/phonon-designerplugin|2019-03-16|Flavor has been removed
 multimedia/phonon-gstreamer@qt4||2019-03-16|Qt4 deprecation
 multimedia/phonon-gstreamer@qt5|multimedia/phonon-gstreamer|2019-03-16|Flavor has been removed
+devel/git-cola||2019-03-16|Removed
