@@ -248,7 +248,6 @@
     SUBDIR += bzr
     SUBDIR += bzr-builder
     SUBDIR += bzr-colo
-    SUBDIR += bzr-explorer
     SUBDIR += bzr-externals
     SUBDIR += bzr-fastimport
     SUBDIR += bzr-git
