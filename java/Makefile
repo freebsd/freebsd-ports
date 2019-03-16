@@ -9,7 +9,6 @@
     SUBDIR += bluej
     SUBDIR += bootstrap-openjdk6
     SUBDIR += bootstrap-openjdk8
-    SUBDIR += bootstrap-openjdk11
     SUBDIR += bouncycastle
     SUBDIR += bouncycastle15
     SUBDIR += castor
