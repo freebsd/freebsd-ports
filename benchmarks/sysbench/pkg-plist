@@ -57,6 +57,7 @@ bin/sysbench
 %%DATADIR%%/tests/t/help_drv_pgsql.t
 %%DATADIR%%/tests/t/opt_help.t
 %%DATADIR%%/tests/t/opt_histogram.t
+%%DATADIR%%/tests/t/opt_rate.t
 %%DATADIR%%/tests/t/opt_report_checkpoints.t
 %%DATADIR%%/tests/t/opt_report_interval.t
 %%DATADIR%%/tests/t/opt_version.t
