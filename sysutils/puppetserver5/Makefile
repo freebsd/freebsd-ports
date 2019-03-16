@@ -11,6 +11,9 @@ COMMENT=	Puppet Server running in the JVM
 
 LICENSE=	APACHE20
 
+BROKEN_FreeBSD_12=	Does not start. See PR 233766
+BROKEN_FreeBSD_13=	Does not start. See PR 233766
+
 RUN_DEPENDS=	bash>=0:shells/bash \
 		puppet5>=0:sysutils/puppet5
 
