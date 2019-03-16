@@ -9,4 +9,4 @@ lib/cmake/mkldnn/mkldnn-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mkldnn/mkldnn-targets.cmake
 lib/libmkldnn.so
 lib/libmkldnn.so.0
-lib/libmkldnn.so.0.18.0.0
+lib/libmkldnn.so.0.18.1.0
