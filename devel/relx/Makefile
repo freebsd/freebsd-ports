@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	relx
-PORTVERSION=	3.28.0
+PORTVERSION=	3.29.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
@@ -27,11 +27,11 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 USE_GITHUB=	yes
 GH_ACCOUNT=	erlware
 
-CACHE_VERSION=	21
+CACHE_VERSION=	22
 # from rebar.config
-REBAR_DEPS=	bbmustache-1.5.0 \
+REBAR_DEPS=	bbmustache-1.6.1 \
 		cf-0.3.1 \
-		erlware_commons-1.2.0 \
+		erlware_commons-1.3.0 \
 		getopt-1.0.1 \
 		providers-1.7.0
 
