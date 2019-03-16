@@ -1,6 +1,6 @@
---- src/Gui/CMakeLists.txt.orig	2019-02-08 22:48:01 UTC
+--- src/Gui/CMakeLists.txt.orig	2019-03-15 18:36:43 UTC
 +++ src/Gui/CMakeLists.txt
-@@ -57,7 +57,7 @@ else(MSVC)
+@@ -71,7 +71,7 @@ else(MSVC)
          FreeCADApp
          ${COIN3D_LIBRARIES}
          ${Boost_LIBRARIES}
