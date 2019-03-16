@@ -76,7 +76,6 @@
     SUBDIR += kile
     SUBDIR += komodo-edit
     SUBDIR += lazarus
-    SUBDIR += lazarus-qt4
     SUBDIR += lazarus-qt5
     SUBDIR += le
     SUBDIR += leafpad
