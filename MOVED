@@ -11672,3 +11672,5 @@ sysutils/polkit-qt@qt4||2019-03-16|Qt4 deprecation
 sysutils/polkit-qt@qt5|sysutils/polkit-qt|2019-03-16|Flavor has been removed
 security/qtkeychain@qt4||2019-03-16|Qt4 deprecation
 security/qtkeychain@qt5|security/qtkeychain|2019-03-16|Flavor has been removed
+deskutils/znotes@qt4||2019-03-16|Qt4 deprecation
+deskutils/znotes@qt5|deskutils/znotes|2019-03-16|Flavor has been removed
