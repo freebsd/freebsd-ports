@@ -1274,8 +1274,6 @@ lib/libwt.so.41
 %%EXAMPLES%%lib/Wt/examples/wt-homepage/WtHome.h
 %%EXAMPLES%%lib/Wt/examples/wtwithqt/CMakeLists.txt
 %%EXAMPLES%%lib/Wt/examples/wtwithqt/hello.C
-%%QT4_EXAMPLES%%lib/Wt/examples/wtwithqt/helloqt
-%%QT4_EXAMPLES%%lib/Wt/examples/wtwithqt/helloqt.wt
 %%EXAMPLES%%lib/Wt/examples/wtwithqt/HelloApplication.h
 %%EXAMPLES%%lib/Wt/examples/wtwithqt/lib/CMakeLists.txt
 %%EXAMPLES%%lib/Wt/examples/wtwithqt/lib/DispatchThread.C
