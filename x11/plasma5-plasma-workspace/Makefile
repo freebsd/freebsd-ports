@@ -2,13 +2,14 @@
 
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 Plasma workspace
 
 LIB_DEPENDS=	libcln.so:math/cln \
-		libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
+		libdbusmenu-qt5.so:devel/libdbusmenu-qt \
 		libqalculate.so:math/libqalculate \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-util.so:x11/xcb-util
