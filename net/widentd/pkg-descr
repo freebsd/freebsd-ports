@@ -1,4 +1,4 @@
-widentd is a small ident/RFC1413 deamon which provides a fixed (and fake)
+widentd is a small ident/RFC1413 daemon which provides a fixed (and fake)
 auth reply, regardless of the IP/port pair quoted.
 
 It's intended use is on firewalls, and NAT machines - where you may

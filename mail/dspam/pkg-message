@@ -3,7 +3,7 @@
 %%WebUI%%  The WebUI files have been installed to:
 %%WebUI%%    %%WWWDIR%%
 %%WebUI%%
-%%DAEMON%%  To enable the dspam deamon set dspam_enable="YES" in:
+%%DAEMON%%  To enable the dspam daemon set dspam_enable="YES" in:
 %%DAEMON%%    /etc/rc.conf
 %%DAEMON%%
   Additional setup instructions can be found at:

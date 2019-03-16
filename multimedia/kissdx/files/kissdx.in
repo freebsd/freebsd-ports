@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Script to start and stop the KiSS DX deamon, using the rc.subr functionality
+# Script to start and stop the KiSS DX daemon, using the rc.subr functionality
 #
 # Add the following lines to /etc/rc.conf to enable this service at boot time:
 #
