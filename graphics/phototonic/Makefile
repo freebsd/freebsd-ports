@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
-USES=		desktop-file-utils gettext qmake qt:5
+USES=		compiler:c++11-lang desktop-file-utils gettext gl qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	oferkv
 USE_GL=		gl
