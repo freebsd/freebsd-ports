@@ -3,7 +3,7 @@
 
 PORTNAME=	mp
 DISTVERSION=	5.2.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.com/download/mp/
 
@@ -30,7 +30,7 @@ DATADIR=	${PREFIX}/share/mp-5
 
 OPTIONS_DEFINE=		DOCS NLS PCRE
 OPTIONS_SINGLE=		GUI
-OPTIONS_SINGLE_GUI=	ANSI GTK2 GTK3 NCURSES QT4 QT5
+OPTIONS_SINGLE_GUI=	ANSI GTK2 GTK3 NCURSES QT5
 OPTIONS_DEFAULT=	NCURSES PCRE
 OPTIONS_SUB=		yes
 
@@ -52,11 +52,6 @@ GTK3_CONFIGURE_ON=	--with-gtk=3
 NCURSES_USES=		ncurses
 NCURSES_CONFIGURE_WITH=	curses
 NCURSES_CFLAGS=		-I${NCURSESBASE}/include
-
-QT4_USES=		qmake:no_env qt:4
-QT4_USE=		qt=corelib,gui,moc_build \
-			xorg=x11
-QT4_CONFIGURE_WITH=	qt4
 
 QT5_USES=		compiler:c++11-lang qmake:no_env qt:5
 QT5_USE=		cxxstd=-std=c++11 \
@@ -83,11 +78,6 @@ CONFIGURE_ARGS+=	--without-gtk
 DESKTOP_ENTRIES="Minimum Profit" "" "mp" "mp-5" "Utility;TextEditor;Qt;" ""
 CONFIGURE_ARGS+=--with-moc=${MOC}
 CONFIGURE_ENV+=	CCLINK="${CXX}"
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
 .endif
 
 post-patch:
