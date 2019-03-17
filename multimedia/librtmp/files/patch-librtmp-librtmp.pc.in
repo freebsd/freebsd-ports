@@ -1,5 +1,5 @@
---- librtmp.pc.in.orig	2016-02-29 01:15:13 UTC
-+++ librtmp.pc.in
+--- librtmp/librtmp.pc.in.orig	2016-02-29 01:15:13 UTC
++++ librtmp/librtmp.pc.in
 @@ -8,6 +8,6 @@ Description: RTMP implementation
  Version: @VERSION@
  Requires: @CRYPTO_REQ@
