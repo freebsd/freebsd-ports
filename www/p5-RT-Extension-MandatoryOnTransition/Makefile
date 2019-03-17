@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RT-Extension-MandatoryOnTransition
-DISTVERSION=	0.13
+DISTVERSION=	0.18
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,7 @@ COMMENT=	Extension to require core and ticket custom fields on status changes
 LICENSE=	GPLv2
 
 OPTIONS_SINGLE=                 RTVERSION
-OPTIONS_SINGLE_RTVERSION=       RT40 RT42 RT44
-RT40_DESC=                      Install for rt-4.0.x (www/rt40)
+OPTIONS_SINGLE_RTVERSION=       RT42 RT44
 RT42_DESC=                      Install for rt-4.2.x (www/rt42)
 RT44_DESC=                      Install for rt-4.4.x (www/rt44)
 OPTIONS_DEFAULT=                RT44
@@ -41,7 +40,7 @@ USE_PERL5=	configure
 PLIST_SUB+=	RT_VER=${RT_VER}
 
 # Note: You can install using an arbitrary $PREFIX but only if it
-# matches the $PREFIX used to install www/rt{40,42,44}.  Hence ignore
+# matches the $PREFIX used to install www/rt{42,44}.  Hence ignore
 # $PREFIX in the environment and inherit settings from RT.pm
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
