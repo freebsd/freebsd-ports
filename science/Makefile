@@ -226,6 +226,7 @@
     SUBDIR += py-chempy
     SUBDIR += py-coards
     SUBDIR += py-dlib
+    SUBDIR += py-geometer
     SUBDIR += py-gpaw
     SUBDIR += py-gsd
     SUBDIR += py-h5py
