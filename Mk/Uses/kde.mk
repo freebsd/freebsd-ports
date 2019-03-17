@@ -414,8 +414,6 @@ notifications_LIB=	libKF5Notifications.so
 notifyconfig_PORT=	devel/kf5-knotifyconfig
 notifyconfig_LIB=	libKF5NotifyConfig.so
 
-# This is a KF5 port used by KDE4 as well, but it's architecture-independent
-# and only contains icons.
 oxygen-icons5_PORT=	x11-themes/kf5-oxygen-icons5
 oxygen-icons5_PATH=	${KDE_PREFIX}/share/icons/oxygen/index.theme
 oxygen-icons5_TYPE=	run
