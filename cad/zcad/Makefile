@@ -45,10 +45,6 @@ OPTIONS_DEFINE=		DOCS
 MAKE_ENV+=	GUI=gtk2
 .endif
 
-.if ${FLAVOR:Uqt4:Mqt4}
-MAKE_ENV+=	GUI=qt
-.endif
-
 post-patch:
 	@${EGREP} -lR 'IFN?DEF LINUX' ${BUILD_WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -E '/IFN?DEF LINUX/s,LINUX,UNIX,g'
