@@ -11,6 +11,8 @@ COMMENT=	Formatter for D source code
 
 LICENSE=	BSL
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
 		rdmd:lang/dlang-tools \
