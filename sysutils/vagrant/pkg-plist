@@ -1,5 +1,4 @@
 bin/vagrant
-%%GEMS_DIR%%build_info/vagrant-%%PORTVERSION%%.info
 %%GEMS_DIR%%cache/vagrant-%%PORTVERSION%%.gem
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.travis.yml
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.vimrc

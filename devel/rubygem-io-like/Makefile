@@ -51,7 +51,7 @@ RAKE_BIN=	${LOCALBASE}/bin/rake
 
 GEMFILES=	${GEM_NAME}.gem
 
-RUBYGEM_ARGS=-l --no-update-sources --no-ri --install-dir ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} --ignore-dependencies --bindir=${STAGEDIR}${PREFIX}/bin
+RUBYGEM_ARGS=	-l --no-update-sources --install-dir ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} --ignore-dependencies --bindir=${STAGEDIR}${PREFIX}/bin
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-ruby-1.9-temp
 
@@ -59,6 +59,14 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	rubygem-allison>=0:devel/rubygem-allison
 DOCS_VARS_OFF=		RUBYGEM_ARGS+=--no-rdoc
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
+RUBYGEM_ARGS+=	--document rdoc,ri
+.else
+RUBYGEM_ARGS+=	--no-document
+.endif
 
 post-patch:
 .for l in 1.8.6 1.8.7 1.9.2 1.9.3
@@ -72,7 +80,7 @@ do-build:
 	@cd ${BUILD_WRKSRC} && ${RAKE_BIN}
 
 do-install:
-	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} pkg/${GEMFILES} -- --build-args ${CONFIGURE_ARGS})
+	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} pkg/${GEMFILES} -- ${CONFIGURE_ARGS})
 	@${RM} -r ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}/build_info
 	@${RMDIR} ${STAGEDIR}/${PREFIX}/${GEMS_BASE_DIR}/extensions
 
