@@ -1,0 +1,9 @@
+Veusz is a GUI scientific plotting and graphing package. It
+is designed to produce publication-ready Postscript or PDF
+output. SVG, EMF and bitmap formats export are also supported.
+The program runs under Unix/Linux, Windows or Mac OS X, and
+binaries are provided. Data can be read from text, CSV or FITS
+files, and data can be manipulated or examined from within the
+application.
+
+WWW: http://home.gna.org/veusz/
