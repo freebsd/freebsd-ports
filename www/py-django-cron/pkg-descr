@@ -1,0 +1,12 @@
+Django-cron lets you run Django/Python code on a recurring basis providing
+basic plumbing to track and execute tasks. The two most common ways in which
+most people go about this is either writing custom python scripts or a
+management command per cron (leads to too many management commands).
+
+Along with that some mechanism to track success, failure etc. is also usually
+necessary.
+
+This app solves both issues to a reasonable extent. This is by no means a
+replacement for queues like Celery etc.
+
+WWW: https://github.com/tivix/django-cron
