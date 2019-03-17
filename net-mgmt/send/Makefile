@@ -18,7 +18,6 @@ LIB_DEPENDS=	libdnet.so:net/libdnet
 USES=		gmake readline ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrs-allbsd
-GH_PROJECT=	send
 USE_RC_SUBR=	sendd
 
 SUB_FILES=	pkg-message
