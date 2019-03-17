@@ -252,7 +252,7 @@ _USE_KDEPIM5_ALL=	akonadicontacts akonadiimportwizard akonadimime akonadinotes \
 			kalarm kontact kmail account-wizard mbox-importer \
 			akonadiconsole akregator grantlee-editor kaddressbook \
 			kalarm kmail-account-wizard kmail knotes kontact \
-			korganizer mbox-importer pim-data-exporter
+			korganizer pim-data-exporter
 
 _USE_KDE5_ALL=		${_USE_FRAMEWORKS_ALL} \
 			${_USE_PLASMA_ALL} \
