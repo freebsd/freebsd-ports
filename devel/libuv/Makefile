@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libuv
-PORTVERSION=	1.26.0
+PORTVERSION=	1.27.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-#MASTER_SITES=	http://dist.libuv.org/dist/v${PORTVERSION}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Multi-platform support library with a focus on asynchronous I/O
