@@ -1,6 +1,6 @@
---- uxpgnt.c.orig	2017-03-16 03:33:18.000000000 +0000
-+++ uxpgnt.c	2017-03-16 03:33:18.000000000 +0000
-@@ -270,7 +270,7 @@
+--- unix/uxpgnt.c.orig	2019-03-16 12:26:38 UTC
++++ unix/uxpgnt.c
+@@ -241,7 +241,7 @@ void pageant_fork_and_print_env(bool retain_tty)
          /* Get out of our previous process group, to avoid being
           * blasted by passing signals. But keep our controlling tty,
           * so we can keep checking to see if we still have one. */
