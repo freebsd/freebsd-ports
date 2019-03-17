@@ -56,7 +56,7 @@ GH_TAGNAME=	a664001 d250816:volk
 # volk/lib/volk_cpu.c:62: error: can't find a register in class 'BREG' while reloading 'asm'
 # volk/lib/volk_cpu.c:62: error: 'asm' operand has impossible constraints
 USES=		cmake compiler:c11 desktop-file-utils fortran gnome iconv \
-		perl5 pkgconfig pyqt:5 python qt:5 shared-mime-info shebangfix
+		perl5 pkgconfig pyqt:5 python:2.7 qt:5 shared-mime-info shebangfix
 SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-ctrlport-monitor \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-perf-monitorx
