@@ -3,7 +3,7 @@
 
 PORTNAME=	allacrost
 PORTVERSION=	1.0.2
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-demo/${PORTVERSION}
 DISTNAME=	${PORTNAME}_demo_source_${PORTVERSION}
@@ -25,7 +25,7 @@ USE_SDL=	sdl ttf net
 USE_GL=		gl glu
 USE_XORG=	x11
 
-CONFIGURE_ARGS=	--datadir=${DATADIR}
+CONFIGURE_ARGS=	--datadir=${DATADIR} --enable-editor=no
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 CXXFLAGS+=	-Wno-c++11-narrowing
@@ -36,22 +36,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS_DEFINE=	EDITOR DOCS
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
-
-EDITOR_DESC=		Enable editor
-
-EDITOR_USES=		qmake:no_env qt:4
-EDITOR_USE=		QT=corelib,gui,moc_build,opengl,qt3support
-EDITOR_CONFIGURE_ON=	--enable-editor=yes
-EDITOR_CONFIGURE_OFF=	--enable-editor=no
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEDITOR}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/include/|-I${LOCALBASE}/include/|g' \
@@ -64,12 +50,6 @@ post-patch:
 		/qt4_libdirs/ s|".*"|"${QT_LIBDIR}"|; /test/ s|==|=| ; \
 		s/-llua /-llua-${LUA_VER} /g;' \
 		${WRKSRC}/configure
-
-post-patch-EDITOR-on:
-	@${REINPLACE_CMD} -e '/^INCLUDES = / s|=|= -I${QT_INCDIR}/QtGui \
-		-I${QT_INCDIR}/QtOpenGL -I${QT_INCDIR}/Qt3Support \
-		-I${QT_INCDIR}/QtCore -I${QT_INCDIR}|' \
-		${WRKSRC}/Makefile.in
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
