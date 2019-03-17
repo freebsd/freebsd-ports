@@ -1,0 +1,21 @@
+HTTP::AnyUA provides a small wrapper for unifying the programming interfaces of
+several different actual user agents (HTTP clients) under one familiar
+interface.
+
+Rather than providing yet another programming interface for you to learn,
+HTTP::AnyUA follows the HTTP::Tiny interface. This also means that you can plug
+in any supported HTTP client (LWP::UserAgent, Furl, etc.) and use it as if it
+were HTTP::Tiny.
+
+Unfortunately, many modules on CPAN are hardcoded to work with specific HTTP
+clients, leaving the end user unable to use the HTTP client that would be best
+for them. Although the end user won't -- or at least doesn't need to -- use
+HTTP::AnyUA directly, they will benefit from client choice if their third-party
+modules use HTTP::AnyUA or something like it.
+
+The primary goal of HTTP::AnyUA is to make it easy for module developers to
+write HTTP code once that can work with any HTTP client the end user may decide
+to plug in. A secondary goal is to make it easy for anyone to add support for
+new or yet-unsupported user agents.
+
+WWW: https://metacpan.org/release/HTTP-AnyUA
