@@ -43,7 +43,7 @@ USE_GNOME=	pango intltool libxml2 introspection
 USE_KDE=	ecm
 USE_XORG=	x11 xext xkbfile sm ice
 USE_LDCONFIG=	yes
-USES=		compiler:c++11-lang gnome qt:4 tar:xz cmake:noninja desktop-file-utils \
+USES=		compiler:c++11-lang gnome tar:xz cmake:noninja desktop-file-utils \
 		gettext-tools:build,run gettext-runtime iconv:wchar_t \
 		kde:5 pkgconfig shared-mime-info compiler:c++14-lang
 INSTALLS_ICONS=	yes
