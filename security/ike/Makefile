@@ -3,7 +3,7 @@
 
 PORTNAME=	ike
 PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	https://www.shrew.net/download/ike/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release
@@ -24,10 +24,9 @@ CMAKE_ARGS=	-DETCDIR:PATH="${PREFIX}/etc" \
 		-DLIBDIR:PATH="${PREFIX}/lib" \
 		-DMANDIR:PATH="${PREFIX}/man"
 
-OPTIONS_DEFINE=	QTGUI NATT LDAP DEBUG
+OPTIONS_DEFINE=	NATT LDAP DEBUG
 OPTIONS_SUB=	yes
 
-QTGUI_DESC=	Enable QT client front end applications
 NATT_DESC=	Enable NAT-Traversal
 LDAP_DESC=	Enable LDAP XAuth daemon support
 
@@ -36,16 +35,6 @@ DEBUG_CMAKE_ON=	-DDEBUG=YES
 LDAP_USE=	OPENLDAP=yes
 LDAP_CMAKE_ON=	-DLDAP=YES
 NATT_CMAKE_ON=	-DNATT=YES
-QTGUI_CMAKE_ON=	-DQTGUI=YES
-QTGUI_USES=	qt:4
-QTGUI_USE=	QT=gui,moc_build,qmake_build,rcc_build,uic_build
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQTGUI}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 post-install:
 	@if ! ${SYSCTL} -a | ${GREP} -q ipsec; then \

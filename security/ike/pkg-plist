@@ -1,8 +1,6 @@
 @sample etc/iked.conf.sample
 bin/ikec
 sbin/iked
-%%QTGUI%%bin/qikea
-%%QTGUI%%bin/qikec
 lib/libss_idb.so
 lib/libss_idb.so.2.2.1
 lib/libss_ike.so
@@ -16,7 +14,5 @@ lib/libss_log.so.2.2.1
 lib/libss_pfk.so
 lib/libss_pfk.so.2.2.1
 man/man1/ikec.1.gz
-%%QTGUI%%man/man1/qikea.1.gz
-%%QTGUI%%man/man1/qikec.1.gz
 man/man5/iked.conf.5.gz
 man/man8/iked.8.gz
