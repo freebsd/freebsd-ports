@@ -1,5 +1,4 @@
 bin/valyriatear
-%%EDITOR%%bin/vt-editor
 share/appdata/valyriatear.appdata.xml
 share/applications/valyriatear.desktop
 share/icons/hicolor/48x48/apps/valyriatear.png
