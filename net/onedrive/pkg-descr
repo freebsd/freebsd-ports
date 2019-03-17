@@ -1,0 +1,15 @@
+A complete tool to interact with OneDrive on Linux.
+Built following the UNIX philosophy.
+
+Features:
+    State caching
+    Real-Time file monitoring with Inotify
+    Resumable uploads
+    Support OneDrive for Business (part of Office 365)
+    Shared folders (not Business)
+
+What's missing:
+    While local changes are uploaded right away, remote changes are delayed
+    No GUI
+
+WWW: https://github.com/skilion/onedrive

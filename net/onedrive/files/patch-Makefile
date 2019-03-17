@@ -1,0 +1,43 @@
+--- Makefile.orig	2018-09-09 20:14:01 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+ DC = dmd
+-DFLAGS = -g -ofonedrive -O -L-lcurl -L-lsqlite3 -L-ldl -J.
++DFLAGS = -g -ofonedrive -O -L-lcurl -L-lsqlite3 -L-ldl -L-linotify -J.
+ PREFIX = /usr/local
+ 
+ SOURCES = \
+@@ -14,26 +14,19 @@ SOURCES = \
+ 	src/sqlite.d \
+ 	src/sync.d \
+ 	src/upload.d \
+-	src/util.d
++	src/util.d \
++	src/freebsd_inotify.d
+ 
+-all: onedrive onedrive.service
++all: onedrive
+ 
+ clean:
+-	rm -f onedrive onedrive.o onedrive.service
++	rm -f onedrive onedrive.o
+ 
+-install: all
+-	install -D onedrive $(DESTDIR)$(PREFIX)/bin/onedrive
+-	install -D -m 644 onedrive.service $(DESTDIR)/usr/lib/systemd/user/onedrive.service
++# install: all
++#	install -D onedrive $(DESTDIR)$(PREFIX)/bin/onedrive
+ 
+ onedrive: version $(SOURCES)
+ 	$(DC) $(DFLAGS) $(SOURCES)
+ 
+-onedrive.service:
+-	sed "s|@PREFIX@|$(PREFIX)|g" onedrive.service.in > onedrive.service
+-
+ uninstall:
+ 	rm -f $(DESTDIR)$(PREFIX)/bin/onedrive
+-	rm -f $(DESTDIR)/usr/lib/systemd/user/onedrive.service
+-
+-version: .git/HEAD .git/index
+-	echo $(shell git describe --tags) >version
+\ No newline at end of file
