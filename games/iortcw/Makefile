@@ -16,40 +16,49 @@ NOT_FOR_ARCHS_REASON=	fails to configure: Architecture not supported
 
 BUILD_DEPENDS=	opusfile>0:audio/opusfile
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libopus.so:audio/opus \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libopus.so:audio/opus
 
-USES=		jpeg pkgconfig gmake
+USES=		gmake jpeg pkgconfig
+USE_GITHUB=	yes
 USE_GL=		gl
 USE_SDL=	sdl2
-
-USE_GITHUB=	yes
 
 WOLFDIR=	"libexec/${PORTNAME}"
 MAKE_ARGS=	BINDIR="${STAGEDIR}${PREFIX}/bin" \
 		COPYDIR="${STAGEDIR}${PREFIX}/${WOLFDIR}"
 
-PLIST_SUB=	ARCH="${ARCH}" WOLFDIR="${WOLFDIR}"
+PLIST_SUB=	ARCH="${ARCH}" \
+		WOLFDIR="${WOLFDIR}"
 
-SUB_FILES=	iowolfsp iowolfmp iowolfded pkg-message
-SUB_LIST=	ARCH="${ARCH}" WOLFDIR="${PREFIX}/${WOLFDIR}" \
-		DISTVERSION="${DISTVERSION}"
+SUB_FILES=	iowolfded iowolfmp iowolfsp pkg-message
+SUB_LIST=	ARCH="${ARCH}" \
+		DISTVERSION="${DISTVERSION}" \
+		WOLFDIR="${PREFIX}/${WOLFDIR}"
 
-OPTIONS_DEFINE=	MP SP
+OPTIONS_DEFINE=		MP SP
 OPTIONS_DEFAULT=	MP SP
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
 MP_DESC=	Build multiplayer support
 SP_DESC=	Build singleplayer support
 
-SP_ALL_TARGET=	sp
-SP_DESKTOP_ENTRIES=	"Return to Castle Wolfenstein" "Return to Castle Wolfenstein" \
-			"${DATADIR}/wolf512.png" "iowolfsp" "Game;" false
+SP_ALL_TARGET=		sp
+SP_DESKTOP_ENTRIES=	"Return to Castle Wolfenstein" \
+			"Return to Castle Wolfenstein" \
+			"${DATADIR}/wolf512.png" \
+			"iowolfsp" \
+			"Game;" \
+			false
 SP_INSTALL_TARGET=	sp-install
 
-MP_ALL_TARGET=	mp
-MP_DESKTOP_ENTRIES=	"Return to Castle Wolfenstein (MP)" "Return to Castle Wolfenstein Multiplayer" \
-			"${DATADIR}/wolf512.png" "iowolfmp" "Game;" false
+MP_ALL_TARGET=		mp
+MP_DESKTOP_ENTRIES=	"Return to Castle Wolfenstein (MP)" \
+			"Return to Castle Wolfenstein Multiplayer" \
+			"${DATADIR}/wolf512.png" \
+			"iowolfmp" \
+			"Game;" \
+			false
 MP_INSTALL_TARGET=	mp-install
 
 post-extract:
