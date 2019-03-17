@@ -3,13 +3,14 @@
 PORTNAME=	rebar3
 PORTVERSION=	3.9.1
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
 		https://repo.hex.pm/tarballs/:hex
-DISTFILES=	rebar3-cache-${CACHE_VERSION}${EXTRACT_SUFX}:deps
+DISTFILES=	rebar3-cache-${PORTVERSION}${EXTRACT_SUFX}:deps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		rebar3-cache-${CACHE_VERSION}${EXTRACT_SUFX}
+		rebar3-cache-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Build tool for Erlang
@@ -31,7 +32,6 @@ PORTEXAMPLES=	rebar.config.sample
 BASH_PLIST_FILES=	share/bash-completion/completions/rebar3
 ZSH_PLIST_FILES=	share/zsh/site-functions/_rebar3
 
-CACHE_VERSION=	22
 # from rebar.config
 REBAR_DEPS=	bbmustache-1.6.0 \
 		certifi-2.3.1 \
@@ -49,14 +49,12 @@ REBAR_DEPS=	bbmustache-1.6.0 \
 DISTFILES+=	${_dep}.tar:hex
 .endfor
 
-.include <bsd.port.options.mk>
-
 # convenience target to rebuild the rebar3 cache file
 build-cache:
-	cd ${WRKDIR} && ${TAR} -c -v -z -f rebar3-cache-${CACHE_VERSION}${EXTRACT_SUFX} .cache
+	cd ${WRKDIR} && ${TAR} -c -v -z -f rebar3-cache-${PORTVERSION}${EXTRACT_SUFX} .cache
 
 post-extract:
-	@${REINPLACE_CMD} -e 's/{vsn, "git"}/{vsn, "${GH_TAGNAME}"}/' ${WRKSRC}/src/rebar.app.src
+	@${REINPLACE_CMD} -e 's/{ *vsn,.*}/{vsn, "${PORTVERSION}"}/' ${WRKSRC}/src/*.app.src
 .for _dep in ${REBAR_DEPS}
 	${MKDIR} ${WRKSRC}/_build/default/lib/${_dep:C/-.*//}
 	${TAR} xOf ${DISTDIR}/${_dep}.tar contents.tar.gz |\
@@ -67,7 +65,6 @@ post-extract:
 	${TAR} xOf ${DISTDIR}/${_dep}.tar contents.tar.gz |\
 		${TAR} xfz - -C ${WRKSRC}/_build/default/plugins/${_dep:C/-.*//}
 .endfor
-
 	@${MKDIR} ${WRKSRC}/_build/bootstrap/lib
 	@${MKDIR} ${WRKSRC}/_build/bootstrap/plugins
 .for _dep in ${REBAR_DEPS}
@@ -83,16 +80,18 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-.if ${PORT_OPTIONS:MBASH}
+
+do-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
 	${INSTALL_DATA} ${WRKSRC}/priv/shell-completion/bash/rebar3 \
 		${STAGEDIR}${PREFIX}/share/bash-completion/completions/rebar3
-.endif
-.if ${PORT_OPTIONS:MZSH}
+
+do-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/priv/shell-completion/zsh/_rebar3 \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/
-.endif
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/rebar.config.sample ${STAGEDIR}${EXAMPLESDIR}
 

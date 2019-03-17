@@ -1,6 +1,6 @@
-TIMESTAMP = 1552732427
-SHA256 (relx-cache-22.tar.gz) = 862d2ac871955552d75e2a9a3528dc9676204e503d8a539e1701d918003c8c98
-SIZE (relx-cache-22.tar.gz) = 3214611
+TIMESTAMP = 1552739223
+SHA256 (relx-cache-3.29.0.tar.gz) = 65b7c3051faf570b2090b8f1dcc8d6e704df732d8e37b5bc527dd2c38b92de56
+SIZE (relx-cache-3.29.0.tar.gz) = 2961
 SHA256 (bbmustache-1.6.1.tar) = 238ba8df312869782abde3e9474e94b5704fb6bbb990c03f1afefdc8a4ad3a49
 SIZE (bbmustache-1.6.1.tar) = 15360
 SHA256 (cf-0.3.1.tar) = 315e8d447d3a4b02bcdbfa397ad03bbb988a6e0aa6f44d3add0f4e3c3bf97672
