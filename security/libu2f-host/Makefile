@@ -29,7 +29,6 @@ OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
-DOCS_CONFIGURE_ON=	--enable-gtk-doc
-DOCS_CONFIGURE_OFF=	--disable-gtk-doc
+DOCS_CONFIGURE_ENABLE=	gtk-doc
 
 .include <bsd.port.mk>
