@@ -1704,8 +1704,8 @@
     SUBDIR += py-hyperframe
     SUBDIR += py-hyperlink
     SUBDIR += py-imdbpy
-    SUBDIR += py-internetarchive
     SUBDIR += py-instabot
+    SUBDIR += py-internetarchive
     SUBDIR += py-jonpy
     SUBDIR += py-jsonfield
     SUBDIR += py-jswebkit
@@ -1871,6 +1871,7 @@
     SUBDIR += py-tmdb3
     SUBDIR += py-tornado
     SUBDIR += py-tornado4
+    SUBDIR += py-tornado6
     SUBDIR += py-trello
     SUBDIR += py-treq
     SUBDIR += py-turbogears2
