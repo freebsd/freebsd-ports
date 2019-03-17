@@ -60,10 +60,10 @@ lib/cmake/KF5PlasmaQuick/KF5PlasmaQuickTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5PlasmaQuick/KF5PlasmaQuickTargets.cmake
 lib/libKF5Plasma.so
 lib/libKF5Plasma.so.5
-lib/libKF5Plasma.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libKF5Plasma.so.5.56.0
 lib/libKF5PlasmaQuick.so
 lib/libKF5PlasmaQuick.so.5
-lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libKF5PlasmaQuick.so.5.56.0
 %%QT_PLUGINDIR%%/kpackage/packagestructure/containmentactions_packagestructure.so
 %%QT_PLUGINDIR%%/kpackage/packagestructure/dataengine_packagestructure.so
 %%QT_PLUGINDIR%%/kpackage/packagestructure/plasmageneric_packagestructure.so
