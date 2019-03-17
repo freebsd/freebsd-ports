@@ -2,7 +2,7 @@
 
 PORTNAME=	transmission
 DISTVERSION=	2.94
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -21,7 +21,7 @@ GTK_DESC=		GTK version
 QT5_DESC=		Qt5 version
 WEB_DESC=		Web client
 
-OPTIONS_DEFAULT=	CLI DAEMON GTK QT4 WEB
+OPTIONS_DEFAULT=	CLI DAEMON GTK WEB
 
 CLI_RUN_DEPENDS=	transmission-cli:net-p2p/transmission-cli
 DAEMON_RUN_DEPENDS=	transmission-daemon:net-p2p/transmission-daemon
