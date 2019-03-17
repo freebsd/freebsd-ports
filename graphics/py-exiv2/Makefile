@@ -3,7 +3,7 @@
 
 PORTNAME=	exiv2
 PORTVERSION=	0.3.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics python
 MASTER_SITES=	https://launchpadlibrarian.net/83595798/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS+=	prefix=${PREFIX} use_env=1 BOOSTLIB="${PY_BOOST_LIB}"
 
+BROKEN=		Does not work with exiv2 > 0.26
 DEPRECATED=	py-exiv2 has been deprecated in favour of GExiv2
 EXPIRATION_DATE=	2019-03-31
 
