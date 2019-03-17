@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	proxychains-ng
-PORTVERSION=	4.13
+PORTVERSION=	4.14
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net security
 
@@ -12,11 +12,11 @@ COMMENT=	Redirect connection through proxy servers
 LICENSE=	GPLv2
 
 USES=		gmake tar:bzip2
-GNU_CONFIGURE=	yes
-USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-
+USE_GITHUB=	yes
 GH_ACCOUNT=	rofl0r
+
+GNU_CONFIGURE=	yes
 
 CONFLICTS=	proxychains-[0-9]*
 
