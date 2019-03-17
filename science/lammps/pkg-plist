@@ -23,6 +23,7 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/C.lcbop
 %%DATADIR%%/potentials/CC.KC
 %%DATADIR%%/potentials/CC.KC-full
+%%DATADIR%%/potentials/CC.Lebedeva
 %%DATADIR%%/potentials/CCu_v2.bop.table
 %%DATADIR%%/potentials/CH.KC
 %%DATADIR%%/potentials/CH.airebo
