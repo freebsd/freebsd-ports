@@ -3,7 +3,7 @@
 
 PORTNAME=	arx-libertatis
 PORTVERSION=	1.1.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	http://downloads.sourceforge.net/arx/ \
 		http://arx-libertatis.org/files/
@@ -22,29 +22,16 @@ USE_SDL=	sdl
 USE_GL=		gl glew
 LLD_UNSAFE=	yes
 CMAKE_ARGS=	-DDATA_DIR=arx \
-		-DSTRICT_USE=ON
+		-DSTRICT_USE=ON \
+		-DBUILD_CRASHREPORTER=OFF
 CFLAGS_powerpc64+=	-mminimal-toc
 
 SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS CHANGELOG README.md
 
-OPTIONS_DEFINE=	CRASHREPORTER DOCS
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
-
-CRASHREPORTER_DESC=	Build crash reporter (requires Qt4)
-CRASHREPORTER_USES=	qt:4
-CRASHREPORTER_USE=	QT=corelib,gui,network \
-			QT=rcc_build,moc_build,uic_build,qmake_build
-CRASHREPORTER_CMAKE_ON=	-DBUILD_CRASHREPORTER=ON -DUSE_QT5=OFF
-CRASHREPORTER_CMAKE_OFF=-DBUILD_CRASHREPORTER=OFF
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCRASHREPORTER}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt
