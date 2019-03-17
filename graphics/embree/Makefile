@@ -11,6 +11,8 @@ COMMENT=	Collection of high-performance ray tracing kernels
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to link
+
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	heavy use of SSE instructions
 
