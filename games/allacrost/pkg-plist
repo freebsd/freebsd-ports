@@ -1,5 +1,4 @@
 bin/allacrost
-%%EDITOR%%bin/allacrost-editor
 share/locale/de/LC_MESSAGES/allacrost.mo
 share/locale/en@quot/LC_MESSAGES/allacrost.mo
 share/locale/es/LC_MESSAGES/allacrost.mo
