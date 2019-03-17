@@ -9,7 +9,7 @@ MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Widget styles for Qt and GTK+ toolkits
 
 .if !defined(QTCURVE_SLAVE)
-USES=		metaport qt:4
+USES=		metaport
 # There is no NO_PATCH
 PATCHDIR=	${MASTERDIR}/none
 
