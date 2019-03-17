@@ -778,7 +778,7 @@ kate5_PATH=		${QT_PLUGINDIR}/ktexteditor/katebacktracebrowserplugin.so
 libkcddb5_PORT=		audio/libkcddb
 libkcddb5_LIB=		libKF5Cddb.so
 
-libkcompactdisc5_PORT=	audio/libkcompactdisc-kde5
+libkcompactdisc5_PORT=	audio/libkcompactdisc
 libkcompactdisc5_LIB=	libKF5CompactDisc.so
 
 libkdcraw5_PORT=	graphics/libkdcraw
