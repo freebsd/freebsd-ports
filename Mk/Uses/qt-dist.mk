@@ -3,7 +3,7 @@
 # There are three Qt related USES files with different access to Qt.
 #   - qmake: The port requires Qt's qmake to build -- creates the configure target
 #            - auto includes qt.mk
-#   - qt-dist: The port is a port for an part of Qt4 or Qt5
+#   - qt-dist: The port is a port for an part of Qt5
 #            - auto inclues qt.mk
 #   - qt.mk  - Dependency handling. USE_QT=foo bar
 #
@@ -21,7 +21,6 @@ qmake_ARGS?=	# empty
 .include "${USESDIR}/qmake.mk"
 
 # Supported distribution arguments
-_QT4_DISTS=		yes
 _QT5_DISTS=		3d activeqt androidextras base canvas3d charts connectivity \
 			datavis3d declarative doc gamepad graphicaleffects imageformats \
 			location macextras multimedia networkauth purchasing \
@@ -46,9 +45,6 @@ IGNORE=		cannot be installed: different Qt dists specified via qt-dist:[${qt-dis
 
 # Fall back to sensible defaults for _QT_DIST
 .  if empty(_QT_DIST)
-.    if ${_QT_VER:M4}
-_QT_DIST=		yes # don't force qt-dist to be set for Qt4 ports which all have 'yes'.
-.    endif
 .    if ${_QT_VER:M5}
 _QT_DIST=		${PORTNAME} # don't force qt-dist to be set for Qt5 ports which 75% of time are ${PORTNAME}
 .    endif
@@ -73,11 +69,7 @@ DESCR?=			${PORTSDIR}/devel/${_QT_RELNAME}/pkg-descr
 # Stage support.
 DESTDIRNAME=		INSTALL_ROOT
 
-.  if ${_QT_VER:M4}
-MASTER_SITE_SUBDIR?=	archive/qt/${_QT_VERSION:R}/${_QT_VERSION}/
-DISTNAME=		qt-everywhere-opensource-src-${_QT_VERSION}
-DIST_SUBDIR=		KDE
-.  else
+.  if ${_QT_VER:M5}
 MASTER_SITE_SUBDIR?=	official_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/submodules/
 # www/qt5-webengine hackery: The tarballs of 5.9.5 had a different naming scheme.
 .    if ${QT5_VERSION} == "5.9.5"
@@ -93,8 +85,6 @@ DIST_SUBDIR=		KDE/Qt/${_QT_VERSION}
 # always passed to the linker even if they are not actually used. By passing
 # --as-needed to the linker by default when building the Qt ports we do not
 # have to declare a lot of unnecessary dependencies in USE_QT5.
-# This could arguably work for Qt4 too, but since it is maintenance mode it is
-# better not to fix what is not explicitly broken there.
 LDFLAGS+=		-Wl,--as-needed
 
 .    if ${.TARGETS:Mmakesum} || ${.TARGETS:Mfetch} && \
@@ -121,7 +111,7 @@ EXTRACT_SUFX?=		.tar.xz
 # tests if the directories exist because of mkspecs/features/qt_parts.prf.
 EXTRACT_AFTER_ARGS?=	${DISTNAME:S,$,/examples,:S,^,--exclude ,} \
 			${DISTNAME:S,$,/tests,:S,^,--exclude ,}
-.  endif # ! ${_QT_VER:M4}
+.  endif # ! ${_QT_VER:M5}
 
 CONFIGURE_ENV+=		MAKE="${MAKE:T}"
 
@@ -138,15 +128,7 @@ CONFIGURE_ARGS+=	-opensource -confirm-license \
 			-translationdir ${PREFIX}/${QT_L10NDIR_REL} \
 			-sysconfdir ${PREFIX}/${QT_ETCDIR_REL}
 
-.  if ${_QT_VER:M4}
-CONFIGURE_ARGS+=	-fast \
-			-platform ${QMAKESPEC} \
-			-system-libjpeg -system-libpng \
-			-system-libmng -system-libtiff -system-zlib \
-			-no-phonon-backend \
-			-examplesdir ${PREFIX}/${QT_EXAMPLEDIR_REL}/examples \
-			-demosdir ${PREFIX}/${QT_EXAMPLEDIR_REL}/demos
-.  else
+.  if ${_QT_VER:M5}
 CONFIGURE_ARGS+=	-nomake examples -nomake tests \
 			-platform ${QMAKESPECNAME} \
 			-archdatadir ${PREFIX}/${QT_ARCHDIR_REL} \
@@ -165,7 +147,7 @@ CONFIGURE_ARGS+=	-no-use-gold-linker
 # Pass -recheck-all so that multiple calls to the configure script really
 # re-run all checks.
 CONFIGURE_ARGS+=	-recheck-all
-.  endif # ${_QT_VER:M4}
+.  endif # ${_QT_VER:M5}
 
 .  if defined(WANT_QT_DEBUG) || defined(WITH_DEBUG)
 WITH_DEBUG=		yes
@@ -184,15 +166,7 @@ QMAKE_ARGS+=		QT_CONFIG+="release" \
 CONFIGURE_ARGS+=	-verbose
 .  endif
 
-.  if ${_QT_DIST} == "base" || ${_QT_VER:M4}
-.    if ${_QT_VER:M4}
-_EXTRA_PATCHES_QT4=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-src-corelib-global-qglobal.h \
-			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-libtool \
-			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-config.tests-unix-compile.test
-# Patch in proper name for armv6 architecture: https://gcc.gnu.org/ml/gcc-patches/2015-06/msg01679.html
-_EXTRA_PATCHES_QT4+=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-armv6
-_EXTRA_PATCHES_QT4+=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-aarch64
-.    else
+.  if ${_QT_DIST} == "base"
 _EXTRA_PATCHES_QT5=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_create__cmake.prf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_qt__module.prf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_common_bsd_bsd.conf
@@ -200,11 +174,10 @@ _EXTRA_PATCHES_QT5=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_fe
 _EXTRA_PATCHES_QT5+=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_g++-base.conf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_gcc-base.conf
 USE_GCC=		yes
-.        endif
 .    endif
 EXTRA_PATCHES?=		${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-configure \
-			${_EXTRA_PATCHES_QT4} ${_EXTRA_PATCHES_QT5}
-.  endif #  ${_QT_DIST} == "base" || ${_QT_VER:M4}
+			${_EXTRA_PATCHES_QT5}
+.  endif #  ${_QT_DIST} == "base"
 
 # Override settings installed in qconfig.h and *.pri files. The flags will be
 # installed along with the port, but have to be passed as arguments while
@@ -232,7 +205,7 @@ QMAKE_ARGS+=		QT_CONFIG-="${QT_CONFIG:M-*:O:u:C/^-//}"
 
 # Add a RUN_DEPENDS on misc/qtchooser to select the binaries.
 # The binaries of both supported Qt versions are installed to
-# ${LOCALBASE}/lib/qt[45]/bin. The port misc/qtchooser installs
+# ${LOCALBASE}/lib/qt${_QT_VER}/bin. The port misc/qtchooser installs
 # wrapper binaries into ${LOCALBASE}/bin, and chooses the correct
 # one depending on the value of QT_SELECT (which we pass to both
 # CONFIGURE_ENV and MAKE_ENV). Therefore make all QT_DIST ports
@@ -249,7 +222,7 @@ PLIST_SUB+=		QT_${dir}DIR="${QT_${dir}DIR_REL}"
 .  endfor
 
 
-.  if ! ${_QT_VER:M4}
+.  if ${_QT_VER:M5}
 .    if ${_QT_DIST} == "base"
 # qtbase requires some tools to be symlinked to the build directory.
 _QT_TOOLS=		# empty
@@ -387,6 +360,6 @@ qt-post-install:
 	@${ECHO_CMD} "${PREFIX}/${QT_MKSPECDIR_REL}/modules/qt_config_${QT_MODNAME}.pri" \
 		>> ${TMPPLIST}
 .    endif # ${QT_CONFIG:N-*}
-.  endif # M4
+.  endif # M5
 
 .endif # defined(_QT_DIST_MK_INCLUDED)
