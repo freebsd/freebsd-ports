@@ -378,6 +378,7 @@
     SUBDIR += xcbautolock
     SUBDIR += xclip
     SUBDIR += xclipboard
+    SUBDIR += xcm
     SUBDIR += xcmd
     SUBDIR += xcmsdb
     SUBDIR += xcoloredit
