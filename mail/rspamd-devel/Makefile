@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.9.0.a1.20180920
-PORTREVISION=	0
+PORTVERSION=	1.9.1.a1.20190316
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -19,8 +18,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 BUILD_DEPENDS=	ragel:devel/ragel
 RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 
-USES=		cmake pkgconfig perl5 \
-		compiler:c11 sqlite ssl
+USES=		cmake compiler:c11 gnome perl5 pkgconfig \
+		sqlite ssl
 USE_LDCONFIG=	yes
 USE_PERL5=	build run
 USE_GNOME=	glib20
@@ -62,8 +61,7 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DDEBUG=ON \
 		-DGIT_ID=${GH_TAGNAME}
 USE_GITHUB=	yes
-GH_ACCOUNT=	vstakhov
-GH_TAGNAME=	76fafe01d
+GH_TAGNAME=	dbfdd2b
 
 DEBUG_FLAGS=	-g -O0
 WITH_DEBUG=	yes
