@@ -1,0 +1,15 @@
+Tornado is an open source version of the scalable, non-blocking web server and
+tools that power FriendFeed. The FriendFeed application is written using a web
+framework that looks a bit like web.py or Google's webapp, but with additional
+tools and optimizations to take advantage of the underlying non-blocking
+infrastructure.
+
+The framework is distinct from most mainstream web server frameworks (and
+certainly most Python frameworks) because it is non-blocking and reasonably
+fast. Because it is non-blocking and uses epoll or kqueue, it can handle
+thousands of simultaneous standing connections, which means it is ideal for
+real-time web services. We built the web server specifically to handle
+FriendFeed's real-time features - every active user of FriendFeed maintains an
+open connection to the FriendFeed servers.
+
+WWW: http://www.tornadoweb.org/

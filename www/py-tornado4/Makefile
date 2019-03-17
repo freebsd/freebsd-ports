@@ -13,7 +13,7 @@ COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	APACHE20
 
-CONFLICTS=	py[0-9]*-tornado-*
+CONFLICTS=	py[0-9]*-tornado-* py[0-9]*-tornado6-*
 
 USES=		python
 USE_PYTHON=	autoplist distutils
