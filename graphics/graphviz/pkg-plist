@@ -17,7 +17,6 @@ bin/graphml2gv
 bin/gv2gml
 bin/gv2gxl
 bin/gvcolor
-%%GVEDIT%%bin/gvedit
 bin/gvgen
 bin/gvmap
 bin/gvmap.sh
@@ -239,7 +238,6 @@ man/man1/gc.1.gz
 man/man1/graphml2gv.1.gz
 man/man1/gml2gv.1.gz
 man/man1/gv2gxl.1.gz
-%%GVEDIT%%man/man1/gvedit.1.gz
 man/man1/gvgen.1.gz
 man/man1/gvmap.1.gz
 man/man1/gvmap.sh.1.gz
@@ -514,7 +512,6 @@ man/man7/graphviz.7.gz
 %%SMYRNA%%%%DATADIR%%/examples/world.gv
 %%MING%%%%DATADIR%%/font/Bitstream_Vera_Sans.fdb
 %%MING%%%%DATADIR%%/font/Bitstream_Vera_Serif.fdb
-%%GVEDIT%%%%DATADIR%%/gvedit/attrs.txt
 %%DATADIR%%/graphs/directed/KW91.gv
 %%DATADIR%%/graphs/directed/Latin1.gv
 %%DATADIR%%/graphs/directed/NaN.gv
