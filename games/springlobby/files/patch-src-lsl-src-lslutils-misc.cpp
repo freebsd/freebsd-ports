@@ -1,8 +1,10 @@
---- src/lsl/src/lslutils/misc.cpp.orig	2013-08-31 14:17:00.000000000 +0400
-+++ src/lsl/src/lslutils/misc.cpp	2013-12-10 04:20:26.887107289 +0400
-@@ -3,6 +3,7 @@
+--- src/lsl/src/lslutils/misc.cpp.orig	2013-08-31 10:17:00 UTC
++++ src/lsl/src/lslutils/misc.cpp
+@@ -2,7 +2,9 @@
+ #include "conversion.h"
  
  #include <boost/filesystem.hpp>
++#include <boost/shared_ptr.hpp>
  #include <fstream>
 +#include <cmath>
  
