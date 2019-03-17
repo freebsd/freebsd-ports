@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mantis
-PORTVERSION=	2.19.0
-PORTREVISION=	1
+PORTVERSION=	2.20.0
 PORTEPOCH=	1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/mantisbt/mantis-stable/${PORTVERSION}
@@ -55,13 +54,13 @@ TASKODROME_DESC=	Interactive scrum board
 TIMETRACKING_DESC=	Time Tracking
 
 ACTIVITY_GH_TUPLE=	mantisbt-plugins:Activity:99cf873396ebc3fec431c6746dae1a604768f322:activity/plugins/Activity
-ANNOUNCE_GH_TUPLE=	mantisbt-plugins:Announce:v2.4.0:announce/plugins/Announce
+ANNOUNCE_GH_TUPLE=	mantisbt-plugins:Announce:v2.4.1:announce/plugins/Announce
 COLORIZED_GH_TUPLE=	mantisbt-plugins:MantisBT-Colorized:f43dc4cc36e8851f8df1797116f904ccf5f1689d:colorized/css/themes/colorized
 CUSTOMREPORTER_GH_TUPLE=	mantisbt-plugins:CustomReporter:v2.0.0:customreporter/plugins/CustomReporter
 EMAILREP_GH_TUPLE=	mantisbt-plugins:EmailReporting:EmailReporting_0.10.1:emailrep/plugins/EmailReporting
 EVENTLOG_GH_TUPLE=	mantisbt-plugins:EventLog:74fd03cf85a32088a0206bc73bb14ddbd148aed2:eventlog/plugins/EventLog
 FLTBUGLST_GH_TUPLE=	mantisbt-plugins:FilterBugList:v2.1.0:fltbuglist/plugins/FilterBugList
-GAUGE_GH_TUPLE=		mantisbt-plugins:GaugeSupport:273fedf56c95ea0425903e3999dc80d625d951eb:gauge/plugins/GaugeSupport
+GAUGE_GH_TUPLE=		mantisbt-plugins:GaugeSupport:9bd7e7dd1f496d28ee7ad2d831db3a276f996054:gauge/plugins/GaugeSupport
 JQUERYCHOSEN_GH_TUPLE=	mantisbt-plugins:JqueryChosen:dc305e987ea3693bb92d22545ba23f3fc44d04c3:jquerychosen
 JQUERYUI_GH_TUPLE=	mantisbt-plugins:jQuery-UI:ca77afa51166658b469dd11bfff7713485935bda:jqueryui
 LIGHTBOX_GH_TUPLE=	mantisbt-plugins:Lightbox:f8220ba689378054ca433f718d909dc41a803def:lightbox/plugins/Lightbox
@@ -71,7 +70,7 @@ SLACK_GH_TUPLE=		mantisbt-plugins:Slack:9286d2eeeb8a986ed949e378711fef5f0bf182dc
 SNIPPETS_GH_TUPLE=	mantisbt-plugins:Snippets:v2.2.5:snippets/plugins/Snippets
 SI_GH_TUPLE=		mantisbt-plugins:source-integration:v2.1.5:si
 SI_USE=			php=curl
-TASKODROME_GH_TUPLE=	mantisbt-plugins:Taskodrome:0491fa47062cdfa7bf03c01bd286986c75a18453:taskodrome
+TASKODROME_GH_TUPLE=	mantisbt-plugins:Taskodrome:43d8b2281e02a4e2fd566bcddbbaf11cab73820b:taskodrome
 TIMETRACKING_GH_TUPLE=	mantisbt-plugins:timetracking:3a560673d85e17651fc1994f5e09e2ae9df62336:timetracking
 
 MYSQL_USE=	php=mysqli

@@ -1,10 +1,10 @@
-TIMESTAMP = 1546503062
-SHA256 (mantisbt-2.19.0.tar.gz) = 50228bc9aecf960329d5cd360bd0dc4e32edf01e51eacb39a59595c5c91cb2bf
-SIZE (mantisbt-2.19.0.tar.gz) = 16628429
+TIMESTAMP = 1552805133
+SHA256 (mantisbt-2.20.0.tar.gz) = 98f3ebf3fead94f3e991d9ca51302233261813910fb0a32733a2752bdab1d044
+SIZE (mantisbt-2.20.0.tar.gz) = 16743762
 SHA256 (mantisbt-plugins-Activity-99cf873396ebc3fec431c6746dae1a604768f322_GH0.tar.gz) = 7c9a2d08d98854c40e53ec5ae90aa84ea3849843e5dec8fceefd4cbfba6d4c88
 SIZE (mantisbt-plugins-Activity-99cf873396ebc3fec431c6746dae1a604768f322_GH0.tar.gz) = 42861
-SHA256 (mantisbt-plugins-Announce-v2.4.0_GH0.tar.gz) = 259e71f54487b25c5107f0f7d02f946676016fc283434987f1ca953fd16c095a
-SIZE (mantisbt-plugins-Announce-v2.4.0_GH0.tar.gz) = 152045
+SHA256 (mantisbt-plugins-Announce-v2.4.1_GH0.tar.gz) = b87b233afc70d61b4b6c1fdc574cbbd3f2997efdfd4b5cfde1cfebfb6097dbc3
+SIZE (mantisbt-plugins-Announce-v2.4.1_GH0.tar.gz) = 152618
 SHA256 (mantisbt-plugins-MantisBT-Colorized-f43dc4cc36e8851f8df1797116f904ccf5f1689d_GH0.tar.gz) = d4ca823fdcef233f041a2ab590d7b2c9e7e9209d2f92f07749967b564b128418
 SIZE (mantisbt-plugins-MantisBT-Colorized-f43dc4cc36e8851f8df1797116f904ccf5f1689d_GH0.tar.gz) = 260775
 SHA256 (mantisbt-plugins-CustomReporter-v2.0.0_GH0.tar.gz) = 91c97236e56899a79bcc84f7f0f1ab7f9e1176c8687cefbf3c9cc31a6e1d7022
@@ -15,8 +15,8 @@ SHA256 (mantisbt-plugins-EventLog-74fd03cf85a32088a0206bc73bb14ddbd148aed2_GH0.t
 SIZE (mantisbt-plugins-EventLog-74fd03cf85a32088a0206bc73bb14ddbd148aed2_GH0.tar.gz) = 264064
 SHA256 (mantisbt-plugins-FilterBugList-v2.1.0_GH0.tar.gz) = b9d01f61eff18ccaa5186ffd5520ed7fa7e1918438d82f1e33816eb5066b4788
 SIZE (mantisbt-plugins-FilterBugList-v2.1.0_GH0.tar.gz) = 3171
-SHA256 (mantisbt-plugins-GaugeSupport-273fedf56c95ea0425903e3999dc80d625d951eb_GH0.tar.gz) = a0dcb74658c61444fe4011527a81315d3067d74824b562915183537429c33f91
-SIZE (mantisbt-plugins-GaugeSupport-273fedf56c95ea0425903e3999dc80d625d951eb_GH0.tar.gz) = 6509
+SHA256 (mantisbt-plugins-GaugeSupport-9bd7e7dd1f496d28ee7ad2d831db3a276f996054_GH0.tar.gz) = 7426e02c6763e373306a0052bb97eb0afca8d1b52454b5c774e5374573261954
+SIZE (mantisbt-plugins-GaugeSupport-9bd7e7dd1f496d28ee7ad2d831db3a276f996054_GH0.tar.gz) = 50602
 SHA256 (mantisbt-plugins-JqueryChosen-dc305e987ea3693bb92d22545ba23f3fc44d04c3_GH0.tar.gz) = 070cadc956689e6357af43a251e1d6fd703fa2612c8dee45c61e6e29e456d15e
 SIZE (mantisbt-plugins-JqueryChosen-dc305e987ea3693bb92d22545ba23f3fc44d04c3_GH0.tar.gz) = 50254
 SHA256 (mantisbt-plugins-jQuery-UI-ca77afa51166658b469dd11bfff7713485935bda_GH0.tar.gz) = 39281ee9847ae9100c7fcfe9453e3ce860983c2de2f4a549f10117ab3e0d2be5
@@ -33,7 +33,7 @@ SHA256 (mantisbt-plugins-Slack-9286d2eeeb8a986ed949e378711fef5f0bf182dc_GH0.tar.
 SIZE (mantisbt-plugins-Slack-9286d2eeeb8a986ed949e378711fef5f0bf182dc_GH0.tar.gz) = 115058
 SHA256 (mantisbt-plugins-Snippets-v2.2.5_GH0.tar.gz) = 7efa4d1635789fde24d1aa5385f0fee100578c5c1f730c6fcf9228304b059aa0
 SIZE (mantisbt-plugins-Snippets-v2.2.5_GH0.tar.gz) = 35287
-SHA256 (mantisbt-plugins-Taskodrome-0491fa47062cdfa7bf03c01bd286986c75a18453_GH0.tar.gz) = b990e8a91ef8842e2a4a8a140f3f8d3505fb04797f7359cd7b27220d721d4a9b
-SIZE (mantisbt-plugins-Taskodrome-0491fa47062cdfa7bf03c01bd286986c75a18453_GH0.tar.gz) = 14528816
+SHA256 (mantisbt-plugins-Taskodrome-43d8b2281e02a4e2fd566bcddbbaf11cab73820b_GH0.tar.gz) = b8a019ca53f07eecbc1b98e3fe357303ab421d1006dd41a77dc32a3fb42da3cb
+SIZE (mantisbt-plugins-Taskodrome-43d8b2281e02a4e2fd566bcddbbaf11cab73820b_GH0.tar.gz) = 14528726
 SHA256 (mantisbt-plugins-timetracking-3a560673d85e17651fc1994f5e09e2ae9df62336_GH0.tar.gz) = 99f13d9d4cef6aa9875dcd2b122dcd48b33dbd1e51439d455ea850b59bf7f14a
 SIZE (mantisbt-plugins-timetracking-3a560673d85e17651fc1994f5e09e2ae9df62336_GH0.tar.gz) = 13128
