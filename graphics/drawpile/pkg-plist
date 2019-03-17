@@ -65,6 +65,7 @@ share/drawpile/drawpile/theme/dark/format-text-italic.svg
 share/drawpile/drawpile/theme/dark/format-text-strikethrough.svg
 share/drawpile/drawpile/theme/dark/format-text-underline.svg
 share/drawpile/drawpile/theme/dark/go-jump.svg
+share/drawpile/drawpile/theme/dark/help-whatsthis.svg
 share/drawpile/drawpile/theme/dark/im-ban-user.svg
 share/drawpile/drawpile/theme/dark/im-kick-user.svg
 share/drawpile/drawpile/theme/dark/im-user.svg
@@ -137,6 +138,7 @@ share/drawpile/drawpile/theme/light/format-text-italic.svg
 share/drawpile/drawpile/theme/light/format-text-strikethrough.svg
 share/drawpile/drawpile/theme/light/format-text-underline.svg
 share/drawpile/drawpile/theme/light/go-jump.svg
+share/drawpile/drawpile/theme/light/help-whatsthis.svg
 share/drawpile/drawpile/theme/light/im-ban-user.svg
 share/drawpile/drawpile/theme/light/im-kick-user.svg
 share/drawpile/drawpile/theme/light/im-user.svg
