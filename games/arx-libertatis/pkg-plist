@@ -2,7 +2,6 @@ bin/arx
 bin/arx-install-data
 bin/arxsavetool
 bin/arxunpak
-%%CRASHREPORTER%%libexec/arxcrashreporter
 man/man1/arxsavetool.1.gz
 man/man1/arxunpak.1.gz
 man/man6/arx.6.gz
