@@ -3,7 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.40.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://graphviz.gitlab.io/pub/graphviz/stable/SOURCES/
 
@@ -54,7 +54,7 @@ PDOCS_HTML=	doc/*.html doc/info/*.gif
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO POPPLER \
-		ANN GTS GTK2 GDK GDK_PIXBUF GNOMEUI SMYRNA GVEDIT MING DEVIL \
+		ANN GTS GTK2 GDK GDK_PIXBUF GNOMEUI SMYRNA MING DEVIL \
 		GHOSTSCRIPT PERL PHP PYTHON RUBY LUA TCL TK GUILE NVTHREADS \
 		DOCS EXAMPLES
 OPTIONS_DEFAULT=	XPM DIGCOLA IPSEPCOLA ICONV PANGOCAIRO NVTHREADS
@@ -70,7 +70,6 @@ GDK_DESC=	gdk library support (requires GTK2)
 GDK_PIXBUF_DESC=gdk pixbuf support (requires GDK)
 GNOMEUI_DESC=	libgnomeui support
 SMYRNA_DESC=	SMYRNA graph viewer (requires GTK2)
-GVEDIT_DESC=	gvedit (requires qt)
 MING_DESC=	ming plugin
 DEVIL_DESC=	devil plugin
 GHOSTSCRIPT_DESC=ghostscript plugin (requires PANGOCAIRO)
@@ -91,9 +90,6 @@ PANGOCAIRO_USE=	GNOME=pango,cairo XORG=xrender,x11,xau,xdmcp
 GTK2_USE=	XORG=sm,ice,xext,xinerama,xi,xrandr,xcursor,xfixes GNOME=gtk20
 GNOMEUI_USE=	GNOME=libgnomeui
 SMYRNA_USE=	GNOME=libglade2,pangox-compat GL=glut
-GVEDIT_USES=	qt:4
-GVEDIT_USE=	qt=qmake_build,moc_build,rcc_build,uic_build \
-		qt=linguist_build,corelib,gui
 GHOSTSCRIPT_USES=ghostscript
 PERL_USES=	perl5
 PHP_USES=	php:build
@@ -132,8 +128,6 @@ GNOMEUI_CONFIGURE_WITH=		gnomeui
 GNOMEUI_IMPLIES=		GTK2
 SMYRNA_CONFIGURE_WITH=		smyrna glade gtkgl gtkglext
 SMYRNA_IMPLIES=			GTK2 GTS
-GVEDIT_CONFIGURE_ON=		--with-gvedit=yes
-GVEDIT_CONFIGURE_OFF=		--with-qt=no
 MING_CONFIGURE_WITH=		ming
 DEVIL_CONFIGURE_WITH=		devil
 GHOSTSCRIPT_CONFIGURE_OFF=	--with-ghostscript=no
@@ -209,11 +203,6 @@ CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig3.0"
 .else
 CONFIGURE_ARGS+=	--disable-swig
 CONFIGURE_ENV+=		SWIG="/nonexistent"
-.endif
-
-.if ${PORT_OPTIONS:MGVEDIT}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
 .endif
 
 .include <bsd.port.pre.mk>
