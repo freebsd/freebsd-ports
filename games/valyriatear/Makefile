@@ -3,7 +3,7 @@
 
 PORTNAME=	valyriatear
 PORTVERSION=	1.0.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -36,30 +36,11 @@ CXXFLAGS+=	-Wno-reserved-user-defined-literal
 PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS_DEFINE=	EDITOR DOCS NLS
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
-
-EDITOR_DESC=	Compile the Qt editor along with the game
-EDITOR_CMAKE_BOOL=	EDITOR_SUPPORT
-EDITOR_USES=	qt:4
-EDITOR_USE=	QT=corelib,gui,opengl,qmake_build,moc_build,uic_build,rcc_build
-EDITOR_DESKTOP_ENTRIES=	\
-		"Valyria Tear Editor" \
-		"Map editor for Valyria Tear game" \
-		"valyriatear" \
-		"vt-editor" \
-		"Graphics;2DGraphics;" \
-		""
 
 NLS_CMAKE_OFF=	-DDISABLE_TRANSLATIONS:BOOL=OFF
 NLS_USES=	gettext
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEDITOR}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
