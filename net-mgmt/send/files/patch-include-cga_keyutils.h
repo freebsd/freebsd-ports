@@ -1,5 +1,5 @@
---- include/cga_keyutils.h.orig	2010-08-28 17:58:02.000000000 +0900
-+++ include/cga_keyutils.h	2014-08-30 01:53:41.000000000 +0900
+--- include/cga_keyutils.h.orig	2019-02-27 16:25:45 UTC
++++ include/cga_keyutils.h
 @@ -36,6 +36,9 @@
  #include <openssl/x509.h>
  #include <openssl/evp.h>

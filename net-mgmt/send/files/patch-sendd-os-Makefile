@@ -1,10 +1,11 @@
---- sendd/os/Makefile.orig	2010-08-28 17:58:04.000000000 +0900
-+++ sendd/os/Makefile	2014-08-20 04:33:33.000000000 +0900
+--- sendd/os/Makefile.orig	2019-02-27 16:25:45 UTC
++++ sendd/os/Makefile
 @@ -1,13 +1,5 @@
  
  OBJS += os/addr.o os/snd_freebsd.o os-linux/rand.o
 -CPPFLAGS +=	-I/usr/local/include
--
++CPPFLAGS +=	-I${LOCALBASE}/include
+ 
 -OSLIBS= -L/usr/local/lib -l$(DNET)
 -
 -OSEXTRA= os/sendd
@@ -13,6 +14,5 @@
 -
 -/usr/local/etc/rc.d/%: os/%
 -	install $< $@
-+CPPFLAGS +=	-I${LOCALBASE}/include
- 
+-
 +OSLIBS= -L${LOCALBASE}/lib -l$(DNET)

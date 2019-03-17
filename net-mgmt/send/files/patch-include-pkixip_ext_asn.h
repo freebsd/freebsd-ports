@@ -1,4 +1,4 @@
---- include/pkixip_ext_asn.h.orig	2010-08-28 08:58:02 UTC
+--- include/pkixip_ext_asn.h.orig	2019-02-27 16:25:45 UTC
 +++ include/pkixip_ext_asn.h
 @@ -33,7 +33,12 @@
  #ifndef	_PKIXIP_EXT_ASN_H
@@ -31,4 +31,3 @@
  
  #define IP_AOR_PREFIX		0
  #define IP_AOR_RANGE		1
-

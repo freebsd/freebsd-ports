@@ -3,10 +3,9 @@
 
 PORTNAME=	send
 PORTVERSION=	0.3
+DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	net-mgmt ipv6
-MASTER_SITES=	LOCAL/hrs
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Secure Neighbor Discovery implementation for IPv6
@@ -17,7 +16,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libdnet.so:net/libdnet
 
 USES=		gmake readline ssl
+USE_GITHUB=	yes
+GH_ACCOUNT=	hrs-allbsd
+GH_PROJECT=	send
 USE_RC_SUBR=	sendd
+
 SUB_FILES=	pkg-message
 PORTDOCS=	README UserGuide.pdf
 MAKE_JOBS_UNSAFE=yes

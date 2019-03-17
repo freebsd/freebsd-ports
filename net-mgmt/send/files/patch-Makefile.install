@@ -1,5 +1,5 @@
---- Makefile.install.orig	2010-08-28 17:58:05.000000000 +0900
-+++ Makefile.install	2014-08-20 04:27:44.000000000 +0900
+--- Makefile.install.orig	2019-02-27 16:25:45 UTC
++++ Makefile.install
 @@ -1,9 +1,9 @@
 -INSSBIN= $(PREFIXSBIN)/$(PROG)
 +INSSBIN= $(DESTDIR)$(PREFIXSBIN)/$(PROG)

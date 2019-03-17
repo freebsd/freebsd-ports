@@ -1,6 +1,6 @@
---- sendd/Makefile.orig	2014-08-20 04:19:01.000000000 +0900
-+++ sendd/Makefile	2014-08-20 04:19:39.000000000 +0900
-@@ -6,8 +6,8 @@
+--- sendd/Makefile.orig	2019-02-27 16:25:45 UTC
++++ sendd/Makefile
+@@ -6,8 +6,8 @@ OBJS= addr.o cert.o cga.o config.o cpa.o cps.o ctl.o n
  	sendd.o sigmeth.o sig_rfc3971.o
  INC= sendd_local.h snd_proto.h snd_config.h
  

@@ -1,5 +1,5 @@
---- libs/Makefile.lib.common.orig	2014-08-20 04:21:08.000000000 +0900
-+++ libs/Makefile.lib.common	2014-08-20 04:21:27.000000000 +0900
+--- libs/Makefile.lib.common.orig	2019-02-27 16:25:45 UTC
++++ libs/Makefile.lib.common
 @@ -1,5 +1,5 @@
  
 -CFLAGS += -Wall -O3
