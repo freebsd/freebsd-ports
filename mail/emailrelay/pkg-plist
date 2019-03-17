@@ -16,9 +16,6 @@ man/man1/emailrelay.1.gz
 sbin/emailrelay
 sbin/emailrelay-passwd
 sbin/emailrelay-submit
-%%GUI%%%%DATADIR%%/emailrelay-icon.png
-%%GUI%%sbin/emailrelay-gui
-%%GUI%%sbin/emailrelay-gui.real
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -1207,4 +1204,5 @@ sbin/emailrelay-submit
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/tabs.css
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/unionGNet_1_1AddressImp_1_1Sockaddr-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/unionGNet_1_1AddressImp_1_1Sockaddr.html
+%%DATADIR%%/emailrelay-icon.png
 @dir var/spool/emailrelay
