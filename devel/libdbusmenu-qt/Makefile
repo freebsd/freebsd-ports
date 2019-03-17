@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	5
 DISTNAME=	${PORTNAME}_${MAJOR_VER}+${SNAPSHOT_VER}.orig
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT?=	Qt5 implementation of the DBusMenu protocol
+COMMENT=	Qt5 implementation of the DBusMenu protocol
 
 LICENSE=	LGPL20
 
