@@ -73,18 +73,6 @@ CONFIGURE_ARGS+=--disable-gtk-module
 PLIST_SUB+=	GTK="@comment "
 
 CONFIGURE_ARGS+=--disable-qt
-
-.elif defined(${SLAVEPORT}) && ${SLAVEPORT}=="qt4"
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
-LIB_DEPENDS+=	libpackagekit-glib2.so:ports-mgmt/packagekit
-
-CONFIGURE_ARGS+=--enable-qt
-LIB_DEPENDS+=	libcppunit.so:devel/cppunit
-USES=		qt:4
-USE_QT+=	dbus gui xml sql moc_build
-#.include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
 
 post-patch:
