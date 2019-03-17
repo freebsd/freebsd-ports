@@ -856,7 +856,6 @@ PORTREVISION=	1
     SUBDIR += pinentry-fltk
     SUBDIR += pinentry-gnome3
     SUBDIR += pinentry-gtk2
-    SUBDIR += pinentry-qt4
     SUBDIR += pinentry-qt5
     SUBDIR += pinentry-tty
     SUBDIR += pixiewps
