@@ -6,8 +6,7 @@
 # Usage:	USES=grantlee:ARGS
 # Valid ARGS:	<version>,selfbuild
 #
-# version	The chooseable versions are 4 and 5.
-#		USES=grantlee:4 # Use grantlee 0.x (qt4-based)
+# version	The chooseable versions is 5.
 #		USES=grantlee:5 # Use grantlee 5.x (qt5-based)
 #
 # selfbuild	Used in devel/grantlee and devel/grantlee5 to suck in versions
@@ -32,12 +31,10 @@
 .if ! defined(_INCLUDE_USES_GRANTLEE_MK)
 _INCLUDE_USES_GRANTLEE_MK=	YES
 
-GRANTLEE_SUPPORTED=	4 5
+GRANTLEE_SUPPORTED=	5
 
-GRANTLEE4_VER=	0.5.1
 GRANTLEE5_VER=	5.1.0
 
-GRANTLEE4_LIB_DEPEND=	libgrantlee_gui.so:devel/grantlee
 GRANTLEE5_LIB_DEPEND=	libGrantlee_Templates.so:devel/grantlee5
 
 _grantlee_version=	#
@@ -52,7 +49,7 @@ IGNORE=		Incorrect USES=grantlee:${grantlee_ARGS} - multiple versions defined
 .  endfor
 
 .  if empty(_grantlee_version)
-IGNORE=		Incorrect USES=grantlee:${grantlee_ARGS} - no version defined
+IGNORE=		Incorrect USES=grantlee:${grantlee_ARGS} - no/unhandled version defined
 .  endif
 
 # Export the version of the chosen grantlee port
