@@ -431,9 +431,6 @@ uitools_PATH=		${LOCALBASE}/${QT_LIBDIR_REL}/libQt${_QT_LIBVER}UiTools.a
 virtualkeyboard_PORT=	x11-toolkits/${_QT_RELNAME}-virtualkeyboard
 virtualkeyboard_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/platforminputcontexts/libqtvirtualkeyboardplugin.so
 
-wayland_PORT=		graphics/${_QT_RELNAME}-wayland
-wayland_LIB=		libQt${_QT_LIBVER}WaylandClient.so
-
 webchannel_PORT=	www/${_QT_RELNAME}-webchannel
 webchannel_LIB=		libQt${_QT_LIBVER}WebChannel.so
 
