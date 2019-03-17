@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iortcw
-PORTVERSION=	1.51b
+PORTVERSION=	1.51c
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -14,12 +14,13 @@ LICENSE=	GPLv3
 NOT_FOR_ARCHS=		aarch64 armv6 armv7 powerpc64
 NOT_FOR_ARCHS_REASON=	fails to configure: Architecture not supported
 
-BUILD_DEPENDS=	opusfile>0:audio/opusfile
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
-		libopus.so:audio/opus
+		libogg.so:audio/libogg \
+		libopus.so:audio/opus \
+		libopusfile.so:audio/opusfile
 
-USES=		gmake jpeg pkgconfig
+USES=		gl gmake jpeg openal pkgconfig sdl
 USE_GITHUB=	yes
 USE_GL=		gl
 USE_SDL=	sdl2
