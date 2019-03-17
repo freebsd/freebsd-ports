@@ -1,5 +1,5 @@
---- Makefile.orig	2016-02-29 01:15:13 UTC
-+++ Makefile
+--- librtmp/Makefile.orig	2016-02-29 01:15:13 UTC
++++ librtmp/Makefile
 @@ -1,19 +1,21 @@
  VERSION=v2.4
  
