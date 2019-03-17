@@ -1,21 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	putty
-PORTVERSION=	0.70
+PORTVERSION=	0.71
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
 
-# Beat Gaetzi (beat@) is permitted to take maintainership back
-# or commit to this port without my prior approval.
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure shell and telnet client
+# test plan: test ALL 4 GSSAPI_* options, ALL 3 GTK options, WITH_DEBUG=yes build.
 
 LICENSE=	MIT
 LICENSE_FILE=	${FILESDIR}/LICENSE
 
 USES=		cpe gmake pkgconfig
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 MAKEFILE=	Makefile.gtk
 
 CPE_VENDOR=	simon_tatham
@@ -27,8 +28,10 @@ OPTIONS_RADIO=		TOOLKIT
 OPTIONS_RADIO_TOOLKIT=	GTK2 GTK3
 OPTIONS_DEFAULT=GSSAPI_BASE GTK3
 OPTIONS_SINGLE=	GSSAPI_SELECT
-OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL \
-				GSSAPI_MIT
+#OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
+# XXX FIXME TODO: GSSAPI_NONE is broken as of PuTTY 0.71 (did work in 0.70).
+# Report has been sent to putty.AT.projects.tartarus.org on 2019-03-17
+OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 
 CONFLICTS_INSTALL?=	pssh-[0-9]* putty-gtk2-[0-9]* putty-nogtk-[0-9]*
 
@@ -40,10 +43,12 @@ LDFLAGS+=	-Wl,--as-needed
 .if (${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3}) && !defined(WITHOUT_X11)
 USE_XORG=	x11
 .if ${PORT_OPTIONS:MGTK2}
+USES+=		gnome
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 MAKE_ARGS+=	PUTTY_WITH_GTK=yes GTK_CONFIG="pkg-config gtk+-2.0 x11 --cflags"
 .endif
 .if ${PORT_OPTIONS:MGTK3}
+USES+=		gnome
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 MAKE_ARGS+=	PUTTY_WITH_GTK=yes GTK_CONFIG="pkg-config gtk+-3.0 x11 --cflags"
 .endif
@@ -80,7 +85,9 @@ _COMPAT=		-DNO_GSSAPI
 _COMPAT+=	-DOMIT_UTMP
 
 .if defined(WITH_DEBUG)
+CFLAGS+=	-DDEBUG
 XFLAGS=		-DDEBUG
+_COMPAT+=	-DDEBUG
 .endif
 
 # upstream sets -Werror - there are no issues on 9.1-FreeBSD amd64

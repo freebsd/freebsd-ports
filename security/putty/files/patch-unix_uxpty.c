@@ -1,5 +1,5 @@
---- ./uxpty.c.orig	2011-03-02 20:12:42.000000000 +0100
-+++ ./uxpty.c	2011-07-17 14:55:44.000000000 +0200
+--- unix/uxpty.c.orig	2019-03-16 12:26:38 UTC
++++ unix/uxpty.c
 @@ -13,7 +13,6 @@
  #include <fcntl.h>
  #include <termios.h>
