@@ -32,6 +32,7 @@
     SUBDIR += chasen-base
     SUBDIR += cmigemo
     SUBDIR += cmigemo-dict
+    SUBDIR += cp5022x-el
     SUBDIR += csrd
     SUBDIR += ctags
     SUBDIR += dbskkd-cdb

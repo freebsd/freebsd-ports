@@ -1,0 +1,4 @@
+This elisp supports CP50220 and CP51932 as coding-system.  Add the following
+line to ~/.emacs to activate it:
+
+(require 'cp5022x)
