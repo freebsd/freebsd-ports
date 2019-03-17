@@ -3,7 +3,7 @@
 
 PORTNAME=	commons-utilities
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://devio.us/~dereckson/software/commons-utilities/
 
