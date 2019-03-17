@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	drf-yasg
-DISTVERSION=	1.11.1
+DISTVERSION=	1.14.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,10 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.11.7:www/py-django111@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.7.7:www/py-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coreapi>=2.3.3:devel/py-coreapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coreschema>=0.0.4:devel/py-coreschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}flex>=6.11.1:devel/py-flex@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}future>=0.16.0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}inflection>=0.3.1:devel/py-inflection@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openapi-codec>=1.3.2:devel/py-openapi-codec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.15.34:devel/py-ruamel.yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}swagger-spec-validator>=2.1.0:devel/py-swagger-spec-validator@${PY_FLAVOR} \
