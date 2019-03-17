@@ -30,7 +30,7 @@ USE_QT=	core buildtools_build qmake_build
 
 PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
-OPTIONS_DEFINE=	GNUPG OPENSSL SASL
+OPTIONS_DEFINE=	GNUPG OPENSSL SASL TEST
 OPTIONS_DEFAULT=GNUPG OPENSSL
 OPTIONS_SUB=	yes
 
@@ -43,8 +43,8 @@ OPENSSL_USES=		ssl
 SASL_CMAKE_ON=		-DWITH_cyrus-sasl_PLUGIN=yes
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-post-patch:
-# Qt Network module is used for tests only
-	${REINPLACE_CMD} 's,Core Network,Core,' ${WRKSRC}/CMakeLists.txt
+TEST_CMAKE_BOOL=	BUILD_TESTS
+TEST_TEST_TARGET=	test
+TEST_USE=		QT=network,testlib
 
 .include <bsd.port.mk>
