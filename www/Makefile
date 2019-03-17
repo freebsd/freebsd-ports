@@ -1548,6 +1548,7 @@
     SUBDIR += py-django-cors-headers
     SUBDIR += py-django-countries
     SUBDIR += py-django-crispy-forms
+    SUBDIR += py-django-cron
     SUBDIR += py-django-datetime-widget
     SUBDIR += py-django-debug-toolbar
     SUBDIR += py-django-dpaste
