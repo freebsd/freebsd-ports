@@ -11,6 +11,9 @@ COMMENT=	Keybase Filesystem (KBFS)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Merged into security/keybase
+EXPIRATION_DATE=2019-03-31
+
 PORTSCOUT=	skipv:initial-git-on-android
 
 USES=		go
