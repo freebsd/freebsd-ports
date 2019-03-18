@@ -1,6 +1,6 @@
---- src/qm_itemlist.h.orig	2016-02-28 09:52:29 UTC
+--- src/qm_itemlist.h.orig	2018-12-09 18:43:06 UTC
 +++ src/qm_itemlist.h
-@@ -63,7 +63,7 @@ public:
+@@ -63,7 +63,7 @@ class qm_listitemInfo (public)
      QString sorter;
  
      // Override the < operator for alist.sort();
