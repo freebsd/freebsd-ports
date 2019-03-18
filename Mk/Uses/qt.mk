@@ -16,13 +16,6 @@
 # USE_QT		- List of Qt modules to depend on, with optional '_build'
 #			  and '_run' suffixes. Define it empty to include this file
 #			  without depending on Qt ports.
-# Global switches (for inclusion into /etc/make.conf):
-# QT4_OPTIONS		- A list of (Qt 4-only) global options; can be CUPS, NAS
-#					  and/or QGTKSTYLE. If set, Qt will be built with support
-#					  for:
-#					   * Common UNIX Printing System (CUPS);
-#					   * Network Audio System (NAS);
-#					   * GTK+-based Qt theme (QGTKSTYLE).
 
 .if !defined(_QT_MK_INCLUDED)
 _QT_MK_INCLUDED=	qt.mk
