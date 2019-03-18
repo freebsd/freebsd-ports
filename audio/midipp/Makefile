@@ -16,7 +16,7 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	libumidi>=2.0.14:audio/libumidi
 LIB_DEPENDS=	libumidi20.so:audio/libumidi
 
-USES=		gl qmake qt:5 tar:bzip2
+USES=		compiler:c++11-lang gl qmake qt:5 tar:bzip2
 USE_GL=		gl
 USE_QT=		buildtools_build core gui network printsupport widgets
 
