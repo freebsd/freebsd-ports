@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvswitch
-DISTVERSION=	2.10.1
-PORTREVISION=	1
+DISTVERSION=	2.11.0
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
@@ -31,6 +30,9 @@ CONFIGURE_ARGS=	--enable-shared --disable-static --localstatedir=/var \
 USE_RC_SUBR=	ovs-vswitchd ovsdb-server
 LDFLAGS+=	-lpthread
 INSTALL_TARGET=install-strip
+
+SHLIB_VER=	${DISTVERSION:C/\.[0-9]*$//}
+PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/openvswitch
