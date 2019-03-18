@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ddrescue
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 EXTRACT_SUFX=	.tar.lz
@@ -13,8 +13,6 @@ COMMENT=	Data recovery tool
 LICENSE=	GPLv2
 
 EXTRACT_DEPENDS=lzip:archivers/lzip
-
-OPTIONS_DEFINE=	DOCS
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
@@ -27,6 +25,8 @@ PLIST_FILES=	bin/ddrescue \
 		man/man1/ddrescue.1.gz \
 		man/man1/ddrescuelog.1.gz
 
+OPTIONS_DEFINE=	DOCS
+
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${LOCALBASE}/bin/lzip -dc ${DISTDIR}/${DISTFILES} | \
@@ -38,6 +38,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${i}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/ddrescue.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
