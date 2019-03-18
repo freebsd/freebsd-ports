@@ -174,6 +174,7 @@ CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--with-fontconfigincludedir=${LOCALBASE}/include \
 		--with-fontconfiglibdir=${LOCALBASE}/lib \
 		--without-rsvg \
+		--with-qt=no \
 		--disable-io --disable-ocaml --disable-java \
 		--disable-sharp
 
