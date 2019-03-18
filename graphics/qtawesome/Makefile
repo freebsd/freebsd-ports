@@ -12,7 +12,7 @@ COMMENT=	Embed Font Awesome glyphs in Qt-applications
 LICENSE=	MIT
 
 USE_GITHUB=	yes
-USES=		qmake qt:5
+USES=		compiler:c++11-lang qmake qt:5
 USE_QT=		core gui qmake_build buildtools_build
 
 GH_ACCOUNT=	gamecreature
