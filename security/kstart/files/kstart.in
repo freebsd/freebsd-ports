@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 # PROVIDE: kstart
-# REQUIRE: NETWORKING
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
 # KEYWORD: shutdown
 
 # Add the following lines to /etc/rc.conf to enable kstart:
