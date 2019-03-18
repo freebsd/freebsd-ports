@@ -19,6 +19,9 @@ USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	gopasspw
 
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64
+
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 PLIST_FILES=	bin/gopass \
