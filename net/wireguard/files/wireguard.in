@@ -37,6 +37,7 @@ wireguard_stop()
 
 load_rc_config $name
 
+: ${wireguard_enable="NO"}
 : ${wireguard_interfaces=""}
 
 run_rc_command "$1"
