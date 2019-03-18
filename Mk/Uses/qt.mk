@@ -80,13 +80,8 @@ QT_CMAKEDIR_REL?=	lib/cmake
 QT_QTCHOOSERDIR_REL?=	${QT_ETCDIR_REL}/qtchooser
 
 # Not customizable.
-.  if ${_QT_VERSION:M4*}
-QT_MKSPECDIR_REL=	${QT_DATADIR_REL}/mkspecs
-_QT_LIBVER=		# empty
-.  else
 QT_MKSPECDIR_REL=	${QT_ARCHDIR_REL}/mkspecs
 _QT_LIBVER=		${_QT_VERSION:R:R}
-.  endif
 
 LRELEASE?=		${QT_BINDIR}/lrelease
 LUPDATE?=		${QT_BINDIR}/lupdate
@@ -219,11 +214,7 @@ dbus_PORT=		devel/${_QT_RELNAME}-dbus
 dbus_LIB=		libQt${_QT_LIBVER}DBus.so
 
 declarative_PORT=	x11-toolkits/${_QT_RELNAME}-declarative
-.  if ${_QT_VER:M4}
-declarative_LIB=	libQt${_QT_LIBVER}Declarative.so
-.  else
 declarative_LIB=	libQt${_QT_LIBVER}Qml.so
-.  endif
 
 demo_PORT=		misc/${_QT_RELNAME}-qtdemo
 demo_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/qtdemo
@@ -395,18 +386,10 @@ sql_LIB=		libQt${_QT_LIBVER}Sql.so
 
 sql-pgsql_PATH=		${LOCALBASE}/${QT_PLUGINDIR_REL}/sqldrivers/libqsqlpsql.so
 
-.  if ${_QT_VERSION:M4*}
-sql-sqlite2_PORT=	databases/${_QT_RELNAME}-sqlite-plugin
-.  endif
-
 sql-sqlite3_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/sqldrivers/libqsqlite.so
 
 .  for db in ibase mysql odbc pgsql sqlite2 sqlite3 tds
-.    if ${_QT_VERSION:M4*}
-sql-${db}_PORT?=	databases/${_QT_RELNAME}-${db}-plugin
-.    else
-sql-${db}_PORT?=	databases/${_QT_RELNAME}-sqldrivers-${db}
-.    endif
+sql-${db}_PORT=		databases/${_QT_RELNAME}-sqldrivers-${db}
 sql-${db}_PATH?=	${LOCALBASE}/${QT_PLUGINDIR_REL}/sqldrivers/libqsql${db:C/^sql//}.so
 .  endfor
 
