@@ -4,7 +4,11 @@
 #
 
 case $2 in
+	PRE-DEINSTALL)
+		%%FIND%% "%%VIMFILESDIR%%" -name "*.pyc" -delete
+		;;
 	POST-DEINSTALL)
 		/bin/rm "%%VIMFILESDIR%%/doc/tags"
+		%%FIND%% "%%VIMFILESDIR%%" -name "*.pyc" -delete
 		;;
 esac
