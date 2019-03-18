@@ -70,6 +70,7 @@
     SUBDIR += php73-ftp
     SUBDIR += phpwebftp
     SUBDIR += proftpd
+    SUBDIR += proftpd-mod_vroot
     SUBDIR += profxp
     SUBDIR += puf
     SUBDIR += pure-ftpd
