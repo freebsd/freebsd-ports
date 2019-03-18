@@ -8,7 +8,7 @@
 # X264_BUILD is the "core" number, and can be found in x264.h.
 #
 # X264_COMMIT is the commit number, and can be found here:
-# http://git.videolan.org/?p=x264.git;a=shortlog;h=refs/heads/stable
+# https://code.videolan.org/videolan/x264/commits/stable
 #
 # X264_REV requires a checkout the git revision for the version the port
 # is being updated to. Then run version.sh against it.
