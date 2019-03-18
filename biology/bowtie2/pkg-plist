@@ -7,6 +7,7 @@ bin/bowtie2-build-s
 bin/bowtie2-inspect
 bin/bowtie2-inspect-l
 bin/bowtie2-inspect-s
+bin/bowtie2-test
 %%DATADIR%%/scripts/convert_quals.pl
 %%DATADIR%%/scripts/gen_2b_occ_lookup.pl
 %%DATADIR%%/scripts/gen_occ_lookup.pl
@@ -56,6 +57,8 @@ bin/bowtie2-inspect-s
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/index/lambda_virus.4.bt2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/index/lambda_virus.rev.1.bt2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/index/lambda_virus.rev.2.bt2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reads/combined_reads.bam
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reads/conversion_utilities.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/reads/longreads.fq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/reads/reads_1.fq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/reads/reads_2.fq

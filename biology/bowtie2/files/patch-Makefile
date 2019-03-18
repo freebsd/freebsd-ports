@@ -1,34 +1,24 @@
---- Makefile.orig	2017-10-05 16:45:18 UTC
+--- Makefile.orig	2019-03-16 04:14:43 UTC
 +++ Makefile
-@@ -21,10 +21,11 @@
+@@ -21,8 +21,9 @@
  # Makefile for bowtie, bowtie2-build, bowtie2-inspect
  #
  
--prefix = /usr/local
--bindir = $(prefix)/bin
-+PREFIX ?= /usr/local
-+bindir = $(PREFIX)/bin
+-prefix := /usr/local
+-bindir := $(prefix)/bin
++# Use PREFIX (upper case) provided by many package managers
++PREXIX ?= /usr/local
++bindir := $(PREFIX)/bin
  
- INC = $(if $(RELEASE_BUILD),-I$(CURDIR)/.include)
-+INC += -I${LOCALBASE}/include
- LIBS = $(LDFLAGS) $(if $(RELEASE_BUILD),-L$(CURDIR)/.lib) -lz
- GCC_PREFIX = $(shell dirname `which gcc`)
- GCC_SUFFIX =
-@@ -98,7 +99,7 @@ endif
- 
- #default is to use Intel TBB
- ifneq (1,$(NO_TBB))
--	LIBS += $(PTHREAD_LIB) -ltbb -ltbbmalloc$(if $(RELEASE_BUILD),,_proxy)
-+	LIBS += $(PTHREAD_LIB) -L${LOCALBASE}/lib -ltbb -ltbbmalloc
- 	override EXTRA_FLAGS += -DWITH_TBB
- else
- 	LIBS += $(PTHREAD_LIB)
-@@ -189,7 +190,7 @@ SSE_FLAG=-msse2
- 
- DEBUG_FLAGS    = -O0 -g3 -m64 $(SSE_FLAG)
- DEBUG_DEFS     = -DCOMPILER_OPTIONS="\"$(DEBUG_FLAGS) $(EXTRA_FLAGS)\""
--RELEASE_FLAGS  = -O3 -m64 $(SSE_FLAG) -funroll-loops -g3
-+RELEASE_FLAGS  = $(CXXFLAGS) $(SSE_FLAG) -funroll-loops
- RELEASE_DEFS   = -DCOMPILER_OPTIONS="\"$(RELEASE_FLAGS) $(EXTRA_FLAGS)\""
- NOASSERT_FLAGS = -DNDEBUG
- FILE_FLAGS     = -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE
+ LDLIBS := -lz
+ GCC_PREFIX := $(shell dirname `which gcc`)
+@@ -30,7 +31,8 @@ GCC_SUFFIX :=
+ CC ?= $(GCC_PREFIX)/gcc$(GCC_SUFFIX)
+ CPP ?= $(GCC_PREFIX)/g++$(GCC_SUFFIX)
+ CXX ?= $(CPP)
+-CXXFLAGS += -std=c++98
++# long long is unsupported in c++98
++# CXXFLAGS += -std=c++98
+ ifeq (aarch64,$(shell uname -m))
+ 	CXXFLAGS += -fopenmp-simd -DWITH_AARCH64
+ 	CPPFLAGS += -Ithird_party/simde
