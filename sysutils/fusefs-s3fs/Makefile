@@ -3,7 +3,7 @@
 
 PORTNAME=	s3fs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.84
+DISTVERSION=	1.85
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -13,14 +13,16 @@ COMMENT=	FUSE-based file system backed by Amazon S3
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libxml2.so:textproc/libxml2
 
 USES=		autoreconf fuse pkgconfig ssl
+
 GNU_CONFIGURE=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	s3fs-fuse
 GH_PROJECT=	s3fs-fuse
-USE_GNOME=	libxml2
 
 PLIST_FILES=	bin/s3fs man/man1/s3fs.1.gz
 
