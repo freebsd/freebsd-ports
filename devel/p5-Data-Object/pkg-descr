@@ -3,4 +3,4 @@ objects which provide common methods for operating on the data.
 
 Basically it provides Moo objects and roles for native Perl data types.
 
-WWW: https://metacpan.org/pod/Data::Object
+WWW: https://metacpan.org/release/Data-Object
