@@ -250,7 +250,6 @@
 %%SITE_PERL%%/Data/Object/Replace.pm
 %%SITE_PERL%%/Data/Object/Role.pm
 %%SITE_PERL%%/Data/Object/Role/Catchable.pm
-%%SITE_PERL%%/Data/Object/Role/Codifiable.pm
 %%SITE_PERL%%/Data/Object/Role/Detract.pm
 %%SITE_PERL%%/Data/Object/Role/Dumper.pm
 %%SITE_PERL%%/Data/Object/Role/Output.pm
@@ -546,7 +545,6 @@
 %%PERL5_MAN3%%/Data::Object::Replace.3.gz
 %%PERL5_MAN3%%/Data::Object::Role.3.gz
 %%PERL5_MAN3%%/Data::Object::Role::Catchable.3.gz
-%%PERL5_MAN3%%/Data::Object::Role::Codifiable.3.gz
 %%PERL5_MAN3%%/Data::Object::Role::Detract.3.gz
 %%PERL5_MAN3%%/Data::Object::Role::Dumper.3.gz
 %%PERL5_MAN3%%/Data::Object::Role::Output.3.gz
