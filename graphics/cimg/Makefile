@@ -3,7 +3,7 @@
 
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	2.5.2
+DISTVERSION=	2.5.3
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
@@ -91,7 +91,7 @@ USE_XORG+=	xext
 . endif
 
 DOCBASE=	README.txt
-MAKE_ENV+=	FREEBSD_LDFLAGS="${LDFLAGS}"
+MAKE_ARGS+=	CPPFLAGS="${CFLAGS}" FREEBSD_LDFLAGS="${LDFLAGS}"
 PROGS=		CImg_demo captcha curve_editor2d dtmri_view3d			\
 	edge_explorer2d fade_images gaussian_fit1d generate_loop_macros		\
 	hough_transform2d image2ascii image_registration2d image_surface3d	\
@@ -131,7 +131,6 @@ pre-configure:
 		-e 's|XSHM_LDFLAGS = #|XSHM_LDFLAGS =|'		\
 		${BUILD_WRKSRC}/Makefile
 . endif
-	${REINPLACE_CMD} -e 's|-pedantic|${CFLAGS}|' ${BUILD_WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/CImg.h ${STAGEDIR}${PREFIX}/include
