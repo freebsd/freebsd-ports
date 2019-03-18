@@ -1,0 +1,6 @@
+Java Development Kit 11 Documentation. Contains release information,
+API documentation, guides to new features and tool documentation.
+
+The documentation will be installed in ${PREFIX}/share/doc/jdk11/
+
+WWW: http://www.oracle.com/us/technologies/java/index.html
