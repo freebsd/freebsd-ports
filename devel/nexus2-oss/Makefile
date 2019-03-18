@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	nexus2
-PORTVERSION=	2.14.9
-DISTVERSIONSUFFIX=	01
+PORTVERSION=	2.14.12
+DISTVERSIONSUFFIX=	02
 CATEGORIES=	devel www java
 MASTER_SITES=	http://download.sonatype.com/nexus/oss/
 PKGNAMESUFFIX=	-oss
@@ -18,15 +18,16 @@ ONLY_FOR_ARCHS=	amd64 i386
 PATCH_DEPENDS=	zip:archivers/zip
 RUN_DEPENDS=	javaservicewrapper:sysutils/javaservicewrapper
 
+USES=		cpe
+
+CPE_VENDOR=	sonatype
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_TEST=	yes
 
-USES=		cpe
-CPE_VENDOR=	sonatype
-
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
+JAVA_VERSION=	1.8+
 
 USE_RC_SUBR=	${PORTNAME}
 
@@ -96,7 +97,7 @@ post-patch:
 		${WRKSRC}/conf/nexus.properties ${WRKSRC}/conf/wrapper.conf
 	@${FIND} ${WRKSRC} -name '*.bak' -delete -o -name '*.orig' -delete
 	@(cd ${FILESDIR}/nexus/WEB-INF/lib/nexus-core.jar \
-		&& ${ZIP_CMD} -r ${NEXUS_CORE_JAR} META-INF)
+		&& ${ZIP_CMD} -rq ${NEXUS_CORE_JAR} META-INF)
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
