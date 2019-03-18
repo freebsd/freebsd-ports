@@ -2,7 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	5.01.9669
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 PKGNAMESUFFIX=	5
 
@@ -11,8 +11,6 @@ COMMENT=	SoftEther VPN 5 (Developer Edition)
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BUILD_DEPENDS=	${LOCALBASE}/include/cpu_features_macros.h:devel/cpu_features
 
 USES+=		cmake:noninja dos2unix iconv:wchar_t localbase:ldflags ncurses readline ssl
 USE_RC_SUBR=	softether_bridge softether_client softether_server
@@ -45,7 +43,15 @@ PLIST_SUB=	SE_DBDIR="${SE_DBDIR}" SE_LOGDIR="${SE_LOGDIR}"
 SUB_LIST=	SE_DBDIR="${SE_DBDIR}" SE_LOGDIR="${SE_LOGDIR}"
 SUB_FILES=	pkg-message
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+# devel/cpu_features not available on these archs, see devel/cpu_features/Makefile
+.if (${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == mips || ${ARCH} == mips64)
+# skip cpu_features when devel/cpu_features is not available
+CFLAGS+=	-DSKIP_CPU_FEATURES
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/include/cpu_features_macros.h:devel/cpu_features
+.endif
 
 pre-configure:
 	# not a GNU configure
@@ -107,4 +113,4 @@ post-install-DOCS-on:
 	${FIND} ${WRKSRC} -name ${doc} -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR} \;
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
