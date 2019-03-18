@@ -3,7 +3,7 @@
 
 PORTNAME=	kstart
 DISTVERSION=	4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://archives.eyrie.org/software/kerberos/ \
 		ZI
