@@ -1,17 +1,17 @@
---- libraries/systeminfo/src/sys_unix.cpp.orig	2017-12-18 00:19:43 UTC
+--- libraries/systeminfo/src/sys_unix.cpp.orig	2019-03-09 17:25:33 UTC
 +++ libraries/systeminfo/src/sys_unix.cpp
-@@ -16,6 +16,7 @@ Sys::KernelInfo Sys::getKernelInfo()
+@@ -18,6 +18,7 @@ Sys::KernelInfo Sys::getKernelInfo()
  uint64_t Sys::getSystemRam()
  {
- 	std::string token;
+     std::string token;
 +	#ifdef Q_OS_LINUX
- 	std::ifstream file("/proc/meminfo");
- 	while(file >> token)
- 	{
-@@ -34,6 +35,19 @@ uint64_t Sys::getSystemRam()
- 		// ignore rest of the line
- 		file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
- 	}
+     std::ifstream file("/proc/meminfo");
+     while(file >> token)
+     {
+@@ -36,6 +37,19 @@ uint64_t Sys::getSystemRam()
+         // ignore rest of the line
+         file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+     }
 +	#elif defined Q_OS_FREEBSD
 +	char buff[512];
 +	FILE *fp = popen("sysctl hw.physmem", "r");
@@ -25,17 +25,6 @@
 +		}
 +	}
 +	#endif
- 	return 0; // nothing found
+     return 0; // nothing found
  }
  
-@@ -43,7 +57,9 @@ bool Sys::isCPU64bit()
- }
- 
- bool Sys::isSystem64bit()
--{
-+{	
-+	#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)
- 	// kernel build arch on linux
- 	return QSysInfo::currentCpuArchitecture() == "x86_64";
-+	#endif
- }

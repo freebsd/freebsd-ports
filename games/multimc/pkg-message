@@ -1,0 +1,14 @@
+Important note about LWJGL:
+
+Minecraft requires LWJGL (the Lightweight Java Game Library) to run.
+Mojang hosts prebuilt LWJGL shared objects for Windows, macOS, and Linux,
+which MultiMC is written to download and add to a new instance. The FreeBSD
+port of MultiMC is patched to use the system LWJGL instead, to work around the
+lack of a Mojang-provided binary for FreeBSD.
+
+From version 1.13, Minecraft requires LWJGL 3 to run, but presently the latest
+version in the Ports Collection is 2.9.3. In order to run Minecraft 1.13
+instances in MultiMC, LWJGL 3 will have to be ported, and ideally MultiMC should
+be patched to use version 2 or 3 depending on the Minecraft version of a given instance.
+This is planned for the future, but as of now it is only possible to play versions
+up to 1.12.x with this port.

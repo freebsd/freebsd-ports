@@ -1,14 +1,14 @@
---- api/logic/minecraft/MinecraftInstance.cpp.orig	2017-12-18 00:19:43 UTC
+--- api/logic/minecraft/MinecraftInstance.cpp.orig	2019-03-08 14:41:15 UTC
 +++ api/logic/minecraft/MinecraftInstance.cpp
-@@ -163,7 +163,11 @@ QString MinecraftInstance::binRoot() con
+@@ -161,7 +161,11 @@ QString MinecraftInstance::binRoot() const
  
  QString MinecraftInstance::getNativePath() const
  {
 +#if defined(Q_OS_FREEBSD)
 +	QDir natives_dir(LWJGL_DIR "/");
 +#else
- 	QDir natives_dir(FS::PathCombine(instanceRoot(), "natives/"));
+     QDir natives_dir(FS::PathCombine(instanceRoot(), "natives/"));
 +#endif
- 	return natives_dir.absolutePath();
+     return natives_dir.absolutePath();
  }
  
