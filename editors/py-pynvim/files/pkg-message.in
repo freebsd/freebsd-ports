@@ -1,0 +1,7 @@
+In order to use pynvim in Neovim it is required to specify add the following line
+to ~/.config/nvim/init.vim:
+
+let g:python%%SUFFIX_FOR_PYTHON_3%%_host_prog='%%PYTHON_CMD%%'
+
+See Neovim Wiki for more information:
+https://github.com/neovim/neovim/wiki/Installing-Neovim
