@@ -2,7 +2,7 @@
 
 PORTNAME=	liteide
 DISTVERSIONPREFIX=	x
-DISTVERSION=	35.5
+DISTVERSION=	36
 CATEGORIES=	devel editors
 
 MAINTAINER=	dg@syrec.org
@@ -22,7 +22,7 @@ USE_QT=		buildtools_build core gui network printsupport widgets xml
 USE_GITHUB=	yes
 GH_ACCOUNT=	visualfc
 GH_TUPLE=	visualfc:gocode:4e0736b:gocode/src/github.com/visualfc/gocode \
-		visualfc:gotools:2afd807:gotools/src/github.com/visualfc/gotools
+		visualfc:gotools:6d12497:gotools/src/github.com/visualfc/gotools
 
 SUB_FILES=	liteide
 
