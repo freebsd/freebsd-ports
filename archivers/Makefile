@@ -148,6 +148,7 @@
     SUBDIR += peazip
     SUBDIR += pecl-lzf
     SUBDIR += pecl-rar
+    SUBDIR += php-brotli
     SUBDIR += php-horde_lz4
     SUBDIR += php-snappy
     SUBDIR += php71-bz2
