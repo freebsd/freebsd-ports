@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ratelimit-policyd
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	mail
 
 MAINTAINER=	000.fbsd@quip.cz
