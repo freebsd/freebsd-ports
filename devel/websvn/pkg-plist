@@ -78,8 +78,8 @@
 %%WWWDIR%%/templates/BlueGrey/images/filejava.png
 %%WWWDIR%%/templates/BlueGrey/images/filem.png
 %%WWWDIR%%/templates/BlueGrey/images/filepy.png
-%%WWWDIR%%/templates/BlueGrey/images/folder-open.png
-%%WWWDIR%%/templates/BlueGrey/images/folder.png
+%%WWWDIR%%/templates/BlueGrey/images/directory-open.png
+%%WWWDIR%%/templates/BlueGrey/images/directory.png
 %%WWWDIR%%/templates/BlueGrey/images/i-node.png
 %%WWWDIR%%/templates/BlueGrey/images/l-node.png
 %%WWWDIR%%/templates/BlueGrey/images/repo.png
@@ -127,7 +127,7 @@
 %%WWWDIR%%/templates/Elegant/images/file-py.png
 %%WWWDIR%%/templates/Elegant/images/file-xml.png
 %%WWWDIR%%/templates/Elegant/images/file.png
-%%WWWDIR%%/templates/Elegant/images/folder.png
+%%WWWDIR%%/templates/Elegant/images/directory.png
 %%WWWDIR%%/templates/Elegant/images/home.png
 %%WWWDIR%%/templates/Elegant/images/information.png
 %%WWWDIR%%/templates/Elegant/images/log.png
@@ -185,7 +185,7 @@
 %%WWWDIR%%/templates/calm/images/filephp.png
 %%WWWDIR%%/templates/calm/images/filetxt.png
 %%WWWDIR%%/templates/calm/images/filexml.png
-%%WWWDIR%%/templates/calm/images/folder.png
+%%WWWDIR%%/templates/calm/images/directory.png
 %%WWWDIR%%/templates/calm/images/html.png
 %%WWWDIR%%/templates/calm/images/i-node.png
 %%WWWDIR%%/templates/calm/images/l-node.png
