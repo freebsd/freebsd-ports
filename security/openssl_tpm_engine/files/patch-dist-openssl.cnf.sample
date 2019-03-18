@@ -5,7 +5,7 @@
  
  [tpm_section]
 -dynamic_path = /usr/local/ssl/lib/engines/libtpm.so
-+dynamic_path = %%PREFIX%%/lib/openssl/engines/tpm.so
++dynamic_path = %%TPMSO%%
  engine_id = tpm
  default_algorithms = ALL
  #default_algorithms = RAND,RSA
