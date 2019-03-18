@@ -9,7 +9,8 @@ MASTER_SITES=	http://www.erlang.org/download/:erlangorg			\
 		http://erlang.stacken.kth.se/download/:erlangorg		\
 		http://www.csd.uu.se/ftp/mirror/erlang/download/:erlangorg	\
 		http://olgeni.olgeni.com/~olgeni/distfiles/:local		\
-		LOCAL/olgeni:local
+		LOCAL/olgeni:local \
+		LOCAL/dch:local
 PKGNAMESUFFIX=	-runtime21
 DISTNAME=	otp_src_${ERLANG_REL}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg		\
