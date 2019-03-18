@@ -214,6 +214,7 @@
     SUBDIR += psgml
     SUBDIR += puff
     SUBDIR += py-editorconfig
+    SUBDIR += py-pynvim
     SUBDIR += py-room
     SUBDIR += rox-edit
     SUBDIR += rubygem-neovim

@@ -1,0 +1,5 @@
+Pynvim implements support for python plugins in Nvim. It also works as a
+library for connecting to and scripting Nvim processes through its msgpack-rpc
+API.
+
+WWW: https://pynvim.readthedocs.io/en/latest/
