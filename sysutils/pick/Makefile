@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pick
-PORTVERSION=	2.0.2
+PORTVERSION=	3.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/mptre/pick/releases/download/v${PORTVERSION}/
 
