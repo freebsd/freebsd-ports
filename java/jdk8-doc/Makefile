@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	${JDK_VERSION}-doc
 DISTNAME=	jdk-${JDK_VERSION}u${JDK_UPDATE_VER}-docs-all
 
 MAINTAINER=	java@FreeBSD.org
-COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
+COMMENT=	Java Development Kit ${JDK_VERSION} Documentation
 
 DOCSDIR?=	${PREFIX}/share/doc/jdk${JDK_VERSION}
 RESTRICTED=	This documentation is under license and export control.
