@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tautulli
-PORTVERSION=	2.1.26
+PORTVERSION=	2.1.28
 DISTVERSIONPREFIX=v
 CATEGORIES=	multimedia python
 
@@ -47,6 +47,7 @@ do-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${RLN} ${STAGEDIR}${DOCSDIR}/CHANGELOG.md ${STAGEDIR}${WWWDIR}/CHANGELOG.md
 
 post-install:
 	${FIND} -s ${STAGEDIR}${WWWDIR} -type d -empty -delete
