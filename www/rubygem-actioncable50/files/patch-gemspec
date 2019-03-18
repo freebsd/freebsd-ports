@@ -2,10 +2,10 @@
 +++ actioncable.gemspec
 @@ -24,7 +24,7 @@ Gem::Specification.new do |s|
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<actionpack>.freeze, ["= 5.0.7.1"])
+       s.add_runtime_dependency(%q<actionpack>.freeze, ["= 5.0.7.2"])
        s.add_runtime_dependency(%q<nio4r>.freeze, [">= 1.2", "< 3.0"])
 -      s.add_runtime_dependency(%q<websocket-driver>.freeze, ["~> 0.6.1"])
 +      s.add_runtime_dependency(%q<websocket-driver>.freeze, ["~> 0.6", ">= 0.6.1"])
        s.add_development_dependency(%q<blade>.freeze, ["~> 0.5.1"])
      else
-       s.add_dependency(%q<actionpack>.freeze, ["= 5.0.7.1"])
+       s.add_dependency(%q<actionpack>.freeze, ["= 5.0.7.2"])
