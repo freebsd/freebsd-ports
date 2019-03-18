@@ -1,7 +1,7 @@
-TIMESTAMP = 1535906975
-SHA256 (Valloric-YouCompleteMe-g20180819-e018777_GH0.tar.gz) = ee456237838507b9a59fede99b0e5437467513b1c6c17b2e796d0c059e8ff4bf
-SIZE (Valloric-YouCompleteMe-g20180819-e018777_GH0.tar.gz) = 285684
-SHA256 (Valloric-ycmd-3869152_GH0.tar.gz) = c755c65b40caa69ecf4d734f7c5d6375b0850bf3794f39e4352ec9e060a0e2ab
-SIZE (Valloric-ycmd-3869152_GH0.tar.gz) = 3733056
-SHA256 (micbou-regex-7ceefe5_GH0.tar.gz) = d2f4bd6baf71180b86f72eb5bcc7f17e047b665353d18a9af47e014833d02be9
-SIZE (micbou-regex-7ceefe5_GH0.tar.gz) = 660277
+TIMESTAMP = 1552876103
+SHA256 (Valloric-YouCompleteMe-g20190314-299f8e4_GH0.tar.gz) = 367b35ab02d615da03285f929cf6c7c1d90778982b1f28d402647d1279a63400
+SIZE (Valloric-YouCompleteMe-g20190314-299f8e4_GH0.tar.gz) = 289525
+SHA256 (Valloric-ycmd-d0eba90_GH0.tar.gz) = 9568fa3200455d418d13007dd460ab349050e0b0b647c14c57ea7331ffde7dee
+SIZE (Valloric-ycmd-d0eba90_GH0.tar.gz) = 4544915
+SHA256 (micbou-regex-d2ef9c4_GH0.tar.gz) = 3d6df6a5e730d43ed7ce965b368ec305274ec6d5bea458a48beb94b96485c066
+SIZE (micbou-regex-d2ef9c4_GH0.tar.gz) = 674328

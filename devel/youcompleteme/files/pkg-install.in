@@ -6,5 +6,6 @@
 case $2 in
 	POST-INSTALL)
 		%%PREFIX%%/bin/vim --noplugin -u NONE -U NONE --cmd ":helptags %%VIMFILESDIR%%/doc" --cmd ":q"
+		%%FIND%% "%%VIMFILESDIR%%" -name "*.pyc" -delete
 		;;
 esac
