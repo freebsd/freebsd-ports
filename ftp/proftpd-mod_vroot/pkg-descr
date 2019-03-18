@@ -1,0 +1,3 @@
+A virtual chroot capability that does not require root privileges for ProFTPD.
+
+WWW: http://www.castaglia.org/proftpd/modules/mod_vroot.html
