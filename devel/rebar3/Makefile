@@ -3,7 +3,7 @@
 PORTNAME=	rebar3
 PORTVERSION=	3.9.1
 PORTEPOCH=	1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
 		http://olgeni.olgeni.com/~olgeni/distfiles/:deps \
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/erl:lang/erlang \
 RUN_DEPENDS=	${LOCALBASE}/bin/erl:lang/erlang
 
 OPTIONS_DEFINE=	BASH ZSH EXAMPLES
+OPTIONS_DEFAULT=BASH ZSH
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rebar
