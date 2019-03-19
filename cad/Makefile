@@ -54,6 +54,7 @@
     SUBDIR += kicad-library-symbols-devel
     SUBDIR += kicad-library-templates
     SUBDIR += kicad-library-templates-devel
+    SUBDIR += klayout
     SUBDIR += ldraw
     SUBDIR += lepton-eda
     SUBDIR += libopencad
