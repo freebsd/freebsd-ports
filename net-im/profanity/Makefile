@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	profanity
-PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTVERSION=	0.6.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.profanity.im/
 
@@ -17,15 +16,18 @@ LIB_DEPENDS=	libmesode.so:net-im/libmesode \
 		libcurl.so:ftp/curl \
 		libotr.so.5:security/libotr \
 		libuuid.so:misc/e2fsprogs-libuuid \
-		libgpgme.so:security/gpgme
+		libgpgme.so:security/gpgme \
+		libassuan.so:security/libassuan \
+		libgpg-error.so:security/libgpg-error
 
-USES=		ncurses pkgconfig ssl python readline autoreconf libtool
+USES=		ncurses pkgconfig ssl python readline autoreconf libtool gnome
+USE_GNOME=	glib20
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-otr --enable-python-plugins --enable-c-plugins \
 		--enable-pgp --enable-icons=no --with-xscreensaver=no
 CONFIGURE_ENV=	LIBS="${CFLAGS} -lcrypto"
-USE_GNOME=	glib20
-
+INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	NOTIFY
 
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
