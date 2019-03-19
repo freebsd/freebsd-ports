@@ -31,6 +31,7 @@ include/libmolsketch/actions/ringaction.h
 include/libmolsketch/actions/rotateaction.h
 include/libmolsketch/actions/textaction.h
 include/libmolsketch/actions/transformcommand.h
+include/libmolsketch/actions/zlevelaction.h
 include/libmolsketch/arrow.h
 include/libmolsketch/arrowpopup.h
 include/libmolsketch/atom.h
@@ -74,12 +75,14 @@ include/libmolsketch/settingsconnector.h
 include/libmolsketch/settingsfacade.h
 include/libmolsketch/settingsitem.h
 include/libmolsketch/stringify.h
+include/libmolsketch/sumformula.h
 include/libmolsketch/textitem.h
 include/libmolsketch/xmlobjectinterface.h
 lib/molsketch/libmolsketch.so
 lib/molsketch/libobabeliface.so
 share/applications/molsketch.desktop
 share/icons/hicolor/scalable/apps/molsketch.svg
+share/icons/hicolor/scalable/mimetypes/application-x-molsketch-molecule.svg
 share/icons/hicolor/scalable/mimetypes/application-x-molsketch.svg
 share/metainfo/net.sourceforge.molsketch.appdata.xml
 share/mime/packages/molsketch.xml
