@@ -11,6 +11,9 @@ MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/ \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Meta source fake-out script for building ksb tools
 
+DEPRECATED=	No longer required as comms/conserver is being retired.
+EXPIRATION_DATE=	2019-03-31
+
 USES=		tar:tgz
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Manage remote serial consoles via TCP/IP
 
+DEPRECATED=	Superseeded by comms/conserver-com
+EXPIRATION_DATE=	2019-03-31
+
 BUILD_DEPENDS=	makeme:devel/msrc0 \
 		mkcmd:devel/mkcmd
 
