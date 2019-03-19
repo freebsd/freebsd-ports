@@ -1,0 +1,18 @@
+If you are installing Frobby as a dependency, most probably you only
+need the static library and maybe the shared library, but certainly
+not the executable.
+
+----------------------------------------------------------------------
+
+Warning: the library documentation is very incomplete.
+Warning: installing documentation might require high build times due
+to heavy build dependencies.
+
+----------------------------------------------------------------------
+
+Warning: hilbert_deform and hilbert_bigatti tests are known to fail
+because simplifications do not work for action "hilbert" with
+algorithm "deform" or "bigatti", i.e. output polynomials present
+expressions such as "a*b*c + a*b*c" or "a - a". Nevertheless results
+seem to be correct.
+Please report if you get wrong results.

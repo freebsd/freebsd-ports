@@ -227,6 +227,7 @@
     SUBDIR += fpc-numlib
     SUBDIR += fplll
     SUBDIR += fricas
+    SUBDIR += frobby
     SUBDIR += fxt
     SUBDIR += g2o
     SUBDIR += galculator
