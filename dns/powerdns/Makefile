@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-DISTVERSION=	4.1.6
+DISTVERSION=	4.1.7
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
