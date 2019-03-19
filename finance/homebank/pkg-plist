@@ -15,6 +15,7 @@ share/locale/be/LC_MESSAGES/homebank.mo
 share/locale/bg/LC_MESSAGES/homebank.mo
 share/locale/br/LC_MESSAGES/homebank.mo
 share/locale/ca/LC_MESSAGES/homebank.mo
+share/locale/ckb/LC_MESSAGES/homebank.mo
 share/locale/cs/LC_MESSAGES/homebank.mo
 share/locale/cy/LC_MESSAGES/homebank.mo
 share/locale/da/LC_MESSAGES/homebank.mo
@@ -37,10 +38,10 @@ share/locale/id/LC_MESSAGES/homebank.mo
 share/locale/is/LC_MESSAGES/homebank.mo
 share/locale/it/LC_MESSAGES/homebank.mo
 share/locale/ja/LC_MESSAGES/homebank.mo
+share/locale/ka/LC_MESSAGES/homebank.mo
 share/locale/ko/LC_MESSAGES/homebank.mo
 share/locale/lt/LC_MESSAGES/homebank.mo
 share/locale/lv/LC_MESSAGES/homebank.mo
-share/locale/mr/LC_MESSAGES/homebank.mo
 share/locale/ms/LC_MESSAGES/homebank.mo
 share/locale/nb/LC_MESSAGES/homebank.mo
 share/locale/nds/LC_MESSAGES/homebank.mo
@@ -67,10 +68,12 @@ share/mime-info/homebank.mime
 share/mime/packages/homebank.xml
 %%DATADIR%%/datas/ChangeLog
 %%DATADIR%%/datas/example.xhb
+%%DATADIR%%/datas/hb-categories-cy.csv
 %%DATADIR%%/datas/hb-categories-de.csv
 %%DATADIR%%/datas/hb-categories-en.csv
 %%DATADIR%%/datas/hb-categories-es.csv
 %%DATADIR%%/datas/hb-categories-fr.csv
+%%DATADIR%%/datas/hb-categories-hu.csv
 %%DATADIR%%/datas/hb-categories-it.csv
 %%DATADIR%%/datas/hb-categories-lt.csv
 %%DATADIR%%/datas/hb-categories-pt.csv
@@ -91,6 +94,7 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/dlg-paye.html
 %%DATADIR%%/help/dlg-pref.html
 %%DATADIR%%/help/dlg-spli.html
+%%DATADIR%%/help/dlg-tag.html
 %%DATADIR%%/help/dlg-tran.html
 %%DATADIR%%/help/dlg-wall.html
 %%DATADIR%%/help/dlg-xfer.html
@@ -147,6 +151,7 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/images/dlg-prefs9.png
 %%DATADIR%%/help/images/dlg-properties1.png
 %%DATADIR%%/help/images/dlg-split1.png
+%%DATADIR%%/help/images/dlg-tag.png
 %%DATADIR%%/help/images/dlg-template1.png
 %%DATADIR%%/help/images/dlg-transaction1.png
 %%DATADIR%%/help/images/dlg-transaction2.png
@@ -217,6 +222,7 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/use-auto_assign.html
 %%DATADIR%%/help/use-budget.html
 %%DATADIR%%/help/use-import.html
+%%DATADIR%%/help/use-lend-refund.html
 %%DATADIR%%/help/use-tipsandtricks.html
 %%DATADIR%%/help/use-vehiclecost.html
 %%DATADIR%%/help/win-account.html
