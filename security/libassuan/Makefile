@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libassuan
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 CATEGORIES=	security devel
 MASTER_SITES=	GNUPG
 
