@@ -1,5 +1,5 @@
---- utils/llvm-build/llvmbuild/main.py.orig	2015-07-20 23:51:12 UTC
-+++ utils/llvm-build/llvmbuild/main.py
+--- llvm/utils/llvm-build/llvmbuild/main.py.orig	2015-07-20 23:51:12 UTC
++++ llvm/utils/llvm-build/llvmbuild/main.py
 @@ -718,7 +718,17 @@ def add_magic_target_components(parser, 
  
      # We handle a few special cases of target names here for historical
