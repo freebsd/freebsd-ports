@@ -3,7 +3,7 @@
 
 PORTNAME=	bitchx
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES+=	irc
 MASTER_SITES=	SF/${PORTNAME}/ircii-pana/${PORTNAME}-${DISTVERSION}
@@ -20,7 +20,6 @@ CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
 		--datadir="${PREFIX}/share" \
 		--libdir="${PREFIX}/share"
-LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_SUB=	yes
 
@@ -40,7 +39,7 @@ TOGGLES_DESC=	Disable annoyance toggles
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
-SSL_CONFIGURE_WITH=	ssl
+SSL_CONFIGURE_WITH=	ssl="${OPENSSLBASE}"
 SSL_USES=		ssl
 
 PLUGINS_CONFIGURE_WITH=	plugins="${PLUGIN_LIST:C/\$$/,/g}"
