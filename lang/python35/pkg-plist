@@ -4968,6 +4968,7 @@ lib/python%%XYDOT%%/test/support/__pycache__/script_helper.cpython-%%XY%%.opt-1.
 lib/python%%XYDOT%%/test/support/__pycache__/script_helper.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/support/__pycache__/script_helper.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/support/script_helper.py
+lib/python%%XYDOT%%/test/talos-2019-0758.pem
 lib/python%%XYDOT%%/test/test___all__.py
 lib/python%%XYDOT%%/test/test___future__.py
 lib/python%%XYDOT%%/test/test__locale.py
