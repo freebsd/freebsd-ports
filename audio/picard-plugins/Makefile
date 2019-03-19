@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	picard-plugins
-PORTVERSION=	2.0.20190212
+PORTVERSION=	2.0.20190312
 CATEGORIES=	audio python
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -15,7 +15,7 @@ USE_PYTHON=	noflavors
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	metabrainz
-GH_TAGNAME=	e67ac70
+GH_TAGNAME=	8cb6013
 
 PORTSCOUT=	limit:^2\.
 
@@ -23,12 +23,15 @@ NO_ARCH=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	GCC_VER=${GCC_DEFAULT:S/.//}
 
+BUILD_WRKSRC=	${WRKSRC}/build
 PLUGINSDIR=	${PYTHON_SITELIBDIR}/picard/plugins
 
-OPTIONS_DEFINE=		BPM MOODBAR
+OPTIONS_DEFINE=		ALBUM_COLUMN BPM MOODBAR
 OPTIONS_GROUP=		REPLAYGAIN
 OPTIONS_GROUP_REPLAYGAIN=	FLAC MP3 VORBIS WAVPACK
 OPTIONS_SUB=		yes
+
+ALBUM_COLUMN_DESC=	Adds album column to main window (can't be disabled)
 
 BPM_DESC=		Beats per minute
 BPM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aubio>=0.4.5:audio/py-aubio@${PY_FLAVOR}
@@ -47,21 +50,25 @@ do-build:
 # be installed into their own subdirectories under PLUGINSDIR. Plugins
 # written as a single .py file must be installed directly in PLUGINSDIR.
 # We copy them into the correct hierarchy and compile them here.
-	@${MKDIR} ${WRKSRC}/build
+	@${MKDIR} ${BUILD_WRKSRC}
 	@(cd ${WRKSRC}/plugins; \
 	   for dir in *; \
 	   do \
 	      if [ -f $${dir}/__init__.py ]; \
-		 then ${CP} -R $${dir} ${WRKSRC}/build; \
-		 else ${CP} -R $${dir}/* ${WRKSRC}/build; \
+		 then ${CP} -R $${dir} ${BUILD_WRKSRC}; \
+		 else ${CP} -R $${dir}/* ${BUILD_WRKSRC}; \
 	      fi; \
 	   done;)
-	${PYTHON_CMD} -m compileall ${WRKSRC}/build
-	${PYTHON_CMD} -O -m compileall ${WRKSRC}/build
+	${FIND} ${BUILD_WRKSRC} -type f \( -name '.*' -o -name '*.bak' -o -name '*.orig' \) -exec ${RM} {} \;
+	${PYTHON_CMD} -m compileall ${BUILD_WRKSRC}
+	${PYTHON_CMD} -O -m compileall ${BUILD_WRKSRC}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PLUGINSDIR}
-	(cd ${WRKSRC}/build; ${COPYTREE_SHARE} . ${STAGEDIR}${PLUGINSDIR})
+	(cd ${BUILD_WRKSRC}; ${COPYTREE_SHARE} . ${STAGEDIR}${PLUGINSDIR})
+
+post-install-ALBUM_COLUMN-off:
+	@${RM} -r ${STAGEDIR}${PLUGINSDIR}/add_album_column
 
 post-install-BPM-off:
 	@${RM} -r ${STAGEDIR}${PLUGINSDIR}/bpm
