@@ -1,0 +1,10 @@
+ECWolf is an advanced source port for Wolfenstein 3D, Spear of Destiny,
+and Super 3D Noah's Ark based off of the Wolf4SDL code base. ECWolf pulls
+a substantial amount of code from ZDoom and aims to provide a wide array of mod
+editing capabilities without the need to modify the source code.
+Most importantly you will no longer need to replace entire data sets.
+With ECWolf you could for example add a weapon without needing to distribute
+every sprite in the game along with it. Mods will be neatly packaged into
+a single file just like they are for Doom.
+
+WWW: https://maniacsvault.net/ecwolf
