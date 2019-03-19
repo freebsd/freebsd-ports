@@ -203,13 +203,24 @@ TUNING_LARGE_IMPLIES=	THREADS
 TUNING_LARGE_CONFIGURE_ON=	--with-tuning=large
 TUNING_LARGE_CONFIGURE_OFF=	--with-tuning=default
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-symtable
+CONFIGURE_ARGS+=	--enable-symtable \
+			--enable-developer
+USES+=	perl5 pkgconfig
+USE_PERL5=	build
+BUILD_DEPENDS+=	cmocka>0:sysutils/cmocka
+# Developer mode needs ssl, always
+.if !${PORT_OPTIONS:MSSL}
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+USES+=		ssl
+.endif
 .else
 CONFIGURE_ARGS+=	--disable-symtable
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
 SUB_LIST+=	ENGINES=/usr/lib/engines
