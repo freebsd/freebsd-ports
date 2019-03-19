@@ -3,7 +3,7 @@
 
 PORTNAME=	nsd_exporter
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	zi@FreeBSD.org
@@ -34,6 +34,7 @@ USE_RC_SUBR=	nsd_exporter
 
 post-patch:
 	${REINPLACE_CMD} -e 's|"/etc|"${LOCALBASE}/etc|g' ${WRKSRC_go_nsdctl}/nsdctl.go
+	${REINPLACE_CMD} -e 's|"/etc|"${LOCALBASE}/etc|g' ${WRKSRC}/nsd_exporter.go
 
 pre-build:
 	${MKDIR} ${GO_WRKDIR_SRC}/github.com/prometheus ${GO_WRKDIR_SRC}/gopkg.in \
