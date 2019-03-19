@@ -553,6 +553,7 @@
     SUBDIR += metacam
     SUBDIR += metapixel
     SUBDIR += mhgui
+    SUBDIR += milton
     SUBDIR += minder
     SUBDIR += ming
     SUBDIR += mirage

@@ -1,0 +1,9 @@
+Milton is an open source application that lets you Just Paint.
+
+There are no pixels, you can paint with (almost) infinite detail.
+It feels raster-based but it works with vectors.  It is not an image
+editor.  It is not a vector graphics editor.  It is a program that
+lets you draw, sketch, and paint.  There is no save button, your
+work is persistent with unlimited undo.
+
+WWW: https://www.miltonpaint.com/
