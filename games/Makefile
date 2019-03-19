@@ -227,6 +227,7 @@
     SUBDIR += dxx-rebirth
     SUBDIR += easyrpg-player
     SUBDIR += eboard
+    SUBDIR += ecwolf
     SUBDIR += edge
     SUBDIR += editss
     SUBDIR += eduke32

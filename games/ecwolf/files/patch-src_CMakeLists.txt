@@ -1,0 +1,24 @@
+--- src/CMakeLists.txt.orig	2019-01-29 16:31:24 UTC
++++ src/CMakeLists.txt
+@@ -40,9 +40,9 @@ else(GPL)
+ 	set(EXTRA_LIBRARIES)
+ endif(GPL)
+ 
+-find_package(SDL REQUIRED)
+-find_package(SDL_mixer REQUIRED)
+-include_directories(${SDLMIXER_INCLUDE_DIR} ${SDL_INCLUDE_DIR} ${ZLIB_INCLUDE_DIR} ${BZIP2_INCLUDE_DIR} ${JPEG_INCLUDE_DIR})
++pkg_search_module(SDL REQUIRED sdl sdl)
++pkg_search_module(SDLMIXER REQUIRED SDL_mixer)
++include_directories(${SDLMIXER_INCLUDE_DIRS} ${SDL_INCLUDE_DIRS}/SDL ${ZLIB_INCLUDE_DIR} ${BZIP2_INCLUDE_DIR} ${JPEG_INCLUDE_DIR})
+ 
+ check_function_exists(stricmp STRICMP_EXISTS)
+ check_function_exists(strnicmp STRNICMP_EXISTS)
+@@ -320,7 +320,7 @@ else(NOT ANDROID)
+ endif(NOT ANDROID)
+ 
+ add_dependencies(ecwolf lzma gdtoa revision_check)
+-target_link_libraries(ecwolf ${EXTRA_LIBRARIES} ${SDL_LIBRARY} ${SDLMIXER_LIBRARY} ${ZLIB_LIBRARY} ${BZIP2_LIBRARIES} ${JPEG_LIBRARIES} lzma gdtoa)
++target_link_libraries(ecwolf ${EXTRA_LIBRARIES} ${SDL_LIBRARIES} ${SDLMIXER_LIBRARIES} ${ZLIB_LIBRARY} ${BZIP2_LIBRARIES} ${JPEG_LIBRARIES} lzma gdtoa)
+ set_target_properties(ecwolf PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIR})
+ 
+ # Install
