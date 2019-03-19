@@ -1,0 +1,43 @@
+specify libt1 as dependency for libt1x (for parallel builds)
+
+--- lib/Makefile.in.orig	2007-12-23 15:49:42 UTC
++++ lib/Makefile.in
+@@ -118,11 +118,11 @@ $(T1LIB_OBJS) $(T1LIBX_OBJS): t1lib_targ
+ 
+ 
+ type1_target:
+-	@set -e; (cd type1; $(SUBMAKE) ) || exit 1
++	+@set -e; (cd type1; $(SUBMAKE) ) || exit 1
+ 
+ 
+ t1lib_target:
+-	@set -e; (cd t1lib; $(SUBMAKE) ) || exit 1
++	+@set -e; (cd t1lib; $(SUBMAKE) ) || exit 1
+ 
+ 
+ libt1.la: $(TYPE1_OBJS) $(T1LIB_OBJS)
+@@ -133,7 +133,7 @@ libt1.la: $(TYPE1_OBJS) $(T1LIB_OBJS)
+ 	cp t1lib/t1lib.h .
+ 
+ 
+-libt1x.la: $(T1LIBX_OBJS)
++libt1x.la: $(T1LIBX_OBJS) libt1.la
+ 	$(LIBTOOL) --mode=link \
+ 		$(CC) $(LDFLAGS) -o $@ $(T1LIBX_OBJS) \
+ 	         -version-info @T1LIB_LT_CURRENT@:@T1LIB_LT_REVISION@:@T1LIB_LT_AGE@ \
+@@ -145,13 +145,13 @@ libt1x.la: $(T1LIBX_OBJS)
+ 
+ 
+ dependencies: dummy
+-	for i in $(LIBSUBDIRS); do \
++	+for i in $(LIBSUBDIRS); do \
+ 	  (cd $$i; $(MAKE) dependencies) || exit 1; \
+ 	done
+ 
+ 
+ clean: dummy
+-	for i in $(LIBSUBDIRS); do \
++	+for i in $(LIBSUBDIRS); do \
+ 	  (cd $$i; $(MAKE) clean) || exit 1; \
+ 	done
+ 	-$(RM) -f libt1*.la libt1*.a libt1*.so* *~ t1lib*.h .libs/*

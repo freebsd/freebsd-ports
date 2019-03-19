@@ -1,0 +1,47 @@
+add + for submake lines - needed by gmake for parallel building if $(MAKE) not used directly
+
+--- Makefile.in.orig	2007-12-23 15:49:43 UTC
++++ Makefile.in
+@@ -93,25 +93,25 @@ dependencies: dummy
+ 
+ 
+ $(DOCSUBDIRS): dummy
+-	for i in $(DOCSUBDIRS); do \
++	+for i in $(DOCSUBDIRS); do \
+ 	  (cd $$i; $(SUBMAKE) ) || exit 1; \
+ 	done
+ 
+ 
+ $(DUMMYSUBDIRS):        dummy
+-	for i in $(ALLSUBDIRS); do \
++	+for i in $(ALLSUBDIRS); do \
+ 	  (cd $$i; $(SUBMAKE) ) || exit 1; \
+ 	done
+ 
+ 
+ install: dummy
+-	for i in $(ALLSUBDIRS) $(DOCSUBDIRS); do \
++	+for i in $(ALLSUBDIRS) $(DOCSUBDIRS); do \
+ 	  (cd $$i; $(MAKE) install) || exit 1; \
+ 	done
+ 
+ 
+ uninstall: dummy
+-	for i in $(ALLSUBDIRS) $(DOCSUBDIRS); do \
++	+for i in $(ALLSUBDIRS) $(DOCSUBDIRS); do \
+ 	  (cd $$i; $(MAKE) uninstall) || exit 1; \
+ 	done
+ 	$(RM) -Rf $(datadir)/t1lib-$(t1lib_version).$(t1lib_revision)
+@@ -127,10 +127,10 @@ uninstall: dummy
+ 
+ 
+ clean: dummy
+-	for i in $(ALLSUBDIRS); do \
++	+for i in $(ALLSUBDIRS); do \
+ 	  (cd $$i; $(MAKE) clean) || exit 1; \
+ 	done
+-	for i in $(DOCSUBDIRS); do \
++	+for i in $(DOCSUBDIRS); do \
+ 	  (cd $$i; $(MAKE) clean) || exit 1; \
+ 	done
+ 
