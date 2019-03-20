@@ -13,6 +13,7 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 
 DEPRECATED=	Obsolete and unmaintained
+EXPIRATION_DATE=	2019-03-30
 
 BROKEN_powerpc64=	fails to compile: internal compiler error: Killed (program cc1plus)
 
