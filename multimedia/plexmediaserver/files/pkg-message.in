@@ -12,4 +12,47 @@ service %%PORTNAME%% start
 Once started, visit the following to configure:
 http://localhost:32400/web
 
+@@@ INTEL GPU OFFLOAD NOTES @@@
+
+If you have a supported Intel GPU, you can leverage hardware
+accellerated encoding/decoding in Plex Media Server on FreeBSD 12.0+.
+
+The requirements are as follows:
+
+* Install multimedia/drm-kmod: e.g., pkg install drm-fbsd12.0-kmod
+
+* Enable loading of kernel module on boot: sysrc kld_list+="drm" 
+** If Plex will run in a jail, you must load the module outside the jail!
+
+* Load the kernel module now: kldload drm
+
+* Install the supporting Intel VA support library for your GPU
+** multimedia/libva-intel-driver: [LEGACY] Intel GMA 4500 or newer
+** multimedia/libva-intel-media-driver: Intel HD 5000 (Gen8) or newer
+*** This must be installed beside Plex. e.g., in the jail with Plex
+
+* Add plex user to the video group: pw groupmod -n video -m plex
+
+* For jails, make a devfs ruleset to expose /dev/dri/* devices.
+
+e.g., /dev/devfs.rules on the host:
+
+[plex_drm=10]
+add include $devfsrules_hide_all
+add include $devfsrules_unhide_basic
+add include $devfsrules_unhide_login
+add include $devfsrules_jail
+add path 'dri*' unhide
+add path 'dri/*' unhide
+add path 'drm*' unhide
+add path 'drm/*' unhide
+
+* Enable the devfs ruleset for your jail. e.g., devfs_ruleset=10 in your
+/etc/jail.conf or for iocage, iocage set devfs_ruleset="10" 
+
+Please refer to documentation for all other FreeBSD jail management
+utilities.
+
+@@@ INTEL GPU OFFLOAD NOTES @@@
+
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
