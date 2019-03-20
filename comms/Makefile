@@ -93,6 +93,7 @@
     SUBDIR += locator
     SUBDIR += lrzsz
     SUBDIR += lysdr
+    SUBDIR += mbelib
     SUBDIR += mgetty+sendfax
     SUBDIR += minicom
     SUBDIR += mlan3
