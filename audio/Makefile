@@ -550,6 +550,7 @@
     SUBDIR += mpg321
     SUBDIR += mpiosh
     SUBDIR += mps
+    SUBDIR += murmur
     SUBDIR += musepack
     SUBDIR += musescore
     SUBDIR += musicbox-tag-editor
