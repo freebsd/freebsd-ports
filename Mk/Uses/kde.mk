@@ -806,12 +806,12 @@ kde-okular5_LIB=		libOkular5Core.so
 
 # ====================== select the proper multiversion component ==============
 .    for comp in ${_USE_KDE_BOTH}
-${comp}_PORT=		${${comp}${_KDE_VERSION}_PORT}
-.      if defined(${comp}${_KDE_VERSION}_LIB)
-${comp}_LIB=		${${comp}${_KDE_VERSION}_LIB}
+kde-${comp}_PORT=		${kde-${comp}${_KDE_VERSION}_PORT}
+.      if defined(kde-${comp}${_KDE_VERSION}_LIB)
+kde-${comp}_LIB=		${kde-${comp}${_KDE_VERSION}_LIB}
 .      else
-.        if defined(${comp}${_KDE_VERSION}_PATH})
-${comp}_PATH=		${${comp}${_KDE_VERSION}_LIB}
+.        if defined(kde-${comp}${_KDE_VERSION}_PATH})
+kde-${comp}_PATH=		${kde-${comp}${_KDE_VERSION}_LIB}
 .        endif
 # If neither is defined, this gets caught below when checking components
 .      endif
