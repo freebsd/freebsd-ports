@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openmp
-DISTVERSION=	7.0.1
+DISTVERSION=	8.0.0
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	devel
 MASTER_SITES=	http://llvm.org/releases/${DISTVERSION}/
@@ -19,6 +19,7 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 PLIST_FILES=	include/omp.h \
 		include/ompt.h \
+		include/omp-tools.h \
 		lib/libgomp.so \
 		lib/libiomp5.so \
 		lib/libomp.so \
