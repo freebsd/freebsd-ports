@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandas
-DISTVERSION=	0.24.1
+DISTVERSION=	0.24.2
 CATEGORIES=	math devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +27,7 @@ OPTIONS_GROUP_ACCEL=	BTLNCK NUMEXPR
 OPTIONS_GROUP_STORAGE=	BOTO TABLES
 OPTIONS_GROUP_HTML=	LXML HTML5LIB JINJA2
 OPTIONS_GROUP_EXCEL=	XLRD XLWT OPENPYXL XLSX
-OPTIONS_RADIO_SQL=	ALCHEMY10 ALCHEMY11 ALCHEMY12
+OPTIONS_RADIO_SQL=	ALCHEMY10 ALCHEMY11 ALCHEMY12 ALCHEMY13
 OPTIONS_DEFAULT=	BTLNCK NUMEXPR
 
 # Note: we cannot include the following ports in *_DEPENDS because they depend
@@ -51,6 +51,7 @@ XLSX_DESC=	Write MS Excel with textproc/py-xlsxwriter
 ALCHEMY10_DESC=	Support SQL databases via databases/py-sqlalchemy10
 ALCHEMY11_DESC=	Support SQL databases via databases/py-sqlalchemy11
 ALCHEMY12_DESC=	Support SQL databases via databases/py-sqlalchemy12
+ALCHEMY13_DESC=	Support SQL databases via databases/py-sqlalchemy13
 ACCEL_DESC=	Computation Acceleration Add-ons
 STORAGE_DESC=	Data Storage Add-ons
 SQL_DESC=	SQLAlchemy ORM Add-ons
@@ -76,6 +77,7 @@ XLSX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}XlsxWriter>0:textproc/py-xlsxwriter@${P
 ALCHEMY10_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10@${PY_FLAVOR}
 ALCHEMY11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy11>0:databases/py-sqlalchemy11@${PY_FLAVOR}
 ALCHEMY12_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy12>0:databases/py-sqlalchemy12@${PY_FLAVOR}
+ALCHEMY13_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy13>0:databases/py-sqlalchemy13@${PY_FLAVOR}
 
 OPENPYXL_IMPLIES=	XLRD
 
