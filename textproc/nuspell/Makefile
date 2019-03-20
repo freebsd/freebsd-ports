@@ -16,6 +16,7 @@ LIB_DEPENDS=	libboost_locale.so:devel/boost-libs \
 
 USES=		cmake compiler:c++14-lang
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 OPTIONS_DEFINE=	DOCS TEST
