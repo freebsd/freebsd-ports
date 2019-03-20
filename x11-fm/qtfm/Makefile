@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtfm
-DISTVERSION=	6.1.7
+DISTVERSION=	6.1.8
 CATEGORIES=	x11-fm
 
 MAINTAINER=	ports@FreeBSD.org
