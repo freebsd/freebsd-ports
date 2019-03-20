@@ -9,4 +9,4 @@ objects, HTTP utilities to handle entity tags, cache control headers,
 HTTP dates, cookie handling, file uploads, a powerful URL routing
 system and a bunch of community contributed add-on modules.
 
-WWW: http://werkzeug.pocoo.org/
+WWW: https://palletsprojects.com/p/werkzeug/
