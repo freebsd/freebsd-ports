@@ -1,0 +1,73 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: kfcgi
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable kfcgi:
+#
+# kfcgi_enable="YES"
+#
+# Use kfcgi_prog to set the worker process of kfcgi.
+#
+# The kfcgi rc.d script supports multiple profiles. When profiles are
+# specified, the non-profile-specific parameters become defaults.
+#
+# Example:
+#
+# kfcgi_enable="YES"
+# kfcgi_profiles="server1 server2"
+# kfcgi_server1_flags="-s /var/run/kfcgi.server1.sock"
+# kfcgi_server1_prog="/usr/local/bin/server1prog"
+# kfcgi_server2_flags="-s /var/run/kfcgi.server2.sock"
+# kfcgi_server2_prog="/usr/local/bin/server2prog"
+
+. /etc/rc.subr
+
+name="kfcgi"
+rcvar="kfcgi_enable"
+
+load_rc_config $name
+
+: ${kfcgi_enable:="NO"}
+
+procname="%%PREFIX%%/sbin/${name}"
+command="/usr/sbin/daemon"
+pidprefix="/var/run/${name}"
+pidfile="${pidprefix}.pid"
+
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ -n "${kfcgi_profiles}" ]; then
+		pidfile="${pidprefix}.${profile}.pid"
+		eval kfcgi_enable="\${kfcgi_${profile}_enable:-${kfcgi_enable}}"
+		eval kfcgi_flags="\${kfcgi_${profile}_flags:-${kfcgi_flags}}"
+		eval kfcgi_prog="\${kfcgi_${profile}_prog:-${kfcgi_prog}}"
+	else
+		echo "$0: extra argument ignored"
+	fi
+else
+	if [ -n "${kfcgi_profiles}" -a -n "$1" ]; then
+		for profile in ${kfcgi_profiles}; do
+			echo "===> kfcgi profile: ${profile}"
+			%%PREFIX%%/etc/rc.d/kfcgi $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
+
+# run_rc_command would send ${name}_flags as parameters to $command (daemon).
+# This ensures they are actually passed to kfcgi instead.
+actual_kfcgi_flags="${kfcgi_flags}"
+kfcgi_flags=""
+command_args="-f -p ${pidfile} -- ${procname} -d ${actual_kfcgi_flags} -- ${kfcgi_prog}"
+
+run_rc_command "$1"
