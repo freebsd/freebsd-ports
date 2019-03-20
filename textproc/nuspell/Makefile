@@ -2,7 +2,7 @@
 
 PORTNAME=	nuspell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.2.0
 CATEGORIES=	textproc
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,27 +14,31 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 LIB_DEPENDS=	libboost_locale.so:devel/boost-libs \
 		libicuuc.so:devel/icu
 
-USES=		autoreconf compiler:c++14-lang gmake libtool pkgconfig
+USES=		cmake compiler:c++14-lang
 USE_GITHUB=	yes
-GNU_CONFIGURE=	yes
+CMAKE_ON=	BUILD_SHARED_LIBS
 
-OPTIONS_DEFINE=	TEST
+OPTIONS_DEFINE=	DOCS TEST
 
-TEST_BUILD_DEPENDS=	catch>0:devel/catch
-TEST_CPPFLAGS=		-isystem${LOCALBASE}/include/catch2
-TEST_TEST_TARGET=	check
+DOCS_BUILD_DEPENDS=	ronn:textproc/rubygem-ronn
+
+TEST_BUILD_DEPENDS=	catch>0:devel/catch \
+			bash:shells/bash
+TEST_CMAKE_BOOL=	BUILD_TESTING
+TEST_TEST_TARGET=	test
 
 post-patch:
 # Skip README as it only contains install instructions
-	@${REINPLACE_CMD} 's/ README//' ${WRKSRC}/Makefile.am
-# Don't try to download catch2 during build
-	@${REINPLACE_CMD} '/wget/d' ${WRKSRC}/tests/Makefile.am
+	@${REINPLACE_CMD} -i .doc '/README/d' ${WRKSRC}/CMakeLists.txt
+# Switch to system Catch2 and use IMPORTED target
+	@${REINPLACE_CMD} -i .catch '/Catch2/,//d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -i .catch -e '/CMAKE_MODULE_PATH/,/Catch2/d' \
+		-e $$'/include.*Catch/i\\\nfind_package(Catch2 REQUIRED)\n' \
+		-e '/target_link_libraries/s/Catch2/&::&/' \
+		${WRKSRC}/tests/CMakeLists.txt
 # Respect PREFIX != /usr/local
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' \
 		${WRKSRC}/src/nuspell/finder.cxx
-
-post-patch-TEST-off:
-	@${REINPLACE_CMD} -i .notest 's/ tests//' ${WRKSRC}/Makefile.am
 
 pre-install-TEST-on:	do-test
 
