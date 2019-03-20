@@ -20,7 +20,7 @@ ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64 or i386
 CONFLICTS=	xen-tools-[0-9]*
 
-USES=		gmake pkgconfig perl5 python:2.7:build \
+USES=		gmake pkgconfig perl5 python:2.7,build \
 		gettext-runtime:build gettext-tools:build
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
@@ -29,7 +29,6 @@ CONFIGURE_ENV+=	APPEND_LIB="${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-I${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-PYTHON_NO_DEPENDS=	yes
 
 PLIST_FILES=	lib/libxenstore.so.3.0 \
 		bin/xen-detect \
