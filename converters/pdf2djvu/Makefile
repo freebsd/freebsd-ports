@@ -2,7 +2,7 @@
 
 PORTNAME=	pdf2djvu
 PORTVERSION=	0.9.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	https://github.com/jwilk/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -20,10 +20,10 @@ USES=		autoreconf:build compiler:c++11-lang gettext-tools \
 USE_CXXSTD=	c++11
 
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/pdf2djvu
 
 OPTIONS_DEFINE=	COLOR_QUANTIZATION DOCS NLS MULTITHREADING XMP
 OPTIONS_DEFAULT=COLOR_QUANTIZATION          MULTITHREADING XMP
+OPTIONS_SUB=	yes
 
 COLOR_QUANTIZATION_DESC=Color quantization via GraphicsMagick++
 DOCS=			Generate the man page
@@ -38,7 +38,6 @@ COLOR_QUANTIZATION_LIB_DEPENDS=	\
 
 DOCS_BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 			xsltproc:textproc/libxslt
-DOCS_PLIST_FILES=	man/man1/pdf2djvu.1.gz
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
