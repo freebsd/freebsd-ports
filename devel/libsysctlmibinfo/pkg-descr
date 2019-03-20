@@ -1,0 +1,13 @@
+sysctlmibinfo is an open source library for FreeBSD:
+
+ * provides a C API to wrap kern_sysctl.c undocumented interface
+ * defines and builds a handy mib-object
+ * builds object-list and object-tree in userspace
+
+The advantages to use sysctlmibinfo are:
+
+ * an easy userspace API to the kernel sysctl mib-tree
+ * building quickly a custom sysctl(8) tool
+ * changes to kern_sysctl.c interface won't upset userspace tools
+
+WWW: https://gitlab.com/alfix/sysctlmibinfo/
