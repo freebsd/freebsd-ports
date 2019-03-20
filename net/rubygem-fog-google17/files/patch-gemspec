@@ -1,0 +1,11 @@
+--- fog-google.gemspec.orig	2018-09-21 22:25:33 UTC
++++ fog-google.gemspec
+@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<fog-core>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<fog-json>.freeze, [">= 0"])
+       s.add_runtime_dependency(%q<fog-xml>.freeze, [">= 0"])
+-      s.add_runtime_dependency(%q<google-api-client>.freeze, ["~> 0.23.0"])
++      s.add_runtime_dependency(%q<google-api-client>.freeze, ["~> 0.23"])
+       s.add_development_dependency(%q<mime-types>.freeze, [">= 0"])
+       s.add_development_dependency(%q<pry>.freeze, [">= 0"])
+       s.add_development_dependency(%q<pry-byebug>.freeze, [">= 0"])

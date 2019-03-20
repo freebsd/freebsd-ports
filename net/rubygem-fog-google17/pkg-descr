@@ -1,0 +1,4 @@
+Fog currently supports two Google Cloud services (Google Compute Engine and
+Google Cloud Storage) via Fog::Google.
+
+WWW: https://github.com/fog/fog-google
