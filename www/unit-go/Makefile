@@ -22,10 +22,10 @@ post-extract:
 	@true # override master's
 
 post-configure:
-	cd ${WRKSRC} && ${SETENV} ${GO_ENV} ./configure go --go-path=${WRKDIR}
+	cd ${WRKSRC} && ${SETENV} ${GO_ENV} GOCACHE=${WRKSRC}/go ./configure go --go-path=${WRKDIR}
 
 pre-build:
-	cd ${WRKSRC} && ${MAKE} && ${MAKE} go-install
+	cd ${WRKSRC} && ${MAKE_CMD} && ${SETENV} ${GO_ENV} GOCACHE=${WRKSRC}/go ${MAKE_CMD} go-install
 
 post-install:
 	@true # override master's
