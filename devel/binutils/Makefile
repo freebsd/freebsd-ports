@@ -89,7 +89,7 @@ STATIC_LDFLAGS+=	-all-static
 .include <bsd.port.pre.mk>
 
 # Actual earliest version may differ slightly
-.if ${ARCH} != mips && ${ARCH} != mips64 && ${ARCH} != powerpc && ${ARCH} != powerpc64 && ${ARCH} != powerpcspe && !defined(PKGNAMEPREFIX)
+.if ${ARCH} != sparc64 && ${ARCH} != mips && ${ARCH} != mips64 && ${ARCH} != powerpc && ${ARCH} != powerpc64 && ${ARCH} != powerpcspe && !defined(PKGNAMEPREFIX)
 CONFIGURE_ARGS+=	--enable-gold --enable-plugins
 CXXFLAGS+=	-Wno-c++11-narrowing
 PLIST_SUB+=	GOLD=""
