@@ -1,4 +1,4 @@
---- bin/oj_linux.sh.orig	2017-12-14 23:17:50 UTC
+--- bin/oj_linux.sh.orig	2018-08-27 15:30:38 UTC
 +++ bin/oj_linux.sh
 @@ -4,9 +4,11 @@
  ## if unset defaults to
@@ -69,7 +69,7 @@
  fi
  
  # java available
-@@ -150,24 +165,27 @@ fi
+@@ -150,24 +165,28 @@ fi
  add the location of java to your PATH environment variable." && ERROR=1 && end
  
  # resolve recursive links to java binary
@@ -85,7 +85,7 @@
 -  JAVA="$JAVA_CANDIDATE"
 -  relPath "$JAVA" && JAVA="${JDIR}/${JAVA}"
 -done
-+echo "#####  awk script survived after \$1 test"
+++echo "#####  awk script survived after \$1 test"
 +#while [ -L "${JAVA}" ]; do
 +#  JDIR=$(dirname "$JAVA")
 +#  JAVA_CANDIDATE=$(readlink -n "${JAVA}")
@@ -102,13 +102,14 @@
  
  # java version check
  JAVA_VERSIONSTRING="$("$JAVA" -version 2>&1)"
--JAVA_VERSION=$(echo $JAVA_VERSIONSTRING | awk -F'[ \056]' '{gsub(/["\047]+/,"")}/version [0-9]+\.[0-9]+/{print $3"."$4; exit}' )
+-JAVA_VERSION=$( echo $JAVA_VERSIONSTRING | awk 'BEGIN{done=0}{gsub(/["\047]+/,"")}/[a-zA-Z]+ version [0-9]+/{split($3,a,"[^0-9]"); if(match(a[2],/^[0-9]+$/)){print a[1]"."a[2]}else{print a[1]".0"}; done=1}END{if(!done)exit 1}' ) 
++#JAVA_VERSION=$( echo $JAVA_VERSIONSTRING | awk 'BEGIN{done=0}{gsub(/["\047]+/,"")}/[a-zA-Z]+ version [0-9]+/{split($3,a,"[^0-9]"); if(match(a[2],/^[0-9]+$/)){print a[1]"."a[2]}else{print a[1]".0"}; done=1}END{if(!done)exit 1}' ) 
 +JAVA_VERSION=$(echo $JAVA_VERSIONSTRING | awk -F'"' '/^java version/ || /^openjdk version/{print $2}' | awk -F'.' '{print $1"."$2}')
 +echo "#####  JAVA_VERSION = '$JAVA_VERSION'"
  JAVA_ARCH=$(echo $JAVA_VERSIONSTRING | grep -q -i 64-bit && echo x64 || echo x86)
  JAVA_NEEDED="1.6"
  if ! is_decimal "$JAVA_VERSION"; then
-@@ -189,7 +207,7 @@ echo ---JAVA---
+@@ -189,7 +208,7 @@ echo ---JAVA---
  echo "Using '$(basename "${JAVA}")' found in '$(dirname "${JAVA}")'"
  "$JAVA" -version 2>&1|awk 'BEGIN{ORS=""}{print $0"; "}END{print "\n"}'
  
@@ -117,7 +118,7 @@
  if [ -f "$JUMP_PROFILE" ]; then
    source $JUMP_PROFILE
  fi
-@@ -198,8 +216,13 @@ fi
+@@ -198,8 +217,13 @@ fi
  if [ -z "$JUMP_LIB" ]; then
    JUMP_LIB="./lib"
  fi
@@ -131,7 +132,7 @@
  
  JUMP_PLUGINS=./bin/default-plugins.xml
  if [ -z "$JUMP_PLUGINS" ] || [ ! -f "$JUMP_PLUGINS" ]; then
-@@ -208,6 +231,7 @@ if [ -z "$JUMP_PLUGINS" ] || [ ! -f "$JUMP_PLUGINS" ];
+@@ -208,6 +232,7 @@ if [ -z "$JUMP_PLUGINS" ] || [ ! -f "$JUMP_PLUGINS" ];
      JUMP_PLUGINS="./scripts/default-plugins.xml"
    fi
  fi
@@ -139,7 +140,7 @@
  
  # include every jar/zip in lib and native dir
  for libfile in "$JUMP_LIB/"*.zip "$JUMP_LIB/"*.jar "$JUMP_NATIVE_DIR/$JAVA_ARCH/"*.jar "$JUMP_NATIVE_DIR/"*.jar
-@@ -216,26 +240,35 @@ do
+@@ -216,26 +241,35 @@ do
  done
  CLASSPATH=.:./bin:./conf:$CLASSPATH
  export CLASSPATH;
@@ -175,7 +176,7 @@
  
  # java9 needs some packages explicitly added/exported
  if awk "BEGIN{if($JAVA_VERSION >= 9)exit 0;else exit 1}"; then
-@@ -247,7 +280,8 @@ $JAVA_OPTS"
+@@ -251,7 +285,8 @@ if awk "BEGIN{if( $JAVA_VERSION >= 9 && $JAVA_VERSION 
  fi
  
  # in case some additional archives were placed in native dir inbetween
@@ -185,7 +186,7 @@
  
  # allow jre to find native libraries in native dir, lib/ext (backwards compatibility)
  NATIVE_PATH="$JUMP_NATIVE_DIR/$JAVA_ARCH:$JUMP_NATIVE_DIR:$JUMP_PLUGIN_DIR"
-@@ -283,7 +317,11 @@ echo "$JUMP_SETTINGS/"
+@@ -287,7 +322,11 @@ echo "$JUMP_SETTINGS/"
  
  echo ---Detect maximum memory limit---
  # use previously set or detect RAM size in bytes
@@ -198,12 +199,13 @@
  if [ -n "$JAVA_MAXMEM" ]; then
    echo "max. memory limit defined via JAVA_MAXMEM=$JAVA_MAXMEM"
  elif ! is_number "$RAM_SIZE"; then
-@@ -301,14 +339,18 @@ else
+@@ -305,14 +344,18 @@ else
    else
      MEM_MAX="$MEM_MINUS1GB"
    fi
+-
 +  echo "#####  MEM_MAX = '$MEM_MAX'"
- 
++ 
    # limit 32bit jre to 2GiB = 2147483648 bytes
 +  echo "#####  JAVA_ARCH = '$JAVA_ARCH'"
    if [ "$JAVA_ARCH" != "x64" ] && [ "$MEM_MAX" -gt "2147483648" ]; then
