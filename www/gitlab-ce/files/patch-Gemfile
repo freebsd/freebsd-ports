@@ -1,5 +1,13 @@
---- Gemfile.orig	2019-02-22 06:34:59 UTC
+--- Gemfile.orig	2019-03-13 16:32:44 UTC
 +++ Gemfile
+@@ -1,6 +1,6 @@
+ source 'https://rubygems.org'
+ 
+-gem 'rails', '5.0.7.1'
++gem 'rails', '5.0.7.2'
+ gem 'rails-deprecated_sanitizer', '~> 1.0.3'
+ 
+ # Improves copy-on-write performance for MRI
 @@ -15,7 +15,7 @@ gem 'sprockets', '~> 3.7.0'
  gem 'gitlab-default_value_for', '~> 3.1.1', require: 'default_value_for'
  
