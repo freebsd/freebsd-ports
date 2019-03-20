@@ -11,6 +11,9 @@ COMMENT=	High-speed, flexible, tree-based HTTP router for Go
 
 LICENSE=	MIT
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 BUILD_DEPENDS= ${LOCALBASE}/${GO_LIBDIR}/github.com/dimfeld/httppath.a:net/go-httppath
 
 USE_GITHUB=	yes

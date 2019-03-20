@@ -10,6 +10,9 @@ MASTER_SITES=	LOCAL/jlaffaye
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Go interface for SQLite3
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 USES=		compiler go
 
 LIB_DEPENDS+=	libsqlite3.so:databases/sqlite3

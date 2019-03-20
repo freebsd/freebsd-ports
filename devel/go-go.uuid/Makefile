@@ -12,6 +12,9 @@ COMMENT=	UUID package for Go
 
 LICENSE=	MIT
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	satori
 USES=		go

@@ -10,6 +10,9 @@ COMMENT=	Levigo is a Go wrapper for LevelDB
 
 LICENSE=	MIT
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 BUILD_DEPENDS=	go:lang/go
 LIB_DEPENDS=	libleveldb.so:databases/leveldb
 

@@ -12,6 +12,9 @@ COMMENT=	Go library to generates and inspects UUIDs based on RFC 4122
 
 LICENSE=	MIT
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 USES=		go
 REVISION=	35bc42037350
 WRKSRC=		${WRKDIR}/go-uuid-${REVISION}

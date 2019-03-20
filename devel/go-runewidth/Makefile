@@ -11,6 +11,9 @@ COMMENT=	Go library to get the fixed width of a character or string
 
 LICENSE=	MIT
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	mattn

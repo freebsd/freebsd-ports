@@ -9,6 +9,9 @@ COMMENT=	Redis client for Go
 
 LICENSE=	MIT
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	mediocregopher
 GH_TAGNAME=	ae04b3eb3731f94789205d1268e0759371166605

@@ -5,6 +5,9 @@ PKGNAMESUFFIX=	-go
 
 COMMENT=	Go module for NGINX Unit
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 USES=		go
 
 PLIST_FILES=	# reset to empty
