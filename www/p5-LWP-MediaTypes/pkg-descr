@@ -1,4 +1,6 @@
-This module provides functions for handling media (also known as MIME)
-types and encodings.
+LWP::MediaTypes provides functions for handling media (also known as MIME) types
+and encodings. The mapping from file extensions to media types is defined by the
+media.types file. If the ~/.media.types file exists it is used instead. For
+backwards compatibility we will also look for ~/.mime.types.
 
 WWW: https://metacpan.org/release/LWP-MediaTypes
