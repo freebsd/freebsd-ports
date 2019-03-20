@@ -733,6 +733,7 @@
     SUBDIR += pear-Image_GraphViz
     SUBDIR += pear-Image_Transform
     SUBDIR += pecl-imagick
+    SUBDIR += pecl-imagick-im7
     SUBDIR += pecl-qrencode
     SUBDIR += pecomato
     SUBDIR += pencil2d
