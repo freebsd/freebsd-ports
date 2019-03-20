@@ -12,6 +12,9 @@ COMMENT=	Go client for the Redis database
 
 LICENSE=	APACHE20
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	garyburd
 USES=		go

@@ -8,6 +8,9 @@ PKGNAMEPREFIX=	go-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Go library for slice-based datatypes
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 #LICENSE=	MIT based, with no-evli clause
 
 BUILD_DEPENDS=	go-raw>0:devel/go-raw

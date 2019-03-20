@@ -12,6 +12,9 @@ COMMENT=	Fast HTTP package for Go, tuned for high performance
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 BUILD_DEPENDS=	go-compress>=0:archivers/go-compress \
 		go-cpuid>=0:devel/go-cpuid \
 		go-crc32>=0:devel/go-crc32

@@ -10,6 +10,9 @@ COMMENT=	Go client for NATS
 
 LICENSE=	MIT
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 BUILD_DEPENDS=	go-nuid>=0:devel/go-nuid
 
 USES=		go

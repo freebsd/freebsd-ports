@@ -12,6 +12,9 @@ COMMENT=	Cpuid provides information about the CPU running the current program
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	klauspost
 USES=		go

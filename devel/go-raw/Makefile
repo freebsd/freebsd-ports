@@ -8,6 +8,9 @@ PKGNAMEPREFIX=	go-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Go library for high-level interface to unsafe and reflection packages
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 #LICENSE=	MIT based, but with no-evil clause
 
 USES=		go

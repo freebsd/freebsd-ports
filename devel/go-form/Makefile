@@ -11,6 +11,9 @@ COMMENT=	Form Encoding & Decoding Package for Go
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ajg
 GH_TAGNAME=	7ff89c75808766205bfa4411abb436c98c33eb5e

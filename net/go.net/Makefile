@@ -11,6 +11,9 @@ COMMENT=	Additional Net packages for Go
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/golang.org/x/text/cases.a:textproc/go.text \
 		go.crypto>=20160709:security/go.crypto
 

@@ -11,6 +11,9 @@ COMMENT=	Commander for modern Go CLI interactions
 
 LICENSE=	APACHE20
 
+DEPRECATED=		Go libraries should not be packaged
+EXPIRATION_DATE=	2019-03-31
+
 BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/github.com/spf13/pflag.a:devel/go-pflag
 
 USE_GITHUB=	yes
