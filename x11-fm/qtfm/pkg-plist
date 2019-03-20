@@ -4,10 +4,10 @@ etc/xdg/autostart/qtfm-tray.desktop
 man/man1/qtfm-tray.1.gz
 man/man1/qtfm.1.gz
 share/applications/qtfm.desktop
-%%PORTDOCS%%%%DOCSDIR%%-6.1.7/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%-6.1.7/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%-6.1.7/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%-6.1.7/README.md
+%%PORTDOCS%%%%DOCSDIR%%-6.1.8/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%-6.1.8/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%-6.1.8/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%-6.1.8/README.md
 share/icons/hicolor/128x128/apps/qtfm.png
 share/icons/hicolor/160x160/apps/qtfm.png
 share/icons/hicolor/16x16/apps/qtfm.png
