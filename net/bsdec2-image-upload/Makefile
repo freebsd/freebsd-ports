@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdec2-image-upload
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	net
 MASTER_SITES=	http://freebsd-ec2-dist.s3.amazonaws.com/
 
