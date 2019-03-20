@@ -1,0 +1,7 @@
+@sample etc/murmur.ini.sample
+man/man1/murmurd.1.gz
+sbin/murmurd
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.Linux
