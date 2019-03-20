@@ -13,6 +13,8 @@ COMMENT=	V8 JavaScript for client and server (6.x LTS)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+
 ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc64
 
 OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS DTRACE
