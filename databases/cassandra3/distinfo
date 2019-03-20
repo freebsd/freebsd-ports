@@ -1,5 +1,5 @@
-TIMESTAMP = 1538922434
-SHA256 (apache-cassandra-3.11.3-src.tar.gz) = f4c7a3627e04ff9505a626334eb113ef6dbe310e8b69b747cc4c488eac8b558f
-SIZE (apache-cassandra-3.11.3-src.tar.gz) = 34885851
-SHA256 (apache-cassandra-3.11.3-repo.tar.gz) = da696b7bdc5c36e131bf480e11cae092e88dc65bc3098aa5aa7f01202b6ce584
-SIZE (apache-cassandra-3.11.3-repo.tar.gz) = 44530570
+TIMESTAMP = 1551608918
+SHA256 (apache-cassandra-3.11.4-src.tar.gz) = b01fea1b0a987adcc6078eef1f7e7fc43aacc3b4b0bfa3f29bc8a1cc9ba02cc6
+SIZE (apache-cassandra-3.11.4-src.tar.gz) = 39719274
+SHA256 (apache-cassandra-3.11.4-repo.tar.gz) = e0ae04f002295b7477e1d73b76c8dab2301d015b273bc086ad7482178dfaed44
+SIZE (apache-cassandra-3.11.4-repo.tar.gz) = 44524889

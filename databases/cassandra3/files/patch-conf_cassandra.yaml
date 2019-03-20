@@ -1,4 +1,4 @@
---- conf/cassandra.yaml.orig	2018-02-14 20:43:59 UTC
+--- conf/cassandra.yaml.orig	2019-02-02 22:09:01 UTC
 +++ conf/cassandra.yaml
 @@ -70,7 +70,7 @@ max_hints_delivery_threads: 2
  
@@ -9,7 +9,7 @@
  
  # How often hints should be flushed from the internal buffers to disk.
  # Will *not* trigger fsync.
-@@ -187,13 +187,13 @@ partitioner: org.apache.cassandra.dht.Mu
+@@ -187,13 +187,13 @@ partitioner: org.apache.cassandra.dht.Murmur3Partition
  # will spread data evenly across them, subject to the granularity of
  # the configured compaction strategy.
  # If not set, the default directory is $CASSANDRA_HOME/data/data.
