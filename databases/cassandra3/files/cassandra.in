@@ -36,6 +36,7 @@ cassandra_prestart()
 {
 	export JAVA_HOME=%%JAVA_HOME%%
 	install -d -o ${cassandra_user} /var/run/cassandra
+	install -d -o ${cassandra_user} /var/log/cassandra
 }
 
 run_rc_command "$1"

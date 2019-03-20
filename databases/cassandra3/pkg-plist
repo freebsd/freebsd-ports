@@ -121,6 +121,7 @@
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/NEWS.txt
 %%DATADIR%%/NOTICE.txt
+%%DATADIR%%/pylib/cassandra-cqlsh-tests.sh
 %%DATADIR%%/pylib/cqlshlib/__init__.py
 %%DATADIR%%/pylib/cqlshlib/copyutil.py
 %%DATADIR%%/pylib/cqlshlib/cql3handling.py
@@ -131,6 +132,7 @@
 %%DATADIR%%/pylib/cqlshlib/helptopics.py
 %%DATADIR%%/pylib/cqlshlib/pylexotron.py
 %%DATADIR%%/pylib/cqlshlib/saferscanner.py
+%%DATADIR%%/pylib/cqlshlib/setup.cfg
 %%DATADIR%%/pylib/cqlshlib/sslhandling.py
 %%DATADIR%%/pylib/cqlshlib/test/__init__.py
 %%DATADIR%%/pylib/cqlshlib/test/ansi_colors.py
@@ -148,6 +150,7 @@
 %%DATADIR%%/pylib/cqlshlib/tracing.py
 %%DATADIR%%/pylib/cqlshlib/util.py
 %%DATADIR%%/pylib/cqlshlib/wcwidth.py
+%%DATADIR%%/pylib/requirements.txt
 %%DATADIR%%/pylib/setup.py
 %%DATADIR%%/tools/bin/cassandra-stress
 %%DATADIR%%/tools/bin/cassandra-stressd
