@@ -334,6 +334,7 @@
     SUBDIR += liblbfgs
     SUBDIR += libmesh
     SUBDIR += libmissing
+    SUBDIR += libnormaliz
     SUBDIR += libocas
     SUBDIR += liborigin
     SUBDIR += libpgmath
