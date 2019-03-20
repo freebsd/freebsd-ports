@@ -1,3 +1,5 @@
-TIMESTAMP = 1546481730
-SHA256 (nuspell-nuspell-v2.1.0_GH0.tar.gz) = 95ff7e803ef36f668de405b2c657efb4af36ddeb10c6267cc9bf126898be4482
-SIZE (nuspell-nuspell-v2.1.0_GH0.tar.gz) = 447400
+TIMESTAMP = 1553005126
+SHA256 (nuspell-nuspell-v2.2.0_GH0.tar.gz) = c6d7664be74e84505f4227836d302c2885f65b165411ef86cc9cffbc1228d0c4
+SIZE (nuspell-nuspell-v2.2.0_GH0.tar.gz) = 400415
+SHA256 (catchorg-Catch2-v2.2.0_GH0.tar.gz) = dee151b8fb403b277e1c806be6c6978c3f92f12a7f457761fa08c0404c1aaedb
+SIZE (catchorg-Catch2-v2.2.0_GH0.tar.gz) = 487585
