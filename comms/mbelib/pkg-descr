@@ -1,0 +1,5 @@
+mbelib supports the 7200x4400 bit/s codec used in P25 Phase 1,
+the 7100x4400 bit/s codec used in ProVoice and the "Half Rate"
+3600x2250 bit/s vocoder used in various radio systems.
+
+WWW: https://github.com/szechyjs/mbelib
