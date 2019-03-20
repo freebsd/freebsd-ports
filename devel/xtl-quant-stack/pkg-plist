@@ -10,8 +10,11 @@ include/xtl/xhash.hpp
 include/xtl/xhierarchy_generator.hpp
 include/xtl/xiterator_base.hpp
 include/xtl/xjson.hpp
+include/xtl/xmasked_value.hpp
+include/xtl/xmasked_value_meta.hpp
 include/xtl/xmeta_utils.hpp
 include/xtl/xoptional.hpp
+include/xtl/xoptional_meta.hpp
 include/xtl/xoptional_sequence.hpp
 include/xtl/xproxy_wrapper.hpp
 include/xtl/xsequence.hpp
