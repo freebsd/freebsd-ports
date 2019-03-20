@@ -42,8 +42,6 @@ TOPOLOGY_DESC=	Topology support
 SFCGAL_DESC=	Enable sfcgal
 ADDRSTD_DESC=	Enable address standardizer
 
-CONFLICTS_INSTALL=	postgis20  postgis21 postgis22 postgis23 postgis24
-
 LOADERGUI_CONFIGURE_WITH=	gui
 LOADERGUI_USE=			GNOME=gtk20
 TOPOLOGY_CONFIGURE_WITH=	topology
