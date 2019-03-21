@@ -2,6 +2,7 @@
 
 PORTNAME=	dbd-mysql
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
