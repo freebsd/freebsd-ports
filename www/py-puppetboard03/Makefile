@@ -3,6 +3,7 @@
 PORTNAME=	puppetboard
 PORTVERSION=	0.3.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	03
@@ -21,13 +22,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}CommonMark>=0.7.2:textproc/py-CommonMark@${P
 		${PYTHON_PKGNAMEPREFIX}pypuppetdb03>=0.3.3:databases/py-pypuppetdb03@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.13.0:www/py-requests@${PY_FLAVOR}
 
-CONFLICTS_INSTALL=puppetboard-* puppetboard02-*
-USE_GITHUB=	yes
-GH_ACCOUNT=	voxpupuli
-
 USES=		python:2.7
+USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
+CONFLICTS_INSTALL=puppetboard-* puppetboard02-*
+
+GH_ACCOUNT=	voxpupuli
 PLIST_FILES=	"@sample etc/puppetboard/default_settings.py.sample"
 
 post-install:
