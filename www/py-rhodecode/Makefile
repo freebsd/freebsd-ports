@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	RhodeCode-${PORTVERSION}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and powerful management tool for Mercurial and GIT
 
 LICENSE=	GPLv3
