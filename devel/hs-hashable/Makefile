@@ -12,7 +12,8 @@ COMMENT=	Class for types that can be converted to a hash value
 LICENSE=	BSD3CLAUSE
 
 FLAGS_DEFINE=			INTEGER_GMP SSE2 SSE41
-FLAGS_DEFAULT=			INTEGER_GMP SSE2
+FLAGS_DEFAULT_amd64=		INTEGER_GMP SSE2
+FLAGS_DEFAULT_i386=		INTEGER_GMP SSE2
 
 INTEGER_GMP_DESC=		Use integer-gmp for fast Integer instances
 INTEGER_GMP_FLAG_ENABLE=	integer-gmp

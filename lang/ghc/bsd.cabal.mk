@@ -93,6 +93,9 @@ BUILD_DEPENDS+=	ghc:lang/ghc
 BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:lang/ghc
 .endif
 
+.if ${ARCH} == powerpc64
+USE_BINUTILS=	yes
+.endif
 
 CONFIGURE_ARGS+=	--with-gcc=${CC} --with-ld=${LD} --with-ar=${AR}
 
