@@ -11,6 +11,8 @@ COMMENT=	Service daemon for the Keybase filesystem (KBFS)
 # There is no license file in v1.2.0.
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		conflicting dependencies
+
 RUN_DEPENDS=	kbfsfuse:security/kbfs \
 		keybase:security/keybase
 
