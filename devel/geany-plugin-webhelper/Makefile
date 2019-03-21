@@ -14,9 +14,7 @@ gtk3_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
 
 .include "${.CURDIR}/../geany-plugins/files/Makefile.common"
 
-.if ${FLAVOR} == gtk2
 DEPRECATED=	Depends on forbidden webkit port
 EXPIRATION_DATE=2019-03-24
-.endif
 
 .include <bsd.port.mk>
