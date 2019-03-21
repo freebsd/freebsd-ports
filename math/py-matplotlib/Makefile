@@ -2,14 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	matplotlib
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.2
-PORTREVISION=	6
+DISTVERSION=	2.2.3
 CATEGORIES=	math python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	5b7a21e53e11a7064b2171c0d91afda67f30c4e7.patch:-p1 # fix of the failure on 12 i386: https://github.com/matplotlib/matplotlib/issues/10698
 
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	Plotting library uses a syntax familiar to MATLAB users
@@ -29,8 +25,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${PY_FLAVOR}
 py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports.functools_lru_cache>0:devel/py-backports.functools_lru_cache@${PY_FLAVOR}
 
-USES=		compiler:c++11-lib gettext pkgconfig python shebangfix uniquefiles:dirs
-USE_GITHUB=	yes
+USES=		compiler:c++11-lib gettext gnome pkgconfig python shebangfix uniquefiles:dirs
 USE_PYTHON=	autoplist distutils
 CFLAGS+=	-I${LOCALBASE}/include
 
@@ -79,18 +74,10 @@ WXAGGBACKEND_BUILD_DEPENDS=	Xvfb:x11-servers/xorg-vfbserver
 .endif
 
 post-extract:
-	${FIND} ${WRKSRC} -name \*.py | ${XARGS} ${CHMOD} -x
+	@${FIND} ${WRKSRC} -name '*.py' | ${XARGS} ${CHMOD} -x
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-			 -e 's|%%TCL_INCLUDEDIR%%|${TCL_INCLUDEDIR}|g' \
-			 -e 's|%%TK_INCLUDEDIR%%|${TK_INCLUDEDIR}|g' \
-			 -e 's|%%TCL_LIBDIR%%|${TCL_LIBDIR}|g' \
-			 -e 's|%%TK_LIBDIR%%|${TK_LIBDIR}|g' \
-			 -e 's|%%TCL_VER%%|${TCL_SHLIB_VER}|g' \
-			 -e 's|%%TK_VER%%|${TK_SHLIB_VER}|g' \
-		${WRKSRC}/setupext.py
-	${REINPLACE_CMD} -e 's|%%GTK_BACKEND%%|${GTK_BACKEND}|g' \
+	@${REINPLACE_CMD} -e 's|%%GTK_BACKEND%%|${GTK_BACKEND}|g' \
 			 -e 's|%%GTKAGG_BACKEND%%|${GTKAGG_BACKEND}|g' \
 			 -e 's|%%QT5AGG_BACKEND%%|${QT5AGG_BACKEND}|g' \
 			 -e 's|%%TKAGG_BACKEND%%|${TKAGG_BACKEND}|g' \
@@ -98,7 +85,7 @@ post-patch:
 		${WRKSRC}/setup.cfg
 
 post-install:
-	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib -name '*.so' \
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib -name '*.so' \
 		| ${XARGS} ${STRIP_CMD}
 
 post-install-EXAMPLES-on:
