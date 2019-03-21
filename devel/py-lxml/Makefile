@@ -33,4 +33,11 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${DOCS_FILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# on gcc-based architectures, use modern GCC due to use of #pragma
+.if ${ARCH} == mips || ${ARCH} == mips64 || ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpcspe || ${ARCH} == sparc64
+USE_GCC=	yes
+.endif
+
+.include <bsd.port.post.mk>
