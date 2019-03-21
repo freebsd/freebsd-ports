@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	mongoengine
-PORTVERSION=	0.16.3
+PORTVERSION=	0.17.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Object-Document-Mapper for working with MongoDB
 
 LICENSE=	MIT
