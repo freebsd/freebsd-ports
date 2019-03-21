@@ -1,0 +1,12 @@
+Nevergrad is a gradient-free optimization platform.
+
+The goals of this package are to provide:
+- gradient/derivative-free optimization algorithms, including algorithms able to
+  handle noise.
+- tools to instrument any code, making it painless to optimize your
+  parameters/hyperparameters, whether they are continuous, discrete or a mixture
+  of continuous and discrete variables.
+- functions on which to test the optimization algorithms.
+- benchmark routines in order to compare algorithms easily.
+
+WWW: https://github.com/facebookresearch/nevergrad
