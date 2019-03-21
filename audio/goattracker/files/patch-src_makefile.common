@@ -1,49 +1,11 @@
---- src/makefile.common.orig	2018-09-01 09:14:51 UTC
+--- src/makefile.common.orig	2019-03-21 10:51:16 UTC
 +++ src/makefile.common
-@@ -1,9 +1,9 @@
- # common makefile directives for linux and win32 build
+@@ -2,7 +2,7 @@
  
--CC=gcc
--CXX=g++
--CFLAGS+=-O3 -Wall -Ibme -Iasm -fpermissive
--CXXFLAGS=$(CFLAGS)
-+CC?=gcc
-+CXX?=g++
+ CC?=gcc
+ CXX?=g++
+-CFLAGS+=-Ibme -Iasm -O3 -fpermissive
 +CFLAGS+=-Ibme -Iasm
-+CXXFLAGS+=$(CFLAGS)
+ CXXFLAGS+=$(CFLAGS)
  
  EXE=	$(PREFIX)goattrk2$(SUFFIX) \
- 	$(PREFIX)gt2reloc$(SUFFIX) \
-@@ -43,26 +43,26 @@ bme/bme_gfx.o bme/bme_snd.o bme/bme_win.
- 	strip $@
- 	
- $(PREFIX)mod2sng$(SUFFIX): mod2sng.o bme/bme_end.o
--	gcc -o $@ $^
-+	$(CC) -o $@ $^
- 	strip $@
- 
- $(PREFIX)ins2snd2$(SUFFIX): ins2snd2.o bme/bme_end.o
--	gcc -o $@ $^
-+	$(CC) -o $@ $^
- 	strip $@
- 
- $(PREFIX)sngspli2$(SUFFIX): sngspli2.o bme/bme_end.o
--	gcc -o $@ $^
-+	$(CC) -o $@ $^
- 	strip $@
- 
- $(PREFIX)betaconv$(SUFFIX): betaconv.o bme/bme_end.o
--	gcc -o $@ $^
-+	$(CC) -o $@ $^
- 	strip $@
- 
- goattrk2.dat: player.s altplayer.s chargen.bin palette.bin cursor.bin goattrk2.bmp goattrk2.seq
--	datafile $@ goattrk2.seq
-+	./bme/datafile $@ goattrk2.seq
- 
- goatdata.c: goattrk2.dat
--	dat2inc $< $@
-+	./bme/dat2inc $< $@
- 
- clean:
- 	$(RM) *.o *~

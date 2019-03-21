@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	goattracker
-PORTVERSION=	2.74
+PORTVERSION=	2.75
 CATEGORIES=	audio
-MASTER_SITES=	SF/goattracker2/GoatTracker%202/${PORTVERSION}
+MASTER_SITES=	SF/goattracker2/GoatTracker%202/${PORTVERSION} \
+		LOCAL/ehaupt
 DISTNAME=	GoatTracker_${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -13,10 +14,8 @@ COMMENT=	Crossplatform music editor for creating Commodore 64 music
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/copying
 
-USES=		dos2unix gmake zip
+USES=		dos2unix gmake sdl zip
 USE_SDL=	sdl
-
-EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 MAKEFILE=	makefile
 
@@ -29,12 +28,17 @@ DESKTOP_ENTRIES="GoatTracker 2" \
 		"" \
 		false
 
+WRKSRC=		${WRKDIR}/goattrk2
+
+post-extract:
+	@${FIND} ${WRKSRC} -name '*.o' -type f -exec ${RM} -f {} \+
+
 do-build:
 	@cd ${WRKSRC}/src/bme; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}
 	@cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}
 
 do-install:
-.for f in betaconv goattrk2 gt2reloc ins2snd2 mod2sng sngspli2
+.for f in goattrk2 gt2reloc ins2snd2 mod2sng sngspli2
 	${INSTALL_PROGRAM} ${WRKSRC}/linux/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
