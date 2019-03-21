@@ -17,7 +17,7 @@ DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
 AVAHI_SLAVE=	qt5
-USES=		qt:5
+USES=		compiler:c++11-lang qt:5
 USE_QT=		core buildtools_build
 AVAHI_PKGCONFIG=avahi-qt5.pc
 
