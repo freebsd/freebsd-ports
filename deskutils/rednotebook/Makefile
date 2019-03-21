@@ -13,6 +13,9 @@ COMMENT=	Modern journal written in Python
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses webkit-gtk2 which has security issues
+EXPIRATION_DATE=	2019-03-24
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>0:www/py-webkitgtk@${PY_FLAVOR} \
 		${LOCALBASE}/bin/xdg-open:devel/xdg-utils \
