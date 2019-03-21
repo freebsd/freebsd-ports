@@ -1,5 +1,5 @@
---- Makefile.orig	2014-05-04 20:11:04.000000000 -0700
-+++ Makefile	2014-05-04 20:13:48.000000000 -0700
+--- Makefile.orig	2018-01-18 21:02:20.000000000 +0100
++++ Makefile	2019-03-20 11:22:05.133686000 +0100
 @@ -16,28 +16,28 @@
  # along with this program; if not, write to the Free Software
  # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
@@ -8,21 +8,21 @@
 +prefix = ${PREFIX}
  
 -CC=gcc
-+CC?=gcc
++CC?=cc
  
- VERSION=1.7.0
+ VERSION=1.8.0
  TREE_DEST=tree
  BINDIR=${prefix}/bin
 -MAN=tree.1
 +MAN=doc/tree.1
  MANDIR=${prefix}/man/man1
- OBJS=tree.o unix.o html.o xml.o json.o hash.o color.o
+ OBJS=tree.o unix.o html.o xml.o json.o hash.o color.o file.o
  
  # Uncomment options below for your particular OS:
  
  # Linux defaults:
--CFLAGS=-ggdb -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
-+#CFLAGS=-ggdb -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+-CFLAGS=-ggdb -pedantic -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
++#CFLAGS=-ggdb -pedantic -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
  #CFLAGS=-O4 -Wall  -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
  #LDFLAGS=-s
  
@@ -30,13 +30,13 @@
 -#CFLAGS=-O2 -Wall -fomit-frame-pointer
 -#LDFLAGS=-s
 -#OBJS+=strverscmp.o
-+CFLAGS?=-O2 -Wall -fomit-frame-pointer
-+LDFLAGS?=-s
++CFLAGS=-O2 -Wall -fomit-frame-pointer
++LDFLAGS=-s
 +OBJS+=strverscmp.o
  
- # Uncomment for Solaris:
- #CC=cc
-@@ -94,13 +94,11 @@
+ # Uncomment for OpenBSD:
+ #TREE_DEST=colortree
+@@ -108,13 +108,11 @@
  	if [ -f tree.o ]; then rm *.o; fi
  	rm -f *~
  
