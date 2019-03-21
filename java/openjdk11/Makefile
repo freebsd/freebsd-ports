@@ -12,7 +12,7 @@ COMMENT=	Java Development Kit ${JDK_MAJOR_VERSION}
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	zip:archivers/zip \
 		autoconf>0:devel/autoconf \
@@ -43,7 +43,7 @@ MAKE_ENV=	LANG="C" \
 		MAKEFLAGS="" \
 		USE_CLANG=true
 
-JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/}
+JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:S/i386/x86/}
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-normal-${JDK_BUILD_JVM}-${JDK_BUILD_TYPE}
 JDK_IMAGEDIR=	${JDK_BUILDDIR}/images/jdk
 INSTALLDIR=	${PREFIX}/${PKGBASE}
