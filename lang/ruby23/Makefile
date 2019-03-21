@@ -20,6 +20,8 @@ LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 BROKEN_SSL=	openssl111
 BROKEN_SSL_REASON_openssl111=does not detect and buid the openssl*.rb bits
+DEPRECATED=	Use lang/ruby24 or above
+EXPIRATION_DATE=2019-03-31
 
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
 BUILD_DEPENDS=	libffi>=0:devel/libffi
