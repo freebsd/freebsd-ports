@@ -3,6 +3,7 @@
 
 PORTNAME=	lua
 DISTVERSION=	5.3.5
+PORTREVISION=1
 CATEGORIES=	lang
 MASTER_SITES=	https://www.lua.org/ftp/
 PKGNAMESUFFIX=	53
@@ -102,6 +103,9 @@ READLINE_LIBS=		-lreadline
 # end of option vars
 
 CFLAGS+=	-fPIC
+# 2019-01-25: -pthread in LIBS is a work around for the following bug:
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=235211
+LIBS+= 	-pthread
 
 WITHOUT_NO_STRICT_ALIASING=yes
 
