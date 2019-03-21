@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libbde
-DISTVERSION=	alpha-20190102
+DISTVERSION=	alpha-20190317
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libbde/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
