@@ -13,6 +13,8 @@ COMMENT=	GNU Radio OsmoSDR module
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to configure
+
 BUILD_DEPENDS=	swig3.0:devel/swig30 \
 		cheetah:devel/py-cheetah
 LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
