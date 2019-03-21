@@ -14,6 +14,9 @@ COMMENT=	Simple HTML format editor
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses webkit-gtk2 which has security issues
+EXPIRATION_DATE=	2019-03-24
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>=2.15:devel/py-python-distutils-extra@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jswebkit>=0:www/py-jswebkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:www/py-webkitgtk@${PY_FLAVOR}
