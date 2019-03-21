@@ -12,6 +12,8 @@ DISTNAME=	ACE-html-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ACE+TAO HTML documentation
 
+BROKEN=		empty package
+
 WRKSRC=		${WRKDIR}/html
 
 NO_BUILD=	yes
