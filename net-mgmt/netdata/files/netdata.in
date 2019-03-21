@@ -24,11 +24,11 @@ load_rc_config $name
 
 : ${netdata_enable="NO"}
 : ${netdata_user="netdata"}
+: ${netdata_pid="%%NETDATA_PERST%%/${name}.pid"}
 
-pidfile="%%NETDATA_PERST%%/${name}.pid"
 procname="%%PREFIX%%/sbin/${name}"
 command="/usr/sbin/daemon"
-command_args="-c -f ${procname} -u ${netdata_user} -P ${pidfile} ${netdata_args}"
+command_args="-c -f ${procname} -u ${netdata_user} -P ${netdata_pid} ${netdata_args}"
 
 required_files="%%ETCDIR%%/${name}.conf"
 

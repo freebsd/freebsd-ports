@@ -6,7 +6,6 @@
 %%ETCDIR%%/statsd.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/apps_groups.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d.conf.sample
-lib/netdata/conf.d/charts.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/ap.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/apache.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/apcupsd.conf.sample
@@ -28,7 +27,6 @@ lib/netdata/conf.d/charts.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/squid.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/tomcat.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/fping.conf.sample
-lib/netdata/conf.d/health.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/adaptec_raid.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/apache.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/apcupsd.conf.sample
@@ -39,6 +37,7 @@ lib/netdata/conf.d/health.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/boinc.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/btrfs.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ceph.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cgroups.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/couchdb.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cpu.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/disks.conf.sample
@@ -75,6 +74,7 @@ lib/netdata/conf.d/health.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/retroshare.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/softnet.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/squid.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/sslcheck.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/stiebeleltron.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/swap.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_conn.conf.sample
@@ -89,9 +89,7 @@ lib/netdata/conf.d/health.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health_alarm_notify.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health_email_recipients.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/node.d.conf.sample
-lib/netdata/conf.d/node.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d.conf.sample
-lib/netdata/conf.d/python.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/adaptec_raid.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/apache.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/beanstalk.conf.sample
@@ -133,6 +131,7 @@ lib/netdata/conf.d/python.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/ntpd.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/nvidia_smi.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/openldap.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/oracledb.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/ovpn_status_log.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/phpfpm.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/portcheck.conf.sample
@@ -159,7 +158,6 @@ lib/netdata/conf.d/python.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/varnish.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/w1sensor.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/web_log.conf.sample
-lib/netdata/conf.d/statsd.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/example.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/stream.conf.sample
 libexec/netdata/charts.d/ap.chart.sh
@@ -200,13 +198,16 @@ libexec/netdata/node.d/stiebeleltron.node.js
 libexec/netdata/plugins.d/alarm-email.sh
 libexec/netdata/plugins.d/alarm-notify.sh
 libexec/netdata/plugins.d/alarm-test.sh
+libexec/netdata/plugins.d/anonymous-statistics.sh
 libexec/netdata/plugins.d/apps.plugin
 libexec/netdata/plugins.d/cgroup-name.sh
 libexec/netdata/plugins.d/cgroup-network-helper.sh
 libexec/netdata/plugins.d/charts.d.dryrun-helper.sh
 libexec/netdata/plugins.d/charts.d.plugin
+%%CUPS%%libexec/netdata/plugins.d/cups.plugin
 libexec/netdata/plugins.d/fping.plugin
 %%FREEIPMI%%libexec/netdata/plugins.d/freeipmi.plugin
+libexec/netdata/plugins.d/health-cmdapi-test.sh
 libexec/netdata/plugins.d/loopsleepms.sh.inc
 libexec/netdata/plugins.d/node.d.plugin
 libexec/netdata/plugins.d/python.d.plugin
@@ -252,6 +253,7 @@ libexec/netdata/python.d/nsd.chart.py
 libexec/netdata/python.d/ntpd.chart.py
 libexec/netdata/python.d/nvidia_smi.chart.py
 libexec/netdata/python.d/openldap.chart.py
+libexec/netdata/python.d/oracledb.chart.py
 libexec/netdata/python.d/ovpn_status_log.chart.py
 libexec/netdata/python.d/phpfpm.chart.py
 libexec/netdata/python.d/portcheck.chart.py
@@ -429,6 +431,7 @@ sbin/netdata
 %%DATADIR%%/web/images/ms-icon-150x150.png
 %%DATADIR%%/web/images/ms-icon-310x310.png
 %%DATADIR%%/web/images/ms-icon-70x70.png
+%%DATADIR%%/web/images/netdata-logomark.svg
 %%DATADIR%%/web/images/netdata.svg
 %%DATADIR%%/web/images/post.png
 %%DATADIR%%/web/index.html
@@ -438,7 +441,6 @@ sbin/netdata
 %%DATADIR%%/web/lib/bootstrap-table-1.11.0.min.js
 %%DATADIR%%/web/lib/bootstrap-table-export-1.11.0.min.js
 %%DATADIR%%/web/lib/bootstrap-toggle-2.2.2.min.js
-%%DATADIR%%/web/lib/c3-0.4.18.min.js
 %%DATADIR%%/web/lib/clipboard-polyfill-be05dad.js
 %%DATADIR%%/web/lib/d3-4.12.2.min.js
 %%DATADIR%%/web/lib/d3pie-0.2.1-netdata-3.js
@@ -451,10 +453,8 @@ sbin/netdata
 %%DATADIR%%/web/lib/jquery.peity-3.2.0.min.js
 %%DATADIR%%/web/lib/jquery.sparkline-2.1.2.min.js
 %%DATADIR%%/web/lib/lz-string-1.4.4.min.js
-%%DATADIR%%/web/lib/morris-0.5.1.min.js
 %%DATADIR%%/web/lib/pako-1.0.6.min.js
 %%DATADIR%%/web/lib/perfect-scrollbar-0.6.15.min.js
-%%DATADIR%%/web/lib/raphael-2.2.4-min.js
 %%DATADIR%%/web/lib/tableExport-1.6.0.min.js
 %%DATADIR%%/web/main.css
 %%DATADIR%%/web/main.js
