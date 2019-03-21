@@ -15,14 +15,15 @@ COMMENT=	Eclipse Neon
 
 LICENSE=	EPL
 
+BROKEN=		fails to build
 DEPRECATED=	Uses webkit-gtk2 which has security issues
 EXPIRATION_DATE=2019-04-30
 ONLY_FOR_ARCHS=	amd64 i386
 CONFLICTS_INSTALL=	eclipse
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33
-LIB_DEPENDS=	libcairo.so:graphics/cairo \
-		libwebkitgtk-1.0.so:www/webkit-gtk2
+LIB_DEPENDS=	libcairo.so:graphics/cairo
+#		libwebkitgtk-1.0.so:www/webkit-gtk2
 
 USES=		gmake pkgconfig tar:xz
 USE_GL=		glu
@@ -50,7 +51,7 @@ PATCH_STRIP=	-p1
 
 .if ${PORT_OPTIONS:MSWT_GTK3_SUPPORT}
 USE_GNOME+=	gtk30
-LIB_DEPENDS+=	libwebkitgtk-3.0.so:www/webkit-gtk3
+#LIB_DEPENDS+=	libwebkitgtk-3.0.so:www/webkit-gtk3
 MVN_SETTINGS+=	-Dmachine_gtk3=1
 SWTGTK3OPT=
 .else
