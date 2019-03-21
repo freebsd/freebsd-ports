@@ -3,7 +3,7 @@
 
 PORTNAME=	mumble
 DISTVERSION=	1.3.0-rc1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	feld@FreeBSD.org
@@ -40,13 +40,12 @@ USE_XORG=	ice xi x11
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=yes
 
-CONFIG=		bundled-celt bundled-rnnoise no-alsa no-bundled-opus no-speechd no-bundled-speex \
-		no-bundled-speexdsp no-embed-qt-translations no-g15 no-jackaudio no-pulseaudio \
-		no-pulseaudio no-server no-update no-xevie
+CONFIG=		bundled-celt bundled-rnnoise no-bundled-opus no-bundled-speex no-bundled-speexdsp \
+		no-embed-qt-translations no-g15 no-alsa no-jackaudio no-pulseaudio no-server no-update
 
 QMAKE_ARGS=	"CONFIG+=${CONFIG}"
 
-OPTIONS_DEFINE=	DBUS BONJOUR PORTAUDIO
+OPTIONS_DEFINE=	DBUS BONJOUR PORTAUDIO SPEECHD
 OPTIONS_DEFAULT=	DBUS
 
 DBUS_VARS_OFF=	CONFIG+=no-dbus
@@ -59,6 +58,10 @@ BONJOUR_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 
 PORTAUDIO_VARS_OFF=	CONFIG+=no-portaudio
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
+
+SPEECHD_DESC=		Support for Speech Dispatcher
+SPEECHD_VARS_OFF=	CONFIG+=no-speechd
+SPEECHD_LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher
 
 .include <bsd.port.pre.mk>
 
