@@ -3,4 +3,4 @@ your Python programs using the standard for type annotations introduced in
 Python 3.5 (PEP 484), and use mypy to type check them statically. Find bugs in
 your programs without even running them!
 
-WWW: http://www.mypy-lang.org
+WWW: http://www.mypy-lang.org/
