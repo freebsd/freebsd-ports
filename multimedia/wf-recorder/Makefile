@@ -15,7 +15,7 @@ BUILD_DEPENDS=	wayland-protocols>=1.14:graphics/wayland-protocols \
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libwayland-client.so:graphics/wayland
 
-USES=		meson pkgconfig
+USES=		compiler:c++11-lang meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ammen99
 GH_TAGNAME=	7cd6bd2779b1da68afd34dfb3fb63214d1aff7d9
