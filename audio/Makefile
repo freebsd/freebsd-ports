@@ -550,6 +550,7 @@
     SUBDIR += mpg321
     SUBDIR += mpiosh
     SUBDIR += mps
+    SUBDIR += mumble
     SUBDIR += murmur
     SUBDIR += musepack
     SUBDIR += musescore
