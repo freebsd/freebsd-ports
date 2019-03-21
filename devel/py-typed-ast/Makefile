@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	typed-ast
-PORTVERSION=	1.1.0
+PORTVERSION=	1.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,6 @@ USES=		python:3.3+
 USE_PYTHON=	autoplist distutils concurrent
 
 post-install:
-		${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_ast27.so
-		${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_ast3.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/typed_ast/*.so
 
 .include <bsd.port.mk>
