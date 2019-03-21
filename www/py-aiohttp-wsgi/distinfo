@@ -1,3 +1,3 @@
-TIMESTAMP = 1525115438
-SHA256 (aiohttp-wsgi-0.8.1.tar.gz) = 83a2698fd04c436a0c9aaeb5115cd836709adb9de13dfbfe5f125aea8be642f9
-SIZE (aiohttp-wsgi-0.8.1.tar.gz) = 8313
+TIMESTAMP = 1553147642
+SHA256 (aiohttp-wsgi-0.8.2.tar.gz) = 5d45a14a3f0fd54609ca7648cbf0362ff9077ef341a6ee9ff3f4ff9591d2289c
+SIZE (aiohttp-wsgi-0.8.2.tar.gz) = 8403
