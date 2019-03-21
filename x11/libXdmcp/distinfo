@@ -1,2 +1,3 @@
-SHA256 (xorg/lib/libXdmcp-1.1.2.tar.bz2) = 81fe09867918fff258296e1e1e159f0dc639cb30d201c53519f25ab73af4e4e2
-SIZE (xorg/lib/libXdmcp-1.1.2.tar.bz2) = 331518
+TIMESTAMP = 1552759009
+SHA256 (xorg/lib/libXdmcp-1.1.3.tar.bz2) = 20523b44aaa513e17c009e873ad7bbc301507a3224c232610ce2e099011c6529
+SIZE (xorg/lib/libXdmcp-1.1.3.tar.bz2) = 332795
