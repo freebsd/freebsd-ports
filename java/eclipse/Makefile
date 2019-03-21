@@ -15,15 +15,14 @@ COMMENT=	Eclipse Neon
 
 LICENSE=	EPL
 
+DEPRECATED=	Uses webkit-gtk2 which has security issues
+EXPIRATION_DATE=2019-04-30
+ONLY_FOR_ARCHS=	amd64 i386
+CONFLICTS_INSTALL=	eclipse
+
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven33/bin/mvn:devel/maven33
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libwebkitgtk-1.0.so:www/webkit-gtk2
-
-DEPRECATED=	Uses webkit-gtk2 which has security issues
-EXPIRATION_DATE=2019-04-30
-
-ONLY_FOR_ARCHS=	i386 amd64
-CONFLICTS_INSTALL=	eclipse
 
 USES=		gmake pkgconfig tar:xz
 USE_GL=		glu
