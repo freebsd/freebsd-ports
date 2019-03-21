@@ -4,7 +4,7 @@
 PORTNAME=	shellinabox
 PORTVERSION=	2.20
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -12,7 +12,7 @@ COMMENT=	Publish command line shell through AJAX interface
 
 LICENSE=	GPLv2
 
-USES=	autoreconf libtool
+USES=	autoreconf libtool ssl
 
 OPTIONS_DEFINE=	CORES NOLOGIN
 CORES_DESC=	Patch shellinaboxd to enable core dumps
@@ -29,6 +29,9 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 SUB_FILES=	pkg-deinstall
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
+
+CONFIGURE_ARGS=	--disable-runtime-loading --disable-pam \
+		CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
 NOLOGIN_CONFIGURE_ON=	--disable-login
 
