@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-DISTVERSION=	5.1
+DISTVERSION=	5.1.1
 DISTVERSIONSUFFIX=	-fr_FR
 PORTEPOCH=	1
 CATEGORIES=	french www
@@ -13,7 +13,6 @@ COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2
 
-BROKEN=		unfetchable
 CONFLICTS_INSTALL=	de-wordpress-[0-9].* ja-wordpress-[0-9].* ru-wordpress-[0-9].*
 
 NO_ARCH=	yes
