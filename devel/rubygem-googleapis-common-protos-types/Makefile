@@ -1,19 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	googleapis-common-protos-types
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common protocol buffer types used by Google APIs
 
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-google-protobuf>=3.0:devel/rubygem-google-protobuf
 
-NO_ARCH=	yes
 USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
