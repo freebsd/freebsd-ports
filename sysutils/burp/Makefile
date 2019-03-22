@@ -2,48 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	burp
-PORTVERSION=	1.4.40
-PORTREVISION=	3
+PORTVERSION?=	2.1.32
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	phascolarctos@protonmail.ch
 COMMENT=	Network backup and restore program
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
+BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash \
+		${LOCALBASE}/include/yajl/yajl_common.h:devel/yajl
 LIB_DEPENDS=	librsync.so:net/librsync2
 
-OPTIONS_DEFINE=		IPV6
-
+USES=		autoreconf gmake libtool ncurses pkgconfig ssl
 USE_GITHUB=	yes
+USE_RC_SUBR=	burp
+
 GH_ACCOUNT=	grke
 
-USE_RC_SUBR=	burp
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib gmake localbase ncurses ssl
+CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
 
-PORTSCOUT=	limit:^1\.4\.
+INSTALL_TARGET=	install-all
 
-CONFIGURE_ARGS=	--sbindir="${PREFIX}/sbin" \
-		--sysconfdir=${ETCDIR} \
+CONFLICTS_INSTALL?=	burp-devel
 
+OPTIONS_DEFINE=		IPV6
 IPV6_CONFIGURE_ENABLE=	ipv6
-
-CONFIG_FILES=	configs/server/burp.conf \
-		configs/client/burp.conf \
-		configs/certs/CA/CA.cnf
-
-post-patch:
-.for f in ${CONFIG_FILES}
-	@${REINPLACE_CMD} -e 's,/etc/burp,${PREFIX}/etc/burp,g' ${WRKSRC}/${f}
-	@${REINPLACE_CMD} -e 's,/usr/sbin,${PREFIX}/sbin,g' ${WRKSRC}/${f}
-.endfor
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/bedup
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/vss_strip
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/burp
 
 .include <bsd.port.mk>
