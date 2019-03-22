@@ -73,6 +73,7 @@
     SUBDIR += jdk9-doc
     SUBDIR += jdk10-doc
     SUBDIR += jdk11-doc
+    SUBDIR += jdk12-doc
     SUBDIR += jdom
     SUBDIR += jflex
     SUBDIR += jfreechart
