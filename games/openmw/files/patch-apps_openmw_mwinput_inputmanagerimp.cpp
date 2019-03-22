@@ -1,17 +1,17 @@
---- apps/openmw/mwinput/inputmanagerimp.cpp.orig	2017-06-29 22:52:28 UTC
+--- apps/openmw/mwinput/inputmanagerimp.cpp.orig	2019-03-10 10:50:29 UTC
 +++ apps/openmw/mwinput/inputmanagerimp.cpp
-@@ -122,11 +122,12 @@ namespace MWInput
+@@ -121,11 +121,12 @@ namespace MWInput
                  SDL_ControllerDeviceEvent evt;
                  evt.which = i;
                  controllerAdded(mFakeDeviceID, evt);
--                std::cout << "Detected game controller: " << SDL_GameControllerNameForIndex(i) << std::endl;
+-                Log(Debug::Info) << "Detected game controller: " << SDL_GameControllerNameForIndex(i);
 +                //Bug in FreeBSD's SDL? SDL_GameControllerNameForIndex returns NULL
-+                std::cout << "Detected game controller" << std::endl;
++                Log(Debug::Info) << "Detected game controller: " << i;
              }
              else
              {
--                std::cout << "Detected unusable controller: " << SDL_JoystickNameForIndex(i) << std::endl;
-+                //std::cout << "Detected unusable controller: " << SDL_JoystickNameForIndex(i) << std::endl;
+-                Log(Debug::Info) << "Detected unusable controller: " << SDL_JoystickNameForIndex(i);
++                Log(Debug::Info) << "Detected unusable controller: " << i;
              }
          }
  

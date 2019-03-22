@@ -107,6 +107,8 @@ share/metainfo/openmw.appdata.xml
 %%DATADIR%%/resources/shaders/objects_fragment.glsl
 %%DATADIR%%/resources/shaders/objects_vertex.glsl
 %%DATADIR%%/resources/shaders/parallax.glsl
+%%DATADIR%%/resources/shaders/s360_fragment.glsl
+%%DATADIR%%/resources/shaders/s360_vertex.glsl
 %%DATADIR%%/resources/shaders/terrain_fragment.glsl
 %%DATADIR%%/resources/shaders/terrain_vertex.glsl
 %%DATADIR%%/resources/shaders/water_fragment.glsl
