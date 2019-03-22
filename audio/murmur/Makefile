@@ -3,7 +3,7 @@
 
 PORTNAME=	murmur
 DISTVERSION=	1.3.0-rc1
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	audio net
 
 MAINTAINER=	feld@FreeBSD.org
@@ -19,7 +19,7 @@ USERS=		murmur
 GROUPS=		murmur
 USES=		compiler:c++11-lang qmake pkgconfig python:2.7 qt:5 ssl
 USE_CXXSTD=	c++11
-USE_QT=		buildtools core network sql xml
+USE_QT=		buildtools_build core network sql xml
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	mumble-voip
