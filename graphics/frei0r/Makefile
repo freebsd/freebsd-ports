@@ -15,7 +15,7 @@ COMMENT?=	Minimalistic plugin API for video effects
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=	cmake pkgconfig
+USES=		cmake pkgconfig
 
 .if defined(BUILDING_FREI0R_OPENCV) && defined(BUILDING_FREI0R_GAVL)
 IGNORE=		cannot build OpenCV and gavl plugins simultaneously
@@ -25,7 +25,7 @@ IGNORE=		cannot build OpenCV and gavl plugins simultaneously
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-frei0r-plugins \
 		${PATCHDIR}/extra-patch-src_filter_facedetect_CMakeLists.txt
 
-USES+=	localbase
+USES+=		localbase
 .endif
 
 .if defined(BUILDING_FREI0R_OPENCV)
@@ -50,6 +50,7 @@ CMAKE_ARGS+=	-DWITHOUT_OPENCV:BOOL=ON \
 .else
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-CMakeLists.txt
 
+USES+=		gnome
 USE_GNOME=	cairo
 
 CMAKE_ARGS+=	-DWITHOUT_OPENCV:BOOL=ON \
@@ -58,7 +59,7 @@ CMAKE_ARGS+=	-DWITHOUT_OPENCV:BOOL=ON \
 .endif # !defined(BUILDING_FREI0R_OPENCV) && !defined(BUILDING_FREI0R_GAVL)
 
 .if defined(FREI0R_PLUGINS)
-PLIST=	${WRKSRC}/PLIST
+PLIST=		${WRKSRC}/PLIST
 . for FILE in ${FREI0R_PLUGINS}
 PLIST_FILES+=	lib/frei0r-1/${FILE}.so
 . endfor
