@@ -303,8 +303,8 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/debugger-projectexplorer-utils-internal-shortstringlayout.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/debugger-projectexplorer-utils-internal-stringdatalayout-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/debugger-projectexplorer-utils-internal-stringdatalayout.html
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/debugger-projectexplorer-utils-sizedarray-members.html
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/debugger-projectexplorer-utils-sizedarray.html
+%%QTWEBENGINE%%%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/debugger-projectexplorer-utils-sizedarray-members.html
+%%QTWEBENGINE%%%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/debugger-projectexplorer-utils-sizedarray.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/debugger-projectexplorer.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/debugger-qmljs-ast-sourcelocation-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/debugger-qmljs-ast-sourcelocation.html
@@ -733,8 +733,8 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-utils-link.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-utils-sizedarray-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-utils-sizedarray.html
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-utils-smallstringview-members.html
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-utils-smallstringview.html
+%%QTWEBENGINE%%%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-utils-smallstringview-members.html
+%%QTWEBENGINE%%%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-utils-smallstringview.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-utils-treemodel-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-utils-treemodel.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/projectexplorer-utils-typedtreeitem-members.html
@@ -761,8 +761,8 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/qmljs-plugindumper.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/qmljs-propertyinfo-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/qmljs-propertyinfo.html
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/qmljs-qmlerror-members.html
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/qmljs-qmlerror.html
+%%QTWEBENGINE%%%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/qmljs-qmlerror-members.html
+%%QTWEBENGINE%%%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/qmljs-qmlerror.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/qmljs-qmljs-ast-sourcelocation-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/qmljs-qmljs-ast-sourcelocation.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/qmljs-qmljs-converttonumber-members.html
@@ -884,8 +884,8 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-scopedswap.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-sizedarray-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-sizedarray.html
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-smallstringview-members.html
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-smallstringview.html
+%%QTWEBENGINE%%%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-smallstringview-members.html
+%%QTWEBENGINE%%%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-smallstringview.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-treemodel-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-treemodel.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-typedtreeitem-members.html
