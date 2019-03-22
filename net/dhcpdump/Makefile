@@ -6,7 +6,7 @@ PORTVERSION=	1.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Decode and diagnose sniffed DHCP packets
 
 LICENSE=	BSD2CLAUSE
