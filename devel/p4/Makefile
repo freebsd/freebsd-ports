@@ -40,6 +40,7 @@ PLIST_FILES=	bin/p4
 do-build:
 	cd ${WRKSRC} && ${SETENV} C++="${CXX}" C++FLAGS="${CXXFLAGS}" \
 		CCFLAGS="${CFLAGS}" \
+		HDRS="${OPENSSLINC}" \
 		LINKFLAGS="${LDFLAGS}" \
 		OSVER=${OSVER} \
 		SSL="yes" \
