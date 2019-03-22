@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	werkzeug
-PORTVERSION=	0.15.0
+PORTVERSION=	0.15.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Werkzeug-${DISTVERSION}
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python utilities collection for building WSGI applications
 
 LICENSE=	BSD3CLAUSE
@@ -20,8 +20,6 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES WATCHDOG
 WATCHDOG_DESC=	Monitor filesystem events
