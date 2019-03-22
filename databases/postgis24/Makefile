@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgis
-PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTVERSION=	2.4.7
 CATEGORIES=	databases geography
 MASTER_SITES=	https://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	24
@@ -16,82 +15,51 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libproj.so:graphics/proj \
 		libgeos.so:graphics/geos \
-		libjson-c.so:devel/json-c
+		libjson-c.so:devel/json-c \
+		libgdal.so:graphics/gdal
 
-CONFLICTS_INSTALL=	postgis20  postgis21 postgis22 postgis23 postgis
-
-USES=		compiler:c++11-lang gettext gmake iconv:wchar_t libtool:keepla \
-		perl5 pgsql pkgconfig shebangfix
-LLD_UNSAFE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE}
-SHEBANG_FILES=	extensions/address_standardizer/*.pl raster/test/regress/*.pl \
-		raster/test/regress/loader/*.pl regress/run_test.pl \
-		utils/postgis_restore.pl.in utils/*.pl
+USES=		alias gettext gmake gnome iconv:wchar_t libtool:keepla \
+		localbase perl5 pkgconfig pgsql:9.3-10 shebangfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-WANT_PGSQL=	lib server
 
-OPTIONS_DEFINE=		LOADERGUI RASTER TOPOLOGY SFCGAL ADDRSTD
-OPTIONS_DEFAULT=	TOPOLOGY ADDRSTD SFCGAL
-OPTIONS_SUB=		yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE} NUMERICFLAGS=${PORTVERSION}
+SHEBANG_FILES=	extensions/address_standardizer/*.pl raster/test/regress/*.pl \
+		raster/test/regress/loader/*.pl regress/run_test.pl \
+		utils/postgis_restore.pl.in utils/*.pl
+WANT_PGSQL=	server
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+OPTIONS_DEFINE=	ADDRSTD LOADERGUI SFCGAL TOPOLOGY
+OPTIONS_DEFAULT=ADDRSTD SFCGAL TOPOLOGY
+OPTIONS_SUB=	yes
 
 LOADERGUI_DESC=	Enable shp2pgsql-gui
-RASTER_DESC=	Raster support
 TOPOLOGY_DESC=	Topology support
 SFCGAL_DESC=	Enable sfcgal
 ADDRSTD_DESC=	Enable address standardizer
 
+CONFLICTS_INSTALL=	postgis20  postgis21 postgis22 postgis23 postgis25
+
 LOADERGUI_CONFIGURE_WITH=	gui
-LOADERGUI_USE=	GNOME=gtk20
-RASTER_USES=	alias
-RASTER_CONFIGURE_WITH=	raster
-RASTER_LIB_DEPENDS=		libgdal.so:graphics/gdal
-RASTER_CONFIGURE_ON=	--with-gdalconfig=${LOCALBASE}/bin/gdal-config
+LOADERGUI_USE=			GNOME=gtk20
 TOPOLOGY_CONFIGURE_WITH=	topology
-SFCGAL_LIB_DEPENDS=	libSFCGAL.so:databases/sfcgal
-SFCGAL_CONFIGURE_ON=	--with-sfcgal=${LOCALBASE}/bin/sfcgal-config
-SFCGAL_CONFIGURE_OFF=	--without-sfcgal
-SFCGAL_IMPLIES=		RASTER
-ADDRSTD_CONFIGURE_WITH=	address-standardizer
-ADDRSTD_IMPLIES=	RASTER
-ADDRSTD_LIB_DEPENDS=	libpcre.so:devel/pcre
-ADDRSTD_VARS=		WANT_PGSQL+=contrib
+SFCGAL_LIB_DEPENDS=		libSFCGAL.so:databases/sfcgal
+SFCGAL_CONFIGURE_WITH=		sfcgal=${LOCALBASE}/bin/sfcgal-config
+ADDRSTD_CONFIGURE_WITH=		address-standardizer
+ADDRSTD_LIB_DEPENDS=		libpcre.so:devel/pcre
+ADDRSTD_VARS=			WANT_PGSQL+=contrib
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-.include <bsd.port.pre.mk>
-
-pre-configure:
-	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblwgeom-2.4.so.0.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/*.so
 	${MKDIR} ${STAGEDIR}${DATADIR}/tiger_geocoder
 	(cd ${WRKSRC}/extras/tiger_geocoder && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/tiger_geocoder/ "! ( -name *\.orig -o -name *\.bak )" )
 	${MKDIR} ${STAGEDIR}${DATADIR}/utils
 	(cd ${WRKSRC}/utils/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/utils/ "! ( -name *\.orig -o -name *\.bak -o -name Makefile -o -name *\.in -o -name uninstall_script )" )
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/shp2pgsql
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pgsql2shp
-.if ${PORT_OPTIONS:MLOADERGUI}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/shp2pgsql-gui
-.else
-	${RM} ${STAGEDIR}${PREFIX}/bin/shp2pgsql-gui
-.endif
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblwgeom-2.4.so.0.0.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/postgis-2.4.so
-.if ${PORT_OPTIONS:MTOPOLOGY}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/postgis_topology-2.4.so
-.endif
-.if ${PORT_OPTIONS:MRASTER}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/raster2pgsql
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/rtpostgis-2.4.so
-.endif
-.if ${PORT_OPTIONS:MADDRSTD}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/address_standardizer-2.4.so
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
