@@ -1,0 +1,5 @@
+bin/cnagios
+@sample %%ETCDIR%%/cnagios.help.sample
+@sample %%ETCDIR%%/cnagios.pl.sample
+@sample %%ETCDIR%%/cnagiosrc.sample
+man/man1/cnagios.1.gz
