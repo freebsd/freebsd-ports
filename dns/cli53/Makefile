@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	cli53
-DISTVERSION=	0.8.14
+DISTVERSION=	0.8.15
 CATEGORIES=	dns
 
 MAINTAINER=	meta@FreeBSD.org
-COMMENT=	Command line management of Route53 domains
+COMMENT=	Command line tool for Amazon Route 53
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC:H:H}/LICENSE
