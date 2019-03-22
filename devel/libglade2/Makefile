@@ -1,6 +1,5 @@
 # Created by: Ade Lovett <ade@lovett.com>
 # $FreeBSD$
-#   $MCom: ports/devel/libglade2/Makefile,v 1.26 2007/08/01 16:13:48 mezz Exp $
 
 PORTNAME=	libglade2
 PORTVERSION=	2.6.4
@@ -13,16 +12,22 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME glade library
 
+LICENSE=	LGPL20
+
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
+
 USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 
-GNU_CONFIGURE=	yes
-USES+=		gmake libtool:keepla pathfix pkgconfig
-USE_GNOME=	libxml2 gtk20 referencehack
+USES+=		gmake gnome libtool:keepla pathfix pkgconfig
+USE_GNOME=	cairo gdkpixbuf2 libxml2 gtk20 referencehack
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc \
 		--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
@@ -42,11 +47,15 @@ USES+=		python:2.7
 PLIST_SUB+=	PYTHON=""
 .else
 PLIST_SUB+=	PYTHON="@comment "
+.endif
 
-post-patch:
+post-patch-PYTHON-off:
 	@${REINPLACE_CMD} -E 's/in (python.*)+ none/in none/' \
 		${WRKSRC}/configure
-.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|glib-2.0|gmodule-2.0 glib-2.0|g' \
+		${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/libglade/2.0
