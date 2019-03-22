@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.Awfulhak.org/vmdktool/ \
 		ftp://ftp.Awfulhak.org/pub/vmdktool/ \
 		http://people.FreeBSD.org/~brian/vmdktool/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Convert VMDK files to/from raw disk images
 
 LICENSE=	BSD2CLAUSE
