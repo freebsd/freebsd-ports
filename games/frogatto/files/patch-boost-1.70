@@ -1,0 +1,37 @@
+src/http_server.cpp:34:46: error: no member named 'get_io_service' in
+      'boost::asio::basic_socket_acceptor<boost::asio::ip::tcp, boost::asio::executor>'
+        socket_ptr socket(new tcp::socket(acceptor_.get_io_service()));
+                                          ~~~~~~~~~ ^
+src/server.cpp:40:47: error: no member named 'get_io_service' in
+      'boost::asio::basic_socket_acceptor<boost::asio::ip::tcp, boost::asio::executor>'
+                socket_ptr socket(new tcp::socket(acceptor_.get_io_service()));
+                                                  ~~~~~~~~~ ^
+
+--- src/http_server.cpp.orig	2012-12-08 22:36:13 UTC
++++ src/http_server.cpp
+@@ -31,7 +31,11 @@ web_server::web_server(boost::asio::io_service& io_ser
+ 
+ void web_server::start_accept()
+ {
++#if BOOST_VERSION < 107000
+ 	socket_ptr socket(new tcp::socket(acceptor_.get_io_service()));
++#else
++	socket_ptr socket(new tcp::socket(acceptor_.get_executor()));
++#endif
+ 	acceptor_.async_accept(*socket, boost::bind(&web_server::handle_accept, this, socket, boost::asio::placeholders::error));
+ 
+ }
+--- src/server.cpp.orig	2012-12-08 22:36:13 UTC
++++ src/server.cpp
+@@ -37,7 +37,11 @@ class server (public)
+ private:
+ 	void start_accept()
+ 	{
++#if BOOST_VERSION < 107000
+ 		socket_ptr socket(new tcp::socket(acceptor_.get_io_service()));
++#else
++		socket_ptr socket(new tcp::socket(acceptor_.get_executor()));
++#endif
+ 		acceptor_.async_accept(*socket, boost::bind(&server::handle_accept, this, socket, boost::asio::placeholders::error));
+ 	}
+ 
