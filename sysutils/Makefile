@@ -117,6 +117,7 @@
     SUBDIR += btsixad
     SUBDIR += bulk_extractor
     SUBDIR += burp
+    SUBDIR += burp-devel
     SUBDIR += busybox
     SUBDIR += bvm
     SUBDIR += byobu
