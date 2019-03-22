@@ -294,6 +294,7 @@ share/teamspeak/server/sql/update_27.sql
 share/teamspeak/server/sql/update_28.sql
 share/teamspeak/server/sql/update_29.sql
 share/teamspeak/server/sql/update_30.sql
+share/teamspeak/server/sql/update_31.sql
 share/teamspeak/server/sql/update_database_version.sql
 share/teamspeak/server/sql/update_mariadb_26.sql
 share/teamspeak/server/sql/update_mariadb_27.sql
