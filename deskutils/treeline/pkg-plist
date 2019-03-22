@@ -119,8 +119,10 @@ share/icons/hicolor/scalable/apps/treeline-icon.svg
 %%DATADIR%%/icons/toolbar/32x32/dataflatcategory.png
 %%DATADIR%%/icons/toolbar/32x32/datanodetype.png
 %%DATADIR%%/icons/toolbar/32x32/datanumbering.png
+%%DATADIR%%/icons/toolbar/32x32/dataregenrefs.png
 %%DATADIR%%/icons/toolbar/32x32/datasortnodes.png
 %%DATADIR%%/icons/toolbar/32x32/dataswapcategory.png
+%%DATADIR%%/icons/toolbar/32x32/datavisualconfig.png
 %%DATADIR%%/icons/toolbar/32x32/editcopy.png
 %%DATADIR%%/icons/toolbar/32x32/editcut.png
 %%DATADIR%%/icons/toolbar/32x32/editpaste.png
