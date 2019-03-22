@@ -116,6 +116,7 @@
     SUBDIR += da-aspell
     SUBDIR += da-hyphen
     SUBDIR += dadadodo
+    SUBDIR += datamash
     SUBDIR += db2latex
     SUBDIR += dbacl
     SUBDIR += dblatex
