@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	websocat
-DISTVERSION=	1.3.0
+DISTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -26,8 +26,8 @@ CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		base64-0.9.3 \
 		bitflags-1.0.4 \
 		byteorder-1.3.1 \
-		bytes-0.4.11 \
-		cc-1.0.30 \
+		bytes-0.4.12 \
+		cc-1.0.31 \
 		cfg-if-0.1.7 \
 		clap-2.32.0 \
 		cloudabi-0.0.3 \
@@ -38,7 +38,7 @@ CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		crossbeam-queue-0.1.2 \
 		crossbeam-utils-0.6.5 \
 		derivative-1.0.2 \
-		env_logger-0.6.0 \
+		env_logger-0.6.1 \
 		fnv-1.0.6 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -71,9 +71,9 @@ CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		net2-0.2.33 \
 		nodrop-0.1.13 \
 		num_cpus-1.10.0 \
-		openssl-0.10.19 \
+		openssl-0.10.20 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.42 \
+		openssl-sys-0.9.43 \
 		owning_ref-0.4.0 \
 		parking_lot-0.7.1 \
 		parking_lot_core-0.4.0 \
@@ -111,14 +111,14 @@ CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		smart-default-0.3.0 \
 		socket2-0.3.8 \
 		stable_deref_trait-1.1.1 \
-		structopt-0.2.14 \
-		structopt-derive-0.2.14 \
-		syn-0.15.27 \
+		structopt-0.2.15 \
+		structopt-derive-0.2.15 \
+		syn-0.15.29 \
 		tempfile-3.0.7 \
 		textwrap-0.10.0 \
 		time-0.1.42 \
 		tk-listen-0.2.1 \
-		tokio-0.1.16 \
+		tokio-0.1.17 \
 		tokio-codec-0.1.1 \
 		tokio-current-thread-0.1.5 \
 		tokio-executor-0.1.6 \
@@ -129,11 +129,12 @@ CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		tokio-reactor-0.1.9 \
 		tokio-signal-0.2.7 \
 		tokio-stdin-stdout-0.1.5 \
-		tokio-sync-0.1.3 \
+		tokio-sync-0.1.4 \
 		tokio-tcp-0.1.3 \
 		tokio-threadpool-0.1.12 \
 		tokio-timer-0.2.10 \
 		tokio-tls-0.2.1 \
+		tokio-trace-core-0.1.0 \
 		tokio-udp-0.1.3 \
 		tokio-uds-0.2.5 \
 		traitobject-0.1.0 \
