@@ -3,6 +3,7 @@
 
 PORTNAME=	uncle
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	gblach@FreeBSD.org
