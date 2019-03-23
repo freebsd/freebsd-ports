@@ -1,2 +1,3 @@
-SHA256 (goocanvas-2.0.2.tar.xz) = f20e5fbef8d1a2633033edbd886dd13146a1b948d1813a9c353a80a29295d1d0
-SIZE (goocanvas-2.0.2.tar.xz) = 502732
+TIMESTAMP = 1553356686
+SHA256 (gnome/goocanvas-2.0.4.tar.xz) = c728e2b7d4425ae81b54e1e07a3d3c8a4bd6377a63cffa43006045bceaa92e90
+SIZE (gnome/goocanvas-2.0.4.tar.xz) = 584272
