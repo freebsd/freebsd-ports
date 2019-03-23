@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2019-03-23 10:53:10 UTC
++++ Makefile.in
+@@ -208,7 +208,7 @@ top_srcdir = @top_srcdir@
+ # use the ACLOCAL_FLAGS env var when rerunning aclocal
+ ACLOCAL_FLAGS = 
+ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS}
+-SUBDIRS = gtkgl examples docs # build
++SUBDIRS = gtkgl docs # build
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = gtkgl-2.0.pc
+ EXTRA_DIST = \
