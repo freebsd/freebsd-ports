@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdds
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.1
 CATEGORIES=	devel
 MASTER_SITES=	http://kohei.us/files/mdds/src/
 
@@ -15,7 +15,7 @@ USES=		tar:bzip2
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-API_VERSION=	1.2
+API_VERSION=	1.4
 PLIST_SUB=	API_VERSION=${API_VERSION}
 
 do-configure:
