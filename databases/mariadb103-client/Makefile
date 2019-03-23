@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
+PORTREVISION=	1
 PKGNAMESUFFIX=	103-client
 
 COMMENT=	Multithreaded SQL database (client)
@@ -22,6 +23,11 @@ USE_LDCONFIG=	${PREFIX}/lib/mysql
 CLIENT_ONLY=	yes
 
 CONFLICTS_INSTALL=	databases/mytop
+
+post-configure:
+	${REINPLACE_CMD} -Ee 's|(#define INCLUDE.*)"$$|\1 -I${PREFIX}/include"|' \
+		-e 's|(#define LIBS .*)"$$|\1 -L${PREFIX}/lib"|' \
+		${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c
 
 post-install:
 	${RM} -r ${STAGEDIR}${DATADIR}
