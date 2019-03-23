@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkfontscale
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
