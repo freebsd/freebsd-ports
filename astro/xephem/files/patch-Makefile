@@ -1,11 +1,11 @@
---- Makefile.orig	2015-09-14 09:37:09.737810488 -0500
-+++ Makefile	2015-09-14 09:45:54.470774555 -0500
-@@ -23,18 +23,18 @@
+--- Makefile.orig	2015-08-09 21:36:50 UTC
++++ Makefile
+@@ -23,44 +23,44 @@ MOTIFI = $(MOTIF)
  MOTIFL = $(MOTIF)
  endif
  ifndef MOTIFI
 -MOTIFI = /usr/include
-+MOTIFI = %%LOCALBASE%%/include
++MOTIFI = /usr/local/include
  endif
  ifndef MOTIFL
 -MOTIFL = /usr/lib
@@ -13,18 +13,107 @@
  endif
  
  # for linux and Apple OS X
- CC = gcc
- CLDFLAGS = -g
+-CC = gcc
+-CLDFLAGS = -g
 -CFLAGS = $(LIBINC) $(CLDFLAGS) -O2 -Wall -I$(MOTIFI) -I/opt/X11/include
 -LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L/opt/X11/lib
 -XLIBS = -lXm -lXp -lXt -lXext -lXmu -lX11
-+CFLAGS = $(LIBINC) $(CLDFLAGS) -Wall -I$(MOTIFI) -I%%LOCALBASE%%/include
-+LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L%%LOCALBASE%%/lib
+-LIBS = $(XLIBS) $(LIBLIB) -lm
++CC?= cc
++CLDFLAGS+= -g
++CFLAGS+= $(LIBINC) $(CLDFLAGS) -Wall -I$(MOTIFI) -I/usr/local/include
++LDFLAGS+= $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L/usr/local/lib
 +XLIBS = -lXm -lXp -lXt -lXext -lXmu -lX11 -lXft
- LIBS = $(XLIBS) $(LIBLIB) -lm
++LIBS = $(XLIBS) $(LIBLIB) -lm -lssl
  
  # static linking on Apple using X11 libs from ports
-@@ -189,18 +189,18 @@
+-# CC = gcc
++# CC?= cc
+ # OLI = /opt/local/include
+ # OLL = /opt/local/lib
+-# CLDFLAGS = -g
+-# CFLAGS = $(LIBINC) $(CLDFLAGS) -O2 -Wall -I$(MOTIFI) -I$(OLI)
+-# LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L$(OLL)
++# CLDFLAGS+= -g
++# CFLAGS+= $(LIBINC) $(CLDFLAGS) -Wall -I$(MOTIFI) -I$(OLI)
++# LDFLAGS+= $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L$(OLL)
+ # XLIBS = -lXm $(OLL)/libXp.a $(OLL)/libXt.a $(OLL)/libSM.a $(OLL)/libICE.a $(OLL)/libXext.a $(OLL)/libXmu.a $(OLL)/libX11.a $(OLL)/libxcb.a $(OLL)/libXau.a $(OLL)/libXdmcp.a
+ # LIBS = $(XLIBS) $(LIBLIB) -lm
+ 
+ # for ppc Apple OS X to make universal (i386 and ppc binary), requires
+ # Xcode 2.2, /Developers/SDK/MacOSX10.4u.sdk and all libs, including libXm,
+ # built similarly
+-# CLDFLAGS = -arch i386 -arch ppc
+-# CFLAGS = $(LIBINC) $(CLDFLAGS) -O2 -Wall -isysroot /Developer/SDKs/MacOSX10.4u.sdk -I$(MOTIFI) -I/usr/X11R6/include
+-# LDFLAGS = $(LIBLNK) $(CLDFLAGS) -Wl,-syslibroot,/Developer/SDKs/MacOSX10.4u.sdk -L$(MOTIFL) -L/usr/X11R6/lib
++# CLDFLAGS+= -arch i386 -arch ppc
++# CFLAGS+= $(LIBINC) $(CLDFLAGS) -Wall -isysroot /Developer/SDKs/MacOSX10.4u.sdk -I$(MOTIFI) -I/usr/local/include
++# LDFLAGS+= $(LIBLNK) $(CLDFLAGS) -Wl,-syslibroot,/Developer/SDKs/MacOSX10.4u.sdk -L$(MOTIFL) -L/usr/local/lib
+ 
+ # MKS Enterprise toolkit
+ # MOTIFI = -I/usr/include
+ # MOTIFL = -L/usr/lib
+ # CC = cc
+-# CLDFLAGS =
+-# CFLAGS = $(LIBINC) $(CLDFLAGS) -O -I$(MOTIFI)
+-# LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -W/subsystem:windows -s
++# CLDFLAGS+=
++# CFLAGS+= $(LIBINC) $(CLDFLAGS) -O -I$(MOTIFI)
++# LDFLAGS+= $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -W/subsystem:windows -s
+ # XLIBS = -lXm -lXt -lX11
+ # LIBS = $(XLIBS) $(LIBLIB) -lm
+ 
+@@ -68,9 +68,9 @@ LIBS = $(XLIBS) $(LIBLIB) -lm
+ # MOTIFI = -I/usr/include
+ # MOTIFL = -L/usr/lib
+ # CC = cc
+-# CLDFLAGS = 
+-# CFLAGS = $(LIBINC) $(CLDFLAGS) -O -I$(MOTIFI)
+-# LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) 
++# CLDFLAGS+= 
++# CFLAGS+= $(LIBINC) $(CLDFLAGS) -O -I$(MOTIFI)
++# LDFLAGS+= $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) 
+ # XLIBS = -lXm -lXt -lX11
+ # LIBS = $(XLIBS) $(LIBLIB) -lsocket -lnsl -lc -lm /usr/ucblib/libucb.a
+ # Note: if you get regex undefined, add -lgen to the end of LIBS.
+@@ -81,9 +81,9 @@ LIBS = $(XLIBS) $(LIBLIB) -lm
+ # MOTIFI = -I/usr/dt/include
+ # MOTIFL = -L/usr/dt/lib -R/usr/dt/lib
+ # CC = cc
+-# CLDFLAGS =
+-# CFLAGS = $(LIBINC) $(CLDFLAGS) -O -I$(MOTIFI) -I/usr/openwin/include
+-# LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L/usr/openwin/lib
++# CLDFLAGS+=
++# CFLAGS+= $(LIBINC) $(CLDFLAGS) -O -I$(MOTIFI) -I/usr/openwin/include
++# LDFLAGS+= $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL) -L/usr/openwin/lib
+ # XLIBS = -lXm -lXt -lX11
+ # LIBS = $(XLIBS) $(LIBLIB) -lm -lsocket -lnsl
+ 
+@@ -91,17 +91,17 @@ LIBS = $(XLIBS) $(LIBLIB) -lm
+ # MOTIFI = -I/usr/include
+ # MOTIFL = -L/usr/lib
+ # CC = cc
+-# CLDFLAGS =
+-# CFLAGS = $(LIBINC) $(CLDFLAGS) -Aa -fast -I$(MOTIFI)
+-# LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL)
++# CLDFLAGS+=
++# CFLAGS+= $(LIBINC) $(CLDFLAGS) -Aa -fast -I$(MOTIFI)
++# LDFLAGS+= $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL)
+ 
+ # AIX
+ # MOTIFI = -I/usr/include
+ # MOTIFL = -L/usr/lib
+ # CC = xlc
+-# CLDFLAGS =
+-# CFLAGS = $(LIBINC) $(CLDFLAGS) -O2 -qlanglvl=ansi -qarch=com -qmaxmem=16384 -I$(MOTIFI)
+-# LDFLAGS = $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL)
++# CLDFLAGS+=
++# CFLAGS+= $(LIBINC) $(CLDFLAGS) -qlanglvl=ansi -qarch=com -qmaxmem=16384 -I$(MOTIFI)
++# LDFLAGS+= $(LIBLNK) $(CLDFLAGS) -L$(MOTIFL)
+ 
+ .PRECIOUS:	xephem
+ 
+@@ -189,18 +189,18 @@ OBJS =			\
  all: libs xephem xephem.1
  
  xephem: $(INCS) $(OBJS)
