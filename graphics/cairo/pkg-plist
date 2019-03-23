@@ -102,6 +102,7 @@ libdata/pkgconfig/cairo.pc
 %%PORTDOCS%%%%DOCSDIR%%/cairo/index-1.10.html
 %%PORTDOCS%%%%DOCSDIR%%/cairo/index-1.12.html
 %%PORTDOCS%%%%DOCSDIR%%/cairo/index-1.14.html
+%%PORTDOCS%%%%DOCSDIR%%/cairo/index-1.16.html
 %%PORTDOCS%%%%DOCSDIR%%/cairo/index-1.2.html
 %%PORTDOCS%%%%DOCSDIR%%/cairo/index-1.4.html
 %%PORTDOCS%%%%DOCSDIR%%/cairo/index-1.6.html
