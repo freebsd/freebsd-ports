@@ -1324,6 +1324,7 @@
     SUBDIR += py-jsonslicer
     SUBDIR += py-jtextfsm
     SUBDIR += py-junit-xml
+    SUBDIR += py-langdetect
     SUBDIR += py-laserhammer
     SUBDIR += py-libtre
     SUBDIR += py-libxml2
