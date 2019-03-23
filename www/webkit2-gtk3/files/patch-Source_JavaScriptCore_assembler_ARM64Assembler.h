@@ -1,8 +1,8 @@
---- Source/JavaScriptCore/assembler/ARM64Assembler.h.orig	2018-08-21 16:06:10 UTC
+--- Source/JavaScriptCore/assembler/ARM64Assembler.h.orig	2019-01-09 10:08:35 UTC
 +++ Source/JavaScriptCore/assembler/ARM64Assembler.h
-@@ -2863,6 +2863,8 @@ class ARM64Assembler { (public)
+@@ -2874,6 +2874,8 @@ class ARM64Assembler { (public)
      {
- #if OS(IOS)
+ #if OS(IOS_FAMILY)
          sys_cache_control(kCacheFunctionPrepareForExecution, code, size);
 +#elif OS(FREEBSD) || OS(NETBSD)
 +        __clear_cache(code, reinterpret_cast<char*>(code) + size);
