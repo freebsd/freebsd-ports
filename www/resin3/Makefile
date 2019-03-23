@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	resin
-PORTVERSION=	3.1.15
+PORTVERSION=	3.1.16
 CATEGORIES=	www java
 MASTER_SITES=	http://www.caucho.com/download/
 
@@ -11,15 +11,12 @@ COMMENT=	Java-based Application Server, 3.x branch
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	APACHE22
-APACHE22_DESC=	Use Apache 2.2
-
-GNU_CONFIGURE=	yes
 USES=		libtool python ssl
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
 
 # Pass JAVA_HOME as determined by bsd.java.mk
+JAVA_VERSION=	1.6+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-java-home=${JAVA_HOME} \
 		--with-openssl-lib=${OPENSSLLIB} \
 		--with-openssl-include=${OPENSSLINC}
@@ -56,22 +53,8 @@ APXS?=		${LOCALBASE}/sbin/apxs
 SUB_FILES=	pkg-message resin3ctl
 USE_RC_SUBR=	resin3
 NO_ARCH=	yes
-APACHE22_BROKEN=The Apache 2.2 port has been deleted
 
 .include <bsd.port.options.mk>
-
-# Install the Apache plugin if needed
-.if ${PORT_OPTIONS:MAPACHE22}
-BUILD_DEPENDS+=	${APXS}:www/apache22
-CONFIGURE_ARGS+=--with-apxs=${APXS}
-PLIST_SUB+=	MOD_DIR=libexec/apache22
-# Allow apxs invocations
-PLIST_SUB+=	APACHE=""
-.else
-PLIST_SUB+=	MOD_DIR="@comment "
-# Prevent apxs invocations
-PLIST_SUB+=	APACHE="@comment "
-.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/webapps/resin-doc
@@ -80,6 +63,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${resin.home}/conf/app-default.xml|${PREFIX}/etc/${APP_NAME}/app-default.xml|' \
 		${WRKSRC}/conf/resin.conf
+	@${REINPLACE_CMD} -e 's|ssl23.h|ssl3.h|' ${WRKSRC}/configure
 
 post-build:
 	(cd ${WRKSRC}/modules/c/src/resin_os && ${SETENV} ${MAKE_ENV} \
@@ -93,8 +77,5 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/resin3ctl ${STAGEDIR}${PREFIX}/sbin
 	(cd ${WRKSRC}/webapps && ${COPYTREE_SHARE} . ${STAGEDIR}${APP_HOME}/webapps)
 	(cd ${WRKSRC}/lib  && ${COPYTREE_SHARE} . ${STAGEDIR}${APP_HOME}/lib)
-.if ${PORT_OPTIONS:MAPACHE22}
-	${APXS} -i -n caucho -a ${WRKSRC}/modules/c/src/apache2/.libs/mod_caucho.so
-.endif
 
 .include <bsd.port.mk>
