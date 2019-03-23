@@ -5,7 +5,7 @@ ld: error: export/lib/libconfscreens.so: undefined reference to hid_get_report_d
 ld: error: export/lib/libconfscreens.so: undefined reference to hid_report_size
 ld: error: export/lib/libconfscreens.so: undefined reference to hid_start_parse
 
---- src/libs/confscreens/Makefile.orig	2019-03-22 17:15:20 UTC
+--- src/libs/confscreens/Makefile.orig	2014-05-20 10:40:48 UTC
 +++ src/libs/confscreens/Makefile
 @@ -28,7 +28,7 @@ EXPDIR    = include
  EXPORTS   = driverconfig.h joystickconfig.h mouseconfig.h controlconfig.h graphconfig.h\
