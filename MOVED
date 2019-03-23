@@ -11975,3 +11975,4 @@ security/yubikey-piv-manager||2019-03-16|Has expired: Qt4 has been EOL since dec
 textproc/xxdiff-scripts||2019-03-16|Has expired: Qt4 has been EOL since december 2015
 graphics/py-pivy||2019-03-16|Has expired: Qt4 has been EOL since december 2015
 security/pinentry-qt4||2019-03-17|Has expired: Qt4 has been EOL since december 2015
+www/libsocialweb||2019-03-23|Project was archived upstream
