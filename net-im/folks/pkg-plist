@@ -1,6 +1,5 @@
 bin/folks-import
 bin/folks-inspect
-%%SOCIALWEB%%include/folks/folks-libsocialweb.h
 include/folks/folks-dummy.h
 include/folks/folks-eds.h
 include/folks/folks-telepathy.h
@@ -9,14 +8,12 @@ include/folks/folks.h
 lib/folks/%%VERSION%%/backends/dummy/dummy.so
 lib/folks/%%VERSION%%/backends/eds/eds.so
 lib/folks/%%VERSION%%/backends/key-file/key-file.so
-%%SOCIALWEB%%lib/folks/%%VERSION%%/backends/libsocialweb/libsocialweb.so
 lib/folks/%%VERSION%%/backends/ofono/ofono.so
 lib/folks/%%VERSION%%/backends/telepathy/telepathy.so
 %%TRACKER%%lib/folks/%%VERSION%%/backends/tracker/tracker.so
 lib/girepository-1.0/Folks-0.6.typelib
 lib/girepository-1.0/FolksDummy-0.6.typelib
 lib/girepository-1.0/FolksEds-0.6.typelib
-%%SOCIALWEB%%lib/girepository-1.0/FolksLibsocialweb-0.6.typelib
 lib/girepository-1.0/FolksTelepathy-0.6.typelib
 %%TRACKER%%lib/girepository-1.0/FolksTracker-0.6.typelib
 lib/libfolks-dummy.so
@@ -25,9 +22,6 @@ lib/libfolks-dummy.so.%%LIBVERLONG%%
 lib/libfolks-eds.so
 lib/libfolks-eds.so.%%LIBVER%%
 lib/libfolks-eds.so.%%LIBVERLONG%%
-%%SOCIALWEB%%lib/libfolks-libsocialweb.so
-%%SOCIALWEB%%lib/libfolks-libsocialweb.so.%%LIBVER%%
-%%SOCIALWEB%%lib/libfolks-libsocialweb.so.%%LIBVERLONG%%
 lib/libfolks-telepathy.so
 lib/libfolks-telepathy.so.%%LIBVER%%
 lib/libfolks-telepathy.so.%%LIBVERLONG%%
@@ -39,7 +33,6 @@ lib/libfolks.so.%%LIBVER%%
 lib/libfolks.so.%%LIBVERLONG%%
 libdata/pkgconfig/folks-dummy.pc
 libdata/pkgconfig/folks-eds.pc
-%%SOCIALWEB%%libdata/pkgconfig/folks-libsocialweb.pc
 libdata/pkgconfig/folks-telepathy.pc
 %%TRACKER%%libdata/pkgconfig/folks-tracker.pc
 libdata/pkgconfig/folks.pc
@@ -48,7 +41,6 @@ share/gir-1.0/Folks-0.6.gir
 share/gir-1.0/FolksDummy-0.6.gir
 share/gir-1.0/FolksEds-0.6.gir
 %%TRACKER%%share/gir-1.0/FolksTracker-0.6.gir
-%%SOCIALWEB%%share/gir-1.0/FolksLibsocialweb-0.6.gir
 share/gir-1.0/FolksTelepathy-0.6.gir
 share/locale/ar/LC_MESSAGES/folks.mo
 share/locale/as/LC_MESSAGES/folks.mo
@@ -115,8 +107,6 @@ share/vala/vapi/folks-dummy.deps
 share/vala/vapi/folks-dummy.vapi
 share/vala/vapi/folks-eds.deps
 share/vala/vapi/folks-eds.vapi
-%%SOCIALWEB%%share/vala/vapi/folks-libsocialweb.deps
-%%SOCIALWEB%%share/vala/vapi/folks-libsocialweb.vapi
 share/vala/vapi/folks-telepathy.deps
 share/vala/vapi/folks-telepathy.vapi
 %%TRACKER%%share/vala/vapi/folks-tracker.deps
