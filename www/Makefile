@@ -1523,6 +1523,7 @@
     SUBDIR += py-dj21-django-taggit
     SUBDIR += py-dj21-django-taggit-serializer
     SUBDIR += py-dj21-django-timezone-field
+    SUBDIR += py-dj21-djangoql
     SUBDIR += py-dj21-djangorestframework
     SUBDIR += py-dj21-drf-yasg
     SUBDIR += py-django
