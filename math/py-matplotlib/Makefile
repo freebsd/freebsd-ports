@@ -2,10 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	matplotlib
-DISTVERSION=	2.2.3
+DISTVERSION=	2.2.4
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	CHEESESHOP:DEFAULT \
+		https://jqueryui.com/resources/download/:jquery
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
+		jquery-ui-1.12.1.zip:jquery
 
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	Plotting library uses a syntax familiar to MATLAB users
@@ -18,15 +21,17 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libtcl86.so:lang/tcl86
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}cycler>0:devel/py-cycler@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cycler>=0.10:devel/py-cycler@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}kiwisolver>=1.0.0:math/py-kiwisolver@${PY_FLAVOR}
 py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports.functools_lru_cache>0:devel/py-backports.functools_lru_cache@${PY_FLAVOR}
 
 USES=		compiler:c++11-lib gettext gnome pkgconfig python shebangfix uniquefiles:dirs
 USE_PYTHON=	autoplist distutils
+
 CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=		EXAMPLES GTKBACKEND GTKAGGBACKEND \
@@ -77,6 +82,7 @@ post-extract:
 	@${FIND} ${WRKSRC} -name '*.py' | ${XARGS} ${CHMOD} -x
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%DISTDIR%%|${DISTDIR}|g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|%%GTK_BACKEND%%|${GTK_BACKEND}|g' \
 			 -e 's|%%GTKAGG_BACKEND%%|${GTKAGG_BACKEND}|g' \
 			 -e 's|%%QT5AGG_BACKEND%%|${QT5AGG_BACKEND}|g' \
