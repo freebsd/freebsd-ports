@@ -1,0 +1,18 @@
+ld: error: export/lib/libtgfclient.so: undefined reference to hid_end_parse
+ld: error: export/lib/libtgfclient.so: undefined reference to hid_get_data
+ld: error: export/lib/libtgfclient.so: undefined reference to hid_get_item
+ld: error: export/lib/libtgfclient.so: undefined reference to hid_get_report_desc
+ld: error: export/lib/libtgfclient.so: undefined reference to hid_report_size
+ld: error: export/lib/libtgfclient.so: undefined reference to hid_start_parse
+
+--- src/libs/tgfclient/Makefile.orig	2012-01-02 16:39:05 UTC
++++ src/libs/tgfclient/Makefile
+@@ -51,7 +51,7 @@ CONFIGCREATEDIRS = config
+ 
+ CONFIG    = screen.xml
+ 
+-LIBS      = -lplibjs
++LIBS      = -lplibjs -lusbhid
+ 
+ src_PKGFILES	= $(shell find * -maxdepth 0 -type f -print)
+ 
