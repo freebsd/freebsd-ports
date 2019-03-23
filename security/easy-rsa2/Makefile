@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Small RSA key management package based on openssl
 
+DEPRECATED=	Use easy-rsa 3 instead.
+EXPIRATION_DATE=2019-06-23
+
 LICENSE=	GPLv2
 
 CONFLICTS_INSTALL=easy-rsa-3*
