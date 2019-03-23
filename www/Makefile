@@ -1515,6 +1515,7 @@
     SUBDIR += py-dj21-django-cors-headers
     SUBDIR += py-dj21-django-crispy-forms
     SUBDIR += py-dj21-django-debug-toolbar
+    SUBDIR += py-dj21-django-extensions
     SUBDIR += py-dj21-django-filter
     SUBDIR += py-dj21-django-js-asset
     SUBDIR += py-dj21-django-mptt

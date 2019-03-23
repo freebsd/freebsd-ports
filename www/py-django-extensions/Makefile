@@ -22,6 +22,8 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj21-django-extensions
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3500
