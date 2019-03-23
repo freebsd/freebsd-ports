@@ -1,2 +1,3 @@
-SHA256 (xorg/lib/xtrans-1.3.5.tar.bz2) = adbd3b36932ce4c062cd10f57d78a156ba98d618bdb6f50664da327502bc8301
-SIZE (xorg/lib/xtrans-1.3.5.tar.bz2) = 186833
+TIMESTAMP = 1553322927
+SHA256 (xorg/lib/xtrans-1.4.0.tar.bz2) = 377c4491593c417946efcd2c7600d1e62639f7a8bbca391887e2c4679807d773
+SIZE (xorg/lib/xtrans-1.4.0.tar.bz2) = 185371
