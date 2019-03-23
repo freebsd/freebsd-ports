@@ -1,6 +1,5 @@
 @comment env LC_ALL=C sort -f
 bin/rawtherapee
-bin/rawtherapee.real
 bin/rawtherapee-cli
 man/man1/rawtherapee.1.gz
 share/applications/rawtherapee.desktop
