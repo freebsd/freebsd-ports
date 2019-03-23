@@ -1,25 +1,25 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/goocanvas2/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
 PORTNAME=	goocanvas
-PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTVERSION=	2.0.4
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
+DIST_SUBDIR=	gnome
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Canvas widget for GTK+ 3
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix pkgconfig python tar:xz
-USE_GNOME=	gtk30 introspection:build
+LICENSE=	LGPL20
+
+USES=		gmake gnome libtool localbase pathfix pkgconfig tar:xz
+USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-python=no
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/gtk-doc/html/goocanvas2
