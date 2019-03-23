@@ -1,0 +1,4 @@
+dateparser provides modules to easily parse localized dates in almost
+any string formats commonly found on web pages.
+
+WWW: https://github.com/scrapinghub/dateparser
