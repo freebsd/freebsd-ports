@@ -1,4 +1,4 @@
-bin/handy-demo
+bin/handy-0.0-demo
 include/libhandy-0.0/handy.h
 include/libhandy-0.0/hdy-action-row.h
 include/libhandy-0.0/hdy-arrows.h
