@@ -1,0 +1,164 @@
+--- rtgui/cursormanager.cc.orig	2019-03-23 13:04:21 UTC
++++ rtgui/cursormanager.cc
+@@ -79,6 +79,29 @@ void CursorManager::init (Glib::RefPtr<Gdk::Window> ma
+     window = mainWindow;
+ }
+ 
++void CursorManager::cleanup()
++{
++    cAdd.reset();
++    cAddPicker.reset();
++    cCropDraw.reset();
++    cCrosshair.reset();
++    cHandClosed.reset();
++    cHandOpen.reset();
++    cEmpty.reset();
++    cMoveBL.reset();
++    cMoveBR.reset();
++    cMoveL.reset();
++    cMoveR.reset();
++    cMoveTL.reset();
++    cMoveTR.reset();
++    cMoveX.reset();
++    cMoveY.reset();
++    cMoveXY.reset();
++    cRotate.reset();
++    cWB.reset();
++    cWait.reset();
++}
++
+ /* Set the cursor of the given window */
+ void CursorManager::setCursor (Glib::RefPtr<Gdk::Window> window, CursorShape shape)
+ {
+--- rtgui/cursormanager.h.orig	2019-03-23 13:04:21 UTC
++++ rtgui/cursormanager.h
+@@ -82,6 +82,7 @@ class CursorManager (private)
+ 
+ public:
+     void init                         (Glib::RefPtr<Gdk::Window> mainWindow);
++    void cleanup                      ();
+     static void setWidgetCursor       (Glib::RefPtr<Gdk::Window> window, CursorShape shape);
+     static void setCursorOfMainWindow (Glib::RefPtr<Gdk::Window> window, CursorShape shape);
+ };
+--- rtgui/filmsimulation.cc.orig	2019-03-23 13:04:21 UTC
++++ rtgui/filmsimulation.cc
+@@ -262,10 +262,17 @@ void ClutComboBox::setBatchMode(bool yes)
+ }
+ 
+ 
++void ClutComboBox::cleanup()
++{
++    cm.reset();
++    cm2.reset();
++}
++
++
+ void ClutComboBox::updateUnchangedEntry()
+ {
+     auto c = m_model()->children();
+-    
++
+     if (batchMode) {
+         if (c.empty() || c[c.size()-1][m_columns().clutFilename] != "NULL") {
+             Gtk::TreeModel::Row row = *(m_model()->append());
+--- rtgui/filmsimulation.h.orig	2019-03-23 13:04:21 UTC
++++ rtgui/filmsimulation.h
+@@ -18,6 +18,8 @@ class ClutComboBox : public MyComboBox (public)
+     void setSelectedClut( Glib::ustring filename );
+     void setBatchMode(bool yes);
+ 
++    static void cleanup();
++
+ private:
+     void updateUnchangedEntry(); // in batchMode we need to add an extra entry "(Unchanged)". We do this whenever the widget is mapped (connecting to signal_map()), unless options.multiDisplayMode (see the comment below about cm2 in this case)
+ 
+--- rtgui/guiutils.cc.orig	2019-03-23 13:04:21 UTC
++++ rtgui/guiutils.cc
+@@ -560,6 +560,15 @@ void MyExpander::init()
+     closedPBuf = Gdk::Pixbuf::create_from_file(rtengine::findIconAbsolutePath("expander-closed-small.png"));
+ }
+ 
++void MyExpander::cleanup()
++{
++    inconsistentPBuf.reset();
++    enabledPBuf.reset();
++    disabledPBuf.reset();
++    openedPBuf.reset();
++    closedPBuf.reset();
++}
++
+ MyExpander::MyExpander(bool useEnabled, Gtk::Widget* titleWidget) :
+     enabled(false), inconsistent(false), flushEvent(false), expBox(nullptr),
+     child(nullptr), headerWidget(nullptr), statusImage(nullptr),
+--- rtgui/guiutils.h.orig	2019-03-23 13:04:21 UTC
++++ rtgui/guiutils.h
+@@ -228,6 +228,7 @@ class MyExpander : public Gtk::VBox (public)
+ 
+     /// Initialize the class by loading the images
+     static void init();
++    static void cleanup();
+ 
+     Glib::SignalProxy1< bool, GdkEventButton* > signal_button_release_event()
+     {
+--- rtgui/main.cc.orig	2019-03-23 15:29:41 UTC
++++ rtgui/main.cc
+@@ -673,5 +673,7 @@ int main (int argc, char **argv)
+ 
+ #endif
+ 
++    ns_RTImage::pixbufCache.clear();
++
+     return ret;
+ }
+--- rtgui/rtimage.cc.orig	2019-03-23 13:04:21 UTC
++++ rtgui/rtimage.cc
+@@ -25,12 +25,9 @@
+ #include "options.h"
+ #include "../rtengine/icons.h"
+ 
+-namespace
+-{
++using namespace ns_RTImage;
+ 
+-std::map<std::string, Glib::RefPtr<Gdk::Pixbuf>> pixbufCache;
+-
+-}
++std::map<std::string, Glib::RefPtr<Gdk::Pixbuf>> ns_RTImage::pixbufCache;
+ 
+ RTImage::RTImage (const Glib::ustring& fileName, const Glib::ustring& rtlFileName) : Gtk::Image()
+ {
+--- rtgui/rtimage.h.orig	2019-03-23 13:04:21 UTC
++++ rtgui/rtimage.h
+@@ -23,6 +23,13 @@
+ 
+ class Options;
+ 
++namespace ns_RTImage
++{
++
++extern std::map<std::string, Glib::RefPtr<Gdk::Pixbuf>> pixbufCache;
++
++}
++
+ /**
+  * @brief A derived class of Gtk::Image in order to handle theme-related icon sets.
+  */
+--- rtgui/rtwindow.cc.orig	2019-03-23 13:04:21 UTC
++++ rtgui/rtwindow.cc
+@@ -708,6 +708,16 @@ bool RTWindow::on_delete_event (GdkEventAny* event)
+     cacheMgr->closeCache ();  // also makes cleanup if too large
+     WhiteBalance::cleanup();
+     ProfilePanel::cleanup();
++    ClutComboBox::cleanup();
++    MyExpander::cleanup();
++    mainWindowCursorManager.cleanup();
++    editWindowCursorManager.cleanup();
++    BatchQueueEntry::savedAsIcon.reset();
++    FileBrowserEntry::editedIcon.reset();
++    FileBrowserEntry::recentlySavedIcon.reset();
++    FileBrowserEntry::enqueuedIcon.reset();
++    FileBrowserEntry::hdr.reset();
++    FileBrowserEntry::ps.reset();
+ 
+     if (!options.windowMaximized) {
+         get_size (options.windowWidth, options.windowHeight);
