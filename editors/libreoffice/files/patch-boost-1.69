@@ -4,9 +4,9 @@ sfx2/source/appl/shutdownicon.cxx:170:12: error: no viable conversion from retur
     return loaded;
            ^~~~~~
 
---- sfx2/source/appl/shutdownicon.cxx.orig	2018-06-19 22:27:30 UTC
-+++ sfx2/source/appl/shutdownicon.cxx
-@@ -167,7 +167,7 @@ bool LoadModule()
+--- sfx2/source/appl/shutdownicon.cxx.orig	2019-02-05 07:22:07.809681000 +0800
++++ sfx2/source/appl/shutdownicon.cxx	2019-02-05 07:21:48.200022000 +0800
+@@ -143,7 +143,7 @@ bool LoadModule()
  #endif // ENABLE_QUICKSTART_APPLET
      }
      assert(!boost::logic::indeterminate(loaded));

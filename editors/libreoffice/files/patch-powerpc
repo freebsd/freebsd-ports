@@ -38,32 +38,32 @@
          ;;
 --- bridges/source/cpp_uno/gcc3_linux_powerpc/uno2cpp.cxx.orig
 +++ bridges/source/cpp_uno/gcc3_linux_powerpc/uno2cpp.cxx
-@@ -18,7 +18,11 @@
-  */
+@@ -20,7 +20,11 @@
+ #include <sal/config.h>
  
- 
+ #include <exception>
 +#if defined (FREEBSD) || defined(NETBSD) || defined(OPENBSD) || defined(DRAGONFLY)
 +#include <stdlib.h>
 +#else
  #include <malloc.h>
 +#endif
+ #include <typeinfo>
  
- #include <com/sun/star/uno/genfunc.hxx>
- #include <uno/data.h>
+ #include <com/sun/star/uno/Exception.hpp>
 --- bridges/source/cpp_uno/gcc3_linux_powerpc64/uno2cpp.cxx.orig
 +++ bridges/source/cpp_uno/gcc3_linux_powerpc64/uno2cpp.cxx
-@@ -18,7 +18,11 @@
-  */
+@@ -20,7 +20,11 @@
+ #include <sal/config.h>
  
- 
+ #include <exception>
 +#if defined (FREEBSD) || defined(NETBSD) || defined(OPENBSD) || defined(DRAGONFLY)
 +#include <stdlib.h>
 +#else
  #include <malloc.h>
 +#endif
+ #include <typeinfo>
  
- #include <com/sun/star/uno/genfunc.hxx>
- #include <uno/data.h>
+ #include <com/sun/star/uno/Exception.hpp>
 --- include/osl/endian.h.orig
 +++ include/osl/endian.h
 @@ -53,9 +53,11 @@

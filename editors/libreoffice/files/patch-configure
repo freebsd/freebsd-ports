@@ -1,15 +1,6 @@
---- configure.orig	2017-10-25 14:32:51 UTC
-+++ configure
-@@ -5074,7 +5074,7 @@ fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PRODUCTNAME" >&5
- $as_echo "$PRODUCTNAME" >&6; }
- 
--PRODUCTNAME_WITHOUT_SPACES=${PRODUCTNAME// /}
-+PRODUCTNAME_WITHOUT_SPACES=$(echo "$PRODUCTNAME" | tr -d ' ')
- 
- 
- 
-@@ -32542,7 +32542,7 @@ fi
+--- configure.orig	2018-08-03 03:58:40.000000000 +0800
++++ configure	2018-08-10 05:28:52.021925000 +0800
+@@ -31735,7 +31735,7 @@
  
  
  
