@@ -13,13 +13,17 @@ COMMENT=	Canvas widget for GTK+
 
 PORTSCOUT=	ignore:1
 
-USES=		libtool pathfix pkgconfig tar:bzip2
-USE_GNOME=	gtk20
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
+
+USES=		gnome libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS=		-lm
 
 PORTDOCS=	*
 
