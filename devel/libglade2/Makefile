@@ -49,12 +49,12 @@ PLIST_SUB+=	PYTHON=""
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-post-patch-PYTHON-off:
-	@${REINPLACE_CMD} -E 's/in (python.*)+ none/in none/' \
-		${WRKSRC}/configure
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib-2.0|gmodule-2.0 glib-2.0|g' \
+		${WRKSRC}/configure
+
+post-patch-PYTHON-off:
+	@${REINPLACE_CMD} -E 's/in (python.*)+ none/in none/' \
 		${WRKSRC}/configure
 
 post-install:
