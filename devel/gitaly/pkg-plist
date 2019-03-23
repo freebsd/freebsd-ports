@@ -4,7 +4,6 @@
 @(,,555) %%DATADIR%%/ruby/bin/ruby-cd
 %%DATADIR%%/ruby/.rubocop.yml
 %%DATADIR%%/ruby/.rubocop_todo.yml
-%%DATADIR%%/ruby/git-hooks/gitlab-shell-hook
 %%DATADIR%%/ruby/git-hooks/post-receive
 %%DATADIR%%/ruby/git-hooks/pre-receive
 %%DATADIR%%/ruby/git-hooks/update
@@ -32,7 +31,6 @@
 %%DATADIR%%/ruby/lib/gitlab/git/branch.rb
 %%DATADIR%%/ruby/lib/gitlab/git/commit.rb
 %%DATADIR%%/ruby/lib/gitlab/git/commit_patches.rb
-%%DATADIR%%/ruby/lib/gitlab/git/commit_stats.rb
 %%DATADIR%%/ruby/lib/gitlab/git/committer_with_hooks.rb
 %%DATADIR%%/ruby/lib/gitlab/git/conflict/file.rb
 %%DATADIR%%/ruby/lib/gitlab/git/conflict/parser.rb
@@ -139,9 +137,6 @@
 %%DATADIR%%/ruby/vendor/gitlab-shell/bin/install
 %%DATADIR%%/ruby/vendor/gitlab-shell/bin/test-logger
 %%DATADIR%%/ruby/vendor/gitlab-shell/config.yml.example
-%%DATADIR%%/ruby/vendor/gitlab-shell/hooks/post-receive
-%%DATADIR%%/ruby/vendor/gitlab-shell/hooks/pre-receive
-%%DATADIR%%/ruby/vendor/gitlab-shell/hooks/update
 %%DATADIR%%/ruby/vendor/gitlab-shell/lib/action.rb
 %%DATADIR%%/ruby/vendor/gitlab-shell/lib/action/custom.rb
 %%DATADIR%%/ruby/vendor/gitlab-shell/lib/gitlab_access.rb
@@ -224,7 +219,12 @@
 %%DATADIR%%/ruby/vendor/gitlab-shell/spec/vcr_cassettes/ssh-push-project-denied.yml
 %%DATADIR%%/ruby/vendor/gitlab-shell/spec/vcr_cassettes/two-factor-recovery-codes-fail.yml
 %%DATADIR%%/ruby/vendor/gitlab-shell/spec/vcr_cassettes/two-factor-recovery-codes.yml
+@(,,555) %%DATADIR%%/ruby/git-hooks/gitlab-shell-hook
+@(,,555) %%DATADIR%%/ruby/vendor/gitlab-shell/hooks/post-receive
+@(,,555) %%DATADIR%%/ruby/vendor/gitlab-shell/hooks/pre-receive
+@(,,555) %%DATADIR%%/ruby/vendor/gitlab-shell/hooks/update
 @(,,555) %%DATADIR%%/bin/gitaly
 @(,,555) %%DATADIR%%/bin/gitaly-debug
 @(,,555) %%DATADIR%%/bin/gitaly-ssh
+@(,,555) %%DATADIR%%/bin/praefect
 @sample %%DATADIR%%/config.toml.sample
