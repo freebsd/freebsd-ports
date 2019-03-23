@@ -1,5 +1,6 @@
 include/git2.h
 include/git2/annotated_commit.h
+include/git2/apply.h
 include/git2/attr.h
 include/git2/blame.h
 include/git2/blob.h
@@ -12,6 +13,7 @@ include/git2/commit.h
 include/git2/common.h
 include/git2/config.h
 include/git2/cred_helpers.h
+include/git2/deprecated.h
 include/git2/describe.h
 include/git2/diff.h
 include/git2/errors.h
@@ -22,6 +24,7 @@ include/git2/ignore.h
 include/git2/index.h
 include/git2/indexer.h
 include/git2/inttypes.h
+include/git2/mailmap.h
 include/git2/merge.h
 include/git2/message.h
 include/git2/net.h
@@ -52,6 +55,7 @@ include/git2/status.h
 include/git2/stdint.h
 include/git2/strarray.h
 include/git2/submodule.h
+include/git2/sys/alloc.h
 include/git2/sys/commit.h
 include/git2/sys/config.h
 include/git2/sys/diff.h
@@ -62,6 +66,7 @@ include/git2/sys/mempack.h
 include/git2/sys/merge.h
 include/git2/sys/odb_backend.h
 include/git2/sys/openssl.h
+include/git2/sys/path.h
 include/git2/sys/refdb_backend.h
 include/git2/sys/reflog.h
 include/git2/sys/refs.h
