@@ -1,5 +1,5 @@
---- vcl/unx/generic/app/geninst.cxx.orig	2017-05-03 16:46:29 UTC
-+++ vcl/unx/generic/app/geninst.cxx
+--- vcl/unx/generic/app/geninst.cxx.orig	2018-08-10 05:57:19.112761000 +0800
++++ vcl/unx/generic/app/geninst.cxx	2018-08-10 06:00:00.222887000 +0800
 @@ -22,11 +22,8 @@
  #include <cassert>
  #include <string.h>
@@ -13,7 +13,7 @@
  #include <osl/module.hxx>
  #include <comphelper/solarmutex.hxx>
  #include <config_features.h>
-@@ -139,31 +136,22 @@ SalGenericInstance::~SalGenericInstance()
+@@ -69,31 +66,22 @@
  
  OUString SalGenericInstance::getOSVersion()
  {

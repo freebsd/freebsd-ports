@@ -10,12 +10,13 @@ COMMENT=	Localized interface for libreoffice
 USES=		metaport
 
 LO_LANG_ALL=	af am ar as ast be bg bn bn_IN bo br brx bs ca ca_valencia \
-		cs cy da de dgo dz el en_GB en_ZA eo es et eu fa fi fr fy \
-		ga gd gl gu gug he hi hr hsb hu id is it ja ka kk km \
-		kmr_Latn kn ko kok ks lb lo lt lv mai mk ml mn mni mr my nb \
-		ne nl nn nr nso oc om or pa_IN pl pt pt_BR ro ru rw sa_IN \
-		sat sd si sid sk sl sq sr sr_Latn ss st sv sw_TZ ta te tg \
-		th tn tr ts tt ug uk uz ve vec vi xh zh_CN zh_TW zu
+		cs cy da de dgo dsb dz el en_GB en_ZA eo es et eu fa fi fr fy \
+		ga gd gl gu gug he hi hr hsb hu id is it ja \
+		ka kab kk km kmr_Latn kn ko kok ks \
+		lb lo lt lv mai mk ml mn mni mr my nb ne nl nn \
+		nr nso oc om or pa_IN pl pt pt_BR ro ru rw sa_IN sat sd si \
+		sid sk sl sq sr sr_Latn ss st sv sw_TZ ta te tg th tn tr \
+		ts tt ug uk uz ve vec vi xh zh_CN zh_TW zu
 
 AR_PORT=	arabic/${PORTNAME}
 DE_PORT=	german/${PORTNAME}

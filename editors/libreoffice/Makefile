@@ -2,7 +2,6 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	6
 MASTER_SITES=	https://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		https://dev-www.libreoffice.org/src/:src \
 		https://dev-www.libreoffice.org/extern/:ext
@@ -19,20 +18,21 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		${LOCALBASE}/bin/gperf:devel/gperf \
-		${LOCALBASE}/include/mdds-1.2/mdds/global.hpp:devel/mdds \
+		mdds>=1.4:devel/mdds \
 		gpatch:devel/patch \
 		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		bash:shells/bash \
-		gsed:textproc/gsed
+		gsed:textproc/gsed \
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
 		libltdl.so:devel/libltdl \
-		liborcus-0.13.so:devel/liborcus \
+		liborcus-0.14.so:devel/liborcus \
 		libplds4.so:devel/nspr \
 		libcurl.so:ftp/curl \
 		libcairo.so:graphics/cairo \
@@ -67,6 +67,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libepubgen-0.1.so:textproc/libepubgen \
 		libexttextcat-2.0.so:textproc/libexttextcat \
 		libmwaw-0.3.so:textproc/libmwaw03 \
+		libnumbertext-1.0.so:textproc/libnumbertext \
 		libodfgen-0.1.so:textproc/libodfgen01 \
 		libqxp-0.0.so:textproc/libqxp \
 		librevenge-0.0.so:textproc/librevenge \
@@ -90,13 +91,14 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:x11-fonts/liberation-fonts-ttf \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
-DISTFILES+=	4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src
+DISTFILES+=	4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src \
+		49a64f3bcf20a7909ba2751349231d6652ded9cd2840e961b5164d09de3ffa63-opens___.ttf:ext
 
 NOT_FOR_ARCHS=		aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
 
 .if defined(PRERELEASE)
-MASTER_SITES+=	http://dev-builds.libreoffice.org/pre-releases/src/
+MASTER_SITES+=	https://dev-builds.libreoffice.org/pre-releases/src/
 .endif
 
 INSTALL_TARGET=	distro-pack-install
@@ -110,6 +112,7 @@ USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xext xinerama xrandr xrender
 USES=		autoreconf:build bison compiler:c++14-lang cpe gmake jpeg \
+		mysql:client \
 		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz
 
 OPTIONS_DEFINE=	CUPS DOCS GNOME GTK2 GTK3 JAVA MMEDIA PGSQL SDK SYSTRAY \
@@ -282,12 +285,6 @@ CXXFLAGS_WARN=	-Wshadow -Woverloaded-virtual
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    ${WRKSRC}/shell/source/unix/exec/shellexec.cxx
-	# Fix with poppler 0.73
-	${REINPLACE_CMD} -e 's|Guchar|unsigned char|g' \
-		${WRKSRC}/sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx \
-		${WRKSRC}/sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx \
-		${WRKSRC}/sdext/source/pdfimport/xpdfwrapper/pnghelper.cxx
-
 .if ${COMPILER_FEATURES:Mlibstdc++}
 	${REINPLACE_CMD} -e 's/gb_CC/gb_CXX/' ${WRKSRC}/solenv/gbuild/platform/unxgcc.mk
 .endif
