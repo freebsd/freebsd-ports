@@ -17,6 +17,8 @@
 %%ETCDIR%%/upsd.users.sample
 %%ETCDIR%%/upsmon.conf.sample
 %%ETCDIR%%/upssched.conf.sample
+etc/newsyslog.conf.d/nut.conf
+etc/syslog.d/nut
 %%NUT_USB%%etc/devd/nut-usb.conf
 @stopdaemon nut_upsmon
 @stopdaemon nut_upslog
@@ -247,3 +249,4 @@ sbin/upsmon
 sbin/upssched
 @dir(%%NUT_USER%%,%%NUT_GROUP%%,750) %%STATEDIR%%
 @dir libexec/nut
+@dir(%%NUT_USER%%,%%NUT_GROUP%%,) /var/log/nut
