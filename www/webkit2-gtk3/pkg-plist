@@ -14,6 +14,7 @@ include/webkitgtk-4.0/jsc/JSCClass.h
 include/webkitgtk-4.0/jsc/JSCContext.h
 include/webkitgtk-4.0/jsc/JSCDefines.h
 include/webkitgtk-4.0/jsc/JSCException.h
+include/webkitgtk-4.0/jsc/JSCOptions.h
 include/webkitgtk-4.0/jsc/JSCValue.h
 include/webkitgtk-4.0/jsc/JSCVersion.h
 include/webkitgtk-4.0/jsc/JSCVirtualMachine.h
@@ -33,6 +34,7 @@ include/webkitgtk-4.0/webkit2/WebKitContextMenuItem.h
 include/webkitgtk-4.0/webkit2/WebKitCookieManager.h
 include/webkitgtk-4.0/webkit2/WebKitCredential.h
 include/webkitgtk-4.0/webkit2/WebKitDefines.h
+include/webkitgtk-4.0/webkit2/WebKitDeviceInfoPermissionRequest.h
 include/webkitgtk-4.0/webkit2/WebKitDownload.h
 include/webkitgtk-4.0/webkit2/WebKitEditingCommands.h
 include/webkitgtk-4.0/webkit2/WebKitEditorState.h
@@ -70,7 +72,9 @@ include/webkitgtk-4.0/webkit2/WebKitSettings.h
 include/webkitgtk-4.0/webkit2/WebKitURIRequest.h
 include/webkitgtk-4.0/webkit2/WebKitURIResponse.h
 include/webkitgtk-4.0/webkit2/WebKitURISchemeRequest.h
+include/webkitgtk-4.0/webkit2/WebKitURIUtilities.h
 include/webkitgtk-4.0/webkit2/WebKitUserContent.h
+include/webkitgtk-4.0/webkit2/WebKitUserContentFilterStore.h
 include/webkitgtk-4.0/webkit2/WebKitUserContentManager.h
 include/webkitgtk-4.0/webkit2/WebKitUserMediaPermissionRequest.h
 include/webkitgtk-4.0/webkit2/WebKitVersion.h
@@ -209,10 +213,10 @@ lib/girepository-1.0/WebKit2-4.0.typelib
 lib/girepository-1.0/WebKit2WebExtension-4.0.typelib
 lib/libjavascriptcoregtk-4.0.so
 lib/libjavascriptcoregtk-4.0.so.18
-lib/libjavascriptcoregtk-4.0.so.18.11.7
+lib/libjavascriptcoregtk-4.0.so.18.13.3
 lib/libwebkit2gtk-4.0.so
 lib/libwebkit2gtk-4.0.so.37
-lib/libwebkit2gtk-4.0.so.37.33.7
+lib/libwebkit2gtk-4.0.so.37.37.2
 lib/webkit2gtk-4.0/injected-bundle/libwebkit2gtkinjectedbundle.so
 libdata/pkgconfig/javascriptcoregtk-4.0.pc
 libdata/pkgconfig/webkit2gtk-4.0.pc
@@ -221,7 +225,6 @@ libexec/webkit2gtk-4.0/MiniBrowser
 libexec/webkit2gtk-4.0/WebKitNetworkProcess
 libexec/webkit2gtk-4.0/WebKitPluginProcess
 %%NPAPI%%libexec/webkit2gtk-4.0/WebKitPluginProcess2
-libexec/webkit2gtk-4.0/WebKitStorageProcess
 libexec/webkit2gtk-4.0/WebKitWebProcess
 libexec/webkit2gtk-4.0/jsc
 share/gir-1.0/JavaScriptCore-4.0.gir
