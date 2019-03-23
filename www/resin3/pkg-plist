@@ -1074,6 +1074,3 @@ etc/%%APP_NAME%%/app-default.xml
 @owner
 @group
 sbin/resin3ctl
-%%MOD_DIR%%/mod_caucho.so
-%%APACHE%%@exec %%APXS%% -e -a -n caucho %f
-%%APACHE%%@unexec %%APXS%% -e -A -n caucho %f

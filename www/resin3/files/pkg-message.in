@@ -50,14 +50,3 @@ If you need to pass special options to Java, please set the
 To specify the java version to use, please use %%APP_NAME%%_java_version:
 
   %%APP_NAME%%_java_version="1.4"
-
--------------------------------------------------------------------------------
-
-APACHE MODULE
-
-If you have enabled the mod_caucho module, you may activate it in the following
-manner by adding it to your Apache configuration file:
-
-<IfModule mod_caucho.c>"
-		ResinConfigServer localhost 6802"
-</IfModule>"
