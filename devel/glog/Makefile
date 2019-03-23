@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glog
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libgflags.so:devel/gflags
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		compiler:c++11-lang libtool localbase pathfix
+USES=		autoreconf compiler:c++11-lang libtool localbase pathfix
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -30,6 +29,6 @@ GH_ACCOUNT=	google
 USE_GITHUB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^docdir = / s| = .*| = ${DOCSDIR}|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^docdir = / s| = .*| = ${DOCSDIR}|' ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
