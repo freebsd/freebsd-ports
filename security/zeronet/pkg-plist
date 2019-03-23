@@ -295,6 +295,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/plugins/UiConfig/media/js/utils/Animation.coffee
 %%DATADIR%%/plugins/UiConfig/media/js/utils/Dollar.coffee
 %%DATADIR%%/plugins/UiConfig/media/js/utils/ZeroFrame.coffee
+%%DATADIR%%/plugins/Zeroname/README.md
 %%DATADIR%%/plugins/Zeroname/SiteManagerPlugin.py
 %%DATADIR%%/plugins/Zeroname/SiteManagerPlugin.pyc
 %%DATADIR%%/plugins/Zeroname/SiteManagerPlugin.pyo
@@ -459,6 +460,9 @@ etc/rc.d/zeronet
 %%DATADIR%%/src/Peer/PeerHashfield.py
 %%DATADIR%%/src/Peer/PeerHashfield.pyc
 %%DATADIR%%/src/Peer/PeerHashfield.pyo
+%%DATADIR%%/src/Peer/PeerPortchecker.py
+%%DATADIR%%/src/Peer/PeerPortchecker.pyc
+%%DATADIR%%/src/Peer/PeerPortchecker.pyo
 %%DATADIR%%/src/Peer/__init__.py
 %%DATADIR%%/src/Peer/__init__.pyc
 %%DATADIR%%/src/Peer/__init__.pyo
@@ -648,6 +652,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/src/Ui/__init__.pyc
 %%DATADIR%%/src/Ui/__init__.pyo
 %%DATADIR%%/src/Ui/media/Fixbutton.coffee
+%%DATADIR%%/src/Ui/media/Infopanel.coffee
 %%DATADIR%%/src/Ui/media/Loading.coffee
 %%DATADIR%%/src/Ui/media/Notifications.coffee
 %%DATADIR%%/src/Ui/media/Wrapper.coffee
@@ -659,6 +664,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/src/Ui/media/img/favicon.psd
 %%DATADIR%%/src/Ui/media/img/loading-circle.gif
 %%DATADIR%%/src/Ui/media/img/loading.gif
+%%DATADIR%%/src/Ui/media/img/logo-white.png
 %%DATADIR%%/src/Ui/media/img/logo.psd
 %%DATADIR%%/src/Ui/media/lib/00-jquery.min.js
 %%DATADIR%%/src/Ui/media/lib/RateLimit.coffee
@@ -1069,6 +1075,9 @@ etc/rc.d/zeronet
 %%DATADIR%%/src/lib/websocket/_utils.py
 %%DATADIR%%/src/lib/websocket/_utils.pyc
 %%DATADIR%%/src/lib/websocket/_utils.pyo
+%%DATADIR%%/src/lib/win_inet_pton/__init__.py
+%%DATADIR%%/src/lib/win_inet_pton/__init__.pyc
+%%DATADIR%%/src/lib/win_inet_pton/__init__.pyo
 %%DATADIR%%/src/main.py
 %%DATADIR%%/src/main.pyc
 %%DATADIR%%/src/main.pyo
