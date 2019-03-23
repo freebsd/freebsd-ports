@@ -3,7 +3,7 @@
 
 PORTNAME=	xephem
 PORTVERSION=	3.7.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.clearskyinstitute.com/xephem/
 
@@ -13,9 +13,11 @@ COMMENT=	Interactive astronomical ephemeris program
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gmake groff jpeg motif tar:tgz
-LDFLAGS+=	-lfontconfig
+USES=		gmake groff jpeg motif tar:tgz ssl
 USE_XORG=	xp xt xext xmu x11 xft
+
+LDFLAGS+=	-lfontconfig
+
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
@@ -52,6 +54,7 @@ pre-build:
 pre-install:
 	@${FIND} ${WRKSRC}/../.. -name Makefile.bak -type f -delete
 	@${CP} ${WRKSRC}/xephem.man ${STAGEDIR}${PREFIX}/man/man1/xephem.1
+	@${FIND} ${WRKSRC} -name "*.pl" -exec ${SED} -i "" -e 's|/usr/bin/perl|/usr/local/bin/perl|' {} \;
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xephem ${STAGEDIR}${PREFIX}/bin

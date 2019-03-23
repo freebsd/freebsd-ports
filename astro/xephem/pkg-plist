@@ -5,7 +5,7 @@ lib/X11/xephem/auxil/README
 lib/X11/xephem/auxil/SOHO_512_20090703_1900_eit_171.gif
 lib/X11/xephem/auxil/analemma.plt
 lib/X11/xephem/auxil/annotation.ano
-lib/X11/xephem/auxil/astorb2edb.pl
+@(,,0755) lib/X11/xephem/auxil/astorb2edb.pl
 lib/X11/xephem/auxil/classicfigs.csf
 lib/X11/xephem/auxil/dearth.gif
 lib/X11/xephem/auxil/favorites.fav
@@ -18,7 +18,7 @@ lib/X11/xephem/auxil/mars.9910
 lib/X11/xephem/auxil/mars_db
 lib/X11/xephem/auxil/marsmap.jpg
 lib/X11/xephem/auxil/moon.fts
-lib/X11/xephem/auxil/mpcorb2edb.pl
+@(,,0755) lib/X11/xephem/auxil/mpcorb2edb.pl
 lib/X11/xephem/auxil/nearth.gif
 lib/X11/xephem/auxil/sample.hzn
 lib/X11/xephem/auxil/saturn00.gif
