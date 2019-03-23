@@ -71,7 +71,7 @@ IP_AS_HOSTNAME_CFLAGS=		-DUSE_IP_AS_HOSTNAME
 DISTFILES+=	webalizer-flags.tgz:main
 .endif
 .if ${PORT_OPTIONS:MGEODB} || make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	webalizer-geodb-20190201.tgz:geodb
+DISTFILES+=	webalizer-geodb-20190301.tgz:geodb
 .endif
 
 # slave ports override with languages specific gd
