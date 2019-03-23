@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Statistics-Descriptive-Discrete
-PORTVERSION=	0.07
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,5 +15,7 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
