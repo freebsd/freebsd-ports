@@ -15,7 +15,7 @@ bin/pmat-list-orphans
 %%SITE_ARCH%%/Devel/MAT/SV.pm
 %%SITE_ARCH%%/Devel/MAT/Tool.pm
 %%SITE_ARCH%%/Devel/MAT/Tool.pod
-%%SITE_ARCH%%/Devel/MAT/Tool/Callstack.pm
+%%SITE_ARCH%%/Devel/MAT/Tool/Callers.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Count.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Find.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Identify.pm
@@ -73,7 +73,7 @@ bin/pmat-list-orphans
 %%PERL5_MAN3%%/Devel::MAT::Graph.3.gz
 %%PERL5_MAN3%%/Devel::MAT::SV.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool.3.gz
-%%PERL5_MAN3%%/Devel::MAT::Tool::Callstack.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::Callers.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Count.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Find.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Identify.3.gz
