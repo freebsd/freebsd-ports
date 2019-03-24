@@ -1,6 +1,7 @@
 bin/ipe
 bin/ipe6upgrade
 bin/ipeextract
+bin/ipepresenter
 bin/iperender
 bin/ipescript
 bin/ipetoipe
@@ -28,6 +29,9 @@ include/ipepainter.h
 include/ipepath.h
 include/ipepdfparser.h
 include/ipepdfwriter.h
+include/ipepdfview.h
+include/ipepdfview_qt.h
+include/ipepdfview_win.h
 include/ipepswriter.h
 include/ipereference.h
 include/iperesources.h
@@ -201,3 +205,4 @@ man/man1/ipetoipe.1.gz
 %%DATADIR%%/%%VERSION%%/styles/note-paper.isy
 %%DATADIR%%/%%VERSION%%/styles/tikz-shapes.isy
 share/pixmaps/ipe.png
+%%LUA_LIBDIR%%/ipe/%%VERSION%%/ipelets/selectby.lua

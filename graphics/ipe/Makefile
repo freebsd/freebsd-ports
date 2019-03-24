@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ipe
-PORTVERSION=	7.2.8
+PORTVERSION=	7.2.11
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://dl.bintray.com/otfried/generic/ipe/${PORTVERSION:R}/
 
