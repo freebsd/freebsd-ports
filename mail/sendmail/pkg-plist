@@ -6,6 +6,7 @@ bin/newaliases
 bin/purgestat
 bin/rmail
 bin/vacation
+etc/mail/mailer.conf.sendmail
 libexec/mail.local
 libexec/smrsh
 %%MANPREFIX%%man/man1/mailq.1.gz

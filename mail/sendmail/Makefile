@@ -2,7 +2,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.15.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -235,6 +235,11 @@ pre-install:
 	@${ECHO_CMD} "share/doc/sendmail/CYRUS_LOOKUP" >>${PLIST}
 .endif
 .endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
+	@${SED} \
+	 -e "s=\([ 	]\)/.*$$=\\1${SENDMAIL}=" \
+	 ${DESTDIR}/etc/mail/mailer.conf \
+	 > ${STAGEDIR}${PREFIX}/etc/mail/mailer.conf.sendmail
 
 # We want mail.local and rmail for our system.
 # the build install catmans only, we have to fix this.
@@ -290,16 +295,16 @@ mailer.base:
 		${DESTDIR}/etc/mail/mailer.conf
 
 mailer.conf:
+.if exists(${DESTDIR}${PREFIX}/etc/mail/mailer.conf.sendmail)
+	@${CP} -v ${DESTDIR}${PREFIX}/etc/mail/mailer.conf.sendmail \
+		${DESTDIR}${PREFIX}/etc/mail/mailer.conf
+.else
+	@${MKDIR} ${DESTDIR}${PREFIX}/etc/mail
 	@${SED} \
-	-e "s=^sendmail[ 	]*/.*$$=sendmail	${SENDMAIL}=" \
-	-e "s=^send-mail[ 	]*/.*$$=send-mail	${SENDMAIL}=" \
-	-e "s=^mailq[ 	]*/.*$$=mailq		${SENDMAIL}=" \
-	-e "s=^newaliases[ 	]*/.*$$=newaliases	${SENDMAIL}=" \
-	-e "s=^hoststat[ 	]*/.*$$=hoststat	${SENDMAIL}=" \
-	-e "s=^purgestat[ 	]*/.*$$=purgestat	${SENDMAIL}=" \
-	 ${DESTDIR}/etc/mail/mailer.conf > ${DESTDIR}/etc/mail/mailer.conf.new
-	${MV} ${DESTDIR}/etc/mail/mailer.conf.new \
-		${DESTDIR}/etc/mail/mailer.conf
+	 -e "s=\([ 	]\)/.*$$=\\1${SENDMAIL}=" \
+	 ${DESTDIR}/etc/mail/mailer.conf \
+	 > ${DESTDIR}${PREFIX}/etc/mail/mailer.conf
+.endif
 
 # create sumbit.cf on older systems
 #
