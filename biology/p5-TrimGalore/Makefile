@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>0:biology/py-cutadapt@${PY_FLAVOR} 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-USES=		perl5 python:env shebangfix
+USES=		perl5 python:3.4+,env shebangfix
 SHEBANG_FILES=	trim_galore
 USE_PERL5=	run
 
