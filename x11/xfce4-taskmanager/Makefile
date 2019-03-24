@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS+=	--disable-silent-rules --disable-gksu \
-			--enable-wnck3 --enable-wnck --disable-gtk2
+			--enable-wnck3 --disable-wnck --disable-gtk2
 
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
