@@ -1,5 +1,4 @@
 bin/w3af_console
-%%GUI%%bin/w3af_gui
 libexec/w3af/base64decode
 libexec/w3af/base64encode
 libexec/w3af/gencc
