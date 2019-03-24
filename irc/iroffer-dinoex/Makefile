@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	iroffer
-PORTVERSION=	3.31
-PORTREVISION=	2
+PORTVERSION=	3.32
 CATEGORIES=	irc
 MASTER_SITES=	https://iroffer.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -40,8 +39,8 @@ IROFFER_EXAMPLES=	iroffer.cron \
 IROFFER_HTDOCS=	iroffer-state.css robots.txt \
 		info.txt.rb json.txt.rb md5.txt.rb sfv.txt.rb
 
-OPTIONS_DEFINE=	CURL RUBY UPNP DOCS EXAMPLES
-OPTIONS_DEFAULT=CURL RUBY UPNP
+OPTIONS_DEFINE=	CURL RUBY UPNP GEOIP DOCS EXAMPLES
+OPTIONS_DEFAULT=CURL RUBY UPNP GEOIP
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ON=	-curl
@@ -50,6 +49,8 @@ RUBY_LIB_DEPENDS=	lib${RUBY_NAME}.so:${RUBY_PORT}
 RUBY_CONFIGURE_ON=	-ruby
 UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
 UPNP_CONFIGURE_ON=	-upnp
+GEOIP_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
+GEOIP_CONFIGURE_ON=	-geoip
 
 .include <bsd.port.pre.mk>
 
