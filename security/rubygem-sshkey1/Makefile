@@ -13,6 +13,9 @@ COMMENT=	Generate private/public SSH keypairs using pure Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use security/rubygem-sshkey instead
+EXPIRATION_DATE=2019-03-31
+
 USES=		gem
 USE_RUBY=	yes
 
