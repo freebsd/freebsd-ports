@@ -1,0 +1,13 @@
+#!/bin/sh
+
+test_dir=%%DATADIR%%/test_files
+for file in $test_dir/*.fastq.gz $test_dir/*.fq.gz; do
+    cat << EOM
+
+===============================================================================
+Trimming $file...
+===============================================================================
+
+EOM
+    trim_galore $file
+done
