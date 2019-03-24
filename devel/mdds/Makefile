@@ -12,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:bzip2
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
