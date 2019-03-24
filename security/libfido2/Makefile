@@ -26,5 +26,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/libcrypto/d' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/man/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|endian.h|sys/&|' ${WRKSRC}/CMakeLists.txt ${WRKSRC}/openbsd-compat/openbsd-compat.h
+#.if exists(/usr/lib/libstdc++.so)
+	@${REINPLACE_CMD} -e '/-Wno-unused-result/d; /-Wno-discarded-qualifiers/d' ${WRKSRC}/CMakeLists.txt
+#.endif
 
 .include <bsd.port.mk>
