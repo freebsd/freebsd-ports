@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord-session_store
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
