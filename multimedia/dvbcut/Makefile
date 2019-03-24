@@ -21,8 +21,10 @@ LIB_DEPENDS=	liba52.so:audio/liba52 \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		compiler:c++11-lang desktop-file-utils pkgconfig \
-		qmake:outsource shared-mime-info
+		qmake:outsource qt:5 shared-mime-info
 
+USE_QT=		core gui widgets xml buildtools_build linguisttools_build
+USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	bernhardu
 GH_PROJECT=	dvbcut-deb
@@ -35,12 +37,6 @@ CXXFLAGS+=	-I${LOCALBASE}/include \
 
 QMAKE_SOURCE_PATH=${WRKSRC}/src
 QMAKE_ARGS=	LRELEASE="${LRELEASE}"
-
-OPTIONS_DEFINE=		QT5
-OPTIONS_DEFAULT=	QT5
-
-QT5_USES=	qt:5
-QT5_USE=	QT=core,gui,widgets,xml,buildtools_build,linguisttools_build GL=gl
 
 post-build:
 		@${SED} -e 's;@prefix@;${PREFIX};' \
