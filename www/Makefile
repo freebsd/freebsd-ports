@@ -2422,8 +2422,7 @@
     SUBDIR += vdradmin-am
     SUBDIR += vee
     SUBDIR += vertx
-    SUBDIR += vimb-gtk2
-    SUBDIR += vimb-gtk3
+    SUBDIR += vimb
     SUBDIR += visitors
     SUBDIR += volta
     SUBDIR += w3m

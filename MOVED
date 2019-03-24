@@ -7329,7 +7329,6 @@ security/cyassl|security/wolfssl|2015-03-28|Renamed upstream
 devel/rubygem-rcov||2015-03-28|Has expired: Does not work with Ruby 2.x
 emulators/linux_dist-gentoo-stage3||2015-03-28|Has expired: Broken for more than 6 months
 emulators/linux_base-gentoo-stage3||2015-03-28|Has expired: Broken for more than 6 months
-www/vimb|www/vimb-gtk3|2015-03-29|Split into www/vimb-gtk2 and www/vimb-gtk3 (former default)
 ports-mgmt/portbuilder||2015-03-31|Has expired: No longer developed and overcome by changed in the Ports Collection
 devel/subversion16|devel/subversion|2015-03-31|Has expired: EoL, use devel/subversion
 lang/nimrod|lang/nim|2015-04-03|Renamed by upstream
@@ -11976,3 +11975,5 @@ textproc/xxdiff-scripts||2019-03-16|Has expired: Qt4 has been EOL since december
 graphics/py-pivy||2019-03-16|Has expired: Qt4 has been EOL since december 2015
 security/pinentry-qt4||2019-03-17|Has expired: Qt4 has been EOL since december 2015
 www/libsocialweb||2019-03-23|Project was archived upstream
+www/vimb-gtk2|www/vimb|2019-03-24|Merged into www/vimb
+www/vimb-gtk3|www/vimb|2019-03-24|Merged into www/vimb
