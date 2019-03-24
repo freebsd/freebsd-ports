@@ -460,7 +460,6 @@
     SUBDIR += ding-libs
     SUBDIR += directfb
     SUBDIR += dispy
-    SUBDIR += dissy
     SUBDIR += distcc
     SUBDIR += distel
     SUBDIR += distorm
@@ -709,7 +708,6 @@
     SUBDIR += geany-plugin-ctags
     SUBDIR += geany-plugin-debugger
     SUBDIR += geany-plugin-defineformat
-    SUBDIR += geany-plugin-devhelp
     SUBDIR += geany-plugin-doc
     SUBDIR += geany-plugin-extrasel
     SUBDIR += geany-plugin-geanypy
@@ -743,7 +741,6 @@
     SUBDIR += geany-plugin-utilslib
     SUBDIR += geany-plugin-vc
     SUBDIR += geany-plugin-vimode
-    SUBDIR += geany-plugin-webhelper
     SUBDIR += geany-plugin-workbench
     SUBDIR += geany-plugin-xmlsnippets
     SUBDIR += geany-plugins

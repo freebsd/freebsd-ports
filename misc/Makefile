@@ -527,7 +527,6 @@
     SUBDIR += xfce4-weather-plugin
     SUBDIR += xfce4-wm-themes
     SUBDIR += xgas
-    SUBDIR += xiphos
     SUBDIR += xless
     SUBDIR += xosd
     SUBDIR += xtail

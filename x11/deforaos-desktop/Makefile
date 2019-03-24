@@ -3,7 +3,7 @@
 
 PORTNAME=	desktop
 PORTVERSION=	0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 PKGNAMEPREFIX=	deforaos-
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/keyboard:x11/deforaos-keyboard \
 		${LOCALBASE}/bin/locker:x11/deforaos-locker \
 		${LOCALBASE}/bin/pdfviewer:print/deforaos-pdfviewer \
 		${LOCALBASE}/bin/mailer:mail/deforaos-mailer \
-		${LOCALBASE}/bin/surfer:www/deforaos-surfer \
 		${LOCALBASE}/bin/todo:deskutils/deforaos-todo \
 		${LOCALBASE}/bin/player:multimedia/deforaos-player \
 		${LOCALBASE}/bin/editor:editors/deforaos-editor \
