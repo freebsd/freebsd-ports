@@ -17,7 +17,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 LIB_DEPENDS=	liblo.so:audio/liblo \
 		libprojectM.so:graphics/libprojectm
 
-USES=		gl gmake localbase pkgconfig shebangfix
+USES=		compiler:c++11-lang gl gmake localbase pkgconfig shebangfix
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	DISTRHO
@@ -41,7 +41,7 @@ JACK_MAKE_ARGS=		HAVE_JACK=true
 JACK_MAKE_ARGS_OFF=	HAVE_JACK=false
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 
-SIMD_MAKE_ENV=		SIMD_FLAGS="-msse -msse2 -mfpmath=sse"
+SIMD_MAKE_ENV=		SIMD_FLAGS="-mtune=generic -msse -msse2 -mfpmath=sse"
 
 post-patch: # disable all plugins except for LV2
 	@${FIND} ${WRKSRC} -name "*.mk" | ${XARGS} ${REINPLACE_CMD} -i '' -E 's/BUILD_(LADSPA|DSSI|VST2) *= *true/BUILD_\1 = false/'

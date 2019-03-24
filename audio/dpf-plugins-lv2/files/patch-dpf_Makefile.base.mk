@@ -5,7 +5,7 @@
  
  BASE_FLAGS = -Wall -Wextra -pipe -MD -MP
 -BASE_OPTS  = -O3 -ffast-math -mtune=generic -msse -msse2 -fdata-sections -ffunction-sections
-+BASE_OPTS  = -O3 -ffast-math -mtune=generic $(SIMD_FLAGS) -fdata-sections -ffunction-sections
++BASE_OPTS  = -O3 -ffast-math $(SIMD_FLAGS) -fdata-sections -ffunction-sections
  
  ifeq ($(MACOS),true)
  # MacOS linker flags
