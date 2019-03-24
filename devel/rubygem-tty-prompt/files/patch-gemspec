@@ -1,0 +1,11 @@
+--- tty-prompt.gemspec.orig	2019-03-24 10:13:19 UTC
++++ tty-prompt.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<necromancer>.freeze, ["~> 0.4.0"])
++      s.add_runtime_dependency(%q<necromancer>.freeze, ["~> 0.4"])
+       s.add_runtime_dependency(%q<pastel>.freeze, ["~> 0.7.0"])
+       s.add_runtime_dependency(%q<timers>.freeze, ["~> 4.0"])
+       s.add_runtime_dependency(%q<tty-cursor>.freeze, ["~> 0.6.0"])

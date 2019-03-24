@@ -3,6 +3,7 @@
 
 PORTNAME=	tty-prompt
 PORTVERSION=	0.18.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
