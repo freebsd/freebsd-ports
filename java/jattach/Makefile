@@ -2,10 +2,10 @@
 
 PORTNAME=	jattach
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4
+DISTVERSION=	1.5
 CATEGORIES=	java devel
 
-MAINTAINER=	mizhka@gmail.com
+MAINTAINER=	mizhka@FreeBSD.org
 COMMENT=	JVM dynamic attach utility
 
 LICENSE=	APACHE20
