@@ -24,8 +24,8 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		cmake desktop-file-utils gettext gnome libarchive localbase:ldflags \
-		pkgconfig sqlite tar:bzip2
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext gnome \
+		libarchive localbase:ldflags pkgconfig sqlite tar:bzip2
 USE_GNOME=	cairo glib20 gtk30 intltool introspection libxml2
 USE_XORG=	xscrnsaver
 
