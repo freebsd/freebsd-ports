@@ -21,7 +21,7 @@ LIB_DEPENDS+=	libspeex.so:audio/speex \
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION:R}"
 
-USES=		compiler:c++11-lang cpe desktop-file-utils gmake pkgconfig qmake qt:5 ssl
+USES=		compiler:c++11-lang cpe desktop-file-utils gmake pkgconfig python:2.7 qmake qt:5 ssl
 USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 GH_TUPLE=	mumble-voip:mumble:${DISTVERSION} \
