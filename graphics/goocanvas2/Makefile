@@ -13,7 +13,7 @@ COMMENT=	Canvas widget for GTK+ 3
 
 LICENSE=	LGPL20
 
-USES=		gmake gnome libtool localbase pathfix pkgconfig tar:xz
+USES=		gmake gnome libtool localbase pathfix pkgconfig python:build tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 USE_LDCONFIG=	yes
 
