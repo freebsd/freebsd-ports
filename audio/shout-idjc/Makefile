@@ -20,6 +20,7 @@ LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig autoreconf
 USE_LDCONFIG=	yes
+LDFLAGS+=       -lcrypto -L${LOCALBASE}/lib -logg
 
 OPTIONS_DEFINE=	DOCS
 
