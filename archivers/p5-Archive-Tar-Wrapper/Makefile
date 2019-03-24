@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Archive-Tar-Wrapper
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,9 +19,10 @@ RUN_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl
 TEST_DEPENDS=	p5-Dumbbench>=0.111:benchmarks/p5-Dumbbench
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
