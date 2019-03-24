@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	keepassxc
-DISTVERSION=	2.3.4
-PORTREVISION=	3
+DISTVERSION=	2.4.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/${PORTNAME}-${DISTVERSION}-src.tar.xz?dummy=/
 
@@ -22,12 +21,13 @@ LICENSE_PERMS_NOKIA-LGPL-EXCEPTION=	dist-mirror dist-sell pkg-mirror pkg-sell au
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error
+		libgpg-error.so:security/libgpg-error \
+		libqrencode.so:graphics/libqrencode
 
 USES=		cmake compiler:c++11-lang desktop-file-utils qt:5 \
 		shared-mime-info tar:xz
 USE_QT=		buildtools_build concurrent core dbus gui linguisttools network \
-		qmake_build testlib widgets
+		qmake_build svg testlib widgets
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
@@ -37,23 +37,23 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/man
 
 CONFLICTS_INSTALL=	keepassx-0.* keepassx2-* keepassx-*
 
-OPTIONS_DEFINE=		AUTOTYPE BROWSER HTTP NETWORKING YUBIKEY SSHAGENT TEST
-OPTIONS_DEFAULT=	AUTOTYPE BROWSER HTTP NETWORKING SSHAGENT
+OPTIONS_DEFINE=		AUTOTYPE BROWSER KEESHARE NETWORKING YUBIKEY SSHAGENT TEST
+OPTIONS_DEFAULT=	AUTOTYPE BROWSER KEESHARE NETWORKING SSHAGENT
 OPTIONS_SUB=		yes
 
 AUTOTYPE_CMAKE_BOOL=	WITH_XC_AUTOTYPE
 AUTOTYPE_DESC=		Auto-type passwords in input fields
-AUTOTYPE_USES=	qt:5
 AUTOTYPE_USE=		QT=x11extras XORG=xi,xtst
 
 BROWSER_CMAKE_BOOL=	WITH_XC_BROWSER
 BROWSER_DESC=		Browser integration with KeePassXC-Browser
 BROWSER_LIB_DEPENDS=	libsodium.so:security/libsodium
 
-# Legacy/Deprecated.
-HTTP_CMAKE_BOOL=	WITH_XC_HTTP
-HTTP_DESC=		KeePassHTTP support for ChromeIPass and PassIFox
+KEESHARE_CMAKE_BOOL=	WITH_XC_KEESHARE WITH_XC_KEESHARE_SECURE
+KEESHARE_DESC=		Sharing integration with KeeShare
+KEESHARE_LIB_DEPENDS=	libquazip5.so:archivers/quazip
 
+# Legacy/Deprecated.
 NETWORKING_CMAKE_BOOL=	WITH_XC_NETWORKING
 NETWORKING_DESC=	Networking support (e.g. for downloading website icons)
 
@@ -71,8 +71,5 @@ TEST_TEST_TARGET=	test
 post-patch:
 	@${REINPLACE_CMD} -e 's|Q_OS_LINUX|Q_OS_UNIX|g' \
 		${WRKSRC}/src/browser/HostInstaller.cpp
-
-	@${REINPLACE_CMD} -e 's|u_int|__uint|g' \
-		${WRKSRC}/src/sshagent/blf.h
 
 .include <bsd.port.mk>
