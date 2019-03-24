@@ -13,6 +13,9 @@ COMMENT=	Module for the 'fog' gem to support aliyun OSS/ECS
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Use net/rubygem-fog-aliyun instead
+EXPIRATION_DATE=2019-03-31
+
 RUN_DEPENDS=	rubygem-fog-core1>=1.27:devel/rubygem-fog-core1 \
 		rubygem-fog-json>=1.0:devel/rubygem-fog-json \
 		rubygem-ipaddress>=0.8:net/rubygem-ipaddress \
@@ -20,8 +23,9 @@ RUN_DEPENDS=	rubygem-fog-core1>=1.27:devel/rubygem-fog-core1 \
 
 PORTSCOUT=	limit:^0\.2\.
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
