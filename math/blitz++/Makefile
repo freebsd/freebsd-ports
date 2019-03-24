@@ -11,12 +11,10 @@ COMMENT=	C++ class library for scientific computing
 LICENSE=	GPLv3 BSD3CLAUSE
 LICENSE_COMB=	multi
 
-BROKEN_FreeBSD_12=	fails to compile: ../blitz/blitz.h:58:12: 'iostream.h' file not found
-BROKEN_FreeBSD_13=	fails to compile: ../blitz/blitz.h:58:12: 'iostream.h' file not found
-
-GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix python:2.7
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared CXX_OPTIMIZE_FLAGS="${CFLAGS}"
 MAKE_JOBS_UNSAFE=	yes
 
