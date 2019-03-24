@@ -5,26 +5,20 @@ open-source password manager.
 
 Main Features
 
-  * Secure storage of passwords and other private data with AES, Twofish or
-    ChaCha20 encryption
-  * Cross-platform, runs on Linux, Windows and macOS without modifications
+  * Secure storage with AES, Twofish or ChaCha20 encryption
   * File format compatibility with KeePass2, KeePassX, MacPass, KeeWeb and many
     others (KDBX 3.1 and 4.0)
   * SSH Agent integration
-  * Auto-Type on all supported platforms for automagically filling in login
-    forms
+  * Passwords synchronization using KeeShare
+  * Auto-Type for automagically filling in login forms
   * Key file and YubiKey challenge-response support for additional security
   * TOTP generation (including Steam Guard)
   * CSV import from other password managers (e.g., LastPass)
   * Command line interface
-  * Stand-alone password and passphrase generator
-  * Password strength meter
   * Custom icons for database entries and download of website favicons
   * Database merge functionality
   * Automatic reload when the database was changed externally
   * Browser integration with KeePassXC-Browser for Google Chrome, Chromium,
     Vivaldi, and Mozilla Firefox.
-  * (Legacy) KeePassHTTP support for use with KeePassHTTP-Connector available
-    for Mozilla Firefox and Google Chrome, and passafari for Safari.
 
 WWW: https://keepassxc.org
