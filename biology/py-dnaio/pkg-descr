@@ -1,0 +1,5 @@
+dnaio is a Python 3 library for fast parsing of FASTQ and also FASTA files. The
+code was previously part of the cutadapt tool and has been improved since it
+has been split out.
+
+WWW: https://pypi.python.org/pypi/dnaio
