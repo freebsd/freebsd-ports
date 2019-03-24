@@ -15,9 +15,10 @@ LICENSE=	LGPL21
 OPTIONS_DEFINE=	DOCS
 
 USES=		libtool
+
 GNU_CONFIGURE=	yes
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${STAGEDIR}${DOCSDIR}
 
