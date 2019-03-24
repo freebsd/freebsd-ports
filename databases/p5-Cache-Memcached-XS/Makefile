@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client library for memcached using libmemcache
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 LIB_DEPENDS=	libmemcache.so:databases/libmemcache
 
 USES=		perl5
