@@ -187,11 +187,11 @@ post-install:
 .for file in AUTHORS COPYING ChangeLog INSTALL MAINTAINERS NEWS README UPGRADING
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
+.endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/syslog.d
 	${INSTALL_DATA} ${PATCHDIR}/nut.syslog ${STAGEDIR}${PREFIX}/etc/syslog.d/nut
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	${INSTALL_DATA} ${PATCHDIR}/nut.newsyslog ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/nut.conf
 	${MKDIR} ${STAGEDIR}/var/log/nut
-.endif
 
 .include <bsd.port.mk>
