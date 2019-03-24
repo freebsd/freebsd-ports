@@ -3,7 +3,7 @@
 PORTNAME=	mdds
 PORTVERSION=	1.4.1
 CATEGORIES=	devel
-MASTER_SITES=	http://kohei.us/files/mdds/src/
+MASTER_SITES=	https://kohei.us/files/mdds/src/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Multi-dimensional data index algorithm
@@ -16,8 +16,9 @@ USES=		tar:bzip2
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-API_VERSION=	1.4
 PLIST_SUB=	API_VERSION=${API_VERSION}
+
+API_VERSION=	1.4
 
 do-configure:
 	@${SED} -e 's|@API_VERSION@|${API_VERSION}|' \
