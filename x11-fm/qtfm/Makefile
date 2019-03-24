@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
-USES=		desktop-file-utils gl qmake qt:5
+USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5
 USE_GL=		gl
 USE_QT=		concurrent core dbus gui widgets \
 		buildtools_build qmake_build
