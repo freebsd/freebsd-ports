@@ -33,11 +33,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:www/py-beautifulsoup@${
 		gsettings:devel/glib20 \
 		notify-send:devel/libnotify \
 		pango>=1.36.8:x11-toolkits/pango \
-		webkit-gtk3>=2.4.8:www/webkit-gtk3 \
 		yelp>=3.14.1:x11/yelp
 
+BORKEN=		Update available in ports/236180, but isn't commit ready.
 DEPRECATED=	Uses webkit-gtk3 which has security issues
-EXPIRATION_DATE=2019-03-24
+EXPIRATION_DATE=2019-04-24
 
 SHEBANG_FILES=	bin/variety data/scripts/*
 

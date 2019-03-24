@@ -101,7 +101,6 @@
     SUBDIR += verilator
     SUBDIR += verilog-mode.el
     SUBDIR += xcircuit
-    SUBDIR += xtrkcad
     SUBDIR += z88
     SUBDIR += zcad
 

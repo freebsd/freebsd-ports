@@ -1,8 +1,0 @@
-%%PYTHON_SITELIBDIR%%/webkit/__init__.py
-%%PYTHON_SITELIBDIR%%/webkit/webkit.a
-%%PYTHON_SITELIBDIR%%/webkit/webkit.so
-libdata/pkgconfig/pywebkitgtk-1.0.pc
-share/pywebkitgtk/defs/webkit-1.0.2.defs
-share/pywebkitgtk/defs/webkit-1.1-types.defs
-share/pywebkitgtk/defs/webkit-1.1.defs
-share/pywebkitgtk/defs/webkit-base-types.defs

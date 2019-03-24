@@ -21,7 +21,7 @@ CMAKE_ON+=	WITH_VALA
 CMAKE_OFF+=	BIPR WITH_DOTNET WITH_NATUS WITH_NM WITH_NMold
 
 # Slave ports.
-LIBPROXY_SLAVES=	library gnome2 gnome3 kde mozjs python perl webkit webkit3
+LIBPROXY_SLAVES=	library gnome2 gnome3 kde mozjs python perl webkit3
 
 # If nothing is set, we're building the library, i.e. this port.
 LIBPROXY_SLAVE?=	library

@@ -581,7 +581,6 @@ wai-extra_port?=                                 www/hs-wai-extra
 wai-logger_port?=                                www/hs-wai-logger
 warp_port?=                                      www/hs-warp
 warp-tls_port?=                                  www/hs-warp-tls
-webkit_port?=                                    www/hs-webkit                                   # lib_depends
 wl-pprint-text_port?=                            devel/hs-wl-pprint-text
 word8_port?=                                     devel/hs-word8
 wx_port?=                                        x11-toolkits/hs-wx

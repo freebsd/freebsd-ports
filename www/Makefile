@@ -104,7 +104,6 @@
     SUBDIR += dddbl
     SUBDIR += ddgr
     SUBDIR += decss
-    SUBDIR += deforaos-surfer
     SUBDIR += demoroniser
     SUBDIR += dfileserver
     SUBDIR += dhttpd
@@ -199,7 +198,6 @@
     SUBDIR += glassfish
     SUBDIR += glpi
     SUBDIR += gnome-user-share
-    SUBDIR += gnome-web-photo
     SUBDIR += go-appengine-sdk
     SUBDIR += go-fasthttp
     SUBDIR += go-www
@@ -276,7 +274,6 @@
     SUBDIR += hs-wai-logger
     SUBDIR += hs-warp
     SUBDIR += hs-warp-tls
-    SUBDIR += hs-webkit
     SUBDIR += hs-xss-sanitize
     SUBDIR += hs-yesod
     SUBDIR += hs-yesod-auth
@@ -843,7 +840,6 @@
     SUBDIR += p5-Gazelle
     SUBDIR += p5-Geo-Caching
     SUBDIR += p5-Google-Search
-    SUBDIR += p5-Gtk2-WebKit
     SUBDIR += p5-Gungho
     SUBDIR += p5-GunghoX-FollowLinks
     SUBDIR += p5-HTML-Adsense
@@ -1710,7 +1706,6 @@
     SUBDIR += py-internetarchive
     SUBDIR += py-jonpy
     SUBDIR += py-jsonfield
-    SUBDIR += py-jswebkit
     SUBDIR += py-kallithea
     SUBDIR += py-lesscpy
     SUBDIR += py-libsass
@@ -1891,7 +1886,6 @@
     SUBDIR += py-waitress
     SUBDIR += py-webassets
     SUBDIR += py-webhelpers
-    SUBDIR += py-webkitgtk
     SUBDIR += py-webob
     SUBDIR += py-weboob
     SUBDIR += py-websocket-client
@@ -2210,8 +2204,6 @@
     SUBDIR += rubygem-url_mount
     SUBDIR += rubygem-vegas
     SUBDIR += rubygem-wasabi
-    SUBDIR += rubygem-webkit-gtk
-    SUBDIR += rubygem-webkit-gtk2
     SUBDIR += rubygem-webmock
     SUBDIR += rubygem-webpack-rails-rails50
     SUBDIR += rubygem-webrobots
@@ -2408,7 +2400,6 @@
     SUBDIR += unit-php
     SUBDIR += uwsgi
     SUBDIR += uwsgitop
-    SUBDIR += uzbl
     SUBDIR += validator
     SUBDIR += varnish-libvmod-awsrest
     SUBDIR += varnish-libvmod-digest
@@ -2441,9 +2432,6 @@
     SUBDIR += webgrind
     SUBDIR += webhook
     SUBDIR += webinject
-    SUBDIR += webkit-gtk2
-    SUBDIR += webkit-gtk3
-    SUBDIR += webkit-sharp
     SUBDIR += webkit2-gtk3
     SUBDIR += weblint
     SUBDIR += weblint++
@@ -2471,7 +2459,6 @@
     SUBDIR += xapian-omega12
     SUBDIR += xfce4-smartbookmark-plugin
     SUBDIR += xist
-    SUBDIR += xombrero
     SUBDIR += xoops
     SUBDIR += xpi-adblock
     SUBDIR += xpi-adblock_plus

@@ -211,7 +211,6 @@
     SUBDIR += qlipper
     SUBDIR += qownnotes
     SUBDIR += recoll
-    SUBDIR += rednotebook
     SUBDIR += remind
     SUBDIR += rolo
     SUBDIR += rox-memo

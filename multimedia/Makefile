@@ -249,7 +249,6 @@
     SUBDIR += mencoder
     SUBDIR += mimms
     SUBDIR += minitube
-    SUBDIR += miro
     SUBDIR += mjpegtools
     SUBDIR += mjpg-streamer
     SUBDIR += mkclean

@@ -28,7 +28,6 @@ PORTREVISION=	1
     SUBDIR += gajim
     SUBDIR += gitterdone
     SUBDIR += gloox
-    SUBDIR += hotot
     SUBDIR += icmpchat
     SUBDIR += icqlib
     SUBDIR += jabber.el
