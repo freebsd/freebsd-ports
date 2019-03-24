@@ -55,7 +55,6 @@
     SUBDIR += gnome-latex
     SUBDIR += gobby
     SUBDIR += gomate
-    SUBDIR += gwrite
     SUBDIR += heme
     SUBDIR += hexcurse
     SUBDIR += hexedit
