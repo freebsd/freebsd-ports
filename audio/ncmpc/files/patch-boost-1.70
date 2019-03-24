@@ -1,0 +1,211 @@
+https://github.com/MusicPlayerDaemon/ncmpc/commit/b6c25f3b5fa5
+https://github.com/MusicPlayerDaemon/ncmpc/commit/4f767b38e527
+
+--- src/LyricsPage.cxx.orig	2018-10-22 17:04:35 UTC
++++ src/LyricsPage.cxx
+@@ -75,7 +75,7 @@ class LyricsPage final : public TextPage { (public)
+ 	}
+ 
+ 	auto &get_io_service() noexcept {
+-		return loader_timeout.get_io_service();
++		return screen.get_io_service();
+ 	}
+ 
+ private:
+--- src/aconnect.cxx.orig	2018-10-22 17:04:35 UTC
++++ src/aconnect.cxx
+@@ -125,7 +125,7 @@ aconnect_start(boost::asio::io_service &io_service,
+ 
+ 	*acp = ac;
+ 
+-	ac->rconnect.Start(host, port);
++	ac->rconnect.Start(io_service, host, port);
+ }
+ 
+ void
+--- src/keyboard.cxx.orig	2018-10-22 17:04:35 UTC
++++ src/keyboard.cxx
+@@ -43,7 +43,7 @@ void
+ UserInput::OnReadable(const boost::system::error_code &error)
+ {
+ 	if (error) {
+-		d.get_io_service().stop();
++		get_io_context().stop();
+ 		return;
+ 	}
+ 
+@@ -81,7 +81,7 @@ UserInput::OnReadable(const boost::system::error_code 
+ 
+ 	begin_input_event();
+ 
+-	if (!do_input_event(d.get_io_service(), cmd))
++	if (!do_input_event(get_io_context(), cmd))
+ 		return;
+ 
+ 	end_input_event();
+@@ -89,7 +89,11 @@ UserInput::OnReadable(const boost::system::error_code 
+ }
+ 
+ UserInput::UserInput(boost::asio::io_service &io_service, WINDOW &_w)
+-	:d(io_service), w(_w)
++	:d(io_service),
++#if BOOST_VERSION >= 107000
++	 io_context(io_service),
++#endif
++	 w(_w)
+ {
+ 	d.assign(STDIN_FILENO);
+ 	AsyncWait();
+--- src/keyboard.hxx.orig	2018-10-22 17:04:35 UTC
++++ src/keyboard.hxx
+@@ -28,10 +28,23 @@
+ 
+ class UserInput {
+ 	boost::asio::posix::stream_descriptor d;
++
++#if BOOST_VERSION >= 107000
++	boost::asio::io_context &io_context;
++#endif
++
+ 	WINDOW &w;
+ 
+ public:
+ 	UserInput(boost::asio::io_service &io_service, WINDOW &_w);
++
++	auto &get_io_context() noexcept {
++#if BOOST_VERSION >= 107000
++		return io_context;
++#else
++		return d.get_io_service();
++#endif
++	}
+ 
+ private:
+ 	void AsyncWait() {
+--- src/lirc.cxx.orig	2018-10-22 17:04:35 UTC
++++ src/lirc.cxx
+@@ -37,7 +37,7 @@ LircInput::OnReadable(const boost::system::error_code 
+ 	if (lirc_nextcode(&code) == 0) {
+ 		while (lirc_code2char(lc, code, &txt) == 0 && txt != nullptr) {
+ 			const auto cmd = get_key_command_from_name(txt);
+-			if (!do_input_event(d.get_io_service(), cmd))
++			if (!do_input_event(get_io_context(), cmd))
+ 				return;
+ 		}
+ 	}
+@@ -48,6 +48,9 @@ LircInput::OnReadable(const boost::system::error_code 
+ 
+ LircInput::LircInput(boost::asio::io_service &io_service)
+ 	:d(io_service)
++#if BOOST_VERSION >= 107000
++	, io_context(io_service)
++#endif
+ {
+ 	int lirc_socket = 0;
+ 
+--- src/lirc.hxx.orig	2018-10-22 17:04:35 UTC
++++ src/lirc.hxx
+@@ -26,11 +26,24 @@
+ 
+ class LircInput {
+ 	boost::asio::posix::stream_descriptor d;
++
++#if BOOST_VERSION >= 107000
++	boost::asio::io_context &io_context;
++#endif
++
+ 	struct lirc_config *lc = nullptr;
+ 
+ public:
+ 	explicit LircInput(boost::asio::io_service &io_service);
+ 	~LircInput();
++
++	auto &get_io_context() noexcept {
++#if BOOST_VERSION >= 107000
++		return io_context;
++#else
++		return d.get_io_service();
++#endif
++	}
+ 
+ private:
+ 	void AsyncWait() {
+--- src/mpdclient.cxx.orig	2018-10-22 17:04:35 UTC
++++ src/mpdclient.cxx
+@@ -156,6 +156,9 @@ mpdclient::mpdclient(boost::asio::io_service &io_servi
+ 		     const char *_host, unsigned _port,
+ 		     unsigned _timeout_ms, const char *_password)
+ 	:timeout_ms(_timeout_ms), password(_password),
++#if BOOST_VERSION >= 107000
++	 io_context(io_service),
++#endif
+ 	 enter_idle_timer(io_service)
+ {
+ #ifdef ENABLE_ASYNC_CONNECT
+--- src/mpdclient.hxx.orig	2018-10-22 17:04:35 UTC
++++ src/mpdclient.hxx
+@@ -71,6 +71,10 @@ struct mpdclient final
+ 	struct mpd_status *status = nullptr;
+ 	const struct mpd_song *current_song = nullptr;
+ 
++#if BOOST_VERSION >= 107000
++	boost::asio::io_context &io_context;
++#endif
++
+ 	/**
+ 	 * A timer which re-enters MPD idle mode before the next main
+ 	 * loop iteration.
+@@ -130,7 +134,11 @@ struct mpdclient final
+ 	}
+ 
+ 	auto &get_io_service() noexcept {
++#if BOOST_VERSION >= 107000
++		return io_context;
++#else
+ 		return enter_idle_timer.get_io_service();
++#endif
+ 	}
+ 
+ #ifdef ENABLE_ASYNC_CONNECT
+--- src/net/AsyncResolveConnect.cxx.orig	2018-10-22 17:04:35 UTC
++++ src/net/AsyncResolveConnect.cxx
+@@ -54,7 +54,8 @@ AsyncResolveConnect::OnResolved(const boost::system::e
+ }
+ 
+ void
+-AsyncResolveConnect::Start(const char *host, unsigned port) noexcept
++AsyncResolveConnect::Start(boost::asio::io_service &io_service,
++			   const char *host, unsigned port) noexcept
+ {
+ #ifndef _WIN32
+ 	if (host[0] == '/' || host[0] == '@') {
+@@ -64,7 +65,7 @@ AsyncResolveConnect::Start(const char *host, unsigned 
+ 			s.front() = 0;
+ 
+ 		boost::asio::local::stream_protocol::endpoint ep(std::move(s));
+-		boost::asio::local::stream_protocol::socket socket(resolver.get_io_service());
++		boost::asio::local::stream_protocol::socket socket(io_service);
+ 
+ 		boost::system::error_code error;
+ 		socket.connect(ep, error);
+@@ -76,6 +77,8 @@ AsyncResolveConnect::Start(const char *host, unsigned 
+ 		handler.OnConnect(std::move(socket));
+ 		return;
+ 	}
++#else
++	(void)io_service;
+ #endif /* _WIN32 */
+ 
+ 	char service[20];
+--- src/net/AsyncResolveConnect.hxx.orig	2018-10-22 17:04:35 UTC
++++ src/net/AsyncResolveConnect.hxx
+@@ -47,7 +47,8 @@ class AsyncResolveConnect { (public)
+ 	/**
+ 	 * Resolve a host name and connect to it asynchronously.
+ 	 */
+-	void Start(const char *host, unsigned port) noexcept;
++	void Start(boost::asio::io_service &io_service,
++		   const char *host, unsigned port) noexcept;
+ 
+ private:
+ 	void OnResolved(const boost::system::error_code &error,
