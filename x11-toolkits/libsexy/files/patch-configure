@@ -1,0 +1,11 @@
+--- configure.orig	2007-03-31 10:15:56 UTC
++++ configure
+@@ -20034,7 +20034,7 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtoo
+ 
+ 
+ 
+-pkg_modules="pango >= 1.4.0, glib-2.0 >= 2.4.0, gtk+-2.0 >= 2.4.0, libxml-2.0"
++pkg_modules="pango >= 1.4.0, glib-2.0 >= 2.4.0, gmodule-2.0, gtk+-2.0 >= 2.4.0, libxml-2.0"
+ 
+ 
+ if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
