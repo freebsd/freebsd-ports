@@ -5,6 +5,9 @@ PORTVERSION=	4.${DOMOTICZ_REL}
 PORTREVISION=	3
 CATEGORIES=	www
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	9d226dab339f.patch:-p1
+
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Home Automation System
 
