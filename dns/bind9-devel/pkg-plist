@@ -44,7 +44,6 @@ include/dns/dns64.h
 include/dns/dnsrps.h
 include/dns/dnssec.h
 include/dns/dnstap.h
-%%DNSTAP%%include/dns/dnstap.pb-c.h
 include/dns/ds.h
 include/dns/dsdigest.h
 include/dns/dyndb.h
