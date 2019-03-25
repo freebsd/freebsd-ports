@@ -446,6 +446,7 @@
     SUBDIR += deheader
     SUBDIR += delta
     SUBDIR += dep
+    SUBDIR += deployer
     SUBDIR += derelict-sdl2
     SUBDIR += derelict-util
     SUBDIR += desktop-file-utils
