@@ -7,6 +7,9 @@ PORTREVISION=	3
 CATEGORIES=	graphics math
 PKGNAMESUFFIX=	-pointclouds
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	5605910a26f2.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Point Cloud Library
 
