@@ -12002,3 +12002,4 @@ www/webkit-gtk2||2019-03-24|Has expired: webkit-gtk* last release in 2016 and se
 www/webkit-gtk3||2019-03-24|Has expired: webkit-gtk* last release in 2016 and security issues
 www/webkit-sharp||2019-03-24|Has expired: webkit-gtk* last release in 2016 and security issues
 www/xombrero||2019-03-24|Has expired: webkit-gtk* last release in 2016 and security issue
+net/rubygem-fog-openstack02|net/rubygem-fog-openstack|2019-03-25|Obsolete, please use net/rubygem-fog-openstack instead
