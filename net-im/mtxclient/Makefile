@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILES=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nlohmann-json>=3:devel/nlohmann-json \
-		spdlog>=1.3:devel/spdlog \ \
+		spdlog>=1.3:devel/spdlog \
 		gtest-config:devel/googletest
 LIB_DEPENDS=	libsodium.so:security/libsodium \
 		libboost_date_time.so:devel/boost-libs \
