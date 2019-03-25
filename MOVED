@@ -12007,3 +12007,4 @@ www/rubygem-unicorn-worker-killer044|www/rubygem-unicorn-worker-killer|2019-03-2
 www/rubygem-unicorn51|www/rubygem-unicorn|2019-03-25|Obsolete, please use www/rubygem-unicorn instead
 textproc/rubygem-version_sorter21|textproc/rubygem-version_sorter|2019-03-25|Obsolete, please use textproc/rubygem-version_sorter instead
 net-im/rubygem-hipchat15|net-im/rubygem-hipchat|2019-03-25|Obsolete, please use net-im/rubygem-hipchat instead
+devel/rubygem-fog-json102|devel/rubygem-fog-json|2019-03-25|Obsolete, please use devel/rubygem-fog-json instead
