@@ -1,6 +1,0 @@
-The unicorn-worker-killer gem provides automatic restart of Unicorn
-workers based on the number of served requests and process memory size
-without affecting any requests. This can improve stability by avoiding
-unexpected memory exhaustion of applications.
-
-WWW: https://github.com/kzk/unicorn-worker-killer

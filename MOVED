@@ -12003,3 +12003,4 @@ www/webkit-gtk3||2019-03-24|Has expired: webkit-gtk* last release in 2016 and se
 www/webkit-sharp||2019-03-24|Has expired: webkit-gtk* last release in 2016 and security issues
 www/xombrero||2019-03-24|Has expired: webkit-gtk* last release in 2016 and security issue
 net/rubygem-fog-openstack02|net/rubygem-fog-openstack|2019-03-25|Obsolete, please use net/rubygem-fog-openstack instead
+www/rubygem-unicorn-worker-killer044|www/rubygem-unicorn-worker-killer|2019-03-25|Obsolete, please use www/rubygem-unicorn-worker-killer instead
