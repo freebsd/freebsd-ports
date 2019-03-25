@@ -1508,6 +1508,7 @@
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
     SUBDIR += py-ddgr
+    SUBDIR += py-dj21-django-auth-ldap
     SUBDIR += py-dj21-django-cors-headers
     SUBDIR += py-dj21-django-crispy-forms
     SUBDIR += py-dj21-django-debug-toolbar
