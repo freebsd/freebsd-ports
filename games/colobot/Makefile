@@ -22,8 +22,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libphysfs.so:devel/physfs \
 		libboost_system.so:devel/boost-libs
 
-USES=		cmake gl gettext-runtime gettext-tools:build \
-		localbase:ldflags openal python:2.7 sdl
+USES=		cmake compiler:c++11-lang gl gettext-runtime \
+		gettext-tools:build localbase:ldflags openal python:2.7 sdl
 USE_SDL=	image2 ttf2
 USE_GL=		gl glew glu
 USE_LDCONFIG=	yes
