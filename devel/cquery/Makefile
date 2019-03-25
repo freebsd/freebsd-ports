@@ -14,7 +14,7 @@ LICENSE=	MIT
 BROKEN_powerpc64=	fails to build: Checking for 'clang++' (C++ compiler): not found
 
 BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-LIB_DEPENDS=	libclang.so.${LLVM_DEFAULT:C/[0-9]$//}:devel/llvm${LLVM_DEFAULT}
+LIB_DEPENDS=	libclang.so:devel/llvm${LLVM_DEFAULT}
 
 USES=		compiler:c++14-lang waf
 
