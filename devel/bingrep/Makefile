@@ -71,7 +71,6 @@ CARGO_CRATES=	aho-corasick-0.6.3 \
 		winapi-build-0.1.1 \
 		wincolor-0.1.4
 CARGO_USE_GITHUB=	yes
-CARGO_GH_CARGOTOML=	${WRKSRC}/Cargo.toml ${WRKSRC_metagoblin}/Cargo.toml
 
 PLIST_FILES=	bin/bingrep
 

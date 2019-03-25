@@ -293,16 +293,6 @@ CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		ws2_32-sys-0.2.1 \
 		xdg-2.2.0
 CARGO_USE_GITHUB=	yes
-CARGO_GH_CARGOTOML=	${CARGO_CARGOTOML} \
-			${WRKSRC_alsa}/Cargo.toml \
-			${WRKSRC_dnsparser}/Cargo.toml \
-			${WRKSRC_librespot}/audio/Cargo.toml \
-			${WRKSRC_librespot}/Cargo.toml \
-			${WRKSRC_librespot}/connect/Cargo.toml \
-			${WRKSRC_librespot}/playback/Cargo.toml \
-			${WRKSRC_mdns}/Cargo.toml \
-			${WRKSRC_rustcrypto}/Cargo.toml \
-			${WRKSRC_tremor}/Cargo.toml
 
 CARGO_BUILD_ARGS=	--no-default-features
 CARGO_INSTALL_ARGS=	--no-default-features
