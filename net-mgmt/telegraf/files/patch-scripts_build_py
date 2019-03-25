@@ -1,9 +1,9 @@
---- scripts/build.py	2019-01-15 14:17:39.800391000 -0600
-+++ scripts/build.py	2019-01-15 08:58:51.390939000 -0600
+--- scripts/build.py.orig	2019-03-19 22:05:13.000000000 +0100
++++ scripts/build.py	2019-03-25 10:29:47.545497000 +0100
 @@ -86,13 +86,13 @@
  supported_builds = {
      "windows": [ "amd64", "i386" ],
-     "linux": [ "amd64", "i386", "armhf", "armel", "arm64", "static_amd64", "s390x"],
+     "linux": [ "amd64", "i386", "armhf", "armel", "arm64", "static_amd64", "s390x", "mipsel"],
 -    "freebsd": [ "amd64", "i386" ]
 +    "freebsd": [ "amd64", "i386", "armv6", "armv7" ]
  }
@@ -15,4 +15,4 @@
 +    "freebsd": [ "tar", "tgz" ]
  }
  
- next_version = '1.9.0'
+ next_version = '1.10.0'

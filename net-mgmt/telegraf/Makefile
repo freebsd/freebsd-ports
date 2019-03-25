@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.9.3
+DISTVERSION=	1.10.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -37,6 +37,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		aws:aws-sdk-go:v1.15.54:aws_sdk_go/src/github.com/aws/aws-sdk-go \
 		beorn7:perks:3a771d9:perks/src/github.com/beorn7/perks \
 		bsm:sarama-cluster:v2.1.13:sarama_cluster/src/github.com/bsm/sarama-cluster \
+		caio:go-tdigest:v2.3.0:go_tdigest/src/github.com/caio/go-tdigest \
 		cenkalti:backoff:v2.0.0:backoff/src/github.com/cenkalti/backoff \
 		couchbase:go-couchbase:16db1f1:go_couchbase/src/github.com/couchbase/go-couchbase \
 		couchbase:gomemcached:0da75df:gomemcached/src/github.com/couchbase/gomemcached \
@@ -56,7 +57,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		eclipse:paho.mqtt.golang:v1.1.1:paho_mqtt_golang/src/github.com/eclipse/paho.mqtt.golang \
 		ericchiang:k8s:v1.2.0:k8s/src/github.com/ericchiang/k8s \
 		go-ini:ini:v1.38.1:ini/src/github.com/go-ini/ini \
-		go-logfmt:logfmt:v0.3.0:go_logfmt/src/github.com/go-logfmt/logfmt \
+		go-logfmt:logfmt:v0.4.0:go_logfmt/src/github.com/go-logfmt/logfmt \
 		go-ole:go-ole:v1.2.1:go_ole/src/github.com/go-ole/go-ole \
 		go-redis:redis:v6.12.0:redis/src/github.com/go-redis/redis \
 		go-sql-driver:mysql:v1.4.0:mysql/src/github.com/go-sql-driver/mysql \
@@ -70,6 +71,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		gorilla:context:v1.1.1:context/src/github.com/gorilla/context \
 		gorilla:mux:v1.6.2:mux/src/github.com/gorilla/mux \
 		hailocab:go-hostpool:e80d13c:go_hostpool/src/github.com/hailocab/go-hostpool \
+		harlow:kinesis-consumer:2f58b13:kinesis_consumer/src/github.com/harlow/kinesis-consumer \
 		hashicorp:consul:v1.2.1:consul/src/github.com/hashicorp/consul \
 		hashicorp:go-cleanhttp:d5fe4b5:go_cleanhttp/src/github.com/hashicorp/go-cleanhttp \
 		hashicorp:go-rootcerts:6bb64b3:go_rootcerts/src/github.com/hashicorp/go-rootcerts \
@@ -82,8 +84,10 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		jmespath:go-jmespath:0b12d6b:go_jmespath/src/github.com/jmespath/go-jmespath \
 		kardianos:osext:ae77be6:osext/src/github.com/kardianos/osext \
 		kardianos:service:615a14e:service/src/github.com/kardianos/service \
+		karrick:godirwalk:v1.7.5:godirwalk/src/github.com/karrick/godirwalk \
 		kballard:go-shellquote:95032a8:go_shellquote/src/github.com/kballard/go-shellquote \
 		kr:logfmt:b84e30a:logfmt/src/github.com/kr/logfmt \
+		kubernetes:apimachinery:d41becf:apimachinery/src/github.com/kubernetes/apimachinery \
 		leodido:ragel-machinery:299bdde:ragel_machinery/src/github.com/leodido/ragel-machinery \
 		mailru:easyjson:efc7eb8:easyjson/src/github.com/mailru/easyjson \
 		matttproud:golang_protobuf_extensions:v1.0.1:golang_protobuf_extensions/src/github.com/matttproud/golang_protobuf_extensions \
@@ -104,14 +108,14 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		pierrec:lz4:v2.0.3:lz4/src/github.com/pierrec/lz4 \
 		pkg:errors:v0.8.0:errors/src/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:go_difflib/src/github.com/pmezard/go-difflib \
-		prometheus:client_golang:v0.8.0:client_golang/src/github.com/prometheus/client_golang \
+		prometheus:client_golang:v0.9.2:client_golang/src/github.com/prometheus/client_golang \
 		prometheus:client_model:5c3871d:client_model/src/github.com/prometheus/client_model \
 		prometheus:common:7600349:common/src/github.com/prometheus/common \
 		prometheus:procfs:ae68e2d:procfs/src/github.com/prometheus/procfs \
 		rcrowley:go-metrics:e2704e1:go_metrics/src/github.com/rcrowley/go-metrics \
 		samuel:go-zookeeper:c4fab1a:go_zookeeper/src/github.com/samuel/go-zookeeper \
 		satori:go.uuid:v1.2.0:go_uuid/src/github.com/satori/go.uuid \
-		shirou:gopsutil:v2.18.07:gopsutil/src/github.com/shirou/gopsutil \
+		shirou:gopsutil:v2.19.01:gopsutil/src/github.com/shirou/gopsutil \
 		shirou:w32:bb4de01:w32/src/github.com/shirou/w32 \
 		sirupsen:logrus:v1.0.5:logrus/src/github.com/sirupsen/logrus \
 		soniah:gosnmp:96b8622:gosnmp/src/github.com/soniah/gosnmp \
@@ -123,17 +127,19 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		vishvananda:netlink:b2de5d1:netlink/src/github.com/vishvananda/netlink \
 		vishvananda:netns:13995c7:netns/src/github.com/vishvananda/netns \
 		vjeantet:grok:v1.0.0:grok/src/github.com/vjeantet/grok \
-		vmware:govmomi:v0.18.0:govmomi/src/github.com/vmware/govmomi \
+		vmware:govmomi:v0.19.0:govmomi/src/github.com/vmware/govmomi \
+		wavefronthq:wavefront-sdk-go:v0.9.2:wavefront_sdk_go/src/github.com/wavefronthq/wavefront-sdk-go \
 		wvanbergen:kafka:e2edea9:kafka/src/github.com/wvanbergen/kafka \
 		wvanbergen:kazoo-go:f72d861:kazoo_go/src/github.com/wvanbergen/kazoo-go \
 		yuin:gopher-lua:46796da:gopher_lua/src/github.com/yuin/gopher-lua \
 		census-instrumentation:opencensus-go:v0.17.0:opencensus_go/src/go.opencensus.io \
-		googleapis:google-api-go-client:19ff876:api/src/google.golang.org/api \
 		golang:crypto:a214413:crypto/src/golang.org/x/crypto \
 		golang:net:a680a1e:net/src/golang.org/x/net \
 		golang:oauth2:d2e6202:oauth2/src/golang.org/x/oauth2 \
-		golang:sys:ac767d6:sys/src/golang.org/x/sys \
+		golang:sync:42b3178:sync/src/golang.org/x/sync \
+		golang:sys:7c4c994:sys/src/golang.org/x/sys \
 		golang:text:v0.3.0:text/src/golang.org/x/text \
+		googleapis:google-api-go-client:19ff876:googleapis/src/google.golang.org/api \
 		golang:appengine:v1.1.0:appengine/src/google.golang.org/appengine \
 		google:go-genproto:fedd286:genproto/src/google.golang.org/genproto \
 		grpc:grpc-go:v1.13.0:grpc/src/google.golang.org/grpc \
@@ -142,11 +148,12 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		fatih:pool:v2.0.0:pool_v2/src/gopkg.in/fatih/pool.v2 \
 		fsnotify:fsnotify:v1.4.7:fsnotify_v1/src/gopkg.in/fsnotify.v1 \
 		rethinkdb:rethinkdb-go:v3.0.5:gorethink_v3/src/gopkg.in/gorethink/gorethink.v3 \
+		go-inf:inf:v0.9.1:inf_v0/src/gopkg.in/inf.v0 \
 		go-ldap:ldap:v2.5.1:ldap_v2/src/gopkg.in/ldap.v2 \
 		go-mgo:mgo:9856a29:mgo_v2/src/gopkg.in/mgo.v2 \
 		olivere:elastic:v5.0.70:elastic_v5/src/gopkg.in/olivere/elastic.v5 \
 		go-tomb:tomb:dd63297:tomb_v1/src/gopkg.in/tomb.v1 \
-		go-yaml:yaml:v2.2.1:yaml_v2/src/gopkg.in/yaml.v2
+		go-yaml:yaml:v2.2.1:yaml_v2/src/gopkg.in/yaml.v2	
 
 SUB_FILES=	telegraf
 SUB_LIST=	TELEGRAF_USER=${TELEGRAF_USER} \
@@ -178,3 +185,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>
+		:::/src/ \
+
+		:::/src/ \
+
