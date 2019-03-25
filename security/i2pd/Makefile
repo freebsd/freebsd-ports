@@ -2,12 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	i2pd
-PORTVERSION=	2.23.0
-PORTREVISION=	1
+PORTVERSION=	2.24.0
 CATEGORIES=	security net-p2p
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	fc84d6c4b728.patch:-p1
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ implementation of I2P client
