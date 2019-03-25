@@ -12005,3 +12005,4 @@ www/xombrero||2019-03-24|Has expired: webkit-gtk* last release in 2016 and secur
 net/rubygem-fog-openstack02|net/rubygem-fog-openstack|2019-03-25|Obsolete, please use net/rubygem-fog-openstack instead
 www/rubygem-unicorn-worker-killer044|www/rubygem-unicorn-worker-killer|2019-03-25|Obsolete, please use www/rubygem-unicorn-worker-killer instead
 www/rubygem-unicorn51|www/rubygem-unicorn|2019-03-25|Obsolete, please use www/rubygem-unicorn instead
+textproc/rubygem-version_sorter21|textproc/rubygem-version_sorter|2019-03-25|Obsolete, please use textproc/rubygem-version_sorter instead
