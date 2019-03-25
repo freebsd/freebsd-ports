@@ -1,3 +1,5 @@
 TIMESTAMP = 1543643496
 SHA256 (PointCloudLibrary-pcl-pcl-1.9.1_GH0.tar.gz) = 0add34d53cd27f8c468a59b8e931a636ad3174b60581c0387abb98a9fc9cddb6
 SIZE (PointCloudLibrary-pcl-pcl-1.9.1_GH0.tar.gz) = 67158067
+SHA256 (5605910a26f2.patch) = dedcf1520051a7b07bf894114368eab4b257ac2f0f08d3ab77f52faae68260e3
+SIZE (5605910a26f2.patch) = 1347
