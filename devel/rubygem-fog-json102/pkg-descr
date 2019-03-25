@@ -1,4 +1,0 @@
-rubygem-fog-json (Fog::Json) provides extraction of the JSON parsing tools
-shared between a number of providers in the 'fog' gem.
-
-WWW: https://github.com/fog/fog-json
