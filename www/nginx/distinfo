@@ -1,4 +1,4 @@
-TIMESTAMP = 1553182723
+TIMESTAMP = 1553280651
 SHA256 (nginx-1.14.2.tar.gz) = 002d9f6154e331886a2dd4e6065863c9c1cf8291ae97a1255308572c02be9797
 SIZE (nginx-1.14.2.tar.gz) = 1015384
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -49,8 +49,8 @@ SHA256 (mdirolf-nginx-gridfs-v0.8_GH0.tar.gz) = ef843824e0aac1dd60b392802861cc06
 SIZE (mdirolf-nginx-gridfs-v0.8_GH0.tar.gz) = 18883
 SHA256 (mongodb-mongo-c-driver-v0.3.1_GH0.tar.gz) = 552c54aff81c4701ace4eb1ce20c114433ee783b4b06c0105921a830c9486172
 SIZE (mongodb-mongo-c-driver-v0.3.1_GH0.tar.gz) = 53024
-SHA256 (openresty-headers-more-nginx-module-55fbdab_GH0.tar.gz) = ed996dc994ba31ae071e05f12bfac6ff86ee03a2e7d4263346b919870d8135ac
-SIZE (openresty-headers-more-nginx-module-55fbdab_GH0.tar.gz) = 28139
+SHA256 (openresty-headers-more-nginx-module-085fbbc_GH0.tar.gz) = 720d250a446f233ce12ccfe0d4eec67aa44085a0a71327f158e19bf0b26a602b
+SIZE (openresty-headers-more-nginx-module-085fbbc_GH0.tar.gz) = 28226
 SHA256 (giom-nginx_accept_language_module-2f69842_GH0.tar.gz) = 5534ca63cdfc2a7dc4e1cbf9c2d54d3ed3f0e6c86b4a95be48ec0a3f41cc1eb0
 SIZE (giom-nginx_accept_language_module-2f69842_GH0.tar.gz) = 3393
 SHA256 (atomx-nginx-http-auth-digest-cd86418_GH0.tar.gz) = 9858b202e5009da4047ac16f3ee02e018673237f0d9652a9e1c2c9d7917f07bf
