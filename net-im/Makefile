@@ -149,7 +149,6 @@ PORTREVISION=	1
     SUBDIR += ricochet
     SUBDIR += rubygem-discordrb-webhooks-blackst0ne
     SUBDIR += rubygem-hipchat
-    SUBDIR += rubygem-hipchat15
     SUBDIR += rubygem-lita
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-tinder
