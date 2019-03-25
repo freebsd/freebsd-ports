@@ -4,11 +4,11 @@ bin/kdeconnect-indicator
 etc/xdg/autostart/kdeconnectd.desktop
 lib/libexec/kdeconnectd
 lib/libkdeconnectcore.so.1
-lib/libkdeconnectcore.so.1.3.3
+lib/libkdeconnectcore.so.1.3.4
 lib/libkdeconnectinterfaces.so.1
-lib/libkdeconnectinterfaces.so.1.3.3
+lib/libkdeconnectinterfaces.so.1.3.4
 lib/libkdeconnectpluginkcm.so.1
-lib/libkdeconnectpluginkcm.so.1.3.3
+lib/libkdeconnectpluginkcm.so.1.3.4
 %%QT_PLUGINDIR%%/kcm_kdeconnect.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_battery.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_clipboard.so
@@ -383,6 +383,7 @@ share/locale/zh_TW/LC_MESSAGES/kdeconnect-kcm.mo
 share/locale/zh_TW/LC_MESSAGES/kdeconnect-kded.mo
 share/locale/zh_TW/LC_MESSAGES/kdeconnect-kio.mo
 share/locale/zh_TW/LC_MESSAGES/kdeconnect-plugins.mo
+share/locale/zh_TW/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
 share/metainfo/org.kde.kdeconnect.kcm.appdata.xml
 share/nautilus-python/extensions/kdeconnect-share.py
