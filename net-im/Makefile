@@ -78,6 +78,7 @@ PORTREVISION=	1
     SUBDIR += mikutter
     SUBDIR += mtxclient
     SUBDIR += mu-conference
+    SUBDIR += nheko
     SUBDIR += openfire
     SUBDIR += oysttyer
     SUBDIR += p5-AnyEvent-XMPP
