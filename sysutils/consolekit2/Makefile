@@ -3,6 +3,7 @@
 
 PORTNAME=	consolekit
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	https://github.com/ConsoleKit2/ConsoleKit2/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	2
@@ -38,5 +39,12 @@ CONFIGURE_ARGS=	--with-pid-file=/var/run/${PORTNAME}.pid \
 		--disable-libudev \
 		--without-systemdsystemunitdir
 INSTALL_TARGET=	install-strip
+
+post-install:
+.for script in ck-system-hibernate ck-system-hybridsleep \
+	ck-system-restart ck-system-stop ck-system-suspend
+	cd ${STAGEDIR}${PREFIX}/lib/ConsoleKit/scripts && \
+		${MV} ${script} ${script}.sample
+.endfor
 
 .include <bsd.port.mk>
