@@ -2996,6 +2996,7 @@
     SUBDIR += p5-MooX-HandlesVia
     SUBDIR += p5-MooX-Locale-Passthrough
     SUBDIR += p5-MooX-Options
+    SUBDIR += p5-MooX-Role-Parameterized
     SUBDIR += p5-MooX-StrictConstructor
     SUBDIR += p5-MooX-Thunking
     SUBDIR += p5-MooX-Traits
