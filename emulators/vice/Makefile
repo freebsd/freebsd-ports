@@ -30,16 +30,12 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libgnutls.so:security/gnutls
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
-
-USES=		compiler:c++11-lang pkgconfig makeinfo gmake \
-		iconv:wchar_t jpeg readline gettext
+USES=		compiler:c++11-lang pkgconfig makeinfo localbase:ldflags \
+		gmake iconv:wchar_t jpeg readline gettext
 USE_XORG=	xpm ice sm xext xv xt x11 xmu xxf86vm
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 HAS_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-ipv6 \
 			--enable-external-ffmpeg \
 			--mandir="${PREFIX}/man" \
