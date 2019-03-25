@@ -3,7 +3,8 @@
 PORTNAME=	profanity
 PORTVERSION=	0.6.0
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.profanity.im/
+MASTER_SITES=	http://www.profanity.im/ \
+		LOCAL/arved
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Console based XMPP client
