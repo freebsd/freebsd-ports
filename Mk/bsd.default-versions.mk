@@ -56,7 +56,7 @@ LINUX_DEFAULT?=		c6_64
 # Possible values: c6
 LINUX_DEFAULT?=		c6
 .endif
-# Possible values: 50, 60, 70 (to be used when non-base compiler is required)
+# Possible values: 60, 70, 80, -devel (to be used when non-base compiler is required)
 LLVM_DEFAULT?=		80
 # Possible values: 5.1, 5.2, 5.3
 LUA_DEFAULT?=		5.2
