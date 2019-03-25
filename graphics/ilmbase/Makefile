@@ -24,7 +24,10 @@ GNU_CONFIGURE=	yes
 # The configure script uses bash arrays
 CONFIGURE_SHELL=${BASH_CMD}
 CONFIGURE_ARGS=	--disable-static
-MAKE_ARGS+=	PTHREAD_LIBS="-pthread -lpthread"
+# libtool links C++ libraries with -nostdlib, which prevents -pthread from
+# having an effect (at least with clang). Make sure we also pass -lpthread so
+# we do link against libthr.so.
+CONFIGURE_ENV+=	PTHREAD_LIBS="-pthread -lpthread"
 TEST_TARGET=	check
 
 PORTDOCS=	AUTHORS ChangeLog README.md
@@ -48,7 +51,6 @@ regression-test regression check::	test
 
 post-configure:
 	${REINPLACE_CMD} -e 's/#define HAVE_UCONTEXT_H 1/#undef HAVE_UCONTEXT_H/' ${WRKSRC}/config/IlmBaseConfig.h
-	${REINPLACE_CMD} -e '/^libIlmThread_la_LIBADD/s/$$/ $$(PTHREAD_LIBS)/' ${WRKSRC}/IlmThread/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libHalf.so.${VER}
