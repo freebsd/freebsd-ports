@@ -96,7 +96,7 @@ plex_stop_postcmd()
 {
 	_PLEX_CHILDREN=$(pgrep -g ${_PLEXPID})
 	echo "Cleaning up leftover child processes."
-	kill $sig_stop ${_PLEX_CHILDREN}
+	kill -9 ${_PLEX_CHILDREN}
 	wait_for_pids ${_PLEX_CHILDREN}
 }
 
