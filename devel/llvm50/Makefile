@@ -17,6 +17,9 @@ LICENSE_NAME=	LLVM Release License
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Obsolete and unmaintained upstream
+EXPIRATION_DATE=2019-04-30
+
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 LLVM_MAJOR=	${LLVM_RELEASE:C/\.[0-9]$//}
 LLVM_LIB_VER=	${LLVM_MAJOR:C/\.//}
