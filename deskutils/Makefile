@@ -163,6 +163,7 @@
     SUBDIR += mdh
     SUBDIR += mencal
     SUBDIR += menumaker
+    SUBDIR += meteo
     SUBDIR += moregroupware
     SUBDIR += mozo
     SUBDIR += myitcrm
