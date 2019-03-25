@@ -11,6 +11,7 @@ MAINTAINER=	ricci@cs.utah.edu
 COMMENT=	Window manager with a text-editorish, keyboard friendly interface
 
 CONFLICTS=	ion-2-*
+CONFLICTS_INSTALL=	ion-shell
 
 USE_XORG=	x11
 USES=		gmake
