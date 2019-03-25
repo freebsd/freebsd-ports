@@ -19,13 +19,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	moddevices
 GH_TAGNAME=	072e2fe
 
-# It suffers from the regression in clang-6: https://bugs.llvm.org/show_bug.cgi?id=36916
-LLVM_VER=	50
-BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
-CPP=		clang-cpp${LLVM_VER}
-CC=		clang${LLVM_VER}
-CXX=		clang++${LLVM_VER}
-
 .if exists(/usr/lib/libstdc++.so)
 CXXFLAGS+=	-stdlib=libstdc++
 LDFLAGS+=	-stdlib=libstdc++
