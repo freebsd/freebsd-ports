@@ -94,13 +94,15 @@ CARGO_BUILD?=	yes
 CARGO_CONFIGURE?=	yes
 CARGO_INSTALL?=	yes
 CARGO_TEST?=	yes
-CARGO_USE_GITHUB?=	no
 
-# If your application has multiple Cargo.toml files which all use
-# git-sourced dependencies and require the use of CARGO_USE_GITHUB and
-# GH_TUPLE, then you add them to CARGO_GH_CARGOTOML to also point them
-# to the correct offline sources.
-CARGO_GH_CARGOTOML?=	${CARGO_CARGOTOML}
+# Set CARGO_USE_GIT{HUB,LAB} to yes if your application requires
+# some dependencies from git repositories hosted on GitHub or
+# GitLab instances.  All Cargo.toml files will be patched to point
+# to the right offline sources based on what is defined in
+# {GH,GL}_TUPLE.  This makes sure that cargo does not attempt to
+# access the network during the build.
+CARGO_USE_GITHUB?=	no
+CARGO_USE_GITLAB?=	no
 
 # Manage crate features.
 .if !empty(CARGO_FEATURES)
@@ -213,16 +215,26 @@ cargo-extract:
 		> ${CARGO_VENDOR_DIR}/${_crate}/.cargo-checksum.json
 .endfor
 
+_CARGO_GIT_PATCH_CARGOTOML=
 .if ${CARGO_USE_GITHUB:tl} == "yes"
-_USES_patch+=	600:cargo-patch-github
-
-.for _group in ${GH_TUPLE:C@^[^:]*:[^:]*:[^:]*:(([^:/]*)?)((/.*)?)@\2@}
-_CARGO_GH_PATCH_CARGOTOML:= ${_CARGO_GH_PATCH_CARGOTOML} \
+.  for _group in ${GH_TUPLE:C@^[^:]*:[^:]*:[^:]*:(([^:/]*)?)((/.*)?)@\2@}
+_CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
 	-e 's@git = "(https|http|git)://github.com/${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}(\.git)?"@path = "${WRKSRC_${_group}}"@'
-.endfor
+.  endfor
+.endif
+.if ${CARGO_USE_GITLAB:tl} == "yes"
+.  for _group in ${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\8@:S/^://}
+_CARGO_GIT_PATCH_CARGOTOML:= ${_CARGO_GIT_PATCH_CARGOTOML} \
+	-e 's@git = "${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}(\.git)?"@path = "${WRKSRC_${_group}}"@'
+.  endfor
+.endif
 
-cargo-patch-github:
-	@${SED} -i.dist -E ${_CARGO_GH_PATCH_CARGOTOML} ${CARGO_GH_CARGOTOML}
+.if !empty(_CARGO_GIT_PATCH_CARGOTOML)
+_USES_patch+=	600:cargo-patch-git
+
+cargo-patch-git:
+	@${FIND} ${WRKDIR} -name Cargo.toml -type f -exec \
+		${SED} -i.dist -E ${_CARGO_GIT_PATCH_CARGOTOML} {} +
 .endif
 
 .if !target(do-configure) && ${CARGO_CONFIGURE:tl} == "yes"
