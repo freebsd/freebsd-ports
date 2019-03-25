@@ -19,7 +19,7 @@ export PATH=${PATH}:%%PREFIX%%/bin
 
 name="buildbot"
 rcvar=buildbot_enable
-command="%%PREFIX%%/bin/buildbot"
+command="%%PREFIX%%/bin/buildbot-%%PYTHON_VER%%"
 load_rc_config $name
 
 check_cmd="${name}_check"
