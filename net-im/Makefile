@@ -76,6 +76,7 @@ PORTREVISION=	1
     SUBDIR += mcabber
     SUBDIR += meanwhile
     SUBDIR += mikutter
+    SUBDIR += mtxclient
     SUBDIR += mu-conference
     SUBDIR += openfire
     SUBDIR += oysttyer

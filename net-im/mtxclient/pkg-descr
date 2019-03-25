@@ -1,0 +1,6 @@
+Client API library for the Matrix protocol, built on top of Boost.Asio.
+
+This library is a C++-based API used by some C++-based Matrix clients,
+like Nheko.
+
+WWW: https://github.com/Nheko-Reborn/mtxclient

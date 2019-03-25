@@ -1,0 +1,11 @@
+include/olm/inbound_group_session.h
+include/olm/olm.h
+include/olm/outbound_group_session.h
+include/olm/pk.h
+lib/cmake/Olm/OlmConfig.cmake
+lib/cmake/Olm/OlmConfigVersion.cmake
+lib/cmake/Olm/OlmTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Olm/OlmTargets.cmake
+lib/libolm.so
+lib/libolm.so.3
+lib/libolm.so.3.0.0

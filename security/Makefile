@@ -446,6 +446,7 @@ PORTREVISION=	1
     SUBDIR += ocaml-ssl
     SUBDIR += oidentd
     SUBDIR += oinkmaster
+    SUBDIR += olm
     SUBDIR += onionscan
     SUBDIR += op
     SUBDIR += openbsm
