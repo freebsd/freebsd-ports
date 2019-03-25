@@ -9,3 +9,12 @@
  my $MPCFTPDIR = "/iau/MPCORB";
  my $MPCFILE = "MPCORB.DAT";
  my $MPCZIPFILE = "MPCORB.DAT.gz";
+@@ -247,7 +247,7 @@ sub fetch
+ {
+     # transfer
+     print "Getting $MPCFTPDIR/$MPCZIPFILE from $MPCSITE...\n";
+-    $cmd = "curl -connect-timeout 10 -s -u 'anonymous:xephem\@clearskyinstitute.com' $MPCSITE/$MPCFTPDIR/$MPCZIPFILE > $MPCZIPFILE";
++    $cmd = "curl --connect-timeout 10 -s -u 'anonymous:xephem\@clearskyinstitute.com' $MPCSITE/$MPCFTPDIR/$MPCZIPFILE > $MPCZIPFILE";
+     print "$cmd\n";
+     !system "$cmd" or exit(1);
+ 
