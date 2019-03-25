@@ -1,3 +1,5 @@
 TIMESTAMP = 1529917548
 SHA256 (domoticz-domoticz-4.9700_GH0.tar.gz) = c31f185a1ffac01b86a77bf33e059a4403d814e826c9d6639c63c2e9afa55a46
 SIZE (domoticz-domoticz-4.9700_GH0.tar.gz) = 37443519
+SHA256 (9d226dab339f.patch) = cd9b13d1a81b1c5fa60dab26fb01ceda1b32a4806bcfa37b88bddde7aad73aa2
+SIZE (9d226dab339f.patch) = 2190
