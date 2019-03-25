@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	5.3.13
-PORTREVISION=	1
+PORTVERSION=	5.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -41,15 +40,18 @@ CHECKER_RUN_DEPENDS=	${LOCALBASE}/share/pear/HTTP/Request.php:www/pear-HTTP_Requ
 MAIL_RUN_DEPENDS=	${LOCALBASE}/share/pear/Mail.php:mail/pear-Mail@${PHP_FLAVOR}
 
 EXTRA_FILES=	%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/_mocha \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/express \
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/he \
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/mkdirp \
 		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/mocha \
 		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/uuid \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/jade \
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/he \
 		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/mkdirp \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/supports-color \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/supertest/node_modules/superagent/node_modules/.bin/mime \
-		%%WWWDIR%%/libs/composer/vendor/bin/export-plural-rules \
-		%%WWWDIR%%/libs/composer/vendor/bin/export-plural-rules.php \
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/send/node_modules/.bin/mime \
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/superagent/node_modules/.bin/mime \
+		%%WWWDIR%%/libs/composer/vendor/bin/generate_vcards \
+		%%WWWDIR%%/libs/composer/vendor/bin/naturalselection \
+		%%WWWDIR%%/libs/composer/vendor/bin/sabredav \
+		%%WWWDIR%%/libs/composer/vendor/bin/vobject \
 		%%WWWDIR%%/libs/composer/vendor/simplesamlphp/simplesamlphp/locales/no
 
 pre-install:
