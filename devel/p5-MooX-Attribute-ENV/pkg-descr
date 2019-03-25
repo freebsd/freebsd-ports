@@ -1,0 +1,6 @@
+This is a Moo extension. It allows other attributes for "has" in Moo.
+If any of these are given, then instead of the normal value-setting
+"chain" for attributes of given, default; the chain will be given,
+environment, default.
+
+WWW: https://metacpan.org/release/MooX-Attribute-ENV
