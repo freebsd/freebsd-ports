@@ -1,0 +1,14 @@
+https://bugzilla.libsdl.org/show_bug.cgi?id=1401
+https://hg.libsdl.org/SDL_ttf/rev/e826b2504c66
+
+--- Makefile.in.orig	2012-01-15 04:44:08 UTC
++++ Makefile.in
+@@ -68,7 +68,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(p
+ 	"$(DESTDIR)$(libSDL_ttfincludedir)"
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+-libSDL_ttf_la_LIBADD =
++libSDL_ttf_la_LIBADD = @MATHLIB@
+ am_libSDL_ttf_la_OBJECTS = SDL_ttf.lo
+ libSDL_ttf_la_OBJECTS = $(am_libSDL_ttf_la_OBJECTS)
+ libSDL_ttf_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
