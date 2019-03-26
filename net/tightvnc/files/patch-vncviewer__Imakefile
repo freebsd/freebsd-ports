@@ -1,6 +1,6 @@
---- vncviewer/Imakefile.orig	Thu Sep 26 11:26:17 2002
-+++ vncviewer/Imakefile	Thu Sep 26 11:28:47 2002
-@@ -10,17 +10,12 @@
+--- vncviewer/Imakefile.orig	2003-03-12 16:20:34 UTC
++++ vncviewer/Imakefile
+@@ -10,17 +10,12 @@ XCOMM seems to cause problems on Digital Unix.
  DEFINES = -DMITSHM
  #endif
  
@@ -22,7 +22,7 @@
  
  DEPLIBS = XawClientDepLibs $(VNCAUTH_LIB)
  LOCAL_LIBRARIES = XawClientLibs $(VNCAUTH_LIB) $(ZLIB_LIB) $(JPEG_LIB)
-@@ -44,4 +39,4 @@
+@@ -45,4 +40,4 @@ SRCS = \
  
  OBJS = $(SRCS:.c=.o)
  

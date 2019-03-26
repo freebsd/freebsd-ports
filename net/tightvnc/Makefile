@@ -3,7 +3,7 @@
 
 PORTNAME=	tightvnc
 PORTVERSION=	1.3.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net java
 MASTER_SITES=	SF/vnc-tight/TightVNC-unix/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}_unixsrc
@@ -14,33 +14,26 @@ COMMENT=	Enhanced version of VNC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
+BROKEN_aarch64=	Fails to build: invokes x86 asm
+USES=		cpe imake jpeg shebangfix perl5 tar:bzip2
+USE_XORG=	ice sm x11 xaw xext xmu xt xpm
+
 RUN_DEPENDS=	showrgb:x11/rgb \
 		xauth:x11/xauth \
 		xorg-fonts>=7.2:x11-fonts/xorg-fonts
 
-BROKEN_aarch64=	Fails to build: invokes x86 asm
-
 MAKE_JOBS_UNSAFE=	yes
-CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]* tigervnc-*
+CONFLICTS=	tigervnc-*
 WRKSRC=		${WRKDIR}/vnc_unixsrc
-USES=		cpe imake jpeg shebangfix perl5 tar:bzip2
 SHEBANG_FILES=	vncserver
 CFLAGS+=	-Wno-return-type
-USE_XORG=	xaw
 ALL_TARGET=	World
 
 OPTIONS_DEFINE=	JVNC_VIEWER
+OPTIONS_SUB=	yes
 JVNC_VIEWER_DESC=	Install Java-based vnc viewer
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MJVNC_VIEWER}
-USE_JAVA=	yes
-JAVA_RUN=	yes
-PLIST_SUB+=	JVNC_VIEWER=""
-.else
-PLIST_SUB+=	JVNC_VIEWER="@comment "
-.endif
+JVNC_VIEWER_USE_JAVA=	yes
+JVNC_VIEWER_JAVA_RUN=	yes
 
 .ifdef(TIGHTVNC_BASE)
 PREFIX=${TIGHTVNC_BASE}
@@ -68,9 +61,9 @@ do-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${FILE}
 .endfor
 .endif
-.if ${PORT_OPTIONS:MJVNC_VIEWER}
+
+do-install-JVNC_VIEWER-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/classes
 	${INSTALL_DATA} ${WRKSRC}/classes/*.* ${STAGEDIR}${DATADIR}/classes
-.endif
 
 .include <bsd.port.post.mk>

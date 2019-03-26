@@ -1,6 +1,6 @@
---- Xvnc/programs/Xserver/os/access.c.orig	2000-06-11 21:00:51.000000000 +0900
-+++ Xvnc/programs/Xserver/os/access.c	2007-09-05 12:07:30.000000000 +0900
-@@ -634,7 +634,7 @@
+--- Xvnc/programs/Xserver/os/access.c.orig	2000-06-11 12:00:51 UTC
++++ Xvnc/programs/Xserver/os/access.c
+@@ -634,7 +634,7 @@ DefineSelf (fd)
  #endif
      ifc.ifc_len = sizeof (buf);
      ifc.ifc_buf = buf;

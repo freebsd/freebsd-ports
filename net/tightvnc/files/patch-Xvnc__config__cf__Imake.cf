@@ -1,6 +1,6 @@
---- Xvnc/config/cf/Imake.cf.orig	2006-12-23 21:07:55.000000000 +0900
-+++ Xvnc/config/cf/Imake.cf	2007-09-05 07:45:05.000000000 +0900
-@@ -206,6 +206,12 @@
+--- Xvnc/config/cf/Imake.cf.orig	2006-12-23 12:07:55 UTC
++++ Xvnc/config/cf/Imake.cf
+@@ -206,6 +206,12 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.66 2001/04/1
  #  define i386Architecture
  #  undef i386
  # endif

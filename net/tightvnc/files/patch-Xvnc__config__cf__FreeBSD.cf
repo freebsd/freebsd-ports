@@ -1,6 +1,6 @@
---- Xvnc/config/cf/FreeBSD.cf.orig	2000-06-11 21:00:51.000000000 +0900
-+++ Xvnc/config/cf/FreeBSD.cf	2009-03-09 08:18:00.000000000 +0900
-@@ -223,7 +223,9 @@ XCOMM operating system:  OSName (OSMajor
+--- Xvnc/config/cf/FreeBSD.cf.orig	2000-06-11 12:00:51 UTC
++++ Xvnc/config/cf/FreeBSD.cf
+@@ -223,7 +223,9 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  # define GccGasOption /**/
  #endif
  
@@ -10,7 +10,7 @@
  
  #define StandardDefines	-DCSRG_BASED
  
-@@ -253,11 +253,17 @@
+@@ -253,11 +255,17 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
  #endif
  
  #ifdef i386Architecture
@@ -30,7 +30,7 @@
  #ifndef PreIncDir
  # define PreIncDir	/usr/include
  #endif
-@@ -353,12 +359,15 @@
+@@ -353,12 +361,15 @@ install.man::                                         
  #define HasBsdMake	YES
  #endif
  

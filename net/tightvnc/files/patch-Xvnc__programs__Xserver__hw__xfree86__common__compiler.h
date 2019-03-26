@@ -1,6 +1,6 @@
---- Xvnc/programs/Xserver/hw/xfree86/common/compiler.h.orig	2015-12-23 13:48:48.097424000 +0800
-+++ Xvnc/programs/Xserver/hw/xfree86/common/compiler.h	2015-12-23 13:49:19.871472000 +0800
-@@ -371,7 +371,7 @@
+--- Xvnc/programs/Xserver/hw/xfree86/common/compiler.h.orig	2000-06-11 12:00:51 UTC
++++ Xvnc/programs/Xserver/hw/xfree86/common/compiler.h
+@@ -371,7 +371,7 @@ static __inline__ unsigned long ldw_u(unsigned short *
  #define mem_barrier()   /* NOP */
  #define write_mem_barrier()   /* NOP */
  

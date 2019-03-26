@@ -1,5 +1,5 @@
---- Xvnc/programs/Xserver/hw/vnc/sockets.c      Tue Mar 19 18:59:22 2002
-+++ Xvnc/programs/Xserver/hw/vnc/sockets.c      Fri Nov  1 18:03:02 2002
+--- Xvnc/programs/Xserver/hw/vnc/sockets.c.orig	2006-12-23 12:07:55 UTC
++++ Xvnc/programs/Xserver/hw/vnc/sockets.c
 @@ -38,6 +38,7 @@
   */
  

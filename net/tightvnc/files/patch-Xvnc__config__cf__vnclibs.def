@@ -1,5 +1,5 @@
---- Xvnc/config/cf/vnclibs.def.orig     Sat May  3 11:31:54 2003
-+++ Xvnc/config/cf/vnclibs.def  Tue Sep 26 21:48:43 2006
+--- Xvnc/config/cf/vnclibs.def.orig	2003-05-03 09:31:55 UTC
++++ Xvnc/config/cf/vnclibs.def
 @@ -5,13 +5,6 @@
   * and programs/Xserver/hw/vnc whenever you change this file.
   */

@@ -1,6 +1,6 @@
---- Xvnc/include/Xos.h.orig	Sat Jul 13 02:14:08 2002
-+++ Xvnc/include/Xos.h	Sat Jul 13 02:14:15 2002
-@@ -151,7 +151,6 @@
+--- Xvnc/include/Xos.h.orig	2000-06-11 12:00:51 UTC
++++ Xvnc/include/Xos.h
+@@ -151,7 +151,6 @@ extern int sys_nerr;
  #endif /* X_NOT_POSIX else */
  
  #ifdef CSRG_BASED

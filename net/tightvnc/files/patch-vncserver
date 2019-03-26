@@ -1,12 +1,11 @@
---- vncserver.orig      Thu Aug 10 13:01:07 2006
-+++ vncserver   Tue Sep 26 21:08:10 2006
-@@ -38,7 +38,7 @@
+--- vncserver.orig	2019-03-26 05:19:17 UTC
++++ vncserver
+@@ -34,7 +34,7 @@ $depth = 24;
  $desktopName = "X";
  $vncClasses = "/usr/local/vnc/classes";
  $vncUserDir = "$ENV{HOME}/.vnc";
 -$fontPath = "unix/:7100";
 +#$fontPath = "unix/:7100";
  $authType = "-rfbauth $vncUserDir/passwd";
-
- # Here is another example of setting the font path:
-
+ 
+ # Read configuration from the system-wide and user files if present.

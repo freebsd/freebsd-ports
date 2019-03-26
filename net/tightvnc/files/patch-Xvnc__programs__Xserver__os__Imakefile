@@ -1,6 +1,6 @@
---- Xvnc/programs/Xserver/os/Imakefile.orig	Sun Jun 11 21:00:52 2000
-+++ Xvnc/programs/Xserver/os/Imakefile	Fri Dec  6 02:53:22 2002
-@@ -135,7 +135,7 @@
+--- Xvnc/programs/Xserver/os/Imakefile.orig	2000-06-11 12:00:51 UTC
++++ Xvnc/programs/Xserver/os/Imakefile
+@@ -135,7 +135,7 @@ SpecialCObjectRule(xalloc,$(ICONFIGFILES),NullParamete
  #if defined(SparcArchitecture) && HasGcc && !HasGcc2
  oscolor.o: oscolor.c $(ICONFIGFILES)
  	$(RM) $@
