@@ -6,7 +6,7 @@ PORTVERSION=	9.0.1
 PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Popular high-performance JSON framework for .NET
 
 LICENSE=	MIT
