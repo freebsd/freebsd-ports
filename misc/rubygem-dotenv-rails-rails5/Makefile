@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dotenv-rails
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
