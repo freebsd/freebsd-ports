@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	2.2.13
+PORTVERSION=	2.2.14
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -22,10 +22,11 @@ BUILD_DEPENDS=	libassuan>=2.5.1:security/libassuan \
 		libgpg-error>=1.16:security/libgpg-error
 RUN_DEPENDS=	pinentry:security/pinentry
 
+USES=		compiler:c11 cpe gmake iconv pkgconfig readline sqlite tar:bzip2
+
 CONFLICTS=	gnupg-2.0.* dirmngr-[0-9]*
 CPE_VENDOR=	gnupg
 
-USES=		compiler:c11 cpe gmake iconv pkgconfig readline sqlite tar:bzip2
 CONFIGURE_ARGS=	--disable-ntbtls --disable-wks-tools \
 		--enable-gpg-is-gpg2 --enable-symcryptrun
 GNU_CONFIGURE=	yes
@@ -51,7 +52,6 @@ LARGE_RSA_CONFIGURE_ENABLE=	large-secmem
 LDAP_CONFIGURE_WITH=	ldap=${LOCALBASE}
 LDAP_LIBS=		-L${LOCALBASE}/lib
 LDAP_USE=		OPENLDAP=yes
-LDAP_USES=		readline
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
