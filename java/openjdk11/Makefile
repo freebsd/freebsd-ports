@@ -2,7 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}.${JDK_BUILD_NUMBER}.${BSD_JDK_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	https://github.com/battleblow/openjdk-jdk11u/archive/
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
@@ -38,7 +38,6 @@ MAKE_ENV=	LANG="C" \
 		CLASSPATH="" \
 		JAVA_HOME="" \
 		LD_LIBRARY_PATH="" \
-		LDFLAGS=-L${LOCALBASE}/lib \
 		CC=/usr/bin/cc \
 		CXX=/usr/bin/c++ \
 		MAKEFLAGS="" \
@@ -73,16 +72,14 @@ CONFIGURE_ARGS=	--with-boot-jdk=${BOOTSTRAPJDKDIR} \
 		--with-freetype-lib=${LOCALBASE}/lib \
 		--with-libjpeg=system \
 		--with-giflib=system \
+		--with-giflib-include=${LOCALBASE}/include \
+		--with-giflib-lib=${LOCALBASE}/lib \
 		--with-libpng=system \
 		--with-zlib=system \
 		--with-lcms=system \
-		--with-extra-cflags=-I${LOCALBASE}/include \
-		--with-extra-cxxflags=-I${LOCALBASE}/include \
-		--with-extra-ldflags=-L${LOCALBASE}/lib \
 		--with-toolchain-type=clang \
 		--x-includes=${LOCALBASE}/include \
 		--x-libraries=${LOCALBASE}/lib \
-		--with-package-path=${LOCALBASE} \
 		--with-cacerts-file=${FILESDIR}/cacerts \
 		--with-version-string=${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION} \
 		--with-native-debug-symbols=none \
@@ -124,7 +121,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${CHMOD} 755 ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		 ${WRKSRC}/configure
+		${WRKSRC}/configure \
+		${WRKSRC}/src/hotspot/os/bsd/os_bsd.cpp
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
