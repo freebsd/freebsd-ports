@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaf
-DISTVERSION=	3.0.7
+DISTVERSION=	3.0.8
 CATEGORIES=	www
 
 MAINTAINER=	joneum@freeBSD.org
@@ -10,8 +10,6 @@ COMMENT=	MVC framework written as a C PHP extension
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-IGNORE_WITH_PHP=	73
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
