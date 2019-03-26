@@ -23,7 +23,6 @@ include/igdgmm/GmmLib/inc/External/Common/GmmCommonExt.h
 include/igdgmm/GmmLib/inc/External/Common/GmmConst.h
 include/igdgmm/GmmLib/inc/External/Common/GmmDebug.h
 include/igdgmm/GmmLib/inc/External/Common/GmmFormatTable.h
-include/igdgmm/GmmLib/inc/External/Common/GmmGttExt.h
 include/igdgmm/GmmLib/inc/External/Common/GmmInfo.h
 include/igdgmm/GmmLib/inc/External/Common/GmmInfoExt.h
 include/igdgmm/GmmLib/inc/External/Common/GmmInternal.h
@@ -52,8 +51,7 @@ include/igdgmm/inc/umKmInc/UmKmEnum.h
 include/igdgmm/inc/umKmInc/sharedata.h
 include/igdgmm/util/g_gfxDebug.h
 include/igdgmm/util/gfxDebug.h
-lib/libgmm_umd.a
 lib/libigdgmm.so
-lib/libigdgmm.so.5
-lib/libigdgmm.so.5.0.0
+lib/libigdgmm.so.9
+lib/libigdgmm.so.9.0.0
 libdata/pkgconfig/igdgmm.pc
