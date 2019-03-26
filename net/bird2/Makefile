@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bird
-DISTVERSION=	2.0.3
+DISTVERSION=	2.0.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 PKGNAMESUFFIX=	2
