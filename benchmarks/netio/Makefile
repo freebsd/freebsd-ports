@@ -12,11 +12,14 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Network benchmark
 
 USES=		dos2unix gmake zip
-DOS2UNIX_FILES=	Makefile netio.c
 
+LICENSE_PERMS=no-pkg-mirror
+RESTRICTED=	Usage permitted for non-commercial purposes only
+NO_CDROM=	Sale for profit is not permitted
+
+DOS2UNIX_FILES=	Makefile netio.c
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/netio
-
 CFLAGS+=	-DUNIX -DSOCKLEN_T
 LIBS+=		-pthread
 MAKE_ENV=	OUT=-o
