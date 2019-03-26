@@ -1,14 +1,14 @@
---- netio.c.orig	2016-07-27 15:01:12 UTC
-+++ netio.c
-@@ -136,6 +136,7 @@ static char *rcsrev = "$Revision: 1.32 $
- #include <ctype.h>
+--- netio.c.orig	2019-03-26 20:22:31.238439000 +0100
++++ netio.c	2019-03-26 20:25:57.485700000 +0100
+@@ -142,6 +142,7 @@
  #include <signal.h>
+ #include <time.h>
  #if defined(UNIX) || defined(DJGPP)
 +#include <arpa/inet.h>
  #include <sys/time.h>
  #include <unistd.h>
  #include <errno.h>
-@@ -546,7 +547,7 @@ int send_data(int socket, void *buffer, 
+@@ -559,7 +560,7 @@
  
  int recv_data(int socket, void *buffer, size_t size, int flags)
  {
@@ -17,7 +17,7 @@
  
    if (rc < 0)
    {
-@@ -563,8 +564,13 @@ int recv_data(int socket, void *buffer, 
+@@ -576,8 +577,13 @@
  const int sobufsize = 131072;
  int nPort = DEFAULTPORT;
  int nAuxPort = DEFAULTPORT + 1;
@@ -31,7 +31,7 @@
  
  int udpsocket, udpd;
  unsigned long nUDPCount;
-@@ -577,7 +583,11 @@ THREAD TCP_Server(void *arg)
+@@ -590,7 +596,11 @@
    TIMER nTimer;
    long nTime;
    long long nData;
@@ -43,7 +43,7 @@
    int server, client;
    socklen_type length;
    struct timeval tv;
-@@ -591,7 +601,11 @@ THREAD TCP_Server(void *arg)
+@@ -605,7 +615,11 @@
      return THREADRESULT;
    }
  
@@ -55,9 +55,9 @@
    {
      psock_errno("socket()");
      free(cBuffer);
-@@ -601,9 +615,15 @@ THREAD TCP_Server(void *arg)
-   setsockopt(server, SOL_SOCKET, SO_RCVBUF, (char *) &sobufsize, sizeof(sobufsize));
+@@ -616,9 +630,15 @@
    setsockopt(server, SOL_SOCKET, SO_SNDBUF, (char *) &sobufsize, sizeof(sobufsize));
+   setsockopt(server, IPPROTO_TCP, TCP_NODELAY, (char *) &flag, sizeof(int));
  
 +#ifdef USE_IPV6
 +  sa_server.sin6_family = AF_INET6;
@@ -71,7 +71,7 @@
  
    if (bind(server, (struct sockaddr *) &sa_server, sizeof(sa_server)) < 0)
    {
-@@ -753,7 +773,11 @@ void TCP_Bench(void *arg)
+@@ -768,7 +788,11 @@
    long nTime;
    long long nData;
    int i;
@@ -83,7 +83,7 @@
    int server;
    int rc;
    int nByte;
-@@ -764,7 +788,11 @@ void TCP_Bench(void *arg)
+@@ -780,7 +804,11 @@
      return;
    }
  
@@ -95,9 +95,9 @@
    {
      psock_errno("socket()");
      free(cBuffer);
-@@ -774,21 +802,33 @@ void TCP_Bench(void *arg)
-   setsockopt(server, SOL_SOCKET, SO_RCVBUF, (char *) &sobufsize, sizeof(sobufsize));
+@@ -791,9 +819,15 @@
    setsockopt(server, SOL_SOCKET, SO_SNDBUF, (char *) &sobufsize, sizeof(sobufsize));
+   setsockopt(server, IPPROTO_TCP, TCP_NODELAY, (char *) &flag, sizeof(int));
  
 +#ifdef USE_IPV6
 +  sa_client.sin6_family = AF_INET6;
@@ -111,11 +111,8 @@
  
    if (bind(server, (struct sockaddr *) &sa_client, sizeof(sa_client)) < 0)
    {
-     psock_errno("bind()");
-     soclose(server);
-     free(cBuffer);
--    return THREADRESULT;
-+    return;
+@@ -803,9 +837,15 @@
+     return;
    }
  
 +#ifdef USE_IPV6
@@ -130,7 +127,7 @@
  
    if (connect(server, (struct sockaddr *) &sa_server, sizeof(sa_server)) < 0)
    {
-@@ -911,7 +951,11 @@ void TCP_Bench(void *arg)
+@@ -928,7 +968,11 @@
  THREAD UDP_Receiver(void *arg)
  {
    char *cBuffer;
@@ -142,7 +139,7 @@
    int rc;
    socklen_type nBytes;
  
-@@ -921,7 +965,11 @@ THREAD UDP_Receiver(void *arg)
+@@ -938,7 +982,11 @@
      return THREADRESULT;
    }
  
@@ -154,7 +151,7 @@
    {
      psock_errno("socket(DGRAM)");
      free(cBuffer);
-@@ -931,9 +979,15 @@ THREAD UDP_Receiver(void *arg)
+@@ -948,9 +996,15 @@
    setsockopt(udpsocket, SOL_SOCKET, SO_RCVBUF, (char *) &sobufsize, sizeof(sobufsize));
    setsockopt(udpsocket, SOL_SOCKET, SO_SNDBUF, (char *) &sobufsize, sizeof(sobufsize));
  
@@ -170,7 +167,7 @@
  
    if (bind(udpsocket, (struct sockaddr *) &sa_server, sizeof(sa_server)) < 0)
    {
-@@ -973,7 +1027,11 @@ THREAD UDP_Server(void *arg)
+@@ -990,7 +1044,11 @@
    TIMER nTimer;
    long nTime;
    long long nData;
@@ -182,7 +179,7 @@
    int server, client;
    struct timeval tv;
    fd_set fds;
-@@ -986,7 +1044,11 @@ THREAD UDP_Server(void *arg)
+@@ -1003,7 +1061,11 @@
      return THREADRESULT;
    }
  
@@ -194,7 +191,7 @@
    {
      psock_errno("socket(STREAM)");
      free(cBuffer);
-@@ -996,9 +1058,15 @@ THREAD UDP_Server(void *arg)
+@@ -1013,9 +1075,15 @@
    setsockopt(server, SOL_SOCKET, SO_RCVBUF, (char *) &sobufsize, sizeof(sobufsize));
    setsockopt(server, SOL_SOCKET, SO_SNDBUF, (char *) &sobufsize, sizeof(sobufsize));
  
@@ -210,7 +207,7 @@
  
    if (bind(server, (struct sockaddr *) &sa_server, sizeof(sa_server)) < 0)
    {
-@@ -1044,7 +1112,11 @@ THREAD UDP_Server(void *arg)
+@@ -1061,7 +1129,11 @@
      printf("UDP connection established ... ");
      fflush(stdout);
  
@@ -222,7 +219,7 @@
  
      for (;;)
      {
-@@ -1160,7 +1232,11 @@ void UDP_Bench(void *arg)
+@@ -1177,7 +1249,11 @@
    long nResult;
    long long nData;
    int i;
@@ -234,7 +231,7 @@
    int server;
    int rc, nByte;
  
-@@ -1170,7 +1246,11 @@ void UDP_Bench(void *arg)
+@@ -1187,7 +1263,11 @@
      return;
    }
  
@@ -246,7 +243,7 @@
    {
      psock_errno("socket()");
      free(cBuffer);
-@@ -1180,21 +1260,33 @@ void UDP_Bench(void *arg)
+@@ -1197,9 +1277,15 @@
    setsockopt(server, SOL_SOCKET, SO_RCVBUF, (char *) &sobufsize, sizeof(sobufsize));
    setsockopt(server, SOL_SOCKET, SO_SNDBUF, (char *) &sobufsize, sizeof(sobufsize));
  
@@ -256,17 +253,15 @@
 +  sa_client.sin6_addr = addr_local;
 +#else
    sa_client.sin_family = AF_INET;
-   sa_client.sin_port = htons(0);
+-  sa_client.sin_port = htons(0);
++  sa_client.sin_port = htons(0);  
    sa_client.sin_addr = addr_local;
 +#endif
  
    if (bind(server, (struct sockaddr *) &sa_client, sizeof(sa_client)) < 0)
    {
-     psock_errno("bind(STREAM)");
-     soclose(server);
-     free(cBuffer);
--    return THREADRESULT;
-+    return;
+@@ -1209,9 +1295,15 @@
+     return;
    }
  
 +#ifdef USE_IPV6
@@ -281,7 +276,7 @@
  
    if (connect(server, (struct sockaddr *) &sa_server, sizeof(sa_server)) < 0)
    {
-@@ -1425,17 +1517,29 @@ int main(int argc, char **argv)
+@@ -1442,17 +1534,29 @@
        return psock_errno("sock_init()"), 1;
  
      if (szLocal == 0)
@@ -311,7 +306,7 @@
        }
      }
  
-@@ -1445,13 +1549,21 @@ int main(int argc, char **argv)
+@@ -1462,13 +1566,21 @@
  	usage();
  
        if (isdigit(*argv[optind]))
