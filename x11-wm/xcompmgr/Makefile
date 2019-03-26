@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	xcompmgr
-PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTVERSION=	1.1.8
 CATEGORIES=	x11-wm
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Sample X compositing manager
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 XORG_CAT=	app
 USE_XORG=	x11 xcomposite xext xfixes xdamage xrender
