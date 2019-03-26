@@ -1,0 +1,77 @@
+--- make/lib/Awt2dLibraries.gmk
++++ make/lib/Awt2dLibraries.gmk
+@@ -364,7 +364,7 @@ endif
+ ################################################################################
+ 
+ # The fast floor code loses precision.
+-LCMS_CFLAGS=-DCMS_DONT_USE_FAST_FLOOR
++LCMS_CFLAGS+=-DCMS_DONT_USE_FAST_FLOOR
+ 
+ LCMS_CFLAGS_JDKLIB := $(filter-out -xc99=%none, $(CFLAGS_JDKLIB))
+ 
+@@ -417,7 +417,6 @@ $(BUILD_LIBLCMS): $(BUILD_LIBAWT)
+ # work because we have to declare all variables as volatile in result.
+ 
+ ifeq ($(USE_EXTERNAL_LIBJPEG), true)
+-  LIBJPEG_LIBS := -ljpeg
+   BUILD_LIBJAVAJPEG_INCLUDE_FILES := \
+       imageioJPEG.c \
+       jpegdecoder.c
+@@ -425,7 +424,6 @@ ifeq ($(USE_EXTERNAL_LIBJPEG), true)
+   # as includes, instead the system headers should be used.
+   LIBJPEG_HEADERS_FROM_SRC := false
+ else
+-  LIBJPEG_LIBS :=
+   BUILD_LIBJAVAJPEG_INCLUDE_FILES :=
+ endif
+ 
+@@ -433,12 +431,12 @@ $(eval $(call SetupJdkLibrary, BUILD_LIBJAVAJPEG, \
+     NAME := javajpeg, \
+     INCLUDE_FILES := $(BUILD_LIBJAVAJPEG_INCLUDE_FILES), \
+     OPTIMIZATION := HIGHEST, \
+-    CFLAGS := $(CFLAGS_JDKLIB), \
++    CFLAGS := $(CFLAGS_JDKLIB) $(JPEG_CFLAGS), \
+     HEADERS_FROM_SRC := $(LIBJPEG_HEADERS_FROM_SRC), \
+     DISABLED_WARNINGS_gcc := clobbered implicit-fallthrough shift-negative-value, \
+     LDFLAGS := $(LDFLAGS_JDKLIB) \
+         $(call SET_SHARED_LIBRARY_ORIGIN), \
+-    LIBS := $(LIBJPEG_LIBS) $(JDKLIB_LIBS), \
++    LIBS := $(JDKLIB_LIBS) $(JPEG_LIBS), \
+     LIBS_windows := $(WIN_JAVA_LIB) jvm.lib, \
+ ))
+ 
+@@ -766,7 +764,6 @@ ifeq ($(ENABLE_HEADLESS_ONLY), false)
+     LIBSPLASHSCREEN_HEADER_DIRS += libsplashscreen/giflib
+   else
+     LIBSPLASHSCREEN_EXCLUDES := giflib
+-    GIFLIB_LIBS := -lgif
+   endif
+ 
+   ifeq ($(USE_EXTERNAL_LIBJPEG), false)
+@@ -774,8 +771,6 @@ ifeq ($(ENABLE_HEADLESS_ONLY), false)
+     # additions to this library, and this was not done previously in the build.
+     # LIBSPLASHSCREEN_EXTRA_SRC += libjavajpeg
+     LIBSPLASHSCREEN_EXTRA_SRC += $(TOPDIR)/src/java.desktop/share/native/libjavajpeg
+-  else
+-    LIBJPEG_LIBS := -ljpeg
+   endif
+ 
+   ifeq ($(USE_EXTERNAL_LIBPNG), false)
+@@ -855,7 +850,7 @@ ifeq ($(ENABLE_HEADLESS_ONLY), false)
+       EXCLUDES := $(LIBSPLASHSCREEN_EXCLUDES), \
+       OPTIMIZATION := LOW, \
+       CFLAGS := $(CFLAGS_JDKLIB) $(LIBSPLASHSCREEN_CFLAGS) \
+-          $(GIFLIB_CFLAGS) $(LIBJPEG_CFLAGS) $(PNG_CFLAGS) $(LIBZ_CFLAGS), \
++          $(GIFLIB_CFLAGS) $(JPEG_CFLAGS) $(PNG_CFLAGS) $(LIBZ_CFLAGS), \
+       EXTRA_HEADER_DIRS := $(LIBSPLASHSCREEN_HEADER_DIRS), \
+       DISABLED_WARNINGS_gcc := sign-compare type-limits unused-result \
+           maybe-uninitialized shift-negative-value implicit-fallthrough, \
+@@ -869,7 +864,7 @@ ifeq ($(ENABLE_HEADLESS_ONLY), false)
+       LDFLAGS_windows := -delayload:user32.dll, \
+       LDFLAGS_bsd := $(ICONV_LDFLAGS), \
+       LIBS := $(JDKLIB_LIBS) $(LIBSPLASHSCREEN_LIBS) $(LIBZ_LIBS) \
+-          $(GIFLIB_LIBS) $(LIBJPEG_LIBS) $(PNG_LIBS), \
++          $(GIFLIB_LIBS) $(JPEG_LIBS) $(PNG_LIBS), \
+       LIBS_aix := -liconv, \
+   ))
+ 
