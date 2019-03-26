@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	netio
-PORTVERSION=	1.32
+PORTVERSION=	1.33
 CATEGORIES=	benchmarks net ipv6
-MASTER_SITES=	LOCAL/arved
-DISTNAME=	netio132
+MASTER_SITES=	http://www.ars.de/ \
+		LOCAL/arved
+DISTNAME=	netio133
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Network benchmark
