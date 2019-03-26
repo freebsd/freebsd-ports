@@ -2,7 +2,7 @@
 
 PORTNAME=	spotifyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.5
+DISTVERSION=	0.2.8
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -18,21 +18,27 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Spotifyd
 GH_TUPLE=	plietar:rust-alsa:8c63543fa0ccd971cf15f5675293d19febd6f79e:alsa \
 		plietar:dns-parser:1d3e5a5591bc72eb061c23bd426c4a25f2f73791:dnsparser \
-		librespot-org:librespot:daeeeaa122fc2d71edf11e562e23038db4210b39:librespot \
+		librespot-org:librespot:a41ab28540537e5f277fc9556bbcc16e08f065d5:librespot \
 		plietar:rust-mdns:66a74033da6c9f1a06e7b0a29f4544fd189d6479:mdns \
 		awmath:rust-crypto:394c247254dbe2ac5d44483232cf335d10cf0260:rustcrypto \
 		plietar:rust-tremor:5958cc302e78f535dad90e9665da981ddff4000a:tremor
 
 CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		adler32-1.0.3 \
-		aho-corasick-0.6.9 \
+		advapi32-sys-0.2.0 \
+		aes-0.3.2 \
+		aes-ctr-0.3.0 \
+		aes-soft-0.3.3 \
+		aesni-0.6.0 \
+		aho-corasick-0.6.10 \
 		alsa-0.2.1 \
 		alsa-sys-0.1.2 \
+		ansi_term-0.11.0 \
 		arc-swap-0.3.7 \
 		arrayvec-0.4.10 \
 		atty-0.2.11 \
 		autocfg-0.1.2 \
-		backtrace-0.3.13 \
+		backtrace-0.3.14 \
 		backtrace-sys-0.1.28 \
 		base64-0.10.1 \
 		base64-0.5.2 \
@@ -44,33 +50,43 @@ CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		bitflags-0.7.0 \
 		bitflags-0.9.1 \
 		bitflags-1.0.4 \
+		block-buffer-0.7.0 \
+		block-cipher-trait-0.6.2 \
+		block-modes-0.2.0 \
+		block-padding-0.1.3 \
+		build_const-0.2.1 \
+		byte-tools-0.3.1 \
 		byteorder-0.5.3 \
 		byteorder-1.3.1 \
-		bytes-0.4.11 \
+		bytes-0.4.12 \
 		c_linked_list-1.1.1 \
-		cc-1.0.28 \
-		cfg-if-0.1.6 \
+		cc-1.0.31 \
+		cfg-if-0.1.7 \
 		chrono-0.4.6 \
+		clap-2.32.0 \
 		cloudabi-0.0.3 \
 		core-foundation-0.5.1 \
 		core-foundation-sys-0.5.1 \
-		crc32fast-1.1.2 \
-		crossbeam-0.6.0 \
-		crossbeam-channel-0.3.6 \
-		crossbeam-deque-0.6.3 \
-		crossbeam-epoch-0.7.0 \
-		crossbeam-utils-0.6.3 \
-		ctrlc-3.1.1 \
+		crc-1.8.1 \
+		crc32fast-1.2.0 \
+		crossbeam-deque-0.7.1 \
+		crossbeam-epoch-0.7.1 \
+		crossbeam-queue-0.1.2 \
+		crossbeam-utils-0.6.5 \
+		crypto-mac-0.7.0 \
+		ctr-0.3.2 \
 		daemonize-0.3.0 \
+		dbus-0.2.3 \
 		dbus-0.6.4 \
 		dbus-tokio-0.2.1 \
 		derive-error-chain-0.10.1 \
 		derive_builder-0.5.1 \
 		derive_builder_core-0.2.0 \
+		digest-0.8.0 \
 		dotenv-0.10.1 \
 		dtoa-0.4.3 \
-		either-1.5.0 \
-		encoding_rs-0.8.14 \
+		either-1.5.1 \
+		encoding_rs-0.8.17 \
 		env_logger-0.4.3 \
 		env_logger-0.5.13 \
 		error-chain-0.10.0 \
@@ -78,52 +94,58 @@ CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		extprim-1.6.0 \
 		failure-0.1.5 \
 		failure_derive-0.1.5 \
+		fake-simd-0.1.2 \
+		flate2-1.0.7 \
 		fnv-1.0.6 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
-		fuchsia-cprng-0.1.0 \
+		fuchsia-cprng-0.1.1 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		futures-0.1.25 \
 		futures-cpupool-0.1.8 \
 		gcc-0.3.55 \
+		generic-array-0.12.0 \
 		get_if_addrs-0.5.3 \
 		get_if_addrs-sys-0.1.1 \
 		getopts-0.2.18 \
-		h2-0.1.16 \
+		h2-0.1.17 \
+		hex-0.3.2 \
+		hmac-0.7.0 \
 		hostname-0.1.5 \
-		http-0.1.15 \
+		http-0.1.16 \
 		httparse-1.3.3 \
 		humantime-1.2.0 \
 		hyper-0.11.27 \
-		hyper-0.12.23 \
+		hyper-0.12.25 \
 		hyper-proxy-0.4.1 \
-		hyper-tls-0.3.1 \
+		hyper-tls-0.3.2 \
 		idna-0.1.5 \
 		indexmap-1.0.2 \
 		iovec-0.1.2 \
 		itertools-0.7.11 \
-		itoa-0.3.4 \
 		itoa-0.4.3 \
 		kernel32-sys-0.2.2 \
+		keyring-0.6.1 \
 		language-tags-0.2.2 \
 		lazy_static-0.2.11 \
-		lazy_static-1.2.0 \
+		lazy_static-1.3.0 \
 		lazycell-1.2.1 \
-		lewton-0.9.3 \
-		libc-0.2.49 \
+		lewton-0.9.4 \
+		libc-0.2.50 \
 		libdbus-sys-0.1.5 \
-		libflate-0.1.19 \
 		libpulse-sys-0.0.0 \
 		linear-map-1.2.0 \
 		lock_api-0.1.5 \
 		log-0.3.9 \
 		log-0.4.6 \
 		matches-0.1.8 \
-		memchr-2.1.3 \
+		memchr-2.2.0 \
 		memoffset-0.2.1 \
 		mime-0.3.13 \
 		mime_guess-2.0.0-alpha.6 \
+		miniz_oxide-0.2.1 \
+		miniz_oxide_c_api-0.2.1 \
 		mio-0.6.16 \
 		mio-named-pipes-0.1.6 \
 		mio-uds-0.6.7 \
@@ -135,19 +157,25 @@ CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		nix-0.11.0 \
 		nix-0.9.0 \
 		nodrop-0.1.13 \
+		num-0.1.42 \
 		num-bigint-0.1.44 \
+		num-complex-0.1.43 \
 		num-integer-0.1.39 \
+		num-iter-0.1.37 \
+		num-rational-0.1.42 \
 		num-traits-0.1.43 \
 		num-traits-0.2.6 \
-		num_cpus-1.9.0 \
+		num_cpus-1.10.0 \
 		ogg-0.7.0 \
 		ogg-sys-0.0.9 \
-		openssl-0.10.16 \
+		opaque-debug-0.2.2 \
+		openssl-0.10.20 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.40 \
+		openssl-sys-0.9.43 \
 		owning_ref-0.4.0 \
 		parking_lot-0.7.1 \
 		parking_lot_core-0.4.0 \
+		pbkdf2-0.3.0 \
 		percent-encoding-1.0.1 \
 		phf-0.7.24 \
 		phf_codegen-0.7.24 \
@@ -156,12 +184,11 @@ CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		pkg-config-0.3.14 \
 		portaudio-rs-0.3.0 \
 		portaudio-sys-0.1.1 \
-		proc-macro2-0.4.26 \
+		proc-macro2-0.4.27 \
 		protobuf-1.7.4 \
-		protobuf-2.2.5 \
-		protobuf-codegen-2.2.5 \
-		protoc-2.2.5 \
-		protoc-rust-2.2.5 \
+		protobuf-2.4.0 \
+		protobuf-codegen-2.4.0 \
+		protobuf-codegen-pure-2.4.0 \
 		quick-error-1.2.2 \
 		quote-0.3.15 \
 		quote-0.6.11 \
@@ -174,108 +201,114 @@ CARGO_CRATES=	MacTypes-sys-2.1.0 \
 		rand_core-0.4.0 \
 		rand_hc-0.1.0 \
 		rand_isaac-0.1.1 \
-		rand_jitter-0.1.0 \
-		rand_os-0.1.1 \
-		rand_pcg-0.1.1 \
+		rand_jitter-0.1.3 \
+		rand_os-0.1.3 \
+		rand_pcg-0.1.2 \
 		rand_xorshift-0.1.1 \
 		random-0.12.2 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.51 \
 		redox_termios-0.1.1 \
 		regex-0.2.11 \
-		regex-1.1.0 \
+		regex-1.1.2 \
 		regex-syntax-0.5.6 \
 		regex-syntax-0.6.5 \
 		relay-0.1.1 \
 		remove_dir_all-0.5.1 \
-		reqwest-0.9.9 \
+		reqwest-0.9.12 \
 		rpassword-0.3.1 \
+		rpassword-2.1.0 \
 		rspotify-0.2.5 \
 		rust-crypto-0.2.36 \
-		rust-ini-0.10.3 \
+		rust-gmp-0.3.2 \
+		rust-ini-0.13.0 \
 		rustc-demangle-0.1.13 \
 		rustc-serialize-0.3.24 \
 		rustc_version-0.2.3 \
 		ryu-0.2.7 \
 		safemem-0.2.0 \
 		safemem-0.3.0 \
-		schannel-0.1.14 \
+		schannel-0.1.15 \
 		scoped-tls-0.1.2 \
 		scopeguard-0.3.3 \
+		secret-service-0.4.0 \
 		security-framework-0.2.2 \
 		security-framework-sys-0.2.3 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-0.9.15 \
-		serde-1.0.85 \
-		serde_codegen_internals-0.14.2 \
-		serde_derive-0.9.15 \
-		serde_derive-1.0.85 \
-		serde_json-0.9.10 \
-		serde_json-1.0.37 \
+		serde-1.0.89 \
+		serde_derive-1.0.89 \
+		serde_json-1.0.39 \
 		serde_urlencoded-0.5.4 \
+		sha-1-0.8.1 \
+		sha2-0.8.0 \
 		shannon-0.2.0 \
-		signal-hook-0.1.7 \
+		signal-hook-0.1.8 \
 		simplelog-0.4.4 \
 		siphasher-0.2.3 \
 		slab-0.3.0 \
 		slab-0.4.2 \
 		smallvec-0.2.1 \
-		smallvec-0.6.8 \
+		smallvec-0.6.9 \
 		socket2-0.2.4 \
 		socket2-0.3.8 \
 		stable_deref_trait-1.1.1 \
+		stream-cipher-0.3.0 \
 		string-0.1.3 \
+		strsim-0.7.0 \
+		subtle-1.0.0 \
 		syn-0.11.11 \
-		syn-0.15.26 \
+		syn-0.15.29 \
 		synom-0.11.3 \
 		synstructure-0.10.1 \
-		syslog-3.3.0 \
+		syslog-4.0.1 \
 		take-0.1.0 \
 		tempfile-2.2.0 \
-		tempfile-3.0.5 \
+		tempfile-3.0.7 \
 		term-0.4.6 \
 		termcolor-1.0.4 \
 		termion-1.5.1 \
 		termios-0.2.2 \
+		textwrap-0.10.0 \
 		thread_local-0.3.6 \
 		time-0.1.42 \
-		tokio-0.1.15 \
+		tokio-0.1.18 \
 		tokio-codec-0.1.1 \
 		tokio-core-0.1.17 \
-		tokio-current-thread-0.1.4 \
-		tokio-executor-0.1.6 \
-		tokio-fs-0.1.5 \
-		tokio-io-0.1.11 \
+		tokio-current-thread-0.1.6 \
+		tokio-executor-0.1.7 \
+		tokio-fs-0.1.6 \
+		tokio-io-0.1.12 \
 		tokio-process-0.2.3 \
 		tokio-proto-0.1.1 \
-		tokio-reactor-0.1.8 \
+		tokio-reactor-0.1.9 \
 		tokio-service-0.1.0 \
 		tokio-signal-0.1.5 \
-		tokio-signal-0.2.7 \
-		tokio-sync-0.1.0 \
+		tokio-signal-0.2.8 \
+		tokio-sync-0.1.4 \
 		tokio-tcp-0.1.3 \
-		tokio-threadpool-0.1.11 \
-		tokio-timer-0.2.9 \
+		tokio-threadpool-0.1.13 \
+		tokio-timer-0.2.10 \
+		tokio-trace-core-0.1.0 \
 		tokio-udp-0.1.3 \
 		tokio-uds-0.2.5 \
 		try-lock-0.1.0 \
 		try-lock-0.2.2 \
+		typenum-1.10.0 \
 		ucd-util-0.1.3 \
 		unicase-1.4.2 \
-		unicase-2.2.0 \
+		unicase-2.3.0 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.8 \
 		unicode-width-0.1.5 \
 		unicode-xid-0.0.4 \
 		unicode-xid-0.1.0 \
-		unix_socket-0.5.0 \
-		unreachable-1.0.0 \
 		url-1.7.2 \
 		utf8-ranges-1.0.2 \
 		uuid-0.4.0 \
-		uuid-0.7.1 \
+		uuid-0.7.2 \
 		vcpkg-0.2.6 \
+		vec_map-0.8.1 \
 		vergen-0.1.1 \
 		version_check-0.1.5 \
 		void-1.0.2 \
