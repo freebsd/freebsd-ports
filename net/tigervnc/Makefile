@@ -59,7 +59,7 @@ VIEWER_USE=	xorg=xcursor,xfixes,xft,xinerama
 NLS_CMAKE_BOOL=	ENABLE_NLS
 NLS_USES=	gettext
 
-CMAKE_ARGS+=	-G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=${STAGE}${PREFIX}
+CMAKE_ARGS+=	-G "Unix Makefiles"
 MAKE_ARGS+=	TIGERVNC_SRCDIR=${WRKSRC}
 CONFIGURE_ARGS+=	\
 		--prefix=${PREFIX} --mandir=${PREFIX}/man/ \
