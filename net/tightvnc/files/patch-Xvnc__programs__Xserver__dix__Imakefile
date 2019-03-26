@@ -1,6 +1,6 @@
---- Xvnc/programs/Xserver/dix/Imakefile.orig	Fri Mar 29 05:30:51 2002
-+++ Xvnc/programs/Xserver/dix/Imakefile	Fri Mar 29 05:32:27 2002
-@@ -36,15 +36,11 @@
+--- Xvnc/programs/Xserver/dix/Imakefile.orig	2009-03-05 06:38:33 UTC
++++ Xvnc/programs/Xserver/dix/Imakefile
+@@ -43,15 +43,11 @@ OBJS = atom.o colormap.o cursor.o devices.o dispatch.o
   * changed.
   */
  
