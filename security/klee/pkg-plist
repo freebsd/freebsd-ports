@@ -1,3 +1,4 @@
+bin/gen-bout
 bin/gen-random-bout
 bin/kleaver
 bin/klee

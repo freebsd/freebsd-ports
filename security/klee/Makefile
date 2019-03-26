@@ -2,8 +2,7 @@
 
 PORTNAME=	klee
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0-191
-DISTVERSIONSUFFIX=	-g79ac709
+DISTVERSION=	2.0
 CATEGORIES=	security devel
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -12,10 +11,10 @@ COMMENT=	Symbolic virtual machine built on top of LLVM
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION} \
+BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		gmake:devel/gmake
-
-LLVM_VERSION=	38 # the latest llvm version that the master branch (79ac709) currently supports
+# Should be a LIB_DEPEND, but hard to express in a generic manner
+RUN_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 
 USES=		cmake localbase pkgconfig python:run shebangfix
 USE_GITHUB=	yes
@@ -23,7 +22,7 @@ SHEBANG_FILES=	tools/klee-stats/klee-stats tools/ktest-tool/ktest-tool
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	ENABLE_POSIX_RUNTIME ENABLE_UNIT_TESTS ENABLE_SYSTEM_TESTS
-CMAKE_ARGS=	-DLLVM_CONFIG_BINARY=${LOCALBASE}/bin/llvm-config${LLVM_VERSION} \
+CMAKE_ARGS=	-DLLVM_CONFIG_BINARY=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT} \
 		-DMAKE_BINARY=${LOCALBASE}/bin/gmake
 
 OPTIONS_DEFINE=		TCMALLOC
