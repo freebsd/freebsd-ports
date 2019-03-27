@@ -107,6 +107,7 @@
     SUBDIR += o2sms
     SUBDIR += obexapp
     SUBDIR += openobex
+    SUBDIR += openzwave
     SUBDIR += owfs
     SUBDIR += p5-Cisco-UCS
     SUBDIR += p5-Device-Gsm
