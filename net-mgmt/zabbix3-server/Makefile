@@ -67,7 +67,6 @@ OPTIONS_DEFINE=		IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP LIBXML2
 OPTIONS_DEFAULT=	FPING CURL UNIXODBC MYSQL OPENSSL
 OPTIONS_SUB=		yes
 
-CURL_DESC=		Support for web monitoring
 FPING_DESC=		Build/install fping for ping checks
 IPMI_DESC=		Support for IPMI checks
 JABBER_DESC=		Support for Jabber media type
@@ -93,9 +92,6 @@ SQLITE_USES+=		sqlite:3
 
 ORACLE_CONFIGURE_WITH=	oracle
 
-CURL_CONFIGURE_WITH=	libcurl
-CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
 
@@ -119,6 +115,10 @@ UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 OPTIONS_SINGLE=	SSL
 OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
 .endif # if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
+
+CURL_DESC=		Support for web monitoring
+CURL_CONFIGURE_WITH=	libcurl
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
