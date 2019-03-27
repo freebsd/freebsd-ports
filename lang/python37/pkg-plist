@@ -2135,8 +2135,8 @@ lib/python%%XYDOT%%/ensurepip/__pycache__/__main__.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-18.1-py2.py3-none-any.whl
-lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-40.6.2-py2.py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/pip-19.0.3-py2.py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-40.8.0-py2.py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
 lib/python%%XYDOT%%/enum.py
 lib/python%%XYDOT%%/filecmp.py
@@ -3450,9 +3450,9 @@ lib/python%%XYDOT%%/test/__pycache__/bad_getattr2.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/bad_getattr3.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/bad_getattr3.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/bad_getattr3.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/test/__pycache__/bisect.cpython-%%XY%%.opt-1.pyc
-lib/python%%XYDOT%%/test/__pycache__/bisect.cpython-%%XY%%.opt-2.pyc
-lib/python%%XYDOT%%/test/__pycache__/bisect.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/bisect_cmd.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/bisect_cmd.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/bisect_cmd.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/bytecode_helper.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/bytecode_helper.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/bytecode_helper.cpython-%%XY%%.pyc
@@ -4891,7 +4891,7 @@ lib/python%%XYDOT%%/test/badsyntax_future7.py
 lib/python%%XYDOT%%/test/badsyntax_future8.py
 lib/python%%XYDOT%%/test/badsyntax_future9.py
 lib/python%%XYDOT%%/test/badsyntax_pep3120.py
-lib/python%%XYDOT%%/test/bisect.py
+lib/python%%XYDOT%%/test/bisect_cmd.py
 lib/python%%XYDOT%%/test/bytecode_helper.py
 lib/python%%XYDOT%%/test/capath/4e1295a3.0
 lib/python%%XYDOT%%/test/capath/5ed36f99.0
@@ -4932,6 +4932,7 @@ lib/python%%XYDOT%%/test/cjkencodings/shift_jis-utf8.txt
 lib/python%%XYDOT%%/test/cjkencodings/shift_jis.txt
 lib/python%%XYDOT%%/test/cjkencodings/shift_jisx0213-utf8.txt
 lib/python%%XYDOT%%/test/cjkencodings/shift_jisx0213.txt
+lib/python%%XYDOT%%/test/clinic.test
 lib/python%%XYDOT%%/test/cmath_testcases.txt
 lib/python%%XYDOT%%/test/coding20731.py
 lib/python%%XYDOT%%/test/curses_tests.py
@@ -5293,6 +5294,7 @@ lib/python%%XYDOT%%/test/support/__pycache__/testresult.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/support/__pycache__/testresult.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/support/script_helper.py
 lib/python%%XYDOT%%/test/support/testresult.py
+lib/python%%XYDOT%%/test/talos-2019-0758.pem
 lib/python%%XYDOT%%/test/test___all__.py
 lib/python%%XYDOT%%/test/test___future__.py
 lib/python%%XYDOT%%/test/test__locale.py
