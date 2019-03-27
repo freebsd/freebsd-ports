@@ -12067,6 +12067,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Field/FieldMissingTypeTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Field/FieldSettingsTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/DirectoryTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileCreateFilenameTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileTestBase.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/HtaccessTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/MimeTypeTest.php
