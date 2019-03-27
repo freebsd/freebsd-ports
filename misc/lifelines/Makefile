@@ -4,15 +4,16 @@
 PORTNAME=	lifelines
 PORTVERSION=	3.1.1
 CATEGORIES=	misc
-MASTER_SITES=   https://github.com/MarcNo/lifelines/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/MarcNo/lifelines/releases/download/${PORTVERSION}/
 
 MAINTAINER=	matt@gsicomp.on.ca
 COMMENT=	Advanced genealogical system
 
 LICENSE=	MIT
 
-GNU_CONFIGURE=	yes
 USES=		autoreconf bison gmake iconv ncurses
+
+GNU_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -35,16 +36,14 @@ BUILDDOCS_BUILD_DEPENDS=	xmlto:textproc/xmlto \
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-.include <bsd.port.options.mk>
-
 pre-patch:
 	@${REINPLACE_CMD} -e 's,ncursesw/curses.h,curses.h,' \
 		${WRKSRC}/src/hdrs/mycurses.h
-.if ! ${PORT_OPTIONS:MDOCS}
+
+pre-patch-DOCS-off:
 	@${REINPLACE_CMD} -e 's,^doc_DATA.*,doc_DATA = .linesrc lines.cfg,' \
 	${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's,^doc_DATA.*,doc_DATA=,' \
 	${WRKSRC}/docs/manual/Makefile.am
-.endif
 
 .include <bsd.port.mk>
