@@ -4,6 +4,7 @@
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -40,7 +41,7 @@ NLS_CMAKE_BOOL=	ENABLE_LIBINTL
 NLS_USES=	gettext
 PYNVIM_DESC=	Enable support for plugins written in python
 PYNVIM_USES=	python:run
-PYNVIM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pynvim>=0.3.0:editors/py-pynvim
+PYNVIM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pynvim>=0.3.0:editors/py-pynvim@${PY_FLAVOR}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
