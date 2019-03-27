@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-version-bump
-PORTVERSION=	0.15.1
+PORTVERSION=	0.16.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +10,12 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manage your app version entirely via git tags
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 PLIST_FILES=	bin/git-version-bump
 
