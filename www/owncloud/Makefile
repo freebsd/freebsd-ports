@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	10.1.0
-PORTREVISION=	1
+PORTVERSION=	10.1.1
 CATEGORIES=	www
 MASTER_SITES=	https://download.owncloud.org/community/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
