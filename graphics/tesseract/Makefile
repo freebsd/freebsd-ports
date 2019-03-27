@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tesseract
-PORTVERSION=	3.05.02
-PORTREVISION=	5
+PORTVERSION=	4.0.0
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@anongoth.pl
@@ -14,7 +13,8 @@ LICENSE=	APACHE20
 LIB_DEPENDS=	liblept.so:graphics/leptonica
 RUN_DEPENDS=	tesseract-data>=0:graphics/tesseract-data
 
-USES=		autoreconf compiler:c++11-lang localbase libtool pathfix pkgconfig
+USES=		autoreconf compiler:c++11-lang gnome localbase libtool pathfix \
+		pkgconfig shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -26,10 +26,11 @@ CONFIGURE_ENV=	LIBLEPT_HEADERSDIR="${LOCALBASE}/include/leptonica"
 DATADIR=	${PREFIX}/share/tessdata
 PORTDATA=	*
 PORTDOCS=	AUTHORS ChangeLog README.md
-PORTEXAMPLES=	eurotext.tif phototest.tif
 INSTALL_TARGET=	install-strip
+SHEBANG_FILES=	src/training/language-specific.sh \
+		src/training/tesstrain.sh
 
-OPTIONS_DEFINE=	DOCS EXAMPLES TOOLS
+OPTIONS_DEFINE=	DOCS TOOLS
 OPTIONS_DEFAULT=TOOLS
 OPTIONS_SUB=	yes
 TOOLS_DESC=	Include training tools
@@ -47,11 +48,6 @@ post-build-TOOLS-on:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} testing/eurotext.tif \
-		testing/phototest.tif ${STAGEDIR}${EXAMPLESDIR}
 
 post-install-TOOLS-on:
 	@cd ${WRKSRC} && ${MAKE} DESTDIR=${STAGEDIR} training-install
