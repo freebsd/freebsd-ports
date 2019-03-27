@@ -3,6 +3,7 @@
 
 PORTNAME=	lifelines
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/MarcNo/lifelines/releases/download/${PORTVERSION}/
 
