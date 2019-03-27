@@ -2,6 +2,8 @@
 
 .include "${.CURDIR}/Makefile.common"
 
+PORTREVISION=	1
+
 MASTER_SITES=	https://download.documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
 		https://dev-www.libreoffice.org/src/:src \
 		https://dev-www.libreoffice.org/extern/:ext
@@ -115,15 +117,17 @@ USES=		autoreconf:build bison compiler:c++14-lang cpe gmake jpeg \
 		mysql:client \
 		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz
 
-OPTIONS_DEFINE=	CUPS DOCS GNOME GTK2 GTK3 JAVA MMEDIA PGSQL SDK SYSTRAY \
-		TEST WEBDAV
+OPTIONS_DEFINE=	CUPS DOCS GNOME GTK2 GTK3 JAVA KDE5 MMEDIA PGSQL QT5 SDK \
+		SYSTRAY TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS GTK2 MMEDIA
 
 GTK2_DESC=	GTK+ 2 GUI toolkit support
 GTK3_DESC=	GTK+ 3 GUI toolkit support (experimental)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
+KDE5_DESC=	KF5/Qt5 GUI toolkit support (require QT5)
 MMEDIA_DESC=	Enable multimedia backend for Impress
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
+QT5_DESC=	Qt5 GUI toolkit support
 SDK_DESC=	Build with SDK
 SYSTRAY_DESC=	Enable systemtray quickstarter
 TEST_DESC=	Run all regression tests
@@ -193,12 +197,21 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 JAVA_USE=	JAVA=yes
 JAVA_VARS=	JAVA_BUILD=yes
 
+KDE5_CONFIGURE_ENABLE=	kde5
+KDE5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
+KDE5_USES=	kde:5
+KDE5_IMPLIES=	QT5
+
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 MMEDIA_USE=	GSTREAMER1=yes
 
 PGSQL_CONFIGURE_ENABLE=	postgresql-sdbc
 PGSQL_CONFIGURE_WITH=	gssapi krb5
 PGSQL_USES=	pgsql
+
+QT5_CONFIGURE_ENABLE=	qt5
+QT5_USE=	qt=buildtools_build,core,gui,network,qmake_build,widgets,x11extras
+QT5_USES=	qt:5
 
 SDK_BUILD_DEPENDS=	doxygen:devel/doxygen
 SDK_CONFIGURE_ENABLE=	odk
@@ -264,7 +277,8 @@ CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		OPENCOLLADA_CFLAGS="${COLLADA_CFLAGS}" \
 		OPENCOLLADA_LIBS="${COLLADA_LIBS}" \
 		PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
-		PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`"
+		PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`" \
+		ac_cv_path_SED=${LOCALBASE}/bin/gsed
 
 MAKE_ARGS+=	TMPDIR=${WRKDIR}
 MAKE_ENV+=	CXXFLAGS_WARN="${CXXFLAGS_WARN}"
@@ -311,6 +325,9 @@ post-install-SDK-on:
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s ${subdir}/libreoffice -not -type d >> ${TMPPLIST}
 .endfor
+
+post-install-GTK3-on:
+	@${ECHO_CMD} "share/gir-1.0/LOKDocView-0.1.gir" >> ${TMPPLIST}
 
 add-plist-gnome:
 .for subdir in gnome hicolor locolor
