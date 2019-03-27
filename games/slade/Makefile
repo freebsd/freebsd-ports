@@ -11,6 +11,8 @@ COMMENT=	Modern editor for Doom-engine based games and source ports
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libsfml-system.so:devel/sfml \
 		libftgl.so:graphics/ftgl \
