@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	icu
-DISTVERSION=	63_1
-PORTREVISION?=	1 # keep for icu-lx
+DISTVERSION=	64_1
+PORTREVISION?=	0 # keep for icu-lx
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	https://github.com/unicode-org/${PORTNAME}/releases/download/release-${DISTVERSION:S/rc/-&/:S/_/-/g}/ \
@@ -27,7 +27,7 @@ CONFIGURE_ARGS+=--with-data-packaging=archive \
 CPPFLAGS+=	-DICU_NO_USER_DATA_OVERRIDE
 MAKE_ARGS=	VERBOSE=1
 TEST_TARGET=	check
-USES+=		compiler:c++11-lib gmake pathfix tar:tgz
+USES+=		compiler:c++11-lib gmake pathfix python:build tar:tgz
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/icu/source
 

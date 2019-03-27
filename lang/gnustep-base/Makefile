@@ -4,7 +4,7 @@
 PORTNAME=	gnustep-base
 DISTVERSIONPREFIX=	base-
 DISTVERSION=	1_26_0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel gnustep
 
 MAINTAINER=	theraven@FreeBSD.org
