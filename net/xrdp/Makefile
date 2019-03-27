@@ -60,6 +60,16 @@ MP3LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 OPUS_CONFIGURE_ENABLE=	opus
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+# As base OpenSSL doesn't install a .pc file, some flags such as -lcrypto
+# cannot be obtained automatically via pkgconfig. When compiled with base
+# OpenSSL, it needs to be specified explicitly.
+CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
+.endif
+
 post-extract:
 	# librfxcodec is provided as git submodule
 	@${CP} -r ${WRKSRC_librfxcodec}/ ${WRKSRC}/librfxcodec/
@@ -79,4 +89,4 @@ post-stage:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/xrdp/$f ${STAGEDIR}${PREFIX}/etc/xrdp/$f.sample
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
