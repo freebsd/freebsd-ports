@@ -1,0 +1,41 @@
+--- scribus/plugins/import/pdf/importpdf.cpp.orig	2019-03-22 09:47:14.760191871 +0000
++++ scribus/plugins/import/pdf/importpdf.cpp	2019-03-22 09:47:37.363809447 +0000
+@@ -535,7 +535,7 @@
+ 									if (orderItem.isDict())
+ 									{
+ #if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(0, 58, 0)
+-										Object ref = order->getNF(i);		
++										Object ref = order->getNF(i).copy();		
+ #else
+ 										Object ref;
+ 										order->getNF(i, &ref);
+--- scribus/plugins/import/pdf/slaoutput.cpp.orig	2019-03-22 10:02:43.145371895 +0000
++++ scribus/plugins/import/pdf/slaoutput.cpp	2019-03-22 10:07:03.085386627 +0000
+@@ -310,7 +310,7 @@
+ 	if (obj.isDict())
+ 	{
+ 		Dict* adic = obj.getDict();
+-		additionalActions = adic->lookupNF("A");
++		additionalActions = adic->lookupNF("A").copy();
+ 		Object additionalActionsObject = additionalActions.fetch(pdfDoc->getXRef());
+ 		if (additionalActionsObject.isDict())
+ 		{
+@@ -370,7 +370,7 @@
+ 	if (obj.isDict())
+ 	{
+ 		Dict* adic = obj.getDict();
+-		additionalActions = adic->lookupNF("AA");
++		additionalActions = adic->lookupNF("AA").copy();
+ 		Object additionalActionsObject = additionalActions.fetch(pdfDoc->getXRef());
+ 		if (additionalActionsObject.isDict())
+ 		{
+@@ -939,7 +939,7 @@
+ 				QList<int> radList;
+ 				for (int i = 0; i < obj2.arrayGetLength(); i++)
+ 				{
+-					Object childRef = obj2.arrayGetNF(i);
++					Object childRef = obj2.arrayGetNF(i).copy();
+ 					if (!childRef.isRef())
+ 						continue;
+ 					Object childObj = obj2.arrayGet(i);
+

@@ -1,3 +1,4 @@
+bin/pdfattach
 bin/pdfdetach
 bin/pdffonts
 bin/pdfimages
@@ -10,6 +11,7 @@ bin/pdftoppm
 bin/pdftops
 bin/pdftotext
 bin/pdfunite
+man/man1/pdfattach.1.gz
 man/man1/pdfdetach.1.gz
 man/man1/pdffonts.1.gz
 man/man1/pdfimages.1.gz
