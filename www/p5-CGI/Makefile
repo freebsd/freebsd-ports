@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	CGI
-PORTVERSION=	4.40
+PORTVERSION=	4.42
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Handle Common Gateway Interface requests and responses
 
-LICENSE=	ART20 GPLv1
-LICENSE_COMB=	dual
+LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-HTML-Parser>=3.69:www/p5-HTML-Parser
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Parser>=3.69:www/p5-HTML-Parser
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings \
@@ -23,9 +23,10 @@ CONFLICTS_INSTALL=	p5-CGI.pm-[1-3]*
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 PORTEXAMPLES=	*
 
