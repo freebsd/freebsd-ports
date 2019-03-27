@@ -82,12 +82,14 @@
  	return pfkey_send_add2(&psaa);
 --- src/racoon/isakmp_quick.c
 +++ src/racoon/isakmp_quick.c
-@@ -2390,6 +2390,32 @@ get_proposal_r(iph2)
+@@ -2390,6 +2390,34 @@
  			     spidx.src.ss_family, spidx.dst.ss_family,
  			     _XIDT(iph2->id_p),idi2type);
  		}
 +#ifdef ENABLE_NATT
-+		if (iph2->ph1->natt_flags & NAT_DETECTED_PEER) {
++		if (iph2->ph1->natt_flags & NAT_DETECTED_PEER
++		    && _XIDT(iph2->id) != IPSECDOI_ID_IPV4_ADDR_SUBNET
++		    && _XIDT(iph2->id) != IPSECDOI_ID_IPV6_ADDR_SUBNET) {
 +			u_int16_t port;
 +
 +			port = extract_port(&spidx.src);
