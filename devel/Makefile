@@ -4454,6 +4454,7 @@
     SUBDIR += py-certsrv
     SUBDIR += py-cffi
     SUBDIR += py-cfgparse
+    SUBDIR += py-cftime
     SUBDIR += py-chainmap
     SUBDIR += py-characteristic
     SUBDIR += py-check-manifest
