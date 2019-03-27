@@ -3,7 +3,7 @@
 
 PORTNAME=	rust
 PORTVERSION?=	1.33.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		LOCAL/dumbbell/rust:rust_bootstrap \
