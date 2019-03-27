@@ -29,6 +29,11 @@ CFLAGS_armv6=	-no-integrated-as -B${LOCALBASE}/bin
 CFLAGS_armv7=	-no-integrated-as -B${LOCALBASE}/bin
 LDFLAGS_i386=	-Wl,-z,notext
 
+# https://bugs.llvm.org/show_bug.cgi?id=40635
+CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}_${ARCH}}
+CFLAGS_clang_amd64=	-fno-lto
+CFLAGS_clang_i386=	-fno-lto
+
 OPTIONS_DEFINE=	TEST
 
 TEST_GL_TUPLE=	videolan:dav1d-test-data:3ccdd3df4fb8583d58bcc0101e315b00ec3ae130:testdata/tests/dav1d-test-data
