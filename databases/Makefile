@@ -23,6 +23,7 @@
     SUBDIR += arangodb33
     SUBDIR += ateam_mysql_ldap_auth
     SUBDIR += autobackupmysql
+    SUBDIR += automysqlbackup
     SUBDIR += bbdb
     SUBDIR += beansdb
     SUBDIR += buzhug
