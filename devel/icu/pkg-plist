@@ -73,6 +73,7 @@ include/unicode/fieldpos.h
 include/unicode/filteredbrk.h
 include/unicode/fmtable.h
 include/unicode/format.h
+include/unicode/formattedvalue.h
 include/unicode/fpositer.h
 include/unicode/gender.h
 include/unicode/gregocal.h
@@ -80,6 +81,7 @@ include/unicode/icudataver.h
 include/unicode/icuplug.h
 include/unicode/idna.h
 include/unicode/listformatter.h
+include/unicode/localebuilder.h
 include/unicode/localpointer.h
 include/unicode/locdspnm.h
 include/unicode/locid.h
@@ -165,6 +167,7 @@ include/unicode/udisplaycontext.h
 include/unicode/uenum.h
 include/unicode/ufieldpositer.h
 include/unicode/uformattable.h
+include/unicode/uformattedvalue.h
 include/unicode/ugender.h
 include/unicode/uidna.h
 include/unicode/uiter.h

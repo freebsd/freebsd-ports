@@ -3,7 +3,7 @@
 
 PORTNAME=	tin
 PORTVERSION=	2.4.2
-PORTREVISION?=	3 # keep for chinese/tin
+PORTREVISION=	4
 CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/v${PORTVERSION:R}/ \
