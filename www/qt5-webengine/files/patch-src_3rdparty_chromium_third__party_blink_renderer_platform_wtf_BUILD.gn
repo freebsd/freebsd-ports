@@ -1,0 +1,16 @@
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/BUILD.gn.orig	2018-11-13 18:25:11 UTC
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/wtf/BUILD.gn
+@@ -276,8 +276,12 @@ jumbo_component("wtf") {
+   if (is_android) {
+     libs = [ "log" ]
+   }
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     libs = [ "dl" ]
++  }
++
++  if (is_bsd) {
++    libs = [ "execinfo" ]
+   }
+ 
+   if (is_mac) {

@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/device/bluetooth/BUILD.gn.orig	2017-12-15 17:05:52.395544000 -0500
-+++ src/3rdparty/chromium/device/bluetooth/BUILD.gn	2017-12-15 17:06:09.864315000 -0500
-@@ -193,7 +193,7 @@
+--- src/3rdparty/chromium/device/bluetooth/BUILD.gn.orig	2018-11-13 18:25:11 UTC
++++ src/3rdparty/chromium/device/bluetooth/BUILD.gn
+@@ -266,7 +266,7 @@ component("bluetooth") {
      ]
    }
  
 -  if (is_chromeos || is_linux) {
 +  if (is_chromeos || (is_linux && !is_bsd)) {
-     if (use_dbus) {
+     if (use_dbus && is_chromeos) {
+       # This crap uses ChromeOS specific system API
        sources += [
-         "bluez/bluetooth_adapter_bluez.cc",

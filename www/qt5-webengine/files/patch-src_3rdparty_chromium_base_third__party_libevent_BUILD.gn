@@ -1,12 +1,24 @@
---- src/3rdparty/chromium/base/third_party/libevent/BUILD.gn.orig	2017-01-26 00:49:07 UTC
+--- src/3rdparty/chromium/base/third_party/libevent/BUILD.gn.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/base/third_party/libevent/BUILD.gn
-@@ -29,6 +29,9 @@ static_library("libevent") {
-   } else if (is_linux) {
-     sources += [ "epoll.c" ]
+@@ -48,13 +48,20 @@ static_library("bundled_libevent") {
+       "mac/event-config.h",
+     ]
+     include_dirs = [ "mac" ]
+-  } else if (is_linux) {
++  } else if (is_linux && !is_bsd) {
+     sources += [
+       "epoll.c",
+       "linux/config.h",
+       "linux/event-config.h",
+     ]
      include_dirs = [ "linux" ]
 +  } else if (is_bsd) {
-+    sources += [ "kqueue.c" ]
++    sources += [ 
++      "kqueue.c",
++      "freebsd/config.h",
++      "freebsd/event-config.h",
++    ]
 +    include_dirs = [ "freebsd" ]
    } else if (is_android) {
-     sources += [ "epoll.c" ]
-     include_dirs = [ "android" ]
+     sources += [
+       "android/config.h",

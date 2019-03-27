@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/process/process_iterator_freebsd.cc.orig	2017-01-26 00:49:07 UTC
+--- src/3rdparty/chromium/base/process/process_iterator_freebsd.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/base/process/process_iterator_freebsd.cc
 @@ -10,6 +10,10 @@
  #include <sys/sysctl.h>
@@ -11,7 +11,16 @@
  #include "base/logging.h"
  #include "base/macros.h"
  #include "base/strings/string_split.h"
-@@ -72,19 +76,13 @@ bool ProcessIterator::CheckForNextProces
+@@ -40,7 +44,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+       num_of_kinfo_proc += 16;
+       kinfo_procs_.resize(num_of_kinfo_proc);
+       len = num_of_kinfo_proc * sizeof(struct kinfo_proc);
+-      if (sysctl(mib, arraysize(mib), &kinfo_procs_[0], &len, NULL, 0) <0) {
++      if (sysctl(mib, arraysize(mib), kinfo_procs_.data(), &len, NULL, 0) <0) {
+         // If we get a mem error, it just means we need a bigger buffer, so
+         // loop around again.  Anything else is a real error and give up.
+         if (errno != ENOMEM) {
+@@ -72,19 +76,13 @@ bool ProcessIterator::CheckForNextProcess() {
    for (; index_of_kinfo_proc_ < kinfo_procs_.size(); ++index_of_kinfo_proc_) {
      size_t length;
      struct kinfo_proc kinfo = kinfo_procs_[index_of_kinfo_proc_];

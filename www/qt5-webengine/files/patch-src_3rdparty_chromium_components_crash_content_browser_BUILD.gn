@@ -1,21 +1,23 @@
---- src/3rdparty/chromium/components/crash/content/browser/BUILD.gn.orig	2017-01-26 00:49:11 UTC
+--- src/3rdparty/chromium/components/crash/content/browser/BUILD.gn.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/components/crash/content/browser/BUILD.gn
-@@ -16,7 +16,7 @@ source_set("browser") {
- 
-   deps = [
-     "//base",
--    "//breakpad:client",
-+    #"//breakpad:client",
+@@ -26,10 +26,9 @@ source_set("browser") {
      "//components/crash/content/app",
      "//content/public/browser",
      "//content/public/common",
-@@ -39,7 +39,7 @@ source_set("browser") {
+-    "//third_party/breakpad:client",
+   ]
+ 
+-  if (is_linux || is_android) {
++  if ((is_linux && !is_bsd) || is_android) {
+     set_sources_assignment_filter([])
+ 
+     # Want this file on both Linux and Android.
+@@ -45,7 +44,7 @@ source_set("browser") {
+ 
    # This is not in the GYP build but this target includes breakpad client
    # headers, so add the dependency here.
-   if (is_posix && !is_ios) {
--    configs += [ "//breakpad:client_config" ]
--    public_configs = [ "//breakpad:client_config" ]
-+    #configs += [ "//breakpad:client_config" ]
-+    #public_configs = [ "//breakpad:client_config" ]
+-  if ((is_posix && !is_ios) || is_fuchsia) {
++  if ((is_posix && !is_ios && !is_bsd) || is_fuchsia) {
+     configs += [ "//third_party/breakpad:client_config" ]
+     public_configs = [ "//third_party/breakpad:client_config" ]
    }
- }

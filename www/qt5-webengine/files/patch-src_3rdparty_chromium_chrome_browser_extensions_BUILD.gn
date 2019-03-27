@@ -1,16 +1,7 @@
---- src/3rdparty/chromium/chrome/browser/extensions/BUILD.gn.orig	2017-01-26 00:49:08 UTC
+--- src/3rdparty/chromium/chrome/browser/extensions/BUILD.gn.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/chrome/browser/extensions/BUILD.gn
-@@ -1024,7 +1024,7 @@ static_library("extensions") {
-     sources -= [ "global_shortcut_listener_ozone.cc" ]
-   }
- 
--  if (is_linux) {
-+  if (is_linux || is_bsd) {
-     deps += [ "//build/linux:fontconfig" ]
- 
-     if (use_dbus) {
-@@ -1115,6 +1115,12 @@ static_library("extensions") {
-     defines += [ "ENABLE_HOTWORDING" ]
+@@ -1133,6 +1133,12 @@ jumbo_static_library("extensions") {
+     deps += [ "//chrome/common:service_process_mojom" ]
    }
  
 +  if (is_bsd) {
@@ -21,4 +12,4 @@
 +
    if (enable_service_discovery) {
      sources += [
-       "api/gcd_private/gcd_private_api.cc",
+       "api/mdns/mdns_api.cc",

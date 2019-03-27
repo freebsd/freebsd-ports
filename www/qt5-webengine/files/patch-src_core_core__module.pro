@@ -2,7 +2,7 @@
 * Extend some Linux-only compiler arguments to FreeBSD.
 * Generate split out debug files on FreeBSD too.
 
---- src/core/core_module.pro.orig	2017-04-20 22:41:02 UTC
+--- src/core/core_module.pro.orig	2018-11-27 04:10:38 UTC
 +++ src/core/core_module.pro
 @@ -4,6 +4,9 @@ include(core_common.pri)
  # Needed to set a CFBundleIdentifier
@@ -14,7 +14,7 @@
  linking_pri = $$OUT_PWD/$$getConfigDir()/$${TARGET}.pri
  
  !include($$linking_pri) {
-@@ -29,15 +32,15 @@ RSP_FILE = $$OUT_PWD/$$getConfigDir()/$${TARGET}.rsp
+@@ -29,21 +32,21 @@ RSP_FILE = $$OUT_PWD/$$getConfigDir()/$${TARGET}.rsp
  for(object, NINJA_OBJECTS): RSP_CONTENT += $$object
  write_file($$RSP_FILE, RSP_CONTENT)
  macos:LIBS_PRIVATE += -Wl,-filelist,$$shell_quote($$RSP_FILE)
@@ -28,12 +28,19 @@
  LIBS_PRIVATE += $$NINJA_LIB_DIRS $$NINJA_LIBS
  # GN's LFLAGS doesn't always work across all the Linux configurations we support.
  # The Windows and macOS ones from GN does provide a few useful flags however
--linux: QMAKE_LFLAGS += -Wl,--gc-sections -Wl,-O1 -Wl,-z,now -Wl,-z,defs
-+unix: QMAKE_LFLAGS += -Wl,--gc-sections -Wl,-O1 -Wl,-z,now
- else: QMAKE_LFLAGS += $$NINJA_LFLAGS
- POST_TARGETDEPS += $$NINJA_TARGETDEPS
  
-@@ -67,7 +70,7 @@ CONFIG -= bsymbolic_functions
+-linux {
++unix {
+     QMAKE_LFLAGS += -Wl,--gc-sections -Wl,-O1 -Wl,-z,now
+     # Embedded address sanitizer symbols are undefined and are picked up by the dynamic link loader
+     # at runtime. Thus we do not to pass the linker flag below, because the linker would complain
+     # about the undefined sanitizer symbols.
+-    !sanitizer: QMAKE_LFLAGS += -Wl,-z,defs
++    #!sanitizer: QMAKE_LFLAGS += -Wl,-z,defs
+ } else {
+     QMAKE_LFLAGS += $$NINJA_LFLAGS
+ }
+@@ -86,7 +89,7 @@ CONFIG -= bsymbolic_functions
  
  qtConfig(egl): CONFIG += egl
  

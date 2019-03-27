@@ -1,37 +1,31 @@
---- src/3rdparty/chromium/media/audio/BUILD.gn.orig	2018-04-10 14:05:55 UTC
+--- src/3rdparty/chromium/media/audio/BUILD.gn.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/media/audio/BUILD.gn
-@@ -206,7 +206,7 @@ source_set("audio") {
+@@ -254,9 +254,19 @@ source_set("audio") {
      deps += [ "//media/base/android:media_jni_headers" ]
    }
  
 -  if (is_linux) {
-+  if (is_linux || (is_bsd && !use_sndio)) {
++  if (is_linux && !use_sndio) {
      sources += [ "linux/audio_manager_linux.cc" ]
    }
- 
-@@ -255,10 +255,24 @@ source_set("audio") {
-       configs += [ ":libpulse" ]
-     } else {
-       # TODO(ajwong): Technically, this dl should go in the action.
--      libs += [ "dl" ]
-       deps += [ ":pulse_generate_stubs" ]
-       sources += get_target_outputs(":pulse_generate_stubs")
-     }
-+    if (is_linux) {
-+      libs += [ "dl" ]
-+    }
-+  }
-+
 +  if (use_sndio) {
 +    libs += [ "sndio" ]
 +    sources += [
 +      "openbsd/audio_manager_openbsd.cc",
-+      "openbsd/audio_manager_openbsd.h",
 +      "sndio/sndio_input.cc",
 +      "sndio/sndio_input.h",
 +      "sndio/sndio_output.cc",
-+      "sndio/sndio_output.h",
++      "sndio/sndio_output.h"
 +    ]
-   }
++  }
  
-   configs += [ "//build/config/compiler:no_size_t_to_int_warning" ]
+   if (use_alsa) {
+     libs += [ "asound" ]
+@@ -302,7 +312,6 @@ source_set("audio") {
+     if (link_pulseaudio) {
+       configs += [ ":libpulse" ]
+     } else {
+-      libs += [ "dl" ]
+       deps += [ ":pulse_generate_stubs" ]
+       sources += get_target_outputs(":pulse_generate_stubs")
+     }

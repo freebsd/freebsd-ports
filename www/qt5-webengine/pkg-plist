@@ -1,4 +1,6 @@
 %%QT_BINDIR%%/qwebengine_convert_dict
+%%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebengineaction_p.h
+%%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebengineaction_p_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebenginecertificateerror_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebenginecontextmenurequest_p.h
 %%QT_INCDIR%%/QtWebEngine/%%FULLVER%%/QtWebEngine/private/qquickwebenginedialogrequests_p.h
@@ -28,28 +30,35 @@
 %%QT_INCDIR%%/QtWebEngine/qtwebengineglobal.h
 %%QT_INCDIR%%/QtWebEngine/qtwebengineversion.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qtwebenginecoreglobal_p.h
-%%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebenginebrowsercontext_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebenginecallback_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebenginecookiestore_p.h
 %%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qwebengineurlrequestinfo_p.h
+%%QT_INCDIR%%/QtWebEngineCore/%%FULLVER%%/QtWebEngineCore/private/qtwebenginecore-config_p.h
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineCallback
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineCookieStore
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineHttpRequest
+%%QT_INCDIR%%/QtWebEngineCore/QWebEngineQuotaRequest
+%%QT_INCDIR%%/QtWebEngineCore/QWebEngineRegisterProtocolHandlerRequest
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineUrlRequestInfo
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineUrlRequestInterceptor
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineUrlRequestJob
+%%QT_INCDIR%%/QtWebEngineCore/QWebEngineUrlScheme
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineUrlSchemeHandler
 %%QT_INCDIR%%/QtWebEngineCore/QtWebEngineCore
 %%QT_INCDIR%%/QtWebEngineCore/QtWebEngineCoreDepends
 %%QT_INCDIR%%/QtWebEngineCore/QtWebEngineCoreVersion
 %%QT_INCDIR%%/QtWebEngineCore/qtwebenginecoreglobal.h
 %%QT_INCDIR%%/QtWebEngineCore/qtwebenginecoreversion.h
+%%QT_INCDIR%%/QtWebEngineCore/qtwebenginecore-config.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginecallback.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginecookiestore.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebenginehttprequest.h
+%%QT_INCDIR%%/QtWebEngineCore/qwebenginequotarequest.h
+%%QT_INCDIR%%/QtWebEngineCore/qwebengineregisterprotocolhandlerrequest.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineurlrequestinfo.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineurlrequestinterceptor.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineurlrequestjob.h
+%%QT_INCDIR%%/QtWebEngineCore/qwebengineurlscheme.h
 %%QT_INCDIR%%/QtWebEngineCore/qwebengineurlschemehandler.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginedownloaditem_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginehistory_p.h
@@ -58,6 +67,7 @@
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginescriptcollection_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebengineview_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/QWebEngineCertificateError
+%%QT_INCDIR%%/QtWebEngineWidgets/QWebEngineClientCertificateSelection
 %%QT_INCDIR%%/QtWebEngineWidgets/QWebEngineContextMenuData
 %%QT_INCDIR%%/QtWebEngineWidgets/QWebEngineDownloadItem
 %%QT_INCDIR%%/QtWebEngineWidgets/QWebEngineFullScreenRequest
@@ -75,6 +85,7 @@
 %%QT_INCDIR%%/QtWebEngineWidgets/qtwebenginewidgetsglobal.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qtwebenginewidgetsversion.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qwebenginecertificateerror.h
+%%QT_INCDIR%%/QtWebEngineWidgets/qwebengineclientcertificateselection.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qwebenginecontextmenudata.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qwebenginedownloaditem.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qwebenginefullscreenrequest.h
@@ -97,19 +108,19 @@
 %%QT_LIBDIR%%/libQt5WebEngine.so.5
 %%QT_LIBDIR%%/libQt5WebEngine.so.%%SHORTVER%%
 %%QT_LIBDIR%%/libQt5WebEngine.so.%%FULLVER%%
-%%DEBUG%%%%QT_LIBDIR%%/libQt5WebEngine.so.%%FULLVER%%.debug
+@comment %%DEBUG%%%%QT_LIBDIR%%/libQt5WebEngine.so.%%FULLVER%%.debug
 %%QT_LIBDIR%%/libQt5WebEngineCore.prl
 %%QT_LIBDIR%%/libQt5WebEngineCore.so
 %%QT_LIBDIR%%/libQt5WebEngineCore.so.5
 %%QT_LIBDIR%%/libQt5WebEngineCore.so.%%SHORTVER%%
 %%QT_LIBDIR%%/libQt5WebEngineCore.so.%%FULLVER%%
-%%DEBUG%%%%QT_LIBDIR%%/libQt5WebEngineCore.so.%%FULLVER%%.debug
+@comment %%DEBUG%%%%QT_LIBDIR%%/libQt5WebEngineCore.so.%%FULLVER%%.debug
 %%QT_LIBDIR%%/libQt5WebEngineWidgets.prl
 %%QT_LIBDIR%%/libQt5WebEngineWidgets.so
 %%QT_LIBDIR%%/libQt5WebEngineWidgets.so.5
 %%QT_LIBDIR%%/libQt5WebEngineWidgets.so.%%SHORTVER%%
 %%QT_LIBDIR%%/libQt5WebEngineWidgets.so.%%FULLVER%%
-%%DEBUG%%%%QT_LIBDIR%%/libQt5WebEngineWidgets.so.%%FULLVER%%.debug
+@comment %%DEBUG%%%%QT_LIBDIR%%/libQt5WebEngineWidgets.so.%%FULLVER%%.debug
 %%QT_MKSPECDIR%%/modules/qt_lib_webengine.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webengine_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webenginecore.pri
@@ -118,7 +129,7 @@
 %%QT_MKSPECDIR%%/modules/qt_lib_webenginewidgets.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webenginewidgets_private.pri
 %%QT_PLUGINDIR%%/designer/libqwebengineview.so
-%%DEBUG%%%%QT_PLUGINDIR%%/designer/libqwebengineview.so.debug
+@comment %%DEBUG%%%%QT_PLUGINDIR%%/designer/libqwebengineview.so.debug
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/AlertDialog.qml
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/AuthenticationDialog.qml
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/ColorDialog.qml
@@ -127,7 +138,6 @@
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/Menu.qml
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/MenuItem.qml
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/MenuSeparator.qml
-%%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/MessageBubble.qml
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/PromptDialog.qml
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/ToolTip.qml
 %%QT_QMLDIR%%/QtWebEngine/Controls1Delegates/qmldir
@@ -143,7 +153,7 @@
 %%QT_QMLDIR%%/QtWebEngine/Controls2Delegates/qmldir
 %%QT_QMLDIR%%/QtWebEngine/Controls2Delegates/question.png
 %%QT_QMLDIR%%/QtWebEngine/libqtwebengineplugin.so
-%%DEBUG%%%%QT_QMLDIR%%/QtWebEngine/libqtwebengineplugin.so.debug
+@comment %%DEBUG%%%%QT_QMLDIR%%/QtWebEngine/libqtwebengineplugin.so.debug
 %%QT_QMLDIR%%/QtWebEngine/plugins.qmltypes
 %%QT_QMLDIR%%/QtWebEngine/qmldir
 libdata/pkgconfig/Qt5WebEngine.pc

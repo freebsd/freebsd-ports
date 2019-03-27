@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/ppapi/shared_impl/private/net_address_private_impl.cc.orig	2017-01-26 00:49:16 UTC
+--- src/3rdparty/chromium/ppapi/shared_impl/private/net_address_private_impl.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/ppapi/shared_impl/private/net_address_private_impl.cc
-@@ -26,9 +26,12 @@
- #include <arpa/inet.h>
+@@ -27,6 +27,9 @@
+ #include <netinet/in.h>
  #include <sys/socket.h>
  #include <sys/types.h>
 +#if defined(OS_BSD)
@@ -9,8 +9,4 @@
 +#endif
  #endif
  
--#if defined(OS_MACOSX)
-+#if defined(OS_MACOSX) || defined(OS_BSD)
- // This is a bit evil, but it's standard operating procedure for |s6_addr|....
- #define s6_addr16 __u6_addr.__u6_addr16
- #endif
+ // The net address interface doesn't have a normal C -> C++ thunk since it

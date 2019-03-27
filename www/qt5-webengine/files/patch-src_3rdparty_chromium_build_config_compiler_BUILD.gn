@@ -1,123 +1,65 @@
---- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2018-01-15 11:39:43 UTC
+--- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/build/config/compiler/BUILD.gn
-@@ -156,7 +156,7 @@ config("compiler") {
-     configs += [ "//build/config/win:compiler" ]
-   } else if (is_android) {
-     configs += [ "//build/config/android:compiler" ]
--  } else if (is_linux) {
-+  } else if (is_linux || is_bsd) {
-     configs += [ "//build/config/linux:compiler" ]
-   } else if (is_nacl) {
-     configs += [ "//build/config/nacl:compiler" ]
-@@ -290,7 +290,7 @@ config("compiler") {
+@@ -55,7 +55,7 @@ declare_args() {
+   # only two architectures that are currently checked in). Turn this off when
+   # you are using a custom toolchain and need to control -B in cflags.
+   linux_use_bundled_binutils =
+-      linux_use_bundled_binutils_override && is_linux &&
++      linux_use_bundled_binutils_override && (is_linux && !is_bsd) &&
+       (current_cpu == "x64" || current_cpu == "x86")
+   binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
+                               root_build_dir)
+@@ -269,7 +269,7 @@ config("compiler") {
+     # Linker warnings.
+     if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
+         !(is_android && use_order_profiling) && !is_mac && !is_ios &&
+-        current_os != "aix") {
++        current_os != "aix" && !is_bsd) {
+       # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
+       # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
+       # crbug.com/485542
+@@ -507,7 +507,7 @@ config("compiler") {
+   }
  
-   # Linux/Android common flags setup.
-   # ---------------------------------
--  if (is_linux || is_android) {
-+  if (is_linux || is_bsd || is_android) {
+   if (is_clang && !is_nacl && current_toolchain == host_toolchain &&
+-      target_os != "chromeos" && !use_qt) {
++      target_os != "chromeos" && !is_bsd && !use_qt) {
      cflags += [
-       "-fPIC",
-       "-pipe",  # Use pipes for communicating between sub-processes. Faster.
-@@ -414,14 +414,14 @@ config("compiler") {
-   # clang-cl (used if is_win) doesn't expose this flag.
-   # Currently disabled for nacl since its toolchain lacks this flag (too old).
-   # TODO(zforman): Once nacl's toolchain is updated, remove check.
--  if (is_clang && is_linux) {
-+  if (is_clang && (is_linux || is_bsd)) {
-     absolute_path = rebase_path("//.")
-     cflags += [ "-fdebug-prefix-map=$absolute_path=." ]
-   }
- 
-   # C++11 compiler flags setup.
-   # ---------------------------
--  if (is_linux || is_android || (is_nacl && is_clang)) {
-+  if (is_linux || is_bsd || is_android || (is_nacl && is_clang)) {
-     # gnu++11 instead of c++11 is needed because some code uses typeof() (a
-     # GNU extension).
-     # TODO(thakis): Eventually switch this to c++11 instead,
-@@ -475,7 +475,7 @@ config("compiler") {
-       ]
- 
-       # Apply a lower LTO optimization level as the default is too slow.
--      if (is_linux) {
-+      if (is_linux || is_bsd) {
-         if (use_lld) {
-           ldflags += [ "-Wl,--lto-O1" ]
-         } else {
-@@ -495,7 +495,7 @@ config("compiler") {
-     # targeting ARM, without this flag, LTO produces a .text section that is
-     # larger than the maximum call displacement, preventing the linker from
-     # relocating calls (http://llvm.org/PR22999).
--    if (is_linux) {
-+    if (is_linux || is_bsd) {
-       ldflags += [ "-Wl,-plugin-opt,-function-sections" ]
-     }
-   }
-@@ -541,11 +541,11 @@ config("compiler_cpu_abi") {
-         ]
-       }
-     } else if (current_cpu == "arm") {
--      if (is_clang && !is_android && !is_nacl) {
-+      if (is_clang && !is_android && !is_nacl && !is_bsd) {
-         cflags += [ "--target=arm-linux-gnueabihf" ]
-         ldflags += [ "--target=arm-linux-gnueabihf" ]
-       }
--      if (!is_nacl) {
-+      if (!is_nacl && !is_bsd) {
-         cflags += [
-           "-march=$arm_arch",
-           "-mfloat-abi=$arm_float_abi",
-@@ -555,7 +555,7 @@ config("compiler_cpu_abi") {
+       # TODO(hans): Remove this once Clang generates better optimized debug info
+       # by default. https://crbug.com/765793
+@@ -761,7 +761,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
--      if (is_clang && !is_android && !is_nacl) {
-+      if (is_clang && !is_android && !is_nacl && !is_bsd) {
+-      if (is_clang && !is_android && !is_nacl && !is_fuchsia) {
++      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_bsd) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -758,7 +758,7 @@ config("compiler_codegen") {
- #   configs -= [ "//build/config/compiler:clang_stackrealign" ]
- # See https://crbug.com/556393 for details of where it must be avoided.
- config("clang_stackrealign") {
--  if (is_clang && current_cpu == "x86" && is_linux) {
-+  if (is_clang && current_cpu == "x86" && (is_linux || is_bsd)) {
-     cflags = [
-       # Align the stack on 16-byte boundaries, http://crbug.com/418554.
-       "-mstack-alignment=16",
-@@ -804,7 +804,7 @@ config("runtime_library") {
-   # smaller.
-   if (is_win) {
-     configs += [ "//build/config/win:runtime_library" ]
--  } else if (is_linux) {
-+  } else if (is_linux || is_bsd) {
-     configs += [ "//build/config/linux:runtime_library" ]
-   } else if (is_ios) {
-     configs += [ "//build/config/ios:runtime_library" ]
-@@ -1054,7 +1054,7 @@ config("default_warnings") {
-         "-Wno-nonportable-include-path",
- 
-         # TODO(hans): https://crbug.com/637306
--        "-Wno-address-of-packed-member",
-+        # "-Wno-address-of-packed-member",
-       ]
+@@ -1681,7 +1681,7 @@ config("thin_archive") {
+   # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
+   # have a "thin archive" mode (it does accept -T, but it means truncating
+   # archive names to 16 characters, which is not what we want).
+-  if ((is_posix && !is_nacl && !is_mac && !is_ios) || is_fuchsia) {
++  if ((is_posix && !is_nacl && !is_mac && !is_ios && !is_bsd) || is_fuchsia) {
+     arflags = [ "-T" ]
+   }
+ }
+@@ -2216,7 +2216,7 @@ config("symbols") {
+         # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
+         cflags += [ "-gdwarf-3" ]
+       }
+-      cflags += [ "-g2" ]
++      cflags += [ "-g0" ]
      }
-   }
-@@ -1086,7 +1086,7 @@ config("chromium_code") {
-     ]
- 
-     if (!is_debug && !using_sanitizer &&
--        (!is_linux || !is_clang || is_official_build)) {
-+        (!is_linux || !is_bsd || !is_clang || is_official_build)) {
-       # _FORTIFY_SOURCE isn't really supported by Clang now, see
-       # http://llvm.org/bugs/show_bug.cgi?id=16821.
-       # It seems to work fine with Ubuntu 12 headers though, so use it in
-@@ -1144,7 +1144,7 @@ config("no_chromium_code") {
-     ]
-   }
- 
--  if (is_linux || is_android) {
-+  if (is_linux || is_bsd || is_android) {
-     cflags_cc += [
-       # Don't warn about hash_map in third-party code.
-       "-Wno-deprecated",
+     if (use_debug_fission && !is_nacl && !is_android) {
+       # NOTE: Some Chrome OS builds globally set |use_debug_fission| to true,
+@@ -2236,7 +2236,7 @@ config("symbols") {
+     # DWARF info may be corrupt; offsets in a range list entry are in different
+     # sections" there.  Maybe just a bug in nacl_switch_32.S.
+     if (!is_mac && !is_ios && !is_nacl && target_cpu != "x86" &&
+-        (use_gold || use_lld)) {
++        (use_gold || use_lld) && !is_bsd) {
+       if (is_clang) {
+         # This flag enables the GNU-format pubnames and pubtypes sections,
+         # which lld needs in order to generate a correct GDB index.

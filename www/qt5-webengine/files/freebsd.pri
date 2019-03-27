@@ -1,11 +1,10 @@
-include(desktop_linux.pri)
+include(linux.pri)
 
-gn_args +=   disable_nacl=true		\
-             enable_basic_printing=true	\
+gn_args +=   enable_basic_printing=true	\
              enable_print_preview=true	\
-             enable_webrtc=false	\
              enable_hidpi=true		\
-             use_dbus=true
+             use_dbus=true \
+             use_udev=false
 
 # Once the port works better, we can think about readding the diverse `use_system_<foo>`
 # for bundled libraries.

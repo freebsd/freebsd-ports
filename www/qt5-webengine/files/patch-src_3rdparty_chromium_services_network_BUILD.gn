@@ -1,0 +1,10 @@
+--- src/3rdparty/chromium/services/network/BUILD.gn.orig	2018-11-13 18:25:11 UTC
++++ src/3rdparty/chromium/services/network/BUILD.gn
+@@ -160,7 +160,6 @@ component("network_service") {
+ 
+   if (is_linux) {
+     deps += [
+-      "//sandbox/linux:sandbox_services",
+       "//services/service_manager/sandbox:sandbox",
+     ]
+   }

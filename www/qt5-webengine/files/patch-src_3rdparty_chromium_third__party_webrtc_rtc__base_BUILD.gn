@@ -1,0 +1,20 @@
+--- src/3rdparty/chromium/third_party/webrtc/rtc_base/BUILD.gn.orig	2018-11-13 18:25:11 UTC
++++ src/3rdparty/chromium/third_party/webrtc/rtc_base/BUILD.gn
+@@ -907,8 +907,6 @@ rtc_static_library("rtc_base_generic") {
+ 
+   if (rtc_use_x11) {
+     libs += [
+-      "dl",
+-      "rt",
+       "Xext",
+       "X11",
+       "Xcomposite",
+@@ -916,7 +914,7 @@ rtc_static_library("rtc_base_generic") {
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     libs += [
+       "dl",
+       "rt",
