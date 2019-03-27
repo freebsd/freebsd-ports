@@ -15,6 +15,9 @@ COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		End of Life was November, 2017
+EXPIRATION_DATE=	2019-04-27
+
 CONFLICTS=	zabbix[0-24-9][0-9]${PKGNAMESUFFIX} \
 		zabbix3[0-13-9]${PKGNAMESUFFIX} \
 		zabbix[0-9]${PKGNAMESUFFIX}
