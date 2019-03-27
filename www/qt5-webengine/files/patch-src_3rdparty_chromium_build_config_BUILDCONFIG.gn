@@ -1,22 +1,19 @@
---- src/3rdparty/chromium/build/config/BUILDCONFIG.gn.orig	2017-01-26 00:49:07 UTC
+--- src/3rdparty/chromium/build/config/BUILDCONFIG.gn.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/build/config/BUILDCONFIG.gn
-@@ -134,12 +134,13 @@ declare_args() {
-   is_debug = !is_official_build
+@@ -131,10 +131,10 @@ declare_args() {
+   is_official_build = false
  
    # Whether we're a traditional desktop unix.
 -  is_desktop_linux = current_os == "linux"
 +  is_desktop_linux = current_os == "linux" || current_os == "bsd"
  
-   # Set to true when compiling with the Clang compiler. Typically this is used
-   # to configure warnings.
-   is_clang = current_os == "mac" || current_os == "ios" ||
--             current_os == "linux" || current_os == "chromeos"
-+             current_os == "linux" || current_os == "chromeos" ||
-+             current_os == "bsd"
- 
-   # Allows the path to a custom target toolchain to be injected as a single
-   # argument, and set as the default toolchain.
-@@ -183,8 +184,8 @@ if (host_toolchain == "") {
+   # Set to true when compiling with the Clang compiler.
+-  is_clang = current_os != "linux" ||
++  is_clang = current_os != "linux" || current_os == "bsd" ||
+              (current_cpu != "s390x" && current_cpu != "s390" &&
+               current_cpu != "ppc64" && current_cpu != "ppc" &&
+               current_cpu != "mips" && current_cpu != "mips64")
+@@ -191,8 +191,8 @@ if (host_toolchain == "") {
    # TODO(dpranke): Add some sort of assert here that verifies that
    # no toolchain omitted host_toolchain from its toolchain_args().
  
@@ -27,35 +24,100 @@
        # TODO(dpranke) - is_clang normally applies only to the target
        # build, and there is no way to indicate that you want to override
        # it for both the target build *and* the host build. Do we need to
-@@ -220,7 +221,7 @@ if (target_os == "android") {
-   } else {
-     _default_toolchain = "//build/toolchain/android:android_$target_cpu"
-   }
+@@ -232,7 +232,7 @@ if (target_os == "android") {
+   assert(host_os == "linux" || host_os == "mac",
+          "Android builds are only supported on Linux and Mac hosts.")
+   _default_toolchain = "//build/toolchain/android:android_clang_$target_cpu"
 -} else if (target_os == "chromeos" || target_os == "linux") {
 +} else if (target_os == "chromeos" || target_os == "linux" || target_os == "bsd") {
    # See comments in build/toolchain/cros/BUILD.gn about board compiles.
    if (is_clang) {
      _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
-@@ -340,8 +341,17 @@ if (current_os == "win" || current_os ==
+@@ -306,6 +306,7 @@ if (current_os == "win" || current_os == "winuwp") {
+   is_nacl = false
+   is_posix = false
+   is_win = true
++  is_bsd = false
+ } else if (current_os == "mac") {
+   is_aix = false
+   is_android = false
+@@ -317,6 +318,7 @@ if (current_os == "win" || current_os == "winuwp") {
    is_nacl = false
    is_posix = true
    is_win = false
++  is_bsd = false
+ } else if (current_os == "android") {
+   is_aix = false
+   is_android = true
+@@ -328,6 +330,7 @@ if (current_os == "win" || current_os == "winuwp") {
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "chromeos") {
+   is_aix = false
+   is_android = false
+@@ -339,6 +342,7 @@ if (current_os == "win" || current_os == "winuwp") {
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "nacl") {
+   # current_os == "nacl" will be passed by the nacl toolchain definition.
+   # It is not set by default or on the command line. We treat is as a
+@@ -353,6 +357,7 @@ if (current_os == "win" || current_os == "winuwp") {
+   is_nacl = true
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "fuchsia") {
+   is_aix = false
+   is_android = false
+@@ -364,6 +369,7 @@ if (current_os == "win" || current_os == "winuwp") {
+   is_nacl = false
+   is_posix = false
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "ios") {
+   is_aix = false
+   is_android = false
+@@ -375,6 +381,7 @@ if (current_os == "win" || current_os == "winuwp") {
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "linux") {
+   is_aix = false
+   is_android = false
+@@ -386,6 +393,7 @@ if (current_os == "win" || current_os == "winuwp") {
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "aix") {
+   is_aix = true
+   is_android = false
+@@ -397,6 +405,19 @@ if (current_os == "win" || current_os == "winuwp") {
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
 +} else if (current_os == "bsd") {
++  is_aix = false
 +  is_android = false
 +  is_chromeos = false
++  is_fuchsia = false
 +  is_ios = false
-+  is_linux = false
-+  is_bsd = true
++  is_linux = true
 +  is_mac = false
 +  is_nacl = false
 +  is_posix = true
 +  is_win = false
++  is_bsd = true
  }
--
+ 
  # =============================================================================
- # SOURCES FILTERS
- # =============================================================================
-@@ -410,7 +420,7 @@ if (!is_ios) {
+@@ -459,7 +480,7 @@ if (!is_ios) {
  if (!is_mac && !is_ios) {
    sources_assignment_filter += [ "*.mm" ]
  }

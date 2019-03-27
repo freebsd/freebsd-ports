@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/device/serial/serial_io_handler_posix.cc.orig	2017-01-26 00:49:14 UTC
+--- src/3rdparty/chromium/device/serial/serial_io_handler_posix.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/device/serial/serial_io_handler_posix.cc
-@@ -61,7 +61,7 @@ bool BitrateToSpeedConstant(int bitrate,
+@@ -62,7 +62,7 @@ bool BitrateToSpeedConstant(int bitrate, speed_t* spee
      BITRATE_TO_SPEED_CASE(9600)
      BITRATE_TO_SPEED_CASE(19200)
      BITRATE_TO_SPEED_CASE(38400)

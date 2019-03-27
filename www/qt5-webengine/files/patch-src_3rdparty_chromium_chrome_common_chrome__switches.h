@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/chrome/common/chrome_switches.h.orig	2017-01-26 00:49:09 UTC
+--- src/3rdparty/chromium/chrome/common/chrome_switches.h.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/chrome/common/chrome_switches.h
-@@ -385,7 +385,7 @@ extern const char kAllowNaClSocketAPI[];
- extern const char kEnableWaylandServer[];
+@@ -302,7 +302,7 @@ extern const char kAllowNaClFileHandleAPI[];
+ extern const char kAllowNaClSocketAPI[];
  #endif
  
 -#if defined(OS_WIN) || defined(OS_LINUX)

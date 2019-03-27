@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/pdf/pdfium/pdfium_engine.cc.orig	2017-01-26 00:49:16 UTC
+--- src/3rdparty/chromium/pdf/pdfium/pdfium_engine.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/pdf/pdfium/pdfium_engine.cc
-@@ -127,7 +127,7 @@ std::vector<uint32_t> GetPageNumbersFrom
-   return page_numbers;
- }
+@@ -137,7 +137,7 @@ constexpr bool kIsEditModeTracked = false;
+ 
+ PDFiumEngine* g_engine_for_fontmapper = nullptr;
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
  
  PP_Instance g_last_instance_id;
  
-@@ -629,7 +629,7 @@ bool InitializeSDK() {
+@@ -641,7 +641,7 @@ bool InitializeSDK() {
    config.m_v8EmbedderSlot = gin::kEmbedderPDFium;
    FPDF_InitLibraryWithConfig(&config);
  
@@ -18,7 +18,7 @@
    // Font loading doesn't work in the renderer sandbox in Linux.
    FPDF_SetSystemFontInfo(&g_font_info);
  #else
-@@ -654,7 +654,7 @@ bool InitializeSDK() {
+@@ -666,7 +666,7 @@ bool InitializeSDK() {
  
  void ShutdownSDK() {
    FPDF_DestroyLibrary();
@@ -27,7 +27,7 @@
    delete g_font_info;
  #endif
    TearDownV8();
-@@ -758,7 +758,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Cl
+@@ -690,7 +690,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client, 
    IFSDK_PAUSE::user = nullptr;
    IFSDK_PAUSE::NeedToPauseNow = Pause_NeedToPauseNow;
  
@@ -36,30 +36,30 @@
    // PreviewModeClient does not know its pp::Instance.
    pp::Instance* instance = client_->GetPluginInstance();
    if (instance)
-@@ -1510,7 +1510,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesA
-     FPDF_ClosePage(pdf_page);
-   }
+@@ -1147,7 +1147,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPDF(
+ 
+   KillFormFocus();
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -2919,7 +2919,7 @@ bool PDFiumEngine::ContinuePaint(int pro
-   DCHECK_LT(static_cast<size_t>(progressive_index), progressive_paints_.size());
+@@ -2842,7 +2842,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK(image_data);
  
+   last_progressive_start_time_ = base::Time::Now();
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -3377,7 +3377,7 @@ void PDFiumEngine::SetCurrentPage(int in
-     FORM_DoPageAAction(old_page, form_, FPDFPAGE_AACTION_CLOSE);
+@@ -3320,7 +3320,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+     FORM_DoPageAAction(old_page, form(), FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-     g_last_instance_id = client_->GetPluginInstance()->pp_instance();
+   g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
    if (most_visible_page_ != -1 && called_do_document_action_) {

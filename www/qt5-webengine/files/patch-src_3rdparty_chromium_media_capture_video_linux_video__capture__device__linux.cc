@@ -1,6 +1,11 @@
---- src/3rdparty/chromium/media/capture/video/linux/video_capture_device_linux.cc.orig	2017-01-26 00:49:15 UTC
+--- src/3rdparty/chromium/media/capture/video/linux/video_capture_device_linux.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/media/capture/video/linux/video_capture_device_linux.cc
-@@ -21,6 +21,7 @@
+@@ -18,11 +18,11 @@
+ #include <sys/videoio.h>
+ #else
+ #include <linux/videodev2.h>
+-#include <linux/version.h>
+ #endif
  
  namespace media {
  
@@ -8,55 +13,62 @@
  // Translates Video4Linux pixel formats to Chromium pixel formats.
  // static
  VideoPixelFormat VideoCaptureDeviceLinux::V4l2FourCcToChromiumPixelFormat(
-@@ -34,6 +35,7 @@ std::list<uint32_t> VideoCaptureDeviceLi
+@@ -36,6 +36,7 @@ std::list<uint32_t> VideoCaptureDeviceLinux::GetListOf
      bool favour_mjpeg) {
    return V4L2CaptureDelegate::GetListOfUsableFourCcs(favour_mjpeg);
  }
 +#endif // !defined(OS_FREEBSD)
  
  VideoCaptureDeviceLinux::VideoCaptureDeviceLinux(
-     const VideoCaptureDeviceDescriptor& device_descriptor)
-@@ -47,6 +49,7 @@ VideoCaptureDeviceLinux::~VideoCaptureDe
-   v4l2_thread_.Stop();
- }
- 
-+#if !defined(OS_FREEBSD)
+     scoped_refptr<V4L2CaptureDevice> v4l2,
+@@ -54,6 +55,7 @@ VideoCaptureDeviceLinux::~VideoCaptureDeviceLinux() {
  void VideoCaptureDeviceLinux::AllocateAndStart(
      const VideoCaptureParams& params,
      std::unique_ptr<VideoCaptureDevice::Client> client) {
-@@ -70,7 +73,13 @@ void VideoCaptureDeviceLinux::AllocateAn
-                  params.requested_format.frame_size.height(),
-                  params.requested_format.frame_rate, base::Passed(&client)));
- }
-+#else // !defined(OS_FREEBSD)
-+void VideoCaptureDeviceLinux::AllocateAndStart(
-+    const VideoCaptureParams& params,
-+    std::unique_ptr<VideoCaptureDevice::Client> client) {}
-+#endif // !defined(OS_FREEBSD)
- 
 +#if !defined(OS_FREEBSD)
+   DCHECK(!capture_impl_);
+   if (v4l2_thread_.IsRunning())
+     return;  // Wrong state.
+@@ -79,9 +81,11 @@ void VideoCaptureDeviceLinux::AllocateAndStart(
+   for (const auto& request : photo_requests_queue_)
+     v4l2_thread_.task_runner()->PostTask(FROM_HERE, request);
+   photo_requests_queue_.clear();
++#endif // !defined(OS_FREEBSD)
+ }
+ 
  void VideoCaptureDeviceLinux::StopAndDeAllocate() {
++#if !defined(OS_FREEBSD)
    if (!v4l2_thread_.IsRunning())
      return;  // Wrong state.
-@@ -110,7 +119,11 @@ void VideoCaptureDeviceLinux::SetPhotoOp
-       base::Bind(&V4L2CaptureDelegate::SetPhotoOptions, capture_impl_,
-                  base::Passed(&settings), base::Passed(&callback)));
- }
-+#else // !defined(OS_FREEBSD)
-+void VideoCaptureDeviceLinux::StopAndDeAllocate() {}
-+#endif // !defined(OS_FREEBSD)
+   v4l2_thread_.task_runner()->PostTask(
+@@ -91,6 +95,7 @@ void VideoCaptureDeviceLinux::StopAndDeAllocate() {
+   v4l2_thread_.Stop();
  
-+#if !defined(OS_FREEBSD)
+   capture_impl_ = nullptr;
++#endif // !defined(OS_FREEBSD)
+ }
+ 
+ void VideoCaptureDeviceLinux::TakePhoto(TakePhotoCallback callback) {
+@@ -133,11 +138,13 @@ void VideoCaptureDeviceLinux::SetPhotoOptions(
+ }
+ 
  void VideoCaptureDeviceLinux::SetRotation(int rotation) {
++#if !defined(OS_FREEBSD)
    if (v4l2_thread_.IsRunning()) {
      v4l2_thread_.task_runner()->PostTask(
-@@ -118,6 +131,9 @@ void VideoCaptureDeviceLinux::SetRotatio
-         base::Bind(&V4L2CaptureDelegate::SetRotation, capture_impl_, rotation));
+         FROM_HERE, base::Bind(&V4L2CaptureDelegate::SetRotation,
+                               capture_impl_->GetWeakPtr(), rotation));
    }
++#endif
  }
-+#else // !defined(OS_FREEBSD)
-+void VideoCaptureDeviceLinux::SetRotation(int rotation) {}
-+#endif // !defined(OS_FREEBSD)
  
  // static
- int VideoCaptureDeviceLinux::TranslatePowerLineFrequencyToV4L2(
+@@ -149,7 +156,7 @@ int VideoCaptureDeviceLinux::TranslatePowerLineFrequen
+     case PowerLineFrequency::FREQUENCY_60HZ:
+       return V4L2_CID_POWER_LINE_FREQUENCY_60HZ;
+     default:
+-#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,2,0)
++#if defined(OS_BSD)
+       // If we have no idea of the frequency, at least try and set it to AUTO.
+       return V4L2_CID_POWER_LINE_FREQUENCY_AUTO;
+ #else

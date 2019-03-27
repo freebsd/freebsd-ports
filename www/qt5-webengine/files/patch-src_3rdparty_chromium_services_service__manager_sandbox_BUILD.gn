@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/services/service_manager/sandbox/BUILD.gn.orig	2018-11-13 18:25:11 UTC
++++ src/3rdparty/chromium/services/service_manager/sandbox/BUILD.gn
+@@ -28,7 +28,7 @@ component("sandbox") {
+     "//base",
+     "//sandbox:common",
+   ]
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     sources += [
+       "linux/bpf_base_policy_linux.cc",
+       "linux/bpf_base_policy_linux.h",

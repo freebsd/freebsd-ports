@@ -1,0 +1,25 @@
+--- src/3rdparty/chromium/build/linux/unbundle/libwebp.gn.orig	2018-11-13 18:25:11 UTC
++++ src/3rdparty/chromium/build/linux/unbundle/libwebp.gn
+@@ -14,14 +14,15 @@ pkg_config("system_libwebp") {
+ }
+ 
+ shim_headers("libwebp_shim") {
+-  root_path = "src"
++  root_path = "src/webp"
++  prefix = "webp/"
+   headers = [
+-    "webp/decode.h",
+-    "webp/demux.h",
+-    "webp/encode.h",
+-    "webp/mux.h",
+-    "webp/mux_types.h",
+-    "webp/types.h",
++    "decode.h",
++    "demux.h",
++    "encode.h",
++    "mux.h",
++    "mux_types.h",
++    "types.h",
+   ]
+ }
+ 

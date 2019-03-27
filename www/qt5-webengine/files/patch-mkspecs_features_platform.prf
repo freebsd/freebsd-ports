@@ -1,0 +1,11 @@
+--- mkspecs/features/platform.prf.orig	2018-11-27 04:10:38 UTC
++++ mkspecs/features/platform.prf
+@@ -11,7 +11,7 @@ defineTest(isQtMinimum) {
+ 
+ defineTest(isPlatformSupported) {
+   QT_FOR_CONFIG += gui-private
+-  linux {
++  unix {
+     if(!gcc:!clang)|intel_icc {
+       skipBuild("Qt WebEngine on Linux requires clang or GCC.")
+       return(false)

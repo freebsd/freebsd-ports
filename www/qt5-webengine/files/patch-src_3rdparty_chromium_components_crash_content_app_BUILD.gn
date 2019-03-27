@@ -1,11 +1,20 @@
---- src/3rdparty/chromium/components/crash/content/app/BUILD.gn.orig	2017-01-26 00:49:11 UTC
+--- src/3rdparty/chromium/components/crash/content/app/BUILD.gn.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/components/crash/content/app/BUILD.gn
-@@ -145,7 +145,7 @@ source_set("app_non_mac_win") {
-       "//breakpad:breakpad_handler",
-       "//sandbox",
-     ]
--  } else if (is_posix && !is_ios) {
-+  } else if (is_posix && !is_ios && !is_bsd) {
-     deps += [ "//breakpad:client" ]
+@@ -36,7 +36,7 @@ static_library("app") {
+     sources += [ "crashpad.cc" ]
    }
- }
+ 
+-  if (is_android || is_linux) {
++  if (is_android || (is_linux && !is_bsd)) {
+     # Want these files on both Linux and Android.
+     set_sources_assignment_filter([])
+     sources += [
+@@ -73,8 +73,6 @@ static_library("app") {
+       "//content/public/common:content_descriptors",
+       "//content/public/common:result_codes",
+       "//sandbox",
+-      "//third_party/breakpad:client",
+-      "//third_party/crashpad/crashpad/snapshot",
+     ]
+ 
+     # Clang's -mstackrealign doesn't work well with

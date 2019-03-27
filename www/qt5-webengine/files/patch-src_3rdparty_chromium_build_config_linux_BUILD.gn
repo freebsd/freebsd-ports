@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/build/config/linux/BUILD.gn.orig	2018-11-13 18:25:11 UTC
++++ src/3rdparty/chromium/build/config/linux/BUILD.gn
+@@ -28,7 +28,7 @@ config("runtime_library") {
+   }
+ 
+   if ((!is_chromeos || default_toolchain != "//build/toolchain/cros:target") &&
+-      (!use_custom_libcxx || current_cpu == "mipsel") && !use_qt) {
++      (!use_custom_libcxx || current_cpu == "mipsel") && !use_qt && !is_bsd) {
+     libs = [ "atomic" ]
+   }
+ }

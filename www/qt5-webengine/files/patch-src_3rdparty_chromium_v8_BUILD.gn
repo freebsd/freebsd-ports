@@ -1,16 +1,16 @@
---- src/3rdparty/chromium/v8/BUILD.gn.orig	2017-06-20 05:10:02.000000000 -0400
-+++ src/3rdparty/chromium/v8/BUILD.gn	2017-12-16 11:25:43.174788000 -0500
-@@ -348,7 +348,7 @@
-   # TODO(jochen): Add support for compiling with simulators.
- 
-   if (is_debug) {
--    if (is_linux && v8_enable_backtrace) {
-+    if ((is_linux || is_bsd) && v8_enable_backtrace) {
-       ldflags += [ "-rdynamic" ]
+--- src/3rdparty/chromium/v8/BUILD.gn.orig	2018-11-13 18:25:11 UTC
++++ src/3rdparty/chromium/v8/BUILD.gn
+@@ -2597,7 +2597,7 @@ v8_source_set("v8_base") {
+       "src/x64/simulator-x64.h",
+       "src/x64/sse-instr.h",
+     ]
+-    if (is_linux) {
++    if (is_linux && !is_bsd) {
+       sources += [
+         "src/trap-handler/handler-inside-linux.cc",
+         "src/trap-handler/handler-outside-linux.cc",
+@@ -2951,7 +2951,7 @@ v8_component("v8_libbase") {
      }
- 
-@@ -2282,7 +2282,7 @@
-     sources += [ "src/base/platform/platform-posix.cc" ]
    }
  
 -  if (is_linux) {
@@ -18,7 +18,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -2292,6 +2292,12 @@
+@@ -2971,6 +2971,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]
@@ -31,7 +31,7 @@
    } else if (is_android) {
      if (current_toolchain == host_toolchain) {
        libs = [
-@@ -2429,6 +2435,7 @@
+@@ -3142,6 +3148,7 @@ if (v8_use_snapshot && current_toolchain == v8_snapsho
      sources = [
        "src/snapshot/mksnapshot.cc",
      ]

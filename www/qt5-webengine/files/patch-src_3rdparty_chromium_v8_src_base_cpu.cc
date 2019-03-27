@@ -1,19 +1,18 @@
---- src/3rdparty/chromium/v8/src/base/cpu.cc.orig	2018-03-20 07:26:22 UTC
+--- src/3rdparty/chromium/v8/src/base/cpu.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/v8/src/base/cpu.cc
-@@ -600,7 +600,7 @@ CPU::CPU()
- #endif
+@@ -424,6 +424,7 @@ CPU::CPU()
  
- #elif V8_HOST_ARCH_ARM64
--
+ #if V8_OS_LINUX
+ 
 +#if V8_OS_LINUX
    CPUInfo cpu_info;
  
    // Extract implementor from the "CPU implementer" field.
-@@ -634,6 +634,7 @@ CPU::CPU()
+@@ -457,6 +458,7 @@ CPU::CPU()
      }
      delete[] part;
    }
-+#endif // V8_OS_LINUX
++#endif
  
- #elif V8_HOST_ARCH_PPC
- 
+   // Extract architecture from the "CPU Architecture" field.
+   // The list is well-known, unlike the the output of

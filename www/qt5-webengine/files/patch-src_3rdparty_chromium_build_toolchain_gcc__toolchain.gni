@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni.orig	2017-01-26 00:49:07 UTC
+--- src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni
-@@ -11,6 +11,11 @@ import("//build/toolchain/cc_wrapper.gni
+@@ -11,6 +11,13 @@ import("//build/toolchain/clang_static_analyzer.gni")
  import("//build/toolchain/goma.gni")
  import("//build/toolchain/toolchain.gni")
  
@@ -9,10 +9,12 @@
 +  extra_ldflags = ""
 +}
 +
- # This template defines a toolchain for something that works like gcc
- # (including clang).
- #
-@@ -482,14 +487,23 @@ template("clang_toolchain") {
++
++
+ if (is_nacl) {
+   # To keep NaCl variables out of builds that don't include NaCl, all
+   # variables defined in nacl/config.gni referenced here should be protected by
+@@ -604,13 +611,23 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {
@@ -20,6 +22,9 @@
 -    cc = "$prefix/clang"
 -    cxx = "$prefix/clang++"
 -    ld = cxx
+-    readelf = "${toolprefix}readelf"
+-    ar = "${prefix}/llvm-ar"
+-    nm = "${toolprefix}nm"
 +    if (is_bsd) {
 +      cc = "${toolprefix}clang"
 +      cxx = "${toolprefix}clang++"
@@ -32,14 +37,11 @@
 +      cc = "$prefix/clang"
 +      cxx = "$prefix/clang++"
 +      ld = cxx
- 
--    readelf = "${toolprefix}readelf"
--    ar = "${toolprefix}ar"
--    nm = "${toolprefix}nm"
++
 +      readelf = "${toolprefix}readelf"
-+      ar = "${toolprefix}ar"
++      ar = "${prefix}/llvm-ar"
 +      nm = "${toolprefix}nm"
 +    }
  
-     forward_variables_from(invoker, [ "strip" ])
- 
+     forward_variables_from(invoker,
+                            [
