@@ -1,0 +1,12 @@
+sem_init(3) is part of libc on FreeBSD, so we ended up not linking against
+libpthread. Look for a symbol that causes us to load it.
+--- configure.ac.orig	2019-03-26 21:58:42 UTC
++++ configure.ac
+@@ -375,6 +375,7 @@ CXXFLAGS="$OLD_CXXFLAGS"
+ # ----------------------------------------
+ 
+ AC_SEARCH_LIBS([sem_init], [pthread rt])
++AC_SEARCH_LIBS([pthread_create], [pthread])
+ 
+ 
+ # ----------------------------------------
