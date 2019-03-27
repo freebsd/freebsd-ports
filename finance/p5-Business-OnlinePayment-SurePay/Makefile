@@ -11,12 +11,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Business::OnlinePayment backend module for SurePay authorization service
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Business-CreditCard>=0:finance/p5-Business-CreditCard \
 		p5-Business-OnlinePayment>=0:finance/p5-Business-OnlinePayment
 
 USES=		perl5
 USE_PERL5=	configure patch
+NO_ARCH=	yes
 
 post-patch:
 	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
