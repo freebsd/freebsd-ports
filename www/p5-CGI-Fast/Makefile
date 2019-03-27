@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	CGI-Fast
-PORTVERSION=	2.13
+PORTVERSION=	2.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LEEJO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl CGI Interface for FastCGI
 
 LICENSE=	ART10 GPLv1+
@@ -22,8 +22,9 @@ TEST_DEPENDS=	p5-CPAN-Changes>=0:devel/p5-CPAN-Changes \
 
 CONFLICTS=	p5-CGI.pm-[1-3]*
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
