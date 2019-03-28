@@ -3,7 +3,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.7.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -188,10 +188,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/syslog.d
-	${INSTALL_DATA} ${PATCHDIR}/nut.syslog ${STAGEDIR}${PREFIX}/etc/syslog.d/nut.sample
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
-	${INSTALL_DATA} ${PATCHDIR}/nut.newsyslog ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/nut.conf.sample
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PATCHDIR}/nut.syslog ${STAGEDIR}${EXAMPLESDIR}/syslog.sample
+	${INSTALL_DATA} ${PATCHDIR}/nut.newsyslog ${STAGEDIR}${EXAMPLESDIR}/newsyslog.sample
 	${MKDIR} ${STAGEDIR}/var/log/nut
 
 .include <bsd.port.mk>
