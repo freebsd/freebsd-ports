@@ -3,6 +3,7 @@
 
 PORTNAME=	RT-Extension-SLA
 PORTVERSION=	1.04
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,35 +13,19 @@ COMMENT=	RT extension to automate due dates using service levels
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Business-Hours>0:misc/p5-Business-Hours
-
-# SLA functionality comes as standard in RT 4.4.x
-CONFLICTS_INSTALL=	rt44-4.4.*
-
-NO_ARCH=	yes
+BUILD_DEPENDS=	p5-Business-Hours>0:misc/p5-Business-Hours \
+		${LOCALBASE}/bin/rt:www/rt${RT_VER}
+RUN_DEPENDS=	p5-Business-Hours>0:misc/p5-Business-Hours \
+		${LOCALBASE}/bin/rt:www/rt${RT_VER}
 
 USES+=		perl5
 USE_PERL5=	configure
 
-OPTIONS_SINGLE=                 RTVERSION
-OPTIONS_SINGLE_RTVERSION=       RT40 RT42
-RT40_DESC=                      Install for rt-4.0.x (www/rt40)
-RT42_DESC=                      Install for rt-4.2.x (www/rt42)
-OPTIONS_DEFAULT=                RT42
+NO_ARCH=	yes
 
-.include <bsd.port.options.mk>
-
-.for opt in ${OPTIONS_SINGLE_RTVERSION}
-.if ${PORT_OPTIONS:M${opt}}
-RT_VER=         ${opt:S/RT//}
-.endif
-.endfor
-
-### Temporary for debugging
-#WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work${RT_VER}
-
-RUN_DEPENDS+=	${LOCALBASE}/bin/rt:www/rt${RT_VER}
+# SLA functionality comes as standard in RT 4.4.x
+CONFLICTS_INSTALL= rt44
+RT_VER=		42
 
 PLIST_SUB+=	RTHOME=share/rt${RT_VER}
 
@@ -50,7 +35,7 @@ SUB_LIST+=	INITIALDATA=plugins/RT-Extension-SLA/etc/initialdata \
 SUB_FILES+=	pkg-message
 
 # Note: You can install using an arbitrary $PREFIX but only if it
-# matches the $PREFIX used to install www/rt{38,40,42}.  Hence ignore
+# matches the $PREFIX used to install www/rt42.  Hence ignore
 # $PREFIX in the environment and inherit settings from RT.pm
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \

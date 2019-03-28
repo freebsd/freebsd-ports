@@ -1,6 +1,6 @@
---- ./inc/Module/Install/RTx.pm.orig	2014-07-01 20:40:45.000000000 +0100
-+++ ./inc/Module/Install/RTx.pm	2014-07-03 23:02:03.735533399 +0100
-@@ -77,7 +77,7 @@
+--- inc/Module/Install/RTx.pm.orig	2014-12-18 22:31:31 UTC
++++ inc/Module/Install/RTx.pm
+@@ -85,7 +85,7 @@ sub RTx {
      my %index = map { $_ => 1 } @INDEX_DIRS;
      $self->no_index( directory => $_ ) foreach grep !$index{$_}, @DIRS;
  
