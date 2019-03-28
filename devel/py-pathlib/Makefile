@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		python:-3.3
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
