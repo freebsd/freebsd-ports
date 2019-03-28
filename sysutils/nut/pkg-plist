@@ -1,24 +1,24 @@
 %%NUT_CGI%%%%CGIDIR%%/upsimage.cgi
 %%NUT_CGI%%%%CGIDIR%%/upsset.cgi
 %%NUT_CGI%%%%CGIDIR%%/upsstats.cgi
-%%NUT_CGI%%%%CGIETCDIR%%hosts.conf.sample
-%%NUT_CGI%%%%CGIETCDIR%%upsset.conf.sample
-%%NUT_CGI%%%%CGIETCDIR%%upsstats.html.sample
-%%NUT_CGI%%%%CGIETCDIR%%upsstats-single.html.sample
+%%NUT_CGI%%@sample %%CGIETCDIR%%hosts.conf.sample
+%%NUT_CGI%%@sample %%CGIETCDIR%%upsset.conf.sample
+%%NUT_CGI%%@sample %%CGIETCDIR%%upsstats.html.sample
+%%NUT_CGI%%@sample %%CGIETCDIR%%upsstats-single.html.sample
 %%NUT_CGI%%%%WWWDIR%%/bottom.html
 %%NUT_CGI%%%%WWWDIR%%/header.html
 %%NUT_CGI%%%%WWWDIR%%/index.html
 %%NUT_CGI%%%%WWWDIR%%/nut-banner.png
 %%ETCDIR%%/cmdvartab
 %%ETCDIR%%/driver.list
-%%ETCDIR%%/nut.conf.sample
-%%ETCDIR%%/ups.conf.sample
-%%ETCDIR%%/upsd.conf.sample
-%%ETCDIR%%/upsd.users.sample
-%%ETCDIR%%/upsmon.conf.sample
-%%ETCDIR%%/upssched.conf.sample
-etc/newsyslog.conf.d/nut.conf
-etc/syslog.d/nut
+@sample %%ETCDIR%%/nut.conf.sample
+@sample %%ETCDIR%%/ups.conf.sample
+@sample %%ETCDIR%%/upsd.conf.sample
+@sample %%ETCDIR%%/upsd.users.sample
+@sample %%ETCDIR%%/upsmon.conf.sample
+@sample %%ETCDIR%%/upssched.conf.sample
+@sample etc/newsyslog.conf.d/nut.conf.sample
+@sample etc/syslog.d/nut.sample
 %%NUT_USB%%etc/devd/nut-usb.conf
 @stopdaemon nut_upsmon
 @stopdaemon nut_upslog
