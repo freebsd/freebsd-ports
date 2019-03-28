@@ -3,7 +3,9 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	11.2
-PORTREVISION=	1
+# PORTREVISION must be ?= otherwise, all other port get this PORTREVISION and
+# not their own.  Probably best to keep it at ?=0 when reset here too.
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
