@@ -1,0 +1,13 @@
+You wrote a cool network client or server. It encrypts connections
+using TLS. Your test suite needs to make TLS connections to itself.
+
+Uh oh. Your test suite probably doesn't have a valid TLS certificate.
+Now what?
+
+trustme is a tiny Python package that does one thing: it gives you
+a fake certificate authority (CA) that you can use to generate fake
+TLS certs to use in your tests. Well, technically they're real
+certs, they're just signed by your CA, which nobody trusts. But you
+can trust it. Trust me.
+
+WWW: https://github.com/python-trio/trustme
