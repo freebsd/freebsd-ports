@@ -1,5 +1,6 @@
-bin/ristretto
-bin/shakesum
+share/decaf/cmake/DecafConfig.cmake
+share/decaf/cmake/DecafTargets-%%CMAKE_BUILD_TYPE%%.cmake
+share/decaf/cmake/DecafTargets.cmake
 include/decaf.h
 include/decaf.hxx
 include/decaf/common.h
@@ -19,5 +20,6 @@ include/decaf/shake.h
 include/decaf/shake.hxx
 include/decaf/spongerng.h
 include/decaf/spongerng.hxx
+lib/libdecaf.a
 lib/libdecaf.so
 lib/libdecaf.so.1

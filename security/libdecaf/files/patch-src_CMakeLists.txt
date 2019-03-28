@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2018-06-05 22:25:08 UTC
++++ src/CMakeLists.txt
+@@ -119,7 +119,7 @@ if(ENABLE_SHARED)
+ endif()
+ 
+ install(DIRECTORY ${GSOURCE_PATH}/include/
+-	DESTINATION include/decaf
++	DESTINATION include
+ 	FILES_MATCHING PATTERN "*.h*"
+ 	PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+ )
