@@ -41,8 +41,7 @@ PLIST_SUB+=	LXQT_INCLUDEDIR="include/lxqt" \
 	LXQT_TRANSLATIONS="share/lxqt/translations" \
 	VERSION="${PORTVERSION}"
 
-CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${MANDIRS} \
-	-DPULL_TRANSLATIONS:BOOL=OFF
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${MANDIRS} 
 
 # Available LXQt components are:
 _USE_LXQT_ALL=	buildtools globalkeys libfmqt lxqt qtxdg

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcmanfm-qt
-PORTVERSION=	0.13.0
-PORTREVISION=	3
+PORTVERSION=	0.14.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	LXQT
 
@@ -13,10 +12,10 @@ COMMENT=	LXQt file manager
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
-		libfm.so:x11/libfm@gtk2 \
+		libfm-qt.so:x11/libfm-qt \
 		libexif.so:graphics/libexif
 
-USES=		cmake compiler:c++11-lib desktop-file-utils \
+USES=		cmake compiler:c++14-lang desktop-file-utils gnome\
 		gettext-runtime localbase:ldflags lxqt pkgconfig kde:5 qt:5 tar:xz
 USE_QT=		buildtools_build qmake_build core dbus gui linguisttools \
 		widgets x11extras

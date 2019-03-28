@@ -1,6 +1,6 @@
---- netstat.cpp.orig	2018-07-28 14:38:10 UTC
+--- netstat.cpp.orig	2019-01-30 19:24:29 UTC
 +++ netstat.cpp
-@@ -26,7 +26,21 @@
+@@ -26,8 +26,23 @@
  
  #include "netstat.h"
  #include "netstat_p.h"
@@ -20,48 +20,50 @@
 +}
 +#endif
  
++
  namespace SysStat {
  
-@@ -37,7 +51,7 @@ NetStatPrivate::NetStatPrivate(NetStat *
+ NetStatPrivate::NetStatPrivate(NetStat *parent)
+@@ -37,7 +52,7 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
  
      connect(mTimer, SIGNAL(timeout()), SLOT(timeout()));
  
 -
 +#ifndef HAVE_SYSCTL_H
-     QStringList rows(readAllFile("/proc/net/dev").split(QChar('\n'), QString::SkipEmptyParts));
+     QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), QString::SkipEmptyParts));
  
      rows.erase(rows.begin(), rows.begin() + 2);
-@@ -50,6 +64,29 @@ NetStatPrivate::NetStatPrivate(NetStat *
+@@ -50,6 +65,29 @@ NetStatPrivate::NetStatPrivate(NetStat *parent)
  
          mSources.append(tokens[0].trimmed());
      }
 +#else
-+    int count;
-+    size_t len;
-+    int cntifmib[] = { CTL_NET, PF_LINK, NETLINK_GENERIC, IFMIB_SYSTEM, IFMIB_IFCOUNT };// net.link.generic.system.ifcount;
-+    len = sizeof(int);
-+    if (sysctl(cntifmib, 5, &count, &len, NULL, 0) < 0)
-+        perror("sysctl");
-+
-+
-+    struct ifmibdata ifmd;
-+    size_t len1 = sizeof(ifmd);
-+    for (int i=1; i<=count;i++) {
-+        int name[] = { CTL_NET, PF_LINK, NETLINK_GENERIC, IFMIB_IFDATA, i, IFDATA_GENERAL };
-+
-+        if (sysctl(name, 6, &ifmd, &len1, NULL, 0) < 0) {
++        int count;
++        size_t len;
++        int cntifmib[] = { CTL_NET, PF_LINK, NETLINK_GENERIC, IFMIB_SYSTEM, IFMIB_IFCOUNT };// net.link.generic.system.ifcount;
++        len = sizeof(int);
++        if (sysctl(cntifmib, 5, &count, &len, NULL, 0) < 0)
 +            perror("sysctl");
++
++
++        struct ifmibdata ifmd;
++        size_t len1 = sizeof(ifmd);
++        for (int i=1; i<=count;i++) {
++            int name[] = { CTL_NET, PF_LINK, NETLINK_GENERIC, IFMIB_IFDATA, i, IFDATA_GENERAL };
++
++            if (sysctl(name, 6, &ifmd, &len1, NULL, 0) < 0) {
++                perror("sysctl");
++            }
++            if ((ifmd.ifmd_data.ifi_type == IFT_ETHER) || (ifmd.ifmd_data.ifi_type == IFT_IEEE80211)) {
++            const char *iface = ifmd.ifmd_name;
++            mSources.append(QString::fromLatin1(iface));
++            }
 +        }
-+        if ((ifmd.ifmd_data.ifi_type == IFT_ETHER) || (ifmd.ifmd_data.ifi_type == IFT_IEEE80211)) {
-+        const char *iface = ifmd.ifmd_name;
-+        mSources.append(QString::fromLatin1(iface));
-+        }
-+    }
 +#endif
  }
  
  NetStatPrivate::~NetStatPrivate()
-@@ -58,6 +95,50 @@ NetStatPrivate::~NetStatPrivate()
+@@ -58,6 +96,50 @@ NetStatPrivate::~NetStatPrivate()
  
  void NetStatPrivate::timeout()
  {
@@ -109,10 +111,10 @@
 +        }
 +    }
 +#else
-     QStringList rows(readAllFile("/proc/net/dev").split(QChar('\n'), QString::SkipEmptyParts));
+     QStringList rows(readAllFile("/proc/net/dev").split(QLatin1Char('\n'), QString::SkipEmptyParts));
  
  
-@@ -99,6 +180,7 @@ void NetStatPrivate::timeout()
+@@ -99,6 +181,7 @@ void NetStatPrivate::timeout()
  
          mPrevious[interfaceName] = current;
      }

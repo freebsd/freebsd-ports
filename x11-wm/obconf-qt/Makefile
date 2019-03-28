@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	obconf-qt
-PORTVERSION=	0.13.0
-PORTREVISION=	2
+PORTVERSION=	0.14.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	LXQT/${PORTNAME}
 
@@ -28,9 +27,5 @@ USE_LXQT=	buildtools
 USE_GNOME=	glib20 pango librsvg2 gdkpixbuf2 libxml2 cairo
 
 USE_XORG=	ice sm x11 xft
-
-PLIST_FILES=	bin/obconf-qt \
-		share/applications/obconf-qt.desktop \
-		share/icons/hicolor/48x48/apps/obconf-qt.png
 
 .include <bsd.port.mk>

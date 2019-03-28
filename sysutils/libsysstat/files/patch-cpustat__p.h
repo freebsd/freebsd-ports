@@ -1,4 +1,4 @@
---- cpustat_p.h.orig	2018-07-28 14:34:10 UTC
+--- cpustat_p.h.orig	2019-01-30 19:24:29 UTC
 +++ cpustat_p.h
 @@ -27,6 +27,9 @@
  #ifndef LIBSYSSTAT__CPU_STAT__PRIVATE__INCLUDED
@@ -10,7 +10,7 @@
  
  #include <QtCore/QObject>
  #include <QtCore/QtGlobal>
-@@ -52,8 +55,13 @@ public:
+@@ -52,8 +55,13 @@ class CpuStatPrivate : public BaseStatPrivate (public)
      CpuStat::Monitoring monitoring() const;
      void setMonitoring(CpuStat::Monitoring value);
  
@@ -24,7 +24,7 @@
  
  signals:
      void update(float user, float nice, float system, float other);
-@@ -74,12 +82,21 @@ private:
+@@ -74,12 +82,21 @@ private slots: (private)
      {
          Values();
  
@@ -46,7 +46,7 @@
  
          void sum();
  
-@@ -89,7 +106,13 @@ private:
+@@ -89,7 +106,13 @@ private slots: (private)
  
      CpuStat::Monitoring mMonitoring;
  

@@ -1,10 +1,8 @@
---- cpustat.cpp.orig	2018-05-21 17:16:59 UTC
+--- cpustat.cpp.orig	2019-01-24 21:43:32 UTC
 +++ cpustat.cpp
-@@ -25,13 +25,64 @@
- 
- 
+@@ -27,11 +27,62 @@
  #include <unistd.h>
--
+ 
  #include "cpustat.h"
 +#ifdef HAVE_SYSCTL_H
 +extern "C"
@@ -18,7 +16,6 @@
 +    #include <sys/sysctl.h>
 +}
 +#endif
-+
  #include "cpustat_p.h"
  
  
@@ -27,7 +24,7 @@
 +char *GetFirstFragment(char *string, const char *delim)
 +{
 +    char *token = NULL;
-+
+ 
 +    token = strsep(&string, delim);
 +    if (token != NULL)
 +    {
@@ -60,13 +57,13 @@
 +        return 0;
 +    else
 +        return freq;
- 
++
 +}
 +#endif
  CpuStatPrivate::CpuStatPrivate(CpuStat *parent)
      : BaseStatPrivate(parent)
      , mMonitoring(CpuStat::LoadAndFrequency)
-@@ -39,7 +90,11 @@ CpuStatPrivate::CpuStatPrivate(CpuStat *
+@@ -39,7 +90,11 @@ CpuStatPrivate::CpuStatPrivate(CpuStat *parent)
      mSource = defaultSource();
  
      connect(mTimer, SIGNAL(timeout()), SLOT(timeout()));
@@ -79,57 +76,57 @@
      mUserHz = sysconf(_SC_CLK_TCK);
  
      updateSources();
-@@ -47,6 +102,49 @@ CpuStatPrivate::CpuStatPrivate(CpuStat *
+@@ -47,6 +102,49 @@ CpuStatPrivate::CpuStatPrivate(CpuStat *parent)
  
  void CpuStatPrivate::addSource(const QString &source)
  {
 +#ifdef HAVE_SYSCTL_H
-+    char buf[1024];
-+    char *tokens, *t;
-+    ulong min = 0, max = 0;
-+    size_t len = sizeof(buf);
++            char buf[1024];
++            char *tokens, *t;
++            ulong min = 0, max = 0;
++            size_t len = sizeof(buf);
 +
-+    /* The string returned by the dev.cpu.0.freq_levels sysctl
-+     * is a space separated list of MHz/milliwatts.
-+     */
-+    if (sysctlbyname("dev.cpu.0.freq_levels", buf, &len, NULL, 0) < 0)
-+        return;
++            /* The string returned by the dev.cpu.0.freq_levels sysctl
++             * is a space separated list of MHz/milliwatts.
++             */
++            if (sysctlbyname("dev.cpu.0.freq_levels", buf, &len, NULL, 0) < 0)
++                return;
 +
-+    t = strndup(buf, len);
-+    if (t == NULL)
-+    {
-+        free(t);
-+        return;
-+    }
-+
-+    while ((tokens = strsep(&t, " ")) != NULL)
-+    {
-+        char *freq;
-+        ulong res;
-+
-+        freq = GetFirstFragment(tokens, "/");
-+        if (freq != NULL)
-+        {
-+            res = strtoul(freq, &freq, 10);
-+            if (res > max)
++            t = strndup(buf, len);
++            if (t == NULL)
 +            {
-+                max = res;
++                free(t);
++                return;
 +            }
-+            else
-+            {
-+                if ((min == 0) || (res < min))
-+                    min = res;
-+            }
-+        }
-+    }
 +
-+    free(t);
-+    mBounds[source] = qMakePair(min, max);
-+#else
++            while ((tokens = strsep(&t, " ")) != NULL)
++            {
++                char *freq;
++                ulong res;
++
++                freq = GetFirstFragment(tokens, "/");
++                if (freq != NULL)
++                {
++                    res = strtoul(freq, &freq, 10);
++                    if (res > max)
++                    {
++                        max = res;
++                    }
++                    else
++                    {
++                        if ((min == 0) || (res < min))
++                            min = res;
++                    }
++                }
++            }
++
++            free(t);
++            mBounds[source] = qMakePair(min, max);
++        #else
      bool ok;
  
-     uint min = readAllFile(qPrintable(QString("/sys/devices/system/cpu/%1/cpufreq/scaling_min_freq").arg(source))).toUInt(&ok);
-@@ -56,12 +154,27 @@ void CpuStatPrivate::addSource(const QSt
+     uint min = readAllFile(qPrintable(QString::fromLatin1("/sys/devices/system/cpu/%1/cpufreq/scaling_min_freq").arg(source))).toUInt(&ok);
+@@ -56,12 +154,27 @@ void CpuStatPrivate::addSource(const QString &source)
          if (ok)
              mBounds[source] = qMakePair(min, max);
      }
@@ -142,23 +139,23 @@
 +#ifdef HAVE_SYSCTL_H
 +    mBounds.clear();
 +    int cpu;
-+
+ 
 +    cpu = GetCpu();
-+    mSources.append("cpu"); // Linux has cpu in /proc/stat
++    mSources.append(QStringLiteral("cpu")); // Linux has cpu in /proc/stat
 +    for (int i =0;i<cpu;i++)
 +    {
-+        mSources.append(QString("cpu%1").arg(i));
++        mSources.append(QString::fromLatin1("cpu%1").arg(i));
 +
 +
- 
-+        addSource(QString("cpu%1").arg(i));
++
++        addSource(QString::fromLatin1("cpu%1").arg(i));
 +    }
 +#else
-     const QStringList rows = readAllFile("/proc/stat").split(QChar('\n'), QString::SkipEmptyParts);
+     const QStringList rows = readAllFile("/proc/stat").split(QLatin1Char('\n'), QString::SkipEmptyParts);
      for (const QString &row : rows)
      {
 @@ -99,6 +212,7 @@ void CpuStatPrivate::updateSources()
-                 addSource(QString("cpu%1").arg(number));
+                 addSource(QString::fromLatin1("cpu%1").arg(number));
          }
      }
 +#endif
@@ -170,86 +167,86 @@
  void CpuStatPrivate::timeout()
  {
 +#ifdef HAVE_SYSCTL_H
-+    if ( (mMonitoring == CpuStat::LoadOnly)
-+      || (mMonitoring == CpuStat::LoadAndFrequency) )
-+    {
-+        int cpuNumber=0;
-+        long *cp_times=0;
-+        if(mSource!="cpu") {
-+            size_t cp_size = sizeof(long) * CPUSTATES * GetCpu();
-+            cp_times = (long *)malloc(cp_size);
-+            cpuNumber = mSource.midRef(3).toInt();
-+            if (sysctl(mib0,2, cp_times, &cp_size, NULL, 0) < 0)
-+                free(cp_times);
-+        } else {
-+            size_t cp_size = sizeof(long)*CPUSTATES;
-+            cp_times = (long *)malloc(cp_size);
-+            if(sysctl(mib1,2,cp_times,&cp_size,NULL,0) < 0)
-+                free(cp_times);
-+        }
-+        Values current;
-+        current.user = static_cast<ulong>(cp_times[CP_USER+cpuNumber*CPUSTATES]);
-+        current.nice = static_cast<ulong>(cp_times[CP_NICE+cpuNumber*CPUSTATES]);
-+        current.system = static_cast<ulong>(cp_times[CP_SYS+cpuNumber*CPUSTATES]);
-+        current.idle = static_cast<ulong>(cp_times[CP_IDLE+cpuNumber*CPUSTATES]);
-+        current.other = static_cast<ulong>(cp_times[CP_INTR+cpuNumber*CPUSTATES]);
-+        current.total = current.user + current.nice + current.system+current.idle+current.other;
-+
-+        float sumDelta = static_cast<float>(current.total - mPrevious.total);
-+
-+        if ((mPrevious.total != 0) && ((sumDelta < mIntervalMin) || (sumDelta > mIntervalMax)))
-+        {
-+            if (mMonitoring == CpuStat::LoadAndFrequency)
-+                emit update(0.0, 0.0, 0.0, 0.0, 0.0, 0);
-+            else
-+                emit update(0.0, 0.0, 0.0, 0.0);
-+
-+            mPrevious.clear();
-+        }
-+        else
-+        {
-+            if (mMonitoring == CpuStat::LoadAndFrequency)
++            if ( (mMonitoring == CpuStat::LoadOnly)
++              || (mMonitoring == CpuStat::LoadAndFrequency) )
 +            {
-+                float freqRate = 1.0;
-+                ulong freq = CurrentFreq();
-+                if (freq > 0)
++                int cpuNumber=0;
++                long *cp_times=0;
++                if(mSource!=QLatin1String("cpu")) {
++                    size_t cp_size = sizeof(long) * CPUSTATES * GetCpu();
++                    cp_times = (long *)malloc(cp_size);
++                    cpuNumber = mSource.midRef(3).toInt();
++                    if (sysctl(mib0,2, cp_times, &cp_size, NULL, 0) < 0)
++                        free(cp_times);
++                } else {
++                    size_t cp_size = sizeof(long)*CPUSTATES;
++                    cp_times = (long *)malloc(cp_size);
++                    if(sysctl(mib1,2,cp_times,&cp_size,NULL,0) < 0)
++                        free(cp_times);
++                }
++                Values current;
++                current.user = static_cast<ulong>(cp_times[CP_USER+cpuNumber*CPUSTATES]);
++                current.nice = static_cast<ulong>(cp_times[CP_NICE+cpuNumber*CPUSTATES]);
++                current.system = static_cast<ulong>(cp_times[CP_SYS+cpuNumber*CPUSTATES]);
++                current.idle = static_cast<ulong>(cp_times[CP_IDLE+cpuNumber*CPUSTATES]);
++                current.other = static_cast<ulong>(cp_times[CP_INTR+cpuNumber*CPUSTATES]);
++                current.total = current.user + current.nice + current.system+current.idle+current.other;
++
++                float sumDelta = static_cast<float>(current.total - mPrevious.total);
++
++                if ((mPrevious.total != 0) && ((sumDelta < mIntervalMin) || (sumDelta > mIntervalMax)))
 +                {
-+                    if(mSource=="cpu")
-+                        freqRate = static_cast<float>(freq) / static_cast<float>(mBounds[QStringLiteral("cpu0")].second);// use max cpu0 for this case
++                    if (mMonitoring == CpuStat::LoadAndFrequency)
++                        emit update(0.0, 0.0, 0.0, 0.0, 0.0, 0);
 +                    else
-+                        freqRate = static_cast<float>(freq) / static_cast<float>(mBounds[mSource].second);
-+                   emit update(
-+                       static_cast<float>(current.user   - mPrevious.user  ) / sumDelta,
-+                       static_cast<float>(current.nice   - mPrevious.nice  ) / sumDelta,
-+                       static_cast<float>(current.system - mPrevious.system) / sumDelta,
-+                       static_cast<float>(current.other  - mPrevious.other ) / sumDelta,
-+                       static_cast<float>(freqRate),
-+                       freq);
-+                    }
++                        emit update(0.0, 0.0, 0.0, 0.0);
++
++                    mPrevious.clear();
 +                }
 +                else
 +                {
-+                    emit update(
-+                        static_cast<float>(current.user   - mPrevious.user  ) / sumDelta,
-+                        static_cast<float>(current.nice   - mPrevious.nice  ) / sumDelta,
-+                        static_cast<float>(current.system - mPrevious.system) / sumDelta,
-+                        static_cast<float>(current.other  - mPrevious.other ) / sumDelta);
++                    if (mMonitoring == CpuStat::LoadAndFrequency)
++                    {
++                        float freqRate = 1.0;
++                        ulong freq = CurrentFreq();
++                        if (freq > 0)
++                        {
++                            if(mSource==QLatin1String("cpu"))
++                                freqRate = static_cast<float>(freq) / static_cast<float>(mBounds[QStringLiteral("cpu0")].second);// use max cpu0 for this case
++                            else
++                                freqRate = static_cast<float>(freq) / static_cast<float>(mBounds[mSource].second);
++                           emit update(
++                               static_cast<float>(current.user   - mPrevious.user  ) / sumDelta,
++                               static_cast<float>(current.nice   - mPrevious.nice  ) / sumDelta,
++                               static_cast<float>(current.system - mPrevious.system) / sumDelta,
++                               static_cast<float>(current.other  - mPrevious.other ) / sumDelta,
++                               static_cast<float>(freqRate),
++                               freq);
++                            }
++                        }
++                        else
++                        {
++                            emit update(
++                                static_cast<float>(current.user   - mPrevious.user  ) / sumDelta,
++                                static_cast<float>(current.nice   - mPrevious.nice  ) / sumDelta,
++                                static_cast<float>(current.system - mPrevious.system) / sumDelta,
++                                static_cast<float>(current.other  - mPrevious.other ) / sumDelta);
++                        }
++
++
++                    mPrevious = current;
 +                }
 +
++                free(cp_times);
++            }
++            else
++            {
++                ulong freq = 0;
 +
-+            mPrevious = current;
-+        }
-+
-+        free(cp_times);
-+    }
-+    else
-+    {
-+        ulong freq = 0;
-+
-+        freq = CurrentFreq();
-+        if (freq > 0)
-+            emit update(freq);
-+    }
++                freq = CurrentFreq();
++                if (freq > 0)
++                    emit update(freq);
++            }
 +#else
      if ( (mMonitoring == CpuStat::LoadOnly)
        || (mMonitoring == CpuStat::LoadAndFrequency) )

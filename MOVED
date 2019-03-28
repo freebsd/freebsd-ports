@@ -12008,3 +12008,11 @@ www/rubygem-unicorn51|www/rubygem-unicorn|2019-03-25|Obsolete, please use www/ru
 textproc/rubygem-version_sorter21|textproc/rubygem-version_sorter|2019-03-25|Obsolete, please use textproc/rubygem-version_sorter instead
 net-im/rubygem-hipchat15|net-im/rubygem-hipchat|2019-03-25|Obsolete, please use net-im/rubygem-hipchat instead
 devel/rubygem-fog-json102|devel/rubygem-fog-json|2019-03-25|Obsolete, please use devel/rubygem-fog-json instead
+x11/libmfmqt-l10n||2019-02-28|Obsolete by upstream
+x11-toolkits/qtermwidget-l10n||2019-03-28|Obsolete by upstream
+graphics/lximageqt-l10n||2019-03-28|Obsolete by upstream
+x11/lxqt-globalkeys-l10n||2019-03-28|Obsolete by upstream
+x11-fm/pcmanfmqt-l10n||2019-03-28|Obsolete by upstream
+devel/liblxqt-l10n||2019-03-28|Obsolete by upstream
+x11/lxqt-l10n||2019-03-28|Obsolete by upstream
+x11/qterminal-l10n||2019-03-28|Obsolete by upstream

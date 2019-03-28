@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxqt
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jsm@FreeBSD.org
@@ -14,7 +14,7 @@ RUN_DEPENDS=	startlxqt:x11-wm/lxqt-session \
 	lxqt-about:x11/lxqt-about \
 	lxqt-admin-user:sysutils/lxqt-admin \
 	lxqt-config:sysutils/lxqt-config \
-	lxqt-qtplugin>=0.11:sysutils/lxqt-qtplugin \
+	lxqt-qtplugin>=0.14.0:sysutils/lxqt-qtplugin \
 	qterminal:x11/qterminal \
 	obconf-qt:x11-wm/obconf-qt \
 	lximage-qt:graphics/lximage-qt \
