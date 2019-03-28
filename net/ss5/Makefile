@@ -3,6 +3,7 @@
 
 PORTNAME=	ss5
 DISTVERSION=	3.8.9-8
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
@@ -30,7 +31,6 @@ MAKE_ARGS+=	CC="${CC}"
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's,/usr/local/etc/opt/ss5,${PREFIX}/etc/ss5,' \
 		${WRKSRC}/include/config.h.in
 
