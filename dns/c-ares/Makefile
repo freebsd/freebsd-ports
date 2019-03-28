@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	c-ares
-PORTVERSION=	1.14.0
-PORTREVISION=	2
+PORTVERSION=	1.15.0
 CATEGORIES=	dns
 MASTER_SITES=	http://c-ares.haxx.se/download/ \
 		http://obsd.isc.org/pub/OpenBSD/distfiles/ \
@@ -19,7 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-werror
 INSTALL_TARGET=	install-strip
 SSP_UNSAFE=	Refuses -l in LDFLAGS
-USES=		libtool pathfix compiler:c++11-lang
+USES=		libtool pathfix compiler:c++11-lang gmake
 USE_LDCONFIG=	yes
 
 PROGRAMS=	acountry adig ahost
