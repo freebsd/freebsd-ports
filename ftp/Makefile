@@ -75,6 +75,7 @@
     SUBDIR += puf
     SUBDIR += pure-ftpd
     SUBDIR += pureadmin
+    SUBDIR += py-aioftp
     SUBDIR += py-ftputil
     SUBDIR += py-pycurl
     SUBDIR += py-pyftpdlib
