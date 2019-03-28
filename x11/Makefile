@@ -168,7 +168,6 @@
     SUBDIR += libfm
     SUBDIR += libfm-extra
     SUBDIR += libfm-qt
-    SUBDIR += libfmqt-l10n
     SUBDIR += libgnome
     SUBDIR += libgnome-reference
     SUBDIR += libgnomekbd
@@ -208,8 +207,6 @@
     SUBDIR += lxpanel
     SUBDIR += lxqt-about
     SUBDIR += lxqt-globalkeys
-    SUBDIR += lxqt-globalkeys-l10n
-    SUBDIR += lxqt-l10n
     SUBDIR += lxqt-runner
     SUBDIR += lxrandr
     SUBDIR += mate
@@ -273,7 +270,6 @@
     SUBDIR += qt5-qev
     SUBDIR += qt5-x11extras
     SUBDIR += qterminal
-    SUBDIR += qterminal-l10n
     SUBDIR += radare-cutter
     SUBDIR += rendercheck
     SUBDIR += rgb

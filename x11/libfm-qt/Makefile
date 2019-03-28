@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfm-qt
-PORTVERSION=	0.13.0
-PORTREVISION=	3
+PORTVERSION=	0.14.0
 CATEGORIES=	x11
 MASTER_SITES=	LXQT
 
@@ -12,17 +11,17 @@ COMMENT=	Qt port of libfm
 
 LICENSE=	LGPL21+
 
-LIB_DEPENDS=	libfm.so:x11/libfm@gtk2 \
-	libmenu-cache.so:x11/menu-cache \
-	libexif.so:graphics/libexif
+LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
+		libexif.so:graphics/libexif
 
-USES=	cmake compiler:c++11-lib gettext-runtime lxqt pkgconfig \
-	qt:5 shared-mime-info tar:xz
-USE_QT=		buildtools_build qmake_build core gui linguisttools widgets \
+USES=	cmake compiler:c++14-lang gettext-runtime lxqt pkgconfig \
+	qt:5 gnome shared-mime-info tar:xz
+USE_QT=	buildtools_build qmake_build core gui linguisttools widgets \
 	x11extras
 USE_GNOME=	glib20
 USE_XORG=	xcb
 USE_LXQT=	buildtools
+USE_LDCONFIG=	yes
 
 post-install:
 	${RM} -Rf ${STAGEDIR}${PREFIX}/include/${PORTNAME}/tests/

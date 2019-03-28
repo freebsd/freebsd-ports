@@ -1,8 +1,0 @@
---- qtermwidget/CMakeLists.txt.orig	2018-06-29 18:36:05 UTC
-+++ qtermwidget/CMakeLists.txt
-@@ -2,4 +2,4 @@ cmake_minimum_required(VERSION 3.0.2 FAT
- 
- project(qtermwidget)
- 
--build_component("." "${CMAKE_INSTALL_FULL_DATADIR}/qtermwidget/translations")
-+build_component("." "${CMAKE_INSTALL_FULL_DATADIR}/qtermwidget5/translations")

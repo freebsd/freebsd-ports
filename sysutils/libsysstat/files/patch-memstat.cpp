@@ -1,12 +1,9 @@
---- memstat.cpp.orig	2018-07-28 14:33:22 UTC
+--- memstat.cpp.orig	2019-01-24 21:43:32 UTC
 +++ memstat.cpp
-@@ -26,10 +26,61 @@
+@@ -26,10 +26,58 @@
  
  #include "memstat.h"
  #include "memstat_p.h"
-+#ifdef HAVE_CONFIG_H
-+#include "config.h"
-+#endif
 +#if defined(HAVE_KVM_H) && defined(HAVE_SYSCTL_H)
 +extern "C"
 +{
@@ -62,21 +59,21 @@
  MemStatPrivate::MemStatPrivate(MemStat *parent)
      : BaseStatPrivate(parent)
  {
-@@ -52,7 +103,38 @@ void MemStatPrivate::timeout()
+@@ -52,7 +100,37 @@ void MemStatPrivate::timeout()
      qulonglong memCached = 0;
      qulonglong swapTotal = 0;
      qulonglong swapFree = 0;
 +#ifdef HAVE_SYSCTL_H
-+    memTotal = MemGetByBytes("hw.physmem");
-+    memFree = MemGetByPages("vm.stats.vm.v_free_count");
-+    memBuffers = MemGetByBytes("vfs.bufspace");
-+    memCached = MemGetByPages("vm.stats.vm.v_inactive_count");
++    memTotal = MemGetByBytes(QLatin1String("hw.physmem"));
++    memFree = MemGetByPages(QLatin1String("vm.stats.vm.v_free_count"));
++    memBuffers = MemGetByBytes(QLatin1String("vfs.bufspace"));
++    memCached = MemGetByPages(QLatin1String("vm.stats.vm.v_inactive_count"));
 +#endif
 +#ifdef HAVE_KVM_H
 +    qulonglong swapUsed = 0;
 +    kvm_t *kd;
 +    struct kvm_swap kswap[16]; /* size taken from pstat/pstat.c */
-+
+ 
 +    kd = kvm_open(NULL, _PATH_DEVNULL, NULL, O_RDONLY, "kvm_open");
 +    if (kd == NULL)
 +        kvm_close(kd);
@@ -96,21 +93,20 @@
 +    else
 +        kvm_close(kd);
 +#endif
- 
 +#ifndef HAVE_SYSCTL_H
-     const QStringList rows = readAllFile("/proc/meminfo").split(QChar('\n'), QString::SkipEmptyParts);
+     const QStringList rows = readAllFile("/proc/meminfo").split(QLatin1Char('\n'), QString::SkipEmptyParts);
      for (const QString &row : rows)
      {
-@@ -73,7 +155,7 @@ void MemStatPrivate::timeout()
-         else if(tokens[0] == "SwapFree:")
+@@ -73,7 +151,7 @@ void MemStatPrivate::timeout()
+         else if(tokens[0] == QLatin1String("SwapFree:"))
              swapFree = tokens[1].toULong();
      }
 -
 +#endif
-     if (mSource == "memory")
+     if (mSource == QLatin1String("memory"))
      {
          if (memTotal)
-@@ -90,8 +172,11 @@ void MemStatPrivate::timeout()
+@@ -90,8 +168,11 @@ void MemStatPrivate::timeout()
      {
          if (swapTotal)
          {
