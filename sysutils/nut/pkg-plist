@@ -17,8 +17,8 @@
 @sample %%ETCDIR%%/upsd.users.sample
 @sample %%ETCDIR%%/upsmon.conf.sample
 @sample %%ETCDIR%%/upssched.conf.sample
-@sample %%EXAMPLESDIR%%/newsyslog.sample
-@sample %%EXAMPLESDIR%%/syslog.sample
+@sample %%EXAMPLESDIR%%/newsyslog.sample etc/newsyslog.conf.d/nut.conf
+@sample %%EXAMPLESDIR%%/syslog.sample etc/syslog.d/nut
 %%NUT_USB%%etc/devd/nut-usb.conf
 @stopdaemon nut_upsmon
 @stopdaemon nut_upslog
