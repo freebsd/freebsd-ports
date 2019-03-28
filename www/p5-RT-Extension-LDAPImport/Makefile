@@ -17,9 +17,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-perl-ldap>0:net/p5-perl-ldap \
 		p5-Class-Accessor>0:devel/p5-Class-Accessor \
 		${LOCALBASE}/bin/rt:www/rt${RT_VER}
-RUN_DEPENDS=	p5-perl-ldap>0:net/p5-perl-ldap \
-		p5-Class-Accessor>0:devel/p5-Class-Accessor \
-		${LOCALBASE}/bin/rt:www/rt${RT_VER}
 
 FLAVOR?=	${FLAVORS:[1]}
 FLAVORS=	rt44 rt42
