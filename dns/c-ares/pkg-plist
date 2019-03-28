@@ -9,7 +9,7 @@ include/ares_version.h
 lib/libcares.a
 lib/libcares.so
 lib/libcares.so.2
-lib/libcares.so.2.2.0
+lib/libcares.so.2.3.0
 libdata/pkgconfig/libcares.pc
 man/man3/ares_cancel.3.gz
 man/man3/ares_create_query.3.gz
@@ -35,6 +35,7 @@ man/man3/ares_init.3.gz
 man/man3/ares_init_options.3.gz
 man/man3/ares_library_cleanup.3.gz
 man/man3/ares_library_init.3.gz
+man/man3/ares_library_init_android.3.gz
 man/man3/ares_library_initialized.3.gz
 man/man3/ares_mkquery.3.gz
 man/man3/ares_parse_a_reply.3.gz
@@ -60,6 +61,7 @@ man/man3/ares_set_servers_ports.3.gz
 man/man3/ares_set_servers_ports_csv.3.gz
 man/man3/ares_set_socket_callback.3.gz
 man/man3/ares_set_socket_configure_callback.3.gz
+man/man3/ares_set_socket_functions.3.gz
 man/man3/ares_set_sortlist.3.gz
 man/man3/ares_strerror.3.gz
 man/man3/ares_timeout.3.gz
