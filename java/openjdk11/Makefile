@@ -2,7 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}.${JDK_BUILD_NUMBER}.${BSD_JDK_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	https://github.com/battleblow/openjdk-jdk11u/archive/
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
@@ -111,10 +111,11 @@ BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk11
 JDK_BUILD_JVM=	server
 
 .if empty(ICONV_LIB)
-ICONV_CPPFLAGS=	-DLIBICONV_PLUG
+ICONV_CFLAGS=	-DLIBICONV_PLUG
 .else
-ICONV_CPPFLAGS=	-I${LOCALBASE}/include
-ICONV_LDFLAGS=	-L${LOCALBASE}/lib ${ICONV_LIB}
+ICONV_CFLAGS=	-I${LOCALBASE}/include
+ICONV_LDFLAGS=	-L${LOCALBASE}/lib
+ICONV_LIBS=	${ICONV_LIB}
 .endif
 
 post-patch:
@@ -123,6 +124,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/configure \
 		${WRKSRC}/src/hotspot/os/bsd/os_bsd.cpp
+	@${REINPLACE_CMD} -e 's|%%ICONV_CFLAGS%%|${ICONV_CFLAGS}|' \
+		-e 's|%%ICONV_LDFLAGS%%|${ICONV_LDFLAGS}|' \
+		-e 's|%%ICONV_LIBS%%|${ICONV_LIBS}|' \
+		${WRKSRC}/make/autoconf/libraries.m4
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
