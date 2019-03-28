@@ -45,6 +45,8 @@ portsearch - A utility for searching the ports tree. It allows more detailed
              all perl(1) regular expressions.
 resolveportsfromlibs.sh - Prints the name(s) of ports(s) given a library
                           filename, suitable for direct use in LIB_DEPENDS.
+search_lib_depends_and_bump.sh - Give it a port that has changed and it will bump
+				 all ports having a LIB_DEPENDS on this port
 splitpatch.pl - A small script to convert multi-file patches to several
                 appropriately named single-file patches.
 tindex - script used to build INDEXes for supported FreeBSD branches, which
