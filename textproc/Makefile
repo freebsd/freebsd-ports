@@ -1802,6 +1802,7 @@
     SUBDIR += unoconv
     SUBDIR += unroff
     SUBDIR += unrtf
+    SUBDIR += up
     SUBDIR += urlview
     SUBDIR += utf8proc
     SUBDIR += uz-aspell

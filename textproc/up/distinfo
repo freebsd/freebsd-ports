@@ -1,0 +1,17 @@
+TIMESTAMP = 1553595493
+SHA256 (akavel-up-v0.3.2_GH0.tar.gz) = 359510cfea8af8f14de39d63f63cc5c765f681cca2c37f00174837d52c62cad1
+SIZE (akavel-up-v0.3.2_GH0.tar.gz) = 157016
+SHA256 (gdamore-encoding-b23993cbb635_GH0.tar.gz) = 3c607d322b9f585567dd4b6b19a0179a8277de94d44f98b4b42629632c035923
+SIZE (gdamore-encoding-b23993cbb635_GH0.tar.gz) = 10635
+SHA256 (gdamore-tcell-493f3b46b3c2_GH0.tar.gz) = c636b7735634f329015e605ca154acc47c0164040f9af5af157cc073ebd79410
+SIZE (gdamore-tcell-493f3b46b3c2_GH0.tar.gz) = 720314
+SHA256 (lucasb-eyer-go-colorful-231272389856_GH0.tar.gz) = fe20e3f90bcbcf6bc258cc0421a6a1aa3ff51c1bf5c46637083989b3e203709a
+SIZE (lucasb-eyer-go-colorful-231272389856_GH0.tar.gz) = 428461
+SHA256 (mattn-go-isatty-v0.0.3_GH0.tar.gz) = daf68970a6506650b05bac72082865f88d582ecdb74418b95ac5621d5392b633
+SIZE (mattn-go-isatty-v0.0.3_GH0.tar.gz) = 3364
+SHA256 (mattn-go-runewidth-v0.0.2_GH0.tar.gz) = 6c7734401fdf829af4f35a5af21a54548f7d3a68336940fb550178ddfe95b076
+SIZE (mattn-go-runewidth-v0.0.2_GH0.tar.gz) = 22367
+SHA256 (spf13-pflag-v1.0.3_GH0.tar.gz) = 9e57f86f493f04d9077fccd04e7139ebf243dd544e917ab83d35729b3e54a124
+SIZE (spf13-pflag-v1.0.3_GH0.tar.gz) = 46002
+SHA256 (golang-text-f21a4dfb5e38_GH0.tar.gz) = 51198f5706bc4b834a52a2c8ffe9037360a300702aed2ad567f4853b991e6be2
+SIZE (golang-text-f21a4dfb5e38_GH0.tar.gz) = 6102597

@@ -1,0 +1,11 @@
+up is the Ultimate Plumber, a tool for writing Linux pipes in a terminal-based
+UI interactively, with instant live preview of command results.
+
+The main goal of the Ultimate Plumber is to help interactively and
+incrementally explore textual data in Linux, by making it easier to quickly
+build complex pipelines, thanks to a fast feedback loop. This is achieved by
+boosting any typical Linux text-processing utils such as grep, sort, cut,
+paste, awk, wc, perl, etc., etc., by providing a quick, interactive, scrollable
+preview of their results.
+
+WWW: https://github.com/akavel/up
