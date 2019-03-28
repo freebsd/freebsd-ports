@@ -22,12 +22,14 @@ OPTIONS_DEFINE=	EXAMPLES
 USES=		cpe python
 USE_PYTHON=	autoplist concurrent distutils pythonprefix
 
+NO_ARCH=	yes
+
 CPE_VENDOR=	jean-paul_calderone
 CPE_PRODUCT=	py${PORTNAME}
 
 PORTEXAMPLES=	*
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
