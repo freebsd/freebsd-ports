@@ -98,6 +98,8 @@ man/man3/CURLOPT_ABSTRACT_UNIX_SOCKET.3.gz
 man/man3/CURLOPT_ACCEPTTIMEOUT_MS.3.gz
 man/man3/CURLOPT_ACCEPT_ENCODING.3.gz
 man/man3/CURLOPT_ADDRESS_SCOPE.3.gz
+man/man3/CURLOPT_ALTSVC.3.gz
+man/man3/CURLOPT_ALTSVC_CTRL.3.gz
 man/man3/CURLOPT_APPEND.3.gz
 man/man3/CURLOPT_AUTOREFERER.3.gz
 man/man3/CURLOPT_BUFFERSIZE.3.gz
@@ -441,4 +443,5 @@ man/man3/libcurl-tutorial.3.gz
 man/man3/libcurl-url.3.gz
 man/man3/libcurl.3.gz
 share/aclocal/libcurl.m4
+share/fish/completions/curl.fish
 share/zsh/site-functions/_curl
