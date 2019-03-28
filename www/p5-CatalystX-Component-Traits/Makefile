@@ -10,6 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Automatic Trait Loading and Resolution for Catalyst Components
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.80005:www/p5-Catalyst-Runtime \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
