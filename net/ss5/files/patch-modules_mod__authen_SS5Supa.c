@@ -8,7 +8,7 @@
    int len = 1;
    unsigned char * public_key = NULL;
    uint32_t len_key = 0;
-@@ -205,41 +206,85 @@ static unsigned char * ss5_secure_dh_compute_key (int 
+@@ -205,41 +206,75 @@ static unsigned char * ss5_secure_dh_compute_key (int 
    else
      pid=(UINT)pthread_self();
  
@@ -16,12 +16,6 @@
 -  ss->g = BN_bin2bn ((pippo->g), pippo->leng,  NULL);
 +  p = BN_bin2bn ((pippo->p), pippo->lenp, NULL);
 +  g = BN_bin2bn ((pippo->g), pippo->leng, NULL);
-+  if (p == NULL || g == NULL) {
-+    BN_free(g);
-+    BN_free(p);
-+    DH_free(ss);
-+    return NULL;
-+  }
 +#if OPENSSL_VERSION_NUMBER >= 0x10100005L
 +  DH_set0_pqg(ss, p, NULL, g);
 +#else
@@ -29,11 +23,8 @@
 +  ss->g = g;
 +#endif
    a = BN_bin2bn ((pippo->a), pippo->lena,  NULL);
-+#if OPENSSL_VERSION_NUMBER >= 0x10100005L
+-  if (!a || !ss->p || !ss->g){
 +  if (!a || !p || !g) {
-+#else
-   if (!a || !ss->p || !ss->g){
-+#endif
      if( VERBOSE() ) {
        snprintf(logString,256 - 1,"[%u] [VERB] ss5_secure_dh_compute_key  - Error when compute a, p, g",pid);
        LOGUPDATE()
@@ -96,7 +87,7 @@
    ss5_create_dh_response(s, public_key, len_key);
  #if 0
    printf("B computed: len is %d\n",len_key);
-@@ -256,6 +301,10 @@ static unsigned char * ss5_secure_dh_compute_key (int 
+@@ -256,6 +291,10 @@ static unsigned char * ss5_secure_dh_compute_key (int 
        snprintf(logString,256 - 1,"[%u] [VERB] ss5_secure_dh_compute_key - malloc error",pid);
        LOGUPDATE()
      }
@@ -107,7 +98,7 @@
      return NULL;
    }
    bzero(session_key, DH_size (ss));
-@@ -266,6 +315,10 @@ static unsigned char * ss5_secure_dh_compute_key (int 
+@@ -266,6 +305,10 @@ static unsigned char * ss5_secure_dh_compute_key (int 
      printf("%02x ", session_key[len]);
    printf("\n");
  #endif
