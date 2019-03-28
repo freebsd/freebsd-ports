@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ckcc-protocol
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	security
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,7 @@ COMMENT=	Coldcard CLI and python interface library
 
 LICENSE=	LGPL3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycoin>=0.80:finance/py-pycoin@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click@${PY_FLAVOR}
 
 USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
