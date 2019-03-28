@@ -1050,6 +1050,7 @@ PORTREVISION=	1
     SUBDIR += py-tlslite
     SUBDIR += py-trezor
     SUBDIR += py-trustedpickle
+    SUBDIR += py-trustme
     SUBDIR += py-tuf
     SUBDIR += py-twofish
     SUBDIR += py-txtorcon
