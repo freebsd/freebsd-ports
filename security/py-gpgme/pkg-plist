@@ -21,9 +21,9 @@
 %%PYTHON_SITELIBDIR%%/gpg/constants/event.py
 %%PYTHON_SITELIBDIR%%/gpg/constants/event.pyc
 %%PYTHON_SITELIBDIR%%/gpg/constants/event.pyo
-%%PYTHON_SITELIBDIR%%/gpg/constants/import.py
-%%PYTHON_SITELIBDIR%%/gpg/constants/import.pyc
-%%PYTHON_SITELIBDIR%%/gpg/constants/import.pyo
+%%PYTHON_SITELIBDIR%%/gpg/constants/import_type.py
+%%PYTHON_SITELIBDIR%%/gpg/constants/import_type.pyc
+%%PYTHON_SITELIBDIR%%/gpg/constants/import_type.pyo
 %%PYTHON_SITELIBDIR%%/gpg/constants/keylist/__init__.py
 %%PYTHON_SITELIBDIR%%/gpg/constants/keylist/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gpg/constants/keylist/__init__.pyo

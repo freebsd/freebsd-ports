@@ -2,10 +2,13 @@ bin/gpgme-config
 bin/gpgme-json
 bin/gpgme-tool
 include/gpgme.h
+lib/common-lisp/gpgme/gpgme-grovel.lisp
 lib/common-lisp/gpgme/gpgme-package.lisp
 lib/common-lisp/gpgme/gpgme.asd
 lib/common-lisp/gpgme/gpgme.lisp
 lib/libgpgme.so
 lib/libgpgme.so.11
-lib/libgpgme.so.11.21.0
+lib/libgpgme.so.11.22.0
+libdata/pkgconfig/gpgme-glib.pc
+libdata/pkgconfig/gpgme.pc
 share/aclocal/gpgme.m4
