@@ -17,7 +17,7 @@
 +		push(@args,$isCpp ? $ENV{'CXX'} : $ENV{'CC'});
  		if (HaveDebug) { push(@args,"-g"); }
 -		push(@args,"-O2");
-+		push(@args,split(/\s+/, $isCpp ? $ENV{'CXXFLAGS'} : $ENV{'CFLAGS'}));
++		push(@args,grep /./, split(/\s+/, $isCpp ? $ENV{'CXXFLAGS'} : $ENV{'CFLAGS'}));
  		if ($isCpp && $GccVersion>=4.7 && $GccVersion<6.1) {
  			push(@args,"-std=c++11");
  		}
@@ -27,7 +27,7 @@
  	else {
 -		push(@args,"gcc");
 +		push(@args,$ENV{'CC'});
-+		push(@args,split(/\s+/, $ENV{'LDFLAGS'}));
++		push(@args,grep /./, split(/\s+/, $ENV{'LDFLAGS'}));
  		if (HaveDebug) { push(@args,"-g"); }
  		if ($type eq 'dynlib') {
  			push(@args,$IsDarwin ? "-dynamiclib" : "-shared");
