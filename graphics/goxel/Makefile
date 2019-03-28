@@ -28,8 +28,8 @@ DESKTOP_ENTRIES="Goxel" "${COMMENT}" "${PORTNAME}" \
 
 .include <bsd.port.pre.mk>
 
-post-patch:
 .if ${ARCH} != amd64 && ${ARCH} != i386
+post-patch:
 	${REINPLACE_CMD} -e 's/-msse2 //g' ${WRKSRC}/SConstruct
 .endif
 
