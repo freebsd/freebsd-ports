@@ -1,6 +1,9 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngine.so
 %%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngineCore.so
 %%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngineWidgets.so
+%%API%%%%PYQT_APIDIR%%/api/python/QtWebEngine.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtWebEngineCore.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtWebEngineWidgets.api
 %%PYQT_SIPDIR%%/QtWebEngine/QtWebEnginemod.sip
 %%PYQT_SIPDIR%%/QtWebEngine/qquickwebengineprofile.sip
 %%PYQT_SIPDIR%%/QtWebEngine/qquickwebenginescript.sip
@@ -8,6 +11,8 @@
 %%PYQT_SIPDIR%%/QtWebEngineCore/QtWebEngineCoremod.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginecookiestore.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginehttprequest.sip
+%%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginequotarequest.sip
+%%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineregisterprotocolhandlerrequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineurlrequestinfo.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineurlrequestinterceptor.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineurlrequestjob.sip
@@ -24,6 +29,3 @@
 %%PYQT_SIPDIR%%/QtWebEngineWidgets/qwebenginescriptcollection.sip
 %%PYQT_SIPDIR%%/QtWebEngineWidgets/qwebenginesettings.sip
 %%PYQT_SIPDIR%%/QtWebEngineWidgets/qwebengineview.sip
-%%API%%%%QT_DATADIR%%/qsci/api/python/QtWebEngine.api
-%%API%%%%QT_DATADIR%%/qsci/api/python/QtWebEngineCore.api
-%%API%%%%QT_DATADIR%%/qsci/api/python/QtWebEngineWidgets.api
