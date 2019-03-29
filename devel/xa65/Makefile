@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	xa65
-PORTVERSION=	2.3.8
+PORTVERSION=	2.3.9
 CATEGORIES=	devel
 MASTER_SITES=	http://www.floodgap.com/retrotech/xa/dists/
 DISTNAME=	xa-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Two-pass cross-assembler for MOS 6502 and compatible CPUs
 
 LICENSE=	GPLv2+
