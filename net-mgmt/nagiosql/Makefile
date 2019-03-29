@@ -3,7 +3,7 @@
 
 PORTNAME=	nagiosql
 PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/NagiosQL%20${PORTVERSION}/
 
@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	nagios:net-mgmt/nagios \
 		${PEARDIR}/HTML/Template/IT.php:devel/pear-HTML_Template_IT@${PHP_FLAVOR}
 
-USES=		cpe gettext mysql tar:bzip2 php:filter,gettext,mysql,session,simplexml,web
+USES=		cpe gettext mysql php:web tar:bzip2
+USE_PHP=	filter gettext mysqli session simplexml
 
 USERS?=		nagios
 GROUPS?=	nagios
