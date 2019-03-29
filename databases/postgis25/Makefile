@@ -56,6 +56,13 @@ VER=		${PORTVERSION:R}
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		VER=${VER}
 
+post-patch:
+.if exists(/usr/lib/libstdc++.so)
+	${REINPLACE_CMD} -e '/^#pragma GCC diagnostic/d' \
+		${WRKSRC}/postgis/lwgeom_functions_basic.c \
+		${WRKSRC}/postgis/lwgeom_geos.c
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblwgeom-${VER}.so.0.0.0
