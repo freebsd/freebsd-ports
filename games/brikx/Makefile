@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game - remove all tiles from the table
 
-USES=		tar:bzip2
+USES=		compiler:c++11-lang tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image ttf
 
