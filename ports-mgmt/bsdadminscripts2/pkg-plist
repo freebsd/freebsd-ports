@@ -29,6 +29,6 @@ sbin/pkg_trim
 %%DATADIR%%/pkg_options.sh
 %%DATADIR%%/pkg_query.sh
 %%DATADIR%%/pkg_trim.sh
-%%PORTDOCS%%%%DOCSDIR%%/bsda_obj.md
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/bsda_obj.md
