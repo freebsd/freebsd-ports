@@ -1,0 +1,24 @@
+--- Makefile.orig	2009-07-21 15:04:13 UTC
++++ Makefile
+@@ -49,17 +49,17 @@ OBJECTS = \
+ 	abort.o \
+ 	errors.o
+ 
+-all : libgui e93
++all : e93
+ 
+ e93 : $(OBJECTS) xgui/libgui.a
+-	$(CC) -O $(OBJECTS) -Lxgui -lgui -lstdc++ \
++	$(CC) $(CFLAGS:N-D*:N-I*) $(OBJECTS) -Lxgui -lgui \
+ 		$(X_LIB) -lX11 -lXinerama \
+ 		$(TCL_LIB) -ltcl$(TCL_VERSION) \
+ 		$(EXTRALIBS) \
+ 		-o e93
+ 
+-libgui :
+-	cd xgui;make
++xgui/libgui.a :
++	$(MAKE) -C xgui
+ 
+ clean :
+ 	cd xgui;make clean
