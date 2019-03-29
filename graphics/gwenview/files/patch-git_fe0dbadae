@@ -1,0 +1,32 @@
+commit fe0dbadaecc596eb05004e01334cbed0b5323f24
+Author: Timo Gurr <timo.gurr@gmail.com>
+Date:   Wed Feb 20 09:21:10 2019 -0700
+
+    Compile tests files with enabled exceptions, required for exiv2 0.27
+
+    Summary: This is a follow up of https://cgit.kde.org/gwenview.git/patch/?id=b81eed1dc4d879f06d651ea0954bee1b46c7947e to also make the tests build withour running into errors when building against exiv2 0.27.
+
+    Reviewers: #gwenview, ngraham
+
+    Reviewed By: #gwenview, ngraham
+
+    Subscribers: ngraham, #gwenview
+
+    Tags: #gwenview
+
+    Differential Revision: https://phabricator.kde.org/D19169
+
+--- tests/auto/CMakeLists.txt
++++ tests/auto/CMakeLists.txt
+@@ -9,6 +9,11 @@ macro(gv_add_unit_test _test)
+     add_dependencies(buildtests ${_test})
+ endmacro(gv_add_unit_test)
+ 
++kde_source_files_enable_exceptions(
++    documenttest.cpp
++    imagemetainfomodeltest.cpp
++)
++
+ include_directories(
+     ${gwenview_SOURCE_DIR}
+     ${importer_SOURCE_DIR}
