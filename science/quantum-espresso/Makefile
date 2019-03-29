@@ -11,6 +11,9 @@ COMMENT=	Package for research in electronic structure, simulation, optimization
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/License
 
+BROKEN_armv6=	fails to build: gfortran8: error: iotk_base_tmp.f90: No such file or directory
+BROKEN_armv7=	fails to build: gfortran8: error: iotk_base_tmp.f90: No such file or directory
+
 BUILD_DEPENDS=	fox-xml>0:textproc/fox-xml \
 		bash:shells/bash
 LIB_DEPENDS=	libmpich.so:net/mpich \
