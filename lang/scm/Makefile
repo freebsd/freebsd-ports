@@ -15,6 +15,8 @@ COMMENT=	Scheme interpreter
 
 LICENSE=	LGPL21
 
+BROKEN_aarch64=	ld: error: undefined symbol: sbrk
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		readline zip
