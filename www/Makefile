@@ -158,8 +158,6 @@
     SUBDIR += fgallery
     SUBDIR += firefox
     SUBDIR += firefox-esr
-    SUBDIR += firefox-esr-i18n
-    SUBDIR += firefox-i18n
     SUBDIR += flashplayer
     SUBDIR += flat-frog
     SUBDIR += flickcurl
@@ -2219,7 +2217,6 @@
     SUBDIR += script4rss
     SUBDIR += seahub
     SUBDIR += seamonkey
-    SUBDIR += seamonkey-i18n
     SUBDIR += searx
     SUBDIR += selenium
     SUBDIR += serendipity

@@ -720,7 +720,6 @@
     SUBDIR += textmail
     SUBDIR += thunderbird
     SUBDIR += thunderbird-dictionaries
-    SUBDIR += thunderbird-i18n
     SUBDIR += tlb
     SUBDIR += tmda
     SUBDIR += tpop3d
