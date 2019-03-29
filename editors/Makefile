@@ -21,8 +21,8 @@
     SUBDIR += chexedit
     SUBDIR += codelite
     SUBDIR += cooledit
-    SUBDIR += cudatext
     SUBDIR += cream
+    SUBDIR += cudatext
     SUBDIR += deforaos-editor
     SUBDIR += dexed
     SUBDIR += dhex
@@ -32,6 +32,7 @@
     SUBDIR += drjava
     SUBDIR += dte
     SUBDIR += e3
+    SUBDIR += e93
     SUBDIR += ecce
     SUBDIR += ecrire
     SUBDIR += edith

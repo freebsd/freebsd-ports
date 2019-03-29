@@ -1,0 +1,21 @@
+e93 is a portable window based text editor oriented to the needs of
+programmers.  It was begun in 1993 (thus the name).  It uses the mouse,
+selections, cut/copy/paste, and closely follows the model of editors
+on the Macintosh and NeXT platforms.
+
+e93 supports columnar selection.  It achieves this by allowing multiple
+pieces of the text to be selected simultaneously (this is perhaps its
+most unique feature).
+
+e93 imposes no limits on the line length, file length, or number of
+simultaneous files which it can edit.
+
+e93 is able to handle all 8-bit binary codes without complaint, or
+confusion.
+
+e93 is highly configurable without recompiling because scripts which
+control the editor can be written in Tcl.
+
+e93 supports user-configurable syntax highlighting.
+
+WWW: http://www.e93.org/

@@ -1,0 +1,13 @@
+--- search.h.orig	2009-01-03 17:37:00 UTC
++++ search.h
+@@ -14,8 +14,8 @@
+ 
+ bool LiteralMatch(CHUNK_HEADER *chunk,UINT32 offset,CHUNK_HEADER *forTextChunk,UINT32 forTextOffset,UINT32 numToSearch,CHUNK_HEADER **endChunk,UINT32 *endOffset);
+ bool LiteralMatchTT(CHUNK_HEADER *chunk,UINT32 offset,CHUNK_HEADER *forTextChunk,UINT32 forTextOffset,UINT32 numToSearch,const UINT8 *translateTable,CHUNK_HEADER **endChunk,UINT32 *endOffset);
+-bool SearchForwardLiteral(CHUNK_HEADER *chunk,UINT32 offset,CHUNK_HEADER *forTextChunk,UINT32 forTextOffset,UINT32 forTextLength,UINT32 numToSearch,bool ignoreCase,UINT32 *matchOffset,CHUNK_HEADER **startChunk,UINT32 *startOffset,CHUNK_HEADER **endChunk,UINT32 *endOffset,ABORT_TEST_FUNCTION *abortFunction);
+-bool SearchBackwardLiteral(CHUNK_HEADER *chunk,UINT32 offset,CHUNK_HEADER *forTextChunk,UINT32 forTextOffset,UINT32 forTextLength,UINT32 numToSearch,bool ignoreCase,UINT32 *matchOffset,CHUNK_HEADER **startChunk,UINT32 *startOffset,CHUNK_HEADER **endChunk,UINT32 *endOffset,ABORT_TEST_FUNCTION *abortFunction);
++bool SearchForwardLiteral(CHUNK_HEADER *chunk,UINT32 offset,CHUNK_HEADER *forTextChunk,UINT32 forTextOffset,UINT32 forTextLength,UINT32 numToSearch,bool ignoreCase,bool *foundMatch,UINT32 *matchOffset,UINT32 *numMatched,CHUNK_HEADER **startChunk,UINT32 *startOffset,CHUNK_HEADER **endChunk,UINT32 *endOffset,ABORT_TEST_FUNCTION *abortFunction);
++bool SearchBackwardLiteral(CHUNK_HEADER *chunk,UINT32 offset,CHUNK_HEADER *forTextChunk,UINT32 forTextOffset,UINT32 forTextLength,UINT32 numToSearch,bool ignoreCase,bool *foundMatch,UINT32 *matchOffset,UINT32 *numMatched,CHUNK_HEADER **startChunk,UINT32 *startOffset,CHUNK_HEADER **endChunk,UINT32 *endOffset,ABORT_TEST_FUNCTION *abortFunction);
+ bool EditorFind(EDITOR_BUFFER *buffer,SELECTION_UNIVERSE *selectionUniverse,TEXT_UNIVERSE *searchForText,bool backward,bool wrapAround,bool selectionExpr,bool ignoreCase,bool *foundMatch,SELECTION_UNIVERSE *resultSelectionUniverse,ABORT_TEST_FUNCTION *abortFunction);
+ bool EditorFindAll(EDITOR_BUFFER *buffer,SELECTION_UNIVERSE *selectionUniverse,TEXT_UNIVERSE *searchForText,bool backward,bool wrapAround,bool selectionExpr,bool ignoreCase,bool limitScope,bool *foundMatch,SELECTION_UNIVERSE *resultSelectionUniverse,ABORT_TEST_FUNCTION *abortFunction);
+ bool EditorReplace(EDITOR_BUFFER *buffer,SELECTION_UNIVERSE *selectionUniverse,TEXT_UNIVERSE *searchForText,TEXT_UNIVERSE *replaceWithText,bool backward,bool wrapAround,bool selectionExpr,bool ignoreCase,bool replaceProc,bool *foundMatch,SELECTION_UNIVERSE *resultSelectionUniverse,ABORT_TEST_FUNCTION *abortFunction);
