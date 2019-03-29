@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kmymoney
-PORTVERSION=	5.0.1
-PORTREVISION=	4
+PORTVERSION=	5.0.3
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
@@ -26,12 +25,10 @@ USE_KDE=	activities archive auth bookmarks codecs completion config \
 		wallet widgetsaddons xmlgui
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	kmymoney-kde4
-
 SHEBANG_FILES=	kmymoney/misc/financequote.pl
 
 OPTIONS_GROUP=		PLUGINS
-OPTIONS_GROUP_PLUGINS=	CALENDAR KBANKING OFX WEBOOB
+OPTIONS_GROUP_PLUGINS=	CALENDAR KBANKING OFX SQLCIPHER WEBOOB
 WEB_DESC=		Web content renderer
 OPTIONS_SINGLE=		WEB
 OPTIONS_SINGLE_WEB=	KDEWEBKIT QTWEBENGINE
@@ -87,6 +84,10 @@ QUOTES_RUN_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
 			p5-XML-Writer>=0:textproc/p5-XML-Writer \
 			p5-libwww>=0:www/p5-libwww
 
+SQLCIPHER_DESC=		KMyMoney database encryption
+SQLCIPHER_LIB_DEPENDS=	libsqlcipher.so:databases/sqlcipher
+SQLCIPHER_CMAKE_BOOL=	ENABLE_SQLCIPHER
+
 WEBOOB_DESC=		Online banking via Web Outside Of Browsers
 WEBOOB_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}weboob>0:www/py-weboob@${PY_FLAVOR}
 WEBOOB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}weboob>0:www/py-weboob@${PY_FLAVOR}
@@ -100,7 +101,8 @@ create-plist: stage
 	@(cd ${.CURDIR} && ${MAKE} makeplist > pkg-plist && \
 	${SED} -i "" -e '1d' \
 		-e '/icalendar/s|^|%%CALENDAR%%|g' -e '/kbanking/s|^|%%KBANKING%%|g' \
-		-e '/ofximport/s|^|%%OFX%%|g' -e '/weboob/s|^|%%WEBOOB%%|g' \
+		-e '/ofximport/s|^|%%OFX%%|g' -e '/qsqlcipher/s|^|%%SQLCIPHER%%|g' \
+		-e '/weboob/s|^|%%WEBOOB%%|g' \
 		pkg-plist)
 .endif
 
