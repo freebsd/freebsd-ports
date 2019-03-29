@@ -13,6 +13,8 @@ COMMENT=	Software for pixelization, visualization, etc of data on the sphere
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	fails to configure: could not find the cfitsio library
+
 LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libcurl.so:ftp/curl
 
