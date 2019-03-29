@@ -12,6 +12,8 @@ COMMENT=	Twitter API library for Python
 
 LICENSE=	MIT
 
+BROKEN=		installs in examples namespace
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0.4.1:www/py-requests-oauthlib@${PY_FLAVOR} \

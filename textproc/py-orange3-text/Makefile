@@ -11,6 +11,8 @@ COMMENT=	Text Mining add-on for Orange3
 
 LICENSE=	AGPLv3
 
+BROKEN=		installs in examples namespace
+
 RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR} \
