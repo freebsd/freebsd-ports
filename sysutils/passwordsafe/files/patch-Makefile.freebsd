@@ -1,4 +1,4 @@
---- Makefile.freebsd.orig	2017-05-01 15:10:07 UTC
+--- Makefile.freebsd.orig	2017-10-07 17:53:15 UTC
 +++ Makefile.freebsd
 @@ -34,8 +34,6 @@ GIT := git
  GZIP := gzip
@@ -9,3 +9,16 @@
  GPG := /usr/local/bin/gpg
  GPG_SIGN := $(GPG) --detach-sign --default-key $(GPG_KEY)
  SIGN_CMD := $(foreach file, $(wildcard $(RELEASEDIR)/*$(RELEASENAME)*), $(GPG_SIGN) $(file); )
+@@ -46,11 +44,8 @@ SF_UPLOAD_DST := $(SF_UPLOAD_ROOT)/Linux-BETA/$(RELEAS
+ RELTAG = wx$(subst .,_,$(RELEASENAME))
+ 
+ export CPPFLAGS += -std=c++11
+-export CXXFLAGS += --stdlib=libc++ -I/usr/local/include
++export CXXFLAGS += -I/usr/local/include
+ export CFLAGS += -I/usr/local/include
+-export CC = clang
+-export CXX = clang++
+-export CPP = clang++
+ export PLATFORM = FreeBSD
+ 
+ all: I18N unicodedebug unicoderelease
