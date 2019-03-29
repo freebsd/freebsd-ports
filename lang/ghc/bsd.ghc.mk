@@ -5,13 +5,13 @@
 # Maintained by: haskell@FreeBSD.org
 #
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	amd64 i386
 
 GHC_VERSION_MAJOR=	${GHC_VERSION:S/./ /g:[1]}
 GHC_VERSION_MINOR=	${GHC_VERSION:S/./ /g:[2]}
 
 .if ${GHC_VERSION_MAJOR} >= 8 && ${GHC_VERSION_MINOR} >= 6
-ONLY_FOR_ARCHS+=	powerpc64
+ONLY_FOR_ARCHS+=	aarch64 armv6 armv7 powerpc64
 .endif
 
 DATADIR=	${PREFIX}/share/ghc-${GHC_VERSION}
@@ -88,19 +88,17 @@ GHC_ARCH=		${ARCH:S/amd64/x86_64/:C/armv.*/arm/}
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MBOOT)
-.  if ${ARCH} == armv6 || ${ARCH} == armv7
-BOOT_GHC_VERSION=	8.4.2
-.  elif ${ARCH} == powerpc64
-BOOT_GHC_VERSION=	8.6.3
-.  else
+.  if ${ARCH} == amd64 || ${ARCH} == i386
 BOOT_GHC_VERSION=	8.4.3
+.  else
+BOOT_GHC_VERSION=	8.6.3
 .  endif
 
 # When GHC being compiled and GHC used for bootstrapping support different
 # LLVM versions, we have to pull in both. Luckily, this is relatively rare.
 .  if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
 # LLVM version that bootstrap compiler uses
-BOOT_LLVM_VERSION=	50
+BOOT_LLVM_VERSION=	60
 
 .    if ${BOOT_LLVM_VERSION} != ${LLVM_VERSION}
 BUILD_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
