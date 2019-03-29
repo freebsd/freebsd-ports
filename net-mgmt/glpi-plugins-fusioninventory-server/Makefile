@@ -3,6 +3,7 @@
 
 PORTNAME=	server
 PORTVERSION=	${GLPI_VER}.${FUNV_VER}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	glpi-plugins-fusioninventory-
@@ -14,12 +15,13 @@ LICENSE=	AGPLv3
 
 RUN_DEPENDS=	glpi>=0.90:www/glpi
 
+USES=		gettext php shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	fusioninventory
 GH_PROJECT=	fusioninventory-for-glpi
 GH_TAGNAME=	glpi090+${FUNV_VER}
+USE_PHP=	fileinfo simplexml wddx
 
-USES=		gettext php:fileinfo php:simplexml php:wddx shebangfix
 GLPI_VER=	0.90
 FUNV_VER=	1.3
 NO_BUILD=	yes
