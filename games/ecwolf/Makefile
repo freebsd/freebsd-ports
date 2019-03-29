@@ -12,7 +12,8 @@ COMMENT=	Source port for Wolfenstein 3D, Spear of Destiny
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		cmake jpeg localbase:ldflags gnome pkgconfig tar:xz
+USES=		cmake compiler:c++11-lang gnome jpeg localbase:ldflags \
+		pkgconfig sdl tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_SDL=	mixer sdl
 
