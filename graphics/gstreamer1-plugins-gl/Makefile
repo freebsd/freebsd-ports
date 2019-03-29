@@ -20,6 +20,12 @@ OPTIONS_SUB=	yes
 WAYLAND_CONFIGURE_ENABLE=	wayland
 WAYLAND_LIB_DEPENDS=		libwayland-egl.so:graphics/wayland
 
+EXTRA_PATCHDIR=	${.CURDIR}/../../graphics/gstreamer1-plugins-gl/files
+EXTRA_PATCHES=	${EXTRA_PATCHDIR}/patch-gst-libs_gst_gl_gstgl__fwd.h \
+		${EXTRA_PATCHDIR}/patch-gst-libs_gst_gl_gstglcontext.h \
+		${EXTRA_PATCHDIR}/patch-gst-libs_gst_gl_gstgldebug.h \
+		${EXTRA_PATCHDIR}/patch-gst-libs_gst_gl_gstglfuncs.h
+
 pre-build:
 .for dir in ${GL_GST_DIRS}
 	@(cd ${BUILD_WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET})
