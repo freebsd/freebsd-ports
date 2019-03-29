@@ -12,13 +12,14 @@ COMMENT=	Use Hash::Util::FieldHash or ties, depending on availability
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
-BUILD_DEPENDS=	p5-Module-Metadata>=0:devel/p5-Module-Metadata \
-		p5-Tie-RefHash-Weak>=0.08:devel/p5-Tie-RefHash-Weak
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Tie-RefHash-Weak>=0.08:devel/p5-Tie-RefHash-Weak
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
