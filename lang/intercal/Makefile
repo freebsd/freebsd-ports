@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.catb.org/~esr/intercal/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	C-INTERCAL compiler, ick, and supporting libraries
 
+BROKEN_aarch64=	ld: error: lexer.c:(function yylex: .text+0x10CC): improper alignment for relocation R_AARCH64_LDST32_ABS_LO12_NC: 0x28001B is not aligned to 4 bytes
+
 GNU_CONFIGURE=	yes
 USES=		gmake
 CFLAGS+=	-D_POSIX_SOURCE
