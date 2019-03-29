@@ -4,7 +4,7 @@
 PORTNAME=	c-ares
 PORTVERSION=	1.15.0
 CATEGORIES=	dns
-MASTER_SITES=	http://c-ares.haxx.se/download/ \
+MASTER_SITES=	https://c-ares.haxx.se/download/ \
 		http://obsd.isc.org/pub/OpenBSD/distfiles/ \
 		ZI
 
