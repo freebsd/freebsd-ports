@@ -1,4 +1,4 @@
---- setup.py.orig	2018-10-19 14:31:36 UTC
+--- setup.py.orig	2018-10-26 01:55:40 UTC
 +++ setup.py
 @@ -125,9 +125,7 @@ setup(
          # cluecode
@@ -11,7 +11,7 @@
          'fingerprints == 0.5.4',
  
          # extractcode
-@@ -135,8 +133,6 @@ setup(
+@@ -135,12 +133,10 @@ setup(
          # to work around bug http://bugs.python.org/issue19839
          # on multistream bzip2 files: this can removed in Python 3.
          'bz2file >= 0.98',
@@ -20,11 +20,18 @@
  
          # commoncode
          'backports.os == 0.1.1',
-@@ -166,7 +162,6 @@ setup(
+-        'future == 0.16.0',
++        'future >= 0.16.0',
+         'text-unidecode >= 1.0, < 2.0',
+ 
+         # licensedcode
+@@ -165,8 +161,7 @@ setup(
+         'binaryornot >= 0.4.0',
          'chardet >= 3.0.0, <4.0.0',
          # note that we use a short version range because we use a simpler lexer list
-         'pygments >= 2.2.0, <2.3',
+-        'pygments >= 2.2.0, <2.3',
 -        'typecode-libmagic',
++        'pygments >= 2.2.0',
  
          # packagedcode
          'pefile >= 2018.8.8',
