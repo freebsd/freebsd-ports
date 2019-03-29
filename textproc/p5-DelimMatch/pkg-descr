@@ -6,7 +6,4 @@ properly nested, entire nested groups are returned.
 In addition, you may specify quoting and escaping characters that
 contribute to the recognition of start and end delimiters.
 
-WWW: http://nwalsh.com/perl/delimmatch/
-
--Anton
-<tobez@FreeBSD.org>
+WWW: https://metacpan.org/release/DelimMatch
