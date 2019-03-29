@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	clutter-gstreamer
-PORTVERSION=	3.3.5
+PORTVERSION=	3.3.6
 CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby/GStreamer is a Ruby binding for GStreamer
 
 LICENSE=	LGPL21+
