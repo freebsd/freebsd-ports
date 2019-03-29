@@ -1,0 +1,21 @@
+--- scripts/Makefile.in.orig	2019-03-25 21:03:52 UTC
++++ scripts/Makefile.in
+@@ -558,7 +558,7 @@ uninstall-am:
+ .PRECIOUS: Makefile
+ 
+ 
+-all-local: $(ZSH_COMPLETION_FUNCTION_FILENAME) $(FISH_COMPLETION_FUNCTION_FILENAME)
++all-local: $(ZSH_COMPLETION_FUNCTION_FILENAME)
+ 
+ $(ZSH_COMPLETION_FUNCTION_FILENAME): completion.pl
+ @CROSSCOMPILING_TRUE@	@echo "NOTICE: we can't generate zsh completion when cross-compiling!"
+@@ -573,9 +573,7 @@ $(FISH_COMPLETION_FUNCTION_FILENAME): co
+ install-data-local:
+ @CROSSCOMPILING_TRUE@	@echo "NOTICE: we can't install zsh completion when cross-compiling!"
+ @CROSSCOMPILING_FALSE@	$(MKDIR_P) $(DESTDIR)$(ZSH_FUNCTIONS_DIR)
+-@CROSSCOMPILING_FALSE@	$(MKDIR_P) $(DESTDIR)$(FISH_FUNCTIONS_DIR)
+ @CROSSCOMPILING_FALSE@	$(INSTALL_DATA) $(ZSH_COMPLETION_FUNCTION_FILENAME) $(DESTDIR)$(ZSH_FUNCTIONS_DIR)/$(ZSH_COMPLETION_FUNCTION_FILENAME)
+-@CROSSCOMPILING_FALSE@	$(INSTALL_DATA) $(FISH_COMPLETION_FUNCTION_FILENAME) $(DESTDIR)$(FISH_FUNCTIONS_DIR)/$(FISH_COMPLETION_FUNCTION_FILENAME)
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
