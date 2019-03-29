@@ -17,6 +17,8 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/GPL-3.txt
 LICENSE_FILE_PARALLAX=	${WRKSRC}/COPYING.txt
 LICENSE_PERMS_PARALLAX=	dist-mirror pkg-mirror auto-accept
 
+BROKEN_aarch64=	fails to configure: DXX-Archive.3: checking version of assembler 'as' ... error: No such file or directory
+
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png
 
