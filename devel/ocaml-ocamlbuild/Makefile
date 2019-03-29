@@ -11,6 +11,8 @@ COMMENT=	Build tool for OCaml libraries and programs
 
 LICENSE=	GPLv2
 
+BROKEN=		conflicts with ocaml
+
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml
