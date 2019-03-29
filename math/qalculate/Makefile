@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qalculate
-PORTVERSION=	2.6.1
-PORTREVISION=	2
+PORTVERSION=	3.0.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
 DISTNAME=	${GH_PROJECT}-${PORTVERSION}
@@ -17,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libqalculate.so:math/libqalculate
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
-USES=		compiler:c++11-lang gettext gmake \
+USES=		compiler:c++11-lang gettext gmake gnome \
 		libtool:build localbase pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libxml2
 
