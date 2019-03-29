@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig tar:bzip2
+USES=		compiler:c11 gmake pkgconfig tar:bzip2
 USE_SDL=	sdl mixer image net
 USE_GL=		gl glu
 INSTALL_TARGET=	install-strip
