@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	msoffcrypto-tool
-PORTVERSION=	4.6.4
+PORTVERSION=	4.9.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,9 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=2.3:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}olefile>=0.45:devel/py-olefile@${PY_FLAVOR}
 
-NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	concurrent distutils autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
