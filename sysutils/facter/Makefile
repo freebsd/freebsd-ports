@@ -12,7 +12,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_DragonFly=	DragonFly is not supported upstream
-BROKEN_powerpc64=	fails to compile: collection.cc: 'stoi' was not declared in this scope
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
@@ -55,10 +54,4 @@ test: build
 	cd ${WRKSRC}/lib && bundle install --path vendor
 	cd ${CONFIGURE_WRKSRC} && ${MAKE_CMD} test
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${COMPILER_FEATURES:Mlibstdc++}
-BROKEN=		Build with system libstdc++ is unsupported
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
