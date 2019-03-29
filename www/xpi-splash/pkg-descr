@@ -1,6 +1,0 @@
-Adds a splash screen to most Mozilla and Mozilla Based products.
-Supports sound, opacity, CSS customization, custom images, and much more.
-You can add {appVersion}, {buildID} and {userAgent} to the loading text and
-it will be filled in for you.
-
-WWW: http://www.mrtech.com/extensions/

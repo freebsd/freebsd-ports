@@ -1,8 +1,0 @@
-xmpp4moz is:
-* A browser connector that provides rich user-to-user communication
-  and interaction to web applications, in real-time and without server
-  hacks.
-* A family of high-level components to quickly build XUL-based
-  applications that communicate via XMPP.
-
-WWW: http://dev.hyperstruct.net/xmpp4moz

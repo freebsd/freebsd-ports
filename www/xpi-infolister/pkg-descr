@@ -1,6 +1,0 @@
-InfoLister is an extension for Mozilla Firefox, Mozilla Thunderbird,
-and Nvu that collects various information about Firefox/Thunderbird
-and saves it to a file. Currently it prints the list of installed
-extensions, themes and plugins.
-
-WWW: http://mozilla.doslash.org/infolister/

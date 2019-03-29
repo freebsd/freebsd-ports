@@ -749,7 +749,5 @@
     SUBDIR += xmailbox
     SUBDIR += xmailwatcher
     SUBDIR += xpbiff
-    SUBDIR += xpi-displayquota
-    SUBDIR += xpi-dispmua
 
 .include <bsd.port.subdir.mk>

@@ -38,7 +38,6 @@
     SUBDIR += tidyup-mail
     SUBDIR += wordpress
     SUBDIR += xcode
-    SUBDIR += xpi-tabextensions
     SUBDIR += xruskb
 
 .include <bsd.port.subdir.mk>
