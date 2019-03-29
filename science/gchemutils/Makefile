@@ -48,8 +48,7 @@ OPTIONS_SUB=	yes
 GNUMERIC_DESC=	Build gnumeric plugin
 XUL_DESC=	Build browser plugin (requires libxul)
 
-XUL_BROKEN=	No gecko type specified (firefox, seamonkey, thunderbird)
-XUL_USES=	gecko
+XUL_BROKEN=	XULrunner and non-Flash plugins are no longer supported
 XUL_CONFIGURE_ON=--enable-mozilla-plugin \
 		--with-mozilla-libdir=${PREFIX}/lib/xulrunner
 XUL_CONFIGURE_OFF=--disable-mozilla-plugin

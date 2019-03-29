@@ -36,8 +36,7 @@ DESKTOP_ENTRIES="morla" \
 		"WebDevelopment;" \
 		true
 
-XULRUNNER_BROKEN=No gecko type specified (firefox, seamonkey, thunderbird)
-XULRUNNER_USES=	gecko
+XULRUNNER_BROKEN=	www/libxul is gone, consider using lang/spidermonkey*
 XULRUNNER_CONFIGURE_ON=	--with-javascript=xulrunner
 XULRUNNER_CONFIGURE_OFF=	--with-javascript=none
 
