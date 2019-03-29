@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	vte
-PORTVERSION=	3.3.5
+PORTVERSION=	3.3.6
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby binding for VTE
 
 LICENSE=	LGPL21+
