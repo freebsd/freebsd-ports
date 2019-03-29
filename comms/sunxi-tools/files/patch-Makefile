@@ -1,14 +1,16 @@
 --- Makefile.orig	2016-11-29 13:07:51 UTC
 +++ Makefile
-@@ -17,7 +17,7 @@
+@@ -17,8 +17,8 @@
  # along with this program.  If not, see <http://www.gnu.org/licenses/>.
  
  CC ?= gcc
 -DEFAULT_CFLAGS := -std=c99
+-DEFAULT_CFLAGS += -Wall -Wextra -Wno-unused-result
 +DEFAULT_CFLAGS += -std=c99
- DEFAULT_CFLAGS += -Wall -Wextra -Wno-unused-result
++DEFAULT_CFLAGS += -Wall -Wextra
  
  DEFAULT_CFLAGS += -D_POSIX_C_SOURCE=200112L
+ # Define _BSD_SOURCE, necessary to expose all endian conversions properly.
 @@ -63,7 +63,7 @@ BINDIR  ?= $(PREFIX)/bin
  tools: $(TOOLS) $(FEXC_LINKS)
  target-tools: $(TARGET_TOOLS)
