@@ -1,0 +1,88 @@
+Slightly modified:
+
+From 04c9b181cc2c7741fcb134ccc43f2bafc1f86f19 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Luis=20D=C3=ADaz=20M=C3=A1s?= <piponazo@gmail.com>
+Date: Sat, 12 Jan 2019 12:15:27 +0000
+Subject: [PATCH] Fix #644. Export specializations of BasicError
+
+- Only export BasicError::setMsg which is the only implementation present in the .cpp
+- Only export BasicError specialization on __APPLE__
+
+It seems that gcc automatically adds the attribute when the visibility
+settings are set to hidden. See this link for more information:
+https://reviews.llvm.org/D35388
+---
+ cmake/mainSetup.cmake   | 6 ++++--
+ include/exiv2/error.hpp | 3 ++-
+ src/error.cpp           | 6 ++++--
+ 3 files changed, 10 insertions(+), 5 deletions(-)
+
+diff --git a/cmake/mainSetup.cmake b/cmake/mainSetup.cmake
+index 05c16004d..a4d983d4c 100644
+--- cmake/mainSetup.cmake
++++ cmake/mainSetup.cmake
+@@ -13,8 +13,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
+ 
+-set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+-set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
++if (NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang")
++    set(CMAKE_CXX_VISIBILITY_PRESET hidden)
++    set(CMAKE_VISIBILITY_INLINES_HIDDEN 1)
++endif()
+ 
+ set(CMAKE_CXX_STANDARD 98)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+diff --git a/include/exiv2/error.hpp b/include/exiv2/error.hpp
+index 0f9714e5b..42a0959c4 100644
+--- include/exiv2/error.hpp
++++ include/exiv2/error.hpp
+@@ -315,7 +315,7 @@ namespace Exiv2 {
+         std::basic_string<charT> arg3_;         //!< Third argument
+         std::string              msg_;          //!< Complete error message
+ #ifdef EXV_UNICODE_PATH
+-    std::wstring             wmsg_;         //!< Complete error message as a wide string
++        std::wstring             wmsg_;         //!< Complete error message as a wide string
+ #endif
+     }; // class BasicError
+ 
+@@ -389,6 +389,7 @@ namespace Exiv2 {
+         return wmsg_.c_str();
+     }
+ #endif
++
+ #ifdef _MSC_VER
+ # pragma warning( default : 4275 )
+ #endif
+diff --git a/src/error.cpp b/src/error.cpp
+index 6d3a24bd8..c8e2d9e0d 100644
+--- src/error.cpp
++++ src/error.cpp
+@@ -224,7 +224,6 @@ namespace Exiv2 {
+     {
+     }
+ 
+-    //! @cond IGNORE
+     template<>
+     void BasicError<char>::setMsg()
+     {
+@@ -257,7 +256,9 @@ namespace Exiv2 {
+         wmsg_ = s2ws(msg);
+ #endif
+     }
+-    //! @endcond
++#ifdef __FreeBSD__ 
++    template class EXIV2API BasicError<char>;
++#endif
+ 
+ #ifdef EXV_UNICODE_PATH
+     template<>
+@@ -291,6 +292,7 @@ namespace Exiv2 {
+         wmsg_ = wmsg;
+         msg_ = ws2s(wmsg);
+     }
++    template class EXIV2API BasicError<wchar_t>;
+ #endif
+ 
+     const char* errMsg(int code)
