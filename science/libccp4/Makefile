@@ -14,6 +14,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LESSER
 
+BROKEN_aarch64=		ccp4/ccp4_sysdep.h:244:4: error: "Can't determine machine number format"
+
 LIB_DEPENDS=	libmmdb2.so:science/mmdb2
 
 USES=		fortran gmake libtool localbase:ldflags
