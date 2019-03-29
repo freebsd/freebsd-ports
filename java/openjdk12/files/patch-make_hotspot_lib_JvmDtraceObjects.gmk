@@ -1,0 +1,18 @@
+--- make/hotspot/lib/JvmDtraceObjects.gmk
++++ make/hotspot/lib/JvmDtraceObjects.gmk
+@@ -201,8 +201,13 @@ ifeq ($(call check-jvm-feature, dtrace), true)
+       )
+     endif
+ 
+-    DTRACE_FLAGS := -64 -G
+-    DTRACE_CPP_FLAGS := -D_LP64 -x c
++    ifeq ($(OPENJDK_TARGET_CPU_BITS), 32)
++      DTRACE_FLAGS := -32 -G
++      DTRACE_CPP_FLAGS := -x c
++    else
++      DTRACE_FLAGS := -64 -G
++      DTRACE_CPP_FLAGS := -D_LP64 -x c
++    endif
+ 
+     # Make sure we run our selected compiler for preprocessing instead of letting
+     # the dtrace tool pick it on it's own.
