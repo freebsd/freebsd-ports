@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Locale
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Localization support for DateTime
 
 LICENSE=	ART10 GPLv1+

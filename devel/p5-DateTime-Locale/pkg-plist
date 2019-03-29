@@ -92,6 +92,8 @@
 %%SITE_PERL%%/DateTime/Locale/ccp_IN.pod
 %%SITE_PERL%%/DateTime/Locale/ce.pod
 %%SITE_PERL%%/DateTime/Locale/ce_RU.pod
+%%SITE_PERL%%/DateTime/Locale/ceb.pod
+%%SITE_PERL%%/DateTime/Locale/ceb_PH.pod
 %%SITE_PERL%%/DateTime/Locale/cgg.pod
 %%SITE_PERL%%/DateTime/Locale/cgg_UG.pod
 %%SITE_PERL%%/DateTime/Locale/chr.pod
@@ -139,6 +141,7 @@
 %%SITE_PERL%%/DateTime/Locale/en.pod
 %%SITE_PERL%%/DateTime/Locale/en_001.pod
 %%SITE_PERL%%/DateTime/Locale/en_150.pod
+%%SITE_PERL%%/DateTime/Locale/en_AE.pod
 %%SITE_PERL%%/DateTime/Locale/en_AG.pod
 %%SITE_PERL%%/DateTime/Locale/en_AI.pod
 %%SITE_PERL%%/DateTime/Locale/en_AS.pod
@@ -570,6 +573,7 @@
 %%SITE_PERL%%/DateTime/Locale/prg_001.pod
 %%SITE_PERL%%/DateTime/Locale/ps.pod
 %%SITE_PERL%%/DateTime/Locale/ps_AF.pod
+%%SITE_PERL%%/DateTime/Locale/ps_PK.pod
 %%SITE_PERL%%/DateTime/Locale/pt.pod
 %%SITE_PERL%%/DateTime/Locale/pt_AO.pod
 %%SITE_PERL%%/DateTime/Locale/pt_BR.pod
@@ -845,6 +849,8 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ccp.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ce-RU.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ce.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/ceb-PH.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/ceb.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/cgg-UG.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/cgg.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/chr-US.pl
@@ -891,6 +897,7 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/el.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/en-001.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/en-150.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/en-AE.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/en-AG.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/en-AI.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/en-AS.pl
@@ -1319,6 +1326,7 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/prg-001.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/prg.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ps-AF.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/ps-PK.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ps.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/pt-AO.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/pt-CH.pl
@@ -1600,6 +1608,8 @@
 %%PERL5_MAN3%%/DateTime::Locale::ccp_IN.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::ce.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::ce_RU.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::ceb.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::ceb_PH.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::cgg.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::cgg_UG.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::chr.3.gz
@@ -1647,6 +1657,7 @@
 %%PERL5_MAN3%%/DateTime::Locale::en.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::en_001.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::en_150.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::en_AE.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::en_AG.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::en_AI.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::en_AS.3.gz
@@ -2078,6 +2089,7 @@
 %%PERL5_MAN3%%/DateTime::Locale::prg_001.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::ps.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::ps_AF.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::ps_PK.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::pt.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::pt_AO.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::pt_BR.3.gz
