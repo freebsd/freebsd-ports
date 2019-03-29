@@ -8,7 +8,7 @@ CATEGORIES=	net
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	b10df0ef427cea425f6eeedb372da372055de308.patch:-p1
 
-MAINTAINER=	decke@bluelife.at
+MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Userspace WireGuard implementation in Rust
 
 LICENSE=	BSD3CLAUSE
