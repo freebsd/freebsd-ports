@@ -12,6 +12,8 @@ COMMENT=	Gamecube and Wii Emulator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN_aarch64=	fails to build: Source/Core/Common/ArmCPUDetect.cpp:5:10: fatal error: 'asm/hwcap.h' file not found
+
 # Notes on dependencies:
 # - alsa support disabled (not optimal)
 # - enet and soundtouch come from Externals/ as Dolphin's versions diverge
