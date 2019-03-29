@@ -1,0 +1,10 @@
+pyKwalify is a YAML/JSON validation library.
+
+This framework is a port with a lot of added functionality of the Java version
+of the framework kwalify that can be found at
+http://www.kuwata-lab.com/kwalify/
+
+The schema this library is based on and extended from:
+http://www.kuwata-lab.com/kwalify/ruby/users-guide.01.html#schema
+
+WWW: https://github.com/Grokzen/pykwalify
