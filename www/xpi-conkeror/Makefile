@@ -16,7 +16,6 @@ LICENSE_COMB=	multi
 
 USES=		desktop-file-utils tar:xz gmake
 
-FIREFOX_USES=	gecko:firefox,32+
 ALL_TARGET=	# empty
 
 BUILD_ID=	${ECHO_CMD} -n `whoami`@`hostname`_`date +%s`

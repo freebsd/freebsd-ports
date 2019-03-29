@@ -59,8 +59,7 @@ MAKE_GNOME=	make_gnome
 .endif
 
 .if ${PORT_OPTIONS:MMOZILLA}
-USES=		gecko
-BROKEN=		Does now work with newer libxul
+BROKEN=		non-Flash plugins are no longer supported
 PLIST_FILES+=	lib/libswt-xulrunner-gtk-%%BUILD%%.so
 MAKE_MOZILLA=	make_xulrunner
 .endif

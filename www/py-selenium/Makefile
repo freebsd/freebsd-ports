@@ -25,8 +25,7 @@ OPTIONS_DEFINE=	FIREFOX CHROMIUM
 FIREFOX_DESC=	Install Firefox and geckodriver
 CHROMIUM_DESC=	Install Chromium
 
-FIREFOX_USES=	gecko:firefox
-FIREFOX_RUN_DEPENDS=	geckodriver:www/geckodriver
+FIREFOX_RUN_DEPENDS=	firefox:www/firefox geckodriver:www/geckodriver
 CHROMIUM_RUN_DEPENDS=	chromedriver:www/chromium
 
 # Don't install binary Firefox extension
