@@ -89,10 +89,6 @@ JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386
-CONFIGURE_ARGS+=	--disable-dtrace
-.endif
-
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk11 \
 		${LOCALBASE}/bootstrap-openjdk11
 
