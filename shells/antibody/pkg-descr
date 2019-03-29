@@ -1,0 +1,8 @@
+Antibody is a shell plugin manager made from the ground up thinking about
+performance.
+
+It is faster because it can do things concurrently, while Antigen does it
+sequentially. It also has the advantage of using a compiled language (go)
+instead of a scripting one.
+
+WWW: https://getantibody.github.io/
