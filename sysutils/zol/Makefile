@@ -10,6 +10,8 @@ COMMENT=	ZFS
 
 LICENSE=	CDDL
 
+BROKEN_aarch64=	invokes x86 assembler
+
 RUN_DEPENDS=	zol-kmod>=0:sysutils/zol-kmod
 
 USES=		autoreconf:build libtool gmake gettext-runtime:run
