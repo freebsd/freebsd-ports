@@ -11,6 +11,8 @@ COMMENT=	Legacy DRM modules for the linuxkpi-based KMS components
 LICENSE=	BSD2CLAUSE MIT GPLv2
 LICENSE_COMB=	multi
 
+BROKEN_aarch64=		src/dev/drm2/ttm/ttm_bo_util.c:453:2: error: Port me
+
 RUN_DEPENDS=	gpu-firmware-kmod>=g20180319:graphics/gpu-firmware-kmod
 
 USES=		kmod uidfix
