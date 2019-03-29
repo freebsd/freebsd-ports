@@ -13,6 +13,9 @@ COMMENT=	Utility for reading, writing, verifying, and erasing flash ROM chips
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NOT_FOR_ARCHS=		aarch64
+NOT_FOR_ARCHS_REASON=	./hwaccess.h:126:2: error: Unable to determine endianness.
+
 LIB_DEPENDS=	libpci.so:devel/libpci
 
 USES=		gmake tar:bzip2
@@ -22,7 +25,7 @@ MAKE_ENV=	WARNERROR=no
 PLIST_FILES=	bin/flashrom \
 		man/man8/flashrom.8.gz
 PORTDOCS=	*
- 
+
 OPTIONS_DEFINE=		BUSPIRATE DOCS FTDI
 OPTIONS_DEFINE_amd64=	DMIDECODE
 OPTIONS_DEFINE_i386=	DMIDECODE
