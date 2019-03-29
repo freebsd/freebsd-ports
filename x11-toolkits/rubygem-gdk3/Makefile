@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	gdk3
-PORTVERSION=	3.3.5
+PORTVERSION=	3.3.6
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby/GDK3 is a Ruby binding of GDK-3.x
 
 LICENSE=	LGPL21+
