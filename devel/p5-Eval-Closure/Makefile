@@ -22,4 +22,6 @@ TEST_DEPENDS=	p5-Devel-LexAlias>=0.05:devel/p5-Devel-LexAlias \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
