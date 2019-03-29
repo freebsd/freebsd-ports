@@ -39,7 +39,7 @@ post-extract:
 post-patch:
 	#@${REINPLACE_CMD} -e 's|#include "../../lib/zita-convolver-.*/zita-convolver.h"|#include <zita-convolver.h>|' ${WRKSRC}/plugins/Zam*/convolution.*pp
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' ${WRKSRC}/dpf/utils/generate-ttl.sh
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+.if ${ARCH} == aarch64 || ${ARCH:Marmv*} || ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
 	${REINPLACE_CMD} -e '/-mfpmath=sse/d' \
 		-e 's/-mtune=generic -msse -msse2//' \
 		${WRKSRC}/Makefile.mk ${WRKSRC}/dpf/dgl/Makefile.mk
