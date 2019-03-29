@@ -2,7 +2,7 @@
 
 PORTNAME=	icingaweb2-module-ipl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1
+DISTVERSION=	0.2.1
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org
