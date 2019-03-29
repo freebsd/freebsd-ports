@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pulseaudio-qt
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 MASTER_SITES=	KDE/stable/${PORTNAME}
 CATEGORIES=	audio kde
 
