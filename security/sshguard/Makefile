@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sshguard
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.1
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/${PORTVERSION}
 
@@ -12,8 +12,8 @@ COMMENT=	Protect hosts from brute-force attacks against SSH and other services
 LICENSE=	BSD2CLAUSE
 
 USE_RC_SUBR=	sshguard
-GNU_CONFIGURE=	yes
 
+GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
 post-patch:
