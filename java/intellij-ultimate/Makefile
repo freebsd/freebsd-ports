@@ -4,11 +4,11 @@
 # Based on the java/intellij port
 
 PORTNAME=	intellij-ultimate
-PORTVERSION=	2018.3.4
+PORTVERSION=	2019.1
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/idea/ \
 		http://download.jetbrains.com/idea/
-DISTNAME=	ideaIU-${PORTVERSION}-no-jdk
+DISTNAME=	ideaIU-${PORTVERSION}-no-jbr
 
 MAINTAINER=	andoriyu@gmail.com
 COMMENT=	IntelliJ IDEA Ultimate Edition
@@ -27,13 +27,9 @@ JAVA_VERSION=	1.8+
 SHEBANG_FILES=	bin/printenv.py bin/restart.py
 
 NO_ARCH=	yes
-NO_ARCH_IGNORE=	libnative_auth.so libnative_console.so libnative_filesystem.so \
-		libnative_misc.so libnative_synchronization.so
 NO_BUILD=	yes
-USE_LDCONFIG=	${IDEA_HOME}/plugins/tfsIntegration/lib/native/freebsd/x86_64/
-USE_LDCONFIG32=	${IDEA_HOME}/plugins/tfsIntegration/lib/native/freebsd/x86/
 
-WRKSRC=	${WRKDIR}/idea-IU-183.5429.30
+WRKSRC=	${WRKDIR}/idea-IU-191.6183.87
 
 .include "${.CURDIR}/../intellij/common.mk"
 
@@ -51,18 +47,10 @@ do-install:
 		${STAGEDIR}${IDEA_HOME}/bin/fsnotifier64 \
 		${STAGEDIR}${IDEA_HOME}/bin/libdbm64.so \
 		${STAGEDIR}${IDEA_HOME}/bin/libyjpagent-linux.so \
-		${STAGEDIR}${IDEA_HOME}/bin/libyjpagent-linux64.so \
-		${STAGEDIR}${IDEA_HOME}/plugins/performanceTesting/lib/libasyncProfiler-linux.so \
-		${STAGEDIR}${IDEA_HOME}/plugins/performanceTesting/lib/libasyncProfiler-macos.so
+		${STAGEDIR}${IDEA_HOME}/bin/libyjpagent-linux64.so
 	@${RM} -rf ${STAGEDIR}${IDEA_HOME}/jre/jre/ \
 		${STAGEDIR}${IDEA_HOME}/lib/pty4j-native/ \
-		${STAGEDIR}${IDEA_HOME}/plugins/android/lib/libwebp/ \
-		${STAGEDIR}${IDEA_HOME}/plugins/tfsIntegration/lib/native/aix/ \
-		${STAGEDIR}${IDEA_HOME}/plugins/tfsIntegration/lib/native/hpux/ \
-		${STAGEDIR}${IDEA_HOME}/plugins/tfsIntegration/lib/native/linux/ \
-		${STAGEDIR}${IDEA_HOME}/plugins/tfsIntegration/lib/native/macosx/ \
-		${STAGEDIR}${IDEA_HOME}/plugins/tfsIntegration/lib/native/solaris/ \
-		${STAGEDIR}${IDEA_HOME}/plugins/tfsIntegration/lib/native/win32/
+		${STAGEDIR}${IDEA_HOME}/plugins/android/lib/libwebp/
 	${INSTALL_SCRIPT} ${WRKDIR}/idea ${STAGEDIR}${PREFIX}/bin/idea
 	${INSTALL_MAN} ${FILESDIR}/idea.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/idea.desktop ${STAGEDIR}${PREFIX}/share/applications/
