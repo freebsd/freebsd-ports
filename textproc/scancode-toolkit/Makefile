@@ -3,6 +3,7 @@
 PORTNAME=	scancode-toolkit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9.7
+PORTREVISION=	1
 CATEGORIES=	textproc python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -41,7 +42,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nltk>=3.2:textproc/py-nltk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packageurl-python>=0.5.0:textproc/py-packageurl-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xmltodict>=0.11.0:devel/py-xmltodict@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}click>=6.0.0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click6>=6.0.0:devel/py-click6@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.9:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>=0.4.0:devel/py-pluggy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}attrs>=17.4:devel/py-attrs@${PY_FLAVOR} \
