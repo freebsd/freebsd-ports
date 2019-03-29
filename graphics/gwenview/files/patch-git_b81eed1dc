@@ -1,0 +1,38 @@
+commit b81eed1dc4d879f06d651ea0954bee1b46c7947e
+Author: Stefan Brüns <stefan.bruens@rwth-aachen.de>
+Date:   Sat Dec 29 23:39:30 2018 +0100
+
+    Compile more files with enabled exceptions, required for exiv2 0.27
+
+    Summary:
+    The (exception based) error handling is now pulled in by e.g. image.hpp,
+    so more files require enabled exception handling.
+
+    Depends on D17872
+
+    Test Plan: build
+
+    Reviewers: #gwenview, ngraham, cfeck, asturmlechner
+
+    Reviewed By: #gwenview, ngraham
+
+    Subscribers: wbauer, lbeltrame
+
+    Tags: #gwenview
+
+    Differential Revision: https://phabricator.kde.org/D17873
+
+--- lib/CMakeLists.txt
++++ lib/CMakeLists.txt
+@@ -224,6 +224,11 @@ kde_source_files_enable_exceptions(
+     exiv2imageloader.cpp
+     imagemetainfomodel.cpp
+     timeutils.cpp
++    cms/cmsprofile.cpp
++    document/abstractdocumentimpl.cpp
++    document/document.cpp
++    document/loadingdocumentimpl.cpp
++    jpegcontent.cpp
+     )
+ 
+ ki18n_wrap_ui(gwenviewlib_SRCS
