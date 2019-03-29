@@ -1,6 +1,0 @@
-The GDATA Provider is an adapter that connects the internals of
-Mozilla's Lightning calendar add-on to Google Calendar RESTful
-data services. This allows you to view, edit and manipulate
-Google calendars within Lightning.
-
-WWW: https://wiki.mozilla.org/Calendar:GDATA_Provider

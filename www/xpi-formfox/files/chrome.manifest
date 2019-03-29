@@ -1,5 +1,0 @@
-
-overlay	chrome://navigator/content/navigatorOverlay.xul	chrome://formfox/content/formfox.xul
-overlay	chrome://multiviews/content/navigatorOverlay.xul	chrome://formfox/content/formfox.xul
-overlay	chrome://browser/content/browser.xul	chrome://formfox/content/formfox.xul
-content	formfox	jar:chrome/formfox.jar!/content/formfox/

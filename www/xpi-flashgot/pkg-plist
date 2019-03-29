@@ -1,8 +1,0 @@
-%%XPI_XPIDIR%%/FlashGot_License.txt
-%%XPI_XPIDIR%%/GPL.txt
-%%XPI_XPIDIR%%/chrome/flashgot.jar
-%%XPI_XPIDIR%%/chrome.manifest
-%%XPI_XPIDIR%%/components/flashgotService.js
-%%XPI_XPIDIR%%/defaults/preferences/flashgot.js
-%%XPI_XPIDIR%%/install.js
-%%XPI_XPIDIR%%/install.rdf

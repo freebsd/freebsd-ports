@@ -1,7 +1,0 @@
-The primary goal of this extension is to provide the tools needed to install
-and manage extensions and themes locally. To do this the extension provides
-multi-extension installation support, hacking capabilities to the
-Extension/Theme manager windows, features to find and troubleshoot
-Extensions/Themes Build, GUID and Profile information.
-
-WWW: http://mrtech.com/extensions/local_install/

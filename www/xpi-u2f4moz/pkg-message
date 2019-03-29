@@ -1,7 +1,0 @@
-Nota bene
-
-1) you need Read and Write permissions on Yubico device
-2) if you get the message "U2F Support Add-on could not be verified
-   for use in Firefox and has been disabled", then type about:config
-   in the address bar and set xpinstall.signatures.required to false
-   (restart Firefox or reload the page about:addons)

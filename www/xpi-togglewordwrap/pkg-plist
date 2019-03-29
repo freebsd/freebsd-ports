@@ -1,9 +1,0 @@
-%%XPI_XPIDIR%%/chrome/content/togglewordwrap/toggleWordWrap.js
-%%XPI_XPIDIR%%/chrome/content/togglewordwrap/toggleWordWrap.xul
-%%XPI_XPIDIR%%/chrome/locale/de/togglewordwrap/toggleWordWrap.dtd
-%%XPI_XPIDIR%%/chrome/locale/en-US/togglewordwrap/toggleWordWrap.dtd
-%%XPI_XPIDIR%%/chrome/locale/fr/togglewordwrap/toggleWordWrap.dtd
-%%XPI_XPIDIR%%/chrome/locale/sk/togglewordwrap/toggleWordWrap.dtd
-%%XPI_XPIDIR%%/chrome/locale/sv-SE/togglewordwrap/toggleWordWrap.dtd
-%%XPI_XPIDIR%%/chrome.manifest
-%%XPI_XPIDIR%%/install.rdf

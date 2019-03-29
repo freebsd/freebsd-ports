@@ -1,9 +1,0 @@
-Showcase is an extension thought to easily locate and select any open
-browser window in Firefox.
-
-You can use it in two ways: global mode (F12) or local mode (Shift +
-F12). In global mode, a new window will be opened with thumbnails of
-the browsers you've opened in all windows. In local mode, only tabbed
-browsers of your current window will be shown.
-
-WWW: http://showcase.uworks.net/
