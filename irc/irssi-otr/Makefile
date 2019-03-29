@@ -13,6 +13,8 @@ COMMENT=	Plugin for irssi for Off-the-Record (OTR) messaging
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		conflicts with irssi
+
 BUILD_DEPENDS=	${LOCALBASE}/include/irssi/src/common.h:irc/irssi \
 		${LOCALBASE}/bin/libgcrypt-config:security/libgcrypt
 LIB_DEPENDS=	libotr.so:security/libotr \
