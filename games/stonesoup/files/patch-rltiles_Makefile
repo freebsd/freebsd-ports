@@ -1,4 +1,4 @@
---- rltiles/Makefile.orig	2016-04-30 03:53:03 UTC
+--- rltiles/Makefile.orig	2019-02-28 23:45:55 UTC
 +++ rltiles/Makefile
 @@ -11,7 +11,6 @@ endif
  # is not supported.  If host=target, contribs are enough.
@@ -26,3 +26,15 @@
  
  DELETE = rm -f
  
+@@ -131,9 +130,9 @@ clean:
+ distclean: clean
+ 
+ %.o: %.cc .cflags
+-	$(QUIET_HOSTCXX)$(HOSTCXX) $(CFLAGS) -MMD -c $< -o $@
++	$(QUIET_HOSTCXX)$(HOSTCXX) $(CXXFLAGS) -MMD -c $< -o $@
+ 
+ $(TILEGEN): $(OBJECTS)
+-	$(QUIET_HOSTLINK)$(HOSTCXX) $(CFLAGS) $(OBJECTS) -o $@ $(LDFLAGS)
++	$(QUIET_HOSTLINK)$(HOSTCXX) $(CXXFLAGS) $(OBJECTS) -o $@ $(LDFLAGS)
+ 
+ .PHONY: all clean distclean
