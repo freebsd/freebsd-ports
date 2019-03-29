@@ -12014,3 +12014,7 @@ x11-fm/pcmanfmqt-l10n||2019-03-28|Obsolete by upstream
 devel/liblxqt-l10n||2019-03-28|Obsolete by upstream
 x11/lxqt-l10n||2019-03-28|Obsolete by upstream
 x11/qterminal-l10n||2019-03-28|Obsolete by upstream
+mail/thunderbird-i18n||2019-03-29|Obsolete, manually download preferred langpack and set intl.locale.requested
+www/firefox-esr-i18n||2019-03-29|Obsolete, manually download preferred langpack and set intl.locale.requested
+www/firefox-i18n||2019-03-29|Obsolete, use native UI to select and download preferred langpack
+www/seamonkey-i18n||2019-03-29|Obsolete, manually download preferred langpack and set general.useragent.locale

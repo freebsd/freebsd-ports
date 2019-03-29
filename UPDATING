@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20190328:
+  AFFECTS: www/firefox-i18n, www/firefox-esr-i18n, mail/thunderbird-i18n, www/seamonkey-i18n
+  AUTHOR: gecko@FreeBSD.org
+
+  Separate packages for localization packs are no longer supported.
+  Firefox 65+ has in-browser menu while Firefox ESR60, Thunderbird 60
+  or SeaMonkey 2.49 should download preferred .xpi manually. Refer to
+  the following article (including previous revisions) how to do this.
+
+  https://support.mozilla.org/kb/use-firefox-another-language
+
+20190328:
   AFFECTS: users of www/qt5-webengine
   AUTHOR: kde@FreeBSD.org
 
