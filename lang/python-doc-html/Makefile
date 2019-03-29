@@ -34,7 +34,7 @@ WRKSRC=		${WRKDIR}/docs-pdf
 .endif
 
 .if make(all_python_versions)
-_VERS!=		${MAKE} -V _PYTHON_VERSIONS
+_VERS!=		${MAKE} -V _PYTHON_VERSIONS:O
 .endif
 
 all_python_versions:
