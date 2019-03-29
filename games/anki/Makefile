@@ -14,8 +14,6 @@ COMMENT=	Flashcard trainer with spaced repetition
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		Depends on www/py-qt5-webengine that is still broken
-
 RUN_DEPENDS=	lame:audio/lame \
 		${PYTHON_PKGNAMEPREFIX}pyaudio>0:audio/py-pyaudio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
