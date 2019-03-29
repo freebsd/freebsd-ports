@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	glib2
-PORTVERSION=	3.3.5
+PORTVERSION=	3.3.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby binding for GLib2
 
 LICENSE=	LGPL21+
