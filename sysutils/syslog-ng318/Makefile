@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl \
-		gettext-runtime shebangfix
+		gettext-runtime python:3.5+,build shebangfix
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
