@@ -78,10 +78,11 @@ lib/avkys/submodules/VideoCapture/libv4l2sys.so
 lib/avkys/submodules/VideoCapture/libv4lutils.so
 lib/libavkys.so
 lib/libavkys.so.8
-lib/libavkys.so.8.5
-lib/libavkys.so.8.5.0
+lib/libavkys.so.8.6
+lib/libavkys.so.8.6.1
 %%QT_QMLDIR%%/AkQml/libAkQml.so
 %%QT_QMLDIR%%/AkQml/qmldir
+man/man1/webcamoid.1.gz
 share/applications/webcamoid.desktop
 share/icons/hicolor/128x128/apps/webcamoid.png
 share/icons/hicolor/16x16/apps/webcamoid.png
