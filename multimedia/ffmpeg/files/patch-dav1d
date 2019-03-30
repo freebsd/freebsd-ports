@@ -13,6 +13,8 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/28746a0e20
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/36bb2cc200
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/38a4132132
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/f6803cfbd2
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/5cd60b6f2e
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/9e62e1a110
 
 --- configure.orig	2018-11-05 23:22:33 UTC
 +++ configure
@@ -83,7 +85,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/f6803cfbd2
  extern AVCodec ff_libfdk_aac_decoder;
 --- libavcodec/libdav1d.c.orig	2018-12-16 07:22:28 UTC
 +++ libavcodec/libdav1d.c
-@@ -0,0 +1,356 @@
+@@ -0,0 +1,346 @@
 +/*
 + * Copyright (c) 2018 Ronald S. Bultje <rsbultje gmail com>
 + * Copyright (c) 2018 James Almer <jamrial gmail com>
@@ -158,8 +160,10 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/f6803cfbd2
 +        av_buffer_pool_uninit(&dav1d->pool);
 +        // Use twice the amount of required padding bytes for aligned_ptr below.
 +        dav1d->pool = av_buffer_pool_init(ret + DAV1D_PICTURE_ALIGNMENT * 2, NULL);
-+        if (!dav1d->pool)
++        if (!dav1d->pool) {
++            dav1d->pool_size = 0;
 +            return AVERROR(ENOMEM);
++        }
 +        dav1d->pool_size = ret;
 +    }
 +    buf = av_buffer_pool_get(dav1d->pool);
@@ -233,18 +237,11 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/f6803cfbd2
 +    av_buffer_unref(&buf);
 +}
 +
-+static void libdav1d_frame_free(void *opaque, uint8_t *data) {
-+    Dav1dPicture *p = opaque;
-+
-+    dav1d_picture_unref(p);
-+    av_free(p);
-+}
-+
 +static int libdav1d_receive_frame(AVCodecContext *c, AVFrame *frame)
 +{
 +    Libdav1dContext *dav1d = c->priv_data;
 +    Dav1dData *data = &dav1d->data;
-+    Dav1dPicture *p;
++    Dav1dPicture pic = { 0 }, *p = &pic;
 +    int res;
 +
 +    if (!data->sz) {
@@ -278,10 +275,6 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/f6803cfbd2
 +            return res;
 +    }
 +
-+    p = av_mallocz(sizeof(*p));
-+    if (!p)
-+        return AVERROR(ENOMEM);
-+
 +    res = dav1d_get_picture(dav1d->c, p);
 +    if (res < 0) {
 +        if (res == AVERROR(EINVAL))
@@ -289,17 +282,15 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/f6803cfbd2
 +        else if (res == AVERROR(EAGAIN) && c->internal->draining)
 +            res = AVERROR_EOF;
 +
-+        av_free(p);
 +        return res;
 +    }
 +
 +    av_assert0(p->data[0] != NULL);
 +
-+    frame->buf[0] = av_buffer_create(NULL, 0, libdav1d_frame_free,
-+                                     p, AV_BUFFER_FLAG_READONLY);
++    // This requires the custom allocator above
++    frame->buf[0] = av_buffer_ref(p->allocator_data);
 +    if (!frame->buf[0]) {
 +        dav1d_picture_unref(p);
-+        av_free(p);
 +        return AVERROR(ENOMEM);
 +    }
 +
@@ -394,6 +385,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/f6803cfbd2
 +
 +    res = 0;
 +fail:
++    dav1d_picture_unref(p);
 +    if (res < 0)
 +        av_frame_unref(frame);
 +    return res;
