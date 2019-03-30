@@ -1,0 +1,41 @@
+From c5a95780e2233a05ab3fb8b4eb8a9550f0c3b53c Mon Sep 17 00:00:00 2001
+From: Sergey Poznyakoff <gray@gnu.org>
+Date: Mon, 19 Mar 2018 18:11:59 +0200
+Subject: [PATCH] Bugfix
+
+* http.c: Stop if BIO_read returns <= 0
+---
+ http.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/http.c b/http.c
+index 496a84e..c461489 100644
+--- a/http.c
++++ b/http.c
+@@ -142,7 +142,7 @@ get_line(BIO *const in, char *const buf, const int bufsize)
+                 if(tmp != '\n') {
+                     /* we have CR not followed by NL */
+                     do {
+-                        if(BIO_read(in, &tmp, 1) < 0)
++                        if(BIO_read(in, &tmp, 1) <= 0)
+                             return 1;
+                     } while(tmp != '\n');
+                     return 1;
+@@ -169,7 +169,7 @@ get_line(BIO *const in, char *const buf, const int bufsize)
+ 
+             /* all other control characters cause an error */
+             do {
+-                if(BIO_read(in, &tmp, 1) < 0)
++                if(BIO_read(in, &tmp, 1) <= 0)
+                     return 1;
+             } while(tmp != '\n');
+             return 1;
+@@ -177,7 +177,7 @@ get_line(BIO *const in, char *const buf, const int bufsize)
+ 
+     /* line too long */
+     do {
+-        if(BIO_read(in, &tmp, 1) < 0)
++        if(BIO_read(in, &tmp, 1) <= 0)
+             return 1;
+     } while(tmp != '\n');
+     return 1;

@@ -1,0 +1,328 @@
+diff -Nur Pound-2.8.orig/config.c Pound-2.8/config.c
+--- Pound-2.8.orig/config.c	2018-05-11 12:16:05.000000000 +0200
++++ Pound-2.8/config.c	2018-07-30 14:10:01.693667854 +0200
+@@ -77,7 +77,7 @@
+ static regex_t  ListenHTTP, ListenHTTPS, End, Address, Port, Cert, xHTTP, Client, CheckURL;
+ static regex_t  Err414, Err500, Err501, Err503, MaxRequest, HeadRemove, RewriteLocation, RewriteDestination;
+ static regex_t  Service, ServiceName, URL, HeadRequire, HeadDeny, BackEnd, Emergency, Priority, HAport, HAportAddr;
+-static regex_t  Redirect, RedirectN, TimeOut, Session, Type, TTL, ID;
++static regex_t  Redirect, RedirectN, TimeOut, WSTimeOut, Session, Type, TTL, ID;
+ static regex_t  ClientCert, AddHeader, DisableProto, SSLAllowClientRenegotiation, SSLHonorCipherOrder, Ciphers;
+ static regex_t  CAlist, VerifyList, CRLlist, NoHTTPS11, Grace, Include, ConnTO, IgnoreCase, HTTPS;
+ static regex_t  Disabled, Threads, CNName, Anonymise, ECDHCurve;
+@@ -96,6 +96,7 @@
+ static int  def_facility = LOG_DAEMON;
+ static int  clnt_to = 10;
+ static int  be_to = 15;
++static int  ws_to = 600;
+ static int  be_connto = 15;
+ static int  ignore_case = 0;
+ #if OPENSSL_VERSION_NUMBER >= 0x0090800fL
+@@ -242,6 +243,7 @@
+     res->addr.ai_socktype = SOCK_STREAM;
+     res->to = is_emergency? 120: be_to;
+     res->conn_to = is_emergency? 120: be_connto;
++    res->ws_to = is_emergency? 120: ws_to;
+     res->alive = 1;
+     memset(&res->addr, 0, sizeof(res->addr));
+     res->priority = 5;
+@@ -292,6 +294,8 @@
+             res->priority = atoi(lin + matches[1].rm_so);
+         } else if(!regexec(&TimeOut, lin, 4, matches, 0)) {
+             res->to = atoi(lin + matches[1].rm_so);
++        } else if(!regexec(&WSTimeOut, lin, 4, matches, 0)) {
++            res->ws_to = atoi(lin + matches[1].rm_so);
+         } else if(!regexec(&ConnTO, lin, 4, matches, 0)) {
+             res->conn_to = atoi(lin + matches[1].rm_so);
+         } else if(!regexec(&HAport, lin, 4, matches, 0)) {
+@@ -1340,6 +1344,8 @@
+             alive_to = atoi(lin + matches[1].rm_so);
+         } else if(!regexec(&TimeOut, lin, 4, matches, 0)) {
+             be_to = atoi(lin + matches[1].rm_so);
++        } else if(!regexec(&WSTimeOut, lin, 4, matches, 0)) {
++            ws_to = atoi(lin + matches[1].rm_so);
+         } else if(!regexec(&ConnTO, lin, 4, matches, 0)) {
+             be_connto = atoi(lin + matches[1].rm_so);
+         } else if(!regexec(&IgnoreCase, lin, 4, matches, 0)) {
+@@ -1467,6 +1473,7 @@
+     || regcomp(&Emergency, "^[ \t]*Emergency[ \t]*$", REG_ICASE | REG_NEWLINE | REG_EXTENDED)
+     || regcomp(&Priority, "^[ \t]*Priority[ \t]+([1-9])[ \t]*$", REG_ICASE | REG_NEWLINE | REG_EXTENDED)
+     || regcomp(&TimeOut, "^[ \t]*TimeOut[ \t]+([1-9][0-9]*)[ \t]*$", REG_ICASE | REG_NEWLINE | REG_EXTENDED)
++    || regcomp(&WSTimeOut, "^[ \t]*WSTimeOut[ \t]+([1-9][0-9]*)[ \t]*$", REG_ICASE | REG_NEWLINE | REG_EXTENDED)
+     || regcomp(&HAport, "^[ \t]*HAport[ \t]+([1-9][0-9]*)[ \t]*$", REG_ICASE | REG_NEWLINE | REG_EXTENDED)
+     || regcomp(&HAportAddr, "^[ \t]*HAport[ \t]+([^ \t]+)[ \t]+([1-9][0-9]*)[ \t]*$", REG_ICASE | REG_NEWLINE | REG_EXTENDED)
+     || regcomp(&Redirect, "^[ \t]*Redirect[ \t]+\"(.+)\"[ \t]*$", REG_ICASE | REG_NEWLINE | REG_EXTENDED)
+@@ -1632,6 +1639,7 @@
+     regfree(&Emergency);
+     regfree(&Priority);
+     regfree(&TimeOut);
++    regfree(&WSTimeOut);
+     regfree(&HAport);
+     regfree(&HAportAddr);
+     regfree(&Redirect);
+diff -Nur Pound-2.8.orig/http.c Pound-2.8/http.c
+--- Pound-2.8.orig/http.c	2018-05-11 12:16:05.000000000 +0200
++++ Pound-2.8/http.c	2018-07-30 14:10:01.693667854 +0200
+@@ -541,7 +541,7 @@
+ void
+ do_http(thr_arg *arg)
+ {
+-    int                 cl_11, be_11, res, chunked, n, sock, no_cont, skip, conn_closed, force_10, sock_proto, is_rpc;
++    int                 cl_11, be_11, res, chunked, n, sock, no_cont, skip, conn_closed, force_10, sock_proto, is_rpc, is_ws;
+     LISTENER            *lstn;
+     SERVICE             *svc;
+     BACKEND             *backend, *cur_backend, *old_backend;
+@@ -662,6 +662,7 @@
+     for(cl_11 = be_11 = 0;;) {
+         res_bytes = L0;
+         is_rpc = -1;
++        is_ws = 0;
+         v_host[0] = referer[0] = u_agent[0] = u_name[0] = '\0';
+         conn_closed = 0;
+         for(n = 0; n < MAXHEADERS; n++)
+@@ -689,6 +690,8 @@
+                 is_rpc = 1;
+             else if(!strncasecmp(request + matches[1].rm_so, "RPC_OUT_DATA", matches[1].rm_eo - matches[1].rm_so))
+                 is_rpc = 0;
++            else if(!strncasecmp(request + matches[1].rm_so, "GET", matches[1].rm_eo - matches[1].rm_so))
++                is_ws |= 0x1;
+         } else {
+             addr2str(caddr, MAXBUF - 1, &from_host, 1);
+             logmsg(LOG_WARNING, "(%lx) e501 bad request \"%s\" from %s", pthread_self(), request, caddr);
+@@ -733,6 +736,13 @@
+             case HEADER_CONNECTION:
+                 if(!strcasecmp("close", buf))
+                     conn_closed = 1;
++                /* Connection: upgrade */
++                else if(!regexec(&CONN_UPGRD, buf, 0, NULL, 0))
++                    is_ws |= 0x2;
++                break;
++            case HEADER_UPGRADE:
++                if(!strcasecmp("websocket", buf))
++                    is_ws |= 0x4;
+                 break;
+             case HEADER_TRANSFER_ENCODING:
+                 if(!strcasecmp("chunked", buf))
+@@ -1402,12 +1412,21 @@
+             /* some response codes (1xx, 204, 304) have no content */
+             if(!no_cont && !regexec(&RESP_IGN, response, 0, NULL, 0))
+                 no_cont = 1;
++            if(!strncasecmp("101", response + 9, 3))
++                is_ws |= 0x10;
+ 
+             for(chunked = 0, cont = -1L, n = 1; n < MAXHEADERS && headers[n]; n++) {
+                 switch(check_header(headers[n], buf)) {
+                 case HEADER_CONNECTION:
+                     if(!strcasecmp("close", buf))
+                         conn_closed = 1;
++                    /* Connection: upgrade */
++                    else if(!regexec(&CONN_UPGRD, buf, 0, NULL, 0))
++                        is_ws |= 0x20;
++                    break;
++                case HEADER_UPGRADE:
++                    if(!strcasecmp("websocket", buf))
++                        is_ws |= 0x40;
+                     break;
+                 case HEADER_TRANSFER_ENCODING:
+                     if(!strcasecmp("chunked", buf)) {
+@@ -1571,6 +1590,114 @@
+                     clean_all();
+                     return;
+                 }
++            } else if(is_ws == 0x77) {
++                /*
++                 * special mode for Websockets - content until EOF
++                 */
++                char one;
++                BIO  *cl_unbuf;
++                BIO  *be_unbuf;
++                struct pollfd p[2];
++
++                cl_11 = be_11 = 0;
++
++                memset(p, 0, sizeof(p));
++                BIO_get_fd(cl, &p[0].fd);
++                p[0].events = POLLIN | POLLPRI;
++                BIO_get_fd(be, &p[1].fd);
++                p[1].events = POLLIN | POLLPRI;
++
++                while (BIO_pending(cl) || BIO_pending(be) || poll(p, 2, cur_backend->ws_to * 1000) > 0) {
++
++                    /*
++                     * first read whatever is already in the input buffer
++                     */
++                    while(BIO_pending(cl)) {
++                        if(BIO_read(cl, &one, 1) != 1) {
++                            logmsg(LOG_NOTICE, "(%lx) error read ws request pending: %s",
++                                pthread_self(), strerror(errno));
++                            clean_all();
++                            return;
++                        }
++                        if(BIO_write(be, &one, 1) != 1) {
++                            if(errno)
++                                logmsg(LOG_NOTICE, "(%lx) error write ws request pending: %s",
++                                    pthread_self(), strerror(errno));
++                            clean_all();
++                            return;
++                        }
++                    }
++                    BIO_flush(be);
++
++                    while(BIO_pending(be)) {
++                        if(BIO_read(be, &one, 1) != 1) {
++                            logmsg(LOG_NOTICE, "(%lx) error read ws response pending: %s",
++                                pthread_self(), strerror(errno));
++                            clean_all();
++                            return;
++                        }
++                        if(BIO_write(cl, &one, 1) != 1) {
++                            if(errno)
++                                logmsg(LOG_NOTICE, "(%lx) error write ws response pending: %s",
++                                    pthread_self(), strerror(errno));
++                            clean_all();
++                            return;
++                        }
++                        res_bytes++;
++                    }
++                    BIO_flush(cl);
++
++                    /*
++                     * find the socket BIO in the chain
++                     */
++                    if ((cl_unbuf = BIO_find_type(cl, lstn->ctx? BIO_TYPE_SSL : BIO_TYPE_SOCKET)) == NULL) {
++                         logmsg(LOG_WARNING, "(%lx) error get unbuffered: %s", pthread_self(), strerror(errno));
++                         clean_all();
++                         return;
++                    }
++                    if((be_unbuf = BIO_find_type(be, cur_backend->ctx? BIO_TYPE_SSL : BIO_TYPE_SOCKET)) == NULL) {
++                        logmsg(LOG_WARNING, "(%lx) error get unbuffered: %s", pthread_self(), strerror(errno));
++                        clean_all();
++                        return;
++                    }
++
++                    /*
++                     * copy till EOF
++                     */
++                    if(p[0].revents) {
++                        res = BIO_read(cl_unbuf, buf, MAXBUF);
++                        if(res <= 0) {
++                            break;
++                        }
++                        if(BIO_write(be, buf, res) != res) {
++                            if(errno)
++                                logmsg(LOG_NOTICE, "(%lx) error copy ws request body: %s",
++                                    pthread_self(), strerror(errno));
++                            clean_all();
++                            return;
++                        } else {
++                            BIO_flush(be);
++                        }
++                        p[0].revents = 0;
++                    }
++                    if(p[1].revents) {
++                        res = BIO_read(be_unbuf, buf, MAXBUF);
++                        if(res <= 0) {
++                            break;
++                        }
++                        if(BIO_write(cl, buf, res) != res) {
++                            if(errno)
++                                logmsg(LOG_NOTICE, "(%lx) error copy ws response body: %s",
++                                    pthread_self(), strerror(errno));
++                            clean_all();
++                            return;
++                        } else {
++                            res_bytes += res;
++                            BIO_flush(cl);
++                        }
++                        p[1].revents = 0;
++                    }
++                }
+             }
+         }
+         end_req = cur_time();
+diff -Nur Pound-2.8.orig/pound.8 Pound-2.8/pound.8
+--- Pound-2.8.orig/pound.8	2018-05-11 12:16:05.000000000 +0200
++++ Pound-2.8/pound.8	2018-07-30 14:10:01.693667854 +0200
+@@ -289,6 +289,13 @@
+ .B TimeOut
+ value. This value can be overridden for specific back-ends.
+ .TP
++\fBWSTimeOut\fR value
++How long should
++.B Pound
++wait for data from either back-end or client in a connection upgraded to
++a WebSocket (in seconds). Default: 600 seconds.
++This value can be overridden for specific back-ends.
++.TP
+ \fBGrace\fR value
+ How long should
+ .B Pound
+@@ -762,6 +769,11 @@
+ .I ConnTO
+ value.
+ .TP
++\fBWSTimeOut\fR val
++Override the global
++.I WSTimeOut
++value.
++.TP
+ \fBHAport\fR [ address ] port
+ A port (and optional address) to be used for server function checks. See below
+ the "High Availability" section for a more detailed discussion. By default
+diff -Nur Pound-2.8.orig/pound.c Pound-2.8/pound.c
+--- Pound-2.8.orig/pound.c	2018-05-11 12:16:05.000000000 +0200
++++ Pound-2.8/pound.c	2018-07-30 14:10:01.693667854 +0200
+@@ -47,6 +47,7 @@
+ LISTENER    *listeners;         /* all available listeners */
+ 
+ regex_t HEADER,             /* Allowed header */
++        CONN_UPGRD,         /* upgrade in connection header */
+         CHUNK_HEAD,         /* chunk header line */
+         RESP_SKIP,          /* responses for which we skip response */
+         RESP_IGN,           /* responses for which we ignore content */
+@@ -287,6 +288,7 @@
+ 
+     /* prepare regular expressions */
+     if(regcomp(&HEADER, "^([a-z0-9!#$%&'*+.^_`|~-]+):[ \t]*(.*)[ \t]*$", REG_ICASE | REG_NEWLINE | REG_EXTENDED)
++    || regcomp(&CONN_UPGRD, "(^|[ \t,])upgrade([ \t,]|$)", REG_ICASE | REG_NEWLINE | REG_EXTENDED)
+     || regcomp(&CHUNK_HEAD, "^([0-9a-f]+).*$", REG_ICASE | REG_NEWLINE | REG_EXTENDED)
+     || regcomp(&RESP_SKIP, "^HTTP/1.1 100.*$", REG_ICASE | REG_NEWLINE | REG_EXTENDED)
+     || regcomp(&RESP_IGN, "^HTTP/1.[01] (10[1-9]|1[1-9][0-9]|204|30[456]).*$", REG_ICASE | REG_NEWLINE | REG_EXTENDED)
+diff -Nur Pound-2.8.orig/pound.h Pound-2.8/pound.h
+--- Pound-2.8.orig/pound.h	2018-05-11 12:16:05.000000000 +0200
++++ Pound-2.8/pound.h	2018-07-30 14:10:01.697667855 +0200
+@@ -276,6 +276,7 @@
+             control_sock;       /* control socket */
+ 
+ extern regex_t  HEADER,     /* Allowed header */
++                CONN_UPGRD, /* upgrade in connection header */
+                 CHUNK_HEAD, /* chunk header line */
+                 RESP_SKIP,  /* responses for which we skip response */
+                 RESP_IGN,   /* responses for which we ignore content */
+@@ -319,6 +320,7 @@
+     int                 priority;   /* priority */
+     int                 to;         /* read/write time-out */
+     int                 conn_to;    /* connection time-out */
++    int                 ws_to;      /* websocket time-out */
+     struct addrinfo     ha_addr;    /* HA address/port */
+     char                *url;       /* for redirectors */
+     int                 redir_req;  /* the redirect should include the request path */
+@@ -440,6 +442,7 @@
+ #define HEADER_URI                  9
+ #define HEADER_DESTINATION          10
+ #define HEADER_EXPECT               11
++#define HEADER_UPGRADE              13
+ 
+ /* control request stuff */
+ typedef enum    {
+diff -Nur Pound-2.8.orig/svc.c Pound-2.8/svc.c
+--- Pound-2.8.orig/svc.c	2018-05-11 12:16:05.000000000 +0200
++++ Pound-2.8/svc.c	2018-07-30 14:10:01.697667855 +0200
+@@ -395,6 +395,7 @@
+         { "User-agent",         10, HEADER_USER_AGENT },
+         { "Destination",        11, HEADER_DESTINATION },
+         { "Expect",             6,  HEADER_EXPECT },
++        { "Upgrade",            7,  HEADER_UPGRADE },
+         { "",                   0,  HEADER_OTHER },
+     };
+     int i;
