@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	zim
-DISTVERSION=	0.70-rc3
+DISTVERSION=	0.70
 CATEGORIES=	deskutils python
-MASTER_SITES=	http://www.zim-wiki.org/downloads/
+MASTER_SITES=	https://www.zim-wiki.org/downloads/
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Desktop wiki editor
