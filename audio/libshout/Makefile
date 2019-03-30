@@ -24,6 +24,7 @@ USES=		gmake libtool pathfix pkgconfig ssl
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+LDFLAGS+=	-lcrypto
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
