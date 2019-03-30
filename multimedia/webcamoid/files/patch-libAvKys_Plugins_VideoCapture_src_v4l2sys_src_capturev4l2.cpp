@@ -1,4 +1,4 @@
---- libAvKys/Plugins/VideoCapture/src/v4l2sys/src/capturev4l2.cpp.orig	2019-03-06 17:26:33 UTC
+--- libAvKys/Plugins/VideoCapture/src/v4l2sys/src/capturev4l2.cpp.orig	2019-03-01 19:22:43 UTC
 +++ libAvKys/Plugins/VideoCapture/src/v4l2sys/src/capturev4l2.cpp
 @@ -162,10 +162,13 @@ class CaptureV4L2Private
                              const QVariantMap &map2) const;
@@ -31,7 +31,7 @@
      delete this->d;
  }
  
-@@ -1302,13 +1308,17 @@ void CaptureV4L2::updateDevices()
+@@ -1301,11 +1307,13 @@ void CaptureV4L2::updateDevices()
      this->d->m_devicesCaps = devicesCaps;
  
      if (this->d->m_devices != devices) {
@@ -41,11 +41,8 @@
 +#endif
  
          this->d->m_devices = devices;
- 
+-#ifndef Q_OS_BSD4
 +#if !defined(FREEBSD_BUG224011_VIDEO0)
          if (!this->d->m_devices.isEmpty())
              this->d->m_fsWatcher->addPaths(this->d->m_devices);
-+#endif
- 
-         emit this->webcamsChanged(this->d->m_devices);
-     }
+ #endif
