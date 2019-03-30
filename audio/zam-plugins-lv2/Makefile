@@ -42,6 +42,9 @@ post-patch:
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*} || ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
 	${REINPLACE_CMD} -e '/-mfpmath=sse/d' \
 		-e 's/-mtune=generic -msse -msse2//' \
+		${WRKSRC}/Makefile.mk ${WRKSRC}/Makefile.mk
+	${REINPLACE_CMD} -e '/-mfpmath=sse/d' \
+		-e 's/-mtune=generic -msse -msse2//' \
 		${WRKSRC}/Makefile.mk ${WRKSRC}/dpf/dgl/Makefile.mk
 .endif
 
