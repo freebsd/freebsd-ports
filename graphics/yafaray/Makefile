@@ -16,7 +16,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSES
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSES
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_EASON=	assembly is only for amd64 and i386, but it breaks on i386: https://github.com/YafaRay/Core/issues/111
+ONLY_FOR_ARCHS_REASON=	assembly is only for amd64 and i386, but it breaks on i386: https://github.com/YafaRay/Core/issues/111
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
