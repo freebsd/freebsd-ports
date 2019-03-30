@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	zol
-PORTVERSION=	2019032700
+PORTVERSION=	2019033000
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org
-COMMENT=	ZFS
+COMMENT=	ZFS on Linux userland for FreeBSD
 
 LICENSE=	CDDL
 
@@ -25,7 +25,7 @@ OPTIONS_SUB=    yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	zfsonfreebsd
 GH_PROJECT=	ZoF
-GH_TAGNAME=	9982b54
+GH_TAGNAME=	a6d2a2d
 
 .include <bsd.port.pre.mk>
 
