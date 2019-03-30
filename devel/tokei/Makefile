@@ -2,7 +2,7 @@
 
 PORTNAME=	tokei
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.1.0
+DISTVERSION=	9.1.1
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENCE-MIT
 
 USES=		cargo
 USE_GITHUB=	yes
-GH_ACCOUNT=	Aaronepower
+GH_ACCOUNT=	XAMPPRocky
 
 CARGO_CRATES=	aho-corasick-0.6.10 \
 		ansi_term-0.11.0 \
@@ -31,7 +31,7 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		block-buffer-0.3.3 \
 		byte-tools-0.2.0 \
 		byteorder-1.3.1 \
-		cc-1.0.31 \
+		cc-1.0.32 \
 		cfg-if-0.1.7 \
 		clap-2.32.0 \
 		cloudabi-0.0.3 \
@@ -63,8 +63,8 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		itoa-0.4.3 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.3.0 \
-		libc-0.2.50 \
-		linked-hash-map-0.5.1 \
+		libc-0.2.51 \
+		linked-hash-map-0.5.2 \
 		log-0.4.6 \
 		maplit-1.0.1 \
 		memchr-2.2.0 \
