@@ -1,6 +1,6 @@
---- Makefile.am.orig	2014-02-18 09:04:42.000000000 +1100
-+++ Makefile.am	2015-10-20 17:28:01.000000000 +1100
-@@ -94,13 +94,23 @@
+--- Makefile.am.orig	2019-03-30 16:47:30 UTC
++++ Makefile.am
+@@ -94,13 +94,23 @@ install-exec-hook:
  
  endif
  
@@ -8,15 +8,15 @@
 +if HAVE_FREEBSD
 +LIN_SRC =  sys_ansi.c sys_compat_unix.c ppm.c
 +LIN_DEFS = -D__Ansi__=1
-+LIN_LDFS = -version-info 3:0:0
-+
++LIN_LDFS = -version-info 3:0:0 -lm
+ 
 +install-exec-hook:
 +	@true
 +
 +endif
 +
 +AM_CPPFLAGS = $(JAVA_FLAGS) $(JPEG_FLAGS) $(PNG_FLAGS) $(TIFF_FLAGS) $(ZLIB_FLAGS) $(WIN_DEFS) $(LIN_DEFS) $(DAR_DEFS) $(SOL_DEFS) $(ENDIAN_FLAG) $(FBSD_DEFS)
- 
++
  lib_LTLIBRARIES = libpano13.la
  
 -libpano13_la_SOURCES = $(STD_SRC) $(JAVA_SRC) $(X11_SRC) $(WIN_SRC) $(MAC_SRC) $(LIN_SRC) $(DAR_SRC) $(SOL_SRC)
