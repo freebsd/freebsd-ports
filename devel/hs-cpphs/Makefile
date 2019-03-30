@@ -12,7 +12,6 @@ COMMENT=	Liberalised re-implementation of cpp, the C pre-processor
 LICENSE=	LGPL21
 
 USE_CABAL=	old-locale old-time polyparse>=1.9
-
 EXECUTABLE=	cpphs
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

@@ -11,7 +11,6 @@ COMMENT=	Graphical tool for profiling parallel Haskell programs
 LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	cairo file-embed ghc-events glib gtk mtl pango temporary
-
 EXECUTABLE=	threadscope
 
 STANDALONE=	yes

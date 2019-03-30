@@ -25,6 +25,7 @@ EXECUTABLE=	agda-mode agda
 
 FLAGS_ENABLE=		cpphs
 
+
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	DATADIR=${DATADIR}
 

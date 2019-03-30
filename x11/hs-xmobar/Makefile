@@ -16,7 +16,6 @@ USE_CABAL=	HTTP>=4000.2.4 async extensible-exceptions http-conduit \
 USE_XORG=	x11 xext xinerama xpm xrandr xrender
 
 EXECUTABLE=	xmobar
-
 STANDALONE=	yes
 
 OPTIONS_DEFINE=	EXAMPLES

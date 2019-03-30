@@ -11,7 +11,6 @@ COMMENT=	Library and tool for parsing .eventlog files from GHC
 LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	mtl>=2.2.1 vector
-
 EXECUTABLE=	ghc-events
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

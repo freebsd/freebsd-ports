@@ -16,7 +16,6 @@ USE_CABAL=	aeson cmdargs conduit conduit-extra connection extra \
 		mmap network network-uri old-locale process-extras QuickCheck \
 		resourcet storable-tuple tar uniplate utf8-string vector wai \
 		wai-logger warp warp-tls zlib
-
 EXECUTABLE=	hoogle
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

@@ -16,7 +16,6 @@ USE_CABAL=	aeson>=0.7 aeson-pretty attoparsec data-default \
 		mtl pandoc>=1.13 pandoc-types>=1.12.3 rfc5051 \
 		setenv>=0.1 split syb tagsoup vector xml-conduit>=1.2 \
 		yaml>=0.8.8.7
-
 EXECUTABLE=	pandoc-citeproc
 
 FLAGS_DEFINE=	BIBUTILS EMBED_DATA UNICODE_COLLATION

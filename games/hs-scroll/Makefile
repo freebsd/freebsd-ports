@@ -15,7 +15,6 @@ PKGNAMEPREFIX=
 
 USE_CABAL=	IfElse case-insensitive data-default monad-loops mtl \
 		optparse-applicative ncurses random vector
-
 STANDALONE=	yes
 EXECUTABLE=	scroll
 

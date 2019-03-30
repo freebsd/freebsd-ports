@@ -10,5 +10,6 @@ COMMENT=	Parse numeric literals from ByteStrings
 
 LICENSE=	BSD3CLAUSE
 
+
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

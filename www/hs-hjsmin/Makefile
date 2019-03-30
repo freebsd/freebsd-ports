@@ -12,7 +12,6 @@ LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	blaze-builder>=0.2 language-javascript>=0.5.14 \
 		optparse-applicative>=0.7
-
 EXECUTABLE=	hjsmin
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
