@@ -106,6 +106,7 @@ RTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 RTMP_CONFIGURE_OFF=	--disable-librtmp
 
 SDL_USE=		SDL=sdl
+SDL_USES=		sdl
 SDL_LIB_DEPENDS=	libaa.so:graphics/aalib
 SDL_CONFIGURE_OFF=	--disable-sdl
 
