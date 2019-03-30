@@ -3,4 +3,4 @@ where did the exception originated in. Bindex gives you the bindings as well.
 This can help you introspect the state of the Ruby program when at the point the
 exception occurred.
 
-WWW: https://github.com/gsamokovarov/bindex
+WWW: https://github.com/gsamokovarov/skiptrace
