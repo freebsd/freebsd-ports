@@ -4,7 +4,7 @@ PORTNAME=	openal-soft
 PORTVERSION=	1.19.1
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://openal-soft.org/openal-releases/
+MASTER_SITES=	https://openal-soft.org/openal-releases/
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Software implementation of the OpenAL specification
