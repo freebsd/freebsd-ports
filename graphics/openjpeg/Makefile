@@ -3,8 +3,8 @@
 
 PORTNAME=	openjpeg
 PORTVERSION=	2.3.0
-PORTREVISION=	3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,8 +18,9 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USE_LDCONFIG=	yes
 USES=		cmake cpe pkgconfig
+
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} VER=${PORTVERSION:R}
 
