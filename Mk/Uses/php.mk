@@ -4,7 +4,8 @@
 #
 # Feature:	php
 # Usage:	USES=php
-# Valid ARGS:	(none), phpize, ext, zend, build, cli, cgi, mod, web, embed
+# Valid ARGS:	(none), phpize, ext, zend, build, cli, cgi, mod, web, embed,
+#		pecl, flavors, noflavors
 #
 #	- phpize   : Use to build a PHP extension.
 #	- ext      : Use to build, install and register a PHP extension.
@@ -59,6 +60,18 @@
 PHP_Include_MAINTAINER=	ale@FreeBSD.org
 
 _INCLUDE_USES_PHP_MK=	yes
+
+_PHP_VALID_ARGS=	build cgi cli embed ext flavors mod noflavors pecl \
+			phpize web zend
+_PHP_UNKNOWN_ARGS=
+.for arg in ${php_ARGS}
+.  if empty(_PHP_VALID_ARGS:M${arg})
+_PHP_UNKNOWN_ARGS+=	${arg}
+.  endif
+.endfor
+.if !empty(_PHP_UNKNOWN_ARGS)
+IGNORE=	has unknown USES=php arguments: ${_PHP_UNKNOWN_ARGS}
+.endif
 
 .  if ${php_ARGS:Mbuild} && ( ${php_ARGS:Mphpize} || ${php_ARGS:Mext} || ${php_ARGS:Mzend} )
 DEV_WARNING+=	"USES=php:build is included in USES=php:phpize, USES=php:ext, and USES=php:zend, so it is not needed"
