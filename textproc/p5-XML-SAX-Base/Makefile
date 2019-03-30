@@ -13,10 +13,9 @@ COMMENT=	Base class SAX Drivers and Filters
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-CONFLICTS_INSTALL=	p5-XML-SAX-0.[0-8]* p5-XML-SAX-0.9[0-8]*
+USES=		perl5
+USE_PERL5=	configure
 
 NO_ARCH=	yes
-USE_PERL5=	configure
-USES=		perl5
 
 .include <bsd.port.mk>
