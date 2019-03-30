@@ -12,7 +12,6 @@ COMMENT=	Unlambda interpreter
 LICENSE=	GPLv2
 
 USE_CABAL=	mtl
-
 EXECUTABLE=	unlambda
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

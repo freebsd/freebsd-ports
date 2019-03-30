@@ -15,7 +15,6 @@ BROKEN=		Doesn't build with recent GHC
 USE_CABAL=	hashtables random
 USE_ALEX=	yes
 USE_HAPPY=	yes
-
 EXECUTABLE=	gtk2hsC2hs gtk2hsHookGenerator gtk2hsTypeGen
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

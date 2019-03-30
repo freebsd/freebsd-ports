@@ -13,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 USE_CABAL=	json>=0.5 utf8-string
 
 EXECUTABLE=	hasktags
-
 STANDALONE=	yes
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

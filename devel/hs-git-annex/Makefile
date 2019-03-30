@@ -82,7 +82,7 @@ WEBDAV_FLAG_CABAL=	DAV
 
 ASSISTANT_DESC=		'assistant' and 'watch' commands
 ASSISTANT_FLAG_ENABLE=	Assistant
-ASSISTANT_FLAG_CABAL=	dns mountpoints hinotify 
+ASSISTANT_FLAG_CABAL=	dns mountpoints hinotify
 
 WEBAPP_DESC=		Web application (requires assistant)
 WEBAPP_FLAG_DEPENDS=	ASSISTANT

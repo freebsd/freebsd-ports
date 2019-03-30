@@ -13,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	extensible-exceptions hint>=0.3.1 mtl>2 QuickCheck show>=0.3 \
 		simple-reflect utf8-string
-
 EXECUTABLE=	mueval mueval-core
 
 CONFIGURE_ARGS+=	--ghc-options="-dynamic"

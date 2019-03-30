@@ -19,7 +19,6 @@ USE_CABAL=	async attoparsec base16-bytestring cryptohash \
 		regex-applicative regex-compat-tdfa sandi tar \
 		transformers-compat unix-compat \
 		utf8-string vector zip-archive zlib
-
 EXECUTABLE=	darcs
 
 MAN1PAGES=	darcs.1

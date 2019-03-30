@@ -10,6 +10,9 @@ COMMENT=	Fast, light-weight web server for WAI applications
 
 LICENSE=	MIT
 
+DEPRECATED=		Haskell libraries are getting pushed out of the ports tree. If you are using this port for development, consider switching to cabal sandboxes (old way), cabal new-build (new way), or use devel/stack. If you believe this port shouldn't be removed, contact haskell@FreeBSD.org
+EXPIRATION_DATE=	2019-04-14
+
 USE_CABAL=	auto-update>=0.1.1 bsb-http-chunked case-insensitive>=0.2 \
 		hashable http-date http-types>=0.8.5 http2>=1.0.2 \
 		iproute>=1.3.1 network>=2.3 old-locale simple-sendfile>=0.2.7 \
