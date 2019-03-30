@@ -1,0 +1,61 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: paperless-consumer
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line(s) to /etc/rc.conf to enable the paperless
+# document consumer:
+# paperless_consumer_enable (bool):XSet to "NO" by default.
+#					Set it to "YES" to enable
+#					paperless_consumer
+# paperless_consumer_log_facility(str): Set to "daemon" by default.
+#					Consumer logging syslog facility.
+# paperless_consumer_log_priority(str): Set to "notice" by default.
+#					Consumer logging syslog priority.
+# paperless_consumer_log_tag(str):	Set to "paperless-consumer" by default.
+#					Consumer logging syslog tag.
+# paperless_consumer_restart_delay(int):Set to "60" by default.
+#					Consumer automatic restart delay in
+#					seconds.
+
+. /etc/rc.subr
+
+name="paperless_consumer"
+rcvar="${name}_enable"
+
+# Set defaults
+paperless_consumer_enable=${paperless_consumer_enable:-"NO"}
+paperless_consumer_daemon_user=${paperless_consumer_user:-"paperless"}
+paperless_consumer_log_facility=${paperless_consumer_log_facility:-"daemon"}
+paperless_consumer_log_priority=${paperless_consumer_log_priority:-"notice"}
+paperless_consumer_log_tag=${paperless_consumer_log_tag:-"paperless-consumer"}
+paperless_consumer_restart_delay=${paperless_consumer_restart_delay:-"5"}
+
+paperless_consumer_env="LANG=en_US.UTF-8 PATH=$PATH:%%PREFIX%%/bin"
+
+start_precmd="${name}_prestart"
+
+pidfile="/var/run/paperless_consumer.pid"
+command="/usr/sbin/daemon"
+command_args="-cS -u ${paperless_consumer_daemon_user} \
+	-P ${pidfile} \
+	-t paperless-consumer \
+	-l ${paperless_consumer_log_facility} \
+	-s ${paperless_consumer_log_priority} \
+	-T ${paperless_consumer_log_tag} \
+	-R ${paperless_consumer_restart_delay} \
+	%%PREFIX%%/bin/paperless document_consumer"
+
+paperless_consumer_prestart()
+{
+	%%ECHO%% "Applying potential migrations to ${name}."
+	env ${paperless_consumer_env} su \
+		-m ${paperless_consumer_daemon_user} \
+		-c 'sh -c "%%PREFIX%%/bin/paperless migrate --no-color -v 0"'
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

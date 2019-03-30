@@ -1,0 +1,8 @@
+Index and archive all of your scanned paper documents.
+
+Paperless is a simple Django application running in two parts: The consumer,
+which does the indexing and a web interface, which let's you you search and
+download already-indexed documents.
+
+WWW: https://github.com/the-paperless-project/paperless
+WWW: https://paperless.readthedocs.io
