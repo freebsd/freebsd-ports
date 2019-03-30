@@ -1,0 +1,9 @@
+[uwsgi]
+chdir = %%PYTHONPREFIX_SITELIBDIR%%/paperless
+module = paperless.wsgi:application
+env = DJANGO_SETTINGS_MODULE=paperless.settings
+env = LANG=en_US.UTF-8
+env = PATH=$PATH:%%PREFIX%%/bin
+harakiri = 20
+max-requests = 500
+vacuum = true

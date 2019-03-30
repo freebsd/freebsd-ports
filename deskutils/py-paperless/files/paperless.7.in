@@ -1,0 +1,259 @@
+.\"
+.\" Copyright (c) 2019 Michael Gmelin
+.\"
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE DEVELOPERS ``AS IS'' AND ANY EXPRESS OR
+.\" IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+.\" OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+.\" IN NO EVENT SHALL THE DEVELOPERS BE LIABLE FOR ANY DIRECT, INDIRECT,
+.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.\"
+.\" $FreeBSD$
+.\"
+.Dd March 30, 2019
+.Dt PAPERLESS 7
+.Os
+.Sh NAME
+.Nm paperless
+.Nd Index and archive scanned paper documents - installation
+.Sh SYNOPSIS
+.Nm pkg install %%PKGBASE%%
+.Sh DESCRIPTION
+.Em Paperless
+is a simple Django application running in two parts: The consumer,
+which does the indexing and a web interface, which allows searching
+and downloading already-indexed documents.
+.Pp
+This man page documents how the
+.Fx FreeBSD
+port is installed and configured.
+It assumes that the paperless package was already installed, e.g., from the
+.Fx FreeBSD
+package repo as described in
+.Sx SYNOPSIS .
+.Pp
+For more information about using paperless, see
+.Dq the official paperless documentation
+.Pa ( file:/%%DOCSDIR%%/index.html
+or
+.Pa https://paperless.readthedocs.io ) .
+.Pp
+The package creates a symlink from
+.Pa %%PYTHONPREFIX_SITELIBDIR%%/paperless/manage.py
+to
+.Pa %%PREFIX%%/bin/paperless
+for convenience reasons, so whenever the official
+documentation mentions
+.Em manage.py
+it can be substituted with
+.Pa %%PREFIX%%/bin/paperless
+or simply
+.Pa paperless .
+.Pp
+.Em Paperless always needs to be run using the correct system user
+and an UTF-8 codepage.
+.Pp
+The package %%PKGBASE%% created a user
+.Em paperless
+with the following home directory layout, setting appropriate
+restrictive access permissions:
+.Bl -tag -width "/var"
+.It Pa /var/db/paperless
+home directory (only writeable by root)
+.Bl -tag -width "consume/" -compact
+.It Pa consume/
+Consume directory writable by root, used as chroot directory
+for sftp access (see below).
+.Bl -tag -width "123" -compact
+.It Pa input/
+Input files are dropped in there to be processed by the
+paperless document consumer - either directly or via
+a mechanism like sftp.
+.El
+.It Pa media/
+Directory used by paperless to store original files and
+thumbnails.
+.It Pa sqlite/
+Contains paperless' SQLite database.
+.El
+.El
+.Sh CONSUMER SETUP
+In case documents should be PGP encrypted,
+.Va PAPERLESS_PASSPHRASE
+needs to be configured in
+.Pa %%PREFIX%%/etc/paperless.conf
+first.
+.Pp
+Also,
+.Va PAPERLESS_OCR_THREADS
+can be tuned in the same configuration file to limit
+the impact on system performance.
+.Pp
+To use paperless, the consumer is enabled
+.Pp
+.Dl "sysrc paperless_consumer_enable=YES"
+.Pp
+and subsequently started
+.Pp
+.Dl "service paperless-consumer start"
+.Pp
+(which also creates/updates the paperless SQLite database).
+.Pp
+Therefore, restarting the consumer after updates
+.Pp
+.Dl "service paperless-consumer restart"
+.Pp
+updates the database before starting the new program version.
+.Sh WEB UI SETUP
+Before using the web ui, make sure to create a super user and assign
+a password
+.Pp
+.Dl "su -l paperless -c '%%PREFIX%%/bin/paperless createsuperuser'"
+.Pp
+It is recommended to host the web component using a real
+web server, e.g., nginx + uwsgi.
+.Pp
+Install and configure uwsgi:
+.Pp
+.Dl "pkg install uwsgi-py36"
+.Dl "mkdir -p %%PREFIX%%/etc/uwsgi"
+.Dl "cp %%EXAMPLESDIR%%/uwsgi.ini \\"
+.Dl "    %%PREFIX%%/etc/uwsgi/paperless.ini"
+.Dl "sysrc uwsgi_enable=YES"
+.Dl "sysrc uwsgi_profiles+=paperless"
+.Dl "sysrc uwsgi_paperless_socket_owner=paperless:www"
+.Dl "sysrc uwsgi_paperless_uid=paperless"
+.Dl "sysrc uwsgi_paperless_gid=paperless"
+.Dl "sysrc uwsgi_paperless_configfile=%%PREFIX%%/etc/uwsgi/paperless.ini"
+.Pp
+Start the uwsgi process:
+.Pp
+.Dl "service uwsgi start paperless"
+.Pp
+Install nginx:
+.Pp
+.Dl "pkg install nginx"
+.Pp
+Create a basic server configuration (
+.Pa %%PREFIX%%/etc/nginx/nginx.conf
+), example snippet:
+.Pp
+.Dl "server {"
+.Dl "    listen 80;"
+.Dl "    server_name localhost;"
+.Dl ""
+.Dl "    location /static/ {"
+.Dl "        alias %%WWWDIR%%/static/;"
+.Dl "    }"
+.Dl ""
+.Dl "    location / {"
+.Dl "        uwsgi_pass unix:/tmp/uwsgi-paperless.sock;"
+.Dl "        include uwsgi_params;"
+.Dl "    }"
+.Dl ""
+.Dl "    error_page   500 502 503 504  /50x.html;"
+.Dl "    location = /50x.html {"
+.Dl "        root   %%PREFIX%%/www/nginx-dist;"
+.Dl "    }"
+.Dl "}"
+.Pp
+Enable and start nginx:
+.Pp
+.Dl "sysrc nginx_enable=YES"
+.Dl "service nginx start"
+.Pp
+.Em \In the real world, nginx should be configured to use TLS
+.Em and (potentially) client certificates .
+.Sh SFTP SETUP
+Setting up
+.Em sftp
+enabled direct upload of files to be processed by the paperless
+consumer.
+Some scanners allow configuring sftp with key based authentication,
+which is convenient as it scans directly to the paperless processing
+pipeline.
+.Pp
+In case paperless is using a dedicated instance of
+.Xr sshd 8 ,
+access can be limited to the paperless user by adding
+these lines to
+.Pa /etc/ssh/sshd_config :
+.Pp
+.Dl "# Only include if sshd is dedicated to paperless"
+.Dl "# otherwise you'll lock yourself out"
+.Dl "AllowUsers paperless"
+.Pp
+The following block limits the paperless user to using the
+.Xr sftp 1
+protocol and locks it into the consume directory:
+.Pp
+.Dl "# paperless can only do sftp and is dropped into correct directory"
+.Dl "Match User paperless"
+.Dl "	ChrootDirectory %h/consume"
+.Dl "	ForceCommand internal-sftp -u 0077 -d /input"
+.Dl "	AllowTcpForwarding no"
+.Dl "	X11Forwarding no"
+.Dl "	PasswordAuthentication no"
+.Pp
+The public keys of authorized users/devices need to be added to
+.Pa /var/db/paperless/.ssh/authorized_keys :
+.Pp
+.Dl "mkdir -p /var/db/paperless/.ssh"
+.Dl "cat path/to/pubkey >>/var/db/paperless/.ssh/authorized_keys"
+.Pp
+Make sure
+.Xr sshd 8
+is enabled and restart (or reload) it:
+.Pp
+.Dl "sysrc sshd_enable=YES"
+.Dl "service sshd restart"
+.Pp
+The user will be dropped into the correct directory, so uploading
+a file is as simple as:
+.Pp
+.Dl "echo put file.pdf | sftp -b - paperless@host"
+.Sh FILES
+.Bl -tag -width ".Pa %%PREFIX%%/etc/paperless.conf" -compact
+.It Pa %%PREFIX%%/etc/paperless.conf
+See self-documented
+.Pa %%PREFIX%%/etc/paperless.conf.sample
+for example.
+.It Pa %%DOCSDIR%%/index.html
+Official documentation for the version installed.
+.It Pa %%DOCSDIR%%/presentation/index.html
+Presentation of the motivation for and technology behind paperless.
+.It Pa %%EXAMPLESDIR%%
+Configuration examples, complementary to this man page.
+.El
+.Sh SEE ALSO
+.Xr sftp 1 ,
+.Xr sshd_config 5 ,
+.Xr ports 7 ,
+.Xr daemon 8 ,
+.Xr service 8 ,
+.Xr sysrc 8
+.Pp
+.Rs
+.%B "Official paperless documentation"
+.Re
+.Pp
+.Pa https://paperless.readthedocs.io
+.Sh AUTHORS
+.An -nosplit
+This manual page was written by
+.An Michael Gmelin Aq Mt grembo@FreeBSD.org .

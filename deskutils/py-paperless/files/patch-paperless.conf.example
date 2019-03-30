@@ -1,0 +1,29 @@
+--- paperless.conf.example.orig	2019-01-27 13:48:05 UTC
++++ paperless.conf.example
+@@ -11,22 +11,22 @@
+ # This where your documents should go to be consumed.  Make sure that it exists
+ # and that the user running the paperless service can read/write its contents
+ # before you start Paperless.
+-PAPERLESS_CONSUMPTION_DIR=""
++PAPERLESS_CONSUMPTION_DIR="/var/db/paperless/consume/input"
+ 
+ 
+ # You can specify where you want the SQLite database to be stored instead of
+ # the default location of /data/ within the install directory.
+-#PAPERLESS_DBDIR=/path/to/database/file
++PAPERLESS_DBDIR=/var/db/paperless/sqlite
+ 
+ 
+ # Override the default MEDIA_ROOT here.  This is where all files are stored.
+ # The default location is /media/documents/ within the install folder.
+-#PAPERLESS_MEDIADIR=/path/to/media
++PAPERLESS_MEDIADIR=/var/db/paperless/media
+ 
+ 
+ # Override the default STATIC_ROOT here.  This is where all static files
+ # created using "collectstatic" manager command are stored.
+-#PAPERLESS_STATICDIR=""
++PAPERLESS_STATICDIR=%%WWWDIR%%/static
+ 
+ 
+ # Override the MEDIA_URL here.  Unless you're hosting Paperless off a subdomain
