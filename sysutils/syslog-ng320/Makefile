@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl \
-		gettext-runtime python:3.6,build shebangfix
+		gettext-runtime shebangfix
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
@@ -37,7 +37,7 @@ GEOIP2_DESC=		Build with geoip2 (MaxMindDB) support
 REDIS_DESC=		Build with Redis support
 JAVA_DESC=		Build with Java support (no modules)
 JAVA_MOD_DESC=		Build with Java modules (needs Maven / Internet access)
-PYTHON_DESC=		Build with Python 3.6 support
+PYTHON_DESC=		Build with Python ${PYTHON_VER} support
 CURL_DESC=		Build with Curl HTTP support
 AMQP_DESC=		Build with AMQP support
 RIEMANN_DESC=		Build with Riemann support
@@ -47,6 +47,7 @@ USE_RC_SUBR=	syslog-ng
 SHEBANG_FILES=	lib/merge-grammar.py
 SHEBANG_LANG=	python3
 GNU_CONFIGURE=	yes
+# Note: Even if PYTHON is deselected, glib20 will install python.
 USE_GNOME=	glib20
 SUB_FILES=	pkg-message
 INSTALL_TARGET=	install-strip
@@ -135,9 +136,10 @@ JAVA_MOD_PLIST_FILES=		lib/syslog-ng/java-modules/log4j-1.2.16.jar \
 				lib/syslog-ng/java-modules/http.jar \
 				lib/syslog-ng/java-modules/syslog-ng-common.jar
 
+PYTHON_USES=			bison python:3.5+
 PYTHON_CONFIGURE_ON=		--enable-python
-PYTHON_CONFIGURE_OFF=		--disable-python --with-python=3.6
-PYTHON_CONFIGURE_WITH=		python=3.6
+PYTHON_CONFIGURE_OFF=		--disable-python
+PYTHON_CONFIGURE_WITH=		python=${PYTHON_VER}
 PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
 		%%PYTHON_SITELIBDIR%%/syslogng-1.0-py%%PYTHON_VER%%.egg-info \
 		%%PYTHON_SITELIBDIR%%/syslogng/__init__.py \
