@@ -1,0 +1,18 @@
+--- Makefile.in.orig	2018-05-11 10:16:05 UTC
++++ Makefile.in
+@@ -58,11 +58,11 @@ $(OBJS) poundctl.o:	pound.h config.h
+ 
+ install:	all
+ 		@INSTALL@ -d ${DESTDIR}@sbindir@
+-		@INSTALL@ -o @I_OWNER@ -g @I_GRP@ -m 555 pound ${DESTDIR}@sbindir@/pound
+-		@INSTALL@ -o @I_OWNER@ -g @I_GRP@ -m 555 poundctl ${DESTDIR}@sbindir@/poundctl
++		@INSTALL@ -p -m 755 pound ${DESTDIR}@sbindir@/pound
++		@INSTALL@ -p -m 755 poundctl ${DESTDIR}@sbindir@/poundctl
+ 		@INSTALL@ -d ${DESTDIR}@mandir@/man8
+-		@INSTALL@ -o @I_OWNER@ -g @I_GRP@ -m 644 pound.8 ${DESTDIR}@mandir@/man8/pound.8
+-		@INSTALL@ -o @I_OWNER@ -g @I_GRP@ -m 644 poundctl.8 ${DESTDIR}@mandir@/man8/poundctl.8
++		@INSTALL@ -p -m 644 pound.8 ${DESTDIR}@mandir@/man8/pound.8
++		@INSTALL@ -p -m 644 poundctl.8 ${DESTDIR}@mandir@/man8/poundctl.8
+ 
+ clean:
+ 		rm -f pound $(OBJS) poundctl poundctl.o

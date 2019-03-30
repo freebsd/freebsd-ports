@@ -1,0 +1,54 @@
+From: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
+Date: Sun, 19 Feb 2017 14:34:38 +0100
+Subject: [PATCH] pound: Add support for openssl 1.1
+
+This patch adds support for "openssl dhparam -C" created header files where
+openssl binary itself is 1.1 but the code using the file is linked against
+1.0.2.
+This will not let the pound as compile against openssl 1.1.
+
+Signed-off-by: Sebastian Andrzej Siewior <sebastian@breakpoint.cc>
+---
+ svc.c |   31 +++++++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
+
+--- a/svc.c
++++ b/svc.c
+@@ -1448,6 +1448,37 @@ do_RSAgen(void)
+     return;
+ }
+ 
++#if OPENSSL_VERSION_NUMBER < 0x10100000
++static inline int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g)
++{
++	/* If the fields p and g in d are NULL, the corresponding input
++	 * parameters MUST be non-NULL.  q may remain NULL.
++	 */
++	if ((dh->p == NULL && p == NULL)
++	    || (dh->g == NULL && g == NULL))
++		return 0;
++
++	if (p != NULL) {
++		BN_free(dh->p);
++		dh->p = p;
++	}
++	if (q != NULL) {
++		BN_free(dh->q);
++		dh->q = q;
++	}
++	if (g != NULL) {
++		BN_free(dh->g);
++		dh->g = g;
++	}
++
++	if (q != NULL) {
++		dh->length = BN_num_bits(q);
++	}
++
++	return 1;
++}
++#endif
++
+ #include    "dh512.h"
+ 
+ #if DH_LEN == 1024
