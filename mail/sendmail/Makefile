@@ -240,7 +240,7 @@ pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
 	@${SED} \
 	 -e "s=\([ 	]\)/.*$$=\\1${SENDMAIL}=" \
-	 ${DESTDIR}/etc/mail/mailer.conf \
+	 ${FILESDIR}/mailer.conf \
 	 > ${STAGEDIR}${PREFIX}/etc/mail/mailer.conf.sendmail
 
 # We want mail.local and rmail for our system.
@@ -303,7 +303,7 @@ mailer.conf:
 	@${MKDIR} ${DESTDIR}${PREFIX}/etc/mail
 	@${SED} \
 	 -e "s=\([ 	]\)/.*$$=\\1${SENDMAIL}=" \
-	 ${DESTDIR}/etc/mail/mailer.conf \
+	 ${FILESDIR}/mailer.conf \
 	 > ${DESTDIR}${PREFIX}/etc/mail/mailer.conf
 .endif
 
