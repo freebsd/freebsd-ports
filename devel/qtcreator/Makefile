@@ -17,7 +17,7 @@ LIB_DEPENDS=	libqbscore.so:devel/qbs
 BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 
-USES=		compiler:c++14-lang python:2.7 qmake qt:5 shebangfix tar:xz
+USES=		compiler:c++14-lang gl python:2.7 qmake qt:5 shebangfix tar:xz
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 USE_GL=		gl
 USE_QT=		buildtools concurrent core declarative designer gui help \
