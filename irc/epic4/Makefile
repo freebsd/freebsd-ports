@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	epic4
-PORTVERSION=	2.10.6
+PORTVERSION=	2.10.7
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 		http://ftp.cc.uoc.gr/mirrors/irc/epic/EPIC4-PRODUCTION/
@@ -30,18 +30,10 @@ IPV6_CONFIGURE_WITH=	ipv6
 SSL_CONFIGURE_WITH=	ssl="${OPENSSLBASE}"
 SSL_USES=		ssl
 
-TCL_CONFIGURE_WITH=	tcl
+TCL_CONFIGURE_WITH=	tcl="${TCL_LIBDIR}"
 TCL_USES=		tcl
 
-#  enable perl5 support (requires perl 5.6.1 or newer)
-#
-# The path provided to --with-perl is needed, since the configure script
-# looks for libperl.so in places very specific to Linux.  Possibly a
-# patch to configure would be a better idea, but we need to rely on
-# SITE_PERL and PERL_VERSION to create the path.
-#
-
-PERL_CONFIGURE_WITH=	perl="${LOCALBASE}/lib/perl5/${PERL_VER}/${PERL_ARCH}/CORE"
+PERL_CONFIGURE_WITH=	perl
 PERL_USES=		perl5
 
 .include <bsd.port.options.mk>
