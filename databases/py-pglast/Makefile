@@ -13,7 +13,7 @@ COMMENT=	PostgreSQL Languages AST and statements prettifier
 LICENSE=	GPLv3+
 
 NOT_FOR_ARCHS=		aarch64 armv6 armv7 powerpc powerpc64 powerpcspe
-NOT_FOR_ARCHS_REASON=	port/atomics/arch-<arm>.h: No such file or directory
+NOT_FOR_ARCHS_REASON=	port/atomics/arch-<arch>.h: No such file or directory
 
 USES=		gmake python:3.4+
 USE_PYTHON=	autoplist distutils
