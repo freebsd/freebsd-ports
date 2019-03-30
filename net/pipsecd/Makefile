@@ -3,7 +3,7 @@
 
 PORTNAME=	pipsecd
 PORTVERSION=	19991014
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net security
 MASTER_SITES=	http://perso.telecom-paristech.fr/~beyssac/pipsec/ \
 		http://www.komquats.com/distfiles/
