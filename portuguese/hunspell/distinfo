@@ -1,5 +1,5 @@
-TIMESTAMP = 1514376702
-SHA256 (hunspell/hunspell-pt_PT-20171225.tar.gz) = 07e8e066a40514dbb3705bebe31265cb773e8c0462146eecffee91a8e4c13a88
-SIZE (hunspell/hunspell-pt_PT-20171225.tar.gz) = 257557
+TIMESTAMP = 1553963939
+SHA256 (hunspell/hunspell-pt_PT-20190329.tar.gz) = e7edc259d8b5cf49de2973571ac88b872b96daf600696930d1aeaba8ad178ca3
+SIZE (hunspell/hunspell-pt_PT-20190329.tar.gz) = 257566
 SHA256 (hunspell/ptBR-2013-10-30AOC-2.zip) = ff20a997e4296b8b0bef2e6c19be437fa99442e7d7b3ea55cf9e0e1a6ab52a56
 SIZE (hunspell/ptBR-2013-10-30AOC-2.zip) = 1378689
