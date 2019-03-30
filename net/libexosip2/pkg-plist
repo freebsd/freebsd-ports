@@ -3,7 +3,6 @@ include/eXosip2/eX_call.h
 include/eXosip2/eX_message.h
 include/eXosip2/eX_options.h
 include/eXosip2/eX_publish.h
-include/eXosip2/eX_refer.h
 include/eXosip2/eX_register.h
 include/eXosip2/eX_setup.h
 include/eXosip2/eX_subscribe.h
