@@ -5,9 +5,7 @@ PORTNAME=	syslog-ng
 DISTVERSION=	3.9.1
 PORTREVISION=	6
 CATEGORIES=	sysutils
-DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
-
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	39
 .endif
@@ -15,14 +13,17 @@ PKGNAMESUFFIX=	39
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
+BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
+
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
+USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl \
+		gettext-runtime
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
-		syslog-ng[0-9][0-9]-[0-9]* \
+		syslog-ng[0-24-9][0-9]-[0-9]* \
 		syslog-ng[0-9][0-9][0-9]-[0-9]* \
 		syslog-ng-devel-[0-9]* \
 		syslog-ng-incubator-*
@@ -43,8 +44,6 @@ JAVA_MOD_DESC=		Build with Java modules (needs Maven / Internet access)
 PYTHON_DESC=		Build with Python 2.7 support
 CURL_DESC=		Build with Curl HTTP support
 
-USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl \
-		gettext-runtime
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
 GNU_CONFIGURE=	yes
@@ -142,7 +141,7 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${STAGEDIR}${DOCSDIR}
+	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS.md ${STAGEDIR}${DOCSDIR}

@@ -5,9 +5,7 @@ PORTNAME=	syslog-ng
 DISTVERSION=	3.10.1
 PORTREVISION=	7
 CATEGORIES=	sysutils
-DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
-
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	310
 .endif
@@ -18,15 +16,18 @@ COMMENT=	Powerful syslogd replacement
 DEPRECATED=		No longer supported by Balabit
 EXPIRATION_DATE=	2019-12-31
 
+BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
+
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
+USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl \
+		gettext-runtime
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
-		syslog-ng[0-9][0-9][0-9]-[0-9]* \
+		syslog-ng[0-24-9][02-9][1-9]-[0-9]* \
 		syslog-ng-devel-[0-9]* \
 		syslog-ng-incubator-*
 
@@ -46,8 +47,6 @@ JAVA_MOD_DESC=		Build with Java modules (needs Maven / Internet access)
 PYTHON_DESC=		Build with Python 2.7 support
 CURL_DESC=		Build with Curl HTTP support
 
-USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl \
-		gettext-runtime
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
 GNU_CONFIGURE=	yes
@@ -67,9 +66,9 @@ TCP_WRAPPERS_CONFIGURE_ENABLE=	tcp-wrapper
 
 SPOOF_LIB_DEPENDS=		libnet.so:net/libnet
 SPOOF_CONFIGURE_ENABLE=		spoof-source
-SPOOF_CONFIGURE_ON=		--with-libnet=/usr/local/bin
-SPOOF_CONFIGURE_ENV=		LIBNET_CFLAGS="-I/usr/local/include" \
-				LIBNET_LIBS="-L/usr/local/lib -lnet"
+SPOOF_CONFIGURE_ON=		--with-libnet=${LOCALBASE}/bin
+SPOOF_CONFIGURE_ENV=		LIBNET_CFLAGS="-I${LOCALBASE}/include" \
+				LIBNET_LIBS="-L${LOCALBASE}/lib -lnet"
 
 IPV6_CONFIGURE_ENABLE=		ipv6
 
@@ -147,7 +146,7 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${STAGEDIR}${DOCSDIR}
+	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS.md ${STAGEDIR}${DOCSDIR}
