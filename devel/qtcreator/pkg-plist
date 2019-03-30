@@ -826,6 +826,8 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-internal-allocatedlayout-data.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-internal-allocatedlayout-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-internal-allocatedlayout.html
+%%GCC%%%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-internal-asyncjob-members.html
+%%GCC%%%%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-internal-asyncjob.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-internal-bestitemtype.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-internal-colortip-members.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator-dev/utils-internal-colortip.html
