@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Organise your Moose types in libraries
 
 LICENSE=	ART10 GPLv1+
@@ -23,12 +23,12 @@ RUN_DEPENDS=	p5-Carp-Clan>=6.00:devel/p5-Carp-Clan \
 		p5-Sub-Name>=0:devel/p5-Sub-Name \
 		p5-namespace-autoclean>=0.08:devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0:devel/p5-namespace-clean
-TEST_DEPENDS=	p5-Module-Metadata>=0:devel/p5-Module-Metadata \
-		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
+TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:devel/p5-Test-Requires
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuildtiny
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
