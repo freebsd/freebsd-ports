@@ -139,7 +139,7 @@ JAVA_MOD_PLIST_FILES=		lib/syslog-ng/java-modules/log4j-1.2.16.jar \
 
 PYTHON_USES=			bison python:3.5+
 PYTHON_CONFIGURE_ON=		--enable-python
-PYTHON_CONFIGURE_OFF=		--disable-python
+PYTHON_CONFIGURE_OFF=		--disable-python --with-python=${PYTHON_VER}
 PYTHON_CONFIGURE_WITH=		python=${PYTHON_VER}
 PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
 		%%PYTHON_SITELIBDIR%%/syslogng-1.0-py%%PYTHON_VER%%.egg-info \
