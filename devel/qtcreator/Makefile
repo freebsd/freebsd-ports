@@ -88,6 +88,14 @@ SHEBANG_FILES=		tests/system/tools/objectsToTable.py \
 			scripts/uichanges.py \
 			scripts/makedmg.py
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+PLIST_SUB+=	GCC=""
+.else
+PLIST_SUB+=	GCC="@comment "
+.endif
+
 post-patch:
 # Fix paths for gnuplot and ant.
 	${REINPLACE_CMD} -e 's|/usr/bin/gnuplot|${LOCALBASE}/bin/gnuplot|' \
@@ -110,4 +118,4 @@ pre-configure:
 # See QTBUG-40825 and ports bugs 194088, 195105 and 198720.
 	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${WRKSRC}/lib' >> ${WRKSRC}/.qmake.cache
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
