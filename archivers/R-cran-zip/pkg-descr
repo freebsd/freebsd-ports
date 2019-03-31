@@ -1,4 +1,4 @@
 Cross-Platform 'zip' Compression Library. A replacement for the 'zip' function,
 that does not require any additional external tools on any platform.
 
-WWW: https://github.com/gaborcsardi/zip
+WWW: https://github.com/r-lib/zip#readme

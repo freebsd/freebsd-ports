@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zip
-DISTVERSION=	1.0.0
-PORTREVISION=	1
+DISTVERSION=	2.0.1
 CATEGORIES=	archivers
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,7 +10,10 @@ COMMENT=	Cross-Platform 'zip' Compression
 
 LICENSE=	CC0-1.0
 
-TEST_DEPENDS=	R-cran-withr>0:devel/R-cran-withr
+TEST_DEPENDS=	R-cran-R6>0:devel/R-cran-R6 \
+		R-cran-covr>0:devel/R-cran-covr \
+		R-cran-testthat>0:devel/R-cran-testthat \
+		R-cran-withr>0:devel/R-cran-withr
 
 USES=		cran:auto-plist,compiles
 
