@@ -12109,3 +12109,10 @@ www/xpi-yslow||2019-03-29|Legacy extensions aren't supported after Firefox 57
 converters/py-pint|devel/py-Pint|2019-03-31|Remove duplicate port
 graphics/py-PyX12|graphics/py-PyX|2019-03-31|Duplicate port
 x11-toolkits/fltk-devel||2019-03-31|Has expired: Older than x11-toolkits/fltk -- there is no point in having old snapshots
+devel/rubygem-sidekiq-cron0|devel/rubygem-sidekiq-cron|2019-03-31|Has expired: Use devel/rubygem-sidekiq-cron instead
+lang/ruby23|lang/ruby24|2019-03-31|Has expired: Use lang/ruby24 or above
+misc/rubygem-mime-types29|misc/rubygem-mime-types|2019-03-31|Has expired: Use misc/rubygem-mime-types instead
+net/rubygem-gitlab_omniauth-ldap20|net/rubygem-gitlab_omniauth-ldap|2019-03-31|Has expired: Use net/rubygem-gitlab_omniauth-ldap instead
+net/rubygem-rubyntlm05|net/rubygem-rubyntlm|2019-03-31|Has expired: Use net/rubygem-rubyntlm instead
+security/kbfs|security/keybase|2019-03-31|Has expired: Merged into security/keybase
+security/rubygem-sshkey1|security/rubygem-sshkey|2019-03-31|Has expired: Use security/rubygem-sshkey instead
