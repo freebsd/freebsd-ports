@@ -1,4 +1,0 @@
-SSHKey generates private and public SSH keys (RSA and DSA supported) using pure
-Ruby.
-
-WWW: https://github.com/bensie/sshkey
