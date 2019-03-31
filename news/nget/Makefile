@@ -9,7 +9,7 @@ CATEGORIES=	news
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Auto-resuming command line nntp file grabber
+COMMENT=	Auto-resuming command line NNTP file grabber
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
