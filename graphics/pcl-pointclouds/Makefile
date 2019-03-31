@@ -17,7 +17,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	undefined reference to `__atomic_load'
-NOT_FOR_ARCHS=		armv6 armv6
+NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	common/include/pcl/pcl_macros.h:420:4: error: aligned_malloc not supported on your platform
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
