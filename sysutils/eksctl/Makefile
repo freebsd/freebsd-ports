@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eksctl
-PORTVERSION=	0.1.24
+PORTVERSION=	0.1.26
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
