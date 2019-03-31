@@ -289,7 +289,6 @@ PORTREVISION=	1
     SUBDIR += isnprober
     SUBDIR += jbrofuzz
     SUBDIR += john
-    SUBDIR += kbfs
     SUBDIR += kbfsd
     SUBDIR += kc24
     SUBDIR += kdbx-viewer
