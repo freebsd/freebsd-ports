@@ -45,7 +45,6 @@ RIEMANN_DESC=		Build with Riemann support
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
 SHEBANG_FILES=	lib/merge-grammar.py
-SHEBANG_LANG=	python3
 GNU_CONFIGURE=	yes
 # Note: Even if PYTHON is deselected, glib20 will install python.
 USE_GNOME=	glib20
@@ -55,7 +54,8 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --enable-manpages \
 		--disable-linux-caps \
-		--datadir=${PREFIX}/share/
+		--datadir=${PREFIX}/share/ \
+		--with-python=${PYTHON_VER}
 
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
@@ -136,50 +136,49 @@ JAVA_MOD_PLIST_FILES=		lib/syslog-ng/java-modules/log4j-1.2.16.jar \
 				lib/syslog-ng/java-modules/http.jar \
 				lib/syslog-ng/java-modules/syslog-ng-common.jar
 
-PYTHON_USES=			bison python:3.5+
-PYTHON_CONFIGURE_ON=		--enable-python
-PYTHON_CONFIGURE_OFF=		--disable-python --with-python=${PYTHON_VER}
-PYTHON_CONFIGURE_WITH=		python=${PYTHON_VER}
+PYTHON_USES=			python:3.5+ 
+PYTHON_CONFIGURE_ON=		--enable-python 
+PYTHON_CONFIGURE_OFF=		--disable-python
 PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
 		%%PYTHON_SITELIBDIR%%/syslogng-1.0-py%%PYTHON_VER%%.egg-info \
 		%%PYTHON_SITELIBDIR%%/syslogng/__init__.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/__pycache__/__init__.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/__pycache__/__init__.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__init__.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/__init__.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/__init__.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/choicecompleter.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/choicecompleter.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/choicecompleter.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/commandlinelexer.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/commandlinelexer.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/commandlinelexer.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/completer.py  \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/completer.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/completer.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/completerlang.py  \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/completerlang.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/completerlang.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/debuggercli.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/debuggercli.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/debuggercli.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/debuglang.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/debuglang.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/debuglang.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/getoptlexer.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/getoptlexer.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/getoptlexer.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/langcompleter.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/langcompleter.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/langcompleter.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/lexer.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/lexer.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/lexer.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/lexertoken.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/lexertoken.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/lexertoken.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/macrocompleter.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/macrocompleter.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/macrocompleter.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/readline.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/readline.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/readline.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/syslognginternals.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/syslognginternals.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/syslognginternals.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/tablexer.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/tablexer.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/tablexer.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/templatelang.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/templatelang.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/templatelang.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/templatelexer.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/templatelexer.cpython-36.pyc \
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/templatelexer.cpython-${PYTHON_SUFFIX}.pyc \
 		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/tflang.py \
-		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/tflang.cpython-36.pyc
+		%%PYTHON_SITELIBDIR%%/syslogng/debuggercli/__pycache__/tflang.cpython-${PYTHON_SUFFIX}.pyc
 
 CURL_CONFIGURE_OFF=		--with-libcurl=off
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
