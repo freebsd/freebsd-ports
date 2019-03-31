@@ -45,6 +45,7 @@ bin/pamaltsat
 bin/pamarith
 bin/pambackground
 bin/pambayer
+bin/pambrighten
 bin/pamchannel
 bin/pamcomp
 bin/pamcrater
@@ -58,6 +59,7 @@ bin/pamendian
 bin/pamenlarge
 bin/pamexec
 bin/pamfile
+bin/pamfind
 bin/pamfix
 %%PERL%%bin/pamfixtrunc
 bin/pamflip
@@ -65,6 +67,7 @@ bin/pamfunc
 bin/pamgauss
 bin/pamgetcolor
 bin/pamgradient
+bin/pamhue
 bin/pamlevels
 bin/pamlookup
 bin/pammasksharpen
@@ -395,7 +398,7 @@ include/netpbm/shhopt.h
 lib/libnetpbm.a
 lib/libnetpbm.so
 lib/libnetpbm.so.11
-lib/libnetpbm.so.11.85
+lib/libnetpbm.so.11.86
 %%MANPAGES%%man/man1/411toppm.1.gz
 %%MANPAGES%%man/man1/anytopnm.1.gz
 %%MANPAGES%%man/man1/asciitopgm.1.gz
@@ -447,6 +450,7 @@ lib/libnetpbm.so.11.85
 %%MANPAGES%%man/man1/pamarith.1.gz
 %%MANPAGES%%man/man1/pambackground.1.gz
 %%MANPAGES%%man/man1/pambayer.1.gz
+%%MANPAGES%%man/man1/pambrighten.1.gz
 %%MANPAGES%%man/man1/pamchannel.1.gz
 %%MANPAGES%%man/man1/pamcomp.1.gz
 %%MANPAGES%%man/man1/pamcrater.1.gz
@@ -460,6 +464,7 @@ lib/libnetpbm.so.11.85
 %%MANPAGES%%man/man1/pamenlarge.1.gz
 %%MANPAGES%%man/man1/pamexec.1.gz
 %%MANPAGES%%man/man1/pamfile.1.gz
+%%MANPAGES%%man/man1/pamfind.1.gz
 %%MANPAGES%%man/man1/pamfix.1.gz
 %%PERL%%%%MANPAGES%%man/man1/pamfixtrunc.1.gz
 %%MANPAGES%%man/man1/pamflip.1.gz
@@ -467,6 +472,7 @@ lib/libnetpbm.so.11.85
 %%MANPAGES%%man/man1/pamgauss.1.gz
 %%MANPAGES%%man/man1/pamgetcolor.1.gz
 %%MANPAGES%%man/man1/pamgradient.1.gz
+%%MANPAGES%%man/man1/pamhue.1.gz
 %%MANPAGES%%man/man1/pamlevels.1.gz
 %%MANPAGES%%man/man1/pamlookup.1.gz
 %%MANPAGES%%man/man1/pammasksharpen.1.gz
@@ -498,7 +504,6 @@ lib/libnetpbm.so.11.85
 %%MANPAGES%%man/man1/pamtable.1.gz
 %%MANPAGES%%man/man1/pamthreshold.1.gz
 %%MANPAGES%%man/man1/pamtilt.1.gz
-%%MANPAGES%%man/man1/pamtris.1.gz
 %%MANPAGES%%man/man1/pamtoavs.1.gz
 %%MANPAGES%%man/man1/pamtodjvurle.1.gz
 %%MANPAGES%%man/man1/pamtofits.1.gz
@@ -520,6 +525,7 @@ lib/libnetpbm.so.11.85
 %%MANPAGES%%man/man1/pamtouil.1.gz
 %%MANPAGES%%man/man1/pamtowinicon.1.gz
 %%MANPAGES%%man/man1/pamtoxvmini.1.gz
+%%MANPAGES%%man/man1/pamtris.1.gz
 %%MANPAGES%%man/man1/pamundice.1.gz
 %%MANPAGES%%man/man1/pamunlookup.1.gz
 %%MANPAGES%%man/man1/pamvalidate.1.gz
@@ -694,7 +700,7 @@ lib/libnetpbm.so.11.85
 %%MANPAGES%%man/man1/ppmpat.1.gz
 %%PERL%%%%MANPAGES%%man/man1/ppmquant.1.gz
 %%MANPAGES%%man/man1/ppmquantall.1.gz
-%%PERL%%%%MANPAGES%%man/man1/ppmrainbow.1.gz
+%%MANPAGES%%man/man1/ppmrainbow.1.gz
 %%MANPAGES%%man/man1/ppmrelief.1.gz
 %%MANPAGES%%man/man1/ppmrough.1.gz
 %%PERL%%%%MANPAGES%%man/man1/ppmshadow.1.gz
