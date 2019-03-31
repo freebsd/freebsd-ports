@@ -1314,7 +1314,6 @@
     SUBDIR += rubygem-ruby-yadis
     SUBDIR += rubygem-ruby_smb
     SUBDIR += rubygem-rubyntlm
-    SUBDIR += rubygem-rubyntlm05
     SUBDIR += rubygem-rubytter
     SUBDIR += rubygem-rudy
     SUBDIR += rubygem-rye
