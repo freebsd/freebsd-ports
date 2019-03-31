@@ -802,7 +802,6 @@
     SUBDIR += py-PyOpenGL
     SUBDIR += py-PyOpenGL-accelerate
     SUBDIR += py-PyX
-    SUBDIR += py-PyX12
     SUBDIR += py-actdiag
     SUBDIR += py-blockdiag
     SUBDIR += py-blockdiagcontrib-cisco

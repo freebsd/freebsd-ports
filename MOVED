@@ -12107,3 +12107,4 @@ www/xpi-xhtml-ruby-support||2019-03-29|Legacy extensions aren't supported after 
 www/xpi-xmpp4moz||2019-03-29|Legacy extensions aren't supported after Firefox 57
 www/xpi-yslow||2019-03-29|Legacy extensions aren't supported after Firefox 57
 converters/py-pint|devel/py-Pint|2019-03-31|Remove duplicate port
+graphics/py-PyX12|graphics/py-PyX|2019-03-31|Duplicate port
