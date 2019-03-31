@@ -1,0 +1,12 @@
+Quantum chemistry program executor and IO standardizer (QCSchema) for quantum
+chemistry.
+
+Currently available compute backends for single results are:
+* Quantum Chemistry:
+  * Psi4
+* AI Evaluation:
+  * TorchANI
+* Molecular Mechanics:
+  * RDKit
+
+WWW: https://github.com/MolSSI/QCEngine
