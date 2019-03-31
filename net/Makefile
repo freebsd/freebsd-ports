@@ -1436,6 +1436,8 @@
     SUBDIR += thcrut
     SUBDIR += throttled
     SUBDIR += tigervnc
+    SUBDIR += tigervnc-server
+    SUBDIR += tigervnc-viewer
     SUBDIR += tightvnc
     SUBDIR += timed
     SUBDIR += tintin++
