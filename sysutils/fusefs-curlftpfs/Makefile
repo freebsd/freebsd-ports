@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	Mount remote ftp directories
+COMMENT=	Mount remote FTP directories
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

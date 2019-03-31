@@ -7,7 +7,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Command line shell-like ftp client
+COMMENT=	Command line shell-like FTP client
 
 LICENSE=	GPLv3
 

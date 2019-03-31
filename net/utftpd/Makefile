@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://ohse.de/uwe/releases/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	secure tftpd server with fine grained access and revision control
+COMMENT=	Secure TFTP server with fine-grained access and revision control
 
 GNU_CONFIGURE=	YES
 USES=		gmake
