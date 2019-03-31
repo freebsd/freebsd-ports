@@ -46,8 +46,7 @@ PLATFORM_EXTENSIONS_USE=	XORG=x11,xscrnsaver
 SPELL_CHECK_DESC=	Spell cheching support
 SPELL_CHECK_USES=	kde:5
 SPELL_CHECK_USE=	KDE=sonnet
-SPELL_CHECK_BOOL=	SPELL_CHECK
-SPELL_CHECK_BROKEN_OFF=	SPELL_CHECK can't be properly disabled: https://github.com/qTox/qTox/issues/5598
+SPELL_CHECK_CMAKE_BOOL=	SPELL_CHECK
 
 PLIST_FILES=	bin/qtox \
 		share/applications/io.github.qtox.qTox.desktop \
