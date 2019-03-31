@@ -700,7 +700,7 @@ lib/libnetpbm.so.11.86
 %%MANPAGES%%man/man1/ppmpat.1.gz
 %%PERL%%%%MANPAGES%%man/man1/ppmquant.1.gz
 %%MANPAGES%%man/man1/ppmquantall.1.gz
-%%MANPAGES%%man/man1/ppmrainbow.1.gz
+%%PERL%%%%MANPAGES%%man/man1/ppmrainbow.1.gz
 %%MANPAGES%%man/man1/ppmrelief.1.gz
 %%MANPAGES%%man/man1/ppmrough.1.gz
 %%PERL%%%%MANPAGES%%man/man1/ppmshadow.1.gz
