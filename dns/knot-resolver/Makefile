@@ -3,6 +3,7 @@
 
 PORTNAME=	knot-resolver
 DISTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-resolver/ \
 		https://dns.company/downloads/knot-resolver/
