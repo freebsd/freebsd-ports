@@ -1,4 +1,4 @@
 Python module for the libpcap packet capture library,
 based on the original python libpcap module by Aaron Rhodes.
 
-WWW: https://sourceforge.net/projects/pylibpcap/
+WWW: https://github.com/5u623l20/pylibpcap
