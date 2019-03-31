@@ -8,8 +8,8 @@
 # - We are using several stub files, especially in Chromium's base/ and net/
 #   layers. We should look at implementing the missing bits instead.
 # - We are currently not using any sandboxing mechanism.
-# - We are disabling support for features such as WebRTC and printing. We need
-#   to see what it would take to properly support them.
+# - We are disabling support for features such as WebRTC. We need to see what
+#   it would take to properly support them.
 # - We need to see if more "use_system_<FOO>" flags can be passed.
 # - The process of porting QtWebEngine needs to be documented so we can move to
 #   newer releases more easily.
