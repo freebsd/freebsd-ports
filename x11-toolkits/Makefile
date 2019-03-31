@@ -13,7 +13,6 @@
     SUBDIR += diorite
     SUBDIR += flowcanvas
     SUBDIR += fltk
-    SUBDIR += fltk-devel
     SUBDIR += fox14
     SUBDIR += fox16
     SUBDIR += fox17
