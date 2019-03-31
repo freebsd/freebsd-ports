@@ -3,6 +3,7 @@
 
 PORTNAME=	Cockatrice
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	sbruno@FreeBSD.org

@@ -3,6 +3,7 @@
 PORTNAME=	eternalterminal
 DISTVERSIONPREFIX=	et-v
 DISTVERSION=	5.1.9
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	trevis@silencedpoet.com
