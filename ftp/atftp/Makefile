@@ -8,7 +8,7 @@ MASTER_SITES=	DEBIAN/pool/main/a/${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.dfsg.orig
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Advanced tftp server and client
+COMMENT=	Advanced TFTP server and client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.dfsg
 

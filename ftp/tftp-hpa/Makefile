@@ -6,7 +6,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	KERNEL_ORG/software/network/tftp/tftp-hpa
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	Advanced tftp server
+COMMENT=	Advanced TFTP server
 
 OPTIONS_DEFINE=	DOCS
 

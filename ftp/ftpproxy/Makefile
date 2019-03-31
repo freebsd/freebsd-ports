@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.ftpproxy.org/download/ \
 		http://www.ftpproxy.org/download/older_releases/
 
 MAINTAINER=	philippe@le-berre.com
-COMMENT=	ftp proxy
+COMMENT=	FTP proxy
 
 USES=		gmake tar:tgz
 MAKE_JOBS_UNSAFE=	yes

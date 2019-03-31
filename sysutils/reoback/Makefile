@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Release%203
 EXTRACT_SUFX=	_r3.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Simple but flexible ftp/nfs backup script
+COMMENT=	Simple but flexible FTP/NFS backup script
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE

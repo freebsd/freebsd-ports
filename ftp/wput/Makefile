@@ -8,7 +8,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	SF
 
 MAINTAINER=	chip-set@mail.ru
-COMMENT=	Uploads files or directories to a ftpserver with support of resuming
+COMMENT=	Upload files or directories to FTP server with resume support
 
 PORTDOCS=	ABOUT-NLS COPYING ChangeLog INSTALL TODO
 PORTEXAMPLES=	USAGE.examples USAGE.resumehandling USAGE.urlhandling \

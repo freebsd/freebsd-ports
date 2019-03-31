@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=
 
 MAINTAINER=	holgerrepp@googlemail.com
-COMMENT=	Nagios plugin to check tftp servers
+COMMENT=	Nagios plugin to check TFTP servers
 
 RUN_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/bin/tftp:ftp/tftp-hpa

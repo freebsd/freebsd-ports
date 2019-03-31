@@ -8,7 +8,7 @@ CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://www.yafc-ftp.com/downloads/
 
 MAINTAINER=	wg@FreeBSD.org
-COMMENT=	Yet another ftp client. Similar to ftp(1)
+COMMENT=	Yet another FTP client, similar to ftp(1)
 
 LICENSE=	GPLv2+
 

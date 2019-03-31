@@ -8,7 +8,7 @@ CATEGORIES=	ftp perl5
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Parallel ftp-fetching program
+COMMENT=	Parallel FTP-fetching program
 
 LICENSE=	GPLv2
 

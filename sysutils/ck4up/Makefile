@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://jue.li/crux/ck4up/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Checks http and ftp sites for updates
+COMMENT=	Check HTTP and FTP sites for updates
 
 RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/gdbm.so:databases/ruby-gdbm
 

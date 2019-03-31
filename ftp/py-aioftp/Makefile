@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	ftp client/server for asyncio
+COMMENT=	FTP client/server for asyncio
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/license.txt
