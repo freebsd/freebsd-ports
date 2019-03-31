@@ -2,10 +2,10 @@
 +++ cad_source/zcad.lpi
 @@ -220,7 +220,7 @@
          <PackageName Value="AnchorDocking"/>
-       </Item15>
-       <Item16>
--        <PackageName Value="LazOpenGLContext"/>
-+        <Filename Value="openglcontext.pas"/>
        </Item16>
        <Item17>
+-        <PackageName Value="LazOpenGLContext"/>
++        <Filename Value="openglcontext.pas"/>
+       </Item17>
+       <Item18>
          <PackageName Value="LCL"/>
