@@ -8,7 +8,7 @@ CATEGORIES=	news
 MASTER_SITES=	LOCAL/dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Threaded nntp newsreader for X
+COMMENT=	Threaded NNTP newsreader for X11
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libcompface.so:mail/faces
