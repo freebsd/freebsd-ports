@@ -1,0 +1,4 @@
+Data validation and settings management using python type hinting.
+Define how data should be in pure, canonical python; validate it with pydantic.
+
+WWW: https://github.com/samuelcolvin/pydantic
