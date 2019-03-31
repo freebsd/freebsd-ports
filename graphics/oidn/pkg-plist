@@ -7,7 +7,7 @@ lib/cmake/OpenImageDenoise/OpenImageDenoiseConfig.cmake
 lib/cmake/OpenImageDenoise/OpenImageDenoiseConfigVersion.cmake
 lib/libOpenImageDenoise.so
 lib/libOpenImageDenoise.so.0
-lib/libOpenImageDenoise.so.0.8.1
+lib/libOpenImageDenoise.so.0.8.2
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/readme.pdf
