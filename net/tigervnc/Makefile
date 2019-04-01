@@ -13,6 +13,8 @@ USES=		metaport
 
 OPTIONS_DEFINE=	SERVER VIEWER
 OPTIONS_DEFAULT=	SERVER
+SERVER_DESC=	Install TigerVNC server
+VIEWER_DESC=	Install TigerVNC viewer
 SERVER_RUN_DEPENDS=	vncserver:net/tigervnc-server
 VIEWER_RUN_DEPENDS=	vncviewer:net/tigervnc-viewer
 
