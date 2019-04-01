@@ -3,7 +3,7 @@ include/extractor.h
 lib/libextractor.a
 lib/libextractor.so
 lib/libextractor.so.3
-lib/libextractor.so.3.1.6
+lib/libextractor.so.3.1.7
 lib/libextractor/libextractor_archive.a
 lib/libextractor/libextractor_archive.so
 lib/libextractor/libextractor_deb.a

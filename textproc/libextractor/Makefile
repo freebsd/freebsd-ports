@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libextractor
-PORTVERSION=	1.8
-PORTREVISION=	2
+PORTVERSION=	1.9
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -60,7 +59,7 @@ MP4_LIB_DEPENDS=	libmp4v2.so:multimedia/mp4v2
 MP4_CONFIGURE_ENV_OFF=	ac_cv_lib_mp4v2_MP4ReadProvider=no
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-RPM_DESC=		RPM support
+RPM_DESC=		RPM package format support
 RPM_LIB_DEPENDS=	librpm.so:archivers/rpm4
 RPM_CONFIGURE_ENV=	ac_cv_lib_rpm_rpmReadPackageFile=yes
 RPM_CONFIGURE_ENV_OFF=	ac_cv_lib_rpm_rpmReadPackageFile=no
@@ -79,8 +78,7 @@ post-patch:
 		 s|-lc_r|-pthread| ; \
 		 s|<exiv2/image.hpp>|$${EXIV2_H}| ; \
 		 s|<tidy/tidy.h>|$${TIDY_H}|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|-pthread|' ${WRKSRC}/src/plugins/Makefile.in
-	${REINPLACE_CMD} -e 's|tidy/tidybuffio.h|tidybuffio.h|' ${WRKSRC}/src/plugins/html_extractor.c
+	@${REINPLACE_CMD} -e 's|tidy/tidybuffio\.h|tidybuffio.h|' \
+		${WRKSRC}/src/plugins/html_extractor.c
 
 .include <bsd.port.mk>
