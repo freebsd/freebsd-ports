@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	5u623l20
 GH_PROJECT=	pylibpcap
 GH_TAGNAME=	d0bbd5c
-USE_PYTHON=	autoplist distutils allflavors
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	LIBPCAP
 
