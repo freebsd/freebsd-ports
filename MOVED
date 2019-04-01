@@ -12116,8 +12116,7 @@ net/rubygem-gitlab_omniauth-ldap20|net/rubygem-gitlab_omniauth-ldap|2019-03-31|H
 net/rubygem-rubyntlm05|net/rubygem-rubyntlm|2019-03-31|Has expired: Use net/rubygem-rubyntlm instead
 security/kbfs|security/keybase|2019-03-31|Has expired: Merged into security/keybase
 security/rubygem-sshkey1|security/rubygem-sshkey|2019-03-31|Has expired: Use security/rubygem-sshkey instead
-devel/llvm38|devel/llvm80|2019-04-01|Has expired: Use a modern version
-instead
+devel/llvm38|devel/llvm80|2019-04-01|Has expired: Use a modern version instead
 archivers/go-compress||2019-04-01|Has expired: Go libraries should not be packaged
 textproc/go.text||2019-04-01|Has expired: Go libraries should not be packaged
 devel/go-hashicorp-logutils||2019-04-01|Has expired: Go libraries should not be packaged
