@@ -197,7 +197,6 @@
     SUBDIR += glpi
     SUBDIR += gnome-user-share
     SUBDIR += go-appengine-sdk
-    SUBDIR += go-fasthttp
     SUBDIR += go-www
     SUBDIR += gobuffalo
     SUBDIR += gohugo
@@ -2391,7 +2390,6 @@
     SUBDIR += udmsearch
     SUBDIR += ufdbguard
     SUBDIR += unit
-    SUBDIR += unit-go
     SUBDIR += unit-perl
     SUBDIR += unit-php
     SUBDIR += uwsgi
@@ -2424,7 +2422,6 @@
     SUBDIR += webcopy
     SUBDIR += webcrawl
     SUBDIR += webfs
-    SUBDIR += webgo
     SUBDIR += webgrind
     SUBDIR += webhook
     SUBDIR += webinject

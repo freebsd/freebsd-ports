@@ -1,6 +1,0 @@
-%%GO_LIBDIR%%/%%GO_PKGNAME%%.a
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/LICENSE
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/README.md
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/bayesian.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/bayesian_test.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/todo.txt

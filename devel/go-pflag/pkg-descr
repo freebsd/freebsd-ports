@@ -1,7 +1,0 @@
-pflag is a drop-in replacement for Go's flag package, implementing
-POSIX/GNU-style --flags.
-pflag is compatible with the GNU extensions to the POSIX recommendations for
-command-line options. For a more precise description, see the "Command-line
-flag syntax" section below.
-
-WWW: https://github.com/spf13/pflag

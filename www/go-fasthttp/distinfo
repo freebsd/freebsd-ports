@@ -1,7 +1,0 @@
-TIMESTAMP = 1486758925
-SHA256 (valyala-fasthttp-v20160617_GH0.tar.gz) = 342253f1cab10aae3c5a4ac2daa8207fec23fdcff044d5c910ee393f792b225c
-SIZE (valyala-fasthttp-v20160617_GH0.tar.gz) = 148822
-SHA256 (klauspost-compress-461e8fd_GH0.tar.gz) = 50be4f688309711340d5edd401f17e52cfc21f76e76198804e4bcc4735207ea6
-SIZE (klauspost-compress-461e8fd_GH0.tar.gz) = 2725602
-SHA256 (golang-snappy-7db9049_GH0.tar.gz) = 75a608d786217e48d85593681dcbf4ebe7fae96fde9d6fd7109f6fa04f4ac3fe
-SIZE (golang-snappy-7db9049_GH0.tar.gz) = 62042

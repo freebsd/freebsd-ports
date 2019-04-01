@@ -1,4 +1,0 @@
-RAW is a high-level interface to Go's unsafe and reflection packages,
-designed to ease both generic programming and low-level memory access.
-
-WWW: https://github.com/feyeleanor/raw
