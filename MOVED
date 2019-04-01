@@ -12154,3 +12154,4 @@ databases/levigo||2019-04-01|Has expired: Go libraries should not be packaged
 www/unit-go||2019-04-01|Has expired: Go libraries should not be packaged
 www/webgo||2019-04-01|Has expired: Go libraries should not be packaged
 www/go-fasthttp||2019-04-01|Has expired: Go libraries should not be packaged
+graphics/llpp||2019-04-01|Has expired: fails to build with mupdf 1.14.0 and unable to update due to outdated lang/ocaml
