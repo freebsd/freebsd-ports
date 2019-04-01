@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-viewer
 CATEGORIES=	net
 
@@ -29,8 +30,11 @@ DESKTOP_ENTRIES=	"TigerVNC viewer" "Connect to VNC server and display remote des
 				"${PORTNAME}" "vncviewer" "Network;" false
 
 post-patch:
-	# do not build server components
-	@${REINPLACE_CMD} -e 's|add_subdirectory(unix)||' ${WRKSRC}/CMakeLists.txt
+	# do not build server components and tests
+	@${REINPLACE_CMD} \
+		-e 's|add_subdirectory(unix)||' \
+		-e 's|add_subdirectory(tests)||' \
+		${WRKSRC}/CMakeLists.txt
 
 MASTERDIR=	${.CURDIR}/../tigervnc
 .include "${MASTERDIR}/Makefile.common.mk"

@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-server
 CATEGORIES=	net x11-servers
 
@@ -8,7 +9,7 @@ COMMENT=	TigerVNC Server
 PATCH_DEPENDS+=	${NONEXISTENT}:x11-servers/xorg-server:patch
 BUILD_DEPENDS+=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dri \
 		${LOCALBASE}/libdata/pkgconfig/fontutil.pc:x11-fonts/font-util \
-		${LOCALBASE}/include/FL/Fl.H:x11-toolkits/fltk \
+		gm4:devel/m4 \
 		bash:shells/bash
 LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence
 # almost equivalent to x11-servers/xorg-server's
@@ -60,6 +61,8 @@ pre-patch:
 	@${CP} -R $$(${XORG_WRKSRC})/ ${WRKSRC}/unix/xserver/
 
 post-patch:
+	# do not build tests
+	@${REINPLACE_CMD} -e 's|add_subdirectory(tests)||' ${WRKSRC}/CMakeLists.txt
 	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${WRKSRC}/unix/xserver$$(${TIGERVNC_XORG_PATCH_VER}).patch
 
 post-configure:
