@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	helm
-PORTVERSION=	2.13.0
+PORTVERSION=	2.13.1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/danilo
 
@@ -28,9 +28,9 @@ post-patch:
 do-build:
 .for cmd in helm tiller rudder
 	cd ${WRKDIR}/src/k8s.io/helm/cmd/${cmd} ; \
-		GOPATH=${WRKDIR} go build \
+		GOPATH=${WRKDIR} GOCACHE=${WRKDIR}/.gocache go build \
 		-ldflags="-X k8s.io/helm/pkg/version.Version=v${PORTVERSION} \
-		-X k8s.io/helm/pkg/version.GitCommit=79d07943b03aea2b76c12644b4b54733bc5958d6 \
+		-X k8s.io/helm/pkg/version.GitCommit=618447cbf203d147601b4b9bd7f8c37a5d39fbb4 \
 		-X k8s.io/helm/pkg/version.BuildMetadata="
 .endfor
 
