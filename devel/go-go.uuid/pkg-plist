@@ -1,6 +1,0 @@
-%%GO_LIBDIR%%/%%GO_PKGNAME%%.a
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/LICENSE
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/README.md
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/benchmarks_test.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/uuid.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/uuid_test.go

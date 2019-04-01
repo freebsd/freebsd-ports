@@ -1,4 +1,0 @@
-Radix is a minimalistic Redis client for Go. It is broken up into small,
-single-purpose packages for ease of use.
-
-WWW: http://godoc.org/github.com/mediocregopher/radix.v2

@@ -1,7 +1,0 @@
-This package is based on an optimized Deflate function, which is used
-by gzip/zip/zlib packages.
-
-It offers slightly better compression at lower compression settings, and
-up to 3x faster encoding at highest compression level.
-
-WWW: https://github.com/klauspost/compress

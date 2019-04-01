@@ -1,7 +1,0 @@
-A fast HTTP implementation for Go.
-
-Currently fasthttp is successfully used by VertaMedia in a production
-serving up to 200K rps from more than 1.5M concurrent keep-alive
-connections per physical server.
-
-WWW: https://github.com/valyala/fasthttp

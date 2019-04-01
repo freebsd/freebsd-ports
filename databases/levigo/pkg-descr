@@ -1,5 +1,0 @@
-levigo is a Go wrapper for LevelDB.
-The API has been godoc'ed and is available on the web.
-Questions answered at golang-nuts@googlegroups.com.
-
-WWW: https://github.com/jmhodges/levigo

@@ -100,8 +100,6 @@
     SUBDIR += gnatsweb4
     SUBDIR += go-carbon
     SUBDIR += gom
-    SUBDIR += gomdb
-    SUBDIR += gosqlite3
     SUBDIR += gqlplus
     SUBDIR += grass7
     SUBDIR += gtksql
@@ -142,7 +140,6 @@
     SUBDIR += leo_center
     SUBDIR += leofs
     SUBDIR += leveldb
-    SUBDIR += levigo
     SUBDIR += libcouchbase
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
@@ -876,9 +873,7 @@
     SUBDIR += qt5-sqldrivers-sqlite2
     SUBDIR += qt5-sqldrivers-sqlite3
     SUBDIR += qt5-sqldrivers-tds
-    SUBDIR += radix.v2
     SUBDIR += recutils
-    SUBDIR += redigo
     SUBDIR += redis
     SUBDIR += redis-devel
     SUBDIR += redis_exporter

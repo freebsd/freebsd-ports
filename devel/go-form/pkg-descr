@@ -1,6 +1,0 @@
-This library is designed to allow seamless, high-fidelity encoding and
-decoding of arbitrary data in application/x-www-form-urlencoded format and as
-url.Values. It is intended to be useful primarily in dealing with web forms
-and URI query strings, both of which natively employ said format.
-
-WWW: https://github.com/ajg/form

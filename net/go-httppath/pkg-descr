@@ -1,4 +1,0 @@
-Utilities for HTTP Path manipulation.  Currently, this just contains the
-CleanPath function, renamed to Clean, from Julien Schmidt's httprouter.
-
-WWW: https://github.com/dimfeld/httppath

@@ -1,3 +1,0 @@
-A Go interface for SQLite3, modelled after the C interface.
-
-WWW: http://kuroneko.github.com/gosqlite3/

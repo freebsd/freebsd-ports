@@ -1,4 +1,0 @@
-This package provides pure Go implementation of Universally Unique Identifier
-(UUID). Supported both creation and parsing of UUIDs.
-
-WWW: https://github.com/satori/go.uuid
