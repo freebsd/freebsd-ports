@@ -22,6 +22,7 @@ USE_XORG+=	ice pixman sm x11 xau xdamage xdmcp xext xfixes xfont xkbfile \
 		xorg-macros xorgproto xrandr xrender xtrans xtst
 
 OPTIONS_DEFINE=	DOCS GNUTLS PAM
+OPTIONS_DEFAULT=	GNUTLS PAM
 OPTIONS_SUB=	yes
 GNUTLS_CMAKE_BOOL=	ENABLE_GNUTLS
 GNUTLS_CONFIGURE_ARGS=	--enable-glx-tls
