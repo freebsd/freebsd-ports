@@ -1,0 +1,104 @@
+bin/astarithmetic
+bin/astbuildprog
+bin/astconvertt
+bin/astconvolve
+bin/astcosmiccal
+bin/astcrop
+bin/astfits
+bin/astmatch
+bin/astmkcatalog
+bin/astmknoise
+bin/astmkprof
+bin/astnoisechisel
+bin/astsegment
+bin/aststatistics
+bin/asttable
+bin/astwarp
+@sample etc/astarithmetic.conf.sample
+@sample etc/astbuildprog.conf.sample
+@sample etc/astconvertt.conf.sample
+@sample etc/astconvolve.conf.sample
+@sample etc/astcosmiccal.conf.sample
+@sample etc/astcrop.conf.sample
+@sample etc/astfits.conf.sample
+@sample etc/astmatch.conf.sample
+@sample etc/astmkcatalog.conf.sample
+@sample etc/astmknoise.conf.sample
+@sample etc/astmkprof.conf.sample
+@sample etc/astnoisechisel.conf.sample
+@sample etc/astsegment.conf.sample
+@sample etc/aststatistics.conf.sample
+@sample etc/asttable.conf.sample
+@sample etc/astwarp.conf.sample
+@sample etc/gnuastro.conf.sample
+include/gnuastro/arithmetic.h
+include/gnuastro/array.h
+include/gnuastro/binary.h
+include/gnuastro/blank.h
+include/gnuastro/box.h
+include/gnuastro/config.h
+include/gnuastro/convolve.h
+include/gnuastro/cosmology.h
+include/gnuastro/data.h
+include/gnuastro/dimension.h
+include/gnuastro/eps.h
+include/gnuastro/fits.h
+include/gnuastro/git.h
+include/gnuastro/interpolate.h
+include/gnuastro/jpeg.h
+include/gnuastro/label.h
+include/gnuastro/list.h
+include/gnuastro/match.h
+include/gnuastro/pdf.h
+include/gnuastro/permutation.h
+include/gnuastro/pointer.h
+include/gnuastro/polygon.h
+include/gnuastro/qsort.h
+include/gnuastro/statistics.h
+include/gnuastro/table.h
+include/gnuastro/threads.h
+include/gnuastro/tiff.h
+include/gnuastro/tile.h
+include/gnuastro/txt.h
+include/gnuastro/type.h
+include/gnuastro/wcs.h
+lib/libgnuastro.a
+lib/libgnuastro.so
+lib/libgnuastro.so.6
+lib/libgnuastro.so.6.0.0
+libdata/pkgconfig/gnuastro.pc
+man/man1/astarithmetic.1.gz
+man/man1/astbuildprog.1.gz
+man/man1/astconvertt.1.gz
+man/man1/astconvolve.1.gz
+man/man1/astcosmiccal.1.gz
+man/man1/astcrop.1.gz
+man/man1/astfits.1.gz
+man/man1/astmatch.1.gz
+man/man1/astmkcatalog.1.gz
+man/man1/astmknoise.1.gz
+man/man1/astmkprof.1.gz
+man/man1/astnoisechisel.1.gz
+man/man1/astsegment.1.gz
+man/man1/aststatistics.1.gz
+man/man1/asttable.1.gz
+man/man1/astwarp.1.gz
+share/info/gnuastro-figures/epicycles.eps
+share/info/gnuastro-figures/epicycles.png
+share/info/gnuastro-figures/epicycles.txt
+share/info/gnuastro-figures/flatplane.eps
+share/info/gnuastro-figures/flatplane.pdf
+share/info/gnuastro-figures/flatplane.png
+share/info/gnuastro-figures/flatplane.txt
+share/info/gnuastro-figures/iandtime.eps
+share/info/gnuastro-figures/iandtime.pdf
+share/info/gnuastro-figures/iandtime.png
+share/info/gnuastro-figures/iandtime.txt
+share/info/gnuastro-figures/samplingfreq.eps
+share/info/gnuastro-figures/samplingfreq.pdf
+share/info/gnuastro-figures/samplingfreq.png
+share/info/gnuastro-figures/samplingfreq.txt
+share/info/gnuastro-figures/sphereandplane.eps
+share/info/gnuastro-figures/sphereandplane.pdf
+share/info/gnuastro-figures/sphereandplane.png
+share/info/gnuastro-figures/sphereandplane.txt

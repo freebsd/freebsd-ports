@@ -16,6 +16,7 @@
     SUBDIR += garmindev
     SUBDIR += geographiclib
     SUBDIR += gkrellmoon2
+    SUBDIR += gnuastro
     SUBDIR += google-earth
     SUBDIR += gpsbabel
     SUBDIR += gpsbabel14
