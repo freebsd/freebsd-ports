@@ -17,7 +17,7 @@ load_rc_config $name
 
 export workdir="${cbsd_workdir}"
 export NO_CBSD_HISTORY=yes
-globalconf=${cbsd_globalconf:-"${workdir}/cbsd.conf"}
+globalconf=${cbsd_globalconf:-"%%PREFIX%%/cbsd/cbsd.conf"}
 
 if [ ! -f ${globalconf} ]; then
 	echo "cbsd: no such ${globalconf}";
