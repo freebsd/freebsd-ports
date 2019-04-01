@@ -32,7 +32,7 @@ MAKE_ARGS=	CGI_BIN_DIR=${WWWDIR}/cgi-bin \
 NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		perl5 shebangfix tar:tgz
-USE_PERL5=	install run
+USE_PERL5=	run
 SHEBANG_FILES=	metaf.pl metaf2xml.pl metafsrc2raw.pl
 
 PLIST_SUB=	VERSION=${PORTVERSION}
