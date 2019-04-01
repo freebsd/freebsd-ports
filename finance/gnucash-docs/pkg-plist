@@ -9,10 +9,12 @@ share/gnome/help/gnucash-guide/C/ch_bus_features.xml
 share/gnome/help/gnucash-guide/C/ch_capgain.xml
 share/gnome/help/gnucash-guide/C/ch_cbook.xml
 share/gnome/help/gnucash-guide/C/ch_cc.xml
+share/gnome/help/gnucash-guide/C/ch_configuring.xml
 share/gnome/help/gnucash-guide/C/ch_currency.xml
 share/gnome/help/gnucash-guide/C/ch_dep.xml
 share/gnome/help/gnucash-guide/C/ch_expenses.xml
 share/gnome/help/gnucash-guide/C/ch_import_business_data.xml
+share/gnome/help/gnucash-guide/C/ch_importing.xml
 share/gnome/help/gnucash-guide/C/ch_invest.xml
 share/gnome/help/gnucash-guide/C/ch_loans.xml
 share/gnome/help/gnucash-guide/C/ch_oth_assets.xml
@@ -457,6 +459,7 @@ share/gnome/help/gnucash-guide/it/figures/basics_NewAccountHierarchySetup_Accoun
 share/gnome/help/gnucash-guide/it/figures/basics_NewAccountHierarchySetup_Finish.png
 share/gnome/help/gnucash-guide/it/figures/basics_NewAccountHierarchySetup_Setup.png
 share/gnome/help/gnucash-guide/it/figures/basics_NewAccountHierarchySetup_currency.png
+share/gnome/help/gnucash-guide/it/figures/basics_NewBookOpts.png
 share/gnome/help/gnucash-guide/it/figures/basics_QIF_Import_welcome.png
 share/gnome/help/gnucash-guide/it/figures/basics_SaveSQL.png
 share/gnome/help/gnucash-guide/it/figures/basics_SaveXML.png
