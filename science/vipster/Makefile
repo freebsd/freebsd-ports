@@ -2,7 +2,7 @@
 
 PORTNAME=	vipster
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15b
+DISTVERSION=	1.16b
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,6 +32,6 @@ do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DTESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		./test_lib
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
 .include <bsd.port.mk>
