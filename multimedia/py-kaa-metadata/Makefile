@@ -3,7 +3,7 @@
 
 PORTNAME=	kaa-metadata
 PORTVERSION=	0.7.7
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/freevo/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Kaa Media Repository - media file metadata parser
 
-LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kaa-base>0:multimedia/py-kaa-base@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}exiv2>0:graphics/py-exiv2@${PY_FLAVOR}
+LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread \
+		libexiv2.so:graphics/exiv2
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kaa-base>0:multimedia/py-kaa-base@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		python:2.7
