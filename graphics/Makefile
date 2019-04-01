@@ -527,7 +527,6 @@
     SUBDIR += linux-c7-sdl_image
     SUBDIR += linux-c7-sdl_ttf
     SUBDIR += linux-c7-tiff
-    SUBDIR += llpp
     SUBDIR += lua-gd
     SUBDIR += luminance-qt5
     SUBDIR += luxrender
