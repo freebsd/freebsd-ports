@@ -14,8 +14,10 @@ bin/pot
 %%DATADIR%%/create.sh
 %%DATADIR%%/de-init.sh
 %%DATADIR%%/destroy.sh
+%%DATADIR%%/export.sh
 %%DATADIR%%/export-ports.sh
 %%DATADIR%%/help.sh
+%%DATADIR%%/import.sh
 %%DATADIR%%/info.sh
 %%DATADIR%%/init.sh
 %%DATADIR%%/list.sh
