@@ -256,7 +256,6 @@ lib/gnucash/scm/ccache/2.0/business-prefs.go
 lib/gnucash/scm/ccache/2.0/c-interface.go
 lib/gnucash/scm/ccache/2.0/commodity-table.go
 lib/gnucash/scm/ccache/2.0/commodity-utilities.go
-lib/gnucash/scm/ccache/2.0/config-var.go
 lib/gnucash/scm/ccache/2.0/date-utilities.go
 lib/gnucash/scm/ccache/2.0/engine-interface.go
 lib/gnucash/scm/ccache/2.0/engine-utilities.go
@@ -312,6 +311,7 @@ lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/account-piecharts.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/account-summary.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/advanced-portfolio.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/average-balance.go
+lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/balance-forecast.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/balance-sheet.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/budget-balance-sheet.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/budget-barchart.go
@@ -447,6 +447,7 @@ share/metainfo/gnucash.appdata.xml
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2015
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2016
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2017
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2018
 %%PORTDOCS%%%%DOCSDIR%%/DOCUMENTERS
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -459,6 +460,7 @@ share/metainfo/gnucash.appdata.xml
 %%PORTDOCS%%%%DOCSDIR%%/README-ca.win32-bin.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-de.win32-bin.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-fr.win32-bin.txt
+%%PORTDOCS%%%%DOCSDIR%%/README-hr.win32-bin.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-it.win32-bin.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-lv.win32-bin.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-nl.win32-bin.txt
@@ -617,6 +619,22 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/accounts/fi_FI/acctchrt_common.gnucash-xea
 %%DATADIR%%/accounts/fi_FI/acctchrt_ry.gnucash-xea
 %%DATADIR%%/accounts/fi_FI/acctchrt_sbr-xbrl.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_brokerage.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_business.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_carloan.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_cdmoneymkt.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_childcare.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_common.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_currency.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_eduloan.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_fixedassets.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_homeloan.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_homeown.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_otherloan.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_renter.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_retiremt.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_spouseinc.gnucash-xea
+%%DATADIR%%/accounts/fr_BE/acctchrt_spouseretire.gnucash-xea
 %%DATADIR%%/accounts/fr_CA/acctchrt_actifsfixes.gnucash-xea
 %%DATADIR%%/accounts/fr_CA/acctchrt_automobile.gnucash-xea
 %%DATADIR%%/accounts/fr_CA/acctchrt_basecommune.gnucash-xea
@@ -663,6 +681,14 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/accounts/fr_FR/acctchrt_retiremt.gnucash-xea
 %%DATADIR%%/accounts/fr_FR/acctchrt_spouseinc.gnucash-xea
 %%DATADIR%%/accounts/fr_FR/acctchrt_spouseretire.gnucash-xea
+%%DATADIR%%/accounts/hr/acctchrt_car.gnucash-xea
+%%DATADIR%%/accounts/hr/acctchrt_cdmoneymkt.gnucash-xea
+%%DATADIR%%/accounts/hr/acctchrt_checkbook.gnucash-xea
+%%DATADIR%%/accounts/hr/acctchrt_common.gnucash-xea
+%%DATADIR%%/accounts/hr/acctchrt_homeloan.gnucash-xea
+%%DATADIR%%/accounts/hr/acctchrt_homeown.gnucash-xea
+%%DATADIR%%/accounts/hr/acctchrt_otherloan.gnucash-xea
+%%DATADIR%%/accounts/hr/acctchrt_renter.gnucash-xea
 %%DATADIR%%/accounts/hu_HU/acctchrt_brokerage.gnucash-xea
 %%DATADIR%%/accounts/hu_HU/acctchrt_business.gnucash-xea
 %%DATADIR%%/accounts/hu_HU/acctchrt_carloan.gnucash-xea
@@ -1019,7 +1045,6 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/scm/c-interface.scm
 %%DATADIR%%/scm/commodity-table.scm
 %%DATADIR%%/scm/commodity-utilities.scm
-%%DATADIR%%/scm/config-var.scm
 %%DATADIR%%/scm/date-utilities.scm
 %%DATADIR%%/scm/engine-interface.scm
 %%DATADIR%%/scm/engine-utilities.scm
@@ -1079,6 +1104,7 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/scm/gnucash/report/standard-reports/account-summary.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/advanced-portfolio.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/average-balance.scm
+%%DATADIR%%/scm/gnucash/report/standard-reports/balance-forecast.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/balance-sheet.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/budget-balance-sheet.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/budget-barchart.scm
@@ -1234,6 +1260,7 @@ share/icons/hicolor/scalable/apps/gnucash-icon.svg
 %%NLS%%share/locale/gu/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/he/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/gnucash.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gnucash.mo
