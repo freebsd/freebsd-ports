@@ -21,5 +21,6 @@ GH_ACCOUNT=	jkbonfield
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+LDFLAGS+=	-lpthread
 
 .include <bsd.port.mk>
