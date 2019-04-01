@@ -3,7 +3,7 @@
 
 PORTNAME=	tesseract
 PORTVERSION=	4.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@anongoth.pl
@@ -11,13 +11,17 @@ COMMENT=	Commercial quality open source OCR engine
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+		xsltproc:textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 LIB_DEPENDS=	liblept.so:graphics/leptonica
 RUN_DEPENDS=	tesseract-data>=0:graphics/tesseract-data
 
-USES=		autoreconf compiler:c++11-lang gnome localbase libtool pathfix \
-		pkgconfig shebangfix
-GNU_CONFIGURE=	yes
+USES=		autoreconf compiler:c++11-lang gmake gnome localbase \
+		libtool pathfix pkgconfig shebangfix
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}-ocr
@@ -32,8 +36,17 @@ SHEBANG_FILES=	src/training/language-specific.sh \
 		src/training/tesstrain.sh
 
 OPTIONS_DEFINE=	DOCS TOOLS
+OPTIONS_DEFINE_amd64=OPENMP
+OPTIONS_DEFINE_i386=OPENMP
 OPTIONS_DEFAULT=TOOLS
+OPTIONS_DEFAULT_amd64=OPENMP
+OPTIONS_DEFAULT_i386=OPENMP
 OPTIONS_SUB=	yes
+
+OPENMP_USES=	compiler:openmp
+OPENMP_CONFIGURE_ENABLE=openmp
+OPENMP_LIB_DEPENDS=libomp.so:devel/openmp
+
 TOOLS_DESC=	Include training tools
 TOOLS_LIB_DEPENDS=libicui18n.so:devel/icu \
 		libfontconfig.so:x11-fonts/fontconfig
@@ -42,6 +55,7 @@ TOOLS_USE=	GNOME=cairo,glib20,pango
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3 -DNDEBUG||' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/doc/Makefile.am
 
 post-build-TOOLS-on:
 	@cd ${WRKSRC} && ${MAKE} training

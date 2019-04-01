@@ -1,0 +1,15 @@
+--- doc/Makefile.am.orig	2019-03-28 05:11:18 UTC
++++ doc/Makefile.am
+@@ -36,7 +36,11 @@ EXTRA_DIST = $(man_MANS) Doxyfile
+ html: $(patsubst %,%.html,$(man_MANS))
+ 
+ %: %.asc
+-	$(asciidoc) -o $@ $<
++	$(asciidoc) $<
++	$(asciidoc) -b docbook $<
++	%%LOCALBASE%%/bin/xsltproc --nonet --param man.charmap.use.subset "0" \
++		%%LOCALBASE%%/share/xsl/docbook/manpages/docbook.xsl \
++		$@.xml
+ 
+ %.html: %.asc
+ 	asciidoc -b html5 -o $@ $<
