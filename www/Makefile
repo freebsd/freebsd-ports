@@ -1618,6 +1618,7 @@
     SUBDIR += py-django111
     SUBDIR += py-django20
     SUBDIR += py-django21
+    SUBDIR += py-django22
     SUBDIR += py-django_compressor
     SUBDIR += py-django_openstack_auth
     SUBDIR += py-django_polymorphic
