@@ -36,7 +36,7 @@ SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
 		tools/clang/tools/clang-format/clang-format-diff.py \
 		tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py \
 		tools/clang/tools/extra/clang-tidy/tool/run-clang-tidy.py \
-		tools/clang/tools/extra/include-fixer/find-all-symbols/tool/run-find-all-symbols.py \
+		tools/clang/tools/extra/clang-include-fixer/find-all-symbols/tool/run-find-all-symbols.py \
 		tools/opt-viewer/optrecord.py \
 		tools/opt-viewer/opt-diff.py \
 		tools/opt-viewer/opt-stats.py \
@@ -341,6 +341,8 @@ post-patch:
 	    ${WRKSRC}/CMakeLists.txt
 
 post-patch-CLANG-on:
+	${REINPLACE_CMD} -e 's|%%LLVM_PREFIX%%|${LLVM_PREFIX}|' \
+	    ${PATCH_WRKSRC}/tools/clang/lib/Driver/ToolChains/CommonArgs.cpp
 	${REINPLACE_CMD} -e 's|%%LLVM_SUFFIX%%|${LLVM_SUFFIX}|' \
 	    ${PATCH_WRKSRC}/tools/clang/tools/clang-format/clang-format.py \
 	    ${PATCH_WRKSRC}/tools/clang/tools/clang-format/clang-format-sublime.py \

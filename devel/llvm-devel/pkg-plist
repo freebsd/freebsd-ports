@@ -450,7 +450,6 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Basic/Linkage.h
 %%CLANG%%llvm-devel/include/clang/Basic/MSP430Target.def
 %%CLANG%%llvm-devel/include/clang/Basic/MacroBuilder.h
-%%CLANG%%llvm-devel/include/clang/Basic/MemoryBufferCache.h
 %%CLANG%%llvm-devel/include/clang/Basic/Module.h
 %%CLANG%%llvm-devel/include/clang/Basic/ObjCRuntime.h
 %%CLANG%%llvm-devel/include/clang/Basic/OpenCLExtensionTypes.def
@@ -561,6 +560,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/FrontendTool/Utils.h
 %%CLANG%%llvm-devel/include/clang/Index/CodegenNameGenerator.h
 %%CLANG%%llvm-devel/include/clang/Index/CommentToXML.h
+%%CLANG%%llvm-devel/include/clang/Index/DeclOccurrence.h
 %%CLANG%%llvm-devel/include/clang/Index/IndexDataConsumer.h
 %%CLANG%%llvm-devel/include/clang/Index/IndexSymbol.h
 %%CLANG%%llvm-devel/include/clang/Index/IndexingAction.h
@@ -653,6 +653,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Serialization/AttrPCHWrite.inc
 %%CLANG%%llvm-devel/include/clang/Serialization/ContinuousRangeMap.h
 %%CLANG%%llvm-devel/include/clang/Serialization/GlobalModuleIndex.h
+%%CLANG%%llvm-devel/include/clang/Serialization/InMemoryModuleCache.h
 %%CLANG%%llvm-devel/include/clang/Serialization/Module.h
 %%CLANG%%llvm-devel/include/clang/Serialization/ModuleFileExtension.h
 %%CLANG%%llvm-devel/include/clang/Serialization/ModuleManager.h
@@ -698,7 +699,6 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/ProgramState_Fwd.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/RangedConstraintManager.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/Regions.def
-%%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/SMTAPI.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/SMTConstraintManager.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/SMTConv.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Core/PathSensitive/SValBuilder.h
@@ -768,6 +768,7 @@ llvm-devel/bin/yaml2obj
 %%LLD%%llvm-devel/include/lld/Common/Args.h
 %%LLD%%llvm-devel/include/lld/Common/Driver.h
 %%LLD%%llvm-devel/include/lld/Common/ErrorHandler.h
+%%LLD%%llvm-devel/include/lld/Common/Filesystem.h
 %%LLD%%llvm-devel/include/lld/Common/LLVM.h
 %%LLD%%llvm-devel/include/lld/Common/Memory.h
 %%LLD%%llvm-devel/include/lld/Common/Reproduce.h
@@ -918,7 +919,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Core/Opcode.h
 %%LLDB%%llvm-devel/include/lldb/Core/PluginInterface.h
 %%LLDB%%llvm-devel/include/lldb/Core/PluginManager.h
-%%LLDB%%llvm-devel/include/lldb/Core/RangeMap.h
 %%LLDB%%llvm-devel/include/lldb/Core/RichManglingContext.h
 %%LLDB%%llvm-devel/include/lldb/Core/STLUtils.h
 %%LLDB%%llvm-devel/include/lldb/Core/SearchFilter.h
@@ -1014,7 +1014,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Host/Pipe.h
 %%LLDB%%llvm-devel/include/lldb/Host/PipeBase.h
 %%LLDB%%llvm-devel/include/lldb/Host/PosixApi.h
-%%LLDB%%llvm-devel/include/lldb/Host/ProcessInfo.h
 %%LLDB%%llvm-devel/include/lldb/Host/ProcessLaunchInfo.h
 %%LLDB%%llvm-devel/include/lldb/Host/ProcessLauncher.h
 %%LLDB%%llvm-devel/include/lldb/Host/ProcessRunLock.h
@@ -1023,7 +1022,6 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Host/Socket.h
 %%LLDB%%llvm-devel/include/lldb/Host/SocketAddress.h
 %%LLDB%%llvm-devel/include/lldb/Host/StringConvert.h
-%%LLDB%%llvm-devel/include/lldb/Host/Symbols.h
 %%LLDB%%llvm-devel/include/lldb/Host/TaskPool.h
 %%LLDB%%llvm-devel/include/lldb/Host/Terminal.h
 %%LLDB%%llvm-devel/include/lldb/Host/ThreadLauncher.h
@@ -1137,6 +1135,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Symbol/Function.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/LineEntry.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/LineTable.h
+%%LLDB%%llvm-devel/include/lldb/Symbol/LocateSymbolFile.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/ObjectContainer.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/ObjectFile.h
 %%LLDB%%llvm-devel/include/lldb/Symbol/SourceModule.h
@@ -1249,6 +1248,8 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Utility/Logging.h
 %%LLDB%%llvm-devel/include/lldb/Utility/NameMatches.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Predicate.h
+%%LLDB%%llvm-devel/include/lldb/Utility/ProcessInfo.h
+%%LLDB%%llvm-devel/include/lldb/Utility/RangeMap.h
 %%LLDB%%llvm-devel/include/lldb/Utility/RegisterValue.h
 %%LLDB%%llvm-devel/include/lldb/Utility/RegularExpression.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Reproducer.h
@@ -1276,6 +1277,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Utility/UUID.h
 %%LLDB%%llvm-devel/include/lldb/Utility/UriParser.h
 %%LLDB%%llvm-devel/include/lldb/Utility/UserID.h
+%%LLDB%%llvm-devel/include/lldb/Utility/UserIDResolver.h
 %%LLDB%%llvm-devel/include/lldb/Utility/VASPrintf.h
 %%LLDB%%llvm-devel/include/lldb/Utility/VMRange.h
 %%LLDB%%llvm-devel/include/lldb/lldb-defines.h
@@ -1307,8 +1309,8 @@ llvm-devel/include/llvm-c/Initialization.h
 llvm-devel/include/llvm-c/LinkTimeOptimizer.h
 llvm-devel/include/llvm-c/Linker.h
 llvm-devel/include/llvm-c/Object.h
-llvm-devel/include/llvm-c/OptRemarks.h
 llvm-devel/include/llvm-c/OrcBindings.h
+llvm-devel/include/llvm-c/Remarks.h
 llvm-devel/include/llvm-c/Support.h
 llvm-devel/include/llvm-c/Target.h
 llvm-devel/include/llvm-c/TargetMachine.h
@@ -1532,10 +1534,12 @@ llvm-devel/include/llvm/BinaryFormat/ELFRelocs/x86_64.def
 llvm-devel/include/llvm/BinaryFormat/MachO.def
 llvm-devel/include/llvm/BinaryFormat/MachO.h
 llvm-devel/include/llvm/BinaryFormat/Magic.h
+llvm-devel/include/llvm/BinaryFormat/Minidump.h
+llvm-devel/include/llvm/BinaryFormat/MinidumpConstants.def
 llvm-devel/include/llvm/BinaryFormat/MsgPack.def
 llvm-devel/include/llvm/BinaryFormat/MsgPack.h
+llvm-devel/include/llvm/BinaryFormat/MsgPackDocument.h
 llvm-devel/include/llvm/BinaryFormat/MsgPackReader.h
-llvm-devel/include/llvm/BinaryFormat/MsgPackTypes.h
 llvm-devel/include/llvm/BinaryFormat/MsgPackWriter.h
 llvm-devel/include/llvm/BinaryFormat/Wasm.h
 llvm-devel/include/llvm/BinaryFormat/WasmRelocs.def
@@ -1616,6 +1620,7 @@ llvm-devel/include/llvm/CodeGen/LiveStacks.h
 llvm-devel/include/llvm/CodeGen/LiveVariables.h
 llvm-devel/include/llvm/CodeGen/LoopTraversal.h
 llvm-devel/include/llvm/CodeGen/LowLevelType.h
+llvm-devel/include/llvm/CodeGen/MIRParser/MIParser.h
 llvm-devel/include/llvm/CodeGen/MIRParser/MIRParser.h
 llvm-devel/include/llvm/CodeGen/MIRPrinter.h
 llvm-devel/include/llvm/CodeGen/MIRYamlMapping.h
@@ -2066,6 +2071,7 @@ llvm-devel/include/llvm/IR/PassTimingInfo.h
 llvm-devel/include/llvm/IR/PatternMatch.h
 llvm-devel/include/llvm/IR/PredIteratorCache.h
 llvm-devel/include/llvm/IR/ProfileSummary.h
+llvm-devel/include/llvm/IR/RemarkStreamer.h
 llvm-devel/include/llvm/IR/RuntimeLibcalls.def
 llvm-devel/include/llvm/IR/SafepointIRVerifier.h
 llvm-devel/include/llvm/IR/Statepoint.h
@@ -2209,9 +2215,10 @@ llvm-devel/include/llvm/Object/IRObjectFile.h
 llvm-devel/include/llvm/Object/IRSymtab.h
 llvm-devel/include/llvm/Object/MachO.h
 llvm-devel/include/llvm/Object/MachOUniversal.h
+llvm-devel/include/llvm/Object/Minidump.h
 llvm-devel/include/llvm/Object/ModuleSymbolTable.h
 llvm-devel/include/llvm/Object/ObjectFile.h
-llvm-devel/include/llvm/Object/RelocVisitor.h
+llvm-devel/include/llvm/Object/RelocationResolver.h
 llvm-devel/include/llvm/Object/StackMapParser.h
 llvm-devel/include/llvm/Object/SymbolSize.h
 llvm-devel/include/llvm/Object/SymbolicFile.h
@@ -2227,6 +2234,7 @@ llvm-devel/include/llvm/ObjectYAML/DWARFEmitter.h
 llvm-devel/include/llvm/ObjectYAML/DWARFYAML.h
 llvm-devel/include/llvm/ObjectYAML/ELFYAML.h
 llvm-devel/include/llvm/ObjectYAML/MachOYAML.h
+llvm-devel/include/llvm/ObjectYAML/MinidumpYAML.h
 llvm-devel/include/llvm/ObjectYAML/ObjectYAML.h
 llvm-devel/include/llvm/ObjectYAML/WasmYAML.h
 llvm-devel/include/llvm/ObjectYAML/YAML.h
@@ -2256,6 +2264,8 @@ llvm-devel/include/llvm/ProfileData/ProfileCommon.h
 llvm-devel/include/llvm/ProfileData/SampleProf.h
 llvm-devel/include/llvm/ProfileData/SampleProfReader.h
 llvm-devel/include/llvm/ProfileData/SampleProfWriter.h
+llvm-devel/include/llvm/Remarks/Remark.h
+llvm-devel/include/llvm/Remarks/RemarkParser.h
 llvm-devel/include/llvm/Support/AArch64TargetParser.def
 llvm-devel/include/llvm/Support/AArch64TargetParser.h
 llvm-devel/include/llvm/Support/AMDGPUMetadata.h
@@ -2369,6 +2379,7 @@ llvm-devel/include/llvm/Support/Registry.h
 llvm-devel/include/llvm/Support/ReverseIteration.h
 llvm-devel/include/llvm/Support/SHA1.h
 llvm-devel/include/llvm/Support/SMLoc.h
+llvm-devel/include/llvm/Support/SMTAPI.h
 llvm-devel/include/llvm/Support/SaveAndRestore.h
 llvm-devel/include/llvm/Support/ScaledNumber.h
 llvm-devel/include/llvm/Support/ScopedPrinter.h
@@ -2447,6 +2458,14 @@ llvm-devel/include/llvm/Testing/Support/Error.h
 llvm-devel/include/llvm/Testing/Support/SupportHelpers.h
 llvm-devel/include/llvm/TextAPI/ELF/ELFStub.h
 llvm-devel/include/llvm/TextAPI/ELF/TBEHandler.h
+llvm-devel/include/llvm/TextAPI/MachO/Architecture.def
+llvm-devel/include/llvm/TextAPI/MachO/Architecture.h
+llvm-devel/include/llvm/TextAPI/MachO/ArchitectureSet.h
+llvm-devel/include/llvm/TextAPI/MachO/InterfaceFile.h
+llvm-devel/include/llvm/TextAPI/MachO/PackedVersion.h
+llvm-devel/include/llvm/TextAPI/MachO/Symbol.h
+llvm-devel/include/llvm/TextAPI/MachO/TextAPIReader.h
+llvm-devel/include/llvm/TextAPI/MachO/TextAPIWriter.h
 llvm-devel/include/llvm/ToolDrivers/llvm-dlltool/DlltoolDriver.h
 llvm-devel/include/llvm/ToolDrivers/llvm-lib/LibDriver.h
 llvm-devel/include/llvm/Transforms/AggressiveInstCombine/AggressiveInstCombine.h
@@ -2486,6 +2505,7 @@ llvm-devel/include/llvm/Transforms/Instrumentation/BoundsChecking.h
 llvm-devel/include/llvm/Transforms/Instrumentation/CGProfile.h
 llvm-devel/include/llvm/Transforms/Instrumentation/ControlHeightReduction.h
 llvm-devel/include/llvm/Transforms/Instrumentation/GCOVProfiler.h
+llvm-devel/include/llvm/Transforms/Instrumentation/InstrOrderFile.h
 llvm-devel/include/llvm/Transforms/Instrumentation/InstrProfiling.h
 llvm-devel/include/llvm/Transforms/Instrumentation/MemorySanitizer.h
 llvm-devel/include/llvm/Transforms/Instrumentation/PGOInstrumentation.h
@@ -2627,7 +2647,6 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/common_interface_defs.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/coverage_interface.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/dfsan_interface.h
-%%COMPILER_RT%%llvm-devel/include/sanitizer/esan_interface.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/hwasan_interface.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/linux_syscall_hooks.h
 %%COMPILER_RT%%llvm-devel/include/sanitizer/lsan_interface.h
@@ -2764,6 +2783,7 @@ llvm-devel/lib/cmake/llvm/DetermineGCCCompatible.cmake
 llvm-devel/lib/cmake/llvm/FindLibpfm.cmake
 llvm-devel/lib/cmake/llvm/FindOCaml.cmake
 llvm-devel/lib/cmake/llvm/FindSphinx.cmake
+llvm-devel/lib/cmake/llvm/FindZ3.cmake
 llvm-devel/lib/cmake/llvm/GenerateVersionFromVCS.cmake
 llvm-devel/lib/cmake/llvm/HandleLLVMOptions.cmake
 llvm-devel/lib/cmake/llvm/HandleLLVMStdlib.cmake
@@ -2871,7 +2891,6 @@ llvm-devel/lib/libLLVMNVPTXInfo.a
 llvm-devel/lib/libLLVMObjCARCOpts.a
 llvm-devel/lib/libLLVMObject.a
 llvm-devel/lib/libLLVMObjectYAML.a
-llvm-devel/lib/libLLVMOptRemarks.a
 llvm-devel/lib/libLLVMOption.a
 llvm-devel/lib/libLLVMOrcJIT.a
 llvm-devel/lib/libLLVMPasses.a
@@ -2882,6 +2901,7 @@ llvm-devel/lib/libLLVMPowerPCDesc.a
 llvm-devel/lib/libLLVMPowerPCDisassembler.a
 llvm-devel/lib/libLLVMPowerPCInfo.a
 llvm-devel/lib/libLLVMProfileData.a
+llvm-devel/lib/libLLVMRemarks.a
 llvm-devel/lib/libLLVMRuntimeDyld.a
 llvm-devel/lib/libLLVMScalarOpts.a
 llvm-devel/lib/libLLVMSelectionDAG.a
@@ -2927,8 +2947,8 @@ llvm-devel/lib/libLLVMXRay.a
 llvm-devel/lib/libLLVMipo.a
 llvm-devel/lib/libLTO.so
 llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%svn
-llvm-devel/lib/libOptRemarks.so
-llvm-devel/lib/libOptRemarks.so.%%LLVM_MAJOR%%svn
+llvm-devel/lib/libRemarks.so
+llvm-devel/lib/libRemarks.so.%%LLVM_MAJOR%%svn
 %%CLANG%%llvm-devel/lib/libclang.so
 %%CLANG%%llvm-devel/lib/libclang.so.%%LLVM_MAJOR%%
 %%CLANG%%llvm-devel/lib/libclang.so.%%LLVM_MAJOR%%svn
@@ -2982,6 +3002,7 @@ llvm-devel/lib/libOptRemarks.so.%%LLVM_MAJOR%%svn
 %%EXTRAS%%llvm-devel/lib/libclangTidyMiscModule.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyModernizeModule.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyObjCModule.a
+%%EXTRAS%%llvm-devel/lib/libclangTidyOpenMPModule.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyPerformanceModule.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyPlugin.a
 %%EXTRAS%%llvm-devel/lib/libclangTidyPortabilityModule.a
