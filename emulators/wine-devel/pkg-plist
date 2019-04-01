@@ -1960,6 +1960,7 @@ lib/wine/fakedlls/mciseq.dll
 lib/wine/fakedlls/mciwave.dll
 lib/wine/fakedlls/mf.dll
 lib/wine/fakedlls/mf3216.dll
+lib/wine/fakedlls/mferror.dll
 lib/wine/fakedlls/mfplat.dll
 lib/wine/fakedlls/mfplay.dll
 lib/wine/fakedlls/mfreadwrite.dll
@@ -2536,7 +2537,7 @@ lib/wine/libmsvcr70.def
 lib/wine/libmsvcr71.def
 lib/wine/libmsvcr80.def
 lib/wine/libmsvcr90.def
-lib/wine/libmsvcrt.def
+lib/wine/libmsvcrt.a
 lib/wine/libmsvcrtd.def
 lib/wine/libmsvfw32.def
 lib/wine/libmswsock.def
@@ -2645,6 +2646,7 @@ lib/wine/mciseq.dll.so
 lib/wine/mciwave.dll.so
 lib/wine/mf.dll.so
 lib/wine/mf3216.dll.so
+lib/wine/mferror.dll.so
 lib/wine/mfplat.dll.so
 lib/wine/mfplay.dll.so
 lib/wine/mfreadwrite.dll.so
