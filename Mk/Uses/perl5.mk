@@ -154,6 +154,18 @@ IGNORE=	improper use of USE_PERL5
 .    endif
 .  endif
 
+_USE_PERL5_VALID=	build configure extract modbuild modbuildtiny patch run \
+			test
+_USE_PERL5_UNKNOWN=
+.  for component in ${_USE_PERL5}
+.    if empty(_USE_PERL5_VALID:M${component})
+_USE_PERL5_UNKNOWN+=	${component}
+.    endif
+.  endfor
+.  if !empty(_USE_PERL5_UNKNOWN)
+IGNORE= has unknown USE_PERL5 components: ${_USE_PERL5_UNKNOWN}
+.  endif
+
 _USES_POST+=	perl5
 .endif
 
