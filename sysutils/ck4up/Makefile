@@ -3,13 +3,14 @@
 
 PORTNAME=	ck4up
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jue.li/crux/ck4up/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check HTTP and FTP sites for updates
 
-RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/gdbm.so:databases/ruby-gdbm
+RUN_DEPENDS=	rubygem-gdbm>=2.0.0,2:databases/rubygem-gdbm
 
 NO_BUILD=	yes
 NO_ARCH=	yes
