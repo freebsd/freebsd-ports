@@ -1,4 +1,4 @@
-bin/%%GO_PKGNAME%%
+bin/carbonzipper
 @sample %%ETCDIR%%/example.conf
 @dir(carbon,carbon,0755) %%ETCDIR%%
-@dir(carbon,carbon,0755) /var/log/%%GO_PKGNAME%%
+@dir(carbon,carbon,0755) /var/log/carbonzipper
