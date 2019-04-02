@@ -9,8 +9,8 @@ include/tld.h
 share/info/libidn-components.png
 lib/libidn.a
 lib/libidn.so
-lib/libidn.so.11
-lib/libidn.so.11.6.18
+lib/libidn.so.12
+lib/libidn.so.12.6.0
 libdata/pkgconfig/libidn.pc
 man/man1/idn.1.gz
 man/man3/idn_free.3.gz
@@ -69,6 +69,7 @@ share/emacs/site-lisp/punycode.el
 %%NLS%%share/locale/da/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/de/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/libidn.mo
+%%NLS%%share/locale/es/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/libidn.mo
