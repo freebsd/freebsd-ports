@@ -1,0 +1,20 @@
+--- configure.orig	2013-04-23 18:48:24 UTC
++++ configure
+@@ -16584,7 +16584,7 @@ if ${ac_cv_lib_fftw3_fftw_plan_dft_r2c_1d+:} false; th
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lfftw3  $LIBS"
++LIBS="-lfftw3 -lfftw3_threads  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16615,7 +16615,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_fftw3_fftw_plan_dft_r2c_1d" >&5
+ $as_echo "$ac_cv_lib_fftw3_fftw_plan_dft_r2c_1d" >&6; }
+ if test "x$ac_cv_lib_fftw3_fftw_plan_dft_r2c_1d" = xyes; then :
+-   CPPFLAGS="$CPPFLAGS -Dcimg_use_fftw3" LIBS="$LIBS -lfftw3"
++   CPPFLAGS="$CPPFLAGS -Dcimg_use_fftw3" LIBS="$LIBS -lfftw3 -lfftw3_threads"
+ else
+   if test "x$with_fftw" = "xyes"; then :
+   as_fn_error $? "FFTW support requested but library not found" "$LINENO" 5
