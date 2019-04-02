@@ -4685,6 +4685,7 @@
 %%WWWDIR%%/app/services/keys/create_service.rb
 %%WWWDIR%%/app/services/keys/destroy_service.rb
 %%WWWDIR%%/app/services/keys/last_used_service.rb
+%%WWWDIR%%/app/services/labels/available_labels_service.rb
 %%WWWDIR%%/app/services/labels/base_service.rb
 %%WWWDIR%%/app/services/labels/create_service.rb
 %%WWWDIR%%/app/services/labels/find_or_create_service.rb
@@ -4808,6 +4809,7 @@
 %%WWWDIR%%/app/services/projects/participants_service.rb
 %%WWWDIR%%/app/services/projects/propagate_service_template.rb
 %%WWWDIR%%/app/services/projects/protect_default_branch_service.rb
+%%WWWDIR%%/app/services/projects/repository_languages_service.rb
 %%WWWDIR%%/app/services/projects/transfer_service.rb
 %%WWWDIR%%/app/services/projects/unlink_fork_service.rb
 %%WWWDIR%%/app/services/projects/update_pages_configuration_service.rb
@@ -7593,6 +7595,7 @@
 %%WWWDIR%%/db/migrate/20190225160300_steal_encrypt_runners_tokens.rb
 %%WWWDIR%%/db/migrate/20190225160301_add_runner_tokens_indexes.rb
 %%WWWDIR%%/db/migrate/20190301182457_add_external_hostname_to_ingress_and_knative.rb
+%%WWWDIR%%/db/migrate/20190312071108_add_detected_repository_languages_to_projects.rb
 %%WWWDIR%%/db/migrate/gpg_keys_limits_to_mysql.rb
 %%WWWDIR%%/db/migrate/limits_ci_build_trace_chunks_raw_data_for_mysql.rb
 %%WWWDIR%%/db/migrate/limits_to_mysql.rb
@@ -7889,6 +7892,7 @@
 %%WWWDIR%%/doc/administration/raketasks/project_import_export.md
 %%WWWDIR%%/doc/administration/raketasks/storage.md
 %%WWWDIR%%/doc/administration/raketasks/uploads/migrate.md
+%%WWWDIR%%/doc/administration/raketasks/uploads/sanitize.md
 %%WWWDIR%%/doc/administration/reply_by_email.md
 %%WWWDIR%%/doc/administration/reply_by_email_postfix_setup.md
 %%WWWDIR%%/doc/administration/repository_checks.md
@@ -9536,6 +9540,7 @@
 %%WWWDIR%%/doc/workflow/workflow.md
 %%WWWDIR%%/docker-compose.yml
 %%WWWDIR%%/docker/README.md
+%%WWWDIR%%/ee/changelogs/unreleased/security-milestone-labels.yml
 %%WWWDIR%%/fixtures/emojis/aliases.json
 %%WWWDIR%%/fixtures/emojis/digests.json
 %%WWWDIR%%/fixtures/emojis/emoji-unicode-version-map.json
@@ -10722,6 +10727,7 @@
 %%WWWDIR%%/lib/gitlab/route_map.rb
 %%WWWDIR%%/lib/gitlab/routing.rb
 %%WWWDIR%%/lib/gitlab/safe_request_store.rb
+%%WWWDIR%%/lib/gitlab/sanitizers/exif.rb
 %%WWWDIR%%/lib/gitlab/sanitizers/svg.rb
 %%WWWDIR%%/lib/gitlab/sanitizers/svg/whitelist.rb
 %%WWWDIR%%/lib/gitlab/search/found_blob.rb
@@ -10826,6 +10832,7 @@
 %%WWWDIR%%/lib/gitlab/tracing/sidekiq/sidekiq_common.rb
 %%WWWDIR%%/lib/gitlab/tree_summary.rb
 %%WWWDIR%%/lib/gitlab/untrusted_regexp.rb
+%%WWWDIR%%/lib/gitlab/untrusted_regexp/ruby_syntax.rb
 %%WWWDIR%%/lib/gitlab/update_path_error.rb
 %%WWWDIR%%/lib/gitlab/uploads_transfer.rb
 %%WWWDIR%%/lib/gitlab/url_blocker.rb
@@ -10988,6 +10995,7 @@
 %%WWWDIR%%/lib/tasks/gitlab/update_templates.rake
 %%WWWDIR%%/lib/tasks/gitlab/uploads/check.rake
 %%WWWDIR%%/lib/tasks/gitlab/uploads/migrate.rake
+%%WWWDIR%%/lib/tasks/gitlab/uploads/sanitize.rake
 %%WWWDIR%%/lib/tasks/gitlab/web_hook.rake
 %%WWWDIR%%/lib/tasks/gitlab/workhorse.rake
 %%WWWDIR%%/lib/tasks/grape.rake
@@ -14267,6 +14275,7 @@
 %%WWWDIR%%/spec/lib/gitlab/route_map_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/routing_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/safe_request_store_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/sanitizers/exif_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/sanitizers/svg_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/search/found_blob_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/search/query_spec.rb
@@ -14340,6 +14349,7 @@
 %%WWWDIR%%/spec/lib/gitlab/tracing/sidekiq/server_middleware_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/tracing_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/tree_summary_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/untrusted_regexp/ruby_syntax_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/untrusted_regexp_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/uploads_transfer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/url_blocker_spec.rb
@@ -15207,6 +15217,7 @@
 %%WWWDIR%%/spec/services/keys/create_service_spec.rb
 %%WWWDIR%%/spec/services/keys/destroy_service_spec.rb
 %%WWWDIR%%/spec/services/keys/last_used_service_spec.rb
+%%WWWDIR%%/spec/services/labels/available_labels_service_spec.rb
 %%WWWDIR%%/spec/services/labels/create_service_spec.rb
 %%WWWDIR%%/spec/services/labels/find_or_create_service_spec.rb
 %%WWWDIR%%/spec/services/labels/promote_service_spec.rb
@@ -15311,6 +15322,7 @@
 %%WWWDIR%%/spec/services/projects/participants_service_spec.rb
 %%WWWDIR%%/spec/services/projects/propagate_service_template_spec.rb
 %%WWWDIR%%/spec/services/projects/protect_default_branch_service_spec.rb
+%%WWWDIR%%/spec/services/projects/repository_languages_service_spec.rb
 %%WWWDIR%%/spec/services/projects/transfer_service_spec.rb
 %%WWWDIR%%/spec/services/projects/unlink_fork_service_spec.rb
 %%WWWDIR%%/spec/services/projects/update_pages_configuration_service_spec.rb
