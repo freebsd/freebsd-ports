@@ -10,9 +10,7 @@ MASTER_SITES=	http://www.librevisa.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for interfacing test and measurement equipment
 
-BUILD_DEPENDS=	pkg-config:devel/pkgconf
-
-USES=		gmake pathfix libtool
+USES=		gmake pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
