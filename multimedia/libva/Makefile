@@ -2,11 +2,11 @@
 
 PORTNAME=	libva
 PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	acf217e61475.patch:-p1
+PATCHFILES+=	acf217e61475.patch:-p1 f2b8dc594e3f.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	VAAPI wrapper and dummy driver
