@@ -1,0 +1,63 @@
+=== modified file 'src/ui-assist-import.c'
+--- src/ui-assist-import.c	2019-03-17 16:01:28 +0000
++++ src/ui-assist-import.c	2019-03-21 18:12:19 +0000
+@@ -1994,6 +1994,12 @@
+ 				data->txndata = NULL;
+ 			}
+ 			data->txndata = g_array_sized_new(FALSE, TRUE, sizeof(ImpTxnData), nbacc);
++
++			//#1820618 patch for glib < 2.58 https://gitlab.gnome.org/GNOME/glib/issues/1374
++			if( glib_minor_version < 58 )
++			{
++				g_array_set_size(data->txndata, nbacc);
++			}
+ 			
+ 			DB( g_print(" accnb=%d @%p\n", nbacc, data->txndata) );
+ 			
+
+=== modified file 'src/ui-assist-start.c'
+--- src/ui-assist-start.c	2019-03-17 16:01:28 +0000
++++ src/ui-assist-start.c	2019-03-21 18:12:19 +0000
+@@ -35,7 +35,7 @@
+ /* our global datas */
+ extern struct HomeBank *GLOBALS;
+ 
+-extern gchar *CYA_ACC_TYPE[];
++extern HbKvData CYA_ACC_TYPE[];
+ 
+ /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+ 
+@@ -84,7 +84,7 @@
+ 	}
+ 
+ 	item->kcur = GLOBALS->kcur;
+-	item->type = gtk_combo_box_get_active(GTK_COMBO_BOX(data->CY_type));
++	item->type = hbtk_combo_box_get_active_id(GTK_COMBO_BOX_TEXT(data->CY_type));
+ 
+ 	item->number = g_strdup(gtk_entry_get_text(GTK_ENTRY(data->ST_number)));
+ 
+@@ -390,7 +390,8 @@
+ 	row++;
+ 	label = make_label_widget(_("_Type:"));
+ 	gtk_grid_attach (GTK_GRID (table), label, 1, row, 1, 1);
+-	widget = make_cycle(label, CYA_ACC_TYPE);
++	//widget = make_cycle(label, CYA_ACC_TYPE);
++	widget = hbtk_combo_box_new_with_data(label, CYA_ACC_TYPE);
+ 	data->CY_type = widget;
+ 	gtk_widget_set_hexpand(widget, TRUE);
+ 	gtk_grid_attach (GTK_GRID (table), widget, 2, row, 1, 1);
+
+=== modified file 'src/ui-widgets.c'
+--- src/ui-widgets.c	2019-03-17 16:01:28 +0000
++++ src/ui-widgets.c	2019-03-21 18:12:19 +0000
+@@ -695,7 +695,8 @@
+ 			break;
+ 		if( tmp->key == key )
+ 		{
+-			retval = (gchar *)tmp->name;
++			//#1820372
++			retval = (gchar *)_(tmp->name);
+ 			break;
+ 		}
+ 	}
+
