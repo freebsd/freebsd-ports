@@ -3,7 +3,7 @@
 
 PORTNAME=	runwhen
 PORTVERSION=	2015.02.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://code.dogmap.org/runwhen/releases/
 

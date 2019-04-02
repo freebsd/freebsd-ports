@@ -3,6 +3,7 @@
 
 PORTNAME=	s6-rc
 PORTVERSION=	0.4.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
