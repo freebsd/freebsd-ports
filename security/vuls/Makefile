@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/bin/go-cve-dictionary:security/go-cve-dictionary
 
-USES=	go:1.7.1+
+USES=	go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	future-architect
