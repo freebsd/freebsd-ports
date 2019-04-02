@@ -11553,6 +11553,7 @@ math/wxMaxima|math/wxmaxima|2019-02-10|rename for consistency
 net-mgmt/py-snmp4|net-mgmt/py-pysnmp|2019-02-11|Renamed to match upstream naming
 net-mgmt/py-snmp4-apps|net-mgmt/py-pysnmp-apps|2019-02-11|Renamed to match upstream naming
 net-mgmt/py-snmp4-mibs|net-mgmt/py-pysnmp-mibs|2019-02-11|Renamed to match upstream naming
+databases/ruby-gdbm|databases/rubygem-gdbm|2019-02-18|Renamed because switch to use gem
 science/mmtf|science/mmtf-cpp|2019-02-16|Rename to match the project name on github
 dns/p5-pgeodns||2019-02-16|Has expired: Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
 ftp/proftpd-mod_geoip||2019-02-16|Has expired: Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible

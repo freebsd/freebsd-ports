@@ -3,7 +3,7 @@
 
 PORTNAME=	bsfilter
 PORTVERSION=	1.0.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ruby
 MASTER_SITES=	OSDN/bsfilter/59804
 
@@ -12,7 +12,7 @@ COMMENT=	Bayesian spam filter written in Ruby
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}gdbm>=0:databases/ruby-gdbm
+RUN_DEPENDS=	rubygem-gdbm>=2.0.0,2:databases/rubygem-gdbm
 
 NO_BUILD=	yes
 USE_RUBY=	yes
