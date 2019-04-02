@@ -149,7 +149,9 @@
     SUBDIR += pecl-rar
     SUBDIR += php-brotli
     SUBDIR += php-horde_lz4
+    SUBDIR += php-lz4
     SUBDIR += php-snappy
+    SUBDIR += php-zstd
     SUBDIR += php71-bz2
     SUBDIR += php71-phar
     SUBDIR += php71-zip
