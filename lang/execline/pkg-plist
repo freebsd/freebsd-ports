@@ -7,6 +7,7 @@ bin/elgetopt
 bin/elgetpositionals
 bin/elglob
 bin/emptyenv
+bin/envfile
 bin/exec
 bin/execlineb
 bin/exit
@@ -48,8 +49,8 @@ include/execline/execline.h
 lib/execline/libexecline.a
 lib/libexecline.so
 lib/libexecline.so.2.5
-lib/libexecline.so.2.5.0
-lib/libexecline.so.2.5.0.1
+lib/libexecline.so.2.5.1
+lib/libexecline.so.2.5.1.0
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/background.html
@@ -66,6 +67,7 @@ lib/libexecline.so.2.5.0.1
 %%PORTDOCS%%%%DOCSDIR%%/elgetpositionals.html
 %%PORTDOCS%%%%DOCSDIR%%/elglob.html
 %%PORTDOCS%%%%DOCSDIR%%/emptyenv.html
+%%PORTDOCS%%%%DOCSDIR%%/envfile.html
 %%PORTDOCS%%%%DOCSDIR%%/exec.html
 %%PORTDOCS%%%%DOCSDIR%%/execline-shell.html
 %%PORTDOCS%%%%DOCSDIR%%/execline-startup.html
