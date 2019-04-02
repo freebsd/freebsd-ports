@@ -822,6 +822,7 @@
     SUBDIR += gnustep
     SUBDIR += gnustep-make
     SUBDIR += go-bindata
+    SUBDIR += go-git
     SUBDIR += go-glide
     SUBDIR += go-gocode
     SUBDIR += go-godef
