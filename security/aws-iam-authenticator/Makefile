@@ -17,16 +17,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kubernetes-sigs
 GH_SUBDIR=	src/github.com/heptio/authenticator
 
-PLIST_FILES=	bin/${PORTNAME}
+GO_PKGNAME=	github.com/heptio/authenticator
+GO_TARGET=	${GO_PKGNAME}/cmd/heptio-authenticator-aws
 
-do-build:
-	cd ${WRKSRC}/${GH_SUBDIR} && \
-		GOPATH=${WRKSRC} go build \
-		./cmd/heptio-authenticator-aws
+PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} \
-		${WRKSRC}/heptio-authenticator-aws \
+		${GO_WRKDIR_BIN}/heptio-authenticator-aws \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
