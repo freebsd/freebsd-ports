@@ -1,6 +1,6 @@
 --- scripts/xflock4.orig	2014-08-30 18:24:02 UTC
 +++ scripts/xflock4
-@@ -21,7 +21,7 @@
+@@ -21,13 +21,14 @@
  #  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  #
  
@@ -9,7 +9,15 @@
  export PATH
  
  # Lock by xscreensaver or gnome-screensaver, if a respective daemon is running
-@@ -35,12 +35,14 @@ done
+ for lock_cmd in \
+     "xscreensaver-command -lock" \
+-    "gnome-screensaver-command --lock"
++    "gnome-screensaver-command --lock" \
++    "xfce4-screensaver-command --lock"
+ do
+     $lock_cmd >/dev/null 2>&1 && exit
+ done
+@@ -35,12 +36,14 @@ done
  # else run another access locking utility, if installed
  for lock_cmd in \
    "xlock -mode blank" \
