@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.38
+PORTVERSION=	2.4.39
 CATEGORIES=	www ipv6
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -81,6 +81,7 @@ MD_LIB_DEPENDS=			libcurl.so:ftp/curl \
 				libjansson.so:devel/jansson
 MD_USES=			ssl
 PROXY_HTML_USE=			GNOME=libxml2
+PROXY_HTML_USES=		gnome
 PROXY_HTTP2_CONFIGURE_ON=	--with-nghttp2=${LOCALBASE}
 PROXY_HTTP2_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 SOCACHE_DC_CONFIGURE_ON=	--with-distcache=${LOCALBASE}
@@ -90,6 +91,7 @@ SOCACHE_DC_LIB_DEPENDS=		libdistcache.so:security/distcache
 SSL_CONFIGURE_ON=		--with-ssl=${OPENSSLBASE}
 SSL_USES=			ssl
 XML2ENC_USE=			GNOME=libxml2
+XML2ENC_USES=			gnome
 
 ETC_SUBDIRS=		Includes envvars.d extra modules.d
 
