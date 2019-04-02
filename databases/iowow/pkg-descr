@@ -1,14 +1,16 @@
 IOWOW is persistent key-value database engine based on skip list data
-structure.  Its features and limitations are:
+structure.  Some of its features and limitations:
 
   - Support of multiple key-value databases within a single file
   - Native support of integer keys
+  - Write Ahead Logging (WAL)
   - Support of record values represented as sorted array of integers
-  - Ultra-fast traversal of database records
+  - Ultra-fast sequential traversal of database records
+  - Compound keys support
   - Good performance comparing to main competitors (LMDB, LevelDB,
     Kyoto Cabinet)
-  - Tiny C11 library (150 KB), easily embeddable into any software
-  - Maximum storage file size is 255 GB, maximum size of a single
+  - Tiny C11 library (200 KB), easily embeddable into any software
+  - Maximum storage file size is 512 GB, maximum size of a single
     key+value record is 255 MB
 
 WWW: http://iowow.io/

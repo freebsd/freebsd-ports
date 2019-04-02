@@ -1,7 +1,7 @@
---- src/CMakeLists.txt.orig	2018-05-02 10:28:14 UTC
+--- src/CMakeLists.txt.orig	2019-03-29 16:56:25 UTC
 +++ src/CMakeLists.txt
-@@ -72,6 +72,11 @@ if (HAVE_CLOCK_MONOTONIC)  
-   add_definitions(-DIW_HAVE_CLOCK_MONOTONIC)  
+@@ -100,6 +100,11 @@ if (HAVE_CLOCK_MONOTONIC)
+   add_definitions(-DIW_HAVE_CLOCK_MONOTONIC)
  endif()
  
 +check_symbol_exists(basename_r libgen.h HAVE_BASENAME_R)
@@ -12,16 +12,16 @@
  foreach(HF IN ITEMS stdlib stddef stdint stdbool stdatomic unistd dirent)
      string(TOUPPER "${HF}" UHF)
      check_include_file(${HF}.h "IW_HAVE_${UHF}")
-@@ -141,7 +146,7 @@ if (ASAN)
- endif()
+@@ -164,7 +169,7 @@ endif()
  
- set(CMAKE_C_FLAGS_DEBUG "-O0 -g -ggdb -Werror -DDEBUG -D_DEBUG -UNDEBUG -Wno-unused-variable ${CMAKE_C_ASAN}")
+ set(CMAKE_C_FLAGS_DEBUG "-O0 -g -ggdb -Werror -DDEBUG -D_DEBUG -UNDEBUG \
+                          -Wno-unused-variable ${CMAKE_C_ASAN}")
 -set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG ${CMAKE_C_ASAN}")
 +set(CMAKE_C_FLAGS_RELEASE "-DNDEBUG ${CMAKE_C_ASAN}")
  set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELEASE} -g")
  
  
-@@ -164,7 +169,7 @@ file(GLOB PROJECT_GENERATED_HDRS ${PROJECT_GENERATED_D
+@@ -187,7 +192,7 @@ file(GLOB PROJECT_GENERATED_HDRS ${PROJECT_GENERATED_D
  list(APPEND ALL_HDRS ${PROJECT_GENERATED_HDRS})
  
  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/tmpl/libiowow.pc.in ${PROJECT_GENERATED_DIR}/libiowow.pc @ONLY)
@@ -30,7 +30,7 @@
  
  foreach(MODULE IN LISTS MODULES)
      if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE}/CMakeLists.txt)
-@@ -229,7 +234,6 @@ endif()
+@@ -278,7 +283,6 @@ endif()
  
  
  install(FILES

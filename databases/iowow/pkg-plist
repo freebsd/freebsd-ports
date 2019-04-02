@@ -13,11 +13,12 @@ include/iowow/iwp.h
 include/iowow/iwpool.h
 include/iowow/iwrdb.h
 include/iowow/iwutils.h
+include/iowow/iwuuid.h
 include/iowow/iwxstr.h
 lib/libiowow-1.a
 lib/libiowow.so
 lib/libiowow.so.1
-lib/libiowow.so.1.2.14
+lib/libiowow.so.1.3.9
 libdata/pkgconfig/libiowow.pc
 man/man3/iowow.3.gz
 %%DATADIR%%/iowow-exports-%%CMAKE_BUILD_TYPE%%.cmake
