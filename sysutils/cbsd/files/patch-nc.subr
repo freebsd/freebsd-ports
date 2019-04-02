@@ -1,0 +1,15 @@
+--- nc.subr.orig	2019-04-01 20:14:44 UTC
++++ nc.subr
+@@ -139,9 +139,10 @@ init() {
+ 		VAL=$( substr --pos=$(( ${_pos} +2 )) --len=${_pref} --str="${1}" )
+ 		IFS=" "
+ 		VAL=$( echo ${VAL} | /usr/bin/tr -d '"' )		# strip extra quotes
+-		if [ ${double_args} -eq 0 -a -n "${VAL}" ]; then
++		if [ ${double_args} -eq 0 ]; then
+ 			shift
+-			continue	# value already set, skip
++			eval T="\$$ARG"
++			[ -n "${T}" ] && continue	# value already set, skip
+ 		fi
+ 		i=$(( i + 1 ))
+ 		eval "${ARG}='${VAL}'";
