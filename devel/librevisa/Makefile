@@ -16,6 +16,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/libvisa.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvisa.so
 
 .include <bsd.port.mk>
