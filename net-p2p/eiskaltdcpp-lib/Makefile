@@ -17,6 +17,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 
 .if !defined (MASTERDIR)
+BROKEN_FreeBSD_12=	error: member access into incomplete type 'dh_st'
+BROKEN_FreeBSD_13=	error: member access into incomplete type 'dh_st'
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USES=		cmake gettext compiler:c++11-lib ssl
