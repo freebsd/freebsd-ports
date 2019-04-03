@@ -30,6 +30,13 @@ PLIST_FILES=	bin/ori \
 		man/man1/orifs.1.gz \
 		man/man1/orisync.1.gz
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
+BROKEN_FreeBSD_13=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
+.endif
+
 do-install:
 	@${ECHO_MSG} "===>  Installing binaries..."
 	${INSTALL_PROGRAM} ${WRKSRC}/build/ori/ori ${STAGEDIR}${PREFIX}/bin/
@@ -42,4 +49,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/orifs.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/docs/orisync.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
