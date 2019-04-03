@@ -1724,6 +1724,7 @@
     SUBDIR += smi
     SUBDIR += smu
     SUBDIR += so-hunspell
+    SUBDIR += sonic
     SUBDIR += soothsayer
     SUBDIR += source-highlight
     SUBDIR += sowing
