@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	coot
-DISTVERSION=	0.8.9.1
-PORTREVISION=	2
+DISTVERSION=	0.8.9.2
 CATEGORIES=	science
 MASTER_SITES=	https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/${PORTNAME}/source/releases/ \
 		https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/${PORTNAME}/dependencies/:data
@@ -15,11 +14,13 @@ COMMENT=	Crystallographic Object-Oriented Toolkit
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	fftw>0:math/fftw
 LIB_DEPENDS=	libccp4c.so:science/libccp4 \
 		libclipper-core.so:science/clipper \
 		libcurl.so:ftp/curl \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libgoocanvas.so:graphics/goocanvas \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libgsl.so:math/gsl \
 		libmmdb2.so:science/mmdb2 \
@@ -31,7 +32,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		desktop-file-utils fortran gettext-runtime gl gmake gnome libtool localbase:ldflags pkgconfig python:2.7 shebangfix sqlite
 SHEBANG_FILES=	src/coot.in
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --disable-static
+CONFIGURE_ARGS=	--enable-shared --disable-static --with-goocanvas-prefix=${LOCALBASE}
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 libartlgpl2 libgnomecanvas pango pangox-compat
 USE_GL=		gl glu glut
 USE_XORG=	ice sm x11 xmu xt

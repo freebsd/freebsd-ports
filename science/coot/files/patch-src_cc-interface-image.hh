@@ -1,7 +1,8 @@
---- src/cc-interface-image.hh.orig	2018-07-08 02:10:49 UTC
+--- src/cc-interface-image.hh.orig	2018-06-08 16:50:29 UTC
 +++ src/cc-interface-image.hh
-@@ -1,4 +1,5 @@
+@@ -1,5 +1,6 @@
  
+ #ifdef USE_PYTHON
 +#include <Python.h>
  
  // make a png given the info in text_info_dict
