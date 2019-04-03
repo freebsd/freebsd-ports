@@ -183,7 +183,7 @@ kafka:*:234:234::0:0:Apache Kafka user:/nonexistent:/usr/sbin/nologin
 openhab:*:235:235::0:0:openHAB user:/var/db/openhab2/home:/usr/sbin/nologin
 rspamd:*:236:236::0:0:rspamd pseudo-user:/nonexistent:/usr/sbin/nologin
 paperless:*:237:237::0:0:paperless user:/var/db/paperless:/bin/sh
-# free: 238
+sonic:*:238:238::0:0:sonic user:/var/db/sonic:/usr/sbin/nologin
 # free: 239
 aprsd:*:240:240::0:0:aprsd:/nonexistent:/bin/sh
 tnc:*:241:241::0:0:aprsd:/nonexistent:/bin/sh
