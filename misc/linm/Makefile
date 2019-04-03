@@ -30,6 +30,13 @@ SMB_CPPFLAGS=	-I${SAMBAINCLUDES}
 SMB_LIBS=	-L${SAMBALIBS}
 SMB_USES=	samba:lib
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	field has incomplete type 'EVP_CIPHER_CTX' (aka 'struct evp_cipher_ctx_st')
+BROKEN_FreeBSD_13=	field has incomplete type 'EVP_CIPHER_CTX' (aka 'struct evp_cipher_ctx_st')
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|configpath|cfgpath|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^AM_CFLAGS/s|=.*|= -fPIC -std=gnu89|' \
@@ -41,4 +48,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
