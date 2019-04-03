@@ -2,7 +2,7 @@
 
 PORTNAME=	clash
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.2
+DISTVERSION=	0.13.0
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,6 +32,7 @@ GH_TUPLE=	aead:chacha20:8b13a72:chacha20/src/github.com/aead/chacha20 \
 		sirupsen:logrus:v1.2.0:logrus/src/github.com/sirupsen/logrus \
 		stretchr:testify:v1.2.2:testify/src/github.com/stretchr/testify \
 		golang:crypto:505ab14:golang_crypto/src/golang.org/x/crypto \
+		golang:net:adae6a3:golang_net/src/golang.org/x/net \
 		golang:sys:70b957f:golang_sys/src/golang.org/x/sys
 
 PLIST_FILES=	bin/${PORTNAME}
