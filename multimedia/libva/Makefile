@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	acf217e61475.patch:-p1 f2b8dc594e3f.patch:-p1
+PATCHFILES+=	c2a431cc3cab.patch:-p1 5cfcd31635b1.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	VAAPI wrapper and dummy driver
