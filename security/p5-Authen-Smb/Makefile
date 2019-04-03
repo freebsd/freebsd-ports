@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ma499@doc.ic.ac.uk
 COMMENT=	Perl extension to authenticate against an SMB server
 
+LICENSE=	GPLv2+ NONE  # perl code has no license defined
+LICENSE_COMB=	multi
+
 USES=		perl5
 USE_PERL5=	configure
 
