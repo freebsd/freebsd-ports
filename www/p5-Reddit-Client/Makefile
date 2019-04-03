@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Reddit-Client
-PORTVERSION=	1.292
+PORTVERSION=	1.312
 PORTEPOCH=	4
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-Capture>=0:devel/p5-IO-Capture \
-		p5-JSON>=2.53:converters/p5-JSON \
+		p5-JSON>=2.97:converters/p5-JSON \
 		p5-URI-Encode>0:www/p5-URI-Encode \
 		p5-URI>0:net/p5-URI \
 		p5-libwww>0:www/p5-libwww \
