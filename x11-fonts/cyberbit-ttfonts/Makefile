@@ -14,6 +14,9 @@ EXTRACT_ONLY=	Cyberbit.ZIP
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bitstream Cyberbit TrueType font that covers Unicode 2.0
 
+BROKEN=		unfetchable
+DEPRECATED=	Broken, unmaintained and restricted
+EXPIRATION_DATE=	2019-05-03
 RESTRICTED=	Redistribution not permitted; single user license only
 
 USES=		fonts zip
