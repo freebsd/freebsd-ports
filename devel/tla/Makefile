@@ -36,6 +36,13 @@ WRKSRC=		${ORIGWRKSRC}/=build
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	could not find library containing SSL_library_init
+BROKEN_FreeBSD_13=	could not find library containing SSL_library_init
+.endif
+
 pre-patch:
 	${MKDIR} ${WRKSRC}
 
@@ -55,4 +62,4 @@ do-install:
 	cd ${ORIGWRKSRC}/docs-tla && ${FIND} . -name '*.html' | \
 		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
