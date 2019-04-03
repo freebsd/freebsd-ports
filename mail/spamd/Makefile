@@ -56,6 +56,13 @@ OPTIONS_DEFINE=	DOCS
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	error: variable has incomplete type 'HMAC_CTX' (aka 'struct hmac_ctx_st')
+BROKEN_FreeBSD_13=	error: variable has incomplete type 'HMAC_CTX' (aka 'struct hmac_ctx_st')
+.endif
+
 do-install:
 .if !defined(CPANEL)
 	${INSTALL_PROGRAM} ${WRKSRC}/spamd/spamd ${STAGEDIR}${PREFIX}/libexec
@@ -76,4 +83,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
