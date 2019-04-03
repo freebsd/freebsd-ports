@@ -33,6 +33,13 @@ DEBUG_CONFIGURE_ENABLE=	debug
 OPENSSL_CONFIGURE_WITH=	openssl=${OPENSSLBASE}
 OPENSSL_USES=		ssl
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	error: cannot find the ssl library
+BROKEN_FreeBSD_13=	error: cannot find the ssl library
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in AUTHORS ChangeLog NEWS Notes README TODO
@@ -43,4 +50,4 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
