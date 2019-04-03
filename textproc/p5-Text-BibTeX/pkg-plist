@@ -1,6 +1,7 @@
 bin/biblex
 bin/bibparse
 bin/dumpnames
+include/btparse.h
 lib/libbtparse.so
 %%SITE_ARCH%%/Text/BibTeX.pm
 %%SITE_ARCH%%/Text/BibTeX/Bib.pm
