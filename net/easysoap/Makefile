@@ -24,4 +24,11 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	use of undeclared identifier 'SSLv2_client_method'
+BROKEN_FreeBSD_13=	use of undeclared identifier 'SSLv2_client_method'
+.endif
+
+.include <bsd.port.post.mk>
