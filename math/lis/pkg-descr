@@ -1,0 +1,5 @@
+Lis (pronounced [lis]) is a parallel software library for solving linear
+equations and eigenvalue problems that arise in the numerical solution of
+partial differential equations using iterative methods.
+
+WWW: https://www.ssisc.org/lis/index.en.html
