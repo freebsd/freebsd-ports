@@ -2,9 +2,8 @@
 
 PORTNAME=	scs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2-22
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-gb03e156
+DISTVERSION=	2.0.2-41
+DISTVERSIONSUFFIX=	-gafc6a0b
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +21,7 @@ MAKE_ARGS=	BLASLDFLAGS="-lopenblas"
 
 ALL_TARGET=	out/libscsdir.so out/libscsindir.so
 
-HEADERS=	accel.h cones.h cs.h ctrlc.h glbopts.h linalg.h linsys.h normalize.h scs.h util.h
+HEADERS=	aa.h cones.h ctrlc.h glbopts.h linalg.h linsys.h normalize.h rw.h scs.h scs_blas.h util.h
 
 PLIST_FILES=	${ALL_TARGET:S/out/lib/} ${HEADERS:S/^/include\/${PORTNAME}\//}
 
