@@ -23,10 +23,17 @@ CONFIGURE_ARGS+=--with-openssl-includes=${OPENSSLINC} \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.9.17
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	error: incomplete definition of type 'struct ssl_cipher_st'
+BROKEN_FreeBSD_13=	error: incomplete definition of type 'struct ssl_cipher_st'
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++||' \
 		${WRKSRC}/configure \
 		${WRKSRC}/src/openhbci/Makefile.in \
 		${WRKSRC}/src/openhbci/core/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
