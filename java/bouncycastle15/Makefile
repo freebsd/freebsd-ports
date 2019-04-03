@@ -3,6 +3,7 @@
 
 PORTNAME=	bouncycastle
 PORTVERSION=	1.61
+PORTREVISION=	1
 CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/ \
 		http://polydistortion.net/bc/download/
@@ -55,6 +56,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/build/artifacts/jdk${JDKMVERSION}/jars/${jar}-jdk${JDKNVERSION}on-${DVERSION}.jar \
 	      ${STAGEDIR}${JAVAJARDIR}/${jar}.jar
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/jars/bcprov-jdk${JDKNVERSION}on-${DVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}/bcprov.jar
 .if ${PORT_OPTIONS:MZIPSRC}
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for jar in ${JARS_SRC}
