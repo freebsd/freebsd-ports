@@ -9,6 +9,8 @@ MASTER_SITES=	http://dereckson.devio.us/software/${PORTNAME}/
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Filter that converts English text to valspeak
 
+BROKEN=		fails to fetch: http://dereckson.devio.us/software/valspeak/valspeak-1.0.tar.gz: Service Unavailable
+
 CONFLICTS=	filters-2* talkfilters-2*
 
 PLIST_FILES=	bin/valspeak
