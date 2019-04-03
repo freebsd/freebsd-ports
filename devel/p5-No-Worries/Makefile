@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	No-Worries
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,5 +20,7 @@ RUN_DEPENDS=	p5-HTTP-Date>=0:www/p5-HTTP-Date \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	y
 
 .include <bsd.port.mk>
