@@ -42,6 +42,11 @@ X11_USE=	XORG=x11
 
 .include <bsd.port.options.mk>
 
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	error: member access into incomplete type 'X509' (aka 'x509_st')
+BROKEN_FreeBSD_13=	error: member access into incomplete type 'X509' (aka 'x509_st')
+.endif
+
 # qmake.conf detection is in src/qt/qtbase/configure script.
 SPEC=	${WRKSRC}/src/qt/qtbase/mkspecs
 post-extract:
