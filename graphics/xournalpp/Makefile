@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xournalpp
-DISTVERSION=	1.0.8-83
-DISTVERSIONSUFFIX=	-g5a8b0c59
+DISTVERSION=	1.0.10
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib \
 		libportaudio.so:audio/portaudio \
-		libsndfile.so:audio/libsndfile
+		libsndfile.so:audio/libsndfile \
+		libzip.so:archivers/libzip
 
 USES=		cmake compiler:c++11-lang gettext-tools gnome pkgconfig
 USE_GITHUB=	yes
