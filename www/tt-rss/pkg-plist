@@ -81,15 +81,12 @@
 %%WWWDIR%%/images/indicator_white.gif
 %%WWWDIR%%/images/information.png
 %%WWWDIR%%/images/logo_small.png
-%%WWWDIR%%/images/logo_wide.png
-%%WWWDIR%%/images/toolbar.png
 %%WWWDIR%%/include/autoload.php
 %%WWWDIR%%/include/colors.php
 %%WWWDIR%%/include/controls.php
 %%WWWDIR%%/include/db-prefs.php
 %%WWWDIR%%/include/db.php
 %%WWWDIR%%/include/errorhandler.php
-%%WWWDIR%%/include/feedbrowser.php
 %%WWWDIR%%/include/functions.php
 %%WWWDIR%%/include/login_form.php
 %%WWWDIR%%/include/sanity_check.php
@@ -2321,6 +2318,8 @@
 %%WWWDIR%%/locale/sv_SE/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/tr_TR/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/tr_TR/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/uk_UA/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/uk_UA/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.mo
@@ -2365,6 +2364,7 @@
 %%WWWDIR%%/plugins/cache_starred_images/init.php
 %%WWWDIR%%/plugins/close_button/init.php
 %%WWWDIR%%/plugins/googlereaderkeys/init.php
+%%WWWDIR%%/plugins/hotkeys_noscroll/init.php
 %%WWWDIR%%/plugins/import_export/import_export.js
 %%WWWDIR%%/plugins/import_export/init.php
 %%WWWDIR%%/plugins/index.html
@@ -2393,6 +2393,7 @@
 %%WWWDIR%%/plugins/shorten_expanded/init.js
 %%WWWDIR%%/plugins/shorten_expanded/init.php
 %%WWWDIR%%/plugins/swap_jk/init.php
+%%WWWDIR%%/plugins/toggle_sidebar/init.js
 %%WWWDIR%%/plugins/toggle_sidebar/init.php
 %%WWWDIR%%/plugins/vf_shared/init.php
 %%WWWDIR%%/prefs.php
@@ -2440,6 +2441,8 @@
 %%WWWDIR%%/schema/versions/mysql/133.sql
 %%WWWDIR%%/schema/versions/mysql/134.sql
 %%WWWDIR%%/schema/versions/mysql/135.sql
+%%WWWDIR%%/schema/versions/mysql/136.sql
+%%WWWDIR%%/schema/versions/mysql/137.sql
 %%WWWDIR%%/schema/versions/mysql/14.sql
 %%WWWDIR%%/schema/versions/mysql/15.sql
 %%WWWDIR%%/schema/versions/mysql/16.sql
@@ -2573,6 +2576,8 @@
 %%WWWDIR%%/schema/versions/pgsql/133.sql
 %%WWWDIR%%/schema/versions/pgsql/134.sql
 %%WWWDIR%%/schema/versions/pgsql/135.sql
+%%WWWDIR%%/schema/versions/pgsql/136.sql
+%%WWWDIR%%/schema/versions/pgsql/137.sql
 %%WWWDIR%%/schema/versions/pgsql/14.sql
 %%WWWDIR%%/schema/versions/pgsql/15.sql
 %%WWWDIR%%/schema/versions/pgsql/16.sql
