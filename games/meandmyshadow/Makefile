@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake dos2unix libarchive lua:53
+USES=		cmake compiler:c++11-lang dos2unix libarchive lua:53
 DOS2UNIX_FILES=	CMakeLists.txt src/Functions.cpp
 USE_SDL=	sdl2 image2 ttf2 mixer2
 
