@@ -1,0 +1,4 @@
+Async Python client for the Sonic search backend.  Asonic implements
+all Sonic APIs.
+
+WWW: https://github.com/moshe/asonic
