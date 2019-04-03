@@ -17,6 +17,13 @@ EXTRA_PATCHES=	${FILESDIR}/bbftp.patch
 
 USE_RC_SUBR=	bbftpd
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	error: incomplete definition of type 'struct rsa_st'
+BROKEN_FreeBSD_13=	error: incomplete definition of type 'struct rsa_st'
+.endif
+
 do-configure:
 	${CP} -f ${TEMPLATES}/config.guess ${WRKSRC}
 	${CP} -f ${TEMPLATES}/config.sub ${WRKSRC}
@@ -35,4 +42,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/bbftp.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/bbftpd.1 ${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
