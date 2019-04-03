@@ -23,6 +23,13 @@ ALL_TARGET=	most
 
 PLIST_FILES=	bin/keyconv bin/vanitygen
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	field has incomplete type 'BIGNUM' (aka 'struct bignum_st')
+BROKEN_FreeBSD_13=	field has incomplete type 'BIGNUM' (aka 'struct bignum_st')
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lpcre|$$(shell pcre-config --libs)| ; \
@@ -34,4 +41,4 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} keyconv vanitygen \
 		${STAGEDIR}${PREFIX}/bin)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
