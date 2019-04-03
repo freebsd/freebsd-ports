@@ -35,6 +35,9 @@ CONFIGURE_ENV=	"OPENSSL_CFLAGS=${CFLAGS} -l${OPENSSLINC}" \
 # in pkgconfig/libopkele.pc.
 
 .if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	error: member access into incomplete type 'DH' (aka 'dh_st')
+BROKEN_FreeBSD_13=	error: member access into incomplete type 'DH' (aka 'dh_st')
+
 post-patch:
 	@ ${REINPLACE_CMD} -e "s|Requires: openssl|Requires:|" ${WRKSRC}/libopkele.pc.in
 .endif
