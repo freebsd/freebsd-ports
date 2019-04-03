@@ -17,7 +17,8 @@ LICENSE_PERMS_BuildLic=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-acc
 
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 
-USES=		alias dos2unix gl gmake gnome pkgconfig:build
+USES=		alias compiler:c++11-lang dos2unix gl gmake gnome \
+		pkgconfig:build
 DOS2UNIX_REGEX=	.*(\.(c|h)|Makefile)(\.deps)?
 
 USE_GITHUB=	yes
