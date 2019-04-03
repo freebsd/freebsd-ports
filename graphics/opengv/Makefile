@@ -26,4 +26,11 @@ do-test:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# disable march-native on non-x86 archs
+.if ${ARCH} != amd64 && ${ARCH} != i386
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-CMakeLists.txt
+.endif
+
+.include <bsd.port.post.mk>
