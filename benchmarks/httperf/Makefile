@@ -23,6 +23,13 @@ PORTDOCS=	ChangeLog NEWS README TODO
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	error: incomplete definition of type 'struct ssl_cipher_st'
+BROKEN_FreeBSD_13=	error: incomplete definition of type 'struct ssl_cipher_st'
+.endif
+
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
@@ -32,4 +39,4 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
