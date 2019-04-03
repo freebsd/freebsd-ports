@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	milter-regex
-PORTVERSION=	2.2
+PORTVERSION=	2.4
 CATEGORIES=	mail
 MASTER_SITES=	https://www.benzedrine.ch/
 
