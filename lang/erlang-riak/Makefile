@@ -25,4 +25,11 @@ CONFIGURE_ARGS+=--with-ssl=/usr \
 		--enable-kernel-poll \
 		--enable-sctp
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	error: invalid application of 'sizeof' to an incomplete type 'HMAC_CTX' (aka 'struct hmac_ctx_st')
+BROKEN_FreeBSD_13=	error: invalid application of 'sizeof' to an incomplete type 'HMAC_CTX' (aka 'struct hmac_ctx_st')
+.endif
+
+.include <bsd.port.post.mk>
