@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.10.1
+DISTVERSION=	1.10.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -30,7 +30,6 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		Shopify:sarama:v1.18.0:sarama/src/github.com/Shopify/sarama \
 		StackExchange:wmi:1.0.0:wmi/src/github.com/StackExchange/wmi \
 		aerospike:aerospike-client-go:v1.27.0:aerospike_client_go/src/github.com/aerospike/aerospike-client-go \
-		alecthomas:template:a0175ee:template/src/github.com/alecthomas/template \
 		alecthomas:units:2efee85:units/src/github.com/alecthomas/units \
 		amir:raidman:1ccc43b:raidman/src/github.com/amir/raidman \
 		apache:thrift:f2867c2:thrift/src/github.com/apache/thrift \
@@ -56,6 +55,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		eapache:queue:v1.1.0:queue/src/github.com/eapache/queue \
 		eclipse:paho.mqtt.golang:v1.1.1:paho_mqtt_golang/src/github.com/eclipse/paho.mqtt.golang \
 		ericchiang:k8s:v1.2.0:k8s/src/github.com/ericchiang/k8s \
+		ghodss:yaml:25d852a:yaml/src/github.com/ghodss/yaml \
 		go-ini:ini:v1.38.1:ini/src/github.com/go-ini/ini \
 		go-logfmt:logfmt:v0.4.0:go_logfmt/src/github.com/go-logfmt/logfmt \
 		go-ole:go-ole:v1.2.1:go_ole/src/github.com/go-ole/go-ole \
@@ -143,7 +143,6 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		golang:appengine:v1.1.0:appengine/src/google.golang.org/appengine \
 		google:go-genproto:fedd286:genproto/src/google.golang.org/genproto \
 		grpc:grpc-go:v1.13.0:grpc/src/google.golang.org/grpc \
-		alecthomas:kingpin:v2.2.6:kingpin_v2/src/gopkg.in/alecthomas/kingpin.v2 \
 		go-asn1-ber:asn1-ber:v1.2:asn1_ber_v1/src/gopkg.in/asn1-ber.v1 \
 		fatih:pool:v2.0.0:pool_v2/src/gopkg.in/fatih/pool.v2 \
 		fsnotify:fsnotify:v1.4.7:fsnotify_v1/src/gopkg.in/fsnotify.v1 \
@@ -153,7 +152,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		go-mgo:mgo:9856a29:mgo_v2/src/gopkg.in/mgo.v2 \
 		olivere:elastic:v5.0.70:elastic_v5/src/gopkg.in/olivere/elastic.v5 \
 		go-tomb:tomb:dd63297:tomb_v1/src/gopkg.in/tomb.v1 \
-		go-yaml:yaml:v2.2.1:yaml_v2/src/gopkg.in/yaml.v2	
+		go-yaml:yaml:v2.2.1:yaml_v2/src/gopkg.in/yaml.v2
 
 SUB_FILES=	telegraf
 SUB_LIST=	TELEGRAF_USER=${TELEGRAF_USER} \
@@ -185,7 +184,3 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>
-		:::/src/ \
-
-		:::/src/ \
-
