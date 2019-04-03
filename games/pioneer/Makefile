@@ -26,6 +26,10 @@ LICENSE_PERMS_GLEW=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_IUP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_powerpc=		fails to build: contrib/profiler/Profiler.h:158:51: inconsistent operand constraints in an 'asm'
+BROKEN_powerpc64=	fails to build: contrib/profiler/Profiler.h:158:51: inconsistent operand constraints in an 'asm'
+BROKEN_powerpcspe=	fails to build: contrib/profiler/Profiler.h:158:51: inconsistent operand constraints in an 'asm'
+
 BUILD_DEPENDS=	${LOCALBASE}/include/GL/glu.h:graphics/libGLU
 LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libfreetype.so:print/freetype2 \
