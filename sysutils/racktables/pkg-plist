@@ -1,3 +1,4 @@
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reload_dictionary.php
 %%WWWDIR_REL%%/gateways/git-commit
 %%WWWDIR_REL%%/gateways/netcat
 %%WWWDIR_REL%%/gateways/ssh
@@ -12,6 +13,8 @@
 %%WWWDIR_REL%%/wwwroot/css/tagit.css
 %%WWWDIR_REL%%/wwwroot/inc/ajax-interface.php
 %%WWWDIR_REL%%/wwwroot/inc/auth.php
+%%WWWDIR_REL%%/wwwroot/inc/breed-hpprocurveN1178.php
+%%WWWDIR_REL%%/wwwroot/inc/breed-ios15.php
 %%WWWDIR_REL%%/wwwroot/inc/caching.php
 %%WWWDIR_REL%%/wwwroot/inc/code.php
 %%WWWDIR_REL%%/wwwroot/inc/config.php
@@ -42,7 +45,6 @@
 %%WWWDIR_REL%%/wwwroot/inc/triggers.php
 %%WWWDIR_REL%%/wwwroot/inc/upgrade.php
 %%WWWDIR_REL%%/wwwroot/index.php
-%%WWWDIR_REL%%/wwwroot/js/bulkselector.js
 %%WWWDIR_REL%%/wwwroot/js/codemirror/codemirror.js
 %%WWWDIR_REL%%/wwwroot/js/codemirror/rackcode.js
 %%WWWDIR_REL%%/wwwroot/js/inplace-edit.js
