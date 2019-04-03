@@ -42,6 +42,13 @@ PORTDOCS=	Changelog.txt FAQ.html GNUGPL.txt INSTALL.txt \
 		README_rdns_directory_format.html README_rdns_file_format.html \
 		UPGRADING.txt UPGRADING_version_3_to_version_4.txt
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	checking for library containing SSL_library_init... no
+BROKEN_FreeBSD_13=	checking for library containing SSL_library_init... no
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#^CFLAGS :=.*#CFLAGS = ${CFLAGS}#' ${WRKSRC}/Makefile.in
 
@@ -54,4 +61,4 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/${DISTNAME}/documentation && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
