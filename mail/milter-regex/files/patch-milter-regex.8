@@ -1,4 +1,4 @@
---- milter-regex.8.orig	2018-09-25 20:51:47 UTC
+--- milter-regex.8.orig	2019-04-02 15:47:26 UTC
 +++ milter-regex.8
 @@ -36,7 +36,9 @@
  .Sh SYNOPSIS
@@ -7,10 +7,10 @@
 +.Op Fl q
  .Op Fl c Ar config
 +.Op Fl r Ar pid-file
+ .Op Fl f Ar facility
  .Op Fl j Ar dirname
  .Op Fl l Ar loglevel
- .Op Fl m Ar number
-@@ -58,9 +60,14 @@ The options are as follows:
+@@ -59,9 +61,14 @@ The options are as follows:
  .It Fl d
  Don't detach from controlling terminal and produce verbose debug
  output on stdout.
@@ -22,6 +22,6 @@
 +.It Fl r Ar pid-file
 +Use the specified pid file to write to.  Default is: 
 +/var/spool/milter-regex/milter-regex.pid
+ .It Fl f Ar facility
+ Use the specified syslog facility instead of the default, daemon.
  .It Fl j Ar dirname
- Change root to the specified directory.
- .It Fl l Ar loglevel

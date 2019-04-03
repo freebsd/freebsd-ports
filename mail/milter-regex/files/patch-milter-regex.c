@@ -1,6 +1,6 @@
---- milter-regex.c.orig	2018-09-25 20:31:25 UTC
+--- milter-regex.c.orig	2019-04-02 15:47:26 UTC
 +++ milter-regex.c
-@@ -61,6 +61,7 @@ extern int	 parse_ruleset(const char *, 
+@@ -62,6 +62,7 @@ extern int	 parse_ruleset(const char *, 
  
  static const char	*rule_file_name = "/etc/milter-regex.conf";
  static int		 debug = 0;
@@ -8,7 +8,7 @@
  static unsigned		 maxlines = 0;
  static pthread_mutex_t	 mutex;
  
-@@ -98,6 +99,7 @@ static void		 msg(int, struct context *,
+@@ -99,6 +100,7 @@ static void		 msg(int, struct context *,
  
  #define USER		"_milter-regex"
  #define OCONN		"unix:/var/spool/milter-regex/sock"
@@ -16,7 +16,7 @@
  #define RCODE_REJECT	"554"
  #define RCODE_TEMPFAIL	"451"
  #define XCODE_REJECT	"5.7.1"
-@@ -646,6 +648,9 @@ msg(int priority, struct context *contex
+@@ -647,6 +649,9 @@ msg(int priority, struct context *contex
  	va_list ap;
  	char msg[8192];
  
@@ -26,7 +26,7 @@
  	va_start(ap, fmt);
  	if (context != NULL)
  		snprintf(msg, sizeof(msg), "%s [%s]: ", context->host_name,
-@@ -684,6 +689,7 @@ main(int argc, char **argv)
+@@ -685,6 +690,7 @@ main(int argc, char **argv)
  {
  	int ch, maskpri = LOG_INFO;
  	const char *oconn = OCONN;
@@ -34,19 +34,19 @@
  	const char *user = USER;
  	const char *jail = NULL;
  	sfsistat r = MI_FAILURE;
-@@ -691,8 +697,10 @@ main(int argc, char **argv)
- 	const char *pgroup = NULL;
+@@ -693,8 +699,10 @@ main(int argc, char **argv)
  	const char *puser = NULL;
  	mode_t pperm = 0600;
+ 	int facility = LOG_DAEMON;
 +	pid_t pid;
 +	FILE *pid_fd = NULL;
  
--	while ((ch = getopt(argc, argv, "c:dj:l:m:p:u:G:P:U:")) != -1) {
-+	while ((ch = getopt(argc, argv, "c:dj:l:m:p:qr:u:G:P:U:")) != -1) {
+-	while ((ch = getopt(argc, argv, "c:df:j:l:m:p:u:G:P:U:")) != -1) {
++	while ((ch = getopt(argc, argv, "c:df:j:l:m:p:qr:u:G:P:U:")) != -1) {
  		switch (ch) {
  		case 'c':
  			rule_file_name = optarg;
-@@ -712,6 +720,12 @@ main(int argc, char **argv)
+@@ -724,6 +732,12 @@ main(int argc, char **argv)
  		case 'p':
  			oconn = optarg;
  			break;
@@ -59,7 +59,7 @@
  		case 'u':
  			user = optarg;
  			break;
-@@ -833,6 +847,20 @@ main(int argc, char **argv)
+@@ -845,6 +859,20 @@ main(int argc, char **argv)
  	}
  
  	msg(LOG_INFO, NULL, "started: %s", rcsid);
