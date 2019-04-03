@@ -116,6 +116,11 @@ CONF_ARGS+=	ENABLE_SHARED=true
 CONF_ARGS+=	ENABLE_SHARED=false
 .endif
 
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	undefined reference to `CRYPTO_set_id_callback'
+BROKEN_FreeBSD_13=	undefined reference to `CRYPTO_set_id_callback'
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 	    -e 's|@ADDITIONAL_RPATH@|${ADDL_RPATH}|' \
