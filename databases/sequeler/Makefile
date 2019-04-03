@@ -2,7 +2,7 @@
 
 PORTNAME=	sequeler
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.8
+DISTVERSION=	0.6.9
 CATEGORIES=	databases
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -18,13 +18,15 @@ LIB_DEPENDS=	libfixposix.so:devel/libfixposix \
 		libsecret-1.so:security/libsecret \
 		libssh2.so:security/libssh2
 
-USES=		desktop-file-utils gettext gnome meson pkgconfig python:3.5+,build
+USES=		desktop-file-utils gettext gnome meson pkgconfig \
+		python:3.5+,build
 USE_GITHUB=	yes
 GH_ACCOUNT=	Alecaddd
 USE_GNOME=	cairo glib20 gtk30 gtksourceview3 libgda5
 GLIB_SCHEMAS=	com.github.alecaddd.sequeler.gschema.xml
 INSTALLS_ICONS=	yes
 
-BINARY_ALIAS=	python3=${PYTHON_CMD} # for meson/post_install.py
+# for build-aux/meson_post_install.py
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 .include <bsd.port.mk>
