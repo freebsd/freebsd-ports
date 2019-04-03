@@ -7,4 +7,10 @@ To have video working, you need:
    webcamd_enable="YES"
    webcamd_flags="-H"
 2. Make sure V4L option is "on" in multimedia/ffmpeg.
+
+To have spell checking working, you need:
+1. Have the locale set, for example have LANG=en_US.UTF-8 set in the
+   environment.
+2. Have some dictionary installed that is supported by KDE sonnet,
+   for example en-hunspell.
 ======================================================================
