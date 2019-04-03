@@ -10,7 +10,7 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenGL game based on Super Nintendo classic Tetris Attack
 
-USES=		pkgconfig
+USES=		compiler:c++11-lang pkgconfig
 USE_XORG=	x11 xi xmu sm ice
 USE_GL=		glut
 USE_GNOME=	gtk20
