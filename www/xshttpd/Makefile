@@ -42,6 +42,13 @@ CURL_CONFIGURE_WITH=	curl
 
 PORTDOCS=	README ChangeLog
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	incomplete definition of type 'struct x509_store_ctx_st'
+BROKEN_FreeBSD_13=	incomplete definition of type 'struct x509_store_ctx_st'
+.endif
+
 post-patch:
 .for i in man/httpd.1.in man/httpd.conf.5 config/httpd.conf.sample \
 	contrib/SSL-Makefile contrib/logrotate.sh
@@ -62,4 +69,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${WWWDIR}/htdocs
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
