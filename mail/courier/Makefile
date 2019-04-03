@@ -259,6 +259,11 @@ SUB_LIST+=	PERIODIC="y"
 SUB_LIST+=	PERIODIC="n"
 .endif
 
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	pkg-static: Unable to access file /wrkdirs/usr/ports/mail/courier/work/stage/usr/local/bin/couriertls
+BROKEN_FreeBSD_13=	pkg-static: Unable to access file /wrkdirs/usr/ports/mail/courier/work/stage/usr/local/bin/couriertls
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "===> --------------------------------------------------------"
 	@${ECHO_MSG} "===>	Run 'make config' to (re)configure ${PKGNAME}"
