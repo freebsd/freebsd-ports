@@ -97,6 +97,11 @@ EXPIRATION_DATE=	2019-03-15
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	checking for RAND_egd in -lcrypto... no
+BROKEN_FreeBSD_13=	checking for RAND_egd in -lcrypto... no
+.endif
+
 .if ${SSL_DEFAULT:Mlibressl*}
 # The configure script will output this message, so save the user the trouble
 IGNORE=	detected LibreSSL: This is NOT supported, and may break consensus compatibility!
