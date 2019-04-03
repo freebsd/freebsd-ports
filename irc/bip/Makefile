@@ -29,6 +29,13 @@ EXAMPLEFILES=	bip.conf bip.vim
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	error: incomplete definition of type 'struct dh_st'
+BROKEN_FreeBSD_13=	error: incomplete definition of type 'struct dh_st'
+.endif
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/bip.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/bipmkpw.1 ${STAGEDIR}${PREFIX}/man/man1
@@ -46,4 +53,4 @@ post-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/samples/${i} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
