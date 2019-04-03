@@ -1,6 +1,6 @@
-TIMESTAMP = 1545368575
-SHA256 (Dreamacro-clash-v0.10.2_GH0.tar.gz) = d23b9a649efe4806a2600a3b7a799cfa95bc81d17bdf7e3e255866a9062b8725
-SIZE (Dreamacro-clash-v0.10.2_GH0.tar.gz) = 59699
+TIMESTAMP = 1554259487
+SHA256 (Dreamacro-clash-v0.13.0_GH0.tar.gz) = a17cfe2dfaebdba53eade3cb978dde8f54853904e1924d5a534879533b1a1dd5
+SIZE (Dreamacro-clash-v0.13.0_GH0.tar.gz) = 65341
 SHA256 (aead-chacha20-8b13a72_GH0.tar.gz) = 3ec002c64dc2e6f9c4e3fd06021d16f6834ad011b55fe78375a8689bd8d41344
 SIZE (aead-chacha20-8b13a72_GH0.tar.gz) = 21592
 SHA256 (eapache-channels-v1.1.0_GH0.tar.gz) = 443b9361ff7db635b830e84d8eb0830477083efba53fb0c531af04e07cde3a59
@@ -33,5 +33,7 @@ SHA256 (stretchr-testify-v1.2.2_GH0.tar.gz) = 0728bb470254e8b39deae3e6c1c92a98e7
 SIZE (stretchr-testify-v1.2.2_GH0.tar.gz) = 101698
 SHA256 (golang-crypto-505ab14_GH0.tar.gz) = 66208e5bab6d39db520fb59b79a597ddb38cd6160e7ae7fb3e5c212fe9146125
 SIZE (golang-crypto-505ab14_GH0.tar.gz) = 1644620
+SHA256 (golang-net-adae6a3_GH0.tar.gz) = 73198da598de91875030ad99b73544ec20eca47d890db46a30f1c7e0a11034e3
+SIZE (golang-net-adae6a3_GH0.tar.gz) = 965656
 SHA256 (golang-sys-70b957f_GH0.tar.gz) = 441e259f5e287d6a83794e53a601208e895884828dd2df457da8492e8d635d00
 SIZE (golang-sys-70b957f_GH0.tar.gz) = 1119114
