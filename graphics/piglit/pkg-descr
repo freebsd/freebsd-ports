@@ -6,7 +6,7 @@ OpenGL and OpenCL drivers by providing developers with a simple means to
 perform regression tests.
 
 The original tests have been taken from
-- Glean ( http://glean.sf.net/ ) and
-- Mesa ( http://www.mesa3d.org/ )
+- Glean ( http://glean.sourceforge.net/ ) and
+- Mesa ( https://www.mesa3d.org/ )
 
-WWW: http://piglit.freedesktop.org/
+WWW: https://piglit.freedesktop.org/
