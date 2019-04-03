@@ -22,7 +22,14 @@ CMAKE_ARGS=	-DBUILD_TESTING:BOOL=ON \
 USE_LDCONFIG=	yes
 TEST_TARGET=	test
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	error: allocation of incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
+BROKEN_FreeBSD_13=	error: allocation of incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
+.endif
+
 post-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/ucommon-config.h ${STAGEDIR}${PREFIX}/include/ucommon
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
