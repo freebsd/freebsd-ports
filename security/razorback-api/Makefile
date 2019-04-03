@@ -35,7 +35,14 @@ ASSERT_CONFIGURE_ENABLE=	assert
 CNC_DEBUG_CONFIGURE_ENABLE=	cnc-debug
 STOMP_DEBUG_CONFIGURE_ENABLE=	stomp-debug
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	incomplete definition of type 'struct rsa_st'
+BROKEN_FreeBSD_13=	incomplete definition of type 'struct rsa_st'
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e s/json/json-c/ -e s/-Werror// ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
