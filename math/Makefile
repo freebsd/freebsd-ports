@@ -349,6 +349,7 @@
     SUBDIR += libxsmm
     SUBDIR += lidia
     SUBDIR += linpack
+    SUBDIR += lis
     SUBDIR += lll_spect
     SUBDIR += lp_solve
     SUBDIR += lrng
