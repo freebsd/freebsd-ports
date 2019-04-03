@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	varnish
-PORTVERSION=	6.1.1
+PORTVERSION=	6.2.0
 DISTVERSIONPREFIX=	varnish-
 PORTREVISION=	0
 CATEGORIES=	www
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 CONFLICTS=	varnish-2.* varnish-3.* varnish4-4.* varnish5-5.*
 
 USES=		autoreconf cpe gmake libedit libtool ncurses pathfix \
-		pkgconfig python:2.7,build readline shebangfix
+		pkgconfig python:3.4+,build readline shebangfix
 SHEBANG_FILES=	lib/libvcc/*.py
 CPE_VENDOR=	varnish-cache
 CFLAGS+=	-I${LOCALBASE}/include
