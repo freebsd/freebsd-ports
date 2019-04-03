@@ -13,7 +13,7 @@ COMMENT=	Tile matching game
 
 LICENSE=	GPLv2+
 
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf compiler:c++11-lang libtool pkgconfig
 USE_GNOME=	gtk20 esound
 GNU_CONFIGURE=	yes
 
