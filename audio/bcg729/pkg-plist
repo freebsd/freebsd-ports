@@ -2,6 +2,7 @@ include/bcg729/decoder.h
 include/bcg729/encoder.h
 lib/libbcg729.so
 lib/libbcg729.so.0
+libdata/pkgconfig/libbcg729.pc
 share/Bcg729/cmake/Bcg729Config.cmake
 share/Bcg729/cmake/Bcg729ConfigVersion.cmake
 share/Bcg729/cmake/Bcg729Targets-%%CMAKE_BUILD_TYPE%%.cmake
