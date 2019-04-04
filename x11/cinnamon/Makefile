@@ -14,6 +14,7 @@ BUILD_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		gnome-autogen.sh:devel/gnome-common
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libcaribou.so:accessibility/caribou \
+		libgnome-keyring.so:security/libgnome-keyring \
 		libmuffin.so:x11-wm/muffin \
 		libtelepathy-glib.so:net-im/telepathy-glib \
 		libtelepathy-logger.so:net-im/telepathy-logger \
