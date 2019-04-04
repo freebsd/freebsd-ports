@@ -25,4 +25,11 @@ CMAKE_ARGS+=		-DCPP-NETLIB_BUILD_EXAMPLES=OFF \
 			-DCPP-NETLIB_BUILD_TESTS=OFF
 USE_GITHUB=		yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	no member named 'SSLv2_method' in the global namespace
+BROKEN_FreeBSD_13=	no member named 'SSLv2_method' in the global namespace
+.endif
+
+.include <bsd.port.post.mk>
