@@ -1,0 +1,161 @@
+diff -ruN cf.orig/feature/ckuser_cyrus.m4 cf/feature/ckuser_cyrus.m4
+--- cf.orig/feature/ckuser_cyrus.m4	Thu Jan  1 07:00:00 1970
++++ cf/feature/ckuser_cyrus.m4	Wed Sep 22 19:53:53 2004
+@@ -0,0 +1,34 @@
++divert(-1)
++# Written by Mike Boev <mike@tric.ru>, 2004.
++# Homepage: http://tric.ru/users/mike/ckuser_cyrus/
++# Inspired by: mrs_cyrus.m4 by Andrzej Adam Filip
++#
++# By using this file, you agree to the terms and conditions set
++# forth in the LICENSE file which can be found at the top level of
++# the sendmail distribution.
++#
++divert(0)
++VERSIONID(`Id: ckuser_cyrus.m4,v 1.4 2004/09/21 19:02:17 m Exp ')
++divert(-1)
++define(`CYRUS_SMMAPD_SOCKET',
++        ifelse(len(X`'_ARG_), `1', `local:/var/imap/socket/smmapd', _ARG_))
++
++MODIFY_MAILER_FLAGS(`CYRUSV2',`+5')
++
++LOCAL_CONFIG
++# Cyrus smmapd(8)'s map for verifying mailboxes of local recipients
++Kcyrus socket -a<OK> -T<TMPF> CYRUS_SMMAPD_SOCKET
++
++LOCAL_RULESETS
++SLocal_localaddr
++R$+			$: $> "ckuser_cyrus" $1
++
++Sckuser_cyrus
++#Query smmapd(8)
++R$+			$: <!> $1 $| $(cyrus $1 $: $)
++#Cyrus OK, skip
++R<!> $* $| $* <OK>	$@ $1					
++#Over quota or lookup failure
++R<!> $* $| $* <TMPF>	$# error $@ 4.3.0 $: "451 TEMPFAIL."	
++#Mailbox doesn't exist or its ACL forbids posting
++R<!> $* $| $*		$# error $@ 5.1.1 $: "550 Mailbox is not available."
+diff -ruN cf.orig/feature/mrs.m4 cf/feature/mrs.m4
+--- cf.orig/feature/mrs.m4	Thu Jan  1 07:00:00 1970
++++ cf/feature/mrs.m4	Wed Sep 22 19:54:56 2004
+@@ -0,0 +1,25 @@
++divert(-1)
++dnl
++dnl Updates: http://anfi.webhop.net/sendmail/mrs.html
++dnl
++dnl By using this file, you agree to the terms and conditions set
++dnl forth in the LICENSE file which can be found at the top level of
++dnl the sendmail distribution (sendmail-8.12).
++dnl
++dnl	Contributed by Andrzej Filip
++dnl
++dnl THE FEATURE REQUIRES PATCHING cf/m4/proto.m4
++dnl SEE THE LINK AFTER "Updates:"
++dnl
++dnl Log: mrs.m4,v 
++dnl Revision 8.3  2004/03/18 21:39:22  anfi
++dnl Changed comments prefixes to dnl to avoid m4 expansions
++dnl
++dnl Revision 8.2  2004/03/15 09:14:28  anfi
++dnl Added "Updates:" web link.
++dnl
++divert(0)
++VERSIONID(`Id: mrs.m4,v 8.3 2004/03/18 21:39:22 anfi Exp ')
++divert(-1)
++
++define(`_MRS_RELAY_', `')
+diff -ruN cf.orig/feature/mrs_cyrus.m4 cf/feature/mrs_cyrus.m4
+--- cf.orig/feature/mrs_cyrus.m4	Thu Jan  1 07:00:00 1970
++++ cf/feature/mrs_cyrus.m4	Wed Sep 22 19:55:05 2004
+@@ -0,0 +1,77 @@
++divert(-1)
++dnl
++dnl Updates: http://anfi.homeunix.net/sendmail/rtcyrus2.html
++dnl
++dnl By using this file, you agree to the terms and conditions set
++dnl forth in the LICENSE file which can be found at the top level of
++dnl the sendmail distribution (sendmail-8.12).
++dnl
++dnl	Contributed by Andrzej Filip
++dnl
++dnl Log: mrs_cyrus.m4,v
++dnl Revision 8.8  2004/08/11 18:20:05  anfi
++dnl "stipdom" replaced by "dummy"
++dnl
++dnl Revision 8.7  2004/04/01 14:29:50  anfi
++dnl Added "stripdom" handling in mrs_cyrus_user.
++dnl Fully defined error mailer details.
++dnl
++dnl Revision 8.6  2004/03/18 23:17:57  anfi
++dnl Fundamental rewrite.
++dnl
++ifdef(`_MRS_RELAY_',`',
++        `errprint(`*** ERROR: FEATURE(mrs_cyrus) requires FEATURE(mrs)
++')')
++ifdef(`_MRS_CYRUS_',
++        `errprint(`*** ERROR: There can be only one FEATURE(mrs_cyrus*)
++')')
++define(`_MRS_CYRUS_',`')
++
++divert(0)
++VERSIONID(`Id: mrs_cyrus.m4,v 8.8 2004/08/11 18:20:05 anfi Exp ')
++divert(-1)
++define(`CYRUS_SMMAPD_SOCKET',
++        ifelse(len(X`'_ARG_), `1', `/var/imap/socket/smmapd', _ARG_))
++define(`CYRUS_SMMAPD_SOCKET_TYPE',
++        ifelse(len(X`'_ARG2_), `1', `local', _ARG2_))
++LOCAL_CONFIG
++# Add 3 mrs_cyrus rule sets to list of valid mrs rule sets
++C{MRS}mrs_cyrus_user mrs_cyrus_mailertable mrs_cyrus_stickyhub
++# map for checking cyrus imap mailbox existence 
++Kcyrus socket -a<OK> -T<TMPF> CYRUS_SMMAPD_SOCKET_TYPE:CYRUS_SMMAPD_SOCKET
++
++LOCAL_RULESETS
++######################################################################
++### feature mrs_cyrus rulesets to be used by feature mrs
++######################################################################
++
++Smrs_cyrus_user
++R<$*> $+ <@$+.>			$: <$1> $2 <@ $3 >
++R<$*> $+ <@$*>			$: <$1> $2 <@$3> $| $(cyrus $2 $: $)
++R<$*> $+ <@$*> $| $* <TMPF>	$# error $@ 4.3.0 $: "451 Temporary system failure. Please try again later."
++R<$*> $+ <@$*> $| $* <OK>	$# cyrusv2 $@ dummy $: $4
++R<$*> $+ <@$*> $| $*		$: <$1> $2 <@$3>
++R<dummy> $+ <@dummy>	$@ $1
++R< $~[ : $* > $*		$>MailerToTriple < $1 : $2 > $3
++R< $+ > $*			$>MailerToTriple < $1 > $2
++R< > $*				$# error $@ 5.1.1 $: "550 User unknown"
++
++Smrs_cyrus_mailertable
++R<$*> $+ <@$+.>			$: <$1> $2 <@ $3 >
++R<$*> $+ <@$+> 			$: <$1> $2 <@$3> $| $(cyrus $2@$3 $: $)
++R<$*> $+ <@$+> $| $* <TMPF>	$# error $@ 4.3.0 $: "451 Temporary system failure. Please try again later."
++R<$*> $+ <@$+> $| $* <OK>	$# cyrusv2d $@ dummy $: $2 <@$3>
++R<$*> $+ <@$*> $| $*		$: <$1> $2 <@$3>
++R< $~[ : $* > $*		$>MailerToTriple < $1 : $2 > $3
++R< $+ > $*			$>MailerToTriple < $1 > $2
++R< > $*				$# error $@ 5.1.1 $: "550 User unknown"
++
++Smrs_cyrus_stickyhub
++R<dummy> $+ <@$+.>		$: <dummy> $1 <@ $2 >
++R<dummy> $* <@dummy>		$@ $1
++R<dummy> $+ <@$={VirtCyrus}> 	$: <dummy> $1 <@$2> $| $(cyrus $1@$2 $: $)
++R<dummy> $+ <@$={VirtCyrus}> $| $* <TMPF>	$# error $@ 4.3.0 $: "451 Temporary system failure. Please try again later."
++R<dummy> $+ <@$={VirtCyrus}> $| $* <OK>		$# cyrusv2d $@ dummy $: $1 <@$2>
++R<dummy> $+ <@$={VirtCyrus}> $| $*		$# error $@ 5.1.1 $: "550 User unknown"
++R<dummy> $=L <@$*>		$# ifdef(`confLOCAL_MAILER',confLOCAL_MAILER,`local') $: @$1
++R<dummy> $* <@$*>		$# ifdef(`confLOCAL_MAILER',confLOCAL_MAILER,`local') $: $1
+diff -ruN cf.orig/m4/proto.m4 cf/m4/proto.m4
+--- cf.orig/m4/proto.m4	Wed Sep 22 20:15:04 2004
++++ cf/m4/proto.m4	Wed Sep 22 19:52:41 2004
+@@ -1315,6 +1315,9 @@
+ R< error : $- : $+ > $*		$#error $@ $(dequote $1 $) $: $2
+ R< error : $+ > $*		$#error $: $1
+ R< local : $* > $*		$>CanonLocal < $1 > $2
++ifdef(`_MRS_RELAY_',`dnl
++R< $={MRS} : $* > $*	$@ $> $1 < $2 > $3
++dnl')
+ dnl it is $~[ instead of $- to avoid matches on IPv6 addresses
+ R< $~[ : $+ @ $+ > $*<$*>$*	$# $1 $@ $3 $: $2<@$3>	use literal user
+ R< $~[ : $+ > $*		$# $1 $@ $2 $: $3	try qualified mailer

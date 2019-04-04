@@ -1,0 +1,4 @@
+APPENDDEF(`confMAPDEF', `-DNDBM')
+APPENDDEF(`confINCDIRS', `-I%%LOCALBASE%%/include')
+APPENDDEF(`confLIBDIRS', `-L%%LOCALBASE%%/lib')
+APPENDDEF(`confLIBS', `-lgdbm_compat -lgdbm')

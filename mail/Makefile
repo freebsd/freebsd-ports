@@ -634,6 +634,7 @@
     SUBDIR += sa-utils
     SUBDIR += scam-backscatter
     SUBDIR += sendmail
+    SUBDIR += sendmail-devel
     SUBDIR += sendok
     SUBDIR += sentinel
     SUBDIR += serialmail
