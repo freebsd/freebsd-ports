@@ -30,7 +30,6 @@ USES=		cpe shebangfix ssl
 
 CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-1.4* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]*
 
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
 		--with-docdir=${DOCSDIR} --sysconfdir=${PREFIX}/etc \
 		--enable-external-dotlock --enable-pop --enable-imap \
@@ -130,20 +129,19 @@ GSSAPI_NONE_CONFIGURE_ON=	--without-gss
 HCACHE_NONE_CONFIGURE_ON=	--disable-hcache
 HCACHE_NONE_CONFIGURE_OFF=	--enable-hcache --without-qdbm --without-gdbm
 
-HCACHE_BDB_CONFIGURE_WITH=	bdb
+HCACHE_BDB_CONFIGURE_WITH=	bdb=${LOCALBASE}
 HCACHE_BDB_USES=	bdb:42+
 
-HCACHE_TOKYOCABINET_CONFIGURE_WITH=	tokyocabinet
+HCACHE_TOKYOCABINET_CONFIGURE_WITH=	tokyocabinet=${LOCALBASE}
 HCACHE_TOKYOCABINET_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
-HCACHE_KYOTOCABINET_CONFIGURE_WITH=	kyotocabinet
+HCACHE_KYOTOCABINET_CONFIGURE_WITH=	kyotocabinet=${LOCALBASE}
 HCACHE_KYOTOCABINET_LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
 
 ICONV_USES=	iconv:translit
 ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
 ICONV_CONFIGURE_OFF=	--disable-iconv
 
-ASPELL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aspell
 REVERSE_REPLY_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-reverse_reply
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
@@ -158,7 +156,7 @@ LOCALES_FIX_CONFIGURE_ON=	--enable-locales-fix
 
 IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2 \
 			libunistring.so:devel/libunistring
-IDN_CONFIGURE_WITH=	idn2
+IDN_CONFIGURE_WITH=	idn2=${LOCALBASE}
 IDN_IMPLIES=	ICONV
 
 IFDEF_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ifdef
@@ -196,8 +194,6 @@ VVV_PATCH_VERSION=	${PORTVERSION}
 .if !defined(GREETING_PATCH_VERSION)
 GREETING_PATCH_VERSION=	${PORTVERSION}
 .endif
-
-LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib:/usr/lib -ltinfow
 
 post-patch-NNTP-on:
 # Restore timestamps for autotools sources
@@ -240,6 +236,11 @@ pre-configure::
 		${WRKSRC}/init.h
 	@${REINPLACE_CMD} -e 's#$$(docdir)/samples#${EXAMPLESDIR}#g' \
 		${WRKSRC}/contrib/Makefile.in
+
+pre-configure-ASPELL-on:
+	@${REINPLACE_CMD} -e '/^# append-hook/p' \
+		-e 's/^# append-hook.*$$/set ispell="aspell --mode=email check"/' \
+	${WRKSRC}/doc/Muttrc.head
 
 pre-configure-HCACHE_BDB-on:
 	@${REINPLACE_CMD} -E -e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /' \
