@@ -1,0 +1,33 @@
+---------------------------------------------------
+
+you should add in /etc/make.conf:
+SENDMAIL_CF_DIR=	%%PREFIX%%/share/sendmail/cf
+
+To deliver all local mail to your mailhub, edit the last line of submit.mc:
+FEATURE(`msp','[mailhub.do.main]`)dnl
+
+To update your configuration look at %%PREFIX%%/share/sendmail/cf/README.
+---------------------------------------------------
+To use the binaries supplied by the port you should add the following lines
+to your sendmail.mc file before any mailer or feature definition:
+
+define(`confEBINDIR', `%%PREFIX%%/libexec')dnl
+define(`UUCP_MAILER_PATH', `%%LOCALBASE%%/bin/uux')dnl
+
+---------------------------------------------------
+To activate sendmail as your default mailer, call the target 'mailer.conf':
+$ cd %%PORTSDIR%%/mail/sendmail && make mailer.conf
+
+Your '%%PREFIX%%/etc/mail/mailer.conf' should look like this:
+#
+# Execute the "real" sendmail program, named /usr/libexec/sendmail/sendmail
+#
+sendmail	%%PREFIX%%/sbin/sendmail
+send-mail	%%PREFIX%%/sbin/sendmail
+mailq		%%PREFIX%%/sbin/sendmail
+newaliases	%%PREFIX%%/sbin/sendmail
+hoststat	%%PREFIX%%/sbin/sendmail
+purgestat	%%PREFIX%%/sbin/sendmail
+
+You may also need to update /etc/rc.conf.
+---------------------------------------------------

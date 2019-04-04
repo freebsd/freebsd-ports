@@ -1,0 +1,11 @@
+--- doc/op/Makefile.orig	2014-03-05 00:59:45 UTC
++++ doc/op/Makefile
+@@ -12,7 +12,7 @@ PS2PDF_CMD=	ps2pdf
+ PIC=		${PIC_CMD} -C
+ EQNASCII=	${EQN_CMD} -C -Tascii
+ EQNPS=		${EQN_CMD} -C -Tps
+-ROFFASCII=	${ROFF_CMD} -Tascii ${MACROS}
++ROFFASCII=	${ROFF_CMD} -P-c -Tascii ${MACROS}
+ ROFFPS=		${ROFF_CMD} -Tps -mps ${MACROS}
+ ULASCII=	${UL_CMD} -t dumb
+ PS2PDF=		${PS2PDF_CMD}

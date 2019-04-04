@@ -1,0 +1,4 @@
+APPENDDEF(`conf_sendmail_ENVDEF', `-I%%LOCALBASE%%/include')
+APPENDDEF(`conf_sendmail_ENVDEF', `-DSASL=2')
+APPENDDEF(`confLIBDIRS', `-L%%LOCALBASE%%/lib')
+APPENDDEF(`conf_sendmail_LIBS', `-lsasl2')

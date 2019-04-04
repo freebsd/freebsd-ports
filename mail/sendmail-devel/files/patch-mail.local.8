@@ -1,0 +1,57 @@
+--- mail.local/mail.local.8.orig	2014-03-05 00:59:45 UTC
++++ mail.local/mail.local.8
+@@ -16,9 +16,9 @@ mail.local
+ \- store mail in a mailbox
+ .SH SYNOPSIS
+ .B mail.local
+-.RB [ \-7 "] [" \-b "] [" \-d "] [" \-D
++.RB [ \-7 "] [" \-b "] [" \-B "] [" \-d "] [" \-D
+ .IR mbdb ]
+-.RB [ \-l "] [" \-f 
++.RB [ \-l "] [" \-s "] [" \-f 
+ \fIfrom\fR|\fB\-r\fR
+ .IR from ]
+ .RB [ \-h
+@@ -38,6 +38,11 @@ The options are as follows:
+ .B \-7
+ Do not advertise 8BITMIME support in LMTP mode.
+ .TP 
++.B \-B
++Turn off the attempts to notify the
++.Dq biff
++service.
++.TP 
+ .B \-b
+ Return a permanent error instead of a temporary error
+ if a mailbox exceeds quota.
+@@ -56,6 +61,13 @@ Specify the sender's name.
+ .TP
+ .B \-l
+ Turn on LMTP mode.
++.TP
++.B \-s
++Turn off the
++.Xr fsync 2
++call that forces the mailbox to be committed to disk before returning a
++.Dq success
++status.
+ .TP 
+ .BI \-r " from"
+ Specify the sender's name (for backward compatibility).
+@@ -120,7 +132,7 @@ Used to set the appropriate time zone on
+ .SH FILES
+ .PD 0.2v
+ .TP 2.2i
+-/tmp/local.XXXXXX
++/var/tmp/local.XXXXXX
+ temporary files
+ .TP
+ /var/mail/user
+@@ -131,7 +143,6 @@ lock file for a user's default mailbox
+ .PD
+ .SH SEE ALSO
+ mail(1), 
+-xsend(1), 
+ flock(2), 
+ getservbyname(3), 
+ comsat(8), 

@@ -1,0 +1,35 @@
+@comment cannot use @dir because this is home directory of smmsp
+@postexec chmod 770 /var/spool/clientmqueue
+bin/hoststat
+bin/mailq
+bin/newaliases
+bin/purgestat
+bin/rmail
+bin/vacation
+etc/mail/mailer.conf.sendmail
+libexec/mail.local
+libexec/smrsh
+%%MANPREFIX%%man/man1/mailq.1.gz
+%%MANPREFIX%%man/man1/newaliases.1.gz
+%%MANPREFIX%%man/man1/vacation.1.gz
+%%MANPREFIX%%man/man5/aliases.5.gz
+%%MANPREFIX%%man/man8/sendmail.8.gz
+%%MANPREFIX%%man/man8/mailstats.8.gz
+%%MANPREFIX%%man/man8/makemap.8.gz
+%%MANPREFIX%%man/man8/praliases.8.gz
+%%MANPREFIX%%man/man8/smrsh.8.gz
+%%MANPREFIX%%man/man8/mail.local.8.gz
+%%MANPREFIX%%man/man8/rmail.8.gz
+%%MANPREFIX%%man/man8/editmap.8.gz
+sbin/editmap
+sbin/mailstats
+sbin/makemap
+sbin/praliases
+@(root,smmsp,2555) sbin/sendmail
+share/sendmail/helpfile
+%%PORTDOCS%%%%DOCSDIR%%/op.ps
+%%PORTDOCS%%%%DOCSDIR%%/op.txt
+%%PORTDOCS%%%%DOCSDIR%%/DEVTOOLS
+%%PORTDOCS%%%%DOCSDIR%%/SENDMAIL
+%%PORTDOCS%%%%DOCSDIR%%/MAIL.LOCAL
+%%PORTDOCS%%%%DOCSDIR%%/SMRSH

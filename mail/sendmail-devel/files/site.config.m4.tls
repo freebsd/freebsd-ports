@@ -1,0 +1,2 @@
+APPENDDEF(`conf_sendmail_ENVDEF', `-DSTARTTLS -DTLS_EC')
+APPENDDEF(`conf_sendmail_LIBS', `-lssl -lcrypto')
