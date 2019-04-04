@@ -29,7 +29,8 @@ USES=		cmake compiler:c++11-lang
 
 USE_SDL=	mixer2 sdl2
 SUB_FILES=	${PORTNAME}
-CXXFLAGS+=	-Wno-error-narrowing
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-error-narrowing
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-evo

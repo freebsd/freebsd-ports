@@ -12,12 +12,13 @@ DISTNAME=	KoboDeluxe-${DISTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	SDL port of the scrolling game XKobo
 
-USES=		tar:bzip2
+USES=		compiler tar:bzip2
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sharedstatedir=${SCOREDIR} --enable-oss
 
-CXXFLAGS+=	-Wno-reserved-user-defined-literal
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-reserved-user-defined-literal
 
 SCOREDIR=	/var/games/${PORTNAME}
 
