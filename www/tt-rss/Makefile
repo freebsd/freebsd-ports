@@ -9,7 +9,7 @@ MASTER_SITES=	https://git.tt-rss.org/git/tt-rss/archive/
 DISTNAME=	${GIT_TAGNAME}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
 
 LICENSE=	GPLv2
