@@ -22,10 +22,9 @@ TEST_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
 		p5-Test-Warn>=0.23:devel/p5-Test-Warn \
 		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML
 
-CONFLICTS_INSTALL=	p5-Inline-0.[0-5]*
+USES=		perl5
+USE_PERL5=	configure
 
 NO_ARCH=	yes
-USE_PERL5=	configure
-USES=		perl5
 
 .include <bsd.port.mk>
