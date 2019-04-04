@@ -1,6 +1,6 @@
---- GNUmakefile.orig	2018-04-07 21:02:55 UTC
+--- GNUmakefile.orig	2019-03-15 11:21:49 UTC
 +++ GNUmakefile
-@@ -38,17 +38,22 @@ endif
+@@ -34,17 +34,22 @@ endif
  	APP_SHORTCUT_PATH = ${DESTDIR}${PREFIX}/share/applications
  	SHARE_PATH        = ${DESTDIR}${PREFIX}/share
  
@@ -27,7 +27,7 @@
  	cp resources/hicolor/48x48/apps/syncplay.png $(SHARE_PATH)/app-install/icons/
  	cp resources/hicolor/48x48/apps/syncplay.png $(SHARE_PATH)/pixmaps/
  
-@@ -60,8 +65,8 @@ u-common:
+@@ -56,8 +61,8 @@ u-common:
  
  client:
  	-mkdir -p $(BIN_PATH)
@@ -37,16 +37,7 @@
  	chmod 755 $(BIN_PATH)/syncplay
  	cp syncplayClient.py $(LIB_PATH)/syncplay/
  	cp resources/syncplay.desktop $(APP_SHORTCUT_PATH)/
-@@ -73,8 +78,6 @@ endif
- ifeq ($(VLC_SUPPORT),true)
- 	-mkdir -p ${DESTDIR}$(VLC_LIB_PATH)/vlc/lua/intf/
- 	cp resources/lua/intf/syncplay.lua ${DESTDIR}$(VLC_LIB_PATH)/vlc/lua/intf/
--	-mkdir -p ${DESTDIR}$(VLC_LIB_PATH64)/vlc/lua/intf/
--	cp resources/lua/intf/syncplay.lua ${DESTDIR}$(VLC_LIB_PATH64)/vlc/lua/intf/
- endif
- 
- u-client:
-@@ -86,8 +89,8 @@ u-client:
+@@ -75,8 +80,8 @@ u-client:
  
  server:
  	-mkdir -p $(BIN_PATH)

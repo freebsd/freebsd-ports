@@ -32,6 +32,8 @@
 %%DATADIR%%/resources/house.png
 %%DATADIR%%/resources/key_go.png
 %%DATADIR%%/resources/lock.png
+%%DATADIR%%/resources/lock_green.png
+%%DATADIR%%/resources/lock_green_dialog.png
 %%DATADIR%%/resources/lock_open.png
 %%DATADIR%%/resources/lua/intf/syncplay.lua
 %%DATADIR%%/resources/mpc-be.png
@@ -59,6 +61,7 @@ lib/syncplay/syncplay/client.py
 lib/syncplay/syncplay/clientManager.py
 lib/syncplay/syncplay/constants.py
 lib/syncplay/syncplay/messages.py
+lib/syncplay/syncplay/messages_es.py
 lib/syncplay/syncplay/messages_de.py
 lib/syncplay/syncplay/messages_en.py
 lib/syncplay/syncplay/messages_it.py
@@ -84,7 +87,6 @@ lib/syncplay/syncplay/utils.py
 lib/syncplay/syncplay/vendor/Qt.py
 lib/syncplay/syncplay/vendor/__init__.py
 lib/syncplay/syncplay/vendor/qt5reactor.py
-%%CLIENT%%%%VLC%%lib/vlc/lua/intf/syncplay.lua
 share/app-install/icons/syncplay.png
 %%CLIENT%%share/applications/syncplay.desktop
 %%SERVER%%share/applications/syncplay-server.desktop
