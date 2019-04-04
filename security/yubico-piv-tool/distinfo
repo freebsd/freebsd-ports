@@ -1,3 +1,3 @@
-TIMESTAMP = 1539366479
-SHA256 (yubico-piv-tool-1.6.2.tar.gz) = ea61bcd5c75471ed21903967d0121fb090aa4d325ec279a24633e3235fdf231b
-SIZE (yubico-piv-tool-1.6.2.tar.gz) = 584063
+TIMESTAMP = 1554384580
+SHA256 (yubico-piv-tool-1.7.0.tar.gz) = b428527e4031453a637128077983e782e9fea25df98e95e0fc27819b2e82fd7f
+SIZE (yubico-piv-tool-1.7.0.tar.gz) = 588206
