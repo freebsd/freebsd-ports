@@ -52,6 +52,13 @@ CHECKING_CONFIGURE_ENABLE=	checking
 MMAP_CONFIGURE_ENABLE=		mmap
 MAXIPS_CONFIGURE_ON=		--with-max-ips=${NSDMAX_IPS}
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	OpenSSL found in /usr, but version 0.9.7 or higher is required
+BROKEN_FreeBSD_13=	OpenSSL found in /usr, but version 0.9.7 or higher is required
+.endif
+
 post-install:
 .for f in credns credns-checkconf credns-notify credns-patch credns-xfer
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/${f}
@@ -61,4 +68,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
