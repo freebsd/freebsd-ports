@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parole
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
@@ -22,7 +21,7 @@ RUN_DEPENDS=	xdg-screensaver:devel/xdg-utils
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools \
 		gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
-USE_GNOME=	cairo gtk30 glib20 intlhack intltool
+USE_GNOME=	cairo gtk30 glib20 intltool
 USE_GSTREAMER1=	core faad flac wavpack rtmp x
 USE_XFCE=	panel
 USE_XORG=	ice sm x11
