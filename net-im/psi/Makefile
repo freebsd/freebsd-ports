@@ -7,8 +7,8 @@ PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/Psi/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Qt based Jabber client
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	Qt-based Jabber (XMPP) client
 
 LICENSE=	GPLv2
 
@@ -16,27 +16,29 @@ LIB_DEPENDS=	libidn.so:dns/libidn \
 		libminizip.so:archivers/minizip \
 		libqca-qt5.so:devel/qca
 
-USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig qt:5 \
-		tar:xz
-
-CMAKE_ARGS=	-DIDN_LIBRARY=${LOCALBASE}/lib/libidn.so \
-		-DIDN_INCLUDE_DIR=${LOCALBASE}/include \
-		-DUSE_WEBENGINE:BOOL=FALSE
-
-USE_QT=		concurrent core dbus gui multimedia network svg webkit widgets \
-		x11extras xml \
-		buildtools_build qmake_build imageformats_run
+USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig \
+		qt:5 tar:xz
+USE_QT=		concurrent core dbus gui multimedia network svg widgets \
+		x11extras xml buildtools_build qmake_build imageformats_run
 USE_XORG=	ice sm x11 xcb xext xscrnsaver
 
-OPTIONS_RADIO=	SPELLCHECKER
-OPTIONS_RADIO_SPELLCHECKER=	HUNSPELL ENCHANT
-OPTIONS_DEFAULT=	ENCHANT
+CMAKE_ARGS=	-DIDN_LIBRARY:FILEPATH="${LOCALBASE}/lib/libidn.so" \
+		-DIDN_INCLUDE_DIR:PATH="${LOCALBASE}/include"
 
-HUNSPELL_DESC=	Use hunspell for spell checking
+OPTIONS_DEFINE=	WEBKIT
+OPTIONS_RADIO=	SPELLCHECK
+OPTIONS_RADIO_SPELLCHECK=	HUNSPELL ENCHANT
+SPELLCHECK_DESC=	Spell checker backend
+OPTIONS_DEFAULT=	HUNSPELL
+OPTIONS_SUB=	yes
+
+WEBKIT_USE=		QT=webkit
+WEBKIT_CMAKE_BOOL=	ENABLE_WEBKIT
+
 HUNSPELL_LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 HUNSPELL_CMAKE_BOOL=	USE_HUNSPELL
 
-ENCHANT_DESC=	Use Enchant for spell checking
+ENCHANT_DESC=		Spell checking support via Enchant
 ENCHANT_LIB_DEPENDS=	libenchant.so:textproc/enchant
 ENCHANT_CMAKE_BOOL=	USE_ENCHANT
 
