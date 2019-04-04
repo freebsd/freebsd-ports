@@ -1,5 +1,5 @@
-TIMESTAMP = 1548169319
-SHA256 (reportlab-3.5.13.tar.gz) = 6116e750f98018febc08dfee6df20446cf954adbcfa378d2c703d56c8864aff3
-SIZE (reportlab-3.5.13.tar.gz) = 2842790
+TIMESTAMP = 1554372695
+SHA256 (reportlab-3.5.17.tar.gz) = a70d970619014dc83b4406bcfed7e2f9d5aaf5f521aad808f5560d90ea896fb4
+SIZE (reportlab-3.5.17.tar.gz) = 2844703
 SHA256 (pfbfer-20180109.zip) = 851b431550e866b217317d09dd33b5535ae081200975ad4dd25e80be2af10fec
 SIZE (pfbfer-20180109.zip) = 737561
