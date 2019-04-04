@@ -128,6 +128,11 @@ CONFIGURE_ARGS+=	--disable-hcache
 CONFIGURE_ARGS+=	--without-qdbm
 .endif
 
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	variable has incomplete type 'X509_STORE_CTX' (aka 'struct x509_store_ctx_st')
+BROKEN_FreeBSD_13=	variable has incomplete type 'X509_STORE_CTX' (aka 'struct x509_store_ctx_st')
+.endif
+
 post-patch:
 .if defined(CONFIGURE_SED)
 	@${REINPLACE_CMD} -E ${CONFIGURE_SED} \
