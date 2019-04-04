@@ -1,2 +1,3 @@
-SHA256 (BerkeleyDB-0.55.tar.gz) = 6f28e141c7e2fbc455621bc809d6e7d84a3640cc77568b07798ae3933107e44f
-SIZE (BerkeleyDB-0.55.tar.gz) = 203318
+TIMESTAMP = 1554399638
+SHA256 (BerkeleyDB-0.61.tar.gz) = 3fbe97a748209aabb67201598fcac0bf645b85be4419ce7a4bca7c16c0d8c550
+SIZE (BerkeleyDB-0.61.tar.gz) = 207225
