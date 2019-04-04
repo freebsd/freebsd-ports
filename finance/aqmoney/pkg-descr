@@ -1,7 +1,0 @@
-Aqmoney is a homebanking application.
-Aqmoney is able to create both RDH mode ("security disc" mode called in
-other programs) and DDV mode (chip card) customers. A customer is one who
-has one or more account(s) at a credit institute. To manage accounts you must
-first create a customer.
-
-WWW: https://sourceforge.net/projects/aqmoney/

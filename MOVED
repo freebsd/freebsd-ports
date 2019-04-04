@@ -12155,3 +12155,20 @@ www/unit-go||2019-04-01|Has expired: Go libraries should not be packaged
 www/webgo||2019-04-01|Has expired: Go libraries should not be packaged
 www/go-fasthttp||2019-04-01|Has expired: Go libraries should not be packaged
 graphics/llpp||2019-04-01|Has expired: fails to build with mupdf 1.14.0 and unable to update due to outdated lang/ocaml
+chinese/reciteword||2019-04-04|Has expired: depends on audio/esound
+comms/conserver||2019-04-04|Has expired: Superseeded by comms/conserver-com
+databases/flamerobin||2019-04-04|Has expired: Abandonware since 2009, does not work with newer version of wxGTK
+databases/mariadb100-client|databases/mariadb101-client|2019-04-04|Has expired: Upstream End-of-Life March 2019 (https://mariadb.org/about/maintenance-policy/)
+databases/mariadb100-server|databases/mariadb101-server|2019-04-04|Has expired: Upstream End-of-Life March 2019 (https://mariadb.org/about/maintenance-policy/)
+devel/physfs-devel|devel/physfs|2019-04-04|Has expired: is the same as devel/physfs, serving no purpose
+devel/py-construct28|devel/py-construct|2019-04-04|Has expired: Latest upstream version is in ports tree devel/py-construct
+devel/xtoolchain-llvm40||2019-04-04|Has expired: No supported release uses this version
+devel/xtoolchain-llvm50||2019-04-04|Has expired: No supported release uses this version
+finance/aqmoney||2019-04-04|Has expired: no longer maintained upstream
+finance/openhbci||2019-04-04|Has expired: no longer maintained upstream
+graphics/py-exiv2||2019-04-04|Has expired: py-exiv2 has been deprecated in favour of GExiv2
+mail/dbmail22|mail/dbmail|2019-04-04|Has expired: Please use mail/dbmail which uses latest version of 3.X
+net/rubygem-fog-google17|net/rubygem-fog-google|2019-04-04|Has expired: Use net/rubygem-fog-google instead
+ports-mgmt/bsdadminscripts|ports-mgmt/bsdadminscripts2|2019-04-04|Has expired: Upstream stale nearly 10 years, no longer works properly, use ports-mgmt/bsdadminscripts2 instead
+www/mod_md-devel||2019-04-04|Has expired: Use the module that is shipped with Apache 2.4
+x11/xbelld||2019-04-04|Has expired: Depends on audio/esound

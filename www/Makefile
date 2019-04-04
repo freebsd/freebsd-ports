@@ -431,7 +431,6 @@
     SUBDIR += mod_line_edit
     SUBDIR += mod_log_sql2
     SUBDIR += mod_maxminddb
-    SUBDIR += mod_md-devel
     SUBDIR += mod_memcache
     SUBDIR += mod_memcache_block
     SUBDIR += mod_mono

@@ -1,8 +1,0 @@
-bin/console
-etc/conserver.cf.eg
-man/man5/conserver.cf.5.gz
-man/man8/autologin.8.gz
-man/man8/console.8.gz
-man/man8/conserver.8.gz
-sbin/autologin
-sbin/conserver

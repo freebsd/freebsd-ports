@@ -1,7 +1,0 @@
-This is a collection of administration scripts. At the moment it
-consists of a script to control rc.d scripts at runtime, a
-script that runs common make targets on batches of ports, scripts to set
-variables for make jobs (like portconf, but with more possibilities).
-And scripts to check for broken packages and missing libraries.
-
-WWW: https://sourceforge.net/projects/bsdadminscripts/

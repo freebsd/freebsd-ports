@@ -4109,7 +4109,6 @@
     SUBDIR += phpunit6
     SUBDIR += phpunit7
     SUBDIR += physfs
-    SUBDIR += physfs-devel
     SUBDIR += picp
     SUBDIR += picprog
     SUBDIR += pig
@@ -4477,7 +4476,6 @@
     SUBDIR += py-confusable_homoglyphs
     SUBDIR += py-constantly
     SUBDIR += py-construct
-    SUBDIR += py-construct28
     SUBDIR += py-contextlib2
     SUBDIR += py-cookiecutter
     SUBDIR += py-coreapi
@@ -6393,8 +6391,6 @@
     SUBDIR += xtl
     SUBDIR += xtl-quant-stack
     SUBDIR += xtoolchain-llvm-devel
-    SUBDIR += xtoolchain-llvm40
-    SUBDIR += xtoolchain-llvm50
     SUBDIR += xtoolchain-llvm60
     SUBDIR += xtoolchain-llvm70
     SUBDIR += xtoolchain-llvm80

@@ -1,8 +1,0 @@
- 
-/!\   This is an early experience non-production-ready version   /!\
-
-As of Apache httpd 2.4.33, the mod_md module is part of the
-regular distribution.
-
-The module can be enabled by editing the module's configuration file
-in %%PREFIX%%/%%APACHEETCDIR%%/modules.d/999_mod_md.conf
