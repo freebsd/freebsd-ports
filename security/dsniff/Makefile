@@ -35,9 +35,16 @@ OPTIONS_SUB=	yes
 X11_USE=	xorg=x11,xmu
 X11_CONFIGURE_WITH=x
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	incomplete definition of type 'struct rsa_st'
+BROKEN_FreeBSD_13=	incomplete definition of type 'struct rsa_st'
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,csin,_csin,g' \
 		${WRKSRC}/webmitm.c \
 		${WRKSRC}/sshmitm.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
