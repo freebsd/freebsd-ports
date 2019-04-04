@@ -3,6 +3,7 @@ include/Spectra/GenEigsComplexShiftSolver.h
 include/Spectra/GenEigsRealShiftSolver.h
 include/Spectra/GenEigsSolver.h
 include/Spectra/LinAlg/Arnoldi.h
+include/Spectra/LinAlg/BKLDLT.h
 include/Spectra/LinAlg/DoubleShiftQR.h
 include/Spectra/LinAlg/Lanczos.h
 include/Spectra/LinAlg/TridiagEigen.h
