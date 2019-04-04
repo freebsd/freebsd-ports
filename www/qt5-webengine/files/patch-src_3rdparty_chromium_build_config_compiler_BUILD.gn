@@ -27,6 +27,20 @@
      cflags += [
        # TODO(hans): Remove this once Clang generates better optimized debug info
        # by default. https://crbug.com/765793
+@@ -747,11 +747,11 @@ config("compiler_cpu_abi") {
+         ]
+       }
+     } else if (current_cpu == "arm") {
+-      if (is_clang && !is_android && !is_nacl) {
++      if (is_clang && !is_android && !is_nacl && !is_bsd) {
+         cflags += [ "--target=arm-linux-gnueabihf" ]
+         ldflags += [ "--target=arm-linux-gnueabihf" ]
+       }
+-      if (!is_nacl) {
++      if (!is_nacl && !is_bsd) {
+         cflags += [
+           "-march=$arm_arch",
+           "-mfloat-abi=$arm_float_abi",
 @@ -761,7 +761,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
