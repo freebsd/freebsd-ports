@@ -1,4 +1,3 @@
-# Created by: Koichiro IWAO <meta+ports@vmeta.jp>
 # $FreeBSD$
 
 PORTNAME=	miruo
@@ -9,6 +8,7 @@ MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Pretty-print TCP session monitor/analyzer
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KLab
