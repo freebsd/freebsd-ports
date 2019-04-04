@@ -1,12 +1,7 @@
 bin/fractal
 share/applications/org.gnome.Fractal.desktop
-share/icons/hicolor/16x16/apps/org.gnome.Fractal.png
-share/icons/hicolor/22x22/apps/org.gnome.Fractal.png
-share/icons/hicolor/24x24/apps/org.gnome.Fractal.png
-share/icons/hicolor/32x32/apps/org.gnome.Fractal.png
-share/icons/hicolor/48x48/apps/org.gnome.Fractal.png
-share/icons/hicolor/512x512/apps/org.gnome.Fractal.png
-share/icons/hicolor/scalable/apps/org.gnome.Fractal-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Fractal.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Fractal-symbolic.svg
 share/locale/ca/LC_MESSAGES/fractal.mo
 share/locale/cs/LC_MESSAGES/fractal.mo
 share/locale/de/LC_MESSAGES/fractal.mo
