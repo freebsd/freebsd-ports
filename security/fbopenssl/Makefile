@@ -26,6 +26,13 @@ PLIST_SUB+=	PROFILE=""
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	incomplete definition of type 'struct asn1_object_st'
+BROKEN_FreeBSD_13=	incomplete definition of type 'struct asn1_object_st'
+.endif
+
 post-extract:
 	${INSTALL_DATA} ${FILESDIR}/BSDMakefile ${WRKSRC}
 
@@ -33,4 +40,4 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
