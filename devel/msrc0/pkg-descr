@@ -1,3 +1,0 @@
-We fake having a meta source platform installed to build a ksb-meta-source
-product on a machine that doesn't have ksb's tools installed yet.  This is
-the part you need to get all the nifty toys started.

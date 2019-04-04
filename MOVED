@@ -12172,3 +12172,6 @@ net/rubygem-fog-google17|net/rubygem-fog-google|2019-04-04|Has expired: Use net/
 ports-mgmt/bsdadminscripts|ports-mgmt/bsdadminscripts2|2019-04-04|Has expired: Upstream stale nearly 10 years, no longer works properly, use ports-mgmt/bsdadminscripts2 instead
 www/mod_md-devel||2019-04-04|Has expired: Use the module that is shipped with Apache 2.4
 x11/xbelld||2019-04-04|Has expired: Depends on audio/esound
+devel/mkcmd||2019-04-04|Removed, depends on expired devel/msrc0
+devel/msrc0||2019-04-04|Has expired: No longer required as comms/conserver is being retired.
+sysutils/curly||2019-04-04|Removed, depends on expired devel/msrc0

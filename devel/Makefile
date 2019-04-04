@@ -1762,7 +1762,6 @@
     SUBDIR += mips64-xtoolchain-gcc
     SUBDIR += mir-core
     SUBDIR += mk-configure
-    SUBDIR += mkcmd
     SUBDIR += mm
     SUBDIR += mm-common
     SUBDIR += mongo-c-driver
@@ -1781,7 +1780,6 @@
     SUBDIR += msgpuck
     SUBDIR += msp430-debug-stack
     SUBDIR += mspdebug
-    SUBDIR += msrc0
     SUBDIR += mtbl
     SUBDIR += myrepos
     SUBDIR += nana
