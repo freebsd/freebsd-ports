@@ -24,7 +24,6 @@
     SUBDIR += comserv
     SUBDIR += concordance
     SUBDIR += congruity
-    SUBDIR += conserver
     SUBDIR += conserver-com
     SUBDIR += cqrlog
     SUBDIR += cubicsdr

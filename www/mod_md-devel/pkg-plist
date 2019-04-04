@@ -1,5 +1,0 @@
-%%APACHEMODDIR%%/mod_manageddomain.so.0.0.0
-%%APACHEMODDIR%%/mod_manageddomain.so
-@sample %%APACHEETCDIR%%/modules.d/999_mod_md.conf.sample
-bin/a2md
-
