@@ -1,21 +1,23 @@
 # $FreeBSD$
 
 PORTNAME=	syncthing
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
+MASTER_SITES=	https://github.com/syncthing/syncthing/releases/download/v${PORTVERSION}/
+DISTNAME=	${PORTNAME}-source-${DISTVERSIONPREFIX}${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Encrypted file sync tool
 
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/${PORTNAME}/LICENSE
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
-USE_GITHUB=	yes
-GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
 USE_RC_SUBR=	syncthing syncthing-discosrv syncthing-relaysrv syncthing-relaypoolsrv
-BINS=		stbench stcli stcompdirs stdisco stdiscosrv stevents stfileinfo \
-		stfinddevice stgenfiles stindex strelaypoolsrv strelaysrv \
-		stsigtool sttestutil stvanity stwatchfile syncthing
+
+BINS=		syncthing stdiscosrv strelaysrv strelaypoolsrv
 
 .for x in ${BINS}
 PLIST_FILES+=	bin/${x}
@@ -28,20 +30,24 @@ GROUPS=		syncthing
 
 OPTIONS_DEFINE=	DOCS
 
+NO_WRKSUBDIR=	yes
+
 do-build:
-	@cd ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME} ; \
-		${SETENV} ${MAKE_ENV} CGO_ENABLED=0 go run build.go -no-upgrade=true -version v${PORTVERSION}
-	@${MV} ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME}/bin/testutil \
-		${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME}/bin/sttestutil
+	@( cd ${WRKSRC}/${PORTNAME} ; \
+		${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOFLAGS="-mod=vendor" go run build.go -version v${PORTVERSION} -no-upgrade build ; \
+		${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOFLAGS="-mod=vendor" go run build.go -version v${PORTVERSION} -no-upgrade build stdiscosrv ; \
+		${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOFLAGS="-mod=vendor" go run build.go -version v${PORTVERSION} -no-upgrade build strelaysrv ; \
+		${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOFLAGS="-mod=vendor" go run build.go -version v${PORTVERSION} -no-upgrade build strelaypoolsrv ; \
+		)
 
 do-install:
 .for x in ${BINS}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME}/bin/${x} \
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/${x} \
 		${STAGEDIR}${PREFIX}/bin/
 .endfor
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in AUTHORS LICENSE README.md
-	${INSTALL_DATA} ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME}/${x} \
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${x} \
 		${STAGEDIR}${DOCSDIR}
 .endfor
 
