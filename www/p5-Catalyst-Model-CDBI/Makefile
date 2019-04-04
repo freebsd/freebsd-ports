@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	CDBI model class for Catalyst
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Class-DBI-Loader>=0:databases/p5-Class-DBI-Loader \
 		p5-Catalyst-Runtime>=0:www/p5-Catalyst-Runtime \
 		p5-Catalyst-Devel>=1.00:www/p5-Catalyst-Devel \
@@ -20,5 +23,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
