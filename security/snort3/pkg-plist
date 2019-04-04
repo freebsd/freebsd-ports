@@ -18,6 +18,7 @@ include/snort/detection/detection_engine.h
 include/snort/detection/detection_options.h
 include/snort/detection/detection_util.h
 include/snort/detection/ips_context.h
+include/snort/detection/ips_context_chain.h
 include/snort/detection/ips_context_data.h
 include/snort/detection/regex_offload.h
 include/snort/detection/rule_option_types.h
@@ -27,6 +28,7 @@ include/snort/detection/treenodes.h
 include/snort/events/event.h
 include/snort/events/event_queue.h
 include/snort/file_api/file_api.h
+include/snort/file_api/file_capture.h
 include/snort/file_api/file_config.h
 include/snort/file_api/file_flows.h
 include/snort/file_api/file_identifier.h
@@ -38,6 +40,8 @@ include/snort/file_api/file_service.h
 include/snort/flow/expect_cache.h
 include/snort/flow/flow.h
 include/snort/flow/flow_key.h
+include/snort/flow/flow_stash.h
+include/snort/flow/stash_item.h
 include/snort/framework/api_options.h
 include/snort/framework/base_api.h
 include/snort/framework/bits.h
@@ -55,6 +59,7 @@ include/snort/framework/logger.h
 include/snort/framework/lua_api.h
 include/snort/framework/module.h
 include/snort/framework/mpse.h
+include/snort/framework/mpse_batch.h
 include/snort/framework/parameter.h
 include/snort/framework/range.h
 include/snort/framework/so_rule.h
@@ -62,6 +67,7 @@ include/snort/framework/value.h
 include/snort/hash/ghash.h
 include/snort/hash/hashes.h
 include/snort/hash/hashfcn.h
+include/snort/hash/lru_cache_shared.h
 include/snort/hash/xhash.h
 include/snort/helpers/base64_encoder.h
 include/snort/log/log.h
@@ -151,6 +157,7 @@ include/snort/utils/bitop.h
 include/snort/utils/cpp_macros.h
 include/snort/utils/endian.h
 include/snort/utils/kmap.h
+include/snort/utils/primed_allocator.h
 include/snort/utils/safec.h
 include/snort/utils/segment_mem.h
 include/snort/utils/sflsq.h
@@ -213,6 +220,7 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/pop_imap.txt
 %%PORTDOCS%%%%DOCSDIR%%/port_scan.txt
 %%PORTDOCS%%%%DOCSDIR%%/reference.txt
+%%PORTDOCS%%%%DOCSDIR%%/reload_limitations.txt
 %%PORTDOCS%%%%DOCSDIR%%/sensitive_data.txt
 %%PORTDOCS%%%%DOCSDIR%%/side_channel.txt
 %%PORTDOCS%%%%DOCSDIR%%/signals.txt
