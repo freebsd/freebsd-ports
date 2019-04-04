@@ -15,7 +15,7 @@ LICENSE=	GPLv2 # from website
 
 WRKSRC_SUBDIR=	src
 
-USES=		dos2unix
+USES=		compiler dos2unix
 DOS2UNIX_FILES=	Makefile bmp.cpp
 USE_GL=		gl glu glut
 USE_XORG=	x11 xext xmu xi
@@ -25,7 +25,8 @@ PORTDATA=	*
 PLIST_FILES=	bin/billardgl \
 		share/pixmaps/billardgl.bmp
 
-CXXFLAGS+=	-Wno-c++11-narrowing
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 DESKTOP_ENTRIES="${PORTNAME}" \
 		"" \
