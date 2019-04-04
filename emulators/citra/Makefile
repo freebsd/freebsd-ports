@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20190324
+PORTVERSION=	s20190402
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	c1de8acfe
+GH_TAGNAME=	14730ed56
 GH_TUPLE=	citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:r1-992-g4e6848d1:dynarmic/externals/dynarmic \
@@ -44,8 +44,8 @@ USE_SDL=	sdl2
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 TEST_TARGET=	test
 
-OPTIONS_DEFINE=	ALSA PULSEAUDIO JACK SNDIO
-OPTIONS_DEFAULT=ALSA PULSEAUDIO JACK
+OPTIONS_DEFINE=	ALSA FFMPEG PULSEAUDIO JACK SNDIO
+OPTIONS_DEFAULT=ALSA FFMPEG PULSEAUDIO JACK
 OPTIONS_MULTI=	GUI
 OPTIONS_MULTI_GUI=	QT5 SDL
 OPTIONS_SLAVE?=	SDL
@@ -54,6 +54,9 @@ OPTIONS_EXCLUDE:=	${OPTIONS_MULTI_GUI}
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 ALSA_CMAKE_BOOL=	USE_ALSA
+
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_CMAKE_BOOL=	ENABLE_FFMPEG
 
 JACK_BUILD_DEPENDS=	jackit>0:audio/jack
 JACK_CMAKE_BOOL=	USE_JACK
