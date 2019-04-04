@@ -25,6 +25,11 @@ XMPP_DESC=	Enable XMPP Jabber support
 
 .include <bsd.port.options.mk>
 
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	incomplete definition of type 'struct dh_st'
+BROKEN_FreeBSD_13=	incomplete definition of type 'struct dh_st'
+.endif
+
 .if ${PORT_OPTIONS:MOTR}
 CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-otr
