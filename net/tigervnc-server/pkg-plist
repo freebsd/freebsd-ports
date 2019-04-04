@@ -9,5 +9,5 @@ man/man1/vncconfig.1.gz
 man/man1/vncpasswd.1.gz
 man/man1/vncserver.1.gz
 man/man1/x0vncserver.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/LICENCE.TXT
-%%PORTDOCS%%%%DOCSDIR%%/README.rst
+%%PORTDOCS%%%%DOCSDIR%%/%%TIGERVNC_COMPONENT%%LICENCE.TXT
+%%PORTDOCS%%%%DOCSDIR%%/%%TIGERVNC_COMPONENT%%README.rst
