@@ -12,12 +12,13 @@ COMMENT=	Open-source 3D chess game
 
 LICENSE=	GPLv2  # from sourceforge page
 
-USES=		dos2unix gmake
+USES=		compiler dos2unix gmake
 USE_SDL=	sdl image
 USE_GL=		gl glu
 DOS2UNIX_GLOB=	*.cpp *.h Makefile config.ini
 
-CXXFLAGS+=	-Wno-reserved-user-defined-literal
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-reserved-user-defined-literal
 
 WRKSRC=		${WRKDIR}/pouetChess_0.11
 

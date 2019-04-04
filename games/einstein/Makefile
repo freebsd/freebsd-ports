@@ -16,10 +16,12 @@ LICENSE=	GPLv2+ # (now dead) website mentions GPL
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
+USES=		compiler
 USE_SDL=	sdl ttf mixer
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-CXXFLAGS+=	-Wno-c++11-narrowing
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/einstein

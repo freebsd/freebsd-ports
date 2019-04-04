@@ -15,12 +15,13 @@ COMMENT=	Rogue-like game
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/config/scourge.cfg:games/scourge-data
 
-USES=		autoreconf gettext gmake localbase
+USES=		autoreconf compiler gettext gmake localbase
 GNU_CONFIGURE=	yes
 USE_GL=		gl
 USE_SDL=	sdl image mixer net ttf
 
-CXXFLAGS+=	-Wno-c++11-narrowing
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 CONFIGURE_ARGS=	--with-data-dir=${DATADIR}
 

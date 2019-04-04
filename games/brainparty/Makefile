@@ -15,11 +15,12 @@ COMMENT=	Family-friendly set of 36 puzzle games
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		compiler gmake
 USE_SDL=	sdl mixer ttf gfx image
 USE_GL=		gl glu
 
-CXXFLAGS+=	-Wno-c++11-narrowing
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
