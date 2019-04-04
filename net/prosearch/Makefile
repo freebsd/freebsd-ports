@@ -33,14 +33,10 @@ APACHE_DESC=		With web server apache2.2+
 MOD_PERL2_DESC=		With MOD_PERL2
 MOD_FASTCGI_DESC=	With MOD_FASTCGI
 DB_DESC=		With both database server and client
-#MARIA_DESC=		mariaDB
 PGPP_DESC=		postgres pure Perl connection driver
 SPHINX_DESC=		sphinx fulltext search engine
 #NGINX_DESC=		With web server (NGINX)
 
-#RG1_DESC=	Database backend
-#OPTIONS_RADIO=	RG1
-#OPTIONS_RADIO_RG1=	MYSQL MARIA
 .include <bsd.port.options.mk>
 
 RUN_DEPENDS+=\
@@ -98,17 +94,6 @@ p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
 .if ${PORT_OPTIONS:MDB} && ${PORT_OPTIONS:MMYSQL}
 USES+=	mysql:server
-.endif
-
-.if ${PORT_OPTIONS:MMARIA}
-RUN_DEPENDS+=\
-p5-DBD-mysql>=0:databases/p5-DBD-mysql \
-${LOCALBASE}bin/mysql:databases/mariadb100-client
-.endif
-
-.if ${PORT_OPTIONS:MDB} && ${PORT_OPTIONS:MMARIA}
-RUN_DEPENDS+=\
-${LOCALBASE}/libexec/mysqld:databases/mariadb100-server
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
