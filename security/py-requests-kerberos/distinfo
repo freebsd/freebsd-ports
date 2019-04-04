@@ -1,3 +1,3 @@
 TIMESTAMP = 1486408186
-SHA256 (requests-kerberos-0.11.0.tar.gz) = ae734f71f46a7b205a74fb90e160c7ba4cc4e0dff2d4f3129cf74806b51b94ba
-SIZE (requests-kerberos-0.11.0.tar.gz) = 10742
+SHA256 (requests-kerberos-0.12.0.tar.gz) = 9d21f15241c53c2ad47e813138b9aee4b9acdd04b82048c4388ade15f40a52fd
+SIZE (requests-kerberos-0.12.0.tar.gz) = 11257
