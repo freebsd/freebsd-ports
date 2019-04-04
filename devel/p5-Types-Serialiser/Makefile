@@ -21,4 +21,6 @@ RUN_DEPENDS=	p5-common-sense>=0:devel/p5-common-sense
 USE_PERL5=	configure
 USES=		perl5
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
