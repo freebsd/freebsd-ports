@@ -6,7 +6,7 @@
  #elif defined(__FreeBSD__)
 +# if defined(FREEBSD_USE_SIMD)
    #define USE_SSE2
-+# endif
  #include <immintrin.h>
++# endif
    #define _inline inline
    #define _aligned_free(mem) free(mem)
