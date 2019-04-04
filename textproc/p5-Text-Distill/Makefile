@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-Distill
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GRIBUSER
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-Digest-JHash>=0:security/p5-Digest-JHash \
 		p5-Encode-Detect>=0:converters/p5-Encode-Detect \
-		p5-HTML-TreeBuilder-LibXML>=0:www/p5-HTML-TreeBuilder-LibXML \
+		p5-HTML-Tree>=0:www/p5-HTML-Tree \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-libwww>=0:www/p5-libwww \
 		p5-OLE-Storage_Lite>=0:devel/p5-OLE-Storage_Lite \
@@ -28,8 +28,8 @@ RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-XML-LibXSLT>=0:textproc/p5-XML-LibXSLT
 
 USES=		perl5
-
 USE_PERL5=	configure
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
