@@ -4,4 +4,4 @@ numbers. The necessary information is drawn from xcb-proto's protocol
 descriptions. This library is especially useful when working with
 extensions and is mostly useful for debugging.
 
-WWW: http://xcb.freedesktop.org/
+WWW: https://xcb.freedesktop.org/
