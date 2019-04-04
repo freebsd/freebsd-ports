@@ -26,6 +26,13 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	incomplete definition of type 'struct evp_pkey_st'
+BROKEN_FreeBSD_13=	incomplete definition of type 'struct evp_pkey_st'
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/keynote ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/keynote.h ${STAGEDIR}${PREFIX}/include
@@ -40,4 +47,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/HOWTO.add.crypto ${WRKSRC}/TODO \
 		${WRKSRC}/doc/rfc*.txt ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
