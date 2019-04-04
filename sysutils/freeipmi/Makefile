@@ -18,7 +18,6 @@ BROKEN_armv7=		invokes x86 assembler
 BROKEN_mips=		invokes x86 assembler
 BROKEN_mips64=		invokes x86 assembler
 BROKEN_sparc64=		invokes x86 assembler
-BROKEN_powerpc64=	invokes x86 assembler
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libgcrypt.so:security/libgcrypt
