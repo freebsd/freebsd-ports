@@ -19,9 +19,16 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	incomplete definition of type 'struct ssl_st'
+BROKEN_FreeBSD_13=	incomplete definition of type 'struct ssl_st'
+.endif
+
 post-install:
 	${MAKE} install-man -C ${WRKSRC} ${MAKE_ARGS}
 	${INSTALL_DATA} ${WRKSRC}/radsecproxy.conf-example \
 		${STAGEDIR}${PREFIX}/etc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
