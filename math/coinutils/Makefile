@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	CoinUtils
-DISTVERSION=	2.10.14
-PORTREVISION=	2
+DISTVERSION=	2.11.0
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/${PORTNAME}/
 PKGNAMEPREFIX=	coin-or-
