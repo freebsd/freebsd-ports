@@ -1,0 +1,12 @@
+--- src/recompiler/Makefile.kmk.orig	2019-01-25 18:33:40 UTC
++++ src/recompiler/Makefile.kmk
+@@ -63,6 +63,9 @@ else
+  # Missing fpclassify. Is there a better define or flag for this?
+  VBoxRemPrimary_DEFS.solaris  += __C99FEATURES__
+ endif # win
++# XXX Work around a linker issue with GCC 8.x & LLD:
++# ld: error: translate.c:(.debug_loc+0xA40FD): has non-ABS relocation R_386_GOTOFF against symbol 'cpu_regs'
++VBoxRemPrimary_CFLAGS.freebsd.x86 += -g0
+ VBoxRemPrimary_DEFS           += IN_REM_R3 REM_INCLUDE_CPU_H NEED_CPU_H
+ #VBoxRemPrimary_DEFS           += REM_PHYS_ADDR_IN_TLB
+ #VBoxRemPrimary_DEFS           += DEBUG_ALL_LOGGING DEBUG_DISAS DEBUG_PCALL CONFIG_DEBUG_EXEC DEBUG_FLUSH DEBUG_IOPORT DEBUG_SIGNAL DEBUG_TLB_CHECK DEBUG_TB_INVALIDATE DEBUG_TLB  # Enables huge amounts of debug logging.
