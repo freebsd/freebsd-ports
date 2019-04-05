@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/gfx/canvas_skia.cc.orig	2017-01-26 00:49:31 UTC
+--- src/3rdparty/chromium/ui/gfx/canvas_skia.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/ui/gfx/canvas_skia.cc
-@@ -209,7 +209,7 @@ void Canvas::DrawStringRectWithShadows(c
+@@ -208,7 +208,7 @@ void Canvas::DrawStringRectWithFlags(const base::strin
      Range range = StripAcceleratorChars(flags, &adjusted_text);
      bool elide_text = ((flags & NO_ELLIPSIS) == 0);
  

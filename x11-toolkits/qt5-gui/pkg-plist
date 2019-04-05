@@ -208,6 +208,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtriangulatingstroker_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtriangulator_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qvectorpath_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qvulkanfunctions_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qvulkanwindow_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qwindow_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qxbmhandler_p.h
@@ -679,6 +680,7 @@
 %%QT_INCDIR%%/QtPlatformHeaders/QEGLNativeContext
 %%QT_INCDIR%%/QtPlatformHeaders/QEglFSFunctions
 %%QT_INCDIR%%/QtPlatformHeaders/QGLXNativeContext
+%%QT_INCDIR%%/QtPlatformHeaders/QLinuxFbFunctions
 %%QT_INCDIR%%/QtPlatformHeaders/QPlatformHeaderHelper
 %%QT_INCDIR%%/QtPlatformHeaders/QWGLNativeContext
 %%QT_INCDIR%%/QtPlatformHeaders/QWaylandWindowFunctions
@@ -693,6 +695,7 @@
 %%QT_INCDIR%%/QtPlatformHeaders/qeglfsfunctions.h
 %%QT_INCDIR%%/QtPlatformHeaders/qeglnativecontext.h
 %%QT_INCDIR%%/QtPlatformHeaders/qglxnativecontext.h
+%%QT_INCDIR%%/QtPlatformHeaders/qlinuxfbfunctions.h
 %%QT_INCDIR%%/QtPlatformHeaders/qplatformheaderhelper.h
 %%QT_INCDIR%%/QtPlatformHeaders/qtplatformheadersversion.h
 %%QT_INCDIR%%/QtPlatformHeaders/qwaylandwindowfunctions.h

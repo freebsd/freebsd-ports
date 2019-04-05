@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/printing/cups_config_helper.py.orig	2017-01-26 00:49:17 UTC
+--- src/3rdparty/chromium/printing/cups_config_helper.py.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/printing/cups_config_helper.py
 @@ -65,7 +65,7 @@ def main():
    mode = sys.argv[1]

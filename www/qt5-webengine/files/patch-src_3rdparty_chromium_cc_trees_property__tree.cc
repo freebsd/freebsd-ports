@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/cc/trees/property_tree.cc.orig	2017-01-26 00:49:07 UTC
+--- src/3rdparty/chromium/cc/trees/property_tree.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/cc/trees/property_tree.cc
-@@ -1113,13 +1113,13 @@ gfx::ScrollOffset ScrollTree::MaxScrollO
+@@ -1295,13 +1295,13 @@ gfx::ScrollOffset ScrollTree::MaxScrollOffset(int scro
  
-   gfx::Size clip_layer_bounds = scroll_clip_layer_bounds(scroll_node->id);
+   gfx::Size clip_layer_bounds = container_bounds(scroll_node->id);
  
 -  gfx::ScrollOffset max_offset(
 +  gfx::ScrollOffset _max_offset(
@@ -17,4 +17,4 @@
 +  return _max_offset;
  }
  
- void ScrollTree::OnScrollOffsetAnimated(int layer_id,
+ void ScrollTree::OnScrollOffsetAnimated(ElementId id,

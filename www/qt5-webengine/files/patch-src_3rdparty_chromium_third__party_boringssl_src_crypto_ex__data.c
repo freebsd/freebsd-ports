@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/boringssl/src/crypto/ex_data.c.orig	2017-01-26 00:50:08 UTC
+--- src/3rdparty/chromium/third_party/boringssl/src/crypto/ex_data.c.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/third_party/boringssl/src/crypto/ex_data.c
-@@ -188,7 +188,9 @@ int CRYPTO_set_ex_data(CRYPTO_EX_DATA *a
+@@ -186,7 +186,9 @@ int CRYPTO_set_ex_data(CRYPTO_EX_DATA *ad, int index, 
      }
    }
  

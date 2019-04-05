@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/content/public/common/content_switches.cc.orig	2017-01-26 00:49:13 UTC
+--- src/3rdparty/chromium/content/public/common/content_switches.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/content/public/common/content_switches.cc
-@@ -992,7 +992,7 @@ const char kDisableVaapiAcceleratedVideo
-     "disable-vaapi-accelerated-video-encode";
+@@ -978,7 +978,7 @@ const char kDisableAudioSupportForDesktopShare[] =
+ const char kDisablePanelFitting[]           = "disable-panel-fitting";
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)

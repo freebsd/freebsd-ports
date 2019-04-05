@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/content/public/common/content_switches.h.orig	2017-01-26 00:49:13 UTC
+--- src/3rdparty/chromium/content/public/common/content_switches.h.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/content/public/common/content_switches.h
-@@ -293,7 +293,7 @@ CONTENT_EXPORT extern const char kDisabl
- CONTENT_EXPORT extern const char kDisableVaapiAcceleratedVideoEncode[];
+@@ -277,7 +277,7 @@ CONTENT_EXPORT extern const char kEnableOSKOverscroll[
+ CONTENT_EXPORT extern const char kDisablePanelFitting[];
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)

@@ -1181,7 +1181,6 @@
 %%QT_CMAKEDIR%%/Qt53DQuickScene2D/Qt53DQuickScene2DConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt53DRender/Qt53DRenderConfig.cmake
 %%QT_CMAKEDIR%%/Qt53DRender/Qt53DRenderConfigVersion.cmake
-%%QT_CMAKEDIR%%/Qt53DRender/Qt53DRender_AssimpSceneImportPlugin.cmake
 %%QT_CMAKEDIR%%/Qt53DRender/Qt53DRender_DefaultGeometryLoaderPlugin.cmake
 %%QT_CMAKEDIR%%/Qt53DRender/Qt53DRender_GLTFGeometryLoaderPlugin.cmake
 %%QT_CMAKEDIR%%/Qt53DRender/Qt53DRender_GLTFSceneExportPlugin.cmake
@@ -1290,8 +1289,6 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/geometryloaders/libgltfgeometryloader.so.debug
 %%QT_PLUGINDIR%%/renderplugins/libscene2d.so
 %%DEBUG%%%%QT_PLUGINDIR%%/renderplugins/libscene2d.so.debug
-%%QT_PLUGINDIR%%/sceneparsers/libassimpsceneimport.so
-%%DEBUG%%%%QT_PLUGINDIR%%/sceneparsers/libassimpsceneimport.so.debug
 %%QT_PLUGINDIR%%/sceneparsers/libgltfsceneexport.so
 %%DEBUG%%%%QT_PLUGINDIR%%/sceneparsers/libgltfsceneexport.so.debug
 %%QT_PLUGINDIR%%/sceneparsers/libgltfsceneimport.so

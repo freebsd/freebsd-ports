@@ -167,6 +167,7 @@
 %%QT_MKSPECDIR%%/features/benchmark.prf
 %%QT_MKSPECDIR%%/features/build_pass.prf
 %%QT_MKSPECDIR%%/features/cmake_functions.prf
+%%QT_MKSPECDIR%%/features/cmdline.prf
 %%QT_MKSPECDIR%%/features/configure.prf
 %%QT_MKSPECDIR%%/features/configure_base.prf
 %%QT_MKSPECDIR%%/features/create_cmake.prf
@@ -468,6 +469,8 @@
 %%QT_MKSPECDIR%%/winrt-arm-msvc2015/qplatformdefs.h
 %%QT_MKSPECDIR%%/winrt-arm-msvc2017/qmake.conf
 %%QT_MKSPECDIR%%/winrt-arm-msvc2017/qplatformdefs.h
+%%QT_MKSPECDIR%%/winrt-arm64-msvc2017/qmake.conf
+%%QT_MKSPECDIR%%/winrt-arm64-msvc2017/qplatformdefs.h
 %%QT_MKSPECDIR%%/winrt-x64-msvc2015/qmake.conf
 %%QT_MKSPECDIR%%/winrt-x64-msvc2015/qplatformdefs.h
 %%QT_MKSPECDIR%%/winrt-x64-msvc2017/qmake.conf

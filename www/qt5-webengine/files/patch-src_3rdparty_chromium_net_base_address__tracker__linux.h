@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/base/address_tracker_linux.h.orig	2017-01-26 00:49:16 UTC
+--- src/3rdparty/chromium/net/base/address_tracker_linux.h.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/net/base/address_tracker_linux.h
 @@ -6,10 +6,12 @@
  #define NET_BASE_ADDRESS_TRACKER_LINUX_H_
@@ -13,13 +13,13 @@
  #include <stddef.h>
  
  #include <map>
-@@ -34,8 +36,11 @@ namespace internal {
- class NET_EXPORT_PRIVATE AddressTrackerLinux :
-     public base::MessageLoopForIO::Watcher {
+@@ -34,8 +36,12 @@ namespace internal {
+ class NET_EXPORT_PRIVATE AddressTrackerLinux
+     : public base::MessagePumpForIO::FdWatcher {
   public:
 +#if !defined(__FreeBSD__)
    typedef std::map<IPAddress, struct ifaddrmsg> AddressMap;
--
+ 
 +#else
 +  typedef void* AddressMap;
 +#endif

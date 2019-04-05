@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/components/url_matcher/regex_set_matcher.cc.orig	2017-01-26 00:49:13 UTC
+--- src/3rdparty/chromium/components/url_matcher/regex_set_matcher.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/components/url_matcher/regex_set_matcher.cc
-@@ -10,8 +10,13 @@
- #include "base/memory/ptr_util.h"
+@@ -11,8 +11,13 @@
+ #include "base/logging.h"
  #include "base/strings/string_util.h"
  #include "components/url_matcher/substring_set_matcher.h"
 +#if defined(OS_BSD)

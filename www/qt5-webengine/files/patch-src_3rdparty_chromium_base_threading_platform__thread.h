@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/threading/platform_thread.h.orig	2017-01-26 00:49:07 UTC
+--- src/3rdparty/chromium/base/threading/platform_thread.h.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/base/threading/platform_thread.h
-@@ -205,7 +205,7 @@ class BASE_EXPORT PlatformThread {
+@@ -217,7 +217,7 @@ class BASE_EXPORT PlatformThread {
  
    static ThreadPriority GetCurrentThreadPriority();
  

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/views/views_delegate.cc.orig	2017-01-26 00:49:32 UTC
+--- src/3rdparty/chromium/ui/views/views_delegate.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/ui/views/views_delegate.cc
-@@ -71,7 +71,7 @@ HICON ViewsDelegate::GetDefaultWindowIco
+@@ -87,7 +87,7 @@ HICON ViewsDelegate::GetSmallWindowIcon() const {
  bool ViewsDelegate::IsWindowInMetro(gfx::NativeWindow window) const {
    return false;
  }

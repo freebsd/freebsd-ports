@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/extensions/common/stack_frame.cc.orig	2017-01-26 00:49:14 UTC
+--- src/3rdparty/chromium/extensions/common/stack_frame.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/extensions/common/stack_frame.cc
 @@ -7,7 +7,11 @@
  #include <string>
