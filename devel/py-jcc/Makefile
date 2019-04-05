@@ -20,7 +20,7 @@ BROKEN_powerpc64=	fails to link: /usr/bin/ld: cannot find -ljava
 NOT_FOR_ARCHS=		mips mips64
 NOT_FOR_ARCHS_REASON=	Java not available for this architecture
 
-USES=		python
+USES=		python:-3.6
 USE_PYTHON=	distutils autoplist
 PYDISTUTILS_PKGNAME=	JCC
 USE_JAVA=	yes
