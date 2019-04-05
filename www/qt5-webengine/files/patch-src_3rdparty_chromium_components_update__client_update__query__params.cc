@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/components/update_client/update_query_params.cc.orig	2017-01-26 00:49:13 UTC
+--- src/3rdparty/chromium/components/update_client/update_query_params.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/components/update_client/update_query_params.cc
-@@ -31,6 +31,8 @@ const char kOs[] =
-     "linux";
+@@ -38,6 +38,8 @@ const char kOs[] =
+     "fuchsia";
  #elif defined(OS_OPENBSD)
      "openbsd";
 +#elif defined(OS_FREEBSD)

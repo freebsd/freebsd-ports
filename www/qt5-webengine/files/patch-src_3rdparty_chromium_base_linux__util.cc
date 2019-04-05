@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/linux_util.cc.orig	2017-01-26 00:49:07 UTC
+--- src/3rdparty/chromium/base/linux_util.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/base/linux_util.cc
-@@ -110,12 +110,14 @@ char g_linux_distro[kDistroSize] =
+@@ -111,12 +111,14 @@ char g_linux_distro[kDistroSize] =
      "CrOS";
  #elif defined(OS_ANDROID)
      "Android";

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/cookie_config/cookie_store_util.cc.orig	2017-01-26 00:49:11 UTC
+--- src/3rdparty/chromium/components/cookie_config/cookie_store_util.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/components/cookie_config/cookie_store_util.cc
 @@ -11,7 +11,7 @@
  
@@ -9,7 +9,7 @@
  namespace {
  
  // Use the operating system's mechanisms to encrypt cookies before writing
-@@ -63,10 +63,10 @@ base::LazyInstance<CookieOSCryptoDelegat
+@@ -63,10 +63,10 @@ base::LazyInstance<CookieOSCryptoDelegate>::Destructor
  net::CookieCryptoDelegate* GetCookieCryptoDelegate() {
    return g_cookie_crypto_delegate.Pointer();
  }

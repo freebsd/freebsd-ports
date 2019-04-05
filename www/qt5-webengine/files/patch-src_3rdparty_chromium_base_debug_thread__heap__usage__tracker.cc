@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/debug/thread_heap_usage_tracker.cc.orig	2017-01-26 00:49:07 UTC
+--- src/3rdparty/chromium/base/debug/thread_heap_usage_tracker.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/base/debug/thread_heap_usage_tracker.cc
-@@ -14,11 +14,13 @@
+@@ -17,10 +17,12 @@
  #include "base/threading/thread_local_storage.h"
  #include "build/build_config.h"
  
@@ -9,8 +9,7 @@
  #include <malloc/malloc.h>
  #else
  #include <malloc.h>
- #endif
 +#endif
+ #endif
  
  namespace base {
- namespace debug {

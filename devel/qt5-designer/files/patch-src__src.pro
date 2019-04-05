@@ -1,7 +1,7 @@
 Only enter the directories we want to build, otherwise we might fail due to
 missing dependencies.
 
---- src/src.pro.orig	2019-02-08 21:28:33 UTC
+--- src/src.pro.orig	2019-03-18 19:49:07 UTC
 +++ src/src.pro
 @@ -1,54 +1,3 @@
  TEMPLATE = subdirs
@@ -43,7 +43,7 @@ missing dependencies.
 -
 -win32|winrt:SUBDIRS += windeployqt
 -winrt:SUBDIRS += winrtrunner
--qtHaveModule(gui):!android:!uikit:!qnx:!winrt: SUBDIRS += qtdiag
+-qtHaveModule(gui):!wasm:!android:!uikit:!qnx:!winrt: SUBDIRS += qtdiag
 -
 -qtNomakeTools( \
 -    distancefieldgenerator \

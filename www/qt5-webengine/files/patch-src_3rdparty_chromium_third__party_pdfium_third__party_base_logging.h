@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/pdfium/third_party/base/logging.h.orig	2017-01-26 00:50:15 UTC
+--- src/3rdparty/chromium/third_party/pdfium/third_party/base/logging.h.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/third_party/pdfium/third_party/base/logging.h
 @@ -10,7 +10,7 @@
  

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/common/chrome_paths.h.orig	2017-01-26 00:49:09 UTC
+--- src/3rdparty/chromium/chrome/common/chrome_paths.h.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/chrome/common/chrome_paths.h
-@@ -49,7 +49,7 @@ enum {
+@@ -51,7 +51,7 @@ enum {
                                  // to set policies for chrome. This directory
                                  // contains subdirectories.
  #endif
@@ -9,7 +9,7 @@
      defined(OS_MACOSX)
    DIR_USER_EXTERNAL_EXTENSIONS,  // Directory for per-user external extensions
                                   // on Chrome Mac and Chromium Linux.
-@@ -58,7 +58,7 @@ enum {
+@@ -60,7 +60,7 @@ enum {
                                   // create it.
  #endif
  
@@ -18,7 +18,7 @@
    DIR_STANDALONE_EXTERNAL_EXTENSIONS,  // Directory for 'per-extension'
                                         // definition manifest files that
                                         // describe extensions which are to be
-@@ -112,7 +112,7 @@ enum {
+@@ -111,7 +111,7 @@ enum {
    DIR_SUPERVISED_USER_INSTALLED_WHITELISTS,  // Directory where sanitized
                                               // supervised user whitelists are
                                               // installed.

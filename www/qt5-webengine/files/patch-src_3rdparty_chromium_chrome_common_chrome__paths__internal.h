@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/common/chrome_paths_internal.h.orig	2017-01-26 00:49:09 UTC
+--- src/3rdparty/chromium/chrome/common/chrome_paths_internal.h.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/chrome/common/chrome_paths_internal.h
-@@ -39,7 +39,7 @@ void GetUserCacheDirectory(const base::F
+@@ -45,7 +45,7 @@ void GetUserCacheDirectory(const base::FilePath& profi
  // Get the path to the user's documents directory.
  bool GetUserDocumentsDirectory(base::FilePath* result);
  

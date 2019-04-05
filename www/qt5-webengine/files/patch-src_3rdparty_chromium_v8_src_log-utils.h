@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/v8/src/log-utils.h.orig	2017-12-15 19:24:49.335089000 -0500
-+++ src/3rdparty/chromium/v8/src/log-utils.h	2017-12-15 19:25:08.702391000 -0500
-@@ -14,6 +14,8 @@
- #include "src/base/platform/mutex.h"
+--- src/3rdparty/chromium/v8/src/log-utils.h.orig	2018-11-13 18:25:11 UTC
++++ src/3rdparty/chromium/v8/src/log-utils.h
+@@ -15,6 +15,8 @@
  #include "src/flags.h"
+ #include "src/ostreams.h"
  
 +#include <stdarg.h>
 +

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/formats/mp2t/es_parser_mpeg1audio.cc.orig	2017-01-26 00:49:15 UTC
+--- src/3rdparty/chromium/media/formats/mp2t/es_parser_mpeg1audio.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/media/formats/mp2t/es_parser_mpeg1audio.cc
-@@ -109,11 +109,11 @@ bool EsParserMpeg1Audio::LookForMpeg1Aud
+@@ -108,11 +108,11 @@ bool EsParserMpeg1Audio::LookForMpeg1AudioFrame(
    const uint8_t* es;
    es_queue_->Peek(&es, &es_size);
  
@@ -15,7 +15,7 @@
      const uint8_t* cur_buf = &es[offset];
      if (cur_buf[0] != 0xff)
        continue;
-@@ -154,7 +154,7 @@ bool EsParserMpeg1Audio::LookForMpeg1Aud
+@@ -153,7 +153,7 @@ bool EsParserMpeg1Audio::LookForMpeg1AudioFrame(
      return true;
    }
  

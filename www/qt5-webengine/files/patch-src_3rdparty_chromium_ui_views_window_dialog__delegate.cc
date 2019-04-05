@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/views/window/dialog_delegate.cc.orig	2017-01-26 00:49:32 UTC
+--- src/3rdparty/chromium/ui/views/window/dialog_delegate.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/ui/views/window/dialog_delegate.cc
-@@ -56,7 +56,7 @@ Widget::InitParams DialogDelegate::GetDi
+@@ -65,7 +65,7 @@ Widget::InitParams DialogDelegate::GetDialogWidgetInit
    params.bounds = bounds;
    DialogDelegate* dialog = delegate->AsDialogDelegate();
  

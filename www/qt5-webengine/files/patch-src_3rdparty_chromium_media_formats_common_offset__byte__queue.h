@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/formats/common/offset_byte_queue.h.orig	2017-01-26 00:49:15 UTC
+--- src/3rdparty/chromium/media/formats/common/offset_byte_queue.h.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/media/formats/common/offset_byte_queue.h
 @@ -36,15 +36,15 @@ class MEDIA_EXPORT OffsetByteQueue {
    // a null |buf| and a |size| of zero.

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/views/bubble/bubble_dialog_delegate.cc.orig	2017-01-26 00:49:32 UTC
+--- src/3rdparty/chromium/ui/views/bubble/bubble_dialog_delegate.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/ui/views/bubble/bubble_dialog_delegate.cc
-@@ -73,7 +73,7 @@ Widget* BubbleDialogDelegateView::Create
+@@ -107,7 +107,7 @@ Widget* BubbleDialogDelegateView::CreateBubble(
    // the parent frame and let DWM handle compositing.  If not, then we don't
    // want to allow the bubble to extend the frame because it will be clipped.
    bubble_delegate->set_adjust_if_offscreen(ui::win::IsAeroGlassEnabled());

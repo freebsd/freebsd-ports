@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/public/common/child_process_host.h.orig	2017-01-26 00:49:13 UTC
+--- src/3rdparty/chromium/content/public/common/child_process_host.h.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/content/public/common/child_process_host.h
-@@ -53,7 +53,7 @@ class CONTENT_EXPORT ChildProcessHost : 
+@@ -45,7 +45,7 @@ class CONTENT_EXPORT ChildProcessHost : public IPC::Se
      // No special behavior requested.
      CHILD_NORMAL = 0,
  
@@ -9,7 +9,7 @@
      // Indicates that the child execed after forking may be execced from
      // /proc/self/exe rather than using the "real" app path. This prevents
      // autoupdate from confusing us if it changes the file out from under us.
-@@ -62,7 +62,7 @@ class CONTENT_EXPORT ChildProcessHost : 
+@@ -54,7 +54,7 @@ class CONTENT_EXPORT ChildProcessHost : public IPC::Se
      // gdb). In this case, you'd use GetChildPath to get the real executable
      // file name, and then prepend the GDB command to the command line.
      CHILD_ALLOW_SELF = 1 << 0,
