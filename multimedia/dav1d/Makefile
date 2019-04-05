@@ -11,10 +11,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
-BUILD_DEPENDS_aarch64=	as:devel/binutils
 BUILD_DEPENDS_amd64=	nasm:devel/nasm
-BUILD_DEPENDS_armv6=	${LOCALBASE}/bin/as:devel/binutils
-BUILD_DEPENDS_armv7=	${LOCALBASE}/bin/as:devel/binutils
 BUILD_DEPENDS_i386=	nasm:devel/nasm
 
 USES=		compiler:c11 meson
@@ -24,9 +21,6 @@ GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
 GL_COMMIT=	408d0486889f4f6d92f73abdeaef250659a10bc7
 CONFIGURE_ENV=	UNAME_m=${ARCH} # XXX cpu_family()
-CFLAGS_aarch64=	-no-integrated-as
-CFLAGS_armv6=	-no-integrated-as -B${LOCALBASE}/bin
-CFLAGS_armv7=	-no-integrated-as -B${LOCALBASE}/bin
 LDFLAGS_i386=	-Wl,-z,notext
 
 OPTIONS_DEFINE=	TEST
