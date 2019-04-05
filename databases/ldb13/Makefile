@@ -55,8 +55,6 @@ MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
 .include <bsd.port.options.mk>
 
-DEBUG_CONFIGURE_ON=	--verbose --enable-debug
-DEBUG_MAKE_ARGS=	--verbose
 DEBUG_FLAGS=		-g -ggdb3 -O0
 
 LDB_BINS=		bin/ldbedit \
