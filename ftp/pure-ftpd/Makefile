@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.47
-PORTREVISION=	1
+PORTVERSION=	1.0.49
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	https://github.com/jedisct1/${PORTNAME}/releases/download/${PORTVERSION}/ \
+MASTER_SITES=	https://github.com/jedisct1/pure-ftpd/releases/download/${PORTVERSION}/ \
 		https://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/
 
@@ -14,6 +13,23 @@ COMMENT=	Small, easy to set up, fast, and secure FTP server
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cpe perl5 tar:bzip2
+USE_PERL5=	run
+
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
+		--with-altlog --with-cookie --with-diraliases \
+		--with-everything --with-extauth --with-ftpwho \
+		--with-language=${LANGUAGE} --with-paranoidmsg --with-puredb \
+		--with-quotas --with-ratios
+GNU_CONFIGURE=	yes
+USE_RC_SUBR=	pure-ftpd
+
+SUB_FILES=	pkg-message
+
+CPE_VENDOR=	pureftpd
+
+LANGUAGE?=	english
 
 OPTIONS_DEFINE=	ANONDELETE ANONRENAME ANONRESUME DOCS EXAMPLES LARGEFILE LDAP \
 		MYSQL PAM PERUSERLIMITS PGSQL PRIVSEP SCRYPT SENDFILE \
@@ -35,31 +51,6 @@ THROTTLING_DESC=	Bandwidth throttling
 UPLOADSCRIPT_DESC=	Uploadscript daemon support
 UTF8_DESC=		UTF-8 filenames
 VIRTUALCHROOT_DESC=	Follow symlinks outside a chroot jail
-
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
-		--with-altlog --with-cookie --with-diraliases \
-		--with-everything --with-extauth --with-ftpwho \
-		--with-language=${LANGUAGE} --with-paranoidmsg --with-puredb \
-		--with-quotas --with-ratios
-GNU_CONFIGURE=	yes
-USE_PERL5=	run
-USE_RC_SUBR=	pure-ftpd
-USES=		cpe perl5 tar:bzip2
-
-CPE_VENDOR=	pureftpd
-
-PORTDOCS=	AUTHORS CONTACT COPYING HISTORY NEWS README \
-		README.Authentication-Modules README.Configuration-File \
-		README.LDAP README.MySQL README.PGSQL README.TLS \
-		README.Virtual-Users THANKS pure-ftpd.png pureftpd.schema
-PORTEXAMPLES=	*
-SUB_FILES=	pkg-message
-SUB_LIST=	PAM_DIR=${PAM_DIR} PAM_TARGET=${PAM_TARGET}
-
-LANGUAGE?=	english
-PAM_DIR?=	pam
-PAM_TARGET?=	pure-ftpd
-PAM_TEMPL?=	${FILESDIR}/pam.conf.5
 
 ANONDELETE_CPPFLAGS=	-DANON_CAN_DELETE
 ANONRENAME_CPPFLAGS=	-DANON_CAN_RENAME
@@ -98,10 +89,10 @@ pre-fetch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "LANGUAGE=lang (default: english)"
 	@${ECHO_MSG} "- Enable compilation of one language support"
-	@${ECHO_MSG} "  available lang: brazilian-portuguese, catalan, czech, danish, dutch,"
-	@${ECHO_MSG} "  english, french, french-funny, german, hungarian, italian, korean,"
-	@${ECHO_MSG} "  norwegian, polish, romanian, russian, simplified-chinese, slovak,"
-	@${ECHO_MSG} "  spanish, swedish, traditional-chinese, turkish"
+	@${ECHO_MSG} "  available lang: albanian, brazilian-portuguese, catalan, czech, danish, dutch,"
+	@${ECHO_MSG} "  english, french, german, hungarian, italian, korean, norwegian, polish,"
+	@${ECHO_MSG} "  romanian, russian, simplified-chinese, slovak, spanish, swedish,"
+	@${ECHO_MSG} "  traditional-chinese."
 	@${ECHO_MSG} ""
 
 post-install:
@@ -112,11 +103,10 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/pure-alwaysfail ${STAGEDIR}${PREFIX}/sbin/
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 post-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${PAM_DIR}/
-	${INSTALL_DATA} ${PAM_TEMPL} ${STAGEDIR}${EXAMPLESDIR}/${PAM_DIR}/${PAM_TARGET}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/pam.d/
+	${INSTALL_DATA} ${FILESDIR}/pam.conf.5 ${STAGEDIR}${EXAMPLESDIR}/pam.d/pure-ftpd
 
 .include <bsd.port.post.mk>
