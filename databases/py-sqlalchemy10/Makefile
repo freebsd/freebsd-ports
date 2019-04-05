@@ -28,7 +28,7 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}sqlalchemy0[6789]* ${PYTHON_PKGNAMEPRE
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
 OPTIONS_MULTI=		BACKEND
-OPTIONS_MULTI_BACKEND=	MSSQL MYSQL PGSQL SQLITE SYBASE
+OPTIONS_MULTI_BACKEND=	MSSQL PGSQL SQLITE SYBASE
 OPTIONS_DEFAULT=	SQLITE
 
 MSSQL_DESC=	MS SQL Server backend
@@ -43,14 +43,6 @@ PORTDOCS=		*
 PORTEXAMPLES=		*
 
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3000
-MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb@${PY_FLAVOR}
-#.else
-# At the moment databases/py-pymysql does not build with Python3
-# See https://github.com/petehunt/PyMySQL#python-3-0-support
-#MYSQL_RUN_DEPENDS+=	pymysql>=0.5:databases/py-pymysql@${PY_FLAVOR}
-.endif
 
 pre-build:
 .if ${PYTHON_REL} >= 3000
