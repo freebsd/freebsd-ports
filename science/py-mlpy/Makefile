@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgsl.so:math/gsl
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -I${PYTHON_SITELIBDIR}/numpy/core
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		python
+USES=		python:-3.6
 USE_PYTHON=	distutils autoplist cython
 
 .include <bsd.port.mk>
