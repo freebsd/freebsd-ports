@@ -108,5 +108,6 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/locale/fr/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/pl/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/ru/LC_MESSAGES/openscad.mo
+%%DATADIR%%/locale/uk/LC_MESSAGES/openscad.mo
 share/pixmaps/openscad.png
 @dir %%DATADIR%%/libraries/MCAD
