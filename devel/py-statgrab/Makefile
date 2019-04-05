@@ -14,7 +14,7 @@ COMMENT=	Set of Python bindings for libstatgrab
 
 LIB_DEPENDS=	libstatgrab.so:devel/libstatgrab
 
-USES=		pkgconfig python
+USES=		pkgconfig python:-3.6
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
