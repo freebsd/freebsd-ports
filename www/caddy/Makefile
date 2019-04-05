@@ -3,7 +3,7 @@
 
 PORTNAME=	caddy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.1
+DISTVERSION=	0.11.5
 CATEGORIES=	www
 
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de
