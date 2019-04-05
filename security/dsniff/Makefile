@@ -14,13 +14,10 @@ COMMENT=	Various sniffing utilities for penetration testing
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_SSL=	openssl111
-BROKEN_SSL_REASON_openssl111=	incomplete definition of type 'struct rsa_st'
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:net/libnids
 LIB_DEPENDS=	libnet.so:net/libnet
 
-USES=		gettext pkgconfig ssl
+USES=		gettext gnome pkgconfig
 USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes
@@ -37,9 +34,25 @@ X11_CONFIGURE_WITH=x
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	incomplete definition of type 'struct rsa_st'
-BROKEN_FreeBSD_13=	incomplete definition of type 'struct rsa_st'
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085
+USES+=		ssl
+.endif
+
+.if (${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085) || ${SSL_DEFAULT} == openssl111
+# Requires LibreSSL for old SSL interface
+BUILD_DEPENDS+=		${NONEXISTENT}:security/libressl:stage
+CPPFLAGS+=		-nostdinc -I/usr/include -I${WRKDIR}/libressl/include
+LDFLAGS+=		-L${WRKDIR}/libressl/lib
+CONFIGURE_ARGS+=	--with-openssl=${WRKDIR}/libressl
+
+# Don't use COPYTREE_SHARE here as it hard links files, and the original files
+# are owned by root, which creates problems of its own.
+pre-configure:
+	@cd `${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl`${PREFIX} \
+	    && ${FIND} -E . ! -name *.so\* | ${CPIO} -dump ${WRKDIR}/libressl >/dev/null 2>&1
+.else
+BROKEN_SSL=	openssl111
+BROKEN_SSL_REASON_openssl111=	incomplete definition of type 'struct rsa_st'
 .endif
 
 post-patch:
