@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		intel-backlight
-DISTVERSION=		20180303
+DISTVERSION=		20180328
 CATEGORIES=		graphics
 
 MAINTAINER=		jmd@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=		libdrm.so:graphics/libdrm \
 USE_GITHUB=		yes
 GH_ACCOUNT=		FreeBSDDesktop
 GH_PROJECT=		intel_backlight_fbsd
-GH_TAGNAME=		7339989
+GH_TAGNAME=		15fff57
 
 PORTEXAMPLES=		asmc_backlight.sh \
 			isl_backlight.sh
@@ -35,5 +35,4 @@ SUID_DESC=		Install intel_backlight with the setuid bit set
 do-install-EXAMPLES-on:
 	cd ${WRKSRC} &&	${COPYTREE_SHARE} "${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.options.mk>
 .include <bsd.port.mk>
