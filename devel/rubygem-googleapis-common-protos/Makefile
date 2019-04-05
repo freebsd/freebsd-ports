@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	googleapis-common-protos
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
