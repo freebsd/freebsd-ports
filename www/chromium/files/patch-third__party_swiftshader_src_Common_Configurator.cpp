@@ -1,6 +1,6 @@
---- third_party/swiftshader/src/Common/Configurator.cpp.orig	2018-07-19 21:20:56.462917000 +0200
-+++ third_party/swiftshader/src/Common/Configurator.cpp	2018-07-19 21:23:09.940292000 +0200
-@@ -42,6 +42,9 @@
+--- third_party/swiftshader/src/Common/Configurator.cpp.orig	2019-03-11 22:08:03 UTC
++++ third_party/swiftshader/src/Common/Configurator.cpp
+@@ -42,6 +42,9 @@ namespace sw
  
  	bool Configurator::readFile()
  	{

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_view.h.orig	2019-02-06 22:45:00.117437000 +0100
-+++ chrome/browser/ui/views/frame/browser_view.h	2019-02-06 22:46:12.076822000 +0100
-@@ -49,7 +49,7 @@
+--- chrome/browser/ui/views/frame/browser_view.h.orig	2019-03-11 22:00:54 UTC
++++ chrome/browser/ui/views/frame/browser_view.h
+@@ -50,7 +50,7 @@
  #include "chrome/browser/ui/views/intent_picker_bubble_view.h"
  #endif  // defined(OS_CHROMEOS)
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/views/quit_instruction_bubble_controller.h"
  #endif
  
-@@ -833,7 +833,7 @@
+@@ -850,7 +850,7 @@ class BrowserView : public BrowserWindow,
    };
    base::Optional<ResizeSession> interactive_resize_;
  

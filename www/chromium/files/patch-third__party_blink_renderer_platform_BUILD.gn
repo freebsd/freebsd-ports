@@ -1,0 +1,10 @@
+--- third_party/blink/renderer/platform/BUILD.gn.orig	2019-03-11 22:01:04 UTC
++++ third_party/blink/renderer/platform/BUILD.gn
+@@ -129,6 +129,7 @@ executable("character_data_generator") {
+     "//build/win:default_exe_manifest",
+     "//third_party/icu",
+   ]
++  libs = [ "cxxrt" ]
+ }
+ 
+ # This isn't strictly necessary since we can just add the deps to "platform",

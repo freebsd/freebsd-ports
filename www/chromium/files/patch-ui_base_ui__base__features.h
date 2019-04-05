@@ -1,8 +1,8 @@
---- ui/base/ui_base_features.h.orig	2018-12-28 17:00:21.672100000 +0100
-+++ ui/base/ui_base_features.h	2018-12-28 17:01:57.139278000 +0100
-@@ -42,9 +42,9 @@
- UI_BASE_EXPORT bool IsUsingWMPointerForTouch();
- #endif  // defined(OS_WIN)
+--- ui/base/ui_base_features.h.orig	2019-03-11 22:01:19 UTC
++++ ui/base/ui_base_features.h
+@@ -46,9 +46,9 @@ UI_BASE_EXPORT bool IsUsingWMPointerForTouch();
+ UI_BASE_EXPORT extern const base::Feature kEnableAutomaticUiAdjustmentsForTouch;
+ #endif  // defined(OS_WIN) || defined(OS_CHROMEOS)
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)

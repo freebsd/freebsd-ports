@@ -1,6 +1,6 @@
---- base/process/process_linux.cc.orig	2019-02-01 23:15:53.491332000 +0100
-+++ base/process/process_linux.cc	2019-02-01 23:16:56.937810000 +0100
-@@ -88,6 +88,7 @@
+--- base/process/process_linux.cc.orig	2019-03-11 22:00:51 UTC
++++ base/process/process_linux.cc
+@@ -88,6 +88,7 @@ Time Process::CreationTime() const {
    return Time(boot_time + start_offset);
  }
  
@@ -8,7 +8,7 @@
  // static
  bool Process::CanBackgroundProcesses() {
  #if defined(OS_CHROMEOS)
-@@ -139,6 +140,7 @@
+@@ -139,6 +140,7 @@ bool Process::SetProcessBackgrounded(bool background) 
    DPCHECK(result == 0);
    return result == 0;
  }

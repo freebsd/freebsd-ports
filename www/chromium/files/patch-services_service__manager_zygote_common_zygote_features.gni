@@ -1,8 +1,0 @@
---- services/service_manager/zygote/common/zygote_features.gni.orig	2018-08-04 19:05:25.641485000 +0200
-+++ services/service_manager/zygote/common/zygote_features.gni	2018-08-04 19:05:36.695208000 +0200
-@@ -2,4 +2,4 @@
- # Use of this source code is governed by a BSD-style license that can be
- # found in the LICENSE file.
- 
--use_zygote_handle = is_posix && !is_android && !is_mac
-+use_zygote_handle = is_posix && !is_android && !is_mac && !is_bsd

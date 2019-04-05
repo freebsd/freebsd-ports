@@ -1,5 +1,5 @@
---- third_party/crashpad/crashpad/util/misc/address_types.h.orig	2018-12-12 22:56:23.000000000 +0100
-+++ third_party/crashpad/crashpad/util/misc/address_types.h	2018-12-16 00:59:49.906370000 +0100
+--- third_party/crashpad/crashpad/util/misc/address_types.h.orig	2019-03-11 22:01:15 UTC
++++ third_party/crashpad/crashpad/util/misc/address_types.h
 @@ -25,7 +25,7 @@
  #include <mach/mach_types.h>
  #elif defined(OS_WIN)
@@ -9,7 +9,7 @@
  #include "util/linux/address_types.h"
  #elif defined(OS_FUCHSIA)
  #include <zircon/types.h>
-@@ -55,7 +55,7 @@
+@@ -55,7 +55,7 @@ using VMSize = mach_vm_size_t;
  using VMAddress = WinVMAddress;
  using VMSize = WinVMSize;
  

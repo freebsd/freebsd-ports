@@ -1,0 +1,11 @@
+--- content/shell/BUILD.gn.orig	2019-03-24 18:54:11.955928000 +0100
++++ content/shell/BUILD.gn	2019-03-24 18:54:21.602776000 +0100
+@@ -942,7 +942,7 @@
+   if (is_win) {
+     data_deps += [ "//build/win:copy_cdb_to_output" ]
+   }
+-  if (is_posix && !is_android) {
++  if (is_posix && !is_android && !is_bsd) {
+     data_deps += [
+       "//third_party/breakpad:dump_syms($host_toolchain)",
+       "//third_party/breakpad:minidump_stackwalk($host_toolchain)",

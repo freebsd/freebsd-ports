@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_view.cc.orig	2019-02-06 22:42:13.515085000 +0100
-+++ chrome/browser/ui/views/frame/browser_view.cc	2019-02-06 22:43:58.340147000 +0100
-@@ -1255,7 +1255,7 @@
+--- chrome/browser/ui/views/frame/browser_view.cc.orig	2019-03-11 22:00:54 UTC
++++ chrome/browser/ui/views/frame/browser_view.cc
+@@ -1269,7 +1269,7 @@ void BrowserView::RotatePaneFocus(bool forwards) {
  }
  
  void BrowserView::DestroyBrowser() {
@@ -9,7 +9,7 @@
    if (quit_instruction_bubble_controller_) {
      GetWidget()->GetNativeView()->RemovePreTargetHandler(
          quit_instruction_bubble_controller_.get());
-@@ -2089,7 +2089,7 @@
+@@ -2130,7 +2130,7 @@ views::View* BrowserView::CreateOverlayView() {
  }
  
  void BrowserView::OnWidgetDestroying(views::Widget* widget) {
@@ -18,7 +18,7 @@
    if (quit_instruction_bubble_controller_) {
      GetWidget()->GetNativeView()->RemovePreTargetHandler(
          quit_instruction_bubble_controller_.get());
-@@ -2435,7 +2435,7 @@
+@@ -2474,7 +2474,7 @@ void BrowserView::InitViews() {
    GetWidget()->SetNativeWindowProperty(Profile::kProfileKey,
                                         browser_->profile());
  

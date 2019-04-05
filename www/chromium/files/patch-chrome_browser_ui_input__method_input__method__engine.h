@@ -1,4 +1,4 @@
---- chrome/browser/ui/input_method/input_method_engine.h.orig	2017-06-05 19:03:03 UTC
+--- chrome/browser/ui/input_method/input_method_engine.h.orig	2019-03-11 22:00:54 UTC
 +++ chrome/browser/ui/input_method/input_method_engine.h
 @@ -27,7 +27,7 @@ class InputMethodEngine : public InputMethodEngineBase
  

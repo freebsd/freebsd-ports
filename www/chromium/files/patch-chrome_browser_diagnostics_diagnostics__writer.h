@@ -1,6 +1,6 @@
---- chrome/browser/diagnostics/diagnostics_writer.h.orig	2019-01-03 21:12:30.399407000 +0100
-+++ chrome/browser/diagnostics/diagnostics_writer.h	2019-01-03 21:12:49.905049000 +0100
-@@ -15,6 +15,8 @@
+--- chrome/browser/diagnostics/diagnostics_writer.h.orig	2019-03-11 22:00:53 UTC
++++ chrome/browser/diagnostics/diagnostics_writer.h
+@@ -15,6 +15,8 @@ namespace diagnostics {
  // Console base class used internally.
  class SimpleConsole;
  

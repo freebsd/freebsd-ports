@@ -1,6 +1,6 @@
---- cc/BUILD.gn.orig	2018-11-19 19:55:02.000000000 +0100
-+++ cc/BUILD.gn	2018-12-04 13:07:27.981323000 +0100
-@@ -551,7 +551,7 @@
+--- cc/BUILD.gn.orig	2019-03-11 22:00:52 UTC
++++ cc/BUILD.gn
+@@ -548,7 +548,7 @@ cc_test_static_library("test_support") {
      "//ui/gl:test_support",
      "//ui/latency",
    ]
@@ -9,7 +9,7 @@
      data_deps = [
        "//third_party/mesa_headers",
      ]
-@@ -751,9 +751,6 @@
+@@ -746,9 +746,6 @@ cc_test("cc_unittests") {
      "//ui/gfx/geometry",
      "//ui/gl",
      "//ui/gl:test_support",

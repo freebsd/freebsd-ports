@@ -1,6 +1,6 @@
---- chrome/browser/ui/toolbar/app_menu_model.cc.orig	2019-01-30 02:17:48.000000000 +0100
-+++ chrome/browser/ui/toolbar/app_menu_model.cc	2019-01-31 23:16:29.559467000 +0100
-@@ -664,7 +664,7 @@
+--- chrome/browser/ui/toolbar/app_menu_model.cc.orig	2019-03-11 22:00:54 UTC
++++ chrome/browser/ui/toolbar/app_menu_model.cc
+@@ -671,7 +671,7 @@ bool AppMenuModel::IsCommandIdVisible(int command_id) 
        return app_menu_icon_controller_->GetTypeAndSeverity().type ==
               AppMenuIconController::IconType::UPGRADE_NOTIFICATION;
      }

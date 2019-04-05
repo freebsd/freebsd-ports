@@ -1,7 +1,7 @@
---- device/usb/BUILD.gn.orig	2017-06-16 17:45:56.630063000 +0200
-+++ device/usb/BUILD.gn	2017-06-16 17:59:22.070474000 +0200
-@@ -97,10 +97,17 @@
-     libs = [ "setupapi.lib" ]
+--- device/usb/BUILD.gn.orig	2019-03-11 22:00:58 UTC
++++ device/usb/BUILD.gn
+@@ -112,10 +112,17 @@ static_library("usb") {
+     ]
    }
  
 -  if (is_android || is_chromeos || is_linux) {

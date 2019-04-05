@@ -1,6 +1,6 @@
---- v8/BUILD.gn.orig	2019-01-30 02:20:39.000000000 +0100
-+++ v8/BUILD.gn	2019-02-01 15:22:52.852309000 +0100
-@@ -3254,7 +3254,7 @@
+--- v8/BUILD.gn.orig	2019-03-11 22:08:08 UTC
++++ v8/BUILD.gn
+@@ -3160,7 +3160,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -9,7 +9,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -3274,6 +3274,12 @@
+@@ -3180,6 +3180,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]
@@ -22,7 +22,7 @@
    } else if (is_android) {
      if (current_toolchain == host_toolchain) {
        libs = [
-@@ -3478,6 +3484,7 @@
+@@ -3384,6 +3390,7 @@ if (v8_use_snapshot && current_toolchain == v8_snapsho
        "src/snapshot/embedded-file-writer.h",
        "src/snapshot/mksnapshot.cc",
      ]

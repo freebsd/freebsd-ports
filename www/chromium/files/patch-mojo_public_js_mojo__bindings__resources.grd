@@ -1,5 +1,5 @@
---- mojo/public/js/mojo_bindings_resources.grd.orig	2019-02-06 23:25:43.571727000 +0100
-+++ mojo/public/js/mojo_bindings_resources.grd	2019-02-06 23:25:53.104828000 +0100
+--- mojo/public/js/mojo_bindings_resources.grd.orig	2019-03-11 22:01:00 UTC
++++ mojo/public/js/mojo_bindings_resources.grd
 @@ -23,7 +23,7 @@
            use_base_dir="false"
            type="BINDATA"

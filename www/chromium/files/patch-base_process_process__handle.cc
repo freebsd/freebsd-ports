@@ -1,6 +1,6 @@
---- base/process/process_handle.cc.orig	2018-07-19 22:31:30.212555000 +0200
-+++ base/process/process_handle.cc	2018-07-19 22:32:27.185612000 +0200
-@@ -39,7 +39,7 @@
+--- base/process/process_handle.cc.orig	2019-03-11 22:00:51 UTC
++++ base/process/process_handle.cc
+@@ -39,7 +39,7 @@ uint32_t GetUniqueIdForProcess() {
    return g_unique_id;
  }
  

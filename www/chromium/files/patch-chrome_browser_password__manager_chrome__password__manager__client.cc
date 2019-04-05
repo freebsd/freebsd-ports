@@ -1,8 +1,8 @@
---- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2017-12-15 02:04:09.000000000 +0100
-+++ chrome/browser/password_manager/chrome_password_manager_client.cc	2017-12-24 01:39:48.763209000 +0100
-@@ -67,7 +67,11 @@
- #include "google_apis/gaia/gaia_urls.h"
- #include "net/base/url_util.h"
+--- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2019-03-11 22:00:53 UTC
++++ chrome/browser/password_manager/chrome_password_manager_client.cc
+@@ -80,7 +80,11 @@
+ #include "net/cert/cert_status_flags.h"
+ #include "services/identity/public/cpp/identity_manager.h"
  #include "services/metrics/public/cpp/ukm_recorder.h"
 +#if defined(OS_BSD)
 +#include <re2/re2.h>

@@ -1,6 +1,6 @@
---- third_party/swiftshader/src/OpenGL/libGLESv2/libGLESv2.hpp.orig	2018-12-03 21:20:24.000000000 +0100
-+++ third_party/swiftshader/src/OpenGL/libGLESv2/libGLESv2.hpp	2018-12-15 16:50:37.213988000 +0100
-@@ -286,7 +286,7 @@
+--- third_party/swiftshader/src/OpenGL/libGLESv2/libGLESv2.hpp.orig	2019-03-11 22:08:03 UTC
++++ third_party/swiftshader/src/OpenGL/libGLESv2/libGLESv2.hpp
+@@ -286,7 +286,7 @@ class LibGLESv2 (private)
  				#endif
  			#elif defined(__ANDROID__)
  				const char *libGLESv2_lib[] = {"libGLESv2_swiftshader.so", "libGLESv2_swiftshader.so"};

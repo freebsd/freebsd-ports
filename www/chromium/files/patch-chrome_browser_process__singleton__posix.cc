@@ -1,4 +1,4 @@
---- chrome/browser/process_singleton_posix.cc.orig	2017-06-05 19:03:02 UTC
+--- chrome/browser/process_singleton_posix.cc.orig	2019-03-11 22:00:53 UTC
 +++ chrome/browser/process_singleton_posix.cc
 @@ -93,11 +93,11 @@
  #include "net/base/network_interfaces.h"
@@ -14,19 +14,19 @@
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -322,7 +322,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
+@@ -325,7 +325,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
    if (g_disable_prompt)
-     return false;
+     return g_user_opted_unlock_in_use_profile;
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    base::string16 relaunch_button_text = l10n_util::GetStringUTF16(
        IDS_PROFILE_IN_USE_LINUX_RELAUNCH);
    return ShowProcessSingletonDialog(error, relaunch_button_text);
-@@ -866,7 +866,7 @@ ProcessSingleton::NotifyResult ProcessSingleton::Notif
-     // The other process is shutting down, it's safe to start a new process.
+@@ -904,7 +904,7 @@ ProcessSingleton::NotifyResult ProcessSingleton::Notif
+     SendRemoteProcessInteractionResultHistogram(REMOTE_PROCESS_SHUTTING_DOWN);
      return PROCESS_NONE;
-   } else if (strncmp(buf, kACKToken, arraysize(kACKToken) - 1) == 0) {
+   } else if (strncmp(buf, kACKToken, base::size(kACKToken) - 1) == 0) {
 -#if defined(TOOLKIT_VIEWS) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if defined(TOOLKIT_VIEWS) && (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
      // Likely NULL in unit tests.

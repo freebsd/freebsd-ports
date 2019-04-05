@@ -1,6 +1,6 @@
---- third_party/swiftshader/src/OpenGL/libEGL/libEGL.hpp.orig	2018-12-15 16:38:54.529408000 +0100
-+++ third_party/swiftshader/src/OpenGL/libEGL/libEGL.hpp	2018-12-15 16:39:22.143716000 +0100
-@@ -100,7 +100,7 @@
+--- third_party/swiftshader/src/OpenGL/libEGL/libEGL.hpp.orig	2019-03-11 22:08:03 UTC
++++ third_party/swiftshader/src/OpenGL/libEGL/libEGL.hpp
+@@ -100,7 +100,7 @@ class LibEGL (private)
  				#endif
  			#elif defined(__ANDROID__)
  				const char *libEGL_lib[] = {"libEGL_swiftshader.so", "libEGL_swiftshader.so"};

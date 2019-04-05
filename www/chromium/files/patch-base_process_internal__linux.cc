@@ -1,6 +1,6 @@
---- base/process/internal_linux.cc.orig	2017-08-10 00:00:17.842158000 +0200
-+++ base/process/internal_linux.cc	2017-08-10 00:02:37.838081000 +0200
-@@ -60,10 +60,13 @@
+--- base/process/internal_linux.cc.orig	2019-03-11 22:00:51 UTC
++++ base/process/internal_linux.cc
+@@ -60,10 +60,13 @@ bool ReadProcFile(const FilePath& file, std::string* b
    // Synchronously reading files in /proc is safe.
    ThreadRestrictions::ScopedAllowIO allow_io;
  

@@ -1,5 +1,5 @@
---- services/device/hid/hid_service.cc.orig	2018-02-24 16:25:18.000000000 +0100
-+++ services/device/hid/hid_service.cc	2018-03-04 05:38:54.425730000 +0100
+--- services/device/hid/hid_service.cc.orig	2019-03-11 22:01:01 UTC
++++ services/device/hid/hid_service.cc
 @@ -16,6 +16,8 @@
  
  #if defined(OS_LINUX) && defined(USE_UDEV)
@@ -9,7 +9,7 @@
  #elif defined(OS_MACOSX)
  #include "services/device/hid/hid_service_mac.h"
  #elif defined(OS_WIN)
-@@ -36,6 +38,8 @@
+@@ -36,6 +38,8 @@ constexpr base::TaskTraits HidService::kBlockingTaskTr
  std::unique_ptr<HidService> HidService::Create() {
  #if defined(OS_LINUX) && defined(USE_UDEV)
    return base::WrapUnique(new HidServiceLinux());

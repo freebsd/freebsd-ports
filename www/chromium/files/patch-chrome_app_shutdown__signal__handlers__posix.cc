@@ -1,6 +1,6 @@
---- chrome/app/shutdown_signal_handlers_posix.cc.orig	2018-12-12 22:56:02.000000000 +0100
-+++ chrome/app/shutdown_signal_handlers_posix.cc	2019-01-13 01:50:13.594124000 +0100
-@@ -183,12 +183,18 @@
+--- chrome/app/shutdown_signal_handlers_posix.cc.orig	2019-03-11 22:00:52 UTC
++++ chrome/app/shutdown_signal_handlers_posix.cc
+@@ -183,12 +183,18 @@ void InstallShutdownSignalHandlers(
    g_pipe_pid = getpid();
    g_shutdown_pipe_read_fd = pipefd[0];
    g_shutdown_pipe_write_fd = pipefd[1];

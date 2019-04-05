@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/first_run_dialog.cc.orig	2017-06-05 19:03:03 UTC
+--- chrome/browser/ui/views/first_run_dialog.cc.orig	2019-03-11 22:00:54 UTC
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -40,8 +40,10 @@ using views::GridLayout;
+@@ -37,8 +37,10 @@
  namespace {
  
  void InitCrashReporterIfEnabled(bool enabled) {
@@ -11,7 +11,7 @@
  }
  
  }  // namespace
-@@ -120,8 +122,10 @@ views::View* FirstRunDialog::CreateExtraView() {
+@@ -111,8 +113,10 @@ views::View* FirstRunDialog::CreateExtraView() {
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  

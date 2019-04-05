@@ -1,6 +1,6 @@
---- chrome/browser/policy/machine_level_user_cloud_policy_controller.cc.orig	2019-02-06 22:26:05.674129000 +0100
-+++ chrome/browser/policy/machine_level_user_cloud_policy_controller.cc	2019-02-06 22:26:54.109036000 +0100
-@@ -65,7 +65,7 @@
+--- chrome/browser/policy/machine_level_user_cloud_policy_controller.cc.orig	2019-03-11 22:00:53 UTC
++++ chrome/browser/policy/machine_level_user_cloud_policy_controller.cc
+@@ -65,7 +65,7 @@ bool IsMachineLevelUserCloudPolicyEnabled() {
  #endif
  }
  
@@ -9,7 +9,7 @@
  void CleanupUnusedPolicyDirectory() {
    std::string enrollment_token =
        BrowserDMTokenStorage::Get()->RetrieveEnrollmentToken();
-@@ -124,7 +124,7 @@
+@@ -124,7 +124,7 @@ MachineLevelUserCloudPolicyController::CreatePolicyMan
  void MachineLevelUserCloudPolicyController::Init(
      PrefService* local_state,
      scoped_refptr<network::SharedURLLoaderFactory> url_loader_factory) {

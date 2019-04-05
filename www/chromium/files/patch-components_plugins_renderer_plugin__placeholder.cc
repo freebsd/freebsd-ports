@@ -1,5 +1,5 @@
---- components/plugins/renderer/plugin_placeholder.cc.orig	2019-01-30 02:17:54.000000000 +0100
-+++ components/plugins/renderer/plugin_placeholder.cc	2019-02-01 00:04:53.895073000 +0100
+--- components/plugins/renderer/plugin_placeholder.cc.orig	2019-03-11 22:00:56 UTC
++++ components/plugins/renderer/plugin_placeholder.cc
 @@ -17,7 +17,11 @@
  #include "third_party/blink/public/web/web_plugin_container.h"
  #include "third_party/blink/public/web/web_script_source.h"

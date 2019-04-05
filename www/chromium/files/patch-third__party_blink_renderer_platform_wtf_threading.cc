@@ -1,5 +1,5 @@
---- third_party/blink/renderer/platform/wtf/threading.cc.orig	2018-12-15 18:39:29.942481000 +0100
-+++ third_party/blink/renderer/platform/wtf/threading.cc	2018-12-15 18:41:49.286222000 +0100
+--- third_party/blink/renderer/platform/wtf/threading.cc.orig	2019-03-11 22:01:04 UTC
++++ third_party/blink/renderer/platform/wtf/threading.cc
 @@ -17,12 +17,16 @@
  #error Blink does not support threading on your platform.
  #endif
@@ -18,7 +18,7 @@
  namespace WTF {
  
  // Current thread identity
-@@ -38,6 +42,8 @@
+@@ -38,6 +42,8 @@ ThreadIdentifier CurrentThreadSyscall() {
    return syscall(__NR_gettid);
  #elif defined(OS_ANDROID)
    return gettid();

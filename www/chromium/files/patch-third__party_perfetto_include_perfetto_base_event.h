@@ -1,5 +1,5 @@
---- third_party/perfetto/include/perfetto/base/event.h.orig	2018-12-16 01:39:09.000000000 +0100
-+++ third_party/perfetto/include/perfetto/base/event.h	2018-12-16 01:39:40.143826000 +0100
+--- third_party/perfetto/include/perfetto/base/event.h.orig	2019-03-11 22:08:02 UTC
++++ third_party/perfetto/include/perfetto/base/event.h
 @@ -20,8 +20,9 @@
  #include "perfetto/base/build_config.h"
  #include "perfetto/base/scoped_file.h"

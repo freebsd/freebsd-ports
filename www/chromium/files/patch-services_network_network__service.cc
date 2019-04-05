@@ -1,6 +1,6 @@
---- services/network/network_service.cc.orig	2018-12-28 15:43:28.594049000 +0100
-+++ services/network/network_service.cc	2018-12-28 15:46:00.776342000 +0100
-@@ -53,7 +53,7 @@
+--- services/network/network_service.cc.orig	2019-03-21 00:36:59 UTC
++++ services/network/network_service.cc
+@@ -61,7 +61,7 @@
  #include "third_party/boringssl/src/include/openssl/cpu.h"
  #endif
  
@@ -9,8 +9,8 @@
  #include "components/os_crypt/key_storage_config_linux.h"
  #endif
  
-@@ -449,7 +449,7 @@
-   crl_set_distributor_->OnNewCRLSet(crl_set);
+@@ -605,7 +605,7 @@ void NetworkService::OnCertDBChanged() {
+   net::CertDatabase::GetInstance()->NotifyObserversCertDBChanged();
  }
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
