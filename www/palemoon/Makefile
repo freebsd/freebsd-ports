@@ -10,6 +10,9 @@ CATEGORIES=	www ipv6
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Open Source Goanna-based web browser
 
+DEPRECATED=	Multiple vulnerabilities and crashes if built by Clang 8
+EXPIRATION_DATE=2019-08-31
+
 BUILD_DEPENDS=	nspr>=4.15:devel/nspr \
 		nss>=3.31.1:security/nss \
 		libevent>=2.0.22:devel/libevent \
