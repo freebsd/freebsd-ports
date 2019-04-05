@@ -21,7 +21,6 @@ GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
 GL_COMMIT=	408d0486889f4f6d92f73abdeaef250659a10bc7
 CONFIGURE_ENV=	UNAME_m=${ARCH} # XXX cpu_family()
-LDFLAGS_i386=	-Wl,-z,notext
 
 OPTIONS_DEFINE=	TEST
 
