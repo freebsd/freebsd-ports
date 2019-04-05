@@ -23,7 +23,14 @@ GSF_DESC?=		GSF support (enables signing of e.g. MSI files)
 GSF_CONFIGURE_WITH=	gsf
 GSF_LIB_DEPENDS=	libgsf-1.so:devel/libgsf
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	variable has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
+BROKEN_FreeBSD_13=	variable has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
+.endif
+
 post-patch:
 	${TOUCH} ${WRKSRC}/stamp-h1 ${WRKSRC}/config.h.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
