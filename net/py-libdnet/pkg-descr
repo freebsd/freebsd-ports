@@ -5,4 +5,4 @@ manipulation, network firewalling, network interface lookup and
 manipulation, and raw IP packet and Ethernet frame transmission. It is
 intended to complement the functionality provided by pcap(3).
 
-WWW: https://code.google.com/p/libdnet/
+WWW: https://github.com/5u623l20/libdnet/
