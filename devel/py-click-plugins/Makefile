@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	click-plugins
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=3.2:devel/py-click@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
