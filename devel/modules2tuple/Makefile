@@ -19,7 +19,7 @@ GH_TUPLE=	dmgk:${PORTNAME}:v${PORTVERSION}:DEFAULT
 PLIST_FILES=	bin/${PORTNAME}
 
 do-build:
-	cd ${WRKSRC} ; go build
+	cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} go build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
