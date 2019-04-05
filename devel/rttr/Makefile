@@ -1,0 +1,21 @@
+# $FreeBSD$
+
+PORTNAME=	rttr
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.6-16
+DISTVERSIONSUFFIX=	-gb3a131c
+CATEGORIES=	devel
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Run Time Type Reflection
+
+LICENSE=	MIT
+
+USES=		cmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	rttrorg
+
+CMAKE_OFF=	BUILD_DOCUMENTATION \
+		BUILD_UNIT_TESTS
+
+.include <bsd.port.mk>

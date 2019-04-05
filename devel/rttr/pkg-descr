@@ -1,0 +1,6 @@
+RTTR stands for Run Time Type Reflection. It describes the ability of a
+computer program to introspect and modify an object at runtime. It is also the
+name of the library itself, which is written in C++ and released as open source
+library. You can find more information on: www.rttr.org
+
+WWW: https://github.com/rttrorg/rttr
