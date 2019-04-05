@@ -1,10 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	cbindgen
-DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.2
 CATEGORIES=	devel
+MASTER_SITES=	CRATESIO
 PKGNAMEPREFIX=	rust-
+# XXX Teach USES=cargo to have proper default
+DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Generate C bindings from Rust code
@@ -14,8 +16,6 @@ LICENSE=	MPL20
 RUN_DEPENDS=	cargo:lang/${RUST_DEFAULT}
 
 USES=		cargo
-USE_GITHUB=	yes
-GH_ACCOUNT=	eqrion
 PLIST_FILES=	bin/cbindgen
 
 CARGO_CRATES=	ansi_term-0.11.0 \
