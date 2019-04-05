@@ -1,9 +1,12 @@
 # $FreeBSD$
 
-PORTNAME=	rust-bindgen
-DISTVERSIONPREFIX=	v
+PORTNAME=	bindgen
 DISTVERSION=	0.49.0
 CATEGORIES=	devel
+MASTER_SITES=	CRATESIO
+PKGNAMEPREFIX=	rust-
+# XXX Teach USES=cargo to have proper default
+DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Generate Rust bindings from C (and some C++) code
@@ -14,8 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 
 USES=		cargo
-USE_GITHUB=	yes
-GH_ACCOUNT=	rust-lang
 PLIST_FILES=	bin/bindgen
 
 CARGO_CRATES=	aho-corasick-0.6.8 \
