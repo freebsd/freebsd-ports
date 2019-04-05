@@ -93,20 +93,27 @@
  endef
   endif # x86
  
-@@ -4893,12 +4889,8 @@ TEMPLATE_VBOXR3EXE_LDFLAGS            += -fno-pic
+@@ -4889,10 +4885,18 @@ TEMPLATE_VBOXR3EXE_LIBPATH            += \
+ TEMPLATE_VBOXR3EXE_CFLAGS             += -fno-pic
+ TEMPLATE_VBOXR3EXE_CXXFLAGS           += -fno-pic
+ TEMPLATE_VBOXR3EXE_LDFLAGS            += -fno-pic
+- else if1of ($(KBUILD_TARGET), freebsd openbsd)
++ else ifeq ($(KBUILD_TARGET),freebsd)
  TEMPLATE_VBOXR3EXE_TOOL                = GXX3
  TEMPLATE_VBOXR3EXE_LIBS                = pthread
++TEMPLATE_VBOXR3EXE_LDFLAGS.freebsd.x86 = -Wl,-z,notext
  TEMPLATE_VBOXR3EXE_INCS               += \
--	/usr/include \
--	/usr/X11R6/include \
++	/usr/local/include
++TEMPLATE_VBOXR3EXE_LIBPATH            += \
++	/usr/local/lib
++ else ifeq ($(KBUILD_TARGET),openbsd)
++TEMPLATE_VBOXR3EXE_TOOL                = GXX3
++TEMPLATE_VBOXR3EXE_LIBS                = pthread
++TEMPLATE_VBOXR3EXE_INCS               += \
+ 	/usr/include \
+ 	/usr/X11R6/include \
  	/usr/local/include
- TEMPLATE_VBOXR3EXE_LIBPATH            += \
--	/usr/lib \
--	/usr/X11R6/lib \
- 	/usr/local/lib
-  else ifeq ($(KBUILD_TARGET),netbsd)
- TEMPLATE_VBOXR3EXE_TOOL                = GXX3
-@@ -5183,7 +5175,7 @@ ifeq ($(KBUILD_TARGET),win) # No CRT!
+@@ -5183,7 +5187,7 @@ ifeq ($(KBUILD_TARGET),win) # No CRT!
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.win.amd64 = $(TEMPLATE_VBOXR3EXE_LDFLAGS.win.amd64) /entry:suplibHardenedWindowsMain
   TEMPLATE_VBOXR3HARDENEDEXE_LIBS.x86       = $(NOT_SUCH_VARIABLE)
   TEMPLATE_VBOXR3HARDENEDEXE_LIBS.amd64     = $(NOT_SUCH_VARIABLE)
@@ -115,22 +122,31 @@
   # We want to keep the RPATH on Solaris to be able to find libgcc_1/libstdc++ within $(VBOX_WITH_RUNPATH)
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS       = $(filter-out '$(VBOX_GCC_RPATH_OPT)%,$(TEMPLATE_VBOXR3EXE_LDFLAGS))
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.linux = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBOXR3EXE_LDFLAGS.linux))
-@@ -5714,12 +5706,8 @@ TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTI
+@@ -5710,10 +5714,18 @@ TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTI
+  else ifeq ($(KBUILD_TARGET),haiku)
+ TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
+ TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME) network stdc++ supc++
+- else if1of ($(KBUILD_TARGET), freebsd openbsd)
++ else ifeq ($(KBUILD_TARGET),freebsd)
  TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
  TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME)
++TEMPLATE_VBOXMAINEXE_LDFLAGS.freebsd.x86 = -Wl,-z,notext
  TEMPLATE_VBOXMAINEXE_INCS               += \
--	/usr/include \
--	/usr/X11R6/include \
++	/usr/local/include
++TEMPLATE_VBOXMAINEXE_LIBPATH            += \
++	/usr/local/lib
++ else ifeq ($(KBUILD_TARGET),openbsd)
++TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
++TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME)
++TEMPLATE_VBOXMAINEXE_INCS               += \
+ 	/usr/include \
+ 	/usr/X11R6/include \
  	/usr/local/include
- TEMPLATE_VBOXMAINEXE_LIBPATH            += \
--	/usr/lib \
--	/usr/X11R6/lib \
- 	/usr/local/lib
-  else ifeq ($(KBUILD_TARGET),netbsd)
- TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
-@@ -6253,12 +6241,8 @@ ifdef VBOX_WITH_QTGUI
+@@ -6252,13 +6264,10 @@ ifdef VBOX_WITH_QTGUI
+    TEMPLATE_VBOXQTGUIEXE_LIBPATH += \
  	$(VBOX_LIBPATH_X11)
     ifeq ($(KBUILD_TARGET),freebsd)
++    TEMPLATE_VBOXQTGUIEXE_LDFLAGS.freebsd.x86 = -Wl,-z,notext
      TEMPLATE_VBOXQTGUIEXE_INCS += \
 -	/usr/include \
 -	/usr/X11R6/include \
@@ -141,7 +157,7 @@
  	/usr/local/lib
     endif
     ifeq ($(KBUILD_TARGET),solaris)
-@@ -6481,12 +6465,8 @@ TEMPLATE_VBoxBldProg_LIBPATH            += \
+@@ -6481,12 +6490,8 @@ TEMPLATE_VBoxBldProg_LIBPATH            += \
  TEMPLATE_VBoxBldProg_TOOL                = GXX3
  TEMPLATE_VBoxBldProg_LIBS                = pthread
  TEMPLATE_VBoxBldProg_INCS               += \
@@ -154,7 +170,7 @@
  	/usr/local/lib
   else ifeq ($(KBUILD_HOST),netbsd)
  TEMPLATE_VBoxBldProg_TOOL                = GXX3
-@@ -6887,6 +6867,7 @@ TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.darwin  += \
+@@ -6887,6 +6892,7 @@ TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.darwin  += \
  	-current_version $(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD) \
  	-compatibility_version $(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD)
  TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.linux    = -Wl,--no-as-needed
