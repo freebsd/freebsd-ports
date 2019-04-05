@@ -1,6 +1,6 @@
---- services/device/time_zone_monitor/time_zone_monitor.cc.orig	2018-12-12 22:56:10.000000000 +0100
-+++ services/device/time_zone_monitor/time_zone_monitor.cc	2019-01-10 00:38:41.654967000 +0100
-@@ -29,7 +29,7 @@
+--- services/device/time_zone_monitor/time_zone_monitor.cc.orig	2019-03-11 22:01:01 UTC
++++ services/device/time_zone_monitor/time_zone_monitor.cc
+@@ -29,7 +29,7 @@ void TimeZoneMonitor::Bind(device::mojom::TimeZoneMoni
  
  void TimeZoneMonitor::NotifyClients() {
    DCHECK(thread_checker_.CalledOnValidThread());
@@ -9,7 +9,7 @@
    // On CrOS (and Chromecast), ICU's default tz is already set to a new zone. No
    // need to redetect it with detectHostTimeZone().
    std::unique_ptr<icu::TimeZone> new_zone(icu::TimeZone::createDefault());
-@@ -41,7 +41,7 @@
+@@ -41,7 +41,7 @@ void TimeZoneMonitor::NotifyClients() {
  #else
    std::unique_ptr<icu::TimeZone> new_zone(icu::TimeZone::detectHostTimeZone());
  #endif

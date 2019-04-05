@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_view_prefs.cc.orig	2018-12-30 03:14:18.095305000 +0100
-+++ chrome/browser/ui/browser_view_prefs.cc	2018-12-30 03:14:37.732345000 +0100
-@@ -34,7 +34,7 @@
+--- chrome/browser/ui/browser_view_prefs.cc.orig	2019-03-11 22:00:54 UTC
++++ chrome/browser/ui/browser_view_prefs.cc
+@@ -34,7 +34,7 @@ void RegisterBrowserViewLocalPrefs(PrefRegistrySimple*
  
  void RegisterBrowserViewProfilePrefs(
      user_prefs::PrefRegistrySyncable* registry) {
@@ -9,7 +9,7 @@
    bool custom_frame_pref_default = false;
  #if defined(USE_X11)
    custom_frame_pref_default = ui::GetCustomFramePrefDefault();
-@@ -45,7 +45,7 @@
+@@ -45,7 +45,7 @@ void RegisterBrowserViewProfilePrefs(
  #endif
    registry->RegisterBooleanPref(prefs::kUseCustomChromeFrame,
                                  custom_frame_pref_default);

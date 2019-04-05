@@ -1,7 +1,7 @@
---- headless/lib/browser/headless_content_browser_client.cc.orig	2017-06-05 19:03:08 UTC
+--- headless/lib/browser/headless_content_browser_client.cc.orig	2019-03-11 22:00:59 UTC
 +++ headless/lib/browser/headless_content_browser_client.cc
-@@ -172,7 +172,7 @@ void HeadlessContentBrowserClient::GetQuotaSettings(
-       callback);
+@@ -187,7 +187,7 @@ HeadlessContentBrowserClient::GetGeneratedCodeCacheSet
+   return content::GeneratedCodeCacheSettings(true, 0, context->GetPath());
  }
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
@@ -9,8 +9,8 @@
  void HeadlessContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -183,7 +183,7 @@ void HeadlessContentBrowserClient::GetAdditionalMapped
-     mappings->Share(kCrashDumpSignal, crash_signal_fd);
+@@ -198,7 +198,7 @@ void HeadlessContentBrowserClient::GetAdditionalMapped
+     mappings->Share(service_manager::kCrashDumpSignal, crash_signal_fd);
  #endif  // defined(HEADLESS_USE_BREAKPAD)
  }
 -#endif  // defined(OS_POSIX) && !defined(OS_MACOSX)

@@ -1,6 +1,6 @@
---- components/crash/content/app/crashpad.cc.orig	2019-01-30 02:17:53.000000000 +0100
-+++ components/crash/content/app/crashpad.cc	2019-01-31 23:31:14.742328000 +0100
-@@ -102,6 +102,12 @@
+--- components/crash/content/app/crashpad.cc.orig	2019-03-11 22:00:56 UTC
++++ components/crash/content/app/crashpad.cc
+@@ -102,6 +102,12 @@ void InitializeCrashpadImpl(bool initial_client,
                              const base::FilePath& exe_path,
                              const std::vector<std::string>& initial_arguments,
                              bool embedded_handler) {
@@ -13,7 +13,7 @@
    static bool initialized = false;
    DCHECK(!initialized);
    initialized = true;
-@@ -121,7 +127,7 @@
+@@ -122,7 +128,7 @@ void InitializeCrashpadImpl(bool initial_client,
      DCHECK(browser_process || process_type == "Chrome Installer" ||
             process_type == "notification-helper" ||
             process_type == "GCPW Installer" || process_type == "GCPW DLL");
@@ -22,7 +22,7 @@
      DCHECK(browser_process);
  #else
  #error Port.
-@@ -186,7 +192,7 @@
+@@ -187,7 +193,7 @@ void InitializeCrashpadImpl(bool initial_client,
    // other "main, first process" to initialize things. There is no "relauncher"
    // on Windows, so this is synonymous with initial_client.
    const bool should_initialize_database_and_set_upload_policy = initial_client;
@@ -31,13 +31,13 @@
    const bool should_initialize_database_and_set_upload_policy = browser_process;
  #endif
    if (should_initialize_database_and_set_upload_policy) {
-@@ -265,7 +271,9 @@
- }
+@@ -267,7 +273,9 @@ bool GetUploadsEnabled() {
  
+ #if !defined(OS_ANDROID)
  void DumpWithoutCrashing() {
 +#if !defined(OS_BSD)
    CRASHPAD_SIMULATE_CRASH();
 +#endif
  }
+ #endif
  
- void GetReports(std::vector<Report>* reports) {

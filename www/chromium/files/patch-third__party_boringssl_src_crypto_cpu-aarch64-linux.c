@@ -1,5 +1,5 @@
---- third_party/boringssl/src/crypto/cpu-aarch64-linux.c.orig	2018-08-08 21:13:09.000000000 +0200
-+++ third_party/boringssl/src/crypto/cpu-aarch64-linux.c	2018-12-02 10:28:41.672362000 +0100
+--- third_party/boringssl/src/crypto/cpu-aarch64-linux.c.orig	2019-03-11 22:07:58 UTC
++++ third_party/boringssl/src/crypto/cpu-aarch64-linux.c
 @@ -14,49 +14,7 @@
  
  #include <openssl/cpu.h>

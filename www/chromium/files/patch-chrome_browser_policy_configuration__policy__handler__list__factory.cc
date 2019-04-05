@@ -1,6 +1,6 @@
---- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2019-02-06 22:23:27.096383000 +0100
-+++ chrome/browser/policy/configuration_policy_handler_list_factory.cc	2019-02-07 00:04:06.202061000 +0100
-@@ -104,7 +104,7 @@
+--- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2019-03-11 22:00:53 UTC
++++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
+@@ -107,7 +107,7 @@
  #include "chrome/browser/policy/browser_signin_policy_handler.h"
  #endif
  
@@ -9,7 +9,7 @@
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -928,7 +928,7 @@
+@@ -939,7 +939,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      prefs::kEnterpriseHardwarePlatformAPIEnabled,
      base::Value::Type::BOOLEAN },
  

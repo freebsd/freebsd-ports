@@ -1,4 +1,4 @@
---- components/cookie_config/cookie_store_util.cc.orig	2017-06-05 19:03:05 UTC
+--- components/cookie_config/cookie_store_util.cc.orig	2019-03-11 22:00:56 UTC
 +++ components/cookie_config/cookie_store_util.cc
 @@ -11,7 +11,7 @@
  

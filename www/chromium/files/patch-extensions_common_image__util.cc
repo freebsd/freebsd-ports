@@ -1,5 +1,5 @@
---- extensions/common/image_util.cc.orig	2019-01-30 02:18:01.000000000 +0100
-+++ extensions/common/image_util.cc	2019-02-01 09:15:02.563494000 +0100
+--- extensions/common/image_util.cc.orig	2019-03-11 22:00:58 UTC
++++ extensions/common/image_util.cc
 @@ -18,7 +18,11 @@
  #include "base/strings/stringprintf.h"
  #include "base/time/time.h"

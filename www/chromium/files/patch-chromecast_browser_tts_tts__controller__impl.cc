@@ -1,6 +1,6 @@
---- chromecast/browser/tts/tts_controller_impl.cc.orig	2019-01-31 23:07:11.992155000 +0100
-+++ chromecast/browser/tts/tts_controller_impl.cc	2019-01-31 23:08:40.991798000 +0100
-@@ -390,7 +390,11 @@
+--- chromecast/browser/tts/tts_controller_impl.cc.orig	2019-03-11 22:00:56 UTC
++++ chromecast/browser/tts/tts_controller_impl.cc
+@@ -390,7 +390,11 @@ int TtsControllerImpl::QueueSize() {
  }
  
  TtsPlatformImpl* TtsControllerImpl::GetPlatformImpl() {

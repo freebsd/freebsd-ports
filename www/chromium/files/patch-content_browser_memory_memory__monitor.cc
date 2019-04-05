@@ -1,6 +1,6 @@
---- content/browser/memory/memory_monitor.cc.orig	2018-01-04 21:05:50.000000000 +0100
-+++ content/browser/memory/memory_monitor.cc	2018-01-27 19:06:05.251190000 +0100
-@@ -22,7 +22,7 @@
+--- content/browser/memory/memory_monitor.cc.orig	2019-03-11 22:00:57 UTC
++++ content/browser/memory/memory_monitor.cc
+@@ -22,7 +22,7 @@ void MemoryMonitorDelegate::GetSystemMemoryInfo(
    base::GetSystemMemoryInfo(mem_info);
  }
  

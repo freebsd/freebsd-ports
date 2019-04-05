@@ -1,6 +1,6 @@
---- base/native_library_unittest.cc.orig	2018-08-23 19:08:51.430697000 +0200
-+++ base/native_library_unittest.cc	2018-08-23 19:09:42.937027000 +0200
-@@ -120,7 +120,7 @@
+--- base/native_library_unittest.cc.orig	2019-03-11 22:00:51 UTC
++++ base/native_library_unittest.cc
+@@ -120,7 +120,7 @@ TEST(NativeLibraryTest, LoadLibrary) {
  // Android dlopen() requires further investigation, as it might vary across
  // versions with respect to symbol resolution scope.
  // TSan and MSan error out on RTLD_DEEPBIND, https://crbug.com/705255

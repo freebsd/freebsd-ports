@@ -1,5 +1,5 @@
---- headless/lib/headless_macros.h.orig	2018-12-03 21:16:59.000000000 +0100
-+++ headless/lib/headless_macros.h	2018-12-13 23:26:22.473345000 +0100
+--- headless/lib/headless_macros.h.orig	2019-03-11 22:00:59 UTC
++++ headless/lib/headless_macros.h
 @@ -7,8 +7,8 @@
  
  #include "build/build_config.h"

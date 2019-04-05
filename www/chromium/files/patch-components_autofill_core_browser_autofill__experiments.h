@@ -1,6 +1,6 @@
---- components/autofill/core/browser/autofill_experiments.h.orig	2018-12-28 16:46:01.899706000 +0100
-+++ components/autofill/core/browser/autofill_experiments.h	2018-12-28 16:46:45.873415000 +0100
-@@ -23,20 +23,20 @@
+--- components/autofill/core/browser/autofill_experiments.h.orig	2019-03-11 22:00:56 UTC
++++ components/autofill/core/browser/autofill_experiments.h
+@@ -23,13 +23,13 @@ class SyncService;
  namespace autofill {
  
  // Parameterized Features (grouped with parameter name and options)
@@ -14,39 +14,18 @@
 -#endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 +#endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
  
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
- extern const base::Feature kAutofillPrimaryInfoStyleExperiment;
- extern const char kAutofillForcedFontWeightParameterName[];
- extern const char kAutofillForcedFontWeightParameterMedium[];
- extern const char kAutofillForcedFontWeightParameterBold[];
--#endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
-+#endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
- 
  // Returns true if uploading credit cards to Wallet servers is enabled. This
  // requires the appropriate flags and user settings to be true and the user to
-@@ -66,7 +66,7 @@
+@@ -59,7 +59,7 @@ bool OfferStoreUnmaskedCards(bool is_off_the_record);
  // Returns whether the account of the active signed-in user should be used.
  bool ShouldUseActiveSignedInAccount();
- 
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
- enum class ForcedFontWeight {
-   kDefault,  // No change to the font weight.
-   kMedium,
-@@ -78,9 +78,9 @@
- // kAutofillPrimaryInfoStyleExperiment is disabled or if the corresponding
- // feature param is invalid.
- ForcedFontWeight GetForcedFontWeight();
--#endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
-+#endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
  enum class ForcedPopupLayoutState {
    kDefault,       // No popup layout forced by experiment.
    kLeadingIcon,   // Experiment forces leading (left in LTR) icon layout.
-@@ -94,7 +94,7 @@
+@@ -73,7 +73,7 @@ enum class ForcedPopupLayoutState {
  // if the experiment param matches kAutofillDropdownLayoutParameterLeadingIcon
  // or kAutofillDropdownLayoutParameterTrailingIcon, respectively.
  ForcedPopupLayoutState GetForcedPopupLayoutState();

@@ -1,6 +1,6 @@
---- chrome/app/generated_resources.grd.orig	2018-11-19 19:55:02.000000000 +0100
-+++ chrome/app/generated_resources.grd	2018-12-04 14:09:27.327735000 +0100
-@@ -5265,7 +5265,7 @@
+--- chrome/app/generated_resources.grd.orig	2019-03-11 22:00:52 UTC
++++ chrome/app/generated_resources.grd
+@@ -5339,7 +5339,7 @@ the Bookmarks menu.">
          </message>
        </if>
  
@@ -9,7 +9,7 @@
          <message name="IDS_QUIT_ACCELERATOR_TUTORIAL" desc="Instructions for how the user should quit using keyboard shortcuts.">
            Press |<ph name="ACCELERATOR1">$1<ex>Ctrl</ex></ph>|+|<ph name="ACCELERATOR2">$2<ex>Shift</ex></ph>| followed by |<ph name="ACCELERATOR3">$3<ex>Q</ex></ph>| to exit
          </message>
-@@ -6117,7 +6117,7 @@
+@@ -6160,7 +6160,7 @@ the Bookmarks menu.">
          Google Pay
        </message>
  
@@ -18,7 +18,7 @@
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -6942,7 +6942,7 @@
+@@ -6946,7 +6946,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  

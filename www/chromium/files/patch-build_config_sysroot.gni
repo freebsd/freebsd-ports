@@ -1,6 +1,6 @@
---- build/config/sysroot.gni.orig	2018-12-12 22:56:02.000000000 +0100
-+++ build/config/sysroot.gni	2018-12-15 22:15:59.771804000 +0100
-@@ -15,9 +15,10 @@
+--- build/config/sysroot.gni.orig	2019-03-11 22:00:52 UTC
++++ build/config/sysroot.gni
+@@ -15,9 +15,10 @@ declare_args() {
    # The absolute path to directory containing linux sysroot images
    target_sysroot_dir = "//build/linux"
  

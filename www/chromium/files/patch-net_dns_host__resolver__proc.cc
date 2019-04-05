@@ -1,8 +1,8 @@
---- net/dns/host_resolver_proc.cc.orig	2017-09-05 21:05:22.000000000 +0200
-+++ net/dns/host_resolver_proc.cc	2017-09-06 20:49:21.939725000 +0200
-@@ -190,7 +190,7 @@
-   // Restrict result set to only this socket type to avoid duplicates.
-   hints.ai_socktype = SOCK_STREAM;
+--- net/dns/host_resolver_proc.cc.orig	2019-03-11 22:01:01 UTC
++++ net/dns/host_resolver_proc.cc
+@@ -195,7 +195,7 @@ int SystemHostResolverCall(const std::string& host,
+   // current process during that time.
+   base::ScopedBlockingCall scoped_blocking_call(base::BlockingType::WILL_BLOCK);
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD) && \
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD) && \

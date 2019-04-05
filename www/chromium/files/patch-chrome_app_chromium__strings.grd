@@ -1,6 +1,6 @@
---- chrome/app/chromium_strings.grd.orig	2019-02-06 23:06:37.000000000 +0100
-+++ chrome/app/chromium_strings.grd	2019-02-12 16:28:22.555513000 +0100
-@@ -797,7 +797,7 @@
+--- chrome/app/chromium_strings.grd.orig	2019-03-11 22:00:52 UTC
++++ chrome/app/chromium_strings.grd
+@@ -809,7 +809,7 @@ Signing in anyway will merge Chromium information like
        </message>
  
        <!-- ProcessSingleton -->
@@ -9,7 +9,7 @@
          <message name="IDS_PROFILE_IN_USE_POSIX" desc="Message shown when the browser cannot start because the profile is in use on a different host.">
            The profile appears to be in use by another Chromium process (<ph name="PROCESS_ID">$1<ex>12345</ex></ph>) on another computer (<ph name="HOST_NAME">$2<ex>example.com</ex></ph>). Chromium has locked the profile so that it doesn't get corrupted. If you are sure no other processes are using this profile, you can unlock the profile and relaunch Chromium.
          </message>
-@@ -1042,7 +1042,7 @@
+@@ -1057,7 +1057,7 @@ Please check your email at <ph name="ACCOUNT_EMAIL">$2
        </message>
  
        <!-- Plugin Placeholders -->

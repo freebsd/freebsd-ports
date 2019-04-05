@@ -1,4 +1,4 @@
---- services/service_manager/embedder/set_process_title_linux.h.orig	2017-06-05 19:03:11 UTC
+--- services/service_manager/embedder/set_process_title_linux.h.orig	2019-03-11 22:01:02 UTC
 +++ services/service_manager/embedder/set_process_title_linux.h
 @@ -5,6 +5,9 @@
  #ifndef SERVICES_SERVICE_MANAGER_EMBEDDER_SET_PROCESS_TITLE_LINUX_H_

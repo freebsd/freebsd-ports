@@ -1,6 +1,6 @@
---- components/content_settings/core/browser/website_settings_registry.cc.orig	2017-09-05 21:05:17.000000000 +0200
-+++ components/content_settings/core/browser/website_settings_registry.cc	2017-09-10 01:16:20.683275000 +0200
-@@ -70,7 +70,7 @@
+--- components/content_settings/core/browser/website_settings_registry.cc.orig	2019-03-11 22:00:56 UTC
++++ components/content_settings/core/browser/website_settings_registry.cc
+@@ -66,7 +66,7 @@ const WebsiteSettingsInfo* WebsiteSettingsRegistry::Re
  #if defined(OS_WIN)
    if (!(platform & PLATFORM_WINDOWS))
      return nullptr;

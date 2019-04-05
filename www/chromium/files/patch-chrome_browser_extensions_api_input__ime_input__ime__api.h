@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/input_ime/input_ime_api.h.orig	2017-04-19 19:06:29 UTC
+--- chrome/browser/extensions/api/input_ime/input_ime_api.h.orig	2019-03-11 22:00:53 UTC
 +++ chrome/browser/extensions/api/input_ime/input_ime_api.h
-@@ -28,7 +28,7 @@
+@@ -31,7 +31,7 @@
  
  #if defined(OS_CHROMEOS)
  #include "chrome/browser/extensions/api/input_ime/input_ime_api_chromeos.h"
