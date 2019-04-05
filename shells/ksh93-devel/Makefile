@@ -12,8 +12,8 @@ LICENSE=	EPL
 
 USES=		compiler:c11 meson ninja
 
-HASH=		15ed422
-AST_COMMIT_DATE=	2019.03.25
+HASH=		8cc0aff
+AST_COMMIT_DATE=	2019.04.04
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	att
