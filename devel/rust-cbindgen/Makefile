@@ -16,7 +16,7 @@ LICENSE=	MPL20
 RUN_DEPENDS=	cargo:lang/${RUST_DEFAULT}
 
 USES=		cargo
-PLIST_FILES=	bin/cbindgen
+PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	ansi_term-0.11.0 \
 		atty-0.2.11 \
