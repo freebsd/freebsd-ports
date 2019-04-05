@@ -18,8 +18,8 @@ EXPIRATION_DATE=	2019-12-31
 
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
-USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl \
-		gettext-runtime python:2.7 shebangfix
+USES=		autoreconf:build compiler:c11 gmake libtool pathfix pkgconfig \
+		ssl gettext-runtime python:2.7 shebangfix
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid

@@ -18,8 +18,8 @@ BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl \
-		gettext-runtime python shebangfix
+USES=		autoreconf:build compiler:c11 gmake libtool pathfix pkgconfig \
+		ssl gettext-runtime python shebangfix
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
