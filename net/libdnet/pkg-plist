@@ -17,6 +17,7 @@ include/dnet/ip6.h
 include/dnet/os.h
 include/dnet/rand.h
 include/dnet/route.h
+include/dnet/sctp.h
 include/dnet/tcp.h
 include/dnet/tun.h
 include/dnet/udp.h
