@@ -1,0 +1,11 @@
+--- kadu-core/CMakeLists.txt.orig	2019-03-30 14:44:31 UTC
++++ kadu-core/CMakeLists.txt
+@@ -111,7 +111,7 @@ include_directories (${LibArchive_INCLUDE_DIRS})
+ list (APPEND ADDITIONAL_LIBKADU_LIBRARIES ${LibArchive_LIBRARIES})
+ 
+ if (UNIX AND NOT APPLE)
+-	find_package (X11 REQUIRED COMPONENTS X11 Xutil Xfixes)
++	find_package (X11 REQUIRED COMPONENTS Xutil Xfixes)
+ 	if (X11_FOUND AND X11_Xutil_FOUND AND X11_Xfixes_FOUND)
+ 		message (STATUS "Found required X11 libraries: ${X11_X11_LIB};${X11_Xfixes_LIB}")
+ 	else ()

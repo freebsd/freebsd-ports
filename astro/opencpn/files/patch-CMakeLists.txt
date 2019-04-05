@@ -1,5 +1,14 @@
 --- CMakeLists.txt.orig	2016-06-25 12:26:20 UTC
 +++ CMakeLists.txt
+@@ -385,7 +385,7 @@ SET( wxWidgets_USE_UNICODE ON)
+ SET( wxWidgets_USE_UNIVERSAL OFF)
+ SET( wxWidgets_USE_STATIC OFF)
+ 
+-FIND_PACKAGE(wxWidgets REQUIRED)
++FIND_PACKAGE(wxWidgets REQUIRED COMPONENTS ${wxWidgets_USE_LIBS})
+ 
+ IF(MSYS)
+ # this is to convert msys to windows paths, and handle the missing /usr
 @@ -1769,7 +1769,7 @@ ENDIF(UNIX)
  #   Certain older Cmake FindGTK2 modules ( e.g. cmake-2.8.0-2) do not yield all of the required link libraries
  #   So, add them manually.  These declarations may be redundant in some architectures, but do no harm.

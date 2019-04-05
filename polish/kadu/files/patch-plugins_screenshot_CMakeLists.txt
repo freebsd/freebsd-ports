@@ -1,0 +1,11 @@
+--- plugins/screenshot/CMakeLists.txt.orig	2019-03-30 14:44:31 UTC
++++ plugins/screenshot/CMakeLists.txt
+@@ -30,7 +30,7 @@ set (CONFIGURATION_FILES
+ 
+ if (UNIX AND NOT APPLE)
+ 	set (PLUGIN_ADDITIONAL_QT_MODULES X11Extras)
+-	find_package (X11 REQUIRED COMPONENTS X11 Xext Xshape)
++	find_package (X11 REQUIRED COMPONENTS Xext Xshape)
+ 	if (X11_Xshape_FOUND)
+ 		message (STATUS "Found required X11 libraries: ${X11_X11_LIB};${X11_Xext_LIB}")
+ 	else ()
