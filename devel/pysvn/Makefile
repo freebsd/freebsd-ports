@@ -17,7 +17,7 @@ LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 		libexpat.so:textproc/expat2
 
 # Python3 ready
-USES=		python
+USES=		python:-3.6
 USE_PYTHON=	distutils noegginfo concurrent optsuffix
 PYDISTUTILS_CONFIGURE_TARGET=	configure
 PYDISTUTILS_CONFIGUREARGS=	--apr-inc-dir=${LOCALBASE}/include/apr-1 \
