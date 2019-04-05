@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pcap
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.6
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	leres@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python interface to LBL Packet Capture library (libpcap)
 
 LICENSE=	BSD3CLAUSE
@@ -19,7 +19,7 @@ USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	5u623l20
 GH_PROJECT=	pylibpcap
-GH_TAGNAME=	d0bbd5c
+GH_TAGNAME=	d442c3e
 USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	LIBPCAP
