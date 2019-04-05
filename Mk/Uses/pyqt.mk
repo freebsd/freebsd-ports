@@ -72,7 +72,7 @@ PYQT5_LICENSE=		GPLv3
 # Keep these synchronized with OPTIONS_DEFINE in devel/py-qt5
 # PyQt components split up into pyqt5/...
 _USE_PYQT_ALL=		core dbus dbussupport demo designer designerplugin \
-			gui multimedia network opengl qscintilla2 \
+			gui help multimedia network opengl qscintilla2 \
 			sql svg test webkit xml xmlpatterns sip
 # List of components only in pyqt5
 _USE_PYQT5_ONLY=	multimediawidgets printsupport qml quickwidgets \
