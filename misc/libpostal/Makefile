@@ -2,7 +2,8 @@
 
 PORTNAME=	libpostal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.1
+DISTVERSIONSUFFIX=	-alpha
 CATEGORIES=	misc geography
 
 MAINTAINER=	dg@syrec.org
@@ -18,10 +19,12 @@ BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-c++11
 RUN_DEPENDS=	curl:ftp/curl
 
 USES=		autoreconf libtool localbase
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--datadir=${LIBPOSTAL_DATADIR} \
-		--disable-data-download
+		--disable-data-download \
+		--disable-static
 USE_GITHUB=	yes
 GH_ACCOUNT=	openvenues
 TEST_TARGET=	check
@@ -34,7 +37,7 @@ SUB_LIST=	PORTNAME=${PORTNAME} \
 
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=	CBLAS DOCS SSE2 STATIC
+OPTIONS_DEFINE=	CBLAS DOCS SSE2
 CBLAS_DESC=	Build with CBLAS/OPENBLAS
 SSE2_DESC=	Enable SSE2 optimization
 OPTIONS_SUB=	yes
@@ -45,14 +48,12 @@ CBLAS_CONFIGURE_WITH=	cblas=${LOCALBASE}/lib/libopenblas.so
 
 SSE2_CONFIGURE_ENABLE=	sse2
 
-STATIC_CONFIGURE_ENABLE=	static
-
 pre-configure:
 	@cd ${WRKSRC} && ${SH} bootstrap.sh
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpostal.so
-	${INSTALL_PROGRAM} ${WRKSRC}/src/address_parser ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/src/address_parser ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/libpostal ${STAGEDIR}${PREFIX}/bin
 
 post-install-DOCS-on:
