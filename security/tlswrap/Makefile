@@ -18,6 +18,13 @@ CFLAGS+=	-I${OPENSSLINC}
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	incomplete definition of type 'struct X509_extension_st'
+BROKEN_FreeBSD_13=	incomplete definition of type 'struct X509_extension_st'
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS|LDFLAGS).*=,\1?=,g' \
 		${WRKSRC}/Makefile.in
@@ -29,4 +36,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
