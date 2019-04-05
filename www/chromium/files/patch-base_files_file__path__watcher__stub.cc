@@ -1,5 +1,5 @@
---- base/files/file_path_watcher_stub.cc.orig	2018-07-19 23:00:07.807326000 +0200
-+++ base/files/file_path_watcher_stub.cc	2018-07-19 23:05:24.785603000 +0200
+--- base/files/file_path_watcher_stub.cc.orig	2019-03-11 22:00:51 UTC
++++ base/files/file_path_watcher_stub.cc
 @@ -1,14 +1,15 @@
 -// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Copyright 2014 The Chromium Authors. All rights reserved.
@@ -20,7 +20,7 @@
  
  namespace base {
  
-@@ -22,12 +23,26 @@
+@@ -22,12 +23,26 @@ class FilePathWatcherImpl : public FilePathWatcher::Pl
    bool Watch(const FilePath& path,
               bool recursive,
               const FilePathWatcher::Callback& callback) override {

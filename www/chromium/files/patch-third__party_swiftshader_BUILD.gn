@@ -1,12 +1,17 @@
---- third_party/swiftshader/BUILD.gn.orig	2019-01-30 02:20:34.000000000 +0100
-+++ third_party/swiftshader/BUILD.gn	2019-02-01 13:30:51.566784000 +0100
-@@ -118,16 +118,12 @@
+--- third_party/swiftshader/BUILD.gn.orig	2019-03-11 22:08:03 UTC
++++ third_party/swiftshader/BUILD.gn
+@@ -126,9 +126,6 @@ config("swiftshader_config") {
+       ldflags = [ "-Wl,--gc-sections" ]
  
        if (target_cpu == "mipsel") {
-         ldflags += [
+-        ldflags += [
 -          "-Wl,--hash-style=sysv",
-           "-mips32r2",
-         ]
+-        ]
+         if (mips_arch_variant == "r1") {
+           ldflags += [
+             "-mips32",
+@@ -140,11 +137,8 @@ config("swiftshader_config") {
+         }
        } else if (target_cpu == "mips64el") {
          ldflags += [
 -          "-Wl,--hash-style=sysv",

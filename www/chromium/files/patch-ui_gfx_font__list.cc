@@ -1,6 +1,6 @@
---- ui/gfx/font_list.cc.orig	2018-12-03 21:18:06.000000000 +0100
-+++ ui/gfx/font_list.cc	2018-12-15 20:17:39.591084000 +0100
-@@ -24,7 +24,7 @@
+--- ui/gfx/font_list.cc.orig	2019-03-11 22:01:19 UTC
++++ ui/gfx/font_list.cc
+@@ -24,7 +24,7 @@ base::LazyInstance<scoped_refptr<gfx::FontListImpl>>::
  bool g_default_impl_initialized = false;
  
  bool IsFontFamilyAvailable(const std::string& family, SkFontMgr* fontManager) {

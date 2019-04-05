@@ -1,5 +1,5 @@
---- base/system/sys_info_posix.cc.orig	2019-01-31 21:22:45.968524000 +0100
-+++ base/system/sys_info_posix.cc	2019-01-31 21:25:09.041659000 +0100
+--- base/system/sys_info_posix.cc.orig	2019-03-11 22:00:51 UTC
++++ base/system/sys_info_posix.cc
 @@ -38,7 +38,7 @@
  
  namespace {
@@ -9,7 +9,7 @@
  int NumberOfProcessors() {
    // sysconf returns the number of "logical" (not "physical") processors on both
    // Mac and Linux.  So we get the number of max available "logical" processors.
-@@ -64,7 +64,7 @@
+@@ -64,7 +64,7 @@ int NumberOfProcessors() {
  
  base::LazyInstance<base::internal::LazySysInfoValue<int, NumberOfProcessors>>::
      Leaky g_lazy_number_of_processors = LAZY_INSTANCE_INITIALIZER;
@@ -18,7 +18,7 @@
  
  #if !defined(OS_FUCHSIA)
  int64_t AmountOfVirtualMemory() {
-@@ -132,7 +132,7 @@
+@@ -132,7 +132,7 @@ bool GetDiskSpaceInfo(const base::FilePath& path,
  
  namespace base {
  
@@ -27,7 +27,7 @@
  int SysInfo::NumberOfProcessors() {
    return g_lazy_number_of_processors.Get().value();
  }
-@@ -225,6 +225,8 @@
+@@ -225,6 +225,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

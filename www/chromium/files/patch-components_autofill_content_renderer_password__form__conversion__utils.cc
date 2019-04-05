@@ -1,6 +1,6 @@
---- components/autofill/content/renderer/password_form_conversion_utils.cc.orig	2018-08-01 00:08:37.000000000 +0200
-+++ components/autofill/content/renderer/password_form_conversion_utils.cc	2018-08-04 17:44:14.098469000 +0200
-@@ -38,7 +38,11 @@
+--- components/autofill/content/renderer/password_form_conversion_utils.cc.orig	2019-03-11 22:00:56 UTC
++++ components/autofill/content/renderer/password_form_conversion_utils.cc
+@@ -37,7 +37,11 @@
  #include "third_party/blink/public/web/web_form_control_element.h"
  #include "third_party/blink/public/web/web_input_element.h"
  #include "third_party/blink/public/web/web_local_frame.h"

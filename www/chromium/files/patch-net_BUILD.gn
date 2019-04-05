@@ -1,6 +1,6 @@
---- net/BUILD.gn.orig	2019-02-06 23:06:45.000000000 +0100
-+++ net/BUILD.gn	2019-02-08 22:09:39.080475000 +0100
-@@ -97,7 +97,7 @@
+--- net/BUILD.gn.orig	2019-03-11 22:01:00 UTC
++++ net/BUILD.gn
+@@ -97,7 +97,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -9,7 +9,7 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1854,7 +1854,7 @@
+@@ -1900,7 +1900,7 @@ component("net") {
      }
  
      # Use getifaddrs() on POSIX platforms, except Linux and Android.
@@ -18,7 +18,7 @@
        sources += [
          "base/network_interfaces_getifaddrs.cc",
          "base/network_interfaces_getifaddrs.h",
-@@ -1947,6 +1947,16 @@
+@@ -1993,6 +1993,16 @@ component("net") {
        ]
  
        sources -= [ "disk_cache/blockfile/file_posix.cc" ]

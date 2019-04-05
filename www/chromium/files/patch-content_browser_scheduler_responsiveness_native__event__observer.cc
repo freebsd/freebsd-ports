@@ -1,5 +1,5 @@
---- content/browser/scheduler/responsiveness/native_event_observer.cc.orig	2019-01-30 02:17:59.000000000 +0100
-+++ content/browser/scheduler/responsiveness/native_event_observer.cc	2019-02-01 00:19:02.237926000 +0100
+--- content/browser/scheduler/responsiveness/native_event_observer.cc.orig	2019-03-11 22:00:58 UTC
++++ content/browser/scheduler/responsiveness/native_event_observer.cc
 @@ -15,7 +15,7 @@
  
  #include "ui/events/platform/platform_event_source.h"
@@ -9,7 +9,7 @@
  #include "ui/aura/env.h"
  #include "ui/events/event.h"
  #endif
-@@ -39,7 +39,7 @@
+@@ -39,7 +39,7 @@ NativeEventObserver::~NativeEventObserver() {
    DeregisterObserver();
  }
  
@@ -18,7 +18,7 @@
  void NativeEventObserver::RegisterObserver() {
    aura::Env::GetInstance()->AddWindowEventDispatcherObserver(this);
  }
-@@ -61,7 +61,7 @@
+@@ -61,7 +61,7 @@ void NativeEventObserver::OnWindowEventDispatcherFinis
    did_run_event_callback_.Run(info.unique_id);
    events_being_processed_.pop_back();
  }

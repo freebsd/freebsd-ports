@@ -1,6 +1,6 @@
---- chrome/browser/browser_resources.grd.orig	2018-06-13 00:10:04.000000000 +0200
-+++ chrome/browser/browser_resources.grd	2018-07-14 13:48:09.392254000 +0200
-@@ -634,7 +634,7 @@
+--- chrome/browser/browser_resources.grd.orig	2019-03-11 22:00:53 UTC
++++ chrome/browser/browser_resources.grd
+@@ -679,7 +679,7 @@
          <include name="IDR_WELCOME_WIN10_PIN_WEBP" file="resources\welcome\pin.webp" type="BINDATA" />
        </if>
        <include name="IDR_SSL_ERROR_ASSISTANT_PB" file="${root_gen_dir}/chrome/browser/resources/ssl/ssl_error_assistant/ssl_error_assistant.pb" use_base_dir="false" type="BINDATA" />

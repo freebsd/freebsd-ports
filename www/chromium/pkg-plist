@@ -119,9 +119,9 @@ bin/chrome
 %%DATADIR%%/protoc
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/inspector/.htaccess
-%%DATADIR%%/resources/inspector/Images/accelerometer-back.png
+%%DATADIR%%/resources/inspector/Images/accelerometer-back.svg
 %%DATADIR%%/resources/inspector/Images/accelerometer-bottom.png
-%%DATADIR%%/resources/inspector/Images/accelerometer-front.png
+%%DATADIR%%/resources/inspector/Images/accelerometer-front.svg
 %%DATADIR%%/resources/inspector/Images/accelerometer-left.png
 %%DATADIR%%/resources/inspector/Images/accelerometer-right.png
 %%DATADIR%%/resources/inspector/Images/accelerometer-top.png
@@ -138,7 +138,6 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/chromeRight.png
 %%DATADIR%%/resources/inspector/Images/chromeSelect.png
 %%DATADIR%%/resources/inspector/Images/chromeSelect_2x.png
-%%DATADIR%%/resources/inspector/Images/deleteIcon.png
 %%DATADIR%%/resources/inspector/Images/errorWave.png
 %%DATADIR%%/resources/inspector/Images/errorWave_2x.png
 %%DATADIR%%/resources/inspector/Images/ic_info_black_18dp.svg

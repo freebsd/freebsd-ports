@@ -1,6 +1,6 @@
---- base/test/generate_fontconfig_caches.cc.orig	2018-12-16 02:19:42.000000000 +0100
-+++ base/test/generate_fontconfig_caches.cc	2018-12-16 02:19:45.432130000 +0100
-@@ -57,7 +57,14 @@
+--- base/test/generate_fontconfig_caches.cc.orig	2019-03-11 22:00:51 UTC
++++ base/test/generate_fontconfig_caches.cc
+@@ -57,7 +57,14 @@ int main() {
    base::TearDownFontconfig();
  
    // Check existence of intended fontconfig cache file.

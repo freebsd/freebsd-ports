@@ -1,6 +1,6 @@
---- base/allocator/allocator_shim.cc.orig	2017-06-05 19:03:00 UTC
+--- base/allocator/allocator_shim.cc.orig	2019-03-11 22:00:51 UTC
 +++ base/allocator/allocator_shim.cc
-@@ -83,7 +83,7 @@ inline const allocator::AllocatorDispatch* GetChainHea
+@@ -70,7 +70,7 @@ inline const allocator::AllocatorDispatch* GetChainHea
    // Unfortunately due to that bug NoBarrier_Load() is mistakenly fully
    // barriered on Linux+Clang, and that causes visible perf regressons.
    return reinterpret_cast<const allocator::AllocatorDispatch*>(

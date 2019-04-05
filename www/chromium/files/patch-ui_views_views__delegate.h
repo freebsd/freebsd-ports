@@ -1,6 +1,6 @@
---- ui/views/views_delegate.h.orig	2017-06-05 19:03:30 UTC
+--- ui/views/views_delegate.h.orig	2019-03-11 22:01:19 UTC
 +++ ui/views/views_delegate.h
-@@ -161,7 +161,7 @@ class VIEWS_EXPORT ViewsDelegate {
+@@ -146,7 +146,7 @@ class VIEWS_EXPORT ViewsDelegate {
    // Returns true if the window passed in is in the Windows 8 metro
    // environment.
    virtual bool IsWindowInMetro(gfx::NativeWindow window) const;

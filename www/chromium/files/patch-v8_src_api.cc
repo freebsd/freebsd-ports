@@ -1,15 +1,15 @@
---- v8/src/api.cc.orig	2019-02-06 23:49:54.462307000 +0100
-+++ v8/src/api.cc	2019-02-06 23:50:45.414499000 +0100
-@@ -105,7 +105,7 @@
+--- v8/src/api.cc.orig	2019-03-11 22:08:08 UTC
++++ v8/src/api.cc
+@@ -107,7 +107,7 @@
  #include "src/wasm/wasm-result.h"
  #include "src/wasm/wasm-serialization.h"
  
 -#if V8_OS_LINUX || V8_OS_MACOSX
 +#if V8_OS_LINUX || V8_OS_MACOSX || V8_OS_OPENBSD || V8_OS_FREEBSD
  #include <signal.h>
+ #include "include/v8-wasm-trap-handler-posix.h"
  #include "src/trap-handler/handler-inside-posix.h"
- #endif
-@@ -5885,7 +5885,7 @@
+@@ -5759,7 +5759,7 @@ bool v8::V8::Initialize() {
    return true;
  }
  

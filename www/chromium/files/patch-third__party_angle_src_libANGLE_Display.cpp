@@ -1,6 +1,6 @@
---- third_party/angle/src/libANGLE/Display.cpp.orig	2019-01-30 02:20:31.000000000 +0100
-+++ third_party/angle/src/libANGLE/Display.cpp	2019-02-01 11:09:24.980814000 +0100
-@@ -63,7 +63,7 @@
+--- third_party/angle/src/libANGLE/Display.cpp.orig	2019-03-11 22:07:59 UTC
++++ third_party/angle/src/libANGLE/Display.cpp
+@@ -64,7 +64,7 @@
  #if defined(ANGLE_ENABLE_VULKAN)
  #    if defined(ANGLE_PLATFORM_WINDOWS)
  #        include "libANGLE/renderer/vulkan/win32/DisplayVkWin32.h"
@@ -9,7 +9,7 @@
  #        include "libANGLE/renderer/vulkan/xcb/DisplayVkXcb.h"
  #    elif defined(ANGLE_PLATFORM_ANDROID)
  #        include "libANGLE/renderer/vulkan/android/DisplayVkAndroid.h"
-@@ -215,7 +215,7 @@
+@@ -216,7 +216,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(const Attrib
  #if defined(ANGLE_ENABLE_VULKAN)
  #    if defined(ANGLE_PLATFORM_WINDOWS)
              impl = new rx::DisplayVkWin32(state);

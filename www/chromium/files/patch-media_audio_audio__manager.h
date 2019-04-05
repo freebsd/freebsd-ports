@@ -1,8 +1,8 @@
---- media/audio/audio_manager.h.orig	2017-12-15 02:04:21.000000000 +0100
-+++ media/audio/audio_manager.h	2017-12-24 17:11:05.999543000 +0100
-@@ -68,7 +68,7 @@
-   static void StartHangMonitorIfNeeded(
-       scoped_refptr<base::SingleThreadTaskRunner> task_runner);
+--- media/audio/audio_manager.h.orig	2019-03-11 22:00:59 UTC
++++ media/audio/audio_manager.h
+@@ -60,7 +60,7 @@ class MEDIA_EXPORT AudioManager {
+   static std::unique_ptr<AudioManager> CreateForTesting(
+       std::unique_ptr<AudioThread> audio_thread);
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

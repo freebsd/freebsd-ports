@@ -1,4 +1,4 @@
---- build/linux/chrome.map.orig	2018-08-08 19:10:32 UTC
+--- build/linux/chrome.map.orig	2019-03-11 22:00:52 UTC
 +++ build/linux/chrome.map
 @@ -1,4 +1,7 @@
  {

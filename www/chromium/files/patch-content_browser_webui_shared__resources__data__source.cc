@@ -1,6 +1,6 @@
---- content/browser/webui/shared_resources_data_source.cc.orig	2019-02-06 23:05:16.881256000 +0100
-+++ content/browser/webui/shared_resources_data_source.cc	2019-02-06 23:05:49.834217000 +0100
-@@ -73,9 +73,9 @@
+--- content/browser/webui/shared_resources_data_source.cc.orig	2019-03-11 22:00:58 UTC
++++ content/browser/webui/shared_resources_data_source.cc
+@@ -72,9 +72,9 @@ const std::map<int, std::string> CreateMojoResourceIdT
    return std::map<int, std::string> {
      {IDR_MOJO_MOJO_BINDINGS_JS, "js/mojo_bindings.js"},
          {IDR_MOJO_MOJO_BINDINGS_LITE_JS, "js/mojo_bindings_lite.js"},

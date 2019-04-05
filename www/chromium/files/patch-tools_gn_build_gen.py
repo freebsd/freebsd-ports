@@ -1,6 +1,6 @@
---- tools/gn/build/gen.py.orig	2019-02-06 23:16:22.000000000 +0100
-+++ tools/gn/build/gen.py	2019-02-08 18:27:37.227094000 +0100
-@@ -44,7 +44,7 @@
+--- tools/gn/build/gen.py.orig	2019-03-11 22:12:13 UTC
++++ tools/gn/build/gen.py
+@@ -44,7 +44,7 @@ class Platform(object):
  
    @staticmethod
    def known_platforms():
@@ -9,7 +9,7 @@
  
    def platform(self):
      return self._platform
-@@ -67,6 +67,9 @@
+@@ -67,6 +67,9 @@ class Platform(object):
    def is_aix(self):
      return self._platform == 'aix'
  
@@ -19,7 +19,7 @@
    def is_posix(self):
      return self._platform in ['linux', 'freebsd', 'darwin', 'aix']
  
-@@ -332,6 +335,11 @@
+@@ -332,6 +335,11 @@ def WriteGNNinja(path, platform, host, options):
      elif platform.is_aix():
        cflags_cc.append('-maix64')
        ldflags.append('-maix64')

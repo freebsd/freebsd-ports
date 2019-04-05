@@ -1,6 +1,6 @@
---- base/native_library_posix.cc.orig	2017-07-25 21:04:48.000000000 +0200
-+++ base/native_library_posix.cc	2017-08-02 21:02:05.991380000 +0200
-@@ -30,7 +30,7 @@
+--- base/native_library_posix.cc.orig	2019-03-11 22:00:51 UTC
++++ base/native_library_posix.cc
+@@ -29,7 +29,7 @@ NativeLibrary LoadNativeLibraryWithOptions(const FileP
    // http://crbug.com/17943, http://crbug.com/17557, http://crbug.com/36892,
    // and http://crbug.com/40794.
    int flags = RTLD_LAZY;

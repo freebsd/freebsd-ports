@@ -1,5 +1,5 @@
---- base/threading/platform_thread_linux.cc.orig	2019-01-30 02:17:39.000000000 +0100
-+++ base/threading/platform_thread_linux.cc	2019-02-01 16:31:27.360883000 +0100
+--- base/threading/platform_thread_linux.cc.orig	2019-03-11 22:00:51 UTC
++++ base/threading/platform_thread_linux.cc
 @@ -18,7 +18,9 @@
  
  #if !defined(OS_NACL) && !defined(OS_AIX)
@@ -10,7 +10,7 @@
  #include <sys/resource.h>
  #include <sys/time.h>
  #include <sys/types.h>
-@@ -99,7 +101,7 @@
+@@ -99,7 +101,7 @@ const ThreadPriorityToNiceValuePair kThreadPriorityToN
  
  Optional<bool> CanIncreaseCurrentThreadPriorityForPlatform(
      ThreadPriority priority) {
@@ -19,7 +19,7 @@
    // A non-zero soft-limit on RLIMIT_RTPRIO is required to be allowed to invoke
    // pthread_setschedparam in SetCurrentThreadPriorityForPlatform().
    struct rlimit rlim;
-@@ -141,7 +143,7 @@
+@@ -141,7 +143,7 @@ Optional<ThreadPriority> GetCurrentThreadPriorityForPl
  void PlatformThread::SetName(const std::string& name) {
    ThreadIdNameManager::GetInstance()->SetName(name);
  

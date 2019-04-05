@@ -1,6 +1,6 @@
---- content/gpu/gpu_main.cc.orig	2018-12-03 21:16:56.000000000 +0100
-+++ content/gpu/gpu_main.cc	2018-12-13 21:10:56.227630000 +0100
-@@ -77,7 +77,7 @@
+--- content/gpu/gpu_main.cc.orig	2019-03-11 22:00:58 UTC
++++ content/gpu/gpu_main.cc
+@@ -78,7 +78,7 @@
  #include "ui/gfx/x/x11_switches.h"    // nogncheck
  #endif
  
@@ -9,7 +9,7 @@
  #include "content/gpu/gpu_sandbox_hook_linux.h"
  #include "content/public/common/sandbox_init.h"
  #include "services/service_manager/sandbox/linux/sandbox_linux.h"
-@@ -110,7 +110,7 @@
+@@ -111,7 +111,7 @@ namespace content {
  
  namespace {
  
@@ -18,7 +18,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -171,7 +171,7 @@
+@@ -172,7 +172,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
@@ -27,7 +27,7 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -361,7 +361,7 @@
+@@ -365,7 +365,7 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {
  
@@ -36,7 +36,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
-@@ -396,7 +396,7 @@
+@@ -400,7 +400,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
  
    return res;
  }

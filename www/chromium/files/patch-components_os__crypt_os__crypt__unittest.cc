@@ -1,5 +1,5 @@
---- components/os_crypt/os_crypt_unittest.cc.orig	2017-12-15 02:04:15.000000000 +0100
-+++ components/os_crypt/os_crypt_unittest.cc	2017-12-24 11:56:52.206820000 +0100
+--- components/os_crypt/os_crypt_unittest.cc.orig	2019-03-11 22:00:56 UTC
++++ components/os_crypt/os_crypt_unittest.cc
 @@ -18,7 +18,7 @@
  #include "components/os_crypt/os_crypt_mocker.h"
  #include "testing/gtest/include/gtest/gtest.h"

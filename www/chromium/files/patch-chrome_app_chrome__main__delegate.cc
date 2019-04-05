@@ -1,5 +1,5 @@
---- chrome/app/chrome_main_delegate.cc.orig	2019-01-30 02:17:41.000000000 +0100
-+++ chrome/app/chrome_main_delegate.cc	2019-02-06 19:21:07.067687000 +0100
+--- chrome/app/chrome_main_delegate.cc.orig	2019-03-11 22:00:52 UTC
++++ chrome/app/chrome_main_delegate.cc
 @@ -101,7 +101,7 @@
  #include "chrome/app/shutdown_signal_handlers_posix.h"
  #endif
@@ -18,7 +18,7 @@
  #include "base/environment.h"
  #endif
  
-@@ -235,7 +235,7 @@
+@@ -232,7 +232,7 @@ bool UseHooks() {
  
  #endif  // defined(OS_WIN)
  
@@ -27,7 +27,16 @@
  void AdjustLinuxOOMScore(const std::string& process_type) {
    // Browsers and zygotes should still be killable, but killed last.
    const int kZygoteScore = 0;
-@@ -339,7 +339,7 @@
+@@ -291,7 +291,7 @@ void AdjustLinuxOOMScore(const std::string& process_ty
+   if (score > -1)
+     base::AdjustOOMScore(base::GetCurrentProcId(), score);
+ }
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) && !defined(OS_BSD)
+ 
+ // Returns true if this subprocess type needs the ResourceBundle initialized
+ // and resources loaded.
+@@ -336,7 +336,7 @@ bool HandleVersionSwitches(const base::CommandLine& co
    return false;
  }
  
@@ -36,7 +45,7 @@
  // Show the man page if --help or -h is on the command line.
  void HandleHelpSwitches(const base::CommandLine& command_line) {
    if (command_line.HasSwitch(switches::kHelp) ||
-@@ -349,7 +349,7 @@
+@@ -346,7 +346,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
      PLOG(FATAL) << "execlp failed";
    }
  }
@@ -45,7 +54,7 @@
  
  #if !defined(OS_MACOSX) && !defined(OS_ANDROID)
  void SIGTERMProfilingShutdown(int signal) {
-@@ -403,7 +403,7 @@
+@@ -400,7 +400,7 @@ void InitializeUserDataDir(base::CommandLine* command_
    std::string process_type =
        command_line->GetSwitchValueASCII(switches::kProcessType);
  
@@ -54,7 +63,25 @@
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -585,7 +585,7 @@
+@@ -412,7 +412,7 @@ void InitializeUserDataDir(base::CommandLine* command_
+       user_data_dir = base::FilePath::FromUTF8Unsafe(user_data_dir_string);
+     }
+   }
+-#endif  // OS_LINUX
++#endif  // OS_LINUX || OS_BSD
+ #if defined(OS_MACOSX)
+   policy::path_parser::CheckUserDataDirPolicy(&user_data_dir);
+ #endif  // OS_MAC
+@@ -469,7 +469,7 @@ void InitLogging(const std::string& process_type) {
+ void RecordMainStartupMetrics(base::TimeTicks exe_entry_point_ticks) {
+   if (!exe_entry_point_ticks.is_null())
+     startup_metric_utils::RecordExeMainEntryPointTicks(exe_entry_point_ticks);
+-#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
+   // Record the startup process creation time on supported platforms.
+   startup_metric_utils::RecordStartupProcessCreationTime(
+       base::Process::Current().CreationTime());
+@@ -596,7 +596,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
      *exit_code = 0;
      return true;  // Got a --version switch; exit with a success error code.
    }
@@ -63,7 +90,7 @@
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -609,7 +609,7 @@
+@@ -620,7 +620,7 @@ bool ChromeMainDelegate::BasicStartupComplete(int* exi
  #if defined(OS_CHROMEOS)
    chromeos::RegisterPathProvider();
  #endif
@@ -72,7 +99,7 @@
    nacl::RegisterPathProvider();
  #endif
  
-@@ -925,7 +925,7 @@
+@@ -936,7 +936,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    InitializePDF();
  #endif
  
@@ -81,7 +108,7 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != service_manager::switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -941,7 +941,7 @@
+@@ -951,7 +951,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
      breakpad::InitCrashReporter(process_type);
  #endif  // defined(OS_ANDROID)
    }
@@ -90,7 +117,7 @@
  
    // After all the platform Breakpads have been initialized, store the command
    // line for crash reporting.
-@@ -951,7 +951,7 @@
+@@ -961,7 +961,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  void ChromeMainDelegate::SandboxInitialized(const std::string& process_type) {
    // Note: If you are adding a new process type below, be sure to adjust the
    // AdjustLinuxOOMScore function too.

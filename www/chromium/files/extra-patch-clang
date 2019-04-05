@@ -1,14 +1,14 @@
---- base/strings/safe_sprintf_unittest.cc.orig	2016-10-06 04:02:08.000000000 +0300
-+++ base/strings/safe_sprintf_unittest.cc	2016-10-25 21:42:28.951114000 +0300
-@@ -728,6 +728,7 @@
+--- base/strings/safe_sprintf_unittest.cc.orig	2019-03-11 22:00:51 UTC
++++ base/strings/safe_sprintf_unittest.cc
+@@ -730,6 +730,7 @@ TEST(SafeSPrintfTest, EmbeddedNul) {
  }
-
+ 
  TEST(SafeSPrintfTest, EmitNULL) {
 +/* Avoid compiler error: http://pastebin.com/1edWUE84
    char buf[40];
  #if defined(__GNUC__)
  #pragma GCC diagnostic push
-@@ -739,6 +740,7 @@
+@@ -741,6 +742,7 @@ TEST(SafeSPrintfTest, EmitNULL) {
    EXPECT_EQ("0x0", std::string(buf));
    EXPECT_EQ(6, SafeSPrintf(buf, "%s", NULL));
    EXPECT_EQ("<NULL>", std::string(buf));
@@ -16,9 +16,9 @@
  #if defined(__GCC__)
  #pragma GCC diagnostic pop
  #endif
---- base/threading/thread_local_storage_unittest.cc 2015-04-15 00:18:48.000000000 +0200
-+++ base/threading/thread_local_storage_unittest.cc 2015-04-18 21:45:40.000000000 +0200
-@@ -60,7 +60,7 @@
+--- base/threading/thread_local_storage_unittest.cc.orig	2019-03-11 22:00:51 UTC
++++ base/threading/thread_local_storage_unittest.cc
+@@ -86,7 +86,7 @@ class ThreadLocalStorageRunner : public DelegateSimple
  void ThreadLocalStorageCleanup(void *value) {
    int *ptr = reinterpret_cast<int*>(value);
    // Destructors should never be called with a NULL.
@@ -27,20 +27,20 @@
    if (*ptr == kFinalTlsValue)
      return;  // We've been called enough times.
    ASSERT_LT(kFinalTlsValue, *ptr);
---- media/audio/audio_output_proxy_unittest.cc	2015-04-15 00:18:55.000000000 +0200
-+++ media/audio/audio_output_proxy_unittest.cc	2015-04-18 22:02:38.000000000 +0200
-@@ -387,7 +387,7 @@
+--- media/audio/audio_output_proxy_unittest.cc.orig	2019-03-11 22:00:59 UTC
++++ media/audio/audio_output_proxy_unittest.cc
+@@ -410,7 +410,7 @@ class AudioOutputProxyTest : public testing::Test {
      // |stream| is closed at this point. Start() should reopen it again.
-     EXPECT_CALL(manager(), MakeAudioOutputStream(_, _))
+     EXPECT_CALL(manager(), MakeAudioOutputStream(_, _, _))
          .Times(2)
 -        .WillRepeatedly(Return(reinterpret_cast<AudioOutputStream*>(NULL)));
 +        .WillRepeatedly(Return(static_cast<AudioOutputStream*>(NULL)));
-
-     EXPECT_CALL(callback_, OnError(_))
-         .Times(2);
---- third_party/libjingle_xmpp/task_runner/taskrunner.cc.orig	2017-04-19 19:06:52 UTC
+ 
+     EXPECT_CALL(callback_, OnError()).Times(2);
+ 
+--- third_party/libjingle_xmpp/task_runner/taskrunner.cc.orig	2019-03-11 22:01:15 UTC
 +++ third_party/libjingle_xmpp/task_runner/taskrunner.cc
-@@ -95,7 +95,7 @@ void TaskRunner::InternalRunTasks(bool i
+@@ -80,7 +80,7 @@ void TaskRunner::InternalRunTasks(bool in_destructor) 
    std::vector<Task *>::iterator it;
    it = std::remove(tasks_.begin(),
                     tasks_.end(),
@@ -48,19 +48,19 @@
 +                   static_cast<Task *>(NULL));
  
    tasks_.erase(it, tasks_.end());
- 
---- third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-15 00:31:48.000000000 +0200
-+++ third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc	2015-04-18 22:05:41.000000000 +0200
-@@ -439,7 +439,7 @@
+   tasks_running_ = false;
+--- third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc.orig	2019-03-11 22:08:03 UTC
++++ third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc
+@@ -439,7 +439,7 @@ CMapTable::CMapFormat0::Builder::Builder(
  }
-
+ 
  CMapTable::CMapFormat0::Builder::Builder(const CMapId& cmap_id)
 -    : CMap::Builder(reinterpret_cast<ReadableFontData*>(NULL),
 +    : CMap::Builder(static_cast<ReadableFontData*>(NULL),
                      CMapFormat::kFormat0,
                      cmap_id) {
  }
-@@ -563,7 +563,7 @@
+@@ -563,7 +563,7 @@ CMapTable::CMapFormat2::Builder::Builder(WritableFontD
      : CMapTable::CMap::Builder(data ? down_cast<WritableFontData*>(
                                     data->Slice(offset, data->ReadUShort(
                                         offset + Offset::kFormat0Length)))
@@ -69,7 +69,7 @@
                                 CMapFormat::kFormat2, cmap_id) {
    // TODO(arthurhsu): FIXIT: heavy lifting and leak, need fix.
  }
-@@ -574,7 +574,7 @@
+@@ -574,7 +574,7 @@ CMapTable::CMapFormat2::Builder::Builder(ReadableFontD
      : CMapTable::CMap::Builder(data ? down_cast<ReadableFontData*>(
                                     data->Slice(offset, data->ReadUShort(
                                         offset + Offset::kFormat0Length)))
@@ -78,21 +78,21 @@
                                 CMapFormat::kFormat2, cmap_id) {
    // TODO(arthurhsu): FIXIT: heavy lifting and leak, need fix.
  }
-@@ -958,7 +958,7 @@
+@@ -958,7 +958,7 @@ CMapTable::CMapFormat4::Builder::Builder(WritableFontD
  CMapTable::CMapFormat4::Builder::Builder(SegmentList* segments,
-                                          IntegerList* glyph_id_array,
+                                          std::vector<int32_t>* glyph_id_array,
                                           const CMapId& cmap_id)
 -    : CMap::Builder(reinterpret_cast<ReadableFontData*>(NULL),
 +    : CMap::Builder(static_cast<ReadableFontData*>(NULL),
                      CMapFormat::kFormat4, cmap_id),
        segments_(segments->begin(), segments->end()),
        glyph_id_array_(glyph_id_array->begin(), glyph_id_array->end()) {
-@@ -966,7 +966,7 @@
+@@ -966,7 +966,7 @@ CMapTable::CMapFormat4::Builder::Builder(SegmentList* 
  }
-
+ 
  CMapTable::CMapFormat4::Builder::Builder(const CMapId& cmap_id)
 -    : CMap::Builder(reinterpret_cast<ReadableFontData*>(NULL),
 +    : CMap::Builder(static_cast<ReadableFontData*>(NULL),
                      CMapFormat::kFormat4, cmap_id) {
  }
-
+ 

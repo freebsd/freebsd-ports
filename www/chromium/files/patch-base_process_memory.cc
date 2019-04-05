@@ -1,5 +1,5 @@
---- base/process/memory.cc.orig	2017-12-15 02:04:05.000000000 +0100
-+++ base/process/memory.cc	2017-12-31 09:49:46.308931000 +0100
+--- base/process/memory.cc.orig	2019-03-11 22:00:51 UTC
++++ base/process/memory.cc
 @@ -10,7 +10,7 @@
  namespace base {
  
@@ -9,7 +9,7 @@
  
  namespace {
  
-@@ -31,7 +31,7 @@
+@@ -31,7 +31,7 @@ void TerminateBecauseOutOfMemory(size_t size) {
  #endif
  
  // Defined in memory_mac.mm for Mac.

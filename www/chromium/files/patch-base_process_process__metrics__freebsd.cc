@@ -1,5 +1,5 @@
---- base/process/process_metrics_freebsd.cc.orig	2019-02-06 23:06:36.000000000 +0100
-+++ base/process/process_metrics_freebsd.cc	2019-02-08 19:11:07.753223000 +0100
+--- base/process/process_metrics_freebsd.cc.orig	2019-03-21 01:36:27.000000000 +0100
++++ base/process/process_metrics_freebsd.cc	2019-03-24 22:18:22.764297000 +0100
 @@ -5,6 +5,7 @@
  #include "base/process/process_metrics.h"
  
@@ -26,12 +26,10 @@
  
  // static
  std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
-@@ -67,6 +72,95 @@
-   pagesize = getpagesize();
- 
+@@ -69,4 +74,93 @@
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
-+}
-+
+ }
+ 
 +int GetNumberOfThreads(ProcessHandle process) {
 +  // Taken from FreeBSD top (usr.bin/top/machine.c)
 +
@@ -99,26 +97,26 @@
 +}
 +
 +int ProcessMetrics::GetOpenFdSoftLimit() const {
-+  struct kinfo_proc *info;
 +  size_t length;
 +  int total_count = 0;
 +  int mib[] = { CTL_KERN, KERN_MAXFILESPERPROC };
 +
 +  length = sizeof(total_count);
 +
-+  if (sysctl(mib, arraysize(mib), &total_count, &length, NULL, 0) < 0) {
++  if (sysctl(mib, base::size(mib), &total_count, &length, NULL, 0) < 0) {
 +    total_count = -1;
-+    goto out;
 +  }
 +
-+out:
-+  free(info);
 +  return total_count;
 +}
 +
 +uint64_t ProcessMetrics::GetVmSwapBytes() const {
 +   NOTIMPLEMENTED();
 +   return 0;
- }
- 
++}
++
++int ProcessMetrics::GetIdleWakeupsPerSecond() {
++  NOTIMPLEMENTED();
++  return 0;
++}
  }  // namespace base

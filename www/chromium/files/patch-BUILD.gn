@@ -1,7 +1,7 @@
---- BUILD.gn.orig	2018-06-13 00:09:58.000000000 +0200
-+++ BUILD.gn	2018-07-14 12:26:56.482016000 +0200
-@@ -359,7 +359,7 @@
-     }
+--- BUILD.gn.orig	2019-03-11 22:00:51 UTC
++++ BUILD.gn
+@@ -381,7 +381,7 @@ group("gn_all") {
+     ]
    }
  
 -  if (is_linux || is_android) {
@@ -9,7 +9,7 @@
      deps += [
        "//third_party/breakpad:breakpad_unittests",
        "//third_party/breakpad:core-2-minidump",
-@@ -401,8 +401,6 @@
+@@ -422,8 +422,6 @@ group("gn_all") {
        "//net:disk_cache_memory_test",
        "//net:quic_client",
        "//net:quic_server",
@@ -18,7 +18,7 @@
        "//testing:empty_main",
      ]
  
-@@ -460,10 +458,6 @@
+@@ -480,10 +478,6 @@ group("gn_all") {
          "//chrome/test/chromedriver:chromedriver",
          "//chrome/test/chromedriver:chromedriver_tests",
          "//components/sync:run_sync_testserver",
@@ -29,7 +29,7 @@
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -519,10 +513,6 @@
+@@ -538,10 +532,6 @@ group("gn_all") {
        "//mojo:mojo_perftests",
        "//services/service_manager/public/cpp",
        "//testing/gmock:gmock_main",
@@ -40,7 +40,7 @@
      ]
  
      if (!is_android) {
-@@ -598,7 +588,7 @@
+@@ -615,7 +605,7 @@ group("gn_all") {
          host_os == "win") {
        deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
      }
@@ -49,7 +49,7 @@
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -818,7 +808,6 @@
+@@ -873,7 +863,6 @@ if (is_chromeos) {
        "//ppapi/examples/video_decode",
        "//sandbox/linux:chrome_sandbox",
        "//sandbox/linux:sandbox_linux_unittests",
@@ -57,7 +57,7 @@
  
        # Blocked on https://github.com/catapult-project/catapult/issues/2297
        #"//third_party/catapult/telemetry:bitmaptools",
-@@ -921,7 +910,7 @@
+@@ -1001,7 +990,7 @@ if (!is_ios) {
        ]
      }
  
@@ -66,7 +66,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -930,7 +919,7 @@
+@@ -1010,7 +999,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -75,7 +75,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1055,9 +1044,6 @@
+@@ -1150,9 +1139,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

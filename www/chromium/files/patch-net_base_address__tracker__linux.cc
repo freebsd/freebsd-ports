@@ -1,6 +1,6 @@
---- net/base/address_tracker_linux.cc.orig	2018-12-03 21:17:06.000000000 +0100
-+++ net/base/address_tracker_linux.cc	2018-12-14 00:19:15.361979000 +0100
-@@ -22,96 +22,10 @@
+--- net/base/address_tracker_linux.cc.orig	2019-03-11 22:01:00 UTC
++++ net/base/address_tracker_linux.cc
+@@ -21,96 +21,10 @@
  namespace net {
  namespace internal {
  
@@ -99,7 +99,7 @@
  }
  
  AddressTrackerLinux::AddressTrackerLinux()
-@@ -154,93 +68,8 @@
+@@ -153,93 +67,8 @@ AddressTrackerLinux::~AddressTrackerLinux() {
  }
  
  void AddressTrackerLinux::Init() {
@@ -195,7 +195,7 @@
  }
  
  void AddressTrackerLinux::AbortAndForceOnline() {
-@@ -251,25 +80,6 @@
+@@ -250,25 +79,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
    connection_type_initialized_cv_.Broadcast();
  }
  
@@ -221,7 +221,7 @@
  NetworkChangeNotifier::ConnectionType
  AddressTrackerLinux::GetCurrentConnectionType() {
    // http://crbug.com/125097
-@@ -328,102 +138,7 @@
+@@ -326,102 +136,7 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
                                          bool* address_changed,
                                          bool* link_changed,
                                          bool* tunnel_changed) {
@@ -325,7 +325,7 @@
  }
  
  void AddressTrackerLinux::OnFileCanReadWithoutBlocking(int fd) {
-@@ -460,31 +175,7 @@
+@@ -458,31 +173,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
  }
  
  void AddressTrackerLinux::UpdateCurrentConnectionType() {

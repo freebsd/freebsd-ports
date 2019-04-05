@@ -1,4 +1,4 @@
---- base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2017-06-05 19:03:00 UTC
+--- base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2019-03-11 22:00:51 UTC
 +++ base/allocator/allocator_shim_default_dispatch_to_glibc.cc
 @@ -3,19 +3,28 @@
  // found in the LICENSE file.

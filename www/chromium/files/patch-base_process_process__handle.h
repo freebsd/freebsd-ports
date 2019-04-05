@@ -1,6 +1,6 @@
---- base/process/process_handle.h.orig	2018-07-19 22:31:39.988330000 +0200
-+++ base/process/process_handle.h	2018-07-19 22:32:06.977544000 +0200
-@@ -64,7 +64,7 @@
+--- base/process/process_handle.h.orig	2019-03-11 22:00:51 UTC
++++ base/process/process_handle.h
+@@ -64,7 +64,7 @@ BASE_EXPORT ProcessId GetCurrentProcId();
  // a process's PID.
  BASE_EXPORT uint32_t GetUniqueIdForProcess();
  

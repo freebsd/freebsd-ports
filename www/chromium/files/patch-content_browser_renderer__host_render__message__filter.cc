@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_message_filter.cc.orig	2018-06-13 00:10:17.000000000 +0200
-+++ content/browser/renderer_host/render_message_filter.cc	2018-07-19 11:46:53.426069000 +0200
-@@ -76,7 +76,7 @@
+--- content/browser/renderer_host/render_message_filter.cc.orig	2019-03-11 22:00:58 UTC
++++ content/browser/renderer_host/render_message_filter.cc
+@@ -71,7 +71,7 @@
  #if defined(OS_MACOSX)
  #include "ui/accelerated_widget_mac/window_resize_helper_mac.h"
  #endif
@@ -9,7 +9,7 @@
  #include "base/linux_util.h"
  #include "base/threading/platform_thread.h"
  #endif
-@@ -194,7 +194,7 @@
+@@ -151,7 +151,7 @@ void RenderMessageFilter::CreateFullscreenWidget(
    std::move(callback).Run(route_id);
  }
  
@@ -18,7 +18,7 @@
  void RenderMessageFilter::SetThreadPriorityOnFileThread(
      base::PlatformThreadId ns_tid,
      base::ThreadPriority priority) {
-@@ -215,7 +215,7 @@
+@@ -172,7 +172,7 @@ void RenderMessageFilter::SetThreadPriorityOnFileThrea
  }
  #endif
  

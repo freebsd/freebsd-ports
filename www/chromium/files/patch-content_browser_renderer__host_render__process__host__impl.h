@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_process_host_impl.h.orig	2017-08-02 01:07:45.102330000 +0200
-+++ content/browser/renderer_host/render_process_host_impl.h	2017-08-02 01:09:10.056596000 +0200
-@@ -290,10 +290,10 @@
+--- content/browser/renderer_host/render_process_host_impl.h.orig	2019-03-11 22:00:58 UTC
++++ content/browser/renderer_host/render_process_host_impl.h
+@@ -407,10 +407,10 @@ class CONTENT_EXPORT RenderProcessHostImpl
      is_for_guests_only_ = is_for_guests_only;
    }
  
@@ -11,5 +11,5 @@
 -#endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX)
 +#endif  // defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_MACOSX) && !defined(OS_BSD)
  
-   void RecomputeAndUpdateWebKitPreferences();
- 
+   RendererAudioOutputStreamFactoryContext*
+   GetRendererAudioOutputStreamFactoryContext() override;

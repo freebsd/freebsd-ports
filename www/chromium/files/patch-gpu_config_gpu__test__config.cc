@@ -1,6 +1,6 @@
---- gpu/config/gpu_test_config.cc.orig	2018-03-20 23:05:26.000000000 +0100
-+++ gpu/config/gpu_test_config.cc	2018-03-26 13:47:37.264475000 +0200
-@@ -24,7 +24,7 @@
+--- gpu/config/gpu_test_config.cc.orig	2019-03-11 22:00:59 UTC
++++ gpu/config/gpu_test_config.cc
+@@ -25,7 +25,7 @@ namespace {
  GPUTestConfig::OS GetCurrentOS() {
  #if defined(OS_CHROMEOS)
    return GPUTestConfig::kOsChromeOS;

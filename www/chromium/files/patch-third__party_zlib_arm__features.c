@@ -1,6 +1,6 @@
---- third_party/zlib/arm_features.c.orig	2019-01-30 02:18:52.000000000 +0100
-+++ third_party/zlib/arm_features.c	2019-02-01 14:35:44.086582000 +0100
-@@ -21,9 +21,10 @@
+--- third_party/zlib/arm_features.c.orig	2019-03-11 22:01:18 UTC
++++ third_party/zlib/arm_features.c
+@@ -21,9 +21,10 @@ int ZLIB_INTERNAL arm_cpu_enable_pmull = 0;
  #include <asm/hwcap.h>
  #include <sys/auxv.h>
  #else
@@ -12,7 +12,7 @@
  static pthread_once_t cpu_check_inited_once = PTHREAD_ONCE_INIT;
  
  static void init_arm_features(void)
-@@ -55,10 +56,13 @@
+@@ -55,10 +56,13 @@ static void init_arm_features(void)
      if (capabilities & flag_pmull)
          arm_cpu_enable_pmull = 1;
  }
