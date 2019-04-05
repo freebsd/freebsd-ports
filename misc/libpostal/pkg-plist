@@ -2,7 +2,6 @@ bin/address_parser
 bin/libpostal
 bin/libpostal_data
 include/libpostal/libpostal.h
-%%STATIC%%lib/libpostal.a
 lib/libpostal.so
 lib/libpostal.so.1
 lib/libpostal.so.1.0.0
