@@ -10,7 +10,7 @@ COMMENT=	Development branch of AT&T KornShell 93
 
 LICENSE=	EPL
 
-USES=		compiler:c11 meson ninja
+USES=		compiler:c11 meson ninja python:build
 
 HASH=		8cc0aff
 AST_COMMIT_DATE=	2019.04.04
@@ -43,6 +43,7 @@ KSH93_PLIST_SUB=	93="93"
 .include <bsd.port.options.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e '/for name in/ s|python.*|${PYTHON_CMD}|g' ${WRKSRC}/scripts/python.sh
 	@${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' ${WRKSRC}/src/lib/libast/include/sfio*.h ${WRKSRC}/src/lib/libast/sfio/*.c
 .if ${PORT_OPTIONS:MKSH93}
 	@${MV} ${WRKSRC}/src/cmd/ksh93/ksh.1 ${WRKSRC}/src/cmd/ksh93/ksh93.1
