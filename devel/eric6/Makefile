@@ -1,7 +1,7 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	3
 PKGNAMESUFFIX=	-${FLAVOR:U:S/_/-/}
 DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
 CATEGORIES=	devel python
@@ -9,20 +9,13 @@ CATEGORIES=	devel python
 BROKEN_powerpc64=	fails to link: libstdc++.so.6: version GLIBCXX_3.4.14 required by /usr/local/lib/qt4/libqscintilla2_qt4.so.13 not found
 
 # Note to MAINTAINER: this should be converted to USES=pyqt, USE_PYQT=[...]
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt5/QtGui.so:x11-toolkits/py-qt5-gui@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/PyQt5/Qsci.so:devel/py-qt5-qscintilla2@${PY_FLAVOR}
-RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		${PYTHON_SITELIBDIR}/PyQt5/QtNetwork.so:net/py-qt5-network@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/PyQt5/QtSvg.so:graphics/py-qt5-svg@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/PyQt5/QtSql.so:databases/py-qt5-sql@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/PyQt5/QtWebKit.so:www/py-qt5-webkit@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/PyQt5/QtHelp.so:devel/py-qt5-help@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/PyQt5/QtWebKitWidgets.so:www/py-qt5-webkitwidgets@${PY_FLAVOR} \
-		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3@${PY_FLAVOR}
 
 CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:C/^/${PKGNAMEPREFIX}${PORTNAME}-/:C/$/-[0-9]*/}
 
-USES=		desktop-file-utils python:${FLAVOR:C/.*_py([0-9])/\1./}
+USES=		desktop-file-utils python:${FLAVOR:C/.*_py([0-9])/\1./} pyqt:5
+USE_PYQT=	core gui qscintilla2 webengine \
+		help_run network_run svg_run sql_run
 INSTALL_CMD=	install.py -c -f eric6config.freebsd -i ${STAGEDIR} --pyqt=5
 SUB_FILES=	eric6.desktop
 MASTERPORT=	yes
