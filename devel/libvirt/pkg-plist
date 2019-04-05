@@ -158,6 +158,7 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/formatsecret.html
 %%DOCSDIR%%%%PORTVERSION%%/html/formatsnapshot.html
 %%DOCSDIR%%%%PORTVERSION%%/html/formatstorage.html
+%%DOCSDIR%%%%PORTVERSION%%/html/formatstoragecaps.html
 %%DOCSDIR%%%%PORTVERSION%%/html/formatstorageencryption.html
 %%DOCSDIR%%%%PORTVERSION%%/html/generic.css
 %%DOCSDIR%%%%PORTVERSION%%/html/goals.html
@@ -342,6 +343,7 @@ share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/schemas/secret.rng
 %%DATADIR%%/schemas/storagecommon.rng
 %%DATADIR%%/schemas/storagepool.rng
+%%DATADIR%%/schemas/storagepoolcaps.rng
 %%DATADIR%%/schemas/storagevol.rng
 %%DATADIR%%/test-screenshot.png
 %%NLS%%share/locale/af/LC_MESSAGES/libvirt.mo
