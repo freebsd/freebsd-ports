@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool
-PORTVERSION=	1.10.2
-PORTREVISION=	3
+PORTVERSION=	1.10.3
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -37,11 +36,11 @@ PLIST_SUB=	TT_DATADIR=${TT_DATADIR} \
 		TT_LOGDIR=${TT_LOGDIR}
 SUB_FILES=	pkg-message
 
-GH_TUPLE=	rtsisyk:luafun:04c99f9:luafun/third_party/luafun \
-		tarantool:luajit:b8587fa:luajit/third_party/luajit \
-		tarantool:luarocks:6e6fe62:luarocks/third_party/luarocks \
-		tarantool:small:22d1bad:small/src/lib/small \
-		tarantool:test-run:ff5fb4f:test_run/test-run
+GH_TUPLE=	rtsisyk:luafun:e248e00:luafun/third_party/luafun \
+		tarantool:luajit:d92380f:luajit/third_party/luajit \
+		tarantool:luarocks:05312b5:luarocks/third_party/luarocks \
+		tarantool:small:cdf7d4a:small/src/lib/small \
+		tarantool:test-run:8ed7445:test_run/test-run
 USE_GITHUB=	yes
 
 USERS=		tarantool
