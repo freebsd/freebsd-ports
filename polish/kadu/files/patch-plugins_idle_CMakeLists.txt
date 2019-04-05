@@ -1,0 +1,11 @@
+--- plugins/idle/CMakeLists.txt.orig	2019-03-30 14:44:31 UTC
++++ plugins/idle/CMakeLists.txt
+@@ -15,7 +15,7 @@ set (SOURCES
+ )
+ 
+ if (UNIX AND NOT APPLE)
+-	find_package (X11 REQUIRED COMPONENTS X11 Xutil Xscreensaver)
++	find_package (X11 REQUIRED COMPONENTS Xutil Xscreensaver)
+ 	if (X11_Xscreensaver_FOUND)
+ 		message (STATUS "Found required X11 libraries: ${X11_X11_LIB};${X11_Xscreensaver_LIB}")
+ 	else ()

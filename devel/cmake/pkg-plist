@@ -11,6 +11,7 @@ bin/ctest
 %%MANPAGES%%man/man7/cmake-compile-features.7.gz
 %%MANPAGES%%man/man7/cmake-developer.7.gz
 %%MANPAGES%%man/man7/cmake-env-variables.7.gz
+%%MANPAGES%%man/man7/cmake-file-api.7.gz
 %%MANPAGES%%man/man7/cmake-generator-expressions.7.gz
 %%MANPAGES%%man/man7/cmake-generators.7.gz
 %%MANPAGES%%man/man7/cmake-language.7.gz
@@ -172,6 +173,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/envvar/CMAKE_BUILD_PARALLEL_LEVEL.rst
 %%DATADIR%%/Help/envvar/CMAKE_CONFIG_TYPE.rst
 %%DATADIR%%/Help/envvar/CMAKE_MSVCIDE_RUN_PATH.rst
+%%DATADIR%%/Help/envvar/CMAKE_NO_VERBOSE.rst
 %%DATADIR%%/Help/envvar/CMAKE_OSX_ARCHITECTURES.rst
 %%DATADIR%%/Help/envvar/CSFLAGS.rst
 %%DATADIR%%/Help/envvar/CTEST_INTERACTIVE_DEBUG_MODE.rst
@@ -186,6 +188,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/envvar/CXXFLAGS.rst
 %%DATADIR%%/Help/envvar/DASHBOARD_TEST_FROM_CTEST.rst
 %%DATADIR%%/Help/envvar/DESTDIR.rst
+%%DATADIR%%/Help/envvar/ENV_VAR.txt
 %%DATADIR%%/Help/envvar/FC.rst
 %%DATADIR%%/Help/envvar/FFLAGS.rst
 %%DATADIR%%/Help/envvar/LDFLAGS.rst
@@ -193,6 +196,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/envvar/PackageName_ROOT.rst
 %%DATADIR%%/Help/envvar/RC.rst
 %%DATADIR%%/Help/envvar/RCFLAGS.rst
+%%DATADIR%%/Help/envvar/VERBOSE.rst
 %%DATADIR%%/Help/generator/Borland Makefiles.rst
 %%DATADIR%%/Help/generator/CodeBlocks.rst
 %%DATADIR%%/Help/generator/CodeLite.rst
@@ -212,6 +216,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/generator/Visual Studio 12 2013.rst
 %%DATADIR%%/Help/generator/Visual Studio 14 2015.rst
 %%DATADIR%%/Help/generator/Visual Studio 15 2017.rst
+%%DATADIR%%/Help/generator/Visual Studio 16 2019.rst
 %%DATADIR%%/Help/generator/Visual Studio 6.rst
 %%DATADIR%%/Help/generator/Visual Studio 7 .NET 2003.rst
 %%DATADIR%%/Help/generator/Visual Studio 7.rst
@@ -232,6 +237,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/manual/cmake-compile-features.7.rst
 %%DATADIR%%/Help/manual/cmake-developer.7.rst
 %%DATADIR%%/Help/manual/cmake-env-variables.7.rst
+%%DATADIR%%/Help/manual/cmake-file-api.7.rst
 %%DATADIR%%/Help/manual/cmake-generator-expressions.7.rst
 %%DATADIR%%/Help/manual/cmake-generators.7.rst
 %%DATADIR%%/Help/manual/cmake-language.7.rst
@@ -297,6 +303,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/module/CheckFortranCompilerFlag.rst
 %%DATADIR%%/Help/module/CheckFortranFunctionExists.rst
 %%DATADIR%%/Help/module/CheckFortranSourceCompiles.rst
+%%DATADIR%%/Help/module/CheckFortranSourceRuns.rst
 %%DATADIR%%/Help/module/CheckFunctionExists.rst
 %%DATADIR%%/Help/module/CheckIPOSupported.rst
 %%DATADIR%%/Help/module/CheckIncludeFile.rst
@@ -304,6 +311,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/module/CheckIncludeFiles.rst
 %%DATADIR%%/Help/module/CheckLanguage.rst
 %%DATADIR%%/Help/module/CheckLibraryExists.rst
+%%DATADIR%%/Help/module/CheckPIESupported.rst
 %%DATADIR%%/Help/module/CheckPrototypeDefinition.rst
 %%DATADIR%%/Help/module/CheckStructHasMember.rst
 %%DATADIR%%/Help/module/CheckSymbolExists.rst
@@ -343,6 +351,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/module/FindFLEX.rst
 %%DATADIR%%/Help/module/FindFLTK.rst
 %%DATADIR%%/Help/module/FindFLTK2.rst
+%%DATADIR%%/Help/module/FindFontconfig.rst
 %%DATADIR%%/Help/module/FindFreetype.rst
 %%DATADIR%%/Help/module/FindGCCXML.rst
 %%DATADIR%%/Help/module/FindGDAL.rst
@@ -381,6 +390,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/module/FindLibLZMA.rst
 %%DATADIR%%/Help/module/FindLibXml2.rst
 %%DATADIR%%/Help/module/FindLibXslt.rst
+%%DATADIR%%/Help/module/FindLibinput.rst
 %%DATADIR%%/Help/module/FindLua.rst
 %%DATADIR%%/Help/module/FindLua50.rst
 %%DATADIR%%/Help/module/FindLua51.rst
@@ -429,6 +439,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/module/FindSDL_net.rst
 %%DATADIR%%/Help/module/FindSDL_sound.rst
 %%DATADIR%%/Help/module/FindSDL_ttf.rst
+%%DATADIR%%/Help/module/FindSQLite3.rst
 %%DATADIR%%/Help/module/FindSWIG.rst
 %%DATADIR%%/Help/module/FindSelfPackers.rst
 %%DATADIR%%/Help/module/FindSquish.rst
@@ -579,6 +590,13 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/policy/CMP0079.rst
 %%DATADIR%%/Help/policy/CMP0080.rst
 %%DATADIR%%/Help/policy/CMP0081.rst
+%%DATADIR%%/Help/policy/CMP0082.rst
+%%DATADIR%%/Help/policy/CMP0083.rst
+%%DATADIR%%/Help/policy/CMP0084.rst
+%%DATADIR%%/Help/policy/CMP0085.rst
+%%DATADIR%%/Help/policy/CMP0086.rst
+%%DATADIR%%/Help/policy/CMP0087.rst
+%%DATADIR%%/Help/policy/CMP0088.rst
 %%DATADIR%%/Help/policy/DEPRECATED.txt
 %%DATADIR%%/Help/policy/DISALLOWED_COMMAND.txt
 %%DATADIR%%/Help/prop_cache/ADVANCED.rst
@@ -598,6 +616,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_dir/COMPILE_OPTIONS.rst
 %%DATADIR%%/Help/prop_dir/DEFINITIONS.rst
 %%DATADIR%%/Help/prop_dir/EXCLUDE_FROM_ALL.rst
+%%DATADIR%%/Help/prop_tgt/GHS_NO_SOURCE_GROUP_FILE.rst
 %%DATADIR%%/Help/prop_dir/IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.rst
 %%DATADIR%%/Help/prop_dir/INCLUDE_DIRECTORIES.rst
 %%DATADIR%%/Help/prop_dir/INCLUDE_REGULAR_EXPRESSION.rst
@@ -629,6 +648,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_gbl/AUTORCC_SOURCE_GROUP.rst
 %%DATADIR%%/Help/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.rst
 %%DATADIR%%/Help/prop_gbl/CMAKE_C_KNOWN_FEATURES.rst
+%%DATADIR%%/Help/prop_gbl/CMAKE_ROLE.rst
 %%DATADIR%%/Help/prop_gbl/DEBUG_CONFIGURATIONS.rst
 %%DATADIR%%/Help/prop_gbl/DISABLED_FEATURES.rst
 %%DATADIR%%/Help/prop_gbl/ECLIPSE_EXTRA_CPROJECT_CONTENTS.rst
@@ -754,20 +774,25 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/ARCHIVE_OUTPUT_NAME.rst
 %%DATADIR%%/Help/prop_tgt/ARCHIVE_OUTPUT_NAME_CONFIG.rst
 %%DATADIR%%/Help/prop_tgt/AUTOGEN_BUILD_DIR.rst
+%%DATADIR%%/Help/prop_tgt/AUTOGEN_ORIGIN_DEPENDS.rst
 %%DATADIR%%/Help/prop_tgt/AUTOGEN_PARALLEL.rst
 %%DATADIR%%/Help/prop_tgt/AUTOGEN_TARGET_DEPENDS.rst
 %%DATADIR%%/Help/prop_tgt/AUTOMOC.rst
 %%DATADIR%%/Help/prop_tgt/AUTOMOC_COMPILER_PREDEFINES.rst
 %%DATADIR%%/Help/prop_tgt/AUTOMOC_DEPEND_FILTERS.rst
+%%DATADIR%%/Help/prop_tgt/AUTOMOC_EXECUTABLE.rst
 %%DATADIR%%/Help/prop_tgt/AUTOMOC_MACRO_NAMES.rst
 %%DATADIR%%/Help/prop_tgt/AUTOMOC_MOC_OPTIONS.rst
 %%DATADIR%%/Help/prop_tgt/AUTORCC.rst
+%%DATADIR%%/Help/prop_tgt/AUTORCC_EXECUTABLE.rst
 %%DATADIR%%/Help/prop_tgt/AUTORCC_OPTIONS.rst
 %%DATADIR%%/Help/prop_tgt/AUTOUIC.rst
+%%DATADIR%%/Help/prop_tgt/AUTOUIC_EXECUTABLE.rst
 %%DATADIR%%/Help/prop_tgt/AUTOUIC_OPTIONS.rst
 %%DATADIR%%/Help/prop_tgt/AUTOUIC_SEARCH_PATHS.rst
 %%DATADIR%%/Help/prop_tgt/BINARY_DIR.rst
 %%DATADIR%%/Help/prop_tgt/BUILD_RPATH.rst
+%%DATADIR%%/Help/prop_tgt/BUILD_RPATH_USE_ORIGIN.rst
 %%DATADIR%%/Help/prop_tgt/BUILD_WITH_INSTALL_NAME_DIR.rst
 %%DATADIR%%/Help/prop_tgt/BUILD_WITH_INSTALL_RPATH.rst
 %%DATADIR%%/Help/prop_tgt/BUNDLE.rst
@@ -820,6 +845,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/prop_tgt/Fortran_FORMAT.rst
 %%DATADIR%%/Help/prop_tgt/Fortran_MODULE_DIRECTORY.rst
 %%DATADIR%%/Help/prop_tgt/GENERATOR_FILE_NAME.rst
+%%DATADIR%%/Help/prop_tgt/GHS_INTEGRITY_APP.rst
 %%DATADIR%%/Help/prop_tgt/GNUtoMS.rst
 %%DATADIR%%/Help/prop_tgt/HAS_CXX.rst
 %%DATADIR%%/Help/prop_tgt/IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.rst
@@ -1005,6 +1031,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/release/3.11.rst
 %%DATADIR%%/Help/release/3.12.rst
 %%DATADIR%%/Help/release/3.13.rst
+%%DATADIR%%/Help/release/3.14.rst
 %%DATADIR%%/Help/release/3.2.rst
 %%DATADIR%%/Help/release/3.3.rst
 %%DATADIR%%/Help/release/3.4.rst
@@ -1052,6 +1079,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_ARCHIVE_OUTPUT_DIRECTORY_CONFIG.rst
 %%DATADIR%%/Help/variable/CMAKE_ARGC.rst
 %%DATADIR%%/Help/variable/CMAKE_ARGV0.rst
+%%DATADIR%%/Help/variable/CMAKE_AUTOGEN_ORIGIN_DEPENDS.rst
 %%DATADIR%%/Help/variable/CMAKE_AUTOGEN_PARALLEL.rst
 %%DATADIR%%/Help/variable/CMAKE_AUTOGEN_VERBOSE.rst
 %%DATADIR%%/Help/variable/CMAKE_AUTOMOC.rst
@@ -1068,6 +1096,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_BACKWARDS_COMPATIBILITY.rst
 %%DATADIR%%/Help/variable/CMAKE_BINARY_DIR.rst
 %%DATADIR%%/Help/variable/CMAKE_BUILD_RPATH.rst
+%%DATADIR%%/Help/variable/CMAKE_BUILD_RPATH_USE_ORIGIN.rst
 %%DATADIR%%/Help/variable/CMAKE_BUILD_TOOL.rst
 %%DATADIR%%/Help/variable/CMAKE_BUILD_TYPE.rst
 %%DATADIR%%/Help/variable/CMAKE_BUILD_WITH_INSTALL_NAME_DIR.rst
@@ -1147,6 +1176,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_NAME.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY.rst
+%%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_RESOLVE_SYMLINKS.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_SORT_DIRECTION.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_SORT_ORDER.rst
 %%DATADIR%%/Help/variable/CMAKE_FIND_PACKAGE_WARN_NO_MODULE.rst
@@ -1167,6 +1197,11 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_GENERATOR_INSTANCE.rst
 %%DATADIR%%/Help/variable/CMAKE_GENERATOR_PLATFORM.rst
 %%DATADIR%%/Help/variable/CMAKE_GENERATOR_TOOLSET.rst
+%%DATADIR%%/Help/variable/CMAKE_GHS_NO_SOURCE_GROUP_FILE.rst
+%%DATADIR%%/Help/variable/CMAKE_GLOBAL_AUTOGEN_TARGET.rst
+%%DATADIR%%/Help/variable/CMAKE_GLOBAL_AUTOGEN_TARGET_NAME.rst
+%%DATADIR%%/Help/variable/CMAKE_GLOBAL_AUTORCC_TARGET.rst
+%%DATADIR%%/Help/variable/CMAKE_GLOBAL_AUTORCC_TARGET_NAME.rst
 %%DATADIR%%/Help/variable/CMAKE_GNUtoMS.rst
 %%DATADIR%%/Help/variable/CMAKE_HOME_DIRECTORY.rst
 %%DATADIR%%/Help/variable/CMAKE_HOST_APPLE.rst
@@ -1238,11 +1273,6 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_RELEASE_INIT.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO_INIT.rst
-%%DATADIR%%/Help/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_CONFIG.rst
-%%DATADIR%%/Help/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_DEBUG.rst
-%%DATADIR%%/Help/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_MINSIZEREL.rst
-%%DATADIR%%/Help/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_RELEASE.rst
-%%DATADIR%%/Help/variable/CMAKE_LANG_GHS_KERNEL_FLAGS_RELWITHDEBINFO.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_IGNORE_EXTENSIONS.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_IMPLICIT_INCLUDE_DIRECTORIES.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_IMPLICIT_LINK_DIRECTORIES.rst
@@ -1287,6 +1317,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_MAP_IMPORTED_CONFIG_CONFIG.rst
 %%DATADIR%%/Help/variable/CMAKE_MATCH_COUNT.rst
 %%DATADIR%%/Help/variable/CMAKE_MATCH_n.rst
+%%DATADIR%%/Help/variable/CMAKE_MAXIMUM_RECURSION_DEPTH.rst
 %%DATADIR%%/Help/variable/CMAKE_MFC_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_MINIMUM_REQUIRED_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_MINOR_VERSION.rst
@@ -1461,7 +1492,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CTEST_CUSTOM_POST_TEST.rst
 %%DATADIR%%/Help/variable/CTEST_CUSTOM_PRE_MEMCHECK.rst
 %%DATADIR%%/Help/variable/CTEST_CUSTOM_PRE_TEST.rst
-%%DATADIR%%/Help/variable/CTEST_CUSTOM_TEST_IGNORE.rst
+%%DATADIR%%/Help/variable/CTEST_CUSTOM_TESTS_IGNORE.rst
 %%DATADIR%%/Help/variable/CTEST_CUSTOM_WARNING_EXCEPTION.rst
 %%DATADIR%%/Help/variable/CTEST_CUSTOM_WARNING_MATCH.rst
 %%DATADIR%%/Help/variable/CTEST_CUSTOM_XXX.txt
@@ -1496,6 +1527,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CTEST_SCP_COMMAND.rst
 %%DATADIR%%/Help/variable/CTEST_SITE.rst
 %%DATADIR%%/Help/variable/CTEST_SOURCE_DIRECTORY.rst
+%%DATADIR%%/Help/variable/CTEST_SUBMIT_URL.rst
 %%DATADIR%%/Help/variable/CTEST_SVN_COMMAND.rst
 %%DATADIR%%/Help/variable/CTEST_SVN_OPTIONS.rst
 %%DATADIR%%/Help/variable/CTEST_SVN_UPDATE_OPTIONS.rst
@@ -1510,6 +1542,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/ENV.rst
 %%DATADIR%%/Help/variable/EXECUTABLE_OUTPUT_PATH.rst
 %%DATADIR%%/Help/variable/GHS-MULTI.rst
+%%DATADIR%%/Help/variable/IOS.rst
 %%DATADIR%%/Help/variable/LIBRARY_OUTPUT_PATH.rst
 %%DATADIR%%/Help/variable/MINGW.rst
 %%DATADIR%%/Help/variable/MSVC.rst
@@ -1525,6 +1558,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/MSVC_IDE.rst
 %%DATADIR%%/Help/variable/MSVC_TOOLSET_VERSION.rst
 %%DATADIR%%/Help/variable/MSVC_VERSION.rst
+%%DATADIR%%/Help/variable/MSYS.rst
 %%DATADIR%%/Help/variable/PROJECT-NAME_BINARY_DIR.rst
 %%DATADIR%%/Help/variable/PROJECT-NAME_DESCRIPTION.rst
 %%DATADIR%%/Help/variable/PROJECT-NAME_HOMEPAGE_URL.rst
@@ -1647,6 +1681,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/CMakeNinjaFindMake.cmake
 %%DATADIR%%/Modules/CMakePackageConfigHelpers.cmake
 %%DATADIR%%/Modules/CMakeParseArguments.cmake
+%%DATADIR%%/Modules/CMakeParseImplicitIncludeInfo.cmake
 %%DATADIR%%/Modules/CMakeParseImplicitLinkInfo.cmake
 %%DATADIR%%/Modules/CMakePlatformId.h.in
 %%DATADIR%%/Modules/CMakePrintHelpers.cmake
@@ -1709,6 +1744,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/CheckFortranCompilerFlag.cmake
 %%DATADIR%%/Modules/CheckFortranFunctionExists.cmake
 %%DATADIR%%/Modules/CheckFortranSourceCompiles.cmake
+%%DATADIR%%/Modules/CheckFortranSourceRuns.cmake
 %%DATADIR%%/Modules/CheckFunctionExists.c
 %%DATADIR%%/Modules/CheckFunctionExists.cmake
 %%DATADIR%%/Modules/CheckIPOSupported.cmake
@@ -1729,6 +1765,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/CheckLanguage.cmake
 %%DATADIR%%/Modules/CheckLibraryExists.cmake
 %%DATADIR%%/Modules/CheckLibraryExists.lists.in
+%%DATADIR%%/Modules/CheckPIESupported.cmake
 %%DATADIR%%/Modules/CheckPrototypeDefinition.c.in
 %%DATADIR%%/Modules/CheckPrototypeDefinition.cmake
 %%DATADIR%%/Modules/CheckSizeOf.cmake
@@ -1777,19 +1814,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/Compiler/Cray.cmake
 %%DATADIR%%/Modules/Compiler/CrayPrgEnv-C.cmake
 %%DATADIR%%/Modules/Compiler/CrayPrgEnv-CXX.cmake
-%%DATADIR%%/Modules/Compiler/CrayPrgEnv-Cray-C.cmake
-%%DATADIR%%/Modules/Compiler/CrayPrgEnv-Cray-CXX.cmake
-%%DATADIR%%/Modules/Compiler/CrayPrgEnv-Cray-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/CrayPrgEnv-Fortran.cmake
-%%DATADIR%%/Modules/Compiler/CrayPrgEnv-GNU-C.cmake
-%%DATADIR%%/Modules/Compiler/CrayPrgEnv-GNU-CXX.cmake
-%%DATADIR%%/Modules/Compiler/CrayPrgEnv-GNU-Fortran.cmake
-%%DATADIR%%/Modules/Compiler/CrayPrgEnv-Intel-C.cmake
-%%DATADIR%%/Modules/Compiler/CrayPrgEnv-Intel-CXX.cmake
-%%DATADIR%%/Modules/Compiler/CrayPrgEnv-Intel-Fortran.cmake
-%%DATADIR%%/Modules/Compiler/CrayPrgEnv-PGI-C.cmake
-%%DATADIR%%/Modules/Compiler/CrayPrgEnv-PGI-CXX.cmake
-%%DATADIR%%/Modules/Compiler/CrayPrgEnv-PGI-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/CrayPrgEnv.cmake
 %%DATADIR%%/Modules/Compiler/Embarcadero-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/Flang-FindBinUtils.cmake
@@ -1856,7 +1881,10 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/Compiler/PathScale-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/PathScale-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/PathScale.cmake
+%%DATADIR%%/Modules/Compiler/QCC-ASM.cmake
+%%DATADIR%%/Modules/Compiler/QCC-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/QCC-C.cmake
+%%DATADIR%%/Modules/Compiler/QCC-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/QCC-CXX.cmake
 %%DATADIR%%/Modules/Compiler/QCC.cmake
 %%DATADIR%%/Modules/Compiler/SCO-C.cmake
@@ -1894,6 +1922,8 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/Compiler/XL.cmake
 %%DATADIR%%/Modules/Compiler/zOS-C-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake
+%%DATADIR%%/Modules/CompilerId/GHS_default.gpj.in
+%%DATADIR%%/Modules/CompilerId/GHS_lib.gpj.in
 %%DATADIR%%/Modules/CompilerId/VS-10.csproj.in
 %%DATADIR%%/Modules/CompilerId/VS-10.vcxproj.in
 %%DATADIR%%/Modules/CompilerId/VS-7.vcproj.in
@@ -1946,6 +1976,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/FindFLEX.cmake
 %%DATADIR%%/Modules/FindFLTK.cmake
 %%DATADIR%%/Modules/FindFLTK2.cmake
+%%DATADIR%%/Modules/FindFontconfig.cmake
 %%DATADIR%%/Modules/FindFreetype.cmake
 %%DATADIR%%/Modules/FindGCCXML.cmake
 %%DATADIR%%/Modules/FindGDAL.cmake
@@ -1984,6 +2015,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/FindLibLZMA.cmake
 %%DATADIR%%/Modules/FindLibXml2.cmake
 %%DATADIR%%/Modules/FindLibXslt.cmake
+%%DATADIR%%/Modules/FindLibinput.cmake
 %%DATADIR%%/Modules/FindLua.cmake
 %%DATADIR%%/Modules/FindLua50.cmake
 %%DATADIR%%/Modules/FindLua51.cmake
@@ -2039,6 +2071,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/FindSDL_net.cmake
 %%DATADIR%%/Modules/FindSDL_sound.cmake
 %%DATADIR%%/Modules/FindSDL_ttf.cmake
+%%DATADIR%%/Modules/FindSQLite3.cmake
 %%DATADIR%%/Modules/FindSWIG.cmake
 %%DATADIR%%/Modules/FindSelfPackers.cmake
 %%DATADIR%%/Modules/FindSquish.cmake
@@ -2113,6 +2146,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/IntelVSImplicitPath/CMakeLists.txt
 %%DATADIR%%/Modules/IntelVSImplicitPath/detect.cmake
 %%DATADIR%%/Modules/IntelVSImplicitPath/hello.f
+%%DATADIR%%/Modules/Internal/CMakeCheckCompilerFlag.cmake
 %%DATADIR%%/Modules/Internal/CPack/CPackDeb.cmake
 %%DATADIR%%/Modules/Internal/CPack/CPackExternal.cmake
 %%DATADIR%%/Modules/Internal/CPack/CPackFreeBSD.cmake
@@ -2295,8 +2329,6 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/Platform/HP-UX-HP.cmake
 %%DATADIR%%/Modules/Platform/HP-UX.cmake
 %%DATADIR%%/Modules/Platform/Haiku.cmake
-%%DATADIR%%/Modules/Platform/IRIX.cmake
-%%DATADIR%%/Modules/Platform/IRIX64.cmake
 %%DATADIR%%/Modules/Platform/Linux-Absoft-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linux-CCur-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linux-Clang-C.cmake
@@ -2413,8 +2445,17 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Modules/Platform/Xenix.cmake
 %%DATADIR%%/Modules/Platform/eCos.cmake
 %%DATADIR%%/Modules/Platform/gas.cmake
+%%DATADIR%%/Modules/Platform/iOS-Determine-CXX.cmake
+%%DATADIR%%/Modules/Platform/iOS-Initialize.cmake
+%%DATADIR%%/Modules/Platform/iOS.cmake
 %%DATADIR%%/Modules/Platform/kFreeBSD.cmake
 %%DATADIR%%/Modules/Platform/syllable.cmake
+%%DATADIR%%/Modules/Platform/tvOS-Determine-CXX.cmake
+%%DATADIR%%/Modules/Platform/tvOS-Initialize.cmake
+%%DATADIR%%/Modules/Platform/tvOS.cmake
+%%DATADIR%%/Modules/Platform/watchOS-Determine-CXX.cmake
+%%DATADIR%%/Modules/Platform/watchOS-Initialize.cmake
+%%DATADIR%%/Modules/Platform/watchOS.cmake
 %%DATADIR%%/Modules/ProcessorCount.cmake
 %%DATADIR%%/Modules/Qt4ConfigDependentSettings.cmake
 %%DATADIR%%/Modules/Qt4Macros.cmake
@@ -2466,6 +2507,38 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Templates/CPack.GenericWelcome.txt
 %%DATADIR%%/Templates/CPackConfig.cmake.in
 %%DATADIR%%/Templates/CTestScript.cmake.in
+%%DATADIR%%/Templates/MSBuild/FlagTables/v10_CL.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v10_CSharp.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v10_Cuda.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v10_CudaHost.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v10_LIB.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v10_Link.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v10_MASM.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v10_NASM.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v10_RC.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v11_CL.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v11_CSharp.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v11_LIB.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v11_Link.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v11_MASM.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v11_RC.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v12_CL.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v12_CSharp.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v12_LIB.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v12_Link.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v12_MASM.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v12_RC.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v140_CL.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v140_CSharp.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v140_Link.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v141_CL.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v141_CSharp.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v141_Link.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v142_CL.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v142_Link.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v14_LIB.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v14_MASM.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v14_RC.json
 %%DATADIR%%/Templates/MSBuild/nasm.props.in
 %%DATADIR%%/Templates/MSBuild/nasm.targets
 %%DATADIR%%/Templates/MSBuild/nasm.xml

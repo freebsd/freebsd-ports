@@ -1,14 +1,15 @@
---- Modules/FindBoost.cmake.orig	2018-03-28 11:16:49 UTC
+--- Modules/FindBoost.cmake.orig	2019-02-07 20:55:01 UTC
 +++ Modules/FindBoost.cmake
-@@ -55,6 +55,7 @@
- #    (or BOOSTROOT)
- #   BOOST_INCLUDEDIR       - Preferred include directory e.g. <prefix>/include
- #   BOOST_LIBRARYDIR       - Preferred library directory e.g. <prefix>/lib
-+#   BOOST_PYTHON_SUFFIX    - Preferred Python version
- #   Boost_NO_SYSTEM_PATHS  - Set to ON to disable searching in locations not
- #                            specified by these hint variables. Default is OFF.
- #   Boost_ADDITIONAL_VERSIONS
-@@ -1663,10 +1664,10 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
+@@ -56,6 +56,8 @@ This module reads hints about search locations from va
+    (or BOOSTROOT)
+   BOOST_INCLUDEDIR       - Preferred include directory e.g. <prefix>/include
+   BOOST_LIBRARYDIR       - Preferred library directory e.g. <prefix>/lib
++  BOOST_PYTHON_SUFFIX    - Preferred Python version
++
+   Boost_NO_SYSTEM_PATHS  - Set to ON to disable searching in locations not
+                            specified by these hint variables. Default is OFF.
+   Boost_ADDITIONAL_VERSIONS
+@@ -1739,10 +1741,10 @@ foreach(COMPONENT ${Boost_FIND_COMPONENTS})
    # Handle Python version suffixes
    unset(COMPONENT_PYTHON_VERSION_MAJOR)
    unset(COMPONENT_PYTHON_VERSION_MINOR)
