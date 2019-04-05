@@ -1,6 +1,6 @@
---- ./src/Makefile.in.orig	2008-07-28 14:05:22.000000000 +0200
-+++ ./src/Makefile.in	2008-07-28 14:05:32.000000000 +0200
-@@ -217,7 +217,7 @@
+--- src/Makefile.in.orig	2009-10-05 18:37:12 UTC
++++ src/Makefile.in
+@@ -273,7 +273,7 @@ SUBDIRS = widgets @GUICHAN_EXTRADIRS@ hge openlayer co
  INCLUDES = -I$(top_srcdir)/include
  lib_LTLIBRARIES = libguichan.la
  libguichan_la_LIBADD = widgets/libguichan_widgets.la
