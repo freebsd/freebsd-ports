@@ -112,6 +112,8 @@ bin/pyuic5
 %%PYQT_SIPDIR%%/QtCore/qbuffer.sip
 %%PYQT_SIPDIR%%/QtCore/qbytearray.sip
 %%PYQT_SIPDIR%%/QtCore/qbytearraymatcher.sip
+%%PYQT_SIPDIR%%/QtCore/qcborcommon.sip
+%%PYQT_SIPDIR%%/QtCore/qcborstream.sip
 %%PYQT_SIPDIR%%/QtCore/qchar.sip
 %%PYQT_SIPDIR%%/QtCore/qcollator.sip
 %%PYQT_SIPDIR%%/QtCore/qcommandlineoption.sip
@@ -149,6 +151,7 @@ bin/pyuic5
 %%PYQT_SIPDIR%%/QtCore/qlocale.sip
 %%PYQT_SIPDIR%%/QtCore/qlockfile.sip
 %%PYQT_SIPDIR%%/QtCore/qlogging.sip
+%%PYQT_SIPDIR%%/QtCore/qloggingcategory.sip
 %%PYQT_SIPDIR%%/QtCore/qmargins.sip
 %%PYQT_SIPDIR%%/QtCore/qmessageauthenticationcode.sip
 %%PYQT_SIPDIR%%/QtCore/qmetaobject.sip

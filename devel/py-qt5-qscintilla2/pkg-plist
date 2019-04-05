@@ -1,6 +1,6 @@
-%%PYTHON_SITELIBDIR%%/QScintilla-2.10.8.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/QScintilla-2.10.8.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/QScintilla-2.10.8.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/QScintilla-%%PYQT_QSCIVERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/QScintilla-%%PYQT_QSCIVERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/QScintilla-%%PYQT_QSCIVERSION%%.dist-info/RECORD
 %%PYTHON_SITELIBDIR%%/PyQt5/Qsci.pyi
 %%PYTHON_SITELIBDIR%%/PyQt5/Qsci.so
 %%PYQT_SIPDIR%%/Qsci/qsciabstractapis.sip

@@ -12,18 +12,9 @@ QtWebEngineWidgets.
 
 Also causes .pyi files to be installed regardless of the Python version to
 simplify plist handling.
---- configure.py.orig	2018-10-01 13:38:10 UTC
+--- configure.py.orig	2019-03-19 14:42:34 UTC
 +++ configure.py
-@@ -102,7 +102,7 @@ MODULE_METADATA = {
-     'QtWebEngineCore':      ModuleMetadata(qmake_QT=['webenginecore', '-gui']),
-     'QtWebEngineWidgets':   ModuleMetadata(
-                                     qmake_QT=['webenginewidgets', 'webchannel',
--                                            'network', 'widgets'],
-+                                            'network', 'printsupport', 'widgets'],
-                                     cpp11=True),
-     'QtWebKit':             ModuleMetadata(qmake_QT=['webkit', 'network']),
-     'QtWebKitWidgets':      ModuleMetadata(
-@@ -527,7 +527,7 @@ class TargetConfiguration:
+@@ -521,7 +521,7 @@ class TargetConfiguration:
          self.no_pydbus = False
          self.no_qml_plugin = False
          self.no_tools = False
@@ -32,7 +23,7 @@ simplify plist handling.
          self.qmake = self._find_exe('qmake')
          self.qmake_spec = ''
          self.qmake_spec_default = ''
-@@ -805,7 +805,7 @@ class TargetConfiguration:
+@@ -799,7 +799,7 @@ class TargetConfiguration:
          """
  
          # The platform may have changed so update the default.
@@ -41,7 +32,7 @@ simplify plist handling.
              self.prot_is_public = True
  
          self.vend_inc_dir = self.py_venv_inc_dir
-@@ -1506,8 +1506,9 @@ def generate_makefiles(target_config, verbose, parts, 
+@@ -1492,8 +1492,9 @@ def generate_makefiles(target_config, verbose, parts, 
  
      # Add the internal modules if they are required.
      if not target_config.no_tools:
@@ -53,7 +44,7 @@ simplify plist handling.
  
      for mname in pyqt_modules:
          metadata = MODULE_METADATA[mname]
-@@ -1549,22 +1550,20 @@ def generate_makefiles(target_config, verbose, parts, 
+@@ -1535,22 +1536,20 @@ def generate_makefiles(target_config, verbose, parts, 
  
      f.close()
  
@@ -87,7 +78,7 @@ simplify plist handling.
  
      # Generate the Qt Designer plugin.
      if not target_config.no_designer_plugin and 'QtDesigner' in target_config.pyqt_modules:
-@@ -1580,23 +1579,6 @@ def generate_makefiles(target_config, verbose, parts, 
+@@ -1566,23 +1565,6 @@ def generate_makefiles(target_config, verbose, parts, 
                      source_path('examples', 'quick', 'tutorials', 'extending',
                              'chapter6-plugins'))
  
@@ -111,7 +102,7 @@ simplify plist handling.
      # Generate the Python dbus module.
      if target_config.pydbus_module_dir != '':
          mname = 'dbus'
-@@ -1627,27 +1609,31 @@ def generate_makefiles(target_config, verbose, parts, 
+@@ -1613,27 +1595,31 @@ def generate_makefiles(target_config, verbose, parts, 
          all_installs.append(
                  root_dir + '/' + module_file_name(target_config, mname))
  
@@ -149,7 +140,7 @@ simplify plist handling.
  
      # Install the tool main scripts and wrappers.
      if wrappers:
-@@ -1676,6 +1662,8 @@ INSTALLS += tools
+@@ -1662,6 +1648,8 @@ INSTALLS += tools
      # Install the .sip files.
      if target_config.pyqt_sip_dir:
          for mname, metadata in MODULE_METADATA.items():
@@ -158,7 +149,7 @@ simplify plist handling.
              if metadata.public and mname != 'Qt':
                  sip_files = matching_files(source_path('sip', mname, '*.sip'))
  
-@@ -1695,7 +1683,7 @@ INSTALLS += sip%s
+@@ -1681,7 +1669,7 @@ INSTALLS += sip%s
                      all_installs.append(mdir)
  
      # Install the stub files.
@@ -167,7 +158,7 @@ simplify plist handling.
          pyi_names = [mname + '.pyi'
                  for mname in target_config.pyqt_modules if mname[0] != '_']
  
-@@ -1713,14 +1701,15 @@ INSTALLS += pep484_stubs
+@@ -1699,14 +1687,15 @@ INSTALLS += pep484_stubs
      # Install the QScintilla .api file.
      if target_config.qsci_api:
          api_dir = target_config.qsci_api_dir + '/api/python'
@@ -186,7 +177,7 @@ simplify plist handling.
  
      if distinfo:
          # The command to run to generate the .dist-info directory.
-@@ -1984,7 +1973,7 @@ def inform_user(target_config, sip_version):
+@@ -1970,7 +1959,7 @@ def inform_user(target_config, sip_version):
                          os.path.join(
                                  target_config.qsci_api_dir, 'api', 'python'))
  
@@ -195,7 +186,7 @@ simplify plist handling.
          inform("The PyQt5 PEP 484 stub files will be installed in %s." %
                  target_config.pyqt_stubs_dir)
  
-@@ -2553,7 +2542,7 @@ def generate_sip_module_code(target_config, verbose, p
+@@ -2546,7 +2535,7 @@ def generate_sip_module_code(target_config, verbose, p
              argv.append('-a')
              argv.append(mname + '.api')
  
@@ -204,7 +195,7 @@ simplify plist handling.
              argv.append('-y')
              argv.append(mname + '.pyi')
  
-@@ -2726,7 +2715,7 @@ target.files = $$PY_MODULE
+@@ -2719,7 +2708,7 @@ target.files = $$PY_MODULE
      pro_lines.append('INSTALLS += target')
  
      # This optimisation could apply to other platforms.
