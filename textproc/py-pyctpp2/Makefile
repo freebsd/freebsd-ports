@@ -16,7 +16,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libctpp2.so:textproc/ctpp2
 
 # Python3 ready
-USES=		python
+USES=		python:-3.6
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
