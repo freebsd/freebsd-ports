@@ -200,6 +200,7 @@ libexec/apache24/mod_log_config.so
 %%SOCACHE_DBM%%libexec/apache24/mod_socache_dbm.so
 %%SOCACHE_DC%%libexec/apache24/mod_socache_dc.so
 %%SOCACHE_MEMCACHE%%libexec/apache24/mod_socache_memcache.so
+%%SOCACHE_REDIS%%libexec/apache24/mod_socache_redis.so
 %%SOCACHE_SHMCB%%libexec/apache24/mod_socache_shmcb.so
 %%SPELING%%libexec/apache24/mod_speling.so
 %%SSL%%libexec/apache24/mod_ssl.so

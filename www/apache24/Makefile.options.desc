@@ -149,6 +149,7 @@ SLOTMEM_SHM_DESC=		Slotmem provider that uses shared memory
 SOCACHE_DBM_DESC=		dbm small object cache provider
 SOCACHE_DC_DESC=		distcache small object cache provider
 SOCACHE_MEMCACHE_DESC=		memcache small object cache provider
+SOCACHE_REDIS_DESC=		Redis based shared object cache provider
 SOCACHE_SHMCB_DESC=		shmcb small object cache provider
 SPELING_DESC=			Correct common URL misspellings
 SSL_DESC=			SSL/TLS support (mod_ssl)
