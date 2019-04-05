@@ -1790,7 +1790,7 @@ sub checkmakefile {
 	}
 
 	#
-	# while file: check that CMAKE_BOOL just has words
+	# whole file: check that CMAKE_BOOL just has words
 	#
 	print "OK: checking that *_CMAKE_BOOL only contains words.\n" if ($verbose);
 	if ($whole =~ /\n([\w\d]+)_CMAKE_BOOL[?+:]?=([^\n]+)\n/) {
@@ -1802,6 +1802,17 @@ sub checkmakefile {
 		}
 	}
 
+	print "OK: checking that *CMAKE* co-occurs with *USES+=cmake.\n" if ($verbose);
+	while ($whole =~ /\n([\w\d]+_)?CMAKE_(ARGS|BOOL|BOOL_ON|BOOL_OFF|OFF|ON)\b/g) {
+		my $lineno = &linenumber($`);
+		my $o = $1;
+		my $found_cmake = 0;
+		unless ($makevar{USES} =~ /\b(cmake\b|cmake:)/) {
+			$o = "" unless ($o);
+			&perror("FATAL", $file, $lineno, "${o}CMAKE_$2 is set without USES+=cmake");
+		}
+	}
+            
 	#
 	# whole file: NO_CHECKSUM
 	#
