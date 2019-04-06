@@ -29,6 +29,8 @@ CFLAGS+=	-march=i586
 .endif
 
 .if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	incomplete definition of type 'struct dh_st'
+BROKEN_FreeBSD_13=	incomplete definition of type 'struct dh_st'
 CMAKE_ARGS+=	-DWITH_SSL="system"
 .else
 CMAKE_ARGS+=	-DWITH_SSL="${OPENSSLBASE}"
