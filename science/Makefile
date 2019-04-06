@@ -54,6 +54,7 @@
     SUBDIR += coordgenlibs
     SUBDIR += coot
     SUBDIR += cp2k
+    SUBDIR += cp2k-data
     SUBDIR += crf++
     SUBDIR += dalton
     SUBDIR += datawarrior
