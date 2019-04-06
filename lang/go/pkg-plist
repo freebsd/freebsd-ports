@@ -1768,6 +1768,7 @@ go/src/cmd/go/testdata/script/list_test_imports.txt
 go/src/cmd/go/testdata/script/mod_bad_domain.txt
 go/src/cmd/go/testdata/script/mod_bad_filenames.txt
 go/src/cmd/go/testdata/script/mod_build_tags.txt
+go/src/cmd/go/testdata/script/mod_build_versioned.txt
 go/src/cmd/go/testdata/script/mod_case.txt
 go/src/cmd/go/testdata/script/mod_case_cgo.txt
 go/src/cmd/go/testdata/script/mod_clean_cache.txt
@@ -8180,6 +8181,9 @@ go/test/fixedbugs/issue30061.go
 go/test/fixedbugs/issue30476.go
 go/test/fixedbugs/issue30566a.go
 go/test/fixedbugs/issue30566b.go
+go/test/fixedbugs/issue30956.go
+go/test/fixedbugs/issue30956.out
+go/test/fixedbugs/issue30977.go
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
 go/test/fixedbugs/issue3552.go
