@@ -15,10 +15,13 @@ COMMENT=	Deduplicating backup program
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_12=	does not build with OpenSSL 1.1
+BROKEN_FreeBSD_13=	does not build with OpenSSL 1.1
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.1.10:devel/py-msgpack@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.1.10:devel/py-msgpack@${PY_FLAVOR}
 
-USES=		python:3.3+ ssl
+USES=		python:3.3-3.6 ssl
 USE_PYTHON=	autoplist distutils
 
 PYDISTUTILS_BUILDPATH=${BUILD_WRKSRC}/build/lib.${OPSYS:tl}-${UNAMER}-${ARCH}-${PYTHON_VER}
