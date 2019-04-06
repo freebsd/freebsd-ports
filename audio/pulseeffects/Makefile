@@ -2,7 +2,7 @@
 
 PORTNAME=	pulseeffects
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.7
+DISTVERSION=	4.5.6
 CATEGORIES=	audio
 
 MAINTAINER=	daniel@shafer.cc
@@ -83,13 +83,14 @@ GLIB_SCHEMAS=	com.github.wwmm.pulseeffects.gschema.xml \
 		com.github.wwmm.pulseeffects.sourceoutputs.multibandgate.gschema.xml \
 		com.github.wwmm.pulseeffects.sourceoutputs.pitch.gschema.xml \
 		com.github.wwmm.pulseeffects.sourceoutputs.reverb.gschema.xml \
-		com.github.wwmm.pulseeffects.sourceoutputs.webrtc.gschema.xml
+		com.github.wwmm.pulseeffects.sourceoutputs.webrtc.gschema.xml \
+		com.github.wwmm.pulseeffects.spectrum.gschema.xml
 
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	meson_post_install.py
 
-HELP_LANGS=	pt_BR ru
+HELP_LANGS=	it_IT pt_BR ru
 HELP_PNGS=	advancedinfo.png blacklist.png effectsorder.png enableapp.png \
 		saturated.png settingsmenu.png userpresets.png
 
