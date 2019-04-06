@@ -81,6 +81,13 @@ UNICODE_CONFIGURE_ENABLE=	unicode
 XOSD_CONFIGURE_WITH=	libxosd
 XOSD_LIB_DEPENDS=	libxosd.so:misc/xosd
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	variable has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
+BROKEN_FreeBSD_13=	variable has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
+.endif
+
 post-patch:
 # needs newer headers for O_NOFOLLOW flag
 	@${REINPLACE_CMD} '/_XOPEN_SOURCE/ s|600|700|' \
@@ -90,4 +97,4 @@ post-patch-UNICODE-on:
 	@${REINPLACE_CMD} -e 's|ncursesw/||' ${WRKSRC}/configure \
 		${WRKSRC}/plugins/ncurses/ecurses.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
