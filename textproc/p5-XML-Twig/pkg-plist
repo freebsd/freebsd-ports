@@ -5,9 +5,9 @@ bin/xml_spellcheck
 bin/xml_split
 %%SITE_PERL%%/XML/Twig.pm
 %%SITE_PERL%%/XML/Twig/XPath.pm
-%%PERL5_MAN3%%/XML::Twig.3.gz
 %%PERL5_MAN1%%/xml_grep.1.gz
 %%PERL5_MAN1%%/xml_merge.1.gz
 %%PERL5_MAN1%%/xml_pp.1.gz
 %%PERL5_MAN1%%/xml_spellcheck.1.gz
 %%PERL5_MAN1%%/xml_split.1.gz
+%%PERL5_MAN3%%/XML::Twig.3.gz
