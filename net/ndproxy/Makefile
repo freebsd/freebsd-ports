@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ndproxy
-PORTVERSION=	2.0
-DISTVERSIONPREFIX=	v
-CATEGORIES=	net ipv6
+PORTVERSION=	3.2
+CATEGORIES=	net
 
 MAINTAINER=	fbsd.bugzilla@fenyo.net
 COMMENT=	Implementation of IPv6 Neighbor Discovery proxy
@@ -11,16 +10,17 @@ COMMENT=	Implementation of IPv6 Neighbor Discovery proxy
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_mips=		fails to build: ndproxy.c:51: function declaration isn't a prototype
-BROKEN_mips64=		fails to build: ndproxy.c:51: function declaration isn't a prototype
-BROKEN_powerpc64=	fails to build: ndproxy.c:51: function declaration isn't a prototype
+USES=		kmod
 
 SUB_FILES=	pkg-message
 
-USES=		kmod
 USE_RC_SUBR=	ndproxy
 USE_GITHUB=	yes
 GH_ACCOUNT=	AlexandreFenyo
+GH_TAGNAME=	v${PORTVERSION}
+
+# build for a kernel with 'options VIMAGE'
+CFLAGS+=	-DVIMAGE
 
 PLIST_FILES=	${KMODDIR}/${PORTNAME}.ko man/man4/${PORTNAME}.4.gz
 
