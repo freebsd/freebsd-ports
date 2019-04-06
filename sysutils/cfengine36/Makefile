@@ -13,8 +13,8 @@ MAINTAINER=	cy@FreeBSD.org
 #		skreuzer@FreeBSD.org is also committer for this port
 COMMENT=	Systems administration tool for networks
 
-DEPRECATED=		OpenSSL 1.1.X is not supported.
-EXPIRATION_DATE=	2021-09-30
+DEPRECATED=		No longer supported upstream
+EXPIRATION_DATE=	2019-06-30
 
 CONFLICTS=	cfengine3[0-57-9]-* cfengine31[0-9]-*
 .if !defined(MASTERDIR)
