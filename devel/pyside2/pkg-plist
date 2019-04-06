@@ -54,6 +54,8 @@ include/PySide2/signalmanager.h
 lib/cmake/PySide2-%%DISTVERSION%%/PySide2Config%%PYVERSTR%%.cmake
 lib/cmake/PySide2-%%DISTVERSION%%/PySide2Config.cmake
 lib/cmake/PySide2-%%DISTVERSION%%/PySide2ConfigVersion.cmake
+lib/cmake/PySide2-%%DISTVERSION%%/PySide2Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/PySide2-%%DISTVERSION%%/PySide2Targets.cmake
 lib/libpyside2%%PYVERSTR%%.so
 lib/libpyside2%%PYVERSTR%%.so.5.12
 lib/libpyside2%%PYVERSTR%%.so.%%DISTVERSION%%
@@ -148,6 +150,7 @@ share/PySide2/glue/qtgui.cpp
 share/PySide2/glue/qtmultimedia.cpp
 share/PySide2/glue/qtnetwork.cpp
 share/PySide2/glue/qtopengl.cpp
+share/PySide2/glue/qtprintsupport.cpp
 share/PySide2/glue/qtqml.cpp
 share/PySide2/glue/qtquick.cpp
 share/PySide2/glue/qtscript.cpp
@@ -192,6 +195,7 @@ share/PySide2/typesystems/typesystem_network.xml
 share/PySide2/typesystems/typesystem_opengl.xml
 share/PySide2/typesystems/typesystem_positioning.xml
 share/PySide2/typesystems/typesystem_printsupport.xml
+share/PySide2/typesystems/typesystem_printsupport_common.xml
 share/PySide2/typesystems/typesystem_qml.xml
 share/PySide2/typesystems/typesystem_quick.xml
 share/PySide2/typesystems/typesystem_quickwidgets.xml
