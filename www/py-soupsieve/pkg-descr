@@ -1,0 +1,8 @@
+SoupSieve is a CSS selector library designed to be used with
+BeautifulSoup4. It aims to provide selecting, matching, and
+filtering using modern CSS selectors. SoupSieve currently
+provides selectors from the CSS level 1 specifications up
+through the latest CSS level 4 drafts (though some are not yet
+implemented).
+
+WWW: https://github.com/facelessuser/soupsieve
