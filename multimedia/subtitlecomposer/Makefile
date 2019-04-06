@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libavcodec.so:multimedia/ffmpeg
 
-CONFLICTS_INSTALL=	subtitlecomposer-kde4-*
-
 USES=		compiler:c++11-lang cmake desktop-file-utils gettext \
 		kde:5 pkgconfig qt:5 shared-mime-info
 USE_KDE=	auth codecs config configwidgets coreaddons ecm_build i18n \
@@ -25,6 +23,8 @@ USE_QT=		buildtools_build qmake_build core gui widgets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxrd2
+
+PORTSCOUT=	ignore:continuous
 
 OPTIONS_GROUP=	VIDEO
 VIDEO_DESC=	Video players
