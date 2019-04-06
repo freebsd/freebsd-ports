@@ -145,6 +145,11 @@ python_CMD=	${LOCALBASE}/bin/python2.7
 
 .include <bsd.port.options.mk>
 
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	storage size of 'ctx' isn't known
+BROKEN_FreeBSD_13=	storage size of 'ctx' isn't known
+.endif
+
 .if ${PORT_OPTIONS:MHTTP}
 EXTRA_MODULES+=		httpd
 .endif
