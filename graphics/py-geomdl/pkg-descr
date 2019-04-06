@@ -1,0 +1,20 @@
+NURBS-Python (geomdl) is a pure Python, self-contained, object-oriented
+B-Spline and NURBS spline library for Python versions 2.7.x, 3.4.x and later.
+
+NURBS-Python (geomdl) provides convenient data structures and highly
+customizable API for rational and non-rational splines along with the
+efficient and extensible implementations of the following algorithms:
+
+- Spline evaluation
+- Derivative evaluation
+- Knot insertion
+- Knot removal
+- Knot vector refinement
+- Degree elevation
+- Degree reduction
+- Curve and surface fitting via interpolation and least squares approximation
+
+NURBS-Python (geomdl) also provides customizable visualization and animation
+options via Matplotlib, Plotly and VTK libraries.
+
+WWW: https://onurraufbingol.com/NURBS-Python
