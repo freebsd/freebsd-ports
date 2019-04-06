@@ -34,7 +34,7 @@ RUN_DEPENDS=	dot:graphics/graphviz \
 		p5-Lingua-EN-PluralToSingular>=0.14:textproc/p5-Lingua-EN-PluralToSingular \
 		p5-Log-Handler>=0.84:devel/p5-Log-Handler \
 		p5-Moo>=2.001001:devel/p5-Moo \
-		p5-Parse-RecDescent>=1.965.001:devel/p5-Parse-RecDescent \
+		p5-Parse-RecDescent>=1.965001:devel/p5-Parse-RecDescent \
 		p5-Set-Array>=0.23:devel/p5-Set-Array \
 		p5-Text-Xslate>=1.2000:textproc/p5-Text-Xslate \
 		p5-Tree-DAG_Node>=1.06:devel/p5-Tree-DAG_Node \
@@ -46,9 +46,10 @@ TEST_DEPENDS=	p5-Test-Pod>=1.48:devel/p5-Test-Pod
 
 OPTIONS_DEFINE=	EXAMPLES
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5 shebangfix tar:tgz
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 PORTEXAMPLES=	*
 

@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-JSON>=2:converters/p5-JSON \
 		p5-Moo>=1.000003:devel/p5-Moo \
 		p5-Package-Variant>=1.001001:devel/p5-Package-Variant \
-		p5-Parse-RecDescent>=1.967.009:devel/p5-Parse-RecDescent \
+		p5-Parse-RecDescent>=1.967009:devel/p5-Parse-RecDescent \
 		p5-Spreadsheet-ParseExcel>=0.41:textproc/p5-Spreadsheet-ParseExcel \
 		p5-Template-Toolkit>=2.20:www/p5-Template-Toolkit \
 		p5-Text-RecordParser>=0.02:textproc/p5-Text-RecordParser \
@@ -36,10 +36,11 @@ TEST_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 OPTIONS_DEFINE=	DIAGRAM
 DIAGRAM_DESC=	Diagram generation support
 
-NO_ARCH=	yes
-REINPLACE_ARGS=	-i ''
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
+REINPLACE_ARGS=	-i ''
 
 DIAGRAM_BUILD_DEPENDS=	p5-GD>=0:graphics/p5-GD \
 			p5-Graph>=0:math/p5-Graph \
