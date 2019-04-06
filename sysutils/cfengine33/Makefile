@@ -14,8 +14,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Systems administration tool for networks
 CPE_VENDOR=	gnu
 
-DEPRECATED=		OpenSSL 1.1.X is not supported.
-EXPIRATION_DATE=	2021-09-30
+DEPRECATED=		No longer supported upstream
+EXPIRATION_DATE=	2019-06-30
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
