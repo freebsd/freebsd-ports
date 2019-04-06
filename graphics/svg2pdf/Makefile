@@ -15,6 +15,7 @@ LIB_DEPENDS=	libsvg-cairo.so:graphics/libsvg-cairo
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
+LDFLAGS+=	-lm
 
 PLIST_FILES=	bin/svg2pdf \
 		man/man1/svg2pdf.1.gz
