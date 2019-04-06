@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	jackit>0:audio/jack
 
-USES=		gmake compiler:c++11-lang tar:bz2 localbase pkgconfig python:3.4+ pyqt:5 qt:5 shebangfix
+USES=		compiler:c++11-lang gmake localbase pkgconfig \
+		python:3.4+ pyqt:5 qt:5 shebangfix tar:bz2
 SHEBANG_FILES=	src/*.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	falkTX
@@ -28,6 +29,8 @@ CXXFLAGS+=	-DJACKBRIDGE_PROPER_CPP11_SUPPORT=yes
 BINARY_ALIAS=	pyuic5=${LOCALBASE}/bin/pyuic5-${PYTHON_VER} \
 		pyrcc5=${LOCALBASE}/bin/pyrcc5-${PYTHON_VER}
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@cd ${WRKSRC}/data && ${REINPLACE_CMD} ' \
 		s|#!/bin/bash|#!/bin/sh| ; \
@@ -36,5 +39,8 @@ post-patch:
 		cadence cadence-aloop-daemon cadence-jacksettings cadence-logs \
 		cadence-pulse2jack cadence-pulse2loopback cadence-render \
 		cadence-session-start catarina catia claudia claudia-launcher
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+	${REINPLACE_CMD} -e 's|-mtune=generic -msse -mfpmath=sse||' ${WRKSRC}/c++/Makefile.mk
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
