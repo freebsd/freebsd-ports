@@ -27,6 +27,13 @@ CONFIGURE_ARGS+=--localstatedir=/var \
 		--without-cryptsetup \
 		--with-ssbindir=${PREFIX}/sbin
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'struct evp_cipher_ctx_st')
+BROKEN_FreeBSD_13=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'struct evp_cipher_ctx_st')
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/pam_mount.c
 	${REINPLACE_CMD} -e '/dist_security_DATA/s|\.xml$$|.xml.sample|' \
@@ -38,4 +45,4 @@ post-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/xml/pam_mount/dtd
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/xml/pam_mount/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
