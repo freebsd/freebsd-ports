@@ -2,6 +2,7 @@
 
 PORTNAME=	ndproxy
 PORTVERSION=	3.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	fbsd.bugzilla@fenyo.net
@@ -17,7 +18,6 @@ SUB_FILES=	pkg-message
 USE_RC_SUBR=	ndproxy
 USE_GITHUB=	yes
 GH_ACCOUNT=	AlexandreFenyo
-GH_TAGNAME=	v${PORTVERSION}
 
 # build for a kernel with 'options VIMAGE'
 CFLAGS+=	-DVIMAGE
