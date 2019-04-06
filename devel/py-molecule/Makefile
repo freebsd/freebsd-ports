@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	molecule
-PORTVERSION=	2.19.0
-PORTREVISION=	1
+PORTVERSION=	2.20.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,14 +13,13 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-lint>=3.4.23:sysutils/py-ansible-lint@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-lint>=4.0.2:sysutils/py-ansible-lint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}anyconfig>=0.9.7:devel/py-anyconfig@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Cerberus>=1.2:devel/py-cerberus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click-completion>=0.3.1:devel/py-click-completion@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.9:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cookiecutter>=1.6.0:devel/py-cookiecutter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}flake8>=3.5.0:devel/py-flake8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-gilt>=1.2.1:devel/py-python-gilt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr@${PY_FLAVOR} \
@@ -29,10 +27,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-lint>=3.4.23:sysutils/py-ansible-lin
 		${PYTHON_PKGNAMEPREFIX}sh>=1.12.14:devel/py-sh@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.11.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.8.2:devel/py-tabulate@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}testinfra>=1.16.0:devel/py-testinfra@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}testinfra>=1.19.0:devel/py-testinfra@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tree-format>=0.1.2:devel/py-tree-format@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yamllint>=1.11.1:devel/py-yamllint@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pexpect>=4.6.0:misc/py-pexpect@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.0.7:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-helpers-namespace>0:devel/py-pytest-helpers-namespace@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR}
