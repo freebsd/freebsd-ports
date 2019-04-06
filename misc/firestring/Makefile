@@ -12,6 +12,9 @@ MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	Library to make string handling easier in C
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GPL
+
 USES=		tar:bzip2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
