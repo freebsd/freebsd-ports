@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--disable-introspection	\
 		--with-mdns=avahi
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags gtk+-3.0`
-LDFLAGS+=	-L${LOCALBASE}/lib `pkg-config --libs gtk+-3.0`
+LDFLAGS+=	-L${LOCALBASE}/lib `pkg-config --libs gtk+-3.0` -lm
 INSTALL_TARGET=	install-strip
 
 OPTIONS_SUB=	yes
