@@ -47,6 +47,11 @@ X11_CONFIGURE_WITH=	x
 
 .include <bsd.port.options.mk>
 
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	incomplete definition of type 'struct ssl_st'
+BROKEN_FreeBSD_13=	incomplete definition of type 'struct ssl_st'
+.endif
+
 .if ${PORT_OPTIONS:MDIRECTFB} || ${PORT_OPTIONS:MSVGALIB} || ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
