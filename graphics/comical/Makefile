@@ -16,9 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libunrar.so.5:archivers/libunrar5
 
-BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-Wno-unused-local-typedef"
-
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 USE_WX=		2.8+
 
 MAKE_ENV=	WX_CONFIG=${WX_CONFIG}
@@ -37,12 +35,19 @@ PLIST_FILES=	bin/comical \
 		share/pixmaps/comical.png \
 		share/pixmaps/comical.xpm
 
+.include <bsd.port.pre.mk>
+
 # 'make makepatch' doesn't like dirs with spaces
 pre-patch:
 	@${MV} ${WRKSRC}/Comical\ Icons ${WRKSRC}/ComicalIcons
+
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+pre-configure:
+	${REINPLACE_CMD} -e 's|-Wno-unused-local-typedef||' ${WRKSRC}/src/Makefile
+.endif
 
 post-install:
 	cd ${WRKSRC}/ComicalIcons && \
 		${INSTALL_DATA} ${ICONS} ${STAGEDIR}${PREFIX}/share/pixmaps
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
