@@ -23,7 +23,6 @@ GH_TAGNAME=	${HASH}
 KSH_CONFLICTS=		pdksh-*
 KSH93_CONFLICTS=	ksh93-2*
 
-FETCH_ENV=	HTTP_AUTH=basic:*:I\ accept\ www.opensource.org/licenses/cpl:.
 LDFLAGS+=	-lm
 MESON_BUILD_DIR=	build
 MAKE_ENV=	CCFLAGS="${CFLAGS}"
