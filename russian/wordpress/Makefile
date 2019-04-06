@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-DISTVERSION=	4.9.8
+DISTVERSION=	5.1.1
 DISTVERSIONSUFFIX=	-ru_RU
 CATEGORIES=	russian www
 MASTER_SITES=	http://ru.wordpress.org/
 
-MAINTAINER=	9267096@gmail.com
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 
 LICENSE=	GPLv2+
