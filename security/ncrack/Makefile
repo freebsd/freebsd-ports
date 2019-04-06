@@ -20,4 +20,11 @@ LDFLAGS+=	-L${OPENSSLLIB}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}.0
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	Your OpenSSL headers do not match your library
+BROKEN_FreeBSD_13=	Your OpenSSL headers do not match your library
+.endif
+
+.include <bsd.port.post.mk>
