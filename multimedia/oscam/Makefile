@@ -25,6 +25,11 @@ OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	field has incomplete type 'BIGNUM' (aka 'struct bignum_st')
+BROKEN_FreeBSD_13=	field has incomplete type 'BIGNUM' (aka 'struct bignum_st')
+.endif
+
 .if ! ${ARCH:Mmips*} && ! ${ARCH:Mpowerpc*} && ! ${ARCH} == sparc64
 MAKE_ARGS+=	HOSTCC=clang CC=clang
 .endif
