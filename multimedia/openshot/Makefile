@@ -3,7 +3,7 @@
 
 PORTNAME=	openshot
 PORTVERSION=	1.4.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia
 MASTER_SITES=	http://launchpad.net/openshot/${PORTVERSION:C/\.[0-9]+$//}/${PORTVERSION}/+download/
 

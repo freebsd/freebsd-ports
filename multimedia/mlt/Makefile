@@ -2,8 +2,8 @@
 
 PORTNAME=	mlt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.12.0
-PORTREVISION?=	2
+DISTVERSION=	6.14.0
+PORTREVISION?=	0
 CATEGORIES?=	multimedia
 
 MAINTAINER=	kde@FreeBSD.org
@@ -36,7 +36,7 @@ BROKEN_sparc64=		does not compile on sparc64 (invokes i386 asm)
 
 USE_GL=		gl
 USE_GNOME=	libxml2
-USE_SDL=	image
+USE_SDL=	image2
 USE_XORG=	x11
 USES+=		gl iconv pathfix
 PATHFIX_MAKEFILEIN=	Makefile
