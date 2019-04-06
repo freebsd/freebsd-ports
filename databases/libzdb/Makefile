@@ -2,40 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	libzdb
-PORTVERSION=	3.1
-PORTREVISION=	2
+PORTVERSION=	3.2
 CATEGORIES=	databases
-MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/
+MASTER_SITES=	https://www.tildeslash.com/libzdb/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Thread-safe connection pool library
 
 LICENSE=	GPLv3
 
-USES=		gmake libtool pathfix
+USES=		gmake libtool localbase pathfix
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 OPTIONS_DEFINE=		SSL
 OPTIONS_DEFAULT=	MYSQL PGSQL SQLITE SSL
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 
+MYSQL_CONFIGURE_WITH=	mysql=${LOCALBASE}/bin/mysql_config
 MYSQL_USES=		mysql
-MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
-MYSQL_CONFIGURE_OFF=	--without-mysql
+PGSQL_CONFIGURE_WITH=	postgresql=${LOCALBASE}/bin/pg_config
 PGSQL_USES=		pgsql
-PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}/bin/pg_config
-PGSQL_CONFIGURE_OFF=	--without-postgresql
+SQLITE_CONFIGURE_WITH=	sqlite=${LOCALBASE}
 SQLITE_USES=		sqlite
-SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
-SQLITE_CONFIGURE_OFF=	--without-sqlite
+SSL_CONFIGURE_ENABLE=	openssl=${OPENSSLBASE}
 SSL_USES=		ssl
-SSL_CONFIGURE_ON=	--enable-openssl=${OPENSSLBASE}
-SSL_CONFIGURE_OFF=	--disable-openssl
 
 .include <bsd.port.mk>
