@@ -12,7 +12,7 @@ COMMENT=	Classical memory game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf
+USES=		autoreconf compiler sdl
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 
@@ -31,10 +31,15 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
+.include <bsd.port.pre.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|games/lpairs|lpairs|' ${WRKSRC}/configure.in
+	${REINPLACE_CMD} -e 's|games/lpairs|lpairs|' ${WRKSRC}/configure.in
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+	${REINPLACE_CMD} -e 's|-Wno-unused-result||' ${WRKSRC}/configure.in
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
