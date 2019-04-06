@@ -39,6 +39,7 @@
     SUBDIR += scim-tables
     SUBDIR += sourcehansans-otf
     SUBDIR += sourcehanserif-otf
+    SUBDIR += spoqahansans-ttf
     SUBDIR += unfonts-core
     SUBDIR += unfonts-extra
     SUBDIR += uniksc
