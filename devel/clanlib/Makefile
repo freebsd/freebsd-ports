@@ -15,6 +15,7 @@ COMMENT=	Cross-platform game SDK
 LICENSE=	ZLIB
 
 BROKEN_aarch64=		fails to compile: X11/x11_window.cpp:1626:40: use of undeclared identifier 'malloc'; did you mean 'valloc'?
+BROKEN_i386=		typedef redefinition with different types ('ptrdiff_t' (aka 'int') vs 'khronos_intptr_t' (aka 'long'))
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libmikmod.so:audio/libmikmod \
