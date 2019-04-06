@@ -12,7 +12,7 @@ COMMENT=	Command-line player for VGM (video game music) files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/licenses/GPL.txt
 
-USES=		7z dos2unix gmake
+USES=		7z compiler dos2unix gmake
 
 NO_WRKSUBDIR=	yes
 
@@ -33,8 +33,13 @@ MAKE_ENV+=	PREFIX=${LOCALBASE}
 
 PLIST_FILES=	bin/vgmplay bin/vgm2pcm bin/vgm2wav man/man1/vgmplay.1.gz ${EXAMPLESDIR}/vgmplay.ini
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e 's/@//' ${WRKSRC}/Makefile
+.if ${CHOSEN_COMPILER_TYPE} != clang
+	${REINPLACE_CMD} -e 's/-Wno-unused-but-set-variable//' ${WRKSRC}/Makefile
+.endif
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; s|/usr/share/vgmplay|${EXAMPLESDIR}|; s|VGMPlay|vgmplay|g;' ${WRKSRC}/vgmplay.1
 
 do-install:
@@ -45,4 +50,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/VGMPlay.ini ${STAGEDIR}${EXAMPLESDIR}/vgmplay.ini
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
