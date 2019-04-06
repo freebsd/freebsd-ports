@@ -13,8 +13,10 @@ LICENSE=	LGPL21
 
 BROKEN_RUBY24=	yes
 BROKEN_RUBY25=	yes
+DERPRECATED=	Does not build for all supported Ruby version
+EXPIRATION_DATE=2019-06-30
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
