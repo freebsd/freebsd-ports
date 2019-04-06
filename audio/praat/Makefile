@@ -11,11 +11,9 @@ COMMENT=	Phonetics by Computer
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=gnu++11"
-
+USES=		compiler:c++11-lang dos2unix iconv pkgconfig
 USE_GITHUB=	yes
 DOS2UNIX_REGEX=	.*Makefile
-USES=		dos2unix iconv pkgconfig
 USE_GNOME=	gtk20
 MAKEFILE=	makefile
 PLIST_FILES=	bin/praat man/man1/praat.1.gz
