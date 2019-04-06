@@ -12,6 +12,9 @@ COMMENT=	Network monitoring system
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BROKEN_FreeBSD_12=	'net/iso88025.h' file not found
+BROKEN_FreeBSD_13=	'net/iso88025.h' file not found
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libjansson.so:devel/jansson \
