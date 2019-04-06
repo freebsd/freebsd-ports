@@ -24,7 +24,7 @@ INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib `pkg-config --libs gmodule-2.0`
 CONFIGURE_ARGS=	--disable-gnome
 INSTALL_TARGET=	install-strip
 
