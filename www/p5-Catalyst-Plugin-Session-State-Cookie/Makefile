@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Stores a Catalyst Session in a Cookie
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Catalyst-Runtime>=5.80005:www/p5-Catalyst-Runtime \
@@ -21,6 +24,7 @@ RUN_DEPENDS=	\
 
 USES=		perl5
 USE_PERL5=	configure extract
+NO_ARCH=	yes
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
