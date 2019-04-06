@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Inline>=0.79:devel/p5-Inline \
-		p5-Parse-RecDescent>=1.967.009:devel/p5-Parse-RecDescent \
+		p5-Parse-RecDescent>=1.967009:devel/p5-Parse-RecDescent \
 		p5-Pegex>=0.58:devel/p5-Pegex
 TEST_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
 		p5-Test-Warn>=0.23:devel/p5-Test-Warn \
