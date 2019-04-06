@@ -1,0 +1,11 @@
+--- src/makemake.in.orig	2018-11-12 00:05:07 UTC
++++ src/makemake.in
+@@ -2294,7 +2294,7 @@ echol "htmldir = ${HTMLDIR}"
+ echol "psdir   = ${PSDIR}"
+ echol "pdfdir  = ${PDFDIR}"
+ echol "libdir  = ${LIBDIR}"
+-echol "lisplibdir = \$(libdir)${NEXT_}\$(TOPDIR)"
++echol "lisplibdir = \$(libdir)${NEXT_}clisp"
+ test -n "$USE_GETTEXT" && echol "localedir = ${LOCALEDIR}"
+ echol "elispdir = ${ELISPDIR}"
+ echol "vimdir = ${VIMDIR}"

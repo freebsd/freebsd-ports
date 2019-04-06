@@ -37,6 +37,7 @@
     SUBDIR += cint
     SUBDIR += cjs
     SUBDIR += cling
+    SUBDIR += clisp
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
     SUBDIR += clover

@@ -6242,7 +6242,6 @@ textproc/cl-ppcre-clisp||2014-07-28|Has expired: Depends on deprecated lang/clis
 devel/cl-asdf-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
 devel/cl-split-sequence-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
 devel/cl-trivial-gray-streams-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
-lang/clisp||2014-07-28|Has expired: development has ceased, not staged
 print/texpower|print/texlive-texmf|2014-07-28|Has been incorporated in TeXLive
 print/tex-mfpic|print/texlive-texmf|2014-07-28|Has been incorporated in TeXLive
 lang/sml-nj-devel|lang/smlnj|2014-07-30|The -devel was updated and is now production-ready

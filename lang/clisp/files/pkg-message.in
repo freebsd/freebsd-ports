@@ -1,0 +1,14 @@
+==============================================================================
+
+Emacs and Vim editing facilities for CLISP were installed into:
+%%DATADIR%%
+
+And you will have to symlink/copy the files to the corresponding directories.
+For global installation:
+
+Emacs:	%%PREFIX%%/share/emacs/site-lisp
+Vim:	$VIMRUNTIME/vimfiles/after/syntax
+
+Alternatively you may do per-user installations.
+
+==============================================================================
