@@ -23,4 +23,11 @@ GH_ACCOUNT=	Microsoft
 WRKSRC_SUBDIR=	Release
 CMAKE_OFF=	BUILD_SAMPLES BUILD_TESTS
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	use of undeclared identifier 'SSL_R_SHORT_READ'
+BROKEN_FreeBSD_13=	use of undeclared identifier 'SSL_R_SHORT_READ'
+.endif
+
+.include <bsd.port.post.mk>
