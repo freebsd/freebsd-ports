@@ -259,6 +259,7 @@
     SUBDIR += slrn
     SUBDIR += sourcehansans-otf
     SUBDIR += sourcehanserif-otf
+    SUBDIR += spoqahansans-ttf
     SUBDIR += srd-fpw-package
     SUBDIR += suicavalue
     SUBDIR += t2ps
