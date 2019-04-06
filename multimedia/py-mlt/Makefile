@@ -1,4 +1,5 @@
 # Created by: Charlie Kester <corky1951@comcast.net>
+PORTREVISION=	0
 # $FreeBSD$
 
 CATEGORIES=	multimedia python
