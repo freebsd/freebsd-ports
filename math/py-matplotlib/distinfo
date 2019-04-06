@@ -1,5 +1,3 @@
 TIMESTAMP = 1553231915
 SHA256 (matplotlib-2.2.4.tar.gz) = 029620799e581802961ac1dcff5cb5d3ee2f602e0db9c0f202a90495b37d2126
 SIZE (matplotlib-2.2.4.tar.gz) = 36974286
-SHA256 (jquery-ui-1.12.1.zip) = f8233674366ab36b2c34c577ec77a3d70cac75d2e387d8587f3836345c0f624d
-SIZE (jquery-ui-1.12.1.zip) = 439463
