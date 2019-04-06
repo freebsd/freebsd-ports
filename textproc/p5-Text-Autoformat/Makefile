@@ -22,4 +22,6 @@ RUN_DEPENDS=	p5-Text-Reform>=1.11:textproc/p5-Text-Reform
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
