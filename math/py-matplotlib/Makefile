@@ -4,11 +4,8 @@
 PORTNAME=	matplotlib
 DISTVERSION=	2.2.4
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP:DEFAULT \
-		https://jqueryui.com/resources/download/:jquery
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
-		jquery-ui-1.12.1.zip:jquery
 
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	Plotting library uses a syntax familiar to MATLAB users
@@ -82,7 +79,6 @@ post-extract:
 	@${FIND} ${WRKSRC} -name '*.py' | ${XARGS} ${CHMOD} -x
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%DISTDIR%%|${DISTDIR}|g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|%%GTK_BACKEND%%|${GTK_BACKEND}|g' \
 			 -e 's|%%GTKAGG_BACKEND%%|${GTKAGG_BACKEND}|g' \
 			 -e 's|%%QT5AGG_BACKEND%%|${QT5AGG_BACKEND}|g' \
@@ -91,6 +87,8 @@ post-patch:
 		${WRKSRC}/setup.cfg
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/web_backend/jquery-ui-1.12.1
+	cd ${WRKSRC}/lib/matplotlib/backends/web_backend/jquery-ui-1.12.1 && ${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib/backends/web_backend/jquery-ui-1.12.1
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/matplotlib -name '*.so' \
 		| ${XARGS} ${STRIP_CMD}
 
