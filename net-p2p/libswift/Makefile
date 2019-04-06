@@ -45,6 +45,13 @@ USE_RC_SUBR=		${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	member access into incomplete type 'EVP_PKEY' (aka 'evp_pkey_st')
+BROKEN_FreeBSD_13=	member access into incomplete type 'EVP_PKEY' (aka 'evp_pkey_st')
+.endif
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} \
 		${STAGEDIR}${SWIFT_SHAREDIR} \
@@ -52,4 +59,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/swift ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
