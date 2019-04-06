@@ -11,4 +11,4 @@ timezones as much as possible.
 Besides that, it's designed to be strict and stick closely to RFC3339, with a
 couple of very small caveats. It's also fully unit tested.
 
-WWW: http://www.danielrichman.co.uk/libraries/strict-rfc3339.html
+WWW: https://github.com/danielrichman/strict-rfc3339
