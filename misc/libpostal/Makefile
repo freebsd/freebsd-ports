@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_mips=		fails to compile: tagger.h:5: redefinition of typedef 'tagger_feature_function'
 BROKEN_mips64=		fails to compile: tagger.h:5: redefinition of typedef 'tagger_feature_function'
-BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-c++11-narrowing"
 
 RUN_DEPENDS=	curl:ftp/curl
 
