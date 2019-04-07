@@ -22,6 +22,13 @@ PORTDOCS=	POW.pdf
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	field has incomplete type 'EVP_CIPHER_CTX' (aka 'struct evp_cipher_ctx_st')
+BROKEN_FreeBSD_13=	field has incomplete type 'EVP_CIPHER_CTX' (aka 'struct evp_cipher_ctx_st')
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|licence|license|' ${WRKSRC}/setup.py
 
@@ -37,4 +44,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
