@@ -11,5 +11,3 @@ Additionally, names and codes for all sub countries in a country
 can be returned as either a hash or an array.
 
 WWW: https://metacpan.org/release/Locale-SubCountry
-
-Seamus Venasse <svenasse@polaris.ca>
