@@ -12,6 +12,8 @@ COMMENT=	ELMER FEM package
 LICENSE=	GPLv2
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 LIB_DEPENDS=	libparpack.so:math/arpack-ng \
 		libmpich.so:net/mpich

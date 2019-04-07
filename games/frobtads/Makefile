@@ -12,6 +12,8 @@ MAINTAINER=	kaiwang27@gmail.com
 COMMENT=	TADS interpreter and the compilers for both TADS 2 and 3
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 

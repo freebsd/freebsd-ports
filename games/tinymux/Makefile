@@ -14,6 +14,8 @@ LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/copyright.h
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 WRKSRC=		${WRKDIR}/mux2.10/src
 

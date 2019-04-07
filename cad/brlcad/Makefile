@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		fails to build
 BROKEN_sparc64=	does not compile: invokes i386 assembler
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs \
 		${LOCALBASE}/include/tnt/jama_lu.h:math/jama \

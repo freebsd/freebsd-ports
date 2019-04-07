@@ -13,6 +13,8 @@ LICENSE=	AGPLv3 GFDL GPLv3 LGPL3
 LICENSE_COMB=	multi
 
 BROKEN_RUBY24=	Build succeeds, but using binary results in segmentation fault
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 BUILD_DEPENDS=	rubygem-glib2>0:devel/rubygem-glib2
 LIB_DEPENDS=	libev.so:devel/libev

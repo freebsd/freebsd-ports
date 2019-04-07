@@ -16,6 +16,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE-DUAL.txt
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 USES=		autoreconf perl5 ssl tar:tgz
 GNU_CONFIGURE=	yes

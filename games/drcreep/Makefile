@@ -13,6 +13,8 @@ COMMENT=	Castles of Dr. Creep
 LICENSE=	GPLv3
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 USE_SDL=	sdl
 

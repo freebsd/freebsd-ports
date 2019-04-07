@@ -13,6 +13,8 @@ COMMENT=	Game similar to Super Pang
 LICENSE=	GPLv2
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 USE_SDL=	sdl mixer image
 GNU_CONFIGURE=	yes

@@ -10,6 +10,10 @@ COMMENT=	ODBC driver for DBI-for-Ruby
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		depends on broken ruby-odbc
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
+
 RUN_DEPENDS=	rubygem-dbi>=0:databases/rubygem-dbi \
 		${RUBY_SITEARCHLIBDIR}/odbc.so:databases/ruby-odbc
 

@@ -15,6 +15,8 @@ COMMENT=	Futuristic, fast-paced first person shooter
 LICENSE=	GPLv2
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/basewsw/data1_15.pk3:games/warsow-data

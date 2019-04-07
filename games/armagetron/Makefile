@@ -16,6 +16,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		network/nNetObject.cpp:1533:46: error: ordered comparison between pointer and zero ('const nSocket *' and 'int')
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 USES=		gmake jpeg
 GNU_CONFIGURE=	yes

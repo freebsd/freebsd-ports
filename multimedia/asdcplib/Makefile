@@ -10,6 +10,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Open source implementation of SMPTE and the MXF Interop format
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 

@@ -14,6 +14,8 @@ COMMENT=	System dedicated to the visualization of huge graphs
 LICENSE=	LGPL3
 
 BROKEN=		Missing libquazip.so:archivers/quazip@qt4
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libOGDF.so:math/ogdf \
 		libfreetype.so:print/freetype2

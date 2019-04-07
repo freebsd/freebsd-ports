@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtheora.so:multimedia/libtheora \

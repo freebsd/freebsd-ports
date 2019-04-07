@@ -15,6 +15,8 @@ BROKEN_mips=		fails to link: single-compilation-unit.cpp:(.text+0xdfc): relocati
 BROKEN_mips64=		fails to link: single-compilation-unit.cpp:(.text+0xdfc): relocation truncated to fit: R_MIPS_CALL16 against '__ltdf2@@FBSDprivate_1.0'
 BROKEN_powerpc=		fails to build
 BROKEN_powerpc64=	fails to compile: unsupported relocation against r1
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libmpfr.so:math/mpfr

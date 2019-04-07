@@ -10,6 +10,8 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	SSH and Git commit/tag signing using a key stored in Krypton
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	Uses 64bit types
 

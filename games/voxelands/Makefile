@@ -14,6 +14,8 @@ LICENSE=		GPLv3+
 
 BROKEN=			fails to build
 BROKEN_powerpc64=	fails to link: sibling call optimization does not allow automatic multiple TOCs
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 LIB_DEPENDS=		libIrrlicht.so:x11-toolkits/irrlicht \
 			libfreetype.so:print/freetype2
