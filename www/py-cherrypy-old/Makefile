@@ -16,6 +16,9 @@ COMMENT=	Pythonic, object-oriented web development framework
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Lates version is in tree and no dependent ports
+EXPIRATION_DATE=2019-05-08
+
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
