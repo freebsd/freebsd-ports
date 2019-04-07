@@ -11,7 +11,7 @@ DISTNAME=	arcconf_v${DISTVERSION}
 MAINTAINER=	michael@fuckner.net
 COMMENT=	Adaptec SCSI/SAS RAID administration tool
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64
 
 USES=		zip
 
@@ -30,15 +30,7 @@ IGNORE=		installs incompatible binaries for FreeBSD
 DIST_OSVER=	11
 .endif
 
-.if ${ARCH} == amd64
 DIST_EXT=	_x64
-.elif ${ARCH} == i386
-.if ${OPSYS} == FreeBSD
-# use the 9 i386 version for 10 i386
-DIST_OSVER=	9
-RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
-.endif
-.endif
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
