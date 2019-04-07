@@ -13,14 +13,11 @@ COMMENT=	Flexible IRC proxy
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 
+USES=		compiler:c11 gmake gnome localbase:ldflags pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig
 PATHFIX_MAKEFILEIN=	Makefile
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
 
