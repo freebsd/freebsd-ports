@@ -1,0 +1,76 @@
+Useful hints for dvdisaster
+===========================
+
+Device access
+-------------
+dvdisaster tries to read `/dev/pass*` to list available optical drives,
+so it will not detect any available drives if the user running
+dvdisaster does not have permissions to read `/dev/pass*`.
+
+The solution is to create the file `/etc/devfs.rules`, containing
+something like the following.
+
+	[localrules=10]
+	add path 'pass*' mode 0775 group mygroup
+
+You also need to add this line to `/etc/rc.conf`:
+
+	devfs_system_ruleset="localrules"
+
+You can use anything you like for `localrules`, and the number does not have to be `10`.
+See `devfs.rules(5)` for more details.
+
+If `/etc/devfs.rules` already exists, add the line starting `add` to the section for the ruleset
+mentioned in `/etc/rc.conf`.
+
+For this to take effect, either reboot, or issue the command:
+
+	# service devfs restart
+
+as root.
+
+Missing optical drives
+----------------------
+
+The most common problem encountered is that dvdisaster does not detect 
+optical drives on older versions of FreeBSD.
+
+FreeBSD 9.x does not pre-install a uniform CD-ROM driver for SCSI and
+ATAPI drives, thus it cannot use any ATAPI drives in an out-of-the-box
+FreeBSD 9.x installation. Normally, this can be fixed by loading a
+kernel module called `atapicam`.
+
+### Loading the `atapicam` kernel module by hand
+
+To manually load the required kernel module, issue the command:
+
+	# kldload atapicam
+
+To see if any optical drives are  available:
+
+	# camcontrol devlist
+	<NAME OF YOUR DRIVE>           at scbus1 target 0 lun 0 (pass0,cd0)
+
+### Loading the `atapicam` kernel module permanently
+
+If the above step works, the module can be loaded automatically at boot time by adding
+the line:
+
+	atapicam_load="YES"
+
+to the file `/boot/loader.conf`.
+
+### Building the `atapicam` module
+
+If the atapicam kernel module is not available (check the contents
+of /boot/kernel) you will need to recompile the kernel with the following
+additional device line in the kernel configuration:
+
+	device atapicam
+
+This will actually build the module into the kernel. To build it separately,
+see `make.conf(5)`.
+
+The devices `ata`, `scbus`, `cd`, and `pass` are also required, but are included by
+default in FreeBSD 6.0 and later.
+

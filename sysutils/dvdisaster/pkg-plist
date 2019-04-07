@@ -1,11 +1,11 @@
 bin/dvdisaster
-man/cs/man1/dvdisaster.1.gz
 man/de/man1/dvdisaster.1.gz
-man/it/man1/dvdisaster.1.gz
 man/man1/dvdisaster.1.gz
+share/applications/dvdisaster.desktop
+share/pixmaps/dvdisaster48.png
 %%NLS%%share/locale/cs/LC_MESSAGES/dvdisaster.mo
 %%NLS%%share/locale/de/LC_MESSAGES/dvdisaster.mo
 %%NLS%%share/locale/it/LC_MESSAGES/dvdisaster.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/dvdisaster.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/dvdisaster.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/dvdisaster.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/dvdisaster.mo

@@ -1,0 +1,12 @@
+Taken from Debian "13-fix-missing-language-field-in-po-files.patch"
+--- locale/pt_BR.po.orig	2019-03-06 10:42:22 UTC
++++ locale/pt_BR.po
+@@ -11,7 +11,7 @@ msgstr ""
+ "PO-Revision-Date: 2010-06-09 11:13+0200\n"
+ "Last-Translator: cg <cg@dvdisaster.org>\n"
+ "Language-Team: Portuguese\n"
+-"Language: \n"
++"Language: Portuguese\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
