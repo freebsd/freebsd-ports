@@ -44,5 +44,6 @@ lib/speech-dispatcher/spd_oss.so
 %%PULSEAUDIO%%lib/speech-dispatcher/spd_pulse.so
 libdata/pkgconfig/speech-dispatcher.pc
 share/locale/cs/LC_MESSAGES/speech-dispatcher.mo
+share/locale/de/LC_MESSAGES/speech-dispatcher.mo
 share/locale/hu/LC_MESSAGES/speech-dispatcher.mo
 share/sounds/speech-dispatcher/dummy-message.wav

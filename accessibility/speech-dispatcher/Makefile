@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	speech-dispatcher
-PORTVERSION=	0.8.6
-PORTREVISION?=	1
+DISTVERSION=	0.8.8
 CATEGORIES?=	accessibility audio
 MASTER_SITES=	http://devel.freebsoft.org/pub/projects/speechd/
 
@@ -16,8 +15,8 @@ LIB_DEPENDS=	libdotconf.so:devel/dotconf \
 		libltdl.so:devel/libltdl \
 		libsndfile.so:audio/libsndfile
 
+USES=		alias gettext gmake gnome pathfix pkgconfig libtool
 USE_GNOME=	glib20 intltool
-USES=		alias gettext gmake pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-espeak-ng
 CFLAGS+=	-I${LOCALBASE}/include
