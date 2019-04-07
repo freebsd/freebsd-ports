@@ -17,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libtspi.so:security/trousers
 
 USES=		alias autoreconf gmake libtool localbase ssl tar:tgz
-USE_GCC=	any
+USE_GCC=	yes
 USE_OPENLDAP=	yes
 USE_LDCONFIG=	${PREFIX}/lib/opencryptoki
 USE_GITHUB=	yes
