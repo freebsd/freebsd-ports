@@ -4,7 +4,7 @@
 PORTNAME=	osgearth
 PORTVERSION=	2.10
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org
