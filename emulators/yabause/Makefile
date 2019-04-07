@@ -43,6 +43,8 @@ SDL2_USE_OFF=		sdl=sdl
 
 .if ${PORT_OPTIONS:MQT5}
 BROKEN=			does not compile
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 .endif
 
 post-patch:

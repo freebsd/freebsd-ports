@@ -15,6 +15,8 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/doc/LICENSE.GPL
 LICENSE_FILE_LGPL21=	${WRKSRC}/doc/LICENSE.LGPL
 
 BROKEN_FreeBSD=	fails to compile with clang6 or later
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 LIB_DEPENDS=	libscim-1.0.so:textproc/scim
 

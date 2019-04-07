@@ -24,6 +24,8 @@ BROKEN_powerpc64=	fails to build: can't mangle function with unknown linkage (vo
 BROKEN_sparc64=		fails to install: divide-by-zero error
 BROKEN_FreeBSD_12=	stack corruption in generated dmd tool caused by inode64 resulting in segfault
 BROKEN_FreeBSD_13=	stack corruption in generated dmd tool caused by inode64 resulting in segfault
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 NOT_FOR_ARCHS=		aarch64
 NOT_FOR_ARCHS_REASON=	no cpu specified, assuming X86
 

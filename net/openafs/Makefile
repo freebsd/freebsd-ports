@@ -22,6 +22,8 @@ LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 ONLY_FOR_ARCHS=	i386 amd64
 
 AFS_DISTVERSION=	1.6.22

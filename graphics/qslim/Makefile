@@ -13,6 +13,8 @@ COMMENT=	SlimKit surface modeling tools
 LICENSE=	GPLv2
 
 BROKEN=		fails to link
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \

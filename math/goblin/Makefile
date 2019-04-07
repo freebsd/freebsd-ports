@@ -16,6 +16,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_LGPL21=	${WRKSRC}/tcl/LGPL
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 CONFLICTS=	glpk-[0-9]*
 
 USES=		gmake tk tar:tgz

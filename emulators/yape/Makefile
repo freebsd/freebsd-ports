@@ -12,6 +12,8 @@ MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Yet Another Commodore +4 Emulator
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 USE_SDL=	sdl
 USES=		compiler:features gmake

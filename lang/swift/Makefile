@@ -14,6 +14,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/swift/LICENSE.txt
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 BUILD_DEPENDS=	cmake:devel/cmake \
 		bash:shells/bash \

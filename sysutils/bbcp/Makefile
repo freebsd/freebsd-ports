@@ -13,6 +13,8 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/src/COPYING.LESSER
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 USES=		tar:xz
 

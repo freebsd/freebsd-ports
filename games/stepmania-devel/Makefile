@@ -16,6 +16,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/Docs/Licenses.txt
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libpng.so:graphics/png

@@ -16,6 +16,8 @@ MAINTAINER=	aragon@phat.za.net
 COMMENT=	Community Unix port of Descent 2 Game
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 EXTRACT_DEPENDS=	unrar:archivers/unrar
 RUN_DEPENDS=	unrar:archivers/unrar

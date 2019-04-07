@@ -14,6 +14,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-05-08
 
 USES=		cmake lua ssl
 CMAKE_SOURCE_PATH=	${WRKSRC}/builders/cmake
