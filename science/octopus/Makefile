@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	octopus
-DISTVERSION=	8.3
-PORTREVISION=	1
+DISTVERSION=	8.4
 CATEGORIES=	science
 MASTER_SITES=	http://www.tddft.org/programs/${PORTNAME}/download/${DISTVERSION}/
 
