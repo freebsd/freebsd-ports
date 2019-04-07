@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX?=	powerpc64-
 
-MAINTAINER=	kan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross GNU Compiler Collection for ${PKGNAMEPREFIX:C/-//g}
 
 LICENSE=	GPLv3 GPLv3RLE
