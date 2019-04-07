@@ -117,6 +117,7 @@ lib/obs-scripting/obspython.py
 libdata/pkgconfig/libobs.pc
 share/applications/obs.desktop
 share/icons/hicolor/256x256/apps/obs.png
+share/obs/libobs/area.effect
 share/obs/libobs/bicubic_scale.effect
 share/obs/libobs/bilinear_lowres_scale.effect
 share/obs/libobs/default.effect
@@ -175,6 +176,7 @@ share/obs/obs-plugins/frontend-tools/locale/sk-SK.ini
 share/obs/obs-plugins/frontend-tools/locale/sr-CS.ini
 share/obs/obs-plugins/frontend-tools/locale/sr-SP.ini
 share/obs/obs-plugins/frontend-tools/locale/sv-SE.ini
+share/obs/obs-plugins/frontend-tools/locale/ta-IN.ini
 share/obs/obs-plugins/frontend-tools/locale/th-TH.ini
 share/obs/obs-plugins/frontend-tools/locale/tl-PH.ini
 share/obs/obs-plugins/frontend-tools/locale/tr-TR.ini
@@ -202,6 +204,7 @@ share/obs/obs-plugins/image-source/locale/en-US.ini
 share/obs/obs-plugins/image-source/locale/es-ES.ini
 share/obs/obs-plugins/image-source/locale/et-EE.ini
 share/obs/obs-plugins/image-source/locale/eu-ES.ini
+share/obs/obs-plugins/image-source/locale/fa-IR.ini
 share/obs/obs-plugins/image-source/locale/fi-FI.ini
 share/obs/obs-plugins/image-source/locale/fil-PH.ini
 share/obs/obs-plugins/image-source/locale/fr-FR.ini
@@ -248,6 +251,7 @@ share/obs/obs-plugins/linux-capture/locale/en-US.ini
 share/obs/obs-plugins/linux-capture/locale/es-ES.ini
 share/obs/obs-plugins/linux-capture/locale/et-EE.ini
 share/obs/obs-plugins/linux-capture/locale/eu-ES.ini
+share/obs/obs-plugins/linux-capture/locale/fa-IR.ini
 share/obs/obs-plugins/linux-capture/locale/fi-FI.ini
 share/obs/obs-plugins/linux-capture/locale/fil-PH.ini
 share/obs/obs-plugins/linux-capture/locale/fr-FR.ini
@@ -291,6 +295,7 @@ share/obs/obs-plugins/linux-jack/locale/en-US.ini
 share/obs/obs-plugins/linux-jack/locale/es-ES.ini
 share/obs/obs-plugins/linux-jack/locale/et-EE.ini
 share/obs/obs-plugins/linux-jack/locale/eu-ES.ini
+share/obs/obs-plugins/linux-jack/locale/fa-IR.ini
 share/obs/obs-plugins/linux-jack/locale/fi-FI.ini
 share/obs/obs-plugins/linux-jack/locale/fil-PH.ini
 share/obs/obs-plugins/linux-jack/locale/fr-FR.ini
@@ -331,6 +336,7 @@ share/obs/obs-plugins/linux-pulseaudio/locale/en-US.ini
 share/obs/obs-plugins/linux-pulseaudio/locale/es-ES.ini
 share/obs/obs-plugins/linux-pulseaudio/locale/et-EE.ini
 share/obs/obs-plugins/linux-pulseaudio/locale/eu-ES.ini
+share/obs/obs-plugins/linux-pulseaudio/locale/fa-IR.ini
 share/obs/obs-plugins/linux-pulseaudio/locale/fi-FI.ini
 share/obs/obs-plugins/linux-pulseaudio/locale/fil-PH.ini
 share/obs/obs-plugins/linux-pulseaudio/locale/fr-FR.ini
@@ -374,6 +380,7 @@ share/obs/obs-plugins/linux-v4l2/locale/en-US.ini
 share/obs/obs-plugins/linux-v4l2/locale/es-ES.ini
 share/obs/obs-plugins/linux-v4l2/locale/et-EE.ini
 share/obs/obs-plugins/linux-v4l2/locale/eu-ES.ini
+share/obs/obs-plugins/linux-v4l2/locale/fa-IR.ini
 share/obs/obs-plugins/linux-v4l2/locale/fi-FI.ini
 share/obs/obs-plugins/linux-v4l2/locale/fil-PH.ini
 share/obs/obs-plugins/linux-v4l2/locale/fr-FR.ini
@@ -419,6 +426,7 @@ share/obs/obs-plugins/obs-ffmpeg/locale/en-US.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/es-ES.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/et-EE.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/eu-ES.ini
+share/obs/obs-plugins/obs-ffmpeg/locale/fa-IR.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/fi-FI.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/fil-PH.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/fr-FR.ini
@@ -851,12 +859,14 @@ share/obs/obs-studio/locale/it-IT.ini
 share/obs/obs-studio/locale/ja-JP.ini
 share/obs/obs-studio/locale/ka-GE.ini
 share/obs/obs-studio/locale/ko-KR.ini
+share/obs/obs-studio/locale/ku-TR.ini
 share/obs/obs-studio/locale/lt-LT.ini
 share/obs/obs-studio/locale/mn-MN.ini
 share/obs/obs-studio/locale/ms-MY.ini
 share/obs/obs-studio/locale/nb-NO.ini
 share/obs/obs-studio/locale/nl-NL.ini
 share/obs/obs-studio/locale/nn-NO.ini
+share/obs/obs-studio/locale/pa-IN.ini
 share/obs/obs-studio/locale/pl-PL.ini
 share/obs/obs-studio/locale/pt-BR.ini
 share/obs/obs-studio/locale/pt-PT.ini
@@ -913,6 +923,13 @@ share/obs/obs-studio/themes/Dark/minus.png
 share/obs/obs-studio/themes/Dark/mute.png
 share/obs/obs-studio/themes/Dark/plus.png
 share/obs/obs-studio/themes/Dark/refresh.png
+share/obs/obs-studio/themes/Dark/settings/advanced.svg
+share/obs/obs-studio/themes/Dark/settings/audio.svg
+share/obs/obs-studio/themes/Dark/settings/general.svg
+share/obs/obs-studio/themes/Dark/settings/hotkeys.svg
+share/obs/obs-studio/themes/Dark/settings/output.svg
+share/obs/obs-studio/themes/Dark/settings/stream.svg
+share/obs/obs-studio/themes/Dark/settings/video.svg
 share/obs/obs-studio/themes/Dark/unmute.png
 share/obs/obs-studio/themes/Dark/up_arrow.png
 share/obs/obs-studio/themes/Dark/updown.png
