@@ -3,11 +3,8 @@
 %%SITE_PERL%%/Data/Object/Array.pm
 %%SITE_PERL%%/Data/Object/Class.pm
 %%SITE_PERL%%/Data/Object/ClassHas.pm
-%%SITE_PERL%%/Data/Object/Cli.pm
 %%SITE_PERL%%/Data/Object/Code.pm
 %%SITE_PERL%%/Data/Object/Config.pm
-%%SITE_PERL%%/Data/Object/Data.pm
-%%SITE_PERL%%/Data/Object/Dispatch.pm
 %%SITE_PERL%%/Data/Object/Exception.pm
 %%SITE_PERL%%/Data/Object/Export.pm
 %%SITE_PERL%%/Data/Object/Float.pm
@@ -268,8 +265,6 @@
 %%SITE_PERL%%/Data/Object/Type/Any.pm
 %%SITE_PERL%%/Data/Object/Type/Array.pm
 %%SITE_PERL%%/Data/Object/Type/Code.pm
-%%SITE_PERL%%/Data/Object/Type/Data.pm
-%%SITE_PERL%%/Data/Object/Type/Dispatch.pm
 %%SITE_PERL%%/Data/Object/Type/Exception.pm
 %%SITE_PERL%%/Data/Object/Type/Float.pm
 %%SITE_PERL%%/Data/Object/Type/Func.pm
@@ -291,11 +286,8 @@
 %%PERL5_MAN3%%/Data::Object::Array.3.gz
 %%PERL5_MAN3%%/Data::Object::Class.3.gz
 %%PERL5_MAN3%%/Data::Object::ClassHas.3.gz
-%%PERL5_MAN3%%/Data::Object::Cli.3.gz
 %%PERL5_MAN3%%/Data::Object::Code.3.gz
 %%PERL5_MAN3%%/Data::Object::Config.3.gz
-%%PERL5_MAN3%%/Data::Object::Data.3.gz
-%%PERL5_MAN3%%/Data::Object::Dispatch.3.gz
 %%PERL5_MAN3%%/Data::Object::Exception.3.gz
 %%PERL5_MAN3%%/Data::Object::Export.3.gz
 %%PERL5_MAN3%%/Data::Object::Float.3.gz
@@ -556,8 +548,6 @@
 %%PERL5_MAN3%%/Data::Object::Type::Any.3.gz
 %%PERL5_MAN3%%/Data::Object::Type::Array.3.gz
 %%PERL5_MAN3%%/Data::Object::Type::Code.3.gz
-%%PERL5_MAN3%%/Data::Object::Type::Data.3.gz
-%%PERL5_MAN3%%/Data::Object::Type::Dispatch.3.gz
 %%PERL5_MAN3%%/Data::Object::Type::Exception.3.gz
 %%PERL5_MAN3%%/Data::Object::Type::Float.3.gz
 %%PERL5_MAN3%%/Data::Object::Type::Func.3.gz
