@@ -1,6 +1,5 @@
 bin/SvtAv1DecApp
 bin/SvtAv1EncApp
-bin/SvtAv1EncSimpleApp
 include/svt-av1/EbSvtAv1.h
 include/svt-av1/EbSvtAv1Dec.h
 include/svt-av1/EbSvtAv1Enc.h
