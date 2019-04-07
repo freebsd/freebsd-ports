@@ -1,3 +1,3 @@
-py-xxhash is a Python binding for the xxHash library by Yann Collet.
+xxhash is a Python binding for the xxHash library.
 
-WWW: https://pypi.org/project/xxhash/
+WWW: https://github.com/ifduyue/python-xxhash
