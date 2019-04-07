@@ -22,10 +22,17 @@ PLIST_FILES=	bin/dump_xsettings \
 		man/man1/dump_xsettings.1.gz \
 		man/man1/xsettingsd.1.gz
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+pre-configure:
+	${REINPLACE_CMD} -e 's|-Wno-narrowing||' ${WRKSRC}/SConstruct
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dump_xsettings ${WRKSRC}/xsettingsd \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/dump_xsettings.1 ${WRKSRC}/xsettingsd.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
