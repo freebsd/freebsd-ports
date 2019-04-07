@@ -15,6 +15,11 @@ INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	incomplete definition of type 'struct rsa_st'
+BROKEN_FreeBSD_13=	incomplete definition of type 'struct rsa_st'
+.endif
+
 CPPFLAGS+=	-I${OPENSSLINC}
 CFLAGS+=	-I${OPENSSLINC} -Wno-error
 LDFLAGS+=	-L${OPENSSLLIB}
