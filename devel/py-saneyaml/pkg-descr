@@ -1,0 +1,7 @@
+Dump readable YAML and load safely any YAML preserving ordering and avoiding
+surprises of type conversions.
+
+This library is a PyYaml wrapper with sane behaviour to read and write readable
+YAML safely, typically when used for configuration.
+
+WWW: https://github.com/nexB/saneyaml
