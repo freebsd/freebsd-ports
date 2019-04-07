@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	GUI for Panorama Tools, to stitch panoramic images
 
-LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
 		libImath.so:graphics/ilmbase \
 		libboost_thread.so:devel/boost-libs \
 		liblcms2.so:graphics/lcms2 \
