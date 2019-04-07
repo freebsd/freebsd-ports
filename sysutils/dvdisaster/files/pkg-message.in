@@ -1,0 +1,8 @@
+----------------------------------------------------------------------
+If there are problems detecting optical drives, please see the files
+DEVICES.md or DEVICES.html in the directory:
+	 %%DOCSDIR%%
+
+Note that the documentation option (DOCS) must be selected for these
+files to be installed.
+----------------------------------------------------------------------

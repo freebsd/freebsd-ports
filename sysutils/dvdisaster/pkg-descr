@@ -1,4 +1,3 @@
-The dvdisaster project:
 dvdisaster provides a margin of safety against data loss on CD and DVD media
 caused by aging or scratches.
 
@@ -17,4 +16,4 @@ If you create the error correction data in time and keep it at a safe place,
 you have a good chance of recovering the medium contents from typical read
 errors and to transfer your complete data onto a new medium.
 
-WWW: http://dvdisaster.net/
+WWW: http://www.bobeager.uk/software.html
