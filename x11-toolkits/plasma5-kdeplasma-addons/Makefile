@@ -2,6 +2,7 @@
 
 PORTNAME=	kdeplasma-addons
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,10 +17,8 @@ USE_KDE=	activities archive attica auth bookmarks codecs completion \
 		plasma-framework plasma-workspace runner service solid \
 		sonnet textwidgets unitconversion widgetsaddons windowsystem xmlgui
 USE_QT=		core dbus declarative graphicaleffects gui location network \
-		printsupport script webchannel widgets x11extras xml \
+		printsupport script webchannel webengine widgets x11extras xml \
 		buildtools_build qmake_build
-# The webengine in the offical ports is too old for now. Once updated to 5.12.x r
-# readd webengine.
 
 OPTIONS_DEFINE=	PURPOSE
 OPTIONS_DEFAULT=	PURPOSE
