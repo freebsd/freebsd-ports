@@ -1,0 +1,7 @@
+This package provides support for reading & writing Java .properties files (both
+the simple line-oriented format and XML) with a simple API based on the json
+module - though, for recovering Java addicts, it also includes a Properties
+class intended to match the behavior of Java 8's java.util.Properties as much as
+is Pythonically possible.
+
+WWW: https://github.com/jwodder/javaproperties
