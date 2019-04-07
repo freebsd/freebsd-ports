@@ -11544,6 +11544,7 @@ net-mgmt/icinga||2019-02-04|Removed, depends on expired net-mgmt/icinga-core
 net-mgmt/icli||2019-02-04|Removed, depends on expired net-mgmt/icinga-core
 net-mgmt/icinga-classicweb||2019-02-04|Has expired: Upstream EOLed Icinga 1.x from 2018-12-31
 net-mgmt/pnp-icinga||2019-02-04|Removed, depends on expired net-mgmt/icinga-classicweb
+sysutils/atf-allwinner|sysutils/atf-sun50i_a64|2019-02-04|Changed to be a slave port and renamed
 sysutils/yum||2019-02-07|Has expired: Abandoned upstream, does not work with python3
 sysutils/createrepo||2019-02-07|Has expired: Abandoned upstream, does not work with python3
 www/wml||2019-02-08|Removing to be properly added back with svn copy
