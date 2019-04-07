@@ -5100,6 +5100,7 @@
     SUBDIR += py-rwt
     SUBDIR += py-rx
     SUBDIR += py-sanetime
+    SUBDIR += py-saneyaml
     SUBDIR += py-sarge
     SUBDIR += py-schedule
     SUBDIR += py-schema
