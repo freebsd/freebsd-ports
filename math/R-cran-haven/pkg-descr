@@ -1,4 +1,4 @@
 Import foreign statistical formats into R via the embedded 'ReadStat' C
 library, <https://github.com/WizardMac/ReadStat>.
 
-WWW: https://haven.tidyverse.org/
+WWW: http://haven.tidyverse.org
