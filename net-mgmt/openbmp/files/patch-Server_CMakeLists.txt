@@ -1,34 +1,43 @@
---- Server/CMakeLists.txt.orig	2017-09-14 09:29:16 UTC
+--- Server/CMakeLists.txt.orig	2018-03-06 18:31:59 UTC
 +++ Server/CMakeLists.txt
-@@ -24,6 +24,14 @@ find_path(LIBYAML_CPP_INCLUDE_DIR
+@@ -24,6 +24,23 @@ find_path(LIBYAML_CPP_INCLUDE_DIR
          PATH_SUFFIXES
          include)
  
 +find_path(LIBLZ4_CPP_LIBRARY_DIR
-+		NAMES
-+		liblz4.so
++	NAMES
++	liblz4.so
 +        HINTS
 +        ${HINT_ROOT_DIR}
 +        PATH_SUFFIXES
 +        lib)
 +
++find_path(LIBZSTD_CPP_LIBRARY_DIR
++	NAMES
++	libzstd.so
++        HINTS
++        ${HINT_ROOT_DIR}
++        PATH_SUFFIXES
++        lib)
++
++
  find_library(LIBYAML_CPP_LIBRARY
          NAMES
          libyaml-cpp.a yaml-cpp
-@@ -84,6 +92,7 @@ endif()
+@@ -84,6 +101,7 @@ endif()
  # Update the include dir
  include_directories(${LIBRDKAFKA_INCLUDE_DIR} ${LIBYAML_CPP_INCLUDE_DIR} src/ src/bmp src/bgp src/bgp/linkstate src/kafka)
  #link_directories(${LIBRDKAFKA_LIBRARY})
-+link_directories(${LIBLZ4_CPP_LIBRARY_DIR})
++link_directories(${LIBLZ4_CPP_LIBRARY_DIR} ${LIBZSTD_CPP_LIBRARY_DIR})
  
  
  # Define the source files to compile
-@@ -134,7 +143,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR CMA
+@@ -134,7 +152,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR CMA
  endif()
  
  # Set the libs to link
 -set (LIBS pthread ${LIBYAML_CPP_LIBRARY} ${LIBRDKAFKA_CPP_LIBRARY} ${LIBRDKAFKA_LIBRARY} z ${SSL_LIBS} dl)
-+set (LIBS pthread ${LIBYAML_CPP_LIBRARY} ${LIBRDKAFKA_CPP_LIBRARY} ${LIBRDKAFKA_LIBRARY} z lz4 ${SSL_LIBS})
++set (LIBS pthread ${LIBYAML_CPP_LIBRARY} ${LIBRDKAFKA_CPP_LIBRARY} ${LIBRDKAFKA_LIBRARY} z lz4 zstd ${SSL_LIBS})
  
  # Set the binary
  add_executable (openbmpd ${SRC_FILES})
