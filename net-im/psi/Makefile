@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	psi
-DISTVERSION=	1.3
-PORTREVISION=	4
+PORTVERSION=	1.4
 CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/Psi/${PORTVERSION}
 
@@ -43,6 +42,9 @@ ENCHANT_LIB_DEPENDS=	libenchant.so:textproc/enchant
 ENCHANT_CMAKE_BOOL=	USE_ENCHANT
 
 post-patch:
+# Replace original Hunspell implementation with better alternative
+	@${CP} ${FILESDIR}/hunspellchecker.* \
+		${WRKSRC}/src/libpsi/tools/spellchecker
 # Avoid conflict with C++20 <version> by adding .txt suffix
 	@${MV} ${WRKSRC}/version ${WRKSRC}/version.txt
 	@${REINPLACE_CMD} -i .c++20 's,SOURCE_DIR}/version,&.txt,' \
