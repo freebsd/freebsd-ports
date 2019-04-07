@@ -44,6 +44,13 @@ MAKE_ENV=	GOPATH="${WRKSRC}/.gopath:${WRKSRC}/vendor" \
 
 MY_TAGS=	-tags "${USE_MY_TAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	variable has incomplete type 'BIO_METHOD' (aka 'struct bio_method_st')
+BROKEN_FreeBSD_13=	variable has incomplete type 'BIO_METHOD' (aka 'struct bio_method_st')
+.endif
+
 post-patch:
 	@cd ${WRKSRC} ; ${MKDIR} ${WRKSRC}/.gopath/src/github.com/${GH_ACCOUNT} ; \
 		${LN} -sf ${WRKSRC} ${WRKSRC}/.gopath/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
@@ -66,4 +73,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
