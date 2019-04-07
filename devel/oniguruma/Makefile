@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oniguruma
-DISTVERSION=	6.9.0
+DISTVERSION=	6.9.1
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://github.com/kkos/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	onig-${DISTVERSION}
