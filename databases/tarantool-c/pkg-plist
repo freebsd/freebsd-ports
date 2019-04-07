@@ -3,6 +3,7 @@ include/tarantool/tnt_auth.h
 include/tarantool/tnt_buf.h
 include/tarantool/tnt_call.h
 include/tarantool/tnt_delete.h
+include/tarantool/tnt_execute.h
 include/tarantool/tnt_insert.h
 include/tarantool/tnt_io.h
 include/tarantool/tnt_iob.h
