@@ -2,8 +2,7 @@
 
 PORTNAME=	scancode-toolkit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.7
-PORTREVISION=	1
+DISTVERSION=	3.0.2
 CATEGORIES=	textproc python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -27,7 +26,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nltk>=3.2:textproc/py-nltk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boolean.py>=3.5:devel/py-boolean.py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}license-expression>=0.99:textproc/py-license-expression@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyahocorasick>=1.1:textproc/py-pyahocorasick@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.0:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}saneyaml>=0:devel/py-saneyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=4.0.0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.0.0:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0:www/py-html5lib@${PY_FLAVOR} \
@@ -40,8 +40,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nltk>=3.2:textproc/py-nltk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pefile>=2018.8.8:devel/py-pefile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymaven-patch>=0.2.4:devel/py-pymaven-patch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packageurl-python>=0.5.0:textproc/py-packageurl-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packageurl-python>=0.7.0:textproc/py-packageurl-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xmltodict>=0.11.0:devel/py-xmltodict@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}javaproperties>=0.5:devel/py-javaproperties@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click6>=6.0.0:devel/py-click6@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.9:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>=0.4.0:devel/py-pluggy@${PY_FLAVOR} \
@@ -101,7 +102,7 @@ do-build:
 	# Build the port and the plugin packages
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS})
 	@(cd ${BUILD_WRKSRC}/plugins/extractcode-7z-manylinux1_x86_64; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS})
-	@(cd ${BUILD_WRKSRC}/plugins/extractcode-libarchive-manylinux1_i686; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS})
+	@(cd ${BUILD_WRKSRC}/plugins/extractcode-libarchive-manylinux1_x86_64; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS})
 	@(cd ${BUILD_WRKSRC}/plugins/typecode-libmagic-manylinux1_x86_64; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS})
 
 do-install:
@@ -111,7 +112,7 @@ do-install:
 	@${MV} ${_PYTHONPKGLIST} ${_PYTHONPKGLIST}.scancode
 	(cd ${INSTALL_WRKSRC}/plugins/extractcode-7z-manylinux1_x86_64; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS})
 	@${MV} ${_PYTHONPKGLIST} ${_PYTHONPKGLIST}.extractcode-7z
-	(cd ${INSTALL_WRKSRC}/plugins/extractcode-libarchive-manylinux1_i686; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS})
+	(cd ${INSTALL_WRKSRC}/plugins/extractcode-libarchive-manylinux1_x86_64; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS})
 	@${MV} ${_PYTHONPKGLIST} ${_PYTHONPKGLIST}.extractcode-libarchive
 	(cd ${INSTALL_WRKSRC}/plugins/typecode-libmagic-manylinux1_x86_64; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS})
 	@${MV} ${_PYTHONPKGLIST} ${_PYTHONPKGLIST}.typecode-libmagic

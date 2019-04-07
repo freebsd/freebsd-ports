@@ -1,4 +1,4 @@
---- setup.py.orig	2018-10-26 01:55:40 UTC
+--- setup.py.orig	2019-02-15 14:34:52 UTC
 +++ setup.py
 @@ -125,9 +125,7 @@ setup(
          # cluecode
@@ -23,9 +23,9 @@
 -        'future == 0.16.0',
 +        'future >= 0.16.0',
          'text-unidecode >= 1.0, < 2.0',
- 
-         # licensedcode
-@@ -165,8 +161,7 @@ setup(
+         # required by saneyaml
+         'PyYAML >= 3.11, <=3.13',
+@@ -167,8 +163,7 @@ setup(
          'binaryornot >= 0.4.0',
          'chardet >= 3.0.0, <4.0.0',
          # note that we use a short version range because we use a simpler lexer list
@@ -35,7 +35,7 @@
  
          # packagedcode
          'pefile >= 2018.8.8',
-@@ -180,7 +175,6 @@ setup(
+@@ -183,7 +178,6 @@ setup(
          'colorama >= 0.3.9',
          'pluggy >= 0.4.0, < 1.0',
          'attrs >=17.4, < 19.0',
