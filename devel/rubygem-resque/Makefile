@@ -1,7 +1,7 @@
-# $FreeBSD$
+#$FreeBSD$
 
 PORTNAME=	resque
-PORTVERSION=	1.27.4
+PORTVERSION=	2.0.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
