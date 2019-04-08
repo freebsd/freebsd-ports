@@ -6,7 +6,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	12.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
@@ -66,6 +66,7 @@ GCONF_CONFIGURE_ENABLE=	gconf
 GCONF_USE=	GNOME=gconf2
 GSETTINGS_DESC=	GSettings configuration backend support
 GSETTINGS_CONFIGURE_ENABLE=	gsettings
+GSETTINGS_VARS=	GLIB_SCHEMAS=org.freedesktop.pulseaudio.gschema.xml
 SIMD_CONFIGURE_ENABLE=	orc
 SIMD_LIB_DEPENDS=	liborc-0.4.so:devel/orc
 
