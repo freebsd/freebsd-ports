@@ -1,3 +1,3 @@
 TIMESTAMP = 1500285144
-SHA256 (kafka_2.12-2.1.1.tgz) = 2053edce853c6c4f1204bf72f2760fc8cfda2cfb8ad624572d81bc3571eca7be
-SIZE (kafka_2.12-2.1.1.tgz) = 55351618
+SHA256 (kafka_2.12-2.2.0.tgz) = a009624fae678fa35968f945e18e45fbea9a30fa8080d5dcce7fdea726120027
+SIZE (kafka_2.12-2.2.0.tgz) = 57028557
