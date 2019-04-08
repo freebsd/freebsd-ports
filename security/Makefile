@@ -99,6 +99,7 @@ PORTREVISION=	1
     SUBDIR += courierpassd
     SUBDIR += courierpasswd
     SUBDIR += courieruserinfo
+    SUBDIR += cowrie
     SUBDIR += cp2fwb
     SUBDIR += cracklib
     SUBDIR += crackpkcs12
