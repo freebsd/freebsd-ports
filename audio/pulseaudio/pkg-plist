@@ -188,7 +188,6 @@ man/man5/pulse-cli-syntax.5.gz
 man/man5/pulse-client.conf.5.gz
 man/man5/pulse-daemon.conf.5.gz
 %%GSETTINGS%%share/GConf/gsettings/pulseaudio.convert
-%%GSETTINGS%%share/glib-2.0/schemas/org.freedesktop.pulseaudio.gschema.xml
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-input-aux.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-input-dock-mic.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-input-fm.conf
