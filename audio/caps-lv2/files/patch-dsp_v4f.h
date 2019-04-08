@@ -1,6 +1,6 @@
---- dsp/v4f.h.orig
+--- dsp/v4f.h.orig	2019-03-22 09:42:59 UTC
 +++ dsp/v4f.h
-@@ -150,10 +150,10 @@
+@@ -155,10 +155,10 @@ class Sin4f
  			{
  				v4f_t *y = data();
  				v4f_t w = -v4f_pi * f;

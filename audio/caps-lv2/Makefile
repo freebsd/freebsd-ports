@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	caps-lv2
-PORTVERSION=	g20170626
-PORTREVISION=	1
+PORTVERSION=	g20190321
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +16,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2
 USES=		gmake localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	moddevices
-GH_TAGNAME=	072e2fe
+GH_TAGNAME=	250844a
 
 .if exists(/usr/lib/libstdc++.so)
 CXXFLAGS+=	-stdlib=libstdc++
