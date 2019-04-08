@@ -21,7 +21,8 @@ GH_ACCOUNT=	MaskRay
 # Commit matching 0.20190314
 #GH_TAGNAME=	1976fec59559b7d2a88b5dcd7631e089eaa194fc
 
-CMAKE_ARGS=	-DClang_DIR:PATH="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/cmake/clang"
+CMAKE_ARGS=	-DClang_DIR:PATH="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/cmake/clang" \
+		-DLLVM_DIR:PATH="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/cmake/llvm"
 CXXFLAGS+=	-DNDEBUG
 
 PLIST_FILES=	bin/ccls
