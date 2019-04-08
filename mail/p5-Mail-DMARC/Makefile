@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mail-DMARC
-PORTVERSION=	1.20180125
+PORTVERSION=	1.20190308
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +20,7 @@ RUN_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA \
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 		p5-Socket6>=0:net/p5-Socket6 \
 		p5-Email-MIME>=0:mail/p5-Email-MIME \
+		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-HTTP-Tiny>=0:www/p5-HTTP-Tiny \
 		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 		p5-JSON>=0:converters/p5-JSON \
@@ -37,14 +38,14 @@ RUN_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA \
 		p5-Net-HTTP>=0:net/p5-Net-HTTP \
 		p5-Test-Output>=0:devel/p5-Test-Output \
 		p5-Net-DNS>=0:dns/p5-Net-DNS \
-		p5-Net-IDN-Encode>=0:textproc/p5-Net-IDN-Encode
-
+		p5-Net-IDN-Encode>=0:textproc/p5-Net-IDN-Encode \
+		p5-libwww>=0:www/p5-libwww \
+		p5-URI>=0:net/p5-URI
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure
+
 SHEBANG_FILES=	bin/*
 NO_ARCH=	yes
-
-#SUB_LIST=	PERL5_MAN1=${SITE_PERL_REL}/man/man1
 
 .include <bsd.port.mk>
