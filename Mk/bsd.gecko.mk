@@ -138,8 +138,7 @@ MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
 
 MOZ_EXPORT+=	${CONFIGURE_ENV} \
 				RUSTFLAGS="${RUSTFLAGS}" \
-				PERL="${PERL}" \
-				ac_cv_clock_monotonic=
+				PERL="${PERL}"
 MOZ_OPTIONS+=	--prefix="${PREFIX}"
 MOZ_MK_OPTIONS+=MOZ_OBJDIR="${BUILD_WRKSRC}"
 
