@@ -12,9 +12,7 @@ COMMENT=	Implementation of elliptic curve cryptography
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake python:2.7 tar:tgz
+USES=		cmake compiler:c++11-lang localbase:ldflags python:2.7 tar:tgz
 USE_LDCONFIG=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
