@@ -1,3 +1,4 @@
+%%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/appinfo/app.php
 %%WWWDIR%%/appinfo/info.xml
@@ -29,6 +30,7 @@
 %%WWWDIR%%/img/favicon.svg
 %%WWWDIR%%/img/group.svg
 %%WWWDIR%%/img/phone.svg
+%%WWWDIR%%/img/qrcode.svg
 %%WWWDIR%%/img/social.svg
 %%WWWDIR%%/img/up.svg
 %%WWWDIR%%/js/chunks/0.js
@@ -285,6 +287,8 @@
 %%WWWDIR%%/js/chunks/98.js.map
 %%WWWDIR%%/js/chunks/99.js
 %%WWWDIR%%/js/chunks/99.js.map
+%%WWWDIR%%/js/chunks/128.js
+%%WWWDIR%%/js/chunks/128.js.map
 %%WWWDIR%%/js/contacts.js
 %%WWWDIR%%/js/contacts.js.map
 %%WWWDIR%%/l10n/.gitkeep
@@ -382,8 +386,6 @@
 %%WWWDIR%%/l10n/lt_LT.json
 %%WWWDIR%%/l10n/lv.js
 %%WWWDIR%%/l10n/lv.json
-%%WWWDIR%%/l10n/mn.js
-%%WWWDIR%%/l10n/mn.json
 %%WWWDIR%%/l10n/nb.js
 %%WWWDIR%%/l10n/nb.json
 %%WWWDIR%%/l10n/nl.js
