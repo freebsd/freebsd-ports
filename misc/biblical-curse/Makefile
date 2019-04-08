@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fake biblical curse generator
 
 USES=		perl5 shebangfix
