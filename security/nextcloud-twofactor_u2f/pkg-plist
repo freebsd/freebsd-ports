@@ -2,6 +2,7 @@
 @comment %%WWWDIR%%/.github/ISSUE_TEMPLATE/bug.md
 @comment %%WWWDIR%%/.github/ISSUE_TEMPLATE/feature_request.md
 @comment %%WWWDIR%%/.github/ISSUE_TEMPLATE/question.md
+%%WWWDIR%%/.jshintrc
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/README.md
 %%WWWDIR%%/appinfo/autoload.php
@@ -53,6 +54,8 @@
 %%WWWDIR%%/l10n/ru.json
 %%WWWDIR%%/l10n/sk.js
 %%WWWDIR%%/l10n/sk.json
+%%WWWDIR%%/l10n/sq.js
+%%WWWDIR%%/l10n/sq.json
 %%WWWDIR%%/l10n/sr.js
 %%WWWDIR%%/l10n/sr.json
 %%WWWDIR%%/l10n/sv.js
