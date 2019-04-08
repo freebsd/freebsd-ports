@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	confluent-kafka
-DISTVERSION=	0.11.6
+DISTVERSION=	1.0.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	librdkafka.so:net/librdkafka
 RUN_DEPENDS=	${PY_ENUM34} \
 		${PY_FUTURES}
+py27_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
 USES=		localbase python
 USE_PYTHON=	autoplist distutils
