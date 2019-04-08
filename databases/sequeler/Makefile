@@ -2,7 +2,7 @@
 
 PORTNAME=	sequeler
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.9
+DISTVERSION=	0.7.0
 CATEGORIES=	databases
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -12,8 +12,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	vala:lang/vala
-LIB_DEPENDS=	libfixposix.so:devel/libfixposix \
-		libgee-0.8.so:devel/libgee \
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgranite.so:x11-toolkits/granite \
 		libsecret-1.so:security/libsecret \
 		libssh2.so:security/libssh2
