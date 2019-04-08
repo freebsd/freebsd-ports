@@ -3,7 +3,7 @@
 
 PORTNAME=	phpldapadmin
 PORTVERSION=	1.2.3
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5/${PORTVERSION}
@@ -18,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe php:web,flavors tar:tgz
 USE_PHP=	gettext ldap openssl pcre session xml iconv hash
 
-IGNORE_WITH_PHP=73
 NO_ARCH=	yes
 NO_BUILD=	yes
 CPE_VENDOR=	deon_george
