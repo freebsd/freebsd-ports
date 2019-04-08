@@ -3,8 +3,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	3_6_0
-PORTREVISION=	5
+DISTVERSION=	3_6_1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -84,7 +83,8 @@ USE_QT=		3d buildtools_build core concurrent dbus declarative \
 		printsupport qmake_build script serialport \
 		sql sql-pgsql sql-sqlite3 svg testlib uitools \
 		webengine widgets webkit xml
-USE_PYQT=	core gui network qml qscintilla2 sip sql svg xml webkit_run
+USE_PYQT=	core gui network qml qscintilla2 sip sql svg xml \
+		webkit_run webkitwidgets_run
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	qgis-ltr
@@ -110,7 +110,7 @@ CMAKE_OFF+=	SUPPRESS_QT_WARNINGS
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
 OPTIONS_DEFINE=		GRASS SERVER
-OPTIONS_DEFAULT=	GRASS
+OPTIONS_DEFAULT=	GRASS SERVER
 NO_OPTIONS_SORT=	yes
 
 OPTIONS_SUB=		yes
