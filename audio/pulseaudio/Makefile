@@ -6,7 +6,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	12.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
@@ -70,11 +70,9 @@ GSETTINGS_VARS=	GLIB_SCHEMAS=org.freedesktop.pulseaudio.gschema.xml
 SIMD_CONFIGURE_ENABLE=	orc
 SIMD_LIB_DEPENDS=	liborc-0.4.so:devel/orc
 
-OPTIONS_GROUP=	AUDIO COMPLETIONS
+OPTIONS_GROUP=	AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA JACK SOXR SPEEX WEBRTC_AEC
-OPTIONS_GROUP_COMPLETIONS=	BASH ZSH
 AUDIO_DESC=	Audio support
-COMPLETIONS_DESC=	Programmable completions
 ALSA_CONFIGURE_ENABLE=	alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 JACK_CONFIGURE_ENABLE=	jack
@@ -87,7 +85,6 @@ SPEEX_LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
 WEBRTC_AEC_DESC=	WebRTC-based echo canceller
 WEBRTC_AEC_LIB_DEPENDS=	libwebrtc_audio_processing.so:audio/webrtc-audio-processing
 WEBRTC_AEC_CONFIGURE_ENABLE=	webrtc-aec
-ZSH_CONFIGURE_OFF=	--without-zsh-completion-dir
 
 OPTIONS_SINGLE=	DATABASE
 OPTIONS_SINGLE_DATABASE=	TDB GDBM SIMPLE
@@ -119,8 +116,5 @@ post-install:
 # Delete ${STAGEDIR}${PREFIX}/libexec/pulse directory, if it's empty
 	@(cd ${STAGEDIR}${PREFIX}/libexec && \
 		${FIND} * -maxdepth 0 -type d -empty -name pulse -delete)
-
-post-install-BASH-off:
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/bash-completion
 
 .include <bsd.port.mk>

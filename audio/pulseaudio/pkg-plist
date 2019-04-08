@@ -12,15 +12,15 @@ bin/pax11publish
 bin/pulseaudio
 bin/qpaeq
 bin/start-pulseaudio-x11
-%%BASH%%share/bash-completion/completions/pacat
-%%BASH%%share/bash-completion/completions/pacmd
-%%BASH%%share/bash-completion/completions/pactl
-%%BASH%%share/bash-completion/completions/padsp
-%%BASH%%share/bash-completion/completions/paplay
-%%BASH%%share/bash-completion/completions/parec
-%%BASH%%share/bash-completion/completions/parecord
-%%BASH%%share/bash-completion/completions/pasuspender
-%%BASH%%share/bash-completion/completions/pulseaudio
+share/bash-completion/completions/pacat
+share/bash-completion/completions/pacmd
+share/bash-completion/completions/pactl
+share/bash-completion/completions/padsp
+share/bash-completion/completions/paplay
+share/bash-completion/completions/parec
+share/bash-completion/completions/parecord
+share/bash-completion/completions/pasuspender
+share/bash-completion/completions/pulseaudio
 etc/dbus-1/system.d/pulseaudio-system.conf
 @sample etc/pulse/client.conf.sample
 @sample etc/pulse/daemon.conf.sample
@@ -241,7 +241,7 @@ man/man5/pulse-daemon.conf.5.gz
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-traktorkontrol-s4.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/sb-omni-surround-5.1.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/steelseries-arctis-usb-audio.conf
-%%ZSH%%share/zsh/site-functions/_pulseaudio
+share/zsh/site-functions/_pulseaudio
 share/locale/as/LC_MESSAGES/pulseaudio.mo
 share/locale/be/LC_MESSAGES/pulseaudio.mo
 share/locale/bn_IN/LC_MESSAGES/pulseaudio.mo
