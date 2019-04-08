@@ -3,6 +3,7 @@
 
 PORTNAME=	regmath
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://home.interlog.com/~ptjm/ \
 		http://www.ancientgeek.org.uk/distfiles/
@@ -14,13 +15,12 @@ COMMENT=	Two mathematics libraries for Rexx
 
 LICENSE=	MPL10
 
-BUILD_DEPENDS=	${LOCALBASE}/include/rexxsaa.h:lang/rexx-regina
+BUILD_DEPENDS=	rexx:lang/rexx-regina
 
 USES=		zip
 
 WRKSRC=		${WRKDIR}/math
 USE_LDCONFIG=	yes
-LLD_UNSAFE=	yes
 MAKEFILE=	Makefile.bsd
 
 PLIST_FILES=	lib/librexxmath.so lib/librxmath.so man/man1/regmath.1.gz
