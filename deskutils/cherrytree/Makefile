@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtksourceview>0:x11-toolkits/py-gtksourceview
 
-USES=		desktop-file-utils gettext-tools python shared-mime-info shebangfix tar:xz
+USES=		desktop-file-utils gettext-tools python:2.7 shared-mime-info shebangfix tar:xz
 SHEBANG_FILES=	glade/svg_to_png.py
 USE_PYTHON=	distutils noflavors autoplist
 
