@@ -1,6 +1,6 @@
---- rexxcurl.c.orig	2015-04-11 22:53:39 UTC
+--- rexxcurl.c.orig	2019-02-10 22:51:41 UTC
 +++ rexxcurl.c
-@@ -53,6 +53,8 @@
+@@ -52,6 +52,8 @@
   * internal error                   set                 N/A
   * cURL runtime errors              -1                  set
   */
@@ -9,16 +9,7 @@
  #ifdef HAVE_CONFIG_H
  # include "config.h"
  #else
-@@ -1366,7 +1368,7 @@ void RexxCURLSetVersionInfoConstants( Rx
-    valuelen = 0;
-    namelen = sprintf( name, "%sLIBSSH_VERSION", RxGetConstantPrefix( RxPackageGlobalData ) );
- #if LIBCURL_VERSION_NUM >= 0x071001
--   support = version_info->libssh_version;
-+   support = (char *) version_info->libssh_version;
-    valuelen = (version_info->libssh_version) ? strlen( version_info->libssh_version ) : 0;
- #endif
-    SetRexxVariable( RxPackageGlobalData, name, namelen, support, valuelen );
-@@ -1841,9 +1843,9 @@ int rexxcurl_sshkey_callback( CURL *easy
+@@ -1879,9 +1881,9 @@ int rexxcurl_sshkey_callback( CURL *easy
        if ( argv == NULL )
           return -1;
  
@@ -30,3 +21,18 @@
        rx_foundkeytype_len = sprintf( rx_foundkeytype, "%u", foundkey->keytype );
        rx_libcurlviewofkey_len = sprintf( rx_libcurlviewofkey, "%u", match );
  
+@@ -1964,11 +1966,11 @@ int debug_function( CURL *handle, curl_i
+    int c;
+    char *prefix = "*<><><>";
+    if ( type == CURLINFO_TEXT )
+-      fprintf( fp, "text: %c %.*s", prefix[type],size, data );
++      fprintf( fp, "text: %c %.*s", prefix[type],(int)size, data );
+    if ( type == CURLINFO_HEADER_IN )
+-      fprintf( fp, "header_in: %c %.*s", prefix[type],size, data );
++      fprintf( fp, "header_in: %c %.*s", prefix[type],(int)size, data );
+    if ( type == CURLINFO_HEADER_OUT )
+-      fprintf( fp, "header_out:%c %.*s", prefix[type],size, data );
++      fprintf( fp, "header_out:%c %.*s", prefix[type],(int)size, data );
+    if ( type == CURLINFO_SSL_DATA_IN )
+    {
+       fprintf( fp, "ssl_data_in: " );
