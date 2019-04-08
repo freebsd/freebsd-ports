@@ -6,7 +6,7 @@ PORTVERSION=	0.1.2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	gordon@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Toolkit for logging of library method calls
 
 LICENSE=	BSD3CLAUSE
