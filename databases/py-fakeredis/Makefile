@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fakeredis
-PORTVERSION=	0.16.0
+PORTVERSION=	1.0.3
 CATEGORIES=	databases
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,8 @@ COMMENT=	Fake version of databases/py-redis for unit testing
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=0,<3:databases/py-redis@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=0:databases/py-redis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=2.1.0:devel/py-sortedcontainers@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
 USES=		python
