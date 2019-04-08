@@ -10,6 +10,8 @@ CATEGORIES=	www ipv6
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Open Source Goanna-based web browser
 
+BROKEN_FreeBSD_13_amd64=	xpcshell crashes after base Clang updated to 8.0.0
+
 BUILD_DEPENDS=	nspr>=4.15:devel/nspr \
 		nss>=3.31.1:security/nss \
 		libevent>=2.0.22:devel/libevent \
