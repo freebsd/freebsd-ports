@@ -1,20 +1,29 @@
 # $FreeBSD$
 #
-# This file contains logic to ease porting of Go packages or binaries using
-# the `go` command.
+# This file contains logic to ease porting of Go binaries using the
+# `go` command.
 #
 # Feature:	go
 # Usage:	USES=go
-# Valid ARGS:	none
+# Valid ARGS:	(none), modules
+#
+# (none)	Setup GOPATH and build in GOPATH mode.
+# modules	If the upstream uses Go modules, this can be set to build
+#		in modules-aware mode.
 #
 # You can set the following variables to control the process.
 #
 # GO_PKGNAME
-#	The name of the package. This is the directory that will be
-# 	created in GOPATH/src and seen by the `go` command
+#	The name of the package. When building in GOPATH mode, this is
+#	the directory that will be created in GOPATH/src and seen by the
+#	`go` command. When building in modules-aware mode, no directories
+#	will be created and GO_PKGNAME value will be only used as a default
+#	for GO_TARGET. If not set explicitly and GH_SUBDIR is present,
+#	GO_PKGNAME will be inferred from GH_SUBDIR.
 #
 # GO_TARGET
-#	The names of the package(s) to build
+#	The names of the package(s) to build. If not set explicitly,
+#	defaults to GO_PKGNAME.
 #
 # CGO_CFLAGS
 #	Addional CFLAGS variables to be passed to the C compiler by the `go`
@@ -32,39 +41,44 @@
 .if !defined(_INCLUDE_USES_GO_MK)
 _INCLUDE_USES_GO_MK=	yes
 
-.if ${ARCH} == "i386"
-GOARCH=	386
-GOOBJ=	8
-.else
-GOARCH=	amd64
-GOOBJ=	6
+.if !empty(go_ARGS) && ${go_ARGS:Nmodules}
+IGNORE=	USES=go only accepts no arguments or 'modules'
 .endif
 
 # Settable variables
-GO_PKGNAME?=	${PORTNAME}
+.if empty(GO_PKGNAME)
+.  if !empty(GH_SUBDIR)
+GO_PKGNAME=	${GH_SUBDIR:S|^src/||}
+.  else
+GO_PKGNAME=	${PORTNAME}
+.  endif
+.endif
 GO_TARGET?=	${GO_PKGNAME}
-GO_BUILDFLAGS+=	-v
+GO_BUILDFLAGS+=	-v -buildmode=exe
 CGO_CFLAGS+=	-I${LOCALBASE}/include
 CGO_LDFLAGS+=	-L${LOCALBASE}/lib
 
 # Read-only variables
 GO_CMD=		${LOCALBASE}/bin/go
-LOCAL_GOPATH=	${LOCALBASE}/share/go
-GO_LIBDIR=	share/go/pkg/${OPSYS:tl}_${GOARCH}
-GO_SRCDIR=	share/go/src
-GO_WRKSRC=	${GO_WRKDIR_SRC}/${GO_PKGNAME}
 GO_WRKDIR_BIN=	${WRKDIR}/bin
+
+GO_ENV+=	CGO_CFLAGS="${CGO_CFLAGS}" \
+		CGO_LDFLAGS="${CGO_LDFLAGS}"
+
+.if ${go_ARGS:Mmodules}
+GO_BUILDFLAGS+=	-mod=vendor
+GO_WRKSRC=	${WRKSRC}
+GO_ENV+=	GOPATH="" \
+		GOBIN="${GO_WRKDIR_BIN}"
+.else
 GO_WRKDIR_SRC=	${WRKDIR}/src
-GO_WRKDIR_PKG=	${WRKDIR}/pkg/${OPSYS:tl}_${GOARCH}
+GO_WRKSRC=	${GO_WRKDIR_SRC}/${GO_PKGNAME}
+GO_ENV+=	GOPATH="${WRKDIR}" \
+		GOBIN=""
+.endif
 
 BUILD_DEPENDS+=	${GO_CMD}:lang/go
-GO_ENV+=	GOPATH="${WRKDIR}:${LOCAL_GOPATH}" \
-		CGO_CFLAGS="${CGO_CFLAGS}" \
-		CGO_LDFLAGS="${CGO_LDFLAGS}" \
-		GOBIN=""
-PLIST_SUB+=	GO_LIBDIR=${GO_LIBDIR} \
-		GO_SRCDIR=${GO_SRCDIR} \
-		GO_PKGNAME=${GO_PKGNAME}
+PLIST_SUB+=	GO_PKGNAME=${GO_PKGNAME}
 
 _USES_POST+=	go
 .endif # !defined(_INCLUDE_USES_GO_MK)
@@ -72,7 +86,7 @@ _USES_POST+=	go
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_GO_POST_MK)
 _INCLUDE_USES_GO_POST_MK=	yes
 
-.if !target(post-extract)
+.if !target(post-extract) && empty(go_ARGS)
 post-extract:
 	@${MKDIR} ${GO_WRKSRC:H}
 	@${LN} -sf ${WRKSRC} ${GO_WRKSRC}
@@ -80,24 +94,14 @@ post-extract:
 
 .if !target(do-build)
 do-build:
-	@(cd ${GO_WRKSRC}; \
+	(cd ${GO_WRKSRC}; \
 		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install ${GO_BUILDFLAGS} ${GO_TARGET})
 .endif
 
 .if !target(do-install)
 do-install:
 .for _TARGET in ${GO_TARGET}
-	@if [ -e "${GO_WRKDIR_PKG}/${_TARGET}.a" ]; then \
-		_TARGET_LIBDIR="${STAGEDIR}/${PREFIX}/${GO_LIBDIR}/${_TARGET:H}"; \
-		${MKDIR} $${_TARGET_LIBDIR}; \
-		${INSTALL_DATA} ${GO_WRKDIR_PKG}/${_TARGET}.a $${_TARGET_LIBDIR}; \
-		_TARGET_SRCDIR="${STAGEDIR}/${PREFIX}/${GO_SRCDIR}/${_TARGET}"; \
-		${MKDIR} $${_TARGET_SRCDIR}; \
-		(cd ${GO_WRKDIR_SRC}/${_TARGET}/ && ${COPYTREE_SHARE} \* $${_TARGET_SRCDIR}); \
-	fi; \
-	if [ -e "${GO_WRKDIR_BIN}/${_TARGET:T}" ]; then \
-		${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${_TARGET:T} ${STAGEDIR}/${LOCALBASE}/bin; \
-	fi;
+	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${_TARGET:T} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .endif
 
