@@ -29,6 +29,9 @@ CONFIGURE_ARGS=	--with-external-includedir=${PREFIX}/include \
 		--cc=${COMPILER_TYPE}
 LDFLAGS+=	-pthread
 
+SHLIBVER=	${DISTVERSION:S/./ /g:[2]}
+PLIST_SUB=	SHLIBVER=${SHLIBVER}
+
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
 
@@ -59,6 +62,6 @@ post-patch:
 		${WRKSRC}/src/build-data/cc/clang.txt
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/botan ${STAGEDIR}${PREFIX}/lib/libbotan-2.so.9.9.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/botan ${STAGEDIR}${PREFIX}/lib/libbotan-2.so.${SHLIBVER}.${SHLIBVER}.0
 
 .include <bsd.port.mk>

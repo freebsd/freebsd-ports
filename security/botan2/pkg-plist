@@ -308,7 +308,7 @@ include/botan-2/botan/xts.h
 include/botan-2/botan/zlib.h
 lib/libbotan-2.a
 lib/libbotan-2.so
-lib/libbotan-2.so.9
-lib/libbotan-2.so.9.9.0
+lib/libbotan-2.so.%%SHLIBVER%%
+lib/libbotan-2.so.%%SHLIBVER%%.%%SHLIBVER%%.0
 %%PYTHON_SITELIBDIR%%/botan2.py
 libdata/pkgconfig/botan-2.pc
