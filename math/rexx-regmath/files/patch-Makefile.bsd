@@ -1,11 +1,13 @@
---- Makefile.bsd.orig	2001-11-04 17:09:04 UTC
+--- Makefile.bsd.orig	2001-11-04 18:09:04 UTC
 +++ Makefile.bsd
-@@ -9,7 +9,7 @@
+@@ -9,8 +9,8 @@
  POPT=-O -fomit-frame-pointer
  PLFL=-s
  DEBUG=-g
 -CFLAGS=$(OPT) $(DEBUG) -pipe -fpic -I $$HOME/regina -pipe
+-LDFLAGS=-Bdynamic -Bshareable $(LFL)
 +CFLAGS+=$(OPT) $(DEBUG) -pipe -fpic -I $$HOME/regina -pipe -I/usr/local/include
- LDFLAGS=-Bdynamic -Bshareable $(LFL)
++LDFLAGS=-Bdynamic -Bshareable $(LFL) -L/usr/lib
  LIBS=-lm
  so=so
+ o=o
