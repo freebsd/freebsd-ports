@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ristretto
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	graphics xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 
 USES=		desktop-file-utils gettext-tools gmake gnome pkgconfig \
 		tar:bzip2 xfce
-USE_GNOME=	cairo gtk20 glib20 intlhack intltool
+USE_GNOME=	cairo gtk20 glib20 intltool
 USE_XFCE=	libmenu
 USE_XORG=	ice sm x11
 

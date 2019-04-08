@@ -7,6 +7,7 @@ share/icons/hicolor/48x48/apps/ristretto.png
 share/icons/hicolor/scalable/apps/ristretto.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/ristretto.mo
+%%NLS%%share/locale/be/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/ristretto.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/ristretto.mo
