@@ -46,4 +46,7 @@ post-extract:
 	@${LN} -sf ${WRKSRC}/src ${WRKDIR}
 	@${LN} -sf ${WRKSRC} ${GO_WRKSRC}
 
+do-install:
+	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/MailHog ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
 .include <bsd.port.mk>
