@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	botan
-DISTVERSION=	2.9.0
+DISTVERSION=	2.10.0
+PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	2
