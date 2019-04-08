@@ -54,8 +54,8 @@ lib/seed7/lib/comp/destr.s7i
 lib/seed7/lib/comp/drw_act.s7i
 lib/seed7/lib/comp/enu_act.s7i
 lib/seed7/lib/comp/error.s7i
-lib/seed7/lib/comp/expr.s7i
 lib/seed7/lib/comp/expr_utl.s7i
+lib/seed7/lib/comp/expr.s7i
 lib/seed7/lib/comp/fil_act.s7i
 lib/seed7/lib/comp/flt_act.s7i
 lib/seed7/lib/comp/gkb_act.s7i
@@ -128,6 +128,7 @@ lib/seed7/lib/inflate.s7i
 lib/seed7/lib/inflatefile.s7i
 lib/seed7/lib/inifile.s7i
 lib/seed7/lib/integer.s7i
+lib/seed7/lib/iobuffer.s7i
 lib/seed7/lib/keybd.s7i
 lib/seed7/lib/keydescr.s7i
 lib/seed7/lib/line.s7i
@@ -139,6 +140,7 @@ lib/seed7/lib/mahjng32.s7i
 lib/seed7/lib/make.s7i
 lib/seed7/lib/makedata.s7i
 lib/seed7/lib/math.s7i
+lib/seed7/lib/mixarith.s7i
 lib/seed7/lib/modern27.s7i
 lib/seed7/lib/more.s7i
 lib/seed7/lib/msgdigest.s7i
