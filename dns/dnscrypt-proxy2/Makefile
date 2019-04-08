@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnscrypt-proxy
-PORTVERSION=	2.0.19
+PORTVERSION=	2.0.22
 CATEGORIES=	dns security ipv6
 PKGNAMESUFFIX=	2
 
@@ -35,6 +35,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-build:
 	${RLN} ${WRKSRC}/vendor ${WRKSRC}/src
+	${RM} ${WRKSRC}/go.mod
 	cd ${WRKSRC}/${PORTNAME} && \
 	  ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC} \
 	  ${GO_CMD} build ${GO_BUILDFLAGS} -o ${WRKDIR}/sbin/${PORTNAME}
