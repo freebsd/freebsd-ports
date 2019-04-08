@@ -1,0 +1,10 @@
+bin/zrythm
+share/applications/zrythm.desktop
+share/fonts/zrythm/Segment7Standard/OFL.txt
+share/icons/hicolor/48x48/apps/zrythm.svg
+share/icons/hicolor/scalable/apps/zrythm.svg
+share/locale/de/LC_MESSAGES/zrythm.mo
+share/locale/es/LC_MESSAGES/zrythm.mo
+share/locale/fr/LC_MESSAGES/zrythm.mo
+share/locale/it/LC_MESSAGES/zrythm.mo
+share/locale/ja/LC_MESSAGES/zrythm.mo
