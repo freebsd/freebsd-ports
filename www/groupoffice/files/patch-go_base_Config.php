@@ -1,11 +1,11 @@
---- go/base/Config.php.orig	2018-12-04 16:00:23 UTC
-+++ go/base/Config.php
+--- go/base/Config.php.orig	2019-04-08 07:57:41.914244000 +0200
++++ go/base/Config.php	2019-04-08 09:52:10.501481000 +0200
 @@ -22,7 +22,7 @@
   * This class holds the main configuration options of Group-Office
   * Don't modify this file. The values defined here are just default values.
   * They are overwritten by the configuration options in /config.php or
 - * /etc/groupoffice/{HOSTNAME}/config.php
-+ * /usr/local/usr/local/etc/groupoffice/{HOSTNAME}/config.php
++ * /usr/local/usr/local/etc//groupoffice/{HOSTNAME}/config.php
   *
   * To edit these options use install.php.
   *
@@ -79,12 +79,12 @@
  
  
  	/**
-@@ -1350,7 +1350,7 @@ var $billing_clear_payment_method_on_duplicate = true;
+@@ -1343,7 +1343,7 @@ var $billing_clear_payment_method_on_duplicate = true;
  	}
  	
  	private function getGlobalConfig() {
 -		$globalConfigFile = '/etc/groupoffice/globalconfig.inc.php';
 +		$globalConfigFile = '/usr/local/usr/local/etc/groupoffice/globalconfig.inc.php';
- 		if (file_exists($globalConfigFile)) {
- 			require($globalConfigFile);
- 		}
+ 		try {
+ 			if (file_exists($globalConfigFile)) {
+ 				require($globalConfigFile);
