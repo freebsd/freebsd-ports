@@ -14,7 +14,7 @@ COMMENT=	Music tracker for the Yamaha YM2608 (OPNA) sound chip
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		qmake qt:5 gl
+USES=		compiler:c++14-lang qmake qt:5 gl
 USE_QT=		buildtools core gui linguisttools_build multimedia network \
 		widgets
 USE_GL=		gl
