@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opengfx
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	games
 MASTER_SITES=	http://bundles.openttdcoop.org/${PORTNAME}/releases/${PORTVERSION}/ \
 		http://m1cro.me/ports/distfiles/${PORTNAME}/releases/${PORTVERSION}/
@@ -13,7 +13,9 @@ COMMENT=	Free alternative graphics for OpenTTD game engine
 LICENSE=	GPLv2
 
 USES=		zip
+
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 # upstream zipped a tar file, unpack it.
 post-extract:
