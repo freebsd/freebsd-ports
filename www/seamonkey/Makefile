@@ -13,6 +13,8 @@ DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
+BROKEN_FreeBSD_13_amd64=	xpcshell crashes after base Clang updated to 8.0.0
+
 BUILD_DEPENDS=	nspr>=4.13.1:devel/nspr \
 		nss>=3.28.6:security/nss \
 		libevent>=2.0.21_2:devel/libevent \
