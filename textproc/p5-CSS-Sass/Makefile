@@ -25,6 +25,8 @@ TEST_DEPENDS=	p5-File-chdir>=0.01:devel/p5-File-chdir \
 USES=		compiler:c++11-lang gmake perl5
 USE_PERL5=	configure
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502600
