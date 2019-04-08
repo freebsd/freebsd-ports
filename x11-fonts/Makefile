@@ -167,6 +167,7 @@
     SUBDIR += noto-sc
     SUBDIR += noto-tc
     SUBDIR += nucleus
+    SUBDIR += orbitron
     SUBDIR += ohsnap
     SUBDIR += oldschool-pc-fonts
     SUBDIR += p5-Font-AFM
