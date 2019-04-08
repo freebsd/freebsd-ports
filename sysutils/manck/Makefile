@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wolfram.schneider.org/src/
 
-MAINTAINER=	wosch@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manual page consistency checker
 
 USES=		perl5 shebangfix uidfix
