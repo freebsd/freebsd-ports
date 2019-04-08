@@ -1,4 +1,5 @@
 etc/rc.d/vm
+lib/vm-bhyve/vm-base
 lib/vm-bhyve/vm-cmd
 lib/vm-bhyve/vm-config
 lib/vm-bhyve/vm-core
@@ -28,6 +29,7 @@ sbin/vm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dragonfly.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/freebsd-zvol.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/freepbx.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/linux-zvol.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netbsd.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openbsd.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resflash.conf
