@@ -18,18 +18,19 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libgtkmm-2.4.so:x11-toolkits/gtkmm24
 
-BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++11"
-
 USE_GITHUB=	yes
 GH_PROJECT=	libdxfrw:libdxfrw
 GH_TAGNAME=	8f95895:libdxfrw
 GH_SUBDIR=	extlib/libdxfrw:libdxfrw
 
-USES=		cmake pkgconfig
+USES=		cmake compiler:c++11-lang gl gnome pkgconfig
 USE_GL=		gl glu glew
 USE_GNOME=	atkmm gtk20 pangomm
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e '/-stdlib=libc++/d' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
