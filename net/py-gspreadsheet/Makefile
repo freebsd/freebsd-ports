@@ -16,9 +16,10 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdata>=2.0.14:devel/py-gdata@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
-NO_ARCH=	yes
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 PORTDOCS=	README.rst
 
@@ -29,6 +30,6 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 do-test:
-	@cd ${WRKSRC} && nosetests
+	@cd ${WRKSRC} && nosetests-${PYTHON_VER}
 
 .include <bsd.port.mk>
