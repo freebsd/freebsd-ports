@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Sisimai/Bite.pm
 %%SITE_PERL%%/Sisimai/Bite/Email.pm
 %%SITE_PERL%%/Sisimai/Bite/Email/Activehunter.pm
+%%SITE_PERL%%/Sisimai/Bite/Email/Amavis.pm
 %%SITE_PERL%%/Sisimai/Bite/Email/AmazonSES.pm
 %%SITE_PERL%%/Sisimai/Bite/Email/AmazonWorkMail.pm
 %%SITE_PERL%%/Sisimai/Bite/Email/Aol.pm
@@ -74,6 +75,7 @@
 %%SITE_PERL%%/Sisimai/Order.pm
 %%SITE_PERL%%/Sisimai/Order/Email.pm
 %%SITE_PERL%%/Sisimai/Order/JSON.pm
+%%SITE_PERL%%/Sisimai/RFC1894.pm
 %%SITE_PERL%%/Sisimai/RFC3464.pm
 %%SITE_PERL%%/Sisimai/RFC3834.pm
 %%SITE_PERL%%/Sisimai/RFC5322.pm
@@ -113,6 +115,7 @@
 %%SITE_PERL%%/Sisimai/Rhost/GoDaddy.pm
 %%SITE_PERL%%/Sisimai/Rhost/GoogleApps.pm
 %%SITE_PERL%%/Sisimai/Rhost/KDDI.pm
+%%SITE_PERL%%/Sisimai/Rhost/TencentQQ.pm
 %%SITE_PERL%%/Sisimai/SMTP.pm
 %%SITE_PERL%%/Sisimai/SMTP/Error.pm
 %%SITE_PERL%%/Sisimai/SMTP/Reply.pm
@@ -125,6 +128,7 @@
 %%PERL5_MAN3%%/Sisimai::Bite.3.gz
 %%PERL5_MAN3%%/Sisimai::Bite::Email.3.gz
 %%PERL5_MAN3%%/Sisimai::Bite::Email::Activehunter.3.gz
+%%PERL5_MAN3%%/Sisimai::Bite::Email::Amavis.3.gz
 %%PERL5_MAN3%%/Sisimai::Bite::Email::AmazonSES.3.gz
 %%PERL5_MAN3%%/Sisimai::Bite::Email::AmazonWorkMail.3.gz
 %%PERL5_MAN3%%/Sisimai::Bite::Email::Aol.3.gz
@@ -195,6 +199,7 @@
 %%PERL5_MAN3%%/Sisimai::Order.3.gz
 %%PERL5_MAN3%%/Sisimai::Order::Email.3.gz
 %%PERL5_MAN3%%/Sisimai::Order::JSON.3.gz
+%%PERL5_MAN3%%/Sisimai::RFC1894.3.gz
 %%PERL5_MAN3%%/Sisimai::RFC3464.3.gz
 %%PERL5_MAN3%%/Sisimai::RFC3834.3.gz
 %%PERL5_MAN3%%/Sisimai::RFC5322.3.gz
@@ -234,6 +239,7 @@
 %%PERL5_MAN3%%/Sisimai::Rhost::GoDaddy.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::GoogleApps.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::KDDI.3.gz
+%%PERL5_MAN3%%/Sisimai::Rhost::TencentQQ.3.gz
 %%PERL5_MAN3%%/Sisimai::SMTP.3.gz
 %%PERL5_MAN3%%/Sisimai::SMTP::Error.3.gz
 %%PERL5_MAN3%%/Sisimai::SMTP::Reply.3.gz
