@@ -1,0 +1,8 @@
+--- Makefile.orig	2019-04-08 08:32:00 UTC
++++ Makefile
+@@ -1,4 +1,4 @@
+-CFLAGS = -std=c99 -O3
++CFLAGS += -std=c99 -D__BSD_VISIBLE
+ 
+ LIBS   = -lpthread
+ ifeq ($(OPENSSL),1)
