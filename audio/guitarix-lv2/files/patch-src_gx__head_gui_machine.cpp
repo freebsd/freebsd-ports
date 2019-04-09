@@ -1,15 +1,6 @@
---- src/gx_head/gui/machine.cpp.orig	2018-07-22 05:47:48 UTC
+--- src/gx_head/gui/machine.cpp.orig	2019-04-07 05:17:18 UTC
 +++ src/gx_head/gui/machine.cpp
-@@ -18,7 +18,7 @@
- 
- #include "guitarix.h"
- #include <sys/mman.h>
--#include <malloc.h>
-+#include <stdlib.h>
- #include "jsonrpc_methods.h"
- #include <netinet/in.h>
- #include <netinet/tcp.h>
-@@ -31,7 +31,7 @@
+@@ -46,7 +46,7 @@ void set_memory_allocation() {}
  #endif
  
  void lock_rt_memory() {
