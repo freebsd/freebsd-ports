@@ -2,9 +2,7 @@
 
 PORTNAME=	dbcsr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-rc.0-40
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-gd9c0dd54
+DISTVERSION=	1.1.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +17,8 @@ USES=		blaslapack:openblas cmake:noninja fortran python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	cp2k
 USE_LDCONFIG=	yes
+
+LDFLAGS+=	-lopenblas
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_ARGS=	-DBLA_VENDOR:STRING="OpenBLAS"
@@ -37,5 +37,11 @@ OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
 
 C_API_DESC=		Build the C API library
 C_API_CMAKE_BOOL=	WITH_C_API
+
+do-test: # tests are broken: https://github.com/cp2k/dbcsr/issues/150
+	@cd ${BUILD_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
 .include <bsd.port.mk>
