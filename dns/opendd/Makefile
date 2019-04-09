@@ -25,6 +25,11 @@ RCNG_DESC=	Install RC_NG script
 
 .include <bsd.port.options.mk>
 
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	undefined symbol: BIO_set_conn_ip
+BROKEN_FreeBSD_13=	undefined symbol: BIO_set_conn_ip
+.endif
+
 .if ${PORT_OPTIONS:MRCNG}
 USE_RC_SUBR=	${PORTNAME}
 .endif
