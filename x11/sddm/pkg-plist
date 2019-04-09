@@ -4,6 +4,10 @@ etc/dbus-1/system.d/org.freedesktop.DisplayManager.conf
 etc/pam.d/sddm
 etc/pam.d/sddm-autologin
 etc/pam.d/sddm-greeter
+man/man1/sddm.1.gz
+man/man1/sddm-greeter.1.gz
+man/man5/sddm.conf.5.gz
+man/man5/sddm-state.conf.5.gz
 @sample etc/sddm.conf.sample
 %%QT_QMLDIR%%/SddmComponents/Background.qml
 %%QT_QMLDIR%%/SddmComponents/Button.qml
