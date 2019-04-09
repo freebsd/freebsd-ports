@@ -3,6 +3,7 @@ bin/cafrun
 include/OpenCoarrays-%%PORTVERSION%%_GNU-%%GCC_VER%%/opencoarrays.mod
 include/libcaf-gfortran-descriptor.h
 include/libcaf.h
+include/libcaf-version-def.h
 include/opencoarrays.mod
 lib/cmake/opencoarrays/OpenCoarraysConfig.cmake
 lib/cmake/opencoarrays/OpenCoarraysConfigVersion.cmake
@@ -11,5 +12,7 @@ lib/cmake/opencoarrays/OpenCoarraysTargets.cmake
 lib/libcaf_mpi.a
 lib/libcaf_mpi.so
 lib/libcaf_mpi.so.%%SOVERSION%%
+lib/libopencoarrays_mod.a
 man/man1/caf.1.gz
 man/man1/cafrun.1.gz
+@dir %%DATADIR%%
