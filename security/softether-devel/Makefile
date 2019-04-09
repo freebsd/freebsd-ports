@@ -2,7 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	4.28-9669-beta
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-2018.09.11-tree/Source_Code/
 PKGNAMESUFFIX=	-devel

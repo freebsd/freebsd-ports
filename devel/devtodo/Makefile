@@ -3,7 +3,7 @@
 
 PORTNAME=	devtodo
 PORTVERSION=	0.1.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://swapoff.org/files/devtodo/
 

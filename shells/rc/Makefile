@@ -3,7 +3,7 @@
 
 PORTNAME=	rc
 PORTVERSION=	1.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells plan9
 MASTER_SITES=	http://static.tobold.org/rc/
 

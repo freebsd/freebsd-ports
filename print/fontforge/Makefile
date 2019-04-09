@@ -3,6 +3,7 @@
 
 PORTNAME=	fontforge
 PORTVERSION=	20170731
+PORTREVISION=	1
 CATEGORIES=	print
 DISTFILES=	# Empty but needed because of the freetype distfile
 

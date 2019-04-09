@@ -3,7 +3,7 @@
 
 PORTNAME=	abook
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://abook.sourceforge.net/devel/
 

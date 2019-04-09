@@ -3,7 +3,7 @@
 
 PORTNAME=	nmzmail
 PORTVERSION=	0.1.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/
 

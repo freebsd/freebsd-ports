@@ -3,7 +3,7 @@
 
 PORTNAME=	gnatcoll
 PORTVERSION=	2016	# branch: gpl-for-gps-2016
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org

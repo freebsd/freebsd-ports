@@ -3,7 +3,7 @@
 
 PORTNAME=	nfsshell
 PORTVERSION=	20130510
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 #MASTER_SITES=	http://www.cs.vu.nl/pub/leendert/
 

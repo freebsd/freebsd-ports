@@ -3,7 +3,7 @@
 
 PORTNAME=	zephyr
 DISTVERSION=	3.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://zephyr.1ts.org/export/2642/distribution/
 

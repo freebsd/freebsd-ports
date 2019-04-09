@@ -3,6 +3,7 @@
 
 PORTNAME=	physfs
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://icculus.org/${PORTNAME}/downloads/
 

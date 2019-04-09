@@ -3,6 +3,7 @@
 
 PORTNAME=	PHP_Shell
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	shells www pear
 
 MAINTAINER=	joneum@FreeBSD.org

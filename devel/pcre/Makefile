@@ -3,6 +3,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	8.43
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://ftp.pcre.org/pub/pcre/ \
 		SF

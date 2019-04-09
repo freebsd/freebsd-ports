@@ -2,6 +2,7 @@
 
 PORTNAME=	yoshimi
 DISTVERSION=	1.5.7
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	hello@blubee.me

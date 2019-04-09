@@ -2,6 +2,7 @@
 
 PORTNAME=	pspg
 DISTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	dg@syrec.org

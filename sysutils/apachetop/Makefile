@@ -3,6 +3,7 @@
 
 PORTNAME=	apachetop
 PORTVERSION=	0.18.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lukasz@wasikowski.net

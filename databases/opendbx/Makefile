@@ -3,7 +3,7 @@
 
 PORTNAME=	opendbx
 PORTVERSION=	1.4.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.linuxnetworks.de/opendbx/download/
 
