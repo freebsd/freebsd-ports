@@ -3,6 +3,7 @@
 
 PORTNAME=	opendht
 DISTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -3,7 +3,7 @@
 
 PORTNAME=			${SAMBA4_BASENAME}47
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			0
+PORTREVISION=			1
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -125,7 +125,7 @@ NSUPDATE_DESC=			Use samba NSUPDATE utility for AD DC
 # the system)
 # Readline(sponsored by Python)
 # XXX: USES=readline pollutes CPPFLAGS, so we explicitly put dependency
-LIB_DEPENDS+=			libreadline.so.7:devel/readline
+LIB_DEPENDS+=			libreadline.so.8:devel/readline
 # popt
 LIB_DEPENDS+=			libpopt.so:devel/popt
 # inotify

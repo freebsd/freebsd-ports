@@ -3,6 +3,7 @@
 
 PORTNAME=	postgres-xl
 DISTVERSION=	9.5r1.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://files.postgres-xl.org/
 

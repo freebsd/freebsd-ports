@@ -3,7 +3,7 @@
 
 PORTNAME=	aimage
 PORTVERSION=	3.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://digitalcorpora.org/downloads/
 

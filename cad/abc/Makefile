@@ -2,6 +2,7 @@
 
 PORTNAME=	abc
 DISTVERSION=	g20180420
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	uddka@student.kit.edu

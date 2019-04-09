@@ -3,6 +3,7 @@
 
 PORTNAME=	ngspice_rework
 PORTVERSION=	30
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/ngspice/ng-spice-rework/${PORTVERSION}
 DISTNAME=	ngspice-${PORTVERSION}

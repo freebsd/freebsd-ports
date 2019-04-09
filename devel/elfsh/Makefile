@@ -3,7 +3,7 @@
 
 PORTNAME=	elfsh
 PORTVERSION=	0.51b3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://elfsh.asgardlabs.org/files/
 DISTNAME=	elfsh-0.51b3-portable

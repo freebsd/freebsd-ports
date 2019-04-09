@@ -3,6 +3,7 @@
 
 PORTNAME=	socat
 PORTVERSION=	1.7.3.3
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 		LOCAL/ehaupt

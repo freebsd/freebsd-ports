@@ -2,7 +2,7 @@
 
 PORTNAME=	picoc
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 
 MAINTAINER=	portmaster@bsdforge.com

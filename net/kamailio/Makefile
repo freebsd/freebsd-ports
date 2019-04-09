@@ -3,6 +3,7 @@
 
 PORTNAME=	kamailio
 PORTVERSION=	5.2.0
+PORTREVISION=	1
 
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/

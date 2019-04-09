@@ -2,6 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	4.29-9680
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-rtm-2019.02.28-tree/Source_Code/
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}-rtm
