@@ -1,18 +1,9 @@
 bin/ja2
+bin/ja2-launcher
+lib/libstracciatella.so
 man/man6/ja2.6.gz
 share/applications/ja2-stracciatella.desktop
-%%DATADIR%%/_unittests/datatypes/doubles.bin
-%%DATADIR%%/_unittests/datatypes/floats.bin
-%%DATADIR%%/_unittests/find-files/file-without-extension
-%%DATADIR%%/_unittests/find-files/lowercase-ext.txt
-%%DATADIR%%/_unittests/find-files/subfolder/file.txt
-%%DATADIR%%/_unittests/find-files/uppercase-ext.TXT
-%%DATADIR%%/_unittests/saves/strac-linux/SaveGame01.sav
-%%DATADIR%%/_unittests/saves/strac-macos/SaveGame09.sav
-%%DATADIR%%/_unittests/saves/strac-macos/imp.dat
-%%DATADIR%%/_unittests/saves/strac-win/SaveGame09.sav
-%%DATADIR%%/_unittests/saves/vanilla-russian/IMP.dat
-%%DATADIR%%/_unittests/saves/vanilla-russian/SaveGame06.sav
+share/icons/hicolor/scalable/apps/ja2-stracciatella.svg
 %%DATADIR%%/externalized/ammo_types.json
 %%DATADIR%%/externalized/army-gun-choice-extended.json
 %%DATADIR%%/externalized/army-gun-choice-normal.json
@@ -41,7 +32,9 @@ share/applications/ja2-stracciatella.desktop
 %%DATADIR%%/externalized/game.json
 %%DATADIR%%/externalized/imp.json
 %%DATADIR%%/externalized/magazines.json
+%%DATADIR%%/externalized/music.json
 %%DATADIR%%/externalized/readme.txt
+%%DATADIR%%/externalized/sti/interface/LOADSCREENTAB.STI
 %%DATADIR%%/externalized/strings/ammo-calibre-bobbyray-dut.json
 %%DATADIR%%/externalized/strings/ammo-calibre-bobbyray-eng.json
 %%DATADIR%%/externalized/strings/ammo-calibre-bobbyray-fr.json
@@ -67,7 +60,27 @@ share/applications/ja2-stracciatella.desktop
 %%DATADIR%%/mods/from-russia-with-love/data/maps/A9.dat
 %%DATADIR%%/mods/from-russia-with-love/license.txt
 %%DATADIR%%/mods/from-russia-with-love/readme.txt
+%%DATADIR%%/mods/generous-rebels/data/Maps/A10_b1.dat
+%%DATADIR%%/mods/generous-rebels/Generous Rebels Mod.txt
+%%DATADIR%%/mods/generous-rebels/GR mod.jpg
+%%DATADIR%%/mods/imp-quiz-honest-answers/data/Binarydata/IMPTEXT.EDT
+%%DATADIR%%/mods/imp-quiz-honest-answers/IMP quiz honest answers mod.txt
+%%DATADIR%%/mods/o-fortuna/data/music.json
+%%DATADIR%%/mods/o-fortuna/data/music/o-fortuna.wav
+%%DATADIR%%/mods/o-fortuna/license.txt
+%%DATADIR%%/mods/o-fortuna/readme.txt
 %%DATADIR%%/mods/readme.txt
 %%DATADIR%%/mods/test-json-dialogs/data/mercedt/009.edt.json
 %%DATADIR%%/mods/test-json-dialogs/readme.txt
-share/pixmaps/jagged2.ico
+%%DATADIR%%/unittests/datatypes/doubles.bin
+%%DATADIR%%/unittests/datatypes/floats.bin
+%%DATADIR%%/unittests/find-files/file-without-extension
+%%DATADIR%%/unittests/find-files/lowercase-ext.txt
+%%DATADIR%%/unittests/find-files/subfolder/file.txt
+%%DATADIR%%/unittests/find-files/uppercase-ext.TXT
+%%DATADIR%%/unittests/saves/strac-linux/SaveGame01.sav
+%%DATADIR%%/unittests/saves/strac-macos/imp.dat
+%%DATADIR%%/unittests/saves/strac-macos/SaveGame09.sav
+%%DATADIR%%/unittests/saves/strac-win/SaveGame09.sav
+%%DATADIR%%/unittests/saves/vanilla-russian/IMP.dat
+%%DATADIR%%/unittests/saves/vanilla-russian/SaveGame06.sav
