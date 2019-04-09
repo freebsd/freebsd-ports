@@ -12,6 +12,8 @@ COMMENT=	Small net top tool
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	non-constant-expression cannot be narrowed from type 'unsigned int' to 'time_t' (aka 'int') in initializer list
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	raboof
 
