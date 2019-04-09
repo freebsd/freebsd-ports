@@ -10,8 +10,6 @@ COMMENT=	Pretty Quick Image Viewer
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	fails to compile: pqiv.c:1183: \#pragma GCC diagnostic not allowed inside functions
-
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 BUILD_DEPENDS=	bash:shells/bash
@@ -68,6 +66,14 @@ MAKEFILE=	GNUmakefile
 
 PORTDOCS=	README.markdown
 PLIST_FILES=	bin/pqiv man/man1/pqiv.1.gz
+
+post-patch:
+.if exists(/usr/lib/libstdc++.so)
+	@${REINPLACE_CMD} -e '/#pragma GCC diagnostic/d' \
+		-e '/PQIV_DISABLE_PEDANTIC/d' \
+		-e '/PQIV_ENABLE_PEDANTIC/d' \
+		${WRKSRC}/pqiv.c
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pqiv ${STAGEDIR}${PREFIX}/bin
