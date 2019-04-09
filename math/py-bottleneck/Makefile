@@ -15,7 +15,7 @@ COMMENT=	Collection of fast NumPy array functions written in Cython
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/bottleneck/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
@@ -36,6 +36,6 @@ post-install-DOCS-on:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 do-test:
-	cd ${WRKSRC} && nosetests
+	cd ${WRKSRC} && nosetests-${PYTHON_VER}
 
 .include <bsd.port.mk>
