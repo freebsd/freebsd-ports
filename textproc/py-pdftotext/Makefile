@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpoppler.so:graphics/poppler
 
-USES=		python
+USES=		compiler:c11 python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
