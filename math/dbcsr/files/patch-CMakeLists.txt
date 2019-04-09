@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2019-04-09 04:46:02 UTC
++++ CMakeLists.txt
+@@ -23,7 +23,9 @@ set(WITH_GPU "P100" CACHE STRING "Set th
+ set_property(CACHE WITH_GPU PROPERTY STRINGS K20X K40 K80 P100)
+ 
+ enable_language(Fortran)
+-enable_testing() # enables the `make test` target
++if (BUILD_TESTING)
++  enable_testing() # enables the `make test` target
++endif()
+ 
+ if (WITH_C_API AND WITH_EXAMPLES)
+   enable_language(CXX)
