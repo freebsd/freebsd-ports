@@ -12175,3 +12175,5 @@ x11/xbelld||2019-04-04|Has expired: Depends on audio/esound
 devel/mkcmd||2019-04-04|Removed, depends on expired devel/msrc0
 devel/msrc0||2019-04-04|Has expired: No longer required as comms/conserver is being retired.
 sysutils/curly||2019-04-04|Removed, depends on expired devel/msrc0
+devel/pecl-xdebug25|devel/pecl-xdebug|2019-04-09|Has expired: Please use pecl/xdebug which uses latest version
+devel/pecl-xdebug-devel|devel/pecl-xdebug|2019-04-09|Development version no longer necessary
