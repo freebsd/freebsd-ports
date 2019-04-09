@@ -12,7 +12,8 @@ COMMENT=	Simple Qt-based amateur radio logger
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake qt:5
+USES=		compiler:c++11-lang gl qmake qt:5
+USE_GL=		glu
 USE_QT=		buildtools_build core gui linguisttools_build multimedia network \
 		printsupport sql sql-sqlite3_run widgets
 DESKTOP_ENTRIES=	"KLog" "Simple Amateur Radio Logging Program" \
