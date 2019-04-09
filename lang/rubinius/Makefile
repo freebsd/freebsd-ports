@@ -68,6 +68,11 @@ LLVM_CONFIG_PATH=	${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	checking for OpenSSL_add_all_digests() in -lcrypto... no
+BROKEN_FreeBSD_13=	checking for OpenSSL_add_all_digests() in -lcrypto... no
+.endif
+
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .elif ${ARCH} == "amd64"
