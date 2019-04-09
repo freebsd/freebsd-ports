@@ -4059,8 +4059,6 @@
     SUBDIR += pecl-vld
     SUBDIR += pecl-weakref2
     SUBDIR += pecl-xdebug
-    SUBDIR += pecl-xdebug-devel
-    SUBDIR += pecl-xdebug25
     SUBDIR += pecl-yac
     SUBDIR += pecl-yaconf
     SUBDIR += pecl-zookeeper
