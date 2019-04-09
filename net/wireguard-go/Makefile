@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wireguard-go
-PORTVERSION=	0.0.20181222
+PORTVERSION=	0.0.20190409
 CATEGORIES=	net
 MASTER_SITES=	https://git.zx2c4.com/wireguard-go/snapshot/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -9,7 +9,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	WireGuard implementation in Go
 
-LICENSE=	GPLv2
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	go:lang/go
@@ -17,9 +17,9 @@ BUILD_DEPENDS=	go:lang/go
 USES=		gmake tar:xz
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	golang:crypto:505ab145d0a9:crypto/vendor/golang.org/x/crypto \
-		golang:net:610586996380:net/vendor/golang.org/x/net \
-		golang:sys:2a47403f2ae5:sys/vendor/golang.org/x/sys
+GH_TUPLE=	golang:crypto:b7391e95e576:crypto/vendor/golang.org/x/crypto \
+		golang:net:1272bf9dcd53:net/vendor/golang.org/x/net \
+		golang:sys:f7bb7a8bee54:sys/vendor/golang.org/x/sys
 
 MAKE_ENV+=	GOFLAGS=-mod=vendor
 
