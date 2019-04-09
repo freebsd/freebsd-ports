@@ -12,6 +12,8 @@ DISTFILES=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python modules to access to SQL Relay
 
+BROKEN_amd64=	Invalid configuration 'amd64-portbld-freebsd11.2': machine 'amd64-portbld' not recognized
+
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
 LIB_DEPENDS=	libsqlrclient.so:${SQLRELAY_PORTDIR}
 
