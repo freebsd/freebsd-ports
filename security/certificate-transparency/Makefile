@@ -37,4 +37,11 @@ CPPFLAGS+=	"-I${LOCALBASE}/include"
 CPPFLAGS+=	"-I${LOCALBASE}/include/evhtp"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	could not find the OpenSSL libraries
+BROKEN_FreeBSD_13=	could not find the OpenSSL libraries
+.endif
+
+.include <bsd.port.post.mk>
