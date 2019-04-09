@@ -37,4 +37,13 @@ PLIST_FILES=	bin/yubico-piv-tool \
 		libdata/pkgconfig/ykpiv.pc \
 		man/man1/yubico-piv-tool.1.gz
 
+post-patch:
+.if exists(/usr/lib/libstdc++.so)
+	@${REINPLACE_CMD} -e '/#pragma GCC diagnostic/d' \
+		${WRKSRC}/lib/ykpiv.c \
+		${WRKSRC}/lib/util.c \
+		${WRKSRC}/lib/internal.c \
+		${WRKSRC}/tool/yubico-piv-tool.c
+.endif
+
 .include <bsd.port.mk>
