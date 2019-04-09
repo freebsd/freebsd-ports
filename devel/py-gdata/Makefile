@@ -16,6 +16,8 @@ LICENSE=	APACHE20
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	GMPY M2CRYPTO PYCRYPTO EXAMPLES
 
 # optional modules (see src/gdata/tlslite/utils/cryptomath.py)
