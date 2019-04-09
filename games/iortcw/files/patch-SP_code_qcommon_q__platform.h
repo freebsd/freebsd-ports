@@ -1,6 +1,6 @@
---- SP/code/qcommon/q_platform.h.orig	2015-12-26 14:21:49 UTC
+--- SP/code/qcommon/q_platform.h.orig	2019-03-16 18:09:48 UTC
 +++ SP/code/qcommon/q_platform.h
-@@ -35,11 +35,7 @@ Foundation, Inc., 51 Franklin St, Fifth 
+@@ -35,11 +35,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
  
  #else
  
@@ -12,7 +12,7 @@
  
  #if (defined(powerc) || defined(powerpc) || defined(ppc) || \
  	defined(__ppc) || defined(__ppc__)) && !defined(C_ONLY)
-@@ -229,8 +225,6 @@ Foundation, Inc., 51 Franklin St, Fifth 
+@@ -224,11 +220,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
  #ifdef __i386__
  #define ARCH_STRING "i386"
  #elif defined __amd64__
@@ -21,3 +21,8 @@
  #define ARCH_STRING "amd64"
  #elif defined __axp__
  #define ARCH_STRING "alpha"
++#elif defined __powerpc64__
++#define ARCH_STRING "powerpc64"
+ #endif
+ 
+ #if BYTE_ORDER == BIG_ENDIAN
