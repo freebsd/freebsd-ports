@@ -1,4 +1,4 @@
---- mmc_cmds.c.orig	2018-02-26 22:10:51 UTC
+--- mmc_cmds.c.orig	2018-12-26 19:54:04 UTC
 +++ mmc_cmds.c
 @@ -28,7 +28,12 @@
  #include <errno.h>
@@ -53,3 +53,12 @@
  	if (reg & 0x20) printf(" HS200 Single Data Rate eMMC @200MHz 1.2VI/O\n");
  	if (reg & 0x10) printf(" HS200 Single Data Rate eMMC @200MHz 1.8VI/O\n");
  	if (reg & 0x08) printf(" HS Dual Data Rate eMMC @52MHz 1.2VI/O\n");
+@@ -1883,7 +1904,7 @@ static int do_rpmb_op(int fd,
+ 	u_int16_t rpmb_type;
+ 	struct mmc_ioc_multi_cmd *mioc;
+ 	struct mmc_ioc_cmd *ioc;
+-	struct rpmb_frame frame_status = {0};
++	struct rpmb_frame frame_status = {{0}};
+ 
+ 	if (!frame_in || !frame_out || !out_cnt)
+ 		return -EINVAL;
