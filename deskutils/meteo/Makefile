@@ -18,7 +18,7 @@ LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
 		libgeocode-glib.so:net/geocode-glib \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
-USES=		desktop-file-utils gettext gnome meson pkgconfig \
+USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig \
 		python:3.5+,build shebangfix
 
 USE_GITLAB=	yes
