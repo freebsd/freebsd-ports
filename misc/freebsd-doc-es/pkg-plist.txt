@@ -1,6 +1,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/cups/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/fdp-es/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/article.txt
