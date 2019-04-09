@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel5>=5.0:databases/rubygem-activemodel5 \
 		rubygem-actionview5>=5.0:devel/rubygem-actionview5 \
-		rubygem-bindex>=0:devel/rubygem-bindex \
+		rubygem-bindex>=0.4.0:devel/rubygem-bindex \
 		rubygem-railties5>=5.0:www/rubygem-railties5
 
 USES=		gem
