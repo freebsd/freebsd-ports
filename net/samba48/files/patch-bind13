@@ -1,6 +1,6 @@
 --- source4/dns_server/wscript_build.orig	2018-01-14 20:41:58 UTC
 +++ source4/dns_server/wscript_build
-@@ -58,6 +58,26 @@
+@@ -58,6 +58,36 @@
                    deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
                    enabled=bld.AD_DC_BUILD_IS_ENABLED())
  
@@ -24,6 +24,16 @@
 +                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
 +                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
 +
++bld.SAMBA_LIBRARY('dlz_bind9_14',
++                  source='dlz_bind9.c',
++                  cflags='-DBIND_VERSION_9_14',
++                  private_library=True,
++                  link_name='modules/bind9/dlz_bind9_14.so',
++                  realname='dlz_bind9_14.so',
++                  install_path='${MODULESDIR}/bind9',
++                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
++                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
++
  bld.SAMBA_LIBRARY('dlz_bind9_for_torture',
                    source='dlz_bind9.c',
                    cflags='-DBIND_VERSION_9_8',
@@ -34,13 +44,13 @@
  # define DLZ_DLOPEN_VERSION 3
  # define DNS_CLIENTINFO_VERSION 1
 -#elif defined (BIND_VERSION_9_11)
-+#elif defined (BIND_VERSION_9_11) || defined (BIND_VERSION_9_12) || defined (BIND_VERSION_9_13)
++#elif defined (BIND_VERSION_9_11) || defined (BIND_VERSION_9_12) || defined (BIND_VERSION_9_13) || defined (BIND_VERSION_9_14)
  # define DLZ_DLOPEN_VERSION 3
  # define DNS_CLIENTINFO_VERSION 2
  #else
 --- source4/setup/named.conf.dlz.orig	2018-01-14 22:41:59 UTC
 +++ source4/setup/named.conf.dlz
-@@ -21,5 +21,11 @@ dlz "AD DNS Zone" {
+@@ -21,5 +21,14 @@ dlz "AD DNS Zone" {
  
      # For BIND 9.11.x
      ${BIND9_11} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_11.so";
@@ -50,20 +60,24 @@
 +
 +    # For BIND 9.13.x
 +    ${BIND9_13} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_13.so";
++
++    # For BIND 9.14.x
++    ${BIND9_14} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_14.so";
  };
  
 --- python/samba/provision/sambadns.py.orig	2018-01-17 09:08:39 UTC
 +++ python/samba/provision/sambadns.py
-@@ -937,6 +937,8 @@ def create_named_conf(paths, realm, dnsd
+@@ -937,6 +937,9 @@ def create_named_conf(paths, realm, dnsd
          bind9_9 = '#'
          bind9_10 = '#'
          bind9_11 = '#'
 +        bind9_12 = '#'
 +        bind9_13 = '#'
++        bind9_14 = '#'
          if bind_info.upper().find('BIND 9.8') != -1:
              bind9_8 = ''
          elif bind_info.upper().find('BIND 9.9') != -1:
-@@ -945,6 +947,10 @@ def create_named_conf(paths, realm, dnsd
+@@ -945,6 +947,12 @@ def create_named_conf(paths, realm, dnsd
              bind9_10 = ''
          elif bind_info.upper().find('BIND 9.11') != -1:
              bind9_11 = ''
@@ -71,17 +85,20 @@
 +            bind9_12 = ''
 +        elif bind_info.upper().find('BIND 9.13') != -1:
 +            bind9_13 = ''
++        elif bind_info.upper().find('BIND 9.14') != -1:
++            bind9_14 = ''
          elif bind_info.upper().find('BIND 9.7') != -1:
              raise ProvisioningError("DLZ option incompatible with BIND 9.7.")
          else:
-@@ -955,7 +961,9 @@ def create_named_conf(paths, realm, dnsd
+@@ -955,7 +961,10 @@ def create_named_conf(paths, realm, dnsd
                      "BIND9_8" : bind9_8,
                      "BIND9_9" : bind9_9,
                      "BIND9_10" : bind9_10,
 -                    "BIND9_11" : bind9_11
 +                    "BIND9_11" : bind9_11,
 +                    "BIND9_12" : bind9_12,
-+                    "BIND9_13" : bind9_13
++                    "BIND9_13" : bind9_13,
++                    "BIND9_14" : bind9_14
                      })
 
 
