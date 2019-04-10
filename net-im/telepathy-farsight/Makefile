@@ -11,15 +11,16 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Farsight Connection Manager for Telepathy Framework
 
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libtelepathy-glib.so:net-im/telepathy-glib \
 		libgstfarsight-0.10.so:net-im/farsight2
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig python:2.7
+USES=		gmake gnome libtool localbase:ldflags pathfix pkgconfig python:2.7
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 libxslt:build
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
