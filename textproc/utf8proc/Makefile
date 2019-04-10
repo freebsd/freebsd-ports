@@ -25,6 +25,8 @@ PLIST_FILES=	include/utf8proc.h \
 		lib/libutf8proc.so.${PORTVERSION}
 PORTDOCS=	NEWS.md README.md
 
+CONFLICTS=	libutf8proc-[0-9]*
+
 OPTIONS_DEFINE=	DOCS
 
 post-install:
