@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitvector
-PORTVERSION=	3.4.8
+PORTVERSION=	3.4.9
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP \
 		https://engineering.purdue.edu/kak/dist/
@@ -14,6 +14,7 @@ COMMENT=	Pure-Python memory-efficient packed representation for bit arrays
 LICENSE=	PSFL
 
 USES=		python
+
 USE_PYTHON=	autoplist distutils
 PYDISTUTILS_PKGNAME=	BitVector
 
