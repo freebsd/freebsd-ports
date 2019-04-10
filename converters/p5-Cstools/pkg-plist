@@ -22,9 +22,9 @@ bin/dbfcstocs
 %%SITE_PERL%%/Cz/Cstocs/enc/vga.enc
 %%SITE_PERL%%/Cz/Sort.pm
 %%SITE_PERL%%/Cz/Time.pm
-%%PERL5_MAN3%%/Cz::Cstocs.3.gz
-%%PERL5_MAN3%%/Cz::Sort.3.gz
-%%PERL5_MAN3%%/Cz::Time.3.gz
 %%PERL5_MAN1%%/cssort.1.gz
 %%PERL5_MAN1%%/cstocs.1.gz
 %%PERL5_MAN1%%/dbfcstocs.1.gz
+%%PERL5_MAN3%%/Cz::Cstocs.3.gz
+%%PERL5_MAN3%%/Cz::Sort.3.gz
+%%PERL5_MAN3%%/Cz::Time.3.gz
