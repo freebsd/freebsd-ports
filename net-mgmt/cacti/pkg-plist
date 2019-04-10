@@ -1635,10 +1635,13 @@
 %%CACTIDIR%%/include/vendor/index.php
 %%CACTIDIR%%/include/vendor/phpgettext/gettext.php
 %%CACTIDIR%%/include/vendor/phpgettext/streams.php
+%%CACTIDIR%%/include/vendor/phpmailer/COMMITMENT
 %%CACTIDIR%%/include/vendor/phpmailer/LICENSE
 %%CACTIDIR%%/include/vendor/phpmailer/README.md
 %%CACTIDIR%%/include/vendor/phpmailer/SECURITY.md
 %%CACTIDIR%%/include/vendor/phpmailer/VERSION
+%%CACTIDIR%%/include/vendor/phpmailer/composer.json
+%%CACTIDIR%%/include/vendor/phpmailer/get_oauth_token.php
 %%CACTIDIR%%/include/vendor/phpmailer/index.php
 %%CACTIDIR%%/include/vendor/phpmailer/language/index.php
 %%CACTIDIR%%/include/vendor/phpmailer/language/phpmailer.lang-am.php
@@ -1738,6 +1741,7 @@
 %%CACTIDIR%%/install/install.js
 %%CACTIDIR%%/install/install.php
 %%CACTIDIR%%/install/step_json.php
+%%CACTIDIR%%/install/templates/Cacti_Stats.xml.gz
 %%CACTIDIR%%/install/templates/Generic_SNMP_Device.xml.gz
 %%CACTIDIR%%/install/templates/Local_Linux_Machine.xml.gz
 %%CACTIDIR%%/install/templates/NetSNMP_Device.xml.gz
@@ -1782,6 +1786,8 @@
 %%CACTIDIR%%/install/upgrades/1_1_37.php
 %%CACTIDIR%%/install/upgrades/1_2_0.php
 %%CACTIDIR%%/install/upgrades/1_2_1.php
+%%CACTIDIR%%/install/upgrades/1_2_2.php
+%%CACTIDIR%%/install/upgrades/1_2_3.php
 %%CACTIDIR%%/install/upgrades/index.php
 %%CACTIDIR%%/lib/aggregate.php
 %%CACTIDIR%%/lib/api_aggregate.php
@@ -1803,6 +1809,7 @@
 %%CACTIDIR%%/lib/export.php
 %%CACTIDIR%%/lib/functions.php
 %%CACTIDIR%%/lib/graph_variables.php
+%%CACTIDIR%%/lib/graphs.php
 %%CACTIDIR%%/lib/html.php
 %%CACTIDIR%%/lib/html_filter.php
 %%CACTIDIR%%/lib/html_form.php
@@ -1882,6 +1889,7 @@
 %%CACTIDIR%%/locales/po/vi-VN.po
 %%CACTIDIR%%/locales/po/zh-CN.po
 %%CACTIDIR%%/locales/po/zh-TW.po
+%%CACTIDIR%%/locales/update-pot.sh
 %%CACTIDIR%%/logout.php
 %%CACTIDIR%%/managers.php
 %%CACTIDIR%%/mibs/CACTI-BOOST-MIB
@@ -1936,6 +1944,7 @@
 %%CACTIDIR%%/scripts/ss_fping.php
 %%CACTIDIR%%/scripts/ss_host_cpu.php
 %%CACTIDIR%%/scripts/ss_host_disk.php
+%%CACTIDIR%%/scripts/ss_hstats.php
 %%CACTIDIR%%/scripts/ss_net_snmp_disk_bytes.php
 %%CACTIDIR%%/scripts/ss_net_snmp_disk_io.php
 %%CACTIDIR%%/scripts/ss_sql.php
