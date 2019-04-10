@@ -2,43 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	18.3.4.11
+DISTVERSIONPREFIX=	OTP-
+DISTVERSION=	18.3.4.11
 CATEGORIES=	lang parallel java
-MASTER_SITES=	http://www.erlang.org/download/:erlangorg			\
-		http://erlang.stacken.kth.se/download/:erlangorg		\
-		http://www.csd.uu.se/ftp/mirror/erlang/download/:erlangorg	\
-		http://olgeni.olgeni.com/~olgeni/distfiles/:local		\
-		LOCAL/olgeni:local
 PKGNAMESUFFIX=	-runtime18
-DISTNAME=	otp_src_${ERLANG_REL}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg		\
-		preloaded-${PORTVERSION}${EXTRACT_SUFX}:local
 DIST_SUBDIR=	erlang
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
-		LOCAL/olgeni
-PATCHFILES=	patch-otp-18.3.1 patch-otp-18.3.2 patch-otp-18.3.3 \
-		patch-otp-18.3.4 patch-otp-18.3.4.1 patch-otp-18.3.4.2 \
-		patch-otp-18.3.4.3 patch-otp-18.3.4.4 patch-otp-18.3.4.5 \
-		patch-otp-18.3.4.6 patch-otp-18.3.4.7 patch-otp-18.3.4.8 \
-		patch-otp-18.3.4.9 patch-otp-18.3.4.10 patch-otp-18.3.4.11
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
 
 LICENSE=	APACHE20
 
-WRKSRC=		${WRKDIR}/otp_src_${ERLANG_REL}
+USES=		autoreconf:build gmake ncurses perl5
+USE_GITHUB=	yes
+GH_PROJECT=	otp
+USE_PERL5=	build
 
-ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
-ERLANG_REL=	18.3
+GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_SUB=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	ERLANG_LIB=${ERLANG_LIB}
 
-MAKE_JOBS_UNSAFE=yes
+ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
 
 OPTIONS_DEFINE=	DIRTY DTRACE GS HIPE JAVA KQUEUE NATIVE ODBC OPENSSL SCTP SMP THREADS WX
 OPTIONS_DEFAULT=DTRACE HIPE KQUEUE OPENSSL SCTP SMP THREADS
@@ -67,11 +53,6 @@ OPTIONS_EXCLUDE_i386=		DTRACE
 
 OPENSSL_VARS=	BROKEN_SSL=openssl111
 
-GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake ncurses perl5
-USE_PERL5=	build
-
 # If you run Erlang and get a message resembling "WARNING: number of
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
@@ -95,9 +76,8 @@ SCTP_CONFIGURE_ENABLE=	sctp
 SMP_CONFIGURE_ENABLE=	smp-support
 THREADS_CONFIGURE_ENABLE=	threads
 WX_CONFIGURE_WITH=	wx-config=${WX_CONFIG}
+WX_USES=		gl
 WX_VARS=		USE_WX=2.8+ WX_COMPS="wx contrib" USE_GL="gl glu"
-
-.include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
 
@@ -120,9 +100,12 @@ MAKE_ARGS+=	ARCH=arm
 .endif
 
 pre-configure:
-	cd ${WRKSRC} && ${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/preloaded-${PORTVERSION}${EXTRACT_SUFX}
+	@cd ${WRKSRC} && ./otp_build autoconf
 
-pre-configure-MX-off:
+pre-configure-WX-off:
+	echo "disabled by port options" > ${WRKSRC}/lib/debugger/SKIP
+	echo "disabled by port options" > ${WRKSRC}/lib/et/SKIP
+	echo "disabled by port options" > ${WRKSRC}/lib/observer/SKIP
 	echo "disabled by port options" > ${WRKSRC}/lib/wx/SKIP
 
 post-configure-ODBC-on:
