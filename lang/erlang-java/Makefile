@@ -1,56 +1,40 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.3.6.12
+DISTVERSIONPREFIX=	OTP-
+DISTVERSION=	19.3.6.13
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
-MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
-		http://erlang.stacken.kth.se/download/:erlangorg	\
-		http://www.csd.uu.se/ftp/mirror/erlang/download/:erlangorg
 PKGNAMESUFFIX=	-java
-DISTNAME=	otp_src_${ERL_RELEASE}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg
 DIST_SUBDIR=	erlang
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	http://olgeni.olgeni.com/~olgeni/distfiles/ \
-		LOCAL/olgeni
-PATCHFILES=	patch-otp-19.3.1 patch-otp-19.3.2 patch-otp-19.3.3 \
-		patch-otp-19.3.4 patch-otp-19.3.5 patch-otp-19.3.6 \
-		patch-otp-19.3.6.1 patch-otp-19.3.6.2 patch-otp-19.3.6.3 \
-		patch-otp-19.3.6.4 patch-otp-19.3.6.5 patch-otp-19.3.6.6 \
-		patch-otp-19.3.6.7 patch-otp-19.3.6.8 patch-otp-19.3.6.9 \
-		patch-otp-19.3.6.10 patch-otp-19.3.6.11 patch-otp-19.3.6.12
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang interface for Java
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${LOCALBASE}/bin/erl:lang/erlang
+RUN_DEPENDS=	erl:lang/erlang
 
-WRKSRC=		${WRKDIR}/otp_src_${ERL_RELEASE}
+USES=		autoreconf:build gmake perl5
+USE_GITHUB=	yes
+GH_PROJECT=	otp
+USE_JAVA=	yes
+USE_PERL5=	build
+
+GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=yes
 
 PLIST_SUB=	APP_VERSION=${APP_VERSION}
 
-MAKE_JOBS_UNSAFE=yes
-
-ERL_RELEASE=	19.3
-
-USES=		gmake ncurses perl5
-USE_PERL5=	build
-GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 APP_VERSION=	1.7.1
 APP_DIR=	${PREFIX}/lib/erlang/lib/jinterface-${APP_VERSION}
+ERLANG_REL=	19.3
 
-.include <bsd.port.options.mk>
-
-CONFIGURE_ARGS+=--enable-threads --without-odbc --with-javac
+CONFIGURE_ARGS+=--enable-threads --without-odbc --with-javac --without-wx
 CONFIGURE_ENV+=	ac_cv_prog_JAVAC="${JAVAC}"
 
-USE_JAVA=	yes
+pre-configure:
+	@cd ${WRKSRC} && ./otp_build autoconf
 
 do-build:
 	@${MKDIR} ${WRKSRC}/lib/jinterface/ebin
