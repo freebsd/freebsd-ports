@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
 USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
+USE_CSTD=	c99
 USE_GNOME=	cairo glib20 gtk30 intltool libxml2
 USE_XFCE=	panel
 USE_XORG=	ice sm x11 xfixes xext
