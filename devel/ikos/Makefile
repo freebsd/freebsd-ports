@@ -25,7 +25,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	NASA-SW-VnV
 USE_LDCONFIG=	yes
 
-LLVM_VERSION=	80 # ${LLVM_DEFAULT} isn't desirable here since ikos doesn't support llvm < 70, but LLVM_DEFAULT implies that many llvm versions are supported
+LLVM_VERSION=	80 # ${LLVM_DEFAULT} isn't desirable here since ikos only supports llvm>=70, but LLVM_DEFAULT implies that many/any llvm versions are supported
 
 CXXFLAGS+=	-DNDEBUG # https://github.com/NASA-SW-VnV/ikos/issues/36, it also breaks with assert without NDEBUG
 
