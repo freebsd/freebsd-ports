@@ -3,7 +3,7 @@
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
 MODEL=		beaglebone
-BOARD_CONFIG=	am335x_boneblack_defconfig
+BOARD_CONFIG=	am335x_evm_defconfig
 FAMILY=		omap
 
 CONFIG_FRAGMENT=	${.CURDIR}/files/bbb_fragment
