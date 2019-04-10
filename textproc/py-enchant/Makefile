@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	WX
 OPTIONS_DEFAULT=WX
 WX_DESC=	Provide a wxSpellCheckerDialog
 OPTIONS_SUB=	yes
-.if ${FLAVOR:U:Mpy3*}
+.if ${FLAVOR:Upy36:Mpy3*}
 OPTIONS_EXCLUDE=	WX
 .endif
 

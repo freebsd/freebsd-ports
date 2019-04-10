@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190410:
+  AFFECTS: users of python
+  AUTHOR: antoine@FreeBSD.org
+
+  Default version of python was switched to 3.6.
+
+  For ports users wanting to keep version 2.7 as default,
+  add DEFAULT_VERSIONS+= python=2.7 to make.conf
+
 20190328:
   AFFECTS: www/firefox-i18n, www/firefox-esr-i18n, mail/thunderbird-i18n, www/seamonkey-i18n
   AUTHOR: gecko@FreeBSD.org
