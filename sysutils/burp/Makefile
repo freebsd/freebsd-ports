@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	burp
-PORTVERSION?=	2.1.32
+PORTVERSION?=	2.2.18
 CATEGORIES=	sysutils
 
 MAINTAINER=	phascolarctos@protonmail.ch
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
 INSTALL_TARGET=	install-all
 
 CONFLICTS_INSTALL?=	burp-devel
+PORTSCOUT?=		limit:^2\.2\.
 
 OPTIONS_DEFINE=		IPV6
 IPV6_CONFIGURE_ENABLE=	ipv6
