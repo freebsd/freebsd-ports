@@ -12,3 +12,4 @@ share/locale/fr/LC_MESSAGES/com.github.phase1geo.minder.mo
 share/locale/pl/LC_MESSAGES/com.github.phase1geo.minder.mo
 share/locale/pt_BR/LC_MESSAGES/com.github.phase1geo.minder.mo
 share/metainfo/com.github.phase1geo.minder.appdata.xml
+share/mime/packages/com.github.phase1geo.minder.xml
