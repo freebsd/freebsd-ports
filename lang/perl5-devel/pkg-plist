@@ -960,8 +960,8 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5280delta.1.gz
 %%MAN1%%/perl5281delta.1.gz
 %%MAN1%%/perl5290delta.1.gz
-%%MAN1%%/perl5291delta.1.gz
 %%MAN1%%/perl52910delta.1.gz
+%%MAN1%%/perl5291delta.1.gz
 %%MAN1%%/perl5292delta.1.gz
 %%MAN1%%/perl5293delta.1.gz
 %%MAN1%%/perl5294delta.1.gz
@@ -1758,8 +1758,8 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5280delta.pod
 %%PRIV_LIB%%/pod/perl5281delta.pod
 %%PRIV_LIB%%/pod/perl5290delta.pod
-%%PRIV_LIB%%/pod/perl5291delta.pod
 %%PRIV_LIB%%/pod/perl52910delta.pod
+%%PRIV_LIB%%/pod/perl5291delta.pod
 %%PRIV_LIB%%/pod/perl5292delta.pod
 %%PRIV_LIB%%/pod/perl5293delta.pod
 %%PRIV_LIB%%/pod/perl5294delta.pod
@@ -2111,6 +2111,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/In/10_0.pl
 %%PRIV_LIB%%/unicore/lib/In/11_0.pl
 %%PRIV_LIB%%/unicore/lib/In/12_0.pl
+%%PRIV_LIB%%/unicore/lib/In/12_1.pl
 %%PRIV_LIB%%/unicore/lib/In/2_0.pl
 %%PRIV_LIB%%/unicore/lib/In/2_1.pl
 %%PRIV_LIB%%/unicore/lib/In/3_0.pl
@@ -2200,6 +2201,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Lb/IN.pl
 %%PRIV_LIB%%/unicore/lib/Lb/IS.pl
 %%PRIV_LIB%%/unicore/lib/Lb/NS.pl
+%%PRIV_LIB%%/unicore/lib/Lb/NU.pl
 %%PRIV_LIB%%/unicore/lib/Lb/OP.pl
 %%PRIV_LIB%%/unicore/lib/Lb/PO.pl
 %%PRIV_LIB%%/unicore/lib/Lb/PR.pl
