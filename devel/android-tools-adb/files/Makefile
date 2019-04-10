@@ -85,8 +85,6 @@ SRCS+= socket_network_client_unix.cpp
 SRCS+= ../libcutils/sockets.cpp
 SRCS+= load_file.cpp
 SRCS+= threads.cpp
-# XXX Obsolete after 10.2 or r279980/r280329
-CPPFLAGS.sockets.cpp+= -o ${.TARGET}
 
 # required by base/file.cpp
 .PATH: ${.CURDIR}/../liblog
