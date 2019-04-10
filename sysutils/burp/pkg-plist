@@ -15,11 +15,12 @@ sbin/bsigs
 sbin/bsparse
 sbin/burp
 sbin/burp_ca
+%%DATADIR%%/scripts/backup_tool_script
 %%DATADIR%%/scripts/notify_script
 %%DATADIR%%/scripts/ssl_extra_checks_script
 %%DATADIR%%/scripts/summary_script
 %%DATADIR%%/scripts/timer_script
 @dir %%ETCDIR%%/CA-client
 @dir %%ETCDIR%%/autoupgrade/server/win32
-@dir %%ETCDIR%%/autoupgrade/server/win64/2.1.32
+@dir %%ETCDIR%%/autoupgrade/server/win64/2.2.18
 @dir /var/spool/burp
