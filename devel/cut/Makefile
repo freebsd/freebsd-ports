@@ -3,6 +3,7 @@
 
 PORTNAME=	cut
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/kc5tja/cut/get/
 DISTNAME=	v${PORTVERSION}

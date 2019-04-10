@@ -3,6 +3,7 @@
 
 PORTNAME=	deltarpm
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.suse.com/pub/projects/deltarpm/
 

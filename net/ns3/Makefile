@@ -2,7 +2,7 @@
 
 PORTNAME=	ns3
 PORTVERSION=	3.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://www.nsnam.org/release/
 DISTNAME=	ns-allinone-${PORTVERSION}

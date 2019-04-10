@@ -3,7 +3,7 @@
 
 PORTNAME=	tcpwatch
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net python
 MASTER_SITES=	http://hathawaymix.org/Software/TCPWatch/
 
