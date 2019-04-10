@@ -3,6 +3,7 @@
 
 PORTNAME=	weather
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	astro python
 MASTER_SITES=	http://fungi.yuggoth.org/weather/src/ \
 		LOCAL/sunpoet

@@ -3,7 +3,7 @@
 
 PORTNAME=	mftrace
 PORTVERSION=	1.2.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://lilypond.org/download/sources/mftrace/ \
 		LOCAL/nivit/${PORTNAME}/

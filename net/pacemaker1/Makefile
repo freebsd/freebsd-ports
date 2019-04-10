@@ -3,6 +3,7 @@
 # $FreeBSD$
 
 PORTVERSION=		1.1.19
+PORTREVISION=	1
 PKGNAMESUFFIX=		1
 
 .include "${.CURDIR}/Makefile.common"

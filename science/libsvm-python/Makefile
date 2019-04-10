@@ -1,6 +1,7 @@
 # Created by: rafan@infor.org
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-python
 
 MAINTAINER=	ports@FreeBSD.org

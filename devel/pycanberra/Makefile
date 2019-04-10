@@ -3,7 +3,7 @@
 
 PORTNAME=	pycanberra
 DISTVERSION=	1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	hello@blubee.me

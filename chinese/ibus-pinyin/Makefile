@@ -3,7 +3,7 @@
 
 PORTNAME=	ibus-pinyin
 PORTVERSION=	1.5.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	chinese
 
 MAINTAINER=	henry.hu.sh@gmail.com

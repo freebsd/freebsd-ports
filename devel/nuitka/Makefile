@@ -3,6 +3,7 @@
 
 PORTNAME=	nuitka
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	https://nuitka.net/releases/
 DISTNAME=	Nuitka-${PORTVERSION}

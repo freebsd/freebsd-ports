@@ -3,6 +3,7 @@
 
 PORTNAME=	mog
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org

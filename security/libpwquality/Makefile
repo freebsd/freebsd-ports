@@ -2,6 +2,7 @@
 
 PORTNAME=	libpwquality
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 

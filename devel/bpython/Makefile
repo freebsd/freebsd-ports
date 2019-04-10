@@ -3,6 +3,7 @@
 
 PORTNAME=	bpython
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		https://bpython-interpreter.org/releases/

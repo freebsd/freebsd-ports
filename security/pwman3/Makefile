@@ -3,7 +3,7 @@
 
 PORTNAME=	pwman3
 PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
 MASTER_SITES=	http://pwman.bleurgh.com/~ivan/pwman3/source/ \
 		http://source.antisupport.com/pwman3/

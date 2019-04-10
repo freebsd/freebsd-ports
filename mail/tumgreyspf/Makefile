@@ -3,7 +3,7 @@
 
 PORTNAME=	tumgreyspf
 PORTVERSION=	1.38
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.tummy.com/pub/tummy/tumgreyspf/ \
 		http://ftp.tummy.com/pub/tummy/tumgreyspf/old-releases/ \
