@@ -73,7 +73,7 @@ pre-configure:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's|LIBS.*=.*|& ${LDFLAGS}|; s|^FCFLAGS.*=.*|& -I${LOCALBASE}/include|' ${WRKSRC}/arch/FreeBSD-*
+	@${REINPLACE_CMD} 's|LIBS.*=.*|& ${LDFLAGS}|; s|^FCFLAGS.*=.*|& -I${LOCALBASE}/include|; s| -march=native||' ${WRKSRC}/arch/FreeBSD-*
 
 pre-build:
 	@${MKDIR} ${BUILD_WRKSRC}
