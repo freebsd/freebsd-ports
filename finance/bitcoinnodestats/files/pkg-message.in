@@ -1,0 +1,10 @@
+================================================================================
+
+Quick start instructions:
+
+# cd %%DATADIR%%
+# python%%PYTHON_VER%% create_local_settings.py 
+# python%%PYTHON_VER%% manage.py migrate
+# python%%PYTHON_VER%% manage.py runserver
+
+================================================================================
