@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	urbackup-server
-DISTVERSION=	2.3.7
+DISTVERSION=	2.3.8
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 

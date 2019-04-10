@@ -9,8 +9,8 @@ UrBackup also continuously watches folders you want backed up in
 order to quickly find differences to previous backups. Because of
 that, incremental file backups are really fast.
 
-Your files can be restored through the web interface, via the client or the 
-Windows Explorer while the backups of drive volumes can be restored with a 
+Your files can be restored through the web interface, via the client or the
+Windows Explorer while the backups of drive volumes can be restored with a
 bootable CD or USB-Stick (bare metal restore).
 
 A web interface makes setting up your own backup server really easy.
