@@ -21,6 +21,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 MAKE_ENV+=	COMPONENT_TYPE="lib-shared"
 PLIST_SUB+=	VERSION=${PORTVERSION:S/.3$//}
 
+CONFLICTS=	utf8proc-[0-9]*
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libutf8proc.so*
 
