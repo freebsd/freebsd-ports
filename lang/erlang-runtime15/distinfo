@@ -1,3 +1,3 @@
-TIMESTAMP = 1523228884
-SHA256 (erlang/otp_src_R15B03-1.tar.gz) = 4bccac86dd76aec050252e44276a0283a0df9218e6470cf042a9b9f9dfc9476c
-SIZE (erlang/otp_src_R15B03-1.tar.gz) = 76123810
+TIMESTAMP = 1552839129
+SHA256 (erlang/erlang-otp-OTP_R15B03-1_GH0.tar.gz) = bc0defdb2b234e56a39a28ca8341ea102d5aa09a41b64258bee199ef912b47eb
+SIZE (erlang/erlang-otp-OTP_R15B03-1_GH0.tar.gz) = 33936773
