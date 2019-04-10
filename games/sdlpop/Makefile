@@ -3,7 +3,7 @@
 
 PORTNAME=	sdlpop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.18.1
+DISTVERSION=	1.19
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@anongoth.pl
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/../doc/gpl-3.0.txt
 NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe sparc64
 NOT_FOR_ARCHS_REASON=	SDLPoP-1.18.1/src/types.h:54:2: This program is not (yet) prepared for big endian CPUs, please contact the author.
 
-USES=		cmake localbase:ldflags
+USES=		cmake localbase:ldflags sdl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NagyD
