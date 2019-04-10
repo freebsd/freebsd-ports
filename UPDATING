@@ -151,6 +151,14 @@ you update your ports collection, before attempting any port upgrades.
   any configuration files within /etc/urbackup, these should be relocated to 
   ${PREFIX}/etc/urbackup.
 
+20190130:
+  AFFECTS: users of sysutils/password-store
+  AUTHOR: rene@FreeBSD.org
+
+  password-store now stores plugins in ${PREFIX}/libexec instead of ${PREFIX}/lib.
+  Ensure to move your own extensions there too and update your scripts to avoid
+  breakage.
+
 20190124:
   AFFECTS: users of sysutils/rubygem-fluentd, sysutils/fluent-bit
   AUTHOR: girgen@FreeBSD.org
