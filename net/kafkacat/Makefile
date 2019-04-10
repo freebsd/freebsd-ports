@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kafkacat
-PORTVERSION=	1.3.1
+DISTVERSION=	1.4.0
 CATEGORIES=	net
 
 MAINTAINER=	sergey@akhmatov.ru
