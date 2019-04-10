@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	itamae
-PORTVERSION=	1.9.13
+PORTVERSION=	1.10.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
