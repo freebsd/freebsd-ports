@@ -38,7 +38,7 @@ PLIST=          ${.CURDIR}/pkg-plist
 USES+=		python
 USE_PYTHON=	flavors
 USE_GNOME+=	pygobject3
-.if ${FLAVOR:Upy27:Mpy2*}
+.if ${FLAVOR:Upy36:Mpy2*}
 CONFIGURE_ARGS+=	--disable-python3
 BUILD_WRKSRC=	${WRKSRC}/loaders/python
 INSTALL_WRKSRC=	${WRKSRC}/loaders/python
