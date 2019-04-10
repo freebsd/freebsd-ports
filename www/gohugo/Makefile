@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.54.0
+DISTVERSION=	0.55.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -22,12 +22,12 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		PuerkitoBio:purell:v1.1.0:purell/src/github.com/PuerkitoBio/purell \
 		PuerkitoBio:urlesc:de5bf2a:urlesc/src/github.com/PuerkitoBio/urlesc \
 		alecthomas:assert:405dbfe:assert/src/github.com/alecthomas/assert \
-		alecthomas:chroma:v0.6.2:chroma/src/github.com/alecthomas/chroma \
+		alecthomas:chroma:v0.6.3:chroma/src/github.com/alecthomas/chroma \
 		alecthomas:colour:60882d9:colour/src/github.com/alecthomas/colour \
 		alecthomas:kong:v0.1.15:kong/src/github.com/alecthomas/kong \
 		alecthomas:repr:d37bc2a:repr/src/github.com/alecthomas/repr \
 		armon:consul-api:eb2c6b5:consul_api/src/github.com/armon/consul-api \
-		bep:debounce:v1.1.0:debounce/src/github.com/bep/debounce \
+		bep:debounce:v1.2.0:debounce/src/github.com/bep/debounce \
 		bep:gitmap:v1.0.0:gitmap/src/github.com/bep/gitmap \
 		bep:go-tocss:v0.6.0:go_tocss/src/github.com/bep/go-tocss \
 		chaseadamsio:goorgeous:v1.1.0:goorgeous/src/github.com/chaseadamsio/goorgeous \
@@ -38,7 +38,7 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		cpuguy83:go-md2man:v1.0.8:go_md2man/src/github.com/cpuguy83/go-md2man \
 		danwakefield:fnmatch:cbb64ac:fnmatch/src/github.com/danwakefield/fnmatch \
 		davecgh:go-spew:v1.1.1:go_spew/src/github.com/davecgh/go-spew \
-		disintegration:imaging:v1.5.0:imaging/src/github.com/disintegration/imaging \
+		disintegration:imaging:v1.6.0:imaging/src/github.com/disintegration/imaging \
 		dlclark:regexp2:v1.1.6:regexp2/src/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:go_humanize/src/github.com/dustin/go-humanize \
 		eknkc:amber:cdade1c:amber/src/github.com/eknkc/amber \
@@ -61,7 +61,7 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		markbates:inflect:a12c3ae:inflect/src/github.com/markbates/inflect \
 		matryer:try:9ac251b:try/src/github.com/matryer/try \
 		mattn:go-colorable:v0.0.9:go_colorable/src/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.4:go_isatty/src/github.com/mattn/go-isatty \
+		mattn:go-isatty:v0.0.7:go_isatty/src/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.3:go_runewidth/src/github.com/mattn/go-runewidth \
 		miekg:mmark:v1.3.6:mmark/src/github.com/miekg/mmark \
 		mitchellh:hashstructure:v1.0.0:hashstructure/src/github.com/mitchellh/hashstructure \
@@ -77,15 +77,15 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		sanity-io:litter:v1.1.0:litter/src/github.com/sanity-io/litter \
 		sergi:go-diff:v1.0.0:sergi_go_diff/src/github.com/sergi/go-diff \
 		shurcooL:sanitized_anchor_name:86672fc:sanitized_anchor_name/src/github.com/shurcooL/sanitized_anchor_name \
-		spf13:afero:v1.2.1:afero/src/github.com/spf13/afero \
+		spf13:afero:v1.2.2:afero/src/github.com/spf13/afero \
 		spf13:cast:v1.3.0:cast/src/github.com/spf13/cast \
 		spf13:cobra:v0.0.3:cobra/src/github.com/spf13/cobra \
 		spf13:fsync:12a01e6:fsync/src/github.com/spf13/fsync \
-		spf13:jwalterweatherman:94f6ae3:jwalterweatherman/src/github.com/spf13/jwalterweatherman \
-		spf13:nitro:24d7ef3:nitro/src/github.com/spf13/nitro \
+		spf13:jwalterweatherman:v1.1.0:jwalterweatherman/src/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.3:pflag/src/github.com/spf13/pflag \
-		spf13:viper:v1.3.1:viper/src/github.com/spf13/viper \
-		stretchr:testify:04af852:testify/src/github.com/stretchr/testify \
+		spf13:viper:v1.3.2:viper/src/github.com/spf13/viper \
+		stretchr:objx:v0.1.0:objx/src/github.com/stretchr/objx \
+		stretchr:testify:v1.3.0:testify/src/github.com/stretchr/testify \
 		tdewolff:minify:v2.3.7:minify/src/github.com/tdewolff/minify \
 		tdewolff:parse:v2.3.5:parse/src/github.com/tdewolff/parse \
 		tdewolff:test:v1.0.0:tdewolff_test/src/github.com/tdewolff/test \
@@ -94,15 +94,15 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		xordataexchange:crypt:b2862e3:xordataexchange_crypt/src/github.com/xordataexchange/crypt \
 		yosssi:ace:v0.0.5:ace/src/github.com/yosssi/ace \
 		golang:crypto:505ab14:crypto/src/golang.org/x/crypto \
-		golang:image:c73c2af:image/src/golang.org/x/image \
+		golang:image:3fc05d4:image/src/golang.org/x/image \
 		golang:net:161cd47:net/src/golang.org/x/net \
 		golang:sync:1d60e46:golang_sync/src/golang.org/x/sync \
-		golang:sys:b4a75ba:sys/src/golang.org/x/sys \
+		golang:sys:f49334f:sys/src/golang.org/x/sys \
 		golang:text:v0.3.0:golang_text/src/golang.org/x/text \
 		go-check:check:788fd78:check/src/gopkg.in/check.v1 \
 		go-yaml:yaml:v2.2.2:yaml/src/gopkg.in/yaml.v2
 
-COMMIT_ID=	b1a82c61aba067952fdae2f73b826fe7d0f3fc2f
+COMMIT_ID=	4333cc77feefcba447425857ff3f371acb286c4a
 
 OPTIONS_DEFINE=		MANPAGES EXTENDED
 
