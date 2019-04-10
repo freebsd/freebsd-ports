@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncclient
-DISTVERSION=	0.6.3
-PORTREVISION=	1
+DISTVERSION=	0.6.4
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +20,7 @@ py27_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}selectors2>=2.0.1:devel/py-selectors2@
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
