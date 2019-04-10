@@ -7,6 +7,7 @@ bin/ikos-report
 bin/ikos-scan
 bin/ikos-scan-c++
 bin/ikos-scan-cc
+bin/ikos-scan-extract
 bin/ikos-view
 include/ikos/analyzer/intrinsic.h
 include/ikos/ar/format/dot.hpp
