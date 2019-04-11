@@ -13,6 +13,7 @@ COMMENT=	Standard Widget Toolkit for Java
 LICENSE=	EPL
 
 ONLY_FOR_ARCHS=	amd64 i386
+BROKEN_i386=	missing distinfo
 
 USES=		gl gnome pkgconfig zip:infozip
 
