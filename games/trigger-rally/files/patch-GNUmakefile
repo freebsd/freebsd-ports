@@ -1,6 +1,6 @@
---- GNUmakefile.orig	2016-11-05 17:27:10 UTC
+--- GNUmakefile.orig	2019-02-26 22:35:48 UTC
 +++ GNUmakefile
-@@ -21,7 +21,7 @@ SRCFILES        := $(shell find $(PROJDI
+@@ -21,13 +21,13 @@ SRCFILES        := $(sort $(shell find $(PROJDIRS) -ty
  OBJFILES        := $(patsubst %.cpp, %.o, $(SRCFILES))
  DEPFILES        := $(patsubst %.cpp, %.d, $(SRCFILES))
  WARNINGS        ?= -Wall -Wextra -pedantic
@@ -9,18 +9,11 @@
  DMACROS         := -DNDEBUG -DUNIX -DPACKAGE_VERSION=\"$(DISTVER)\"
  INCDIRS         := -I'./include'
  CXXFLAGS        += -std=c++11 $(WARNINGS) $(OPTIMS)
-@@ -125,7 +125,7 @@ $(TR_EXEFILE): $(OBJFILES)
- 		printf "\t%s\n" $$file; \
- 		done;
- 	@printf "\t-> %s\n" $@
--	@$(CXX) -o $@ $(OBJFILES) $(LDFLAGS)
-+	@$(CXX) `sdl2-config --libs`  -o $@ $(OBJFILES) $(LDFLAGS)
- 	@printf "strip\t%s\n" $@
- 	@strip $@
+-CPPFLAGS        += $(DMACROS) $(INCDIRS)
++CPPFLAGS        += $(DMACROS) $(INCDIRS) `sdl2-config --cflags`
+ EXTRA_LIBS      := -lSDL2main -lGL -lGLU -lGLEW -lSDL2 -lSDL2_image -lphysfs -lopenal -lalut -lpthread -ltinyxml2
+-LDFLAGS         += $(EXTRA_LIBS)
++LDFLAGS         += `sdl2-config --libs` $(EXTRA_LIBS)
+ INSTALL_PROGRAM := install --mode=0755
+ INSTALL_DATA    := install --mode=0644
  
-@@ -155,4 +155,4 @@ clean:
- #
- %.o: %.cpp GNUmakefile
- 	@printf "%s\t%s -> %s\n" $(CXX) $< $@
--	@$(CXX) $(CXXFLAGS) $(CPPFLAGS) -MMD -MP -c $< -o $@
-+	@$(CXX) `sdl2-config --cflags` $(CXXFLAGS) $(CPPFLAGS) -MMD -MP -c $< -o $@
