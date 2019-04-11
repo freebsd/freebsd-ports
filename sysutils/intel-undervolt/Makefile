@@ -11,6 +11,9 @@ COMMENT=	Intel CPU undervolting tool
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	specifically for Haswell and newer Intel CPUs
+
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake
