@@ -527,6 +527,7 @@ CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "imap"
+PHP_MOD_PRIO=	30
 .	if ${PORT_OPTIONS:MPANDA}
 LIB_DEPENDS+=	libc-client4.so.10:mail/panda-cclient
 .	else
