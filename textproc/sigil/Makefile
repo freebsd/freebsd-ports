@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sigil
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 CATEGORIES=	textproc
 
 MAINTAINER=	jonc@chen.org.nz
@@ -30,8 +30,7 @@ USE_QT=		concurrent core gui network printsupport svg webkit \
 		buildtools_build linguisttools_build qmake_build \
 		imageformats_run
 
-CMAKE_ARGS=	-DUSE_SYSTEM_LIBS:BOOL=1 \
-		-DINSTALL_BUNDLED_DICTS:BOOL=0
+CMAKE_ARGS=	-DUSE_SYSTEM_LIBS:BOOL=1
 
 USE_LDCONFIG=	${PREFIX}/lib/sigil
 
