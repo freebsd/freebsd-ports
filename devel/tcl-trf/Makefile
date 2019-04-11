@@ -3,7 +3,7 @@
 
 PORTNAME=	Trf
 PORTVERSION=	2.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF/tcltrf/tcltrf/${PORTVERSION}
 PKGNAMEPREFIX=	tcl-
@@ -41,7 +41,8 @@ do-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/Trf/libTrf${PORTVERSION}.so
 
 do-test:
-	cd ${WRKSRC}/tests && ${SETENV} TCLLIBPATH="${WRKSRC}" ${TCLSH} all
+	cd ${WRKSRC} && ${SETENV} TCLLIBPATH="${WRKSRC}" ${TCLSH} \
+		${FILESDIR}/alltests.tcl
 
 PLIST_SUB+=	TCL_DVER=${TCL_VER:C/\.//} VER=${PORTVERSION}
 
