@@ -23,17 +23,15 @@ GH_ACCOUNT=	Bertram25
 GH_PROJECT=	ValyriaTear
 GH_TAGNAME=	${PORTVERSION}-gcc5 # contains relevant tolua++ fixes
 
-USES=		alias cmake compiler gettext-tools gl iconv lua:51 \
-		openal
+USES=		alias cmake compiler:c++11-lang gettext-tools gl iconv lua:51 \
+		openal sdl
 CMAKE_ARGS=	-DUSE_PCH_COMPILATION=OFF
 USE_SDL=	sdl image ttf
 USE_GL=		gl glu
 USE_XORG=	x11 xext sm ice
+USE_CXXSTD=	c++03
 INSTALLS_ICONS=	yes
 LLD_UNSAFE=	yes
-
-CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
-CXXFLAGS_clang=	-Wno-reserved-user-defined-literal
 
 PORTDOCS=	*
 PORTDATA=	*
