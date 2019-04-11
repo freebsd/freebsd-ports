@@ -1055,6 +1055,7 @@ PORTREVISION=	1
     SUBDIR += py-virustotal-api
     SUBDIR += py-volatility
     SUBDIR += py-vulndb
+    SUBDIR += py-xmlsec
     SUBDIR += py-yara
     SUBDIR += py-yubikey-manager
     SUBDIR += py-zope.app.authentication
