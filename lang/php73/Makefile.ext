@@ -145,6 +145,7 @@ USES+=	iconv:translit
 .endif
 
 .if ${PHP_MODNAME} == "imap"
+PHP_MOD_PRIO=	30
 OPTIONS_DEFINE=	PANDA
 PANDA_DESC=	Uses the forked panda-cclient instead of the original cclient
 
