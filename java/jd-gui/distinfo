@@ -1,5 +1,5 @@
-TIMESTAMP = 1552209170
-SHA256 (jd-gui-1.4.1.jar) = 61ac659759ce5e25a5e35f8835ffd7ad36204eef0d2c8c22e7b5e768423e4dbc
-SIZE (jd-gui-1.4.1.jar) = 9822481
-SHA256 (java-decompiler-jd-gui-v1.4.1_GH0.tar.gz) = 9b5aa7a883f4eb39bba356a778df7be19928895f317c726e119270583a27bfa2
-SIZE (java-decompiler-jd-gui-v1.4.1_GH0.tar.gz) = 309132
+TIMESTAMP = 1554981981
+SHA256 (jd-gui-1.4.2.jar) = c2f11ee24e35fb2ca6ebbc1f002ec447095f140da9b58fac46a388c69867aaa2
+SIZE (jd-gui-1.4.2.jar) = 2969896
+SHA256 (java-decompiler-jd-gui-v1.4.2_GH0.tar.gz) = 2cf823234f740244e561fd7ba53d0469fe6f67715380cd17cea847f008babdaf
+SIZE (java-decompiler-jd-gui-v1.4.2_GH0.tar.gz) = 321164
