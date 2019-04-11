@@ -8,12 +8,7 @@
 +#include "md2d.h"
  
  /*
-@@ -38,18 +39,8 @@
-  */
- 
--#define DIGEST_SIZE               (MD2_DIGEST_LENGTH)
-+#define DIGEST_SIZE               (20)
- #define CTX_TYPE                  MD2_CTX
+@@ -42,14 +43,4 @@
  
  /*
 - * Declarations of internal procedures.
