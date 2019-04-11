@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libsodium.so:security/libsodium \
 		libvpx.so:multimedia/libvpx
 
-USES=		cmake desktop-file-utils kde:5 pkgconfig qt:5 shared-mime-info
+USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 pkgconfig qt:5 shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tl}
 USE_QT=		core gui multimedia network sql svg widgets buildtools_build linguisttools_build qmake_build
