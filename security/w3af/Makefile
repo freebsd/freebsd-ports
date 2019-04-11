@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nltk>0:textproc/py-nltk@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pdf>0:print/py-pdf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scapy>0:net/scapy \
+		${PYTHON_PKGNAMEPREFIX}scapy>0:net/scapy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wordnet>0:textproc/py-wordnet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyClamd>=0.2.2:security/py-pyclamd@${PY_FLAVOR} \
