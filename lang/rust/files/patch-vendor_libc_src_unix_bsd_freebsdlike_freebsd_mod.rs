@@ -1,6 +1,6 @@
---- vendor/libc/src/unix/bsd/freebsdlike/freebsd/mod.rs.orig	2019-01-16 11:06:08 UTC
+--- vendor/libc/src/unix/bsd/freebsdlike/freebsd/mod.rs.orig	2019-04-08 14:18:24 UTC
 +++ vendor/libc/src/unix/bsd/freebsdlike/freebsd/mod.rs
-@@ -1154,6 +1154,12 @@ cfg_if! {
+@@ -1155,6 +1155,12 @@ cfg_if! {
      } else if #[cfg(target_arch = "aarch64")] {
          mod aarch64;
          pub use self::aarch64::*;
