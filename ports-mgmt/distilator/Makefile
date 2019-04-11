@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.18.4_1:www/py-requests@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}requests-ftp>=0.3.1:ftp/py-requests-ftp@${PY_FLAVOR}
 
 USES=		python shebangfix
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
