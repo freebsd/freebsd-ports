@@ -1,5 +1,5 @@
---- tclock.c.orig	1992-12-21 19:56:29.000000000 +0000
-+++ tclock.c	2011-06-20 18:42:37.000000000 +0100
+--- tclock.c.orig	1992-12-21 19:56:29 UTC
++++ tclock.c
 @@ -22,7 +22,10 @@
   */ 
  
@@ -11,7 +11,7 @@
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
  #include <X11/Xos.h>
-@@ -51,7 +54,7 @@
+@@ -51,7 +54,7 @@ Display *display;
  int     screen_number;
  Window  rootWindow, mainWindow;
  int     ShapeEventNumber, ShapeErrorNumber;
@@ -20,7 +20,16 @@
  struct tm lastTimes, times;
  Pixmap  border, clip;
  GC      clearGC, drawGC;
-@@ -212,7 +215,7 @@
+@@ -113,6 +116,8 @@ initHand(h, s)
+ 
+   hand[h].radius[i] = hand[h].radius[0];
+   hand[h].offset[i] = hand[h].offset[0];
++
++  hand[h].position = -1;
+ }
+ 
+ void
+@@ -212,7 +217,7 @@ reshape()
    XShapeCombineMask(display, mainWindow, ShapeBounding, 0, 0, border, ShapeSet);
    XShapeCombineMask(display, mainWindow, ShapeClip, 0, 0, clip, ShapeSet);
  
@@ -29,7 +38,7 @@
  
    /* This call to XPending ensures that if the window gets closed, we die */
    XPending(display);
-@@ -222,8 +225,6 @@
+@@ -222,8 +227,6 @@ XTextProperty *
  strToTP(s)
    char *s;
  {
@@ -38,7 +47,7 @@
  
    XTextProperty *tp = (XTextProperty *)malloc(sizeof *tp);
    XStringListToTextProperty(&s, 1, tp);
-@@ -233,11 +234,11 @@
+@@ -233,11 +236,11 @@ strToTP(s)
  int
  sigalrm()
  {
@@ -53,7 +62,7 @@
  }
  
  unsigned long
-@@ -294,7 +295,7 @@
+@@ -294,7 +297,7 @@ makeAppName(r)
    strcpy(appClass, "Tclock");
  }
  
@@ -62,7 +71,7 @@
  main(ac, av)
    int ac;
    char **av;
-@@ -309,6 +310,7 @@
+@@ -309,6 +312,7 @@ main(ac, av)
    extern
    char		*getenv();
    char		*displayName, fn[1000];
@@ -70,7 +79,7 @@
    int		parseReturn, rc;
  
    XrmParseCommand(&db, option, numOptions, "tclock", &ac, av);
-@@ -330,7 +332,7 @@
+@@ -330,7 +334,7 @@ main(ac, av)
    display = XOpenDisplay(displayName);
    if(display == 0)
    {
@@ -79,7 +88,7 @@
      exit(-1);
    }
  
-@@ -341,13 +343,14 @@
+@@ -341,13 +345,14 @@ main(ac, av)
      exit(1);
  
    db = XrmGetStringDatabase(tclockDefaults);
@@ -96,7 +105,7 @@
      XrmMergeDatabases(XrmGetFileDatabase(getenv("XENVIRONMENT")), &db);
  
    XrmMergeDatabases(cmdDB, &db);
-@@ -410,7 +413,7 @@
+@@ -410,7 +415,7 @@ main(ac, av)
    XMapRaised(display, mainWindow);
    XFlush(display);
  
@@ -105,7 +114,7 @@
    new.it_interval.tv_sec = 1;
    new.it_value.tv_sec = 1;
    new.it_interval.tv_usec = 0;
-@@ -420,4 +423,3 @@
+@@ -420,4 +425,3 @@ main(ac, av)
    for(;;)
      sigpause(0);
  }
