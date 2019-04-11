@@ -1,0 +1,7 @@
+include/scs/aa.h
+include/scs/glbopts.h
+include/scs/scs.h
+lib/libscsdir.a
+lib/libscsdir.so
+lib/libscsindir.a
+lib/libscsindir.so
