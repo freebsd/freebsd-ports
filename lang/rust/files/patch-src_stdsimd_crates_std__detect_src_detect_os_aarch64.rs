@@ -11,8 +11,8 @@ note: lint level defined here
   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   = help: to escape `[` and `]` characters, just add '\' before them like `\[` or `\]`
 
---- src/stdsimd/stdsimd/arch/detect/os/aarch64.rs.orig	2019-02-25 09:19:48 UTC
-+++ src/stdsimd/stdsimd/arch/detect/os/aarch64.rs
+--- src/stdsimd/crates/std_detect/src/detect/os/aarch64.rs.orig	2019-04-08 12:42:49 UTC
++++ src/stdsimd/crates/std_detect/src/detect/os/aarch64.rs
 @@ -6,7 +6,7 @@
  //! AArch64 system registers ID_AA64ISAR0_EL1, ID_AA64PFR0_EL1, ID_AA64ISAR1_EL1
  //! have bits dedicated to features like AdvSIMD, CRC32, AES, atomics (LSE), etc.

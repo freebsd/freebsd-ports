@@ -1,6 +1,6 @@
---- src/librustc_target/spec/i686_unknown_freebsd.rs.orig	2018-06-19 04:35:53 UTC
+--- src/librustc_target/spec/i686_unknown_freebsd.rs.orig	2019-04-08 12:42:31 UTC
 +++ src/librustc_target/spec/i686_unknown_freebsd.rs
-@@ -12,7 +12,7 @@ use spec::{LinkerFlavor, Target, TargetResult};
+@@ -2,7 +2,7 @@ use crate::spec::{LinkerFlavor, Target, TargetResult};
  
  pub fn target() -> TargetResult {
      let mut base = super::freebsd_base::opts();

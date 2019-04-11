@@ -1,7 +1,7 @@
 --- vendor/rustc-ap-rustc_target/spec/armv7_unknown_freebsd.rs.orig	2019-02-15 13:41:07 UTC
 +++ vendor/rustc-ap-rustc_target/spec/armv7_unknown_freebsd.rs
 @@ -0,0 +1,24 @@
-+use spec::{LinkerFlavor, Target, TargetOptions, TargetResult};
++use crate::spec::{LinkerFlavor, Target, TargetOptions, TargetResult};
 +
 +pub fn target() -> TargetResult {
 +    let base = super::freebsd_base::opts();
