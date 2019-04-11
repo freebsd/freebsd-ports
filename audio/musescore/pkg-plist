@@ -196,6 +196,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/locale/tours_fi.qm
 %%DATADIR%%/locale/tours_fil.qm
 %%DATADIR%%/locale/tours_fo.qm
+%%DATADIR%%/locale/tours_fr.qm
 %%DATADIR%%/locale/tours_ga.qm
 %%DATADIR%%/locale/tours_gd.qm
 %%DATADIR%%/locale/tours_gl.qm
@@ -404,6 +405,7 @@ share/mime/packages/musescore.xml
 %%DATADIR%%/templates/07-Band_and_Percussion/06-Battery_Percussion.mscx
 %%DATADIR%%/templates/07-Band_and_Percussion/07-Large_Pit_Percussion.mscx
 %%DATADIR%%/templates/07-Band_and_Percussion/08-Small_Pit_Percussion.mscx
+%%DATADIR%%/templates/07-Band_and_Percussion/09-European_Concert_Band.mscx
 %%DATADIR%%/templates/08-Orchestral/01-Classical_Orchestra.mscx
 %%DATADIR%%/templates/08-Orchestral/02-Symphony_Orchestra.mscx
 %%DATADIR%%/templates/08-Orchestral/03-String_Orchestra.mscx
