@@ -18,6 +18,7 @@ include/opendht/log_enable.h
 include/opendht/network_engine.h
 include/opendht/node.h
 include/opendht/node_cache.h
+include/opendht/peer_discovery.h
 include/opendht/proxy.h
 include/opendht/rate_limiter.h
 include/opendht/rng.h
