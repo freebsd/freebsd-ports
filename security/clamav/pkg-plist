@@ -39,10 +39,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/UserManual/libclamav.html
 %%UNRAR%%lib/libclamunrar.so
 %%UNRAR%%lib/libclamunrar.so.9
-%%UNRAR%%lib/libclamunrar.so.9.0.1
+%%UNRAR%%lib/libclamunrar.so.9.0.2
 %%UNRAR%%lib/libclamunrar_iface.so
 %%UNRAR%%lib/libclamunrar_iface.so.9
-%%UNRAR%%lib/libclamunrar_iface.so.9.0.1
+%%UNRAR%%lib/libclamunrar_iface.so.9.0.2
 @dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%DBDIR%%
 @dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%LOGDIR%%
 @dir(%%CLAMAVUSER%%,%%CLAMAVGROUP%%,0755) %%RUNDIR%%
@@ -61,7 +61,7 @@ include/clamav-types.h
 include/clamav.h
 lib/libclamav.so
 lib/libclamav.so.9
-lib/libclamav.so.9.0.1
+lib/libclamav.so.9.0.2
 libdata/pkgconfig/libclamav.pc
 man/man1/clambc.1.gz
 man/man1/clamconf.1.gz
