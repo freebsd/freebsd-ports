@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	musescore
-DISTVERSION=	3.0.2
+DISTVERSION=	3.0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${DISTVERSION}/
 DISTNAME=	MuseScore-${DISTVERSION}
@@ -30,7 +30,8 @@ ALL_TARGET=	lrelease manpages all
 INSTALLS_ICONS=	yes
 CMAKE_ARGS+=	-DUSE_SYSTEM_FREETYPE="ON" \
 		-DBUILD_PORTMIDI=OFF \
-		-DBUILD_PCH=OFF
+		-DBUILD_PCH=OFF \
+		-DDOWNLOAD_SOUNDFONT=OFF
 
 DATADIR=	${PREFIX}/share/mscore-${PORTVERSION:R}
 
