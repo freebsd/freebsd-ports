@@ -183,6 +183,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_stat.lua
 %%DATADIR%%/lualib/lua_tcp_sync.lua
 %%DATADIR%%/lualib/lua_util.lua
+%%DATADIR%%/lualib/lupa.lua
 %%DATADIR%%/lualib/plugins_stats.lua
 %%DATADIR%%/lualib/rescore_utility.lua
 %%DATADIR%%/lualib/rspamadm/configgraph.lua
@@ -197,6 +198,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/rspamadm/mime.lua
 %%DATADIR%%/lualib/rspamadm/rescore.lua
 %%DATADIR%%/lualib/rspamadm/stat_convert.lua
+%%DATADIR%%/lualib/rspamadm/template.lua
 %%DATADIR%%/lualib/tableshape.lua
 %%TORCH%%%%DATADIR%%/lualib/decisiontree/CartNode.lua
 %%TORCH%%%%DATADIR%%/lualib/decisiontree/CartTrainer.lua
