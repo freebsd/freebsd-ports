@@ -3,6 +3,7 @@
 
 PORTNAME=	remotebox
 DISTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://remotebox.knobgoblin.org.uk/downloads/
 DISTNAME=	RemoteBox-${DISTVERSION}
@@ -17,6 +18,7 @@ RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-SOAP-Lite>=0:net/p5-SOAP-Lite
 
 USES=		shebangfix tar:bzip2
+
 SHEBANG_FILES=	remotebox
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -35,7 +37,7 @@ VINAGRE_DESC=		VNC client for GNOME
 FREERDP_RUN_DEPENDS=	xfreerdp:net/freerdp
 KRDC_RUN_DEPENDS=	krdc:net/krdc
 RDESKTOP_RUN_DEPENDS=	rdesktop:net/rdesktop
-TIGERVNC_RUN_DEPENDS=	vncviewer:net/tigervnc
+TIGERVNC_RUN_DEPENDS=	vncviewer:net/tigervnc-viewer
 VINAGRE_RUN_DEPENDS=	vinagre:net/vinagre
 
 post-patch:
