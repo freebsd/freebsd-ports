@@ -1,6 +1,6 @@
---- bindings/perl/Makefile.in.orig	2014-12-05 04:41:25 UTC
+--- bindings/perl/Makefile.in.orig	2019-04-11 00:56:24 UTC
 +++ bindings/perl/Makefile.in
-@@ -307,7 +307,7 @@ uudecode = @uudecode@
+@@ -557,7 +557,7 @@ uudecode = @uudecode@
  MAINTAINERCLEANFILES = Makefile.in
  DISTCLEANFILES = __init__.pyc lang.pyc Makefile.perl.old
  CLEANFILES = Lasso.pm Lasso.xs Lasso.so typemap Lasso.o Lasso.bs pm_to_blib Lasso.c
@@ -8,12 +8,12 @@
 +LASSO_XS_CFLAGS = -fno-strict-aliasing $(LASSO_CFLAGS) $(LASSO_CORE_CFLAGS) $(PERL_CFLAGS) $(AM_CFLAGS)
  TESTS_ENVIRONMENT = TOP_SRCDIR=$(top_srcdir)
  TESTS = test.sh
- @PERL_ENABLED_TRUE@INCLUDES = \
-@@ -623,7 +623,7 @@ uninstall-am: uninstall-local
+ @PERL_ENABLED_TRUE@AM_CPPFLAGS = \
+@@ -948,7 +948,7 @@ uninstall-am: uninstall-local
  @PERL_ENABLED_TRUE@		done; \
  @PERL_ENABLED_TRUE@		chmod -R u+rwX $(TOCOPY); \
  @PERL_ENABLED_TRUE@	fi;
--@PERL_ENABLED_TRUE@	$(AM_V_SUBMAKE) $(PERL) Makefile.PL INSTALLDIRS=vendor CCFLAGS="$(LASSO_XS_CFLAGS)" INC="-I. -I$(top_srcdir) -I$(srcdir)" LIBS="`$(top_builddir)/lasso-src-config --libs`" OPTIMIZE="-g" $(AM_V_SUBMAKE_POSTFIX)
+-@PERL_ENABLED_TRUE@	$(AM_V_SUBMAKE) $(PERL) Makefile.PL INSTALLDIRS=vendor DESTDIR=$(DESTDIR) PREFIX=$(prefix) CCFLAGS="$(LASSO_XS_CFLAGS)" INC="-I. -I$(top_srcdir) -I$(srcdir)" LIBS="`$(top_builddir)/lasso-src-config --libs`" OPTIMIZE="-g" $(AM_V_SUBMAKE_POSTFIX)
 +@PERL_ENABLED_TRUE@	$(AM_V_SUBMAKE) $(PERL) Makefile.PL CCFLAGS="$(LASSO_XS_CFLAGS)" INC="-I. -I$(top_srcdir) -I$(srcdir)" LIBS="`$(top_builddir)/lasso-src-config --libs`" OPTIMIZE="-g" $(AM_V_SUBMAKE_POSTFIX)
  
  @PERL_ENABLED_TRUE@Lasso.xs Lasso.pm: lang.py typemap-in typemap-out

@@ -14,10 +14,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/writing-a-saml2-php-sp.txt
 %%PERL%%%%SITE_ARCH%%/auto/Lasso/Lasso.so
 %%PERL%%%%SITE_ARCH%%/Lasso.pm
-%%PHP5%%etc/php5/conf.d/lasso.ini
-%%PHP5%%share/php/lasso.php
-%%PHP5%%lib/php/%%PHP_EXT_DIR%%/lasso.a
-%%PHP5%%lib/php/%%PHP_EXT_DIR%%/lasso.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_lasso.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_lasso.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/lasso.py
@@ -58,6 +54,9 @@ include/lasso/xml/dsig/ds_rsa_key_value.h
 include/lasso/xml/dsig/ds_x509_data.h
 include/lasso/xml/dsig/strings.h
 include/lasso/xml/dsig/xml_dsig.h
+include/lasso/xml/ecp/ecp_relaystate.h
+include/lasso/xml/ecp/ecp_request.h
+include/lasso/xml/ecp/ecp_response.h
 include/lasso/xml/lib_assertion.h
 include/lasso/xml/lib_authentication_statement.h
 include/lasso/xml/lib_authn_context.h
@@ -80,6 +79,8 @@ include/lasso/xml/lib_scoping.h
 include/lasso/xml/lib_status_response.h
 include/lasso/xml/lib_subject.h
 include/lasso/xml/misc_text_node.h
+include/lasso/xml/paos_request.h
+include/lasso/xml/paos_response.h
 include/lasso/xml/saml-2.0/saml2_action.h
 include/lasso/xml/saml-2.0/saml2_advice.h
 include/lasso/xml/saml-2.0/saml2_assertion.h
@@ -171,5 +172,5 @@ include/lasso/xml/xml_enc.h
 lib/liblasso.a
 lib/liblasso.so
 lib/liblasso.so.3
-lib/liblasso.so.3.11.1
+lib/liblasso.so.3.13.0
 libdata/pkgconfig/lasso.pc
