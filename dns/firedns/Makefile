@@ -12,6 +12,9 @@ MASTER_SITES=	http://BSDforge.com/projects/source/dns/firedns/ \
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	C library for handling asynchronous DNS queries
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GPL
+
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:misc/firestring
 
 USES=		tar:bzip2
