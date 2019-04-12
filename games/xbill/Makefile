@@ -3,7 +3,7 @@
 
 PORTNAME=	xbill
 PORTVERSION=	2.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://www.xbill.org/download/
 
@@ -43,7 +43,7 @@ MOTIF_CONFIGURE_ARGS_ON=	--disable-athena
 MOTIF_USES=	motif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/WIDGET_LIBS=/ s|-lXm"$$|-lXm -lXpm"|' \
+	@${REINPLACE_CMD} -e '/WIDGET_LIBS=/ s|-lXt|-lXt -lXpm|' \
 		${WRKSRC}/configure
 
 post-install:
