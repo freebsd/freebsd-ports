@@ -3,7 +3,6 @@
 
 PORTNAME=	erlang
 PORTVERSION=	19.3
-PKGNAMESUFFIX=  -doc
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg			\
 		http://erlang.stacken.kth.se/download/:erlangorg		\
@@ -13,6 +12,7 @@ MASTER_SITES=	http://www.erlang.org/download/:erlangorg			\
 		http://www.erlang.se/doc/:erlangse				\
 		http://www.erlang.se/publications/:publications			\
 		http://www.sics.se/~joe/thesis/:joe
+PKGNAMESUFFIX=  -doc
 DISTNAME=	otp_doc_html_${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BOOK_DISTFILES}
 DIST_SUBDIR=	erlang
@@ -23,6 +23,7 @@ COMMENT=	Erlang documentation
 
 LICENSE=	APACHE20
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 SUB_FILES=	pkg-message
