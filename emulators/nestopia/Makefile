@@ -2,7 +2,7 @@
 
 PORTNAME=	nestopia
 DISTVERSION=	1.49
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 
 MAINTAINER=	neel@neelc.org
@@ -25,6 +25,9 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_SDL=	sdl2
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS JACK
+
+JACK_LIB_DEPENDS=libjack.so:audio/jack
+JACK_CONFIGURE_WITH=jack
 
 .include <bsd.port.mk>
