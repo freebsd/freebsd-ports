@@ -1,0 +1,87 @@
+r338297 | dim | 2018-08-24 19:48:05 +0200 (Fri, 24 Aug 2018) | 6 lines
+
+Apply r338251 ("Preserve relocations against ifuncs when -zifunc-noplt
+is specified") on top of lld 7.0.0.  This is to prepare for another
+merge from head.
+
+Obtained from:	https://github.com/markjdb/freebsd-dev/commit/02f35faa6df364769b9223746b99e3c7ba05c5dd
+
+Index: tools/lld/ELF/Config.h
+===================================================================
+--- tools/lld/ELF/Config.h	(revision 338296)
++++ tools/lld/ELF/Config.h	(revision 338297)
+@@ -181,6 +181,7 @@ struct Configuration {
+   bool ZCopyreloc;
+   bool ZExecstack;
+   bool ZHazardplt;
++  bool ZIfuncnoplt;
+   bool ZInitfirst;
+   bool ZKeepTextSectionPrefix;
+   bool ZNodelete;
+--- tools/lld/ELF/Driver.cpp.orig	2019-02-14 10:49:15.000000000 +0000
++++ tools/lld/ELF/Driver.cpp	2019-04-09 17:24:01.029238000 +0100
+@@ -348,6 +348,7 @@ static bool getZFlag(opt::InputArgList &
+ static bool isKnownZFlag(StringRef S) {
+   return S == "combreloc" || S == "copyreloc" || S == "defs" ||
+          S == "execstack" || S == "global" || S == "hazardplt" ||
++	 S == "ifunc-noplt" ||
+          S == "initfirst" || S == "interpose" ||
+          S == "keep-text-section-prefix" || S == "lazy" || S == "muldefs" ||
+          S == "nocombreloc" || S == "nocopyreloc" || S == "nodefaultlib" ||
+@@ -871,6 +872,7 @@ void LinkerDriver::readConfigs(opt::Inpu
+   Config->ZExecstack = getZFlag(Args, "execstack", "noexecstack", false);
+   Config->ZGlobal = hasZOption(Args, "global");
+   Config->ZHazardplt = hasZOption(Args, "hazardplt");
++  Config->ZIfuncnoplt = hasZOption(Args, "ifunc-noplt");
+   Config->ZInitfirst = hasZOption(Args, "initfirst");
+   Config->ZInterpose = hasZOption(Args, "interpose");
+   Config->ZKeepTextSectionPrefix = getZFlag(
+--- tools/lld/ELF/Relocations.cpp.orig	2019-01-17 13:47:57.000000000 +0000
++++ tools/lld/ELF/Relocations.cpp	2019-04-09 17:38:19.651286000 +0100
+@@ -381,6 +381,10 @@ static bool isStaticLinkTimeConstant(Rel
+                      R_TLSLD_HINT, R_TLSIE_HINT>(E))
+     return true;
+ 
++  // The computation involves output from the ifunc resolver.
++  if (Sym.isGnuIFunc() && Config->ZIfuncnoplt)
++    return false;
++
+   // These never do, except if the entire file is position dependent or if
+   // only the low bits are used.
+   if (E == R_GOT || E == R_GOT_PLT || E == R_PLT || E == R_TLSDESC)
+@@ -844,6 +848,10 @@ static void processRelocAux(InputSection
+     Sec.Relocations.push_back({Expr, Type, Offset, Addend, &Sym});
+     return;
+   }
++  if (Sym.isGnuIFunc() && Config->ZIfuncnoplt) {
++    In.RelaDyn->addReloc(Type, &Sec, Offset, &Sym, Addend, R_ADDEND, Type);
++    return;
++  }
+   bool CanWrite = (Sec.Flags & SHF_WRITE) || !Config->ZText;
+   if (CanWrite) {
+     // R_GOT refers to a position in the got, even if the symbol is preemptible.
+@@ -1012,7 +1020,7 @@ static void scanReloc(InputSectionBase &
+   // all dynamic symbols that can be resolved within the executable will
+   // actually be resolved that way at runtime, because the main exectuable
+   // is always at the beginning of a search list. We can leverage that fact.
+-  if (Sym.isGnuIFunc()) {
++  if (Sym.isGnuIFunc() && !Config->ZIfuncnoplt) {
+     if (!Config->ZText && Config->WarnIfuncTextrel) {
+       warn("using ifunc symbols when text relocations are allowed may produce "
+            "a binary that will segfault, if the object file is linked with "
+--- tools/lld/ELF/Writer.cpp.orig	2019-01-15 18:30:23.000000000 +0000
++++ tools/lld/ELF/Writer.cpp	2019-04-09 17:45:06.700098000 +0100
+@@ -1651,9 +1651,12 @@ template <class ELFT> void Writer<ELFT>:
+   // earlier.
+   finalizeSynthetic(In.EhFrame);
+ 
+-  for (Symbol *S : Symtab->getSymbols())
++  for (Symbol *S : Symtab->getSymbols()) {
+     if (!S->IsPreemptible)
+       S->IsPreemptible = computeIsPreemptible(*S);
++    if (S->isGnuIFunc() && Config->ZIfuncnoplt)
++      S->ExportDynamic = true;
++  }
+ 
+   // Scan relocations. This must be done after every symbol is declared so that
+   // we can correctly decide if a dynamic relocation is needed.
