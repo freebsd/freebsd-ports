@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysolfc
-DISTVERSION=	2.4.0
+DISTVERSION=	2.6.3
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/PySolFC/${PYSOLFCDIR} \
 		SF/${PORTNAME}/PySolFC-Cardsets/${CARDSETDIR}:cardsets
@@ -89,7 +89,7 @@ post-patch-NLS-off:
 		${WRKSRC}/setup.py
 
 post-install:
-	${LN} -s ${PREFIX}/share/icons/pysol01.png \
+	${RLN} ${STAGEDIR}${PREFIX}/share/icons/pysol01.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 	(cd ${WRKDIR}/${CARDSETDIR} && \
 		${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
