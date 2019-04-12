@@ -1,7 +1,7 @@
---- cmake/Macros/PySideModules.cmake.orig	2018-12-17 07:28:47 UTC
+--- cmake/Macros/PySideModules.cmake.orig	2019-03-21 14:37:54 UTC
 +++ cmake/Macros/PySideModules.cmake
 @@ -124,6 +124,7 @@ macro(create_pyside_module)
-                         COMMAND "${SHIBOKEN_BINARY}" ${GENERATOR_EXTRA_FLAGS}
+                         COMMAND Shiboken2::shiboken2 ${GENERATOR_EXTRA_FLAGS}
                          "${pyside2_BINARY_DIR}/${module_NAME}_global.h"
                          --include-paths=${shiboken_include_dirs}
 +                        --include-paths="${CMAKE_INSTALL_PREFIX}/include"

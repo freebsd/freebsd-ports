@@ -1,0 +1,13 @@
+# keep this - else the build fails on the package cluster
+# see http://beefy5.nyi.freebsd.org/data/120i386-default/498628/logs/py27-pyside2-5.12.2.log
+# I cannot reproduce the failure locally -- cmt
+--- PySide2/QtWebEngineWidgets/CMakeLists.txt.orig	2019-04-12 15:25:16 UTC
++++ PySide2/QtWebEngineWidgets/CMakeLists.txt
+@@ -25,6 +25,7 @@ set(QtWebEngineWidgets_include_dirs
+                             ${Qt5Widgets_INCLUDE_DIRS}
+                             ${Qt5Network_INCLUDE_DIRS}
+                             ${Qt5WebChannel_INCLUDE_DIRS}
++                            ${Qt5WebEngineCore_INCLUDE_DIRS}
+                             ${Qt5WebEngineWidgets_INCLUDE_DIRS}
+                             ${libpyside_SOURCE_DIR}
+                             ${QtCore_GEN_DIR}
