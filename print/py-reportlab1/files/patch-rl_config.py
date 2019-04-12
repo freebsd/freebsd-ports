@@ -1,6 +1,6 @@
---- rl_config.py.orig	Wed Nov 10 00:09:28 2004
-+++ rl_config.py	Mon Mar 21 03:24:22 2005
-@@ -22,15 +22,9 @@
+--- rl_config.py.orig	2007-07-20 10:36:08 UTC
++++ rl_config.py
+@@ -23,15 +23,9 @@ _FUZZ=                      1e-6                    #f
  
  # places to look for T1Font information
  T1SearchPath =  (
@@ -19,7 +19,7 @@
                  '%(REPORTLAB_DIR)s/fonts',              #special
                  '%(REPORTLAB_DIR)s/../fonts',           #special
                  '%(REPORTLAB_DIR)s/../../fonts',        #special
-@@ -39,9 +33,7 @@
+@@ -40,9 +34,7 @@ T1SearchPath =  (
  
  # places to look for TT Font information
  TTFSearchPath = (
@@ -30,7 +30,7 @@
                  '%(REPORTLAB_DIR)s/fonts',      #special
                  '%(REPORTLAB_DIR)s/../fonts',   #special
                  '%(REPORTLAB_DIR)s/../../fonts',#special
-@@ -49,20 +41,14 @@
+@@ -50,20 +42,14 @@ TTFSearchPath = (
                  )
  
  # places to look for CMap files - should ideally merge with above

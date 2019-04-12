@@ -1,6 +1,6 @@
---- setup.py.orig	Fri Nov 26 00:12:20 2004
-+++ setup.py	Mon Mar 21 03:26:45 2005
-@@ -19,7 +19,7 @@
+--- setup.py.orig	2007-07-20 10:36:08 UTC
++++ setup.py
+@@ -19,7 +19,7 @@ abspath = os.path.abspath
  isfile = os.path.isfile
  isdir = os.path.isfile
  dirname = os.path.dirname
