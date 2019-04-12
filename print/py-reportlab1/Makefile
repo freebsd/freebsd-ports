@@ -16,13 +16,18 @@ DISTFILES=	reportlab-${PORTVERSION}.tar.gz \
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Library to create PDF documents using the Python language
 
+LICENSE=	BSD3CLAUSE
+
+DEPRECATED=	consider using latest upstream version in print/py-reportlab
+EXPIRATION_DATE=2019-05-12
+
+USES=		python:2.7
+USE_PYTHON=	distutils autoplist
+
 CONFLICTS=	py*-reportlab[^1]-[^1].* \
 		py*-reportlab-[^1].*
 
 PORTSCOUT=	ignore:1	# Last version of 1.X branch
-
-USES=		python:2.7
-USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/reportlab_${PORTVERSION:S/./_/g}/reportlab
 MAKE_ENV=	PACKAGE_PATH="${REPORTLABDIR}"
