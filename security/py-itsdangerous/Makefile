@@ -12,8 +12,10 @@ COMMENT=	Various helpers to pass data in untrusted environments
 
 LICENSE=	BSD3CLAUSE
 
-USES=	python
+USES=		python
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	JSON
 
