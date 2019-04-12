@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glances
-PORTVERSION=	3.0.2
+PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,14 +15,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.3.0:sysutils/py-psutil@${PY_FLAVOR}
 
+USES=		python
+USE_PYTHON=	autoplist distutils
+USE_GITHUB=	yes
+
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
-USE_GITHUB=	yes
 GH_ACCOUNT=	nicolargo
 
-USES=		python
-USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 PLIST_FILES=	${ETCDIR}/glances.conf.sample \
