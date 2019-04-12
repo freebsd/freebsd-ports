@@ -2,7 +2,7 @@
 
 PORTNAME=	cockroach
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.6
+DISTVERSION=	2.0.7
 CATEGORIES=	databases
 MASTER_SITES=	https://binaries.cockroachdb.com/
 EXTRACT_SUFX=	.src.tgz
@@ -12,8 +12,6 @@ COMMENT=	Cloud-native SQL database that survive disasters
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/src/github.com/cockroachdb/cockroach/LICENSE
-
-BROKEN=		fails to build
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64"
@@ -38,9 +36,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|LDFLAGS: -ledit|LDFLAGS: -L${LOCALBASE}/lib -ledit|g' \
 			  -e 's|CPPFLAGS: -Ishim|CPPFLAGS: -I${LOCALBASE}/include -Ishim|g' \
 		${WRKSRC}/src/github.com/cockroachdb/cockroach/vendor/github.com/knz/go-libedit/unix/editline_unix.go
+	@${REINPLACE_CMD} -e 's|build -i -o|build -o|g' \
+		${WRKSRC}/src/github.com/cockroachdb/cockroach/Makefile
 
 do-build:
-	@${SETENV} -i PATH="${PATH}" \
+	@${SETENV} -i ${MAKE_ENV} \
 		${MAKE_CMD} -C ${WRKSRC} buildoss
 
 do-install:
