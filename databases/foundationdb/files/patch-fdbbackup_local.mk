@@ -1,6 +1,6 @@
---- fdbbackup/local.mk.orig	2018-09-11 01:21:54 UTC
+--- fdbbackup/local.mk.orig	2019-04-09 00:11:05 UTC
 +++ fdbbackup/local.mk
-@@ -35,6 +35,8 @@ ifeq ($(PLATFORM),linux)
+@@ -34,6 +34,8 @@ ifeq ($(PLATFORM),linux)
    # fdbbackup_STATIC_LIBS += -ltcmalloc -lunwind -lprofiler
  else ifeq ($(PLATFORM),osx)
    fdbbackup_LDFLAGS += -lc++

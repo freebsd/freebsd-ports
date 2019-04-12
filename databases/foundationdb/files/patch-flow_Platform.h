@@ -1,4 +1,4 @@
---- flow/Platform.h.orig	2019-01-09 22:28:32 UTC
+--- flow/Platform.h.orig	2019-04-09 00:11:05 UTC
 +++ flow/Platform.h
 @@ -22,7 +22,7 @@
  #define FLOW_PLATFORM_H
@@ -9,7 +9,7 @@
  #define __unixish__ 1
  #endif
  
-@@ -182,6 +182,8 @@ THREAD_HANDLE startThread(void *(func) (void *), void 
+@@ -188,6 +188,8 @@ THREAD_HANDLE startThread(void *(func) (void *), void 
  #if defined(_WIN32)
  #define DYNAMIC_LIB_EXT ".dll"
  #elif defined(__linux)

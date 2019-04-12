@@ -1,8 +1,8 @@
---- flow/ThreadPrimitives.h.orig	2019-01-09 22:28:32 UTC
+--- flow/ThreadPrimitives.h.orig	2019-04-09 00:11:05 UTC
 +++ flow/ThreadPrimitives.h
 @@ -25,7 +25,7 @@
- #include "Error.h"
- #include "Trace.h"
+ #include "flow/Error.h"
+ #include "flow/Trace.h"
  
 -#ifdef __linux__
 +#if defined(__linux__) || defined(__FreeBSD__)
