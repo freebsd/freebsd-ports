@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libpcre.so:devel/pcre
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake perl5 tk shebangfix
+USES=		compiler:c11 gmake perl5 tk shebangfix
 
 SHEBANG_FILES=	extensions/*.sh \
 		gateway/*.pl gateway/*.sh \
