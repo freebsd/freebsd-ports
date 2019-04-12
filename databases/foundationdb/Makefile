@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foundationdb
-PORTVERSION=	6.0.18
-PORTREVISION=	1
+PORTVERSION=	6.1.1
 CATEGORIES=	databases
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -12,7 +11,6 @@ COMMENT=	Distributed, transactional key-value store
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build with boost 1.70, see bug 236586
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64
 
