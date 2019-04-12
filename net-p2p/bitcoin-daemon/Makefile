@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../bitcoin
-PORTREVISION=	5
+PORTREVISION=	6
 PKGNAMESUFFIX=	-daemon
 
 COMMENT=	Virtual Peer-to-Peer Currency (Daemon)

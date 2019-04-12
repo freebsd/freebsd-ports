@@ -2,6 +2,7 @@
 
 PORTNAME=	simgear
 PORTVERSION=	2018.3.2
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 

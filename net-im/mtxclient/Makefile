@@ -3,6 +3,7 @@
 PORTNAME=		mtxclient
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.2.0
+PORTREVISION=		1
 CATEGORIES=		net-im
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

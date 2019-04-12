@@ -4,13 +4,15 @@
 PORTNAME=	zetacoin
 PORTVERSION=	0.11.2.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	daniel@morante.net
 COMMENT=	Peer-to-Peer crypto currency with quick transactions
 
 LICENSE=	MIT
+
+BROKEN=		fails to build with boost 1.70, see bug 237017
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 

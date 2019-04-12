@@ -4,8 +4,8 @@
 PORTNAME=	monero-cli
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
 PORTVERSION=	0.14.0.2
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 # and uncomment the following two lines
 #PORTVERSION=	0
 #PKGNAMESUFFIX=	-git-HEAD
@@ -16,6 +16,7 @@ COMMENT=	Private, secure, untraceable, decentralised digital currency (CLI)
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		fails to build with boost 1.70, see bug 236597
 BROKEN_aarch64=		fails to compile: the clang compiler does not support -march=native
 BROKEN_armv6=		fails to compile: the clang compiler does not support -march=native
 BROKEN_armv7=		fails to compile: the clang compiler does not support -march=native

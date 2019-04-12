@@ -4,6 +4,7 @@
 PORTNAME=	nghttp2
 PORTVERSION=	1.37.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -49,6 +50,7 @@ ASIO_BUILD_DEPENDS=	boost-libs>=1.54.0:devel/boost-libs
 ASIO_CONFIGURE_OFF=	--with-boost=no
 ASIO_CONFIGURE_ON=	--enable-asio-lib --with-boost-asio --with-boost-system --with-boost-thread
 ASIO_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+ASIO_BROKEN=		ASIO option fails to build with boost 1.70, see bug 236666
 EXAMPLES_CONFIGURE_ENABLE=	examples
 EXAMPLES_BUILD_DEPENDS=	libevent>=2.0.8:devel/libevent
 EXAMPLES_LIB_DEPENDS=	libevent_openssl.so:devel/libevent

@@ -3,6 +3,7 @@
 PORTNAME=		osrm-backend
 DISTVERSIONPREFIX=	v
 DISTVERSION=		5.22.0
+PORTREVISION=		1
 CATEGORIES=		www
 
 MAINTAINER=		freebsd@mosedal.net

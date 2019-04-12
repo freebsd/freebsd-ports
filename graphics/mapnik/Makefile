@@ -4,7 +4,7 @@
 PORTNAME=	mapnik
 PORTVERSION=	3.0.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://mapnik.s3.amazonaws.com/dist/v${PORTVERSION}/
 
@@ -18,6 +18,7 @@ COMMENT=	Free Toolkit For Developing Mapping Applications
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with boost 1.70, see bug 237016
 BROKEN_powerpc=		fails to install: runs out of virtual memory
 
 LIB_DEPENDS=	libicuuc.so:devel/icu \

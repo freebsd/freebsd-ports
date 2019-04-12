@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eiskaltdcpp
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	-daemon
 
