@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	state_machines-activerecord
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
