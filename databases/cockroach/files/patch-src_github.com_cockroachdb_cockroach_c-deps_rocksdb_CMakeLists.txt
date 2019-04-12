@@ -1,0 +1,11 @@
+--- src/github.com/cockroachdb/cockroach/c-deps/rocksdb/CMakeLists.txt.orig	2019-04-12 18:43:38 UTC
++++ src/github.com/cockroachdb/cockroach/c-deps/rocksdb/CMakeLists.txt
+@@ -209,7 +209,7 @@ if(HAVE_THREAD_LOCAL)
+   add_definitions(-DROCKSDB_SUPPORT_THREAD_LOCAL)
+ endif()
+ 
+-option(FAIL_ON_WARNINGS "Treat compile warnings as errors" ON)
++option(FAIL_ON_WARNINGS "Treat compile warnings as errors" OFF)
+ if(FAIL_ON_WARNINGS)
+   if(MSVC)
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX")
