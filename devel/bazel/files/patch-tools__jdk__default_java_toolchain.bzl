@@ -1,6 +1,6 @@
---- tools/jdk/default_java_toolchain.bzl.orig	1980-01-01 00:00:00.000000000 +0100
-+++ tools/jdk/default_java_toolchain.bzl	2018-10-30 00:09:06.904725000 +0100
-@@ -19,29 +19,7 @@
+--- tools/jdk/default_java_toolchain.bzl.orig	1980-01-01 00:00:00.000000000 +0000
++++ tools/jdk/default_java_toolchain.bzl	2019-03-04 15:02:00.395888000 +0000
+@@ -19,29 +19,6 @@
  ]
  
  JDK9_JVM_OPTS = [
@@ -19,20 +19,19 @@
 -    "--add-opens=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED",
 -
 -    # override the javac in the JDK.
--    "--patch-module=java.compiler=$(location @bazel_tools//third_party/java/jdk/langtools:java_compiler_jar)",
--    "--patch-module=jdk.compiler=$(location @bazel_tools//third_party/java/jdk/langtools:jdk_compiler_jar)",
+-    "--patch-module=java.compiler=$(location @bazel_tools//tools/jdk:java_compiler_jar)",
+-    "--patch-module=jdk.compiler=$(location @bazel_tools//tools/jdk:jdk_compiler_jar)",
 -
 -    # quiet warnings from com.google.protobuf.UnsafeUtil,
 -    # see: https://github.com/google/protobuf/issues/3781
 -    # and: https://github.com/bazelbuild/bazel/issues/5599
 -    "--add-opens=java.base/java.nio=ALL-UNNAMED",
 -    "--add-opens=java.base/java.lang=ALL-UNNAMED",
-+    "-Xbootclasspath/p:$(location @bazel_tools//third_party/java/jdk/langtools:javac_jar)",
  ]
  
  DEFAULT_JAVACOPTS = [
-@@ -74,7 +52,7 @@
-         "@bazel_tools//third_party/java/jdk/langtools:jdk_compiler_jar",
+@@ -74,7 +51,7 @@
+         "@bazel_tools//tools/jdk:jdk_compiler_jar",
      ],
      "javac_supports_workers": 1,
 -    "jvm_opts": JDK9_JVM_OPTS,
