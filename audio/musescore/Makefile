@@ -6,7 +6,6 @@ DISTVERSION=	3.0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${DISTVERSION}/
 DISTNAME=	MuseScore-${DISTVERSION}
-NO_WRKSUBDIR=	yes
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Free music composition & notation software
@@ -26,14 +25,18 @@ USE_QT=		core declarative gui widgets opengl concurrent designer help network \
 		scripttools svg sql printsupport testlib \
 		xml xmlpatterns \
 		buildtools_build linguisttools_build qmake_build uitools_build
+
+# Each release gets a subdir containing the distfiles for that release,
+# so hope that scanning the parent dir finds new ones.
+PORTSCOUT=	site:http://ftp.osuosl.org/pub/musescore/releases/
+NO_WRKSUBDIR=	yes
+DATADIR=	${PREFIX}/share/mscore-${PORTVERSION:R}
+
 ALL_TARGET=	lrelease manpages all
-INSTALLS_ICONS=	yes
 CMAKE_ARGS+=	-DUSE_SYSTEM_FREETYPE="ON" \
 		-DBUILD_PORTMIDI=OFF \
 		-DBUILD_PCH=OFF \
 		-DDOWNLOAD_SOUNDFONT=OFF
-
-DATADIR=	${PREFIX}/share/mscore-${PORTVERSION:R}
 
 # WebEngine is only available on i386/amd64; defaults to ON there.
 # If enabled on arches that don't have WebEngine, the build breaks.
