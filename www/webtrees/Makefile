@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	webtrees
-PORTVERSION=	1.7.9
+PORTVERSION=	1.7.13
 CATEGORIES=	www
-MASTER_SITES=	http://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
+MASTER_SITES=	http://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Online genealogy viewer
@@ -16,7 +16,7 @@ SHEBANG_FILES=	webtrees/vendor/ezyang/htmlpurifier/maintenance/*.php \
 		webtrees/vendor/ezyang/htmlpurifier/maintenance/*.sh \
 		webtrees/vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \
 		webtrees/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
-USE_PHP=	calendar dom filter gd pcre pdo_mysql session simplexml xml
+USE_PHP=	calendar dom filter gd json pcre pdo_mysql session simplexml xml
 NO_BUILD=	yes
 NO_ARCH=	yes
 
