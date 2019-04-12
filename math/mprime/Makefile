@@ -3,6 +3,7 @@
 
 PORTNAME=	mprime
 PORTVERSION=	29.4b7
+PORTREVISION=	1
 CATEGORIES=	math benchmarks net
 MASTER_SITES=	http://www.mersenne.org/ftp_root/gimps/ \
 		ftp://mersenne.org/gimps/
@@ -23,11 +24,13 @@ LIB_DEPENDS=	libcurl.so:ftp/curl					\
 		libgmp.so:math/gmp
 
 USES=		zip
+
 NO_WRKSUBDIR=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makebsd
 ALL_TARGET=	mprime
+LLD_UNSAFE=	yes
 
 SUB_FILES=	wrapper.sh
 
@@ -48,9 +51,9 @@ post-patch:
 
 pre-build:
 .if ${ARCH} == "amd64"
-	@${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${PATCH_WRKSRC}/gwnum -f makebsd64
+	@${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${PATCH_WRKSRC}/gwnum ${MAKE_FLAGS} makebsd64 ${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g}
 .elif ${ARCH} == "i386"
-	@${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${PATCH_WRKSRC}/gwnum -f makemsys
+	@${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${PATCH_WRKSRC}/gwnum ${MAKE_FLAGS} makemsys ${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g}
 .endif
 
 do-install:
