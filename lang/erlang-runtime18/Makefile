@@ -129,6 +129,9 @@ post-install-OPENSSL-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/ssl-*
 
 post-install-WX-off:
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/debugger-*
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/et-*
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/observer-*
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/wx-*
 
 post-stage:
