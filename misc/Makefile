@@ -271,6 +271,7 @@
     SUBDIR += openmvg
     SUBDIR += openr2
     SUBDIR += orange3
+    SUBDIR += orion
     SUBDIR += orville-write
     SUBDIR += osinfo-db
     SUBDIR += ossp-uuid
