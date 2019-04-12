@@ -1,0 +1,10 @@
+QML/C++-written desktop client for Twitch.tv
+
+Features:
+*  Login by twitch credentials
+*  Desktop notifications
+*  Integrated player
+*  Chat support
+*  Support for live streams and vods
+
+WWW: https://alamminsalo.github.io/orion/
