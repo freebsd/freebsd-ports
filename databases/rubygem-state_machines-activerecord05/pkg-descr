@@ -1,0 +1,4 @@
+The StateMachines Active Record 4.1+ integration adds support for database
+transactions, automatically saving the record, named scopes, validation errors.
+
+WWW: https://github.com/state-machines/state_machines-activerecord
