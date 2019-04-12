@@ -4,6 +4,7 @@ PORTNAME=	colobot
 DISTVERSIONPREFIX=	${PORTNAME}-gold-
 DISTVERSION=	0.1.12
 DISTVERSIONSUFFIX=	-alpha
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://colobot.info/files/music/:music
 DISTFILES=	colobot-music_ogg_0.1.12-alpha.tar.gz:music

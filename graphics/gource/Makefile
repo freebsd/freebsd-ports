@@ -3,7 +3,7 @@
 
 PORTNAME=	gource
 PORTVERSION=	0.47
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/acaudwell/Gource/releases/download/${PORTNAME}-${PORTVERSION}/
 

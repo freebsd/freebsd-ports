@@ -1,11 +1,11 @@
 Expose _Unwind_Backtrace in libcxxrt
 
---- boost/stacktrace/detail/collect_unwind.ipp.orig	2017-09-02 09:56:17 UTC
+--- boost/stacktrace/detail/collect_unwind.ipp.orig	2019-02-21 20:58:43 UTC
 +++ boost/stacktrace/detail/collect_unwind.ipp
-@@ -14,7 +14,18 @@
- 
- #include <boost/stacktrace/safe_dump_to.hpp>
- 
+@@ -25,7 +25,18 @@
+ #include <execinfo.h>
+ #include <algorithm>
+ #else
 +#ifndef _GNU_SOURCE
 +#define _GNU_SOURCE
 +#define _GNU_SOURCE_TEMPORARY
@@ -18,6 +18,6 @@ Expose _Unwind_Backtrace in libcxxrt
 +#if !defined(_URC_NO_REASON) && defined(__arm__) && !defined(__ARM_DWARF_EH__)
 +#define _URC_NO_REASON _URC_OK
 +#endif
+ #endif
  #include <cstdio>
  
- #if !defined(_GNU_SOURCE) && !defined(BOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED) && !defined(BOOST_WINDOWS)

@@ -2,7 +2,7 @@
 
 PORTNAME=	libcmis
 PORTVERSION=	0.5.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net devel
 MASTER_SITES=	https://dev-www.libreoffice.org/src/
 
