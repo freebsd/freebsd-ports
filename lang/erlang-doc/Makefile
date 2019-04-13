@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.erlang.org/download/:erlangorg			\
 		http://www.sics.se/~joe/thesis/:joe
 PKGNAMESUFFIX=  -doc
 DISTNAME=	otp_doc_html_${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BOOK_DISTFILES}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg ${BOOK_DISTFILES}
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
