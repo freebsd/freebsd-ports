@@ -1,4 +1,4 @@
---- src/filter.c.orig	2018-03-08 04:25:24 UTC
+--- src/filter.c.orig	2019-01-17 09:25:18 UTC
 +++ src/filter.c
 @@ -33,7 +33,10 @@
  
@@ -92,7 +92,7 @@
  				bandBmp.bits += band_line_count;
  			}
  
-@@ -880,7 +900,7 @@ EPS_INT32 print_spool_fnc(void* hParam, 
+@@ -880,7 +900,7 @@ EPS_INT32 print_spool_fnc(void* hParam, const EPS_UINT
  
  //	fwrite (pBuf, cbBuf, 1, outfp);
  
