@@ -56,7 +56,7 @@ CRYP_OPEN_CONFIGURE_ON=	--with-crypto-backend=openssl
 CONFIGURE_ARGS+=	--disable-gost
 .endif
 
-# openssl-1.1.1 (default after 1200080) doesn't  support GHOST (yet), punt for now. 
+# openssl-1.1.1 (default after 1200080) doesn't  support GHOST (yet), punt for now.
 .if ${OSVERSION}>=1200080
 CONFIGURE_ARGS+=	--disable-gost
 .endif
