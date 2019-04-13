@@ -3,6 +3,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	19.3.6.13
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
 PKGNAMESUFFIX=	-wx
@@ -28,18 +29,7 @@ WX_COMPS=	wx contrib
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 
-PLIST_SUB=	DEBUGGER_VERSION=${debugger_VSN} \
-		ET_VERSION=${et_VSN} \
-		OBSERVER_VERSION=${observer_VSN} \
-		WX_VERSION=${wx_VSN} \
-		CONFIGURE_TARGET=${CONFIGURE_TARGET}
-
-debugger_VSN=	1.8
-et_VSN=		1.6
-observer_VSN=	4.2.1
-wx_VSN=		1.8
-
-ERLANG_REL=	19.3
+WX_APPS=	wx debugger et observer
 
 CONFIGURE_ARGS+=--enable-threads --without-odbc --without-javac --with-wx-config=${WX_CONFIG}
 
@@ -48,7 +38,7 @@ pre-configure:
 
 do-build:
 .for app in wx debugger et observer
-	cd ${WRKSRC}/lib/${app} && /usr/bin/env ERL_LIBS=${WRKSRC}/lib ${GMAKE} ERL_TOP=${WRKSRC} TARGET=${CONFIGURE_TARGET}
+	cd ${WRKSRC}/lib/${app} && ${SETENV} ERL_LIBS=${WRKSRC}/lib ${GMAKE} ERL_TOP=${WRKSRC} TARGET=${CONFIGURE_TARGET}
 .endfor
 	${STRIP_CMD} ${WRKSRC}/lib/wx/priv/${CONFIGURE_TARGET}/erl_gl.so
 	${STRIP_CMD} ${WRKSRC}/lib/wx/priv/${CONFIGURE_TARGET}/wxe_driver.so
@@ -56,12 +46,12 @@ do-build:
 	${RMDIR} ${WRKSRC}/lib/wx/priv/${CONFIGURE_TARGET}
 
 do-install:
-.for app in wx debugger et observer
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${app}-${${app}_VSN}
+.for app in ${WX_APPS}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${app}-$$(${CUT} -w -f3 ${WRKSRC}/lib/${app}/vsn.mk)
 	${FIND} ${WRKSRC}/lib/${app} -type d -empty -delete
 .for dir in src include priv ebin
 	cd ${WRKSRC}/lib/${app} && if [ -d ${dir} ]; then \
-		${COPYTREE_SHARE} ${dir} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${app}-${${app}_VSN}; \
+		${COPYTREE_SHARE} ${dir} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${app}-$$(${CUT} -w -f3 vsn.mk); \
 	fi
 .endfor
 .endfor
