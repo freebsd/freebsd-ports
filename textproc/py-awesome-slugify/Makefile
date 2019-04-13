@@ -20,7 +20,7 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 TEST_TARGET=	do-test
-NOSETESTS=	nosetests
+NOSETESTS=	nosetests-${PYTHON_VER}
 
 do-test:
 	${NOSETESTS} ${STAGEDIR}${PYTHON_SITELIBDIR}/slugify
