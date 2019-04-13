@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aide
-PORTVERSION=	0.16
+PORTVERSION=	0.16.1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/aide/aide/releases/download/v${PORTVERSION}/
 
