@@ -42,6 +42,11 @@ include/node/node_version.h
 %%BUNDLED_SSL%%include/node/openssl/archs/VC-WIN32/no-asm/crypto/include/internal/dso_conf.h
 %%BUNDLED_SSL%%include/node/openssl/archs/VC-WIN32/no-asm/include/openssl/opensslconf.h
 %%BUNDLED_SSL%%include/node/openssl/archs/VC-WIN32/no-asm/include/progs.h
+%%BUNDLED_SSL%%include/node/openssl/archs/VC-WIN64-ARM/no-asm/crypto/buildinf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/VC-WIN64-ARM/no-asm/crypto/include/internal/bn_conf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/VC-WIN64-ARM/no-asm/crypto/include/internal/dso_conf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/VC-WIN64-ARM/no-asm/include/openssl/opensslconf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/VC-WIN64-ARM/no-asm/include/progs.h
 %%BUNDLED_SSL%%include/node/openssl/archs/VC-WIN64A/asm/crypto/buildinf.h
 %%BUNDLED_SSL%%include/node/openssl/archs/VC-WIN64A/asm/crypto/include/internal/bn_conf.h
 %%BUNDLED_SSL%%include/node/openssl/archs/VC-WIN64A/asm/crypto/include/internal/dso_conf.h
