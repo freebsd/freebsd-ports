@@ -17,9 +17,13 @@ LICENSE=	APACHE20
 BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
 USES=		autoreconf:build gmake ncurses perl5
-USE_GITHUB=	yes
-GH_PROJECT=	otp
+USE_GITHUB=	nodefault
+GH_ACCOUNT=	erlang:otp,corba
+GH_PROJECT=	otp:otp corba:corba
+GH_TAGNAME=	4.5.2:corba
 USE_PERL5=	build
+
+WRKSRC=		${WRKSRC_otp}
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
@@ -29,10 +33,11 @@ SUB_LIST=	ERLANG_LIB=${ERLANG_LIB}
 
 ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
 
-OPTIONS_DEFINE=	DIRTY DTRACE GS HIPE JAVA KQUEUE NATIVE ODBC OPENSSL SCTP THREADS WX
-OPTIONS_DEFAULT=DIRTY DTRACE HIPE KQUEUE OPENSSL SCTP THREADS
+OPTIONS_DEFINE=	CORBA DIRTY DTRACE GS HIPE JAVA KQUEUE NATIVE ODBC OPENSSL SCTP THREADS WX
+OPTIONS_DEFAULT=CORBA DIRTY DTRACE HIPE KQUEUE OPENSSL SCTP THREADS
 OPTIONS_EXCLUDE_powerpc64=	HIPE
 
+CORBA_DESC=	Enable Corba support
 DIRTY_DESC=	Enable Dirty schedulers
 GS_DESC=	Enable GS application (deprecated)
 HIPE_DESC=	Build native HiPE compiler
@@ -111,6 +116,15 @@ post-configure-ODBC-on:
 
 pre-build-NATIVE-on:
 	@cd ${WRKSRC} && ${MAKE_CMD} clean
+
+post-build-CORBA-on:
+	cd ${WRKSRC_corba} \
+		&& ${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} ${MAKE_CMD}
+
+post-install-CORBA-on:
+	cd ${WRKSRC_corba} \
+		&& ${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
+			${MAKE_CMD} release RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib
 
 post-install-GS-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/gs-*
