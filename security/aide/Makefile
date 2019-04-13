@@ -4,8 +4,7 @@
 PORTNAME=	aide
 PORTVERSION=	0.16
 CATEGORIES=	security
-MASTER_SITES=	SF \
-		http://www.cs.tut.fi/~rammer/
+MASTER_SITES=	https://github.com/aide/aide/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Replacement and extension for Tripwire
