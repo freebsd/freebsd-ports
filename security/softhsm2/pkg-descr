@@ -4,5 +4,4 @@ without having a Hardware Security Module. It is being developed
 as a part of the OpenDNSSEC project. SoftHSM Version 2 is using
 openssl for its cryptographic operations.
 
-
-WWW: http://www.opendnssec.org/
+WWW: https://www.opendnssec.org/
