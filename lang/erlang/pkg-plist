@@ -9,4 +9,4 @@ bin/run_erl
 bin/snmpc
 bin/to_erl
 bin/typer
-%%MANPAGES%%etc/man.d/erlang.conf
+%%FOP%%etc/man.d/erlang.conf
