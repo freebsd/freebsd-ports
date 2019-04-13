@@ -394,6 +394,7 @@
     SUBDIR += jpgtn
     SUBDIR += jslice
     SUBDIR += kamera
+    SUBDIR += kamerka
     SUBDIR += kcolorchooser
     SUBDIR += kdegraphics
     SUBDIR += kdegraphics-mobipocket
