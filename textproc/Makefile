@@ -1550,6 +1550,7 @@
     SUBDIR += rubygem-elasticsearch-dsl
     SUBDIR += rubygem-elasticsearch-model
     SUBDIR += rubygem-elasticsearch-persistence
+    SUBDIR += rubygem-elasticsearch-rails
     SUBDIR += rubygem-elasticsearch-transport
     SUBDIR += rubygem-elasticsearch-xpack
     SUBDIR += rubygem-emot
