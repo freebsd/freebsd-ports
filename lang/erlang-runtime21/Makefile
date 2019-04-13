@@ -33,13 +33,12 @@ SUB_LIST=	ERLANG_LIB=${ERLANG_LIB}
 
 ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
 
-OPTIONS_DEFINE=	CORBA DIRTY DTRACE GS HIPE JAVA KQUEUE NATIVE ODBC OPENSSL SCTP THREADS WX
+OPTIONS_DEFINE=	CORBA DIRTY DTRACE HIPE JAVA KQUEUE NATIVE ODBC OPENSSL SCTP THREADS WX
 OPTIONS_DEFAULT=CORBA DIRTY DTRACE HIPE KQUEUE OPENSSL SCTP THREADS
 OPTIONS_EXCLUDE_powerpc64=	HIPE
 
 CORBA_DESC=	Enable Corba support
 DIRTY_DESC=	Enable Dirty schedulers
-GS_DESC=	Enable GS application (deprecated)
 HIPE_DESC=	Build native HiPE compiler
 KQUEUE_DESC=	Enable Kernel Poll (kqueue) support
 NATIVE_DESC=	Enable native libraries
@@ -71,7 +70,6 @@ DIRTY_CONFIGURE_ENABLE=	dirty-schedulers
 DTRACE_CFLAGS=		-fno-omit-frame-pointer
 DTRACE_CONFIGURE_WITH=	dynamic-trace=dtrace
 DTRACE_VARS=		STRIP=""
-GS_USES=		tk:run
 HIPE_CONFIGURE_ENABLE=	hipe
 JAVA_CONFIGURE_ENV=	ac_cv_prog_JAVAC="${JAVAC}"
 JAVA_CONFIGURE_WITH=	javac
@@ -125,9 +123,6 @@ post-install-CORBA-on:
 	cd ${WRKSRC_corba} \
 		&& ${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
 			${MAKE_CMD} release RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/lib
-
-post-install-GS-off:
-	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/gs-*
 
 post-install-JAVA-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/jinterface-*
