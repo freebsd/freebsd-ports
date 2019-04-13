@@ -1,5 +1,12 @@
-AIDE is Advanced Intrusion Detection Environment.
-This piece of software was written as a replacement and extension
-for Tripwire.
+AIDE is Advanced Intrusion Detection Environment.  AIDE
+(Advanced Intrusion Detection Environment, [eyd]) is a file and
+directory integrity checker.
+
+It creates a database from the regular expression rules that it finds
+from the config file(s). Once this database is initialized it can be
+used to verify the integrity of the files. It has several message
+digest algorithms (see below) that are used to check the integrity of
+the file. All of the usual file attributes can also be checked for
+inconsistencies. It can read databases from older or newer versions.
 
 WWW: https://aide.github.io/

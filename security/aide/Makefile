@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	https://github.com/aide/aide/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	Replacement and extension for Tripwire
+COMMENT=	A file and directory integrity checker
 
 LIB_DEPENDS=	libmhash.so:security/mhash \
 		libpcre.so:devel/pcre
