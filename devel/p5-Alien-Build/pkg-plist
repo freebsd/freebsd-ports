@@ -8,6 +8,7 @@
 %%SITE_PERL%%/Alien/Build/Interpolate.pm
 %%SITE_PERL%%/Alien/Build/Interpolate/Default.pm
 %%SITE_PERL%%/Alien/Build/MM.pm
+%%SITE_PERL%%/Alien/Build/Manual/Alien.pod
 %%SITE_PERL%%/Alien/Build/Manual/AlienAuthor.pod
 %%SITE_PERL%%/Alien/Build/Manual/AlienUser.pod
 %%SITE_PERL%%/Alien/Build/Manual/Contributing.pod
@@ -82,6 +83,7 @@
 %%PERL5_MAN3%%/Alien::Build::Interpolate.3.gz
 %%PERL5_MAN3%%/Alien::Build::Interpolate::Default.3.gz
 %%PERL5_MAN3%%/Alien::Build::MM.3.gz
+%%PERL5_MAN3%%/Alien::Build::Manual::Alien.3.gz
 %%PERL5_MAN3%%/Alien::Build::Manual::AlienAuthor.3.gz
 %%PERL5_MAN3%%/Alien::Build::Manual::AlienUser.3.gz
 %%PERL5_MAN3%%/Alien::Build::Manual::Contributing.3.gz
