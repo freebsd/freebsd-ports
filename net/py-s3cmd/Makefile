@@ -3,6 +3,7 @@
 
 PORTNAME=	s3cmd
 DISTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	SF/s3tools/${PORTNAME}/${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR}
 
-USES=		python:2.7
-USE_PYTHON=	autoplist distutils
+USES=		python
+USE_PYTHON=	autoplist distutils flavors
+
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
