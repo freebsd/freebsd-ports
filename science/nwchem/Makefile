@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nwchem
-PORTVERSION=	6.8.1.20190403
+PORTVERSION=	6.8.1.20190412
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ SHEBANG_FILES=	../contrib/distro-tools/build_* ../contrib/add_*
 SHEBANG_GLOB=	*.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	nwchemgit
-GH_TAGNAME=	master-oct22_2018-192-g3d44d2993
+GH_TAGNAME=	master-oct22_2018-212-g87fcaa997
 USE_PERL5=	build
 
 MAKEFILE=	GNUmakefile
