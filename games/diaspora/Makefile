@@ -31,7 +31,7 @@ LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libvorbisfile.so:audio/libvorbis \
 		libtheora.so:multimedia/libtheora
 
-USES=		autoreconf jpeg lua:51 openal pkgconfig tar:lzma
+USES=		autoreconf gl jpeg lua:51 openal pkgconfig sdl tar:lzma
 USE_CXXSTD=	gnu++98
 USE_GL=		gl glu
 USE_SDL=	sdl
@@ -71,6 +71,10 @@ WXLAUNCHER_VARS=	PORTDATA+="resources *.ini *.png *.bmp"
 POST_PLIST+=	build-plist-empty
 
 BROKEN_aarch64=		Fails to compile: cast from pointer to smaller type loses information
+
+.if exists(/usr/lib/libstdc++.so)
+CXXFLAGS+=	-fpermissive
+.endif
 
 post-extract: .SILENT
 .for v in 1.1 1.1.1
