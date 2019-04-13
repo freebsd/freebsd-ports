@@ -2,6 +2,7 @@
 
 PORTNAME=	kamerka
 DISTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org

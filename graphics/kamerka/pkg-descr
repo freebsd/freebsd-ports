@@ -1,5 +1,5 @@
-This DICOM ToolKit (DCMTK) package consists of source code, documentation
-and installation instructions for a set of software libraries and
-applications implementing part of the DICOM/MEDICOM Standard.
+Take photos using your webcam and shiny animated QML interface.
 
-WWW: https://dcmtk.org
+It provides a very nice user interface to use your webcam to take photos.
+
+WWW: https://dos1.github.io/kamerka/
