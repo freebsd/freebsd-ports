@@ -16,6 +16,8 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 REINPLACE_ARGS=	-i ''
 
 # For errors like
