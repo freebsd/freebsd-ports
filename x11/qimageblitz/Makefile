@@ -5,13 +5,11 @@ PORTNAME=	qimageblitz
 PORTVERSION=	0.1.0 # a made-up version also used in some linux distros, otherwise we need to add PORTEPOCH
 CATEGORIES=	x11
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical effects and filters library for Qt5
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-FETCH_DEPENDS=	svn:devel/subversion
 
 USES=		cmake qt:5
 USE_LDCONFIG=	yes
@@ -25,7 +23,7 @@ do-fetch:
 	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}" ]; then \
 	  ${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
 	  cd ${DISTDIR}/${DIST_SUBDIR} && \
-	    svn co -r ${SVN_REVISION} ${SVN_URL} ${PORTNAME}-${DISTVERSIONFULL} && \
+	    svnlite co -r ${SVN_REVISION} ${SVN_URL} ${PORTNAME}-${DISTVERSIONFULL} && \
 	    (cd ${PORTNAME}-${DISTVERSIONFULL} && ${RM} -r .svn) && \
 	    ${FIND} ${PORTNAME}-${DISTVERSIONFULL} -and -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
 	    ${FIND} ${PORTNAME}-${DISTVERSIONFULL} -print0 | LC_ALL=C ${SORT} -z | \
