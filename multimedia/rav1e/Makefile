@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190410
-PORTREVISION=	1
+PORTVERSION=	s20190412
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,15 +10,13 @@ COMMENT=	Fast and safe AV1 encoder
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	https://github.com/xiph/rav1e/issues/1179
-
 BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_amd64=	nasm:devel/nasm
 
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	f791698
+GH_TAGNAME=	bda810b
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.6.10 \
@@ -100,7 +97,7 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		regex-1.1.5 \
 		regex-syntax-0.5.6 \
 		regex-syntax-0.6.6 \
-		rustc-demangle-0.1.13 \
+		rustc-demangle-0.1.14 \
 		ryu-0.2.7 \
 		same-file-1.0.4 \
 		scan_fmt-0.1.3 \
