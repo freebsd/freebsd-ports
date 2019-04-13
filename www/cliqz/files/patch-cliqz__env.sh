@@ -1,3 +1,6 @@
+Commented out the various wget(1) to prevent http traffic during build
+phase.
+
 --- cliqz_env.sh.orig	2018-11-16 13:55:29 UTC
 +++ cliqz_env.sh
 @@ -78,9 +78,9 @@ export S3_BUCKET=repository.cliqz.com
