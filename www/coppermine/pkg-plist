@@ -570,6 +570,7 @@
 %%WWWDIR%%/images/icons/web.png
 %%WWWDIR%%/images/icons/zip.png
 %%WWWDIR%%/images/image.gif
+%%WWWDIR%%/images/indeterm.gif
 %%WWWDIR%%/images/install/combine_b.gif
 %%WWWDIR%%/images/install/combined.jpg
 %%WWWDIR%%/images/install/current.gif
@@ -876,6 +877,7 @@
 %%WWWDIR%%/include/sql_parse.php
 %%WWWDIR%%/include/stats.inc.php
 %%WWWDIR%%/include/themes.inc.php
+%%WWWDIR%%/include/tool.class.php
 %%WWWDIR%%/include/transliteration.inc.php
 %%WWWDIR%%/include/transliteration/x00.php
 %%WWWDIR%%/include/transliteration/x01.php
@@ -1382,6 +1384,18 @@
 %%WWWDIR%%/themes/water_drop/template.html
 %%WWWDIR%%/themes/water_drop/theme.php
 %%WWWDIR%%/thumbnails.php
+%%WWWDIR%%/tools/change_values/change_values.php
+%%WWWDIR%%/tools/del_back/del_back.php
+%%WWWDIR%%/tools/del_norm/del_norm.php
+%%WWWDIR%%/tools/del_old/del_old.php
+%%WWWDIR%%/tools/del_orig/del_orig.php
+%%WWWDIR%%/tools/del_orphans/del_orphans.php
+%%WWWDIR%%/tools/del_orphans/lang/english.php
+%%WWWDIR%%/tools/file2title/file2title.php
+%%WWWDIR%%/tools/keyw_conv/keyw_conv.php
+%%WWWDIR%%/tools/refresh/refresh.php
+%%WWWDIR%%/tools/reset_views/reset_views.php
+%%WWWDIR%%/tools/upd_thumbs/upd_thumbs.php
 %%WWWDIR%%/uniload.php
 %%WWWDIR%%/upchunk.php
 %%WWWDIR%%/update.php
@@ -1389,6 +1403,7 @@
 %%WWWDIR%%/upgrader.php
 %%WWWDIR%%/upload.php
 %%WWWDIR%%/usermgr.php
+%%WWWDIR%%/util.ajax.php
 %%WWWDIR%%/util.php
 %%WWWDIR%%/versioncheck.php
 %%WWWDIR%%/viewlog.php
