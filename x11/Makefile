@@ -267,6 +267,7 @@
     SUBDIR += py-xcffib
     SUBDIR += py-xdot
     SUBDIR += py-xdot06
+    SUBDIR += qimageblitz
     SUBDIR += qt5-qev
     SUBDIR += qt5-x11extras
     SUBDIR += qterminal
