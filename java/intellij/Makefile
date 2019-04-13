@@ -5,11 +5,11 @@
 # Vadim Zhukov <zhuk@openbsd.org>
 
 PORTNAME=	intellij
-PORTVERSION=	2018.3.5
+PORTVERSION=	2019.1
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/idea/ \
 		http://download.jetbrains.com/idea/
-DISTNAME=	ideaIC-${PORTVERSION}-no-jdk
+DISTNAME=	ideaIC-${PORTVERSION}-no-jbr
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	IntelliJ IDEA Community Edition
@@ -28,7 +28,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 INSTALL_TARGET=	install-strip
 
-WRKSRC=		${WRKDIR}/idea-IC-183.5912.21
+WRKSRC=		${WRKDIR}/idea-IC-191.6183.87
 
 .include "common.mk"
 
