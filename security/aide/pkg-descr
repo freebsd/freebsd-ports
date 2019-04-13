@@ -1,5 +1,4 @@
-AIDE is Advanced Intrusion Detection Environment.  AIDE
-(Advanced Intrusion Detection Environment, [eyd]) is a file and
+AIDE is Advanced Intrusion Detection Environment, a file and
 directory integrity checker.
 
 It creates a database from the regular expression rules that it finds
