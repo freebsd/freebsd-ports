@@ -1,0 +1,4 @@
+Elasticsearch::Persistence is the persistence layer for Ruby domain objects in
+Elasticsearch, using the Repository pattern.
+
+WWW: https://github.com/elastic/elasticsearch-rails/tree/master/elasticsearch-persistence
