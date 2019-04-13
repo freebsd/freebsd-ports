@@ -12,12 +12,11 @@ COMMENT=	3D photo-realistic sky renderer (planetarium)
 
 LICENSE=	GPLv2+
 
-CONFLICTS_INSTALL=	${PORTNAME}-qt4-0.12.*
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	Stellarium
 
-USES=		cmake desktop-file-utils gettext qt:5 shared-mime-info
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
+		qt:5 shared-mime-info
 USE_QT=		qmake_build buildtools_build linguisttools_build \
 		concurrent core gui network opengl printsupport widgets
 
@@ -77,7 +76,8 @@ post-extract-DOCS-on:
 		${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's, -Wno-unused-result,,' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/<sys\/time\.h>/s,^//,,' \
+		${WRKSRC}/src/external/libindi/libs/indibase/indilogger.h
 
 post-install-MORE_STARS-on:
 	${INSTALL_DATA} ${DISTDIR}/stars_4_1v0_2.cat \
