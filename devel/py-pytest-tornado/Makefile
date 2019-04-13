@@ -12,7 +12,7 @@ COMMENT=	Py.test plugin providing fixtures and markers for tornado
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.6:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tornado>=4:www/py-tornado@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tornado>=4.1:www/py-tornado@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
