@@ -12,6 +12,7 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Formats for basic TeX engines and the 'latex' command
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_INSTALL=	yes
 
