@@ -27,4 +27,8 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+.if ${FLAVOR:Upy36:Mpy3*}
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-setup.py
+.endif
+
 .include <bsd.port.mk>
