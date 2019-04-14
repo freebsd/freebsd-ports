@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada95 bindings for ncurses
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/README
 
 USES=		ada gmake pkgconfig ncurses:port tar:tgz
 GNU_CONFIGURE=	yes
