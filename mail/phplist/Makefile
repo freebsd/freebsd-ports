@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	phplist
-PORTVERSION=	3.3.5
+PORTVERSION=	3.4.0
 CATEGORIES=	mail www
 MASTER_SITES=	SF
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Full-featured open-source newsletter manager
@@ -14,14 +15,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
 
-USES=		cpe tar:tgz php:web
+USES=		cpe tar:tgz php:web,flavors
 USE_PHP=	hash iconv imap mysqli pcre session xml zlib
 NO_BUILD=	yes
 NO_ARCH=	yes
 
 PEARDIR?=	${LOCALBASE}/share/pear
 
-PORTDOCS=	CONTRIBUTING.md COPYING INSTALL PEOPLE README.md TESTING.md TODO UPGRADE VERSION
+PORTDOCS=	CONTRIBUTING.md COPYING INSTALL PEOPLE README.md TODO UPGRADE VERSION
 
 OPTIONS_DEFINE=	DOCS
 SUB_FILES=	phplist
