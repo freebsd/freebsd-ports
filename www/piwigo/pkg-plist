@@ -980,6 +980,7 @@
 %%WWWDIR%%/language/en_GB/admin.lang.php
 %%WWWDIR%%/language/en_GB/common.lang.php
 %%WWWDIR%%/language/en_GB/en_GB.jpg
+%%WWWDIR%%/language/en_GB/help/quick_search.html
 %%WWWDIR%%/language/en_GB/index.php
 %%WWWDIR%%/language/en_GB/install.lang.php
 %%WWWDIR%%/language/en_GB/iso.txt
@@ -1627,6 +1628,7 @@
 %%WWWDIR%%/language/ro_RO/about.html
 %%WWWDIR%%/language/ro_RO/admin.lang.php
 %%WWWDIR%%/language/ro_RO/common.lang.php
+%%WWWDIR%%/language/ro_RO/help/cat_modify.html
 %%WWWDIR%%/language/ro_RO/help/cat_move.html
 %%WWWDIR%%/language/ro_RO/help/cat_options.html
 %%WWWDIR%%/language/ro_RO/help/help_add_photos.html
@@ -1711,6 +1713,7 @@
 %%WWWDIR%%/language/sl_SI/about.html
 %%WWWDIR%%/language/sl_SI/admin.lang.php
 %%WWWDIR%%/language/sl_SI/common.lang.php
+%%WWWDIR%%/language/sl_SI/help/cat_modify.html
 %%WWWDIR%%/language/sl_SI/help/cat_move.html
 %%WWWDIR%%/language/sl_SI/help/cat_options.html
 %%WWWDIR%%/language/sl_SI/help/cat_perm.html
@@ -1958,6 +1961,7 @@
 %%WWWDIR%%/plugins/AdminTools/language/el_GR/description.txt
 %%WWWDIR%%/plugins/AdminTools/language/el_GR/index.php
 %%WWWDIR%%/plugins/AdminTools/language/el_GR/plugin.lang.php
+%%WWWDIR%%/plugins/AdminTools/language/en_GB/description.txt
 %%WWWDIR%%/plugins/AdminTools/language/en_GB/plugin.lang.php
 %%WWWDIR%%/plugins/AdminTools/language/en_UK/description.txt
 %%WWWDIR%%/plugins/AdminTools/language/en_UK/index.php
@@ -2336,7 +2340,12 @@
 %%WWWDIR%%/plugins/TakeATour/language/el_GR/tour_2_9_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/el_GR/tour_first_contact.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/el_GR/tour_privacy.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/en_GB/description.txt
+%%WWWDIR%%/plugins/TakeATour/language/en_GB/plugin.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/en_GB/tour_2_7_0.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/en_GB/tour_2_9_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/en_GB/tour_first_contact.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/en_GB/tour_privacy.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/en_UK/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/en_UK/index.php
 %%WWWDIR%%/plugins/TakeATour/language/en_UK/plugin.lang.php
@@ -2375,6 +2384,8 @@
 %%WWWDIR%%/plugins/TakeATour/language/fr_CA/index.php
 %%WWWDIR%%/plugins/TakeATour/language/fr_CA/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/fr_CA/tour_2_7_0.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/fr_CA/tour_2_8_0.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/fr_CA/tour_2_9_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/fr_FR/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/fr_FR/index.php
 %%WWWDIR%%/plugins/TakeATour/language/fr_FR/plugin.lang.php
@@ -2484,6 +2495,7 @@
 %%WWWDIR%%/plugins/TakeATour/language/sr_RS/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/sr_RS/tour_2_7_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/sr_RS/tour_2_8_0.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/sr_RS/tour_2_9_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/sv_SE/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/sv_SE/index.php
 %%WWWDIR%%/plugins/TakeATour/language/sv_SE/plugin.lang.php
@@ -2521,6 +2533,7 @@
 %%WWWDIR%%/plugins/TakeATour/language/zh_CN/tour_2_9_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/zh_CN/tour_first_contact.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/zh_CN/tour_privacy.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/zh_HK/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/zh_HK/tour_2_8_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/zh_HK/tour_2_9_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/zh_TW/index.php
