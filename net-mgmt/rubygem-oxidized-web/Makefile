@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oxidized-web
-PORTVERSION=	0.9.3
+PORTVERSION=	0.13.1
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -11,17 +11,21 @@ COMMENT=	Web user interface and RESTful API for rubygems-oxidized
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-emk-sinatra-url-for>=0.2:www/rubygem-emk-sinatra-url-for \
-		rubygem-haml4>=4.0:www/rubygem-haml4 \
+RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.5:textproc/rubygem-charlock_holmes \
+		rubygem-emk-sinatra-url-for>=0.2:www/rubygem-emk-sinatra-url-for \
+		rubygem-haml>=5.0:www/rubygem-haml \
 		rubygem-htmlentities>=4.3:textproc/rubygem-htmlentities \
-		rubygem-oxidized>=0.21.0:net-mgmt/rubygem-oxidized \
-		rubygem-puma>=3:www/rubygem-puma \
+		rubygem-json>=1.7.0:devel/rubygem-json \
+		rubygem-oxidized>=0.26:net-mgmt/rubygem-oxidized \
+		rubygem-puma>=3.11.4:www/rubygem-puma \
+		rubygem-rack-test>=0.7.0:www/rubygem-rack-test \
 		rubygem-sass>=3.3:textproc/rubygem-sass \
 		rubygem-sinatra1>=1.4.6:www/rubygem-sinatra1 \
 		rubygem-sinatra-contrib1>=1.4.6:www/rubygem-sinatra-contrib1
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
