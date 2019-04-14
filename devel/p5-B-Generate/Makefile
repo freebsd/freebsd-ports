@@ -11,6 +11,8 @@ COMMENT=	Create your own Perl op trees
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE_ART10=	${WRKSRC}/Artistic
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
 USES=		perl5
 USE_PERL5=	configure
