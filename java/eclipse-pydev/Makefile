@@ -3,7 +3,7 @@
 
 PORTNAME=	pydev
 PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/PyDev%20${PORTVERSION}/
 PKGNAMEPREFIX=	eclipse-
@@ -12,13 +12,11 @@ DISTNAME=	PyDev%20${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Eclipse plugin for Python and Jython development
 
-BROKEN=		after java/eclipse update
-
 LICENSE=	EPL
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:java/eclipse
 
-BUNDLES_INFO=	${PREFIX}/lib/eclipse/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info
+BUNDLES_INFO=	${PREFIX}/share/eclipse/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info
 
 JYTHON_DESC=	Use Jython as Python interpreter
 
@@ -50,11 +48,9 @@ pre-install:
 	${PYTHON_CMD} -O -m compileall -x javashell.py -f ${WRKSRC}
 
 add-plist-post:
-	@${ECHO_CMD} "@exec ${CAT} ${PYDEV_BUNDLES_INFO} >> ${BUNDLES_INFO}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${SED} -i '' -E '/^((org)|(com))\.python\.pydev/d' %D/lib/eclipse/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info" >> ${TMPPLIST}
+	${ECHO_CMD} "@exec ${CAT} ${PYDEV_BUNDLES_INFO} >> ${BUNDLES_INFO}" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${SED} -i '' -E '/^((org)|(com))\.python\.pydev/d' %D/share/eclipse/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info" >> ${TMPPLIST}
 
-# do not include, file went away after java/eclipse update
-# mizhka@gmail.com is working on the update
-# .include "${PORTSDIR}/java/eclipse/Makefile.plugins"
+.include "${PORTSDIR}/java/eclipse/Makefile.plugins"
 
 .include <bsd.port.mk>
