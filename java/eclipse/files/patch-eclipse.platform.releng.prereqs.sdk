@@ -1,0 +1,12 @@
+diff -ru eclipse.platform.releng.prereqs.sdk/eclipse-sdk-prereqs.target eclipse.platform.releng.prereqs.sdk/eclipse-sdk-prereqs.target
+--- eclipse.platform.releng.prereqs.sdk/eclipse-sdk-prereqs.target	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.releng.prereqs.sdk/eclipse-sdk-prereqs.target	0000-00-00 00:00:00.000000000 +0000
+@@ -167,7 +167,7 @@
+       <unit id="org.eclipse.emf.edit" version="2.14.0.v20180823-0456"/>
+       <unit id="org.eclipse.emf.databinding" version="1.5.0.v20180706-1146"/>
+       <unit id="org.eclipse.emf.databinding.edit" version="1.5.0.v20180823-0456"/>
+-      <repository location="http://download.eclipse.org/modeling/emf/emf/builds/milestone/S201903030654/"/>
++      <repository location="http://download.eclipse.org/modeling/emf/emf/builds/release/2.17/"/>
+     </location>
+ 
+     <location includeAllPlatforms="true" includeMode="slicer" type="InstallableUnit">

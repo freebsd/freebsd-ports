@@ -1,0 +1,24 @@
+diff -ru eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/InternalPlatform.java eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/InternalPlatform.java
+--- eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/InternalPlatform.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/InternalPlatform.java	0000-00-00 00:00:00.000000000 +0000
+@@ -59,7 +59,7 @@
+ 	//XXX This is not synchronized
+ 	private Map<Bundle,Log> logs = new HashMap<>(5);
+ 
+-	private static final String[] OS_LIST = { Platform.OS_LINUX, Platform.OS_MACOSX, Platform.OS_WIN32 };
++	private static final String[] OS_LIST = { Platform.OS_FREEBSD, Platform.OS_LINUX, Platform.OS_MACOSX, Platform.OS_WIN32 };
+ 	private String password = ""; //$NON-NLS-1$
+ 	private static final String PASSWORD = "-password"; //$NON-NLS-1$
+ 
+diff -ru eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/runtime/Platform.java eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/runtime/Platform.java
+--- eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/runtime/Platform.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/runtime/Platform.java	0000-00-00 00:00:00.000000000 +0000
+@@ -207,6 +207,8 @@
+ 	 */
+ 	public static final String OS_LINUX = "linux";//$NON-NLS-1$
+ 
++	public static final String OS_FREEBSD = "freebsd";//$NON-NLS-1$
++
+ 	/**
+ 	 * Constant string (value "aix") indicating the platform is running on an
+ 	 * AIX-based operating system.

@@ -1,0 +1,193 @@
+diff -ru eclipse.platform.ui/bundles/org.eclipse.e4.ui.swt.gtk/pom.xml eclipse.platform.ui/bundles/org.eclipse.e4.ui.swt.gtk/pom.xml
+--- eclipse.platform.ui/bundles/org.eclipse.e4.ui.swt.gtk/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.ui/bundles/org.eclipse.e4.ui.swt.gtk/pom.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -32,9 +32,9 @@
+           <resolver>p2</resolver>
+           <environments>
+             <environment>
+-              <os>linux</os>
++              <os>freebsd</os>
+               <ws>gtk</ws>
+-              <arch>x86_64</arch>
++              <arch>amd64</arch>
+             </environment>
+           </environments>
+         </configuration>
+diff -ru eclipse.platform.ui/bundles/org.eclipse.ui.browser/plugin.xml eclipse.platform.ui/bundles/org.eclipse.ui.browser/plugin.xml
+--- eclipse.platform.ui/bundles/org.eclipse.ui.browser/plugin.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.ui/bundles/org.eclipse.ui.browser/plugin.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -94,7 +94,7 @@
+       <browser
+          id="org.eclipse.ui.browser.firefox"
+          name="%browserFirefox"
+-         os="linux,aix,hpux,solaris"
++         os="freebsd,linux,aix,hpux,solaris"
+          executable="firefox"
+          factoryclass="org.eclipse.ui.internal.browser.browsers.MozillaFactory">
+          <location>
+@@ -104,28 +104,28 @@
+       <browser
+          id="org.eclipse.ui.browser.chrome"
+          name="%browserChrome"
+-         os="linux,aix,hpux,solaris"
++         os="freebsd,linux,aix,hpux,solaris"
+          executable="google-chrome">
+          <location>usr/bin/google-chrome</location>
+       </browser>
+       <browser
+          id="org.eclipse.ui.browser.chromium"
+          name="%browserChromium"
+-         os="linux"
++         os="freebsd,linux"
+          executable="chromium-browser">
+          <location>usr/bin/chromium-browser</location>
+       </browser>
+       <browser
+          id="org.eclipse.ui.browser.konqueror"
+          name="%browserKonqueror"
+-         os="linux,aix,hpux,solaris"
++         os="freebsd,linux,aix,hpux,solaris"
+          executable="konqueror">
+          <location>usr/bin/konqueror</location>
+       </browser>
+       <browser
+          id="org.eclipse.ui.browser.epiphany"
+          name="%browserEpiphany"
+-         os="linux"
++         os="freebsd,linux"
+          executable="epiphany">
+          <location>
+          	usr/bin/epiphany
+diff -ru eclipse.platform.ui/bundles/org.eclipse.ui.forms/src/org/eclipse/ui/internal/forms/widgets/TitleRegion.java eclipse.platform.ui/bundles/org.eclipse.ui.forms/src/org/eclipse/ui/internal/forms/widgets/TitleRegion.java
+--- eclipse.platform.ui/bundles/org.eclipse.ui.forms/src/org/eclipse/ui/internal/forms/widgets/TitleRegion.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.ui/bundles/org.eclipse.ui.forms/src/org/eclipse/ui/internal/forms/widgets/TitleRegion.java	0000-00-00 00:00:00.000000000 +0000
+@@ -206,7 +206,8 @@
+ 				if (titleLabel.getVisible()) {
+ 					int tw = width - HMARGIN * 2 - SPACING * 2;
+ 					String os = System.getProperty("os.name"); //$NON-NLS-1$
+-					if (Constants.OS_LINUX.equalsIgnoreCase(os)) {
++					if (Constants.OS_LINUX.equalsIgnoreCase(os) ||
++						Constants.OS_FREEBSD.equalsIgnoreCase(os)) {
+ 						tw += 1; // See Bug 342610
+ 					}
+ 					if (bsize != null)
+@@ -543,4 +544,4 @@
+ 		target.setTransfer(transferTypes);
+ 		target.addDropListener(listener);
+ 	}
+-}
+\ No newline at end of file
++}
+diff -ru eclipse.platform.ui/bundles/org.eclipse.ui.themes/plugin.xml eclipse.platform.ui/bundles/org.eclipse.ui.themes/plugin.xml
+--- eclipse.platform.ui/bundles/org.eclipse.ui.themes/plugin.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.ui/bundles/org.eclipse.ui.themes/plugin.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -12,6 +12,12 @@
+         basestylesheeturi="css/e4-dark.css"
+         id="org.eclipse.e4.ui.css.theme.e4_dark"
+         label="%theme.dark"
++        os="freebsd">
++    </theme>
++    <theme
++        basestylesheeturi="css/e4-dark.css"
++        id="org.eclipse.e4.ui.css.theme.e4_dark"
++        label="%theme.dark"
+         os="linux">
+     </theme>
+     <theme
+@@ -34,6 +40,12 @@
+         os="macosx"
+         os_version="10.14">
+     </theme>
++      <theme
++            basestylesheeturi="css/e4_default_gtk.css"
++            id="org.eclipse.e4.ui.css.theme.e4_default"
++            label="%theme.gtk"
++            os="freebsd">
++      </theme>
+       <theme
+             basestylesheeturi="css/e4_default_gtk.css"
+             id="org.eclipse.e4.ui.css.theme.e4_default"
+diff -ru eclipse.platform.ui/bundles/org.eclipse.urischeme/src/org/eclipse/urischeme/IOperatingSystemRegistration.java eclipse.platform.ui/bundles/org.eclipse.urischeme/src/org/eclipse/urischeme/IOperatingSystemRegistration.java
+--- eclipse.platform.ui/bundles/org.eclipse.urischeme/src/org/eclipse/urischeme/IOperatingSystemRegistration.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.ui/bundles/org.eclipse.urischeme/src/org/eclipse/urischeme/IOperatingSystemRegistration.java	0000-00-00 00:00:00.000000000 +0000
+@@ -33,6 +33,8 @@
+ 	 * @return an instance of IOperatingSystemRegistration
+ 	 */
+ 	static IOperatingSystemRegistration getInstance() {
++		if (Platform.OS_FREEBSD.equals(Platform.getOS()))
++			return new RegistrationLinux();
+ 		if (Platform.OS_MACOSX.equals(Platform.getOS())) {
+ 			return new RegistrationMacOsX();
+ 		} else if (Platform.OS_LINUX.equals(Platform.getOS())) {
+diff -ru eclipse.platform.ui/features/org.eclipse.e4.rcp/feature.xml eclipse.platform.ui/features/org.eclipse.e4.rcp/feature.xml
+--- eclipse.platform.ui/features/org.eclipse.e4.rcp/feature.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.ui/features/org.eclipse.e4.rcp/feature.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -403,20 +403,20 @@
+          fragment="true"/>
+ 
+    <plugin
+-         id="org.eclipse.equinox.launcher.gtk.linux.ppc64le"
+-         os="linux"
++         id="org.eclipse.equinox.launcher.gtk.freebsd.powerpc64"
++         os="freebsd"
+          ws="gtk"
+-         arch="ppc64le"
++         arch="powerpc64"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"
+          fragment="true"/>
+ 
+    <plugin
+-         id="org.eclipse.equinox.launcher.gtk.linux.x86_64"
+-         os="linux"
++         id="org.eclipse.equinox.launcher.gtk.freebsd.amd64"
++         os="freebsd"
+          ws="gtk"
+-         arch="x86_64"
++         arch="amd64"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"
+@@ -451,10 +451,10 @@
+          unpack="false"/>
+ 
+    <plugin
+-         id="org.eclipse.swt.gtk.linux.ppc64le"
+-         os="linux"
++         id="org.eclipse.swt.gtk.freebsd.powerpc64"
++         os="freebsd"
+          ws="gtk"
+-         arch="ppc64le"
++         arch="powerpc64"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"
+@@ -462,10 +462,10 @@
+          unpack="false"/>
+ 
+    <plugin
+-         id="org.eclipse.swt.gtk.linux.x86_64"
+-         os="linux"
++         id="org.eclipse.swt.gtk.freebsd.amd64"
++         os="freebsd"
+          ws="gtk"
+-         arch="x86_64"
++         arch="amd64"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"
+diff -ru eclipse.platform.ui/features/org.eclipse.e4.rcp/pom.xml eclipse.platform.ui/features/org.eclipse.e4.rcp/pom.xml
+--- eclipse.platform.ui/features/org.eclipse.e4.rcp/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.ui/features/org.eclipse.e4.rcp/pom.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -39,8 +39,8 @@
+                 <plugin id="javax.xml"/>
+                 <plugin id="org.eclipse.swt"/>
+                 <plugin id="org.eclipse.equinox.launcher.cocoa.macosx.x86_64"/>
+-                <plugin id="org.eclipse.equinox.launcher.gtk.linux.ppc64le"/>
+-                <plugin id="org.eclipse.equinox.launcher.gtk.linux.x86_64"/>
++                <plugin id="org.eclipse.equinox.launcher.gtk.freebsd.powerpc64"/>
++                <plugin id="org.eclipse.equinox.launcher.gtk.freebsd.amd64"/>
+                 <plugin id="org.eclipse.equinox.launcher.win32.win32.x86_64"/>
+               </excludes>
+             </configuration>

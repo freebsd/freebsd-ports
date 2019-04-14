@@ -1,0 +1,352 @@
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/.classpath_gtk eclipse.platform.swt/bundles/org.eclipse.swt/.classpath_gtk
+--- eclipse.platform.swt/bundles/org.eclipse.swt/.classpath_gtk	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/.classpath_gtk	0000-00-00 00:00:00.000000000 +0000
+@@ -10,7 +10,7 @@
+ 	<classpathentry kind="src" path="Eclipse SWT/common_j2se"/>
+ 	<classpathentry kind="src" path="Eclipse SWT PI/gtk">
+ 		<attributes>
+-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="org.eclipse.swt.gtk.linux.x86_64"/>
++			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="org.eclipse.swt.gtk.freebsd.amd64"/>
+ 		</attributes>
+ 	</classpathentry>
+ 	<classpathentry kind="src" path="Eclipse SWT PI/cairo"/>
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java
+--- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java	0000-00-00 00:00:00.000000000 +0000
+@@ -68,12 +68,12 @@
+ static String arch() {
+ 	String osArch = System.getProperty("os.arch"); //$NON-NLS-1$
+ 	if (osArch.equals ("i386") || osArch.equals ("i686")) return "x86"; //$NON-NLS-1$ $NON-NLS-2$ $NON-NLS-3$
+-	if (osArch.equals ("amd64")) return "x86_64"; //$NON-NLS-1$ $NON-NLS-2$
+ 	return osArch;
+ }
+ 
+ static String os() {
+ 	String osName = System.getProperty("os.name"); //$NON-NLS-1$
++	if (osName.equals ("FreeBSD")) return "freebsd"; //$NON-NLS-1$ $NON-NLS-2$
+ 	if (osName.equals ("Linux")) return "linux"; //$NON-NLS-1$ $NON-NLS-2$
+ 	if (osName.equals ("Mac OS X")) return "macosx"; //$NON-NLS-1$ $NON-NLS-2$
+ 	if (osName.startsWith ("Win")) return "win32"; //$NON-NLS-1$ $NON-NLS-2$
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh
+--- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	0000-00-00 00:00:00.000000000 +0000
+@@ -72,7 +72,7 @@
+ 
+ cd `dirname $0`
+ 
+-MAKE_TYPE=make
++MAKE_TYPE=gmake
+ 
+ export CFLAGS='-O -Wall -fPIC'
+ 
+@@ -86,21 +86,14 @@
+ 		MAKEFILE=make_win32.mak
+ 		;;
+ 	*)
+-		SWT_OS=`uname -s | tr -s '[:upper:]' '[:lower:]'`
++		SWT_OS=`uname -s | tr '[:upper:]' '[:lower:]'`
+ 		MAKEFILE=make_linux.mak
+ 		;;
+ esac
+ 
+ # Determine which CPU type we are building for
+ if [ "${MODEL}" = "" ]; then
+-	if uname -i > /dev/null 2>&1; then
+-		MODEL=`uname -i`
+-		if [ ${MODEL} = 'unknown' ]; then
+-		  MODEL=`uname -m`
+-		fi
+-	else
+ 		MODEL=`uname -m`
+-	fi
+ fi
+ case $MODEL in
+ 	"x86_64")
+@@ -111,6 +104,11 @@
+ 		SWT_ARCH=x86
+ 		AWT_ARCH=i386
+ 		;;
++	"powerpc" | "powerpc64")
++		SWT_ARCH=ppc64
++		AWT_ARCH=ppc64
++		MODEL=`uname -p`
++		;;
+ 	*)
+ 		SWT_ARCH=$MODEL
+ 		AWT_ARCH=$MODEL
+@@ -194,7 +192,7 @@
+ 
+ 
+ # For 64-bit CPUs, we have a switch
+-if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ia64' -o ${MODEL} = 's390x' -o ${MODEL} = 'ppc64le' -o ${MODEL} = 'aarch64' ]; then
++if [ ${MODEL} = 'amd64' -o ${MODEL} = 'ia64' -o ${MODEL} = 's390x' -o ${MODEL} = 'ppc64le' -o ${MODEL} = 'aarch64' -o ${MODEL} = 'powerpc64' ]; then
+ 	SWT_PTR_CFLAGS=-DJNI64
+ 	if [ -d /lib64 ]; then
+ 		XLIB64=-L/usr/X11R6/lib64
+@@ -205,6 +203,11 @@
+ 		XLIB64="${XLIB64} -L/usr/lib64"
+ 		SWT_LFLAGS=-m64
+ 		export SWT_LFLAGS
++	fi
++	if [ ${SWT_OS} = "freebsd" ]
++	then
++		SWT_PTR_CFLAGS="${SWT_PTR_CFLAGS} -m64"
++		export SWT_LFLAGS=-m64
+ 	fi
+ 	export SWT_PTR_CFLAGS
+ fi
+@@ -364,4 +367,4 @@
+ elif [ "${GTK_VERSION}" = "3.0" -o "${GTK_VERSION}" = "" ]; then
+ 	export GTK_VERSION="3.0"
+ 	func_build_gtk3 "$@"
+-fi
+\ No newline at end of file
++fi
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak
+--- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak	0000-00-00 00:00:00.000000000 +0000
+@@ -101,16 +101,18 @@
+ WEBKIT_OBJECTS = swt.o webkitgtk.o webkitgtk_structs.o webkitgtk_stats.o webkitgtk_custom.o
+ GLX_OBJECTS = swt.o glx.o glx_structs.o glx_stats.o
+ 
++port_prefix=`pkg-config --variable=prefix gtk+-3.0`
+ CFLAGS := $(CFLAGS) \
+ 		-DSWT_VERSION=$(SWT_VERSION) \
+ 		$(NATIVE_STATS) \
+ 		$(SWT_DEBUG) \
+ 		$(SWT_WEBKIT_DEBUG) \
+-		-DLINUX -DGTK \
++		-DFREEBSD -DGTK \
++		-I$(port_prefix)/include \
+ 		-I$(JAVA_HOME)/include \
+-		-I$(JAVA_HOME)/include/linux \
++		-I$(JAVA_HOME)/include/freebsd \
+ 		${SWT_PTR_CFLAGS}
+-LFLAGS = -shared -fPIC ${SWT_LFLAGS}
++LFLAGS = -shared -fPIC -m64 ${SWT_LFLAGS} -L$(port_prefix)/lib
+ 
+ ifndef NO_STRIP
+ 	# -s = Remove all symbol table and relocation information from the executable.
+@@ -253,10 +255,6 @@
+ 	cp $(ALL_SWT_LIBS) $(OUTPUT_DIR)
+ ifeq ($(BUILD_WEBKIT2EXTENSION),yes)
+ 	@# Copy webextension into it's own folder, but create folder first.
+-	@# CAREFULLY delete '.so' files inside webextension*. Then carefully remove the directories. 'rm -rf' seemed too risky of an approach.
+-	@-[ "$$(ls -d $(OUTPUT_DIR)/$(WEBEXTENSION_BASE_DIR)*/*.so)" ] && rm -v `ls -d $(OUTPUT_DIR)/$(WEBEXTENSION_BASE_DIR)*/*.so`
+-	@-[ "$$(ls -d $(OUTPUT_DIR)/$(WEBEXTENSION_BASE_DIR)*)" ] && rmdir -v `ls -d $(OUTPUT_DIR)/$(WEBEXTENSION_BASE_DIR)*`
+-
+ 	@# Copying webextension is not critical for build to succeed, thus we use '-'. SWT can still function without a webextension.
+ 	@-[ -d $(OUTPUT_DIR)/$(WEBEXTENSION_DIR) ] || mkdir -v $(OUTPUT_DIR)/$(WEBEXTENSION_DIR)  # If folder does not exist, make it.
+ 	-cp $(WEBKIT_EXTENSION_LIB) $(OUTPUT_DIR)/$(WEBEXTENSION_DIR)/
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java
+--- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java	0000-00-00 00:00:00.000000000 +0000
+@@ -58,8 +58,8 @@
+ 
+ 		/* Initialize the OS flags and locale constants */
+ 		String osName = System.getProperty ("os.name");
+-		boolean isLinux = false, isWin32 = false;
+-		if (osName.equals ("Linux")) isLinux = true;
++		boolean isLinux = osName.equals ("Linux") || osName.equals ("FreeBSD");
++		boolean isWin32 = false;
+ 		if (osName.startsWith("Windows")) isWin32 = true;
+ 		IsLinux = isLinux;  IsWin32 = isWin32;
+ 
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf
+--- eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
+@@ -16,11 +16,11 @@
+ requires.3.filter = (&(osgi.os=macosx)(osgi.ws=cocoa)(osgi.arch=x86_64)(!(org.eclipse.swt.buildtime=true)))
+ 
+ requires.4.namespace = org.eclipse.equinox.p2.iu
+-requires.4.name = org.eclipse.swt.gtk.linux.x86_64
++requires.4.name = org.eclipse.swt.gtk.freebsd.amd64
+ requires.4.range = [$version$,$version$]
+-requires.4.filter = (&(osgi.os=linux)(osgi.ws=gtk)(osgi.arch=x86_64)(!(org.eclipse.swt.buildtime=true)))
++requires.4.filter = (&(osgi.os=freebsd)(osgi.ws=gtk)(osgi.arch=amd64)(!(org.eclipse.swt.buildtime=true)))
+ 
+ requires.5.namespace = org.eclipse.equinox.p2.iu
+-requires.5.name = org.eclipse.swt.gtk.linux.ppc64le
++requires.5.name = org.eclipse.swt.gtk.freebsd.powerpc64
+ requires.5.range = [$version$,$version$]
+-requires.5.filter = (&(osgi.os=linux)(osgi.ws=gtk)(osgi.arch=ppc64le)(!(org.eclipse.swt.buildtime=true)))
++requires.5.filter = (&(osgi.os=freebsd)(osgi.ws=gtk)(osgi.arch=powerpc64)(!(org.eclipse.swt.buildtime=true)))
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/buildFragment.xml eclipse.platform.swt/bundles/org.eclipse.swt/buildFragment.xml
+--- eclipse.platform.swt/bundles/org.eclipse.swt/buildFragment.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/buildFragment.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -237,8 +237,9 @@
+ 		<condition property="is64" value="true">
+ 			<or>
+ 				<equals arg1="${swt.arch}" arg2="x86_64"/>
++				<equals arg1="${swt.arch}" arg2="amd64"/>
+ 				<equals arg1="${swt.arch}" arg2="ia64"/>
+-				<equals arg1="${swt.arch}" arg2="ppc64le"/>
++				<equals arg1="${swt.arch}" arg2="powerpc64"/>
+ 				<equals arg1="${swt.arch}" arg2="s390x"/>
+ 				<equals arg1="${swt.arch}" arg2="sparcv9"/>
+ 				<equals arg1="${swt.arch}" arg2="aarch64"/>
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml
+--- eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -63,11 +63,11 @@
+ 		</antcall>
+ 		<antcall target="check_fragment_libraries">
+ 			<param name="library_count" value="8"/>
+-			<param name="fragment" value="org.eclipse.swt.gtk.linux.ppc64le"/>
++			<param name="fragment" value="org.eclipse.swt.gtk.freebsd.powerpc64"/>
+ 		</antcall>
+ 		<antcall target="check_fragment_libraries">
+ 			<param name="library_count" value="8"/>
+-			<param name="fragment" value="org.eclipse.swt.gtk.linux.x86_64"/>
++			<param name="fragment" value="org.eclipse.swt.gtk.freebsd.amd64"/>
+ 		</antcall>
+ 		<antcall target="check_fragment_libraries">
+ 			<param name="library_count" value="4"/>
+@@ -80,12 +80,12 @@
+ 		<property name="checkdir" value="~/build/check_libraries"/>
+ 		<property name="library_count" value="23"/>
+ 		<property name="fragment" value=""/>
+-		<fileset id="match" dir="${repo.bin}/bundles/${fragment}" includes="**/org.eclipse.swt.gtk.linux.ppc64le/**, **/org.eclipse.swt.gtk.linux.x86_64/**, **/org.eclipse.swt.win32.win32.x86_64/**, **/org.eclipse.swt.cocoa.macosx.*/**">
++		<fileset id="match" dir="${repo.bin}/bundles/${fragment}" includes="**/org.eclipse.swt.gtk.freebsd.powerpc64/**, **/org.eclipse.swt.gtk.freebsd.amd64/**, **/org.eclipse.swt.win32.win32.x86_64/**, **/org.eclipse.swt.cocoa.macosx.*/**">
+ 			<filename regex="[0-9][0-9][0-9][0-9]."/>
+ 			<filename regex="${swt_version}."/>
+ 			<exclude name="**/.git/**"/>
+ 		</fileset>
+-		<fileset id="not_match" dir="${repo.bin}/bundles/${fragment}" includes="**/org.eclipse.swt.gtk.linux.ppc64le/**, **/org.eclipse.swt.gtk.linux.x86_64/**, **/org.eclipse.swt.win32.win32.x86_64/**, **/org.eclipse.swt.cocoa.macosx.*/**">
++		<fileset id="not_match" dir="${repo.bin}/bundles/${fragment}" includes="**/org.eclipse.swt.gtk.freebsd.powerpc64/**, **/org.eclipse.swt.gtk.freebsd.amd64/**, **/org.eclipse.swt.win32.win32.x86_64/**, **/org.eclipse.swt.cocoa.macosx.*/**">
+ 			<filename regex="[0-9][0-9][0-9][0-9]."/>
+ 			<filename regex="${swt_version}." negate="true"/>
+ 			<exclude name="**/.git/**"/>
+@@ -122,13 +122,13 @@
+ 			trust="true"
+ 			outputproperty="m_linux_x86_64_output"
+ 			command="hostname"/>
+-		<sshexec host="${m_linux_ppc64le}"
++		<sshexec host="${m_linux_powerpc64}"
+ 			port="2256"
+ 			username="swtbuild"
+ 			keyfile="${keyfile}"
+ 			failonerror="false"
+ 			trust="true"
+-			outputproperty="m_linux_ppc64le_output"
++			outputproperty="m_linux_powerpc64_output"
+ 			command="hostname"/>
+ 		<sshexec host="${m_mac}"
+ 			username="swtbuild"
+@@ -152,10 +152,10 @@
+ 				<matches pattern="x${m_linux_x86_64_output}*" string="x${m_linux_x86_64}"/>
+ 			</and>
+ 		</condition>
+-		<condition property="m_linux_ppc64le_test" value="${success_msg}" else="${fail_msg}">
++		<condition property="m_linux_powerpc64_test" value="${success_msg}" else="${fail_msg}">
+ 			<and>
+-				<length string="${m_linux_ppc64le_output}" when="greater" length="0"/>
+-				<matches pattern="x${m_linux_ppc64le_output}*" string="x${m_linux_ppc64le}"/>
++				<length string="${m_linux_powerpc64_output}" when="greater" length="0"/>
++				<matches pattern="x${m_linux_powerpc64_output}*" string="x${m_linux_powerpc64}"/>
+ 			</and>
+ 		</condition>
+ 		<condition property="m_mac_test" value="${success_msg}" else="${fail_msg}">
+@@ -169,11 +169,11 @@
+ 		<echo></echo>
+ 		<echo>${m_linux_x86} - ${m_linux_x86_test}</echo>
+ 		<echo>${m_linux_x86_64} - ${m_linux_x86_64_test}</echo>
+-		<echo>${m_linux_ppc64le} - ${m_linux_ppc64le_test}</echo>
++		<echo>${m_linux_powerpc64} - ${m_linux_powerpc64_test}</echo>
+ 		<echo>${m_mac} - ${m_mac_test}</echo>
+ 		<echo>-------------------------</echo>
+ 		<condition property="m_fail">
+-			<matches pattern="Fail" string="${m_linux_x86_test} ${m_linux_x86_64_test} ${m_linux_ppc64le_test} ${m_mac_test}"/>
++			<matches pattern="Fail" string="${m_linux_x86_test} ${m_linux_x86_64_test} ${m_linux_powerpc64_test} ${m_mac_test}"/>
+ 		</condition>
+ 		<fail if="m_fail" message="Failed"/>
+ 	</target>
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup
+--- eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup	0000-00-00 00:00:00.000000000 +0000
+@@ -103,7 +103,7 @@
+               xsi:type="predicates:NotPredicate">
+             <operand
+                 xsi:type="predicates:NamePredicate"
+-                pattern=".*(cocoa|gtk|win32)(\.(macosx|aix|hpux|linux|solaris|win32)(\.(x86_64|ppc64|ia64|aarch64|arm|ppc64|ppc64le|s390|s390x|x86|sparcv9))?)?"/>
++                pattern=".*(cocoa|gtk|win32)(\.(freebsd|macosx|aix|hpux|linux|solaris|win32)(\.(amd64|x86_64|powerpc64|ia64|aarch64|arm|ppc64|ppc64le|s390|s390x|x86|sparcv9))?)?"/>
+           </operand>
+           <operand
+               xsi:type="predicates:NamePredicate"
+diff -ru eclipse.platform.swt/local-build/org.eclipse.swt.fragments.localbuild/META-INF/p2.inf eclipse.platform.swt/local-build/org.eclipse.swt.fragments.localbuild/META-INF/p2.inf
+--- eclipse.platform.swt/local-build/org.eclipse.swt.fragments.localbuild/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/local-build/org.eclipse.swt.fragments.localbuild/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
+@@ -10,11 +10,11 @@
+ requires.2.filter = (&(osgi.os=macosx)(osgi.ws=cocoa)(osgi.arch=x86_64))
+ 
+ requires.3.namespace = org.eclipse.equinox.p2.iu
+-requires.3.name = org.eclipse.swt.gtk.linux.x86_64
++requires.3.name = org.eclipse.swt.gtk.freebsd.amd64
+ requires.3.range = 0.0.0
+-requires.3.filter = (&(osgi.os=linux)(osgi.ws=gtk)(osgi.arch=x86_64))
++requires.3.filter = (&(osgi.os=freebsd)(osgi.ws=gtk)(osgi.arch=amd64))
+ 
+ requires.4.namespace = org.eclipse.equinox.p2.iu
+-requires.4.name = org.eclipse.swt.gtk.linux.ppc64le
++requires.4.name = org.eclipse.swt.gtk.freebsd.powerpc64
+ requires.4.range = 0.0.0
+-requires.4.filter = (&(osgi.os=linux)(osgi.ws=gtk)(osgi.arch=ppc64le))
++requires.4.filter = (&(osgi.os=freebsd)(osgi.ws=gtk)(osgi.arch=powerpc64))
+diff -ru eclipse.platform.swt/pom.xml eclipse.platform.swt/pom.xml
+--- eclipse.platform.swt/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/pom.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -85,11 +85,12 @@
+       <activation>
+         <os>
+           <family>unix</family>
+-          <name>Linux</name>
+ 	</os>
+       </activation>
+ 	  <modules>
++		<!-- disabled
+ 	    <module>tests/org.eclipse.swt.tests.gtk</module>
++		  -->
+ 	  </modules>
+     </profile>
+     <profile>
+@@ -118,7 +119,9 @@
+     <module>examples/org.eclipse.swt.examples.ole.win32</module>
+     <module>examples/org.eclipse.swt.examples.views</module>
+     <module>tests/org.eclipse.swt.tests.fragments.feature</module>
++	<!-- disabled
+     <module>tests/org.eclipse.swt.tests</module>
++	  -->
+     <module>features/org.eclipse.swt.tools.feature</module>
+   </modules>
+ </project>
+diff -ru eclipse.platform.swt/tests/org.eclipse.swt.tests.fragments.feature/feature.xml eclipse.platform.swt/tests/org.eclipse.swt.tests.fragments.feature/feature.xml
+--- eclipse.platform.swt/tests/org.eclipse.swt.tests.fragments.feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/tests/org.eclipse.swt.tests.fragments.feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -20,10 +20,10 @@
+    </license>
+ 
+    <plugin
+-         id="org.eclipse.swt.gtk.linux.x86_64"
+-         os="linux"
++         id="org.eclipse.swt.gtk.freebsd.amd64"
++         os="freebsd"
+          ws="gtk"
+-         arch="x86_64"
++         arch="amd64"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"
+@@ -31,10 +31,10 @@
+          unpack="false"/>
+ 
+    <plugin
+-         id="org.eclipse.swt.gtk.linux.ppc64le"
+-         os="linux"
++         id="org.eclipse.swt.gtk.freebsd.powerpc64"
++         os="freebsd"
+          ws="gtk"
+-         arch="ppc64le"
++         arch="powerpc64"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"

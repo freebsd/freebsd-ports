@@ -1,50 +1,49 @@
 #!/bin/sh
+#
+# Reorg source files, reusing Linux sources as the base for FreeBSD builds.
+#
+LINUX_DIRS="
+	eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.linux.*
+	eclipse.platform.resources/bundles/org.eclipse.core.filesystem.linux.*
+	eclipse.platform.resources/bundles/org.eclipse.core.filesystem/natives/unix/linux
+	eclipse.platform.team/bundles/org.eclipse.core.net.linux.*
+	eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/linux
+	rt.equinox.bundles/bundles/org.eclipse.equinox.security.linux.*
+	rt.equinox.binaries/org.eclipse.equinox.launcher.gtk.linux.*
+	rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.linux.*"
 
-# Copy the Linux 'native' code for the FreeBSD versions
-# At this point, just make sure the directory and file names are "freebsd"
-# These files will be patched in the do-patch step. 
-
-check_freebsd_mak ()
+rename_arch ()
 {
-  local d
-  d=`dirname "$1"`
-  [ -e "${d}/make_freebsd.mak" ] && return
-  cp -p "$1" "${d}/make_freebsd.mak"
+	# Rename to FreeBSD TARGET_ARCH names
+	F=$(echo $1 | sed -e s/linux/freebsd/)
+	case $F in
+	*.arm)
+		echo $(echo $F | sed -e 's/arm/armv7/');;
+	*.ppc64le)
+		echo $(echo $F | sed -e 's/ppc64le/powerpc64/');;
+	*.x86)
+		echo $(echo $F | sed -e 's/x86/i386/');;
+	*.x86_64)
+		echo $(echo $F | sed -e 's/x86_64/amd64/');;
+	*)
+		echo ${F};;
+	esac
 }
 
-for d in \
-	${WRKSRC}/eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.linux.${ECLIPSE_ARCH} \
-	${WRKSRC}/eclipse.platform.resources/bundles/org.eclipse.core.filesystem/natives/unix/linux \
-	${WRKSRC}/eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/linux \
-	${WRKSRC}/rt.equinox.binaries/org.eclipse.equinox.launcher.gtk.linux.${ECLIPSE_ARCH} \
-	${WRKSRC}/rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux/${ECLIPSE_ARCH} \
-	${WRKSRC}/rt.equinox.framework/bundles/org.eclipse.equinox.launcher.gtk.linux.${ECLIPSE_ARCH}
+cd ${WRKSRC}
+
+for D in ${LINUX_DIRS}
 do
-  mkdir -p `echo $d | sed -e 's/linux/freebsd/'`
-  [ -d $d ] && ( cd $d; tar cf - . ) | ( cd `echo $d | sed -e 's/linux/freebsd/'`; tar xf - )
-done
-# "fragments" pieces
-for d in \
-	${WRKSRC}/eclipse.platform.team/bundles/org.eclipse.core.net/fragments/org.eclipse.core.net.linux.${ECLIPSE_ARCH}
-do
-  mkdir -p `echo $d | sed -e 's/linux/freebsd/'`
-  [ -d $d ] && ( cd $d; tar cf - . ) | ( cd `echo $d | sed -e 's/linux/freebsd/'`; tar xf - )
-done
-for d in \
-	${WRKSRC}/eclipse.platform.resources/bundles/org.eclipse.core.filesystem.linux.${ECLIPSE_ARCH}
-do
-  mkdir -p `dirname $d`/`basename $d | sed -e 's/\.linux.*$//'`/fragments/`basename $d | sed -e 's/linux/freebsd/'`
-  [ -d $d ] && ( cd $d; tar cf - . ) | ( cd `dirname $d`/`basename $d | sed -e 's/\.linux.*$//'`/fragments/`basename $d | sed -e 's/linux/freebsd/'`; tar xf - )
+	if [ ! -e ${D} ]
+	then
+		echo "ERROR: ${D} not found"
+		continue
+	fi
+
+	NEWNAME=$(rename_arch ${D})
+	mv ${D} ${NEWNAME}
 done
 
-
-for d in `find ${WRKSRC} -type d -name \*freebsd\*`
-do
-  for f in `find $d -name \*linux\*`
-  do
-    mv $f `echo $f | sed -e 's/linux/freebsd/'`
-  done
-  find $d -type f \( -name \*.so -o -name eclipse -o -name launcher \) -delete
-done
-
-find ${WRKSRC} -type f -name make_linux.mak | while read file; do check_freebsd_mak "$file"; done
+# Clean up binaries
+rm -rf rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux
+find . -name '*.so' -delete

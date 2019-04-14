@@ -1,0 +1,177 @@
+diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security/META-INF/MANIFEST.MF rt.equinox.bundles/bundles/org.eclipse.equinox.security/META-INF/MANIFEST.MF
+--- rt.equinox.bundles/bundles/org.eclipse.equinox.security/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
++++ rt.equinox.bundles/bundles/org.eclipse.equinox.security/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
+@@ -13,7 +13,7 @@
+  org.eclipse.equinox.internal.security.credentials;x-internal:=true,
+  org.eclipse.equinox.internal.security.storage;x-internal:=true,
+  org.eclipse.equinox.internal.security.storage.friends;version="1.0.0";x-friends:="org.eclipse.equinox.security.ui",
+- org.eclipse.equinox.internal.security.storage.provider;x-friends:="org.eclipse.equinox.security.linux.x86_64",
++ org.eclipse.equinox.internal.security.storage.provider;x-friends:="org.eclipse.equinox.security.freebsd.amd64",
+  org.eclipse.equinox.security.auth;version="1.0.0",
+  org.eclipse.equinox.security.auth.credentials;version="1.0.0",
+  org.eclipse.equinox.security.auth.module;version="1.0.0",
+diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/.project rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/.project
+--- rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
++++ rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-	<name>org.eclipse.equinox.security.linux.x86_64</name>
++	<name>org.eclipse.equinox.security.freebsd.amd64</name>
+ 	<comment></comment>
+ 	<projects>
+ 	</projects>
+diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/META-INF/MANIFEST.MF rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/META-INF/MANIFEST.MF
+--- rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
++++ rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
+@@ -1,13 +1,13 @@
+ Manifest-Version: 1.0
+ Bundle-ManifestVersion: 2
+ Bundle-Name: %fragmentName
+-Bundle-SymbolicName: org.eclipse.equinox.security.linux.x86_64;singleton:=true
++Bundle-SymbolicName: org.eclipse.equinox.security.freebsd.amd64;singleton:=true
+ Bundle-Version: 1.1.200.qualifier
+ Bundle-Vendor: %providerName
+ Fragment-Host: org.eclipse.equinox.security;bundle-version="[1.0.0,2.0.0)"
+ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+ Bundle-Localization: fragment
+-Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=x86_64))
+-Export-Package: org.eclipse.equinox.internal.security.linux;x-internal:=true
+-Automatic-Module-Name: org.eclipse.equinox.security.linux.x86_64
++Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=amd64))
++Export-Package: org.eclipse.equinox.internal.security.freebsd;x-internal:=true
++Automatic-Module-Name: org.eclipse.equinox.security.freebsd.amd64
+ Eclipse-BundleShape: dir
+diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/keystorelinuxnative/makefile rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/keystorelinuxnative/makefile
+--- rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/keystorelinuxnative/makefile	0000-00-00 00:00:00.000000000 +0000
++++ rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/keystorelinuxnative/makefile	0000-00-00 00:00:00.000000000 +0000
+@@ -1,7 +1,7 @@
+ LIBSECRET_CFLAGS = `pkg-config --cflags libsecret-1`
+ LIBSECRET_LIBS = `pkg-config --libs libsecret-1`
+ 
+-CFLAGS = -shared -fPIC -I"${JAVA_HOME}/include" -I"${JAVA_HOME}/include/linux"
++CFLAGS = -shared -fPIC -I"${JAVA_HOME}/include" -I"${JAVA_HOME}/include/freebsd"
+ 
+ all: ../libkeystorelinuxnative.so
+ 
+@@ -9,10 +9,10 @@
+ 	rm ../libkeystorelinuxnative.so ../target/keystoreLinuxNative.o
+ 	
+ ../libkeystorelinuxnative.so: ../target/keystoreLinuxNative.o
+-	$(CC) $(CFLAGS) -o $@ $< $(LIBSECRET_LIBS)
++	$(CC) $(CFLAGS) -s -o $@ $< $(LIBSECRET_LIBS)
+ 	
+ ../target/keystoreLinuxNative.o: ../target keystoreLinuxNative.c
+-	$(CC) -c -fPIC -I"${JAVA_HOME}/include" -I"${JAVA_HOME}/include/linux" -o $@ $(TESTFLAGS) $(LIBSECRET_CFLAGS) keystoreLinuxNative.c
++	$(CC) -c -fPIC -I"${JAVA_HOME}/include" -I"${JAVA_HOME}/include/freebsd" -o $@ $(TESTFLAGS) $(LIBSECRET_CFLAGS) keystoreLinuxNative.c
+ 
+ ../target: 
+ 	mkdir -p ../target
+diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/pom.xml rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/pom.xml
+--- rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -18,7 +18,7 @@
+     <relativePath>../../</relativePath>
+   </parent>
+   <groupId>org.eclipse.equinox</groupId>
+-  <artifactId>org.eclipse.equinox.security.linux.x86_64</artifactId>
++  <artifactId>org.eclipse.equinox.security.freebsd.amd64</artifactId>
+   <version>1.1.200-SNAPSHOT</version>
+   <packaging>eclipse-plugin</packaging>
+ 
+@@ -31,9 +31,9 @@
+           <resolver>p2</resolver>
+           <environments>
+             <environment>
+-              <os>linux</os>
++              <os>freebsd</os>
+               <ws>gtk</ws>
+-              <arch>x86_64</arch>
++              <arch>amd64</arch>
+             </environment>
+           </environments>
+         </configuration>
+@@ -47,7 +47,7 @@
+         <property>
+           <!-- This has to be hardcoded. Profiles are not allowed to use pom defined properties :-( -->
+           <name>native</name>
+-          <value>gtk.linux.x86_64</value>
++          <value>gtk.freebsd.amd64</value>
+         </property>
+       </activation>
+       <build>
+@@ -60,7 +60,7 @@
+                 <phase>process-resources</phase>
+                 <configuration>
+                   <target>
+-                    <exec executable="make" newenvironment="false" dir="keystorelinuxnative/"/>
++                    <exec executable="gmake" newenvironment="false" dir="keystorelinuxnative/"/>
+                   </target>
+                 </configuration>
+                 <goals>
+diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/src/org/eclipse/equinox/internal/security/linux/nls/messages.properties rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/src/org/eclipse/equinox/internal/security/linux/nls/messages.properties
+--- rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/src/org/eclipse/equinox/internal/security/linux/nls/messages.properties	0000-00-00 00:00:00.000000000 +0000
++++ rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/src/org/eclipse/equinox/internal/security/linux/nls/messages.properties	0000-00-00 00:00:00.000000000 +0000
+@@ -12,7 +12,7 @@
+ #     Julien HENRY - Linux implementation
+ ###############################################################################
+ 
+-## Linux libsecure integration module
++## FreeBSD libsecure integration module
+ getMasterPasswordError=Secure storage was unable to retrieve the master password from the password storage. If secure storage was created using a different user account, you'll have to switch back to that account. Alternatively, you can use the password recovery, or delete and re-create secure storage. 
+ saveMasterPasswordError=Secure storage was unable to save the master password.
+-newMasterPasswordGenerated=New secure storage master password was generated (Linux libsecret integration module). 
++newMasterPasswordGenerated=New secure storage master password was generated (FreeBSD libsecret integration module). 
+diff -ru rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/build.properties rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/build.properties
+--- rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/build.properties	0000-00-00 00:00:00.000000000 +0000
++++ rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/build.properties	0000-00-00 00:00:00.000000000 +0000
+@@ -29,7 +29,7 @@
+ generate.plugin@org.eclipse.osgi.source=org.eclipse.osgi
+ generate.plugin@org.eclipse.osgi.util.source=org.eclipse.osgi.util
+ generate.plugin@org.eclipse.equinox.security.win32.x86_64.source=org.eclipse.equinox.security.win32.x86_64
+-generate.plugin@org.eclipse.equinox.security.linux.x86_64.source=org.eclipse.equinox.security.linux.x86_64
++generate.plugin@org.eclipse.equinox.security.freebsd.amd64.source=org.eclipse.equinox.security.freebsd.amd64
+ generate.plugin@org.eclipse.equinox.security.macosx.source=org.eclipse.equinox.security.macosx
+ generate.plugin@org.eclipse.equinox.security.source=org.eclipse.equinox.security
+ generate.plugin@org.eclipse.equinox.security.ui.source=org.eclipse.equinox.security.ui
+diff -ru rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/feature.xml rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/feature.xml
+--- rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/feature.xml	0000-00-00 00:00:00.000000000 +0000
++++ rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/feature.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -217,9 +217,9 @@
+          unpack="false"/>
+ 
+    <plugin
+-         id="org.eclipse.equinox.security.linux.x86_64"
+-         os="linux"
+-         arch="x86_64"
++         id="org.eclipse.equinox.security.freebsd.amd64"
++         os="freebsd"
++         arch="amd64"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"
+@@ -227,9 +227,9 @@
+          unpack="false"/>
+ 
+    <plugin
+-         id="org.eclipse.equinox.security.linux.x86_64.source"
+-         os="linux"
+-         arch="x86_64"
++         id="org.eclipse.equinox.security.freebsd.amd64.source"
++         os="freebsd"
++         arch="amd64"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"
+diff -ru rt.equinox.bundles/pom.xml rt.equinox.bundles/pom.xml
+--- rt.equinox.bundles/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ rt.equinox.bundles/pom.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -90,7 +90,7 @@
+     <module>bundles/org.eclipse.equinox.security</module>
+     <module>bundles/org.eclipse.equinox.security.macosx</module>
+     <module>bundles/org.eclipse.equinox.security.win32.x86_64</module>
+-    <module>bundles/org.eclipse.equinox.security.linux.x86_64</module>
++    <module>bundles/org.eclipse.equinox.security.freebsd.amd64</module>
+     <module>bundles/org.eclipse.equinox.bidi</module>
+     <module>bundles/org.eclipse.equinox.cm</module>
+     <module>bundles/org.eclipse.equinox.console</module>
