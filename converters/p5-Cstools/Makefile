@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Cstools
-PORTVERSION=	3.43
+PORTVERSION=	3.44
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN/Cz \
 		https://www.adelton.com/perl/Cstools/
