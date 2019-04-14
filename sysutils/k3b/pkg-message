@@ -7,15 +7,16 @@
       'man cdrecord' discusses this.
    b. Set the vfs.usermount sysctl variable to 1.
         # sysctl vfs.usermount=1
-      Add the line vfs.usermount=1 to /etc/sysctl.conf
+      Add this line to /etc/sysctl.conf to make it permanent:
+        vfs.usermount=1
       Note that this has negative security implications
    c. Every user must have read and write access to /dev/cdX:
       - add to your /etc/devfs.rules under '[system=10]':
           add path 'cd*' mode 666
       - or if you prefer allow access for a group XXX only add instead:
           add path 'cd*' mode 660 group XXX
-      - to enable it, add to your /etc/rc.conf a
-          devfs_system_ruleset="system"
+      - to enable it, add to your /etc/rc.conf
+          # sysrc devfs_system_ruleset="system"
    d. Every user who should be able to use k3b must have read and write access
       to all pass through devices connected with CD and DVD drives and to the
       /dev/xpt0 device. Run 'camcontrol devlist' to identify those devices (seek
@@ -28,9 +29,14 @@
           add path 'pass*' mode 660 group XXX
           add path 'xpt0' mode 660 group XXX
       - to enable it, add to your /etc/rc.conf
-          devfs_system_ruleset="system"
+          # sysrc devfs_system_ruleset="system"
       - to apply these changes without reboot, run as root:
-          /etc/rc.d/devfs restart
+          # service devfs restart
 3. Create a directory on a partition, which has enough disk space to hold a CDs
    or DVDs content (usually below /usr). Enter this directory in Settings->
    Configure K3b...->Misc.
+4. You must configure devel/kf5-solid appropriately:
+   a. Either use the (default) HAL backend, and enable HAL in /etc/rc.conf via
+      # sysrc hald_enable="YES"
+   b. *or* use the (experimental) BSDISKS backend.
+
