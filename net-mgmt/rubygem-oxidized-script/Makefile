@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oxidized-script
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -11,13 +11,13 @@ COMMENT=	CLI and Library to interface with network devices in rubygems-oxidized
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-oxidized>=0.15:net-mgmt/rubygem-oxidized \
+RUN_DEPENDS=	rubygem-oxidized>=0.25:net-mgmt/rubygem-oxidized \
 		rubygem-slop3>=3.5:devel/rubygem-slop3
 
-NO_ARCH=	yes
-
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/oxs
 
