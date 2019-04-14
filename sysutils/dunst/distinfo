@@ -1,3 +1,5 @@
-TIMESTAMP = 1525769656
-SHA256 (dunst-project-dunst-v1.3.2_GH0.tar.gz) = aab6e8fb1105a64153eee1db85d00ddb807994f03f7222aa46d40e3f3846d28a
-SIZE (dunst-project-dunst-v1.3.2_GH0.tar.gz) = 121575
+TIMESTAMP = 1554734034
+SHA256 (dunst-project-dunst-v1.4.0_GH0.tar.gz) = 943c465ae2fdafeb6d611cd9b76ffaa3030a094b08b9185d234017f3f7654177
+SIZE (dunst-project-dunst-v1.4.0_GH0.tar.gz) = 159632
+SHA256 (6e8de70c822a305d5196c991de69317bba875969.patch) = a2270632964c3ffdd5daeeac4fc832f29c28bf2481d7e7cd079b927d56830ea4
+SIZE (6e8de70c822a305d5196c991de69317bba875969.patch) = 832
