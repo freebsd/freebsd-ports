@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	String-Tagged
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-Test-Identity>=0:devel/p5-Test-Identity
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
