@@ -21,7 +21,7 @@ LIB_DEPENDS=	libnettle.so:security/nettle \
 		libepoxy.so:graphics/libepoxy \
 		libpcre2-8.so:devel/pcre2
 
-USES=		cpe gl gmake gnome pkgconfig bison perl5 python:2.7,build tar:xz
+USES=		cpe gmake gnome pkgconfig bison perl5 python:2.7,build tar:xz
 USE_GNOME=	cairo glib20 libxml2
 USE_PERL5=	build
 USE_XORG=	pixman
@@ -35,7 +35,7 @@ HAS_CONFIGURE=	yes
 MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
 
 OPTIONS_DEFINE=	SAMBA X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CURL \
-		VDE CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS \
+		VDE CDROM_DMA PCAP USBREDIR X86_TARGETS \
 		STATIC_LINK DOCS NCURSES
 SAMBA_DESC=		samba dependency (for -smb)
 GNUTLS_DESC=		gnutls dependency (vnc encryption)
@@ -45,11 +45,10 @@ PNG_DESC=		png dependency (vnc compression)
 CDROM_DMA_DESC=		IDE CDROM DMA
 PCAP_DESC=		pcap dependency (networking with bpf)
 USBREDIR_DESC=		usb device network redirection (experimental!)
-GNS3_DESC=		gns3 patches (promiscuous multicast)
 X86_TARGETS_DESC=	Build only x86 system targets
 STATIC_LINK_DESC=	Statically link the executables
 VDE_DESC=		vde dependency (for vde networking)
-OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP GNS3 NCURSES VDE
+OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP NCURSES VDE
 OPTIONS_SUB=	yes
 X11_USE=	SDL=sdl XORG=x11,xext GNOME=gdkpixbuf2
 X11_USES=	sdl
@@ -148,10 +147,6 @@ post-patch:
 
 post-patch-CDROM_DMA-off:
 	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h
-
-post-patch-GNS3-on:
-	@${REINPLACE_CMD} -e 's|(buf\[0\] & 1) && (rctl & E1000_RCTL_MPE)|buf[0] \& 1|' \
-		${WRKSRC}/hw/net/e1000.c
 
 # XXX need to disable usb host code on head while it's not ported to the
 # new usb stack yet
