@@ -12174,3 +12174,5 @@ devel/msrc0||2019-04-04|Has expired: No longer required as comms/conserver is be
 sysutils/curly||2019-04-04|Removed, depends on expired devel/msrc0
 devel/pecl-xdebug25|devel/pecl-xdebug|2019-04-09|Has expired: Please use pecl/xdebug which uses latest version
 devel/pecl-xdebug-devel|devel/pecl-xdebug|2019-04-09|Development version no longer necessary
+net/rubygem-fog-aliyun02|net/rubygem-fog-aliyun|2019-04-14|Has expired: Use net/rubygem-fog-aliyun instead
+net/rubygem-fog-aws2|net/rubygem-fog-aws|2019-04-14|Has expired: Use net/rubygem-fog-aws instead
