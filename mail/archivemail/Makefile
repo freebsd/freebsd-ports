@@ -3,30 +3,29 @@
 
 PORTNAME=	archivemail
 PORTVERSION=	0.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Archive or delete mail older than N days
+COMMENT=	Archive and compress old email
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python shebangfix
-NO_BUILD=	yes
-NO_ARCH=	yes
-SHEBANG_FILES=	archivemail  \
-		test_archivemail
+USES=		python:2.7 shebangfix
+
+USE_PYTHON=	distutils concurrent autoplist
+
+SHEBANG_FILES=	test_archivemail
 
 DOCS=		CHANGELOG FAQ NEWS README TODO
 EXAMPLES=	test_archivemail examples/archivemail_all
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/archivemail ${STAGEDIR}${PREFIX}/bin/archivemail
-	${INSTALL_MAN} ${WRKSRC}/archivemail.1 ${STAGEDIR}${MANPREFIX}/man/man1
+NO_ARCH=	yes
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
@@ -35,5 +34,8 @@ do-install-EXAMPLES-on:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} test_archivemail
 
 .include <bsd.port.mk>

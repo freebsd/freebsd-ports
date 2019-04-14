@@ -1,5 +1,3 @@
-bin/archivemail
-man/man1/archivemail.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
