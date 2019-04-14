@@ -13,8 +13,7 @@ mysql> grant all privileges on phplist.* to phplist@localhost identified by
 
 Alias /phplist %%WWWDIR%%
 <Directory %%WWWDIR%%>
-        Order allow,deny
-        Allow from all
+        Require all granted
 </Directory>
 
 3.  The phplist configuration file, edit:
