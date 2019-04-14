@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:MLEHMANN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Checks what version of perl you're running and then complains about it
+COMMENT=	Checks what version of perl you're running and then complains about it #'
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
@@ -17,11 +17,13 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	ACTIVATE
 ACTIVATE_DESC=	Enable Canary::Stability functionality
 
 # Install an empty stub
 post-patch-ACTIVATE-off:
-	${CP} ${FILESDIR}/Stability.pm ${WRKSRC}
+	@${CP} ${FILESDIR}/Stability.pm ${WRKSRC}
 
 .include <bsd.port.mk>
