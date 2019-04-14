@@ -1,17 +1,19 @@
---- Makefile.orig	2015-04-01 21:05:45 UTC
+--- Makefile.orig	2015-08-28 11:57:39 UTC
 +++ Makefile
-@@ -18,12 +18,12 @@ LIBS   = -lXpm -lX11 -lXext -lm
- OBJS   = wmSun.o SunRise.o ../wmgeneral/wmgeneral.o
+@@ -19,14 +19,14 @@ LIBS   = -lXpm -lX11 -lXext -lm -ldockapp
+ OBJS   = wmsun.o SunRise.o
  
  .c.o:
--	$(CC) $(COPTS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
-+	$(CC) $(CFLAGS) -D$(OPSYS) -c $< -o $@ $(INCDIR)
+-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $*.o
++	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@ $(INCDIR)
  
- all:	wmSun.o wmSun
+ all:	wmsun.o wmsun
  
- wmSun:	$(OBJS)
--	$(CC) $(COPTS) $(SYSTEM) -o wmSun $^ $(INCDIR) $(LIBDIR) $(LIBS)
-+	$(CC) $(CFLAGS) $(SYSTEM) -o wmSun $(OBJS) $(LIBDIR) $(LIBS)
+ wmsun.o: wmSun_master.xpm wmSun_mask.xbm
+ 
+ wmsun:	$(OBJS)
+-	$(CC) $(LDFLAGS) -o wmsun $^ $(LIBS)
++	$(CC) $(LDFLAGS) -o wmsun $(OBJS) $(LIBDIR) $(LIBS)
  
  clean:
- 	for i in $(OBJS) ; do rm -f $$i; done
+ 	for i in $(OBJS) ; do \
