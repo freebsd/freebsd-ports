@@ -2,25 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	wmsun
-PORTVERSION=	1.12
+PORTVERSION=	1.05
+PORTEPOCH=	1
 CATEGORIES=	astro windowmaker
-MASTER_SITES=	http://linux-bsd-unix.strefa.pl/
-DISTNAME=	wmSun-${PORTVERSION}
+MASTER_SITES=	https://www.dockapps.net/download/
 
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Dockapp that displays the rise and set times of the Sun
 
-WRKSRC_SUBDIR=	wmSun
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libdockapp.so:x11-wm/libdockapp
 
 USE_XORG=	xext xpm x11
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		INCDIR="-I${LOCALBASE}/include" LIBDIR="-L${LOCALBASE}/lib"
 MAKE_JOBS_UNSAFE=	yes
 
-PLIST_FILES=	bin/wmSun man/man1/wmSun.1.gz
+PLIST_FILES=	bin/wmsun man/man1/wmsun.1.gz
+WRKSRC=		${WRKDIR}/dockapps-a1e67bd
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmSun ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmSun.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/wmsun ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/wmsun.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
