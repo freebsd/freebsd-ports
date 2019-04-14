@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		tar:bzip2
 
-do-test:	build
+do-test:
 	cd ${BUILD_WRKSRC}/examples && ${MAKE} all
 
 .include <bsd.port.mk>
