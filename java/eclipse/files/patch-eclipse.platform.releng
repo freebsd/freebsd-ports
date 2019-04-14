@@ -1,0 +1,71 @@
+diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml
+--- eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -96,9 +96,9 @@
+          unpack="false"/>
+ 
+    <plugin
+-         id="org.eclipse.core.net.linux.x86_64"
+-         os="linux"
+-         arch="x86_64"
++         id="org.eclipse.core.net.freebsd.amd64"
++         os="freebsd"
++         arch="amd64"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"
+@@ -348,9 +348,9 @@
+          unpack="false"/>
+ 
+    <plugin
+-         id="org.eclipse.core.filesystem.linux.x86_64"
+-         os="linux"
+-         arch="x86_64"
++         id="org.eclipse.core.filesystem.freebsd.amd64"
++         os="freebsd"
++         arch="amd64"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"
+@@ -387,9 +387,9 @@
+          unpack="false"/>
+ 
+    <plugin
+-         id="org.eclipse.core.filesystem.linux.ppc64le"
+-         os="linux"
+-         arch="ppc64le"
++         id="org.eclipse.core.filesystem.freebsd.powerpc64"
++         os="freebsd"
++         arch="powerpc64"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"
+@@ -451,9 +451,9 @@
+          unpack="false"/>
+ 
+    <plugin
+-         id="org.eclipse.equinox.security.linux.x86_64"
+-         os="linux"
+-         arch="x86_64"
++         id="org.eclipse.equinox.security.freebsd.amd64"
++         os="freebsd"
++         arch="amd64"
+          download-size="0"
+          install-size="0"
+          version="0.0.0"
+diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml
+--- eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -55,10 +55,10 @@
+               </plugins>
+               <excludes>
+                 <plugin id="org.eclipse.platform.doc.user"/>
+-                <plugin id="org.eclipse.core.filesystem.linux.x86_64"/>
++                <plugin id="org.eclipse.core.filesystem.freebsd.amd64"/>
+                 <plugin id="org.eclipse.core.filesystem.macosx"/>
+                 <plugin id="org.eclipse.core.filesystem.win32.x86_64"/>
+-                <plugin id="org.eclipse.core.filesystem.linux.ppc64le"/>
++                <plugin id="org.eclipse.core.filesystem.freebsd.powerpc64"/>
+                 <plugin id="org.eclipse.core.resources.win32.x86_64"/>
+               </excludes>
+             </configuration>

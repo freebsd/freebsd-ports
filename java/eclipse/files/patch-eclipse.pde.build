@@ -1,0 +1,77 @@
+diff -ru eclipse.pde.build/org.eclipse.pde.build/scripts/productBuild/allElements.xml eclipse.pde.build/org.eclipse.pde.build/scripts/productBuild/allElements.xml
+--- eclipse.pde.build/org.eclipse.pde.build/scripts/productBuild/allElements.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.pde.build/org.eclipse.pde.build/scripts/productBuild/allElements.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -59,10 +59,10 @@
+ 		</ant>
+  	</target>
+ 	
+-	<property name="assemble.org.eclipse.pde.build.container.feature.linux.gtk.x86_64" value="true" />
+- 	<target name="assemble.org.eclipse.pde.build.container.feature.linux.gtk.x86_64">
++	<property name="assemble.org.eclipse.pde.build.container.feature.freebsd.gtk.amd64" value="true" />
++ 	<target name="assemble.org.eclipse.pde.build.container.feature.freebsd.gtk.amd64">
+  		<ant antfile="${assembleScriptName}" dir="${buildDirectory}">			
+- 			<property name="archiveName" value="${archiveNamePrefix}-linux.gtk.x86_64.zip"/>
++ 			<property name="archiveName" value="${archiveNamePrefix}-freebsd.gtk.amd64.zip"/>
+ 		</ant>
+  	</target>
+ 	
+diff -ru eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/Utils.java eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/Utils.java
+--- eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/Utils.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/Utils.java	0000-00-00 00:00:00.000000000 +0000
+@@ -704,7 +704,7 @@
+ 			arguments.add("-sf"); //$NON-NLS-1$
+ 			arguments.add(links[i]);
+ 			arguments.add(links[i + 1]);
+-			script.printExecTask("ln", dir, arguments, "Linux"); //$NON-NLS-1$ //$NON-NLS-2$
++			script.printExecTask("ln", dir, arguments, "Linux,FreeBSD"); //$NON-NLS-1$ //$NON-NLS-2$
+ 			arguments.clear();
+ 		}
+ 	}
+diff -ru eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/builder/ModelBuildScriptGenerator.java eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/builder/ModelBuildScriptGenerator.java
+--- eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/builder/ModelBuildScriptGenerator.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/builder/ModelBuildScriptGenerator.java	0000-00-00 00:00:00.000000000 +0000
+@@ -922,7 +922,7 @@
+ 		for (int i = 0; i < links.length; i += 2) {
+ 			arguments.add(links[i]);
+ 			arguments.add(links[i + 1]);
+-			script.printExecTask("ln -s", dir, arguments, "Linux"); //$NON-NLS-1$ //$NON-NLS-2$
++			script.printExecTask("ln -s", dir, arguments, "Linux,FreeBSD"); //$NON-NLS-1$ //$NON-NLS-2$
+ 			arguments.clear();
+ 		}
+ 	}
+diff -ru eclipse.pde.build/org.eclipse.pde.build/src_ant/org/eclipse/pde/internal/build/tasks/JNLPGenerator.java eclipse.pde.build/org.eclipse.pde.build/src_ant/org/eclipse/pde/internal/build/tasks/JNLPGenerator.java
+--- eclipse.pde.build/org.eclipse.pde.build/src_ant/org/eclipse/pde/internal/build/tasks/JNLPGenerator.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.pde.build/org.eclipse.pde.build/src_ant/org/eclipse/pde/internal/build/tasks/JNLPGenerator.java	0000-00-00 00:00:00.000000000 +0000
+@@ -306,6 +306,8 @@
+ 	private String convertOS(String os) {
+ 		if (os == null)
+ 			return null;
++		if ("freebsd".equalsIgnoreCase(os)) //$NON-NLS-1$
++			return "FreeBSD"; //$NON-NLS-1$
+ 		if ("win32".equalsIgnoreCase(os)) //$NON-NLS-1$
+ 			return "Windows"; //$NON-NLS-1$
+ 		if ("macosx".equalsIgnoreCase(os)) //$NON-NLS-1$
+diff -ru eclipse.pde.build/org.eclipse.pde.build/templates/packager/customTargets.xml eclipse.pde.build/org.eclipse.pde.build/templates/packager/customTargets.xml
+--- eclipse.pde.build/org.eclipse.pde.build/templates/packager/customTargets.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.pde.build/org.eclipse.pde.build/templates/packager/customTargets.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -19,9 +19,9 @@
+ 		</ant>
+ 	</target>
+ 	
+-	<target name="assemble.linux.gtk.x86_64.xml">
++	<target name="assemble.freebsd.gtk.amd64.xml">
+ 		<ant antfile="${assembleScriptName}" >
+-			<property name="archiveName" value="${archiveNamePrefix}-linux.gtk.x86_64.zip"/>
++			<property name="archiveName" value="${archiveNamePrefix}-freebsd.gtk.amd64.zip"/>
+ 		</ant>
+ 	</target>
+ 		
+diff -ru eclipse.pde.build/org.eclipse.pde.build/templates/packager/packaging.properties eclipse.pde.build/org.eclipse.pde.build/templates/packager/packaging.properties
+--- eclipse.pde.build/org.eclipse.pde.build/templates/packager/packaging.properties	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.pde.build/org.eclipse.pde.build/templates/packager/packaging.properties	0000-00-00 00:00:00.000000000 +0000
+@@ -19,4 +19,4 @@
+ root.permissions.755=eclipse,*.so*
+ 
+ root.win32.win32.x86_64=eclipse.exe, eclipsec.exe
+-root.linux.gtk.x86_64=eclipse,libcairo-swt.so,about_files/,about.html,icon.xpm
++root.freebsd.gtk.amd64=eclipse,libcairo-swt.so,about_files/,about.html,icon.xpm
