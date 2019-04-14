@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CSS-Sass
-PORTVERSION=	3.4.12
+PORTVERSION=	3.4.13
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ COMMENT=	Compile .scss and .sass files using LibSass
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-ExtUtils-CppGuess>=0.09:devel/p5-ExtUtils-CppGuess \
+BUILD_DEPENDS=	p5-ExtUtils-CppGuess>=0.14:devel/p5-ExtUtils-CppGuess \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Encode-Locale>=0.01:converters/p5-Encode-Locale \
 		p5-Filesys-Notify-KQueue>=0.01:devel/p5-Filesys-Notify-KQueue \
