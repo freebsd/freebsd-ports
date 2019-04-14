@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Amazon-S3
-PORTVERSION=	0.85
+PORTVERSION=	0.86
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -42,5 +42,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
