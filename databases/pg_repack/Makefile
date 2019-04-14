@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pg_repack
-PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTVERSION=	1.4.4
 DISTVERSIONPREFIX=	ver_
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
@@ -22,7 +21,7 @@ WANT_PGSQL=	server
 
 PLIST_FILES=	bin/pg_repack \
 		lib/postgresql/pg_repack.so \
-		share/postgresql/extension/pg_repack--1.4.3.sql \
+		share/postgresql/extension/pg_repack--1.4.4.sql \
 		share/postgresql/extension/pg_repack.control
 
 post-install:
