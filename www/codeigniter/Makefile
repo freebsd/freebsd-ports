@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	codeigniter
-PORTVERSION=	3.1.6
+PORTVERSION=	3.1.10
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,6 +10,9 @@ COMMENT=	Framework for developing PHP web applications
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
+
+USES=		php:web
+USE_PHP=	mcrypt pcre session
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bcit-ci
@@ -19,60 +22,30 @@ CONFLICTS=	codeigniter-1.[0-9]* codeigniter22-2.[0-9]*
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		php:web
-USE_PHP=	mcrypt pcre session
+
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-CI_SYS_DIR=	system
-CI_CONF_DIR=	application/config
-PORTDOCS=	*
-
 # These are all user-configurable files that we'll install
-CI_CONF_FILES=	index.php \
-		${CI_CONF_DIR}/autoload.php \
-		${CI_CONF_DIR}/config.php \
-		${CI_CONF_DIR}/constants.php \
-		${CI_CONF_DIR}/database.php \
-		${CI_CONF_DIR}/doctypes.php \
-		${CI_CONF_DIR}/foreign_chars.php \
-		${CI_CONF_DIR}/hooks.php \
-		${CI_CONF_DIR}/memcached.php \
-		${CI_CONF_DIR}/mimes.php \
-		${CI_CONF_DIR}/migration.php \
-		${CI_CONF_DIR}/profiler.php \
-		${CI_CONF_DIR}/routes.php \
-		${CI_CONF_DIR}/smileys.php \
-		${CI_CONF_DIR}/user_agents.php
-
-# This is the rest of the CodeIgniter installation that doesn't change
-STD_BITS=	${CI_CONF_DIR}/index.html \
-		application/.htaccess \
-		application/cache \
-		application/controllers \
-		application/core \
-		application/helpers \
-		application/hooks \
-		application/index.html \
-		application/language \
-		application/libraries \
-		application/logs \
-		application/models \
-		application/third_party \
-		application/views \
-		${CI_SYS_DIR}/.htaccess \
-		${CI_SYS_DIR}/core \
-		${CI_SYS_DIR}/database \
-		${CI_SYS_DIR}/fonts \
-		${CI_SYS_DIR}/helpers \
-		${CI_SYS_DIR}/index.html \
-		${CI_SYS_DIR}/language \
-		${CI_SYS_DIR}/libraries
+CI_CONF_FILES=	application/config/autoload.php \
+		application/config/config.php \
+		application/config/constants.php \
+		application/config/database.php \
+		application/config/doctypes.php \
+		application/config/foreign_chars.php \
+		application/config/hooks.php \
+		application/config/memcached.php \
+		application/config/migration.php \
+		application/config/mimes.php \
+		application/config/profiler.php \
+		application/config/routes.php \
+		application/config/smileys.php \
+		application/config/user_agents.php \
+		index.php
 
 OPTIONS_DEFINE=	APACHE DOCS MSSQL MYSQL MYSQLI ODBC PGSQL SQLITE
 OPTIONS_SUB=	yes
 
 SUB_FILES=	pkg-message
-PLIST_SUB+=	ECHO_MSG=${ECHO_MSG} CI_CONF_DIR=${CI_CONF_DIR}
 
 APACHE_DESC=	Configure for Apache-2.x
 MSSQL_DESC=	Install MSSQL support for PHP
@@ -82,36 +55,32 @@ ODBC_DESC=	Install ODBC support for PHP
 PGSQL_DESC=	Install PostgreSQL support for PHP
 SQLITE_DESC=	Install SQLite support for PHP
 
-APACHE_USES=	apache:run,2.2+
+APACHE_SUB_FILES=	codeigniter.conf
+APACHE_USES=	apache:run
 DOCS_VARS=	SUB_LIST+=HASHMARK=
 DOCS_VARS_OFF=	SUB_LIST+=HASHMARK=\#
-MSSQL_VARS=	USE_PHP+=mssql
-MYSQL_VARS=	USE_PHP+=mysql
-MYSQLI_VARS=	USE_PHP+=mysqli
-ODBC_VARS=	USE_PHP+=odbc
-PGSQL_VARS=	USE_PHP+=pgsql
-SQLITE_VARS=	USE_PHP+=sqlite3
+MSSQL_USE=	PHP=mssql
+MYSQL_USE=	PHP=mysql
+MYSQLI_USE=	PHP=mysqli
+ODBC_USE=	PHP=odbc
+PGSQL_USE=	PHP=pgsql
+SQLITE_USE=	PHP=sqlite3
 
-# These variables are specifically defined for Apache
-CONF=		codeigniter.conf
-CONFDIR=	${PREFIX}/${CONFDIR_REL}
-CONFDIR_REL=	${APACHEETCDIR}/Includes
-PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
-SUB_FILES+=	${CONF}
+post-patch:
+	@${RM} ${WRKSRC}/user_guide/.buildinfo
+	@${MV} ${WRKSRC}/readme.rst ${WRKSRC}/user_guide/readme.rst
 
 do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "${STD_BITS}" ${STAGEDIR}${WWWDIR}
-	for i in ${CI_CONF_FILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${STAGEDIR}${WWWDIR}/$$i.sample; \
-	done
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "application index.php system" ${STAGEDIR}${WWWDIR}
+.for ci_conf_file in ${CI_CONF_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${ci_conf_file} ${STAGEDIR}${WWWDIR}/${ci_conf_file}.sample
+.endfor
 
 do-install-APACHE-on:
-	@${MKDIR} ${STAGEDIR}${CONFDIR}
-	${CP} ${WRKDIR}/${CONF} ${STAGEDIR}${CONFDIR}/codeigniter.conf;
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes
+	${INSTALL_DATA} ${WRKDIR}/codeigniter.conf ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes/codeigniter.conf
 
 do-install-DOCS-on:
 	cd ${WRKSRC}/user_guide && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-	${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo
-	${CP} ${WRKSRC}/readme.rst ${STAGEDIR}${DOCSDIR}/readme.rst
 
 .include <bsd.port.mk>
