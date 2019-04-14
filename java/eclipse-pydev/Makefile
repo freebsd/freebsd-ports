@@ -12,6 +12,8 @@ DISTNAME=	PyDev%20${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Eclipse plugin for Python and Jython development
 
+BROKEN=		after java/eclipse update
+
 LICENSE=	EPL
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:java/eclipse
@@ -51,6 +53,8 @@ add-plist-post:
 	@${ECHO_CMD} "@exec ${CAT} ${PYDEV_BUNDLES_INFO} >> ${BUNDLES_INFO}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${SED} -i '' -E '/^((org)|(com))\.python\.pydev/d' %D/lib/eclipse/configuration/org.eclipse.equinox.simpleconfigurator/bundles.info" >> ${TMPPLIST}
 
-.include "${PORTSDIR}/java/eclipse/Makefile.plugins"
+# do not include, file went away after java/eclipse update
+# mizhka@gmail.com is working on the update
+# .include "${PORTSDIR}/java/eclipse/Makefile.plugins"
 
 .include <bsd.port.mk>
