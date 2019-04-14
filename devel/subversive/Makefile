@@ -13,6 +13,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:core ${CONNECTORS}:connectors
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Eclipse plug-in that provides Subversion support
 
+BROKEN=		after java/eclipse update
+
 LICENSE=	EPL
 
 RUN_DEPENDS=	eclipse:java/eclipse
@@ -22,6 +24,7 @@ CONNECTORS=	Subversive-connectors-allplatforms-4.0.2.I20140528-1700.zip
 USES=		zip
 NO_WRKSUBDIR=	yes
 
-.include "${.CURDIR}/../../java/eclipse/Makefile.plugins"
+# do not include, file went away after java/eclipse update
+# .include "${.CURDIR}/../../java/eclipse/Makefile.plugins"
 
 .include <bsd.port.mk>
