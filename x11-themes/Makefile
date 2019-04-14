@@ -147,6 +147,7 @@
     SUBDIR += plasma5-kde-gtk-config
     SUBDIR += plasma5-oxygen
     SUBDIR += plasma5-plasma-workspace-wallpapers
+    SUBDIR += plata-theme
     SUBDIR += qt5-style-plugins
     SUBDIR += qtcurve
     SUBDIR += qtcurve-gtk2
