@@ -19,10 +19,11 @@ RUN_DEPENDS=	p5-Moose>=0.90:devel/p5-Moose \
 		p5-Path-Class>0:devel/p5-Path-Class \
 		p5-Sub-Exporter>0:devel/p5-Sub-Exporter \
 		p5-namespace-clean>0:devel/p5-namespace-clean
-
 TEST_DEPENDS=	p5-Test-Requires>0:devel/p5-Test-Requires
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
