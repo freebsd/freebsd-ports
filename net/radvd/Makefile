@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	radvd
-PORTVERSION=	2.17
+PORTVERSION=	2.18
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.litech.org/radvd/dist/
 
