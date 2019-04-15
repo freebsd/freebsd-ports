@@ -2,6 +2,7 @@
 
 PORTNAME=	sysctlview
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	alfix86@gmail.com
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsysctlmibinfo.so:devel/libsysctlmibinfo
 
-USES=		pkgconfig gettext-runtime gnome
+USES=		compiler:c++11-lang pkgconfig gettext-runtime gnome
 USE_GNOME=	gtkmm30 atkmm glibmm pangomm glibmm gtk30 pango atk \
 		cairo glib20 cairomm libsigc++20 gdkpixbuf2 glib20
 
@@ -30,6 +31,9 @@ OPTIONS_SUB=		yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
+
+post-patch:
+	@${REINPLACE_CMD} '/CXX =/d; s/^CXXFLAGS =/CXXFLAGS +=/; s/^LDFLAGS =/LDFLAGS +=/' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sysctlview ${STAGEDIR}${PREFIX}/bin
