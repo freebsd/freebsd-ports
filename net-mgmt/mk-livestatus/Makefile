@@ -3,6 +3,7 @@
 
 PORTNAME=	mk-livestatus
 PORTVERSION=	1.2.8p25
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://mathias-kettner.de/download/
 DIST_SUBDIR=	check_mk
@@ -39,7 +40,10 @@ PERL_DESC=	Install Monitoring-Livestatus Perl API
 
 EXAMPLES_USES=	python
 NAGIOS3_RUN_DEPENDS=	nagios>=3.5.1:net-mgmt/nagios
-NAGIOS4_CONFIGURE_WITH=	nagios4
+# --without-nagios4 is broken and is equivalent to --with-nagios4,
+# so do not use NAGIOS4_CONFIGURE_WITH here or it breaks the NAGIOS3
+# option, cf. PR 232716.
+NAGIOS4_CONFIGURE_ON=	--with-nagios4
 NAGIOS4_RUN_DEPENDS=	nagios4>=4.4:net-mgmt/nagios4
 PERL_RUN_DEPENDS=	p5-Monitoring-Livestatus>=0:net-mgmt/p5-Monitoring-Livestatus
 
