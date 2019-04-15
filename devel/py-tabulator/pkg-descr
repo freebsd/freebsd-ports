@@ -1,0 +1,14 @@
+tabulator-py is a library for reading and writing tabular data
+(csv/xls/json/etc).
+
+Features:
+- Supports most common tabular formats: CSV, XLS, ODS, JSON, Google Sheets, SQL,
+  and others. See complete list below.
+- Loads local and remote data: Supports HTTP and FTP.
+- Low memory usage: Only the current row is kept in memory, so you can large
+  datasets.
+- Supports compressed files: Using ZIP or GZIP algorithms.
+- Extensible: You can add support for custom file formats and loaders (e.g.
+  FTP).
+
+WWW: https://github.com/frictionlessdata/tabulator-py

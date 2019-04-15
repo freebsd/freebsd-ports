@@ -5167,6 +5167,7 @@
     SUBDIR += py-sysv_ipc
     SUBDIR += py-tables
     SUBDIR += py-tabulate
+    SUBDIR += py-tabulator
     SUBDIR += py-tapi
     SUBDIR += py-tarantool-queue
     SUBDIR += py-taskflow
