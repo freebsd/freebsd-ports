@@ -12176,3 +12176,5 @@ devel/pecl-xdebug25|devel/pecl-xdebug|2019-04-09|Has expired: Please use pecl/xd
 devel/pecl-xdebug-devel|devel/pecl-xdebug|2019-04-09|Development version no longer necessary
 net/rubygem-fog-aliyun02|net/rubygem-fog-aliyun|2019-04-14|Has expired: Use net/rubygem-fog-aliyun instead
 net/rubygem-fog-aws2|net/rubygem-fog-aws|2019-04-14|Has expired: Use net/rubygem-fog-aws instead
+www/mediawiki127|www/mediawiki131|2019-04-15|Has expired: Upstream no longer maintained
+www/mediawiki130|www/mediawiki131|2019-04-15|Has expired: Upstream no longer maintained
