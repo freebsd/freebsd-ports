@@ -2,7 +2,7 @@
 +++ startkde/startkde.cmake
 @@ -2,6 +2,22 @@
  #
- #  DEFAULT KDE STARTUP SCRIPT ( @PROJECT_VERSION@ )
+ #  DEFAULT Plasma STARTUP SCRIPT ( @PROJECT_VERSION@ )
  #
 +# FreeBSD: add ${QTPREFIX}/lib/qt5/bin to path - note, this should be done better
 +PATH=${PATH}:%%QT_BINDIR%%
