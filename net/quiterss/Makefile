@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_WRKSUBDIR=	yes
 
-USES=		desktop-file-utils pkgconfig qmake:outsource qt:5 sqlite
+USES=		compiler:c++11-lang desktop-file-utils pkgconfig \
+		qmake:outsource qt:5 sqlite
 USE_QT=		buildtools_build linguisttools_build core xml gui widgets \
 		network multimedia printsupport webkit sql sql-sqlite3_run
 
