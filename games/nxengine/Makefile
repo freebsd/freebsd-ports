@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	nxengine
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES+=	https://www.cavestory.org/downloads/:data \
 		SF/lifanov-ports-distfiles/games/${PORTNAME}/:icons
@@ -25,12 +24,10 @@ LICENSE_DISTFILES_FREEWARE=	${DISTFILES:[2]:S/:data//}
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++11-lang sdl
 
 USE_SDL=	mixer2 sdl2
 SUB_FILES=	${PORTNAME}
-CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
-CXXFLAGS_clang=	-Wno-error-narrowing
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-evo
