@@ -19,6 +19,9 @@ RUN_DEPENDS=	p5-Heap>=0:devel/p5-Heap
 
 USES=		perl5
 USE_PERL5=	configure
+
 NO_ARCH=	yes
+
+PORTSCOUT=	skipv:0.20105
 
 .include <bsd.port.mk>
