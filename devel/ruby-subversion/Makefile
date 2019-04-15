@@ -6,8 +6,6 @@ PKGNAMEPREFIX=	ruby-
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Ruby bindings for version control system
 
-BROKEN_powerpc64=	fails to compile: swigutil_rb.c: 'ruby_errinfo' undeclared
-
 USE_RUBY=	yes
 
 PORTREVISION_111=	0

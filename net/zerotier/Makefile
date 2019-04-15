@@ -14,8 +14,6 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =${WRKSRC}/LICENSE.GPL-3
 LICENSE_FILE_MIT=${WRKSRC}/ext/json/LICENSE.MIT
 
-BROKEN_powerpc64=	fails to compile: clang: not found
-
 USES=		gmake compiler:c++14-lang
 USE_RC_SUBR=	zerotier
 
