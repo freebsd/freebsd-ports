@@ -15,6 +15,9 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=	Support ends, please move to dns/bind914.
+EXPIRATION_DATE=	2019-05-31
+
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USES=	compiler:c11 cpe libedit
