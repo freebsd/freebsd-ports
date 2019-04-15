@@ -1,6 +1,8 @@
-ELFIO is a C++ library for reading and generating files in the ELF binary
-format. This library is unique and not based on any other product. It is also
-platform independent. The library uses standard ANSI C++ constructions and
-runs on a wide variety of architectures.
+ELFIO is a small, header-only C++ library that provides a simple interface
+for reading and generating files in ELF binary format.
 
-WWW: https://sourceforge.net/projects/elfio/
+It is used as a standalone library - it is not dependant on any other
+product or project. Adhering to ISO C++, it compiles on a wide variety of
+architectures and compilers.
+
+WWW: http://elfio.sourceforge.net/
