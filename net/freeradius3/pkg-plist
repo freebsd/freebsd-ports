@@ -15,6 +15,7 @@ bin/radwho
 bin/radzap
 bin/rlm_ippool_tool
 bin/smbencrypt
+include/freeradius/autoconf.h
 include/freeradius/attributes.h
 include/freeradius/base64.h
 include/freeradius/build.h
@@ -40,6 +41,7 @@ include/freeradius/radiusd.h
 include/freeradius/radpaths.h
 include/freeradius/radutmp.h
 include/freeradius/realms.h
+include/freeradius/regex.h
 include/freeradius/rfc2865.h
 include/freeradius/rfc2866.h
 include/freeradius/rfc2867.h
@@ -72,11 +74,15 @@ include/freeradius/rfc7155.h
 include/freeradius/rfc7268.h
 include/freeradius/rfc7499.h
 include/freeradius/rfc7930.h
+include/freeradius/rfc8045.h
+include/freeradius/rfc8559.h
 include/freeradius/sha1.h
 include/freeradius/stats.h
 include/freeradius/sysutmp.h
+include/freeradius/threads.h
 include/freeradius/token.h
 include/freeradius/tls.h
+include/freeradius/tcp.h
 include/freeradius/udpfromto.h
 include/freeradius/vqp.h
 %%LIBDIR%%/libfreeradius-dhcp.a
@@ -635,6 +641,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/procedures.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/oracle/schema.sql
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/postgresql/procedure.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/postgresql/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/postgresql/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool/sqlite/queries.conf
@@ -707,6 +714,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/policy.d/filter
 %%EXAMPLESDIR%%/raddb/policy.d/moonshot-targeted-ids
 %%EXAMPLESDIR%%/raddb/policy.d/operator-name
+%%EXAMPLESDIR%%/raddb/policy.d/rfc7542
 %%EXAMPLESDIR%%/raddb/proxy.conf
 %%EXAMPLESDIR%%/raddb/radiusd.conf
 %%EXAMPLESDIR%%/raddb/sites-available/README
@@ -770,6 +778,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.avaya
 %%DATADIR%%/dictionary.azaire
 %%DATADIR%%/dictionary.bay
+%%DATADIR%%/dictionary.bigswitch
 %%DATADIR%%/dictionary.bintec
 %%DATADIR%%/dictionary.bluecoat
 %%DATADIR%%/dictionary.boingo
@@ -828,6 +837,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.huawei
 %%DATADIR%%/dictionary.iana
 %%DATADIR%%/dictionary.iea
+%%DATADIR%%/dictionary.infinera
 %%DATADIR%%/dictionary.infoblox
 %%DATADIR%%/dictionary.infonet
 %%DATADIR%%/dictionary.ipunplugged
@@ -867,6 +877,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.paloalto
 %%DATADIR%%/dictionary.patton
 %%DATADIR%%/dictionary.perle
+%%DATADIR%%/dictionary.pfsense
 %%DATADIR%%/dictionary.propel
 %%DATADIR%%/dictionary.prosoft
 %%DATADIR%%/dictionary.proxim
@@ -906,6 +917,8 @@ sbin/radmin
 %%DATADIR%%/dictionary.rfc7268
 %%DATADIR%%/dictionary.rfc7499
 %%DATADIR%%/dictionary.rfc7930
+%%DATADIR%%/dictionary.rfc8045
+%%DATADIR%%/dictionary.rfc8559
 %%DATADIR%%/dictionary.riverbed
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
@@ -938,6 +951,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.usr.illegal
 %%DATADIR%%/dictionary.utstarcom
 %%DATADIR%%/dictionary.valemount
+%%DATADIR%%/dictionary.verizon
 %%DATADIR%%/dictionary.versanet
 %%DATADIR%%/dictionary.vqp
 %%DATADIR%%/dictionary.walabi
