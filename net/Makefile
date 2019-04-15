@@ -171,6 +171,7 @@
     SUBDIR += frr4
     SUBDIR += frr5
     SUBDIR += frr6
+    SUBDIR += frr7
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fsplib
