@@ -1,0 +1,17 @@
+Table Schema is a simple language- and implementation-agnostic way to declare a
+schema for tabular data. Table Schema is well suited for use cases around
+handling and validating tabular data in text formats such as CSV, but its
+utility extends well beyond this core usage, towards a range of applications
+where data benefits from a portable schema format.
+
+Features:
+- Table to work with data tables described by Table Schema
+- Schema representing Table Schema
+- Field representing Table Schema field
+- validate to validate Table Schema
+- infer to infer Table Schema from data
+- built-in command-line interface to validate and infer schemas
+- storage/plugins system to connect tables to different storage backends like
+  SQL Database
+
+WWW: https://github.com/frictionlessdata/tableschema-py
