@@ -2596,6 +2596,7 @@
 %%WWWDIR%%/system/library/googleshopping/exception/connection.php
 %%WWWDIR%%/system/library/googleshopping/googleshopping.php
 %%WWWDIR%%/system/library/googleshopping/library.php
+%%WWWDIR%%/system/library/googleshopping/log.php
 %%WWWDIR%%/system/library/googleshopping/traits/libraryloader.php
 %%WWWDIR%%/system/library/googleshopping/traits/storeloader.php
 %%WWWDIR%%/system/library/image.php
