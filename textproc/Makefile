@@ -1346,6 +1346,7 @@
     SUBDIR += py-normality
     SUBDIR += py-numpydoc
     SUBDIR += py-openpyxl
+    SUBDIR += py-openpyxl24
     SUBDIR += py-openstackdocstheme
     SUBDIR += py-orange3-text
     SUBDIR += py-os-api-ref
