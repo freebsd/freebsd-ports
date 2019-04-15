@@ -13,8 +13,6 @@ COMMENT=	XSL wrapper / extension to the PHP 5.x XSLTProcessor
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	fails to package: Signal 11
-
 USE_PHP=	dom xml xsl
 PEAR_CHANNEL=	theseer
 USES=	pear
