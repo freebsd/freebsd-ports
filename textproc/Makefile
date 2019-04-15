@@ -1277,6 +1277,7 @@
     SUBDIR += py-awesome-slugify
     SUBDIR += py-bibtexparser
     SUBDIR += py-bugzillatools
+    SUBDIR += py-cchardet
     SUBDIR += py-chardet
     SUBDIR += py-citeproc-py
     SUBDIR += py-citeproc-py-styles
