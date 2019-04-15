@@ -291,6 +291,7 @@
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
     SUBDIR += ogmtools
+    SUBDIR += olive
     SUBDIR += omxplayer
     SUBDIR += openh264
     SUBDIR += openshot
