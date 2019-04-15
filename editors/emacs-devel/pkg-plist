@@ -2440,6 +2440,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/quick-cns.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/rfc1345.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/rfc1345.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/sami.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/sami.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/sgml-input.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/sgml-input.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/sisheng.el.gz
@@ -3947,7 +3949,6 @@ share/metainfo/emacs.appdata.xml
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/dispextern.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/dispnew.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/disptab.h
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/dmpstruct.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/doc.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/doprnt.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/dosfns.c
@@ -3965,9 +3966,6 @@ share/metainfo/emacs.appdata.xml
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/eval.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/fileio.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/filelock.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/fingerprint-dummy.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/fingerprint.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/fingerprint.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/firstfile.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/floatfns.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/fns.c
