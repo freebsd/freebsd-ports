@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 # Define PORTREVISION in ${MASTERDIR}
-MASTERDIR=	${.CURDIR}/../../dns/bind912
+MASTERDIR=	${.CURDIR}/../../dns/bind914
 
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
