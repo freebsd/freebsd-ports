@@ -54,7 +54,7 @@ NUMPY_LIB_DEPENDS=	${PY_BOOST}
 NUMPY_CXXFLAGS=		-std=gnu++11
 
 PNG_CMAKE_BOOL=		WITH_PNG
-PNG_LIB_DPEENDS=	libpng.so:graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 
 JPEG_CMAKE_BOOL=	WITH_JPEG
 JPEG_USES=		jpeg
