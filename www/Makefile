@@ -370,8 +370,6 @@
     SUBDIR += matomo
     SUBDIR += mattermost-server
     SUBDIR += mattermost-webapp
-    SUBDIR += mediawiki127
-    SUBDIR += mediawiki130
     SUBDIR += mediawiki131
     SUBDIR += mediawiki132
     SUBDIR += mergelog
