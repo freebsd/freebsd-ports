@@ -1,0 +1,10 @@
+If the shared files of a distribution are contained in a tarball (see
+Dist::Zilla::Plugin::ShareDir::Tarball for why you would want to do that)
+automatically extract the archive in a temporary directory and return the path
+to that directory.
+
+If called for a regular distribution without a bundle file
+(shared-files.tar.gz), it'll return the original shared dir. In other words,
+from the consumer point of view, it'll behave just like File::ShareDir.
+
+WWW: https://metacpan.org/pod/File::ShareDir::Tarball
