@@ -6,6 +6,7 @@ bin/mdig
 bin/named-rrchecker
 bin/nslookup
 bin/nsupdate
+@comment lib/named/filter-aaaa.so
 man/man1/arpaname.1.gz
 man/man1/delv.1.gz
 man/man1/dig.1.gz
@@ -26,7 +27,7 @@ man/man8/dnssec-revoke.8.gz
 man/man8/dnssec-settime.8.gz
 man/man8/dnssec-signzone.8.gz
 man/man8/dnssec-verify.8.gz
-man/man8/genrandom.8.gz
+@comment man/man8/filter-aaaa.8.gz
 man/man8/named-journalprint.8.gz
 man/man8/nsec3hash.8.gz
 sbin/dnssec-cds
@@ -41,6 +42,5 @@ sbin/dnssec-revoke
 sbin/dnssec-settime
 sbin/dnssec-signzone
 sbin/dnssec-verify
-sbin/genrandom
 sbin/named-journalprint
 sbin/nsec3hash
