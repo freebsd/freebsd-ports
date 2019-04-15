@@ -2,8 +2,10 @@
 @group www
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/CHANGELOG.md
+%%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/COPYING.txt
 %%WWWDIR%%/README.md
+%%WWWDIR%%/SUPPORT.md
 %%WWWDIR%%/ajax/autocompletion.php
 %%WWWDIR%%/ajax/comments.php
 %%WWWDIR%%/ajax/common.tabs.php
@@ -60,6 +62,7 @@
 %%WWWDIR%%/ajax/itemTicket.php
 %%WWWDIR%%/ajax/item_rack.php
 %%WWWDIR%%/ajax/kblink.php
+%%WWWDIR%%/ajax/knowbase.php
 %%WWWDIR%%/ajax/ldapdaterestriction.php
 %%WWWDIR%%/ajax/mailcollector.php
 %%WWWDIR%%/ajax/map.php
@@ -78,10 +81,8 @@
 %%WWWDIR%%/ajax/rulecriteria.php
 %%WWWDIR%%/ajax/rulecriteriavalue.php
 %%WWWDIR%%/ajax/savedsearch.php
-%%WWWDIR%%/ajax/searchmetarow.php
-%%WWWDIR%%/ajax/searchoption.php
+%%WWWDIR%%/ajax/search.php
 %%WWWDIR%%/ajax/searchoptionvalue.php
-%%WWWDIR%%/ajax/searchrow.php
 %%WWWDIR%%/ajax/selectUnaffectedOrNewItem_Device.php
 %%WWWDIR%%/ajax/solution.php
 %%WWWDIR%%/ajax/subvisibility.php
@@ -97,7 +98,6 @@
 %%WWWDIR%%/ajax/transfers.php
 %%WWWDIR%%/ajax/uemailUpdate.php
 %%WWWDIR%%/ajax/unlockobject.php
-%%WWWDIR%%/ajax/updateMetaSearch.php
 %%WWWDIR%%/ajax/updateTrackingDeviceType.php
 %%WWWDIR%%/ajax/updateTranslationFields.php
 %%WWWDIR%%/ajax/updatecurrenttab.php
@@ -106,39 +106,30 @@
 %%WWWDIR%%/apirest.md
 %%WWWDIR%%/apirest.php
 %%WWWDIR%%/apixmlrpc.php
+%%WWWDIR%%/bin/console
 %%WWWDIR%%/config/.htaccess
+%%WWWDIR%%/css/_highcontrast.scss
 %%WWWDIR%%/css/chartists-glpi.css
 %%WWWDIR%%/css/chartists-glpi.min.css
-%%WWWDIR%%/css/highcontrast.css
-%%WWWDIR%%/css/highcontrast.min.css
 %%WWWDIR%%/css/jquery-glpi.css
 %%WWWDIR%%/css/jquery-glpi.min.css
 %%WWWDIR%%/css/jstree-glpi.css
 %%WWWDIR%%/css/jstree-glpi.min.css
-%%WWWDIR%%/css/palettes/aerialgreen.css
-%%WWWDIR%%/css/palettes/aerialgreen.min.css
-%%WWWDIR%%/css/palettes/auror.css
-%%WWWDIR%%/css/palettes/auror.min.css
-%%WWWDIR%%/css/palettes/automn.css
-%%WWWDIR%%/css/palettes/automn.min.css
-%%WWWDIR%%/css/palettes/classic.css
-%%WWWDIR%%/css/palettes/classic.min.css
-%%WWWDIR%%/css/palettes/clockworkorange.css
-%%WWWDIR%%/css/palettes/clockworkorange.min.css
-%%WWWDIR%%/css/palettes/dark.css
-%%WWWDIR%%/css/palettes/dark.min.css
-%%WWWDIR%%/css/palettes/flood.css
-%%WWWDIR%%/css/palettes/flood.min.css
-%%WWWDIR%%/css/palettes/greenflat.css
-%%WWWDIR%%/css/palettes/greenflat.min.css
-%%WWWDIR%%/css/palettes/hipster.css
-%%WWWDIR%%/css/palettes/hipster.min.css
-%%WWWDIR%%/css/palettes/icecream.css
-%%WWWDIR%%/css/palettes/icecream.min.css
-%%WWWDIR%%/css/palettes/lightblue.css
-%%WWWDIR%%/css/palettes/lightblue.min.css
-%%WWWDIR%%/css/palettes/premiumred.css
-%%WWWDIR%%/css/palettes/premiumred.min.css
+%%WWWDIR%%/css/palettes/_aerialgreen.scss
+%%WWWDIR%%/css/palettes/_auror.scss
+%%WWWDIR%%/css/palettes/_automn.scss
+%%WWWDIR%%/css/palettes/_classic.scss
+%%WWWDIR%%/css/palettes/_clockworkorange.scss
+%%WWWDIR%%/css/palettes/_dark.scss
+%%WWWDIR%%/css/palettes/_flood.scss
+%%WWWDIR%%/css/palettes/_greenflat.scss
+%%WWWDIR%%/css/palettes/_hipster.scss
+%%WWWDIR%%/css/palettes/_icecream.scss
+%%WWWDIR%%/css/palettes/_lightblue.scss
+%%WWWDIR%%/css/palettes/_premiumred.scss
+%%WWWDIR%%/css/palettes/_purplehaze.scss
+%%WWWDIR%%/css/palettes/_teclib.scss
+%%WWWDIR%%/css/palettes/_vintage.scss
 %%WWWDIR%%/css/palettes/previews/aerialgreen.png
 %%WWWDIR%%/css/palettes/previews/auror.png
 %%WWWDIR%%/css/palettes/previews/automn.png
@@ -154,18 +145,11 @@
 %%WWWDIR%%/css/palettes/previews/purplehaze.png
 %%WWWDIR%%/css/palettes/previews/teclib.png
 %%WWWDIR%%/css/palettes/previews/vintage.png
-%%WWWDIR%%/css/palettes/purplehaze.css
-%%WWWDIR%%/css/palettes/purplehaze.min.css
-%%WWWDIR%%/css/palettes/teclib.css
-%%WWWDIR%%/css/palettes/teclib.min.css
-%%WWWDIR%%/css/palettes/vintage.css
-%%WWWDIR%%/css/palettes/vintage.min.css
 %%WWWDIR%%/css/print.css
 %%WWWDIR%%/css/print.min.css
 %%WWWDIR%%/css/style_install.css
 %%WWWDIR%%/css/style_install.min.css
-%%WWWDIR%%/css/styles.css
-%%WWWDIR%%/css/styles.min.css
+%%WWWDIR%%/css/styles.scss
 %%WWWDIR%%/css/tab-scroller-menu.css
 %%WWWDIR%%/css/tab-scroller-menu.min.css
 %%WWWDIR%%/css/tiny_mce/skins/light/content.inline.min.css
@@ -239,7 +223,6 @@
 %%WWWDIR%%/front/change_group.form.php
 %%WWWDIR%%/front/change_item.form.php
 %%WWWDIR%%/front/change_problem.form.php
-%%WWWDIR%%/front/change_project.form.php
 %%WWWDIR%%/front/change_supplier.form.php
 %%WWWDIR%%/front/change_ticket.form.php
 %%WWWDIR%%/front/change_user.form.php
@@ -281,6 +264,7 @@
 %%WWWDIR%%/front/cron.php
 %%WWWDIR%%/front/crontask.form.php
 %%WWWDIR%%/front/crontask.php
+%%WWWDIR%%/front/css.php
 %%WWWDIR%%/front/datacenter.form.php
 %%WWWDIR%%/front/datacenter.php
 %%WWWDIR%%/front/dcroom.form.php
@@ -372,8 +356,10 @@
 %%WWWDIR%%/front/item_project.form.php
 %%WWWDIR%%/front/item_rack.form.php
 %%WWWDIR%%/front/item_ticket.form.php
+%%WWWDIR%%/front/itil_project.form.php
 %%WWWDIR%%/front/itilcategory.form.php
 %%WWWDIR%%/front/itilcategory.php
+%%WWWDIR%%/front/itilfollowup.form.php
 %%WWWDIR%%/front/itilsolution.form.php
 %%WWWDIR%%/front/knowbaseitem.form.php
 %%WWWDIR%%/front/knowbaseitem.php
@@ -568,6 +554,8 @@
 %%WWWDIR%%/front/rule.php
 %%WWWDIR%%/front/rule.test.php
 %%WWWDIR%%/front/ruleaction.form.php
+%%WWWDIR%%/front/ruleasset.form.php
+%%WWWDIR%%/front/ruleasset.php
 %%WWWDIR%%/front/rulecriteria.form.php
 %%WWWDIR%%/front/ruledictionnarycomputermodel.form.php
 %%WWWDIR%%/front/ruledictionnarycomputermodel.php
@@ -674,7 +662,6 @@
 %%WWWDIR%%/front/ticket_ticket.form.php
 %%WWWDIR%%/front/ticket_user.form.php
 %%WWWDIR%%/front/ticketcost.form.php
-%%WWWDIR%%/front/ticketfollowup.form.php
 %%WWWDIR%%/front/ticketrecurrent.form.php
 %%WWWDIR%%/front/ticketrecurrent.php
 %%WWWDIR%%/front/ticketsatisfaction.form.php
@@ -705,6 +692,7 @@
 %%WWWDIR%%/front/vlan.php
 %%WWWDIR%%/front/wifinetwork.form.php
 %%WWWDIR%%/front/wifinetwork.php
+%%WWWDIR%%/inc/abstractquery.class.php
 %%WWWDIR%%/inc/ajax.class.php
 %%WWWDIR%%/inc/alert.class.php
 %%WWWDIR%%/inc/api.class.php
@@ -724,6 +712,7 @@
 %%WWWDIR%%/inc/budget.class.php
 %%WWWDIR%%/inc/budgettype.class.php
 %%WWWDIR%%/inc/businesscriticity.class.php
+%%WWWDIR%%/inc/cache/simplecache.class.php
 %%WWWDIR%%/inc/calendar.class.php
 %%WWWDIR%%/inc/calendar_holiday.class.php
 %%WWWDIR%%/inc/calendarsegment.class.php
@@ -739,13 +728,13 @@
 %%WWWDIR%%/inc/change_group.class.php
 %%WWWDIR%%/inc/change_item.class.php
 %%WWWDIR%%/inc/change_problem.class.php
-%%WWWDIR%%/inc/change_project.class.php
 %%WWWDIR%%/inc/change_supplier.class.php
 %%WWWDIR%%/inc/change_ticket.class.php
 %%WWWDIR%%/inc/change_user.class.php
 %%WWWDIR%%/inc/changecost.class.php
 %%WWWDIR%%/inc/changetask.class.php
 %%WWWDIR%%/inc/changevalidation.class.php
+%%WWWDIR%%/inc/climigration.class.php
 %%WWWDIR%%/inc/commondbchild.class.php
 %%WWWDIR%%/inc/commondbconnexity.class.php
 %%WWWDIR%%/inc/commondbrelation.class.php
@@ -774,6 +763,17 @@
 %%WWWDIR%%/inc/computervirtualmachine.class.php
 %%WWWDIR%%/inc/config.class.php
 %%WWWDIR%%/inc/config.php
+%%WWWDIR%%/inc/console/abstractcommand.class.php
+%%WWWDIR%%/inc/console/application.class.php
+%%WWWDIR%%/inc/console/command/forcenopluginsoptioncommandinterface.class.php
+%%WWWDIR%%/inc/console/commandloader.class.php
+%%WWWDIR%%/inc/console/database/checkcommand.class.php
+%%WWWDIR%%/inc/console/database/installcommand.class.php
+%%WWWDIR%%/inc/console/database/updatecommand.class.php
+%%WWWDIR%%/inc/console/ldap/synchronizeuserscommand.class.php
+%%WWWDIR%%/inc/console/migration/buildmissingtimestampscommand.class.php
+%%WWWDIR%%/inc/console/migration/myisamtoinnodbcommand.class.php
+%%WWWDIR%%/inc/console/task/unlockcommand.class.php
 %%WWWDIR%%/inc/consumable.class.php
 %%WWWDIR%%/inc/consumableitem.class.php
 %%WWWDIR%%/inc/consumableitemtype.class.php
@@ -915,7 +915,9 @@
 %%WWWDIR%%/inc/item_project.class.php
 %%WWWDIR%%/inc/item_rack.class.php
 %%WWWDIR%%/inc/item_ticket.class.php
+%%WWWDIR%%/inc/itil_project.class.php
 %%WWWDIR%%/inc/itilcategory.class.php
+%%WWWDIR%%/inc/itilfollowup.class.php
 %%WWWDIR%%/inc/itilsolution.class.php
 %%WWWDIR%%/inc/knowbase.class.php
 %%WWWDIR%%/inc/knowbaseitem.class.php
@@ -1062,6 +1064,7 @@
 %%WWWDIR%%/inc/queryexpression.class.php
 %%WWWDIR%%/inc/queryparam.class.php
 %%WWWDIR%%/inc/querysubquery.class.php
+%%WWWDIR%%/inc/queryunion.class.php
 %%WWWDIR%%/inc/queuednotification.class.php
 %%WWWDIR%%/inc/rack.class.php
 %%WWWDIR%%/inc/rackmodel.class.php
@@ -1078,6 +1081,8 @@
 %%WWWDIR%%/inc/rssfeed_user.class.php
 %%WWWDIR%%/inc/rule.class.php
 %%WWWDIR%%/inc/ruleaction.class.php
+%%WWWDIR%%/inc/ruleasset.class.php
+%%WWWDIR%%/inc/ruleassetcollection.class.php
 %%WWWDIR%%/inc/rulecollection.class.php
 %%WWWDIR%%/inc/rulecriteria.class.php
 %%WWWDIR%%/inc/ruledictionnarycomputermodel.class.php
@@ -1241,6 +1246,10 @@
 %%WWWDIR%%/install/update_92_921.php
 %%WWWDIR%%/install/update_92_93.php
 %%WWWDIR%%/install/update_930_931.php
+%%WWWDIR%%/install/update_931_932.php
+%%WWWDIR%%/install/update_93_94.php
+%%WWWDIR%%/install/update_940_941.php
+%%WWWDIR%%/install/update_941_942.php
 %%WWWDIR%%/install/update_content.php
 %%WWWDIR%%/install/update_to_031.php
 %%WWWDIR%%/install/update_xx_xy.tpl.php
@@ -1270,14 +1279,24 @@
 %%WWWDIR%%/lib/chartist-plugin-tooltip-0.0.17/chartist-plugin-tooltip.css
 %%WWWDIR%%/lib/chartist-plugin-tooltip-0.0.17/chartist-plugin-tooltip.js
 %%WWWDIR%%/lib/chartist-plugin-tooltip-0.0.17/chartist-plugin-tooltip.min.js
-%%WWWDIR%%/lib/font-awesome-4.7.0/css/font-awesome.css
-%%WWWDIR%%/lib/font-awesome-4.7.0/css/font-awesome.min.css
-%%WWWDIR%%/lib/font-awesome-4.7.0/fonts/FontAwesome.otf
-%%WWWDIR%%/lib/font-awesome-4.7.0/fonts/fontawesome-webfont.eot
-%%WWWDIR%%/lib/font-awesome-4.7.0/fonts/fontawesome-webfont.svg
-%%WWWDIR%%/lib/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf
-%%WWWDIR%%/lib/font-awesome-4.7.0/fonts/fontawesome-webfont.woff
-%%WWWDIR%%/lib/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2
+%%WWWDIR%%/lib/font-awesome/LICENSE.txt
+%%WWWDIR%%/lib/font-awesome/css/all.css
+%%WWWDIR%%/lib/font-awesome/css/all.min.css
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-brands-400.eot
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-brands-400.svg
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-brands-400.ttf
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-brands-400.woff
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-brands-400.woff2
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-regular-400.eot
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-regular-400.svg
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-regular-400.ttf
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-regular-400.woff
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-regular-400.woff2
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-solid-900.eot
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-solid-900.svg
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-solid-900.ttf
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-solid-900.woff
+%%WWWDIR%%/lib/font-awesome/webfonts/fa-solid-900.woff2
 %%WWWDIR%%/lib/fuzzy/LICENSE-MIT
 %%WWWDIR%%/lib/fuzzy/fuzzy-min.js
 %%WWWDIR%%/lib/gridstack/LICENSE
@@ -1386,11 +1405,11 @@
 %%WWWDIR%%/lib/jquery/i18n/jquery.ui.datepicker-zh-CN.js
 %%WWWDIR%%/lib/jquery/i18n/jquery.ui.datepicker-zh-HK.js
 %%WWWDIR%%/lib/jquery/i18n/jquery.ui.datepicker-zh-TW.js
-%%WWWDIR%%/lib/jquery/js/jquery-1.10.2.js
-%%WWWDIR%%/lib/jquery/js/jquery-1.10.2.min.js
-%%WWWDIR%%/lib/jquery/js/jquery-1.10.2.min.map
 %%WWWDIR%%/lib/jquery/js/jquery-ui-1.10.4.custom.js
 %%WWWDIR%%/lib/jquery/js/jquery-ui-1.10.4.custom.min.js
+%%WWWDIR%%/lib/jquery/js/jquery.js
+%%WWWDIR%%/lib/jquery/js/jquery.min.js
+%%WWWDIR%%/lib/jquery/js/jquery.min.map
 %%WWWDIR%%/lib/jqueryplugins/autogrow/jquery.autogrow-textarea.js
 %%WWWDIR%%/lib/jqueryplugins/autogrow/jquery.autogrow-textarea.min.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/CHANGELOG.txt
@@ -1413,7 +1432,9 @@
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/ar-sa.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/ar-tn.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/ar.js
+%%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/be.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/bg.js
+%%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/bs.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/ca.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/cs.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/da.js
@@ -1445,6 +1466,7 @@
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/is.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/it.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/ja.js
+%%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/ka.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/kk.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/ko.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/lb.js
@@ -1473,12 +1495,11 @@
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/uk.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/vi.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/zh-cn.js
+%%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/zh-hk.js
 %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale/zh-tw.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-file-upload/README.md
 %%WWWDIR%%/lib/jqueryplugins/jquery-file-upload/js/jquery.fileupload.js
-%%WWWDIR%%/lib/jqueryplugins/jquery-file-upload/js/jquery.fileupload.min.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-file-upload/js/jquery.iframe-transport.js
-%%WWWDIR%%/lib/jqueryplugins/jquery-file-upload/js/jquery.iframe-transport.min.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-file-upload/server/php/UploadHandler.php
 %%WWWDIR%%/lib/jqueryplugins/jquery-gantt/CONTRIBUTORS.md
 %%WWWDIR%%/lib/jqueryplugins/jquery-gantt/README.md
@@ -1515,6 +1536,7 @@
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-es.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-et.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-eu.js
+%%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-fa.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-fi.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-fr.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-gl.js
@@ -1526,6 +1548,8 @@
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-ja.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-ko.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-lt.js
+%%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-lv.js
+%%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-mk.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-nl.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-no.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-pl.js
@@ -1535,6 +1559,7 @@
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-ru.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-sk.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-sl.js
+%%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-sq.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-sr-RS.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-sr-YU.js
 %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n/jquery-ui-timepicker-sv.js
@@ -1678,10 +1703,13 @@
 %%WWWDIR%%/lib/tiny_mce/lib/jquery.tinymce.min.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/af_ZA.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/ar.js
+%%WWWDIR%%/lib/tiny_mce/lib/langs/az.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/be.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/bg_BG.js
+%%WWWDIR%%/lib/tiny_mce/lib/langs/bn_BD.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/ca.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/cs.js
+%%WWWDIR%%/lib/tiny_mce/lib/langs/cs_CZ.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/cy.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/da.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/de.js
@@ -1729,6 +1757,7 @@
 %%WWWDIR%%/lib/tiny_mce/lib/langs/th_TH.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/tr.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/tr_TR.js
+%%WWWDIR%%/lib/tiny_mce/lib/langs/ug.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/uk.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/uk_UA.js
 %%WWWDIR%%/lib/tiny_mce/lib/langs/uz.js
@@ -1820,7 +1849,7 @@
 %%WWWDIR%%/lib/tiny_mce/lib/themes/mobile/theme.min.js
 %%WWWDIR%%/lib/tiny_mce/lib/themes/modern/theme.min.js
 %%WWWDIR%%/lib/tiny_mce/lib/tinymce.min.js
-%%WWWDIR%%/lib/zend-splautoloader.class.php
+%%WWWDIR%%/lib/unorm/unorm.js
 %%WWWDIR%%/locales/.htaccess
 %%WWWDIR%%/locales/ar_SA.mo
 %%WWWDIR%%/locales/ar_SA.po
@@ -1986,7 +2015,6 @@
 %%WWWDIR%%/pics/fond_th.png
 %%WWWDIR%%/pics/glpi.png
 %%WWWDIR%%/pics/greenbutton.png
-%%WWWDIR%%/pics/group.png
 %%WWWDIR%%/pics/groupes.png
 %%WWWDIR%%/pics/icones/ai-dist.png
 %%WWWDIR%%/pics/icones/aiff-dist.png
@@ -2110,12 +2138,10 @@
 %%WWWDIR%%/pics/rdv_public.png
 %%WWWDIR%%/pics/redbutton.png
 %%WWWDIR%%/pics/refresh.png
-%%WWWDIR%%/pics/reservation-3.png
 %%WWWDIR%%/pics/reservation.png
 %%WWWDIR%%/pics/reset.png
 %%WWWDIR%%/pics/right.png
 %%WWWDIR%%/pics/right_off.png
-%%WWWDIR%%/pics/sauvegardes.png
 %%WWWDIR%%/pics/screenshots/components.png
 %%WWWDIR%%/pics/screenshots/dcim_racks_draganddrop.gif
 %%WWWDIR%%/pics/screenshots/dcim_racks_toggleimages.gif
@@ -2145,7 +2171,6 @@
 %%WWWDIR%%/pics/timeline/group.png
 %%WWWDIR%%/pics/timeline/information.png
 %%WWWDIR%%/pics/timeline/planification.png
-%%WWWDIR%%/pics/timeline/private.png
 %%WWWDIR%%/pics/timeline/reset.png
 %%WWWDIR%%/pics/timeline/task.png
 %%WWWDIR%%/pics/timeline/todo.png
@@ -2156,7 +2181,6 @@
 %%WWWDIR%%/pics/toggle-left.png
 %%WWWDIR%%/pics/toggle-right.png
 %%WWWDIR%%/pics/treeroot.png
-%%WWWDIR%%/pics/user.png
 %%WWWDIR%%/pics/users.png
 %%WWWDIR%%/pics/waiting.png
 %%WWWDIR%%/pics/warning.png
@@ -2164,18 +2188,12 @@
 %%WWWDIR%%/pics/web.png
 %%WWWDIR%%/plugins/remove.txt
 %%WWWDIR%%/scripts/.htaccess
-%%WWWDIR%%/scripts/add_creation_date.php
-%%WWWDIR%%/scripts/checkdb.php
-%%WWWDIR%%/scripts/cliinstall.php
-%%WWWDIR%%/scripts/cliupdate.php
 %%WWWDIR%%/scripts/compute_dictionnary.php
 %%WWWDIR%%/scripts/glpi_cron_curl.sh
 %%WWWDIR%%/scripts/glpi_cron_lynx.sh
-%%WWWDIR%%/scripts/innodb_migration.php
 %%WWWDIR%%/scripts/ldap_mass_sync.php
 %%WWWDIR%%/scripts/migrations/racks_plugin.php
 %%WWWDIR%%/scripts/softcat_mass_compute.php
-%%WWWDIR%%/scripts/unlock_tasks.php
 %%WWWDIR%%/sound/sound_a.mp3
 %%WWWDIR%%/sound/sound_a.ogg
 %%WWWDIR%%/sound/sound_b.mp3
@@ -2200,10 +2218,45 @@
 %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container/ContainerInterface.php
 %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container/Exception/ContainerException.php
 %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container/Exception/NotFoundException.php
+%%WWWDIR%%/vendor/elvanto/litemoji/LICENSE
+%%WWWDIR%%/vendor/elvanto/litemoji/README.md
+%%WWWDIR%%/vendor/elvanto/litemoji/bin/generate-shortcodes-array.php
+%%WWWDIR%%/vendor/elvanto/litemoji/phpunit.xml
+%%WWWDIR%%/vendor/elvanto/litemoji/src/LitEmoji.php
+%%WWWDIR%%/vendor/elvanto/litemoji/src/shortcodes-array.php
 %%WWWDIR%%/vendor/iamcal/lib_autolink/.gitattributes
 %%WWWDIR%%/vendor/iamcal/lib_autolink/LICENSE
 %%WWWDIR%%/vendor/iamcal/lib_autolink/README.md
 %%WWWDIR%%/vendor/iamcal/lib_autolink/lib_autolink.php
+%%WWWDIR%%/vendor/leafo/scssphp/LICENSE.md
+%%WWWDIR%%/vendor/leafo/scssphp/README.md
+%%WWWDIR%%/vendor/leafo/scssphp/bin/pscss
+%%WWWDIR%%/vendor/leafo/scssphp/scss.inc.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Base/Range.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Block.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Colors.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Compiler.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Compiler/Environment.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Exception/CompilerException.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Exception/ParserException.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Exception/RangeException.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Exception/ServerException.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Formatter.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Formatter/Compact.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Formatter/Compressed.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Formatter/Crunched.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Formatter/Debug.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Formatter/Expanded.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Formatter/Nested.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Formatter/OutputBlock.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Node.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Node/Number.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Parser.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/SourceMap/Base64VLQEncoder.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/SourceMap/SourceMapGenerator.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Type.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Util.php
+%%WWWDIR%%/vendor/leafo/scssphp/src/Version.php
 %%WWWDIR%%/vendor/michelf/php-markdown/License.md
 %%WWWDIR%%/vendor/michelf/php-markdown/Michelf/Markdown.inc.php
 %%WWWDIR%%/vendor/michelf/php-markdown/Michelf/Markdown.php
@@ -2262,6 +2315,7 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/HandlerWrapper.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/HipChatHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/IFTTTHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/InsightOpsHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/LogEntriesHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/LogglyHandler.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/MailHandler.php
@@ -2300,13 +2354,16 @@
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/MemoryUsageProcessor.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/MercurialProcessor.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/ProcessIdProcessor.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/ProcessorInterface.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/PsrLogMessageProcessor.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/TagProcessor.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/UidProcessor.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor/WebProcessor.php
 %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Registry.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/ResettableInterface.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/SignalHandler.php
+%%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Utils.php
 %%WWWDIR%%/vendor/paragonie/random_compat/LICENSE
-%%WWWDIR%%/vendor/paragonie/random_compat/build-phar.sh
 %%WWWDIR%%/vendor/paragonie/random_compat/dist/random_compat.phar.pubkey
 %%WWWDIR%%/vendor/paragonie/random_compat/dist/random_compat.phar.pubkey.asc
 %%WWWDIR%%/vendor/paragonie/random_compat/lib/byte_safe_strings.php
@@ -2319,9 +2376,7 @@
 %%WWWDIR%%/vendor/paragonie/random_compat/lib/random_bytes_libsodium_legacy.php
 %%WWWDIR%%/vendor/paragonie/random_compat/lib/random_bytes_mcrypt.php
 %%WWWDIR%%/vendor/paragonie/random_compat/lib/random_int.php
-%%WWWDIR%%/vendor/paragonie/random_compat/other/build_phar.php
-%%WWWDIR%%/vendor/paragonie/random_compat/psalm-autoload.php
-%%WWWDIR%%/vendor/paragonie/random_compat/psalm.xml
+%%WWWDIR%%/vendor/phpmailer/phpmailer/COMMITMENT
 %%WWWDIR%%/vendor/phpmailer/phpmailer/LICENSE
 %%WWWDIR%%/vendor/phpmailer/phpmailer/README.md
 %%WWWDIR%%/vendor/phpmailer/phpmailer/SECURITY.md
@@ -2358,6 +2413,7 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ko.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-lt.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-lv.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-mg.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ms.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-nb.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-nl.php
@@ -2365,11 +2421,12 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-pt.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-pt_br.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ro.php
-%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-rs.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ru.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-sk.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-sl.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-sr.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-sv.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-tl.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-tr.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-uk.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-vi.php
@@ -2402,6 +2459,7 @@
 %%WWWDIR%%/vendor/psr/log/Psr/Log/LoggerTrait.php
 %%WWWDIR%%/vendor/psr/log/Psr/Log/NullLogger.php
 %%WWWDIR%%/vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php
+%%WWWDIR%%/vendor/psr/log/Psr/Log/Test/TestLogger.php
 %%WWWDIR%%/vendor/psr/log/README.md
 %%WWWDIR%%/vendor/psr/simple-cache/.editorconfig
 %%WWWDIR%%/vendor/psr/simple-cache/LICENSE.md
@@ -2416,6 +2474,7 @@
 %%WWWDIR%%/vendor/sabre/uri/lib/InvalidUriException.php
 %%WWWDIR%%/vendor/sabre/uri/lib/Version.php
 %%WWWDIR%%/vendor/sabre/uri/lib/functions.php
+%%WWWDIR%%/vendor/sabre/vobject/.php_cs.dist
 %%WWWDIR%%/vendor/sabre/vobject/.travis.yml
 %%WWWDIR%%/vendor/sabre/vobject/CHANGELOG.md
 %%WWWDIR%%/vendor/sabre/vobject/LICENSE
@@ -2505,6 +2564,7 @@
 %%WWWDIR%%/vendor/sabre/vobject/lib/timezonedata/php-bc.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/timezonedata/php-workaround.php
 %%WWWDIR%%/vendor/sabre/vobject/lib/timezonedata/windowszones.php
+%%WWWDIR%%/vendor/sabre/vobject/phpstan.neon
 %%WWWDIR%%/vendor/sabre/vobject/resources/schema/xcal.rng
 %%WWWDIR%%/vendor/sabre/vobject/resources/schema/xcard.rng
 %%WWWDIR%%/vendor/sabre/xml/.travis.yml
@@ -2587,10 +2647,378 @@
 %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Source.php
 %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/XML/Declaration/Parser.php
 %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/gzdecode.php
+%%WWWDIR%%/vendor/symfony/console/Application.php
+%%WWWDIR%%/vendor/symfony/console/CHANGELOG.md
+%%WWWDIR%%/vendor/symfony/console/Command/Command.php
+%%WWWDIR%%/vendor/symfony/console/Command/HelpCommand.php
+%%WWWDIR%%/vendor/symfony/console/Command/ListCommand.php
+%%WWWDIR%%/vendor/symfony/console/Command/LockableTrait.php
+%%WWWDIR%%/vendor/symfony/console/CommandLoader/CommandLoaderInterface.php
+%%WWWDIR%%/vendor/symfony/console/CommandLoader/ContainerCommandLoader.php
+%%WWWDIR%%/vendor/symfony/console/CommandLoader/FactoryCommandLoader.php
+%%WWWDIR%%/vendor/symfony/console/ConsoleEvents.php
+%%WWWDIR%%/vendor/symfony/console/DependencyInjection/AddConsoleCommandPass.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/ApplicationDescription.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/Descriptor.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/DescriptorInterface.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/JsonDescriptor.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/MarkdownDescriptor.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/TextDescriptor.php
+%%WWWDIR%%/vendor/symfony/console/Descriptor/XmlDescriptor.php
+%%WWWDIR%%/vendor/symfony/console/Event/ConsoleCommandEvent.php
+%%WWWDIR%%/vendor/symfony/console/Event/ConsoleErrorEvent.php
+%%WWWDIR%%/vendor/symfony/console/Event/ConsoleEvent.php
+%%WWWDIR%%/vendor/symfony/console/Event/ConsoleExceptionEvent.php
+%%WWWDIR%%/vendor/symfony/console/Event/ConsoleTerminateEvent.php
+%%WWWDIR%%/vendor/symfony/console/EventListener/ErrorListener.php
+%%WWWDIR%%/vendor/symfony/console/Exception/CommandNotFoundException.php
+%%WWWDIR%%/vendor/symfony/console/Exception/ExceptionInterface.php
+%%WWWDIR%%/vendor/symfony/console/Exception/InvalidArgumentException.php
+%%WWWDIR%%/vendor/symfony/console/Exception/InvalidOptionException.php
+%%WWWDIR%%/vendor/symfony/console/Exception/LogicException.php
+%%WWWDIR%%/vendor/symfony/console/Exception/RuntimeException.php
+%%WWWDIR%%/vendor/symfony/console/Formatter/OutputFormatter.php
+%%WWWDIR%%/vendor/symfony/console/Formatter/OutputFormatterInterface.php
+%%WWWDIR%%/vendor/symfony/console/Formatter/OutputFormatterStyle.php
+%%WWWDIR%%/vendor/symfony/console/Formatter/OutputFormatterStyleInterface.php
+%%WWWDIR%%/vendor/symfony/console/Formatter/OutputFormatterStyleStack.php
+%%WWWDIR%%/vendor/symfony/console/Helper/DebugFormatterHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/DescriptorHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/FormatterHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/Helper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/HelperInterface.php
+%%WWWDIR%%/vendor/symfony/console/Helper/HelperSet.php
+%%WWWDIR%%/vendor/symfony/console/Helper/InputAwareHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/ProcessHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/ProgressBar.php
+%%WWWDIR%%/vendor/symfony/console/Helper/ProgressIndicator.php
+%%WWWDIR%%/vendor/symfony/console/Helper/QuestionHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/SymfonyQuestionHelper.php
+%%WWWDIR%%/vendor/symfony/console/Helper/Table.php
+%%WWWDIR%%/vendor/symfony/console/Helper/TableCell.php
+%%WWWDIR%%/vendor/symfony/console/Helper/TableSeparator.php
+%%WWWDIR%%/vendor/symfony/console/Helper/TableStyle.php
+%%WWWDIR%%/vendor/symfony/console/Input/ArgvInput.php
+%%WWWDIR%%/vendor/symfony/console/Input/ArrayInput.php
+%%WWWDIR%%/vendor/symfony/console/Input/Input.php
+%%WWWDIR%%/vendor/symfony/console/Input/InputArgument.php
+%%WWWDIR%%/vendor/symfony/console/Input/InputAwareInterface.php
+%%WWWDIR%%/vendor/symfony/console/Input/InputDefinition.php
+%%WWWDIR%%/vendor/symfony/console/Input/InputInterface.php
+%%WWWDIR%%/vendor/symfony/console/Input/InputOption.php
+%%WWWDIR%%/vendor/symfony/console/Input/StreamableInputInterface.php
+%%WWWDIR%%/vendor/symfony/console/Input/StringInput.php
+%%WWWDIR%%/vendor/symfony/console/LICENSE
+%%WWWDIR%%/vendor/symfony/console/Logger/ConsoleLogger.php
+%%WWWDIR%%/vendor/symfony/console/Output/BufferedOutput.php
+%%WWWDIR%%/vendor/symfony/console/Output/ConsoleOutput.php
+%%WWWDIR%%/vendor/symfony/console/Output/ConsoleOutputInterface.php
+%%WWWDIR%%/vendor/symfony/console/Output/NullOutput.php
+%%WWWDIR%%/vendor/symfony/console/Output/Output.php
+%%WWWDIR%%/vendor/symfony/console/Output/OutputInterface.php
+%%WWWDIR%%/vendor/symfony/console/Output/StreamOutput.php
+%%WWWDIR%%/vendor/symfony/console/Question/ChoiceQuestion.php
+%%WWWDIR%%/vendor/symfony/console/Question/ConfirmationQuestion.php
+%%WWWDIR%%/vendor/symfony/console/Question/Question.php
+%%WWWDIR%%/vendor/symfony/console/README.md
+%%WWWDIR%%/vendor/symfony/console/Resources/bin/hiddeninput.exe
+%%WWWDIR%%/vendor/symfony/console/Style/OutputStyle.php
+%%WWWDIR%%/vendor/symfony/console/Style/StyleInterface.php
+%%WWWDIR%%/vendor/symfony/console/Style/SymfonyStyle.php
+%%WWWDIR%%/vendor/symfony/console/Terminal.php
+%%WWWDIR%%/vendor/symfony/console/Tester/ApplicationTester.php
+%%WWWDIR%%/vendor/symfony/console/Tester/CommandTester.php
+%%WWWDIR%%/vendor/symfony/console/Tests/ApplicationTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Command/CommandTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Command/HelpCommandTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Command/ListCommandTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Command/LockableTraitTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/CommandLoader/ContainerCommandLoaderTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/CommandLoader/FactoryCommandLoaderTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/DependencyInjection/AddConsoleCommandPassTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/AbstractDescriptorTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/JsonDescriptorTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/MarkdownDescriptorTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/ObjectsProvider.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/TextDescriptorTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Descriptor/XmlDescriptorTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/EventListener/ErrorListenerTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/BarBucCommand.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DescriptorApplication1.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DescriptorApplication2.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DescriptorApplicationMbString.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DescriptorCommand1.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DescriptorCommand2.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DescriptorCommand3.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DescriptorCommand4.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DescriptorCommandMbString.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/DummyOutput.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Foo1Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Foo2Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Foo3Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Foo4Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Foo5Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Foo6Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooCommand.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooLock2Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooLockCommand.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooOptCommand.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooSameCaseLowercaseCommand.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooSameCaseUppercaseCommand.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooSubnamespaced1Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FooSubnamespaced2Command.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/FoobarCommand.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_0.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_1.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_10.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_11.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_12.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_13.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_14.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_15.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_16.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_17.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_2.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_3.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_4.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_5.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_6.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_7.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_8.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/command_9.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command/interactive_command_1.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/interactive_output_1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_0.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_10.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_11.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_12.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_13.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_14.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_15.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_16.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_17.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_3.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_4.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_5.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_6.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_7.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_8.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output/output_9.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/TestCommand.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/TestTiti.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/TestToto.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_1.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_1.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_1.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_2.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_2.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_2.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_filtered_namespace.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_gethelp.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_mbstring.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_mbstring.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception3.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception3decorated.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception4.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception_doublewidth1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception_doublewidth1decorated.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception_doublewidth2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception_escapeslines.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_renderexception_linebreaks.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_run1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_run2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_run3.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/application_run4.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_1.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_1.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_1.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_2.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_2.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_2.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_mbstring.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/command_mbstring.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_1.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_1.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_1.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_2.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_2.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_2.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_3.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_3.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_3.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_3.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_4.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_4.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_4.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_4.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_with_default_inf_value.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_with_default_inf_value.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_with_default_inf_value.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_with_default_inf_value.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_with_style.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_with_style.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_with_style.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_argument_with_style.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_1.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_1.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_1.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_2.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_2.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_2.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_3.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_3.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_3.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_3.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_4.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_4.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_4.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_definition_4.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_1.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_1.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_1.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_1.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_2.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_2.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_2.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_2.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_3.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_3.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_3.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_3.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_4.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_4.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_4.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_4.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_5.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_5.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_5.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_5.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_6.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_6.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_6.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_6.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_default_inf_value.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_default_inf_value.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_default_inf_value.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_default_inf_value.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_style.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_style.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_style.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_style.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_style_array.json
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_style_array.md
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_style_array.txt
+%%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/input_option_with_style_array.xml
+%%WWWDIR%%/vendor/symfony/console/Tests/Formatter/OutputFormatterStyleStackTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Formatter/OutputFormatterStyleTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Formatter/OutputFormatterTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/AbstractQuestionHelperTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/FormatterHelperTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/HelperSetTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/HelperTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/ProcessHelperTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/ProgressBarTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/ProgressIndicatorTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/QuestionHelperTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/SymfonyQuestionHelperTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/TableStyleTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Helper/TableTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/ArgvInputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/ArrayInputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/InputArgumentTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/InputDefinitionTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/InputOptionTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/InputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Input/StringInputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Logger/ConsoleLoggerTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Output/ConsoleOutputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Output/NullOutputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Output/OutputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Output/StreamOutputTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Question/ConfirmationQuestionTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Style/SymfonyStyleTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/TerminalTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Tester/ApplicationTesterTest.php
+%%WWWDIR%%/vendor/symfony/console/Tests/Tester/CommandTesterTest.php
+%%WWWDIR%%/vendor/symfony/debug/BufferingLogger.php
+%%WWWDIR%%/vendor/symfony/debug/CHANGELOG.md
+%%WWWDIR%%/vendor/symfony/debug/Debug.php
+%%WWWDIR%%/vendor/symfony/debug/DebugClassLoader.php
+%%WWWDIR%%/vendor/symfony/debug/ErrorHandler.php
+%%WWWDIR%%/vendor/symfony/debug/Exception/ClassNotFoundException.php
+%%WWWDIR%%/vendor/symfony/debug/Exception/ContextErrorException.php
+%%WWWDIR%%/vendor/symfony/debug/Exception/FatalErrorException.php
+%%WWWDIR%%/vendor/symfony/debug/Exception/FatalThrowableError.php
+%%WWWDIR%%/vendor/symfony/debug/Exception/FlattenException.php
+%%WWWDIR%%/vendor/symfony/debug/Exception/OutOfMemoryException.php
+%%WWWDIR%%/vendor/symfony/debug/Exception/SilencedErrorContext.php
+%%WWWDIR%%/vendor/symfony/debug/Exception/UndefinedFunctionException.php
+%%WWWDIR%%/vendor/symfony/debug/Exception/UndefinedMethodException.php
+%%WWWDIR%%/vendor/symfony/debug/ExceptionHandler.php
+%%WWWDIR%%/vendor/symfony/debug/FatalErrorHandler/ClassNotFoundFatalErrorHandler.php
+%%WWWDIR%%/vendor/symfony/debug/FatalErrorHandler/FatalErrorHandlerInterface.php
+%%WWWDIR%%/vendor/symfony/debug/FatalErrorHandler/UndefinedFunctionFatalErrorHandler.php
+%%WWWDIR%%/vendor/symfony/debug/FatalErrorHandler/UndefinedMethodFatalErrorHandler.php
+%%WWWDIR%%/vendor/symfony/debug/LICENSE
+%%WWWDIR%%/vendor/symfony/debug/README.md
+%%WWWDIR%%/vendor/symfony/debug/Resources/ext/README.md
+%%WWWDIR%%/vendor/symfony/debug/Resources/ext/config.m4
+%%WWWDIR%%/vendor/symfony/debug/Resources/ext/config.w32
+%%WWWDIR%%/vendor/symfony/debug/Resources/ext/php_symfony_debug.h
+%%WWWDIR%%/vendor/symfony/debug/Resources/ext/symfony_debug.c
+%%WWWDIR%%/vendor/symfony/debug/Tests/DebugClassLoaderTest.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/ErrorHandlerTest.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Exception/FlattenExceptionTest.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/ExceptionHandlerTest.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/FatalErrorHandler/ClassNotFoundFatalErrorHandlerTest.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/FatalErrorHandler/UndefinedFunctionFatalErrorHandlerTest.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/FatalErrorHandler/UndefinedMethodFatalErrorHandlerTest.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/AnnotatedClass.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/ClassAlias.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/DeprecatedClass.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/DeprecatedInterface.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/ExtendedFinalMethod.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/FinalClasses.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/FinalMethod.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/FinalMethod2Trait.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/InternalClass.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/InternalInterface.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/InternalTrait.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/InternalTrait2.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/LoggerThatSetAnErrorHandler.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/NonDeprecatedInterface.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/PEARClass.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/Throwing.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/ToStringThrower.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/TraitWithInternalMethod.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/casemismatch.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/notPsr0Bis.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/psr4/Psr4CaseMismatch.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/reallyNotPsr0.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures2/RequiredTwice.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/HeaderMock.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/MockExceptionHandler.php
+%%WWWDIR%%/vendor/symfony/debug/Tests/phpt/debug_class_loader.phpt
+%%WWWDIR%%/vendor/symfony/debug/Tests/phpt/decorate_exception_hander.phpt
+%%WWWDIR%%/vendor/symfony/debug/Tests/phpt/exception_rethrown.phpt
+%%WWWDIR%%/vendor/symfony/debug/Tests/phpt/fatal_with_nested_handlers.phpt
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Mbstring.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/README.md
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/CHANGELOG.TXT
@@ -2929,42 +3357,6 @@
 %%WWWDIR%%/vendor/zendframework/zend-cache/src/Storage/TaggableInterface.php
 %%WWWDIR%%/vendor/zendframework/zend-cache/src/Storage/TotalSpaceCapableInterface.php
 %%WWWDIR%%/vendor/zendframework/zend-cache/src/StorageFactory.php
-%%WWWDIR%%/vendor/zendframework/zend-console/CHANGELOG.md
-%%WWWDIR%%/vendor/zendframework/zend-console/LICENSE.md
-%%WWWDIR%%/vendor/zendframework/zend-console/README.md
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Adapter/AbstractAdapter.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Adapter/AdapterInterface.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Adapter/Posix.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Adapter/Virtual.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Adapter/Windows.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Adapter/WindowsAnsicon.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Charset/Ascii.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Charset/AsciiExtended.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Charset/CharsetInterface.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Charset/DECSG.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Charset/Utf8.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Charset/Utf8Heavy.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Color/Xterm256.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/ColorInterface.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Console.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Exception/BadMethodCallException.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Exception/ExceptionInterface.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Exception/InvalidArgumentException.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Exception/RuntimeException.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Getopt.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Prompt/AbstractPrompt.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Prompt/Char.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Prompt/Checkbox.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Prompt/Confirm.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Prompt/Line.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Prompt/Number.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Prompt/Password.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Prompt/PromptInterface.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Prompt/Select.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Request.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/Response.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/RouteMatcher/DefaultRouteMatcher.php
-%%WWWDIR%%/vendor/zendframework/zend-console/src/RouteMatcher/RouteMatcherInterface.php
 %%WWWDIR%%/vendor/zendframework/zend-eventmanager/CHANGELOG.md
 %%WWWDIR%%/vendor/zendframework/zend-eventmanager/CONDUCT.md
 %%WWWDIR%%/vendor/zendframework/zend-eventmanager/CONTRIBUTING.md
@@ -3358,6 +3750,7 @@
 %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/InitializerInterface.php
 %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/PluginManagerInterface.php
 %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/Proxy/LazyServiceFactory.php
+%%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/PsrContainerDecorator.php
 %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/ServiceLocatorInterface.php
 %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/ServiceManager.php
 %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/Test/CommonPluginManagerTrait.php
@@ -3415,5 +3808,396 @@
 %%WWWDIR%%/vendor/zendframework/zend-stdlib/src/StringWrapper/MbString.php
 %%WWWDIR%%/vendor/zendframework/zend-stdlib/src/StringWrapper/Native.php
 %%WWWDIR%%/vendor/zendframework/zend-stdlib/src/StringWrapper/StringWrapperInterface.php
+@dir %%WWWDIR%%/ajax
+@dir %%WWWDIR%%/bin
+@dir %%WWWDIR%%/config
+@dir %%WWWDIR%%/css
+@dir %%WWWDIR%%/css/palettes
+@dir %%WWWDIR%%/css/palettes/previews
+@dir %%WWWDIR%%/css/tiny_mce
+@dir %%WWWDIR%%/css/tiny_mce/skins
+@dir %%WWWDIR%%/css/tiny_mce/skins/light
+@dir %%WWWDIR%%/css/tiny_mce/skins/light/fonts
+@dir %%WWWDIR%%/css/tiny_mce/skins/light/img
+@dir %%WWWDIR%%/files
+@dir %%WWWDIR%%/files/_cache
+@dir %%WWWDIR%%/files/_cron
+@dir %%WWWDIR%%/files/_dumps
+@dir %%WWWDIR%%/files/_graphs
+@dir %%WWWDIR%%/files/_lock
+@dir %%WWWDIR%%/files/_log
+@dir %%WWWDIR%%/files/_pictures
+@dir %%WWWDIR%%/files/_plugins
+@dir %%WWWDIR%%/files/_rss
+@dir %%WWWDIR%%/files/_sessions
+@dir %%WWWDIR%%/files/_tmp
+@dir %%WWWDIR%%/files/_uploads
+@dir %%WWWDIR%%/front
+@dir %%WWWDIR%%/inc
+@dir %%WWWDIR%%/inc/cache
+@dir %%WWWDIR%%/inc/console
+@dir %%WWWDIR%%/inc/console/command
+@dir %%WWWDIR%%/inc/console/database
+@dir %%WWWDIR%%/inc/console/ldap
+@dir %%WWWDIR%%/inc/console/migration
+@dir %%WWWDIR%%/inc/console/task
+@dir %%WWWDIR%%/inc/exception
+@dir %%WWWDIR%%/install
+@dir %%WWWDIR%%/install/mysql
+@dir %%WWWDIR%%/js
+@dir %%WWWDIR%%/lib
+@dir %%WWWDIR%%/lib/chartist-js-0.10.1
+@dir %%WWWDIR%%/lib/chartist-plugin-legend-0.6.0
+@dir %%WWWDIR%%/lib/chartist-plugin-tooltip-0.0.17
+@dir %%WWWDIR%%/lib/font-awesome
+@dir %%WWWDIR%%/lib/font-awesome/css
+@dir %%WWWDIR%%/lib/font-awesome/webfonts
+@dir %%WWWDIR%%/lib/fuzzy
+@dir %%WWWDIR%%/lib/gridstack
+@dir %%WWWDIR%%/lib/gridstack/src
+@dir %%WWWDIR%%/lib/htmlawed
+@dir %%WWWDIR%%/lib/jquery
+@dir %%WWWDIR%%/lib/jquery/css
+@dir %%WWWDIR%%/lib/jquery/css/smoothness
+@dir %%WWWDIR%%/lib/jquery/css/smoothness/images
+@dir %%WWWDIR%%/lib/jquery/i18n
+@dir %%WWWDIR%%/lib/jquery/js
+@dir %%WWWDIR%%/lib/jqueryplugins
+@dir %%WWWDIR%%/lib/jqueryplugins/autogrow
+@dir %%WWWDIR%%/lib/jqueryplugins/fullcalendar
+@dir %%WWWDIR%%/lib/jqueryplugins/fullcalendar/locale
+@dir %%WWWDIR%%/lib/jqueryplugins/jquery-file-upload
+@dir %%WWWDIR%%/lib/jqueryplugins/jquery-file-upload/js
+@dir %%WWWDIR%%/lib/jqueryplugins/jquery-file-upload/server
+@dir %%WWWDIR%%/lib/jqueryplugins/jquery-file-upload/server/php
+@dir %%WWWDIR%%/lib/jqueryplugins/jquery-gantt
+@dir %%WWWDIR%%/lib/jqueryplugins/jquery-gantt/css
+@dir %%WWWDIR%%/lib/jqueryplugins/jquery-gantt/img
+@dir %%WWWDIR%%/lib/jqueryplugins/jquery-gantt/js
+@dir %%WWWDIR%%/lib/jqueryplugins/jquery-ui-scrollable-tabs
+@dir %%WWWDIR%%/lib/jqueryplugins/jquery-ui-scrollable-tabs/css
+@dir %%WWWDIR%%/lib/jqueryplugins/jquery-ui-scrollable-tabs/js
+@dir %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon
+@dir %%WWWDIR%%/lib/jqueryplugins/jquery-ui-timepicker-addon/i18n
+@dir %%WWWDIR%%/lib/jqueryplugins/jstree
+@dir %%WWWDIR%%/lib/jqueryplugins/jstree/themes
+@dir %%WWWDIR%%/lib/jqueryplugins/jstree/themes/default
+@dir %%WWWDIR%%/lib/jqueryplugins/jstree/themes/default-dark
+@dir %%WWWDIR%%/lib/jqueryplugins/prettytextdiff
+@dir %%WWWDIR%%/lib/jqueryplugins/qtip2
+@dir %%WWWDIR%%/lib/jqueryplugins/rateit
+@dir %%WWWDIR%%/lib/jqueryplugins/select2
+@dir %%WWWDIR%%/lib/jqueryplugins/select2/css
+@dir %%WWWDIR%%/lib/jqueryplugins/select2/js
+@dir %%WWWDIR%%/lib/jqueryplugins/select2/js/i18n
+@dir %%WWWDIR%%/lib/jqueryplugins/spectrum-colorpicker
+@dir %%WWWDIR%%/lib/leaflet
+@dir %%WWWDIR%%/lib/leaflet/images
+@dir %%WWWDIR%%/lib/leaflet/plugins
+@dir %%WWWDIR%%/lib/leaflet/plugins/Leaflet.awesome-markers
+@dir %%WWWDIR%%/lib/leaflet/plugins/Leaflet.awesome-markers/images
+@dir %%WWWDIR%%/lib/leaflet/plugins/Leaflet.fullscreen
+@dir %%WWWDIR%%/lib/leaflet/plugins/Leaflet.markercluster
+@dir %%WWWDIR%%/lib/leaflet/plugins/leaflet-control-osm-geocoder
+@dir %%WWWDIR%%/lib/leaflet/plugins/leaflet.spin
+@dir %%WWWDIR%%/lib/prism
+@dir %%WWWDIR%%/lib/spin.js
+@dir %%WWWDIR%%/lib/tiny_mce
+@dir %%WWWDIR%%/lib/tiny_mce/custom_plugins
+@dir %%WWWDIR%%/lib/tiny_mce/custom_plugins/stickytoolbar
+@dir %%WWWDIR%%/lib/tiny_mce/lib
+@dir %%WWWDIR%%/lib/tiny_mce/lib/langs
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/advlist
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/anchor
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/autolink
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/autoresize
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/autosave
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/bbcode
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/charmap
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/code
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/codesample
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/codesample/css
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/colorpicker
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/contextmenu
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/directionality
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/emoticons
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/emoticons/img
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/fullpage
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/fullscreen
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/help
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/help/img
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/hr
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/image
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/imagetools
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/importcss
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/insertdatetime
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/legacyoutput
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/link
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/lists
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/media
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/nonbreaking
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/noneditable
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/pagebreak
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/paste
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/preview
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/print
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/save
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/searchreplace
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/spellchecker
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/tabfocus
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/table
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/template
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/textcolor
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/textpattern
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/toc
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/visualblocks
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/visualblocks/css
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/visualchars
+@dir %%WWWDIR%%/lib/tiny_mce/lib/plugins/wordcount
+@dir %%WWWDIR%%/lib/tiny_mce/lib/skins
+@dir %%WWWDIR%%/lib/tiny_mce/lib/skins/lightgray
+@dir %%WWWDIR%%/lib/tiny_mce/lib/skins/lightgray/fonts
+@dir %%WWWDIR%%/lib/tiny_mce/lib/skins/lightgray/img
+@dir %%WWWDIR%%/lib/tiny_mce/lib/themes
+@dir %%WWWDIR%%/lib/tiny_mce/lib/themes/inlite
+@dir %%WWWDIR%%/lib/tiny_mce/lib/themes/mobile
+@dir %%WWWDIR%%/lib/tiny_mce/lib/themes/modern
+@dir %%WWWDIR%%/lib/unorm
+@dir %%WWWDIR%%/locales
+@dir %%WWWDIR%%/pics
+@dir %%WWWDIR%%/pics/icones
+@dir %%WWWDIR%%/pics/jquery
+@dir %%WWWDIR%%/pics/jquery/jstree
+@dir %%WWWDIR%%/pics/logos
+@dir %%WWWDIR%%/pics/screenshots
+@dir %%WWWDIR%%/pics/timeline
+@dir %%WWWDIR%%/plugins
+@dir %%WWWDIR%%/scripts
+@dir %%WWWDIR%%/scripts/migrations
+@dir %%WWWDIR%%/sound
+@dir %%WWWDIR%%/vendor
+@dir %%WWWDIR%%/vendor/composer
+@dir %%WWWDIR%%/vendor/container-interop
+@dir %%WWWDIR%%/vendor/container-interop/container-interop
+@dir %%WWWDIR%%/vendor/container-interop/container-interop/src
+@dir %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop
+@dir %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container
+@dir %%WWWDIR%%/vendor/container-interop/container-interop/src/Interop/Container/Exception
+@dir %%WWWDIR%%/vendor/elvanto
+@dir %%WWWDIR%%/vendor/elvanto/litemoji
+@dir %%WWWDIR%%/vendor/elvanto/litemoji/bin
+@dir %%WWWDIR%%/vendor/elvanto/litemoji/src
+@dir %%WWWDIR%%/vendor/iamcal
+@dir %%WWWDIR%%/vendor/iamcal/lib_autolink
+@dir %%WWWDIR%%/vendor/leafo
+@dir %%WWWDIR%%/vendor/leafo/scssphp
+@dir %%WWWDIR%%/vendor/leafo/scssphp/bin
+@dir %%WWWDIR%%/vendor/leafo/scssphp/src
+@dir %%WWWDIR%%/vendor/leafo/scssphp/src/Base
+@dir %%WWWDIR%%/vendor/leafo/scssphp/src/Compiler
+@dir %%WWWDIR%%/vendor/leafo/scssphp/src/Exception
+@dir %%WWWDIR%%/vendor/leafo/scssphp/src/Formatter
+@dir %%WWWDIR%%/vendor/leafo/scssphp/src/Node
+@dir %%WWWDIR%%/vendor/leafo/scssphp/src/SourceMap
+@dir %%WWWDIR%%/vendor/michelf
+@dir %%WWWDIR%%/vendor/michelf/php-markdown
+@dir %%WWWDIR%%/vendor/michelf/php-markdown/Michelf
+@dir %%WWWDIR%%/vendor/monolog
+@dir %%WWWDIR%%/vendor/monolog/monolog
+@dir %%WWWDIR%%/vendor/monolog/monolog/src
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Formatter
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/Curl
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/FingersCrossed
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/Slack
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Handler/SyslogUdp
+@dir %%WWWDIR%%/vendor/monolog/monolog/src/Monolog/Processor
+@dir %%WWWDIR%%/vendor/paragonie
+@dir %%WWWDIR%%/vendor/paragonie/random_compat
+@dir %%WWWDIR%%/vendor/paragonie/random_compat/dist
+@dir %%WWWDIR%%/vendor/paragonie/random_compat/lib
+@dir %%WWWDIR%%/vendor/phpmailer
+@dir %%WWWDIR%%/vendor/phpmailer/phpmailer
+@dir %%WWWDIR%%/vendor/phpmailer/phpmailer/language
+@dir %%WWWDIR%%/vendor/phpmailer/phpmailer/src
+@dir %%WWWDIR%%/vendor/psr
+@dir %%WWWDIR%%/vendor/psr/cache
+@dir %%WWWDIR%%/vendor/psr/cache/src
+@dir %%WWWDIR%%/vendor/psr/container
+@dir %%WWWDIR%%/vendor/psr/container/src
+@dir %%WWWDIR%%/vendor/psr/log
+@dir %%WWWDIR%%/vendor/psr/log/Psr
+@dir %%WWWDIR%%/vendor/psr/log/Psr/Log
+@dir %%WWWDIR%%/vendor/psr/log/Psr/Log/Test
+@dir %%WWWDIR%%/vendor/psr/simple-cache
+@dir %%WWWDIR%%/vendor/psr/simple-cache/src
+@dir %%WWWDIR%%/vendor/sabre
+@dir %%WWWDIR%%/vendor/sabre/uri
+@dir %%WWWDIR%%/vendor/sabre/uri/lib
+@dir %%WWWDIR%%/vendor/sabre/vobject
+@dir %%WWWDIR%%/vendor/sabre/vobject/bin
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Component
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/ITip
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Parser
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Parser/XML
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Parser/XML/Element
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Property
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Property/ICalendar
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Property/VCard
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Recur
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/Splitter
+@dir %%WWWDIR%%/vendor/sabre/vobject/lib/timezonedata
+@dir %%WWWDIR%%/vendor/sabre/vobject/resources
+@dir %%WWWDIR%%/vendor/sabre/vobject/resources/schema
+@dir %%WWWDIR%%/vendor/sabre/xml
+@dir %%WWWDIR%%/vendor/sabre/xml/bin
+@dir %%WWWDIR%%/vendor/sabre/xml/lib
+@dir %%WWWDIR%%/vendor/sabre/xml/lib/Deserializer
+@dir %%WWWDIR%%/vendor/sabre/xml/lib/Element
+@dir %%WWWDIR%%/vendor/sabre/xml/lib/Serializer
+@dir %%WWWDIR%%/vendor/sebastian
+@dir %%WWWDIR%%/vendor/sebastian/diff
+@dir %%WWWDIR%%/vendor/sebastian/diff/src
+@dir %%WWWDIR%%/vendor/sebastian/diff/src/LCS
+@dir %%WWWDIR%%/vendor/simplepie
+@dir %%WWWDIR%%/vendor/simplepie/simplepie
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/idn
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Cache
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Content
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Content/Type
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Decode
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Decode/HTML
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/HTTP
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Net
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/Parse
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/XML
+@dir %%WWWDIR%%/vendor/simplepie/simplepie/library/SimplePie/XML/Declaration
+@dir %%WWWDIR%%/vendor/symfony
+@dir %%WWWDIR%%/vendor/symfony/console
+@dir %%WWWDIR%%/vendor/symfony/console/Command
+@dir %%WWWDIR%%/vendor/symfony/console/CommandLoader
+@dir %%WWWDIR%%/vendor/symfony/console/DependencyInjection
+@dir %%WWWDIR%%/vendor/symfony/console/Descriptor
+@dir %%WWWDIR%%/vendor/symfony/console/Event
+@dir %%WWWDIR%%/vendor/symfony/console/EventListener
+@dir %%WWWDIR%%/vendor/symfony/console/Exception
+@dir %%WWWDIR%%/vendor/symfony/console/Formatter
+@dir %%WWWDIR%%/vendor/symfony/console/Helper
+@dir %%WWWDIR%%/vendor/symfony/console/Input
+@dir %%WWWDIR%%/vendor/symfony/console/Logger
+@dir %%WWWDIR%%/vendor/symfony/console/Output
+@dir %%WWWDIR%%/vendor/symfony/console/Question
+@dir %%WWWDIR%%/vendor/symfony/console/Resources
+@dir %%WWWDIR%%/vendor/symfony/console/Resources/bin
+@dir %%WWWDIR%%/vendor/symfony/console/Style
+@dir %%WWWDIR%%/vendor/symfony/console/Tester
+@dir %%WWWDIR%%/vendor/symfony/console/Tests
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Command
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/CommandLoader
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/DependencyInjection
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Descriptor
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/EventListener
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/command
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Fixtures/Style/SymfonyStyle/output
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Formatter
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Helper
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Input
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Logger
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Output
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Question
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Style
+@dir %%WWWDIR%%/vendor/symfony/console/Tests/Tester
+@dir %%WWWDIR%%/vendor/symfony/debug
+@dir %%WWWDIR%%/vendor/symfony/debug/Exception
+@dir %%WWWDIR%%/vendor/symfony/debug/FatalErrorHandler
+@dir %%WWWDIR%%/vendor/symfony/debug/Resources
+@dir %%WWWDIR%%/vendor/symfony/debug/Resources/ext
+@dir %%WWWDIR%%/vendor/symfony/debug/Tests
+@dir %%WWWDIR%%/vendor/symfony/debug/Tests/Exception
+@dir %%WWWDIR%%/vendor/symfony/debug/Tests/FatalErrorHandler
+@dir %%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures
+@dir %%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures/psr4
+@dir %%WWWDIR%%/vendor/symfony/debug/Tests/Fixtures2
+@dir %%WWWDIR%%/vendor/symfony/debug/Tests/phpt
+@dir %%WWWDIR%%/vendor/symfony/polyfill-mbstring
+@dir %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources
+@dir %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata
+@dir %%WWWDIR%%/vendor/tecnickcom
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/config
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/ae_fonts_2.0
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/dejavu-fonts-ttf-2.33
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/dejavu-fonts-ttf-2.34
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/freefont-20100919
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/freefont-20120503
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/include
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/include/barcodes
+@dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/tools
+@dir %%WWWDIR%%/vendor/true
+@dir %%WWWDIR%%/vendor/true/punycode
+@dir %%WWWDIR%%/vendor/true/punycode/src
+@dir %%WWWDIR%%/vendor/true/punycode/src/Exception
+@dir %%WWWDIR%%/vendor/zendframework
+@dir %%WWWDIR%%/vendor/zendframework/zend-cache
+@dir %%WWWDIR%%/vendor/zendframework/zend-cache/autoload
+@dir %%WWWDIR%%/vendor/zendframework/zend-cache/src
+@dir %%WWWDIR%%/vendor/zendframework/zend-cache/src/Exception
+@dir %%WWWDIR%%/vendor/zendframework/zend-cache/src/Pattern
+@dir %%WWWDIR%%/vendor/zendframework/zend-cache/src/PatternPluginManager
+@dir %%WWWDIR%%/vendor/zendframework/zend-cache/src/Psr
+@dir %%WWWDIR%%/vendor/zendframework/zend-cache/src/Psr/CacheItemPool
+@dir %%WWWDIR%%/vendor/zendframework/zend-cache/src/Psr/SimpleCache
+@dir %%WWWDIR%%/vendor/zendframework/zend-cache/src/Service
+@dir %%WWWDIR%%/vendor/zendframework/zend-cache/src/Storage
+@dir %%WWWDIR%%/vendor/zendframework/zend-cache/src/Storage/Adapter
+@dir %%WWWDIR%%/vendor/zendframework/zend-cache/src/Storage/Plugin
+@dir %%WWWDIR%%/vendor/zendframework/zend-eventmanager
+@dir %%WWWDIR%%/vendor/zendframework/zend-eventmanager/src
+@dir %%WWWDIR%%/vendor/zendframework/zend-eventmanager/src/Exception
+@dir %%WWWDIR%%/vendor/zendframework/zend-eventmanager/src/Filter
+@dir %%WWWDIR%%/vendor/zendframework/zend-eventmanager/src/Test
+@dir %%WWWDIR%%/vendor/zendframework/zend-i18n
+@dir %%WWWDIR%%/vendor/zendframework/zend-i18n/src
+@dir %%WWWDIR%%/vendor/zendframework/zend-i18n/src/Exception
+@dir %%WWWDIR%%/vendor/zendframework/zend-i18n/src/Filter
+@dir %%WWWDIR%%/vendor/zendframework/zend-i18n/src/Translator
+@dir %%WWWDIR%%/vendor/zendframework/zend-i18n/src/Translator/Loader
+@dir %%WWWDIR%%/vendor/zendframework/zend-i18n/src/Translator/Plural
+@dir %%WWWDIR%%/vendor/zendframework/zend-i18n/src/Validator
+@dir %%WWWDIR%%/vendor/zendframework/zend-i18n/src/Validator/PhoneNumber
+@dir %%WWWDIR%%/vendor/zendframework/zend-i18n/src/View
+@dir %%WWWDIR%%/vendor/zendframework/zend-i18n/src/View/Helper
+@dir %%WWWDIR%%/vendor/zendframework/zend-json
+@dir %%WWWDIR%%/vendor/zendframework/zend-json/src
+@dir %%WWWDIR%%/vendor/zendframework/zend-json/src/Exception
+@dir %%WWWDIR%%/vendor/zendframework/zend-serializer
+@dir %%WWWDIR%%/vendor/zendframework/zend-serializer/src
+@dir %%WWWDIR%%/vendor/zendframework/zend-serializer/src/Adapter
+@dir %%WWWDIR%%/vendor/zendframework/zend-serializer/src/Exception
+@dir %%WWWDIR%%/vendor/zendframework/zend-servicemanager
+@dir %%WWWDIR%%/vendor/zendframework/zend-servicemanager/bin
+@dir %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src
+@dir %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/AbstractFactory
+@dir %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/Exception
+@dir %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/Factory
+@dir %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/Initializer
+@dir %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/Proxy
+@dir %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/Test
+@dir %%WWWDIR%%/vendor/zendframework/zend-servicemanager/src/Tool
+@dir %%WWWDIR%%/vendor/zendframework/zend-stdlib
+@dir %%WWWDIR%%/vendor/zendframework/zend-stdlib/src
+@dir %%WWWDIR%%/vendor/zendframework/zend-stdlib/src/ArrayUtils
+@dir %%WWWDIR%%/vendor/zendframework/zend-stdlib/src/Exception
+@dir %%WWWDIR%%/vendor/zendframework/zend-stdlib/src/Guard
+@dir %%WWWDIR%%/vendor/zendframework/zend-stdlib/src/StringWrapper
 @owner
 @group
