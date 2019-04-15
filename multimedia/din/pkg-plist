@@ -299,9 +299,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/d_morpher
 %%DATADIR%%/factory/d_number
 %%DATADIR%%/factory/d_octave_shift
-%%DATADIR%%/factory/d_parameter_limits
 %%DATADIR%%/factory/d_parameters
-%%DATADIR%%/factory/d_pitch_bend
 %%DATADIR%%/factory/d_plugin_browser
 %%DATADIR%%/factory/d_rose_milker
 %%DATADIR%%/factory/d_sine_mixer
@@ -309,8 +307,6 @@ share/applications/din.desktop
 %%DATADIR%%/factory/d_starrer
 %%DATADIR%%/factory/d_superformula
 %%DATADIR%%/factory/d_warper
-%%DATADIR%%/factory/d_waveform_display
-%%DATADIR%%/factory/daccel.crv
 %%DATADIR%%/factory/dash.crv
 %%DATADIR%%/factory/decay.crv
 %%DATADIR%%/factory/decay.ed
@@ -327,7 +323,6 @@ share/applications/din.desktop
 %%DATADIR%%/factory/drone.ed
 %%DATADIR%%/factory/droner.help.tcl
 %%DATADIR%%/factory/droner.patch.tcl
-%%DATADIR%%/factory/dvel.crv
 %%DATADIR%%/factory/echo.help.tcl
 %%DATADIR%%/factory/equal-temperament.tuning
 %%DATADIR%%/factory/fader.crv
@@ -405,10 +400,17 @@ share/applications/din.desktop
 %%DATADIR%%/factory/p_Spiraler
 %%DATADIR%%/factory/p_Starrer
 %%DATADIR%%/factory/p_Superformula
+%%DATADIR%%/factory/pitch-vol.ed
+%%DATADIR%%/factory/pitch.crv
 %%DATADIR%%/factory/pythagoras.tuning
+%%DATADIR%%/factory/range-height.crv
+%%DATADIR%%/factory/range-height.crv.default
 %%DATADIR%%/factory/range-mod-height.crv
 %%DATADIR%%/factory/range-mod-width.crv
 %%DATADIR%%/factory/range-modulation.ed
+%%DATADIR%%/factory/range-width-height.ed
+%%DATADIR%%/factory/range-width.crv
+%%DATADIR%%/factory/range-width.crv.default
 %%DATADIR%%/factory/rose_milker.scr
 %%DATADIR%%/factory/rose_milker_cos.crv
 %%DATADIR%%/factory/rose_milker_cos.ed
@@ -458,6 +460,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/velocity.crv
 %%DATADIR%%/factory/velocity.ed
 %%DATADIR%%/factory/velocity.lib
+%%DATADIR%%/factory/vol.crv
 %%DATADIR%%/factory/volume-l.crv
 %%DATADIR%%/factory/volume-r.crv
 %%DATADIR%%/factory/warper.ed
