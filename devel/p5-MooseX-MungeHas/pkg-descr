@@ -1,0 +1,8 @@
+MooseX::MungeHas alters the behaviour of the attributes of your Moo, Moose or
+Mouse based class.
+
+It manages to support all three because it doesn't attempt to do anything smart
+with metathingies; it simply installs a wrapper for has that munges the
+attribute specification hash before passing it on to the original has function.
+
+WWW: https://metacpan.org/pod/MooseX::MungeHas

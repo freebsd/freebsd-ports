@@ -3028,6 +3028,7 @@
     SUBDIR += p5-MooseX-MethodAttributes
     SUBDIR += p5-MooseX-MultiInitArg
     SUBDIR += p5-MooseX-MultiMethods
+    SUBDIR += p5-MooseX-MungeHas
     SUBDIR += p5-MooseX-NonMoose
     SUBDIR += p5-MooseX-Object-Pluggable
     SUBDIR += p5-MooseX-OneArgNew
