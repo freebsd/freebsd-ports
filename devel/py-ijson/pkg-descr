@@ -1,0 +1,11 @@
+Ijson is an iterative JSON parser with a standard Python iterator interface.
+
+Ijson provides several implementations of the actual parsing in the form of
+backends located in ijson/backends:
+- yajl2_cffi: wrapper around YAJL 2.x using CFFI, this is the fastest.
+- yajl2: wrapper around YAJL 2.x using ctypes, for when you can't use CFFI for
+  some reason.
+- yajl: deprecated YAJL 1.x + ctypes wrapper, for even older systems.
+- python: pure Python parser, good to use with PyPy
+
+WWW: https://github.com/isagalaev/ijson
