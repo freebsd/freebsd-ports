@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jbig2dec
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	graphics devel
 MASTER_SITES=	LOCAL/sunpoet:tests
 
@@ -15,11 +15,12 @@ OPTIONS_DEFINE=	PNG TESTS
 OPTIONS_DEFAULT=PNG
 TESTS_DESC=	Download and use test-images for post-build testing
 
+USES=		autoreconf:build libtool
+
 CONFIGURE_ENV=	ac_cv_func_getopt_long=yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		autoreconf:build libtool
 
 GH_ACCOUNT=	ArtifexSoftware
 USE_GITHUB=	yes
