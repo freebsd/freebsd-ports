@@ -2,44 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	elfio
-PORTVERSION=	1.0.3
-PORTREVISION=	5
+PORTVERSION=	3.3
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/ELFIO-sources/ELFIO-${PORTVERSION}
-DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
+MASTER_SITES=	SF/elfio/ELFIO-sources/ELFIO-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	C++ library for reading and generating files in the ELF binary format
+MAINTAINER=	james.wright@digital-chaos.com
+COMMENT=	Small C++ library for reading and generating ELF files
 
-LICENSE=	LGPL21+
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USES=		autoreconf libtool
-USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--bindir=${EXAMPLESDIR}
 
-PORTDOCS=	*
-
-OPTIONS_DEFINE=	EXAMPLES DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
-
-post-patch:
-	@(${FIND} ${WRKSRC}/ -name Makefile.am | \
-		${XARGS} ${REINPLACE_CMD} -E -e 's,(libELFIO)\.a,\1.la,g')
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in AUTHORS ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
-.for f in elf11g.zip tutorial.docbook tutorial.pdf
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/doc/elfio.pdf ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${FIND} ${WRKSRC}/Examples/ -name "*.cpp" -exec ${INSTALL_DATA} {} \
-		${STAGEDIR}${EXAMPLESDIR}/ \;
+	@${FIND} ${WRKSRC}/examples/ -name "*.cpp" -exec ${INSTALL_DATA} {} \
+	${STAGEDIR}${EXAMPLESDIR}/ \;
 
 .include <bsd.port.mk>
