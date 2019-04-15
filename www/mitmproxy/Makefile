@@ -32,7 +32,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.2:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h2>=3.1.0:www/py-h2@${PY_FLAVOR}
 
 USES=		python:3.5+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist noflavors
 USE_GITHUB=	yes
 
 NO_ARCH=	yes

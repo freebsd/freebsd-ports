@@ -30,7 +30,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:www/py-beautifulsoup@${
 
 USES=		desktop-file-utils gettext-tools gnome python:3.5+ shebangfix
 USE_GNOME=	gdkpixbuf2 gtk30 intltool pygobject3:run
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils noflavors
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	varietywalls
