@@ -8,8 +8,6 @@ COMMENT=	Ice (Internet Communications Engine) language mapping for Python
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	fails to compile: gmake: Ice_BuiltinSequences_ice.py: Segmentation fault (core dumped)
-
 BUILD_DEPENDS=	mcpp:devel/mcpp
 LIB_DEPENDS=	libIce.so.${LIB_VRS}:devel/ice37 \
 		libmcpp.so:devel/mcpp

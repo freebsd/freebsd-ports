@@ -11,7 +11,6 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	PKCS\#11 Java wrapper
 
 BROKEN_aarch64=		fails to link: /tmp/pkcs11wrapper-01d033.o is incompatible with /usr/lib/crti.o
-BROKEN_powerpc64=	fails to link: cannot find -lgcc
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
