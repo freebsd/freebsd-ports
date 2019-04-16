@@ -122,7 +122,7 @@
  NULL_DIR=$(MOUNT_DIR)/null
  
 -BASE_CFLAGS=-Wall -pipe -Dstricmp=strcasecmp
-+BASE_CFLAGS=-pipe -Dstricmp=strcasecmp $(CFLAGS)
++BASE_CFLAGS=-Wall $(CFLAGS) -Dstricmp=strcasecmp
  ifeq ($(HAVE_IPV6),YES)
  BASE_CFLAGS+= -DHAVE_IPV6
  ifeq ($(OSTYPE),FreeBSD)
