@@ -8,7 +8,7 @@ PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ninja is a small build system closest in spirit to Make
 
 LICENSE=	APACHE20
