@@ -3,7 +3,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	3.28.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -102,7 +102,7 @@ SVN_CONFIGURE_ENABLE=	plugin-subversion
 DEVHELP_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 			libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 			libdevhelp-3.so:devel/devhelp
-DEVHELP_CONFIGURE_ENBABLE=	plugin-devhelp
+DEVHELP_CONFIGURE_ENABLE=	plugin-devhelp
 
 VALA_VER=		0.40
 VALA_BUILD_DEPENDS=	vala>=${VALA_VER},1<${VALA_VER}.99,1:lang/vala
