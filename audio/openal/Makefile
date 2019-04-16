@@ -13,6 +13,9 @@ COMMENT=	3D positional spatialized sound library
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware. Use audio/openal-soft instead
+EXPIRATION_DATE=	2019-04-30
+
 CONFLICTS=	openal-soft-[0-9]*
 
 GNU_CONFIGURE=	yes
