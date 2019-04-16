@@ -2,6 +2,7 @@ lib/thunarx-2/thunar-archive-plugin.so
 libexec/thunar-archive-plugin/ark.tap
 libexec/thunar-archive-plugin/file-roller.tap
 libexec/thunar-archive-plugin/gnome-file-roller.tap
+libexec/thunar-archive-plugin/org.gnome.FileRoller.tap
 share/icons/hicolor/16x16/apps/tap-create.png
 share/icons/hicolor/16x16/apps/tap-extract.png
 share/icons/hicolor/16x16/apps/tap-extract-to.png
