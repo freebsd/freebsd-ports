@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	plexmediaserver
-PORTVERSION?=	1.15.2.793
-DISTVERSIONSUFFIX?=782228f99
-PORTREVISION?=	1
+PORTVERSION?=	 1.15.3.876
+DISTVERSIONSUFFIX?=ad6e39743
+PORTREVISION?=	0
 CATEGORIES=	multimedia
 MASTER_SITES?=	https://downloads.plex.tv/plex-media-server-new/${DISTVERSION}-${DISTVERSIONSUFFIX}/freebsd/
 DISTNAME?=	PlexMediaServer-${DISTVERSION}-${DISTVERSIONSUFFIX}-FreeBSD-${ARCH}
@@ -44,10 +44,6 @@ post-patch:
 	${FIND} ${WRKSRC}/Resources -type f -name '*.so' -exec ${STRIP_CMD} {} \+
 	${FIND} ${WRKSRC} ${WRKSRC}/Resources -type f -name 'Plex*' -depth 1 -exec ${STRIP_CMD} {} \+
 	${FIND} ${WRKSRC} -depth 1 -type f -name 'lib*' -exec ${STRIP_CMD} {} \+
-	${RM} ${WRKSRC}/start.sh ${WRKSRC}/Resources/start.sh
-	# Older verisons of Plex we have to create a symlink
-	# Newer versions of Plex ship a duplicate file; we'll just symlink
-	${RM} ${WRKSRC}/libpython2.7.so
 
 post-patch-RELAY-off:
 	${RM} ${WRKSRC}/Plex\ Relay
