@@ -4,6 +4,7 @@ include/KF5/KFileMetaData/KFileMetaData/ExtractionResult
 include/KF5/KFileMetaData/KFileMetaData/Extractor
 include/KF5/KFileMetaData/KFileMetaData/ExtractorCollection
 include/KF5/KFileMetaData/KFileMetaData/ExtractorPlugin
+include/KF5/KFileMetaData/KFileMetaData/MimeUtils
 include/KF5/KFileMetaData/KFileMetaData/Properties
 include/KF5/KFileMetaData/KFileMetaData/PropertyInfo
 include/KF5/KFileMetaData/KFileMetaData/SimpleExtractionResult
@@ -20,6 +21,7 @@ include/KF5/KFileMetaData/kfilemetadata/extractor.h
 include/KF5/KFileMetaData/kfilemetadata/extractorcollection.h
 include/KF5/KFileMetaData/kfilemetadata/extractorplugin.h
 include/KF5/KFileMetaData/kfilemetadata/kfilemetadata_export.h
+include/KF5/KFileMetaData/kfilemetadata/mimeutils.h
 include/KF5/KFileMetaData/kfilemetadata/properties.h
 include/KF5/KFileMetaData/kfilemetadata/propertyinfo.h
 include/KF5/KFileMetaData/kfilemetadata/simpleextractionresult.h

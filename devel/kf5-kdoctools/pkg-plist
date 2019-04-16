@@ -464,6 +464,7 @@ share/kf5/kdoctools/customization/hu/lang.entities
 share/kf5/kdoctools/customization/hu/strings.entities
 share/kf5/kdoctools/customization/hu/user.entities
 share/kf5/kdoctools/customization/id/catalog.xml
+share/kf5/kdoctools/customization/id/entities/ccbysa4-notice.docbook
 share/kf5/kdoctools/customization/id/entities/fdl-notice.docbook
 share/kf5/kdoctools/customization/id/entities/gpl-notice.docbook
 share/kf5/kdoctools/customization/id/entities/help-menu.docbook
@@ -473,8 +474,10 @@ share/kf5/kdoctools/customization/id/entities/lgpl-notice.docbook
 share/kf5/kdoctools/customization/id/entities/report-bugs.docbook
 share/kf5/kdoctools/customization/id/entities/underArtisticLicense.docbook
 share/kf5/kdoctools/customization/id/entities/underBSDLicense.docbook
+share/kf5/kdoctools/customization/id/entities/underCCBYSA4.docbook
 share/kf5/kdoctools/customization/id/entities/underFDL.docbook
 share/kf5/kdoctools/customization/id/entities/underGPL.docbook
+share/kf5/kdoctools/customization/id/entities/underLGPL.docbook
 share/kf5/kdoctools/customization/id/entities/underX11License.docbook
 share/kf5/kdoctools/customization/id/entities/update-doc.docbook
 share/kf5/kdoctools/customization/id/lang.entities
@@ -955,6 +958,7 @@ share/kf5/kdoctools/customization/xsl/et.xml
 share/kf5/kdoctools/customization/xsl/fr.xml
 share/kf5/kdoctools/customization/xsl/gl.xml
 share/kf5/kdoctools/customization/xsl/hu.xml
+share/kf5/kdoctools/customization/xsl/id.xml
 share/kf5/kdoctools/customization/xsl/it.xml
 share/kf5/kdoctools/customization/xsl/lt.xml
 share/kf5/kdoctools/customization/xsl/nds.xml
