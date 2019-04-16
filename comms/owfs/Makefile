@@ -4,6 +4,7 @@
 PORTNAME=	owfs
 PORTVERSION=	3.2p3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	comms
 
 MAINTAINER=	johan@stromnet.se
@@ -32,7 +33,7 @@ CONFIGURE_ARGS+=	--disable-parport
 AVAHI_CONFIGURE_ENABLE=		avahi
 AVAHI_LIB_DEPENDS=		libavahi-client.so:net/avahi-app
 
-FDTDI_CONFIGURE_EANBLE=		ftdi
+FTDI_CONFIGURE_ENABLE=		ftdi
 FTDI_LIB_DEPENDS=		libftdi.so:devel/libftdi
 
 OWDEBUG_CONFIGURE_ENABLE=	debug
