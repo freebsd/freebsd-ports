@@ -927,8 +927,6 @@ lib/cmake/KF5KDELibs4Support/FindEigen2.cmake
 lib/cmake/KF5KDELibs4Support/FindExiv2.cmake
 lib/cmake/KF5KDELibs4Support/FindFFmpeg.cmake
 lib/cmake/KF5KDELibs4Support/FindFlac.cmake
-lib/cmake/KF5KDELibs4Support/FindFontconfig.cmake
-lib/cmake/KF5KDELibs4Support/FindGLIB2.cmake
 lib/cmake/KF5KDELibs4Support/FindGMP.cmake
 lib/cmake/KF5KDELibs4Support/FindGObject.cmake
 lib/cmake/KF5KDELibs4Support/FindGStreamer.cmake
@@ -958,7 +956,6 @@ lib/cmake/KF5KDELibs4Support/FindNetworkManager.cmake
 lib/cmake/KF5KDELibs4Support/FindOggVorbis.cmake
 lib/cmake/KF5KDELibs4Support/FindPlasma.cmake
 lib/cmake/KF5KDELibs4Support/FindPopplerQt4.cmake
-lib/cmake/KF5KDELibs4Support/FindPulseAudio.cmake
 lib/cmake/KF5KDELibs4Support/FindPythonLibrary.cmake
 lib/cmake/KF5KDELibs4Support/FindQImageBlitz.cmake
 lib/cmake/KF5KDELibs4Support/FindQt5Transitional.cmake
