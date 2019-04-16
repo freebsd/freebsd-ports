@@ -10,13 +10,14 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Logger utility library for the Telepathy framework
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libtelepathy-glib.so:net-im/telepathy-glib
 
-USES=		gettext-tools gmake libtool pathfix pkgconfig python:2.7,build \
-		sqlite tar:bzip2
+USES=		gettext-tools gmake gnome libtool pathfix pkgconfig \
+		python:2.7,build sqlite tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 gnomedocutils intltool libxml2 \
