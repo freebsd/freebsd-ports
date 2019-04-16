@@ -4,7 +4,7 @@
 # vim: ts=8 noet
 
 PORTNAME=	ripgrep
-DISTVERSION=	11.0.0
+DISTVERSION=	11.0.1
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -66,7 +66,7 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.54 \
 		redox_termios-0.1.1 \
-		regex-1.1.5 \
+		regex-1.1.6 \
 		regex-automata-0.1.6 \
 		regex-syntax-0.6.6 \
 		remove_dir_all-0.5.1 \
