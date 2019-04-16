@@ -4,4 +4,4 @@ but also supports various Android-specific improvements.
 
 This package only provides subcommands to read perf.data.
 
-WWW: https://android.googlesource.com/platform/prebuilts/simpleperf/
+WWW: https://developer.android.com/ndk/guides/simpleperf
