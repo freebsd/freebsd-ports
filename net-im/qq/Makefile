@@ -11,6 +11,9 @@ DISTNAME=	linuxqq_${DISTVERSION}
 MAINTAINER=	kaiw27@gmail.com
 COMMENT=	Tencent QQ for Linux
 
+DEPRECATED=	no longer supported upstream
+EXPIRATIOIN_DATE=	2019-05-15
+
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux
 USE_LINUX=	gtk2 xorglibs
