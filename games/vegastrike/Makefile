@@ -19,18 +19,22 @@ BROKEN_aarch64=		Fails to compile: POSH cannot determine target CPU
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/vegastrike.ico:games/vegastrike-data
 LIB_DEPENDS=	${PY_BOOST} \
 		libexpat.so:textproc/expat2 \
+		libogg.so:audio/libogg \
+		libpng16.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
-		libogg.so:audio/libogg
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
-USES=		compiler:c++11-lang dos2unix gmake localbase:ldflags \
-		openal:al pkgconfig python:2.7 tar:bzip2
+USES=		compiler:c++11-lang dos2unix gl gmake gnome jpeg \
+		localbase:ldflags openal:al pkgconfig python:2.7 sdl tar:bzip2
 USE_CXXSTD=	c++98
-GNU_CONFIGURE=	yes
 USE_SDL=	sdl
-USE_GL=		glut
+USE_GL=		gl glu glut
 USE_XORG=	sm ice xi x11 xext xrender xinerama xi xrandr xcursor \
-		xcomposite xdamage xfixes
-USE_GNOME=	gtk20
+		xcomposite xdamage xfixes xmu
+USE_GNOME=	cairo gdkpixbuf2 gtk20
+
+GNU_CONFIGURE=	yes
 DOS2UNIX_GLOB=	*.cpp *.h
 EXTRACT_AFTER_ARGS=	--exclude boost
 LLD_UNSAFE=	yes
@@ -48,7 +52,7 @@ PORTDOCS=	README
 OPTIONS_DEFINE=	MESHER DOCS
 MESHER_DESC=	Enable mesher modelling tool
 
-MESHER_PLIST_FILES=	bin/mesher
+MESHER_VARS=	BIN_FILES+=bin/mesher
 MESHER_LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d
 MESHER_CONFIGURE_ENABLE=	ogre
 
