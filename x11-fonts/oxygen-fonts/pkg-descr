@@ -1,0 +1,9 @@
+Oxygen Font is a project to design a desktop/gui font for integrated
+use with the KDE Plasma desktop.
+
+The basic concept for Oxygen Font is to design a clear, legible,
+sans serif font which would be rendered with Freetype on Linux-based
+devices. In addition a bold weight, plus regular and bold italics,
+and a monospace version will be made.
+
+WWW: https://cgit.kde.org/oxygen-fonts.git
