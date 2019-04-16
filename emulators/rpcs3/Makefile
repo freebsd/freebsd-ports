@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.6-7972 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-gdf3b46a61
+DISTVERSION=	0.0.6-7981 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gf99577114
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -27,7 +27,7 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-27-g9220f5e:hidapi/3rdparty/hidapi \
-		RPCS3:llvm:71ca0f4f293:llvm/llvm \
+		RPCS3:llvm:b860b5e8f4ee:llvm/llvm \
 		Cyan4973:xxHash:v0.6.5:xxHash/3rdparty/xxHash \
 		jbeder:yaml-cpp:yaml-cpp-0.6.2-23-geca9cfd:yamlcpp/3rdparty/yaml-cpp \
 		kobalicek:asmjit:1e550aa:asmjit/asmjit \
