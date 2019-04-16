@@ -251,8 +251,8 @@ _QT5_BASE=		core dbus gui network sql widgets
 post-patch: gcc-post-patch
 gcc-post-patch:
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/mkspecs/common/gcc-base.conf
-	${REINPLACE_CMD} 's|%%GCC_DEFAULT%%|${GCC_DEFAULT}|' ${WRKSRC}/mkspecs/common/gcc-base.conf \
-		${WRKSRC}/mkspecs/common/g++-base.conf
+	${REINPLACE_CMD} 's|%%GCC_DEFAULT%%|${GCC_DEFAULT}|g' ${WRKSRC}/mkspecs/common/gcc-base.conf \
+		${WRKSRC}/mkspecs/common/g++-base.conf ${WRKSRC}/mkspecs/common/bsd/bsd.conf
 .endif
 
 pre-configure: qtbase-pre-configure
@@ -323,8 +323,8 @@ qt5-pre-configure:
 # occurrences of ${WRKSRC}/lib from .pc and .prl files when installing them.
 # See QTBUG-40825 and ports bugs 194088, 195105 and 198720.
 	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${CONFIGURE_WRKSRC}/lib' >> ${CONFIGURE_WRKSRC}/.qmake.cache
-	${ECHO_CMD} 'QMAKE_DEFAULT_LIBDIRS = ${LOCALBASE}/lib' >> ${CONFIGURE_WRKSRC}/.qmake.cache
-	${ECHO_CMD} 'QMAKE_DEFAULT_INCDIRS = ${LOCALBASE}/include' >> ${CONFIGURE_WRKSRC}/.qmake.cache
+	${ECHO_CMD} 'QMAKE_DEFAULT_LIBDIRS += ${LOCALBASE}/lib /usr/lib /lib' >> ${CONFIGURE_WRKSRC}/.qmake.cache
+	${ECHO_CMD} 'QMAKE_DEFAULT_INCDIRS += ${LOCALBASE}/include /usr/include' >> ${CONFIGURE_WRKSRC}/.qmake.cache
 
 post-install: qt-post-install
 qt-post-install:
