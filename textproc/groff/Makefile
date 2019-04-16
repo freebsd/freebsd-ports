@@ -59,12 +59,13 @@ EXAMPLESDIR=	${DOCSDIR}/examples
 URWFONTS_CONFIGURE_OFF=	--without-urw-fonts-dir
 URWFONTS_USES=	ghostscript:build
 URWFONTS_BUILD_DEPENDS=	gsfonts>=0:print/gsfonts
+URWFONTS_CONFIGURE_ENV_OFF=	ac_cv_prog_ac_ct_GHOSTSCRIPT=false
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=--without-x
-PLIST_SUB+=	X11="@comment "
 .if exists(${LOCALBASE}/bin/pnmcut) && exists(${LOCALBASE}/bin/pnmcrop) && \
     exists(${LOCALBASE}/bin/pnmtops) && exists(${LOCALBASE}/bin/pnmtopng)
 PLIST_SUB+=	HTMLDOCS=""
@@ -76,7 +77,6 @@ USE_XORG=	x11 xaw xmu
 BUILD_DEPENDS+=	${LOCALBASE}/bin/pnmtops:graphics/netpbm
 RUN_DEPENDS+=	${LOCALBASE}/bin/pnmtops:graphics/netpbm
 CONFIGURE_ARGS+=--with-x --with-appresdir=${PREFIX}/lib/X11/app-defaults
-PLIST_SUB+=	X11=""
 PLIST_SUB+=	HTMLDOCS=""
 .endif
 
