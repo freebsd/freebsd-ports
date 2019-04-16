@@ -3,7 +3,7 @@
 
 PORTNAME=	freeciv
 PORTVERSION=	2.5.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
 		http://download.gna.org/freeciv/stable/
@@ -33,7 +33,7 @@ SDL_CONFIGURE_ON=	--enable-client=gtk,sdl
 SDL_USE=		SDL=sdl,image,ttf,gfx
 MYSQL_CONFIGURE_ON=	--enable-fcdb=mysql --with-mysql-prefix=${LOCALBASE}
 MYSQL_USES=		mysql
-IPV6_CONFIGURE_EANBALE=	ipv6
+IPV6_CONFIGURE_ENABLE=	ipv6
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
