@@ -1,0 +1,6 @@
+vimpc is a client for mpd with vi-like key bindings, written in C++.
+It provides an alternative to other ncurses-based mpd clients (such
+as ncmpc and ncmpcpp) in the sense that it features an interface
+similar to that of the vim text editor.
+
+WWW: https://github.com/boysetsfrog/vimpc
