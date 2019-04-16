@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bfs
-DISTVERSION=	1.3.3
+DISTVERSION=	1.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
