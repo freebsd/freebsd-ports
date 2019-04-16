@@ -3,6 +3,7 @@
 
 PORTNAME=	binkd
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/
 
@@ -18,7 +19,7 @@ GROUPS=		fido
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	AMIGA4D DOCS HTTPS
-AMIGA4D_CONFIGUTE_WITH=	aso
+AMIGA4D_CONFIGURE_WITH=	aso
 HTTPS_CONFIGURE_WITH=	https
 
 pre-configure:
