@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ddtrace
-PORTVERSION=	0.21.2
+PORTVERSION=	0.22.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,7 @@ COMMENT=	Tracking client of Datadog for Ruby
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-msgpack1>=0:devel/rubygem-msgpack1 \
-		rubygem-opentracing>=0.4.1:devel/rubygem-opentracing
+RUN_DEPENDS=	rubygem-msgpack1>=0:devel/rubygem-msgpack1
 
 USES=		gem
 USE_RUBY=	yes
