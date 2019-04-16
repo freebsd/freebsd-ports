@@ -3,6 +3,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.22.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -11,13 +12,12 @@ COMMENT=	Software typesetting package
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gsfonts>=0:print/gsfonts \
-		psselect:print/psutils
+BUILD_DEPENDS=	psselect:print/psutils
 RUN_DEPENDS:=	psselect:print/psutils
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		cpe ghostscript gmake perl5 shebangfix makeinfo
+USES=		cpe gmake perl5 shebangfix makeinfo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-awk=/usr/bin/awk
 CONFIGURE_ENV+=	PERLPATH=${perl_CMD} # shebangfix
@@ -43,9 +43,10 @@ PAPERSIZE=A4
 CONFIGURE_ENV+=	PAGE=${PAPERSIZE}
 .endif
 
-OPTIONS_DEFINE=	X11
+OPTIONS_DEFINE=	X11 URWFONTS
 X11_DESC=	X11 devices (-TX*) and gxditview
-OPTIONS_DEFAULT=	X11
+URWFONTS_DESC=	URW fonts support (needed for growpdf)
+OPTIONS_DEFAULT=	X11 URWFONTS
 
 CONFLICTS=	ja-groff-[0-9]*
 
@@ -54,6 +55,10 @@ INFO=	groff
 DATADIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 EXAMPLESDIR=	${DOCSDIR}/examples
+
+URWFONTS_CONFIGURE_OFF=	--without-urw-fonts-dir
+URWFONTS_USES=	ghostscript:build
+URWFONTS_BUILD_DEPENDS=	gsfonts>=0:print/gsfonts
 
 .include <bsd.port.options.mk>
 
