@@ -21,7 +21,7 @@ USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool \
 
 BINARY_ALIAS=	python=${PYTHON_VERSION}
 
-CONFLICTS=	openbgpd openospfd zebra quagga frr3 frr4 frr5 frr6
+CONFLICTS=	openbgpd openospfd zebra quagga frr5 frr6
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

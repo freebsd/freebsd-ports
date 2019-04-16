@@ -167,8 +167,6 @@
     SUBDIR += freerdp1
     SUBDIR += freeswitch
     SUBDIR += freevrrpd
-    SUBDIR += frr3
-    SUBDIR += frr4
     SUBDIR += frr5
     SUBDIR += frr6
     SUBDIR += frr7
