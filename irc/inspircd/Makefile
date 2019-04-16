@@ -4,6 +4,7 @@
 PORTNAME=	inspircd
 PORTVERSION=	2.0.27
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	irc
 
 MAINTAINER=	dg@syrec.org
@@ -74,7 +75,7 @@ SQLITE_DESC=	Build m_sqlite3 module
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_USES=		pkgconfig
-GNUTLS_CONFGURE_ENABLE=	gnutls
+GNUTLS_CONFIGURE_ENABLE=	gnutls
 GNUTLS_VARS=		extras+=m_ssl_gnutls.cpp
 
 IPV6_CONFIGURE_ENABLE=	ipv6
