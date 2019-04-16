@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prompt_toolkit
-PORTVERSION=	1.0.15
+PORTVERSION=	2.0.9
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wcwidth>=0:devel/py-wcwidth@${PY_FLAVOR}
 
-NO_ARCH=	yes
-USE_PYTHON=	autoplist concurrent distutils
 USES=		python
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
