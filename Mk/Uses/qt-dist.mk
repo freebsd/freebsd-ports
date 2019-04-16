@@ -173,7 +173,8 @@ _EXTRA_PATCHES_QT5=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_fe
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_freebsd-clang_qmake.conf
 .        if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
 _EXTRA_PATCHES_QT5+=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_g++-base.conf \
-			${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_gcc-base.conf
+			${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_gcc-base.conf \
+			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_freebsd-g++_qmake.conf
 USE_GCC=		yes
 .    endif
 EXTRA_PATCHES?=		${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-configure \
@@ -250,9 +251,14 @@ _QT5_BASE=		core dbus gui network sql widgets
 .if ${_QT_VER:M5}
 post-patch: gcc-post-patch
 gcc-post-patch:
-	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/mkspecs/common/gcc-base.conf
-	${REINPLACE_CMD} 's|%%GCC_DEFAULT%%|${GCC_DEFAULT}|g' ${WRKSRC}/mkspecs/common/gcc-base.conf \
-		${WRKSRC}/mkspecs/common/g++-base.conf ${WRKSRC}/mkspecs/common/bsd/bsd.conf
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/mkspecs/common/gcc-base.conf \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+	${REINPLACE_CMD} 's|%%GCC_DEFAULT%%|${GCC_DEFAULT}|g' \
+		${WRKSRC}/mkspecs/common/gcc-base.conf \
+		${WRKSRC}/mkspecs/common/g++-base.conf \
+		${WRKSRC}/mkspecs/common/bsd/bsd.conf \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 .endif
 
 pre-configure: qtbase-pre-configure
