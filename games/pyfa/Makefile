@@ -3,7 +3,7 @@
 
 PORTNAME=	pyfa
 PORTVERSION=	1.19.1
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games python
 
@@ -36,7 +36,7 @@ DPSGRAPHING_DESC=	DPS graphing (requires NumPy and matplotlib)
 
 DPSGRAPHING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}more-itertools>0:devel/py-more-itertools@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}more-itertools5>0:devel/py-more-itertools5@${PY_FLAVOR}
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
