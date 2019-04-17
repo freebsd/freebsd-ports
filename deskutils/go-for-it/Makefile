@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-for-it
-DISTVERSION=	1.7.0
+DISTVERSION=	1.7.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	neel@neelc.org
@@ -13,12 +13,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libnotify.so:devel/libnotify
 
-USES=		cmake gettext pkgconfig
-GNU_CONFIGURE=	yes
+USES=		cmake gnome gettext pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	JMoerman
 GH_PROJECT=	Go-For-It
 USE_GNOME=	cairo glib20 gtk30 intltool
+
+GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>
