@@ -30,7 +30,7 @@ DESKTOP_ENTRIES="GanttProject" "" "ganttproject" "ganttproject" "" ""
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-	${CHMOD} ${BINMODE} ${WRKSRC}/ganttproject ${STAGEDIR}${DATADIR}
+	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/ganttproject
 	${RLN} ${STAGEDIR}${DATADIR}/ganttproject ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/64x64/apps
 	${RLN} ${STAGEDIR}${DATADIR}/plugins-${DISTVERSION}/ganttproject/data/resources/icons/ganttproject.png \
