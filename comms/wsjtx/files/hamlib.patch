@@ -1,5 +1,14 @@
 --- hamlib/configure.ac.orig	2019-02-24 18:41:47.000000000 -0500
-+++ hamlib/configure.ac	2019-03-03 22:03:13.673990000 -0500
++++ hamlib/configure.ac	2019-04-15 12:40:39.767084000 -0400
+@@ -270,7 +270,7 @@
+ dnl The host_os variable is set by the AC_CANONICAL_HOST macro above.
+ AS_CASE(["$host_os"],
+     [freebsd*], [
+-        AM_CPPFLAGS="-I/usr/local/include ${AM_CPPFLAGS}"
++        AM_CPPFLAGS="${AM_CPPFLAGS} -I/usr/local/include"
+         AM_LDFLAGS="${AM_LDFLAGS} -L/usr/local/lib"
+         AC_SUBST([AM_LDFLAGS])],
+ 
 @@ -317,6 +317,7 @@
  
  AC_MSG_RESULT([$cf_with_libusb])
@@ -8,3 +17,12 @@
  LIBUSB=""
  AC_ARG_VAR([LIBUSB_CFLAGS], [C compiler flags for libusb, overriding configure defaults])
  AC_ARG_VAR([LIBUSB_LIBS], [linker flags for libusb, overriding configure check (useful for specifying static libusb-1.0.a (see INSTALL))])
+--- hamlib/hamlib.pc.in.orig	2019-04-15 13:06:46.078042000 -0400
++++ hamlib/hamlib.pc.in	2019-04-15 13:06:59.695694000 -0400
+@@ -9,5 +9,5 @@
+ Version: @PACKAGE_VERSION@
+ Requires.private: @LIBUSB@
+ Cflags: -I${includedir} @PTHREAD_CFLAGS@
+-Libs: -L${libdir} -lhamlib
++Libs: -L${libdir} ${libdir}/libhamlib.a
+ Libs.private: @MATH_LIBS@ @DL_LIBS@ @NET_LIBS@ @PTHREAD_LIBS@
