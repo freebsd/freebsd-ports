@@ -7,7 +7,7 @@
 # Usage:	USES=cargo
 # Valid ARGS:	none
 #
-# MAINTAINER: ports@FreeBSD.org
+# MAINTAINER: rust@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_CARGO_MK)
 _INCLUDE_USES_CARGO_MK=	yes
@@ -126,12 +126,7 @@ BUILD_DEPENDS+=	gmake:devel/gmake
 BUILD_DEPENDS+=	cmake:devel/cmake
 .endif
 
-.if ${CARGO_CRATES:Mfreetype-sys-[0-9]*}
-LIB_DEPENDS+=	libfreetype.so:print/freetype2
-.endif
-
 .if ${CARGO_CRATES:Mgettext-sys-[0-9]*}
-.include "${USESDIR}/gettext.mk"
 CARGO_ENV+=	GETTEXT_BIN_DIR=${LOCALBASE}/bin \
 		GETTEXT_INCLUDE_DIR=${LOCALBASE}/include \
 		GETTEXT_LIB_DIR=${LOCALBASE}/lib
@@ -154,13 +149,11 @@ DEV_WARNING+=	"CARGO_CRATES=${libc} may be unstable on aarch64 or not build on a
 .if ${CARGO_CRATES:Mlibgit2-sys-[0-9]*}
 # Use the system's libgit2 instead of building the bundled version
 CARGO_ENV+=	LIBGIT2_SYS_USE_PKG_CONFIG=1
-LIB_DEPENDS+=	libgit2.so:devel/libgit2
 .endif
 
 .if ${CARGO_CRATES:Mlibssh2-sys-[0-9]*}
 # Use the system's libssh2 instead of building the bundled version
 CARGO_ENV+=	LIBSSH2_SYS_USE_PKG_CONFIG=1
-LIB_DEPENDS+=	libssh2.so:security/libssh2
 .endif
 
 .if ${CARGO_CRATES:Monig_sys-[0-9]*}
@@ -170,7 +163,6 @@ LIB_DEPENDS+=	libssh2.so:security/libssh2
 # RUSTONIG_SYSTEM_LIBONIG is not necessary, but will force onig_sys to
 # always use the system's libonig as returned by `pkg-config oniguruma`.
 CARGO_ENV+=	RUSTONIG_SYSTEM_LIBONIG=1
-LIB_DEPENDS+=	libonig.so:devel/oniguruma
 .endif
 
 .if ${CARGO_CRATES:Mopenssl-0.[0-9].*}
@@ -187,19 +179,12 @@ DEV_WARNING+=	"CARGO_CRATES=openssl-0.10.3 or older do not support OpenSSL 1.1.1
 
 .if ${CARGO_CRATES:Mopenssl-sys-[0-9]*}
 # Make sure that openssl-sys can find the correct version of OpenSSL
-.include "${USESDIR}/ssl.mk"
 CARGO_ENV+=	OPENSSL_LIB_DIR=${OPENSSLLIB} \
 		OPENSSL_INCLUDE_DIR=${OPENSSLINC}
-# Silence bogus QA warning about needing USES=ssl
-QA_ENV+=	USESSSL=yes
 .endif
 
 .if ${CARGO_CRATES:Mpkg-config-[0-9]*}
 .include "${USESDIR}/pkgconfig.mk"
-.endif
-
-.if ${CARGO_CRATES:Mthrussh-libsodium-[0-9]*}
-LIB_DEPENDS+=	libsodium.so:security/libsodium
 .endif
 
 _USES_extract+=	600:cargo-extract

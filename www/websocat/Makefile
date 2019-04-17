@@ -13,7 +13,7 @@ COMMENT=	WebSockets tools
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	cargo
+USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	vi
 

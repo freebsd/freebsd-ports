@@ -9,6 +9,8 @@ COMMENT=	Improved sequence editor for Git
 
 LICENSE=	ISCL
 
+LIB_DEPENDS=	libgit2.so:devel/libgit2
+
 USES=		cargo ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	MitMaro

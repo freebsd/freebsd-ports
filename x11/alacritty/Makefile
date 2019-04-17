@@ -12,9 +12,10 @@ COMMENT=	GPU-accelerated terminal emulator
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
-USES=		cargo
+USES=		cargo ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jwilm

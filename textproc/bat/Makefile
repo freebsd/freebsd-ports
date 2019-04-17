@@ -11,6 +11,9 @@ COMMENT=	Clone of cat with syntax highlighting
 
 LICENSE=	APACHE20
 
+LIB_DEPENDS=	libgit2.so:devel/libgit2 \
+		libonig.so:devel/oniguruma
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	sharkdp
