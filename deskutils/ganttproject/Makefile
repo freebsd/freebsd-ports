@@ -2,23 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	ganttproject
-DISTVERSION=	2.8.9
-DISTVERSIONSUFFIX=	-r2335
+DISTVERSION=	2.8.10
+DISTVERSIONSUFFIX=	-r2364
 CATEGORIES=	deskutils java
-MASTER_SITES=	https://dl.ganttproject.biz/${PORTNAME}-${DISTVERSION}/
+MASTER_SITES=	https://dl.ganttproject.biz/ganttproject-${DISTVERSION}/ \
+		https://github.com/bardsoftware/ganttproject/releases/download/ganttproject-${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Gantt chart based project scheduling and management tool
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		shebangfix zip
 SHEBANG_FILES=	ganttproject
-bash_CMD=	${SH}
+bash_CMD=	/bin/sh
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -28,11 +29,11 @@ PLIST_SUB=	DISTVERSION=${DISTVERSION}
 DESKTOP_ENTRIES="GanttProject" "" "ganttproject" "ganttproject" "" ""
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
-	${LN} -sf ../${DATADIR_REL}/ganttproject ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	${CHMOD} ${BINMODE} ${WRKSRC}/ganttproject ${STAGEDIR}${DATADIR}
+	${RLN} ${STAGEDIR}${DATADIR}/ganttproject ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/64x64/apps
-	${RLN} ${STAGEDIR}${PREFIX}/${DATADIR_REL}/plugins-${DISTVERSION}/ganttproject/data/resources/icons/ganttproject.png \
+	${RLN} ${STAGEDIR}${DATADIR}/plugins-${DISTVERSION}/ganttproject/data/resources/icons/ganttproject.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/64x64/apps/ganttproject.png
 
 .include <bsd.port.mk>
