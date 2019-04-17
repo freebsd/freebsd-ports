@@ -12,6 +12,8 @@ COMMENT=	Modern replacement for ls
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+LIB_DEPENDS=	libgit2.so:devel/libgit2
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	ogham

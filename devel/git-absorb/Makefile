@@ -11,6 +11,8 @@ COMMENT=	Git command for automating fixup/autosquash commits
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+LIB_DEPENDS=	libgit2.so:devel/libgit2
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	tummychow
