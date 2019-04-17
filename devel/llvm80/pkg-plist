@@ -3048,6 +3048,8 @@ llvm%%LLVM_SUFFIX%%/share/opt-viewer/style.css
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/TestRunner.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/TestingConfig.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/__init__.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/builtin_commands/__init__.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/builtin_commands/cat.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/discovery.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/formats/__init__.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit%%LLVM_SUFFIX%%/formats/base.py
