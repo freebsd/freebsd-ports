@@ -29,6 +29,13 @@ lib/lv2/lushlife.lv2/lushlife.ttl
 lib/lv2/lushlife.lv2/lushlife_presets.ttl
 lib/lv2/lushlife.lv2/lushlife_ui.so
 lib/lv2/lushlife.lv2/manifest.ttl
+lib/lv2/mindi.lv2/manifest.ttl
+lib/lv2/mindi.lv2/mindi.so
+lib/lv2/mindi.lv2/mindi.ttl
+lib/lv2/octolo.lv2/manifest.ttl
+lib/lv2/octolo.lv2/octolo.so
+lib/lv2/octolo.lv2/octolo.ttl
+lib/lv2/octolo.lv2/octolo_presets.ttl
 lib/lv2/powercut.lv2/manifest.ttl
 lib/lv2/powercut.lv2/powercut.so
 lib/lv2/powercut.lv2/powercut.ttl
