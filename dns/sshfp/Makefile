@@ -3,7 +3,7 @@
 
 PORTNAME=	sshfp
 PORTVERSION=	1.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns security
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -16,12 +16,13 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:dns/py-dnspython@${PY_FLAVOR}
 		${PYTHON_SITELIBDIR}/ldns.py:dns/py-ldns@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USES=		python shebangfix
-USE_PYTHON=	flavors concurrent optsuffix
+USES=		python:2.7 shebangfix
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	xelerance
+
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_GITHUB=	yes
-GH_ACCOUNT=	xelerance
 
 PY_FILES=	sshfp dane
 SHEBANG_FILES=	daneldnsx.py ${PY_FILES}
