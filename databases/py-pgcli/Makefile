@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgcli
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	CLI for Postgres Database with auto-completion and syntax highlighting
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cli-helpers>=1.0.1:devel/py-cli-helpers@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cli-helpers>=1.2.0:devel/py-cli-helpers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=4.1:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configobj>=5.0.6:devel/py-configobj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}humanize>=0.5.1:devel/py-humanize@${PY_FLAVOR} \
