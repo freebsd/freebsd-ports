@@ -3,7 +3,7 @@
 
 PORTNAME=	YouCompleteMe
 DISTVERSION=	g20190314
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -43,20 +43,16 @@ SUB_FILES=		pkg-message pkg-install pkg-deinstall
 SUB_LIST=		VIMFILESDIR="${VIMFILESDIR}" \
 			FIND="${FIND}"
 
-OPTIONS_DEFINE=		C GO MONO RUST
-OPTIONS_DEFAULT=	C GO MONO RUST
+OPTIONS_DEFINE=		C MONO RUST
+OPTIONS_DEFAULT=	C MONO RUST
 OPTIONS_SUB=		yes
 
 C_DESC=			C-family Semantic Completion Support
-GO_DESC=		Go Semantic Completion Support
 MONO_DESC=		C\# Semantic Completion Support
 RUST_DESC=		Rust Semantic Completion Support
 
 C_CMAKE_ON=		-DPATH_TO_LLVM_ROOT=${LOCALBASE}/llvm70
 C_LIB_DEPENDS=		libclang.so:devel/llvm70
-
-GO_RUN_DEPENDS=		gocode:devel/go-gocode \
-			godef:devel/go-godef
 
 MONO_RUN_DEPENDS=	${LOCALBASE}/share/omnisharp-server/bin/Release/OmniSharp.exe:devel/omnisharp-server
 MONO_VARS=		MONOFILESDIR=${VIMFILESDIR}/third_party/ycmd/third_party/OmniSharpServer
