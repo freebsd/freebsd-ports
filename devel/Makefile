@@ -825,7 +825,6 @@
     SUBDIR += go-bindata
     SUBDIR += go-git
     SUBDIR += go-glide
-    SUBDIR += go-gocode
     SUBDIR += go-godef
     SUBDIR += go-protobuf
     SUBDIR += go-tools

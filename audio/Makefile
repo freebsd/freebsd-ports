@@ -703,7 +703,6 @@
     SUBDIR += qsampler
     SUBDIR += qsynth
     SUBDIR += quimup
-    SUBDIR += raop_play
     SUBDIR += raul
     SUBDIR += rawrec
     SUBDIR += re
