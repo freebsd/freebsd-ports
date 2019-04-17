@@ -1,11 +1,11 @@
 bin/ganttproject
 %%DATADIR%%/HouseBuildingSample.gan
-%%DATADIR%%/LICENSE
+@comment %%DATADIR%%/LICENSE
 %%DATADIR%%/eclipsito.jar
 %%DATADIR%%/ganttproject
-%%DATADIR%%/ganttproject.bat
-%%DATADIR%%/ganttproject.command
-%%DATADIR%%/ganttproject.exe
+@comment %%DATADIR%%/ganttproject.bat
+@comment %%DATADIR%%/ganttproject.command
+@comment %%DATADIR%%/ganttproject.exe
 %%DATADIR%%/lib/javagalician.jar
 %%DATADIR%%/logging.properties
 %%DATADIR%%/plugins-%%DISTVERSION%%/biz.ganttproject.core/biz.ganttproject.core.jar
@@ -33,7 +33,10 @@ bin/ganttproject
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_ca_ontario.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_ca_quebec.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_ch.calendar
+%%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_ch_zurich.calendar
+%%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_cl.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_cn.calendar
+%%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_co.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_cz.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_de.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_de_austria.calendar
@@ -43,12 +46,11 @@ bin/ganttproject
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_en_australia_victoria.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_es.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_es_AR.calendar
-%%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_es_cl.calendar
-%%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_es_colombia.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_fr.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_hr.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_hu.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_il.calendar
+%%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_in_maharashtra.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_it.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_ja_JP.calendar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/data/resources/calendar/i18n_ko_KR.calendar
@@ -378,7 +380,7 @@ bin/ganttproject
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/lib/core/milton-api-2.7.4.4.jar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/lib/core/milton-client-2.7.4.4-bs.jar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/lib/core/slf4j-api-1.7.25.jar
-%%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/lib/core/slf4j-simple-1.7.25.jar
+%%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/lib/core/slf4j-jdk14-1.7.25.jar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/lib/core/swingx-1.6.4.jar
 %%DATADIR%%/plugins-%%DISTVERSION%%/ganttproject/plugin.xml
 %%DATADIR%%/plugins-%%DISTVERSION%%/org.ganttproject.chart.pert/org.ganttproject.chart.pert.jar
