@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-DISTVERSION=	${EMACS_VER}
-PORTREVISION=	6
+DISTVERSION=	26.2
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	GNU
@@ -43,7 +42,7 @@ CPE_VENDOR=	gnu
 
 CONFIGURE_ARGS=	--disable-build-details \
 		--localstatedir=/var \
-		--with-gameuser=games:games
+		--without-gpm
 .if ${FLAVOR:U} == canna
 CONFIGURE_ARGS+=	--with-canna
 .endif
@@ -75,14 +74,14 @@ INFO_PATH=	${DATADIR_REL}/info
 INSTALLS_ICONS=	yes
 .endif
 .if ${FLAVOR:U} == canna
-PLIST_FILES+=	${DATADIR}/${EMACS_VER}/lisp/canna.el.gz \
-		${DATADIR}/${EMACS_VER}/lisp/canna.elc \
-		${DATADIR}/${EMACS_VER}/lisp/isearch-ext.el.gz	\
-		${DATADIR}/${EMACS_VER}/lisp/isearch-ext.elc
+PLIST_FILES+=	${DATADIR}/${DISTVERSION}/lisp/canna.el.gz \
+		${DATADIR}/${DISTVERSION}/lisp/canna.elc \
+		${DATADIR}/${DISTVERSION}/lisp/isearch-ext.el.gz	\
+		${DATADIR}/${DISTVERSION}/lisp/isearch-ext.elc
 .endif
-PLIST_SUB=	EMACS_VER=${EMACS_VER} GNU_HOST=${CONFIGURE_TARGET}
+PLIST_SUB=	EMACS_VER=${DISTVERSION} GNU_HOST=${CONFIGURE_TARGET}
 SUB_FILES=	sources.el
-SUB_LIST=	EMACS_VER=${EMACS_VER} # sources.el
+SUB_LIST=	EMACS_VER=${DISTVERSION} # sources.el
 
 OPTIONS_DEFINE=	ACL DBUS GCONF GNUTLS GSETTINGS JSON LCMS2 M17N MAILUTILS \
 		MODULES OTF SCROLLBARS SOURCES THREADS XFT XIM XML XWIDGETS
@@ -184,7 +183,7 @@ PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
 SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
 .if ${FLAVOR:U} == canna
-SOURCES_PLIST_FILES=	${DATADIR}/${EMACS_VER}/src/canna.c
+SOURCES_PLIST_FILES=	${DATADIR}/${DISTVERSION}/src/canna.c
 .endif
 SVG_USES=		gnome
 SVG_USE=		GNOME=cairo,librsvg2
@@ -213,8 +212,6 @@ XWIDGETS_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 			libsoup-2.4.so:devel/libsoup
 XWIDGETS_IMPLIES=	GTK3
 
-EMACS_VER=		26.1
-
 .include <bsd.port.options.mk>
 
 # has graphics/ImageMagick been compiled with OPENMP?
@@ -237,12 +234,12 @@ post-patch:
 
 post-install-MAILUTILS-on:
 	${LN} -sf ${PREFIX}/bin/movemail \
-		${STAGEDIR}${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}
+		${STAGEDIR}${PREFIX}/libexec/emacs/${DISTVERSION}/${CONFIGURE_TARGET}
 
 post-install-SOURCES-on:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
-	${INSTALL_DATA} ${WRKSRC}/src/*.[ch] ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
-	${INSTALL_DATA} ${WRKDIR}/sources.el ${STAGEDIR}${DATADIR}/${EMACS_VER}/site-lisp/site-start.el
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${DISTVERSION}/src
+	${INSTALL_DATA} ${WRKSRC}/src/*.[ch] ${STAGEDIR}${DATADIR}/${DISTVERSION}/src
+	${INSTALL_DATA} ${WRKDIR}/sources.el ${STAGEDIR}${DATADIR}/${DISTVERSION}/site-lisp/site-start.el
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
