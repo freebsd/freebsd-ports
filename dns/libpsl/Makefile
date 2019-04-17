@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libpsl
-PORTVERSION=	0.20.2
+PORTVERSION=	0.21.0
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	8
 CATEGORIES=	dns
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -24,6 +23,8 @@ ICU_DESC=	Use devel/icu (IDNA2008 UTS\#46 library)
 IDN_DESC=	Use dns/libidn (IDNA2003 library)
 IDN2_DESC=	Use dns/libidn2 (IDNA2008 library)
 
+USES=		autoreconf libtool localbase:ldflags pathfix pkgconfig python:build shebangfix
+
 CONFIGURE_ARGS=	--enable-man \
 		--with-psl-file=${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat \
 		--with-psl-testfile=${LOCALBASE}/share/public_suffix_list/test_psl.txt
@@ -31,7 +32,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USE_LOCALE=	en_US.UTF-8
-USES=		autoreconf libtool localbase:ldflags pathfix pkgconfig python:build shebangfix
 
 GH_ACCOUNT=	rockdaboot
 USE_GITHUB=	yes
