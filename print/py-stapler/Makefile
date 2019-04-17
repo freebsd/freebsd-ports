@@ -3,6 +3,7 @@
 
 PORTNAME=	stapler
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +15,12 @@ COMMENT=	Manipulate PDF documents from the command line
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}more-itertools>=2.2:devel/py-more-itertools@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}more-itertools5>=2.2:devel/py-more-itertools5@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdf2>=1.24:print/py-pdf2@${PY_FLAVOR}
 
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
