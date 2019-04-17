@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plata-theme
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@yandex.com
@@ -23,7 +23,7 @@ USES=		autoreconf gmake gnome pkgconfig shebangfix
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com
 GL_ACCOUNT=	tista500
-GL_COMMIT=	c56812c7d41f0719b4343eccc0a100c088518a5f
+GL_COMMIT=	e013b219b11e0208e71b787ad73a3709ef890a7e
 
 NO_ARCH=	yes
 
@@ -33,7 +33,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk_next \
 		--disable-flashback \
 		--disable-telegram \
-		--disable-tweetdeck
+		--disable-tweetdeck \
+		--disable-airforsteam
 
 USE_GNOME=	gdkpixbuf2 gtk30 libxml2
 
