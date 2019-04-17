@@ -4109,6 +4109,7 @@
     SUBDIR += phpsh
     SUBDIR += phpunit6
     SUBDIR += phpunit7
+    SUBDIR += phpunit8
     SUBDIR += physfs
     SUBDIR += picp
     SUBDIR += picprog
