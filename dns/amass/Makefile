@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	amass
-DISTVERSION=	2.9.4
+DISTVERSION=	2.9.9
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +30,9 @@ GH_TUPLE=	OWASP:Amass:${DISTVERSIONFULL}:main/src/github.com/OWASP/Amass \
 		gogo:protobuf:v1.2.1:protobuf/src/github.com/gogo/protobuf \
 		google:uuid:v1.1.1:uuid/src/github.com/google/uuid \
 		irfansharif:cfilter:d07d951:cfilter/src/github.com/irfansharif/cfilter \
+		jmoiron:sqlx:1d3423c:sqlx/src/github.com/jmoiron/sqlx \
 		johnnadratowski:golang-neo4j-bolt-driver:v0.1:neo4j/src/github.com/johnnadratowski/golang-neo4j-bolt-driver \
+		lib:pq:v1.1.0:pq/src/github.com/lib/pq \
 		mattn:go-colorable:v0.0.9:colorable/src/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.4:isatty/src/github.com/mattn/go-isatty \
 		miekg:dns:v1.0.8:dns/src/github.com/miekg/dns \
