@@ -360,6 +360,7 @@
 %%WWWDIR%%/go/modules/community/apikeys/language/cs.php
 %%WWWDIR%%/go/modules/community/apikeys/language/de.php
 %%WWWDIR%%/go/modules/community/apikeys/language/en.php
+%%WWWDIR%%/go/modules/community/apikeys/language/fr.php
 %%WWWDIR%%/go/modules/community/apikeys/language/hu.php
 %%WWWDIR%%/go/modules/community/apikeys/language/id.php
 %%WWWDIR%%/go/modules/community/apikeys/language/pt_br.php
@@ -384,6 +385,7 @@
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/cs.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/de.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/en.php
+%%WWWDIR%%/go/modules/community/googleauthenticator/language/fr.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/hu.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/id.php
 %%WWWDIR%%/go/modules/community/googleauthenticator/language/nl.php
@@ -405,6 +407,7 @@
 %%WWWDIR%%/go/modules/community/imapauthenticator/language/cs.php
 %%WWWDIR%%/go/modules/community/imapauthenticator/language/de.php
 %%WWWDIR%%/go/modules/community/imapauthenticator/language/en.php
+%%WWWDIR%%/go/modules/community/imapauthenticator/language/fr.php
 %%WWWDIR%%/go/modules/community/imapauthenticator/language/hu.php
 %%WWWDIR%%/go/modules/community/imapauthenticator/language/id.php
 %%WWWDIR%%/go/modules/community/imapauthenticator/language/pt_br.php
@@ -428,6 +431,7 @@
 %%WWWDIR%%/go/modules/community/ldapauthenticator/install/updates.php
 %%WWWDIR%%/go/modules/community/ldapauthenticator/language/cs.php
 %%WWWDIR%%/go/modules/community/ldapauthenticator/language/de.php
+%%WWWDIR%%/go/modules/community/ldapauthenticator/language/fr.php
 %%WWWDIR%%/go/modules/community/ldapauthenticator/language/en.php
 %%WWWDIR%%/go/modules/community/ldapauthenticator/language/hu.php
 %%WWWDIR%%/go/modules/community/ldapauthenticator/language/id.php
@@ -457,6 +461,7 @@
 %%WWWDIR%%/go/modules/community/multi_instance/language/cs.php
 %%WWWDIR%%/go/modules/community/multi_instance/language/de.php
 %%WWWDIR%%/go/modules/community/multi_instance/language/en.php
+%%WWWDIR%%/go/modules/community/multi_instance/language/fr.php
 %%WWWDIR%%/go/modules/community/multi_instance/language/hu.php
 %%WWWDIR%%/go/modules/community/multi_instance/language/id.php
 %%WWWDIR%%/go/modules/community/multi_instance/language/it.php
@@ -688,6 +693,7 @@
 %%WWWDIR%%/go/modules/core/links/Module.php
 %%WWWDIR%%/go/modules/core/links/controller/Link.php
 %%WWWDIR%%/go/modules/core/links/language/en.php
+%%WWWDIR%%/go/modules/core/links/language/fr.php
 %%WWWDIR%%/go/modules/core/links/language/nl.php
 %%WWWDIR%%/go/modules/core/links/model/Link.php
 %%WWWDIR%%/go/modules/core/links/views/extjs3/CreateLinkButton.js
@@ -728,6 +734,7 @@
 %%WWWDIR%%/go/modules/core/search/controller/Search.php
 %%WWWDIR%%/go/modules/core/search/language/cs.php
 %%WWWDIR%%/go/modules/core/search/language/en.php
+%%WWWDIR%%/go/modules/core/search/language/fr.php
 %%WWWDIR%%/go/modules/core/search/language/it.php
 %%WWWDIR%%/go/modules/core/search/language/pt_br.php
 %%WWWDIR%%/go/modules/core/search/model/Search.php
@@ -1011,6 +1018,7 @@
 %%WWWDIR%%/modules/assistant/install/instal.sql
 %%WWWDIR%%/modules/assistant/language/de.php
 %%WWWDIR%%/modules/assistant/language/en.php
+%%WWWDIR%%/modules/assistant/language/fr.php
 %%WWWDIR%%/modules/assistant/language/hu.php
 %%WWWDIR%%/modules/assistant/language/id.php
 %%WWWDIR%%/modules/assistant/language/it.php
@@ -2471,6 +2479,7 @@
 %%WWWDIR%%/modules/groups/language/cs.php
 %%WWWDIR%%/modules/groups/language/de.php
 %%WWWDIR%%/modules/groups/language/en.php
+%%WWWDIR%%/modules/groups/language/fr.php
 %%WWWDIR%%/modules/groups/language/hu.php
 %%WWWDIR%%/modules/groups/language/id.php
 %%WWWDIR%%/modules/groups/language/it.php
@@ -2887,7 +2896,6 @@
 %%WWWDIR%%/modules/projects2/language/de.php
 %%WWWDIR%%/modules/projects2/language/en.php
 %%WWWDIR%%/modules/projects2/language/es.php
-%%WWWDIR%%/modules/projects2/language/fr.php
 %%WWWDIR%%/modules/projects2/language/hr.php
 %%WWWDIR%%/modules/projects2/language/hu.php
 %%WWWDIR%%/modules/projects2/language/id.php
