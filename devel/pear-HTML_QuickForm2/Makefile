@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML_QuickForm2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	joneum@FreeBSD.org
