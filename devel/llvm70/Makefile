@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	7.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel lang
 MASTER_SITES=	http://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -399,9 +399,12 @@ post-install-LIT-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
 	    ${STAGEDIR}${PREFIX}/bin/llvm-lit${LLVM_SUFFIX}
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/builtin_commands
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/formats
 	${INSTALL_DATA} ${WRKSRC}/utils/lit/lit/*.py \
 	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}
+	${INSTALL_DATA} ${WRKSRC}/utils/lit/lit/builtin_commands/*.py \
+			${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/builtin_commands
 	${INSTALL_DATA} ${WRKSRC}/utils/lit/lit/formats/*.py \
 			${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/formats
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/FileCheck \
