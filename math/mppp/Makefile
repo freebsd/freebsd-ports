@@ -2,7 +2,7 @@
 
 PORTNAME=	mppp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13
+DISTVERSION=	0.14
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,8 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/include/gmp.h:math/gmp \
 USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	bluescarni
-NO_BUILD=	yes
-NO_ARCH=	yes
 
 TEST_USES=	compiler:c++14-lang
 TEST_ARGS=	-DMPPP_BUILD_TESTS=ON -DMPPP_WITH_MPFR=ON #-DMPPP_WITH_QUADMATH=ON (quadmath requires __float128, only available in clang6)
