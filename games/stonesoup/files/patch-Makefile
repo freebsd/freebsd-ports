@@ -1,6 +1,6 @@
---- Makefile.orig	2019-02-28 23:45:55 UTC
+--- Makefile.orig	2019-03-31 00:40:33 UTC
 +++ Makefile
-@@ -75,7 +75,7 @@
+@@ -73,7 +73,7 @@
  #    them; you can also ask for a package with convenience libraries instead --
  #    we'll try to provide them somewhere in the near future.
  
@@ -9,16 +9,14 @@
  
  # Disable GNU Make implicit rules and variables. Leaving them enabled will slow
  # down MinGW and Cygwin builds by a very VERY noticeable degree. Besides, we have
-@@ -114,7 +114,7 @@ ifdef ANDROID
- NOSSE := Yes
- endif
+@@ -108,16 +108,12 @@ include Makefile.obj
+ # Which C++ standard to support
+ STDFLAG = -std=c++11
  
 -CFOTHERS := -pipe $(EXTERNAL_FLAGS)
 +CFOTHERS := $(EXTERNAL_FLAGS)
- ifndef NOSSE
- # force SSE2 dependency, so as to avoid both x87 indeterminacies, and 
- # to prevent lua from using non-standard rounding methods.
-@@ -125,10 +125,6 @@ CFWARN_L := -Wall -Wformat-security -Wundef
+ CFWARN := 
+ CFWARN_L := -Wall -Wformat-security -Wundef
  
  DEFINES := $(EXTERNAL_DEFINES)
  
@@ -29,7 +27,7 @@
  #
  # The GCC and GXX variables are set later.
  #
-@@ -513,15 +509,6 @@ ifdef USE_ICC
+@@ -502,15 +498,6 @@ ifdef USE_ICC
  
  # Some very good optimization flags.
    CFOPTIMIZE := -O2 -parallel
@@ -45,7 +43,7 @@
  endif
  
  # Define this to automatically generate code optimized for your machine
-@@ -635,7 +622,7 @@ endif
+@@ -624,7 +611,7 @@ endif
  
  ifndef BUILD_SQLITE
    ifeq ($(shell grep -q sqlite3_prepare $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
@@ -54,7 +52,7 @@
      LIBS += $(SQLITE_LIB)
      ifneq ($(shell grep -q sqlite3_prepare_v2 $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
        DEFINES_L += -DANCIENT_SQLITE
-@@ -798,7 +785,7 @@ ifndef NOWIZARD
+@@ -787,7 +774,7 @@ ifndef NOWIZARD
  DEFINES += -DWIZARD
  endif
  ifdef NO_OPTIMIZE
