@@ -1,0 +1,10 @@
+This plugin provides tools to create and access a Swagger specification file
+for a Dancer REST web service.
+
+Overview of Dancer::Plugin::Swagger's features:
+
+* Can create a /swagger.json REST specification file.
+* Can auto-discover routes and add them to the swagger file.
+* Can provide a Swagger UI version of the swagger documentation.
+
+WWW: https://metacpan.org/pod/Dancer::Plugin::Swagger
