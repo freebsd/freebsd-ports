@@ -1,0 +1,6 @@
+Lizard (formerly LZ5) is an efficient compressor with very fast
+decompression. It achieves compression ratio that is comparable to
+zip/zlib and zstd/brotli (at low and medium compression levels) at
+decompression speed of 1000 MB/s and faster.
+
+WWW: https://github.com/inikep/lizard

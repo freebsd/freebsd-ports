@@ -74,6 +74,7 @@
     SUBDIR += libunrar
     SUBDIR += libunrar5
     SUBDIR += libzip
+    SUBDIR += lizard
     SUBDIR += lrzip
     SUBDIR += lua-lzlib
     SUBDIR += lua51-zlib
