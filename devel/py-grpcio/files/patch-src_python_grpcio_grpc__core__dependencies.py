@@ -1,6 +1,6 @@
---- src/python/grpcio/grpc_core_dependencies.py.orig	2018-04-13 19:56:08 UTC
+--- src/python/grpcio/grpc_core_dependencies.py.orig	2019-04-15 23:12:51 UTC
 +++ src/python/grpcio/grpc_core_dependencies.py
-@@ -631,53 +631,4 @@ CORE_SOURCE_FILES = [
+@@ -657,54 +657,4 @@ CORE_SOURCE_FILES = [
      'third_party/zlib/trees.c',
      'third_party/zlib/uncompr.c',
      'third_party/zlib/zutil.c',
@@ -46,6 +46,7 @@
 -    'third_party/cares/cares/ares_strcasecmp.c',
 -    'third_party/cares/cares/ares_strdup.c',
 -    'third_party/cares/cares/ares_strerror.c',
+-    'third_party/cares/cares/ares_strsplit.c',
 -    'third_party/cares/cares/ares_timeout.c',
 -    'third_party/cares/cares/ares_version.c',
 -    'third_party/cares/cares/ares_writev.c',
