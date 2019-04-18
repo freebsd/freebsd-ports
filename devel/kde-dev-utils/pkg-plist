@@ -1,6 +1,6 @@
 bin/kpartloader
 bin/kuiviewer
-%%QT_PLUGINDIR%%/kuiviewerpart.so
+%%QT_PLUGINDIR%%/kf5/parts/kuiviewerpart.so
 %%QT_PLUGINDIR%%/quithumbnail.so
 share/applications/org.kde.kuiviewer.desktop
 share/icons/hicolor/128x128/apps/kuiviewer.png
@@ -11,9 +11,6 @@ share/icons/hicolor/64x64/apps/kuiviewer.png
 share/icons/hicolor/scalable/apps/kuiviewer.svg
 share/kservices5/designerthumbnail.desktop
 share/kservices5/kuiviewer_part.desktop
-share/kxmlgui5/kpartloader/kpartloaderui.rc
-share/kxmlgui5/kuiviewer/kuiviewerui.rc
-share/kxmlgui5/kuiviewerpart/kuiviewer_part.rc
 share/locale/ar/LC_MESSAGES/kuiviewer.mo
 share/locale/bg/LC_MESSAGES/kuiviewer.mo
 share/locale/bs/LC_MESSAGES/kpartloader.mo

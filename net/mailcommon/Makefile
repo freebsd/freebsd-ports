@@ -2,7 +2,6 @@
 
 PORTNAME=	mailcommon
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -25,7 +24,7 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime contacts identitymanagement ldap libkdepim libkleo mailimporter \
 		mailtransport messagelib mime pimcommon pimtextedit
-USE_QT=		core dbus network xml designer gui phonon4 testlib uiplugin \
+USE_QT=		core dbus network xml designer gui multimedia phonon4 testlib uiplugin \
 		uitools webkit widgets \
                 buildtools_build qmake_build
 USE_LDCONFIG=	yes

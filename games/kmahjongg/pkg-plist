@@ -1,4 +1,5 @@
 bin/kmahjongg
+etc/xdg/kmahjongg.categories
 share/applications/org.kde.kmahjongg.desktop
 share/config.kcfg/kmahjongg.kcfg
 share/icons/hicolor/128x128/apps/kmahjongg.png

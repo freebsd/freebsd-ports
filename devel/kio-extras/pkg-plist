@@ -12,6 +12,7 @@ lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION%%
 %%TAGLIB%%%%QT_PLUGINDIR%%/audiothumbnail.so
 %%QT_PLUGINDIR%%/comicbookthumbnail.so
 %%QT_PLUGINDIR%%/djvuthumbnail.so
+%%QT_PLUGINDIR%%/ebookthumbnail.so
 %%EXR%%%%QT_PLUGINDIR%%/exrthumbnail.so
 %%QT_PLUGINDIR%%/imagethumbnail.so
 %%QT_PLUGINDIR%%/jpegthumbnail.so
@@ -19,12 +20,15 @@ lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kf5/kded/filenamesearchmodule.so
 %%QT_PLUGINDIR%%/kf5/kded/networkwatcher.so
 %%QT_PLUGINDIR%%/kf5/kded/recentdocumentsnotifier.so
+%%QT_PLUGINDIR%%/kf5/kio/about.so
+%%QT_PLUGINDIR%%/kf5/kio/activities.so
 %%QT_PLUGINDIR%%/kf5/kio/archive.so
 %%QT_PLUGINDIR%%/kf5/kio/bookmarks.so
 %%QT_PLUGINDIR%%/kf5/kio/filenamesearch.so
 %%QT_PLUGINDIR%%/kf5/kio/filter.so
 %%QT_PLUGINDIR%%/kf5/kio/fish.so
 %%QT_PLUGINDIR%%/kf5/kio/info.so
+%%QT_PLUGINDIR%%/kf5/parts/kmanpart.so
 %%QT_PLUGINDIR%%/kf5/kio/man.so
 %%MTP%%%%QT_PLUGINDIR%%/kf5/kio/mtp.so
 %%QT_PLUGINDIR%%/kf5/kio/network.so
@@ -36,10 +40,7 @@ lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kf5/kio/thumbnail.so
 %%MTP%%%%QT_PLUGINDIR%%/kf5/kiod/kmtpd.so
 %%QT_PLUGINDIR%%/kfileaudiopreview.so
-%%QT_PLUGINDIR%%/kio_activities.so
 %%QT_PLUGINDIR%%/kritathumbnail.so
-%%QT_PLUGINDIR%%/libkio_about.so
-%%QT_PLUGINDIR%%/libkmanpart.so
 %%QT_PLUGINDIR%%/opendocumentthumbnail.so
 %%QT_PLUGINDIR%%/svgthumbnail.so
 %%QT_PLUGINDIR%%/textthumbnail.so
@@ -65,6 +66,7 @@ share/kservices5/bzip2.protocol
 share/kservices5/comicbookthumbnail.desktop
 share/kservices5/directorythumbnail.desktop
 share/kservices5/djvuthumbnail.desktop
+share/kservices5/ebookthumbnail.desktop
 %%EXR%%share/kservices5/exrthumbnail.desktop
 share/kservices5/filenamesearch.protocol
 share/kservices5/fish.protocol

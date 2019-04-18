@@ -1,4 +1,5 @@
 bin/kjumpingcube
+etc/xdg/kjumpingcube.categories
 share/applications/org.kde.kjumpingcube.desktop
 share/config.kcfg/kjumpingcube.kcfg
 share/icons/hicolor/128x128/apps/kjumpingcube.png

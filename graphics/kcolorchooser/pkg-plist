@@ -54,3 +54,4 @@ share/locale/uk/LC_MESSAGES/kcolorchooser.mo
 share/locale/wa/LC_MESSAGES/kcolorchooser.mo
 share/locale/zh_CN/LC_MESSAGES/kcolorchooser.mo
 share/locale/zh_TW/LC_MESSAGES/kcolorchooser.mo
+share/metainfo/org.kde.kcolorchooser.appdata.xml

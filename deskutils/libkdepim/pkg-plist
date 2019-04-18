@@ -14,6 +14,7 @@ include/KF5/Libkdepim/KWidgetLister
 include/KF5/Libkdepim/LdapClient
 include/KF5/Libkdepim/LdapClientSearch
 include/KF5/Libkdepim/LdapClientSearchConfig
+include/KF5/Libkdepim/LdapConfigureWidget
 include/KF5/Libkdepim/LdapSearchDialog
 include/KF5/Libkdepim/MaillistDrag
 include/KF5/Libkdepim/MultiplyingLine
@@ -56,6 +57,7 @@ include/KF5/libkdepim/kwidgetlister.h
 include/KF5/libkdepim/ldapclient.h
 include/KF5/libkdepim/ldapclientsearch.h
 include/KF5/libkdepim/ldapclientsearchconfig.h
+include/KF5/libkdepim/ldapconfigurewidget.h
 include/KF5/libkdepim/ldapsearchdialog.h
 include/KF5/libkdepim/maillistdrag.h
 include/KF5/libkdepim/multiplyingline.h

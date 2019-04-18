@@ -11,6 +11,8 @@ etc/xdg/ktnefapps.categories
 etc/xdg/ktnefapps.renamecategories
 lib/libkmailprivate.so.5
 lib/libkmailprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+%%QT_PLUGINDIR%%/akonadi/config/archivemailagentconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/followupreminderagentconfig.so
 %%QT_PLUGINDIR%%/kcm_kmail.so
 %%QT_PLUGINDIR%%/kcm_kmailsummary.so
 %%QT_PLUGINDIR%%/kcm_kontactsummary.so
@@ -216,6 +218,7 @@ share/locale/it/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
 share/locale/it/LC_MESSAGES/kmail.mo
 share/locale/it/LC_MESSAGES/ktnef.mo
 share/locale/ja/LC_MESSAGES/akonadi_archivemail_agent.mo
+share/locale/ja/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
 share/locale/ja/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/ja/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/ja/LC_MESSAGES/akonadi_sendlater_agent.mo
@@ -296,6 +299,7 @@ share/locale/ro/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/ro/LC_MESSAGES/kmail.mo
 share/locale/ro/LC_MESSAGES/ktnef.mo
 share/locale/ru/LC_MESSAGES/akonadi_archivemail_agent.mo
+share/locale/ru/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_sendlater_agent.mo

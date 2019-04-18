@@ -1,4 +1,5 @@
 bin/kbreakout
+etc/xdg/kbreakout.categories
 share/applications/org.kde.kbreakout.desktop
 share/icons/hicolor/128x128/apps/kbreakout.png
 share/icons/hicolor/16x16/apps/kbreakout.png

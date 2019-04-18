@@ -1,4 +1,5 @@
 bin/palapeli
+etc/xdg/palapeli.categories
 etc/xdg/palapeli-collectionrc
 include/Pala/Slicer
 include/Pala/SlicerJob

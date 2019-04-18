@@ -3,8 +3,8 @@ include/kompare/kompareinterface.h
 lib/libkomparedialogpages.so.5
 lib/libkompareinterface.so
 lib/libkompareinterface.so.5
-%%QT_PLUGINDIR%%/komparenavtreepart.so
-%%QT_PLUGINDIR%%/komparepart.so
+%%QT_PLUGINDIR%%/kf5/parts/komparenavtreepart.so
+%%QT_PLUGINDIR%%/kf5/parts/komparepart.so
 share/applications/org.kde.kompare.desktop
 share/icons/hicolor/128x128/apps/kompare.png
 share/icons/hicolor/16x16/apps/kompare.png
@@ -17,8 +17,6 @@ share/kservices5/komparenavtreepart.desktop
 share/kservices5/komparepart.desktop
 share/kservicetypes5/komparenavigationpart.desktop
 share/kservicetypes5/kompareviewpart.desktop
-share/kxmlgui5/komparepart/komparepartui.rc
-share/kxmlgui5/kompare/kompareui.rc
 share/locale/ar/LC_MESSAGES/kompare.mo
 share/locale/bg/LC_MESSAGES/kompare.mo
 share/locale/bs/LC_MESSAGES/kompare.mo

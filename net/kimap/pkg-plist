@@ -26,8 +26,10 @@ include/KF5/KIMAP/KIMAP/LogoutJob
 include/KF5/KIMAP/KIMAP/MetaDataJobBase
 include/KF5/KIMAP/KIMAP/MoveJob
 include/KF5/KIMAP/KIMAP/MyRightsJob
+include/KF5/KIMAP/KIMAP/NamespaceJob
 include/KF5/KIMAP/KIMAP/QuotaJobBase
 include/KF5/KIMAP/KIMAP/RenameJob
+include/KF5/KIMAP/KIMAP/RFCCodecs
 include/KF5/KIMAP/KIMAP/SearchJob
 include/KF5/KIMAP/KIMAP/SelectJob
 include/KF5/KIMAP/KIMAP/Session
@@ -65,8 +67,10 @@ include/KF5/KIMAP/kimap/LogoutJob
 include/KF5/KIMAP/kimap/MetaDataJobBase
 include/KF5/KIMAP/kimap/MoveJob
 include/KF5/KIMAP/kimap/MyRightsJob
+include/KF5/KIMAP/kimap/NamespaceJob
 include/KF5/KIMAP/kimap/QuotaJobBase
 include/KF5/KIMAP/kimap/RenameJob
+include/KF5/KIMAP/kimap/RFCCodecs
 include/KF5/KIMAP/kimap/SearchJob
 include/KF5/KIMAP/kimap/SelectJob
 include/KF5/KIMAP/kimap/Session
