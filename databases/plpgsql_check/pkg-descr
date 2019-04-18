@@ -1,7 +1,18 @@
-Plpgsql_check is next generation of plpgsql_lint. It allows to check source
-code by explicit call plpgsql_check_function. The SQL statements inside
-PL/pgSQL functions are checked by validator for semantic errors. These errors
-can be found by plpgsql_check_function. PostgreSQL 9.2 is required, PostgreSQL
-9.3, 9.4, 9.5, 9.6 and 10 are supported.
+plpgsql_check is next generation of plpgsql_lint. It allows to check source code
+by explicit call plpgsql_check_function. PostgreSQL 9.4, 9.5, 9.6, 10, 11 are
+supported (Develop 12 is supported too). The SQL statements inside PL/pgSQL
+functions are checked by validator for semantic errors. These errors can be
+found by plpgsql_check_function.
+
+Features:
+- check fields of referenced database objects and types inside embedded SQL
+- using correct types of function parameters
+- unused variables and function argumens, unmodified OUT argumens
+- partially detection of dead code (due RETURN command)
+- detection of missing RETURN command in function
+- try to identify unwanted hidden casts, that can be performance issue like
+  unused indexes
+- possibility to collect relations and functions used by function
+- possibility to check EXECUTE stmt agaist SQL injection vulnerability
 
 WWW: https://github.com/okbob/plpgsql_check

@@ -2,32 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	plpgsql_check
-PORTVERSION=	1.2.0
+PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	databases
-PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
+PKGNAMEPREFIX=	postgresql${PGSQL_VER_NODOT}-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PostgreSQL extension to check PL/pgSQL code
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	postcardware
-LICENSE_TEXT=	If you like it - send a postcard to address: \
-			Pavel Stehule \
-			Skalice 12 \
-			Benesov u Prahy \
-			256 01 \
-			Czech Republic \
-		Use this code freely on own risk
+LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror dist-sell pkg-sell auto-accept
 
-USES=		gmake pgsql:9.2+
+USES=		gmake pgsql
+
 LLD_UNSAFE=	yes
+WANT_PGSQL=	server
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	okbob
-
-WANT_PGSQL=	server
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/plpgsql_check.so
