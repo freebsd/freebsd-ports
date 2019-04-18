@@ -12183,3 +12183,4 @@ net/frr4|net/frr7|2019-04-16|Has expired: Upstream no longer maintained
 mail/pop3proxy||2019-04-17|Has expired: no upstream and does not properly initiate SSL/TLS connections
 devel/go-gocode||2019-04-17|Has expired: Unmaintained upstream and has issues with Go >= 1.10
 audio/raop_play|audio/pulseaudio|2019-04-17|Has expired: Abandonware. Use module-raop-sink from audio/pulseaudio instead.
+www/squid-devel||2019-04-18|Removed: devel version no longer necessary
