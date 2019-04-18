@@ -12,6 +12,8 @@ COMMENT=	Small C++ library for reading and generating ELF files
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		compiler:c++11-lang
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=${EXAMPLESDIR}
 
