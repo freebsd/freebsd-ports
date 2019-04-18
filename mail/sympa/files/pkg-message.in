@@ -1,13 +1,11 @@
 If you upgrade:
- * from < 6.2.25, read
-   read https://sympa-community.github.io/manual/upgrade/notes.html
- * else, simply run
-   # sympa.pl --upgrade
+ * read https://sympa-community.github.io/manual/upgrade/notes.html
+ * run # sympa.pl --upgrade
 
 First install:
  * run # sympa_wizard.pl
- * create database with # sympa.pl --health_check
-   Sybase: see https://sympa-community.github.io/manual/install/setup-database.html
+ * populate database with # sympa.pl --health_check
+   For more databases options,
+   see https://sympa-community.github.io/manual/install/setup-database.html
 
 for wwsympa server, see samples configs in %%EXAMPLESDIR%%
-
