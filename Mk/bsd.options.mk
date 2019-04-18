@@ -192,6 +192,15 @@ _OPTIONS_FLAGS=	ALL_TARGET BROKEN CATEGORIES CFLAGS CONFIGURE_ENV CONFLICTS \
 		PLIST_SUB PORTDOCS PORTEXAMPLES SUB_FILES SUB_LIST \
 		TEST_TARGET USES BINARY_ALIAS
 _OPTIONS_DEPENDS=	PKG FETCH EXTRACT PATCH BUILD LIB RUN TEST
+_ALL_OPTIONS_HELPERS=	${_OPTIONS_DEPENDS:S/$/_DEPENDS/} \
+			${_OPTIONS_DEPENDS:S/$/_DEPENDS_OFF/} \
+			${_OPTIONS_FLAGS:S/$/_OFF/} ${_OPTIONS_FLAGS} \
+			CMAKE_BOOL CMAKE_BOOL_OFF CMAKE_OFF CMAKE_ON \
+			CONFIGURE_ENABLE CONFIGURE_OFF CONFIGURE_ON \
+			CONFIGURE_WITH IMPLIES MESON_ARGS MESON_DISABLED \
+			MESON_ENABLED MESON_FALSE MESON_OFF MESON_ON MESON_TRUE \
+			PREVENTS PREVENTS_MSG QMAKE_OFF QMAKE_ON USE USE_OFF \
+			VARS VARS_OFF
 
 # The format here is target_family:priority:target-type
 _OPTIONS_TARGETS=	fetch:300:pre fetch:500:do fetch:700:post \
@@ -606,6 +615,18 @@ _type=		${target:C/.*://}
 _OPTIONS_${_target}:=	${_OPTIONS_${_target}} ${_prio}:${_type}-${_target}-${opt}-off
 .    endfor
 .  endif
+.endfor
+
+# Collect which options helpers are defined at this point for
+# bsd.sanity.mk later to make sure no other options helper is
+# defined after bsd.port.options.mk.
+_OPTIONS_HELPERS_SEEN=
+.for opt in ${_REALLY_ALL_POSSIBLE_OPTIONS}
+.  for helper in ${_ALL_OPTIONS_HELPERS}
+.    if defined(${opt}_${helper})
+_OPTIONS_HELPERS_SEEN+=	${opt}_${helper}
+.    endif
+.  endfor
 .endfor
 
 .undef (SELECTED_OPTIONS)
