@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190419
+  AFFECTS: users of emulators/qemu
+  AUTHOR: bofh@FreeBSD.org
+
+  qemu 2.X version has been moved to qemu2. If you would like to use
+  2.X you should use qeemu2. Otherwise you can use the new stable 
+  upstream branch of 3.0.X.
+
+  Portmaster users will need to run this command:
+
+  portmaster -o emulators/qemu2 emulators/qemu
+
 20190410:
   AFFECTS: users of python
   AUTHOR: antoine@FreeBSD.org

@@ -1,6 +1,6 @@
---- net/tap-bsd.c.orig	2015-11-03 20:01:34 UTC
+--- net/tap-bsd.c.orig	2019-04-12 03:28:28 UTC
 +++ net/tap-bsd.c
-@@ -29,6 +29,7 @@
+@@ -31,6 +31,7 @@
  
  #if defined(__NetBSD__) || defined(__FreeBSD__)
  #include <sys/ioctl.h>

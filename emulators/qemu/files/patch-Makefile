@@ -1,7 +1,7 @@
---- Makefile.orig	2018-04-24 16:30:46 UTC
+--- Makefile.orig	2019-04-12 03:28:28 UTC
 +++ Makefile
-@@ -350,10 +350,15 @@ LIBS+=-lz $(LIBS_TOOLS)
- HELPERS-$(CONFIG_LINUX) = qemu-bridge-helper$(EXESUF)
+@@ -353,9 +353,14 @@ LIBS+=-lz $(LIBS_TOOLS)
+ HELPERS-$(call land,$(CONFIG_SOFTMMU),$(CONFIG_LINUX)) = qemu-bridge-helper$(EXESUF)
  
  ifdef BUILD_DOCS
 +ifdef NOPORTDOCS
@@ -15,8 +15,7 @@
  DOCS+=docs/qemu-block-drivers.7
  ifdef CONFIG_VIRTFS
  DOCS+=fsdev/virtfs-proxy-helper.1
- endif
-@@ -797,11 +802,13 @@ BLOBS=
+@@ -812,11 +817,13 @@ BLOBS=
  endif
  
  install-doc: $(DOCS)
@@ -30,7 +29,7 @@
  ifdef CONFIG_POSIX
  	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man1"
  	$(INSTALL_DATA) qemu.1 "$(DESTDIR)$(mandir)/man1"
-@@ -815,8 +822,10 @@ ifneq ($(TOOLS),)
+@@ -830,8 +837,10 @@ ifneq ($(TOOLS),)
  endif
  ifneq (,$(findstring qemu-ga,$(TOOLS)))
  	$(INSTALL_DATA) qemu-ga.8 "$(DESTDIR)$(mandir)/man8"
