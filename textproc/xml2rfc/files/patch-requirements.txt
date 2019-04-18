@@ -1,0 +1,11 @@
+--- requirements.txt.orig	2019-02-14 14:17:04 UTC
++++ requirements.txt
+@@ -1,7 +1,7 @@
+ google-i18n-address>=2.3.2
+ html5lib>=1.0.1
+ intervaltree>=2.1.0,!=3.0.0
+-lxml>=2.2.8,!=4.3.1 
++lxml>=2.2.8
+ pycountry>=1.8
+ pyflakes>=0.8.1
+ requests>=2.5.0
