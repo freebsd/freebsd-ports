@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openttd
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.1
 CATEGORIES=	games
 MASTER_SITES=	https://proxy.binaries.openttd.org/openttd-releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
@@ -131,15 +131,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/media/openttd.${n}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${n}x${n}/apps/openttd.png
 .  endfor
+.else
+	@${REINPLACE_CMD} -E '/icons|pixmaps/d' ${TMPPLIST}
 .endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${STAGEDIR}${DOCSDIR}
-
-post-install:
-.if defined(WITH_DEDICATED_SERVER_ONLY)
-	@${REINPLACE_CMD} -E '/icons|pixmaps/d' ${TMPPLIST}
-.endif
 
 .include <bsd.port.post.mk>
