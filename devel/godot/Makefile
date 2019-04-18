@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	godot
-PORTVERSION=	3.0.6
-PORTREVISION=	1
-DISTVERSIONSUFFIX= -stable
+PORTVERSION=	3.1
+DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel games
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -27,10 +26,8 @@ RUN_DEPENDS=	xdg-user-dir:devel/xdg-user-dirs \
 		xdg-open:devel/xdg-utils \
 		xmessage:x11/xmessage
 
-# on 10.4 using clang34 fails - so we want to use clang60
-# gl already needs clang60 so this shouldn't add any overhead
 USES=		compiler:c++14-lang pkgconfig scons ssl
-USE_XORG=	x11 xcursor xi xinerama xrandr
+USE_XORG=	x11 xcursor xi xinerama xrandr xrender
 USE_GL=		gl glew glu
 
 USE_GITHUB=	yes
@@ -47,27 +44,27 @@ CXXFLAGS_sparc64=	-DNO_THREADS
 CXXFLAGS_mips=		-DNO_THREADS
 CXXFLAGS_mips64=	-DNO_THREADS
 
-# option MONO can be built but is not stable enough to use yet
-# for now leave it out as an option
+# option MONO doesn't build (needs 5.12+) so for now leave it out as an option
 OPTIONS_DEFINE=		EXAMPLES TOOLS
-OPTIONS_DEFAULT=	OSS
+OPTIONS_DEFAULT=	ALSA
 # Moved to devel/godot-tools
 OPTIONS_EXCLUDE?=	EXAMPLES TOOLS
 OPTIONS_GROUP=		AUDIO
-OPTIONS_GROUP_AUDIO=	ALSA OSS PULSEAUDIO
+OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
 
 AUDIO_DESC=		Audio support
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_MAKE_ARGS=		alsa=True
 EXAMPLES_GH_PROJECT=	godot-demo-projects:DEMOS
-# master at 31/1
-EXAMPLES_GH_TAGNAME=	d69cc10a0b8a:DEMOS
+# master at 23/3
+EXAMPLES_GH_TAGNAME=	17e80079e3fc:DEMOS
 EXAMPLES_PORTEXAMPLES=	*
-# while mono support can build it isn't stable enough to be used yet
-MONO_LIB_DEPENDS=	libmonosgen-2.0.so:lang/mono
-MONO_MAKE_ARGS=		module_mono_enabled=True
-OSS_MAKE_ARGS=		oss=True
-PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:audio/pulseaudio
+# mono support doesn't build at present
+MONO_USES=		mono:nuget
+NUGET_DEPENDS=		DotNet.Glob=2.1.1
+MONO_MAKE_ARGS=		module_mono_enabled=True mono_glue=True NUGET_PATH=${NUGET_EXE}
+MONO_MAKE_ENV=		NUGET_PATH=${NUGET_EXE}
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_MAKE_ARGS=	pulseaudio=True
 TOOLS_DESC=		Include development tools (IDE)
 TOOLS_MAKE_ARGS=	target=release_debug tools=True
@@ -91,7 +88,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|' \
 		${WRKSRC}/platform/x11/os_x11.cpp
 
-pre-build-MONO-on:
+pre-build-MONO-on: makenuget
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g} \
 		target=release_debug tools=True mono_glue=False)
