@@ -13,10 +13,6 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 USES=		python
 USE_PYTHON=	flavors
 
-# Ignore -Wregister warnings in Python.h
-CFLAGS+=	${${FLAVOR}_CFLAGS}
-py27_CFLAGS=	-isystem ${PYTHON_INCLUDEDIR}
-
 OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS
 
 .include "${.CURDIR}/../boost-all/common.mk"
