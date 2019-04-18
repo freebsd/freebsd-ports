@@ -1533,6 +1533,7 @@
     SUBDIR += py-django-bootstrap3
     SUBDIR += py-django-braces
     SUBDIR += py-django-bulk-update
+    SUBDIR += py-django-cacheops
     SUBDIR += py-django-caching-app-plugins
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
