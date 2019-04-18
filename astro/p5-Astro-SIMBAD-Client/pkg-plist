@@ -1,5 +1,5 @@
 bin/simbadc
 %%SITE_PERL%%/Astro/SIMBAD/Client.pm
 %%SITE_PERL%%/Astro/SIMBAD/Client/WSQueryInterfaceService.pm
-%%PERL5_MAN3%%/Astro::SIMBAD::Client.3.gz
 %%PERL5_MAN1%%/simbadc.1.gz
+%%PERL5_MAN3%%/Astro::SIMBAD::Client.3.gz
