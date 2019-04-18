@@ -1,0 +1,15 @@
+ld: error: ../.libs/libSDL_sound.so: undefined reference to log
+ld: error: ../.libs/libSDL_sound.so: undefined reference to exp2
+ld: error: ../.libs/libSDL_sound.so: undefined reference to sin
+
+--- Makefile.in.orig	2019-04-18 06:08:16 UTC
++++ Makefile.in
+@@ -256,7 +256,7 @@ libSDL_sound_la_LDFLAGS = \
+ 
+ libSDL_sound_la_LIBADD = \
+ 	decoders/libdecoders.la	\
+-	$(TIMIDITY_LIB) $(MPGLIB_LIB)
++	$(TIMIDITY_LIB) $(MPGLIB_LIB) -lm
+ 
+ EXTRA_DIST = \
+ 	CREDITS \
