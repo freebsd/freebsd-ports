@@ -14,6 +14,8 @@ COMMENT=	Perl interface to C clustering library
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BROKEN_FreeBSD_13_i386=	ld: error: can't create dynamic relocation R_386_32 against local symbol in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
+
 USES=		perl5
 USE_PERL5=	configure
 
