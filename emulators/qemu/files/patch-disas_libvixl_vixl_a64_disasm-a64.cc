@@ -1,6 +1,6 @@
---- disas/libvixl/vixl/a64/disasm-a64.cc.orig	2016-04-14 20:19:53 UTC
+--- disas/libvixl/vixl/a64/disasm-a64.cc.orig	2019-04-12 03:28:28 UTC
 +++ disas/libvixl/vixl/a64/disasm-a64.cc
-@@ -2693,7 +2693,7 @@ void Disassembler::AppendPCRelativeOffse
+@@ -2693,7 +2693,7 @@ void Disassembler::AppendPCRelativeOffsetToOutput(cons
    if (offset < 0) {
      abs_offset = -abs_offset;
    }

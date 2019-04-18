@@ -1,6 +1,14 @@
---- configure.orig	2018-04-24 16:30:46 UTC
+--- configure.orig	2019-04-14 21:25:18 UTC
 +++ configure
-@@ -369,7 +369,7 @@ DSOSUF=".so"
+@@ -375,6 +375,7 @@ hax="no"
+ hvf="no"
+ whpx="no"
+ rdma=""
++pvrdma=""
+ gprof="no"
+ debug_tcg="no"
+ debug="no"
+@@ -391,7 +392,7 @@ DSOSUF=".so"
  LDFLAGS_SHARED="-shared"
  modules="no"
  prefix="/usr/local"
@@ -9,7 +17,7 @@
  datadir="\${prefix}/share"
  firmwarepath="\${prefix}/share/qemu-firmware"
  qemu_docdir="\${prefix}/share/doc/qemu"
-@@ -449,6 +449,9 @@ numa=""
+@@ -471,6 +472,9 @@ numa=""
  tcmalloc="no"
  jemalloc="no"
  replication="yes"
@@ -18,8 +26,8 @@
 +bpf="no"
  vxhs=""
  libxml2=""
- 
-@@ -1030,6 +1033,10 @@ for opt do
+ docker="no"
+@@ -1087,6 +1091,10 @@ for opt do
    ;;
    --enable-vnc-png) vnc_png="yes"
    ;;
@@ -30,7 +38,78 @@
    --disable-slirp) slirp="no"
    ;;
    --disable-vde) vde="no"
-@@ -2799,6 +2806,14 @@ if ! check_include "ifaddrs.h" ; then
+@@ -1363,6 +1371,10 @@ for opt do
+   ;;
+   --disable-rdma) rdma="no"
+   ;;
++  --enable-pvrdma) pvrdma="yes"
++  ;;
++  --disable-pvrdma) pvrdma="no"
++  ;;
+   --with-gtkabi=*) gtkabi="$optarg"
+   ;;
+   --disable-vte) vte="no"
+@@ -1669,7 +1681,8 @@ disabled with --disable-FEATURE, default is enabled if
+   hax             HAX acceleration support
+   hvf             Hypervisor.framework acceleration support
+   whpx            Windows Hypervisor Platform acceleration support
+-  rdma            Enable RDMA-based migration and PVRDMA support
++  rdma            Enable RDMA-based migration
++  pvrdma          Enable PVRDMA support
+   vde             support for vde network
+   netmap          support for netmap network
+   linux-aio       Linux AIO support
+@@ -2881,7 +2894,49 @@ else
+     tasn1=no
+ fi
+ 
++##########################################
++# PVRDMA detection
+ 
++cat > $TMPC <<EOF &&
++#include <sys/mman.h>
++
++int
++main(void)
++{
++    char buf = 0;
++    void *addr = &buf;
++    addr = mremap(addr, 0, 1, MREMAP_MAYMOVE | MREMAP_FIXED);
++
++    return 0;
++}
++EOF
++
++if test "$rdma" = "yes" ; then
++    case "$pvrdma" in
++    "")
++        if compile_prog "" ""; then
++            pvrdma="yes"
++        else
++            pvrdma="no"
++        fi
++        ;;
++    "yes")
++        if ! compile_prog "" ""; then
++            error_exit "PVRDMA is not supported since mremap is not implemented"
++        fi
++        pvrdma="yes"
++        ;;
++    "no")
++        pvrdma="no"
++        ;;
++    esac
++else
++    if test "$pvrdma" = "yes" ; then
++        error_exit "PVRDMA requires rdma suppport"
++    fi
++    pvrdma="no"
++fi
++
+ ##########################################
+ # getifaddrs (for tests/test-io-channel-socket )
+ 
+@@ -2891,6 +2946,14 @@ if ! check_include "ifaddrs.h" ; then
  fi
  
  ##########################################
@@ -45,7 +124,7 @@
  # VTE probe
  
  if test "$vte" != "no"; then
-@@ -2969,7 +2984,51 @@ EOF
+@@ -3061,7 +3124,51 @@ EOF
    fi
  fi
  
@@ -97,7 +176,16 @@
  ##########################################
  # VNC SASL detection
  if test "$vnc" = "yes" -a "$vnc_sasl" != "no" ; then
-@@ -4331,14 +4390,7 @@ fi
+@@ -3474,7 +3581,7 @@ for i in $glib_modules; do
+         glib_libs=$($pkg_config --libs $i)
+         QEMU_CFLAGS="$glib_cflags $QEMU_CFLAGS"
+         LIBS="$glib_libs $LIBS"
+-        libs_qga="$glib_libs $libs_qga"
++        libs_qga="$glib_libs -lintl $libs_qga"
+     else
+         error_exit "glib-$glib_req_ver $i is required to compile QEMU"
+     fi
+@@ -4419,14 +4526,7 @@ fi
  
  # Check if tools are available to build documentation.
  if test "$docs" != "no" ; then
@@ -112,7 +200,16 @@
  fi
  
  # Search for bswap_32 function
-@@ -5783,6 +5835,7 @@ echo "Audio drivers     $audio_drv_list"
+@@ -4551,7 +4651,7 @@ fi
+ 
+ # check for libusb
+ if test "$libusb" != "no" ; then
+-    if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
++    if $pkg_config libusb-1.0; then
+         libusb="yes"
+         libusb_cflags=$($pkg_config --cflags libusb-1.0)
+         libusb_libs=$($pkg_config --libs libusb-1.0)
+@@ -5914,6 +6014,7 @@ echo "Audio drivers     $audio_drv_list"
  echo "Block whitelist (rw) $block_drv_rw_whitelist"
  echo "Block whitelist (ro) $block_drv_ro_whitelist"
  echo "VirtFS support    $virtfs"
@@ -120,7 +217,15 @@
  echo "Multipath support $mpath"
  echo "VNC support       $vnc"
  if test "$vnc" = "yes" ; then
-@@ -6010,6 +6063,15 @@ fi
+@@ -5949,6 +6050,7 @@ if test "$tcg" = "yes" ; then
+ fi
+ echo "malloc trim support $malloc_trim"
+ echo "RDMA support      $rdma"
++echo "PVRDMA support    $pvrdma"
+ echo "fdt support       $fdt"
+ echo "membarrier        $membarrier"
+ echo "preadv support    $preadv"
+@@ -6143,6 +6245,15 @@ fi
  if test "$profiler" = "yes" ; then
    echo "CONFIG_PROFILER=y" >> $config_host_mak
  fi
@@ -136,13 +241,24 @@
  if test "$slirp" = "yes" ; then
    echo "CONFIG_SLIRP=y" >> $config_host_mak
    echo "CONFIG_SMBD_COMMAND=\"$smbd\"" >> $config_host_mak
-@@ -6247,6 +6309,9 @@ fi
- # if this macro is set.
+@@ -6384,6 +6495,9 @@ fi
  if test "$have_fsxattr" = "yes" ; then
      echo "HAVE_FSXATTR=y" >> $config_host_mak
-+fi
+ fi
 +if test "$have_ifaddrs_h" = "yes" ; then
 +    echo "HAVE_IFADDRS_H=y" >> $config_host_mak
++fi
+ if test "$have_copy_file_range" = "yes" ; then
+     echo "HAVE_COPY_FILE_RANGE=y" >> $config_host_mak
  fi
- if test "$vte" = "yes" ; then
-   echo "CONFIG_VTE=y" >> $config_host_mak
+@@ -6703,6 +6817,10 @@ echo "CONFIG_TRACE_FILE=$trace_file" >> $config_host_m
+ if test "$rdma" = "yes" ; then
+   echo "CONFIG_RDMA=y" >> $config_host_mak
+   echo "RDMA_LIBS=$rdma_libs" >> $config_host_mak
++fi
++
++if test "$pvrdma" = "yes" ; then
++  echo "CONFIG_PVRDMA=y" >> $config_host_mak
+ fi
+ 
+ if test "$have_rtnetlink" = "yes" ; then

@@ -2,6 +2,7 @@ bin/qemu-ga
 bin/qemu-i386
 bin/qemu-img
 bin/qemu-io
+%%GTK3%%bin/qemu-keymap
 bin/qemu-nbd
 %%NO_X86_TARGETS%%bin/qemu-sparc
 %%NO_X86_TARGETS%%bin/qemu-sparc64
@@ -134,10 +135,10 @@ man/man8/qemu-nbd.8.gz
 %%DATADIR%%/keymaps/sv
 %%DATADIR%%/keymaps/th
 %%DATADIR%%/keymaps/tr
-%%GTK2%%share/locale/bg/LC_MESSAGES/qemu.mo
-%%GTK2%%share/locale/de_DE/LC_MESSAGES/qemu.mo
-%%GTK2%%share/locale/fr_FR/LC_MESSAGES/qemu.mo
-%%GTK2%%share/locale/it/LC_MESSAGES/qemu.mo
-%%GTK2%%share/locale/hu/LC_MESSAGES/qemu.mo
-%%GTK2%%share/locale/tr/LC_MESSAGES/qemu.mo
-%%GTK2%%share/locale/zh_CN/LC_MESSAGES/qemu.mo
+%%GTK3%%share/locale/bg/LC_MESSAGES/qemu.mo
+%%GTK3%%share/locale/de_DE/LC_MESSAGES/qemu.mo
+%%GTK3%%share/locale/fr_FR/LC_MESSAGES/qemu.mo
+%%GTK3%%share/locale/it/LC_MESSAGES/qemu.mo
+%%GTK3%%share/locale/hu/LC_MESSAGES/qemu.mo
+%%GTK3%%share/locale/tr/LC_MESSAGES/qemu.mo
+%%GTK3%%share/locale/zh_CN/LC_MESSAGES/qemu.mo
