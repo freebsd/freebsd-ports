@@ -47,6 +47,7 @@ share/icons/hicolor/scalable/apps/ktouch.svgz
 %%DATADIR%%/courses/gr.xml
 %%DATADIR%%/courses/ir.xml
 %%DATADIR%%/courses/it.xml
+%%DATADIR%%/courses/it2.xml
 %%DATADIR%%/courses/lt.std.xml
 %%DATADIR%%/courses/nl1.xml
 %%DATADIR%%/courses/nl2.xml

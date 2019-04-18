@@ -43,7 +43,6 @@ include/KPim/kdav/davurl.h
 include/KPim/kdav/enums.h
 include/KPim/kdav/etagcache.h
 include/KPim/kdav/kpimkdav_export.h
-include/KPim/kdav/libkdav_debug.h
 include/KPim/kdav/utils.h
 include/KPim/kpimkdav_version.h
 lib/cmake/KPimKDAV/KPimKDAVConfig.cmake

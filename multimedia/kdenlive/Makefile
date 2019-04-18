@@ -58,6 +58,9 @@ V4L_CMAKE_OFF=		-DWITH_LibV4L2:BOOL=FALSE
 
 XINE_RUN_DEPENDS=	xine:multimedia/xine
 
+# kdenlive 19.04 has some issues that still need to be sorted out.
+KDE_APPLICATIONS_VERSION=	18.12.3
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d' \
 		-e '/SharedMimeInfo/ d' \

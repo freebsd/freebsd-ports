@@ -95,6 +95,7 @@ share/kservices5/akonadi/contact/ircprotocol.desktop
 share/kservices5/akonadi/contact/jabberprotocol.desktop
 share/kservices5/akonadi/contact/meanwhileprotocol.desktop
 share/kservices5/akonadi/contact/msnprotocol.desktop
+share/kservices5/akonadi/contact/qqprotocol.desktop
 share/kservices5/akonadi/contact/skypeprotocol.desktop
 share/kservices5/akonadi/contact/smsprotocol.desktop
 share/kservices5/akonadi/contact/twitterprotocol.desktop

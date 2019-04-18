@@ -1,10 +1,7 @@
 etc/xdg/kpimtextedit.categories
 include/KF5/KPIMTextEdit/KPIMTextEdit/AbstractTextToSpeechInterface
 include/KF5/KPIMTextEdit/KPIMTextEdit/EditorUtil
-include/KF5/KPIMTextEdit/KPIMTextEdit/EmoticonTextEditAction
-include/KF5/KPIMTextEdit/KPIMTextEdit/InsertImageWidget
-include/KF5/KPIMTextEdit/KPIMTextEdit/InsertTableDialog
-include/KF5/KPIMTextEdit/KPIMTextEdit/InsertTableWidget
+include/KF5/KPIMTextEdit/KPIMTextEdit/EmoticonUnicodeTab
 include/KF5/KPIMTextEdit/KPIMTextEdit/PlainTextEditFindBar
 include/KF5/KPIMTextEdit/KPIMTextEdit/PlainTextEditor
 include/KF5/KPIMTextEdit/KPIMTextEdit/PlainTextEditorWidget
@@ -20,9 +17,6 @@ include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextEditorWidget
 include/KF5/KPIMTextEdit/KPIMTextEdit/RichTextExternalComposer
 include/KF5/KPIMTextEdit/KPIMTextEdit/SelectSpecialCharDialog
 include/KF5/KPIMTextEdit/KPIMTextEdit/SlideContainer
-include/KF5/KPIMTextEdit/KPIMTextEdit/TableActionMenu
-include/KF5/KPIMTextEdit/KPIMTextEdit/TableCellFormatDialog
-include/KF5/KPIMTextEdit/KPIMTextEdit/TableFormatDialog
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextEditFindBarBase
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextEditorCompleter
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextGotoLineWidget
@@ -33,10 +27,7 @@ include/KF5/KPIMTextEdit/KPIMTextEdit/TextToSpeechWidget
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextUtils
 include/KF5/KPIMTextEdit/kpimtextedit/abstracttexttospeechinterface.h
 include/KF5/KPIMTextEdit/kpimtextedit/editorutil.h
-include/KF5/KPIMTextEdit/kpimtextedit/emoticontexteditaction.h
-include/KF5/KPIMTextEdit/kpimtextedit/insertimagewidget.h
-include/KF5/KPIMTextEdit/kpimtextedit/inserttabledialog.h
-include/KF5/KPIMTextEdit/kpimtextedit/inserttablewidget.h
+include/KF5/KPIMTextEdit/kpimtextedit/emoticonunicodetab.h
 include/KF5/KPIMTextEdit/kpimtextedit/kpimtextedit_export.h
 include/KF5/KPIMTextEdit/kpimtextedit/plaintexteditfindbar.h
 include/KF5/KPIMTextEdit/kpimtextedit/plaintexteditor.h
@@ -53,9 +44,6 @@ include/KF5/KPIMTextEdit/kpimtextedit/richtexteditorwidget.h
 include/KF5/KPIMTextEdit/kpimtextedit/richtextexternalcomposer.h
 include/KF5/KPIMTextEdit/kpimtextedit/selectspecialchardialog.h
 include/KF5/KPIMTextEdit/kpimtextedit/slidecontainer.h
-include/KF5/KPIMTextEdit/kpimtextedit/tableactionmenu.h
-include/KF5/KPIMTextEdit/kpimtextedit/tablecellformatdialog.h
-include/KF5/KPIMTextEdit/kpimtextedit/tableformatdialog.h
 include/KF5/KPIMTextEdit/kpimtextedit/texteditfindbarbase.h
 include/KF5/KPIMTextEdit/kpimtextedit/texteditorcompleter.h
 include/KF5/KPIMTextEdit/kpimtextedit/textgotolinewidget.h

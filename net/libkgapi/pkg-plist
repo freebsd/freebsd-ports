@@ -29,6 +29,7 @@ include/KPim/KGAPI/KGAPI/Calendar/CalendarCreateJob
 include/KPim/KGAPI/KGAPI/Calendar/CalendarDeleteJob
 include/KPim/KGAPI/KGAPI/Calendar/CalendarFetchJob
 include/KPim/KGAPI/KGAPI/Calendar/CalendarModifyJob
+include/KPim/KGAPI/KGAPI/Calendar/Enums
 include/KPim/KGAPI/KGAPI/Calendar/Event
 include/KPim/KGAPI/KGAPI/Calendar/EventCreateJob
 include/KPim/KGAPI/KGAPI/Calendar/EventDeleteJob
@@ -87,6 +88,13 @@ include/KPim/KGAPI/KGAPI/Drive/Revision
 include/KPim/KGAPI/KGAPI/Drive/RevisionDeleteJob
 include/KPim/KGAPI/KGAPI/Drive/RevisionFetchJob
 include/KPim/KGAPI/KGAPI/Drive/RevisionModifyJob
+include/KPim/KGAPI/KGAPI/Drive/SearchQuery
+include/KPim/KGAPI/KGAPI/Drive/Teamdrive
+include/KPim/KGAPI/KGAPI/Drive/TeamdriveCreateJob
+include/KPim/KGAPI/KGAPI/Drive/TeamdriveDeleteJob
+include/KPim/KGAPI/KGAPI/Drive/TeamdriveFetchJob
+include/KPim/KGAPI/KGAPI/Drive/TeamdriveModifyJob
+include/KPim/KGAPI/KGAPI/Drive/TeamdriveSearchQuery
 include/KPim/KGAPI/KGAPI/Drive/User
 include/KPim/KGAPI/KGAPI/FetchJob
 include/KPim/KGAPI/KGAPI/Job
@@ -146,6 +154,7 @@ include/KPim/KGAPI/kgapi/calendar/calendarcreatejob.h
 include/KPim/KGAPI/kgapi/calendar/calendardeletejob.h
 include/KPim/KGAPI/kgapi/calendar/calendarfetchjob.h
 include/KPim/KGAPI/kgapi/calendar/calendarmodifyjob.h
+include/KPim/KGAPI/kgapi/calendar/enums.h
 include/KPim/KGAPI/kgapi/calendar/event.h
 include/KPim/KGAPI/kgapi/calendar/eventcreatejob.h
 include/KPim/KGAPI/kgapi/calendar/eventdeletejob.h
@@ -207,6 +216,13 @@ include/KPim/KGAPI/kgapi/drive/revision.h
 include/KPim/KGAPI/kgapi/drive/revisiondeletejob.h
 include/KPim/KGAPI/kgapi/drive/revisionfetchjob.h
 include/KPim/KGAPI/kgapi/drive/revisionmodifyjob.h
+include/KPim/KGAPI/kgapi/drive/searchquery.h
+include/KPim/KGAPI/kgapi/drive/teamdrive.h
+include/KPim/KGAPI/kgapi/drive/teamdrivecreatejob.h
+include/KPim/KGAPI/kgapi/drive/teamdrivedeletejob.h
+include/KPim/KGAPI/kgapi/drive/teamdrivefetchjob.h
+include/KPim/KGAPI/kgapi/drive/teamdrivemodifyjob.h
+include/KPim/KGAPI/kgapi/drive/teamdrivesearchquery.h
 include/KPim/KGAPI/kgapi/drive/user.h
 include/KPim/KGAPI/kgapi/fetchjob.h
 include/KPim/KGAPI/kgapi/job.h

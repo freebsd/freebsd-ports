@@ -22,7 +22,7 @@ lib/libkdeinit5_kfmclient.so
 lib/libkdeinit5_konqueror.so
 lib/libkonquerorprivate.so.5
 lib/libkonquerorprivate.so.5.0.97
-lib/libkwebenginepartlib.so
+lib/libkwebenginepart.so
 %%QT_PLUGINDIR%%/akregatorkonqfeedicon.so
 %%QT_PLUGINDIR%%/autorefresh.so
 %%QT_PLUGINDIR%%/babelfishplugin.so

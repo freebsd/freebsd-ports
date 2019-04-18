@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2019-02-05 00:43:19 UTC
+--- CMakeLists.txt.orig	2019-03-22 00:18:06 UTC
 +++ CMakeLists.txt
 @@ -80,24 +80,27 @@ set_package_properties("libssh" PROPERTIES
      PURPOSE "Needed to build VNC+SSH tunnel support "
@@ -30,13 +30,13 @@
  
 -set_package_properties(freerdp PROPERTIES
 -        DESCRIPTION "A free Remote Desktop Protocol (RDP) Implementation"
--        URL "http://www.freerdp.com"
+-        URL "https://www.freerdp.com/"
 -        PURPOSE "The xfreerdp binary is needed for RDP support in KRDC (at runtime)"
 -        TYPE RUNTIME
 -)
 +  set_package_properties(freerdp PROPERTIES
 +          DESCRIPTION "A free Remote Desktop Protocol (RDP) Implementation"
-+          URL "http://www.freerdp.com"
++          URL "https://www.freerdp.com/"
 +          PURPOSE "The xfreerdp binary is needed for RDP support in KRDC (at runtime)"
 +          TYPE RUNTIME
 +  )

@@ -3,11 +3,13 @@ etc/xdg/libgravatar.renamecategories
 include/KF5/Gravatar/GravatarCache
 include/KF5/Gravatar/GravatarConfigWidget
 include/KF5/Gravatar/GravatarConfigureSettingsDialog
+include/KF5/Gravatar/GravatarConfigureSettingsWidget
 include/KF5/Gravatar/GravatarDownloadPixmapWidget
 include/KF5/Gravatar/GravatarResolvUrlJob
 include/KF5/gravatar/gravatar_export.h
 include/KF5/gravatar/gravatarcache.h
 include/KF5/gravatar/gravatarconfiguresettingsdialog.h
+include/KF5/gravatar/gravatarconfiguresettingswidget.h
 include/KF5/gravatar/gravatarconfigwidget.h
 include/KF5/gravatar/gravatardownloadpixmapwidget.h
 include/KF5/gravatar/gravatarresolvurljob.h

@@ -7,6 +7,7 @@ share/icons/hicolor/22x22/apps/kolf.png
 share/icons/hicolor/32x32/apps/kolf.png
 share/icons/hicolor/48x48/apps/kolf.png
 share/icons/hicolor/64x64/apps/kolf.png
+share/icons/hicolor/scalable/apps/kolf.svgz
 %%DATADIR%%/courses/Classic.kolf
 %%DATADIR%%/courses/Easy.kolf
 %%DATADIR%%/courses/Hard.kolf
@@ -20,11 +21,13 @@ share/icons/hicolor/64x64/apps/kolf.png
 %%DATADIR%%/sounds/blackhole.wav
 %%DATADIR%%/sounds/blackholeeject.wav
 %%DATADIR%%/sounds/blackholeputin.wav
+%%DATADIR%%/sounds/bumper.wav
 %%DATADIR%%/sounds/hit.wav
 %%DATADIR%%/sounds/holed.wav
 %%DATADIR%%/sounds/holeinone.wav
 %%DATADIR%%/sounds/puddle.wav
 %%DATADIR%%/sounds/wall.wav
+%%DATADIR%%/sounds/woohoo.wav
 %%DATADIR%%/tutorial.kolf
 %%DATADIR%%/tutorial.kolfgame
 share/kxmlgui5/kolf/kolfui.rc

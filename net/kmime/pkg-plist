@@ -1,4 +1,3 @@
-include/KF5/KMime/KMime/Codecs
 include/KF5/KMime/KMime/Content
 include/KF5/KMime/KMime/ContentIndex
 include/KF5/KMime/KMime/DateFormatter

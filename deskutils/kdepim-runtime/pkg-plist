@@ -10,7 +10,6 @@ bin/akonadi_googlecontacts_resource
 bin/akonadi_ical_resource
 bin/akonadi_icaldir_resource
 bin/akonadi_imap_resource
-bin/akonadi_invitations_agent
 bin/akonadi_kalarm_dir_resource
 bin/akonadi_kalarm_resource
 bin/akonadi_kolab_resource
@@ -39,6 +38,24 @@ lib/libkmindexreader.so.5
 lib/libkmindexreader.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libmaildir.so.5
 lib/libmaildir.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+%%QT_PLUGINDIR%%/akonadi/config/akonotesconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/birthdaysconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/contactsconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/facebookconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/icalconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/icaldirconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/kalarmconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/maildirconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/maildispatcherconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/mboxconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/mixedmaildirconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/newmailnotifierconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/notesconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/openxchangeconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/pop3config.so
+%%QT_PLUGINDIR%%/akonadi/config/tomboynotesconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/vcardconfig.so
+%%QT_PLUGINDIR%%/akonadi/config/vcarddirconfig.so
 %%QT_PLUGINDIR%%/kf5/kio/akonadi.so
 %%QT_PLUGINDIR%%/kf5/kio/pop3.so
 share/akonadi/accountwizard/contacts/contactswizard.desktop
@@ -81,7 +98,6 @@ share/akonadi/agents/googlecontactsresource.desktop
 share/akonadi/agents/icaldirresource.desktop
 share/akonadi/agents/icalresource.desktop
 share/akonadi/agents/imapresource.desktop
-share/akonadi/agents/invitationsagent.desktop
 share/akonadi/agents/kalarmdirresource.desktop
 share/akonadi/agents/kalarmresource.desktop
 share/akonadi/agents/kolabresource.desktop
@@ -160,7 +176,6 @@ share/locale/ar/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/ar/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/ar/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -208,7 +223,6 @@ share/locale/bs/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/bs/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/bs/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/bs/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/bs/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/bs/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/bs/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/bs/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -247,7 +261,6 @@ share/locale/ca/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/ca/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/ca/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -287,7 +300,6 @@ share/locale/ca@valencia/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/ca@valencia/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -327,7 +339,6 @@ share/locale/cs/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/cs/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/cs/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/cs/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/cs/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/cs/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/cs/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/cs/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -364,7 +375,6 @@ share/locale/da/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/da/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/da/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/da/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/da/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/da/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/da/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/da/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -404,7 +414,6 @@ share/locale/de/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/de/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/de/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/de/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/de/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/de/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/de/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/de/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -441,7 +450,6 @@ share/locale/el/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/el/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/el/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -481,7 +489,6 @@ share/locale/en_GB/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/en_GB/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -509,7 +516,6 @@ share/locale/eo/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/eo/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/eo/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/eo/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/eo/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/eo/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/eo/LC_MESSAGES/akonadi_maildispatcher_agent.mo
 share/locale/eo/LC_MESSAGES/akonadi_mbox_resource.mo
@@ -543,7 +549,6 @@ share/locale/es/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/es/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/es/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/es/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/es/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/es/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/es/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/es/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -580,7 +585,6 @@ share/locale/et/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/et/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/et/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -622,7 +626,6 @@ share/locale/fi/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/fi/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/fi/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -662,7 +665,6 @@ share/locale/fr/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/fr/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/fr/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -694,7 +696,6 @@ share/locale/ga/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/ga/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/ga/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -708,10 +709,8 @@ share/locale/ga/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ga/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ga/LC_MESSAGES/kio_akonadi.mo
 share/locale/ga/LC_MESSAGES/kio_pop3.mo
-share/locale/gl/LC_MESSAGES/accountwizard_ews.mo
-share/locale/gl/LC_MESSAGES/akonadi_ews_resource.mo
-share/locale/gl/LC_MESSAGES/akonadi_facebook_resource.mo
 share/locale/gl/LC_MESSAGES/accountwizard_contacts.mo
+share/locale/gl/LC_MESSAGES/accountwizard_ews.mo
 share/locale/gl/LC_MESSAGES/accountwizard_ical.mo
 share/locale/gl/LC_MESSAGES/accountwizard_imap.mo
 share/locale/gl/LC_MESSAGES/accountwizard_kolab.mo
@@ -724,13 +723,14 @@ share/locale/gl/LC_MESSAGES/akonadi-filestore.mo
 share/locale/gl/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_davgroupware_resource.mo
+share/locale/gl/LC_MESSAGES/akonadi_ews_resource.mo
+share/locale/gl/LC_MESSAGES/akonadi_facebook_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/gl/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/gl/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -773,7 +773,6 @@ share/locale/hu/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/hu/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/hu/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -809,7 +808,6 @@ share/locale/ia/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/ia/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/ia/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -849,7 +847,6 @@ share/locale/it/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/it/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/it/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/it/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/it/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/it/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/it/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/it/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -889,7 +886,6 @@ share/locale/ja/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/ja/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/ja/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -921,7 +917,6 @@ share/locale/kk/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/kk/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/kk/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/kk/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/kk/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/kk/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/kk/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/kk/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -950,7 +945,6 @@ share/locale/km/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/km/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/km/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/km/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/km/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/km/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/km/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/km/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -985,7 +979,6 @@ share/locale/ko/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/ko/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/ko/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1022,7 +1015,6 @@ share/locale/lt/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/lt/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/lt/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1052,7 +1044,6 @@ share/locale/lv/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/lv/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/lv/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1080,7 +1071,6 @@ share/locale/mr/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/mr/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/mr/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/mr/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/mr/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/mr/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/mr/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/mr/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1113,7 +1103,6 @@ share/locale/nb/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/nb/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/nb/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/nb/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/nb/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/nb/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/nb/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/nb/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1148,7 +1137,6 @@ share/locale/nds/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/nds/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/nds/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/nds/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/nds/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/nds/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/nds/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/nds/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1187,7 +1175,6 @@ share/locale/nl/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/nl/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/nl/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1215,7 +1202,6 @@ share/locale/nn/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/nn/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/nn/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/nn/LC_MESSAGES/akonadi_maildispatcher_agent.mo
 share/locale/nn/LC_MESSAGES/akonadi_mbox_resource.mo
@@ -1237,7 +1223,6 @@ share/locale/pa/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/pa/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/pa/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/pa/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/pa/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/pa/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/pa/LC_MESSAGES/akonadi_maildispatcher_agent.mo
 share/locale/pa/LC_MESSAGES/akonadi_mbox_resource.mo
@@ -1272,7 +1257,6 @@ share/locale/pl/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/pl/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/pl/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1312,7 +1296,6 @@ share/locale/pt/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/pt/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/pt/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/pt/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/pt/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/pt/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/pt/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/pt/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1352,7 +1335,6 @@ share/locale/pt_BR/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/pt_BR/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1385,7 +1367,6 @@ share/locale/ro/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/ro/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/ro/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1421,7 +1402,6 @@ share/locale/ru/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/ru/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1461,7 +1441,6 @@ share/locale/sk/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/sk/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/sk/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/sk/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/sk/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/sk/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/sk/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/sk/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1500,7 +1479,6 @@ share/locale/sl/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/sl/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/sl/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1539,7 +1517,6 @@ share/locale/sr/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/sr/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/sr/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1579,7 +1556,6 @@ share/locale/sv/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/sv/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/sv/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/sv/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/sv/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/sv/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/sv/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/sv/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1616,7 +1592,6 @@ share/locale/tr/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/tr/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/tr/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1648,7 +1623,6 @@ share/locale/ug/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/ug/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/ug/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/ug/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/ug/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/ug/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/ug/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/ug/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1684,7 +1658,6 @@ share/locale/uk/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/uk/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/uk/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1724,7 +1697,6 @@ share/locale/zh_CN/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/zh_CN/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_maildispatcher_agent.mo
@@ -1756,15 +1728,14 @@ share/locale/zh_TW/LC_MESSAGES/akonadi-filestore.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_davgroupware_resource.mo
-share/locale/zh_TW/LC_MESSAGES/akonadi_facebook_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_ews_resource.mo
+share/locale/zh_TW/LC_MESSAGES/akonadi_facebook_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_imap_resource.mo
-share/locale/zh_TW/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_maildispatcher_agent.mo

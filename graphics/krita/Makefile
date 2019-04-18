@@ -57,4 +57,6 @@ CONFLICTS_INSTALL=	calligra-2*
 PLIST_SUB=	SHLIB_VER=18.0.0 \
 		SHLIB_SHVER=18
 
+LDFLAGS=	-lpthread
+
 .include <bsd.port.mk>

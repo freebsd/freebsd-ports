@@ -15,7 +15,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		prison service sonnet textwidgets widgetsaddons xmlgui
 # pim components
 USE_KDE+=	akonadi akonadimime calendarcore contacts mime
-USE_QT=		dbus core gui network testlib widgets xml \
+USE_QT=		concurrent core dbus gui network testlib widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

@@ -2,7 +2,6 @@
 
 PORTNAME=	korganizer
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -23,7 +22,7 @@ USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadimime \
 		incidenceeditor kdepim-apps-libs kontactinterface ldap \
 		libkdepim mailtransport mime pimcommon pimtextedit \
 		kdepim-runtime5_run
-USE_QT=		core dbus gui network phonon4 printsupport widgets xml \
+USE_QT=		core dbus gui multimedia network phonon4 printsupport widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

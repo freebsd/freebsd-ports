@@ -16,6 +16,7 @@ include/cantor/animationresult.h
 include/cantor/backend.h
 include/cantor/cantor_export.h
 include/cantor/cantor_macros.h
+include/cantor/cantorlibs_version.h
 include/cantor/completionobject.h
 include/cantor/defaulthighlighter.h
 include/cantor/defaultvariablemodel.h
@@ -30,6 +31,10 @@ include/cantor/session.h
 include/cantor/syntaxhelpobject.h
 include/cantor/textresult.h
 include/cantor/worksheetaccess.h
+lib/cmake/Cantor/CantorConfig.cmake
+lib/cmake/Cantor/CantorConfigVersion.cmake
+lib/cmake/Cantor/CantorTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Cantor/CantorTargets.cmake
 lib/libcantor_config.so
 lib/libcantor_pythonbackend.so
 lib/libcantorlibs.so

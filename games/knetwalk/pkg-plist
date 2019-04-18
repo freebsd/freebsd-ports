@@ -73,3 +73,4 @@ share/locale/ug/LC_MESSAGES/knetwalk.mo
 share/locale/uk/LC_MESSAGES/knetwalk.mo
 share/locale/zh_CN/LC_MESSAGES/knetwalk.mo
 share/locale/zh_TW/LC_MESSAGES/knetwalk.mo
+share/metainfo/org.kde.knetwalk.appdata.xml

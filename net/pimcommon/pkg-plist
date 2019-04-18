@@ -10,6 +10,7 @@ include/KF5/PimCommon/ConfigurePluginDialog
 include/KF5/PimCommon/ConfigurePluginsListWidget
 include/KF5/PimCommon/ConfigurePluginsWidget
 include/KF5/PimCommon/CustomToolsPlugin
+include/KF5/PimCommon/CustomToolsPluginManager
 include/KF5/PimCommon/CustomToolsViewInterface
 include/KF5/PimCommon/CustomToolsWidgetng
 include/KF5/PimCommon/CustomTreeView
@@ -65,6 +66,7 @@ include/KF5/pimcommon/configureplugindialog.h
 include/KF5/pimcommon/configurepluginslistwidget.h
 include/KF5/pimcommon/configurepluginswidget.h
 include/KF5/pimcommon/customtoolsplugin.h
+include/KF5/pimcommon/customtoolspluginmanager.h
 include/KF5/pimcommon/customtoolsviewinterface.h
 include/KF5/pimcommon/customtoolswidgetng.h
 include/KF5/pimcommon/customtreeview.h
@@ -82,7 +84,6 @@ include/KF5/pimcommon/migratefileinfo.h
 include/KF5/pimcommon/minimumcombobox.h
 include/KF5/pimcommon/networkmanager.h
 include/KF5/pimcommon/networkutil.h
-include/KF5/pimcommon/pimcommon_debug.h
 include/KF5/pimcommon/pimcommon_export.h
 include/KF5/pimcommon/pimcommonsetting_base.h
 include/KF5/pimcommon/pimcommonsettings.h
@@ -112,7 +113,6 @@ include/KF5/pimcommonakonadi/imapresourcecapabilitiesmanager.h
 include/KF5/pimcommonakonadi/incidencesforwidget.h
 include/KF5/pimcommonakonadi/mailutil.h
 include/KF5/pimcommonakonadi/manageserversidesubscriptionjob.h
-include/KF5/pimcommonakonadi/pimcommonakonadi_debug.h
 include/KF5/pimcommonakonadi/pimcommonakonadi_export.h
 include/KF5/pimcommonakonadi/plugininterface.h
 include/KF5/pimcommonakonadi/selectmulticollectiondialog.h

@@ -96,7 +96,6 @@ include/KF5/AkonadiCore/NotificationSubscriber
 include/KF5/AkonadiCore/PartFetcher
 include/KF5/AkonadiCore/PersistentSearchAttribute
 include/KF5/AkonadiCore/Pop3ResourceAttribute
-include/KF5/AkonadiCore/QuotaColorProxyModel
 include/KF5/AkonadiCore/RecursiveCollectionFilterProxyModel
 include/KF5/AkonadiCore/RecursiveItemFetchJob
 include/KF5/AkonadiCore/Relation
@@ -203,7 +202,6 @@ include/KF5/AkonadiCore/partfetcher.h
 include/KF5/AkonadiCore/persistentsearchattribute.h
 include/KF5/AkonadiCore/pop3resourceattribute.h
 include/KF5/AkonadiCore/qtest_akonadi.h
-include/KF5/AkonadiCore/quotacolorproxymodel.h
 include/KF5/AkonadiCore/recursivecollectionfilterproxymodel.h
 include/KF5/AkonadiCore/recursiveitemfetchjob.h
 include/KF5/AkonadiCore/relation.h
@@ -258,7 +256,6 @@ include/KF5/AkonadiWidgets/EntityListView
 include/KF5/AkonadiWidgets/EntityTreeView
 include/KF5/AkonadiWidgets/ItemView
 include/KF5/AkonadiWidgets/ManageAccountWidget
-include/KF5/AkonadiWidgets/RenameFavoriteDialog
 include/KF5/AkonadiWidgets/StandardActionManager
 include/KF5/AkonadiWidgets/SubscriptionDialog
 include/KF5/AkonadiWidgets/TagEditWidget
@@ -287,7 +284,6 @@ include/KF5/AkonadiWidgets/entitytreeview.h
 include/KF5/AkonadiWidgets/etmviewstatesaver.h
 include/KF5/AkonadiWidgets/itemview.h
 include/KF5/AkonadiWidgets/manageaccountwidget.h
-include/KF5/AkonadiWidgets/renamefavoritedialog.h
 include/KF5/AkonadiWidgets/standardactionmanager.h
 include/KF5/AkonadiWidgets/subscriptiondialog.h
 include/KF5/AkonadiWidgets/tageditwidget.h
