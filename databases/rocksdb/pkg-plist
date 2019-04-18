@@ -1,5 +1,5 @@
+bin/blob_dump
 bin/cache_bench
-bin/column_aware_encoding_exp
 bin/db_bench
 bin/db_repl_stress
 bin/db_sanity_test
@@ -7,10 +7,12 @@ bin/db_stress
 bin/ldb
 bin/memtablerep_bench
 bin/persistent_cache_bench
+bin/range_del_aggregator_bench
 bin/rocksdb_dump
 bin/rocksdb_undump
 bin/sst_dump
 bin/table_reader_bench
+bin/trace_analyzer
 bin/write_stress
 include/rocksdb/advanced_options.h
 include/rocksdb/c.h
@@ -19,6 +21,7 @@ include/rocksdb/cleanable.h
 include/rocksdb/compaction_filter.h
 include/rocksdb/compaction_job_stats.h
 include/rocksdb/comparator.h
+include/rocksdb/concurrent_task_limiter.h
 include/rocksdb/convenience.h
 include/rocksdb/db.h
 include/rocksdb/db_bench_tool.h
@@ -49,6 +52,7 @@ include/rocksdb/sst_file_manager.h
 include/rocksdb/sst_file_reader.h
 include/rocksdb/sst_file_writer.h
 include/rocksdb/statistics.h
+include/rocksdb/stats_history.h
 include/rocksdb/status.h
 include/rocksdb/table.h
 include/rocksdb/table_properties.h
@@ -61,19 +65,14 @@ include/rocksdb/universal_compaction.h
 include/rocksdb/utilities/backupable_db.h
 include/rocksdb/utilities/checkpoint.h
 include/rocksdb/utilities/convenience.h
-include/rocksdb/utilities/date_tiered_db.h
 include/rocksdb/utilities/db_ttl.h
 include/rocksdb/utilities/debug.h
-include/rocksdb/utilities/document_db.h
 include/rocksdb/utilities/env_librados.h
 include/rocksdb/utilities/env_mirror.h
-include/rocksdb/utilities/geo_db.h
 include/rocksdb/utilities/info_log_finder.h
-include/rocksdb/utilities/json_document.h
 include/rocksdb/utilities/ldb_cmd.h
 include/rocksdb/utilities/ldb_cmd_execute_result.h
 include/rocksdb/utilities/leveldb_options.h
-include/rocksdb/utilities/lua/rocks_lua_compaction_filter.h
 include/rocksdb/utilities/lua/rocks_lua_custom_library.h
 include/rocksdb/utilities/lua/rocks_lua_util.h
 include/rocksdb/utilities/memory_util.h
@@ -82,7 +81,6 @@ include/rocksdb/utilities/optimistic_transaction_db.h
 include/rocksdb/utilities/option_change_migration.h
 include/rocksdb/utilities/options_util.h
 include/rocksdb/utilities/sim_cache.h
-include/rocksdb/utilities/spatial_db.h
 include/rocksdb/utilities/stackable_db.h
 include/rocksdb/utilities/table_properties_collectors.h
 include/rocksdb/utilities/transaction.h
