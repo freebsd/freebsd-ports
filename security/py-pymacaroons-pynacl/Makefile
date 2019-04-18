@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymacaroons-pynacl
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.13.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +23,7 @@ USES=		python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
-GH_ACCOUNT=	matrix-org
+GH_ACCOUNT=	ecordell
 GH_PROJECT=	pymacaroons
 
 do-test:
