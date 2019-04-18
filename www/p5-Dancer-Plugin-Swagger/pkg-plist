@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Dancer/Plugin/Swagger.pm
+%%SITE_PERL%%/Dancer/Plugin/Swagger/Path.pm
+%%SITE_PERL%%/Dancer/Plugin/Swagger/Response.pm
+%%SITE_PERL%%/auto/share/dist/Dancer-Plugin-Swagger/shared-files.tar.gz
+%%PERL5_MAN3%%/Dancer::Plugin::Swagger.3.gz
+%%PERL5_MAN3%%/Dancer::Plugin::Swagger::Path.3.gz
+%%PERL5_MAN3%%/Dancer::Plugin::Swagger::Response.3.gz
