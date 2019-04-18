@@ -218,8 +218,8 @@ debug-bdb:
 	@${ECHO_CMD} "BDB_LIB_NAME=${BDB_LIB_NAME}"
 	@${ECHO_CMD} "BDB_LIB_CXX_NAME=${BDB_LIB_CXX_NAME}"
 	@${ECHO_CMD} "BDB_LIB_DIR=${BDB_LIB_DIR}"
-	@${ECHO_CMD} "BUILD_DEPENDS=${BUILD_DEPENDS:M*/databases/db*}"
-	@${ECHO_CMD} "LIB_DEPENDS=${LIB_DEPENDS:M*/databases/db*}"
+	@${ECHO_CMD} "BUILD_DEPENDS=${BUILD_DEPENDS:M*\:databases/db*}"
+	@${ECHO_CMD} "LIB_DEPENDS=${LIB_DEPENDS:M*\:databases/db*}"
 	@${ECHO_CMD} "------------------------------------------------------------"
 
 # Obsolete variables - ports can define these to want users about
