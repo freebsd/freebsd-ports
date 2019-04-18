@@ -1,6 +1,6 @@
---- pipelines/canu/Execution.pm.orig	2018-06-18 02:42:11 UTC
+--- pipelines/canu/Execution.pm.orig	2018-10-22 16:47:31 UTC
 +++ pipelines/canu/Execution.pm
-@@ -303,10 +303,6 @@ sub skipStage ($$@) {
+@@ -333,10 +333,6 @@ sub resetIteration ($) {
  sub getInstallDirectory () {
      my $installDir = $FindBin::RealBin;
  
@@ -11,7 +11,7 @@
      return($installDir);
  }
  
-@@ -694,8 +690,8 @@ sub submitScript ($$) {
+@@ -784,8 +780,8 @@ sub submitScript ($$) {
  
  
  
@@ -22,7 +22,7 @@
      my  $off = 0;
  
      #  In some grids (SGE)   this is the maximum size of an array job.
-@@ -725,8 +721,42 @@ sub buildGridArray ($$$$) {
+@@ -823,8 +819,42 @@ sub buildGridArray ($$$$) {
          $off = "-F \"$off\"";
      }
  
@@ -67,7 +67,7 @@
  
      return($opt, $off);
  }
-@@ -870,7 +900,7 @@ sub buildGridJob ($$$$$$$$$) {
+@@ -973,7 +1003,7 @@ sub buildGridJob ($$$$$$$$$) {
      my $jobNameT               = makeUniqueJobName($jobType, $asm);
  
      my ($jobName,  $jobOff)    = buildGridArray($jobNameT, $bgnJob, $endJob, getGlobal("gridEngineArrayName"));
