@@ -2,7 +2,7 @@
 
 PORTNAME=	packr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
@@ -20,16 +20,16 @@ GO_TARGET=	./packr \
 USE_GITHUB=	yes
 GH_ACCOUNT=	gobuffalo
 GH_TUPLE=	\
-		gobuffalo:envy:v1.6.15:gobuffalo_envy/vendor/github.com/gobuffalo/envy \
+		gobuffalo:envy:v1.7.0:gobuffalo_envy/vendor/github.com/gobuffalo/envy \
 		gobuffalo:genny:3ca520e:gobuffalo_genny/vendor/github.com/gobuffalo/genny \
 		gobuffalo:gogen:8f38393:gobuffalo_gogen/vendor/github.com/gobuffalo/gogen \
 		gobuffalo:logger:86e12af:gobuffalo_logger/vendor/github.com/gobuffalo/logger \
 		gobuffalo:mapi:v1.0.2:gobuffalo_mapi/vendor/github.com/gobuffalo/mapi \
 		gobuffalo:packd:a385830:gobuffalo_packd/vendor/github.com/gobuffalo/packd \
 		gobuffalo:syncx:33c2958:gobuffalo_syncx/vendor/github.com/gobuffalo/syncx \
-		golang:crypto:8e1b8d3:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sync:e225da7:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:81d4e9d:golang_sys/vendor/golang.org/x/sys \
+		golang:crypto:c2843e0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sync:56d3577:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:d0b11bd:golang_sys/vendor/golang.org/x/sys \
 		golang:tools:923d258:golang_tools/vendor/golang.org/x/tools \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		joho:godotenv:v1.3.0:joho_godotenv/vendor/github.com/joho/godotenv \
