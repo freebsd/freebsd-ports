@@ -1,10 +1,10 @@
---- Makefile.orig	2018-04-28 14:05:19 UTC
+--- Makefile.orig	2018-12-15 14:30:33 UTC
 +++ Makefile
 @@ -1,9 +1,9 @@
  
 -CFLAGS = -Wall -O3  -I ../../../SPOOLES.2.2 -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DNETWORKOUT
 -FFLAGS = -Wall -O3 
-+CFLAGS += -O3  -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/spooles -DARCH="FreeBSD" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DNETWORKOUT -DTAUCS
++CFLAGS += -O3  -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/spooles -DARCH="FreeBSD" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DNETWORKOUT
 +FFLAGS += -O3 
  
 -CC=cc
@@ -14,20 +14,19 @@
  
  .c.o :
  	$(CC) $(CFLAGS) -c $<
-@@ -21,12 +21,12 @@ OCCXMAIN = $(SCCXMAIN:.c=.o)
+@@ -21,12 +21,11 @@ OCCXMAIN = $(SCCXMAIN:.c=.o)
  DIR=../../../SPOOLES.2.2
  
  LIBS = \
 -       $(DIR)/spooles.a \
 -	../../../ARPACK/libarpack_INTEL.a \
 -       -lpthread -lm -lc
-+	-ltaucs -lmetis \
 +	-lspooles -larpack %%BLAS_LIBS%% %%LAPACK_LIBS%% \
 +	-lpthread -lm
  
- ccx_2.14: $(OCCXMAIN) ccx_2.14.a  $(LIBS)
--	./date.pl; $(CC) $(CFLAGS) -c ccx_2.14.c; $(FC)  -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.14.a $(LIBS)
-+	./date.pl; $(CC) $(CFLAGS) -c ccx_2.14.c; $(FC)  -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.14.a $(LIBS) $(LDFLAGS)
+ ccx_2.15: $(OCCXMAIN) ccx_2.15.a  $(LIBS)
+-	./date.pl; $(CC) $(CFLAGS) -c ccx_2.15.c; $(FC)  -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.15.a $(LIBS)
++	./date.pl; $(CC) $(CFLAGS) -c ccx_2.15.c; $(FC)  -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.15.a $(LIBS) $(LDFLAGS)
  
- ccx_2.14.a: $(OCCXF) $(OCCXC)
+ ccx_2.15.a: $(OCCXF) $(OCCXC)
  	ar vr $@ $?
