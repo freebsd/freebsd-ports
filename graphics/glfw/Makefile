@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glfw
-PORTVERSION=	3.2.1
-PORTREVISION=	4
+PORTVERSION=	3.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -11,11 +10,12 @@ MAINTAINER=	neel@neelc.org
 COMMENT=	Portable framework for OpenGL development
 
 LICENSE=	ZLIB
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE_FILE=	${WRKSRC}/README.md
 
 USES=		cmake:insource localbase zip
 USE_GL=		glu
 USE_LDCONFIG=	yes
+
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 PORTDOCS=	*
@@ -34,7 +34,9 @@ WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
 WAYLAND_USES=		kde:5 pkgconfig
 WAYLAND_USE=		KDE=ecm
 
-X11_USE=		XORG=x11,xcursor,xinerama,xrandr,xxf86vm
+X11_USE=		XORG=x11,xcursor,xi,xinerama,xrandr,xxf86vm
+
+PLIST_SUB=	VERSION="${PORTVERSION}" MAJVER="${PORTVERSION:C|\..*||}"
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/docs/html/search
@@ -51,7 +53,7 @@ do-install-EXAMPLES-on:
 		${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/tests && ${INSTALL_PROGRAM} \
 		clipboard cursor empty events gamma glfwinfo iconify \
-		joysticks monitors msaa reopen sharing tearing \
+		joysticks monitors msaa reopen tearing \
 		threads title windows \
 		${STAGEDIR}${EXAMPLESDIR}/tests
 
