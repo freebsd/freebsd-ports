@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	pytvmaze
-PORTVERSION=	1.5.1
+PORTVERSION=	2.0.8
 CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to the TV Maze API
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+LICENSE=	MIT
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	srob650
-GH_TAGNAME=	4fb00f4
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
