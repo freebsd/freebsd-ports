@@ -246,6 +246,20 @@ _PYTHON_PORTBRANCH=		2.7		# ${_PYTHON_VERSIONS:[1]}
 _PYTHON_BASECMD=		${LOCALBASE}/bin/python
 _PYTHON_RELPORTDIR=		lang/python
 
+# List all valid USE_PYTHON features here
+_VALID_PYTHON_FEATURES=	allflavors autoplist concurrent cython cython_run \
+			distutils flavors noegginfo noflavors optsuffix \
+			py3kplist pythonprefix
+_INVALID_PYTHON_FEATURES=
+.for var in ${USE_PYTHON}
+.  if empty(_VALID_PYTHON_FEATURES:M${var})
+_INVALID_PYTHON_FEATURES+=	${var}
+.  endif
+.endfor
+.if !empty(_INVALID_PYTHON_FEATURES)
+IGNORE=	uses unknown USE_PYTHON features: ${_INVALID_PYTHON_FEATURES}
+.endif
+
 # Make each individual feature available as _PYTHON_FEATURE_<FEATURENAME>
 .for var in ${USE_PYTHON}
 _PYTHON_FEATURE_${var:C/=.*$//:tu}=	${var:C/.*=//:S/,/ /g}
@@ -334,6 +348,13 @@ _PYTHON_VERSION_MINIMUM_TMP:=	${_PYTHON_VERSION_CHECK:C/([1-9]\.[0-9])[-+].*/\1/
 _PYTHON_VERSION_MINIMUM:=	${_PYTHON_VERSION_MINIMUM_TMP:M[1-9].[0-9]}
 _PYTHON_VERSION_MAXIMUM_TMP:=	${_PYTHON_VERSION_CHECK:C/.*-([1-9]\.[0-9])/\1/}
 _PYTHON_VERSION_MAXIMUM:=	${_PYTHON_VERSION_MAXIMUM_TMP:M[1-9].[0-9]}
+
+# At this point we should have no argument left in ${_PYTHON_ARGS}
+# except a version spec
+_PYTHON_ARGS:=	${_PYTHON_ARGS:N[1-9].[0-9]-[1-9].[0-9]:N[1-9].[0-9]:N[1-9].[0-9]+:N-[1-9].[0-9]}
+.if !empty(_PYTHON_ARGS)
+IGNORE=	uses unknown USES=python arguments: ${_PYTHON_ARGS}
+.endif
 
 .undef _PYTHON_VERSION_NONSUPPORTED
 .if !empty(_PYTHON_VERSION_MINIMUM) && (${_PYTHON_VERSION} < ${_PYTHON_VERSION_MINIMUM})
