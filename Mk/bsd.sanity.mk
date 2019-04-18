@@ -168,6 +168,18 @@ DEV_ERROR+=	"PORT${_type} does not do anything unless the ${_type} option is pre
 .  endif
 .endfor
 
+_BROKEN_OPTIONS_HELPERS=
+.for opt in ${_REALLY_ALL_POSSIBLE_OPTIONS}
+.  for helper in ${_ALL_OPTIONS_HELPERS}
+.    if defined(${opt}_${helper}) && empty(_OPTIONS_HELPERS_SEEN:M${opt}_${helper})
+_BROKEN_OPTIONS_HELPERS+=	${opt}_${helper}
+.    endif
+.  endfor
+.endfor
+.if !empty(_BROKEN_OPTIONS_HELPERS)
+DEV_ERROR+=	"The following options helpers are incorrectly set after bsd.port.options.mk and are ineffective: ${_BROKEN_OPTIONS_HELPERS}"
+.endif
+
 SANITY_UNSUPPORTED=	USE_OPENAL USE_FAM USE_MAKESELF USE_ZIP USE_LHA USE_CMAKE \
 		USE_READLINE USE_ICONV PERL_CONFIGURE PERL_MODBUILD \
 		USE_PERL5_BUILD USE_PERL5_RUN USE_DISPLAY USE_FUSE \
