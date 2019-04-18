@@ -1,0 +1,171 @@
+From 5ff17673eec7fc200a16552e3686015e99d10b5e Mon Sep 17 00:00:00 2001
+From: Pierre LALET <pierre.lalet@cea.fr>
+Date: Tue, 16 Apr 2019 16:08:15 +0200
+Subject: [PATCH 1/2] BPF: fix get_working_ifaces()
+
+It was broken when an interface name did not end by a digit.
+
+It was also incorrect when an interface name ended by more than one
+digit.
+---
+ scapy/arch/bpf/core.py | 46 ++++++++++++++++++++++++------------------
+ test/bpf.uts           |  6 ++----
+ 2 files changed, 28 insertions(+), 24 deletions(-)
+
+diff --git scapy/arch/bpf/core.py scapy/arch/bpf/core.py
+index cc4732f52..4c9e9470a 100644
+--- scapy/arch/bpf/core.py
++++ scapy/arch/bpf/core.py
+@@ -5,22 +5,22 @@
+ """
+ 
+ from __future__ import absolute_import
+-from scapy.config import conf
+-from scapy.error import Scapy_Exception, warning
+-from scapy.data import ARPHDR_LOOPBACK, ARPHDR_ETHER
+-from scapy.arch.common import get_if, compile_filter
+-from scapy.consts import LOOPBACK_NAME
+-
+-from scapy.arch.bpf.consts import BIOCSETF, SIOCGIFFLAGS, BIOCSETIF
+ 
++from ctypes import cdll, cast, pointer
++from ctypes import c_int, c_ulong, c_char_p
++from ctypes.util import find_library
++import fcntl
+ import os
++import re
+ import socket
+-import fcntl
+ import struct
+ 
+-from ctypes import cdll, cast, pointer
+-from ctypes import c_int, c_ulong, c_char_p
+-from ctypes.util import find_library
++from scapy.arch.bpf.consts import BIOCSETF, SIOCGIFFLAGS, BIOCSETIF
++from scapy.arch.common import get_if, compile_filter
++from scapy.config import conf
++from scapy.consts import LOOPBACK_NAME
++from scapy.data import ARPHDR_LOOPBACK, ARPHDR_ETHER
++from scapy.error import Scapy_Exception, warning
+ from scapy.modules.six.moves import range
+ 
+ 
+@@ -126,6 +126,9 @@ def get_if_list():
+     return interfaces
+ 
+ 
++_IFNUM = re.compile("([0-9]*)([ab]?)$")
++
++
+ def get_working_ifaces():
+     """
+     Returns an ordered list of interfaces that could be used with BPF.
+@@ -156,24 +159,27 @@ def get_working_ifaces():
+         if ifflags & 0x1:  # IFF_UP
+ 
+             # Get a BPF handle
+-            fd, _ = get_dev_bpf()
++            fd = get_dev_bpf()[0]
+             if fd is None:
+                 raise Scapy_Exception("No /dev/bpf are available !")
+ 
+             # Check if the interface can be used
+             try:
+-                fcntl.ioctl(fd, BIOCSETIF, struct.pack("16s16x", ifname.encode()))  # noqa: E501
+-                interfaces.append((ifname, int(ifname[-1])))
++                fcntl.ioctl(fd, BIOCSETIF, struct.pack("16s16x",
++                                                       ifname.encode()))
+             except IOError:
+                 pass
+-
+-            # Close the file descriptor
+-            os.close(fd)
++            else:
++                ifnum, ifab = _IFNUM.search(ifname).groups()
++                interfaces.append((ifname, int(ifnum) if ifnum else -1, ifab))
++            finally:
++                # Close the file descriptor
++                os.close(fd)
+ 
+     # Sort to mimic pcap_findalldevs() order
+-    interfaces.sort(key=lambda elt: elt[1])
++    interfaces.sort(key=lambda elt: (elt[1], elt[2], elt[0]))
+ 
+-    return interfaces
++    return [iface[0] for iface in interfaces]
+ 
+ 
+ def get_working_if():
+@@ -183,4 +189,4 @@ def get_working_if():
+     if not ifaces:
+         # A better interface will be selected later using the routing table
+         return LOOPBACK_NAME
+-    return ifaces[0][0]
++    return ifaces[0]
+diff --git test/bpf.uts test/bpf.uts
+index 19e06bb14..45d36fd83 100644
+--- test/bpf.uts
++++ test/bpf.uts
+@@ -47,12 +47,10 @@ len(iflist) > 0
+ = Get working network interfaces
+ ~ needs_root
+ 
+-from scapy.arch.bpf.core import get_working_ifaces
++from scapy.arch.bpf.core import get_working_if, get_working_ifaces
+ ifworking = get_working_ifaces()
+ assert len(ifworking)
+-            
+-from scapy.arch.bpf.core import get_working_if
+-assert len(ifworking) and get_working_if() == ifworking[0][0]
++assert get_working_if() == ifworking[0]
+ 
+ 
+ = Misc functions
+
+From afa5776ecf83f7a427fc1af763005fe249f450f9 Mon Sep 17 00:00:00 2001
+From: Pierre LALET <pierre.lalet@cea.fr>
+Date: Wed, 17 Apr 2019 10:22:16 +0200
+Subject: [PATCH 2/2] BPF: test get_working_ifaces()
+
+---
+ test/bpf.uts | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+
+diff --git test/bpf.uts test/bpf.uts
+index 45d36fd83..23022530e 100644
+--- test/bpf.uts
++++ test/bpf.uts
+@@ -53,6 +53,33 @@ assert len(ifworking)
+ assert get_working_if() == ifworking[0]
+ 
+ 
++= Get working network interfaces order
++
++import mock
++from scapy.arch.bpf.core import get_working_ifaces
++
++@mock.patch("scapy.arch.bpf.core.os.close")
++@mock.patch("scapy.arch.bpf.core.fcntl.ioctl")
++@mock.patch("scapy.arch.bpf.core.get_dev_bpf")
++@mock.patch("scapy.arch.bpf.core.get_if")
++@mock.patch("scapy.arch.bpf.core.get_if_list")
++@mock.patch("scapy.arch.bpf.core.os.getuid")
++def test_get_working_ifaces(mock_getuid, mock_get_if_list, mock_get_if,
++                            mock_get_dev_bpf, mock_ioctl, mock_close):
++    mock_getuid.return_value = 0
++    mock_get_if_list.return_value = ['igb0', 'em0', 'msk0', 'epair0a', 'igb1',
++                                     'vlan20', 'igb10', 'igb2']
++    mock_get_if.return_value = (b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
++                                b'\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00'
++                                b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
++    mock_get_dev_bpf.return_value = (31337,)
++    mock_ioctl.return_value = 0
++    mock_close.return_value = 0
++    return get_working_ifaces()
++
++assert test_get_working_ifaces() == ['em0', 'igb0', 'msk0', 'epair0a', 'igb1',
++                                     'igb2', 'igb10', 'vlan20']
++
+ = Misc functions
+ ~ needs_root
+ 
