@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	getdns
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://getdnsapi.net/dist/ \
@@ -34,6 +34,7 @@ SUB_FILES+=	pkg-message
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	DOCS LIBEV LIBEVENT LIBUV STUBBY
+OPTIONS_DEFAULT=STUBBY
 
 LIBEV_DESC=	Build with libev extension
 LIBEVENT_DESC=	Build with libevent extension
