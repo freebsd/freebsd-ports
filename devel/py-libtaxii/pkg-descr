@@ -1,3 +1,6 @@
-A Python library for handling TAXII Messages and invoking TAXII Services.
+libtaxii is a Python library for handling TAXII Messages invoking TAXII
+Services. A primary goal of libtaxii is to remain faithful to both the TAXII
+specifications and to customary Python practices. libtaxii is designed to be
+intuitive both to Python developers and XML developers.
 
-WWW: https://pypi.org/project/libtaxii/
+WWW: https://github.com/TAXIIProject/libtaxii
