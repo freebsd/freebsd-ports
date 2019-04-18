@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.23.1
+PORTVERSION=	0.23.2
 CATEGORIES=	games
 
 MAINTAINER=	lifanov@FreeBSD.org
