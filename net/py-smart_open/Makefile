@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smart_open
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,10 +26,4 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.lzma>=0:archivers/py-backports.lzma@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
