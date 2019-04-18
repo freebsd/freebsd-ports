@@ -1,0 +1,14 @@
+bin/lizard
+bin/lizardcat
+bin/unlizard
+include/lizard_common.h
+include/lizard_compress.h
+include/lizard_frame.h
+lib/liblizard.a
+lib/liblizard.so
+lib/liblizard.so.1
+lib/liblizard.so.1.0.0
+libdata/pkgconfig/liblizard.pc
+man/man1/lizard.1.gz
+man/man1/lizardcat.1.gz
+man/man1/unlizard.1.gz
