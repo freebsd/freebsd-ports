@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sops
-DISTVERSION=	3.2.0
+DISTVERSION=	3.3.0
 CATEGORIES=	security editors
 
 MAINTAINER=	dg@syrec.org
@@ -9,24 +9,19 @@ COMMENT=	Editor of encrypted files that supports YAML, JSON and BINARY formats
 
 LICENSE=	MPL20
 
-BUILD_DEPENDS=	go>=1.8:lang/go
+USES=		go
+
+GO_PKGNAME=	go.mozilla.org/sops
+GO_TARGET=	./cmd/sops
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
-GH_SUBDIR=	src/go.mozilla.org/${PORTNAME}
 
 PLIST_FILES=	bin/sops
 
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	README.rst CHANGELOG.rst
-
-do-build:
-	cd ${WRKSRC}/${GH_SUBDIR} && \
-		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build -o ${PORTNAME} ./cmd/sops
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
