@@ -2,6 +2,7 @@
 
 PORTNAME=	activemq
 PORTVERSION=	5.15.9
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
@@ -43,12 +44,9 @@ PLIST_SUB=	MQUSER="${MQUSER}" \
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|activemq.base}/data|activemq.logs}|g' \
-		${WRKSRC}/conf/log4j.properties
-	       
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/bin ${STAGEDIR}${ETCDIR} ${STAGEDIR}${MQDB}
+	${RM} ${WRKSRC}/conf/log4j.properties.orig
 	cd ${WRKSRC}/conf && for f in *; do \
 		${INSTALL_DATA} ${WRKSRC}/conf/$$f ${STAGEDIR}${ETCDIR}/$$f.sample; \
 	done

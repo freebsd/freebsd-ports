@@ -85,7 +85,7 @@ activemq_stop() {
 	fi
 	
 	echo "Stopping ${name}."
-	${java_command} stop >/dev/null
+	/usr/bin/su -m $activemq_user -c "${java_command} stop" >/dev/null
 	activemq_wait_max_for_pid ${activemq_stop_timeout} ${rc_pid}
 	kill -KILL ${rc_pid} 2> /dev/null && echo "Killed."
 	rm -f ${pidfile}
