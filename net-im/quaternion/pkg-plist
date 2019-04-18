@@ -1,6 +1,5 @@
 bin/quaternion
 share/QMatrixClient/quaternion/translations/quaternion_de_DE.qm
-share/QMatrixClient/quaternion/translations/quaternion_en.qm
 share/QMatrixClient/quaternion/translations/quaternion_en_GB.qm
 share/QMatrixClient/quaternion/translations/quaternion_pl.qm
 share/QMatrixClient/quaternion/translations/quaternion_ru.qm
