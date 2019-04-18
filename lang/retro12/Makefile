@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	retro12
-DISTVERSION=	2018.8
+DISTVERSION=	2019.1
 CATEGORIES=	lang
 MASTER_SITES=	https://forthworks.com/retro/r/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
@@ -25,16 +25,18 @@ MAKE_ENV=	DATADIR=${DATADIR} \
 		DOCSDIR=${DOCSDIR} \
 		EXAMPLESDIR=${EXAMPLESDIR} \
 		PREFIX=${PREFIX}
+# There are race conditions in the makefile due to missing dependencies for
+# targets as upstream tests releases on single core machines.
+MAKE_JOBS_UNSAFE=	yes
 
-PLIST_FILES=	bin/embedimage \
-		bin/extend \
-		bin/injectimage-js \
-		bin/listener \
-		bin/muri \
-		bin/repl \
-		bin/ri \
-		bin/rre \
-		bin/unu
+PLIST_FILES=	bin/retro \
+		bin/retro-embedimage \
+		bin/retro-extend \
+		bin/retro-injectimage-js \
+		bin/retro-muri \
+		bin/retro-repl \
+		bin/retro-ri \
+		bin/retro-unu
 
 PORTDATA=	RETRO12.html \
 		glossary.forth \
