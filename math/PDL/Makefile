@@ -13,6 +13,8 @@ COMMENT=	Perl Data Language
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BROKEN_FreeBSD_13_i386=	ld: error: can't create dynamic relocation R_386_32 against local symbol in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
+
 BUILD_DEPENDS=	p5-Astro-FITS-Header>=0:astro/p5-Astro-FITS-Header \
 		p5-Convert-UU>=0:converters/p5-Convert-UU \
 		p5-File-Map>=0.57:devel/p5-File-Map \
