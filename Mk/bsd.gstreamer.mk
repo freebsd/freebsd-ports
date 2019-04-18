@@ -135,7 +135,6 @@ _GSTREAMER_PLUGINS+= \
 		mp3 \
 		nas \
 		python \
-		qt4 \
 		schroedinger \
 		sdl \
 		vdpau \
@@ -497,10 +496,6 @@ mplex_IMPL=	bad
 
 openh264_DEPENDS=	multimedia/gstreamer-plugins-openh264
 openh264_IMPL=		bad
-
-qt4_DEPENDS=	multimedia/gstreamer-qt4
-qt4_GST_PREFIX=	gstreamer-
-qt4_IMPL=	#
 
 rtmp_DEPENDS=	multimedia/gstreamer-plugins-rtmp
 rtmp_IMPL=	bad
