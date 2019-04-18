@@ -110,6 +110,7 @@
     SUBDIR += py-gns3-converter
     SUBDIR += py-unicorn
     SUBDIR += qemu
+    SUBDIR += qemu2
     SUBDIR += qemu-cheri
     SUBDIR += qemu-devel
     SUBDIR += qemu-powernv
