@@ -50,9 +50,13 @@
 %%GNOMESHELL%%share/themes/Arc-Dark/gnome-shell/common-assets/dash/dash-left.svg
 %%GNOMESHELL%%share/themes/Arc-Dark/gnome-shell/common-assets/dash/dash-placeholder.svg
 %%GNOMESHELL%%share/themes/Arc-Dark/gnome-shell/common-assets/dash/dash-right.svg
+%%GNOMESHELL%%share/themes/Arc-Dark/gnome-shell/common-assets/dash/running1-hover.svg
 %%GNOMESHELL%%share/themes/Arc-Dark/gnome-shell/common-assets/dash/running1.svg
+%%GNOMESHELL%%share/themes/Arc-Dark/gnome-shell/common-assets/dash/running2-hover.svg
 %%GNOMESHELL%%share/themes/Arc-Dark/gnome-shell/common-assets/dash/running2.svg
+%%GNOMESHELL%%share/themes/Arc-Dark/gnome-shell/common-assets/dash/running3-hover.svg
 %%GNOMESHELL%%share/themes/Arc-Dark/gnome-shell/common-assets/dash/running3.svg
+%%GNOMESHELL%%share/themes/Arc-Dark/gnome-shell/common-assets/dash/running4-hover.svg
 %%GNOMESHELL%%share/themes/Arc-Dark/gnome-shell/common-assets/dash/running4.svg
 %%GNOMESHELL%%share/themes/Arc-Dark/gnome-shell/common-assets/menu/menu-hover.svg
 %%GNOMESHELL%%share/themes/Arc-Dark/gnome-shell/common-assets/menu/menu-separator.svg
@@ -774,9 +778,13 @@ share/themes/Arc-Darker/index.theme
 %%GNOMESHELL%%share/themes/Arc/gnome-shell/common-assets/dash/dash-left.svg
 %%GNOMESHELL%%share/themes/Arc/gnome-shell/common-assets/dash/dash-placeholder.svg
 %%GNOMESHELL%%share/themes/Arc/gnome-shell/common-assets/dash/dash-right.svg
+%%GNOMESHELL%%share/themes/Arc/gnome-shell/common-assets/dash/running1-hover.svg
 %%GNOMESHELL%%share/themes/Arc/gnome-shell/common-assets/dash/running1.svg
+%%GNOMESHELL%%share/themes/Arc/gnome-shell/common-assets/dash/running2-hover.svg
 %%GNOMESHELL%%share/themes/Arc/gnome-shell/common-assets/dash/running2.svg
+%%GNOMESHELL%%share/themes/Arc/gnome-shell/common-assets/dash/running3-hover.svg
 %%GNOMESHELL%%share/themes/Arc/gnome-shell/common-assets/dash/running3.svg
+%%GNOMESHELL%%share/themes/Arc/gnome-shell/common-assets/dash/running4-hover.svg
 %%GNOMESHELL%%share/themes/Arc/gnome-shell/common-assets/dash/running4.svg
 %%GNOMESHELL%%share/themes/Arc/gnome-shell/common-assets/menu/menu-hover.svg
 %%GNOMESHELL%%share/themes/Arc/gnome-shell/common-assets/menu/menu-separator.svg
