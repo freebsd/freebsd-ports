@@ -324,15 +324,15 @@ SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS:S/,/\\,/g},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES:S/,/\\,/g},'
 
 .if ${PORT_OPTIONS:MLMDB}
-LMDB_LIBS=	-L${LOCALBASE}/lib -llmdb
-LMDB_INCLUDES=	-I${LOCALBASE}/include
+_LMDB_LIBS=	-L${LOCALBASE}/lib -llmdb
+_LMDB_INCLUDES=	-I${LOCALBASE}/include
 SEDLIST+=	-e 's,^\# (EXPERIMENTAL_LMDB=),\1,'
 .else
-LMDB_LIBS=
-LMDB_INCLUDES=
+_LMDB_LIBS=
+_LMDB_INCLUDES=
 .endif
-SEDLIST+=	-e 's,XX_LMDB_LIBS_XX,${LMDB_LIBS:S/,/\\,/g},' \
-		-e 's,XX_LMDB_INCLUDES_XX,${LMDB_INCLUDES:S/,/\\,/g},'
+SEDLIST+=	-e 's,XX_LMDB_LIBS_XX,${_LMDB_LIBS:S/,/\\,/g},' \
+		-e 's,XX_LMDB_INCLUDES_XX,${_LMDB_INCLUDES:S/,/\\,/g},'
 
 .if ${PORT_OPTIONS:MMYSQL}
 SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib/mysql -l${_MYSQL_SHLIB:S/lib//},' \
