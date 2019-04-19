@@ -1,4 +1,4 @@
---- qsstv/drmrx/mkmscmap.cpp.orig	2016-08-23 19:39:12 UTC
+--- qsstv/drmrx/mkmscmap.cpp.orig	2019-04-18 21:11:33 UTC
 +++ qsstv/drmrx/mkmscmap.cpp
 @@ -32,7 +32,6 @@
  #include <stdlib.h>

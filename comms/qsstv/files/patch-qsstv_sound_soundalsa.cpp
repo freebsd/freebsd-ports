@@ -1,44 +1,44 @@
---- qsstv/sound/soundalsa.cpp.orig	2016-08-28 16:01:40 UTC
+--- qsstv/sound/soundalsa.cpp.orig	2019-04-18 09:34:09 UTC
 +++ qsstv/sound/soundalsa.cpp
 @@ -64,6 +64,8 @@ void soundAlsa::prepareCapture()
  {
    int err;
- 
+   if(!soundDriverOK) return;
 +  snd_pcm_drop(captureHandle);
 +  snd_pcm_reset(captureHandle);
    if((err=snd_pcm_prepare (captureHandle)) < 0)
-   {
-     alsaErrorHandler(err,"Unable to prepare "+inputAudioDevice);
-@@ -76,6 +78,8 @@ void soundAlsa::prepareCapture()
- 
+     {
+       alsaErrorHandler(err,"Unable to prepare "+inputAudioDevice);
+@@ -77,6 +79,8 @@ void soundAlsa::prepareCapture()
  void soundAlsa::preparePlayback()
  {
-+  snd_pcm_drop(playbackHandle);
-+  snd_pcm_reset(playbackHandle);
+   if(!soundDriverOK) return;
++  snd_pcm_drop(captureHandle);
++  snd_pcm_reset(captureHandle);
    snd_pcm_prepare (playbackHandle);
  }
  
-@@ -97,6 +101,8 @@ int soundAlsa::read(int &countAvailable)
-         if ( count == -EPIPE )
+@@ -99,6 +103,8 @@ int soundAlsa::read(int &countAvailable)
+               if ( count == -EPIPE )
+                 {
+                   // Overrun
++                  snd_pcm_drop(captureHandle);
++                  snd_pcm_reset(captureHandle);
+                   snd_pcm_prepare (captureHandle );
+                   snd_pcm_start (captureHandle);
+                   errorOut() << "Overrun";
+@@ -153,6 +159,8 @@ int soundAlsa::write(uint numFrames)
+       else if ( framesWritten == -EPIPE )
          {
-           // Overrun
+           /* underrun */
 +          snd_pcm_drop(captureHandle);
 +          snd_pcm_reset(captureHandle);
-           snd_pcm_prepare (captureHandle );
-           snd_pcm_start (captureHandle);
-           errorOut() << "Overrun";
-@@ -142,6 +148,8 @@ int soundAlsa::write(uint numFrames)
-      else if ( framesWritten == -EPIPE )
-       {
-         /* underrun */
-+        snd_pcm_drop(playbackHandle);
-+        snd_pcm_reset(playbackHandle);
-         error = snd_pcm_prepare (playbackHandle);
-         if ( error < 0 )
-           {
-@@ -360,5 +368,42 @@ void getCardList(QStringList &alsaInputL
-     n++;
-   }
+           error = snd_pcm_prepare (playbackHandle);
+           if ( error < 0 )
+             {
+@@ -384,5 +392,41 @@ void getCardList(QStringList &alsaInputL
+       n++;
+     }
    snd_device_name_free_hint(hints);
 +
 +	snd_config_t	*pcmc;
@@ -76,6 +76,5 @@
 +			}
 +		}
 +	}
-+
  }
  

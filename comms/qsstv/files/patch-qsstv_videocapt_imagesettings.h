@@ -1,4 +1,4 @@
---- qsstv/videocapt/imagesettings.h.orig	2016-08-23 19:39:12 UTC
+--- qsstv/videocapt/imagesettings.h.orig	2019-04-18 21:14:43 UTC
 +++ qsstv/videocapt/imagesettings.h
 @@ -41,7 +41,6 @@
  #ifndef IMAGESETTINGS_H

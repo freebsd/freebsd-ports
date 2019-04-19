@@ -1,6 +1,6 @@
---- qwt/qwt.pro.orig	2016-08-23 19:39:13 UTC
+--- qwt/qwt.pro.orig	2019-03-06 17:04:10 UTC
 +++ qwt/qwt.pro
-@@ -206,6 +206,8 @@ HEADERS += \
+@@ -159,6 +159,8 @@ HEADERS += \
  unix:!symbian {
      maemo5 {
          target.path = /opt/usr/lib
