@@ -3,4 +3,4 @@ Talkatu is a collection of Gtk+ widgets that are useful for chat applications.
 It was started as a rewrite of the GtkIMHTML widget found in Pidgin, but
 quickly expanded to include most things related to conversation windows.
 
-WWW: https://bitbucket.org/rw_grim/talkatu/overview
+WWW: https://bitbucket.org/pidgin/talkatu/overview
