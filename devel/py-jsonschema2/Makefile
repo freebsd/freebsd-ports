@@ -14,6 +14,9 @@ COMMENT=	JSON Schema validation for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Use devel/py-jsonschema instead
+EXPIRATION_DATE=2019-04-30
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vcversioner>=2.16.0.0:devel/py-vcversioner@${PY_FLAVOR}
 
 USES=		python
