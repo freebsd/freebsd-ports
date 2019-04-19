@@ -27,6 +27,10 @@ post-patch:
 	    -e 's,/usr/lib/libargtable2.a,${LOCALBASE}/lib/libargtable2.a,'\
 	    -e 's,/usr/lib/libnet.a,${LOCALBASE}/lib/libnet.a,'\
 	    ${WRKSRC}/Makefile.in ${WRKSRC}/configure
+.if exists(/usr/lib/libibverbs.a)
+	@${REINPLACE_CMD} -e 's,^fonulator_LDADD.*,& /usr/lib/libibverbs.a,' \
+		${WRKSRC}/Makefile.in
+.endif
 	@${REINPLACE_CMD} -e 's,/etc/redfone.conf,${LOCALBASE}/etc/redfone.conf,'\
 	    ${WRKSRC}/fonulator.c ${WRKSRC}/fonulator.1
 
