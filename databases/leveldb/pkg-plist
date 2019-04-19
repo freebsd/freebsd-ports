@@ -4,6 +4,7 @@ include/leveldb/comparator.h
 include/leveldb/db.h
 include/leveldb/dumpfile.h
 include/leveldb/env.h
+include/leveldb/export.h
 include/leveldb/filter_policy.h
 include/leveldb/iterator.h
 include/leveldb/options.h
@@ -12,13 +13,12 @@ include/leveldb/status.h
 include/leveldb/table.h
 include/leveldb/table_builder.h
 include/leveldb/write_batch.h
-include/memenv/memenv.h
+lib/cmake/leveldb/leveldbConfig.cmake
+lib/cmake/leveldb/leveldbConfigVersion.cmake
+lib/cmake/leveldb/leveldbTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/leveldb/leveldbTargets.cmake
 lib/libleveldb.a
 lib/libleveldb.so
 lib/libleveldb.so.%%SHLIB_MAJOR%%
 lib/libleveldb.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
-lib/libmemenv.a
-lib/libmemenv.so
-lib/libmemenv.so.%%SHLIB_MAJOR%%
-lib/libmemenv.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 %%DATADIR%%/build_config.mk
