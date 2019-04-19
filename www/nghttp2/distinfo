@@ -1,3 +1,5 @@
 TIMESTAMP = 1555604318
 SHA256 (nghttp2-nghttp2-v1.38.0_GH0.tar.gz) = 3d5f1642e571470bb23a2a58b3d26ea9612c4e65195b99e55fc76999d3a9d306
 SIZE (nghttp2-nghttp2-v1.38.0_GH0.tar.gz) = 1770767
+SHA256 (cbba1ebf8fce.patch) = 3ea8be7174759810bdc6108e80d301ce7fa6b18c822a1f87b5741b247c2bb673
+SIZE (cbba1ebf8fce.patch) = 1950
