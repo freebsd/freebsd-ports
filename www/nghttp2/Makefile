@@ -6,9 +6,6 @@ PORTVERSION=	1.38.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www net
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	cbba1ebf8fce.patch:-p1
-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP/2.0 C Library
 
