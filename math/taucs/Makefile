@@ -3,7 +3,7 @@
 
 PORTNAME=	taucs
 PORTVERSION=	2.2
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	math
 MASTER_SITES=	http://www.tau.ac.il/~stoledo/taucs/${PORTVERSION}/ \
 		LOCAL/bf
@@ -17,12 +17,13 @@ LICENSE_NAME=	TAUCS License
 LICENSE_FILE=	${FILESDIR}/TAUCS-license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libmetis.so:math/metis4
+LIB_DEPENDS=	libmetis.so:math/metis
 
-HAS_CONFIGURE=	yes
 USES=		blaslapack fortran tar:tgz
 USE_LDCONFIG=	yes
+
 NO_WRKSUBDIR=	yes
+HAS_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -92,7 +93,7 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
 
-do-test: # XXX: building tests fail 
+do-test: # XXX: building tests fail
 .for t in ${TESTS}
 	@${PRINTF} "\n%s\n" "Building test_${t}"
 	@cd ${WRKSRC}_SHARED ; ${FC} ${FFLAGS} -Llib/FreeBSD -L./ \
