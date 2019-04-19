@@ -1,6 +1,6 @@
---- makedefs.orig	2018-02-03 17:20:46 UTC
+--- makedefs.orig	2019-03-10 23:42:59 UTC
 +++ makedefs
-@@ -287,6 +287,33 @@ case "$SYSTEM.$RELEASE" in
+@@ -298,6 +298,33 @@ case "$SYSTEM.$RELEASE" in
  		: ${SHLIB_ENV="LD_LIBRARY_PATH=`pwd`/lib"}
  		: ${PLUGIN_LD="${CC} -shared"}
  		;;

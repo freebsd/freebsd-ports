@@ -1,6 +1,6 @@
---- src/posttls-finger/posttls-finger.c.orig	2016-08-27 20:27:50 UTC
+--- src/posttls-finger/posttls-finger.c.orig	2019-02-12 13:17:45 UTC
 +++ src/posttls-finger/posttls-finger.c
-@@ -1511,7 +1511,8 @@ static int finger(STATE *state)
+@@ -1673,7 +1673,8 @@ static int finger(STATE *state)
      return (0);
  }
  
@@ -10,7 +10,7 @@
  
  /* ssl_cleanup - free memory allocated in the OpenSSL library */
  
-@@ -1958,7 +1959,8 @@ int     main(int argc, char *argv[])
+@@ -2156,7 +2157,8 @@ int     main(int argc, char *argv[])
      cleanup(&state);
  
      /* OpenSSL 1.1.0 and later (de)initialization is implicit */
