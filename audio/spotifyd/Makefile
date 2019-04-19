@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 LIB_DEPENDS=	libogg.so:audio/libogg
 
-USES=		cargo
+USES=		cargo ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	Spotifyd
 GH_TUPLE=	plietar:rust-alsa:8c63543fa0ccd971cf15f5675293d19febd6f79e:alsa \
