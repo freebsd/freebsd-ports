@@ -17,13 +17,13 @@ load_rc_config $name
 : ${cbsd_statsd_jail_enable:="NO"}
 
 export workdir="${cbsd_workdir}"
-globalconf=${cbsd_globalconf:-"${workdir}/cbsd.conf"}
+globalconf=${cbsd_globalconf:-"%%PREFIX%%/cbsd/cbsd.conf"}
 
 start_cmd=${name}_start
 restart_cmd=${name}_restart
 extra_commands="restart"
 
-command="${cbsd_workdir}/tools/racct-jail-statsd"
+command="%%PREFIX%%/cbsd/tools/racct-jail-statsd"
 pidfile="/var/run/$name.pid"
 command_args="&"
 
@@ -84,7 +84,7 @@ cbsd_statsd_jail_start()
 			;;
 	esac
 
-	exec env workdir=${cbsd_workdir} ${cbsd_workdir}/tools/racct-jail-statsd ${args}
+	exec env workdir=${cbsd_workdir} %%PREFIX%%/cbsd/tools/racct-jail-statsd ${args}
 }
 
 cbsd_statsd_jail_restart()
