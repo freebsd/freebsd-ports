@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xawtv
-PORTVERSION=	3.103
-PORTREVISION=	2
+PORTVERSION=	3.106
 CATEGORIES=	multimedia
 MASTER_SITES=	http://linuxtv.org/downloads/xawtv/
 
