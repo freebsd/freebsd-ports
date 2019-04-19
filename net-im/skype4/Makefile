@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	P2P VoIP software
 
+DEPRECATED=		Unsupported upstream
+EXPIRATION_DATE=	2019-04-30
+
 RUN_DEPENDS=	${LINUXBASE}/lib/skype_oss_wrapper/libpulse.so.0:audio/linux-skype_oss_wrapper
 
 CONFLICTS=	skype-devel-[0-9]*
