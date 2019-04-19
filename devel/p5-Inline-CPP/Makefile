@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Inline-CPP
-PORTVERSION=	0.79
+PORTVERSION=	0.80
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-ExtUtils-CppGuess>=0.15:devel/p5-ExtUtils-CppGuess \
 		${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Inline>=0.78:devel/p5-Inline \
-		p5-Inline-C>=0.78:devel/p5-Inline-C \
+RUN_DEPENDS=	p5-Inline>=0.82:devel/p5-Inline \
+		p5-Inline-C>=0.80:devel/p5-Inline-C \
 		p5-Parse-RecDescent>=0:devel/p5-Parse-RecDescent
 
 USES=		perl5
