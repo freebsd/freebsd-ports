@@ -1,14 +1,5 @@
 --- Makefile.PL.orig	2019-04-02 14:50:25 UTC
 +++ Makefile.PL
-@@ -10,7 +10,7 @@ my $CPP_Config_path = 'lib/Inline/CPP/Co
- 
- my %PREREQ_PM = (
-   'Inline'            => '0.78',
--  'Inline::C'         => '0.78_003', # supports 5.8.1
-+  'Inline::C'         => '0.78', # supports 5.8.1
-   'Parse::RecDescent' => '0',
-   'Carp'              => '0',
-   'Config'            => '0',
 @@ -22,11 +22,6 @@ my $guess = ExtUtils::CppGuess->new;
  my @info = map $guess->$_,
    qw(compiler_command linker_flags iostream_fname cpp_flavor_defs);
