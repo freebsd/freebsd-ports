@@ -63,11 +63,10 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/datamodeler/lib/fop.jar
 %%DATADIR%%/datamodeler/lib/jlfgr.jar
 %%DATADIR%%/datamodeler/lib/js.jar
-%%DATADIR%%/datamodeler/lib/log4j.jar
 %%DATADIR%%/datamodeler/lib/olap_api.jar
 %%DATADIR%%/datamodeler/lib/oracle.sqldeveloper.homesupport.jar
 %%DATADIR%%/datamodeler/lib/pdfbox-app-2.0.2.jar
-%%DATADIR%%/datamodeler/lib/rsyntaxtextarea-3.0.0-SNAPSHOT.jar
+%%DATADIR%%/datamodeler/lib/rsyntaxtextarea-%%GTK3_VERSION%%-SNAPSHOT.jar
 %%DATADIR%%/datamodeler/lib/saxon-9.1.0.8.jar
 %%DATADIR%%/datamodeler/lib/serializer-2.7.0.jar
 %%DATADIR%%/datamodeler/lib/xalan-2.7.0.jar
@@ -323,6 +322,7 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/datamodeler/xmlmetadata/ColumnProxyUDB.xml
 %%DATADIR%%/datamodeler/xmlmetadata/ColumnProxyUDBv71.xml
 %%DATADIR%%/datamodeler/xmlmetadata/ColumnProxyUDBv81.xml
+%%DATADIR%%/datamodeler/xmlmetadata/ColumnUsage.xml
 %%DATADIR%%/datamodeler/xmlmetadata/ColumnView.xml
 %%DATADIR%%/datamodeler/xmlmetadata/ContainedObject.xml
 %%DATADIR%%/datamodeler/xmlmetadata/ContainedObjectWithDomain.xml
@@ -472,6 +472,7 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/datamodeler/xmlmetadata/InstanceUDB.xml
 %%DATADIR%%/datamodeler/xmlmetadata/InstanceUDBv71.xml
 %%DATADIR%%/datamodeler/xmlmetadata/InstanceUDBv81.xml
+%%DATADIR%%/datamodeler/xmlmetadata/Join.xml
 %%DATADIR%%/datamodeler/xmlmetadata/KeyObject.xml
 %%DATADIR%%/datamodeler/xmlmetadata/Label.xml
 %%DATADIR%%/datamodeler/xmlmetadata/Level.OraAWAttributes.xml
@@ -498,6 +499,8 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/datamodeler/xmlmetadata/LoginSqlServerv2k5.xml
 %%DATADIR%%/datamodeler/xmlmetadata/MaskTemplate.xml
 %%DATADIR%%/datamodeler/xmlmetadata/MaskTemplateFileWrapper.xml
+%%DATADIR%%/datamodeler/xmlmetadata/MaterializedViewLogOracle.xml
+%%DATADIR%%/datamodeler/xmlmetadata/MaterializedViewLogOraclev9i.xml
 %%DATADIR%%/datamodeler/xmlmetadata/Measure.AggregateFunction.xml
 %%DATADIR%%/datamodeler/xmlmetadata/Measure.xml
 %%DATADIR%%/datamodeler/xmlmetadata/MeasureFolder.xml
@@ -886,6 +889,7 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/ide/doc/extension/bundle10.xsd
 %%DATADIR%%/ide/doc/extension/center.xsd
 %%DATADIR%%/ide/doc/extension/update.xsd
+%%DATADIR%%/ide/extensions/oracle.ide.bookmarks.jar
 %%DATADIR%%/ide/extensions/oracle.ide.ceditor-find.jar
 %%DATADIR%%/ide/extensions/oracle.ide.ceditor-saveactions.jar
 %%DATADIR%%/ide/extensions/oracle.ide.ceditor-tint.jar
@@ -1016,7 +1020,6 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/modules/oracle.adf.model/db-ca.jar
 %%DATADIR%%/modules/oracle.adf.model/jdev-cm.jar
 %%DATADIR%%/modules/oracle.adf.share.ca/adf-share-base.jar
-%%DATADIR%%/modules/oracle.adf.share.ca/adf-share-ca.jar
 %%DATADIR%%/modules/oracle.adf.share/adflogginghandler.jar
 %%DATADIR%%/modules/oracle.adf.share/commons-el.jar
 %%DATADIR%%/modules/oracle.adf.share/oracle-el.jar
@@ -1277,8 +1280,6 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/netbeans/platform/modules/ext/org.eclipse.osgi_3.9.1.v20140110-1610.jar
 %%DATADIR%%/netbeans/platform/modules/ext/osgi.cmpn-4.2.jar
 %%DATADIR%%/netbeans/platform/modules/ext/osgi.core-5.0.0.jar
-%%DATADIR%%/netbeans/platform/modules/lib/amd64/linux/libjnidispatch-422.so
-%%DATADIR%%/netbeans/platform/modules/lib/i386/linux/libjnidispatch-422.so
 %%DATADIR%%/netbeans/platform/modules/lib/libjnidispatch-422.jnilib
 %%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_de.jar
 %%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_es.jar
@@ -1667,6 +1668,7 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/rdbms/jlib/xdb6.jar
 %%DATADIR%%/sleepycat/je-3.3.98/lib/je-3.3.98.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.cloud.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.extras.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.filenavigator.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.jdbcproxy.jar
@@ -1674,10 +1676,11 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/LICENSE.txt
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/antlr4-runtime.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/avro.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/guava.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/jackson-core-asl.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/jackson-mapper-asl.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/kvclient.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/threetenbp.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/reactive-streams.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.ssh.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.utils.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.worksheet.jar
@@ -1752,3 +1755,5 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 @dir %%DATADIR%%/datamodeler/log
 @dir %%DATADIR%%/datamodeler/reports/xslt/10/css
 @dir %%DATADIR%%/netbeans/platform/modules/lib/x86
+@dir %%DATADIR%%/netbeans/platform/modules/lib/amd64/linux
+@dir %%DATADIR%%/netbeans/platform/modules/lib/i386/linux

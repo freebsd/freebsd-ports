@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	datamodeler
-PORTVERSION=	18.1.0.082.1035
+PORTVERSION=	18.4.0.339.1532
 DISTVERSIONSUFFIX=-1
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technetwork/developer-tools/datamodeler/downloads/index.html
@@ -14,7 +14,9 @@ MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Database modeling tool
 
 EXTRACT_DEPENDS=rpm2cpio.pl:archivers/rpm2cpio
-RUN_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash ${JAVA_HOME}/bin/javafxpackager:java/openjfx8-devel
+
+USES=		gnome
 
 #http://www.oracle.com/technetwork/licenses/sqldev-license-152021.html
 LICENSE_NAME=	OTN
@@ -69,10 +71,10 @@ do-install:
 	cd ${WRKSRC} && ${FIND} ${d} -type d \
 		-exec ${MKDIR} ${STAGEDIR}/${DATADIR}/\{} \;
 	cd ${WRKSRC} && ${FIND} ${d} -type f \
-		-not -name "*.orig" \
 		-not -name "*.exe" \
 		-not -name "*.bak" \
 		-not -name "*.dll" \
+		-not -name "*.so" \
 		-exec ${INSTALL_DATA} \{} ${STAGEDIR}/${DATADIR}/\{} \;
 	${ECHO_MSG} " [ DONE ]"
 .endfor
