@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fldigi
-PORTVERSION=	4.1.01
-PORTREVISION=	1
+PORTVERSION=	4.1.02
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -30,13 +29,11 @@ USE_XORG=	x11 xft xext xfixes xcursor xinerama xrender
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config" \
 		    EXTRA_LIBS="-lexecinfo"
 
-OPTIONS_DEFINE=	NATIVE_OPT FLARQ OSS SNDFILE PORTAUDIO PULSEAUDIO HAMLIB NLS DOCS
+OPTIONS_DEFINE=	NATIVE_OPT FLARQ OSS PULSEAUDIO HAMLIB NLS DOCS
 
 NATIVE_OPT_DESC=	Enable Native Optimizations
 FLARQ_DESC=		Compile flarq
 OSS_DESC=		Support OSS
-SNDFILE_DESC=		Support for libsndfile
-PORTAUDIO_DESC=		PortAudio support
 PULSEAUDIO_DESC=	PulseAudio support
 HAMLIB_DESC=		Support rig control via hamlib
 
@@ -47,22 +44,17 @@ NATIVE_OPT_CONFIGURE_ON=	--enable-optimizations=native
 NATIVE_OPT_CONFIGURE_OFF=	--enable-optimizations=none
 FLARQ_CONFIGURE_ENABLE=		flarq
 OSS_CONFIGURE_ENABLE=		oss
-SNDFILE_CONFIGURE_ENABLE=	sndfile
-SNDFILE_LIB_DEPENDS=		libsndfile.so:audio/libsndfile
-PORTAUDIO_CONFIGURE_ENABLE=	portaudio
-PORTAUDIO_LIB_DEPENDS=		libportaudio.so:audio/portaudio
-PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
+PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
-HAMLIB_CONFIGURE_ENABLE=	hamlib
+HAMLIB_CONFIGURE_WITH=		hamlib
 HAMLIB_LIB_DEPENDS=		libhamlib.so:comms/hamlib
 NLS_CONFIGURE_ENABLE=		nls
 NLS_USES=			gettext
 
 # Always need asciidoc for man pages
 CONFIGURE_ARGS+=--with-asciidoc
-# Upstream as of 4.0.5 always uses portaudio and sndfile now
-# Which makes fldigi configure options portaudio & oss useless
-CONFIGURE_ARGS+=--with-portaudio --disable-oss
+# Always need soundfile
+CONFIGURE_ARGS+=--with-sndfile
 
 post-configure:
 # force rebuild of man pages
