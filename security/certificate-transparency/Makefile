@@ -25,7 +25,8 @@ LIB_DEPENDS?=	libevent.so:devel/libevent \
 		libsqlite3.so:databases/sqlite3 \
 		libtcmalloc.so:devel/google-perftools
 
-USES=		autoreconf compiler:c++11-lib gmake pkgconfig
+USES=		autoreconf compiler:c++11-lib gmake pkgconfig ssl
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	"CFLAGS+=-I${LOCALBASE}/include CXXFLAGS+=-lgtest CXXFLAGS+=-lgmock"
 MAKE_FLAGS+=	"V=1"
