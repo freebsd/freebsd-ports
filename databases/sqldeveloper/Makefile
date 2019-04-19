@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	18.1.0.095.1630
+DISTVERSION=	18.4.0-376.1900
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html
@@ -13,11 +13,12 @@ COMMENT=	Graphical tool for database development
 
 RUN_DEPENDS=	bash:shells/bash
 
+USES=		gnome zip
+
 # http://www.oracle.com/technetwork/licenses/sqldev-license-152021.html
 LICENSE_NAME=	OTN
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror
 
-USES=		zip
 USE_JAVA=	yes
 INSTALLS_ICONS=	yes
 
@@ -55,10 +56,7 @@ do-install:
 	cd ${WRKSRC} && ${FIND} ${d} -type d \
 		-exec ${MKDIR} ${STAGEDIR}/${DATADIR}/\{} \;
 	cd ${WRKSRC} && ${FIND} ${d} -type f \
-		-not -name "*.orig" \
 		-not -name "*.exe" \
-		-not -name "*.bat" \
-		-not -name "*.bak" \
 		-not -name "*.dll" \
 		-not -name "*.so" \
 		-not -name "*.jnilib" \
