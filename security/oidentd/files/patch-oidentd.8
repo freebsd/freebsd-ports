@@ -1,24 +1,24 @@
---- doc/oidentd.8.orig	Sun Apr 27 20:40:59 2003
-+++ doc/oidentd.8	Sat Sep  4 16:12:29 2004
-@@ -58,7 +58,7 @@
- 
+--- doc/oidentd.8.orig	2019-01-08 08:56:02.000000000 +0100
++++ doc/oidentd.8	2019-04-19 15:01:30.103268000 +0200
+@@ -65,7 +65,7 @@
  .TP
  .B "\-C or \-\-config=<config file>"
--Use the specified file as the configuration file. The default location of the configuration file is \fB/etc/oidentd.conf\fP.
-+Use the specified file as the configuration file. The default location of the configuration file is \fB%%PREFIX%%/etc/oidentd.conf\fP.
+ Use the specified file as the configuration file. The default location of the
+-configuration file is \fB/etc/oidentd.conf\fP.
++configuration file is \fB%%PREFIX%%/etc/oidentd.conf\fP.
  
  .TP
  .B "\-d or \-\-debug"
-@@ -70,7 +70,7 @@
- 
- .TP
- .B "\-f or \-\-forward=[<port>]"
--When IP masquerading support is enabled, forward requests for machines that masquerade through us to those machines on the specified port. If a port is not given, oidentd will use the default port for the ident service ("auth" or port 113). If the forwarded request fails, \fBoidentd\fP will fall back to reading the \fB/etc/oidentd_masq.conf\fP file. In order for forwarding to work, the machine to which the connection is forwarded must also be running oidentd, and oidentd must be run with the -P switch specifying the host that is forwarding the connections. If the ident daemon on the host to which the connection is forwarded is capable of returning a fixed string for any lookup (for example, the ident server built in to the mIRC windows IRC client), it is not necessary to run oidentd on that host.
-+When IP masquerading support is enabled, forward requests for machines that masquerade through us to those machines on the specified port. If a port is not given, oidentd will use the default port for the ident service ("auth" or port 113). If the forwarded request fails, \fBoidentd\fP will fall back to reading the \fB%%PREFIX%%/etc/oidentd_masq.conf\fP file. In order for forwarding to work, the machine to which the connection is forwarded must also be running oidentd, and oidentd must be run with the -P switch specifying the host that is forwarding the connections. If the ident daemon on the host to which the connection is forwarded is capable of returning a fixed string for any lookup (for example, the ident server built in to the mIRC windows IRC client), it is not necessary to run oidentd on that host.
- 
- .TP
- .B "\-g or \-\-group=<group|GID>"
-@@ -152,11 +152,11 @@
+@@ -85,7 +85,7 @@
+ masquerade through us to those machines on the specified port. If a port is not
+ given, \fBoidentd\fP will use the default port for the ident service ("auth" or
+ port 113). If the forwarded request fails, \fBoidentd\fP will fall back to
+-reading the \fB/etc/oidentd_masq.conf\fP file. In order for forwarding to work,
++reading the \fB%%PREFIX%%/etc/oidentd_masq.conf\fP file. In order for forwarding to work,
+ the machine to which the connection is forwarded must also be running
+ \fBoidentd\fP, and \fBoidentd\fP must be run with the \fB-P\fP switch
+ specifying the host that is forwarding the connections. If the ident daemon on
+@@ -198,11 +198,11 @@
  
  .SH FILES
  .TP

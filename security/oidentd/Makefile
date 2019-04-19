@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	oidentd
-PORTVERSION=	2.0.8
-PORTREVISION=	2
+PORTVERSION=	2.3.2
 CATEGORIES=	security
-MASTER_SITES=	SF/ojnk/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	https://github.com/janikrabe/oidentd/releases/download/v2.3.2/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ident server that supports user-defined ident strings
