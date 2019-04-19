@@ -14,7 +14,8 @@ COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	autoconf>0:devel/autoconf \
+BUILD_DEPENDS=	zip:archivers/zip \
+		autoconf>0:devel/autoconf \
 		${LOCALBASE}/include/cups/cups.h:print/cups \
 		bash:shells/bash
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
