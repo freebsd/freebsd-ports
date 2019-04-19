@@ -153,6 +153,9 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/dataminer/scripts/upgradeRepo12_2_0_0_0To12_2_0_0_1.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo12_2_0_0_1To12_2_0_0_2.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo12_2_0_0_2To12_2_0_0_3.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo12_2_0_0_3To12_2_0_0_4.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo12_2_0_0_4To12_2_0_0_5.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo12_2_0_0_5To12_2_0_0_6.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepoFromORToBinary.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepoWithNewTableSpace.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepository.sql
@@ -169,7 +172,6 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/equinox/org.eclipse.equinox.common_3.6.0.v20100503.jar
 %%DATADIR%%/external/oracle.adf-logging-handler.jar
 %%DATADIR%%/external/oracle.adf-share-base.jar
-%%DATADIR%%/external/oracle.adf-share-ca.jar
 %%DATADIR%%/external/oracle.db-ca.jar
 %%DATADIR%%/external/oracle.dbtools.http.jar
 %%DATADIR%%/external/oracle.dbtools.net.jar
@@ -179,7 +181,10 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/external/oracle.external.antlr.jar
 %%DATADIR%%/external/oracle.external.apache.commons-codec.jar
 %%DATADIR%%/external/oracle.external.apache.commons-collections4.jar
+%%DATADIR%%/external/oracle.external.apache.commons-compress.jar
 %%DATADIR%%/external/oracle.external.apache.commons-logging.jar
+%%DATADIR%%/external/oracle.external.apache.commons-math3.jar
+%%DATADIR%%/external/oracle.external.apache.xmlbeans.jar
 %%DATADIR%%/external/oracle.external.apache_httpclient.jar
 %%DATADIR%%/external/oracle.external.apexlistener.jar
 %%DATADIR%%/external/oracle.external.aqb.jar
@@ -193,6 +198,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/external/oracle.external.cloudstorage.jar
 %%DATADIR%%/external/oracle.external.commons-httpclient.jar
 %%DATADIR%%/external/oracle.external.commons-io.jar
+%%DATADIR%%/external/oracle.external.curvesapi.jar
 %%DATADIR%%/external/oracle.external.el-for-uix2.jar
 %%DATADIR%%/external/oracle.external.el.jar
 %%DATADIR%%/external/oracle.external.emapi.jar
@@ -421,7 +427,6 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/modules/oracle.adf.model/db-ca.jar
 %%DATADIR%%/modules/oracle.adf.model/jdev-cm.jar
 %%DATADIR%%/modules/oracle.adf.share.ca/adf-share-base.jar
-%%DATADIR%%/modules/oracle.adf.share.ca/adf-share-ca.jar
 %%DATADIR%%/modules/oracle.adf.share/adflogginghandler.jar
 %%DATADIR%%/modules/oracle.adf.share/commons-el.jar
 %%DATADIR%%/modules/oracle.adf.share/oracle-el.jar
@@ -1063,7 +1068,6 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/netbeans/platform/update_tracking/org-openide-util-ui.xml
 %%DATADIR%%/netbeans/platform/update_tracking/org-openide-util.xml
 %%DATADIR%%/netbeans/platform/update_tracking/org-openide-windows.xml
-%%DATADIR%%/ords/docs/javadoc/plugin-api-18.1.1-javadoc.jar
 %%DATADIR%%/ords/docs/javadoc/plugin-api/META-INF/MANIFEST.MF
 %%DATADIR%%/ords/docs/javadoc/plugin-api/allclasses-frame.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/allclasses-noframe.html
@@ -1197,6 +1201,16 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/io/package-summary.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/io/package-tree.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/io/package-use.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/jdbc/JDBCDataSource.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/jdbc/JDBCDataSources.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/jdbc/SchemaNotAvailableException.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/jdbc/class-use/JDBCDataSource.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/jdbc/class-use/JDBCDataSources.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/jdbc/class-use/SchemaNotAvailableException.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/jdbc/package-frame.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/jdbc/package-summary.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/jdbc/package-tree.html
+%%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/jdbc/package-use.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/json/JSONIOException.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/json/JSONReader.html
 %%DATADIR%%/ords/docs/javadoc/plugin-api/oracle/dbtools/plugin/api/json/JSONStreams.html
@@ -1352,9 +1366,6 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/ords/examples/db_auth/sql/install.sql
 %%DATADIR%%/ords/examples/db_auth/sql/uninstall.sql
 %%DATADIR%%/ords/examples/plugins/lib/javax.inject-1.jar
-%%DATADIR%%/ords/examples/plugins/lib/ojdbc8-12.2.0.1.jar
-%%DATADIR%%/ords/examples/plugins/lib/plugin-api-18.1.1-javadoc.jar
-%%DATADIR%%/ords/examples/plugins/lib/plugin-api-18.1.1.jar
 %%DATADIR%%/ords/examples/plugins/plugin-demo/.classpath
 %%DATADIR%%/ords/examples/plugins/plugin-demo/.project
 %%DATADIR%%/ords/examples/plugins/plugin-demo/build.xml
@@ -1363,13 +1374,23 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoCommand.java
 %%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoMessages.java
 %%DATADIR%%/ords/examples/plugins/plugin-echo-cmd/src/EchoMessages.properties
+%%DATADIR%%/ords/examples/pre_hook/README.md
+%%DATADIR%%/ords/examples/pre_hook/index.html
+%%DATADIR%%/ords/examples/pre_hook/sql/custom_auth_api.plb
+%%DATADIR%%/ords/examples/pre_hook/sql/custom_auth_api.pls
+%%DATADIR%%/ords/examples/pre_hook/sql/install.sql
+%%DATADIR%%/ords/examples/pre_hook/sql/uninstall.sql
 %%DATADIR%%/ords/examples/soda/getting-started/POList.json
 %%DATADIR%%/ords/examples/soda/getting-started/QBE.1.json
 %%DATADIR%%/ords/examples/soda/getting-started/QBE.2.json
 %%DATADIR%%/ords/examples/soda/getting-started/QBE.3.json
 %%DATADIR%%/ords/examples/soda/getting-started/QBE.4.json
+%%DATADIR%%/ords/examples/soda/getting-started/QBE.5.json
+%%DATADIR%%/ords/examples/soda/getting-started/indexSpec1.json
 %%DATADIR%%/ords/examples/soda/getting-started/po.json
+%%DATADIR%%/ords/examples/soda/getting-started/poPatchSpec.json
 %%DATADIR%%/ords/examples/soda/getting-started/poUpdated.json
+%%DATADIR%%/ords/examples/soda/getting-started/qbePatch.json
 %%DATADIR%%/ords/index.html
 %%DATADIR%%/ords/ords.war
 %%DATADIR%%/ords/params/ords_params.properties
@@ -1513,7 +1534,6 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/fop.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/jlfgr.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/js.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/log4j.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/olap_api.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/pdfbox-app-2.0.2.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/rsyntaxtextarea-%%GTK3_VERSION%%-SNAPSHOT.jar
@@ -1772,6 +1792,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxyUDB.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxyUDBv71.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxyUDBv81.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnUsage.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnView.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContainedObject.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContainedObjectWithDomain.xml
@@ -1921,6 +1942,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/InstanceUDB.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/InstanceUDBv71.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/InstanceUDBv81.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Join.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/KeyObject.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Label.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Level.OraAWAttributes.xml
@@ -1947,6 +1969,8 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/LoginSqlServerv2k5.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/MaskTemplate.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/MaskTemplateFileWrapper.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/MaterializedViewLogOracle.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/MaterializedViewLogOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Measure.AggregateFunction.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Measure.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/MeasureFolder.xml
@@ -2249,6 +2273,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.olap/lib/olaplang.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.olapdv.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.olapdv/lib/olapdvhelp.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.cloud.deployment.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.cloud.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.cloud.migrations.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.datamodeler_reports.jar
@@ -2281,10 +2306,11 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/LICENSE.txt
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/antlr4-runtime.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/avro.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/guava.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/jackson-core-asl.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/jackson-mapper-asl.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/kvclient.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/threetenbp.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.onsd/lib/reactive-streams.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.rdfgraph.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.rdfgraph/lib/sdordf.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.report.jar
@@ -2316,7 +2342,9 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/lib/common.jar
 %%DATADIR%%/sqldeveloper/lib/commons-codec.jar
 %%DATADIR%%/sqldeveloper/lib/commons-collections4.jar
+%%DATADIR%%/sqldeveloper/lib/commons-compress.jar
 %%DATADIR%%/sqldeveloper/lib/commons-logging.jar
+%%DATADIR%%/sqldeveloper/lib/commons-math3.jar
 %%DATADIR%%/sqldeveloper/lib/curvesapi.jar
 %%DATADIR%%/sqldeveloper/lib/dbtools-common.jar
 %%DATADIR%%/sqldeveloper/lib/dbtools-http.jar
@@ -2358,6 +2386,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/lib/oracle.sqldeveloper.homesupport.jar
 %%DATADIR%%/sqldeveloper/lib/oracle.sqldeveloper.jfx-nodeps.jar
 %%DATADIR%%/sqldeveloper/lib/oraclepki.jar
+%%DATADIR%%/sqldeveloper/lib/orajsoda.jar
 %%DATADIR%%/sqldeveloper/lib/osdt_cert.jar
 %%DATADIR%%/sqldeveloper/lib/osdt_core.jar
 %%DATADIR%%/sqldeveloper/lib/osgi-resource-locator.jar
