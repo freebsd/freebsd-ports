@@ -4974,6 +4974,7 @@
     SUBDIR += py-pyicu
     SUBDIR += py-pyinotify
     SUBDIR += py-pyinstaller
+    SUBDIR += py-pyjsparser
     SUBDIR += py-pyke
     SUBDIR += py-pylibsrtp
     SUBDIR += py-pylru
