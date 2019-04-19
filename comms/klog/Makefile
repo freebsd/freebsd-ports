@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	klog
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.9.7.2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 
@@ -13,16 +12,19 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lang gl qmake qt:5
-USE_GL=		glu
-USE_QT=		buildtools_build core gui linguisttools_build multimedia network \
+USE_GL=		gl
+USE_QT=		buildtools_build charts core gui linguisttools_build multimedia network \
 		printsupport sql sql-sqlite3_run widgets
+
 DESKTOP_ENTRIES=	"KLog" "Simple Amateur Radio Logging Program" \
 		"" "klog" "Network;HamRadio;" \
 		true
 
 PLIST_FILES=	bin/klog \
 		${DATADIR}/translations/klog_ca.qm \
+		${DATADIR}/translations/klog_de.qm \
 		${DATADIR}/translations/klog_es.qm \
+		${DATADIR}/translations/klog_fr.qm \
 		${DATADIR}/translations/klog_ja.qm \
 		${DATADIR}/translations/klog_da.qm \
 		${DATADIR}/translations/klog_fi.qm \
