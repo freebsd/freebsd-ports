@@ -2,6 +2,7 @@ bin/partattr
 bin/partconvert
 bin/partedit
 bin/partinfo
+bin/partinspect
 bin/partjson
 bin/partview
 include/Partio.h
@@ -12,6 +13,7 @@ include/PartioVec3.h
 lib/libpartio.so
 %%PYTHON_SITELIBDIR%%/_partio.so
 %%PYTHON_SITELIBDIR%%/partedit.py
+%%PYTHON_SITELIBDIR%%/partinspect.py
 %%PYTHON_SITELIBDIR%%/partio.py
 %%PYTHON_SITELIBDIR%%/partjson.py
 share/swig/partio.i
