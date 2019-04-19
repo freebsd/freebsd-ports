@@ -3,13 +3,8 @@
 
 PORTNAME=	fluidsynth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.3
-PORTREVISION=	1
+DISTVERSION=	2.0.4
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	6ac6e5983f4169c7a418866319e5bde424d4434c.patch:-p1 \
-		a92ba4528f0a848e355556010dcc9456b54cd705.patch:-p1
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
