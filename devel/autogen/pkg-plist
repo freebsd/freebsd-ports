@@ -9,7 +9,7 @@ lib/autogen/tpl-config.tlib
 lib/libopts.a
 lib/libopts.so
 lib/libopts.so.25
-lib/libopts.so.25.16.1
+lib/libopts.so.25.17.1
 libdata/pkgconfig/autoopts.pc
 man/man1/autogen.1.gz
 man/man1/autoopts-config.1.gz
@@ -57,8 +57,6 @@ share/aclocal/autoopts.m4
 %%DATADIR%%/autoopts.m4
 %%DATADIR%%/bits.tpl
 %%DATADIR%%/cmd-doc.tlib
-%%DATADIR%%/confmacs.tlib
-%%DATADIR%%/conftest.tpl
 %%DATADIR%%/def2pot.tpl
 %%DATADIR%%/fsm-macro.tlib
 %%DATADIR%%/fsm-trans.tlib
@@ -68,7 +66,7 @@ share/aclocal/autoopts.m4
 %%DATADIR%%/gplv2.lic
 %%DATADIR%%/lgpl.lic
 %%DATADIR%%/lgplv2.lic
-%%DATADIR%%/libopts-41.1.16.tar.gz
+%%DATADIR%%/libopts-42.1.17.tar.gz
 %%DATADIR%%/liboptschk.m4
 %%DATADIR%%/man2mdoc
 %%DATADIR%%/man2texi
