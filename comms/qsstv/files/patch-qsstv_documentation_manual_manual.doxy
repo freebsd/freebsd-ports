@@ -1,4 +1,4 @@
---- qsstv/documentation/manual/manual.doxy.orig	2016-04-08 23:42:31 UTC
+--- qsstv/documentation/manual/manual.doxy.orig	2019-04-18 21:02:35 UTC
 +++ qsstv/documentation/manual/manual.doxy
 @@ -1549,7 +1549,7 @@ EXTERNAL_GROUPS        = YES
  # The PERL_PATH should be the absolute path and name of the perl script

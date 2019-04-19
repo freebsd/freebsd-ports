@@ -1,4 +1,4 @@
---- qsstv/drmrx/psdmean.cpp.orig	2016-08-23 19:39:12 UTC
+--- qsstv/drmrx/psdmean.cpp.orig	2019-04-18 21:12:04 UTC
 +++ qsstv/drmrx/psdmean.cpp
 @@ -36,7 +36,6 @@
  #include <stdlib.h>

@@ -1,8 +1,17 @@
---- qsstv/qsstv.pro.orig	2018-06-25 14:41:05 UTC
+--- qsstv/qsstv.pro.orig	2019-04-18 09:34:09 UTC
 +++ qsstv/qsstv.pro
-@@ -523,8 +523,8 @@ PRE_TARGETDEPS       +=    dox
- message(dox will be generated)
- }
+@@ -523,7 +523,7 @@ contains(QMAKE_HOST.arch, arm.*):{
+     }
+   else {
+         message(not arm)
+-       CONFIG(debug ,debug|release){
++       CONFIG(dox){
+        dox.commands = cd $$PWD/documentation/manual ;doxygen  manual.doxy; cd $$PWD/documentation/api ;doxygen  api.doxy;
+        dox.depends= FORCE
+        PRE_TARGETDEPS       +=    dox
+@@ -535,15 +535,15 @@ contains(QMAKE_HOST.arch, arm.*):{
+ 
+ 
  
 -dox.path=/usr/share/doc/$$TARGET
 -dox.files= $$PWD/manual/*
@@ -11,10 +20,11 @@
  QMAKE_EXTRA_TARGETS   +=   dox
  
  
-@@ -532,5 +532,5 @@ QMAKE_EXTRA_TARGETS   +=   dox
- RESOURCES += \
-     qsstv.qrc
- 
--target.path = /usr/bin
+ isEmpty(PREFIX) {
+         PREFIX = /usr/local
+     }
+-target.path = $$PREFIX/bin
 +target.path = %%PREFIX%%/bin
- INSTALLS += target dox
+ 
+ shortcutfiles.files =qsstv.desktop
+ shortcutfiles.path = $$PREFIX/share/applications/
