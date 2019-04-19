@@ -13,6 +13,9 @@ COMMENT=	Partial PulseAudio API implementation using OSS backend
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Only useful for net-im/skype4
+EXPIRATION_DATE=	2019-04-30
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	s3erios
 
