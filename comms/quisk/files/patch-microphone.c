@@ -1,6 +1,6 @@
---- microphone.c.orig	2016-10-25 20:57:54 UTC
+--- microphone.c.orig	2018-11-21 19:08:22 UTC
 +++ microphone.c
-@@ -56,7 +56,7 @@ static int timeVOX = 2000;				// VOX han
+@@ -58,7 +58,7 @@ static int timeVOX = 2000;				// VOX han
  
  static int doTxCorrect = 0;				// Corrections for UDP sample transmit
  static double TxCorrectLevel;
