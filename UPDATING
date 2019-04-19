@@ -39,12 +39,12 @@ you update your ports collection, before attempting any port upgrades.
   # pkg set -o lang/ruby24:lang/ruby25
   # portupgrade -x ruby-2.5.\* -fr lang/ruby25
 
-20190419
+20190419:
   AFFECTS: users of emulators/qemu
   AUTHOR: bofh@FreeBSD.org
 
   qemu 2.X version has been moved to qemu2. If you would like to use
-  2.X you should use qeemu2. Otherwise you can use the new stable 
+  2.X you should use qemu2. Otherwise you can use the new stable 
   upstream branch of 3.0.X.
 
   Portmaster users will need to run this command:
