@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqwebmail
-PORTVERSION=	6.0.0
-PORTREVISION=	2
+PORTVERSION=	6.0.1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
