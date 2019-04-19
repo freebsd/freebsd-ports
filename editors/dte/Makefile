@@ -2,7 +2,7 @@
 
 PORTNAME=	dte
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7
+DISTVERSION=	1.8
 CATEGORIES=	editors
 
 MAINTAINER=	dg@syrec.org
@@ -12,10 +12,13 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		iconv gmake ncurses
+
 MAKEFILE=	${WRKSRC}/GNUmakefile
 MAKE_ARGS=	V=1 prefix=${PREFIX} mandir=${PREFIX}/man
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	craigbarnes
+
 TEST_TARGET=	check
 
 PLIST_FILES=	bin/dte \
