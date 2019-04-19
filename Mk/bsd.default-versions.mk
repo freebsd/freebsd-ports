@@ -88,7 +88,7 @@ PYTHON2_DEFAULT?=	2.7
 # Possible values: 3.5, 3.6, 3.7
 PYTHON3_DEFAULT?=	3.6
 # Possible values: 2.4, 2.5
-RUBY_DEFAULT?=		2.4
+RUBY_DEFAULT?=		2.5
 # Possible values: rust, rust-nightly
 RUST_DEFAULT?=		rust
 # Possible values: 4.6, 4.7, 4.8
