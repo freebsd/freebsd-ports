@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtcreator
-DISTVERSION=	4.8.2
-PORTREVISION=	1
+DISTVERSION=	4.9.0
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -72,7 +71,6 @@ SHEBANG_FILES=		tests/system/tools/objectsToTable.py \
 			tests/system/tools/findUnusedObjects.py \
 			share/qtcreator/templates/wizards/files/python/file.py \
 			share/qtcreator/scripts/openTerminal.py \
-			src/libs/3rdparty/botan/configure.py \
 			src/libs/qmljs/parser/changeLicense.py \
 			src/libs/qt-breakpad/qtbreakpadsymbols \
 			src/tools/icons/export.py \
@@ -104,8 +102,7 @@ post-patch:
 				${WRKSRC}/src/plugins/android/androidsettingswidget.cpp
 # Fix python binary in pro file.
 	${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' \
-				${WRKSRC}/qtcreator.pro \
-				${WRKSRC}/src/libs/botan/botan.pro
+				${WRKSRC}/qtcreator.pro
 
 pre-configure:
 # We piggyback on QMAKE_LIBDIR_FLAGS to make sure -L${WRKSRC}/lib is passed to
