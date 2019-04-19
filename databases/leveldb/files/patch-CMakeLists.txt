@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2019-03-29 21:37:39 UTC
++++ CMakeLists.txt
+@@ -228,6 +228,11 @@ if (NOT HAVE_CXX17_HAS_INCLUDE)
+ endif(NOT HAVE_CXX17_HAS_INCLUDE)
+ 
+ if(BUILD_SHARED_LIBS)
++  set_target_properties(leveldb
++    PROPERTIES
++      VERSION %%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
++      SOVERSION %%SHLIB_MAJOR%%
++  )
+   target_compile_definitions(leveldb
+     PUBLIC
+       # Used by include/export.h.
