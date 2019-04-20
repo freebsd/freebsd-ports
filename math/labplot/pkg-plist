@@ -1,5 +1,9 @@
 bin/labplot2
 etc/xdg/labplot2_themes.knsrc
+man/man1/labplot2.1.gz
+man/nl/man1/labplot2.1.gz
+man/sv/man1/labplot2.1.gz
+man/uk/man1/labplot2.1.gz
 share/applications/org.kde.labplot2.desktop
 share/doc/HTML/en/labplot2/datapicker_active_curve_data_spreadsheet.png
 share/doc/HTML/en/labplot2/datapicker_original_transformed_segments.png
@@ -99,6 +103,7 @@ share/icons/hicolor/scalable/apps/labplot-2x-zoom.svg
 share/icons/hicolor/scalable/apps/labplot-3x-zoom.svg
 share/icons/hicolor/scalable/apps/labplot-4x-zoom.svg
 share/icons/hicolor/scalable/apps/labplot-5x-zoom.svg
+share/icons/hicolor/scalable/apps/labplot-MQTT.svg
 share/icons/hicolor/scalable/apps/labplot-TeX-logo.svg
 share/icons/hicolor/scalable/apps/labplot-auto-scale-all.svg
 share/icons/hicolor/scalable/apps/labplot-auto-scale-x.svg
@@ -111,6 +116,8 @@ share/icons/hicolor/scalable/apps/labplot-editgrid.svg
 share/icons/hicolor/scalable/apps/labplot-edithlayout.svg
 share/icons/hicolor/scalable/apps/labplot-editvlayout.svg
 share/icons/hicolor/scalable/apps/labplot-format-text-symbol.svg
+share/icons/hicolor/scalable/apps/labplot-json-array.svg
+share/icons/hicolor/scalable/apps/labplot-json-object.svg
 share/icons/hicolor/scalable/apps/labplot-matrix-new.svg
 share/icons/hicolor/scalable/apps/labplot-matrix.svg
 share/icons/hicolor/scalable/apps/labplot-plot-axis-points.svg
@@ -144,6 +151,7 @@ share/icons/hicolor/scalable/apps/labplot-zoom-select.svg
 share/icons/hicolor/scalable/apps/labplot-zoom.svg
 share/icons/hicolor/scalable/apps/labplot2.svgz
 share/kxmlgui5/labplot2/labplot2ui.rc
+%%DATADIR%%/application-x-labplot2.ico
 %%DATADIR%%/color-schemes/Breeze.colors
 %%DATADIR%%/color-schemes/BreezeDark.colors
 %%DATADIR%%/color-schemes/BreezeHighContrast.colors
@@ -270,7 +278,6 @@ share/kxmlgui5/labplot2/labplot2ui.rc
 %%DATADIR%%/themes/screenshots/Solarized.png
 %%DATADIR%%/themes/screenshots/SolarizedLight.png
 %%DATADIR%%/themes/screenshots/Unavailable.png
-share/locale/ast/LC_MESSAGES/labplot2.mo
 share/locale/bs/LC_MESSAGES/labplot2.mo
 share/locale/ca/LC_MESSAGES/labplot2.mo
 share/locale/ca@valencia/LC_MESSAGES/labplot2.mo
