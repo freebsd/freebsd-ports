@@ -1,0 +1,12 @@
+z tracks your most used directories, based on 'frecency'.
+
+After  a  short  learning  phase, z will take you to the most 'frecent'
+directory that matches ALL of the regexes given on the command line, in
+order.
+
+For example, z foo bar would match /foo/bar but not /bar/foo. Because
+they're regexes, z f b would take you to /foo/bar as well.
+
+z is designed for use only with zsh and bash.
+
+WWW: https://github.com/rupa/z/
