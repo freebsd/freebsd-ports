@@ -4,7 +4,7 @@
 PORTNAME=	drive
 PORTVERSION=	0.3.9.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,17 +22,23 @@ PLIST_FILES=	bin/drive
 
 GH_ACCOUNT=	odeke-em
 GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/../src/github.com/boltdb/bolt \
-		cheggaaa:pb:v1.0.26:cheggaaa_pb/../src/github.com/cheggaaa/pb \
+		census-instrumentation:opencensus-go:v0.20.0:census_instrumentation_opencensus/../src/go.opencensus.io \
+		cheggaaa:pb:v1.0.28:cheggaaa_pb/../src/github.com/cheggaaa/pb \
 		fatih:color:v1.7.0:fatih_color/../src/github.com/fatih/color \
 		golang:crypto:3d3f9f4:golang_crypto/../src/golang.org/x/crypto \
 		golang:net:adae6a3:golang_net/../src/golang.org/x/net \
 		golang:oauth2:8f65e30:golang_oauth2/../src/golang.org/x/oauth2 \
+		golang:protobuf:v1.3.1:golang_protobuf/../src/github.com/golang/protobuf \
 		golang:sys:62eef0e:golang_sys/../src/golang.org/x/sys \
-		google:google-api-go-client:dde16f2:google_googleapigoclient/../src/google.golang.org/api \
-		GoogleCloudPlatform:google-cloud-go:v0.33.1:GoogleCloudPlatform_googlecloudgo/../src/cloud.google.com/go \
-		mattn:go-colorable:v0.0.9:mattn_gocolorable/../src/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.4:mattn_goisatty/../src/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.3:mattn_gorunewidth/../src/github.com/mattn/go-runewidth \
+		golang:text:f4905fb:golang_text/../src/golang.org/x/text \
+		google:go-genproto:e7d98fc:google_go_genproto/../src/google.golang.org/genproto \
+		google:google-api-go-client:v0.3.2:google_googleapigoclient/../src/google.golang.org/api \
+		googleapis:google-cloud-go:v0.37.4:googleapis_googlecloudgo/../src/cloud.google.com/go \
+		grpc:grpc-go:v1.20.1:grpc_grpc_go/../src/google.golang.org/grpc \
+		hashicorp:golang-lru:v0.5.1:hashicorp_golang_lru/../src/github.com/hashicorp/golang-lru \
+		mattn:go-colorable:v0.1.1:mattn_gocolorable/../src/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.7:mattn_goisatty/../src/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.4:mattn_gorunewidth/../src/github.com/mattn/go-runewidth \
 		odeke-em:cache:baf8e43:odekeem_cache/../src/github.com/odeke-em/cache \
 		odeke-em:cli-spinner:610063b:odekeem_clispinner/../src/github.com/odeke-em/cli-spinner \
 		odeke-em:command:91ca5ec:odekeem_command/../src/github.com/odeke-em/command \
@@ -46,7 +52,7 @@ GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/../src/github.com/boltdb/bolt \
 		odeke-em:pretty-words:9d37a7f:odekeem_prettywords/../src/github.com/odeke-em/pretty-words \
 		odeke-em:semalim:9c88bf5:odekeem_semalim/../src/github.com/odeke-em/semalim \
 		odeke-em:statos:292960a:odekeem_statos/../src/github.com/odeke-em/statos \
-		skratchdot:open-golang:75fb7ed:skratchdot_opengolang/../src/github.com/skratchdot/open-golang \
+		skratchdot:open-golang:79abb63:skratchdot_opengolang/../src/github.com/skratchdot/open-golang \
 		VividCortex:ewma:v1.1.1:VividCortex_ewma/../src/github.com/VividCortex/ewma
 USE_GITHUB=	yes
 
