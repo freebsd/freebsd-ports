@@ -1,38 +1,38 @@
---- src/common.c.orig	2011-04-06 19:35:39.000000000 +0000
-+++ src/common.c	2015-01-22 17:10:32.000000000 +0000
-@@ -1229,7 +1229,7 @@
+--- src/common.c.orig	2011-04-06 19:35:39 UTC
++++ src/common.c
+@@ -1229,7 +1229,7 @@ bdb_s_new(int argc, VALUE *argv, VALUE o
      if (argc && TYPE(argv[argc - 1]) == T_HASH) {
  	VALUE v, f = argv[argc - 1];
  
 -	if ((v = rb_hash_aref(f, rb_str_new2("txn"))) != RHASH(f)->ifnone) {
-+	if ((v = rb_hash_aref(f, rb_str_new2("txn"))) != rb_hash_ifnone(f)) {
++	if ((v = rb_hash_lookup(f, rb_str_new2("txn"))) != Qnil) {
  	    if (!rb_obj_is_kind_of(v, bdb_cTxn)) {
  		rb_raise(bdb_eFatal, "argument of txn must be a transaction");
  	    }
-@@ -1241,7 +1241,7 @@
+@@ -1241,7 +1241,7 @@ bdb_s_new(int argc, VALUE *argv, VALUE o
  	    dbst->options |= envst->options & BDB_NO_THREAD;
  	    dbst->marshal = txnst->marshal;
  	}
 -	else if ((v = rb_hash_aref(f, rb_str_new2("env"))) != RHASH(f)->ifnone) {
-+	else if ((v = rb_hash_aref(f, rb_str_new2("env"))) != rb_hash_ifnone(f)) {
++	else if ((v = rb_hash_lookup(f, rb_str_new2("env"))) != Qnil) {
  	    if (!rb_obj_is_kind_of(v, bdb_cEnv)) {
  		rb_raise(bdb_eFatal, "argument of env must be an environnement");
  	    }
-@@ -1254,11 +1254,11 @@
+@@ -1254,11 +1254,11 @@ bdb_s_new(int argc, VALUE *argv, VALUE o
  #if HAVE_CONST_DB_ENCRYPT 
  	if (envst && (envst->options & BDB_ENV_ENCRYPT)) {
  	    VALUE tmp = rb_str_new2("set_flags");
 -	    if ((v = rb_hash_aref(f, rb_intern("set_flags"))) != RHASH(f)->ifnone) {
-+	    if ((v = rb_hash_aref(f, rb_intern("set_flags"))) != rb_hash_ifnone(f)) {
++	    if ((v = rb_hash_lookup(f, rb_intern("set_flags"))) != Qnil) {
  		rb_hash_aset(f, rb_intern("set_flags"), 
  			     INT2NUM(NUM2INT(v) | DB_ENCRYPT));
  	    }
 -	    else if ((v = rb_hash_aref(f, tmp)) != RHASH(f)->ifnone) {
-+	    else if ((v = rb_hash_aref(f, tmp)) != rb_hash_ifnone(f)) {
++	    else if ((v = rb_hash_lookup(f, tmp)) != Qnil) {
  		rb_hash_aset(f, tmp, INT2NUM(NUM2INT(v) | DB_ENCRYPT));
  	    }
  	    else {
-@@ -1570,10 +1570,10 @@
+@@ -1570,10 +1570,10 @@ bdb_init(int argc, VALUE *argv, VALUE ob
  #endif
  	switch(dbst->type) {
  	case DB_BTREE:
@@ -45,7 +45,7 @@
  	    break;
  	case DB_RECNO:
  	{
-@@ -1581,17 +1581,17 @@
+@@ -1581,17 +1581,17 @@ bdb_init(int argc, VALUE *argv, VALUE ob
  
  	    rb_warning("It's hard to distinguish Recnum with Recno for all versions of Berkeley DB");
  	    if ((count = bdb_is_recnum(dbst->dbp)) != -1) {
@@ -66,7 +66,7 @@
  	    break;
  #endif
  	default:
-@@ -1635,29 +1635,29 @@
+@@ -1635,29 +1635,29 @@ bdb_s_alloc(obj)
      dbst->options = BDB_NOT_OPEN;
      cl = obj;
      while (cl) {
@@ -102,36 +102,36 @@
  	    dbst->type = DB_UNKNOWN;
  	    break;
  	}
-@@ -3004,8 +3004,8 @@
+@@ -3004,8 +3004,8 @@ bdb_each_kvc(argc, argv, obj, sens, repl
  
      if (argc && TYPE(argv[argc - 1]) == T_HASH) {
  	VALUE g, f = argv[argc - 1];
 -	if ((g = rb_hash_aref(f, rb_intern("flags"))) != RHASH(f)->ifnone ||
 -	    (g = rb_hash_aref(f, rb_str_new2("flags"))) != RHASH(f)->ifnone) {
-+	if ((g = rb_hash_aref(f, rb_intern("flags"))) != rb_hash_ifnone(f) ||
-+	    (g = rb_hash_aref(f, rb_str_new2("flags"))) != rb_hash_ifnone(f)) {
++	if ((g = rb_hash_lookup(f, rb_intern("flags"))) != Qnil ||
++	    (g = rb_hash_lookup(f, rb_str_new2("flags"))) != Qnil) {
  	    flags = NUM2INT(g);
  	}
  	argc--;
-@@ -3323,8 +3323,8 @@
+@@ -3323,8 +3323,8 @@ bdb_clear(int argc, VALUE *argv, VALUE o
      flags = 0;
      if (argc && TYPE(argv[argc - 1]) == T_HASH) {
  	VALUE g, f = argv[argc - 1];
 -	if ((g = rb_hash_aref(f, rb_intern("flags"))) != RHASH(f)->ifnone ||
 -	    (g = rb_hash_aref(f, rb_str_new2("flags"))) != RHASH(f)->ifnone) {
-+	if ((g = rb_hash_aref(f, rb_intern("flags"))) != rb_hash_ifnone(f) ||
-+	    (g = rb_hash_aref(f, rb_str_new2("flags"))) != rb_hash_ifnone(f)) {
++	if ((g = rb_hash_lookup(f, rb_intern("flags"))) != Qnil ||
++	    (g = rb_hash_lookup(f, rb_str_new2("flags"))) != Qnil) {
  	    flags = NUM2INT(g);
  	}
  	argc--;
-@@ -3348,8 +3348,8 @@
+@@ -3348,8 +3348,8 @@ bdb_replace(int argc, VALUE *argv, VALUE
      flags = 0;
      if (TYPE(argv[argc - 1]) == T_HASH) {
  	VALUE f = argv[argc - 1];
 -	if ((g = rb_hash_aref(f, rb_intern("flags"))) != RHASH(f)->ifnone ||
 -	    (g = rb_hash_aref(f, rb_str_new2("flags"))) != RHASH(f)->ifnone) {
-+	if ((g = rb_hash_aref(f, rb_intern("flags"))) != rb_hash_ifnone(f) ||
-+	    (g = rb_hash_aref(f, rb_str_new2("flags"))) != rb_hash_ifnone(f)) {
++	if ((g = rb_hash_lookup(f, rb_intern("flags"))) != Qnil ||
++	    (g = rb_hash_lookup(f, rb_str_new2("flags"))) != Qnil) {
  	    flags = NUM2INT(g);
  	}
  	argc--;
