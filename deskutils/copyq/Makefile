@@ -1,28 +1,26 @@
 # $FreeBSD$
 
 PORTNAME=	copyq
-PORTVERSION=	3.7.3
 DISTVERSIONPREFIX=	v
+DISTVERSION=	3.8.0
 CATEGORIES=	deskutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Qt5 based clipboard manager
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake qt:5
-USE_LDCONFIG=	yes
-USE_XORG=	ice sm x11 xext xfixes xtst
-USE_QT=		core gui network script svg widgets x11extras xml \
-		buildtools_build linguist_build qmake_build \
-		imageformats_run
-
+USES=		cmake compiler:c++11-lang qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	hluk
 GH_PROJECT=	CopyQ
+USE_LDCONFIG=	yes
+USE_QT=		core gui network script svg widgets x11extras imageformats_run \
+		buildtools_build linguisttools_build qmake_build
+USE_XORG=	x11 xtst
 
-CMAKE_ARGS=		-DMANPAGE_INSTALL_PREFIX:PATH=${MANPREFIX}/man/man1
+LDFLAGS+=	-Wl,--as-needed
 
 OPTIONS_DEFINE=		PLUGINS WEBKIT
 OPTIONS_DEFAULT=	PLUGINS WEBKIT
