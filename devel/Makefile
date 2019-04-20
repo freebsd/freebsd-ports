@@ -4996,6 +4996,7 @@
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyro
     SUBDIR += py-pyrsistent
+    SUBDIR += py-pysdl2
     SUBDIR += py-pyshapelib
     SUBDIR += py-pyshp
     SUBDIR += py-pysparklines
@@ -5118,7 +5119,6 @@
     SUBDIR += py-schema
     SUBDIR += py-schematics-patched
     SUBDIR += py-scripttest
-    SUBDIR += py-sdl2
     SUBDIR += py-selection
     SUBDIR += py-selectors2
     SUBDIR += py-selectors34
