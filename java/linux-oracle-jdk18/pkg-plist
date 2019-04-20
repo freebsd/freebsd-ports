@@ -476,9 +476,8 @@
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/app/resources/ensemble/images/popover-empty.png
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/app/resources/ensemble/images/popover-empty@2x.png
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/app/resources/ensemble/images/sample-background.png
-%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/app/resources/ensemble/syntaxhighlighter/shBrushJava.js
-%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/app/resources/ensemble/syntaxhighlighter/shCore.js
-%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/app/resources/ensemble/syntaxhighlighter/shCoreDefault.css
+%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/app/resources/ensemble/syntaxhighlighter/syntaxhighlighter.js
+%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/app/resources/ensemble/syntaxhighlighter/theme.css
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/compiletime/java/ensemble/compiletime/BuildSamplesList.java
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/compiletime/java/ensemble/compiletime/CodeGenerationUtils.java
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/src/compiletime/java/ensemble/compiletime/EnsembleCompiletimeMain.java
