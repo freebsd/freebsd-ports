@@ -15,6 +15,7 @@ COMMENT=	Bacula document set
 
 USES=		tar:bz2
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	*.pdf
 
