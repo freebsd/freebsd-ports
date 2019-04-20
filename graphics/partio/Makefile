@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	swig3.0:devel/swig30
 
-USES=		cmake compiler:c++11-lang gl python shebangfix
+USES=		cmake compiler:c++11-lang gl python:2.7 shebangfix
 SHEBANG_FILES=	src/tools/partedit.py src/tools/partinspect.py \
 		src/tools/partjson.py
 USE_GL=		gl glu glut
@@ -47,6 +47,10 @@ post-patch:
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/ADD_SUBDIRECTORY.*src\/doc.*/d' \
 		${WRKSRC}/CMakeLists.txt
+
+# Remove those files that don't yet work
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/bin/partedit ${STAGEDIR}${PREFIX}/bin/partinspect
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
