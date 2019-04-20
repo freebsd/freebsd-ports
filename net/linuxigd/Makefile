@@ -10,6 +10,9 @@ MASTER_SITES=	SF/linux-igd/linux-igd/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux UPnP Internet Gateway Device
 
+DEPRECATED=		Abandonware; use net/miniupnpd instead
+EXPIRATION_DATE=	2019-05-08
+
 LIB_DEPENDS=	libupnp.so:devel/upnp
 
 USE_RC_SUBR=	linuxigd
