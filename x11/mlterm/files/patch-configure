@@ -1,15 +1,6 @@
---- configure.orig	2017-12-02 16:03:25 UTC
+--- configure.orig	2019-03-31 13:10:47 UTC
 +++ configure
-@@ -21976,7 +21976,7 @@ if test "$utmp" = "yes" -a "$pty_helper"
- 	if test "$has_utmp" ; then
- 		INSTALL_OPT="-m 2755 -g utmp"
- 	else
--		INSTALL_OPT="-m 4755 -o root"
-+		INSTALL_OPT="-m 4755"
- 	fi
- else
- 	INSTALL_OPT="-m 755"
-@@ -22202,6 +22202,7 @@ $as_echo "yes" >&6; }
+@@ -19448,6 +19448,7 @@ $as_echo "yes" >&6; }
  fi
  	fi
  	if test "$have_vte" = "yes" ; then
@@ -17,3 +8,12 @@
  		OUTPUT_FILES="gtk/Makefile ${OUTPUT_FILES}"
  
  	fi
+@@ -25538,7 +25539,7 @@ if test "$INSTALL_OPT" = ""; then
+ 		if test "$has_utmp" ; then
+ 			INSTALL_OPT="-m 2755 -g utmp"
+ 		else
+-			INSTALL_OPT="-m 4755 -o root"
++			INSTALL_OPT="-m 4755"
+ 		fi
+ 	else
+ 		INSTALL_OPT="-m 755"

@@ -18,14 +18,14 @@ etc/mlterm/vfont
 etc/mlterm/xim
 lib/libmef.a
 lib/libmef.so
-lib/libmef.so.2
-lib/libmef.so.2.0.0
+lib/libmef.so.3
+lib/libmef.so.%%GTK3_VERSION%%
 lib/libmlterm_coreotl.a
 lib/libmlterm_coreotl.so
 lib/libpobl.a
 lib/libpobl.so
-lib/libpobl.so.1
-lib/libpobl.so.1.0.0
+lib/libpobl.so.2
+lib/libpobl.so.2.0.0
 lib/libvte-mlterm.a
 lib/libvte-mlterm.so
 lib/libvte-mlterm.so.9
@@ -72,8 +72,6 @@ lib/mlterm/libind_oriya.a
 lib/mlterm/libind_oriya.so
 lib/mlterm/libind_punjabi.a
 lib/mlterm/libind_punjabi.so
-lib/mlterm/libind_tamil.a
-lib/mlterm/libind_tamil.so
 lib/mlterm/libind_telugu.a
 lib/mlterm/libind_telugu.so
 %%M17NLIB%%lib/mlterm/libim-m17nlib.a
