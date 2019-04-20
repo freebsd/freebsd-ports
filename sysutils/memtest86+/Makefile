@@ -3,7 +3,7 @@
 
 PORTNAME=	memtest86+
 PORTVERSION=	5.01
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.memtest.org/download/${PORTVERSION}/
 
@@ -76,3 +76,4 @@ do-install:
 .endif
 
 .include <bsd.port.mk>
+RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
