@@ -18,4 +18,6 @@ RUN_DEPENDS=	p5-Sub-Exporter-Progressive>=0.001011:devel/p5-Sub-Exporter-Progres
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
