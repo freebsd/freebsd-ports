@@ -1,3 +1,18 @@
-CopyQ is advanced clipboard manager with editing and scripting features.
+CopyQ is an advanced clipboard manager with editing and scripting
+features.  It monitors the system clipboard and saves its content
+in customized tabs.  Saved clipboard snippets can be later copied
+and pasted directly into any application.
+
+Features:
+- Store text, HTML, images or any other custom formats
+- Quickly browse and filter items in clipboard history
+- Sort, create, edit, remove, copy/paste, drag'n'drop items in tabs
+- Add notes or tags to items
+- System-wide shortcuts with customizable commands
+- Paste items with shortcut or from tray or main window
+- Fully customizable appearance
+- Advanced command-line interface and scripting
+- Ignore clipboard copied from some windows or containing some text
+- Support for simple Vim-like editor and shortcuts
 
 WWW: https://github.com/hluk/CopyQ
