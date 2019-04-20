@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 DEPRECATED=	Abandoned upstream
 EXPIRATION_DATE=	2019-10-15
 
-BUILD_DEPENDS=	go>=1.11,1:lang/go
-
+USES=		go:modules
+GO_PKGNAME=	github.com/saibing/bingo
 USE_GITHUB=	yes
 GH_ACCOUNT=	saibing
 GH_TAGNAME=	76bcd777316dde1684ff59793f695e4337c0e62a
@@ -39,12 +39,6 @@ GH_TUPLE=	davecgh:go-spew:v1.1.1:go_spew/vendor/github.com/davecgh/go-spew \
 		stretchr:testify:v1.3.0:testify/vendor/github.com/stretchr/testify
 
 PLIST_FILES=	bin/bingo
-
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} go build -mod=vendor
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bingo ${STAGEDIR}${PREFIX}/bin
 
 # XXX: Check if useful for other ports and maybe put it in a USES=gomod
 gomod-deps: patch
