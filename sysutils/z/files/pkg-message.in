@@ -1,0 +1,3 @@
+To use z, put this command in your .zshrc/.bashrc:
+
+  . %%DATADIR%%/z.sh

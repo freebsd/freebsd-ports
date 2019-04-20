@@ -1521,6 +1521,7 @@
     SUBDIR += xvidcap
     SUBDIR += yadm
     SUBDIR += yank
+    SUBDIR += z
     SUBDIR += zap
     SUBDIR += zbackup
     SUBDIR += zeitgeist
