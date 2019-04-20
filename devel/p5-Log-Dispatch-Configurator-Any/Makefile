@@ -22,7 +22,9 @@ TEST_DEPENDS=	p5-Config-Tiny>=0:devel/p5-Config-Tiny \
 		p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage \
 		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
