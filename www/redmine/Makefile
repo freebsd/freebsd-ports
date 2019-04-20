@@ -3,7 +3,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	3.4.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 
@@ -34,10 +34,11 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-rack-openid>=0:www/rubygem-rack-openid \
 		rubygem-rake>=0:devel/rubygem-rake
 
+USES=		cpe
+USE_RUBY=	yes
+
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_RUBY=	yes
-USES=		cpe
 
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}

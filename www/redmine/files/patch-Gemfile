@@ -1,8 +1,10 @@
---- Gemfile.orig	2018-06-10 06:36:07 UTC
-+++ Gemfile
-@@ -4,24 +4,24 @@ if Gem::Version.new(Bundler::VERSION) < 
-   abort "Redmine requires Bundler 1.5.0 or higher (you're using #{Bundler::VERSION}).\nPlease update with 'gem update bundler'."
- end
+--- Gemfile.orig	2019-04-19 20:09:58.067146000 +0900
++++ Gemfile	2019-04-19 20:10:30.702127000 +0900
+@@ -1,25 +1,25 @@
+ source 'https://rubygems.org'
+ 
+-gem "bundler", ">= 1.5.0", "< 2.0.0"
++gem "bundler", ">= 1.5.0"
  
 -gem "rails", "4.2.11"
 +gem "rails", ">= 4.2.11"
@@ -32,7 +34,7 @@
  gem "ffi", "1.9.14", :platforms => :mingw if RUBY_VERSION < "2.0"
  gem "xpath", "< 3.2.0" if RUBY_VERSION < "2.3"
  
-@@ -33,76 +33,15 @@ gem "rbpdf", "~> 1.19.6"
+@@ -32,76 +32,15 @@
  
  # Optional gem for LDAP authentication
  group :ldap do
@@ -111,11 +113,12 @@
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exists?(local_gemfile)
    eval_gemfile local_gemfile
-@@ -112,3 +51,7 @@ end
+@@ -110,4 +49,8 @@
+ # Load plugins' Gemfiles
  Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
    eval_gemfile file
- end
++end
 +
 +Dir["#{File.dirname(__FILE__)}/bundler.d/*.rb"].each do |bundle|
 +  self.instance_eval(Bundler.read_file(bundle))
-+end
+ end
