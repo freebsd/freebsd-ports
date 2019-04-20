@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-doctest
-PORTVERSION=	0.6.1
-PORTREVISION=	7
+PORTVERSION=	0.7.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
