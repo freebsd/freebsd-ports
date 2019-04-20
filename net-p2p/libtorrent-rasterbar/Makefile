@@ -13,8 +13,6 @@ COMMENT=	C++ library implementing a BitTorrent client
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build with boost 1.70, see bug 236588
-
 LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 		libboost_random.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
