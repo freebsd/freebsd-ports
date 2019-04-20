@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-CLI-Interact
-PORTVERSION=	2.300002
+PORTVERSION=	2.300003
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,8 +27,9 @@ RUN_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-Net-Telnet>=0:net/p5-Net-Telnet \
 		p5-Path-Class>=0:devel/p5-Path-Class
 
-NO_ARCH=	yes
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
