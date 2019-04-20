@@ -1,3 +1,6 @@
+Based on:
+https://github.com/uTox/uTox/commit/22b183433c37d51867ec4eb55813ac2b1db6477c
+
 --- src/xlib/main.c.orig	2019-02-17 05:10:45 UTC
 +++ src/xlib/main.c
 @@ -94,6 +94,11 @@ void init_ptt(void) {
