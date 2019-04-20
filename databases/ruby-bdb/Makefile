@@ -3,7 +3,7 @@
 
 PORTNAME=	bdb
 PORTVERSION=	0.6.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://ftp.idaemons.org/pub/distfiles/ruby/ \
 		http://idaemons.org/distfiles/ruby/ \
@@ -16,13 +16,11 @@ COMMENT=	Ruby interface to Oracle Berkeley DB revision 2 or later
 
 LICENSE=	RUBY
 
-BROKEN_RUBY25=	yes
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_RUBY=		yes
 USE_RUBY_EXTCONF=	yes
-MAKE_ENV+=		RUBY_RDOC=${LOCALBASE}/bin/rdoc
+USE_RUBY_RDOC=		yes
 
 ALL_TARGET=	all rdoc
 CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
