@@ -994,6 +994,7 @@
     SUBDIR += p5-Text-Unaccent-PurePerl
     SUBDIR += p5-Text-VimColor
     SUBDIR += p5-Text-VisualWidth
+    SUBDIR += p5-Text-WideChar-Util
     SUBDIR += p5-Text-WikiCreole
     SUBDIR += p5-Text-WikiFormat
     SUBDIR += p5-Text-WordDiff

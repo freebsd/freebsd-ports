@@ -1,0 +1,4 @@
+Text::WideChar::Util provides routines for dealing with text containing wide
+characters (wide meaning occupying more than 1 column width in terminal).
+
+WWW: https://metacpan.org/release/Text-WideChar-Util
