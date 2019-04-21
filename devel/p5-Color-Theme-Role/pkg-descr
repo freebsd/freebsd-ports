@@ -1,0 +1,10 @@
+Color::Theme::Role is for class that wants to support color themes. Color theme
+is represented as a structure according to the specification described in
+Color::Theme.
+
+Color themes are put in modules under Color::Theme::Themes:: (configurable using
+color_theme_module_prefix attribute). Each color theme modules can contain one
+or more color themes. The module must define a package global variable named
+%color_themes that contain color themes keyed by their names.
+
+WWW: https://metacpan.org/release/Color-Theme-Role

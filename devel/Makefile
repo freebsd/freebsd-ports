@@ -2165,6 +2165,7 @@
     SUBDIR += p5-Code-Perl
     SUBDIR += p5-Color-ANSI-Util
     SUBDIR += p5-Color-RGB-Util
+    SUBDIR += p5-Color-Theme-Role
     SUBDIR += p5-Commandable
     SUBDIR += p5-Commands-Guarded
     SUBDIR += p5-CommitBit
