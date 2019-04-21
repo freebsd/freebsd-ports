@@ -5,9 +5,8 @@ PORTNAME=	qstardict
 DISTVERSIONPREFIX=	qstardict-
 DISTVERSION=	1.3
 CATEGORIES=	textproc
-MASTER_SITES=	http://qstardict.ylsoftware.com/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt based dictionary program (stardict clone)
 
 LICENSE=	GPLv2+
@@ -25,7 +24,13 @@ GH_ACCOUNT=	a-rodin
 
 QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS KDE
+OPTIONS_SUB=	yes
+
+KDE_DESC=	KDE integration
+KDE_USES=	kde:5
+KDE_USE=	KDE=globalaccel,notifications,windowsystem
+KDE_QMAKE_ON=	"ENABLED_PLUGINS=stardict web kdeintegration"
 
 # Path to dictionaries installed by stardict-* ports
 DICPATH=	${LOCALBASE}/share/stardict/dic
