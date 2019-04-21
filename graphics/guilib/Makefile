@@ -5,7 +5,7 @@ PORTNAME=	guilib
 PORTVERSION=	1.2.1
 PORTREVISION=	5
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.libsdl.org/projects/GUIlib/src/
+MASTER_SITES=	https://www.libsdl.org/projects/GUIlib/src/
 DISTNAME=	GUIlib-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org

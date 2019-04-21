@@ -4,4 +4,4 @@ is by no means a complete windowing system. Feel free to improve it!! :)
 It contains a C++ GUI class with a very rudimentary C interface,
 and a set of useful widget classes.
 
-WWW: http://www.libsdl.org/projects/GUIlib/index.html
+WWW: https://www.libsdl.org/projects/GUIlib/index.html
