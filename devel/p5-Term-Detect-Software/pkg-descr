@@ -1,0 +1,6 @@
+Term::Detect::Software uses several heuristics to find out what terminal
+(emulator) software the current process is running in, and its
+capabilities/settings. This module complements other modules such as
+Term::Terminfo and Term::Encoding.
+
+WWW: https://metacpan.org/release/Term-Detect-Software

@@ -3466,6 +3466,7 @@
     SUBDIR += p5-Term-Choose
     SUBDIR += p5-Term-Choose-Util
     SUBDIR += p5-Term-Clui
+    SUBDIR += p5-Term-Detect-Software
     SUBDIR += p5-Term-EditLine
     SUBDIR += p5-Term-Encoding
     SUBDIR += p5-Term-Menus
