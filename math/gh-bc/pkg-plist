@@ -2,6 +2,7 @@ bin/bc
 bin/dc
 man/man1/bc.1.gz
 man/man1/dc.1.gz
+share/nls/C/bc.cat
 share/nls/de_AT.ISO8859-1/bc.cat
 share/nls/de_AT.ISO8859-15/bc.cat
 share/nls/de_AT.UTF-8/bc.cat
@@ -30,9 +31,7 @@ share/nls/en_NZ.US-ASCII/bc.cat
 share/nls/en_NZ.UTF-8/bc.cat
 share/nls/en_US.ISO8859-1/bc.cat
 share/nls/en_US.ISO8859-15/bc.cat
-share/nls/en_US.US-ASCII/bc.cat
 share/nls/en_US.UTF-8/bc.cat
-share/nls/en_US/bc.cat
 share/nls/fr_BE.ISO8859-1/bc.cat
 share/nls/fr_BE.ISO8859-15/bc.cat
 share/nls/fr_BE.UTF-8/bc.cat
