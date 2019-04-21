@@ -3,7 +3,7 @@
 PORTNAME=	sdl2_ttf
 PORTVERSION=	2.0.15
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
+MASTER_SITES=	https://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL2_ttf-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
