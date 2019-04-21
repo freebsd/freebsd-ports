@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	libumidi
-PORTVERSION=	2.0.14
+PORTVERSION=	2.1.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
-		http://home.selasky.org:8192/distfiles/
+		http://home.selasky.org/distfiles/
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Universal general purpose MIDI library
 
 LICENSE=	BSD2CLAUSE
 
+USE_LDCONFIG=	yes
+USES=		tar:bzip2 uidfix
+
 OPTIONS_DEFINE=	DEBUG JACK
 OPTIONS_DEFAULT=JACK
-
-USES=		tar:bzip2 uidfix
 
 JACK_MAKE_ARGS=	" HAVE_JACK=YES"
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
