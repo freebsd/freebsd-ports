@@ -3192,6 +3192,7 @@
     SUBDIR += p5-Parse-PerlConfig
     SUBDIR += p5-Parse-PlainConfig
     SUBDIR += p5-Parse-RecDescent
+    SUBDIR += p5-Parse-VarName
     SUBDIR += p5-Parse-Win32Registry
     SUBDIR += p5-Parse-Yapp
     SUBDIR += p5-ParseLex
