@@ -1,5 +1,5 @@
-PySDL2 is easy to learn and a powerful multimedia programming framework.
-It is a wrapper around the various SDL2 libraries and as such similar to the
-discontinued PySDL project.
+PySDL2 is a wrapper around the SDL2 library and as such similar to the
+discontinued PySDL project. In contrast to PySDL, it has no licensing
+restrictions, nor does it rely on C code, but uses ctypes instead.
 
-WWW: http://bitbucket.org/marcusva/py-sdl2
+WWW: https://github.com/marcusva/py-sdl2
