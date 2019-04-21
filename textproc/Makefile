@@ -977,6 +977,7 @@
     SUBDIR += p5-Text-Table-Paragraph
     SUBDIR += p5-Text-Table-TSV
     SUBDIR += p5-Text-Table-Tiny
+    SUBDIR += p5-Text-Table-TinyColor
     SUBDIR += p5-Text-Table-XLSX
     SUBDIR += p5-Text-Tabs+Wrap
     SUBDIR += p5-Text-TabularDisplay
