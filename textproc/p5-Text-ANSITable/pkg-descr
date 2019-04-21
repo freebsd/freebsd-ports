@@ -1,0 +1,20 @@
+Text::ANSITable is yet another text table formatter module like Text::ASCIITable
+or Text::SimpleTable, with the following differences:
+- Colors and color themes: ANSI color codes will be used by default (even 256
+  and 24bit colors), but will degrade to lower color depth and black/white
+  according to terminal support.
+- Box-drawing characters: Box-drawing characters will be used by default, but
+  will degrade to using normal ASCII characters if terminal does not support them.
+- Unicode and wide character support: Border styles using Unicode characters
+  (double lines, bold/heavy lines, brick style, etc). Columns containing wide
+  characters stay aligned. (Note: support for wide characters requires
+  Text::ANSI::WideUtil which is currently set as an optional prereq, so you'll
+  need to install it explicitly or set your CPAN client to install 'recommends'
+  prereq).
+
+Compared to Text::ASCIITable, it uses lower_case method/attr names instead of
+CamelCase, and it uses arrayref for columns and add_row. When specifying border
+styles, the order of characters are slightly different. More fine-grained
+options to customize appearance.
+
+WWW: https://metacpan.org/release/Text-ANSITable
