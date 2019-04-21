@@ -15,4 +15,6 @@ LICENSE=	CC0-1.0
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
