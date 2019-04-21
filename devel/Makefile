@@ -3160,6 +3160,7 @@
     SUBDIR += p5-Package-Constants
     SUBDIR += p5-Package-DeprecationManager
     SUBDIR += p5-Package-Generator
+    SUBDIR += p5-Package-MoreUtil
     SUBDIR += p5-Package-Stash
     SUBDIR += p5-Package-Stash-XS
     SUBDIR += p5-Package-Variant
