@@ -12,8 +12,8 @@ COMMENT=	Universal general purpose MIDI library
 
 LICENSE=	BSD2CLAUSE
 
-USE_LDCONFIG=	yes
 USES=		tar:bzip2 uidfix
+USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DEBUG JACK
 OPTIONS_DEFAULT=JACK
