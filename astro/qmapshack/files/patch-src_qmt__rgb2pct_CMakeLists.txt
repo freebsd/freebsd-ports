@@ -1,0 +1,11 @@
+--- src/qmt_rgb2pct/CMakeLists.txt.orig	2019-04-08 15:33:50 UTC
++++ src/qmt_rgb2pct/CMakeLists.txt
+@@ -95,7 +95,7 @@ add_executable(${APPLICATION_NAME} WIN32 ${MAININP})
+ target_link_libraries(${APPLICATION_NAME}
+     Qt5::Core
+     ${GDAL_LIBRARIES}
+-    ${PROJ4_LIBRARIES}
++    ${PROJ4_LDFLAGS} ${PROJ4_LIBRARIES}
+ )
+ 
+ if(APPLE)
