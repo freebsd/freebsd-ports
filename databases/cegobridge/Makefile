@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cegobridge
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -11,6 +11,8 @@ COMMENT=	Imports non-cego database dump files into cego
 LIB_DEPENDS=	liblfcbase.so:devel/lfcbase \
 		liblfcxml.so:devel/lfcxml \
 		libcego.so:databases/cego
+
+USES=		readline
 
 LICENSE=	GPLv3
 GNU_CONFIGURE=	yes

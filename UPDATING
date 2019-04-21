@@ -5,6 +5,33 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190421:
+  AFFECTS: users of databases/cego
+  AUTHOR: pi@FreeBSD.org
+
+  To upgrade from cego 2.39.16 to 2.44.1, you need to export to xml before
+  the upgrade and import from xml after the upgrade, because the internal
+  storage has changed for some types.
+
+  Use these steps:
+
+  - export your database while it runs, see
+    http://www.lemke-it.com/litexec?request=pubcegodoc&user=&lang=en&section=cgdoc_database_running.html#tsimpexp_mode
+    for details.
+  - stop the database
+    service cego stop
+  - upgrade the port/package
+  - re-create the database
+    cego --mode=create --tableset=<database> --dbxml=<database>.xml
+  - import the database
+    cego --mode=xmlimport --tableset=<database> \
+	--dbxml=<database>.xml --impfile=export.xml --doLogging
+  - modify /etc/rc.conf by adding
+    cego_<database>_cpdump="YES"
+    cego_<database>_cleanup="YES"
+  - start the database
+    service cego start
+
 20190420:
   AFFECTS: users of lang/ruby24
   AUTHOR: mfechner@FreeBSD.org

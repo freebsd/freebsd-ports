@@ -42,6 +42,7 @@ include/cego/CegoBufferPoolEntry.h
 include/cego/CegoCaseCond.h
 include/cego/CegoCheckObject.h
 include/cego/CegoCheckpoint.h
+include/cego/CegoCheckpointDump.h
 include/cego/CegoClob.h
 include/cego/CegoComparison.h
 include/cego/CegoCondDesc.h
