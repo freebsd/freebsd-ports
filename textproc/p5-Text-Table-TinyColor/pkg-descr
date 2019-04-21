@@ -1,0 +1,5 @@
+Text::Table::TinyColor is like Text::Table::Tiny with added support for colored
+text (text that contains ANSI color codes). With this module, the colored text
+will still line up.
+
+WWW: https://metacpan.org/release/Text-Table-TinyColor
