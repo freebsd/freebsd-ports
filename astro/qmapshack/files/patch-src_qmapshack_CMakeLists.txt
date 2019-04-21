@@ -1,0 +1,11 @@
+--- src/qmapshack/CMakeLists.txt.orig	2019-04-08 15:33:43 UTC
++++ src/qmapshack/CMakeLists.txt
+@@ -891,7 +891,7 @@ target_link_libraries(${APPLICATION_NAME}
+     Qt5::Positioning
+     ${DBUS_LIB}
+     ${GDAL_LIBRARIES}
+-    ${PROJ4_LIBRARIES}
++    ${PROJ4_LDFLAGS} ${PROJ4_LIBRARIES}
+     ${ROUTINO_LIBRARIES}
+     ${ALGLIB_LIBRARIES}
+     ${QUAZIP_LIBRARIES}

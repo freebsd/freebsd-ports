@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2019-04-08 16:08:10 UTC
++++ CMakeLists.txt
+@@ -43,6 +43,7 @@ include(TranslateDesktop)
+ include(DefineCMakeDefaults)
+ include(DefineCompilerFlags)
+ include(DefineInstallationPaths)
++include(FindPkgConfig)
+ include(CPackConfig.cmake)
+ include(ConfigureChecks.cmake)
+ 
+@@ -135,7 +136,10 @@ find_package(Qt5Network             REQUIRED)
+ find_package(Qt5WebEngineWidgets    REQUIRED)
+ find_package(Qt5Qml                 REQUIRED)
+ find_package(GDAL                   REQUIRED)
+-find_package(PROJ4                  REQUIRED)
++find_package(PROJ4)
++if (NOT PROJ4_FOUND)
++  pkg_search_module(PROJ4 REQUIRED proj)
++endif()
+ find_package(JPEG                   REQUIRED)
+ find_package(ROUTINO                REQUIRED)
+ find_package(QuaZip5                REQUIRED)

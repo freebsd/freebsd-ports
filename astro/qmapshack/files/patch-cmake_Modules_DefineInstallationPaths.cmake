@@ -1,6 +1,6 @@
---- cmake/Modules/DefineInstallationPaths.cmake.orig	2014-08-18 10:08:14 UTC
+--- cmake/Modules/DefineInstallationPaths.cmake.orig	2018-09-08 09:17:56 UTC
 +++ cmake/Modules/DefineInstallationPaths.cmake
-@@ -101,7 +101,7 @@ if (UNIX)
+@@ -97,7 +97,7 @@ if (UNIX)
      FORCE
    )
    SET(MAN_INSTALL_DIR

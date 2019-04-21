@@ -1,0 +1,11 @@
+--- src/qmaptool/CMakeLists.txt.orig	2019-04-08 15:33:47 UTC
++++ src/qmaptool/CMakeLists.txt
+@@ -247,7 +247,7 @@ target_link_libraries(${APPLICATION_NAME}
+     Qt5::Widgets
+     Qt5::Network
+     ${GDAL_LIBRARIES}
+-    ${PROJ4_LIBRARIES}
++    ${PROJ4_LDFLAGS} ${PROJ4_LIBRARIES}
+ )
+ 
+ if(APPLE)
