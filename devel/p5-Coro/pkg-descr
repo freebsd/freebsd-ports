@@ -1,9 +1,18 @@
-This module collection manages coroutines. Coroutines are similar to
-threads but don't run in parallel.
+Coro started as a simple module that implemented a specific form of first class
+continuations called Coroutines. These basically allow you to capture the
+current point execution and jump to another point, while allowing you to return
+at any time, as kind of non-local jump, not unlike C's setjmp/longjmp. This is
+nowadays known as a Coro::State.
 
-In this module, coroutines are defined as "callchain + lexical variables
-+ @_ + $_ + $@ + $^W + C stack), that is, a coroutine has its own
-callchain, its own set of lexicals and its own set of perl's most
-important global variables.
+One natural application for these is to include a scheduler, resulting in
+cooperative threads, which is the main use case for Coro today. Still, much of
+the documentation and custom refers to these threads as "coroutines" or often
+just "coros".
+
+A thread is very much like a stripped-down perl interpreter, or a process:
+Unlike a full interpreter process, a thread doesn't have its own variable or
+code namespaces - everything is shared. That means that when one thread modifies
+a variable (or any value, e.g. through a reference), then other threads
+immediately see this change when they look at the same variable or location.
 
 WWW: https://metacpan.org/release/Coro
