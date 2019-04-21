@@ -3472,6 +3472,7 @@
     SUBDIR += p5-Term-Detect-Software
     SUBDIR += p5-Term-EditLine
     SUBDIR += p5-Term-Encoding
+    SUBDIR += p5-Term-Form
     SUBDIR += p5-Term-Menus
     SUBDIR += p5-Term-ProgressBar
     SUBDIR += p5-Term-ProgressBar-Quiet

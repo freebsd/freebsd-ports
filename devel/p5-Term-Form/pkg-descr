@@ -1,0 +1,4 @@
+Term::Form reads a line from STDIN. It is intended to cope with Unicode
+(multibyte character/grapheme cluster).
+
+WWW: https://metacpan.org/release/Term-Form
