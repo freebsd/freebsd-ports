@@ -1,0 +1,7 @@
+Term::App::Roles provides collection of roles for terminal-based application.
+This role gives several options to turn on/off terminal-oriented features like
+whether to use UTF8 characters, whether to use colors, and color depth. Defaults
+are set from environment variables or by detecting terminal
+software/capabilities.
+
+WWW: https://metacpan.org/release/Term-App-Roles
