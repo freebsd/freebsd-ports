@@ -2638,6 +2638,7 @@
     SUBDIR += p5-Form-Sensible
     SUBDIR += p5-FreeBSD-i386-Ptrace
     SUBDIR += p5-FreezeThaw
+    SUBDIR += p5-Function-Fallback-CoreOrPP
     SUBDIR += p5-Function-Parameters
     SUBDIR += p5-Future
     SUBDIR += p5-Gearman
