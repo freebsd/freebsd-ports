@@ -14,7 +14,9 @@ LICENSE=	APACHE20
 
 TEST_DEPENDS=	p5-Capture-Tiny>=0.12:devel/p5-Capture-Tiny
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
