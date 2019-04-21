@@ -1,0 +1,5 @@
+Text::Table::TinyColorWide is like Text::Table::Tiny with added support for
+colored text (text containing ANSI color codes) and wide characters. With this
+module, text with ANSI color codes and/or wide characters will still line up.
+
+WWW: https://metacpan.org/release/Text-Table-TinyColorWide
