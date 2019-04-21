@@ -1,0 +1,5 @@
+Text::ANSI::WideUtil contains the wide-character variant (ta_mb*()) for some
+functions in Text::ANSI::Util. It is split so only this module requires
+Text::WideChar::Util and Text::ANSI::Util can be kept slim.
+
+WWW: https://metacpan.org/release/Text-ANSI-WideUtil
