@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Text/Table/HTML/DataTables.pm
+%%SITE_PERL%%/auto/share/dist/Text-Table-HTML-DataTables/datatables-1.10.13/css/jquery.dataTables.min.css
+%%SITE_PERL%%/auto/share/dist/Text-Table-HTML-DataTables/datatables-1.10.13/js/jquery.dataTables.min.js
+%%SITE_PERL%%/auto/share/dist/Text-Table-HTML-DataTables/jquery-2.2.4/jquery-2.2.4.min.js
+%%PERL5_MAN3%%/Text::Table::HTML::DataTables.3.gz
