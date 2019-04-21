@@ -968,6 +968,7 @@
     SUBDIR += p5-Text-Table
     SUBDIR += p5-Text-Table-ASV
     SUBDIR += p5-Text-Table-Any
+    SUBDIR += p5-Text-Table-CSV
     SUBDIR += p5-Text-Table-Manifold
     SUBDIR += p5-Text-Table-Tiny
     SUBDIR += p5-Text-Table-XLSX
