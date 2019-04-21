@@ -1,0 +1,7 @@
+Text::MarkdownTable can be used to write data in tabular form, formatted in
+MultiMarkdown syntax. The resulting format can be used for instance to display
+CSV data or to include data tables in Markdown files. Newlines and vertical bars
+in table cells are replaced by a space character and cell values can be
+truncated.
+
+WWW: https://metacpan.org/release/Text-MarkdownTable
