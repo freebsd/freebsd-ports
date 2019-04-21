@@ -1,0 +1,11 @@
+STAR (Spliced Transcripts Alignment to a Reference) aims to achieve accurate
+alignment of high-throughput RNA-seq data.
+
+STAR is based on a previously undescribed RNA-seq alignment algorithm that uses
+sequential maximum mappable seed search in uncompressed suffix arrays followed
+by seed clustering and stitching procedure. STAR outperforms other aligners by
+a factor of >50 in mapping speed, aligning to the human genome 550 million 2 x
+76 bp paired-end reads per hour on a modest 12-core server, while at the same
+time improving alignment sensitivity and precision
+
+WWW: https://github.com/alexdobin/STAR

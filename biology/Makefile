@@ -143,6 +143,7 @@
     SUBDIR += slclust
     SUBDIR += smithwaterman
     SUBDIR += stacks
+    SUBDIR += star
     SUBDIR += stringtie
     SUBDIR += tRNAscan-SE
     SUBDIR += t_coffee
