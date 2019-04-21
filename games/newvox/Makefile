@@ -5,7 +5,7 @@ PORTNAME=	newvox
 PORTVERSION=	1.0
 PORTREVISION=	8
 CATEGORIES=	games
-MASTER_SITES=	http://www.libsdl.org/projects/newvox/src/
+MASTER_SITES=	https://www.libsdl.org/projects/newvox/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voxel-style landscape rendering fly-by
