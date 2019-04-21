@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Text/ANSI/BaseUtil.pm
+%%SITE_PERL%%/Text/ANSI/Util.pm
+%%PERL5_MAN3%%/Text::ANSI::BaseUtil.3.gz
+%%PERL5_MAN3%%/Text::ANSI::Util.3.gz
