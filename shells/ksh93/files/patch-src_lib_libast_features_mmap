@@ -1,0 +1,191 @@
+--- src/lib/libast/features/mmap.orig	2016-02-28 17:09:23 UTC
++++ src/lib/libast/features/mmap
+@@ -16,14 +16,7 @@ tst	lib_mmap note{ standard mmap interfa
+ 
+ 	#define Failed(file)	(remove(file),1)
+ 
+-	int
+-	#if _STD_
+-	main(int argc, char** argv)
+-	#else
+-	main(argc,argv)
+-	int     argc;
+-	char**  argv;
+-	#endif
++	int main(int argc, char** argv)
+ 	{
+ 		caddr_t		mm;
+ 		char		*file;
+@@ -165,169 +158,18 @@ tst	lib_mmap64 -D_LARGEFILE64_SOURCE not
+ 	}
+ }end
+ 
+-tst	mmap_anon note{ use mmap MAP_ANON to get raw memory }end execute{
+-	#if !_lib_mmap
+-	(
+-	#endif
+-	#include <unistd.h>
+-	#include <fcntl.h>
+-	#include <sys/types.h>
+-	#include <sys/mman.h>
+-	#if defined(MAP_ANONYMOUS) && !defined(MAP_ANON)
+-	#define MAP_ANON	MAP_ANONYMOUS
+-	#endif
+-	int
+-	main()
+-	{	void	*addr;
+-		addr = mmap(0,1024*1024,PROT_READ|PROT_WRITE,MAP_ANON|MAP_PRIVATE,-1,0);
+-		return (addr && addr != (void*)(-1)) ? 0 : 1;
+-	}
+-}end
+-
+-tst	mmap_devzero note{ use mmap on /dev/zero to get raw memory }end execute{
+-	#if !_lib_mmap
+-	(
+-	#endif
+-	#include <unistd.h>
+-	#include <fcntl.h>
+-	#include <sys/types.h>
+-	#include <sys/mman.h>
+-	int
+-	main()
+-	{	int	fd;
+-		void	*addr;
+-		if((fd = open("/dev/zero", O_RDWR)) < 0)
+-			return 1;
+-		addr = mmap(0,1024*1024,PROT_READ|PROT_WRITE,MAP_PRIVATE,fd,0);
+-		return (addr && addr != (void*)(-1)) ? 0 : 1;
+-	}
+-}end
+-
+-tst	-D_LARGEFILE64_SOURCE note{ mmap is worth using }end output{
+-	#if !_lib_mmap
+-	(
+-	#endif
+-	#include <unistd.h>
+-	#include <fcntl.h>
+-	#include <string.h>
+-	#include <sys/types.h>
+-	#include <sys/mman.h>
+-	#include <sys/stat.h>
+-	#include <sys/times.h>
+-
+-	#if _lib_mmap64
+-	#undef	mmap
+-	#define mmap	mmap64
+-	#endif
+-
+-	#if _lib_munmap64
+-	#undef	munmap
+-	#define munmap	munmap64
+-	#endif
+-	
+-	#define MAPSIZE (64*1024)
+-	#define BUFSIZE	(MAPSIZE/8)
+-	#define WRITE   (64)
+-	#define RUN	(64)
+-	
+-	#define Failed(file)	(remove(file),1)
+-	
+-	int
+-	#if _STD_
+-	main(int argc, char** argv)
+-	#else
+-	main(argc,argv)
+-	int     argc;
+-	char**  argv;
+-	#endif
+-	{
+-		caddr_t		mm;
+-		char		*file, *t;
+-		int		i, fd, k, run;
+-		char		buf[MAPSIZE];
+-		struct tms	stm, etm;
+-		clock_t		rdtm, mmtm;
+-	
+-		file = argv[1];
+-		if ((fd = open(file, O_CREAT|O_TRUNC|O_WRONLY, 0666)) < 0)
+-			return 1;
+-	
+-		for (i = 0; i < sizeof(buf); ++i)
+-			buf[i] = '0' + (i%10);
+-		for (i = 0; i < WRITE; ++i)
+-			if (write(fd,buf,sizeof(buf)) != sizeof(buf))
+-				return Failed(file);
+-		close(fd);
+-	
+-		/* read time */
+-		times(&stm);
+-		for(run = 0; run < RUN; ++run)
+-		{	if((fd = open(file, O_RDWR)) < 0)
+-				return Failed(file);
+-			for (i = 0; i < WRITE; ++i)
+-			{	for(k = 0; k < MAPSIZE; k += BUFSIZE)
+-					if (read(fd,buf,BUFSIZE) != BUFSIZE)
+-						return Failed(file);
+-			}
+-			close(fd);
+-		}
+-		times(&etm);
+-		rdtm = (etm.tms_utime-stm.tms_utime) + (etm.tms_stime-stm.tms_stime);
+-	
+-		/* mmap time */
+-		times(&stm);
+-		for(run = 0; run < RUN; ++run)
+-		{	if ((fd = open(file, O_RDWR)) < 0)
+-				return Failed(file);
+-			for(i = 0, mm = (caddr_t)0; i < WRITE; ++i)
+-			{	if(mm)
+-					munmap(mm, MAPSIZE);
+-				mm = (caddr_t)mmap((caddr_t)0, MAPSIZE,
+-						   (PROT_READ|PROT_WRITE),
+-						   MAP_PRIVATE, fd, i*MAPSIZE );
+-				if(mm == (caddr_t)(-1) || mm == (caddr_t)0)
+-					return Failed(file);
+-	
+-				/* the memcpy is < BUFSIZE to simulate the
+-				   fact that functions like sfreserve/sfgetr do
+-				   not do buffer copying.
+-				*/
+-				t = (char*)mm;
+-				for(k = 0; k < MAPSIZE; k += BUFSIZE, t += BUFSIZE)
+-					memcpy(buf,t,(3*BUFSIZE)/4);
+-			}
+-			close(fd);
+-		}
+-		times(&etm);
+-		mmtm = (etm.tms_utime-stm.tms_utime) + (etm.tms_stime-stm.tms_stime);
+-
+-		remove(file);
+-	
+-		if(4*mmtm <= 3*rdtm)
+-			printf("#define _mmap_worthy	2	/* mmap outperforms read on 64Ki buffers -- use it */\n");
+-		else if(4*mmtm <= 5*rdtm)
+-			printf("#define _mmap_worthy	2	/* mmap is slightly better than read on 64Ki buffers -- use it */\n");
+-		else
+-			printf("#define _mmap_worthy	2	/* mmap worse than read on 64Ki buffers -- use it anyway */\n");
+-
+-		return 0;
+-	}
+-}end
+-
+ cat{
++        /* assume MAP_ANON works */
++        #define _mmap_anon 1
+ 
+ 	/* some systems get it wrong but escape concise detection */
+-	#ifndef _NO_MMAP
+ 	#if __CYGWIN__
+ 	#define _NO_MMAP	1
+ 	#endif
+-	#endif
+ 
+ 	#if _NO_MMAP
+ 	#undef	_lib_mmap
+ 	#undef	_lib_mmap64
+-	#undef	_mmap_anon
+-	#undef	_mmap_devzero
+-	#undef	_mmap_worthy
++	#undef  _mmap_anon
+ 	#endif
+ }end

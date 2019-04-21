@@ -12,31 +12,31 @@
 
 PORTNAME=	ksh93
 PORTVERSION=	${KSHVERSION:S/-//g}
-PORTREVISION=	2
 CATEGORIES=	shells
-MASTER_SITES=	http://www2.research.att.com/~astopen/download/tgz/ \
-		LOCAL/sunpoet/${PORTNAME}
-DISTFILES=	INIT.${INITVERSION}.tgz ast-ksh.${KSHVERSION}.tgz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	saper@saper.info
-COMMENT=	Official AT&T release of KornShell 93
+COMMENT=	KornShell 93
 
 LICENSE=	EPL
 
 BROKEN_aarch64=		Fails to compile: needs sbrk
 
+USES=		compiler:c11
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	att
+GH_PROJECT=	ast
+GH_TAGNAME=	${PORTNAME}v
+
 CONFLICTS=	ksh93-devel-*
 
 OPTIONS_DEFINE=	EXAMPLES STATIC
 
-FETCH_ENV=	HTTP_AUTH=basic:*:I\ accept\ www.opensource.org/licenses/cpl:.
 LDFLAGS+=	-lm
-MAKE_ENV=	CCFLAGS="${CFLAGS}"
-NO_WRKSUBDIR=	yes
+MAKE_ENV=	CCFLAGS="-Wno-unused-value -Wno-parentheses -Wno-logical-op-parentheses ${CFLAGS}"
 
-INITVERSION=	2013-05-24
-KSHVERSION=	2012-08-01
+KSHVERSION=	2014-12-24
 
 STATIC_MAKE_ENV=	LDFLAGS+=-static
 
@@ -44,7 +44,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' ${WRKSRC}/src/lib/libast/include/sfio*.h ${WRKSRC}/src/lib/libast/sfio/*.c
 
 do-build:
-	@cd ${WRKSRC}/ && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package flat make
+	@cd ${WRKSRC}/ && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package flat make ksh93
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ksh ${STAGEDIR}${PREFIX}/bin/ksh93
