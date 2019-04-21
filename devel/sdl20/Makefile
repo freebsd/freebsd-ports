@@ -4,7 +4,7 @@ PORTNAME=	sdl2
 PORTVERSION=	2.0.9
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.libsdl.org/release/
+MASTER_SITES=	https://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
