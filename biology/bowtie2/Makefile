@@ -2,7 +2,7 @@
 
 PORTNAME=		bowtie2
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.3.5
+DISTVERSION=		2.3.5.1
 CATEGORIES=		biology perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,16 +12,16 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # May also work on other 64-bit platforms, but untested
-ONLY_FOR_ARCHS=	aarch64 amd64
-BROKEN_aarch64=	usage: dirname string [...]
-
+ONLY_FOR_ARCHS=	amd64
 LIB_DEPENDS=	libtbb.so:devel/tbb
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake localbase:ldflags perl5 python shebangfix
 USE_PERL5=	run
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	bowtie2 bowtie2-build bowtie2-inspect scripts/*.pl
+SHEBANG_FILES=	bowtie2 bowtie2-build bowtie2-inspect \
+		scripts/bowtie2-hbb.sh scripts/*.pl
 GH_ACCOUNT=	BenLangmead
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
