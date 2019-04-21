@@ -5,8 +5,8 @@ PORTNAME=	smpeg2
 PORTVERSION=	2.0.0
 PORTREVISION=	4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.libsdl.org/projects/smpeg/release/ \
-		http://rsync.macports.org/smpeg2/
+MASTER_SITES=	https://www.libsdl.org/projects/smpeg/release/ \
+		https://distfiles.macports.org/smpeg2/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free MPEG1 video player library with sound support
