@@ -5,7 +5,7 @@ PORTNAME=	pipenightdreams
 PORTVERSION=	0.10.0
 PORTREVISION=	14
 CATEGORIES=	games
-MASTER_SITES=	http://www.libsdl.org/projects/pipenightdreams/packages/
+MASTER_SITES=	https://www.libsdl.org/projects/pipenightdreams/packages/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle game similar to PipeMania
