@@ -974,6 +974,7 @@
     SUBDIR += p5-Text-Table-LTSV
     SUBDIR += p5-Text-Table-Manifold
     SUBDIR += p5-Text-Table-Org
+    SUBDIR += p5-Text-Table-Paragraph
     SUBDIR += p5-Text-Table-Tiny
     SUBDIR += p5-Text-Table-XLSX
     SUBDIR += p5-Text-Tabs+Wrap

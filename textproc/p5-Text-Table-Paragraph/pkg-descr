@@ -1,0 +1,6 @@
+Text::Table::Paragraph provides a single function, table, which formats a
+two-dimensional array of data as paragraphs. Each paragraph shows a row of data
+and columns are shown as name: value lines. Long values by default are wrapped
+and shown indented in the subsequent lines.
+
+WWW: https://metacpan.org/release/Text-Table-Paragraph
