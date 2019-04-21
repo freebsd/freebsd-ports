@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	rawtherapee
-PORTVERSION=	5.5
-PORTREVISION=	1
-#DISTNAME=	${PORTNAME}-${PORTVERSION:R}-r${PORTVERSION:E}${DISTVERSIONSUFFIX}
+PORTVERSION=	5.6
+#DISTNAME=	${PORTNAME}-${PORTVERSION:R}-rc2${DISTVERSIONSUFFIX}
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
 
@@ -33,7 +32,7 @@ USES=		cmake desktop-file-utils gnome dos2unix \
 
 DOS2UNIX_REGEX=	.*\.(cc|h)
 LDFLAGS+=	-Wl,--as-needed # fontconfig, freetype, gettext, libX11
-USE_GNOME=	gtkmm30
+USE_GNOME=	gtkmm30 librsvg2
 
 # The -D_GLIBCXX_USE_C99 works around stoi not being defined by default,
 # because the GCC headers believe FreeBSD insufficiently C99 compliant.
@@ -54,13 +53,18 @@ CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 
 INSTALLS_ICONS=	yes
 
-.if defined(PACKAGE_BUILDING) && empty(CFLAGS:M-march*)
+.if defined(PACKAGE_BUILDING) && empty(CFLAGS:M-march*) && (${ARCH} == i386 || ${ARCH} == amd64 || ${ARCH} == aarch64)
+# this gets translated to -mtune=generic, see ${WRKSRC}/ProcessorTargets.cmake
+# and as of GCC 8.3, it appears that among FreeBSD's supported architectures,
+# only the three listed above support this GCC option.
 CMAKE_ARGS+=	-DPROC_TARGET_NUMBER="1"
 .endif
 
 RTDIR=		${PREFIX}/libdata/${PORTNAME}
 
-OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS OPENMP NATIVE
+OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS NATIVE
+OPTIONS_DEFINE_i386=	DOCS OPTIMIZED_CFLAGS NATIVE OPENMP
+OPTIONS_DEFINE_amd64=	DOCS OPTIMIZED_CFLAGS NATIVE OPENMP
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS OPENMP
 OPENMP_DESC=		Enable OpenMP parallel processing (i386/amd64 only)
 OPTIMIZED_CFLAGS_DESC=	Use extra optimizations (needs SSE2 on i386/amd64)
@@ -73,21 +77,19 @@ OPENMP_CMAKE_BOOL=	OPTION_OMP
 # -------------------------------------------------------------------
 #
 
-.if ${OPSYS} == FreeBSD
-.if ${OSVERSION} >= 1300000
+.if (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1300000)
 # don't waste everybody's time with Tier-2 and moving targets.
 # might add ARM64 or SPARC64 later on if they are established by the
 # time FreeBSD 12 is out.
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=Only amd64 is supported on non-released FreeBSD versions.
 .endif
-.endif
 
 .if ${PORT_OPTIONS:MNATIVE}
 CMAKE_ARGS+=	-DPROC_TARGET_NUMBER="2"
 .endif
 
-.if !empty(PORT_OPTIONS:MOPENMP) && (${ARCH} == "amd64" || ${ARCH} == "i386")
+.if !empty(PORT_OPTIONS:MOPENMP) && !empty(OPTIONS_DEFINE:MOPENMP)
 LIB_DEPENDS+=	libomp.so:devel/openmp
 OPENMP_FLAGS=	-lm -lomp
 LDFLAGS+=	${OPENMP_FLAGS}
@@ -104,11 +106,9 @@ USES+=		compiler:gcc-c++11-lib
 . else
 USES+=		compiler:c++11-lib
 . endif
-# If we were to use GCC on i386, we'd need to use -mstackrealign
-# or similar options, else we get SIGBUS when SSE2 is enabled due to
-# improper alignment. Base clang is good enough though, i386 does not
-# support OpenMP, and those seeking ultimate performance need to use
-# amd64. Workaround implemented below.
+# If we were to use GCC on i386, we'd need to use -mstackrealign or similar
+# options, else we get SIGBUS when SSE2 is enabled due to improper alignment.
+# Base clang is good enough though. Workaround implemented below.
 .else
 USES+=		compiler:c++14-lang
 .endif
