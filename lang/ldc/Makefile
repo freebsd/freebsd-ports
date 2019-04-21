@@ -17,6 +17,7 @@ LIB_DEPENDS=	libconfig.so:devel/libconfig
 BROKEN_aarch64=		fails to compile: Error: undefined identifier _jmp_buf, did you mean alias jmp_buf?
 BROKEN_armv6=		fails to compile: Error: undefined identifier _jmp_buf, did you mean alias jmp_buf?
 BROKEN_armv7=		fails to compile: Error: undefined identifier _jmp_buf, did you mean alias jmp_buf?
+BROKEN_i386=		function core.bitop.bsf (uint v) is not callable using argument types (ulong)
 BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option "-std=c++11"
 
 USES=		cmake:insource
