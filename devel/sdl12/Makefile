@@ -6,7 +6,7 @@ PORTVERSION=	1.2.15
 PORTREVISION=	13
 PORTEPOCH=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.libsdl.org/release/
+MASTER_SITES=	https://www.libsdl.org/release/
 DISTNAME=	SDL-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
