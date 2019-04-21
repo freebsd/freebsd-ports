@@ -1,0 +1,6 @@
+Text::Table::HTML::DataTables is just like Text::Table::HTML, except the HTML
+code will also load jQuery and the DataTables plugin from the local filesystem
+(distribution shared directory), so you can filter and sort the table in the
+browser.
+
+WWW: https://metacpan.org/release/Text-Table-HTML-DataTables
