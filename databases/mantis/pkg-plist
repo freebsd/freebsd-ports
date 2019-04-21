@@ -57,6 +57,7 @@
 %%WWWDIR%%/api/rest/restcore/projects_rest.php
 %%WWWDIR%%/api/rest/restcore/users_rest.php
 %%WWWDIR%%/api/rest/swagger.json
+%%WWWDIR%%/api/rest/web.config
 %%WWWDIR%%/api/soap/mantisconnect.php
 %%WWWDIR%%/api/soap/mantisconnect.wsdl
 %%WWWDIR%%/api/soap/mc_account_api.php
@@ -1673,6 +1674,8 @@
 %%WWWDIR%%/tag_update.php
 %%WWWDIR%%/tag_update_page.php
 %%WWWDIR%%/tag_view_page.php
+%%WWWDIR%%/vendor/.htaccess
+%%WWWDIR%%/vendor/Web.config
 %%WWWDIR%%/vendor/adodb/adodb-php/LICENSE.md
 %%WWWDIR%%/vendor/adodb/adodb-php/README.md
 %%WWWDIR%%/vendor/adodb/adodb-php/adodb-active-record.inc.php
@@ -1959,6 +1962,7 @@
 %%WWWDIR%%/vendor/dapphp/securimage/securimage_play.php
 %%WWWDIR%%/vendor/dapphp/securimage/securimage_play.swf
 %%WWWDIR%%/vendor/dapphp/securimage/securimage_show.php
+%%WWWDIR%%/vendor/dapphp/securimage/web.config
 %%WWWDIR%%/vendor/dapphp/securimage/words/words.txt
 %%WWWDIR%%/vendor/doctrine/instantiator/.scrutinizer.yml
 %%WWWDIR%%/vendor/doctrine/instantiator/.travis.install.sh
@@ -2741,6 +2745,7 @@
 %%WWWDIR%%/vendor/sebastian/version/src/Version.php
 %%WWWDIR%%/vendor/slim/slim/CODE_OF_CONDUCT.md
 %%WWWDIR%%/vendor/slim/slim/LICENSE.md
+%%WWWDIR%%/vendor/slim/slim/MAINTAINERS.md
 %%WWWDIR%%/vendor/slim/slim/Slim/App.php
 %%WWWDIR%%/vendor/slim/slim/Slim/CallableResolver.php
 %%WWWDIR%%/vendor/slim/slim/Slim/CallableResolverAwareTrait.php
