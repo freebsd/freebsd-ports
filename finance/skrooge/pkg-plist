@@ -734,6 +734,7 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/html/default/budget_table.qml
 %%DATADIR%%/html/default/categories_period_table.html
 %%DATADIR%%/html/default/categories_period_table.qml
+%%DATADIR%%/html/default/categories_previous_period_table.html
 %%DATADIR%%/html/default/categories_variations.html
 %%DATADIR%%/html/default/categories_variations.qml
 %%DATADIR%%/html/default/categories_variations_issues.html
