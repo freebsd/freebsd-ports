@@ -3,7 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	EXIM:exim
 MASTER_SITE_SUBDIR=	/exim4/:exim \
@@ -150,7 +150,7 @@ LOG_FILE_PATH?=		${LOGDIR}/%slog
 CONFIG_FILE_PATH?=	${PREFIX}/etc/exim/configure
 ALT_CONFIG_PREFIX?=	${PREFIX}/etc/exim/
 
-EXIM_DYNAMIC_LDFLAGS=	-fPIC -rdynamic -export-dynamic
+EXIM_DYNAMIC_LDFLAGS=	-fPIC -rdynamic -Wl,--export-dynamic
 
 SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
