@@ -7,7 +7,7 @@ CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kyuupichan@gmail.com
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	ECDSA cryptographic signature library (pure python)
 
 LICENSE=	MIT
