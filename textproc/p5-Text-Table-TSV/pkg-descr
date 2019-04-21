@@ -1,0 +1,4 @@
+Text::Table::TSV provides a single function, table, which formats a
+two-dimensional array of data as TSV.
+
+WWW: https://metacpan.org/release/Text-Table-TSV
