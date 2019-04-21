@@ -10,6 +10,8 @@ MASTER_SITES=	SF/idled/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Daemon that logs out idle users and those users hogging resources
 
+LICENSE=	GPLv2
+
 USE_RC_SUBR=	${PORTNAME}
 
 MAKE_ARGS=	STAGEDIR=${STAGEDIR}
