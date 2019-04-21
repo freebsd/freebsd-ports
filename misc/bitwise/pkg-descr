@@ -1,0 +1,5 @@
+bitwise can be used both interactivly and in command line mode.
+In command line mode, passing a number in any base (Decimal, Hexedical & Octal)
+will output the number in all bases including binary representation.
+
+WWW: https://github.com/mellowcandle/bitwise
