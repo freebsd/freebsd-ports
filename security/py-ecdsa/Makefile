@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ecdsa
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.13.2
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
