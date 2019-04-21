@@ -11,4 +11,4 @@ This is a work in progress.  Only 16 or 32 bit color depth is supported.
 The player will dynamically convert to other color depths, but playback
 will be much faster if your display is already set to 16 bit color depth.
 
-WWW: http://icculus.org/smpeg/
+WWW: https://icculus.org/smpeg/
