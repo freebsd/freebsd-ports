@@ -1,4 +1,5 @@
 bin/qstardict
+%%KDE%%lib/qstardict/plugins/libkdeintegration.so
 lib/qstardict/plugins/libstardict.so
 lib/qstardict/plugins/libweb.so
 share/applications/qstardict.desktop
