@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBD-cego
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.lemke-it.com/
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,9 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	p5-DBI>=1.631:databases/p5-DBI
 RUN_DEPENDS=	p5-DBI>=1.631:databases/p5-DBI
-LIB_DEPENDS=	libcego.so:databases/cego
+LIB_DEPENDS=	liblfcbase.so:devel/lfcbase \
+		liblfcxml.so:devel/lfcxml \
+		libcego.so:databases/cego
 
 USES=		compiler gmake perl5
 USE_PERL5=	configure
