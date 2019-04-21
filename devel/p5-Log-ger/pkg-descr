@@ -1,0 +1,6 @@
+Log::ger is yet another logging framework with the following features:
+- Separation of producers and consumers/listeners
+- Lightweight and fast
+- Flexible
+
+WWW: https://metacpan.org/release/Log-ger
