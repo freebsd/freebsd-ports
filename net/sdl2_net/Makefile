@@ -3,7 +3,7 @@
 PORTNAME=	sdl2_net
 PORTVERSION=	2.0.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/
+MASTER_SITES=	https://www.libsdl.org/projects/SDL_net/release/
 DISTNAME=	SDL2_net-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
