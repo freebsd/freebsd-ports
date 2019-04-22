@@ -18,7 +18,8 @@ BUILD_DEPENDS=	zip:archivers/zip \
 		autoconf>0:devel/autoconf \
 		${LOCALBASE}/include/cups/cups.h:print/cups \
 		bash:shells/bash
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libinotify.so:devel/libinotify
 RUN_DEPENDS=	javavm:java/javavmwrapper \
 		dejavu>0:x11-fonts/dejavu
@@ -105,8 +106,7 @@ X11_CONFIGURE_OFF=	--disable-headful
 X11_CONFIGURE_ON=	--with-giflib=system \
 			--x-includes=${LOCALBASE}/include \
 			--x-libraries=${LOCALBASE}/lib
-X11_LIB_DEPENDS=	libgif.so:graphics/giflib \
-			libfontconfig.so:x11-fonts/fontconfig
+X11_LIB_DEPENDS=	libgif.so:graphics/giflib
 X11_MAKE_ENV_OFF=	BUILD_HEADLESS_ONLY=1 \
 			MAKEFLAGS=X_CFLAGS="-I${LOCALBASE}/include"
 X11_MAKE_ENV_ON=	MAKEFLAGS=""
