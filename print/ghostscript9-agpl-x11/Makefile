@@ -11,6 +11,9 @@ COMMENT=	PostScript and PDF interpreter, X11 support
 
 LICENSE=	AGPLv3
 
+BUILD_DEPENDS=	ghostscript9-agpl-base>=${PORTVERSION}:print/ghostscript9-agpl-base
+RUN_DEPENDS=	ghostscript9-agpl-base>=${PORTVERSION}:print/ghostscript9-agpl-base
+
 CONFLICTS_INSTALL= \
 		ghostscript[789]-[0-9]* \
 		ghostscript[789]-nox11-[0-9]* \
@@ -19,7 +22,7 @@ CONFLICTS_INSTALL= \
 
 DISTINFO_FILE=	${.CURDIR:H}/ghostscript9-agpl-base/distinfo
 PATCHDIR=	${.CURDIR:H}/ghostscript9-agpl-base/files
-USES=		cpe ghostscript:agpl gmake iconv localbase pkgconfig tar:xz
+USES=		cpe gmake iconv localbase pkgconfig tar:xz
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xext xt
