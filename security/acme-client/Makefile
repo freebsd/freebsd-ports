@@ -3,7 +3,7 @@
 
 PORTNAME=	acme-client
 PORTVERSION=	0.1.16
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONPREFIX=	portable-
 CATEGORIES=	security
 MASTER_SITES=	https://kristaps.bsd.lv/${PORTNAME}/snapshots/ \
