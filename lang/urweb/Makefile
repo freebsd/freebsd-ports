@@ -13,6 +13,9 @@ COMMENT=	Ultimate host for embedded domain-specific languages
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_12=	invalid target: self
+BROKEN_FreeBSD_13=	invalid target: self
+
 BUILD_DEPENDS=	mlton:lang/mlton
 
 CONFIGURE_ENV=	CCARGS="-I${LOCALBASE}/include"
