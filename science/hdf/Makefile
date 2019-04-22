@@ -3,7 +3,7 @@
 
 PORTNAME=	hdf
 PORTVERSION=	4.2.11
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF/releases/HDF${PORTVERSION}/src/ \

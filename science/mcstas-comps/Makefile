@@ -3,6 +3,7 @@
 
 PORTNAME=	mcstas-comps
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://download.mcstas.org/${PORTNAME:C/-comps\$//}-${PORTVERSION}/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

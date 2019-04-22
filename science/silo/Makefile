@@ -4,7 +4,7 @@
 PORTNAME=	silo
 PORTVERSION=	4.10.2
 DISTVERSIONSUFFIX=	-bsd
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	science
 MASTER_SITES=	http://wci.llnl.gov/content/assets/docs/simulation/computer-codes/${PORTNAME}/silo-${PORTVERSION}/
 

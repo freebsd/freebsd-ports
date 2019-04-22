@@ -3,7 +3,7 @@
 
 PORTNAME=	qd
 PORTVERSION=	2.3.7
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.berkeley.edu/~yozo/software/
 
