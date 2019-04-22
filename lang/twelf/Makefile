@@ -15,6 +15,9 @@ COMMENT=	Meta-logical framework for deductive systems
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_12=	invalid target: self
+BROKEN_FreeBSD_13=	invalid target: self
+
 RUN_DEPENDS=	mlton:lang/mlton
 BUILD_DEPENDS=	mlton:lang/mlton \
 		texi2html:textproc/texi2html
