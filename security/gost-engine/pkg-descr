@@ -1,0 +1,9 @@
+OPENSSL GOST ENGINE
+An implementation of Russian cryptography standards for OpenSSL.
+
+This engine provides an implementation of various Russian cryptographic
+algorithms, known generally as GOST cryptographic algorithms.
+These algorithms can be used both via OpenSSL command line tools and
+via high-level libopenssl calls.
+
+WWW: https://github.com/gost-engine/engine/blob/master/README.gost
