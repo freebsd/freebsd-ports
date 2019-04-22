@@ -43,8 +43,8 @@ CGAL_DESC=		Graph-cut on Delaunay triangulation based meshing algorithm
 CGAL_LIB_DEPENDS=	libCGAL.so:math/cgal
 CGAL_CMAKE_BOOL=	CGAL_ENABLED
 
-DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
-DOCS_USES=		gmake
+DOCS_BUILD_DEPENDS=	gmake:devel/gmake \
+			sphinx-build:textproc/py-sphinx
 DOCS_PORTDOCS=		*
 
 OPENMP_USES=		compiler:openmp
@@ -74,7 +74,7 @@ post-patch:
 .endif
 
 post-build-DOCS-on:
-	@${DO_MAKE_BUILD} html -C${WRKSRC}/doc
+	@${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} html -C${WRKSRC}/doc
 
 pre-install-TEST-on: do-test
 
