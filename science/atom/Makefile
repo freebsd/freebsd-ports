@@ -2,7 +2,7 @@
 
 PORTNAME=	atom
 DISTVERSION=	4.2.7-100
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	https://departments.icmab.es/leem/siesta/Pseudopotentials/Code/ \
 		https://departments.icmab.es/leem/siesta/Pseudopotentials/:lic

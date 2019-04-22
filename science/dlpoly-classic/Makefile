@@ -2,7 +2,7 @@
 
 PORTNAME=	dlpoly
 PORTVERSION=	1.8
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	science java
 MASTER_SITES=	http://ccpforge.cse.rl.ac.uk/gf/download/frsrelease/238/2028/
 PKGNAMESUFFIX=	classic

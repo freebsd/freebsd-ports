@@ -3,6 +3,7 @@
 
 PORTNAME=	gromacs
 DISTVERSION=	2019.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 

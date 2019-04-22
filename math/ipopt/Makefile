@@ -3,7 +3,7 @@
 
 PORTNAME=	Ipopt
 DISTVERSION=	3.12.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/Ipopt/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/:metis \

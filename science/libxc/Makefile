@@ -3,7 +3,7 @@
 
 PORTNAME=	libxc
 DISTVERSION=	4.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://www.tddft.org/programs/octopus/download/libxc/${DISTVERSION}/
 
