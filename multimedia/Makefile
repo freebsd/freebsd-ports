@@ -62,6 +62,7 @@
     SUBDIR += dvts
     SUBDIR += emby-server
     SUBDIR += emovix
+    SUBDIR += ffaudioconverter
     SUBDIR += ffdec
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg0
