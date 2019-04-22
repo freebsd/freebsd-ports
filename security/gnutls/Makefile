@@ -30,13 +30,14 @@ CONFIGURE_ARGS=	--disable-guile \
 		--with-system-priority-file=${PREFIX}/etc/gnutls/default-priorities \
 		--with-default-trust-store-file=${LOCALBASE}/share/certs/ca-root-nss.crt \
 		--with-trousers-lib=${LOCALBASE}/lib/libtspi.so.1 \
+		AUTOGEN=false \
 		ac_cv_type_max_align_t=yes
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=		DANE EXAMPLES IDN NLS P11KIT TPM ZLIB
-OPTIONS_DEFAULT=	IDN P11KIT TPM ZLIB
+OPTIONS_DEFINE=		DANE EXAMPLES IDN NLS P11KIT TPM
+OPTIONS_DEFAULT=	IDN P11KIT TPM
 OPTIONS_SUB=		yes
 
 DANE_DESC=		Certificate verification via DNSSEC
@@ -58,8 +59,6 @@ P11KIT_LIB_DEPENDS=	libp11-kit.so:security/p11-kit
 TPM_DESC=		Trusted Platform Module support
 TPM_CONFIGURE_WITH=	tpm
 TPM_LIB_DEPENDS=	libtspi.so:security/trousers
-
-ZLIB_CONFIGURE_WITH=	zlib
 
 INFO=		gnutls gnutls-guile
 
