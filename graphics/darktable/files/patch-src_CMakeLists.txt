@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2017-01-27 11:03:43 UTC
+--- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -257,7 +257,7 @@ if(USE_OPENJPEG)
+@@ -336,7 +336,7 @@ if(USE_OPENJPEG)
      add_definitions("-DHAVE_OPENJPEG")
      list(APPEND SOURCES "common/imageio_j2k.c")
  
@@ -9,25 +9,3 @@
      list(APPEND LIBS ${OpenJPEG_LIBRARIES})
    endif(OpenJPEG_FOUND)
  endif(USE_OPENJPEG)
-@@ -418,8 +418,9 @@ if(NOT CUSTOM_CFLAGS)
-   #-g MUST be set for ALL builds, or there will be no support for them when bugs happen
-   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${MARCH} ${DT_REQ_INSTRUCTIONS} -g")
-   set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2")
--  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -ffast-math -fno-finite-math-only")
-+  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3")
-   if(CMAKE_COMPILER_IS_GNUCC)
-+    set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -ffast-math -fno-finite-math-only")
-     if(BUILD_SSE2_CODEPATHS)
-       set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mfpmath=sse")
-     endif()
-@@ -432,8 +433,9 @@ if(NOT CUSTOM_CFLAGS)
- 
-   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${MARCH} ${DT_REQ_INSTRUCTIONS} -g")
-   set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -O2")
--  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -ffast-math -fno-finite-math-only")
-+  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
-   if(CMAKE_COMPILER_IS_GNUCXX)
-+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -ffast-math -fno-finite-math-only")
-     if(BUILD_SSE2_CODEPATHS)
-       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mfpmath=sse")
-     endif()

@@ -360,6 +360,7 @@ share/icons/hicolor/scalable/apps/darktable-2.svg
 share/icons/hicolor/scalable/apps/darktable-3.svg
 share/icons/hicolor/scalable/apps/darktable.svg
 %%NLS%%share/locale/ca/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/de/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/es/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/darktable.mo
