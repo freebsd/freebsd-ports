@@ -11,6 +11,7 @@ COMMENT=	PostScript and PDF interpreter
 
 LICENSE=	AGPLv3
 
+BUILD_DEPENDS=	jbig2dec>=0.16:graphics/jbig2dec
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libidn.so:dns/libidn \
