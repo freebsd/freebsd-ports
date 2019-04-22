@@ -31,8 +31,6 @@ PLIST_FILES=	sbin/wpa_gui \
 		share/icons/hicolor/scalable/apps/wpa_gui.svgz \
 		man/man8/wpa_gui.8.gz
 WRKSRC_SUBDIR=	wpa_supplicant
-SUB_FILES=	pkg-message
-SUB_LIST=	LOCALBASE=${LOCALBASE}
 
 OPTIONS_DEFINE=	DEBUG NLS
 
