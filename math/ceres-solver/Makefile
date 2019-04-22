@@ -52,8 +52,10 @@ GFLAGS_CMAKE_BOOL=	GFLAGS
 
 OPENMP_USES=		compiler:openmp
 OPENMP_CMAKE_BOOL=	OPENMP
+.if !exists(/usr/include/omp.h)
 # XXX ports/199603 + ports/210337
 OPENMP_VARS=		OPENMP=gcc-
+.endif
 
 SCHUR_DESC=		Fixed-size schur specializations
 SCHUR_CMAKE_BOOL=	SCHUR_SPECIALIZATIONS
