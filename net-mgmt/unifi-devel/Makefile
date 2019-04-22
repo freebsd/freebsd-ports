@@ -14,12 +14,12 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bryce@bryce.net
 COMMENT=	UniFi Controller development release
 
-#LICENSE=	EULA
-#LICENSE_NAME=	End User License Agreement
-#LICENSE_TEXT=	${RESTRICTED}
-#LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell no-auto-accept
+LICENSE=	EULA
+LICENSE_NAME=	End User License Agreement
+LICENSE_TEXT=	${RESTRICTED}
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell no-auto-accept
 
-#RESTRICTED=	License restrictions, see https://www.ubnt.com/eula/
+RESTRICTED=	License restrictions, see https://www.ubnt.com/eula/
 
 RUN_DEPENDS=	mongodb36>0:databases/mongodb36 \
 		snappyjava>0:archivers/snappy-java
