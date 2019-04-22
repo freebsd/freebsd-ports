@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test2-Plugin-NoWarnings
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DROLSKY
@@ -13,11 +13,19 @@ COMMENT=	Fail if tests warn
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Test-Simple>=1.302015:devel/p5-Test-Simple \
+TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Test2-Suite>=0:devel/p5-Test2-Suite
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+NO_ARCH=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502800
+BUILD_DEPENDS+=	p5-Test-Simple>=1.302096:devel/p5-Test-Simple
+RUN_DEPENDS+=	p5-Test-Simple>=1.302096:devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
