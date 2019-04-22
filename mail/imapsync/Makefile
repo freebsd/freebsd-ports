@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imapsync
-PORTVERSION=	1.836
+PORTVERSION=	1.882
 DISTVERSIONPREFIX=	imapsync-
 CATEGORIES=	mail perl5
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	p5-Mail-IMAPClient>0:mail/p5-Mail-IMAPClient \
 		p5-Term-ReadKey>0:devel/p5-Term-ReadKey \
 		p5-IO-Tee>0:devel/p5-IO-Tee \
 		p5-Readonly>0:devel/p5-Readonly \
+		p5-Regexp-Common>0:textproc/p5-Regexp-Common \
 		p5-IO-Socket-SSL>0:security/p5-IO-Socket-SSL \
 		p5-Unicode-String>0:converters/p5-Unicode-String \
 		p5-File-Copy-Recursive>0:devel/p5-File-Copy-Recursive \
