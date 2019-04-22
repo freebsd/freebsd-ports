@@ -256,7 +256,7 @@ post-patch:
 
 post-patch-ALSA-off:
 	@${REINPLACE_CMD} '/EXTRA_SOUND_JNI_LIBS += jsoundalsa/d' \
-		${WRKSRC}/jdk/make/lib/SoundLibraries.gmk
+	    ${WRKSRC}/jdk/make/lib/SoundLibraries.gmk
 
 post-build:
 .if !defined(BUILD_JRE)
