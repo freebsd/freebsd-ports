@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.33
-PORTREVISION=	3
+PORTVERSION=	0.34
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/ncmpc/0/
 
