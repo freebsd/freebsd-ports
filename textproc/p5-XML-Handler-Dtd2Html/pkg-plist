@@ -1,5 +1,4 @@
 bin/dtd2html.pl
-%%PERL5_MAN3%%/XML::Handler::Dtd2Html.3.gz
 %%SITE_PERL%%/XML/Handler/Dtd2Html.pm
 %%SITE_PERL%%/XML/Handler/Dtd2Html/book.css
 %%SITE_PERL%%/XML/Handler/Dtd2Html/en/_desc.tmpl
@@ -41,3 +40,4 @@ bin/dtd2html.pl
 %%SITE_PERL%%/XML/Handler/Dtd2Html/simple.css
 %%SITE_PERL%%/XML/Handler/Dtd2Html/up.png
 %%PERL5_MAN1%%/dtd2html.pl.1.gz
+%%PERL5_MAN3%%/XML::Handler::Dtd2Html.3.gz
