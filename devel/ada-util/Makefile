@@ -12,6 +12,9 @@ COMMENT=	Utility library for Ada 2005 applications
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_FreeBSD_12=	'struct stat' has no member named 'st_lspare'
+BROKEN_FreeBSD_13=	'struct stat' has no member named 'st_lspare'
+
 BUILD_DEPENDS=	gprbuild:devel/gprbuild \
 		${LOCALBASE}/lib/gnat/ahven.gpr:devel/ahven
 LIB_DEPENDS=	libcurl.so:ftp/curl
