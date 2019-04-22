@@ -1,6 +1,0 @@
-======================================================================
-You installed wpa_gui: Qt frontend for wpa_supplicant.
-
-To use matching versions of wpa_gui and wpa_supplicant, install
-security/wpa_supplicant.
-======================================================================
