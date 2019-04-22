@@ -3,7 +3,7 @@
 
 PORTNAME=	lv2
 PORTVERSION=	1.14.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://lv2plug.in/spec/
 
@@ -19,10 +19,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rdflib>0:textproc/py-rdflib@${PY_FLAVOR}
 
-CONFLICTS_INSTALL=	lv2core
+USES=		python:-3.6 shebangfix tar:bzip2 waf
 
-USES=		python shebangfix tar:bzip2 waf
 SHEBANG_FILES=	lv2specgen/lv2specgen.py
+
+CONFLICTS_INSTALL=	lv2core
 
 OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES
 OPTIONS_SUB=	yes
@@ -34,9 +35,11 @@ DOXYGEN_PORTDOCS=	*
 DOXYGEN_IMPLIES=	DOCS
 
 EXAMPLES_CONFIGURE_OFF=	--no-plugins
-EXAMPLES_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
-EXAMPLES_USES=		pkgconfig
-EXAMPLES_USE=		GNOME=cairo,gtk20
+EXAMPLES_LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
+			libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2
+EXAMPLES_USES=		pkgconfig gnome
+EXAMPLES_USE=		GNOME=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
 EXAMPLES_CONFIGURE_ENV=	CC='${CC} -Wl,--as-needed' # Gtk deps
 
 post-install:
