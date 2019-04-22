@@ -49,8 +49,10 @@ DOCS_PORTDOCS=		*
 
 OPENMP_USES=		compiler:openmp
 OPENMP_CMAKE_BOOL=	OPENMP_ENABLED
+.if !exists(/usr/include/omp.h)
 # XXX ports/199603 + ports/210337
 OPENMP_VARS=		OPENMP=gcc-
+.endif
 
 SIMD_CMAKE_BOOL=	SIMD_ENABLED
 
