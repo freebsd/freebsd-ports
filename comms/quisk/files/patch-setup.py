@@ -1,9 +1,14 @@
 --- setup.py.orig	2018-11-22 14:56:57 UTC
 +++ setup.py
-@@ -18,18 +18,18 @@ if sys.platform != "win32":
-   except ImportError:
-     print ("Please install the package python-wxgtk3.0 or later")
-     missing = True
+@@ -13,23 +13,23 @@ fp.close()
+ 
+ if sys.platform != "win32":
+   missing = False
+-  try:
+-    import wx
+-  except ImportError:
+-    print ("Please install the package python-wxgtk3.0 or later")
+-    missing = True
 -  if not os.path.isfile("/usr/include/fftw3.h"):
 -    print ("Please install the package libfftw3-dev")
 -    missing = True
@@ -16,6 +21,11 @@
 -  if not os.path.isdir("/usr/include/pulse"):
 -    print ("please install the package libpulse-dev")
 -    missing = True
++#  try:
++#    import wx
++#  except ImportError:
++#    print ("Please install the package python-wxgtk3.0 or later")
++#    missing = True
 +#  if not os.path.isfile("/usr/include/fftw3.h"):
 +#    print ("Please install the package libfftw3-dev")
 +#    missing = True
