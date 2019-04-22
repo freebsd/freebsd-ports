@@ -190,6 +190,7 @@ PORTREVISION=	1
     SUBDIR += gonepass
     SUBDIR += gopass
     SUBDIR += gorilla
+    SUBDIR += gost-engine
     SUBDIR += govpn
     SUBDIR += gpa
     SUBDIR += gpgdir

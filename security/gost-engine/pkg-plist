@@ -1,0 +1,8 @@
+bin/gost12sum
+bin/gostsum
+lib/engines-1.1/libgost.so
+%%PORTDOCS%%man/man1/gost12sum.1.gz
+%%PORTDOCS%%man/man1/gostsum.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
+%%PORTDOCS%%%%DOCSDIR%%/README.gost
+%%PORTDOCS%%%%DOCSDIR%%/README.md
