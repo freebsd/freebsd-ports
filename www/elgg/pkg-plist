@@ -10,6 +10,7 @@
 %%WWWDIR%%/mod/activity/languages/en.php
 %%WWWDIR%%/mod/activity/languages/fr.php
 %%WWWDIR%%/mod/activity/languages/nl.php
+%%WWWDIR%%/mod/activity/languages/ro_ro.php
 %%WWWDIR%%/mod/activity/manifest.xml
 %%WWWDIR%%/mod/activity/start.php
 %%WWWDIR%%/mod/activity/tests/phpunit/unit/Elgg/Activity/TranslatorUnitTest.php
@@ -51,6 +52,7 @@
 %%WWWDIR%%/mod/blog/languages/ko.php
 %%WWWDIR%%/mod/blog/languages/nl.php
 %%WWWDIR%%/mod/blog/languages/pl.php
+%%WWWDIR%%/mod/blog/languages/ro_ro.php
 %%WWWDIR%%/mod/blog/languages/ru.php
 %%WWWDIR%%/mod/blog/languages/sr.php
 %%WWWDIR%%/mod/blog/languages/tr.php
@@ -157,6 +159,7 @@
 %%WWWDIR%%/mod/ckeditor/languages/ko.php
 %%WWWDIR%%/mod/ckeditor/languages/nl.php
 %%WWWDIR%%/mod/ckeditor/languages/pl.php
+%%WWWDIR%%/mod/ckeditor/languages/ro_ro.php
 %%WWWDIR%%/mod/ckeditor/languages/ru.php
 %%WWWDIR%%/mod/ckeditor/languages/tr.php
 %%WWWDIR%%/mod/ckeditor/manifest.xml
@@ -381,6 +384,7 @@
 %%WWWDIR%%/mod/embed/languages/ko.php
 %%WWWDIR%%/mod/embed/languages/nl.php
 %%WWWDIR%%/mod/embed/languages/pl.php
+%%WWWDIR%%/mod/embed/languages/ro_ro.php
 %%WWWDIR%%/mod/embed/languages/ru.php
 %%WWWDIR%%/mod/embed/languages/tr.php
 %%WWWDIR%%/mod/embed/manifest.xml
@@ -13249,6 +13253,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/languages/en.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/languages/fr.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/languages/nl.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/activity/languages/ro_ro.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/manifest.xml
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/start.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/activity/tests/phpunit/unit/Elgg/Activity/TranslatorUnitTest.php
@@ -13290,6 +13295,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/ko.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/nl.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/pl.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/ro_ro.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/ru.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/sr.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/blog/languages/tr.php
@@ -13396,6 +13402,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/languages/ko.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/languages/nl.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/languages/pl.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/languages/ro_ro.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/languages/ru.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/languages/tr.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/manifest.xml
@@ -13620,6 +13627,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/embed/languages/ko.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/embed/languages/nl.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/embed/languages/pl.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/embed/languages/ro_ro.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/embed/languages/ru.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/embed/languages/tr.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/embed/manifest.xml
