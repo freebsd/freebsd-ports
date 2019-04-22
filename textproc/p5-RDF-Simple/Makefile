@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RDF-Simple
-PORTVERSION=	0.417
+PORTVERSION=	0.419
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,8 +23,9 @@ RUN_DEPENDS=	p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
 TEST_DEPENDS=	p5-IO-CaptureOutput>0:devel/p5-IO-CaptureOutput \
 		p5-Test-File>=0:devel/p5-Test-File
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
