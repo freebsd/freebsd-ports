@@ -14,6 +14,8 @@ LICENSE=	LGPL21
 
 WRKSRC=		${WRKDIR}/ccl
 
+BROKEN_FreeBSD_12=	SHF_MERGE section size must be a multiple of sh_entsize
+BROKEN_FreeBSD_13=	SHF_MERGE section size must be a multiple of sh_entsize
 ONLY_FOR_ARCHS=	i386 amd64
 
 CCL_DIRECTORY=	${PREFIX}/lib/ccl
