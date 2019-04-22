@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	zxfer
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	allanjude
 
 MAINTAINER=	ports@scaleengine.com
 COMMENT=	Easily and reliably transfer ZFS filesystems
 
 LICENSE=	BSD2CLAUSE
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	allanjude
 
 NO_BUILD=	yes
 
@@ -21,6 +22,9 @@ RSYNC_DESC=		Enable RSYNC Support
 RSYNC_RUN_DEPENDS=	rsync:net/rsync
 
 .include <bsd.port.options.mk>
+
+PLIST_FILES=	man/man8/zxfer.8.gz \
+		sbin/zxfer
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zxfer ${STAGEDIR}${PREFIX}/sbin
