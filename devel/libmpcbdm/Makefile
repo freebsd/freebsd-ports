@@ -12,14 +12,17 @@ DISTNAME=	mpc8xx-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone library to control various mpc8xx boards
 
-WRKSRC=		${WRKDIR}/libmpc8xx
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-ONLY_FOR_ARCHS=	amd64 i386
+WRKSRC=		${WRKDIR}/libmpc8xx
 
 post-patch:
 	@${REINPLACE_CMD} -e \
