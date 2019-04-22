@@ -2,6 +2,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	4.6
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v4/ \
 		http://www2.us.squid-cache.org/Versions/v4/ \
@@ -137,15 +138,21 @@ GSSAPI_NONE_CONFIGURE_ON=	--without-heimdal-krb5 \
 				--without-gss
 
 GSSAPI_BASE_USES=		gssapi
-GSSAPI_BASE_CONFIGURE_ON=	--with-heimdal-krb5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_BASE_CONFIGURE_ON=	--with-heimdal-krb5=${GSSAPIBASEDIR} \
+				${GSSAPI_CONFIGURE_ARGS} \
+				krb5_config=${GSSAPIBASEDIR}/bin/krb5-config
 GSSAPI_BASE_PLIST_SUB=		AUTH_KERB=""
 
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
-GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-heimdal-krb5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-heimdal-krb5=${GSSAPIBASEDIR} \
+				${GSSAPI_CONFIGURE_ARGS} \
+				krb5_config=${GSSAPIBASEDIR}/bin/krb5-config
 GSSAPI_HEIMDAL_PLIST_SUB=	AUTH_KERB=""
 
 GSSAPI_MIT_USES=		gssapi:mit
-GSSAPI_MIT_CONFIGURE_ON=	--with-mit-krb5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+GSSAPI_MIT_CONFIGURE_ON=	--with-mit-krb5=${GSSAPIBASEDIR} \
+				${GSSAPI_CONFIGURE_ARGS} \
+				krb5_config=${GSSAPIBASEDIR}/bin/krb5-config
 GSSAPI_MIT_PLIST_SUB=		AUTH_KERB=""
 
 ARP_ACL_DESC=		ARP/MAC/EUI based authentification
