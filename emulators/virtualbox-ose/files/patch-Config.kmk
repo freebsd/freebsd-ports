@@ -1,4 +1,4 @@
---- Config.kmk.orig	2019-01-25 18:24:01 UTC
+--- Config.kmk.orig	2019-04-12 15:47:38 UTC
 +++ Config.kmk
 @@ -445,11 +445,11 @@ ifn1of ($(KBUILD_TARGET), win darwin)
   # Enable OSS audio support.
@@ -57,24 +57,6 @@
    VBOX_WITH_DOCS=
    VBOX_WITH_DOCS_PACKING=
   endif
-@@ -1176,13 +1172,13 @@ ifdef VBOX_OSE
-  ifn1of ($(KBUILD_TARGET), darwin linux solaris win)
-   VBOX_WITH_INSTALLER=
-  endif
-+ # Undefine codec libraries which are not needed.
-+ VBOX_WITH_LIBOPUS=
-+ # Disable video recording (with audio support).
-+ VBOX_WITH_AUDIO_VIDEOREC=
-  if1of ($(KBUILD_TARGET), win)
--  # Undefine codec libraries which are not needed.
-   VBOX_WITH_LIBVPX=
--  VBOX_WITH_LIBOPUS=
--  # Disable video recording (with audio support).
-   VBOX_WITH_VIDEOREC=
--  VBOX_WITH_AUDIO_VIDEOREC=
-  endif
-  # branding
-  VBOX_BRAND_LICENSE_HTML             := $(PATH_ROOT)/doc/License-gpl-2.0.html
 @@ -4556,7 +4552,7 @@ TEMPLATE_VBOXR0DRV_CFLAGS              =  \
  	-O2 -ffreestanding -fno-strict-aliasing -fno-common -finline-limit=8000 \
  	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
