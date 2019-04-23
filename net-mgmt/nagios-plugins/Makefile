@@ -3,7 +3,7 @@
 
 PORTNAME=	nagios-plugins
 PORTVERSION=	2.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nagios-plugins.org/download/ \
@@ -20,11 +20,9 @@ CONFLICTS_INSTALL=	monitoring-plugins-*
 USES=		charsetfix gmake perl5 libtool ssl
 USE_SUBMAKE=	yes
 
-BIND_VERS=11 12 14
-
 OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 NLS DBI EXTRAOPTS SSH_PORTABLE
 OPTIONS_SINGLE=	DNS
-OPTIONS_SINGLE_DNS=	DNS_BASE DNS_BINDTOOLS ${BIND_VERS:S/^/DNS_BIND9/}
+OPTIONS_SINGLE_DNS=	DNS_BASE DNS_BINDTOOLS
 OPTIONS_DEFAULT=EXTRAOPTS DNS_BASE
 OPTIONS_SUB=	yes
 
@@ -43,9 +41,6 @@ DNS_DESC=	Configuration of check_dig and check_dns (see help)
 
 DNS_BASE_DESC=	>= 10 means drill for check_dig and no check_dns
 DNS_BINDTOOLS_DESC=	Use dig and nslookup from dns/bind-tools
-.for v in ${BIND_VERS}
-DNS_BIND9${v}_DESC=	Use dig and nslookup from dns/bind9${v}
-.endfor
 
 EXTRAOPTS_CONFIGURE_ENABLE=	extra-opts
 
@@ -123,11 +118,6 @@ DBI_CONFIGURE_WITH=	dbi
 DNS_BINDTOOLS_BUILD_DEPENDS=	${LOCALBASE}/bin/dig:dns/bind-tools
 DNS_BINDTOOLS_CONFIGURE_ON=	--with-dig-command=${LOCALBASE}/bin/dig \
 				--with-nslookup-command=${LOCALBASE}/bin/nslookup
-.for v in ${BIND_VERS}
-DNS_BIND9${v}_BUILD_DEPENDS=	${LOCALBASE}/bin/dig:dns/bind9${v}
-DNS_BIND9${v}_CONFIGURE_ON=	--with-dig-command=${LOCALBASE}/bin/dig \
-				--with-nslookup-command=${LOCALBASE}/bin/nslookup
-.endfor
 
 SSH_PORTABLE_BUILD_DEPENDS=	${LOCALBASE}/bin/ssh:security/openssh-portable
 SSH_PORTABLE_RUN_DEPENDS:=	${SSH_PORTABLE_BUILD_DEPENDS}
@@ -141,10 +131,6 @@ CONFIGURE_ARGS+=--with-dig-command=/usr/bin/drill \
 		ac_cv_path_PATH_TO_NSLOOKUP=
 PLIST_SUB+=	CHECK_DNS="@comment "
 .else
-.  if ${PORT_OPTIONS:MDNS_BASE}
-CONFIGURE_ARGS+=	--with-dig-command=/usr/bin/dig \
-			--with-nslookup-command=/usr/bin/nslookup
-.  endif
 PLIST_SUB+=	CHECK_DNS=""
 .endif
 

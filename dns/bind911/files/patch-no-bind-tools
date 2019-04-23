@@ -1,0 +1,55 @@
+Exclude the "tools" from building and installing.
+
+--- bin/Makefile.in.orig	2019-02-27 23:28:15 UTC
++++ bin/Makefile.in
+@@ -11,7 +11,7 @@ srcdir =	@srcdir@
+ VPATH =		@srcdir@
+ top_srcdir =	@top_srcdir@
+ 
+-SUBDIRS =	named rndc dig delv dnssec tools nsupdate check confgen \
++SUBDIRS =	named rndc tools check confgen \
+ 		@NZD_TOOLS@ @PYTHON_TOOLS@ @PKCS11_TOOLS@ tests
+ TARGETS =
+ 
+--- bin/tools/Makefile.in.orig	2019-02-27 23:28:15 UTC
++++ bin/tools/Makefile.in
+@@ -42,10 +42,7 @@ SUBDIRS =
+ 
+ DNSTAPTARGETS =	dnstap-read@EXEEXT@
+ NZDTARGETS =	named-nzd2nzf@EXEEXT@
+-TARGETS =	arpaname@EXEEXT@ named-journalprint@EXEEXT@ \
+-		named-rrchecker@EXEEXT@  nsec3hash@EXEEXT@ \
+-		genrandom@EXEEXT@ isc-hmac-fixup@EXEEXT@ mdig@EXEEXT@ \
+-		@DNSTAPTARGETS@ @NZDTARGETS@
++TARGETS =	@DNSTAPTARGETS@ @NZDTARGETS@
+ 
+ DNSTAPSRCS  =	dnstap-read.c
+ NZDSRCS  =	named-nzd2nzf.c
+@@ -130,27 +127,6 @@ dnstap:
+ 	${INSTALL_DATA} ${srcdir}/dnstap-read.1 ${DESTDIR}${mandir}/man1
+ 
+ install:: ${TARGETS} installdirs @DNSTAP@ @NZD_TOOLS@
+-	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} arpaname@EXEEXT@ \
+-		${DESTDIR}${bindir}
+-	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} named-journalprint@EXEEXT@ \
+-		${DESTDIR}${sbindir}
+-	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} named-rrchecker@EXEEXT@ \
+-		${DESTDIR}${bindir}
+-	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} nsec3hash@EXEEXT@ \
+-		${DESTDIR}${sbindir}
+-	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} genrandom@EXEEXT@ \
+-		${DESTDIR}${sbindir}
+-	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} isc-hmac-fixup@EXEEXT@ \
+-		${DESTDIR}${sbindir}
+-	${LIBTOOL_MODE_INSTALL} ${INSTALL_PROGRAM} mdig@EXEEXT@ \
+-		${DESTDIR}${bindir}
+-	${INSTALL_DATA} ${srcdir}/arpaname.1 ${DESTDIR}${mandir}/man1
+-	${INSTALL_DATA} ${srcdir}/isc-hmac-fixup.8 ${DESTDIR}${mandir}/man8
+-	${INSTALL_DATA} ${srcdir}/named-journalprint.8 ${DESTDIR}${mandir}/man8
+-	${INSTALL_DATA} ${srcdir}/named-rrchecker.1 ${DESTDIR}${mandir}/man1
+-	${INSTALL_DATA} ${srcdir}/nsec3hash.8 ${DESTDIR}${mandir}/man8
+-	${INSTALL_DATA} ${srcdir}/genrandom.8 ${DESTDIR}${mandir}/man8
+-	${INSTALL_DATA} ${srcdir}/mdig.1 ${DESTDIR}${mandir}/man1
+ 
+ uninstall::
+ 	rm -f ${DESTDIR}${mandir}/man1/mdig.1
