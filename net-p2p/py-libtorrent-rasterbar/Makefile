@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/../../COPYING
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		${PY_BOOST}
 
-USES=		iconv localbase python
+USES=		compiler:c11 iconv localbase python
 USE_PYTHON=	distutils autoplist
 
 CFLAGS+=	-DTORRENT_DISABLE_LOGGING # undefined symbol: https://github.com/arvidn/libtorrent/issues/3331
