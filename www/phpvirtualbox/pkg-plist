@@ -221,6 +221,7 @@
 %%WWWDIR%%/images/vbox/os_linux24_64.png
 %%WWWDIR%%/images/vbox/os_linux26.png
 %%WWWDIR%%/images/vbox/os_linux26_64.png
+%%WWWDIR%%/images/vbox/os_linux_64.png
 %%WWWDIR%%/images/vbox/os_linux_other.png
 %%WWWDIR%%/images/vbox/os_macosx.png
 %%WWWDIR%%/images/vbox/os_macosx_64.png
@@ -259,6 +260,7 @@
 %%WWWDIR%%/images/vbox/os_win10_64.png
 %%WWWDIR%%/images/vbox/os_win2k.png
 %%WWWDIR%%/images/vbox/os_win2k12_64.png
+%%WWWDIR%%/images/vbox/os_win2k16_64.png
 %%WWWDIR%%/images/vbox/os_win2k3.png
 %%WWWDIR%%/images/vbox/os_win2k3_64.png
 %%WWWDIR%%/images/vbox/os_win2k8.png
@@ -273,6 +275,7 @@
 %%WWWDIR%%/images/vbox/os_win95.png
 %%WWWDIR%%/images/vbox/os_win98.png
 %%WWWDIR%%/images/vbox/os_win_other.png
+%%WWWDIR%%/images/vbox/os_win_other_64.png
 %%WWWDIR%%/images/vbox/os_winme.png
 %%WWWDIR%%/images/vbox/os_winnt4.png
 %%WWWDIR%%/images/vbox/os_winvista.png
