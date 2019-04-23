@@ -1,3 +1,5 @@
+- Allow overriding PREFIX?
+
 --- cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm.orig	2017-06-11 14:35:46 UTC
 +++ cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm
 @@ -2031,13 +2031,14 @@ sub init_INSTALL_from_PREFIX {

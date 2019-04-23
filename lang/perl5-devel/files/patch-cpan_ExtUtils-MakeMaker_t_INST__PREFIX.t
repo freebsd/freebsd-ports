@@ -1,3 +1,5 @@
+- Allow overriding PREFIX? (fix test)
+
 --- cpan/ExtUtils-MakeMaker/t/INST_PREFIX.t.orig	2016-05-29 22:48:24 UTC
 +++ cpan/ExtUtils-MakeMaker/t/INST_PREFIX.t
 @@ -10,7 +10,7 @@ BEGIN {
