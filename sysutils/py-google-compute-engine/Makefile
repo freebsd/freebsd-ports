@@ -2,7 +2,7 @@
 
 PORTNAME=	google-compute-engine
 DISTVERSION=	2.8.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,16 +18,23 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto@${PY_FLAVOR} \
 		google_oslogin_control:sysutils/google-compute-engine-oslogin \
 		sudo:security/sudo
 
+.if ${FLAVOR:Upy36:Mpy3*}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}distro>0:sysutils/py-distro@${PY_FLAVOR}
+.endif
+
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
+WRKSRC_SUBDIR=  packages/python-google-compute-engine
+
 NO_ARCH=	yes
-SHEBANG_FILES=	scripts/google_set_multiqueue scripts/google_optimize_local_ssd
+SHEBANG_FILES=	../google-compute-engine/src/usr/bin/google_set_multiqueue \
+		../google-compute-engine/src/usr/bin/google_optimize_local_ssd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	GoogleCloudPlatform
 GH_PROJECT=	compute-image-packages
-GH_TAGNAME=	20190124
+GH_TAGNAME=	20190416
 
 USE_RC_SUBR=	google_instance_setup \
 		google_accounts_daemon \
