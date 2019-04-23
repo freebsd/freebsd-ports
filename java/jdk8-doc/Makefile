@@ -15,7 +15,7 @@ RESTRICTED=	This documentation is under license and export control.
 
 WRKSRC=		${WRKDIR}/docs
 JDK_VERSION=	8
-JDK_UPDATE_VER=	192
+JDK_UPDATE_VER=	212
 DOWNLOAD_URL=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 USES=		zip
