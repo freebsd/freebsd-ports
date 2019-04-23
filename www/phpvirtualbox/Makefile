@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpvirtualbox
-DISTVERSION=	5.2-0
-PORTREVISION=	1
+DISTVERSION=	5.2-1
 CATEGORIES=	www
 
 MAINTAINER=	vbox@FreeBSD.org
@@ -11,10 +10,11 @@ COMMENT=	AJAX Web Interface for VirtualBox
 
 LICENSE=	GPLv3
 
-NO_ARCH=	yes
-NO_BUILD=	yes
 USES=		dos2unix php
 USE_PHP=	json session simplexml soap xml
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 USE_GITHUB=	yes
 
