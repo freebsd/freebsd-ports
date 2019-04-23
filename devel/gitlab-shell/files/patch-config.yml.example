@@ -5,7 +5,7 @@
  
  # File used as authorized_keys for gitlab user
 -auth_file: "/home/git/.ssh/authorized_keys"
-+auth_file: "/usr/home/git/.ssh/authorized_keys"
++auth_file: "/usr/local/git/.ssh/authorized_keys"
  
  # File that contains the secret key for verifying access to GitLab.
  # Default is .gitlab_shell_secret in the gitlab-shell directory.
