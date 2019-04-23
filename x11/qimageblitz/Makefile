@@ -11,7 +11,7 @@ COMMENT=	Graphical effects and filters library for Qt5
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake qt:5
+USES=		cmake compiler:c++11-lang qt:5
 USE_LDCONFIG=	yes
 USE_QT=		core gui widgets qmake_build buildtools_build
 USE_CXXSTD=	gnu++98
