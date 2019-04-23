@@ -1,0 +1,19 @@
+HTTP::Simple is a wrapper of HTTP::Tiny that provides simplified functions for
+performing HTTP requests in a similar manner to LWP::Simple, but with slightly
+more useful error handling. For full control of the request process and response
+handling, use HTTP::Tiny directly.
+
+IO::Socket::SSL is required for HTTPS requests with HTTP::Tiny.
+
+Request methods that return the body content of the response will return a byte
+string suitable for directly printing, but that may need to be decoded for text
+operations.
+
+The HTTP::Tiny object used by these functions to make requests can be accessed
+as $HTTP::Simple::UA (for example, to configure the timeout, or replace it with
+a compatible object like HTTP::Tinyish).
+
+The JSON encoder used by the JSON functions defaults to a JSON::PP instance, and
+can be accessed as $HTTP::Simple::JSON.
+
+WWW: https://metacpan.org/release/HTTP-Simple
