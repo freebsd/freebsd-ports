@@ -12,10 +12,10 @@ COMMENT=	Library for the MaxMind DB file format used for GeoIP2
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake libtool
+USES=		compiler:c11 gmake libtool
 
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
