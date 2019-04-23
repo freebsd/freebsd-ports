@@ -1424,6 +1424,7 @@
     SUBDIR += tcpxd
     SUBDIR += tcpxtract
     SUBDIR += tdetect
+    SUBDIR += termshark
     SUBDIR += tftpgrab
     SUBDIR += thcrut
     SUBDIR += throttled

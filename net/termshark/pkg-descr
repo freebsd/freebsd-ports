@@ -1,0 +1,6 @@
+Termshark is a simple terminal user-interface for tshark with the ability to:
+* Read pcap files or sniff live interfaces.
+* Use Wireshark's display filters.
+* Copy packet data to your clipboard.
+
+WWW: https://termshark.io/
