@@ -3,7 +3,7 @@
 
 PORTNAME=	ssvnc
 PORTVERSION=	1.0.29
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net security
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.src.tar.gz
@@ -35,11 +35,6 @@ ULTRAFTP_USE=		JAVA=yes
 ULTRAFTP_MAKE_ARGS_OFF=	JSRC=""
 
 .include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'struct evp_cipher_ctx_st')
-BROKEN_FreeBSD_13=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'struct evp_cipher_ctx_st')
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|netstat -ant|netstat -an|' \
