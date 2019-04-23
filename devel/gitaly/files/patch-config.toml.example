@@ -24,7 +24,7 @@
  [[storage]]
  name = "default"
 -path = "/home/git/repositories"
-+path = "/usr/home/git/repositories"
++path = "/usr/local/git/repositories"
  
  # # You can optionally configure more storages for this Gitaly instance to serve up
  #

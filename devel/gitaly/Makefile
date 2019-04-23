@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	1.27.1
+DISTVERSION=	1.33.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -12,23 +12,23 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # define dependencies that are required for build and run under MY_DEPENDS
-MY_DEPENDS=	git>=2.18:devel/git \
+MY_DEPENDS=	git>=2.21:devel/git \
 		rubygem-bundler>=1.16.5:sysutils/rubygem-bundler \
 		rubygem-rugged>=0.28.0:devel/rubygem-rugged \
 		rubygem-github-linguist>=6.1:textproc/rubygem-github-linguist \
-		rubygem-gitlab-markup>=1.6.5:textproc/rubygem-gitlab-markup \
-		rubygem-gitaly-proto>=1.13.0:net/rubygem-gitaly-proto \
+		rubygem-gitlab-markup>=1.7.0:textproc/rubygem-gitlab-markup \
+		rubygem-gitaly-proto>=1.19.0:net/rubygem-gitaly-proto \
 		rubygem-activesupport50>=5.0.2:devel/rubygem-activesupport50 \
 		rubygem-rdoc>=6.0:devel/rubygem-rdoc \
-		rubygem-gitlab-gollum-lib>=4.2:www/rubygem-gitlab-gollum-lib \
-		rubygem-gitlab-gollum-rugged_adapter>=0.4.4:www/rubygem-gitlab-gollum-rugged_adapter \
+		rubygem-gitlab-gollum-lib>=4.2.7.7:www/rubygem-gitlab-gollum-lib \
+		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.2:www/rubygem-gitlab-gollum-rugged_adapter \
 		rubygem-grpc>=1.15.0:net/rubygem-grpc \
-		rubygem-sentry-raven>=2.7.2:devel/rubygem-sentry-raven \
+		rubygem-sentry-raven>=2.9.0:devel/rubygem-sentry-raven \
 		rubygem-faraday>=0.12:www/rubygem-faraday \
 		rubygem-rbtrace>0:devel/rubygem-rbtrace \
 		rubygem-licensee8>=8.9.0:devel/rubygem-licensee8 \
 		rubygem-google-protobuf>=3.6:devel/rubygem-google-protobuf
-BUILD_DEPENDS=	go>=1.10:lang/go \
+BUILD_DEPENDS=	go>=1.11:lang/go \
 		gem:devel/ruby-gems \
 		${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS} \
@@ -40,7 +40,7 @@ USE_RUBY=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/tags
-GL_COMMIT=	a3648fa4ba39e937093c10802ddc26aa00c58e9b
+GL_COMMIT=	800f4ff3272bc519b71cbc7b95d937978d2c53aa
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
