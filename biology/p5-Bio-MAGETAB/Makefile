@@ -3,7 +3,7 @@
 
 PORTNAME=	Bio-MAGETAB
 PORTVERSION=	1.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ COMMENT=	Data model and utility API for the MAGE-TAB format
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-xRUN_DEPENDS=	p5-Date-Manip>=5.44:devel/p5-Date-Manip \
+RUN_DEPENDS=	p5-Date-Manip>=5.44:devel/p5-Date-Manip \
 		p5-DateTime>=0.43.02:devel/p5-DateTime \
 		p5-DateTime-Format-DateManip>=0.04:devel/p5-DateTime-Format-DateManip \
 		p5-Email-Valid>=0.179:mail/p5-Email-Valid \
