@@ -1,6 +1,10 @@
 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv GITLAB vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 Gitlab was installed successfully.
 
+
+!! WARNING: Please make sure you read in UPDATING entry 20190423 !!
+
+
 You now need to set up the various components of Gitlab, so please
 follow the instructions in the guide at:
 
