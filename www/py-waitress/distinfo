@@ -1,3 +1,3 @@
-TIMESTAMP = 1549565190
-SHA256 (waitress-1.2.1.tar.gz) = c369e238bd81ef7d61f04825f06f107c42094de60d13d8de8e71952c7c683dfe
-SIZE (waitress-1.2.1.tar.gz) = 162588
+TIMESTAMP = 1556029612
+SHA256 (waitress-1.3.0.tar.gz) = 4e2a6e6fca56d6d3c279f68a2b2cc9b4798d834ea3c3a9db3e2b76b6d66f4526
+SIZE (waitress-1.3.0.tar.gz) = 163874
