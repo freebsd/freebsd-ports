@@ -3,7 +3,6 @@
 
 PORTNAME=	perl
 DISTVERSION=	${PERL_VERSION}
-PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0 CPAN/../../authors/id/X/XS/XSAWYERX/
 DIST_SUBDIR=	perl

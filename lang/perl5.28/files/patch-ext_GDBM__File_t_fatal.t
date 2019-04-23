@@ -1,6 +1,6 @@
 Those two test fails starting with gdbm 1.15.
 
---- ext/GDBM_File/t/fatal.t.orig	2018-05-21 10:44:04 UTC
+--- ext/GDBM_File/t/fatal.t.orig	2018-11-01 22:07:48 UTC
 +++ ext/GDBM_File/t/fatal.t
 @@ -12,7 +12,7 @@ BEGIN {
      plan(skip_all => "GDBM_File is flaky in $^O")
@@ -11,7 +11,7 @@ Those two test fails starting with gdbm 1.15.
      use_ok('GDBM_File');
  }
  
-@@ -34,16 +34,5 @@ isnt((open $fh, "<&=$fileno"), undef, "d
+@@ -34,16 +34,5 @@ isnt((open $fh, "<&=$fileno"), undef, "dup fileno $fil
      or diag("\$! = $!");
  isnt(close $fh, undef,
       "close fileno $fileno, out from underneath the GDBM_File");

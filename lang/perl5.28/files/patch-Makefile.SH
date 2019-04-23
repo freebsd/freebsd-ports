@@ -1,3 +1,5 @@
+Allow customisation of shrpldflags.
+
 --- Makefile.SH.orig	2015-09-08 05:21:36 UTC
 +++ Makefile.SH
 @@ -40,7 +40,6 @@ esac
