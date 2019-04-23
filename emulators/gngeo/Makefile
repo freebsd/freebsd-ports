@@ -13,6 +13,8 @@ COMMENT=	NeoGeo emulator
 
 LICENSE=	GPLv2
 
+BROKEN_i386=	unknown argument: '-frerun-loop-opt'
+
 USES=		autoreconf compiler:features gmake
 USE_SDL=	image sdl
 USE_GL=		yes
