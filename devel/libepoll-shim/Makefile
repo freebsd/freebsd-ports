@@ -19,7 +19,9 @@ USE_LDCONFIG=	yes
 
 USES=		compiler uidfix
 MAKE_ARGS=	INCSDIR=${PREFIX}/include/libepoll-shim/sys \
-		LIBDIR=${PREFIX}/lib WITHOUT_PROFILE=yes
+		LIBDATADIR=${PREFIX}/libdata \
+		LIBDIR=${PREFIX}/lib \
+		WITHOUT_PROFILE=yes
 
 .include <bsd.port.pre.mk>
 
