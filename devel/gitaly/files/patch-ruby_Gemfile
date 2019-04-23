@@ -1,13 +1,13 @@
---- ruby/Gemfile.orig	2019-03-11 20:46:03 UTC
+--- ruby/Gemfile.orig	2019-04-05 16:17:09 UTC
 +++ ruby/Gemfile
 @@ -8,7 +8,7 @@ gem 'github-linguist', '~> 6.1', require: 'linguist'
- gem 'gitlab-markup', '~> 1.6.5'
- gem 'gitaly-proto', '~> 1.13.0'
+ gem 'gitlab-markup', '~> 1.7.0'
+ gem 'gitaly-proto', '~> 1.19.0'
  gem 'activesupport', '~> 5.0.2'
 -gem 'rdoc', '~> 4.2'
 +gem 'rdoc', '~> 6.0'
- gem 'gitlab-gollum-lib', '~> 4.2', require: false
- gem 'gitlab-gollum-rugged_adapter', '~> 0.4.4', require: false
+ gem 'gitlab-gollum-lib', '~> 4.2.7.7', require: false
+ gem 'gitlab-gollum-rugged_adapter', '~> 0.4.4.2', require: false
  gem 'grpc', '~> 1.15.0'
 @@ -22,17 +22,3 @@ gem 'licensee', '~> 8.9.0'
  
