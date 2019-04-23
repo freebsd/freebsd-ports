@@ -1,6 +1,6 @@
---- Telegram/ThirdParty/libtgvoip/VoIPController.cpp.orig	2018-12-31 01:05:58 UTC
+--- Telegram/ThirdParty/libtgvoip/VoIPController.cpp.orig	2019-04-03 18:20:00 UTC
 +++ Telegram/ThirdParty/libtgvoip/VoIPController.cpp
-@@ -2840,7 +2840,7 @@ static void initMachTimestart() {
+@@ -3048,7 +3048,7 @@ static void initMachTimestart() {
  #endif
  
  double VoIPController::GetCurrentTime(){

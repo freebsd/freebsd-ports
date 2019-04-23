@@ -2,7 +2,7 @@
 
 PORTNAME=	telegram-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.11
+DISTVERSION=	1.6.7
 CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -33,8 +33,8 @@ GH_PROJECT=	tdesktop
 GH_TUPLE=	catchorg:Catch2:5ca44b68:catch/Telegram/ThirdParty/Catch \
 		mapbox:variant:550ac2f:variant/Telegram/ThirdParty/variant \
 		Microsoft:GSL:d846fe5:gsl/Telegram/ThirdParty/GSL \
-		telegramdesktop:libtgvoip:59a975b:libtgvoip/Telegram/ThirdParty/libtgvoip \
-		telegramdesktop:crl:9b7c6b5:crl/Telegram/ThirdParty/crl \
+		telegramdesktop:libtgvoip:e701050:libtgvoip/Telegram/ThirdParty/libtgvoip \
+		telegramdesktop:crl:84072fb:crl/Telegram/ThirdParty/crl \
 		Cyan4973:xxHash:7cc9639:xxhash/Telegram/ThirdParty/xxHash
 USE_GNOME=	glib20
 USE_QT=		core gui imageformats network widgets buildtools_build qmake_build dbus
