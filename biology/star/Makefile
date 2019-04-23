@@ -3,6 +3,7 @@
 PORTNAME=	STAR
 DISTVERSION=	2.7.0f
 CATEGORIES=	biology
+PKGNAMEPREFIX=	rna-
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Spliced Transcripts Alignment to a Reference
