@@ -5,8 +5,16 @@
 #
 # Replace the '*:8080' by the actual virtual host(name)
 # you will be using; and consider enabling SSL. An example 
-# can be fund at e /usr/local/etc/apache24/extra/httpd-ssl.conf
+# can be found at /usr/local/etc/apache24/extra/httpd-ssl.conf
 #
+
+<IfModule !rewrite_module>
+LoadModule rewrite_module libexec/apache24/mod_rewrite.so
+</IfModule>
+
+<IfModule !php7_module>
+LoadModule php7_module        libexec/apache24/libphp7.so
+</IfModule>
 
 Listen *:8080
 <VirtualHost *:8080>
