@@ -3,7 +3,7 @@
 
 PORTNAME=		zkt
 DISTVERSION=		1.1.2
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		dns
 MASTER_SITES=		http://www.hznet.de/dns/zkt/
 
@@ -13,7 +13,7 @@ COMMENT=		Tool to manage keys and signatures for DNSSEC-zones
 LICENSE=		BSD3CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=		dnssec-signzone:dns/bind911
+BUILD_DEPENDS=		dnssec-signzone:dns/bind-tools
 RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 DIR_NAMED_CONF?=	/etc/namedb

@@ -3,7 +3,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX=	911
@@ -16,6 +16,7 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
+RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 
 USES=	cpe libedit
 
@@ -35,10 +36,11 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-readline="-L${LOCALBASE}/lib -ledit" \
 		--with-dlopen=yes \
 		--with-gost=no \
+		--without-python \
 		--sysconfdir=${ETCDIR}
 ETCDIR=		${PREFIX}/etc/namedb
 
-CONFLICTS=	bind-tools bind912 bind913 bind914 bind9-devel
+CONFLICTS=	bind912 bind913 bind914 bind9-devel
 
 SUB_FILES=	pkg-message named.conf
 USE_RC_SUBR=	named
@@ -47,10 +49,10 @@ MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	*
 
-OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE JSON PYTHON \
+OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE JSON \
 			DLZ_FILESYSTEM LMDB RPZ_NSDNAME RPZ_NSIP TCP_FASTOPEN \
 			FILTER_AAAA
-OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON JSON \
+OPTIONS_DEFINE=		IDN LARGE_FILE JSON \
 			FIXED_RRSET SIGCHASE IPV6 THREADS FILTER_AAAA \
 			RPZ_NSIP RPZ_NSDNAME DOCS \
 			MINCACHE PORTREVISION QUERYTRACE LMDB DNSTAP \
@@ -87,7 +89,6 @@ LMDB_DESC=		Use LMDB for zone management
 MINCACHE_DESC=		Use the mincachettl patch
 NATIVE_PKCS11_DESC=	Use PKCS\#11 native API (**READ HELP**)
 PORTREVISION_DESC=	Show PORTREVISION in the version string
-PYTHON_DESC=		Build with Python utilities
 QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 RPZ_NSDNAME_DESC=	Enable RPZ NSDNAME policy records
 RPZ_NSIP_DESC=		Enable RPZ NSIP trigger rules
@@ -156,11 +157,6 @@ MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 
 NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
 NATIVE_PKCS11_IMPLIES=	THREADS
-
-PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=0:devel/py-ply@${PY_FLAVOR}
-PYTHON_CONFIGURE_WITH=	python=${PYTHON_CMD}
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=0:devel/py-ply@${PY_FLAVOR}
-PYTHON_USES=	python
 
 QUERYTRACE_CONFIGURE_ENABLE=	querytrace
 
@@ -250,9 +246,5 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES \
 		${WRKSRC}/HISTORY* ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}
-
-# Can't use USE_PYTHON=autoplist
-post-install-PYTHON-on:
-	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -type f | ${SED} -e 's|${STAGEDIR}||' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
