@@ -1797,9 +1797,9 @@ MAKE_ENV+=		SHELL=${MAKE_SHELL} NO_LINT=YES
 PATCH_DEPENDS+=		${LOCALBASE}/bin/unzip:archivers/unzip
 .endif
 
-# Check the compatibility layer for amd64/ia64
+# Check the compatibility layer for amd64
 
-.if ${ARCH} == "amd64" || ${ARCH} =="ia64"
+.if ${ARCH} == "amd64"
 .if exists(/usr/lib32)
 HAVE_COMPAT_IA32_LIBS?=  YES
 .endif
@@ -1813,7 +1813,7 @@ HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; the
 _EXPORTED_VARS+=	HAVE_COMPAT_IA32_KERN
 
 .if defined(IA32_BINARY_PORT) && ${ARCH} != "i386"
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if ${ARCH} == "amd64"
 .if !defined(HAVE_COMPAT_IA32_KERN)
 IGNORE=		requires a kernel with compiled-in IA32 compatibility
 .elif !defined(HAVE_COMPAT_IA32_LIBS)
