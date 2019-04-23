@@ -1,3 +1,5 @@
+Remove compile time information (reproducible builds)
+
 --- perl.c.orig	2019-03-31 21:08:28 UTC
 +++ perl.c
 @@ -2009,23 +2009,7 @@ S_Internals_V(pTHX_ CV *cv)
