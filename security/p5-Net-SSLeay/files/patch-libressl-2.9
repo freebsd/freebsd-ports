@@ -1,0 +1,67 @@
+$OpenBSD: patch-SSLeay_xs,v 1.15 2018/11/07 01:55:42 bluhm Exp $
+
+https://github.com/radiator-software/p5-net-ssleay/pull/96
+https://github.com/radiator-software/p5-net-ssleay/pull/95
+https://github.com/radiator-software/p5-net-ssleay/pull/94
+
+Index: SSLeay.xs
+--- SSLeay.xs.orig
++++ SSLeay.xs
+@@ -2766,7 +2766,7 @@ RAND_write_file(file_name)
+ 
+ #define REM40 "Minimal X509 stuff..., this is a bit ugly and should be put in its own modules Net::SSLeay::X509.pm"
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x1000200fL && !defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER >= 0x1000200fL
+ 
+ int
+ X509_check_host(X509 *cert, const char *name, unsigned int flags = 0, SV *peername = &PL_sv_undef)
+@@ -4366,7 +4366,7 @@ TLSv1_2_client_method()
+ #endif
+ 
+ 
+-#if (OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)) || (LIBRESSL_VERSION_NUMBER >= 0x20020002L)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ 
+ const SSL_METHOD *
+ TLS_method()
+@@ -4377,10 +4377,10 @@ TLS_server_method()
+ const SSL_METHOD *
+ TLS_client_method()
+ 
+-#endif /* OpenSSL 1.1.0 or LibreSSL 2.2.2 */
++#endif /* OpenSSL 1.1.0 */
+ 
+ 
+-#if  (OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)) || (LIBRESSL_VERSION_NUMBER >= 0x2060000fL)
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+ 
+ int
+ SSL_CTX_set_min_proto_version(ctx, version)
+@@ -4402,7 +4402,7 @@ SSL_set_max_proto_version(ssl, version)
+      SSL *  ssl
+      int    version
+ 
+-#endif /* OpenSSL 1.1.0 or LibreSSL 2.6.0 */
++#endif /* OpenSSL 1.1.0 */
+ 
+ 
+ #if OPENSSL_VERSION_NUMBER >= 0x1010007fL && !defined(LIBRESSL_VERSION_NUMBER)
+@@ -5612,7 +5612,7 @@ SSL_get_client_random(s)
+ 
+ #endif
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)) || (LIBRESSL_VERSION_NUMBER >= 0x2070000fL)
+ 
+ void
+ SSL_get_server_random(s)
+@@ -5643,7 +5643,7 @@ int
+ SSL_get_keyblock_size(s)
+      SSL *   s
+      CODE:
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)) || (LIBRESSL_VERSION_NUMBER >= 0x2070000fL)
+         const SSL_CIPHER *ssl_cipher;
+ 	int cipher = NID_undef, digest = NID_undef, mac_secret_size = 0;
+ 	const EVP_CIPHER *c = NULL;
