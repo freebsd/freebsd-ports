@@ -1,0 +1,11 @@
+--- Makefile.orig	2019-04-23 08:57:50 UTC
++++ Makefile
+@@ -15,7 +15,7 @@ CFLAGS+=	-I${.CURDIR}/include -pthread -Wall -Wextra -
+ LDFLAGS+=	-pthread -lrt
+ 
+ src/epoll-shim.pc: src/epoll-shim.pc.in
+-	sed -e 's,@CMAKE_INSTALL_PREFIX@,/usr/local,' \
++	sed -e 's,@CMAKE_INSTALL_PREFIX@,${PREFIX},' \
+ 		-e 's,@PROJECT_VERSION@,,' \
+ 		$> >$@
+ 
