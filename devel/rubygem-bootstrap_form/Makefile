@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bootstrap_form
-PORTVERSION=	2.7.0
+PORTVERSION=	4.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,12 @@ COMMENT=	Form builder using Twitter Bootstrap 3+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-NO_ARCH=	yes
+RUN_DEPENDS=	rubygem-actionpack50>=5.0:www/rubygem-actionpack50 \
+		rubygem-activemodel50>=5.0:databases/rubygem-activemodel50
+
 USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
