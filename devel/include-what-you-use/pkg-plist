@@ -1,8 +1,12 @@
 bin/fix_includes.py
 bin/include-what-you-use
 bin/iwyu_tool.py
+%%DATADIR%%/boost-1.64-all-private.imp
+%%DATADIR%%/boost-1.64-all.imp
 %%DATADIR%%/boost-all-private.imp
 %%DATADIR%%/boost-all.imp
+%%DATADIR%%/clang-6.intrinsics.imp
+%%DATADIR%%/gcc-8.intrinsics.imp
 %%DATADIR%%/gcc.libc.imp
 %%DATADIR%%/gcc.stl.headers.imp
 %%DATADIR%%/gcc.symbols.imp

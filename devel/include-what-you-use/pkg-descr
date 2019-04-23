@@ -12,4 +12,4 @@ without fear of accidentally breaking the upwards dependencies of
 that file. It also becomes easy to automatically track and update
 dependencies in the source code.
 
-WWW: http://include-what-you-use.org
+WWW: https://include-what-you-use.org
