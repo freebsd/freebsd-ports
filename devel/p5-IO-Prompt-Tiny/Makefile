@@ -11,6 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Prompt for user input with a default option
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-Capture-Tiny>=0.12:devel/p5-Capture-Tiny
 
