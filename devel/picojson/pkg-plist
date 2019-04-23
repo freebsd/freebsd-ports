@@ -1,0 +1,4 @@
+include/picojson.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/github-issues.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/iostream.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/streaming.cc

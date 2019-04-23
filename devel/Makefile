@@ -4121,6 +4121,7 @@
     SUBDIR += phpunit7
     SUBDIR += phpunit8
     SUBDIR += physfs
+    SUBDIR += picojson
     SUBDIR += picp
     SUBDIR += picprog
     SUBDIR += pig
