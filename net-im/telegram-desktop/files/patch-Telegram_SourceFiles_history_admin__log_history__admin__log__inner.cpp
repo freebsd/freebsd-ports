@@ -1,13 +1,13 @@
---- Telegram/SourceFiles/history/admin_log/history_admin_log_inner.cpp.orig	2019-02-01 12:51:46 UTC
+--- Telegram/SourceFiles/history/admin_log/history_admin_log_inner.cpp.orig	2019-04-13 06:46:58 UTC
 +++ Telegram/SourceFiles/history/admin_log/history_admin_log_inner.cpp
-@@ -1389,13 +1389,13 @@ void InnerWidget::mouseActionFinish(const QPoint &scre
+@@ -1392,13 +1392,13 @@ void InnerWidget::mouseActionFinish(const QPoint &scre
  	_mouseSelectType = TextSelectType::Letters;
  	//_widget->noSelectingScroll(); // TODO
  
 -#if defined Q_OS_LINUX32 || defined Q_OS_LINUX64
 +#if defined Q_OS_LINUX32 || defined Q_OS_LINUX64 || defined Q_OS_FREEBSD
  	if (_selectedItem && _selectedText.from != _selectedText.to) {
- 		SetClipboardWithEntities(
+ 		SetClipboardText(
  			_selectedItem->selectedText(_selectedText),
  			QClipboard::Selection);
  	}

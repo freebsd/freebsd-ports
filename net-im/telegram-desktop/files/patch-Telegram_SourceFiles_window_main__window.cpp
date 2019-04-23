@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/window/main_window.cpp.orig	2019-02-01 12:51:46 UTC
+--- Telegram/SourceFiles/window/main_window.cpp.orig	2019-04-13 06:46:58 UTC
 +++ Telegram/SourceFiles/window/main_window.cpp
-@@ -503,7 +503,7 @@ bool MainWindow::minimizeToTray() {
+@@ -521,7 +521,7 @@ bool MainWindow::minimizeToTray() {
  }
  
  void MainWindow::reActivateWindow() {
@@ -9,7 +9,7 @@
  	const auto reActivate = [=] {
  		if (const auto w = App::wnd()) {
  			if (auto f = QApplication::focusWidget()) {
-@@ -518,7 +518,7 @@ void MainWindow::reActivateWindow() {
+@@ -536,7 +536,7 @@ void MainWindow::reActivateWindow() {
  	};
  	crl::on_main(this, reActivate);
  	App::CallDelayed(200, this, reActivate);
