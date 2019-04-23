@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libressl
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.1
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 PKGNAMESUFFIX=	-devel
@@ -15,10 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CPE_VENDOR=	openbsd
 
-OPTIONS_DEFINE=	MAN3 NC
+OPTIONS_DEFINE=	MAN3 NC TLS1_3
 OPTIONS_DEFAULT=	MAN3 NC
 MAN3_DESC=	Install API manpages (section 3)
 NC_DESC=	Install TLS-enabled netcat
+TLS1_3_DESC=	TLSv1.3 support (experimental)
 
 CONFLICTS_INSTALL=	libressl-[0-9]* \
 			openssl-[0-9]* \
@@ -40,6 +41,10 @@ post-patch-MAN3-off:
 	${REINPLACE_CMD} -e '/^install-man:/s/install-man3//' \
 		-e '/$$(MAKE) $$(AM_MAKEFLAGS) install-data-hook/d' \
 		${WRKSRC}/man/Makefile.in
+
+post-patch-TLS1_3-on:
+	${REINPLACE_CMD} 's|/\* \(#define LIBRESSL_HAS_TLS1_3\) \*/|\1|' \
+		${WRKSRC}/include/openssl/opensslfeatures.h
 
 post-install:
 	${RM} -r ${STAGEDIR}/${PREFIX}/etc/ssl/cert.pem
