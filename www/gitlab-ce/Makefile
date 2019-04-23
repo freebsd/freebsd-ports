@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.9.7
-PORTREVISION=	1
+PORTVERSION=	11.10.0
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -17,13 +17,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # only rubygem-pg and rubygem-mysql are defined later as RUN_DEPENDS
 # for the options
 MY_DEPENDS=	git>=2.16.2:devel/git \
-	gitlab-shell>=8.7.1:devel/gitlab-shell \
-	gitlab-workhorse>=8.3.3:www/gitlab-workhorse \
-	gitaly>=1.27.1:devel/gitaly \
+	gitlab-shell>=9.0.0:devel/gitlab-shell \
+	gitlab-workhorse>=8.5.1:www/gitlab-workhorse \
+	gitaly>=1.33.0:devel/gitaly \
 	gitlab-pages>=1.5.0:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
 	yarn>=1.10.0:www/yarn \
-	rubygem-rails50>=5.0.7.1:www/rubygem-rails50 \
+	rubygem-rails50>=5.0.7.2:www/rubygem-rails50 \
 	rubygem-rails-deprecated_sanitizer-rails50>=1.0.3:devel/rubygem-rails-deprecated_sanitizer-rails50 \
 	rubygem-nakayoshi_fork>=0.0.4:devel/rubygem-nakayoshi_fork \
 	rubygem-responders-rails50>=2.0:www/rubygem-responders-rails50 \
@@ -50,9 +50,9 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-omniauth-twitter>=1.4:net/rubygem-omniauth-twitter \
 	rubygem-omniauth_crowd22>=2.2.0:devel/rubygem-omniauth_crowd22 \
 	rubygem-omniauth-authentiq>=0.3.3:net/rubygem-omniauth-authentiq \
-	rubygem-rack-oauth212>=1.2.1:security/rubygem-rack-oauth212 \
+	rubygem-rack-oauth2>=1.9.3:security/rubygem-rack-oauth2 \
 	rubygem-jwt>=2.1.0:www/rubygem-jwt \
-	rubygem-recaptcha3>=3.0:devel/rubygem-recaptcha3 \
+	rubygem-recaptcha>=4.11:devel/rubygem-recaptcha \
 	rubygem-akismet>=2.0:devel/rubygem-akismet \
 	rubygem-devise-two-factor-rails50>=3.0.0:security/rubygem-devise-two-factor-rails50 \
 	rubygem-rqrcode-rails3>=0.1.7:www/rubygem-rqrcode-rails3 \
@@ -86,7 +86,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-seed-fu>=2.3.7:databases/rubygem-seed-fu \
 	rubygem-html-pipeline>=2.8:textproc/rubygem-html-pipeline \
 	rubygem-deckar01-task_list>=2.2.0:www/rubygem-deckar01-task_list \
-	rubygem-gitlab-markup>=1.6.5:textproc/rubygem-gitlab-markup \
+	rubygem-gitlab-markup>=1.7.0:textproc/rubygem-gitlab-markup \
 	rubygem-github-markup17>=1.7.0:textproc/rubygem-github-markup17 \
 	rubygem-commonmarker>=0.17:textproc/rubygem-commonmarker \
 	rubygem-redcloth>=4.3.2:www/rubygem-redcloth \
@@ -98,24 +98,24 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-asciidoctor-plantuml>=0.0.8:textproc/rubygem-asciidoctor-plantuml \
 	rubygem-rouge>=3.1:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.11:textproc/rubygem-truncato \
-	rubygem-bootstrap_form>=2.7.0:devel/rubygem-bootstrap_form \
+	rubygem-bootstrap_form>=4.2.0:devel/rubygem-bootstrap_form \
 	rubygem-nokogiri>=1.10.1:textproc/rubygem-nokogiri \
 	rubygem-escape_utils>=1.1:textproc/rubygem-escape_utils \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
 	rubygem-diffy31>=3.1.0:textproc/rubygem-diffy31 \
-	rubygem-rack>=2.0.6:www/rubygem-rack \
+	rubygem-rack>=2.0.7:www/rubygem-rack \
 	rubygem-unicorn>=5.4.1:www/rubygem-unicorn \
 	rubygem-unicorn-worker-killer>=0.4.4:www/rubygem-unicorn-worker-killer \
 	rubygem-puma>=3.12:www/rubygem-puma \
 	rubygem-puma_worker_killer>=0:www/rubygem-puma_worker_killer \
 	rubygem-state_machines-activerecord05>=0.5.1:databases/rubygem-state_machines-activerecord05 \
-	rubygem-acts-as-taggable-on>=5.0:www/rubygem-acts-as-taggable-on \
+	rubygem-acts-as-taggable-on>=6.0:www/rubygem-acts-as-taggable-on \
 	rubygem-sidekiq>=5.2.1:devel/rubygem-sidekiq \
 	rubygem-sidekiq-cron>=1.0.0:devel/rubygem-sidekiq-cron \
 	rubygem-redis-namespace>=1.6.0:databases/rubygem-redis-namespace \
 	rubygem-gitlab-sidekiq-fetcher>=0.4.0:devel/rubygem-gitlab-sidekiq-fetcher \
 	rubygem-fugit>=1.1:devel/rubygem-fugit \
-	rubygem-httparty>=0.13.3:www/rubygem-httparty \
+	rubygem-httparty>=0.16.4:www/rubygem-httparty \
 	rubygem-rainbow>=3.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=0:devel/rubygem-ruby-progressbar \
 	rubygem-settingslogic>=2.0.9:devel/rubygem-settingslogic \
@@ -127,6 +127,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-redis3>=3.2:databases/rubygem-redis3 \
 	rubygem-connection_pool>=2.0:net/rubygem-connection_pool \
 	rubygem-discordrb-webhooks-blackst0ne>=3.3.0:net-im/rubygem-discordrb-webhooks-blackst0ne \
+	rubygem-hipchat>=1.5.0:net-im/rubygem-hipchat \
 	rubygem-jira-ruby>=1.4:devel/rubygem-jira-ruby \
 	rubygem-flowdock>=0.7:www/rubygem-flowdock \
 	rubygem-slack-notifier1>=1.5.1:devel/rubygem-slack-notifier1 \
@@ -154,9 +155,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-font-awesome-rails-rails50>=4.7:devel/rubygem-font-awesome-rails-rails50 \
 	rubygem-gemojione>=3.3:graphics/rubygem-gemojione \
 	rubygem-gon-rails50>=6.2.0:www/rubygem-gon-rails50 \
-	rubygem-jquery-atwho-rails13>=1.3.2:www/rubygem-jquery-atwho-rails13 \
 	rubygem-request_store>=1.3:devel/rubygem-request_store \
-	rubygem-select2-rails3>=3.5.9:www/rubygem-select2-rails3 \
 	rubygem-virtus>=1.0.1:devel/rubygem-virtus \
 	rubygem-base32>=0.3.0:converters/rubygem-base32 \
 	rubygem-sentry-raven>=2.7:devel/rubygem-sentry-raven \
@@ -188,7 +187,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-sshkey>=2.0:security/rubygem-sshkey \
 	rubygem-ed25519>=1.2:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly-proto>=1.13.0:net/rubygem-gitaly-proto \
+	rubygem-gitaly-proto>=1.19.0:net/rubygem-gitaly-proto \
 	rubygem-grpc>=1.15.0:net/rubygem-grpc \
 	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
 	rubygem-google-protobuf>=3.6:devel/rubygem-google-protobuf \
@@ -203,6 +202,12 @@ BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}
 
 RUN_DEPENDS=	${MY_DEPENDS}
+
+CONFLICTS_INSTALL=	gitolite-* \
+			gitolite2-* \
+			gogs-* \
+			gitea-* \
+			${PYTHON_PKGNAMEPREFIX}-gitosis-*
 
 OPTIONS_SINGLE=	DATABASE
 OPTIONS_SINGLE_DATABASE=	PGSQL MYSQL
@@ -221,7 +226,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	93e321569a898d9701a251b4bb73ad56b79fc535
+GL_COMMIT=	8a802d1c6b7ee660fbf701b9758ccff85f065e68
 
 USERS=	git
 GROUPS=	git
@@ -263,7 +268,7 @@ do-install:
 	${MV} ${WRKSRC}/config/initializers/rack_attack.rb.example ${WRKSRC}/config/initializers/rack_attack.rb.sample
 	${MV} ${WRKSRC}/lib/support/nginx/gitlab ${WRKSRC}/lib/support/nginx/gitlab.sample
 	${MV} ${WRKSRC}/lib/support/nginx/gitlab-ssl ${WRKSRC}/lib/support/nginx/gitlab-ssl.sample
-	${MKDIR} ${STAGEDIR}/usr/home/git/repositories
+	${MKDIR} ${STAGEDIR}/usr/local/git/repositories
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/public/assets
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/public/uploads
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/tmp/cache

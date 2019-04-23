@@ -13,8 +13,8 @@
 # chkconfig: - 85 14
 ### END INIT INFO
 
-# Maintainer: Torsten Zuehlsdorff <ports@toco-domains.de>
-# Based on work of: @charlienewey, rovanion.luckey@gmail.com, @randx
+# Maintainer: Matthias Fechner <mfechner@FreeBSD.org>
+# Based on work of: @charlienewey, rovanion.luckey@gmail.com, @randx, @tz
 
 # PROVIDE: gitlab
 # REQUIRE: LOGIN
@@ -42,6 +42,7 @@ restart_cmd="restart_gitlab"
 : ${gitlab_workhorse_tcp:="NO"}
 : ${gitlab_workhorse_addr:="127.0.0.1:8181"}
 : ${gitlab_mail_room_enable:="NO"}
+: ${gitlab_allow_conflicts:="NO"}
 
 load_rc_config $name
 
@@ -85,6 +86,44 @@ gitaly_log="$app_root/log/gitaly.log"
 
 # Read configuration variable file if it is present
 test -f /etc/default/gitlab && . /etc/default/gitlab
+
+# Check if other colliding packages are installed
+if `/usr/sbin/pkg -N info -e gogs` && [ $? -eq 0 ]; then
+  echo "WARNING: Gitlab cannot run together with gogs as both of them modify .ssh/authorized_keys"
+  if checkyesno gitlab_allow_conflicts; then
+    echo "but start as overwritten"
+  else
+    echo "you can overwrite this with: sysrc gitlab_allow_conflicts=YES"
+    exit 1
+  fi
+fi
+if `/usr/sbin/pkg -N info -e "gitolite*"` && [ $? -eq 0 ]; then
+  echo "WARNING: Gitlab cannot run together with gitolite as both of them modify .ssh/authorized_keys"
+  if checkyesno gitlab_allow_conflicts; then
+    echo "but start as overwritten"
+  else
+    echo "you can overwrite this with: sysrc gitlab_allow_conflicts=YES"
+    exit 1
+  fi
+fi
+if `/usr/sbin/pkg -N info -e "*gitosis*"` && [ $? -eq 0 ]; then
+  echo "WARNING: Gitlab cannot run together with py-gitosis as both of them modify .ssh/authorized_keys"
+  if checkyesno gitlab_allow_conflicts; then
+    echo "but start as overwritten"
+  else
+    echo "you can overwrite this with: sysrc gitlab_allow_conflicts=YES"
+    exit 1
+  fi
+fi
+if `/usr/sbin/pkg -N info -e gitea` && [ $? -eq 0 ]; then
+  echo "WARNING: Gitlab cannot run together with gitea as both of them modify .ssh/authorized_keys"
+  if checkyesno gitlab_allow_conflicts; then
+    echo "but start as overwritten"
+  else
+    echo "you can overwrite this with: sysrc gitlab_allow_conflicts=YES"
+    exit 1
+  fi
+fi
 
 # Switch to the app_user if it is not he/she who is running the script.
 if [ "$USER" != "$app_user" ]; then

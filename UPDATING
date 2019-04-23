@@ -5,6 +5,46 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190423:
+  AFFECTS: users of www/gitlab-ce
+  AUTHOR: mfechner@FreeBSD.org
+
+  The directory where all repositories and ssh permissions are stored
+  was changed from /usr/home/git back to /usr/local/git, to match again the
+  recommended standards on FreeBSD.
+  This will cause now some other git management packages to collide with
+  gitlab. Make sure you migrate all you git repositories to gitlab first,
+  before you continue.
+
+  Make sure /usr/local/git/repositories and /usr/local/git/.ssh are not
+  existing!
+  Otherwise the next commands can break your installation for managing
+  git repositories within gitlab and with your other gitlab management
+  software!
+
+  You must move the old files to the new location with:
+  # service gitlab stop
+  # mv /usr/home/git /usr/local/
+  # pkg upg
+
+  Make sure you update your config files, diff shows you what you maybe
+  must change:
+  # cd /usr/local/www/gitlab-ce
+  # git diff config/gitlab.yml.sample config/gitlab.yml
+  # cd /usr/local/share/gitlab-shell/
+  # git diff config.yml.sample config.yml
+  # cd /usr/local/share/gitaly
+  # git diff config.toml.sample config.toml
+
+  # Change home directory of user git back to /usr/local/git
+  # vipw
+  The line should now looks like:
+  git:*:211:211::0:0:gitosis user:/usr/local/git:/bin/sh
+
+  If you do an upgrade of gitlab follow the upgrade guide.
+  If not, just start gitlab again with:
+  # service gitlab start
+
 20190422:
   AFFECTS: users of security/libressl
   AUTHOR: brnrd@FreeBSD.org
