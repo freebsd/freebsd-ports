@@ -2168,7 +2168,6 @@
     SUBDIR += rubygem-savon
     SUBDIR += rubygem-sawyer
     SUBDIR += rubygem-select2-rails
-    SUBDIR += rubygem-select2-rails3
     SUBDIR += rubygem-selenium-webdriver
     SUBDIR += rubygem-semantic-ui-sass
     SUBDIR += rubygem-simple-rss
