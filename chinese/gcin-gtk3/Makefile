@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcin
-PORTVERSION=	2.8.8
+PORTVERSION=	2.8.9
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://hyperrate.com/gcin-source/
 PKGNAMESUFFIX=	-gtk3
@@ -16,6 +16,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libgcin-im-client.so:chinese/gcin
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/gtk3-im
+
 USES=		gmake gnome pkgconfig tar:xz
 USE_GNOME=	gtk30
 MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
