@@ -12,6 +12,9 @@ COMMENT=	Heroku Client
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream has changed to node-based CLI (https://cli.heroku.com/)
+EXPIRATION_DATE=2019-05-31
+
 RUN_DEPENDS=	rubygem-heroku-api>=0.4.2:www/rubygem-heroku-api \
 		rubygem-launchy>=2.4.3:devel/rubygem-launchy \
 		rubygem-multi_json>=1.11.2:devel/rubygem-multi_json \
