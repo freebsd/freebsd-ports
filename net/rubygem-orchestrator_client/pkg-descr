@@ -1,0 +1,4 @@
+A simple client for interacting with the Orchestration Services API in Puppet
+Enterprise Puppet orchestration API.
+
+WWW: https://github.com/puppetlabs/orchestrator_client-ruby
