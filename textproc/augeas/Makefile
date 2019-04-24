@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	augeas
-PORTVERSION=	1.11.0
-PORTREVISION=	2
+PORTVERSION=	1.12.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.augeas.net/
 
@@ -15,7 +14,7 @@ LICENSE=	LGPL21
 TEST_DEPENDS=	bash:shells/bash \
 		gsed:textproc/gsed
 
-USES=		autoreconf cpe gmake libtool pathfix pkgconfig readline
+USES=		autoreconf cpe gmake gnome libtool pathfix pkgconfig readline
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
