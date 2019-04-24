@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpstorm
-PORTVERSION=	2019.1
+PORTVERSION=	2019.1.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download.jetbrains.com/webide/ \
 		http://download.jetbrains.com/webide/
@@ -30,7 +30,7 @@ SHEBANG_FILES=	bin/printenv.py bin/restart.py
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/PhpStorm-191.6183.95
+WRKSRC=		${WRKDIR}/PhpStorm-191.6707.66
 
 SUB_FILES=	phpstorm phpstorm.desktop pkg-message
 SUB_LIST=	DATADIR=${DATADIR}
@@ -42,7 +42,7 @@ do-install:
 	@${RM}  ${STAGEDIR}${DATADIR}/bin/fsnotifier \
 		${STAGEDIR}${DATADIR}/bin/fsnotifier-arm \
 		${STAGEDIR}${DATADIR}/bin/fsnotifier64 \
-		${STAGEDIR}${DATADIR}/bin/lib*.so	
+		${STAGEDIR}${DATADIR}/bin/lib*.so
 	@${RM} ${STAGEDIR}${DATADIR}/plugins/performanceTesting/lib/lib*.so
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by java/intellij-pty4j
