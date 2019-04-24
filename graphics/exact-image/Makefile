@@ -12,6 +12,10 @@ COMMENT=	Fast image processing library
 
 LICENSE=	GPLv2
 
+BROKEN_armv6=		fails to configure: C++ compiler is not installed or does not work correctly
+BROKEN_armv7=		fails to configure: C++ compiler is not installed or does not work correctly
+BROKEN_i386=		call to 'abs' is ambiguous
+
 BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libagg.so:graphics/agg \
 		libtiff.so:graphics/tiff \
@@ -22,9 +26,6 @@ LIB_DEPENDS=	libagg.so:graphics/agg \
 		liblcms.so:graphics/lcms \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2
-
-BROKEN_armv6=		fails to configure: C++ compiler is not installed or does not work correctly
-BROKEN_armv7=		fails to configure: C++ compiler is not installed or does not work correctly
 
 #hack to get custom exactcode configure script to enable tiff support with
 #broken headers on c++ in base system:
