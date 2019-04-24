@@ -3,12 +3,13 @@
 
 PORTNAME=	openr2
 PORTVERSION=	1.3.3
-PORTREVISION=	0
 CATEGORIES=	misc
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	MFC/R2 call setup library
+
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	${LOCALBASE}/include/dahdi/user.h:misc/dahdi
 
@@ -16,10 +17,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	moises-silva
 GH_TAGNAME=	d6a5716
 
+USES=		libtool localbase
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
 INSTALL_TARGET=	install-strip
-USES=		libtool
 USE_LDCONFIG=	yes
 
 post-install:
