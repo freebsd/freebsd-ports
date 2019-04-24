@@ -19,7 +19,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/FastInfoset-1.2.15.jar
 %%DATADIR%%/lib/annotations-17.0.0.jar
 %%DATADIR%%/lib/annotations-java5.jar
-%%DATADIR%%/lib/asm-all-7.0.jar
+%%DATADIR%%/lib/asm-all-7.0.1.jar
 %%DATADIR%%/lib/automaton-1.12-1.jar
 %%DATADIR%%/lib/batik-all-1.10.jar
 %%DATADIR%%/lib/bcprov-jdk15on-1.60.jar
@@ -128,7 +128,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/platform-api.jar
 %%DATADIR%%/lib/platform-impl.jar
 %%DATADIR%%/lib/proxy-vole-1.0.6.jar
-%%DATADIR%%/lib/pty4j-0.9.1.jar
+%%DATADIR%%/lib/pty4j-0.9.3.jar
 %%DATADIR%%/lib/purejavacomm-0.0.11.1.jar
 %%DATADIR%%/lib/resources.jar
 %%DATADIR%%/lib/resources_en.jar
@@ -358,6 +358,12 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2018.intl.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2018.promise.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2018.regexp.d.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2018.asynciterable.d.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2019.array.d.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2019.d.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2019.full.d.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2019.string.d.ts
+%%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es2019.symbol.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es6.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es7.d.ts
