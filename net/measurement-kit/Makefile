@@ -2,7 +2,7 @@
 
 PORTNAME=		measurement-kit
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.9.4
+DISTVERSION=		0.10.1
 CATEGORIES=		net devel
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-libcurl=${LOCALBASE} \
 		--with-openssl=${OPENSSLBASE}
 
 INSTALL_TARGET=	install-strip
-PORTDOCS=	README.md
+PORTDOCS=	README.md include/README.md
 
 OPTIONS_DEFINE=	DOCS
 
@@ -35,7 +35,8 @@ do-configure:
 	  ${SETENV} ${CONFIGURE_ENV} ${SH} configure ${CONFIGURE_ARGS})
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/include/measurement_kit/README.md ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/include
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/include/measurement_kit/README.md ${STAGEDIR}${DOCSDIR}/include
 
 .include <bsd.port.mk>
