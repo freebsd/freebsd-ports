@@ -1,0 +1,4 @@
+This is an implementation of the Resource API specification.  It provides a
+simple way to write new native resources for Puppet.
+
+WWW: https://github.com/puppetlabs/puppet-resource_api
