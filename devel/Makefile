@@ -5947,6 +5947,7 @@
     SUBDIR += rubygem-pry-rails
     SUBDIR += rubygem-pry-remote-em
     SUBDIR += rubygem-ptreloaded
+    SUBDIR += rubygem-puppet-resource_api
     SUBDIR += rubygem-pygments.rb
     SUBDIR += rubygem-r18n-core
     SUBDIR += rubygem-rabl
