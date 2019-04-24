@@ -55,15 +55,21 @@ GO_PKGNAME=	${PORTNAME}
 .endif
 GO_TARGET?=	${GO_PKGNAME}
 GO_BUILDFLAGS+=	-v -buildmode=exe
+CGO_ENABLED?=	1
 CGO_CFLAGS+=	-I${LOCALBASE}/include
 CGO_LDFLAGS+=	-L${LOCALBASE}/lib
+.if ${ARCH} == armv6 || ${ARCH} == armv7
+GOARM?=		${ARCH:C/armv//}
+.endif
 
 # Read-only variables
 GO_CMD=		${LOCALBASE}/bin/go
 GO_WRKDIR_BIN=	${WRKDIR}/bin
 
-GO_ENV+=	CGO_CFLAGS="${CGO_CFLAGS}" \
-		CGO_LDFLAGS="${CGO_LDFLAGS}"
+GO_ENV+=	CGO_ENABLED=${CGO_ENABLED} \
+		CGO_CFLAGS="${CGO_CFLAGS}" \
+		CGO_LDFLAGS="${CGO_LDFLAGS}" \
+		GOARM=${GOARM}
 
 .if ${go_ARGS:Mmodules}
 GO_BUILDFLAGS+=	-mod=vendor
