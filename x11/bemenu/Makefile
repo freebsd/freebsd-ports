@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	bemenu
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.0-11
+DISTVERSIONSUFFIX=	-g6cc18e3
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -28,22 +29,21 @@ OPTIONS_SUB=		yes
 BACKEND_DESC=		Backend
 BEMENU_RUN_DESC=	Install bemenu-run (not recommended)
 
+NCURSES_CMAKE_BOOL=	BEMENU_CURSES_RENDERER
 NCURSES_CMAKE_ON=	-DCURSES_FOUND:BOOL=yes \
 			-DCURSES_INCLUDE_DIRS:PATH="${NCURSESINC}" \
 			-DCURSES_LIBRARY:PATH="${NCURSESLIB}/libncursesw.so"
 NCURSES_USES=		ncurses
 
-WAYLAND_CFLAGS=		-I${LOCALBASE}/include/libepoll-shim
-WAYLAND_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Wayland
+WAYLAND_CMAKE_BOOL=	BEMENU_WAYLAND_RENDERER
 WAYLAND_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 			libwayland-client.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
-WAYLAND_LDFLAGS=	-lepoll-shim
-WAYLAND_USES=		localbase:ldflags gnome pkgconfig
+WAYLAND_USES=		gnome pkgconfig
 WAYLAND_USE=		GNOME=cairo,glib20,pango
 
-X11_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_X11
-X11_USES=		gnome localbase:ldflags pkgconfig
+X11_CMAKE_BOOL=		BEMENU_X11_RENDERER
+X11_USES=		gnome pkgconfig
 X11_USE=		GNOME=cairo,glib20,pango XORG=x11,xinerama
 
 .include <bsd.port.mk>
