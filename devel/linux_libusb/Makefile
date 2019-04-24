@@ -20,6 +20,7 @@ PLIST_FILES=		usr/lib/libusb.so	\
 			usr/lib/libusb-0.1.so.4
 CC=		${LINUXBASE}/usr/bin/gcc
 CFLAGS+=	-I${WRKDIR}/sys
+SSP_CFLAGS?=	-fstack-protector # XXX -strong isn't supported by GCC < 4.9
 MAKE_ARGS+=	LIBUSB_GLOBAL_INCLUDE_FILE=libusb_global_linux.h
 MAKE_ARGS+=	PTHREAD_LIBS="-lpthread -lrt"
 MAKE_ARGS+=	WITHOUT_SSP=yes

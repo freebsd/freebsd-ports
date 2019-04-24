@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CC=		${PKGNAMEPREFIX}gcc
 CXX=		${PKGNAMEPREFIX}c++
 CFLAGS+=	-I/usr/include
+SSP_CFLAGS?=	-fstack-protector # XXX -strong isn't supported by GCC < 4.9
 CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split" \
 		PREFIX="${PREFIX}/${GMP_TARG}" \
 		M4="/usr/bin/m4"

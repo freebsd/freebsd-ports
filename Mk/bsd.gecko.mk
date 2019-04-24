@@ -119,11 +119,6 @@ BUILD_DEPENDS+=	rust-cbindgen>=0.6.8:devel/rust-cbindgen \
 MOZ_OPTIONS+=	--enable-pie
 .endif
 
-.if ${MOZILLA_VER:R:R} >= 65
-# Let vendor add -fstack-protector-strong on all architectures
-SSP_UNSAFE=		yes
-.endif
-
 MOZILLA_SUFX?=	none
 MOZSRC?=	${WRKSRC}
 PLISTF?=	${WRKDIR}/plist_files

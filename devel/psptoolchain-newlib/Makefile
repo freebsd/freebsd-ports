@@ -29,6 +29,7 @@ CONFIGURE_ENV=		PATH=${LOCALBASE}/${PSP_GCC_STAGE_PREFIX}/bin:${PATH} \
 			CFLAGS="${CFLAGS:C/(^|[[:space:]])-march=[^[:space:]]*//g} -g"
 MAKE_ENV=		PATH=${LOCALBASE}/${PSP_GCC_STAGE_PREFIX}/bin:${PATH}
 CONFIGURE_ARGS=		--prefix=${PREFIX} --target="psp"
+SSP_CFLAGS?=		-fstack-protector # XXX -strong isn't supported by GCC < 4.9
 
 # Disable installation of .info files and fix includedir reference.
 post-patch:

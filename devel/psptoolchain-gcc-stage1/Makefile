@@ -52,6 +52,7 @@ CONFIGURE_ARGS?=	--prefix=${PREFIX}/${PSP_GCC_STAGE_PREFIX} \
 			--with-ld=${LOCALBASE}/bin/psp-ld \
 			--with-as=${LOCALBASE}/bin/psp-as \
 			--mandir=${PREFIX}/man
+SSP_CFLAGS?=		-fstack-protector # XXX -strong isn't supported by GCC < 4.9
 
 # Don't install any documentation for psptoolchain's gcc stage 1 - makes no sense.
 # Disable installation of .info files and libiberty for both stages.

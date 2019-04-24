@@ -71,6 +71,7 @@ BUILD_DEPENDS+=	wine:emulators/wine \
 		${LOCALBASE}/mingw32/lib/libgmp.a:math/mingw32-libgmp
 RUN_DEPENDS+=	mingw32-gcc:devel/mingw32-gcc \
 		${LOCALBASE}/mingw32/lib/libgmp.a:math/mingw32-libgmp
+SSP_CFLAGS?=	-fstack-protector # XXX -strong isn't supported by GCC < 4.9
 
 PLIST_SUB+=	MINGW32CROSS=""
 .else
