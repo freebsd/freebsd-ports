@@ -7,11 +7,11 @@ include/fa.h
 lib/libaugeas.a
 lib/libaugeas.so
 lib/libaugeas.so.0
-lib/libaugeas.so.0.24.1
+lib/libaugeas.so.0.24.2
 lib/libfa.a
 lib/libfa.so
 lib/libfa.so.1
-lib/libfa.so.1.5.2
+lib/libfa.so.1.5.3
 libdata/pkgconfig/augeas.pc
 man/man1/augmatch.1.gz
 man/man1/augparse.1.gz
