@@ -26,24 +26,21 @@ RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig \
 		xrdb:x11/xrdb \
 		xset:x11/xset
 
-USES=		iconv motif perl5 shebangfix tcl:85
+USES=		iconv:wchar_t motif perl5 shebangfix tcl:85
+SHEBANG_LANG=	pl ksh tcl
 SHEBANG_FILES=	programs/dtdocbook/sgmls/sgmls.pl \
-		programs/dtinfo/tools/bin/ccdate
+		programs/dtinfo/tools/bin/ccdate \
+		programs/dtdocbook/doc2sdl/docbook.tcl \
+		programs/dtdocbook/doc2sdl/dtdocbook
 USE_LDCONFIG=	${PREFIX}/dt/lib
 USE_RC_SUBR=	dtcms dtspc
-USE_XORG=	xinerama xp xt xscrnsaver
+USE_XORG=	ice sm x11 xau xdmcp xext xinerama xmu xp xscrnsaver xt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 ALL_TARGET=	World
 MAKE_ARGS+=	PERL=${PERL}
 MAKE_JOBS_UNSAFE=yes
 SUB_FILES=	pkg-message
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} > 1200000
-BROKEN=		Does not build on head
-.endif
 
 post-patch:
 	@if [ -f /usr/include/iconv.h ]; then \
