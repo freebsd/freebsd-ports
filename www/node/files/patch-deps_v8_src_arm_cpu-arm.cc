@@ -1,4 +1,4 @@
---- deps/v8/src/arm/cpu-arm.cc.orig	2019-01-30 20:43:13 UTC
+--- deps/v8/src/arm/cpu-arm.cc.orig	2019-04-23 12:30:43 UTC
 +++ deps/v8/src/arm/cpu-arm.cc
 @@ -7,6 +7,9 @@
  #ifdef __QNXNTO__
@@ -10,7 +10,7 @@
  #else
  #include <sys/syscall.h>  // for cache flushing.
  #endif
-@@ -24,6 +27,9 @@ void CpuFeatures::FlushICache(void* start, size_t size
+@@ -23,6 +26,9 @@ void CpuFeatures::FlushICache(void* start, size_t size
  #if !defined(USE_SIMULATOR)
  #if V8_OS_QNX
    msync(start, size, MS_SYNC | MS_INVALIDATE_ICACHE);

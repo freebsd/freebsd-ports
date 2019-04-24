@@ -414,6 +414,7 @@ include/node/node_version.h
 %%BUNDLED_SSL%%include/node/openssl/x509err.h
 %%BUNDLED_SSL%%include/node/openssl/x509v3.h
 %%BUNDLED_SSL%%include/node/openssl/x509v3err.h
+include/node/v8-internal.h
 include/node/v8-platform.h
 include/node/v8-profiler.h
 include/node/v8-testing.h
@@ -421,6 +422,8 @@ include/node/v8-util.h
 include/node/v8-value-serializer-version.h
 include/node/v8-version.h
 include/node/v8-version-string.h
+include/node/v8-wasm-trap-handler-posix.h
+include/node/v8-wasm-trap-handler-win.h
 include/node/v8.h
 include/node/v8config.h
 %%DTRACE%%lib/dtrace/node.d
