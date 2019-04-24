@@ -18,7 +18,10 @@ BROKEN_SSL_REASON_openssl=	needs features only available in OpenSSL 1.1.1+
 
 USES=		cmake ssl
 
-CMAKE_ARGS+=	-DOPENSSL_ROOT_DIR=${OPENSSLBASE}
+ENGINESDIR?=	${PREFIX}/lib/engines-1.1
+
+CMAKE_ARGS+=	-DOPENSSL_ROOT_DIR=${OPENSSLBASE} \
+		-DOPENSSL_ENGINES_DIR=${ENGINESDIR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gost-engine
