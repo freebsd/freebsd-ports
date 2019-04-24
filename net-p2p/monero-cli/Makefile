@@ -19,6 +19,7 @@ LICENSE=	BSD3CLAUSE
 BROKEN_aarch64=		fails to compile: the clang compiler does not support -march=native
 BROKEN_armv6=		fails to compile: the clang compiler does not support -march=native
 BROKEN_armv7=		fails to compile: the clang compiler does not support -march=native
+BROKEN_i386=		fails to compile: register %r15d is only available in 64-bit mode
 BROKEN_powerpc64=	fails to compile: the clang compiler does not support -march=native
 
 LIB_DEPENDS=	\
