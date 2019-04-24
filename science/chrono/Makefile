@@ -33,10 +33,20 @@ DEMOS_CMAKE_BOOL=	BUILD_DEMOS
 TESTS_DESC=		Build and install unit test programs
 TESTS_CMAKE_BOOL=	BUILD_TESTING
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+CXXFLAGS+=	-Wno-error=narrowing
+.endif
+
 post-extract:
 	@${RM} ${WRKSRC}/data/opensim/Rajagopal2015.orig
 
 post-patch:
 	@${FIND} ${WRKSRC} -name CMakeLists.txt -o -name "*.cmake*" | ${XARGS} ${REINPLACE_CMD} -i '' 's|lib64|lib|'
+	@${REINPLACE_CMD} -e 's/ -march=native//' \
+		${WRKSRC}/cmake/FindAVX.cmake \
+		${WRKSRC}/cmake/FindFMA.cmake \
+		${WRKSRC}/cmake/FindSSE.cmake
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
