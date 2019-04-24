@@ -1,4 +1,4 @@
---- configure.orig	2018-05-12 11:15:17 UTC
+--- configure.orig	2019-02-01 23:11:02 UTC
 +++ configure
 @@ -1,4 +1,4 @@
 -##!/bin/bash
@@ -47,10 +47,10 @@
    grep -v qt3/plugins/inputmethods gcin.spec.tmp > gcin.spec
  else
 -  for i in /usr/share/qt/bin/moc /usr/lib/qt/bin/moc /usr/lib64/qt/bin/moc /usr/lib/qt3/bin/moc /usr/share/qt3/bin/moc /usr/lib64/qt3/bin/moc
-+  for i in $prefix/share/qt/bin/moc /usr/lib/qt/bin/moc /usr/lib64/qt/bin/moc /usr/lib/qt3/bin/moc /usr/share/qt3/bin/moc /usr/lib64/qt3/bin/moc
++  for i in $prefix/share/qt/bin/moc /usr/lib/qt/bin/moc /usr/lib64/qt/bin/moc /usr/lib/qt3/bin/moc $prefix/share/qt3/bin/moc /usr/lib64/qt3/bin/moc
    do
 -    [ ! -x $i ] && continue
-+    [ ! -x $i ] & continue
++    [ ! -x $i ]  continue
      QT_MOC=$i
      echo "QT_MOC=$QT_MOC"
      break;

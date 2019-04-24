@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcin
-PORTVERSION=	2.8.8
+PORTVERSION=	2.8.9
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://hyperrate.com/gcin-source/
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.xz
@@ -16,10 +16,10 @@ BROKEN_powerpc64=	fails to build: gmake[3]: *** [Makefile:30: en-american] Error
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		gmake pkgconfig tar:xz
+USES=		gmake gnome pkgconfig tar:xz
 HAS_CONFIGURE=	YES
-CONFIGURE_ARGS+=	--use_gtk3=N --use_qt3=N --use_qt4=N --use_qt5=N
-USE_GNOME=	gtk20
+CONFIGURE_ARGS+=	--use_gtk3=N --use_qt5=N
+USE_GNOME=	gtk30
 USE_XORG=	x11 xtst xext
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	${PREFIX}/lib/gcin
@@ -43,7 +43,7 @@ post-patch:
 		s,%%PREFIX%%,${PREFIX},;' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/local,/usr,g' \
-		${WRKSRC}/gtk-im/Makefile ${WRKSRC}/menu/Makefile
+		${WRKSRC}/menu/Makefile
 	@${REINPLACE_CMD} -e 's,modify-XIM ,,; 8,10 d' \
 		${WRKSRC}/scripts/Makefile
 	@${REINPLACE_CMD} -e 's,bash,sh,; s/&//; s,/opt/gnome,${LOCALBASE},;' \
@@ -54,8 +54,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,bash,sh,; s/&//; 12,13 s/=/ /; \
 		s/export/setenv/; s/$$UTF8ED/xdg-open/' \
 		${WRKSRC}/scripts/html-browser
-	@${REINPLACE_CMD} -e 's,gcin-im-client.h,im-client/gcin-im-client.h,;' \
-		${WRKSRC}/gtk-im/gtkimcontextgcin.c
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' \
 		${WRKSRC}/IMdkit/lib/Makefile ${WRKSRC}/Makefile \
 		${WRKSRC}/qt-im/Makefile ${WRKSRC}/scripts/modify-XIM \

@@ -1,4 +1,4 @@
---- Makefile.orig	2017-11-18 04:48:43 UTC
+--- Makefile.orig	2019-03-07 09:07:52 UTC
 +++ Makefile
 @@ -4,8 +4,11 @@ include config.mak
  include suffixes-rule
@@ -26,27 +26,28 @@
  OBJS_TSLEARN=tslearn.o util.o gcin-conf.o pho-util.o tsin-util.o gcin-send.o pho-sym.o \
               table-update.o locale.o gcin-settings.o gcin-common.o gcin-icon.o pho-dbg.o  \
               pho2pinyin.o pinyin.o lang.o gtab-list.o gtab-init.o fullchar.o \
-@@ -103,7 +110,7 @@ PROGS_CV=kbmcv pin-juyin
+@@ -102,8 +109,7 @@ PROGS_CV=kbmcv pin-juyin
+ 
  all:	$(PROGS) trad2sim $(GCIN_SO) $(DATA) $(PROGS_CV) gcin.spec gcin-fedora.spec
  	$(MAKE) -C data
- 	$(MAKE) -C gtk-im
+-	$(MAKE) -C gtk-im
 -	if [ $(BUILD_MODULE) = 'Y' ]; then $(MAKE) -C modules; fi
 +	$(MAKE) -C modules
  	if [ $(USE_I18N) = 'Y' ]; then $(MAKE) -C po; fi
  	if [ $(GTK3_IM) = 'Y' ]; then $(MAKE) -C gtk3-im; fi
  	if [ $(QT_IM) = 'Y' ]; then $(MAKE) -C qt-im; fi
-@@ -113,18 +120,18 @@ all:	$(PROGS) trad2sim $(GCIN_SO) $(DATA) $(PROGS_CV) 
+@@ -113,18 +119,18 @@ all:	$(PROGS) trad2sim $(GCIN_SO) $(DATA) $(PROGS_CV) 
  #gcc_ld_run_path=-Wl,-rpath,$(gcin_ld_run_path)
  
  gcin:   $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV)
 -	$(CCLD) $(EXTRA_LDFLAGS) $(gcc_ld_run_path) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(GCIN_LDFLAGS) -L/usr/X11R6/$(LIB)
-+	$(CCLD) $(EXTRA_LDFLAGS) $(gcc_ld_run_path) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(GCIN_LDFLAGS) -L/usr/local/$(LIB)
++	$(CCLD) $(EXTRA_LDFLAGS) $(gcc_ld_run_path) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(GCIN_LDFLAGS) -L%%PREFIX%%/$(LIB)
  	rm -f core.* vgcore.*
  	ln -sf $@ $@.test
  
  gcin-nocur:   $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV)
 -	$(CCLD) -Wl,-rpath,$(gcinlibdir) $(EXTRA_LDFLAGS) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L/usr/X11R6/$(LIB)
-+	$(CCLD) -Wl,-rpath,$(gcinlibdir) $(EXTRA_LDFLAGS) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L/usr/local/$(LIB)
++	$(CCLD) -Wl,-rpath,$(gcinlibdir) $(EXTRA_LDFLAGS) -o $@ $(OBJS) $(IMdkitLIB) $(OBJ_IMSRV) -lXtst $(LDFLAGS) -L%%PREFIX%%/$(LIB)
  	rm -f core.*
  
 -tslearn:        $(OBJS_TSLEARN)
@@ -58,7 +59,7 @@
  	$(CCLD) $(gcc_ld_run_path) -o $@ $(OBJS_TS_EDIT) -L./im-client -lgcin-im-client -lcurl $(LDFLAGS)
  
  ts-contribute:	ts-edit
-@@ -171,16 +178,16 @@ gtab-merge:  $(OBJS_gtab_merge)
+@@ -171,16 +177,16 @@ gtab-merge:  $(OBJS_gtab_merge)
  kbmcv:  $(OBJS_kbmcv)
  	$(CCLD) -o $@ $(OBJS_kbmcv) $(LDFLAGS)
  
@@ -79,10 +80,11 @@
  	$(CCLD) $(gcc_ld_run_path) -o $@ $(OBJS_gcin_message) -L./im-client -lgcin-im-client $(LDFLAGS)
  
  pin-juyin:	$(OBJS_pin_juyin)
-@@ -229,23 +236,19 @@ install:
+@@ -228,24 +234,19 @@ install:
+ 	install -d $(bindir)
  	$(MAKE) -C data install
  	$(MAKE) -C im-client install
- 	$(MAKE) -C gtk-im install
+-	$(MAKE) -C gtk-im install
 -	if [ $(BUILD_MODULE) = 'Y' ]; then $(MAKE) -C modules install; fi
 +	$(MAKE) -C modules install
  	if [ $(GTK3_IM) = 'Y' ]; then $(MAKE) -C gtk3-im install; fi
@@ -106,7 +108,7 @@
  	   install -s $(PROGS) $(bindir); \
  	   rm -f $(bindir)/trad2sim; ln -sf sim2trad $(bindir)/trad2sim; \
  	   rm -f $(bindir)/ts-contribute; ln -sf ts-edit $(bindir)/ts-contribute; \
-@@ -253,6 +256,7 @@ install:
+@@ -253,6 +254,7 @@ install:
  	   rm -f $(bindir)/ts-edit-en; ln -sf ts-edit $(bindir)/ts-edit-en; \
  	fi
  	$(MAKE) -C scripts install
@@ -114,7 +116,15 @@
  	$(MAKE) -C menu install
  	if [ $(USE_I18N) = 'Y' ]; then $(MAKE) -C po install; fi
  
-@@ -286,5 +290,3 @@ gcin.spec:	gcin.spec.in
+@@ -261,7 +263,6 @@ clean:
+ 	$(MAKE) -C data clean
+ 	$(MAKE) -C scripts clean
+ 	$(MAKE) -C im-client clean
+-	$(MAKE) -C gtk-im clean
+ 	$(MAKE) -C modules clean
+ 	if [ $(GTK3_IM) = 'Y' ]; then $(MAKE) -C gtk3-im clean; fi
+ 	$(MAKE) -C qt-im clean
+@@ -286,5 +287,3 @@ gcin.spec:	gcin.spec.in
  gcin-fedora.spec:	gcin-fedora.spec.in VERSION.gcin
  	rm -f $@
  	sed -e "s/__gcin_version__/$(GCIN_VERSION)/" < $< > $@

@@ -28,7 +28,6 @@ lib/gcin/intcode-module.so
 lib/gcin/libgcin-im-client.so
 lib/gcin/libgcin-im-client.so.1
 lib/gcin/libgcin-im-client.so.1.2.5
-lib/gtk-2.0/immodules/im-gcin.so
 man/man1/gcin-exit.1.gz
 man/man1/gcin-gb-toggle.1.gz
 man/man1/gcin-kbm-toggle.1.gz
@@ -167,5 +166,3 @@ share/icons/gcin/vocabulary.png
 share/icons/gcin/wm2.png
 share/icons/gcin/wubi.png
 share/icons/hicolor/64x64/apps/gcin.png
-@postexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
-@postunexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
