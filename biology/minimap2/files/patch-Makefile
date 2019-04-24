@@ -1,0 +1,40 @@
+--- Makefile.orig	2019-02-28 20:49:24 UTC
++++ Makefile
+@@ -1,11 +1,19 @@
+-CFLAGS=		-g -Wall -O2 -Wc++-compat #-Wextra
+-CPPFLAGS=	-DHAVE_KALLOC
++CFLAGS?=	-g -Wall -O2
++CFLAGS+=	-Wc++-compat #-Wextra
++CPPFLAGS+=	-DHAVE_KALLOC
+ INCLUDES=
+ OBJS=		kthread.o kalloc.o misc.o bseq.o sketch.o sdust.o options.o index.o chain.o align.o hit.o map.o format.o pe.o esterr.o splitidx.o ksw2_ll_sse.o
+ PROG=		minimap2
+ PROG_EXTRA=	sdust minimap2-lite
+ LIBS=		-lm -lz -lpthread
+ 
++PREFIX?=	/usr/local
++DESTDIR?=	.
++MAN1DIR?=	${PREFIX}/man/man1
++MKDIR?=		mkdir
++INSTALL?=	install
++STRIP?=		strip
++
+ ifeq ($(arm_neon),) # if arm_neon is not defined
+ ifeq ($(sse2only),) # if sse2only is not defined
+ 	OBJS+=ksw2_extz2_sse41.o ksw2_extd2_sse41.o ksw2_exts2_sse41.o ksw2_extz2_sse2.o ksw2_extd2_sse2.o ksw2_exts2_sse2.o ksw2_dispatch.o
+@@ -84,6 +92,15 @@ ksw2_exts2_neon.o:ksw2_exts2_sse.c ksw2.h kalloc.h
+ 		$(CC) -c $(CFLAGS) $(CPPFLAGS) -DKSW_SSE2_ONLY -D__SSE2__ $(INCLUDES) $< -o $@
+ 
+ # other non-file targets
++
++install: all
++	${MKDIR} -p ${DESTDIR}${PREFIX}/bin
++	${MKDIR} -p ${DESTDIR}${MAN1DIR}
++	${INSTALL} -c minimap2 ${DESTDIR}${PREFIX}/bin
++	${INSTALL} -c minimap2.1 ${DESTDIR}${MAN1DIR}
++
++install-strip: install
++	${STRIP} ${DESTDIR}${PREFIX}/bin/minimap2
+ 
+ clean:
+ 		rm -fr gmon.out *.o a.out $(PROG) $(PROG_EXTRA) *~ *.a *.dSYM build dist mappy*.so mappy.c python/mappy.c mappy.egg*
