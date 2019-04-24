@@ -1,4 +1,4 @@
---- Makefile.orig	2013-01-06 14:14:09 UTC
+--- Makefile.orig	2019-03-09 20:14:52 UTC
 +++ Makefile
 @@ -8,7 +8,7 @@ DESTDIR?=/usr
  USE_CA=NO
@@ -9,15 +9,18 @@
  
  # set to YES if you compile with MINGW32
  USE_WIN32=NO
-@@ -26,7 +26,6 @@ ifneq ($(OSX_PLATFORM), YES)
+@@ -27,8 +27,8 @@ endif
+ 
+ ifeq ($(USE_WIN32), YES)
+ 	CC=i686-w64-mingw32-gcc-posix
+-else
+-	CC=gcc
++#else
++#	CC=gcc
  endif
  
- CFLAGS:=$(CFLAGS) -D DESTDIR=\"$(DESTDIR)\" -D VERSION=\"$(VERSION)\" -I.
--CC=gcc
- 
- ifeq ($(USE_CA), YES)
- 		OBJECTS=qrq.o coreaudio.o
-@@ -95,16 +94,14 @@ uninstall:
+ # build information may be added by CI scripts and will be
+@@ -104,16 +104,14 @@ uninstall:
  else
  
  install: qrq
