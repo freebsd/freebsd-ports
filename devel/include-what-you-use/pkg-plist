@@ -15,4 +15,3 @@ bin/iwyu_tool.py
 %%DATADIR%%/qt4.imp
 %%DATADIR%%/qt5_4.imp
 %%DATADIR%%/stl.c.headers.imp
-%%DATADIR%%/third_party.imp
