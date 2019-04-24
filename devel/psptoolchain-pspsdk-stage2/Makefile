@@ -18,6 +18,7 @@ BUILD_DEPENDS=		psp-cpp:devel/psptoolchain-gcc-stage2 \
 # psp-gcc doesn't need -march=... in CFLAGS (e.g. set by CPUTYPE in make.conf)
 CONFIGURE_ENV=		CFLAGS="${CFLAGS:C/(^|[[:space:]])-march=[^[:space:]]*//g}"
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-pspdev="${LOCALBASE}"
+SSP_CFLAGS?=		-fstack-protector # XXX -strong isn't supported by GCC < 4.9
 
 PLIST=			${.CURDIR}/pkg-plist
 MASTERDIR=		${.CURDIR}/../psptoolchain-pspsdk-stage1
