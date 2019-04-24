@@ -1411,6 +1411,7 @@
     SUBDIR += udfclient
     SUBDIR += uefi-edk2-bhyve
     SUBDIR += uefi-edk2-bhyve-csm
+    SUBDIR += uefi-edk2-bhyve-devel
     SUBDIR += ufs_copy
     SUBDIR += uhidd
     SUBDIR += uif2iso
