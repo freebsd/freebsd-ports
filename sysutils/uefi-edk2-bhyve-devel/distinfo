@@ -1,0 +1,5 @@
+TIMESTAMP = 1556115530
+SHA256 (freebsd-uefi-edk2-g20190424-0613ec3_GH0.tar.gz) = fbdb9bedfcb2a05981e94027a2f29d1d16e89d923daad72e9437723ec9d1cbc0
+SIZE (freebsd-uefi-edk2-g20190424-0613ec3_GH0.tar.gz) = 34125617
+SHA256 (openssl-openssl-OpenSSL_1_1_0j_GH0.tar.gz) = 95f9d879e66f76711db28d8c2f24ab4e049ab7d5afb7266238a312c95bb9f338
+SIZE (openssl-openssl-OpenSSL_1_1_0j_GH0.tar.gz) = 5949610
