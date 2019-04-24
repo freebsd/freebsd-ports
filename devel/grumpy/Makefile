@@ -7,6 +7,8 @@ CATEGORIES=	devel
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Python to Go source code transcompiler and runtime
 
+BROKEN_i386=	constant 2147762812 overflows int
+
 BUILD_DEPENDS=	go:lang/go
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
