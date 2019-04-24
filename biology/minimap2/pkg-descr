@@ -1,0 +1,18 @@
+Minimap2 is a versatile sequence alignment program that aligns DNA or mRNA
+sequences against a large reference database. Typical use cases include:
+
+(1) mapping PacBio or Oxford Nanopore genomic reads to the human genome
+
+(2) finding overlaps between long reads with error rate up to ~15%
+
+(3) splice-aware alignment of PacBio Iso-Seq or Nanopore cDNA or Direct RNA
+    readsagainst a reference genome
+
+(4) aligning Illumina single- or paired-end reads
+
+(5) assembly-to-assembly alignment
+
+(6) full-genome alignment between two closely related species with divergence
+    below ~15%
+
+WWW: https://github.com/lh3/minimap2
