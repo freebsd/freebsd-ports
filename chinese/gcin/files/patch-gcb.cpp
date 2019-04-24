@@ -1,4 +1,4 @@
---- gcb.cpp.orig	2015-11-22 23:15:12 UTC
+--- gcb.cpp.orig	2019-03-06 00:33:25 UTC
 +++ gcb.cpp
 @@ -1,3 +1,4 @@
 +#if USE_GCB
@@ -13,9 +13,12 @@
  static GtkWidget *mainwin;
  static GtkClipboard *pclipboard_clipboard, *pclipboard_primary;
  static GtkWidget **buttonArr;
-@@ -529,4 +531,4 @@ void free_gcb() {
-   g_free(buttonStr); buttonStr = NULL;
+@@ -256,7 +258,7 @@ static void get_mouse_button( GtkWidget *widget,GdkEve
+ 
    }
  }
 -
 +#endif
+ static void hist_get_mouse_button( GtkWidget *widget,GdkEventButton *event, gpointer data)
+ {
+   int i;
