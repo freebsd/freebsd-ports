@@ -2,6 +2,7 @@
 
 PORTNAME=	docbook2mdoc
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/docbook2mdoc/snapshots/
 
