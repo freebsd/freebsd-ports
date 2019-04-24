@@ -1,9 +1,9 @@
-%%PERL5_MAN3%%/Apache::DB.3.gz
-%%PERL5_MAN3%%/Apache::DProf.3.gz
-%%PERL5_MAN3%%/Apache::SmallProf.3.gz
-%%PERL5_MAN3%%/Apache::perl5db.3.gz
 %%SITE_ARCH%%/Apache/DB.pm
 %%SITE_ARCH%%/Apache/DProf.pm
 %%SITE_ARCH%%/Apache/SmallProf.pm
 %%SITE_ARCH%%/Apache/perl5db.pl
 %%SITE_ARCH%%/auto/Apache/DB/DB.so
+%%PERL5_MAN3%%/Apache::DB.3.gz
+%%PERL5_MAN3%%/Apache::DProf.3.gz
+%%PERL5_MAN3%%/Apache::SmallProf.3.gz
+%%PERL5_MAN3%%/Apache::perl5db.3.gz
