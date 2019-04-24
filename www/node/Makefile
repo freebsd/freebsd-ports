@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	11.14.0
+PORTVERSION=	12.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
@@ -66,8 +66,8 @@ MAKE_ENV+=	CC.host=${CC} CFLAGS.host="${CFLAGS}" \
 		LINK.host=${CXX} LDFLAGS.host="${LDFLAGS}"
 
 BUILD_DEPENDS+=	c-ares>=1.15.0:dns/c-ares\
-		libuv>=1.27.0:devel/libuv \
-		libnghttp2>=1.37.0:www/libnghttp2
+		libuv>=1.28.0:devel/libuv \
+		libnghttp2>=1.38.0:www/libnghttp2
 LIB_DEPENDS+=	libcares.so:dns/c-ares\
 		libuv.so:devel/libuv \
 		libnghttp2.so:www/libnghttp2
@@ -91,7 +91,7 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
-		${WRKSRC}/deps/v8/gypfiles/v8.gyp
+		${WRKSRC}/tools/v8_gypfiles/v8.gyp
 
 post-configure:
 	# Post-process Makefile and *.mk files created by node-gyp and remove
