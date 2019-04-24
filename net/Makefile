@@ -1210,6 +1210,7 @@
     SUBDIR += rubygem-azure-core
     SUBDIR += rubygem-bunny
     SUBDIR += rubygem-connection_pool
+    SUBDIR += rubygem-docker-api
     SUBDIR += rubygem-dogapi
     SUBDIR += rubygem-domain_name
     SUBDIR += rubygem-dropbox-sdk
