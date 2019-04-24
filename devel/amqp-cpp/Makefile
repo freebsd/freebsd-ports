@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.1.4
 CATEGORIES=	devel
 
-MAINTAINER=	aleksandr.fedorov@itglobal.com
+MAINTAINER=	aleksandr.fedorov@vstack.com
 COMMENT=	C++ library for asynchronous non-blocking communication with RabbitMQ
 
 LICENSE=	APACHE20
