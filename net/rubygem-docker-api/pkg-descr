@@ -1,0 +1,3 @@
+This gem provides an object-oriented interface to the Docker Engine API.
+
+WWW: http://rubygems.org/gems/docker-api
