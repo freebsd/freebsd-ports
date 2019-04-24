@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	concourse
-PORTVERSION=	4.2.3
+PORTVERSION=	5.1.0
 CATEGORIES=	net sysutils
 MASTER_SITES=	LOCAL/dumbbell/concourse/
 PKGNAMESUFFIX=	-fly
@@ -11,8 +11,9 @@ COMMENT=	CLI for Concourse
 
 LICENSE=	APACHE20
 
-GO_CMD=		${LOCALBASE}/bin/go
 GO_PKGNAME=	github.com/concourse/fly
+GO_BUILDFLAGS+=	-mod=vendor \
+		-ldflags="-X github.com/concourse/fly/version.Version=${PORTVERSION}"
 
 USES=		go tar:xz
 
@@ -24,32 +25,39 @@ PLIST_FILES=	bin/fly
 # repository, which contains many Git submodules, including fly, and
 # build from there. So basically:
 #
-#     git clone --recursive https://github.com/concourse/concourse.gi
-#     cd concourse
-#     export GOPATH=$PWD
-#     cd src/github.com/concourse/fly
+#     git clone --recursive https://github.com/concourse/concourse.git
+#     cd concourse/fly
 #     go build
 #
-# Therefore, the source archive contains the Concourse top-level
-# repository and all its submodules. It's created using the
-# create-src-archive below:
+# Unfortunately, this is difficult to integrate as is with the Ports framework:
+#   * Some submodules are hosted on services other than GitHub
+#   * Third-party Go dependencies are not Git submodules
+#
+# We created the `create-src-archive` to create a self-contained
+# source archive because the Concourse does not provide one. This
+# source archive contains the Git submodules and the third-party Go
+# dependencies, fetched using `go mod vendor`.
+#
+# It is created using the `create-src-archive` target below:
 #
 #     make create-src-archive
 #
 # Because it doesn't match the project layout USES=go expects, we
 # override the post-extract and do-build targets to adapt the commands.
 #
+# In particular, we must pass `-mod=vendor` to go-install to be able to
+# use the third-party dependencies fetched with `go mod vendor`.
+
 # `fly` version is set by default to "0.0.0-dev" in version/Version.go.
 # Instead of patching the file, we use a linker flag to set the variable
 # to the port's version.
 
 post-extract:
-	${LN} -sf ${WRKSRC}/src ${GO_WRKDIR_SRC}
+	@:
 
 do-build:
-	(cd ${WRKDIR}; \
-	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} \
-		'install' -v -ldflags="-X github.com/concourse/fly/version.Version=${PORTVERSION}" ${GO_TARGET})
+	(cd ${WRKSRC}/fly; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} 'install' ${GO_BUILDFLAGS})
 
 .PHONY: create-src-archive
 ARCHIVE_DIR=	${DISTDIR}/concourse-${PORTVERSION}
@@ -58,6 +66,11 @@ create-src-archive:
 	git clone --recursive -b v${PORTVERSION} \
 		https://github.com/concourse/concourse.git \
 		${ARCHIVE_DIR}
+	GOPATH=$$(mktemp concourse-gopath.XXXX) && \
+	(cd ${ARCHIVE_DIR} && \
+	 ${GO_CMD} mod vendor) && \
+	${FIND} "$$GOPATH" -exec ${CHMOD} u+w {} \; && \
+	${RM} -rf "$$GOPATH"
 	${FIND} ${ARCHIVE_DIR} \( -name ".git*" -o -name "testdata" \) -depth -exec ${RM} -rf {} \;
 	${TAR} -cf - -C ${ARCHIVE_DIR:H} ${ARCHIVE_DIR:T} | ${XZ_CMD} > ${ARCHIVE_DIR}.tar.xz
 	${RM} -rf ${ARCHIVE_DIR}
