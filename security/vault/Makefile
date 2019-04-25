@@ -2,6 +2,7 @@
 
 PORTNAME=	vault
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -26,6 +27,7 @@ USERS=		vault
 GROUPS=		vault
 
 PLIST_FILES=	bin/${PORTNAME}
+SUB_FILES=	pkg-message
 
 post-patch:
 	@${CP} ${WRKDIR}/vaultui-${PORTVERSION}/http/bindata_assetfs.go ${WRKDIR}/vault-${PORTVERSION}/http/bindata_assetfs.go
