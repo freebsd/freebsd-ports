@@ -1,5 +1,5 @@
 bin/signify
-%%ETCDIR%%/openbsd-63-base.pub
 %%ETCDIR%%/openbsd-64-base.pub
 %%ETCDIR%%/openbsd-65-base.pub
+%%ETCDIR%%/openbsd-66-base.pub
 man/man1/signify.1.gz
