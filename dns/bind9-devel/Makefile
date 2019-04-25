@@ -64,9 +64,6 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--sysconfdir=${ETCDIR}
 ETCDIR=		${PREFIX}/etc/namedb
 
-# XXX: Add -devel
-CONFLICTS=	bind911 bind912 bind913 bind914
-
 .if defined(BIND_TOOLS_SLAVE)
 CONFIGURE_ARGS+=	--disable-shared
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-bind-tools
@@ -76,6 +73,9 @@ SUB_FILES=	pkg-message named.conf
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-no-bind-tools
 
 PORTDOCS=	*
+
+# XXX: Add -devel
+CONFLICTS=	bind911 bind912 bind913 bind914
 .endif	# BIND_TOOLS_SLAVE
 
 MAKE_JOBS_UNSAFE=	yes
