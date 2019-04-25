@@ -10,7 +10,7 @@ include/devhelp-3.0/devhelp/dh-init.h
 include/devhelp-3.0/devhelp/dh-keyword-model.h
 include/devhelp-3.0/devhelp/dh-link.h
 include/devhelp-3.0/devhelp/dh-sidebar.h
-lib/gedit/plugins/__pycache__/devhelp.cpython-%%PYTHON_SUFFIX%%.%%PYTHON_PYOEXTENSION%%
+lib/gedit/plugins/__pycache__/devhelp.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/gedit/plugins/__pycache__/devhelp.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/gedit/plugins/devhelp.plugin
 lib/gedit/plugins/devhelp.py
