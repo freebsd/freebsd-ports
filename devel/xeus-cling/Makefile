@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xeus-cling
-DISTVERSION=	0.4.11
+DISTVERSION=	0.5.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libclingInterpreter.so:lang/cling \
 		libxeus.so:devel/xeus \
 		libzmq.so:net/libzmq4
 
-USES=		cmake compiler:c++14-lang pkgconfig
+USES=		cmake compiler:c++14-lang pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	QuantStack
 
