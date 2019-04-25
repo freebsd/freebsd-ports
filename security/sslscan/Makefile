@@ -4,6 +4,7 @@
 PORTNAME=	sslscan
 DISTVERSION=	1.11.12
 DISTVERSIONSUFFIX=	-${GH_ACCOUNT}
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	gavin@FreeBSD.org
@@ -11,13 +12,13 @@ COMMENT=	SSLScan is a fast SSL port scanner
 
 LICENSE=	GPLv3
 
-OPTIONS_DEFINE=	UNSAFESSL
-OPTIONS_DEFAULT_amd64=	UNSAFESSL
-UNSAFESSL_DESC=	Use openssl-unsafe as libssl provider (SSLv2 etc.)
-
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	rbsec
+
+OPTIONS_DEFINE=	UNSAFESSL
+OPTIONS_DEFAULT=	UNSAFESSL
+UNSAFESSL_DESC=	Use openssl-unsafe as libssl provider (SSLv2 etc.)
 
 UNSAFESSL_USES_OFF=	ssl
 UNSAFESSL_BUILD_DEPENDS=	${LOCALBASE}/openssl-unsafe/lib/libssl.so:security/openssl-unsafe
