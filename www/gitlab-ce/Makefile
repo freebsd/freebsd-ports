@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.10.0
+PORTVERSION=	11.10.1
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 MY_DEPENDS=	git>=2.16.2:devel/git \
 	gitlab-shell>=9.0.0:devel/gitlab-shell \
 	gitlab-workhorse>=8.5.1:www/gitlab-workhorse \
-	gitaly>=1.33.0:devel/gitaly \
+	gitaly>=1.34.0:devel/gitaly \
 	gitlab-pages>=1.5.0:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
 	yarn>=1.10.0:www/yarn \
@@ -189,7 +189,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-sshkey>=2.0:security/rubygem-sshkey \
 	rubygem-ed25519>=1.2:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly-proto>=1.19.0:net/rubygem-gitaly-proto \
+	rubygem-gitaly-proto>=1.22.0:net/rubygem-gitaly-proto \
 	rubygem-grpc>=1.15.0:net/rubygem-grpc \
 	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
 	rubygem-google-protobuf>=3.6:devel/rubygem-google-protobuf \
@@ -228,7 +228,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	8a802d1c6b7ee660fbf701b9758ccff85f065e68
+GL_COMMIT=	861fe405571e6900ab9aa9f9da867111d93c69f2
 
 USERS=	git
 GROUPS=	git

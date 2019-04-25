@@ -18,12 +18,10 @@
  
  # JIRA integration
  gem 'jira-ruby', '~> 1.4'
-@@ -305,87 +305,6 @@ group :tracing do
-   # OpenTracing
-   gem 'opentracing', '~> 0.4.3'
+@@ -307,87 +307,6 @@ group :tracing do
    gem 'jaeger-client', '~> 0.10.0'
--end
--
+ end
+ 
 -group :development do
 -  gem 'foreman', '~> 0.84.0'
 -  gem 'brakeman', '~> 4.2', require: false
@@ -103,6 +101,17 @@
 -  gem 'concurrent-ruby', '~> 1.1'
 -  gem 'test-prof', '~> 0.2.5'
 -  gem 'rspec_junit_formatter'
+-end
+-
+ gem 'octokit', '~> 4.9'
+ 
+ gem 'mail_room', '~> 0.9.1'
+@@ -419,7 +338,7 @@ group :ed25519 do
  end
  
- gem 'octokit', '~> 4.9'
+ # Gitaly GRPC client
+-gem 'gitaly-proto', '~> 1.19.0', require: 'gitaly'
++gem 'gitaly-proto', '~> 1.22.0', require: 'gitaly'
+ 
+ gem 'grpc', '~> 1.15.0'
+ 
