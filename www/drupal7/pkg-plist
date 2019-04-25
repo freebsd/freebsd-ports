@@ -113,6 +113,7 @@
 %%DRUPAL_BASE%%/misc/jquery.form.js
 %%DRUPAL_BASE%%/misc/jquery.js
 %%DRUPAL_BASE%%/misc/jquery.once.js
+%%DRUPAL_BASE%%/misc/jquery-extend-3.4.0.js
 %%DRUPAL_BASE%%/misc/machine-name.js
 %%DRUPAL_BASE%%/misc/menu-collapsed-rtl.png
 %%DRUPAL_BASE%%/misc/menu-collapsed.png
