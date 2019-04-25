@@ -9004,11 +9004,14 @@
 %%WWWDIR%%/doc/user/admin_area/monitoring/img/health_check_token.png
 %%WWWDIR%%/doc/user/admin_area/settings/continuous_integration.md
 %%WWWDIR%%/doc/user/admin_area/settings/email.md
+%%WWWDIR%%/doc/user/admin_area/settings/external_authorization.md
 %%WWWDIR%%/doc/user/admin_area/settings/img/access_restrictions.png
 %%WWWDIR%%/doc/user/admin_area/settings/img/admin_area_default_artifacts_expiration.png
 %%WWWDIR%%/doc/user/admin_area/settings/img/admin_area_maximum_artifacts_size.png
+%%WWWDIR%%/doc/user/admin_area/settings/img/classification_label_on_project_page.png
 %%WWWDIR%%/doc/user/admin_area/settings/img/domain_blacklist.png
 %%WWWDIR%%/doc/user/admin_area/settings/img/enforce_terms.png
+%%WWWDIR%%/doc/user/admin_area/settings/img/external_authorization_service_settings.png
 %%WWWDIR%%/doc/user/admin_area/settings/img/import_sources.png
 %%WWWDIR%%/doc/user/admin_area/settings/img/respond_to_terms.png
 %%WWWDIR%%/doc/user/admin_area/settings/img/restricted_url.png
