@@ -1,0 +1,4 @@
+Stackdriver Logging API: Writes log entries and
+manages your Stackdriver Logging configuration.
+
+WWW: https://pypi.org/project/google-cloud-logging/
