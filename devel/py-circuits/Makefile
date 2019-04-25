@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	circuits
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,15 +13,13 @@ COMMENT=	Asynchronous Component-based Event Application Framework
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-post-extract:
-	${FIND} ${WRKSRC} -type d -name __pycache__ -exec ${RM} -r {} +
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest tests
