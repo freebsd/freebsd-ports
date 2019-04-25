@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	posix_ipc
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,8 @@ USE_PYTHON=	distutils autoplist
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}/${PYTHONPREFIX_SITELIBDIR}/posix_ipc.so
+
+# requires mqueuefs and sem kernel modules loaded
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
