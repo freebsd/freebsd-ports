@@ -8,7 +8,7 @@ COMMENT=	Ruby bindings for version control system
 
 USE_RUBY=	yes
 
-PORTREVISION_111=	0
+PORTREVISION_112=	0
 PORTREVISION_19=	0
 
 SVN_BUILD_BINDINGS=	yes

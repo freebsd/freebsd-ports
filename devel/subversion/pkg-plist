@@ -51,6 +51,7 @@ include/subversion-1/svn_md5.h
 include/subversion-1/svn_mergeinfo.h
 include/subversion-1/svn_nls.h
 include/subversion-1/svn_opt.h
+include/subversion-1/svn_opt_impl.h
 include/subversion-1/svn_path.h
 include/subversion-1/svn_pools.h
 include/subversion-1/svn_props.h
@@ -63,6 +64,7 @@ include/subversion-1/svn_string.h
 include/subversion-1/svn_subst.h
 include/subversion-1/svn_time.h
 include/subversion-1/svn_types.h
+include/subversion-1/svn_types_impl.h
 include/subversion-1/svn_user.h
 include/subversion-1/svn_utf.h
 include/subversion-1/svn_version.h
@@ -198,14 +200,6 @@ libdata/pkgconfig/libsvn_wc.pc
 %%DATADIR%%/buildbot/slaves/svn-x64-centos/svncheck.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-centos/svnclean.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-centos/svnlog.sh
-%%SERF%%%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnbuild.sh
-%%SERF%%%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svncheck.sh
-%%SERF%%%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnclean.sh
-%%SERF%%%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnlog.sh
-%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svnbuild.sh
-%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svncheck.sh
-%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svnclean.sh
-%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svnlog.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx/mkramdisk.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx/rmramdisk.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx/setenv.sh
@@ -214,6 +208,7 @@ libdata/pkgconfig/libsvn_wc.pc
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx/svncheck-bindings.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx/svncheck.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx/svnclean.sh
+%%DATADIR%%/buildbot/slaves/svnbot-common/README
 %%DATADIR%%/buildbot/slaves/ubuntu-x64/svnbuild.sh
 %%DATADIR%%/buildbot/slaves/ubuntu-x64/svncheck-bindings.sh
 %%DATADIR%%/buildbot/slaves/ubuntu-x64/svncheck.sh
@@ -362,6 +357,7 @@ libdata/pkgconfig/libsvn_wc.pc
 %%DATADIR%%/dist/backport_tests_py.py
 %%DATADIR%%/dist/backport.pl
 %%DATADIR%%/dist/backport_tests.py
+%%DATADIR%%/dist/changes-to-html.py
 %%DATADIR%%/dist/checksums.py
 %%DATADIR%%/dist/create-minor-release-branch.py
 %%DATADIR%%/dist/detect-conflicting-backports.py
@@ -469,3 +465,4 @@ libdata/pkgconfig/libsvn_wc.pc
 %%DATADIR%%/server-side/test_svn_server_log_parse.py
 %%DATADIR%%/xslt/svnindex.css
 %%DATADIR%%/xslt/svnindex.xsl
+@dir %%DATADIR%%/buildbot/slaves/svn-arm64-gentoo
