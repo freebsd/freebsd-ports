@@ -43,7 +43,7 @@ OMEMO_DESC=	OMEMO end-to-end encryption support
 # GUPNP_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gupnp/__init__.py:net/gupnp-igd@${PY_FLAVOR}
 
 OMEMO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-axolotl>0:security/py-python-axolotl@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}python-qrcode>0:textproc/py-qrcode@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode@${PY_FLAVOR}
 DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:devel/py-dbus@${PY_FLAVOR}
 NLS_USES=		gettext
 SPELL_LIB_DEPENDS=	libgspell-1.so:textproc/gspell
