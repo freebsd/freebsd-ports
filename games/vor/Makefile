@@ -13,7 +13,7 @@ COMMENT=	Dodge the rocks until you die
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig tar:tgz
+USES=		gmake pkgconfig sdl tar:tgz
 USE_SDL=	mixer image sdl
 GNU_CONFIGURE=	yes
 
