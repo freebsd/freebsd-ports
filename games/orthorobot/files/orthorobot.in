@@ -1,0 +1,4 @@
+#! /bin/sh -
+# $FreeBSD$
+
+exec %%LOVE_CMD%% %%DATADIR%%/%%PORTNAME%%.love "$@"
