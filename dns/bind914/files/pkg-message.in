@@ -20,9 +20,4 @@
 *                                                                    *
 *    And then restarting syslogd with: service syslogd restart       *
 *                                                                    *
-*                                                                    *
-*   THIS IS A DEVELOPMENT VERSION OF BIND, IT MAY EAT YOUR DATA      *
-*                                                                    *
-*                                                                    *
-*                                                                    *
 **********************************************************************
