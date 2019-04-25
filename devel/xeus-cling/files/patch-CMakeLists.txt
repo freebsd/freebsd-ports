@@ -1,7 +1,7 @@
---- CMakeLists.txt.orig	2018-08-19 15:08:49 UTC
+--- CMakeLists.txt.orig	2019-04-02 06:01:37 UTC
 +++ CMakeLists.txt
-@@ -105,7 +105,7 @@ find_package(xeus 0.13 REQUIRED)
- find_package(cppzmq 4.2.3 REQUIRED)
+@@ -108,7 +108,7 @@ find_package(xeus ${xeus_REQUIRED_VERSIO
+ find_package(cppzmq ${cppzmq_REQUIRED_VERSION} REQUIRED)
  find_package(pugixml REQUIRED)
  
 -find_package(Clang REQUIRED)
@@ -9,12 +9,3 @@
  find_package(Cling REQUIRED)
  find_package(cxxopts REQUIRED)
  
-@@ -177,7 +177,7 @@ set (XCPP_HEADERS
- )
- 
- set(LLVM_NO_DEAD_STRIP 1)
--set(LIBS clingInterpreter clingMetaProcessor clingUtils xeus pugixml cxxopts::cxxopts)
-+set(LIBS clingInterpreter clingMetaProcessor clingUtils xeus pugixml cxxopts::cxxopts -lclangAST -lLLVMSupport)
- set(XEUSCLING_TARGET xeus-cling)
- add_executable(${XEUSCLING_TARGET} ${XEUSCLING_SRC})
- set_target_properties(${XEUSCLING_TARGET} PROPERTIES ENABLE_EXPORTS 1)
