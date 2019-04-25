@@ -25,10 +25,8 @@
 %%WWWDIR%%/img/favicon.ico
 %%WWWDIR%%/img/favicon.png
 %%WWWDIR%%/img/favicon.svg
-%%WWWDIR%%/img/leftarrow.svg
 %%WWWDIR%%/img/loading.gif
 %%WWWDIR%%/img/random.svg
-%%WWWDIR%%/img/rightarrow.svg
 %%WWWDIR%%/img/timezone.svg
 %%WWWDIR%%/js/public/app.js
 %%WWWDIR%%/js/public/app.min.js
