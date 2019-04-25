@@ -1,0 +1,122 @@
+# Created by: rooneg@electricjellyfish.net
+# $FreeBSD$
+
+PORTNAME?=	subversion
+PORTVERSION=	1.10.3
+PORTREVISION?=	0
+CATEGORIES+=	devel
+MASTER_SITES=	APACHE/subversion
+
+GNU_CONFIGURE=	yes
+USES+=		cpe libtool pathfix pkgconfig shebangfix tar:bzip2
+SHEBANG_FILES=	tools/server-side/svnpubsub/rc.d/svnpubsub.solaris \
+		tools/server-side/svnpubsub/rc.d/svnwcsub.solaris
+
+LICENSE=	APACHE20
+
+CPE_VENDOR=	apache
+
+CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[0-9].[0-9]* \
+			${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.1[0-9].[0-9]*
+
+LIB_DEPENDS+=		libapr-1.so:devel/apr1 \
+			libsqlite3.so:databases/sqlite3 \
+			libexpat.so:textproc/expat2 \
+			libutf8proc.so:textproc/utf8proc \
+			liblz4.so:archivers/liblz4
+
+CONFIGURE_ARGS+=	--without-swig \
+			--with-sqlite=${LOCALBASE} \
+			--with-expat=${LOCALBASE}/include:${LOCALBASE}/lib:expat
+
+.if defined(SVN_BUILD_BINDINGS)
+BUILD_DEPENDS+=		swig3.0:devel/swig30
+CONFIGURE_ARGS+=	--with-swig=${LOCALBASE}/bin/swig3.0
+.endif
+
+# ===============================================================
+OPTIONS_SUB=			yes
+
+BDB_CONFIGURE_ON=		--enable-bdb6
+BDB_CONFIGURE_OFF=		--without-berkeley-db
+BDB_USES=			bdb
+
+MAINTAINER_DEBUG_CONFIGURE_ON=	--enable-maintainer-mode --enable-debug
+
+NLS_CONFIGURE_OFF=		--disable-nls
+NLS_USES=			gettext
+
+SASL_CONFIGURE_OFF=		--without-sasl
+SASL_CONFIGURE_ON=		--with-sasl=${LOCALBASE}
+SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
+
+SERF_CONFIGURE_OFF=		--without-serf
+SERF_CONFIGURE_ON=		--with-serf
+SERF_LIB_DEPENDS=		libserf-1.so:www/serf
+
+GPG_AGENT_CONFIGURE_OFF=	--without-gpg-agent
+GPG_AGENT_CONFIGURE_ON=		--with-gpg-agent
+GPG_AGENT_BUILD_DEPENDS=	gpg-agent:security/gnupg
+GPG_AGENT_RUN_DEPENDS=		gpg-agent:security/gnupg
+
+STATIC_CONFIGURE_ON=		--enable-all-static PKG_CONFIG="${LOCALBASE}/bin/pkg-config --static"
+
+# ===============================================================
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMAINTAINER_DEBUG}
+WITH_DEBUG=	yes
+.endif
+
+APR_CONFIG=	${LOCALBASE}/bin/apr-1-config
+APU_CONFIG=	${LOCALBASE}/bin/apu-1-config
+
+CONFIGURE_ARGS+=--with-apr=${APR_CONFIG} --with-apr-util=${APU_CONFIG}
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fpic -DPIC
+.endif
+
+OPTIONS_FILE_UNSET?=""
+OPTIONS_FILE_SET?=""
+
+.if ( ${PORT_OPTIONS:MFREEBSD_TEMPLATE} || !${OPTIONS_FILE_UNSET:MFREEBSD_TEMPLATE} ) && defined(ORGANIZATION)
+CFLAGS+=	-DHAS_ORGANIZATION_NAME
+.endif
+
+.include <bsd.port.pre.mk>
+
+pre-everything::
+.if defined(SVN_BUILD_ADDONS)
+.if ${PORT_OPTIONS:MSTATIC} || ${OPTIONS_FILE_SET:MSTATIC}
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} "!!! addons (bindings, mod_dav_svn, etc). and static build are not compatible !!!"
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${FALSE}
+.endif
+.endif
+
+pre-patch:
+.if defined(SVN_BUILD_ADDONS)
+	@${CP} ${FILESDIR}/build-outputs.mk.addons ${WRKSRC}/build-outputs.mk
+.endif
+
+post-patch:
+.if ${PREFIX} != "/usr"
+	@${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_file.c
+	@${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_impl.h
+.endif
+	@${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
+.if ( ${PORT_OPTIONS:MFREEBSD_TEMPLATE} || !${OPTIONS_FILE_UNSET:MFREEBSD_TEMPLATE} ) && defined(ORGANIZATION)
+	@${ECHO_CMD} "#define ORGANIZATION_NAME \"${ORGANIZATION}\"" > ${WRKSRC}/subversion/freebsd-organization.h
+.endif
+# shebangfix
+	@${FIND} ${WRKSRC}/tools/ -type f -exec ${GREP} -l -e '#!/bin/b' -e '#!/bin/env' \
+		-e '#!/usr/bin/p' {} + | ${XARGS} ${REINPLACE_CMD} -e \
+		'1s|#\!/bin/b|#\!/usr/local/bin/b|' \
+		-e '1s|#\!/bin/env|#\!/usr/bin/env|' \
+		-e '1s|#\!/usr/bin/p|#\!/usr/local/bin/p|'
+# remove all .bak files to clean the stage
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
+
