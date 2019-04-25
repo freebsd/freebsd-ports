@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-DISTVERSION=	2.7.6
-PORTREVISION=	1
+DISTVERSION=	2.8.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
@@ -32,17 +31,17 @@ CONFIGURE_ARGS=	--enable-recvmmsg=no \
 .if !defined(UTILS_ONLY) && !defined(LIB_ONLY)
 CONFIGURE_ARGS+=	--with-rundir=/var/run/knot \
 			--with-storage=/var/db/knot
-USE_RC_SUBR=   ${PORTNAME}
-SUB_FILES=     pkg-message
+USE_RC_SUBR=	${PORTNAME}
+SUB_FILES=	pkg-message
 .endif
 
 .if defined(UTILS_ONLY) || defined(LIB_ONLY)
-CONFIGURE_ARGS+=       --disable-daemon \
-                       --disable-modules
+CONFIGURE_ARGS+=	--disable-daemon \
+			--disable-modules
 .endif
 
 .if defined(LIB_ONLY)
-CONFIGURE_ARGS+=       --disable-utilities
+CONFIGURE_ARGS+=	--disable-utilities
 .endif
 
 USE_LDCONFIG=	yes
