@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 WRKSRC=		${WRKDIR}/SDL-Ball_source_build_0006_src
 
-USES=		dos2unix gmake tar:xz
+USES=		dos2unix gl gmake sdl tar:xz
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
 MAKE_ENV=	DATADIR=${DATADIR}/
