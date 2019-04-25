@@ -696,6 +696,7 @@
     SUBDIR += openxcom
     SUBDIR += openyahtzee
     SUBDIR += orbital_eunuchs_sniper
+    SUBDIR += orthorobot
     SUBDIR += osgg
     SUBDIR += outerspace
     SUBDIR += p5-Acme-GuessNumber
