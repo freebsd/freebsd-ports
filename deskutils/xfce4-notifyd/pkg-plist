@@ -16,6 +16,7 @@ share/icons/hicolor/scalable/status/notification-new-symbolic.svg
 share/icons/hicolor/scalable/status/notification-symbolic.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-notifyd.mo

@@ -6,7 +6,7 @@
 # Support of GTK+ is checked at compile time and themes directories too.
 
 PORTNAME=	xfce4-notifyd
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.4
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -35,8 +35,5 @@ OPTIONS_SUB=		yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
-
-# requires libxfce4panel-2.0 >= 4.13.0 (development version)
-PORTSCOUT=	skipv:0.4.3
 
 .include <bsd.port.mk>
