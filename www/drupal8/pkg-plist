@@ -460,6 +460,7 @@
 %%WWWDIR%%/core/assets/vendor/jquery.ui/ui/widgets/spinner-min.js
 %%WWWDIR%%/core/assets/vendor/jquery.ui/ui/widgets/tabs-min.js
 %%WWWDIR%%/core/assets/vendor/jquery.ui/ui/widgets/tooltip-min.js
+%%WWWDIR%%/core/assets/vendor/jquery/jquery-extend-3.4.0.js
 %%WWWDIR%%/core/assets/vendor/jquery/jquery.js
 %%WWWDIR%%/core/assets/vendor/jquery/jquery.min.js
 %%WWWDIR%%/core/assets/vendor/jquery/jquery.min.map
