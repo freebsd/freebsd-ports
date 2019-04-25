@@ -148,8 +148,8 @@
      def depends(self, build):
 -        return [SoundTouch, ReplayGain, Ebur128Mit, PortAudio, PortMIDI, Qt, TestHeaders,
 -                FidLib, SndFile, FLAC, OggVorbis, OpenGL, TagLib, ProtoBuf,
--                Chromaprint, RubberBand, SecurityFramework, CoreServices, IOKit,
--                QtScriptByteArray, Reverb, FpClassify, PortAudioRingBuffer]
+-                Chromaprint, RubberBand, SecurityFramework, CoreServices, Foundation, IOKit,
+-                QtScriptByteArray, Reverb, FpClassify, PortAudioRingBuffer, OSXFilePathUrlBackport]
 +        return [SoundTouch, ReplayGain, Ebur128Mit, PortAudio, Qt, TestHeaders,
 +                 FidLib, SndFile, FLAC, OggVorbis, OpenGL, TagLib, ProtoBuf,
 +                 Chromaprint, RubberBand, SecurityFramework, CoreServices, IOKit,
