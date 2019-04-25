@@ -1,3 +1,4 @@
+include/xtensor/xaccessible.hpp
 include/xtensor/xaccumulator.hpp
 include/xtensor/xadapt.hpp
 include/xtensor/xarray.hpp
@@ -14,6 +15,7 @@ include/xtensor/xeval.hpp
 include/xtensor/xexception.hpp
 include/xtensor/xexpression.hpp
 include/xtensor/xexpression_holder.hpp
+include/xtensor/xexpression_traits.hpp
 include/xtensor/xfixed.hpp
 include/xtensor/xfunction.hpp
 include/xtensor/xfunctor_view.hpp
@@ -27,7 +29,6 @@ include/xtensor/xiterator.hpp
 include/xtensor/xjson.hpp
 include/xtensor/xlayout.hpp
 include/xtensor/xmanipulation.hpp
-include/xtensor/xmasked_value.hpp
 include/xtensor/xmasked_view.hpp
 include/xtensor/xmath.hpp
 include/xtensor/xmime.hpp
@@ -40,6 +41,7 @@ include/xtensor/xoptional.hpp
 include/xtensor/xoptional_assembly.hpp
 include/xtensor/xoptional_assembly_base.hpp
 include/xtensor/xoptional_assembly_storage.hpp
+include/xtensor/xpad.hpp
 include/xtensor/xrandom.hpp
 include/xtensor/xreducer.hpp
 include/xtensor/xscalar.hpp
