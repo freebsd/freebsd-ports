@@ -3,8 +3,7 @@
 
 PORTNAME=	mixxx
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	2.2.0
-PORTREVISION=	2
+DISTVERSION=	2.2.1
 CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
@@ -16,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_aarch64=		fails to compile: Exception("invalid machine type")
 BROKEN_powerpc64=	fails to configure: unmet dependencies: Could not find libprotobuf, libchromaprint, libmp4, and libwavpack
 
+BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libFLAC.so:audio/flac \
 		libfftw3.so:math/fftw3 \
@@ -90,7 +90,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "/('install', docs)/d" \
 		${WRKSRC}/src/SConscript
 	@${REINPLACE_CMD} -e "s|^Exec=.*|Exec=mixxx| ; \
-		 s|^Icon=.*|Icon=${PREFIX}/share/pixmaps/mixxx-icon.png|" \
+		 s|^Icon=.*|Icon=${PREFIX}/share/pixmaps/mixxx_icon.svg|" \
 		${WRKSRC}/res/linux/mixxx.desktop
 	@${REINPLACE_CMD} -e "s,(Q_OS_LINUX),(Q_OS_LINUX) || defined(Q_OS_FREEBSD),g" \
 		${WRKSRC}/src/util/screensaver.h
