@@ -7,6 +7,9 @@ PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	APACHE/subversion
 
+DEPRECATED=		subversion 1.9.x is end of life log time ago. Consider installing devel/subversion or devel/subversion-lts.
+EXPIRATION_DATE=	2019-07-25
+
 GNU_CONFIGURE=	yes
 USES+=		cpe libtool pathfix pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	tools/server-side/svnpubsub/rc.d/svnpubsub.solaris \
