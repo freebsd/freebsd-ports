@@ -27,9 +27,11 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 #DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
 #EXPIRATION_DATE=<Release date of .0 + 3 years>
 
-TEST_TARGET=	test_harness
-TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \
-		LD_LIBRARY_PATH=${WRKSRC}
+# XXX releases are .tar.xz, add: tar:xz
+USES=	cpe
+
+# Give a hint of where libperl.so can be found.
+USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
 
 # XXX Remove github things.
 USE_GITHUB=	yes
@@ -37,12 +39,118 @@ GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
 GH_TAGNAME=	v5.29.10-9-g07ba20f405
 
+TEST_TARGET=	test_harness
+TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \
+		LD_LIBRARY_PATH=${WRKSRC}
+
+# XXX uncomment PORTSCOUT line
+#PORTSCOUT=	limit:^${PERL_VER}.
+
+HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT=Configure
+CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
+	-Dlibperl=libperl.so.${LIBPERL_VER} \
+	-Darchlib=${PREFIX}/${_ARCH_LIB} \
+	-Dprivlib=${PREFIX}/${_PRIV_LIB} \
+	-Dman3dir=${PREFIX}/${PERLMANPREFIX_REL}/man/man3 \
+	-Dman1dir=${PREFIX}/${PERLMANPREFIX_REL}/man/man1 \
+	-Dsitearch=${SITE_ARCH} \
+	-Dsitelib=${SITE_PERL} -Dscriptdir=${PREFIX}/bin \
+	-Dsiteman3dir=${SITE_MAN3} \
+	-Dsiteman1dir=${SITE_MAN1} \
+	-Ui_malloc -Ui_iconv -Uinstallusrbinperl -Dusenm=n \
+	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
+	-Dcf_by=${MAINTAINER:C,@.*,,} -Dcf_email=${MAINTAINER} \
+	-Dcf_time="`${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`"
+# Keep the following two in sync.
+# lddlflags is used for all .so linking
+# shrpldflags is used for libperl.so, so remove all the extra bits inherited from lddlflags.
+# XXX change the soname to $$(LIBPERL:R)
+CONFIGURE_ARGS+=	\
+	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB}/CORE -lperl' \
+	-Dshrpldflags='$$(LDDLFLAGS:N-L${WRKSRC}:N-L${PREFIX}/${_ARCH_LIB}/CORE:N-lperl) -Wl,-soname,$$(LIBPERL)'
+
+# XXX Remove
+CONFIGURE_ARGS+=	-Dusedevel -Uversiononly
+
+# When built from a git repository, newvers.sh can put a = in the version.
+CONFIGURE_ENV=	UNAME_v="$$(uname -v | sed 'y/=/ /')"
+
+SUB_FILES=	perl-man.conf
+
+INSTALL_TARGET=	install-strip
+
+.if defined(PERL_VENDOR_PREFIX)
+CONFIGURE_ARGS+=	\
+	-Dvendorprefix=${PERL_VENDOR_PREFIX} \
+	-Dvendorarch=${PERL_VENDOR_PREFIX}/${_ARCH_LIB} \
+	-Dvendorbin=${PERL_VENDOR_PREFIX}/bin \
+	-Dvendorlib=${PERL_VENDOR_PREFIX}/${_PRIV_LIB} \
+	-Dvendorman3dir=${PERL_VENDOR_PREFIX}/${_PRIV_LIB}/man/man3 \
+	-Dvendorman1dir=${PERL_VENDOR_PREFIX}/man/man1
+.endif
+
+# http://perl5.git.perl.org/perl.git/commit/b83080de5c4254
+# PERLIOBUF_DEFAULT_BUFSIZ size in bytes (default: 8192 bytes)
+.if defined(PERLIOBUF_DEFAULT_BUFSIZ)
+CONFIGURE_ARGS+=	\
+    -Accflags=-DPERLIOBUF_DEFAULT_BUFSIZ=${PERLIOBUF_DEFAULT_BUFSIZ}
+.endif
+
+PLIST_SUB=	PERL_VERSION=${PERL_VERSION} \
+		PERL_VER=${PERL_VER} \
+		PERL_ARCH=${PERL_ARCH} \
+		PERL_ARCH_regex=\b${PERL_ARCH}\b \
+		MAN1=${PERLMANPREFIX_REL}/man/man1 \
+		MAN3=${PERLMANPREFIX_REL}/man/man3 \
+		PERLMANPREFIX=${PERLMANPREFIX_REL} \
+		PERLMANPREFIX_regex=${PERLMANPREFIX_REL}\b \
+		SITEMANPREFIX=${SITE_MAN_PREFIX} \
+		SITE_PERL=${SITE_PERL_REL} \
+		SITE_ARCH=${SITE_ARCH_REL} \
+		PRIV_LIB=${_PRIV_LIB} \
+		PKGNAMESUFFIX=${PKGNAMESUFFIX} \
+		ARCH_LIB=${_ARCH_LIB}
+# XXX Remove and change to PERL_VERSION in the plist.
+PLIST_SUB+=	LIBPERL_VER=${LIBPERL_VER}
+
+SUB_LIST=	PERL_VERSION=${PERL_VERSION} \
+		PERL_VER=${PERL_VER} \
+		SITE_PERL=${SITE_PERL_REL} \
+		PRIV_LIB=${_PRIV_LIB} \
+		PERLMANPREFIX=${PERLMANPREFIX_REL} \
+		SITEMANPREFIX=${SITE_MAN_PREFIX} \
+		PERL_ARCH=${PERL_ARCH}
+
+.include "version.mk"
+PERL_VER?=	${PERL_VERSION:C/\.[0-9]+$//}
+PERL_ARCH=	mach
+SITE_PERL_REL?=	lib/perl5/site_perl
+SITE_PERL?=	${PREFIX}/${SITE_PERL_REL}
+SITE_ARCH_REL?=	${SITE_PERL_REL}/${PERL_ARCH}/${PERL_VER}
+SITE_ARCH?=	${PREFIX}/${SITE_ARCH_REL}
+SITE_MAN_PREFIX=	${SITE_PERL_REL}
+SITE_MAN3_REL?=	${SITE_MAN_PREFIX}/man/man3
+SITE_MAN3?=	${PREFIX}/${SITE_MAN3_REL}
+SITE_MAN1_REL?=	${SITE_MAN_PREFIX}/man/man1
+SITE_MAN1?=	${PREFIX}/${SITE_MAN1_REL}
+
+_PRIV_LIB=	lib/perl5/${PERL_VER}
+_ARCH_LIB=	${_PRIV_LIB}/${PERL_ARCH}
+
+PERLMANPREFIX_REL=	${_PRIV_LIB}/perl
+PERLMANPREFIX=	${PREFIX}/${PERLMANPREFIX_REL}
+MANDIRS=	${PERLMANPREFIX}/man
+
+# XXX replace all LIBPERL_VER occurences with PERL_VERSION
+LIBPERL_VER=	${PORTVERSION:C/[^0-9.]//}
+
 OPTIONS_DEFINE=	DEBUG GDBM PERL_64BITINT MULTIPLICITY SITECUSTOMIZE \
 		THREADS PERL_MALLOC DTRACE DOT_INC
 OPTIONS_DEFAULT=	PERL_64BITINT THREADS MULTIPLICITY DTRACE
 
 .if !exists(/usr/sbin/dtrace)
-OPTIONS_EXCLUDE+=	DTRACE
+OPTIONS_EXCLUDE=	DTRACE
 .endif
 .for a in aarch64 arm armeb armv6 armv7 mips mips64 mips64el mipsel mipsn32 powerpc \
 	powerpc64 sparc64
@@ -76,113 +184,6 @@ PERL_MALLOC_CONFIGURE_ON=	-Dusemymalloc=y
 PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 DOT_INC_CONFIGURE_ON=		-Ddefault_inc_excludes_dot=n
 
-# XXX uncomment PORTSCOUT line
-#PORTSCOUT=	limit:^${PERL_VER}.
-
-.include "version.mk"
-PERL_VER?=	${PERL_VERSION:C/\.[0-9]+$//}
-PERL_ARCH=	mach
-SITE_PERL_REL?=	lib/perl5/site_perl
-SITE_PERL?=	${PREFIX}/${SITE_PERL_REL}
-SITE_ARCH_REL?=	${SITE_PERL_REL}/${PERL_ARCH}/${PERL_VER}
-SITE_ARCH?=	${PREFIX}/${SITE_ARCH_REL}
-SITE_MAN_PREFIX=	${SITE_PERL_REL}
-SITE_MAN3_REL?=	${SITE_MAN_PREFIX}/man/man3
-SITE_MAN3?=	${PREFIX}/${SITE_MAN3_REL}
-SITE_MAN1_REL?=	${SITE_MAN_PREFIX}/man/man1
-SITE_MAN1?=	${PREFIX}/${SITE_MAN1_REL}
-
-_PRIV_LIB=	lib/perl5/${PERL_VER}
-_ARCH_LIB=	${_PRIV_LIB}/${PERL_ARCH}
-
-# XXX releases are .tar.xz, add: tar:xz
-USES=	cpe
-
-# XXX replace all LIBPERL_VER occurences with PERL_VERSION
-LIBPERL_VER=	${PORTVERSION:C/[^0-9.]//}
-
-HAS_CONFIGURE=	yes
-CONFIGURE_SCRIPT=Configure
-CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
-	-Dlibperl=libperl.so.${LIBPERL_VER} \
-	-Darchlib=${PREFIX}/${_ARCH_LIB} \
-	-Dprivlib=${PREFIX}/${_PRIV_LIB} \
-	-Dman3dir=${PREFIX}/${PERLMANPREFIX_REL}/man/man3 \
-	-Dman1dir=${PREFIX}/${PERLMANPREFIX_REL}/man/man1 \
-	-Dsitearch=${SITE_ARCH} \
-	-Dsitelib=${SITE_PERL} -Dscriptdir=${PREFIX}/bin \
-	-Dsiteman3dir=${SITE_MAN3} \
-	-Dsiteman1dir=${SITE_MAN1} \
-	-Ui_malloc -Ui_iconv -Uinstallusrbinperl -Dusenm=n \
-	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
-	-Dcf_by=${MAINTAINER:C,@.*,,} -Dcf_email=${MAINTAINER} \
-	-Dcf_time="`${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`"
-# Keep the following two in sync.
-# lddlflags is used for all .so linking
-# shrpldflags is used for libperl.so, so remove all the extra bits inherited from lddlflags.
-# XXX change the soname to $$(LIBPERL:R)
-CONFIGURE_ARGS+=	\
-	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB}/CORE -lperl' \
-	-Dshrpldflags='$$(LDDLFLAGS:N-L${WRKSRC}:N-L${PREFIX}/${_ARCH_LIB}/CORE:N-lperl) -Wl,-soname,$$(LIBPERL)'
-
-# Give a hint of where libperl.so can be found.
-USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
-
-# XXX Remove
-CONFIGURE_ARGS+=	-Dusedevel -Uversiononly
-
-CONFIGURE_ENV+=	UNAME_v="$$(uname -v | sed 'y/=/ /')"
-
-SUB_LIST+=	PERL_VERSION=${PERL_VERSION} \
-		PERL_VER=${PERL_VER} \
-		SITE_PERL=${SITE_PERL_REL} \
-		PRIV_LIB=${_PRIV_LIB} \
-		PERLMANPREFIX=${PERLMANPREFIX_REL} \
-		SITEMANPREFIX=${SITE_MAN_PREFIX} \
-		PERL_ARCH=${PERL_ARCH}
-
-SUB_FILES=	perl-man.conf
-
-INSTALL_TARGET=	install-strip
-
-.if defined(PERL_VENDOR_PREFIX)
-CONFIGURE_ARGS+=	\
-	-Dvendorprefix=${PERL_VENDOR_PREFIX} \
-	-Dvendorarch=${PERL_VENDOR_PREFIX}/${_ARCH_LIB} \
-	-Dvendorbin=${PERL_VENDOR_PREFIX}/bin \
-	-Dvendorlib=${PERL_VENDOR_PREFIX}/${_PRIV_LIB} \
-	-Dvendorman3dir=${PERL_VENDOR_PREFIX}/${_PRIV_LIB}/man/man3 \
-	-Dvendorman1dir=${PERL_VENDOR_PREFIX}/man/man1
-.endif
-
-# http://perl5.git.perl.org/perl.git/commit/b83080de5c4254
-# PERLIOBUF_DEFAULT_BUFSIZ size in bytes (default: 8192 bytes)
-.if defined(PERLIOBUF_DEFAULT_BUFSIZ)
-CONFIGURE_ARGS+=	\
-    -Accflags=-DPERLIOBUF_DEFAULT_BUFSIZ=${PERLIOBUF_DEFAULT_BUFSIZ}
-.endif
-
-PERLMANPREFIX_REL=	${_PRIV_LIB}/perl
-PERLMANPREFIX=	${PREFIX}/${PERLMANPREFIX_REL}
-MANDIRS+=	${PERLMANPREFIX}/man
-
-PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
-		PERL_VER=${PERL_VER} \
-		PERL_ARCH=${PERL_ARCH} \
-		PERL_ARCH_regex=\b${PERL_ARCH}\b \
-		MAN1=${PERLMANPREFIX_REL}/man/man1 \
-		MAN3=${PERLMANPREFIX_REL}/man/man3 \
-		PERLMANPREFIX=${PERLMANPREFIX_REL} \
-		PERLMANPREFIX_regex=${PERLMANPREFIX_REL}\b \
-		SITEMANPREFIX=${SITE_MAN_PREFIX} \
-		SITE_PERL=${SITE_PERL_REL} \
-		SITE_ARCH=${SITE_ARCH_REL} \
-		PRIV_LIB=${_PRIV_LIB} \
-		PKGNAMESUFFIX=${PKGNAMESUFFIX} \
-		ARCH_LIB=${_ARCH_LIB}
-# XXX Remove and change to PERL_VERSION in the plist.
-PLIST_SUB+=	LIBPERL_VER=${LIBPERL_VER}
-
 # Why this is required is explained in:
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=227356#c5
 _PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
@@ -198,11 +199,8 @@ PKGNAMESUFFIX=	5
 IAMDEFAULTPERL=	yes
 .else
 # make PKGNAME unique among other lang/perl5.x
-.if defined(GH_TAGNAME) # XXX remove if, leave only the else.
 PKGNAMESUFFIX=	5-devel
-.else
-PKGNAMESUFFIX=	${PERL_VER}
-.endif
+#PKGNAMESUFFIX=	${PERL_VER} # XXX remove the previous, leave only this.
 .endif
 
 # Am I building the default Perl ?
