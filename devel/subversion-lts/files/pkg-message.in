@@ -1,0 +1,2 @@
+The subversion dav modules are no longer activated in httpd.conf!
+There is now a dedicated modules file in %%APACHEETCDIR%%/modules.d

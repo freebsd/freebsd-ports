@@ -9,6 +9,7 @@ COMMENT=	Gnome Keyring integration for Version control system
 
 PORTREVISION_112=	0
 PORTREVISION_19=	0
+PORTREVISION_LTS=	0
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 

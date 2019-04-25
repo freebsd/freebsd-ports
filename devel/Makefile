@@ -6283,6 +6283,7 @@
     SUBDIR += styx
     SUBDIR += subversion
     SUBDIR += subversion-book
+    SUBDIR += subversion-lts
     SUBDIR += subversion19
     SUBDIR += subversive
     SUBDIR += svk
