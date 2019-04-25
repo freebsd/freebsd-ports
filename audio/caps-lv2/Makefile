@@ -18,11 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	moddevices
 GH_TAGNAME=	250844a
 
-.if exists(/usr/lib/libstdc++.so)
-CXXFLAGS+=	-stdlib=libstdc++
-LDFLAGS+=	-stdlib=libstdc++
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|__APPLE__|__FreeBSD__|" \
 		${WRKSRC}/dsp/v4f_IIR2.h
