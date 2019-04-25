@@ -951,6 +951,7 @@
     SUBDIR += rubygem-globalid-rails50
     SUBDIR += rubygem-her
     SUBDIR += rubygem-hiredis
+    SUBDIR += rubygem-influxdb
     SUBDIR += rubygem-jdbc-mysql
     SUBDIR += rubygem-leo_manager_client
     SUBDIR += rubygem-mario-redis-lock
