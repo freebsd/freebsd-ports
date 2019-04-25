@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libvorbis.so:audio/libvorbis \
 		libftgl.so:graphics/ftgl
 
-USES=		desktop-file-utils pkgconfig tar:bzip2
+USES=		desktop-file-utils gl pkgconfig sdl tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image
 USE_GL=		gl glu
