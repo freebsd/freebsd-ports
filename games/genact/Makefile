@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	genact
-DISTVERSION=	0.6.0
-PORTREVISION=	8
+DISTVERSION=	0.7.0
 CATEGORIES=	games
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -18,102 +17,121 @@ GH_ACCOUNT=	svenstaro
 
 PLIST_FILES=	bin/genact
 
-CARGO_CRATES=	aho-corasick-0.6.4 \
+CARGO_CRATES=	aho-corasick-0.6.10 \
+		aho-corasick-0.7.3 \
 		ansi_term-0.11.0 \
 		aster-0.41.0 \
-		atty-0.2.10 \
-		base-x-0.2.2 \
+		atty-0.2.11 \
+		autocfg-0.1.2 \
+		base-x-0.2.4 \
 		bindgen-0.24.0 \
 		bitflags-0.8.2 \
-		bitflags-0.9.1 \
-		bitflags-1.0.3 \
+		bitflags-1.0.4 \
+		bumpalo-2.4.1 \
+		cc-1.0.35 \
 		cexpr-0.2.3 \
-		cfg-if-0.1.3 \
-		chrono-0.4.2 \
+		cfg-if-0.1.7 \
+		chrono-0.4.6 \
 		clang-sys-0.16.0 \
-		clap-2.31.2 \
+		clap-2.33.0 \
 		cloudabi-0.0.3 \
-		ctrlc-3.1.0 \
-		discard-1.0.3 \
-		dtoa-0.4.2 \
+		ctrlc-3.1.1 \
+		discard-1.0.4 \
 		emscripten-sys-0.3.2 \
 		env_logger-0.4.3 \
 		fake-1.2.2 \
-		fuchsia-zircon-0.3.3 \
-		fuchsia-zircon-sys-0.3.3 \
+		fuchsia-cprng-0.1.1 \
 		glob-0.2.11 \
-		humantime-1.1.1 \
-		idna-0.1.4 \
-		itoa-0.4.1 \
+		humantime-1.2.0 \
+		idna-0.1.5 \
+		itoa-0.4.3 \
 		kernel32-sys-0.2.2 \
 		lazy_static-0.2.11 \
-		lazy_static-1.0.1 \
-		libc-0.2.49 \
+		lazy_static-1.3.0 \
+		libc-0.2.51 \
 		libloading-0.4.3 \
 		log-0.3.9 \
-		log-0.4.1 \
-		matches-0.1.6 \
+		log-0.4.6 \
+		matches-0.1.8 \
 		memchr-1.0.2 \
-		memchr-2.0.1 \
-		nix-0.9.0 \
+		memchr-2.2.0 \
+		nix-0.11.0 \
 		nom-3.2.1 \
-		num-integer-0.1.38 \
-		num-traits-0.2.4 \
+		num-integer-0.1.39 \
+		num-traits-0.2.6 \
+		numtoa-0.1.0 \
 		pbr-1.0.1 \
 		percent-encoding-1.0.1 \
-		proc-macro2-0.2.3 \
-		proc-macro2-0.4.5 \
+		proc-macro2-0.4.27 \
 		quasi-0.32.0 \
 		quasi_codegen-0.32.0 \
 		quick-error-1.2.2 \
-		quote-0.4.2 \
-		quote-0.6.3 \
-		rand-0.3.22 \
-		rand-0.4.2 \
-		rand-0.5.0 \
-		rand_core-0.2.0 \
-		redox_syscall-0.1.40 \
+		quote-0.6.12 \
+		rand-0.3.23 \
+		rand-0.4.6 \
+		rand-0.6.5 \
+		rand_chacha-0.1.1 \
+		rand_core-0.3.1 \
+		rand_core-0.4.0 \
+		rand_hc-0.1.0 \
+		rand_isaac-0.1.1 \
+		rand_jitter-0.1.3 \
+		rand_os-0.1.3 \
+		rand_pcg-0.1.2 \
+		rand_xorshift-0.1.1 \
+		rdrand-0.4.0 \
+		redox_syscall-0.1.54 \
 		redox_termios-0.1.1 \
 		regex-0.2.11 \
-		regex-1.0.0 \
+		regex-1.1.6 \
 		regex-syntax-0.5.6 \
-		regex-syntax-0.6.0 \
+		regex-syntax-0.6.6 \
 		rustc-serialize-0.3.24 \
-		serde-1.0.66 \
-		serde_derive-1.0.66 \
-		serde_json-1.0.19 \
-		stdweb-0.4.6 \
-		stdweb-derive-0.4.0 \
-		stdweb-internal-macros-0.1.0 \
-		strsim-0.7.0 \
-		syn-0.12.15 \
-		syn-0.14.2 \
+		rustc_version-0.2.3 \
+		ryu-0.2.7 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		serde-1.0.90 \
+		serde_derive-1.0.90 \
+		serde_json-1.0.39 \
+		sha1-0.6.0 \
+		smallvec-0.6.9 \
+		stdweb-0.4.16 \
+		stdweb-derive-0.5.1 \
+		stdweb-internal-macros-0.2.7 \
+		stdweb-internal-runtime-0.1.4 \
+		strsim-0.8.0 \
+		syn-0.15.32 \
 		syntex-0.58.1 \
 		syntex_errors-0.58.1 \
 		syntex_pos-0.58.1 \
 		syntex_syntax-0.58.1 \
 		term-0.4.6 \
-		termion-1.5.1 \
-		textwrap-0.9.0 \
-		thread_local-0.3.5 \
-		time-0.1.40 \
-		ucd-util-0.1.1 \
+		termion-1.5.2 \
+		textwrap-0.11.0 \
+		thread_local-0.3.6 \
+		time-0.1.42 \
+		ucd-util-0.1.3 \
 		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.7 \
+		unicode-normalization-0.1.8 \
 		unicode-width-0.1.5 \
 		unicode-xid-0.0.4 \
 		unicode-xid-0.1.0 \
-		unreachable-1.0.0 \
-		url-1.7.0 \
-		utf8-ranges-1.0.0 \
+		url-1.7.2 \
+		utf8-ranges-1.0.2 \
 		vec_map-0.8.1 \
 		void-1.0.2 \
+		wasm-bindgen-0.2.42 \
+		wasm-bindgen-backend-0.2.42 \
+		wasm-bindgen-macro-0.2.42 \
+		wasm-bindgen-macro-support-0.2.42 \
+		wasm-bindgen-shared-0.2.42 \
 		winapi-0.2.8 \
-		winapi-0.3.4 \
+		winapi-0.3.7 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		yansi-0.4.0
+		yansi-0.5.0
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/genact
