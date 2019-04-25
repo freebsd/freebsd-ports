@@ -170,6 +170,8 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-peek-gc-rails50>=0.0.2:devel/rubygem-peek-gc-rails50 \
 	rubygem-peek-rblineprof-rails50>=0.2.0:devel/rubygem-peek-rblineprof-rails50 \
 	rubygem-peek-redis-rails50>=1.2.0:devel/rubygem-peek-redis-rails50 \
+	rubygem-method_source>=0.8:devel/rubygem-method_source \
+	rubygem-influxdb>=0.2:databases/rubygem-influxdb \
 	rubygem-prometheus-client-mmap>=0.9.4:devel/rubygem-prometheus-client-mmap \
 	rubygem-opentracing04>=0.4.3:devel/rubygem-opentracing04 \
 	rubygem-jaeger-client>=0.10.0:devel/rubygem-jaeger-client \
