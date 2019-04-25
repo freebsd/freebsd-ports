@@ -4,4 +4,4 @@ addition to implementing the mapping interface, tries allow finding the
 items for a given prefix, and vice versa, finding the items whose keys
 are prefixes of a given key.
 
-WWW: https://bitbucket.org/gsakkis/pytrie
+WWW: https://github.com/gsakkis/pytrie
