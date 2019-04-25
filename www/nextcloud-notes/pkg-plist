@@ -98,6 +98,8 @@
 %%WWWDIR%%/l10n/ar.json
 %%WWWDIR%%/l10n/bg.js
 %%WWWDIR%%/l10n/bg.json
+%%WWWDIR%%/l10n/ca.js
+%%WWWDIR%%/l10n/ca.json
 %%WWWDIR%%/l10n/cs.js
 %%WWWDIR%%/l10n/cs.json
 %%WWWDIR%%/l10n/da.js
@@ -158,7 +160,6 @@
 %%WWWDIR%%/l10n/he.json
 %%WWWDIR%%/l10n/hu.js
 %%WWWDIR%%/l10n/hu.json
-%%WWWDIR%%/l10n/ignorelist
 %%WWWDIR%%/l10n/is.js
 %%WWWDIR%%/l10n/is.json
 %%WWWDIR%%/l10n/it.js
