@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	buildbot-worker
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,8 @@ COMMENT=	Buildbot Worker Daemon
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=17.9.0:devel/py-twisted@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
 
 USES=		python
@@ -27,14 +27,6 @@ NO_ARCH=	yes
 
 PLIST_FILES=	man/man1/buildbot-worker.1.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_VER} >= 3.0
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}twisted>=17.9.0:devel/py-twisted@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}twisted>=16.1.0:devel/py-twisted@${PY_FLAVOR}
-.endif
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/buildbot-worker.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
@@ -42,4 +34,4 @@ do-test:
 	${MKDIR} ${WRKDIR}/tmp
 	cd ${WRKDIR}/tmp && PYTHONPATH=${WRKSRC} ${PYTHON_CMD} -m twisted.trial buildbot_worker.test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
