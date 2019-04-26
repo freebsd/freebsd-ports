@@ -4,6 +4,7 @@
 PORTNAME=	rigsofrods-caelum
 PORTVERSION=	0.6.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	monwarez@mailoo.org
@@ -12,7 +13,7 @@ COMMENT=	OGRE plugin for atmospheric effects
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/lgpl.txt
 
-LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d
+LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d19
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RigsOfRods

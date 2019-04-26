@@ -7,8 +7,9 @@ PORTREVISION=	18
 CATEGORIES=	graphics devel
 MASTER_SITES=   https://bitbucket.org/sinbad/ogre/get/
 DISTNAME=	v1-9-0
+PKGNAMESUFFIX=	19
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Scene-oriented, flexible 3D engine written in C++
 
 LICENSE=	MIT
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libzzip.so:devel/zziplib \
 		libfreetype.so:print/freetype2 \
 		libfreeimage.so:graphics/freeimage
 
-CONFLICTS=	ogre3d19-[0-9]*
+CONFLICTS=	ogre3d-[0-9]*
 
 USE_LDCONFIG=	yes
 USES=		tar:bzip2 cmake pkgconfig compiler:c++11-lib

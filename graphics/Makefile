@@ -579,6 +579,7 @@
     SUBDIR += ocrad
     SUBDIR += ocre
     SUBDIR += ogre3d
+    SUBDIR += ogre3d19
     SUBDIR += oidn
     SUBDIR += okular
     SUBDIR += open3d

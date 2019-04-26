@@ -4,6 +4,7 @@
 PORTNAME=	rigsofrods-pagedgeometry
 PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	monwarez@mailoo.org
@@ -12,7 +13,7 @@ COMMENT=	OGRE plugin for real-time dense forests
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/zlib.txt
 
-LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d
+LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d19
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RigsOfRods
