@@ -21,4 +21,6 @@ TEST_DEPENDS=	p5-Test-Simple>=1.302072:devel/p5-Test-Simple
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
