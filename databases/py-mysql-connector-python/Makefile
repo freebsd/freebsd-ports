@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql-connector-python
-PORTVERSION=	8.0.15
+PORTVERSION=	8.0.16
 CATEGORIES=	databases python
 MASTER_SITES=	MYSQL/Connector-Python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
