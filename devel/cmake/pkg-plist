@@ -1421,6 +1421,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/CMAKE_VS_MSBUILD_COMMAND.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_NsightTegra_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_PLATFORM_NAME.rst
+%%DATADIR%%/Help/variable/CMAKE_VS_PLATFORM_NAME_DEFAULT.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_PLATFORM_TOOLSET.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_PLATFORM_TOOLSET_CUDA.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_PLATFORM_TOOLSET_HOST_ARCHITECTURE.rst
