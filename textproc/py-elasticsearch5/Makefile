@@ -30,7 +30,7 @@ GH_ACCOUNT=	elastic
 GH_PROJECT=	elasticsearch-py
 GH_TAGNAME=	719a94ab4
 
-# Using (5.5.2) commit hash in 5.5.x branch not the 5.2.2 tag
+# Using (5.5.2) commit hash in 5.5.x branch not the 5.5.2 tag
 # because that branch has the module and package name set as
 # 'elastisearch' not 'elasticsearch5'. The reason this is
 # needed (for now) is because:
@@ -42,9 +42,9 @@ GH_TAGNAME=	719a94ab4
 #    which has the different internal package name.
 #
 # Upstream made separate (versioned) packages on PyPI
-# available so that they didnt conflict on install.
+# available so that they didn't conflict on install.
 # The elasticsearchX python ports should be changed to
-# user these version-specific package names/sources, at
+# use these version-specific package names/sources, at
 # which point CONFLICTS can be removed.
 
 CONFLICTS=	${PYTHON_PKGNAMEPREFIX}elasticsearch-[0-9]*
