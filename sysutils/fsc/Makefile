@@ -2,18 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	fsc
-PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/trhodes
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The FreeBSD Services Control family of utilities
+COMMENT=	FreeBSD Services Control family of utilities
 
-WRKSRC=		${WRKDIR}/fsc
+LICENSE=	BSD2CLAUSE
 
 PLIST_FILES=	bin/fscadm sbin/fscd etc/rc.d/fscd man/man5/fscd.conf.5.gz \
 		man/man8/fscadm.8.gz man/man8/fscd.8.gz
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	bsdtrhodes
+GH_PROJECT=	freebsd-fscd
+GH_TAGNAME=	ac80298
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' \
