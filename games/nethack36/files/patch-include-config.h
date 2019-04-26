@@ -21,7 +21,7 @@
   */
  #ifndef HACKDIR
 -#define HACKDIR "/usr/games/lib/nethackdir"
-+#define HACKDIR "/usr/local/share/nethack"
++#define HACKDIR "%%PREFIX%%/share/nethack"
  #endif
  
  /*
