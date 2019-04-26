@@ -10,7 +10,7 @@ DISTNAME=	v1-9-0
 PKGNAMESUFFIX=	19
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Scene-oriented, flexible 3D engine written in C++
+COMMENT=	Scene-oriented, flexible 3D engine written in C++ (legacy version 1.9)
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
