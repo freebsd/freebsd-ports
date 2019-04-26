@@ -11,7 +11,7 @@
          'fingerprints == 0.5.4',
  
          # extractcode
-@@ -135,12 +133,10 @@ setup(
+@@ -135,15 +133,13 @@ setup(
          # to work around bug http://bugs.python.org/issue19839
          # on multistream bzip2 files: this can removed in Python 3.
          'bz2file >= 0.98',
@@ -24,7 +24,11 @@
 +        'future >= 0.16.0',
          'text-unidecode >= 1.0, < 2.0',
          # required by saneyaml
-         'PyYAML >= 3.11, <=3.13',
+-        'PyYAML >= 3.11, <=3.13',
++        'PyYAML >= 3.11',
+         'saneyaml',
+ 
+         # licensedcode
 @@ -167,8 +163,7 @@ setup(
          'binaryornot >= 0.4.0',
          'chardet >= 3.0.0, <4.0.0',

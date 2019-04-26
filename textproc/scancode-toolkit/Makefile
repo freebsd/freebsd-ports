@@ -3,6 +3,7 @@
 PORTNAME=	scancode-toolkit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc python
 
 MAINTAINER=	kai@FreeBSD.org
