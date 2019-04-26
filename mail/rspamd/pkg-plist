@@ -154,6 +154,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/argparse.lua
 %%DATADIR%%/lualib/fun.lua
 %%DATADIR%%/lualib/global_functions.lua
+%%DATADIR%%/lualib/lpegre.lua
 %%DATADIR%%/lualib/lua_auth_results.lua
 %%DATADIR%%/lualib/lua_cfg_transform.lua
 %%DATADIR%%/lualib/lua_clickhouse.lua
@@ -161,7 +162,9 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_ffi/common.lua
 %%DATADIR%%/lualib/lua_ffi/dkim.lua
 %%DATADIR%%/lualib/lua_ffi/init.lua
+%%DATADIR%%/lualib/lua_ffi/spf.lua
 %%DATADIR%%/lualib/lua_fuzzy.lua
+%%DATADIR%%/lualib/lua_ical.lua
 %%DATADIR%%/lualib/lua_maps.lua
 %%DATADIR%%/lualib/lua_meta.lua
 %%DATADIR%%/lualib/lua_nn.lua
@@ -191,6 +194,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/rspamadm/configwizard.lua
 %%DATADIR%%/lualib/rspamadm/cookie.lua
 %%DATADIR%%/lualib/rspamadm/corpus_test.lua
+%%DATADIR%%/lualib/rspamadm/dns_tool.lua
 %%DATADIR%%/lualib/rspamadm/fuzzy_convert.lua
 %%DATADIR%%/lualib/rspamadm/fuzzy_stat.lua
 %%DATADIR%%/lualib/rspamadm/grep.lua

@@ -1,0 +1,26 @@
+diff --git a/contrib/fpconv/fpconv.h b/contrib/fpconv/fpconv.h
+index 83180d41f..0bc270b31 100644
+--- contrib/fpconv/fpconv.h
++++ contrib/fpconv/fpconv.h
+@@ -26,7 +26,7 @@
+  *
+  */
+ 
+-int fpconv_dtoa(double fp, char dest[24], bool scientific);
++int fpconv_dtoa(double fp, char dest[32], bool scientific);
+ 
+ #endif
+ 
+diff --git a/src/libutil/printf.c b/src/libutil/printf.c
+index 84dd5d272..6739fe142 100644
+--- src/libutil/printf.c
++++ src/libutil/printf.c
+@@ -591,7 +591,7 @@ rspamd_vprintf_common (rspamd_printf_append_func func,
+ 	const gchar *fmt,
+ 	va_list args)
+ {
+-	gchar zero, numbuf[G_ASCII_DTOSTR_BUF_SIZE], dtoabuf[24], *p, *last, c;
++	gchar zero, numbuf[G_ASCII_DTOSTR_BUF_SIZE], dtoabuf[32], *p, *last, c;
+ 	const gchar *buf_start = fmt, *fmt_start = NULL;
+ 	gint d;
+ 	gdouble f;
