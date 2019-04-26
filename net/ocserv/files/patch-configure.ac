@@ -5,7 +5,7 @@
  AC_PROG_SED
  if [ test "$GCC" = "yes" ];then
 -	CFLAGS="$CFLAGS -Wall -Wno-strict-aliasing -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-missing-field-initializers -Wno-implicit-fallthrough -Wno-stringop-truncation"
-+	CFLAGS="$CFLAGS -Wall -Wno-strict-aliasing -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-missing-field-initializers -Wno-implicit-fallthrough"
++	CFLAGS="$CFLAGS -Wall -Wno-strict-aliasing -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-missing-field-initializers"
  fi
  AC_PATH_PROG(CTAGS, ctags, [:])
  AC_PATH_PROG(CSCOPE, cscope, [:])
