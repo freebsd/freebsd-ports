@@ -1,0 +1,4 @@
+sexpdata is a simple S-expression parser/serializer. It has simple
+load and dump functions like pickle, json or PyYAML module.
+
+WWW: https://github.com/jd-boyd/sexpdata
