@@ -1,0 +1,49 @@
+# security/py-cryptography fails to build with libressl-2.9.1
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=237487
+# Use generic DTLS functions added in LibreSSL 2.9.1
+# https://github.com/pyca/cryptography/pull/4855
+
+index 4124dcb879..ac32fdffde 100644
+--- src/_cffi_src/openssl/cryptography.py.orig
++++ src/_cffi_src/openssl/cryptography.py
+@@ -38,9 +38,12 @@
+     (LIBRESSL_VERSION_NUMBER >= 0x2070000f)
+ #define CRYPTOGRAPHY_LIBRESSL_28_OR_GREATER \
+     (LIBRESSL_VERSION_NUMBER >= 0x2080000f)
++#define CRYPTOGRAPHY_LIBRESSL_291_OR_GREATER \
++    (LIBRESSL_VERSION_NUMBER >= 0x2090100f)
+ #else
+ #define CRYPTOGRAPHY_LIBRESSL_27_OR_GREATER (0)
+ #define CRYPTOGRAPHY_LIBRESSL_28_OR_GREATER (0)
++#define CRYPTOGRAPHY_LIBRESSL_291_OR_GREATER (0)
+ #endif
+ 
+ #define CRYPTOGRAPHY_OPENSSL_102_OR_GREATER \
+diff --git a/src/_cffi_src/openssl/ssl.py b/src/_cffi_src/openssl/ssl.py
+index 92fd1e3ec8..da21f3ce90 100644
+--- src/_cffi_src/openssl/ssl.py.orig
++++ src/_cffi_src/openssl/ssl.py
+@@ -719,17 +719,20 @@
+ static const long TLS_ST_OK = 0;
+ #endif
+ 
+-#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_102
++/* LibreSSL 2.9.1 added only the DTLS_*_method functions */
++#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_102 && !CRYPTOGRAPHY_LIBRESSL_291_OR_GREATER
+ static const long Cryptography_HAS_GENERIC_DTLS_METHOD = 0;
+ const SSL_METHOD *(*DTLS_method)(void) = NULL;
+ const SSL_METHOD *(*DTLS_server_method)(void) = NULL;
+ const SSL_METHOD *(*DTLS_client_method)(void) = NULL;
++#else
++static const long Cryptography_HAS_GENERIC_DTLS_METHOD = 1;
++#endif
++#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_102
+ static const long SSL_OP_NO_DTLSv1 = 0;
+ static const long SSL_OP_NO_DTLSv1_2 = 0;
+ long (*DTLS_set_link_mtu)(SSL *, long) = NULL;
+ long (*DTLS_get_link_min_mtu)(SSL *) = NULL;
+-#else
+-static const long Cryptography_HAS_GENERIC_DTLS_METHOD = 1;
+ #endif
+ 
+ static const long Cryptography_HAS_DTLS = 1;
