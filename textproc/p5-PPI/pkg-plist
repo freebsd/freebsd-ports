@@ -13,6 +13,7 @@
 %%SITE_PERL%%/PPI/Node.pm
 %%SITE_PERL%%/PPI/Normal.pm
 %%SITE_PERL%%/PPI/Normal/Standard.pm
+%%SITE_PERL%%/PPI/Singletons.pm
 %%SITE_PERL%%/PPI/Statement.pm
 %%SITE_PERL%%/PPI/Statement/Break.pm
 %%SITE_PERL%%/PPI/Statement/Compound.pm
