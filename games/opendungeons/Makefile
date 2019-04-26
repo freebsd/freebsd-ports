@@ -2,7 +2,7 @@
 
 PORTNAME=	opendungeons
 PORTVERSION=	0.7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libOIS.so:devel/ois \
 		libsfml-audio.so:devel/sfml \
 		libCEGUIBase-0.so:graphics/cegui \
-		libOgreMain.so:graphics/ogre3d
+		libOgreMain.so:graphics/ogre3d19
 
 USES=		cmake pkgconfig
 

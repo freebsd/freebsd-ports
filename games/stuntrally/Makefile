@@ -3,6 +3,7 @@
 
 PORTNAME=	stuntrally
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -32,7 +33,7 @@ OPTIONS_SUB=	yes
 
 GAME_DESC=		Build the game binary
 GAME_CMAKE_BOOL=	BUILD_GAME
-GAME_LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d \
+GAME_LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d19 \
 			libBulletDynamics.so:devel/bullet \
 			libMyGUIEngine.so:x11-toolkits/mygui \
 			libogg.so:audio/libogg \
@@ -44,7 +45,7 @@ GAME_USES=		openal
 
 EDITOR_DESC=		Build the track editor
 EDITOR_CMAKE_BOOL=	BUILD_EDITOR
-EDITOR_LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d \
+EDITOR_LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d19 \
 			libBulletDynamics.so:devel/bullet \
 			libMyGUIEngine.so:x11-toolkits/mygui \
 			libogg.so:audio/libogg \

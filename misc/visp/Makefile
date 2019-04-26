@@ -2,7 +2,7 @@
 
 PORTNAME=	visp
 DISTVERSION=	3.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://gforge.inria.fr/frs/download.php/latestfile/475/
 
@@ -37,6 +37,6 @@ OPTIONS_DEFINE=		OGRE
 OGRE_DESC=		Include Ogre support
 OGRE_CMAKE_BOOL=	USE_OGRE
 OGRE_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-			libOgreMain.so:graphics/ogre3d
+			libOgreMain.so:graphics/ogre3d19
 
 .include <bsd.port.mk>
