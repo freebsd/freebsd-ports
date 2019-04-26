@@ -1,7 +1,6 @@
 include/MYGUI/MyGUI.h
 include/MYGUI/MyGUI_ActionController.h
 include/MYGUI/MyGUI_Align.h
-include/MYGUI/MyGUI_Allocator.h
 include/MYGUI/MyGUI_Any.h
 include/MYGUI/MyGUI_BackwardCompatibility.h
 include/MYGUI/MyGUI_BiIndexBase.h
@@ -23,7 +22,6 @@ include/MYGUI/MyGUI_ControllerManager.h
 include/MYGUI/MyGUI_ControllerPosition.h
 include/MYGUI/MyGUI_ControllerRepeatClick.h
 include/MYGUI/MyGUI_CoordConverter.h
-include/MYGUI/MyGUI_CustomAllocator.h
 include/MYGUI/MyGUI_DDContainer.h
 include/MYGUI/MyGUI_DDItemInfo.h
 include/MYGUI/MyGUI_DataFileStream.h
@@ -32,7 +30,6 @@ include/MYGUI/MyGUI_DataMemoryStream.h
 include/MYGUI/MyGUI_DataStream.h
 include/MYGUI/MyGUI_DataStreamHolder.h
 include/MYGUI/MyGUI_Delegate.h
-include/MYGUI/MyGUI_DelegateImplement.h
 include/MYGUI/MyGUI_DeprecatedTypes.h
 include/MYGUI/MyGUI_DeprecatedWidgets.h
 include/MYGUI/MyGUI_Diagnostic.h
@@ -175,5 +172,5 @@ include/MYGUI/Plugin.h
 include/MYGUI/StrangeButton.h
 lib/Plugin_StrangeButton.so
 lib/libMyGUIEngine.so
-lib/libMyGUIEngine.so.3.2.3
+lib/libMyGUIEngine.so.3.4.0
 libdata/pkgconfig/MYGUI.pc

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mygui
-PORTVERSION=	3.2.3.git20171212
-PORTREVISION=	2
+PORTVERSION=	3.2.3.git20190127
 CATEGORIES=	x11-toolkits graphics devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -24,11 +23,11 @@ INSTALL_WRKSRC=	${WRKSRC}/${MYGUI_SUBDIR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MyGUI
-GH_TAGNAME=	b1e4bc8
+GH_TAGNAME=	c1c4a9a
 
 MYGUI_RENDERSYSTEM?=	0
 
-USES=		cmake:insource compiler:c++11-lib pkgconfig
+USES+=		cmake:insource compiler:c++11-lib pkgconfig
 CMAKE_ARGS=	-DMYGUI_BUILD_DEMOS=FALSE \
 		-DMYGUI_BUILD_TOOLS=FALSE \
 		-DMYGUI_BUILD_DOCS=FALSE \
@@ -40,9 +39,5 @@ PLIST=		${.CURDIR}/pkg-plist
 post-patch:
 	@${REINPLACE_CMD} -e '/install/ s|lib/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/CMake/ConfigureBuild.cmake
-.if defined(MASTERDIR)
-	@${REINPLACE_CMD} -e '/add_dependencies/d' ${BUILD_WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e '/target_link/d' ${BUILD_WRKSRC}/CMakeLists.txt
-.endif
 
 .include <bsd.port.mk>
