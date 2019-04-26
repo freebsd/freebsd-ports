@@ -20,8 +20,12 @@
 # varnishncsa_file - full path to the log file.
 #	default: "/var/log/varnishncsa.log"
 #
+# varnishncsa_log_method - log to file or syslog
+#       default: "-D -a -w ${varnishncsa_file}"
+#       varnishncsa_syslog="YES": '| /usr/bin/logger -t varnish -p daemon.info &'
+#
 # varnishncsa_flags - command line arguments.
-#	default: "-t off -P ${varnishncsa_pidfile} -D -a -w ${varnishncsa_file}${varnishncsa_logformat:+ -F \"$varnishncsa_logformat\"}"
+#	default: "-t off -P ${varnishncsa_pidfile} ${varnishncsa_logformat:+ -F \"$varnishncsa_logformat\"} ${varnishncsa_log_method}"
 #
 # varnishncsa_logformat - log file format.
 #       default: "" (uses varnishncsa's default format)
@@ -45,11 +49,17 @@ load_rc_config ${name}
 : ${varnishncsa_enable:=NO}
 : ${varnishncsa_pidfile=/var/run/${name}.pid}
 : ${varnishncsa_file=/var/log/${name}.log}
-: ${varnishncsa_flags="-t off -P ${varnishncsa_pidfile} -D -a -w ${varnishncsa_file} ${varnishncsa_logformat:+-F \"$varnishncsa_logformat\"}"}
+: ${varnishncsa_flags="-t off -P ${varnishncsa_pidfile} ${varnishncsa_logformat:+-F \"$varnishncsa_logformat\"}"}
+: ${varnishncsa_syslog:=NO}
 
-procname="%%PREFIX%%/bin/${name}"
-command="/usr/sbin/daemon"
-command_args="-f -u varnishlog ${procname} ${varnishncsa_flags}"
+if checkyesno varnishncsa_syslog; then
+    varnishncsa_log_method='| /usr/bin/logger -t varnish -p daemon.info &'
+else
+    varnishncsa_log_method="-D -a -w ${varnishncsa_file}"
+fi
+
+command="%%PREFIX%%/bin/${name}"
+command_args="${varnishncsa_flags} ${varnishncsa_log_method}"
 pidfile=${varnishncsa_pidfile}
 start_precmd=precmd
 
