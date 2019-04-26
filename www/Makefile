@@ -1523,6 +1523,7 @@
     SUBDIR += py-dj21-drf-yasg
     SUBDIR += py-dj22-django-taggit
     SUBDIR += py-dj22-django-treebeard
+    SUBDIR += py-dj22-djangorestframework
     SUBDIR += py-django
     SUBDIR += py-django-allauth
     SUBDIR += py-django-annotations
