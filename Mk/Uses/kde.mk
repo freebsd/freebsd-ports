@@ -171,20 +171,6 @@ PLIST_SUB+=		KDE_PLASMA_VERSION="${KDE_PLASMA_VERSION}" \
 .    endif
 # ==============================================================================
 
-# === HANDLE PYTHON ============================================================
-# TODO: Keep in sync with cmake/modules/PythonMacros.cmake
-_PYTHON_SHORT_VER=	${PYTHON_VERSION:S/^python//:S/.//}
-.    if ${_PYTHON_SHORT_VER} > 31
-PLIST_SUB+=		PYCACHE="__pycache__/" \
-			PYC_SUFFIX=cpython-${_PYTHON_SHORT_VER}.pyc \
-			PYO_SUFFIX=cpython-${_PYTHON_SHORT_VER}.pyo
-.    else
-PLIST_SUB+=		PYCACHE="" \
-			PYC_SUFFIX=pyc \
-			PYO_SUFFIX=pyo
-.    endif
-# ==============================================================================
-
 _USE_KDE_BOTH=		akonadi attica libkcddb libkcompactdisc libkdcraw libkdegames \
 			libkeduvocdocument libkexiv2 libkipi libksane okular \
 			baloo baloo-widgets kate marble
