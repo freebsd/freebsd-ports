@@ -17,8 +17,8 @@ LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
 PORTSCOUT=	skipv:0.194
 
+USES=		compiler:c11 localbase python
 USE_PYTHON=	autoplist concurrent distutils
-USES=		localbase python
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/setup.py
