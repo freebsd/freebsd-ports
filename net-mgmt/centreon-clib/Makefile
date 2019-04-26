@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	centreon-clib
-PORTVERSION=	18.10.0
+PORTVERSION=	19.04.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	bofh@FreeBSD.org
