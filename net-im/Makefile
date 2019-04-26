@@ -11,6 +11,7 @@ PORTREVISION=	1
     SUBDIR += coccinella
     SUBDIR += convey
     SUBDIR += corebird
+    SUBDIR += coyim
     SUBDIR += cutegram
     SUBDIR += diligent
     SUBDIR += dino
