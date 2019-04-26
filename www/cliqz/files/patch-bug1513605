@@ -1,0 +1,53 @@
+commit 7b5468921fef
+Author: Mike Hommey <mh+mozilla@glandium.org>
+Date:   Tue Mar 12 14:14:43 2019 +0000
+
+    Bug 1513605 - Add PIC flags when running the clock_gettime(CLOCK_MONOTONIC) check. r=dmajor
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D23091
+    
+    --HG--
+    extra : moz-landing-system : lando
+
+Imported the patch from www/firefox
+---
+--- mozilla-release/js/src/old-configure.in.orig	2019-04-11 08:37:09 UTC
++++ mozilla-release/js/src/old-configure.in
+@@ -1015,7 +1015,9 @@ Darwin)
+                  ac_cv_clock_monotonic,
+                  [for libs in "" -lrt; do
+                       _SAVE_LIBS="$LIBS"
++                      _SAVE_CFLAGS="$CFLAGS"
+                       LIBS="$LIBS $libs"
++                      CFLAGS="$CFLAGS $DSO_PIC_CFLAGS"
+                       AC_TRY_LINK([#include <time.h>],
+                                    [ struct timespec ts;
+                                      clock_gettime(CLOCK_MONOTONIC, &ts); ],
+@@ -1024,6 +1026,7 @@ Darwin)
+                                    break,
+                                    ac_cv_clock_monotonic=no)
+                       LIBS="$_SAVE_LIBS"
++                      CFLAGS="$_SAVE_CFLAGS"
+                   done])
+   if test "$ac_cv_clock_monotonic" != "no"; then
+       HAVE_CLOCK_MONOTONIC=1
+--- mozilla-release/old-configure.in.orig	2019-04-11 08:37:09 UTC
++++ mozilla-release/old-configure.in
+@@ -1303,7 +1303,9 @@ Darwin)
+                  ac_cv_clock_monotonic,
+                  [for libs in "" -lrt; do
+                       _SAVE_LIBS="$LIBS"
++                      _SAVE_CFLAGS="$CFLAGS"
+                       LIBS="$LIBS $libs"
++                      CFLAGS="$CFLAGS $DSO_PIC_CFLAGS"
+                       AC_TRY_LINK([#include <time.h>],
+                                    [ struct timespec ts;
+                                      clock_gettime(CLOCK_MONOTONIC, &ts); ],
+@@ -1312,6 +1314,7 @@ Darwin)
+                                    break,
+                                    ac_cv_clock_monotonic=no)
+                       LIBS="$_SAVE_LIBS"
++                      CFLAGS="$_SAVE_CFLAGS"
+                   done])
+   if test "$ac_cv_clock_monotonic" != "no"; then
+       HAVE_CLOCK_MONOTONIC=1
