@@ -15,6 +15,7 @@
     SUBDIR += bbpager
     SUBDIR += blackbox
     SUBDIR += bspwm
+    SUBDIR += cage
     SUBDIR += ccsm
     SUBDIR += clementine-wm
     SUBDIR += compiz

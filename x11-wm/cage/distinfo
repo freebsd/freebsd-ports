@@ -1,0 +1,7 @@
+TIMESTAMP = 1552316236
+SHA256 (Hjdskes-cage-v0.1_GH0.tar.gz) = 03e2b4d97744aead935f4a289e5cfda4888dd06c6586982f4a25c8f435ef4166
+SIZE (Hjdskes-cage-v0.1_GH0.tar.gz) = 19838
+SHA256 (c69d394bedc6.patch) = 0c6101fa17248e170c202b43d682af1f25c9584e324ea01da43c6775ede5c9b4
+SIZE (c69d394bedc6.patch) = 654
+SHA256 (00fe8d7ce3d5.patch) = 194aef0c60c0a4e9a2a8d6c7b33341caaccb64f183488d009b1a61f8fc06db00
+SIZE (00fe8d7ce3d5.patch) = 1258
