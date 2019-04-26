@@ -9,6 +9,7 @@ man/man1/testssl.1.gz
 %%DATADIR%%/etc/ca_hashes.txt
 %%DATADIR%%/etc/cipher-mapping.txt
 %%DATADIR%%/etc/client-simulation.txt
+%%DATADIR%%/etc/client-simulation.wiresharked.txt
 %%DATADIR%%/etc/common-primes.txt
 %%DATADIR%%/etc/curves.txt
 %%DATADIR%%/etc/tls_data.txt
@@ -20,6 +21,7 @@ man/man1/testssl.1.gz
 %%DATADIR%%/utils/generate_static_cipher_lists.sh
 %%DATADIR%%/utils/gmap2testssl.sh
 %%DATADIR%%/utils/heartbleed.bash
+%%DATADIR%%/utils/hexstream2cipher.sh
 %%DATADIR%%/utils/make-openssl.sh
 %%DATADIR%%/utils/make-openssl111.sh
 %%DATADIR%%/utils/parse_client_ciphers.pl
@@ -28,4 +30,3 @@ man/man1/testssl.1.gz
 %%DATADIR%%/utils/resume.sh
 %%DATADIR%%/utils/ticketbleed.bash
 %%DATADIR%%/utils/update_client_sim_data.pl
-%%DATADIR%%/utils/wireshark2ciphers.pl
