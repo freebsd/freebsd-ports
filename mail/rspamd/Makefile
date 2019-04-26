@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
