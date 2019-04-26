@@ -11,7 +11,8 @@ DISTNAME=			${SAMBA4_DISTNAME}
 MAINTAINER?=			timur@FreeBSD.org
 COMMENT?=			Free SMB/CIFS and AD/DC server and client for Unix
 
-LICENSE=			GPLv3
+LICENSE=			GPLv3+
+LICENSE_FILE=			${WRKSRC}/COPYING
 
 BROKEN_powerpc64=		fails to compile: unrecognized command line option "-Wno-format-truncation"
 
