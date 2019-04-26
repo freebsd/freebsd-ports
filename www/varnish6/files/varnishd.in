@@ -83,7 +83,7 @@ varnishd_checkconfig()
 		echo "${name}: nothing to check, no configuration file defined, builtin VCL used"
 	else
 		echo "Performing sanity check on ${name} configuration:"
-		if eval ${command} -C -f "${varnishd_config}" 2> /dev/null ; then
+		if eval ${command} ${varnishd_flags} -C -f "${varnishd_config}" 2> /dev/null ; then
 			echo "${name}: the configuration file ${varnishd_config} syntax is ok"
 		else
 			err 1 "${name}: the configuration file ${varnishd_config} syntax is NOT ok"
