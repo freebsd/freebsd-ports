@@ -1,6 +1,6 @@
 bin/icingacli
+etc/bash_completion.d/icingacli
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache/icingaweb2.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bash_completion.d/icingacli
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx/icingaweb2.conf
 %%WWWDIR%%/.travis.yml
 %%WWWDIR%%/AUTHORS
@@ -418,6 +418,7 @@ bin/icingacli
 %%WWWDIR%%/library/Icinga/Util/Dimension.php
 %%WWWDIR%%/library/Icinga/Util/DirectoryIterator.php
 %%WWWDIR%%/library/Icinga/Util/EnumeratingFilterIterator.php
+%%WWWDIR%%/library/Icinga/Util/Environment.php
 %%WWWDIR%%/library/Icinga/Util/File.php
 %%WWWDIR%%/library/Icinga/Util/Format.php
 %%WWWDIR%%/library/Icinga/Util/GlobFilter.php
