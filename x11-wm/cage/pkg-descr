@@ -1,0 +1,8 @@
+Cage is a kiosk compositor for Wayland. A kiosk is a window manager
+(in the X11 world) or compositor (in the Wayland world) that is
+designed for a user experience wherein user interaction and activities
+outside the scope of the running application are prevented. That is, a
+kiosk compositor displays a single maximized application at a time and
+prevents the user from interacting with anything but this application.
+
+WWW: https://hjdskes.nl/projects/cage
