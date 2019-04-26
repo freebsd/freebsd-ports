@@ -5,4 +5,4 @@ strings are prefixed with the encryption method, wrapped with ENC[] and
 placed in an eyaml file. You can mix your plain values in as well or
 separate them into different files.
 
-WWW: https://github.com/TomPoulton/hiera-eyaml
+WWW: https://github.com/voxpupuli/hiera-eyaml
