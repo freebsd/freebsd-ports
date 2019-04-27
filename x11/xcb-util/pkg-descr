@@ -12,4 +12,4 @@ atom: Standard core X atom constants and atom caching.
 property: Callback X property-change handling.
 event: Callback X event handling.
 
-WWW: http://xcb.freedesktop.org/
+WWW: https://xcb.freedesktop.org/
