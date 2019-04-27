@@ -13,6 +13,9 @@ COMMENT=	Editing tool used for painting and retouching of movies
 LICENSE=	GPLv2 LGPL21 MIT
 LICENSE_COMB=	multi
 
+DEPRECATED=	Vulnerable since 2015, unmaintained and underlinks
+EXPIRATION_DATE=	2019-05-28
+
 LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
 		libftgl.so:graphics/ftgl \
 		liblcms.so:graphics/lcms \
