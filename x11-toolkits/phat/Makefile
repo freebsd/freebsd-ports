@@ -10,6 +10,10 @@ MASTER_SITES=	BERLIOS/phat
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of GTK+ widgets geared toward pro-audio apps
 
+BROKEN=		unfetchable
+DEPRECATED=	Unmaintained, upstream disappeared, underlinks
+EXPIRATION_DATE=	2019-05-28
+
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	gtk20 libgnomecanvas
