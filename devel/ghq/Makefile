@@ -2,7 +2,7 @@
 
 PORTNAME=	ghq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.10.0
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -15,10 +15,10 @@ USES=		go
 GO_PKGNAME=	github.com/motemen/ghq
 USE_GITHUB=	yes
 GH_ACCOUNT=	motemen
-GH_TUPLE=	urfave:cli:b67dcf995b6a7b7f14fad5fcb7cc5441b05e814b:cli/vendor/github.com/urfave/cli \
-		motemen:go-colorine:45d19169413a019e4e2be69629dde5c7d92f8706:go_colorine/vendor/github.com/motemen/go-colorine \
-		daviddengcn:go-colortext:186a3d44e9200d7eb331356ca4864f52708e1399:go_colortext/vendor/github.com/daviddengcn/go-colortext \
-		mitchellh:go-homedir:af06845cf3004701891bf4fdb884bfe4920b3727:go_homedir/vendor/github.com/mitchellh/go-homedir
+GH_TUPLE=	daviddengcn:go-colortext:186a3d44e920:go_colortext/vendor/github.com/daviddengcn/go-colortext \
+		golang:net:4829fb13d2c6:net/vendor/golang.org/x/net \
+		motemen:go-colorine:45d19169413a:go_colorine/vendor/github.com/motemen/go-colorine \
+		urfave:cli:v1.20.0:cli/vendor/github.com/urfave/cli
 
 PLIST_FILES=	bin/ghq \
 		share/zsh/site-functions/_ghq
