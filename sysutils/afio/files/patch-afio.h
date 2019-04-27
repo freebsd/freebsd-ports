@@ -1,5 +1,5 @@
---- afio.h.orig	Sun Sep 20 04:04:54 1998
-+++ afio.h	Wed Dec  9 01:33:32 1998
+--- afio.h.orig	2018-11-30 14:25:04 UTC
++++ afio.h
 @@ -1,5 +1,9 @@
  /* afio.h  defines for afio. */
  

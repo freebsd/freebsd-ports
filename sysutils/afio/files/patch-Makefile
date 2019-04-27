@@ -1,9 +1,9 @@
---- Makefile.orig	2003-12-21 10:23:51 UTC
+--- Makefile.orig	2018-11-30 14:25:04 UTC
 +++ Makefile
 @@ -28,7 +28,7 @@ SHELL=/bin/sh
  c	= -DHAVEMEMCMP
  ##  Define DEFFMTCMD to being how to format the media you use the most
- ##		This is the DEFault FoRMat CoManD. 
+ ##		This is the DEFault FoRMat CoManD.
 -d	= -DDEFFMTCMD='"fdformat /dev/fd0H1440"'
 +d	= -DDEFFMTCMD='"/usr/sbin/fdformat -f 1440 /dev/fd0"'
  ##  Define LONGZFILE if you want .Z to be tagged on the end of a 14 char
@@ -25,30 +25,31 @@
 +## Define HAVE_PARAM_H if your system has sys/param.h. This is used for BSD
 +#  detection.
 +
-+h 	= -DHAVE_PARAM_H
++h	= -DHAVE_PARAM_H
 +
  # fnmatch() is in the gnu C library, so it is directly available on
  # Linux.  If your system (e.g. SCO) does not have the gnu C library,
  # unpack the archive gnu.fnmatch.tar.gz and uncomment the following
-@@ -71,11 +76,14 @@ LARGEFILEFLAGS=-D_FILE_OFFSET_BITS=64 -D
- MW=
+@@ -74,13 +79,15 @@ MW=-Wformat -Werror=format-security -Wal
+ #code can be reviewed manually
  #MW=-Wtraditional -Wcast-qual -Wcast-align -Wconversion -pedantic -Wlong-long -Wimplicit -Wuninitialized -W -Wshadow -Wsign-compare -Wstrict-prototypes -Wmissing-declarations
  
--CFLAGS1 = -Wall -Wstrict-prototypes -s -O2 -fomit-frame-pointer ${LARGEFILEFLAGS} ${MW}
-+#CFLAGS1 = -Wall -Wstrict-prototypes -s -O2 -fomit-frame-pointer ${LARGEFILEFLAGS} ${MW}
-+CFLAGS1 = -fomit-frame-pointer -fno-strength-reduce
+-CFLAGS1 = -Wall -Wstrict-prototypes -s -O2 -fomit-frame-pointer -Wno-unused-result $(LARGEFILEFLAGS) $(MW)
++#CFLAGS1 = -Wall -Wstrict-prototypes -s -O2 -fomit-frame-pointer -Wno-unused-result $(LARGEFILEFLAGS) $(MW)
++CFLAGS1 = -fomit-frame-pointer
  
 -CC=gcc
 +#CC=gcc
-+#CC=cc
  
--CFLAGS = ${CFLAGS1} $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e ${e2} $f $g $I
-+#CFLAGS = ${CFLAGS1} $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e ${e2} $f $g $I
-+CFLAGS += ${CFLAGS1} $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $f $g $h $I
- LDFLAGS =
+ # also using contents of usin CPPFLAGS, CFLAGS, LDFLAGS out of environment
+ # variables, if they exist
+-CFLAGS += $(CFLAGS1) $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $(e2) $f $g $I
++#CFLAGS += $(CFLAGS1) $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $(e2) $f $g $I
++CFLAGS += $(CFLAGS1) $1 $2 $3 $4 $5 $6 $7 $8 $9 $a $b $c $d $e $f $g $I
+ LDFLAGS +=
+ CPPFLAGS +=
  
- afio : afio.o compfile.o exten.o match.o $M
-@@ -88,8 +96,9 @@ clean:
+@@ -95,8 +102,8 @@ clean:
  	cd regtest; /bin/sh regtest.clean
  
  install: afio
@@ -56,7 +57,6 @@
 -	cp afio.1 /usr/share/man/man1
 +	${BSD_INSTALL_PROGRAM} afio ${DESTDIR}${PREFIX}/bin
 +	${BSD_INSTALL_MAN} afio.1 ${DESTDIR}${PREFIX}/man/man1
-+
  
  # generate default list of -E extensions from manpage
  # note: on sun, I had to change awk command below to nawk or gawk
