@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190424
+PORTVERSION=	s20190426
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	212b9a39
+GH_TAGNAME=	5eb7b873
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.6.10 \
@@ -63,7 +63,7 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		itertools-0.8.0 \
 		itoa-0.4.3 \
 		lazy_static-1.3.0 \
-		libc-0.2.51 \
+		libc-0.2.53 \
 		libloading-0.5.0 \
 		log-0.4.6 \
 		memchr-2.2.0 \
@@ -74,13 +74,14 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		nom-4.2.3 \
 		num-traits-0.2.6 \
 		num_cpus-1.10.0 \
+		numtoa-0.1.0 \
 		paste-0.1.5 \
 		paste-impl-0.1.5 \
 		peeking_take_while-0.1.2 \
 		pkg-config-0.3.14 \
 		pretty_assertions-0.5.1 \
-		proc-macro-hack-0.5.4 \
-		proc-macro2-0.4.27 \
+		proc-macro-hack-0.5.5 \
+		proc-macro2-0.4.28 \
 		quick-error-1.2.2 \
 		quote-0.6.12 \
 		rand-0.5.6 \
@@ -94,7 +95,7 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		redox_syscall-0.1.54 \
 		redox_termios-0.1.1 \
 		regex-0.2.11 \
-		regex-1.1.5 \
+		regex-1.1.6 \
 		regex-syntax-0.5.6 \
 		regex-syntax-0.6.6 \
 		rustc-demangle-0.1.14 \
@@ -106,9 +107,9 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		serde_derive-1.0.90 \
 		serde_json-1.0.39 \
 		strsim-0.8.0 \
-		syn-0.15.31 \
+		syn-0.15.33 \
 		termcolor-1.0.4 \
-		termion-1.5.1 \
+		termion-1.5.2 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
 		tinytemplate-1.0.1 \
