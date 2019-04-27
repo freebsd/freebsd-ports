@@ -19,4 +19,6 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+PORTSCOUT=	ignore:1
+
 .include <bsd.port.mk>
