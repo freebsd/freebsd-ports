@@ -13,7 +13,10 @@ COMMENT=	Gems for MessagePack
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_RUBY=	yes
+DEPRECATED=	Use devel/rubygem-msgpack instead
+EXPIRATION_DATE=2019-04-30
+
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
