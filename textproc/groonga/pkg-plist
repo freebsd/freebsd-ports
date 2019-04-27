@@ -79,6 +79,7 @@ include/groonga/groonga/version.h
 include/groonga/groonga/windows.h
 include/groonga/groonga/windows_event_logger.h
 include/groonga/groonga/window_function.h
+include/groonga/groonga/window_function_executor.h
 lib/groonga/plugins/functions/index_column.a
 lib/groonga/plugins/functions/index_column.so
 lib/groonga/plugins/functions/math.a
