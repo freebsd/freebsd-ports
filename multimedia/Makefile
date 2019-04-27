@@ -307,6 +307,7 @@
     SUBDIR += p5-Subtitles
     SUBDIR += p5-Umph-Prompt
     SUBDIR += pHash
+    SUBDIR += peek
     SUBDIR += phonon
     SUBDIR += phonon-designerplugin
     SUBDIR += phonon-gstreamer
