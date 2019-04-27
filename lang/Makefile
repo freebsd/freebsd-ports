@@ -101,7 +101,6 @@
     SUBDIR += gcc
     SUBDIR += gcc-ecj45
     SUBDIR += gcc48
-    SUBDIR += gcc49
     SUBDIR += gcc5
     SUBDIR += gcc6
     SUBDIR += gcc6-aux

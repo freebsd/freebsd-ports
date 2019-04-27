@@ -12189,3 +12189,4 @@ www/rubygem-select2-rails3|www/rubygem-select2-rails|2019-04-23|Has expired: Use
 www/rubygem-jquery-atwho-rails13|www/rubygem-jquery-atwho-rails|2019-04-23|Has expired: Use www/rubygem-jquery-atwho-rails instead
 devel/rubygem-recaptcha3|devel/rubygem-recaptcha|2019-04-23|Has expired: Use devel/rubygem-recaptcha instead
 security/rubygem-rack-oauth212|security/rubygem-rack-oauth2|2019-04-23|Has expired: Use security/rubygem-rack-oauth2 instead
+lang/gcc49|lang/gcc7|2019-04-27|Has expired: Unsupported by upstream. Use GCC 7 or newer instead.
