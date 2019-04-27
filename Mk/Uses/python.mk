@@ -210,6 +210,11 @@
 #			  packages for different Python versions.
 #			  default: py${PYTHON_SUFFIX}-
 #
+# PYTHON_PKGNAMESUFFIX
+#			- Use this as a ${PKGNAMESUFFIX} to distinguish
+#			  packages for different Python versions.
+#			  default: -py${PYTHON_SUFFIX}
+#
 # Using USES=python.mk also will add some useful entries to PLIST_SUB:
 #
 #	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;}
@@ -224,10 +229,6 @@
 #
 #	PYTHON2="" PYTHON3="@comment " for Python 2.x
 #	PYTHON2="@comment " PYTHON3="" for Python 3.x
-#
-# PYTHON_PKGNAMESUFFIX
-#			- Deprecated, use PYTHON_PKGNAMEPREFIX instead
-#			  default: -py${PYTHON_SUFFIX}
 #
 # PYDISTUTILS_INSTALLNOSINGLE
 #			- Deprecated without replacement
