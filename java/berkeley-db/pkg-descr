@@ -1,7 +1,7 @@
 This is a pure-Java implementation of Berkeley DB by SleepyCat (now
 Oracle). Java-1.7 is required for building. From the
 
-WWW: http://www.oracle.com/technetwork/database/berkeleydb/
+WWW: https://www.oracle.com/database/technologies/related/berkeleydb.html
 
 "Berkeley DB JE was designed from the ground up in Java. It takes full
  advantage of the Java environment. The Berkeley DB JE API provides a
