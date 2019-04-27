@@ -14,10 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		libtool ncurses perl5 shebangfix
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-USES=		libtool ncurses perl5 shebangfix
+USE_CSTD=	c99
 
 INFO=		global
 PORTDOCS=	AUTHORS ChangeLog FAQ INSTALL LICENSE NEWS README THANKS
