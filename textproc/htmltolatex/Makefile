@@ -16,9 +16,7 @@ LICENSE_FILE=	${WRKSRC}/copying.txt
 
 LIB_DEPENDS=	libGraphicsMagick++.so:graphics/GraphicsMagick
 
-BROKEN_powerpc64=	fails to link: libGraphicsMagick++.so: undefined reference to std::__cxx11::basic_string
-
-USES=		bison gmake
+USES=		bison compiler:c++11-lang gmake
 MAKEFILE=	GNUmakefile
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ARGS=	CXX="${CXX}" \

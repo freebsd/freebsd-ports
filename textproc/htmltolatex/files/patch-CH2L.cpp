@@ -1,5 +1,5 @@
---- CH2L.cpp.orig	2001-11-11 21:03:19.000000000 +0100
-+++ CH2L.cpp	2018-01-19 07:07:05.786197000 +0100
+--- CH2L.cpp.orig	2001-11-11 20:03:19 UTC
++++ CH2L.cpp
 @@ -18,6 +18,9 @@
   * Boston, MA 02111-1307, USA.
   *
@@ -10,15 +10,18 @@
  #include "CH2L.h"
  #include "util.h"
  #include "safe_ostrstream.h"
-@@ -28,7 +31,6 @@
+@@ -27,8 +30,9 @@
+ #include <stdlib.h>
  #include <assert.h>
  #include <fstream>
++#include <cstring>
++#include <strings.h>
  
 -using namespace std;
  using namespace Magick;
  
  #define ATTRIBUTENESTLIMIT	1000
-@@ -2086,7 +2088,7 @@
+@@ -2086,7 +2090,7 @@ void CH2L::make_font_start()
  }
  
  
@@ -27,7 +30,7 @@
  {
  	dump_text();
  	int cnt = 0;
-@@ -2225,7 +2227,7 @@
+@@ -2225,7 +2229,7 @@ void CH2L::end_sup()
  }
  
  ////////////////////////
@@ -36,7 +39,7 @@
  {
  	dump_text();
  
-@@ -3594,7 +3596,7 @@
+@@ -3594,7 +3598,7 @@ void CH2L::_idle_tag_end(const string &htmltag)
  }
  
  
@@ -45,7 +48,7 @@
  { 
  	bool did_something = false;
  	bool alignment_changed = false;
-@@ -3945,7 +3947,7 @@
+@@ -3945,7 +3949,7 @@ bool CH2L::openTableDimensionsFile()
  
  		mTableDimensionsFileName = tsp;
  		mTableDimensionsFile.open(tsp.c_str());
