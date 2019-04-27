@@ -18,15 +18,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libgimp-2.0.so:graphics/gimp-app
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		compiler:c11 gmake gnome localbase:ldflags pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 intltool
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLIST_SUB=	PLUGIN_DIR=${PLUGIN_DIR}
 
-CPPFLAGS+=	-I${LOCALBASE}/include -DGIMP_DISABLE_DEPRECATED
-LDFLAGS+=	-lm -L${LOCALBASE}/lib
+CPPFLAGS+=	-DGIMP_DISABLE_DEPRECATED
+LDFLAGS+=	-lm
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
