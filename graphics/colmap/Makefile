@@ -49,7 +49,8 @@ DOCS_PORTDOCS=		*
 
 OPENMP_USES=		compiler:openmp
 OPENMP_CMAKE_BOOL=	OPENMP_ENABLED
-.if !exists(/usr/include/omp.h)
+.if ${MACHINE_ARCH} == i386 || !exists(/usr/include/omp.h)
+# XXX base/230888 via #pragma omp atomic
 # XXX ports/199603 + ports/210337
 OPENMP_VARS=		OPENMP=gcc-
 .endif
