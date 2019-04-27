@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PPI
-PORTVERSION=	1.250
+PORTVERSION=	1.256
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MITHALDU
@@ -23,6 +23,7 @@ RUN_DEPENDS=	p5-Clone>=0.30:devel/p5-Clone \
 TEST_DEPENDS=	p5-Class-Inspector>=1.22:devel/p5-Class-Inspector \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-InDistDir>=0:devel/p5-Test-InDistDir \
+		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings \
 		p5-Test-Object>=0.07:devel/p5-Test-Object \
 		p5-Test-SubCalls>=1.07:devel/p5-Test-SubCalls
 
