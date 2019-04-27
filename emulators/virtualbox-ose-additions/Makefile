@@ -4,7 +4,7 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.28
 CATEGORIES=	emulators
-MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
+MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-additions
 DISTNAME=	VirtualBox-${PORTVERSION}
 
