@@ -20,7 +20,7 @@ BUILD_DEPENDS=	rubygem-glib2>0:devel/rubygem-glib2
 LIB_DEPENDS=	libev.so:devel/libev
 RUN_DEPENDS=	rubygem-glib2>0:devel/rubygem-glib2
 
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		compiler:c++11-lang gettext gmake libtool pathfix pkgconfig
 USE_RC_SUBR=	milter-manager
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libev \
