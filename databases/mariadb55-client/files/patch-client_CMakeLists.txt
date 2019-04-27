@@ -1,6 +1,6 @@
---- client/CMakeLists.txt.orig	2017-04-30 11:09:29 UTC
+--- client/CMakeLists.txt.orig	2019-04-26 12:37:01 UTC
 +++ client/CMakeLists.txt
-@@ -34,11 +34,12 @@ IF(UNIX)
+@@ -35,12 +35,13 @@ IF(UNIX)
    SET_TARGET_PROPERTIES(mysql PROPERTIES ENABLE_EXPORTS TRUE)
  ENDIF(UNIX)
  
@@ -9,12 +9,13 @@
  SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqltest mysqlclient regex)
  SET_TARGET_PROPERTIES(mysqltest PROPERTIES ENABLE_EXPORTS TRUE)
--
 +ENDIF()
  
+-
  MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
  TARGET_LINK_LIBRARIES(mysqlcheck mysqlclient)
-@@ -50,15 +51,19 @@ MYSQL_ADD_EXECUTABLE(mysqlimport mysqlim
+ 
+@@ -51,15 +52,19 @@ MYSQL_ADD_EXECUTABLE(mysqlimport mysqlimport.c)
  SET_SOURCE_FILES_PROPERTIES(mysqlimport.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqlimport mysqlclient)
  
@@ -34,17 +35,18 @@
  
  MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc)
  TARGET_LINK_LIBRARIES(mysqlbinlog mysqlclient)
-@@ -76,10 +81,12 @@ IF(WIN32)
+@@ -76,11 +81,13 @@ IF(WIN32)
+   MYSQL_ADD_EXECUTABLE(echo echo.c COMPONENT Junk)
  ENDIF(WIN32)
  
- # async_example is just a code example, do not install it.
 +IF(FALSE)
+ # async_example is just a code example, do not install it.
  ADD_EXECUTABLE(async_example async_example.c)
  TARGET_LINK_LIBRARIES(async_example mysqlclient)
 +ENDIF()
  
--SET_TARGET_PROPERTIES (mysqlcheck mysqldump mysqlimport mysql_upgrade mysqlshow mysqlslap mysql_plugin 
-+SET_TARGET_PROPERTIES (mysqlcheck mysqldump mysqlimport mysqlshow mysqlslap 
+-SET_TARGET_PROPERTIES (mysqlcheck mysqldump mysqlimport mysql_upgrade mysqlshow mysqlslap mysql_plugin async_example
++SET_TARGET_PROPERTIES (mysqlcheck mysqldump mysqlimport mysqlshow mysqlslap
  PROPERTIES HAS_CXX TRUE)
  
  ADD_DEFINITIONS(-DHAVE_DLOPEN)
