@@ -19,7 +19,9 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-Plack>=0:www/p5-Plack
 TEST_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
