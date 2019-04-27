@@ -1,0 +1,24 @@
+# $FreeBSD$
+
+PORTNAME=	ustreamer
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.70
+CATEGORIES=	multimedia ipv6 net
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Lightweight and fast MJPG-HTTP streamer
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+LIB_DEPENDS=	libevent.so:devel/libevent \
+		libuuid.so:misc/e2fsprogs-libuuid
+
+USES=		gmake jpeg localbase:ldflags
+USE_GITHUB=	yes
+GH_ACCOUNT=	pi-kvm
+
+PLIST_FILES=	bin/ustreamer
+
+.include <bsd.port.mk>
