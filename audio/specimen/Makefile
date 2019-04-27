@@ -10,6 +10,9 @@ MASTER_SITES=	http://zhevny.com/specimen/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI controllable audio sampler
 
+DEPRECATED=	Unmaintained, depends on expiring x11-toolkits/phat
+EXPIRATION_DATE=	2019-05-28
+
 # Between 0.109.0 and earlier versions there was an api change in JACK.
 # However, the library version number was not changed.  The line above
 # is supposed to work around that.
