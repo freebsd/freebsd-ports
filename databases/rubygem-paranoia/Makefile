@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paranoia
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activerecord4>=4.0:databases/rubygem-activerecord4
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
