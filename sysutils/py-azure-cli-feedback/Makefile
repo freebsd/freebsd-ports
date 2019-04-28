@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli-feedback
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,7 @@ COMMENT=	Microsoft Azure Command-Line Tools Feedback Command Module
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-cli-core>=0:sysutils/py-azure-cli-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}applicationinsights>=0:devel/py-applicationinsights@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-cli-core>=0:sysutils/py-azure-cli-core@${PY_FLAVOR}
 
 USES=		azurepy python
 USE_PYTHON=	autoplist concurrent distutils
