@@ -8,4 +8,4 @@ operator that optimizes both the edge orientations and vertex positions in
 the output mesh.  The algorithm produces meshes with high isotropy while
 naturally aligning and snapping edges to sharp features.
 
-WWW: https://igl.ethz.ch/projects/instant-meshes
+WWW: https://igl.ethz.ch/projects/instant-meshes/
