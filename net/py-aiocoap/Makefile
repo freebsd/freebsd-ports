@@ -1,0 +1,18 @@
+# $FreeBSD$
+
+PORTNAME=	aiocoap
+DISTVERSION=	0.3
+CATEGORIES=	net
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	tcberner@FreeBSD.org
+COMMENT=	Python CoAP library
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		python:3.5+
+USE_PYTHON=	autoplist distutils
+
+.include <bsd.port.mk>
