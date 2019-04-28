@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	recog
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -13,9 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-nokogiri>=0:textproc/rubygem-nokogiri
 
-NO_ARCH=	yes
 USES=		gem python:env shebangfix
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 SHEBANG_FILES=	update_cpes.py
 PLIST_FILES=	bin/recog_export \
 		bin/recog_match \
