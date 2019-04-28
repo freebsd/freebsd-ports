@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stk
-PORTVERSION=	4.6.0
+PORTVERSION=	4.6.1
 CATEGORIES=	audio
 MASTER_SITES=	http://ccrma.stanford.edu/software/stk/release/
 
