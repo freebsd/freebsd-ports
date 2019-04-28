@@ -1,4 +1,4 @@
---- native/Makefile.orig	2016-03-16 14:37:28 UTC
+--- native/Makefile.orig	2017-12-27 19:27:16 UTC
 +++ native/Makefile
 @@ -39,6 +39,8 @@
  # protection simply by defining HAVE_PROTECTION.  This option has been only
@@ -9,16 +9,20 @@
  OS=$(shell uname | sed -e 's/CYGWIN.*/win32/g' \
  	                -e 's/MINGW32.*/win32/g' \
                          -e 's/SunOS.*/solaris/g' \
-@@ -270,7 +272,7 @@ endif
+@@ -278,8 +280,11 @@ endif
  ifneq (,$(findstring bsd,$(OS)))
  ARCH=$(shell uname -m | sed 's/i.86/i386/g')
  PCFLAGS+=-fPIC
 -CINCLUDES+=-I/usr/X11R6/include
 +CINCLUDES+=-I%%LOCALBASE%%/include
  LDFLAGS=-o $@ -shared
++ifeq ($(ARCH),i386)
++LDFLAGS+=-Wl,-z,notext
++endif
  CDEFINES+=-DHAVE_PROTECTION -DFFI_MMAP_EXEC_WRIT -DUSE_DEAFULT_LIBNAME_ENCODING
  endif
-@@ -338,10 +338,10 @@ endif
+ 
+@@ -336,10 +341,10 @@ endif
  ifeq ($(CC),gcc)
      GCC_MAJOR_VERSION = $(shell gcc -dumpversion | cut -f 1 -d '.')
      ifneq ($(GCC_MAJOR_VERSION),4)
