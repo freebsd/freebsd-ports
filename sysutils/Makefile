@@ -301,6 +301,7 @@
     SUBDIR += env4801
     SUBDIR += envconsul
     SUBDIR += epazote
+    SUBDIR += etc_os-release
     SUBDIR += etcmerge
     SUBDIR += etcupdate
     SUBDIR += eventlog
