@@ -1,3 +1,10 @@
 bin/onedrive
-%%DOCSDIR%%/README.md
-%%EXAMPLESDIR%%/config
+etc/logrotate.d/onedrive
+%%DOCS%%man/man1/onedrive.1.gz
+%%BASH%%share/bash-completion/completions/onedrive
+%%ZSH%%share/zsh/site-functions/_onedrive
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/README.Office365.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/config
+@dir /var/log/onedrive

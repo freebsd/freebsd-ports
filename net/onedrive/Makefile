@@ -2,35 +2,62 @@
 
 PORTNAME=	onedrive
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.3
-PORTREVISION=	1
+DISTVERSION=	2.3.3
 CATEGORIES=	net
 
 MAINTAINER=	hiroo.ono+freebsd@gmail.com
-COMMENT=	Microsoft OneDrive client
+COMMENT=	OneDrive Free client
 
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libinotify.so:devel/libinotify
 BUILD_DEPENDS=	ldc2:lang/ldc
+RUN_DEPENDS=	${LOCALBASE}/sbin/logrotate:sysutils/logrotate
 
-USES=		sqlite
+USES=		gmake pkgconfig sqlite
 USE_GITHUB=	yes
-GH_ACCOUNT=	skilion
+GH_ACCOUNT=	abraunegg
 
-MAKE_ARGS=	DC=ldc2
+DFLAGS+=		-g
+PKGCONFIG=		pkgconf
+MAKE_ARGS=		DC=ldc2
+INSTALL_TARGET=		install.noservice
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=		DOCS NOTIFY BASH ZSH
+OPTIONS_DEFAULT=	DOCS NOTIFY BASH ZSH
+OPTIONS_SUB=		yes
+
+DOCFILES=		README.md README.Office365.md config CHANGELOG.md
+
+NOTIFY_VARS=		NOTIFICATIONS=1
+NOTIFY_USES=		gnome
+NOTIFY_USE=		GNOME=glib20
+NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
+
+BASH_COMPLETION_DIR=	${LOCALBASE}/share/bash-completion/completions
+ZSH_COMPLETION_DIR=	${LOCALBASE}/share/zsh/site-functions
 
 post-extract:
 	${CP} ${FILESDIR}/freebsd_inotify.d ${WRKSRC}/src
-	${CP} ${FILESDIR}/version ${WRKSRC}
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/onedrive ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/config ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+do-install-DOCS-on:
+.for f in ${DOCFILES}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
-.include <bsd.port.post.mk>
+do-install-BASH-on:
+	@${MKDIR} ${STAGEDIR}${BASH_COMPLETION_DIR}
+	${INSTALL_DATA} ${WRKSRC}/completions/complete.bash \
+		${STAGEDIR}${BASH_COMPLETION_DIR}/onedrive
+
+do-install-ZSH-on:
+	@${MKDIR} ${STAGEDIR}${ZSH_COMPLETION_DIR}
+	${INSTALL_DATA} ${WRKSRC}/completions/complete.zsh \
+		${STAGEDIR}${ZSH_COMPLETION_DIR}/_onedrive
+
+post-install-DOCS-on:
+	${INSTALL_MAN} ${WRKSRC}/onedrive.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+.include <bsd.port.mk>
