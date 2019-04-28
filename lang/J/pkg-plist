@@ -2,6 +2,13 @@ bin/jconsole
 lib/j/bin/jconsole
 lib/j/bin/libj.so
 lib/j/bin/libtsdll.so
+share/j/addons/data/jfiles/history.txt
+share/j/addons/data/jfiles/jfiles.ijs
+share/j/addons/data/jfiles/jfiles.txt
+share/j/addons/data/jfiles/keyfiles.txt
+share/j/addons/data/jfiles/manifest.ijs
+share/j/addons/data/jfiles/test/test0.ijs
+share/j/addons/data/jfiles/test/test1.ijs
 share/j/addons/data/jmf/history.txt
 share/j/addons/data/jmf/jmf.ijs
 share/j/addons/data/jmf/manifest.ijs
@@ -109,6 +116,7 @@ share/j/system/config/folders.cfg
 share/j/system/config/version.txt
 share/j/system/defs/hostdefs_aix.ijs
 share/j/system/defs/hostdefs_android.ijs
+share/j/system/defs/hostdefs_android_64.ijs
 share/j/system/defs/hostdefs_darwin.ijs
 share/j/system/defs/hostdefs_darwin_64.ijs
 share/j/system/defs/hostdefs_freebsd_64.ijs
@@ -120,6 +128,7 @@ share/j/system/defs/hostdefs_win.ijs
 share/j/system/defs/hostdefs_win_64.ijs
 share/j/system/defs/netdefs_aix.ijs
 share/j/system/defs/netdefs_android.ijs
+share/j/system/defs/netdefs_android_64.ijs
 share/j/system/defs/netdefs_darwin.ijs
 share/j/system/defs/netdefs_darwin_64.ijs
 share/j/system/defs/netdefs_freebsd_64.ijs
@@ -129,7 +138,6 @@ share/j/system/defs/netdefs_linux_64.ijs
 share/j/system/defs/netdefs_sunos.ijs
 share/j/system/defs/netdefs_win.ijs
 share/j/system/defs/netdefs_win_64.ijs
-share/j/system/main/ctag.ijs
 share/j/system/main/regex.ijs
 share/j/system/main/regex.ijs.orig
 share/j/system/main/socket.ijs
@@ -138,13 +146,9 @@ share/j/system/main/stdlib.ijs.orig
 share/j/system/main/task.ijs
 share/j/system/util/boot.ijs
 share/j/system/util/configure.ijs
-share/j/system/util/edit.png
-share/j/system/util/edit.svg
-share/j/system/util/jadetag.ijs
 share/j/system/util/pacman.ijs
 share/j/system/util/pm.ijs
 share/j/system/util/pp.ijs
 share/j/system/util/project.ijs
 share/j/system/util/scripts.ijs
 share/j/system/util/tar.ijs
-share/j/system/util/term.png

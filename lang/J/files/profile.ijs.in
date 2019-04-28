@@ -1,7 +1,6 @@
 NB. J profile
 NB. JFE sets BINPATH_z_ and ARGV_z_
 NB. add your sentences in startup.ijs
-NB. $FreeBSD$
 
 systype=. 9!:12''
 jpathsep_z_=: '/'&(('\' I.@:= ])})

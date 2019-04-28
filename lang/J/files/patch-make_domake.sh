@@ -1,19 +1,11 @@
---- make/domake.sh.orig	2018-04-09 18:08:56 UTC
+--- make/domake.sh.orig	2019-01-06 11:36:39 UTC
 +++ make/domake.sh
-@@ -3,8 +3,7 @@
- # run by build_jconsole and build_libj
- # $1 is j32 or j64
+@@ -15,7 +15,7 @@ if [ $1 = "j64nonavx" ] ; then
+  avx=-nonavx
+ fi 
  
--cd ~
--. jvars.sh
-+. make/jvars.sh
- 
- echo $TARGET
- echo $COMPILE
-@@ -12,5 +11,5 @@ echo $LINK
- mkdir -p $jbld/jout/$TARGET/$1
- cd $jbld/jout/$TARGET/$1
- 
--make -f $jmake/makefile
+-echo "building  $jbld/$targ/bin/$TARGET $avx"
 +gmake -f $jmake/makefile
- cp $TARGET $jbld/$1/bin
+ echo "output in $jbld/$targ/bin/build_$TARGET$avx.txt"
+ make -f $jmake/makefile >$jbld/$targ/bin/build_$TARGET$avx.txt 2>&1
+ echo `egrep -w 'warning|error|note' $jbld/$targ/bin/build_$TARGET$avx.txt`
