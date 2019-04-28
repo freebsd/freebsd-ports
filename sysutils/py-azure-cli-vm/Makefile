@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli-vm
-PORTVERSION=	2.2.18
+PORTVERSION=	2.2.19
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-mgmt-msi>=0.2.0:devel/py-azure-mgmt-msi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-authorization>=0.50.0:devel/py-azure-mgmt-authorization@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-compute>=4.5.1:devel/py-azure-mgmt-compute@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-compute>=4.6.1:devel/py-azure-mgmt-compute@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-keyvault>=1.1.0:devel/py-azure-mgmt-keyvault@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-keyvault>=1.1.0:devel/py-azure-keyvault@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-network>=2.6.0.r1:devel/py-azure-mgmt-network@${PY_FLAVOR} \
