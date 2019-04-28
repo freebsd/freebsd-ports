@@ -29,6 +29,7 @@ lib/mysql/plugin/daemon_example.ini
 lib/mysql/plugin/group_replication.so
 %%NO_EXAMPLE%%lib/mysql/plugin/ha_example.so
 lib/mysql/plugin/keyring_file.so
+lib/mysql/plugin/keyring_udf.so
 lib/mysql/plugin/libdaemon_example.so
 lib/mysql/plugin/libtest_framework.so
 lib/mysql/plugin/libtest_services.so
@@ -64,8 +65,8 @@ lib/mysql/plugin/rewriter.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
 lib/mysql/plugin/test_security_context.so
-lib/mysql/plugin/keyring_udf.so
 lib/mysql/plugin/test_udf_services.so
+%%EXAMPLE%%lib/mysql/plugin/udf_example.so
 lib/mysql/plugin/validate_password.so
 lib/mysql/plugin/version_token.so
 libdata/pkgconfig/LIBMYSQL_OS_OUTPUT_NAME-NOTFOUND.pc
