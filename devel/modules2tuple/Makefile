@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	modules2tuple
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_BUILDFLAGS=	-ldflags="-X main.version=${PORTVERSION}"
 
 USE_GITHUB=	yes
 GH_TUPLE=	dmgk:${PORTNAME}:v${PORTVERSION}:DEFAULT
