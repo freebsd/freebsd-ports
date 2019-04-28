@@ -1,0 +1,18 @@
+Python package to communicate with the IKEA Tradfri ZigBee Gateway compatible
+with ZigBee Light Link products. By using this library you can communicate with
+the gateway and control IKEA's lights and wall plugs.
+
+Some of the features include:
+
+ * Get information on the gateway
+ * Observe lights, groups and other resources and get notified when they change
+ * Control wall plugs
+ * List all devices connected to gateway
+ * List all lights and get attributes of lights (name, state, color temp,
+   dimmer level etc) Change attribute values of lights (name, state, color
+   temp, dimmer level etc)
+ * Restart and reset the gateway
+ * List smart tasks (wake up, on/off and not home) and their attributes
+ * Alter values in smart tasks (some of these features not available in app yet)
+
+WWW: https://github.com/ggravlingen/pytradfri
