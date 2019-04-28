@@ -3,6 +3,7 @@
 
 PORTNAME=	uim-el
 PORTVERSION=	1.8.8
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/uim/uim/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
