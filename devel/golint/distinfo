@@ -1,0 +1,5 @@
+TIMESTAMP = 1556481010
+SHA256 (golang-lint-959b441_GH0.tar.gz) = df0c8369150fcf23d5a79851293c232e3f79c931bfcff59460b0298b774c0a12
+SIZE (golang-lint-959b441_GH0.tar.gz) = 32982
+SHA256 (golang-tools-e65039e_GH0.tar.gz) = 29fd59183877a438012e2ec6d2875f4403b0f4b58aa8a793372edc9df3a3a20c
+SIZE (golang-tools-e65039e_GH0.tar.gz) = 2681790
