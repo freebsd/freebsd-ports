@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	routinator
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	jaap@NLnetLabs.nl
@@ -62,7 +61,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.3.0 \
 		lazycell-1.2.1 \
-		libc-0.2.50 \
+		libc-0.2.51 \
 		lock_api-0.1.5 \
 		log-0.4.6 \
 		memoffset-0.2.1 \
@@ -92,12 +91,12 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		rand_pcg-0.1.2 \
 		rand_xorshift-0.1.1 \
 		rdrand-0.4.0 \
-		redox_syscall-0.1.51 \
+		redox_syscall-0.1.52 \
 		redox_termios-0.1.1 \
 		redox_users-0.3.0 \
 		remove_dir_all-0.5.1 \
 		ring-0.13.5 \
-		rpki-0.3.2 \
+		rpki-0.3.3 \
 		rustc-demangle-0.1.13 \
 		rustc_version-0.2.3 \
 		safemem-0.3.0 \
