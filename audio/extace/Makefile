@@ -12,6 +12,9 @@ COMMENT=	Audio visualization plugin for the X Window System
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on expired esound
+EXPIRATION_DATE=	2019-04-29
+
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libesd.so:audio/esound
 
