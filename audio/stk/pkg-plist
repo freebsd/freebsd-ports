@@ -64,6 +64,7 @@ include/stk/Phonemes.h
 include/stk/PitShift.h
 include/stk/Plucked.h
 include/stk/PoleZero.h
+include/stk/Recorder.h
 include/stk/ReedTable.h
 include/stk/Resonate.h
 include/stk/Rhodey.h
@@ -101,7 +102,7 @@ include/stk/Whistle.h
 include/stk/Wurley.h
 include/stk/WvIn.h
 include/stk/WvOut.h
-lib/libstk-4.6.0.so
+lib/libstk-4.6.1.so
 lib/libstk.so
 %%DATADIR%%/rawwaves/ahh.raw
 %%DATADIR%%/rawwaves/bassdrum.raw
