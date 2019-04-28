@@ -1,0 +1,9 @@
+This is a cython wrapper for tinydtls.
+
+It currently implements a socket like Interface with sendmsg and readmsg.
+All other calls are passt to the underlying socket.
+
+For more info of tinydtls see
+https://projects.eclipse.org/projects/iot.tinydtls
+
+WWW: https://git.fslab.de/jkonra2m/tinydtls-cython
