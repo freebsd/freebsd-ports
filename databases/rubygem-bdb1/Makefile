@@ -12,8 +12,6 @@ COMMENT=	Ruby interface to Berkeley DB revision 1.8x with full feature support
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-BROKEN_RUBY25=	yes
-
 USE_RUBY=	yes
 USES=		gem shebangfix
 SHEBANG_FILES=	examples/*.rb
