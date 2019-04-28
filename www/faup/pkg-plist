@@ -23,10 +23,12 @@ include/faup/version.h
 include/faup/webserver.h
 lib/libfaupl.so
 lib/libfaupl.so.1
+libdata/pkgconfig/faup.pc
 man/man1/faup.1.gz
 %%DATADIR%%/README.txt
 %%DATADIR%%/mozilla.tlds
 %%DATADIR%%/modules_available/emulation_ie.lua
+%%DATADIR%%/modules_available/ipv4toint.lua
 %%DATADIR%%/modules_available/printcsv.lua
 %%DATADIR%%/modules_available/redis-url-threatintel.lua
 %%DATADIR%%/modules_available/uppercase.lua
