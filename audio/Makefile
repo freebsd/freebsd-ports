@@ -635,6 +635,7 @@
     SUBDIR += pear-Text_Spell_Audio
     SUBDIR += penguinsap
     SUBDIR += pianobar
+    SUBDIR += pianod2
     SUBDIR += picard
     SUBDIR += picard-plugins
     SUBDIR += pithos
