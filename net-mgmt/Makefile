@@ -399,16 +399,6 @@
     SUBDIR += zabbix3-java
     SUBDIR += zabbix3-proxy
     SUBDIR += zabbix3-server
-    SUBDIR += zabbix32-agent
-    SUBDIR += zabbix32-frontend
-    SUBDIR += zabbix32-java
-    SUBDIR += zabbix32-proxy
-    SUBDIR += zabbix32-server
-    SUBDIR += zabbix34-agent
-    SUBDIR += zabbix34-frontend
-    SUBDIR += zabbix34-java
-    SUBDIR += zabbix34-proxy
-    SUBDIR += zabbix34-server
     SUBDIR += zabbix4-agent
     SUBDIR += zabbix4-frontend
     SUBDIR += zabbix4-java
