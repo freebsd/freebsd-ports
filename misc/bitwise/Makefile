@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitwise
-DISTVERSION=	0.1
+DISTVERSION=	0.11
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
