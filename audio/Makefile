@@ -566,6 +566,7 @@
     SUBDIR += noise-repellent-lv2
     SUBDIR += normalize
     SUBDIR += nosefart
+    SUBDIR += noson-app
     SUBDIR += nspmod
     SUBDIR += nuvolaplayer
     SUBDIR += oaml
