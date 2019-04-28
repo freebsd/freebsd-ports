@@ -12190,3 +12190,15 @@ www/rubygem-jquery-atwho-rails13|www/rubygem-jquery-atwho-rails|2019-04-23|Has e
 devel/rubygem-recaptcha3|devel/rubygem-recaptcha|2019-04-23|Has expired: Use devel/rubygem-recaptcha instead
 security/rubygem-rack-oauth212|security/rubygem-rack-oauth2|2019-04-23|Has expired: Use security/rubygem-rack-oauth2 instead
 lang/gcc49|lang/gcc7|2019-04-27|Has expired: Unsupported by upstream. Use GCC 7 or newer instead.
+net-mgmt/zabbix32-agent|net-mgmt/zabbix4-agent|2019-04-28|Has expired: End of Life was November, 2017
+net-mgmt/zabbix32-frontend|net-mgmt/zabbix4-frontend|2019-04-28|Has expired: End of Life was November, 2017
+net-mgmt/zabbix32-java|net-mgmt/zabbix4-java|2019-04-28|Has expired: End of Life was November, 2017
+net-mgmt/zabbix32-proxy|net-mgmt/zabbix4-proxy|2019-04-28|Has expired: End of Life was November, 2017
+net-mgmt/zabbix32-server|net-mgmt/zabbix4-server|2019-04-28|Has expired: End of Life was November, 2017
+net-mgmt/zabbix34-agent|net-mgmt/zabbix4-agent|2019-04-28|Has expired: End of Life was October, 2018
+net-mgmt/zabbix34-frontend|net-mgmt/zabbix4-frontend|2019-04-28|Has expired: End of Life was October, 2018
+net-mgmt/zabbix34-java|net-mgmt/zabbix4-java|2019-04-28|Has expired: End of Life was October, 2018
+net-mgmt/zabbix34-proxy|net-mgmt/zabbix4-proxy|2019-04-28|Has expired: End of Life was October, 2018
+net-mgmt/zabbix34-server|net-mgmt/zabbix4-server|2019-04-28|Has expired: End of Life was October, 2018
+databases/zabbix32-libzbxpgsql||2019-04-28|Removed, depends on expired net-mgmt/zabbix32-agent
+databases/zabbix34-libzbxpgsql||2019-04-28|Removed, depends on expired net-mgmt/zabbix34-agent
