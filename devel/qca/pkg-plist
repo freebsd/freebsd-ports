@@ -24,6 +24,7 @@ lib/cmake/Qca-qt5/Qca-qt5Targets.cmake
 lib/libqca-qt5.so
 lib/libqca-qt5.so.2
 lib/libqca-qt5.so.%%SHLIB_VER%%
+%%BOTAN%%lib/qca-qt5/crypto/libqca-botan.so
 %%SASL%%lib/qca-qt5/crypto/libqca-cyrus-sasl.so
 %%GNUPG%%lib/qca-qt5/crypto/libqca-gnupg.so
 %%OPENSSL%%lib/qca-qt5/crypto/libqca-ossl.so
