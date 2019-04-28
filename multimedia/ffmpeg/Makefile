@@ -332,6 +332,7 @@ OPENCV_LIB_DEPENDS=	libopencv_imgproc.so:graphics/opencv-core
 OPENCV_CONFIGURE_ENABLE=	libopencv
 
 # opengl
+OPENGL_USES=		gl
 OPENGL_USE=		GL=gl
 OPENGL_CONFIGURE_ENABLE=	opengl
 
@@ -473,6 +474,7 @@ VAPOURSYNTH_LIB_DEPENDS=	libvapoursynth-script.so:multimedia/vapoursynth
 VAPOURSYNTH_CONFIGURE_ENABLE=	vapoursynth
 
 # vdpau
+VDPAU_USE=		XORG=x11
 VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
 
@@ -529,7 +531,7 @@ XVID_LIB_DEPENDS=	libxvidcore.so:multimedia/xvid
 XVID_CONFIGURE_ENABLE=	libxvid
 
 # xv
-XVIDEO_USE=		XORG=xv
+XVIDEO_USE=		XORG=x11,xext,xv
 XVIDEO_CONFIGURE_OFF=	--disable-outdev=xv
 
 # zimg
