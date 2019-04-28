@@ -1,0 +1,10 @@
+--- plugins/qca-botan/CMakeLists.txt.orig	2019-04-24 12:58:14 UTC
++++ plugins/qca-botan/CMakeLists.txt
+@@ -16,6 +16,7 @@ if(BOTAN_FOUND)
+     set_property(TARGET qca-botan  PROPERTY SUFFIX ".dylib")
+   endif()
+ 
++  target_link_directories(qca-botan PRIVATE ${BOTAN_LIBRARY_DIRS})
+   target_link_libraries(qca-botan ${QT_QTCORE_LIBRARY} ${QCA_LIB_NAME} ${BOTAN_LIBRARIES})
+ 
+   if(NOT DEVELOPER_MODE)
