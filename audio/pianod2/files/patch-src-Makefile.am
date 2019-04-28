@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2018-03-16 18:13:50 UTC
++++ src/Makefile.am
+@@ -44,7 +44,7 @@ libao_ldadd		= -lao
+ endif
+ 
+ if WITH_LIBSDL
+-libsdl_ldadd		= -lsdl
++libsdl_ldadd		= -lSDL
+ endif
+ 
+ if WITH_LIBAVDEVICE
