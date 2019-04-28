@@ -1099,6 +1099,7 @@
     SUBDIR += py-python-ntlm
     SUBDIR += py-python-openstackclient
     SUBDIR += py-python-twitter
+    SUBDIR += py-pytradfri
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
     SUBDIR += py-qt5-network

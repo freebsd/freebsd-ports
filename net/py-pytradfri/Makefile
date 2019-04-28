@@ -1,0 +1,21 @@
+# $FreeBSD$
+
+PORTNAME=	pytradfri
+DISTVERSION=	6.0.1
+CATEGORIES=	net
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	tcberner@FreeBSD.org
+COMMENT=	Python IKEA Tradfri API controller
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiocoap>=0:net/py-aiocoap@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}DTLSSocket>=0:net/py-DTLSSocket@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	autoplist distutils
+
+.include <bsd.port.mk>
