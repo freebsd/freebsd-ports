@@ -1,0 +1,12 @@
+bin/noson-app
+lib/noson/NosonApp/libNosonApp.so
+lib/noson/NosonApp/qmldir
+lib/noson/NosonMediaScanner/libNosonMediaScanner.so
+lib/noson/NosonMediaScanner/qmldir
+lib/noson/NosonThumbnailer/libNosonThumbnailer.so
+lib/noson/NosonThumbnailer/qmldir
+lib/noson/noson-cli
+lib/noson/noson-gui
+share/applications/io.github.janbar.noson.desktop
+share/icons/hicolor/256x256/apps/noson.png
+share/metainfo/io.github.janbar.noson.appdata.xml

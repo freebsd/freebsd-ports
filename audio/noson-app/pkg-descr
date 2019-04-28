@@ -1,0 +1,9 @@
+Noson is a SONOS controller for Linux platforms
+
+The fast and smart controller for your SONOS devices. You can browse your music
+library and play track or radio on any zones. You can manage grouping zones,
+queue, and playlists, and fully control the playback.
+
+Written with QML/C++ for maximal performance
+
+WWW: http://janbar.github.io/noson-app/index.html
