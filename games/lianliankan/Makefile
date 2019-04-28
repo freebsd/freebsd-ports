@@ -13,6 +13,9 @@ COMMENT=	Tile matching game
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Depends on expired esound
+EXPIRATION_DATE=	2019-04-29
+
 USES=		autoreconf compiler:c++11-lang libtool pkgconfig
 USE_GNOME=	gtk20 esound
 GNU_CONFIGURE=	yes
