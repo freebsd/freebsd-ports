@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	cx88
-PORTVERSION=	1.5.2
-PORTREVISION=	2
+PORTVERSION=	1.5.3
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
-MAINTAINER=	jason.harmening@gmail.com
+MAINTAINER=	jah@FreeBSD.org
 COMMENT=	Drivers for Conexant CX23880/1/2/3/5/7/8-based TV/radio capture cards
 
 LICENSE=	BSD2CLAUSE
