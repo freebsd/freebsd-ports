@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.10.1
+PORTVERSION=	11.10.2
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 MY_DEPENDS=	git>=2.16.2:devel/git \
 	gitlab-shell>=9.0.0:devel/gitlab-shell \
 	gitlab-workhorse>=8.5.1:www/gitlab-workhorse \
-	gitaly>=1.34.0:devel/gitaly \
+	gitaly>=1.34.1:devel/gitaly \
 	gitlab-pages>=1.5.0:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
 	yarn>=1.10.0:www/yarn \
@@ -228,7 +228,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	861fe405571e6900ab9aa9f9da867111d93c69f2
+GL_COMMIT=	f3e84e78b62450d3fc6beb9191596a22bf271a38
 
 USERS=	git
 GROUPS=	git
