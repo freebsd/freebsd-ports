@@ -69,6 +69,7 @@ tincd_stop()
 			$command -n $cfg stop
 		done
 	fi
+	wait_for_pids $rc_pid
 }
 tincd_reload()
 {
