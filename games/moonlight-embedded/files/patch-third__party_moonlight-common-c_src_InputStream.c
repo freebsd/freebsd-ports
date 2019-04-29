@@ -1,6 +1,6 @@
---- third_party/moonlight-common-c/src/InputStream.c.orig	2017-06-11 16:02:49 UTC
+--- third_party/moonlight-common-c/src/InputStream.c.orig	2019-04-29 17:05:00 UTC
 +++ third_party/moonlight-common-c/src/InputStream.c
-@@ -34,7 +34,7 @@ typedef struct _PACKET_HOLDER {
+@@ -35,7 +35,7 @@ typedef struct _PACKET_HOLDER {
      LINKED_BLOCKING_QUEUE_ENTRY entry;
  } PACKET_HOLDER, *PPACKET_HOLDER;
  
