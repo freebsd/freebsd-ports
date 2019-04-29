@@ -2,8 +2,7 @@
 
 PORTNAME=	ghostwriter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.4
-PORTREVISION=	3
+DISTVERSION=	1.8.0
 CATEGORIES=	editors
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -17,9 +16,11 @@ LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 USES=		compiler:c++11-lang desktop-file-utils pkgconfig qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	wereturtle
-USE_QT=		concurrent core gui network printsupport svg webkit widgets \
-		buildtools_build linguisttools_build
-LDFLAGS+=	-Wl,--as-needed # cf. PR 224488
+USE_QT=		core gui svg webchannel webengine widgets buildtools_build \
+		linguisttools_build
+
+# cf. PR 224488
+LDFLAGS+=	-Wl,--as-needed
 
 post-patch:
 	@${REINPLACE_CMD} 's,share/man/,man/,' ${WRKSRC}/ghostwriter.pro
