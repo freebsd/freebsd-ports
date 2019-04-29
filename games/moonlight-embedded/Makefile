@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	moonlight-embedded
-DISTVERSION=	2.4.7
-PORTREVISION=	2
+DISTVERSION=	2.4.8
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/irtimmer/moonlight-embedded/releases/download/v${DISTVERSION}/
 
@@ -19,12 +18,13 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libopus.so:audio/opus \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake localbase:ldflags perl5 pkgconfig ssl tar:xz
+USES=		cmake localbase:ldflags perl5 pkgconfig sdl ssl tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_SDL=	sdl2
 
 CFLAGS+=	-DPREFIX="\\\"${PREFIX}\\\""
+NO_WRKSUBDIR=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/(ALSA)/d' \
