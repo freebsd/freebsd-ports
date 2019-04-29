@@ -14,7 +14,7 @@
  	rfilename = NULL;
  	pd = NULL;
 -	while ((op = getopt(argc, argv, "df:i:n:Nr:")) != EOF)
-+	while ((op = getopt(argc, argv, "dzf:i:m:n:Nr:")) != EOF)
++	while ((op = getopt(argc, argv, "dvzf:i:m:n:Nr:")) != EOF)
  		switch (op) {
  
  		case 'd':
