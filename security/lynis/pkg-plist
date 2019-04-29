@@ -43,6 +43,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/include/functions
 %%DATADIR%%/include/helper_audit_dockerfile
 %%DATADIR%%/include/helper_configure
+%%DATADIR%%/include/helper_generate
 %%DATADIR%%/include/helper_show
 %%DATADIR%%/include/helper_system_remote_scan
 %%DATADIR%%/include/helper_update
