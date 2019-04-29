@@ -57,6 +57,7 @@ include/wine/msvcrt/setjmp.h
 include/wine/msvcrt/share.h
 include/wine/msvcrt/signal.h
 include/wine/msvcrt/stddef.h
+include/wine/msvcrt/stdint.h
 include/wine/msvcrt/stdio.h
 include/wine/msvcrt/stdlib.h
 include/wine/msvcrt/string.h
@@ -512,6 +513,8 @@ include/wine/windows/mfidl.h
 include/wine/windows/mfidl.idl
 include/wine/windows/mfobjects.h
 include/wine/windows/mfobjects.idl
+include/wine/windows/mfplay.h
+include/wine/windows/mfplay.idl
 include/wine/windows/mfreadwrite.h
 include/wine/windows/mfreadwrite.idl
 include/wine/windows/mftransform.h
@@ -2566,6 +2569,7 @@ lib/wine/libpowrprof.def
 lib/wine/libpropsys.def
 lib/wine/libpsapi.def
 lib/wine/libquartz.def
+lib/wine/libqwave.def
 lib/wine/librasapi32.def
 lib/wine/librasdlg.def
 lib/wine/libresutils.def
