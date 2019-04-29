@@ -1,4 +1,4 @@
---- rijndael.cpp.orig	2018-06-24 15:10:31 UTC
+--- rijndael.cpp.orig	2019-04-27 20:05:20 UTC
 +++ rijndael.cpp
 @@ -7,6 +7,8 @@
   ***************************************************************************/
@@ -59,7 +59,7 @@
  #ifdef USE_SSE
    // Check SSE here instead of constructor, so if object is a part of some
    // structure memset'ed before use, this variable is not lost.
-@@ -111,6 +141,7 @@ void Rijndael::Init(bool Encrypt,const b
+@@ -114,6 +144,7 @@ void Rijndael::Init(bool Encrypt,const b
  
    if(!Encrypt)
      keyEncToDec();
@@ -67,7 +67,7 @@
  }
  
  void Rijndael::blockEncrypt(const byte *input,size_t inputLen,byte *outBuffer)
-@@ -118,6 +149,15 @@ void Rijndael::blockEncrypt(const byte *
+@@ -121,6 +152,15 @@ void Rijndael::blockEncrypt(const byte *
    if (inputLen <= 0)
      return;
  
@@ -83,7 +83,7 @@
    size_t numBlocks = inputLen/16;
  #ifdef USE_SSE
    if (AES_NI)
-@@ -176,6 +216,7 @@ void Rijndael::blockEncrypt(const byte *
+@@ -179,6 +219,7 @@ void Rijndael::blockEncrypt(const byte *
      input += 16;
    }
    Copy128(m_initVector,prevBlock);
@@ -91,7 +91,7 @@
  }
  
  
-@@ -217,6 +258,15 @@ void Rijndael::blockDecrypt(const byte *
+@@ -220,6 +261,15 @@ void Rijndael::blockDecrypt(const byte *
    if (inputLen <= 0)
      return;
  
@@ -107,7 +107,7 @@
    size_t numBlocks=inputLen/16;
  #ifdef USE_SSE
    if (AES_NI)
-@@ -279,6 +329,8 @@ void Rijndael::blockDecrypt(const byte *
+@@ -282,6 +332,8 @@ void Rijndael::blockDecrypt(const byte *
    }
  
    memcpy(m_initVector,iv,16);
@@ -116,7 +116,7 @@
  }
  
  
-@@ -314,7 +366,7 @@ void Rijndael::blockDecryptSSE(const byt
+@@ -317,7 +369,7 @@ void Rijndael::blockDecryptSSE(const byt
  }
  #endif
  
@@ -125,7 +125,7 @@
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  // ALGORITHM
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@@ -454,7 +506,7 @@ void Rijndael::GenerateTables()
+@@ -457,7 +509,7 @@ void Rijndael::GenerateTables()
      U1[b][0]=U2[b][1]=U3[b][2]=U4[b][3]=T5[i][0]=T6[i][1]=T7[i][2]=T8[i][3]=FFmul0e(b);
    }
  }
