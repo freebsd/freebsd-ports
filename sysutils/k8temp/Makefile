@@ -11,9 +11,9 @@ COMMENT=	Athlon 64 and Opteron on-die temperature reader
 
 LICENSE=	MIT
 
-USES=		tar:xz
+ONLY_FOR_ARCHS=	amd64 i386
 
-ONLY_FOR_ARCHS=	i386 amd64
+USES=		tar:xz
 
 PLIST_FILES=	sbin/k8temp man/man8/k8temp.8.gz
 
