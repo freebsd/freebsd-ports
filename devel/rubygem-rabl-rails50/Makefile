@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabl
-PORTVERSION=	0.14.0
+PORTVERSION=	0.14.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport50>=2.3.14:devel/rubygem-activesupport50
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
 
