@@ -1,6 +1,6 @@
 Only select the "tools" part of bind for building.
 
---- Makefile.in.orig	2019-03-20 05:57:56 UTC
+--- Makefile.in.orig	2019-04-26 22:53:11 UTC
 +++ Makefile.in
 @@ -14,7 +14,7 @@ top_builddir =  @top_builddir@
  
@@ -27,9 +27,9 @@ Only select the "tools" part of bind for building.
  
  uninstall::
  	rm -f ${DESTDIR}${sysconfdir}/bind.keys
---- bin/Makefile.in.orig	2019-03-20 05:57:56 UTC
+--- bin/Makefile.in.orig	2019-04-26 22:53:11 UTC
 +++ bin/Makefile.in
-@@ -11,7 +11,7 @@ srcdir =	@srcdir@
+@@ -11,8 +11,8 @@ srcdir =	@srcdir@
  VPATH =		@srcdir@
  top_srcdir =	@top_srcdir@
  
@@ -39,3 +39,4 @@ Only select the "tools" part of bind for building.
 +		@NZD_TOOLS@ @PYTHON_TOOLS@
  TARGETS =
  
+ @BIND9_MAKE_RULES@
