@@ -1,0 +1,4 @@
+purl is a simple, immutable URL class with a clean API for interrogation and
+manipulation. It supports template URLs as per RFC 6570.
+
+WWW: https://github.com/codeinthehole/purl

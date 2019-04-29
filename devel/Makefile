@@ -4950,6 +4950,7 @@
     SUBDIR += py-ptrace
     SUBDIR += py-ptvsd
     SUBDIR += py-pudb
+    SUBDIR += py-purl
     SUBDIR += py-py
     SUBDIR += py-py-ubjson
     SUBDIR += py-py_interface
