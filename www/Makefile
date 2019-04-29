@@ -1589,6 +1589,7 @@
     SUBDIR += py-django-pipeline
     SUBDIR += py-django-post_office
     SUBDIR += py-django-profiles
+    SUBDIR += py-django-prometheus
     SUBDIR += py-django-pyscss
     SUBDIR += py-django-ranged-response
     SUBDIR += py-django-recaptcha
