@@ -1,14 +1,14 @@
---- setup.py.orig	2019-02-07 21:20:31 UTC
+--- setup.py.orig	2019-04-04 22:02:09 UTC
 +++ setup.py
-@@ -39,7 +39,6 @@ install_requires = [
-     'configobj',
-     'cryptography>=1.2.3',  # load_pem_x509_certificate
-     'josepy',
+@@ -43,7 +43,6 @@ install_requires = [
+     # 1.1.0+ is required to avoid the warnings described at
+     # https://github.com/certbot/josepy/issues/13.
+     'josepy>=1.1.0',
 -    'mock',
      'parsedatetime>=1.3',  # Calendar.parseDT
      'pyrfc3339',
      'pytz',
-@@ -53,6 +52,7 @@ dev_extras = [
+@@ -57,6 +56,7 @@ dev_extras = [
      'astroid==1.3.5',
      'coverage',
      'ipdb',
