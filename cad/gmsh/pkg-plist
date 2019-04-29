@@ -53,6 +53,7 @@ man/man1/gmsh.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/gui.jl
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/gui.py
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/mesh_from_discrete_curve.py
+%%PORTDOCS%%%%DOCSDIR%%/demos/api/neighbors.py
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/normals.py
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/onelab_data.c
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/onelab_data.cpp
@@ -138,6 +139,7 @@ man/man1/gmsh.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/simple5.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/simple6.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/simple7.geo
+%%PORTDOCS%%%%DOCSDIR%%/demos/boolean/slicer.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/spherical_surf.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/spline.geo
 %%PORTDOCS%%%%DOCSDIR%%/demos/boolean/step_assembly.geo
