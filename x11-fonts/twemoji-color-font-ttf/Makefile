@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twemoji-color-font-ttf
-PORTVERSION=	11.2.0
-PORTREVISION=	1
+PORTVERSION=	12.0.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/eosrei/twemoji-color-font/releases/download/v${PORTVERSION}/
 DISTNAME=	TwitterColorEmoji-SVGinOT-Linux-${PORTVERSION}
