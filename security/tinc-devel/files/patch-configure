@@ -1,0 +1,35 @@
+--- configure.orig	2019-04-27 11:57:13 UTC
++++ configure
+@@ -6192,8 +6192,8 @@ else
+     CFLAGS="$CFLAGS -Wall -Werror"
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+-void *test(void) __attribute__ ((__malloc__));
+-	 void *test(void) { return (void *)0; }
++void *test(void *x) __attribute__ ((__malloc__));
++	 void *test(void *x) { return (void *)0; }
+ 
+ _ACEOF
+ if ac_fn_c_try_compile "$LINENO"; then :
+@@ -6226,8 +6226,8 @@ else
+     CFLAGS="$CFLAGS -Wall -Werror"
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+-void *test(void) __attribute__ ((__nonnull__));
+-	 void *test(void) { return (void *)0; }
++void *test(void *x) __attribute__ ((__nonnull__));
++	 void *test(void *x) { return (void *)0; }
+ 
+ _ACEOF
+ if ac_fn_c_try_compile "$LINENO"; then :
+@@ -6260,8 +6260,8 @@ else
+     CFLAGS="$CFLAGS -Wall -Werror"
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+-void *test(void) __attribute__ ((__warn_unused_result__));
+-	 void *test(void) { return (void *)0; }
++void *test(void *x) __attribute__ ((__warn_unused_result__));
++	 void *test(void *x) { return (void *)0; }
+ 
+ _ACEOF
+ if ac_fn_c_try_compile "$LINENO"; then :
