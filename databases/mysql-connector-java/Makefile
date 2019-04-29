@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	8.0.15
+PORTVERSION=	8.0.16
 CATEGORIES=	databases java
 MASTER_SITES=	MYSQL/Connector-J
 
@@ -13,7 +13,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${JAVALIBDIR}/slf4j-api.jar:devel/slf4j \
-		${JAVALIBDIR}/c3p0.jar:databases/c3p0
+		${JAVALIBDIR}/c3p0.jar:databases/c3p0 \
+		${JAVALIBDIR}/protobuf-java.jar:devel/protobuf-java
 
 USES=		cpe
 USE_JAVA=	yes
@@ -28,10 +29,8 @@ CONFLICTS_INSTALL=	mysql-connector-java51-*
 
 JAVA_VERSION=	1.8+
 EXTRADOCS=	CHANGES
-EXTRAJARS=	protobuf-java-3.6.1.jar
 
-PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar \
-		${EXTRAJARS:C,^.*$,${JAVAJARDIR}/&,g}
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar
 
 OPTIONS_DEFINE= DOCS
 
@@ -39,9 +38,6 @@ PORTDOCS=	*
 
 do-install:
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${DISTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
-	@for extrajar in ${EXTRAJARS} ; do \
-	  ${INSTALL_DATA} ${INSTALL_WRKSRC}/lib/$$extrajar ${STAGEDIR}${JAVAJARDIR}/$$extrajar ; \
-	done
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
