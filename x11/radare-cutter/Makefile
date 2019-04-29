@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	radare-cutter
-PORTVERSION=	1.7.4
+PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 LIB_DEPENDS=	libr_bin.so:devel/radare2
 
 USES=		gl gmake pkgconfig python:3.4+ qmake:outsource qt:5
+LDFLAGS+=	-lexecinfo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	radareorg
