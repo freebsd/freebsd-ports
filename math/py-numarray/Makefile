@@ -13,6 +13,9 @@ COMMENT=	Numeric array manipulation extension module for Python
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Obsoleted upstream in favor of NumPy
+EXPIRATION_DATE=	2019-05-30
+
 USES=		python:2.7 shebangfix
 SHEBANG_FILES=	Examples/convolve/benchmark.py
 USE_PYTHON=	distutils autoplist
