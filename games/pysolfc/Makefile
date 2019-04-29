@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysolfc
-DISTVERSION=	2.6.3
+DISTVERSION=	2.6.4
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/PySolFC/${PYSOLFCDIR} \
 		SF/${PORTNAME}/PySolFC-Cardsets/${CARDSETDIR}:cardsets
