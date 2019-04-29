@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	astromenace
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	viewizard
 
-USES=		cmake:insource compiler:c++11-lib dos2unix gl openal:al,alut
+USES=		cmake compiler:c++11-lib dos2unix gl openal:al,alut sdl
 DOS2UNIX_FILES=	CMakeLists.txt src/config/config.cpp
 USE_GL=		gl glu
 USE_SDL=	sdl2
@@ -37,9 +37,9 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/gamedata.vfs ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${BUILD_WRKSRC}/gamedata.vfs ${STAGEDIR}${DATADIR}/
 .for s in 64 128
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/
 	${INSTALL_DATA} ${WRKSRC}/share/${PORTNAME}_${s}.png \
