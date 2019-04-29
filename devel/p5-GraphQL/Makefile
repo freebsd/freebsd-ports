@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	GraphQL
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETJ
@@ -19,6 +19,7 @@ RUN_DEPENDS=	p5-Moo>=0:devel/p5-Moo \
 		p5-Function-Parameters>=2.001001:devel/p5-Function-Parameters \
 		p5-Return-Type>=0:devel/p5-Return-Type \
 		p5-Pegex>=0.64:devel/p5-Pegex \
+		p5-Pod-Markdown>=0:textproc/p5-Pod-Markdown \
 		p5-MooX-Thunking>=0.07:devel/p5-MooX-Thunking \
 		p5-JSON-MaybeXS>=1.003009:converters/p5-JSON-MaybeXS \
 		p5-DateTime>=0:devel/p5-DateTime \
