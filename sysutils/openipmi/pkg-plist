@@ -127,12 +127,12 @@ man/man7/openipmi_conparms.7.gz
 %%OIPMIPERL%%@comment files list for PERL
 %%OIPMIPERL%%%%SITE_ARCH%%/OpenIPMI.pm
 %%OIPMIPERL%%%%SITE_ARCH%%/auto/OpenIPMI/OpenIPMI.so
-%%PYTHON%%@comment files list for PYTHON
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/OpenIPMI.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/OpenIPMI.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/OpenIPMI.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_OpenIPMI.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_OpenIPMI.so
+%%OIPMIPYTHON%%@comment files list for PYTHON
+%%OIPMIPYTHON%%%%PYTHON_SITELIBDIR%%/OpenIPMI.py
+%%OIPMIPYTHON%%%%PYTHON_SITELIBDIR%%/OpenIPMI.pyc
+%%OIPMIPYTHON%%%%PYTHON_SITELIBDIR%%/OpenIPMI.pyo
+%%OIPMIPYTHON%%%%PYTHON_SITELIBDIR%%/_OpenIPMI.a
+%%OIPMIPYTHON%%%%PYTHON_SITELIBDIR%%/_OpenIPMI.so
 %%TKINTER%%@comment files list for TKINTER
 %%TKINTER%%bin/openipmigui
 %%TKINTER%%%%PYTHON_SITELIBDIR%%/openipmigui/__init__.py

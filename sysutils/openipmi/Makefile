@@ -3,7 +3,7 @@
 
 PORTNAME=	openipmi
 PORTVERSION=	2.0.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/OpenIPMI%202.0%20Library
 DISTNAME=	OpenIPMI-${PORTVERSION}
@@ -24,6 +24,8 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	GDBM GLIB20 PERL PYTHON SNMP SSL TCL TKINTER
+TKINTER_IMPLIES=	PYTHON
+
 SSL_DESC=	IPMI 2.0 RMCP+ encryption and authentication
 SNMP_DESC=	SNMP trap support for the sample programs
 PERL_DESC=	Perl interface for OpenIPMI library
@@ -55,7 +57,7 @@ CONFIGURE_ARGS+=	--with-openssl=no
 .endif
 
 .if ${PORT_OPTIONS:MTKINTER}
-USES+=			python shebangfix
+USES+=			shebangfix
 SHEBANG_FILES=		swig/python/openipmigui.py
 BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
 			${LOCALBASE}/lib/Tix8.4.3/Tix.tcl:x11-toolkits/tix
@@ -81,13 +83,15 @@ PLIST_SUB+=		OIPMIPERL="@comment "
 
 .if ${PORT_OPTIONS:MPYTHON}
 USES+=			python
-CONFIGURE_ARGS+=	--with-python --with-swig ac_cv_path_pythonprog=${PYTHON_CMD}
+USE_PYTHON=		py3kplist
+CONFIGURE_ARGS+=	--with-python --with-swig
+CONFIGURE_ENV+=	ac_cv_path_pythonprog=${PYTHON_CMD}
 BUILD_DEPENDS+=		swig3.0:devel/swig30
-PLIST_SUB+=		PYTHON=""
+PLIST_SUB+=		OIPMIPYTHON=""
 BINARY_ALIAS=		swig=swig3.0
 .else
 CONFIGURE_ARGS+=	--with-python=no --with-swig=no
-PLIST_SUB+=		PYTHON="@comment "
+PLIST_SUB+=		OIPMIPYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
@@ -128,5 +132,9 @@ post-patch:
 		${WRKSRC}/lanserv/Makefile.in
 	${REINPLACE_CMD} 's|editline/readline.h|edit/readline/readline.h|' \
 		${WRKSRC}/sample/ipmi_serial_bmc_emu.c
+
+do-install-PYTHON-on:
+	@${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR} && \
+	  ${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>
