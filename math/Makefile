@@ -271,6 +271,7 @@
     SUBDIR += gsl
     SUBDIR += hexcalc
     SUBDIR += hipmcl
+    SUBDIR += hmat-oss
     SUBDIR += hs-Agda
     SUBDIR += hs-Agda-stdlib
     SUBDIR += hs-NumInstances

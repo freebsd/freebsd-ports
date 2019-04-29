@@ -1,0 +1,10 @@
+A hierarchical matrix C/C++ library including a LU solver.
+
+Hierarchical matrices are semi-sparse matrices that have a hierarchical block
+structure with dense blocks hierarchically embedded into other blocks, and the
+elements not covered by blocks are zero.
+
+For a more detailed definition please see the wikipedia article
+"Hierarchical matrix".
+
+WWW: https://github.com/jeromerobert/hmat-oss
