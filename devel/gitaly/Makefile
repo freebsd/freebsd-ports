@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	1.34.0
+DISTVERSION=	1.34.1
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -40,7 +40,7 @@ USE_RUBY=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/tags
-GL_COMMIT=	5f16a6cdac906d5aa0c375f408fad4a4aef5bcc7
+GL_COMMIT=	eecc26aa64353daa3d38077251f92dbe77c35c16
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
