@@ -1,6 +1,6 @@
---- cmddata.cpp.orig	2019-02-24 19:07:17 UTC
+--- cmddata.cpp.orig	2019-04-27 20:05:15 UTC
 +++ cmddata.cpp
-@@ -166,6 +166,34 @@ void CommandData::ParseDone()
+@@ -167,6 +167,34 @@ void CommandData::ParseDone()
    // Suppress the copyright message and final end of line for 'lb' and 'vb'.
    if ((CmdChar=='L' || CmdChar=='V') && Command[1]=='B')
      BareOutput=true;
@@ -35,7 +35,7 @@
  }
  
  
-@@ -909,6 +937,22 @@ void CommandData::ProcessSwitch(const wc
+@@ -910,6 +938,22 @@ void CommandData::ProcessSwitch(const wc
        else
          wcsncpyz(CommentFile,Switch+1,ASIZE(CommentFile));
        break;
@@ -58,7 +58,7 @@
      case '?' :
        OutHelp(RARX_SUCCESS);
        break;
---- cmdmix.cpp.orig	2019-02-24 19:07:17 UTC
+--- cmdmix.cpp.orig	2019-04-27 20:05:15 UTC
 +++ cmdmix.cpp
 @@ -63,7 +63,11 @@ void CommandData::OutHelp(RAR_EXIT ExitC
      MCHelpSwAT,MCHelpSwAC,MCHelpSwAD,MCHelpSwAG,MCHelpSwAI,MCHelpSwAP,
@@ -73,7 +73,7 @@
      MCHelpSwO,MCHelpSwOC,MCHelpSwOL,MCHelpSwOR,MCHelpSwOW,MCHelpSwP,
      MCHelpSwPm,MCHelpSwR,MCHelpSwRI,MCHelpSwSC,MCHelpSwSL,MCHelpSwSM,
      MCHelpSwTA,MCHelpSwTB,MCHelpSwTN,MCHelpSwTO,MCHelpSwTS,MCHelpSwU,
---- global.hpp.orig	2019-02-24 19:07:20 UTC
+--- global.hpp.orig	2019-04-27 20:05:17 UTC
 +++ global.hpp
 @@ -9,6 +9,17 @@
  
@@ -93,7 +93,7 @@
 +#endif
  
  #endif
---- loclang.hpp.orig	2019-02-24 19:07:20 UTC
+--- loclang.hpp.orig	2019-04-27 20:05:18 UTC
 +++ loclang.hpp
 @@ -8,7 +8,7 @@
  #define   MRegTo             L"\nRegistered to %s\n"
@@ -126,9 +126,9 @@
  #define   MCannotDelete      L"\nCannot delete %s"
  #define   MRecycleFailed     L"\nCannot move some files and folders to Recycle Bin"
  #define   MCalcCRC           L"\nCalculating the checksum"
---- os.hpp.orig	2019-02-27 23:24:23 UTC
+--- os.hpp.orig	2019-04-27 20:05:18 UTC
 +++ os.hpp
-@@ -170,6 +170,10 @@
+@@ -166,6 +166,10 @@
  #include <locale.h>
  
  
@@ -139,7 +139,7 @@
  #ifdef  S_IFLNK
  #define SAVE_LINKS
  #endif
---- strfn.cpp.orig	2019-02-24 19:07:23 UTC
+--- strfn.cpp.orig	2019-04-27 20:05:20 UTC
 +++ strfn.cpp
 @@ -14,6 +14,19 @@ const wchar *NullToEmpty(const wchar *St
  
