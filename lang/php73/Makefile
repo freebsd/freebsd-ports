@@ -11,6 +11,7 @@ MAINTAINER=	tz@FreeBSD.org
 COMMENT=	PHP Scripting Language
 
 LICENSE=	PHP301
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES+=		tar:xz cpe gnome
 CPE_PRODUCT=	php
