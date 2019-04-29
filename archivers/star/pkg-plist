@@ -1,15 +1,17 @@
 bin/scpio
+bin/smt
 bin/spax
 bin/star
-bin/suntar
+bin/star_sym
 bin/tartest
+bin/suntar
 bin/ustar
-@sample etc/rmt.sample
-@sample etc/star.sample
 man/man1/scpio.1.gz
+man/man1/smt.1.gz
 man/man1/spax.1.gz
 man/man1/srmt.1.gz
 man/man1/star.1.gz
+man/man1/star_sym.1.gz
 man/man1/suntar.1.gz
 man/man1/tartest.1.gz
 man/man5/star.5.gz
