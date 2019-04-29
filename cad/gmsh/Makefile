@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-DISTVERSION=	4.2.2
-PORTREVISION=	1
+DISTVERSION=	4.3.0
 CATEGORIES=	cad
 MASTER_SITES=	http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 DIST_SUBDIR=	gmsh
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Automatic 3D finite element mesh generator
 
 LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
@@ -20,7 +19,8 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libgmp.so:math/gmp \
 		libhdf5.so:science/hdf5 \
 		libpng.so:graphics/png \
-		libsz.so:science/szip
+		libsz.so:science/szip \
+		libfreetype.so:print/freetype2
 RUN_DEPENDS=	getdp:science/getdp
 
 USES=		blaslapack compiler:c++11-lang cmake fortran gl jpeg tar:tgz
