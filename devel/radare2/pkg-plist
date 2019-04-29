@@ -32,6 +32,7 @@ include/libr/r_endian.h
 include/libr/r_flag.h
 include/libr/r_flist.h
 include/libr/r_fs.h
+include/libr/r_getopt.h
 include/libr/r_hash.h
 include/libr/r_heap_glibc.h
 include/libr/r_heap_jemalloc.h
@@ -40,6 +41,7 @@ include/libr/r_lang.h
 include/libr/r_lib.h
 include/libr/r_list.h
 include/libr/r_magic.h
+include/libr/r_main.h
 include/libr/r_parse.h
 include/libr/r_pdb.h
 include/libr/r_qrcode.h
@@ -56,6 +58,7 @@ include/libr/r_types_base.h
 include/libr/r_userconf.h
 include/libr/r_util.h
 include/libr/r_util/pj.h
+include/libr/r_util/r_alloc.h
 include/libr/r_util/r_ascii_table.h
 include/libr/r_util/r_asn1.h
 include/libr/r_util/r_assert.h
@@ -67,6 +70,7 @@ include/libr/r_util/r_buf.h
 include/libr/r_util/r_cache.h
 include/libr/r_util/r_constr.h
 include/libr/r_util/r_ctypes.h
+include/libr/r_util/r_date.h
 include/libr/r_util/r_debruijn.h
 include/libr/r_util/r_event.h
 include/libr/r_util/r_file.h
@@ -74,7 +78,6 @@ include/libr/r_util/r_graph.h
 include/libr/r_util/r_hex.h
 include/libr/r_util/r_idpool.h
 include/libr/r_util/r_itv.h
-include/libr/r_util/r_json.h
 include/libr/r_util/r_log.h
 include/libr/r_util/r_mem.h
 include/libr/r_util/r_name.h
@@ -175,6 +178,8 @@ lib/libr_lang.so
 lib/libr_lang.so.%%PORTVERSION%%
 lib/libr_magic.so
 lib/libr_magic.so.%%PORTVERSION%%
+lib/libr_main.so
+lib/libr_main.so.%%PORTVERSION%%
 lib/libr_parse.so
 lib/libr_parse.so.%%PORTVERSION%%
 lib/libr_reg.so
@@ -322,6 +327,7 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-avr-8.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-m68k-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-mips-32.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-mips-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-powerpc-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-powerpc-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/cc-riscv-64.sdb
@@ -336,6 +342,7 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-arm-ios-16.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-arm-ios-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-arm-ios-64.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/types-darwin.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-linux.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-windows.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-x86-macos-64.sdb
@@ -343,6 +350,7 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-x86-windows-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types.sdb
 %%DATADIR%%/%%PORTVERSION%%/flag/tags.r2
+%%DATADIR%%/%%PORTVERSION%%/format/dex
 %%DATADIR%%/%%PORTVERSION%%/format/dll/aclui.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/activeds.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/atl.sdb
@@ -351,11 +359,14 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/format/dll/cabinet.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/comctl32.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/csmfpapi.sdb
+%%DATADIR%%/%%PORTVERSION%%/format/dll/csmtpapi.sdb
+%%DATADIR%%/%%PORTVERSION%%/format/dll/csncdapi.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/dsound.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/gsprop32.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/iertutil.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/kernel32.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/mfc120.sdb
+%%DATADIR%%/%%PORTVERSION%%/format/dll/mfc140u.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/mfc30.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/mfc40.sdb
 %%DATADIR%%/%%PORTVERSION%%/format/dll/mfc42.sdb
@@ -389,6 +400,7 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/format/elf32
 %%DATADIR%%/%%PORTVERSION%%/format/elf64
 %%DATADIR%%/%%PORTVERSION%%/format/elf_enums
+%%DATADIR%%/%%PORTVERSION%%/format/macho
 %%DATADIR%%/%%PORTVERSION%%/format/mz
 %%DATADIR%%/%%PORTVERSION%%/format/pe32
 %%DATADIR%%/%%PORTVERSION%%/format/trx
@@ -437,6 +449,7 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/opcodes/arc.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/arm.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/avr.sdb
+%%DATADIR%%/%%PORTVERSION%%/opcodes/chip8.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/dalvik.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/i4004.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/i8080.sdb

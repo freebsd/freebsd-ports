@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	radare2
-DISTVERSION=	3.2.0
+DISTVERSION=	3.4.1
 CATEGORIES=	devel
 
 MAINTAINER=	mizhka@gmail.com
