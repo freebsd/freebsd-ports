@@ -1,4 +1,0 @@
-#!/bin/sh
-export %%VIDEO%%LD_LIBRARY_PATH=/lib/skype_oss_wrapper:${LD_LIBRARY_PATH}
-exec %%PREFIX%%/%%SKYPEDIR%%/skype --resources=%%PREFIX%%/%%SKYPEDIR%% --disable-api "$@"
-

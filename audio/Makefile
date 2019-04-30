@@ -472,7 +472,6 @@
     SUBDIR += linux-c7-pulseaudio-utils
     SUBDIR += linux-c7-sdl_mixer
     SUBDIR += linux-laudio
-    SUBDIR += linux-skype_oss_wrapper
     SUBDIR += linuxsampler
     SUBDIR += listener
     SUBDIR += lmms
