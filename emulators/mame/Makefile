@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mame
-PORTVERSION=	0.200
-PORTREVISION=	3
+PORTVERSION=	0.209
 CATEGORIES=	emulators
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,7 +19,8 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
-USES=		compiler:c++14-lang gmake jpeg pkgconfig python:2.7,build qt:5 shebangfix
+USES=		compiler:c++14-lang gl gmake jpeg pkgconfig \
+		python:2.7,build qt:5 sdl shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
@@ -94,6 +94,8 @@ post-patch:
 		${WRKSRC}/scripts/genie.lua
 	@${GREP} -rl '"png.h"' ${WRKSRC}/src | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|"png.h"|"localpng.h"|'
+	@${REINPLACE_CMD} -e 's|"util/png.h"|"util/localpng.h"|' \
+		${WRKSRC}/src/frontend/mame/ui/icorender.cpp
 	@${MV} ${WRKSRC}/src/lib/util/png.h ${WRKSRC}/src/lib/util/localpng.h
 
 do-install:

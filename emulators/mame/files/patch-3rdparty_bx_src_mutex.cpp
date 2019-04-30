@@ -1,6 +1,6 @@
---- 3rdparty/bx/src/mutex.cpp.orig	2018-02-27 15:59:06 UTC
+--- 3rdparty/bx/src/mutex.cpp.orig	2019-04-24 05:00:38 UTC
 +++ 3rdparty/bx/src/mutex.cpp
-@@ -13,6 +13,7 @@
+@@ -16,6 +16,7 @@
  	|| BX_PLATFORM_IOS     \
  	|| BX_PLATFORM_OSX     \
  	|| BX_PLATFORM_PS4     \

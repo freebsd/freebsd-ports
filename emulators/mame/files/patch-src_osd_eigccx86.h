@@ -1,4 +1,4 @@
---- src/osd/eigccx86.h.orig	2018-02-27 15:59:06 UTC
+--- src/osd/eigccx86.h.orig	2019-04-24 05:00:38 UTC
 +++ src/osd/eigccx86.h
 @@ -31,7 +31,7 @@
      multiply and return the full 64 bit result
@@ -27,7 +27,7 @@
  #define mul_32x32_shift _mul_32x32_shift
  inline int32_t ATTR_CONST ATTR_FORCE_INLINE
  _mul_32x32_shift(int32_t a, int32_t b, uint8_t shift)
-@@ -156,7 +156,7 @@ _mul_32x32_shift(int32_t a, int32_t b, u
+@@ -156,7 +156,7 @@ _mul_32x32_shift(int32_t a, int32_t b, uint8_t shift)
      result to 32 bits
  -------------------------------------------------*/
  
@@ -36,7 +36,7 @@
  #define mulu_32x32_shift _mulu_32x32_shift
  inline uint32_t ATTR_CONST ATTR_FORCE_INLINE
  _mulu_32x32_shift(uint32_t a, uint32_t b, uint8_t shift)
-@@ -184,7 +184,7 @@ _mulu_32x32_shift(uint32_t a, uint32_t b
+@@ -184,7 +184,7 @@ _mulu_32x32_shift(uint32_t a, uint32_t b, uint8_t shif
      divide and return the 32 bit quotient
  -------------------------------------------------*/
  
@@ -72,7 +72,7 @@
  
  	// Throws arithmetic exception if result doesn't fit in 32 bits
  	__asm__ (
-@@ -325,7 +325,7 @@ _divu_64x32_rem(uint64_t dividend, uint3
+@@ -325,7 +325,7 @@ _divu_64x32_rem(uint64_t dividend, uint32_t divisor, u
      division, and returning the 32 bit quotient
  -------------------------------------------------*/
  
@@ -81,7 +81,7 @@
  #define div_32x32_shift _div_32x32_shift
  inline int32_t ATTR_CONST ATTR_FORCE_INLINE
  _div_32x32_shift(int32_t a, int32_t b, uint8_t shift)
-@@ -357,7 +357,7 @@ _div_32x32_shift(int32_t a, int32_t b, u
+@@ -357,7 +357,7 @@ _div_32x32_shift(int32_t a, int32_t b, uint8_t shift)
      division, and returning the 32 bit quotient
  -------------------------------------------------*/
  
@@ -90,7 +90,7 @@
  #define divu_32x32_shift _divu_32x32_shift
  inline uint32_t ATTR_CONST ATTR_FORCE_INLINE
  _divu_32x32_shift(uint32_t a, uint32_t b, uint8_t shift)
-@@ -388,7 +388,7 @@ _divu_32x32_shift(uint32_t a, uint32_t b
+@@ -388,7 +388,7 @@ _divu_32x32_shift(uint32_t a, uint32_t b, uint8_t shif
      divide and return the 32 bit remainder
  -------------------------------------------------*/
  

@@ -1,6 +1,6 @@
---- 3rdparty/bx/src/thread.cpp.orig	2018-02-27 15:59:06 UTC
+--- 3rdparty/bx/src/thread.cpp.orig	2019-04-24 05:00:38 UTC
 +++ 3rdparty/bx/src/thread.cpp
-@@ -11,6 +11,7 @@
+@@ -15,6 +15,7 @@
  	|| BX_PLATFORM_IOS     \
  	|| BX_PLATFORM_OSX     \
  	|| BX_PLATFORM_PS4     \
