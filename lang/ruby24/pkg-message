@@ -8,6 +8,7 @@ of upgrading:
 And some of the standard libraries are provided as separate ports
 since they require extra dependencies:
 
+	databases/rubygem-dbm:  DBM module
 	databases/rubygem-gdbm:	GDBM module
 
 Install them as occasion demands.
