@@ -1,7 +1,19 @@
 *
 * Usage:
 *
+* USB:
+* 1) Insert memstick
+* 2)	dd if=%%DATADIR%%/memtest86-usb.img \
+	of=/dev/daN bs=1m conv=sync
+* 3) Boot the memstick
+*
+* CD-ROM:
+* 1) Insert blank cd-rom
+* 2)	cdrecord dev=<device> %%DATADIR%%/memtest86-cdrom.iso
+* 3) Boot the memstick
+*
+* FLOPPY:
 * 1) Insert blank floppy
-* 2) dd if=%%DATADIR%%/floppy.bin of=/dev/fd0
+* 2)	dd if=%%DATADIR%%/memtest86-floppy.img of=/dev/fd0
 * 3) Boot the floppy
 *

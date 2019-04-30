@@ -1,7 +1,8 @@
 Memtest86 - A Stand-alone Memory Diagnostic
 
-Memtest86 is thorough, stand alone memory test for x86 architecture computers.
-BIOS based memory tests are a quick, cursory check and often miss many of the
-failures that are detected by Memtest86.
+MemTest86 is the original, free, stand alone memory testing software for
+x86 computers. MemTest86 boots from a USB flash drive and tests the RAM
+in your computer for faults using a series of comprehensive algorithms and
+test patterns.
 
 WWW: http://www.memtest86.com/

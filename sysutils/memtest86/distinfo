@@ -1,4 +1,7 @@
-SHA256 (memtest86-4.0s.tar.gz) = 05270483eef83683ede190750951387c4a7173568f5c8d7b82bb06824836cb79
-SIZE (memtest86-4.0s.tar.gz) = 157262
-SHA256 (memtest86-4.0s.iso.zip) = b3741456fd006bd1903b3a99f1e44966bf1421deb91343b8c64b8bc37dcec8bc
-SIZE (memtest86-4.0s.iso.zip) = 773918
+TIMESTAMP = 1556536139
+SHA256 (memtest86-4.3.7-iso.tar.gz) = 514860e6687c6b829267ece45a8d72e870e52f4d6d56e6c812a29a2d644d3c03
+SIZE (memtest86-4.3.7-iso.tar.gz) = 426736
+SHA256 (memtest86-4.3.7-floppy.tar.gz) = efcc70bdad10b9d66eb3fae2c9d98a459a37df2d6402032adbe04ae2755c3ab1
+SIZE (memtest86-4.3.7-floppy.tar.gz) = 423271
+SHA256 (memtest86-4.3.7-usb.tar.gz) = 1ed05c97786a102d6e55de02f5724c6bcf3e50e2558afb0dfaf255ed57a1e38b
+SIZE (memtest86-4.3.7-usb.tar.gz) = 424433
