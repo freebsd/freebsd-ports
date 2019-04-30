@@ -1662,7 +1662,6 @@
     SUBDIR += llvm-devel
     SUBDIR += llvm35
     SUBDIR += llvm40
-    SUBDIR += llvm50
     SUBDIR += llvm60
     SUBDIR += llvm70
     SUBDIR += llvm80

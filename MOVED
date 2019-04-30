@@ -12208,3 +12208,4 @@ audio/openal||2019-04-30|Has expired: Abandonware. Use audio/openal-soft instead
 devel/poco-ssl||2019-04-30|Has expired: Newer version available; use devel/poco instead
 audio/linux-skype_oss_wrapper||2019-04-30|Has expired: Only useful for net-im/skype4
 net-im/skype4||2019-04-30|Has expired: Unsupported upstream
+devel/llvm50|devel/llvm80|2019-04-30|Has expired: Use a modern version instead
