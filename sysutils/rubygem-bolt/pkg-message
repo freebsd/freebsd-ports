@@ -1,0 +1,30 @@
+This port depends on security/rubygem-net-ssh which has stricter defaults that
+OpenSSH: when using strict host key checking, security/rubygem-net-ssh will
+refuse the connexion if both the remote host name and IP address are not on the
+same line of a known_host file.
+
+security/rubygem-net-ssh added support for disabling strict host key checking
+in version 5.2.0, however this setting is still enabled by default because
+upstream OpenSSH has it enabled by default.  However, FreeBSD ships with a
+modified version of OpenSSH where strict host key checking is disabled by
+default.  As a result:
+  - When adding an entry for a new host, only the host name is added in the
+    known_host file;
+  - The absence of CheckHostIP in the SSH configuration means the feature is
+    disabled while such absence is generally the indication of the feature
+    being enabled.
+
+As a consequence, host key verification may need additional work:
+  - When using security/rubygem-net-ssh < 5.2.0, either:
+      - Disable host key checking totally (--no-host-key-check parameter of the
+        bolt command);
+      - Update your remote host entries in the known_hosts file to use the
+	format:
+        <host-name>,<IP address> <key-type> <key>
+  - When using security/rubygem-net-ssh >= 5.2.0
+      - Add "CheckHostIP no" to your SSH client configuration file
+        (/etc/ssh/ssh_config or ~/.ssh/config).
+
+Some future version of security/rubygem-net-ssh should drop strict host key
+checking entirely, for more details, see:
+https://github.com/net-ssh/net-ssh/pull/663
