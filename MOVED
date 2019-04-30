@@ -12204,3 +12204,4 @@ databases/zabbix32-libzbxpgsql||2019-04-28|Removed, depends on expired net-mgmt/
 databases/zabbix34-libzbxpgsql||2019-04-28|Removed, depends on expired net-mgmt/zabbix34-agent
 games/lianliankan||2019-04-30|Has expired: Depends on expired esound
 audio/extace||2019-04-30|Has expired: Depends on expired esound
+audio/openal||2019-04-30|Has expired: Abandonware. Use audio/openal-soft instead
