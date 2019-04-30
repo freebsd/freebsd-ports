@@ -38,8 +38,8 @@ command_interpreter="%%PYTHON_CMD%%"
 required_files="%%PREFIX%%/etc/salt"
 command_args="-c ${required_files} -d"
 
-export PATH="${salt_minion_paths}"
-export PYTHON_EGG_CACHE="${salt_minion_eggcache}"
+export PATH="${salt_proxy_paths}"
+export PYTHON_EGG_CACHE="${salt_proxy_eggcache}"
 
 salt_proxy_start()
 {
