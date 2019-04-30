@@ -1,6 +1,6 @@
---- makefile.orig	2018-02-27 15:59:06 UTC
+--- makefile.orig	2019-04-24 05:00:38 UTC
 +++ makefile
-@@ -183,19 +183,19 @@ GENIEOS := solaris
+@@ -194,19 +194,19 @@ GENIEOS := solaris
  endif
  ifeq ($(firstword $(filter FreeBSD,$(UNAME))),FreeBSD)
  OS := freebsd
@@ -24,10 +24,54 @@
  endif
  ifeq ($(firstword $(filter Darwin,$(UNAME))),Darwin)
  OS := macosx
-@@ -1377,6 +1377,23 @@ freebsd_x86: generate $(PROJECTDIR)/$(MA
- 	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd config=$(CONFIG)32
+@@ -395,13 +395,13 @@ endif
+ endif # BIGENDIAN
+ 
+ ifndef PYTHON_EXECUTABLE
+-PYTHON := python
++#PYTHON := python
+ else
+-PYTHON := $(PYTHON_EXECUTABLE)
++#PYTHON := $(PYTHON_EXECUTABLE)
+ endif
+-CC := $(SILENT)gcc
+-LD := $(SILENT)g++
+-CXX:= $(SILENT)g++
++#CC := $(SILENT)gcc
++#LD := $(SILENT)g++
++#CXX:= $(SILENT)g++
  
  #-------------------------------------------------
+ # specify OSD layer: windows, sdl, etc.
+@@ -531,19 +531,19 @@ endif
+ ifdef OVERRIDE_CC
+ PARAMS += --CC='$(OVERRIDE_CC)'
+ ifndef CROSS_BUILD
+-CC := $(OVERRIDE_CC)
++#CC := $(OVERRIDE_CC)
+ endif
+ endif
+ ifdef OVERRIDE_CXX
+ PARAMS += --CXX='$(OVERRIDE_CXX)'
+ ifndef CROSS_BUILD
+-CXX := $(OVERRIDE_CXX)
++#CXX := $(OVERRIDE_CXX)
+ endif
+ endif
+ ifdef OVERRIDE_LD
+ PARAMS += --LD='$(OVERRIDE_LD)'
+ ifndef CROSS_BUILD
+-LD := $(OVERRIDE_LD)
++#LD := $(OVERRIDE_LD)
+ endif
+ endif
+ 
+@@ -1400,6 +1400,23 @@ freebsd: freebsd_x86
+ freebsd_x86: generate $(PROJECTDIR)/$(MAKETYPE)-freebsd/Makefile
+ 	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd config=$(CONFIG)32 precompile
+ 	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd config=$(CONFIG)32
++
++#-------------------------------------------------
 +# gmake-freebsd-clang
 +#-------------------------------------------------
 +
@@ -43,8 +87,6 @@
 +freebsd_x86_clang: generate $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile
 +	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)32 precompile
 +	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)32
-+
-+#-------------------------------------------------
- # gmake-netbsd
- #-------------------------------------------------
  
+ #-------------------------------------------------
+ # gmake-freebsd-clang
