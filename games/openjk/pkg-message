@@ -1,0 +1,28 @@
+OpenJK requires the original game files from Star Wars: Jedi Knight:
+Jedi Academy to work properly.  These can come from an original CD or
+from GOG.com.
+
+If using the GOG.com version, you must extract the files from
+setup_star_wars_jedi_knight_-_jedi_academy_1.01_(a)_(10331)_(g).exe
+using the innoextract package.
+
+The files will be in a directory named app. Inside the app directory,
+there is a GameData directory. Inside the GameData directory, there is
+a directory named base. This base directory must be moved to
+~/.local/share/openjk
+
+The easiest way to do this is to follow these steps:
+$ mkdir -p ~/.local/share/openjk
+$ innoextract setup_star_wars_jedi_knight_-_jedi_academy_1.01_(a)_(10331)_(g).exe
+$ cd app/GameData
+$ cp -R base ~/.local/share/openjk
+
+You can then delete everything else that is extracted from the exe,
+such as the tmp directory.
+
+The multiplayer game binary is jamp and the single player game binary
+is jasp.
+
+If you own a copy of Star Wars: Jedi Knight: Jedi Outcast, its game
+files may be used to play that game, though upstream makes no
+guarantees on your success in playing this game.
