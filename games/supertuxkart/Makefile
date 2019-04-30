@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	supertuxkart
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	SF/supertuxkart/SuperTuxKart/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -18,7 +17,8 @@ LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libogg.so:audio/libogg \
 		libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libenet.so:net/enet
 
 BROKEN_aarch64=		invokes x86 assembler
 BROKEN_armv6=		invokes x86 assembler
@@ -27,14 +27,16 @@ BROKEN_mips=		invokes x86 assembler
 BROKEN_mips64=		invokes x86 assembler
 BROKEN_sparc64=		invokes x86 assembler
 BROKEN_powerpc64=	invokes x86 assembler
+BROKEN_i386=		does not build (error: this directive must appear between .cfi_startproc and .cfi_endproc directives)
 
 USES=		alias cmake compiler:c++11-lib gettext gl \
-		jpeg openal:al pkgconfig tar:xz
-USE_GL=		gl glu
+		jpeg openal:al pkgconfig sdl tar:xz ssl
+USE_GL=		gl glu glew
 USE_SDL=	sdl
 USE_XORG=	x11 xrandr
 LLD_UNSAFE=	yes
 CMAKE_OFF=	USE_WIIUSE BUILD_RECORDER
+CMAKE_ON=	USE_SYSTEM_ENET USE_SYSTEM_GLEW
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -52,8 +54,8 @@ FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 
 # make sure that as much bundled stuff as possible is not used
 post-extract:
-.for bundled in jpeglib libpng zlib
-	@${RM} -rf ${WRKSRC}/${bundled}
+.for bundled in jpeglib libpng zlib enet glew wiiuse
+	@${RM} -rf ${WRKSRC}/lib/${bundled}
 .endfor
 
 post-patch:
