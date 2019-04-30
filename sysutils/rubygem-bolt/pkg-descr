@@ -1,0 +1,10 @@
+Bolt is a Ruby command-line tool for executing commands, scripts, and tasks on
+remote systems using SSH and WinRM.
+
+  - Executes commands on remote *nix and Windows systems.
+  - Distributes and execute scripts, such as Bash, PowerShell, Python.
+  - Scales to more than 1000 concurrent connections.
+  - Supports industry standard protocols (SSH/SCP, WinRM/PSRP) and
+    authentication methods (password, publickey).
+
+WWW: https://github.com/puppetlabs/bolt

@@ -1119,6 +1119,7 @@
     SUBDIR += rsyslog8
     SUBDIR += rtty
     SUBDIR += rubygem-backup
+    SUBDIR += rubygem-bolt
     SUBDIR += rubygem-bosh-gen
     SUBDIR += rubygem-bundler
     SUBDIR += rubygem-bundler1
