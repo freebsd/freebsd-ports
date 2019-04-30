@@ -507,7 +507,6 @@
     SUBDIR += legesmotus
     SUBDIR += lexter
     SUBDIR += lgeneral
-    SUBDIR += lianliankan
     SUBDIR += libggz
     SUBDIR += libgnome-games-support
     SUBDIR += libkdegames
