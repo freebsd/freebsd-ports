@@ -1,0 +1,12 @@
+OPT++ is a library of nonlinear optimization algorithms written in C++. The
+motivation for this package is to build an environment for the rapid prototyping
+and development of new optimization algorithms. In particular, the focus is on
+robust and efficient algorithms for problems in which the function and
+constraint evaluations require the execution of an expensive computer
+simulation. Currently, OPT++ includes the classic Newton methods, a nonlinear
+interior-point method, parallel direct search, generating set search, a trust
+region - parallel direct search hybrid, and a wrapper to NPSOL. Between these
+methods, a wide range of problems can be solved, e.g. with or without
+constraints, with or without analytic gradients, simulation based, etc.
+
+WWW: https://software.sandia.gov/opt++/

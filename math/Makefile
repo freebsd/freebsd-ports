@@ -498,6 +498,7 @@
     SUBDIR += openlibm
     SUBDIR += openmesh
     SUBDIR += opensolaris-libm
+    SUBDIR += optpp
     SUBDIR += orpie
     SUBDIR += osi
     SUBDIR += osqp
