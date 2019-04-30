@@ -570,7 +570,6 @@
     SUBDIR += nuvolaplayer
     SUBDIR += oaml
     SUBDIR += ocp
-    SUBDIR += openal
     SUBDIR += openal-soft
     SUBDIR += opencore-amr
     SUBDIR += openspc
