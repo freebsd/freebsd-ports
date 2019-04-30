@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plata-theme
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.9
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@yandex.com
@@ -23,7 +23,7 @@ USES=		autoreconf gmake gnome pkgconfig shebangfix
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com
 GL_ACCOUNT=	tista500
-GL_COMMIT=	349880a33caf4f271c8a85d906acbc305ee65fc9
+GL_COMMIT=	c39a8c651834d43a0065a32eef31d6982b369af8
 
 NO_ARCH=	yes
 
