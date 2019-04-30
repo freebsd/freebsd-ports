@@ -4,7 +4,7 @@
 # Based on the java/intellij port
 
 PORTNAME=	intellij-ultimate
-PORTVERSION=	2019.1
+PORTVERSION=	2019.1.1
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/idea/ \
 		http://download.jetbrains.com/idea/
@@ -29,7 +29,7 @@ SHEBANG_FILES=	bin/printenv.py bin/restart.py
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-WRKSRC=	${WRKDIR}/idea-IU-191.6183.87
+WRKSRC=	${WRKDIR}/idea-IU-191.6707.61
 
 .include "${.CURDIR}/../intellij/common.mk"
 
