@@ -1,0 +1,7 @@
+Filesystem Abstraction for Python. Work with files and directories in archives,
+memory, the cloud etc. as easily as your local drive. Write code now, decide
+later where the data will be stored; unit test without writing real files;
+upload files to the cloud without learning a new API; sandbox your file writing
+code; etc.
+
+WWW: https://www.pyfilesystem.org/
