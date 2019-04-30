@@ -5464,6 +5464,7 @@
     SUBDIR += radian
     SUBDIR += ragel
     SUBDIR += raknet
+    SUBDIR += rang
     SUBDIR += range-v3
     SUBDIR += rapidjson
     SUBDIR += raylib
