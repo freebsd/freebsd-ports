@@ -24,9 +24,10 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libvorbis.so:audio/libvorbis \
 		libfreetype.so:print/freetype2
 
-USES=		gmake iconv tar:bzip2
+USES=		compiler:c++11-lang gmake iconv tar:bzip2
 GNU_CONFIGURE=	yes
 
+CONFIGURE_ARGS+=	--enable-verbose-build
 CONFIGURE_TARGET=
 
 STRIP_FILES=	construct_mohawk create_sjisfnt decine decompile degob \
