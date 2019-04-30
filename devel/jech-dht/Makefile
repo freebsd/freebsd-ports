@@ -14,13 +14,15 @@ LICENSE=	MIT
 USES=		uidfix
 
 USE_LDCONFIG=	yes
-MAKE_ENV+=	STAGEDIR="${STAGEDIR}"
+MAKE_ENV=	STAGEDIR="${STAGEDIR}"
 
 MAKEFILE=	${FILESDIR}/BSDmakefile
 
 post-build:
 	${SETENV} ${MAKE_ENV} ${MAKE} -C ${WRKSRC} -f \
 		${FILESDIR}/Makefile.example
+
+pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/dht
 
 post-install:
