@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mame
-PORTVERSION=	0.200
-PORTREVISION=	3
+PORTVERSION=	0.209
 CATEGORIES=	emulators
 
 MAINTAINER=	ports@FreeBSD.org
@@ -94,6 +93,8 @@ post-patch:
 		${WRKSRC}/scripts/genie.lua
 	@${GREP} -rl '"png.h"' ${WRKSRC}/src | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|"png.h"|"localpng.h"|'
+	@${REINPLACE_CMD} -e 's|"util/png.h"|"util/localpng.h"|' \
+		${WRKSRC}/src/frontend/mame/ui/icorender.cpp
 	@${MV} ${WRKSRC}/src/lib/util/png.h ${WRKSRC}/src/lib/util/localpng.h
 
 do-install:
