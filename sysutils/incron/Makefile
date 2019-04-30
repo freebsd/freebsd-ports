@@ -17,7 +17,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-X11
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
-USE_GITHUB=	indeed
+USE_GITHUB=	yes
 GH_ACCOUNT=	ar-
 GH_TAGNAME=	81421d3a8bde0989d7e167d8a814d5232896c930
 CPPFLAGS+=	-I${LOCALBASE}/include -D__NR_inotify_init

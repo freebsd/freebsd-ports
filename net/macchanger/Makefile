@@ -10,7 +10,7 @@ COMMENT=	GNU MAC Changer
 
 LICENSE=	GPLv3
 
-USE_GITHUB=	true
+USE_GITHUB=	yes
 GH_ACCOUNT=	alobbs
 
 GNU_CONFIGURE=	yes

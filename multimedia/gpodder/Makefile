@@ -24,8 +24,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 USES=		gettext gmake python:3.5+ shebangfix
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	gpodder
-GH_PROJECT=	gpodder
 
 OPTIONS_DEFINE=		GTK3
 OPTIONS_DEFAULT=	GTK3
