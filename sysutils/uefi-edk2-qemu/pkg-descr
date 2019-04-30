@@ -1,0 +1,6 @@
+UEFI-EDK2 firmware for QEMU.
+This package contains the TianoCore EDK2 OVMF (Open Virtual Machine Firmware)
+configured to run under QEMU.
+OVMF provides UEFI firmware for virtual machines.
+
+WWW: https://github.com/tianocore/edk2

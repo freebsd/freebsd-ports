@@ -1,0 +1,5 @@
+TIMESTAMP = 1554843803
+SHA256 (tianocore-edk2-g20190307-edk2-stable201903_GH0.tar.gz) = 4ec9bc5036c8c7daa1caa743c63df184ac18b119fdae8ad81f939921ba08c065
+SIZE (tianocore-edk2-g20190307-edk2-stable201903_GH0.tar.gz) = 34067318
+SHA256 (openssl-openssl-OpenSSL_1_1_0j_GH0.tar.gz) = 95f9d879e66f76711db28d8c2f24ab4e049ab7d5afb7266238a312c95bb9f338
+SIZE (openssl-openssl-OpenSSL_1_1_0j_GH0.tar.gz) = 5949610
