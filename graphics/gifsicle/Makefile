@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gifsicle
-PORTVERSION=	1.91
+PORTVERSION=	1.92
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@yandex.com
 COMMENT=	Manipulates GIF images and animations
 
 LICENSE=	GPLv2
