@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-BibTeX
-PORTVERSION=	0.87
+PORTVERSION=	0.88
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,11 +23,9 @@ USE_PERL5=	modbuild
 CFLAGS_amd64=	-fPIC
 USE_LDCONFIG=	yes
 
-STRIP_FILES=	bin/dumpnames bin/biblex bin/bibparse \
-		lib/libbtparse.so \
-		${SITE_ARCH_REL}/auto/Text/BibTeX/BibTeX.so
-
 post-install:
-	${STRIP_CMD} ${STRIP_FILES:S|^|${STAGEDIR}${PREFIX}/|}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libbtparse.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Text/BibTeX/BibTeX.so
 
 .include <bsd.port.mk>
