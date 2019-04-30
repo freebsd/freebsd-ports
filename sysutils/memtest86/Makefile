@@ -2,35 +2,46 @@
 # $FreeBSD$
 
 PORTNAME=	memtest86
-PORTVERSION=	4.0b
+PORTVERSION=	4.3.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.memtest86.com/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/s/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.iso.zip
+MASTER_SITES=	https://www.memtest86.com/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ed.arrakis@gmail.com
 COMMENT=	Stand alone memory test for x86 architecture computers
 
-ONLY_FOR_ARCHS=	i386
+NO_WRKSUBDIR=	yes
 
+NO_ARCH=	yes
 NO_BUILD=	yes
-ISO=		Memtest86_${PORTVERSION:S/b/s/}.iso
-ISODEST=	Memtest86_${PORTVERSION:S/b//}.iso
 
-PORTDOCS=	README
-PLIST_FILES=	%%DATADIR%%/floppy.bin \
-		%%DATADIR%%/${ISODEST}
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_MULTI=	IMAGE
+OPTIONS_MULTI_IMAGE=	USB CD-ROM FLOPPY
+OPTIONS_DEFAULT=	USB
+OPTIONS_SUB=	yes
+
+IMAGE_DESC=	Image selection
+
+USB_DESC=	Image for creating bootable USB Drive
+USB_DISTFILES=	${DISTNAME}-usb${EXTRACT_SUFX}
+
+CD-ROM_DESC=	Image for creating bootable CD-ROM Drive
+CD-ROM_DISTFILES=	${DISTNAME}-iso${EXTRACT_SUFX}
+
+FLOPPY_DESC=	Image for creating bootable Floppy Drive
+FLOPPY_DISTFILES=	${DISTNAME}-floppy${EXTRACT_SUFX}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/precomp.bin ${STAGEDIR}${DATADIR}/floppy.bin
-	${INSTALL_DATA} ${WRKDIR}/${ISO} ${STAGEDIR}${DATADIR}/${ISODEST}
-.for i in ${PORTDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+
+do-install-USB-on:
+	${INSTALL_DATA} ${WRKSRC}/memtest86-usb.img ${STAGEDIR}${DATADIR}
+
+do-install-CD-ROM-on:
+	${INSTALL_DATA} ${WRKSRC}/Memtest86-4.3.7.iso ${STAGEDIR}${DATADIR}/memtest86-cdrom.iso
+
+do-install-FLOPPY-on:
+	${INSTALL_DATA} ${WRKSRC}/memtest86-floppy.img ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
