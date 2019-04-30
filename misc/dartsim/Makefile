@@ -2,8 +2,7 @@
 
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.7.3
-PORTREVISION=	1
+DISTVERSION=	6.8.2
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +19,7 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libfcl.so:math/fcl \
 		libflann_cpp.so:math/flann \
 		libipopt.so:math/ipopt \
+		liblz4.so:archivers/liblz4 \
 		liboctomap.so:math/octomap \
 		libode.so:devel/ode \
 		libosg.so:graphics/osg \

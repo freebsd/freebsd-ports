@@ -1,15 +1,19 @@
---- CMakeLists.txt.orig	2019-01-18 04:51:02 UTC
+--- CMakeLists.txt.orig	2019-04-23 11:59:30 UTC
 +++ CMakeLists.txt
-@@ -32,7 +32,7 @@ set(CONFIG_INSTALL_DIR "share/${PROJECT_
+@@ -34,9 +34,9 @@ set(CONFIG_INSTALL_DIR "${CMAKE_INSTALL_
  
  # Set relative location to install additional documentation (sample data,
  # examples, and tutorials)
--set(DART_ADDITIONAL_DOCUMENTATION_INSTALL_PATH "share/doc/${PROJECT_NAME}")
-+#set(DART_ADDITIONAL_DOCUMENTATION_INSTALL_PATH "share/doc/${PROJECT_NAME}")
+-set(DART_ADDITIONAL_DOCUMENTATION_INSTALL_PATH
+-  "${CMAKE_INSTALL_DATAROOTDIR}/doc/${PROJECT_NAME}"
+-)
++#set(DART_ADDITIONAL_DOCUMENTATION_INSTALL_PATH
++#  "${CMAKE_INSTALL_DATAROOTDIR}/doc/${PROJECT_NAME}"
++#)
  
  set(CMAKE_DEBUG_POSTFIX "d")
  set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
-@@ -190,7 +190,7 @@ elseif(CMAKE_COMPILER_IS_GNUCXX)
+@@ -195,7 +195,7 @@ elseif(CMAKE_COMPILER_IS_GNUCXX)
    if(GCC_VERSION VERSION_LESS 4.8)
      message(FATAL_ERROR "The installed g++ version is ${GCC_VERSION}. ${PROJECT_NAME} requires g++ 4.8 or greater.")
    endif()
@@ -18,7 +22,7 @@
    set(CMAKE_CXX_FLAGS_DEBUG "-g -fno-omit-frame-pointer -fno-inline-functions -fno-inline-functions-called-once -fno-optimize-sibling-calls")
    if(DART_FAST_DEBUG)
      set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O1")
-@@ -216,7 +216,7 @@ elseif("${CMAKE_CXX_COMPILER_ID}" MATCHE
+@@ -221,7 +221,7 @@ elseif("${CMAKE_CXX_COMPILER_ID}" MATCHE
    if("${CMAKE_SYSTEM_NAME}" MATCHES "Darwin")
      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
    endif()
@@ -27,7 +31,7 @@
    set(CMAKE_CXX_FLAGS_DEBUG "-g -fno-omit-frame-pointer -fno-inline-functions -fno-optimize-sibling-calls")
    if(DART_FAST_DEBUG)
      set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O1")
-@@ -274,19 +274,19 @@ if(TARGET dart)
+@@ -279,19 +279,19 @@ if(TARGET dart)
    add_subdirectory(unittests EXCLUDE_FROM_ALL)
  
    # Add example subdirectories and an "examples" target.
@@ -55,7 +59,7 @@
    endif(DART_VERBOSE)
  
    # Add a "tutorials" target to build tutorials.
-@@ -379,16 +379,16 @@ install(FILES package.xml DESTINATION sh
+@@ -390,16 +390,16 @@ install(FILES package.xml DESTINATION
  #===============================================================================
  
  # Sample data
