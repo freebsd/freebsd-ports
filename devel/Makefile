@@ -4143,7 +4143,6 @@
     SUBDIR += pmd
     SUBDIR += pmdk
     SUBDIR += poco
-    SUBDIR += poco-ssl
     SUBDIR += popt
     SUBDIR += poslib
     SUBDIR += powerpc64-binutils

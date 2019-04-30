@@ -157,7 +157,6 @@ PORTREVISION=	1
     SUBDIR += sayaka
     SUBDIR += scudcloud
     SUBDIR += sendxmpp
-    SUBDIR += skype4
     SUBDIR += slack-term
     SUBDIR += spectral
     SUBDIR += ssh-chat
