@@ -11,7 +11,7 @@ COMMENT=	Implementation of IPv6 Neighbor Discovery proxy
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		kmod
+USES=		compiler kmod
 
 SUB_FILES=	pkg-message
 
@@ -20,7 +20,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	AlexandreFenyo
 
 # build for a kernel with 'options VIMAGE'
-CFLAGS+=	-DVIMAGE
+CFLAGS+=	-DVIMAGE ${CFLAGS_${CHOSEN_COMPILER_TYPE}}
+CFLAGS_gcc=	-Wno-error=strict-prototypes
 
 PLIST_FILES=	${KMODDIR}/${PORTNAME}.ko man/man4/${PORTNAME}.4.gz
 
