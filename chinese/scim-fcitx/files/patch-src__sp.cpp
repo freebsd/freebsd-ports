@@ -1,6 +1,11 @@
---- src/sp.cpp.orig	2005-05-08 20:11:29.000000000 +0400
-+++ src/sp.cpp	2014-07-23 03:21:49.000000000 +0400
-@@ -11,6 +11,7 @@
+--- src/sp.cpp.orig	2005-05-08 16:11:29 UTC
++++ src/sp.cpp
+@@ -7,10 +7,12 @@
+ #include "scim_fcitx_imengine.h"
+ using namespace scim;
+ 
++#include <cstring>
+ #include <stdio.h>
  #include <sys/stat.h>
  #include <limits.h>
  #include <ctype.h>
