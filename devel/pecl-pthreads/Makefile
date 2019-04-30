@@ -15,16 +15,12 @@ CFLAGS+=	-I${LOCALBASE}/include
 USES=		php:pecl
 IGNORE_WITH_PHP=	71
 
-.include <bsd.port.options.mk>
-
-.if !defined(PHP_ZTS) && exists(${LOCALBASE}/bin/php)
-PHP_ZTS!=	${LOCALBASE}/bin/php -r 'phpinfo();' | ${GREP} 'Thread Safety' | ${AWK} -F '=> ' '{print $$2}'
-.else
-PHP_ZTS=	disabled
-.endif
-
-.if ${PHP_ZTS} == "disabled"
-IGNORE=		pthreads requires ZTS, please re-compile PHP with ZTS enabled
-.endif
+# We cannot use IGNORE here, the package gets ignored anyway because the
+# ignore'd status is checked without any dependency installed.
+pre-configure:
+	@if ! ${LOCALBASE}/bin/php -r 'phpinfo();' | ${GREP} -q 'Thread Safety => enabled'; then \
+		${ECHO_MSG} "===>  ${PKGNAME} pthreads requires ZTS, please re-compile PHP with ZTS enabled." | ${FMT_80} ; \
+		false ; \
+	fi
 
 .include <bsd.port.mk>
