@@ -3,6 +3,7 @@
 
 PORTNAME=	elasticsearch-persistence
 PORTVERSION=	6.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-activemodel5>=4:databases/rubygem-activemodel5 \
 		rubygem-activesupport5>=4:devel/rubygem-activesupport5 \
-		rubygem-elasticsearch>=6:textproc/rubygem-elasticsearch \
+		rubygem-elasticsearch6>=6:textproc/rubygem-elasticsearch6 \
 		rubygem-elasticsearch-model>=5:textproc/rubygem-elasticsearch-model \
 		rubygem-hashie>=0:devel/rubygem-hashie
 
