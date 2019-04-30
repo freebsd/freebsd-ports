@@ -3,6 +3,7 @@
 PORTNAME=	onedrive
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	hiroo.ono+freebsd@gmail.com
@@ -19,7 +20,6 @@ USES=		gmake pkgconfig sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	abraunegg
 
-DFLAGS+=		-g
 PKGCONFIG=		pkgconf
 MAKE_ARGS=		DC=ldc2
 INSTALL_TARGET=		install.noservice
