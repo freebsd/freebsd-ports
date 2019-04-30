@@ -86,12 +86,15 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/apogee.xml
 %%DATADIR%%/hash/apollo_ctape.xml
 %%DATADIR%%/hash/apple1.xml
-%%DATADIR%%/hash/apple2.xml
 %%DATADIR%%/hash/apple2_cass.xml
+%%DATADIR%%/hash/apple2_flop_clcracked.xml
+%%DATADIR%%/hash/apple2_flop_misc.xml
+%%DATADIR%%/hash/apple2_flop_orig.xml
 %%DATADIR%%/hash/apple2gs.xml
 %%DATADIR%%/hash/apple3.xml
 %%DATADIR%%/hash/apricot_flop.xml
 %%DATADIR%%/hash/aquarius.xml
+%%DATADIR%%/hash/arb.xml
 %%DATADIR%%/hash/arcadia.xml
 %%DATADIR%%/hash/archimedes.xml
 %%DATADIR%%/hash/astrocde.xml
@@ -108,6 +111,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/bbc_flop_arm.xml
 %%DATADIR%%/hash/bbc_flop_torch.xml
 %%DATADIR%%/hash/bbc_flop_z80.xml
+%%DATADIR%%/hash/bbc_rom.xml
 %%DATADIR%%/hash/bbca_cass.xml
 %%DATADIR%%/hash/bbcb_cass.xml
 %%DATADIR%%/hash/bbcb_cass_de.xml
@@ -128,6 +132,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/c128_cart.xml
 %%DATADIR%%/hash/c128_flop.xml
 %%DATADIR%%/hash/c128_rom.xml
+%%DATADIR%%/hash/c2color_cart.xml
 %%DATADIR%%/hash/c64_cart.xml
 %%DATADIR%%/hash/c64_cass.xml
 %%DATADIR%%/hash/c64_flop.xml
@@ -147,6 +152,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/cgenie_flop_rom.xml
 %%DATADIR%%/hash/channelf.xml
 %%DATADIR%%/hash/chessmstdm.xml
+%%DATADIR%%/hash/clickstart_cart.xml
 %%DATADIR%%/hash/coco_cart.xml
 %%DATADIR%%/hash/coco_flop.xml
 %%DATADIR%%/hash/coleco.xml
@@ -174,6 +180,20 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/e01_flop.xml
 %%DATADIR%%/hash/ec1841.xml
 %%DATADIR%%/hash/einstein.xml
+%%DATADIR%%/hash/ekara_japan.xml
+%%DATADIR%%/hash/ekara_japan_a.xml
+%%DATADIR%%/hash/ekara_japan_bh.xml
+%%DATADIR%%/hash/ekara_japan_d.xml
+%%DATADIR%%/hash/ekara_japan_en.xml
+%%DATADIR%%/hash/ekara_japan_g.xml
+%%DATADIR%%/hash/ekara_japan_gk.xml
+%%DATADIR%%/hash/ekara_japan_m.xml
+%%DATADIR%%/hash/ekara_japan_p.xml
+%%DATADIR%%/hash/ekara_japan_s.xml
+%%DATADIR%%/hash/ekara_japan_sp.xml
+%%DATADIR%%/hash/ekara_japan_web.xml
+%%DATADIR%%/hash/ekara_pal.xml
+%%DATADIR%%/hash/ekara_us.xml
 %%DATADIR%%/hash/electron_cart.xml
 %%DATADIR%%/hash/electron_cass.xml
 %%DATADIR%%/hash/electron_flop.xml
@@ -186,6 +206,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/exl100.xml
 %%DATADIR%%/hash/famicom_cass.xml
 %%DATADIR%%/hash/famicom_flop.xml
+%%DATADIR%%/hash/fidel_sc6.xml
 %%DATADIR%%/hash/fidel_scc.xml
 %%DATADIR%%/hash/fm77av.xml
 %%DATADIR%%/hash/fm7_cass.xml
@@ -205,6 +226,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/gba_ereader.xml
 %%DATADIR%%/hash/gbcolor.xml
 %%DATADIR%%/hash/genius.xml
+%%DATADIR%%/hash/ggm.xml
 %%DATADIR%%/hash/gimix.xml
 %%DATADIR%%/hash/gjmovie.xml
 %%DATADIR%%/hash/gl2000.xml
@@ -234,6 +256,9 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/ibm6580.xml
 %%DATADIR%%/hash/ibmpcjr_cart.xml
 %%DATADIR%%/hash/ibmpcjr_flop.xml
+%%DATADIR%%/hash/icanguit.xml
+%%DATADIR%%/hash/icanpian.xml
+%%DATADIR%%/hash/intellect02.xml
 %%DATADIR%%/hash/interact.xml
 %%DATADIR%%/hash/interpro.xml
 %%DATADIR%%/hash/intv.hsi
@@ -243,6 +268,13 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/iq151_cart.xml
 %%DATADIR%%/hash/iq151_flop.xml
 %%DATADIR%%/hash/jaguar.xml
+%%DATADIR%%/hash/jakks_gamekey_dp.xml
+%%DATADIR%%/hash/jakks_gamekey_dy.xml
+%%DATADIR%%/hash/jakks_gamekey_mv.xml
+%%DATADIR%%/hash/jakks_gamekey_nk.xml
+%%DATADIR%%/hash/jakks_gamekey_nm.xml
+%%DATADIR%%/hash/jakks_gamekey_sw.xml
+%%DATADIR%%/hash/jpopira_jp.xml
 %%DATADIR%%/hash/juicebox.xml
 %%DATADIR%%/hash/jupace_cass.xml
 %%DATADIR%%/hash/k28m2.xml
@@ -254,6 +286,8 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/korvet_flop.xml
 %%DATADIR%%/hash/lantutor.xml
 %%DATADIR%%/hash/laser2001_cart.xml
+%%DATADIR%%/hash/leapfrog_leappad_cart.xml
+%%DATADIR%%/hash/leapfrog_mfleappad_cart.xml
 %%DATADIR%%/hash/leapster.xml
 %%DATADIR%%/hash/lisa.xml
 %%DATADIR%%/hash/lisa2.xml
@@ -265,6 +299,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/m5_flop.xml
 %%DATADIR%%/hash/mac_flop.xml
 %%DATADIR%%/hash/mac_hdd.xml
+%%DATADIR%%/hash/mac_hdflop.xml
 %%DATADIR%%/hash/mbc200.xml
 %%DATADIR%%/hash/mbc55x.xml
 %%DATADIR%%/hash/mc10.xml
@@ -289,6 +324,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/mo5_qd.xml
 %%DATADIR%%/hash/mo6_cass.xml
 %%DATADIR%%/hash/mo6_flop.xml
+%%DATADIR%%/hash/monon_color.xml
 %%DATADIR%%/hash/mpu1000.xml
 %%DATADIR%%/hash/mpz80.xml
 %%DATADIR%%/hash/msx.hsi
@@ -303,6 +339,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/msxr_flop.xml
 %%DATADIR%%/hash/mtx_cart.xml
 %%DATADIR%%/hash/mtx_cass.xml
+%%DATADIR%%/hash/mtx_flop.xml
 %%DATADIR%%/hash/mtx_rom.xml
 %%DATADIR%%/hash/myvision.xml
 %%DATADIR%%/hash/mz2000_cass.xml
@@ -313,6 +350,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/n64.xml
 %%DATADIR%%/hash/n64dd.xml
 %%DATADIR%%/hash/nascom_flop.xml
+%%DATADIR%%/hash/nascom_snap.xml
 %%DATADIR%%/hash/nascom_socket.xml
 %%DATADIR%%/hash/neocd.xml
 %%DATADIR%%/hash/neogeo.xml
@@ -358,6 +396,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/pcfx.xml
 %%DATADIR%%/hash/pcw.xml
 %%DATADIR%%/hash/pcw16.xml
+%%DATADIR%%/hash/pcx_flop.xml
 %%DATADIR%%/hash/pecom_cass.xml
 %%DATADIR%%/hash/pegasus_cart.xml
 %%DATADIR%%/hash/pencil2.xml
@@ -420,6 +459,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/sc3000_cart.xml
 %%DATADIR%%/hash/sc3000_cass.xml
 %%DATADIR%%/hash/scv.xml
+%%DATADIR%%/hash/sega_beena_cart.xml
 %%DATADIR%%/hash/segacd.xml
 %%DATADIR%%/hash/sf7000.xml
 %%DATADIR%%/hash/sg1000.xml
@@ -449,6 +489,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/specpls3_flop.xml
 %%DATADIR%%/hash/spectrum_cart.xml
 %%DATADIR%%/hash/spectrum_cass.xml
+%%DATADIR%%/hash/spectrum_flop_opus.xml
 %%DATADIR%%/hash/squale_cart.xml
 %%DATADIR%%/hash/st_cart.xml
 %%DATADIR%%/hash/st_flop.xml
@@ -493,6 +534,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/tvc_cart.xml
 %%DATADIR%%/hash/tvc_cass.xml
 %%DATADIR%%/hash/tvc_flop.xml
+%%DATADIR%%/hash/tvgogo.xml
 %%DATADIR%%/hash/unichamp.xml
 %%DATADIR%%/hash/ut88.xml
 %%DATADIR%%/hash/uzebox.xml
@@ -504,6 +546,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/vector06_flop.xml
 %%DATADIR%%/hash/vectrex.xml
 %%DATADIR%%/hash/vg5k.xml
+%%DATADIR%%/hash/vgmplay.xml
 %%DATADIR%%/hash/vic10.xml
 %%DATADIR%%/hash/vic1001_cart.xml
 %%DATADIR%%/hash/vic1001_cass.xml
@@ -514,11 +557,11 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/vip.xml
 %%DATADIR%%/hash/visicom.xml
 %%DATADIR%%/hash/vixen.xml
-%%DATADIR%%/hash/vreader.xml
 %%DATADIR%%/hash/vsmile_cart.xml
 %%DATADIR%%/hash/vsmile_cd.xml
 %%DATADIR%%/hash/vsmileb_cart.xml
 %%DATADIR%%/hash/vsmilem_cart.xml
+%%DATADIR%%/hash/vtech_storio_cart.xml
 %%DATADIR%%/hash/vz_cass.xml
 %%DATADIR%%/hash/wangpc.xml
 %%DATADIR%%/hash/waveterm.xml
