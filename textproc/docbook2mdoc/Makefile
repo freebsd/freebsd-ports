@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	docbook2mdoc
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/docbook2mdoc/snapshots/
 
