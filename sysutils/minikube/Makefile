@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	minikube
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -23,7 +22,7 @@ GH_ACCOUNT=	kubernetes
 GO_PKGNAME=	k8s.io/${PORTNAME}
 GO_TARGET=	${GO_PKGNAME}/cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-X k8s.io/minikube/pkg/version.version=v${PORTVERSION} \
-		-X k8s.io/minikube/pkg/version.isoVersion=v1.0.0 \
+		-X k8s.io/minikube/pkg/version.isoVersion=v1.0.1 \
 		-X k8s.io/minikube/pkg/version.isoPath=minikube/iso"
 
 PLIST_FILES=	bin/${PORTNAME}

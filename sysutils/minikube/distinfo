@@ -1,3 +1,3 @@
-TIMESTAMP = 1554067572
-SHA256 (kubernetes-minikube-v1.0.0_GH0.tar.gz) = 68127e50b0e88eef62646304fcfd2b9362115534f06df08d21eec2e9cd2175ac
-SIZE (kubernetes-minikube-v1.0.0_GH0.tar.gz) = 11078450
+TIMESTAMP = 1556647701
+SHA256 (kubernetes-minikube-v1.0.1_GH0.tar.gz) = df9e5d4880ed995f6a4410cab561ce81d1a516838ff4bff44dbccf1205c0eadf
+SIZE (kubernetes-minikube-v1.0.1_GH0.tar.gz) = 11206771
