@@ -30,4 +30,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/rarfiles.lst ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/default.sfx ${STAGEDIR}${PREFIX}/lib
 
+# maintainer section:
+
+.if defined(MAINTAINER_MODE)
+DISTFILES=	rarbsd-${PORTVERSION}.tar.gz \
+		rarbsd-x64-${PORTVERSION}.tar.gz
+.endif
+
 .include <bsd.port.mk>
