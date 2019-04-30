@@ -1,63 +1,61 @@
 # $FreeBSD$
 
 PORTNAME=	jfrog-cli
-PORTVERSION=	1.23.1
+PORTVERSION=	1.25.0
 CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	CLI client for Artifactory
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		go:modules
 
 USE_GITHUB=	yes
+GH_TUPLE=	jfrog:jfrog-cli-go:${PORTVERSION}:DEFAULT \
+		buger:jsonparser:6acdf74:buger_jsonparser/vendor/github.com/buger/jsonparser \
+		chzyer:readline:2972be2:chzyer_readline/vendor/github.com/chzyer/readline \
+		codegangsta:cli:v1.20.0:codegangsta_cli/vendor/github.com/codegangsta/cli \
+		dsnet:compress:cc9eb1d:dsnet_compress/vendor/github.com/dsnet/compress \
+		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
+		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		go-warnings:warnings:v0.1.2:warnings/vendor/gopkg.in/warnings.v0 \
+		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		golang:crypto:505ab14:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:adae6a3:golang_net/vendor/golang.org/x/net \
+		golang:snappy:2e65f85:golang_snappy/vendor/github.com/golang/snappy \
+		golang:sys:5ac8a44:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
+		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
+		jbenet:go-context:d14ea06:jbenet_go_context/vendor/github.com/jbenet/go-context \
+		jfrog:gocmd:v0.1.8:jfrog_gocmd/vendor/github.com/jfrog/gocmd \
+		jfrog:gofrog:v1.0.4:jfrog_gofrog/vendor/github.com/jfrog/gofrog \
+		jfrog:jfrog-client-go:v0.3.3:jfrog_jfrog_client_go/vendor/github.com/jfrog/jfrog-client-go \
+		kevinburke:ssh_config:81db2a7:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
+		magiconair:properties:v1.8.0:magiconair_properties/vendor/github.com/magiconair/properties \
+		mattn:go-shellwords:v1.0.3:mattn_go_shellwords/vendor/github.com/mattn/go-shellwords \
+		mholt:archiver:v2.1.0:mholt_archiver/vendor/github.com/mholt/archiver \
+		mitchellh:go-homedir:v1.0.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
+		mitchellh:mapstructure:v1.0.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
+		nwaples:rardecode:e06696f:nwaples_rardecode/vendor/github.com/nwaples/rardecode \
+		pelletier:go-buffruneio:v0.2.0:pelletier_go_buffruneio/vendor/github.com/pelletier/go-buffruneio \
+		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
+		pierrec:lz4:v2.0.5:pierrec_lz4/vendor/github.com/pierrec/lz4 \
+		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
+		sergi:go-diff:v1.0.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
+		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
+		spf13:cast:v1.2.0:spf13_cast/vendor/github.com/spf13/cast \
+		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
+		spf13:pflag:v1.0.2:spf13_pflag/vendor/github.com/spf13/pflag \
+		spf13:viper:v1.2.1:spf13_viper/vendor/github.com/spf13/viper \
+		src-d:gcfg:v1.3.0:src_d_gcfg/vendor/github.com/src-d/gcfg \
+		src-d:go-billy:v4.3.0:gobilly/vendor/gopkg.in/src-d/go-billy.v4 \
+		src-d:go-git:v4.7.0:gogit/vendor/gopkg.in/src-d/go-git.v4 \
+		ulikunitz:xz:v0.5.4:ulikunitz_xz/vendor/github.com/ulikunitz/xz \
+		xanzy:ssh-agent:v0.2.0:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent
 
-GH_TUPLE=	jfrog:jfrog-cli-go:${PORTVERSION}:DEFAULT/src/github.com/jfrog/jfrog-cli-go \
-		jfrog:jfrog-client-go:v0.2.1:client/src/github.com/jfrog/jfrog-client-go \
-		codegangsta:cli:v1.20.0:cli/src/github.com/codegangsta/cli \
-		buger:jsonparser:6acdf747ae99:jsonparser/src/github.com/buger/jsonparser \
-		chzyer:readline:2972be24d48e:readline/src/github.com/chzyer/readline \
-		jfrog:gofrog:v1.0.2:gofrog/src/github.com/jfrog/gofrog \
-		mholt:archiver:v2.1.0:archiver/src/github.com/mholt/archiver \
-		dsnet:compress:cc9eb1d:compress/src/github.com/dsnet/compress \
-		golang:snappy:2e65f85255db:snappy/src/github.com/golang/snappy \
-		mattn:go-shellwords:v1.0.3:shellwords/src/github.com/mattn/go-shellwords \
-		nwaples:rardecode:e06696f847ae:rardecode/src/github.com/nwaples/rardecode \
-		pierrec:lz4:v2.0.5:lz4/src/github.com/pierrec/lz4 \
-		spf13:viper:v1.2.1:viper/src/github.com/spf13/viper \
-		fsnotify:fsnotify:v1.4.7:fsnotify/src/github.com/fsnotify/fsnotify \
-		hashicorp:hcl:v1.0.0:hcl/src/github.com/hashicorp/hcl \
-		magiconair:properties:v1.8.0:properties/src/github.com/magiconair/properties \
-		mitchellh:mapstructure:v1.0.0:mapstructure/src/github.com/mitchellh/mapstructure \
-		pelletier:go-toml:v1.2.0:pelletier/src/github.com/pelletier/go-toml \
-		spf13:afero:v1.1.2:afera/src/github.com/spf13/afero \
-		spf13:cast:v1.2.0:cast/src/github.com/spf13/cast \
-		spf13:jwalterweatherman:v1.0.0:jwalterweatherman/src/github.com/spf13/jwalterweatherman \
-		spf13:pflag:v1.0.2:pflag/src/github.com/spf13/pflag \
-		ulikunitz:xz:v0.5.4:xz/src/github.com/ulikunitz/xz \
-		xanzy:ssh-agent:v0.2.0:sshagent/src/github.com/xanzy/ssh-agent \
-		golang:crypto:505ab14:crypto/src/golang.org/x/crypto \
-		golang:sys:8cf3aee42992:sys/src/golang.org/x/sys \
-		golang:text:v0.3.0:text/src/golang.org/x/text \
-		src-d:go-git:v4.7.0:gogit/src/gopkg.in/src-d/go-git.v4 \
-		emirpasic:gods:v1.12.0:gods/src/github.com/emirpasic/gods \
-		jbenet:go-context:d14ea06fba99:context/src/github.com/jbenet/go-context \
-		kevinburke:ssh_config:81db2a75821e:sshconfig/src/github.com/kevinburke/ssh_config \
-		mitchellh:go-homedir:v1.0.0:homedir/src/github.com/mitchellh/go-homedir \
-		pelletier:go-buffruneio:v0.2.0:buffruneio/src/github.com/pelletier/go-buffruneio \
-		sergi:go-diff:v1.0.0:godiff/src/github.com/sergi/go-diff \
-		src-d:gcfg:v1.3.0:gcfg/src/github.com/src-d/gcfg \
-		golang:net:4dfa2610cdf3:net/src/golang.org/x/net \
-		src-d:go-billy:v4.3.0:gobilly/src/gopkg.in/src-d/go-billy.v4 \
-		go-yaml:yaml:v2.2.2:yaml/src/gopkg.in/yaml.v2 \
-		go-warnings:warnings:v0.1.2:warnings/src/gopkg.in/warnings.v0
-
+GO_PKGNAME=	github.com/jfrog/jfrog-cli-go/jfrog-cli/jfrog
 PLIST_FILES=	bin/jfrog
-
-do-build:
-	@cd ${WRKSRC}/src/github.com/jfrog/jfrog-cli-go/jfrog-cli/jfrog ; \
-		${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go install ./...
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/jfrog ${STAGEDIR}${PREFIX}/bin/jfrog
 
 .include <bsd.port.mk>
