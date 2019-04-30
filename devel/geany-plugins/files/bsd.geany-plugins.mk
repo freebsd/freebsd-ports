@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-GEANY_VER=		1.34
+GEANY_VER=		1.35
 GEANY_PLUGINS_GTK2=	debugger \
 			geanypy \
 			multiterm
