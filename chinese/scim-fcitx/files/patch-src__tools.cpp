@@ -1,6 +1,6 @@
---- src/tools.cpp.orig	2005-05-20 18:41:12.000000000 +0400
-+++ src/tools.cpp	2014-07-23 02:57:51.000000000 +0400
-@@ -14,6 +14,7 @@
+--- src/tools.cpp.orig	2005-05-20 14:41:12 UTC
++++ src/tools.cpp
+@@ -14,6 +14,7 @@ using namespace scim;
  #include <sys/stat.h>
  #include <limits.h>
  #include <string.h>

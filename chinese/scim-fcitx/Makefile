@@ -18,7 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	scim:textproc/scim
 
-USES=		tar:bzip2 gmake libtool:keepla pkgconfig
+USES=		compiler:c++11-lang tar:bzip2 gmake libtool:keepla pkgconfig \
+		localbase:ldflags
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
@@ -27,8 +28,7 @@ WRKSRC=		${WRKDIR}/fcitx
 
 CONFIGURE_ENV+=	SCIM_DATADIR=${PREFIX}/share/scim \
 		SCIM_ICONDIR=${PREFIX}/share/scim/icons
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+LDFLAGS+=	-lintl
 
 SUB_FILES=	pkg-message
 
