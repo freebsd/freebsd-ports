@@ -11,7 +11,7 @@ COMMENT=	Libraries and utilities to access smart cards
 
 LICENSE=	LGPL21
 
-USES=		libtool pkgconfig gmake ssl
+USES=		libtool pkgconfig gmake ssl autoreconf
 
 OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=PCSC OPENCT CTAPI
