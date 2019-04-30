@@ -3,9 +3,10 @@
 PORTNAME=	coyim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.11
+PORTREVISION=	1
 CATEGORIES=	net-im
 
-MAINTAINER=	support@coy.im
+MAINTAINER=	santhosh.raju@gmail.com
 COMMENT=	Safe and secure by default chat client
 
 LICENSE=	GPLv3
@@ -35,7 +36,8 @@ PLIST_FILES=	bin/coyim \
 		share/applications/coyim.desktop \
 		share/pixmaps/coyim.png
 
-GTK_BUILD_TAG=	"$$(pkg-config --modversion gtk+-3.0 | ${TR} . _ | cut -d '_' -f 1-2)"
+GTK_VERSION=	"$$(pkg-config --modversion gtk+-3.0 | ${TR} . _ | cut -d '_' -f 1-2)"
+GTK_BUILD_TAG=	gtk_${GTK_VERSION}
 
 COYIM_ICON=		coyim.png
 COYIM_ICON_SRC=		${WRKSRC}/build/mac-bundle/coy.iconset/icon_32x32@2x.png
