@@ -3,7 +3,6 @@
 
 PORTNAME=	geany-plugins
 PORTVERSION=	${GEANY_VER}
-PORTREVISION=	1
 CATEGORIES=	devel
 DISTFILES=	# none
 

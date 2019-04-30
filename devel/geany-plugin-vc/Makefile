@@ -8,7 +8,8 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Geany plugin: ${${GEANY_PLUGIN}_DESC}
 
 gtk2_LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
-gtk3_LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3
+gtk3_LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3 \
+			libenchant-2.so:textproc/enchant2
 
 OPTIONS_DEFINE=		GTKSPELL
 OPTIONS_DEFAULT=	GTKSPELL
