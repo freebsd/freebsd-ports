@@ -2,6 +2,7 @@
 
 PORTNAME=	modules2tuple
 PORTVERSION=	1.2.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
@@ -16,7 +17,7 @@ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-X main.version=${PORTVERSION}"
 
 USE_GITHUB=	yes
-GH_TUPLE=	dmgk:${PORTNAME}:v${PORTVERSION}:DEFAULT
+GH_ACCOUNT=	dmgk
 
 PLIST_FILES=	bin/${PORTNAME}
 
