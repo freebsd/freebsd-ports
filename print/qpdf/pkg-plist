@@ -48,7 +48,7 @@ include/qpdf/Types.h
 include/qpdf/qpdf-c.h
 lib/libqpdf.so
 lib/libqpdf.so.21
-lib/libqpdf.so.21.4.0
+lib/libqpdf.so.21.4.1
 libdata/pkgconfig/libqpdf.pc
 man/man1/fix-qdf.1.gz
 man/man1/qpdf.1.gz
