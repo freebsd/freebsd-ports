@@ -12,7 +12,9 @@ struct inotify_event
 	uint32_t mask;   /* Watch mask.  */
 	uint32_t cookie; /* Cookie to synchronize two events.  */
 	uint32_t len;    /* Length (including NULLs) of name.  */
-	char[] name;     /* Name.  */
+	char[0] name;     /* Name.  */
+
+	@disable this(this);
 };
 
 
