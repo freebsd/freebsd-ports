@@ -922,6 +922,7 @@
     SUBDIR += rubygem-dbd-sqlite3
     SUBDIR += rubygem-dbf
     SUBDIR += rubygem-dbi
+    SUBDIR += rubygem-dbm
     SUBDIR += rubygem-dm-aggregates
     SUBDIR += rubygem-dm-chunked_query
     SUBDIR += rubygem-dm-constraints
