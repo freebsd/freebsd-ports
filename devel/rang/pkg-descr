@@ -1,0 +1,9 @@
+C++ library for terminal goodies. It allows to print colored and styled text
+on the terminals that support it, avoiding the need to explicitly hardcode
+terminal sequences which is commonly done by software authors at the expense
+of code elegance.
+
+It also avoids printing terminal sequences when the program output is redirected
+to the file, a common problem in such situations.
+
+WWW: https://agauniyal.github.io/rang/
