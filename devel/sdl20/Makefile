@@ -2,7 +2,7 @@
 
 PORTNAME=	sdl2
 PORTVERSION=	2.0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=	--disable-sse3
 
 MAKE_ENV=	V=1
 
-OPTIONS_DEFINE=		ALSA ASM DLOPEN ESOUND HIDAPI JACK NAS OSS	\
+OPTIONS_DEFINE=		ALSA ASM DLOPEN HIDAPI JACK NAS OSS	\
 			PULSEAUDIO SAMPLERATE SNDIO PTHREADS		\
 			SDL_ATOMIC SDL_AUDIO SDL_CPUINFO SDL_EVENTS	\
 			SDL_FILE SDL_HAPTIC SDL_JOYSTICK SDL_LOADSO	\
@@ -69,7 +69,6 @@ OPTIONS_DEFAULT=	ASM DLOPEN OSS PTHREADS SDL_ATOMIC SDL_AUDIO	\
 
 ALSA_DESC=		Audio output via the ALSA audio architecture
 DLOPEN_DESC=		Use dlopen for loading 3rd party libraries
-ESOUND_DESC=		Audio output via the EsounD sound server
 HIDAPI_DESC=		Use HIDAPI for low level joystick drivers
 JACK_DESC=		Audio output via the JackD sound server
 NAS_DESC=		Audio output via the Network Audio System
@@ -144,15 +143,7 @@ LIB_DEPENDS+=		libjack.so:audio/jack
 CONFIGURE_ARGS+=	--disable-jack --disable-jack-shared
 .endif
 
-.if ${PORT_OPTIONS:MESOUND}
-.if !${PORT_OPTIONS:MSDL_AUDIO}
-IGNORE=	option ESOUND requires SDL_AUDIO
-.endif
-CONFIGURE_ARGS+=	--enable-esd --enable-esd-shared
-USE_GNOME+=		esound
-.else
 CONFIGURE_ARGS+=	--disable-esd --disable-esd-shared
-.endif
 
 .if ${PORT_OPTIONS:MNAS}
 .if !${PORT_OPTIONS:MSDL_AUDIO}
@@ -208,6 +199,7 @@ CONFIGURE_ARGS+=	--disable-video-kmsdrm --disable-video-kmsdrm
 IGNORE=	option VIDEO_OPENGL requires SDL_VIDEO
 .endif
 CONFIGURE_ARGS+=	--enable-video-opengl
+USES+=			gl
 USE_GL+=		gl
 .else
 CONFIGURE_ARGS+=	--disable-video-opengl
