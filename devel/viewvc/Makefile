@@ -3,6 +3,7 @@
 
 PORTNAME=	viewvc
 DISTVERSION=	1.1.26
+PORTREVISION=	1
 CATEGORIES=	devel python
 
 MAINTAINER=	ohauer@FreeBSD.org
@@ -10,44 +11,50 @@ COMMENT=	Web-based Version Control Repository Browsing
 
 LICENSE=	BSD2CLAUSE
 
+USES=		cpe python:2.7
 USE_GITHUB=	yes
+USE_RC_SUBR=	viewvc
 
+NO_BUILD=		yes
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=		WEBSRV APMOD SVN MYSQL
 OPTIONS_DEFAULT=	WEBSRV APACHE SVN
 
 OPTIONS_SINGLE=		WEBSRV APMOD
 OPTIONS_SINGLE_WEBSRV=	APACHE LIGHTTPD
-OPTIONS_SINGLE_APMOD=	MODPYTHON33 MODPYTHON35 MODWSGI
+OPTIONS_SINGLE_APMOD=	MODPYTHON35 MODWSGI
 
 WEBSRV_DESC=		Enable web server support
 APMOD_DESC=		depend on Apache module
 
 MODWSGI_DESC=		Add mod_wsgi to the list of package dependencies
-MODPYTHON33_DESC=	Add mod_python33 to the list of package dependencies
 MODPYTHON35_DESC=	Add mod_python35 to the list of package dependencies
 MYSQL_DESC=		Bonsai-like repository query facilities
 
-APACHE_USE=		APACHE_RUN=22+
+APACHE_USE=		APACHE_RUN=24+
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
-MODPYTHON33_BROKEN=	The mod_python33 port has been removed with Apache 2.2
-MODPYTHON33_RUN_DEPENDS=${APACHE_PKGNAMEPREFIX}mod_python33>=3.3:www/mod_python33
 MODPYTHON35_RUN_DEPENDS=${APACHE_PKGNAMEPREFIX}mod_python35>=3.5:www/mod_python35
 MODWSGI_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}${PYTHON_PKGNAMEPREFIX}mod_wsgi>=4.4.13:www/mod_wsgi4@${PY_FLAVOR}
-SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:devel/py-subversion@${PY_FLAVOR}
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:databases/py-MySQLdb@${PY_FLAVOR}
+
+
+.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == LTS
+SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion-lts>=0:devel/py-subversion@${PY_FLAVOR}
+.elif defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 19
+SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion19>=0:devel/py-subversion@${PY_FLAVOR}
+.else
+# default version
+SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:devel/py-subversion@${PY_FLAVOR}
+.endif
+
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments@${PY_FLAVOR}
 
 .include <bsd.port.options.mk>
 
-USES=		cpe python:2.7
-NO_BUILD=	yes
-USE_RC_SUBR=	viewvc
 SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 		ECHO=${ECHO} EGREP=${EGREP} TOUCH=${TOUCH} \
 		CHOWN=${CHOWN} RM=${RM:Q}
-
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pygments>=1.6:textproc/py-pygments@${PY_FLAVOR}
 
 pre-everything::
 .if ${PORT_OPTIONS:MAPMOD} && !${PORT_OPTIONS:MAPACHE}
