@@ -53,8 +53,8 @@ lib/libexo-1.so.0.1.0
 lib/libexo-2.so
 lib/libexo-2.so.0
 lib/libexo-2.so.0.1.0
-lib/xfce4/exo-1/exo-compose-mail-1
-lib/xfce4/exo-1/exo-helper-1
+lib/xfce4/exo-2/exo-helper-2
+lib/xfce4/exo/exo-compose-mail
 libdata/pkgconfig/exo-1.pc
 libdata/pkgconfig/exo-2.pc
 man/man1/exo-csource.1.gz
@@ -125,7 +125,7 @@ share/icons/hicolor/48x48/apps/preferences-desktop-default-applications.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/exo-1.mo
-share/pixmaps/exo-1/exo-thumbnail-frame.png
+share/pixmaps/exo/exo-thumbnail-frame.png
 share/xfce4/helpers/Thunar.desktop
 share/xfce4/helpers/aterm.desktop
 share/xfce4/helpers/balsa.desktop
