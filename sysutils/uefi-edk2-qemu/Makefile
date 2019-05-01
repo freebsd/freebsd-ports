@@ -5,7 +5,7 @@ DISTVERSION=	g20190307
 CATEGORIES=	sysutils
 
 MAINTAINER=	bcran@FreeBSD.org
-COMMENT=	UEFI-EDK2 firmware for QEMU
+COMMENT=	OVMF package providing UEFI system firmware for QEMU
 
 LICENSE=	BSD2CLAUSE
 
