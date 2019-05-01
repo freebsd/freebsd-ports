@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	torrent-file-editor
-PORTVERSION=	0.3.13
-PORTREVISION=	3
+PORTVERSION=	0.3.14
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/v${PORTVERSION}
 
@@ -25,6 +24,9 @@ DONATION_DESC=	Show donation text in the About dialog
 DONATION_CMAKE_OFF=	-DDISABLE_DONATION:BOOL=ON
 
 post-patch:
+# Fix apparently forgotten version bump
+	@${REINPLACE_CMD} -e '/APP_VERSION/s,0\.3\.13,${PORTVERSION},' \
+		${WRKSRC}/CMakeLists.txt
 # Avoid conflict with C++20 <version> by adding .txt suffix
 	@${REINPLACE_CMD} -i .c++20 '/file/s/version/&.txt/' \
 		${WRKSRC}/Version.cmake ${WRKSRC}/Dmg.cmake
