@@ -12,6 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
+BROKEN_FreeBSD_11=	could not read symbols: File format not recognized
 
 BUILD_DEPENDS=	llvm80>=0:devel/llvm80
 RUN_DEPENDS=	llvm80>=0:devel/llvm80
