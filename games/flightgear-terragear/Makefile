@@ -23,7 +23,7 @@ LIB_DEPENDS=	libCGAL.so:math/cgal \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	${LOCALBASE}/lib/libSimGearCore.a:devel/simgear
 
-USES=	cmake
+USES=	cmake compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightgear
