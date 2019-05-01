@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-base
 PORTVERSION=	1.20.3
+PORTREVISION=	1
 CATEGORIES=	x11 mate
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -3,6 +3,7 @@
 
 PORTNAME=	gtk-arc-themes
 PORTVERSION=	20190330
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	mail_me@riseup.net

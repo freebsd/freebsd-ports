@@ -3,7 +3,7 @@
 
 PORTNAME=	e-module-wlan
 PORTVERSION=	20140911
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	LOCAL/gblach/enlightenment/
 

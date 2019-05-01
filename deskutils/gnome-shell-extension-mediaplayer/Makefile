@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-shell-extension-mediaplayer
 PORTVERSION=	0.0.0.20180316
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 

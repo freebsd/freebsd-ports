@@ -2,6 +2,7 @@
 
 PORTNAME=	twpsk
 PORTVERSION=	4.3
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://wa0eir.bcts.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src

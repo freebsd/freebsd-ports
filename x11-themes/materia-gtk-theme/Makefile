@@ -3,6 +3,7 @@
 PORTNAME=	materia-gtk-theme
 DISTVERSIONPREFIX=	v
 DISTVERSION=	20190315
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@yandex.com

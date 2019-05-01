@@ -3,6 +3,7 @@
 PORTNAME=	ecrire
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	editors enlightenment
 DIST_SUBDIR=	enlightenment
 

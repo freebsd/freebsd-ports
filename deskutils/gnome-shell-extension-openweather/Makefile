@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-shell-extension-openweather
 PORTVERSION=	0.0.0.20171126
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 

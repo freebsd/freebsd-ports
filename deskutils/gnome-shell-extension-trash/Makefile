@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-shell-extension-trash
 PORTVERSION=	0.0.0.20171125
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
