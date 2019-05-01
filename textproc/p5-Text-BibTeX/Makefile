@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Config-AutoConf>=0.16:devel/p5-Config-AutoConf \
 TEST_DEPENDS=	p5-Capture-Tiny>=0.06:devel/p5-Capture-Tiny
 
 USES=		perl5
+USE_CSTD=	c99
 USE_PERL5=	modbuild
 
 CFLAGS_amd64=	-fPIC
