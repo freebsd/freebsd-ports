@@ -91,7 +91,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/ant/lib/libraries.properties
 %%IDEA_HOME%%/lib/ant/src.zip
 %%IDEA_HOME%%/lib/asm-5.0.3.jar
-%%IDEA_HOME%%/lib/asm-all-7.0.jar
+%%IDEA_HOME%%/lib/asm-all-7.0.1.jar
 %%IDEA_HOME%%/lib/asm-analysis-5.0.3.jar
 %%IDEA_HOME%%/lib/asm-tree-5.0.3.jar
 %%IDEA_HOME%%/lib/automaton-1.12-1.jar
@@ -195,7 +195,6 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/kotlinx-coroutines-core-1.0.1.jar
 %%IDEA_HOME%%/lib/kotlinx-coroutines-core-common-1.0.1.jar
 %%IDEA_HOME%%/lib/kotlinx-coroutines-jdk8-1.0.1.jar
-%%IDEA_HOME%%/lib/libthrift-0.11.0.jar
 %%IDEA_HOME%%/lib/log4j.jar
 %%IDEA_HOME%%/lib/lz4-1.3.0.jar
 %%IDEA_HOME%%/lib/markdownj-core-0.4.2-SNAPSHOT.jar
@@ -228,7 +227,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/plexus-utils-3.0.22.jar
 %%IDEA_HOME%%/lib/protobuf-java-3.5.1.jar
 %%IDEA_HOME%%/lib/proxy-vole-1.0.6.jar
-%%IDEA_HOME%%/lib/pty4j-0.9.1.jar
+%%IDEA_HOME%%/lib/pty4j-0.9.3.jar
 %%IDEA_HOME%%/lib/purejavacomm-0.0.11.1.jar
 %%IDEA_HOME%%/lib/resources.jar
 %%IDEA_HOME%%/lib/resources_en.jar
