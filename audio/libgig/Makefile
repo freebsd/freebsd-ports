@@ -13,8 +13,6 @@ COMMENT=	Gigasampler file loader library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to compile: DLS.cpp:526:9: unknown type name 'uuid_t'; did you mean 'uid_t'?
-
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libuuid.so:misc/e2fsprogs-libuuid
 

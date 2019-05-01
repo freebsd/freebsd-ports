@@ -13,7 +13,6 @@ COMMENT=	Ultimate music player for Unix-like systems
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-BROKEN_aarch64=		Fails to compile: error: invalid conversion between vector type and integer type
 BROKEN_armv6=		Fails to compile: error: invalid conversion between vector type and integer type
 BROKEN_armv7=		Fails to compile: error: invalid conversion between vector type and integer type
 
