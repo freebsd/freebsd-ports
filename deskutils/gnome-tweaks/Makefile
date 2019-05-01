@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-tweaks
 PORTVERSION=	3.28.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 

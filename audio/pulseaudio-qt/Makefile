@@ -2,6 +2,7 @@
 
 PORTNAME=	pulseaudio-qt
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 MASTER_SITES=	KDE/stable/${PORTNAME}
 CATEGORIES=	audio kde
 

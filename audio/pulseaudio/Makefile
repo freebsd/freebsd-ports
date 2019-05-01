@@ -6,7 +6,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	12.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
@@ -46,6 +46,7 @@ SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--without-caps \
+		--disable-esound \
 		--disable-udev \
 		--disable-gtk3 \
 		--disable-systemd-daemon \

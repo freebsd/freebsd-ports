@@ -3,6 +3,7 @@
 
 PORTNAME=	imlib2_loaders
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	SF/enlightenment/imlib2-src/${PORTVERSION}

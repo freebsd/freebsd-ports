@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-shell-extra-extensions
 PORTVERSION=	3.28
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 
 MAINTAINER=	gnome@FreeBSD.org

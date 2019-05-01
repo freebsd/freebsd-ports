@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-shell-extension-hidetopbar
 PORTVERSION=	0.0.0.20180511
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome
 

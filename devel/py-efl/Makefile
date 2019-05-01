@@ -3,6 +3,7 @@
 
 PORTNAME=	efl
 PORTVERSION=	1.20.0
+PORTREVISION=	2
 CATEGORIES=	devel python enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/bindings/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
