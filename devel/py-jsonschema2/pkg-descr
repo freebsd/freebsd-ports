@@ -1,8 +1,0 @@
-jsonschema is an implementation of JSON Schema for Python
-
- - Full support for Draft 3 and Draft 4 of the schema.
- - Lazy validation that can iteratively report all validation errors.
- - Small and extensible
- - Programmatic querying of which properties or items failed validation.
-
-WWW: https://github.com/Julian/jsonschema

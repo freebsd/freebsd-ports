@@ -12209,3 +12209,7 @@ devel/poco-ssl||2019-04-30|Has expired: Newer version available; use devel/poco 
 audio/linux-skype_oss_wrapper||2019-04-30|Has expired: Only useful for net-im/skype4
 net-im/skype4||2019-04-30|Has expired: Unsupported upstream
 devel/llvm50|devel/llvm80|2019-04-30|Has expired: Use a modern version instead
+russian/ircd-hybrid|irc/ircd-hybrid|2019-05-01|Has expired: The project is inactive since 2009 and the code is outdated
+devel/py-jsonschema2|devel/py-jsonschema|2019-05-01|Has expired: Use devel/py-jsonschema instead
+devel/rubygem-msgpack1|devel/rubygem-msgpack|2019-05-01|Has expired: Use devel/rubygem-msgpack instead
+www/p5-CGI.pm|www/p5-CGI|2019-05-01|Has expired: Use www/p5-CGI instead

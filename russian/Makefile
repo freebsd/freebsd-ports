@@ -13,7 +13,6 @@
     SUBDIR += gimp-help
     SUBDIR += hunspell
     SUBDIR += hyphen
-    SUBDIR += ircd-hybrid
     SUBDIR += koi2koi
     SUBDIR += koi8r-ps
     SUBDIR += libreoffice
