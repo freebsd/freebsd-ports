@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	kicad
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.2
 PORTEPOCH=	2
 CATEGORIES=	cad
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Schematic and PCB editing software
 
 LICENSE=	GPLv2
