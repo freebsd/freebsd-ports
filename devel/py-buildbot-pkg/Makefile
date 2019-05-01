@@ -13,7 +13,7 @@ COMMENT=	Buildbot packaging tools
 LICENSE=	GPLv2
 #LICENSE_FILE=	Not packaged in sdist
 
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
