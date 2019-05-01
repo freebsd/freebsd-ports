@@ -15,7 +15,7 @@ COMMENT=	FUSE-based filesystem for iPod
 LIB_DEPENDS=	libgpod.so:audio/libgpod\
 		libtag.so:audio/taglib
 
-USES=		fuse pkgconfig tar:bzip2
+USES=		compiler:c++11-lang fuse pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/fusepod man/man1/fusepod.1.gz
 
