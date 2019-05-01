@@ -3,4 +3,4 @@ DTrace consumer for Python based on libdtrace.
 Currently this package provides two modules: one wraps libdtrace using ctypes.
 The other one uses cython.
 
-WWW: http://tmetsch.github.com/python-dtrace/
+WWW: http://tmetsch.github.io/python-dtrace/
