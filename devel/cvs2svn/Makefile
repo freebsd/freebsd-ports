@@ -3,7 +3,7 @@
 
 PORTNAME=	cvs2svn
 PORTVERSION=	2.5.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/49543/ \
 		LOCAL/ohauer
@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:databases/py-gdbm@${PY_FLAVOR} \
 
 USES=			shebangfix python:2.7
 USE_PYTHON=		distutils autoplist
+
 NO_ARCH=		yes
 
 SHEBANG_FILES=		cvs2svn cvs2git cvs2bzr *.py \
@@ -31,7 +32,15 @@ SUBVERSION_DESC=	Build with subversion support
 GIT_DESC=		Build with git support
 BAZAAR_DESC=		Build with Bazaar support
 
+.if defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == LTS
+SUBVERSION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion-lts>=0:devel/py-subversion@${PY_FLAVOR}
+.elif defined(WITH_SUBVERSION_VER) && ${WITH_SUBVERSION_VER} == 19
+SUBVERSION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion19>=0:devel/py-subversion@${PY_FLAVOR}
+.else
+# default version
 SUBVERSION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion>=0:devel/py-subversion@${PY_FLAVOR}
+.endif
+
 GIT_RUN_DEPENDS=	${LOCALBASE}/bin/git:devel/git
 BAZAAR_RUN_DEPENDS=	${LOCALBASE}/bin/bzr:devel/bzr
 
