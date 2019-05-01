@@ -303,6 +303,7 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/red/cdiffx.b
 %%DATADIR%%/red/cedit.b
 %%DATADIR%%/red/cface.b
+%%DATADIR%%/red/cfutil.b
 %%DATADIR%%/red/cgb.b
 %%DATADIR%%/red/changevr.b
 %%DATADIR%%/red/charname.b
@@ -622,6 +623,7 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/red/jpatches.b
 %%DATADIR%%/red/jsymbols.b
 %%DATADIR%%/red/kernel.b
+%%DATADIR%%/red/killing_vector.b
 %%DATADIR%%/red/kredelw.b
 %%DATADIR%%/red/kronf.b
 %%DATADIR%%/red/kuechl.b

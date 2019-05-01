@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	reduce
-PORTVERSION=	20190120
+PORTVERSION=	20190413
 CATEGORIES=	math lang
 MASTER_SITES=	SF/${PORTNAME}-algebra/${SFSUBDIR}/
-DISTNAME=	Reduce-svn4868-src
+DISTNAME=	Reduce-svn4961-src
 
 MAINTAINER=	pfg@FreeBSD.org
-COMMENT=	REDUCE Codemist Standard Lisp general-purpose computer system
+COMMENT=	Codemist Standard Lisp REDUCE general-purpose computer system
 
 LICENSE=	BSD2CLAUSE
 
@@ -17,7 +17,6 @@ BROKEN_armv6=		fails to compile: redfront.h:118:12: conflicting types for '__wcw
 BROKEN_powerpc64=	fails to compile: arith01.cpp: 'statuc' does not name a type
 
 BUILD_DEPENDS=	gnuplot:math/gnuplot
-
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		autoreconf:build libtool gmake ncurses jpeg
 USE_XORG=	x11 xcursor xext xorgproto xft xrandr xrender
 
-SFSUBDIR=	snapshot_2019-01-20
+SFSUBDIR=	snapshot_2019-04-13
 
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CPPFLAGS+=	-I${NCURSESINC}
