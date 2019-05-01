@@ -11,8 +11,6 @@ COMMENT=	Library For Reading And Writing LAS-Format Data
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_aarch64=		fails to compile: file liblas/detail/endian.hpp needs to be set up for your CPU type
-
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgeotiff.so:graphics/libgeotiff
 

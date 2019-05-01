@@ -15,8 +15,6 @@ COMMENT=	Portable, easy to use, and efficient C++ crypto library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
-BROKEN_aarch64=		Fails to configure: unknown or unidentifiable processor arm64
-
 OPTIONS_DEFINE=		SSL GMP DOCS
 OPTIONS_DEFAULT=	SSL GMP
 
