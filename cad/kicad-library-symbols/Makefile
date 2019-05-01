@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	kicad
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.2
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-library-symbols
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Official KiCad schematic symbol libraries
 
 LICENSE=	GPLv2

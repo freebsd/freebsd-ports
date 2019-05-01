@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	kicad
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.2
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-library-packages3d
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Official KiCad 3D model libraries for rendering and MCAD integration
 
 LICENSE=	GPLv2
