@@ -1,4 +1,4 @@
---- src/misc/newinstall.cxx.orig	2018-02-24 13:42:49 UTC
+--- src/misc/newinstall.cxx.orig	2019-04-18 20:27:04 UTC
 +++ src/misc/newinstall.cxx
 @@ -67,7 +67,7 @@ text[3] = " btu <NAME> <CALL> de <MYCALL> k\n\
  
@@ -9,12 +9,3 @@
  <ZDT> <CALL> de <MYCALL> sk\n\
  <RX>";
  
-@@ -84,7 +84,7 @@ Age:   \n\
- Rig:   \n\
- Pwr:   \n\
- Ant:   \n\
--OS:    Linux\n\
-+OS:    FreeBSD\n\
- Soft:  <VER>\n\
- Web:   \n\
- Email: ";

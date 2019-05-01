@@ -1,6 +1,6 @@
---- src/soundcard/soundconf.cxx.orig	2019-04-19 08:05:01 UTC
+--- src/soundcard/soundconf.cxx.orig	2019-03-18 15:12:35 UTC
 +++ src/soundcard/soundconf.cxx
-@@ -53,6 +53,11 @@ double std_sample_rates[] = { 8000.0, 96
+@@ -53,6 +53,11 @@ double std_sample_rates[] = { 8000.0, 9600.0, 11025.0,
  static void init_oss(void)
  {
  #if USE_OSS
