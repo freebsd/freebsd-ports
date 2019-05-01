@@ -10,10 +10,13 @@ COMMENT=	Compatible Threading API for PHP7.0+
 
 LICENSE=	PHP301
 
+DEPRECATED=	Does not work with recent versions of php
+EXPIRATION_DATE=	2019-06-02
+
 CFLAGS+=	-I${LOCALBASE}/include
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	71
+IGNORE_WITH_PHP=	71 72 73
 
 # We cannot use IGNORE here, the package gets ignored anyway because the
 # ignore'd status is checked without any dependency installed.
