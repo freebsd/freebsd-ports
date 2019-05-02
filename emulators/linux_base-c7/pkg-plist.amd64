@@ -141,6 +141,7 @@ usr/bin/db47_stat
 usr/bin/db47_upgrade
 usr/bin/db47_verify
 usr/bin/dd
+usr/bin/df
 usr/bin/dir
 usr/bin/dircolors
 usr/bin/dirname

@@ -2,7 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	centos-release-7-4.1708.el7.centos \
@@ -120,7 +120,7 @@ OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 REMOVE_DIRS=	boot home media mnt proc root run sys tmp var/log var/tmp
-REMOVE_FILES=	bin/df bin/su etc/exports etc/group etc/gshadow etc/motd \
+REMOVE_FILES=	bin/su etc/exports etc/group etc/gshadow etc/motd \
 		etc/passwd etc/printcap etc/protocols etc/services etc/shadow
 
 .include <bsd.port.pre.mk>
@@ -158,13 +158,13 @@ post-patch:
 .endif
 
 post-install:
-	${TOUCH} ${STAGEDIR}${PREFIX}/etc/mtab
 	${MV} ${STAGEDIR}${PREFIX}/etc/krb5.conf \
 		${STAGEDIR}${PREFIX}/etc/krb5.conf.sample
 	${MV} ${STAGEDIR}${PREFIX}/etc/nsswitch.conf \
 		${STAGEDIR}${PREFIX}/etc/nsswitch.conf.sample
 	${MV} ${STAGEDIR}${PREFIX}/usr/lib/locale/locale-archive.tmpl \
 		${STAGEDIR}${PREFIX}/usr/lib/locale/locale-archive
+	${LN} -sf "../proc/self/mounts" ${STAGEDIR}${PREFIX}/etc/mtab
 	${LN} -sf ${LOCALBASE}/share/icons ${STAGEDIR}${PREFIX}/usr/share/icons
 	${LN} -sf /var/run ${STAGEDIR}${PREFIX}/run
 	${LN} -sf /var/tmp ${STAGEDIR}${PREFIX}/usr/tmp
