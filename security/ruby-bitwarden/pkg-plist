@@ -9,10 +9,10 @@
 %%WWWDIR%%/config.ru
 %%WWWDIR%%/db/.gitkeep
 %%WWWDIR%%/db/config.yml
-%%WWWDIR%%/db/migrate/201803%%RUBY_SUFFIX%%145941_create_users.rb
-%%WWWDIR%%/db/migrate/201803%%RUBY_SUFFIX%%151103_create_devices.rb
-%%WWWDIR%%/db/migrate/201803%%RUBY_SUFFIX%%151113_create_folders.rb
-%%WWWDIR%%/db/migrate/201803%%RUBY_SUFFIX%%151117_create_ciphers.rb
+%%WWWDIR%%/db/migrate/20180324145941_create_users.rb
+%%WWWDIR%%/db/migrate/20180324151103_create_devices.rb
+%%WWWDIR%%/db/migrate/20180324151113_create_folders.rb
+%%WWWDIR%%/db/migrate/20180324151117_create_ciphers.rb
 %%WWWDIR%%/db/migrate/20180518070354_set_default_value_for_favorite.rb
 %%WWWDIR%%/db/migrate/20180818095054_create_attachments.rb
 %%WWWDIR%%/db/migrate/20180818201731_user_kdf_iterations.rb
