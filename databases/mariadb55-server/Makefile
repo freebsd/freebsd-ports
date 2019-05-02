@@ -23,7 +23,7 @@ LICENSE=	GPLv2
 SUB_FILES=	pkg-message
 
 SLAVEDIRS=	databases/mariadb55-client
-USES+=		cmake:insource,noninja shebangfix ssl
+USES+=		cmake:insource,noninja compiler:c++11-lang shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SHEBANG_FILES=	scripts/*.sh sql-bench/[a-km-z]*
 
