@@ -5,7 +5,7 @@ dd if=$LOCALBASE/share/u-boot/u-boot-riotboard/u-boot.imx of=/path/to/sdcarddevi
 
 This version is patched so that:
  * API features is enabled.
- * A boot.scr (U-Boot script) that loads ubldr.bin and execute it is included 
+ * A boot.scr (U-Boot script) that loads ubldr.bin and execute it is included
 
 For information about running FreeBSD on IMX6 boards, see
 https://wiki.freebsd.org/FreeBSD/arm/imx6
