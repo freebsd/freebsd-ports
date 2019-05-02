@@ -1,5 +1,5 @@
---- plugins/fuse.c.orig	Mon Apr  2 14:15:28 2007
-+++ plugins/fuse.c	Mon May  7 20:07:09 2007
+--- plugins/fuse.c.orig	2010-05-21 11:18:14 UTC
++++ plugins/fuse.c
 @@ -28,6 +28,8 @@
  #include <errno.h>
  #include <poll.h>
