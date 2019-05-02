@@ -16,7 +16,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		gl gmake localbase pkgconfig shebangfix
+USES=		compiler:c++11-lang gl gmake localbase pkgconfig shebangfix
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	DISTRHO
@@ -28,6 +28,12 @@ USE_XORG=	x11
 
 CFLAGS+=	-I${FILESDIR}
 CFLAGS+=	-Wno-c++11-narrowing # clang prints errors: https://github.com/DISTRHO/Nekobi/issues/7
+
+.if exists(/usr/lib/libstdc++.so)
+post-patch:
+	@${REINPLACE_CMD} -e 's/-mtune=generic -msse -msse2 //' \
+		${WRKSRC}/dpf/Makefile.base.mk
+.endif
 
 do-install: # https://github.com/DISTRHO/Nekobi/issues/8
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/lv2
