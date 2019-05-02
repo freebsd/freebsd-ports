@@ -6,7 +6,7 @@ different partitions can be set with U-Boot environment variables.
 
 This version is patched so that:
  * API features are enabled.
- * A boot.scr (U-Boot scripts ) that loads ubldr.bin and execute it is included 
+ * A boot.scr (U-Boot scripts ) that loads ubldr.bin and execute it is included
 
 For information about running FreeBSD on BeagleBone or BeagleBone Black, see
 https://wiki.freebsd.org/FreeBSD/arm/BeagleBone

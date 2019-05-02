@@ -7,7 +7,7 @@ You will also need the firmware files and configs from the rpi-firmware package.
 This version is patched so that:
  * API features are enabled.
  * U-Boot and FreeBSD kernel are using rpi-firmware DTBs
- * A boot.scr (U-Boot script) that loads ubldr.bin and execute it is included 
+ * A boot.scr (U-Boot script) that loads ubldr.bin and execute it is included
 
 For information about running FreeBSD on RaspberryPi, see
 https://wiki.freebsd.org/FreeBSD/arm/Raspberry%20Pi
