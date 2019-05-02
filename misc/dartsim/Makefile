@@ -2,7 +2,8 @@
 
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.8.2
+DISTVERSION=	6.8.3-15
+DISTVERSIONSUFFIX=	-gbc98c8f47
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +12,7 @@ COMMENT=	Dynamic Animation and Robotics Toolkit
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	pagmo2>0:science/pagmo2
 LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libBulletDynamics.so:devel/bullet \
 		libboost_system.so:devel/boost-libs \
