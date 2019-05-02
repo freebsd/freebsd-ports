@@ -29,6 +29,8 @@ USE_QT=		3d buildtools_build charts core datavis3d declarative \
 CMAKE_ARGS+=	"-DUSE_PYTHON_VERSION=${PYTHON_VER}" \
 		"-DPYTHON_EXECUTABLE=${PYTHON_CMD}"
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_MAJOR_VER} >= 3
