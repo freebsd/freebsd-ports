@@ -34,7 +34,7 @@ DOCS=		KNOWNBUGS LICENSE PGPKEYS README RELEASE_NOTES \
 		sendmail/TRACEFLAGS sendmail/SECURITY sendmail/TUNING
 PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==} \
 		MANPREFIX=${MANPREFIX:S=$=/=:S=${PREFIX}==:S=^/==}
-PKGMESSAGE=	${WRKSRC}/pkg-message
+SUB_FILES=	pkg-message
 
 WCONF=		${WRKSRC}/devtools/Site
 SITE=		${FILESDIR}/site.config.m4.pre4
@@ -152,12 +152,6 @@ SED_SCRIPT=	-e "s|\`-O'|\`${CFLAGS}'|" \
 .if ! ${PORT_OPTIONS:MNIS}
 SED_SCRIPT+=	-e "s;-DNIS ;;"
 .endif
-
-post-patch:
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
-		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
-		-e "s=%%PORTSDIR%%=${PORTSDIR}=g" \
-		${PKGDIR}/pkg-message > ${WRKSRC}/pkg-message
 
 do-configure:
 .if ${PORT_OPTIONS:MGDBM}
@@ -284,13 +278,8 @@ post-install-DOCS-on:
 
 mailer.base:
 	@${SED} \
-	-e "s=^sendmail[ 	]*/.*$$=sendmail	${BASEMAIL}=" \
-	-e "s=^send-mail[ 	]*/.*$$=send-mail	${BASEMAIL}=" \
-	-e "s=^mailq[ 	]*/.*$$=mailq		${BASEMAIL}=" \
-	-e "s=^newaliases[ 	]*/.*$$=newaliases	${BASEMAIL}=" \
-	-e "s=^hoststat[ 	]*/.*$$=hoststat	${BASEMAIL}=" \
-	-e "s=^purgestat[ 	]*/.*$$=purgestat	${BASEMAIL}=" \
-	 ${DESTDIR}/etc/mail/mailer.conf > ${DESTDIR}/etc/mail/mailer.conf.new
+	 -e "s=\([ 	]\)/.*$$=\\1${BASEMAIL}=" \
+	 ${FILESDIR}/mailer.conf > ${DESTDIR}/etc/mail/mailer.conf.new
 	${MV} ${DESTDIR}/etc/mail/mailer.conf.new \
 		${DESTDIR}/etc/mail/mailer.conf
 
@@ -374,7 +363,7 @@ pre-everything::
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# Please install with normal PREFIX"
 	@${ECHO_CMD} "# and activate the port version with"
-	@${ECHO_CMD} "# cd ${PORTSDIR}/mail/sendmail && make mailer.conf"
+	@${ECHO_CMD} "# cd /usr/local/etc/mail && cp mailer.conf.sendmail mailer.conf"
 	@${ECHO_CMD} "#"
 	@${FALSE}
 .endif
