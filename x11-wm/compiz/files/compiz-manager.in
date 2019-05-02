@@ -32,7 +32,7 @@ PLUGIN_PATH="%%LOCALBASE%%/lib/compiz/"
 GLXINFO="%%LOCALBASE%%/bin/glxinfo"
 KWIN="%%LOCALBASE%%/bin/kwin"
 METACITY="%%LOCALBASE%%/bin/metacity"
-XFWM="%%LOCALBASE%%/bin/xfwm"
+XFWM="%%LOCALBASE%%/bin/xfwm4"
 COMPIZ_NAME="compiz" # Final name for compiz (compiz.real) 
 
 # For Xgl LD_PRELOAD
@@ -59,7 +59,7 @@ fi
 FALLBACKWM_OPTIONS="--replace $@"
 
 # Driver whitelist
-WHITELIST="nvidia intel ati radeon i810"
+WHITELIST="nvidia intel ati radeon i810 modesetting"
 
 # blacklist based on the pci ids 
 # See http://wiki.compiz-fusion.org/Hardware/Blacklist for details

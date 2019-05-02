@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2014-06-02 19:14:25.669435783 +0100
-+++ src/Makefile.in	2014-06-02 19:14:34.064435780 +0100
-@@ -292,7 +292,7 @@
+--- src/Makefile.in.orig	2018-08-24 22:46:14 UTC
++++ src/Makefile.in
+@@ -292,7 +292,7 @@ INCLUDES = \
  	-DIMAGEDIR=\"$(imagedir)\"   \
  	-DMETADATADIR=\"$(metadatadir)\"
  
