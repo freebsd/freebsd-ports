@@ -54,7 +54,7 @@ MASTER_SITES+=	PYTHON/ftp/python/doc/${v}:${v:S/./x/g}
 DISTFILES+=	python-${v}-docs-${f}${EXTRACT_SUFX}:${v:S/./x/g},DEFAULT
 .endfor
 .endfor
-MASTER_SITES+=	PYTHON/ftp/python/doc/current:DEFAULT
+MASTER_SITES+=	PYTHON/ftp/python/doc/current
 .endif
 
 pre-install:

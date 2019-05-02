@@ -51,7 +51,6 @@ USES=		cmake:noninja fuse gettext-runtime gmake \
 USE_PYTHON=	cython
 USE_OPENLDAP=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	ceph:DEFAULT
 
 GH_TUPLE+=	ceph:ceph-erasure-code-corpus:2d7d78b:ceph_erasure_code_corpus/ceph-erasure-code-corpus
 GH_TUPLE+=	ceph:ceph-object-corpus:e32bf8c:ceph_object_corpus/ceph-object-corpus

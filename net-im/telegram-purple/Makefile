@@ -31,7 +31,7 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	majn:DEFAULT,tgl vysheng:tlparser
+GH_ACCOUNT=	majn vysheng:tlparser
 GH_PROJECT=	tgl:tgl tl-parser:tlparser
 GH_TAGNAME?=	624cf5a:tgl 36bf190:tlparser
 GH_SUBDIR=	tgl:tgl tgl/tl-parser:tlparser

@@ -245,8 +245,7 @@ XINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
 XINE_CMAKE_BOOL=	WITH_XINE
 
 EXTRA_MODULES_DESC=		Extra modules
-EXTRA_MODULES_GH_ACCOUNT=	opencv:DEFAULT \
-				tiny-dnn:extra_mod_3rdparty_tiny_dnn
+EXTRA_MODULES_GH_ACCOUNT=	tiny-dnn:extra_mod_3rdparty_tiny_dnn
 EXTRA_MODULES_GH_PROJECT=	opencv_contrib:extra_mod \
 				tiny-dnn:extra_mod_3rdparty_tiny_dnn \
 				opencv_3rdparty:extra_mod_3rdparty_face_landmark_model \
