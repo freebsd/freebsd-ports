@@ -1,10 +1,12 @@
-TIMESTAMP = 1556437583
-SHA256 (motemen-ghq-v0.10.2_GH0.tar.gz) = a19d60c4dbd7e56f171ff311a8934f9b0301ca25108061add26990e6b3d46025
-SIZE (motemen-ghq-v0.10.2_GH0.tar.gz) = 29279
+TIMESTAMP = 1556800202
+SHA256 (motemen-ghq-v0.11.0_GH0.tar.gz) = 3f3c8cd3b6e8a8417d0ef327eedabc42e1ed14d73d31aa9c7cd19323e629db5e
+SIZE (motemen-ghq-v0.11.0_GH0.tar.gz) = 24557
 SHA256 (daviddengcn-go-colortext-186a3d44e920_GH0.tar.gz) = 7f7d7eb82df56329938c44a32ca9c7e866a5816c3bf0a348ab657200fd407d47
 SIZE (daviddengcn-go-colortext-186a3d44e920_GH0.tar.gz) = 4534
-SHA256 (golang-net-4829fb13d2c6_GH0.tar.gz) = e757f40c8863728f9dea4ba658b3e29fe87ae7788df182cdb07a331935702e62
-SIZE (golang-net-4829fb13d2c6_GH0.tar.gz) = 1098715
+SHA256 (golang-net-9ce7a6920f09_GH0.tar.gz) = 473a5eed183f65723358eabf8e4f692dc6067f67b0061daa8d83a34e6fb9f728
+SIZE (golang-net-9ce7a6920f09_GH0.tar.gz) = 1098880
+SHA256 (golang-sync-112230192c58_GH0.tar.gz) = 6d98880ea18369550cb12d7011df8e4b21c5b7588268a412b863b5c9d2fa0313
+SIZE (golang-sync-112230192c58_GH0.tar.gz) = 16832
 SHA256 (motemen-go-colorine-45d19169413a_GH0.tar.gz) = 88d37bae10fca6de298c55e3b68e0fae14a0e6225783179e37fb3cbe6342ab6e
 SIZE (motemen-go-colorine-45d19169413a_GH0.tar.gz) = 88149
 SHA256 (urfave-cli-v1.20.0_GH0.tar.gz) = c5ba59f5742c99618b5ba34211699287cd3e80c41488bb267035ce0163e3bade
