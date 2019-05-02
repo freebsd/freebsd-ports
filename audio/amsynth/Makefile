@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	amsynth
-DISTVERSION=	1.8.0.g20171103
-PORTREVISION=	3
+DISTVERSION=	1.9.0
 CATEGORIES=	audio
+MASTER_SITES=	https://github.com/amsynth/amsynth/releases/download/release-${DISTVERSION}/
 
-MAINTAINER=	hello@blubee.me
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Analog modelling software synth
 
 LICENSE=	GPLv2+
@@ -21,25 +21,18 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		liblo.so:audio/liblo \
 		libsndfile.so:audio/libsndfile
 
-USES=		autoreconf:build compiler:gcc-c++11-lib gettext-tools \
-		gmake libtool localbase pkgconfig
-USE_CXXSTD=	gnu++11
-USE_GITHUB=	yes
-GH_TAGNAME=	37f25f2
+USES=		compiler:c++11-lang gettext-tools gmake gnome libtool localbase \
+		pkgconfig tar:bzip2
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 intltool pango
-USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-pre-configure:
-	@cd ${WRKSRC} && ./autogen.sh
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dssi/*.so \
