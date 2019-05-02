@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		gmake jpeg localbase:ldflags
+USES=		compiler:c11 gmake jpeg localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	pi-kvm
 
