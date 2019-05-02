@@ -16,7 +16,7 @@ LIB_DEPENDS=	libv4l2.so:multimedia/libv4l \
 		libphonon4qt5.so:multimedia/phonon \
 		libqimageblitz.so:x11/qimageblitz
 
-USES=		cmake kde:5 qt:5
+USES=		cmake compiler:c++11-lang kde:5 qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	dos1
 USE_QT=		concurrent core dbus declarative gui network printsupport script xml widgets \
