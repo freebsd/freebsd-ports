@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0 \
 		libsndfile.so:audio/libsndfile
 
-USES=		tar:bzip2 gmake pkgconfig iconv
+USES=		compiler:c++11-lang tar:bzip2 gmake pkgconfig iconv
 GNU_CONFIGURE=	yes
 
 USE_SDL=	sdl
