@@ -1,0 +1,14 @@
+--- src/po/Makefile.orig	2019-05-02 23:54:55 UTC
++++ src/po/Makefile
+@@ -165,9 +165,9 @@ $(PACKAGE).pot: ../*.c ../if_perl.xs ../GvimExt/gvimex
+ 		po/gvim.desktop.in po/vim.desktop.in
+ 	mv -f ../$(PACKAGE).po $(PACKAGE).pot
+ 
+-%.desktop: %.desktop.in $(POFILES)
++gvim.desktop vim.desktop: $@.in $(POFILES)
+ 	@echo $(LANGUAGES) | tr " " "\n" |sed -e '/\./d' | sort > LINGUAS
+-	$(MSGFMT) --desktop -d . --template $< -o $@
++	$(MSGFMT) --desktop -d . --template $@.in -o $@
+ 
+ update-po: $(LANGUAGES)
+ 
