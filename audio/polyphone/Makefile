@@ -3,7 +3,7 @@
 PORTNAME=	polyphone
 DISTVERSION=	1.9
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://polyphone-soundfonts.com/en/download/file/76-polyphone-1-8-src-zip/latest/download?ae95d968569b61bc77f7b8559a14db4d=1/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 		libogg.so:audio/libogg \
 		libportaudio.so:audio/portaudio \
 		librtmidi.so:audio/rtmidi \
-		libstk-4.6.0.so:audio/stk \
+		libstk.so:audio/stk \
 		libvorbisfile.so:audio/libvorbis
 
 USES=		compiler:c++11-lang desktop-file-utils pkgconfig qmake:outsource qt:5 shared-mime-info zip
