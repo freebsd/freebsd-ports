@@ -59,7 +59,7 @@ fi
 FALLBACKWM_OPTIONS="--replace $@"
 
 # Driver whitelist
-WHITELIST="nvidia intel ati radeon i810 modesetting"
+WHITELIST="nvidia intel ati radeon i810 amdgpu modesetting"
 
 # blacklist based on the pci ids 
 # See http://wiki.compiz-fusion.org/Hardware/Blacklist for details
