@@ -155,6 +155,7 @@
     SUBDIR += fcgiwrap
     SUBDIR += feedjack
     SUBDIR += ffproxy
+    SUBDIR += ffsend
     SUBDIR += fgallery
     SUBDIR += firefox
     SUBDIR += firefox-esr
