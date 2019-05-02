@@ -20,7 +20,7 @@ BUILD_DEPENDS=	thrift:devel/thrift
 CONFIGURE_ARGS=	PY_PREFIX="${PREFIX}"
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler gmake perl5 python:2.7
+USES=		autoreconf compiler:c++11-lang gmake perl5 python:2.7
 USE_PERL5=	run
 WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/fb303
 
