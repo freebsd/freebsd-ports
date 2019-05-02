@@ -30,6 +30,7 @@ command="%%PREFIX%%/libexec/milter-regex"
 pidfile="${spooldir}/milter-regex.pid"
 required_files="%%PREFIX%%/etc/milter-regex.conf"
 stop_postcmd="milterregex_poststop"
+command_args="-r ${pidfile}"
 
 milterregex_poststop() {
 	/bin/rm -f ${pidfile}
