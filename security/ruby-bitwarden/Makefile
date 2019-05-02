@@ -3,6 +3,7 @@
 
 PORTNAME=	rubywarden
 DISTVERSION=	0.0.0.20190207
+PORTREVISION=	1
 CATEGORIES=	     security www
 
 MAINTAINER=	mr@FreeBSD.org
