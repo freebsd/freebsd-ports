@@ -23,8 +23,7 @@ USES=		cmake pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TUPLE=	google:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT \
-		abseil:abseil-cpp:bea85b5:abseil/third_party/abseil-cpp \
+GH_TUPLE=	abseil:abseil-cpp:bea85b5:abseil/third_party/abseil-cpp \
 		nico:demumble:01098ea:demumble/third_party/demumble
 CMAKE_OFF=	BLOATY_ENABLE_CMAKETARGETS BLOATY_ENABLE_BUILDID
 

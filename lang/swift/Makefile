@@ -29,12 +29,11 @@ REL_SNAP=	2017-04-22-a
 USE_GITHUB=	yes
 BINARY_ALIAS=	swig=swig3.0 python=${PYTHON_CMD}
 
-GH_ACCOUNT=	apple:DEFAULT,llvm,clang,dispatch,lldb,cmark,llbuild,swiftpm,xctest,xcfound
-GH_PROJECT=	swift:DEFAULT swift-llvm:llvm swift-clang:clang swift-lldb:lldb \
+GH_ACCOUNT=	apple
+GH_PROJECT=	swift swift-llvm:llvm swift-clang:clang swift-lldb:lldb \
 		swift-cmark:cmark swift-llbuild:llbuild swift-package-manager:swiftpm \
 		swift-corelibs-xctest:xctest swift-corelibs-foundation:xcfound \
 		swift-corelibs-libdispatch:dispatch
-GH_TAGNAME=	swift-${PORTVERSION}-RELEASE:llbuild,swiftpm,xctest,xcfound,dispatch
 GH_SUBDIR=	llvm:llvm clang:clang lldb:lldb cmark:cmark llbuild:llbuild \
 		swiftpm:swiftpm swift-corelibs-xctest:xctest \
 		swift-corelibs-foundation:xcfound \

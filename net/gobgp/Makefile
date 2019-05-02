@@ -17,7 +17,7 @@ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	${GO_PKGNAME}/gobgp \
 		${GO_PKGNAME}/gobgpd
 USE_GITHUB=	yes
-GH_ACCOUNT=	osrg:DEFAULT
+GH_ACCOUNT=	osrg
 GH_TUPLE=	BurntSushi:toml:a368813:toml/../src/github.com/BurntSushi/toml \
 		armon:go-radix:1fca145:radix/../src/github.com/armon/go-radix \
 		davecgh:go-spew:8991bc2:spew/../src/github.com/davecgh/go-spew \

@@ -52,7 +52,6 @@ USES=		cmake:noninja fuse gettext-runtime gmake pkgconfig python:2.7 \
 USE_PYTHON=	cython
 USE_OPENLDAP=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	ceph:DEFAULT
 
 CONFLICTS_INSTALL=	ceph
 PORTSCOUT=	limit:^v13\.

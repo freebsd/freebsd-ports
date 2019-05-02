@@ -22,7 +22,7 @@ GO_LDFLAGS=	-X github.com/mattermost/mattermost-server/model.BuildNumber=${PORTV
 USE_RC_SUBR=	mattermostd
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	mattermost:DEFAULT
+GH_ACCOUNT=	mattermost
 
 WWWDIR=		${PREFIX}/www/mattermost
 

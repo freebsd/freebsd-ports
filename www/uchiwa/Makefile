@@ -18,7 +18,7 @@ UCHIWA_SHAREDIR=	${PREFIX}/share/uchiwa/public
 
 USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
-GH_ACCOUNT=	sensu:DEFAULT
+GH_ACCOUNT=	sensu
 GH_TUPLE=	dgrijalva:jwt-go:61124b62ad244d655f87d944aefaa2ae5a0d2f16:jwtgo/src/github.com/dgrijalva/jwt-go
 GH_TUPLE+=	gorilla:context:215affda49addc4c8ef7e2534915df2c8c35c6cd:context/src/github.com/gorilla/context
 GH_TUPLE+=	mitchellh:mapstructure:f7d28d5aeab42b9b95d2e6d6b956f73a290077fc:mapstructure/src/github.com/mitchellh/mapstructure
