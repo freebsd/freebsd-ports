@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		desktop-file-utils gl qmake qt:5
+USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	Bleuzen
 USE_QT=		concurrent core gui widgets buildtools_build linguisttools_build
