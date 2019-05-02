@@ -29,6 +29,9 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.3-features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.4_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.5_1.5.6_features.txt
+%%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.7_features.txt
+%%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.8_features.txt
+%%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.9_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_License_History.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Zyn_ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Zyn_HISTORY.txt
@@ -38,6 +41,7 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/MIDI_Controllers.html
 %%PORTDOCS%%%%DOCSDIR%%/MIDI_Learn.txt
 %%PORTDOCS%%%%DOCSDIR%%/Musical Scale.odt
+%%PORTDOCS%%%%DOCSDIR%%/Note_Envelopes.txt
 %%PORTDOCS%%%%DOCSDIR%%/Output_Levels.txt
 %%PORTDOCS%%%%DOCSDIR%%/Part_Kit_Crossfade.txt
 %%PORTDOCS%%%%DOCSDIR%%/Scales.txt
@@ -50,10 +54,10 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Voice_Mod_Oscillators.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshi-Zyn_Sound_Differences.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshi_Zyn_NRPNs.txt
-%%PORTDOCS%%%%DOCSDIR%%/Yoshimi_1.5.7_features.txt
+%%PORTDOCS%%%%DOCSDIR%%/Yoshimi_1.5.10_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshimi_Only_NRPNs.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshimi_Quote.txt
-%%PORTDOCS%%%%DOCSDIR%%/yoshimi-user-manual-1.5.7.pdf
+%%PORTDOCS%%%%DOCSDIR%%/yoshimi-user-manual-1.5.10.pdf
 share/icons/hicolor/scalable/apps/yoshimi.svg
 share/icons/hicolor/scalable/apps/yoshimi_alt.svg
 share/metainfo/yoshimi.appdata.xml
@@ -669,7 +673,9 @@ share/pixmaps/yoshimi.png
 %%DATADIR%%/banks/Will_Godfrey_Companion/0025-Wind Whistle.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0026-Tomita Whistle.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0028-Theramin.xiz
+%%DATADIR%%/banks/Will_Godfrey_Companion/0033-AddSynth Morph.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0035-Modular Sines.xiz
+%%DATADIR%%/banks/Will_Godfrey_Companion/0036-Echo Multimod.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0037-Special Saw.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0038-Smooth Saw.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0039-Slow Morph.xiz
@@ -689,8 +695,10 @@ share/pixmaps/yoshimi.png
 %%DATADIR%%/banks/Will_Godfrey_Companion/0055-Thick Bass.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0056-Wide Bass.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0057-Ultra Bass.xiz
+%%DATADIR%%/banks/Will_Godfrey_Companion/0058-Simple Bass.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0060-Stopped Pipe.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0062-Deep Matrix Kit.xiz
+%%DATADIR%%/banks/Will_Godfrey_Companion/0069-Multi Rushes.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0072-Cathedral Sound.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0074-Smooth Expanded.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0076-Pulse Reeds.xiz
@@ -698,6 +706,8 @@ share/pixmaps/yoshimi.png
 %%DATADIR%%/banks/Will_Godfrey_Companion/0079-Brassy Flutter.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0080-Soft Brass.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0081-Post Horn.xiz
+%%DATADIR%%/banks/Will_Godfrey_Companion/0084-Cathedral Pipe Organ.xiz
+%%DATADIR%%/banks/Will_Godfrey_Companion/0087-Sub Choir.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0092-Wind Pipes.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0106-Harpsichord.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0107-Cathedral Harp.xiz
@@ -713,6 +723,7 @@ share/pixmaps/yoshimi.png
 %%DATADIR%%/banks/Will_Godfrey_Companion/0121-Ghost Ensemble.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0122-Choir Stabs.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0123-Cathedral Ahh.xiz
+%%DATADIR%%/banks/Will_Godfrey_Companion/0125-Hollow Ghost Ensemble.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0127-Hoover.xiz
 %%DATADIR%%/banks/chip/0001-Fantasy_Canyon.xiz
 %%DATADIR%%/banks/chip/0002-Fantasy_Canyon_X.xiz
@@ -764,58 +775,59 @@ share/pixmaps/yoshimi.png
 %%DATADIR%%/banks/chip/0048-Glitch_in_the_Machine.xiz
 %%DATADIR%%/banks/chip/0049-Dings.xiz
 %%DATADIR%%/banks/chip/0050-Ghost_Bells.xiz
-%%DATADIR%%/examples/0km.xmz
-%%DATADIR%%/examples/Arpeggio 1.xmz
-%%DATADIR%%/examples/Arpeggio 2.xmz
-%%DATADIR%%/examples/Arpeggio 3.xmz
-%%DATADIR%%/examples/Arpeggio 4.xmz
-%%DATADIR%%/examples/Arpeggio 5.xmz
-%%DATADIR%%/examples/Arpeggio 6.xmz
-%%DATADIR%%/examples/Arpeggio Dist 1.xmz
-%%DATADIR%%/examples/Arpeggio Dist 2.xmz
-%%DATADIR%%/examples/Arpeggio Flange 1.xmz
-%%DATADIR%%/examples/Arpeggio Flange 2.xmz
-%%DATADIR%%/examples/Choir Reeds.xmz
-%%DATADIR%%/examples/Choir Strings SynthBrass.xmz
 %%DATADIR%%/examples/CoolSound.txt
 %%DATADIR%%/examples/CoolSound.xvy
 %%DATADIR%%/examples/CrossFade.txt
 %%DATADIR%%/examples/CrossFade.xiz
-%%DATADIR%%/examples/Dist Guitar Strings 1.xmz
-%%DATADIR%%/examples/Dist Guitar Strings 2.xmz
-%%DATADIR%%/examples/Drop.xmz
-%%DATADIR%%/examples/Fantasy 1.xmz
-%%DATADIR%%/examples/Fantasy 2.xmz
-%%DATADIR%%/examples/Glass Choir.xmz
-%%DATADIR%%/examples/HighPass Saw Strings.xmz
-%%DATADIR%%/examples/Ice Rhodes Strings.xmz
-%%DATADIR%%/examples/Legatto 1.xmz
-%%DATADIR%%/examples/Legatto 2.xmz
-%%DATADIR%%/examples/Legatto Strings.xmz
 %%DATADIR%%/examples/Microtonal Demo.txt
 %%DATADIR%%/examples/Microtonal Keymap Demo.kbm
 %%DATADIR%%/examples/Microtonal Ratio Scale.xsz
 %%DATADIR%%/examples/Microtonal Tuning Demo.scl
-%%DATADIR%%/examples/Octave Strings.xmz
-%%DATADIR%%/examples/Organ Choir Strings.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/0km.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Arpeggio 1.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Arpeggio 2.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Arpeggio 3.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Arpeggio 4.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Arpeggio 5.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Arpeggio 6.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Arpeggio Dist 1.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Arpeggio Dist 2.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Arpeggio Flange 1.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Arpeggio Flange 2.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Choir Reeds.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Choir Strings SynthBrass.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Dist Guitar Strings 1.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Dist Guitar Strings 2.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Drop.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Fantasy 1.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Fantasy 2.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Glass Choir.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/HighPass Saw Strings.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Ice Rhodes Strings.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Legatto 1.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Legatto 2.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Legatto Strings.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Octave Strings.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Organ Choir Strings.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Saw.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Space 1.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Space 2.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Split_keyboard.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/String Reverb.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Strings Reeds 1.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Strings Reeds 2.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Struck String Big Reverb 1.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Struck String Big Reverb 2.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Supersaw.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Synth Bells Choir Reverb.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Synth Piano Reverb.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/Synth.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/bent_synth.xmz
+%%DATADIR%%/examples/Original Zyn Patchsets/photons.xmz
 %%DATADIR%%/examples/Out_There.mid
 %%DATADIR%%/examples/Out_There.txt
 %%DATADIR%%/examples/Out_There.xmz
-%%DATADIR%%/examples/Saw.xmz
-%%DATADIR%%/examples/Space 1.xmz
-%%DATADIR%%/examples/Space 2.xmz
-%%DATADIR%%/examples/Split_keyboard.xmz
-%%DATADIR%%/examples/String Reverb.xmz
-%%DATADIR%%/examples/Strings Reeds 1.xmz
-%%DATADIR%%/examples/Strings Reeds 2.xmz
-%%DATADIR%%/examples/Struck String Big Reverb 1.xmz
-%%DATADIR%%/examples/Struck String Big Reverb 2.xmz
-%%DATADIR%%/examples/Supersaw.xmz
-%%DATADIR%%/examples/Synth Bells Choir Reverb.xmz
-%%DATADIR%%/examples/Synth Piano Reverb.xmz
-%%DATADIR%%/examples/Synth.xmz
-%%DATADIR%%/examples/bent_synth.xmz
-%%DATADIR%%/examples/photons.xmz
+%%DATADIR%%/examples/synth_prelude.txt
 %%DATADIR%%/presets/A01.Presonance.xpz
 %%DATADIR%%/presets/ChurchOrgan01.Poscilgen.xpz
 %%DATADIR%%/presets/JI12.xsz
