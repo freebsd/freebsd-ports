@@ -1,8 +1,8 @@
---- meson.build.orig	2018-09-04 16:23:32 UTC
+--- meson.build.orig	2019-04-15 13:10:25 UTC
 +++ meson.build
 @@ -1,7 +1,7 @@
  project('libzim', ['c', 'cpp'],
-   version : '4.0.4',
+   version : '4.0.7',
    license : 'GPL2',
 -  default_options : ['c_std=c11', 'cpp_std=c++11', 'werror=true'])
 +  default_options : ['c_std=c11', 'cpp_std=c++11'])
@@ -16,10 +16,10 @@
 +cc = meson.get_compiler('c')
 +execinfo_dep = cc.find_library('execinfo', required : false)
 +
- zlib_dep = dependency('zlib', required:false)
- conf.set('ENABLE_ZLIB', zlib_dep.found())
+ static_linkage = get_option('static-linkage')
+ static_linkage = static_linkage or get_option('default_library')=='static'
  
-@@ -70,3 +73,4 @@ pkg_mod.generate(libraries : libzim,
+@@ -73,3 +76,4 @@ pkg_mod.generate(libraries : libzim,
                   filebase : 'libzim',
                   description : 'A Library to zim.',
                   requires : pkg_requires)
