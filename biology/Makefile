@@ -33,6 +33,7 @@
     SUBDIR += fastahack
     SUBDIR += fastdnaml
     SUBDIR += fastool
+    SUBDIR += fastp
     SUBDIR += fastqc
     SUBDIR += fasttree
     SUBDIR += fastx-toolkit
