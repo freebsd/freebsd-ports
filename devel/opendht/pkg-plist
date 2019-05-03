@@ -26,6 +26,7 @@ include/opendht/routing_table.h
 include/opendht/scheduler.h
 include/opendht/securedht.h
 include/opendht/sockaddr.h
+include/opendht/thread_pool.h
 include/opendht/utils.h
 include/opendht/value.h
 include/opendht/value.h.orig
