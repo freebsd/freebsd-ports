@@ -18,7 +18,6 @@ etc/mattermost/config.json.sample
 %%WWWDIR%%/i18n/uk.json
 %%WWWDIR%%/i18n/zh-CN.json
 %%WWWDIR%%/i18n/zh-TW.json
-%%WWWDIR%%/templates/complete_saml_extension_body.html
 %%WWWDIR%%/templates/deactivate_body.html
 %%WWWDIR%%/templates/email_change_body.html
 %%WWWDIR%%/templates/email_change_verify_body.html

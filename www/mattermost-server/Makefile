@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mattermost-server
-PORTVERSION=	5.6.2
+PORTVERSION=	5.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -35,8 +35,8 @@ GROUPS=		${MATTERMOSTD_GROUP}
 pre-build:
 	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 	@cd ${WRKSRC} && \
-		${MV} api4 app cmd doc einterfaces imports jobs manualtesting \
-		mlog migrations model plugin services store utils web wsapi vendor \
+		${MV} api4 app cmd config doc einterfaces imports jobs manualtesting \
+		mlog migrations model plugin services store testlib utils web wsapi vendor \
 		${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 
 do-build:
@@ -46,7 +46,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/mattermost ${STAGEDIR}${PREFIX}/bin/mattermostd
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mattermost
-	${INSTALL_DATA} ${WRKSRC}/config/default.json ${STAGEDIR}${PREFIX}/etc/mattermost/config.json.sample
+	${INSTALL_DATA} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}/config/default.json ${STAGEDIR}${PREFIX}/etc/mattermost/config.json.sample
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} 'fonts i18n templates' ${STAGEDIR}${WWWDIR}
 
