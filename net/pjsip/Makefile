@@ -2,6 +2,7 @@
 
 PORTNAME=	pjsip
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
 DISTNAME=	pjproject-${DISTVERSION}
@@ -96,8 +97,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/$$(APP_LDFLAGS) \{0,1\}//' \
 		-e 's/$$(OS_LDFLAGS)/$$(APP_LDFLAGS) &/' \
 		${WRKSRC}/*/build/Makefile
-	@${ECHO} "#include <sys/select.h>" > ${WRKSRC}/pjlib/include/pj/config_site.h
-	@${ECHO} "#define PJ_IOQUEUE_MAX_HANDLES (FD_SETSIZE)" >> ${WRKSRC}/pjlib/include/pj/config_site.h
+	@${CP} ${FILESDIR}/config_site.h \
+		${WRKSRC}/pjlib/include/pj/config_site.h
 
 post-install-SHARED-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
