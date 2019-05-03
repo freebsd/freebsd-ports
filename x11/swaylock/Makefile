@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	swaylock
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +18,6 @@ USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	swaywm
 USE_GNOME=	cairo pango
-MESON_ARGS=	-Dswaylock-version="${DISTVERSIONFULL}"
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/pam.d/${PORTNAME} \
 		share/bash-completion/completions/${PORTNAME} \
@@ -34,5 +33,11 @@ MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
 
 PIXBUF_USE=		GNOME=gdkpixbuf2
 PIXBUF_MESON_ENABLED=	gdk-pixbuf
+
+post-patch:
+# Extract (snapshot) version from the port instead of meson.build
+	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
+		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
+		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
