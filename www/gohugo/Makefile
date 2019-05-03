@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.55.4
+DISTVERSION=	0.55.5
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -73,7 +73,7 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		pelletier:go-toml:v1.2.0:go_toml/src/github.com/pelletier/go-toml \
 		pkg:errors:v0.8.0:errors/src/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:go_difflib/src/github.com/pmezard/go-difflib \
-		russross:blackfriday:46c73eb:blackfriday/src/github.com/russross/blackfriday \
+		russross:blackfriday:v1.5.2:blackfriday/src/github.com/russross/blackfriday \
 		sanity-io:litter:v1.1.0:litter/src/github.com/sanity-io/litter \
 		sergi:go-diff:v1.0.0:sergi_go_diff/src/github.com/sergi/go-diff \
 		shurcooL:sanitized_anchor_name:86672fc:sanitized_anchor_name/src/github.com/shurcooL/sanitized_anchor_name \
@@ -102,7 +102,7 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		go-check:check:788fd78:check/src/gopkg.in/check.v1 \
 		go-yaml:yaml:v2.2.2:yaml/src/gopkg.in/yaml.v2
 
-COMMIT_ID=	579004178b575b4253112fcb23eef002345028c2
+COMMIT_ID=	a83256b9cd5c50dde1a086a48f365a1fcbc78a24
 
 OPTIONS_DEFINE=		MANPAGES EXTENDED
 
