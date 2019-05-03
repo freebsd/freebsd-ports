@@ -24,8 +24,6 @@ LICENSE_FILE_BUILDLIC=	${WRKSRC}/source/build/buildlic.txt
 LICENSE_FILE_GPLv2=	${WRKSRC}/source/duke3d/gpl-2.0.txt
 LICENSE_PERMS_BUILDLIC=	dist-mirror pkg-mirror auto-accept
 
-BROKEN_aarch64=		fails to compile: polymost.cpp:2403:18: non-constant-expression cannot be narrowed from type 'long' to 'int32_t' (aka 'int') in initializer list
-
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \

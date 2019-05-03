@@ -14,7 +14,6 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	fails to install: error adding symbols: File in wrong format
 BROKEN_mips=	fails to build: -m32 flag is not supported by this configuration
 BROKEN_mips64=	fails to build: -m32 flag is not supported by this configuration
 BROKEN_sparc64=	fails to build: -m32 flag is not supported by this configuration

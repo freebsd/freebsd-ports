@@ -11,7 +11,6 @@ COMMENT=	Drivers and tools for Meinberg PTP/GPS cards
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_aarch64=		fails to compile: unused variables
 BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
 BROKEN_mips64=		fails to compile: unused variables
 BROKEN_sparc64=		fails to compile: error in structure definitions
