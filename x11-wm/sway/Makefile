@@ -1,13 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	sway
-DISTVERSION=	1.0
-PORTREVISION=	1
+DISTVERSION=	1.1-rc1
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	076257a978ce.patch:-p1
-PATCHFILES+=	b6e55064fe24.patch:-p1
+PATCHFILES+=	038482cb3575.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	i3-compatible Wayland compositor
@@ -25,6 +23,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
+RUN_DEPENDS=	swaybg:x11/swaybg
 
 USES=		compiler:c11 gnome meson pkgconfig
 USE_GITHUB=	yes

@@ -1,6 +1,5 @@
 %%MAYBE_SUID%%bin/sway
 bin/swaybar
-bin/swaybg
 bin/swaymsg
 bin/swaynag
 @sample %%ETCDIR%%/config.sample
