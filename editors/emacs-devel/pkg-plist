@@ -7,7 +7,6 @@ bin/etags
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/emacs.pdmp
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/hexl
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/movemail
-libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/profile
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/rcs2log
 man/man1/ctags.1.gz
 man/man1/ebrowse.1.gz
