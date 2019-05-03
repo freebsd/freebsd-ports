@@ -26,6 +26,7 @@
     SUBDIR += agrum
     SUBDIR += aircraft-datcom
     SUBDIR += antioch
+    SUBDIR += apbs
     SUBDIR += atom
     SUBDIR += atompaw
     SUBDIR += avogadro2
