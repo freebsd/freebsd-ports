@@ -1118,7 +1118,7 @@ MASTER_SITE_TEX_CTAN+= \
 # Derived from: https://www.torproject.org/getinvolved/mirrors.html.en
 .if !defined(IGNORE_MASTER_SITE_TOR)
 MASTER_SITE_TOR+= \
-		https://www.torproject.org/dist/%SUBDIR%/ \
+		https://dist.torproject.org/%SUBDIR%/ \
 		https://archive.torproject.org/tor-package-archive/%SUBDIR%/ \
 		ftp://ftp.bit.nl/mirror/tor/%SUBDIR%/ \
 		https://cyberside.net.ee/tor/%SUBDIR%/ \
