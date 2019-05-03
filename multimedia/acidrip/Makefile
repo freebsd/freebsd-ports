@@ -10,8 +10,6 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20-%20Your%20two-wheeled
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2::Perl wrapper for MPlayer and MEncoder for ripping DVDs
 
-BROKEN_aarch64=		fails to build: test for MEncoder: sh: mplayer: not found
-
 BUILD_DEPENDS=	lsdvd:multimedia/lsdvd \
 		mencoder:multimedia/mencoder \
 		p5-Gtk2>=0:x11-toolkits/p5-Gtk2

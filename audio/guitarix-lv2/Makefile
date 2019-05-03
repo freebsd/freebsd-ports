@@ -14,7 +14,6 @@ COMMENT=	Virtual versatile amplification for Jack and set of LV2 plugins
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to compile: unknown FP unit 'sse'
 BROKEN_armv6=		fails to compile: unknown FP unit 'sse'
 BROKEN_armv7=		fails to compile: unknown FP unit 'sse'
 BROKEN_powerpc64=	fails to compile: unknown FP unit 'sse'

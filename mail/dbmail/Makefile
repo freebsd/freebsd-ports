@@ -21,8 +21,6 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		xmlto:textproc/xmlto \
 		docbook-sgml>0:textproc/docbook-sgml
 
-BROKEN_aarch64=	Fails to link: missing sbrk
-
 CONFLICTS=	dbmail22-[0-9]*
 
 OPTIONS_DEFINE=	DOCS LDAP SIEVE
@@ -32,9 +30,9 @@ SIEVE_DESC=	Sieve mail sorting language support
 OPTIONS_SUB=	yes
 
 INSTALL_TARGET=	install-strip
+USES=		autoreconf gmake libtool pkgconfig shebangfix ssl tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d dbmail-lmtpd dbmail-imapd dbmail-timsieved
-USES=		autoreconf gmake libtool pkgconfig shebangfix ssl tar:bzip2
 GNU_CONFIGURE=	yes
 
 SHEBANG_FILES=	man/fixsp.pl

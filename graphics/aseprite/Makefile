@@ -15,7 +15,6 @@ LICENSE_NAME=		END-USER LICENSE AGREEMENT FOR ASEPRITE
 LICENSE_FILE=		${WRKSRC}/EULA.txt
 LICENSE_PERMS=		dist-mirror pkg-mirror auto-accept
 
-BROKEN_aarch64=		fails to compile: undefined reference to __va_copy
 BROKEN_armv6=		fails to compile: undefined reference to __va_copy
 BROKEN_armv7=		fails to compile: undefined reference to __va_copy
 BROKEN_sparc64=		fails to compile: vsnprintf is not a member of std

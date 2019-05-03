@@ -11,7 +11,6 @@ COMMENT=	Sophisticated software synthesizer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to compile: c++: warning: argument unused during compilation: '-msse'
 BROKEN_armv6=		fails to compile: c++: warning: argument unused during compilation: '-msse'
 BROKEN_armv7=		fails to compile: c++: warning: argument unused during compilation: '-msse'
 

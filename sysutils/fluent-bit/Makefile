@@ -11,7 +11,6 @@ COMMENT=	Fast and lightweight data forwarder
 
 LICENSE=	APACHE20
 
-BROKEN_aarch64=		fails to build: error: unknown type name thread_local
 BROKEN_mips=		fails to build: conflicting types for 'restrict'
 BROKEN_mips64=		fails to build: conflicting types for 'restrict'
 BROKEN_powerpc64=	fails to build: cast from pointer to integer of different size

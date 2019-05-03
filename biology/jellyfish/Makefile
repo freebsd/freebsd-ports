@@ -2,8 +2,8 @@
 
 PORTNAME=	jellyfish
 PORTVERSION=	2.2.6
-PORTREVISION=	4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	4
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -26,8 +26,6 @@ GH_PROJECT=	Jellyfish
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VER=${PORTVERSION}
-
-BROKEN_aarch64=		Fails to compile: error: variable res is uninitialized
 
 .include <bsd.port.pre.mk>
 

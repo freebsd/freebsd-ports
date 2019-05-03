@@ -13,7 +13,6 @@ COMMENT=	Atari ST emulator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
-BROKEN_aarch64=		fails to configure: error: unrecognized CPU type
 BROKEN_armv6=		fails to configure: CMake Error: Generator: execution of make failed
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio \

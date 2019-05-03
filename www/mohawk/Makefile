@@ -22,16 +22,14 @@ PLIST_FILES+=	bin/mhtpasswd \
 		sbin/mohawk \
 		etc/mohawk.conf.sample
 
+USES=	uidfix
+
 PORTEXAMPLES=	*
 USE_RC_SUBR=	mohawk
 
 CFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	EXAMPLES
-
-USES=	uidfix
-
-BROKEN_aarch64=		Fails to compile: error: comparison of constant -1 with expression of type char is always true
 
 .include <bsd.port.options.mk>
 
