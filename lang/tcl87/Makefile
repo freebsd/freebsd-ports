@@ -3,7 +3,7 @@
 
 PORTNAME=	tcl
 DISTVERSION=	8.7a1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/${DISTVERSION} \
 		TCLTK/tcl8_7
@@ -17,6 +17,8 @@ LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+EXTRACT_AFTER_ARGS=	--exclude compat
 
 OPTIONS_DEFINE=	TCLMAN TZDATA DEBUG
 OPTIONS_DEFAULT=TCLMAN TZDATA
@@ -36,7 +38,6 @@ PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}${DISTVERSION}
 WRKSRC=		${PATCH_WRKSRC}/unix
 
 ALL_TARGET=	binaries libraries doc
-INSTALL_TARGET=	install-strip
 TEST_TARGET=	test-tcl
 
 USE_LDCONFIG=	yes
@@ -61,6 +62,12 @@ DEBUG_CONFIGURE_ENABLE=	symbols
 DTRACE_CONFIGURE_ENABLE=	dtrace
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDEBUG}
+INSTALL_TARGET+=install
+.else
+INSTALL_TARGET+=install-strip
+.endif
 
 .if ${PORT_OPTIONS:MDTRACE}
 PLIST_SUB+=	DTRACE=""
