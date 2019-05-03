@@ -1,37 +1,38 @@
 # $FreeBSD$
 
 PORTNAME=	supertux
-PORTVERSION=	0.4.0
-PORTREVISION=	17
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.0
+DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/SuperTux/supertux/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	2
+DISTNAME=	SuperTux-${DISTVERSIONFULL}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Side-scroller game similar to Super Mario Brothers
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/smart_ptr.hpp:devel/boost-libs
-LIB_DEPENDS=	libphysfs.so:devel/physfs \
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libfreetype.so:print/freetype2 \
+		libogg.so:audio/libogg \
+		libphysfs.so:devel/physfs \
+		libpng16.so:graphics/png \
 		libcurl.so:ftp/curl \
 		libvorbis.so:audio/libvorbis
 
-LLD_UNSAFE=	yes
-USE_SDL=	sdl2 image2
-USE_GL=		glew
-USES=		cmake compiler:c++11-lib dos2unix iconv \
-		openal:al pkgconfig tar:bzip2
-# Unhide std::to_string() to fix build with GCC (see ports/193528 for details)
-CFLAGS+=	-D_GLIBCXX_USE_C99
+USES=		cmake:noninja compiler:c++14-lang dos2unix gl iconv \
+		openal:al pkgconfig sdl
+USE_GL=		gl glew glu
+USE_SDL=	sdl2 image2 ttf2
+
 CMAKE_ARGS=	-DINSTALL_SUBDIR_BIN=bin \
 		-DBUILD_SHARED_LIBS=off
+LLD_UNSAFE=	yes
+
 DOS2UNIX_FILES=	external/squirrel/CMakeLists.txt \
 		external/squirrel/squirrel/sqvm.cpp
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	${REINPLACE_CMD} -e '/^Icon=/s,supertux.png,supertux2,' \
-		${WRKSRC}/supertux2.desktop
 
 .include <bsd.port.mk>

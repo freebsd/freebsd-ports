@@ -10,11 +10,11 @@ In file included from /usr/include/c++/v1/math.h:310:
 #define type(obj) ((obj)._type)
 
 
---- external/squirrel/squirrel/sqvm.cpp.orig	2018-03-20 18:48:11.028369000 +0000
-+++ external/squirrel/squirrel/sqvm.cpp	2018-03-20 18:48:32.059836000 +0000
+--- external/squirrel/squirrel/sqvm.cpp.orig	2019-05-03 09:52:24 UTC
++++ external/squirrel/squirrel/sqvm.cpp
 @@ -1,8 +1,8 @@
  /*
- 	see copyright notice in squirrel.h
+     see copyright notice in squirrel.h
  */
 -#include "sqpcheader.h"
  #include <math.h>
