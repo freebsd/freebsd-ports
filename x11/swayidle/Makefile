@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	swayidle
-DISTVERSION=	1.2
+DISTVERSION=	1.3
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
