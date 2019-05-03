@@ -1,0 +1,32 @@
+--- Makefile.orig	2016-06-18 19:35:35 UTC
++++ Makefile
+@@ -7,10 +7,10 @@ include utility/Makefile
+ X_BUILD_IMPLICIT=1
+ 
+ # -s silcently corrupts binaries on OS X, sigh -ReneR
+-CFLAGS := -Wall -O2 # -O1 -ggdb # -fsanitize=address -fsanitize=undefined
++CFLAGS += -Wall # -O2 -O1 -ggdb # -fsanitize=address -fsanitize=undefined
+ 
+ # for config.h
+-CPPFLAGS += -I .
++CPPFLAGS += -I . -D__LONG_LONG_SUPPORTED
+ 
+ # -frename-registers and -funroll-loops brings a lot performance on
+ # my AMD Turion - about 20% time decrease (though it is included in -funroll-loops anyway) !!!
+@@ -28,6 +28,7 @@ endif
+ # TODO: improve to match i[3456]86
+ ifneq  "$(X_ARCH)" "i686"
+ CFLAGS += -fPIC
++CXXFLAGS += -fPIC
+ endif
+ 
+ ifeq "$(X_ARCH)" "sparc64"
+@@ -48,7 +49,7 @@ CFLAGS += $(call cc-option,-ftree-vectorize,)
+ # we have some unimplemented colorspaces in the Image::iterator :-(
+ CFLAGS += $(call cc-option,-Wno-switch -Wno-switch-enum,)
+ 
+-CXXFLAGS := $(CFLAGS) -Wno-sign-compare
++CXXFLAGS += -Wall -Wno-sign-compare
+ 
+ ifeq "$(STATIC)" "1"
+ X_EXEFLAGS += -static
