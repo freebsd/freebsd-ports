@@ -14,8 +14,8 @@ BUILD_DEPENDS=	go>=1.9.4:lang/go
 USES=		compiler
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2019-04-23T23-50-36Z
-COMMIT_ID=	35d19a4ae287179a0c7d6938b2b1c8e63b4747c1
+GHTAG=		RELEASE.2019-05-02T19-07-09Z
+COMMIT_ID=	4b858b562a0887e10bfd0414dc87e68f1af31c3a
 GH_TUPLE=	\
 		${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT/src/github.com/${PORTNAME}/${PORTNAME} \
 		Azure:azure-sdk-for-go:v27.0.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
@@ -31,7 +31,6 @@ GH_TUPLE=	\
 		census-instrumentation:opencensus-go:v0.19.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		census-instrumentation:opencensus-proto:v0.2.0:census_instrumentation_opencensus_proto/vendor/github.com/census-instrumentation/opencensus-proto \
 		cheggaaa:pb:v1.0.28:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
-		colinmarc:hdfs:v2.0.0:colinmarc_hdfs/vendor/github.com/colinmarc/hdfs/v2 \
 		coredns:coredns:v1.4.0:coredns_coredns/vendor/github.com/coredns/coredns \
 		coreos:etcd:v3.3.12:coreos_etcd/vendor/github.com/coreos/etcd \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -50,14 +49,14 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.4.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:df01cb2:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:1da14a5:golang_net/vendor/golang.org/x/net \
+		golang:crypto:a29dc8f:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:4829fb1:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:e64efc7:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:e225da7:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:f0ce4c0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:17ff2d5:golang_text/vendor/golang.org/x/text \
+		golang:sync:1122301:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:d89cdac:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82:golang_time/vendor/golang.org/x/time \
 		gomodule:redigo:v2.0.0:gomodule_redigo/vendor/github.com/gomodule/redigo \
 		google:go-genproto:5fe7a88:google_go_genproto/vendor/google.golang.org/genproto \
@@ -83,7 +82,7 @@ GH_TUPLE=	\
 		inconshreveable:go-update:8152e7e:inconshreveable_go_update/vendor/github.com/inconshreveable/go-update \
 		jcmturner:aescts:v1.0.1:jcmturner_aescts/vendor/gopkg.in/jcmturner/aescts.v1 \
 		jcmturner:dnsutils:v1.0.1:jcmturner_dnsutils/vendor/gopkg.in/jcmturner/dnsutils.v1 \
-		jcmturner:gofork:2aebee9:jcmturner_gofork/vendor/github.com/jcmturner/gofork \
+		jcmturner:gofork:dc7c13f:jcmturner_gofork/vendor/github.com/jcmturner/gofork \
 		jcmturner:gokrb5:v5.3.0:jcmturner_gokrb5/vendor/gopkg.in/jcmturner/gokrb5.v5 \
 		jcmturner:rpc:v0.0.2:jcmturner_rpc/vendor/gopkg.in/jcmturner/rpc.v0 \
 		json-iterator:go:v1.1.6:json_iterator_go/vendor/github.com/json-iterator/go \
@@ -101,7 +100,8 @@ GH_TUPLE=	\
 		miekg:dns:v1.1.8:miekg_dns/vendor/github.com/miekg/dns \
 		minio:blazer:2081f5b:minio_blazer/vendor/github.com/minio/blazer \
 		minio:cli:v1.3.0:minio_cli/vendor/github.com/minio/cli \
-		minio:dsync:fb604af:minio_dsync/vendor/github.com/minio/dsync \
+		minio:dsync:v1.0.0:minio_dsync/vendor/github.com/minio/dsync \
+		minio:hdfs:v3.0.0:minio_hdfs/vendor/github.com/minio/hdfs/v3 \
 		minio:highwayhash:v1.0.0:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:lsync:a4e43e3:minio_lsync/vendor/github.com/minio/lsync \
 		minio:mc:a1355e5:minio_mc/vendor/github.com/minio/mc \
@@ -117,6 +117,7 @@ GH_TUPLE=	\
 		nats-io:go-nats:v1.7.2:nats_io_go_nats/vendor/github.com/nats-io/go-nats \
 		nats-io:nkeys:v0.0.2:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
+		ncw:directio:v1.0.5:ncw_directio/vendor/github.com/ncw/directio \
 		nsqio:go-nsq:v1.0.7:nsqio_go_nsq/vendor/github.com/nsqio/go-nsq \
 		olivere:elastic:v5.0.80:olivere_elastic/vendor/gopkg.in/olivere/elastic.v5 \
 		pierrec:lz4:v2.0.5:pierrec_lz4/vendor/github.com/pierrec/lz4 \
@@ -140,8 +141,8 @@ GH_TUPLE=	\
 		tidwall:sjson:v1.0.4:tidwall_sjson/vendor/github.com/tidwall/sjson \
 		uber-go:atomic:v1.3.2:uber_go_atomic/vendor/go.uber.org/atomic \
 		valyala:tcplisten:ceec8f9:valyala_tcplisten/vendor/github.com/valyala/tcplisten
-PLIST_FILES=	bin/minio
 
+PLIST_FILES=	bin/${PORTNAME}
 USE_RC_SUBR=	minio
 
 USERS=		minio
@@ -151,7 +152,7 @@ SUB_LIST=	USER="${USERS}" \
 		GROUP="${GROUPS}"
 
 do-build:
-	@cd ${WRKSRC}/${GH_SUBDIR} ; \
+	cd ${WRKSRC}/${GH_SUBDIR} ; \
 	${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} CGO_ENABLED=0 go build \
 		--ldflags '-X github.com/minio/minio/cmd.Version=${GH_TAGNAME:C/RELEASE\.//:C|(..)-(..)-(..)Z|\1:\2:\3Z|} -X github.com/minio/minio/cmd.ReleaseTag=${GH_TAGNAME} -X github.com/minio/minio/cmd.CommitID=${COMMIT_ID} -X github.com/minio/minio/cmd.GOPATH=${WRKSRC} -s -w' -o ${WRKSRC}/bin/minio
 
