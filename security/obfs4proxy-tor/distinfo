@@ -19,5 +19,5 @@ SHA256 (golang-sys-b44545b_GH0.tar.gz) = c2945ce1c5f1326d74d622a66b290b6515c85e6
 SIZE (golang-sys-b44545b_GH0.tar.gz) = 1265704
 SHA256 (Yawning-bsaes-26d1add_GH0.tar.gz) = a6eb5058cc68909cd1bacfc6345ea958187481ef85ef8a30887d4eea7c6eb6af
 SIZE (Yawning-bsaes-26d1add_GH0.tar.gz) = 18853
-SHA256 (obfs4proxy-utls-6fb25fe80308b52db645922e9b919fbbe519656b_GL0.tar.gz) = 4d5f534269e67be830361e6e0fab94dd07bb1096e23b7ef5337fce4a7b313efe
-SIZE (obfs4proxy-utls-6fb25fe80308b52db645922e9b919fbbe519656b_GL0.tar.gz) = 533335
+SHA256 (yawning-utls-6fb25fe80308b52db645922e9b919fbbe519656b_GL0.tar.gz) = 4d5f534269e67be830361e6e0fab94dd07bb1096e23b7ef5337fce4a7b313efe
+SIZE (yawning-utls-6fb25fe80308b52db645922e9b919fbbe519656b_GL0.tar.gz) = 533335

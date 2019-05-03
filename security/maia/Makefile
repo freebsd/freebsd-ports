@@ -5,7 +5,6 @@ PORTNAME=	maia
 DISTVERSION=	1.0.4
 PORTREVISION=	4
 CATEGORIES=	security
-DISTNAME=	maia_mailguard
 
 MAINTAINER=	ek@purplehat.org
 COMMENT=	Web-based management system based on amavisd-new and SpamAssassin
@@ -35,7 +34,6 @@ GH_PROJECT=	maia_mailguard
 GH_TAGNAME=	09eb7e5
 USE_PERL5=	run
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 DOCS=	LICENSE.txt README.md maiad.conf.dist maia-mysql.sql maia-pgsql.sql maia.conf.dist
 USERS=	vscan
 GROUPS=	vscan
