@@ -1,6 +1,6 @@
---- src/openrct2/config/Config.cpp.orig	2018-03-18 20:26:14 UTC
+--- src/openrct2/config/Config.cpp.orig	2018-08-26 20:20:13 UTC
 +++ src/openrct2/config/Config.cpp
-@@ -602,6 +602,9 @@ namespace Config
+@@ -650,6 +650,9 @@ namespace Config
       */
      static std::string FindRCT2Path()
      {
@@ -9,4 +9,4 @@
 +
          log_verbose("config_find_rct2_path(...)");
  
-         static constexpr const utf8 * searchLocations[] =
+         static constexpr const utf8* searchLocations[] = {
