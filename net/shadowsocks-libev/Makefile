@@ -7,13 +7,14 @@ DISTVERSION=	3.1.3
 PORTREVISION=	6
 CATEGORIES=	net
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	662b6db3f3c395b552fa16f7fb22558aa38fe6aa.patch:-p1 \
+
 MAINTAINER=	xiaoding+freebsd@xiaoding.org
 COMMENT=	Lightweight tunnel proxy which can help you get through firewalls
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_powerpc64=	fails to link: cc: Internal error: Segmentation fault (program ld)
 
 LIB_DEPENDS=	libev.so:devel/libev \
 		libmbedcrypto.so:security/mbedtls \
@@ -21,7 +22,7 @@ LIB_DEPENDS=	libev.so:devel/libev \
 		libsodium.so:security/libsodium \
 		libcares.so:dns/c-ares
 
-USES=		autoreconf gmake libtool:keepla pathfix
+USES=		autoreconf compiler:c11 gmake libtool:keepla pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_GITHUB=	yes
