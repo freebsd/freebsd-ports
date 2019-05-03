@@ -3185,6 +3185,7 @@ bin/frozen-bubble-editor
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx/pinguins/win_rp4_0066.png
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx/pinguins/win_rp4_0067.png
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx/pinguins/win_rp4_0068.png
+%%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx/pinguins/window_icon_penguin.bmp
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx/pinguins/window_icon_penguin.png
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx/purple_hover.gif
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/gfx/scroll_list_background.png
@@ -3211,6 +3212,7 @@ bin/frozen-bubble-editor
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/icons/frozen-bubble-icon-32x32.png
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/icons/frozen-bubble-icon-48x48.png
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/icons/frozen-bubble-icon-64x64.png
+%%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/icons/frozen-bubble.ico
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/locale/af.po
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/locale/bg.po
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/locale/br.po
@@ -3243,6 +3245,7 @@ bin/frozen-bubble-editor
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/locale/sv.po
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/locale/tr.po
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/locale/zh_CN.po
+%%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/locale/zh_TW.po
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/snd/applause.ogg
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/snd/cancel.ogg
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/snd/chatted.ogg
