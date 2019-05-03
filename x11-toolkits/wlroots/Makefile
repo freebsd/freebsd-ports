@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wlroots
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -29,9 +29,13 @@ MESON_ARGS=	-Dexamples=false
 # https://github.com/swaywm/wlroots/issues/1450
 LLD_UNSAFE=	yes
 
-OPTIONS_DEFINE=	X11
-OPTIONS_DEFAULT=X11
+OPTIONS_DEFINE=	FREERDP X11
+OPTIONS_DEFAULT=FREERDP X11
 OPTIONS_SUB=	yes
+
+FREERDP_DESC=	RDP backend with freerdp
+FREERDP_LIB_DEPENDS=	libfreerdp2.so:net/freerdp
+FREERDP_MESON_ENABLED=	freerdp
 
 X11_LIB_DEPENDS=libxcb-errors.so:x11/xcb-util-errors \
 		libxcb-icccm.so:x11/xcb-util-wm
