@@ -1,6 +1,6 @@
---- xpra/net/bytestreams.py.orig	2018-12-28 00:32:28 UTC
+--- xpra/net/bytestreams.py.orig	2019-03-19 15:05:11 UTC
 +++ xpra/net/bytestreams.py
-@@ -378,7 +378,7 @@ class SocketConnection(Connection):
+@@ -410,7 +410,7 @@ class SocketConnection(Connection):
                  fd = 0
              if fd:
                  info["fileno"] = fd
