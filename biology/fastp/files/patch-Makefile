@@ -1,0 +1,34 @@
+--- Makefile.orig	2019-04-17 03:23:22 UTC
++++ Makefile
+@@ -3,9 +3,11 @@ DIR_SRC := ./src
+ DIR_OBJ := ./obj
+ 
+ PREFIX ?= /usr/local
++DESTDIR ?=
+ BINDIR ?= $(PREFIX)/bin
+ INCLUDE_DIRS ?=
+ LIBRARY_DIRS ?=
++STRIP_CMD ?= strip
+ 
+ SRC := $(wildcard ${DIR_SRC}/*.cpp)
+ OBJ := $(patsubst %.cpp,${DIR_OBJ}/%.o,$(notdir ${SRC}))
+@@ -15,7 +17,8 @@ TARGET := fastp
+ BIN_TARGET := ${TARGET}
+ 
+ CXX ?= g++
+-CXXFLAGS := -std=c++11 -g -O3 -I${DIR_INC} $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir)) ${CXXFLAGS}
++CXXFLAGS ?= -g -O3
++CXXFLAGS += -std=c++11 -I${DIR_INC} $(foreach includedir,$(INCLUDE_DIRS),-I$(includedir))
+ LIBS := -lz -lpthread
+ LD_FLAGS := $(foreach librarydir,$(LIBRARY_DIRS),-L$(librarydir)) $(LIBS) $(LD_FLAGS)
+ 
+@@ -38,5 +41,8 @@ make_obj_dir:
+ 	fi
+ 
+ install:
+-	install $(TARGET) $(BINDIR)/$(TARGET)
++	install $(TARGET) $(DESTDIR)$(BINDIR)/$(TARGET)
+ 	@echo "Installed."
++
++install-strip: install
++	$(STRIP_CMD) $(DESTDIR)$(BINDIR)/$(TARGET)
