@@ -9,3 +9,21 @@
  
  /*
  ** Allows POSIX/XSI stuff
+--- src/lgc.c.orig	2017-08-31 16:15:27 UTC
++++ src/lgc.c
+@@ -984,7 +984,6 @@ static l_mem atomic (lua_State *L) {
+   l_mem work;
+   GCObject *origweak, *origall;
+   GCObject *grayagain = g->grayagain;  /* save original list */
+-  lua_assert(g->ephemeron == NULL && g->weak == NULL);
+   lua_assert(!iswhite(g->mainthread));
+   g->gcstate = GCSinsideatomic;
+   g->GCmemtrav = 0;  /* start counting work */
+@@ -1061,6 +1060,7 @@ static lu_mem singlestep (lua_State *L) 
+     }
+     case GCSatomic: {
+       lu_mem work;
++      lua_assert(g->ephemeron == NULL && g->weak == NULL);
+       propagateall(g);  /* make sure gray list is empty */
+       work = atomic(L);  /* work is what was traversed by 'atomic' */
+       entersweep(L);
