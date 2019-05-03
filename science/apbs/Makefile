@@ -9,8 +9,7 @@ CATEGORIES=	science
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Electrostatic and solvation properties for complex molecules
 
-LICENSE=	LGPL21
-xLICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	MIT
 
 USES=		cmake shebangfix
 SHEBANG_FILES=	tools/github/getReleases.sh
