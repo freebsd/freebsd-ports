@@ -2,7 +2,7 @@
 
 PORTNAME=	docker-credential-pass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	dg@syrec.org
@@ -11,23 +11,24 @@ COMMENT=	Helper to use sysutils/password-store as Docker credentials store
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 RUN_DEPENDS=	${LOCALBASE}/bin/pass:sysutils/password-store
+
+USES=		go
+
+GO_PKGNAME=	github.com/docker/docker-credential-helpers
+GO_TARGET=	./pass/cmd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	docker
 GH_PROJECT=	docker-credential-helpers
-GH_SUBDIR=	src/github.com/docker/docker-credential-helpers
 
 PLIST_FILES=	bin/docker-credential-pass
 
-do-build:
-	${CP} ${WRKSRC}/${GH_SUBDIR}/pass/cmd/main_linux.go ${WRKSRC}/${GH_SUBDIR}/pass/cmd/main_freebsd.go
-	${CP} ${WRKSRC}/${GH_SUBDIR}/pass/pass_linux.go ${WRKSRC}/${GH_SUBDIR}/pass/pass_freebsd.go
-	cd ${WRKSRC}/${GH_SUBDIR}/pass && \
-		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build -o ${PORTNAME} ./cmd
+pre-build:
+	${CP} ${GO_WRKSRC}/pass/cmd/main_linux.go ${GO_WRKSRC}/pass/cmd/main_freebsd.go
+	${CP} ${GO_WRKSRC}/pass/pass_linux.go ${GO_WRKSRC}/pass/pass_freebsd.go
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${GH_SUBDIR}/pass/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/cmd ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
