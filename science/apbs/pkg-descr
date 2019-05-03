@@ -1,0 +1,8 @@
+APBS and PDB2PQR: electrostatic and solvation properties for complex molecules.
+
+APBS solves the equations of continuum electrostatics for large biomolecular
+assemblages. This software was designed "from the ground up" using modern design
+principles to ensure its ability to interface with other computational packages
+and evolve as methods and applications change over time.
+
+WWW: https://www.poissonboltzmann.org/
