@@ -1,15 +1,11 @@
-# preload the correct libgcc_s.so for libgfortran.so,
-# which is required for numpy
-#
---- scripts/xpra.orig	2018-10-14 16:59:50 UTC
+--- scripts/xpra.orig	2019-03-19 15:05:07 UTC
 +++ scripts/xpra
-@@ -7,6 +7,9 @@ try:
- except ImportError as e:
-     sys.stderr.write("Error: xpra for python %s is not installed\n" % (".".join(str(x) for x in sys.version_info[:2])))
+@@ -17,6 +17,8 @@ except ImportError as e:
+         sys.stderr.write(" retrying with %s\n" % py_exe)
+         os.execvpe(py_exe, argv, env)
      sys.exit(1)
 +from ctypes import cdll
 +cdll.LoadLibrary("%%GCC_RUNTIME%%/libgcc_s.so")
-+
+ 
  from xpra.platform import init, set_default_name
  set_default_name("Xpra")
- init()
