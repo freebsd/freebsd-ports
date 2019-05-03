@@ -36,6 +36,7 @@ load_rc_config $name
 : ${mattermostd_flags:="--disableconfigwatch"}
 : ${mattermostd_facility:="daemon"}
 : ${mattermostd_priority:="info"}
+: ${mattermostd_tag:="mattermostd"}
 : ${mattermostd_conf:="%%PREFIX%%/etc/mattermost/config.json"}
 : ${mattermostd_options:="${mattermostd_flags} --config=${mattermostd_conf}"}
 
@@ -49,7 +50,7 @@ mattermostd_startcmd_daemon()
 {
     echo "Starting ${name}."
     cd /usr/local/www/mattermost && \
-        /usr/sbin/daemon -p ${mattermostd_pidfile} -S -s ${mattermostd_priority} -l ${mattermostd_facility} \
+        /usr/sbin/daemon -p ${mattermostd_pidfile} -S -s ${mattermostd_priority} -l ${mattermostd_facility} -T ${mattermostd_tag} \
        	-u ${mattermostd_user} ${procname} ${mattermostd_options}
 }
 
