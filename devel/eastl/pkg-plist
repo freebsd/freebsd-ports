@@ -25,6 +25,7 @@ include/EASTL/bonus/intrusive_sdlist.h
 include/EASTL/bonus/intrusive_slist.h
 include/EASTL/bonus/list_map.h
 include/EASTL/bonus/ring_buffer.h
+include/EASTL/bonus/lru_cache.h
 include/EASTL/bonus/sort_extra.h
 include/EASTL/bonus/sparse_matrix.h
 include/EASTL/bonus/tuple_vector.h
