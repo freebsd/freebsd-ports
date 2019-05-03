@@ -6,8 +6,7 @@ PORTVERSION=	5.3
 DISTVERSIONPREFIX=	release/
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://unicode.org/Public/12.0.0/ucd/:unidata
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		Blocks-12.0.0d1.txt:unidata
+DISTFILES=	Blocks-12.0.0d1.txt:unidata
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
