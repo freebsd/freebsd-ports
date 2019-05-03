@@ -893,6 +893,7 @@ libdata/pkgconfig/tinfow.pc
 %%MANPAGES%%man/man3/use_legacy_coding.3x.gz
 %%MANPAGES%%man/man3/use_screen.3x.gz
 %%MANPAGES%%man/man3/use_tioctl.3x.gz
+%%MANPAGES%%man/man3/use_tioctl_sp.3x.gz
 %%MANPAGES%%man/man3/use_window.3x.gz
 %%MANPAGES%%man/man3/vid_attr_sp.3x.gz
 %%MANPAGES%%man/man3/vid_attr.3x.gz
