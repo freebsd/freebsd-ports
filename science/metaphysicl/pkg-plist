@@ -32,6 +32,7 @@ include/metaphysicl/dynamicsparsenumbervector.h
 include/metaphysicl/dynamicsparsenumbervector_decl.h
 include/metaphysicl/metaphysicl_asserts.h
 include/metaphysicl/metaphysicl_cast.h
+include/metaphysicl/metaphysicl_common.h
 include/metaphysicl/metaphysicl_exceptions.h
 include/metaphysicl/metaphysicl_version.h
 include/metaphysicl/metaprogramming.h
@@ -48,7 +49,7 @@ include/metaphysicl/sparsenumberutils.h
 include/metaphysicl/sparsenumbervector.h
 include/metaphysicl/testable.h
 lib/libmetaphysicl.so
-lib/libmetaphysicl.so.1
-lib/libmetaphysicl.so.1.0.0
+lib/libmetaphysicl.so.3
+lib/libmetaphysicl.so.3.0.0
 libdata/pkgconfig/metaphysicl.pc
 share/aclocal/metaphysicl.m4
