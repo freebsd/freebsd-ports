@@ -12,6 +12,9 @@ COMMENT=	Access X11 selection buffer from command line
 
 LICENSE=	MIT
 
+DEPRECATED=		Abandonware; use x11/xsel-conrad instead
+EXPIRATION_DATE=	2019-05-08
+
 CONFLICTS_INSTALL=	xsel-conrad-[0-9]*
 
 USES=		tar:bzip2
