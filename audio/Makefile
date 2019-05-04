@@ -135,6 +135,7 @@
     SUBDIR += eq10q-lv2
     SUBDIR += esound
     SUBDIR += espeak
+    SUBDIR += espressivo-lv2
     SUBDIR += etcd
     SUBDIR += eteroj-lv2
     SUBDIR += etktab
