@@ -1,10 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	dDocent
+PORTNAME=		dDocent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.25
-PORTREVISION=	1
-CATEGORIES=	biology java
+DISTVERSION=		2.7.8
+CATEGORIES=		biology java perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bash pipeline for RAD sequencing
@@ -32,29 +31,21 @@ RUN_DEPENDS=	unzip>=0:archivers/unzip \
 		bedtools>=2.26.0:biology/bedtools \
 		pear-merger>=0:biology/pear-merger \
 		vcflib>=0:biology/vcflib \
-		freebayes:biology/freebayes
+		freebayes:biology/freebayes \
+		fastp:biology/fastp
 
 USES=		perl5 python shebangfix
-SHEBANG_FILES=	dDocent scripts/*.sh scripts/*.pl scripts/dDocent_filters
 USE_JAVA=	yes
 USE_GITHUB=	yes
+
+SHEBANG_FILES=	dDocent scripts/*.sh scripts/*.pl scripts/dDocent_filters
 GH_ACCOUNT=	jpuritz
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-# These are on top of patch-dDocent, so don't apply them within the source
-# tree, or they'll get picked up by patch generators, and hard-code PREFIX.
-post-install:
-	${REINPLACE_CMD} -i '' \
-		-e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
-		-e 's|%%BASH%%|${LOCALBASE}/bin/bash|g' \
-		-e 's|python|${PYTHON_CMD}|g' \
-		${STAGEDIR}${PREFIX}/bin/dDocent
-
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/dDocent \
 		${WRKSRC}/*.sh \
@@ -64,5 +55,13 @@ do-install:
 		${WRKSRC}/scripts/*.pl \
 		${WRKSRC}/scripts/dDocent_filters \
 		${STAGEDIR}${PREFIX}/bin
+
+# These are on top of patch-dDocent, so don't apply them within the source
+# tree, or they'll get picked up by patch generators, and hard-code PREFIX.
+post-install:
+	@${REINPLACE_CMD} -i '' \
+		-e 's|SHELL=bash|SHELL=${LOCALBASE}/bin/bash|g' \
+		-e 's|python|${PYTHON_CMD}|g' \
+		${STAGEDIR}${PREFIX}/bin/dDocent
 
 .include <bsd.port.mk>

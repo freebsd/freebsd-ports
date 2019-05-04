@@ -135,15 +135,11 @@ rm *rem*
 { set +x; } 2>/dev/null
 pause
 
-rm -f Rename_for_dDocent.sh     # Always get the latest
-set -x
-curl --insecure -L -O https://github.com/jpuritz/dDocent/raw/master/Rename_for_dDocent.sh
-more Rename_for_dDocent.sh
 { set +x; } 2>/dev/null
 pause
 
 set -x
-bash Rename_for_dDocent.sh SimRAD.barcodes
+Rename_for_dDocent.sh SimRAD.barcodes
 { set +x; } 2>/dev/null
 
 set -x
@@ -312,20 +308,11 @@ cd-hit-est -i rainbow.fasta -o referenceRC.fasta -M 0 -T 0 -c 0.9
 { set +x; } 2>/dev/null
 pause
 
-rm -f remake_reference.sh
-set -x
-curl --insecure -L -O https://github.com/jpuritz/dDocent/raw/master/scripts/remake_reference.sh
-more remake_reference.sh
-#fix_bash_path remake_reference.sh
-
-bash remake_reference.sh 4 4 0.90 PE 2
+remake_reference.sh 4 4 0.90 PE 2
 { set +x; } 2>/dev/null
 pause
 
-rm -f ReferenceOpt.sh
-set -x
-curl --insecure -L -O https://github.com/jpuritz/dDocent/raw/master/scripts/ReferenceOpt.sh
-more ReferenceOpt.sh
+ReferenceOpt.sh
 
 bash ReferenceOpt.sh 4 8 4 8 PE 16
 { set +x; } 2>/dev/null
@@ -357,7 +344,6 @@ printf "Bonus Section: Optimize reference assemblies? (takes a long time) y/[n] 
 read bonus
 if [ 0$bonus = 0y ]; then
     set -x
-    curl -L -O https://raw.githubusercontent.com/jpuritz/dDocent/master/scripts/RefMapOpt.sh
     { set +x; } 2>/dev/null
     printf "Running dDocent to trim reads.\n"
     pause
@@ -372,7 +358,7 @@ no
 no
 bacon@uwm.edu
 EOM
-    bash RefMapOpt.sh 4 8 4 8 0.9 64 PE
+    RefMapOpt.sh 4 8 4 8 0.9 64 PE
     { set +x; } 2>/dev/null
     pause
     more mapping.results
