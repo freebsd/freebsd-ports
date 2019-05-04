@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	netpbm
-DISTVERSION=	10.86.02
+DISTVERSION=	10.86.03
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/ \
-		https://gitlab.com/tobiask/netpbm/uploads/1e1e21d485ff76f00e91c598881963a6/ \
+		https://gitlab.com/tobiask/netpbm/uploads/4289d10d566221cabdbb0ba39f37e593/ \
 		LOCAL/tobik
 
 MAINTAINER=	tobik@FreeBSD.org
