@@ -13,8 +13,6 @@ COMMENT=	Horizontally scale Postgresql using sharding and replication
 
 LICENSE=	AGPLv3
 
-BROKEN_armv6=		fails to compile: transaction/backend_data.c:53:2: error: unknown type name 'pg_atomic_uint64'; did you mean 'pg_atomic_uint32'?
-BROKEN_armv7=		fails to compile: transaction/backend_data.c:53:2: error: unknown type name 'pg_atomic_uint64'; did you mean 'pg_atomic_uint32'?
 BROKEN_i386=		fails to compile: transaction/backend_data.c:727:2: error: unknown type name 'pg_atomic_uint64'; did you mean 'pg_atomic_uint32'?
 
 USES=		gmake pgsql:10+ autoreconf readline
