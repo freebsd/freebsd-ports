@@ -4,6 +4,7 @@
 PORTNAME=	lastpass-cli
 PORTVERSION=	1.3.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	tom@hur.st
@@ -39,7 +40,7 @@ MANPAGES_PLIST_FILES=	${MANPREFIX}/man/man1/lpass.1.gz
 
 PINENTRY_RUN_DEPENDS=	pinentry:security/pinentry
 XCLIP_RUN_DEPENDS=	xclip:x11/xclip
-XSEL_RUN_DEPENDS=	xsel:x11/xsel
+XSEL_RUN_DEPENDS=	xsel:x11/xsel-conrad
 
 post-extract:
 	@${REINPLACE_CMD} -e 's/-Wno-language-extension-token//g' \
