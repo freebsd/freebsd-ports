@@ -6383,6 +6383,7 @@
     SUBDIR += valgrind-devel
     SUBDIR += varconf
     SUBDIR += vasm
+    SUBDIR += vc
     SUBDIR += vcglib
     SUBDIR += vera++
     SUBDIR += vexcl

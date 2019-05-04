@@ -1,0 +1,12 @@
+Vc is a free software library to ease explicit vectorization of C++ code. It has
+an intuitive API and provides portability between different compilers and
+compiler versions as well as portability between different vector instruction
+sets. Thus an application written with Vc can be compiled for:
+* AVX and AVX2
+* SSE2 up to SSE4.2 or SSE4a
+* Scalar
+* AVX-512 (Vc 2 development)
+* NEON (in development)
+* NVIDIA GPUs / CUDA (research)
+
+WWW: https://github.com/VcDevel/Vc
