@@ -1,44 +1,13 @@
---- dDocent.orig	2018-04-20 00:10:34 UTC
+--- dDocent.orig	2019-05-03 12:59:20 UTC
 +++ dDocent
-@@ -1,6 +1,9 @@
+@@ -1,5 +1,6 @@
  #!/usr/local/bin/bash
  export LC_ALL=en_US.UTF-8
- 
 +# GNU Parallel uses $SHELL and has issues with [t]csh
-+export SHELL=%%BASH%%
-+
+ export SHELL=bash
+ 
  ##########dDocent##########
- VERSION='2.2.25'
- #This script serves as an interactive bash wrapper to QC, assemble, map, and call SNPs from double digest RAD (SE or PE), ezRAD (SE or PE) data, or SE RAD data.
-@@ -27,15 +30,15 @@ do
- 	fi
- done
- 
--if find ${PATH//:/ } -maxdepth 1 -name trimmomatic*jar 2> /dev/null| grep -q 'trim' ; then
--	TRIMMOMATIC=$(find ${PATH//:/ } -maxdepth 1 -name trimmomatic*jar 2> /dev/null | head -1)
-+if [ -e %%JAVAJARDIR%%/trimmomatic.jar ]; then
-+       TRIMMOMATIC=%%JAVAJARDIR%%/trimmomatic.jar
- 	else
-     echo "The dependency trimmomatic is not installed or is not in your" '$PATH'"."
-     NUMDEP=$((NUMDEP + 1))
- 	fi
- 
--if find ${PATH//:/ } -maxdepth 1 -name TruSeq2-PE.fa 2> /dev/null | grep -q 'Tru' ; then
--	ADAPTERS=$(find ${PATH//:/ } -maxdepth 1 -name TruSeq2-PE.fa 2> /dev/null | head -1)
-+if [ -e %%PREFIX%%/share/trimmomatic/adapters/TruSeq2-PE.fa ]; then
-+       ADAPTERS=%%PREFIX%%/share/trimmomatic/adapters/TruSeq2-PE.fa
- 	else
-     echo "The file listing adapters (included with trimmomatic) is not installed or is not in your" '$PATH'"."
-     NUMDEP=$((NUMDEP + 1))
-@@ -80,6 +83,7 @@ FREEB=(`freebayes | grep -oh 'v[0-9].*' 
-         	exit 1
-         fi         	
- VCFTV=$(vcftools | grep VCF | grep -oh '[0-9]*[a-z]*)$' | sed 's/[a-z)]//')
-+	echo $VCFTV
- 	if [ "$VCFTV" -lt "10" ]; then
-         	echo "The version of VCFtools installed in your" '$PATH' "is not optimized for dDocent."
-         	echo "Please install at least version 0.1.11"
-@@ -89,7 +93,7 @@ VCFTV=$(vcftools | grep VCF | grep -oh '
+@@ -83,7 +84,7 @@ VCFTV=$(vcftools | grep VCF | grep -oh '[0-9]*[a-z]*)$
          elif [ "$VCFTV" -ge "12" ]; then
                  VCFGTFLAG="--max-missing"
  	fi
@@ -47,88 +16,58 @@
  	if [ "$BWAV" -lt "13" ]; then
          	echo "The version of bwa installed in your" '$PATH' "is not optimized for dDocent."
          	echo "Please install at least version 0.7.13"
-@@ -107,13 +111,12 @@ BTC=$( bedtools --version | mawk '{print
- 		exit 1	
+@@ -481,7 +482,7 @@ if [ "$SNP" != "no" ]; then
+         		if ( cov < cutoff) {x="mapped."i".bed";print $1"\t"$2"\t"$3 > x}
+         		else {i=i+1; x="mapped."i".bed"; print $1"\t"$2"\t"$3 > x; cov=0}
+         	}'
+-                ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | shuf | parallel --bar --halt now,fail=1 --env call_genos2 --memfree $MAXMemory -j 4 --no-notice "call_genos2 {} 2> /dev/null"
++                ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | gshuf | parallel --bar --halt now,fail=1 --env call_genos2 --memfree $MAXMemory -j 4 --no-notice "call_genos2 {} 2> /dev/null"
+                 if [ -f "freebayes.error" ]; then
+                         echo -e "\n\n\nFreeBayes has failed when trying to finish a previously failed instance.  Memory and processor settings need to be drastically reconfigured"
+                         ERROR3=1
+@@ -505,7 +506,7 @@ if [ "$SNP" != "no" ]; then
+ 	
+ 	rm freebayes.error freebayes.log &> /dev/null
+ 	
+-	ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | shuf | parallel --bar --halt now,fail=5 --env call_genos --memfree $MAXMemory -j $NUMProc --no-notice "call_genos {} 2> /dev/null"
++	ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | gshuf | parallel --bar --halt now,fail=5 --env call_genos --memfree $MAXMemory -j $NUMProc --no-notice "call_genos {} 2> /dev/null"
+ 
+ 
+ 	if [ -f "freebayes.error" ]; then
+@@ -541,7 +542,7 @@ if [ "$SNP" != "no" ]; then
+ 			echo "Using FreeBayes to call SNPs again"
+ 			NumP=$(( $NUMProc / 4 ))
+ 			NumP=$(( $NumP * 3 ))
+-			ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | shuf | parallel --bar --halt now,fail=5 --env call_genos --memfree $MAXMemory -j $NumP --no-notice "call_genos {} 2> /dev/null" 
++			ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | gshuf | parallel --bar --halt now,fail=5 --env call_genos --memfree $MAXMemory -j $NumP --no-notice "call_genos {} 2> /dev/null" 
+         fi
+     fi
+ 
+@@ -575,7 +576,7 @@ if [ "$SNP" != "no" ]; then
+             	NumP=$(( $NumP / 4 ))
+                 NumP=$(( $NumP * 3 ))
+ 			echo "Using FreeBayes to call SNPs again"
+-            ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | shuf | parallel --bar --halt now,fail=1 --env call_genos --memfree $MAXMemory -j $NumP --no-notice "call_genos {} 2> /dev/null"
++            ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | gshuf | parallel --bar --halt now,fail=1 --env call_genos --memfree $MAXMemory -j $NumP --no-notice "call_genos {} 2> /dev/null"
+         fi
  	fi
- 		
--if ! awk --version | fgrep -v GNU &>/dev/null; then
-+if ! awk --version | fgrep GNU &>/dev/null; then
-          awk=gawk
-     else
-          awk=awk
+ 
+@@ -1132,6 +1133,8 @@ fi
+ 
+ if [[ "$OSTYPE" == "darwin"* ]]; then
+ 	NUMProc=( `sysctl hw.ncpu | cut -f2 -d " " `)
++elif [[ "$OSTYPE" == "FreeBSD" ]]; then
++	NUMProc=( `sysctl -n hw.ncpu` )
+ else
+ 	NUMProc=( `grep -c ^processor /proc/cpuinfo 2> /dev/null` ) 
  fi
- 
--
- if [ $NUMDEP -gt 0 ]; then
- 	echo -e "\nPlease install all required software before running dDocent again."
- 	exit 1
-@@ -291,9 +294,9 @@ echo "Using BWA to map reads."
-         	for i in "${NAMES[@]}"
-         	do
-         	if [ -f "$i.R2.fq.gz" ]; then
--        		bwa mem reference.fasta $i.R1.fq.gz $i.R2.fq.gz -L 20,5 -I $INSERT,$SD,$INSERTH,$INSERTL -t $NUMProc -a -M -T 10 -A $optA -B $optB -O $optO -R "@RG\tID:$i\tSM:$i\tPL:Illumina" 2> bwa.$i.log | mawk '$6 !~/[2-9].[SH]/ && $6 !~ /[1-9][0-9].[SH]/' | samtools view -@$NUMProc -q 1 -SbT reference.fasta - > $i.bam 2>$i.bam.log
-+        		bwa mem -L 20,5 -I $INSERT,$SD,$INSERTH,$INSERTL -t $NUMProc -a -M -T 10 -A $optA -B $optB -O $optO -R "@RG\tID:$i\tSM:$i\tPL:Illumina" reference.fasta $i.R1.fq.gz $i.R2.fq.gz 2> bwa.$i.log | mawk '$6 !~/[2-9].[SH]/ && $6 !~ /[1-9][0-9].[SH]/' | samtools view -@$NUMProc -q 1 -SbT reference.fasta - > $i.bam 2>$i.bam.log
-         	else
--        		bwa mem reference.fasta $i.R1.fq.gz -L 20,5 -t $NUMProc -a -M -T 10 -A $optA -B $optB -O $optO -R "@RG\tID:$i\tSM:$i\tPL:Illumina" 2> bwa.$i.log | mawk '$6 !~/[2-9].[SH]/ && $6 !~ /[1-9][0-9].[SH]/' | samtools view -@$NUMProc -q 1 -SbT reference.fasta - > $i.bam 2>$i.bam.log
-+        		bwa mem -L 20,5 -t $NUMProc -a -M -T 10 -A $optA -B $optB -O $optO -R "@RG\tID:$i\tSM:$i\tPL:Illumina" reference.fasta $i.R1.fq.gz 2> bwa.$i.log | mawk '$6 !~/[2-9].[SH]/ && $6 !~ /[1-9][0-9].[SH]/' | samtools view -@$NUMProc -q 1 -SbT reference.fasta - > $i.bam 2>$i.bam.log
-         	fi
-         	samtools sort -@$NUMProc $i.bam -o $i.bam 
- 		mv $i.bam $i-RG.bam
-@@ -388,10 +391,10 @@ if [ "$SNP" != "no" ]; then
- 	}
- 	export -f call_genos
- 
--	ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | shuf | parallel --env call_genos --memfree $MAXMemory -j $NUMProc --no-notice call_genos {}
-+	ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | gshuf | parallel --env call_genos --memfree $MAXMemory -j $NUMProc --no-notice call_genos {}
- ####	
--	#ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | shuf | parallel --memfree $MAXMemory -j $FB1 --no-notice --delay 1 freebayes -L bamlist.list -t mapped.{}.bed -v raw.{}.vcf -f reference.fasta -m 5 -q 5 -E 3 --min-repeat-entropy 1 -V --populations popmap -n 10
--	#ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | shuf | parallel --memfree $MAXMemory -j $FB1 --no-notice "samtools view -b -L mapped.{}.bed | freebayes -c -t mapped.{}.bed -v raw.{}.vcf -f reference.fasta -m 5 -q 5 -E 3 --min-repeat-entropy 1 -V --populations popmap -n 10"
-+	#ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | gshuf | parallel --memfree $MAXMemory -j $FB1 --no-notice --delay 1 freebayes -L bamlist.list -t mapped.{}.bed -v raw.{}.vcf -f reference.fasta -m 5 -q 5 -E 3 --min-repeat-entropy 1 -V --populations popmap -n 10
-+	#ls mapped.*.bed | sed 's/mapped.//g' | sed 's/.bed//g' | gshuf | parallel --memfree $MAXMemory -j $FB1 --no-notice "samtools view -b -L mapped.{}.bed | freebayes -c -t mapped.{}.bed -v raw.{}.vcf -f reference.fasta -m 5 -q 5 -E 3 --min-repeat-entropy 1 -V --populations popmap -n 10"
- 
- 
- 	rm mapped.*.bed 
-@@ -447,8 +450,8 @@ fi
- 
- #Function for trimming reads using trimmomatic
- trim_reads(){
--	TRIMMOMATIC=$(find ${PATH//:/ } -maxdepth 1 -name trimmomatic*jar 2> /dev/null | head -1)
--    ADAPTERS=$(find ${PATH//:/ } -maxdepth 1 -name TruSeq2-PE.fa 2> /dev/null | head -1)
-+       TRIMMOMATIC=%%JAVAJARDIR%%/trimmomatic.jar
-+       ADAPTERS=%%PREFIX%%/share/trimmomatic/adapters/TruSeq2-PE.fa
- 
- 	if [ -f $1.R.fq.gz ]; then	
- 		java -Xmx2g -jar $TRIMMOMATIC PE -threads 2 -phred33 $1.F.fq.gz $1.R.fq.gz $1.R1.fq.gz $1.unpairedF.fq.gz $1.R2.fq.gz $1.unpairedR.fq.gz ILLUMINACLIP:$ADAPTERS:2:30:10 LEADING:20 TRAILING:20 SLIDINGWINDOW:5:10 $TW &> $1.trim.log
-@@ -747,7 +750,14 @@ else
- fi
- 
- #Tries to get number of processors, if not asks user
--NUMProc=( `grep -c ^processor /proc/cpuinfo 2> /dev/null` ) 
-+if [ `uname` = Linux ]; then
-+    NUMProc=( `grep -c ^processor /proc/cpuinfo 2> /dev/null` ) 
-+elif [ `uname` = FreeBSD ]; then
-+    NUMProc=( `sysctl -n hw.ncpu` ) 
-+else
-+    printf "Unsupported platform: `uname`\n"
-+    exit 1
-+fi
- NUMProc=$(($NUMProc + 0)) 
- 
- echo "dDocent detects $NUMProc processors available on this system."
-@@ -764,7 +774,15 @@ if [ $NUMProc -lt 1 ]; then
- fi
- 
+@@ -1154,6 +1157,9 @@ fi
  #Tries to get maximum system memory, if not asks user
--MAXMemory=$(($(grep -Po '(?<=^MemTotal:)\s*[0-9]+' /proc/meminfo | tr -d " ") / 1048576))G
-+if [ `uname` = Linux ]; then
-+    MAXMemory=$(($(grep -Po '(?<=^MemTotal:)\s*[0-9]+' /proc/meminfo | tr -d " ") / 1048576))G
-+elif [ `uname` = FreeBSD ]; then
-+    MAXMemory=`sysctl -n hw.realmem`
-+    MAXMemory=$((MAXMemory / 1073741824))G
-+else
-+    printf "Unsupported platform: `uname`\n"
-+    exit 1
-+fi
+ if [[ "$OSTYPE" == "darwin"* ]]; then
+ 	MAXMemory=0
++elif [[ "$OSTYPE" == "FreeBSD" ]]; then
++	MAXMemory=`sysctl -n hw.realmem`
++	MAXMemory=$((MAXMemory / 1073741824))G
+ else
+ 	MAXMemory=$(($(grep -Po '(?<=^MemTotal:)\s*[0-9]+' /proc/meminfo | tr -d " ") / 1048576))
  
- echo "dDocent detects $MAXMemory maximum memory available on this system."
- echo "Please enter the maximum memory to use for this analysis. The size can be postfixed with 
