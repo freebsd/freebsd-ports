@@ -13,9 +13,6 @@ COMMENT=	Modern implementation of DBM
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_armv6=		dumps core: Assertion failed: (!NodePtr->isKnownSentinel()), function operator*, file ilist_iterator.h
-BROKEN_armv7=		fails to build: cc: error: unable to execute command: Abort trap (core dumped)
-
 GNU_CONFIGURE=	yes
 USES=		pathfix gmake
 USE_LDCONFIG=	yes
