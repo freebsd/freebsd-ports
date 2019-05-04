@@ -1,8 +1,8 @@
---- codecs/jpeg.cc.orig	2009-06-14 08:19:28.000000000 -0400
-+++ codecs/jpeg.cc	2010-01-16 21:51:34.000000000 -0500
-@@ -683,7 +683,7 @@
-      * We need to clean up the JPEG object, close the input file, and return.
-      */
+--- codecs/jpeg.cc.orig	2017-08-08 14:31:16 UTC
++++ codecs/jpeg.cc
+@@ -901,7 +901,7 @@ bool JPEGCodec::readMeta (std::istream* stream, Image&
+     // If we get here, the JPEG code has signaled an error.
+     // We need to clean up the JPEG object, close the input file, and return.
      jpeg_destroy_decompress (cinfo);
 -    free (cinfo);
 +    delete cinfo;

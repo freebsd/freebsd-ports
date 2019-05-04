@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	exact-image
-PORTVERSION=	0.9.2
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics perl5 python
 MASTER_SITES=	https://dl.exactcode.de/oss/exact-image/
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libagg.so:graphics/agg \
 		libpng.so:graphics/png \
 		libgif.so:graphics/giflib \
 		libjasper.so:graphics/jasper \
+		libImath-2_3.so:graphics/ilmbase \
 		libIlmImf.so:graphics/openexr \
 		liblcms.so:graphics/lcms \
 		libfreetype.so:print/freetype2 \
