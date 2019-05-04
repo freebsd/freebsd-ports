@@ -21,6 +21,4 @@ GNU_CONFIGURE=	yes
 SHEBANG_FILES=	create-lw-file
 bash_CMD=	/bin/sh
 
-BROKEN_aarch64=	Fails to build: runaway process
-
 .include <bsd.port.mk>
