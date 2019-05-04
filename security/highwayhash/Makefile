@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	highwayhash
-DISTVERSION=	1.1
+PORTVERSION=	g20181002
+PORTEPOCH=	1
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
