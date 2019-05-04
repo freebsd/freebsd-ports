@@ -1,13 +1,13 @@
 ###############################################################################
 
-The Transmisson remote gui was installed
+The Transmisson Remote GUI was installed
 
 1) You can run it using:
 
    # transgui
 
-2) Don't forget that you need a transmission-daemon program configurated and
-   running before of use transgui.
+2) Don't forget that you need a transmission-daemon program configured and
+   running before use of transgui.
 
 3) Run "transmission-daemon --help" for more configuration options
 
