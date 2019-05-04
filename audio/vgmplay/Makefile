@@ -2,6 +2,7 @@
 
 PORTNAME=	vgmplay
 PORTVERSION=	0.40.9
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/vgmrips/${PORTNAME}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/vgmp/VGMP/}_${PORTVERSION:S/.//:S/./-/}_src
@@ -26,10 +27,12 @@ LIBAO_DESC=	Use libao
 OSS_MAKE_ENV+=	USE_LIBAO=0
 LIBAO_MAKE_ENV+=	USE_LIBAO=1
 LIBAO_LIB_DEPENDS=	libao.so:audio/libao
-LIBAO_CFLAGS+=	-I${LOCALBASE}/include
-LIBAO_LDFLAGS+=	-L${LOCALBASE}/lib
+LIBAO_USES=	localbase:ldflags
 
-MAKE_ENV+=	PREFIX=${LOCALBASE}
+MAKE_ENV+=	PREFIX=${LOCALBASE} ${MAKE_ENV_${ARCH}}
+MAKE_ENV_powerpc64=	BYTE_ORDER=2
+MAKE_ENV_powerpc=	BYTE_ORDER=2
+MAKE_ENV_powerpcspe=	BYTE_ORDER=2
 
 PLIST_FILES=	bin/vgmplay bin/vgm2pcm bin/vgm2wav man/man1/vgmplay.1.gz ${EXAMPLESDIR}/vgmplay.ini
 
