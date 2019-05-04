@@ -12,6 +12,7 @@ bin/xprep
 bin/xrd
 bin/xrdacctest
 bin/xrdadler32
+bin/xrdcopy
 bin/xrdcp
 bin/xrdcp-old
 bin/xrdfs
@@ -23,6 +24,7 @@ bin/xrdpwdadmin
 bin/xrdsssadmin
 bin/xrdstagetool
 bin/xrootd
+bin/xrootd-config
 include/xrootd/XProtocol/XProtocol.hh
 include/xrootd/XProtocol/XPtypes.hh
 include/xrootd/Xrd/XrdBuffer.hh
@@ -70,6 +72,7 @@ include/xrootd/XrdClient/XrdClientUrlInfo.hh
 include/xrootd/XrdClient/XrdClientUrlSet.hh
 include/xrootd/XrdClient/XrdClientVector.hh
 include/xrootd/XrdCms/XrdCmsClient.hh
+include/xrootd/XrdCms/XrdCmsVnId.hh
 include/xrootd/XrdFileCache/XrdFileCacheDecision.hh
 include/xrootd/XrdHttp/XrdHttpSecXtractor.hh
 include/xrootd/XrdNet/XrdNet.hh
@@ -87,6 +90,7 @@ include/xrootd/XrdOss/XrdOssStatInfo.hh
 include/xrootd/XrdOuc/XrdOucBuffer.hh
 include/xrootd/XrdOuc/XrdOucCRC.hh
 include/xrootd/XrdOuc/XrdOucCache.hh
+include/xrootd/XrdOuc/XrdOucCacheStats.hh
 include/xrootd/XrdOuc/XrdOucCallBack.hh
 include/xrootd/XrdOuc/XrdOucChain.hh
 include/xrootd/XrdOuc/XrdOucCompiler.hh
@@ -113,6 +117,7 @@ include/xrootd/XrdOuc/XrdOucTrace.hh
 include/xrootd/XrdOuc/XrdOucUtils.hh
 include/xrootd/XrdOuc/XrdOuca2x.hh
 include/xrootd/XrdPosix/XrdPosix.hh
+include/xrootd/XrdPosix/XrdPosixCache.hh
 include/xrootd/XrdPosix/XrdPosixCallBack.hh
 include/xrootd/XrdPosix/XrdPosixExtern.hh
 include/xrootd/XrdPosix/XrdPosixOsDep.hh
@@ -145,6 +150,13 @@ include/xrootd/XrdXml/XrdXmlReader.hh
 include/xrootd/XrdXrootd/XrdXrootdBridge.hh
 include/xrootd/XrdXrootd/XrdXrootdMonData.hh
 include/xrootd/private/Xrd/XrdPoll.hh
+include/xrootd/private/XrdClArg.hh
+include/xrootd/private/XrdClFileOperations.hh
+include/xrootd/private/XrdClFileSystemOperations.hh
+include/xrootd/private/XrdClFwd.hh
+include/xrootd/private/XrdClOperationHandlers.hh
+include/xrootd/private/XrdClOperations.hh
+include/xrootd/private/XrdClParallelOperation.hh
 include/xrootd/private/XrdClient/XrdClientConn.hh
 include/xrootd/private/XrdClient/XrdClientConnMgr.hh
 include/xrootd/private/XrdClient/XrdClientDebug.hh
@@ -169,6 +181,7 @@ include/xrootd/private/XrdOss/XrdOssError.hh
 include/xrootd/private/XrdOuc/XrdOucExport.hh
 include/xrootd/private/XrdOuc/XrdOucN2NLoader.hh
 include/xrootd/private/XrdOuc/XrdOucPList.hh
+include/xrootd/private/XrdSecsss/XrdSecsssID.hh
 include/xrootd/private/XrdSsi/XrdSsiAtomics.hh
 include/xrootd/private/XrdSsi/XrdSsiCluster.hh
 include/xrootd/private/XrdSsi/XrdSsiEntity.hh
@@ -212,6 +225,10 @@ lib/libXrdFfs.so.2
 lib/libXrdFfs.so.2.0.0
 lib/libXrdFileCache-4.so
 lib/libXrdHttp-4.so
+lib/libXrdHttpTPC-4.so
+lib/libXrdHttpUtils.so
+lib/libXrdHttpUtils.so.1
+lib/libXrdHttpUtils.so.1.0.0
 lib/libXrdN2No2p-4.so
 lib/libXrdOssSIgpfsT-4.so
 lib/libXrdPosix.so
@@ -252,6 +269,7 @@ lib/libXrdXrootd-4.so
 man/man1/xprep.1.gz
 man/man1/xrd.1.gz
 man/man1/xrdadler32.1.gz
+man/man1/xrdcopy.1.gz
 man/man1/xrdcp-old.1.gz
 man/man1/xrdcp.1.gz
 man/man1/xrdfs.1.gz
@@ -270,6 +288,6 @@ man/man8/xrdpfc_print.8.gz
 man/man8/xrdpwdadmin.8.gz
 man/man8/xrdsssadmin.8.gz
 man/man8/xrootd.8.gz
-%%DATADIR%%/xrootd/utils/XrdCmsNotify.pm
-%%DATADIR%%/xrootd/utils/XrdOlbMonPerf
-%%DATADIR%%/xrootd/utils/netchk
+%%DATADIR%%/utils/XrdCmsNotify.pm
+%%DATADIR%%/utils/XrdOlbMonPerf
+%%DATADIR%%/utils/netchk
