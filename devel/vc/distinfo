@@ -1,0 +1,7 @@
+TIMESTAMP = 1556950593
+SHA256 (VcDevel-Vc-1.4.1-10-g383ef32b_GH0.tar.gz) = 9b46f53006fde3c1b3614e9bbcc8087f8bad643e81ed320f08f2126d4e72e592
+SIZE (VcDevel-Vc-1.4.1-10-g383ef32b_GH0.tar.gz) = 639289
+SHA256 (mattkretz-virtest-f7d03ef_GH0.tar.gz) = 1b03e27be46bc860deae5cc7c82f28df98dd2011af7a798b8aa16a99f90714a7
+SIZE (mattkretz-virtest-f7d03ef_GH0.tar.gz) = 26021
+SHA256 (VcDevel-vc-testdata-9ada1f3_GH0.tar.gz) = d03f4b02351e5207ec6c1c6d56d95f0d49557d01eed5433b64b159fc5594f005
+SIZE (VcDevel-vc-testdata-9ada1f3_GH0.tar.gz) = 53402148
