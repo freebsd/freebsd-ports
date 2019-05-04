@@ -1,6 +1,6 @@
---- build/bottom.make.orig	2010-07-22 18:35:17.000000000 +0400
-+++ build/bottom.make	2014-12-12 00:07:13.000000000 +0300
-@@ -43,23 +43,23 @@
+--- build/bottom.make.orig	2018-05-03 16:50:06 UTC
++++ build/bottom.make
+@@ -43,23 +43,23 @@ $(X_MODULE): $($(X_MODULE)_BINARY)
  
  $($(X_MODULE)_OUTPUT)/%.o: $(X_MODULE)/%.c
  	@echo '  C         $@'
