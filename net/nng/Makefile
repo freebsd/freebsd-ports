@@ -11,7 +11,7 @@ COMMENT=	Lightweight, broker-less messaging
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake
+USES=		cmake compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	nanomsg
 
