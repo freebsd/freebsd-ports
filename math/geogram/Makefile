@@ -10,7 +10,7 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Programming library of geometric algorithms
 
 LICENSE=	BSD3CLAUSE
-xLICENSE_FILE=	${WRKSRC}/doc/devkit/license.dox
+LICENSE_FILE=	${WRKSRC}/doc/devkit/license.dox
 
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 
