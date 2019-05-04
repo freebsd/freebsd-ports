@@ -10,6 +10,7 @@ MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Version controlled file system
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atomiclong>0:devel/py-atomiclong@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fusepy>=2.0.2:devel/py-fusepy@${PY_FLAVOR} \
