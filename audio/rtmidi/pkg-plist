@@ -1,6 +1,6 @@
 include/rtmidi/RtMidi.h
 include/rtmidi/rtmidi_c.h
 lib/librtmidi.so
-lib/librtmidi.so.4
-lib/librtmidi.so.4.0.0
+lib/librtmidi.so.5
+lib/librtmidi.so.5.0.0
 libdata/pkgconfig/rtmidi.pc
