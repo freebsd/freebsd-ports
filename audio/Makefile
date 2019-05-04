@@ -487,6 +487,7 @@
     SUBDIR += luppp
     SUBDIR += lv2
     SUBDIR += lv2file
+    SUBDIR += lv2lint
     SUBDIR += lvtk
     SUBDIR += lxmusic
     SUBDIR += mac
