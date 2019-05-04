@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adapta-gtk-theme
-PORTVERSION=	3.91.2.152
-PORTREVISION=	2
+PORTVERSION=	3.95.0.11
 CATEGORIES=	x11-themes
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -21,25 +20,24 @@ BUILD_DEPENDS=	gsed:textproc/gsed \
 RUN_DEPENDS=	noto>=1.0.5:x11-fonts/noto \
 		roboto-fonts-ttf>=2.134:x11-fonts/roboto-fonts-ttf
 
-CHROME_CONFIGURE_ENABLE=	chrome
-CHROME_DESC=	Support for Chrome(ium) browser
+USES=		autoreconf gmake gnome pathfix pkgconfig shebangfix
+
+CHROME_CONFIGURE_ENABLE=	chrome_legacy
+CHROME_DESC=	Support for legacy Chrome(ium) browser (<= R59)
 CINNAMON_CONFIGURE_ENABLE=	cinnamon
 CINNAMON_DESC=	Support for Cinnamon Desktop Environment
 CINNAMON_IMPLIES=	METACITY
-CONFIGURE_ARGS=	--enable-gtk_legacy \
-		--disable-flashback \
+CONFIGURE_ARGS=	--disable-flashback \
 		--disable-gtk_next \
 		--disable-plank \
 		--disable-telegram \
-		--disable-unity
+		--disable-tweetdeck
 
 DOCS_MAKE_ENV=	ADAPTA_DOCS=yes
 
 GH_ACCOUNT=	adapta-project
-GNOMESHELL_BUILD_DEPENDS=	gnome-shell:x11/gnome-shell
 GNOMESHELL_CONFIGURE_ENABLE=	gnome
 GNOMESHELL_DESC=	Support for Gnome-Shell Desktop Environment
-
 GNU_CONFIGURE=	yes
 
 MATE_CONFIGURE_ENABLE=	mate
@@ -54,11 +52,11 @@ OPTIONS_DEFINE=	CHROME CINNAMON DOCS GNOMESHELL MATE METACITY OPENBOX PARALLEL X
 OPTIONS_SUB=	yes
 
 PARALLEL_BUILD_DEPENDS=	parallel:sysutils/parallel
+PARALLEL_CONFIGURE_ENABLE=	parallel
 PARALLEL_DESC=	parallel-build support
 
 SHEBANG_REGEX=	'.*\.sh$$'
 
-USES=		autoreconf gmake pathfix pkgconfig shebangfix
 USE_GITHUB=	yes
 USE_GNOME=	gdkpixbuf2 glib20 librsvg2 libxml2
 
