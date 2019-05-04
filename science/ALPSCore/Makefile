@@ -43,7 +43,7 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MOPENMP2}
+.if ${PORT_OPTIONS:MOPENMPI2}
 CC=	${LOCALBASE}/mpi/openmpi2/bin/mpicc
 CXX=	${LOCALBASE}/mpi/openmpi2/bin/mpicxx
 .endif
