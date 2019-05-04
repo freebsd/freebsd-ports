@@ -1,6 +1,5 @@
 bin/kaffeine
 man/ca/man1/kaffeine.1.gz
-man/id/man1/kaffeine.1.gz
 man/it/man1/kaffeine.1.gz
 man/man1/kaffeine.1.gz
 man/nl/man1/kaffeine.1.gz
@@ -115,8 +114,6 @@ share/doc/HTML/en/kaffeine/view-fullscreen.png
 share/doc/HTML/en/kaffeine/view-list-details.png
 share/doc/HTML/en/kaffeine/view-pim-calendar.png
 share/doc/HTML/en/kaffeine/view-restore.png
-share/doc/HTML/id/kaffeine/index.cache.bz2
-share/doc/HTML/id/kaffeine/index.docbook
 share/doc/HTML/it/kaffeine/index.cache.bz2
 share/doc/HTML/it/kaffeine/index.docbook
 share/doc/HTML/nl/kaffeine/index.cache.bz2
