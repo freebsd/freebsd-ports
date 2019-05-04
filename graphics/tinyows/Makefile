@@ -3,24 +3,24 @@
 
 PORTNAME=	tinyows
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics www geography
 MASTER_SITES=	https://download.osgeo.org/mapserver/
 
 MAINTAINER=	joris.dedieu@gmail.com
 COMMENT=	High Performance WFS-T server
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/postgresql/postgis-2.1.so:databases/postgis21
-LIB_DEPENDS=	libxml2.so:textproc/libxml2
+LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
+		liblwgeom.so:databases/postgis25
 
-USES=		tar:bzip2
+USES=		pgsql tar:bzip2
 
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	FASTCGI
 OPTIONS_DEFAULT=FASTCGI
 
-FASTCGI_BUILD_DEPENDS=	cgi-fcgi:www/fcgi
+FASTCGI_LIB_DEPENDS=	libfcgi.so:www/fcgi
 FASTCGI_CONFIGURE_WITH=	fastcgi=${LOCALBASE}
 
 post-install:
