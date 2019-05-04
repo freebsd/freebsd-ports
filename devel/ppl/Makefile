@@ -13,9 +13,6 @@ COMMENT=	C++ library for the manipulation of convex polyhedra
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_armv6=		fails to compile: ./OR_Matrix_inlines.hh:100:8: error: missing 'typename' prior to dependent type template name 'OR_Matrix<T>::Pseudo_Row'
-BROKEN_armv7=		fails to compile: ./OR_Matrix_inlines.hh:100:8: error: missing 'typename' prior to dependent type template name 'OR_Matrix<T>::Pseudo_Row'
-
 BUILD_DEPENDS=	gm4:devel/m4
 LIB_DEPENDS=	libglpk.so:math/glpk \
 		libgmp.so:math/gmp
