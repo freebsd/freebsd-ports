@@ -17,7 +17,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	OpenGene
 
 ALL_TARGET=	fastp
-INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/fastp
 
 .include <bsd.port.pre.mk>
@@ -26,5 +25,8 @@ PLIST_FILES=	bin/fastp
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 USE_GCC=	yes
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fastp
 
 .include <bsd.port.post.mk>
