@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 		libIlmImf.so:graphics/openexr \
 		libMagick++-6.so:graphics/ImageMagick6
 
-USES=		compiler:features gmake pkgconfig tar:tgz
+USES=		compiler:c++11-lang gmake pkgconfig tar:tgz
 NO_WRKSUBDIR=	yes
 
 PROGRAMS=	hdr_adjust hdr_convert hdr_create hdr_denoise hdr_fix_ca \
