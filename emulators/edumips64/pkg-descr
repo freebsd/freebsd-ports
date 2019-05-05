@@ -1,0 +1,14 @@
+EduMIPS64 is a free (as in free speech) visual and cross-platform MIPS64 CPU
+Simulator.
+
+The simulator was written in order to support Computer Architecture students
+with a free and cross-platform tool that allows them to run programs written
+in the MIPS64 assembly dialect and see how the CPU behaves during the
+execution, experimenting with various aspects of low-level programming
+that they learn throughout the course.
+
+EduMIPS64 started as a GPL Java port of WinMIPS64, a Windows-only MIPS64
+simulator, but independently evolved soon after into a stand-alone
+open source application.
+
+WWW: https://www.edumips.org/

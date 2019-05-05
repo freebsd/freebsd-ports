@@ -1,0 +1,4 @@
+#! /bin/sh -
+# $FreeBSD$
+
+exec "%%JAVA%%" -jar %%JAVAJARDIR%%/%%JARFILE%% "$@"
