@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2019-01-29 23:00:07 UTC
++++ CMakeLists.txt
+@@ -350,9 +350,15 @@ add_custom_target(install-thrust
+ )
+ 
+ # add examples, testing and performance testing targets
+-add_subdirectory(examples)
+-add_subdirectory(testing)
+-add_subdirectory(performance)
++if (ENABLE_EXAMPLES)
++  add_subdirectory(examples)
++endif()
++if (ENABLE_TESTING)
++  add_subdirectory(testing)
++endif()
++if (ENABLE_PERFORMANCE)
++  add_subdirectory(performance)
++endif()
+ 
+ ### make zip acrhive
+ 
