@@ -3749,7 +3749,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/python/qsci_apis/PyQGIS-2.2.api
 %%DATADIR%%/python/qsci_apis/PyQGIS.api
 %%DATADIR%%/python/qsci_apis/PyQt5.api
-%%DATADIR%%/python/qsci_apis/Python-%%PYTHON_VER%%.api
+%%DATADIR%%/python/qsci_apis/Python-3.6.api
 %%DATADIR%%/python/qsci_apis/QScintilla2-2.4.5.api
 %%DATADIR%%/python/qsci_apis/QScintilla2-2.7.2.api
 %%DATADIR%%/python/qsci_apis/pyqgis.pap
@@ -4945,7 +4945,6 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/cpt-city-qgis-min/wkp/tubs/DESC.xml
 %%DATADIR%%/resources/cpt-city-qgis-min/wkp/tubs/nrwc.svg
 %%DATADIR%%/resources/customization.xml
-@mode 0666
 %%DATADIR%%/resources/data/contributors.json
 %%DATADIR%%/resources/data/contributors.qml
 %%DATADIR%%/resources/data/qgis-hackfests.json
@@ -4956,7 +4955,6 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/data/world_map.qml
 %%DATADIR%%/resources/data/world_map.shp
 %%DATADIR%%/resources/data/world_map.shx
-@mode
 %%DATADIR%%/resources/metadata-ISO/LinkPropertyLookupTable.csv
 %%DATADIR%%/resources/metadata-ISO/country_code_ISO_3166.csv
 %%DATADIR%%/resources/metadata-ISO/language_codes_ISO_639.csv
