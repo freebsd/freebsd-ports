@@ -17,7 +17,7 @@ LIB_DEPENDS=	liblilv-0.so:audio/lilv
 RUN_DEPENDS=	curl>0:ftp/curl \
 		libelf>0:devel/libelf
 
-USES=		meson pkgconfig
+USES=		compiler:c++11-lang meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMusicKontrollers
 GH_TAGNAME=	3c24394
