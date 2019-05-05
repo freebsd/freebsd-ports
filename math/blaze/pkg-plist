@@ -77,9 +77,13 @@ include/blaze/math/TransposeFlag.h
 include/blaze/math/TypeTraits.h
 include/blaze/math/UniLowerMatrix.h
 include/blaze/math/UniUpperMatrix.h
+include/blaze/math/UniformMatrix.h
+include/blaze/math/UniformVector.h
 include/blaze/math/UpperMatrix.h
 include/blaze/math/Vector.h
 include/blaze/math/Views.h
+include/blaze/math/ZeroMatrix.h
+include/blaze/math/ZeroVector.h
 include/blaze/math/adaptors/Adaptors.h
 include/blaze/math/adaptors/DiagonalMatrix.h
 include/blaze/math/adaptors/Forward.h
@@ -158,6 +162,7 @@ include/blaze/math/constraints/Column.h
 include/blaze/math/constraints/ColumnMajorMatrix.h
 include/blaze/math/constraints/ColumnVector.h
 include/blaze/math/constraints/Columns.h
+include/blaze/math/constraints/Commutative.h
 include/blaze/math/constraints/Computation.h
 include/blaze/math/constraints/ConstDataAccess.h
 include/blaze/math/constraints/Constraints.h
@@ -177,6 +182,7 @@ include/blaze/math/constraints/Diagonal.h
 include/blaze/math/constraints/DivExpr.h
 include/blaze/math/constraints/Elements.h
 include/blaze/math/constraints/EvalExpr.h
+include/blaze/math/constraints/ExpandExpr.h
 include/blaze/math/constraints/Expression.h
 include/blaze/math/constraints/General.h
 include/blaze/math/constraints/Hermitian.h
@@ -205,6 +211,7 @@ include/blaze/math/constraints/NumericVector.h
 include/blaze/math/constraints/Operation.h
 include/blaze/math/constraints/OpposedView.h
 include/blaze/math/constraints/Padded.h
+include/blaze/math/constraints/PaddingEnabled.h
 include/blaze/math/constraints/Proxy.h
 include/blaze/math/constraints/ReduceExpr.h
 include/blaze/math/constraints/RequiresEvaluation.h
@@ -246,6 +253,7 @@ include/blaze/math/constraints/UniUpper.h
 include/blaze/math/constraints/Uniform.h
 include/blaze/math/constraints/Upper.h
 include/blaze/math/constraints/VecEvalExpr.h
+include/blaze/math/constraints/VecExpandExpr.h
 include/blaze/math/constraints/VecMapExpr.h
 include/blaze/math/constraints/VecScalarDivExpr.h
 include/blaze/math/constraints/VecScalarMultExpr.h
@@ -259,6 +267,7 @@ include/blaze/math/constraints/VecVecMultExpr.h
 include/blaze/math/constraints/VecVecSubExpr.h
 include/blaze/math/constraints/Vector.h
 include/blaze/math/constraints/View.h
+include/blaze/math/constraints/Zero.h
 include/blaze/math/dense/CustomMatrix.h
 include/blaze/math/dense/CustomVector.h
 include/blaze/math/dense/DenseIterator.h
@@ -284,6 +293,9 @@ include/blaze/math/dense/RQ.h
 include/blaze/math/dense/SVD.h
 include/blaze/math/dense/StaticMatrix.h
 include/blaze/math/dense/StaticVector.h
+include/blaze/math/dense/UniformIterator.h
+include/blaze/math/dense/UniformMatrix.h
+include/blaze/math/dense/UniformVector.h
 include/blaze/math/expressions/AddExpr.h
 include/blaze/math/expressions/BinaryMapExpr.h
 include/blaze/math/expressions/Computation.h
@@ -315,6 +327,7 @@ include/blaze/math/expressions/DMatSVecMultExpr.h
 include/blaze/math/expressions/DMatScalarDivExpr.h
 include/blaze/math/expressions/DMatScalarMultExpr.h
 include/blaze/math/expressions/DMatSerialExpr.h
+include/blaze/math/expressions/DMatSoftmaxExpr.h
 include/blaze/math/expressions/DMatTDMatAddExpr.h
 include/blaze/math/expressions/DMatTDMatMapExpr.h
 include/blaze/math/expressions/DMatTDMatMultExpr.h
@@ -336,6 +349,7 @@ include/blaze/math/expressions/DVecDVecMultExpr.h
 include/blaze/math/expressions/DVecDVecOuterExpr.h
 include/blaze/math/expressions/DVecDVecSubExpr.h
 include/blaze/math/expressions/DVecEvalExpr.h
+include/blaze/math/expressions/DVecExpandExpr.h
 include/blaze/math/expressions/DVecMapExpr.h
 include/blaze/math/expressions/DVecNormExpr.h
 include/blaze/math/expressions/DVecReduceExpr.h
@@ -349,6 +363,7 @@ include/blaze/math/expressions/DVecSVecSubExpr.h
 include/blaze/math/expressions/DVecScalarDivExpr.h
 include/blaze/math/expressions/DVecScalarMultExpr.h
 include/blaze/math/expressions/DVecSerialExpr.h
+include/blaze/math/expressions/DVecSoftmaxExpr.h
 include/blaze/math/expressions/DVecTransExpr.h
 include/blaze/math/expressions/DVecTransposer.h
 include/blaze/math/expressions/DeclDiagExpr.h
@@ -362,6 +377,8 @@ include/blaze/math/expressions/DenseMatrix.h
 include/blaze/math/expressions/DenseVector.h
 include/blaze/math/expressions/DivExpr.h
 include/blaze/math/expressions/EvalExpr.h
+include/blaze/math/expressions/ExpandExpr.h
+include/blaze/math/expressions/ExpandExprData.h
 include/blaze/math/expressions/Expression.h
 include/blaze/math/expressions/Forward.h
 include/blaze/math/expressions/MatEvalExpr.h
@@ -418,6 +435,7 @@ include/blaze/math/expressions/SVecDVecMultExpr.h
 include/blaze/math/expressions/SVecDVecOuterExpr.h
 include/blaze/math/expressions/SVecDVecSubExpr.h
 include/blaze/math/expressions/SVecEvalExpr.h
+include/blaze/math/expressions/SVecExpandExpr.h
 include/blaze/math/expressions/SVecMapExpr.h
 include/blaze/math/expressions/SVecNormExpr.h
 include/blaze/math/expressions/SVecReduceExpr.h
@@ -472,6 +490,7 @@ include/blaze/math/expressions/TransExpr.h
 include/blaze/math/expressions/Transformation.h
 include/blaze/math/expressions/UnaryMapExpr.h
 include/blaze/math/expressions/VecEvalExpr.h
+include/blaze/math/expressions/VecExpandExpr.h
 include/blaze/math/expressions/VecMapExpr.h
 include/blaze/math/expressions/VecScalarDivExpr.h
 include/blaze/math/expressions/VecScalarMultExpr.h
@@ -510,6 +529,7 @@ include/blaze/math/functors/DeclId.h
 include/blaze/math/functors/DeclLow.h
 include/blaze/math/functors/DeclSym.h
 include/blaze/math/functors/DeclUpp.h
+include/blaze/math/functors/DeclZero.h
 include/blaze/math/functors/Div.h
 include/blaze/math/functors/DivAssign.h
 include/blaze/math/functors/Erf.h
@@ -553,6 +573,7 @@ include/blaze/math/functors/Serial.h
 include/blaze/math/functors/Sign.h
 include/blaze/math/functors/Sin.h
 include/blaze/math/functors/Sinh.h
+include/blaze/math/functors/SqrAbs.h
 include/blaze/math/functors/Sqrt.h
 include/blaze/math/functors/Sub.h
 include/blaze/math/functors/SubAssign.h
@@ -825,6 +846,8 @@ include/blaze/math/sparse/SparseMatrix.h
 include/blaze/math/sparse/SparseVector.h
 include/blaze/math/sparse/ValueIndexPair.h
 include/blaze/math/sparse/VectorAccessProxy.h
+include/blaze/math/sparse/ZeroMatrix.h
+include/blaze/math/sparse/ZeroVector.h
 include/blaze/math/traits/AddTrait.h
 include/blaze/math/traits/BandTrait.h
 include/blaze/math/traits/ColumnTrait.h
@@ -836,9 +859,11 @@ include/blaze/math/traits/DeclIdTrait.h
 include/blaze/math/traits/DeclLowTrait.h
 include/blaze/math/traits/DeclSymTrait.h
 include/blaze/math/traits/DeclUppTrait.h
+include/blaze/math/traits/DeclZeroTrait.h
 include/blaze/math/traits/DerestrictTrait.h
 include/blaze/math/traits/DivTrait.h
 include/blaze/math/traits/ElementsTrait.h
+include/blaze/math/traits/ExpandTrait.h
 include/blaze/math/traits/MapTrait.h
 include/blaze/math/traits/MultTrait.h
 include/blaze/math/traits/ReduceTrait.h
@@ -876,6 +901,7 @@ include/blaze/math/typetraits/HasHypot.h
 include/blaze/math/typetraits/HasImag.h
 include/blaze/math/typetraits/HasInvCbrt.h
 include/blaze/math/typetraits/HasInvSqrt.h
+include/blaze/math/typetraits/HasLoad.h
 include/blaze/math/typetraits/HasLog.h
 include/blaze/math/typetraits/HasLog10.h
 include/blaze/math/typetraits/HasLog2.h
@@ -946,6 +972,7 @@ include/blaze/math/typetraits/IsColumn.h
 include/blaze/math/typetraits/IsColumnMajorMatrix.h
 include/blaze/math/typetraits/IsColumnVector.h
 include/blaze/math/typetraits/IsColumns.h
+include/blaze/math/typetraits/IsCommutative.h
 include/blaze/math/typetraits/IsComputation.h
 include/blaze/math/typetraits/IsContiguous.h
 include/blaze/math/typetraits/IsCrossExpr.h
@@ -963,6 +990,7 @@ include/blaze/math/typetraits/IsDiagonal.h
 include/blaze/math/typetraits/IsDivExpr.h
 include/blaze/math/typetraits/IsElements.h
 include/blaze/math/typetraits/IsEvalExpr.h
+include/blaze/math/typetraits/IsExpandExpr.h
 include/blaze/math/typetraits/IsExpression.h
 include/blaze/math/typetraits/IsGeneral.h
 include/blaze/math/typetraits/IsHermitian.h
@@ -990,6 +1018,7 @@ include/blaze/math/typetraits/IsNumericVector.h
 include/blaze/math/typetraits/IsOperation.h
 include/blaze/math/typetraits/IsOpposedView.h
 include/blaze/math/typetraits/IsPadded.h
+include/blaze/math/typetraits/IsPaddingEnabled.h
 include/blaze/math/typetraits/IsProxy.h
 include/blaze/math/typetraits/IsReduceExpr.h
 include/blaze/math/typetraits/IsResizable.h
@@ -1029,6 +1058,7 @@ include/blaze/math/typetraits/IsUniUpper.h
 include/blaze/math/typetraits/IsUniform.h
 include/blaze/math/typetraits/IsUpper.h
 include/blaze/math/typetraits/IsVecEvalExpr.h
+include/blaze/math/typetraits/IsVecExpandExpr.h
 include/blaze/math/typetraits/IsVecMapExpr.h
 include/blaze/math/typetraits/IsVecScalarDivExpr.h
 include/blaze/math/typetraits/IsVecScalarMultExpr.h
@@ -1042,6 +1072,7 @@ include/blaze/math/typetraits/IsVecVecMultExpr.h
 include/blaze/math/typetraits/IsVecVecSubExpr.h
 include/blaze/math/typetraits/IsVector.h
 include/blaze/math/typetraits/IsView.h
+include/blaze/math/typetraits/IsZero.h
 include/blaze/math/typetraits/LowType.h
 include/blaze/math/typetraits/MaxSize.h
 include/blaze/math/typetraits/RemoveAdaptor.h
@@ -1065,7 +1096,9 @@ include/blaze/math/typetraits/YieldsTriangular.h
 include/blaze/math/typetraits/YieldsUniLower.h
 include/blaze/math/typetraits/YieldsUniTriangular.h
 include/blaze/math/typetraits/YieldsUniUpper.h
+include/blaze/math/typetraits/YieldsUniform.h
 include/blaze/math/typetraits/YieldsUpper.h
+include/blaze/math/typetraits/YieldsZero.h
 include/blaze/math/views/Band.h
 include/blaze/math/views/Check.h
 include/blaze/math/views/Column.h
@@ -1132,6 +1165,7 @@ include/blaze/system/Random.h
 include/blaze/system/Restrict.h
 include/blaze/system/SMP.h
 include/blaze/system/Signature.h
+include/blaze/system/Standard.h
 include/blaze/system/StorageOrder.h
 include/blaze/system/System.h
 include/blaze/system/Thresholds.h
@@ -1175,7 +1209,7 @@ include/blaze/util/Policies.h
 include/blaze/util/Random.h
 include/blaze/util/Serialization.h
 include/blaze/util/Singleton.h
-include/blaze/util/SmallVector.h
+include/blaze/util/SmallArray.h
 include/blaze/util/StaticAssert.h
 include/blaze/util/Suffix.h
 include/blaze/util/Template.h
@@ -1283,6 +1317,7 @@ include/blaze/util/serialization/Archive.h
 include/blaze/util/serialization/Serialization.h
 include/blaze/util/singleton/Dependency.h
 include/blaze/util/singleton/Singleton.h
+include/blaze/util/smallarray/SmallArrayData.h
 include/blaze/util/threadpool/Task.h
 include/blaze/util/threadpool/TaskQueue.h
 include/blaze/util/threadpool/ThreadPool.h
@@ -1309,6 +1344,8 @@ include/blaze/util/typetraits/AddReference.h
 include/blaze/util/typetraits/AddVolatile.h
 include/blaze/util/typetraits/AlignmentOf.h
 include/blaze/util/typetraits/All.h
+include/blaze/util/typetraits/AlwaysFalse.h
+include/blaze/util/typetraits/AlwaysTrue.h
 include/blaze/util/typetraits/Any.h
 include/blaze/util/typetraits/CommonType.h
 include/blaze/util/typetraits/Decay.h
