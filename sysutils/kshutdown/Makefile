@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	kshutdown
-DISTVERSION=	4.99-beta
-PORTREVISION=	1
+DISTVERSION=	5.0
 CATEGORIES=	sysutils kde
-MASTER_SITES=	SF/${PORTNAME}/KShutdown/4.99%20Beta/
+MASTER_SITES=	SF/${PORTNAME}/KShutdown/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-source-${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Advanced shutdown utility for KDE
+COMMENT=	Advanced shutdown utility
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
