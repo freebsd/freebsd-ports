@@ -1,0 +1,7 @@
+Thrust is a parallel algorithms library which resembles the C++ Standard
+Template Library (STL). Thrust's high-level interface greatly enhances
+programmer productivity while enabling performance portability between GPUs and
+multicore CPUs. Interoperability with established technologies (such as CUDA,
+TBB, and OpenMP) facilitates integration with existing software.
+
+WWW: https://thrust.github.io/

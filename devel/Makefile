@@ -6335,6 +6335,7 @@
     SUBDIR += thrift
     SUBDIR += thrift-c_glib
     SUBDIR += thrift-cpp
+    SUBDIR += thrust
     SUBDIR += thunar-vcs-plugin
     SUBDIR += ticcutils
     SUBDIR += tig
