@@ -5,4 +5,4 @@ consumers and producers and two low-level modules for both sync and async
 communication over the NSQ Protocol (if you wanted to write your own
 high-level functionality).
 
-WWW: https://github.com/bitly/pynsq
+WWW: https://github.com/nsqio/pynsq

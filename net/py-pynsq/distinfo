@@ -1,2 +1,3 @@
-SHA256 (bitly-pynsq-v0.6.9_GH0.tar.gz) = c874715a843528c7f10480c7137cd3bb3b867f5f080d34798071a9629dfdb281
-SIZE (bitly-pynsq-v0.6.9_GH0.tar.gz) = 40001
+TIMESTAMP = 1557051695
+SHA256 (nsqio-pynsq-v0.9.0b1_GH0.tar.gz) = 092194574b2f9840a09f1b61649967d3e446d8fa8f503da1d662fd136dd097f1
+SIZE (nsqio-pynsq-v0.9.0b1_GH0.tar.gz) = 43423
