@@ -254,6 +254,7 @@
     SUBDIR += xcoral
     SUBDIR += xed
     SUBDIR += xi-core
+    SUBDIR += xi-term
     SUBDIR += xmlcopyeditor
     SUBDIR += xvile
     SUBDIR += yudit
