@@ -1,5 +1,3 @@
-TIMESTAMP = 1535652501
-SHA256 (projectchrono-chrono-2.0.0-9070-g57a828dc0_GH0.tar.gz) = c24acc3d971e9d159c5586a4d8ab02476d33a63d704b5961253c632d9e6096ac
-SIZE (projectchrono-chrono-2.0.0-9070-g57a828dc0_GH0.tar.gz) = 56873557
-SHA256 (c5db60cfb2a05bdea84ca202ab0e34c87c1c841d.patch) = 68d396844a1c4e08424dc9059bcaf5b3d0bc41611f8ab5df90bc06b76e78b33a
-SIZE (c5db60cfb2a05bdea84ca202ab0e34c87c1c841d.patch) = 895
+TIMESTAMP = 1557014786
+SHA256 (projectchrono-chrono-4.0.0-89-ge36b5a9ce_GH0.tar.gz) = 6420b6bee8263cabf6459ca0df89920b4d9b96847eee2ffd75d116a4a5583fc9
+SIZE (projectchrono-chrono-4.0.0-89-ge36b5a9ce_GH0.tar.gz) = 57063369
