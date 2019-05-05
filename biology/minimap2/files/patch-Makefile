@@ -1,8 +1,10 @@
---- Makefile.orig	2019-02-28 20:49:24 UTC
+--- Makefile.orig	2019-05-05 03:49:17 UTC
 +++ Makefile
-@@ -1,11 +1,19 @@
+@@ -1,11 +1,21 @@
 -CFLAGS=		-g -Wall -O2 -Wc++-compat #-Wextra
 -CPPFLAGS=	-DHAVE_KALLOC
++# Patches using ?= and adding install target were rejected by developers
++# https://github.com/lh3/minimap2/issues/388
 +CFLAGS?=	-g -Wall -O2
 +CFLAGS+=	-Wc++-compat #-Wextra
 +CPPFLAGS+=	-DHAVE_KALLOC
@@ -22,7 +24,7 @@
  ifeq ($(arm_neon),) # if arm_neon is not defined
  ifeq ($(sse2only),) # if sse2only is not defined
  	OBJS+=ksw2_extz2_sse41.o ksw2_extd2_sse41.o ksw2_exts2_sse41.o ksw2_extz2_sse2.o ksw2_extd2_sse2.o ksw2_exts2_sse2.o ksw2_dispatch.o
-@@ -84,6 +92,15 @@ ksw2_exts2_neon.o:ksw2_exts2_sse.c ksw2.h kalloc.h
+@@ -84,6 +94,15 @@ ksw2_exts2_neon.o:ksw2_exts2_sse.c ksw2.h kalloc.h
  		$(CC) -c $(CFLAGS) $(CPPFLAGS) -DKSW_SSE2_ONLY -D__SSE2__ $(INCLUDES) $< -o $@
  
  # other non-file targets
