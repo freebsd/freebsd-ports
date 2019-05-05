@@ -213,6 +213,7 @@ share/osinfo/os/dragonflybsd.org/dragonflybsd-5.2.1.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.2.2.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.0.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.1.xml
+share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.2.xml
 share/osinfo/os/endlessos.com/eos-3.3.xml
 share/osinfo/os/endlessos.com/eos-3.4.xml
 share/osinfo/os/fedoraproject.org/fedora-1.xml
@@ -238,15 +239,18 @@ share/osinfo/os/fedoraproject.org/fedora-27.xml
 share/osinfo/os/fedoraproject.org/fedora-28.xml
 share/osinfo/os/fedoraproject.org/fedora-29.xml
 share/osinfo/os/fedoraproject.org/fedora-3.xml
+share/osinfo/os/fedoraproject.org/fedora-30.xml
 share/osinfo/os/fedoraproject.org/fedora-4.xml
 share/osinfo/os/fedoraproject.org/fedora-5.xml
 share/osinfo/os/fedoraproject.org/fedora-6.xml
 share/osinfo/os/fedoraproject.org/fedora-7.xml
 share/osinfo/os/fedoraproject.org/fedora-8.xml
 share/osinfo/os/fedoraproject.org/fedora-9.xml
+share/osinfo/os/fedoraproject.org/fedora-rawhide.xml
 share/osinfo/os/fedoraproject.org/fedora-unknown.xml
 share/osinfo/os/fedoraproject.org/silverblue-28.xml
 share/osinfo/os/fedoraproject.org/silverblue-29.xml
+share/osinfo/os/fedoraproject.org/silverblue-30.xml
 share/osinfo/os/freebsd.org/freebsd-1.0.xml
 share/osinfo/os/freebsd.org/freebsd-10.0.xml
 share/osinfo/os/freebsd.org/freebsd-10.1.xml
@@ -423,6 +427,7 @@ share/osinfo/os/openbsd.org/openbsd-6.0.xml
 share/osinfo/os/openbsd.org/openbsd-6.1.xml
 share/osinfo/os/openbsd.org/openbsd-6.2.xml
 share/osinfo/os/openbsd.org/openbsd-6.3.xml
+share/osinfo/os/openbsd.org/openbsd-6.4.xml
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
 share/osinfo/os/opensuse.org/opensuse-11.0.xml
@@ -436,6 +441,7 @@ share/osinfo/os/opensuse.org/opensuse-12.3.xml
 share/osinfo/os/opensuse.org/opensuse-13.1.xml
 share/osinfo/os/opensuse.org/opensuse-13.2.xml
 share/osinfo/os/opensuse.org/opensuse-15.0.xml
+share/osinfo/os/opensuse.org/opensuse-15.1.xml
 share/osinfo/os/opensuse.org/opensuse-42.1.xml
 share/osinfo/os/opensuse.org/opensuse-42.2.xml
 share/osinfo/os/opensuse.org/opensuse-42.3.xml
