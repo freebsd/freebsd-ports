@@ -9,6 +9,8 @@ MASTER_SITES=	https://maven.atlassian.com/content/repositories/atlassian-public/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Atlassian Plugin SDK
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	mvn:devel/maven-wrapper
 
 USE_JAVA=	yes
