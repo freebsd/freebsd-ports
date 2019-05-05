@@ -12,6 +12,8 @@ COMMENT=	Dynamic Animation and Robotics Toolkit
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	clang failure: https://bugs.llvm.org/show_bug.cgi?id=41757
+
 BUILD_DEPENDS=	pagmo2>0:science/pagmo2
 LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libBulletDynamics.so:devel/bullet \
