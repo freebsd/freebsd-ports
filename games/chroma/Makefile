@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chroma
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	games
 MASTER_SITES=	http://www.level7.org.uk/chroma/download/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -13,7 +13,7 @@ COMMENT=	Abstract puzzle game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext localbase tar:bzip2
+USES=		gettext localbase sdl tar:bzip2
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	*
