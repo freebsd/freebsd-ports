@@ -1,0 +1,32 @@
+--- configure.ac.orig	2019-04-17 19:37:48 UTC
++++ configure.ac
+@@ -64,6 +64,10 @@ case "${host_cpu}" in
+     CPU=x86_64
+     AC_MSG_RESULT(${host_cpu})
+     ;;
++    amd64)
++    CPU=x86_64
++    AC_MSG_RESULT(${host_cpu})
++    ;;
+     *)
+     AC_MSG_ERROR([Unsupported CPU.])
+     ;;
+@@ -149,6 +153,18 @@ case "$host" in
+            [echo "You need to install the OpenAL library."
+            exit -1])
+        build_linux="yes"
++       ;;
++    *-*-freebsd*)
++       CFLAGS="$CFLAGS -I/usr/local/include"
++       CXXFLAGS="$CXXFLAGS -I/usr/local/include"
++       LDFLAGS="$LDFLAGS -L/usr/local/lib"
++       AC_CHECK_LIB([GL], [glGetError], [], \
++           [echo "You need to install the OpenGL library."
++           exit -1])
++       AC_CHECK_LIB([openal], [alGetError], [], \
++           [echo "You need to install the OpenAL library."
++           exit -1])
++       build_other="yes"
+        ;;
+     *)
+        AC_CHECK_LIB([GL], [glGetError], [], \
