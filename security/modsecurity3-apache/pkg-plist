@@ -1,0 +1,4 @@
+%%APACHEMODDIR%%/mod_security3.so
+@postexec %D/sbin/apxs -e -a -n security3 %f
+@preunexec %D/sbin/apxs -e -A -n security3 %f
+%%PORTDOCS%%%%DOCSDIR%%/README.md
