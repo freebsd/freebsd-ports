@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libudis86.so:devel/udis86 \
 		libmhash.so:security/mhash
 
-USES=		gettext-tools gmake tar:xz
+USES=		compiler:c++11-lang gettext-tools gmake tar:xz
 USE_WX=		3.0+
 MAKE_ARGS=	WXCONFIG="${WX_CONFIG}"
 
