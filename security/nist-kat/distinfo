@@ -1,10 +1,15 @@
+TIMESTAMP = 1554766249
 SHA256 (KAT_AES.zip) = a203b16c9246b2ebae31dee5de21a606be80cf78ceabaca37150236fa098eb60
 SIZE (KAT_AES.zip) = 726299
 SHA256 (XTSTestVectors.zip) = 67bb04b018182f65530596786e7783f817d2e56509bf3b1f066609b8e3e29c36
 SIZE (XTSTestVectors.zip) = 595731
 SHA256 (KAT_TDES.zip) = 640e1df29f0f9e60b756e34870658fc785c706a170e1366eee58f115d3ce3905
 SIZE (KAT_TDES.zip) = 115770
+SHA256 (ccmtestvectors.zip) = 0e3c96761bd8f1a0b4dfe666146c32f7d367a49968375ff091b8da9ecaa673aa
+SIZE (ccmtestvectors.zip) = 319267
 SHA256 (gcmtestvectors.zip) = f9fc479e134cde2980b3bb7cddbcb567b2cd96fd753835243ed067699f26a023
 SIZE (gcmtestvectors.zip) = 9154174
 SHA256 (hmactestvectors.zip) = 418c3837d38f249d6668146bd0090db24dd3c02d2e6797e3de33860a387ae4bd
 SIZE (hmactestvectors.zip) = 452025
+SHA256 (shabytetestvectors.zip) = 929ef80b7b3418aca026643f6f248815913b60e01741a44bba9e118067f4c9b8
+SIZE (shabytetestvectors.zip) = 4909729
