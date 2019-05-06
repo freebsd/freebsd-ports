@@ -696,6 +696,7 @@
     SUBDIR += py-tagpy
     SUBDIR += py-vorbis
     SUBDIR += py-wavio
+    SUBDIR += py-webrtcvad
     SUBDIR += py-xmms2
     SUBDIR += pytone
     SUBDIR += qjackctl
