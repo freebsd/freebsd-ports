@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Statistics-Descriptive-Discrete
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
