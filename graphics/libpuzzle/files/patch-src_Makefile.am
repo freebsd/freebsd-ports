@@ -1,11 +1,11 @@
 --- src/Makefile.am.orig	2009-03-24 14:01:25 UTC
 +++ src/Makefile.am
-@@ -32,7 +32,7 @@ puzzle_diff_SOURCES = \
- 	puzzle.h
+@@ -3,6 +3,8 @@ lib_LTLIBRARIES = \
  
- puzzle_diff_LDADD = \
--	libpuzzle.la
-+	libpuzzle.la -lm
+ libpuzzle_la_LDFLAGS = -version-info 1:0
  
- TESTS = \
- 	regress_1 \
++libpuzzle_la_LIBADD = -lm
++
+ libpuzzle_la_SOURCES = \
+ 	puzzle.c \
+ 	tunables.c \
