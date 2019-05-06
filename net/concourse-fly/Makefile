@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 GO_PKGNAME=	github.com/concourse/fly
 GO_BUILDFLAGS+=	-mod=vendor \
-		-ldflags="-X github.com/concourse/fly/version.Version=${PORTVERSION}"
+		-ldflags="-X github.com/concourse/concourse.Version=${PORTVERSION}"
 
 USES=		go tar:xz
 
