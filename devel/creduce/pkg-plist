@@ -13,10 +13,12 @@ libexec/unifdef
 %%DATADIR%%/perl/pass_clang_binsrch.pm
 %%DATADIR%%/perl/pass_clex.pm
 %%DATADIR%%/perl/pass_comments.pm
+%%DATADIR%%/perl/pass_ifs.pm
 %%DATADIR%%/perl/pass_include_includes.pm
 %%DATADIR%%/perl/pass_includes.pm
 %%DATADIR%%/perl/pass_indent.pm
 %%DATADIR%%/perl/pass_ints.pm
+%%DATADIR%%/perl/pass_line_markers.pm
 %%DATADIR%%/perl/pass_lines.pm
 %%DATADIR%%/perl/pass_peep.pm
 %%DATADIR%%/perl/pass_special.pm
