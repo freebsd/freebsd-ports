@@ -330,6 +330,7 @@
     SUBDIR += py-av
     SUBDIR += py-cec
     SUBDIR += py-enzyme
+    SUBDIR += py-ffmpeg-python
     SUBDIR += py-flvlib
     SUBDIR += py-gstreamer
     SUBDIR += py-gstreamer1
