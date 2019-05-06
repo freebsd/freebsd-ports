@@ -1,5 +1,14 @@
 --- tcp.cpp.orig	2012-01-01 11:24:45 UTC
 +++ tcp.cpp
+@@ -132,7 +132,7 @@ int tcp::Connect(short port)
+   {
+     sockaddr *source;
+     source = (sockaddr *)m_sourceAddr->get_rand_addr();
+-    rc = bind(m_fd, source, sizeof(struct sockaddr_in));
++    rc = ::bind(m_fd, source, sizeof(struct sockaddr_in));
+     if(rc)
+     {
+       fprintf(stderr, "Can't bind to port.\n");
 @@ -178,10 +178,18 @@ int tcp::ConnectTLS()
  #ifdef USE_OPENSSL
    m_sslCtx = NULL;
