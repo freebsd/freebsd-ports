@@ -11,13 +11,14 @@ DISTNAME=	Todo-${PORTVERSION}
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop todo list
 
-LICENSE=	GPLv3
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
 		libDesktop.so:x11/deforaos-libdesktop
 BUILD_DEPENDS=	${LOCALBASE}/include/Desktop/Mailer/plugin.h:mail/deforaos-mailer
 
-USES=		desktop-file-utils pkgconfig
+USES=		desktop-file-utils gnome pkgconfig
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
