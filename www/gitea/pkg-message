@@ -1,0 +1,5 @@
+When upgrading to Gitea 1.8, Gitea requires the addition of another secret
+to the config file in order to start up.  Either manually add JWT_SECRET to
+the ${PREFIX}/etc/gitea/conf/app.ini config file (see app.ini.sample), or
+allow Gitea to make the change for you by making the config file writable to
+the git user.
