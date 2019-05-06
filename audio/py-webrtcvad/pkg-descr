@@ -1,0 +1,7 @@
+A python interface to the WebRTC Voice Activity Detector (VAD).
+A VAD classifies a piece of audio data as being voiced or unvoiced. It can be
+useful for telephony and speech recognition.
+The VAD that Google developed for the WebRTC project is reportedly one of the
+best available, being fast, modern and free.
+
+WWW: https://github.com/wiseman/py-webrtcvad
