@@ -576,6 +576,7 @@ sbin/gitea
 %%DATADIR%%/options/locale/locale_sv-SE.ini
 %%DATADIR%%/options/locale/locale_tr-TR.ini
 %%DATADIR%%/options/locale/locale_uk-UA.ini
+%%DATADIR%%/options/locale/locale_vi-VN.ini
 %%DATADIR%%/options/locale/locale_zh-CN.ini
 %%DATADIR%%/options/locale/locale_zh-HK.ini
 %%DATADIR%%/options/locale/locale_zh-TW.ini
@@ -585,6 +586,7 @@ sbin/gitea
 %%DATADIR%%/public/img/404.png
 %%DATADIR%%/public/img/500.png
 %%DATADIR%%/public/img/auth/bitbucket.png
+%%DATADIR%%/public/img/auth/discord.png
 %%DATADIR%%/public/img/auth/dropbox.png
 %%DATADIR%%/public/img/auth/facebook.png
 %%DATADIR%%/public/img/auth/github.png
@@ -637,6 +639,18 @@ sbin/gitea
 %%DATADIR%%/public/vendor/assets/font-awesome/fonts/fontawesome-webfont.ttf
 %%DATADIR%%/public/vendor/assets/font-awesome/fonts/fontawesome-webfont.woff
 %%DATADIR%%/public/vendor/assets/font-awesome/fonts/fontawesome-webfont.woff2
+%%DATADIR%%/public/vendor/assets/lato-fonts/lato-bold.eot
+%%DATADIR%%/public/vendor/assets/lato-fonts/lato-bold.woff
+%%DATADIR%%/public/vendor/assets/lato-fonts/lato-bold.woff2
+%%DATADIR%%/public/vendor/assets/lato-fonts/lato-bolditalic.eot
+%%DATADIR%%/public/vendor/assets/lato-fonts/lato-bolditalic.woff
+%%DATADIR%%/public/vendor/assets/lato-fonts/lato-bolditalic.woff2
+%%DATADIR%%/public/vendor/assets/lato-fonts/lato-italic.eot
+%%DATADIR%%/public/vendor/assets/lato-fonts/lato-italic.woff
+%%DATADIR%%/public/vendor/assets/lato-fonts/lato-italic.woff2
+%%DATADIR%%/public/vendor/assets/lato-fonts/lato-regular.eot
+%%DATADIR%%/public/vendor/assets/lato-fonts/lato-regular.woff
+%%DATADIR%%/public/vendor/assets/lato-fonts/lato-regular.woff2
 %%DATADIR%%/public/vendor/assets/lato-fonts/lato-v14-latin-700.eot
 %%DATADIR%%/public/vendor/assets/lato-fonts/lato-v14-latin-700.svg
 %%DATADIR%%/public/vendor/assets/lato-fonts/lato-v14-latin-700.ttf
@@ -1855,7 +1869,6 @@ sbin/gitea
 %%DATADIR%%/public/vendor/plugins/emojify/images/zap.png
 %%DATADIR%%/public/vendor/plugins/emojify/images/zero.png
 %%DATADIR%%/public/vendor/plugins/emojify/images/zzz.png
-%%DATADIR%%/public/vendor/plugins/es6-promise/es6-promise.auto.min.js
 %%DATADIR%%/public/vendor/plugins/gitgraph/LICENSE
 %%DATADIR%%/public/vendor/plugins/gitgraph/gitgraph.css
 %%DATADIR%%/public/vendor/plugins/gitgraph/gitgraph.js
@@ -1967,6 +1980,7 @@ sbin/gitea
 %%DATADIR%%/public/vendor/plugins/pdfjs/web/viewer.css
 %%DATADIR%%/public/vendor/plugins/pdfjs/web/viewer.html
 %%DATADIR%%/public/vendor/plugins/pdfjs/web/viewer.js
+%%DATADIR%%/public/vendor/plugins/promise-polyfill/polyfill.min.js
 %%DATADIR%%/public/vendor/plugins/semantic/LICENSE
 %%DATADIR%%/public/vendor/plugins/semantic/semantic.min.css
 %%DATADIR%%/public/vendor/plugins/semantic/semantic.min.js
@@ -2079,7 +2093,6 @@ sbin/gitea
 %%DATADIR%%/templates/pwa/manifest_json.tmpl
 %%DATADIR%%/templates/pwa/serviceworker_js.tmpl
 %%DATADIR%%/templates/repo/activity.tmpl
-%%DATADIR%%/templates/repo/bare.tmpl
 %%DATADIR%%/templates/repo/branch/list.tmpl
 %%DATADIR%%/templates/repo/branch_dropdown.tmpl
 %%DATADIR%%/templates/repo/commit_status.tmpl
@@ -2100,6 +2113,7 @@ sbin/gitea
 %%DATADIR%%/templates/repo/editor/diff_preview.tmpl
 %%DATADIR%%/templates/repo/editor/edit.tmpl
 %%DATADIR%%/templates/repo/editor/upload.tmpl
+%%DATADIR%%/templates/repo/empty.tmpl
 %%DATADIR%%/templates/repo/forks.tmpl
 %%DATADIR%%/templates/repo/graph.tmpl
 %%DATADIR%%/templates/repo/header.tmpl
@@ -2171,6 +2185,8 @@ sbin/gitea
 %%DATADIR%%/templates/user/auth/change_passwd_inner.tmpl
 %%DATADIR%%/templates/user/auth/finalize_openid.tmpl
 %%DATADIR%%/templates/user/auth/forgot_passwd.tmpl
+%%DATADIR%%/templates/user/auth/grant.tmpl
+%%DATADIR%%/templates/user/auth/grant_error.tmpl
 %%DATADIR%%/templates/user/auth/link_account.tmpl
 %%DATADIR%%/templates/user/auth/prohibit_login.tmpl
 %%DATADIR%%/templates/user/auth/reset_passwd.tmpl
@@ -2198,6 +2214,8 @@ sbin/gitea
 %%DATADIR%%/templates/user/profile.tmpl
 %%DATADIR%%/templates/user/settings/account.tmpl
 %%DATADIR%%/templates/user/settings/applications.tmpl
+%%DATADIR%%/templates/user/settings/applications_oauth2.tmpl
+%%DATADIR%%/templates/user/settings/applications_oauth2_edit.tmpl
 %%DATADIR%%/templates/user/settings/keys.tmpl
 %%DATADIR%%/templates/user/settings/keys_gpg.tmpl
 %%DATADIR%%/templates/user/settings/keys_ssh.tmpl

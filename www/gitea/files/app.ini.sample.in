@@ -6,11 +6,16 @@
 # contains the settings incorporated into the gitea binary.
 #
 # This sample configuration runs Gitea with a local database.  Before
-# running this configuration, make sure to change the SECRET_KEY and the
-# INTERNAL_TOKEN at the end of this file.  SECRET_KEY is a password of your
-# choosing, INTERNAL_TOKEN is a 64-byte random number in BASE64 encoding. 
+# running this configuration, make sure to change the INTERNAL_TOKEN,
+# JWT_SECRET, and SECRET_KEY variables.  SECRET_KEY is a password of your
+# choosing, INTERNAL_TOKEN is a 64-byte random number in BASE64 encoding,
+# JWT_SECRET is a 32-byte random number in BASE64 encoding.
+# 
 # Your can generate the token using for example:
-# openssl rand -base64 64
+#   openssl rand -base64 64
+# 
+# You can let Gitea add these to the config for you; you need to make
+# app.ini writeable by the git user.
 #
 # There are no pre-configured users; the first user to register becomes an
 # admin.  In this sample configuration, the HTTP server only listens on
@@ -42,6 +47,9 @@ LEVEL     = Info
 
 [mailer]
 ENABLED = false
+
+[oauth2]
+JWT_SECRET = D56bmu6xCtEKs9vKKgMKnsa4X9FDwo64HVyaS4fQ4mY
 
 [picture]
 AVATAR_UPLOAD_PATH      = /var/db/gitea/data/avatars
@@ -83,4 +91,3 @@ ENABLE_NOTIFY_MAIL     = false
 DISABLE_REGISTRATION   = false
 ENABLE_CAPTCHA         = true
 REQUIRE_SIGNIN_VIEW    = false
-
