@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ompl
-DISTVERSION=	1.4.1
+DISTVERSION=	1.4.2
 DISTVERSIONSUFFIX=	-Source
-PORTREVISION=	4
 CATEGORIES=	misc comms
 MASTER_SITES=	http://cdn.bitbucket.org/${PORTNAME}/${PORTNAME}/downloads/
 
@@ -35,7 +34,6 @@ OPENDE_DESC=		Use Open Dynamics Engine for kinodynamic planning
 OPENDE_LIB_DEPENDS=	libode.so:devel/ode
 
 SPOT_DESC=		Use 'Spot' for creating finite automata from LTL formulae
-SPOT_BROKEN=		https://bitbucket.org/ompl/ompl/issues/442
 SPOT_USES=		compiler:c++14-lang
 SPOT_LIB_DEPENDS=	libspot.so:math/spot
 
