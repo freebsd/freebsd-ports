@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	godot
-PORTVERSION=	3.1
+DISTVERSION=	3.1.1
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel games
 
