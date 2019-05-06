@@ -1,0 +1,9 @@
+xdemorse is a X/GTK+-3 application for decoding Morse code signals into text.
+xdemorse detects the "dihs" and "dahs" that make a Morse code character via the
+computer's sound card, which can be connected to a radio receiver tuned to a CW
+Morse code transmission or to a tone generator. The input signal is processed by
+a Goertzel tone detector algorithm which produces "mark" or "space" (signal/no
+signal) outputs and the resulting stream of Morse code "elements" is decoded
+into an ASCII character for printing to the Text viewer.
+
+WWW: https://www.qsl.net/5b4az/pkg/morse/xdemorse/xdemorse.html

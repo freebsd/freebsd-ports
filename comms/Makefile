@@ -205,6 +205,7 @@
     SUBDIR += wy60
     SUBDIR += xastir
     SUBDIR += xcwcp
+    SUBDIR += xdemorse
     SUBDIR += xdx
     SUBDIR += xlog
     SUBDIR += xmorse
