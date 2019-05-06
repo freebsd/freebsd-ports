@@ -8,7 +8,10 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	A toolkit for building randomized language models
+COMMENT=	Toolkit for building randomized language models
+
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/google/sparse_hash_map:devel/sparsehash
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
@@ -18,14 +21,12 @@ BROKEN_aarch64=		fails to compile: invalid output constraint =a in assembler
 BROKEN_armv6=		fails to compile: invalid output constraint =a in assembler
 BROKEN_powerpc64=	fails to compile: 'itr' does not name a type
 
+USES=		autoreconf libtool localbase:ldflags compiler:c++11-lang
 USE_CXXSTD=	gnu++98
 USE_PERL5=	run
 USE_LDCONFIG=	yes
-USES=		autoreconf libtool compiler:c++11-lang
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
-CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 post-patch:
