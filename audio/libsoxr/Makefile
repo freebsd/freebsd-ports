@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	libsoxr
-PORTVERSION=	0.1.2.20160529
-PORTREVISION=	9
+PORTVERSION=	0.1.3
 CATEGORIES=	audio
-MASTER_SITES=	LOCAL/riggs/soxr/
+MASTER_SITES=	SF/soxr
+DISTNAME=	soxr-${PORTVERSION}-Source
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	High quality, one-dimensional sample-rate conversion library
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_FFTPAK=	${FILESDIR}/FFTPAK_license.txt
 LICENSE_PERMS_FFTPAK=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cmake pathfix pkgconfig tar:bz2
+USES=		cmake pathfix pkgconfig tar:xz
 
 USE_LDCONFIG=	yes
 
