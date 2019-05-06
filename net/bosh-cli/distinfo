@@ -1,3 +1,3 @@
-TIMESTAMP = 1537949958
-SHA256 (cloudfoundry-bosh-cli-5.3.1-v5.3.1_GH0.tar.gz) = 43b9455e4488a886d1f59722b29c91183a6451848161d5bbff0cd9d7fd681e92
-SIZE (cloudfoundry-bosh-cli-5.3.1-v5.3.1_GH0.tar.gz) = 6173608
+TIMESTAMP = 1557134885
+SHA256 (cloudfoundry-bosh-cli-5.5.0-v5.5.0_GH0.tar.gz) = 901085088f17b5224af7d1aec9db942859344fea54801de3f49a2168d449592f
+SIZE (cloudfoundry-bosh-cli-5.5.0-v5.5.0_GH0.tar.gz) = 6587789
