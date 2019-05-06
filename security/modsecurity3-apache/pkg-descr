@@ -1,0 +1,10 @@
+The ModSecurity-apache connector is the connection point between Apache and libmodsecurity
+(ModSecurity v3). Said another way, this project provides a communication channel between Apache
+and libmodsecurity. This connector is required to use LibModSecurity with Apache.
+
+The ModSecurity-apache connector takes the form of an Apache module.
+The module simply serves as a layer of communication between Apache and ModSecurity.
+
+Notice that this project depends on libmodsecurity rather than ModSecurity (version 2.9 or less).
+
+WWW: https://github.com/SpiderLabs/ModSecurity-apache
