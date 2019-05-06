@@ -6,26 +6,17 @@
      PURPOSE "Used for python bindings.")
 -find_package(Python QUIET)
 -find_boost_python()
-+#find_package(Python QUIET)
-+#find_boost_python()
++find_package(Python QUIET)
++find_boost_python()
  
  if(PYTHON_FOUND)
      set_package_properties(pypy PROPERTIES
-@@ -151,7 +151,7 @@ endif()
- set_package_properties(spot PROPERTIES
-     URL "http://spot.lrde.epita.fr"
-     PURPOSE "Used for constructing finite automata from LTL formulae.")
--find_package(spot)
-+#find_package(spot)
- if (SPOT_FOUND)
-     set(OMPL_HAVE_SPOT 1)
-     include_directories("${SPOT_INCLUDE_DIRS}")
 @@ -171,12 +171,12 @@ if(PYTHON_FOUND AND NOT Boost_VERSION VE
  endif()
  
  # R is needed for running Planner Arena locally
 -find_program(R_EXEC R)
-+#find_program(R_EXEC R)
++find_program(R_EXEC R)
  
  add_subdirectory(py-bindings)
  add_subdirectory(src)
