@@ -19,4 +19,10 @@ MASTERDIR=	${.CURDIR}/../intel-ixl-kmod
 PKGDIR=		${.CURDIR}
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
+OPTIONS_DEFINE=	SRIOV
+SRIOV_DESC=	Enable SR-IOV support (experimental)
+
+post-patch-SRIOV-on:
+	@${SED} -i '' 's|SRIOV_ENABLE = 0|SRIOV_ENABLE = 1|g' ${WRKSRC}/Makefile
+
 .include "${MASTERDIR}/Makefile"
