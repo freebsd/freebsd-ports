@@ -1,4 +1,4 @@
 A basic client for Slack.com, which can optionally connect to the Slack
 Real Time Messaging (RTM) API.
 
-WWW: https://github.com/slackhq/python-slackclient
+WWW: https://github.com/slackapi/python-slackclient
