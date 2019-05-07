@@ -3,6 +3,7 @@
 
 PORTNAME=	dbh
 PORTVERSION=	5.0.22
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	libdbh2-${PORTVERSION}
@@ -21,26 +22,17 @@ USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	GTKDOC
-GTKDOC_DESC=	Enable GTK html documentation
+OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTKDOC}
-CONFIGURE_ARGS+=	--enable-gtk-doc-html
-PLIST_SUB+=	GTKDOC=""
-.else
-CONFIGURE_ARGS+=	--disable-gtk-doc-html
-PLIST_SUB+=	GTKDOC="@comment "
-.endif
+DOCS_CONFIGURE_ENABLE=	gtk-doc-html
 
 post-patch:
 # Fix the build on big-endian architectures.
 	@${REINPLACE_CMD} -e '/fractalidad/d' ${WRKSRC}/src/dbh_static.i
 # Needed to remove gtk-doc installation.
-.if empty(PORT_OPTIONS:MGTKDOC)
+
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS = src man\).*|\1|' \
 		${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>
