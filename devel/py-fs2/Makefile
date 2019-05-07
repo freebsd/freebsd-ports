@@ -34,7 +34,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.os>=0.1:devel/py-backports.os@${P
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}scandir>=1.5:sysutils/py-scandir@${PY_FLAVOR}
 .endif
 
-.if ${PYTHON_REL} < 3600
+.if ${PYTHON_REL} < 3500
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing>=3.6:devel/py-typing@${PY_FLAVOR}
 .endif
 
