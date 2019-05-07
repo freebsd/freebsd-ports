@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Term-Shell
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Write command-line shells in Perl
 
 LICENSE=	ART10 GPLv1+
