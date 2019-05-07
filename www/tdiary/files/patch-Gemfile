@@ -1,13 +1,9 @@
---- Gemfile.orig	2018-12-29 14:18:31 UTC
+--- Gemfile.orig	2019-03-31 00:44:16 UTC
 +++ Gemfile
-@@ -6,41 +6,3 @@ gem 'fastimage'
+@@ -6,37 +6,3 @@ gem 'fastimage'
  gem 'emot'
  gem 'mail'
  gem 'rake'
--
--group :rack do
--  gem 'sprockets'
--end
 -
 -group :development do
 -  gem 'pit', require: false
