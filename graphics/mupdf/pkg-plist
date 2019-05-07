@@ -1,11 +1,8 @@
-bin/mjsgen
-bin/mujstest
 bin/mupdf
 bin/mupdf-gl
 bin/muraster
 bin/mutool
 include/mupdf/fitz.h
-include/mupdf/fitz/annotation.h
 include/mupdf/fitz/archive.h
 include/mupdf/fitz/band-writer.h
 include/mupdf/fitz/bidi.h
@@ -31,15 +28,7 @@ include/mupdf/fitz/hash.h
 include/mupdf/fitz/image.h
 include/mupdf/fitz/link.h
 include/mupdf/fitz/outline.h
-include/mupdf/fitz/output-pcl.h
-include/mupdf/fitz/output-pclm.h
-include/mupdf/fitz/output-png.h
-include/mupdf/fitz/output-pnm.h
-include/mupdf/fitz/output-ps.h
-include/mupdf/fitz/output-psd.h
-include/mupdf/fitz/output-pwg.h
 include/mupdf/fitz/output-svg.h
-include/mupdf/fitz/output-tga.h
 include/mupdf/fitz/output.h
 include/mupdf/fitz/path.h
 include/mupdf/fitz/pixmap.h
@@ -57,10 +46,10 @@ include/mupdf/fitz/transition.h
 include/mupdf/fitz/tree.h
 include/mupdf/fitz/util.h
 include/mupdf/fitz/version.h
+include/mupdf/fitz/write-pixmap.h
 include/mupdf/fitz/writer.h
 include/mupdf/fitz/xml.h
 include/mupdf/memento.h
-include/mupdf/pdf-tools.h
 include/mupdf/pdf.h
 include/mupdf/pdf/annot.h
 include/mupdf/pdf/clean.h
@@ -68,8 +57,8 @@ include/mupdf/pdf/cmap.h
 include/mupdf/pdf/crypt.h
 include/mupdf/pdf/document.h
 include/mupdf/pdf/event.h
-include/mupdf/pdf/field.h
 include/mupdf/pdf/font.h
+include/mupdf/pdf/form.h
 include/mupdf/pdf/interpret.h
 include/mupdf/pdf/javascript.h
 include/mupdf/pdf/name-table.h
@@ -78,7 +67,6 @@ include/mupdf/pdf/output-pdf.h
 include/mupdf/pdf/page.h
 include/mupdf/pdf/parse.h
 include/mupdf/pdf/resource.h
-include/mupdf/pdf/widget.h
 include/mupdf/pdf/xref.h
 include/mupdf/ucdn.h
 lib/libmupdf-third.so
@@ -91,10 +79,10 @@ man/man1/mutool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/android-sdk.html
+%%PORTDOCS%%%%DOCSDIR%%/api-changes.html
 %%PORTDOCS%%%%DOCSDIR%%/artifex-logo.png
 %%PORTDOCS%%%%DOCSDIR%%/building.html
 %%PORTDOCS%%%%DOCSDIR%%/coding-overview.html
-%%PORTDOCS%%%%DOCSDIR%%/coding-progressive.html
 %%PORTDOCS%%%%DOCSDIR%%/coding-style.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/bbox-device.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/create-thumbnail.js
@@ -106,7 +94,9 @@ man/man1/mutool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/examples/multi-threaded.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/pdf-create-lowlevel.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/pdf-create.js
+%%PORTDOCS%%%%DOCSDIR%%/examples/pdf-dejpx.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/pdf-merge.js
+%%PORTDOCS%%%%DOCSDIR%%/examples/pdf-portfolio.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/trace-device.js
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual-mupdf-gl.html
@@ -116,7 +106,6 @@ man/man1/mutool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/manual-mutool-draw.html
 %%PORTDOCS%%%%DOCSDIR%%/manual-mutool-extract.html
 %%PORTDOCS%%%%DOCSDIR%%/manual-mutool-merge.html
-%%PORTDOCS%%%%DOCSDIR%%/manual-mutool-portfolio.html
 %%PORTDOCS%%%%DOCSDIR%%/manual-mutool-run.html
 %%PORTDOCS%%%%DOCSDIR%%/manual-mutool-show.html
 %%PORTDOCS%%%%DOCSDIR%%/manual-mutool-trace.html
