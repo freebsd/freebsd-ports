@@ -352,6 +352,20 @@
 %%WEBPLUGIN_DIR%%/pkginf/Ver.core.linuxx86
 %%WEBPLUGIN_DIR%%/pkginf/changeno.dat
 @(,,00555) %%WEBPLUGIN_DIR%%/selfservice
+%%WEBPLUGIN_DIR%%/VDBROWSER.DLL
+%%WEBPLUGIN_DIR%%/VDPORTFORWARD.DLL
+%%WEBPLUGIN_DIR%%/config/debug.ini
+%%WEBPLUGIN_DIR%%/icons/000_SaveLayoutHover_h32bit_49x45.png
+%%WEBPLUGIN_DIR%%/icons/000_SaveLayout_greyed_h32bit_49x45.png
+%%WEBPLUGIN_DIR%%/icons/000_SaveLayout_h32bit_49x45.png
+%%WEBPLUGIN_DIR%%/lib/UIDialogLibWebKit.so
+%%WEBPLUGIN_DIR%%/nls/de/debug.ini
+%%WEBPLUGIN_DIR%%/nls/en/debug.ini
+%%WEBPLUGIN_DIR%%/nls/es/debug.ini
+%%WEBPLUGIN_DIR%%/nls/fr/debug.ini
+%%WEBPLUGIN_DIR%%/nls/ja/debug.ini
+%%WEBPLUGIN_DIR%%/nls/ru/debug.ini
+%%WEBPLUGIN_DIR%%/nls/zh_HANS/debug.ini
 %%WEBPLUGIN_DIR%%/setupwfc
 %%WEBPLUGIN_DIR%%/site/contrib/custom.script.js
 %%WEBPLUGIN_DIR%%/site/contrib/custom.style.css
@@ -502,12 +516,6 @@
 %%WEBPLUGIN_DIR%%/usb/ctxusbd.rc
 %%WEBPLUGIN_DIR%%/usb/ica-usb.rules
 %%WEBPLUGIN_DIR%%/usb/usb.conf
-@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_play0.10
-@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_play1.0
-@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_read0.10
-@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_read1.0
-@(,,00555) %%WEBPLUGIN_DIR%%/util/libgstflatstm0.10.so
-@(,,00555) %%WEBPLUGIN_DIR%%/util/libgstflatstm1.0.so
 @(,,00555) %%WEBPLUGIN_DIR%%/util/DeleteCompleteFlashCache.sh
 @(,,00555) %%WEBPLUGIN_DIR%%/util/configmgr
 @(,,00555) %%WEBPLUGIN_DIR%%/util/conncenter
@@ -516,9 +524,15 @@
 @(,,00555) %%WEBPLUGIN_DIR%%/util/echo_cmd
 @(,,00555) %%WEBPLUGIN_DIR%%/util/gst_aud_play
 @(,,00555) %%WEBPLUGIN_DIR%%/util/gst_aud_read
+@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_play0.10
+@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_play1.0
+@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_read0.10
+@(,,00555) %%WEBPLUGIN_DIR%%/util/gst_read1.0
 @(,,00555) %%WEBPLUGIN_DIR%%/util/hdxcheck.sh
 @(,,00555) %%WEBPLUGIN_DIR%%/util/hinst
 @(,,00555) %%WEBPLUGIN_DIR%%/util/icalicense.sh
+@(,,00555) %%WEBPLUGIN_DIR%%/util/libgstflatstm0.10.so
+@(,,00555) %%WEBPLUGIN_DIR%%/util/libgstflatstm1.0.so
 @(,,00555) %%WEBPLUGIN_DIR%%/util/lurdump
 @(,,00555) %%WEBPLUGIN_DIR%%/util/new_store
 @(,,00555) %%WEBPLUGIN_DIR%%/util/nslaunch
@@ -528,6 +542,7 @@
 @(,,00555) %%WEBPLUGIN_DIR%%/util/pnabrowse_launch
 @(,,00555) %%WEBPLUGIN_DIR%%/util/storebrowse
 @(,,00555) %%WEBPLUGIN_DIR%%/util/sunraymac.sh
+@(,,00555) %%WEBPLUGIN_DIR%%/util/webcontainer
 @(,,00555) %%WEBPLUGIN_DIR%%/util/what
 @(,,00555) %%WEBPLUGIN_DIR%%/util/xcapture
 @(,,00555) %%WEBPLUGIN_DIR%%/wfica
