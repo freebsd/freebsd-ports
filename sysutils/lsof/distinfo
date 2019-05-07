@@ -1,3 +1,3 @@
-TIMESTAMP = 1528308653
-SHA256 (lsof_4.92B.freebsd.tar.bz2) = 7abcc69c265acf13e77573ca5e105cc647119e95199650f7af714f0239e092b4
-SIZE (lsof_4.92B.freebsd.tar.bz2) = 491292
+TIMESTAMP = 1557240808
+SHA256 (lsof-org-lsof-4.93.1_GH0.tar.gz) = ae522562e94bde45ef16d401f374ac4399b44443d1aa91cb0c7900857ea771ca
+SIZE (lsof-org-lsof-4.93.1_GH0.tar.gz) = 1319055
