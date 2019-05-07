@@ -7,5 +7,5 @@
 -	return syscall.Mknod(path, mode, dev)
 +	return syscall.Mknod(path, mode, uint64(dev))
  }
- 
+
  // Mkdev is used to build the value of linux devices (in /dev/) which specifies major

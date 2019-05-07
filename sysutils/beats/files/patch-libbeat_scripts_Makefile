@@ -1,5 +1,5 @@
---- libbeat/scripts/Makefile.orig	2018-02-01 16:56:52.000000000 +0100
-+++ libbeat/scripts/Makefile	2018-02-07 12:53:00.911420000 +0100
+--- libbeat/scripts/Makefile.orig    2018-02-01 16:56:52.000000000 +0100
++++ libbeat/scripts/Makefile    2018-02-07 12:53:00.911420000 +0100
 @@ -27,7 +27,7 @@
  GOFILES_NOVENDOR = $(shell find . -type f -name '*.go' -not -path "*/vendor/*")
  GOFILES_ALL = $(GOFILES) $(shell find $(ES_BEATS) -type f -name '*.go')
