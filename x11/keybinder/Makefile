@@ -2,7 +2,7 @@
 
 PORTNAME=	keybinder
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
@@ -22,13 +22,12 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	EXAMPLES GTKDOC LUA PYTHON
+OPTIONS_DEFINE=	EXAMPLES DOCS LUA PYTHON
 OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=	yes
 
-GTKDOC_DESC=		Build API documentation (requires textproc/gtk-doc)
-GTKDOC_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
-GTKDOC_CONFIGURE_ON=	--enable-gtk-doc
+DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
+DOCS_CONFIGURE_ON=	--enable-gtk-doc
 
 # Override LUA description
 LUA_DESC=		Lua bindings
@@ -40,11 +39,11 @@ PYTHON_USES=		python:2.7
 PYTHON_USE=		gnome=pygtk2
 PYTHON_CONFIGURE_OFF=	--disable-python
 
-post-patch-GTKDOC-off:
+post-patch-DOCS-off:
 	@${REINPLACE_CMD} -E '/GTK_DOC_CHECK|docs/d' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s, docs,,' ${WRKSRC}/Makefile.am
 
-pre-configure-GTKDOC-on:
+pre-configure-DOCS-on:
 	@(cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/gtkdocize)
 
 post-build-EXAMPLES-on:

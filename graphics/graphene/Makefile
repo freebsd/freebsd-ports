@@ -2,6 +2,7 @@
 
 PORTNAME=	graphene
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	GNOME
 
@@ -15,7 +16,7 @@ USE_GNOME=	glib20 pygobject3
 USE_LDCONFIG=	yes
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	GTKDOC #INTROSPECTION
+OPTIONS_DEFINE=	DOCS #INTROSPECTION
 #OPTIONS_DEFAULT=INTROSPECTION
 
 SHEBANG_FILES=	src/identfilter.py
@@ -25,9 +26,8 @@ USE_GNOME+=		introspection:build
 #INTROSPECTION_USE=	gnome=introspection:build
 #INTROSPECTION_MESON_OFF=	-Denable-introspection=false
 
-GTKDOC_MESON_TRUE=	gtk_doc
-GTKDOC_DESC=		Build documentation
-GTKDOC_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
+DOCS_MESON_TRUE=	gtk_doc
+DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|=python |=${PYTHON_VERSION} |g' \
