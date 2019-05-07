@@ -2237,6 +2237,7 @@ go/src/cmd/internal/test2json/testdata/vet.json
 go/src/cmd/internal/test2json/testdata/vet.test
 go/src/cmd/link/doc.go
 go/src/cmd/link/dwarf_test.go
+go/src/cmd/link/elf_test.go
 go/src/cmd/link/internal/amd64/asm.go
 go/src/cmd/link/internal/amd64/l.go
 go/src/cmd/link/internal/amd64/obj.go
@@ -3049,6 +3050,7 @@ go/src/cmd/vet/testdata/src/lostcancel/lostcancel.go
 go/src/cmd/vet/testdata/src/method/method.go
 go/src/cmd/vet/testdata/src/nilfunc/nilfunc.go
 go/src/cmd/vet/testdata/src/print/print.go
+go/src/cmd/vet/testdata/src/print2/big.go
 go/src/cmd/vet/testdata/src/rangeloop/rangeloop.go
 go/src/cmd/vet/testdata/src/shift/shift.go
 go/src/cmd/vet/testdata/src/structtag/structtag.go
@@ -5363,6 +5365,7 @@ go/src/os/executable_solaris.go
 go/src/os/executable_test.go
 go/src/os/executable_windows.go
 go/src/os/export_test.go
+go/src/os/export_unix_test.go
 go/src/os/export_windows_test.go
 go/src/os/fifo_test.go
 go/src/os/file.go
@@ -6307,6 +6310,7 @@ go/src/runtime/trace/trace.go
 go/src/runtime/trace/trace_stack_test.go
 go/src/runtime/trace/trace_test.go
 go/src/runtime/traceback.go
+go/src/runtime/treap_test.go
 go/src/runtime/type.go
 go/src/runtime/typekind.go
 go/src/runtime/unaligned1.go
@@ -8184,6 +8188,11 @@ go/test/fixedbugs/issue30566b.go
 go/test/fixedbugs/issue30956.go
 go/test/fixedbugs/issue30956.out
 go/test/fixedbugs/issue30977.go
+go/test/fixedbugs/issue31252.dir/a.go
+go/test/fixedbugs/issue31252.dir/b.go
+go/test/fixedbugs/issue31252.dir/c.go
+go/test/fixedbugs/issue31252.dir/main.go
+go/test/fixedbugs/issue31252.go
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
 go/test/fixedbugs/issue3552.go
