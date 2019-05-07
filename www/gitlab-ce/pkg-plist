@@ -4093,6 +4093,7 @@
 %%WWWDIR%%/app/models/concerns/chronic_duration_attribute.rb
 %%WWWDIR%%/app/models/concerns/ci/contextable.rb
 %%WWWDIR%%/app/models/concerns/ci/metadatable.rb
+%%WWWDIR%%/app/models/concerns/ci/pipeline_delegator.rb
 %%WWWDIR%%/app/models/concerns/ci/processable.rb
 %%WWWDIR%%/app/models/concerns/closed_at_filterable.rb
 %%WWWDIR%%/app/models/concerns/created_at_filterable.rb
@@ -9707,6 +9708,7 @@
 %%WWWDIR%%/lib/api/helpers/custom_attributes.rb
 %%WWWDIR%%/lib/api/helpers/custom_validators.rb
 %%WWWDIR%%/lib/api/helpers/discussions_helpers.rb
+%%WWWDIR%%/lib/api/helpers/events_helpers.rb
 %%WWWDIR%%/lib/api/helpers/graphql_helpers.rb
 %%WWWDIR%%/lib/api/helpers/headers_helpers.rb
 %%WWWDIR%%/lib/api/helpers/internal_helpers.rb
@@ -9745,6 +9747,7 @@
 %%WWWDIR%%/lib/api/pipeline_schedules.rb
 %%WWWDIR%%/lib/api/pipelines.rb
 %%WWWDIR%%/lib/api/project_clusters.rb
+%%WWWDIR%%/lib/api/project_events.rb
 %%WWWDIR%%/lib/api/project_export.rb
 %%WWWDIR%%/lib/api/project_hooks.rb
 %%WWWDIR%%/lib/api/project_import.rb
@@ -9955,6 +9958,7 @@
 %%WWWDIR%%/lib/gitlab/access.rb
 %%WWWDIR%%/lib/gitlab/access/branch_protection.rb
 %%WWWDIR%%/lib/gitlab/action_rate_limiter.rb
+%%WWWDIR%%/lib/gitlab/action_view_output/context.rb
 %%WWWDIR%%/lib/gitlab/allowable.rb
 %%WWWDIR%%/lib/gitlab/app_logger.rb
 %%WWWDIR%%/lib/gitlab/asciidoc.rb
@@ -11563,6 +11567,7 @@
 %%WWWDIR%%/rubocop/cop/gitlab/predicate_memoization.rb
 %%WWWDIR%%/rubocop/cop/gitlab/union.rb
 %%WWWDIR%%/rubocop/cop/group_public_or_visible_to_user.rb
+%%WWWDIR%%/rubocop/cop/include_action_view_context.rb
 %%WWWDIR%%/rubocop/cop/include_sidekiq_worker.rb
 %%WWWDIR%%/rubocop/cop/inject_enterprise_edition_module.rb
 %%WWWDIR%%/rubocop/cop/line_break_around_conditional_block.rb
@@ -15238,6 +15243,7 @@
 %%WWWDIR%%/spec/requests/api/pipeline_schedules_spec.rb
 %%WWWDIR%%/spec/requests/api/pipelines_spec.rb
 %%WWWDIR%%/spec/requests/api/project_clusters_spec.rb
+%%WWWDIR%%/spec/requests/api/project_events_spec.rb
 %%WWWDIR%%/spec/requests/api/project_export_spec.rb
 %%WWWDIR%%/spec/requests/api/project_hooks_spec.rb
 %%WWWDIR%%/spec/requests/api/project_import_spec.rb
@@ -15308,6 +15314,7 @@
 %%WWWDIR%%/spec/rubocop/cop/gitlab/predicate_memoization_spec.rb
 %%WWWDIR%%/spec/rubocop/cop/gitlab/union_spec.rb
 %%WWWDIR%%/spec/rubocop/cop/group_public_or_visible_to_user_spec.rb
+%%WWWDIR%%/spec/rubocop/cop/include_action_view_context_spec.rb
 %%WWWDIR%%/spec/rubocop/cop/include_sidekiq_worker_spec.rb
 %%WWWDIR%%/spec/rubocop/cop/inject_enterprise_edition_module_spec.rb
 %%WWWDIR%%/spec/rubocop/cop/line_break_around_conditional_block_spec.rb
@@ -16413,8 +16420,3 @@
 @sample %%WWWDIR%%/config/database.yml.sample
 @sample %%WWWDIR%%/lib/support/nginx/gitlab.sample
 @sample %%WWWDIR%%/lib/support/nginx/gitlab-ssl.sample
-@owner root
-@group wheel
-@dir /usr/local
-@dir(git,git,) /usr/local/git
-@dir(git,git,2770) /usr/local/git/repositories

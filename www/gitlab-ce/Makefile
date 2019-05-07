@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.10.2
+PORTVERSION=	11.10.4
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # for the options
 MY_DEPENDS=	git>=2.16.2:devel/git \
 	gitlab-shell>=9.0.0:devel/gitlab-shell \
-	gitlab-workhorse>=8.5.1:www/gitlab-workhorse \
+	gitlab-workhorse>=8.5.2:www/gitlab-workhorse \
 	gitaly>=1.34.1:devel/gitaly \
 	gitlab-pages>=1.5.0:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
@@ -228,7 +228,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	f3e84e78b62450d3fc6beb9191596a22bf271a38
+GL_COMMIT=	62c464651d2df6f4002af4e4967d11be9aec8d92
 
 USERS=	git
 GROUPS=	git
@@ -270,7 +270,6 @@ do-install:
 	${MV} ${WRKSRC}/config/initializers/rack_attack.rb.example ${WRKSRC}/config/initializers/rack_attack.rb.sample
 	${MV} ${WRKSRC}/lib/support/nginx/gitlab ${WRKSRC}/lib/support/nginx/gitlab.sample
 	${MV} ${WRKSRC}/lib/support/nginx/gitlab-ssl ${WRKSRC}/lib/support/nginx/gitlab-ssl.sample
-	${MKDIR} ${STAGEDIR}/usr/local/git/repositories
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/public/assets
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/public/uploads
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/tmp/cache
