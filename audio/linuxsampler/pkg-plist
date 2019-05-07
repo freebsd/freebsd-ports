@@ -32,12 +32,15 @@ include/linuxsampler/engines/FxSend.h
 include/linuxsampler/engines/InstrumentManager.h
 include/linuxsampler/plugins/InstrumentEditor.h
 include/linuxsampler/plugins/InstrumentEditorFactory.h
+include/linuxsampler/scriptvm/ScriptVM.h
+include/linuxsampler/scriptvm/ScriptVMFactory.h
+include/linuxsampler/scriptvm/common.h
 %%DSSI%%lib/dssi/linuxsampler.a
 %%DSSI%%lib/dssi/linuxsampler.so
 lib/linuxsampler/liblinuxsampler.a
 lib/linuxsampler/liblinuxsampler.so
-lib/linuxsampler/liblinuxsampler.so.4
-lib/linuxsampler/liblinuxsampler.so.4.0.0
+lib/linuxsampler/liblinuxsampler.so.5
+lib/linuxsampler/liblinuxsampler.so.5.0.0
 lib/linuxsampler/plugins/.keep_me
 %%LV2%%lib/lv2/linuxsampler.lv2/linuxsampler.a
 %%LV2%%lib/lv2/linuxsampler.lv2/linuxsampler.so
