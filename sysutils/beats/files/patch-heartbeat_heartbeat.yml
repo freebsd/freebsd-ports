@@ -1,4 +1,4 @@
---- heartbeat/heartbeat.yml.orig	2017-02-20 22:45:44 UTC
+--- heartbeat/heartbeat.yml.orig    2017-02-20 22:45:44 UTC
 +++ heartbeat/heartbeat.yml
 @@ -77,3 +77,5 @@ output.elasticsearch:
  # To enable all selectors use ["*"]. Examples of other selectors are "beat",

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beats
-PORTVERSION=	6.6.0
-PORTREVISION=	0
+PORTVERSION=	6.7.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -12,53 +11,51 @@ COMMENT=	Collect logs locally and send to remote logstash
 
 LICENSE=	APACHE20
 
+USES=		gmake go
 USE_GITHUB=	yes
 GH_ACCOUNT=	elastic
-
-USES=		gmake go
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
-
 USE_RC_SUBR=	${GO_TARGETS}
+
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
+FIND_ARGS=	"! ( -regex .*/*\.(go|in|log) ) ! -path *test* ! -path *vendor*"
+MAKE_ENV+=	GOBUILD_FLAGS=""
 
 OPTIONS_DEFAULT=FILEBEAT HEARTBEAT METRICBEAT
 OPTIONS_DEFINE=	FILEBEAT HEARTBEAT METRICBEAT PACKETBEAT
 OPTIONS_SUB=	yes
-
-OPTIONS_MULTI=	BEATS
-OPTIONS_MULTI_BEATS=${OPTIONS_DEFAULT}
 
 FILEBEAT_DESC=	Filebeat
 FILEBEAT_VARS=	GO_TARGETS+=filebeat
 
 PACKETBEAT_DESC=Packetbeat
 PACKETBEAT_VARS=GO_TARGETS+=packetbeat
+PACKETBEAT_BROKEN=	An underlying library is currently broken under FreeBSD
 
 METRICBEAT_DESC=Metricbeat
 METRICBEAT_VARS=GO_TARGETS+=metricbeat
 
 HEARTBEAT_DESC=	Heartbeat
-HEARTBEAT_VARS=GO_TARGETS+=heartbeat
-
-MAKE_ENV+=	GOBUILD_FLAGS=""
+HEARTBEAT_VARS=	GO_TARGETS+=heartbeat
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MPACKETBEAT}
-BROKEN=		An underlying library is currently broken under FreeBSD
-.endif
-
 do-build:
-	@for GO_TARGET in ${GO_TARGETS}; do \
-		cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GMAKE} -C $${GO_TARGET} ;\
-	done
+.for GO_TARGET in ${GO_TARGETS}
+	@(cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GMAKE} -C ${GO_TARGET})
+.endfor
 
 do-install:
-	for GO_TARGET in ${GO_TARGETS}; do \
-		${INSTALL_PROGRAM} ${GO_WRKSRC}/$${GO_TARGET}/$${GO_TARGET} \
-			${STAGEDIR}${PREFIX}/sbin ;\
-		${INSTALL_DATA} ${WRKSRC}/$${GO_TARGET}/$${GO_TARGET}.yml \
-			${STAGEDIR}${PREFIX}/etc/$${GO_TARGET}.yml.sample ;\
-		${MKDIR} ${STAGEDIR}/var/db/beats/$${GO_TARGET} ;\
-	done
+.for GO_TARGET in ${GO_TARGETS}
+	${INSTALL_PROGRAM} ${GO_WRKSRC}/${GO_TARGET}/${GO_TARGET} \
+		${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/${GO_TARGET}/${GO_TARGET}.yml \
+		${STAGEDIR}${PREFIX}/etc/${GO_TARGET}.yml.sample
+	${MKDIR} ${STAGEDIR}/var/db/beats/${GO_TARGET}
+.endfor
+.for BEATMOD in filebeat metricbeat
+	${MKDIR} ${STAGEDIR}${ETCDIR}/${BEATMOD}.modules.d ${STAGEDIR}${DATADIR}/${BEATMOD}/module
+	(cd ${WRKSRC}/${BEATMOD}/module && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${BEATMOD}/module ${FIND_ARGS})
+	(cd ${WRKSRC}/${BEATMOD}/modules.d && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/${BEATMOD}.modules.d)
+.endfor
 
 .include <bsd.port.mk>
