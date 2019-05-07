@@ -12,6 +12,9 @@ DIST_SUBDIR=	${PORTNAME:S/wx//}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Mupen64Plus 2.0 GUI frontend written using wxWidgets
 
+LICENSE=	GPLv2+ LGPL3+ CC-BY-SA-3.0 PD
+LICENSE_COMB=	multi
+
 LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core
 RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-audio-sdl.so:emulators/mupen64plus-audio-sdl \
@@ -22,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
 
 WRKSRC=		${WRKDIR}/auria-${PORTNAME}-0564db396383
 
-USES=		compiler:c++11-lib gl python:2.7
+USES=		compiler:c++11-lib gl python:2.7 sdl
 USE_CXXSTD=	c++11
 USE_SDL=	sdl
 USE_GL=		gl
