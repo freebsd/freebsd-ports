@@ -23,15 +23,15 @@ GH_ACCOUNT=	lsof-org
 
 SHEBANG_FILES=	scripts/sort_res.perl5
 
-.if !exists(${SRC_BASE}/sys/kern/kern_lockf.c)
-IGNORE=		requires kernel sources
-.endif
-
 .include <bsd.port.pre.mk>
 
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}" FREEBSD_SYS="${SRC_BASE}/sys"
+
+.if !exists(${SRC_BASE}/sys/kern/kern_lockf.c)
+IGNORE=		requires kernel sources
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lsof ${STAGEDIR}${PREFIX}/sbin
