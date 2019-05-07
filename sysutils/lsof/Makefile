@@ -33,21 +33,6 @@ CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}" FREEBSD_SYS="${SRC_BASE}/sys"
 
-# .if !defined(FIXUP_RELEASE)
-# post-extract:
-# 	@( cd ${WRKDIR}/${DISTNAME} ; \
-# 	EXPMD5=`${SED} -n 's/^[[:blank:]]*\(MD5*=*\)/\1/p' README.${DISTNAME}` ; \
-# 	CALCMD5=`${MD5} ${SRCBALL_NAME}.tar` ; \
-# 	if [ "$${EXPMD5}"X != "$${CALCMD5}"X ]; then \
-# 		${ECHO} "Expected and calculated MD5 signatures don't agree." ; \
-# 		${ECHO} "($$EXPMD5 != $$CALCMD5)" ; \
-# 		exit 1 ; \
-# 	fi ; \
-# 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${SRCBALL_NAME}.tar ${EXTRACT_AFTER_ARGS} \
-# 	)
-# 	@( cd ${WRKSRC} ; ${ECHO_CMD} "y" | ./Inventory || exit 1 )
-# .endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lsof ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/Lsof.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/lsof.8
