@@ -20,6 +20,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S,.0$,,}
 
 GNU_CONFIGURE=	yes
 
-USES=		perl5 autoreconf
+USES=		compiler:c11 perl5 autoreconf
 
 .include <bsd.port.mk>
