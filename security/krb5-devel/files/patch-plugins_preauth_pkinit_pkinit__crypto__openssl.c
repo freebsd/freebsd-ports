@@ -1,6 +1,6 @@
---- plugins/preauth/pkinit/pkinit_crypto_openssl.c.orig	2018-11-01 23:51:07 UTC
-+++ plugins/preauth/pkinit/pkinit_crypto_openssl.c
-@@ -188,7 +188,8 @@ pkinit_pkcs11_code_to_text(int err);
+--- plugins/preauth/pkinit/pkinit_crypto_openssl.c.orig	2019-01-08 08:02:37.000000000 -0800
++++ plugins/preauth/pkinit/pkinit_crypto_openssl.c	2019-05-02 12:18:53.494194000 -0700
+@@ -189,7 +189,8 @@
      (*_x509_pp) = PKCS7_cert_from_signer_info(_p7,_si)
  #endif
  
@@ -10,7 +10,18 @@
  
  /* 1.1 standardizes constructor and destructor names, renaming
   * EVP_MD_CTX_{create,destroy} and deprecating ASN1_STRING_data. */
-@@ -3040,7 +3041,9 @@ cleanup:
+@@ -249,6 +250,10 @@
+ 
+ #endif
+ 
++#if defined(LIBRESSL_VERSION_NUMBER) && !defined(static_ASN1_SEQUENCE_END_name)
++#define static_ASN1_SEQUENCE_END_name	ASN1_SEQUENCE_END_name
++#endif
++
+ static struct pkcs11_errstrings {
+     short code;
+     char *text;
+@@ -3053,7 +3058,9 @@
      return retval;
  }
  
