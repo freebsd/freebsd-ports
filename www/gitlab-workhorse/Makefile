@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	8.5.1
+PORTVERSION=	8.5.2
 CATEGORIES=	www
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -20,7 +20,7 @@ USE_GITLAB=	yes
 
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-workhorse/tags
-GL_COMMIT=	be9f08059f33f7b4b0fdf42f220b13270680c04b
+GL_COMMIT=	2419009d10dfff694710cf81fd56bd837269f055
 MAKE_JOBS_UNSAFE=yes
 
 PLIST_FILES=	bin/gitlab-workhorse \
