@@ -17,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
 		libDesktop.so:x11/deforaos-libdesktop
 
+USES=		desktop-file-utils gnome pkgconfig ssl
 USE_GNOME=	gtk20
-USES=		desktop-file-utils pkgconfig ssl
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
