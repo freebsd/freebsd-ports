@@ -1,0 +1,7 @@
+To run the LTP test suite, execute, as root:
+
+    kldload linux linux64
+    mount -t linsysfs linsysfs /compat/linux/sys
+    mount -t linprocfs linprocfs /compat/linux/proc
+    chroot /compat/linux /opt/ltp/runltp -Q
+

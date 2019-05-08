@@ -1,0 +1,5 @@
+The LTP testsuite contains a collection of tools for testing
+the Linux kernel and related features.  This package is intended
+for testing the Linux kernel ABI provided by linux(4).
+
+WWW: https://github.com/linux-test-project/ltp
