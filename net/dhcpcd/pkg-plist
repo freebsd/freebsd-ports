@@ -1,4 +1,3 @@
-@sample etc/dhcpcd.conf.sample
 libexec/dhcpcd-hooks/01-test
 libexec/dhcpcd-hooks/02-dump
 libexec/dhcpcd-hooks/20-resolv.conf
@@ -9,7 +8,9 @@ man/man5/dhcpcd.conf.5.gz
 man/man8/dhcpcd-run-hooks.8.gz
 man/man8/dhcpcd.8.gz
 sbin/dhcpcd
-share/examples/dhcpcd/hooks/10-wpa_supplicant
-share/examples/dhcpcd/hooks/15-timezone
-share/examples/dhcpcd/hooks/29-lookup-hostname
-share/examples/dhcpcd/hooks/50-ypbind
+%%EXAMPLESDIR%%/hooks/10-wpa_supplicant
+%%EXAMPLESDIR%%/hooks/15-timezone
+%%EXAMPLESDIR%%/hooks/29-lookup-hostname
+%%EXAMPLESDIR%%/hooks/50-ypbind
+@dir /var/db/dhcpcd
+@sample %%EXAMPLESDIR%%/dhcpcd.conf etc/dhcpcd.conf
