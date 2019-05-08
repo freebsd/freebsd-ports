@@ -1,6 +1,6 @@
---- client/CMakeLists.txt.orig	2017-04-30 11:09:29 UTC
+--- client/CMakeLists.txt.orig	2019-04-26 12:37:01 UTC
 +++ client/CMakeLists.txt
-@@ -26,6 +26,7 @@ INCLUDE_DIRECTORIES(
+@@ -27,6 +27,7 @@ INCLUDE_DIRECTORIES(
  )
  
  ADD_DEFINITIONS(${SSL_DEFINES})
@@ -8,7 +8,7 @@
  MYSQL_ADD_EXECUTABLE(mysql completion_hash.cc mysql.cc readline.cc
                             ${CMAKE_SOURCE_DIR}/sql/sql_string.cc)
  TARGET_LINK_LIBRARIES(mysql mysqlclient)
-@@ -33,6 +34,7 @@ IF(UNIX)
+@@ -34,6 +35,7 @@ IF(UNIX)
    TARGET_LINK_LIBRARIES(mysql ${MY_READLINE_LIBRARY})
    SET_TARGET_PROPERTIES(mysql PROPERTIES ENABLE_EXPORTS TRUE)
  ENDIF(UNIX)
@@ -16,7 +16,7 @@
  
  MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
  SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
-@@ -40,6 +42,7 @@ TARGET_LINK_LIBRARIES(mysqltest mysqlcli
+@@ -41,6 +43,7 @@ TARGET_LINK_LIBRARIES(mysqltest mysqlclient regex)
  SET_TARGET_PROPERTIES(mysqltest PROPERTIES ENABLE_EXPORTS TRUE)
  
  
@@ -24,7 +24,7 @@
  MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
  TARGET_LINK_LIBRARIES(mysqlcheck mysqlclient)
  
-@@ -49,17 +52,21 @@ TARGET_LINK_LIBRARIES(mysqldump mysqlcli
+@@ -50,17 +53,21 @@ TARGET_LINK_LIBRARIES(mysqldump mysqlclient)
  MYSQL_ADD_EXECUTABLE(mysqlimport mysqlimport.c)
  SET_SOURCE_FILES_PROPERTIES(mysqlimport.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqlimport mysqlclient)
@@ -46,7 +46,7 @@
  MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc)
  TARGET_LINK_LIBRARIES(mysqlbinlog mysqlclient)
  
-@@ -69,17 +76,20 @@ TARGET_LINK_LIBRARIES(mysqladmin mysqlcl
+@@ -70,17 +77,20 @@ TARGET_LINK_LIBRARIES(mysqladmin mysqlclient)
  MYSQL_ADD_EXECUTABLE(mysqlslap mysqlslap.c)
  SET_SOURCE_FILES_PROPERTIES(mysqlslap.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
  TARGET_LINK_LIBRARIES(mysqlslap mysqlclient)
@@ -63,8 +63,8 @@
  TARGET_LINK_LIBRARIES(async_example mysqlclient)
 +ENDIF()
  
--SET_TARGET_PROPERTIES (mysqlcheck mysqldump mysqlimport mysql_upgrade mysqlshow mysqlslap mysql_plugin 
-+SET_TARGET_PROPERTIES (mysql_upgrade mysql_plugin 
+-SET_TARGET_PROPERTIES (mysqlcheck mysqldump mysqlimport mysql_upgrade mysqlshow mysqlslap mysql_plugin async_example
++SET_TARGET_PROPERTIES (mysql_upgrade mysql_plugin
  PROPERTIES HAS_CXX TRUE)
  
  ADD_DEFINITIONS(-DHAVE_DLOPEN)
