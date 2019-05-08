@@ -26,7 +26,7 @@ USE_PYTHON=	autoplist distutils
 CONFLICTS_INSTALL=	py??-paramiko1-*
 NO_ARCH=		yes
 
-do-test: extract
+do-test:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} -m unittest discover .)
 
 .include <bsd.port.mk>
