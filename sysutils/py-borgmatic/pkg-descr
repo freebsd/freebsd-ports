@@ -1,0 +1,9 @@
+Borgmatic is a simple Python wrapper script for the Borg backup software that
+initiates a backup, prunes any old backups according to a retention policy,
+and validates backups for consistency.
+
+The script supports specifying your settings in a declarative configuration
+file rather than having to put them all on the command-line, and handles common
+errors.
+
+WWW: https://torsion.org/borgmatic/
