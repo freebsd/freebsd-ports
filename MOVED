@@ -12216,3 +12216,5 @@ www/p5-CGI.pm|www/p5-CGI|2019-05-01|Has expired: Use www/p5-CGI instead
 math/rpy|math/py-rpy|2019-04-03|Moved to correct directory, this is a python library
 audio/esound||2019-05-08|Has expired: Abandonware
 audio/gstreamer-plugins-esound||2019-05-08|Has expired: Depends on audio/esound
+devel/poslib||2019-05-08|Has expired: Abandonware
+x11/xsel||2019-05-08|Has expired: Abandonware; use x11/xsel-conrad instead

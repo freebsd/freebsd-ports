@@ -4144,7 +4144,6 @@
     SUBDIR += pmdk
     SUBDIR += poco
     SUBDIR += popt
-    SUBDIR += poslib
     SUBDIR += powerpc64-binutils
     SUBDIR += powerpc64-gcc
     SUBDIR += powerpc64-xtoolchain-gcc
