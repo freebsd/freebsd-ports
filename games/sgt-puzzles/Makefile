@@ -69,7 +69,7 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/puzzles.txt ${WRKSRC}/HACKING ${STAGEDIR}${DOCSDIR}/
 
-check-puzzle-list-completeness::
+check-puzzle-list-completeness: extract
 	@${ECHO_CMD} ${PUZZLE_LIST} | ${FMT} -w 1 | ${SORT} > ${WRKDIR}/puzzle_list.port
 	@${LS} ${WRKSRC}/icons | ${GREP} 48d24.png | ${CUT} -f 1 -d- | ${SORT} > ${WRKDIR}/puzzle_list.upstream
 	@cmp ${WRKDIR}/puzzle_list.port ${WRKDIR}/puzzle_list.upstream
