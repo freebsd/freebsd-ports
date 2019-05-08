@@ -12,6 +12,9 @@ COMMENT=	Mount UPnP A/V Media
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintained upstream and does not build with upnp >= 1.8
+EXPIRATION_DATE=	2019-05-15
+
 LIB_DEPENDS=	libupnp.so:devel/upnp
 
 PLIST_FILES=	bin/${PORTNAME}
