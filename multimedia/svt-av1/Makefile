@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	svt-av1
-PORTVERSION=	s20180506
+PORTVERSION=	s20180508
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	OpenVisualCloud
 GH_PROJECT=	SVT-AV1
-GH_TAGNAME=	3b11c3ea
+GH_TAGNAME=	8c77c93a
 CMAKE_OFF=	BUILD_TESTING # no useful tests yet
 
 post-patch:
