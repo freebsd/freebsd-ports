@@ -22,7 +22,7 @@ CONFLICTS_INSTALL=	py??-paramiko-*
 
 OPTIONS_DEFINE=	EXAMPLES
 
-regression-test: extract
+do-test:
 	@(cd ${WRKSRC} && ${PYTHON_CMD} test.py)
 
 .include <bsd.port.mk>
