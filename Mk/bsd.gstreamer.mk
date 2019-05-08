@@ -121,7 +121,6 @@ _GSTREAMER_PLUGINS+= \
 		bz2 \
 		cdaudio \
 		dvd \
-		esound \
 		ffmpeg \
 		fluendo-mp3 \
 		fluendo-mpegdemux \
@@ -225,9 +224,6 @@ cdparanoia_IMPL=	#
 
 chromaprint_DEPENDS=	audio/gstreamer-plugins-chromaprint
 chromeprint_IMPL=	bad
-
-esound_DEPENDS=	audio/gstreamer-plugins-esound
-esound_IMPL=	good
 
 faac_DEPENDS=	audio/gstreamer-plugins-faac
 faac_IMPL=	bad

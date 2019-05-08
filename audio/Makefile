@@ -133,7 +133,6 @@
     SUBDIR += enscribe
     SUBDIR += epos-devel
     SUBDIR += eq10q-lv2
-    SUBDIR += esound
     SUBDIR += espeak
     SUBDIR += espressivo-lv2
     SUBDIR += etcd
@@ -249,7 +248,6 @@
     SUBDIR += gstreamer-plugins-amrwbdec
     SUBDIR += gstreamer-plugins-cdaudio
     SUBDIR += gstreamer-plugins-cdparanoia
-    SUBDIR += gstreamer-plugins-esound
     SUBDIR += gstreamer-plugins-faac
     SUBDIR += gstreamer-plugins-faad
     SUBDIR += gstreamer-plugins-flac
