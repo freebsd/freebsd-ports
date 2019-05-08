@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	phonopy
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.3
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	distutils cython autoplist
 
-do-test: # One test fails: https://github.com/atztogo/phonopy/issues/79
+do-test:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} test
 
