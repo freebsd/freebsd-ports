@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: v2ray
+# KEYWORD: shutdown
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf to enable `v2ray':
+#
+# v2ray_enable (bool):          Set to "NO" by default.
+#                               Set it to "YES" to enable v2ray
+# v2ray_config (path):          Set to "%%PREFIX%%/etc/v2ray/config.json" by default
+#                               Set it to the v2ray server config
+# v2ray_logdir (path):		Set to "/var/log/v2ray" by default.
+#                               Set it to the directory of v2ray log files
+# v2ray_env (str):		Set to "" by default.
+#                               Set it to the desired environment variables
+
+. /etc/rc.subr
+
+name="v2ray"
+rcvar="${name}_enable"
+
+: ${v2ray_enable="NO"}
+: ${v2ray_config="%%PREFIX%%/etc/$name/config.json"}
+: ${v2ray_logdir="/var/log/${name}"}
+: ${v2ray_env=""}
+: ${v2ray_user="%%USER%%"}
+: ${v2ray_group="%%GROUP%%"}
+
+asset_env="V2RAY_LOCATION_ASSET=%%PREFIX%%/share/$name"
+pidfile="/var/run/$name.pid"
+procname="%%PREFIX%%/bin/$name"
+command="/usr/sbin/daemon"
+command_args="-c -p ${pidfile} /usr/bin/env ${asset_env} ${v2ray_env} ${procname} -config ${v2ray_config}"
+required_files="${v2ray_config}"
+
+start_precmd="v2ray_startprecmd"
+
+v2ray_startprecmd() {
+	touch "${pidfile}"
+	chown ${v2ray_user}:${v2ray_group} "${pidfile}"
+	mkdir -p "${v2ray_logdir}"
+	chown -R ${v2ray_user}:${v2ray_group} "${v2ray_logdir}"
+}
+
+load_rc_config "$name"
+run_rc_command "$1"
