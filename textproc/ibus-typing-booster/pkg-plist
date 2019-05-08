@@ -799,6 +799,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/km.xml
 %%DATADIR%%/data/annotationsDerived/kn.xml
 %%DATADIR%%/data/annotationsDerived/ko.xml
+%%DATADIR%%/data/annotationsDerived/ku.xml
 %%DATADIR%%/data/annotationsDerived/ky.xml
 %%DATADIR%%/data/annotationsDerived/lo.xml
 %%DATADIR%%/data/annotationsDerived/lt.xml
@@ -819,6 +820,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/ps.xml
 %%DATADIR%%/data/annotationsDerived/pt.xml
 %%DATADIR%%/data/annotationsDerived/pt_PT.xml
+%%DATADIR%%/data/annotationsDerived/qu.xml
 %%DATADIR%%/data/annotationsDerived/ro.xml
 %%DATADIR%%/data/annotationsDerived/root.xml
 %%DATADIR%%/data/annotationsDerived/ru.xml
