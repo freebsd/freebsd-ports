@@ -386,6 +386,7 @@
     SUBDIR += snappy
     SUBDIR += spigot
     SUBDIR += spook
+    SUBDIR += subsync
     SUBDIR += subtitlecomposer
     SUBDIR += subtitleeditor
     SUBDIR += subtitleoffsetmodifier
