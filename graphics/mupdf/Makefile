@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-DISTVERSION=	1.14.0
+DISTVERSION=	1.15.0
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mupdf.com/downloads/ \
@@ -25,17 +24,19 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		cpe compiler:c++11-lang gl gmake jpeg pkgconfig
 USE_XORG=	x11 xcursor xext xinerama xrandr
 USE_GL=		gl glut
-CPE_VENDOR=	artifex
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	artifex
 
 # pkg-config to avoid the conflict with openjpeg15
 CFLAGS+=	`pkg-config --cflags libopenjp2`
+LDFLAGS+=	`pkg-config --libs libjpeg libopenjp2` -ljbig2dec
 
 MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes \
 		XCFLAGS+="-I${WRKSRC}/include/mupdf -fPIC" \
 		XLIBS+="-L${LOCALBASE}/lib -L${WRKSRC}/build/release" \
 		SOVERSION=${DISTVERSION}
-ALL_TARGET=	all extra
+ALL_TARGET=	all extra-libs
 
 OPTIONS_DEFINE=	DOCS JS SCROLL
 OPTIONS_DEFAULT=	SCROLL
@@ -59,8 +60,6 @@ post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/mupdf-x11 \
 		${STAGEDIR}${PREFIX}/bin/mupdf
 	${INSTALL_PROGRAM} \
-		${WRKSRC}/build/release/mjsgen \
-		${WRKSRC}/build/release/mujstest \
 		${WRKSRC}/build/release/muraster \
 		${STAGEDIR}${PREFIX}/bin
 	${LN} -s libmupdf.so.${PORTVERSION} \
