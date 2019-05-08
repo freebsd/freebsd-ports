@@ -5,6 +5,7 @@ bin/davix-mkdir
 bin/davix-mv
 bin/davix-put
 bin/davix-rm
+bin/davix-tester
 bin/davix-unit-tests
 include/davix/auth/davixauth.hpp
 include/davix/auth/davixx509cred.hpp
