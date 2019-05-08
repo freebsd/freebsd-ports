@@ -3,7 +3,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.79b
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -128,7 +128,7 @@ OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:graphics/openjpeg15
 #				-DOpenMP_C_FLAGS:STRING=-fopenmp -lm \
 #				-DOpenMP_CXX_FLAGS:STRING=-fopenmp -lm
 #OPENMP_CMAKE_OFF=		-DWITH_OPENMP:BOOL=OFF
-#OPENMP_LIB_DEPENDS=		libomp.so.0:devel/openmp
+#OPENMP_LIB_DEPENDS=		libomp.so:devel/openmp
 #OPENMP_LDFLAGS=			-L${LOCALBASE}/lib
 OPENSUBDIV_CMAKE_BOOL=		WITH_OPENSUBDIV
 OPENSUBDIV_LIB_DEPENDS=		libosdCPU.so:graphics/opensubdiv

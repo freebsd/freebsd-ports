@@ -3,6 +3,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	5.6
+PORTREVISION=	1
 #DISTNAME=	${PORTNAME}-${PORTVERSION:R}-rc2${DISTVERSIONSUFFIX}
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
