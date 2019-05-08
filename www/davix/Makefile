@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	davix
-DISTVERSION=	0.7.1
-PORTREVISION=	1
+DISTVERSION=	0.7.3
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/cern-fts/davix/releases/download/R_${DISTVERSION:S/./_/g}/
+MASTER_SITES=	http://grid-deployment.web.cern.ch/grid-deployment/dms/lcgutil/tar/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Make the task of managing files over HTTP-based protocols simple
