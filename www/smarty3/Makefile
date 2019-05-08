@@ -10,7 +10,8 @@ PKGNAMESUFFIX=	3${PHP_PKGNAMESUFFIX}
 MAINTAINER=	ports@michael-fausten.de
 COMMENT=	PHP compiling template engine
 
-LICENSE=	LGPL3
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:web,flavors
 USE_PHP=	pcre
