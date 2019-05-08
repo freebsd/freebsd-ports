@@ -1,0 +1,4 @@
+Language-agnostic automatic synchronization of subtitles with video, so that
+subtitles are aligned to the correct starting point within the video.
+
+WWW: https://github.com/smacke/subsync
