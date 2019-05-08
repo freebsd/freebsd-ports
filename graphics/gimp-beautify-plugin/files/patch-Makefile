@@ -1,10 +1,59 @@
 --- Makefile.orig	2012-08-12 09:23:45 UTC
 +++ Makefile
-@@ -13,7 +13,6 @@
+@@ -13,17 +13,16 @@
  # You should have received a copy of the GNU General Public License
  # along with this program.  If not, see <http://www.gnu.org/licenses/>.
  
 -CC = gcc
  
- GIMPTOOL = gimptool-2.0
+-GIMPTOOL = gimptool-2.0
++GIMPTOOL = /usr/local/bin/gimptool-2.0
  
+ GIMP_LIBS = `$(GIMPTOOL) --libs`
+ GIMP_CFLAGS = `$(GIMPTOOL) --cflags`
+ 
+ LIBS = $(GIMP_LIBS) -lm
+-CFLAGS = $(GIMP_CFLAGS)
++CFLAGS += $(GIMP_CFLAGS)
+ 
+-GDK_PIXBUF_CSOURCE = gdk-pixbuf-csource
++GDK_PIXBUF_CSOURCE = /usr/local/bin/gdk-pixbuf-csource
+ 
+ all: beautify skin-whitening simple-border border
+ 
+@@ -71,7 +70,7 @@ useruninstall:
+ 	$(GIMPTOOL) --uninstall-bin texture-border
+ 
+ beautify: beautify.o beautify-effect.o
+-	$(CC) -o $@ $^ $(LIBS)
++	$(CC) -o $@ $^ $(LDFLAGS) $(LIBS)
+ 
+ beautify.o: beautify.c
+ 	$(CC) $(CFLAGS) -c beautify.c -o beautify.o
+@@ -83,7 +82,7 @@ beautify-textures.h: beautify-textures.list
+ 	$(GDK_PIXBUF_CSOURCE) --raw --build-list `cat beautify-textures.list` > $(@F)
+ 
+ skin-whitening: skin-whitening.o skin-whitening-effect.o
+-	$(CC) -o $@ $^ $(LIBS)
++	$(CC) -o $@ $^ $(LDFLAGS) $(LIBS)
+ 
+ skin-whitening.o: skin-whitening.c skin-whitening-images.h
+ 	$(CC) $(CFLAGS) -c skin-whitening.c -o skin-whitening.o
+@@ -95,7 +94,7 @@ skin-whitening-effect.o: skin-whitening-effect.c skin-
+ 	$(CC) $(CFLAGS) -c skin-whitening-effect.c -o skin-whitening-effect.o
+ 
+ simple-border: simple-border.o
+-	$(CC) -o $@ $^ $(LIBS)
++	$(CC) -o $@ $^ $(LDFLAGS) $(LIBS)
+ 
+ simple-border.o: simple-border.c simple-border-textures.h
+ 	$(CC) $(CFLAGS) -c simple-border.c -o simple-border.o
+@@ -104,7 +103,7 @@ simple-border-textures.h: simple-border-textures.list
+ 	$(GDK_PIXBUF_CSOURCE) --raw --build-list `cat simple-border-textures.list` > $(@F)
+ 
+ border: border.o
+-	$(CC) -o $@ $^ $(LIBS)
++	$(CC) -o $@ $^ $(LDFLAGS) $(LIBS)
+ 
+ border.o: border.c border-textures.h
+ 	$(CC) $(CFLAGS) -c border.c -o border.o
