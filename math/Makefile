@@ -679,6 +679,7 @@
     SUBDIR += plplot-ada
     SUBDIR += polylib
     SUBDIR += primegen
+    SUBDIR += primesieve
     SUBDIR += primme
     SUBDIR += prng
     SUBDIR += proofgeneral

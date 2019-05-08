@@ -1,0 +1,6 @@
+primesieve is a program and C/C++ library that generates primes using a highly
+optimized sieve of Eratosthenes implementation. It counts the primes below 10^10
+in just 0.4 seconds on an Intel Core i7-6700 CPU (4 x 3.4 GHz). primesieve can
+generate primes and prime k-tuplets up to 2^64.
+
+WWW: https://github.com/kimwalisch/primesieve
