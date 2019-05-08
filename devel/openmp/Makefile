@@ -3,6 +3,7 @@
 PORTNAME=	openmp
 DISTVERSION=	8.0.0
 DISTVERSIONSUFFIX=	.src
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://llvm.org/releases/${DISTVERSION}/
 
@@ -12,6 +13,8 @@ COMMENT=	Open Multi-Processing runtime for LLVM/Clang
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Part of base system since FreeBSD 11.3/12.1
+EXPIRATION_DATE=2019-12-31
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		cmake compiler:c++11-lib perl5 tar:xz
@@ -23,8 +26,6 @@ PLIST_FILES=	include/omp.h \
 		lib/libgomp.so \
 		lib/libiomp5.so \
 		lib/libomp.so \
-		lib/libomp.so.0 \
-		lib/libomptarget.so \
-		lib/libomptarget.so.0
+		lib/libomptarget.so
 
 .include <bsd.port.mk>

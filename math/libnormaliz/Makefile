@@ -3,7 +3,7 @@
 PORTNAME=		libnormaliz
 DISTVERSIONPREFIX=	v
 DISTVERSION=		3.6.3
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		math
 
 MAINTAINER=	phascolarctos@protonmail.ch
