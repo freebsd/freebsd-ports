@@ -72,6 +72,7 @@ share/locale/ja/LC_MESSAGES/kscreen.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/ko/LC_MESSAGES/kcm_displayconfiguration.mo
 share/locale/ko/LC_MESSAGES/kscreen.mo
+share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/lt/LC_MESSAGES/kcm_displayconfiguration.mo
 share/locale/lt/LC_MESSAGES/kscreen.mo
 share/locale/nb/LC_MESSAGES/kcm_displayconfiguration.mo

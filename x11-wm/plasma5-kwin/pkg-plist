@@ -914,6 +914,7 @@ share/locale/kn/LC_MESSAGES/kwin_effects.mo
 share/locale/ko/LC_MESSAGES/kcm-kwin-scripts.mo
 share/locale/ko/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/ko/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/ko/LC_MESSAGES/kcmkwincommon.mo
 share/locale/ko/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/ko/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/ko/LC_MESSAGES/kcmkwinrules.mo
