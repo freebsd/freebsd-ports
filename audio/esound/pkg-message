@@ -1,6 +1,0 @@
-The ESounD daemon (esd) must be started on a per-user basis.  This is typically
-done by the Session Manager in GNOME.  However, if you are not using the
-GNOME Desktop, you will need to add something like the following to your
-X Windows initialization script:
-
-esd -terminate -nobeeps -as 2

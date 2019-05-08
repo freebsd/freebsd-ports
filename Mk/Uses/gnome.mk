@@ -67,7 +67,7 @@ IGNORE=	USES=gnome takes no arguments
 .endif
 
 # non-version specific components
-_USE_GNOME_ALL= esound intlhack intltool introspection \
+_USE_GNOME_ALL= intlhack intltool introspection \
 		referencehack gnomemimedata \
 		gnomeprefix
 
@@ -164,11 +164,6 @@ libsigc++20_LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20
 
 pangomm_LIB_DEPENDS=	libpangomm-1.4.so:x11-toolkits/pangomm
 pangomm_USE_GNOME_IMPL=	pango glibmm cairomm
-
-ESD_CONFIG?=		${LOCALBASE}/bin/esd-config
-esound_LIB_DEPENDS=	libesd.so:audio/esound
-esound_CONFIGURE_ENV=	ESD_CONFIG="${ESD_CONFIG}"
-esound_MAKE_ENV=	ESD_CONFIG="${ESD_CONFIG}"
 
 gnomemimedata_BUILD_DEPENDS=${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:misc/gnome-mime-data
 gnomemimedata_RUN_DEPENDS=${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:misc/gnome-mime-data
