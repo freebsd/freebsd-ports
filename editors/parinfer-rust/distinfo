@@ -1,4 +1,4 @@
-TIMESTAMP = 1548517117
+TIMESTAMP = 1557304445
 SHA256 (rust/crates/base-x-0.2.2.tar.gz) = 2f59103b47307f76e03bef1633aec7fa9e29bfb5aa6daf5a334f94233c71f6c1
 SIZE (rust/crates/base-x-0.2.2.tar.gz) = 9636
 SHA256 (rust/crates/discard-1.0.3.tar.gz) = 9a9117502da3c5657cb8e2ca7ffcf52d659f00c78c5127d1ebadc2ebe76465be
@@ -47,5 +47,5 @@ SHA256 (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = ac3b87c63620426dd
 SIZE (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SHA256 (eraserhd-parinfer-rust-v0.2.0-198-g506ae2b_GH0.tar.gz) = e6365486b7b94c51c3d04a83b1a0948eba18cbde42ed960ecd64f5e22d48e3cd
-SIZE (eraserhd-parinfer-rust-v0.2.0-198-g506ae2b_GH0.tar.gz) = 274654
+SHA256 (eraserhd-parinfer-rust-v0.3.1_GH0.tar.gz) = 55235afdb295d50d334d834aee000667ddb687ed7299721f82e9fbdaac0d5e3d
+SIZE (eraserhd-parinfer-rust-v0.3.1_GH0.tar.gz) = 274589
