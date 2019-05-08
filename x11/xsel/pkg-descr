@@ -1,5 +1,0 @@
-xsel is a quick hack to give access to the X selection from the command line.
-You can paste stuff from the X selection to stdout and copy stuff from stdin
-to X selection.
-
-WWW: http://BSDforge.com/projects/x11/xsel/
