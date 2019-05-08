@@ -192,6 +192,10 @@ share/augeas/lenses/tests/test_virtlogd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/internals/oomtesting.html
 %%DOCSDIR%%%%PORTVERSION%%/html/internals/rpc.html
 %%DOCSDIR%%%%PORTVERSION%%/html/java.html
+%%DOCSDIR%%%%PORTVERSION%%/html/js/jquery-3.1.1.min.js
+%%DOCSDIR%%%%PORTVERSION%%/html/js/jquery.rss.min.js
+%%DOCSDIR%%%%PORTVERSION%%/html/js/main.js
+%%DOCSDIR%%%%PORTVERSION%%/html/js/moment.min.js
 %%DOCSDIR%%%%PORTVERSION%%/html/libvirt-daemon-arch.png
 %%DOCSDIR%%%%PORTVERSION%%/html/libvirt-driver-arch.png
 %%DOCSDIR%%%%PORTVERSION%%/html/libvirt-object-model.png
@@ -282,8 +286,9 @@ share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/cpu_map/x86_Broadwell-noTSX-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Broadwell-noTSX.xml
 %%DATADIR%%/cpu_map/x86_Broadwell.xml
+%%DATADIR%%/cpu_map/x86_Cascadelake-Server.xml
 %%DATADIR%%/cpu_map/x86_Conroe.xml
-%%DATADIR%%/cpu_map/x86_EPYC-IBRS.xml
+%%DATADIR%%/cpu_map/x86_EPYC-IBPB.xml
 %%DATADIR%%/cpu_map/x86_EPYC.xml
 %%DATADIR%%/cpu_map/x86_Haswell-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Haswell-noTSX-IBRS.xml
