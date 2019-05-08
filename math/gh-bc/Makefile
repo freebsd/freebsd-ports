@@ -11,6 +11,7 @@ COMMENT=	GNU compatible bc/dc calculator
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+USES=		compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	gavinhoward
 
