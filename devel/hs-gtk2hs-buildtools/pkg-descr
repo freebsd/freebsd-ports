@@ -1,8 +1,0 @@
-This package provides a set of helper programs necessary to build the
-Gtk2Hs suite of libraries.  These tools include a modified c2hs binding
-tool that is used to generated FFI declarations, a tool to build a type
-hiearchy that mirrors the C type hiearchy of GObjects found in glib, and
-a generator for signal declarations that are used to call back from C to
-Haskell.  These tools are not needed to actually run Gtk2Hs programs.
-
-WWW: http://projects.haskell.org/gtk2hs/

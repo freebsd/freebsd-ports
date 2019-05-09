@@ -913,7 +913,6 @@
     SUBDIR += hs-darcs
     SUBDIR += hs-ghc-events
     SUBDIR += hs-git-annex
-    SUBDIR += hs-gtk2hs-buildtools
     SUBDIR += hs-haddock
     SUBDIR += hs-happy
     SUBDIR += hs-hasktags
