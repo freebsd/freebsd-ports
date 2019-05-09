@@ -1,0 +1,53 @@
+--- bin/script/sort-by-night.in.orig	2019-04-11 18:40:12 UTC
++++ bin/script/sort-by-night.in
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Separate input datasets into multiple nights, run with `--help', or see
+ # description under `print_help' (below) for more.
+@@ -127,7 +127,7 @@ EOF
+ 
+ 
+ # Functions to check option values and complain if necessary.
+-function on_off_option_error() {
++on_off_option_error() {
+     if [ "x$2" = x ]; then
+         echo "$scriptname: '$1' doesn't take any values."
+     else
+@@ -136,7 +136,7 @@ function on_off_option_error() {
+     exit 1
+ }
+ 
+-function check_v() {
++check_v() {
+     if [ x"$2" = x ]; then
+         echo "$scriptname: option '$1' requires an argument."
+         echo "Try '$scriptname --help' for more information."
+@@ -172,7 +172,7 @@ function check_v() {
+ #   if a value is appended to the short format it should crash. So in the
+ #   second test for these (`-l*') will account for both the case where we
+ #   have an equal sign and where we don't.
+-while [[ $# -gt 0 ]]
++while [ $# -gt 0 ]
+ do
+     case "$1" in
+         # Input parameters.
+@@ -242,8 +242,8 @@ fi
+ list=$(for f in $inputs; do
+            astfits $f --datetosec=$key --hdu=$hdu -q      \
+                | awk -vh=$hour                            \
+-                     '{d=int($1/86400); print "'$f'", $1, \
+-                       int($1)%86400<(h*3600) ? d-1 : d }'
++                     '{d=int($1/86400); print "'$f'", $1; \
++                       if (int($1)%86400<(h*3600)) print d-1; else print d }'
+        done)
+ 
+ 
+@@ -302,5 +302,5 @@ echo "$unique" | while read l; do
+     done
+ 
+     # Increment the night-counter.
+-    ((counter++))
++    counter=$((counter+1))
+ done

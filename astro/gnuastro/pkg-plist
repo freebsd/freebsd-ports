@@ -10,6 +10,7 @@ bin/astmkcatalog
 bin/astmknoise
 bin/astmkprof
 bin/astnoisechisel
+bin/astscript-sort-by-night
 bin/astsegment
 bin/aststatistics
 bin/asttable
@@ -64,8 +65,8 @@ include/gnuastro/type.h
 include/gnuastro/wcs.h
 lib/libgnuastro.a
 lib/libgnuastro.so
-lib/libgnuastro.so.6
-lib/libgnuastro.so.6.0.0
+lib/libgnuastro.so.7
+lib/libgnuastro.so.7.0.0
 libdata/pkgconfig/gnuastro.pc
 man/man1/astarithmetic.1.gz
 man/man1/astbuildprog.1.gz
@@ -79,10 +80,12 @@ man/man1/astmkcatalog.1.gz
 man/man1/astmknoise.1.gz
 man/man1/astmkprof.1.gz
 man/man1/astnoisechisel.1.gz
+man/man1/astscript-sort-by-night.1.gz
 man/man1/astsegment.1.gz
 man/man1/aststatistics.1.gz
 man/man1/asttable.1.gz
 man/man1/astwarp.1.gz
+share/info/gnuastro-figures/README
 share/info/gnuastro-figures/epicycles.eps
 share/info/gnuastro-figures/epicycles.png
 share/info/gnuastro-figures/epicycles.txt
