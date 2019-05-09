@@ -1010,7 +1010,6 @@
     SUBDIR += wanderer
     SUBDIR += wargus
     SUBDIR += warmux
-    SUBDIR += warsow-data
     SUBDIR += warzone2100
     SUBDIR += wesnoth
     SUBDIR += whichwayisup

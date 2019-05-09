@@ -12764,3 +12764,5 @@ sysutils/grub2-pcbsd||2019-05-09|Has expired: Broken for more than 6 months
 sysutils/mdcp||2019-05-09|Has expired: Broken for more than 6 months
 sysutils/sbsigntool||2019-05-09|Has expired: Broken for more than 6 months
 www/py-cherrypy-old||2019-05-09|Has expired: Lates version is in tree and no dependent ports
+games/warsow-data||2019-05-09|Removed, only useful for expired games/warsow
+converters/hs-sandi||2019-05-09|Has expired: Haskell libraries are getting pushed out of the ports tree. If you are using this port for development, consider switching to cabal sandboxes (old way), cabal new-build (new way), or use devel/stack. If you believe this port shouldn't be removed, contact haskell@FreeBSD.org
