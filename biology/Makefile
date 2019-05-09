@@ -158,6 +158,7 @@
     SUBDIR += vcflib
     SUBDIR += vcftools
     SUBDIR += velvet
+    SUBDIR += vsearch
     SUBDIR += wise
 
 .include <bsd.port.subdir.mk>
