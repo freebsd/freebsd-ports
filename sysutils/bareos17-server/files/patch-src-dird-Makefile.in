@@ -1,0 +1,100 @@
+--- src/dird/Makefile.in	2018-07-12 07:38:58.000000000 -0500
++++ src/dird/Makefile.in	2019-05-09 09:40:05.828917000 -0500
+@@ -56,6 +56,7 @@
+ INCLUDES += -I$(srcdir) -I$(basedir) -I$(basedir)/include -I$(basedir)/lmdb -I$(basedir)/ndmp
+ 
+ JANSSON_CPPFLAGS = @JANSSON_INC@
++JANSSON_LDFLAGS = @JANSSON_LIBS@
+ 
+ DIRD_RESTYPES = catalog client console counter director fileset job jobdefs messages pool profile schedule storage
+ 
+@@ -77,46 +78,46 @@
+ 	$(NO_ECHO)$(CXX) $(DEFS) $(DEBUG) -c $(WCFLAGS) $(CPPFLAGS) $(JANSSON_CPPFLAGS) $(INCLUDES) $(DINCLUDE) $(CXXFLAGS) $<
+ 
+ bareos-dir: Makefile $(SVROBJS) \
+-	    ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
+-	    ../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
++	    $(LOCALBASE)/lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
++	    $(LOCALBASE)/lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
+ 	    ../cats/libbareossql$(DEFAULT_ARCHIVE_TYPE) \
+ 	    ../cats/libbareoscats$(DEFAULT_ARCHIVE_TYPE) \
+-	    ../findlib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
++	    $(LOCALBASE)/lib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
+ 	    @NDMP_DEPS@
+ 	@echo "Linking $@ ..."
+ 	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -L../lib -L../cats -L../findlib -o $@ $(SVROBJS) \
+ 	      $(NDMP_LIBS) -lbareosfind -lbareossql -lbareoscats -lbareoscfg -lbareos -lm $(DLIB) \
+ 	      $(DB_LIBS) $(LIBS) $(WRAPLIBS) $(GETTEXT_LIBS) $(CAP_LIBS) \
+-	      $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED) $(LMDB_LIBS)
++	      $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED) $(LMDB_LIBS) $(JANSSON_LDFLAGS)
+ 
+ bareos-dbcheck: Makefile $(DBCHKOBJS) \
+-	 ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
+-	 ../findlib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
+-	 ../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
++	 $(LOCALBASE)/lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
++	 $(LOCALBASE)/lib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
++	 $(LOCALBASE)/lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
+ 	 ../cats/libbareossql$(DEFAULT_ARCHIVE_TYPE) \
+ 	 ../cats/libbareoscats$(DEFAULT_ARCHIVE_TYPE)
+ 	@echo "Linking $@ ..."
+ 	$(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -L../lib -L../findlib -L../cats -o $@ $(DBCHKOBJS) \
+ 	      -lbareoscats -lbareossql -lbareoscfg -lbareosfind -lbareos -lm $(DB_LIBS) $(LIBS) $(GETTEXT_LIBS) \
+-	      $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
++	      $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED) $(JANSSON_LDFLAGS)
+ 
+ testfind: Makefile $(TSTFNDOBJS) \
+-	 ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
+-	 ../findlib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
+-	 ../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
++	 $(LOCALBASE)/lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
++	 $(LOCALBASE)/lib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
++	 $(LOCALBASE)/lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
+ 	 ../cats/libbareossql$(DEFAULT_ARCHIVE_TYPE) \
+ 	 ../cats/libbareoscats$(DEFAULT_ARCHIVE_TYPE)
+ 	@echo "Linking $@ ..."
+ 	$(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -L../lib -L../findlib -L../cats -o $@ $(TSTFNDOBJS) \
+ 	      -lbareoscats -lbareossql -lbareoscfg -lbareosfind -lbareos -lm $(DB_LIBS) $(LIBS) $(GETTEXT_LIBS) \
+-	      $(OPENSSL_LIBS_NONSHARED) $(GNUTLS_LIBS_NONSHARED)
++	      $(OPENSSL_LIBS) $(GNUTLS_LIBS_NONSHARED)
+ 
+ static-bareos-dir:  Makefile $(SVROBJS) \
+-	            ../lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
+-	            ../lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
++	            $(LOCALBASE)/lib/libbareos$(DEFAULT_ARCHIVE_TYPE) \
++	            $(LOCALBASE)/lib/libbareoscfg$(DEFAULT_ARCHIVE_TYPE) \
+ 	            ../cats/libbareossql$(DEFAULT_ARCHIVE_TYPE) \
+ 	            ../cats/libbareoscats$(DEFAULT_ARCHIVE_TYPE) \
+-	            ../findlib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
++	            $(LOCALBASE)/lib/libbareosfind$(DEFAULT_ARCHIVE_TYPE) \
+ 	            @NDMP_DEPS@
+ 	@echo "Linking $@ ..."
+ 	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -static -L../lib -L../cats -L../findlib -o $@ $(SVROBJS) \
+@@ -160,13 +161,8 @@
+ 	      if test -f "$$f"; then \
+ 	         RESDIR="$$DESTCONFDIR/$$RESTYPE"; \
+ 	         RES=`basename "$$f"`; \
+-	         if test -f "$$RESDIR/$$RES"; then \
+-	            destconf="$$RESDIR/$$RES.new"; \
+-	            echo "    $$RESTYPE/$$RES as \"$$destconf\" (keep existing)"; \
+-	         else \
+-	            destconf="$$RESDIR/$$RES"; \
+-	            echo "    $$RESTYPE/$$RES as \"$$destconf\""; \
+-	         fi; \
++	         destconf="$$RESDIR/$$RES.sample"; \
++	         echo "    $$RESTYPE/$$RES as \"$$destconf\".sample"; \
+ 	         ${INSTALL_CONFIG} "$$f" "$$destconf"; \
+ 	         if test "x${dir_group}" != "x"; then \
+ 	            chgrp -f ${dir_group} $$destconf || true; \
+@@ -174,11 +170,6 @@
+ 	      fi; \
+ 	   done; \
+ 	done
+-	$(MKDIR) ${DESTDIR}${confdir}/bareos-dir-export/client/
+-	@if  test -f ${DESTDIR}${scriptdir}/query.sql; then \
+-	   echo "  ==> Saving existing query.sql to query.sql.old"; \
+-	   $(MV) -f ${DESTDIR}${scriptdir}/query.sql ${DESTDIR}${scriptdir}/query.sql.old; \
+-	fi
+ 	${INSTALL_DATA} query.sql ${DESTDIR}${scriptdir}/query.sql
+ 	@if test -f static-bareos-dir; then \
+ 	   $(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) static-bareos-dir $(DESTDIR)$(sbindir)/static-bareos-dir; \

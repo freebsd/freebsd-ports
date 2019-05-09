@@ -1,0 +1,21 @@
+--- src/plugins/filed/Makefile.in	2018-05-17 15:34:21.796332000 -0500
++++ src/plugins/filed/Makefile.in	2018-05-17 15:35:50.843157000 -0500
+@@ -93,7 +93,8 @@
+ 
+ install: all
+ 	$(MKDIR) $(DESTDIR)$(plugindir)
+-	$(MKDIR) ${DESTDIR}${configtemplatedir}/bareos-dir.d/
++	$(MKDIR) ${DESTDIR}${configtemplatedir}/bareos-dir.d/fileset
++	$(MKDIR) ${DESTDIR}${configtemplatedir}/bareos-dir.d/job
+ 	$(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) bpipe-fd.la $(DESTDIR)$(plugindir)
+ 	$(RMF) $(DESTDIR)$(plugindir)/bpipe-fd.la
+ 	if test "x$(BUILD_PLUGINS)" != "x" ; then  \
+@@ -111,7 +112,7 @@
+ 			$(CP) *.py *.py.template $(DESTDIR)$(plugindir); \
+ 			for i in `find python-ldap-conf.d/ \( -name "*.conf" -o -name "*.conf.example" \) -print | cut -d'/' -f2-`; do \
+ 				$(MKDIR) `dirname ${DESTDIR}${configtemplatedir}/$$i`; \
+-				$(INSTALL_CONFIG) python-ldap-conf.d/$$i ${DESTDIR}${configtemplatedir}/$$i; \
++				$(INSTALL_CONFIG) python-ldap-conf.d/$$i ${DESTDIR}${confdir}/`echo $$i | sed -e 's|example|sample|g'`; \
+ 			done; \
+ 		fi; \
+ 	done;\
