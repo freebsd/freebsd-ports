@@ -1,6 +1,5 @@
-Provides support for parsing and emitting Yaml documents.  This package
-includes the full libyaml C library version 0.1.2 by Kirill Simonov in
-the package so you don't need to worry about any non-Haskell
-dependencies.
+Provides command line utilities for converting Yaml documents to JSON and other
+way around. This package includes the full libyaml C library version 0.1.2 by
+Kirill Simonov in the package.
 
 WWW: https://github.com/snoyberg/yaml/
