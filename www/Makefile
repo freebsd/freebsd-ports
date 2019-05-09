@@ -43,6 +43,7 @@
     SUBDIR += baikal
     SUBDIR += bareos-webui
     SUBDIR += bareos16-webui
+    SUBDIR += bareos17-webui
     SUBDIR += bigbluebutton
     SUBDIR += bins
     SUBDIR += bkmrkconv
