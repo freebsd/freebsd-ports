@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_ActiveSync
-DISTVERSION=	2.39.8
+DISTVERSION=	2.39.9
 CATEGORIES=	comms www pear
 
 MAINTAINER=	horde@FreeBSD.org
