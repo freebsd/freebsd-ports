@@ -1,0 +1,12 @@
+--- configure.ac.orig	2019-05-09 20:58:52 UTC
++++ configure.ac
+@@ -14,9 +14,6 @@ MACOSX_DEPLOYMENT_TARGET="10.9"
+ 
+ # Set default gcc and g++ options
+ 
+-CFLAGS='-g'
+-CXXFLAGS='-g'
+-
+ # Checks for programs.
+ AC_PROG_CXX
+ AC_PROG_RANLIB
