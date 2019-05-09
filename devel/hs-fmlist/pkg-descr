@@ -1,6 +1,0 @@
-FoldMap lists are lists represented by their foldMap function. FoldMap lists
-have O(1) cons, snoc and append, just like DLists, but other operations might
-have favorable performance characteristics as well. These wild claims are
-still completely unverified though.
-
-WWW: http://hackage.haskell.org/package/fmlist

@@ -1,6 +1,0 @@
-The haskell-src package provides support for manipulating Haskell source
-code.  The package provides a lexer, parser and pretty-printer, and a
-definition of a Haskell abstract syntax tree (AST).  Common uses of this
-package are to parse or generate Haskell 98 code.
-
-WWW: http://hackage.haskell.org/package/haskell-src

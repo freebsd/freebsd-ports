@@ -1,4 +1,0 @@
-Provides necessary functions for producing a streaming interface. This
-is used for example by zlib-conduit and zlib-enum.
-
-WWW: https://github.com/snoyberg/zlib-bindings

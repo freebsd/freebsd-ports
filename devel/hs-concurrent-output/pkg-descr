@@ -1,9 +1,0 @@
-Lets multiple threads and external processes concurrently output to the
-console, without it getting all garbled up.
-
-Built on top of that is a way of defining multiple output regions, which are
-automatically laid out on the screen and can be individually updated by
-concurrent threads. Can be used for progress displays etc. 
-
-WWW: http://hackage.haskell.org/package/concurrent-output
-

@@ -156,10 +156,6 @@
     SUBDIR += horde-ingo
     SUBDIR += horde-turba
     SUBDIR += horde-webmail
-    SUBDIR += hs-email-validate
-    SUBDIR += hs-mime
-    SUBDIR += hs-mime-mail
-    SUBDIR += hs-mime-types
     SUBDIR += ifile
     SUBDIR += im
     SUBDIR += imap-uw

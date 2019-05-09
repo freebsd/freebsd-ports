@@ -1,4 +1,0 @@
-Provides Word128, Word192 and Word256 and a way of producing other large
-words if required.
-
-WWW: https://github.com/idontgetoutmuch/largeword

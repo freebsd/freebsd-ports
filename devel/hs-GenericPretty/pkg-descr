@@ -1,5 +1,0 @@
-GenericPretty is a Haskell library that supports automatic derivation of pretty
-printing functions on user defined data types. The output provided is a pretty
-printed version of that provided by Prelude.show.
-
-WWW: https://github.com/UU-ComputerScience/uulib

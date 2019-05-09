@@ -1,3 +1,0 @@
-Most data types in haskell platform do not have Lift instances. This package provides orphan instances for containers, text, bytestring and vector.
-
-WWW: http://hackage.haskell.org/package/th-lift-instances

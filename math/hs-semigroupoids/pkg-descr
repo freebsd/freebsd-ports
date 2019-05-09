@@ -1,5 +1,0 @@
-Provides a wide array of semigroupoids and operations for working with
-semigroupoids.  A Semigroupoid is a Category without the requirement of
-identity arrows for every object in the category.
-
-WWW: https://github.com/ekmett/semigroupoids

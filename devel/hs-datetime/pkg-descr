@@ -1,5 +1,0 @@
-Provides several utilities for easily converting among the various
-standard library Date and Time types, and for converting between these
-and standard external representations.
-
-WWW: http://hackage.haskell.org/package/datetime

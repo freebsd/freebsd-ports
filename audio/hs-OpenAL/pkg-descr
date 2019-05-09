@@ -1,4 +1,0 @@
-A Haskell binding for the OpenAL cross-platform 3D audio API, appropriate for
-use with gaming applications and many other types of audio applications.
-
-WWW: https://github.com/haskell-openal/ALUT

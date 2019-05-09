@@ -1,4 +1,0 @@
-Combinators for building fast hashing functions.  Includes hashing
-functions for all basic Haskell 98 types.
-
-WWW: http://hackage.haskell.org/package/data-hash

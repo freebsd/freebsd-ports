@@ -1,6 +1,0 @@
-Various small Haskell helper functions for Lists, Maybes, Tuples,
-Functions. Some of these functions are improved implementations of
-standard functions. They have the same name as their standard
-counterparts.
-
-WWW: http://hackage.haskell.org/package/utility-ht

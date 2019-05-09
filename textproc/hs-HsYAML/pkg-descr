@@ -1,6 +1,0 @@
-HsYAML is a YAML 1.2 parser implementation for Haskell. Features of HsYAML include
-pure Haskell implementation with small dependency footprint and emphasis on
-strict compliance with the YAML 1.2 specification; direct decoding to native
-Haskell types via (aeson-inspired) typeclass-based API.
-
-WWW: https://github.com/hvr/HsYAML

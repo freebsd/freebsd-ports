@@ -1,4 +1,0 @@
-Parses Javascript into an Abstract Syntax Tree (AST). Initially intended
-as frontend to hjsmin.
-
-WWW: https://github.com/erikd/language-javascript

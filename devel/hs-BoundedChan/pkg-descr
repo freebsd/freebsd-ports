@@ -1,4 +1,0 @@
-This library introduces BoundedChan.  BoundedChans differ from Chans in that
-they are guaranteed to contain no more than a certain number of elements.
-
-WWW: http://hackage.haskell.org/package/BoundedChan

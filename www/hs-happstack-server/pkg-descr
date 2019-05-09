@@ -1,5 +1,0 @@
-Happstack Server provides an HTTP server and a rich set of functions for
-routing requests, handling query parameters, generating responses,
-working with cookies, serving files, and more.
-
-WWW: http://happstack.com/

@@ -1,6 +1,0 @@
-This package provides a couple of different implementations of mutable
-hash tables in the ST monad, as well as a type class abstracting their
-common operations, and a set of wrappers to use the hash tables in the
-IO monad.
-
-WWW: https://github.com/gregorycollins/hashtables

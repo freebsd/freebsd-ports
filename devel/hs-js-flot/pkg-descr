@@ -1,7 +1,0 @@
-This package bundles the minified Flot code (a jQuery plotting library)
-into a Haskell package, so it can be depended upon by Cabal packages.
-The first three components of the version number match the upstream flot
-version.  The package is designed to meet the redistribution
-requirements of downstream users (e.g.  Debian).
-
-WWW: https://github.com/ndmitchell/js-flot#readme

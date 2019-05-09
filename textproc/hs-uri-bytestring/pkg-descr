@@ -1,4 +1,0 @@
-uri-bytestring aims to be an RFC3986 compliant URI parser that uses
-efficient ByteStrings for parsing and representing the URI data.
-
-WWW: http://hackage.haskell.org/package/uri-bytestring

@@ -1,4 +1,0 @@
-ReadArgs provides the `readArgs` IO action, which lets you tell the compiler
-to parse the command line arguments to fit the type signature you give.
-
-WWW: https://github.com/rampion/ReadArgs

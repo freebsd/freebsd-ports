@@ -1,4 +1,0 @@
-This package provides an orphan instance that allows you to use HUnit
-assertions as QuickCheck properties.
-
-WWW: http://hackage.haskell.org/package/quickcheck-io

@@ -1,6 +1,0 @@
-Atomic operations including CAS (compare-and-swap), fetch & add and variants
-suitable for low-level shared-memory synchronization. The implementation
-is using GCC's builtin atomic operations (available in GCC >= 4) in C
-wrappers called through the FFI.
-
-WWW: http://hackage.haskell.org/package/bits-atomic

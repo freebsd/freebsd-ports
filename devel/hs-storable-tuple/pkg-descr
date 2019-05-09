@@ -1,6 +1,0 @@
-Provides a Storable instance for pair and triple which should be binary
-compatible with C99 and C++. The only purpose of this package is to provide
-a standard location for this instance so that other packages needing this
-instance can play nicely together.
-
-WWW: http://code.haskell.org/~thielema/storable-tuple/

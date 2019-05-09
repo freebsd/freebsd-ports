@@ -1,4 +1,0 @@
-One module layer over regex-tdfa to replace Text.Regex.  regex-compat
-can't use Unicode characters correctly because of using regex-posix.
-
-WWW: http://hub.darcs.net/shelarcy/regex-compat-tdfa

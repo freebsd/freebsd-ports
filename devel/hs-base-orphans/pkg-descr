@@ -1,6 +1,0 @@
-base-orphans defines orphan instances that mimic instances available in
-later versions of base to a wider (older) range of compilers.
-base-orphans does not export anything except the orphan instances
-themselves and complements.
-
-WWW: https://github.com/haskell-compat/base-orphans#readme

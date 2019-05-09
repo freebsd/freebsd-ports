@@ -98,8 +98,6 @@
     SUBDIR += guake
     SUBDIR += gxkb
     SUBDIR += hhpc
-    SUBDIR += hs-X11
-    SUBDIR += hs-X11-xft
     SUBDIR += hs-xmobar
     SUBDIR += hsetroot
     SUBDIR += i3blocks

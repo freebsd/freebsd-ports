@@ -1,4 +1,0 @@
-Monad classes using type families, with instances for various monad
-transformers.
-
-WWW: http://hackage.haskell.org/package/monads-tf

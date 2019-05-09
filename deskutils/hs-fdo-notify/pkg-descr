@@ -1,7 +1,0 @@
-A library for issuing notifications using FreeDesktop.org's Desktop
-Notifications protcol. This protocol is supported by services such
-as Ubuntu's NotifyOSD.
-
-WWW: http://bitbucket.org/taejo/fdo-notify/
-
-

@@ -1,8 +1,0 @@
-A RESTful web framework with strong compile-time guarantees of correctness.
-It also affords space efficient code, highly concurrent loads, and
-portability to many deployment backends (via the wai package), from CGI
-to stand-alone serving. Yesod also focuses on developer productivity.
-Yesod integrates well with tools for all your basic web development (wai,
-persistent, and shakespeare/hamlet).
-
-WWW: https://www.yesodweb.com/

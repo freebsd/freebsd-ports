@@ -42,10 +42,6 @@
     SUBDIR += hffzip
     SUBDIR += hlextract
     SUBDIR += hpack.non-usa.only
-    SUBDIR += hs-tar
-    SUBDIR += hs-zip-archive
-    SUBDIR += hs-zlib
-    SUBDIR += hs-zlib-bindings
     SUBDIR += innoextract
     SUBDIR += javatar
     SUBDIR += jzlib

@@ -1,6 +1,0 @@
-Mustache templates for Haskell.
-
-Based on stache library, which uses megaparsec.
-This library uses parsec, thus the name: microstache.
-
-WWW: https://hackage.haskell.org/package/microstache

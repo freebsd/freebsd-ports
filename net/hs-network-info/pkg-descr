@@ -1,6 +1,0 @@
-This library provides simple read-only access to the local computer's
-networking configuration.  It is currently capable of getting a list of
-all the network interfaces and their respective IPv4, IPv6 and MAC
-addresses.
-
-WWW: https://github.com/jystic/network-info

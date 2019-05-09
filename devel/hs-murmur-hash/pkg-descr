@@ -1,7 +1,0 @@
-Implements MurmurHash2, a good, fast, general-purpose, non-cryptographic
-hashing function.  See <http://murmurhash.googlepages.com/> for details.
-
-This implementation is pure Haskell, so it might be a bit slower than a C
-FFI binding.
-
-WWW: https://github.com/nominolo/murmur-hash

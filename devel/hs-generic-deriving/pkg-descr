@@ -1,4 +1,0 @@
-This package provides functionality for generalising the deriving mechanism
-in Haskell to arbitrary classes.
-
-WWW: http://hackage.haskell.org/package/generic-deriving

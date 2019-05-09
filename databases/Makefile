@@ -106,12 +106,6 @@
     SUBDIR += hashtypes
     SUBDIR += hbase
     SUBDIR += hiredis
-    SUBDIR += hs-esqueleto
-    SUBDIR += hs-hedis
-    SUBDIR += hs-mysql
-    SUBDIR += hs-persistent
-    SUBDIR += hs-persistent-sqlite
-    SUBDIR += hs-persistent-template
     SUBDIR += hsqldb
     SUBDIR += influxdb
     SUBDIR += innotop

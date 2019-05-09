@@ -1,5 +1,0 @@
-GHC 7.4 gave us the ability to talk about ConstraintKinds. They stopped
-crashing the compiler in GHC 7.6. This package provides a vocabulary for
-working with them.
-
-WWW: https://github.com/ekmett/constraints/

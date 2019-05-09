@@ -1,4 +1,0 @@
-Provides low-dependency functionality commonly needed by various streaming
-data libraries, such as conduit and pipes.
-
-WWW: https://github.com/fpco/streaming-commons

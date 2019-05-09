@@ -1,4 +1,0 @@
-This package endows Data.Time, from the time package, with several data
-types and functions for enhanced processing of timezones.
-
-WWW: http://projects.haskell.org/time-ng/

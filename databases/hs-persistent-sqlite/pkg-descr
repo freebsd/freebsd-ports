@@ -1,5 +1,0 @@
-This package includes a thin sqlite3 wrapper based on the direct-sqlite
-package, as well as the entire C library, so there are no system
-dependencies.
-
-WWW: http://www.yesodweb.com/book/persistent

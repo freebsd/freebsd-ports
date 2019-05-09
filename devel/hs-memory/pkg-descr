@@ -1,9 +1,0 @@
-Chunk of memory, polymorphic byte array management and manipulation:
-
- * A polymorphic byte array abstraction and function similar to strict
-   ByteString.
- * Different type of byte array abstraction.
- * Raw memory IO operations (memory set, memory copy, ..).
- * Aliasing with endianness support.
-
-WWW: https://github.com/vincenthz/hs-memory

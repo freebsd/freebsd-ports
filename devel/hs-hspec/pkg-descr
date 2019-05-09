@@ -1,9 +1,0 @@
-Hspec is a testing framework for Haskell.  It is inspired by the Ruby
-library RSpec.  Some of Hspec's distinctive features are:
-
- * a friendly DSL for defining tests
- * integration with QuickCheck, SmallCheck, and HUnit
- * parallel test execution
- * automatic discovery of test files
-
-WWW: http://hspec.github.io/

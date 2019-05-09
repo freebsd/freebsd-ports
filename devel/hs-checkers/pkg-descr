@@ -1,6 +1,0 @@
-'Checkers' wraps up the expected properties associated with various
-standard type classes as QuickCheck properties.  Also some morphism
-properties.  It also provides arbitrary instances and generator
-combinators for common data types.
-
-WWW: http://hackage.haskell.org/package/checkers

@@ -1,5 +1,0 @@
-This library provides bindings for the Dot language used by the Graphviz
-(http://graphviz.org/) suite of programs for visualising graphs, as well
-as functions to call those programs.
-
-WWW: http://projects.haskell.org/graphviz

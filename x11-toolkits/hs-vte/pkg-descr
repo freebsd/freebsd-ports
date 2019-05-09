@@ -1,6 +1,0 @@
-The VTE library inserts terminal capability strings into a trie, and then
-uses it to determine if data received from a pseudo-terminal is a control
-sequence or just random data. The sample program "interpret" illustrates
-more or less what the widget sees after it filters incoming data.
-
-WWW: http://projects.haskell.org/gtk2hs/

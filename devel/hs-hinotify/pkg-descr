@@ -1,5 +1,0 @@
-This library provides a wrapper to the Linux Kernel's inotify feature,
-allowing applications to subscribe to notifications when a file is accessed
-or modified.
-
-WWW: https://github.com/kolmodin/hinotify.git

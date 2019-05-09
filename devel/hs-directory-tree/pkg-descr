@@ -1,7 +1,0 @@
-A simple directory-like tree datatype, with useful IO functions and
-Foldable and Traversable instance.  Provides a simple data structure
-mirroring a directory tree on the filesystem, as well as useful
-functions for reading and writing file and directory structures in the
-IO monad.
-
-WWW: http://brandon.si/code/directory-tree-module-released/

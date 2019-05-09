@@ -1,4 +1,0 @@
-Formatting time is slow. This package provides mechanisms to cache formatted
-date.
-
-WWW: http://hackage.haskell.org/package/date-cache

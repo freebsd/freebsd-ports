@@ -1,5 +1,0 @@
-This tiny Haskell package contains the class ObjectName, which corresponds to
-the general notion of explicitly handled identifiers for API objects, e.g. a
-texture object name in OpenGL or a buffer object name in OpenAL.
-
-WWW: https://github.com/svenpanne/ObjectName
