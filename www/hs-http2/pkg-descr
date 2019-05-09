@@ -1,4 +1,0 @@
-HTTP/2.0 library including frames and HPACK.  Currently HTTP/2 16
-framing and HPACK 10 is supported.
-
-WWW: http://hackage.haskell.org/package/http2

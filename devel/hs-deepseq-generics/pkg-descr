@@ -1,5 +1,0 @@
-This package provides a "GHC.Generics"-based
-'Control.DeepSeq.Generics.genericRnf' function which can be used for
-providing a 'rnf' implementation.
-
-WWW: https://github.com/hvr/deepseq-generics

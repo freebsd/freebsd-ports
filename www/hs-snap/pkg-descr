@@ -1,8 +1,0 @@
-This is the top-level package for the official Snap Framework libraries.
-It includes:
-
- * The Snaplets API
- * The "snap" executable program for generating starter projects
- * Snaplets for sessions, authentication, and templates
-
-WWW: http://snapframework.com/

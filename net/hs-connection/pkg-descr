@@ -1,6 +1,0 @@
-Simple network library for all your connection need.  Features: Really
-simple to use, SSL/TLS, SOCKS.  This library provides a very simple api
-to create sockets to a destination with the choice of SSL/TLS, and
-SOCKS.
-
-WWW: https://github.com/vincenthz/hs-connection

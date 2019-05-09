@@ -1,6 +1,0 @@
-This package provides Haskell bindings for libcmark-gfm, the reference parser
-for GitHub Flavored Markdown, a fully specified variant of Markdown. It
-includes sources for libcmark-gfm (0.28.0) and does not require prior
-installation of the C library.
-
-WWW: https://github.com/kivikakk/cmark-gfm-hs

@@ -1,7 +1,0 @@
-When you've caught all the exceptions that can be handled safely,
-this is what you're left with.
-
-It is intended that you use qualified imports with this library.
-
-WWW: https://hackage.haskell.org/package/unexceptionalio
-

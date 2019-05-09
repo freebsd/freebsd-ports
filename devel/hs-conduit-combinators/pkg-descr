@@ -1,4 +1,0 @@
-Provides a replacement for Data.Conduit.List, as well as a convenient
-Conduit module.
-
-WWW: https://github.com/fpco/conduit-combinators

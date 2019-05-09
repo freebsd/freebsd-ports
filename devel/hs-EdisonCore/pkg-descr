@@ -1,7 +1,0 @@
-This package provides the core Edison data structure implementations,
-including multiple sequence, set, bag, and finite map concrete implementations
-with various performance characteristics.  The implementations in this package
-have no dependencies other than those commonly bundled with Haskell compilers.
-
-WWW: http://rwd.rdockins.name/edison/home/
-

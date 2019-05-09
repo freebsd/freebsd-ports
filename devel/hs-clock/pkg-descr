@@ -1,4 +1,0 @@
-A package for convenient access to high-resolution clock and timer functions of
-different operating systems via a unified API.
-
-WWW: http://hackage.haskell.org/package/clock

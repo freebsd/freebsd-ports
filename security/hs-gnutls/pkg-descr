@@ -1,6 +1,0 @@
-You almost certainly don't want to depend on this release. This is a
-pre-alpha, almost useless release; its only purpose is to enable TLS
-support in some of my other libraries. More complete bindings for GNU TLS
-will be released at a later date.
-
-WWW: https://john-millikin.com/software/haskell-gnutls/

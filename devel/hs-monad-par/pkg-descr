@@ -1,7 +1,0 @@
-The Par monad offers a simple API for parallel programming.  The library
-works for parallelising both pure and IO computations, although only the
-pure version is deterministic.  The default implementation provides a
-work-stealing scheduler and supports forking tasks that are much lighter
-weight than IO-threads.
-
-WWW: https://github.com/simonmar/monad-par

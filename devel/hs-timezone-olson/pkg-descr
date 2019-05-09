@@ -1,4 +1,0 @@
-A parser and renderer for binary Olson timezone files whose format is
-specified by the tzfile(5) man page on Unix-like systems.
-
-WWW: http://projects.haskell.org/time-ng/

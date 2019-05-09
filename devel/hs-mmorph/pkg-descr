@@ -1,4 +1,0 @@
-This library provides monad morphism utilities, most commonly used for
-manipulating monad transformer stacks.
-
-WWW: http://hackage.haskell.org/package/mmorph

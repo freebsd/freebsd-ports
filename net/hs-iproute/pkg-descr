@@ -1,5 +1,0 @@
-IP Routing Table is a tree of IP ranges to search one of them on the
-longest match base. It is a kind of TRIE with one way branching removed.
-Both IPv4 and IPv6 are supported.
-
-WWW: http://www.mew.org/~kazu/proj/iproute/

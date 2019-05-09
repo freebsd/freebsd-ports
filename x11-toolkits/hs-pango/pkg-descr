@@ -1,6 +1,0 @@
-This package provides a wrapper around the Pango C library that allows
-high-quality rendering of Unicode text.  It can be used either with
-Cairo to output text in PDF, PS or other documents or with Gtk+ to
-display text on-screen.
-
-WWW: http://projects.haskell.org/gtk2hs/

@@ -1,6 +1,0 @@
-The module Data.CaseInsensitive provides the 'CI' type constructor which can
-be parameterised by a string-like type like: 'String', 'ByteString', 'Text',
-etc.  Comparisons of values of the resulting type will be insensitive to
-cases.
-
-WWW: https://github.com/basvandijk/case-insensitive

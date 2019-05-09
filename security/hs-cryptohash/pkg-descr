@@ -1,6 +1,0 @@
-A collection of crypto hashes, with a practical incremental and one-pass,
-pure APIs, with performance close to the fastest implementations available
-in others languages.  The implementations are made in C with a haskell FFI
-wrapper that hide the C implementation.
-
-WWW: https://github.com/vincenthz/hs-cryptohash

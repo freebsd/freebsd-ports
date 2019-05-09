@@ -1,6 +1,0 @@
-This package implements functions, analogous to those from Data.List, to
-create and manipulate infinite lists: data Stream a = Cons a (Stream a).
-It provides alternative definitions for those Prelude functions that make
-sense on such streams.
-
-WWW: http://hackage.haskell.org/package/Stream

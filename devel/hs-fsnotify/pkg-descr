@@ -1,5 +1,0 @@
-Cross-platform library for file creation, modification, and deletion
-notification.  This library builds upon existing libraries for
-platform-specific Window, Mac, and Linux file system event notification.
-
-WWW: https://github.com/haskell-fswatch/hfsnotify

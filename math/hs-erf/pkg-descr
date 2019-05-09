@@ -1,4 +1,0 @@
-A type class for the error function, erf, and related functions for Haskell.
-Instances for Float and Double.
-
-WWW: http://hackage.haskell.org/package/erf

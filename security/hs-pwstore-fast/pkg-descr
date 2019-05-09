@@ -1,8 +1,0 @@
-To store passwords securely, they should be salted, then hashed with a
-slow hash function. This library uses PBKDF1-SHA256, and handles all the
-details. It uses the cryptohash package for speed; if you need a pure
-Haskell library, pwstore-purehaskell has the exact same API, but uses
-only pure Haskell. It is about 25 times slower than this package, but
-still quite usable.
-
-WWW: https://github.com/PeterScott/pwstore

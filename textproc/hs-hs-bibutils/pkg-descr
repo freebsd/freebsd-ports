@@ -1,5 +1,0 @@
-Haskell bindings to Chris Putnam's bibutils, a library that
-interconverts between various bibliography formats using a common
-MODS-format XML intermediate.
-
-WWW: http://istitutocolli.org/repos/hs-bibutils/

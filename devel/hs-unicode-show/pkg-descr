@@ -1,4 +1,0 @@
-This package provides variants of show and print functions that does not
-escape non-ascii characters.
-
-WWW: https://github.com/nushio3/unicode-show

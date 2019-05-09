@@ -1,6 +1,0 @@
-GConf is a configuration database system for storing application preferences.
-It supports default or mandatory settings set by the administrator, and
-changes to the database are instantly applied to all running applications. It
-is written for the GNOME desktop but doesn't require it.
-
-WWW: http://projects.haskell.org/gtk2hs/

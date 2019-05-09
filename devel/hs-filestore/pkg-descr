@@ -1,6 +1,0 @@
-The filestore library provides an abstract interface for a versioning file
-store, and modules that instantiate this interface. Currently Git, Darcs,
-and Mercurial modules are provided, and other VCSs or databases could be
-added.
-
-WWW: http://hackage.haskell.org/package/filestore

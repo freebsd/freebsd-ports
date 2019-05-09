@@ -1,9 +1,0 @@
-A generic interface for cryptographic operations (hashes, ciphers,
-randomness). Maintainers of hash and cipher implementations are
-encouraged to add instances for the classes defined in Crypto.Classes.
-Crypto users are similarly encouraged to use the interfaces defined in
-the Classes module. Any concepts or functions of general use to more
-than one cryptographic algorithm (ex: padding) is within scope of this
-package.
-
-WWW: https://github.com/TomMD/crypto-api

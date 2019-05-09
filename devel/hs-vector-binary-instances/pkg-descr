@@ -1,6 +1,0 @@
-Instances for Binary for the types defined in the vector package, making
-it easy to serialize vectors to and from disk.  We use the generic
-interface to vectors, so all vector types are supported.  Specific
-instances are provided for unboxed, boxed and storable vectors.
-
-WWW: https://github.com/bos/vector-binary-instances

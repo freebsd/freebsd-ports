@@ -1,3 +1,0 @@
-Expands type synonyms in Template Haskell ASTs.
-
-WWW: https://github.com/DanielSchuessler/th-expand-syns

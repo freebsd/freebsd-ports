@@ -1,4 +1,0 @@
-Several Haskell classes that extend the Arrow class, and some
-transformers that implement or lift these classes.
-
-WWW: http://www.haskell.org/arrows/

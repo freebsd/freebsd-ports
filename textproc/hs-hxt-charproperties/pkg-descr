@@ -1,5 +1,0 @@
-Character proprties defined by XML and Unicode standards.  These modules contain
-predicates for Unicode blocks and char proprties and character predicates
-defined by XML.  Supported Unicode version is 7.0.0.
-
-WWW: https://github.com/UweSchmidt/hxt

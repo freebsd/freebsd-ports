@@ -1,3 +1,0 @@
-Haskell 98 phantom types to avoid unsafely passing dummy arguments.
-
-WWW: https://github.com/ekmett/tagged

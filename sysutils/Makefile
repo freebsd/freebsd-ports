@@ -486,10 +486,6 @@
     SUBDIR += hpacucli
     SUBDIR += hploscripts
     SUBDIR += hptcli
-    SUBDIR += hs-cpu
-    SUBDIR += hs-disk-free-space
-    SUBDIR += hs-ekg-core
-    SUBDIR += hs-mountpoints
     SUBDIR += hstr
     SUBDIR += htop
     SUBDIR += httplog

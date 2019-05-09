@@ -1,7 +1,0 @@
-Per Conor McBride, the Newtype typeclass represents the packing and unpacking
-of a newtype, and allows you to operatate under that newtype with functions
-such as ala. Generics support was added in version 0.4, making this package a
-full replacement for the original newtype package, and a better alternative to
-newtype-th.
-
-WWW: http://hackage.haskell.org/package/newtype-genericse

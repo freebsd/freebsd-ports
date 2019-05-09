@@ -1,7 +1,0 @@
-vector-space provides classes and generic operations for vector spaces
-and affine spaces in Haskell. It also defines a type of infinite towers
-of generalized derivatives. A generalized derivative is a linear
-transformation rather than one of the common concrete representations
-(scalars, vectors, matrices, etc).
-
-WWW: http://hackage.haskell.org/package/vector-space

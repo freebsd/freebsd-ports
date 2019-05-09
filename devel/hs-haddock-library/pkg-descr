@@ -1,5 +1,0 @@
-Haddock is a documentation-generation tool for Haskell libraries.  These
-modules expose some functionality of it without pulling in the GHC
-dependency.
-
-WWW: http://www.haskell.org/haddock/

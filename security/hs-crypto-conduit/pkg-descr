@@ -1,5 +1,0 @@
-This package contains everything that you need to use a cryptographic
-package that supports the crypto-api package using conduits from the
-conduit package.
-
-WWW: https://github.com/prowdsponsor/crypto-conduit

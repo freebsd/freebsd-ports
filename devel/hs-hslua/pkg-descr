@@ -1,4 +1,0 @@
-The Scripting.Lua module is a wrapper of Lua language interpreter.  This
-package contains full Lua interpreter version 5.1.5.
-
-WWW: http://hackage.haskell.org/package/hslua

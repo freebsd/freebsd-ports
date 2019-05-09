@@ -1,6 +1,0 @@
-unamb contains the "unambiguous choice" operator "unamb", which
-wraps thread racing up in a purely functional, semantically simple
-wrapper. Originally a part of Reactive, the author moved unamb
-to its own Haskell package in order to encourage experimentation.
-
-WWW: http://haskell.org/haskellwiki/unamb

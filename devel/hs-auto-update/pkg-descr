@@ -1,6 +1,0 @@
-A common problem is the desire to have an action run at a scheduled
-interval, but only if it is needed.  This library allows you to define
-actions which will either be performed by a dedicated thread or, in
-times of low volume, will be executed by the calling thread.
-
-WWW: https://github.com/yesodweb/wai

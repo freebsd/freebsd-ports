@@ -1,4 +1,0 @@
-A low-level client library for the MySQL database, implemented as bindings to
-the C mysqlclient API.
-
-WWW: https://github.com/bos/mysql

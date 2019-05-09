@@ -1,6 +1,0 @@
-Hsb2hs is a preprocessor that allows you to include the contents of
-files as string literals in your Haskell programs and libraries.  It is
-an alternative to file-embed for those who do not want to rely on
-Template Haskell.
-
-WWW: http://hackage.haskell.org/package/hsb2hs

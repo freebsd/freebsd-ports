@@ -1,7 +1,0 @@
-This library implements i;unicode-casemap, the simple, non
-locale-sensitive unicode collation algorithm described in RFC 5051.
-Proper unicode collation can be done using text-icu, but that is a big
-dependency that depends on a large C library, and rfc5051 might be
-better for some purposes.
-
-WWW: http://hackage.haskell.org/package/rfc5051

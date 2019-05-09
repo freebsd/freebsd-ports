@@ -1,4 +1,0 @@
-Measurement-related functionality extracted from Criterion, with minimal
-dependencies. The rationale for this is to enable alternative analysis front-ends.
-
-WWW: https://github.com/bos/criterion

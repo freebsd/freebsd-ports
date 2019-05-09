@@ -1,6 +1,0 @@
-This package allows simple reflection of expressions containing variables.
-Reflection here means that a Haskell expression is turned into a string.
-The primary aim of this package is teaching and understanding; there are
-no options for manipulating the reflected expressions beyond showing them.
-
-WWW: http://twanvl.nl/blog/haskell/simple-reflection-of-expressions

@@ -1,6 +1,0 @@
-The base Haskell library exposes the hGetEcho and hSetEcho functions for
-querying and setting echo status, but unfortunately, neither function works
-with MinTTY consoles on Windows. This library provides an alternative interface
-which works with both MinTTY and other consoles.
-
-WWW: https://github.com/RyanGlScott/echo

@@ -1,7 +1,0 @@
-HsOpenSSL is an OpenSSL binding for Haskell.  It can generate RSA and
-DSA keys, read and write PEM files, generate message digests, sign and
-verify messages, encrypt and decrypt messages.  It has also some
-capabilities of creating SSL clients and servers.  This package is in
-production use by a number of Haskell based systems and stable.
-
-WWW: https://github.com/phonohawk/HsOpenSSL

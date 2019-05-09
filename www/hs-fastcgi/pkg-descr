@@ -1,6 +1,0 @@
-This Haskell library lets you write FastCGI programs. This package
-reuses the cgi package API, making it very easy to port CGI programs to
-FastCGI. The FastCGI C development kit is required to build this
-library.
-
-WWW: http://hackage.haskell.org/package/fastcgi

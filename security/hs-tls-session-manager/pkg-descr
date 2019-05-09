@@ -1,3 +1,0 @@
-TLS session manager with limitation, automatic pruning, energy saving and replay resistance
-
-WWW: http://hackage.haskell.org/package/tls-session-manager

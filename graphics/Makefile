@@ -337,12 +337,6 @@
     SUBDIR += hiptext
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
-    SUBDIR += hs-JuicyPixels
-    SUBDIR += hs-cairo
-    SUBDIR += hs-dia-base
-    SUBDIR += hs-dia-functions
-    SUBDIR += hs-graphviz
-    SUBDIR += hs-svgcairo
     SUBDIR += hugin
     SUBDIR += icat
     SUBDIR += icc-profiles-adobe-cs4

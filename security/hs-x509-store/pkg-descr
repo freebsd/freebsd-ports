@@ -1,4 +1,0 @@
-X.509 collection accessing and storing methods for certificate, crl,
-exception list.
-
-WWW: https://github.com/vincenthz/hs-certificate

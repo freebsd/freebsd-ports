@@ -1,5 +1,0 @@
-This library provides a wrapper to mmap(2), allowing files or devices to
-be lazily loaded into memory as strict or lazy ByteStrings, using the
-virtual memory subsystem to do on-demand loading.
-
-WWW: http://code.haskell.org/~dons/code/bytestring-mmap/

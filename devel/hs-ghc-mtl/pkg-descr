@@ -1,4 +1,0 @@
-Provides an 'mtl' compatible version of the 'GhcT' monad-transformer
-defined in the 'GHC-API' since version 6.10.1.
-
-WWW: http://hub.darcs.net/jcpetruzza/ghc-mtl

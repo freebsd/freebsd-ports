@@ -1,8 +1,0 @@
-This package comes "Batteries Included" with many useful lenses for the
-types commonly used from the Haskell Platform, and with tools for
-automatically generating lenses and isomorphisms for user-supplied data
-types.  The combinators in Control.Lens provide a highly generic toolbox
-for composing families of getters, folds, isomorphisms, traversals,
-setters and lenses and their indexed variants.
-
-WWW: https://github.com/ekmett/lens/

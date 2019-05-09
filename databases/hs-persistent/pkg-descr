@@ -1,4 +1,0 @@
-Type-safe, data serialization. You must use a specific backend in order
-to make this useful.
-
-WWW: http://www.yesodweb.com/book/persistent

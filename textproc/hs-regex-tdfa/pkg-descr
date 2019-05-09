@@ -1,3 +1,0 @@
-A new all Haskell "tagged" DFA regex engine, inspired by libtre.
-
-WWW: http://hackage.haskell.org/package/regex-tdfa

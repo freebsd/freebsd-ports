@@ -1,6 +1,0 @@
-This library provides a powerful but simple way to measure sofware
-performance.  It provides both a framework for executing and analysing
-benchmarks and a set of driver functions that makes it easy to build and
-run benchmarks, and to analyse their results.
-
-WWW: http://www.serpentine.com/criterion

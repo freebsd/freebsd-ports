@@ -117,7 +117,6 @@
     SUBDIR += horde-nag
     SUBDIR += hot-babe
     SUBDIR += howm
-    SUBDIR += hs-fdo-notify
     SUBDIR += ical
     SUBDIR += jjclient
     SUBDIR += jlj

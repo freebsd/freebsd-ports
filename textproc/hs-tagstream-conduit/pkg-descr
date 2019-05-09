@@ -1,6 +1,0 @@
-Tag-stream is a library for parsing HTML//XML to a token stream. It can
-parse unstructured and malformed HTML from the web. It also provides an
-Enumeratee which can parse streamline html, which means it consumes constant
-memory.
-
-WWW: https://github.com/yihuang/tagstream-conduit

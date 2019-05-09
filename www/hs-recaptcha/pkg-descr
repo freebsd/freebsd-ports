@@ -1,7 +1,0 @@
-The reCAPTCHA [1] is a service that provides captchas for preventing
-automated spam in web applications.  The recaptcha-hs provides functions
-for using reCAPTCHA in Haskell web applications.
-
-[1] http://recaptcha.net/
-
-WWW: https://github.com/jgm/recaptcha/tree/master

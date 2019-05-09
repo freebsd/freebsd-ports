@@ -1,4 +1,0 @@
-This package provides a basic random number generation library, including
-the ability to split random number generators.
-
-WWW: http://hackage.haskell.org/package/random

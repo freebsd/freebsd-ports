@@ -1,5 +1,0 @@
-This package contains an implementation of a high-quality splittable
-pseudorandom number generator.  The generator is based on a
-cryptographic hash function built on top of the ThreeFish block cipher.
-
-WWW: http://hackage.haskell.org/package/tf-random

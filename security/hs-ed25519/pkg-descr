@@ -1,6 +1,0 @@
-This package provides a simple, fast, self-contained copy of the Ed25519
-public-key signature system with a clean interface. It also includes support
-for detached signatures, and thorough documentation on the design and
-implementation, including usage guidelines.
-
-WWW: http://hackage.haskell.org/package/ed25519

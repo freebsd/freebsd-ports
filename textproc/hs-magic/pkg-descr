@@ -1,5 +1,0 @@
-This package provides a Haskell interface to the C libmagic library.  With it,
-you can determine the type of a file by examining its contents rather than its
-name.  The Haskell interface provides a full-featured binding.
-
-WWW: http://hackage.haskell.org/package/magic
