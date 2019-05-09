@@ -273,6 +273,7 @@
     SUBDIR += hipmcl
     SUBDIR += hmat-oss
     SUBDIR += hs-Agda
+    SUBDIR += hs-semigroups
     SUBDIR += ignition-math
     SUBDIR += igraph
     SUBDIR += intervaltree
