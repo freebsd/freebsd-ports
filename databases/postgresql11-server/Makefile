@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	11.2
-# PORTREVISION must be ?= otherwise, all other port get this PORTREVISION and
+DISTVERSION?=	11.3
+# PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
@@ -175,12 +175,13 @@ USES+=		compiler:gcc-c++11-lib
 
 .if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
 .  if defined(SERVER_ONLY) && ${PORT_OPTIONS:MLLVM}
-LLVM_VERSION=		60
-BUILD_DEPENDS+=		llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-RUN_DEPENDS+=		llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-CONFIGURE_ENV+=		LLVM_CONFIG=${LOCALBASE}/bin/llvm-config60 CLANG=${LOCALBASE}/bin/clang60
+BUILD_DEPENDS+=		llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS+=		llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+RUN_DEPENDS+=		llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+CONFIGURE_ENV+=		LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}
 CONFIGURE_ARGS+=	--with-llvm
 PLIST_SUB+=		LLVM=""
+INSTALL_DIRS+=		src/backend/jit/llvm
 .  else
 PLIST_SUB+=		LLVM="@comment "
 CONFIGURE_ARGS+=	--without-llvm

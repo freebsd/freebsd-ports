@@ -47,6 +47,7 @@ stop_cmd="postgresql_command stop"
 restart_cmd="postgresql_command restart"
 reload_cmd="postgresql_command reload"
 status_cmd="postgresql_command status"
+promote_cmd="postgresql_command promote"
 
 initdb_cmd="postgresql_initdb"
 
