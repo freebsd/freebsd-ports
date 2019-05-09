@@ -4,7 +4,7 @@
 PORTNAME=	luasocket
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0-rc1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -22,7 +22,8 @@ MAKE_ARGS=	LUAV=${LUA_VER}
 USES?=		gmake lua pkgconfig
 INSTALL_TARGET=	install-unix
 
-CFLAGS+=	`pkgconf --cflags lua-${LUA_VER}`
+CFLAGS+=	`pkgconf --cflags lua-${LUA_VER}` \
+		-DLUA_COMPAT_APIINTCASTS
 LDFLAGS+=	-shared  `pkgconf --libs lua-${LUA_VER}`
 
 OPTIONS_DEFINE=	DOCS
