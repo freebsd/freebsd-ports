@@ -5,6 +5,8 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/2ddaaaf595
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/e3991a5a45
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/995889abbf
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/0856c5da07
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/0e1ea034d8
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/1e8475b507
 
 --- doc/encoders.texi.orig	2018-11-05 23:22:25 UTC
 +++ doc/encoders.texi
@@ -297,6 +299,15 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/0856c5da07
      // provide dummy value to initialize wrapper, values will be updated each _encode()
      aom_img_wrap(&ctx->rawimg, img_fmt, avctx->width, avctx->height, 1,
                   (unsigned char*)1);
+@@ -727,7 +808,7 @@ static int storeframe(AVCodecContext *avctx, struct FrameListData *cx_frame,
+                       AVPacket *pkt)
+ {
+     AOMContext *ctx = avctx->priv_data;
+-    int pict_type;
++    int av_unused pict_type;
+     int ret = ff_alloc_packet2(avctx, pkt, cx_frame->sz, 0);
+     if (ret < 0) {
+         av_log(avctx, AV_LOG_ERROR,
 @@ -975,19 +1056,37 @@ static const AVOption options[] = {
                           "frames (2-pass only)",                   OFFSET(auto_alt_ref),    AV_OPT_TYPE_INT, {.i64 = -1},      -1,      2,       VE},
      { "lag-in-frames",   "Number of frames to look ahead at for "
@@ -328,7 +339,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/0856c5da07
 +    { "row-mt",           "Enable row based multi-threading",      OFFSET(row_mt),         AV_OPT_TYPE_BOOL, {.i64 = -1}, -1, 1, VE},
 +    { "enable-cdef",      "Enable CDEF filtering",                 OFFSET(enable_cdef),    AV_OPT_TYPE_BOOL, {.i64 = -1}, -1, 1, VE},
 +    { "enable-global-motion",  "Enable global motion",             OFFSET(enable_global_motion), AV_OPT_TYPE_BOOL, {.i64 = -1}, -1, 1, VE},
-+    { "enable-intrabc",  "Enable intra block copy prediction mode", OFFSET(enable_intrabc), AV_OPT_TYPE_BOOL, {.i64 = -1},  0, 1, VE},
++    { "enable-intrabc",  "Enable intra block copy prediction mode", OFFSET(enable_intrabc), AV_OPT_TYPE_BOOL, {.i64 = -1}, -1, 1, VE},
 +    { NULL },
  };
  
