@@ -1,0 +1,5 @@
+pyzopfli is a straightforward Python wrapper around zopfli's ZlibCompress
+method. It also wraps GzipCompress, but the API point does not try to mimic the
+gzip module.
+
+WWW: https://github.com/obp/py-zopfli
