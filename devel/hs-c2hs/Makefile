@@ -3,7 +3,7 @@
 
 PORTNAME=	c2hs
 PORTVERSION=	0.28.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,15 +11,15 @@ COMMENT=	C->Haskell FFI tool that gives some cross-language type safety
 
 LICENSE=	GPLv2
 
-USE_CABAL=	dlist language-c>=0.7.1 shelly>=1.0 yaml>=0.8
+BUILD_DEPENDS=	happy:devel/hs-happy
 
-XMLDOCS=	doc/users_guide:html
+USES=		cabal
 
-STANDALONE=	yes
-EXECUTABLE=	c2hs
+USE_CABAL=	alex-3.2.4 dlist-0.8.0.5 happy-1.19.9_3 language-c-0.8.2_1 syb-0.7
 
-MAN1PAGES=	c2hs.1
-MAN1SRC=	doc/man1
+PLIST_FILES=	man/man1/c2hs.1.gz
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/man1/c2hs.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+
 .include <bsd.port.mk>

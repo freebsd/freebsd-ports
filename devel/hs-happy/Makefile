@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	happy
-PORTVERSION=	1.19.5
-PORTREVISION=	5
+PORTVERSION=	1.19.9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,15 +10,14 @@ COMMENT=	Happy is a parser generator for Haskell
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	mtl>=1.0
+USES=		cabal
 
-XMLDOCS=	doc/happy:html
-XMLDOCS_CONF=	yes
+PORTEXAMPLES=	*.ly README glr/* igloo/*
 
-STANDALONE=	yes
-EXECUTABLE=	happy
+OPTIONS_DEFINE=	EXAMPLES
 
-INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	lhs2tex
 PORTVERSION=	1.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,13 +11,12 @@ COMMENT=	Preprocessor for typesetting Haskell sources with LaTeX
 
 LICENSE=	GPLv2
 
-USE_CABAL=	mtl regex-compat
+USES=		cabal
+
 USE_TEX=	latex dvipsk
 
-STANDALONE=	yes
-EXECUTABLE=	lhs2TeX
+USE_CABAL=	regex-base-0.93.2 regex-compat-0.95.1 regex-posix-0.95.2
 
-MAN1PAGES=	lhs2TeX.1
+EXECUTABLES=	lhs2TeX
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

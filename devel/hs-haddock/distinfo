@@ -1,3 +1,11 @@
-TIMESTAMP = 1546019118
+TIMESTAMP = 1550307107
 SHA256 (cabal/haddock-2.21.0.tar.gz) = 0863cea77db75032ea8eb3b31e363300cf59ce347c56bd0d3aa64b0b298378b6
 SIZE (cabal/haddock-2.21.0.tar.gz) = 264884
+SHA256 (cabal/ghc-paths-0.1.0.9/ghc-paths-0.1.0.9.tar.gz) = afa68fb86123004c37c1dc354286af2d87a9dcfb12ddcb80e8bd0cd55bc87945
+SIZE (cabal/ghc-paths-0.1.0.9/ghc-paths-0.1.0.9.tar.gz) = 2402
+SHA256 (cabal/ghc-paths-0.1.0.9/revision/4.cabal) = ed18df7b53699446dabd66f6e019e5b156820f0301d8dec0d6385f13b797e0ba
+SIZE (cabal/ghc-paths-0.1.0.9/revision/4.cabal) = 656
+SHA256 (cabal/haddock-api-2.21.0/haddock-api-2.21.0.tar.gz) = dcaeb11b9fa22544b932492198b373abf598c87fedc3ea05ae125a6230ecd148
+SIZE (cabal/haddock-api-2.21.0/haddock-api-2.21.0.tar.gz) = 177939
+SHA256 (cabal/haddock-library-1.7.0/haddock-library-1.7.0.tar.gz) = e7c2794a7eb352824f098cafa07bc0506f2c3633808bfbf4c64aef0ba664d011
+SIZE (cabal/haddock-library-1.7.0/haddock-library-1.7.0.tar.gz) = 26315

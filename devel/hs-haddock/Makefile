@@ -3,7 +3,7 @@
 
 PORTNAME=	haddock
 PORTVERSION=	2.21.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,17 +11,18 @@ COMMENT=	Documentation-generation tool for Haskell libraries
 
 LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	haddock-api>=2.16
+USES=		cabal
 
-USE_ALEX=	true
-USE_HAPPY=	true
+USE_CABAL=	ghc-paths-0.1.0.9_4 haddock-api-2.21.0 haddock-library-1.7.0
+SKIP_CABAL_PLIST=	yes
 
-EXECUTABLE=	haddock-${PORTVERSION}
-STANDALONE=	yes
+# new-cabal doesn't seem to support this yet
+#CONFIGURE_ARGS+=	--program-suffix=-${PORTVERSION}
 
-PLIST_SUB+=	GHC_HADDOCK_CMD=${GHC_HADDOCK_CMD} HADDOCK=${PREFIX}/bin/haddock EXECUTABLE=${PREFIX}/bin/haddock-${PORTVERSION}
+post-stage:
+	${MV} ${STAGEDIR}/${PREFIX}/bin/haddock ${STAGEDIR}/${PREFIX}/bin/haddock-${PORTVERSION}
 
-CONFIGURE_ARGS+=	--program-suffix=-${PORTVERSION}
+post-install-script:
+	${ECHO_CMD} 'bin/haddock-${PORTVERSION}' >> ${TMPPLIST}
 
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

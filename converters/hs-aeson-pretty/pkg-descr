@@ -1,9 +1,6 @@
-A JSON pretty-printing library compatible with aeson as well as a
-command-line tool to improve readabilty of streams of JSON data.  The
-/library/ provides the function "encodePretty".  It is a drop-in
-replacement for aeson's "encode" function, producing JSON-ByteStrings
-for human readers.  The /command-line tool/ reads JSON from stdin and
-writes prettified JSON to stdout.  It also offers a complementary
-"compact"-mode, essentially the opposite of pretty-printing.
+A JSON pretty-printing command-line tool to improve readabilty of
+streams of JSON data.  It reads JSON from stdin and writes prettified JSON
+to stdout.  It also offers a complementary "compact"-mode, essentially
+the opposite of pretty-printing.
 
 WWW: https://github.com/informatikr/aeson-pretty

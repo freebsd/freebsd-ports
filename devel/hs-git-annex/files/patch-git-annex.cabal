@@ -1,10 +1,10 @@
---- git-annex.cabal.orig	2017-06-12 17:56:05 UTC
+--- git-annex.cabal.orig	2019-01-29 19:25:02 UTC
 +++ git-annex.cabal
-@@ -446,7 +446,6 @@ Executable git-annex
-   if flag(Webapp)
-     Build-Depends:
-      yesod (>= 1.2.6), 
--     yesod-default (>= 1.2.0),
-      yesod-static (>= 1.2.4),
-      yesod-form (>= 1.3.15),
-      yesod-core (>= 1.2.19),
+@@ -507,7 +507,6 @@ Executable git-annex
+           if (! os(solaris) && ! os(gnu) && ! os(linux))
+             CPP-Options: -DWITH_KQUEUE
+             C-Sources: Utility/libkqueue.c
+-            Includes: Utility/libkqueue.h
+             Other-Modules: Utility.DirWatcher.Kqueue
+ 
+   if flag(Dbus)

@@ -1,0 +1,109 @@
+--- src/Stack/Setup.hs.orig	2019-03-13 17:31:58 UTC
++++ src/Stack/Setup.hs
+@@ -102,7 +102,7 @@ import              RIO.List
+ import              Text.Printf (printf)
+ 
+ #if !WINDOWS
+-import              Bindings.Uname (uname, release)
++import              System.Uname (uname, release)
+ import              Data.List.Split (splitOn)
+ import              Foreign.C (throwErrnoIfMinus1_, peekCString)
+ import              Foreign.Marshal (alloca)
+--- stack.cabal.orig	2018-12-02 17:59:53 UTC
++++ stack.cabal
+@@ -215,6 +215,7 @@ library
+       Text.PrettyPrint.Leijen.Extended
+       System.Process.PagerEditor
+       System.Terminal
++      System.Uname
+   other-modules:
+       Hackage.Security.Client.Repository.HttpLib.HttpClient
+   hs-source-dirs:
+@@ -317,6 +318,7 @@ library
+   else
+     hs-source-dirs:
+         src/unix/
++    c-sources: src/unix/uname.c
+   default-language: Haskell2010
+   autogen-modules: Paths_stack
+ 
+@@ -418,8 +420,8 @@ executable stack
+     build-tools:
+         hsc2hs
+     build-depends:
+-        bindings-uname
+-      , unix
++        unix
++    c-sources: src/unix/uname.c
+   if flag(static)
+     ld-options: -static -pthread
+   if !(flag(disable-git-info))
+--- src/unix/System/Uname.hsc.orig	2019-03-13 18:32:55 UTC
++++ src/unix/System/Uname.hsc
+@@ -0,0 +1,54 @@
++module System.Uname
++    ( Utsname
++    , uname
++
++    , sysname
++    , nodename
++    , release
++    , version
++    , machine
++    )
++    where
++
++#include <sys/utsname.h>
++
++import Foreign
++import Foreign.C
++
++-- | @'uname' name@ stores nul-terminated strings of information
++--   identifying the current system info to the structure referenced
++--   by name.
++--
++--   > import Foreign.C
++--   > import Foreign.Marshal
++--   >
++--   > sysName :: IO String
++--   > sysName = alloca $ \ ptr ->
++--   >           do throwErrnoIfMinus1_ "uname" $ uname ptr
++--   >              peekCString $ sysname ptr
++--
++foreign import ccall unsafe "haskell_uname"
++        uname :: Ptr Utsname -> IO CInt
++
++data Utsname
++
++instance Storable Utsname where
++    sizeOf    = const #size struct utsname
++    alignment = const #alignment struct utsname
++    poke      = error "Storable Utsname: peek: unsupported operation"
++    peek      = error "Storable Utsname: poke: unsupported operation"
++
++sysname :: Ptr Utsname -> CString
++sysname = (#ptr struct utsname, sysname)
++
++nodename :: Ptr Utsname -> CString
++nodename = (#ptr struct utsname, nodename)
++
++release :: Ptr Utsname -> CString
++release = (#ptr struct utsname, release)
++
++version :: Ptr Utsname -> CString
++version = (#ptr struct utsname, version)
++
++machine :: Ptr Utsname -> CString
++machine = (#ptr struct utsname, machine)
+diff --git a/src/unix/cbits/uname.c b/src/unix/cbits/uname.c
+new file mode 100644
+index 000000000..901e025df
+--- /dev/null
++++ src/unix/uname.c
+@@ -0,0 +1,6 @@
++#include <sys/utsname.h>
++
++int haskell_uname(struct utsname *name)
++{
++    return uname(name);
++}
