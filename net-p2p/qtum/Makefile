@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtum
-PORTVERSION=	0.17.3
+PORTVERSION=	0.17.5
 DISTVERSIONPREFIX=	mainnet-ignition-v
 CATEGORIES=	net-p2p finance
 
