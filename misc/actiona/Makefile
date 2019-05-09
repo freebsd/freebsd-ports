@@ -18,7 +18,7 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libopencv_core.so:graphics/opencv-core \
 		libopencv_video.so:graphics/opencv
 
-USES=		desktop-file-utils gl pkgconfig qmake gnome qt:5 shared-mime-info
+USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig qmake gnome qt:5 shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jmgr
 USE_QT=		concurrent core dbus gui multimedia network script scripttools speech sql widgets x11extras xml xmlpatterns \
