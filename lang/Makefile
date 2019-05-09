@@ -321,6 +321,7 @@
     SUBDIR += rubinius
     SUBDIR += ruby24
     SUBDIR += ruby25
+    SUBDIR += ruby26
     SUBDIR += runawk
     SUBDIR += rust
     SUBDIR += rust-nightly
