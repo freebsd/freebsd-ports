@@ -37,6 +37,8 @@ _INCLUDE_USES_CABAL_MK=    yes
 IGNORE=		Incorrect 'USES= cabal:${cabal_ARGS}' cabal takes no arguments
 .endif
 
+PKGNAMEPREFIX?=	hs-
+
 EXECUTABLES?=	${PORTNAME}
 
 CABAL_HOME=	${WRKDIR}/cabal-home
