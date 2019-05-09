@@ -1,5 +1,5 @@
 bin/bemenu
-%%BEMENU_RUN%%bin/bemenu-run
+bin/bemenu-run
 include/bemenu.h
 %%NCURSES%%lib/bemenu/bemenu-renderer-curses.so
 %%WAYLAND%%lib/bemenu/bemenu-renderer-wayland.so
