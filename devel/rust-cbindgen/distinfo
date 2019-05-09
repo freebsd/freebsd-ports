@@ -1,4 +1,4 @@
-TIMESTAMP = 1551903339
+TIMESTAMP = 1557164554
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
 SIZE (rust/crates/ansi_term-0.11.0.tar.gz) = 17087
 SHA256 (rust/crates/atty-0.2.11.tar.gz) = 9a7d5b8723950951411ee34d271d99dddcc2035a16ab25310ea2c8cfd4369652
@@ -89,5 +89,5 @@ SHA256 (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = ac3b87c63620426dd
 SIZE (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SHA256 (eqrion-cbindgen-v0.8.2_GH0.tar.gz) = aa9b458c0d3e638a3831ec1e3a23570c15bd45cca5502b12a68f1d6a2d7f2db1
-SIZE (eqrion-cbindgen-v0.8.2_GH0.tar.gz) = 106064
+SHA256 (eqrion-cbindgen-v0.8.6_GH0.tar.gz) = 456a8ee9ab872cdb31f829fb06294c08b5e238f1390f9f4a5b7908a6346cbbf2
+SIZE (eqrion-cbindgen-v0.8.6_GH0.tar.gz) = 114441
