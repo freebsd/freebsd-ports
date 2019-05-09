@@ -19,7 +19,7 @@ LIB_DEPENDS=	libmikmod.so:audio/libmikmod \
 		libsmpeg.so:multimedia/smpeg \
 		libtinyxml.so:textproc/tinyxml
 
-USES=		autoreconf gmake tar:tgz
+USES=		autoreconf compiler:c++11-lang gmake tar:tgz
 USE_SDL=	sdl mixer image
 GNU_CONFIGURE=	yes
 
