@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:graphics/gimp-app
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:graphics/gimp-app
 
-USES=		gettext gmake pkgconfig
+USES=		compiler:c++11-lang gettext gmake pkgconfig
 
 PLIST_SUB=	GIMP_PLUGIN_DIR=${GIMP_PLUGIN_DIR}
 GIMP_PLUGIN_DIR=	libexec/gimp/2.2/plug-ins
@@ -34,7 +34,7 @@ OPTIMIZED_CFLAGS_CFLAGS=	-O3
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|gimptool-2.0|${LOCALBASE}/bin/gimptool-2.0|' \
-		-e '/^LIBS =/s/$$/ -lm/' \
+		-e '/^LIBS =/s/$$/ $$\(LDFLAGS\) -lm/' \
 		${WRKSRC}/src/Makefile
 
 post-patch-NLS-off:
