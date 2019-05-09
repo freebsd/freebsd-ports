@@ -189,6 +189,7 @@
     SUBDIR += py-rjsmin
     SUBDIR += py-warctools
     SUBDIR += py-xopen
+    SUBDIR += py-zopfli
     SUBDIR += py-zstandard
     SUBDIR += py-zstd
     SUBDIR += qpress

@@ -1,0 +1,19 @@
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	zopfli
+PORTVERSION=	0.1.6
+CATEGORIES=	archivers python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Zopfli module for python
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		python zip
+USE_PYTHON=	autoplist concurrent distutils
+
+.include <bsd.port.mk>
