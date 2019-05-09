@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	bareos
+PORTNAME=	bareos17
 PKGNAMESUFFIX=	-client-static
 
 COMMENT=	Backup archiving recovery open sourced (static client)
@@ -8,7 +8,7 @@ COMMENT=	Backup archiving recovery open sourced (static client)
 CONFLICTS=	bareos16-client-static-*
 
 PLIST=		${.CURDIR}/pkg-plist
-MASTERDIR=	${.CURDIR}/../../sysutils/bareos-server
+MASTERDIR=	${.CURDIR}/../../sysutils/bareos17-server
 
 PLIST_FILES=	sbin/bareos-fd-static \
 		sbin/bconsole-static
