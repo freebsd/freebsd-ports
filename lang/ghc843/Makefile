@@ -1,4 +1,4 @@
-#6Created by: Simon Marlow <simonmar@microsoft.com>
+# Created by: Simon Marlow <simonmar@microsoft.com>
 # $FreeBSD$
 
 PORTNAME=	ghc
