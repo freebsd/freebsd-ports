@@ -1,7 +1,9 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION?=	9.5.16
+DISTVERSION?=	9.5.17
+# PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
+# not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}${COMPONENT}
 
