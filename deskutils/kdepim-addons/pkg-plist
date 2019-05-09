@@ -544,6 +544,7 @@ share/locale/km/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ko/LC_MESSAGES/cryptopageplugin.mo
 share/locale/ko/LC_MESSAGES/customtoolsplugin.mo
 share/locale/ko/LC_MESSAGES/importwizard_plugins.mo
+share/locale/ko/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/ko/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ko/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/ko/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
@@ -559,6 +560,7 @@ share/locale/ko/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/ko/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/ko/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ko/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
+share/locale/ko/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/ko/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/ko/LC_MESSAGES/messageviewerplugins.mo
 share/locale/ko/LC_MESSAGES/pimeventsplugin.mo
