@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sslproxy
-PORTVERSION=	0.5.9
+PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libnet.so:net/libnet
 
-USES=		gmake pkgconfig uidfix ssl
+USES=		gmake pkgconfig uidfix sqlite ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	sonertari
 GH_PROJECT=	SSLproxy
