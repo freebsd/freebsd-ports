@@ -1,0 +1,11 @@
+--- src/tools/Makefile.in	2016-10-16 10:14:36.000000000 -0500
++++ src/tools/Makefile.in	2016-11-09 22:56:53.069629000 -0500
+@@ -130,7 +130,7 @@
+ 	$(MKDIR) $(DESTDIR)$(sbindir)
+ 	@for tool in ${TOOLS_BIN} ; do \
+ 	   $(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) $$tool $(DESTDIR)$(bindir)/$$tool ; \
+-	   if ! [ -r $(DESTDIR)$(sbindir)/$$tool ]; then $(SYMLINK) $(bindir)/$$tool $(DESTDIR)$(sbindir)/$$tool; fi; \
++	   if ! [ -r $(DESTDIR)$(sbindir)/$$tool ]; then $(SYMLINK) ../bin/$$tool $(DESTDIR)$(sbindir)/$$tool; fi; \
+ 	done
+ 	# Allow non-root execution of bsmtp for non-root Directors
+ 	chmod 755 $(DESTDIR)$(bindir)/bsmtp
