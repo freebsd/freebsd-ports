@@ -1,6 +1,8 @@
+bin/bregex
+bin/bsmtp
+bin/bwild
+bin/timelimit
 @sample(,bareos,640) %%ETCDIR%%/bareos-barcodes.sample
-%%MTX%%@sample(,bareos,640) %%ETCDIR%%/mtx-changer.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-regress.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/catalog/MyCatalog.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/client/bareos-fd.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/console/bareos-mon.conf.sample
@@ -9,9 +11,12 @@
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/LinuxAll.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/SelfTest.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/WindowsAllDrives.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.example.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupCatalog.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreFiles.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-bareos-fd.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-ldap.conf.example.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/restore-ldap.conf.example.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/jobdefs/DefaultJob.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/messages/Daemon.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/messages/Standard.conf.sample
@@ -23,15 +28,25 @@
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/schedule/WeeklyCycle.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/schedule/WeeklyCycleAfterBackup.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/File.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/NULL.conf.example.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Tape.conf.example.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-regress.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/autochanger/autochanger-0.conf.example.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/FileStorage.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/NULL.conf.example.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/tapedrive-0.conf.example.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-dir.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-mon.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/messages/Standard.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/storage/bareos-sd.conf.sample
-bin/bregex
-bin/bsmtp
-bin/bwild
-bin/timelimit
+%%MTX%%@sample(,bareos,640) %%ETCDIR%%/mtx-changer.conf.sample
+etc/logrotate.d/bareos-dir
+etc/rc.d/bareos-dir
+etc/rc.d/bareos-sd
+lib/bareos/backends/libbareoscats-%%DBTYPE%%.so
+lib/bareos/backends/libbareossd-fifo.so
+lib/bareos/backends/libbareossd-gentape.so
+lib/bareos/backends/libbareossd-tape.so
 lib/bareos/plugins/BareosDirPluginBaseclass.py
 lib/bareos/plugins/BareosDirWrapper.py
 lib/bareos/plugins/BareosSdPluginBaseclass.py
@@ -47,28 +62,20 @@ lib/bareos/plugins/bareos_sd_consts.py
 %%PYTHON%%lib/bareos/plugins/python-sd.so
 %%SCSICRYPTO%%lib/bareos/plugins/scsicrypto-sd.so
 %%SCSICRYPTO%%lib/bareos/plugins/scsitapealert-sd.so
-lib/bareos/scripts/bareos
-lib/bareos/scripts/bareos-config
-lib/bareos/scripts/bareos-config-lib.sh
 lib/bareos/scripts/bareos-ctl-dir
-lib/bareos/scripts/bareos-ctl-fd
-lib/bareos/scripts/bareos-ctl-funcs
 lib/bareos/scripts/bareos-ctl-sd
 lib/bareos/scripts/bareos-explorer
 lib/bareos/scripts/bareos-glusterfind-wrapper
-lib/bareos/scripts/bareos_config
-lib/bareos/scripts/btraceback.dbx
-lib/bareos/scripts/btraceback.gdb
-lib/bareos/scripts/btraceback.mdb
 lib/bareos/scripts/create_bareos_database
-lib/bareos/scripts/ddl/creates/%%DBTYPE%%.sql
+%%MYSQL%%lib/bareos/scripts/ddl/creates/%%DBTYPE%%.sql
+%%PGSQL%%lib/bareos/scripts/ddl/creates/%%DBTYPE%%.sql
 %%MYSQL%%lib/bareos/scripts/ddl/drops/%%DBTYPE%%.sql
 %%PGSQL%%lib/bareos/scripts/ddl/drops/%%DBTYPE%%.sql
+%%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-change_owner.dbconfig-template.sql
 %%MYSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-readonly.sql
 %%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-readonly.sql
 %%MYSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%.sql
 %%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%.sql
-%%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-change_owner.dbconfig-template.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.10_11.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.11_12.sql
 lib/bareos/scripts/ddl/updates/%%DBTYPE%%.12_14.sql
@@ -90,20 +97,16 @@ lib/bareos/scripts/make_catalog_backup.pl
 lib/bareos/scripts/mtx-changer
 lib/bareos/scripts/query.sql
 lib/bareos/scripts/update_bareos_tables
-lib/libbareoscats-%%LIB_VERSION%%.so
-lib/libbareoscats-%%DBTYPE%%-%%LIB_VERSION%%.so
-lib/libbareoscats-%%DBTYPE%%.so
-lib/libbareoscats.la
 lib/libbareoscats.so
-%%NDMP%%lib/libbareosndmp-%%LIB_VERSION%%.so
-%%NDMP%%lib/libbareosndmp.la
+lib/libbareoscats.so.18
+lib/libbareoscats.so.%%LIB_VERSION%%
 %%NDMP%%lib/libbareosndmp.so
-lib/libbareossd-%%LIB_VERSION%%.so
-lib/libbareossd.la
+%%NDMP%%lib/libbareosndmp.so.18
+%%NDMP%%lib/libbareosndmp.so.%%LIB_VERSION%%
 lib/libbareossd.so
-lib/libbareossql-%%LIB_VERSION%%.so
-lib/libbareossql.la
 lib/libbareossql.so
+lib/libbareossql.so.18
+lib/libbareossql.so.%%LIB_VERSION%%
 man/man1/bareos-tray-monitor.1.gz
 man/man1/bregex.1.gz
 man/man1/bsmtp.1.gz
@@ -111,33 +114,29 @@ man/man1/bwild.1.gz
 man/man8/bareos-dbcheck.8.gz
 man/man8/bareos-dir.8.gz
 man/man8/bareos-sd.8.gz
-man/man8/bareos.8.gz
 man/man8/bcopy.8.gz
 man/man8/bextract.8.gz
 man/man8/bls.8.gz
+man/man8/bpluginfo.8.gz
 man/man8/bscan.8.gz
+man/man8/bscrypto.8.gz
 man/man8/btape.8.gz
 man/man8/btraceback.8.gz
-sbin/bareos
 sbin/bareos-dbcheck
 sbin/bareos-dir
 sbin/bareos-sd
-sbin/bbatch
 sbin/bcopy
 sbin/bextract
 sbin/bls
 sbin/bpluginfo
 sbin/bregex
-sbin/bregtest
 sbin/bscan
 sbin/bscrypto
 sbin/bsmtp
 sbin/btape
-sbin/btraceback
+sbin/btestls
 sbin/bwild
 sbin/chio-bareos
-sbin/grow
-sbin/testls
 sbin/timelimit
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/catalog
@@ -153,6 +152,8 @@ sbin/timelimit
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/profile
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/schedule
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/storage
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir-export
+@dir(,bareos,750) %%ETCDIR%%/bareos-dir-export/client
 @dir(,bareos,750) %%ETCDIR%%/bareos-sd.d
 @dir(,bareos,750) %%ETCDIR%%/bareos-sd.d/autochanger
 @dir(,bareos,750) %%ETCDIR%%/bareos-sd.d/device
@@ -161,5 +162,6 @@ sbin/timelimit
 @dir(,bareos,750) %%ETCDIR%%/bareos-sd.d/ndmp
 @dir(,bareos,750) %%ETCDIR%%/bareos-sd.d/storage
 @dir(bareos,bareos,) %%BAREOS_DIR%%
+@dir(bareos,bareos,) %%BAREOS_DIR%%/storage
 @dir(bareos,bareos,) /var/log/bareos
 @dir(bareos,bareos,) /var/run/bareos

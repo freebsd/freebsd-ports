@@ -2,8 +2,8 @@
 
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	17.2.7
-PORTREVISION?=	2
+DISTVERSION=	18.2.6
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
@@ -14,12 +14,12 @@ COMMENT?=	Backup archiving recovery open sourced (server)
 LICENSE=	AGPLv3 LGPL3
 LICENSE_COMB=	multi
 
-CONFLICTS?=	bacula*-server-* bareos16-server-*
+CONFLICTS?=	bacula17*-server-* bareos16-server-*
 
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson
 
-USES+=		libtool:keepla pkgconfig readline:port shebangfix
+USES+=		cmake:insource pkgconfig readline:port shebangfix
 USE_GITHUB=	yes
 
 USERS=		bareos
@@ -27,10 +27,9 @@ GROUPS=		${USERS}
 
 PLIST_SUB+=	LIB_VERSION=${PORTVERSION}
 
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 SHEBANG_LANG=	perl
-SHEBANG_FILES=	${WRKSRC}/src/cats/make_catalog_backup.pl.in
+SHEBANG_FILES=	${WRKSRC}/core/src/cats/make_catalog_backup.pl.in
 
 CPPFLAGS+=	-I${LOCALBASE}/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -51,24 +50,24 @@ OPTIONS_SINGLE_DATABASE=	SQLITE3 MYSQL PGSQL
 OPTIONS_SINGLE+=		DATABASE
 DATABASE_DESC=		Database support
 
-NDMP_CONFIGURE_ON=	--enable-ndmp=yes
-NDMP_CONFIGURE_OFF=	--enable-ndmp=no
+NDMP_CMAKE_ON=	-Dndmp=ON
+NDMP_CMAKE_OFF=	-Dndmp=OFF
 .endif
 
 GNUTLS_CONFIGURE_WITH=	gnutls=${LOCALBASE}
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 OPENSSL_USES=		ssl
-OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
-OPENSSL_CONFIGURE_OFF=	--with-openssl="no"
+OPENSSL_CMAKE_ON=	-Dopenssl=ON
+OPENSSL_CMAKE_OFF=	-Dopenssl=OFF
 
-SCSICRYPTO_CONFIGURE_ON=	--enable-scsi-crypto=yes
-SCSICRYPTO_CONFIGURE_OFF=	--enable-scsi-crypto=no
+SCSICRYPTO_CMAKE_ON=	-Dscsi-crypto=ON
+SCSICRYPTO_CMAKE_OFF=	-Dscsi-crypto=OFF
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
 PYTHON_USES=		  python
-PYTHON_CONFIGURE_ON=	--with-python=yes
-PYTHON_CONFIGURE_OFF=	--with-python=no
+PYTHON_CMAKE_ON=	-Dpython=yes
+PYTHON_CMAKE_OFF=	-Dpython=no
 PYTHON_PLUGIN=		yes
 
 .if !defined(WITH_CLIENT_ONLY)
@@ -82,39 +81,43 @@ SUB_FILES+=	pkg-install.client pkg-deinstall.client pkg-message.client
 SUB_FILES+=	pkg-message.server
 .endif
 
-CONFIGURE_ARGS+=--with-tcp-wrappers=/usr/lib \
-		--enable-libtool \
-		--enable-smartalloc \
-		--sysconfdir=${PREFIX}/etc \
-		--with-working-dir=${BAREOS_DIR} \
-		--with-scriptdir=${PREFIX}/share/${PORTNAME} \
-		--with-logdir=/var/log/bareos \
-		--with-readline=${LOCALBASE} \
-		--disable-conio \
-		--enable-batch-insert \
-		--with-plugindir=${PREFIX}/lib/bareos/plugins \
-		--with-scriptdir=${PREFIX}/lib/bareos/scripts \
-		--with-dump-email=root@localhost \
-		--with-job-email=root@localhost \
-		--with-db-name=bareos \
-		--with-sbin-perm=755 \
-		--with-db-user=bareos \
-		--with-baseport=9101 \
-		--with-pid-dir=/var/run/bareos \
-		--with-jansson=${LOCALBASE}
+CMAKE_ARGS+=	-Dtcp-wrappers=ON \
+		-Dsmartalloc=ON \
+		-Dsysconfdir=${PREFIX}/etc \
+		-Darchivedir=${BAREOS_DIR}/storage \
+		-Dworkingdir=${BAREOS_DIR} \
+		-Dconfdir=${PREFIX}/etc/bareos \
+		-Dlibdir=${PREFIX}/lib \
+		-Dlogdir=/var/log/bareos \
+		-Dincludedir=${PREFIX}/include/bareos \
+		-Dreadline=ON \
+		-Ddisable-conio=ON \
+		-Dbatch-insert=ON \
+		-Dhave_plugins=ON \
+		-Dplugindir=${PREFIX}/lib/bareos/plugins \
+		-Dscriptdir=${PREFIX}/lib/bareos/scripts \
+		-Dbackenddir=${PREFIX}/lib/bareos/backends \
+		-Ddump_email=root@localhost \
+		-Djob_email=root@localhost \
+		-Ddb_name=bareos \
+		-Dsbin-perm=755 \
+		-Ddb_user=bareos \
+		-Dbaseport=9101 \
+		-Dpiddir=/var/run/bareos \
 
 .if defined(WITH_CLIENT_ONLY)
-LMDB_CONFIGURE_ON=	--enable-lmdb=yes
-LMDB_CONFIGURE_OFF=	--enable-lmdb=no
-LMDB_CFLAGS=		-DMDB_DSYNC=O_SYNC
+LMDB_CMAKE_ON=	-Dlmdb=ON
+LMDB_CMAKE_OFF=	-Dlmdb=OFF
+LMDB_CFLAGS+=	-DMDB_DSYNC=O_SYNC -DMDB_USE_POSIX_SEM=1
 
-CONFIGURE_ARGS+=--with-fd-user=root \
-		--with-fd-group=wheel
+CMAKE_ARGS+=	-Dfd-user=root \
+		-Dfd-group=wheel
 .else
-CONFIGURE_ARGS+=--with-dir-user=${BAREOS_USER} \
-		--with-dir-group=${BAREOS_GROUP} \
-		--with-sd-user=${BAREOS_USER} \
-		--with-sd-group=operator
+CMAKE_ARGS+=	-Ddir-user=${BAREOS_USER} \
+		-Ddir-group=${BAREOS_GROUP} \
+		-Dsd-user=${BAREOS_USER} \
+		-Dsd-group=operator \
+		-Dlmdb=OFF
 .endif
 
 # The user/group IDs below are registered, see
@@ -135,25 +138,28 @@ SUB_LIST=	BAREOS_USER=${BAREOS_USER} \
 		BAREOS_DIR=${BAREOS_DIR}
 
 NLS_USES=		gettext
-NLS_CONFIGURE_ENABLE=	nls
+NLS_CMAKE_ON=		-DENABLE_NLS=1
 
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
 CONFFILES=	fd
-CONFIGURE_ARGS+=	--enable-client-only
+CMAKE_ARGS+=	-Dclient-only=ON
 
 PKGDEINSTALL=	${FILESDIR}/pkg-deinstall.client
 PKGINSTALL=	${FILESDIR}/pkg-install.client
 .else
 # Server only Options
 CONFFILES=		sd dir
+CMAKE_ARGS+=	-Dbuild-dird=ON \
+		-Dbuild-stored=ON \
+		-Dbuild_client_only=OFF
 # Server default database
 
-MYSQL_CONFIGURE_ON=	--with-mysql=yes
+MYSQL_CMAKE_ON=		-Dmysql=ON
 MYSQL_USE=	MYSQL=yes
-SQLITE3_CONFIGURE_ON=	--with-sqlite3=yes
+SQLITE3_CMAKE_ON=	-Dsqlite3=ON
 SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
-PGSQL_CONFIGURE_ON=	--with-postgresql=yes
+PGSQL_CMAKE_ON=		-Dpostgresql=ON
 PGSQL_USES=	pgsql
 
 MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
@@ -185,35 +191,21 @@ MP1+=	bsmtp.1 bregex.1 bwild.1 bareos-tray-monitor.1
 MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
-#	This port does not install docs.  See bareos-docs for that
-	${REINPLACE_CMD} -e '/docdir/d' ${WRKSRC}/Makefile.in
-#	Default bconsole.conf is in ${ETCDIR}
-	@${REINPLACE_CMD} -e 's|^MAN8 =|MAN8 ?=|g' -e 's|^MAN1 =|MAN1 ?=|g' ${WRKSRC}/manpages/Makefile.in
-	@${REINPLACE_CMD} -e 's|_NONSHARED||g' ${WRKSRC}/src/filed/Makefile.in
-.if defined(WITH_CLIENT_ONLY)
-	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)scripts\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|\(.*$${MKDIR} $${DESTDIR}$${scriptdir}\)|#\1|g' ${WRKSRC}/Makefile.in
-.else
-#	In server port don't install filed
-	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' \
-		-e 's|src/lib||' -e 's|src/findlib||' -e 's|@FD_PLUGIN_DIR@||' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|../lib/|$$(LOCALBASE)/lib/|g' -e 's|../findlib/|$$(LOCALBASE)/lib/|g' ${WRKSRC}/src/dird/Makefile.in \
-		${WRKSRC}/src/stored/Makefile.in ${WRKSRC}/src/tools/Makefile.in ${WRKSRC}/src/tests/Makefile.in
-	@${REINPLACE_CMD} -e 's|../../lib/|$$(LOCALBASE)/lib/|g' ${WRKSRC}/src/plugins/dird/Makefile.in ${WRKSRC}/src/plugins/stored/Makefile.in
-	@${REINPLACE_CMD} -e 's|fd_plugins.h|filed/fd_plugins.h|g' -e 's|dir_plugins.h|dird/dir_plugins.h|g' -e 's|stored.h|stored/stored.h|g' \
-		${WRKSRC}/src/tools/bpluginfo.c
-	@${REINPLACE_CMD} -e 's|perl|$(LOCALBASE)/bin/perl|g' ${WRKSRC}/scripts/mtx-changer.in
+	@${REINPLACE_CMD}  '21d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD}  '579d' ${WRKSRC}/core/CMakeLists.txt
+.if ${PKGNAMESUFFIX} == "-server"
+	@${REINPLACE_CMD}  '25d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif
 
 post-extract:
 .if defined(WITH_CLIENT_ONLY)
 .	if defined(PYTHON_PLUGIN)
-		@${MKDIR} ${STAGEDIR}${ETCDIR}/bareos-dir.d/fileset
-		@${MKDIR} ${STAGEDIR}${ETCDIR}/bareos-dir.d/job
+		@${MKDIR} ${STAGEDIR}${ETCDIR}/python-ldap-conf.d/bareos-dir.d/fileset
+		@${MKDIR} ${STAGEDIR}${ETCDIR}/python-ldap-conf.d/bareos-dir.d/job
 .	endif
 .endif
-	@${MV} ${WRKSRC}/src/defaultconfigs/bareos-dir.d/fileset/'Windows All Drives.conf' \
-		${WRKSRC}/src/defaultconfigs/bareos-dir.d/fileset/'WindowsAllDrives.conf'
+	@${MV} ${WRKSRC}/core/src/defaultconfigs/bareos-dir.d/fileset/'Windows All Drives.conf' \
+		${WRKSRC}/core/src/defaultconfigs/bareos-dir.d/fileset/'WindowsAllDrives.conf'
 
 .if !target(post-install)
 post-install:

@@ -7,7 +7,7 @@ COMMENT=	Backup archiving recovery open sourced (client)
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 
-CONFLICTS=	bareos16-client-*
+CONFLICTS=	bareos16-client-* bareos17-client-*
 
 WITH_CLIENT_ONLY=yes
 USE_RC_SUBR=	bareos-fd
