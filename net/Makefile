@@ -415,6 +415,7 @@
     SUBDIR += lualdap
     SUBDIR += luasocket
     SUBDIR += luasocket-51
+    SUBDIR += luasocket-53
     SUBDIR += lvwimax
     SUBDIR += mDNSResponder
     SUBDIR += macchanger
