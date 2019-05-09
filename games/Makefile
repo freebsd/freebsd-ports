@@ -52,7 +52,6 @@
     SUBDIR += apricots
     SUBDIR += aquaria
     SUBDIR += arkanoidsb
-    SUBDIR += armagetron
     SUBDIR += arx-libertatis
     SUBDIR += asc
     SUBDIR += ascii-invaders
@@ -109,7 +108,6 @@
     SUBDIR += bombherman
     SUBDIR += bombz
     SUBDIR += bomns
-    SUBDIR += boswars
     SUBDIR += bouncy
     SUBDIR += bovo
     SUBDIR += braincurses
@@ -145,9 +143,7 @@
     SUBDIR += catesc
     SUBDIR += cave9
     SUBDIR += cavezofphear
-    SUBDIR += ceferino
     SUBDIR += cgoban
-    SUBDIR += chanta
     SUBDIR += chapping
     SUBDIR += chessx
     SUBDIR += childsplay
@@ -192,7 +188,6 @@
     SUBDIR += cutemaze
     SUBDIR += cuyo
     SUBDIR += d2x
-    SUBDIR += d2x-xl
     SUBDIR += dangen
     SUBDIR += dangerdeep
     SUBDIR += dangerdeep-data
@@ -216,7 +211,6 @@
     SUBDIR += doom-wolfendoom
     SUBDIR += doomlegacy
     SUBDIR += doomsday
-    SUBDIR += drcreep
     SUBDIR += drm
     SUBDIR += duckmaze
     SUBDIR += duel
@@ -311,7 +305,6 @@
     SUBDIR += fretsonfire
     SUBDIR += fretsonfire-data
     SUBDIR += frikqcc
-    SUBDIR += frobtads
     SUBDIR += frogatto
     SUBDIR += frotz
     SUBDIR += frozen-bubble
@@ -714,7 +707,6 @@
     SUBDIR += p5-Games-Tournament-RoundRobin
     SUBDIR += pachi
     SUBDIR += pacmanarena
-    SUBDIR += paintown
     SUBDIR += palapeli
     SUBDIR += palomino
     SUBDIR += pangzero
@@ -769,7 +761,6 @@
     SUBDIR += pycadia
     SUBDIR += pydance
     SUBDIR += pyfa
-    SUBDIR += pykawari
     SUBDIR += pysolfc
     SUBDIR += pyspacewar
     SUBDIR += pysycache
@@ -913,7 +904,6 @@
     SUBDIR += starlanes
     SUBDIR += steelstorm
     SUBDIR += stendhal
-    SUBDIR += stepmania-devel
     SUBDIR += stockfish
     SUBDIR += stonesoup
     SUBDIR += stonesoup-sdl
@@ -950,7 +940,6 @@
     SUBDIR += thegrind
     SUBDIR += thudboard
     SUBDIR += tileworld
-    SUBDIR += tinymux
     SUBDIR += tkmoo
     SUBDIR += tomatoes
     SUBDIR += tome4
@@ -1017,13 +1006,10 @@
     SUBDIR += vodovod
     SUBDIR += volleyball
     SUBDIR += vor
-    SUBDIR += voxelands
-    SUBDIR += voxelands-server
     SUBDIR += vultures-eye
     SUBDIR += wanderer
     SUBDIR += wargus
     SUBDIR += warmux
-    SUBDIR += warsow
     SUBDIR += warsow-data
     SUBDIR += warzone2100
     SUBDIR += wesnoth

@@ -93,7 +93,6 @@
     SUBDIR += corosync3
     SUBDIR += courier-authlib-ldap
     SUBDIR += cppzmq
-    SUBDIR += crtmpserver
     SUBDIR += cryptcat
     SUBDIR += csocks
     SUBDIR += csync2
@@ -410,7 +409,6 @@
     SUBDIR += linux-c7-avahi-libs
     SUBDIR += linux-c7-openldap
     SUBDIR += linux-c7-tcp_wrappers-libs
-    SUBDIR += linuxigd
     SUBDIR += liveMedia
     SUBDIR += lla
     SUBDIR += ltm
@@ -527,7 +525,6 @@
     SUBDIR += onioncat
     SUBDIR += opal
     SUBDIR += open-isns
-    SUBDIR += openafs
     SUBDIR += openbgpd
     SUBDIR += openbsc
     SUBDIR += openggsn

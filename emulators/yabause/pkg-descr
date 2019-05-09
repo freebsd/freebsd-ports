@@ -1,4 +1,0 @@
-Yabause is a Sega Saturn emulator. It is written in C using the SDL and
-OpenGL libraries with support for cdrom and iso files.
-
-WWW: http://yabause.sourceforge.net/

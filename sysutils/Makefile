@@ -102,7 +102,6 @@
     SUBDIR += biosfont
     SUBDIR += bkpupsd
     SUBDIR += bksh
-    SUBDIR += boxbackup
     SUBDIR += boxbackup-devel
     SUBDIR += brasero
     SUBDIR += bsd-splash-changer
@@ -448,8 +447,6 @@
     SUBDIR += graylog
     SUBDIR += grub2
     SUBDIR += grub2-bhyve
-    SUBDIR += grub2-efi
-    SUBDIR += grub2-pcbsd
     SUBDIR += gsh
     SUBDIR += gsmartcontrol
     SUBDIR += gstopd
@@ -660,7 +657,6 @@
     SUBDIR += mcollective-shell-client
     SUBDIR += mcron
     SUBDIR += mcweject
-    SUBDIR += mdcp
     SUBDIR += mdf2iso
     SUBDIR += megacli
     SUBDIR += megarc
@@ -1217,7 +1213,6 @@
     SUBDIR += savelogs
     SUBDIR += sb16config
     SUBDIR += sbase
-    SUBDIR += sbsigntool
     SUBDIR += scalpel
     SUBDIR += scan_ffs
     SUBDIR += scanbuttond

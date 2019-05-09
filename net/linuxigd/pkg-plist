@@ -1,7 +1,0 @@
-etc/linuxigd/dummy.xml
-etc/linuxigd/gateconnSCPD.xml
-etc/linuxigd/gatedesc.xml
-etc/linuxigd/gateicfgSCPD.xml
-@sample etc/upnpd.conf.sample
-man/man8/upnpd.8.gz
-sbin/upnpd

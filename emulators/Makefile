@@ -23,7 +23,6 @@
     SUBDIR += cpmtools
     SUBDIR += cpmtools2
     SUBDIR += darcnes
-    SUBDIR += desmume
     SUBDIR += dgen-sdl
     SUBDIR += dolphin-emu
     SUBDIR += dosbox
@@ -175,8 +174,6 @@
     SUBDIR += xhomer
     SUBDIR += xsystem35
     SUBDIR += xzx
-    SUBDIR += yabause
-    SUBDIR += yape
     SUBDIR += zsnes
 
 .include <bsd.port.subdir.mk>

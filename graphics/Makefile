@@ -52,8 +52,6 @@
     SUBDIR += aoi
     SUBDIR += apngasm
     SUBDIR += apngdis
-    SUBDIR += appleseed
-    SUBDIR += apvlv
     SUBDIR += argyllcms
     SUBDIR += asciio
     SUBDIR += aseprite
@@ -887,7 +885,6 @@
     SUBDIR += qgis
     SUBDIR += qgis-ltr
     SUBDIR += qiv
-    SUBDIR += qslim
     SUBDIR += qt5-3d
     SUBDIR += qt5-graphicaleffects
     SUBDIR += qt5-imageformats
@@ -904,7 +901,6 @@
     SUBDIR += radiance
     SUBDIR += radius-engine
     SUBDIR += raster3d
-    SUBDIR += rawstudio
     SUBDIR += rawtherapee
     SUBDIR += rayshade
     SUBDIR += reactphysics3d
@@ -1016,7 +1012,6 @@
     SUBDIR += tkpng
     SUBDIR += togl
     SUBDIR += ttygif
-    SUBDIR += tulip
     SUBDIR += tumble
     SUBDIR += ufraw
     SUBDIR += uniconvertor

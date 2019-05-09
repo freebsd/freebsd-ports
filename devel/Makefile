@@ -469,7 +469,6 @@
     SUBDIR += ditrack
     SUBDIR += djgpp-binutils
     SUBDIR += djgpp-crx
-    SUBDIR += dlangui
     SUBDIR += dlib
     SUBDIR += dmake
     SUBDIR += dmalloc
