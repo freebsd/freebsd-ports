@@ -1,6 +1,6 @@
---- samples/rc.d/iked.in.orig	2018-08-15 21:36:53.000000000 -0700
-+++ samples/rc.d/iked.in	2018-10-19 12:32:15.579253000 -0700
-@@ -10,11 +10,13 @@
+--- samples/rc.d/iked.in.orig	2018-08-15 22:36:53.000000000 -0600
++++ samples/rc.d/iked.in	2019-05-09 08:03:55.095621000 -0600
+@@ -10,14 +10,22 @@
  
  . /etc/rc.subr
  
@@ -15,4 +15,13 @@
 +required_vars="spmd_enable"
  pidfile="/var/run/${name}.pid"
  required_files="@sysconfdir@/racoon2.conf"
++start_precmd="iked_precmd"
  reload_cmd="iked_reload"
++
++iked_precmd()
++{
++	sysctl -qn net.inet.ipsec.def_policy >/dev/null || kldload ipsec || return 1
++}
+ 
+ iked_reload()
+ {
