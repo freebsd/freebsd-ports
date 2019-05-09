@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 RUN_DEPENDS=	bash:shells/bash \
 		babel:science/openbabel
 
-USES=		cmake gettext-runtime pkgconfig shebangfix
+USES=		cmake compiler:c++11-lang gettext-runtime pkgconfig shebangfix
 SHEBANG_GLOB=	*.sh
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango pangox-compat
 USE_GL=		gl glu
