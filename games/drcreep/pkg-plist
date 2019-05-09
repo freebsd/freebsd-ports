@@ -1,5 +1,0 @@
-bin/drcreep
-%%DATADIR%%/data/char.rom
-@dir %%DATADIR%%/data/save
-@dir %%DATADIR%%/data/castles
-@dir %%DATADIR%%/data/castle

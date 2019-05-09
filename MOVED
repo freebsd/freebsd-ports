@@ -12723,3 +12723,44 @@ audio/hs-ALUT||2019-05-08|Has expired: Haskell libraries are getting pushed out 
 audio/hs-OpenAL||2019-05-08|Has expired: Haskell libraries are getting pushed out of the ports tree. If you are using this port for development, consider switching to cabal sandboxes (old way), cabal new-build (new way), or use devel/stack. If you believe this port shouldn't be removed, contact haskell@FreeBSD.org
 x11/hs-X11||2019-05-08|Has expired: Haskell libraries are getting pushed out of the ports tree. If you are using this port for development, consider switching to cabal sandboxes (old way), cabal new-build (new way), or use devel/stack. If you believe this port shouldn't be removed, contact haskell@FreeBSD.org
 x11/hs-X11-xft||2019-05-08|Has expired: Haskell libraries are getting pushed out of the ports tree. If you are using this port for development, consider switching to cabal sandboxes (old way), cabal new-build (new way), or use devel/stack. If you believe this port shouldn't be removed, contact haskell@FreeBSD.org
+databases/ruby-odbc||2019-05-09|Has expired: Broken for more than 6 months
+databases/rubygem-dbd-odbc||2019-05-09|Has expired: Broken for more than 6 months
+devel/dlangui||2019-05-09|Has expired: Broken for more than 6 months
+editors/dlangide||2019-05-09|Has expired: Broken for more than 6 months
+emulators/desmume||2019-05-09|Has expired: Broken for more than 6 months
+emulators/yabause||2019-05-09|Has expired: Broken for more than 6 months
+emulators/yape||2019-05-09|Has expired: Broken for more than 6 months
+games/armagetron||2019-05-09|Has expired: Broken for more than 6 months
+games/boswars||2019-05-09|Has expired: Broken for more than 6 months
+games/ceferino||2019-05-09|Has expired: Broken for more than 6 months
+games/chanta||2019-05-09|Has expired: Broken for more than 6 months
+games/d2x-xl||2019-05-09|Has expired: Broken for more than 6 months
+games/drcreep||2019-05-09|Has expired: Broken for more than 6 months
+games/frobtads||2019-05-09|Has expired: Broken for more than 6 months
+games/paintown||2019-05-09|Has expired: Broken for more than 6 months
+games/pykawari||2019-05-09|Has expired: Broken for more than 6 months
+games/stepmania-devel||2019-05-09|Has expired: Broken for more than 6 months
+games/tinymux||2019-05-09|Has expired: Broken for more than 6 months
+games/voxelands||2019-05-09|Has expired: Broken for more than 6 months
+games/voxelands-server||2019-05-09|Has expired: Broken for more than 6 months
+games/warsow||2019-05-09|Has expired: Broken for more than 6 months
+graphics/appleseed||2019-05-09|Has expired: Broken for more than 6 months
+graphics/apvlv||2019-05-09|Has expired: Broken for more than 6 months
+graphics/qslim||2019-05-09|Has expired: Broken for more than 6 months
+graphics/rawstudio||2019-05-09|Has expired: Broken for more than 6 months
+graphics/tulip||2019-05-09|Has expired: Broken for more than 6 months
+lang/qore||2019-05-09|Has expired: Broken for more than 6 months
+mail/milter-manager||2019-05-09|Has expired: Broken for more than 6 months
+math/goblin||2019-05-09|Has expired: Broken for more than 6 months
+math/mosesdecoder||2019-05-09|Has expired: Broken for more than 6 months
+multimedia/asdcplib||2019-05-09|Has expired: Broken for more than 6 months
+net/crtmpserver||2019-05-09|Has expired: Broken for more than 6 months
+net/linuxigd||2019-05-09|Has expired: Abandonware; use net/miniupnpd instead
+net/openafs||2019-05-09|Has expired: Broken for more than 6 months
+security/quantis||2019-05-09|Has expired: Broken for more than 6 months
+sysutils/boxbackup||2019-05-09|Has expired: Broken for more than 6 months
+sysutils/grub2-efi||2019-05-09|Has expired: Broken for more than 6 months
+sysutils/grub2-pcbsd||2019-05-09|Has expired: Broken for more than 6 months
+sysutils/mdcp||2019-05-09|Has expired: Broken for more than 6 months
+sysutils/sbsigntool||2019-05-09|Has expired: Broken for more than 6 months
+www/py-cherrypy-old||2019-05-09|Has expired: Lates version is in tree and no dependent ports

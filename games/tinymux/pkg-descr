@@ -1,9 +1,0 @@
-TinyMUX is a text-based game server in the MUSH family (which also
-includes PennMUSH, TinyMUSH, and RhostMUSH). It is a platform which
-allows potentially several thousand players to connect to a single
-text-driven environment, interact with each other and with the
-environment (which is maintain in a database). The rich programming
-environment can be used to build almost anything, limited only by
-your own imagination.
-
-WWW: http://www.tinymux.org/

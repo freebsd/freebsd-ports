@@ -260,7 +260,6 @@
     SUBDIR += gnuplot
     SUBDIR += gnuplot-lite
     SUBDIR += gnuplot-tex-extras
-    SUBDIR += goblin
     SUBDIR += gotoblas
     SUBDIR += grace
     SUBDIR += gracetmpl
@@ -355,7 +354,6 @@
     SUBDIR += mlpack
     SUBDIR += moab
     SUBDIR += moo
-    SUBDIR += mosesdecoder
     SUBDIR += mpc
     SUBDIR += mpexpr
     SUBDIR += mpfr

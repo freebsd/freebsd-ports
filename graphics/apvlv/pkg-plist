@@ -1,9 +1,0 @@
-bin/apvlv
-etc/apvlvrc
-man/man1/apvlv.1.gz
-%%DOCSDIR%%/Startup.pdf
-%%DOCSDIR%%/Startup.tex
-%%DOCSDIR%%/apvlvrc.example
-%%DOCSDIR%%/icons/dir.png
-%%DOCSDIR%%/icons/pdf.png
-%%DOCSDIR%%/icons/reg.png

@@ -1029,7 +1029,6 @@ PORTREVISION=	1
     SUBDIR += py-zope.session
     SUBDIR += py-zxcvbn
     SUBDIR += qtkeychain
-    SUBDIR += quantis
     SUBDIR += quantis-kmod
     SUBDIR += racoon2
     SUBDIR += racoon2-legacy

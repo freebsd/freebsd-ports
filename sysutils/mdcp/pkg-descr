@@ -1,5 +1,0 @@
-mdcp (Muli-Device Copy) is a command-line utility for *nix that provide
-to copy from a disk device to many. The data transfer rate is improved
-by making use of a much more efficient use of the transfer rate of the disks.
-
-WWW: http://mdcp.sourceforge.net/
