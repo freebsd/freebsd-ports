@@ -19,7 +19,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of www/node
   AUTHOR: bhughes@FreeBSD.org
 
-  The www/node port has been udpated to Node.js v12.0.0, the latest
+  The www/node port has been updated to Node.js v12.0.0, the latest
   upstream release. This is a major release, including many significant
   changes. Users are encouraged to read the release announcements before
   upgrading:
@@ -156,7 +156,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: bofh@FreeBSD.org
 
   qemu 2.X version has been moved to qemu2. If you would like to use
-  2.X you should use qemu2. Otherwise you can use the new stable 
+  2.X you should use qemu2. Otherwise you can use the new stable
   upstream branch of 3.0.X.
 
   Portmaster users will need to run this command:
@@ -220,7 +220,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: rodrigo@freebsd.org
 
   www/igal2 2.2-1 is now built with graphics/ImageMagick6-nox11
-  and don't install the ImageMagik X11 dependencies anymore.
+  and don't install the ImageMagick X11 dependencies anymore.
   A build option allows you to restore the previous behaviour.
 
 20190303:
@@ -255,10 +255,10 @@ you update your ports collection, before attempting any port upgrades.
   can remove the directory safely. If the directory is not empty, move it
   to ${SE_DBDIR} when upgrading softether. Following commands should help:
 
-      service softether_(bridge|cleint|server) stop
+      service softether_(bridge|client|server) stop
       (portmaster, portupgrade or pkg upgrade)
       mv ${PREFIX}/libexec/softether/chain_certs ${SE_DBDIR}/
-      service softether_(bridge|cleint|server) start
+      service softether_(bridge|client|server) start
 
   With the default Makefile settings, ${SE_DBDIR} is set to /var/db/softether.
 
@@ -281,8 +281,8 @@ you update your ports collection, before attempting any port upgrades.
 
   If you've mod_mam enabled with compress_xml set to true, then you're affected
   by bug where the XML namespace, and tag elements get interchanged in the MAM cache
-  which results in invalid XML, and causing XMPP clients to disconnect. For more details,
-  please refer to: https://github.com/processone/ejabberd/issues/2744
+  which results in invalid XML, and causing XMPP clients to disconnect.  For more
+  details, please refer to: https://github.com/processone/ejabberd/issues/2744
 
   This upgrade contains the patch that fixes the problem going forward. For fixing already
   affected users, you'll need to wipe off the MAM cache for the affected users:
@@ -304,9 +304,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of archivers/urbackup-server
   AUTHOR: freebsd@coombscloud.com
 
-  Some of the port's sources previously included absolute references to /etc/urbackup.  
-  The upgrade now changes these references to ${PREFIX}/etc/urbackup. If you have placed 
-  any configuration files within /etc/urbackup, these should be relocated to 
+  Some of the port's sources previously included absolute references to /etc/urbackup.
+  The upgrade now changes these references to ${PREFIX}/etc/urbackup.  If you have
+  placed any configuration files within /etc/urbackup, these should be relocated to
   ${PREFIX}/etc/urbackup.
 
 20190130:
@@ -345,7 +345,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of german/webalizer2, japanese/webalizer, polish/webalizer2, portuguese/webalizer-pt_BR, portuguese/webalizer-pt_PT, ukrainian/webalizer, www/geolizer, www/webalizer
   AUTHOR: dinoex@FreeBSD.org
 
-  The option GEOIP has beeen changed to used the new datebase.
+  The option GEOIP has beeen changed to used the new database.
   Either copy GeoLite2-Country.mmdb in the working directory,
   or set the GeoIPDatabase option to the location of the file.
 
@@ -460,7 +460,7 @@ you update your ports collection, before attempting any port upgrades.
   # chown -R ntopng:ntopng /var/db/ntopng
   # service ntopng start
 
-  Please check hte upstream FAQ for reference:
+  Please check the upstream FAQ for reference:
 	https://www.ntop.org/support/faq/migrate-the-data-directory-in-ntopng/
 
 20181218:
@@ -816,7 +816,7 @@ you update your ports collection, before attempting any port upgrades.
   The OpenEXR package has been renamed to openexr and updated to 2.3.0.
 
   The PORTREVISION of all ports requiring either has been bumped to
-  ease the reubuilds, and where there were versions in the file names,
+  ease the rebuilds, and where there were versions in the file names,
   these have been removed from the *_DEPENDS lines for easier maintenance.
 
   A full ports or package upgrade should just work.
@@ -956,7 +956,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: www/tt-rss
   AUTHOR: thierry@FreeBSD.org
 
-  tt-rss now uses pdo_mysql/pgsql for database acccess; a web server reload
+  tt-rss now uses pdo_mysql/pgsql for database access; a web server reload
   will be required if pdo ext. isn't installed.
 
 20180804:
@@ -1211,7 +1211,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of www/node
   AUTHOR: bhughes@FreeBSD.org
 
-  The www/node port has been udpated to Node.js v10.0.0, the latest
+  The www/node port has been updated to Node.js v10.0.0, the latest
   upstream release. This is a major release, including many significant
   changes. Users are encouraged to read the release announcements before
   upgrading:
@@ -1297,7 +1297,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20180412:
   AFFECTS: users of devel/php-composer
-  AUTHOT: madpilot@FreeBSD.org
+  AUTHOR: madpilot@FreeBSD.org
 
   Flavors have been added to the composer port with the update to
   1.6.3. Due to the change in PKGNAME pkg(and other tools) will not
@@ -1526,7 +1526,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of net-mgmt/pmacct
   AUTHOR: pi@FreeBSD.org
 
-  To allow separete pmacctd instances per interface, use
+  To allow separate pmacctd instances per interface, use
 
     pmacctd_enable="YES"
     pmacctd_interfaces="re1 re2"
