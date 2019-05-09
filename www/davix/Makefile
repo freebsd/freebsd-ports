@@ -20,6 +20,8 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+PORTSCOUT=	limit:^[0-9\.]*$$ # prevent versions like N.N.N-el7.x86_64
+
 post-install:
 	@${RM} -r ${STAGEDIR}${DOCSDIR}
 
