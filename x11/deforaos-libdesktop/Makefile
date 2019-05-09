@@ -17,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem
 
+USES=		gnome pkgconfig
 USE_GNOME=	gtk20
-USES=		pkgconfig
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
 MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
