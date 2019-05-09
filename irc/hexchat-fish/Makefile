@@ -32,7 +32,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/hexchat/plugins
-	${INSTALL_PROGRAM} ${WRKSRC}/fishlim.so \
+	${INSTALL_LIB} ${WRKSRC}/fishlim.so \
 		${STAGEDIR}${PREFIX}/lib/hexchat/plugins/
 
 .include <bsd.port.mk>
