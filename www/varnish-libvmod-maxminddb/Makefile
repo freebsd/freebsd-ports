@@ -14,7 +14,8 @@ BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
 LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
-USES=		autoreconf gmake libtool pkgconfig python:2.7,build varnish
+USES=		autoreconf compiler:c11 gmake libtool pkgconfig \
+		python:2.7,build varnish
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 INSTALL_TARGET=	install-strip
