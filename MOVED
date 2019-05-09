@@ -12767,3 +12767,4 @@ www/py-cherrypy-old||2019-05-09|Has expired: Lates version is in tree and no dep
 games/warsow-data||2019-05-09|Removed, only useful for expired games/warsow
 converters/hs-sandi||2019-05-09|Has expired: Haskell libraries are getting pushed out of the ports tree. If you are using this port for development, consider switching to cabal sandboxes (old way), cabal new-build (new way), or use devel/stack. If you believe this port shouldn't be removed, contact haskell@FreeBSD.org
 devel/hs-gtk2hs-buildtools||2019-05-09|Removed, does not build with recent GHC and references deleted port
+lang/perl5.24||2019-05-09|Has expired: Support ends three years after .0 release, please upgrade to a more recent version of Perl

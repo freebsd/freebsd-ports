@@ -265,7 +265,6 @@
     SUBDIR += pbasic
     SUBDIR += pcc
     SUBDIR += perl5-devel
-    SUBDIR += perl5.24
     SUBDIR += perl5.26
     SUBDIR += perl5.28
     SUBDIR += petite-chez
