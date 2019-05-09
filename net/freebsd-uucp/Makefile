@@ -14,6 +14,8 @@ COMMENT=	FreeBSD-modified Taylor UUCP (unix-to-unix copy program)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/uucp/COPYING
 
+PORTSCOUT=	limit:^1_
+
 USES=		fakeroot
 
 USE_GITHUB=	yes
