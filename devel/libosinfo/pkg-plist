@@ -70,6 +70,8 @@ share/gtk-doc/html/Libosinfo/OsinfoDeviceLinkList.html
 share/gtk-doc/html/Libosinfo/OsinfoDeviceList.html
 share/gtk-doc/html/Libosinfo/OsinfoEntity.html
 share/gtk-doc/html/Libosinfo/OsinfoFilter.html
+share/gtk-doc/html/Libosinfo/OsinfoImage.html
+share/gtk-doc/html/Libosinfo/OsinfoImageList.html
 share/gtk-doc/html/Libosinfo/OsinfoInstallConfig.html
 share/gtk-doc/html/Libosinfo/OsinfoInstallConfigParam.html
 share/gtk-doc/html/Libosinfo/OsinfoInstallConfigParamList.html
