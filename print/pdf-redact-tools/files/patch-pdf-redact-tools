@@ -1,0 +1,132 @@
+--- pdf-redact-tools.orig	2017-06-21 21:42:06 UTC
++++ pdf-redact-tools
+@@ -18,6 +18,9 @@ GNU General Public License for more details.
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ """
++
++from __future__ import print_function
++
+ import sys, os, subprocess, argparse, shutil
+ 
+ class PDFRedactTools(object):
+@@ -39,18 +42,18 @@ class PDFRedactTools(object):
+ 
+     def explode(self, achromatic = False):
+         if not self.pdf_filename:
+-            print 'Error: you must call set_pdf_filename before calling explode'
++            print('Error: you must call set_pdf_filename before calling explode')
+             return False
+ 
+         # make dir for pages
+         if os.path.isdir(self.pages_dirname):
+-            print 'Error: the directory {} already exists, you must delete it before exploding'.format(self.pages_dirname)
++            print('Error: the directory {} already exists, you must delete it before exploding'.format(self.pages_dirname))
+             return False
+         else:
+-            os.makedirs(self.pages_dirname, 0700)
++            os.makedirs(self.pages_dirname, 0o700)
+ 
+         # convert PDF to PNGs
+-        print 'Converting PDF to PNGs'
++        print('Converting PDF to PNGs')
+         subprocess.call([ 'convert',
+             '-density', '128',
+             self.pdf_filename,
+@@ -59,7 +62,7 @@ class PDFRedactTools(object):
+             self.transparent_filename])
+ 
+         # flatten all the PNGs, so they don't have transparent backgrounds
+-        print 'Flattening PNGs'
++        print('Flattening PNGs')
+         filenames = os.listdir(self.pages_dirname)
+         for filename in filenames:
+             if os.path.splitext(filename)[1].lower() == '.png':
+@@ -78,7 +81,7 @@ class PDFRedactTools(object):
+ 
+         # convert images to achromatic to remove printer dots
+         if achromatic:
+-            print 'Converting colors to achromatic'
++            print('Converting colors to achromatic')
+             filenames = os.listdir(self.pages_dirname)
+             for filename in filenames:
+                 if os.path.splitext(filename)[1].lower() == '.png':
+@@ -114,22 +117,22 @@ class PDFRedactTools(object):
+ 
+     def merge(self):
+         if not self.pdf_filename:
+-            print 'Error: you must call set_pdf_filename before calling merge'
++            print('Error: you must call set_pdf_filename before calling merge')
+             return False
+ 
+         # make sure pages directory exists
+         if not os.path.isdir(self.pages_dirname):
+-            print "Error: {} is not a directory".format(pages_dirname)
++            print("Error: {} is not a directory".format(pages_dirname))
+             return False
+ 
+         # convert PNGs to PDF
+-        print "Converting PNGs to PDF"
++        print("Converting PNGs to PDF")
+         subprocess.call(['convert',
+             os.path.join(self.pages_dirname, 'page-*.png'),
+             self.output_filename])
+ 
+         # strip metadata
+-        print "Stripping ImageMagick metadata"
++        print("Stripping ImageMagick metadata")
+         subprocess.call(['exiftool', '-Title=', '-Producer=', self.output_filename])
+         os.remove('{0}_original'.format(self.output_filename))
+ 
+@@ -164,11 +167,12 @@ def parse_arguments():
+     args = parser.parse_args()
+     return args
+ 
++
+ def valid_pdf(filename):
+-    return subprocess.check_output(['file',
+-        '-b',
+-        '--mime-type',
+-        filename]).strip() == 'application/pdf'
++    if sys.version_info.major > 2:
++        return subprocess.check_output(['file', '-b', '--mime-type', filename], encoding='UTF-8').strip() == 'application/pdf'
++    else:
++        return subprocess.check_output(['file', '-b', '--mime-type', filename]).strip() == 'application/pdf'
+ 
+ 
+ def main():
+@@ -186,18 +190,18 @@ def main():
+         if valid_pdf(explode_filename):
+             pdfrt.set_pdf_filename(explode_filename)
+             if pdfrt.explode(achromatic):
+-                print 'All done, now go edit PNGs in {} to redact and then run: pdf-redact-tools -m {}'.format(pdfrt.pages_dirname, pdfrt.pdf_filename)
++                print('All done, now go edit PNGs in {} to redact and then run: pdf-redact-tools -m {}'.format(pdfrt.pages_dirname, pdfrt.pdf_filename))
+         else:
+-            print explode_filename,' does not appear to be a PDF file, will not process'
++            print(explode_filename,' does not appear to be a PDF file, will not process')
+ 
+     # merge
+     if merge_filename:
+         if valid_pdf(merge_filename):
+             pdfrt.set_pdf_filename(merge_filename)
+             if pdfrt.merge():
+-                print "All done, your final output is {}".format(pdfrt.output_filename)
++                print("All done, your final output is {}".format(pdfrt.output_filename))
+         else:
+-            print merge_filename,' does not appear to be a PDF file, will not process'
++            print(merge_filename,' does not appear to be a PDF file, will not process')
+ 
+     # sanitize
+     if sanitize_filename:
+@@ -208,9 +212,9 @@ def main():
+                     # delete temp files
+                     shutil.rmtree(pdfrt.pages_dirname)
+ 
+-                    print "All done, your final output is {}".format(pdfrt.output_filename)
++                    print("All done, your final output is {}".format(pdfrt.output_filename))
+         else:
+-            print sanitize_filename,' does not appear to be a PDF file, will not process'
++            print(sanitize_filename,' does not appear to be a PDF file, will not process')
+ 
+ if __name__ == '__main__':
+     main()
