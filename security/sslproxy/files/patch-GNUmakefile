@@ -1,4 +1,4 @@
---- GNUmakefile.orig	2018-12-11 18:58:45 UTC
+--- GNUmakefile.orig	2019-05-02 16:06:48 UTC
 +++ GNUmakefile
 @@ -178,7 +178,7 @@ endif
  
@@ -18,7 +18,7 @@
  ifeq ($(shell id -u),0)
  BINOWNERFLAGS?=	-o $(BINUID) -g $(BINGID)
  CNFOWNERFLAGS?=	-o $(CNFUID) -g $(CNFGID)
-@@ -504,26 +504,19 @@ clean:
+@@ -524,26 +524,19 @@ clean:
  	$(RM) -rf *.dSYM
  
  install: $(TARGET)
