@@ -1,11 +1,11 @@
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
 %%ETCDIR%%/apache-bareos-webui.conf
+@sample(,www,640) %%ETCDIR%%/bareos-dir.d/console/admin.conf.sample
+@sample(,www,640) %%ETCDIR%%/bareos-dir.d/profile/webui-admin.conf.sample
 %%ETCDIR%%/configuration.ini
 %%ETCDIR%%/directors.ini
 %%ETCDIR%%/nginx-bareos-webui.conf
-@sample(,www,640) %%ETCDIR%%/bareos-dir.d/console/admin.conf.sample
-@sample(,www,640) %%ETCDIR%%/bareos-dir.d/profile/webui-admin.conf.sample
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/config/application.config.php
 %%WWWDIR%%/config/autoload/README.md
@@ -15,8 +15,6 @@
 %%WWWDIR%%/module/Application/Module.php
 %%WWWDIR%%/module/Application/autoload_classmap.php
 %%WWWDIR%%/module/Application/config/module.config.php
-%%WWWDIR%%/module/Application/language/Makefile.am
-%%WWWDIR%%/module/Application/language/Makefile.in
 %%WWWDIR%%/module/Application/language/cn_CN.mo
 %%WWWDIR%%/module/Application/language/cn_CN.po
 %%WWWDIR%%/module/Application/language/cs_CZ.mo
@@ -29,10 +27,14 @@
 %%WWWDIR%%/module/Application/language/es_ES.po
 %%WWWDIR%%/module/Application/language/fr_FR.mo
 %%WWWDIR%%/module/Application/language/fr_FR.po
+%%WWWDIR%%/module/Application/language/hu_HU.mo
+%%WWWDIR%%/module/Application/language/hu_HU.po
 %%WWWDIR%%/module/Application/language/it_IT.mo
 %%WWWDIR%%/module/Application/language/it_IT.po
 %%WWWDIR%%/module/Application/language/nl_BE.mo
 %%WWWDIR%%/module/Application/language/nl_BE.po
+%%WWWDIR%%/module/Application/language/pt_BR.mo
+%%WWWDIR%%/module/Application/language/pt_BR.po
 %%WWWDIR%%/module/Application/language/ru_RU.mo
 %%WWWDIR%%/module/Application/language/ru_RU.po
 %%WWWDIR%%/module/Application/language/sk_SK.mo
@@ -238,8 +240,6 @@
 %%WWWDIR%%/public/js/jstree.js
 %%WWWDIR%%/public/js/jstree.min.js
 %%WWWDIR%%/public/js/jstreegrid.js
-%%WWWDIR%%/public/js/locale/Makefile.am
-%%WWWDIR%%/public/js/locale/Makefile.in
 %%WWWDIR%%/public/js/locale/cn_CN/LC_MESSAGES/cn_CN.mo
 %%WWWDIR%%/public/js/locale/cn_CN/LC_MESSAGES/cn_CN.po
 %%WWWDIR%%/public/js/locale/cs_CZ/LC_MESSAGES/cs_CZ.mo
@@ -252,17 +252,20 @@
 %%WWWDIR%%/public/js/locale/es_ES/LC_MESSAGES/es_ES.po
 %%WWWDIR%%/public/js/locale/fr_FR/LC_MESSAGES/fr_FR.mo
 %%WWWDIR%%/public/js/locale/fr_FR/LC_MESSAGES/fr_FR.po
+%%WWWDIR%%/public/js/locale/hu_HU/LC_MESSAGES/hu_HU.mo
+%%WWWDIR%%/public/js/locale/hu_HU/LC_MESSAGES/hu_HU.po
 %%WWWDIR%%/public/js/locale/it_IT/LC_MESSAGES/it_IT.mo
 %%WWWDIR%%/public/js/locale/it_IT/LC_MESSAGES/it_IT.po
 %%WWWDIR%%/public/js/locale/nl_BE/LC_MESSAGES/nl_BE.mo
 %%WWWDIR%%/public/js/locale/nl_BE/LC_MESSAGES/nl_BE.po
+%%WWWDIR%%/public/js/locale/pt_BR/LC_MESSAGES/pt_BR.mo
+%%WWWDIR%%/public/js/locale/pt_BR/LC_MESSAGES/pt_BR.po
 %%WWWDIR%%/public/js/locale/ru_RU/LC_MESSAGES/ru_RU.mo
 %%WWWDIR%%/public/js/locale/ru_RU/LC_MESSAGES/ru_RU.po
 %%WWWDIR%%/public/js/locale/sk_SK/LC_MESSAGES/sk_SK.mo
 %%WWWDIR%%/public/js/locale/sk_SK/LC_MESSAGES/sk_SK.po
 %%WWWDIR%%/public/js/locale/tr_TR/LC_MESSAGES/tr_TR.mo
 %%WWWDIR%%/public/js/locale/tr_TR/LC_MESSAGES/tr_TR.po
-%%WWWDIR%%/public/js/locale/webui-datatables.pot
 %%WWWDIR%%/public/js/moment-timezone-with-data.js
 %%WWWDIR%%/public/js/moment-timezone-with-data.min.js
 %%WWWDIR%%/public/js/moment-with-locales.js
@@ -1947,6 +1950,7 @@
 %%WWWDIR%%/vendor/zendframework/zend-view/src/Variables.php
 %%WWWDIR%%/vendor/zendframework/zend-view/src/View.php
 %%WWWDIR%%/vendor/zendframework/zend-view/src/ViewEvent.php
+%%WWWDIR%%/version.php
+@dir %%WWWDIR%%/data/cache
 @owner
 @group
-@dir %%WWWDIR%%/data/cache
