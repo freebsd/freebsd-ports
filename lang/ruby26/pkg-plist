@@ -8617,6 +8617,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%EXAMPLES%%%%RUBY_EXAMPLESDIR%%/trick2015/monae/authors.markdown
 %%EXAMPLES%%%%RUBY_EXAMPLESDIR%%/trick2015/monae/entry.rb
 %%EXAMPLES%%%%RUBY_EXAMPLESDIR%%/trick2015/monae/remarks.markdown
+%%EXAMPLES%%%%RUBY_EXAMPLESDIR%%/trick2018/README.md
 %%EXAMPLES%%%%RUBY_EXAMPLESDIR%%/trick2018/01-kinaba/authors.markdown
 %%EXAMPLES%%%%RUBY_EXAMPLESDIR%%/trick2018/01-kinaba/entry.rb
 %%EXAMPLES%%%%RUBY_EXAMPLESDIR%%/trick2018/01-kinaba/remarks.markdown
@@ -8650,7 +8651,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%EXAMPLES%%%%RUBY_EXAMPLESDIR%%/webrick/httpd.rb
 %%EXAMPLES%%%%RUBY_EXAMPLESDIR%%/webrick/httpproxy.rb
 %%EXAMPLES%%%%RUBY_EXAMPLESDIR%%/webrick/httpsd.rb
-%%RDOC%%%%RUBY_EXAMPLESDIR%%/trick2018/README.md
 %%RDOC%%%%RUBY_LIBDIR%%/csv/delete_suffix.rb
 %%RDOC%%%%RUBY_RIDIR%%/ACL/ACLEntry/cdesc-ACLEntry.ri
 %%RDOC%%%%RUBY_RIDIR%%/ACL/ACLEntry/dot_pat-i.ri
