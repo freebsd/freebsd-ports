@@ -1,0 +1,60 @@
+--- core/scripts/CMakeLists.txt	2019-05-08 19:49:45.595270000 -0500
++++ core/scripts/CMakeLists.txt	2019-05-08 19:51:39.443730000 -0500
+@@ -17,28 +17,29 @@
+ #   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ #   02110-1301, USA.
+ 
++IF(client-only)
++   INSTALL(FILES
++            btraceback
++            PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
++                                    GROUP_READ GROUP_EXECUTE
++                                    WORLD_READ WORLD_EXECUTE
++            DESTINATION "${sbindir}")
+ 
+-INSTALL(FILES
+-         bareos btraceback
+-         PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
+-                                 GROUP_READ GROUP_EXECUTE
+-                                 WORLD_READ WORLD_EXECUTE
+-         DESTINATION "${sbindir}")
++   INSTALL(FILES
++            bareos
++            btraceback.gdb
++            btraceback.dbx
++            btraceback.mdb
++            bareos-config
++            bareos-config-lib.sh
++            bareos-ctl-fd
++            bareos-ctl-funcs
++            PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
++                        GROUP_READ GROUP_EXECUTE
++                        WORLD_READ WORLD_EXECUTE
++            DESTINATION "${scriptdir}")
++ENDIF()
+ 
+-INSTALL(FILES
+-         bareos
+-         btraceback.gdb
+-         btraceback.dbx
+-         btraceback.mdb
+-         bareos-config
+-         bareos-config-lib.sh
+-         bareos-ctl-fd
+-         bareos-ctl-funcs
+-         PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
+-                     GROUP_READ GROUP_EXECUTE
+-                     WORLD_READ WORLD_EXECUTE
+-         DESTINATION "${scriptdir}")
+-
+ IF(NOT client-only)
+    INSTALL(FILES
+          mtx-changer
+@@ -47,7 +48,6 @@
+          bareos-glusterfind-wrapper
+          bareos-ctl-dir
+          bareos-ctl-sd
+-         bareos-ctl-funcs
+          PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
+                      GROUP_READ GROUP_EXECUTE
+                      WORLD_READ WORLD_EXECUTE

@@ -1,0 +1,19 @@
+--- core/manpages/CMakeLists.txt	2019-05-08 21:16:29.369799000 -0500
++++ core/manpages/CMakeLists.txt	2019-05-08 21:17:28.526607000 -0500
+@@ -17,6 +17,7 @@
+ #   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ #   02110-1301, USA.
+ 
++IF(client-only)
+ set (MAN1
+    bconsole.1
+    )
+@@ -25,7 +26,7 @@
+    bareos-fd.8
+    bareos.8
+    )
+-
++ENDIF()
+ 
+ IF(NOT client-only)
+ set ( MAN1-server

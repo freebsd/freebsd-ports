@@ -1,3 +1,4 @@
+bin/bconsole
 @sample %%ETCDIR%%/bareos-fd.d/client/myself.conf.sample
 @group bareos
 @sample %%ETCDIR%%/bareos-fd.d/director/bareos-dir.conf.sample
@@ -6,16 +7,17 @@
 @group bareos
 @sample %%ETCDIR%%/bareos-fd.d/messages/Standard.conf.sample
 @group bareos
-%%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.sample
-%%PYTHON%%@group bareos
-%%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/job/backup-ldap.conf.sample
-%%PYTHON%%@group bareos
-%%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/job/restore-ldap.conf.sample
-%%PYTHON%%@group bareos
 @sample %%ETCDIR%%/bconsole.d/bconsole.conf.sample
-@group wheel
-%%LMDB%%@sample %%ETCDIR%%/plugin-python-ldap.conf.sample
-bin/bconsole
+@group bareos
+lib/libbareos.so
+lib/libbareos.so.18
+lib/libbareos.so.%%LIB_VERSION%%
+lib/libbareosfind.so
+lib/libbareosfind.so.18
+lib/libbareosfind.so.%%LIB_VERSION%%
+%%LMDB%%lib/libbareoslmdb.so
+%%LMDB%%lib/libbareoslmdb.so.18
+%%LMDB%%lib/libbareoslmdb.so.%%LIB_VERSION%%
 %%PYTHON%%lib/bareos/plugins/BareosFdPluginBaseclass.py
 %%PYTHON%%lib/bareos/plugins/BareosFdPluginLDAP.py
 %%PYTHON%%lib/bareos/plugins/BareosFdPluginLocalFileset.py
@@ -27,28 +29,26 @@ bin/bconsole
 %%PYTHON%%lib/bareos/plugins/bareos_fd_consts.py
 lib/bareos/plugins/bpipe-fd.so
 %%PYTHON%%lib/bareos/plugins/python-fd.so
-lib/libbareos-%%LIB_VERSION%%.so
-lib/libbareos.la
-lib/libbareos.so
-lib/libbareoscfg-%%LIB_VERSION%%.so
-lib/libbareoscfg.la
-lib/libbareoscfg.so
-lib/libbareosfind-%%LIB_VERSION%%.so
-lib/libbareosfind.la
-lib/libbareosfind.so
-%%LMDB%%lib/libbareoslmdb-%%LIB_VERSION%%.so
-%%LMDB%%lib/libbareoslmdb.la
-%%LMDB%%lib/libbareoslmdb.so
+lib/bareos/scripts/bareos
+lib/bareos/scripts/bareos-config
+lib/bareos/scripts/bareos-config-lib.sh
+lib/bareos/scripts/bareos-ctl-fd
+lib/bareos/scripts/bareos-ctl-funcs
+lib/bareos/scripts/btraceback.dbx
+lib/bareos/scripts/btraceback.gdb
+lib/bareos/scripts/btraceback.mdb
 man/man1/bconsole.1.gz
 man/man8/bareos-fd.8.gz
+man/man8/bareos.8.gz
+@group bareos
 sbin/bareos-fd
 @group bareos
 sbin/bconsole
 @group wheel
+sbin/btraceback
+@group bareos
+%%PYTHON%%@dir(,bareos,750) %%ETCDIR%%/python-ldap-conf.d/bareos-dir.d/fileset
+%%PYTHON%%@dir(,bareos,750) %%ETCDIR%%/python-ldap-conf.d/bareos-dir.d/job
 @dir(bareos,bareos,)  %%BAREOS_DIR%%
-%%PYTHON%%@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/fileset
-%%PYTHON%%@dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/job
-@dir lib/bareos/plugins
-@dir lib/bareos/scripts
 @dir(bareos,bareos,) /var/log/bareos
 @dir(bareos,bareos,) /var/run/bareos

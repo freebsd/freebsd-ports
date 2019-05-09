@@ -1,10 +1,6 @@
 # Created by: Alonso Cardenas <acm@FreeBSD.org>
 # $FreeBSD$
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|_NONSHARED||g' ${WRKSRC}/src/filed/Makefile.in
-	@${REINPLACE_CMD} -e 's|-lbareoscfg|@JANSSON_LIBS@ @LIBINTL@ -lbareoscfg|g' ${WRKSRC}/src/qt-tray-monitor/tray-monitor.pro.in
-
 post-build:
 .if ${PKGNAMEPREFIX} == "nagios-check_"
 	${MAKE_CMD} -C ${WRKSRC}/examples/nagios/check_bareos
@@ -14,7 +10,7 @@ pre-install:
 .if ${PKGNAMESUFFIX} == "-traymonitor"
 .	for d in client director monitor storage
 		${MKDIR} ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}
-		${FIND} ${WRKSRC}/src/defaultconfigs/tray-monitor.d/${d} -type f -name '*.conf' -exec ${MV} -v {} {}.sample \;
+		${FIND} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/${d} -type f -name '*.conf' -exec ${MV} -v {} {}.sample \;
 .	endfor
 .endif
 
@@ -31,9 +27,9 @@ do-install:
 .if ${PKGNAMESUFFIX} == "-traymonitor"
 # Install config files and preserve existing ones
 .for d in client director monitor storage
-	${INSTALL_SCRIPT} ${WRKSRC}/src/defaultconfigs/tray-monitor.d/${d}/*.sample ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}/
+	${INSTALL_SCRIPT} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/${d}/*.sample ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}/
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-tray-monitor/bareos-tray-monitor ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/src/qt-tray-monitor/bareos-tray-monitor.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/src/qt-tray-monitor/bareos-tray-monitor.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/core/src/qt-tray-monitor/bareos-tray-monitor ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/core/src/qt-tray-monitor/bareos-tray-monitor.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/core/src/qt-tray-monitor/bareos-tray-monitor.desktop ${STAGEDIR}${DESKTOPDIR}
 .endif
