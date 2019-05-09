@@ -918,7 +918,7 @@
     SUBDIR += hs-data-default-instances-dlist
     SUBDIR += hs-data-default-instances-old-locale
     SUBDIR += hs-dlist
-    SUBDIR += hs-extensible-exception
+    SUBDIR += hs-extensible-exceptions
     SUBDIR += hs-ghc-events
     SUBDIR += hs-git-annex
     SUBDIR += hs-haddock
