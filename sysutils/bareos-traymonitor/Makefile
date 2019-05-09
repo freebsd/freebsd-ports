@@ -6,29 +6,23 @@ PKGNAMESUFFIX=	-traymonitor
 
 COMMENT=	Backup archiving recovery open sourced (traymonitor)
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
-LIB_DEPENDS+=	libqwt.so:x11-toolkits/qwt5 \
+LIB_DEPENDS+=	libqwt5-qt5.so:x11-toolkits/qwt5-qt5 \
 		libbareos.so:sysutils/bareos-client
 
 CONFLICTS=	bacula*-bat-* bareos16-traymonitor-*
 
-USES=		pkgconfig gettext-runtime desktop-file-utils qt:4
-USE_QT=		qmake_build uic_build moc_build rcc_build gui corelib
+USES=		pkgconfig gettext-runtime desktop-file-utils qt:5
+USE_QT5=		qmake_build uic_build moc_build rcc_build gui corelib
 WITH_BAT=	yes
 
 PLIST=		${.CURDIR}/pkg-plist
-MAKE_ENV+=	MAKEOBJDIRPREFIX=/
+CFLAGS+=	-DMDB_DSYNC=O_SYNC -DMDB_USE_POSIX_SEM=1
 
 MASTERDIR=	${.CURDIR}/../../sysutils/bareos-server
 
-CONFIGURE_ARGS+=	--enable-traymonitor=yes \
-			--with-qwt=${LOCALBASE}/lib \
-			--disable-build-dird \
-			--disable-build-stored \
-			--enable-client-only \
-			--with-jansson=${LOCALBASE} \
-			--enable-nls=yes
+CMAKE_ARGS+=		-Dtraymonitor=yes \
+			-Dbuild-dird=no \
+			-Dbuild-stored=no \
+			-Dclient-only=yes
 
 .include "${MASTERDIR}/Makefile"

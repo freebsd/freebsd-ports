@@ -83,6 +83,7 @@
     SUBDIR += bareos-client
     SUBDIR += bareos-docs
     SUBDIR += bareos-server
+    SUBDIR += bareos-traymonitor
     SUBDIR += bareos16-client
     SUBDIR += bareos16-client-static
     SUBDIR += bareos16-server
