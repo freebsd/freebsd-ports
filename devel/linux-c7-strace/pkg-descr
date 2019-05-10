@@ -1,0 +1,10 @@
+strace is a system call tracer, i.e. a debugging tool which prints out a trace
+of all the system calls made by a another process/program.
+
+strace is similar to the native BSD ``truss'' utility, but it's output style is
+more convenient in most cases.
+
+For strace to work, linprocfs has to be mounted. FreeBSD does not mount it by
+default. For more information, man linprocfs.
+
+WWW: https://sourceforge.net/projects/strace/
