@@ -19,7 +19,6 @@ BROKEN_aarch64=		fails to package: lib.freebsd-11.0-RELEASE-p1-aarch64-2.7/libne
 BROKEN_armv6=		fails to package: lib.freebsd-11.0-RELEASE-p1-armv6-2.7/libnet.so: No such file or directory
 BROKEN_armv7=		fails to package: lib.freebsd-11.0-RELEASE-p1-armv7-2.7/libnet.so: No such file or directory
 BROKEN_mips64=		fails to package: lib.freebsd-11.0-RELEASE-p1-mips64-2.7/libnet.so: No such file or directory
-BROKEN_powerpc64=	fails to package: lib.freebsd-11.0-RELEASE-p1-powerpc64-2.7/libnet.so: No such file or directory
 
 USES=		python:-2.7
 USE_PYTHON=	distutils pythonprefix
@@ -32,6 +31,7 @@ GH_TAGNAME=	b2fa552
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 OPTIONS_DEFINE=	EXAMPLES
+LIBNET_ARCH=	${ARCH:S/powerpc64/powerpc/}
 OSVER=		uname -r
 
 post-patch:
@@ -40,7 +40,7 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	${INSTALL_LIB} \
-	${WRKSRC}/build/lib.${OPSYS:tl}-$$(${OSVER})-${ARCH}-${PYTHON_VER}/${PORTNAME}.so \
+	${WRKSRC}/build/lib.${OPSYS:tl}-$$(${OSVER})-${LIBNET_ARCH}-${PYTHON_VER}/${PORTNAME}.so \
 	${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 do-install-EXAMPLES-on:
