@@ -56,6 +56,7 @@ ALSA_CMAKE_BOOL=	USE_ALSA
 
 EVDEV_DESC=		libevdev-based joystick support
 EVDEV_CMAKE_BOOL=	USE_LIBEVDEV
+EVDEV_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 EVDEV_LIB_DEPENDS=	libevdev.so:devel/libevdev
 
 GDB_DESC=		GDB remote stub (powerpc64 target)
