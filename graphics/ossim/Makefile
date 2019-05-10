@@ -2,8 +2,7 @@
 
 PORTNAME=	ossim
 DISTVERSIONPREFIX=	Laguna-
-DISTVERSION=	2.7.0
-PORTREVISION=	1
+DISTVERSION=	2.8.0
 CATEGORIES=	graphics geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org
