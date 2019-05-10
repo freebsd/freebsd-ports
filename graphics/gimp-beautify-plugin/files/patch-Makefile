@@ -1,25 +1,21 @@
 --- Makefile.orig	2012-08-12 09:23:45 UTC
 +++ Makefile
-@@ -13,17 +13,16 @@
+@@ -13,7 +13,6 @@
  # You should have received a copy of the GNU General Public License
  # along with this program.  If not, see <http://www.gnu.org/licenses/>.
  
 -CC = gcc
  
--GIMPTOOL = gimptool-2.0
-+GIMPTOOL = /usr/local/bin/gimptool-2.0
+ GIMPTOOL = gimptool-2.0
  
- GIMP_LIBS = `$(GIMPTOOL) --libs`
+@@ -21,7 +20,7 @@ GIMP_LIBS = `$(GIMPTOOL) --libs`
  GIMP_CFLAGS = `$(GIMPTOOL) --cflags`
  
  LIBS = $(GIMP_LIBS) -lm
 -CFLAGS = $(GIMP_CFLAGS)
 +CFLAGS += $(GIMP_CFLAGS)
  
--GDK_PIXBUF_CSOURCE = gdk-pixbuf-csource
-+GDK_PIXBUF_CSOURCE = /usr/local/bin/gdk-pixbuf-csource
- 
- all: beautify skin-whitening simple-border border
+ GDK_PIXBUF_CSOURCE = gdk-pixbuf-csource
  
 @@ -71,7 +70,7 @@ useruninstall:
  	$(GIMPTOOL) --uninstall-bin texture-border
