@@ -23,12 +23,13 @@ BUILD_DEPENDS=	zip:archivers/zip \
 		${LOCALBASE}/include/boost/crc.hpp:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang dos2unix gl localbase:ldflags \
-		pkgconfig
+		pkgconfig sdl
+USE_SDL=	sdl2
+USE_GL=		gl
+
 DOS2UNIX_REGEX=	.*\.(c|h|cpp)
 CMAKE_ARGS=	-DDATADIR:PATH="${DATADIR}"
 WRKSRC=		${WRKDIR}/blobby-${PORTVERSION}
-USE_SDL=	sdl2
-USE_GL=		gl
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 

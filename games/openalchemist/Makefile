@@ -19,18 +19,18 @@ BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libclanCore.so:devel/clanlib1 \
 		libpng.so:graphics/png
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
-GNU_CONFIGURE=	yes
-
 USES=		autoreconf gl gmake gnome iconv jpeg pkgconfig python:2.7,run \
-		shebangfix
-SHEBANG_FILES=	openalchemist-config
-
+		sdl shebangfix
 USE_GNOME=	pygtk2
 USE_XORG=	xxf86vm xi x11 xmu xext xdamage xfixes xau xdmcp xt sm ice
 USE_GL=		gl glu
 USE_SDL=	sdl gfx
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+
+SHEBANG_FILES=	openalchemist-config
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
