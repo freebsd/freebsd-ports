@@ -1,6 +1,6 @@
-TIMESTAMP = 1555509528
-SHA256 (tsenart-vegeta-cli-v12.3.0_GH0.tar.gz) = becfcdd173e288325e0882734a9ddf2352448f50b5a83a4c0d7d0eecaa03a0d0
-SIZE (tsenart-vegeta-cli-v12.3.0_GH0.tar.gz) = 481589
+TIMESTAMP = 1557477447
+SHA256 (tsenart-vegeta-cli-v12.4.0_GH0.tar.gz) = fbec8e3803b9f2487e8c90e1f7f9241d0e879cab2e7926456853d9f5f96a5643
+SIZE (tsenart-vegeta-cli-v12.4.0_GH0.tar.gz) = 481631
 SHA256 (alecthomas-jsonschema-f2c9385_GH0.tar.gz) = e95ce4279470c9da271c494ac9b00fc6c3c8975c9e685ca4ae926a6201deaab1
 SIZE (alecthomas-jsonschema-f2c9385_GH0.tar.gz) = 7341
 SHA256 (c2h5oh-datasize-4eba002_GH0.tar.gz) = c0e504d28864f6c25eb09afcf292aea5a7499df3b2d3e13a9ddecd3bc5ef98ae
