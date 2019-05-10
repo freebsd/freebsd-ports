@@ -43,6 +43,7 @@ include/wine/msvcrt/errno.h
 include/wine/msvcrt/fcntl.h
 include/wine/msvcrt/float.h
 include/wine/msvcrt/fpieee.h
+include/wine/msvcrt/inttypes.h
 include/wine/msvcrt/io.h
 include/wine/msvcrt/limits.h
 include/wine/msvcrt/locale.h
@@ -367,7 +368,7 @@ include/wine/windows/dxgiformat.h
 include/wine/windows/dxgiformat.idl
 include/wine/windows/dxgitype.h
 include/wine/windows/dxgitype.idl
-%%STAGING%%include/wine/windows/dxva.h
+include/wine/windows/dxva.h
 include/wine/windows/dxva2api.h
 include/wine/windows/dxva2api.idl
 include/wine/windows/dyngraph.idl
