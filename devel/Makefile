@@ -556,6 +556,7 @@
     SUBDIR += elixir-tzdata
     SUBDIR += elixir-unsafe
     SUBDIR += embb
+    SUBDIR += emscripten
     SUBDIR += epl.el
     SUBDIR += epm
     SUBDIR += epydoc
