@@ -1,0 +1,5 @@
+Emscripten is a toolchain for compiling to asm.js and WebAssembly, built using
+LLVM, that lets you run C and C++ on the web at near-native speed without
+plugins.
+
+WWW: https://emscripten.org/
