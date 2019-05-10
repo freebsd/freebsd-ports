@@ -1,0 +1,7 @@
+TIMESTAMP = 1556054023
+SHA256 (centos/strace-4.12-4.el7.i686.rpm) = 4255eee58bc540c93f1c77c63c33a42abaacc58d1b84b233310aaa3fb5d53733
+SIZE (centos/strace-4.12-4.el7.i686.rpm) = 453520
+SHA256 (centos/strace-4.12-4.el7.x86_64.rpm) = 085effd2e3fe66d0db92ccc592cd05f83f2b0b749c4c3ed4ced4d673febc058c
+SIZE (centos/strace-4.12-4.el7.x86_64.rpm) = 469928
+SHA256 (centos/strace-4.12-4.el7.src.rpm) = 3c864cf117fa49e4bc4187646f9d774211d96924371505c8abfb9535e9801fd7
+SIZE (centos/strace-4.12-4.el7.src.rpm) = 1659454
