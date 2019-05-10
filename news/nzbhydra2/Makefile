@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nzbhydra2
-DISTVERSION=	2.3.16
+DISTVERSION=	2.6.2
 DISTVERSIONSUFFIX=	-linux
 CATEGORIES=	news java
 MASTER_SITES=	https://github.com/theotherp/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
 
-USES=		python shebangfix zip
+USES=		python:2.7 shebangfix zip
 USE_JAVA=	yes
 USE_RC_SUBR=	nzbhydra2
 
@@ -32,7 +32,7 @@ JAVA_RUN=	yes
 USERS=		nzbhydra2
 GROUPS=		nzbhydra2
 
-PLIST_FILES=	${DATADIR}/lib/core-2.3.16-exec.jar \
+PLIST_FILES=	${DATADIR}/lib/core-2.6.2-exec.jar \
 		${DATADIR}/nzbhydra2 \
 		${DATADIR}/nzbhydra2wrapper.py \
 		${DATADIR}/changelog.md \
