@@ -3,6 +3,7 @@
 
 PORTNAME=	x265
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.videolan.org/pub/videolan/x265/ \
 		https://mirror.leaseweb.com/videolan/x265/ \
@@ -12,6 +13,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 PATCH_SITES=	http://hg.videolan.org/${PORTNAME}/raw-rev/
 PATCHFILES+=	878541319ea1:-p1 a41325fc854f:-p1 # SVT-HEVC
+PATCHFILES+=	31ab7e09a3b5:-p1 e16999096b48:-p1 # SVT-HEVC
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	H.265/High Efficiency Video Coding (HEVC) format
