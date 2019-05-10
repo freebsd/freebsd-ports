@@ -2,8 +2,7 @@
 
 PORTNAME=	pulseeffects
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5.6
-PORTREVISION=	2
+DISTVERSION=	4.6.0
 CATEGORIES=	audio
 
 MAINTAINER=	daniel@shafer.cc
@@ -26,7 +25,10 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpulse.so:audio/pulseaudio \
 		librubberband.so:audio/rubberband \
 		libsamplerate.so:audio/libsamplerate \
+		libserd-0.so:devel/serd \
 		libsndfile.so:audio/libsndfile \
+		libsord-0.so:devel/sord \
+		libsratom-0.so:audio/sratom \
 		libzita-convolver.so:audio/zita-convolver
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gstreamer1>=1.4.0:multimedia/py-gstreamer1@${PY_FLAVOR} \
