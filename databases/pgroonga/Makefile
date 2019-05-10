@@ -19,7 +19,7 @@ LLD_UNSAFE=	yes
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	MECAB
-MECAB_DESCRIBE=	Use MeCab as a tokenizer
+MECAB_DESC=	Use MeCab as a tokenizer
 MECAB_BUILD_DEPENDS=	mecab-ipadics>=0.996:japanese/mecab-ipadic
 
 post-install:
