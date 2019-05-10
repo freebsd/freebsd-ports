@@ -6,14 +6,14 @@ MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	QEMU userland utilities
 
 HAS_CONFIGURE=	yes
-USES=		cpe gmake pkgconfig perl5 python:2.7,build tar:xz
+USES=		cpe gmake pkgconfig perl5 python:build tar:xz
 USES+=		gettext-runtime
 USE_GNOME+=	glib20
 MAKE_ENV+=	BSD_MAKE="${MAKE}" PREFIX=${PREFIX}
 CONFLICTS_INSTALL=	qemu-[0-9]* qemu-devel-* qemu-sbruno-*
 
 OPTIONS_SLAVE=	DOCS
-OPTIONS_EXCLUDE=	SAMBA X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CURL \
+OPTIONS_EXCLUDE=	SAMBA X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS \
 		STATIC_LINK NCURSES VDE
 MASTERDIR=	${.CURDIR}/../qemu
