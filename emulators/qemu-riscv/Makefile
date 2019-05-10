@@ -11,6 +11,9 @@ COMMENT=	QEMU with RISC-V (RV64GC, RV32GC) emulation support
 
 LICENSE=	GPLv2
 
+DEPRECATED=	The development has been moved to the upstream
+EXPIRATION_DATE=	2019-06-30
+
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 BROKEN_powerpc64=	fails to compile: async.c: internal compiler error: Segmentation fault
 
