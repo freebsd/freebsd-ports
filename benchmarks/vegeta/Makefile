@@ -2,7 +2,7 @@
 
 PORTNAME=	vegeta
 DISTVERSIONPREFIX=	cli/v
-DISTVERSION=	12.3.0
+DISTVERSION=	12.4.0
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	egypcio@FreeBSD.org
