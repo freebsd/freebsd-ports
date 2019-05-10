@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pidgin-icyque
-DISTVERSION=	g20190403
+DISTVERSION=	g20190421
 CATEGORIES=	net-im
 
 MAINTAINER=	eugen@FreeBSD.org
