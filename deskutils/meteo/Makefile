@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	meteo
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	deskutils
 
 MAINTAINER=	tagattie@yandex.com
@@ -23,7 +23,8 @@ USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig \
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	bitseater
-GL_COMMIT=	1a36202057ddd502556afd9335a8f8d51b714537
+GL_COMMIT=	c83cea9a31901911ed5f8d87756d33a36b547457
+
 USE_GNOME=	gtk30
 
 SHEBANG_FILES=	meson/post_install.py
@@ -40,8 +41,6 @@ post-extract:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
