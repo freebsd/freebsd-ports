@@ -13,7 +13,6 @@ COMMENT=	C-based extension implementing fast integer bit sets
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		fails to compile: the clang compiler does not support -march=core2
 BROKEN_armv6=		fails to compile: the clang compiler does not support -march=core2
 BROKEN_armv7=		fails to compile: the clang compiler does not support -march=core2
 
