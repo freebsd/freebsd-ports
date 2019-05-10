@@ -41,23 +41,21 @@ bin/timelimit
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/storage/bareos-sd.conf.sample
 %%MTX%%@sample(,bareos,640) %%ETCDIR%%/mtx-changer.conf.sample
 etc/logrotate.d/bareos-dir
-etc/rc.d/bareos-dir
-etc/rc.d/bareos-sd
 lib/bareos/backends/libbareoscats-%%DBTYPE%%.so
 lib/bareos/backends/libbareossd-fifo.so
 lib/bareos/backends/libbareossd-gentape.so
 lib/bareos/backends/libbareossd-tape.so
-lib/bareos/plugins/BareosDirPluginBaseclass.py
-lib/bareos/plugins/BareosDirWrapper.py
-lib/bareos/plugins/BareosSdPluginBaseclass.py
-lib/bareos/plugins/BareosSdWrapper.py
+%%PYTHON%%lib/bareos/plugins/BareosDirPluginBaseclass.py
+%%PYTHON%%lib/bareos/plugins/BareosDirWrapper.py
+%%PYTHON%%lib/bareos/plugins/BareosSdPluginBaseclass.py
+%%PYTHON%%lib/bareos/plugins/BareosSdWrapper.py
 lib/bareos/plugins/autoxflate-sd.so
-lib/bareos/plugins/bareos-dir-class-plugin.py
-lib/bareos/plugins/bareos-dir.py.template
-lib/bareos/plugins/bareos-sd-class-plugin.py
-lib/bareos/plugins/bareos-sd.py.template
-lib/bareos/plugins/bareos_dir_consts.py
-lib/bareos/plugins/bareos_sd_consts.py
+%%PYTHON%%lib/bareos/plugins/bareos-dir-class-plugin.py
+%%PYTHON%%lib/bareos/plugins/bareos-dir.py.template
+%%PYTHON%%lib/bareos/plugins/bareos-sd-class-plugin.py
+%%PYTHON%%lib/bareos/plugins/bareos-sd.py.template
+%%PYTHON%%lib/bareos/plugins/bareos_dir_consts.py
+%%PYTHON%%lib/bareos/plugins/bareos_sd_consts.py
 %%PYTHON%%lib/bareos/plugins/python-dir.so
 %%PYTHON%%lib/bareos/plugins/python-sd.so
 %%SCSICRYPTO%%lib/bareos/plugins/scsicrypto-sd.so
