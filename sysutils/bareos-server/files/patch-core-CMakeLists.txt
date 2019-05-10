@@ -1,0 +1,32 @@
+--- core/CMakeLists.txt	2019-02-13 09:25:55.000000000 -0500
++++ core/CMakeLists.txt	2019-05-10 14:14:16.122670000 -0500
+@@ -116,7 +116,9 @@
+    set(PSCMD "ps -ax -o pid,command")
+    include_directories(/usr/local/include)
+    link_directories(/usr/local/lib)
+-   link_libraries(intl)
++   IF(nls)
++     link_libraries(intl)
++   ENDIF()
+ endif()
+ 
+ IF (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+@@ -173,7 +175,9 @@
+    add_definitions("-D_FILE_OFFSET_BITS=64")
+ endif()
+ 
+-INCLUDE(FindIntl)
++IF(nls)
++  INCLUDE(FindIntl)
++ENDIF()
+ 
+ IF(developer)
+    add_definitions("-DDEVELOPER=1")
+@@ -576,7 +580,6 @@
+ 
+ add_subdirectory(scripts)
+ add_subdirectory(manpages)
+-add_subdirectory(platforms)
+ add_subdirectory(src)
+ 
+ STRING(TIMESTAMP NOW "%Y-%m-%d %H:%M:%S")
