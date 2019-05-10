@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-power-manager
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/xfce/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
@@ -36,4 +37,10 @@ OPTIONS_SUB=		yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+.include <bsd.port.post.mk>
