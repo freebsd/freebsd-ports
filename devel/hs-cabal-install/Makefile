@@ -39,7 +39,9 @@ post-extract:
 
 do-build:
 	cd ${WRKSRC} && \
-		${SETENV} EXTRA_CONFIGURE_OPTS="--disable-library-profiling" HOME=${WRKDIR}/home PREFIX=${WRKDIR}/prefix ${WRKSRC}/bootstrap.sh --no-doc --jobs ${MAKE_JOBS_NUMBER}
+		${SETENV} EXTRA_CONFIGURE_OPTS="--disable-library-profiling" \
+			${MAKE_ENV} HOME=${WRKDIR}/home PREFIX=${WRKDIR}/prefix \
+			${WRKSRC}/bootstrap.sh --no-doc --jobs ${MAKE_JOBS_NUMBER}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/prefix/bin/cabal ${STAGEDIR}${PREFIX}/bin/
