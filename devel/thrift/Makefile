@@ -52,7 +52,8 @@ PLIST_FILES=	bin/thrift
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 post-patch:
-	${REINPLACE_CMD} 's,-Werror,,' ${WRKSRC}/lib/rb/ext/extconf.rb
+	@${REINPLACE_CMD} 's,-Werror,,' ${WRKSRC}/compiler/cpp/Makefile.am \
+		${WRKSRC}/lib/rb/ext/extconf.rb
 
 pre-configure:
 	@${REINPLACE_CMD} '/config.h/d' ${WRKSRC}/lib/cpp/Makefile.am
