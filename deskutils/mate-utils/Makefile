@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-utils
-PORTVERSION=	1.20.1
+PORTVERSION=	1.22.1
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -16,7 +16,8 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_GFDL=	${WRKSRC}/COPYING.docs
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.libs
 
-BUILD_DEPENDS=	itstool:textproc/itstool
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		inkscape:graphics/inkscape
 LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 		libcanberra-gtk.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3

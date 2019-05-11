@@ -1,3 +1,3 @@
-TIMESTAMP = 1541205324
-SHA256 (mate/mate-notification-daemon-1.20.1.tar.xz) = e85cd01f40d238c57b3da30537fbd561102e652f492b20ebfea79938d8e39a43
-SIZE (mate/mate-notification-daemon-1.20.1.tar.xz) = 347592
+TIMESTAMP = 1556384574
+SHA256 (mate/mate-notification-daemon-1.22.0.tar.xz) = 12bc6b95b517396642f25e060bbe3314db2ce9cf14ad3327f1b1950f3febe31b
+SIZE (mate/mate-notification-daemon-1.22.0.tar.xz) = 360676
