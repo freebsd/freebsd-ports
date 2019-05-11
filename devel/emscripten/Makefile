@@ -24,6 +24,8 @@ PYSCRIPTS=	em++ emar emcc em-config emconfigure emmake emranlib emrun emscons
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^[0-9\.]*$$ # prevent versions like "i64"
+
 post-patch:
 	@${REINPLACE_CMD} -E "s|^__rootpath__ = .*|__rootpath__ = '${PREFIX}/lib/${PORTNAME}'|" ${WRKSRC}/tools/shared.py
 
