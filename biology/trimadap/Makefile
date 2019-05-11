@@ -10,9 +10,8 @@ COMMENT=	Trim adapter sequences from Illumina data using heuristic rules
 
 LICENSE=	GPLv2
 
-BROKEN_aarch64=		fails to compile: invalid conversion between vector type and integer type
-BROKEN_armv6=		fails to compile: invalid conversion between vector type and integer type
-BROKEN_armv7=		fails to compile: invalid conversion between vector type and integer type
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	Hard-coded SSE instructions
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lh3
