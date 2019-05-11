@@ -1,0 +1,9 @@
+@owner www
+@group www
+@(,,600) %%APP_HOME%%/standalone/configuration/standalone-zanata.xml.sample
+%%APP_HOME%%/standalone/deployments/ROOT.war
+%%APP_HOME%%/standalone/deployments/mysql-connector-java.jar
+@dir /var/lib/zanata
+@owner
+@group
+@dir /var/lib
