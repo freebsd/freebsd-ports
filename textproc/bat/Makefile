@@ -3,7 +3,7 @@
 PORTNAME=	bat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -18,7 +18,8 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	sharkdp
 
-PLIST_FILES=	bin/bat
+PLIST_FILES=	bin/bat \
+				man/man1/bat.1.gz
 
 CARGO_CRATES=	adler32-1.0.3 \
 		aho-corasick-0.6.9 \
@@ -158,4 +159,5 @@ CARGO_CRATES=	adler32-1.0.3 \
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bat
+	${INSTALL_MAN} ${WRKSRC}/doc/bat.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .include <bsd.port.mk>
