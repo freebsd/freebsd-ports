@@ -16,7 +16,7 @@ LIB_DEPENDS=	libccp4c.so:science/libccp4 \
 		libmmdb2.so:science/mmdb2 \
 		libsfftw.so:math/fftw-float
 
-USES=		fortran gmake libtool localbase:ldflags
+USES=		compiler:c++11-lang fortran gmake libtool localbase:ldflags
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static \
 		--enable-phs --enable-cns --enable-mmdb --enable-minimol --enable-cif --enable-ccp4 --enable-fortran
