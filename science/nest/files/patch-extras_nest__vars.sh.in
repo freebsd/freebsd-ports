@@ -1,0 +1,8 @@
+--- extras/nest_vars.sh.in.orig	2019-05-11 19:47:58 UTC
++++ extras/nest_vars.sh.in
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # NEST is installed here. When you relocate NEST, change this variable.
+ export NEST_INSTALL_DIR=@CMAKE_INSTALL_PREFIX@
