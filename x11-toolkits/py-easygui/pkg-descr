@@ -1,0 +1,6 @@
+EasyGUI is a module for very simple, very easy GUI programming in Python.
+EasyGUI is different from other GUI generators in that EasyGUI is NOT
+event-driven.  Instead, all GUI interactions are invoked by simple function
+calls.
+
+WWW: https://github.com/robertlugg/easygui
