@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	inkscape
-PORTVERSION=	0.92.3
-PORTREVISION=	10
+PORTVERSION=	0.92.4
 CATEGORIES=	graphics gnome
-MASTER_SITES=	https://inkscape.org/en/gallery/item/12187/
+MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
