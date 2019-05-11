@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis_exporter
-PORTVERSION=	0.32.0
+PORTVERSION=	0.34.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	databases
 
@@ -23,14 +23,9 @@ PLIST_FILES=	bin/redis_exporter
 
 USE_RC_SUBR=	redis_exporter
 
-
-BUILD_USER?=	${USER}
-LD_FLAG_X_PREFIX=	-X ${GO_PKGNAME}/vendor/${GO_PKGNAME:H}/common/version
+LD_FLAG_X_PREFIX=	-X main
 LD_FLAG_STRING=		-s \
-		${LD_FLAG_X_PREFIX}.Version=${PORTVERSION} \
-		${LD_FLAG_X_PREFIX}.Revision=${PORTREVISION} \
-		${LD_FLAG_X_PREFIX}.Branch=release-${PORTVERSION:R} \
-		${LD_FLAG_X_PREFIX}.BuildUser=${BUILD_USER}
+		${LD_FLAG_X_PREFIX}.BuildVersion=${PORTVERSION}
 GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
 
 do-install:
