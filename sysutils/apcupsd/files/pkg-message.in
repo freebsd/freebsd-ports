@@ -1,25 +1,30 @@
 **********************************************************************
-Read the manual:
-  http://www.apcupsd.org/manual/manual.html
-  http://www.apcupsd.org/manual/manual.pdf
+Read the manual: http://www.apcupsd.org/manual/manual.html
+                 http://www.apcupsd.org/manual/manual.pdf
 
 Sample files and scripts are installed in %%ETCDIR%%.
 You need to modify %%ETCDIR%%/apcupsd.conf as follows:
 
   For serial cable: DEVICE /dev/cuadX (or /dev/cuaaX for [45.]x)
   For USB cable: DEVICE (yes, leave it blank after DEVICE)
-
-NOTE that for USB cable you need uhid support.
-
-To	compile	this driver into the kernel, place the following line in your
-kernel configuration file:
-  device uhid
-
-Alternatively, to load the driver as a module at boot time, place the
-following line in loader.conf(5):
-  uhid_load="YES"
+  NOTE that for USB cable you need uhid support.
 
 Add apcupsd_enable=YES to your /etc/rc.conf[.local] to have apcupsd
 starting up at boot time.
+
+For default, apcupsd starts with `--kill-on-powerfail` parameter.
+Please, read its man page, and if this is not the intended behavior you want,
+change it accordingly.
+
+In some systems where the shutdown can take a while (like in bhyve environment),
+you may want to change this behavior as follows:
+
+Set apcupsd_flags="--term-on-powerfail" on your /etc/rc.conf[.local].
+
+Add this to /etc/rc.shutdown, after the "Insert other shutdown procedures here"
+line:
+  test -f /var/run/powerfail && /usr/local/sbin/apcupsd --hibernate
+  or
+  test -f /var/run/powerfail && /usr/local/sbin/apcupsd --power-off
 
 **********************************************************************
