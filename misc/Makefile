@@ -443,6 +443,7 @@
     SUBDIR += rubygem-rabbit
     SUBDIR += rubygem-vpim
     SUBDIR += rump
+    SUBDIR += rumprun
     SUBDIR += sdformat
     SUBDIR += seabios
     SUBDIR += sent
