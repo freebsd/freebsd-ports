@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190504
+PORTVERSION=	s20190510
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	fcb218d1
+GH_TAGNAME=	64c55950
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.6.10 \
@@ -32,7 +32,7 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		bincode-1.0.1 \
 		bindgen-0.47.3 \
 		bindgen-0.48.1 \
-		bitflags-1.0.5 \
+		bitflags-1.0.4 \
 		bitstream-io-0.8.2 \
 		byteorder-1.3.1 \
 		cast-0.2.2 \
@@ -59,7 +59,7 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		glob-0.2.11 \
 		hashbrown-0.1.8 \
 		humantime-1.2.0 \
-		interpolate_name-0.2.1 \
+		interpolate_name-0.2.2 \
 		itertools-0.8.0 \
 		itoa-0.4.4 \
 		lazy_static-1.3.0 \
@@ -80,8 +80,8 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		peeking_take_while-0.1.2 \
 		pkg-config-0.3.14 \
 		pretty_assertions-0.5.1 \
-		proc-macro-hack-0.5.5 \
-		proc-macro2-0.4.29 \
+		proc-macro-hack-0.5.7 \
+		proc-macro2-0.4.30 \
 		quick-error-1.2.2 \
 		quote-0.6.12 \
 		rand-0.5.6 \
@@ -103,11 +103,11 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		same-file-1.0.4 \
 		scan_fmt-0.1.3 \
 		scopeguard-0.3.3 \
-		serde-1.0.90 \
-		serde_derive-1.0.90 \
+		serde-1.0.91 \
+		serde_derive-1.0.91 \
 		serde_json-1.0.39 \
 		strsim-0.8.0 \
-		syn-0.15.33 \
+		syn-0.15.34 \
 		termcolor-1.0.4 \
 		termion-1.5.2 \
 		textwrap-0.11.0 \
