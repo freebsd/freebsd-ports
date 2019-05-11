@@ -12,6 +12,7 @@ libexec/gimp/2.2/plug-ins/py-slice/py-slice.py
 libexec/gimp/2.2/plug-ins/python-console/pyconsole.py
 libexec/gimp/2.2/plug-ins/python-console/python-console.py
 libexec/gimp/2.2/plug-ins/python-eval/python-eval.py
+libexec/gimp/2.2/plug-ins/spyro_plus/spyro_plus.py
 libexec/gimp/2.2/python/_gimpenums.so
 libexec/gimp/2.2/python/_gimpui.so
 libexec/gimp/2.2/python/gimp.so
