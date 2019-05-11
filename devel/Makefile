@@ -5035,6 +5035,7 @@
     SUBDIR += py-wcwidth
     SUBDIR += py-weakrefmethod
     SUBDIR += py-weblib
+    SUBDIR += py-websockets
     SUBDIR += py-websockify
     SUBDIR += py-wheel
     SUBDIR += py-whichcraft
