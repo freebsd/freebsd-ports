@@ -3,7 +3,7 @@
 @@ -30,11 +30,173 @@ SET(HEADERS
    ${CMAKE_CURRENT_BINARY_DIR}/mysql_version.h
    ${CMAKE_CURRENT_BINARY_DIR}/mysqld_error.h
-   ../libbinlogevents/export/binary_log_types.h
+   field_types.h
 +  base64.h
 +  big_endian.h
 +  c_string_less.h
