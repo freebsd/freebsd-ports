@@ -1,0 +1,51 @@
+--- CMakeLists.txt.orig	2019-05-11 14:42:40 UTC
++++ CMakeLists.txt
+@@ -15,12 +15,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} 
+ # Global include directories, visible in subdirectories.
+ include_directories(.
+     extern/googletest/googletest/include
+-    extern/double-conversion
+     extern/ordered-map/include
+-    extern/openvdb
+     extern/blosc
+     extern/stb
+-    extern/glfw/include
++    extern/gglfwglfwlfw/include
+     extern/glm
+     extern/glad)
+ 
+@@ -30,19 +28,6 @@ if (APPLE)
+     link_directories(/usr/local/lib)
+ endif (APPLE)
+ 
+-# REPLxx library
+-file(GLOB ReplxxSrc "extern/replxx/src/*.cxx" "extern/replxx/src/*.cpp")
+-add_library(replxx ${ReplxxSrc})
+-target_include_directories(replxx
+-   PUBLIC extern/replxx/include
+-   PRIVATE extern/replxx/src)
+-set_property(TARGET replxx PROPERTY CXX_STANDARD 14)
+-
+-# double-conversion library
+-file(GLOB DoubleConversionSrc "extern/double-conversion/double-conversion/*.cc")
+-add_library(double-conversion ${DoubleConversionSrc})
+-set_property(TARGET double-conversion PROPERTY CXX_STANDARD 14)
+-
+ # glad library, an OpenGL loader
+ add_library(glad
+     extern/glad/glad/glad.c)
+@@ -93,7 +78,7 @@ target_link_libraries(libcurv_geom PUBLI
+ 
+ file(GLOB Src "curv/*.c" "curv/*.cc")
+ add_executable(curv ${Src})
+-target_link_libraries(curv PUBLIC libcurv_geom libcurv imgui glfw glad ${LibOpenGL} replxx double-conversion boost_iostreams boost_filesystem boost_system openvdb_static Half tbb dl pthread)
++target_link_libraries(curv PUBLIC libcurv_geom libcurv imgui glfw glad ${LibOpenGL} replxx double-conversion boost_iostreams boost_filesystem boost_system openvdb Half tbb dl pthread)
+ 
+ file(GLOB CurvcSrc "curvc/*.cc")
+ add_executable(curvc EXCLUDE_FROM_ALL ${CurvcSrc})
+@@ -128,5 +113,3 @@ if (NOT TARGET uninstall)
+ endif()
+ 
+ add_subdirectory(extern/googletest/googletest EXCLUDE_FROM_ALL)
+-add_subdirectory(extern/openvdb/openvdb EXCLUDE_FROM_ALL)
+-add_subdirectory(extern/glfw EXCLUDE_FROM_ALL)
