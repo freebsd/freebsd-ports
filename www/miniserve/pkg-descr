@@ -1,0 +1,18 @@
+Miniserve is a small self-contained ad-hoc HTTP server that allows
+you to quickly serve some files over HTTP.
+
+Features:
+- Easy to use
+- Just works: Correct MIME types handling out of the box
+- Single binary drop-in with no extra dependencies required
+- Authentication support with username and password
+- Fast and highly parallel (thanks to Rust and Actix)
+
+It is an interesting alternative to some popular solutions:
+- Python's built-in webserver: Needs to have Python installed, is
+  low performance, and also does not handle MIME type correctly in
+  some cases.
+- netcat: Not as convenient to use and sending directories is
+  nontrivial.
+
+WWW: https://github.com/svenstaro/miniserve
