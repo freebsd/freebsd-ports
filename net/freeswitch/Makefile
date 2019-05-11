@@ -39,10 +39,7 @@ CONFLICTS_BUILD=	xmlrpc-c-*
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--enable-zrtp
-CFLAGS+=	-Wno-c11-extensions -Wno-deprecated-declarations \
-		-Wno-zero-length-array -Wno-incompatible-pointer-types \
-		-Wno-ignored-optimization-argument -Wno-unknown-warning-option \
-		-Wno-unused-function -Wno-enum-conversion -Wno-reserved-user-defined-literal
+CFLAGS+=	-Wno-error
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
