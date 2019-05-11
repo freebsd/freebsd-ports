@@ -29,7 +29,7 @@ ODBC_USES=		localbase:ldflags
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 OPENMP_CMAKE_BOOL=	USE_OPENMP
-OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
+OPENMP_LIB_DEPENDS=	libomp.so:devel/llvm${LLVM_DEFAULT}
 
 PYTHON_CMAKE_BOOL=	BUILD_PYTHON
 PYTHON_USES=		python
