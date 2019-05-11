@@ -6,7 +6,7 @@ DISTVERSION=	6.1.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Tools for the storage and manipulation of sparse volumetric data
+COMMENT=	Tools for storage and manipulation of sparse volumetric data
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
