@@ -40,6 +40,7 @@ share/locale/bs/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ca/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ca@valencia/LC_MESSAGES/mate-backgrounds.mo
 share/locale/cmn/LC_MESSAGES/mate-backgrounds.mo
+share/locale/crh/LC_MESSAGES/mate-backgrounds.mo
 share/locale/cs/LC_MESSAGES/mate-backgrounds.mo
 share/locale/cy/LC_MESSAGES/mate-backgrounds.mo
 share/locale/da/LC_MESSAGES/mate-backgrounds.mo
@@ -51,6 +52,7 @@ share/locale/en_CA/LC_MESSAGES/mate-backgrounds.mo
 share/locale/en_GB/LC_MESSAGES/mate-backgrounds.mo
 share/locale/eo/LC_MESSAGES/mate-backgrounds.mo
 share/locale/es/LC_MESSAGES/mate-backgrounds.mo
+share/locale/es_AR/LC_MESSAGES/mate-backgrounds.mo
 share/locale/es_CO/LC_MESSAGES/mate-backgrounds.mo
 share/locale/es_MX/LC_MESSAGES/mate-backgrounds.mo
 share/locale/et/LC_MESSAGES/mate-backgrounds.mo
@@ -81,6 +83,7 @@ share/locale/ko/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ku/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ku_IQ/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ky/LC_MESSAGES/mate-backgrounds.mo
+share/locale/la/LC_MESSAGES/mate-backgrounds.mo
 share/locale/lt/LC_MESSAGES/mate-backgrounds.mo
 share/locale/lv/LC_MESSAGES/mate-backgrounds.mo
 share/locale/mai/LC_MESSAGES/mate-backgrounds.mo
@@ -116,7 +119,9 @@ share/locale/ta/LC_MESSAGES/mate-backgrounds.mo
 share/locale/te/LC_MESSAGES/mate-backgrounds.mo
 share/locale/th/LC_MESSAGES/mate-backgrounds.mo
 share/locale/tr/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ug/LC_MESSAGES/mate-backgrounds.mo
 share/locale/uk/LC_MESSAGES/mate-backgrounds.mo
+share/locale/ur/LC_MESSAGES/mate-backgrounds.mo
 share/locale/uz/LC_MESSAGES/mate-backgrounds.mo
 share/locale/vi/LC_MESSAGES/mate-backgrounds.mo
 share/locale/zh_CN/LC_MESSAGES/mate-backgrounds.mo

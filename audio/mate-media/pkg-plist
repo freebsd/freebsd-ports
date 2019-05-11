@@ -1,9 +1,11 @@
 bin/mate-volume-control
-bin/mate-volume-control-applet
-etc/xdg/autostart/mate-volume-control-applet.desktop
+bin/mate-volume-control-status-icon
+etc/xdg/autostart/mate-volume-control-status-icon.desktop
+libexec/mate-volume-control-applet
 man/man1/mate-volume-control-applet.1.gz
 man/man1/mate-volume-control.1.gz
 share/applications/mate-volume-control.desktop
+share/dbus-1/services/org.mate.panel.applet.GvcAppletFactory.service
 share/locale/af/LC_MESSAGES/mate-media.mo
 share/locale/am/LC_MESSAGES/mate-media.mo
 share/locale/an/LC_MESSAGES/mate-media.mo
@@ -57,6 +59,7 @@ share/locale/frp/LC_MESSAGES/mate-media.mo
 share/locale/fur/LC_MESSAGES/mate-media.mo
 share/locale/fy/LC_MESSAGES/mate-media.mo
 share/locale/ga/LC_MESSAGES/mate-media.mo
+share/locale/gd/LC_MESSAGES/mate-media.mo
 share/locale/gl/LC_MESSAGES/mate-media.mo
 share/locale/gu/LC_MESSAGES/mate-media.mo
 share/locale/ha/LC_MESSAGES/mate-media.mo
@@ -73,6 +76,7 @@ share/locale/it/LC_MESSAGES/mate-media.mo
 share/locale/ja/LC_MESSAGES/mate-media.mo
 share/locale/jv/LC_MESSAGES/mate-media.mo
 share/locale/ka/LC_MESSAGES/mate-media.mo
+share/locale/kab/LC_MESSAGES/mate-media.mo
 share/locale/kk/LC_MESSAGES/mate-media.mo
 share/locale/kn/LC_MESSAGES/mate-media.mo
 share/locale/ko/LC_MESSAGES/mate-media.mo
@@ -174,6 +178,7 @@ share/locale/zu/LC_MESSAGES/mate-media.mo
 %%DATADIR%%/icons/hicolor/scalable/status/audio-input-microphone-medium.svg
 %%DATADIR%%/icons/hicolor/scalable/status/audio-input-microphone-muted.svg
 %%DATADIR%%/sounds/mate-sounds-default.xml
+share/mate-panel/applets/org.mate.applets.GvcApplet.mate-panel-applet
 share/sounds/mate/default/alerts/bark.ogg
 share/sounds/mate/default/alerts/drip.ogg
 share/sounds/mate/default/alerts/glass.ogg

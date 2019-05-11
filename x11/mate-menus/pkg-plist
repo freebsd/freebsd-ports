@@ -7,8 +7,6 @@ lib/libmate-menu.a
 lib/libmate-menu.so
 lib/libmate-menu.so.2
 lib/libmate-menu.so.2.4.9
-%%PYTHON_SITELIBDIR%%/matemenu.a
-%%PYTHON_SITELIBDIR%%/matemenu.so
 libdata/pkgconfig/libmate-menu.pc
 share/gir-1.0/MateMenu-2.0.gir
 share/locale/af/LC_MESSAGES/mate-menus.mo
@@ -71,6 +69,7 @@ share/locale/it/LC_MESSAGES/mate-menus.mo
 share/locale/ja/LC_MESSAGES/mate-menus.mo
 share/locale/jv/LC_MESSAGES/mate-menus.mo
 share/locale/ka/LC_MESSAGES/mate-menus.mo
+share/locale/kab/LC_MESSAGES/mate-menus.mo
 share/locale/kk/LC_MESSAGES/mate-menus.mo
 share/locale/km/LC_MESSAGES/mate-menus.mo
 share/locale/kn/LC_MESSAGES/mate-menus.mo

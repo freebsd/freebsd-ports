@@ -121,7 +121,6 @@ lib/pluma/plugins/trailsave.plugin
 libdata/pkgconfig/pluma.pc
 libexec/pluma/pluma-bugreport.sh
 man/man1/pluma.1.gz
-share/appdata/pluma.appdata.xml
 share/applications/pluma.desktop
 %%PORTDOCS%%%%DOCSDIR%%/PlumaMessage.html
 %%PORTDOCS%%%%DOCSDIR%%/PlumaMessageBus.html
@@ -598,6 +597,7 @@ share/locale/fa/LC_MESSAGES/pluma.mo
 share/locale/fi/LC_MESSAGES/pluma.mo
 share/locale/fr/LC_MESSAGES/pluma.mo
 share/locale/fr_CA/LC_MESSAGES/pluma.mo
+share/locale/frp/LC_MESSAGES/pluma.mo
 share/locale/fur/LC_MESSAGES/pluma.mo
 share/locale/fy/LC_MESSAGES/pluma.mo
 share/locale/ga/LC_MESSAGES/pluma.mo
@@ -679,6 +679,7 @@ share/locale/zh_CN/LC_MESSAGES/pluma.mo
 share/locale/zh_HK/LC_MESSAGES/pluma.mo
 share/locale/zh_TW/LC_MESSAGES/pluma.mo
 share/locale/zu/LC_MESSAGES/pluma.mo
+share/metainfo/pluma.appdata.xml
 %%DATADIR%%/icons/pluma-plugin.png
 %%DATADIR%%/plugins/docinfo/docinfo.ui
 %%DATADIR%%/plugins/externaltools/tools/build
@@ -727,6 +728,7 @@ share/locale/zu/LC_MESSAGES/pluma.mo
 %%DATADIR%%/plugins/taglist/XUL.tags.gz
 %%DATADIR%%/plugins/time/pluma-time-dialog.ui
 %%DATADIR%%/plugins/time/pluma-time-setup-dialog.ui
+%%DATADIR%%/pluma.about
 %%DATADIR%%/ui/pluma-encodings-dialog.ui
 %%DATADIR%%/ui/pluma-preferences-dialog.ui
 %%DATADIR%%/ui/pluma-print-preferences.ui

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-settings-daemon
-PORTVERSION=	1.20.3
-PORTREVISION=	1
+PORTVERSION=	1.22.0
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -35,8 +34,9 @@ USE_GNOME=	cairo dconf gtk30 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dbus-services=${PREFIX}/share/dbus-1/services \
-		--with-gtk=3.0 \
-		--disable-static
+		--disable-static \
+		--disable-rfkill
+
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
@@ -52,6 +52,7 @@ GLIB_SCHEMAS=	org.mate.SettingsDaemon.plugins.a11y-keyboard.gschema.xml \
 		org.mate.SettingsDaemon.plugins.media-keys.gschema.xml \
 		org.mate.SettingsDaemon.plugins.mouse.gschema.xml \
 		org.mate.SettingsDaemon.plugins.mpris.gschema.xml \
+		org.mate.SettingsDaemon.plugins.rfkill.gschema.xml \
 		org.mate.SettingsDaemon.plugins.smartcard.gschema.xml \
 		org.mate.SettingsDaemon.plugins.sound.gschema.xml \
 		org.mate.SettingsDaemon.plugins.typing-break.gschema.xml \

@@ -68,6 +68,7 @@ share/locale/frp/LC_MESSAGES/mate-session-manager.mo
 share/locale/fur/LC_MESSAGES/mate-session-manager.mo
 share/locale/fy/LC_MESSAGES/mate-session-manager.mo
 share/locale/ga/LC_MESSAGES/mate-session-manager.mo
+share/locale/gd/LC_MESSAGES/mate-session-manager.mo
 share/locale/gl/LC_MESSAGES/mate-session-manager.mo
 share/locale/gu/LC_MESSAGES/mate-session-manager.mo
 share/locale/ha/LC_MESSAGES/mate-session-manager.mo
@@ -84,6 +85,7 @@ share/locale/it/LC_MESSAGES/mate-session-manager.mo
 share/locale/ja/LC_MESSAGES/mate-session-manager.mo
 share/locale/jv/LC_MESSAGES/mate-session-manager.mo
 share/locale/ka/LC_MESSAGES/mate-session-manager.mo
+share/locale/kab/LC_MESSAGES/mate-session-manager.mo
 share/locale/kk/LC_MESSAGES/mate-session-manager.mo
 share/locale/kn/LC_MESSAGES/mate-session-manager.mo
 share/locale/ko/LC_MESSAGES/mate-session-manager.mo
@@ -137,6 +139,7 @@ share/locale/tt/LC_MESSAGES/mate-session-manager.mo
 share/locale/ug/LC_MESSAGES/mate-session-manager.mo
 share/locale/uk/LC_MESSAGES/mate-session-manager.mo
 share/locale/ur/LC_MESSAGES/mate-session-manager.mo
+share/locale/ur_PK/LC_MESSAGES/mate-session-manager.mo
 share/locale/uz/LC_MESSAGES/mate-session-manager.mo
 share/locale/vi/LC_MESSAGES/mate-session-manager.mo
 share/locale/wa/LC_MESSAGES/mate-session-manager.mo

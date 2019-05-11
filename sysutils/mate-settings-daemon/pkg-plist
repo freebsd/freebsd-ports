@@ -54,16 +54,6 @@ share/icons/hicolor/22x22/apps/msd-xrandr.png
 share/icons/hicolor/24x24/apps/msd-xrandr.png
 share/icons/hicolor/32x32/apps/msd-xrandr.png
 share/icons/hicolor/scalable/apps/msd-xrandr.svg
-share/icons/mate/16x16/actions/touchpad-disabled.png
-share/icons/mate/16x16/actions/touchpad-enabled.png
-share/icons/mate/22x22/actions/touchpad-disabled.png
-share/icons/mate/22x22/actions/touchpad-enabled.png
-share/icons/mate/24x24/actions/touchpad-disabled.png
-share/icons/mate/24x24/actions/touchpad-enabled.png
-share/icons/mate/32x32/actions/touchpad-disabled.png
-share/icons/mate/32x32/actions/touchpad-enabled.png
-share/icons/mate/scalable/actions/touchpad-disabled.svg
-share/icons/mate/scalable/actions/touchpad-enabled.svg
 share/locale/af/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/am/LC_MESSAGES/mate-settings-daemon.mo
 share/locale/ar/LC_MESSAGES/mate-settings-daemon.mo

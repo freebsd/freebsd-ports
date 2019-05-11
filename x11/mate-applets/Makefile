@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-applets
-PORTVERSION=	1.20.2
-PORTREVISION=	2
+PORTVERSION=	1.22.1
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -39,7 +38,8 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	OS_SYS="/usr/include"
 INSTALL_TARGET=	install-strip
 
-GLIB_SCHEMAS=	org.mate.panel.applet.charpick.gschema.xml \
+GLIB_SCHEMAS=	org.mate.drivemount.gschema.xml \
+		org.mate.panel.applet.charpick.gschema.xml \
 		org.mate.panel.applet.command.gschema.xml \
 		org.mate.panel.applet.geyes.gschema.xml \
 		org.mate.panel.applet.multiload.gschema.xml \

@@ -4,6 +4,7 @@ bin/caja-connect-server
 bin/caja-file-management-properties
 include/caja/libcaja-extension/caja-column-provider.h
 include/caja/libcaja-extension/caja-column.h
+include/caja/libcaja-extension/caja-configurable.h
 include/caja/libcaja-extension/caja-extension-types.h
 include/caja/libcaja-extension/caja-file-info.h
 include/caja/libcaja-extension/caja-info-provider.h
@@ -22,7 +23,6 @@ man/man1/caja-autorun-software.1.gz
 man/man1/caja-connect-server.1.gz
 man/man1/caja-file-management-properties.1.gz
 man/man1/caja.1.gz
-share/appdata/caja.appdata.xml
 share/applications/caja-autorun-software.desktop
 share/applications/caja-browser.desktop
 share/applications/caja-computer.desktop
@@ -35,6 +35,7 @@ share/applications/mate-network-scheme.desktop
 %%DATADIR%%/caja-desktop.css
 %%DATADIR%%/caja-extras.placeholder
 %%DATADIR%%/caja-suggested.placeholder
+%%DATADIR%%/caja.about
 %%DATADIR%%/caja.css
 %%DATADIR%%/patterns/blue_gray_rough.png
 %%DATADIR%%/patterns/blue_ridge.png
@@ -102,14 +103,9 @@ share/doc/libcaja-extension/style.css
 share/doc/libcaja-extension/up-insensitive.png
 share/doc/libcaja-extension/up.png
 share/gir-1.0/Caja-2.0.gir
-share/icons/hicolor/16x16/apps/caja.png
 share/icons/hicolor/16x16/emblems/emblem-note.png
-share/icons/hicolor/22x22/apps/caja.png
-share/icons/hicolor/24x24/apps/caja.png
 share/icons/hicolor/24x24/emblems/emblem-note.png
-share/icons/hicolor/32x32/apps/caja.png
 share/icons/hicolor/48x48/emblems/emblem-note.png
-share/icons/hicolor/scalable/apps/caja.svg
 share/locale/af/LC_MESSAGES/caja.mo
 share/locale/am/LC_MESSAGES/caja.mo
 share/locale/ar/LC_MESSAGES/caja.mo
@@ -153,6 +149,7 @@ share/locale/frp/LC_MESSAGES/caja.mo
 share/locale/fur/LC_MESSAGES/caja.mo
 share/locale/fy/LC_MESSAGES/caja.mo
 share/locale/ga/LC_MESSAGES/caja.mo
+share/locale/gd/LC_MESSAGES/caja.mo
 share/locale/gl/LC_MESSAGES/caja.mo
 share/locale/gu/LC_MESSAGES/caja.mo
 share/locale/ha/LC_MESSAGES/caja.mo
@@ -176,6 +173,7 @@ share/locale/ks/LC_MESSAGES/caja.mo
 share/locale/ku/LC_MESSAGES/caja.mo
 share/locale/ku_IQ/LC_MESSAGES/caja.mo
 share/locale/ky/LC_MESSAGES/caja.mo
+share/locale/la/LC_MESSAGES/caja.mo
 share/locale/li/LC_MESSAGES/caja.mo
 share/locale/lt/LC_MESSAGES/caja.mo
 share/locale/lv/LC_MESSAGES/caja.mo
@@ -217,6 +215,7 @@ share/locale/te/LC_MESSAGES/caja.mo
 share/locale/th/LC_MESSAGES/caja.mo
 share/locale/tk/LC_MESSAGES/caja.mo
 share/locale/tr/LC_MESSAGES/caja.mo
+share/locale/tt/LC_MESSAGES/caja.mo
 share/locale/ug/LC_MESSAGES/caja.mo
 share/locale/uk/LC_MESSAGES/caja.mo
 share/locale/ur/LC_MESSAGES/caja.mo
@@ -230,8 +229,21 @@ share/locale/zh_CN/LC_MESSAGES/caja.mo
 share/locale/zh_HK/LC_MESSAGES/caja.mo
 share/locale/zh_TW/LC_MESSAGES/caja.mo
 share/locale/zu/LC_MESSAGES/caja.mo
+share/metainfo/caja.appdata.xml
+share/mime/XMLnamespaces
+share/mime/aliases
 share/mime/application/x-mate-saved-search.xml
+share/mime/generic-icons
+share/mime/globs
+share/mime/globs2
+share/mime/icons
+share/mime/magic
+share/mime/mime.cache
 share/mime/packages/caja.xml
+share/mime/subclasses
+share/mime/treemagic
+share/mime/types
+share/mime/version
 share/pixmaps/caja/audio.svg
 share/pixmaps/caja/backgrounds.png
 share/pixmaps/caja/chit_frame.png

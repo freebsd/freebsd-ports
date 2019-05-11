@@ -1,3 +1,3 @@
-TIMESTAMP = 1541258643
-SHA256 (mate/mate-polkit-1.20.1.tar.xz) = 53d3249a0abbcb6eacccbf7898f113e546c8ca0fc683b81ab8e90e907e99e615
-SIZE (mate/mate-polkit-1.20.1.tar.xz) = 300196
+TIMESTAMP = 1556451393
+SHA256 (mate/mate-polkit-1.22.0.tar.xz) = c0cb8a2bb01e3afcbd56557563491ecf7fa8dad6e419a7a1e01b52d7c3b1280b
+SIZE (mate/mate-polkit-1.22.0.tar.xz) = 302080
