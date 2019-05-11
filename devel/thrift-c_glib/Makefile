@@ -43,4 +43,8 @@ CONFIGURE_ARGS+=        \
 		--without-ruby \
 		--without-go
 
+post-patch:
+	@${REINPLACE_CMD} 's,-Werror,,' ${WRKSRC}/compiler/cpp/Makefile.am \
+		${WRKSRC}/lib/rb/ext/extconf.rb
+
 .include <bsd.port.mk>
