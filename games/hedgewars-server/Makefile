@@ -12,6 +12,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 USES=		cabal tar:bzip2
 
 WRKSRC_SUBDIR=	gameServer
