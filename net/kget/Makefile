@@ -2,6 +2,7 @@
 
 PORTNAME=	kget
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -31,10 +32,14 @@ USE_QT=	        core dbus gui network printsupport sql widgets xml \
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	conf/*.pl
 
-
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 CONFIGURE_ENV=	XDG_CONFIG_HOME=/dev/null
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS WORKSPACE
+OPTIONS_DEFAULT=	WORKSPACE
+
+WORKSPACE_USE=	KDE=plasma-workspace
+WORKSPACE_DESC=	Shutdown on completion support
+WORKSPACE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_LibKWorkspace
 
 .include <bsd.port.mk>
