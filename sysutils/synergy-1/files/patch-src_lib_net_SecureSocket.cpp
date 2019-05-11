@@ -1,6 +1,6 @@
---- src/lib/net/SecureSocket.cpp.orig	2018-03-01 20:07:30 UTC
+--- src/lib/net/SecureSocket.cpp.orig	2019-05-09 16:52:59 UTC
 +++ src/lib/net/SecureSocket.cpp
-@@ -807,7 +807,7 @@ SecureSocket::showSecureCipherInfo()
+@@ -812,7 +812,7 @@ SecureSocket::showSecureCipherInfo()
          showCipherStackDesc(sStack);
      }
  

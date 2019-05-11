@@ -1,23 +1,29 @@
---- CMakeLists.txt.orig	2018-08-08 17:39:28 UTC
+--- CMakeLists.txt.orig	2019-05-09 16:52:59 UTC
 +++ CMakeLists.txt
-@@ -17,9 +17,9 @@
- cmake_minimum_required (VERSION 3.4)
- project (synergy-core C CXX)
- 
--option (SYNERGY_BUILD_LEGACY_GUI "Build the legacy GUI" ON)
-+option (SYNERGY_BUILD_LEGACY_GUI "Build the legacy GUI" OFF)
- option (SYNERGY_BUILD_LEGACY_SERVICE "Build the legacy service (synergyd)" ON)
--option (SYNERGY_BUILD_LEGACY_INSTALLER "Build the legacy installer" ON)
-+option (SYNERGY_BUILD_LEGACY_INSTALLER "Build the legacy installer" OFF)
- 
- if (DEFINED ENV{SYNERGY_ENTERPRISE})
-   option (SYNERGY_ENTERPRISE "Build Enterprise" ON)
 @@ -300,7 +300,7 @@ elseif (${CMAKE_SYSTEM_NAME} MATCHES "Da
          ${OPENSSL_ROOT}/lib/libssl.a
          ${OPENSSL_ROOT}/lib/libcrypto.a
      )
 -elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux|.*BSD")
++elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux|.*BSD|DragonFly")
      set (OPENSSL_LIBS ssl crypto)
  else()
      message (FATAL_ERROR "Couldn't find OpenSSL")
+@@ -337,7 +337,7 @@ macro (configure_files srcDir destDir)
+ endmacro (configure_files)
+ 
+ macro(generate_versionfile)
+-	if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin" OR ${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++	if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin" OR ${CMAKE_SYSTEM_NAME} MATCHES "Linux|.*BSD|DragonFly")
+ 		FILE(WRITE ${CMAKE_BINARY_DIR}/version
+ 		"export SYNERGY_VERSION_MAJOR=\"${SYNERGY_VERSION_MAJOR}\"\n"
+ 		"export SYNERGY_VERSION_MINOR=\"${SYNERGY_VERSION_MINOR}\"\n"
+@@ -380,7 +380,7 @@ endif()
+ #
+ # Linux installation
+ #
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if (${CMAKE_SYSTEM_NAME} MATCHES "Linux|.*BSD|DragonFly")
+     configure_files (${CMAKE_CURRENT_SOURCE_DIR}/dist/rpm ${CMAKE_BINARY_DIR}/rpm)
+     install(FILES res/synergy.svg DESTINATION share/icons/hicolor/scalable/apps)
+     if("${VERSION_MAJOR}" STREQUAL "2") 
