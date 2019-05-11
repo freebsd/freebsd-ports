@@ -5,11 +5,11 @@
  ENDIF()
  
 +IF(FALSE)
- # Build mysql_fix_privilege_tables.c
+ # Build mysql_fix_privilege_tables.h
  ADD_CUSTOM_COMMAND(
-   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/mysql_fix_privilege_tables_sql.c
+   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/mysql_fix_privilege_tables_sql.h
 @@ -100,6 +101,7 @@ ADD_CUSTOM_TARGET(GenFixPrivs
-   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/mysql_fix_privilege_tables_sql.c
+   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/mysql_fix_privilege_tables_sql.h
    ${CMAKE_CURRENT_BINARY_DIR}/sql_commands_sys_schema.h
  )
 +ENDIF()

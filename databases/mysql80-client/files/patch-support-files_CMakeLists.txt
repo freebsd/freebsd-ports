@@ -8,10 +8,10 @@
    SET(prefix ${CMAKE_INSTALL_PREFIX})
    FOREACH(script  mysqld_multi.server mysql-log-rotate)
      CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${script}.sh 
-@@ -59,9 +60,12 @@ IF(UNIX)
-   IF(INSTALL_SUPPORTFILESDIR)
-     INSTALL(FILES magic DESTINATION ${inst_location} COMPONENT SupportFiles)
-   ENDIF()
+@@ -63,9 +64,12 @@
+        DESTINATION ${inst_location} COMPONENT ${comp}
+        PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+   ENDFOREACH()
 +ENDIF()
 +ENDIF()
  

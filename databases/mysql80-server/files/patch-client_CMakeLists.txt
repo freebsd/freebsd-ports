@@ -1,16 +1,14 @@
 --- client/CMakeLists.txt.orig	2018-12-20 20:14:03 UTC
 +++ client/CMakeLists.txt
-@@ -28,16 +28,16 @@ INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compil
+@@ -26,14 +26,14 @@ INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compil
  
  ## Subdirectory with common client code.
  ADD_SUBDIRECTORY(base)
 -## Subdirectory for mysqlpump code.
 -ADD_SUBDIRECTORY(dump)
  
- INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compile_flags.cmake)
- 
 +IF(FALSE)
- MYSQL_ADD_EXECUTABLE(mysql completion_hash.cc mysql.cc readline.cc ../sql-common/sql_string.cc pattern_matcher.cc)
+ MYSQL_ADD_EXECUTABLE(mysql completion_hash.cc mysql.cc readline.cc ../sql-common/sql_string.cc pattern_matcher.cc ${CMAKE_SOURCE_DIR}/sql/net_ns.cc)
  TARGET_LINK_LIBRARIES(mysql mysqlclient)
  IF(UNIX)
    TARGET_LINK_LIBRARIES(mysql ${EDITLINE_LIBRARY})
@@ -37,7 +35,7 @@
  MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc)
  SET(MYSQLBINLOG_LIB_SOURCES
    ${CMAKE_SOURCE_DIR}/strings/decimal.cc
-@@ -110,16 +113,20 @@ TARGET_LINK_LIBRARIES(mysqlslap mysqlcli
+@@ -107,12 +110,15 @@ TARGET_LINK_LIBRARIES(mysqlslap mysqlcli
  
  MYSQL_ADD_EXECUTABLE(mysql_config_editor mysql_config_editor.cc)
  TARGET_LINK_LIBRARIES(mysql_config_editor mysqlclient)
@@ -49,11 +47,6 @@
 +IF(FALSE)
  MYSQL_ADD_EXECUTABLE(mysql_ssl_rsa_setup mysql_ssl_rsa_setup.cc path.cc logger.cc)
  TARGET_LINK_LIBRARIES(mysql_ssl_rsa_setup mysys mysys_ssl)
-+
- # Bug in /usr/lib/gcc-snapshot/lib/libstdc++.so ??
- IF(CMAKE_CXX_COMPILER_VERSION VERSION_EQUAL "9.0.0")
-   TARGET_LINK_LIBRARIES(mysql_ssl_rsa_setup -static-libstdc++)
- ENDIF()
 +ENDIF()
  
  # "WIN32" also covers 64 bit. "echo" is used in some files below "mysql-test/".

@@ -14,6 +14,7 @@ bin/mysqld_multi
 bin/mysqld_safe
 bin/mysqldumpslow
 bin/mysqlrouter
+bin/mysqlrouter_passwd
 bin/mysqlrouter_plugin_info
 bin/mysqltest
 bin/mysqlxtest
@@ -24,11 +25,15 @@ lib/mysql/libmysqlharness.so
 lib/mysql/libmysqlharness.so.1
 lib/mysql/libmysqlrouter.so
 lib/mysql/libmysqlrouter.so.1
+lib/mysql/libmysqlrouter_http.so
+lib/mysql/libmysqlrouter_http.so.1
+lib/mysql/mysqlrouter/http_auth_backend.so
+lib/mysql/mysqlrouter/http_auth_realm.so
+lib/mysql/mysqlrouter/http_server.so
 lib/mysql/mysqlrouter/keepalive.so
 lib/mysql/mysqlrouter/metadata_cache.so
 lib/mysql/mysqlrouter/mysql_protocol.so
 lib/mysql/mysqlrouter/routing.so
-lib/mysql/mysqlrouter/syslog.so
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
@@ -46,6 +51,7 @@ lib/mysql/plugin/component_pfs_example_component_population.so
 lib/mysql/plugin/component_test_audit_api_message.so
 lib/mysql/plugin/component_test_backup_lock_service.so
 lib/mysql/plugin/component_test_host_application_signal.so
+lib/mysql/plugin/component_test_mysql_runtime_error.so
 lib/mysql/plugin/component_test_pfs_notification.so
 lib/mysql/plugin/component_test_pfs_resource_group.so
 lib/mysql/plugin/component_test_status_var_service.so
@@ -74,6 +80,7 @@ lib/mysql/plugin/component_udf_unreg_real_func.so
 lib/mysql/plugin/component_validate_password.so
 lib/mysql/plugin/connection_control.so
 lib/mysql/plugin/daemon_example.ini
+lib/mysql/plugin/ddl_rewriter.so
 lib/mysql/plugin/group_replication.so
 %%NO_EXAMPLE%%lib/mysql/plugin/ha_example.so
 lib/mysql/plugin/ha_mock.so
@@ -95,6 +102,7 @@ lib/mysql/plugin/libtest_sql_errors.so
 lib/mysql/plugin/libtest_sql_lock.so
 lib/mysql/plugin/libtest_sql_processlist.so
 lib/mysql/plugin/libtest_sql_replication.so
+lib/mysql/plugin/libtest_sql_reset_connection.so
 lib/mysql/plugin/libtest_sql_shutdown.so
 lib/mysql/plugin/libtest_sql_sqlmode.so
 lib/mysql/plugin/libtest_sql_stmt.so
@@ -182,7 +190,6 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/italian/errmsg.sys
 %%DATADIR%%/japanese/errmsg.sys
 %%DATADIR%%/korean/errmsg.sys
-%%DATADIR%%/magic
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql.server
 %%DATADIR%%/mysqld_multi.server
