@@ -1,8 +1,8 @@
 - Implement NEON runtime detection on FreeBSD 11.* armv6
 
---- src/arm/cpu.c.orig	2018-12-11 14:14:56 UTC
+--- src/arm/cpu.c.orig	2019-05-11 15:23:10 UTC
 +++ src/arm/cpu.c
-@@ -68,7 +68,37 @@ static unsigned parse_proc_cpuinfo(const char *flag) {
+@@ -75,6 +75,36 @@ static unsigned parse_proc_cpuinfo(const char *flag) {
  }
  #endif
  
@@ -36,7 +36,6 @@
 +}
 +#endif
 +
- unsigned dav1d_get_cpu_flags_arm(void) {
+ COLD unsigned dav1d_get_cpu_flags_arm(void) {
      unsigned flags = 0;
  #if ARCH_AARCH64
-     flags |= DAV1D_ARM_CPU_FLAG_NEON;
