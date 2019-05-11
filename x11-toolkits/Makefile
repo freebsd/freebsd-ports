@@ -184,6 +184,7 @@
     SUBDIR += py-AnyQt
     SUBDIR += py-Pmw
     SUBDIR += py-SquareMap
+    SUBDIR += py-easygui
     SUBDIR += py-fltk
     SUBDIR += py-gnome2
     SUBDIR += py-gtk2
