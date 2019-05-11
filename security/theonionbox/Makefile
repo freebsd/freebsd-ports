@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	theonionbox
-PORTVERSION=	4.3.0
-PORTREVISION=	1
+DISTVERSION=	4.3.1
 CATEGORIES=	security net python
 MASTER_SITES=	CHEESESHOP
 
@@ -24,6 +23,7 @@ py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}futures>=3.2:devel/py-futures@${PY_FLAV
 
 USES=		python
 USE_PYTHON=	distutils autoplist noflavors
+
 NO_ARCH=	yes
 
 POST_PLIST=	correct-plist
@@ -42,7 +42,7 @@ post-patch:
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} "s|('share/doc/${PORTNAME}', \['docs/\*\.\*'\]),||" ${WRKSRC}/setup.py
 
-post-install:
+xpost-install:
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/etc/rc.d/${PORTNAME}
 
 correct-plist:
