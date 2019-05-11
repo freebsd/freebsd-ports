@@ -134,9 +134,9 @@ include/avogadro/quantumio/nwchemlog.h
 %%OPENGL%%include/avogadro/rendering/visitor.h
 %%OPENGL%%include/avogadro/rendering/volumegeometry.h
 %%OPENGL%%include/avogadro/rendering/vrmlvisitor.h
+%%QT5%%lib/avogadro2/scripts/commands/scale.py
 %%MOLEQUEUE%%lib/avogadro2/scripts/formatScripts/cclibScript.py
 %%MOLEQUEUE%%lib/avogadro2/scripts/formatScripts/zyx.py
-%%QT5%%lib/avogadro2/scripts/workflows/scale.py
 %%QT5%%lib/avogadro2/staticplugins/BallStick.a
 %%QT5%%lib/avogadro2/staticplugins/BondCentric.a
 %%QT5%%lib/avogadro2/staticplugins/Bonding.a
@@ -178,8 +178,8 @@ include/avogadro/quantumio/nwchemlog.h
 %%QT5%%lib/avogadro2/staticplugins/VanDerWaals.a
 %%QT5%%lib/avogadro2/staticplugins/VanDerWaalsAO.a
 %%QT5%%lib/avogadro2/staticplugins/Wireframe.a
-%%QT5%%lib/avogadro2/staticplugins/Workflows.a
 %%MOLEQUEUE%%lib/avogadro2/staticplugins/apbs.a
+%%QT5%%lib/avogadro2/staticplugins/commands.a
 lib/cmake/avogadrolibs/AvogadroLibsConfig.cmake
 lib/cmake/avogadrolibs/AvogadroLibsConfigVersion.cmake
 lib/cmake/avogadrolibs/AvogadroLibsTargets-%%CMAKE_BUILD_TYPE%%.cmake

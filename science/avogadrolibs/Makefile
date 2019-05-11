@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	avogadrolibs
-DISTVERSION=	1.92.0
-PORTREVISION=	5
+DISTVERSION=	1.92.1
 CATEGORIES=	science
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
