@@ -272,7 +272,6 @@
     SUBDIR += openhmd
     SUBDIR += openmvg
     SUBDIR += openr2
-    SUBDIR += openvdb
     SUBDIR += orange3
     SUBDIR += orion
     SUBDIR += orville-write
