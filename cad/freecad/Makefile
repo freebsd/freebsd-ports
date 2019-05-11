@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	FreeCAD
-DISTVERSION=	0.18.1
-PORTREVISION=	1
+DISTVERSION=	0.18.2
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
