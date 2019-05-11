@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-video-ati
-PORTVERSION=	19.0.0
+PORTVERSION=	19.0.1
 PORTEPOCH=	1
 CATEGORIES=	x11-drivers
 
