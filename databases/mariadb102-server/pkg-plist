@@ -192,3 +192,21 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/wsrep_notify
 %%MROONGA%%share/groonga-normalizer-mysql/README.md
 %%MROONGA%%share/groonga/README.md
+@comment bin/mariadb_config
+@comment bin/mysql
+@comment bin/mysqladmin
+@comment bin/mysqlbinlog
+@comment bin/mysqlcheck
+@comment bin/mysqldump
+@comment bin/mysqlimport
+@comment bin/mysqlshow
+@comment bin/mysqlslap
+@comment include/mysql/mariadb/ma_io.h
+@comment include/mysql/mysql/client_plugin.h
+@comment include/mysql/mysql/plugin_auth.h
+@comment include/mysql/mysql/plugin_auth_common.h
+@comment lib/mysql/plugin/auth_gssapi_client.so
+@comment lib/mysql/plugin/client_ed25519.so
+@comment lib/mysql/plugin/mysql_clear_password.so
+@comment lib/mysql/plugin/sha256_password.so
+@comment libdata/pkgconfig/libmariadb.pc
