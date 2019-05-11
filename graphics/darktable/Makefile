@@ -107,9 +107,7 @@ CPP=		clang-cpp${LLVM_VER}
 CC=		clang${LLVM_VER}
 CXX=		clang++${LLVM_VER}
 
-# Depend on devel/openmp instead of the full LLVM at runtime. Required
-# for a consistent libomp experience.
-LIB_DEPENDS+=	libomp.so:devel/openmp
+LIB_DEPENDS+=	libomp.so:devel/llvm${LLVM_VER}
 .endif
 
 .if defined(WITH_DEBUG)
