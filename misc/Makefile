@@ -241,6 +241,7 @@
     SUBDIR += lxi-tools
     SUBDIR += magicpoint
     SUBDIR += man.el
+    SUBDIR += mate-user-guide
     SUBDIR += mbuffer
     SUBDIR += mc
     SUBDIR += mc-light
