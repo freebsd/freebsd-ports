@@ -11,6 +11,8 @@ COMMENT=	Open-source fulltext search engine for PostGRESQL
 
 LICENSE=	PostgreSQL
 
+BROKEN=		redefinition of 'PGrnGroongaInitialized' with a different type: 'bool' vs 'bool' (aka 'char')
+
 LIB_DEPENDS=	libgroonga.so:textproc/groonga
 
 USES=		gmake pgsql pkgconfig
