@@ -1,6 +1,6 @@
-TIMESTAMP = 1554259487
-SHA256 (Dreamacro-clash-v0.13.0_GH0.tar.gz) = a17cfe2dfaebdba53eade3cb978dde8f54853904e1924d5a534879533b1a1dd5
-SIZE (Dreamacro-clash-v0.13.0_GH0.tar.gz) = 65341
+TIMESTAMP = 1557546752
+SHA256 (Dreamacro-clash-v0.14.0_GH0.tar.gz) = f9662bebed63357e6a57957fea8654f9757a34f90b0195a8e152f3615cdef074
+SIZE (Dreamacro-clash-v0.14.0_GH0.tar.gz) = 70025
 SHA256 (aead-chacha20-8b13a72_GH0.tar.gz) = 3ec002c64dc2e6f9c4e3fd06021d16f6834ad011b55fe78375a8689bd8d41344
 SIZE (aead-chacha20-8b13a72_GH0.tar.gz) = 21592
 SHA256 (eapache-channels-v1.1.0_GH0.tar.gz) = 443b9361ff7db635b830e84d8eb0830477083efba53fb0c531af04e07cde3a59
