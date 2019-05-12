@@ -4668,6 +4668,7 @@
     SUBDIR += py-pika-pool
     SUBDIR += py-pinocchio
     SUBDIR += py-pip
+    SUBDIR += py-pip-api
     SUBDIR += py-pip-tools
     SUBDIR += py-pipenv
     SUBDIR += py-pkgconfig

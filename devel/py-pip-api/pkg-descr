@@ -1,0 +1,10 @@
+Since pip is a command-line-tool, it does not have an official, supported,
+importable API.
+
+However, this does not mean that people haven't tried to import pip, usually to
+end up with much headache when pip's maintainers do routine refactoring.
+
+This project attempts to provide an importable pip API, which is fully compliant
+with the recommended method of using pip from your program.
+
+WWW: https://github.com/di/pip-api
