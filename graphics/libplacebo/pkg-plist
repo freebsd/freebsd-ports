@@ -4,6 +4,7 @@ include/libplacebo/config.h
 include/libplacebo/context.h
 include/libplacebo/dispatch.h
 include/libplacebo/dither.h
+include/libplacebo/dummy.h
 include/libplacebo/filters.h
 include/libplacebo/gpu.h
 include/libplacebo/renderer.h
@@ -15,5 +16,5 @@ include/libplacebo/swapchain.h
 include/libplacebo/utils/upload.h
 include/libplacebo/vulkan.h
 lib/libplacebo.so
-lib/libplacebo.so.7
+lib/libplacebo.so.18
 libdata/pkgconfig/libplacebo.pc
