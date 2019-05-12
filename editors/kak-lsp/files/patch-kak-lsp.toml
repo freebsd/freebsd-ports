@@ -1,8 +1,8 @@
---- kak-lsp.toml.orig	2019-01-14 07:08:28 UTC
+--- kak-lsp.toml.orig	2019-05-11 23:33:08 UTC
 +++ kak-lsp.toml
-@@ -52,11 +52,22 @@ filetypes = ["python"]
- roots = ["requirements.txt", "setup.py", ".git", ".hg"]
+@@ -54,11 +54,22 @@ roots = ["requirements.txt", "setup.py", ".git", ".hg"
  command = "pyls"
+ offset_encoding = "utf-8"
  
 +#[language.c_cpp]
 +#filetypes = ["c", "cpp"]
@@ -26,23 +26,3 @@
  
  [language.haskell]
  filetypes = ["haskell"]
-@@ -64,11 +75,17 @@ roots = ["Setup.hs", "stack.yaml", "*.cabal"]
- command = "hie"
- args = ["--lsp"]
- 
-+#[language.go]
-+#filetypes = ["go"]
-+#roots = ["Gopkg.toml", "go.mod", ".git", ".hg"]
-+#command = "go-langserver"
-+#args = ["-mode", "stdio", "-gocodecompletion"]
-+
- [language.go]
- filetypes = ["go"]
- roots = ["Gopkg.toml", "go.mod", ".git", ".hg"]
--command = "go-langserver"
--args = ["-mode", "stdio", "-gocodecompletion"]
-+command = "bingo"
-+args = ["-mode", "stdio"]
- 
- [language.bash]
- filetypes = ["sh"]
