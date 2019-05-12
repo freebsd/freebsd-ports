@@ -12,11 +12,8 @@ COMMENT=	Library and tools to support IPMI-capable hardware
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_armv6=		invokes x86 assembler
-BROKEN_armv7=		invokes x86 assembler
-BROKEN_mips=		invokes x86 assembler
-BROKEN_mips64=		invokes x86 assembler
-BROKEN_sparc64=		invokes x86 assembler
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	invokes x86 assembler
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libgcrypt.so:security/libgcrypt
@@ -25,6 +22,7 @@ OPTIONS_DEFINE=	DEBUG DOCS IOPERM IPV6
 IOPERM_DESC=	Use i386_set_ioperm
 
 USES=		gmake libtool localbase shebangfix
+
 CFLAGS+=	-D_WANT_SEMUN
 CONFIGURE_ARGS=	--disable-init-scripts \
 		--sysconfdir=${ETCDIR} \
