@@ -323,6 +323,7 @@
     SUBDIR += clig
     SUBDIR += cligen
     SUBDIR += clinfo
+    SUBDIR += clipp
     SUBDIR += clisp-hyperspec
     SUBDIR += clixon
     SUBDIR += clojure-cider

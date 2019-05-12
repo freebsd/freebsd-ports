@@ -1,0 +1,4 @@
+Clipp is an easy to use, powerful and expressive command line argument handling
+for C++11/14/17 contained in a single header file.
+
+WWW: https://github.com/muellan/clipp
