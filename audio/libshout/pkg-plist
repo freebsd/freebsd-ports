@@ -5,3 +5,8 @@ lib/libshout.so.3
 lib/libshout.so.3.2.0
 libdata/pkgconfig/shout.pc
 share/aclocal/shout.m4
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/example.c
+%%PORTDOCS%%%%DOCSDIR%%/nonblocking.c
