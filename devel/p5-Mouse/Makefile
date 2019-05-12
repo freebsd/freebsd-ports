@@ -39,11 +39,4 @@ USE_PERL5=	modbuild
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Mouse/Mouse.so
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502503
-BUILD_DEPENDS+=	p5-Devel-PPPort>=3.33:devel/p5-Devel-PPPort
-RUN_DEPENDS+=	p5-Devel-PPPort>=3.33:devel/p5-Devel-PPPort
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
