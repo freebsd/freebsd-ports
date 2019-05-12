@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yoshimi
-DISTVERSION=	1.5.10.2
+DISTVERSION=	1.5.11
 CATEGORIES=	audio
 MASTER_SITES=	SF/yoshimi/${DISTVERSION:C/([0-9]+\.[0-9]+).*/\1/}
 
