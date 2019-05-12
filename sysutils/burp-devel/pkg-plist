@@ -22,5 +22,5 @@ sbin/burp_ca
 %%DATADIR%%/scripts/timer_script
 @dir %%ETCDIR%%/CA-client
 @dir %%ETCDIR%%/autoupgrade/server/win32
-@dir %%ETCDIR%%/autoupgrade/server/win64/2.3.4
+@dir %%ETCDIR%%/autoupgrade/server/win64/2.3.6
 @dir /var/spool/burp
