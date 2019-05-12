@@ -18,10 +18,4 @@ RUN_DEPENDS=	\
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502501
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-BeginLift.xs
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
