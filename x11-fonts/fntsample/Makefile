@@ -4,9 +4,10 @@
 PORTNAME=	fntsample
 PORTVERSION=	5.3
 DISTVERSIONPREFIX=	release/
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://unicode.org/Public/12.0.0/ucd/:unidata
-DISTFILES=	Blocks-12.0.0d1.txt:unidata
+MASTER_SITES=	https://unicode.org/Public/12.1.0/ucd/:unidata
+DISTFILES=	Blocks.txt:unidata
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,7 +23,7 @@ RUN_DEPENDS=	pdfoutline:textproc/pdfoutline
 USES=		cmake gettext gnome iconv pkgconfig
 USE_GNOME=	cairo glib20 pango
 
-CMAKE_ARGS=	-DUNICODE_BLOCKS=${WRKSRC}/Blocks-12.0.0d1.txt
+CMAKE_ARGS=	-DUNICODE_BLOCKS=${WRKSRC}/Blocks.txt
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/fntsample \
@@ -33,6 +34,6 @@ GH_ACCOUNT=	eugmes
 USE_GITHUB=	yes
 
 post-extract:
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/Blocks-12.0.0d1.txt ${WRKSRC}/
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/Blocks.txt ${WRKSRC}/
 
 .include <bsd.port.mk>
