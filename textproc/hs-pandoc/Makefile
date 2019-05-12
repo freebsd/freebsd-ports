@@ -3,6 +3,7 @@
 
 PORTNAME=	pandoc
 PORTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,6 +14,7 @@ LICENSE=	GPLv2
 USES=		cabal
 
 OPTIONS_DEFINE=		EMBED_DATA TRYPANDOC
+OPTIONS_DEFAULT=	EMBED_DATA
 
 EMBED_DATA_DESC=	Embed data files in binary for relocatable executable
 EMBED_DATA_CABAL_FLAGS=	embed_data_files
