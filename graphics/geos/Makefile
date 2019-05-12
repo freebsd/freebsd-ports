@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	geos
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.2
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/geos/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
+COMMENT=	Geometry Engine, Open Source
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

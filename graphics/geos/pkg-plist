@@ -389,6 +389,6 @@ lib/libgeos.so
 lib/libgeos_c.a
 lib/libgeos_c.so
 lib/libgeos_c.so.1
-lib/libgeos_c.so.1.11.1
+lib/libgeos_c.so.1.11.2
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.a
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.so
