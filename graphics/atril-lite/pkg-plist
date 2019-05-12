@@ -1,6 +1,4 @@
 bin/atril
-bin/atril-previewer
-bin/atril-thumbnailer
 include/atril/1.5.0/atril-document.h
 include/atril/1.5.0/atril-view.h
 include/atril/1.5.0/libdocument/ev-annotation.h
@@ -75,9 +73,6 @@ lib/libatrilview.so.3
 lib/libatrilview.so.%%GTK3_VERSION%%
 libdata/pkgconfig/atril-document-1.5.0.pc
 libdata/pkgconfig/atril-view-1.5.0.pc
-libexec/atrild
-man/man1/atril-previewer.1.gz
-man/man1/atril-thumbnailer.1.gz
 man/man1/atril.1.gz
 share/applications/atril.desktop
 %%DATADIR%%/hand-open.png
@@ -121,7 +116,6 @@ share/applications/atril.desktop
 %%DATADIR%%/icons/hicolor/scalable/actions/object-rotate-right.svg
 %%DATADIR%%/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
 %%CAJA%%share/caja/extensions/libatril-properties-page.caja-extension
-share/dbus-1/services/org.mate.atril.Daemon.service
 share/gtk-doc/html/atril/EggFindBar.html
 share/gtk-doc/html/atril/EvFileMonitor.html
 share/gtk-doc/html/atril/EvHistory.html
@@ -710,4 +704,3 @@ share/locale/zh_HK/LC_MESSAGES/atril.mo
 share/locale/zh_TW/LC_MESSAGES/atril.mo
 share/locale/zu/LC_MESSAGES/atril.mo
 share/metainfo/atril.appdata.xml
-share/thumbnailers/atril.thumbnailer
