@@ -2,6 +2,7 @@
 
 PORTNAME=	kdepim-runtime
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,6 +13,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libkolabxml.so:textproc/libkolabxml \
+		libqca-qt5.so:devel/qca \
 		libsasl2.so:security/cyrus-sasl2 \
 		libxerces-c-3.2.so:textproc/xerces-c3
 
