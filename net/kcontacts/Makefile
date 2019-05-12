@@ -2,6 +2,7 @@
 
 PORTNAME=	kcontacts
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,7 +10,10 @@ COMMENT=	KDE api to manage contact information
 
 LICENSE=	LGPL21
 
-USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
+BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes
+RUN_DEPENDS=	iso-codes>=0:misc/iso-codes
+
+USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	ecm codecs config coreaddons i18n
 USE_QT=		core dbus gui \
 		buildtools_build qmake_build
