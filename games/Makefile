@@ -308,6 +308,7 @@
     SUBDIR += frogatto
     SUBDIR += frotz
     SUBDIR += frozen-bubble
+    SUBDIR += fs2open
     SUBDIR += fteqw
     SUBDIR += funnyboat
     SUBDIR += galaxis
