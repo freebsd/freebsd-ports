@@ -27,13 +27,6 @@ USE_PERL5=	configure
 
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502600
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/CSS/Sass/Sass.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/CSS/Sass/plugins/glob/glob.so
@@ -41,4 +34,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/CSS/Sass/plugins/math/math.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/libsass.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
