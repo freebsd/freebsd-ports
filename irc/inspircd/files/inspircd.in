@@ -40,7 +40,7 @@ load_rc_config ${name}
 : ${inspircd_chdir="%%ETCDIR%%"}
 
 command=/usr/sbin/daemon
-command_args="-f %%PREFIX%%/bin/inspircd --nofork --config ${inspircd_config} --logfile ${inspircd_logfile} ${inspircd_flags}"
+command_args="-S -p ${inspircd_pidfile} %%PREFIX%%/bin/inspircd --nofork --config ${inspircd_config} ${inspircd_flags}"
 procname=%%PREFIX%%/bin/inspircd
 pidfile=${inspircd_pidfile}
 required_files=${inspircd_config}
