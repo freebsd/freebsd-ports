@@ -17,19 +17,11 @@ USES=		go zip
 
 NO_WRKSUBDIR=	yes
 WRKSRC=		${WRKDIR}/src
-GO_BUILDFLAGS+=	--ldflags '-s -w'
+GO_BUILDFLAGS=	--ldflags '-s -w'
 
 USE_RC_SUBR=	v2ray
 USERS=		v2ray
 GROUPS=		v2ray
-
-PLIST_FILES=	bin/v2ray \
-		bin/v2ctl \
-		"@sample ${ETCDIR}/config.json.sample" \
-		${ETCDIR}/vpoint_socks_vmess.json \
-		${ETCDIR}/vpoint_vmess_freedom.json \
-		${DATADIR}/geoip.dat \
-		${DATADIR}/geosite.dat
 
 SUB_LIST=	USER="${USERS}" \
 		GROUP="${GROUPS}"
