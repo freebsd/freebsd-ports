@@ -1,10 +1,5 @@
 etc/fonts/conf.avail/90-xfce-evolution_qt5fontfix.conf
 etc/fonts/conf.d/90-xfce-evolution_qt5fontfix.conf
-share/themes/Xfce Evolution Bronze/00.00
-share/themes/Xfce Evolution Bronze/00.10
-share/themes/Xfce Evolution Bronze/00.20
-share/themes/Xfce Evolution Bronze/00.30
-share/themes/Xfce Evolution Bronze/00.40
 share/themes/Xfce Evolution Bronze/gtk-2.0/assets
 share/themes/Xfce Evolution Bronze/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/button-pressed-dented.css
@@ -31,6 +26,8 @@ share/themes/Xfce Evolution Bronze/gtk-2.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/panel-black.css
@@ -71,6 +68,8 @@ share/themes/Xfce Evolution Bronze/gtk-3.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/pane-separator-wide.css
@@ -82,15 +81,13 @@ share/themes/Xfce Evolution Bronze/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Bronze/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Bronze/themecolor.sh
 share/themes/Xfce Evolution Bronze/xfce-evolution_mark
-share/themes/Xfce Evolution Crux/00.00
-share/themes/Xfce Evolution Crux/00.10
-share/themes/Xfce Evolution Crux/00.20
-share/themes/Xfce Evolution Crux/00.30
-share/themes/Xfce Evolution Crux/00.40
 share/themes/Xfce Evolution Crux/gtk-2.0/assets
 share/themes/Xfce Evolution Crux/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Crux/gtk-2.0/options/button-pressed-dented.css
@@ -117,6 +114,8 @@ share/themes/Xfce Evolution Crux/gtk-2.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/panel-black.css
@@ -157,6 +156,8 @@ share/themes/Xfce Evolution Crux/gtk-3.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/pane-separator-wide.css
@@ -168,15 +169,13 @@ share/themes/Xfce Evolution Crux/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Crux/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Crux/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Crux/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Crux/themecolor.sh
 share/themes/Xfce Evolution Crux/xfce-evolution_mark
-share/themes/Xfce Evolution Devilsclaw/00.00
-share/themes/Xfce Evolution Devilsclaw/00.10
-share/themes/Xfce Evolution Devilsclaw/00.20
-share/themes/Xfce Evolution Devilsclaw/00.30
-share/themes/Xfce Evolution Devilsclaw/00.40
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/assets
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/button-pressed-dented.css
@@ -203,6 +202,8 @@ share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/menu-selection-rounded.cs
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/panel-black.css
@@ -243,6 +244,8 @@ share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/menu-selection-rounded.cs
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/pane-separator-wide.css
@@ -254,15 +257,13 @@ share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Devilsclaw/themecolor.sh
 share/themes/Xfce Evolution Devilsclaw/xfce-evolution_mark
-share/themes/Xfce Evolution Graphite/00.00
-share/themes/Xfce Evolution Graphite/00.10
-share/themes/Xfce Evolution Graphite/00.20
-share/themes/Xfce Evolution Graphite/00.30
-share/themes/Xfce Evolution Graphite/00.40
 share/themes/Xfce Evolution Graphite/gtk-2.0/assets
 share/themes/Xfce Evolution Graphite/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/button-pressed-dented.css
@@ -289,6 +290,8 @@ share/themes/Xfce Evolution Graphite/gtk-2.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/panel-black.css
@@ -329,6 +332,8 @@ share/themes/Xfce Evolution Graphite/gtk-3.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/pane-separator-wide.css
@@ -340,15 +345,13 @@ share/themes/Xfce Evolution Graphite/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Graphite/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Graphite/themecolor.sh
 share/themes/Xfce Evolution Graphite/xfce-evolution_mark
-share/themes/Xfce Evolution Greybird/00.00
-share/themes/Xfce Evolution Greybird/00.10
-share/themes/Xfce Evolution Greybird/00.20
-share/themes/Xfce Evolution Greybird/00.30
-share/themes/Xfce Evolution Greybird/00.40
 share/themes/Xfce Evolution Greybird/gtk-2.0/assets
 share/themes/Xfce Evolution Greybird/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/button-pressed-dented.css
@@ -375,6 +378,8 @@ share/themes/Xfce Evolution Greybird/gtk-2.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/panel-black.css
@@ -415,6 +420,8 @@ share/themes/Xfce Evolution Greybird/gtk-3.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/pane-separator-wide.css
@@ -426,15 +433,13 @@ share/themes/Xfce Evolution Greybird/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Greybird/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Greybird/themecolor.sh
 share/themes/Xfce Evolution Greybird/xfce-evolution_mark
-share/themes/Xfce Evolution Icelake/00.00
-share/themes/Xfce Evolution Icelake/00.10
-share/themes/Xfce Evolution Icelake/00.20
-share/themes/Xfce Evolution Icelake/00.30
-share/themes/Xfce Evolution Icelake/00.40
 share/themes/Xfce Evolution Icelake/gtk-2.0/assets
 share/themes/Xfce Evolution Icelake/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Icelake/gtk-2.0/options/button-pressed-dented.css
@@ -461,6 +466,8 @@ share/themes/Xfce Evolution Icelake/gtk-2.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Icelake/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Icelake/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Icelake/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Icelake/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Icelake/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Icelake/gtk-2.0/options/panel-black.css
@@ -501,6 +508,8 @@ share/themes/Xfce Evolution Icelake/gtk-3.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/pane-separator-wide.css
@@ -512,15 +521,13 @@ share/themes/Xfce Evolution Icelake/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Icelake/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Icelake/themecolor.sh
 share/themes/Xfce Evolution Icelake/xfce-evolution_mark
-share/themes/Xfce Evolution Irix/00.00
-share/themes/Xfce Evolution Irix/00.10
-share/themes/Xfce Evolution Irix/00.20
-share/themes/Xfce Evolution Irix/00.30
-share/themes/Xfce Evolution Irix/00.40
 share/themes/Xfce Evolution Irix/gtk-2.0/assets
 share/themes/Xfce Evolution Irix/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Irix/gtk-2.0/options/button-pressed-dented.css
@@ -547,6 +554,8 @@ share/themes/Xfce Evolution Irix/gtk-2.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Irix/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Irix/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Irix/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Irix/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Irix/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Irix/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Irix/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Irix/gtk-2.0/options/panel-black.css
@@ -587,6 +596,8 @@ share/themes/Xfce Evolution Irix/gtk-3.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Irix/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Irix/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/pane-separator-wide.css
@@ -598,15 +609,13 @@ share/themes/Xfce Evolution Irix/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Irix/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Irix/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Irix/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Irix/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Irix/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Irix/themecolor.sh
 share/themes/Xfce Evolution Irix/xfce-evolution_mark
-share/themes/Xfce Evolution Rainyday/00.00
-share/themes/Xfce Evolution Rainyday/00.10
-share/themes/Xfce Evolution Rainyday/00.20
-share/themes/Xfce Evolution Rainyday/00.30
-share/themes/Xfce Evolution Rainyday/00.40
 share/themes/Xfce Evolution Rainyday/gtk-2.0/assets
 share/themes/Xfce Evolution Rainyday/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/button-pressed-dented.css
@@ -633,6 +642,8 @@ share/themes/Xfce Evolution Rainyday/gtk-2.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/panel-black.css
@@ -673,6 +684,8 @@ share/themes/Xfce Evolution Rainyday/gtk-3.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/pane-separator-wide.css
@@ -684,15 +697,13 @@ share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Rainyday/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Rainyday/themecolor.sh
 share/themes/Xfce Evolution Rainyday/xfce-evolution_mark
-share/themes/Xfce Evolution Raleigh/00.00
-share/themes/Xfce Evolution Raleigh/00.10
-share/themes/Xfce Evolution Raleigh/00.20
-share/themes/Xfce Evolution Raleigh/00.30
-share/themes/Xfce Evolution Raleigh/00.40
 share/themes/Xfce Evolution Raleigh/gtk-2.0/assets
 share/themes/Xfce Evolution Raleigh/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/button-pressed-dented.css
@@ -719,6 +730,8 @@ share/themes/Xfce Evolution Raleigh/gtk-2.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/panel-black.css
@@ -759,6 +772,8 @@ share/themes/Xfce Evolution Raleigh/gtk-3.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/pane-separator-wide.css
@@ -770,15 +785,13 @@ share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Raleigh/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Raleigh/themecolor.sh
 share/themes/Xfce Evolution Raleigh/xfce-evolution_mark
-share/themes/Xfce Evolution Redmond/00.00
-share/themes/Xfce Evolution Redmond/00.10
-share/themes/Xfce Evolution Redmond/00.20
-share/themes/Xfce Evolution Redmond/00.30
-share/themes/Xfce Evolution Redmond/00.40
 share/themes/Xfce Evolution Redmond/gtk-2.0/assets
 share/themes/Xfce Evolution Redmond/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/button-pressed-dented.css
@@ -805,6 +818,8 @@ share/themes/Xfce Evolution Redmond/gtk-2.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/panel-black.css
@@ -845,6 +860,8 @@ share/themes/Xfce Evolution Redmond/gtk-3.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/pane-separator-wide.css
@@ -856,15 +873,13 @@ share/themes/Xfce Evolution Redmond/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Redmond/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Redmond/themecolor.sh
 share/themes/Xfce Evolution Redmond/xfce-evolution_mark
-share/themes/Xfce Evolution Solaris/00.00
-share/themes/Xfce Evolution Solaris/00.10
-share/themes/Xfce Evolution Solaris/00.20
-share/themes/Xfce Evolution Solaris/00.30
-share/themes/Xfce Evolution Solaris/00.40
 share/themes/Xfce Evolution Solaris/gtk-2.0/assets
 share/themes/Xfce Evolution Solaris/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/button-pressed-dented.css
@@ -891,6 +906,8 @@ share/themes/Xfce Evolution Solaris/gtk-2.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Solaris/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Solaris/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/panel-black.css
@@ -931,6 +948,8 @@ share/themes/Xfce Evolution Solaris/gtk-3.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/pane-separator-wide.css
@@ -942,15 +961,13 @@ share/themes/Xfce Evolution Solaris/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Solaris/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Solaris/themecolor.sh
 share/themes/Xfce Evolution Solaris/xfce-evolution_mark
-share/themes/Xfce Evolution Straw/00.00
-share/themes/Xfce Evolution Straw/00.10
-share/themes/Xfce Evolution Straw/00.20
-share/themes/Xfce Evolution Straw/00.30
-share/themes/Xfce Evolution Straw/00.40
 share/themes/Xfce Evolution Straw/gtk-2.0/assets
 share/themes/Xfce Evolution Straw/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Straw/gtk-2.0/options/button-pressed-dented.css
@@ -977,6 +994,8 @@ share/themes/Xfce Evolution Straw/gtk-2.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/panel-black.css
@@ -1017,6 +1036,8 @@ share/themes/Xfce Evolution Straw/gtk-3.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/pane-separator-wide.css
@@ -1028,15 +1049,13 @@ share/themes/Xfce Evolution Straw/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Straw/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Straw/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Straw/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Straw/themecolor.sh
 share/themes/Xfce Evolution Straw/xfce-evolution_mark
-share/themes/Xfce Evolution Summerfield/00.00
-share/themes/Xfce Evolution Summerfield/00.10
-share/themes/Xfce Evolution Summerfield/00.20
-share/themes/Xfce Evolution Summerfield/00.30
-share/themes/Xfce Evolution Summerfield/00.40
 share/themes/Xfce Evolution Summerfield/gtk-2.0/assets
 share/themes/Xfce Evolution Summerfield/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Summerfield/gtk-2.0/options/button-pressed-dented.css
@@ -1063,6 +1082,8 @@ share/themes/Xfce Evolution Summerfield/gtk-2.0/options/menu-selection-rounded.c
 share/themes/Xfce Evolution Summerfield/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Summerfield/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Summerfield/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Summerfield/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Summerfield/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Summerfield/gtk-2.0/options/panel-black.css
@@ -1103,6 +1124,8 @@ share/themes/Xfce Evolution Summerfield/gtk-3.0/options/menu-selection-rounded.c
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/pane-separator-wide.css
@@ -1114,15 +1137,13 @@ share/themes/Xfce Evolution Summerfield/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Summerfield/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Summerfield/themecolor.sh
 share/themes/Xfce Evolution Summerfield/xfce-evolution_mark
-share/themes/Xfce Evolution Summerstorm/00.00
-share/themes/Xfce Evolution Summerstorm/00.10
-share/themes/Xfce Evolution Summerstorm/00.20
-share/themes/Xfce Evolution Summerstorm/00.30
-share/themes/Xfce Evolution Summerstorm/00.40
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/assets
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/button-pressed-dented.css
@@ -1149,6 +1170,8 @@ share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/menu-selection-rounded.c
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/panel-black.css
@@ -1189,6 +1212,8 @@ share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/menu-selection-rounded.c
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/pane-separator-wide.css
@@ -1200,15 +1225,15 @@ share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Summerstorm/themecolor.sh
 share/themes/Xfce Evolution Summerstorm/xfce-evolution_mark
-share/themes/Xfce Evolution/00.00
-share/themes/Xfce Evolution/00.10
-share/themes/Xfce Evolution/00.20
-share/themes/Xfce Evolution/00.30
-share/themes/Xfce Evolution/00.40
+share/themes/Xfce Evolution/TOOLS/CONFIG/HACKING
+share/themes/Xfce Evolution/TOOLS/CONFIG/lib/set-theme-color
 share/themes/Xfce Evolution/gtk-2.0/assets/arrow-down.png
 share/themes/Xfce Evolution/gtk-2.0/assets/button-bg-hover.png
 share/themes/Xfce Evolution/gtk-2.0/assets/handle-h.png
@@ -1243,6 +1268,8 @@ share/themes/Xfce Evolution/gtk-2.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution/gtk-2.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution/gtk-2.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution/gtk-2.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution/gtk-2.0/options/pane-separator-wide.css
 share/themes/Xfce Evolution/gtk-2.0/options/panel-black.css
@@ -1254,24 +1281,16 @@ share/themes/Xfce Evolution/gtk-2.0/options/tab-flat.css
 share/themes/Xfce Evolution/gtk-2.0/options/tab-notebook.css
 share/themes/Xfce Evolution/gtk-2.0/options/tab-tab.css
 share/themes/Xfce Evolution/gtk-2.0/tweaks.css
-share/themes/Xfce Evolution/gtk-2.0/widgets-ambiance-original.css
 share/themes/Xfce Evolution/gtk-2.0/widgets.css
 share/themes/Xfce Evolution/gtk-3.0/assets/bullet-symbolic-small.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/bullet-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/bullet-symbolic.symbolic.png
-share/themes/Xfce Evolution/gtk-3.0/assets/check-symbolic-v1.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/check-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/check-symbolic.symbolic.png
-share/themes/Xfce Evolution/gtk-3.0/assets/check-symbolic.symbolic_orig.png
-share/themes/Xfce Evolution/gtk-3.0/assets/check-symbolic_orig.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-active-selectionmode.png
 share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-active-selectionmode@2.png
-share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-backdrop-selectionmode.png
-share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-backdrop-selectionmode@2.png
 share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-checked-active-selectionmode.png
 share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-checked-active-selectionmode@2.png
-share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-checked-backdrop-selectionmode.png
-share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-checked-backdrop-selectionmode@2.png
 share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-checked-hover-selectionmode.png
 share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-checked-hover-selectionmode@2.png
 share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-checked-selectionmode.png
@@ -1282,7 +1301,12 @@ share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-selectionmode.png
 share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-selectionmode@2.png
 share/themes/Xfce Evolution/gtk-3.0/assets/dash-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/dash-symbolic.symbolic.png
-share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-checked-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-checked-disabled.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-indeterminate-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-indeterminate-disabled.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-unchecked-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-unchecked-disabled.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/combo-symbolic-dim.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/combo-symbolic.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/combobox-symbolic-dim.png
@@ -1308,6 +1332,12 @@ share/themes/Xfce Evolution/gtk-3.0/assets/extras/pan-start2-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/pan-start3-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/pixel-bumps-horiz.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/pixel-bumps-vert.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-checked-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-checked-disabled.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-indeterminate-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-indeterminate-disabled.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-unchecked-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-unchecked-disabled.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-bg-darker.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-bg-lighter.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-bg-transparent.png
@@ -1321,8 +1351,12 @@ share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-line-horiz-darker.pn
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-line-horiz-lighter.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-line-vert-darker.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-line-vert-lighter.png
-share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-narrow-horiz-lighter.png
-share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-narrow-vert-lighter.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-narrow-horiz-dark.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-narrow-horiz-light.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-narrow-horiz-normal.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-narrow-vert-dark.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-narrow-vert-light.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-narrow-vert-normal.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-vert-bg-bottom.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-vert-bg-top.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-vert-darker.png
@@ -1333,6 +1367,10 @@ share/themes/Xfce Evolution/gtk-3.0/assets/extras/switch-0-red.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/switch-0.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/switch-1-disabled.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/switch-1.png
+share/themes/Xfce Evolution/gtk-3.0/assets/override/check-symbolic-v1.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/check-symbolic.png
+share/themes/Xfce Evolution/gtk-3.0/assets/override/check-symbolic.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/check-symbolic.symbolic.png
 share/themes/Xfce Evolution/gtk-3.0/assets/override/pan-down-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/override/pan-end-symbolic-rtl.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/override/pan-end-symbolic.svg
@@ -1398,6 +1436,8 @@ share/themes/Xfce Evolution/gtk-3.0/options/menu-selection-rounded.css
 share/themes/Xfce Evolution/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution/gtk-3.0/options/menu-separator-dented.css
 share/themes/Xfce Evolution/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution/gtk-3.0/options/menubar-selection-rounded.css
 share/themes/Xfce Evolution/gtk-3.0/options/pane-separator-auto.css
 share/themes/Xfce Evolution/gtk-3.0/options/pane-separator-autohide.css
 share/themes/Xfce Evolution/gtk-3.0/options/pane-separator-wide.css
@@ -1409,10 +1449,173 @@ share/themes/Xfce Evolution/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution/gtk-3.0/options/tab-notebook.css
 share/themes/Xfce Evolution/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution/gtk-3.0/options/tab-tab_v2.css
 share/themes/Xfce Evolution/gtk-3.0/settings.ini
 share/themes/Xfce Evolution/gtk-3.0/tweaks.css
-share/themes/Xfce Evolution/gtk-3.0/widgets-adwaita-original.css
 share/themes/Xfce Evolution/gtk-3.0/widgets.css
+share/themes/Xfce Evolution/original/gtk-2.0/apps/banshee.rc
+share/themes/Xfce Evolution/original/gtk-2.0/apps/chromium.rc
+share/themes/Xfce Evolution/original/gtk-2.0/apps/ff.rc
+share/themes/Xfce Evolution/original/gtk-2.0/apps/gnome-terminal.rc
+share/themes/Xfce Evolution/original/gtk-2.0/apps/img/arrow-down.png
+share/themes/Xfce Evolution/original/gtk-2.0/apps/img/handle-h.png
+share/themes/Xfce Evolution/original/gtk-2.0/apps/img/handle-v.png
+share/themes/Xfce Evolution/original/gtk-2.0/apps/img/panel-button-active.png
+share/themes/Xfce Evolution/original/gtk-2.0/apps/img/panel-button-hover.png
+share/themes/Xfce Evolution/original/gtk-2.0/apps/img/panel-button-inactive.png
+share/themes/Xfce Evolution/original/gtk-2.0/apps/img/panel.png
+share/themes/Xfce Evolution/original/gtk-2.0/apps/nautilus.rc
+share/themes/Xfce Evolution/original/gtk-2.0/apps/panel.rc
+share/themes/Xfce Evolution/original/gtk-2.0/gtkrc
+share/themes/Xfce Evolution/original/gtk-2.0/panel.rc
+share/themes/Xfce Evolution/original/gtk-3.0/assets/bullet-symbolic.svg
+share/themes/Xfce Evolution/original/gtk-3.0/assets/bullet-symbolic.symbolic.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/check-symbolic.svg
+share/themes/Xfce Evolution/original/gtk-3.0/assets/check-symbolic.symbolic.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-active-selectionmode.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-active-selectionmode@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-backdrop-selectionmode.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-backdrop-selectionmode@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-checked-active-selectionmode.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-checked-active-selectionmode@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-checked-backdrop-selectionmode.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-checked-backdrop-selectionmode@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-checked-hover-selectionmode.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-checked-hover-selectionmode@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-checked-selectionmode.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-checked-selectionmode@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-hover-selectionmode.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-hover-selectionmode@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-selectionmode.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/checkbox-selectionmode@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/dash-symbolic.svg
+share/themes/Xfce Evolution/original/gtk-3.0/assets/dash-symbolic.symbolic.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-active-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-active-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-active.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-active@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-backdrop-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-backdrop-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-backdrop-insensitive-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-backdrop-insensitive-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-backdrop-insensitive.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-backdrop-insensitive@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-backdrop.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-backdrop@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-hover-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-hover-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-hover.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-hover@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-insensitive-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-insensitive-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-insensitive.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above-insensitive@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-above@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-active-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-active-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-active.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-active@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-backdrop-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-backdrop-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-backdrop-insensitive-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-backdrop-insensitive-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-backdrop-insensitive.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-backdrop-insensitive@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-backdrop.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-backdrop@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-hover-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-hover-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-hover.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-hover@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-insensitive-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-insensitive-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-insensitive.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below-insensitive@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-horz-scale-has-marks-below@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-active-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-active-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-active.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-active@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-backdrop-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-backdrop-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-backdrop-insensitive-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-backdrop-insensitive-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-backdrop-insensitive.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-backdrop-insensitive@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-backdrop.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-backdrop@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-hover-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-hover-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-hover.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-hover@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-insensitive-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-insensitive-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-insensitive.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above-insensitive@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-above@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-active-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-active-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-active.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-active@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-backdrop-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-backdrop-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-backdrop-insensitive-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-backdrop-insensitive-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-backdrop-insensitive.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-backdrop-insensitive@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-backdrop.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-backdrop@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-hover-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-hover-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-hover.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-hover@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-insensitive-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-insensitive-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-insensitive.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below-insensitive@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/slider-vert-scale-has-marks-below@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-end-active-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-end-active-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-end-active.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-end-active@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-end-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-end-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-end-hover-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-end-hover-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-end-hover.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-end-hover@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-end.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-end@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-start-active-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-start-active-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-start-active.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-start-active@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-start-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-start-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-start-hover-dark.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-start-hover-dark@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-start-hover.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-start-hover@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-start.png
+share/themes/Xfce Evolution/original/gtk-3.0/assets/text-select-start@2.png
+share/themes/Xfce Evolution/original/gtk-3.0/gtk-contained-dark.css
+share/themes/Xfce Evolution/original/gtk-3.0/gtk-contained.css
+share/themes/Xfce Evolution/original/gtk-3.0/gtk-dark.css
+share/themes/Xfce Evolution/original/gtk-3.0/gtk.css
+share/themes/Xfce Evolution/themecolor.sh
 share/themes/Xfce Evolution/xfce-evolution_mark
 share/themes/Xfce Evolution/xfwm4/base-inactive.png
 share/themes/Xfce Evolution/xfwm4/base-prelight.png
