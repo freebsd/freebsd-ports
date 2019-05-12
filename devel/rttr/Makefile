@@ -11,7 +11,7 @@ COMMENT=	Run Time Type Reflection
 
 LICENSE=	MIT
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	rttrorg
 
