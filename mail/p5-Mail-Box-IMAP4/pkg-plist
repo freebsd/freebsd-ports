@@ -4,6 +4,8 @@
 %%SITE_PERL%%/Mail/Box/IMAP4/Head.pod
 %%SITE_PERL%%/Mail/Box/IMAP4/Message.pm
 %%SITE_PERL%%/Mail/Box/IMAP4/Message.pod
+%%SITE_PERL%%/Mail/Box/IMAP4s.pm
+%%SITE_PERL%%/Mail/Box/IMAP4s.pod
 %%SITE_PERL%%/Mail/Server/IMAP4.pm
 %%SITE_PERL%%/Mail/Server/IMAP4.pod
 %%SITE_PERL%%/Mail/Server/IMAP4/Fetch.pm
@@ -19,6 +21,7 @@
 %%PERL5_MAN3%%/Mail::Box::IMAP4.3.gz
 %%PERL5_MAN3%%/Mail::Box::IMAP4::Head.3.gz
 %%PERL5_MAN3%%/Mail::Box::IMAP4::Message.3.gz
+%%PERL5_MAN3%%/Mail::Box::IMAP4s.3.gz
 %%PERL5_MAN3%%/Mail::Server::IMAP4.3.gz
 %%PERL5_MAN3%%/Mail::Server::IMAP4::Fetch.3.gz
 %%PERL5_MAN3%%/Mail::Server::IMAP4::List.3.gz
