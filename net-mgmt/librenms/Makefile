@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.50
+PORTVERSION=	1.51
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -18,7 +18,7 @@ USES=		python${PY_MYSQL} shebangfix
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-RELEASE_TIMESTAMP=	1554090241
+RELEASE_TIMESTAMP=	1556573781
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
@@ -96,11 +96,13 @@ SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PYTHON_CMD}
 
 ROOT_FILES=	.env.example addhost.php adduser.php alerts.php artisan billing-calculate.php \
 		build-base.php build.sql check-services.php composer.json \
-		composer.lock config.php.default config_to_json.php cronic daily.php daily.sh \
-		delhost.php discovery-wrapper.py discovery.php dist-pollers.php irc.php lnms \
+		composer.lock config.php.default config_to_json.php cronic daily.php \
+		delhost.php discovery-wrapper.py discovery.php dist-pollers.php irc.php \
 		librenms-service.py mkdocs.yml pbin.sh phpunit.xml ping.php poll-billing.php poller.php poller-service.py \
 		poller-wrapper.py readmegen.yml renamehost.php services-wrapper.py snmp-scan.py \
 		snmptrap.php syslog.php validate.php
+
+SCRIPT_FILES=	daily.sh lnms
 
 ROOT_DIRS=	LibreNMS app bootstrap config contrib database doc html includes licenses logs mibs misc resources routes scripts sql-schema storage tests
 
@@ -149,12 +151,15 @@ do-install:
 .for f in ${ROOT_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${WWWDIR}
 .endfor
+.for f in ${SCRIPT_FILES}
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}/${WWWDIR}
+.endfor
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/vendor
 	(cd ${WRKDIR}/${PORTNAME}-vendor-${PORTVERSION} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/vendor)
 # Make daily.sh executable
-	${CHMOD} 0755 ${STAGEDIR}/${WWWDIR}/daily.sh
+#	${CHMOD} 0755 ${STAGEDIR}/${WWWDIR}/daily.sh
 # lnms does not fall into any other +x category
-	${CHMOD} 0755 ${STAGEDIR}/${WWWDIR}/lnms
+#	${CHMOD} 0755 ${STAGEDIR}/${WWWDIR}/lnms
 # Files in scripts dir should be executable
 	${FIND} ${STAGEDIR}/${WWWDIR}/scripts -type f -exec ${CHMOD} +x {} \;
 # Ensure PHP and Python scripts are executable
@@ -180,9 +185,11 @@ do-install-EXAMPLES-on:
 post-install:
 	@${FIND} -s ${STAGEDIR}${WWWDIR} -type f '(' -name '*.orig' -or -name '*.bak' -or -name '.gitignore' ')' -delete
 	@${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
-		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/logs" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/bootstrap/cache" >> ${TMPPLIST}
+#	@${ECHO_CMD} "@(www,www,0775) ${WWWDIR}/daily.sh" >> ${TMPPLIST}
+#	@${ECHO_CMD} "@(www,www,0775) ${WWWDIR}/lnms" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/storage" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/storage/framework/cache" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/storage/framework/sessions" >> ${TMPPLIST}
