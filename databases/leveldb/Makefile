@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leveldb
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
