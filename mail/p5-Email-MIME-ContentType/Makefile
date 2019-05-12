@@ -18,11 +18,4 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502508
-BUILD_DEPENDS+=	p5-Encode>=2.87:converters/p5-Encode
-RUN_DEPENDS+=	p5-Encode>=2.87:converters/p5-Encode
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
