@@ -3,7 +3,7 @@
 
 PORTNAME=	spice-gtk
 PORTVERSION=	0.36
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	deskutils gnome
 MASTER_SITES=	http://www.spice-space.org/download/gtk/
 
@@ -19,21 +19,24 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libjson-glib-1.0.so:devel/json-glib \
 		libopus.so:audio/opus \
 		libva-x11.so:multimedia/libva
-BUILD_DEPENDS=	spice-protocol>=0.12.15:devel/spice-protocol \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:devel/py-pyparsing@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:devel/py-pyparsing@${PY_FLAVOR} \
+		spice-protocol>=0.12.15:devel/spice-protocol
 RUN_DEPENDS=	spice-protocol>=0.12.15:devel/spice-protocol
 
-USES=		autoreconf cpe gettext-tools gmake gnome jpeg libtool pkgconfig tar:bzip2 \
-		python ssl localbase:ldflags
-USE_XORG=	x11 pixman
+USES=		autoreconf cpe gettext-tools gmake gnome jpeg libtool \
+		localbase:ldflags pkgconfig python ssl tar:bzip2
+USE_XORG=	pixman x11
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 intltool introspection:build
+USE_GSTREAMER1=	yes
 
 CPE_VENDOR=	redhat
 
 SPICE_SSL_CFLAGS=	-I${OPENSSLINC}
-SPICE_SSL_LIBS=	-L${OPENSSLLIB} -lcrypto -lssl
-CONFIGURE_ENV+=	SSL_CFLAGS="${SPICE_SSL_CFLAGS}" SSL_LIBS="${SPICE_SSL_LIBS}" \
-		OPENSSL_CFLAGS="${SPICE_SSL_CFLAGS}" OPENSSL_LIBS="${SPICE_SSL_LIBS}"
+SPICE_SSL_LIBS=		-L${OPENSSLLIB} -lcrypto -lssl
+CONFIGURE_ENV+=		OPENSSL_CFLAGS="${SPICE_SSL_CFLAGS}" \
+			OPENSSL_LIBS="${SPICE_SSL_LIBS}" \
+			SSL_CFLAGS="${SPICE_SSL_CFLAGS}" \
+			SSL_LIBS="${SPICE_SSL_LIBS}"
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -43,31 +46,40 @@ MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	LZ4 NLS DOCS SASL
-OPTIONS_DEFAULT=	GSTREAMER LZ4 PULSEAUDIO SASL
+OPTIONS_DEFINE=		BUILTIN-MJPEG DOCS INTROSPECTION LZ4 NLS PIE POLKIT \
+			PULSEAUDIO SASL
+OPTIONS_DEFAULT=	BUILTIN-MJPEG INTROSPECTION LZ4 PIE POLKIT PULSEAUDIO \
+			SASL
+OPTIONS_SUB=		yes
 
-OPTIONS_GROUP=		AUDIO
-OPTIONS_GROUP_AUDIO=	GSTREAMER PULSEAUDIO
-
-OPTIONS_SUB=	yes
-
-LZ4_CONFIGURE_ENABLE=	lz4
+LZ4_CONFIGURE_ON=	--enable-lz4=yes
+LZ4_CONFIGURE_OFF=	--enable-lz4=no
 LZ4_LIB_DEPENDS+=	liblz4.so:archivers/liblz4
 
-NLS_USES=	gettext
+NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-NOAUDIO_DESC=		Disable audio backend
+BUILTIN-MJPEG_CONFIGURE_ENABLE=	builtin-mjpeg
+BUILTIN-MJPEG_DESC=		Enable the builtin mjpeg video decoder
 
-GSTREAMER_CONFIGURE_ENABLE=	gstaudio
-GSTREAMER_USE=			GSTREAMER1=yes
-GSTREAMER_CONFIGURE_ON=		--enable-gstvideo=yes
-GSTREAMER_CONFIGURE_OFF=	--enable-gstvideo=no
+INTROSPECTION_CONFIGURE_ON=	--enable-introspection=yes
+INTROSPECTION_CONFIGURE_OFF=	--enable-introspection=no
+INTROSPECTION_DESC=		Enable introspection for this build
 
+PIE_CONFIGURE_ON=	--enable-pie=yes
+PIE_CONFIGURE_OFF=	--enable-pie=no
+PIE_DESC=		Enable position-independent-executable support (for usb acl helper)
+
+POLKIT_CONFIGURE_ON=	--enable-polkit=yes
+POLKIT_CONFIGURE_OFF=	--enable-polkit=no
+POLKIT_DESC=		Enable PolicyKit support (for usb acl helper)
+
+PULSEAUDIO_CONFIGURE_ON=	--enable-pulse=yes
+PULSEAUDIO_CONFIGURE_OFF=	--enable-pulse=no
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
-PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
-SASL_CONFIGURE_WITH=		sasl=yes
-SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
+SASL_CONFIGURE_ON=	--with-sasl=yes
+SASL_CONFIGURE_OFF=	--with-sasl=no
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 .include <bsd.port.mk>
