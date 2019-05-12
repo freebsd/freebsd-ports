@@ -38,11 +38,4 @@ SSHFP_RUN_DEPENDS=	p5-Digest-BubbleBabble>=0.01:security/p5-Digest-BubbleBabble
 TSIG_BUILD_DEPENDS=	p5-Digest-HMAC>=1.03:security/p5-Digest-HMAC
 TSIG_RUN_DEPENDS=	p5-Digest-HMAC>=1.03:security/p5-Digest-HMAC
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MIPV6} && ${PERL_LEVEL} < 502504
-BUILD_DEPENDS+=	p5-IO-Socket-IP>=0.38:net/p5-IO-Socket-IP
-RUN_DEPENDS+=	p5-IO-Socket-IP>=0.38:net/p5-IO-Socket-IP
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
