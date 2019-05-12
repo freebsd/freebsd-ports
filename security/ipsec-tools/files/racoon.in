@@ -33,6 +33,7 @@ stop_postcmd="${name}_cleanup"
 socketfile="%%STATEDIR%%/${name}.sock"
 required_files="%%PREFIX%%/etc/${name}/${name}.conf"
 required_dirs="%%STATEDIR%%"
+required_modules="%%REQUIREMOD%%"
 
 racoon_cleanup()
 {
