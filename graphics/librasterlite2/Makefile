@@ -40,6 +40,6 @@ CONFIGURE_ENV+=	LIBLZMA_CFLAGS=" " LIBLZMA_LIBS="-llzma"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-LIBS+=		-lsqlite3
+LIBS+=		-lsqlite3 -lm
 
 .include <bsd.port.mk>
