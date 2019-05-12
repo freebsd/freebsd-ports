@@ -12,6 +12,8 @@ share/applications/din.desktop
 %%DATADIR%%/factory/attack.lib
 %%DATADIR%%/factory/audio_prefs
 %%DATADIR%%/factory/binaural-drone.help.tcl
+%%DATADIR%%/factory/binaural-drones-waveform.crv
+%%DATADIR%%/factory/binaural-drones-waveform.ed
 %%DATADIR%%/factory/binaural-drones.hlp
 %%DATADIR%%/factory/binaural-drones.tcl
 %%DATADIR%%/factory/binaural_drones
@@ -287,6 +289,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/curve-name.help.tcl
 %%DATADIR%%/factory/curve-value.help.tcl
 %%DATADIR%%/factory/curve_editor.hlp
+%%DATADIR%%/factory/d_capturer
 %%DATADIR%%/factory/d_circler
 %%DATADIR%%/factory/d_countries
 %%DATADIR%%/factory/d_curve_picker
@@ -301,6 +304,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/d_octave_shift
 %%DATADIR%%/factory/d_parameters
 %%DATADIR%%/factory/d_plugin_browser
+%%DATADIR%%/factory/d_point_modulator
 %%DATADIR%%/factory/d_rose_milker
 %%DATADIR%%/factory/d_sine_mixer
 %%DATADIR%%/factory/d_spiraler
@@ -357,6 +361,8 @@ share/applications/din.desktop
 %%DATADIR%%/factory/jag.fnt
 %%DATADIR%%/factory/just-intonation.tuning
 %%DATADIR%%/factory/key.help.tcl
+%%DATADIR%%/factory/keyboard-keyboard-waveform.crv
+%%DATADIR%%/factory/keyboard-keyboard-waveform.ed
 %%DATADIR%%/factory/keyboard-keyboard.hlp
 %%DATADIR%%/factory/keyboard-keyboard.settings
 %%DATADIR%%/factory/laser.fnt
@@ -368,6 +374,8 @@ share/applications/din.desktop
 %%DATADIR%%/factory/load-scale.help.tcl
 %%DATADIR%%/factory/major-chord
 %%DATADIR%%/factory/make-interval-note-vars.tcl
+%%DATADIR%%/factory/microtonal-keyboard-waveform.crv
+%%DATADIR%%/factory/microtonal-keyboard-waveform.ed
 %%DATADIR%%/factory/midimap.help.tcl
 %%DATADIR%%/factory/midimap.patch.tcl
 %%DATADIR%%/factory/modulation.ed
@@ -402,6 +410,9 @@ share/applications/din.desktop
 %%DATADIR%%/factory/p_Superformula
 %%DATADIR%%/factory/pitch-vol.ed
 %%DATADIR%%/factory/pitch.crv
+%%DATADIR%%/factory/point-modulation.ed
+%%DATADIR%%/factory/pomo-x.crv
+%%DATADIR%%/factory/pomo-y.crv
 %%DATADIR%%/factory/pythagoras.tuning
 %%DATADIR%%/factory/range-height.crv
 %%DATADIR%%/factory/range-height.crv.default
@@ -414,6 +425,8 @@ share/applications/din.desktop
 %%DATADIR%%/factory/rose_milker.scr
 %%DATADIR%%/factory/rose_milker_cos.crv
 %%DATADIR%%/factory/rose_milker_cos.ed
+%%DATADIR%%/factory/rose_milker_radius.crv
+%%DATADIR%%/factory/rose_milker_radius.ed
 %%DATADIR%%/factory/rose_milker_sin.crv
 %%DATADIR%%/factory/rose_milker_sin.ed
 %%DATADIR%%/factory/save_settings.tcl
@@ -455,7 +468,6 @@ share/applications/din.desktop
 %%DATADIR%%/factory/start-end.help.tcl
 %%DATADIR%%/factory/start-end.patch.tcl
 %%DATADIR%%/factory/swav.crv
-%%DATADIR%%/factory/swav.ed
 %%DATADIR%%/factory/tuning.help.tcl
 %%DATADIR%%/factory/velocity.crv
 %%DATADIR%%/factory/velocity.ed
@@ -466,10 +478,6 @@ share/applications/din.desktop
 %%DATADIR%%/factory/warper.ed
 %%DATADIR%%/factory/warpx.crv
 %%DATADIR%%/factory/warpy.crv
-%%DATADIR%%/factory/waveform1.crv
-%%DATADIR%%/factory/waveform1.ed
-%%DATADIR%%/factory/waveform2.crv
-%%DATADIR%%/factory/waveform2.ed
 %%DATADIR%%/factory/waveforms.lib
 %%DATADIR%%/factory/window
 %%DATADIR%%/factory/word.crv
