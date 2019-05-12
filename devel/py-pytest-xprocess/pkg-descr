@@ -1,3 +1,6 @@
 Experimental py.test plugin for managing processes across test runs.
 
+This plugin provides a xprocess fixture which helps you to ensure that
+one ore more longer-running processes are present for your tests.
+
 WWW: https://github.com/pytest-dev/pytest-xprocess
