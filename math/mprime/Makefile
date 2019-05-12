@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mprime
-PORTVERSION=	29.4b7
-PORTREVISION=	1
+PORTVERSION=	29.8b3
 CATEGORIES=	math benchmarks net
 MASTER_SITES=	http://www.mersenne.org/ftp_root/gimps/ \
 		ftp://mersenne.org/gimps/

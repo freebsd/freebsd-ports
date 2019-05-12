@@ -1,18 +1,19 @@
---- commonc.c.orig	2016-09-14 03:33:00 UTC
-+++ commonc.c
-@@ -3247,13 +3247,13 @@ void tempFileName (
- /* From now on, we will use k and c to generate the filename.  To reduce */
- /* upgrading problems, old save file names are renamed. */
+--- commonc.c.orig	2019-04-11 17:46:50.000000000 +0300
++++ commonc.c	2019-05-12 03:52:33.503858000 +0300
+@@ -386,6 +386,8 @@
+ 	CPU_L2_CACHE_INCLUSIVE = -1;
+ 	CPU_L3_CACHE_INCLUSIVE = -1;
+ 	CPU_L4_CACHE_INCLUSIVE = -1;
++
++#if HWLOC_API_VERSION >= 0x00020000
+ 	for (depth = 0; depth < hwloc_topology_get_depth (hwloc_topology); depth++) {
+ 		for (i = 0; i < (int) hwloc_get_nbobjs_by_depth (hwloc_topology, depth); i++) {
+ 			hwloc_obj_t obj;
+@@ -423,6 +425,7 @@
+ 			}
+ 		}
+ 	}
++#endif
  
--	if (w->k != 1.0 || abs(w->c) != 1) {
-+	if (w->k != 1.0 || labs(w->c) != 1) {
- 		char	v258_filename[32];
- 		strcpy (v258_filename, buf);
- 		buf[1] = 0;
- 		if (w->k != 1.0) sprintf (buf+strlen(buf), "%g", fmod (w->k, 1000000.0));
- 		sprintf (buf+strlen(buf), "_%ld", p);
--		if (abs(w->c) != 1) sprintf (buf+strlen(buf), "_%d", abs(w->c) % 1000);
-+		if (labs(w->c) != 1) sprintf (buf+strlen(buf), "_%ld", labs(w->c) % 1000);
- 		rename (v258_filename, buf);
- 		if (buf[0] == 'p') {
- 			v258_filename[0] = buf[0] = 'q';
+ /* Overwrite the cache info calculated via CPUID as hwloc's info is more detailed and I believe more reliable. */
+ /* We are transitioning away from using the cache size global variables computed by the CPUID code. */
