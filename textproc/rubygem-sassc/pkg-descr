@@ -1,0 +1,4 @@
+SassC combines the speed of libsass, the Sass C implementation, with the ease of
+use of the original Ruby Sass library.
+
+WWW: https://github.com/sass/sassc-ruby
