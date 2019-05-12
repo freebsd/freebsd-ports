@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	PYTHON
 OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
 
-USES=		gmake gnome libtool pathfix pkgconfig tar:xz
+USES=		compiler:c11 gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 
 CONFIGURE_ARGS=	--enable-introspection=yes
