@@ -1,0 +1,20 @@
+TileDB is an efficient multi-dimensional array management system which
+introduces a novel format that can effectively store dense and sparse array data
+with support for fast updates and reads. It features excellent compression, an
+efficient parallel I/O system for high scalability, and high-level APIs
+including Python, R, Golang and more.
+
+TileDB stores your array data on persistent storage locally or in the cloud,
+with built-in support for S3 and HDFS storage backends.
+
+Features:
+- Novel Format.
+- Multiple Backends.
+- Compression.
+- Parallelism.
+- Portability.
+- Language Bindings.
+- Key-value Store.
+- Virtual Filesystem.
+
+WWW: https://www.tiledb.io/
