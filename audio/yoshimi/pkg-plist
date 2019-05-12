@@ -14,7 +14,6 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Direct_Part_Control.txt
 %%PORTDOCS%%%%DOCSDIR%%/Dynamic_System_Settings.txt
 %%PORTDOCS%%%%DOCSDIR%%/Formant_Filter.txt
-%%PORTDOCS%%%%DOCSDIR%%/NoteNames_MidiNumbers_Frequency.gif
 %%PORTDOCS%%%%DOCSDIR%%/Histories/NewFeatures.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.3.5-features.txt
@@ -26,6 +25,7 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.4.1-features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.0-features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.1-features.txt
+%%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.10_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.2-features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.3-features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.4_features.txt
@@ -33,7 +33,6 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.7_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.8_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.9_features.txt
-%%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.10_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_License_History.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Zyn_ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Zyn_HISTORY.txt
@@ -43,6 +42,7 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/MIDI_Controllers.html
 %%PORTDOCS%%%%DOCSDIR%%/MIDI_Learn.txt
 %%PORTDOCS%%%%DOCSDIR%%/Musical Scale.odt
+%%PORTDOCS%%%%DOCSDIR%%/NoteNames_MidiNumbers_Frequency.gif
 %%PORTDOCS%%%%DOCSDIR%%/Note_Envelopes.txt
 %%PORTDOCS%%%%DOCSDIR%%/Output_Levels.txt
 %%PORTDOCS%%%%DOCSDIR%%/Part_Kit_Crossfade.txt
