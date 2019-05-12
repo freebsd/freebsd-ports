@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	inspircd
-PORTVERSION=	2.0.27
+PORTVERSION=	3.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	irc
 
 MAINTAINER=	dg@syrec.org
@@ -14,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.txt
 
 # Configure script is written in perl
-USES=		cpe perl5
+USES=		cpe gmake perl5
 USE_GITHUB=	yes
 USE_PERL5=	build
 
@@ -22,50 +21,48 @@ CPE_VENDOR=	inspire_ircd
 CPE_PRODUCT=	inspircd
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-cc=${CXX} \
+CONFIGURE_ARGS=	--binary-dir=${PREFIX}/bin \
 		--config-dir=${ETCDIR} \
-		--prefix=${PREFIX}/libexec/${PORTNAME} \
-		--binary-dir=${PREFIX}/bin \
-		--module-dir=${PREFIX}/libexec/${PORTNAME}/modules \
-		--log-dir=${INSPIRCD_LOGDIR} \
 		--data-dir=${INSPIRCD_DBDIR} \
-		--uid=${INSPIRCD_UID} \
+		--disable-interactive \
 		--enable-kqueue \
-		--disable-interactive
+		--log-dir=${INSPIRCD_LOGDIR} \
+		--manual-dir=${MANPREFIX}/man/man1 \
+		--module-dir=${PREFIX}/libexec/${PORTNAME}/modules \
+		--prefix=${PREFIX}/libexec/${PORTNAME} \
+		--with-cc=${CXX}
 
 USE_RC_SUBR=	${PORTNAME}
-MAKEFILE=	BSDmakefile
+MAKEFILE=	GNUmakefile
 
 USERS=		ircd
 GROUPS=		ircd
 INSPIRCD_UID=	72
+INSPIRCD_GID=	72
 
 INSPIRCD_DBDIR?=	/var/db/${PORTNAME}
 INSPIRCD_LOGDIR?=	/var/log/${PORTNAME}
 INSPIRCD_RUNDIR?=	/var/run/${PORTNAME}
 
 SUB_FILES=	pkg-deinstall
-SUB_LIST=	PORTNAME=${PORTNAME} \
-		INSPIRCD_DBDIR=${INSPIRCD_DBDIR} \
+SUB_LIST=	INSPIRCD_DBDIR=${INSPIRCD_DBDIR} \
+		INSPIRCD_GROUP=${GROUPS} \
 		INSPIRCD_LOGDIR=${INSPIRCD_LOGDIR} \
 		INSPIRCD_RUNDIR=${INSPIRCD_RUNDIR} \
 		INSPIRCD_USER=${USERS} \
-		INSPIRCD_GROUP=${GROUPS}
+		PORTNAME=${PORTNAME}
 PLIST_SUB=	INSPIRCD_DBDIR=${INSPIRCD_DBDIR} \
+		INSPIRCD_GROUP=${GROUPS} \
 		INSPIRCD_LOGDIR=${INSPIRCD_LOGDIR} \
 		INSPIRCD_RUNDIR=${INSPIRCD_RUNDIR} \
-		INSPIRCD_USER=${USERS} \
-		INSPIRCD_GROUP=${GROUPS}
+		INSPIRCD_USER=${USERS}
 
-CONFLICTS=	inspircd-1.*
-
-OPTIONS_DEFINE=	GNUTLS IPV6 LDAPAUTH LDAPOPER MYSQL OPENSSL PCRE PGSQL POSIX SQLITE
-OPTIONS_DEFAULT=OPENSSL POSIX
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		GNUTLS IPV6 LDAP MYSQL OPENSSL PCRE PGSQL POSIX SQLITE
+OPTIONS_DEFAULT=	OPENSSL POSIX
+OPTIONS_SUB=		yes
 
 GNUTLS_DESC=	Build m_ssl_gnutls module
-LDAPAUTH_DESC=	Build m_ldapauth module
-LDAPOPER_DESC=	Build m_ldapoper module
+LDAP_DESC=	Build m_ldap module
 MYSQL_DESC=	Build m_mysql module
 OPENSSL_DESC=	Build m_ssl_openssl module
 PCRE_DESC=	Build m_regex_pcre module
@@ -73,43 +70,46 @@ PGSQL_DESC=	Build m_pgsql module
 POSIX_DESC=	Build m_regex_posix module
 SQLITE_DESC=	Build m_sqlite3 module
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-GNUTLS_USES=		pkgconfig
+GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls
+GNUTLS_USES=			pkgconfig
 GNUTLS_CONFIGURE_ENABLE=	gnutls
-GNUTLS_VARS=		extras+=m_ssl_gnutls.cpp
+GNUTLS_VARS=			EXTRAS+=m_ssl_gnutls.cpp
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
-LDAPAUTH_USE=		openldap=yes
-LDAPAUTH_VARS=		extras+=m_ldapauth.cpp
+LDAP_USE=	OPENLDAP=yes
+LDAP_VARS=	EXTRAS+=m_ldap.cpp
 
-LDAPOPER_USE=		openldap=yes
-LDAPOPER_VARS=		extras+=m_ldapoper.cpp
+MYSQL_USES=	mysql
+MYSQL_VARS=	EXTRAS+=m_mysql.cpp
 
-MYSQL_USES=		mysql
-MYSQL_VARS=		extras+=m_mysql.cpp
-
-OPENSSL_USES=		pkgconfig ssl
+OPENSSL_USES=			pkgconfig ssl
 OPENSSL_CONFIGURE_ENABLE=	openssl
-OPENSSL_VARS=		extras+=m_ssl_openssl.cpp
+OPENSSL_VARS=			EXTRAS+=m_ssl_openssl.cpp
 
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
-PCRE_VARS=		extras+=m_regex_pcre.cpp
+PCRE_VARS=		EXTRAS+=m_regex_pcre.cpp
 
-PGSQL_USES=		pgsql
-PGSQL_VARS=		extras+=m_pgsql.cpp
+PGSQL_USES=	pgsql
+PGSQL_VARS=	EXTRAS+=m_pgsql.cpp
 
-POSIX_VARS=		extras+=m_regex_posix.cpp
+POSIX_VARS=	EXTRAS+=m_regex_posix.cpp
 
-SQLITE_USES=		pkgconfig sqlite
-SQLITE_VARS=		extras+=m_sqlite3.cpp
+SQLITE_USES=	pkgconfig sqlite
+SQLITE_VARS=	EXTRAS+=m_sqlite3.cpp
 
 pre-configure:
 	@(cd ${WRKSRC}/src/modules && for m in ${EXTRAS}; do ${RLN} extra/$$m $$m; done)
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%INSPIRCD_USER%%|${USERS}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%INSPIRCD_UID%%|${INSPIRCD_UID}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%INSPIRCD_GROUP%%|${GROUPS}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%INSPIRCD_GID%%|${INSPIRCD_GID}|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|DATA_PATH "/inspircd.pid"|"${INSPIRCD_RUNDIR}/inspircd.pid"|' ${WRKSRC}/src/inspircd.cpp
-	@${REINPLACE_CMD} -e 's|conf/examples|examples|g' ${WRKSRC}/docs/conf/inspircd.conf.example
+	@${REINPLACE_CMD} -e 's|examples/||g' -e 's|\.example||g' ${WRKSRC}/docs/conf/inspircd.conf.example
+	@${REINPLACE_CMD} -e 's|examples/||g' -e 's|\.example||g' ${WRKSRC}/docs/conf/modules.conf.example
+	@${RM} ${WRKSRC}/make/template/main.mk.orig
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/modules/*.so

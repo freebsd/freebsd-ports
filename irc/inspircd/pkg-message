@@ -1,0 +1,6 @@
+========================================================================
+InspIRCd v3 has many configuration changes that are not backwards
+compatible with InspIRCd v2. If you are upgrading from v2, please review
+https://docs.inspircd.org/3/configuration-changes/ and update your
+configuration files accrdingly.
+========================================================================

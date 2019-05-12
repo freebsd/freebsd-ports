@@ -1,31 +1,55 @@
---- make/template/main.mk.orig	2016-09-03 14:51:50 UTC
+--- make/template/main.mk.orig	2019-05-10 08:54:28 UTC
 +++ make/template/main.mk
-@@ -61,6 +61,10 @@ INSTMODE_LIB = 0644
- @IFEQ $(SYSTEM) linux
-   LDLIBS += -ldl -lrt
- @ENDIF
-+@IFEQ $(SYSTEM) freebsd
-+  CXXFLAGS += -I/usr/local/include
-+  LDFLAGS += -L/usr/local/lib
-+@ENDIF
- @IFEQ $(SYSTEM) gnukfreebsd
-   LDLIBS += -ldl -lrt
- @ENDIF
-@@ -138,7 +142,7 @@ CXXFLAGS += -Iinclude
-   CXXFLAGS += -DPURE_STATIC
- @ENDIF
+@@ -203,32 +203,32 @@ finishmessage: target
+ 	@echo "*************************************"
  
--@DO_EXPORT RUNCC RUNLD CXXFLAGS LDLIBS PICLDFLAGS VERBOSE SOCKETENGINE CORELDFLAGS
-+@DO_EXPORT RUNCC RUNLD CXXFLAGS LDLIBS PICLDFLAGS VERBOSE SOCKETENGINE CORELDFLAGS LDFLAGS
- @DO_EXPORT SOURCEPATH BUILDPATH PURE_STATIC SPLIT_CC
- 
- # Default target
-@@ -226,8 +230,6 @@ install: target
- 		exit 1; \
- 	fi
- 	@-$(INSTALL) -d -o $(INSTUID) -m $(INSTMODE_DIR) $(BASE)
--	@-$(INSTALL) -d -o $(INSTUID) -m $(INSTMODE_DIR) $(DATPATH)
--	@-$(INSTALL) -d -o $(INSTUID) -m $(INSTMODE_DIR) $(LOGPATH)
- 	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(BINPATH)
- 	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(CONPATH)/examples/aliases
- 	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(CONPATH)/examples/modules
+ install: target
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(BASE)
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(DATPATH)
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(LOGPATH)
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(BINPATH)
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(CONPATH)/examples/services
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(CONPATH)/examples/sql
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(MANPATH)
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(MODPATH)
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(SCRPATH)
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_BIN) "$(BUILDPATH)/bin/inspircd" $(BINPATH)
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_BIN) "$(BUILDPATH)/modules/"*.so $(MODPATH)
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_BIN) @CONFIGURE_DIRECTORY@/inspircd $(SCRPATH) 2>/dev/null
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) .gdbargs $(SCRPATH)/.gdbargs 2>/dev/null
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(BASE)
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(DATPATH)
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(LOGPATH)
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(BINPATH)
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(CONPATH)/examples/services
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(CONPATH)/examples/sql
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(MANPATH)
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(MODPATH)
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(SCRPATH)
++	-$(INSTALL) -m $(INSTMODE_BIN) "$(BUILDPATH)/bin/inspircd" $(BINPATH)
++	-$(INSTALL) -m $(INSTMODE_BIN) "$(BUILDPATH)/modules/"*.so $(MODPATH)
++	-$(INSTALL) -m $(INSTMODE_BIN) @CONFIGURE_DIRECTORY@/inspircd $(SCRPATH) 2>/dev/null
++	-$(INSTALL) -m $(INSTMODE_TXT) .gdbargs $(SCRPATH)/.gdbargs 2>/dev/null
+ ifeq ($(SYSTEM), darwin)
+ 	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_BIN) @CONFIGURE_DIRECTORY@/org.inspircd.plist $(SCRPATH) 2>/dev/null
+ endif
+ ifeq ($(SYSTEM), linux)
+ 	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd.service $(SCRPATH) 2>/dev/null
+ endif
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd.1 $(MANPATH) 2>/dev/null
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd-genssl.1 $(MANPATH) 2>/dev/null
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_BIN) tools/genssl $(BINPATH)/inspircd-genssl 2>/dev/null
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/conf/*.example $(CONPATH)/examples
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/conf/services/*.example $(CONPATH)/examples/services
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/sql/*.sql $(CONPATH)/examples/sql
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_PRV) *.pem $(CONPATH) 2>/dev/null
++	-$(INSTALL) -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd.1 $(MANPATH) 2>/dev/null
++	-$(INSTALL) -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd-genssl.1 $(MANPATH) 2>/dev/null
++	-$(INSTALL) -m $(INSTMODE_BIN) tools/genssl $(BINPATH)/inspircd-genssl 2>/dev/null
++	-$(INSTALL) -m $(INSTMODE_TXT) docs/conf/*.example $(CONPATH)/examples
++	-$(INSTALL) -m $(INSTMODE_TXT) docs/conf/services/*.example $(CONPATH)/examples/services
++	-$(INSTALL) -m $(INSTMODE_TXT) docs/sql/*.sql $(CONPATH)/examples/sql
++	-$(INSTALL) -m $(INSTMODE_PRV) *.pem $(CONPATH) 2>/dev/null
+ 	@echo ""
+ 	@echo "*************************************"
+ 	@echo "*        INSTALL COMPLETE!          *"
