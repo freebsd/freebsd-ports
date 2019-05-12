@@ -26,6 +26,7 @@ USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=		aarch64 armv6 armv7 amd64 i386
 ONLY_FOR_ARCHS_REASON=	UEFI specification only supports little-endian processors
+BROKEN=		https://github.com/rhboot/pesign/issues/48
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/Make.defaults
