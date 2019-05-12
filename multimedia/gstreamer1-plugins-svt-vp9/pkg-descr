@@ -1,0 +1,4 @@
+This plugin provides svtav1enc element to GStreamer in order to use
+the Scalable Video Technology for VP9 Encoder.
+
+WWW: https://01.org/svt
