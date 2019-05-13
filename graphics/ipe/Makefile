@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipe
-PORTVERSION=	7.2.11
+PORTVERSION=	7.2.12
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	https://dl.bintray.com/otfried/generic/ipe/${PORTVERSION:R}/
@@ -52,8 +52,6 @@ post-patch:
 		 /-O2/s|^|#|' ${WRKSRC}/common.mak
 	@${REINPLACE_CMD} -e \
 		's|\([[:blank:]]\)=|\1?=|' ${WRKSRC}/config.mak
-	@${REINPLACE_CMD} -e \
-		'/%s/s|gnome-open|xdg-open|' ${WRKSRC}/ipe/lua/prefs.lua
 
 post-install:
 	@${LN} -sf ${DATADIR}/${PORTVERSION}/ipe.png \
