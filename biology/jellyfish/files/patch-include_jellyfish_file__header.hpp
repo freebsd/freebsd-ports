@@ -1,4 +1,4 @@
---- include/jellyfish/file_header.hpp.orig	2015-10-27 14:32:31 UTC
+--- include/jellyfish/file_header.hpp.orig	2018-04-16 12:46:09 UTC
 +++ include/jellyfish/file_header.hpp
 @@ -21,6 +21,8 @@
  #include <jellyfish/generic_file_header.hpp>
@@ -9,7 +9,7 @@
  namespace jellyfish {
  /// A header with jellyfish hash specific entries: size, matrix, etc.
  class file_header : public generic_file_header {
-@@ -42,7 +44,10 @@ public:
+@@ -42,7 +44,10 @@ class file_header : public generic_file_header { (publ
  
    RectangularBinaryMatrix matrix(int i = 1) const {
      std::string name("matrix");
@@ -20,8 +20,8 @@
 +    name += buff;
      const unsigned int r = root_[name]["r"].asUInt();
      const unsigned int c = root_[name]["c"].asUInt();
-     std::vector<uint64_t> raw(c, (uint64_t)0);
-@@ -53,7 +58,10 @@ public:
+     if(root_[name]["identity"].asBool())
+@@ -56,7 +61,10 @@ class file_header : public generic_file_header { (publ
  
    void matrix(const RectangularBinaryMatrix& m, int i = 1) {
      std::string name("matrix");
