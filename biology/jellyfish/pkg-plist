@@ -35,7 +35,9 @@ include/jellyfish-%%VER%%/jellyfish/mer_overlap_sequence_parser.hpp
 include/jellyfish-%%VER%%/jellyfish/mer_qual_iterator.hpp
 include/jellyfish-%%VER%%/jellyfish/misc.hpp
 include/jellyfish-%%VER%%/jellyfish/offsets_key_value.hpp
+include/jellyfish-%%VER%%/jellyfish/parser_common.hpp
 include/jellyfish-%%VER%%/jellyfish/rectangular_binary_matrix.hpp
+include/jellyfish-%%VER%%/jellyfish/sam_format.hpp
 include/jellyfish-%%VER%%/jellyfish/simple_circular_buffer.hpp
 include/jellyfish-%%VER%%/jellyfish/sorted_dumper.hpp
 include/jellyfish-%%VER%%/jellyfish/stdio_filebuf.hpp
