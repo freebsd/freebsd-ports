@@ -12745,3 +12745,6 @@ converters/hs-sandi||2019-05-09|Has expired: Haskell libraries are getting pushe
 devel/hs-gtk2hs-buildtools||2019-05-09|Removed, does not build with recent GHC and references deleted port
 lang/perl5.24||2019-05-09|Has expired: Support ends three years after .0 release, please upgrade to a more recent version of Perl
 sysutils/bareos-client-static|sysutils/bareos17-client-static|2019-05-09|Port was renamed
+cad/brlcad||2019-05-13|Has expired: Broken for more than 6 months
+misc/gnuit||2019-05-13|Has expired: Upstream stale for 10 years, no users it appears
+print/py-reportlab1|print/py-reportlab|2019-05-13|Has expired: consider using latest upstream version in print/py-reportlab
