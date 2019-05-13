@@ -4,7 +4,7 @@
 PORTNAME=	pxattr
 PORTVERSION=	2.1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.lesbonscomptes.com/pxattr/
+MASTER_SITES=	https://www.lesbonscomptes.com/pxattr/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Portable utility to work with file extended attributes
@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
-post-install-DOCS-on:
+do-install-DOCS-on:
 	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
