@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
 		${LOCALBASE}/lib/mlt/libmltqt.so:multimedia/mlt-qt5
 
-USES=		cmake desktop-file-utils gettext-tools pkgconfig \
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext-tools pkgconfig \
 		qt:5 shared-mime-info kde:5 tar:xz
 USE_GL=		gl glu
 USE_KDE=	archive attica auth bookmarks codecs completion config \
@@ -36,7 +36,10 @@ CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
 FFMPEG_SUFX=	# Currently empty.
 
 OPTIONS_DEFINE=	DVDWIZARD FILESHARE FREI0R LADSPA SCREENCAST V4L XINE DOCS
-OPTIONS_DEFAULT=DVDWIZARD FILESHARE FREI0R LADSPA SCREENCAST V4L XINE
+OPTIONS_DEFAULT=DVDWIZARD FILESHARE FREI0R SCREENCAST V4L XINE
+# As long as LADSPA -> audio/swhplugins is i386/amd64-only
+OPTIONS_DEFAULT_amd64=	LADSPA
+OPTIONS_DEFAULT_i386=	LADSPA
 OPTIONS_SUB=	yes
 
 DVDWIZARD_DESC=	DVD authoring via DVDAuthor and cdrtools
