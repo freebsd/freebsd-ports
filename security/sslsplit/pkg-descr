@@ -5,4 +5,4 @@ terminates SSL/TLS and initiates a new SSL/TLS connection to the original
 destination address, while logging all data transmitted. SSLsplit is intended
 to be useful for network forensics and penetration testing.
 
-WWW: http://www.roe.ch/SSLsplit
+WWW: https://www.roe.ch/SSLsplit
