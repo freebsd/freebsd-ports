@@ -2,6 +2,7 @@
 
 PORTNAME=	yoshimi
 DISTVERSION=	1.5.11
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/yoshimi/${DISTVERSION:C/([0-9]+\.[0-9]+).*/\1/}
 
