@@ -126,4 +126,5 @@
 %%WWWDIR%%/library/Grafana/Web/Controller/MonitoringAwareController.php
 %%WWWDIR%%/module.info
 %%WWWDIR%%/public/css/module.less
+%%WWWDIR%%/public/js/behavior/iframe.js
 %%WWWDIR%%/run.php
