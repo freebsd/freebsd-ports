@@ -11,6 +11,7 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Simple construction, analysis, and modification of binary data
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python zip
 USE_PYTHON=	autoplist concurrent distutils
@@ -20,11 +21,11 @@ PORTDOCS=	PKG-INFO README.rst release_notes.txt
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-regression-test: extract
+do-test:
 	@(cd ${WRKSRC}/test && ${PYTHON_CMD} -c 'import unittest, test_${PORTNAME}; unittest.main(test_${PORTNAME})')
 
 .include <bsd.port.mk>
