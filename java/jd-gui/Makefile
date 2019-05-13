@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jd-gui
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	java devel
 MASTER_SITES=	https://github.com/java-decompiler/jd-gui/releases/download/v${PORTVERSION}/:jar
@@ -29,7 +29,6 @@ PLIST_FILES=	bin/jd-gui \
 		share/pixmaps/jd-gui.png
 
 SUB_FILES=	jd-gui
-SUB_LIST=	JAVAJARDIR="${JAVAJARDIR}"
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jd-gui ${STAGEDIR}${PREFIX}/bin/jd-gui
