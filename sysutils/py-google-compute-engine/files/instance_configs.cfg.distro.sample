@@ -12,3 +12,6 @@ default_shell = /bin/sh
 [InstanceSetup]
 set_multiqueue = false
 optimize_local_ssd = false
+# google-cloud-sdk only supports python2 at the moment, disabling boto will
+# avoid issues when running this agent with python3.
+set_boto_config = false
