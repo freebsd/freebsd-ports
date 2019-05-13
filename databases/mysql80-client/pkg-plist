@@ -12,13 +12,13 @@ bin/mysqlshow
 bin/mysqlslap
 include/mysql/base64.h
 include/mysql/big_endian.h
-include/mysql/binary_log_types.h
 include/mysql/c_string_less.h
 include/mysql/crypt_genhash_impl.h
 include/mysql/decimal.h
 include/mysql/depth_first_search.h
 include/mysql/dur_prop.h
 include/mysql/errmsg.h
+include/mysql/field_types.h
 include/mysql/ft_global.h
 include/mysql/heap.h
 include/mysql/keycache.h
