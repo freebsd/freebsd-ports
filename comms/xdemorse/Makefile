@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
-USES=		gettext-tools gmake gnome localbase:ldflags pkgconfig tar:bz2
+USES=		compiler:c++11-lang gettext-tools gmake gnome \
+		localbase:ldflags pkgconfig tar:bz2
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 
