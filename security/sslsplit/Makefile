@@ -9,6 +9,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Transparent and scalable SSL/TLS interception
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libnet.so:net/libnet
