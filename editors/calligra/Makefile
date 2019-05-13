@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra
 DISTVERSION=	3.1.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -31,7 +31,7 @@ LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 		libvisio-0.1.so:textproc/libvisio01 \
 		libwpd-0.10.so:textproc/libwpd010 \
 		libwpg-0.3.so:graphics/libwpg03 \
-		libwps-0.3.so:textproc/libwps03
+		libwps-0.4.so:textproc/libwps
 
 BUILD_DEPENDS=	pstoedit:graphics/pstoedit
 RUN_DEPENDS=	pstoedit:graphics/pstoedit
@@ -39,9 +39,9 @@ RUN_DEPENDS=	pstoedit:graphics/pstoedit
 USES=		cmake cpe compiler:c++11-lib desktop-file-utils eigen:3 \
 		gettext iconv:translit jpeg kde:5 localbase:ldflags perl5 pkgconfig \
 		qt:5 shared-mime-info sqlite tar:xz
-USE_KDE=	activities archive auth bookmarks codecs completion config \
-		configwidgets coreaddons crash dbusaddons doctools ecm \
-		emoticons guiaddons i18n iconthemes init itemmodels itemviews \
+USE_KDE=	akonadicontacts activities archive auth bookmarks codecs completion \
+		config configwidgets contacts coreaddons crash dbusaddons doctools ecm \
+		emoticons guiaddons holidays i18n iconthemes init itemmodels itemviews \
 		jobwidgets js kcmutils kdelibs4support khtml kio \
 		kross notifications notifyconfig parts service solid sonnet \
 		texteditor textwidgets threadweaver unitconversion wallet \
