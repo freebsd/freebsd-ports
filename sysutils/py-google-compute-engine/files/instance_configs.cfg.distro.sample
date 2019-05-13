@@ -1,4 +1,6 @@
 [Accounts]
+gpasswd_add_cmd = pw groupmod {group} -m {user}
+gpasswd_remove_cmd = pw groupmod {group} -d {user}
 useradd_cmd = pw useradd {user} -m
 userdel_cmd = pw userdel {user} -r
 usermod_cmd = pw usermod {user} -G {groups}
