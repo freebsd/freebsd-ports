@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	azpainter
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.1.4
 CATEGORIES=	graphics
-MASTER_SITES=	OSDN/${PORTNAME}/70132
+MASTER_SITES=	OSDN/${PORTNAME}/71051
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	16-bit RGB full color painting application
@@ -33,7 +32,7 @@ post-patch-NLS-off:
 
 pre-build-NLS-on:
 	cd ${WRKSRC}/translation && ${CC} ${CFLAGS} -o mtrconv mtrconv.c
-.for lang in be ru zh_CN
+.for lang in be en ru uk zh_CN
 	cd ${WRKSRC}/translation && ./mtrconv ${lang} ../data/tr/${lang}.mtr
 .endfor
 
