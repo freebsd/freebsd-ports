@@ -22,5 +22,5 @@ then
 	exit 0
 else
 	echo Result is not the same as input, may be a problem
-	exit 0
+	exit 1
 fi
