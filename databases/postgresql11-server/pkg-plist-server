@@ -45,6 +45,8 @@ lib/postgresql/utf8_and_sjis.so
 lib/postgresql/utf8_and_sjis2004.so
 lib/postgresql/utf8_and_uhc.so
 lib/postgresql/utf8_and_win.so
+%%LLVM%%lib/postgresql/llvmjit.so
+%%LLVM%%lib/postgresql/llvmjit_types.bc
 %%LLVM%%lib/postgresql/bitcode/postgres.index.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/brin/brin.bc
 %%LLVM%%lib/postgresql/bitcode/postgres/access/brin/brin_inclusion.bc
@@ -750,6 +752,7 @@ lib/libpgcommon.a
 %%NLS%%share/locale/es/LC_MESSAGES/pg_test_fsync-11.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pg_test_timing-11.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pg_waldump-11.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pg_upgrade-11.mo
 %%NLS%%share/locale/es/LC_MESSAGES/plpgsql-11.mo
 %%NLS%%share/locale/es/LC_MESSAGES/postgres-11.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/initdb-11.mo
@@ -865,9 +868,15 @@ lib/libpgcommon.a
 %%NLS%%share/locale/vi/LC_MESSAGES/pg_waldump-11.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/plpgsql-11.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/initdb-11.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_archivecleanup-11.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_basebackup-11.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_controldata-11.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_ctl-11.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_resetwal-11.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_rewind-11.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_test_fsync-11.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_test_timing-11.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_upgrade-11.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/plpgsql-11.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/postgres-11.mo
 %%DATADIR%%/snowball_create.sql
