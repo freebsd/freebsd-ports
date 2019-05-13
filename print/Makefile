@@ -109,6 +109,7 @@
     SUBDIR += libotf
     SUBDIR += libpagemaker
     SUBDIR += libpaper
+    SUBDIR += libraqm
     SUBDIR += libspectre
     SUBDIR += lilypond
     SUBDIR += lilypond-devel
