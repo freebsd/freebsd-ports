@@ -227,6 +227,7 @@
     SUBDIR += milter-bogom
     SUBDIR += milter-callback
     SUBDIR += milter-greylist
+    SUBDIR += milter-manager
     SUBDIR += milter-regex
     SUBDIR += milter-skem
     SUBDIR += mime-construct
