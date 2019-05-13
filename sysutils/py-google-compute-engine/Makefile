@@ -2,7 +2,7 @@
 
 PORTNAME=	google-compute-engine
 DISTVERSION=	2.8.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -25,24 +25,22 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}distro>0:sysutils/py-distro@${PY_FLAVOR}
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
-WRKSRC_SUBDIR=  packages/python-google-compute-engine
+WRKSRC_SUBDIR=	packages/python-google-compute-engine
 
 NO_ARCH=	yes
-SHEBANG_FILES=	../google-compute-engine/src/usr/bin/google_set_multiqueue \
-		../google-compute-engine/src/usr/bin/google_optimize_local_ssd
+SHEBANG_FILES=	../google-compute-engine/src/usr/bin/google_optimize_local_ssd \
+		../google-compute-engine/src/usr/bin/google_set_multiqueue
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	GoogleCloudPlatform
 GH_PROJECT=	compute-image-packages
 GH_TAGNAME=	20190416
 
-USE_RC_SUBR=	google_instance_setup \
-		google_accounts_daemon \
-		google_clock_skew_daemon \
-		google_network_daemon \
-		google_startup
+USE_RC_SUBR=	google_accounts_daemon google_clock_skew_daemon \
+		google_instance_setup google_network_daemon google_startup
 
-SUB_LIST=	PYTHON_CMD="${PYTHON_CMD}"
+SUB_LIST=	PYTHON_CMD="${PYTHON_CMD}" \
+		PYTHON_VER="${PYTHON_VER}"
 REINPLACE_ARGS=	-i ''
 
 post-install:

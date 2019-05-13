@@ -24,7 +24,7 @@ load_rc_config "${name}"
 : ${google_startup_enable:="NO"}
 
 command_interpreter="%%PYTHON_CMD%%"
-command=%%PREFIX%%/bin/google_metadata_script_runner
+command=%%PREFIX%%/bin/google_metadata_script_runner-%%PYTHON_VER%%
 command_startup_args="--script-type startup"
 command_shutdown_args="--script-type shutdown"
 pidfile=/var/run/${name}.pid
