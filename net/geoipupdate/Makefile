@@ -42,8 +42,12 @@ post-extract:
 	${REINPLACE_CMD} -e '/make-man-pages.pl/d' ${WRKSRC}/Makefile
 
 do-build-MANPAGES-on:
-	${LOCALBASE}/bin/lowdown -s -Tman ${WRKSRC}/doc/GeoIP.conf.md  > ${WRKSRC}/build/GeoIP.conf.5
-	${LOCALBASE}/bin/lowdown -s -Tman ${WRKSRC}/doc/geoipupdate.md > ${WRKSRC}/build/geoipupdate.1
+	{ ${PRINTF} "title: geoipupdate\n\n" && ${CAT} ${WRKSRC}/doc/geoipupdate.md; } \
+		| ${LOCALBASE}/bin/lowdown -s -Tman \
+		| ${SED} -e '1s/7/1/' > ${WRKSRC}/build/geoipupdate.1
+	{ ${PRINTF} "title: GeoIP.conf\n\n" && ${CAT} ${WRKSRC}/doc/GeoIP.conf.md; } \
+		| ${LOCALBASE}/bin/lowdown -s -Tman \
+		| ${SED} -e '1s/7/5/' > ${WRKSRC}/build/GeoIP.conf.5
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GeoIP
