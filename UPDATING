@@ -9,8 +9,8 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of www/gitea
   AUTHOR: stb@lassitu.de
 
-  Gitea requires the addition of another secret to the config file in order to
-  start up.  Either manually add JWT_SECRET to the
+  Gitea requires the addition of another secret to the config file in order
+  to start up.  Either manually add JWT_SECRET to the
   ${PREFIX}/etc/gitea/conf/app.ini config file (see app.ini.sample), or allow
   Gitea to make the change for you by making the config file writable to the
   git user.
@@ -7201,7 +7201,7 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -o www/mod_python33 www/mod_python3
 
   portupgrade users:
-  # portugrade -o www/mod_python33 www/mod_python3
+  # portupgrade -o www/mod_python33 www/mod_python3
 
 20140414:
   AFFECTS: users of dmd 1.X and dmd 2.x.
@@ -10150,8 +10150,8 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -o security/libotr3 security/libotr
   # portmaster -r libotr
     or
-  # portugrade -o security/libotr3 security/libotr
-  # portugrade -r libotr
+  # portupgrade -o security/libotr3 security/libotr
+  # portupgrade -r libotr
     or
   # pkg set -o security/libotr:security/libotr3
 
@@ -13025,7 +13025,7 @@ or
 	# portmaster -o audio/musepack audio/libmpcdec
 	# portmaster -r musepack-
 
-  Portupgrade user:
+  Portupgrade users:
 	# env DISABLE_CONFLICTS=1 portupgrade -o audio/musepack -f libmpcdec-\*
 	# pkgdb -Ff
 	# portupgrade -rf musepack-\*
@@ -13524,7 +13524,7 @@ or
 	portmaster -o www/neon29 www/neon28
 	portmaster -r neon29-
 
-  Portupgrade user:
+  Portupgrade users:
 	env DISABLE_CONFLICTS=1 portupgrade -o www/neon29 -f neon28-\*
 	pkgdb -Ff
 	portupgrade -rf neon29-\*
