@@ -22,4 +22,6 @@ PORTDOCS=	README changes.txt lesskeys.rc most-fun.txt most.rc most.txt
 
 OPTIONS_DEFINE=	DOCS
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.mk>
