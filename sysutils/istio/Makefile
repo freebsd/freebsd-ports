@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	istio
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -22,9 +22,6 @@ GO_BUILDFLAGS=	-ldflags="-X istio.io/istio/pkg/version.buildVersion=${PORTVERSIO
 		-X istio.io/istio/pkg/version.buildDockerHub=docker.io/istio"
 
 post-install:
-.for data in consul gcp kubernetes
-	(cd ${WRKSRC}/install \
-		&& ${COPYTREE_SHARE} ${data} ${STAGEDIR}${DATADIR})
-.endfor
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} install ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
