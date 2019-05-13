@@ -9,19 +9,18 @@ CATEGORIES=	graphics
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	C library for efficient image processing and image analysis operations
 
-LICENSE_FILE=	leptonica-license.txt
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/leptonica-license.txt
 
 CONFLICTS=	leptonlib-[0-9]*
 
-USES=		autoreconf libtool pathfix pkgconfig
+USES=		autoreconf libtool localbase:ldflags pathfix pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DanBloomberg
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		BIN GIF JPEG JPEG2000 PNG TIFF WEBP ZLIB
@@ -54,7 +53,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/gnuplot:math/gnuplot
 TESTS+=	display
 .endif
 
-check regression-test test: build
+do-test:
 .for c in ${TESTS}
 	@cd ${WRKSRC}/prog; ${SETENV} \
 	LD_LIBRARY_PATH="${WRKSRC}/src/.libs:${LOCALBASE}/lib" \
