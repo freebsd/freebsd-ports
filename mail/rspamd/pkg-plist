@@ -203,6 +203,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/rspamadm/rescore.lua
 %%DATADIR%%/lualib/rspamadm/stat_convert.lua
 %%DATADIR%%/lualib/rspamadm/template.lua
+%%DATADIR%%/lualib/rspamadm/vault.lua
 %%DATADIR%%/lualib/tableshape.lua
 %%TORCH%%%%DATADIR%%/lualib/decisiontree/CartNode.lua
 %%TORCH%%%%DATADIR%%/lualib/decisiontree/CartTrainer.lua
@@ -543,6 +544,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/js/lib/footable.min.js
 %%DATADIR%%/www/js/lib/humanize.min.js
 %%DATADIR%%/www/js/lib/jquery-3.3.1.min.js
+%%DATADIR%%/www/js/lib/jquery.stickytabs.min.js
 %%DATADIR%%/www/js/lib/nprogress.min.js
 %%DATADIR%%/www/js/lib/require.min.js
 %%DATADIR%%/www/js/lib/visibility.min.js
