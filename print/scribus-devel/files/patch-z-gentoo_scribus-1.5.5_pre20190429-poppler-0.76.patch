@@ -1,0 +1,51 @@
+From aeea6a2ed4cb15ce8c35bb83066ef03e4e04b29b Mon Sep 17 00:00:00 2001
+From: Andreas Sturmlechner <asturm@gentoo.org>
+Date: Thu, 2 May 2019 00:08:12 +0200
+Subject: [PATCH] Fix build with poppler-0.76
+
+findPage(int num, int gen) -> findPage(const Ref ref)
+
+https://gitlab.freedesktop.org/poppler/poppler/commit/244c7d6926463b079b1f96e34d9e4451d352942e
+
+--- scribus/plugins/import/pdf/slaoutput.cpp.orig	2019-05-12 09:24:08.096711000 +0200
++++ scribus/plugins/import/pdf/slaoutput.cpp	2019-05-12 09:24:46.609452000 +0200
+@@ -516,8 +516,7 @@
+ 			{
+ 				if (dst->isPageRef())
+ 				{
+-					Ref dstr = dst->getPageRef();
+-					pagNum = pdfDoc->findPage(dstr.num, dstr.gen);
++					pagNum = pdfDoc->findPage(dst->getPageRef());
+ 				}
+ 				else
+ 					pagNum = dst->getPageNum();
+@@ -538,8 +537,7 @@
+ 					{
+ 						if (dstn->isPageRef())
+ 						{
+-							Ref dstr = dstn->getPageRef();
+-							pagNum = pdfDoc->findPage(dstr.num, dstr.gen);
++							pagNum = pdfDoc->findPage(dstn->getPageRef());
+ 						}
+ 						else
+ 							pagNum = dstn->getPageNum();
+@@ -1061,8 +1059,7 @@
+ 				{
+ 					if (dst->isPageRef())
+ 					{
+-						Ref dstr = dst->getPageRef();
+-						pagNum = pdfDoc->findPage(dstr.num, dstr.gen);
++						pagNum = pdfDoc->findPage(dst->getPageRef());
+ 					}
+ 					else
+ 						pagNum = dst->getPageNum();
+@@ -1085,8 +1082,7 @@
+ 						{
+ 							if (dstn->isPageRef())
+ 							{
+-								Ref dstr = dstn->getPageRef();
+-								pagNum = pdfDoc->findPage(dstr.num, dstr.gen);
++								pagNum = pdfDoc->findPage(dstn->getPageRef());
+ 							}
+ 							else
+ 								pagNum = dstn->getPageNum();
