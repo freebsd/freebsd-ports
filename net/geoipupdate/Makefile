@@ -28,11 +28,9 @@ MAKE_ENV+=	GOPATH=${WRKSRC} \
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 
-MANPAGES_BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
+MANPAGES_BUILD_DEPENDS=	lowdown:textproc/lowdown
 MANPAGES_PLIST_FILES=	man/man1/geoipupdate.1.gz \
 			man/man5/GeoIP.conf.5.gz
-MANPAGES_USES=		perl5
-MANPAGES_USE=		perl5:build
 
 PLIST_FILES=	bin/geoipupdate \
 		'@sample etc/GeoIP.conf.sample' \
@@ -41,9 +39,11 @@ PORTDOCS=	GeoIP.conf.md geoipupdate.md
 
 post-extract:
 	${MV} ${WRKSRC}/vendor ${WRKSRC}/src
-
-post-patch-MANPAGES-off:
 	${REINPLACE_CMD} -e '/make-man-pages.pl/d' ${WRKSRC}/Makefile
+
+do-build-MANPAGES-on:
+	${LOCALBASE}/bin/lowdown -s -Tman ${WRKSRC}/doc/GeoIP.conf.md  > ${WRKSRC}/build/GeoIP.conf.5
+	${LOCALBASE}/bin/lowdown -s -Tman ${WRKSRC}/doc/geoipupdate.md > ${WRKSRC}/build/geoipupdate.1
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GeoIP
