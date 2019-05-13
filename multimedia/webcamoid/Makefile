@@ -18,7 +18,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libpulse.so:audio/pulseaudio \
 		libv4l2.so:multimedia/libv4l
 
-USES=		gl gnome pkgconfig qmake qt:5
+USES=		compiler:c++11-lang gl gnome pkgconfig qmake qt:5
 USE_GITHUB=	yes
 USE_GNOME=	glib20
 USE_GSTREAMER1=	yes
