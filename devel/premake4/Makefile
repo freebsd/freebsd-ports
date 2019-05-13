@@ -10,19 +10,22 @@ DISTNAME=	premake-${PORTVERSION:S/.b/-beta/}-src
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Build script creation tool
 
-OPTIONS_DEFINE=	DOCS
-
-WRKSRC=		${WRKDIR}/premake-${PORTVERSION:S/.b/-beta/}
-BUILD_WRKSRC=	${WRKSRC}/build/gmake.unix
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gmake zip
 MAKE_ARGS=	ARCH="" CC="${CC}" CXX="${CXX}"
+
+WRKSRC=		${WRKDIR}/premake-${PORTVERSION:S/.b/-beta/}
+BUILD_WRKSRC=	${WRKSRC}/build/gmake.unix
 
 PLIST_FILES=	bin/premake4
 
 PORTDOCS=	CHANGES.txt LICENSE.txt README.txt
 
 MAKE_JOBS_UNSAFE=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-ldl||' ${BUILD_WRKSRC}/Premake4.make
@@ -39,7 +42,7 @@ do-install:
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/bin/release/premake4 ${STAGEDIR}${PREFIX}/bin
 
-regression-test: build
+do-test:
 	cd ${WRKSRC}/tests && ./test
 
 .include <bsd.port.mk>
