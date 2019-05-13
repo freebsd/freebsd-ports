@@ -1,9 +1,11 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 # $FreeBSD$
 
+# WARNING: Do not upgrade to 0.18.0, this breaks finance/electrum
+
 PORTNAME=	aiorpcX
-PORTVERSION=	0.18.0
-PORTREVISION=	1
+PORTVERSION=	0.17.0
+PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
