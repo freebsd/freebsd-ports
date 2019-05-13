@@ -21,7 +21,7 @@ load_rc_config "${name}"
 : ${google_instance_setup_enable:="NO"}
 
 command_interpreter="%%PYTHON_CMD%%"
-command=%%PREFIX%%/bin/${name}
+command=%%PREFIX%%/bin/${name}-%%PYTHON_VER%%
 pidfile=/var/run/${name}.pid
 
 run_rc_command "$1"
