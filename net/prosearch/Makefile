@@ -24,7 +24,7 @@ PLIST_SUB+=	SEARCHDIR=${SEARCHDIR} WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 #TODO user and group for crawler
 OPTIONS_DEFINE=	CRAWLER SAMBA RSYNC APACHE MOD_PERL2 MOD_FASTCGI \
-		DB MYSQL PGSQL PGPP SQLITE SPHINX
+		DB MYSQL PGSQL PGPP SQLITE
 OPTIONS_DEFAULT=	CRAWLER SAMBA APACHE DB MYSQL
 CRAWLER_DESC=		With crawler (nmap, p5-libwww)
 SAMBA_DESC=		crawler with SAMBA (file://)
@@ -34,7 +34,6 @@ MOD_PERL2_DESC=		With MOD_PERL2
 MOD_FASTCGI_DESC=	With MOD_FASTCGI
 DB_DESC=		With both database server and client
 PGPP_DESC=		postgres pure Perl connection driver
-SPHINX_DESC=		sphinx fulltext search engine
 #NGINX_DESC=		With web server (NGINX)
 
 .include <bsd.port.options.mk>
@@ -78,12 +77,6 @@ ${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:www/mod_perl2
 RUN_DEPENDS+=\
 ${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:www/mod_fastcgi	\
 p5-FCGI>=0:www/p5-FCGI
-.endif
-
-.if ${PORT_OPTIONS:MSPHINX}
-WITH_MYSQL=	client	# for dbi
-RUN_DEPENDS+=\
-searchd:textproc/sphinxsearch-devel
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
