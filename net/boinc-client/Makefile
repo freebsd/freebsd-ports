@@ -4,7 +4,7 @@
 PORTNAME=	boinc-client
 PORTVERSION=	7.8.6
 DISTVERSIONPREFIX=	client_release/7.8/
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 
 MAINTAINER=	ler@FreeBSD.org
@@ -56,7 +56,6 @@ NO_NET_INFO_DESC=	Do not send host address and name to servers
 
 OPTIONS_SUB=		yes
 
-MANAGER_USES=		iconv
 MANAGER_LIB_DEPENDS=	libnotify.so:devel/libnotify \
 			libfontconfig.so:x11-fonts/fontconfig \
 			libsqlite3.so:databases/sqlite3 \
@@ -64,7 +63,7 @@ MANAGER_LIB_DEPENDS=	libnotify.so:devel/libnotify \
 MANAGER_CONFIGURE_ON=	--with-sqlite3-prefix=${LOCALBASE}
 MANAGER_CONFIGURE_OFF=	--with-wx-config=false --without-x
 MANAGER_CONFIGURE_ENABLE=manager
-MANAGER_USES=		gnome
+MANAGER_USES=		gnome iconv
 MANAGER_USE=		GNOME=cairo,gdkpixbuf2,glib20,gtk20,pango \
 			XORG=xcb,x11,xext,xscrnsaver WX=3.0
 
