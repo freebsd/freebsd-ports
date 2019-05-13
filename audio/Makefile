@@ -567,6 +567,7 @@
     SUBDIR += nuvolaplayer
     SUBDIR += oaml
     SUBDIR += ocp
+    SUBDIR += ogg2mp3
     SUBDIR += openal-soft
     SUBDIR += opencore-amr
     SUBDIR += openspc
