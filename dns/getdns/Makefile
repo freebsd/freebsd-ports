@@ -20,7 +20,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libldns.so:dns/ldns \
 		libunbound.so:dns/unbound
 
-USES=		libtool pathfix ssl
+USES=		compiler:c11 libtool pathfix ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libidn=${LOCALBASE} --docdir=${DOCSDIR} \
