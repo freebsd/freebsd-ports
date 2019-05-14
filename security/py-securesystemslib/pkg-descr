@@ -1,0 +1,6 @@
+securesystemslib supports public-key and general-purpose cryptography, such
+as ECDSA, Ed25519, RSA, SHA256, SHA512, etc. Most of the cryptographic
+operations are performed by the cryptography and PyNaCl libraries, but
+verification of Ed25519 signatures can be done in pure Python.
+
+WWW: https://github.com/secure-systems-lab/securesystemslib
