@@ -3,6 +3,9 @@ bin/fdbcli
 bin/fdbrestore
 @sample etc/foundationdb/foundationdb.conf.sample
 lib/foundationdb/backup_agent/backup_agent
+lib/libfdbclient.a
+lib/libfdbrpc.a
+lib/libflow.a
 sbin/fdbmonitor
 sbin/fdbserver
 @dir(%%DB_USER%%,%%DB_GROUP%%,) %%DB_DIR%%
