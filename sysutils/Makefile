@@ -1003,6 +1003,7 @@
     SUBDIR += py-azure-cli-vm
     SUBDIR += py-bcfg2
     SUBDIR += py-bitrot
+    SUBDIR += py-borgmatic
     SUBDIR += py-cdmi
     SUBDIR += py-cpuinfo
     SUBDIR += py-croniter
@@ -1371,8 +1372,8 @@
     SUBDIR += u-boot-nanopi-a64
     SUBDIR += u-boot-nanopi-m1plus
     SUBDIR += u-boot-nanopi-neo
-    SUBDIR += u-boot-nanopi-neo2
     SUBDIR += u-boot-nanopi-neo-air
+    SUBDIR += u-boot-nanopi-neo2
     SUBDIR += u-boot-olimex-a20-som-evb
     SUBDIR += u-boot-olinuxino-lime
     SUBDIR += u-boot-olinuxino-lime2
