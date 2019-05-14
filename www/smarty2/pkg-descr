@@ -8,4 +8,4 @@ the  templates into  PHP  scripts,  eliminating the  need  to parse  the
 templates on every invocation. This  makes Smarty extremely scalable and
 managable for large application needs.
 
-WWW: http://www.smarty.net/
+WWW: https://www.smarty.net/
