@@ -2,13 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	sysutils
-MASTER_SITES=	https://downloadmirror.intel.com/28039/eng/:intel \
-		LOCAL/sbruno:amd
+MASTER_SITES=	LOCAL/sbruno:amd
 PKGNAMEPREFIX=	devcpu-
-DISTFILES=	microcode-20180807.tgz:intel \
-		amd64-microcode.20181214.tar.xz:amd
+DISTFILES=	amd64-microcode.20181214.tar.xz:amd
 
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Intel and AMD CPUs microcode updates
@@ -17,6 +15,11 @@ LICENSE=	EULA
 LICENSE_NAME=	Intel Software License Agreement
 LICENSE_FILE=	${FILESDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	intel
+GH_PROJECT=	Intel-Linux-Processor-Microcode-Data-Files
+GH_TAGNAME=	microcode-20190514
 
 ONLY_FOR_ARCHS=	amd64 i386
 NO_ARCH=	yes
@@ -29,7 +32,8 @@ USE_RC_SUBR=	microcode_update
 
 post-extract:
 	${CP} -p ${FILESDIR}/Makefile ${FILESDIR}/ucode-split.c ${WRKSRC}
-	${CAT} ${WRKSRC}/intel-ucode/* ${WRKSRC}/intel-ucode-with-caveats/* > ${WRKSRC}/intel-ucode.bin
+	${REINPLACE_CMD} 's|%%GH_TAGNAME%%|${GH_TAGNAME}|g' ${WRKSRC}/Makefile
+	${CAT} ${WRKSRC}/Intel-Linux-Processor-Microcode-Data-Files-${GH_TAGNAME}/intel-ucode/* ${WRKSRC}/Intel-Linux-Processor-Microcode-Data-Files-${GH_TAGNAME}/intel-ucode-with-caveats/* > ${WRKSRC}/intel-ucode.bin
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
