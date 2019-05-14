@@ -71,6 +71,7 @@ share/applications/audacity.desktop
 %%DATADIR%%/plug-ins/limiter.ny
 %%DATADIR%%/plug-ins/lowpass.ny
 %%DATADIR%%/plug-ins/notch.ny
+%%DATADIR%%/plug-ins/nyquist-plug-in-installer.ny
 %%DATADIR%%/plug-ins/pluck.ny
 %%DATADIR%%/plug-ins/rhythmtrack.ny
 %%DATADIR%%/plug-ins/rissetdrum.ny
