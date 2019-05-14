@@ -4,6 +4,7 @@
 PORTNAME=	rekall-core
 DISTVERSION=	1.7.2rc1-52
 DISTVERSIONSUFFIX=	-g0cba831
+PORTREVISION=	1
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -23,7 +24,7 @@ RUN_DEPENDS=	cabextract:archivers/cabextract \
 		${PYTHON_PKGNAMEPREFIX}parsedatetime>=2.4:devel/py-parsedatetime@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyaff4>=0.25:security/py-pyaff4@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycryptodome>=3.4.7:security/py-pycryptodome@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycryptodomex>=3.4.7:security/py-pycryptodomex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyelftools>=0.24:devel/py-pyelftools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.1.5:devel/py-pyparsing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.6.1:devel/py-dateutil@${PY_FLAVOR} \
@@ -47,5 +48,12 @@ WRKSRC_SUBDIR=	rekall-core
 .include <bsd.port.pre.mk>
 
 PYDISTUTILS_INSTALLARGS+=	--install-data=${PYTHON_SITELIBDIR}
+
+post-patch:
+	${REINPLACE_CMD} "s|from Crypto|from Cryptodome|" \
+		${WRKSRC}/rekall/compatibility.py \
+		${WRKSRC}/rekall/plugins/windows/mimikatz.py \
+		${WRKSRC}/rekall/plugins/windows/registry/hashdump.py \
+		${WRKSRC}/rekall/plugins/windows/registry/lsasecrets.py
 
 .include <bsd.port.post.mk>

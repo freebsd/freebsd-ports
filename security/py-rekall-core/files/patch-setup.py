@@ -26,7 +26,7 @@
 -    'pytsk3==20170802',
 -    'pytz==2017.3',
 -    'rekall-capstone==3.0.5.post2',
-+    'pycryptodome>=3.4.7',
++    'pycryptodomex>=3.4.7',
 +    'pyelftools>=0.24',
 +    'pyparsing>=2.1.5',
 +    'python-dateutil>=2.6.1',
