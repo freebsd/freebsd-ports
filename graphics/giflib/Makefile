@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	giflib
-PORTVERSION=	5.1.4
+PORTVERSION=	5.1.8
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}
@@ -15,37 +15,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	ghead:sysutils/coreutils
 
-USES=		tar:bzip2 libtool
-GNU_CONFIGURE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
+CFLAGS+=	-DHAVE_REALLOCARRAY
+MAKE_ARGS=	CC=${CC} LDFLAGS="${LDFLAGS}" MANDIR=${MANPREFIX}/man OFLAGS="${CFLAGS}"
 
-OPTIONS_DEFINE=	DOCBOOK DOCS
-OPTIONS_SUB=	yes
-DOCBOOK_DESC=	Generate API documentation (requires DOCS)
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check-TESTS
+OPTIONS_DEFINE=	DOCS
+TEST_TARGET=	check
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCBOOK} && ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	xmlto:textproc/xmlto \
-		docbook-xml>0:textproc/docbook-xml
-.else
-CONFIGURE_ENV+=	have_xmlto=no
-.endif
-
-.if ${OPSYS} == FreeBSD
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-unbundle-reallocarray
-.elif ${OPSYS} == DragonFly
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-hide-reallocarray-dfly
-.endif
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! ( -name Makefile -o -name *\.1 -o -name *\.in -o -name *\.xml )"
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/man/man1/
-.if ${PORT_OPTIONS:MDOCBOOK} && ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${STAGEDIR}${DOCSDIR}/
-.endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} --strip-unneeded ${STAGEDIR}${PREFIX}/lib/libgif.so.7.1.0
 
 .include <bsd.port.mk>

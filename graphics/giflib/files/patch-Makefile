@@ -1,0 +1,46 @@
+--- Makefile.orig	2019-03-17 16:33:02 UTC
++++ Makefile
+@@ -9,7 +9,7 @@
+ CC    = gcc
+ OFLAGS = -O0 -g
+ #OFLAGS  = -O2 -fwhole-program
+-CFLAGS  = -std=gnu99 -fPIC -Wall -Wno-format-truncation $(OFLAGS)
++CFLAGS  = -std=gnu99 -fPIC -Wall $(OFLAGS)
+ LDFLAGS = -g
+ 
+ SHELL = /bin/sh
+@@ -58,15 +58,21 @@ UTILS = $(INSTALLABLE) \
+ 	gifsponge \
+ 	gifwedge
+ 
+-LDLIBS=libgif.a -lm
++LDLIBS=-Wl,-rpath -Wl,$(LIBDIR) -lm
+ 
+ all: libgif.so libgif.a $(UTILS)
+ 	$(MAKE) -C doc
+ 
+-$(UTILS):: libgif.a
++$(UTILS):: libgif.so
+ 
+-libgif.so: $(OBJECTS) $(HEADERS)
+-	$(CC) $(CFLAGS) -shared $(OFLAGS) -Wl,-soname -Wl,libgif.so.$(LIBMAJOR) -o libgif.so $(OBJECTS)
++libgif.so.$(LIBVER): $(OBJECTS) $(HEADERS)
++	$(CC) -shared $(LDFLAGS) -Wl,-soname -Wl,libgif.so.$(LIBMAJOR) -o $@ $(OBJECTS)
++
++libgif.so.$(LIBMAJOR): libgif.so.$(LIBVER)
++	ln -s $< $@
++
++libgif.so: libgif.so.$(LIBMAJOR)
++	ln -s $< $@
+ 
+ libgif.a: $(OBJECTS) $(HEADERS)
+ 	$(AR) rcs libgif.a $(OBJECTS)
+@@ -92,7 +98,7 @@ install-include:
+ install-lib:
+ 	$(INSTALL) -d "$(DESTDIR)$(LIBDIR)"
+ 	$(INSTALL) -m 644 libgif.a "$(DESTDIR)$(LIBDIR)/libgif.a"
+-	$(INSTALL) -m 755 libgif.so "$(DESTDIR)$(LIBDIR)/libgif.so.$(LIBVER)"
++	$(INSTALL) -m 755 libgif.so.$(LIBVER) "$(DESTDIR)$(LIBDIR)/libgif.so.$(LIBVER)"
+ 	ln -sf libgif.so.$(LIBVER) "$(DESTDIR)$(LIBDIR)/libgif.so.$(LIBMAJOR)"
+ 	ln -sf libgif.so.$(LIBMAJOR) "$(DESTDIR)$(LIBDIR)/libgif.so"
+ install-man:
