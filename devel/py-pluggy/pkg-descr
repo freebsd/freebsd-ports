@@ -1,5 +1,5 @@
 pluggy is the crystallized core of plugin management and hook calling for
-pytest. It enables 500+ plugins to extend and customize pytest's defaut
+pytest. It enables 500+ plugins to extend and customize pytest's default
 behaviour. Even pytest itself is composed as a set of pluggy plugins
 which are invoked in sequence according to a well defined set of protocols.
 
