@@ -20,13 +20,13 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|gcc|$${CC}| ; \
+		 s@^LDOPT=.*@& -z notext@ ; \
 		 /strip/d' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fc ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/fastcrc.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/libfcrc.so.1 ${STAGEDIR}${PREFIX}/lib
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfcrc.so.1
+	${INSTALL_LIB} ${WRKSRC}/libfcrc.so.1 ${STAGEDIR}${PREFIX}/lib
 	${LN} -fs libfcrc.so.1 ${STAGEDIR}${PREFIX}/lib/libfcrc.so
 
 do-install-DOCS-on:
