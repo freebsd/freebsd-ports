@@ -2,6 +2,7 @@
 
 PORTNAME=	marble
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVIWION=	1
 CATEGORIES=	astro kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,8 +17,8 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
 		kde:5 qt:5 tar:xz
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		crash doctools ecm i18n jobwidgets kio newstuff package parts \
-		plasma-framework runner service sonnet textwidgets wallet \
-		widgetsaddons xmlgui
+		plasma-framework plasma-workspace-wallpapers runner service \
+		sonnet textwidgets wallet widgetsaddons xmlgui
 USE_QT=		concurrent core dbus declarative designer gui location network opengl \
 		phonon4 printsupport script sql svg webchannel widgets xml \
 		buildtools_build qmake_build
