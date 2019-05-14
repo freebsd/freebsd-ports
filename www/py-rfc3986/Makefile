@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rfc3986
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,6 +17,7 @@ GH_ACCOUNT=	sigmavirus24
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
