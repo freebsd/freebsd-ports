@@ -6,6 +6,7 @@ lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.Safe.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.View.PathHelper.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.View.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Html.beam
+lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Ignore.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.InvalidConfigError.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.InvalidOptionError.beam
 lib/elixir/lib/excoveralls/ebin/Elixir.ExCoveralls.Local.Count.beam
@@ -48,6 +49,7 @@ lib/elixir/lib/excoveralls/lib/excoveralls/exceptions.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/html.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/html/safe.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/html/view.ex
+lib/elixir/lib/excoveralls/lib/excoveralls/ignore.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/json.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/local.ex
 lib/elixir/lib/excoveralls/lib/excoveralls/path_reader.ex
