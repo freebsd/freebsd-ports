@@ -100,6 +100,7 @@
     SUBDIR += gawk
     SUBDIR += gcc
     SUBDIR += gcc-ecj45
+    SUBDIR += gcc10-devel
     SUBDIR += gcc48
     SUBDIR += gcc5
     SUBDIR += gcc6
@@ -109,7 +110,6 @@
     SUBDIR += gcc8
     SUBDIR += gcc8-devel
     SUBDIR += gcc9-devel
-    SUBDIR += gcc10-devel
     SUBDIR += gforth
     SUBDIR += ghc
     SUBDIR += ghc843
