@@ -44,7 +44,6 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dsiteman3dir=${SITE_MAN3} \
 	-Dsiteman1dir=${SITE_MAN1} \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl -Dusenm=n \
-	-Accflags='-DUSE_THREAD_SAFE_LOCALE' \
 	-Dcc="${CC}" -Duseshrplib -Dinc_version_list=none \
 	-Dcf_by=${MAINTAINER:C,@.*,,} -Dcf_email=${MAINTAINER} \
 	-Dcf_time="`${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`"
@@ -168,6 +167,10 @@ _PERL5_DEFAULT_FILE=	/tmp/PERL5_DEFAULT
 # Get the default version, and possibly, overwrite it.
 .include <bsd.port.options.mk>
 .sinclude "${_PERL5_DEFAULT_FILE}"
+
+.if ${OSVERSION} >= 1200004
+CONFIGURE_ARGS+=	-Accflags='-DUSE_THREAD_SAFE_LOCALE'
+.endif
 
 # if this port is default due PERL5_DEFAULT
 # change PKGNAME to reflect this
