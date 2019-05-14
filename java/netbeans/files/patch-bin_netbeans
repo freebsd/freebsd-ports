@@ -1,19 +1,6 @@
---- bin/netbeans.orig	2018-12-17 03:32:36 UTC
+--- bin/netbeans.orig	2019-03-19 21:31:30 UTC
 +++ bin/netbeans
-@@ -136,7 +136,11 @@ heap_size () {
-         mem=`/usr/sbin/sysctl hw.memsize | tr -d [:alpha:][:space:].:`
-         mem=`expr $mem / 1048576`
-         ;;
--        *) 
-+    FreeBSD*)
-+        mem=`/sbin/sysctl -n hw.realmem`
-+        mem=`expr $mem / 1048576`
-+	;;
-+    *) 
-         ;;
-     esac
-     if [ -z "$mem" ] ; then
-@@ -204,6 +208,7 @@ case "`uname`" in
+@@ -166,6 +166,7 @@ case "`uname`" in
              --jdkhome '"$netbeans_jdkhome"' \
              --branding nb \
              --clusters '"$netbeans_clusters"' \
