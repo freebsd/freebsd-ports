@@ -63,11 +63,12 @@ USES+=		python
 
 .include <bsd.port.pre.mk>
 
+.if ${PORT_OPTIONS:MIPYTHON}
 .if ${FLAVOR:Mpy27}
-IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython5>0:devel/ipython5@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipython5>0:devel/ipython5@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR}
 .endif
-.if ${FLAVOR:Mpy3*}
-IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR}
 .endif
 
 post-patch:
