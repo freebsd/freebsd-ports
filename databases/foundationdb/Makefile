@@ -3,6 +3,7 @@
 
 PORTNAME=	foundationdb
 PORTVERSION=	6.1.6
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -45,9 +46,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/fdbbackup ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/fdbcli ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf ${PREFIX}/bin/fdbbackup ${STAGEDIR}${PREFIX}/bin/fdbrestore
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libfdbclient.a ${STAGEDIR}/${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libfdbrpc.a ${STAGEDIR}/${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libflow.a ${STAGEDIR}/${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/libfdbclient.a ${STAGEDIR}/${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/libfdbrpc.a ${STAGEDIR}/${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/libflow.a ${STAGEDIR}/${PREFIX}/lib
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/foundationdb
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/foundationdb/backup_agent
 	${LN} -sf ${PREFIX}/bin/fdbbackup ${STAGEDIR}${PREFIX}/lib/foundationdb/backup_agent/backup_agent
