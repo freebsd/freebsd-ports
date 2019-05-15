@@ -12748,3 +12748,5 @@ sysutils/bareos-client-static|sysutils/bareos17-client-static|2019-05-09|Port wa
 cad/brlcad||2019-05-13|Has expired: Broken for more than 6 months
 misc/gnuit||2019-05-13|Has expired: Upstream stale for 10 years, no users it appears
 print/py-reportlab1|print/py-reportlab|2019-05-13|Has expired: consider using latest upstream version in print/py-reportlab
+sysutils/djmount||2019-05-15|Has expired: Unmaintained upstream and does not build with upnp >= 1.8
+multimedia/vdr-plugin-upnp||2019-05-15|Has expired: Unmaintained upstream and does not build with upnp >= 1.8
