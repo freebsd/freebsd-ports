@@ -12751,3 +12751,4 @@ print/py-reportlab1|print/py-reportlab|2019-05-13|Has expired: consider using la
 sysutils/djmount||2019-05-15|Has expired: Unmaintained upstream and does not build with upnp >= 1.8
 multimedia/vdr-plugin-upnp||2019-05-15|Has expired: Unmaintained upstream and does not build with upnp >= 1.8
 databases/puppetdb-cli|databases/rubygem-puppetdb_cli|2019-05-15|puppetdb-cli was rewritten in Ruby
+devel/modules2tuple|ports-mgmt/modules2tuple|2019-05-15|Moved to ports-mgmt category
