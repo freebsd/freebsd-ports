@@ -41,6 +41,7 @@
 %%SITE_PERL%%/Config/Model/SimpleUI.pm
 %%SITE_PERL%%/Config/Model/TermUI.pm
 %%SITE_PERL%%/Config/Model/TreeSearcher.pm
+%%SITE_PERL%%/Config/Model/TypeConstraints.pm
 %%SITE_PERL%%/Config/Model/Utils/GenClassPod.pm
 %%SITE_PERL%%/Config/Model/Value.pm
 %%SITE_PERL%%/Config/Model/Value/LayeredInclude.pm
@@ -112,6 +113,7 @@
 %%PERL5_MAN3%%/Config::Model::SimpleUI.3.gz
 %%PERL5_MAN3%%/Config::Model::TermUI.3.gz
 %%PERL5_MAN3%%/Config::Model::TreeSearcher.3.gz
+%%PERL5_MAN3%%/Config::Model::TypeConstraints.3.gz
 %%PERL5_MAN3%%/Config::Model::Utils::GenClassPod.3.gz
 %%PERL5_MAN3%%/Config::Model::Value.3.gz
 %%PERL5_MAN3%%/Config::Model::Value::LayeredInclude.3.gz
