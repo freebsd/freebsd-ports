@@ -19,6 +19,7 @@
     SUBDIR += fd
     SUBDIR += fish
     SUBDIR += flash
+    SUBDIR += git-prompt.zsh
     SUBDIR += heirloom-sh
     SUBDIR += ibsh
     SUBDIR += ion
