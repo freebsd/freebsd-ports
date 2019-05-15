@@ -3,7 +3,7 @@
 PORTNAME=	modules2tuple
 PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
-CATEGORIES=	devel
+CATEGORIES=	ports-mgmt
 
 MAINTAINER=	dg@syrec.org
 COMMENT=	Generate GH_TUPLE from modules.txt
