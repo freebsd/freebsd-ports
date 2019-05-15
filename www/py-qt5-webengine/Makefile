@@ -39,6 +39,8 @@ API_CONFIGURE_OFF=	--no-qsci-api
 API_LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 DEBUG_CONFIGURE_ON=	--debug --trace
 
+PLIST_SUB=		PYQT_WEBENGINE_VERSION=${DISTVERSION}
+
 post-install-DEBUG-off:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/PyQt5/QtWebEngine*.so
 
