@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-mezzanine
-DISTVERSION=	4.2.3-148
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-g12114051
+PORTVERSION=	4.3.1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.8:www/py-django111@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-contrib-comments>0:www/py-django-contrib-comments@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-mezzanine-filebrowser>=0.4.6:www/py-django-mezzanine-filebrowser@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-mezzanine-grappelli>=0.4.5:www/py-django-mezzanine-grappelli@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-mezzanine-filebrowser>=0.5.0:www/py-django-mezzanine-filebrowser@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-mezzanine-grappelli>=0.5.0:www/py-django-mezzanine-grappelli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzlocal>=1.0:devel/py-tzlocal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=2.0:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.5.3:www/py-beautifulsoup@${PY_FLAVOR} \
@@ -30,10 +28,12 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pep8>=1.4.1:devel/pep8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>=0.6.1:devel/py-pyflakes@${PY_FLAVOR}
 
 USES=		gettext python
-USE_PYTHON=	autoplist concurrent distutils
 USE_GITHUB=	yes
+USE_PYTHON=	autoplist concurrent distutils
+
 GH_ACCOUNT=	stephenmcd
 GH_PROJECT=	mezzanine
+
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
