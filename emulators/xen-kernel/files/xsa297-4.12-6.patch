@@ -1,0 +1,134 @@
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Subject: x86/spec-ctrl: Infrastructure to use VERW to flush pipeline buffers
+
+Three synthetic features are introduced, as we need individual control of
+each, depending on circumstances.  A later change will enable them at
+appropriate points.
+
+The verw_sel field doesn't strictly need to live in struct cpu_info.  It lives
+there because there is a convenient hole it can fill, and it reduces the
+complexity of the SPEC_CTRL_EXIT_TO_{PV,HVM} assembly by avoiding the need for
+any temporary stack maintenance.
+
+This is part of XSA-297, CVE-2018-12126, CVE-2018-12127, CVE-2018-12130, CVE-2019-11091.
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+
+diff --git a/xen/arch/x86/x86_64/asm-offsets.c b/xen/arch/x86/x86_64/asm-offsets.c
+index 052228c..33930ce 100644
+--- a/xen/arch/x86/x86_64/asm-offsets.c
++++ b/xen/arch/x86/x86_64/asm-offsets.c
+@@ -110,6 +110,7 @@ void __dummy__(void)
+     BLANK();
+ 
+     OFFSET(CPUINFO_guest_cpu_user_regs, struct cpu_info, guest_cpu_user_regs);
++    OFFSET(CPUINFO_verw_sel, struct cpu_info, verw_sel);
+     OFFSET(CPUINFO_current_vcpu, struct cpu_info, current_vcpu);
+     OFFSET(CPUINFO_cr4, struct cpu_info, cr4);
+     OFFSET(CPUINFO_xen_cr3, struct cpu_info, xen_cr3);
+diff --git a/xen/include/asm-x86/cpufeatures.h b/xen/include/asm-x86/cpufeatures.h
+index 0c06274..ba55245 100644
+--- a/xen/include/asm-x86/cpufeatures.h
++++ b/xen/include/asm-x86/cpufeatures.h
+@@ -31,3 +31,6 @@ XEN_CPUFEATURE(SC_RSB_PV,       (FSCAPINTS+0)*32+18) /* RSB overwrite needed for
+ XEN_CPUFEATURE(SC_RSB_HVM,      (FSCAPINTS+0)*32+19) /* RSB overwrite needed for HVM */
+ XEN_CPUFEATURE(SC_MSR_IDLE,     (FSCAPINTS+0)*32+21) /* (SC_MSR_PV || SC_MSR_HVM) && default_xen_spec_ctrl */
+ XEN_CPUFEATURE(XEN_LBR,         (FSCAPINTS+0)*32+22) /* Xen uses MSR_DEBUGCTL.LBR */
++XEN_CPUFEATURE(SC_VERW_PV,      (FSCAPINTS+0)*32+23) /* VERW used by Xen for PV */
++XEN_CPUFEATURE(SC_VERW_HVM,     (FSCAPINTS+0)*32+24) /* VERW used by Xen for HVM */
++XEN_CPUFEATURE(SC_VERW_IDLE,    (FSCAPINTS+0)*32+25) /* VERW used by Xen for idle */
+diff --git a/xen/include/asm-x86/current.h b/xen/include/asm-x86/current.h
+index 5bd64b2..f3508c3 100644
+--- a/xen/include/asm-x86/current.h
++++ b/xen/include/asm-x86/current.h
+@@ -38,6 +38,7 @@ struct vcpu;
+ struct cpu_info {
+     struct cpu_user_regs guest_cpu_user_regs;
+     unsigned int processor_id;
++    unsigned int verw_sel;
+     struct vcpu *current_vcpu;
+     unsigned long per_cpu_offset;
+     unsigned long cr4;
+diff --git a/xen/include/asm-x86/spec_ctrl.h b/xen/include/asm-x86/spec_ctrl.h
+index 20ee112..ba03bb4 100644
+--- a/xen/include/asm-x86/spec_ctrl.h
++++ b/xen/include/asm-x86/spec_ctrl.h
+@@ -60,6 +60,13 @@ static inline void init_shadow_spec_ctrl_state(void)
+     info->shadow_spec_ctrl = 0;
+     info->xen_spec_ctrl = default_xen_spec_ctrl;
+     info->spec_ctrl_flags = default_spec_ctrl_flags;
++
++    /*
++     * For least latency, the VERW selector should be a writeable data
++     * descriptor resident in the cache.  __HYPERVISOR_DS32 shares a cache
++     * line with __HYPERVISOR_CS, so is expected to be very cache-hot.
++     */
++    info->verw_sel = __HYPERVISOR_DS32;
+ }
+ 
+ /* WARNING! `ret`, `call *`, `jmp *` not safe after this call. */
+@@ -80,6 +87,22 @@ static always_inline void spec_ctrl_enter_idle(struct cpu_info *info)
+     alternative_input("", "wrmsr", X86_FEATURE_SC_MSR_IDLE,
+                       "a" (val), "c" (MSR_SPEC_CTRL), "d" (0));
+     barrier();
++
++    /*
++     * Microarchitectural Store Buffer Data Sampling:
++     *
++     * On vulnerable systems, store buffer entries are statically partitioned
++     * between active threads.  When entering idle, our store buffer entries
++     * are re-partitioned to allow the other threads to use them.
++     *
++     * Flush the buffers to ensure that no sensitive data of ours can be
++     * leaked by a sibling after it gets our store buffer entries.
++     *
++     * Note: VERW must be encoded with a memory operand, as it is only that
++     * form which causes a flush.
++     */
++    alternative_input("", "verw %[sel]", X86_FEATURE_SC_VERW_IDLE,
++                      [sel] "m" (info->verw_sel));
+ }
+ 
+ /* WARNING! `ret`, `call *`, `jmp *` not safe before this call. */
+@@ -98,6 +121,17 @@ static always_inline void spec_ctrl_exit_idle(struct cpu_info *info)
+     alternative_input("", "wrmsr", X86_FEATURE_SC_MSR_IDLE,
+                       "a" (val), "c" (MSR_SPEC_CTRL), "d" (0));
+     barrier();
++
++    /*
++     * Microarchitectural Store Buffer Data Sampling:
++     *
++     * On vulnerable systems, store buffer entries are statically partitioned
++     * between active threads.  When exiting idle, the other threads store
++     * buffer entries are re-partitioned to give us some.
++     *
++     * We now have store buffer entries with stale data from sibling threads.
++     * A flush if necessary will be performed on the return to guest path.
++     */
+ }
+ 
+ #endif /* __ASSEMBLY__ */
+diff --git a/xen/include/asm-x86/spec_ctrl_asm.h b/xen/include/asm-x86/spec_ctrl_asm.h
+index 803f7ce..c60093b 100644
+--- a/xen/include/asm-x86/spec_ctrl_asm.h
++++ b/xen/include/asm-x86/spec_ctrl_asm.h
+@@ -241,12 +241,16 @@
+ /* Use when exiting to PV guest context. */
+ #define SPEC_CTRL_EXIT_TO_PV                                            \
+     ALTERNATIVE "",                                                     \
+-        DO_SPEC_CTRL_EXIT_TO_GUEST, X86_FEATURE_SC_MSR_PV
++        DO_SPEC_CTRL_EXIT_TO_GUEST, X86_FEATURE_SC_MSR_PV;              \
++    ALTERNATIVE "", __stringify(verw CPUINFO_verw_sel(%rsp)),           \
++        X86_FEATURE_SC_VERW_PV
+ 
+ /* Use when exiting to HVM guest context. */
+ #define SPEC_CTRL_EXIT_TO_HVM                                           \
+     ALTERNATIVE "",                                                     \
+-        DO_SPEC_CTRL_EXIT_TO_GUEST, X86_FEATURE_SC_MSR_HVM
++        DO_SPEC_CTRL_EXIT_TO_GUEST, X86_FEATURE_SC_MSR_HVM;             \
++    ALTERNATIVE "", __stringify(verw CPUINFO_verw_sel(%rsp)),           \
++        X86_FEATURE_SC_VERW_HVM
+ 
+ /*
+  * Use in IST interrupt/exception context.  May interrupt Xen or PV context.
