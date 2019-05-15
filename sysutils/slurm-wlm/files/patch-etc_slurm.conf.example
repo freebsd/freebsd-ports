@@ -1,0 +1,78 @@
+--- etc/slurm.conf.example.orig	2018-10-26 20:10:17 UTC
++++ etc/slurm.conf.example
+@@ -8,8 +8,8 @@
+ #
+ # See the slurm.conf man page for more information.
+ #
+-ClusterName=linux
+-ControlMachine=linux0
++ClusterName=beastie
++ControlMachine=beastie0
+ #ControlAddr=
+ #BackupController=
+ #BackupAddr=
+@@ -21,12 +21,12 @@ SlurmdPort=6818
+ AuthType=auth/munge
+ #JobCredentialPrivateKey=
+ #JobCredentialPublicCertificate=
+-StateSaveLocation=/var/spool/slurm/ctld
+-SlurmdSpoolDir=/var/spool/slurm/d
++StateSaveLocation=/var/run/slurm
++SlurmdSpoolDir=/var/spool/slurmd
+ SwitchType=switch/none
+ MpiDefault=none
+-SlurmctldPidFile=/var/run/slurmctld.pid
+-SlurmdPidFile=/var/run/slurmd.pid
++SlurmctldPidFile=/var/run/slurm/slurmctld.pid
++SlurmdPidFile=/var/run/slurm/slurmd.pid
+ ProctrackType=proctrack/pgid
+ #PluginDir=
+ #FirstJobId=
+@@ -42,7 +42,7 @@ ReturnToService=0
+ #SrunEpilog=
+ #TaskProlog=
+ #TaskEpilog=
+-#TaskPlugin=
++TaskPlugin=task/none
+ #TrackWCKey=no
+ #TreeWidth=50
+ #TmpFS=
+@@ -57,7 +57,8 @@ KillWait=30
+ Waittime=0
+ #
+ # SCHEDULING
+-SchedulerType=sched/backfill
++SchedulerType=sched/builtin
++SchedulerParameters=defer
+ #SchedulerAuth=
+ #SelectType=select/linear
+ FastSchedule=1
+@@ -72,22 +73,22 @@ FastSchedule=1
+ #
+ # LOGGING
+ SlurmctldDebug=3
+-SlurmctldLogFile=/var/log/slurmctld.log
++SlurmctldLogFile=/var/log/slurm/slurmctld.log
+ SlurmdDebug=3
+-SlurmdLogFile=/var/log/slurmd.log
++SlurmdLogFile=/var/log/slurm/slurm_accounting.log
+ JobCompType=jobcomp/none
+ #JobCompLoc=
+ #
+ # ACCOUNTING
+-#JobAcctGatherType=jobacct_gather/linux
++JobAcctGatherType=jobacct_gather/none
+ #JobAcctGatherFrequency=30
+ #
+-#AccountingStorageType=accounting_storage/slurmdbd
++AccountingStorageType=accounting_storage/filetxt
+ #AccountingStorageHost=
+-#AccountingStorageLoc=
++AccountingStorageLoc=/var/log/slurm/slurm_accounting.log
+ #AccountingStoragePass=
+ #AccountingStorageUser=
+ #
+ # COMPUTE NODES
+-NodeName=linux[1-32] Procs=1 State=UNKNOWN
++NodeName=beastie[1-32] Procs=1 State=UNKNOWN
+ PartitionName=debug Nodes=ALL Default=YES MaxTime=INFINITE State=UP
