@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	vcrpy
-PORTVERSION=	1.7.4
-DISTVERSIONPREFIX=	v.
+PORTVERSION=	2.0.1
 CATEGORIES=	devel www python
-#MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
@@ -17,29 +16,25 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>0:devel/py-wrapt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.5:devel/py-six@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-localserver>0:devel/py-pytest-localserver@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
 
-USE_GITHUB=	yes
-
-GH_ACCOUNT=	kevin1024
-
 NO_ARCH=	yes
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3300
+.if ${PYTHON_VER} < 3.3
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}contextlib2>0:devel/py-contextlib2@${PY_FLAVOR}
 .endif
 
-post-patch:
-	${FIND} ${WRKSRC} -name __pycache__ -type d -exec ${RM} -r {} +
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+.if ${PYTHON_VER} >= 3.4
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}yarl>0:www/py-yarl@${PY_FLAVOR}
+.endif
 
 .include <bsd.port.post.mk>
