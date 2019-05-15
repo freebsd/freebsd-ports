@@ -432,6 +432,7 @@
     SUBDIR += man2html
     SUBDIR += markdown
     SUBDIR += markdown-mode.el
+    SUBDIR += markdownfmt
     SUBDIR += mathml-xsd
     SUBDIR += mdocml
     SUBDIR += meld
