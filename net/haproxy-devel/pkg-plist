@@ -4,6 +4,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/51Degrees-device-detection.txt
 %%PORTDOCS%%%%DOCSDIR%%/DeviceAtlas-device-detection.txt
 %%PORTDOCS%%%%DOCSDIR%%/SPOE.txt
+%%PORTDOCS%%%%DOCSDIR%%/WURFL-device-detection.txt
 %%PORTDOCS%%%%DOCSDIR%%/acl.fig
 %%PORTDOCS%%%%DOCSDIR%%/architecture.txt
 %%PORTDOCS%%%%DOCSDIR%%/close-options.txt
@@ -98,3 +99,4 @@ sbin/haproxy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stats_haproxy.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/transparent_proxy.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wurfl-example.cfg
