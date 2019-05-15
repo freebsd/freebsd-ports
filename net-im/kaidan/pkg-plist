@@ -1,0 +1,10 @@
+bin/kaidan
+share/applications/kaidan.desktop
+share/icons/hicolor/128x128/apps/kaidan.png
+share/icons/hicolor/scalable/apps/kaidan.svg
+%%DATADIR%%/images/banner.png
+%%DATADIR%%/images/chat.png
+%%DATADIR%%/images/images.qrc
+%%DATADIR%%/images/kaidan.svg
+%%DATADIR%%/images/message_checkmark.svg
+share/metainfo/im.kaidan.kaidan.appdata.xml
