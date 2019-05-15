@@ -1,5 +1,3 @@
-TIMESTAMP = 1550930141
-SHA256 (gnome2/librsvg-2.45.5.tar.xz) = 600872dc608fe5e01bfd8d5b3046d01b53b99121bc5ab9663531b53630843700
-SIZE (gnome2/librsvg-2.45.5.tar.xz) = 13485044
-SHA256 (rust/crates/libc-0.2.49.tar.gz) = 413f3dfc802c5dc91dc570b05125b6cda9855edfaa9825c9849807876376e70e
-SIZE (rust/crates/libc-0.2.49.tar.gz) = 375486
+TIMESTAMP = 1557889277
+SHA256 (gnome2/librsvg-2.45.6.tar.xz) = 0e6e26cb5c79cfa73c0ddab06808ace4d10c4a626b81c31a75ead37c6cb4df41
+SIZE (gnome2/librsvg-2.45.6.tar.xz) = 12757708
