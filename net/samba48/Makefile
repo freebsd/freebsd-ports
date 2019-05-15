@@ -3,7 +3,7 @@
 
 PORTNAME=			${SAMBA4_BASENAME}48
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			1
+PORTREVISION=			0
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -25,7 +25,7 @@ EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-228462.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.8.11
+SAMBA4_VERSION=			4.8.12
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -246,12 +246,12 @@ SAMBA4_BUNDLED_LIBS+=		replace
 # Don't use external libcom_err
 SAMBA4_BUNDLED_LIBS+=		com_err
 # Set the test environment variables
+TEST_USES=			python
 TEST_ENV+=			PYTHON="${PYTHON_CMD}" \
 				SHA1SUM=/sbin/sha1 \
 				SHA256SUM=/sbin/sha256 \
 				MD5SUM=/sbin/md5
-TEST_DEPENDS+=			python:lang/python \
-				bash:shells/bash \
+TEST_DEPENDS+=			bash:shells/bash \
 				tshark:net/tshark
 ##############################################################################
 CONFIGURE_ARGS+=		\
