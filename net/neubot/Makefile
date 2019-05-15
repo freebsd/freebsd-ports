@@ -13,6 +13,10 @@ COMMENT=	Measures neutrality of your network connection in the background
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+# Retiring the Neubot Client - See http://www.neubot.org/2019/01/retiring-neubot-client.html
+DEPRECATED=	Yes
+EXPIRATION_DATE=2019-05-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		python:2.7 shebangfix
