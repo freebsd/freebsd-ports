@@ -56,6 +56,7 @@
     SUBDIR += R-cran-plogr
     SUBDIR += R-cran-plyr
     SUBDIR += R-cran-praise
+    SUBDIR += R-cran-prettyunits
     SUBDIR += R-cran-promises
     SUBDIR += R-cran-proto
     SUBDIR += R-cran-purrr
