@@ -1,0 +1,163 @@
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Subject: x86/spec-ctrl: Reposition the XPTI command line parsing logic
+
+It has ended up in the middle of the mitigation calculation logic.  Move it to
+be beside the other command line parsing.
+
+No functional change.
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Acked-by: Jan Beulich <jbeulich@suse.com>
+
+diff --git a/xen/arch/x86/spec_ctrl.c b/xen/arch/x86/spec_ctrl.c
+index 1171c02..99310c8 100644
+--- a/xen/arch/x86/spec_ctrl.c
++++ b/xen/arch/x86/spec_ctrl.c
+@@ -167,6 +167,73 @@ static int __init parse_spec_ctrl(const char *s)
+ }
+ custom_param("spec-ctrl", parse_spec_ctrl);
+ 
++int8_t __read_mostly opt_xpti_hwdom = -1;
++int8_t __read_mostly opt_xpti_domu = -1;
++
++static __init void xpti_init_default(uint64_t caps)
++{
++    if ( boot_cpu_data.x86_vendor == X86_VENDOR_AMD )
++        caps = ARCH_CAPS_RDCL_NO;
++
++    if ( caps & ARCH_CAPS_RDCL_NO )
++    {
++        if ( opt_xpti_hwdom < 0 )
++            opt_xpti_hwdom = 0;
++        if ( opt_xpti_domu < 0 )
++            opt_xpti_domu = 0;
++    }
++    else
++    {
++        if ( opt_xpti_hwdom < 0 )
++            opt_xpti_hwdom = 1;
++        if ( opt_xpti_domu < 0 )
++            opt_xpti_domu = 1;
++    }
++}
++
++static __init int parse_xpti(const char *s)
++{
++    const char *ss;
++    int val, rc = 0;
++
++    /* Interpret 'xpti' alone in its positive boolean form. */
++    if ( *s == '\0' )
++        opt_xpti_hwdom = opt_xpti_domu = 1;
++
++    do {
++        ss = strchr(s, ',');
++        if ( !ss )
++            ss = strchr(s, '\0');
++
++        switch ( parse_bool(s, ss) )
++        {
++        case 0:
++            opt_xpti_hwdom = opt_xpti_domu = 0;
++            break;
++
++        case 1:
++            opt_xpti_hwdom = opt_xpti_domu = 1;
++            break;
++
++        default:
++            if ( !strcmp(s, "default") )
++                opt_xpti_hwdom = opt_xpti_domu = -1;
++            else if ( (val = parse_boolean("dom0", s, ss)) >= 0 )
++                opt_xpti_hwdom = val;
++            else if ( (val = parse_boolean("domu", s, ss)) >= 0 )
++                opt_xpti_domu = val;
++            else if ( *s )
++                rc = -EINVAL;
++            break;
++        }
++
++        s = ss + 1;
++    } while ( *ss );
++
++    return rc;
++}
++custom_param("xpti", parse_xpti);
++
+ int8_t __read_mostly opt_pv_l1tf_hwdom = -1;
+ int8_t __read_mostly opt_pv_l1tf_domu = -1;
+ 
+@@ -627,73 +694,6 @@ static __init void l1tf_calculations(uint64_t caps)
+                                             : (3ul << (paddr_bits - 2))));
+ }
+ 
+-int8_t __read_mostly opt_xpti_hwdom = -1;
+-int8_t __read_mostly opt_xpti_domu = -1;
+-
+-static __init void xpti_init_default(uint64_t caps)
+-{
+-    if ( boot_cpu_data.x86_vendor == X86_VENDOR_AMD )
+-        caps = ARCH_CAPS_RDCL_NO;
+-
+-    if ( caps & ARCH_CAPS_RDCL_NO )
+-    {
+-        if ( opt_xpti_hwdom < 0 )
+-            opt_xpti_hwdom = 0;
+-        if ( opt_xpti_domu < 0 )
+-            opt_xpti_domu = 0;
+-    }
+-    else
+-    {
+-        if ( opt_xpti_hwdom < 0 )
+-            opt_xpti_hwdom = 1;
+-        if ( opt_xpti_domu < 0 )
+-            opt_xpti_domu = 1;
+-    }
+-}
+-
+-static __init int parse_xpti(const char *s)
+-{
+-    const char *ss;
+-    int val, rc = 0;
+-
+-    /* Interpret 'xpti' alone in its positive boolean form. */
+-    if ( *s == '\0' )
+-        opt_xpti_hwdom = opt_xpti_domu = 1;
+-
+-    do {
+-        ss = strchr(s, ',');
+-        if ( !ss )
+-            ss = strchr(s, '\0');
+-
+-        switch ( parse_bool(s, ss) )
+-        {
+-        case 0:
+-            opt_xpti_hwdom = opt_xpti_domu = 0;
+-            break;
+-
+-        case 1:
+-            opt_xpti_hwdom = opt_xpti_domu = 1;
+-            break;
+-
+-        default:
+-            if ( !strcmp(s, "default") )
+-                opt_xpti_hwdom = opt_xpti_domu = -1;
+-            else if ( (val = parse_boolean("dom0", s, ss)) >= 0 )
+-                opt_xpti_hwdom = val;
+-            else if ( (val = parse_boolean("domu", s, ss)) >= 0 )
+-                opt_xpti_domu = val;
+-            else if ( *s )
+-                rc = -EINVAL;
+-            break;
+-        }
+-
+-        s = ss + 1;
+-    } while ( *ss );
+-
+-    return rc;
+-}
+-custom_param("xpti", parse_xpti);
+-
+ void __init init_speculation_mitigations(void)
+ {
+     enum ind_thunk thunk = THUNK_DEFAULT;

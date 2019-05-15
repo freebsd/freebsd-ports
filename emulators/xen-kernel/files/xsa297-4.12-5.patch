@@ -1,0 +1,147 @@
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Subject: x86/spec-ctrl: CPUID/MSR definitions for Microarchitectural Data
+ Sampling
+
+The MD_CLEAR feature can be automatically offered to guests.  No
+infrastructure is needed in Xen to support the guest making use of it.
+
+This is part of XSA-297, CVE-2018-12126, CVE-2018-12127, CVE-2018-12130, CVE-2019-11091.
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+
+diff --git a/docs/misc/xen-command-line.pandoc b/docs/misc/xen-command-line.pandoc
+index 6db82f3..f80d8d8 100644
+--- a/docs/misc/xen-command-line.pandoc
++++ b/docs/misc/xen-command-line.pandoc
+@@ -483,7 +483,7 @@ accounting for hardware capabilities as enumerated via CPUID.
+ 
+ Currently accepted:
+ 
+-The Speculation Control hardware features `ibrsb`, `stibp`, `ibpb`,
++The Speculation Control hardware features `md-clear`, `ibrsb`, `stibp`, `ibpb`,
+ `l1d-flush` and `ssbd` are used by default if available and applicable.  They can
+ be ignored, e.g. `no-ibrsb`, at which point Xen won't use them itself, and
+ won't offer them to guests.
+diff --git a/tools/libxl/libxl_cpuid.c b/tools/libxl/libxl_cpuid.c
+index 52e16c2..5a1702d 100644
+--- a/tools/libxl/libxl_cpuid.c
++++ b/tools/libxl/libxl_cpuid.c
+@@ -202,6 +202,7 @@ int libxl_cpuid_parse_config(libxl_cpuid_policy_list *cpuid, const char* str)
+ 
+         {"avx512-4vnniw",0x00000007,  0, CPUID_REG_EDX,  2,  1},
+         {"avx512-4fmaps",0x00000007,  0, CPUID_REG_EDX,  3,  1},
++        {"md-clear",     0x00000007,  0, CPUID_REG_EDX, 10,  1},
+         {"ibrsb",        0x00000007,  0, CPUID_REG_EDX, 26,  1},
+         {"stibp",        0x00000007,  0, CPUID_REG_EDX, 27,  1},
+         {"l1d-flush",    0x00000007,  0, CPUID_REG_EDX, 28,  1},
+diff --git a/tools/misc/xen-cpuid.c b/tools/misc/xen-cpuid.c
+index d87a72e..f67ecd3 100644
+--- a/tools/misc/xen-cpuid.c
++++ b/tools/misc/xen-cpuid.c
+@@ -146,6 +146,7 @@ static const char *str_7d0[32] =
+ {
+     [ 2] = "avx512_4vnniw", [ 3] = "avx512_4fmaps",
+ 
++    [10] = "md-clear",
+     /* 12 */                [13] = "tsx-force-abort",
+ 
+     [26] = "ibrsb",         [27] = "stibp",
+diff --git a/xen/arch/x86/cpuid.c b/xen/arch/x86/cpuid.c
+index ab0aab6..3efad9c 100644
+--- a/xen/arch/x86/cpuid.c
++++ b/xen/arch/x86/cpuid.c
+@@ -29,7 +29,12 @@ static int __init parse_xen_cpuid(const char *s)
+         if ( !ss )
+             ss = strchr(s, '\0');
+ 
+-        if ( (val = parse_boolean("ibpb", s, ss)) >= 0 )
++        if ( (val = parse_boolean("md-clear", s, ss)) >= 0 )
++        {
++            if ( !val )
++                setup_clear_cpu_cap(X86_FEATURE_MD_CLEAR);
++        }
++        else if ( (val = parse_boolean("ibpb", s, ss)) >= 0 )
+         {
+             if ( !val )
+                 setup_clear_cpu_cap(X86_FEATURE_IBPB);
+diff --git a/xen/arch/x86/spec_ctrl.c b/xen/arch/x86/spec_ctrl.c
+index e49ab3f..a573b02 100644
+--- a/xen/arch/x86/spec_ctrl.c
++++ b/xen/arch/x86/spec_ctrl.c
+@@ -291,17 +291,19 @@ static void __init print_details(enum ind_thunk thunk, uint64_t caps)
+     printk("Speculative mitigation facilities:\n");
+ 
+     /* Hardware features which pertain to speculative mitigations. */
+-    printk("  Hardware features:%s%s%s%s%s%s%s%s%s%s\n",
++    printk("  Hardware features:%s%s%s%s%s%s%s%s%s%s%s%s\n",
+            (_7d0 & cpufeat_mask(X86_FEATURE_IBRSB)) ? " IBRS/IBPB" : "",
+            (_7d0 & cpufeat_mask(X86_FEATURE_STIBP)) ? " STIBP"     : "",
+            (_7d0 & cpufeat_mask(X86_FEATURE_L1D_FLUSH)) ? " L1D_FLUSH" : "",
+            (_7d0 & cpufeat_mask(X86_FEATURE_SSBD))  ? " SSBD"      : "",
++           (_7d0 & cpufeat_mask(X86_FEATURE_MD_CLEAR)) ? " MD_CLEAR" : "",
+            (e8b  & cpufeat_mask(X86_FEATURE_IBPB))  ? " IBPB"      : "",
+            (caps & ARCH_CAPS_IBRS_ALL)              ? " IBRS_ALL"  : "",
+            (caps & ARCH_CAPS_RDCL_NO)               ? " RDCL_NO"   : "",
+            (caps & ARCH_CAPS_RSBA)                  ? " RSBA"      : "",
+            (caps & ARCH_CAPS_SKIP_L1DFL)            ? " SKIP_L1DFL": "",
+-           (caps & ARCH_CAPS_SSB_NO)                ? " SSB_NO"    : "");
++           (caps & ARCH_CAPS_SSB_NO)                ? " SSB_NO"    : "",
++           (caps & ARCH_CAPS_MDS_NO)                ? " MDS_NO"    : "");
+ 
+     /* Compiled-in support which pertains to mitigations. */
+     if ( IS_ENABLED(CONFIG_INDIRECT_THUNK) || IS_ENABLED(CONFIG_SHADOW_PAGING) )
+@@ -339,23 +341,25 @@ static void __init print_details(enum ind_thunk thunk, uint64_t caps)
+      * mitigation support for guests.
+      */
+ #ifdef CONFIG_HVM
+-    printk("  Support for HVM VMs:%s%s%s%s\n",
++    printk("  Support for HVM VMs:%s%s%s%s%s\n",
+            (boot_cpu_has(X86_FEATURE_SC_MSR_HVM) ||
+             boot_cpu_has(X86_FEATURE_SC_RSB_HVM) ||
+             opt_eager_fpu)                           ? ""               : " None",
+            boot_cpu_has(X86_FEATURE_SC_MSR_HVM)      ? " MSR_SPEC_CTRL" : "",
+            boot_cpu_has(X86_FEATURE_SC_RSB_HVM)      ? " RSB"           : "",
+-           opt_eager_fpu                             ? " EAGER_FPU"     : "");
++           opt_eager_fpu                             ? " EAGER_FPU"     : "",
++           boot_cpu_has(X86_FEATURE_MD_CLEAR)        ? " MD_CLEAR"      : "");
+ 
+ #endif
+ #ifdef CONFIG_PV
+-    printk("  Support for PV VMs:%s%s%s%s\n",
++    printk("  Support for PV VMs:%s%s%s%s%s\n",
+            (boot_cpu_has(X86_FEATURE_SC_MSR_PV) ||
+             boot_cpu_has(X86_FEATURE_SC_RSB_PV) ||
+             opt_eager_fpu)                           ? ""               : " None",
+            boot_cpu_has(X86_FEATURE_SC_MSR_PV)       ? " MSR_SPEC_CTRL" : "",
+            boot_cpu_has(X86_FEATURE_SC_RSB_PV)       ? " RSB"           : "",
+-           opt_eager_fpu                             ? " EAGER_FPU"     : "");
++           opt_eager_fpu                             ? " EAGER_FPU"     : "",
++           boot_cpu_has(X86_FEATURE_MD_CLEAR)        ? " MD_CLEAR"      : "");
+ 
+     printk("  XPTI (64-bit PV only): Dom0 %s, DomU %s (with%s PCID)\n",
+            opt_xpti_hwdom ? "enabled" : "disabled",
+diff --git a/xen/include/asm-x86/msr-index.h b/xen/include/asm-x86/msr-index.h
+index 389f95f..637259b 100644
+--- a/xen/include/asm-x86/msr-index.h
++++ b/xen/include/asm-x86/msr-index.h
+@@ -51,6 +51,7 @@
+ #define ARCH_CAPS_RSBA			(_AC(1, ULL) << 2)
+ #define ARCH_CAPS_SKIP_L1DFL		(_AC(1, ULL) << 3)
+ #define ARCH_CAPS_SSB_NO		(_AC(1, ULL) << 4)
++#define ARCH_CAPS_MDS_NO		(_AC(1, ULL) << 5)
+ 
+ #define MSR_FLUSH_CMD			0x0000010b
+ #define FLUSH_CMD_L1D			(_AC(1, ULL) << 0)
+diff --git a/xen/include/public/arch-x86/cpufeatureset.h b/xen/include/public/arch-x86/cpufeatureset.h
+index 2bcc548..55231d4 100644
+--- a/xen/include/public/arch-x86/cpufeatureset.h
++++ b/xen/include/public/arch-x86/cpufeatureset.h
+@@ -242,6 +242,7 @@ XEN_CPUFEATURE(IBPB,          8*32+12) /*A  IBPB support only (no IBRS, used by
+ /* Intel-defined CPU features, CPUID level 0x00000007:0.edx, word 9 */
+ XEN_CPUFEATURE(AVX512_4VNNIW, 9*32+ 2) /*A  AVX512 Neural Network Instructions */
+ XEN_CPUFEATURE(AVX512_4FMAPS, 9*32+ 3) /*A  AVX512 Multiply Accumulation Single Precision */
++XEN_CPUFEATURE(MD_CLEAR,      9*32+10) /*A  VERW clears microarchitectural buffers */
+ XEN_CPUFEATURE(TSX_FORCE_ABORT, 9*32+13) /* MSR_TSX_FORCE_ABORT.RTM_ABORT */
+ XEN_CPUFEATURE(IBRSB,         9*32+26) /*A  IBRS and IBPB support (used by Intel) */
+ XEN_CPUFEATURE(STIBP,         9*32+27) /*A  STIBP */
