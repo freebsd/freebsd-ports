@@ -32,6 +32,7 @@ man/man1/msi2lmp.1.gz
 %%DATADIR%%/potentials/BNC.tersoff
 %%DATADIR%%/potentials/BNCH-old.ILP
 %%DATADIR%%/potentials/BNCH.ILP
+%%DATADIR%%/potentials/C.drip
 %%DATADIR%%/potentials/C.lcbop
 %%DATADIR%%/potentials/CC.KC
 %%DATADIR%%/potentials/CC.KC-full
@@ -40,6 +41,7 @@ man/man1/msi2lmp.1.gz
 %%DATADIR%%/potentials/CH.KC
 %%DATADIR%%/potentials/CH.airebo
 %%DATADIR%%/potentials/CH.airebo-m
+%%DATADIR%%/potentials/CH.rebo
 %%DATADIR%%/potentials/CH_taper.KC
 %%DATADIR%%/potentials/CdTe.bop.table
 %%DATADIR%%/potentials/CdTe.sw
