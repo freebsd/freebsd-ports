@@ -964,6 +964,7 @@
     SUBDIR += rubygem-pghero
     SUBDIR += rubygem-pghero-rails5
     SUBDIR += rubygem-pghero-rails50
+    SUBDIR += rubygem-pl-puppetdb-ruby
     SUBDIR += rubygem-postgres_ext
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-redis
