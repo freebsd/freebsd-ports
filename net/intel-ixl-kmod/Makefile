@@ -44,7 +44,7 @@ MAKE_ENV+=	WERROR=""
 PLIST_FILES+=	man/man4/${link}.4.gz
 .endfor
 
-MAX_NETMAP_OSVERSION?=	9900000  # Maximum OSVERSION for which NETMAP support works
+MAX_NETMAP_OSVERSION?=	1299999  # Maximum OSVERSION for which NETMAP support works
 
 .include <bsd.port.pre.mk>
 
