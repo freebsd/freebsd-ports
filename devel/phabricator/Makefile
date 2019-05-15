@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PHP_PKGNAMEPREFIX}libphutil>0:devel/libphutil@${PHP_FLAVOR} \
-		arcanist${PHP_PKGNAMESUFFIX}>0:devel/arcanist@${PHP_FLAVOR} \
+		arcanist-lib${PHP_PKGNAMESUFFIX}>0:devel/arcanist-lib@${PHP_FLAVOR} \
 		git:devel/git
 
 OPTIONS_DEFINE=	GD OPCACHE
