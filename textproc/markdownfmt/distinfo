@@ -1,0 +1,13 @@
+TIMESTAMP = 1557911413
+SHA256 (shurcooL-markdownfmt-v1.1-67-g3438a10_GH0.tar.gz) = b89c23b1296f2b7f22fc5de35c955b9cfc74af199091d16b265d590250b59571
+SIZE (shurcooL-markdownfmt-v1.1-67-g3438a10_GH0.tar.gz) = 9549
+SHA256 (golang-crypto-22d7a77e9e5f_GH0.tar.gz) = 099bb5d6e66c6988dda36b64cb0de93d06468e5edacbf118d51828b9959a76de
+SIZE (golang-crypto-22d7a77e9e5f_GH0.tar.gz) = 1685190
+SHA256 (golang-sys-97732733099d_GH0.tar.gz) = 8d60fa6ab0c2b099f2c7d6f8c0a5df177c5c524183a2a38e0e8d2d18cde53532
+SIZE (golang-sys-97732733099d_GH0.tar.gz) = 1350239
+SHA256 (mattn-go-runewidth-v0.0.4_GH0.tar.gz) = 1973c2de25bc69c3786a00e8118f4d22aa0d040bdfe46c8c8c30419b23e53dfe
+SIZE (mattn-go-runewidth-v0.0.4_GH0.tar.gz) = 19827
+SHA256 (russross-blackfriday-a477dd164691_GH0.tar.gz) = f4303f06046da0d9fffa6cec85bd0f2d6cc25a78611898ca9f1fc51e57aa9f75
+SIZE (russross-blackfriday-a477dd164691_GH0.tar.gz) = 75990
+SHA256 (shurcooL-go-6713ea532688_GH0.tar.gz) = 89c2a5e6b281a2a9ffc300eb6a6652a5e96054f21a045e5a4e9ce76b52654748
+SIZE (shurcooL-go-6713ea532688_GH0.tar.gz) = 25956

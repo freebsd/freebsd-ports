@@ -1,0 +1,6 @@
+markdownfmt is a linter similar to gofmt but for the Markdown language. It is
+capable of autoformatting Markdown files in-place or generating diffs with
+linting applied. Also, it is used in many plugins for formatting Markdown files
+written for text editors like Vim or Emacs.
+
+WWW: https://github.com/shurcooL/markdownfmt
