@@ -126,6 +126,7 @@
     SUBDIR += apr2
     SUBDIR += arachne-pnr
     SUBDIR += arcanist
+    SUBDIR += arcanist-lib
     SUBDIR += arduino
     SUBDIR += arduino-avrdude
     SUBDIR += arduino-bsd-mk
