@@ -4,9 +4,9 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngineCore.so
 %%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngineWidgets.pyi
 %%PYTHON_SITELIBDIR%%/PyQt5/QtWebEngineWidgets.so
-%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_PYQTVERSION%%.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_PYQTVERSION%%.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_PYQTVERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/PyQtWebEngine-%%PYQT_WEBENGINE_VERSION%%.dist-info/RECORD
 %%API%%%%PYQT_APIDIR%%/api/python/PyQtWebEngine.api
 %%PYQT_SIPDIR%%/QtWebEngine/QtWebEnginemod.sip
 %%PYQT_SIPDIR%%/QtWebEngine/qquickwebengineprofile.sip
