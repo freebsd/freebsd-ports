@@ -38,6 +38,7 @@ PORTREVISION=	1
     SUBDIR += jitsi
     SUBDIR += kaccounts-integration
     SUBDIR += kaccounts-providers
+    SUBDIR += kaidan
     SUBDIR += kde-telepathy
     SUBDIR += kopete
     SUBDIR += ktp-accounts-kcm
