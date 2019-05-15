@@ -1,5 +1,6 @@
 bin/kodev%%SUFFIX%%
 bin/kore%%SUFFIX%%
+include/kore%%SUFFIX%%/kore/curl.h
 include/kore%%SUFFIX%%/kore/http.h
 include/kore%%SUFFIX%%/kore/jsonrpc.h
 include/kore%%SUFFIX%%/kore/kore.h
