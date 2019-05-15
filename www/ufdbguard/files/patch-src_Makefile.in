@@ -22,20 +22,3 @@
  
  install.debug::
  	-if [ -x /usr/bin/debuginfo-install ] ; then /usr/bin/debuginfo-install glibc ; fi
-@@ -281,12 +281,12 @@ uninstall.bin::
- 
- install.mt::
- 	cd mtserver ; $(MAKE)
--	$(INSTALL_PROGRAM) mtserver/ufdbguardd  $(DESTDIR)$(bindir)/ufdbguardd
--	$(INSTALL_PROGRAM) mtserver/ufdbgclient $(DESTDIR)$(bindir)/ufdbgclient
--	$(INSTALL_PROGRAM) mtserver/ufdb-pstack $(DESTDIR)$(bindir)/ufdb-pstack
-+	$(INSTALL_PROGRAM) ufdbguardd  $(DESTDIR)$(bindir)/ufdbguardd
-+	$(INSTALL_PROGRAM) ufdbgclient $(DESTDIR)$(bindir)/ufdbgclient
-+	$(INSTALL_PROGRAM) ufdb-pstack $(DESTDIR)$(bindir)/ufdb-pstack
- 	-@echo "ignore the next error from chown when building a package as non-root user"
- 	-$(RM) $(DESTDIR)$(bindir)/ufdbsignal ; \
--		$(INSTALL_PROGRAM) mtserver/ufdbsignal  $(DESTDIR)$(bindir)/ufdbsignal  ; \
-+		$(INSTALL_PROGRAM) ufdbsignal  $(DESTDIR)$(bindir)/ufdbsignal  ; \
- 		chown root $(DESTDIR)$(bindir)/ufdbsignal  ;  \
- 		chmod +s $(DESTDIR)$(bindir)/ufdbsignal
- 
