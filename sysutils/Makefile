@@ -251,7 +251,6 @@
     SUBDIR += diskscrub
     SUBDIR += disktool
     SUBDIR += disktype
-    SUBDIR += djmount
     SUBDIR += dmg2img
     SUBDIR += dmidecode
     SUBDIR += docker
