@@ -16,6 +16,7 @@ man/pt_BR/man8/kded5.8.gz
 man/ru/man8/kded5.8.gz
 man/sv/man8/kded5.8.gz
 man/uk/man8/kded5.8.gz
+share/applications/org.kde.kded5.desktop
 share/dbus-1/interfaces/org.kde.kded5.xml
 share/dbus-1/services/org.kde.kded5.service
 share/kservicetypes5/kdedmodule.desktop

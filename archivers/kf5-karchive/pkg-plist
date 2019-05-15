@@ -8,6 +8,7 @@ include/KF5/KArchive/KArchiveFile
 include/KF5/KArchive/KCompressionDevice
 include/KF5/KArchive/KFilterBase
 include/KF5/KArchive/KFilterDev
+include/KF5/KArchive/KRcc
 include/KF5/KArchive/KTar
 include/KF5/KArchive/KZip
 include/KF5/KArchive/KZipFileEntry
@@ -21,6 +22,7 @@ include/KF5/KArchive/karchivefile.h
 include/KF5/KArchive/kcompressiondevice.h
 include/KF5/KArchive/kfilterbase.h
 include/KF5/KArchive/kfilterdev.h
+include/KF5/KArchive/krcc.h
 include/KF5/KArchive/ktar.h
 include/KF5/KArchive/kzip.h
 include/KF5/KArchive/kzipfileentry.h
