@@ -163,11 +163,8 @@ lib/mysql/plugin/auth_pam.so
 lib/mysql/plugin/auth_socket.so
 lib/mysql/plugin/auth_test_plugin.so
 lib/mysql/plugin/caching_sha2_password.so
-@comment lib/mysql/plugin/daemon_example.ini
 lib/mysql/plugin/debug_key_management.so
 @comment lib/mysql/plugin/dialog.so
-lib/mysql/plugin/dialog_examples.so
-lib/mysql/plugin/example_key_management.so
 lib/mysql/plugin/file_key_management.so
 lib/mysql/plugin/ha_archive.so
 lib/mysql/plugin/ha_blackhole.so
@@ -180,12 +177,11 @@ lib/mysql/plugin/ha_federatedx.so
 %%SPHINX%%lib/mysql/plugin/ha_sphinx.so
 %%SPIDER%%lib/mysql/plugin/ha_spider.so
 %%TOKUDB%%lib/mysql/plugin/ha_tokudb.so
+@comment lib/mysql/plugin/daemon_example.ini
 lib/mysql/plugin/ha_test_sql_discovery.so
 lib/mysql/plugin/handlersocket.so
-lib/mysql/plugin/libdaemon_example.so
 lib/mysql/plugin/locales.so
 lib/mysql/plugin/metadata_lock_info.so
-lib/mysql/plugin/mypluglib.so
 lib/mysql/plugin/qa_auth_client.so
 lib/mysql/plugin/qa_auth_interface.so
 lib/mysql/plugin/qa_auth_server.so
@@ -320,3 +316,34 @@ man/man8/mysqld.8.gz
 %%MROONGA%%share/groonga-normalizer-mysql/README.md
 %%MROONGA%%share/groonga/README.md
 @comment share/pkgconfig/mariadb.pc
+@comment bin/mariadb_config
+@comment bin/mysql
+@comment bin/mysqladmin
+@comment bin/mysqlbinlog
+@comment bin/mysqlcheck
+@comment bin/mysqldump
+@comment bin/mysqlimport
+@comment bin/mysqlshow
+@comment bin/mysqlslap
+@comment include/mysql/errmsg.h
+@comment include/mysql/ma_list.h
+@comment include/mysql/ma_pvio.h
+@comment include/mysql/ma_tls.h
+@comment include/mysql/mariadb/ma_io.h
+@comment include/mysql/mariadb_com.h
+@comment include/mysql/mariadb_ctype.h
+@comment include/mysql/mariadb_dyncol.h
+@comment include/mysql/mariadb_stmt.h
+@comment include/mysql/mariadb_version.h
+@comment include/mysql/mysql.h
+@comment include/mysql/mysql/client_plugin.h
+@comment include/mysql/mysql/plugin_auth.h
+@comment include/mysql/mysql/plugin_auth_common.h
+@comment lib/mysql/libmariadb.so
+@comment lib/mysql/libmariadb.so.3
+@comment lib/mysql/plugin/auth_gssapi_client.so
+@comment lib/mysql/plugin/client_ed25519.so
+@comment lib/mysql/plugin/mysql_clear_password.so
+@comment lib/mysql/plugin/sha256_password.so
+@comment libdata/pkgconfig/libmariadb.pc
+

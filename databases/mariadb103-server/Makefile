@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.3.14
+PORTVERSION=	10.3.15
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
@@ -37,7 +37,7 @@ OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 OPTIONS_DEFAULT=	GSSAPI_BASE
 
-.if !defined(CLIENT_ONLY)
+.if ${PKGNAMESUFFIX:M*-server}
 # MySQL-Server options
 OPTIONS_DEFAULT+=	CONNECT_EXTRA INNOBASE SPHINX SPIDER WSREP
 OPTIONS_GROUP=		COMPRESSION ENGINES GROONGA
@@ -65,10 +65,6 @@ ZMQ_DESC=	ZeroMQ support
 ZSTD_DESC+=	Zstandard compression support (RocksDB only)
 .endif
 
-GSSAPI_BASE_USES=	gssapi
-GSSAPI_HEIMDAL_USES=	gssapi:heimdal
-GSSAPI_MIT_USES=	gssapi:mit
-
 CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
 		-DINSTALL_INCLUDEDIR="include/mysql" \
@@ -85,24 +81,18 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_SQLBENCHDIR= \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
 		-DDEFAULT_SYSCONFDIR="${PREFIX}/etc" \
-		-DWITH_JEMALLOC="system" \
-		-DWITH_LIBWRAP=1 \
-		-DWITH_CONNECT_WITH_MONGO="OFF" \
 		-DWITH_SSL="${OPENSSLBASE}" \
-		-DWITH_UNIT_TESTS=0 \
-		-DWITHOUT_DOCS=1 \
 		-DCURSES_CURSES_LIBRARY="/usr/lib/libcurses.so" \
 		-DCURSES_FORM_LIBRARY="/usr/lib/libform.so" \
 		-DCURSES_CURSES_LIBRARY="/usr/lib/libncurses.so" \
-		-DICONV_LIBRARIES="${ICONV_LIB_PATH}" \
 		-DKRB5_CONFIG="${KRB5CONFIG}" \
 		-DCURSES_NCURSES_LIBRARY="${NCURSESLIB}/libncurses.so" \
-		-DOPENSSL_ROOT_DIR="${OPENSSLBASE}" \
-		-DOPENSSL_CRYPTO_LIBRARY="${OPENSSLBASE}/lib/libcrypto.so" \
-		-DOPENSSL_SSL_LIBRARY="${OPENSSLBASE}/lib/libssl.so" \
-		-DREMOTEIO_PLUGIN_TYPE="NO" \
 		-DCOMPILATION_COMMENT="FreeBSD Ports" \
-		-DCMAKE_PREFIX_PATH=${PREFIX}
+		-DCMAKE_PREFIX_PATH=${PREFIX} \
+CMAKE_OFF+=	CONNECT_WITH_MONGO WITH_UNIT_TESTS
+CMAKE_ON+=	WITH_LIBWRAP WITHOUT_DOCS
+DISABLED_PLUGINS+=	DAEMON_EXAMPLE DIALOG_EXAMPLES EXAMPLE \
+		EXAMPLE_KEY_MANAGEMENT FTEXAMPLE
 
 DATADIR=	${PREFIX}/share/mysql
 
@@ -112,60 +102,65 @@ CONFLICTS_INSTALL=	mariadb5*-${PKGNAMESUFFIX:C/^[0-9]*-//}-* \
 			mysqlwsrep* \
 			percona[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}-*
 
-FASTMTX_CMAKE_ON=	-DWITH_FAST_MUTEXES=1
+FASTMTX_CMAKE_BOOL=	WITH_FAST_MUTEXES
+GSSAPI_BASE_USES=	gssapi
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal
+GSSAPI_MIT_USES=	gssapi:mit
+GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=OFF
 OPTIONS_SUB=		yes
 
-.if defined(CLIENT_ONLY)
+.if ${PKGNAMESUFFIX:M*-client}
 # MySQL-Client part
+CMAKE_ON+=	CONC_WITH_MYSQLCOMPAT WITHOUT_SERVER
+CMAKE_OFF+=	CONC_WITH_UNITTEST WITH_WSREP
 USES+=		readline
-GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=OFF
-.else
+USE_LDCONFIG=	${PREFIX}/lib/mysql
+.else # ! ${PKGNAMESUFFIX:M*-client}
 # MySQL-Server part
 USES+=		mysql:103m
 USE_LDCONFIG+=	${PREFIX}/lib/mysql/plugin
 USE_RC_SUBR=	mysql-server
 USERS=		mysql
 GROUPS=		mysql
-CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON" \
-		-DPLUGIN_AUTH_GSSAPI_CLIENT=OFF \
-		-DCMAKE_SKIP_BUILD_RPATH:BOOL=YES \
-		-DWITHOUT_EXAMPLE_STORAGE_ENGINE=1 \
-		-DWITHOUT_CLIENT=1
+CMAKE_ON+=	CMAKE_SKIP_BUILD_RPATH WITH_EMBEDDED_SERVER
+CMAKE_OFF+=	WITH_CLIENT
 
 .for ENGINE in ${OPTIONS_GROUP_ENGINES:NINNOBASE}
 ${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO
 ${ENGINE}_CMAKE_ON=	-DPLUGIN_${ENGINE}=DYNAMIC
 .endfor
-INNOBASE_CMAKE_OFF=	-DPLUGIN_INNOBASE=NO
+INNOBASE_VARS_OFF=	disabled_plugins+=INNOBASE
 
 CONNECT_EXTRA_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 CONNECT_EXTRA_USE=		gnome=libxml2
 CONNECT_EXTRA_USES=		gnome
-GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI=NO -DPLUGIN_AUTH_GSSAPI_CLIENT=NO
-LZ4_CMAKE_OFF=		-DGRN_WITH_LZ4=OFF -DWITH_INNODB_LZ4=OFF -DWITH_ROCKSDB_LZ4=OFF
-LZ4_CMAKE_ON=		-DGRN_WITH_LZ4=ON  -DWITH_INNODB_LZ4=ON  -DWITH_ROCKSDB_LZ4=ON
+CONNECT_EXTRA_CMAKE_BOOL=	CONNECT_WITH_LIBXML2 CONNECT_WITH_ODBC
+GSSAPI_NONE_VARS=	disabled_plugins+=AUTH_GSSAPI
+LZ4_CMAKE_BOOL=		GRN_WITH_LZ4 WITH_INNODB_LZ4 WITH_ROCKSDB_LZ4
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
-LZO_CMAKE_OFF=		-DWITH_INNODB_LZO=OFF
-LZO_CMAKE_ON=		-DWITH_INNODB_LZO=ON
+LZO_CMAKE_BOOL=		WITH_INNODB_LZO
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 MROONGA_IMPLIES=	LZ4
 MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
 ROCKSDB_USES=		python
-SNAPPY_CMAKE_OFF=	-DWITH_INNODB_SNAPPY=OFF -DWITH_ROCKSDB_snappy=OFF
-SNAPPY_CMAKE_ON=	-DWITH_INNODB_SNAPPY=ON  -DWITH_ROCKSDB_snappy=ON
+SNAPPY_CMAKE_BOOL=	WITH_INNODB_SNAPPY WITH_ROCKSDB_snappy
 SNAPPY_LIB_DEPENDS=	libsnappy.so:archivers/snappy
 TOKUDB_IMPLIES=		SNAPPY
 TOKUDB_PORTDOCS=	README.md
 TOKUDB_VARS=		LICENSE+=PerconaFT LICENSE_COMB=multi
-WSREP_CMAKE_OFF=	-DWITH_WSREP=OFF
+WSREP_CMAKE_BOOL=	WITH_WSREP
 WSREP_LIB_DEPENDS=	libgalera.so:databases/galera
 ZMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
-ZSTD_CMAKE_ON=		-DWITH_ROCKSDB_ZSTD=ON
+ZSTD_CMAKE_BOOL=	WITH_ROCKSDB_ZSTD
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .include <bsd.port.options.mk>
+
+.for PLUGIN in ${DISABLED_PLUGINS}
+CMAKE_ARGS+=		-DPLUGIN_${PLUGIN}=NO
+.endfor
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
 SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
@@ -173,10 +168,7 @@ SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
 SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 .endif
 
-post-install:
-	${RM} -r ${STAGEDIR}${PREFIX}/share/mysql/policy
-	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/server/private
-.endif # defined(CLIENT_ONLY)
+.endif # ${PKGNAMESUFFIX:M*-client}
 
 .if defined(WITH_OPENSSL_PORT)
 GSSAPI_BASE_IGNORE=	BASE_GSSAPI is not compatible with OpenSSL from ports. Use other GSSAPI options or OpenSSL from base system
@@ -189,7 +181,7 @@ PLIST_SUB+=	WSREP="@comment "
 .endif
 
 .if ${OPSYS} == DragonFly
-CMAKE_ARGS+=	-DWITHOUT_TOKUDB
+CMAKE_OFF+=	WITH_TOKUDB
 .endif
 
 post-patch:
@@ -202,6 +194,11 @@ post-patch:
 		${WRKSRC}/cmake/os/DragonFly.cmake
 .endif
 
+post-configure:
+	${REINPLACE_CMD} -Ee 's|(#define INCLUDE.*)"$$|\1 -I${PREFIX}/include"|' \
+		-e 's|(#define LIBS .*)"$$|\1 -L${PREFIX}/lib"|' \
+		${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c
+
 # Fix build failure in mbstream, see https://jira.mariadb.org/browse/MDEV-14072 	 
 post-configure-INNOBASE-on: 	 
 	${REINPLACE_CMD} -e 's| ${PREFIX}/lib/liblz4.so\(.* ${PREFIX}/lib/liblz4.so.*\)|\1|' \
@@ -209,5 +206,19 @@ post-configure-INNOBASE-on:
 		-e 's| ${PREFIX}/lib/libsnappy.so\(.* ${PREFIX}/lib/libsnappy.so\)|\1|' \
 		-e 's| -llzma\(.* -llzma\)|\1|;s| -lbz2\(.* -lbz2\)|\1|;' \
 		${WRKSRC}/extra/mariabackup/CMakeFiles/mbstream.dir/link.txt
+
+.if ${PKGNAMESUFFIX:M*-client}
+post-install:
+	${RM} -r ${STAGEDIR}${DATADIR}
+	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/server
+
+post-install-GSSAPI_NONE:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mysql/plugin/auth_gssapi_client.so
+
+.else # ! ${PKGNAMESUFFIX:M*-client}
+post-install:
+	${RM} -r ${STAGEDIR}${PREFIX}/share/mysql/policy
+	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/server/private
+.endif # ${PKGNAMESUFFIX:M*-client}
 
 .include <bsd.port.post.mk>
