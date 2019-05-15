@@ -2,6 +2,7 @@
 
 PORTNAME=	xi-core
 DISTVERSION=	g20190420
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	ed.arrakis@gmail.com
