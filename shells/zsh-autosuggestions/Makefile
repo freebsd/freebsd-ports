@@ -3,7 +3,7 @@
 PORTNAME=	zsh-autosuggestions
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.2
-CATEGORIES=	textproc
+CATEGORIES=	shells
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Fish-like autosuggestions for Zsh
