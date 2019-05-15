@@ -34,10 +34,6 @@ OPTIONS_DEFAULT=	# OCC
 
 BROKEN_sparc64=		internal gcc error (Bug 23159)
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300014
-BROKEN=			does not build with recent versions of FreeBSD
-.endif
-
 OCC_LIB_DEPENDS=	libTKernel.so:cad/opencascade
 OCC_CXXFLAGS=		-DOCCGEOMETRY -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/include/OpenCASCADE
 OCC_CONFIGURE_ON=	--enable-occ
@@ -65,4 +61,10 @@ post-install:
 	${SH} ${FILESDIR}/netgen_copy_include_for_salome ${WRKSRC} ${STAGEDIR}${PREFIX}
 	${LN} ${STAGEDIR}${PREFIX}/lib/libnglib.so ${STAGEDIR}${PREFIX}/lib/libnglib.so.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300014
+BROKEN=			does not build with recent versions of FreeBSD
+.endif
+
+.include <bsd.port.post.mk>
