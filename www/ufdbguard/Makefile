@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ufdbGuard
-PORTVERSION=	1.34.1
+PORTVERSION=	1.34.3
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME:tl}/1.34
 
@@ -51,7 +51,7 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
 		--with-ufdb-samplesdir=${EXAMPLESDIR} \
 		--with-ufdb-config=${ETCDIR} \
 		--with-ufdb-dbhome=${DBDIR} \
-		--with-ufdb-images_dir=${EXAMPLESDIR}/images
+		--with-ufdb-imagesdir=${EXAMPLESDIR}/images
 
 MAKE_JOBS_UNSAFE=	yes
 

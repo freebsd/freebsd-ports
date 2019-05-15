@@ -1,9 +1,13 @@
---- src/install_etcfiles.sh.in.orig	2017-02-27 13:27:26 UTC
+--- src/install_etcfiles.sh.in.orig	2019-02-27 23:03:09 UTC
 +++ src/install_etcfiles.sh.in
-@@ -25,15 +25,6 @@ then
-    DESTDIR=${RPM_BUILD_ROOT:-}
+@@ -22,19 +22,6 @@ else
+    DESTDIR=""
  fi
  
+-# the installer must be root to install files under /etc and we check for this
+-# but the exception is rpmbuild.  When a package is made using rpmbuild,
+-# it is comon practise to _NOT_ run the install as root.
+-ID=`id -un`
 -if [ "$ID" != root  -a  $PKGNAME != ufdbGuard ]
 -then
 -   echo
@@ -13,10 +17,10 @@
 -   exit 1
 -fi
 -
- CFGDIR="$1"
- if [ ! -d "$CFGDIR" ]
- then
-@@ -373,12 +364,10 @@ fix_piddir_permissions () {
+ OS="@ufdb_os_type@"
+ INITDIR="@ufdb_initdir@"
+ 
+@@ -281,12 +268,10 @@ fix_piddir_permissions () {
  
  
  case $OS in
@@ -29,20 +33,3 @@
  esac
  
  
-@@ -395,16 +384,3 @@ fi
- # TODO: copy parameters from ufdbUpdate to $SYSCFGFILE ************************************************************ 
- 
- fix_piddir_permissions
--
--# the addition of the ufdbguardd service to /etc/services is deiabled since
--# ufdbguardd uses by default a named socket.
--# SERVICE=`grep -E -e ufdbguardd $DESTDIR/etc/services`
--# if [ "$SERVICE" = "" ]
--# then
--#    (
--#       echo ""
--#       echo "# for URLfilterDB daemon : "
--#       echo "ufdbguardd      3977/tcp"
--#    ) >> $DESTDIR/etc/services
--# fi
--
