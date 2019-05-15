@@ -1,23 +1,5 @@
 --- configure.orig	2019-02-19 03:04:42 UTC
 +++ configure
-@@ -26173,7 +26173,7 @@ else
-   ;;
-   *)
-   as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
--for as_dir in $PATH
-+for as_dir in $krb5confpatth
- do
-   IFS=$as_save_IFS
-   test -z "$as_dir" && as_dir=.
-@@ -26321,7 +26321,7 @@ else
-   ;;
-   *)
-   as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
--for as_dir in $PATH
-+for as_dir in $krb5confpatth
- do
-   IFS=$as_save_IFS
-   test -z "$as_dir" && as_dir=.
 @@ -34701,7 +34701,7 @@ done
  ##
  
