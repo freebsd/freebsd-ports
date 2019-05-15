@@ -185,6 +185,7 @@
     SUBDIR += coq
     SUBDIR += crlibm
     SUBDIR += cryptominisat
+    SUBDIR += curv
     SUBDIR += cvc3
     SUBDIR += cvc4
     SUBDIR += dbcsr
