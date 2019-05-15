@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	4.0.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -190,9 +190,9 @@ EXTRAS_LIBS=	libclangApplyReplacements \
 		libmodernizeCore
 EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}
 
-# Force GCC 5 on non-clang systems because GCC 8 won't compile this code.
+# Force GCC 7 on non-clang systems because GCC 8 won't compile this code.
 .if exists(/usr/lib/libstdc++.so)
-USE_GCC=	5
+USE_GCC=	7
 .endif
 
 .include <bsd.port.options.mk>
