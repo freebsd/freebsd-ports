@@ -1,8 +1,8 @@
-%%PERL5_MAN3%%/Graphics::ColorNames::CSS.3.gz
-%%PERL5_MAN3%%/Graphics::ColorNames::IE.3.gz
-%%PERL5_MAN3%%/Graphics::ColorNames::SVG.3.gz
-%%PERL5_MAN3%%/Graphics::ColorNames::WWW.3.gz
 %%SITE_PERL%%/Graphics/ColorNames/CSS.pm
 %%SITE_PERL%%/Graphics/ColorNames/IE.pm
 %%SITE_PERL%%/Graphics/ColorNames/SVG.pm
 %%SITE_PERL%%/Graphics/ColorNames/WWW.pm
+%%PERL5_MAN3%%/Graphics::ColorNames::CSS.3.gz
+%%PERL5_MAN3%%/Graphics::ColorNames::IE.3.gz
+%%PERL5_MAN3%%/Graphics::ColorNames::SVG.3.gz
+%%PERL5_MAN3%%/Graphics::ColorNames::WWW.3.gz
