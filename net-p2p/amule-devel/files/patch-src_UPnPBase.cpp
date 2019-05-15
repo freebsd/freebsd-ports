@@ -1,6 +1,6 @@
 --- src/UPnPBase.cpp.orig	2018-11-19 11:11:51 UTC
 +++ src/UPnPBase.cpp
-@@ -1127,7 +1127,11 @@ bool CUPnPControlPoint::PrivateDeletePor
+@@ -1127,7 +1127,11 @@ bool CUPnPControlPoint::PrivateDeletePortMapping(
  
  
  // This function is static
@@ -12,7 +12,7 @@
  {
  	std::ostringstream msg;
  	std::ostringstream msg2;
-@@ -1149,24 +1153,47 @@ int CUPnPControlPoint::Callback(Upnp_Eve
+@@ -1149,24 +1153,47 @@ int CUPnPControlPoint::Callback(Upnp_EventType EventTy
  		msg2<< "UPNP_DISCOVERY_SEARCH_RESULT: ";
  		// UPnP Discovery
  upnpDiscovery:
@@ -66,16 +66,16 @@
  				// Add the root device to our list
 +#if UPNP_VERSION >= 10800
 +				int expires = UpnpDiscovery_get_Expires(d_event);
-+				upnpCP->AddRootDevice(rootDevice, urlBase,
+ 				upnpCP->AddRootDevice(rootDevice, urlBase,
 +					location, expires);
 +#else
- 				upnpCP->AddRootDevice(rootDevice, urlBase,
++				upnpCP->AddRootDevice(rootDevice, urlBase,
  					d_event->Location, d_event->Expires);
 +#endif
  			}
  			// Free the XML doc tree
  			IXML::Document::Free(doc);
-@@ -1216,28 +1249,58 @@ upnpDiscovery:
+@@ -1216,28 +1249,60 @@ upnpDiscovery:
  	case UPNP_DISCOVERY_ADVERTISEMENT_BYEBYE: {
  		//fprintf(stderr, "Callback: UPNP_DISCOVERY_ADVERTISEMENT_BYEBYE\n");
  		// UPnP Device Removed
@@ -105,6 +105,8 @@
  		std::transform(devType.begin(), devType.end(), devType.begin(), tolower);
  		if (stdStringIsEqualCI(devType, UPnP::Device::IGW)) {
 +#if UPNP_VERSION >= 10800
++ 			const char *deviceID =
++ 				UpnpDiscovery_get_DeviceID_cstr(dab_event);
 +			upnpCP->RemoveRootDevice(deviceID);
 +#else
  			upnpCP->RemoveRootDevice(dab_event->DeviceId);
@@ -120,7 +122,7 @@
 +		int eventKey = UpnpEvent_get_EventKey(e_event);
 +		IXML_Document *changedVariables =
 +			UpnpEvent_get_ChangedVariables(e_event);
-+		onst std::string sid = UpnpEvent_get_SID_cstr(e_event);
++		const std::string sid = UpnpEvent_get_SID_cstr(e_event);
 +#else
  		struct Upnp_Event *e_event = (struct Upnp_Event *)Event;
  		const std::string Sid = e_event->Sid;
@@ -134,7 +136,7 @@
  		break;
  	}
  	case UPNP_EVENT_SUBSCRIBE_COMPLETE:
-@@ -1252,19 +1315,39 @@ upnpDiscovery:
+@@ -1252,19 +1317,39 @@ upnpDiscovery:
  		//fprintf(stderr, "Callback: UPNP_EVENT_RENEWAL_COMPLETE\n");
  		msg << "error(UPNP_EVENT_RENEWAL_COMPLETE): ";
  upnpEventRenewalComplete:
@@ -162,10 +164,10 @@
 +				UpnpEventSubscribe_get_PublisherUrl(es_event);
 +			const char *sid = UpnpEvent_get_SID_cstr(es_event);
 +			int timeOut = UpnpEvent_get_TimeOut(es_event);
-+			TvCtrlPointHandleSubscribeUpdate(
+ 			TvCtrlPointHandleSubscribeUpdate(
 +				publisherUrl, sid, timeOut);
 +#else
- 			TvCtrlPointHandleSubscribeUpdate(
++			TvCtrlPointHandleSubscribeUpdate(
  				GET_UPNP_STRING(es_event->PublisherUrl),
  				es_event->Sid,
  				es_event->TimeOut );
@@ -174,7 +176,7 @@
  		}
  
  		break;
-@@ -1280,29 +1363,56 @@ upnpEventRenewalComplete:
+@@ -1280,29 +1365,56 @@ upnpEventRenewalComplete:
  		msg << "error(UPNP_EVENT_SUBSCRIPTION_EXPIRED): ";
  		msg2 << "UPNP_EVENT_SUBSCRIPTION_EXPIRED: ";
  upnpEventSubscriptionExpired:
@@ -231,7 +233,7 @@
  					"' with SID == '" <<
  					newSID << "'.";
  				AddDebugLogLineC(logUPnP, msg2);
-@@ -1321,17 +1431,34 @@ upnpEventSubscriptionExpired:
+@@ -1321,17 +1433,34 @@ upnpEventSubscriptionExpired:
  	case UPNP_CONTROL_ACTION_COMPLETE: {
  		//fprintf(stderr, "Callback: UPNP_CONTROL_ACTION_COMPLETE\n");
  		// This is here if we choose to do this asynchronously
@@ -266,7 +268,7 @@
  				"<UpnpSendActionAsync>");
  		}
  		/* No need for any processing here, just print out results.
-@@ -1342,22 +1469,38 @@ upnpEventSubscriptionExpired:
+@@ -1342,21 +1471,37 @@ upnpEventSubscriptionExpired:
  	case UPNP_CONTROL_GET_VAR_COMPLETE: {
  		//fprintf(stderr, "Callback: UPNP_CONTROL_GET_VAR_COMPLETE\n");
  		msg << "error(UPNP_CONTROL_GET_VAR_COMPLETE): ";
@@ -300,8 +302,7 @@
  				sv_event->CtrlUrl,
  				sv_event->StateVarName,
  				sv_event->CurrentVal );
- #endif
 +#endif
+ #endif
  		}
  		break;
- 	}
