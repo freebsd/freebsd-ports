@@ -4,7 +4,7 @@ PORTNAME=	zsh-syntax-highlighting
 DISTVERSION=	0.6.0-243
 DISTVERSIONSUFFIX=	-g82cf252
 PORTEPOCH=	1
-CATEGORIES=	textproc
+CATEGORIES=	shells
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Fish shell syntax highlighting for Zsh
