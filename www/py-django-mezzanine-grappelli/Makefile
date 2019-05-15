@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-mezzanine-grappelli
-PORTVERSION=	0.4.7
+PORTVERSION=	0.5.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +14,9 @@ COMMENT=	Fork of django-grappelli for Mezzanine CMS
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-
 USES=		gettext python
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
