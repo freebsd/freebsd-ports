@@ -1,15 +1,6 @@
---- agent/appconfig/constants_unix.go.orig	2017-05-22 17:12:08.000000000 +0000
-+++ agent/appconfig/constants_unix.go	2017-05-28 06:51:05.792117000 +0000
-@@ -18,7 +18,7 @@
- 
- const (
- 	// DefaultProgramFolder is the default folder for SSM
--	DefaultProgramFolder = "/etc/amazon/ssm/"
-+	DefaultProgramFolder = "/usr/local/etc/amazon/ssm/"
- 
- 	// AppConfigPath is the path of the AppConfig
- 	AppConfigPath = DefaultProgramFolder + AppConfigFileName
-@@ -47,7 +47,7 @@
+--- agent/appconfig/constants_unix.go.orig	2019-05-08 20:19:03 UTC
++++ agent/appconfig/constants_unix.go
+@@ -53,7 +53,7 @@ const (
  	DownloadRoot = "/var/log/amazon/ssm/download/"
  
  	// DefaultDataStorePath represents the directory for storing system data
@@ -18,3 +9,12 @@
  
  	// EC2ConfigDataStorePath represents the directory for storing ec2 config data
  	EC2ConfigDataStorePath = "/var/lib/amazon/ec2config/"
+@@ -95,7 +95,7 @@ const (
+ var PowerShellPluginCommandName string
+ 
+ // DefaultProgramFolder is the default folder for SSM
+-var DefaultProgramFolder = "/etc/amazon/ssm/"
++var DefaultProgramFolder = "/usr/local/etc/amazon/ssm/"
+ var DefaultDocumentWorker = "/usr/bin/ssm-document-worker"
+ var DefaultSessionWorker = "/usr/bin/ssm-session-worker"
+ var DefaultSessionLogger = "/usr/bin/ssm-session-logger"
