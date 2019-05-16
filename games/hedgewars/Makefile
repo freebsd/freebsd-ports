@@ -15,8 +15,10 @@ COMMENT=	Free Worms-like turn based strategy game
 LICENSE=	GPLv2 GFDL
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libphysfs.so:devel/physfs \
-		libpng.so:graphics/png
+BUILD_DEPENDS=		${${ARCH}_BUILD_DEPENDS}
+i386_BUILD_DEPENDS=	ghc:lang/ghc
+LIB_DEPENDS=		libphysfs.so:devel/physfs \
+			libpng.so:graphics/png
 
 USES=		cmake:noninja desktop-file-utils fpc gl lua:51 qt:5 tar:bzip2 pkgconfig
 USE_SDL=	sdl2 mixer2 image2 ttf2 net2
