@@ -301,6 +301,7 @@
     SUBDIR += sigrok-firmware-utils
     SUBDIR += silo
     SUBDIR += simbody
+    SUBDIR += simgrid
     SUBDIR += simint
     SUBDIR += simlib
     SUBDIR += simsmith
