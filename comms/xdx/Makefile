@@ -8,14 +8,15 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.chronos.org.uk/download/ \
 		LOCAL/db
 
-MAINTAINER=	xride@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio DX cluster monitor
 
-USE_GNOME=	gtk20
-GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
-
 LICENSE=	GPLv2
+
+USES=		gmake pkgconfig
+USE_GNOME=	gtk20
+
+GNU_CONFIGURE=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
