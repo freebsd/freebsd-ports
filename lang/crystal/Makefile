@@ -53,10 +53,6 @@ BOOTSTRAP_OSREL=	12
 BOOTSTRAP_OSREL=	11
 .endif
 
-.if ${ARCH} == aarch64
-LLVM_VERSION=	50
-.endif
-
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD
 .endif
