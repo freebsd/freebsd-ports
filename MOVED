@@ -12754,3 +12754,6 @@ devel/modules2tuple|ports-mgmt/modules2tuple|2019-05-15|Moved to ports-mgmt cate
 textproc/zsh-syntax-highlighting|shells/zsh-syntax-highlighting|2019-05-15|Moved to shells category
 textproc/zsh-autosuggestions|shells/zsh-autosuggestions|2019-05-15|Moved to shells category
 dns/bind913|dns/bind9-devel|2019-05-16|Remove outdated development version
+databases/py-pg_pqueue||2019-05-16|Has expired: Upstream no longer maintained
+math/py-symeig|science/py-scipy|2019-05-16|Has expired: Consider using science/py-scipy as this library is included in py-scipy since 0.7 and onwards
+databases/py-mysql-connector-python2|databases/py-mysql-connector-python|2019-05-16|Has expired: Please consider using databases/py-mysql-connector-python which has been updated to latest upstream version
