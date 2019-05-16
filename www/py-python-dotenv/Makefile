@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-dotenv
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.10.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,4 +20,10 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VER} < 3.5
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing>=0:devel/py-typing@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
