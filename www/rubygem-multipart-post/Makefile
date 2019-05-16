@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multipart-post
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
