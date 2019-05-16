@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	kbibtex
-DISTVERSION=	0.8.2
-PORTREVISION=	6
+DISTVERSION=	0.8.91
 CATEGORIES=	databases kde
-MASTER_SITES=	KDE/stable/KBibTeX/${DISTVERSION}/
+MASTER_SITES=	KDE/unstable/KBibTeX/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Bibliography editor for KDE
@@ -21,7 +20,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext gnome \
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm i18n iconthemes itemviews jobwidgets \
-		kio parts service solid sonnet textwidgets wallet \
+		kio parts service solid sonnet texteditor textwidgets wallet \
 		widgetsaddons xmlgui
 USE_QT=		concurrent core dbus declarative gui location network \
 		printsupport webchannel widgets xml xmlpatterns \
