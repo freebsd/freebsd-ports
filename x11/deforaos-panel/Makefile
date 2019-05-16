@@ -15,15 +15,15 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
-				libSystem.so:devel/deforaos-libsystem \
-				libfontconfig.so:x11-fonts/fontconfig \
-				libfreetype.so:print/freetype2
+		libSystem.so:devel/deforaos-libsystem \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 BUILD_DEPENDS=	browser:x11-fm/deforaos-browser
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
 		sudo:security/sudo
 
+USES=		gnome pkgconfig
 USE_GNOME=	gtk20 cairo
-USES=		pkgconfig
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
