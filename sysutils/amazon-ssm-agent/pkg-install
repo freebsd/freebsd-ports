@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" ]; then
+	echo "Creating ssm-user for SSM Agent Sessions"
+	pw useradd ssm-user -G wheel -m
+fi

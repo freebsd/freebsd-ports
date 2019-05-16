@@ -1,4 +1,4 @@
---- agent/log/log_unix.go.orig	2016-07-06 21:51:35 UTC
+--- agent/log/log_unix.go.orig	2019-05-08 20:19:03 UTC
 +++ agent/log/log_unix.go
 @@ -24,7 +24,7 @@ const (
  	// DefaultSeelogConfigFilePath specifies the default seelog location
