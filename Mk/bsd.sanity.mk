@@ -168,6 +168,8 @@ DEV_ERROR+=	"PORT${_type} does not do anything unless the ${_type} option is pre
 .  endif
 .endfor
 
+# Whitelist of options helper lookalikes that should not be reported on:
+_OPTIONS_HELPERS_SEEN+=	OPENSSL_LDFLAGS
 _BROKEN_OPTIONS_HELPERS=
 .for opt in ${_REALLY_ALL_POSSIBLE_OPTIONS}
 .  for helper in ${_ALL_OPTIONS_HELPERS}
