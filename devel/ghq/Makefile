@@ -2,7 +2,7 @@
 
 PORTNAME=	ghq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.1
+DISTVERSION=	0.12.3
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -15,11 +15,12 @@ USES=		go:modules
 GO_PKGNAME=	github.com/motemen/ghq
 USE_GITHUB=	yes
 GH_ACCOUNT=	motemen
-GH_TUPLE=	blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
+GH_TUPLE=	Songmu:gitconfig:v0.0.2:songmu_gitconfig/vendor/github.com/Songmu/gitconfig \
 		daviddengcn:go-colortext:186a3d44e920:daviddengcn_go_colortext/vendor/github.com/daviddengcn/go-colortext \
-		golang:net:f4e77d36d62c:golang_net/vendor/golang.org/x/net \
+		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		golang:net:3ec191127204:golang_net/vendor/golang.org/x/net \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
-		golang:xerrors:385005612d73:golang_xerrors/vendor/golang.org/x/xerrors \
+		golang:xerrors:3ee3066db522:golang_xerrors/vendor/golang.org/x/xerrors \
 		motemen:go-colorine:45d19169413a:motemen_go_colorine/vendor/github.com/motemen/go-colorine \
 		urfave:cli:v1.20.0:urfave_cli/vendor/github.com/urfave/cli
 
