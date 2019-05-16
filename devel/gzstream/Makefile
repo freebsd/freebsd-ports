@@ -3,7 +3,7 @@
 
 PORTNAME=	gzstream
 DISTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.unc.edu/Research/compgeom/gzstream/
 DISTNAME=	${PORTNAME}
@@ -24,11 +24,11 @@ CFLAGS+=	-fPIC -iquote.
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/=/?=/;s/\.a/.so/g;s/CPPFL/CXXFL/g;\
-		s/{AR}/{CC} $${CFLAGS} -lz -shared -Wl,-soname=lib${PORTNAME}.so.0 -o/' ${WRKSRC}/${MAKEFILE}
+		s/{AR}/{CXX} $${LDFLAGS} -lz -shared -Wl,-soname=lib${PORTNAME}.so.0 -o/' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e '/gzstream\.h/y/<>/""/' ${WRKSRC}/gzstream.C
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0
+	${INSTALL_LIB} ${WRKSRC}/lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0
 	${LN} -sf lib${PORTNAME}.so.0 ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.h ${STAGEDIR}${PREFIX}/include/
 
