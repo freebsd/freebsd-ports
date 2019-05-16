@@ -17,8 +17,8 @@ include/dc1394/vendor/pixelink.h
 include/dc1394/video.h
 lib/libdc1394.a
 lib/libdc1394.so
-lib/libdc1394.so.22
-lib/libdc1394.so.22.2.1
+lib/libdc1394.so.25
+lib/libdc1394.so.25.0.0
 libdata/pkgconfig/libdc1394-2.pc
 man/man1/dc1394_multiview.1.gz
 man/man1/dc1394_reset_bus.1.gz
