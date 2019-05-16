@@ -19,7 +19,8 @@ CONFLICTS?=	bacula17*-server-* bareos16-server-*
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson
 
-USES+=		cmake:insource pkgconfig readline:port shebangfix
+USES+=		cmake:insource compiler:c++11-lang pkgconfig readline:port \
+		shebangfix
 USE_GITHUB=	yes
 
 USERS=		bareos
