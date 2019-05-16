@@ -1,0 +1,6 @@
+SimGrid is a scientific instrument to study the behavior of large-scale
+distributed systems such as Grids, Clouds, HPC or P2P systems. It can be used to
+evaluate heuristics, prototype applications or even assess legacy MPI
+applications. All this as a free software.
+
+WWW: https://simgrid.org/
