@@ -2072,7 +2072,6 @@ finance/xinvest||2011-05-02|Has expired: Outdated, abandoned
 finance/xquote||2011-05-02|Has expired: Outdated, abandoned
 french/plgrenouille||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 editors/xemacs-devel-mule-xft||2011-05-02|Remove, editors/xemacs-devel-mule builds with xft support now
-lang/clips||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 lang/eiffel||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 lang/libutils||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 lang/linux-libperl5.8||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
