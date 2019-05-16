@@ -1,0 +1,9 @@
+--- man/CMakeLists.txt.orig	2019-05-15 18:58:38 UTC
++++ man/CMakeLists.txt
+@@ -36,5 +36,5 @@ configure_file (
+ install( FILES 
+       ${PROJECT_BINARY_DIR}/man/${MusE_EXEC_NAME}.1
+       ${PROJECT_BINARY_DIR}/man/grepmidi.1
+-      DESTINATION ${SHARE_INSTALL_PREFIX}/man/man1/
++      DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1/
+       )
