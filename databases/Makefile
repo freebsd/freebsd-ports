@@ -784,7 +784,6 @@
     SUBDIR += py-motor
     SUBDIR += py-mycli
     SUBDIR += py-mysql-connector-python
-    SUBDIR += py-mysql-connector-python2
     SUBDIR += py-mysql2pgsql
     SUBDIR += py-mysqlclient
     SUBDIR += py-oops
@@ -792,7 +791,6 @@
     SUBDIR += py-peewee
     SUBDIR += py-pg8000
     SUBDIR += py-pg8000-112
-    SUBDIR += py-pg_pqueue
     SUBDIR += py-pgcli
     SUBDIR += py-pgdbconn
     SUBDIR += py-pglast
