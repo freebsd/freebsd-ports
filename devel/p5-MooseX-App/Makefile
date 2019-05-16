@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-App
-PORTVERSION=	1.39
+PORTVERSION=	1.41
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Config-Any>=0:devel/p5-Config-Any \
 		p5-IO-Interactive>=0:devel/p5-IO-Interactive \
+		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
 		p5-Moose>=2:devel/p5-Moose \
 		p5-MooseX-Types-Path-Class>=0:devel/p5-MooseX-Types-Path-Class \
 		p5-Path-Class>=0:devel/p5-Path-Class \
