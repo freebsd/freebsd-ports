@@ -13,8 +13,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 
-xBUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
-		lv2>0:audio/lv2
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libFLAC.so:audio/flac \
 		libjack.so:audio/jack \
