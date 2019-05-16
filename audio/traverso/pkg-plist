@@ -1,0 +1,14 @@
+bin/traverso
+share/applications/traverso.desktop
+share/icons/hicolor/128x128/apps/traverso.png
+share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-traverso.png
+share/icons/hicolor/16x16/apps/traverso.png
+share/icons/hicolor/16x16/mimetypes/gnome-mime-application-x-traverso.png
+share/icons/hicolor/24x24/apps/traverso.png
+share/icons/hicolor/24x24/mimetypes/gnome-mime-application-x-traverso.png
+share/icons/hicolor/48x48/apps/traverso.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-traverso.png
+share/icons/hicolor/64x64/apps/traverso.png
+share/icons/hicolor/64x64/mimetypes/gnome-mime-application-x-traverso.png
+share/icons/hicolor/scalable/apps/traverso.svg
+share/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-traverso.svg

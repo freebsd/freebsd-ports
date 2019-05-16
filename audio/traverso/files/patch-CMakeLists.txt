@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-05-16 08:06:58 UTC
++++ CMakeLists.txt
+@@ -326,7 +326,7 @@ ${Qt5Xml_INCLUDE_DIRS}
+ ${Qt5Xml_INCLUDES}
+ )
+ 
+-set(CMAKE_CXX_FLAGS "-fPIC")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+ 
+ #Set up libraries to link with all found packages
+ LINK_LIBRARIES (
