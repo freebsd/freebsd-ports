@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-storage
-PORTVERSION=	1.15.0
+PORTVERSION=	1.15.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.6.0:www/py-google-api-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}google-cloud-core>=0.29.0:www/py-google-cloud-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}google-cloud-core>=0.29.0<2.0:www/py-google-cloud-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-resumable-media>=0.3.1:www/py-google-resumable-media@${PY_FLAVOR}
 
 USES=		python
