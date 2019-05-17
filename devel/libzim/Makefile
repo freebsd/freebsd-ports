@@ -7,6 +7,9 @@ CATEGORIES=	devel
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Reference implementation of the ZIM specification
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libxapian.so:databases/xapian-core
 
