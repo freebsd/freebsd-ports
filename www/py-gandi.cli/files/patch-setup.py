@@ -1,10 +1,13 @@
---- setup.py.orig	2017-09-13 12:32:20 UTC
+--- setup.py.orig	2019-01-13 14:15:14 UTC
 +++ setup.py
-@@ -6,19 +6,19 @@ import os
+@@ -5,14 +5,15 @@ import re
+ import os
  import sys
  
- from setuptools import setup, find_packages
 +from io import open
++
+ from setuptools import setup, find_packages
+ from setuptools.command.test import test as TestCommand
  
  here = os.path.abspath(os.path.dirname(__file__))
 -README = open(os.path.join(here, 'README.md')).read()
@@ -13,23 +16,27 @@
 +CHANGES = open(os.path.join(here, 'CHANGES.rst'), encoding='utf-8').read()
  
 -
- with open(os.path.join(here, 'gandi', 'cli', '__init__.py')) as v_file:
-     version = re.compile(r".*__version__ = '(.*?)'",
-                          re.S).match(v_file.read()).group(1)
+ class PyTest(TestCommand):
+     user_options = [('pytest-args=', 'a', "Arguments to pass into py.test")]
  
- requires = ['setuptools', 'pyyaml', 'click>=3.1', 'requests', 'IPy']
+@@ -43,8 +44,10 @@ with open(os.path.join(here, 'gandi', 'cli', '__init__
  
--tests_require = ['nose', 'coverage', 'tox']
-+tests_require = []
- if sys.version_info < (2, 7):
-     tests_require += ['unittest2', 'importlib']
+ requires = ['setuptools', 'pyyaml', 'click>=7.0', 'requests', 'IPy']
  
-@@ -55,7 +55,7 @@ setup(name='gandi.cli',
-     zip_safe=False,
-     install_requires=requires,
-     tests_require=tests_require,
--    test_suite='nose.collector',
-+    test_suite='gandi.cli.tests',
-     extras_require=extras_require,
-     entry_points={
-         'console_scripts': [
+-tests_require = ['pytest', 'pytest-cov', 'tox']
++tests_require = ['pytest']
+ 
++dev_requires = ['pytest-cov', 'tox']
++
+ if sys.version_info < (3, 0):
+     tests_require += ['mock']
+ else:
+@@ -54,7 +57,7 @@ else:
+             " (sys.version: {})".format(sys.version))
+ 
+ extras_require = {
+-    'test': tests_require,
++    'dev': dev_requires,
+ }
+ 
+ setup(name='gandi.cli',
