@@ -610,6 +610,7 @@
     SUBDIR += erlang-syslog
     SUBDIR += erlang-unicode_util_compat
     SUBDIR += es-eric6
+    SUBDIR += estd
     SUBDIR += etcd
     SUBDIR += etcd31
     SUBDIR += etcd32
