@@ -1,0 +1,12 @@
+%%WWWDIR%%/.gitignore
+%%WWWDIR%%/LICENSE
+%%WWWDIR%%/README.md
+%%WWWDIR%%/doc/02-Installation.md
+%%WWWDIR%%/doc/res/host-sla-report.png
+%%WWWDIR%%/library/Idoreports/HostSlaReport.php
+%%WWWDIR%%/library/Idoreports/IdoReport.php
+%%WWWDIR%%/library/Idoreports/ServiceSlaReport.php
+%%WWWDIR%%/module.info
+%%WWWDIR%%/run.php
+%%WWWDIR%%/schema/get_sla_ok_percent.sql
+%%WWWDIR%%/schema/slaperiods.sql
