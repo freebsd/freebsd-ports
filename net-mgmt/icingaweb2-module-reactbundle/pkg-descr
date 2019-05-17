@@ -1,0 +1,5 @@
+ReactPHP-based 3rd party libraries This repository is an attempt to ship 3rd
+party libraries that might be useful for asynchronous PHP-based Icinga Web 2
+modules.
+
+WWW: https://github.com/Icinga/icingaweb2-module-reactbundle
