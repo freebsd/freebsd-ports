@@ -2,7 +2,7 @@
 
 PORTNAME=	libksysguard
 DISTVERSION=	${KDE_PLASMA_VERSION}
-DISTERSION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,7 +16,6 @@ USE_QT=		core dbus gui network script webkit widgets x11extras xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	WEBENGINE
-OPTIONS_DEFAULT=	WEBENGINE
 
 WEBENGINE_USE=	QT=webengine
 WEBENGINE_DESC=	HTML-based GUI ksysguard library based on Qt5WebEngine
