@@ -2,36 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	praw
-PORTVERSION=	3.5.0
-PORTREVISION=	1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	6.2.0
+DISTVERSIONPREFIX=v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python Reddit API Wrapper
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>=4.0.9:devel/py-decorator@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.3.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.10:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}update_checker>=0.11:devel/py-update_checker@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:devel/py-mock@${PY_FLAVOR}
-
-# TEST_DEPENDS to be ported
-# betamax >=0.5.1
-# betamax-matchers >=0.2.0
-# betamax-serializers >=0.1.1
-
-NO_ARCH=	yes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}prawcore>=1.0.1,<2.0:www/py-prawcore@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}update_checker>=0.16:devel/py-update_checker@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}websocket-client>=0.54.0.0:www/py-websocket-client@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0.8:devel/py-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=2.7.3:devel/py-pytest@${PY_FLAVOR}
+# to be ported	betamax >=0.8, <0.9
+#		betamax-matchers >=0.3.0, <0.5
+#		betamax-serializers >=0.2, <0.3
 
 USES=		python
-USE_GITHUB=	yes
+USE_GITHUB=	yes # missing test data files
 USE_PYTHON=	autoplist concurrent distutils
 
 GH_ACCOUNT=	praw-dev
+
+NO_ARCH=	yes
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
