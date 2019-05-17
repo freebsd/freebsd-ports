@@ -2,11 +2,14 @@
 
 PORTNAME=	icingaweb2-module-ipl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1
+DISTVERSION=	0.3.0
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Icinga PHP library
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	icingaweb2>=2.4.1:net-mgmt/icingaweb2
 
