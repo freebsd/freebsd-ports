@@ -1,0 +1,10 @@
+%%WWWDIR%%/.github/ISSUE_TEMPLATE.md
+%%WWWDIR%%/.gitignore
+%%WWWDIR%%/LICENSE
+%%WWWDIR%%/README.md
+%%WWWDIR%%/doc/02-Installation.md
+%%WWWDIR%%/library/Pdfexport/HeadlessChrome.php
+%%WWWDIR%%/library/Pdfexport/ProvidedHook/Pdfexport.php
+%%WWWDIR%%/library/Pdfexport/ShellCommand.php
+%%WWWDIR%%/module.info
+%%WWWDIR%%/run.php
