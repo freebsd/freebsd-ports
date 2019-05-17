@@ -96,6 +96,7 @@
     SUBDIR += icingaweb2-module-graphite
     SUBDIR += icingaweb2-module-ipl
     SUBDIR += icingaweb2-module-map
+    SUBDIR += icingaweb2-module-pdfexport
     SUBDIR += icingaweb2-module-reactbundle
     SUBDIR += icingaweb2-module-reporting
     SUBDIR += icingaweb2-module-vsphere
