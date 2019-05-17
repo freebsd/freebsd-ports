@@ -1,0 +1,4 @@
+Icinga IDO Reports provides host and service availability reports for Icinga
+1.x and Icinga 2.x based on the monitoring database (IDO).
+
+WWW: https://github.com/Icinga/icingaweb2-module-idoreports
