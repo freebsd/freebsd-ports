@@ -435,6 +435,7 @@
     SUBDIR += darts
     SUBDIR += dash.el
     SUBDIR += datadraw
+    SUBDIR += date
     SUBDIR += dbus
     SUBDIR += dbus-c++
     SUBDIR += dbus-glib
