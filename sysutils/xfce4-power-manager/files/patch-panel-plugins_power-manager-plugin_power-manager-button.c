@@ -1,6 +1,6 @@
---- panel-plugins/power-manager-plugin/power-manager-button.c.orig	2017-11-23 23:52:06 UTC
+--- panel-plugins/power-manager-plugin/power-manager-button.c.orig	2019-05-17 13:43:56 UTC
 +++ panel-plugins/power-manager-plugin/power-manager-button.c
-@@ -512,6 +512,7 @@ power_manager_button_update_device_icon_and_details (P
+@@ -510,6 +510,7 @@ power_manager_button_update_device_icon_and_details (P
           * so we can disconnect it later */
          battery_device->img = gtk_image_new_from_pixbuf (battery_device->pix);
  
