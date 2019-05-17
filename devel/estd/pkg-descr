@@ -1,0 +1,8 @@
+estd is a header-only C++ library providing some additional utilities in the
+style of the standard library.
+
+The include files are ordered hierarchically in the style of Boost. You can
+include a whole sublibrary with a single header, or pick only the bits you want
+to use.
+
+WWW: https://github.com/fizyr/estd
