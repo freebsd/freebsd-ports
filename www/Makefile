@@ -1770,6 +1770,7 @@
     SUBDIR += py-plonetheme.sunburst
     SUBDIR += py-poster
     SUBDIR += py-praw
+    SUBDIR += py-prawcore
     SUBDIR += py-prewikka
     SUBDIR += py-priority
     SUBDIR += py-puppetboard
