@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 BROKEN_aarch64=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
 BROKEN_armv6=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
 BROKEN_armv7=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
-BROKEN_powerpc64=	fails to configure: Checking for C library pthread... no
 NOT_FOR_ARCHS=		i386
 # On i386 older versions of clang produce:
 #   cannot compile this atomic library call yet ... __atomic_add_fetch
@@ -30,7 +29,7 @@ BUILD_DEPENDS=	checkmk:devel/check \
 		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
-USES=		python:build scons ssl
+USES=		compiler:c++11-lang python:build scons ssl
 
 USE_LDCONFIG=	yes
 
