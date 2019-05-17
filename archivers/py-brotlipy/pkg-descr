@@ -1,0 +1,6 @@
+Brotlipy is a collection of CFFI-based bindings to the Brotli compression
+reference implementation as written by Google. This enables Python software
+to easily and quickly work with the Brotli compression algorithm,
+regardless of what interpreter is being used.
+
+WWW: https://github.com/python-hyper/brotlipy/
