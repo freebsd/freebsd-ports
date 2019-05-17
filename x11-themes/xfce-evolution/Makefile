@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce-evolution
+PORTREVISION=	1
 DISTVERSION=	6.0.3
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF/${PORTNAME}
@@ -15,8 +16,8 @@ RUN_DEPENDS=	fontconfig>0:x11-fonts/fontconfig \
 		gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
 		qt5-style-plugins>0:x11-themes/qt5-style-plugins
 
-USES=		shebangfix zip:infozip # infozip because unzip on 10 doesn't unpack symbolic links
-USE_GNOME=	gtk20:build
+USES=		shebangfix gnome zip
+USE_GNOME=	gtk20
 
 NO_BUILD=	yes
 NO_ARCH=	yes
