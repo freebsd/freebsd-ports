@@ -1,7 +1,9 @@
 %%WWWDIR%%/.gitignore
+%%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
 %%WWWDIR%%/bin/make-release.sh
 %%WWWDIR%%/composer.json
+%%WWWDIR%%/composer.lock
 %%WWWDIR%%/module.info
 %%WWWDIR%%/run.php
 %%WWWDIR%%/vendor/autoload.php
@@ -13,11 +15,14 @@
 %%WWWDIR%%/vendor/composer/autoload_psr4.php
 %%WWWDIR%%/vendor/composer/autoload_real.php
 %%WWWDIR%%/vendor/composer/autoload_static.php
+%%WWWDIR%%/vendor/composer/installed.json
 %%WWWDIR%%/vendor/evenement/evenement/LICENSE
+%%WWWDIR%%/vendor/evenement/evenement/composer.json
 %%WWWDIR%%/vendor/evenement/evenement/src/Evenement/EventEmitter.php
 %%WWWDIR%%/vendor/evenement/evenement/src/Evenement/EventEmitterInterface.php
 %%WWWDIR%%/vendor/evenement/evenement/src/Evenement/EventEmitterTrait.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/LICENSE
+%%WWWDIR%%/vendor/guzzlehttp/psr7/composer.json
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/AppendStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/BufferStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/CachingStream.php
@@ -44,6 +49,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/functions.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/functions_include.php
 %%WWWDIR%%/vendor/ipl/html/LICENSE
+%%WWWDIR%%/vendor/ipl/html/composer.json
 %%WWWDIR%%/vendor/ipl/html/src/Attribute.php
 %%WWWDIR%%/vendor/ipl/html/src/Attributes.php
 %%WWWDIR%%/vendor/ipl/html/src/BaseHtmlElement.php
@@ -74,6 +80,7 @@
 %%WWWDIR%%/vendor/ipl/html/src/Table.php
 %%WWWDIR%%/vendor/ipl/html/src/Text.php
 %%WWWDIR%%/vendor/ipl/html/src/ValidHtml.php
+%%WWWDIR%%/vendor/ipl/sql/composer.json
 %%WWWDIR%%/vendor/ipl/sql/src/Adapter/AdapterInterface.php
 %%WWWDIR%%/vendor/ipl/sql/src/Adapter/BaseAdapter.php
 %%WWWDIR%%/vendor/ipl/sql/src/Adapter/Mssql.php
@@ -101,8 +108,10 @@
 %%WWWDIR%%/vendor/ipl/sql/src/Where.php
 %%WWWDIR%%/vendor/ipl/sql/src/WhereInterface.php
 %%WWWDIR%%/vendor/ipl/stdlib/LICENSE
+%%WWWDIR%%/vendor/ipl/stdlib/composer.json
 %%WWWDIR%%/vendor/ipl/stdlib/src/Contract/ValidatorInterface.php
 %%WWWDIR%%/vendor/ipl/stdlib/src/Contracts/ValidatorInterface.php
+%%WWWDIR%%/vendor/ipl/stdlib/src/EventEmitter.php
 %%WWWDIR%%/vendor/ipl/stdlib/src/Loader/AutoLoadingPluginLoader.php
 %%WWWDIR%%/vendor/ipl/stdlib/src/Loader/PluginLoader.php
 %%WWWDIR%%/vendor/ipl/stdlib/src/Loader/PluginLoaderInterface.php
@@ -110,6 +119,7 @@
 %%WWWDIR%%/vendor/ipl/stdlib/src/functions.php
 %%WWWDIR%%/vendor/ipl/stdlib/src/functions_include.php
 %%WWWDIR%%/vendor/psr/http-message/LICENSE
+%%WWWDIR%%/vendor/psr/http-message/composer.json
 %%WWWDIR%%/vendor/psr/http-message/src/MessageInterface.php
 %%WWWDIR%%/vendor/psr/http-message/src/RequestInterface.php
 %%WWWDIR%%/vendor/psr/http-message/src/ResponseInterface.php
@@ -118,4 +128,5 @@
 %%WWWDIR%%/vendor/psr/http-message/src/UploadedFileInterface.php
 %%WWWDIR%%/vendor/psr/http-message/src/UriInterface.php
 %%WWWDIR%%/vendor/ralouphie/getallheaders/LICENSE
+%%WWWDIR%%/vendor/ralouphie/getallheaders/composer.json
 %%WWWDIR%%/vendor/ralouphie/getallheaders/src/getallheaders.php
