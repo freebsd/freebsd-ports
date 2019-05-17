@@ -53,6 +53,7 @@ GEOIP_CONFIGURE_ON=	--enable-geoip \
 			--with-geoip-lib=${LOCALBASE}/lib \
 			--with-geoip-inc=${LOCALBASE}/include
 GEOIP_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
+GEOIP_USES=		compiler:c++11-lang
 BDB1_CFLAGS=		-DUSE_DB185
 BDB_USES=		bdb
 BDB_LDFLAGS=		-L${BDB_LIB_DIR}
