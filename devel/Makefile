@@ -561,6 +561,7 @@
     SUBDIR += elixir-unsafe
     SUBDIR += embb
     SUBDIR += emscripten
+    SUBDIR += entt
     SUBDIR += epl.el
     SUBDIR += epm
     SUBDIR += epydoc
