@@ -1,4 +1,5 @@
-prawcore is a low-level communication layer for PRAW 4+.
+prawcore is a low-level communication layer for Python Reddit API Wrapper
+(PRAW) 4+. See: www/py-praw
 
 Features:
 
