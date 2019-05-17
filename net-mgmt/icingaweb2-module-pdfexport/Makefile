@@ -11,10 +11,8 @@ COMMENT=	Icinga PDF Export
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#RUN_DEPENDS=	icingaweb2>=2.4.1:net-mgmt/icingaweb2 \
-#		chromium>0:www/chromium
-RUN_DEPENDS=	icingaweb2>=2.4.1:net-mgmt/icingaweb2
-#		chromium>0:www/chromium
+RUN_DEPENDS=	icingaweb2>=2.4.1:net-mgmt/icingaweb2 \
+		chromium>0:www/chromium
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
