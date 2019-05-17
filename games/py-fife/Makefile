@@ -17,9 +17,7 @@ LIB_DEPENDS=		libvorbisfile.so:audio/libvorbis \
 			libboost_filesystem.so:devel/boost-libs \
 			libpng.so:graphics/png
 
-BROKEN_powerpc64=	fails to compile: fifePYTHON_wrap.cxx: relocation truncated to fit
-
-USES=			openal:al pkgconfig cmake
+USES=			cmake compiler:c++11-lang gl openal:al pkgconfig sdl
 USE_GL=			gl
 USE_SDL=		sdl2 ttf2 image2
 USE_XORG=		xcursor
