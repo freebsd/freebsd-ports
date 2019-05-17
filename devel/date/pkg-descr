@@ -1,0 +1,22 @@
+This is actually several separate C++11/C++14/C++17 libraries:
+* "date.h" is a header-only library which builds upon <chrono>. It adds some new
+  duration types, and new time_point types. It also adds "field" types such as
+  year_month_day which is a struct {year, month, day}. And it provides
+  convenient means to convert between the "field" types and the time_point
+  types.
+* "tz.h" / "tz.cpp" are a timezone library built on top of the "date.h" library.
+  This timezone library is a complete parser of the IANA timezone database. It
+  provides for an easy way to access all of the data in this database, using the
+  types from "date.h" and <chrono>. The IANA database also includes data on leap
+  seconds, and this library provides utilities to compute with that information
+  as well.
+* "iso_week.h" is a header-only library built on top of the "date.h" library
+  which implements the ISO week date calendar.
+* "julian.h" is a header-only library built on top of the "date.h" library which
+  implements a proleptic Julian calendar which is fully interoperable with
+  everything above.
+* "islamic.h" is a header-only library built on top of the "date.h" library
+  which implements a proleptic Islamic calendar which is fully interoperable
+  with everything above.
+
+WWW: https://github.com/HowardHinnant/date
