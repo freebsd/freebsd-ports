@@ -1,0 +1,7 @@
+libvdwxc is a library of density functionals, which can be linked by density
+functional theory (DFT) codes, to enable the calculation of exchange and
+correlation energies for van der Waals density functionals (vdW-DF). libvdwxc
+evaluates correlation energy and potential using a convolution in Fourier space
+using the method by Roman-Perez and Soler.
+
+WWW: https://libvdwxc.org/
