@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	shiboken2
-DISTVERSION=	5.12.2
+DISTVERSION=	5.12.3
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
 DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
