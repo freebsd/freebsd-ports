@@ -1405,6 +1405,7 @@
 %%FONTSDIR%%/LindenHill-Regular.ttf
 %%FONTSDIR%%/Literata-Italic.ttf
 %%FONTSDIR%%/Literata-Regular.ttf
+%%FONTSDIR%%/LiuJianMaoCao-Regular.ttf
 %%FONTSDIR%%/Lobster-Regular.ttf
 %%FONTSDIR%%/LobsterTwo-Bold.ttf
 %%FONTSDIR%%/LobsterTwo-BoldItalic.ttf
@@ -1420,6 +1421,7 @@
 %%FONTSDIR%%/LondrinaSolid-Light.ttf
 %%FONTSDIR%%/LondrinaSolid-Regular.ttf
 %%FONTSDIR%%/LondrinaSolid-Thin.ttf
+%%FONTSDIR%%/LongCang-Regular.ttf
 %%FONTSDIR%%/Lora-Bold.ttf
 %%FONTSDIR%%/Lora-BoldItalic.ttf
 %%FONTSDIR%%/Lora-Italic.ttf
@@ -1431,6 +1433,7 @@
 %%FONTSDIR%%/Lusitana-Bold.ttf
 %%FONTSDIR%%/Lusitana-Regular.ttf
 %%FONTSDIR%%/Lustria-Regular.ttf
+%%FONTSDIR%%/MaShanZheng-Regular.ttf
 %%FONTSDIR%%/Macondo-Regular.ttf
 %%FONTSDIR%%/MacondoSwashCaps-Regular.ttf
 %%FONTSDIR%%/Mada-Black.ttf
@@ -1465,6 +1468,9 @@
 %%FONTSDIR%%/Mali-SemiBoldItalic.ttf
 %%FONTSDIR%%/Mallanna-Regular.ttf
 %%FONTSDIR%%/Mandali-Regular.ttf
+%%FONTSDIR%%/Manjari-Bold.ttf
+%%FONTSDIR%%/Manjari-Regular.ttf
+%%FONTSDIR%%/Manjari-Thin.ttf
 %%FONTSDIR%%/Manuale-Bold.ttf
 %%FONTSDIR%%/Manuale-BoldItalic.ttf
 %%FONTSDIR%%/Manuale-Italic.ttf
@@ -2023,6 +2029,7 @@
 %%FONTSDIR%%/Puritan-Italic.ttf
 %%FONTSDIR%%/Puritan-Regular.ttf
 %%FONTSDIR%%/PurplePurse-Regular.ttf
+%%FONTSDIR%%/Pushster-Regular.ttf
 %%FONTSDIR%%/Quando-Regular.ttf
 %%FONTSDIR%%/Quantico-Bold.ttf
 %%FONTSDIR%%/Quantico-BoldItalic.ttf
@@ -2087,6 +2094,20 @@
 %%FONTSDIR%%/Rasa-SemiBold.ttf
 %%FONTSDIR%%/Rationale-Regular.ttf
 %%FONTSDIR%%/RaviPrakash-Regular.ttf
+%%FONTSDIR%%/RedHatDisplay-Black.ttf
+%%FONTSDIR%%/RedHatDisplay-BlackItalic.ttf
+%%FONTSDIR%%/RedHatDisplay-Bold.ttf
+%%FONTSDIR%%/RedHatDisplay-BoldItalic.ttf
+%%FONTSDIR%%/RedHatDisplay-Italic.ttf
+%%FONTSDIR%%/RedHatDisplay-Medium.ttf
+%%FONTSDIR%%/RedHatDisplay-MediumItalic.ttf
+%%FONTSDIR%%/RedHatDisplay-Regular.ttf
+%%FONTSDIR%%/RedHatText-Bold.ttf
+%%FONTSDIR%%/RedHatText-BoldItalic.ttf
+%%FONTSDIR%%/RedHatText-Italic.ttf
+%%FONTSDIR%%/RedHatText-Medium.ttf
+%%FONTSDIR%%/RedHatText-MediumItalic.ttf
+%%FONTSDIR%%/RedHatText-Regular.ttf
 %%FONTSDIR%%/Redacted-Regular.ttf
 %%FONTSDIR%%/RedactedScript-Bold.ttf
 %%FONTSDIR%%/RedactedScript-Regular.ttf
@@ -2207,6 +2228,7 @@
 %%FONTSDIR%%/SairaSemiCondensed-Regular.ttf
 %%FONTSDIR%%/SairaSemiCondensed-SemiBold.ttf
 %%FONTSDIR%%/SairaSemiCondensed-Thin.ttf
+%%FONTSDIR%%/SairaStencil-Regular.ttf
 %%FONTSDIR%%/Salsa-Regular.ttf
 %%FONTSDIR%%/Sanchez-Italic.ttf
 %%FONTSDIR%%/Sanchez-Regular.ttf
@@ -2338,6 +2360,11 @@
 %%FONTSDIR%%/SnowburstOne-Regular.ttf
 %%FONTSDIR%%/SofadiOne-Regular.ttf
 %%FONTSDIR%%/Sofia-Regular.ttf
+%%FONTSDIR%%/Solway-Bold.ttf
+%%FONTSDIR%%/Solway-ExtraBold.ttf
+%%FONTSDIR%%/Solway-Light.ttf
+%%FONTSDIR%%/Solway-Medium.ttf
+%%FONTSDIR%%/Solway-Regular.ttf
 %%FONTSDIR%%/SongMyung-Regular.ttf
 %%FONTSDIR%%/SonsieOne-Regular.ttf
 %%FONTSDIR%%/SortsMillGoudy-Italic.ttf
@@ -2601,6 +2628,7 @@
 %%FONTSDIR%%/ZCOOLQingKeHuangYou-Regular.ttf
 %%FONTSDIR%%/ZCOOLXiaoWei-Regular.ttf
 %%FONTSDIR%%/Zeyada.ttf
+%%FONTSDIR%%/ZhiMangXing-Regular.ttf
 %%FONTSDIR%%/ZillaSlab-Bold.ttf
 %%FONTSDIR%%/ZillaSlab-BoldItalic.ttf
 %%FONTSDIR%%/ZillaSlab-Italic.ttf
@@ -3864,6 +3892,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/lindenhill/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/literata/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/literata/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/liujianmaocao/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/liujianmaocao/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/lobster/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/lobster/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/lobstertwo/DESCRIPTION.en_us.html
@@ -3887,6 +3917,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/londrinasolid/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/londrinasolid/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/londrinasolid/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/longcang/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/longcang/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/lora/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/lora/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/lora/OFL.txt
@@ -3930,6 +3962,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/mallanna/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/mandali/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/mandali/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/manjari/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/manjari/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/manuale/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/manuale/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/marcellus/DESCRIPTION.en_us.html
@@ -3956,6 +3990,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/martelsans/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/marvel/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/marvel/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/mashanzheng/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/mashanzheng/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/mate/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/mate/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/matesc/DESCRIPTION.en_us.html
@@ -4405,6 +4441,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/purplepurse/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/purplepurse/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/purplepurse/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/pushster/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/pushster/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/quando/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/quando/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/quando/OFL.txt
@@ -4469,6 +4507,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/redacted/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/redactedscript/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/redactedscript/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/redhatdisplay/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/redhatdisplay/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/redhattext/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/redhattext/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/redressed/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/redressed/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/reemkufi/DESCRIPTION.en_us.html
@@ -4569,6 +4611,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/sairaextracondensed/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/sairasemicondensed/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/sairasemicondensed/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/sairastencil/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/sairastencil/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/salsa/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/salsa/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/sanchez/DESCRIPTION.en_us.html
@@ -4710,6 +4754,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/sofadione/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/sofia/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/sofia/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/solway/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/solway/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/songmyung/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/songmyung/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/sonsieone/DESCRIPTION.en_us.html
@@ -4964,6 +5010,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/zcoolxiaowei/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/zeyada/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/zeyada/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/zhimangxing/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/zhimangxing/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/zillaslab/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/zillaslabhighlight/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/zillaslabhighlight/OFL.txt
