@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2018-11-17 00:02:10 UTC
+--- CMakeLists.txt.orig	2019-05-18 21:55:29 UTC
 +++ CMakeLists.txt
-@@ -66,7 +66,9 @@ set(CMAKE_TEST_CCXX_FLAGS)      # TESTS 
+@@ -73,7 +73,9 @@ include(CMakePackageConfigHelpers)
  
  include("cmake/utils.cmake")
  include("cmake/options.cmake")
@@ -11,18 +11,18 @@
  include("cmake/TBB.cmake")
  include("cmake/platform.cmake")
  include("cmake/SDL.cmake")
-@@ -79,7 +81,10 @@ enable_testing()
+@@ -87,8 +89,12 @@ enable_testing()
  include_directories(include)
  
  add_subdirectory(src)
 -add_subdirectory(examples)
 -add_subdirectory(tests)
--
--install(FILES LICENSE DESTINATION share/doc/${LIB_NAME})
 +if(BUILD_EXAMPLES)
 +  add_subdirectory(examples)
 +endif()
 +if(BUILD_TESTS)
 +  add_subdirectory(tests)
 +endif()
-+#install(FILES LICENSE DESTINATION share/doc/${LIB_NAME})
+ 
+ if(MKLDNN_INSTALL_MODE STREQUAL "BUNDLE")
+     install(FILES LICENSE DESTINATION ${CMAKE_INSTALL_PREFIX})
