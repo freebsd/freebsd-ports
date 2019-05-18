@@ -1,0 +1,15 @@
+bin/libvdwxc_fdtest
+bin/libvdwxc_info
+bin/libvdwxc_maintest
+bin/libvdwxc_q0test
+bin/libvdwxc_q0test2
+include/vdwxc.h
+include/vdwxc_mpi.h
+include/vdwxcfort.f90
+lib/libvdwxc.so
+lib/libvdwxc.so.0
+lib/libvdwxc.so.0.0.0
+lib/libvdwxcfort.so
+lib/libvdwxcfort.so.0
+lib/libvdwxcfort.so.0.0.0
+libdata/pkgconfig/libvdwxc.pc
