@@ -1,11 +1,8 @@
 ***********************************************************
 
-Copy
-	%%PREFIX%%/etc/ddclient.conf.sample
-to
-	%%PREFIX%%/etc/ddclient.conf
+To configure ddclient, edit the following file:
 
-and edit it to fit your needs.
+	%%PREFIX%%/etc/ddclient.conf
 
 If you would like to run ddclient as a daemon add the
 following line to /etc/rc.conf
