@@ -12,7 +12,7 @@ COMMENT=	C++ library for multi-physics simulation
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PORTSCOUT=	skipv:3.0.0 # their development continues under the branch 2.X. 3.0.0 should be ignored until they release a higher version
+BROKEN_i386=	use of overloaded operator '[]' is ambiguous (with operand types 'chrono::quaternion' and 'int'): https://github.com/projectchrono/chrono/issues/158
 
 BUILD_DEPENDS=	openmpi>0:net/openmpi
 LIB_DEPENDS=	libomp.so:devel/openmp
@@ -40,6 +40,8 @@ PARALLEL_BUILD_DEPENDS=	blaze>0:math/blaze \
 
 TESTS_DESC=		Build and install unit test programs
 TESTS_CMAKE_BOOL=	BUILD_TESTING
+
+PORTSCOUT=	skipv:3.0.0 # their development continues under the branch 2.X. 3.0.0 should be ignored until they release a higher version
 
 .include <bsd.port.pre.mk>
 
