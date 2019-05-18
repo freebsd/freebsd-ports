@@ -2,7 +2,6 @@ bin/avrogencpp
 include/avro/AvroParse.hh
 include/avro/AvroSerialize.hh
 include/avro/AvroTraits.hh
-include/avro/Boost.hh
 include/avro/Compiler.hh
 include/avro/Config.hh
 include/avro/DataFile.hh
@@ -12,6 +11,7 @@ include/avro/Exception.hh
 include/avro/Generic.hh
 include/avro/GenericDatum.hh
 include/avro/Layout.hh
+include/avro/LogicalType.hh
 include/avro/Node.hh
 include/avro/NodeConcepts.hh
 include/avro/NodeImpl.hh
