@@ -12,4 +12,4 @@ Its main design goal is to lower the barrier to repeatable jail setups.
     TASKNAME and have all of the hosts and their variables in fab.env.
   * Configure ZFS pools and filesystems with whole-disk-encryption.
 
-WWW: http://docs.bsdploy.net/
+WWW: https://github.com/ployground/bsdploy
