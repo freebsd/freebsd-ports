@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Text-ANSI-Util>=0.22:textproc/p5-Text-ANSI-Util \
-		p5-Text-WideChar-Util>=0.10:textproc/p5-Text-WideChar-Util
+		p5-Text-WideChar-Util>=0.100:textproc/p5-Text-WideChar-Util
 TEST_DEPENDS=	p5-Data-Dump>=0:devel/p5-Data-Dump
 
 USES=		perl5
