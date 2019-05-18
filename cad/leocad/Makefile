@@ -7,7 +7,7 @@ DISTVERSION=	18.02.20190517
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Qt-based GDS2 Viewer
+COMMENT=	CAD program for creating virtual LEGO models
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
