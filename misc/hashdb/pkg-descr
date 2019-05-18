@@ -1,0 +1,11 @@
+hashdb is used for finding blacklist data in raw media by using cryptographic
+hashes calculated from hash blocks.
+
+The hashdb tool provides commands for creating hash databases of MD5 hashes on
+files aligned along hash block boundaries as well as querying hash databases,
+merging hash databases, and performing hash lookups.
+
+hashdb provides C++ and Python interfaces for working with and scanning hashdb
+databases.
+
+WWW: https://github.com/NPS-DEEP/hashdb
