@@ -2,7 +2,7 @@
 
 PORTNAME=	ustreamer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.73
+DISTVERSION=	0.75
 CATEGORIES=	multimedia ipv6 net
 
 MAINTAINER=	yuri@FreeBSD.org
