@@ -1,0 +1,5 @@
+Silicon is a C++ abstraction built on top of high-performance networking
+libraries. Its goal is to ease the writing of web APIs without compromising on
+performance.
+
+WWW: http://siliconframework.org/
