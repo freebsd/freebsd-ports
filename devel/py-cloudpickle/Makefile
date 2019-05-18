@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudpickle
-PORTVERSION=	0.8.1
+PORTVERSION=	1.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,8 +28,7 @@ TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures@${PY_FLAVOR}
 .endif
 
 # Need -s for https://github.com/cloudpipe/cloudpickle/issues/252
-
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -s
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -s
 
 .include <bsd.port.post.mk>
