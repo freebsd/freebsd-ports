@@ -11,6 +11,8 @@ COMMENT=	Simulator for spiking neural network models
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	https://github.com/nest/nest-simulator/issues/1205
+
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libltdl.so:devel/libltdl \
 		libomp.so:devel/openmp
