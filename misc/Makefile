@@ -176,7 +176,6 @@
     SUBDIR += granulate
     SUBDIR += grc
     SUBDIR += gwhich
-    SUBDIR += hashdb
     SUBDIR += hb
     SUBDIR += hello
     SUBDIR += help2man
