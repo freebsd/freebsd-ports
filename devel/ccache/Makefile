@@ -3,9 +3,9 @@
 
 PORTNAME=	ccache
 #PORTVERSION must be set later due to depending on PORT_OPTIONS.
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	https://www.samba.org/ftp/ccache/ \
+MASTER_SITES=	https://github.com/ccache/ccache/releases/download/v${DISTVERSION}/ \
 		LOCAL/bdrewery
 
 MAINTAINER=	bdrewery@FreeBSD.org
@@ -33,13 +33,13 @@ LLVMLINK_DESC=	Create llvm compiler links if llvm is installed
 TINDERBOX_DESC=	Create tarball for tinderbox usage
 MEMCACHED_DESC=	Build in experimental Memcached support
 
-USES=		compiler
+USES=		compiler gmake
 
 MEMCACHED_EXTRA_PATCHES=	\
 				${FILESDIR}/extra-patch-memcached-configure.ac \
 				${FILESDIR}/extra-patch-memcached-Makefile.in
 MEMCACHED_CONFIGURE_ENABLE=	memcached
-MEMCACHED_USES=			autoreconf gmake pkgconfig
+MEMCACHED_USES=			autoreconf pkgconfig
 MEMCACHED_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 MEMCACHED_LDFLAGS=		-L${LOCALBASE}/lib
 MEMCACHED_CFLAGS=		-I${LOCALBASE}/include
@@ -80,9 +80,7 @@ ALL_TARGET=	all docs
 PLIST_FILES+=	man/man1/ccache.1.gz
 .endif
 .else
-PORTVERSION=	3.4.3
-# Only needed pre-3.5
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.ac
+PORTVERSION=	3.7.1
 .endif
 
 .include <bsd.port.pre.mk>
