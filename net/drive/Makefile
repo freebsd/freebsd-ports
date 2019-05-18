@@ -4,7 +4,7 @@
 PORTNAME=	drive
 PORTVERSION=	0.3.9.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,18 +22,18 @@ PLIST_FILES=	bin/drive
 
 GH_ACCOUNT=	odeke-em
 GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/../src/github.com/boltdb/bolt \
-		census-instrumentation:opencensus-go:v0.20.0:census_instrumentation_opencensus/../src/go.opencensus.io \
+		census-instrumentation:opencensus-go:v0.21.0:census_instrumentation_opencensus/../src/go.opencensus.io \
 		cheggaaa:pb:v1.0.28:cheggaaa_pb/../src/github.com/cheggaaa/pb \
 		fatih:color:v1.7.0:fatih_color/../src/github.com/fatih/color \
-		golang:crypto:3d3f9f4:golang_crypto/../src/golang.org/x/crypto \
-		golang:net:adae6a3:golang_net/../src/golang.org/x/net \
-		golang:oauth2:8f65e30:golang_oauth2/../src/golang.org/x/oauth2 \
+		golang:crypto:22d7a77:golang_crypto/../src/golang.org/x/crypto \
+		golang:net:3ec1911:golang_net/../src/golang.org/x/net \
+		golang:oauth2:950ef44:golang_oauth2/../src/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.1:golang_protobuf/../src/github.com/golang/protobuf \
-		golang:sys:62eef0e:golang_sys/../src/golang.org/x/sys \
-		golang:text:f4905fb:golang_text/../src/golang.org/x/text \
-		google:go-genproto:e7d98fc:google_go_genproto/../src/google.golang.org/genproto \
-		google:google-api-go-client:v0.3.2:google_googleapigoclient/../src/google.golang.org/api \
-		googleapis:google-cloud-go:v0.37.4:googleapis_googlecloudgo/../src/cloud.google.com/go \
+		golang:sys:61b9204:golang_sys/../src/golang.org/x/sys \
+		golang:text:342b2e1:golang_text/../src/golang.org/x/text \
+		google:go-genproto:bb713bd:google_go_genproto/../src/google.golang.org/genproto \
+		google:google-api-go-client:v0.5.0:google_googleapigoclient/../src/google.golang.org/api \
+		googleapis:google-cloud-go:v0.39.0:googleapis_googlecloudgo/../src/cloud.google.com/go \
 		grpc:grpc-go:v1.20.1:grpc_grpc_go/../src/google.golang.org/grpc \
 		hashicorp:golang-lru:v0.5.1:hashicorp_golang_lru/../src/github.com/hashicorp/golang-lru \
 		mattn:go-colorable:v0.1.1:mattn_gocolorable/../src/github.com/mattn/go-colorable \
