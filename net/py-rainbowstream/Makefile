@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rainbowstream
-PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks@${PY_FLAVOR}
 
 # Actually 2.7,3.2-
-USES=		python:2.7
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
