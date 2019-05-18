@@ -13,9 +13,9 @@ LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	swig3.0:devel/swig30 \
-		openssl>:security/openssl
+		openssl>0:security/openssl
 LIB_DEPENDS=	libewf.so:devel/libewf
-RUN_DEPENDS=	openssl>:security/openssl
+RUN_DEPENDS=	openssl>0:security/openssl
 
 USES=		autoreconf gmake libtool localbase:ldflags python ssl # USES=ssl fails without openssl added to BUILD_DEPENDS/RUN_DEPENDS/LDFLAGS: see bug#237974
 GNU_CONFIGURE=	yes
