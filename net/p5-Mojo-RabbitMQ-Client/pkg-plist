@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Mojo/RabbitMQ/Client.pm
+%%SITE_PERL%%/Mojo/RabbitMQ/Client/Channel.pm
+%%SITE_PERL%%/Mojo/RabbitMQ/Client/Consumer.pm
+%%SITE_PERL%%/Mojo/RabbitMQ/Client/LocalQueue.pm
+%%SITE_PERL%%/Mojo/RabbitMQ/Client/Method.pm
+%%SITE_PERL%%/Mojo/RabbitMQ/Client/Method/Publish.pm
+%%SITE_PERL%%/Mojo/RabbitMQ/Client/Publisher.pm
+%%SITE_PERL%%/auto/share/dist/Mojo-RabbitMQ-Client/amqp0-9-1.stripped.extended.xml
+%%SITE_PERL%%/auto/share/dist/Mojo-RabbitMQ-Client/fixed_amqp0-8.xml
+%%PERL5_MAN3%%/Mojo::RabbitMQ::Client.3.gz
+%%PERL5_MAN3%%/Mojo::RabbitMQ::Client::Channel.3.gz
+%%PERL5_MAN3%%/Mojo::RabbitMQ::Client::Consumer.3.gz
+%%PERL5_MAN3%%/Mojo::RabbitMQ::Client::LocalQueue.3.gz
+%%PERL5_MAN3%%/Mojo::RabbitMQ::Client::Method.3.gz
+%%PERL5_MAN3%%/Mojo::RabbitMQ::Client::Method::Publish.3.gz
+%%PERL5_MAN3%%/Mojo::RabbitMQ::Client::Publisher.3.gz
