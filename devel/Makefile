@@ -5217,6 +5217,7 @@
     SUBDIR += qtcreator
     SUBDIR += quickcheck++
     SUBDIR += quilt
+    SUBDIR += rabs
     SUBDIR += racer
     SUBDIR += racerd
     SUBDIR += radare2
