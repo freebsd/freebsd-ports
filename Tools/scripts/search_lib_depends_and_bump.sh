@@ -33,7 +33,7 @@ PORT_TO_SEARCH=${1}
 BASEDIR=$(pwd)
 # Get a list of all ports
 echo "Prepare a list of all ports"
-ports=$(find . -name Makefile -path "./editors/*" ! -path "./Tools/* | sort")
+ports=$(find . -name Makefile ! -path "./Tools/* | sort")
 echo "done."
 echo
 
