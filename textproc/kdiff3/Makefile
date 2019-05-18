@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdiff3
-DISTVERSION=	1.8.0
+DISTVERSION=	1.8.1
 CATEGORIES=	textproc kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cmake compiler:c++11-lang kde:5 qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	KDE
-GH_TAGNAME=	42403aa
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm i18n iconthemes jobwidgets kio \
 		parts service sonnet textwidgets widgetsaddons xmlgui
