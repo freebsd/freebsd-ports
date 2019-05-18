@@ -1186,6 +1186,7 @@
     SUBDIR += rubygem-amq-protocol
     SUBDIR += rubygem-amqp
     SUBDIR += rubygem-amqp-utils
+    SUBDIR += rubygem-apollo_upload_server
     SUBDIR += rubygem-asset_sync
     SUBDIR += rubygem-aws-s3
     SUBDIR += rubygem-aws-ses
@@ -1270,8 +1271,12 @@
     SUBDIR += rubygem-omniauth-oauth
     SUBDIR += rubygem-omniauth-oauth2
     SUBDIR += rubygem-omniauth-openid
+    SUBDIR += rubygem-omniauth_openid_connect
+    SUBDIR += rubygem-omniauth-salesforce
     SUBDIR += rubygem-omniauth-twitter
+    SUBDIR += rubygem-omniauth-ultraauth
     SUBDIR += rubygem-open-uri-cached
+    SUBDIR += rubygem-openid_connect
     SUBDIR += rubygem-opennebula
     SUBDIR += rubygem-orchestrator_client
     SUBDIR += rubygem-ovirt-engine-sdk
