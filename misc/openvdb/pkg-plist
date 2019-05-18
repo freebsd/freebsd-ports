@@ -1,4 +1,7 @@
 bin/vdb_print
+%%TOOLS%%bin/vdb_lod
+%%TOOLS%%bin/vdb_render
+%%TOOLS%%bin/vdb_view
 include/openvdb/Exceptions.h
 include/openvdb/Grid.h
 include/openvdb/MetaMap.h
