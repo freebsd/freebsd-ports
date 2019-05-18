@@ -6,4 +6,4 @@ You can create, delete, monitor and ssh into instances while ploy handles the
 details like ssh fingerprint checking. Additional plugins provide advanced
 functionality like integrating Fabric (ploy_fabric) and Ansible (ploy_ansible).
 
-WWW: http://ploy.readthedocs.org
+WWW: https://github.com/ployground/ploy
