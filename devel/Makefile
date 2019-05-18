@@ -5308,6 +5308,7 @@
     SUBDIR += rubygem-attic
     SUBDIR += rubygem-attr_required
     SUBDIR += rubygem-authlogic
+    SUBDIR += rubygem-avro
     SUBDIR += rubygem-awesome_print
     SUBDIR += rubygem-aws-eventstream
     SUBDIR += rubygem-aws-sdk
