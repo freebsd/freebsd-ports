@@ -2,7 +2,6 @@ bin/kdiff3
 %%QT_PLUGINDIR%%/kf5/kfileitemaction/kdiff3fileitemaction.so
 %%QT_PLUGINDIR%%/kf5/parts/kdiff3part.so
 man/man1/kdiff3.1.gz
-share/appdata/org.kde.kdiff3.appdata.xml
 share/applications/org.kde.kdiff3.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/kdiff3/dirbrowser.png
 %%PORTDOCS%%%%DOCSDIR%%/en/kdiff3/dirmergebig.png
@@ -17,8 +16,15 @@ share/applications/org.kde.kdiff3.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/kdiff3/screenshot_merge.png
 %%PORTDOCS%%%%DOCSDIR%%/en/kdiff3/triple_diff.png
 %%PORTDOCS%%%%DOCSDIR%%/en/kdiff3/white_space.png
+share/icons/hicolor/128x128/apps/kdiff3.png
 share/icons/hicolor/16x16/apps/kdiff3.png
+share/icons/hicolor/22x22/apps/kdiff3.png
+share/icons/hicolor/256x256/apps/kdiff3.png
 share/icons/hicolor/32x32/apps/kdiff3.png
+share/icons/hicolor/48x48/apps/kdiff3.png
+share/icons/hicolor/64x64/apps/kdiff3.png
+share/icons/hicolor/scalable/apps/kdiff3.svgz
 share/kservices5/kdiff3part.desktop
 share/kxmlgui5/kdiff3/kdiff3_shell.rc
 share/kxmlgui5/kdiff3part/kdiff3_part.rc
+share/metainfo/org.kde.kdiff3.appdata.xml
