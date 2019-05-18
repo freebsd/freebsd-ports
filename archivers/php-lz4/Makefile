@@ -5,10 +5,11 @@ DISTVERSION=	0.3.5
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
-MAINTAINER=	pkaipila@gmail.com
+MAINTAINER=	pave@FreeBSD.org
 COMMENT=	This is the lz4 extension for PHP
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	liblz4.so:archivers/liblz4
 
@@ -19,7 +20,5 @@ GH_ACCOUNT=	kjdev
 GH_PROJECT=	php-ext-lz4
 
 CONFIGURE_ARGS=	--with-lz4-includedir=${LOCALBASE}
-
-PHP_MODNAME=	lz4
 
 .include <bsd.port.mk>
