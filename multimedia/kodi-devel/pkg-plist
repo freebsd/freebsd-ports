@@ -4,6 +4,7 @@ bin/kodi-standalone
 include/kodi/AEChannelData.h
 include/kodi/ActionIDs.h
 include/kodi/AddonBase.h
+include/kodi/AudioEngine.h
 include/kodi/DemuxCrypto.h
 include/kodi/DemuxPacket.h
 include/kodi/Filesystem.h
@@ -50,6 +51,10 @@ include/kodi/gui/dialogs/Progress.h
 include/kodi/gui/dialogs/Select.h
 include/kodi/gui/dialogs/TextViewer.h
 include/kodi/gui/dialogs/YesNo.h
+include/kodi/gui/gl/GL.h
+include/kodi/gui/gl/GLonDX.h
+include/kodi/gui/gl/Shader.h
+include/kodi/gui/renderHelper.h
 include/kodi/kodi_game_dll.h
 include/kodi/kodi_game_types.h
 include/kodi/kodi_vfs_types.h
@@ -70,8 +75,8 @@ include/kodi/xbmc_pvr_types.h
 %%WAYLAND%%lib/kodi/kodi-wayland
 %%X11%%lib/kodi/kodi-x11
 %%X11%%lib/kodi/kodi-xrandr
-lib/kodi/system/players/VideoPlayer/libdvdnav-%%ARCH%%-%%OPSYS%%.so
 %%SSE%%lib/kodi/system/libsse4-%%ARCH%%-%%OPSYS%%.so
+lib/kodi/system/players/VideoPlayer/libdvdnav-%%ARCH%%-%%OPSYS%%.so
 man/man1/kodi.1.gz
 man/man1/kodi.bin.1.gz
 share/applications/kodi.desktop
