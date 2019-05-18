@@ -1,0 +1,10 @@
+bin/hashdb
+include/hashdb.hpp
+lib/libhashdb.a
+%%PYTHON_SITELIBDIR%%/__pycache__/hashdb.cpython-36.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/__pycache__/hashdb.cpython-36.pyc
+%%PYTHON_SITELIBDIR%%/_hashdb.so
+%%PYTHON_SITELIBDIR%%/_hashdb.so.0
+%%PYTHON_SITELIBDIR%%/_hashdb.so.0.0.0
+%%PYTHON_SITELIBDIR%%/hashdb.py
+man/man1/hashdb.1.gz
