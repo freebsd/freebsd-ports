@@ -2193,6 +2193,7 @@
     SUBDIR += sfnt2woff
     SUBDIR += shellinabox
     SUBDIR += shttpd
+    SUBDIR += silicon
     SUBDIR += sitecopy
     SUBDIR += skytemplate
     SUBDIR += slowcgi
