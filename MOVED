@@ -12756,3 +12756,4 @@ dns/bind913|dns/bind9-devel|2019-05-16|Remove outdated development version
 databases/py-pg_pqueue||2019-05-16|Has expired: Upstream no longer maintained
 math/py-symeig|science/py-scipy|2019-05-16|Has expired: Consider using science/py-scipy as this library is included in py-scipy since 0.7 and onwards
 databases/py-mysql-connector-python2|databases/py-mysql-connector-python|2019-05-16|Has expired: Please consider using databases/py-mysql-connector-python which has been updated to latest upstream version
+www/py-requests1||2019-05-19|Temporary port while port consumers moved to requests 2.x support and the www/py-requests port. No longer depended on by any ports
