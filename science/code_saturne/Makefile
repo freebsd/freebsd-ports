@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	code_saturne
-PORTVERSION=	5.3.2
+PORTVERSION=	5.3.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	science parallel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -25,7 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	code-saturne
 
 USES=		autoreconf bison fortran gettext gnome gmake iconv libtool	\
-		pyqt:5 python:2.7 shebangfix
+		pyqt:5 python:3.6 shebangfix
 
 USE_GNOME=	libxml2
 USE_PYQT=	core gui sip widgets xml_build
