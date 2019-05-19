@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxmaxima
-PORTVERSION=	19.05.2
+PORTVERSION=	19.05.3
 DISTVERSIONPREFIX=	Version-
 CATEGORIES=	math
 
@@ -22,10 +22,10 @@ PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
 WX_COMPS=	wx
 WX_CONF_ARGS=	absolute
 
-OPTIONS_DEFINE= NLS
+OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_EXTRA_PATCHES_OFF= ${PATCHDIR}/extra-patch-CMakeLists.txt
+NLS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-CMakeLists.txt
 NLS_USES=	gettext
 
 .include <bsd.port.mk>
