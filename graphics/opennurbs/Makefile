@@ -24,10 +24,13 @@ OPTIONS_DEFINE=	EXAMPLES
 # In r311275 zlib.h was moved to contrib/zlib/zlib.h from lib/libz/zlib.h
 LIBZ=		${SRC_BASE}/contrib/zlib
 .if !exists(${LIBZ}/zlib.h)
+LIBZ=		${SRC_BASE}/sys/contrib/zlib
+.endif
+.if !exists(${LIBZ}/zlib.h)
 LIBZ:=		${SRC_BASE}/lib/libz
-.  if !exists(${LIBZ}/zlib.h)
+.endif
+.if !exists(${LIBZ}/zlib.h)
 IGNORE=		needs SRC_BASE to compile. Install base system sources and try again
-.  endif
 .endif
 
 .if ${ARCH} != i386
