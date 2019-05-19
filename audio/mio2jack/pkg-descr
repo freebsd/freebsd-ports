@@ -1,0 +1,6 @@
+Mio2jack is a tool to expose Sndio MIDI ports to JACK.
+
+For now it only handles one-way communication, that is MIDI events
+flowing in the Sndio to JACK direction.
+
+WWW: https://github.com/martingms/mio2jack
