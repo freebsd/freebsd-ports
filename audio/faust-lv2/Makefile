@@ -2,7 +2,7 @@
 
 PORTNAME=	faust
 DISTVERSION=	1.4.20180118
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 PKGNAMESUFFIX=	-lv2
@@ -26,6 +26,8 @@ BB_PROJECT=	faust-lv2
 BB_COMMIT=	4dc83e28e998
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
+
+LDFLAGS+=	-fPIC # recommended by 13i386 failure messages, it was only failing 
 
 OPTIONS_DEFINE_amd64=	SIMD
 OPTIONS_DEFINE_i386=	SIMD
