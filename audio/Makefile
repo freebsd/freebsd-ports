@@ -502,6 +502,7 @@
     SUBDIR += midipp
     SUBDIR += mikmod
     SUBDIR += milkytracker
+    SUBDIR += mio2jack
     SUBDIR += mixer.app
     SUBDIR += mixmos
     SUBDIR += mixxx
