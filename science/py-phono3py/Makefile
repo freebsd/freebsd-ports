@@ -18,16 +18,16 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}phonopy>=1.13.2:science/py-phonopy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
-		${LOCALBASE}/include/lapacke.h:math/lapacke
-LIB_DEPENDS=	libgomp.so:devel/openmp \
-		libopenblas.so:math/openblas
+		${LOCALBASE}/include/lapacke.h:math/lapacke \
+		openmp>0:devel/openmp
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}phonopy>=1.13.2:science/py-phonopy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
+		openmp>0:devel/openmp
 
-USES=		localbase python
+USES=		blaslapack:openblas localbase python
 USE_PYTHON=	distutils cython autoplist
 
 .include <bsd.port.mk>
