@@ -28,7 +28,7 @@ MAKEFILE=	makefile
 TEST_TARGET=	test
 
 FFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-llapack -lblas ${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so ${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgfortran.so -lm ${LOCALBASE}/lib/libomp.so
+LDFLAGS+=	-llapack -lblas ${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so ${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgfortran.so -lm -lomp
 
 MAKE_ARGS=	PYTHON=${PYTHON_CMD} FC=${FC} FXX=${FC} LN=${CC} \
 		INSTALLDIR=${STAGEDIR}${PREFIX} FREEBSD_PYDISTUTILS_INSTALLARGS="${PYDISTUTILS_INSTALLARGS} --root=${STAGEDIR}"
