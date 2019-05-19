@@ -493,6 +493,7 @@
     SUBDIR += dsymbol
     SUBDIR += dub
     SUBDIR += dulwich
+    SUBDIR += dupl
     SUBDIR += duplo
     SUBDIR += dwarfdump
     SUBDIR += dxa65
