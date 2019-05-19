@@ -2,7 +2,7 @@
 
 PORTNAME=	openbor
 # Hint: svn revision is git rev-list --count ${GH_TAGNAME}
-PORTVERSION?=	7000
+PORTVERSION?=	7022
 .ifndef PKGNAMESUFFIX
 PORTREVISION=	0
 .endif
@@ -31,7 +31,7 @@ PORTSCOUT=	ignore:1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DCurrent
-GH_TAGNAME?=	dc6a1516
+GH_TAGNAME?=	c5cfb660
 
 USES+=		gmake pkgconfig
 .if ${PORTVERSION} < 4433
@@ -92,11 +92,11 @@ post-patch:
 	@${GREP} -Flr 'malloc.h' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		's,malloc\.h,stdlib.h,'
 	@${REINPLACE_CMD} -e 's/^function \(.*\) {/\1() {/' \
-		-e 's/^get_revnum$$/VERSION_BUILD=${PORTVERSION}/' \
 		${WRKSRC}/version.sh
 
 do-configure:
-	(cd ${WRKSRC} && ${SH} ./version.sh)
+	(cd ${WRKSRC} && VERSION_BUILD=${PORTVERSION} VERSION_COMMIT=${GH_TAGNAME} \
+		${SH} ./version.sh)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/OpenBOR.elf \
