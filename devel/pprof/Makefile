@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pprof
-DISTVERSION=	g20190207
+DISTVERSION=	g20190515
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	b421f19
+GH_TAGNAME=	54271f7
 GH_TUPLE=	chzyer:readline:v1.4:readline/src/github.com/chzyer/readline \
 		ianlancetaylor:demangle:5e5cf60:demangle/src/github.com/ianlancetaylor/demangle
 GH_SUBDIR=	src/github.com/google/${PORTNAME}
