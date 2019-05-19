@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsass
-DISTVERSION=	0.18.0
+DISTVERSION=	0.19.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,8 @@ COMMENT=	Straightforward binding of libsass for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 LIB_DEPENDS=	libsass.so:textproc/libsass
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang localbase python
 USE_PYTHON=	autoplist distutils
