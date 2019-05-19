@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	istio
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -14,6 +14,9 @@ RUN_DEPENDS=	kubectl:sysutils/kubectl
 
 USES=		go
 
+OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_SUB=	yes
+
 USE_GITHUB=	yes
 
 GO_PKGNAME=	istio.io/istio
@@ -23,5 +26,8 @@ GO_BUILDFLAGS=	-ldflags="-X istio.io/istio/pkg/version.buildVersion=${PORTVERSIO
 
 post-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} install ${STAGEDIR}${DATADIR})
+
+post-install-EXAMPLES-on:
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} samples ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
