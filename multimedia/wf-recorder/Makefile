@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	wf-recorder
-DISTVERSION=	g20190226
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1
 CATEGORIES=	multimedia wayland
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -13,12 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	wayland-protocols>=1.14:graphics/wayland-protocols \
 		wayland-scanner:graphics/wayland
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
+		libpulse.so:audio/pulseaudio \
 		libwayland-client.so:graphics/wayland
 
 USES=		compiler:c++11-lang meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ammen99
-GH_TAGNAME=	7cd6bd2779b1da68afd34dfb3fb63214d1aff7d9
 
 PLIST_FILES=	bin/wf-recorder
 PORTDOCS=	README.md
