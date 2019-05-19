@@ -12,8 +12,8 @@ COMMENT=	RFC 7049 - Concise Binary Object Representation
 
 LICENSE=	APACHE20
 
-USE_PYTHON=	autoplist concurrent distutils
 USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>
 
