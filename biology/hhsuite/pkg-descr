@@ -1,0 +1,8 @@
+SIMD-vectorized implementation of the Viterbi algorithm for profile HMM
+alignment and introduced various other speed-ups. This accelerated HHsearch by a
+factor 4 and HHblits by a factor 2 over the previous version 2.0.16. HHblits3 is
+~10x faster than PSI-BLAST and ~20x faster than HMMER3. Jobs to perform HHsearch
+and HHblits searches with many query profile HMMs can be parallelized over cores
+and over servers in a cluster using OpenMP and message passing interface (MPI).
+
+WWW: https://github.com/soedinglab/hh-suite

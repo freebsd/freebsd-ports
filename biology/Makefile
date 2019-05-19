@@ -49,6 +49,7 @@
     SUBDIR += graphlan
     SUBDIR += grappa
     SUBDIR += groopm
+    SUBDIR += hhsuite
     SUBDIR += hisat2
     SUBDIR += hmmer
     SUBDIR += htslib
