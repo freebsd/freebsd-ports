@@ -1,4 +1,6 @@
 %%SITE_PERL%%/WebDriver/Tiny.pm
+%%SITE_PERL%%/WebDriver/Tiny.pod
 %%SITE_PERL%%/WebDriver/Tiny/Elements.pm
+%%SITE_PERL%%/WebDriver/Tiny/Elements.pod
 %%PERL5_MAN3%%/WebDriver::Tiny.3.gz
 %%PERL5_MAN3%%/WebDriver::Tiny::Elements.3.gz
