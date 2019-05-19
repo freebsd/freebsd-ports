@@ -3,6 +3,7 @@
 PORTNAME=	z3-solver
 DISTVERSIONPREFIX=	z3-
 DISTVERSION=	4.8.4
+PORTREVISION=	1
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,6 +22,8 @@ GH_PROJECT=	z3
 USE_PYTHON=	distutils autoplist
 
 WRKSRC_SUBDIR=	src/api/python
+
+LDFLAGS+=	-fPIC # failure message on 13-i386 suggested -fPIC, no other platforms experienced failures
 
 post-patch: # https://github.com/Z3Prover/z3/issues/2131
 	@${REINPLACE_CMD} 's|…|...|' ${WRKSRC}/../../ast/recfun_decl_plugin.h
