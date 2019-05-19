@@ -1,0 +1,11 @@
+dupl is a tool written in Go for finding code clones. So far it can find clones
+only in the Go source files. The method uses suffix tree for serialized ASTs. It
+ignores values of AST nodes. It just operates with their types (e.g.
+if a == 13 {} and if x == 100 {} are considered the same provided it exceeds the
+minimal token sequence size).
+
+Due to the used method dupl can report so called "false positives" on the
+output.  These are the ones we do not consider clones (whether they are too
+small, or the values of the matched tokens are completely different).
+
+WWW: https://github.com/mibk/dupl

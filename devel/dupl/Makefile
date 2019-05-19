@@ -1,0 +1,23 @@
+# $FreeBSD$
+
+PORTNAME=	dupl
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.0-11
+DISTVERSIONSUFFIX=	-g28d787e
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Tool for code clone detection
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		go
+USE_GITHUB=	yes
+GH_ACCOUNT=	mibk
+
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>
