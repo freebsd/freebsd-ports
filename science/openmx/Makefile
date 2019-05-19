@@ -22,7 +22,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libfftw3.so:math/fftw3 \
 		liblapack.so:math/lapack \
 		libmpich.so:net/mpich \
-		libomp.so:devel/openmp
+		libiomp5.so:devel/openmp
 
 USES=		dos2unix fortran gmake localbase:ldflags
 DOS2UNIX_FILES=	openmx_common.h
