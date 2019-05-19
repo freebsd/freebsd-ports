@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WebDriver-Tiny
-PORTVERSION=	0.101
+PORTVERSION=	0.102
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CVLIBRARY
@@ -15,13 +15,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
-
 USES=		perl5
 USE_PERL5=	modbuildtiny
-NO_ARCH=	yes
 
-post-extract:
-	@${FIND} ${WRKSRC}/lib/ -name '*.pod' -delete
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
