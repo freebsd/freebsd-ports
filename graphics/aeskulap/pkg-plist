@@ -1,4 +1,5 @@
 bin/aeskulap
+lib/aeskulap/libaeskulap-glade.so
 lib/aeskulap/libconfiguration.so
 lib/aeskulap/libimagepool.so
 %%DATADIR%%/glade/aeskulap.glade
