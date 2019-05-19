@@ -1,0 +1,11 @@
+include/qaccessibilityclient/accessibleobject.h
+include/qaccessibilityclient/libqaccessibilityclient-version.h
+include/qaccessibilityclient/qaccessibilityclient_export.h
+include/qaccessibilityclient/registry.h
+lib/cmake/QAccessibilityClient/QAccessibilityClient-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/QAccessibilityClient/QAccessibilityClient.cmake
+lib/cmake/QAccessibilityClient/QAccessibilityClientConfig.cmake
+lib/cmake/QAccessibilityClient/QAccessibilityClientConfigVersion.cmake
+lib/libqaccessibilityclient-qt5.so
+lib/libqaccessibilityclient-qt5.so.0
+lib/libqaccessibilityclient-qt5.so.0.4.1
