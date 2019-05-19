@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bindgen
-DISTVERSION=	0.49.0
-PORTREVISION=	3
+DISTVERSION=	0.49.1
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 PKGNAMEPREFIX=	rust-
@@ -24,42 +23,42 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		ansi_term-0.11.0 \
 		atty-0.2.11 \
 		autocfg-0.1.2 \
-		backtrace-0.3.15 \
+		backtrace-0.3.18 \
 		backtrace-sys-0.1.28 \
 		bitflags-1.0.4 \
 		byteorder-1.3.1 \
-		cc-1.0.34 \
+		cc-1.0.37 \
 		cexpr-0.3.5 \
-		cfg-if-0.1.7 \
+		cfg-if-0.1.9 \
 		clang-sys-0.28.0 \
-		clap-2.32.0 \
+		clap-2.33.0 \
 		diff-0.1.11 \
 		env_logger-0.6.1 \
 		failure-0.1.5 \
+		fxhash-0.2.1 \
 		glob-0.2.11 \
-		hashbrown-0.1.8 \
 		humantime-1.2.0 \
 		lazy_static-1.3.0 \
-		libc-0.2.51 \
+		libc-0.2.55 \
 		libloading-0.5.0 \
 		log-0.4.6 \
 		memchr-2.2.0 \
 		nom-4.2.3 \
+		numtoa-0.1.0 \
 		peeking_take_while-0.1.2 \
-		proc-macro2-0.4.27 \
+		proc-macro2-0.4.30 \
 		quick-error-1.2.2 \
-		quote-0.6.11 \
-		redox_syscall-0.1.52 \
+		quote-0.6.12 \
+		redox_syscall-0.1.54 \
 		redox_termios-0.1.1 \
-		regex-1.1.5 \
+		regex-1.1.6 \
 		regex-syntax-0.6.6 \
-		rustc-demangle-0.1.13 \
-		scopeguard-0.3.3 \
+		rustc-demangle-0.1.14 \
 		shlex-0.1.1 \
-		strsim-0.7.0 \
+		strsim-0.8.0 \
 		termcolor-1.0.4 \
-		termion-1.5.1 \
-		textwrap-0.10.0 \
+		termion-1.5.2 \
+		textwrap-0.11.0 \
 		thread_local-0.3.6 \
 		ucd-util-0.1.3 \
 		unicode-width-0.1.5 \
