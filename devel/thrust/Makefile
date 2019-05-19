@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	thrust
-DISTVERSION=	1.9.4
+DISTVERSION=	1.9.5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
