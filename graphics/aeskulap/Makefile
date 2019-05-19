@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aeskulap
-DISTVERSION=	0.2.2.20180219
+DISTVERSION=	0.2.2.20181229
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,8 +21,8 @@ LIB_DEPENDS=	libdcmimage.so:graphics/dcmtk \
 USES=		compiler:c++11-lang autoreconf desktop-file-utils gettext \
 		gmake gnome jpeg libtool localbase pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	jenslody # was pipelka
-GH_TAGNAME=	8787e95
+GH_ACCOUNT=	stefanhusmann
+GH_TAGNAME=	26ad27a
 USE_CXXSTD=	c++11
 USE_GNOME=	gconfmm26 gtkmm24 intltool libglade2
 USE_LDCONFIG=	${PREFIX}/lib/aeskulap
