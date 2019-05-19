@@ -13,6 +13,7 @@ COMMENT=	Generic archive extracting mechanism (using libarchive)
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Object-Tiny>=0:devel/p5-Object-Tiny
@@ -20,8 +21,8 @@ TEST_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-Path-Class>=0:devel/p5-Path-Class \
 		p5-Test-Pod>=1.04:devel/p5-Test-Pod
 
+USES=		libarchive perl5
 USE_PERL5=	modbuild
-USES=		perl5 libarchive
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Archive/Extract/Libarchive/Libarchive.so
