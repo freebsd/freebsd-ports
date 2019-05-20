@@ -33,25 +33,25 @@ LLVMLINK_DESC=	Create llvm compiler links if llvm is installed
 TINDERBOX_DESC=	Create tarball for tinderbox usage
 MEMCACHED_DESC=	Build in experimental Memcached support
 
-USES=		compiler gmake
+USES=		compiler
 
 MEMCACHED_EXTRA_PATCHES=	\
 				${FILESDIR}/extra-patch-memcached-configure.ac \
 				${FILESDIR}/extra-patch-memcached-Makefile.in
 MEMCACHED_CONFIGURE_ENABLE=	memcached
-MEMCACHED_USES=			autoreconf pkgconfig
+MEMCACHED_USES=			autoreconf gmake pkgconfig
 MEMCACHED_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 MEMCACHED_LDFLAGS=		-L${LOCALBASE}/lib
 MEMCACHED_CFLAGS=		-I${LOCALBASE}/include
 
 STATIC_CONFIGURE_ENABLE=	static
 
+.if empty(OPTIONS_SLAVE:MMEMCACHED)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.in
+.endif
+
 .if defined(WITH_CCACHE_BUILD) && empty(OPTIONS_SLAVE:MMEMCACHED) && \
     !defined(NO_CCACHE_DEPEND)
-# Don't allow autoreconf. We want no dependencies on this to keep
-# WITH_CCACHE_BUILD working.
-USES:=		${USES:Nautoreconf}
-
 MEMCACHED_IGNORE=		MEMCACHED cannot be combined with WITH_CCACHE_BUILD.  Use devel/ccache-memcached
 # XXX: This needs more testing with Poudriere before enabling. Also bsd.options.mk support.
 #MEMCACHED_DEPENDS_ARGS+= NO_CCACHE_DEPEND=1
@@ -84,6 +84,12 @@ PORTVERSION=	3.7.1
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_CCACHE_BUILD) && empty(OPTIONS_SLAVE:MMEMCACHED)
+.if !empty(BUILD_DEPENDS)
+.error MAINTAINER NOTE: Cannot have any BUILD_DEPENDS for default ccache packages
+.endif
+.endif
 
 .  if ${COMPILER_TYPE} == clang
 CPPFLAGS+=	-DCC_IS_CLANG
