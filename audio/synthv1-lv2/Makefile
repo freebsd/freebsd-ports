@@ -16,7 +16,8 @@ BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libjack.so:audio/jack \
 		liblo.so:audio/liblo
 
-USES=		autoreconf gl gmake pkgconfig qt:5 shared-mime-info
+USES=		autoreconf compiler:c++11-lang gl gmake pkgconfig qt:5 \
+		shared-mime-info
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	rncbc
