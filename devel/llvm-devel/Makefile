@@ -76,6 +76,8 @@ OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
 OPTIONS_SUB=	yes
 
+# Pre-declared for options framework
+LIB_DEPENDS=
 PLIST_FILES=
 
 CLANG_DESC=	Build clang
@@ -107,6 +109,7 @@ EXTRAS_GH_PROJECT=	clang-tools-extra:extras
 EXTRAS_GH_SUBDIR=	tools/clang/tools/extra:extras
 EXTRAS_GH_TAGNAME=	${EXTRAS_COMMIT}:extras
 LIT_DESC=		Install lit and FileCheck test tools
+LIT_LIB_DEPENDS=	libz3.so:math/z3
 LLD_DESC=		Install lld, the LLVM linker
 LLD_GH_PROJECT=		lld:lld
 LLD_GH_SUBDIR=		tools/lld:lld
@@ -139,6 +142,7 @@ MAN1SRCS+=	bugpoint.1 \
 		dsymutil.1 \
 		llc.1 \
 		lli.1 \
+		llvm-addr2line.1 \
 		llvm-ar.1 \
 		llvm-as.1 \
 		llvm-bcanalyzer.1 \
@@ -264,7 +268,6 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.dyndd-x86_64.so \
 	libclang_rt.fuzzer-x86_64.a \
 	libclang_rt.fuzzer_no_main-x86_64.a \
-	libclang_rt.lsan-x86_64.a \
 	libclang_rt.msan-x86_64.a \
 	libclang_rt.msan-x86_64.a.syms \
 	libclang_rt.msan_cxx-x86_64.a \
@@ -300,7 +303,6 @@ _COMPILER_RT_LIBS+= \
 	libclang_rt.builtins-i386.a \
 	libclang_rt.cfi-i386.a \
 	libclang_rt.cfi_diag-i386.a \
-	libclang_rt.lsan-i386.a \
 	libclang_rt.profile-i386.a \
 	libclang_rt.safestack-i386.a \
 	libclang_rt.stats-i386.a \
