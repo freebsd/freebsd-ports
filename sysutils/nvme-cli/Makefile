@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvme-cli
-PORTVERSION=	1.6
+PORTVERSION=	1.8.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	imp@FreeBSD.org
@@ -20,6 +20,6 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdimp
 GH_PROJECT=	nvme-cli
-GH_TAGNAME=	9221b5f
+GH_TAGNAME=	c92d871
 
 .include <bsd.port.mk>
