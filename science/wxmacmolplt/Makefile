@@ -13,7 +13,8 @@ COMMENT=	Graphical user interface principally for the GAMESS program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf gl gmake localbase:ldflags pkgconfig
+USES=		autoreconf compiler:c++11-lang gl gmake localbase:ldflags \
+		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	brettbode
 GNU_CONFIGURE=	yes
