@@ -3,6 +3,7 @@
 
 PORTNAME=		libcangjie
 PORTVERSION=		1.3
+PORTREVISION=		1
 DISTVERSIONPREFIX=	v
 CATEGORIES=		chinese
 
@@ -21,7 +22,7 @@ USES=		autoreconf gmake libtool localbase pkgconfig sqlite
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-USE_XORT=	xi
+USE_XORG=	xi
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cangjians

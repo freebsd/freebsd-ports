@@ -33,4 +33,3 @@ do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR})
 
 .include <bsd.port.mk>
-
