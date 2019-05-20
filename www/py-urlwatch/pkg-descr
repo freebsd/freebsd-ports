@@ -1,0 +1,7 @@
+With urlwatch you can watch changes in webpages and get notified (via e-mail,
+in your terminal or through various third party services) of any changes.
+
+The change notification will include the URL that has changed and a unified
+diff of what has changed.
+
+WWW: https://github.com/thp/urlwatch
