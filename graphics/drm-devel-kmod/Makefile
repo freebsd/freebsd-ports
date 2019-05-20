@@ -1,22 +1,22 @@
 # Created by: Johannes Dieterich <jmd@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	drm-current-kmod
-PORTVERSION=	4.16.g20190519
+PORTNAME=	drm-devel-kmod
+PORTVERSION=	5.0.g20190520
 CATEGORIES=	graphics kld
 
 MAINTAINER=	jmd@FreeBSD.org
-COMMENT=	DRM modules for the linuxkpi-based KMS components
+COMMENT=	DRM modules for the linuxkpi-based KMS components (development version)
 
 LICENSE=	BSD2CLAUSE MIT GPLv2
 LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64
-ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64 and i386
+ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64, i386 and powerpc64
 
 RUN_DEPENDS=	gpu-firmware-kmod>=g20180319:graphics/gpu-firmware-kmod
 
-CONFLICTS_INSTALL=	drm-devel-kmod \
+CONFLICTS_INSTALL=	drm-current-kmod \
 			drm-fbsd11.2-kmod \
 			drm-fbsd12.0-kmod \
 			drm-legacy-kmod
@@ -28,7 +28,7 @@ USES=		kmod uidfix compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	kms-drm
-GH_TAGNAME=	b890994
+GH_TAGNAME=	4d4b2ba
 
 .include <bsd.port.options.mk>
 
