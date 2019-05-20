@@ -1848,6 +1848,7 @@
     SUBDIR += py-url
     SUBDIR += py-urlgrabber
     SUBDIR += py-urlobject
+    SUBDIR += py-urlwatch
     SUBDIR += py-user_agent
     SUBDIR += py-utidylib
     SUBDIR += py-w3lib
