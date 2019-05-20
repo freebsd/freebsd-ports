@@ -19,14 +19,7 @@ GH_ACCOUNT=	OpenGene
 ALL_TARGET=	fastp
 PLIST_FILES=	bin/fastp
 
-.include <bsd.port.pre.mk>
-
-# Force newer compiler on platforms using GCC 4.2 as base
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-USE_GCC=	yes
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fastp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
