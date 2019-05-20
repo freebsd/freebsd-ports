@@ -196,6 +196,7 @@
     SUBDIR += py-rtf
     SUBDIR += py-stapler
     SUBDIR += py-trml2pdf
+    SUBDIR += py-weasyprint
     SUBDIR += qpdf
     SUBDIR += qpdfview
     SUBDIR += qt5-printsupport
