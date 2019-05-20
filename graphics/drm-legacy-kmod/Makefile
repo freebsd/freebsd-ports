@@ -19,7 +19,10 @@ USES=		kmod uidfix
 
 OPTIONS_DEFINE=	DEBUG
 
-CONFLICTS_INSTALL=	drm-fbsd11.2-kmod drm-fbsd12.0-kmod drm-current-kmod
+CONFLICTS_INSTALL=	drm-devel-kmod \
+			drm-fbsd11.2-kmod \
+			drm-fbsd12.0-kmod \
+			drm-current-kmod
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
