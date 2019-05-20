@@ -12,9 +12,12 @@ COMMENT=	Platform independent file lock
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+ # fails on 27: https://github.com/benediktschmitt/py-filelock/issues/53
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} 's,LICENSE.rst,LICENSE,' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
