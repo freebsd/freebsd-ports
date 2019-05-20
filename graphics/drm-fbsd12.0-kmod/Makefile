@@ -16,7 +16,10 @@ ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64 and i3
 
 RUN_DEPENDS=	gpu-firmware-kmod>=g20180319:graphics/gpu-firmware-kmod
 
-CONFLICTS_INSTALL=	drm-fbsd11.2-kmod drm-current-kmod drm-legacy-kmod
+CONFLICTS_INSTALL=	drm-devel-kmod \
+			drm-fbsd11.2-kmod \
+			drm-current-kmod \
+			drm-legacy-kmod
 
 OPTIONS_DEFINE=	DEBUG
 
