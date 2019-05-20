@@ -22,13 +22,14 @@ load_rc_config $name
 
 : ${miniflux_enable="NO"}
 
-# Miniflux doesn’t use any config file, only environment variables.
+# Miniflux doesn't use any config file, only environment variables.
 set -a
 . %%PREFIX%%/etc/miniflux.env
 set +a
 
 pidfile="/var/run/miniflux.pid"
-command=/usr/sbin/daemon
-command_args=" -p ${pidfile} -u miniflux %%PREFIX%%/bin/miniflux | /usr/bin/logger -t miniflux &"
+procname="%%LOCALBASE%%/bin/miniflux"
+command="/usr/sbin/daemon"
+command_args="-f -T miniflux -p ${pidfile} -u miniflux %%LOCALBASE%%/bin/miniflux"
 
 run_rc_command "$1"
