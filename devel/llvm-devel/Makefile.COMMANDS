@@ -5,6 +5,7 @@ LLVM_COMMANDS=	\
 		dsymutil \
 		llc \
 		lli \
+		llvm-addr2line \
 		llvm-ar \
 		llvm-as \
 		llvm-bcanalyzer \
@@ -22,6 +23,7 @@ LLVM_COMMANDS=	\
 		llvm-elfabi \
 		llvm-exegesis \
 		llvm-extract \
+		llvm-jitlink \
 		llvm-link \
 		llvm-mc \
 		llvm-modextract \
@@ -46,7 +48,6 @@ LLVM_COMMANDS=	\
 		llvm-tblgen \
 		llvm-undname \
 		llvm-xray \
-		macho-dump \
 		opt \
 		sancov
 
@@ -69,8 +70,8 @@ CLANG_COMMANDS=	\
 EXTRAS_COMMANDS= \
 		clang-apply-replacements \
 		clang-change-namespace \
+		clang-doc \
 		clang-include-fixer \
-		clang-modernize \
 		clang-query \
 		clang-rename \
 		clang-reorder-fields \
@@ -96,5 +97,4 @@ LLDB_COMMANDS=	\
 		lldb-instr \
 		lldb-mi \
 		lldb-server \
-		lldb-test \
 		lldb-vscode
