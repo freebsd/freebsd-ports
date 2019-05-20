@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake localbase readline shebangfix
+USES=		compiler:c++11-lang gmake localbase readline shebangfix
 SHEBANG_FILES=	source/uchime_src/mk
 USE_GITHUB=	yes
 ALL_TARGET=	${PORTNAME}
