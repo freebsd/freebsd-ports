@@ -84,13 +84,6 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lkvm
 
-.include <bsd.port.pre.mk>
-
-# Force newer GCC on platforms using GCC 4.2 as base
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-USE_GCC=	yes
-.endif
-
 # Hack around nonfunctional --disable-gtktest flag
 pre-configure-GUI-off:
 	@${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
@@ -157,4 +150,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/slurm.conf.example \
 		${STAGEDIR}${PREFIX}/etc/slurm.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
