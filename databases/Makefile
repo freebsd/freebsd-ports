@@ -780,6 +780,7 @@
     SUBDIR += py-leveldb
     SUBDIR += py-lmdb
     SUBDIR += py-marshmallow-sqlalchemy
+    SUBDIR += py-minidb
     SUBDIR += py-mongoengine
     SUBDIR += py-motor
     SUBDIR += py-mycli
