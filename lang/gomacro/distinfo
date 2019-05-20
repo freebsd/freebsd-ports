@@ -1,0 +1,9 @@
+TIMESTAMP = 1551966942
+SHA256 (cosmos72-gomacro-v2.7-304-g2f4dc7c_GH0.tar.gz) = d4d94a43c292be8ea57f2b8f8bfd1d2b06d1fb6e785e277aae6499ae9aa95688
+SIZE (cosmos72-gomacro-v2.7-304-g2f4dc7c_GH0.tar.gz) = 1117257
+SHA256 (peterh-liner-6f820f8_GH0.tar.gz) = 5a059343ae5ba6ced33fcd9f6eccd5b78a221dde8c59b3b4500c58531605aa58
+SIZE (peterh-liner-6f820f8_GH0.tar.gz) = 21100
+SHA256 (mattn-go-runewidth-v0.0.3_GH0.tar.gz) = 398ec709b006664e527040770056156cb225233d8b44b5a59ba2f5f5f3fa885e
+SIZE (mattn-go-runewidth-v0.0.3_GH0.tar.gz) = 22961
+SHA256 (golang-sys-b294cbc_GH0.tar.gz) = 0e2ef3e4313f73449a107fe9dc61cd49acf0f3c61587f2681096237a05197728
+SIZE (golang-sys-b294cbc_GH0.tar.gz) = 1254744
