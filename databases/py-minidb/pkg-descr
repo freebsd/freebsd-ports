@@ -1,0 +1,4 @@
+Provides easy storaging of Python objects in a SQLite 3 database and working
+with the data in an easy way with concise syntax.
+
+WWW: https://github.com/thp/minidb
