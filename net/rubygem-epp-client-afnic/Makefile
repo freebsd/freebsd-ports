@@ -1,4 +1,3 @@
-# Created by: mat@FreeBSD.org
 # $FreeBSD$
 
 PORTNAME=	epp-client-afnic

@@ -1,4 +1,3 @@
-# Created by: Mathieu Arnold <mat@freebsd.org>
 # $FreeBSD$
 
 PORTNAME=	lg
