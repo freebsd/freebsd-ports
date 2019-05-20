@@ -4,6 +4,9 @@ PORTNAME=	swaylock
 DISTVERSION=	1.4
 CATEGORIES=	x11
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	45c587e93ca1.patch:-p1
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Screen locker for Wayland
 
