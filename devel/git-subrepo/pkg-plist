@@ -1,0 +1,4 @@
+libexec/git-core/git-subrepo
+libexec/git-core/git-subrepo.d/bash+.bash
+libexec/git-core/git-subrepo.d/help-functions.bash
+man/man1/git-subrepo.1.gz
