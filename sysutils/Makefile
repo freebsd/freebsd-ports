@@ -90,6 +90,7 @@
     SUBDIR += bareos17-client
     SUBDIR += bareos17-client-static
     SUBDIR += bareos17-server
+    SUBDIR += barrier
     SUBDIR += bastille
     SUBDIR += batmon
     SUBDIR += battmond

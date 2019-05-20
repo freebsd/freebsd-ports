@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2018-09-08 23:09:56 UTC
++++ CMakeLists.txt
+@@ -333,7 +333,7 @@ elseif (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+         )
+     endif()
+ 
+-elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux|.*BSD|DragonFly")
+     set (OPENSSL_LIBS ssl crypto)
+ else()
+     find_library (lib_ssl ssl)
+@@ -403,7 +403,7 @@ endif()
+ #
+ # Linux installation
+ #
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if (${CMAKE_SYSTEM_NAME} MATCHES "Linux|.*BSD|DragonFly")
+     configure_files (${CMAKE_CURRENT_SOURCE_DIR}/dist/rpm ${CMAKE_BINARY_DIR}/rpm)
+     install(FILES res/barrier.svg DESTINATION share/icons/hicolor/scalable/apps)
+     if("${VERSION_MAJOR}" STREQUAL "2") 

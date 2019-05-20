@@ -1,0 +1,6 @@
+Barrier is a community maintained fork of the Symless Synergy 1.9
+codebase which aims to maintain its simplicity.  Barrier will let
+you use your keyboard and mouse from machine A to control machine
+B (or more).  Barrier supports Windows, OS X, Linux, and FreeBSD.
+
+WWW: https://github.com/debauchee/barrier
