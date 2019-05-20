@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	filelock
-DISTVERSION=	3.0.11
+DISTVERSION=	3.0.12
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +16,5 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
-
-post-patch:
-	@${REINPLACE_CMD} 's,LICENSE.rst,LICENSE,' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
