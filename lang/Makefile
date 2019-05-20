@@ -131,6 +131,7 @@
     SUBDIR += gnustep-base
     SUBDIR += go
     SUBDIR += go14
+    SUBDIR += gomacro
     SUBDIR += gprolog
     SUBDIR += gravity
     SUBDIR += groovy

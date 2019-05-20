@@ -1,0 +1,5 @@
+gomacro is an interactive Go interpreter and debugger with REPL, Eval, generics
+and Lisp-like macros, implemented in pure Go. It offers both an interactive and
+a scripting mode, and does not require a Go toolchain at runtime.
+
+WWW: https://github.com/cosmos72/gomacro
