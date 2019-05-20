@@ -69,6 +69,7 @@
     SUBDIR += auralquiz
     SUBDIR += avanor
     SUBDIR += avoision
+    SUBDIR += avp
     SUBDIR += awale
     SUBDIR += awele
     SUBDIR += balazar
