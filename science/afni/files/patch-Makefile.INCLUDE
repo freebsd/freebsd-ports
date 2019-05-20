@@ -1,16 +1,16 @@
---- Makefile.INCLUDE.orig	2015-11-06 21:25:04 UTC
+--- Makefile.INCLUDE.orig	2019-05-10 21:23:56 UTC
 +++ Makefile.INCLUDE
-@@ -50,7 +50,7 @@ MISC    = AFNI_atlas_spaces.niml AFNI.Xd
+@@ -64,7 +64,7 @@ MISC    = AFNI_atlas_spaces.niml AFNI.Xdefaults AFNI.a
  ## AFNI package, but included because they are useful.  Some of
  ## them are Open Source programs, not from the AFNI group at all.
  
 -EXTRAS   = cjpeg djpeg whirlgif mpeg_encode myget Xphace rmz aiv mycat quotize $(EXPROGS)
-+EXTRAS   = 3dClustBust whirlgif myget Xphace rmz aiv mycat quotize $(EXPROGS)
++EXTRAS   = whirlgif myget Xphace rmz aiv mycat quotize $(EXPROGS)
  
  # mpegtoppm in above list
  
-@@ -60,7 +60,7 @@ EXTRAS   = cjpeg djpeg whirlgif mpeg_enc
- PROGRAMS = afni to3d from3d abut 3dclust nsize 3dinfo 3dproject 3dmerge count   \
+@@ -77,7 +77,7 @@ EXTRAS   = cjpeg djpeg whirlgif mpeg_encode myget Xpha
+ PROGS_1  = afni to3d from3d abut 3dclust nsize 3dinfo 3dproject 3dmerge count   \
             sfim tfim ftosh 3dttest 3ddup imrotate imreg imstat 3dnvals          \
             fim2 imand FD2 sqwave immask imdump imaver 3dhistog 3dfim 3daxialize \
 -               cdf 2swap 4swap mritopgm 3dANOVA 3dANOVA2 3dANOVA3 plugout_tta   \
@@ -18,7 +18,7 @@
             waver 3dnewid 3dcalc ccalc imcalc 1dmatcalc 3drefit 3dbucket         \
             3dNLfim 3dTSgen AlphaSim 3dFWHM plugout_tt 3dnoise plugout_ijk       \
             3dMannWhitney 3dWilcoxon 3dKruskalWallis 3dFriedman 3dRegAna         \
-@@ -72,7 +72,7 @@ PROGRAMS = afni to3d from3d abut 3dclust
+@@ -90,7 +90,7 @@ PROGS_2  = 3dTshift 3dDetrend 1dfft 1dcat 3drename 1dn
             3dWavelets 3dfim+ imcutup imcat 3dWinsor 3dZeropad 3dTagalign        \
             3dMean 3dAttribute cat_matvec 3dOverlap 3dClipLevel 3dZregrid        \
             3dEntropy 3ddelay ent16 3dRowFillin 1dgrayplot 3dToutcount 1dsum     \
@@ -27,8 +27,8 @@
             3dTcorrelate 3dAnatNudge 3dcopy Vecwarp 3dMINCtoAFNI 3dCM fdrval     \
             3dAFNItoANALYZE siemens_vision ge_header mayo_analyze 3dAFNItoNIFTI  \
             3dAutoTcorrelate 3dFDR rtfeedme 3dAutomask 3dAFNItoMINC 3dBrickStat  \
-@@ -92,7 +92,7 @@ PROGRAMS = afni to3d from3d abut 3dclust
-            3dBlurInMask 3dRank 3dFFT 1dgenARMA11 3dPeriodogram 1dAstrip         \
+@@ -112,7 +112,7 @@ PROGS_3  = 3dDeconvolve_f 3dAnhist 3dAFNIto3D 3dUnifor
+ PROGS_4  = 3dBlurInMask 3dRank 3dFFT 1dgenARMA11 3dPeriodogram 1dAstrip         \
             3dLocalPV 3dBandpass 3dSetupGroupInCorr 3dGroupInCorr 3dTcorr1D      \
             3dClustSim 3dRetinoPhase 3dMaskToASCII 3dttest++ 3dDTtoDWI           \
 -           niccc rbox qdelaunay 3dkmeans 3dXYZcat 3dPolyfit 3dNwarpApply        \
@@ -36,7 +36,7 @@
             1dCorrelate 3dCountSpikes 3dNwarpCalc dicom_hinfo apsearch 1dBport   \
             3dNormalityTest 3dmask_tool FIRdesign help_format 2perm 3dClustCount \
             column_cat 3dUnifize 3dNwarpCat 3dQwarp 3dLocalHistog 3dNwarpAdjust  \
-@@ -104,7 +104,7 @@ PROGRAMS = afni to3d from3d abut 3dclust
+@@ -138,7 +138,7 @@ PROGRAMS = $(PROGS_1) $(PROGS_2) $(PROGS_3) $(PROGS_4)
  PROGRAMS_NOPLUG = afni to3d from3d abut 3dclust nsize 3dinfo 3dproject 3dmerge      \
                    sfim tfim ftosh 3dttest 3ddup imrotate imreg imstat 3dnoise count \
                    fim2 imand FD2 sqwave immask imdump imaver 3dhistog 3dfim imupsam \
@@ -45,7 +45,7 @@
                    waver 3dnewid 3dcalc ccalc imcalc 2dImReg 3dmaskave adwarp fdrval \
                    3dMannWhitney 3dWilcoxon 3dKruskalWallis 3dFriedman 3dRegAna      \
                    imstack byteorder 3dDeconvolve 3dTcat 3drotate 3dvolreg 1dplot    \
-@@ -144,7 +144,7 @@ PROGRAMS_NOPLUG = afni to3d from3d abut 
+@@ -181,7 +181,7 @@ PROGRAMS_NOPLUG = afni to3d from3d abut 3dclust nsize 
  PROGRAMS_EXE = afni.exe to3d from3d abut 3dclust nsize 3dinfo 3dproject 3dmerge   \
                 sfim tfim ftosh 3dttest 3ddup imrotate imreg imstat 3dnvals count  \
                 fim2 imand FD2 sqwave immask imdump imaver 3dhistog 3dfim 3dGetrow \
@@ -54,26 +54,25 @@
                 waver 3dnewid 3dcalc ccalc imcalc 1dmatcalc 3drefit 3dbucket       \
                 3dAFNItoNIML    AlphaSim 3dFWHM plugout_tt 3dnoise plugout_ijk     \
                 3dMannWhitney 3dWilcoxon 3dKruskalWallis 3dFriedman 3dRegAna       \
-@@ -276,7 +276,7 @@ prog_list:
- 	echo "$(PROGRAMS) $(SCRIPTS) $(SUMA_PROGS) $(SUMA_GTS_PROGS)    \
-                 $(PY_SCRIPTS)" | tr ' ' '\n' | LC_COLLATE=C sort | uniq \
- 		> ___prog_list.txt
--	make -s -f ptaylor/Makefile.ptaylor.INCLUDE echo_progs | \
-+	$(MAKE) -s -f ptaylor/Makefile.ptaylor.INCLUDE echo_progs | \
- 		tr ' ' '\n' | LC_COLLATE=C sort | uniq >> ___prog_list.txt
- 	cat ___prog_list.txt | LC_COLLATE=C sort | uniq >> prog_list.txt
- 	\rm -f ___prog_list.txt
-@@ -364,6 +364,9 @@ byteorder:byteorder.o
- 3dbuc2fim:3dbuc2fim.o
- 	$(CC) -o 3dbuc2fim 3dbuc2fim.o $(LFLAGS) $(LLIBS)
+@@ -303,7 +303,7 @@ echo_progs:
+ prog_list_bin:
+ 	echo "$(PROGRAMS) $(SUMA_PROGS) $(SUMA_GTS_PROGS)"      \
+ 	        | tr ' ' '\n' > ___plist_bin.txt
+-	make -s -f ptaylor/Makefile.ptaylor.INCLUDE echo_progs  \
++	$(MAKE) -s -f ptaylor/Makefile.ptaylor.INCLUDE echo_progs  \
+ 	        | tr ' ' '\n' >> ___plist_bin.txt
+ 	cat ___plist_bin.txt | LC_COLLATE=C sort | uniq > prog_list_bin.txt
+ 	\rm -f ___plist_bin.txt
+@@ -2884,7 +2884,7 @@ r_misc.o: rickr/r_misc.c rickr/r_misc.h
  
-+3dClustBust:3dClustBust.c
-+	$(CC) -o 3dClustBust 3dClustBust.c $(INFLAGS) $(LFLAGS) $(LLIBS)
-+
- mritopgm:mritopgm.c
- 	$(CC) -o mritopgm mritopgm.c $(INFLAGS) $(LFLAGS) $(LLIBS)
+ dcm2niix_afni:
+ 	( cd crorden/dcm2niix_console ;		\
+-	  make ;				\
++	  $(MAKE) ;				\
+ 	  $(MV) dcm2niix ../../dcm2niix_afni ; 	\
+ 	  cd ../../ ; )
  
-@@ -2728,8 +2731,8 @@ cjpeg:
+@@ -3108,8 +3108,8 @@ libjpeg.a:
            $(MAKE) clean ; $(RM) Makefile )
  
  libXmHTML.a:
@@ -82,18 +81,19 @@
 +	( cd XmHTML ; $(MAKE) lib 'CC=$(CC)' 'II=$(IFLAGS)' ; \
 +		$(MV) lib/libXmHTML.a .. ; $(MAKE) clean   )
  
- thd_xwebber.o:thd_xwebber.c
- 	$(CC) -c thd_xwebber.c -I./XmHTML/include $(INFLAGS)
-@@ -3518,8 +3521,9 @@ toyR: toyR.c AFNI_embeddedRCall.o
+ xutil_webber.o:xutil_webber.c
+ 	$(CC) -c xutil_webber.c -I./XmHTML/include $(INFLAGS)
+@@ -3920,9 +3920,10 @@ toyR: toyR.c AFNI_embeddedRCall.o
  ####
- R_io.so:R_io.c libmri.a
+ R_io.so:R_io.c $(LIBMRI_OBJ)
  	( if which R >/dev/null ; then \
 -	echo PKG_CPPFLAGS = $(INFLAGS)  > Makevars ;\
--	echo PKG_LIBS =  $(LFLAGS) $(LLIBS) >> Makevars ;\
--	R CMD SHLIB R_io.c ; \
+-	echo PKG_LIBS =  $(LFLAGS) $(LLIBS) $(RLIB_CONVERT) >> Makevars ;\
+-	R CMD SHLIB -o R_io.so R_io.c ; \
 +	echo PKG_CPPFLAGS = $(INFLAGS) -I${LOCALBASE}/lib/R/include > Makevars ;\
-+	echo PKG_LIBS =  $(LFLAGS) $(LLIBS) -L${LOCALBASE}/lib/R/lib >> Makevars ;\
-+	# Fails because R uses 'make' instead of gmake R CMD SHLIB -n R_io.c; \
++	echo PKG_LIBS =  $(LFLAGS) $(LLIBS) $(RLIB_CONVERT) -L${LOCALBASE}/lib/R/lib >> Makevars ;\
++	# Fails because R uses 'make' instead of gmake: R CMD SHLIB -n R_io.c; \
 +	$(MAKE) -f 'Makevars' -f '/usr/local/lib/R/etc/Makeconf' -f '/usr/local/lib/R/share/make/shlib.mk' SHLIB='R_io.so' OBJECTS='R_io.o';\
  	else echo WARNING: Cannot build R_io.so because R is not installed;\
  	fi ; )
+ 

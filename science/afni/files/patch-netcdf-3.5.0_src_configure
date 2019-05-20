@@ -1,6 +1,6 @@
---- netcdf-3.5.0/src/configure.orig	2015-11-06 21:25:09 UTC
+--- netcdf-3.5.0/src/configure.orig	2019-05-10 21:23:56 UTC
 +++ netcdf-3.5.0/src/configure
-@@ -933,10 +933,10 @@ echo "configure:928: checking for top-le
+@@ -933,10 +933,10 @@ echo "configure:928: checking for top-level source-dir
  
  
  
