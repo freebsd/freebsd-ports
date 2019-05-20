@@ -1,0 +1,24 @@
+--- crorden/dcm2niix_console/makefile.orig	2019-05-12 14:54:20 UTC
++++ crorden/dcm2niix_console/makefile
+@@ -1,8 +1,8 @@
+ # Regular use
+-CFLAGS=-s -O3
++CXXFLAGS?=-s -O3
+ 
+ # Debugging
+-#CFLAGS=-g
++#CXXFLAGS=-g
+ 
+ #run "make" for default build
+ #run "JPEGLS=1 make" for JPEGLS build
+@@ -14,8 +14,8 @@ endif
+ ifneq ($(OS),Windows_NT)
+ 	OS = $(shell uname)
+  	ifeq "$(OS)" "Darwin"
+-		CFLAGS=-dead_strip -O3
++		CXXFLAGS=-dead_strip -O3
+ 	endif
+ endif
+ all:
+-	g++ $(CFLAGS) -I. $(JFLAGS) main_console.cpp nii_foreign.cpp nii_dicom.cpp jpg_0XC3.cpp ujpeg.cpp nifti1_io_core.cpp nii_ortho.cpp nii_dicom_batch.cpp  -o dcm2niix -DmyDisableOpenJPEG
++	$(CXX) $(CXXFLAGS) -I. $(JFLAGS) main_console.cpp nii_foreign.cpp nii_dicom.cpp jpg_0XC3.cpp ujpeg.cpp nifti1_io_core.cpp nii_ortho.cpp nii_dicom_batch.cpp  -o dcm2niix -DmyDisableOpenJPEG

@@ -1,28 +1,21 @@
 # $FreeBSD$
 
-############################################################################
-# http://www.neuro.mcw.edu/Ports has the latest source distribution from
-#  which this port is built.  It will be updated as time permits.
-#
-# afni.nimh.nih.gov is the ultimate source for AFNI, and will always
-# contain the latest source release.  If this port is not up to date,
-# you can download the latest sources and build manually.
-
-PORTNAME=	afni
-PORTVERSION=	2015.11.13
-PORTREVISION=	8
-CATEGORIES=	science biology graphics
-MASTER_SITES=	http://www.acadix.biz/Ports/distfiles/
+PORTNAME=		afni
+DISTVERSIONPREFIX=	AFNI_
+DISTVERSION=		19.1.08
+CATEGORIES=		science biology graphics perl5 python
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Advanced Functional Neuro Imaging
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gm4:devel/m4
+BROKEN_sparc64=	Does not compile: "undefined reference to '_mcount'"
+
+BUILD_DEPENDS=	gm4:devel/m4 \
+		R:math/R
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libf2c.so:lang/f2c \
-		libR.so:math/R \
 		libgsl.so:math/gsl \
 		libnetcdff.so:science/netcdf-fortran \
 		libxml2.so:textproc/libxml2 \
@@ -30,33 +23,32 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 RUN_DEPENDS=	endian:sysutils/endian \
 		mpeg_encode:multimedia/mpeg_encode \
 		ppmtogif:graphics/netpbm \
-		qhull:math/qhull5
+		qhull:math/qhull5 \
+		R:math/R
 
-BROKEN_aarch64=		fails to compile: suma_utils.c:3043:10: statement requires expression of scalar type
-BROKEN_sparc64=		fails to compile: undefined reference to '_mcount'
-
-CONFLICTS=	im-[0-9]* \
-		nifticlib-[0-9]* \
-		open-usp-tukubai-[0-9]*
-
-USES=		gettext gmake iconv jpeg:run motif perl5 python shebangfix tar:xz
-SHEBANG_FILES=	suma_change_spec \
-		3dPAR2AFNI.pl \
-		python_scripts/*.py \
-		pkundu/meica.py \
-		pkundu/meica.libs/*.py \
-		pkundu/meica.libs/mdp/test/run_tests.py
+USES=		compiler:openmp gettext gl gmake gnome iconv jpeg:run motif \
+		perl5 python shebangfix tar:xz
 USE_GNOME=	glib20
+USE_GITHUB=	yes
 
-OPTIONS_DEFINE=	DOCS
+SHEBANG_FILES=	scripts_install/* \
+		python_scripts/afni_python/*.py \
+		jzosky/*.py \
+		jzosky/lib_RetroTS/*.py \
+		discoraj/ClusterExplorer/*.py \
+		roopchansinghv/PsychoPy-NeuroFeedback-Demo/*.py \
+		roopchansinghv/PsychoPy-NeuroFeedback-Demo/*/*.py \
+		pkundu/*.py \
+		pkundu/meica.libs/*.py \
+		pkundu/meica.libs/*/*.py \
+		pkundu/meica.libs/*/*/*.py
 
-.include <bsd.port.options.mk>
-
-USE_GL=		gl glu glw
+USE_GL=		gl glu
 USE_XORG=	x11 xext xi xmu xp xt
 MAKE_ENV=	CC="${CC}" R_SHARE_DIR=${LOCALBASE}/lib/R/share
 MAKE_JOBS_UNSAFE=yes
 
+WRKSRC_SUBDIR=	src
 ALL_TARGET=	vastness suma
 
 ###########################################################################
@@ -65,7 +57,16 @@ ALL_TARGET=	vastness suma
 SUB_FILES=	pkg-message afni.cshrc afni.profile
 
 INSTALL_WRKSRC=	${WRKSRC}/BSD
+INSTALL_TMP=	${INSTALL_WRKSRC}-temp
 PRESTAGE=	${WRKSRC}/prestage
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+CONFLICTS=	im-[0-9]* \
+		nifticlib-[0-9]* \
+		open-usp-tukubai-[0-9]*
 
 X11R6_FILES=	coxplot/Makefile \
 		coxplot/Makefile.f2c \
@@ -86,21 +87,20 @@ post-extract:
 .endfor
 	@${REINPLACE_CMD} \
 		-E 's|AFNI_[0-9_]+|${PORTVERSION}|g' ${WRKSRC}/AFNI_label.h
-	@${REINPLACE_CMD} \
-		-e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/afni.1
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	@${RM} ${WRKSRC}/3DEdge/src/Makefile.orig
 
 # shebangfix misses /bin/python on 10.1
-post-patch:
-	${REINPLACE_CMD} -e "s|-lglib|-lglib-2.0|g" \
+#	@${REINPLACE_CMD} -e "s|/bin/python|${PYTHON_CMD}|g" \
+#		${WRKSRC}/python_scripts/afni_python/lib_fat_Rfactor.py
+
+pre-configure:
+	@${REINPLACE_CMD} -e "s|-lglib|-lglib-2.0|g" \
 		${WRKSRC}/SUMA/SUMA_Makefile
-	${REINPLACE_CMD} -e "s|/bin/python|${PYTHON_CMD}|g" \
-		${WRKSRC}/python_scripts/lib_fat_Rfactor.py
-	${REINPLACE_CMD} \
-		-e 's|os\.path\.dirname(sys\.argv\[0\])|"${PREFIX}/libexec"|g' \
+	@${REINPLACE_CMD} \
+		-e 's|os\.path\.dirname(sys\.argv\[0\])|"${DATADIR}"|g' \
 		${WRKSRC}/pkundu/meica.py
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's|g_info|afni_g_info|g' \
 		${WRKSRC}/rickr/Dimon.c \
 		${WRKSRC}/rickr/Dimon1.c \
@@ -111,53 +111,58 @@ post-patch:
 		${WRKSRC}/to3d.c \
 		${WRKSRC}/mri_dicom_stuff.h
 
-post-build:
-	${MKDIR} ${PRESTAGE}/bin \
+do-install:
+	# AFNI install just dumps everything into one flat directory
+	# Preserve original install dir and make a sacrificial temp copy
+	# to be pruned and rearranged for easy staging
+	@${RM} -r ${INSTALL_TMP}
+	@${CP} -R ${INSTALL_WRKSRC} ${INSTALL_TMP}
+
+	# Clean up and organize files into ${PRESTAGE}, destroying
+	# temp copy in the process
+	@${RM} -rf ${PRESTAGE}
+	@${MKDIR} ${PRESTAGE}/bin \
 		${PRESTAGE}/scripts \
 		${PRESTAGE}/lib \
 		${PRESTAGE}/include \
 		${PRESTAGE}/trash \
 		${PRESTAGE}/doc \
 		${PRESTAGE}/share
-	${MV}	${INSTALL_WRKSRC}/libf2c.a \
-		${PRESTAGE}/trash
-	${MV}	${INSTALL_WRKSRC}/*.a \
-		${INSTALL_WRKSRC}/*.so \
-		${PRESTAGE}/lib
-	${MV}	${INSTALL_WRKSRC}/funstuff \
-		${INSTALL_WRKSRC}/AFNI.*rc \
-		${INSTALL_WRKSRC}/afnigui* \
+	@${RM}	${INSTALL_TMP}/libf2c.a
+	@${MV}	${INSTALL_TMP}/meica.libs \
+		${INSTALL_TMP}/shiny \
+		${INSTALL_TMP}/lib_RetroTS \
+		${INSTALL_TMP}/afniInterfaceRT \
+		${INSTALL_TMP}/funstuff \
+		${INSTALL_TMP}/AFNI.*rc \
+		${INSTALL_TMP}/afnigui* \
 		${PRESTAGE}/share
-	${MV}	${INSTALL_WRKSRC}/*.h \
-		${PRESTAGE}/include
-	${MV}	${INSTALL_WRKSRC}/README* \
-		${PRESTAGE}/doc
-	for binary in `${FILE} ${INSTALL_WRKSRC}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
+	@${MV}	${INSTALL_TMP}/*.a \
+		${INSTALL_TMP}/*.so \
+		${PRESTAGE}/lib
+	@${MV}	${INSTALL_TMP}/*.h ${PRESTAGE}/include
+	@${CP}	${WRKDIR}/afni-AFNI_${PORTVERSION}/doc/README/* ${PRESTAGE}/doc
+	@for binary in `${FILE} ${INSTALL_TMP}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
 		${MV} $${binary} ${PRESTAGE}/bin ; \
 	done
-	${MV}	${INSTALL_WRKSRC}/* \
-		${PRESTAGE}/scripts
-	${MV}	${PRESTAGE}/scripts/meica.libs ${PRESTAGE}
+	@${MV}	${INSTALL_TMP}/* ${PRESTAGE}/scripts
 
-do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR} \
+	# Install to STAGEDIR using proper ports tools
+	@${MKDIR} \
+		${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/lib/afni \
-		${STAGEDIR}${PREFIX}/include/afni
-	for f in ${PRESTAGE}/lib/*; do \
-		${STRIP_CMD} $${f}; \
-	done
-	${INSTALL_DATA} ${PRESTAGE}/lib/* ${STAGEDIR}${PREFIX}/lib/afni
-	${INSTALL_DATA} ${PRESTAGE}/include/* ${STAGEDIR}${PREFIX}/include/afni
-	cd ${PRESTAGE}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+		${STAGEDIR}${PREFIX}/include/afni \
+		${STAGEDIR}${DOCSDIR} \
+		${STAGEDIR}${PREFIX}/etc/mri
 	${INSTALL_PROGRAM} ${PRESTAGE}/bin/* ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${PRESTAGE}/scripts/* ${STAGEDIR}${PREFIX}/bin
-	cd ${PRESTAGE} && ${COPYTREE_BIN} meica.libs \
-		${STAGEDIR}${PREFIX}/libexec
-	${INSTALL_DATA} ${WRKSRC}/Atlases/* ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/afni.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/etc/mri
-	${INSTALL_DATA} ${PRESTAGE}/doc/* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PRESTAGE}/lib/* ${STAGEDIR}${PREFIX}/lib/afni
+	${INSTALL_DATA} ${PRESTAGE}/include/* ${STAGEDIR}${PREFIX}/include/afni
+	(cd ${PRESTAGE}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	${INSTALL_SCRIPT} ${WRKDIR}/afni.cshrc ${WRKDIR}/afni.profile \
 		${STAGEDIR}${PREFIX}/etc/mri
+
+do-install-DOCS-on:
+	${INSTALL_DATA} ${PRESTAGE}/doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
