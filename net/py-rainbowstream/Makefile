@@ -22,7 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks@${PY_FLAVOR}
 
 # Actually 2.7,3.2-
-USES=		python
+# Limited to -3.6 because of pyfiglet.
+USES=		python:2.7-3.6
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
