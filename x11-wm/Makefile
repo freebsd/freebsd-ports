@@ -59,6 +59,7 @@
     SUBDIR += genmenu
     SUBDIR += golem
     SUBDIR += herbstluftwm
+    SUBDIR += hikari
     SUBDIR += hs-xmonad
     SUBDIR += hs-xmonad-contrib
     SUBDIR += i3
