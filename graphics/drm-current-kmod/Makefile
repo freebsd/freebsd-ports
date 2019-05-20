@@ -32,7 +32,7 @@ GH_TAGNAME=	b890994
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200067
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300029
 IGNORE=		not supported on older CURRENT, no kernel support
 .endif
 .if ${OPSYS} != FreeBSD
