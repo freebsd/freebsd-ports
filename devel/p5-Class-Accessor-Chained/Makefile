@@ -1,4 +1,3 @@
-# Created by: mat
 # $FreeBSD$
 
 PORTNAME=	Class-Accessor-Chained

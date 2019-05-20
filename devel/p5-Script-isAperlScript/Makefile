@@ -1,4 +1,3 @@
-# Created by: Mathieu Arnold <mat@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Script-isAperlScript

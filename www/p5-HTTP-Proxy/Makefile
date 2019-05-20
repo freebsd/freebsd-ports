@@ -1,4 +1,3 @@
-# Created by: mat
 # $FreeBSD$
 
 PORTNAME=	HTTP-Proxy

@@ -1,4 +1,3 @@
-# Created by: mat
 # $FreeBSD$
 
 PORTNAME=	Data-Dump-Streamer
