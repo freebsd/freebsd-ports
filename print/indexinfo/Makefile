@@ -15,7 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bapt
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/indexinfo
-NO_CCACHE=	yes
 
 .if exists(/usr/include/sys/capsicum.h)
 CFLAGS+=	-DHAVE_CAPSICUM

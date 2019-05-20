@@ -1,0 +1,13 @@
+--- Makefile.in.orig	2019-05-20 14:04:00 UTC
++++ Makefile.in
+@@ -126,10 +126,6 @@ install: ccache$(EXEEXT) @disable_man@ccache.1
+ clean:
+ 	rm -rf $(files_to_clean)
+ 
+-src/snprintf.o: CFLAGS += @no_implicit_fallthrough_warning@
+-$(zlib_objs): CPPFLAGS += -include config.h
+-$(zlib_objs): CFLAGS += @no_implicit_fallthrough_warning@
+-
+ src/zlib/libz.a: $(zlib_objs)
+ 	$(if $(quiet),@echo "  AR       $@")
+ 	$(Q)$(AR) cr $@ $(zlib_objs)
