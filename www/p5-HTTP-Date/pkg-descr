@@ -1,4 +1,5 @@
-HTTP::Date provides functions that perform conversions between date
-formats used by the HTTP protocol.
+HTTP::Date provides functions that deal the date formats used by the HTTP
+protocol (and then some more). Only the first two functions, time2str() and
+str2time(), are exported by default.
 
 WWW: https://metacpan.org/release/HTTP-Date
