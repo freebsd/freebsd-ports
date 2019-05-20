@@ -28,6 +28,7 @@ WRKSRC_SUBDIR=	gettext-runtime
 INFO=		autosprintf
 CPE_PRODUCT=	gettext
 CPE_VENDOR=	gnu
+NO_CCACHE=	yes
 
 .include <bsd.port.options.mk>
 

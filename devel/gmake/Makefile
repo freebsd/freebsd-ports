@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	--program-prefix=g \
 USES=		cpe tar:bzip2
 CPE_VENDOR=	gnu
 
+NO_CCACHE=	yes
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
