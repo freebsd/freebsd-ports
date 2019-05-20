@@ -4,4 +4,4 @@ ARC, L2ARC, zfetch (DMU) and vdev cache statistics.
 This script is a fork of sysutils/zfs-stats which has no dependency on perl or
 other ports.
 
-WWW: http://druidbsd.sf.net/download.shtml
+WWW: http://druidbsd.sourceforge.net/download.shtml#zfs-stats-lite

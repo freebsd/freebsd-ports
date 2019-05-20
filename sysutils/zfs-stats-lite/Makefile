@@ -14,6 +14,7 @@ LICENSE=	BSD2CLAUSE
 CONFLICTS_INSTALL=	zfs-stats-[0-9]*
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/zfs-stats
 
