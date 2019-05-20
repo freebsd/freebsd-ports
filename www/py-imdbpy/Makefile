@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imdbpy
-PORTVERSION=	6.6
-PORTREVISION=	1
+PORTVERSION=	6.7
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		SF/${PORTNAME}/IMDbPY/${PORTVERSION}
@@ -23,9 +22,11 @@ OPTIONS_RADIO_SQLALCHEMY=	SQLALCHEMY11 SQLALCHEMY12
 SQLALCHEMY11_DESC=	Use SQLAlchemy 1.1.x as backend
 SQLALCHEMY12_DESC=	Use SQLAlchemy 1.2.x as backend
 
-NO_ARCH=	yes
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
+
 SHEBANG_FILES=	docs/goodies/download_applydiffs.py \
 		docs/goodies/reduce.sh
 
