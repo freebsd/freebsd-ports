@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minder
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3
 CATEGORIES=	graphics
 # avoid PKGBASE collision with net-p2p/minder
 PKGNAMESUFFIX=	-app
@@ -13,7 +13,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	vala:lang/vala
-LIB_DEPENDS=	libgranite.so:x11-toolkits/granite
+LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
+		libgranite.so:x11-toolkits/granite
 
 USES=		desktop-file-utils gettext gnome meson pkgconfig \
 		python:3.5+,build shared-mime-info shebangfix
