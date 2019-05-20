@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	svt-av1
-PORTVERSION=	s20190509
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.0
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	gstreamer1-plugins-
 
@@ -22,7 +23,6 @@ USE_GNOME=	glib20
 USE_GSTREAMER1=	yes
 GH_ACCOUNT=	OpenVisualCloud
 GH_PROJECT=	SVT-AV1
-GH_TAGNAME=	ad4522fb
 WRKSRC_SUBDIR=	gstreamer-plugin
 PLIST_FILES=	lib/gstreamer-1.0/libgstsvtav1enc.so
 
