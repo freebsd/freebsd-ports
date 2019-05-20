@@ -245,10 +245,10 @@ compare_common_patches() {
 			cpatch=${DESTDIR}/${P}
 			ppatch_stripped=$(mktemp -t portpatch)
 			cpatch_stripped=$(mktemp -t portpatch)
-			egrep -v -- '--- .+ UTC$' ${ppatch} \
-				> ${ppatch_stripped}
-			egrep -v -- '--- .+ UTC$' ${cpatch} \
-				> ${cpatch_stripped}
+			sed -E -e '/^--- .+ UTC$/d; s/^(@@ [^@]* @@).*/\1/' \
+				${ppatch} > ${ppatch_stripped}
+			sed -E -e '/^--- .+ UTC$/d; s/^(@@ [^@]* @@).*/\1/' \
+				${cpatch} > ${cpatch_stripped}
 			# Don't replace patches with only metadata changes
 			if ! cmp -s ${ppatch_stripped} ${cpatch_stripped}; then
 				archive_patch_list="${archive_patch_list} ${P}"
