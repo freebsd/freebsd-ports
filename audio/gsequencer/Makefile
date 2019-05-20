@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsequencer
-DISTVERSION=	2.1.71
+DISTVERSION=	2.1.72
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH/gsequencer/2.1.x
 
