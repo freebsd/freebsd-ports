@@ -1,0 +1,7 @@
+# $FreeBSD$
+[Desktop Entry]
+Name=hikari
+Comment=%%COMMENT%%
+TryExec=hikari
+Exec=hikari
+Type=Application
