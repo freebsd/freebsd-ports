@@ -1,0 +1,7 @@
+# $FreeBSD$
+[Desktop Entry]
+Name=dwm
+Comment=%%COMMENT%%
+TryExec=dwm
+Exec=dwm
+Type=Application
