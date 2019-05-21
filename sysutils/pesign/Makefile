@@ -6,6 +6,9 @@ PORTVERSION=	0.110
 PORTREVISION=	7
 CATEGORIES=	sysutils
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	b535d1ac5cbc.patch:-p1
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Signing utility for UEFI secure boot
 
@@ -26,7 +29,6 @@ USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=		aarch64 armv6 armv7 amd64 i386
 ONLY_FOR_ARCHS_REASON=	UEFI specification only supports little-endian processors
-BROKEN=		https://github.com/rhboot/pesign/issues/48
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/Make.defaults
