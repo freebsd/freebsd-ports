@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	9.1.1.s20190511
+PORTVERSION=	9.1.1.s20190518
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -28,6 +28,8 @@ BUILD_DEPENDS+=	runtest:misc/dejagnu
 USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:xz
 USE_BINUTILS=	yes
 USE_PERL5=	build
+
+CONFLICTS=	gcc9-9.*
 
 CPE_VENDOR=	gnu
 CPE_VERSION=	${GCC_VERSION}
