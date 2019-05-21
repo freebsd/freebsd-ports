@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	inspircd
-PORTVERSION=	3.0.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	3.1.0
 CATEGORIES=	irc
 
 MAINTAINER=	dg@syrec.org
@@ -24,13 +24,11 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--binary-dir=${PREFIX}/bin \
 		--config-dir=${ETCDIR} \
 		--data-dir=${INSPIRCD_DBDIR} \
-		--disable-interactive \
-		--enable-kqueue \
 		--log-dir=${INSPIRCD_LOGDIR} \
 		--manual-dir=${MANPREFIX}/man/man1 \
 		--module-dir=${PREFIX}/libexec/${PORTNAME}/modules \
 		--prefix=${PREFIX}/libexec/${PORTNAME} \
-		--with-cc=${CXX}
+		--distribution-label=${OPSYS}-${PORTVERSION}
 
 USE_RC_SUBR=	${PORTNAME}
 MAKEFILE=	GNUmakefile
@@ -72,10 +70,7 @@ SQLITE_DESC=	Build m_sqlite3 module
 
 GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls
 GNUTLS_USES=			pkgconfig
-GNUTLS_CONFIGURE_ENABLE=	gnutls
 GNUTLS_VARS=			EXTRAS+=m_ssl_gnutls.cpp
-
-IPV6_CONFIGURE_ENABLE=	ipv6
 
 LDAP_USE=	OPENLDAP=yes
 LDAP_VARS=	EXTRAS+=m_ldap.cpp
@@ -84,7 +79,6 @@ MYSQL_USES=	mysql
 MYSQL_VARS=	EXTRAS+=m_mysql.cpp
 
 OPENSSL_USES=			pkgconfig ssl
-OPENSSL_CONFIGURE_ENABLE=	openssl
 OPENSSL_VARS=			EXTRAS+=m_ssl_openssl.cpp
 
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre

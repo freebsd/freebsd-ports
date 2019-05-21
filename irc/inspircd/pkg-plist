@@ -116,6 +116,7 @@ libexec/inspircd/modules/m_ircv3_chghost.so
 libexec/inspircd/modules/m_ircv3_ctctags.so
 libexec/inspircd/modules/m_ircv3_echomessage.so
 libexec/inspircd/modules/m_ircv3_invitenotify.so
+libexec/inspircd/modules/m_ircv3_msgid.so
 libexec/inspircd/modules/m_ircv3_servertime.so
 libexec/inspircd/modules/m_ircv3_sts.so
 libexec/inspircd/modules/m_joinflood.so
