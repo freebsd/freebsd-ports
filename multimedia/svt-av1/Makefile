@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	OpenVisualCloud
 GH_PROJECT=	SVT-AV1
-CMAKE_OFF=	BUILD_TESTING # no useful tests yet
+CMAKE_OFF=	BUILD_TESTING
 
 post-patch:
 # Default CFLAGS are already set by USES=cmake
