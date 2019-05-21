@@ -15,6 +15,7 @@ COMMENT=	LLVM based ruby language implementation
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Could not find 'bundler' (1.13.6)
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bundle:sysutils/rubygem-bundler \
