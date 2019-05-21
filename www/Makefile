@@ -29,6 +29,7 @@
     SUBDIR += apache24
     SUBDIR += apercu
     SUBDIR += apt-cacher-ng
+    SUBDIR += aquatone
     SUBDIR += archiva
     SUBDIR += aria2
     SUBDIR += asql
