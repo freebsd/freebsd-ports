@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pygslodeiv2
-DISTVERSION=	0.9.1
-PORTREVISION=	1
+DISTVERSION=	0.9.2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +21,6 @@ USES=		localbase python
 USE_PYTHON=	distutils autoplist
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.mk>
