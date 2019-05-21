@@ -89,6 +89,7 @@
     SUBDIR += ironsides
     SUBDIR += kadnode
     SUBDIR += kf5-kdnssd
+    SUBDIR += knock
     SUBDIR += knot-resolver
     SUBDIR += knot2
     SUBDIR += knot2-lib
