@@ -3,6 +3,7 @@
 
 PORTNAME=	dwm
 DISTVERSION=	6.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 
@@ -27,8 +28,11 @@ MAKE_ARGS=	CC="${CC}" \
 		X11INC="${LOCALBASE}/include" \
 		X11LIB="${LOCALBASE}/lib"
 
+SUB_FILES=	dwm.desktop
+SUB_LIST=	COMMENT="${COMMENT}"
 PLIST_FILES=	bin/dwm \
-		man/man1/dwm.1.gz
+		man/man1/dwm.1.gz \
+		share/xsessions/dwm.desktop
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DMENUANDSTERM DOCS SUPERASMODKEY VOLUMECONTROL XINERAMA
@@ -67,6 +71,8 @@ post-configure:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dwm
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xsessions
+	${INSTALL_DATA} ${WRKDIR}/dwm.desktop ${STAGEDIR}${PREFIX}/share/xsessions
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
