@@ -3,6 +3,7 @@
 
 PORTNAME=	drm-devel-kmod
 PORTVERSION=	5.0.g20190520
+PORTREVISION=	1
 CATEGORIES=	graphics kld
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -41,7 +42,7 @@ IGNORE=		not supported on anything but FreeBSD (missing linuxkpi functionality)
 
 .if ${ARCH} == "amd64"
 PLIST_SUB+=	AMDGPU=""
-PLIST_SUB+=	AMDKFD=""
+PLIST_SUB+=	AMDKFD="@comment "
 PLIST_SUB+=	I915=""
 PLIST_SUB+=	VMWGFX=""
 .elif ${ARCH} == "i386"
