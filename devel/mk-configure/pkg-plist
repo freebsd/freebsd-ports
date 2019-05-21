@@ -61,6 +61,7 @@ man/man7/mk-configure.7.gz
 %%DATADIR%%/features/strlcat/strlcat.c
 %%DATADIR%%/features/strlcpy/strlcpy.c
 %%DATADIR%%/features/warn/warn.c
+share/mkc-mk/mkc.conf.mk
 share/mkc-mk/mkc.configure.mk
 share/mkc-mk/mkc.files.mk
 share/mkc-mk/mkc.init.mk
@@ -77,7 +78,6 @@ share/mkc-mk/mkc_imp.arch.mk
 share/mkc-mk/mkc_imp.checkprogs.mk
 share/mkc-mk/mkc_imp.conf-cleanup.mk
 share/mkc-mk/mkc_imp.conf-final.mk
-share/mkc-mk/mkc_imp.conf.mk
 share/mkc-mk/mkc_imp.dep.mk
 share/mkc-mk/mkc_imp.dpvars.mk
 share/mkc-mk/mkc_imp.f_CIRCLEQ.mk
