@@ -170,6 +170,7 @@
     SUBDIR += gnu-watch
     SUBDIR += gnuls
     SUBDIR += gnustep-examples
+    SUBDIR += gobuster
     SUBDIR += gone
     SUBDIR += gonvert
     SUBDIR += gplink
