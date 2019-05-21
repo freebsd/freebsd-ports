@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.55.5
+DISTVERSION=	0.55.6
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -102,7 +102,7 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		go-check:check:788fd78:check/src/gopkg.in/check.v1 \
 		go-yaml:yaml:v2.2.2:yaml/src/gopkg.in/yaml.v2
 
-COMMIT_ID=	a83256b9cd5c50dde1a086a48f365a1fcbc78a24
+COMMIT_ID=	a5d4c82d2f4932d4734427b83b9886253acc2d94
 
 OPTIONS_DEFINE=		MANPAGES EXTENDED
 
