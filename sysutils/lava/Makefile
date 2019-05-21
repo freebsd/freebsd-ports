@@ -5,7 +5,7 @@ PORTNAME=	lava
 PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
 
-MAINTAINER=	dch@skunkwerks.at
+MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Keeps your CouchDB views molten hot
 
 LICENSE=	MIT

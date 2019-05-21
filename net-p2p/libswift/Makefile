@@ -6,7 +6,7 @@ PORTVERSION=	20160817
 PORTREVISION=	2
 CATEGORIES=		net-p2p
 
-MAINTAINER=		dch@skunkwerks.at
+MAINTAINER=		dch@FreeBSD.org
 COMMENT=	IETF Peer-to-Peer Streaming Peer Protocol implementation
 
 LICENSE=	LGPL21

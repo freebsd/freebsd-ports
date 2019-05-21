@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	dch@skunkwerks.at
+MAINTAINER=	dch@FreeBSD.org
 COMMENT=	C library and command-line tool for Riemann
 
 LICENSE=	LGPL3+

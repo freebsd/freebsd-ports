@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NORBU
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dch@skunkwerks.at
+MAINTAINER=	dch@FreeBSD.org
 COMMENT=	PERL-based software deployment tool inspired by capistrano
 
 LICENSE=	ART10 GPLv1+
