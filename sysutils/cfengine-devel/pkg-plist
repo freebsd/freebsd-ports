@@ -402,5 +402,6 @@ libexec/cfengine/libpromises.so.3.0.6
 @dir /var/cfengine/modules
 @dir /var/cfengine/outputs
 @dir /var/cfengine/plugins
+@dir /var/cfengine/state
 @dir(root,wheel,700) /var/cfengine/ppkeys
 @dir /var/cfengine
