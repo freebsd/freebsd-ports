@@ -1,0 +1,25 @@
+# $FreeBSD$
+
+PORTNAME=	pyscreenshot
+PORTVERSION=	0.5.1
+CATEGORIES=	x11 python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+#DISTNAME=	PyVirtualDisplay-${PORTVERSION}
+
+MAINTAINER=	swills@FreeBSD.org
+COMMENT=	Python module for taking screenshots
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}easyprocess>0:devel/py-easyprocess@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		import:graphics/ImageMagick6
+
+USES=		python
+
+NO_ARCH=	yes
+USE_PYTHON=	autoplist distutils
+
+.include <bsd.port.mk>
