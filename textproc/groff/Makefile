@@ -3,7 +3,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.22.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -56,10 +56,9 @@ DATADIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 EXAMPLESDIR=	${DOCSDIR}/examples
 
-URWFONTS_CONFIGURE_OFF=	--without-urw-fonts-dir
+URWFONTS_CONFIGURE_OFF= --without-urw-fonts-dir --without-gs
 URWFONTS_USES=	ghostscript:build
 URWFONTS_BUILD_DEPENDS=	gsfonts>=0:print/gsfonts
-URWFONTS_CONFIGURE_ENV_OFF=	ac_cv_prog_ac_ct_GHOSTSCRIPT=false
 OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
