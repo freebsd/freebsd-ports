@@ -1,7 +1,7 @@
---- src/cmd/ksh93/meson.build.orig	2018-09-25 15:33:55.000000000 -0700
-+++ src/cmd/ksh93/meson.build	2018-09-25 19:00:44.313649000 -0700
+--- src/cmd/ksh93/meson.build.orig	2019-05-16 22:08:26.000000000 -0700
++++ src/cmd/ksh93/meson.build	2019-05-21 20:24:32.997423000 -0700
 @@ -26,19 +26,19 @@
-                  dependencies: [libm_dep, libexecinfo_dep, libdl_dep],
+                  dependencies: [libm_dep, libexecinfo_dep, libdl_dep, libsocket_dep, libnsl_dep],
                   install: false)
  
 -ksh93_exe = executable('ksh', ['sh/pmain.c'], c_args: shared_c_args,
@@ -15,7 +15,7 @@
 +shcomp_exe = executable('shcomp93', ['sh/shcomp.c'], c_args: shared_c_args,
      include_directories: [configuration_incdir, ksh93_incdir],
      link_with: [libksh, libast, libcmd, libdll],
-     dependencies: [libm_dep, libexecinfo_dep, libdl_dep],
+     dependencies: [libm_dep, libexecinfo_dep, libdl_dep, libsocket_dep, libnsl_dep],
      install: true)
  
 -install_man('ksh.1')
