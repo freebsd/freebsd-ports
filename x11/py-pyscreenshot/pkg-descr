@@ -1,4 +1,9 @@
-Pyscreenshot tries to allow to take screenshots without installing 3rd party
-libraries.
+The pyscreenshot module can be used to copy the contents of the screen to a PIL
+or Pillow image memory using various back-ends.
+
+Features:
+* Capturing the whole desktop
+* Capturing an area
+* saving to PIL or Pillow image memory
 
 WWW: https://github.com/ponty/pyscreenshot
