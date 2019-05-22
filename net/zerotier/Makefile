@@ -3,7 +3,7 @@
 
 PORTNAME=	zerotier
 DISTVERSION=	1.2.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 
 MAINTAINER=	dch@FreeBSD.org
@@ -36,6 +36,12 @@ PLIST_FILES=	bin/zerotier-cli bin/zerotier-idtool sbin/zerotier-one
 SUB_LIST+=	ZEROTIER_SYSLOG="-s debug -T zerotier"
 .else
 SUB_LIST+=	ZEROTIER_SYSLOG=""
+.endif
+# after r347241 tun(4) and tap(4) have been merged to tuntap(4)
+.if (${OSVERSION} >= 1300028)
+SUB_LIST+=	ZEROTIER_IF_TAP="if_tuntap"
+.else
+SUB_LIST+=	ZEROTIER_IF_TAP="if_tap"
 .endif
 .endif
 
