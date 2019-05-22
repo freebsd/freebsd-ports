@@ -11,6 +11,7 @@ bin/rarun2
 bin/rasm2
 bin/rax2
 include/libr/r2naked.h
+include/libr/r_agraph.h
 include/libr/r_anal.h
 include/libr/r_anal_ex.h
 include/libr/r_asm.h
@@ -306,6 +307,7 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/cons/darkda
 %%DATADIR%%/%%PORTVERSION%%/cons/defragger
 %%DATADIR%%/%%PORTVERSION%%/cons/focus
+%%DATADIR%%/%%PORTVERSION%%/cons/gentoo
 %%DATADIR%%/%%PORTVERSION%%/cons/lima
 %%DATADIR%%/%%PORTVERSION%%/cons/matrix
 %%DATADIR%%/%%PORTVERSION%%/cons/monokai
@@ -339,6 +341,7 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-16.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-64.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/types-android.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-arm-ios-16.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-arm-ios-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-arm-ios-64.sdb
