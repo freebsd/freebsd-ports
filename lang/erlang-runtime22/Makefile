@@ -3,7 +3,7 @@
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	22.0-rc3
+DISTVERSION=	22.0.1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime22
 DIST_SUBDIR=	erlang
@@ -52,8 +52,6 @@ OPTIONS_EXCLUDE_aarch64=	DTRACE
 OPTIONS_EXCLUDE_armv6=		DTRACE
 OPTIONS_EXCLUDE_armv7=		DTRACE
 OPTIONS_EXCLUDE_i386=		DTRACE
-
-OPENSSL_VARS=	BROKEN_SSL=openssl111
 
 # If you run Erlang and get a message resembling "WARNING: number of
 # probes fixed does not match the number of defined probes (54 != 132,
