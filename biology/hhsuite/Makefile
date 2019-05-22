@@ -23,4 +23,10 @@ GH_PROJECT=	hh-suite
 
 LDFLAGS+=	-Wl,-rpath,${LOCALBASE}/mpi/openmpi/lib -L${LOCALBASE}/mpi/openmpi/lib -lmpi # force linking to openmpi, and not to mpich
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+CMAKE_ON=	HAVE_SSE2
+.endif
+
 .include <bsd.port.mk>
