@@ -12,29 +12,51 @@
 #
 # zerotier_enable (bool):	Set to NO by default.
 #				Set it to YES to enable zerotier.
+# zerotier_wait_for_net (bool):	Set to NO by default. Use for DHCP interfaces only
+#				Set it to YES to require zerotier to wait until online
 
 . /etc/rc.subr
 
 name=zerotier
 rcvar=zerotier_enable
+desc="peer-to-peer software-defined networking"
 
 load_rc_config $name
 
-: ${zerotier_enable:="NO"}
+: ${zerotier_enable:=NO}
+: ${zerotier_wait_for_net:=NO}
 
-required_modules="if_tap"
+required_modules=%%ZEROTIER_IF_TAP%%
 
 pidfile="/var/run/${name}.pid"
 start_precmd="install -o root /dev/null ${pidfile}"
 
-command="/usr/sbin/daemon"
+command=/usr/sbin/daemon
 command_args=" \
 	-c \
 	-t ${name} \
 	-r \
 	-P ${pidfile} \
 	%%ZEROTIER_SYSLOG%% \
-	/usr/local/sbin/${name}-one"
+	%%PREFIX%%/sbin/${name}-one /var/db/${name}-one/"
+
+start_postcmd=start_postcmd
+
+start_postcmd()
+{   if checkyesno zerotier_wait_for_net; then
+        zerotier_count=5
+        until %%PREFIX%%/bin/zerotier-cli status |egrep -o ONLINE\$; do
+            warn ${name} is waiting for ONLINE status
+            sleep 2
+            zerotier_count=$((zerotier_count-1))
+            test $zerotier_count -le 0 && break
+        done
+        if test $zerotier_count -le 0; then
+            warn ${name} still not ONLINE, stopped blocking
+        else
+            warn ${name} is ONLINE
+        fi
+    fi
+}
 
 run_rc_command "$1"
-
