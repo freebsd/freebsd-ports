@@ -3,6 +3,7 @@
 
 PORTNAME=	otrs
 PORTVERSION=	6.0.10
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	m.tsatsenko@gmail.com
@@ -43,7 +44,10 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-Lingua-Translit>=0:devel/p5-Lingua-Translit \
 		p5-Pod-Strip>=0:textproc/p5-Pod-Strip \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
-		p5-Sisimai>=0:mail/p5-Sisimai
+		p5-Sisimai>=0:mail/p5-Sisimai \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser \
+		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
+		p5-XML-LibXSLT>=0:textproc/p5-XML-LibXSLT
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cpe shebangfix perl5 tar:bzip2
@@ -56,7 +60,7 @@ SHEBANG_FILES=	bin/cgi-bin/*.pl bin/cgi-bin/app.psgi bin/fcgi-bin/*.pl bin/*.pl 
 		scripts/tools/*.pl scripts/*.pl
 
 OPTIONS_DEFINE=		MYSQL PGSQL REPORTS SMTP POP3 IMAP LDAP PDF \
-			GNUPG APACHE SSL XML
+			GNUPG APACHE SSL
 OPTIONS_DEFAULT=	MYSQL REPORTS SMTP POP3 IMAP PDF ASPELL APACHE \
 			SSL
 OPTIONS_RADIO=		SPELL
@@ -125,10 +129,6 @@ ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
 ASPELL_RUN_DEPENDS=	aspell:textproc/aspell
 
 GNUPG_RUN_DEPENDS=	gpg:security/gnupg1
-
-XML_RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
-			p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
-			p5-XML-LibXSLT>=0:textproc/p5-XML-LibXSLT
 
 .include <bsd.port.pre.mk>
 
