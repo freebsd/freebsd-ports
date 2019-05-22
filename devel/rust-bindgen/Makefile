@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bindgen
-DISTVERSION=	0.49.1
+DISTVERSION=	0.49.2
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 PKGNAMEPREFIX=	rust-
@@ -22,8 +22,8 @@ PLIST_FILES=	bin/${PORTNAME}
 CARGO_CRATES=	aho-corasick-0.7.3 \
 		ansi_term-0.11.0 \
 		atty-0.2.11 \
-		autocfg-0.1.2 \
-		backtrace-0.3.18 \
+		autocfg-0.1.4 \
+		backtrace-0.3.20 \
 		backtrace-sys-0.1.28 \
 		bitflags-1.0.4 \
 		byteorder-1.3.1 \
