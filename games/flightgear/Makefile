@@ -3,7 +3,7 @@
 
 PORTNAME=	flightgear
 PORTVERSION=	2018.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -22,8 +22,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl \
 		libudev.so:devel/libudev-devd
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
-		${LOCALBASE}/lib/libSimGearCore.a:devel/simgear \
-		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+		${LOCALBASE}/lib/libSimGearCore.a:devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 		${LOCALBASE}/lib/libSimGearCore.a:devel/simgear \
 		${LOCALBASE}/share/flightgear/version:games/flightgear-data
@@ -60,4 +59,15 @@ post-patch:
 	@${REINPLACE_CMD} -Ei .c++20 '/file|set_prop/s/version[[:>:]]/&.txt/' \
 		${WRKSRC}/CMakeLists.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# XXX Disable EVENT_INPUT on 13-CURRENT to avoid crashing during startup
+# See: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=237835
+# and: https://svnweb.freebsd.org/base?view=revision&revision=340387
+.if ${OSVERSION} >= 1300003
+CMAKE_ARGS+=	-DEVENT_INPUT:BOOL=OFF
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+.endif
+
+.include <bsd.port.post.mk>
