@@ -434,6 +434,11 @@ post-patch: .SILENT
 	    -e 's/kmem_free(kmem_arena, /kmem_free(/' \
 		${WRKSRC}/src/${NVSRC}/nvidia_subr.c
 .endif
+# Pull the right header after FreeBSD src r347984
+.if ${OSVERSION} >= 1300029 && ${NVVERSION} >= 358.009
+	${REINPLACE_CMD} -e '/^#include/s:lock\.h:mutex.h:' \
+		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-freebsd.c
+.endif
 # Disable installation of Linux libraries
 	${REINPLACE_CMD} -e 's/exists(\/.*/& \&\& 0/' \
 		${WRKSRC}/lib/Makefile
