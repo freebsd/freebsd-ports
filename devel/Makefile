@@ -4831,6 +4831,7 @@
     SUBDIR += py-pyvisa-py
     SUBDIR += py-pyxb
     SUBDIR += py-pyxml2obj
+    SUBDIR += py-q
     SUBDIR += py-qpid
     SUBDIR += py-qserve
     SUBDIR += py-qt5
