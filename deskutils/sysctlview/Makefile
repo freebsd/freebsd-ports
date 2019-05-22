@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysctlview
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	alfix86@gmail.com
@@ -13,27 +12,28 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsysctlmibinfo.so:devel/libsysctlmibinfo
 
-USES=		compiler:c++11-lang pkgconfig gettext-runtime gnome
-USE_GNOME=	gtkmm30 atkmm glibmm pangomm glibmm gtk30 pango atk \
-		cairo glib20 cairomm libsigc++20 gdkpixbuf2 glib20
+USES=		compiler:c++11-lang gettext-runtime gnome pkgconfig
+USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glib20 glibmm glibmm \
+		gtk30 gtkmm30 libsigc++20 pango pangomm
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
-GL_COMMIT=	c6ea138ffbea46adb79fa857d032d2559e71a61f
+GL_COMMIT=	3309fd66f4f7c32056bedc1e7b40f2d489b86fe8
 
 INSTALLS_ICONS=	yes
 
-DESKTOP_ENTRIES="Sysctlview" "Show kernel state" "sysctlview" \
-		"sysctlview" "System;" false
+DESKTOP_ENTRIES=	"Sysctlview" \
+			"Show kernel state" \
+			"sysctlview" \
+			"sysctlview" \
+			"System;" \
+			false
 
-OPTIONS_DEFINE=		NLS
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-post-patch:
-	@${REINPLACE_CMD} '/CXX =/d; s/^CXXFLAGS =/CXXFLAGS +=/; s/^LDFLAGS =/LDFLAGS +=/' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sysctlview ${STAGEDIR}${PREFIX}/bin
