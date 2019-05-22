@@ -1,0 +1,6 @@
+Python SDK for accessing the NS1 DNS platform, including a simple NS1
+REST API wrapper, as well as a higher level interface for managing zones,
+records, data feeds, and more. It supports synchronous and asynchronous
+transports.
+
+WWW: https://github.com/ns1/ns1-python
