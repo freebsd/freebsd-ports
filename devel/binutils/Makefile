@@ -3,6 +3,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.32
+PORTREVISION=	1
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
@@ -13,7 +14,6 @@ COMMENT?=	GNU binary tools
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-EXTRA_PATCHES=	${FILESDIR}/binutils-do-not-provide-shared-section-symbols.patch:-p1
 .if defined(PREFIX) && ${PREFIX} != "/usr"
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
 		${LOCALBASE}/lib/libmpfr.so:math/mpfr
