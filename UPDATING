@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190522:
+  AFFECTS: users of sysutils/graylog
+  AUTHOR: dch@FreeBSD.org
+
+  The port has been updated to the latest stable version 3.0.2, which
+  includes more plugins by default, but also requires manual changes to
+  graylog's configuration files, possibly port and URL changes, such as
+  X-Graylog-Server-URL settings, and elasticsearch must be >= 5.
+
+  The location of configuration files has been amended to align with the
+  official distribution files and locations.
+
+  After upgrading, manually review and merge changes from your
+  /usr/local/etc/graylog/server/server.conf into
+  /usr/local/etc/graylog/graylog.conf
+
+  Consult https://www.graylog.org/post/announcing-graylog-v3-0-ga for
+  further details.
+
 20190506:
   AFFECTS: users of www/gitea
   AUTHOR: stb@lassitu.de
