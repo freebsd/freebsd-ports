@@ -33,10 +33,7 @@
         <!-- Silence useless session validation messages -->
         <Logger name="org.apache.shiro.session.mgt.AbstractValidatingSessionManager" level="warn"/>
         <Root level="warn">
-            <AppenderRef ref="STDOUT"/>
             <AppenderRef ref="graylog-internal-logs"/>
-        </Root>
-        <Root level="error">
             <AppenderRef ref="FreeBSD-logs"/>
         </Root>
     </Loggers>

@@ -1,7 +1,7 @@
 ======================================================================
 
-Please see %%ETCDIR%% for sample versions of server.conf, log4j.xml, and
-graylog_logging.xml, and adjust them for your configuration.
+Please see %%ETCDIR%% for sample versions of graylog.conf, log4j.xml, and
+and adjust them for your configuration.
 
 For GeoIP support you need to install the net/GeoIP port and
 configure the path to the GeoIP databases in the Graylog Web Interface.
@@ -14,4 +14,6 @@ For a single-node installation, install:
 - textproc/elasticsearch5
 
 And ensure that the elasticsearch cluster name matches that used by graylog.
-======================================================================
+
+The locations for configuration files have changed to match upstream
+versions in 3.0 of this port, refer to UPDATING for migration steps.

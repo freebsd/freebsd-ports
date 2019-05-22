@@ -55,14 +55,14 @@ load_rc_config $name
 : ${graylog_enable:="NO"}
 : ${graylog_user:="%%GRAYLOGUSER%%"}
 : ${graylog_group:="%%GRAYLOGGROUP%%"}
-: ${graylog_config:="%%ETCDIR%%/server/server.conf"}
+: ${graylog_config:="%%ETCDIR%%/graylog.conf"}
 : ${graylog_min_mem:="256m"}
 : ${graylog_max_mem:="1g"}
 : ${graylog_dir:="%%DATADIR%%"}
 : ${graylog_data_dir:="%%GRAYLOG_DATA_DIR%%"}
 : ${graylog_logs_dir:="%%GRAYLOG_LOGS_DIR%%"}
 : ${graylog_run_dir:="/var/run/graylog"}
-: ${graylog_log_config:="%%ETCDIR%%/server/log4j2.xml"}
+: ${graylog_log_config:="%%ETCDIR%%/log4j2.xml"}
 
 java_options=" \
     -Djava.awt.headless=true \
