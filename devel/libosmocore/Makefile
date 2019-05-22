@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosmocore
-PORTVERSION=	0.12.1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://git.osmocom.org/libosmocore/snapshot/ \
 		http://chaosophia.net/downloads/osmocom/${PORTNAME}/
@@ -16,7 +16,9 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libpcsclite.so:devel/pcsc-lite \
 		libtalloc.so:devel/talloc
 
-USES=		alias autoreconf gmake libtool pathfix pkgconfig python:2.7 shebangfix
+USES=		alias autoreconf gmake libtool pathfix pkgconfig python:2.7 \
+		shebangfix
+
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lexecinfo
 USE_LDCONFIG=	yes
@@ -25,12 +27,12 @@ PORTDOCS=	*
 SHEBANG_FILES=	utils/conv_codes_gsm.py utils/conv_gen.py
 python_OLD_CMD=	/usr/bin/python2
 
-OPTIONS_DEFINE=	DOXYGEN DOCS
+OPTIONS_DEFINE=	DOCS DOXYGEN
 
-DOXYGEN_IMPLIES=	DOCS
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
-			dot:graphics/graphviz
-DOXYGEN_CONFIGURE_ENV_OFF=ac_cv_path_DOXYGEN=false
+DOXYGEN_IMPLIES=		DOCS
+DOXYGEN_BUILD_DEPENDS=		dot:graphics/graphviz \
+				doxygen:devel/doxygen
+DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_path_DOXYGEN=false
 
 post-patch:
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/.tarball-version

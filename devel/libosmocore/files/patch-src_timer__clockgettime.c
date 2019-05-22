@@ -1,6 +1,6 @@
---- src/timer_clockgettime.c.orig	2018-07-18 15:04:27 UTC
+--- src/timer_clockgettime.c.orig	2019-05-07 16:36:51 UTC
 +++ src/timer_clockgettime.c
-@@ -72,16 +72,16 @@ static struct fakeclock* clkid_to_fakecl
+@@ -75,16 +75,16 @@ static struct fakeclock* clkid_to_fakeclock(clockid_t 
  	switch(clk_id) {
  	case CLOCK_REALTIME:
  		return &realtime;
