@@ -1,0 +1,12 @@
+To run a server, copy any files you wish to share into /var/db/libswift,
+ensure that it is read and writable by the appropriate user, and
+start the libswift daemon:
+
+# service libswift onestart
+
+To retrieve a file, use:
+
+$ libswift --tracker  127.0.0.1:7777 --hash ....
+
+To view the root hashes, use `grep root *.mbinmap` in the share dir once
+hashing is complete. For large files this may take some time.
