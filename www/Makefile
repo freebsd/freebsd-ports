@@ -460,7 +460,6 @@
     SUBDIR += nibbleblog
     SUBDIR += node
     SUBDIR += node10
-    SUBDIR += node6
     SUBDIR += node8
     SUBDIR += nostromo
     SUBDIR += novnc
