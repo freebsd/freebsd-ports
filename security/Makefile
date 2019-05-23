@@ -1060,6 +1060,7 @@ PORTREVISION=	1
     SUBDIR += revealrk
     SUBDIR += revelation
     SUBDIR += rhash
+    SUBDIR += ridl
     SUBDIR += rifiuti2
     SUBDIR += rkhunter
     SUBDIR += rndpassw
