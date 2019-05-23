@@ -344,6 +344,7 @@ PORTREVISION=	1
     SUBDIR += linux-c7-trousers
     SUBDIR += log2timeline
     SUBDIR += logcheck
+    SUBDIR += lua-bcrypt
     SUBDIR += luasec
     SUBDIR += luasec-51
     SUBDIR += lxqt-openssh-askpass
