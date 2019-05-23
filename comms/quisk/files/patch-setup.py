@@ -1,6 +1,6 @@
---- setup.py.orig	2018-11-22 14:56:57 UTC
+--- setup.py.orig	2019-04-18 17:28:40 UTC
 +++ setup.py
-@@ -13,23 +13,23 @@ fp.close()
+@@ -17,23 +17,23 @@ is_64bit = sys.maxint > 2**32
  
  if sys.platform != "win32":
    missing = False
@@ -41,16 +41,16 @@
    if missing:
      ans = raw_input("Do you want to continue (y, N):  ")
      ans = ans.strip()
-@@ -37,6 +37,8 @@ if sys.platform != "win32":
+@@ -41,6 +41,8 @@ if sys.platform != "win32":
        sys.exit(1)
  
  module1 = Extension ('quisk._quisk',
-+	include_dirs = ['%%LOCALBASE%%/include'],
-+	library_dirs = ['%%LOCALBASE%%/lib'],
++	include_dirs = ['/usr/local/include'],
++	library_dirs = ['/usr/local/lib'],
  	libraries = ['asound', 'portaudio', 'pulse', 'fftw3', 'm'],
  	sources = ['quisk.c', 'sound.c', 'sound_alsa.c', 'sound_portaudio.c', 'sound_pulseaudio.c',
  		'is_key_down.c', 'microphone.c', 'utility.c',
-@@ -69,8 +71,6 @@ modulew2 = Extension ('quisk.sdriqpkg.sd
+@@ -94,8 +96,6 @@ modulew4 = Extension ('quisk.soapypkg.soapy',
  
  # Changes for MacOS support thanks to Mario, DL3LSM.
  modulem1 = Extension ('quisk._quisk',
