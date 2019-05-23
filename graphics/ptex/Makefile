@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ptex
-PORTVERSION=	2.3.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	2.3.2
 CATEGORIES?=	graphics
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -11,11 +10,14 @@ COMMENT=	Per face texture library
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cmake:insource
+USES=		cmake:insource pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wdas
+
+# yes really, the release tarbal doesn't know what version it is
+CMAKE_ARGS+=	-DPTEX_VER:STRING=${DISTVERSION}
 
 OPTIONS_DEFINE=		DOCS
 
