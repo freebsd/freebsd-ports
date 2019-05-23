@@ -12,6 +12,9 @@ COMMENT=	RPKI signed route collector and validator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	ring crate not ported to other architectures
+
 RUN_DEPENDS=	rsync:net/rsync
 
 USES=		cargo
