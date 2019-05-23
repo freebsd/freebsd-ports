@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	rslsync
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.3
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://download-cdn.resilio.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/ \
 		http://download-cdn.resilio.com/${PORTVERSION}/FreeBSD-${CONFIG_ARCH}/
 DISTNAME=	resilio-sync_freebsd_${CONFIG_ARCH}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	joshruehlig@gmail.com
+MAINTAINER=	arcade@b1t.name
 COMMENT=	Distributed peer-to-peer file syncing application
 
 LICENSE=	EULA
