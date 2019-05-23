@@ -4,7 +4,7 @@ running on a FreeBSD system.
 Normally portaudit just creates reports for the Host-system or the jail
 it is installed in. With a large number of jails running on a system,
 installing and updating portaudit in every jail is time-consuming and
-error-prone. Jailaudit uses the portaudit installed in the Host-system
+error-prone. Jailaudit uses pkg installed in the Host-system
 to create a report for every jail.
 
 The reports are appended to the daily security run and can be sent to a
@@ -14,4 +14,4 @@ about potential security advisories of their installed ports.
 
 Jailaudit can be used on FreeBSD 5.1 or larger.
 
-WWW: https://anonsvn.h3q.com/projects/jailaudit/
+WWW: https://github.com/cristianyxen/jailaudit
