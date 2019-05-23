@@ -12,7 +12,8 @@ COMMENT=	Modern system shell written in Rust
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		cargo dos2unix
+DOS2UNIX_FILES=	cargo-crates/decimal-2.0.4/src/dec128.rs
 USE_GITHUB=	nodefault
 GH_TUPLE=	whitequark:rust-xdg:9b205b3cc5d12dc8678dceebb1b751d0176118db:xdg
 USE_GITLAB=	yes
