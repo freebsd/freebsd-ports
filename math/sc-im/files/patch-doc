@@ -1,6 +1,6 @@
---- doc.orig	2018-08-03 06:09:42 UTC
+--- doc.orig	2019-02-22 18:41:46 UTC
 +++ doc
-@@ -328,6 +328,8 @@ Commands for handling cell content:
+@@ -330,6 +330,8 @@ Commands for handling cell content:
       :w {file}   Save the current spreadsheet as {file}.
       :w! {file}  Save the current spreadsheet as {file}, forcing an overwrite
                   if {file} already exists.
