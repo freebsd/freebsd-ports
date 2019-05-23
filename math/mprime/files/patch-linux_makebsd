@@ -1,0 +1,20 @@
+--- linux/makebsd.bak	2019-04-22 22:05:22.000000000 +0300
++++ linux/makebsd	2019-05-14 23:41:22.010249000 +0300
+@@ -7,13 +7,13 @@
+ #
+ 
+ CC ?= cc
+-CFLAGS += -I.. -I../gwnum -I$(LOCALBASE)/include -O2 -march=i486 -malign-double
++CFLAGS += -I.. -I../gwnum -I$(LOCALBASE)/include -O2 -march=i486
+ 
+ CXX ?= cc
+-CXXFLAGS += -I.. -I../gwnum -I$(LOCALBASE)/include -O2 -march=i486 -malign-double
++CXXFLAGS += -I.. -I../gwnum -I$(LOCALBASE)/include -O2 -march=i486
+ 
+-LDFLAGS += -fpie -Wl,-M -L$(LOCALBASE)/lib
+-LIBS += ../gwnum/gwnum.a ../gwnum/gwnum.ld -lm -lpthread -Wl,-Bstatic -lhwloc -Wl,-Bstatic -lcurl -lz -lcompat -lstdc++ -Wl,-Bdynamic -lssl -lgmp
++LDFLAGS += -fpie -L$(LOCALBASE)/lib -Wl,-M
++LIBS += ../gwnum/gwnum.a ../gwnum/gwnum.ld -lm -lpthread -lhwloc -lcurl -lstdc++ -lcompat -lgmp
+ 
+ FACTOROBJ = factor32.o
+ OBJS = prime.o menu.o
