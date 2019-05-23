@@ -1,5 +1,5 @@
-Mill is your shiny new Java/Scala build tool!  Scared of SBT?
-Melancholy over Maven?  Grumbling about Gradle?  Baffled by Bazel?
+Mill is your shiny new Java/Scala build tool! Scared of SBT?
+Melancholy over Maven? Grumbling about Gradle? Baffled by Bazel?
 Give Mill a try!
 
 Mill aims for simplicity by re-using concepts you are already
