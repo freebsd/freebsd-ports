@@ -1,6 +1,6 @@
---- microphone.c.orig	2018-11-21 19:08:22 UTC
+--- microphone.c.orig	2019-05-09 20:49:44 UTC
 +++ microphone.c
-@@ -58,7 +58,7 @@ static int timeVOX = 2000;				// VOX han
+@@ -76,7 +76,7 @@ static int reverse_tx_sideband;
  
  static int doTxCorrect = 0;				// Corrections for UDP sample transmit
  static double TxCorrectLevel;

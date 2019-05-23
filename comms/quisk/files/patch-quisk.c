@@ -1,6 +1,6 @@
---- quisk.c.orig	2019-04-19 15:39:19 UTC
+--- quisk.c.orig	2019-05-09 20:50:36 UTC
 +++ quisk.c
-@@ -4065,7 +4065,7 @@ static PyObject * get_bandscope(void)	//
+@@ -4352,7 +4352,7 @@ static PyObject * get_bandscope(void)	// Called by the
  				j2 = floor(d2);
  				sample = (j1 + 1 - d1) * bandscopeAverage[j1];
  				for (j = j1 + 1; j < j2; j++)
