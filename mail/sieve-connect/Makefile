@@ -3,6 +3,7 @@
 
 PORTNAME=	sieve-connect
 DISTVERSION=	0.89
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://people.spodhuis.org/phil.pennock/software/
 
