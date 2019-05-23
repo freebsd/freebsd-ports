@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openshadinglanguage
-PORTVERSION=	1.10.2
 DISTVERSIONPREFIX=	Release-
-PORTREVISION=	3
+DISTVERSION=	1.10.5
 CATEGORIES=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -39,7 +38,7 @@ OPTIONS_SUB=		yes
 OSLTOY_DESC=		Interactive shader edit and visualize tool
 OSLTOY_CMAKE_BOOL=	USE_QT
 OSLTOY_USES=		qt:5
-OSLTOY_USE=		QT=core,gui,qmake_build,widgets
+OSLTOY_USE=		QT=buildtools,core,gui,qmake_build,widgets
 
 CXXFLAGS+=	-I${STAGEDIR}/include
 
