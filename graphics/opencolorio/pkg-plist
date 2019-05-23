@@ -5,10 +5,10 @@ include/OpenColorIO/OpenColorTypes.h
 include/PyOpenColorIO/PyOpenColorIO.h
 lib/libOpenColorIO.so
 lib/libOpenColorIO.so.1
-lib/libOpenColorIO.so.1.1.0
+lib/libOpenColorIO.so.%%LIBVERS%%
 libdata/pkgconfig/OpenColorIO.pc
 share/cmake/Modules/OpenColorIOConfig.cmake
-share/cmake/Modules/OpenColorIO-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/Modules/OpenColorIO-release.cmake
 share/cmake/Modules/OpenColorIO.cmake
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.html
 %%PORTDOCS%%%%DOCSDIR%%/CompatibleSoftware.html
