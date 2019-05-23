@@ -12758,3 +12758,4 @@ math/py-symeig|science/py-scipy|2019-05-16|Has expired: Consider using science/p
 databases/py-mysql-connector-python2|databases/py-mysql-connector-python|2019-05-16|Has expired: Please consider using databases/py-mysql-connector-python which has been updated to latest upstream version
 www/py-requests1||2019-05-19|Temporary port while port consumers moved to requests 2.x support and the www/py-requests port. No longer depended on by any ports
 lang/spidermonkey170|lang/spidermonkey52|2019-05-23|Not depended on, use newer version
+lang/spidermonkey38|lang/spidermonkey52|2019-05-23|Not depended on, use newer version
