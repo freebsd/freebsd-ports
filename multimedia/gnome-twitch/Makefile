@@ -2,8 +2,8 @@
 
 PORTNAME=	gnome-twitch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1-147
-DISTVERSIONSUFFIX=	-gbbca68b
+DISTVERSION=	0.4.1-155
+DISTVERSIONSUFFIX=	-g8e774a0
 CATEGORIES=	multimedia
 
 MAINTAINER=	greg@unrelenting.technology
@@ -17,13 +17,16 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsoup-2.4.so:devel/libsoup \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
-USES=		compiler:c11 gettext gnome meson pkgconfig python:3.5+,build tar:xz
+USES=		compiler:c11 gettext gnome meson pkgconfig python:3.5+,build \
+		tar:xz
 USE_GITHUB=	yes
-GH_ACCOUNT=	vinszent
+USE_LDCONFIG=	yes
 USE_GNOME=	gtk30
+USE_XORG=	x11
+
+GH_ACCOUNT=	vinszent
 GLIB_SCHEMAS=	com.vinszent.GnomeTwitch.gschema.xml
 INSTALLS_ICONS=	yes
-USE_XORG=	x11
 
 # for meson_post-install.py
 BINARY_ALIAS=	python3=${PYTHON_CMD}
@@ -32,8 +35,8 @@ LDFLAGS+=	-Wl,--as-needed
 MESON_ARGS=	-Dbuild-player-backends=${PLAYER_BACKENDS:tl:S/_/-/:ts,}
 
 OPTIONS_MULTI=		BACKEND
-OPTIONS_MULTI_BACKEND=	GSTREAMER_CAIRO GSTREAMER_CLUTTER \
-			GSTREAMER_OPENGL MPV_OPENGL
+OPTIONS_MULTI_BACKEND=	GSTREAMER_CAIRO GSTREAMER_CLUTTER GSTREAMER_OPENGL \
+			MPV_OPENGL
 OPTIONS_DEFAULT=	MPV_OPENGL
 OPTIONS_SUB=		yes
 
@@ -45,10 +48,10 @@ MPV_OPENGL_DESC=	MPV decoding + OpenGL drawing backend
 GSTREAMER_CLUTTER_LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 				libclutter-gst-3.0.so:multimedia/clutter-gst3 \
 				libclutter-gtk-1.0.so:graphics/clutter-gtk3
-GSTREAMER_CLUTTER_USE=	gstreamer1=hls
+GSTREAMER_CLUTTER_USE=		GSTREAMER1=hls
 
-GSTREAMER_CAIRO_USE=	gstreamer1=hls,cairo
-GSTREAMER_OPENGL_USE=	gstreamer1=hls
+GSTREAMER_CAIRO_USE=	GSTREAMER1=cairo,hls
+GSTREAMER_OPENGL_USE=	GSTREAMER1=hls
 
 MPV_OPENGL_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 			libmpv.so:multimedia/mpv
