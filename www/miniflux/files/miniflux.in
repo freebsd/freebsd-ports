@@ -28,8 +28,8 @@ set -a
 set +a
 
 pidfile="/var/run/miniflux.pid"
-procname="%%LOCALBASE%%/bin/miniflux"
+procname="%%PREFIX%%/bin/miniflux"
 command="/usr/sbin/daemon"
-command_args="-f -T miniflux -p ${pidfile} -u miniflux %%LOCALBASE%%/bin/miniflux"
+command_args="-f -T miniflux -p ${pidfile} -u miniflux %%PREFIX%%/bin/miniflux"
 
 run_rc_command "$1"
