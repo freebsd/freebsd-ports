@@ -155,6 +155,7 @@
     SUBDIR += itcl
     SUBDIR += itcl4
     SUBDIR += jakarta-commons-jelly
+    SUBDIR += janet
     SUBDIR += jimtcl
     SUBDIR += jruby
     SUBDIR += js_of_ocaml

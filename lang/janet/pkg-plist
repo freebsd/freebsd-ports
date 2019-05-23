@@ -1,0 +1,10 @@
+bin/janet
+include/janet.h
+include/janetconf.h
+lib/janet/bars.janet
+lib/janet/cook.janet
+lib/janet/highlight.janet
+lib/janet/janet.h
+lib/janet/janetconf.h
+lib/libjanet.so
+man/man1/janet.1.gz
