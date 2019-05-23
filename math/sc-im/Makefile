@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=		sc-im
-PORTVERSION=		0.7.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=		1
+DISTVERSION=		0.7.0-81
+DISTVERSIONSUFFIX=	-g9beb5c0
 CATEGORIES=		math
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -12,10 +12,10 @@ COMMENT=	Ncurses spreadsheet program for terminal
 LICENSE=	BSD4CLAUSE
 
 LIB_DEPENDS=	libxlsreader.so:math/libxls \
-		libzip.so:archivers/libzip \
-		libxlsxwriter.so:math/libxlsxwriter
+		libxlsxwriter.so:math/libxlsxwriter \
+		libzip.so:archivers/libzip
 
-USES=		gmake pkgconfig lua:51 ncurses
+USES=		gmake gnome lua:51 ncurses pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	andmarti1424
 USE_GNOME=	libxml2
@@ -27,6 +27,6 @@ MAKE_ENV+=	LDLIBS="${LIBS}"
 MAKE_ARGS+=	CC="${CC}" prefix="${PREFIX}" MANDIR="${MANPREFIX}/man/man1"
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/scim
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sc-im
 
 .include <bsd.port.mk>
