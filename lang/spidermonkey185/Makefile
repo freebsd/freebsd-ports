@@ -29,7 +29,7 @@ BROKEN_mips64=		Does not compile: error: const union jsval_layout has no member 
 BROKEN_sparc64=		Does not build: fails to link
 
 NOT_FOR_ARCHS=		powerpc powerpc64
-NOT_FOR_ARCHS_REASON=	PowerPC is not supported; use lang/spidermonkey170
+NOT_FOR_ARCHS_REASON=	PowerPC is not supported
 
 CONFIGURE_ARGS=		--with-pthreads \
 			--with-system-nspr
