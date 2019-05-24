@@ -14,8 +14,8 @@ BUILD_DEPENDS=	go>=1.9.4:lang/go
 USES=		compiler
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2019-05-14T23-57-45Z
-COMMIT_ID=	0022c9d210971c5661849c4b886cba8305b2b4f2
+GHTAG=		RELEASE.2019-05-23T00-29-34Z
+COMMIT_ID=	e252114f067b07e6c22b91f46a6fa9815450e7a8
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT/src/github.com/${PORTNAME}/${PORTNAME} \
 		Azure:azure-sdk-for-go:v27.0.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:go-autorest:v11.7.0:azure_go_autorest/vendor/github.com/Azure/go-autorest \
@@ -88,6 +88,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT/src/github.com/${PORTNAME}/${
 		klauspost:compress:v1.4.1:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v1.2.0:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
 		klauspost:pgzip:v1.2.1:klauspost_pgzip/vendor/github.com/klauspost/pgzip \
+		klauspost:readahead:v1.3.0:klauspost_readahead/vendor/github.com/klauspost/readahead \
 		klauspost:reedsolomon:v1.9.1:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
 		lib:pq:v1.0.0:lib_pq/vendor/github.com/lib/pq \
 		mailru:easyjson:03f2033d19d5:mailru_easyjson/vendor/github.com/mailru/easyjson \
