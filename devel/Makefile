@@ -1339,6 +1339,7 @@
     SUBDIR += libtecla
     SUBDIR += libtermkey
     SUBDIR += libthai
+    SUBDIR += libthmap
     SUBDIR += libtifiles2
     SUBDIR += libtool
     SUBDIR += libtpl
