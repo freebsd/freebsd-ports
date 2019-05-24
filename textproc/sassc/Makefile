@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sassc
-PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTVERSION=	3.6.0
+PORTREVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsass.so:textproc/libsass
 
+USES=		autoreconf compiler:c++11-lib gmake libtool localbase
+
 GH_ACCOUNT=	sass
 GNU_CONFIGURE=	yes
 
@@ -21,7 +23,6 @@ MAKEFILE=	GNUmakefile
 
 PLIST_FILES=	bin/sassc
 
-USES=		autoreconf compiler:c++11-lib gmake libtool localbase
 USE_GITHUB=	yes
 
 post-patch:
