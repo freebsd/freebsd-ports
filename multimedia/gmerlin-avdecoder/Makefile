@@ -12,6 +12,9 @@ COMMENT=	General purpose media decoding library
 
 LICENSE=	GPLv2
 
+DEPRECATED=	unused in the ports tree and depends on vulnerable multimedia/ffmpeg0
+EXPIRATION_DATE=	2019-05-31
+
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/dvb/frontend.h:multimedia/v4l_compat
 LIB_DEPENDS=	libgavl.so:multimedia/gavl
 
