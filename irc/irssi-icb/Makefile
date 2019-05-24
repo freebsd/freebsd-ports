@@ -2,7 +2,7 @@
 
 PORTNAME=	irssi-icb
 PORTVERSION=	0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 
 MAINTAINER=	santhosh.raju@gmail.com
