@@ -1,0 +1,6 @@
+Epoch-Based Reclamation (EBR) and Quiescent-State-Based Reclamation (QSBR) are
+synchronisation mechanisms which can be used for efficient memory/object
+reclamation (garbage collection) in concurrent environment. Conceptually they
+are very similar to the read-copy-update (RCU) mechanism.
+
+WWW: https://github.com/rmind/libqsbr

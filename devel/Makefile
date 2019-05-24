@@ -1289,6 +1289,7 @@
     SUBDIR += libpthread-stubs
     SUBDIR += libqb
     SUBDIR += libqcow
+    SUBDIR += libqsbr
     SUBDIR += libqtxdg
     SUBDIR += libr3
     SUBDIR += librcc
