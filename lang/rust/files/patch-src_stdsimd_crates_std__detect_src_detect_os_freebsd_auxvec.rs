@@ -45,7 +45,7 @@
 +
 +/// Tries to read the `key` from the auxiliary vector.
 +fn archauxv(key: usize) -> Result<usize, ()> {
-+    use mem;
++    use crate::mem;
 +
 +    #[derive (Copy, Clone)]
 +    #[repr(C)]

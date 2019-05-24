@@ -1,4 +1,4 @@
---- src/stdsimd/crates/std_detect/src/detect/os/freebsd/mod.rs.orig	2019-04-24 21:07:30 UTC
+--- src/stdsimd/crates/std_detect/src/detect/os/freebsd/mod.rs.orig	2019-05-20 12:10:32 UTC
 +++ src/stdsimd/crates/std_detect/src/detect/os/freebsd/mod.rs
 @@ -1,9 +1,17 @@
  //! Run-time feature detection on FreeBSD
@@ -16,5 +16,5 @@
 +        mod powerpc;
 +        pub use self::powerpc::check_for;
      } else {
-         use arch::detect::Feature;
+         use crate::arch::detect::Feature;
          /// Performs run-time feature detection.
