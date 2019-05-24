@@ -5,15 +5,11 @@ PORTNAME=	rust
 PORTVERSION?=	1.35.0
 PORTREVISION?=	0
 CATEGORIES=	lang
-MASTER_SITES=	http://static.rust-lang.org/dist/:src \
-		LOCAL/dumbbell/rust:rust_bootstrap \
+MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		LOCAL/tobik/rust:rust_bootstrap \
 		https://static.rust-lang.org/dist/:rust_bootstrap \
-		LOCAL/dumbbell/rust:cargo_bootstrap \
 		LOCAL/tobik/rust:cargo_bootstrap \
-		https://static.rust-lang.org/dist/:cargo_bootstrap \
-		https://s3.amazonaws.com/rust-lang-ci/cargo-builds/:cargo_bootstrap \
-		LOCAL/marino:bootstrap
+		https://static.rust-lang.org/dist/:cargo_bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
 DISTFILES?=	${NIGHTLY_SUBDIR}${DISTNAME}${EXTRACT_SUFX}:src \
 		${RUSTC_BOOTSTRAP}:rust_bootstrap \
