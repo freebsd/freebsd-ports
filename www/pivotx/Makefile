@@ -13,6 +13,9 @@ COMMENT=	Software to help you maintain dynamic sites such as weblogs
 
 LICENSE=	GPLv2
 
+DEPRECATED=	inactive upstream and does not work with PHP 7
+EXPIRATION_DATE=	2019-05-31
+
 PORTDOCS=	LICENSE.txt README.txt
 PORTEXAMPLES=	example.htaccess example.web.config
 
