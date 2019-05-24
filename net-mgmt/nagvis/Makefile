@@ -38,7 +38,8 @@ NDO2DB_DESC=		Depend on ndo2db broker
 
 GRAPHVIZ_RUN_DEPENDS=		dot:graphics/graphviz
 MKLIVESTATUS_RUN_DEPENDS=	mk-livestatus>=0:net-mgmt/mk-livestatus
-NDO2DB_USE=			PHP=mysql
+NDO2DB_BROKEN=			USE_PHP=mysql no longer supported
+#NDO2DB_USE=			PHP=mysql
 NDO2DB_RUN_DEPENDS=		ndo2db-3x:net-mgmt/ndoutils
 
 post-extract:
