@@ -805,6 +805,7 @@
     SUBDIR += rubygem-expression_parser
     SUBDIR += rubygem-fftw3
     SUBDIR += rubygem-mathn
+    SUBDIR += rubygem-mtrc
     SUBDIR += rubygem-narray
     SUBDIR += rubygem-narray_miss
     SUBDIR += rubygem-numru-misc

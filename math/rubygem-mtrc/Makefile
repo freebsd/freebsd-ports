@@ -1,0 +1,19 @@
+# $FreeBSD$
+
+PORTNAME=	mtrc
+DISTVERSION=	0.0.4
+CATEGORIES=	math rubygems benchmarks
+MASTER_SITES=	RG
+
+MAINTAINER=	dch@FreeBSD.org
+COMMENT=	Minimal metric aggregation library
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gem
+
+NO_ARCH=	yes
+USE_RUBY=	yes
+
+.include <bsd.port.mk>
