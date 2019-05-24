@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgroonga
-PORTVERSION=	2.1.8
+PORTVERSION=	2.1.9
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
 
@@ -10,8 +10,6 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open-source fulltext search engine for PostGRESQL
 
 LICENSE=	PostgreSQL
-
-BROKEN=		redefinition of 'PGrnGroongaInitialized' with a different type: 'bool' vs 'bool' (aka 'char')
 
 LIB_DEPENDS=	libgroonga.so:textproc/groonga
 
@@ -27,5 +25,6 @@ MECAB_BUILD_DEPENDS=	mecab-ipadics>=0.996:japanese/mecab-ipadic
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_check.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pgroonga_database.so
 
 .include <bsd.port.mk>
