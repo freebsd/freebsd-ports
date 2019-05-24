@@ -1,6 +1,6 @@
---- arpCounterattack.cpp.orig	2010-11-04 01:26:49.000000000 +0000
+--- arpCounterattack.cpp.orig	2019-03-13 08:10:31 UTC
 +++ arpCounterattack.cpp
-@@ -25,7 +25,7 @@
+@@ -25,13 +25,14 @@
  #include <fstream>
  #include <iostream>
  #include <queue>
@@ -9,7 +9,14 @@
  #include <vector>
  
  #ifdef __FreeBSD__
-@@ -47,7 +47,6 @@
+   #include <sys/ioctl.h>
+ #endif
+ 
++#include <net/bpf.h>
+ #include <errno.h>
+ #include <pcap.h>
+ #include <signal.h>
+@@ -47,7 +48,6 @@
  #include "string.hpp"
  
  using namespace std;

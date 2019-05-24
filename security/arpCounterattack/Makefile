@@ -3,7 +3,7 @@
 
 PORTNAME=	arpCounterattack
 PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	http://isis.poly.edu/~bk/${PORTNAME}/ \
 		http://bk.macroblock.net/${PORTNAME}/
@@ -11,13 +11,14 @@ MASTER_SITES=	http://isis.poly.edu/~bk/${PORTNAME}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Detects and remedies ARP attacks
 
-LIB_DEPENDS=	libdnet.so:net/libdnet
+LIB_DEPENDS=	libdnet.so:net/libdnet \
+		libpcap.so:net/libpcap
 
 USES=		compiler:c++11-lib tar:tbz
 USE_CSTD=	c++11
-SUB_FILES=	pkg-message
-
 USE_RC_SUBR=	${PORTNAME}
+
+SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/arpCounterattack
