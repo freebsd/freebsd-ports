@@ -3,6 +3,7 @@
 
 PORTNAME=	specinfra
 PORTVERSION=	2.77.0
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
