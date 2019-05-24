@@ -27,9 +27,8 @@ SUB_FILES=	pkg-message
 DOCS=		docs/CHANGELOG docs/CREDITS docs/README docs/README.mssql \
 		docs/TODO docs/UPGRADE docs/GPL docs/base_faq.rtf
 
-OPTIONS_DEFINE=	MYSQL PGSQL PDF DOCS
+OPTIONS_DEFINE=	PGSQL PDF DOCS
 
-MYSQL_USE=	MYSQL=yes PHP=mysql
 PGSQL_USES=	pgsql
 PGSQL_USE=	PHP=pgsql
 PDF_RUN_DEPENDS=${LOCALBASE}/share/fpdf/fpdf.php:print/fpdf
