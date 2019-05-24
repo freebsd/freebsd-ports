@@ -1114,6 +1114,7 @@
     SUBDIR += libbinio
     SUBDIR += libbonobo
     SUBDIR += libbonobo-reference
+    SUBDIR += libbpfjit
     SUBDIR += libbson
     SUBDIR += libburn
     SUBDIR += libcbor
