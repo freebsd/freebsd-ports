@@ -1,2 +1,3 @@
-SHA256 (posix_ipc-1.0.0.tar.gz) = 9c93070374ca672725575e5c9874930c8cde69367fb90378b2255e048e31efcb
-SIZE (posix_ipc-1.0.0.tar.gz) = 74774
+TIMESTAMP = 1533601661
+SHA256 (posix_ipc-1.0.4.tar.gz) = ff6c9077633fc62a491d6997c43b094d885bb45a7ca1f36c9a0d647c54b74b14
+SIZE (posix_ipc-1.0.4.tar.gz) = 78325
