@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	harfbuzz
-PORTVERSION=	2.4.0
-PORTREVISION?=	1
+PORTVERSION=	2.5.0
+PORTREVISION?=	0
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
 
@@ -15,14 +15,14 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 
 USE_LDCONFIG=	yes
 USES=		compiler:c++11-lib gettext-runtime gmake gnome libtool \
-		pathfix pkgconfig tar:bzip2
+		pathfix pkgconfig tar:xz
 USE_GNOME=	cairo glib20 introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-graphite2 --with-gobject=yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-PLIST_SUB+=	LIBVER=0.20400.0
+PLIST_SUB+=	LIBVER=0.20500.0
 
 HARFBUZZ_SLAVE?=	no
 
