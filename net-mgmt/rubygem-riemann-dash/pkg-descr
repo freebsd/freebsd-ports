@@ -1,0 +1,6 @@
+Wraps a pretty HTTP console around the Riemann real-time streaming event
+system, enabling dashboards from any web browser. Uses javascripts and
+websockets under the hood, and can be served from any static file HTTP
+server, or via ruby to allow users to edit and save the configuration.
+
+WWW: https://github.com/riemann/riemann-dash
