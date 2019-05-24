@@ -1118,6 +1118,7 @@
     SUBDIR += libburn
     SUBDIR += libcbor
     SUBDIR += libccid
+    SUBDIR += libcdb
     SUBDIR += libcfg
     SUBDIR += libcfu
     SUBDIR += libchipcard

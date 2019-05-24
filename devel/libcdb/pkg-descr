@@ -1,0 +1,5 @@
+The NetBSD's constant database (cdb) library provides a space efficient
+key-value database based on perfect hashing, thus guaranteeing the O(1) lookup
+time. The database preserves the key order.
+
+WWW: https://github.com/rmind/libcdb

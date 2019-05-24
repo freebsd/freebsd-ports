@@ -1,0 +1,6 @@
+include/cdbr.h
+include/cdbw.h
+lib/libcdb.a
+lib/libcdb.so
+lib/libcdb.so.1
+lib/libcdb.so.1.0.0
