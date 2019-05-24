@@ -14,6 +14,9 @@ COMMENT=	Video Disk Recorder - softhddevice plugin
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/AGPL-3.0.txt
 
+DEPRECATED=	unmaintained and depends on vulnerable multimedia/ffmpeg0
+EXPIRATION_DATE=	2019-05-31
+
 LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0 \
 		libvdpau.so:multimedia/libvdpau \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
