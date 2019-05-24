@@ -1,6 +1,6 @@
---- base/process/process_metrics.cc.orig	2019-03-21 01:36:27.000000000 +0100
-+++ base/process/process_metrics.cc	2019-03-24 19:52:47.516944000 +0100
-@@ -126,7 +126,7 @@
+--- base/process/process_metrics.cc.orig	2019-04-30 22:22:28 UTC
++++ base/process/process_metrics.cc
+@@ -126,7 +126,7 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
  }
  #endif
  
@@ -9,7 +9,7 @@
  int ProcessMetrics::CalculateIdleWakeupsPerSecond(
      uint64_t absolute_idle_wakeups) {
    return CalculateEventsPerSecond(absolute_idle_wakeups,
-@@ -138,7 +138,7 @@
+@@ -138,7 +138,7 @@ int ProcessMetrics::GetIdleWakeupsPerSecond() {
    NOTIMPLEMENTED();  // http://crbug.com/120488
    return 0;
  }

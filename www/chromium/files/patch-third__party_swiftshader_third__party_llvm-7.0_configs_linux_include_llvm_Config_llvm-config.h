@@ -1,5 +1,5 @@
---- third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/llvm-config.h.orig	2019-04-05 02:55:18.000000000 +0200
-+++ third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/llvm-config.h	2019-04-17 10:09:09.340636000 +0200
+--- third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/llvm-config.h.orig	2019-04-30 22:26:00 UTC
++++ third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/llvm-config.h
 @@ -28,7 +28,7 @@
  #elif defined(__arm__)
  #define LLVM_DEFAULT_TARGET_TRIPLE "armv7-linux-gnueabihf"

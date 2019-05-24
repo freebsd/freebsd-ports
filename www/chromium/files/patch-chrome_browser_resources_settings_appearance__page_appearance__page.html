@@ -1,15 +1,15 @@
---- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig	2019-03-11 22:00:54 UTC
+--- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig	2019-04-30 22:22:35 UTC
 +++ chrome/browser/resources/settings/appearance_page/appearance_page.html
-@@ -65,7 +65,7 @@
-               hidden="[[!pageVisibility.setTheme]]"
+@@ -64,7 +64,7 @@
+           <cr-link-row class="first" hidden="[[!pageVisibility.setTheme]]"
                label="$i18n{themes}" sub-label="[[themeSublabel_]]"
-               on-click="openThemeUrl_"></cr-link-row>
+               on-click="openThemeUrl_" external></cr-link-row>
 -<if expr="not is_linux or chromeos">
 +<if expr="not is_posix or chromeos">
            <template is="dom-if" if="[[prefs.extensions.theme.id.value]]">
              <div class="separator"></div>
              <paper-button id="useDefault" on-click="onUseDefaultTap_"
-@@ -74,7 +74,7 @@
+@@ -73,7 +73,7 @@
              </paper-button>
            </template>
  </if>
@@ -18,7 +18,7 @@
            <div class="settings-row continuation"
                hidden="[[!showThemesSecondary_(
                prefs.extensions.theme.id.value, useSystemTheme_)]]"
-@@ -139,7 +139,7 @@
+@@ -138,7 +138,7 @@
              pref="{{prefs.bookmark_bar.show_on_all_tabs}}"
              label="$i18n{showBookmarksBar}">
          </settings-toggle-button>

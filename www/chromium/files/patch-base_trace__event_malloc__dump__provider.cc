@@ -1,11 +1,11 @@
---- base/trace_event/malloc_dump_provider.cc.orig	2019-03-11 22:00:51 UTC
+--- base/trace_event/malloc_dump_provider.cc.orig	2019-04-30 22:22:28 UTC
 +++ base/trace_event/malloc_dump_provider.cc
 @@ -17,6 +17,8 @@
  
  #if defined(OS_MACOSX)
  #include <malloc/malloc.h>
 +#elif defined(OS_BSD)
-+#include "stdlib.h"
++#include <stdlib.h>
  #else
  #include <malloc.h>
  #endif

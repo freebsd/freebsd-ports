@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2019-03-11 22:00:51 UTC
+--- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2019-04-30 22:22:27 UTC
 +++ base/allocator/partition_allocator/page_allocator_internals_posix.h
 @@ -14,7 +14,7 @@
  #if defined(OS_MACOSX)
@@ -27,7 +27,7 @@
  
  void* SystemAllocPagesInternal(void* hint,
                                 size_t length,
-@@ -134,7 +134,7 @@ void SetSystemPagesAccessInternal(
+@@ -144,7 +144,7 @@ void SetSystemPagesAccessInternal(
  void FreePagesInternal(void* address, size_t length) {
    CHECK(!munmap(address, length));
  

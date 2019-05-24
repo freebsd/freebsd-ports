@@ -1,6 +1,6 @@
---- services/audio/BUILD.gn.orig	2019-03-11 22:01:01 UTC
+--- services/audio/BUILD.gn.orig	2019-04-30 22:22:56 UTC
 +++ services/audio/BUILD.gn
-@@ -106,7 +106,7 @@ source_set("lib") {
+@@ -99,7 +99,7 @@ source_set("lib") {
      "//services/service_manager/sandbox:sandbox",
    ]
  

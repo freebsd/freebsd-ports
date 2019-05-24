@@ -1,6 +1,6 @@
---- content/public/app/v8_snapshot_overlay_manifest.cc.orig	2019-03-24 18:50:53.929211000 +0100
-+++ content/public/app/v8_snapshot_overlay_manifest.cc	2019-03-24 18:51:09.015465000 +0100
-@@ -15,7 +15,7 @@
+--- content/public/app/v8_snapshot_overlay_manifest.cc.orig	2019-04-30 22:22:47 UTC
++++ content/public/app/v8_snapshot_overlay_manifest.cc
+@@ -15,7 +15,7 @@ namespace content {
  const service_manager::Manifest& GetV8SnapshotOverlayManifest() {
    static base::NoDestructor<service_manager::Manifest> manifest {
      service_manager::ManifestBuilder()

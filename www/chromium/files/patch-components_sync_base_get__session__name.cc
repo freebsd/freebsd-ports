@@ -1,4 +1,4 @@
---- components/sync/base/get_session_name.cc.orig	2019-03-11 22:00:57 UTC
+--- components/sync/base/get_session_name.cc.orig	2019-04-30 22:22:44 UTC
 +++ components/sync/base/get_session_name.cc
 @@ -17,7 +17,7 @@
  
@@ -9,7 +9,7 @@
  #include "components/sync/base/get_session_name_linux.h"
  #elif defined(OS_IOS)
  #include "components/sync/base/get_session_name_ios.h"
-@@ -52,7 +52,7 @@ std::string GetSessionNameBlocking() {
+@@ -53,7 +53,7 @@ std::string GetSessionNameBlocking() {
        session_name = "Chromebook";
        break;
    }

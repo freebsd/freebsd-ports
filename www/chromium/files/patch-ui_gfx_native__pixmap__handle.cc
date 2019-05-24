@@ -1,4 +1,4 @@
---- ui/gfx/native_pixmap_handle.cc.orig	2019-03-11 22:01:19 UTC
+--- ui/gfx/native_pixmap_handle.cc.orig	2019-04-30 22:23:42 UTC
 +++ ui/gfx/native_pixmap_handle.cc
 @@ -4,14 +4,14 @@
  
@@ -26,3 +26,11 @@
  NativePixmapHandle CloneHandleForIPC(const NativePixmapHandle& handle) {
    NativePixmapHandle clone;
    std::vector<base::ScopedFD> scoped_fds;
+@@ -53,6 +53,6 @@ NativePixmapHandle CloneHandleForIPC(const NativePixma
+   clone.planes = handle.planes;
+   return clone;
+ }
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
+ 
+ }  // namespace gfx

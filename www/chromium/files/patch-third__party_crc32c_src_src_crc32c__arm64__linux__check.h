@@ -1,5 +1,5 @@
---- third_party/crc32c/src/src/crc32c_arm64_linux_check.h.orig	2019-04-05 02:55:11.000000000 +0200
-+++ third_party/crc32c/src/src/crc32c_arm64_linux_check.h	2019-04-15 08:43:01.276910000 +0200
+--- third_party/crc32c/src/src/crc32c_arm64_linux_check.h.orig	2019-04-30 22:25:51 UTC
++++ third_party/crc32c/src/src/crc32c_arm64_linux_check.h
 @@ -7,8 +7,6 @@
  #ifndef CRC32C_CRC32C_ARM_LINUX_CHECK_H_
  #define CRC32C_CRC32C_ARM_LINUX_CHECK_H_

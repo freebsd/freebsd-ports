@@ -1,4 +1,4 @@
---- build/config/allocator.gni.orig	2019-03-11 22:00:52 UTC
+--- build/config/allocator.gni.orig	2019-04-30 22:22:28 UTC
 +++ build/config/allocator.gni
 @@ -6,7 +6,7 @@ import("//build/config/sanitizers/sanitizers.gni")
  
@@ -12,9 +12,9 @@
 @@ -17,7 +17,7 @@ if (is_android || is_mac || is_ios || is_asan || is_ls
  # against the debug CRT with "is_nacl=false".
  if ((is_linux || is_android || is_mac ||
-      (is_win && !is_component_build && !is_debug)) && !is_asan && !is_lsan &&
--    !is_tsan && !is_msan) {
-+    !is_tsan && !is_msan && !is_bsd) {
+      (is_win && !is_component_build && !is_debug)) && !is_asan && !is_hwasan &&
+-    !is_lsan && !is_tsan && !is_msan) {
++    !is_lsan && !is_tsan && !is_msan && !is_bsd) {
    _default_use_allocator_shim = true
  } else {
    _default_use_allocator_shim = false

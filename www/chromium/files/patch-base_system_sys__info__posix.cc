@@ -1,4 +1,4 @@
---- base/system/sys_info_posix.cc.orig	2019-03-11 22:00:51 UTC
+--- base/system/sys_info_posix.cc.orig	2019-04-30 22:22:28 UTC
 +++ base/system/sys_info_posix.cc
 @@ -38,7 +38,7 @@
  
@@ -27,7 +27,7 @@
  int SysInfo::NumberOfProcessors() {
    return g_lazy_number_of_processors.Get().value();
  }
-@@ -225,6 +225,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -227,6 +227,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

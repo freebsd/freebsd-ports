@@ -1,5 +1,5 @@
---- third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h.orig	2019-04-05 02:55:18.000000000 +0200
-+++ third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h	2019-04-17 10:09:09.339341000 +0200
+--- third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h.orig	2019-04-30 22:26:00 UTC
++++ third_party/swiftshader/third_party/llvm-7.0/configs/linux/include/llvm/Config/config.h
 @@ -8,15 +8,15 @@
  #define BUG_REPORT_URL "https://bugs.llvm.org/"
  

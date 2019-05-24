@@ -1,6 +1,6 @@
---- media/formats/mp2t/es_parser_adts.cc.orig	2019-03-11 22:00:59 UTC
+--- media/formats/mp2t/es_parser_adts.cc.orig	2019-04-30 22:22:52 UTC
 +++ media/formats/mp2t/es_parser_adts.cc
-@@ -63,11 +63,11 @@ bool EsParserAdts::LookForAdtsFrame(AdtsFrame* adts_fr
+@@ -62,11 +62,11 @@ bool EsParserAdts::LookForAdtsFrame(AdtsFrame* adts_fr
    const uint8_t* es;
    es_queue_->Peek(&es, &es_size);
  
@@ -15,7 +15,7 @@
      const uint8_t* cur_buf = &es[offset];
      if (!isAdtsSyncWord(cur_buf))
        continue;
-@@ -107,7 +107,7 @@ bool EsParserAdts::LookForAdtsFrame(AdtsFrame* adts_fr
+@@ -106,7 +106,7 @@ bool EsParserAdts::LookForAdtsFrame(AdtsFrame* adts_fr
      return true;
    }
  

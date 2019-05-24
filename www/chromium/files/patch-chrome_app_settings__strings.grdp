@@ -1,6 +1,6 @@
---- chrome/app/settings_strings.grdp.orig	2019-03-11 22:00:52 UTC
+--- chrome/app/settings_strings.grdp.orig	2019-04-30 22:22:32 UTC
 +++ chrome/app/settings_strings.grdp
-@@ -580,7 +580,7 @@
+@@ -628,7 +628,7 @@
        Themes
      </message>
    </if>
@@ -9,7 +9,7 @@
      <message name="IDS_SETTINGS_SYSTEM_THEME" desc="Text of the label describing the system (GTK+) browser theme on Linux">
        GTK+
      </message>
-@@ -594,7 +594,7 @@
+@@ -642,7 +642,7 @@
        Use Classic
      </message>
    </if>

@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/webrtc_logging_handler_host.cc.orig	2019-03-17 20:01:28 UTC
+--- chrome/browser/media/webrtc/webrtc_logging_handler_host.cc.orig	2019-04-30 22:22:34 UTC
 +++ chrome/browser/media/webrtc/webrtc_logging_handler_host.cc
 @@ -26,10 +26,10 @@
  #include "content/public/browser/content_browser_client.h"
@@ -14,7 +14,7 @@
  using content::BrowserThread;
  using webrtc_event_logging::WebRtcEventLogManager;
 @@ -281,7 +281,7 @@ void WebRtcLoggingHandlerHost::StartEventLogging(
-       output_period_ms, web_app_id, callback);
+       web_app_id, callback);
  }
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)

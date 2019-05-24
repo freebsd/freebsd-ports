@@ -1,4 +1,4 @@
---- media/mojo/services/gpu_mojo_media_client.cc.orig	2019-03-17 21:51:56 UTC
+--- media/mojo/services/gpu_mojo_media_client.cc.orig	2019-04-30 22:22:52 UTC
 +++ media/mojo/services/gpu_mojo_media_client.cc
 @@ -55,7 +55,7 @@ namespace media {
  namespace {
@@ -9,7 +9,7 @@
  gpu::CommandBufferStub* GetCommandBufferStub(
      base::WeakPtr<MediaGpuChannelManager> media_gpu_channel_manager,
      base::UnguessableToken channel_token,
-@@ -172,7 +172,7 @@ std::unique_ptr<VideoDecoder> GpuMojoMediaClient::Crea
+@@ -188,7 +188,7 @@ std::unique_ptr<VideoDecoder> GpuMojoMediaClient::Crea
        std::make_unique<VideoFrameFactoryImpl>(gpu_task_runner_,
                                                std::move(get_stub_cb)));
  #elif defined(OS_CHROMEOS) || defined(OS_MACOSX) || defined(OS_WIN) || \

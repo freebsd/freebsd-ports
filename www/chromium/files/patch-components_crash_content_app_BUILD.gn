@@ -1,4 +1,4 @@
---- components/crash/content/app/BUILD.gn.orig	2019-03-11 22:00:56 UTC
+--- components/crash/content/app/BUILD.gn.orig	2019-04-30 22:22:41 UTC
 +++ components/crash/content/app/BUILD.gn
 @@ -36,12 +36,12 @@ static_library("app") {
      sources += [ "crashpad.cc" ]
@@ -15,7 +15,7 @@
      sources += [
        "breakpad_linux.cc",
        "breakpad_linux.h",
-@@ -79,7 +79,10 @@ static_library("app") {
+@@ -82,7 +82,10 @@ static_library("app") {
        "//third_party/crashpad/crashpad/snapshot",
      ]
  

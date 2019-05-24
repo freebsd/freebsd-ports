@@ -1,6 +1,6 @@
---- services/device/device_service.h.orig	2019-03-17 14:44:04 UTC
+--- services/device/device_service.h.orig	2019-04-30 22:22:56 UTC
 +++ services/device/device_service.h
-@@ -198,7 +198,7 @@ class DeviceService : public service_manager::Service 
+@@ -200,7 +200,7 @@ class DeviceService : public service_manager::Service 
  #endif
  
  #if (defined(OS_LINUX) && defined(USE_UDEV)) || defined(OS_WIN) || \

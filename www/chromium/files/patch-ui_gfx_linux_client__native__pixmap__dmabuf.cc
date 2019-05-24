@@ -1,4 +1,4 @@
---- ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig	2019-03-11 22:01:19 UTC
+--- ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig	2019-04-30 22:23:42 UTC
 +++ ui/gfx/linux/client_native_pixmap_dmabuf.cc
 @@ -5,7 +5,9 @@
  #include "ui/gfx/linux/client_native_pixmap_dmabuf.h"
@@ -10,7 +10,7 @@
  #include <stddef.h>
  #include <sys/ioctl.h>
  #include <sys/mman.h>
-@@ -18,11 +20,7 @@
+@@ -22,11 +24,7 @@
  #include "base/trace_event/trace_event.h"
  #include "build/build_config.h"
  

@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main_linux.cc.orig	2019-03-11 22:00:53 UTC
+--- chrome/browser/chrome_browser_main_linux.cc.orig	2019-04-30 22:22:32 UTC
 +++ chrome/browser/chrome_browser_main_linux.cc
-@@ -90,12 +90,14 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
+@@ -91,12 +91,14 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
  void ChromeBrowserMainPartsLinux::PostProfileInit() {
    ChromeBrowserMainPartsPosix::PostProfileInit();
  
@@ -16,7 +16,7 @@
    bluez::BluezDBusThreadManager::Initialize();
    bluez::BluezDBusManager::Initialize();
  #endif
-@@ -104,7 +106,7 @@ void ChromeBrowserMainPartsLinux::PostMainMessageLoopS
+@@ -105,7 +107,7 @@ void ChromeBrowserMainPartsLinux::PostMainMessageLoopS
  }
  
  void ChromeBrowserMainPartsLinux::PostDestroyThreads() {

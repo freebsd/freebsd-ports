@@ -1,6 +1,6 @@
---- components/autofill/core/browser/autofill_experiments.cc.orig	2019-03-11 22:00:56 UTC
+--- components/autofill/core/browser/autofill_experiments.cc.orig	2019-04-30 22:22:41 UTC
 +++ components/autofill/core/browser/autofill_experiments.cc
-@@ -28,7 +28,7 @@
+@@ -29,7 +29,7 @@
  
  namespace autofill {
  
@@ -9,7 +9,7 @@
  const base::Feature kAutofillDropdownLayoutExperiment{
      "AutofillDropdownLayout", base::FEATURE_DISABLED_BY_DEFAULT};
  const char kAutofillDropdownLayoutParameterName[] = "variant";
-@@ -36,7 +36,7 @@ const char kAutofillDropdownLayoutParameterLeadingIcon
+@@ -37,7 +37,7 @@ const char kAutofillDropdownLayoutParameterLeadingIcon
  const char kAutofillDropdownLayoutParameterTrailingIcon[] = "trailing-icon";
  const char kAutofillDropdownLayoutParameterTwoLinesLeadingIcon[] =
      "two-lines-leading-icon";
@@ -18,7 +18,7 @@
  
  bool IsCreditCardUploadEnabled(const PrefService* pref_service,
                                 const syncer::SyncService* sync_service,
-@@ -143,7 +143,7 @@ bool IsAutofillNoLocalSaveOnUploadSuccessExperimentEna
+@@ -144,7 +144,7 @@ bool IsAutofillNoLocalSaveOnUploadSuccessExperimentEna
  }
  
  bool OfferStoreUnmaskedCards(bool is_off_the_record) {
@@ -27,7 +27,7 @@
    // The checkbox can be forced on with a flag, but by default we don't store
    // on Linux due to lack of system keychain integration. See crbug.com/162735
    return base::CommandLine::ForCurrentProcess()->HasSwitch(
-@@ -181,7 +181,7 @@ bool ShouldUseActiveSignedInAccount() {
+@@ -182,7 +182,7 @@ bool ShouldUseActiveSignedInAccount() {
               features::kAutofillGetPaymentsIdentityFromSync);
  }
  
@@ -36,7 +36,7 @@
  ForcedPopupLayoutState GetForcedPopupLayoutState() {
    if (!base::FeatureList::IsEnabled(
            autofill::kAutofillDropdownLayoutExperiment))
-@@ -205,6 +205,6 @@ ForcedPopupLayoutState GetForcedPopupLayoutState() {
+@@ -206,6 +206,6 @@ ForcedPopupLayoutState GetForcedPopupLayoutState() {
    NOTREACHED();
    return ForcedPopupLayoutState::kDefault;
  }

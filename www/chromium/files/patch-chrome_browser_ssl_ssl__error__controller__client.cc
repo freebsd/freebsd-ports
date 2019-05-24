@@ -1,4 +1,4 @@
---- chrome/browser/ssl/ssl_error_controller_client.cc.orig	2019-03-11 22:00:54 UTC
+--- chrome/browser/ssl/ssl_error_controller_client.cc.orig	2019-04-30 22:22:36 UTC
 +++ chrome/browser/ssl/ssl_error_controller_client.cc
 @@ -78,7 +78,7 @@ void LaunchDateAndTimeSettingsImpl() {
  #if defined(OS_ANDROID)
@@ -9,7 +9,7 @@
    struct ClockCommand {
      const char* const pathname;
      const char* const argument;
-@@ -219,7 +219,7 @@ void SSLErrorControllerClient::Proceed() {
+@@ -222,7 +222,7 @@ void SSLErrorControllerClient::Proceed() {
  
  bool SSLErrorControllerClient::CanLaunchDateAndTimeSettings() {
  #if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_MACOSX) || \

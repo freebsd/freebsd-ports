@@ -1,6 +1,6 @@
---- chrome/common/pref_names.h.orig	2019-03-11 22:00:54 UTC
+--- chrome/common/pref_names.h.orig	2019-04-30 22:22:38 UTC
 +++ chrome/common/pref_names.h
-@@ -300,7 +300,7 @@ extern const char kMdHistoryMenuPromoShown[];
+@@ -301,7 +301,7 @@ extern const char kHistoryMenuPromoShown[];
  extern const char kForceGoogleSafeSearch[];
  extern const char kForceYouTubeRestrict[];
  extern const char kAllowedDomainsForApps[];
@@ -9,7 +9,7 @@
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -333,7 +333,7 @@ extern const char kDefaultBrowserSettingEnabled[];
+@@ -334,7 +334,7 @@ extern const char kDefaultBrowserSettingEnabled[];
  #if defined(OS_MACOSX)
  extern const char kShowUpdatePromotionInfoBar[];
  #endif
@@ -18,7 +18,7 @@
  extern const char kUseCustomChromeFrame[];
  #endif
  #if BUILDFLAG(ENABLE_PLUGINS)
-@@ -487,7 +487,7 @@ extern const char kAppWindowPlacement[];
+@@ -490,7 +490,7 @@ extern const char kAppWindowPlacement[];
  extern const char kDownloadDefaultDirectory[];
  extern const char kDownloadExtensionsToOpen[];
  extern const char kDownloadDirUpgraded[];
