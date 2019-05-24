@@ -23,8 +23,6 @@ USES=		python:-3.6 shebangfix tar:bzip2 waf
 
 SHEBANG_FILES=	lv2specgen/lv2specgen.py
 
-CONFLICTS_INSTALL=	lv2core
-
 OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES
 OPTIONS_SUB=	yes
 
