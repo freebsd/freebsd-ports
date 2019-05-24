@@ -42,14 +42,13 @@ CI_CONF_FILES=	application/config/autoload.php \
 		application/config/user_agents.php \
 		index.php
 
-OPTIONS_DEFINE=	APACHE DOCS MSSQL MYSQL MYSQLI ODBC PGSQL SQLITE
+OPTIONS_DEFINE=	APACHE DOCS MSSQL MYSQLI ODBC PGSQL SQLITE
 OPTIONS_SUB=	yes
 
 SUB_FILES=	pkg-message
 
 APACHE_DESC=	Configure for Apache-2.x
 MSSQL_DESC=	Install MSSQL support for PHP
-MYSQL_DESC=	Install MySQL support for PHP
 MYSQLI_DESC=	Install MySQLi support for PHP
 ODBC_DESC=	Install ODBC support for PHP
 PGSQL_DESC=	Install PostgreSQL support for PHP
@@ -60,7 +59,6 @@ APACHE_USES=	apache:run
 DOCS_VARS=	SUB_LIST+=HASHMARK=
 DOCS_VARS_OFF=	SUB_LIST+=HASHMARK=\#
 MSSQL_USE=	PHP=mssql
-MYSQL_USE=	PHP=mysql
 MYSQLI_USE=	PHP=mysqli
 ODBC_USE=	PHP=odbc
 PGSQL_USE=	PHP=pgsql
