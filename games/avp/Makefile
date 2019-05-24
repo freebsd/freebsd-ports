@@ -17,6 +17,7 @@ USES=		cmake gl openal sdl
 USE_GL=		gl
 USE_SDL=	sdl
 
+LLD_UNSAFE=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
