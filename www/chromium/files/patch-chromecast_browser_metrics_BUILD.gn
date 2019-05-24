@@ -1,0 +1,11 @@
+--- chromecast/browser/metrics/BUILD.gn.orig	2019-04-30 22:22:40 UTC
++++ chromecast/browser/metrics/BUILD.gn
+@@ -27,7 +27,7 @@ cast_source_set("metrics") {
+     "//content/public/common",
+   ]
+ 
+-  if (is_linux) {
++  if (is_linux || is_bsd) {
+     sources += [
+       "external_metrics.cc",
+       "external_metrics.h",

@@ -1,6 +1,6 @@
---- components/metrics/BUILD.gn.orig	2019-03-11 22:00:56 UTC
+--- components/metrics/BUILD.gn.orig	2019-04-30 22:22:42 UTC
 +++ components/metrics/BUILD.gn
-@@ -143,6 +143,11 @@ jumbo_static_library("metrics") {
+@@ -144,6 +144,11 @@ jumbo_static_library("metrics") {
    if (is_fuchsia) {
      sources += [ "drive_metrics_provider_fuchsia.cc" ]
    }

@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2019-03-11 22:01:04 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2019-04-30 22:23:02 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.h
-@@ -157,7 +157,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -155,7 +155,7 @@ class PLATFORM_EXPORT FontCache {
    sk_sp<SkFontMgr> FontManager() { return font_manager_; }
    static void SetFontManager(sk_sp<SkFontMgr>);
  
@@ -9,7 +9,7 @@
    // These are needed for calling QueryRenderStyleForStrike, since
    // gfx::GetFontRenderParams makes distinctions based on DSF.
    static float DeviceScaleFactor() { return device_scale_factor_; }
-@@ -218,7 +218,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -216,7 +216,7 @@ class PLATFORM_EXPORT FontCache {
        const FontDescription&);
  #endif  // defined(OS_ANDROID)
  
@@ -18,7 +18,7 @@
    struct PlatformFallbackFont {
      String name;
      CString filename;
-@@ -230,7 +230,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -228,7 +228,7 @@ class PLATFORM_EXPORT FontCache {
    static void GetFontForCharacter(UChar32,
                                    const char* preferred_locale,
                                    PlatformFallbackFont*);
@@ -27,7 +27,7 @@
  
    scoped_refptr<SimpleFontData> FontDataFromFontPlatformData(
        const FontPlatformData*,
-@@ -294,12 +294,12 @@ class PLATFORM_EXPORT FontCache {
+@@ -292,12 +292,12 @@ class PLATFORM_EXPORT FontCache {
                                     const FontFaceCreationParams&,
                                     CString& name);
  
@@ -42,7 +42,7 @@
  
    scoped_refptr<SimpleFontData> FallbackOnStandardFontStyle(const FontDescription&,
                                                       UChar32);
-@@ -330,7 +330,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -328,7 +328,7 @@ class PLATFORM_EXPORT FontCache {
    bool is_test_font_mgr_ = false;
  #endif  // defined(OS_WIN)
  

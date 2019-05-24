@@ -1,6 +1,6 @@
---- gpu/command_buffer/tests/gl_copy_texture_CHROMIUM_unittest.cc.orig	2019-03-17 17:07:44 UTC
+--- gpu/command_buffer/tests/gl_copy_texture_CHROMIUM_unittest.cc.orig	2019-04-30 22:22:49 UTC
 +++ gpu/command_buffer/tests/gl_copy_texture_CHROMIUM_unittest.cc
-@@ -562,7 +562,7 @@ class GLCopyTextureCHROMIUMES3Test : public GLCopyText
+@@ -593,7 +593,7 @@ class GLCopyTextureCHROMIUMES3Test : public GLCopyText
  
    bool ShouldSkipNorm16() const {
      DCHECK(!ShouldSkipTest());

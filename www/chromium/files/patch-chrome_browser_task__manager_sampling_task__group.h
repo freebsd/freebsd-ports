@@ -1,6 +1,6 @@
---- chrome/browser/task_manager/sampling/task_group.h.orig	2019-03-11 22:00:54 UTC
+--- chrome/browser/task_manager/sampling/task_group.h.orig	2019-04-30 22:22:36 UTC
 +++ chrome/browser/task_manager/sampling/task_group.h
-@@ -106,9 +106,9 @@ class TaskGroup {
+@@ -119,9 +119,9 @@ class TaskGroup {
    int nacl_debug_stub_port() const { return nacl_debug_stub_port_; }
  #endif  // BUILDFLAG(ENABLE_NACL)
  
@@ -12,7 +12,7 @@
  
    int idle_wakeups_per_second() const { return idle_wakeups_per_second_; }
   private:
-@@ -121,9 +121,9 @@ class TaskGroup {
+@@ -134,9 +134,9 @@ class TaskGroup {
    void RefreshNaClDebugStubPort(int child_process_unique_id);
    void OnRefreshNaClDebugStubPortDone(int port);
  #endif
@@ -24,7 +24,7 @@
  
    void OnCpuRefreshDone(double cpu_usage);
    void OnSwappedMemRefreshDone(int64_t swapped_mem_bytes);
-@@ -191,10 +191,10 @@ class TaskGroup {
+@@ -205,10 +205,10 @@ class TaskGroup {
  #if BUILDFLAG(ENABLE_NACL)
    int nacl_debug_stub_port_;
  #endif  // BUILDFLAG(ENABLE_NACL)

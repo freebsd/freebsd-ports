@@ -1,6 +1,6 @@
---- base/files/file_util.h.orig	2019-03-11 22:00:51 UTC
+--- base/files/file_util.h.orig	2019-04-30 22:22:28 UTC
 +++ base/files/file_util.h
-@@ -445,7 +445,7 @@ BASE_EXPORT bool VerifyPathControlledByAdmin(const bas
+@@ -449,7 +449,7 @@ BASE_EXPORT bool VerifyPathControlledByAdmin(const bas
  // the directory |path|, in the number of FilePath::CharType, or -1 on failure.
  BASE_EXPORT int GetMaximumPathComponentLength(const base::FilePath& path);
  

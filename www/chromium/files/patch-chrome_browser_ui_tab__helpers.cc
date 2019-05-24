@@ -1,6 +1,6 @@
---- chrome/browser/ui/tab_helpers.cc.orig	2019-03-11 22:00:54 UTC
+--- chrome/browser/ui/tab_helpers.cc.orig	2019-04-30 22:22:36 UTC
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -116,7 +116,7 @@
+@@ -117,7 +117,7 @@
  #include "components/zoom/zoom_controller.h"
  #endif  // defined(OS_ANDROID)
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
  #include "chrome/browser/ui/hats/hats_helper.h"
  #endif
-@@ -309,11 +309,11 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -307,11 +307,11 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \

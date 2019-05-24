@@ -1,4 +1,4 @@
---- media/base/video_frame.h.orig	2019-03-11 22:00:59 UTC
+--- media/base/video_frame.h.orig	2019-04-30 22:22:52 UTC
 +++ media/base/video_frame.h
 @@ -71,7 +71,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
      STORAGE_UNOWNED_MEMORY = 2,  // External, non owned data pointers.
@@ -18,7 +18,7 @@
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/html/latest/driver-api/dma-buf.html) with a
    // VideoFrame. The frame will take ownership of |dmabuf_fds|, and will
-@@ -430,7 +430,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -437,7 +437,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // Returns the offset into the shared memory where the frame data begins.
    size_t shared_memory_offset() const;
  
@@ -27,7 +27,7 @@
    // Returns a vector containing the backing DmaBufs for this frame. The number
    // of returned DmaBufs will be equal or less than the number of planes of
    // the frame. If there are less, this means that the last FD contains the
-@@ -624,7 +624,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -631,7 +631,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // memory.
    size_t shared_memory_offset_;
  

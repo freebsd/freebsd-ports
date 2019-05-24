@@ -1,6 +1,6 @@
---- ui/gl/BUILD.gn.orig	2019-03-11 22:01:19 UTC
+--- ui/gl/BUILD.gn.orig	2019-04-30 22:23:42 UTC
 +++ ui/gl/BUILD.gn
-@@ -212,7 +212,7 @@ jumbo_component("gl") {
+@@ -213,7 +213,7 @@ jumbo_component("gl") {
        ]
      }
  

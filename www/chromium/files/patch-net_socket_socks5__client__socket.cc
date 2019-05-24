@@ -1,4 +1,4 @@
---- net/socket/socks5_client_socket.cc.orig	2019-03-11 22:01:01 UTC
+--- net/socket/socks5_client_socket.cc.orig	2019-04-30 22:22:55 UTC
 +++ net/socket/socks5_client_socket.cc
 @@ -4,6 +4,10 @@
  
@@ -10,4 +10,4 @@
 +
  #include <utility>
  
- #include "base/callback_helpers.h"
+ #include "base/bind.h"

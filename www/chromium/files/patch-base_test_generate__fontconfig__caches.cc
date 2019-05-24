@@ -1,7 +1,15 @@
---- base/test/generate_fontconfig_caches.cc.orig	2019-03-11 22:00:51 UTC
+--- base/test/generate_fontconfig_caches.cc.orig	2019-04-30 22:22:28 UTC
 +++ base/test/generate_fontconfig_caches.cc
-@@ -57,7 +57,14 @@ int main() {
-   base::TearDownFontconfig();
+@@ -52,14 +52,21 @@ int main() {
+ 
+   // Delete directory before generating fontconfig caches. This will notify
+   // future fontconfig_caches changes.
+-  CHECK(base::DeleteFile(fontconfig_caches, /*recursive=*/true));
+ 
++  CHECK(base::DeleteFile(fontconfig_caches, /*recursive=*/true));
+   base::SetUpFontconfig();
+   FcInit();
+   FcFini();
  
    // Check existence of intended fontconfig cache file.
 +#if defined(OS_BSD)

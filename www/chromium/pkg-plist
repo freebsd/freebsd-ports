@@ -317,9 +317,9 @@ bin/chrome
 %%DEBUG%%%%DATADIR%%/character_data_generator
 %%DEBUG%%%%DATADIR%%/libVkICD_mock_icd.so
 %%DEBUG%%%%DATADIR%%/libVkLayer_core_validation.so
-%%DEBUG%%%%DATADIR%%/libVkLayer_object_tracker.so
-%%DEBUG%%%%DATADIR%%/libVkLayer_parameter_validation.so
-%%DEBUG%%%%DATADIR%%/libVkLayer_threading.so
+%%DEBUG%%%%DATADIR%%/libVkLayer_object_lifetimes.so
+%%DEBUG%%%%DATADIR%%/libVkLayer_stateless_validation.so
+%%DEBUG%%%%DATADIR%%/libVkLayer_thread_safety.so
 %%DEBUG%%%%DATADIR%%/libVkLayer_unique_objects.so
 %%DEBUG%%%%DATADIR%%/libmalloc_wrapper.so
 %%DEBUG%%%%DATADIR%%/libtest_shared_library.so

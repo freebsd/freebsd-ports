@@ -1,6 +1,6 @@
---- base/security_unittest.cc.orig	2019-03-11 22:00:51 UTC
+--- base/security_unittest.cc.orig	2019-04-30 22:22:28 UTC
 +++ base/security_unittest.cc
-@@ -59,7 +59,7 @@ NOINLINE Type HideValueFromCompiler(volatile Type valu
+@@ -60,7 +60,7 @@ NOINLINE Type HideValueFromCompiler(volatile Type valu
  // FAILS_ is too clunky.
  void OverflowTestsSoftExpectTrue(bool overflow_detected) {
    if (!overflow_detected) {

@@ -1,6 +1,6 @@
---- content/public/common/content_switches.h.orig	2019-03-11 22:00:58 UTC
+--- content/public/common/content_switches.h.orig	2019-04-30 22:22:47 UTC
 +++ content/public/common/content_switches.h
-@@ -270,7 +270,7 @@ CONTENT_EXPORT extern const char kEnableOSKOverscroll[
+@@ -272,7 +272,7 @@ CONTENT_EXPORT extern const char kEnableOSKOverscroll[
  CONTENT_EXPORT extern const char kDisablePanelFitting[];
  #endif
  

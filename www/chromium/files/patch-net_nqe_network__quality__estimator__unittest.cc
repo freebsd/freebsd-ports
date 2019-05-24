@@ -1,6 +1,6 @@
---- net/nqe/network_quality_estimator_unittest.cc.orig	2019-03-17 14:56:02 UTC
+--- net/nqe/network_quality_estimator_unittest.cc.orig	2019-04-30 22:22:54 UTC
 +++ net/nqe/network_quality_estimator_unittest.cc
-@@ -2058,7 +2058,7 @@ TEST_F(NetworkQualityEstimatorTest, TestGlobalSocketWa
+@@ -2039,7 +2039,7 @@ TEST_F(NetworkQualityEstimatorTest, TestGlobalSocketWa
  
  // TestTCPSocketRTT requires kernel support for tcp_info struct, and so it is
  // enabled only on certain platforms.

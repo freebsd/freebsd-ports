@@ -1,6 +1,6 @@
---- chrome/browser/media/webrtc/webrtc_logging_handler_host.h.orig	2019-03-17 20:00:30 UTC
+--- chrome/browser/media/webrtc/webrtc_logging_handler_host.h.orig	2019-04-30 22:22:34 UTC
 +++ chrome/browser/media/webrtc/webrtc_logging_handler_host.h
-@@ -154,13 +154,13 @@ class WebRtcLoggingHandlerHost : public content::Brows
+@@ -153,13 +153,13 @@ class WebRtcLoggingHandlerHost : public content::Brows
                           size_t web_app_id,
                           const StartEventLoggingCallback& callback);
  
@@ -16,7 +16,7 @@
  
   private:
    friend class content::BrowserThread;
-@@ -227,7 +227,7 @@ class WebRtcLoggingHandlerHost : public content::Brows
+@@ -226,7 +226,7 @@ class WebRtcLoggingHandlerHost : public content::Brows
        bool success,
        const std::string& error_message);
  
@@ -25,7 +25,7 @@
    // Grants the render process access to the 'WebRTC Logs' directory, and
    // invokes |callback| with the ids necessary to create a DirectoryEntry
    // object. If the |logs_path| couldn't be created or found, |error_callback|
-@@ -236,7 +236,7 @@ class WebRtcLoggingHandlerHost : public content::Brows
+@@ -235,7 +235,7 @@ class WebRtcLoggingHandlerHost : public content::Brows
        const LogsDirectoryCallback& callback,
        const LogsDirectoryErrorCallback& error_callback,
        const base::FilePath& logs_path);

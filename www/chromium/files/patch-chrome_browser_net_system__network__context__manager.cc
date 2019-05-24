@@ -1,6 +1,6 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2019-03-11 22:00:53 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2019-04-30 22:22:34 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
-@@ -69,12 +69,12 @@
+@@ -70,12 +70,12 @@
  #include "chrome/browser/chromeos/policy/browser_policy_connector_chromeos.h"
  #endif  // defined(OS_CHROMEOS)
  
@@ -15,7 +15,7 @@
  
  namespace {
  
-@@ -519,7 +519,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+@@ -535,7 +535,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
    content::GetNetworkService()->ConfigureStubHostResolver(
        stub_resolver_enabled, std::move(dns_over_https_servers));
  

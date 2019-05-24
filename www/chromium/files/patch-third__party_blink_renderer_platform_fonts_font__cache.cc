@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2019-03-11 22:01:04 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2019-04-30 22:23:02 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.cc
-@@ -66,7 +66,7 @@ namespace blink {
+@@ -67,7 +67,7 @@ namespace blink {
  
  SkFontMgr* FontCache::static_font_manager_ = nullptr;
  
@@ -9,7 +9,7 @@
  float FontCache::device_scale_factor_ = 1.0;
  #endif
  
-@@ -89,7 +89,7 @@ FontCache::FontCache()
+@@ -90,7 +90,7 @@ FontCache::FontCache()
  FontPlatformData* FontCache::SystemFontPlatformData(
      const FontDescription& font_description) {
    const AtomicString& family = FontCache::SystemFontFamily();

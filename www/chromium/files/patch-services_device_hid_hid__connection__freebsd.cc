@@ -1,5 +1,5 @@
---- services/device/hid/hid_connection_freebsd.cc.orig	2019-03-30 17:42:59.718158000 -0700
-+++ services/device/hid/hid_connection_freebsd.cc	2019-03-30 21:54:38.653951000 -0700
+--- services/device/hid/hid_connection_freebsd.cc.orig	2019-05-04 09:19:19 UTC
++++ services/device/hid/hid_connection_freebsd.cc
 @@ -0,0 +1,240 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
@@ -57,7 +57,7 @@
 +             WriteCallback callback) {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +    base::ScopedBlockingCall scoped_blocking_call(
-+        base::BlockingType::MAY_BLOCK);
++        FROM_HERE, base::BlockingType::MAY_BLOCK);
 +
 +    auto data = buffer->front();
 +    size_t size = buffer->size();
@@ -83,7 +83,7 @@
 +                        ReadCallback callback) {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +    base::ScopedBlockingCall scoped_blocking_call(
-+        base::BlockingType::MAY_BLOCK);
++        FROM_HERE, base::BlockingType::MAY_BLOCK);
 +    struct usb_gen_descriptor ugd;
 +    ugd.ugd_report_type = UHID_FEATURE_REPORT;
 +    ugd.ugd_data = buffer->front();
@@ -233,7 +233,7 @@
 +    scoped_refptr<base::RefCountedBytes> buffer,
 +    WriteCallback callback) {
 +  base::ScopedBlockingCall scoped_blocking_call(
-+      base::BlockingType::MAY_BLOCK);
++      FROM_HERE, base::BlockingType::MAY_BLOCK);
 +  blocking_task_runner_->PostTask(
 +      FROM_HERE,
 +      base::BindOnce(&BlockingTaskHelper::SendFeatureReport,

@@ -1,4 +1,4 @@
---- mojo/public/c/system/thunks.cc.orig	2019-03-11 22:01:00 UTC
+--- mojo/public/c/system/thunks.cc.orig	2019-04-30 22:22:53 UTC
 +++ mojo/public/c/system/thunks.cc
 @@ -16,7 +16,7 @@
  #include "build/build_config.h"
@@ -36,7 +36,18 @@
        const base::FilePath::CharType kDefaultLibraryPathValue[] =
            FILE_PATH_LITERAL("./libmojo_core.so");
  #elif defined(OS_WIN)
-@@ -147,7 +147,7 @@ class CoreLibraryInitializer {
+@@ -138,16 +138,16 @@ class CoreLibraryInitializer {
+ 
+     CHECK_GT(g_thunks->size, 0u)
+         << "Invalid mojo_core library: " << library_path->value();
+-#else   // defined(OS_CHROMEOS) || defined(OS_LINUX)
++#else   // defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
+     NOTREACHED()
+         << "Dynamic mojo_core loading is not supported on this platform.";
+-#endif  // defined(OS_CHROMEOS) || defined(OS_LINUX)
++#endif  // defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD)
+   }
+ 
    ~CoreLibraryInitializer() = default;
  
   private:

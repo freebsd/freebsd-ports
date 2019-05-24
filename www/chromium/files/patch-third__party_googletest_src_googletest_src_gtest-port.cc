@@ -1,8 +1,8 @@
---- third_party/googletest/src/googletest/src/gtest-port.cc.orig	2019-03-11 22:08:00 UTC
+--- third_party/googletest/src/googletest/src/gtest-port.cc.orig	2019-04-30 22:25:52 UTC
 +++ third_party/googletest/src/googletest/src/gtest-port.cc
-@@ -55,6 +55,11 @@
- # include <mach/vm_map.h>
- #endif  // GTEST_OS_MAC
+@@ -63,6 +63,11 @@
+ # endif
+ #endif
  
 +#if GTEST_OS_FREEBSD
 +#include <sys/sysctl.h>
@@ -12,7 +12,7 @@
  #if GTEST_OS_QNX
  # include <devctl.h>
  # include <fcntl.h>
-@@ -129,6 +134,28 @@ size_t GetThreadCount() {
+@@ -137,6 +142,28 @@ size_t GetThreadCount() {
    } else {
      return 0;
    }
@@ -40,4 +40,4 @@
 +  return KP_NLWP(info);
  }
  
- #elif GTEST_OS_QNX
+ #elif GTEST_OS_DRAGONFLY || GTEST_OS_FREEBSD || GTEST_OS_GNU_KFREEBSD || \

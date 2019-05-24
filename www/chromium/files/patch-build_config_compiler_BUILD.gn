@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2019-03-11 22:00:52 UTC
+--- build/config/compiler/BUILD.gn.orig	2019-04-30 22:22:28 UTC
 +++ build/config/compiler/BUILD.gn
-@@ -53,7 +53,7 @@ declare_args() {
+@@ -54,7 +54,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -9,7 +9,7 @@
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -275,7 +275,7 @@ config("compiler") {
+@@ -279,7 +279,7 @@ config("compiler") {
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
          !(is_android && use_order_profiling) && !is_mac && !is_ios &&
@@ -18,7 +18,7 @@
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -394,7 +394,7 @@ config("compiler") {
+@@ -381,7 +381,7 @@ config("compiler") {
  
      # Compiler instrumentation can introduce dependencies in DSOs to symbols in
      # the executable they are loaded into, so they are unresolved at link-time.
@@ -27,7 +27,7 @@
        ldflags += [
          "-Wl,-z,defs",
          "-Wl,--as-needed",
-@@ -502,7 +502,7 @@ config("compiler") {
+@@ -489,7 +489,7 @@ config("compiler") {
      }
    }
  
@@ -36,7 +36,7 @@
      cflags += [
        # TODO(hans): Remove this once Clang generates better optimized debug info
        # by default. https://crbug.com/765793
-@@ -809,7 +809,7 @@ config("compiler_cpu_abi") {
+@@ -757,7 +757,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -45,7 +45,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1494,7 +1494,7 @@ config("default_warnings") {
+@@ -1507,7 +1507,7 @@ config("default_warnings") {
          cflags += [ "-Wno-nonportable-include-path" ]
        }
  
@@ -54,7 +54,7 @@
          # Flags NaCl (Clang 3.7) and Xcode 9.2 (Clang clang-900.0.39.2) do not
          # recognize.
          cflags += [
-@@ -1694,7 +1694,7 @@ config("thin_archive") {
+@@ -1707,7 +1707,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -63,7 +63,7 @@
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2278,7 +2278,7 @@ config("symbols") {
+@@ -2291,7 +2291,7 @@ config("symbols") {
        # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
        # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
        if (!is_nacl || is_clang) {
@@ -72,7 +72,7 @@
        }
      }
      if (use_debug_fission && !is_nacl && !is_android) {
-@@ -2299,7 +2299,7 @@ config("symbols") {
+@@ -2312,7 +2312,7 @@ config("symbols") {
      # DWARF info may be corrupt; offsets in a range list entry are in different
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
      if (!is_mac && !is_ios && !is_nacl && current_cpu != "x86" &&

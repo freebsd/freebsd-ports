@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.cc.orig	2019-03-11 22:00:54 UTC
+--- chrome/common/chrome_features.cc.orig	2019-04-30 22:22:37 UTC
 +++ chrome/common/chrome_features.cc
-@@ -82,13 +82,13 @@ const base::Feature kAutomaticTabDiscarding{"Automatic
+@@ -96,13 +96,13 @@ const base::Feature kAutomaticTabDiscarding{"Automatic
                                              base::FEATURE_ENABLED_BY_DEFAULT};
  #endif  // defined(OS_WIN) || defined(OS_MACOSX)
  
@@ -16,7 +16,7 @@
  
  // Enables or disables whether permission prompts are automatically blocked
  // after the user has explicitly dismissed them too many times.
-@@ -131,7 +131,7 @@ const base::Feature kThirdPartyModulesBlocking{
+@@ -152,7 +152,7 @@ const base::Feature kThirdPartyModulesBlocking{
      "ThirdPartyModulesBlocking", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif
  
@@ -25,7 +25,7 @@
  // Enables the dual certificate verification trial feature.
  // https://crbug.com/649026
  const base::Feature kCertDualVerificationTrialFeature{
-@@ -195,7 +195,7 @@ const base::Feature kUsageTimeLimitPolicy{"UsageTimeLi
+@@ -216,7 +216,7 @@ const base::Feature kUsageTimeLimitPolicy{"UsageTimeLi
  const base::Feature kDesktopPWAWindowing {
    "DesktopPWAWindowing",
  #if defined(OS_CHROMEOS) || defined(OS_WIN) || defined(OS_LINUX) || \

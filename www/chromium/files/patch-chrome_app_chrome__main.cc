@@ -1,6 +1,6 @@
---- chrome/app/chrome_main.cc.orig	2019-03-11 22:00:52 UTC
+--- chrome/app/chrome_main.cc.orig	2019-04-30 22:22:30 UTC
 +++ chrome/app/chrome_main.cc
-@@ -93,11 +93,11 @@ int ChromeMain(int argc, const char** argv) {
+@@ -94,11 +94,11 @@ int ChromeMain(int argc, const char** argv) {
  #endif
  
    // Chrome-specific process modes.

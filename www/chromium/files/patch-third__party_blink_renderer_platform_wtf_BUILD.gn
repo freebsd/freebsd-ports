@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/wtf/BUILD.gn.orig	2019-03-11 22:01:04 UTC
+--- third_party/blink/renderer/platform/wtf/BUILD.gn.orig	2019-04-30 22:23:03 UTC
 +++ third_party/blink/renderer/platform/wtf/BUILD.gn
-@@ -267,8 +267,12 @@ jumbo_component("wtf") {
+@@ -268,8 +268,12 @@ jumbo_component("wtf") {
    if (is_android) {
      libs = [ "log" ]
    }

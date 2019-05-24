@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/extensions/web_app_extension_shortcut.cc.orig	2019-03-11 22:00:54 UTC
+--- chrome/browser/web_applications/extensions/web_app_extension_shortcut.cc.orig	2019-04-30 22:22:37 UTC
 +++ chrome/browser/web_applications/extensions/web_app_extension_shortcut.cc
-@@ -46,7 +46,7 @@ namespace {
+@@ -50,7 +50,7 @@ namespace {
  #if defined(OS_MACOSX)
  const int kDesiredSizes[] = {16, 32, 128, 256, 512};
  const size_t kNumDesiredSizes = base::size(kDesiredSizes);
