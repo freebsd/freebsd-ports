@@ -1,4 +1,4 @@
---- address.hpp.orig	2010-09-28 18:12:26.000000000 +0000
+--- address.hpp.orig	2010-09-28 18:12:26 UTC
 +++ address.hpp
 @@ -28,7 +28,7 @@
  #include <sys/socket.h>
@@ -18,7 +18,7 @@
      return std::string((char*)binaryEthernetAddress.octet, ETHER_ADDR_LEN);
    #endif
    #ifdef __linux__
-@@ -60,7 +60,7 @@ std::string textToEthernet(const std::st
+@@ -60,7 +60,7 @@ std::string textToEthernet(const std::string &textEthe
  std::string ethernetToText(const char *binaryEthernetAddress) {
    ether_addr _binaryEthernetAddress;
    char textEthernetAddress[17];
