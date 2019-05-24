@@ -26,7 +26,8 @@ FTYPES=		css html js php phps png sample
 
 USES=		php:web
 
-MYSQL_USE=	php=mysql
+MYSQL_BROKEN=	USE_PHP=mysql no longer supported
+#MYSQL_USE=	php=mysql
 PGSQL_USE=	php=pgsql
 
 pre-everything::
