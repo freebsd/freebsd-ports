@@ -1227,6 +1227,7 @@
     SUBDIR += liblangtag
     SUBDIR += liblas
     SUBDIR += liblas12
+    SUBDIR += liblpm
     SUBDIR += liblnk
     SUBDIR += liblockfile
     SUBDIR += liblogging
