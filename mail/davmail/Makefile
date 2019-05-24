@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	davmail
-PORTVERSION=	4.9.0
+PORTVERSION=	5.2.0
 CATEGORIES=	mail java
 MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-${REVISION}
@@ -20,7 +20,8 @@ USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 ALL_TARGET=	release
-REVISION=	2652  # 4.9.0
+# 5.2.0
+REVISION=	2961
 # port build number, same as on DISTNAME
 MAKE_ARGS=	-Drevision=${REVISION}
 MAKE_ENV+=	"ANT_OPTS=-Dfile.encoding=UTF-8"
@@ -58,6 +59,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/davmail.sh ${STAGEDIR}${PREFIX}/bin/davmail
 	${INSTALL_DATA} ${WRKSRC}/src/etc/davmail.properties \
 		${STAGEDIR}${PREFIX}/etc/davmail.properties.sample
-	${INSTALL_DATA} ${WRKSRC}/dist/davmail.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/src/desktop/davmail.desktop ${STAGEDIR}${PREFIX}/share/applications/
 
 .include <bsd.port.mk>
