@@ -198,6 +198,10 @@ cargo-extract:
 	@${PRINTF} '{"package":"%s","files":{}}' \
 		$$(${SHA256} -q ${DISTDIR}/${CARGO_DIST_SUBDIR}/${_crate}.tar.gz) \
 		> ${CARGO_VENDOR_DIR}/${_crate}/.cargo-checksum.json
+	@if [ -r ${CARGO_VENDOR_DIR}/${_crate}/Cargo.toml.orig ]; then \
+		${MV} ${CARGO_VENDOR_DIR}/${_crate}/Cargo.toml.orig \
+			${CARGO_VENDOR_DIR}/${_crate}/Cargo.toml.orig-cargo; \
+	fi
 .endfor
 
 _CARGO_GIT_PATCH_CARGOTOML=
