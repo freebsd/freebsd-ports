@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	riemann
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 
