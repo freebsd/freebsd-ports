@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hylafax
-PORTVERSION=	6.0.6
-PORTREVISION=	8
+PORTVERSION=	6.0.7
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
@@ -17,9 +16,12 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:print/afm
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libjbig.so:graphics/jbigkit
 
-MAKE_JOBS_UNSAFE=	yes
-HAS_CONFIGURE=	yes
 USES=		fakeroot ghostscript jpeg
+
+USE_RC_SUBR=	hylafax
+
+MAKE_JOBS_UNSAFE=	yes
+HAS_CONFIGURE=		yes
 
 CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-LIBTIFF="-L${LOCALBASE}/lib -ltiff -ljpeg" \
@@ -36,20 +38,24 @@ MAKE_ARGS+=	OPTIMIZER="" -DOPTIMIZER
 
 PORTDOCS=	RELEASENOTES-4.3.txt RELEASENOTES-4.4.txt RELEASENOTES-6.0.txt
 SUB_FILES=	pkg-message
-USE_RC_SUBR=	hylafax
 
 OPTIONS_DEFINE=	PAM NLS GAWK DOCS
 OPTIONS_DEFAULT=PAM
-NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
+
+NO_OPTIONS_SORT=yes
+
 GAWK_DESC=	Use gawk for scripts
 
 PAM_CONFIGURE_OFF=	--disable-pam
+
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
+
 GAWK_BUILD_DEPENDS=	gawk:lang/gawk
 GAWK_RUN_DEPENDS=	gawk:lang/gawk
 GAWK_CONFIGURE_ON=	--with-AWK="${LOCALBASE}/bin/gawk"
+
 DOCS_CONFIGURE_ON=	--with-HTML=yes
 
 .include <bsd.port.options.mk>

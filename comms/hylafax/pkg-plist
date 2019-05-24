@@ -130,8 +130,8 @@ sbin/hylafax
 %%NLS%%share/locale/vi/LC_MESSAGES/hylafax-server.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libhylafax.mo
 %%HYLAFAX_SPOOL%%/COPYRIGHT
-@exec mkfifo -m 0600 %%HYLAFAX_SPOOL%%/FIFO
-@exec chown uucp:dialer %%HYLAFAX_SPOOL%%/FIFO
+@postexec mkfifo -m 0600 %%HYLAFAX_SPOOL%%/FIFO
+@postexec chown uucp:dialer %%HYLAFAX_SPOOL%%/FIFO
 @rmtry %%HYLAFAX_SPOOL%%/FIFO
 %%HYLAFAX_SPOOL%%/bin/ps2fax.gs
 %%HYLAFAX_SPOOL%%/bin/ps2fax.dps
