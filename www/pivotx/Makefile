@@ -22,8 +22,7 @@ PORTEXAMPLES=	example.htaccess example.web.config
 # Requirements:
 # http://book.pivotx.net/index.php?page=app-e#anchor-determining-if-your-server-meets-pivotxs-requirements
 
-OPTIONS_DEFINE=	MYSQL PHPDOM DOCS EXAMPLES
-MYSQL_DESC=	Use MySQL instead of flat files
+OPTIONS_DEFINE=	PHPDOM DOCS EXAMPLES
 PHPDOM_DESC=	Use PHP:DOM instead of SimpleXML
 
 USES+=		cpe php:web tar:tgz
@@ -35,11 +34,6 @@ USE_PHP=	session gettext xml tokenizer gd pcre
 USE_PHP+=	dom
 .else
 USE_PHP+=	simplexml
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	client
-USE_PHP+=	mysql
 .endif
 
 NO_BUILD=	YES
