@@ -1,0 +1,6 @@
+man/man3/thmap.3.gz
+include/thmap.h
+lib/libthmap.a
+lib/libthmap.so
+lib/libthmap.so.1
+lib/libthmap.so.1.0.0

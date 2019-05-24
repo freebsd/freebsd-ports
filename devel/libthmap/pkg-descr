@@ -1,0 +1,12 @@
+Concurrent trie-hash map library -- a general purpose associative array,
+combining the elements of hashing and radix trie. Highlights:
+
+* Very competitive performance, with logarithmic time complexity on average.
+* Lookups are lock-free and inserts/deletes are using fine-grained locking.
+* Incremental growth of the data structure (no large resizing/rehashing).
+* Optional support for use with shared memory, e.g. memory-mapped file.
+
+The implementation is written in C11 and distributed under the 2-clause BSD
+license.
+
+WWW: https://github.com/rmind/thmap
