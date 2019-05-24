@@ -347,6 +347,11 @@
     SUBDIR += rubygem-oxidized
     SUBDIR += rubygem-oxidized-script
     SUBDIR += rubygem-oxidized-web
+    SUBDIR += rubygem-riemann-client
+    SUBDIR += rubygem-riemann-dash
+    SUBDIR += rubygem-riemann-rabbitmq
+    SUBDIR += rubygem-riemann-tail
+    SUBDIR += rubygem-riemann-tools
     SUBDIR += rubygem-snmp
     SUBDIR += rubygem-visage-app
     SUBDIR += sblim-wbemcli

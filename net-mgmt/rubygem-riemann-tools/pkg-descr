@@ -1,0 +1,9 @@
+Collection of utilities which submit events to Riemann, the real-time
+streaming event monitoring system for your distributed infrastructure.
+
+Includes comprehensive support out-of-the-box for Apache, Memcache,
+Haproxy, Varnish, CouchDB, Nginx, Zookeeper, Consul, as well as various
+OS-level statistics such as CPU, memory, disk, load, network interfaces,
+and open TCP ports.
+
+WWW: https://github.com/riemann/riemann-tools
