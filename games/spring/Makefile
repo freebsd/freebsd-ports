@@ -68,8 +68,6 @@ MANPAGES_BUILD_DEPENDS=	7z:archivers/p7zip \
 			xsltproc:textproc/libxslt \
 			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 			bash:shells/bash
-MANPAGES_DOCS_ON=	-DUSERDOCS_PLAIN:BOOL=true
-MANPAGES_DOCS_OFF=	-DUSERDOCS_PLAIN:BOOL=false
 CXXFLAGS+=	-Wno-deprecated		# Too much noise
 
 PR_DOWNLOADER_LIB_DEPENDS=libcurl.so:ftp/curl
