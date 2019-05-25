@@ -20,7 +20,6 @@ BUILD_DEPENDS=	nspr>=4.21:devel/nspr \
 		harfbuzz>=2.3.1:print/harfbuzz \
 		graphite2>=1.3.13:graphics/graphite2 \
 		png>=1.6.35:graphics/png \
-		libvorbis>=1.3.6,3:audio/libvorbis \
 		libvpx>=1.5.0:multimedia/libvpx \
 		sqlite3>=3.27.2:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
