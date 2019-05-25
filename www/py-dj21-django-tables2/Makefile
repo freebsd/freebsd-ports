@@ -20,6 +20,7 @@ USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=		yes
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-tables2
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-tables2 \
+			${PYTHON_PKGNAMEPREFIX}dj22-django-tables2
 
 .include <bsd.port.mk>
