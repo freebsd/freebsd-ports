@@ -23,7 +23,6 @@ USES=		cmake tar:tgz dos2unix jpeg perl5
 USE_PERL5=	run
 USE_LDCONFIG=	yes
 
-CMAKE_VERBOSE=	yes
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS=ON \
 		-DWITH_MATLAB=OFF \
 		-DBASH_EXECUTABLE:STRING=${LOCALBASE}/bin/bash \
