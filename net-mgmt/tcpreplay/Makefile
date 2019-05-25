@@ -11,6 +11,9 @@ COMMENT=	Tool to replay saved packet capture files
 
 LICENSE=	GPLv3
 
+# Upstream bug report: https://github.com/appneta/tcpreplay/issues/558
+BROKEN_FreeBSD_13=	fails to compile: incomplete definition of type 'struct next'
+
 LIB_DEPENDS=	libopts.so:devel/autogen \
 		libdnet.so:net/libdnet
 BUILD_DEPENDS=	pcapnav-config:net/libpcapnav
