@@ -14,8 +14,6 @@ COMMENT=	Ayu 20-dot Kanji font
 BUILD_DEPENDS=	mkitalic:x11-fonts/mkbold-mkitalic \
 		bdftopcf:x11-fonts/bdftopcf
 
-CONFLICS=	ja-kappa20-[0-9]*
-
 USES=		fonts
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
