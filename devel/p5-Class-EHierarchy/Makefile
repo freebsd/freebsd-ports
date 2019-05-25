@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-EHierarchy
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
