@@ -900,6 +900,7 @@
     SUBDIR += hadoop2
     SUBDIR += hapy
     SUBDIR += hcs12mem
+    SUBDIR += heaptrack
     SUBDIR += heimdall
     SUBDIR += hexcompare
     SUBDIR += hexd
