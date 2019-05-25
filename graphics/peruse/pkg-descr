@@ -1,0 +1,11 @@
+A comic book reader app
+
+This is an application for reading comic books distributed in various digital
+formats. It is based on KDE's Frameworks 5, and the UI is built using Qt
+Quick2.
+
+File discovery is done using Baloo when available and enabled, and otherwise
+through a simple file system digger. The Baloo method is both faster and more
+featureful, and you should be using that whenever possible.
+
+WWW: https://peruse.kde.org/
