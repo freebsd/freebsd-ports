@@ -11,7 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Unicode/MUFI OpenType font for medievalists (Latin, IPA, Runic, Greek)
 
-LICENCE=	OFL11
+LICENSE=	OFL11
 
 OPTIONS_DEFINE=	DOCS
 
