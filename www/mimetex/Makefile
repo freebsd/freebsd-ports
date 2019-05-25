@@ -19,8 +19,8 @@ USES=		zip
 
 OPTIONS_DEFINE=	ANTIALIASING DOCS STATIC
 OPTIONS_DEFAULT=	ANTIALIASING
-DESC_ANTIALIASING=	Use image format with anti-aliasing
-DESC_STATIC=	Possible use of mimetex on another machine
+ANTIALIASING_DESC=	Use image format with anti-aliasing
+STATIC_DESC=	Possible use of mimetex on another machine
 
 PORTDOCS=	${PORTNAME}.html
 
