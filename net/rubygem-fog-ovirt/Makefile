@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-ovirt
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
