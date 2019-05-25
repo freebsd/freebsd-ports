@@ -30,7 +30,11 @@ QMAKE_ARGS=	INSTALLQMLDIR=${QT_QMLDIR} \
 		LIBDIR=${PREFIX}/lib \
 		MANDIR=${PREFIX}/man
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 # Workaround for Bug#224137: devel/qt5-qmake: Doesn't use the right compiler in case USE_GCC is selected
 BINARY_ALIAS=	g++=${CXX}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
