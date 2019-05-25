@@ -1,7 +1,7 @@
 - uname -p returns amd64 on FreeBSD/OpenBSD but x86_64 on DragonFly/NetBSD
 - More ELF platforms can use GNU assembler on non-x86
 
---- build/cmake/aom_configure.cmake.orig	2018-11-16 20:24:20 UTC
+--- build/cmake/aom_configure.cmake.orig	2019-05-24 23:33:39 UTC
 +++ build/cmake/aom_configure.cmake
 @@ -37,6 +37,7 @@ string(STRIP "${AOM_CMAKE_CONFIG}" AOM_CMAKE_CONFIG)
  # Detect target CPU.
