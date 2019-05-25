@@ -24,11 +24,7 @@ PORTDOCS=	README
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		APIFIX DOCS
-OPTIONS_DEFAULT=	APIFIX
-
-APIFIX_DESC=	Apply fix for Last.fm API 1.x
-APIFIX_EXTRA_PATCHES_ON=	${FILESDIR}/extra-patch-xmms2-scrobbler.c
+OPTIONS_DEFINE=		DOCS
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xmms2-scrobbler
