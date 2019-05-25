@@ -84,7 +84,7 @@ share/ECM/toolchain/ECMAndroidDeployQt.cmake
 share/ECM/toolchain/deployment-file.json.in
 share/ECM/toolchain/hasMainSymbol.cmake
 share/ECM/toolchain/specifydependencies.cmake
-%%PORTDOCS%%%%DOCSDIR%%/ExtraCMakeModules.qch
+%%HELP%%%%DOCSDIR%%/ExtraCMakeModules.qch
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindCanberra.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindEGL.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindFontconfig.rst.txt
