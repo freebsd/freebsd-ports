@@ -18,7 +18,6 @@ GH_ACCOUNT=	tmate-io
 GH_TAGNAME=	8b294f3
 
 GNU_CONFIGURE=	yes
-INSTALL_ARGET=	install-strip
 USE_LDCONFIG=	yes
 LDFLAGS+=	-lexecinfo
 
