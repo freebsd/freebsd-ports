@@ -408,6 +408,7 @@
     SUBDIR += kphotoalbum
     SUBDIR += krita
     SUBDIR += kudu
+    SUBDIR += kxstitch
     SUBDIR += l2p
     SUBDIR += largetifftools
     SUBDIR += laternamagica
