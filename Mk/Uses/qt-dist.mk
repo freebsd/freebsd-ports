@@ -251,7 +251,7 @@ _QT5_BASE=		core dbus gui network sql widgets
 .if ${_QT_VER:M5}
 post-patch: gcc-post-patch
 gcc-post-patch:
-	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/mkspecs/common/gcc-base.conf \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 	${REINPLACE_CMD} 's|%%GCC_DEFAULT%%|${GCC_DEFAULT}|g' \
