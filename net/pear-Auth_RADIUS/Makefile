@@ -8,7 +8,7 @@ CATEGORIES=	net security pear
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PEAR wrapper classes for the RADIUS PECL
 
-LICNSE=		BSD3CLAUSE
+LICENSE=	BSD3CLAUSE
 
 USE_PHP=	radius
 USES=		pear php:flavors
