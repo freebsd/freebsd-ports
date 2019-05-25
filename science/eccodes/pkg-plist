@@ -16555,7 +16555,10 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/9/6.0.table
 %%DATADIR%%/definitions/grib2/tables/9/stepType.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1.1.table
+%%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.2.0.20.table
+%%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.2.2.0.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.230.table
+%%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.233.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/4/1.2.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.1.0.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.10.0.table
@@ -17463,6 +17466,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.oper.ssd.def
 %%DATADIR%%/definitions/mars/grib.scda.4i.def
 %%DATADIR%%/definitions/mars/grib.scda.me.def
+%%DATADIR%%/definitions/mars/grib.scda.ssd.def
 %%DATADIR%%/definitions/mars/grib.seap.an.def
 %%DATADIR%%/definitions/mars/grib.seap.ef.def
 %%DATADIR%%/definitions/mars/grib.seap.es.def
