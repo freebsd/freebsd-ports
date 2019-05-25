@@ -321,6 +321,7 @@
     SUBDIR += cl-trivial-gray-streams-sbcl
     SUBDIR += clanlib
     SUBDIR += clanlib1
+    SUBDIR += clazy
     SUBDIR += cld2
     SUBDIR += clewn
     SUBDIR += clig
