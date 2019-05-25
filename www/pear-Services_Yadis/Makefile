@@ -8,7 +8,7 @@ CATEGORIES=	www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Implementation of the Yadis Specification 1.0 protocol for PHP5
 
-LICSENSE=	BSD3CLAUSE
+LICENSE=	BSD3CLAUSE
 
 USES=		pear
 
