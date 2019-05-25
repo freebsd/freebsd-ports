@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 
 BROKEN_RUBY24=	yes
 BROKEN_RUBY25=	yes
-DERPRECATED=	Does not build for all supported Ruby version
+DEPRECATED=	Does not build for all supported Ruby version
 EXPIRATION_DATE=2019-06-30
 
 USES=		gem
