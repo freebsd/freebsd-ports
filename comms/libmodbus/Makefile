@@ -10,7 +10,7 @@ MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Modbus library
 
 LICENSE=	LGPL21+
-LICENES_FILE=	${WRKSRC}/COPYING.LESSER
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	a2x:textproc/asciidoc \
 		xmlto:textproc/xmlto
