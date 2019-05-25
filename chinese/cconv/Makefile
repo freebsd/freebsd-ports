@@ -10,7 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplified-Traditional Chinese conversion tool
 
 LICENSE=	MIT
-LICNESE_FILE=	${WRKSRC}/License
+LICENSE_FILE=	${WRKSRC}/License
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
