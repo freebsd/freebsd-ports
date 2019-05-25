@@ -469,7 +469,6 @@
     SUBDIR += npc
     SUBDIR += npm
     SUBDIR += npm-node10
-    SUBDIR += npm-node6
     SUBDIR += npm-node8
     SUBDIR += nspluginwrapper
     SUBDIR += nuvolaplayer-8tracks
