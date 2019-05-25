@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-05-25 15:07:20 UTC
++++ CMakeLists.txt
+@@ -178,7 +178,7 @@ if (NOT CLAZY_BUILD_WITH_CLANG)
+   install(FILES README.md COPYING-LGPL2.txt checks.json DESTINATION ${DOC_INSTALL_DIR})
+ 
+   # Build docs
+-  set(MAN_INSTALL_DIR "${SHARE_INSTALL_DIR}/man/man1")
++  set(MAN_INSTALL_DIR "man/man1")
+   add_subdirectory(docs)
+ 
+   # rpath
