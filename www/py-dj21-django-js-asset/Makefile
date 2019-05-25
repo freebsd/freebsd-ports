@@ -18,6 +18,7 @@ USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=		yes
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-js-asset
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-js-asset \
+			${PYTHON_PKGNAMEPREFIX}dj22-django-js-asset
 
 .include <bsd.port.mk>
