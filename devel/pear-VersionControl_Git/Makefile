@@ -8,7 +8,7 @@ CATEGORIES=	devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	OO interface to handle Git repository
 
-LICSENSE=	APACHE20
+LICENSE=	APACHE20
 
 USES=		pear
 
