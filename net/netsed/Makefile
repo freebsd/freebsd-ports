@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netsed
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	net security
 MASTER_SITES=	http://silicone.homelinux.org/release/netsed/
 
