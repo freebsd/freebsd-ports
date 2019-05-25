@@ -11,7 +11,6 @@ COMMENT=	Common Lisp implementation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GNU-GPL
 
-BROKEN_ia64=	Does not compile
 BROKEN_powerpc=	Does not compile
 BROKEN_sparc64=	Does not compile
 
