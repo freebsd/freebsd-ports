@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jwt
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
