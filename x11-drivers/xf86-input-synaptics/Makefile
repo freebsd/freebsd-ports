@@ -8,7 +8,7 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org synaptics input driver
 
-LICESNE=	MIT
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pathfix
