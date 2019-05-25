@@ -48,10 +48,6 @@ CMAKE_ARGS+=	-DWANT_HUNSPELL=YES -Wno-ferror-limit -DCMAKE_COLOR_MAKEFILE:BOOL=O
 
 OPTIONS_DEFINE=	DOCS
 
-DOS2UNIX_FILE=	scribus/plugins/import/pdf/importpdf.cpp \
-		scribus/plugins/import/pdf/slaoutput.cpp \
-		scribus/plugins/import/pdf/slaoutput.h
-
 post-install:
 		${LN} -sf ../share/icons/1_5_1/scribus.png \
 			${STAGEDIR}${PREFIX}/share/pixmaps/
