@@ -1,8 +1,8 @@
 # $FreeBSD$
 
-PORTNAME=	titan
+PORTNAME=	ylva
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3
+DISTVERSION=	1.5
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,9 +17,9 @@ GH_ACCOUNT=	nrosvall
 
 MAKE_ENV=	MANDIR=${PREFIX}/man
 
-PLIST_FILES=	bin/titan man/man1/titan.1.gz
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/titan
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -12759,3 +12759,4 @@ databases/py-mysql-connector-python2|databases/py-mysql-connector-python|2019-05
 www/py-requests1||2019-05-19|Temporary port while port consumers moved to requests 2.x support and the www/py-requests port. No longer depended on by any ports
 lang/spidermonkey170|lang/spidermonkey52|2019-05-23|Not depended on, use newer version
 lang/spidermonkey38|lang/spidermonkey52|2019-05-23|Not depended on, use newer version
+security/titan|security/ylva|2019-05-24|Project renamed by the developer
