@@ -15,7 +15,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.21:devel/nspr \
 		nss>=3.43:security/nss \
-		icu>=59.1,1:devel/icu \
+		icu>=63.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=2.3.1:print/harfbuzz \
 		graphite2>=1.3.13:graphics/graphite2 \
