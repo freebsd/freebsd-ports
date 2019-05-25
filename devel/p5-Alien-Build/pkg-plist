@@ -22,6 +22,7 @@
 %%SITE_PERL%%/Alien/Build/Plugin/Build/Make.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Build/SearchDep.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Core.pod
+%%SITE_PERL%%/Alien/Build/Plugin/Core/CleanInstall.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Core/Download.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Core/FFI.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Core/Gather.pm
@@ -33,6 +34,7 @@
 %%SITE_PERL%%/Alien/Build/Plugin/Decode/DirListing.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Decode/DirListingFtpcopy.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Decode/HTML.pm
+%%SITE_PERL%%/Alien/Build/Plugin/Decode/Mojo.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Download.pod
 %%SITE_PERL%%/Alien/Build/Plugin/Download/Negotiate.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Extract.pod
@@ -97,6 +99,7 @@
 %%PERL5_MAN3%%/Alien::Build::Plugin::Build::Make.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Build::SearchDep.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Core.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Core::CleanInstall.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Core::Download.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Core::FFI.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Core::Gather.3.gz
@@ -108,6 +111,7 @@
 %%PERL5_MAN3%%/Alien::Build::Plugin::Decode::DirListing.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Decode::DirListingFtpcopy.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Decode::HTML.3.gz
+%%PERL5_MAN3%%/Alien::Build::Plugin::Decode::Mojo.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Download.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Download::Negotiate.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Extract.3.gz
