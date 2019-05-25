@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_SSL=			libressl libressl-devel openssl
 BROKEN_SSL_REASON_libressl=	needs features only available in OpenSSL 1.1.1+
-BROKEN_SSL_REASON_libressl_devel=needs features only available in OpenSSL 1.1.1+
+BROKEN_SSL_REASON_libressl-devel=needs features only available in OpenSSL 1.1.1+
 BROKEN_SSL_REASON_openssl=	needs features only available in OpenSSL 1.1.1+
 
 USES=		cmake ssl
