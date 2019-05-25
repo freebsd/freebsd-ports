@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hikari
-DISTVERSION=	0.1.2
-PORTREVISION=	1
+DISTVERSION=	0.1.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://acmelabs.space/~raichoo/
 
@@ -12,12 +11,14 @@ COMMENT=	Stacking window manager with tiling capabilities
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms \
+LIB_DEPENDS=	libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-icccm.so:x11/xcb-util-wm \
-		libxcb-ewmh.so:x11/xcb-util-wm
+		libxcb-keysyms.so:x11/xcb-util-keysyms
 
-USES=	localbase:ldflags
-USE_XORG=	xcb x11
+USES=		localbase:ldflags
+USE_XORG=	x11 xcb
+
+OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=	yes
 
@@ -36,8 +37,6 @@ ALL_TARGET=	debug
 .else
 ALL_TARGET=	hikari
 .endif
-
-OPTIONS_DEFINE=	DOCS
 
 pre-everything::
 	@${ECHO_MSG} "You can build hikari with your own config.h using the HIKARI_CONF knob:"

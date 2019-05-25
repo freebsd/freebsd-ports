@@ -1,7 +1,7 @@
 # $FreeBSD$
 [Desktop Entry]
-Name=hikari
+Type=XSession
+Name=Hikari
 Comment=%%COMMENT%%
-TryExec=hikari
-Exec=hikari
-Type=Application
+TryExec=%%PREFIX%%/bin/hikari
+Exec=%%PREFIX%%/bin/hikari
