@@ -16,7 +16,6 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libmagic.so.1:sysutils/file
 
 USES=		dos2unix libtool perl5
-DOS2UNIX_FILE=	modules/shellcode-generic/sch_generic_connect_trans.cpp
 USE_CXXSTD=	gnu++98
 USE_GCC=	any
 GNU_CONFIGURE=	yes
