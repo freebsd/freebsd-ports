@@ -15,7 +15,6 @@ ALL_TARGET=	mangclient mangband
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
 USES=		dos2unix gmake ncurses
-DOS2UNIXFILES=	${WRKSRC}/client/main-sdl.c
 
 MAKE_ARGS=	"DATADIR=${DATADIR}"
 
