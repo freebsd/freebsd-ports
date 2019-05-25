@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Frame
-PORTVERSION=	1.19
+PORTVERSION=	1.21
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector \
 		p5-Net-IPv6Addr>=0:net-mgmt/p5-Net-IPv6Addr \
 		p5-Socket6>=0:net/p5-Socket6
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
