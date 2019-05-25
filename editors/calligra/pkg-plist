@@ -139,6 +139,7 @@ lib/libwordsprivate.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/calligra/formatfilters/calligra_filter_wmf2svg.so
 %%QT_PLUGINDIR%%/calligra/formatfilters/calligra_filter_wpd2odt.so
 %%QT_PLUGINDIR%%/calligra/formatfilters/calligra_filter_wpg2odg.so
+%%QT_PLUGINDIR%%/calligra/formatfilters/calligra_filter_wps2odt.so
 %%QT_PLUGINDIR%%/calligra/formatfilters/calligra_filter_wpg2svg.so
 %%QT_PLUGINDIR%%/calligra/formatfilters/calligra_filter_xfig2odg.so
 %%QT_PLUGINDIR%%/calligra/formatfilters/calligra_filter_xls2ods.so
@@ -4666,6 +4667,7 @@ share/kservices5/words_msword_thumbnail.desktop
 share/kservices5/words_odt_thumbnail.desktop
 share/kservices5/words_rtf_thumbnail.desktop
 share/kservices5/words_wpd_thumbnail.desktop
+share/kservices5/words_wps_thumbnail.desktop
 share/kxmlgui5/calligrasheets/calligrasheets.rc
 share/kxmlgui5/calligrasheets/calligrasheets_readonly.rc
 share/kxmlgui5/calligrastage/calligrastage.rc
