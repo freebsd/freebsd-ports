@@ -404,6 +404,7 @@
     SUBDIR += klatexformula
     SUBDIR += kludge3d
     SUBDIR += kolourpaint
+    SUBDIR += kooka
     SUBDIR += kphotoalbum
     SUBDIR += krita
     SUBDIR += kudu
