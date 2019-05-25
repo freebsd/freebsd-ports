@@ -17,7 +17,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tmate-io
 
 GNU_CONFIGURE=	yes
-INSTALL_ARGET=	install-strip
 USE_LDCONFIG=	yes
 LDFLAGS+=	-lexecinfo
 
