@@ -3,6 +3,7 @@ include/mfem.hpp
 include/mfem/config/config.hpp
 include/mfem/config/tconfig.hpp
 include/mfem/fem/bilinearform.hpp
+include/mfem/fem/bilinearform_ext.hpp
 include/mfem/fem/bilininteg.hpp
 include/mfem/fem/coefficient.hpp
 include/mfem/fem/conduitdatacollection.hpp
@@ -40,12 +41,17 @@ include/mfem/fem/tmop.hpp
 include/mfem/general/array.hpp
 include/mfem/general/binaryio.hpp
 include/mfem/general/communication.hpp
+include/mfem/general/cuda.hpp
+include/mfem/general/device.hpp
 include/mfem/general/error.hpp
+include/mfem/general/forall.hpp
 include/mfem/general/globals.hpp
 include/mfem/general/gzstream.hpp
 include/mfem/general/hash.hpp
 include/mfem/general/isockstream.hpp
 include/mfem/general/mem_alloc.hpp
+include/mfem/general/mem_manager.hpp
+include/mfem/general/occa.hpp
 include/mfem/general/optparser.hpp
 include/mfem/general/osockstream.hpp
 include/mfem/general/sets.hpp
@@ -62,6 +68,7 @@ include/mfem/linalg/blockoperator.hpp
 include/mfem/linalg/blockvector.hpp
 include/mfem/linalg/complex_operator.hpp
 include/mfem/linalg/densemat.hpp
+include/mfem/linalg/dtensor.hpp
 include/mfem/linalg/handle.hpp
 include/mfem/linalg/hypre.hpp
 include/mfem/linalg/hypre_parcsr.hpp
@@ -99,6 +106,7 @@ include/mfem/mesh/tetrahedron.hpp
 include/mfem/mesh/tmesh.hpp
 include/mfem/mesh/triangle.hpp
 include/mfem/mesh/vertex.hpp
+include/mfem/mesh/wedge.hpp
 include/mfem/mfem-performance.hpp
 include/mfem/mfem.hpp
 lib/cmake/mfem/MFEMConfig.cmake
@@ -106,4 +114,6 @@ lib/cmake/mfem/MFEMConfigVersion.cmake
 lib/cmake/mfem/MFEMTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mfem/MFEMTargets.cmake
 lib/libmfem.so
-lib/libmfem.so.3.4.0
+lib/libmfem.so.4.0
+%%DATADIR%%/config.mk
+%%DATADIR%%/test.mk
