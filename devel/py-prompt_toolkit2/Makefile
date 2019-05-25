@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	No longer required, use devel/py-prompt_toolkit instead
-EXPIRATION=	2019-05-24
+EXPIRATION_DATE=	2019-05-24
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wcwidth>=0:devel/py-wcwidth@${PY_FLAVOR}
