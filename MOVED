@@ -12760,3 +12760,4 @@ www/py-requests1||2019-05-19|Temporary port while port consumers moved to reques
 lang/spidermonkey170|lang/spidermonkey52|2019-05-23|Not depended on, use newer version
 lang/spidermonkey38|lang/spidermonkey52|2019-05-23|Not depended on, use newer version
 security/titan|security/ylva|2019-05-24|Project renamed by the developer
+www/npm-node6|www/npm|2019-05-25|node6 expired on Apr 30, 2019
