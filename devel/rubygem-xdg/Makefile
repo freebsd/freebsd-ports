@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xdg
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,9 @@ COMMENT=	XDG Base Directory Standard Library for Ruby
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
