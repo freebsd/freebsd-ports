@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jwt
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,9 @@ COMMENT=	JSON Web Token implementation in Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
