@@ -733,6 +733,7 @@
     SUBDIR += pencil2d
     SUBDIR += peps
     SUBDIR += perceptualdiff
+    SUBDIR += peruse
     SUBDIR += pfstools
     SUBDIR += pgplot
     SUBDIR += pho
