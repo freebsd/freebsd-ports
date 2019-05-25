@@ -22,6 +22,7 @@
     SUBDIR += clustal-omega
     SUBDIR += clustalw
     SUBDIR += consed
+    SUBDIR += cufflinks
     SUBDIR += cytoscape
     SUBDIR += ddocent
     SUBDIR += diamond
