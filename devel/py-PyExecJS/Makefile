@@ -2,6 +2,7 @@
 
 PORTNAME=	PyExecJS
 DISTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +20,8 @@ OPTIONS_GROUP=		RUNTIME
 OPTIONS_GROUP_RUNTIME=	NODE SPIDERMONKEY PHANTOMJS
 NODE_DESC=		Use www/node as JavaScript backend
 NODE_RUN_DEPENDS=	node>=0.8.0:www/node
-SPIDERMONKEY_DESC=	Use lang/spidermonkey24 as JavaScript backend
-SPIDERMONKEY_RUN_DEPENDS=	js:lang/spidermonkey24
+SPIDERMONKEY_DESC=	Use lang/spidermonkey52 as JavaScript backend
+SPIDERMONKEY_RUN_DEPENDS=	js52:lang/spidermonkey52
 PHANTOMJS_DESC=		Use lang/phantomjs as JavaScript backend
 PHANTOMJS_RUN_DEPENDS=	phantomjs:lang/phantomjs
 OPTIONS_DEFAULT=	NODE
