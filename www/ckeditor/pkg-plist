@@ -296,6 +296,8 @@
 %%WWWDIR%%/plugins/specialchar/dialogs/lang/sk.js
 %%WWWDIR%%/plugins/specialchar/dialogs/lang/sl.js
 %%WWWDIR%%/plugins/specialchar/dialogs/lang/sq.js
+%%WWWDIR%%/plugins/specialchar/dialogs/lang/sr-latn.js
+%%WWWDIR%%/plugins/specialchar/dialogs/lang/sr.js
 %%WWWDIR%%/plugins/specialchar/dialogs/lang/sv.js
 %%WWWDIR%%/plugins/specialchar/dialogs/lang/th.js
 %%WWWDIR%%/plugins/specialchar/dialogs/lang/tr.js
