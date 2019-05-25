@@ -10,7 +10,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Persistent/Immutable/Functional data structures for Python
 
 LICENSE=	MIT
-LICENCE_FILE=	${WRKSRC}/LICENCE.mit
+LICENSE_FILE=	${WRKSRC}/LICENCE.mit
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=0:devel/py-hypothesis@${PY_FLAVOR} \
