@@ -20,7 +20,6 @@ NOT_FOR_ARCHS=		aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	unsupported CPU = unknown
 
 WRKSRC=		${WRKDIR}/x49gp/x49gp-code
-HAVE_CONFIGURE=	yes
 
 USE_GCC=	any
 USE_XORG=	x11
