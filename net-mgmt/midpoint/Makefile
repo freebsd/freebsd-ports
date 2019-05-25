@@ -38,7 +38,6 @@ USERS=		midpoint
 GROUPS=		midpoint
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-OPTIOS_SUB=	yes
 
 post-patch:
 	${RM} "${WRKSRC}/doc/samples/mvnw"*
