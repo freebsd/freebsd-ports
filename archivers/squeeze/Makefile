@@ -24,7 +24,6 @@ USE_XFCE=	thunar
 USE_XORG=	x11
 USE_GNOME=	gtk20 glib20 intltool intlhack
 USE_LDCONFIG=	yes
-MAKE_JOB_SAFE=	yes
 
 CONFIGURE_ARGS=--disable-static --without-html-dir
 
