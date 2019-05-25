@@ -30,6 +30,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitComplexMappings.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitLvalueSubstr.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitReverseSortBlock.pm
+%%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitShiftRef.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitSleepViaSelect.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitStringyEval.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitStringySplit.pm
@@ -66,7 +67,6 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/PodSpelling.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePackageMatchesPodName.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePodAtEnd.pm
-%%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePodLinksIncludeText.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePodSections.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCarping.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCheckingReturnValueOfEval.pm
@@ -229,6 +229,7 @@ bin/perlcritic
 %%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::ProhibitComplexMappings.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::ProhibitLvalueSubstr.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::ProhibitReverseSortBlock.3.gz
+%%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::ProhibitShiftRef.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::ProhibitSleepViaSelect.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::ProhibitStringyEval.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::BuiltinFunctions::ProhibitStringySplit.3.gz
@@ -265,7 +266,6 @@ bin/perlcritic
 %%PERL5_MAN3%%/Perl::Critic::Policy::Documentation::PodSpelling.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::Documentation::RequirePackageMatchesPodName.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::Documentation::RequirePodAtEnd.3.gz
-%%PERL5_MAN3%%/Perl::Critic::Policy::Documentation::RequirePodLinksIncludeText.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::Documentation::RequirePodSections.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::ErrorHandling::RequireCarping.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Policy::ErrorHandling::RequireCheckingReturnValueOfEval.3.gz
