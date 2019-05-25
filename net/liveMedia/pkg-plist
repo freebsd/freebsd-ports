@@ -107,6 +107,8 @@ include/liveMedia/H265VideoRTPSource.hh
 include/liveMedia/H265VideoStreamDiscreteFramer.hh
 include/liveMedia/H265VideoStreamFramer.hh
 include/liveMedia/InputFile.hh
+include/liveMedia/JPEG2000VideoRTPSink.hh
+include/liveMedia/JPEG2000VideoRTPSource.hh
 include/liveMedia/JPEGVideoRTPSink.hh
 include/liveMedia/JPEGVideoRTPSource.hh
 include/liveMedia/JPEGVideoSource.hh
