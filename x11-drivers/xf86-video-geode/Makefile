@@ -11,6 +11,6 @@ COMMENT=	X.Org geode display driver
 XORG_CAT=	driver
 
 ONLY_FOR_ARCHS=	i386
-ONLY_FOR_ARCHES_REASON=	Geode processors are 32bit x86 only
+ONLY_FOR_ARCHS_REASON=	Geode processors are 32bit x86 only
 
 .include <bsd.port.mk>
