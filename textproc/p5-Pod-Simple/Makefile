@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Simple
-PORTVERSION=	3.35
+PORTVERSION=	3.36
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,9 @@ LICENSE_COMB=	dual
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

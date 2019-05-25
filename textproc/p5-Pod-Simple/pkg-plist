@@ -8,6 +8,7 @@
 %%SITE_PERL%%/Pod/Simple/HTML.pm
 %%SITE_PERL%%/Pod/Simple/HTMLBatch.pm
 %%SITE_PERL%%/Pod/Simple/HTMLLegacy.pm
+%%SITE_PERL%%/Pod/Simple/JustPod.pm
 %%SITE_PERL%%/Pod/Simple/LinkSection.pm
 %%SITE_PERL%%/Pod/Simple/Methody.pm
 %%SITE_PERL%%/Pod/Simple/Progress.pm
@@ -35,6 +36,7 @@
 %%PERL5_MAN3%%/Pod::Simple::DumpAsXML.3.gz
 %%PERL5_MAN3%%/Pod::Simple::HTML.3.gz
 %%PERL5_MAN3%%/Pod::Simple::HTMLBatch.3.gz
+%%PERL5_MAN3%%/Pod::Simple::JustPod.3.gz
 %%PERL5_MAN3%%/Pod::Simple::LinkSection.3.gz
 %%PERL5_MAN3%%/Pod::Simple::Methody.3.gz
 %%PERL5_MAN3%%/Pod::Simple::PullParser.3.gz
