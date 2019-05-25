@@ -2,7 +2,7 @@
 
 PORTNAME=	gtk-recordmydesktop
 PORTVERSION=	0.3.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia deskutils
 MASTER_SITES=	SF/recordmydesktop/gtk-recordMyDesktop/${PORTVERSION}
 
@@ -20,6 +20,6 @@ USES=		desktop-file-utils gettext gmake localbase pkgconfig \
 		python:2.7 shebangfix
 SHEBANG_FILES=	src/gtk-recordMyDesktop.in
 USE_GNOME=	gtk20 pygtk2
-INSTALL_ICONS=	yes
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>
