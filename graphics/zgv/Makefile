@@ -32,7 +32,7 @@ LDFLAGS+=	$$(${SDL_CONFIG} --libs)
 .else
 LIB_DEPENDS+=	libvga.so:graphics/svgalib
 MAKE_ENV+=	BACKEND=SVGALIB
-ONLY_FOR_ARGS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64
 .endif
 
 post-extract:
