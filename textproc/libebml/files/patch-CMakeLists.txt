@@ -1,0 +1,15 @@
+Revert of upstream commit b0eb7a. It breaks linkage of multimedia/mkvtoolnix
+
+[1] https://github.com/Matroska-Org/libebml/commit/b0eb7ab1160441b8156fb26d96a35ccd61e8a548
+
+--- CMakeLists.txt.orig	2019-05-26 09:30:30 UTC
++++ CMakeLists.txt
+@@ -100,7 +100,7 @@ target_sources(ebml
+ if(BUILD_SHARED_LIBS)
+   set_target_properties(ebml
+     PROPERTIES
+-    CXX_VISIBILITY_PRESET hidden
++    C_VISIBILITY_PRESET hidden
+     VISIBILITY_INLINES_HIDDEN 1)
+ else()
+   target_compile_definitions(ebml PUBLIC EBML_STATIC_DEFINE)
