@@ -27,7 +27,6 @@ USE_QT=		3d buildtools_build charts core datavis3d declarative \
 		websockets widgets x11extras xml xmlpatterns
 
 SHEBANG_FILES=	pyside_tool.py pyside2-uic
-python_OLD_COMMAND=	"/usr/bin/env python"
 
 CMAKE_ARGS+=	"-DUSE_PYTHON_VERSION=${PYTHON_VER}"
 
