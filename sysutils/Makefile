@@ -673,6 +673,7 @@
     SUBDIR += mgeupsd
     SUBDIR += minikube
     SUBDIR += minimunin
+    SUBDIR += minipro
     SUBDIR += minirsyslogd
     SUBDIR += mixer
     SUBDIR += mkdesktop
