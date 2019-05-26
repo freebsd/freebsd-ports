@@ -3,7 +3,7 @@
 
 PORTNAME=	exult
 PORTVERSION=	1.5.0.20160514
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -44,10 +44,10 @@ GIMP_LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
 GIMP_CONFIGURE_ENABLE=	gimp-plugin
 SDL1_DESC=		Simple Direct Media Layer 1 support
 SDL1_USE=		sdl=mixer
-SDL1_CONFIGURE_ARGS=	--with-sdl=sdl12
+SDL1_CONFIGURE_ON=	--with-sdl=sdl12
 SDL2_DESC=		Simple Direct Media Layer 2 support
 SDL2_USE=		sdl=mixer2
-SDL2_CONFIGURE_ARGS=	--with-sdl=sdl2
+SDL2_CONFIGURE_ON=	--with-sdl=sdl2
 STUDIO_DESC=		Install Exult Studio
 STUDIO_CONFIGURE_ENABLE=\
 			exult-studio exult-studio-support
