@@ -237,6 +237,7 @@
     SUBDIR += ipsec-tools
     SUBDIR += ipv6toolkit
     SUBDIR += isakmpd
+    SUBDIR += ismtp
     SUBDIR += isnprober
     SUBDIR += jbrofuzz
     SUBDIR += john
