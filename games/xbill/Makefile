@@ -3,7 +3,7 @@
 
 PORTNAME=	xbill
 PORTVERSION=	2.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://www.xbill.org/download/
 
@@ -36,10 +36,10 @@ OPTIONS_DEFAULT=	ATHENA
 ATHENA_DESC=	Athena widget set
 MOTIF_DESC=	Motif widget set
 
-ATHENA_CONFIGURE_ARGS_ON=	--disable-motif
+ATHENA_CONFIGURE_ON=	--disable-motif
 ATHENA_USE=	xorg=xaw,xmu
 
-MOTIF_CONFIGURE_ARGS_ON=	--disable-athena
+MOTIF_CONFIGURE_ON=	--disable-athena
 MOTIF_USES=	motif
 
 post-patch:
