@@ -25,7 +25,7 @@ CONFIGURE_ENV=	AUTOMAKE="${TRUE}" AUTOCONF="${TRUE}" DOXYGEN="${TRUE}"
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_CONFIGURE_ARGS_OFF=	--disable-documentation
+DOCS_CONFIGURE_OFF=	--disable-documentation
 
 post-configure-DOCS-off:
 	@${TOUCH} -f ${WRKSRC}/docs/reference/html/index.html
