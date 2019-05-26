@@ -1,5 +1,4 @@
 # $FreeBSD$
-PORTREVISION=	1
 #
 
     COMMENT = Instant messaging
