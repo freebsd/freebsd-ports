@@ -12762,3 +12762,4 @@ security/titan|security/ylva|2019-05-24|Project renamed by the developer
 www/npm-node6|www/npm|2019-05-25|node6 expired on Apr 30, 2019
 devel/py-prompt_toolkit2|devel/py-prompt_toolkit|2019-05-26|Has expired: No longer required, use devel/py-prompt_toolkit instead
 security/acme-client||2019-05-26|Removed
+net-im/qq||2019-05-26|Has expired: no longer supported upstream
