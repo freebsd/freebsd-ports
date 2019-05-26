@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	4.8
+DISTVERSION=	4.9
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -99,9 +99,9 @@ MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
 OPENAL_CONFIGURE_WITH=	openal
 OPENAL_USES=		openal
 
-V4L_CONFIGURE_WITH=	v4l
+V4L_CONFIGURE_WITH=	v4l2
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-V4L_LIB_DEPENDS=	libv4l1.so:multimedia/libv4l
+V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 VKD3D_CONFIGURE_WITH=	vkd3d
 VKD3D_USES=		pkgconfig
