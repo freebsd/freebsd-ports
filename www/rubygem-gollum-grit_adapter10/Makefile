@@ -18,6 +18,6 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-PORTSCOUNT=	limit:^1\.0\.
+PORTSCOUT=	limit:^1\.0\.
 
 .include <bsd.port.mk>
