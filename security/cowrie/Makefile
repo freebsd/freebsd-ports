@@ -12,8 +12,6 @@ LICENSE_FILE=	${WRKSRC}/docs/LICENSE.rst
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}incremental>0:devel/py-incremental@${PY_FLAVOR}
-xRUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}salt-common>=2017.7.1:sysutils/py-salt-common@${FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}GitPython>=1:devel/py-gitpython@${FLAVOR}
 RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configparser>=0:devel/py-configparser@${PY_FLAVOR} \
