@@ -26,10 +26,11 @@ include/ebml/MemReadIOCallback.h
 include/ebml/SafeReadIOCallback.h
 include/ebml/StdIOCallback.h
 include/ebml/c/libebml_t.h
-lib/cmake/ebml/EbmlConfig.cmake
-lib/cmake/ebml/EbmlConfigVersion.cmake
-lib/cmake/ebml/EbmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/ebml/EbmlTargets.cmake
+include/ebml/ebml_export.h
+lib/cmake/EBML/EBMLConfig.cmake
+lib/cmake/EBML/EBMLConfigVersion.cmake
+lib/cmake/EBML/EBMLTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/EBML/EBMLTargets.cmake
 lib/libebml.so
 lib/libebml.so.4
 lib/libebml.so.4.0.0
