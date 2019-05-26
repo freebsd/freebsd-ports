@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2019-05-13 15:14:29 UTC
++++ CMakeLists.txt
+@@ -287,3 +287,5 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+ 	# Silence appfat.cpp warnings
+   set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wno-narrowing")
+ endif()
++
++install(TARGETS devilutionx DESTINATION ${BINDIR})
