@@ -25,7 +25,6 @@ USE_QT=		buildtools_build core gui network qmake_build testlib \
 		xml xmlpatterns
 
 SHEBANG_FILES=		shiboken_tool.py
-python_OLD_COMMAND=	"/usr/bin/env python"
 
 CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}
 CMAKE_ARGS+=	"-DCMAKE_CXX_FLAGS=-lexecinfo" \
