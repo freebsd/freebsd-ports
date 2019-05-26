@@ -18,7 +18,6 @@ USES=		autoreconf gettext-tools gmake iconv libtool:keepla pkgconfig tar:bzip2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-dev.${PORTVERSION}
 TDS_VER?=	7.4
-GNU_GONFIGURE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
