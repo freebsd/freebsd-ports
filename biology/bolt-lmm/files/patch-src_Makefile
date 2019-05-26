@@ -1,0 +1,138 @@
+--- src/Makefile.orig	2018-03-13 02:44:52 UTC
++++ src/Makefile
+@@ -1,29 +1,28 @@
+ ### modify these paths to local Boost and NLopt install directories
+-BOOST_INSTALL_DIR = /home/pl88/boost_1_58_0/install
+-NLOPT_INSTALL_DIR = /n/groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
++BOOST_INSTALL_DIR ?= ${LOCALBASE}
++# Redundant on FreeBSD NLOPT_INSTALL_DIR = /n/groups/price/poru/HSPH_SVN/src/BOLT-LMM/nlopt-2.4.2
+ 
+ INTELROOT = /n/groups/price/poru/external_software/intel_mkl_2018
+ MKLROOT = ${INTELROOT}/mkl
+-ZLIB_STATIC_DIR = /n/groups/price/poru/external_software/zlib/zlib-1.2.11 # probably unnecessary on most systems
+-LIBSTDCXX_STATIC_DIR = /n/groups/price/poru/external_software/libstdc++/usr/lib/gcc/x86_64-redhat-linux/4.8.5/
+-GLIBC_STATIC_DIR = /home/pl88/glibc-static/usr/lib64
++ZLIB_STATIC_DIR ?= /usr/lib
++LIBSTDCXX_STATIC_DIR ?= /usr/lib
++GLIBC_STATIC_DIR ?= /usr/lib
+ 
+ ifeq ($(strip ${linking}),)
+ 	linking = dynamic
+ endif
+ 
+-# CC = g++
+-CC = icpc
++# CXX = g++
++CXX ?= icpc
+ 
+ ifeq (${debug},true)
+-	CFLAGS += -g
++	CXXFLAGS += -g
+ else
+-	CFLAGS += -O2
++	CXXFLAGS += -O2
+ endif
+ 
+-CFLAGS += -msse -msse2
+-CFLAGS += -DUSE_SSE -DMEASURE_DGEMM -DVERBOSE
+-CFLAGS += -Wall
++CXXFLAGS += -DMEASURE_DGEMM -DVERBOSE
++CXXFLAGS += -Wall
+ 
+ 
+ # add Boost include and lib paths
+@@ -38,9 +37,9 @@ endif
+ # add NLopt include and lib paths
+ ifneq ($(strip ${NLOPT_INSTALL_DIR}),)
+ 	CPATHS += -I${NLOPT_INSTALL_DIR}/api
+-	LPATHS += -L${NLOPT_INSTALL_DIR}/.libs
++	LPATHS += -L${NLOPT_INSTALL_DIR}/libs
+ 	ifeq (${linking},dynamic)
+-		LPATHS += -Wl,-rpath,${NLOPT_INSTALL_DIR}/.libs
++		LPATHS += -Wl,-rpath,${NLOPT_INSTALL_DIR}/libs
+ 	endif
+ endif
+ 
+@@ -52,7 +51,7 @@ ifneq ($(strip ${ZLIB_STATIC_DIR}),)
+ endif
+ 
+ # add MKL paths (if not compiling with g++, i.e., compiling with icpc)
+-ifneq (${CC},g++)
++ifneq (${CXX},${CXX})
+ 	CPATHS += -I${MKLROOT}/include
+ 	ifeq (${linking},dynamic)
+ 		LPATHS += -L${MKLROOT}/lib/intel64 -Wl,-rpath,${MKLROOT}/lib/intel64 # for libmkl*
+@@ -61,28 +60,28 @@ ifneq (${CC},g++)
+ endif
+ 
+ # add flags for static linking; build LAPACK/MKL component of link line
+-ifeq (${CC},g++)
+-	CFLAGS += -fopenmp
+-	LFLAGS += -fopenmp
+-	LLAPACK = -llapack -lgfortran
++ifeq (${CXX},${CXX})
++	CXXFLAGS += -fopenmp
++	LDFLAGS += -fopenmp
++	LLAPACK = -lopenblas -lgfortran
+ 	ifeq (${linking},static)
+-		LFLAGS += -static
++		LDFLAGS += -static
+ 		LPATHS += -L${GLIBC_STATIC_DIR} -L${ZLIB_STATIC_DIR}
+ 	else ifeq (${linking},static-except-glibc)
+-		LFLAGS += -static-libgcc -static-libstdc++
++		LDFLAGS += -static-libgcc -static-libstdc++
+ 		LPATHS += -L${ZLIB_STATIC_DIR}
+ 	endif
+ else
+-	CFLAGS += -DUSE_MKL #-DUSE_MKL_MALLOC
+-	CFLAGS += -qopenmp
+-	LFLAGS += -qopenmp
+-	CFLAGS += -Wunused-variable -Wpointer-arith -Wuninitialized -Wreturn-type -Wcheck -Wshadow
++	CXXFLAGS += -DUSE_MKL #-DUSE_MKL_MALLOC
++	CXXFLAGS += -qopenmp
++	LDFLAGS += -qopenmp
++	CXXFLAGS += -Wunused-variable -Wpointer-arith -Wuninitialized -Wreturn-type -Wcheck -Wshadow
+ 	ifeq (${linking},static)
+-		LFLAGS += -static
++		LDFLAGS += -static
+ 		LPATHS += -L${GLIBC_STATIC_DIR} -L${ZLIB_STATIC_DIR}
+ 		LLAPACK = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_intel_thread.a -Wl,--end-group
+ 	else ifeq (${linking},static-except-glibc)
+-		LFLAGS += -static-intel -static-libstdc++ -static-libgcc
++		LDFLAGS += -static-intel -static-libstdc++ -static-libgcc
+ 		LPATHS += -L${ZLIB_STATIC_DIR}
+ 		LLAPACK = -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a ${MKLROOT}/lib/intel64/libmkl_core.a ${MKLROOT}/lib/intel64/libmkl_intel_thread.a -Wl,--end-group
+ 	else
+@@ -95,7 +94,8 @@ else
+ endif
+ 
+ # build link line (minus flags)
+-LLIBS = -lboost_program_options -lboost_iostreams -lz -lnlopt
++LLIBS = -lnlopt -lboost_program_options -lboost_iostreams -lz
++# LLIBS = /usr/local/lib/libboost_program_options.a -lnlopt -lboost_iostreams -lz
+ ifeq (${linking},static-except-glibc)
+ 	L = -L${LIBSTDCXX_STATIC_DIR} ${LPATHS} -Wl,--wrap=memcpy -Wl,-Bstatic ${LLIBS} ${LLAPACK} -Wl,-Bdynamic -lpthread -lm
+ else
+@@ -105,16 +105,18 @@ endif
+ 
+ 
+ T = bolt
+-O = Bolt.o BoltParams.o BoltParEstCV.o BoltReml.o CovariateBasis.o DataMatrix.o FileUtils.o Jackknife.o LDscoreCalibration.o MapInterpolater.o MatrixUtils.o MemoryUtils.o NonlinearOptMulti.o NumericUtils.o PhenoBuilder.o RestrictSnpSet.o SnpData.o SnpInfo.o SpectrumTools.o StatsUtils.o StringUtils.o Timer.o memcpy.o
++O = Bolt.o BoltParams.o BoltParEstCV.o BoltReml.o CovariateBasis.o DataMatrix.o FileUtils.o Jackknife.o LDscoreCalibration.o MapInterpolater.o MatrixUtils.o MemoryUtils.o NonlinearOptMulti.o NumericUtils.o PhenoBuilder.o RestrictSnpSet.o SnpData.o SnpInfo.o SpectrumTools.o StatsUtils.o StringUtils.o Timer.o
+ OMAIN = BoltMain.o $O
+ 
+-.PHONY: clean
++.PHONY: clean all
+ 
++all: $T
++
+ %.o: %.cpp
+-	${CC} ${CFLAGS} ${CPATHS} -o $@ -c $<
++	${CXX} ${CXXFLAGS} ${CPATHS} -o $@ -c $<
+ 
+ $T: ${OMAIN}
+-	${CC} ${LFLAGS} -o $T ${OMAIN} $L
++	${CXX} ${LDFLAGS} -o $T ${OMAIN} $L
+ 
+ clean:
+ 	rm -f *.o

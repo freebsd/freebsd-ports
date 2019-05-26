@@ -11,6 +11,7 @@
     SUBDIR += bcftools
     SUBDIR += bedtools
     SUBDIR += biococoa
+    SUBDIR += bolt-lmm
     SUBDIR += bowtie
     SUBDIR += bowtie2
     SUBDIR += bwa
