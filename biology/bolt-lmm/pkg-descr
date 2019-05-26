@@ -1,0 +1,6 @@
+The BOLT-LMM software package currently consists of two main algorithms, the
+BOLT-LMM algorithm for mixed model association testing, and the BOLT-REML
+algorithm for variance components analysis (i.e., partitioning of
+SNP-heritability and estimation of genetic correlations).
+
+WWW: https://data.broadinstitute.org/alkesgroup/BOLT-LMM/

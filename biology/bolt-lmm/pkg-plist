@@ -1,0 +1,6 @@
+bin/bolt
+%%DATADIR%%/tables/LDSCORE.1000G_EUR.tab.gz
+%%DATADIR%%/tables/genetic_map_hg17_withX.txt.gz
+%%DATADIR%%/tables/genetic_map_hg18_withX.txt.gz
+%%DATADIR%%/tables/genetic_map_hg19_withX.txt.gz
+%%DATADIR%%/tables/genetic_map_hg38_withX.txt.gz
