@@ -18,7 +18,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-7.2.so
+lib/libracket3m-7.3.so
 lib/libracket3m.so
 lib/racket/buildinfo
 lib/racket/gracket
@@ -1035,6 +1035,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/pretty.rkt
 %%DATADIR%%/collects/racket/private/arity.rkt
 %%DATADIR%%/collects/racket/private/base.rkt
+%%DATADIR%%/collects/racket/private/c.rkt
 %%DATADIR%%/collects/racket/private/case.rkt
 %%DATADIR%%/collects/racket/private/cert.rkt
 %%DATADIR%%/collects/racket/private/check.rkt
@@ -1049,6 +1050,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/compiled/arity_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/base_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/base_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/c_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/c_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/case_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/case_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/cert_rkt.dep
@@ -1538,6 +1541,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/setup/private/compiled/omitted-paths_rkt.zo
 %%DATADIR%%/collects/setup/private/compiled/pkg-deps_rkt.dep
 %%DATADIR%%/collects/setup/private/compiled/pkg-deps_rkt.zo
+%%DATADIR%%/collects/setup/private/compiled/time_rkt.dep
+%%DATADIR%%/collects/setup/private/compiled/time_rkt.zo
 %%DATADIR%%/collects/setup/private/dirs.rkt
 %%DATADIR%%/collects/setup/private/dylib.rkt
 %%DATADIR%%/collects/setup/private/elf.rkt
@@ -1546,6 +1551,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/setup/private/lib-roots.rkt
 %%DATADIR%%/collects/setup/private/omitted-paths.rkt
 %%DATADIR%%/collects/setup/private/pkg-deps.rkt
+%%DATADIR%%/collects/setup/private/time.rkt
 %%DATADIR%%/collects/setup/setup-cmdline.rkt
 %%DATADIR%%/collects/setup/setup-core.rkt
 %%DATADIR%%/collects/setup/setup-go.rkt
