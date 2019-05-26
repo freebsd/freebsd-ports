@@ -1,0 +1,1 @@
+01,16,31,46 * * * * env DISPLAY=:0 %%PREFIX%%/libexec/%%PORTNAME%% -w -e
