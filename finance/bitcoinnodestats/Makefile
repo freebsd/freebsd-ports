@@ -2,6 +2,7 @@
 
 PORTNAME=	bitcoinnodestats
 DISTVERSION=	g20171121
+PORTREVISION=	1
 CATEGORIES=	finance python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -25,15 +26,15 @@ GH_TAGNAME=	5e8772d
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-SHEBANGFILES=	create_local_settings.py manage.py
+SHEBANG_FILES=	create_local_settings.py manage.py
 
 SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR} PYTHON_VER=${PYTHON_VER}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for _file in ${SHEBANGFILES}
-	${INSTALL_DATA} ${WRKSRC}/${_file} ${STAGEDIR}${DATADIR}
+.for _file in ${SHEBANG_FILES}
+	${INSTALL_SCRIPT} ${WRKSRC}/${_file} ${STAGEDIR}${DATADIR}
 .endfor
 
 .for _dir in bitcoinnodestats nodedata
