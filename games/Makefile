@@ -194,6 +194,7 @@
     SUBDIR += dangerdeep-data
     SUBDIR += darkplaces
     SUBDIR += defendguin
+    SUBDIR += devilutionX
     SUBDIR += dhewm3
     SUBDIR += diameter
     SUBDIR += diaspora
