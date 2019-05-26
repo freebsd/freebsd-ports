@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.1:net/rubygem-omniauth-oauth2
 
-PORTSCOUNT=	limit:1\.4
+PORTSCOUT=	limit:1\.4
 
 NO_ARCH=	yes
 USES=		gem
