@@ -13,12 +13,10 @@ COMMENT=	Additive Image Synthesizer (convert audio to images, images to audio)
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
-WRKSRC=	${WRKDIR}/${DISTNAME}/src
-
-USES=		cmake:insource
+USES=		cmake:insource localbase:ldflags
 USE_LDCONFIG=	${PREFIX}/lib
-CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
-CMAKE_C_FLAGS=	${CFLAGS}
+
+WRKSRC_SUBDIR=	src
 
 PLIST_FILES=	bin/arss
 
