@@ -11,6 +11,8 @@ COMMENT=	Software Defined Radio (SDR)
 
 LICENSE=	GPLv2
 
+BROKEN_i386=	strip: elf_update() failed: Invalid data buffer descriptor (bug#238131)
+
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libportaudio.so:audio/portaudio \
 		libasound.so:audio/alsa-lib \
