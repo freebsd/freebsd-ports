@@ -145,7 +145,6 @@
     SUBDIR += py-xmpppy
     SUBDIR += py-xmpppy-irc
     SUBDIR += qTox
-    SUBDIR += qq
     SUBDIR += quaternion
     SUBDIR += qxmpp-qt5
     SUBDIR += ricochet
