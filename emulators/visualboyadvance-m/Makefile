@@ -3,7 +3,7 @@
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	2.0.0b2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators
 
 MAINTAINER=	root@cooltrainer.org
@@ -40,7 +40,7 @@ DOS2UNIX_REGEX=	.*\.(c|cpp|h|ypp)
 USE_XORG=	x11 xext
 USE_GL=		gl glu
 USE_SDL=	sdl
-USES=		compiler:c++11-lang cmake:insource dos2unix gnome gl pkgconfig
+USES=		compiler:c++11-lang cmake:insource,noninja dos2unix gnome gl pkgconfig
 INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DVERSION:STRING="${PORTVERSION}" \
 		-DSYSCONFDIR:STRING="${PREFIX}/etc"  \
@@ -49,8 +49,8 @@ CMAKE_ARGS=	-DVERSION:STRING="${PORTVERSION}" \
 ASMCORE_BUILD_DEPENDS=	as:devel/binutils
 ASMCORE_CMAKE_BOOL=	ENABLE_ASM_CORE
 
-ASMSCALERS_BUILD_DEPENDS=	as:devel/binutils
-ASMSCALERS_CMAKE_ARGS=	ENABLE_ASM_SCALERS
+ASMSCALERS_BUILD_DEPENDS=	nasm:devel/nasm
+ASMSCALERS_CMAKE_BOOL=		ENABLE_ASM_SCALERS
 
 GVBAM_USE_GNOME=	gtk20
 GVBAM_LIB_DEPENDS=	libgtkmm-2.4.so:x11-toolkits/gtkmm24 \
