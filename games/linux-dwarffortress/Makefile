@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	dwarffortress
-DISTVERSION=	0.44.05
+DISTVERSION=	0.44.12
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.bay12games.com/dwarves/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	df_${DISTVERSION:S|0.||:S|.|_|}_linux32
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Dwarven fortress building game with ASCII graphics (Linux version)
 
 LICENSE=	BAY12
