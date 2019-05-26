@@ -10,8 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Calculate root-mean-square deviation (RMSD) between coordinate sets
 
-LICENSE=	APACHE20
-xLICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
