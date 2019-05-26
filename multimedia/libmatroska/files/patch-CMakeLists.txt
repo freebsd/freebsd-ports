@@ -1,0 +1,15 @@
+Revert of upstream commit 51648b. It breaks linkage of multimedia/mkvtoolnix
+
+[1] https://github.com/Matroska-Org/libmatroska/commit/51648bb73e4f6a81be754c9a271fc681a1c78f7
+
+--- CMakeLists.txt.orig	2019-05-26 10:14:31 UTC
++++ CMakeLists.txt
+@@ -74,7 +74,7 @@ if(BUILD_SHARED_LIBS)
+   target_compile_definitions(matroska PUBLIC MATROSKA_DLL)
+   set_target_properties(matroska PROPERTIES
+     DEFINE_SYMBOL "MATROSKA_DLL_EXPORT"
+-    CXX_VISIBILITY_PRESET hidden
++    C_VISIBILITY_PRESET hidden
+     VISIBILITY_INLINES_HIDDEN 1)
+ endif()
+ 
