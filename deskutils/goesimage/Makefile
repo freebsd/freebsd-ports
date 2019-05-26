@@ -1,16 +1,20 @@
 # $FreeBSD$
 
 PORTNAME=	goesimage
-DISTVERSION=	0.1.1
+DISTVERSION=	0.1.1-1
+DISTVERSIONSUFFIX=	-g0021b16
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Wallpapers from NOAA Geostationary Operational Environment Satellite
 
+LICENSE=	UNLICENSE
+LICENSE_FILE=	${WRKSRC}/UNLICENSE
+
 RUN_DEPENDS=	bash:shells/bash \
+		convert:graphics/ImageMagick6 \
 		curl:ftp/curl \
-		feh:graphics/feh \
-		convert:graphics/ImageMagick6
+		feh:graphics/feh
 
 USES=		shebangfix
 SHEBANG_FILES=	goesimage
@@ -26,10 +30,10 @@ SUB_FILES=	crontab
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec/
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/crontab ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/crontab ${STAGEDIR}${DATADIR}
 	@(echo "#!/bin/sh"; \
 	  echo ""; \
-	  echo "crontab -l | ${GREP} -v '${PREFIX}/libexec/${PORTNAME}' | (cat ; cat ${DATADIR}/crontab) | crontab -;"; \
+	  echo "crontab -l | ${GREP} -v '${PREFIX}/libexec/${PORTNAME}' | (cat ; cat ${DATADIR}/crontab) | crontab -"; \
 	) > ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-enable
 	@(echo "#!/bin/sh"; \
 	  echo ""; \
