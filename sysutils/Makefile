@@ -1284,6 +1284,7 @@
     SUBDIR += swapd
     SUBDIR += swapexd
     SUBDIR += swapmon
+    SUBDIR += swapusage
     SUBDIR += sweeper
     SUBDIR += symlinks
     SUBDIR += symon

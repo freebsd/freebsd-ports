@@ -1,0 +1,4 @@
+Very small utility that reports the percentage of swap space that is
+used. Report can be piped to a Prometheus textfile without processing.
+
+WWW: https://github.com/aduitsis/freebsd_swapusage
