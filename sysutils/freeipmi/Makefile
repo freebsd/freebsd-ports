@@ -3,6 +3,7 @@
 
 PORTNAME=	freeipmi
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -44,7 +45,7 @@ SHEBANG_FILES=	contrib/ganglia/ganglia_ipmi_sensors.pl \
 		contrib/pet/check_rmcpping \
 		contrib/pet/petalert.pl
 
-DEBUG_CONFIGURE_ARGS=	--enable-debug --enable-trace
+DEBUG_CONFIGURE_ON=	--enable-debug --enable-trace
 DEBUG_INSTALL_TARGET=	install
 DEBUG_INSTALL_TARGET_OFF=	install-strip
 IOPERM_CPPFLAGS=	-DUSE_IOPERM
