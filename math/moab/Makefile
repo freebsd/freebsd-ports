@@ -9,8 +9,8 @@ MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Component for representing and evaluating mesh data
 
-LICENSE=	BSD2CLAUSE
-xLICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libnetcdf.so:science/netcdf \
