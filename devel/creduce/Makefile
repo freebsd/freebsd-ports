@@ -22,7 +22,6 @@ RUN_DEPENDS=	llvm-config80:devel/llvm80 \
 BROKEN_powerpc64=	fails to configure: cannot compile and link test program with selected LLVM
 
 GNU_CONFIGURE=	yes
-CONFIGURE_FLAGS=	--with-llvm=${LOCALBASE}
 CONFIGURE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config80 \
 		CC=${LOCALBASE}/bin/clang80 \
 		CXX=${LOCALBASE}/bin/clang++80 \
