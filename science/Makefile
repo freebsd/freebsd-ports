@@ -174,6 +174,7 @@
     SUBDIR += openkim
     SUBDIR += openmx
     SUBDIR += opensim-core
+    SUBDIR += opensph
     SUBDIR += opsin
     SUBDIR += p5-Algorithm-SVMLight
     SUBDIR += p5-Chemistry-3DBuilder
