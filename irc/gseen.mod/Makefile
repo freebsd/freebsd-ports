@@ -3,7 +3,7 @@
 
 PORTNAME=	gseen.mod
 PORTVERSION=	1.1.1.p3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc
 MASTER_SITES=	http://www.kreativrauschen.de/gseen.mod/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/p/dev/}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	eggdrop:irc/eggdrop
 RUN_DEPENDS=	eggdrop:irc/eggdrop
 
 USES=		tcl:85+
-GNU_CONGFIGURE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
 		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
 WRKSRC=		${WRKDIR}/eggdrop
@@ -39,10 +39,9 @@ post-extract:
 		-e 's|"-O2"|"${CFLAGS}"|' \
 		${WRKSRC}/configure
 
-pre-build:
+pre-configure:
 	@${ECHO_CMD} gseen.mod >> ${WRKSRC}/.modules
 	@${ECHO_CMD} gseen.mod >> ${WRKSRC}/.known_modules
-	@cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/lib/eggdrop \
