@@ -17,7 +17,6 @@ USES=		tar:bzip2 gnustep
 USE_GNUSTEP=	back build
 USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
-DEAFULT_LIBVERSION=	1.1.1
 MODIFY=		GNUmakefile.preamble PrefsModule/GNUmakefile.preamble \
 		Modules/Keyboard/GNUmakefile.preamble \
 		Modules/PrefsApp/GNUmakefile.preamble
