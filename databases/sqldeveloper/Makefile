@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	sqldeveloper
-DISTVERSION=	18.4.0-376.1900
-DISTVERSIONSUFFIX=-no-jre
+DISTVERSION=	19.1.0.094.2042
+DISTVERSIONSUFFIX=	-no-jre
 CATEGORIES=	databases java
-MASTER_SITES=	#http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html
+#http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html
+MASTER_SITES=
 DIST_SUBDIR=	oracle
 
 MAINTAINER=	mizhka@gmail.com
 COMMENT=	Graphical tool for database development
 
-RUN_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash \
+		openjfx8-devel>0:java/openjfx8-devel
 
 USES=		gnome zip
 
@@ -28,8 +30,9 @@ NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
-SUB_FILES=	${PORTNAME}.sh ${PORTNAME}.desktop
-SUB_LIST=	JAVA_HOME=${JAVA_HOME} PORTNAME=${PORTNAME}
+SUB_FILES=	${PORTNAME}.desktop ${PORTNAME}.sh
+SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
+		PORTNAME=${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
