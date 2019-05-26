@@ -1,0 +1,4 @@
+bin/goesimage-disable
+bin/goesimage-enable
+libexec/goesimage
+%%DATADIR%%/crontab

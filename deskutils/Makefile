@@ -95,6 +95,7 @@
     SUBDIR += gnote
     SUBDIR += gnustep-wrapper
     SUBDIR += go-for-it
+    SUBDIR += goesimage
     SUBDIR += gourmet
     SUBDIR += gpicker
     SUBDIR += grantlee-editor
