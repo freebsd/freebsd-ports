@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shairport-sync
-DISTVERSION=	3.2.2
+DISTVERSION=	3.3
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -32,7 +32,7 @@ ALAC_DESC=	Build with libalac support (experimental)
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc \
 		--with-piddir=/var/run/shairport-sync --with-avahi \
 		--with-ssl=openssl --with-metadata --with-soxr \
-		--with-stdout --with-pipe
+		--with-stdout --with-pipe --with-libdaemon
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lcrypto
