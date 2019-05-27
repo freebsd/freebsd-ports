@@ -1,6 +1,6 @@
---- ./src/gtkcompletionline.h.orig	2003-11-16 13:43:32.000000000 +0300
-+++ ./src/gtkcompletionline.h	2010-01-20 21:24:57.489100621 +0300
-@@ -76,7 +76,7 @@
+--- src/gtkcompletionline.h.orig	2003-11-16 10:43:32 UTC
++++ src/gtkcompletionline.h
+@@ -76,7 +76,7 @@ extern "C++" {
      void (* cancel)(GtkCompletionLine *cl);
    };
  

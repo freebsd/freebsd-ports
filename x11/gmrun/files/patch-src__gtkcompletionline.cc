@@ -1,6 +1,6 @@
---- ./src/gtkcompletionline.cc.orig	2003-11-16 13:55:07.000000000 +0300
-+++ ./src/gtkcompletionline.cc	2010-01-20 21:25:08.847480188 +0300
-@@ -39,6 +39,8 @@
+--- src/gtkcompletionline.cc.orig	2003-11-16 10:55:07 UTC
++++ src/gtkcompletionline.cc
+@@ -39,6 +39,8 @@ static int on_key_press_handler = 0;
  
  /* GLOBALS */
  
@@ -9,7 +9,7 @@
  /* signals */
  enum {
    UNIQUE,
-@@ -76,14 +78,13 @@
+@@ -76,14 +78,13 @@ static gboolean
  on_key_press(GtkCompletionLine *cl, GdkEventKey *event, gpointer data);
  
  /* get_type */
@@ -26,7 +26,7 @@
        sizeof(GtkCompletionLine),
        sizeof(GtkCompletionLineClass),
        (GtkClassInitFunc)gtk_completion_line_class_init,
-@@ -551,10 +552,10 @@
+@@ -551,10 +552,10 @@ parse_tilda(GtkCompletionLine *object)
  {
    string text = gtk_entry_get_text(GTK_ENTRY(object));
    gint where = (gint)text.find("~");
