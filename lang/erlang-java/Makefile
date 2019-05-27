@@ -2,7 +2,7 @@
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	19.3.6.13
+DISTVERSION=	21.3.8.2
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-java
@@ -26,9 +26,9 @@ MAKE_JOBS_UNSAFE=yes
 
 PLIST_SUB=	APP_VERSION=${APP_VERSION}
 
-APP_VERSION=	1.7.1
+# always check the app version in otp_versions.table
+APP_VERSION=	1.9.1
 APP_DIR=	${PREFIX}/lib/erlang/lib/jinterface-${APP_VERSION}
-ERLANG_REL=	19.3
 
 CONFIGURE_ARGS+=--enable-threads --without-odbc --with-javac --without-wx
 CONFIGURE_ENV+=	ac_cv_prog_JAVAC="${JAVAC}"

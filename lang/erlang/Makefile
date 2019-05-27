@@ -3,8 +3,7 @@
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	19.3.6.13
-PORTREVISION=	1
+DISTVERSION=	21.3.8.2
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 DIST_SUBDIR=	erlang
@@ -17,10 +16,14 @@ LICENSE=	APACHE20
 BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
 USES=		autoreconf:build gmake ncurses perl5
-USE_GITHUB=	yes
-GH_PROJECT=	otp
+USE_GITHUB=	nodefault
+GH_ACCOUNT=	erlang:otp,corba
+GH_PROJECT=	otp:otp corba:corba
+GH_TAGNAME=	4.5.2:corba
 USE_PERL5=	build
 USE_RC_SUBR=	epmd
+
+WRKSRC=		${WRKSRC_otp}
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
@@ -30,27 +33,27 @@ SUB_FILES=	pkg-message
 SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 
 ERLANG_LIB=	${PORTNAME}
-EI_VSN=		3.9.3
-SNMP_VSN=	5.2.5
-TOOLS_VSN=	2.9.1
+EI_VSN=		3.11.3
+SNMP_VSN=	5.2.12
+TOOLS_VSN=	3.1.0.1
 
 # On Erlang 22, native code generation does not currently work for all modules
 # due to new BEAM instructions not supported by HiPE the native compiler.
 # Remove HIPE from OPTIONS_DEFAULT if this is still the case when the port is
 # upgraded to such version.
 
-OPTIONS_DEFINE=	DIRTY DTRACE FOP GS HIPE JAVA KQUEUE MANPAGES NATIVE ODBC OPENSSL PDF SCTP SMP THREADS WX
-OPTIONS_DEFAULT=DTRACE HIPE KQUEUE MANPAGES OPENSSL SCTP SMP THREADS
+OPTIONS_DEFINE=	CORBA DIRTY DTRACE FOP HIPE JAVA KQUEUE MANPAGES NATIVE ODBC OPENSSL PDF SCTP THREADS WX
+OPTIONS_DEFAULT=CORBA DIRTY DTRACE HIPE KQUEUE MANPAGES OPENSSL SCTP THREADS
+OPTIONS_EXCLUDE_powerpc64=	HIPE
 
-DIRTY_DESC=	Enable Dirty schedulers (experimental)
+CORBA_DESC=	Enable Corba support
+DIRTY_DESC=	Enable Dirty schedulers
 FOP_DESC=	Build full documentation with Apache FOP
-GS_DESC=	Enable GS application (deprecated)
 HIPE_DESC=	Build native HiPE compiler
 KQUEUE_DESC=	Enable Kernel Poll (kqueue) support
 NATIVE_DESC=	Enable native libraries
 PDF_DESC=	Build PDF documentation
 SCTP_DESC=	Enable SCTP support
-SMP_DESC=	Enable SMP support
 WX_DESC=	Enable WX application
 
 FOP_PREVENTS=	MANPAGES
@@ -72,13 +75,14 @@ OPTIONS_EXCLUDE_i386=		DTRACE
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
 
+CONFIGURE_ENABLE=	smp-support
+
 DIRTY_CONFIGURE_ENABLE=	dirty-schedulers
 DTRACE_CFLAGS=		-fno-omit-frame-pointer
 DTRACE_CONFIGURE_WITH=	dynamic-trace=dtrace
 DTRACE_VARS=		STRIP=""
 FOP_BUILD_DEPENDS=	fop:textproc/fop \
 			xsltproc:textproc/libxslt
-GS_USES=		tk:run
 HIPE_CONFIGURE_ENABLE=	hipe
 JAVA_CONFIGURE_ENV=	ac_cv_prog_JAVAC="${JAVAC}"
 JAVA_CONFIGURE_WITH=	javac
@@ -91,7 +95,6 @@ ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 OPENSSL_CONFIGURE_WITH=	ssl=${OPENSSLBASE}
 OPENSSL_USES=		ssl
 SCTP_CONFIGURE_ENABLE=	sctp
-SMP_CONFIGURE_ENABLE=	smp-support
 THREADS_CONFIGURE_ENABLE=	threads
 WX_CONFIGURE_WITH=	wx-config=${WX_CONFIG}
 WX_USES=		gl
@@ -126,6 +129,15 @@ post-configure-ODBC-on:
 pre-build-NATIVE-on:
 	@cd ${WRKSRC} && ${MAKE_CMD} clean
 
+post-build-CORBA-on:
+	cd ${WRKSRC_corba} \
+		&& ${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} ${MAKE_CMD}
+
+post-install-CORBA-on:
+	cd ${WRKSRC_corba} \
+		&& ${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
+			${MAKE_CMD} release RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
+
 # The man-pages are put (in spite of FreeBSD's port convention) in a private
 # subdir. This is to avoid cluttering up the man page name space. Also the
 # Erlang man pages are more of internal documentation using the man format than
@@ -133,6 +145,10 @@ pre-build-NATIVE-on:
 
 post-build-FOP-on:
 	@cd ${WRKSRC} && ${MAKE_CMD} docs
+.if ${PORT_OPTIONS:MCORBA}
+	cd ${WRKSRC_corba} \
+		&& ${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} ${MAKE_CMD} docs
+.endif
 
 post-install:
 	${LN} -sf ../lib/${ERLANG_LIB}/lib/erl_interface-${EI_VSN}/bin/erl_call ${STAGEDIR}${PREFIX}/bin/erl_call
@@ -146,13 +162,17 @@ post-install-FOP-on:
 	  	${FIND} ${WRKSRC}/erts ${WRKSRC}/lib -type f | ${GREP} doc/man$${SECTION} \
 			| ${XARGS} -J % ${CP} -v % ${STAGEDIR}${PREFIX}/lib/erlang/man/man$${SECTION}; \
 	done
+.if ${PORT_OPTIONS:MCORBA}
+	${FIND} ${WRKSRC_corba}/lib -type f | ${GREP} doc/man3 \
+		| ${XARGS} -J % ${CP} -v % ${STAGEDIR}${PREFIX}/lib/erlang/man/man3
+.endif
 
 post-install-PDF-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${FIND} ${WRKSRC} -name \*.pdf | ${XARGS} -J % ${CP} -v % ${STAGEDIR}${DOCSDIR}
-
-post-install-GS-off:
-	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/gs-*
+.if ${PORT_OPTIONS:MCORBA}
+	${FIND} ${WRKSRC_corba} -name \*.pdf | ${XARGS} -J % ${CP} -v % ${STAGEDIR}${DOCSDIR}
+.endif
 
 post-install-JAVA-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/jinterface-*
@@ -175,7 +195,9 @@ post-stage:
 	${FIND} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/* -type d -empty -delete
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type f -o -type l \
 		| ${SORT} >> ${TMPPLIST}
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} ${DOCSDIR_REL}/* -name \*.pdf \
-		| ${SORT} >> ${TMPPLIST}
+	if [ -d ${STAGEDIR}/${DOCSDIR} ]; then \
+		@cd ${STAGEDIR}${PREFIX}; ${FIND} ${DOCSDIR_REL}/* -name \*.pdf \
+			| ${SORT} >> ${TMPPLIST}; \
+	fi
 
 .include <bsd.port.post.mk>

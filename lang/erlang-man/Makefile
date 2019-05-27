@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.3
+PORTVERSION=	21.3
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/
 PKGNAMESUFFIX=	-man
@@ -13,6 +13,7 @@ COMMENT=	Manual pages for Erlang/OTP
 
 LICENSE=	APACHE20
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 
