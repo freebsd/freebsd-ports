@@ -31,6 +31,12 @@ GH_TAGNAME=	12bd551
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == amd64 || ${ARCH} == i386
+PLIST_SUB+=	X86=""
+.else
+PLIST_SUB+=	X86="@comment "
+.endif
+
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200080
 IGNORE=		only for 12.0 or higher after removal of base components
 .endif
