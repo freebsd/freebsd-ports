@@ -3,6 +3,7 @@
 PORTNAME=	goesimage
 DISTVERSION=	0.1.1-1
 DISTVERSIONSUFFIX=	-g0021b16
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,8 +25,10 @@ GH_ACCOUNT=	pigmonkey
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-SUB_LIST=	PORTNAME=${PORTNAME}
+SUB_LIST=	PORTNAME=${PORTNAME} RUN_ARGS="${RUN_ARGS}"
 SUB_FILES=	crontab
+
+RUN_ARGS=	-w -e
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec/
@@ -39,6 +42,10 @@ do-install:
 	  echo ""; \
 	  echo "crontab -l | ${GREP} -v '${PREFIX}/libexec/${PORTNAME}' | crontab -"; \
 	) > ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-disable
-	@cd ${STAGEDIR}${PREFIX}/bin && ${CHMOD} +x ${PORTNAME}-enable ${PORTNAME}-disable
+	@(echo "#!/bin/sh"; \
+	  echo ""; \
+	  echo "${PREFIX}/libexec/${PORTNAME} ${RUN_ARGS}"; \
+	) > ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-run-now
+	@cd ${STAGEDIR}${PREFIX}/bin && ${CHMOD} +x ${PORTNAME}-enable ${PORTNAME}-disable ${PORTNAME}-run-now
 
 .include <bsd.port.mk>
