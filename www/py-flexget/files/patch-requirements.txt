@@ -1,28 +1,17 @@
---- requirements.txt.orig	2017-06-21 02:13:55 UTC
+--- requirements.txt.orig	2019-05-25 02:03:39 UTC
 +++ requirements.txt
-@@ -7,18 +7,15 @@ html5lib>=0.11
+@@ -7,8 +7,8 @@ html5lib>=0.11
  PyRSS2Gen
  pynzb
  #PY3 progressbar
--rpyc==3.3.0
+-rpyc~=4.0
+-jinja2~=2.10
 +rpyc
- jinja2
++jinja2
  # There is a bug in requests 2.4.0 where it leaks urllib3 exceptions
--requests~=2.16.3
--#Guessit requires python-dateutil<=2.5.2
-+requests>=2.8.0, <3.0
- python-dateutil>=2.5.3
- jsonschema>=2.0
- path.py>=8.1.1
- pathlib>=1.0; python_version<'3.4'
--guessit<=2.1.4
--# Rebulk changes how guessit works higher than 0.8.2
--rebulk==0.9.0
-+guessit>=2.1.0
- apscheduler>=3.2.0
- terminaltables>=3.1.0
- colorclass>=2.2.0
-@@ -26,10 +23,10 @@ colorclass>=2.2.0
+ requests>=2.20.0
+ python-dateutil
+@@ -24,11 +24,11 @@ colorclass>=2.2.0
  cherrypy>=3.7.0
  flask>=0.7
  flask-restful>=0.3.3
@@ -35,3 +24,6 @@
 -zxcvbn-python
 +zxcvbn
  future>=0.15.2
+-progressbar==2.5
+\ No newline at end of file
++progressbar>=2.5
