@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-settings
-PORTVERSION=	415.25
+PORTVERSION=	430.14
 CATEGORIES=	x11
 
 MAINTAINER=	bland@FreeBSD.org
@@ -19,13 +19,13 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libjansson.so:devel/jansson \
 		libvdpau.so:multimedia/libvdpau
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	NVIDIA
-
 USES=		gmake pkgconfig gettext-runtime
 USE_GNOME=	gtk20 cairo gdkpixbuf2
 USE_GL=		gl
 USE_XORG=	x11 xext xv xxf86vm
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	NVIDIA
 
 PLIST_FILES=	bin/nvidia-settings \
 		man/man1/nvidia-settings.1.gz \
