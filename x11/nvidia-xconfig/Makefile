@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-xconfig
-PORTVERSION=	415.25
+PORTVERSION=	430.14
 CATEGORIES=	x11
 
 MAINTAINER=	bland@FreeBSD.org
@@ -11,10 +11,10 @@ COMMENT=	Tool to manipulate X configuration files for the NVidia driver
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gmake
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	NVIDIA
-
-USES=		gmake
 
 MAKE_ENV=	NV_VERBOSE= \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
