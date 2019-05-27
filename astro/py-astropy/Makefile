@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	astropy
-DISTVERSION=	3.1.2
-PORTEPOCH=	1
+PORTVERSION=	1.1.2
+PORTREVISION=	2
+PORTEPOCH=	2 # Do not update without testing ports dedenping on this one
 CATEGORIES=	astro
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
