@@ -43,7 +43,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wxPython-common>0:x11-toolkits/py-wxPython-c
 
 USES+=		gettext pkgconfig
 USE_WX=		3.0
-WANT_UNICODE=	yes
 USE_PYTHON=	distutils autoplist
 PYDISTUTILS_BUILDARGS=	WX_CONFIG="${WX_CONFIG}" \
 			WXPORT="${WXPORT}" \
