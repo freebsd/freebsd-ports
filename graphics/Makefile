@@ -65,6 +65,7 @@
     SUBDIR += barbecue
     SUBDIR += barcode
     SUBDIR += batik
+    SUBDIR += bitmap
     SUBDIR += blender
     SUBDIR += blender-doc
     SUBDIR += bmeps

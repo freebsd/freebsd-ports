@@ -1,0 +1,21 @@
+The C++ Bitmap Library consists of simple, robust, optimized and portable
+processing routines for the 24-bit per pixel bitmap image format.
+
+The library has the following capabilities:
+* Read/Write 24-bit Bitmap Images
+* Pixel, row or column level batch editing
+* Colour conversions (RGB,YCbCr) in byte and floating values
+* Highly optimized subsample and upsample (resizing)
+* Various colour maps (1000 levels - autumn, copper, gray, hot, hsv, jet, prism,
+  vga, yarg)
+* Texture generation (checkered pattern, plasma)
+* Graphics drawing interface (line, line-segment, rectangle, triangle, quadix,
+  horizontal and vertical line-segments, ellipse, circle, plot pixel, pen width,
+  pen colour)
+* Cartesian canvas and associated drawing interface
+* PSNR and Image comparisons
+* Simple nearest colour match from set of colours
+* Wavelength to RGB approximations
+* Single header file solution requires no installation or building
+
+WWW: http://www.partow.net/programming/bitmap/index.html
