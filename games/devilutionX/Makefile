@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS_REASON=	Uses inline x86 assembly
 
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
-USES=		cmake compiler:c++14-lang dos2unix sdl
+USES=		cmake dos2unix sdl
 USE_GCC=	yes
 USE_SDL=	mixer2 sdl2 ttf2
 
