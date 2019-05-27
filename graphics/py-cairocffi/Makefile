@@ -2,23 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	cairocffi
-PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dch@FreeBSD.org
-COMMENT=	Cairo cffi-based cairo bindings for Python
+COMMENT=	CFFI-based Cairo bindings for Python
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xcffib>=0.5.0:x11/py-xcffib@${PY_FLAVOR}
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.1.0:devel/py-cffi@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.1.0:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xcffib>=0.3.2:x11/py-xcffib@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
+		gdk-pixbuf2>0:graphics/gdk-pixbuf2
 
-USES=		python
-USE_PYTHON=	distutils py3kplist
+USES=		gnome python:3.5+
 USE_GNOME=	cairo
+USE_PYTHON=	distutils autoplist
+
+# --record output is not complete so supplement autoplist w/ a plist for now
+# https://github.com/Kozea/cairocffi/issues/108
+
+# _generated files only exist after install not build
+# so copy them to the src directory so we can run tests against WRKSRC
+#
+# -v = verbose, -rs print skip reasons, -o override tox.ini/pytest.ini args
+do-test:
+	${CP} -Rp ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/_generated ${WRKSRC}/${PORTNAME}
+	${TOUCH} ${WRKSRC}/${PORTNAME}/_generated/__init__.py
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts=
 
 .include <bsd.port.mk>
