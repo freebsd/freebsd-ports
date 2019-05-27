@@ -74,7 +74,24 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library
  	*)
  		SWT_ARCH=$MODEL
  		AWT_ARCH=$MODEL
-@@ -194,7 +192,7 @@
+@@ -118,6 +116,16 @@
+ esac
+ 
+ case $SWT_OS.$SWT_ARCH in
++	"freebsd.ppc64")
++		if [ "${CC}" = "" ]; then
++			export CC=gcc
++		fi
++		if [ "${JAVA_HOME}" = "" ]; then
++			DYNAMIC_JAVA_HOME=`readlink -f /usr/local/bin/java | sed "s:jre/::" | sed "s:bin/java::"`
++			JAVA_HOME = $DYNAMIC_JAVA_HOME
++			export JAVA_HOME
++		fi
++		;;
+ 	"linux.x86")
+ 		if [ "${CC}" = "" ]; then
+ 			export CC=gcc
+@@ -194,7 +202,7 @@
  
  
  # For 64-bit CPUs, we have a switch
@@ -83,7 +100,7 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library
  	SWT_PTR_CFLAGS=-DJNI64
  	if [ -d /lib64 ]; then
  		XLIB64=-L/usr/X11R6/lib64
-@@ -205,6 +203,11 @@
+@@ -205,6 +213,11 @@
  		XLIB64="${XLIB64} -L/usr/lib64"
  		SWT_LFLAGS=-m64
  		export SWT_LFLAGS
@@ -95,7 +112,7 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library
  	fi
  	export SWT_PTR_CFLAGS
  fi
-@@ -364,4 +367,4 @@
+@@ -364,4 +377,4 @@
  elif [ "${GTK_VERSION}" = "3.0" -o "${GTK_VERSION}" = "" ]; then
  	export GTK_VERSION="3.0"
  	func_build_gtk3 "$@"

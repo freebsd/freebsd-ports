@@ -69,3 +69,16 @@ diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml e
                  <plugin id="org.eclipse.core.resources.win32.x86_64"/>
                </excludes>
              </configuration>
+diff -ru eclipse.platform.releng/pom.xml eclipse.platform.releng/pom.xml
+--- eclipse.platform.releng/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.releng/pom.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -66,7 +66,9 @@
+     <module>features/org.eclipse.releng.tools</module>
+     <module>features/org.eclipse.sdk</module>
+     <module>features/org.eclipse.sdk.examples-feature</module>
++<!--
+     <module>features/org.eclipse.sdk.tests</module>
++-->
+     <module>features/org.eclipse.test-feature</module>
+   </modules>
+ 
