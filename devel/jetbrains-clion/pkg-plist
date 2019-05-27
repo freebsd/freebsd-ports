@@ -17,9 +17,6 @@ share/applications/clion.desktop
 %%DATADIR%%/bin/gdb/renderers/libstdcxx/v6/xmethods.py
 %%DATADIR%%/bin/idea.properties
 %%DATADIR%%/bin/inspect.sh
-%%DATADIR%%/bin/libdbm64.so
-%%DATADIR%%/bin/libyjpagent-linux.so
-%%DATADIR%%/bin/libyjpagent-linux64.so
 %%DATADIR%%/bin/lldb/renderers/lldb_formatters/__init__.py
 %%DATADIR%%/bin/lldb/renderers/lldb_formatters/jetbrains_stl_formatters.py
 %%DATADIR%%/bin/log.xml

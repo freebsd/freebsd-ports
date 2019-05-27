@@ -2,6 +2,7 @@
 
 PORTNAME=	clion
 PORTVERSION=	2019.1.3
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/cpp/
 PKGNAMEPREFIX=	jetbrains-
@@ -40,6 +41,7 @@ do-install:
 	@${RM} -r ${STAGEDIR}${DATADIR}/bin/fsnotifier \
 		${STAGEDIR}${DATADIR}/bin/fsnotifier-arm \
 		${STAGEDIR}${DATADIR}/bin/fsnotifier64 \
+		${STAGEDIR}${DATADIR}/bin/lib*.so \
 		${STAGEDIR}${DATADIR}/bin/clang \
 		${STAGEDIR}${DATADIR}/bin/cmake \
 		${STAGEDIR}${DATADIR}/bin/gdb/linux \
@@ -56,5 +58,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/icon.png ${STAGEDIR}${DATADIR}/clion.png
 # Use fsnotifier replacement provided by java/intellij-fsnotifier
 	${ECHO} "idea.filewatcher.executable.path=${PREFIX}/intellij/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
+# Fix slow render
+	${ECHO} "-Dsun.java2d.xrender=false" >> ${STAGEDIR}${DATADIR}/bin/clion.vmoptions
+	${ECHO} "-Dsun.java2d.xrender=false" >> ${STAGEDIR}${DATADIR}/bin/clion64.vmoptions
 
 .include <bsd.port.mk>
