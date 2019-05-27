@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	datamodeler
-PORTVERSION=	18.4.0.339.1532
+PORTVERSION=	19.1.0.081.0911
 DISTVERSIONSUFFIX=-1
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technetwork/developer-tools/datamodeler/downloads/index.html
