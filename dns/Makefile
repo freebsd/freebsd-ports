@@ -19,6 +19,7 @@
     SUBDIR += c-ares
     SUBDIR += checkdns
     SUBDIR += cli53
+    SUBDIR += coredns
     SUBDIR += credns
     SUBDIR += crossip
     SUBDIR += curvedns
