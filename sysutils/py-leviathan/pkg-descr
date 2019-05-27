@@ -1,0 +1,7 @@
+CLI application to control and monitor NZXT (and possibly other USB connected)
+liquid coolers.
+
+NZXT is NOT involved in this project, do NOT contact them if your device
+is damaged while using this software.
+
+WWW: https://github.com/jaksi/leviathan/tree/0.1.1
