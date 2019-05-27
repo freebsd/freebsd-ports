@@ -18,7 +18,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		compiler:c++17-lang gmake iconv pkgconfig tar:tgz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
-CXXSTD=		gnu++17
 MAKEFILE=	makefile
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20
