@@ -10,6 +10,9 @@ COMMENT=	Set of iterative linear system solvers for use with the Blaze library
 
 #LICENSE=	https://github.com/tjolsen/BlazeIterative/issues/9
 
+DEPRECATED=	Depends on expiring devel/openmp
+EXPIRATION_DATE=	2019-12-31
+
 BUILD_DEPENDS=	blaze>0:math/blaze \
 		boost-libs>0:devel/boost-libs \
 		openblas>0:math/openblas \
