@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspec-its
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +18,8 @@ RUN_DEPENDS=	rubygem-rspec-core>=${PORTVERSION:R}:devel/rubygem-rspec-core \
 NO_ARCH=	yes
 USES=		gem shebangfix
 bash_CMD=	${SH}
-SHEBANG_FILES=	script/test_all
+SHEBANG_FILES=	script/test_all \
+		script/update_rubygems_and_install_bundler
 
 USE_RUBY=	yes
 
