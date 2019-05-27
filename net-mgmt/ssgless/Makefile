@@ -13,7 +13,6 @@ LICENSE=	BSD2CLAUSE
 
 LESS=	`whereis -bq less`
 
-NOFETCHFILES=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
