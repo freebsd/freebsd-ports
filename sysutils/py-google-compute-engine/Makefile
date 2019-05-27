@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-compute-engine
-DISTVERSION=	2.8.13
-PORTREVISION=	6
+DISTVERSION=	2.8.16
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -34,7 +33,7 @@ SHEBANG_FILES=	../google-compute-engine/src/usr/bin/google_optimize_local_ssd \
 USE_GITHUB=	yes
 GH_ACCOUNT=	GoogleCloudPlatform
 GH_PROJECT=	compute-image-packages
-GH_TAGNAME=	20190416
+GH_TAGNAME=	20190522
 
 USE_RC_SUBR=	google_accounts_daemon google_clock_skew_daemon \
 		google_instance_setup google_network_daemon google_startup
