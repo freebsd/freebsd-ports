@@ -1,8 +1,0 @@
---- CMakeLists.txt.orig	2019-05-25 14:14:20 UTC
-+++ CMakeLists.txt
-@@ -60,4 +60,4 @@ set(QUAZIP_LIB_TARGET_NAME quazip${QUAZIP_LIB_VERSION_
- 
- add_subdirectory(quazip)
- 
--install(FILES FindQuaZip.cmake RENAME FindQuaZip${QUAZIP_LIB_VERSION_SUFFIX}.cmake DESTINATION share/cmake)
-+install(FILES FindQuaZip.cmake RENAME FindQuaZip${QUAZIP_LIB_VERSION_SUFFIX}.cmake DESTINATION share/cmake/Modules)
