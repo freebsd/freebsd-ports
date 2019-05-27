@@ -2,23 +2,21 @@
 
 PORTNAME=	deal.II
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.0.1
-PORTREVISION=	6
+DISTVERSION=	9.1.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Finite element Differential Equations Analysis Library (DEAL)
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/config.hpp:devel/boost-libs
-LIB_DEPENDS=	libgoto2.so:math/gotoblas \
-		libhdf5.so:science/hdf5 \
+LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libmetis.so:math/metis \
 		libtbb.so:devel/tbb
 
-USES=		cmake compiler:c++17-lang localbase:ldflags
+USES=		blaslapack:gotoblas cmake compiler:c++17-lang localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tl:S/.//}
 GH_PROJECT=	${PORTNAME:tl:S/.//}
@@ -88,5 +86,8 @@ SLEPC_IMPLIES=		PETSC
 SUNDIALS_DESC=		Compile with SUNDIALS
 SUNDIALS_CMAKE_BOOL=	DEAL_II_WITH_SUNDIALS
 SUNDIALS_LIB_DEPENDS=	libsundials_arkode.so:math/sundials
+
+post-stage:
+	@${RM} ${STAGEDIR}${PREFIX}/*.log
 
 .include <bsd.port.mk>
