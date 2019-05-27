@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 DEPRECATED=	Part of base system since FreeBSD 11.3/12.1
-EXPIRATION_DATE=2019-12-31
+EXPIRATION_DATE=	2020-02-01
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		cmake compiler:c++11-lib perl5 tar:xz
