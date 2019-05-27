@@ -210,6 +210,7 @@
     SUBDIR += ess
     SUBDIR += eukleides
     SUBDIR += eval
+    SUBDIR += exprtk
     SUBDIR += facile
     SUBDIR += fann
     SUBDIR += fcl
