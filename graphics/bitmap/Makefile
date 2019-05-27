@@ -22,9 +22,12 @@ PLIST_FILES=	include/bitmap_image.hpp
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/bitmap_image.hpp ${STAGEDIR}${PREFIX}/include
 
-do-test: # tests failure reported to the author: Error - Failed to open 'image.bmp'
+do-test:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} bitmap_test && \
-		./bitmap_test
+		${CXX} ${CXXFLAGS} -o mk-image ${FILESDIR}/mk-image.cpp -I. && \
+		./mk-image && \
+		./bitmap_test && \
+		${ECHO} "Tests succeeded"
 
 .include <bsd.port.mk>
