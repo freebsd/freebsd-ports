@@ -65,7 +65,7 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/datamodeler/lib/js.jar
 %%DATADIR%%/datamodeler/lib/olap_api.jar
 %%DATADIR%%/datamodeler/lib/oracle.sqldeveloper.homesupport.jar
-%%DATADIR%%/datamodeler/lib/pdfbox-app-2.0.2.jar
+%%DATADIR%%/datamodeler/lib/pdfbox-app-2.0.13.jar
 %%DATADIR%%/datamodeler/lib/rsyntaxtextarea-%%GTK3_VERSION%%-SNAPSHOT.jar
 %%DATADIR%%/datamodeler/lib/saxon-9.1.0.8.jar
 %%DATADIR%%/datamodeler/lib/serializer-2.7.0.jar
@@ -801,7 +801,10 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/external/oracle.external.antlr.jar
 %%DATADIR%%/external/oracle.external.apache.commons-codec.jar
 %%DATADIR%%/external/oracle.external.apache.commons-collections4.jar
+%%DATADIR%%/external/oracle.external.apache.commons-compress.jar
 %%DATADIR%%/external/oracle.external.apache.commons-logging.jar
+%%DATADIR%%/external/oracle.external.apache.commons-math3.jar
+%%DATADIR%%/external/oracle.external.apache.xmlbeans.jar
 %%DATADIR%%/external/oracle.external.apache_httpclient.jar
 %%DATADIR%%/external/oracle.external.apexlistener.jar
 %%DATADIR%%/external/oracle.external.aqb.jar
@@ -814,6 +817,7 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/external/oracle.external.cloudstorage.jar
 %%DATADIR%%/external/oracle.external.commons-httpclient.jar
 %%DATADIR%%/external/oracle.external.commons-io.jar
+%%DATADIR%%/external/oracle.external.curvesapi.jar
 %%DATADIR%%/external/oracle.external.el-for-uix2.jar
 %%DATADIR%%/external/oracle.external.el.jar
 %%DATADIR%%/external/oracle.external.emapi.jar
@@ -1692,7 +1696,9 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/sqldeveloper/lib/common.jar
 %%DATADIR%%/sqldeveloper/lib/commons-codec.jar
 %%DATADIR%%/sqldeveloper/lib/commons-collections4.jar
+%%DATADIR%%/sqldeveloper/lib/commons-compress.jar
 %%DATADIR%%/sqldeveloper/lib/commons-logging.jar
+%%DATADIR%%/sqldeveloper/lib/commons-math3.jar
 %%DATADIR%%/sqldeveloper/lib/curvesapi.jar
 %%DATADIR%%/sqldeveloper/lib/dbtools-common.jar
 %%DATADIR%%/sqldeveloper/lib/dbtools-http.jar
@@ -1734,7 +1740,6 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/sqldeveloper/lib/poi.jar
 %%DATADIR%%/sqldeveloper/lib/resource-templates.jar
 %%DATADIR%%/sqldeveloper/lib/slf4j-api.jar
-%%DATADIR%%/sqldeveloper/lib/stax-api.jar
 %%DATADIR%%/sqldeveloper/lib/stringtemplate-3.1b1.jar
 %%DATADIR%%/sqldeveloper/lib/stringtemplate.jar
 %%DATADIR%%/sqldeveloper/lib/xmlbeans.jar
@@ -1753,7 +1758,6 @@ share/icons/hicolor/128x128/apps/datamodeler.png
 %%DATADIR%%/svnkit/svnkit.jar
 %%DATADIR%%/svnkit/trilead.jar
 @dir %%DATADIR%%/datamodeler/log
-@dir %%DATADIR%%/datamodeler/reports/xslt/10/css
-@dir %%DATADIR%%/netbeans/platform/modules/lib/x86
 @dir %%DATADIR%%/netbeans/platform/modules/lib/amd64/linux
 @dir %%DATADIR%%/netbeans/platform/modules/lib/i386/linux
+@dir %%DATADIR%%/netbeans/platform/modules/lib/x86
