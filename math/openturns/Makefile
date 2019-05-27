@@ -3,17 +3,17 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.13rc1
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Uncertainty treatment library
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
-		flex:textproc/flex \
-		R>0:math/R
+		flex:textproc/flex
 LIB_DEPENDS=	libceres.so:math/ceres-solver \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
@@ -22,7 +22,6 @@ LIB_DEPENDS=	libceres.so:math/ceres-solver \
 		libopt.so:math/optpp \
 		libtbb.so:devel/tbb \
 		libhmat-oss.so:math/hmat-oss
-RUN_DEPENDS=	R>0:math/R
 
 USES=		bison blaslapack:openblas cmake compiler:c++11-lang eigen:3 gnome localbase:ldflags
 USE_GITHUB=	yes
