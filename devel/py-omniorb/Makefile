@@ -3,7 +3,7 @@
 
 PORTNAME=	omniorb
 DISTVERSION=	4.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/omniORBpy/omniORBpy-${DISTVERSION:S/-2//}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -52,7 +52,8 @@ post-install:
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('CosNaming/__init__.py',None,'CosNaming/__init__.pyc',True)"
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('CosNaming__POA/__init__.py',None,'CosNaming__POA/__init__.pyc',True)"
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('omniidl_be/python.py',None,'omniidl_be/python.pyc',True)"
-	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/omniidl_be/__init__.py
+	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/omniidl_be/__init__.py* \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/omniidl_be/__pycache__/__init__.*
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
