@@ -356,7 +356,6 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/omniORB/ziop_idl.pyc
 %%PYTHON_SITELIBDIR%%/omniidl_be/python.py
 %%PYTHON_SITELIBDIR%%/omniidl_be/python.pyc
-%%PYTHON3%%%%PYTHON_SITELIBDIR%%/omniidl_be/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PORTDOCS%%%%DOCSDIR%%/html/contents_motif.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/next_motif.gif
