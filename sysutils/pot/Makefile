@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	potnet:sysutils/potnet \
-	${LOCALBASE}/share/freebsd/MANIFESTS/amd64-amd64-11.2-RELEASE:misc/freebsd-release-manifests
+		${LOCALBASE}/share/freebsd/MANIFESTS/amd64-amd64-11.2-RELEASE:misc/freebsd-release-manifests
 
 USE_RC_SUBR=	pot
 
