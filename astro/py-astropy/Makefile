@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	astropy
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.2 # Do not update without testing ports depending on this one
 PORTREVISION=	2
-PORTEPOCH=	2 # Do not update without testing ports dedenping on this one
+PORTEPOCH=	2
 CATEGORIES=	astro
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
