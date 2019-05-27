@@ -9,11 +9,9 @@ ARCHS="amd64 powerpc64"
 # Create dummy repo for jgit
 if [ ! -d .git ]
 then
-	echo 'in pre-build doing git-init'
 	mkdir ${WRKDIR}/githome
 	(
 		export HOME=${WRKDIR}/githome
-		echo "home:" $HOME
 		git config --global user.email "eclipse@freebsd.org"
 		git config --global user.name "Eclipse"
 		git init

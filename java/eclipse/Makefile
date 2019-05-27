@@ -48,7 +48,7 @@ COMMENT=	Eclipse IDE 2019-03
 
 LICENSE=	EPL
 
-ONLY_FOR_ARCHS=	amd64 power64
+ONLY_FOR_ARCHS=	amd64 powerpc64
 
 BUILD_DEPENDS=	git:devel/git-lite \
 		${LOCALBASE}/share/java/maven/bin/mvn:devel/maven
@@ -70,7 +70,7 @@ DESKTOP_ENTRIES="Eclipse" \
 		"${PORTNAME}" \
 		"${PORTNAME}" \
 		"Development;IDE;Java;" \
-		false
+		"false"
 
 SUB_FILES=	${PORTNAME}
 
@@ -91,8 +91,9 @@ do-install:
 	${TAR} -x --directory ${STAGEDIR}${DATADIR}/.. --file ${WRKSRC}/${ECLIPSE_RESULT}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
-# dynamically add timestamped profiles, which should be excluded from pkg-plist
+# generate dynamic plist, to cater for different ARCHS
 post-install:
-	cd ${STAGEDIR}${PREFIX} && ${FIND} -s share/${PORTNAME} -name '*.profile.gz' >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX} && ${FIND} -s bin/${PORTNAME} share/${PORTNAME} -not -type d >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX} && ${FIND} -ds share/${PORTNAME} -type d | ${SED} -e 's,^,@dir ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
