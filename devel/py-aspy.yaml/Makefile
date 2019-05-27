@@ -1,0 +1,20 @@
+# $FreeBSD$
+
+PORTNAME=	aspy.yaml
+PORTVERSION=	1.3.0
+CATEGORIES=	devel
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	swills@FreeBSD.org
+COMMENT=	Extensions to pyyaml
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	autoplist distutils
+
+.include <bsd.port.mk>

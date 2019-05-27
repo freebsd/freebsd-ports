@@ -4087,6 +4087,7 @@
     SUBDIR += py-asciimatics
     SUBDIR += py-asn1crypto
     SUBDIR += py-aspects
+    SUBDIR += py-aspy.yaml
     SUBDIR += py-aspyct
     SUBDIR += py-astor
     SUBDIR += py-astroid
@@ -4218,6 +4219,7 @@
     SUBDIR += py-certsrv
     SUBDIR += py-cffi
     SUBDIR += py-cfgparse
+    SUBDIR += py-cfgv
     SUBDIR += py-cftime
     SUBDIR += py-chainmap
     SUBDIR += py-characteristic
@@ -4438,8 +4440,11 @@
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-ice37
+    SUBDIR += py-identify
     SUBDIR += py-ijson
     SUBDIR += py-imgkit
+    SUBDIR += py-importlib-metadata
+    SUBDIR += py-importlib-resources
     SUBDIR += py-incremental
     SUBDIR += py-inflect
     SUBDIR += py-inflection
@@ -4597,6 +4602,7 @@
     SUBDIR += py-nbconvert
     SUBDIR += py-nbformat
     SUBDIR += py-ncurses
+    SUBDIR += py-nodeenv
     SUBDIR += py-nose
     SUBDIR += py-nose-cov
     SUBDIR += py-nose-timer
@@ -4701,6 +4707,7 @@
     SUBDIR += py-poyo
     SUBDIR += py-pp
     SUBDIR += py-pqueue
+    SUBDIR += py-pre-commit
     SUBDIR += py-pretend
     SUBDIR += py-prettytable
     SUBDIR += py-prioritized_methods
@@ -5097,6 +5104,7 @@
     SUBDIR += py-zc.buildout
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
+    SUBDIR += py-zipp
     SUBDIR += py-zkpython
     SUBDIR += py-zope.annotation
     SUBDIR += py-zope.app.applicationcontrol
