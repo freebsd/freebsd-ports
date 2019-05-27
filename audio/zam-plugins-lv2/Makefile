@@ -29,7 +29,6 @@ USE_XORG=	x11
 
 CFLAGS+=	-I${FILESDIR}
 MAKE_ARGS+=	USE_SYSTEM_LIBS=1
-xLDFLAGS+=	-lzita-convolver # TODO this can be reduced to only relevant places
 
 .include <bsd.port.pre.mk>
 
