@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-compute-engine-oslogin
-DISTVERSION=	1.5.2
+DISTVERSION=	1.5.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	lucas.kanashiro@collabora.com
@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	GoogleCloudPlatform
 GH_PROJECT=	compute-image-packages
-GH_TAGNAME=	20190416
+GH_TAGNAME=	20190522
 
 MAKE_ARGS=	JSON_INCLUDE_PATH=${LOCALBASE}/include/json-c \
 		BIN_INSTALL_PATH=/bin \
