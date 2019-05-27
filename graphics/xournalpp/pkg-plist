@@ -43,6 +43,7 @@ share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/nextAnnotatedPage.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/object-play.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/object-select.svg
+%%DATADIR%%/ui/icons/hicolor/scalable/actions/presentation-mode.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/rect-draw.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/rect-select.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/ruler.svg
@@ -60,6 +61,7 @@ share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/tool_eraser.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/tool_highlighter.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/tool_image.svg
+%%DATADIR%%/ui/icons/hicolor/scalable/actions/tool_math_tex.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/tool_pencil.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/tool_text.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/transparent.svg
