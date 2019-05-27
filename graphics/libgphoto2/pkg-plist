@@ -21,7 +21,7 @@ include/gphoto2/gphoto2-widget.h
 include/gphoto2/gphoto2.h
 lib/libgphoto2.so
 lib/libgphoto2.so.6
-lib/libgphoto2.so.6.0.0
+lib/libgphoto2.so.6.1.0
 lib/libgphoto2/%%VERSION%%/adc65.so
 lib/libgphoto2/%%VERSION%%/agfa_cl20.so
 lib/libgphoto2/%%VERSION%%/aox.so
@@ -103,7 +103,7 @@ man/man3/libgphoto2_port.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/README.packaging
 %%PORTDOCS%%%%DOCSDIR%%/camlibs/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/camlibs/README.9050

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.5.16
+PORTVERSION=	2.5.22
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		gmake iconv libtool localbase pathfix pkgconfig tar:bzip2
 USE_CSTD=	gnu89
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LTDLINCL="-I${LOCALBASE}/include" \
 		LIBLTDL="-L${LOCALBASE}/lib -lltdl" \
@@ -45,6 +46,7 @@ LIBEXIF_CONFIGURE_OFF=	--with-libexif=no
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 XML_USE=		GNOME=libxml2
+XML_USES=		gnome
 XML_CONFIGURE_OFF=	--with-libxml-2.0=no
 
 post-patch:
