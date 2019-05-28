@@ -2,4 +2,4 @@ Bleach is a Python HTML sanitizing library that escapes or strips markup and
 attributes based on a white list. Bleach is intended for sanitizing text from
 untrusted sources.
 
-WWW: https://github.com/jsocol/bleach
+WWW: https://github.com/mozilla/bleach
