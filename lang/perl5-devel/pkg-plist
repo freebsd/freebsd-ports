@@ -348,6 +348,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Pod/Simple/HTML.pm
 %%PRIV_LIB%%/Pod/Simple/HTMLBatch.pm
 %%PRIV_LIB%%/Pod/Simple/HTMLLegacy.pm
+%%PRIV_LIB%%/Pod/Simple/JustPod.pm
 %%PRIV_LIB%%/Pod/Simple/LinkSection.pm
 %%PRIV_LIB%%/Pod/Simple/Methody.pm
 %%PRIV_LIB%%/Pod/Simple/Progress.pm
@@ -961,6 +962,8 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5281delta.1.gz
 %%MAN1%%/perl5282delta.1.gz
 %%MAN1%%/perl5300delta.1.gz
+%%MAN1%%/perl5310delta.1.gz
+%%MAN1%%/perl5311delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1462,6 +1465,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Pod::Simple::DumpAsXML.3.gz
 %%MAN3%%/Pod::Simple::HTML.3.gz
 %%MAN3%%/Pod::Simple::HTMLBatch.3.gz
+%%MAN3%%/Pod::Simple::JustPod.3.gz
 %%MAN3%%/Pod::Simple::LinkSection.3.gz
 %%MAN3%%/Pod::Simple::Methody.3.gz
 %%MAN3%%/Pod::Simple::PullParser.3.gz
@@ -1750,6 +1754,8 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5281delta.pod
 %%PRIV_LIB%%/pod/perl5282delta.pod
 %%PRIV_LIB%%/pod/perl5300delta.pod
+%%PRIV_LIB%%/pod/perl5310delta.pod
+%%PRIV_LIB%%/pod/perl5311delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
