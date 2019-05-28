@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	moonlight-embedded
-DISTVERSION=	2.4.9
+DISTVERSION=	2.4.10
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/irtimmer/moonlight-embedded/releases/download/v${DISTVERSION}/
 
@@ -24,7 +24,6 @@ USE_PERL5=	build
 USE_SDL=	sdl2
 
 CFLAGS+=	-DPREFIX="\\\"${PREFIX}\\\""
-NO_WRKSUBDIR=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/(ALSA)/d' \
