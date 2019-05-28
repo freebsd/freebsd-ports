@@ -1997,6 +1997,7 @@
     SUBDIR += rubygem-gollum-grit_adapter10
     SUBDIR += rubygem-gollum-lib
     SUBDIR += rubygem-gollum-rugged_adapter
+    SUBDIR += rubygem-gon-rails5
     SUBDIR += rubygem-gon-rails50
     SUBDIR += rubygem-hackpad-cli
     SUBDIR += rubygem-haml
@@ -2183,7 +2184,7 @@
     SUBDIR += rubygem-vegas
     SUBDIR += rubygem-wasabi
     SUBDIR += rubygem-webmock
-    SUBDIR += rubygem-webpack-rails-rails50
+    SUBDIR += rubygem-webpack-rails-rails5
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
     SUBDIR += rubygem-websocket-driver

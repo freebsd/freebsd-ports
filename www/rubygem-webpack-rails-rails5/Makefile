@@ -5,7 +5,7 @@ PORTNAME=	webpack-rails
 PORTVERSION=	0.9.11
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
-PKGNAMESUFFIX=	-rails50
+PKGNAMESUFFIX=	-rails5
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	JavaScript-first tooling to use webpack within your Rails application
@@ -13,7 +13,7 @@ COMMENT=	JavaScript-first tooling to use webpack within your Rails application
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-railties50>=3.2.0:www/rubygem-railties50
+RUN_DEPENDS=	rubygem-railties5>=3.2.0:www/rubygem-railties5
 
 # www/gitlab-ce still depends on this port
 DEPRECATED=	Upstream no longer maintained, use devel/rubygem-webpacker-rails* instead
