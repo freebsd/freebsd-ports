@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doh-proxy
-DISTVERSION=	0.1.15
-PORTREVISION=	1
+DISTVERSION=	0.1.16
 CATEGORIES=	dns
 
 MAINTAINER=	mat@FreeBSD.org
@@ -25,7 +24,7 @@ PLIST_FILES=	bin/doh-proxy
 CARGO_CRATES=	ansi_term-0.11.0 \
 		arrayvec-0.4.10 \
 		atty-0.2.11 \
-		autocfg-0.1.2 \
+		autocfg-0.1.4 \
 		base64-0.10.1 \
 		bitflags-1.0.4 \
 		byteorder-1.3.1 \
@@ -66,7 +65,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		lock_api-0.1.5 \
 		log-0.4.6 \
 		memoffset-0.2.1 \
-		mio-0.6.17 \
+		mio-0.6.19 \
 		mio-uds-0.6.7 \
 		miow-0.2.1 \
 		native-tls-0.2.3 \
