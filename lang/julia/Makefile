@@ -3,6 +3,7 @@
 
 PORTNAME=	julia
 PORTVERSION=	1.0.3
+PORTREVISION=	2
 CATEGORIES=	lang math
 MASTER_SITES=	# empty
 DISTFILES=	# empty
