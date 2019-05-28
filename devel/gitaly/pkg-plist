@@ -116,6 +116,7 @@
 %%DATADIR%%/ruby/lib/gitlab/git/gitlab_projects.rb
 %%DATADIR%%/ruby/lib/gitlab/git/hook.rb
 %%DATADIR%%/ruby/lib/gitlab/git/hooks_service.rb
+%%DATADIR%%/ruby/lib/gitlab/git/http_auth.rb
 %%DATADIR%%/ruby/lib/gitlab/git/index.rb
 %%DATADIR%%/ruby/lib/gitlab/git/lfs_changes.rb
 %%DATADIR%%/ruby/lib/gitlab/git/operation_service.rb
