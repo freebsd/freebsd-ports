@@ -1,0 +1,31 @@
+--- media/audio/BUILD.gn.orig	2019-03-16 09:15:21 UTC
++++ media/audio/BUILD.gn
+@@ -262,9 +262,19 @@ source_set("audio") {
+     deps += [ "//media/base/android:media_jni_headers" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !use_sndio) {
+     sources += [ "linux/audio_manager_linux.cc" ]
+   }
++  if (use_sndio) {
++    libs += [ "sndio" ]
++    sources += [
++      "openbsd/audio_manager_openbsd.cc",
++      "sndio/sndio_input.cc",
++      "sndio/sndio_input.h",
++      "sndio/sndio_output.cc",
++      "sndio/sndio_output.h"
++    ]
++  }
+ 
+   if (use_alsa) {
+     libs += [ "asound" ]
+@@ -310,7 +320,6 @@ source_set("audio") {
+     if (link_pulseaudio) {
+       configs += [ ":libpulse" ]
+     } else {
+-      libs += [ "dl" ]
+       deps += [ ":pulse_generate_stubs" ]
+       sources += get_target_outputs(":pulse_generate_stubs")
+     }
