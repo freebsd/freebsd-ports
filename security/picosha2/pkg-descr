@@ -1,0 +1,7 @@
+PicoSHA2 is a tiny SHA256 hash generator for C++ with following properties:
+
+* header-file only
+* no external dependencies (only uses standard C++ libraries)
+* STL-friendly
+
+WWW: https://github.com/okdshin/PicoSHA2
