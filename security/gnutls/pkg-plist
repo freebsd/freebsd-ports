@@ -32,7 +32,7 @@ include/gnutls/x509.h
 %%DANE%%lib/libgnutls-dane.so.0.4.1
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.23.2
+lib/libgnutls.so.30.24.0
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.28
 lib/libgnutlsxx.so.28.1.0
@@ -225,6 +225,7 @@ man/man3/gnutls_dh_params_import_dsa.3.gz
 man/man3/gnutls_dh_params_import_pkcs3.3.gz
 man/man3/gnutls_dh_params_import_raw.3.gz
 man/man3/gnutls_dh_params_import_raw2.3.gz
+man/man3/gnutls_dh_params_import_raw3.3.gz
 man/man3/gnutls_dh_params_init.3.gz
 man/man3/gnutls_dh_set_prime_bits.3.gz
 man/man3/gnutls_digest_get_id.3.gz
@@ -523,6 +524,7 @@ man/man3/gnutls_pkcs8_info.3.gz
 man/man3/gnutls_pkcs_schema_get_name.3.gz
 man/man3/gnutls_pkcs_schema_get_oid.3.gz
 man/man3/gnutls_prf.3.gz
+man/man3/gnutls_prf_early.3.gz
 man/man3/gnutls_prf_raw.3.gz
 man/man3/gnutls_prf_rfc5705.3.gz
 man/man3/gnutls_priority_certificate_type_list.3.gz
@@ -674,6 +676,7 @@ man/man3/gnutls_record_send2.3.gz
 man/man3/gnutls_record_send_early_data.3.gz
 man/man3/gnutls_record_send_range.3.gz
 man/man3/gnutls_record_set_max_early_data_size.3.gz
+man/man3/gnutls_record_set_max_recv_size.3.gz
 man/man3/gnutls_record_set_max_size.3.gz
 man/man3/gnutls_record_set_state.3.gz
 man/man3/gnutls_record_set_timeout.3.gz
