@@ -1029,6 +1029,7 @@
     SUBDIR += py-hpilo
     SUBDIR += py-iowait
     SUBDIR += py-leviathan
+    SUBDIR += py-mitogen
     SUBDIR += py-mqttwarn
     SUBDIR += py-nagiosplugin
     SUBDIR += py-packet-python

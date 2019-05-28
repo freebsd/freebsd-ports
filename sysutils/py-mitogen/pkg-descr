@@ -1,0 +1,12 @@
+Python library for writing distributed, self-replicating programs. Its
+main feature is a pythonic "remote fork", enabling your program to
+bootstrap and communicate with remote copies of itself, requiring only
+an existing installed python, and a suitable ssh client.
+
+Mitogen also includes a highly efficient re-implementation of Ansible's
+RPC layer, providing a staggering and massive speed-up compared to stock
+ansible. Installation is trivial, and the results are impressive.
+
+https://mitogen.networkgenomics.com/ansible_detailed.html
+
+WWW: https://mitogen.networkgenomics.com/
