@@ -1,9 +1,0 @@
-TIMESTAMP = 1541010522
-SHA256 (ghc-8.4.4-src.tar.xz) = 11117735a58e507c481c09f3f39ae5a314e9fbf49fc3109528f99ea7959004b2
-SIZE (ghc-8.4.4-src.tar.xz) = 11319500
-SHA256 (ghc-8.4.3-boot-amd64-freebsd.tar.xz) = 0e0324a539d471a813ed4d18c537fb19be22a4e250bd5434a3a911b9d5343724
-SIZE (ghc-8.4.3-boot-amd64-freebsd.tar.xz) = 67718400
-SHA256 (ghc-8.4.3-boot-i386-freebsd.tar.xz) = 65fcd48b1c0166e028b3f6d50ad295525e6b84490da82663ec66165e57e87972
-SIZE (ghc-8.4.3-boot-i386-freebsd.tar.xz) = 66143592
-SHA256 (hscolour-1.24.4.tar.gz) = 243332b082294117f37b2c2c68079fa61af68b36223b3fc07594f245e0e5321d
-SIZE (hscolour-1.24.4.tar.gz) = 28729
