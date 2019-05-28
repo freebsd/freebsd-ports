@@ -113,9 +113,6 @@
     SUBDIR += gcc9-devel
     SUBDIR += gforth
     SUBDIR += ghc
-    SUBDIR += ghc843
-    SUBDIR += ghc844
-    SUBDIR += ghc862
     SUBDIR += gjs
     SUBDIR += gnat_util
     SUBDIR += gnatcross-aarch64

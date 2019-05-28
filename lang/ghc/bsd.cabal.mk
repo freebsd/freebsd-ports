@@ -151,67 +151,18 @@ IGNORE?= 	dependency fail: ${__u_h_r_package} is part of lang/ghc
 
 BUILD_DEPENDS+=	${dependencies}
 
-.  if !defined(STANDALONE) || ${PORT_OPTIONS:MDYNAMIC}
+.  if !defined(STANDALONE)
 RUN_DEPENDS+=	${dependencies}
 .  endif
 
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-.  if !defined(XMLDOCS)
-
-.    if defined(HADDOCK_AVAILABLE)
-HADDOCK_OPTS=	# empty
-
-.      if ${PORT_OPTIONS:MHSCOLOUR}
-BUILD_DEPENDS+=	HsColour:print/hs-hscolour
-
-HSCOLOUR_DATADIR=	${LOCALBASE}/share/cabal/ghc-${GHC_VERSION}/hscolour-${HSCOLOUR_VERSION}
-HADDOCK_OPTS+=		--hyperlink-source --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
-.      endif # HSCOLOUR
-.    endif # HADDOCK_AVAILABLE
-
-.  endif # !XMLDOCS
-
-.  if defined(XMLDOCS)
-BUILD_DEPENDS+=	docbook-xsl>0:textproc/docbook-xsl \
-		${LOCALBASE}/bin/xsltproc:textproc/libxslt
-
-.    if defined(XMLDOCS_CONF)
-BUILD_DEPENDS+=	autoconf>0:devel/autoconf
-.    endif
-
-USES+=		gmake
-
-.  endif # XMLDOCS
-
-.endif # DOCS
-
 __handle_datadir__=	--datadir='${DATADIR}' --datasubdir='' --docdir='${DOCSDIR}'
 
-.if defined(HADDOCK_AVAILABLE) && !defined(XMLDOCS) && ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--haddock-options=-w --with-haddock=${HADDOCK_CMD}
-.endif
-
-.if ${PORT_OPTIONS:MDYNAMIC}
-CONFIGURE_ARGS+=	--enable-shared --enable-executable-dynamic
-.else
-CONFIGURE_ARGS+=	--disable-shared --disable-executable-dynamic
-.endif
-
-.if ${PORT_OPTIONS:MPROFILE}
-CONFIGURE_ARGS+=	--enable-executable-profiling --enable-library-profiling
-.else
-CONFIGURE_ARGS+=	--disable-profiling --disable-library-profiling
-.endif
+CONFIGURE_ARGS+=	--disable-executable-dynamic \
+			--disable-profiling --disable-library-profiling
 
 .SILENT:
-
-post-patch::
-.if defined(XMLDOCS) && defined(XMLDOCS_CONF)
-	@${REINPLACE_CMD} -e 's|/usr/local/share/xsl/docbook|${LOCALBASE}/share/xsl/docbook|' \
-		${WRKSRC}/doc/configure.ac
-.endif
 
 _BUILD_SETUP=	${GHC_CMD} -o ${SETUP_CMD} -package Cabal --make
 
@@ -232,12 +183,6 @@ do-configure:
 	    ${ECHO_MSG} "===>  ${PKGNAME} configure fails: no setup program could be created."; \
 	    exit 1; \
 	fi
-
-.    if ${PORT_OPTIONS:MDOCS}
-.      if defined(XMLDOCS) && defined(XMLDOCS_CONF)
-	cd ${WRKSRC}/doc && ${LOCALBASE}/bin/autoconf && ./configure --prefix=${PREFIX}
-.      endif
-.    endif # DOCS
 .  endif # target(do-configure)
 .endif # !METAPORT
 
@@ -248,15 +193,6 @@ do-build:
 .    if !defined(STANDALONE)
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} register --gen-script
 .    endif
-
-.    if ${PORT_OPTIONS:MDOCS}
-.      if defined(HADDOCK_AVAILABLE) && !defined(XMLDOCS) && !defined(STANDALONE) && ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} haddock ${HADDOCK_OPTS}
-.      endif # STANDALONE
-.      if defined(XMLDOCS)
-	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
-.      endif # XMLDOCS
-.    endif # DOCS
 .  endif # target(do-build)
 .endif # !METAPORT
 
@@ -296,13 +232,6 @@ do-install:
 .      endif # MAN${sect}SRC
 .    endfor
 
-.    if ${PORT_OPTIONS:MDOCS}
-.      if !empty(XMLDOCS)
-.        for xmldoc in ${XMLDOCS}
-	@(cd ${WRKSRC}/${xmldoc:C/:.*$//g} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/${xmldoc:C/^.*://g})
-.        endfor
-.      endif # XMLDOCS
-.    endif # DOCS
 .  endif # target(do-install)
 .endif # !METAPORT
 
@@ -326,18 +255,6 @@ add-plist-cabal:
 
 .  if !defined(STANDALONE)
 	@${ECHO_CMD} '@postunexec ${LOCALBASE}/bin/ghc-pkg unregister --no-user-package-db --force ${PORTNAME}-${PORTVERSION}' >> ${TMPPLIST}
-.  endif
-
-.  if defined(HADDOCK_AVAILABLE) && ${PORT_OPTIONS:MDOCS}
-# GHC_LIB_DOCSDIR_REL=	share/doc/ghc-${GHC_VERSION}/html/libraries
-	(${ECHO} '@postexec ${LN} -s ${DOCSDIR}/html ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${PACKAGE} && \
-	  cd ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL} && \
-	  ${RM} doc-index*.html && ./gen_contents_index') >> ${TMPPLIST}
-	(${ECHO} '@postunexec ${RM} -r ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${PACKAGE}' ; \
-	 ${ECHO} '@postunexec cd ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL} && \
-	    ${RM} doc-index*.html && ./gen_contents_index') >> ${TMPPLIST}
-# Don't install index files
-	${ECHO} "@comment share/doc/ghc-%%GHC_VERSION%%/html/libraries/index.html" >> ${TMPPLIST}
 .  endif
 
 .  if !defined(STANDALONE)

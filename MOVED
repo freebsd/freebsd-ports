@@ -12772,3 +12772,6 @@ devel/rubygem-peek-rblineprof-rails50|devel/rubygem-peek-rblineprof-rails5|2019-
 devel/rubygem-peek-redis-rails50|devel/rubygem-peek-redis-rails5|2019-05-28|Obsolete by gitlab-ce upgrade, use devel/rubygem-peek-redis-rails5 instead
 mail/rubygem-premailer-rails19-rails50|mail/rubygem-premailer-rails19-rails5|2019-05-28|Obsolete by gitlab-ce upgrade, use mail/rubygem-premailer-rails19-rails5 instead
 www/rubygem-webpack-rails-rails50|www/rubygem-webpack-rails-rails5|2019-05-28|Obsolete by gitlab-ce upgrade, use www/rubygem-webpack-rails-rails5 instead
+lang/ghc843||2019-05-28|Old versions of GHC are removed from ports. Use devel/stack and appropriate resolver to install this version of GHC for your user only
+lang/ghc844||2019-05-28|Old versions of GHC are removed from ports. Use devel/stack and appropriate resolver to install this version of GHC for your user only
+lang/ghc862||2019-05-28|Old versions of GHC are removed from ports. Use devel/stack and appropriate resolver to install this version of GHC for your user only

@@ -20,30 +20,6 @@ HSCOLOUR_CMD?=	${LOCALBASE}/bin/HsColour
 
 GHC_VERSION?=	8.6.3
 
-HSCOLOUR_VERSION=	1.24.4
-
-HSCOLOUR_DESC?=	Colorize generated documentation by HsColour
-DYNAMIC_DESC?=	Add support for dynamic linking
-PROFILE_DESC?=	Add support for profiling
-
-.if (!exists(${GHC_CMD}) || exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/rts/libHSrts-ghc${GHC_VERSION}.so)) && !defined(IGNORE_DYNAMIC)
-OPTIONS_DEFINE+=	DYNAMIC
-OPTIONS_DEFAULT+=	DYNAMIC
-.endif
-
-.if (!exists(${GHC_CMD}) || exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/rts/libHSrts_p.a)) && !defined(IGNORE_PROFILE)
-OPTIONS_DEFINE+=	PROFILE
-.endif
-
-.if ((!exists(${GHC_CMD}) || exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/html)) || exists(${HADDOCK_CMD})) && !defined(IGNORE_DOCS)
-OPTIONS_DEFINE+=	DOCS
-HADDOCK_AVAILABLE=	yes
-
-.if (${PORTNAME} != hscolour || exists(${HSCOLOUR_CMD})) && !defined(IGNORE_HSCOLOUR)
-OPTIONS_DEFINE+=	HSCOLOUR
-.endif
-.endif
-
 .if defined(OPTIONSMKINCLUDED)
 IGNORE?=	options fail: bsd.cabal.mk already includes bsd.options.mk
 .endif
