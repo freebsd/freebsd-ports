@@ -21,7 +21,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
-# Uncomment when the default Perl is switched to 5.2(X+2)
+# Uncomment when the default Perl is switched to 5.3(X+2)
 #DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
 #EXPIRATION_DATE=<Release date of .0 + 3 years>
 
@@ -35,7 +35,7 @@ USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
 USE_GITHUB=	yes
 GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
-GH_TAGNAME=	v5.30.0-RC2-4-gc195675b2e
+GH_TAGNAME=	v5.31.0-72-g2324bdb9a8
 
 TEST_TARGET=	test_harness
 TEST_ENV=	${MAKE_ENV} TEST_JOBS=${MAKE_JOBS_NUMBER} \
