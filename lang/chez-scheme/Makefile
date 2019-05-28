@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	chez-scheme
-PORTVERSION=	9.5
+PORTVERSION=	9.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 MASTER_SITES=	http://distfiles.pirateparty.in/ashish/:boot \
 		LOCAL/ashish:boot
-DISTFILES=	${PORTNAME}-boot-a6fb.tar.xz:boot \
-		${PORTNAME}-boot-i3fb.tar.xz:boot
+DISTFILES=	${PORTNAME}-boot-a6fb-${PORTVERSION}.tar.xz:boot \
+		${PORTNAME}-boot-i3fb-${PORTVERSION}.tar.xz:boot
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Chez Scheme system
@@ -18,6 +18,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+
+USES=		gmake iconv:lib ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
 GH_PROJECT=	ChezScheme
@@ -25,13 +28,16 @@ GH_TUPLE=	nanopass:nanopass-framework-scheme:v1.9:nanopass/nanopass \
 		madler:zlib:v1.2.11:zlib/zlib \
 		dybvig:stex:v1.2.1:stex/stex
 
-USES=		gmake iconv:lib ncurses
-USE_XORG=	x11
+OPTIONS_DEFAULT=	X11
+OPTIONS_DEFINE=	X11
+
 HAS_CONFIGURE=	yes
 ALL_TARGET=	build
 CONFLICTS_INSTALL=	petite-chez-[0-9]*
 STRIP_FILES=	bin/petite bin/${PORTNAME} bin/${PORTNAME}-script
 CHEZ_LIBDIR=lib/csv${PORTVERSION}
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -luuid
 CONFIGURE_ARGS=	--installprefix=${PREFIX} \
 		--temproot=${STAGEDIR} \
 		--installschemename=${PORTNAME} \
@@ -39,6 +45,7 @@ CONFIGURE_ARGS=	--installprefix=${PREFIX} \
 PLIST_SUB=	PORTNAME=${PORTNAME} \
 		CHEZ_ARCH=${CHEZ_ARCH} \
 		CHEZ_LIBDIR=${CHEZ_LIBDIR}
+X11_USE=	XORG=x11
 
 .include <bsd.port.pre.mk>
 
@@ -55,6 +62,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		-e 's,/usr/local,${LOCALBASE},g' \
 		-e 's,-liconv,${ICONV_LIB},g' ${WRKSRC}/c/Mf-${CHEZ_ARCH}
+
+pre-build-X11-off:
+	${ECHO_CMD} '#undef LIBX11' >>${WRKSRC}/c/version.h
 
 post-install:
 .for f in ${STRIP_FILES}
