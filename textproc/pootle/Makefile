@@ -11,6 +11,8 @@ COMMENT=	User-friendly web portal for simple translation process
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Dependencies broken: Dependencies all pinned (==) not satisfied by ports
+
 RUN_DEPENDS=	translate-toolkit>=2.2.5:textproc/translate-toolkit \
 		${PYTHON_PKGNAMEPREFIX}Babel>=2.5.1:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=2.0.0:www/py-bleach@${PY_FLAVOR} \
