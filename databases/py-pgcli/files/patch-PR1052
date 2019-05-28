@@ -1,0 +1,56 @@
+# Upgrade to sqlparse 0.3.0 #1052
+# https://github.com/dbcli/pgcli/pull/1052
+
+# Unpin psycopg2
+# https://github.com/dbcli/pgcli/issues/1036
+# https://github.com/dbcli/pgcli/pull/1059
+
+From 1908142adb80f324d6c795e76e38f7939948d7f1 Mon Sep 17 00:00:00 2001
+From: Amjith Ramanujam <amjith.r@gmail.com>
+Date: Mon, 6 May 2019 09:05:56 -0700
+Subject: [PATCH 4/5] Upgrade to sqlparse 0.3.0.
+
+--- pgcli/packages/sqlcompletion.py.orig	2018-09-28 21:20:16 UTC
++++ pgcli/packages/sqlcompletion.py
+@@ -154,7 +154,7 @@ def suggest_type(full_text, text_before_cursor):
+         # Be careful here because trivial whitespace is parsed as a
+         # statement, but the statement won't have a first token
+         tok1 = stmt.parsed.token_first()
+-        if tok1 and tok1.value == '\\':
++        if tok1 and tok1.value.startswith('\\'):
+             text = stmt.text_before_cursor + stmt.word_before_cursor
+             return suggest_special(text)
+ 
+@@ -398,7 +398,7 @@ def suggest_based_on_last_token(token, stmt):
+     elif token_v == 'set':
+         return (Column(table_refs=stmt.get_tables(),
+                        local_tables=stmt.local_tables),)
+-    elif token_v in ('select', 'where', 'having', 'by', 'distinct'):
++    elif token_v in ('select', 'where', 'having', 'order by', 'distinct'):
+         # Check for a table alias or schema qualification
+         parent = (stmt.identifier and stmt.identifier.get_parent_name()) or []
+         tables = stmt.get_tables()
+--- setup.py.orig	2019-04-06 00:24:36 UTC
++++ setup.py
+@@ -16,8 +16,8 @@ install_requirements = [
+     'click >= 4.1',
+     'Pygments >= 2.0',  # Pygments has to be Capitalcased. WTF?
+     'prompt_toolkit>=2.0.6,<2.1.0',
+-    'psycopg2 >= 2.7.4,<2.8',
+-    'sqlparse >=0.2.2,<0.3.0',
++    'psycopg2 >= 2.7.4',
++    'sqlparse >=0.2.2,<0.4',
+     'configobj >= 5.0.6',
+     'humanize >= 0.5.1',
+     'cli_helpers[styles] >= 1.2.0',
+--- tests/test_sqlcompletion.py.orig	2018-01-11 20:31:20 UTC
++++ tests/test_sqlcompletion.py
+@@ -236,7 +236,7 @@ def test_distinct_suggests_cols(text):
+     (
+         'SELECT * FROM tbl x JOIN tbl1 y ORDER BY ',
+         'SELECT * FROM tbl x JOIN tbl1 y ORDER BY ',
+-        'BY',
++        'ORDER BY',
+     )
+ ])
+ def test_distinct_and_order_by_suggestions_with_aliases(text, text_before,
