@@ -1,0 +1,3 @@
+@shell bin/ksh%%93%%
+bin/shcomp%%93%%
+man/man1/ksh%%93%%.1.gz
