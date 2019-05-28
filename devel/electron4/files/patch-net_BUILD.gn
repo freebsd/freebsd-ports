@@ -1,0 +1,29 @@
+--- net/BUILD.gn.orig	2019-03-15 06:37:29 UTC
++++ net/BUILD.gn
+@@ -95,7 +95,7 @@ net_configs = [
+   "//build/config/compiler:wexit_time_destructors",
+ ]
+ 
+-if (is_linux) {
++if (is_linux && !is_bsd) {
+   net_configs += [ "//build/config/linux:libresolv" ]
+ }
+ 
+@@ -1904,6 +1904,17 @@ component("net") {
+       ]
+ 
+       sources -= [ "disk_cache/blockfile/file_posix.cc" ]
++    }
++
++    if (is_bsd) {
++      sources -= [
++         "base/address_tracker_linux.cc",
++         "base/address_tracker_linux.h",
++         "base/network_change_notifier_linux.cc",
++         "base/network_change_notifier_linux.h",
++         "base/network_interfaces_linux.cc",
++      ]
++      sources += [ "base/network_interfaces_freebsd.cc" ]
+     }
+ 
+     if (is_ios || is_mac) {
