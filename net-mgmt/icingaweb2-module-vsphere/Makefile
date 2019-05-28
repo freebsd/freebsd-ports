@@ -3,7 +3,7 @@
 PORTNAME=	icingaweb2-module-vsphere
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	icingaweb2>=2.4.1:net-mgmt/icingaweb2 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
 
-USES_PHP=	posix soap
+USE_PHP=	posix soap
 
 NO_BUILD=	yes
 NO_ARCH=	yes
