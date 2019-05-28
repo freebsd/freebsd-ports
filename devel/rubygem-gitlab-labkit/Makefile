@@ -12,8 +12,6 @@ COMMENT=	Instrumentation for GitLab
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		depends on package: rubygem-grpc>=1.19.0 - not found
-
 RUN_DEPENDS=	rubygem-actionpack5>=5:www/rubygem-actionpack5 \
 		rubygem-activesupport5>=5:devel/rubygem-activesupport5 \
 		rubygem-grpc>=1.19.0:net/rubygem-grpc \
