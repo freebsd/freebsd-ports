@@ -3,7 +3,7 @@
 
 PORTNAME=	fastjar
 PORTVERSION=	0.93.20060808
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers java
 MASTER_SITES=	LOCAL/maho/fastjar
 
@@ -13,7 +13,7 @@ COMMENT=	Version of JDK's `jar' command written entirely in C
 LICENSE=	GPLv2
 
 USES=		gmake makeinfo perl5 tar:bzip2
-USES_PERL5=	build
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
