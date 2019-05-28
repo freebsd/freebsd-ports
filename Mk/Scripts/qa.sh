@@ -974,6 +974,9 @@ depends_blacklist()
 			lang/gcc)
 				instead="USE_GCC"
 				;;
+			lang/julia)
+				instead="a dependency on lang/julia\${JULIA_DEFAULT:S/.//}"
+				;;
 			devel/llvm)
 				instead="a dependency on devel/llvm\${LLVM_DEFAULT}"
 				;;
