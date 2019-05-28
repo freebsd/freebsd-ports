@@ -14,7 +14,6 @@ LICENSE=	LGPL21
 
 USES=			python:2.7
 USE_PYTHON=		distutils
-PYTHON_PKGNAMEPREFIX=	yes
 PYDISTUTILS_EGGINFO=	GeoTypes-0.7.0-py${PYTHON_VER}.egg-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	hippysurfer
