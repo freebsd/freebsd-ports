@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apollo_upload_server
-PORTVERSION=	2.0.0.beta.3
+DISTVERSION=	2.0.0.beta.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
