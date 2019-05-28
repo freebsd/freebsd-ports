@@ -26,7 +26,6 @@ MAKE_JOBS_UNSAFE=yes
 
 PLIST_SUB=	APP_VERSION=${APP_VERSION}
 
-# always check the app version in otp_versions.table
 APP_VERSION=	1.9.1
 APP_DIR=	${PREFIX}/lib/erlang/lib/jinterface-${APP_VERSION}
 
@@ -42,6 +41,9 @@ do-build:
 	${RM} -r ${WRKSRC}/lib/jinterface/priv/com
 
 do-install:
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/jinterface/vsn.mk | ${CUT} -w -f3) = ${APP_VERSION} ]; then \
+		${ECHO_MSG} "===>  APP_VERSION (${APP_VERSION}) in Makefile does not match value in lib/jinterface/vsn.mk"; exit 1; \
+	fi
 	@${MKDIR} ${STAGEDIR}${APP_DIR}
 	@${MKDIR} ${STAGEDIR}${APP_DIR}/priv
 	cd ${WRKSRC}/lib/jinterface && ${COPYTREE_SHARE} ebin ${STAGEDIR}${APP_DIR}
