@@ -3,7 +3,7 @@
 
 PORTNAME=	sigar
 PORTVERSION=	1.7.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	java devel
 PKGNAMEPREFIX=	java-
 
@@ -25,7 +25,7 @@ GH_ACCOUNT=	amishHammer
 GH_TAGNAME=	b5af695
 
 USES=		perl5
-USES_PERL5=	build
+USE_PERL5=	build
 USE_JAVA=	yes
 JAVA_RUN=	yes
 USE_GCC=	any
