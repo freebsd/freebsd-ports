@@ -2,26 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	vnstat
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.2
+PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	https://humdi.net/vnstat/ \
-		https://source.ipfire.org/source-2.x/
+MASTER_SITES=	https://humdi.net/vnstat/
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Console-based network traffic monitor
 
 LICENSE=	GPLv2
 
-USE_RC_SUBR=	vnstat
-
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 
 USES=	gmake
+USE_RC_SUBR=	vnstat
+
 USERS=	vnstat
 GROUPS=	vnstat
 
@@ -35,7 +32,7 @@ OPTIONS_DEFAULT=	GUI
 OPTIONS_SUB=	yes
 GUI_DESC=	Build with graphics/gd dependency
 
-GUI_LIB_DEPENDS+=	libgd.so:graphics/gd
+GUI_LIB_DEPENDS=	libgd.so:graphics/gd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vnstat ${STAGEDIR}/${PREFIX}/bin/vnstat
