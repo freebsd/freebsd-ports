@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	radarr
-PORTVERSION=	0.2.0.1293
+PORTVERSION=	0.2.0.1344
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Radarr/Radarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Radarr.develop.${PORTVERSION}.linux
