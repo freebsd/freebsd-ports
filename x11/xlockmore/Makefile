@@ -3,6 +3,7 @@
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.55
+PORTREVISION=	1
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.sillycycle.com/xlock/ \
 		LOCAL/jgh/x11/${PORTNAME}/
@@ -46,6 +47,8 @@ OPTIONS_RADIO=	ONE
 OPTIONS_RADIO_ONE=	PAM XLOCK_GROUP
 
 NO_OPTIONS_SORT=yes
+
+JP_IMPLIES=	MB
 
 MAKE_ARGS+=	bindir=${PREFIX}/bin \
 		mandir=${PREFIX}/man/man1 \
@@ -101,7 +104,6 @@ CONFIGURE_ARGS+=	--enable-use-mb
 .if ${PORT_OPTIONS:MJP}
 XLOCKMORE_LANG=	ja
 CATEGORIES+=	japanese
-PORT_OPTIONS+=	MB
 .endif
 
 .if defined(XLOCKMORE_LANG)
