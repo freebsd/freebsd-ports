@@ -3,7 +3,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.9.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://snort.org/downloads/snort/ \
 		ZI
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libpcap.so:net/libpcap
 RUN_DEPENDS=	daq>=2.0.0:net/daq
 
-USES=			cpe libtool pathfix shebangfix ssl
+USES=			bison cpe libtool pathfix shebangfix ssl
 USE_RC_SUBR=		snort
 USE_LDCONFIG=		yes
 
