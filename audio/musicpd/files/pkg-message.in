@@ -24,7 +24,6 @@ Then start the server with
 
 or reboot.
 
-
 NOTE: The musicpd server does not come with a client. In order
       to use it, you need one. They come in all shapes and
       sizes for many platforms (including iOS and Android for
@@ -38,6 +37,5 @@ NOTE: The musicpd server does not come with a client. In order
       GNOME / GTK: ario, gimmix, glurp, gmpc, sonata
       KDE / Qt: cantana, quimup, qmpdlient
       Web: phpmp
-
 
 ****************************************************************

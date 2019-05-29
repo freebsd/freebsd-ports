@@ -35,5 +35,4 @@ post-patch:
 	@${REINPLACE_CMD} '/^ckportdir = .*/d' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} '/^ckport_DATA = .*/d' ${WRKSRC}/Makefile.am
 
-
 .include <bsd.port.mk>

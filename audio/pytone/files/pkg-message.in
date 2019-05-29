@@ -1,4 +1,3 @@
-
 ###############################################################
 
 To use pytone, you should copy %%PREFIX%%/etc/pytonerc.sample to:
@@ -12,4 +11,3 @@ collection:
 musicbasedir=/root/of/your/music/collection
 
 ###############################################################
-

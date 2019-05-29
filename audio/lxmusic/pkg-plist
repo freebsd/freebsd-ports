@@ -65,4 +65,3 @@ share/applications/lxmusic.desktop
 %%DATADIR%%/pref-dlg.ui.glade
 %%DATADIR%%/track-info.ui.glade
 share/pixmaps/lxmusic.png
-
