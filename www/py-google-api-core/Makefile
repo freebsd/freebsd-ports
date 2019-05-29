@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-api-core
-PORTVERSION=	1.11.0
+PORTVERSION=	1.11.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PY_FUTURES} \
 		${PYTHON_PKGNAMEPREFIX}google-auth>=0.4.0:security/py-google-auth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}googleapis-common-protos>=1.5.3:devel/py-googleapis-common-protos@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}grpcio>=1.8.2:devel/py-grpcio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}grpcio>=1.8.2<2.0:devel/py-grpcio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}grpcio-gcp>=0.2.2:devel/py-grpcio-gcp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.4.0:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
