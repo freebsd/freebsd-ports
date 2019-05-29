@@ -6032,7 +6032,6 @@
     SUBDIR += skalibs
     SUBDIR += slf4j
     SUBDIR += slibtool
-    SUBDIR += smack
     SUBDIR += smake
     SUBDIR += smc
     SUBDIR += smv
