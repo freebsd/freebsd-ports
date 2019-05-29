@@ -1,6 +1,8 @@
 Avoid unnecessarily restarting the LLVM build and installing it
 into STAGEDIR during the install phase.
 
+https://github.com/rust-lang/rust/issues/61206
+
 --- src/bootstrap/native.rs.orig	2019-05-22 05:39:52 UTC
 +++ src/bootstrap/native.rs
 @@ -92,17 +92,9 @@ impl Step for Llvm {
