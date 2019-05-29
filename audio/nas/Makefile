@@ -3,7 +3,7 @@
 
 PORTNAME=	nas
 PORTVERSION=	1.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}%20%28stable%29
 EXTRACT_SUFX=	.src.tar.gz
@@ -19,8 +19,6 @@ USE_XORG=	x11 xext xt xau sm ice xp xpm xmu xaw
 USE_LDCONFIG=	yes
 MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
 MAKE_JOBS_UNSAFE=	yes
-
-SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
