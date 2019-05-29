@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Exception-Class-DBI
-PORTVERSION=	1.01
-PORTREVISION=	1
+PORTVERSION=	1.04
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +17,6 @@ LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1+
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
