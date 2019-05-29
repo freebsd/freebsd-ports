@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mustache
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
