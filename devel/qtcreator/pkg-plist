@@ -840,7 +840,9 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-macros.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-mime-types.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-modeling.html
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-modes.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-os-supported-platforms.html
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-output-panes.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-overview.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-project-cmake.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-project-creating.html
@@ -866,6 +868,7 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-running-valgrind-remotely.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-scxml.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-sharing-project-settings.html
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-sidebar-views.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-targets.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-task-lists.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-testing.html
@@ -888,9 +891,14 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-visual-editor.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/creator-writing-program.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/examples-manifest.xml
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/anchor_fill.png
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/anchor_horizontal.png
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/anchor_vertical.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/anchor-bottom.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/anchor-fill.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/anchor-horizontal-center.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/anchor-left.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/anchor-right.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/anchor-top.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/anchor-vertical-center.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/animation.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/arrow_bc.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/arrowdown.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/arrowup.png
@@ -931,6 +939,7 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/creator_managingprojects.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/creator_publishing.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/creator_testing.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/debugger_singleinstructionmode.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/debugger_stepinto_small.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/debugger_stepout_small.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/debugger_stepover_small.png
@@ -954,6 +963,8 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/icon-export-canvas.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/icon_color_none.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/kcachegrind.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/keyframe_linear_inactive.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/keyframe_manualbezier_inactive.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/keyword.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/leafsort.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/leftsidebaricon.png
@@ -1018,7 +1029,6 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qmldesigner-properties-explicit-base.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qmldesigner-properties-explicit-state1.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qmldesigner-qml-components.png
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qmldesigner-reset-view.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qmldesigner-run-custom-exe.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qmldesigner-run-settings.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qmldesigner-screen-design.png
@@ -1164,6 +1174,7 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-locator.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-mime-types-magic-header.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-mime-types.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-mode-selector.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-modeleditor-classes.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-modeleditor-packages.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-modeleditor.png
@@ -1233,6 +1244,7 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-syntax-highlighter.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-syntaxerror-clang.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-syntaxerror.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-task-pane.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-tests-view.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-texfinder-filter.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/qtcreator-texfinder-ui-horizontal-layout.png
@@ -1270,6 +1282,7 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/refactormarker.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/reload_gray.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/replace.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/reset.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/rightsidebaricon.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/row.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/run_small.png
@@ -1287,6 +1300,9 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/splitbutton_horizontal.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/statistics.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/stop_small.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/studio-curve-picker.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/studio-timeline-settings.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/studio-timeline.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/text.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/unifieddiff.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/used-in-examples/transitions/qt-logo.png
@@ -1330,6 +1346,7 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/quick-scalable-image.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/quick-signals.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/quick-states.html
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/studio-timeline.html
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/style/offline-simple.css
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/style/offline.css
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/technical-support.html
@@ -1383,6 +1400,7 @@ share/icons/hicolor/64x64/apps/QtProject-qtcreator.png
 %%DATADIR%%/generic-highlighter/syntax/json.xml
 %%DATADIR%%/generic-highlighter/syntax/makefile.xml
 %%DATADIR%%/generic-highlighter/syntax/markdown.xml
+%%DATADIR%%/generic-highlighter/syntax/modelines.xml
 %%DATADIR%%/generic-highlighter/syntax/perl.xml
 %%DATADIR%%/generic-highlighter/syntax/powershell.xml
 %%DATADIR%%/generic-highlighter/syntax/python.xml
