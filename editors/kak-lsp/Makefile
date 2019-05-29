@@ -2,8 +2,7 @@
 
 PORTNAME=	kak-lsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.2.0
-PORTREVISION=	2
+DISTVERSION=	6.2.1
 CATEGORIES=	editors
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -152,10 +151,11 @@ CARGO_CRATES=	adler32-1.0.3 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
+SUB_FILES=	pkg-message
+
 PLIST_FILES=	bin/kak-lsp \
 		"@sample ${ETCDIR}/kak-lsp.toml.sample"
 PORTDOCS=	README.asciidoc
-SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 
