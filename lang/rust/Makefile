@@ -286,13 +286,15 @@ do-test:
 		--config ./config.toml \
 		--jobs ${MAKE_JOBS_NUMBER}
 
-makesum-all-archs:
-	${MAKE} makesum ARCH=${ONLY_FOR_ARCHS:O:[1]}
+.if !defined(_RUST_MAKESUM_GUARD)
+makesum:
+	${MAKE} -D_RUST_MAKESUM_GUARD makesum ARCH=${ONLY_FOR_ARCHS:O:[1]}
 .for arch in ${ONLY_FOR_ARCHS:O:[2..-1]}
-	${MAKE} makesum ARCH=${arch} DISTINFO_FILE=${DISTINFO_FILE}.${arch}
+	${MAKE} -D_RUST_MAKESUM_GUARD makesum ARCH=${arch} DISTINFO_FILE=${DISTINFO_FILE}.${arch}
 	${GREP} ${RUST_ARCH_${arch}} ${DISTINFO_FILE}.${arch} >> ${DISTINFO_FILE}
 	${RM} ${DISTINFO_FILE}.${arch}
 .endfor
+.endif
 
 BOOTSTRAPS_SOURCE_PKG_FBSDVER=		10
 BOOTSTRAPS_SOURCE_PKG_FBSDVER_aarch64=	11
