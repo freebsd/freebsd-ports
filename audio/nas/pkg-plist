@@ -16,7 +16,7 @@ bin/issndfile
 bin/nasd
 bin/playbucket
 bin/soundtoh
-etc/nasd.conf.eg
+@sample etc/nasd.conf.eg etc/nasd.conf
 include/audio/8svx.h
 include/audio/Afuncproto.h
 include/audio/Afuncs.h
