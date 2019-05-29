@@ -10,13 +10,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBI Exception objects
 
-RUN_DEPENDS=	p5-Exception-Class>=0:devel/p5-Exception-Class \
-		p5-DBI>=0:databases/p5-DBI
-
-LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+		p5-Exception-Class>=0:devel/p5-Exception-Class
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
