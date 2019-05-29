@@ -2,7 +2,7 @@
 
 PORTNAME=	ghq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.3
+DISTVERSION=	0.12.5
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -34,7 +34,7 @@ MANPAGES_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
 MANPAGES_PLIST_FILES=	man/man1/ghq.1.gz
 
 post-build-MANPAGES-on:
-	cd ${WRKSRC} && asciidoctor -b manpage -d manpage ghq.txt
+	cd ${WRKSRC} && asciidoctor -b manpage -d manpage -o ghq.1 README.adoc
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
