@@ -33,6 +33,9 @@ CONFIGURE_ARGS+=--enable-threads --without-odbc --with-javac --without-wx
 CONFIGURE_ENV+=	ac_cv_prog_JAVAC="${JAVAC}"
 
 pre-configure:
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/jinterface/vsn.mk | ${GREP} -E "JINTERFACE_VSN *=" | ${CUT} -w -f3) = ${APP_VERSION} ]; then \
+		${ECHO_MSG} "===>  APP_VERSION (${APP_VERSION}) in Makefile does not match value in lib/jinterface/vsn.mk"; exit 1; \
+	fi
 	@cd ${WRKSRC} && ./otp_build autoconf
 
 do-build:
@@ -41,9 +44,6 @@ do-build:
 	${RM} -r ${WRKSRC}/lib/jinterface/priv/com
 
 do-install:
-	@if [ ! $$(${CAT} ${WRKSRC}/lib/jinterface/vsn.mk | ${CUT} -w -f3) = ${APP_VERSION} ]; then \
-		${ECHO_MSG} "===>  APP_VERSION (${APP_VERSION}) in Makefile does not match value in lib/jinterface/vsn.mk"; exit 1; \
-	fi
 	@${MKDIR} ${STAGEDIR}${APP_DIR}
 	@${MKDIR} ${STAGEDIR}${APP_DIR}/priv
 	cd ${WRKSRC}/lib/jinterface && ${COPYTREE_SHARE} ebin ${STAGEDIR}${APP_DIR}
