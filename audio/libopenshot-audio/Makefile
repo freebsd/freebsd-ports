@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
-USES=		cmake dos2unix
+USES=		cmake compiler:c++11-lang dos2unix
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
