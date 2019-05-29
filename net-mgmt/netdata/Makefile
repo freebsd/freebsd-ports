@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netdata
-PORTVERSION=	1.13.0
+PORTVERSION=	1.15.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
@@ -11,12 +11,14 @@ COMMENT=	Scalable distributed realtime performance and health monitoring
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/include/uuid/uuid.h:misc/e2fsprogs-libuuid
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+		libuv.so:devel/libuv \
+		liblz4.so:archivers/liblz4
+
 RUN_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl
 
-USES=		autoreconf pathfix pkgconfig:both python shebangfix
+USES=		autoreconf pathfix pkgconfig:both python shebangfix ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	firehol
