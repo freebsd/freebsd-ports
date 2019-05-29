@@ -9,7 +9,7 @@ COMMENT=	Command line tool to check internet connection speed
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dotse
@@ -25,6 +25,10 @@ OPTIONS_DEFINE=	GNUTLS
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_MAKE_ARGS=	GNUTLS=1
+
+post-patch:
+	${REINPLACE_CMD} -e 's/CXX = c++/CXX ?= c++/g' \
+		${WRKSRC}/src/framework/mk.inc
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/cli ${STAGEDIR}/${PREFIX}/bin/bbk_cli
