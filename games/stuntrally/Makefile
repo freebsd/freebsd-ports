@@ -57,8 +57,14 @@ MASTER_SERVER_CMAKE_BOOL=	BUILD_MASTER_SERVER
 MASTER_SERVER_DESC=		Build the master server
 MASTER_SERVER_LIB_DEPENDS=	libenet.so:net/enet
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+CXXFLAGS+=	-Wno-narrowing
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Readme.txt ${STAGEDIR}${DOCSDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
