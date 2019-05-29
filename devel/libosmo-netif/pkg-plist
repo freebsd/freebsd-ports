@@ -10,5 +10,5 @@ include/osmocom/netif/stream.h
 lib/libosmonetif.a
 lib/libosmonetif.so
 lib/libosmonetif.so.6
-lib/libosmonetif.so.6.0.0
+lib/libosmonetif.so.6.1.0
 libdata/pkgconfig/libosmo-netif.pc
