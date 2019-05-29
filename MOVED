@@ -12775,3 +12775,7 @@ www/rubygem-webpack-rails-rails50|www/rubygem-webpack-rails-rails5|2019-05-28|Ob
 lang/ghc843||2019-05-28|Old versions of GHC are removed from ports. Use devel/stack and appropriate resolver to install this version of GHC for your user only
 lang/ghc844||2019-05-28|Old versions of GHC are removed from ports. Use devel/stack and appropriate resolver to install this version of GHC for your user only
 lang/ghc862||2019-05-28|Old versions of GHC are removed from ports. Use devel/stack and appropriate resolver to install this version of GHC for your user only
+graphics/cinepaint||2019-05-29|Has expired: Vulnerable since 2015, unmaintained and underlinks
+audio/specimen||2019-05-29|Has expired: Unmaintained, depends on expiring x11-toolkits/phat
+devel/smack||2019-05-29|Has expired: Unmaintained, upstream disappeared, underlinks
+x11-toolkits/phat||2019-05-29|Has expired: Unmaintained, upstream disappeared, underlinks

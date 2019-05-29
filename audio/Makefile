@@ -771,7 +771,6 @@
     SUBDIR += soundtouch
     SUBDIR += sox
     SUBDIR += spc2it
-    SUBDIR += specimen
     SUBDIR += spectrogram
     SUBDIR += speech-denoiser-lv2
     SUBDIR += speex
