@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fonttools
-PORTVERSION=	3.41.2
+PORTVERSION=	3.42.0
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -51,8 +51,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing>=0:devel/py-typing@${PY_FLAVOR}
 .endif
 
 .if ${PORT_OPTIONS:MUNICODE}
-.if ${PYTHON_REL} < 3700
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unicodedata2>=11.0.0:devel/py-unicodedata2@${PY_FLAVOR}
+.if ${PYTHON_REL} < 3800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unicodedata2>=12.0.0:devel/py-unicodedata2@${PY_FLAVOR}
 .endif
 .endif
 
