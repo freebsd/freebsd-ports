@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unicodedata2
-PORTVERSION=	11.0.0
+PORTVERSION=	12.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Unicodedata backport and updates
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_PYTHON=	autoplist concurrent distutils
 USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
