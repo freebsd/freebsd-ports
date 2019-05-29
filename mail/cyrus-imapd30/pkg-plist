@@ -149,6 +149,7 @@ lib/libcyrus_sieve.so.0.0.0
 %%SITE_ARCH%%/auto/Cyrus/IMAP/IMAP.so
 %%SITE_ARCH%%/auto/Cyrus/SIEVE/managesieve/managesieve.so
 libdata/pkgconfig/libcyrus.pc
+libdata/pkgconfig/libcyrus_imap.pc
 libdata/pkgconfig/libcyrus_min.pc
 libdata/pkgconfig/libcyrus_sieve.pc
 @sample %%EXAMPLESDIR%%/imapd.conf etc/imapd.conf
