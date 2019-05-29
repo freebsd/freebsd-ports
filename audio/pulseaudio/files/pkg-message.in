@@ -15,6 +15,5 @@ This can also be set in %%PREFIX%%/etc/pulse/default.pa
 
 Replace the number '3' with the new default you want to set.
 
-
 The audio/freedesktop-sound-theme is needed if the default sound files
 are uncommented in the %%PREFIX%%/etc/pulse/default.pa file.
