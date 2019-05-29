@@ -15,6 +15,8 @@ USES=		cmake localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	devernay
 
+CMAKE_OFF=	USE_BLAS
+
 OPTIONS_DEFINE=	EXAMPLES
 
 post-install-EXAMPLES-on:
