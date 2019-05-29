@@ -24,7 +24,7 @@
 +  if(!buf || buf->magic != MUTT_MAILDIR)
 +    return;
 +
-+  snprintf (buffer, sizeof (buffer), "%s/tmp", buf->path);
++  snprintf (buffer, sizeof (buffer), "%s/tmp", mutt_b2s(buf->pathbuf));
 +  if (lstat (buffer, &s) != 0)
 +    return;
 +

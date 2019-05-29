@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	2018-12-01 04:54:52 UTC
+--- doc/Makefile.in.orig	2019-05-25 16:13:43 UTC
 +++ doc/Makefile.in
-@@ -678,14 +678,7 @@ install-data-local: makedoc-all instdoc
+@@ -684,14 +684,7 @@ install-data-local: makedoc-all instdoc
  	-for f in $(HTML_DOCFILES) ; do \
  		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir) ; \
  	done
@@ -16,7 +16,7 @@
  	-if [ -f mutt.info ] ; then \
  	  $(MKDIR_P) $(DESTDIR)$(infodir) ; \
  	  $(INSTALL) -m 644 mutt.info $(DESTDIR)$(infodir) ; \
-@@ -721,9 +714,7 @@ uninstall-local:
+@@ -727,9 +720,7 @@ uninstall-local:
  
  check:
  manual.txt: manual.html

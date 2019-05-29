@@ -1,17 +1,17 @@
---- muttlib.c.orig	2018-11-24 19:06:21 UTC
+--- muttlib.c.orig	2019-05-26 19:28:53 UTC
 +++ muttlib.c
-@@ -845,16 +845,15 @@ void _mutt_buffer_mktemp (BUFFER *buf, c
+@@ -856,16 +856,15 @@ void _mutt_buffer_mktemp (BUFFER *buf, const char *pre
  void _mutt_mktemp (char *s, size_t slen, const char *prefix, const char *suffix,
                     const char *src, int line)
  {
 -  size_t n = snprintf (s, slen, "%s/%s-%s-%d-%d-%ld%ld%s%s",
--      NONULL (Tempdir), NONULL (prefix), NONULL (Hostname),
--      (int) getuid (), (int) getpid (), random (), random (),
--      suffix ? "." : "", NONULL (suffix));
+-                       NONULL (Tempdir), NONULL (prefix), NONULL (Hostname),
+-                       (int) getuid (), (int) getpid (), random (), random (),
+-                       suffix ? "." : "", NONULL (suffix));
 +  size_t n = snprintf (s, slen, "%s/mutt-%s-XXXXXXXX", NONULL (Tempdir), NONULL (Hostname));
    if (n >= slen)
      dprint (1, (debugfile, "%s:%d: ERROR: insufficient buffer space to hold temporary filename! slen=%zu but need %zu\n",
- 	    src, line, slen, n));
+                 src, line, slen, n));
 -  dprint (3, (debugfile, "%s:%d: mutt_mktemp returns \"%s\".\n", src, line, s));
 -  if (unlink (s) && errno != ENOENT)
 -    dprint (1, (debugfile, "%s:%d: ERROR: unlink(\"%s\"): %s (errno %d)\n", src, line, s, strerror (errno), errno));
@@ -22,4 +22,4 @@
 +  }
  }
  
- void mutt_free_alias (ALIAS **p)
+ /* these characters must be escaped in regular expressions */
