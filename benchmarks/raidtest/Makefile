@@ -10,14 +10,21 @@ DISTFILES=	# none
 MAINTAINER=	pjd@FreeBSD.org
 COMMENT=	Test performance of storage devices
 
+LICENSE=	BSD2CLAUSE
+
 NO_WRKSUBDIR=	yes
 USES=		uidfix
 PLIST_FILES=	bin/raidtest
+PORTDOCS=	README
 
-do-fetch:
+OPTIONS_DEFINE=	DOCS
 
 do-extract:
-	${MKDIR} ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
 	${LN} -sf ${FILESDIR}/${PORTNAME}.c ${FILESDIR}/Makefile ${WRKSRC}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
