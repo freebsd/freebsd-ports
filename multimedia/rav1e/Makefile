@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190522
-PORTREVISION=	1
+PORTVERSION=	s20190529
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	560c9cd5
+GH_TAGNAME=	090c64f3
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.7.3 \
@@ -27,7 +26,7 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		arrayvec-0.4.10 \
 		atty-0.2.11 \
 		autocfg-0.1.4 \
-		backtrace-0.3.20 \
+		backtrace-0.3.26 \
 		backtrace-sys-0.1.28 \
 		bincode-1.1.4 \
 		bindgen-0.49.2 \
@@ -72,6 +71,7 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		nasm-rs-0.1.4 \
 		nodrop-0.1.13 \
 		nom-4.2.3 \
+		num-derive-0.2.5 \
 		num-traits-0.2.8 \
 		num_cpus-1.10.0 \
 		numtoa-0.1.0 \
@@ -133,7 +133,7 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		winapi-util-0.1.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		wincolor-1.0.1 \
-		y4m-0.3.2
+		y4m-0.3.3
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
