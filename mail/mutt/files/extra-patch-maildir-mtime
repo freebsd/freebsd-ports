@@ -1,8 +1,8 @@
---- PATCHES.orig	2018-05-19 21:17:16 UTC
+--- PATCHES.orig	2019-05-26 19:28:55 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.7.ust.maildir-mtime.2
---- browser.c.orig	2018-05-19 20:33:53 UTC
+--- browser.c.orig	2019-05-26 19:28:52 UTC
 +++ browser.c
 @@ -32,6 +32,7 @@
  #ifdef USE_IMAP
@@ -12,7 +12,7 @@
  
  #include <stdlib.h>
  #include <dirent.h>
-@@ -439,6 +439,21 @@
+@@ -460,6 +461,21 @@ static void init_state (struct browser_state *state, M
      menu->data = state->entry;
  }
  
@@ -24,7 +24,7 @@
 +  if(!buf || buf->magic != MUTT_MAILDIR)
 +    return;
 +
-+  snprintf (buffer, sizeof (buffer), "%s/tmp", buf->path);
++  snprintf (buffer, sizeof (buffer), "%s/tmp", mutt_b2s(buf->pathbuf));
 +  if (lstat (buffer, &s) != 0)
 +    return;
 +
@@ -32,21 +32,21 @@
 +}
 +
  static int examine_directory (MUTTMENU *menu, struct browser_state *state,
- 			      char *d, const char *prefix)
+ 			      const char *d, const char *prefix)
  {
-@@ -504,6 +504,7 @@
+@@ -526,6 +542,7 @@ static int examine_directory (MUTTMENU *menu, struct b
      tmp = Incoming;
-     while (tmp && mutt_strcmp (buffer, tmp->path))
+     while (tmp && mutt_strcmp (mutt_b2s (buffer), mutt_b2s (tmp->pathbuf)))
        tmp = tmp->next;
 +    check_maildir_times (tmp, &s);
      if (tmp && Context &&
          !mutt_strcmp (tmp->realpath, Context->realpath))
      {
-@@ -578,6 +578,7 @@
+@@ -604,6 +621,7 @@ static int examine_mailboxes (MUTTMENU *menu, struct b
  	s.st_mtime = st2.st_mtime;
      }
  
 +    check_maildir_times (tmp, &s);
-     add_folder (menu, state, buffer, &s, tmp);
+     add_folder (menu, state, mutt_b2s (mailbox), &s, tmp);
    }
    while ((tmp = tmp->next));

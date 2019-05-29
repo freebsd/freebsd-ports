@@ -75,6 +75,7 @@ man/man5/muttrc.5.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc-compress
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc-sidebar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc-starter
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.muttrc-tlr
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.vimrc-sidebar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smime.rc
