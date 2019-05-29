@@ -1,0 +1,11 @@
+--- tty-pie.gemspec.orig	2019-05-28 18:51:39 UTC
++++ tty-pie.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<pastel>.freeze, ["~> 0.7.2"])
+-      s.add_runtime_dependency(%q<tty-cursor>.freeze, ["~> 0.6.0"])
++      s.add_runtime_dependency(%q<tty-cursor>.freeze, ["~> 0.6"])
+       s.add_development_dependency(%q<bundler>.freeze, ["~> 1.16"])
+       s.add_development_dependency(%q<rake>.freeze, ["~> 10.0"])
+       s.add_development_dependency(%q<rspec>.freeze, ["~> 3.0"])
