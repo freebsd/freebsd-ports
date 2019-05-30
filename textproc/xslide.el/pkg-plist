@@ -4,9 +4,3 @@ share/emacs/site-lisp/xslide-data.el
 share/emacs/site-lisp/xslide-font.el
 share/emacs/site-lisp/xslide-initial.xsl
 share/emacs/site-lisp/xslide-process.el
-lib/xemacs/site-lisp/xslide.el
-lib/xemacs/site-lisp/xslide-abbrev.el
-lib/xemacs/site-lisp/xslide-data.el
-lib/xemacs/site-lisp/xslide-font.el
-lib/xemacs/site-lisp/xslide-initial.xsl
-lib/xemacs/site-lisp/xslide-process.el
