@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	inputstream.adaptive
-DISTVERSION=	2.3.18
+DISTVERSION=	2.3.19
+DISTVERSIONSUFFIX=	-Leia
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	kodi-addon-
 PKGNAMESUFFIX=	-devel
