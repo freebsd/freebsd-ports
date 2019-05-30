@@ -3,7 +3,7 @@
 
 PORTNAME=	a2ps
 PORTVERSION=	4.13b
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	print
 MASTER_SITES=	GNU LOCAL/hrs/a2ps/:i18n
 
@@ -77,13 +77,6 @@ post-configure:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MEMACS}
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp
-	${LN} -sf ${PREFIX}/share/emacs/site-lisp/a2ps-print.el \
-		  ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp/a2ps-print.el
-	${LN} -sf ${PREFIX}/share/emacs/site-lisp/a2ps.el \
-		  ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp/a2ps.el
-.endif
 	cd ${WRKSRC}/doc && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${.MAKEFLAGS} ${MAKE_ARGS} ${INSTALL_TARGET}
 	${RM} ${STAGEDIR}${PREFIX}/lib/liba2ps.la
