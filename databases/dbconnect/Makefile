@@ -10,12 +10,14 @@ MASTER_SITES=	SF/${PORTNAME}/DBConnect%20API%200.3%20Source%20Code/DBConnect%20A
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use C++ object API to allow applications to connect to databases
 
+DEPRECATED=	Abandonware and unused in the tree
+EXPIRATION_DATE=	2019-06-15
+
 USES=		autoreconf gmake dos2unix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CXXFLAGS+=	-fPIC -DFREEBSD
-LDFLAG+=	-lpthread
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
