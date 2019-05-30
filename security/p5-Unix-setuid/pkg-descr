@@ -1,0 +1,5 @@
+This module is inspired by File::chdir and File::umask, using a tied
+scalar variable to get/set stuffs. One benefit of this is being able to
+use Perl's "local" with it, effectively setting something locally.
+
+WWW: https://metacpan.org/release/Unix-setuid

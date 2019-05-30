@@ -710,6 +710,7 @@
     SUBDIR += p5-Tie-EncryptedHash
     SUBDIR += p5-Tree-Authz
     SUBDIR += p5-Unix-Passwd-File
+    SUBDIR += p5-Unix-setuid
     SUBDIR += p5-Yahoo-BBAuth
     SUBDIR += p5-dicewaregen
     SUBDIR += p5-openxpki
