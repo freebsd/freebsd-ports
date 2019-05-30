@@ -1,7 +1,3 @@
-lib/xemacs/site-lisp/doctest-mode.el
-lib/xemacs/site-lisp/python-mode.el
-lib/xemacs/site-lisp/pycomplete.el
-lib/xemacs/site-lisp/pycomplete.py
 share/emacs/site-lisp/doctest-mode.el
 share/emacs/site-lisp/python-mode.el
 share/emacs/site-lisp/pycomplete.el
