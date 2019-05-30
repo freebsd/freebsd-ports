@@ -1,4 +1,3 @@
-@comment By 'cd /usr/local; find share/emacs/site-lisp/wnn7egg -type f | sort'
 share/emacs/site-lisp/wnn7egg/eggrc-wnn7
 share/emacs/site-lisp/wnn7egg/its-v309/han-kata.el
 share/emacs/site-lisp/wnn7egg/its-v309/hankaku.el
@@ -14,20 +13,3 @@ share/emacs/site-lisp/wnn7egg/wnn7egg-leim.el
 share/emacs/site-lisp/wnn7egg/wnn7egg-lib.el
 share/emacs/site-lisp/wnn7egg/wnn7egg-rpc.el
 share/emacs/site-lisp/wnn7egg/wnn7egg.el
-@comment By 'cd /usr/local; find lib/xemacs/site-packages/lisp/wnn7egg -type f|sort'
-lib/xemacs/site-packages/lisp/wnn7egg/eggrc-wnn7
-lib/xemacs/site-packages/lisp/wnn7egg/its-v309/han-kata.el
-lib/xemacs/site-packages/lisp/wnn7egg/its-v309/hankaku.el
-lib/xemacs/site-packages/lisp/wnn7egg/its-v309/hira.el
-lib/xemacs/site-packages/lisp/wnn7egg/its-v309/kanainput.el
-lib/xemacs/site-packages/lisp/wnn7egg/its-v309/kata.el
-lib/xemacs/site-packages/lisp/wnn7egg/its-v309/zenkaku.el
-lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-cnv.el
-lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-comx21.el
-lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-comx214.el
-lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-edep.el
-lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-jsymbol.el
-lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-leim.el
-lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-lib.el
-lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-rpcx21.el
-lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg.el
