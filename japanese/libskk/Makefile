@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libskk
-DISTVERSION=	1.0.4
+DISTVERSION=	1.0.5
 CATEGORIES=	japanese
 
 MAINTAINER=	hiroto.kagotani@gmail.com
@@ -14,9 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	valac:lang/vala \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
-		libjson-glib-1.0.so:devel/json-glib
+		libjson-glib-1.0.so:devel/json-glib \
+		libxkbcommon.so:x11/libxkbcommon
 
-USES=		autoreconf gmake libtool pathfix pkgconfig
+USES=		autoreconf gmake gnome libtool pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ueno
 GNU_CONFIGURE=	yes
