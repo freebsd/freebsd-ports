@@ -1,6 +1,4 @@
 share/emacs/site-lisp/prom-wl.el
-lib/xemacs/site-packages/lisp/prom-wl/prom-wl.el
-lib/xemacs/site-packages/pkginfo/MANIFEST.prom-wl
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/prom-wl-usage.jis
 %%PORTDOCS%%%%DOCSDIR%%/byte-compile
