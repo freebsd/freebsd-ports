@@ -1,0 +1,13 @@
+# Created by: Luca Pizzamiglio <pizzamig@FreeBSD.org>
+# $FreeBSD$
+
+PKGNAMESUFFIX=	-node8
+
+CONFLICS_INSTALL=	yarn yarn-node10
+
+OPTIONS_EXCLUDE=	NODE NODE10 NODE6
+OPTIONS_SLAVE=	NODE8
+
+MASTERDIR=	${.CURDIR}/../yarn
+
+.include "${MASTERDIR}/Makefile"
