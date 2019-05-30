@@ -1,12 +1,11 @@
-# Created by: Koichiro IWAO <meta@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	pluggaloid
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Extensible plugin system for mikutter
 
 LICENSE=	MIT
