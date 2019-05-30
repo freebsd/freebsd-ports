@@ -264,7 +264,6 @@
     SUBDIR += gnuplot-tex-extras
     SUBDIR += gotoblas
     SUBDIR += grace
-    SUBDIR += gracetmpl
     SUBDIR += graphthing
     SUBDIR += gretl
     SUBDIR += gri
@@ -724,7 +723,6 @@
     SUBDIR += py-networkx
     SUBDIR += py-networkx1
     SUBDIR += py-nevergrad
-    SUBDIR += py-numarray
     SUBDIR += py-numeric
     SUBDIR += py-numexpr
     SUBDIR += py-numpy
