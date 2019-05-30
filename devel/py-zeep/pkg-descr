@@ -1,0 +1,8 @@
+A fast and modern Python SOAP client.
+* Compatible with Python 2.7, 3,3, 3.4, 3.5, 3.6 and PyPy.
+* Supports Soap 1.1, Soap 1.2, and HTTP bindings.
+* Support for tornado async transport via gen.coroute (Python 2.7+).
+* Support for asyncio vi aiohttp (Python 3.5+).
+
+Please see for more information the documentation at
+WWW: http://docs.python-zeep.org.
