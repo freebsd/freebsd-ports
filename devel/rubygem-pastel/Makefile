@@ -3,6 +3,7 @@
 
 PORTNAME=	pastel
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-equatable>=0.5.0:devel/rubygem-equatable \
 		rubygem-tty-color>=0.4.0:devel/rubygem-tty-color
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
