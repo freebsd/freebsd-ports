@@ -3,6 +3,7 @@
 
 PORTNAME=	p4.el
 PORTVERSION=	10.6
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 MASTER_SITES=	SF/p4el/p4el/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -16,12 +17,9 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
-XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 do-install:
 	${MKDIR} ${STAGEDIR}${EMACSLISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/p4.el ${STAGEDIR}${EMACSLISPDIR}
-	${MKDIR} ${STAGEDIR}${XEMACSLISPDIR}
-	${LN} -sf p4.el ${STAGEDIR}${XEMACSLISPDIR}
 
 .include <bsd.port.mk>
