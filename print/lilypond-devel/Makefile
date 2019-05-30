@@ -52,7 +52,6 @@ USE_PERL5=	build
 USE_GNOME=	pango
 
 MAKEFILE=	GNUmakefile
-GNU_MAKEFILE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-texgyre-dir=${LOCALBASE}/${TEXMFDISTDIR}/fonts/opentype/public/tex-gyre \
