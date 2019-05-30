@@ -2,32 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	libjwt
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON Web Token implementation in C
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING.LIB
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/MPL-2.0
 
-LIB_DEPENDS=	libcheck.so:devel/check \
-		libjansson.so:devel/jansson
+BUILD_DEPENDS=	jansson>=2.0:devel/jansson
+LIB_DEPENDS=	libjansson.so:devel/jansson
+
+USES=		autoreconf gmake libtool pkgconfig ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	benmcollins
 
-USES=		autoreconf gmake libtool pkgconfig ssl
-USE_LDCONFIG=	yes
+CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	OPENSSL_CFLAGS="-I/usr/include" \
-		OPENSSL_LIBS="-lcrypto -lssl"
-
 INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^pkgconfiglibdir.*|pkgconfiglibdir = ${PREFIX}/libdata/pkgconfig|g' \
+	@${REINPLACE_CMD} -e 's|^pkgconfiglibdir.*|pkgconfiglibdir = ${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/libjwt/Makefile.am
 
 .include <bsd.port.mk>
