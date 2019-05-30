@@ -1010,6 +1010,7 @@
     SUBDIR += jenkins
     SUBDIR += jenkins-lts
     SUBDIR += jetbrains-clion
+    SUBDIR += jetbrains-goland
     SUBDIR += jetbrains-phpstorm
     SUBDIR += jfrog-cli
     SUBDIR += jiic
