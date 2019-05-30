@@ -1,6 +1,6 @@
---- configure.ac.orig	2018-04-03 09:47:39 UTC
+--- configure.ac.orig	2019-05-29 07:03:26 UTC
 +++ configure.ac
-@@ -1520,6 +1520,19 @@ if test "x$enable_imfile" = "xyes"; then
+@@ -1661,6 +1661,20 @@ if test "x$enable_imfile" = "xyes"; then
  fi
  AM_CONDITIONAL(ENABLE_IMFILE, test x$enable_imfile = xyes)
  
@@ -17,14 +17,15 @@
 +	[enable_imuxsock_rfc5424=no]
 +)
 +AM_CONDITIONAL(ENABLE_IMUXSOCK_RFC5424, test x$enable_imuxsock_rfc5424 = xyes)
- 
- # settings for the door input module (under solaris, thus default off)
- AC_ARG_ENABLE(imsolaris,
-@@ -2312,6 +2325,7 @@ echo "    imdiag enabled:               
- echo "    file input module enabled:                $enable_imfile"
++
+ # settings for the docker log input module
+ AC_ARG_ENABLE(imdocker,
+         [AS_HELP_STRING([--enable-imdocker],[input docker module enabled @<:@default=no@:>@])],
+@@ -2529,6 +2543,7 @@ echo "    file input module enabled:                $e
+ echo "    docker log input module enabled:          $enable_imdocker"
  echo "    Solaris input module enabled:             $enable_imsolaris"
  echo "    periodic statistics module enabled:       $enable_impstats"
-+echo "    syslog(3) unix socket uses RFC5424:       $enable_imuxsock_rfc5424" 
- echo "    imzmq3 input module enabled:              $enable_imzmq3"
++echo "    syslog(3) unix socket uses RFC5424:       $enable_imuxsock_rfc5424"
  echo "    imczmq input module enabled:              $enable_imczmq"
  echo "    imjournal input module enabled:           $enable_imjournal"
+ echo "    imbatchreport input module enabled:       $enable_imbatchreport"
