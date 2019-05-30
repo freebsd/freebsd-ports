@@ -2,6 +2,7 @@
 
 PORTNAME=	nxengine
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 MASTER_SITES+=	https://www.cavestory.org/downloads/:data \
@@ -9,6 +10,10 @@ MASTER_SITES+=	https://www.cavestory.org/downloads/:data \
 DISTFILES+=	${PORTNAME}.png:icons \
 		cavestoryen.zip:data
 EXTRACT_ONLY=	${DISTFILES:[2..3]:S/:data//}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	d38fcaf80ac5c4b1a2da51b5d1a605ed408a192f.patch:-p1 \
+		f6bbeb2555e7c10dfdc04be57f20fedfc9f401af.patch:-p1
 
 MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Engine-rewrite of the classic platformer Cave Story
