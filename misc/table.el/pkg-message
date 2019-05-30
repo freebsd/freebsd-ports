@@ -1,7 +1,5 @@
-
-To use table.el in Emacs/XEmacs, add the:
+To use table.el in Emacs, add the:
 
   (require 'table)
 
 to your ~/.emacs or init.el
-

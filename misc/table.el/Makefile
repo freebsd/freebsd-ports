@@ -3,6 +3,7 @@
 
 PORTNAME=	table.el
 PORTVERSION=	1.5.54
+PORTREVISION=	1
 CATEGORIES=	misc elisp
 MASTER_SITES=	SF/table/table/${PORTVERSION}
 DISTNAME=	table-${PORTVERSION}.el.gz
@@ -15,7 +16,6 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
-XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 do-extract:
 	${MKDIR} ${WRKDIR}
@@ -23,8 +23,6 @@ do-extract:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${EMACSLISPDIR}
-	${MKDIR} ${STAGEDIR}${XEMACSLISPDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${EMACSLISPDIR}
-	${LN} -sf ${PORTNAME} ${STAGEDIR}${XEMACSLISPDIR}
 
 .include <bsd.port.mk>
