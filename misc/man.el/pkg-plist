@@ -2,13 +2,4 @@ share/emacs/site-lisp/i18n-man-de.el
 share/emacs/site-lisp/i18n-man-en.el
 share/emacs/site-lisp/i18n-man-ja.el
 share/emacs/site-lisp/i18n-man.el
-lib/xemacs/site-packages/lisp/i18n-man-de/i18n-man.el
-lib/xemacs/site-packages/lisp/i18n-man-de/i18n-man-de.el
-lib/xemacs/site-packages/pkginfo/MANIFEST.i18n-man-de
-lib/xemacs/site-packages/lisp/i18n-man-en/i18n-man.el
-lib/xemacs/site-packages/lisp/i18n-man-en/i18n-man-en.el
-lib/xemacs/site-packages/pkginfo/MANIFEST.i18n-man-en
-lib/xemacs/site-packages/lisp/i18n-man-ja/i18n-man.el
-lib/xemacs/site-packages/lisp/i18n-man-ja/i18n-man-ja.el
-lib/xemacs/site-packages/pkginfo/MANIFEST.i18n-man-ja
 share/doc/i18n-man/byte-compile
