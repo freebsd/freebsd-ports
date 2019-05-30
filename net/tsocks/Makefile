@@ -3,7 +3,7 @@
 
 PORTNAME=	tsocks
 DISTVERSION=	1.8.b5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.8%20beta%205 \
 		http://ftp1.sourceforge.net/tsocks/ \
@@ -15,9 +15,10 @@ COMMENT=	Allow non SOCKS aware applications to use SOCKS without modification
 
 LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
 USES=		gmake
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.b.*//}
 
