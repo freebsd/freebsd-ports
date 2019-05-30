@@ -35,6 +35,7 @@
     SUBDIR += dfu-programmer
     SUBDIR += dfu-util
     SUBDIR += direwolf
+    SUBDIR += dsd
     SUBDIR += dump1090
     SUBDIR += ebook2cw
     SUBDIR += ebook2cwgui
