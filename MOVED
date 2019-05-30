@@ -12779,3 +12779,6 @@ graphics/cinepaint||2019-05-29|Has expired: Vulnerable since 2015, unmaintained 
 audio/specimen||2019-05-29|Has expired: Unmaintained, depends on expiring x11-toolkits/phat
 devel/smack||2019-05-29|Has expired: Unmaintained, upstream disappeared, underlinks
 x11-toolkits/phat||2019-05-29|Has expired: Unmaintained, upstream disappeared, underlinks
+math/gracetmpl||2019-05-30|Has expired: Long unmaintained abandonware; depends on stale numarray
+math/py-numarray|math/py-numpy|2019-05-30|Has expired: Obsoleted upstream in favor of NumPy
+net/neubot||2019-05-30|Has expired: neubot client has been retired upstream

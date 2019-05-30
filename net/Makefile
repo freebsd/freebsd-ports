@@ -487,7 +487,6 @@
     SUBDIR += netstrain
     SUBDIR += nettest
     SUBDIR += netwib
-    SUBDIR += neubot
     SUBDIR += nfs-ganesha
     SUBDIR += nfs-ganesha-kmod
     SUBDIR += nfsshell
