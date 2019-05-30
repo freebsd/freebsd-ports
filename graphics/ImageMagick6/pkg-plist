@@ -1367,7 +1367,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/decorate.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/decorate.php
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/deprecate.html
-%%PORTDOCS%%%%DOCSDIR%%-6/www/api/deprecate.php
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/display.html
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/display.php
 %%PORTDOCS%%%%DOCSDIR%%-6/www/api/distort.html
