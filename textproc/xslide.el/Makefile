@@ -3,7 +3,7 @@
 
 PORTNAME=	xslide.el
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc elisp
 MASTER_SITES=	SF/xslide/xslide/${PORTVERSION}
 DISTNAME=	xslide-${PORTVERSION}
@@ -18,16 +18,14 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
-XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${ELISPDIR} ${STAGEDIR}${XELISPDIR}
+	@${MKDIR} ${STAGEDIR}${ELISPDIR}
 .for f in xslide.el xslide-abbrev.el xslide-data.el xslide-font.el \
 xslide-initial.xsl xslide-process.el
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${ELISPDIR}
-	${LN} -sf ${ELISPDIR}/${f} ${STAGEDIR}${XELISPDIR}
 .endfor
 
 do-install-DOCS-on:
