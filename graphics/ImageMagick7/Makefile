@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	7.0.8-22
-PORTREVISION=	1
+DISTVERSION=	7.0.8-47
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
 		http://www.imagemagick.org/download/legacy/ \
@@ -35,6 +34,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
+
+TESTS_DEPENDS=	gsfonts>=0:print/gsfonts
 
 # bin/Magick++-config
 CONFLICTS_INSTALL=	ImageMagick ImageMagick-nox11 ImageMagick6 ImageMagick6-nox11
@@ -292,6 +293,10 @@ USES+=		ghostscript:x11
 . else
 USES+=		ghostscript
 . endif
+.endif
+
+.if ${PORT_OPTIONS:MPDF} || ${PORT_OPTIONS:MGSLIB}
+RUN_DEPENDS+=	gsfonts>=0:print/gsfonts
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
