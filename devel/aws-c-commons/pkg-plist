@@ -1,5 +1,6 @@
 include/aws/common/array_list.h
 include/aws/common/array_list.inl
+include/aws/common/assert.inl
 include/aws/common/atomics.h
 include/aws/common/atomics_fallback.inl
 include/aws/common/atomics_gnu.inl
