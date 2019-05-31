@@ -11,7 +11,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Common automake macros for GNOME 3
 
 LICENSE=	GPLv2
-LICENSE_FILES=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 RUN_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
