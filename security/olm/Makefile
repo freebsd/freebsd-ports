@@ -10,7 +10,7 @@ MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Double Ratchet cryptographic ratchet in C++
 
 LICENSE=	APACHE20
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c++11-lang \
 		localbase:ldflags tar:bz2
