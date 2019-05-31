@@ -804,7 +804,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/world/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/world/error.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/world/keep.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/plugin/world/model/zombie.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/world/model/lost_world.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/world/service.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/world/world.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/serialthread.rb
