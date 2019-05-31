@@ -11,7 +11,7 @@ MAINTAINER=	alexander.nusov@nfvexpress.com
 COMMENT=	Windows / Hyper-V library for openstack projects
 
 LICENSE=	APACHE20
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
