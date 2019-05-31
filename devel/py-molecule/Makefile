@@ -29,6 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-lint>=4.0.2:sysutils/py-ansible-lint
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.8.2:devel/py-tabulate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}testinfra>=1.19.0:devel/py-testinfra@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tree-format>=0.1.2:devel/py-tree-format@${PY_FLAVOR} \
+		${PY_TYPING} \
 		${PYTHON_PKGNAMEPREFIX}yamllint>=1.11.1:devel/py-yamllint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>=4.6.0:misc/py-pexpect@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.0.7:devel/py-pytest@${PY_FLAVOR} \
@@ -52,8 +53,7 @@ TEST_ENV=	LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing>=0:devel/py-typing@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}functools32>=0:devel/py-functools32@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}functools32>=0:devel/py-functools32@${PY_FLAVOR}
 .endif
 
 do-test:
