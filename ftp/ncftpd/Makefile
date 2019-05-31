@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${BINVER}-${DIST_ARCH}-export
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commercial FTP daemon with a 30-day evaluation license
 
+DEPRECATED=	binary only abandoned trialware
+EXPIRATION_DATE=	2019-06-15
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 ONLY_FOR_ARCHS=	amd64
