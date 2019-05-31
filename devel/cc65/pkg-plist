@@ -12,6 +12,7 @@ bin/sim65
 bin/sp65
 %%DATADIR%%/asminc/_file.inc
 %%DATADIR%%/asminc/_heap.inc
+%%DATADIR%%/asminc/accelerator.inc
 %%DATADIR%%/asminc/apple2.inc
 %%DATADIR%%/asminc/apple2.mac
 %%DATADIR%%/asminc/atari.inc
@@ -28,6 +29,7 @@ bin/sp65
 %%DATADIR%%/asminc/c16.inc
 %%DATADIR%%/asminc/c64.inc
 %%DATADIR%%/asminc/cbm.mac
+%%DATADIR%%/asminc/cbm_kernal.inc
 %%DATADIR%%/asminc/cbm510.inc
 %%DATADIR%%/asminc/cbm610.inc
 %%DATADIR%%/asminc/cbm_filetype.inc
@@ -79,14 +81,17 @@ bin/sp65
 %%DATADIR%%/cfg/apple2enh-system.cfg
 %%DATADIR%%/cfg/apple2enh.cfg
 %%DATADIR%%/cfg/atari-asm.cfg
+%%DATADIR%%/cfg/atari-asm-xex.cfg
 %%DATADIR%%/cfg/atari-cart.cfg
 %%DATADIR%%/cfg/atari-cassette.cfg
 %%DATADIR%%/cfg/atari-overlay.cfg
+%%DATADIR%%/cfg/atari-xex.cfg
 %%DATADIR%%/cfg/atari.cfg
 %%DATADIR%%/cfg/atari2600.cfg
 %%DATADIR%%/cfg/atari5200.cfg
 %%DATADIR%%/cfg/atarixl-largehimem.cfg
 %%DATADIR%%/cfg/atarixl-overlay.cfg
+%%DATADIR%%/cfg/atarixl-xex.cfg
 %%DATADIR%%/cfg/atarixl.cfg
 %%DATADIR%%/cfg/atmos.cfg
 %%DATADIR%%/cfg/bbc.cfg
@@ -132,6 +137,7 @@ bin/sp65
 %%DATADIR%%/include/_6545.h
 %%DATADIR%%/include/_6551.h
 %%DATADIR%%/include/_antic.h
+%%DATADIR%%/include/_atarios.h
 %%DATADIR%%/include/_gtia.h
 %%DATADIR%%/include/_heap.h
 %%DATADIR%%/include/_mikey.h
@@ -146,6 +152,7 @@ bin/sp65
 %%DATADIR%%/include/_vdc.h
 %%DATADIR%%/include/_vic.h
 %%DATADIR%%/include/_vic2.h
+%%DATADIR%%/include/accelerator.h
 %%DATADIR%%/include/apple2.h
 %%DATADIR%%/include/apple2_filetype.h
 %%DATADIR%%/include/apple2enh.h
@@ -160,6 +167,8 @@ bin/sp65
 %%DATADIR%%/include/c16.h
 %%DATADIR%%/include/c64.h
 %%DATADIR%%/include/cbm.h
+%%DATADIR%%/include/cbm_petscii_charmap.h
+%%DATADIR%%/include/cbm_screen_charmap.h
 %%DATADIR%%/include/cbm264.h
 %%DATADIR%%/include/cbm510.h
 %%DATADIR%%/include/cbm610.h
@@ -220,6 +229,7 @@ bin/sp65
 %%DATADIR%%/include/stdlib.h
 %%DATADIR%%/include/string.h
 %%DATADIR%%/include/supervision.h
+%%DATADIR%%/include/sys/stat.h
 %%DATADIR%%/include/sys/types.h
 %%DATADIR%%/include/sys/utsname.h
 %%DATADIR%%/include/target.h
@@ -239,6 +249,7 @@ bin/sp65
 %%DATADIR%%/lib/atari.lib
 %%DATADIR%%/lib/atari2600.lib
 %%DATADIR%%/lib/atari5200.lib
+%%DATADIR%%/lib/atari5200-conioscreen-20x12.o
 %%DATADIR%%/lib/atarixl.lib
 %%DATADIR%%/lib/atmos.lib
 %%DATADIR%%/lib/c128.lib
@@ -393,6 +404,7 @@ bin/sp65
 %%DATADIR%%/target/c128/drv/joy/c128-ptvjoy.joy
 %%DATADIR%%/target/c128/drv/joy/c128-stdjoy.joy
 %%DATADIR%%/target/c128/drv/mou/c128-1351.mou
+%%DATADIR%%/target/c128/drv/tgi/c128-hi.tgi
 %%DATADIR%%/target/c128/drv/mou/c128-inkwell.mou
 %%DATADIR%%/target/c128/drv/mou/c128-joy.mou
 %%DATADIR%%/target/c128/drv/mou/c128-pot.mou
@@ -449,6 +461,8 @@ bin/sp65
 %%DATADIR%%/target/telestrat/drv/tgi/telestrat-240-200-2.tgi
 %%DATADIR%%/target/vic20/drv/joy/vic20-ptvjoy.joy
 %%DATADIR%%/target/vic20/drv/joy/vic20-stdjoy.joy
+%%DATADIR%%/target/vic20/drv/emd/vic20-georam.emd
+%%DATADIR%%/target/vic20/drv/emd/vic20-rama.emd
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.bak
