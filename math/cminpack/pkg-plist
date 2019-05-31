@@ -1,6 +1,8 @@
 include/cminpack-1/cminpack.h
 include/cminpack-1/minpack.h
-lib/libcminpack_s.a
+lib/libcminpack.so
+lib/libcminpack.so.1
+lib/libcminpack.so.1.3.6
 libdata/pkgconfig/cminpack.pc
 share/cmake/CMinpack/CMinpackConfig.cmake
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkdrv.c
