@@ -11,12 +11,12 @@ COMMENT=	Solving nonlinear equations and nonlinear least squares problems
 
 LICENSE_FILE=	${WRKSRC}/CopyrightMINPACK.txt
 
-USES=		cblaslapack:openblas make localbase
+USES=		blaslapack:openblas cmake localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	devernay
 
-+CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	USE_BLAS
 
 OPTIONS_DEFINE=	EXAMPLES
