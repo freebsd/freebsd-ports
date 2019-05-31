@@ -221,6 +221,7 @@ include/asterisk/module.h
 include/asterisk/monitor.h
 include/asterisk/multicast_rtp.h
 include/asterisk/musiconhold.h
+include/asterisk/mwi.h
 include/asterisk/named_locks.h
 include/asterisk/netsock.h
 include/asterisk/netsock2.h
