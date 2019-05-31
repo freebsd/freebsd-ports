@@ -10,7 +10,7 @@ MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Library for doing approximate and phonetic matching of strings
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist
