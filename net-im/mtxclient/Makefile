@@ -13,7 +13,7 @@ MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Client API library for the Matrix protocol
 
 LICENSE=	MIT
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nlohmann-json>=3:devel/nlohmann-json \
 		spdlog>=1.3:devel/spdlog \
