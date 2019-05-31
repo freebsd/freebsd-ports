@@ -103,7 +103,7 @@ OPTIONS_SINGLE=			GSSAPI
 OPTIONS_SINGLE_GSSAPI=		GSSAPI_BUILTIN GSSAPI_MIT
 
 OPTIONS_RADIO=			DNS ZEROCONF
-OPTIONS_RADIO_DNS=		NSUPDATE BIND911 BIND912 BIND913 BIND914
+OPTIONS_RADIO_DNS=		NSUPDATE BIND911 BIND913 BIND914
 OPTIONS_RADIO_ZEROCONF=		MDNSRESPONDER AVAHI
 ##############################################################################
 AD_DC_DESC=			Active Directory Domain Controller
@@ -128,7 +128,6 @@ UTMP_DESC=			UTMP accounting
 GSSAPI_BUILTIN_DESC=		GSSAPI support via bundled Heimdal
 
 BIND911_DESC=			Use Bind 9.11 as AD DC DNS server frontend
-BIND912_DESC=			Use Bind 9.12 as AD DC DNS server frontend
 BIND913_DESC=			Use Bind 9.13 as AD DC DNS server frontend
 BIND914_DESC=			Use Bind 9.14 as AD DC DNS server frontend
 NSUPDATE_DESC=			Use samba NSUPDATE utility for AD DC
@@ -273,7 +272,6 @@ CONFIGURE_ARGS+=		\
 				${ICONV_CONFIGURE_BASE}
 ##############################################################################
 BIND911_RUN_DEPENDS=		bind911>=9.11.0.0:dns/bind911
-BIND912_RUN_DEPENDS=		bind912>=9.12.0.0:dns/bind912
 BIND913_RUN_DEPENDS=		bind913>=9.13.0.0:dns/bind913
 BIND914_RUN_DEPENDS=		bind914>=9.14.0.0:dns/bind914
 NSUPDATE_RUN_DEPENDS=		samba-nsupdate:dns/samba-nsupdate
