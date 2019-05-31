@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	trezor
-PORTVERSION=	0.11.2
+PORTVERSION=	0.11.3
 CATEGORIES=	security
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +29,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-SHEBANG_FILES=	trezorlib/tests/burn_tests/burntest.py
+SHEBANG_FILES=	trezorlib/tests/burn_tests/burntest_t1.py \
+		trezorlib/tests/burn_tests/burntest_t2.py
 
 .include <bsd.port.mk>
