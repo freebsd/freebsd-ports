@@ -11,7 +11,7 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Python progress reporting to /dev/tty
 
 LICENSE=	GPLv3
-LICENSE_FILES=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python:2.7
 NO_ARCH=	yes
