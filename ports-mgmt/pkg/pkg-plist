@@ -9,7 +9,6 @@ include/pkg.h
 lib/libpkg.a
 lib/libpkg.so
 lib/libpkg.so.4
-lib/libpkg.so.4.0.0
 libdata/pkgconfig/pkg.pc
 man/man3/pkg_printf.3.gz
 man/man3/pkg_repos.3.gz
@@ -24,7 +23,6 @@ man/man8/pkg-backup.8.gz
 man/man8/pkg-check.8.gz
 man/man8/pkg-clean.8.gz
 man/man8/pkg-config.8.gz
-man/man8/pkg-convert.8.gz
 man/man8/pkg-create.8.gz
 man/man8/pkg-delete.8.gz
 man/man8/pkg-fetch.8.gz
@@ -52,5 +50,4 @@ man/man8/pkg-which.8.gz
 man/man8/pkg.8.gz
 sbin/pkg
 sbin/pkg-static
-sbin/pkg2ng
 share/zsh/site-functions/_pkg
