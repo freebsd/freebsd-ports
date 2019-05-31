@@ -12,7 +12,7 @@ COMMENT=	Package manager for node, alternative to npm
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS?=	yarn-node10 yarn-node8
+CONFLICTS_INSTALL?=	yarn-node10 yarn-node8
 
 OPTIONS_DEFINE=	HADOOPCOMPAT
 OPTIONS_SINGLE=	BACKEND
