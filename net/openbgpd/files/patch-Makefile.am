@@ -1,0 +1,20 @@
+--- Makefile.am.orig	2019-05-01 11:22:14 UTC
++++ Makefile.am
+@@ -19,13 +19,14 @@
+ EXTRA_DIST = README.md VERSION bgpd.conf
+ 
+ install-data-hook:
+-	@if [ ! -d "$(DESTDIR)$(localstatedir)/run" ]; then \
++	if [ ! -d "$(DESTDIR)$(localstatedir)/run" ]; then \
+ 		$(INSTALL) -m 755 -d "$(DESTDIR)$(localstatedir)/run"; \
+ 	fi
+-	@if [ ! -d "$(DESTDIR)$(sysconfdir)" ]; then \
++	if [ ! -d "$(DESTDIR)$(sysconfdir)" ]; then \
+ 		$(INSTALL) -m 755 -d "$(DESTDIR)$(sysconfdir)"; \
+ 	fi
+-	@if [ ! -f "$(DESTDIR)$(sysconfdir)/bgpd.conf" ]; then \
++	$(INSTALL) -m 644 "$(srcdir)/bgpd.conf" "$(DESTDIR)$(sysconfdir)/bgpd.conf.sample"; \
++	if [ ! -f "$(DESTDIR)$(sysconfdir)/bgpd.conf" ]; then \
+ 		$(INSTALL) -m 644 "$(srcdir)/bgpd.conf" "$(DESTDIR)$(sysconfdir)/bgpd.conf"; \
+ 	else \
+ 		echo; \
