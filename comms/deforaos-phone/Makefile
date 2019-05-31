@@ -13,6 +13,7 @@ MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS telephony application
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
 		libDesktop.so:x11/deforaos-libdesktop \
@@ -24,7 +25,7 @@ LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
 BUILD_DEPENDS=	locker:x11/deforaos-locker \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 
-USES=		desktop-file-utils pkgconfig
+USES=		desktop-file-utils gnome pkgconfig
 USE_GNOME=	gtk20 cairo
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
