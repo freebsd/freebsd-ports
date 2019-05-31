@@ -12782,3 +12782,5 @@ x11-toolkits/phat||2019-05-29|Has expired: Unmaintained, upstream disappeared, u
 math/gracetmpl||2019-05-30|Has expired: Long unmaintained abandonware; depends on stale numarray
 math/py-numarray|math/py-numpy|2019-05-30|Has expired: Obsoleted upstream in favor of NumPy
 net/neubot||2019-05-30|Has expired: neubot client has been retired upstream
+www/py-django20|www/py-django22|2019-05-31|Has expired: Extended support has expired on April 1, 2019. Use www/py-django21 or www/py-django22 instead
+www/rubygem-heroku||2019-05-31|Has expired: Upstream has changed to node-based CLI (https://cli.heroku.com/)
