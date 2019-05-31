@@ -3,7 +3,7 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.13rc1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		flex:textproc/flex
 LIB_DEPENDS=	libceres.so:math/ceres-solver \
+		libcminpack.so:math/cminpack \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
 		libmuparser.so:math/muparser \
@@ -23,7 +24,7 @@ LIB_DEPENDS=	libceres.so:math/ceres-solver \
 		libtbb.so:devel/tbb \
 		libhmat-oss.so:math/hmat-oss
 
-USES=		bison blaslapack:openblas cmake compiler:c++11-lang eigen:3 gnome localbase:ldflags
+USES=		bison blaslapack:openblas cmake compiler:c++11-lang eigen:3 gnome localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
