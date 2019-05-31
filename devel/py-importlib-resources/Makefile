@@ -14,6 +14,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PY_TYPING}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
@@ -22,10 +23,6 @@ USE_PYTHON=	distutils autoplist
 
 .if ${PYTHON_REL} < 3500
 RUN_DEPENDS+=   ${PYTHON_PKGNAMEPREFIX}pathlib2>=0:devel/py-pathlib2@${PY_FLAVOR}
-.endif
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=   ${PYTHON_PKGNAMEPREFIX}typing>=0:devel/py-typing@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
