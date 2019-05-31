@@ -4,6 +4,7 @@
 PORTNAME=	dnsperf
 PORTVERSION=	2.2.1
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	dns benchmarks net
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -11,7 +12,7 @@ COMMENT=	Performance measurement of Domain Name System (DNS) servers
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	isc-config.sh:dns/bind912
+BUILD_DEPENDS=	isc-config.sh:dns/bind914
 LIB_DEPENDS=	liblmdb.so:databases/lmdb \
 		libjson-c.so:devel/json-c \
 		libxml2.so:textproc/libxml2
