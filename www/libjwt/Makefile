@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/MPL-2.0
 BUILD_DEPENDS=	jansson>=2.0:devel/jansson
 LIB_DEPENDS=	libjansson.so:devel/jansson
 
-USES=		autoreconf gmake libtool pkgconfig ssl
+USES=		autoreconf gmake libtool pathfix pkgconfig ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	benmcollins
@@ -25,9 +25,5 @@ CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^pkgconfiglibdir.*|pkgconfiglibdir = ${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/libjwt/Makefile.am
 
 .include <bsd.port.mk>
