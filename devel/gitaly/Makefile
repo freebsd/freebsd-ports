@@ -2,7 +2,7 @@
 
 PORTNAME=	gitaly
 DISTVERSION=	1.42.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -27,7 +27,7 @@ MY_DEPENDS=	git>=2.21:devel/git \
 		rubygem-faraday>=0.12:www/rubygem-faraday \
 		rubygem-rbtrace>0:devel/rubygem-rbtrace \
 		rubygem-licensee8>=8.9.0:devel/rubygem-licensee8 \
-		rubygem-google-protobuf>=3.7.1:devel/rubygem-google-protobuf
+		rubygem-google-protobuf371>=3.7.1:devel/rubygem-google-protobuf371
 BUILD_DEPENDS=	go>=1.11:lang/go \
 		gem:devel/ruby-gems \
 		${MY_DEPENDS}
