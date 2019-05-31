@@ -9,7 +9,7 @@ MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Glossy Matrix IM client based on Qt technologies
 
 LICENSE=	GPLv3
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	libqmatrixclient>=0.5:net-im/libqmatrixclient
 
