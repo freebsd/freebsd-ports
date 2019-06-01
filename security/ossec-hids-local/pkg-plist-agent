@@ -22,8 +22,6 @@
 @(,,0550) %%OSSEC_HOME%%/bin/ossec-control
 @(,,0550) %%OSSEC_HOME%%/bin/ossec-execd
 @(,,0550) %%OSSEC_HOME%%/bin/ossec-logcollector
-@(,,0550) %%OSSEC_HOME%%/bin/ossec-lua
-@(,,0550) %%OSSEC_HOME%%/bin/ossec-luac
 @(,,0550) %%OSSEC_HOME%%/bin/ossec-syscheckd
 @(,,0550) %%OSSEC_HOME%%/bin/util.sh
 @dir(,ossec,0550) %%OSSEC_HOME%%/etc
@@ -43,6 +41,7 @@
 @(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_rhel_linux_rcl.txt
 @(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_sles11_linux_rcl.txt
 @(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_sles12_linux_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_solaris11_rcl.txt
 @(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win10_enterprise_L1_rcl.txt
 @(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win10_enterprise_L2_rcl.txt
 @(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win2012r2_domainL1_rcl.txt
@@ -55,6 +54,7 @@
 @(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win2016_memberL2_rcl.txt
 @(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/rootkit_files.txt
 @(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/rootkit_trojans.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/system_audit_pw.txt
 @(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/system_audit_rcl.txt
 @(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/system_audit_ssh.txt
 @(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/win_applications_rcl.txt
@@ -77,3 +77,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/SUPPORT.md
 %%PORTDOCS%%%%DOCSDIR%%/ossec.conf.sample
+%%LUA%%@(,,0550) %%OSSEC_HOME%%/bin/ossec-lua
+%%LUA%%@(,,0550) %%OSSEC_HOME%%/bin/ossec-luac

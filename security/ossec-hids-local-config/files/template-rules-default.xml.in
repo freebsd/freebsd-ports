@@ -51,8 +51,11 @@
     <include>ms_ipsec_rules.xml</include>
     <include>vmware_rules.xml</include>
     <include>ids_rules.xml</include>
+    <include>ms_powershell_rules.xml</include>
+    <include>last_rootlogin_rules.xml</include>
     <include>apache_rules.xml</include>
     <include>web_rules.xml</include>
+    <include>topleveldomain_rules.xml</include>
     <include>zeus_rules.xml</include>
     <include>nginx_rules.xml</include>
     <include>php_rules.xml</include>
@@ -78,6 +81,9 @@
     <include>ms_firewall_rules.xml</include>
     <include>psad_rules.xml</include>
     <include>unbound_rules.xml</include>
+    <include>kesl_rules.xml</include>
+    <include>mhn_dionaea_rules.xml</include>
+    <include>mhn_cowrie_rules.xml</include>
     <include>local_rules.xml</include>
 
     <!-- Files not included by default -->

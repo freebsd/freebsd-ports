@@ -14,10 +14,14 @@ create_file() {
 }
 
 if [ "$2" == "POST-INSTALL"  ]; then
+    if [ -z "${USER}" ]; then
+        USER=$(id -un)
+    fi
+
     pw usermod %%OSSEC_USER%% -d "${ossec_home}"
     pw usermod ossecm -d "${ossec_home}"
     pw usermod ossecr -d "${ossec_home}"
-    chown %%USER%%:%%OSSEC_GROUP%% "${ossec_home}"
+    chown ${USER}:%%OSSEC_GROUP%% "${ossec_home}"
 
-    create_file "${client_keys}" root:ossec 0640
+    create_file "${client_keys}" ${USER}:%%OSSEC_GROUP%% 0640
 fi

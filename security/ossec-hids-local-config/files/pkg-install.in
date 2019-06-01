@@ -1,6 +1,8 @@
 #!/bin/sh
 
 ossec_home="%%OSSEC_HOME%%"
+fw_drop="%%FW_DROP%%"
+
 ar_bin_dir="${ossec_home}/active-response/bin"
 ossec_conf="${ossec_home}/etc/ossec.conf"
 ossec_conf_bak="${ossec_conf}.bak"
@@ -8,7 +10,9 @@ agent_conf="${ossec_home}/etc/shared/agent.conf"
 agent_conf_bak="${ossec_home}/etc/agent.conf.bak"
 
 if [ "$2" == "POST-INSTALL"  ]; then
-    ln -f "${ar_bin_dir}/%%FW_DROP%%" "${ar_bin_dir}/firewall-drop.sh"
+    if [ -n "${fw_drop}" ]; then
+        ln -f "${ar_bin_dir}/${fw_drop}" "${ar_bin_dir}/firewall-drop.sh"
+    fi
 
     if [ -e "${ossec_conf}" ]; then
         mv -f "${ossec_conf}" "${ossec_conf_bak}"

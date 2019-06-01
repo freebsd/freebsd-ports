@@ -11,11 +11,10 @@ PLIST=$3
 WORKDIR=$4
 STAGEDIR=$5
 
-staged_plist="${WORKDIR}/.staged-plist"
-fixed_lines=""
-skip_lines=""
-skip_paths=""
-sample_paths="/etc/command.conf.sample /etc/ossec.conf.d/900.local.conf.sample /etc/agent.conf.d/900.local.conf.sample"
+. $(dirname "$0")/plist.conf
+
+NL=$'\n'
+IFS=${NL}
 
 print_path() {
     local path="$1"
@@ -28,15 +27,28 @@ print_path() {
         fi
     fi
     local user=`stat -f "%Su" "${full_path}"`
-    if [ "${user}" == "${USER}" ]; then
+    if [ "${user}" = "${USER}" ]; then
         user=""
     fi
     local group=`stat -f "%Sg" "${full_path}"`
-    if [ "${group}" == "${GROUP}" ]; then
+    if [ "${group}" = "${GROUP}" ]; then
         group=""
     fi
     local mode=`stat -f "%p" "${full_path}" | tail -c 5`
-    echo -e "${command}(${user},${group},${mode}) %%OSSEC_HOME%%${path}" >> "${PLIST}"
+    echo "${command}(${user},${group},${mode}) %%OSSEC_HOME%%${path}" >> "${PLIST}"
+}
+
+contains() {
+    local list="$1"
+    local word="$2"
+
+    for e in ${list}; do
+        if [ "${e}" = "${word}" ]; then
+            return 0
+        fi
+    done
+
+    return 1
 }
 
 echo -n > "${PLIST}"
@@ -45,16 +57,9 @@ print_path
 
 done_paths=""
 while read line; do
-    skip_line=""
-    for e in ${skip_lines}; do
-        if [ "${e}" == "${line}" ]; then
-            skip_line="${e}"
-            break
-        fi
-    done
-    if [ -z "${skip_line}" ]; then
+    if ! contains "${skip_lines}" "${line}"; then
         path=""
-        case $line in
+        case ${line} in
             "@dir %%OSSEC_HOME%%"*)
                 path=`echo "${line}" | sed -e "s|@dir %%OSSEC_HOME%%||g"`
                 ;;
@@ -62,7 +67,7 @@ while read line; do
                 path=`echo "${line}" | sed -e "s|%%OSSEC_HOME%%||g"`
                 ;;
             "%%"*)
-                unchanged_lines="${unchanged_lines} ${line}"
+                unchanged_lines="${unchanged_lines}${NL}${line}"
                 ;;
         esac
         if [ -n "${path}" ]; then
@@ -70,33 +75,12 @@ while read line; do
             path=""
             for segment in ${segments}; do
                 path="${path}/${segment}"
-                skip_path=""
-                for e in ${skip_paths}; do
-                    if [ "${e}" == "${path}" ]; then
-                        skip_path="${e}"
-                        break
-                    fi
-                done
-                if [ -n "${skip_path}" ]; then
+                if contains "${skip_paths}" "${path}"; then
                     break
                 fi
-                done_path=""
-                for e in ${done_paths}; do
-                    if [ "${e}" == "${path}" ]; then
-                        done_path="${e}"
-                        break
-                    fi
-                done
-                if [ -z "${done_path}" ]; then
-                    done_paths="${done_paths} ${path}"
-                    sample_path=""
-                    for e in ${sample_paths}; do
-                        if [ "${e}" == "${path}" ]; then
-                            sample_path="${e}"
-                            break
-                        fi
-                    done
-                    if [ -n "${sample_path}" ]; then
+                if ! contains "${done_paths}" "${path}"; then
+                    done_paths="${done_paths}${NL}${path}"
+                    if contains "${sample_paths}" "${path}"; then
                         print_path "${path}" @sample
                     else
                         print_path "${path}"
@@ -105,9 +89,9 @@ while read line; do
             done
         fi
     fi
-done < "${staged_plist}"
+done < "${WORKDIR}/.staged-plist"
 
-unchanged_lines="${unchanged_lines} ${fixed_lines}"
+unchanged_lines="${unchanged_lines}${NL}${fixed_lines}"
 for line in ${unchanged_lines}; do
     echo "${line}" >> "${PLIST}"
 done

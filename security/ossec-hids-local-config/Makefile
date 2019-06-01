@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ossec-hids
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTVERSION=	3.3.0
+PORTREVISION=	0
 CATEGORIES=	security
 PKGNAMESUFFIX=	-${OSSEC_TYPE}-config
 
@@ -47,14 +47,15 @@ NO_ARCH=	yes
 OPTIONS_SUB=			yes
 
 OPTIONS_SINGLE=			FIREWALL
-OPTIONS_SINGLE_FIREWALL=	IPF IPFW PF
+OPTIONS_SINGLE_FIREWALL=	NOFW IPF IPFW PF
 
-OPTIONS_DEFAULT+=		IPF
+OPTIONS_DEFAULT+=		NOFW
 
 FIREWALL_DESC=		Active Response Firewall
 PF_DESC=		Packet Filter
 IPFW_DESC=		ipfirewall
 IPF_DESC=		ipfilter
+NOFW_DESC=		Custom or no firewall
 
 TEMPL_ENABLED_HEADER=		template-header-enabled.xml
 TEMPL_DISABLED_HEADER=		template-header-disabled.xml
@@ -68,6 +69,7 @@ TEMPL_SAMPLE_DB=	template-sample-database.xml
 PF_VARS=		FW_DROP=pf.sh PKGMSG_FILES+=message-pf
 IPFW_VARS=		FW_DROP=ipfw.sh
 IPF_VARS=		FW_DROP=ipfilter.sh
+NOFW_VARS=		FW_DROP=
 
 .if defined(MAINTAINER_MODE)
 OSSEC_HOME=		${PREFIX}/${PORTNAME}
