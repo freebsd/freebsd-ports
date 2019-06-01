@@ -9,9 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Is a simple yet powerful Music Player Daemon library
 
-NO_ARCH=	yes
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
