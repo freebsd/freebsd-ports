@@ -1227,6 +1227,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/utils/cborutil.py
 %%PYTHON_SITELIBDIR%%/mercurial/utils/cborutil.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/utils/cborutil.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/utils/compression.py
+%%PYTHON_SITELIBDIR%%/mercurial/utils/compression.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/utils/compression.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/utils/dateutil.py
 %%PYTHON_SITELIBDIR%%/mercurial/utils/dateutil.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/utils/dateutil.pyo
@@ -1236,6 +1239,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/utils/procutil.py
 %%PYTHON_SITELIBDIR%%/mercurial/utils/procutil.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/utils/procutil.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/utils/repoviewutil.py
+%%PYTHON_SITELIBDIR%%/mercurial/utils/repoviewutil.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/utils/repoviewutil.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/utils/storageutil.py
 %%PYTHON_SITELIBDIR%%/mercurial/utils/storageutil.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/utils/storageutil.pyo
