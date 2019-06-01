@@ -1347,6 +1347,7 @@
     SUBDIR += libtar
     SUBDIR += libtecla
     SUBDIR += libtermkey
+    SUBDIR += libtextstyle
     SUBDIR += libthai
     SUBDIR += libthmap
     SUBDIR += libtifiles2
