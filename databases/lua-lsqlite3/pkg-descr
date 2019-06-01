@@ -1,0 +1,14 @@
+LuaSQLite3 is a thin wrapper around the public domain SQLite3
+database engine.
+
+LuaSQLite3 provides a means to manipulate SQLite3 databases
+directly from Lua using Lua 5.
+
+There are two modules, identical except that one links SQLite3
+dynamically, the other statically.
+
+The module `lsqlite3` links SQLite3 dynamically.
+
+The module `lsqlite3complete` links SQLite3 statically.
+
+WWW: http://Lua.SQLite.org/index.cgi/doc/tip/doc/lsqlite3.wiki
