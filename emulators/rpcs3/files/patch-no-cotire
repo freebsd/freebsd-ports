@@ -1,5 +1,5 @@
 Cotire uses precompiled headers which are more fragile with Clang.
-For one, https://github.com/KhronosGroup/glslang/commit/f0e911c80926 casues
+For one, https://github.com/KhronosGroup/glslang/commit/e8c8af9c4b0d casues
 
 error: POSIX thread support was disabled in PCH file but is currently enabled
 
