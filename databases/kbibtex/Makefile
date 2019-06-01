@@ -3,6 +3,7 @@
 
 PORTNAME=	kbibtex
 DISTVERSION=	0.8.91
+PORTREVISION=	1
 CATEGORIES=	databases kde
 MASTER_SITES=	KDE/unstable/KBibTeX/
 
