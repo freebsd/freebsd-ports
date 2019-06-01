@@ -1,0 +1,3 @@
+bin/vim
+%%DEFAULT_VIMRC%%@sample %%ETCDIR%%/vimrc.sample
+man/man1/vim.1.gz
