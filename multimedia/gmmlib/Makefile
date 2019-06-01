@@ -2,11 +2,8 @@
 
 PORTNAME=	gmmlib
 DISTVERSIONPREFIX=	intel-${PORTNAME}-
-DISTVERSION=	19.1.2
+DISTVERSION=	19.2.1
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	c8f5db3ec008.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Intel Graphics Memory Management Library
