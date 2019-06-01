@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	caTools
-PORTVERSION=	1.17.1.1
-PORTREVISION=	1
+PORTVERSION=	1.17.1.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,7 +11,9 @@ COMMENT=	Tools: moving window statistics, GIF, Base64, ROC AUC, etc
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	R-cran-bitops>0:devel/R-cran-bitops
+CRAN_DEPENDS=	R-cran-bitops>0:devel/R-cran-bitops
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles
 
