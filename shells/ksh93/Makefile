@@ -2,9 +2,10 @@
 
 PORTNAME=	ksh93
 DISTVERSION=2020.0.0-alpha1
+PORTEPOCH=	1
 CATEGORIES=	shells
 
-MAINTAINER=	saper@saper.info
+MAINTAINER=	cy@freebsd.org
 COMMENT=	AT&T KornShell 93
 
 LICENSE=	EPL
