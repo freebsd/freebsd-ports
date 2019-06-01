@@ -1,3 +1,3 @@
-TIMESTAMP = 1557806949
-SHA256 (buildbot-grid-view-2.3.0.tar.gz) = 306ba92225463b2b905067b2361995eda28f4dd5449696d241d9f6f419a4912d
-SIZE (buildbot-grid-view-2.3.0.tar.gz) = 605626
+TIMESTAMP = 1559393421
+SHA256 (buildbot-grid-view-2.3.1.tar.gz) = b25317adb7b526a4582d495e3f55db67a16cd7fe3f0d01b4d0d6df2b3b8f78f6
+SIZE (buildbot-grid-view-2.3.1.tar.gz) = 605141
