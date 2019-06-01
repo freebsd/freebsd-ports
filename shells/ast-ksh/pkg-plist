@@ -1,0 +1,5 @@
+@shell bin/ksh93
+man/man1/ksh93.1.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dirs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/popd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pushd

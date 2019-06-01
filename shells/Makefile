@@ -6,6 +6,7 @@
     SUBDIR += 44bsd-csh
     SUBDIR += ammonite
     SUBDIR += antibody
+    SUBDIR += ast-ksh
     SUBDIR += bash
     SUBDIR += bash-completion
     SUBDIR += bash-static
