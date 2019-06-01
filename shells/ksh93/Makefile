@@ -18,7 +18,7 @@ GH_PROJECT=	ast
 GH_TAGNAME=	${HASH}
 
 KSH_CONFLICTS=		pdksh-*
-KSH93_CONFLICTS=	ksh93-devel ast-ksh-*
+KSH93_CONFLICTS=	ksh93-devel-* ast-ksh-*
 
 LDFLAGS+=	-lm
 MESON_BUILD_DIR=	build
