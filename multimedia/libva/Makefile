@@ -8,6 +8,7 @@ CATEGORIES=	multimedia
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	c2a431cc3cab.patch:-p1 5cfcd31635b1.patch:-p1
 PATCHFILES+=	394b1eb4ce5f.patch:-p1
+PATCHFILES+=	93c52a17b8d2.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	VAAPI wrapper and dummy driver
@@ -39,9 +40,5 @@ WAYLAND_MESON_YES=	with_wayland
 
 X11_USE=		XORG=x11,xorgproto,xext,xfixes
 X11_MESON_YES=		with_x11
-
-post-patch:	.SILENT
-# V4L2 is unused since http://github.com/intel/libva/commit/70074679333c
-	${REINPLACE_CMD} '/videodev2\.h/d' ${WRKSRC}/va/va_backend.h
 
 .include <bsd.port.mk>
