@@ -63,7 +63,6 @@ bin/xxd
 %%NLS%%man/de.UTF-8/man1/rview.1.gz
 %%NLS%%man/de.UTF-8/man1/rvim.1.gz
 %%NLS%%man/de.UTF-8/man1/vim.1.gz
-%%DEFAULT_VIMRC%%@sample %%ETCDIR%%/gvimrc.sample
 %%DEFAULT_VIMRC%%@sample %%ETCDIR%%/vimrc.sample
 %%GUI%%%%NLS%%man/fr/man1/eview.1.gz
 %%NLS%%man/fr/man1/evim.1.gz
