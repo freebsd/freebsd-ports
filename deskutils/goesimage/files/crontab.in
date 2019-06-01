@@ -1,1 +1,1 @@
-01,16,31,46 * * * * env DISPLAY=:0 %%PREFIX%%/libexec/%%PORTNAME%% %%RUN_ARGS%%
+01,11,21,31,41,51 * * * * env DISPLAY=:0 %%PREFIX%%/bin/%%PORTNAME%%-run-now

@@ -16,4 +16,7 @@ be set as a wallpaper on the Xorg server running on DISPLAY=:0
 
 Before uninstalling, you need to disable it:
 $ goesimage-disable
+
+You can also download and update the wallpaper any time:
+$ goesimage-run-now
 ======================================================================
