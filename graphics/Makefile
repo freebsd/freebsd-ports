@@ -551,6 +551,7 @@
     SUBDIR += minder
     SUBDIR += ming
     SUBDIR += mirage
+    SUBDIR += mirtk
     SUBDIR += mmrecover
     SUBDIR += movit
     SUBDIR += mozjpeg

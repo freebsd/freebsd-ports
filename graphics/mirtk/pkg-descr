@@ -1,0 +1,8 @@
+The MIRTK is a research-focused image processing toolkit, developed at the
+BioMedIA research group. It provides a collection of libraries and command-line
+tools to assist in processing and analyzing imaging data. The main application
+of the MIRTK is in adult and neonatal brain MR image registration as well as the
+reconstruction of cortical surface meshes. The modular project organization of
+the MIRTK enables the installation of selected modules.
+
+WWW: https://mirtk.github.io/
