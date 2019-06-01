@@ -1,0 +1,14 @@
+%%LUA_MODLIBDIR%%/yaml.so
+%%LUA_MODSHAREDIR%%/lyaml/init.lua
+%%LUA_MODSHAREDIR%%/lyaml/implicit.lua
+%%LUA_MODSHAREDIR%%/lyaml/explicit.lua
+%%LUA_MODSHAREDIR%%/lyaml/functional.lua
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ldoc.css
+%%PORTDOCS%%%%DOCSDIR%%/modules/lyaml.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/lyaml.explicit.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/lyaml.implicit.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/lyaml.functional.html
