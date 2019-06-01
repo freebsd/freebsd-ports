@@ -109,10 +109,9 @@ ppcfbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
   struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
-  enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
   struct trad_frame_cache *cache;
   CORE_ADDR base;
-  int i, regnum;
+  int i;
 
   if (*this_cache)
     return (struct trad_frame_cache *)*this_cache;

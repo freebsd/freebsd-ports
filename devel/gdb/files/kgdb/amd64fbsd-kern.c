@@ -37,7 +37,7 @@ __FBSDID("$FreeBSD$");
 #include "symtab.h"
 #include "trad-frame.h"
 #include "amd64-tdep.h"
-#include "x86-xstate.h"
+#include "common/x86-xstate.h"
 
 #ifdef __amd64__
 #include <machine/pcb.h>

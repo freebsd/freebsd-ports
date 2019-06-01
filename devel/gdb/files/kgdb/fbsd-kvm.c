@@ -37,6 +37,7 @@ __FBSDID("$FreeBSD$");
 #include "inferior.h"
 #include "objfiles.h"
 #include "osabi.h"
+#include "process-stratum-target.h"
 #include "solib.h"
 #include "target.h"
 #include "value.h"
@@ -192,6 +193,7 @@ fbsd_kernel_osabi_sniffer(bfd *abfd)
 			break;
 		if (osabi != GDB_OSABI_FREEBSD)
 			return (GDB_OSABI_UNKNOWN);
+		break;
 	}
 	default:
 		return (GDB_OSABI_UNKNOWN);
@@ -218,11 +220,10 @@ If no filename is specified, /dev/mem is used to examine the running kernel.\n\
 target vmcore [-w] [filename]")
 };
 
-class fbsd_kvm_target final : public target_ops
+class fbsd_kvm_target final : public process_stratum_target
 {
 public:
-  fbsd_kvm_target ()
-  { this->to_stratum = process_stratum; }
+  fbsd_kvm_target () = default;
 
   const target_info &info () const override
   { return fbsd_kvm_target_info; }
@@ -243,9 +244,11 @@ public:
   const char *pid_to_str (ptid_t) override;
   const char *extra_thread_info (thread_info *) override;
 
-  bool has_memory () override { return true; }
-  bool has_stack () override { return true; }
-  bool has_registers () override { return true; }
+  bool has_all_memory () override { return false; }
+  bool has_memory () override;
+  bool has_stack () override;
+  bool has_registers () override;
+  bool has_execution (ptid_t) override { return false; }
 };
 
 /* Target ops for libkvm interface.  */
@@ -273,12 +276,10 @@ fbsd_kvm_target_open (const char *args, int from_tty)
 	char kvm_err[_POSIX2_LINE_MAX];
 	struct inferior *inf;
 	struct cleanup *old_chain;
-	struct thread_info *ti;
 	struct kthr *kt;
 	kvm_t *nkvm;
 	char *temp, *kernel, *filename;
 	bool writeable;
-	int ontop;
 
 	if (ops == NULL || ops->supply_pcb == NULL || ops->cpu_pcb_addr == NULL)
 		error ("ABI doesn't support a vmcore target");
@@ -384,7 +385,7 @@ fbsd_kvm_target_open (const char *args, int from_tty)
 	init_thread_list();
 	kt = kgdb_thr_init(ops->cpu_pcb_addr);
 	while (kt != NULL) {
-		ti = add_thread_silent(fbsd_vmcore_ptid(kt->tid));
+		add_thread_silent(fbsd_vmcore_ptid(kt->tid));
 		kt = kgdb_thr_next(kt);
 	}
 	if (curkthr != 0)
@@ -432,6 +433,24 @@ fbsd_kvm_target::extra_thread_info(thread_info *ti)
 {
 
 	return (kgdb_thr_extra_thread_info(ti->ptid.tid()));
+}
+
+bool
+fbsd_kvm_target::has_memory ()
+{
+  return (kvm != NULL);
+}
+
+bool
+fbsd_kvm_target::has_stack ()
+{
+  return (kvm != NULL);
+}
+
+bool
+fbsd_kvm_target::has_registers ()
+{
+  return (kvm != NULL);
 }
 
 void

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gdb
-PORTVERSION=	8.2.1
-PORTREVISION=	3
+PORTVERSION=	8.3
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -14,12 +14,12 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING3
 
 # untested on sparc64, might work
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 mips powerpc powerpc64
+NOT_FOR_ARCHS=	sparc64
 
 LIB_DEPENDS=	libmpfr.so:math/mpfr
 TEST_DEPENDS=	runtest:misc/dejagnu
 
-USES=		compiler:c++11-lang cpe gmake libtool tar:xz
+USES=		compiler:c++11-lang cpe gmake libtool pkgconfig tar:xz
 USE_PYTHON=	flavors py3kplist
 
 TEST_TARGET=	check
@@ -39,17 +39,24 @@ CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
 CFLAGS+=	-Wno-unknown-warning-option
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
-EXTRA_PATCHES=	${FILESDIR}/commit-8aa0243d54 \
-		${FILESDIR}/commit-93579f6f90 \
-		${FILESDIR}/commit-2861ee4fde
+EXTRA_PATCHES=	${FILESDIR}/commit-1163a4b7a3 \
+		${FILESDIR}/commit-dd6876c91c \
+		${FILESDIR}/commit-6e056c8178 \
+		${FILESDIR}/commit-36c53a0262 \
+		${FILESDIR}/commit-ef0bd2046f \
+		${FILESDIR}/commit-945f3901b5 \
+		${FILESDIR}/commit-f5424cfa7e \
+		${FILESDIR}/commit-ce25aa57a3 \
+		${FILESDIR}/commit-8399425f5f
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
 VER=		${PORTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 
-OPTIONS_DEFINE=	DEBUG GDB_LINK GUILE KGDB NLS PYTHON TUI
+OPTIONS_DEFINE=	DEBUG GDB_LINK GUILE KGDB NLS PYTHON SOURCE_HIGHLIGHT TUI
 
-OPTIONS_DEFAULT=	GDB_LINK KGDB NLS PYTHON TUI PORT_READLINE PORT_ICONV SYSTEM_ZLIB
+OPTIONS_DEFAULT=	GDB_LINK KGDB NLS PYTHON SOURCE_HIGHLIGHT TUI
+OPTIONS_DEFAULT+=	PORT_READLINE PORT_ICONV SYSTEM_ZLIB
 
 OPTIONS_SINGLE=	READLINE ICONV ZLIB
 OPTIONS_SINGLE_READLINE=	BUNDLED_READLINE PORT_READLINE
@@ -62,6 +69,7 @@ BUNDLED_READLINE_DESC=	from gdb distfile
 BUNDLED_ZLIB_DESC=	from gdb distfile
 PORT_READLINE_DESC=	from devel/readline port
 PORT_ICONV_DESC=	use libiconv, with wider charset support
+SOURCE_HIGHLIGHT_DESC=	Source Code Styling
 SYSTEM_ICONV_DESC=	use libc iconv, with no wchar support
 SYSTEM_ZLIB_DESC=	use system zlib
 TUI_DESC=		Text User Interface enabled
@@ -79,6 +87,9 @@ PORT_ICONV_USES=	iconv:wchar_t
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}
 PYTHON_CONFIGURE_OFF=	--without-python
 PYTHON_USES=		python
+SOURCE_HIGHLIGHT_WITH=	source-highlight
+SOURCE_HIGHLIGHT_LIB_DEPENDS=	\
+	libsource-highlight.so:textproc/source-highlight
 SYSTEM_ICONV_USES=	iconv
 SYSTEM_ZLIB_WITH=	system-zlib
 TUI_CONFIGURE_ENABLE=	tui
@@ -96,7 +107,7 @@ USE_GITHUB=	nodefault
 
 GH_ACCOUNT=	bsdjhb:libcxx
 GH_PROJECT=	libcxx-gdbpy:libcxx
-GH_TAGNAME=	99aae0c:libcxx
+GH_TAGNAME=	229610a:libcxx
 
 # Workaround USE_GITHUB preventing the default DISTFILES
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

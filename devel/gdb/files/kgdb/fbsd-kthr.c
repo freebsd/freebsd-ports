@@ -155,7 +155,6 @@ kgdb_thr_init(CORE_ADDR (*cpu_pcb_addr) (u_int))
 {
 	struct gdbarch *gdbarch = target_gdbarch ();
 	struct type *ptr_type = builtin_type (gdbarch)->builtin_data_ptr;
-	enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
 	struct kthr *kt;
 	CORE_ADDR addr, paddr;
 	
@@ -230,7 +229,7 @@ kgdb_thr_init(CORE_ADDR (*cpu_pcb_addr) (u_int))
 			    "&((struct thread *)0)->td_plist");
 			thread_oncpu_size = parse_and_eval_long(
 			    "sizeof(((struct thread *)0)->td_oncpu)");
-		} CATCH(e, RETURN_MASK_ERROR) {
+		} CATCH(e2, RETURN_MASK_ERROR) {
 			proc_off_p_pid = offsetof(struct proc, p_pid);
 			proc_off_p_comm = offsetof(struct proc, p_comm);
 			proc_off_p_list = offsetof(struct proc, p_list);
