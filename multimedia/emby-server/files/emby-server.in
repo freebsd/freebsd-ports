@@ -51,7 +51,7 @@ command_args="-f -p ${pidfile} ${procname} %%PREFIX%%/lib/emby-server/system/Emb
 	-ffmpeg ${%%RC_NAME%%_ffmpeg} \
 	-ffprobe ${%%RC_NAME%%_ffprobe} \
 	-programdata ${%%RC_NAME%%_data_dir} \
-	-updatepackage emby-server-freebsd_{version}_amd64.txz"
+	-updatepackage emby-server-freebsd12_{version}_amd64.txz"
 
 start_precmd=%%RC_NAME%%_precmd
 %%RC_NAME%%_precmd()

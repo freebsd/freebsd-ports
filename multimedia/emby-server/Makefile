@@ -1,20 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	emby-server
-PORTVERSION=	4.0.2.0
-PORTREVISION=	1
+PORTVERSION=	4.1.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
 DISTNAME=	embyserver-netframework_${PORTVERSION}
 DISTFILES=	${DISTNAME}.zip \
-		ffmpeg-2018_12_01.tar.gz \
-		ffdetect_4.0.2_x64_freebsd.tar.xz \
+		ffmpeg-2019_04_09.tar.gz \
+		ffdetect_4.0.3_x64_freebsd12.tar.xz \
 		license.docx
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.zip \
-		ffmpeg-2018_12_01.tar.gz \
-		ffdetect_4.0.2_x64_freebsd.tar.xz
+		ffmpeg-2019_04_09.tar.gz \
+		ffdetect_4.0.3_x64_freebsd12.tar.xz
 
 MAINTAINER=	alucryd@archlinux.org
 COMMENT=	Media server to organize, play & stream audio/video to various devices
@@ -45,9 +44,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libx265.so:multimedia/x265 \
 		libzvbi.so:devel/libzvbi
 
-USES=		compiler:c11 gettext-runtime gmake iconv \
-		localbase:ldflags mono pkgconfig sqlite
-USE_XORG=	x11
+USES=		compiler:c11 gmake iconv localbase:ldflags mono pkgconfig sqlite
 USE_RC_SUBR=	${PORTNAME}
 
 SUB_FILES=	ImageMagickSharp.dll.config \
@@ -57,7 +54,7 @@ SUB_LIST=	PORTNAME=${PORTNAME} USER=${USERS} GROUP=${GROUPS} RC_NAME=emby_server
 USERS=		emby
 GROUPS=		emby
 
-WRKSRC=		${WRKDIR}/ffmpeg-2018_12_01
+WRKSRC=		${WRKDIR}/ffmpeg-2019_04_09
 HAS_CONFIGURE=	yes
 
 NOPRECIOUSMAKEVARS=	yes
@@ -66,10 +63,17 @@ CONFIGURE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin V=1
 
 CONFIGURE_ARGS=	--cc="${CC}" \
-		--disable-autodetect \
+		--disable-alsa \
 		--disable-doc \
 		--disable-ffplay \
+		--disable-libxcb \
+		--disable-outdev=xv \
+		--disable-sdl2 \
 		--disable-shared \
+		--disable-sndio \
+		--disable-v4l2-m2m \
+		--disable-vdpau \
+		--disable-xlib \
 		--enable-fontconfig \
 		--enable-gmp \
 		--enable-gnutls \
