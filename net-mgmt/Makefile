@@ -43,6 +43,7 @@
     SUBDIR += check_mk_agent
     SUBDIR += check_multi
     SUBDIR += check_mysql_health
+    SUBDIR += check_nwc_health
     SUBDIR += check_ssl_cert
     SUBDIR += chillispot
     SUBDIR += choparp
