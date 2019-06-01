@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PPIx-QuoteLike
-PORTVERSION=	0.006
+PORTVERSION=	0.007
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:WYANT
@@ -19,8 +19,9 @@ RUN_DEPENDS=	p5-PPI>=1.117:textproc/p5-PPI
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
