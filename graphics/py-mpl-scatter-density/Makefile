@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpl-scatter-density
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}fast-histogram>=0.3:misc/py-fast-histogram@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5:math/py-matplotlib@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.0:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
