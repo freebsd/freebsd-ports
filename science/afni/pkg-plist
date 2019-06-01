@@ -375,6 +375,7 @@ bin/@djunct_combine_str.py
 bin/@djunct_dwi_selector.tcsh
 bin/@djunct_edgy_align_check
 bin/@djunct_is_label.py
+bin/@djunct_json_value.py
 bin/@djunct_montage_coordinator
 bin/@djunct_select_str.py
 bin/@djunct_slice_space
@@ -1329,6 +1330,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/splash_3monkeys.jpg
 %%DATADIR%%/funstuff/splash_Bpark.jpg
 %%DATADIR%%/funstuff/splash_Feb2016.jpg
+%%DATADIR%%/funstuff/splash_KUMC.jpg
 %%DATADIR%%/funstuff/splash_NMcloud.jpg
 %%DATADIR%%/funstuff/splash_Utah_Dog.jpg
 %%DATADIR%%/funstuff/splash_Utah_Tree.jpg
