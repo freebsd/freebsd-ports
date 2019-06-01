@@ -1,0 +1,7 @@
+Lua binding for the fast libYAML C library for converting between
+%YAML 1.1 and Lua tables, with a flexible Lua language API to load
+and save YAML documents.
+
+Works with Lua 5.1 (including LuaJIT), 5.2, 5.3 and 5.4.
+
+WWW: https://GVVaughan.GitHub.io/lyaml/
