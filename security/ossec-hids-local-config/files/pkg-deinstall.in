@@ -1,10 +1,19 @@
 #!/bin/sh
 
 ossec_home="%%OSSEC_HOME%%"
+fw_drop="%%FW_DROP%%"
+
+ar_bin_dir="${ossec_home}/active-response/bin"
 ossec_conf="${ossec_home}/etc/ossec.conf"
 agent_conf="${ossec_home}/etc/shared/agent.conf"
 
 if [ "$2" == "DEINSTALL"  ]; then
     rm -f "${ossec_conf}"
     rm -f "${agent_conf}"
+
+    if [ -n "${fw_drop}" ]; then
+        if [ "${ar_bin_dir}/${fw_drop}" -ef "${ar_bin_dir}/firewall-drop.sh" ]; then
+            rm -f "${ar_bin_dir}/firewall-drop.sh"
+        fi
+    fi
 fi

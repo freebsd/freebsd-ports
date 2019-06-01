@@ -42,8 +42,6 @@
 @(,,0550) %%OSSEC_HOME%%/bin/ossec-execd
 @(,,0550) %%OSSEC_HOME%%/bin/ossec-logcollector
 @(,,0550) %%OSSEC_HOME%%/bin/ossec-logtest
-@(,,0550) %%OSSEC_HOME%%/bin/ossec-lua
-@(,,0550) %%OSSEC_HOME%%/bin/ossec-luac
 @(,,0550) %%OSSEC_HOME%%/bin/ossec-maild
 @(,,0550) %%OSSEC_HOME%%/bin/ossec-makelists
 @(,,0550) %%OSSEC_HOME%%/bin/ossec-monitord
@@ -74,6 +72,7 @@
 @(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/cis_rhel_linux_rcl.txt
 @(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/cis_sles11_linux_rcl.txt
 @(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/cis_sles12_linux_rcl.txt
+@(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/cis_solaris11_rcl.txt
 @(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/cis_win10_enterprise_L1_rcl.txt
 @(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/cis_win10_enterprise_L2_rcl.txt
 @(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/cis_win2012r2_domainL1_rcl.txt
@@ -86,6 +85,7 @@
 @(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/cis_win2016_memberL2_rcl.txt
 @(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/rootkit_files.txt
 @(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/rootkit_trojans.txt
+@(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/system_audit_pw.txt
 @(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/system_audit_rcl.txt
 @(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/system_audit_ssh.txt
 @(ossec,ossec,0640) %%OSSEC_HOME%%/etc/shared/win_applications_rcl.txt
@@ -112,10 +112,14 @@
 @(,ossec,0640) %%OSSEC_HOME%%/rules/hordeimp_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/ids_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/imapd_rules.xml
+@(,ossec,0640) %%OSSEC_HOME%%/rules/kesl_rules.xml
+@(,ossec,0640) %%OSSEC_HOME%%/rules/last_rootlogin_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/linux_usbdetect_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/local_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/mailscanner_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/mcafee_av_rules.xml
+@(,ossec,0640) %%OSSEC_HOME%%/rules/mhn_cowrie_rules.xml
+@(,ossec,0640) %%OSSEC_HOME%%/rules/mhn_dionaea_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/ms-exchange_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/ms-se_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/ms1016_usbdetect_rules.xml
@@ -123,6 +127,7 @@
 @(,ossec,0640) %%OSSEC_HOME%%/rules/ms_firewall_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/ms_ftpd_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/ms_ipsec_rules.xml
+@(,ossec,0640) %%OSSEC_HOME%%/rules/ms_powershell_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/msauth_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/mysql_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/named_rules.xml
@@ -160,6 +165,7 @@
 @(,ossec,0640) %%OSSEC_HOME%%/rules/sysmon_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/systemd_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/telnetd_rules.xml
+@(,ossec,0640) %%OSSEC_HOME%%/rules/topleveldomain_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/trend-osce_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/unbound_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/vmpop3d_rules.xml
@@ -196,5 +202,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/SUPPORT.md
 %%PORTDOCS%%%%DOCSDIR%%/ossec.conf.sample
+%%LUA%%@(,,0550) %%OSSEC_HOME%%/bin/ossec-lua
+%%LUA%%@(,,0550) %%OSSEC_HOME%%/bin/ossec-luac
 %%MYSQL%%%%DOCSDIR%%/mysql.schema
 %%PGSQL%%%%DOCSDIR%%/postgresql.schema

@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ossec-hids
-PORTVERSION=	3.1.0
-PORTREVISION=
+PORTVERSION=	3.3.0
+PORTREVISION=	0
 CATEGORIES=	security
 
 MAINTAINER=	dominik.lisiak@bemsoft.pl

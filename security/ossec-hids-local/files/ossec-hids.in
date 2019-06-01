@@ -34,6 +34,10 @@ load_rc_config $name
 ossec_type="%%OSSEC_TYPE%%"
 ossec_home="%%OSSEC_HOME%%"
 
+if [ -z "${ossec_hids_user}" ]; then
+    ossec_hids_user=$(stat -f '%Su' "${ossec_home}")
+fi
+
 ossec_conf="${ossec_home}/etc/ossec.conf"
 ossec_conf_dir="${ossec_home}/etc/ossec.conf.d"
 ossec_conf_bin="${ossec_home}/bin/config/ossec-conf"
@@ -49,6 +53,7 @@ ossec_ar_log="${ossec_home}/logs/active-responses.log"
 ossec_merged="${ossec_home}/etc/shared/merged.mg"
 
 ossec_local_time="/etc/localtime"
+ossec_resolv_conf="/etc/resolv.conf"
 
 extra_commands="help status reload ossec_conf"
 case ${ossec_type} in
@@ -353,7 +358,7 @@ ossec_hids_create_config() {
             if [ -x "${agent_conf_bin}" ]; then
                 # Merge agent.conf.d files into agent.conf
                 if [ "$1" == "force" ] || ossec_hids_config_is_outdated "${agent_conf}" "${agent_conf_dir}"; then
-                    ossec_hids_create_file "${agent_conf}" %%USER%%:%%OSSEC_GROUP%% 0640
+                    ossec_hids_create_file "${agent_conf}" ${ossec_hids_user}:%%OSSEC_GROUP%% 0640
                     "${agent_conf_bin}" > "${agent_conf}"
                 fi
             fi
@@ -363,7 +368,7 @@ ossec_hids_create_config() {
     if [ -x "${ossec_conf_bin}" ]; then
         # Merge ossec.conf.d files into ossec.conf
         if [ "$1" == "force" ] || ossec_hids_config_is_outdated "${ossec_conf}" "${ossec_conf_dir}"; then
-            ossec_hids_create_file "${ossec_conf}" %%USER%%:%%OSSEC_GROUP%% 0640
+            ossec_hids_create_file "${ossec_conf}" ${ossec_hids_user}:%%OSSEC_GROUP%% 0640
             "${ossec_conf_bin}" > "${ossec_conf}"
         fi
     fi
@@ -378,7 +383,13 @@ ossec_hids_create_env() {
         echo
         return 1
     fi
-    install -o %%USER%% -g %%OSSEC_GROUP%% -m 0440 "${ossec_local_time}" "${ossec_home}${ossec_local_time}"
+    if [ ! -e "${ossec_resolv_conf}" ]; then
+        echo "ERROR: Missing \"${ossec_resolv_conf}\"."
+        echo
+        return 1
+    fi
+    install -o ${ossec_hids_user} -g %%OSSEC_GROUP%% -m 0440 "${ossec_local_time}" "${ossec_home}${ossec_local_time}"
+    install -o ${ossec_hids_user} -g %%OSSEC_GROUP%% -m 0440 "${ossec_resolv_conf}" "${ossec_home}${ossec_resolv_conf}"
 
     return 0
 }
