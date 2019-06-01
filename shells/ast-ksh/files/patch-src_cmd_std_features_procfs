@@ -1,0 +1,36 @@
+--- src/cmd/std/features/procfs.orig	2017-11-30 22:35:04 UTC
++++ src/cmd/std/features/procfs
+@@ -1,6 +1,6 @@
+ hdr	kvm,procinfo,pstat,asm/param
+ 
+-sys	procfs,sysctl
++sys	procfs,sysctl,user
+ 
+ lib	getprocs
+ lib	kvm_open,kvm_getprocs kvm.h sys/time.h sys/param.h sys/proc.h sys/sysctl.h -lkvm
+@@ -10,7 +10,11 @@ mem	extern_proc.p_pid,extern_proc.p_star
+ mem	procsinfo64.pi_pri procinfo.h
+ mem	prpsinfo.pr_clname,prpsinfo.pr_cstime,prpsinfo.pr_cstime.tv_sec,prpsinfo.pr_ctime,prpsinfo.pr_cutime,prpsinfo.pr_gid,prpsinfo.pr_lttydev,prpsinfo.pr_ntpid,prpsinfo.pr_pgid,prpsinfo.pr_pgrp,prpsinfo.pr_psargs,prpsinfo.pr_refcount,prpsinfo.pr_rssize,prpsinfo.pr_sid,prpsinfo.pr_sonproc,prpsinfo.pr_start,prpsinfo.pr_start.tv_sec,prpsinfo.pr_starttime,prpsinfo.pr_starttime.tv_sec,prpsinfo.pr_state,prpsinfo.pr_stime,prpsinfo.pr_tgrp,prpsinfo.pr_time,prpsinfo.pr_time.tv_sec,prpsinfo.pr_utime,prpsinfo.pr_zomb,prpsinfo.pr_pctcpu,prpsinfo.pr_cpu,prpsinfo.pr_lwp.pr_pctcpu,prpsinfo.pr_lwp.pr_cpu -D_STRUCTURED_PROC -Dprpsinfo=psinfo sys/types.h sys/procfs.h
+ 
++num	PIOCPSINFO
++
+ typ	struct.prpsinfo -D_STRUCTURED_PROC -Dprpsinfo=psinfo sys/types.h sys/procfs.h
++typ	struct.kinfo_proc sys/types.h sys/procfs.h sys/user.h
++typ	struct.kp_proc sys/types.h sys/procfs.h sys/user.h
+ 
+ tst	lib_info note{ info(2) kernel table api }end link{
+ 	#include <info.h>
+@@ -587,11 +591,11 @@ cat{
+ #define PSS_METHOD		PSS_METHOD_getprocs
+ #endif
+ 
+-#if !PSS_METHOD && defined(_PS_dir)
++#if !PSS_METHOD && defined(_PS_dir) && (_PS_scan_binary || _num_PIOCPSINFO)
+ #define PSS_METHOD		PSS_METHOD_procfs
+ #endif
+ 
+-#if !PSS_METHOD && _hdr_kvm && _sys_sysctl && _lib_kvm_open && _lib_kvm_getprocs
++#if !PSS_METHOD && _hdr_kvm && _sys_sysctl && _lib_kvm_open && _lib_kvm_getprocs && _typ_struct_kinfo_proc && _typ_struct_kp_proc
+ #define PSS_METHOD		PSS_METHOD_kvm
+ #endif
+ 
