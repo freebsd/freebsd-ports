@@ -13,9 +13,10 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	rubygem-json1>=1.4:devel/rubygem-json1 \
 		rubygem-nokogiri>=1:textproc/rubygem-nokogiri
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/aws-rb
 
