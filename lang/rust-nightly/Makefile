@@ -24,6 +24,7 @@ CARGO_BOOTSTRAP_VERSION=	beta
 
 CARGO_VENDOR_DIR=	${WRKSRC}/vendor
 
+BROKEN=			https://github.com/rust-lang/rust/issues/61435
 # Other bootstraps aren't provided by upstream yet
 ONLY_FOR_ARCHS=			amd64 i386
 
