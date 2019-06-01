@@ -3,8 +3,11 @@
 
 PORTNAME=	emptyepsilon
 DISTVERSIONPREFIX=	EE-
-DISTVERSION=	2019.01.19
+DISTVERSION=	2019.05.21
 CATEGORIES=	games
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	bbdf350f103a0b680f2053c94d8e91403260357e.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Spaceship bridge simulator game
