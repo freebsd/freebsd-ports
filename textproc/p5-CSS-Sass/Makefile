@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CSS-Sass
-PORTVERSION=	3.4.13
+PORTVERSION=	3.6.0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,13 +25,12 @@ TEST_DEPENDS=	p5-File-chdir>=0.01:devel/p5-File-chdir \
 USES=		compiler:c++11-lang gmake perl5
 USE_PERL5=	configure
 
-MAKE_JOBS_UNSAFE=	yes
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/CSS/Sass/Sass.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/CSS/Sass/libsass.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/CSS/Sass/plugins/digest/digest.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/CSS/Sass/plugins/glob/glob.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/CSS/Sass/plugins/img-size/img-size.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/CSS/Sass/plugins/math/math.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/libsass.so
 
 .include <bsd.port.mk>
