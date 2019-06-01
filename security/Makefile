@@ -1067,6 +1067,7 @@
     SUBDIR += rndpassw
     SUBDIR += ruby-bitwarden
     SUBDIR += ruby-camellia
+    SUBDIR += rubygem-acme-client
     SUBDIR += rubygem-aes_key_wrap
     SUBDIR += rubygem-airbrussh
     SUBDIR += rubygem-attr_encrypted
