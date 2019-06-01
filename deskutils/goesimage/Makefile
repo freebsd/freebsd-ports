@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	goesimage
-DISTVERSION=	0.1.1-1
-DISTVERSIONSUFFIX=	-g0021b16
-PORTREVISION=	1
+DISTVERSION=	0.1.1-4
+DISTVERSIONSUFFIX=	-gce8f849
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/UNLICENSE
 RUN_DEPENDS=	bash:shells/bash \
 		convert:graphics/ImageMagick6 \
 		curl:ftp/curl \
-		feh:graphics/feh
+		nitrogen:sysutils/nitrogen
 
 USES=		shebangfix
 SHEBANG_FILES=	goesimage
@@ -25,10 +24,10 @@ GH_ACCOUNT=	pigmonkey
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-SUB_LIST=	PORTNAME=${PORTNAME} RUN_ARGS="${RUN_ARGS}"
+SUB_LIST=	PORTNAME=${PORTNAME}
 SUB_FILES=	crontab
 
-RUN_ARGS=	-w -e
+RUN_ARGS=	-w -e -o # -w: NOAA GOES West satellite, -e: NOAA GOES East satellite, -o: print output, don't set as a wallpaper (it is set by nitrogen)
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec/
@@ -44,7 +43,7 @@ do-install:
 	) > ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-disable
 	@(echo "#!/bin/sh"; \
 	  echo ""; \
-	  echo "${PREFIX}/libexec/${PORTNAME} ${RUN_ARGS}"; \
+	  echo "${PREFIX}/bin/nitrogen --set-zoom "$$"(${PREFIX}/libexec/${PORTNAME} ${RUN_ARGS})"; \
 	) > ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-run-now
 	@cd ${STAGEDIR}${PREFIX}/bin && ${CHMOD} +x ${PORTNAME}-enable ${PORTNAME}-disable ${PORTNAME}-run-now
 
