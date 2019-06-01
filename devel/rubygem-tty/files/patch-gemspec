@@ -1,4 +1,4 @@
---- tty.gemspec.orig	2019-05-29 15:56:38 UTC
+--- tty.gemspec.orig	2019-06-01 10:04:14 UTC
 +++ tty.gemspec
 @@ -31,22 +31,22 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<tty-cursor>.freeze, ["~> 0.6"])
@@ -12,8 +12,9 @@
 -      s.add_runtime_dependency(%q<tty-pie>.freeze, ["~> 0.1.0"])
 +      s.add_runtime_dependency(%q<tty-pie>.freeze, ["~> 0.1"])
        s.add_runtime_dependency(%q<tty-platform>.freeze, ["~> 0.2.0"])
-       s.add_runtime_dependency(%q<tty-progressbar>.freeze, ["~> 0.16.0"])
+-      s.add_runtime_dependency(%q<tty-progressbar>.freeze, ["~> 0.16.0"])
 -      s.add_runtime_dependency(%q<tty-prompt>.freeze, ["~> 0.18.0"])
++      s.add_runtime_dependency(%q<tty-progressbar>.freeze, ["~> 0.16"])
 +      s.add_runtime_dependency(%q<tty-prompt>.freeze, ["~> 0.18"])
        s.add_runtime_dependency(%q<tty-screen>.freeze, ["~> 0.6"])
        s.add_runtime_dependency(%q<tty-spinner>.freeze, ["~> 0.9.0"])
