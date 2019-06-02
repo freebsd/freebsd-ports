@@ -12,7 +12,7 @@ COMMENT=	Interface to the Google WebRTC Voice Activity Detector (VAD)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		compiler:c11 python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
