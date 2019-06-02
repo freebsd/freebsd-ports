@@ -1,6 +1,6 @@
---- src/core/core.pro.orig	2018-06-19 20:32:20 UTC
+--- src/core/core.pro.orig	2019-05-01 14:25:33 UTC
 +++ src/core/core.pro
-@@ -287,7 +287,7 @@ RC_FILE = core.rc
+@@ -290,7 +290,7 @@ RC_FILE = core.rc
  OTHER_FILES += core.dox math/math.dox
  DEFINES += QCADCORE_LIBRARY
  
