@@ -1,0 +1,11 @@
+--- xdg.gemspec.orig	2019-06-02 17:18:22 UTC
++++ xdg.gemspec
+@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
+   s.files = ["LICENSE.md".freeze, "README.md".freeze, "lib/xdg.rb".freeze, "lib/xdg/cache.rb".freeze, "lib/xdg/config.rb".freeze, "lib/xdg/data.rb".freeze, "lib/xdg/environment.rb".freeze, "lib/xdg/identity.rb".freeze, "lib/xdg/pair.rb".freeze, "lib/xdg/paths/combined.rb".freeze, "lib/xdg/paths/directory.rb".freeze, "lib/xdg/paths/standard.rb".freeze]
+   s.homepage = "https://github.com/bkuhlmann/xdg".freeze
+   s.licenses = ["Apache-2.0".freeze]
+-  s.required_ruby_version = Gem::Requirement.new("~> 2.6".freeze)
++  s.required_ruby_version = Gem::Requirement.new("~> 2.5".freeze)
+   s.rubygems_version = "3.0.3".freeze
+   s.summary = "Provides an implementation of the XDG Base Directory Specification.".freeze
+ 
