@@ -12789,3 +12789,4 @@ security/racoon2-legacy|security/racoon2|2019-05-31|Has expired: No longer suppo
 www/pivotx||2019-05-31|Has expired: inactive upstream and does not work with PHP 7
 dns/bind912|dns/bind914|2019-05-31|Has expired: Support ends, please move to dns/bind914.
 multimedia/vdr-plugin-softhddevice||2019-05-31|Has expired: unmaintained and depends on vulnerable multimedia/ffmpeg0
+devel/pecl-pthreads||2019-06-02|Has expired: Does not work with recent versions of php
