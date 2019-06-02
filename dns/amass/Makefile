@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	amass
-DISTVERSION=	2.9.13
+DISTVERSION=	3.0.3
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,7 +53,7 @@ GH_TUPLE=	OWASP:Amass:${DISTVERSIONFULL}:main/src/github.com/OWASP/Amass \
 		golang:tools:18207bb:tools/src/golang.org/x/tools \
 		go-sourcemap:sourcemap:b019cc3:sourcemap/src/github.com/go-sourcemap/sourcemap
 
-PROGS=		${PORTNAME} ${PORTNAME}.db ${PORTNAME}.netdomains ${PORTNAME}.viz
+PROGS=		${PORTNAME}
 
 PLIST_FILES=	${PROGS:C/^/bin\//}
 
