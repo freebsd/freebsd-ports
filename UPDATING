@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180601:
+  AFFECTS: www/tt-rss
+  AUTHOR: dereks@lifeofadishwasher.com
+
+  tt-rss now uses php intl for extension; a web server reload
+  will be required if intl extension isn't already loaded.
+
 20190522:
   AFFECTS: users of sysutils/graylog
   AUTHOR: dch@FreeBSD.org
