@@ -3836,7 +3836,6 @@
     SUBDIR += pecl-propro2
     SUBDIR += pecl-protobuf
     SUBDIR += pecl-psr
-    SUBDIR += pecl-pthreads
     SUBDIR += pecl-raphf2
     SUBDIR += pecl-request
     SUBDIR += pecl-swoole
