@@ -3,7 +3,6 @@
 
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot \
@@ -77,7 +76,7 @@ PROFILE_SUB_LIST=	WITH_PROFILE="YES"
 PROFILE_SUB_LIST_OFF=	WITH_PROFILE="NO"
 
 GHC_VERSION?=		${GHC_VERSION_DEFAULT}
-GHC_VERSION_DEFAULT=	8.6.3
+GHC_VERSION_DEFAULT=	8.6.4
 GHC_VERSION_MAJOR=	${GHC_VERSION:S/./ /g:[1]}
 GHC_VERSION_MINOR=	${GHC_VERSION:S/./ /g:[2]}
 
@@ -124,9 +123,11 @@ _EXECUTABLES=	${GHC_LIBDIR}/bin/unlit \
 		${GHC_LIBDIR}/bin/hsc2hs \
 		${GHC_LIBDIR}/bin/runghc \
 		${GHC_LIBDIR}/bin/ghc \
-		${GHC_LIBDIR}/bin/hp2ps \
-		${GHC_LIBDIR}/bin/haddock
+		${GHC_LIBDIR}/bin/hp2ps
 
+.if ${PORT_OPTIONS:MDOCS}
+_EXECUTABLES+=	${GHC_LIBDIR}/bin/haddock
+.endif
 .if ${PORT_OPTIONS:MPROFILE}
 _EXECUTABLES+=	${GHC_LIBDIR}/bin/ghc-iserv-prof
 .endif
