@@ -26,7 +26,9 @@ do-install:
 		${LN} ${STAGEDIR}${PREFIX}/bin/bc ${STAGEDIR}${PREFIX}/bin/dc
 		${INSTALL_MAN} ${WRKSRC}/manuals/bc.1 ${STAGEDIR}${MANPREFIX}/man/man1
 		${INSTALL_MAN} ${WRKSRC}/manuals/dc.1 ${STAGEDIR}${MANPREFIX}/man/man1
-		${WRKSRC}/locale_install.sh ${STAGEDIR}${PREFIX}/share/nls/%L/%N.cat ${PORTNAME} #${STAGEDIR}
+		${WRKSRC}/locale_install.sh ${STAGEDIR}${PREFIX}/share/nls/%L/%N.cat ${PORTNAME}
+		${RM} ${STAGEDIR}${PREFIX}/share/nls/en_US/bc.cat
+		${RMDIR} ${STAGEDIR}${PREFIX}/share/nls/en_US
 		${LN} ${STAGEDIR}${PREFIX}/share/nls/en_US.US-ASCII/bc.cat ${STAGEDIR}${PREFIX}/share/nls/C/
 
 do-test:
