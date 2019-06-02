@@ -1,4 +1,4 @@
---- installer/dcheck.py.orig	2016-08-26 10:05:26 UTC
+--- installer/dcheck.py.orig	2019-05-23 09:47:03 UTC
 +++ installer/dcheck.py
 @@ -48,7 +48,11 @@ mod_output = ''
  def update_ld_output():
@@ -13,7 +13,19 @@
  
      if status != 0:
          log.debug("ldconfig failed.")
-@@ -378,6 +382,8 @@ def get_libpthread_version():
+@@ -370,7 +374,10 @@ def get_pil_version():
+     except ImportError:
+         return '-'
+     else:
+-         return Image.VERSION
++        if hasattr(Image, "__version__"): # required for Pillow >= 6.0.0
++            return Image.__version__
++        else:
++            return Image.VERSION
+ 
+ def get_libpthread_version():
+     try:
+@@ -378,6 +385,8 @@ def get_libpthread_version():
      except ImportError:
          return '-'
      else:
