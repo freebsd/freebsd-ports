@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plata-theme
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@yandex.com
@@ -19,11 +19,12 @@ RUN_DEPENDS=	gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf
 
 USES=		autoreconf gmake gnome pkgconfig shebangfix
+USE_GNOME=	gdkpixbuf2 gtk30 libxml2
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com
 GL_ACCOUNT=	tista500
-GL_COMMIT=	369c0af8fa13d06cba176c116811358f899e9c9b
+GL_COMMIT=	0e241d44958ae2cffc4fc289d6148aadec20bcf7
 
 NO_ARCH=	yes
 
@@ -36,7 +37,7 @@ CONFIGURE_ARGS=	--disable-gtk_next \
 		--disable-tweetdeck \
 		--disable-airforsteam
 
-USE_GNOME=	gdkpixbuf2 gtk30 libxml2
+PORTDOCS=	README.md README.window-list
 
 OPTIONS_DEFINE=	CINNAMON DOCS GNOME METACITY OPENBOX PARALLEL PLANK XFCE
 OPTIONS_DEFAULT=	CINNAMON GNOME METACITY OPENBOX PARALLEL PLANK XFCE
@@ -57,8 +58,6 @@ PLANK_DESC=	Enale Plank support
 PLANK_CONFIGURE_ENABLE=	plank
 XFCE_DESC=	Enable Xfce support
 XFCE_CONFIGURE_ENABLE=	xfce
-
-PORTDOCS=	README.md README.window-list
 
 post-extract:
 	${CP} ${WRKSRC}/src/shell/sass/gnome-shell/README.window-list ${WRKSRC}
