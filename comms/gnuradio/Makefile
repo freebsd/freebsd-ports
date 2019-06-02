@@ -2,9 +2,8 @@
 
 PORTNAME=	gnuradio
 #MASTER_SITES=	http://gnuradio.org/releases/gnuradio/
-# Temporary git version
-DISTVERSION=	3.8.g20190309
-PORTREVISION=	3
+DISTVERSION=	3.8tech-preview-381
+DISTVERSIONSUFFIX=	-g27dd99e49
 CATEGORIES=	comms astro hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -26,6 +25,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/six.py:devel/py-six@${PY_FLAVOR} \
 		aconnect:audio/alsa-utils \
 		cheetah:devel/py-cheetah@${PY_FLAVOR} \
+		cppzmq>0:net/cppzmq \
 		guile:lang/guile \
 		minixmlto:textproc/minixmlto \
 		sdl-config:devel/sdl12 \
@@ -44,13 +44,9 @@ LIB_DEPENDS=	libcodec2.so:audio/codec2 \
 		libgsl.so:math/gsl \
 		libgsm.so:audio/gsm \
 		libboost_date_time.so:devel/boost-libs \
-		liborc-0.4.so:devel/orc
+		liborc-0.4.so:devel/orc \
+		libzmq.so:net/libzmq4
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	gnuradio
-GH_PROJECT=	gnuradio volk:volk
-GH_TAGNAME=	a664001 d250816:volk
 
 # USES=compiler:c11 is necessary because base GCC fails:
 # volk/lib/volk_cpu.c: In function 'i_can_has_3dnow':
@@ -61,6 +57,11 @@ USES=		cmake compiler:c11 desktop-file-utils fortran gnome iconv \
 SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-ctrlport-monitor \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-perf-monitorx
+USE_GITHUB=	yes
+GH_ACCOUNT=	gnuradio
+GH_PROJECT=	gnuradio volk:volk
+GH_TAGNAME=	a664001 d250816:volk
+
 CMAKE_ARGS+=	-DCMAKE_INSTALL_RPATH:STRING="${LOCALBASE}/lib/gcc${_GCC_VER}" \
 		-DENABLE_GR_CTRLPORT="YES" \
 		-DICONV_LIB:STRING="X${ICONV_LIB}" \
