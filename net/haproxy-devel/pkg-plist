@@ -3,6 +3,7 @@ sbin/halog
 sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/51Degrees-device-detection.txt
 %%PORTDOCS%%%%DOCSDIR%%/DeviceAtlas-device-detection.txt
+%%PORTDOCS%%%%DOCSDIR%%/SOCKS4.protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/SPOE.txt
 %%PORTDOCS%%%%DOCSDIR%%/WURFL-device-detection.txt
 %%PORTDOCS%%%%DOCSDIR%%/acl.fig
@@ -96,6 +97,7 @@ sbin/haproxy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/init.haproxy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/option-http_proxy.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seamless_reload.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/socks4.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stats_haproxy.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/transparent_proxy.cfg
