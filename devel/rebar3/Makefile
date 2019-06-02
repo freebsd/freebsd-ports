@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rebar3
-PORTVERSION=	3.10.0
+PORTVERSION=	3.11.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
@@ -26,6 +26,7 @@ OPTIONS_DEFAULT=BASH ZSH
 USE_GITHUB=	yes
 GH_ACCOUNT=	rebar
 
+NO_ARCH=	yes
 PLIST_FILES=	bin/${PORTNAME}
 PORTEXAMPLES=	rebar.config.sample
 
@@ -36,13 +37,13 @@ ZSH_PLIST_FILES=	share/zsh/site-functions/_rebar3
 REBAR_DEPS=	bbmustache-1.6.1 \
 		certifi-2.5.1 \
 		cf-0.2.2 \
-		cth_readable-1.4.3 \
+		cth_readable-1.4.4 \
 		erlware_commons-1.3.1 \
 		eunit_formatters-0.5.0 \
 		getopt-1.0.1 \
 		parse_trans-3.3.0 \
-		providers-1.7.0 \
-		relx-3.31.0 \
+		providers-1.8.1 \
+		relx-3.32.1 \
 		ssl_verify_fun-1.1.4
 
 .for _dep in ${REBAR_DEPS} ${REBAR_PLUGINS}
