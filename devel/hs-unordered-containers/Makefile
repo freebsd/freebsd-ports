@@ -2,7 +2,7 @@
 
 PORTNAME=	unordered-containers
 PORTVERSION=	0.2.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
