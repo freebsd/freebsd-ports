@@ -3,7 +3,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.6.1
-PORTREVISION=	45
+PORTREVISION=	46
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	LOCAL/ahze
 # http://sourceforge.net/forum/forum.php?thread_id=1839453&forum_id=59136
@@ -11,6 +11,9 @@ MASTER_SITES=	LOCAL/ahze
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Standards-based system to encode, stream, and play MPEG-4 audio/video
+
+DEPRECATED=	old, unmaintained version; superseded by multimedia/ffmpeg
+EXPIRATION_DATE=	2019-06-15
 
 BUILD_DEPENDS=	mp4v2>=1.9.1:multimedia/mp4v2 \
 		${LOCALBASE}/include/linux/videodev.h:multimedia/v4l_compat
