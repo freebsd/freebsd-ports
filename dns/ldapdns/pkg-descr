@@ -2,4 +2,4 @@ ldapdns is a lightweight, high performance DNS server which utilizes
 LDAP as its backend. It was originally based on djbdns, and strives to
 maintain the same goals of performance, security and simplicity.
 
-WWW: http://bsdforge.com/projects/dns/ldapdns
+WWW: https://bsdforge.com/projects/dns/ldapdns/
