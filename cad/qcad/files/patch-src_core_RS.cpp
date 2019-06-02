@@ -1,6 +1,6 @@
---- src/core/RS.cpp.orig	2017-07-21 17:57:53 UTC
+--- src/core/RS.cpp.orig	2019-05-01 14:25:33 UTC
 +++ src/core/RS.cpp
-@@ -118,6 +118,10 @@ QStringList RS::getDirectoryList(const Q
+@@ -146,6 +146,10 @@ QStringList RS::getDirectoryList(const QString& subDir
      }
  
  #ifdef Q_OS_MAC

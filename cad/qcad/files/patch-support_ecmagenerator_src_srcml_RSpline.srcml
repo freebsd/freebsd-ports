@@ -1,4 +1,4 @@
---- support/ecmagenerator/src/srcml/RSpline.srcml.orig	2018-06-19 20:32:20 UTC
+--- support/ecmagenerator/src/srcml/RSpline.srcml.orig	2019-05-01 14:25:33 UTC
 +++ support/ecmagenerator/src/srcml/RSpline.srcml
 @@ -33,7 +33,7 @@
  <cpp:include>#<cpp:directive>include</cpp:directive> <cpp:file>"RPolyline.h"</cpp:file></cpp:include>
@@ -8,4 +8,4 @@
 +<cpp:include>#<cpp:directive>include</cpp:directive> <cpp:file>"openNURBS/opennurbs.h"</cpp:file></cpp:include>
  <cpp:endif>#<cpp:directive>endif</cpp:directive></cpp:endif>
  
- 
+ <cpp:ifndef>#<cpp:directive>ifndef</cpp:directive> <name>RDEFAULT_MIN1</name></cpp:ifndef>

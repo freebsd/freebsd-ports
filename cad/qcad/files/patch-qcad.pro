@@ -1,14 +1,14 @@
---- qcad.pro.orig	2018-06-19 20:32:20 UTC
+--- qcad.pro.orig	2019-05-04 22:28:42 UTC
 +++ qcad.pro
-@@ -12,9 +12,9 @@ win32 {
+@@ -11,9 +11,9 @@ win32 {
          SUBDIRS += ..\\$$dir
      }
  }
 -else {
--    SUBDIRS += $$system("ls -d ../qcad?* 2>/dev/null | grep -v $(basename $(pwd))$ | grep -v qcadmobile")
+-    SUBDIRS += $$system("ls -d ../qcad?* 2>/dev/null | grep -v $(basename $(pwd))$")
 -}
 +#else {
-+#    SUBDIRS += $$system("ls -d ../qcad?* 2>/dev/null | grep -v $(basename $(pwd))$ | grep -v qcadmobile")
++#    SUBDIRS += $$system("ls -d ../qcad?* 2>/dev/null | grep -v $(basename $(pwd))$")
 +#}
  
  !r_mobile {
