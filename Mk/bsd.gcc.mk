@@ -35,7 +35,7 @@ GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 # ascending order and in sync with the table below. 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-GCCVERSIONS=	040200 040800 060000 070000 080000
+GCCVERSIONS=	040200 040800 060000 070000 080000 090000
 
 # The first field is the OSVERSION in which it disappeared from the base.
 # The second field is the version as USE_GCC would use.
@@ -44,6 +44,7 @@ GCCVERSION_040800=	      0 4.8
 GCCVERSION_060000=	      0 6
 GCCVERSION_070000=	      0 7
 GCCVERSION_080000=	      0 8
+GCCVERSION_090000=	      0 9
 
 # No configurable parts below this. ####################################
 #
