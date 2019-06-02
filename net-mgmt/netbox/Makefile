@@ -2,7 +2,7 @@
 
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.12
+DISTVERSION=	2.5.13
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	kai@FreeBSD.org
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.2,<2.3:www/py-django22@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}dj22-django-taggit>=0.24.0:www/py-dj22-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj22-django-taggit-serializer>=0.1.7:www/py-dj22-django-taggit-serializer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj22-django-timezone-field>=3.0:www/py-dj22-django-timezone-field@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj22-djangorestframework>=3.9.0:www/py-dj22-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj22-djangorestframework>=3.9.1:www/py-dj22-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj22-drf-yasg>=1.14.0:www/py-dj22-drf-yasg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gfm>=0.1.4:textproc/py-gfm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphviz>=0.10.1:graphics/py-graphviz@${PY_FLAVOR} \
