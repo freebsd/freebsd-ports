@@ -66,9 +66,6 @@
 %%WWWDIR%%/www/static/www/css/spacings.css
 %%WWWDIR%%/www/static/www/css/style.css
 %%WWWDIR%%/www/static/www/css/style.css.map
-%%WWWDIR%%/www/static/www/css/talos-guy.css
-%%WWWDIR%%/www/static/www/css/talos-guy_small.css
-%%WWWDIR%%/www/static/www/css/talos-guy_xs.css
 %%WWWDIR%%/www/static/www/font-icons.css
 %%WWWDIR%%/www/static/www/fonts/ElegantIcons.eot
 %%WWWDIR%%/www/static/www/fonts/ElegantIcons.svg
@@ -96,7 +93,6 @@
 %%WWWDIR%%/www/static/www/img/logo_dark.png
 %%WWWDIR%%/www/static/www/img/logo_l.png
 %%WWWDIR%%/www/static/www/img/logo_light.png
-%%WWWDIR%%/www/static/www/img/talos-guy.png
 %%WWWDIR%%/www/static/www/img/talos_logo.png
 %%WWWDIR%%/www/static/www/js/bootstrap.min.js
 %%WWWDIR%%/www/static/www/js/jquery.min.js
@@ -149,8 +145,6 @@
 %%WWWDIR%%/www/static/www/spacings.css
 %%WWWDIR%%/www/static/www/style.css
 %%WWWDIR%%/www/static/www/style.css.map
-%%WWWDIR%%/www/static/www/talos-guy.css
-%%WWWDIR%%/www/static/www/talos-guy_small.css
 %%WWWDIR%%/www/templates/www/404.html
 %%WWWDIR%%/www/templates/www/base_site.html
 %%WWWDIR%%/www/templates/www/index.html
