@@ -14,6 +14,9 @@ COMMENT=			Free SMB/CIFS and AD/DC server and client for Unix
 LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
 
+DEPRECATED=			yes
+EXPIRATION_DATE=		2019-08-19
+
 IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-689]-4.* p5-Parse-Pidl-4.*
@@ -233,12 +236,12 @@ SAMBA4_BUNDLED_LIBS+=		replace
 # Don't use external libcom_err
 SAMBA4_BUNDLED_LIBS+=		com_err
 # Set the test environment variables
+TEST_USES=			python
 TEST_ENV+=			PYTHON="${PYTHON_CMD}" \
 				SHA1SUM=/sbin/sha1 \
 				SHA256SUM=/sbin/sha256 \
 				MD5SUM=/sbin/md5
-TEST_DEPENDS+=			python:lang/python \
-				bash:shells/bash \
+TEST_DEPENDS+=			bash:shells/bash \
 				tshark:net/tshark
 ##############################################################################
 CONFIGURE_ARGS+=		\
