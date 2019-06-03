@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kore
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 CATEGORIES=	devel www
 MASTER_SITES=	https://kore.io/releases/
 
