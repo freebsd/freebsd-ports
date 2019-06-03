@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2019-03-09 13:28:14 UTC
+--- CMakeLists.txt.orig	2019-05-29 03:34:08 UTC
 +++ CMakeLists.txt
 @@ -31,6 +31,7 @@ cmake_minimum_required(VERSION 3.8)
  project(gnuradio CXX C)
@@ -22,5 +22,5 @@
 +set(GR_PKGCONFIG_DIR      lib${LIB_SUFFIX})
 +endif()
  
- ########################################################################
- # Configure CMake policies
+ # Enable generation of compile_commands.json for code completion engines
+ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
