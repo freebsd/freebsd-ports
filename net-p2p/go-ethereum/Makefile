@@ -2,7 +2,7 @@
 
 PORTNAME=	go-ethereum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.24
+DISTVERSION=	1.8.27
 CATEGORIES=	net-p2p
 
 MAINTAINER=	me@enriquefynn.com
