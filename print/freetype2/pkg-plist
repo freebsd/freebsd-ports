@@ -15,6 +15,7 @@ include/freetype2/freetype/ftbzip2.h
 include/freetype2/freetype/ftcache.h
 include/freetype2/freetype/ftchapters.h
 include/freetype2/freetype/ftcid.h
+include/freetype2/freetype/ftcolor.h
 include/freetype2/freetype/fterrdef.h
 include/freetype2/freetype/fterrors.h
 include/freetype2/freetype/ftfntfmt.h
@@ -51,7 +52,7 @@ include/freetype2/ft2build.h
 lib/libfreetype.a
 lib/libfreetype.so
 lib/libfreetype.so.6
-lib/libfreetype.so.6.16.1
+lib/libfreetype.so.6.17.0
 libdata/pkgconfig/freetype2.pc
 %%CONFIG%%man/man1/freetype-config.1.gz
 share/aclocal/freetype2.m4
