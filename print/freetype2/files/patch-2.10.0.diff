@@ -1,0 +1,772 @@
+# [cff] Fix boundary checks.
+# http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=6986ddac1ece9404c9b640a512cbd99534205fda
+# * src/sfnt/ttcmap.c (tt_get_glyph_name): Pacify compiler (#56061).
+# http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=885b4c2475f3272afd4115c97c150266cd815406
+# [smooth] Fix segfault in direct mode (#56092).
+# http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=1f271751a39e5bc9c639adc213183ed5e58a9401
+# [pcf] Fix handling of undefined glyph (#56067).
+# http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=c149f7397e484c97f45fb75fa1c7fdda2fc646cd
+# Fix return value of `FT_Set_Named_Instance' (#56186).
+# http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=af400438b7da3f07afadc3a5b3a6b982b2bdb84e
+# * src/base/ftbitmap.c (FT_Bitmap_Blend): Check target pitch.
+# http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=9f6ed10545b1009cce86289f793165dd7e4b7c9e
+# [base] Fix thinko in previous commit.
+# http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=4166c453601e856fa61e8994085f240d8771e980
+
+--- src/base/ftbitmap.c.orig	2019-02-23 10:19:25 UTC
++++ src/base/ftbitmap.c
+@@ -922,12 +922,18 @@
+     else
+       FT_TRACE5(( "  target bitmap: empty\n" ));
+ 
+-    FT_TRACE5(( "  final bitmap: (%d, %d) -- (%d, %d); %d x %d\n",
+-      final_llx / 64, final_lly / 64,
+-      final_urx / 64, final_ury / 64,
+-      final_width, final_rows ));
++    if ( final_width && final_rows )
++      FT_TRACE5(( "  final bitmap: (%d, %d) -- (%d, %d); %d x %d\n",
++        final_llx / 64, final_lly / 64,
++        final_urx / 64, final_ury / 64,
++        final_width, final_rows ));
++    else
++      FT_TRACE5(( "  final bitmap: empty\n" ));
+ #endif /* FT_DEBUG_LEVEL_TRACE */
+ 
++    if ( !( final_width && final_rows ) )
++      return FT_Err_Ok;               /* nothing to do */
++
+     /* for blending, set offset vector of final bitmap */
+     /* temporarily to (0,0)                            */
+     source_llx -= final_llx;
+@@ -971,6 +977,7 @@
+ 
+ 
+       pitch = target->pitch;
++
+       if ( pitch < 0 )
+         pitch = -pitch;
+ 
+--- src/base/ftoutln.c.orig	2019-02-23 09:06:07 UTC
++++ src/base/ftoutln.c
+@@ -621,6 +621,16 @@
+ 
+     params->source = (void*)outline;
+ 
++    /* preset clip_box for direct mode */
++    if ( params->flags & FT_RASTER_FLAG_DIRECT    &&
++         !( params->flags & FT_RASTER_FLAG_CLIP ) )
++    {
++      params->clip_box.xMin = cbox.xMin >> 6;
++      params->clip_box.yMin = cbox.yMin >> 6;
++      params->clip_box.xMax = ( cbox.xMax + 63 ) >> 6;
++      params->clip_box.yMax = ( cbox.yMax + 63 ) >> 6;
++    }
++
+     error = FT_ERR( Cannot_Render_Glyph );
+     while ( renderer )
+     {
+--- src/cff/cffparse.c.orig	2019-03-11 07:20:07 UTC
++++ src/cff/cffparse.c
+@@ -77,6 +77,23 @@
+   }
+ 
+ 
++#ifdef CFF_CONFIG_OPTION_OLD_ENGINE
++  static void
++  finalize_t2_strings( FT_Memory  memory,
++                       void*      data,
++                       void*      user )
++  {
++    CFF_T2_String  t2 = (CFF_T2_String)data;
++
++
++    FT_UNUSED( user );
++
++    memory->free( memory, t2->start );
++    memory->free( memory, data );
++  }
++#endif /* CFF_CONFIG_OPTION_OLD_ENGINE */
++
++
+   FT_LOCAL_DEF( void )
+   cff_parser_done( CFF_Parser  parser )
+   {
+@@ -84,13 +101,65 @@
+ 
+ 
+     FT_FREE( parser->stack );
++
++#ifdef CFF_CONFIG_OPTION_OLD_ENGINE
++    FT_List_Finalize( &parser->t2_strings,
++                      finalize_t2_strings,
++                      memory,
++                      NULL );
++#endif
++  }
++
++
++  /* Assuming `first >= last'. */
++
++  static FT_Error
++  cff_parser_within_limits( CFF_Parser  parser,
++                            FT_Byte*    first,
++                            FT_Byte*    last )
++  {
++#ifndef CFF_CONFIG_OPTION_OLD_ENGINE
++
++    /* Fast path for regular FreeType builds with the "new" engine; */
++    /*   `first >= parser->start' can be assumed.                   */
++
++    FT_UNUSED( first );
++
++    return last < parser->limit ? FT_Err_Ok : FT_THROW( Invalid_Argument );
++
++#else /* CFF_CONFIG_OPTION_OLD_ENGINE */
++
++    FT_ListNode  node;
++
++
++    if ( first >= parser->start &&
++         last  <  parser->limit )
++      return FT_Err_Ok;
++
++    node = parser->t2_strings.head;
++
++    while ( node )
++    {
++      CFF_T2_String  t2 = (CFF_T2_String)node->data;
++
++
++      if ( first >= t2->start &&
++           last  <  t2->limit )
++        return FT_Err_Ok;
++
++      node = node->next;
++    }
++
++    return FT_THROW( Invalid_Argument );
++
++#endif /* CFF_CONFIG_OPTION_OLD_ENGINE */
+   }
+ 
+ 
+   /* read an integer */
+   static FT_Long
+-  cff_parse_integer( FT_Byte*  start,
+-                     FT_Byte*  limit )
++  cff_parse_integer( CFF_Parser  parser,
++                     FT_Byte*    start )
+   {
+     FT_Byte*  p   = start;
+     FT_Int    v   = *p++;
+@@ -99,14 +168,14 @@
+ 
+     if ( v == 28 )
+     {
+-      if ( p + 2 > limit )
++      if ( cff_parser_within_limits( parser, p, p + 1 ) )
+         goto Bad;
+ 
+       val = (FT_Short)( ( (FT_UShort)p[0] << 8 ) | p[1] );
+     }
+     else if ( v == 29 )
+     {
+-      if ( p + 4 > limit )
++      if ( cff_parser_within_limits( parser, p, p + 3 ) )
+         goto Bad;
+ 
+       val = (FT_Long)( ( (FT_ULong)p[0] << 24 ) |
+@@ -120,14 +189,14 @@
+     }
+     else if ( v < 251 )
+     {
+-      if ( p + 1 > limit )
++      if ( cff_parser_within_limits( parser, p, p ) )
+         goto Bad;
+ 
+       val = ( v - 247 ) * 256 + p[0] + 108;
+     }
+     else
+     {
+-      if ( p + 1 > limit )
++      if ( cff_parser_within_limits( parser, p, p ) )
+         goto Bad;
+ 
+       val = -( v - 251 ) * 256 - p[0] - 108;
+@@ -176,10 +245,10 @@
+ 
+   /* read a real */
+   static FT_Fixed
+-  cff_parse_real( FT_Byte*  start,
+-                  FT_Byte*  limit,
+-                  FT_Long   power_ten,
+-                  FT_Long*  scaling )
++  cff_parse_real( CFF_Parser  parser,
++                  FT_Byte*    start,
++                  FT_Long     power_ten,
++                  FT_Long*    scaling )
+   {
+     FT_Byte*  p = start;
+     FT_Int    nib;
+@@ -214,7 +283,7 @@
+         p++;
+ 
+         /* Make sure we don't read past the end. */
+-        if ( p >= limit )
++        if ( cff_parser_within_limits( parser, p, p ) )
+           goto Bad;
+       }
+ 
+@@ -251,7 +320,7 @@
+           p++;
+ 
+           /* Make sure we don't read past the end. */
+-          if ( p >= limit )
++          if ( cff_parser_within_limits( parser, p, p ) )
+             goto Bad;
+         }
+ 
+@@ -290,7 +359,7 @@
+           p++;
+ 
+           /* Make sure we don't read past the end. */
+-          if ( p >= limit )
++          if ( cff_parser_within_limits( parser, p, p ) )
+             goto Bad;
+         }
+ 
+@@ -457,7 +526,7 @@
+     if ( **d == 30 )
+     {
+       /* binary-coded decimal is truncated to integer */
+-      return cff_parse_real( *d, parser->limit, 0, NULL ) >> 16;
++      return cff_parse_real( parser, *d, 0, NULL ) >> 16;
+     }
+ 
+     else if ( **d == 255 )
+@@ -483,7 +552,7 @@
+     }
+ 
+     else
+-      return cff_parse_integer( *d, parser->limit );
++      return cff_parse_integer( parser, *d );
+   }
+ 
+ 
+@@ -494,10 +563,10 @@
+             FT_Long     scaling )
+   {
+     if ( **d == 30 )
+-      return cff_parse_real( *d, parser->limit, scaling, NULL );
++      return cff_parse_real( parser, *d, scaling, NULL );
+     else
+     {
+-      FT_Long  val = cff_parse_integer( *d, parser->limit );
++      FT_Long  val = cff_parse_integer( parser, *d );
+ 
+ 
+       if ( scaling )
+@@ -562,14 +631,14 @@
+     FT_ASSERT( scaling );
+ 
+     if ( **d == 30 )
+-      return cff_parse_real( *d, parser->limit, 0, scaling );
++      return cff_parse_real( parser, *d, 0, scaling );
+     else
+     {
+       FT_Long  number;
+       FT_Int   integer_length;
+ 
+ 
+-      number = cff_parse_integer( d[0], d[1] );
++      number = cff_parse_integer( parser, d[0] );
+ 
+       if ( number > 0x7FFFL )
+       {
+@@ -1122,18 +1191,6 @@
+ #endif /* FT_DEBUG_LEVEL_TRACE */
+ 
+ 
+-#ifdef CFF_CONFIG_OPTION_OLD_ENGINE
+-  static void
+-  destruct_t2s_item( FT_Memory  memory,
+-                     void*      data,
+-                     void*      user )
+-  {
+-    FT_UNUSED( user );
+-    memory->free( memory, data );
+-  }
+-#endif /* CFF_CONFIG_OPTION_OLD_ENGINE */
+-
+-
+   FT_LOCAL_DEF( FT_Error )
+   cff_parser_run( CFF_Parser  parser,
+                   FT_Byte*    start,
+@@ -1147,11 +1204,6 @@
+ 
+     FT_Library  library = parser->library;
+     FT_Memory   memory  = library->memory;
+-
+-    FT_ListRec  t2s;
+-
+-
+-    FT_ZERO( &t2s );
+ #endif
+ 
+     parser->top    = parser->stack;
+@@ -1212,9 +1264,11 @@
+         FT_Byte*     charstring_base;
+         FT_ULong     charstring_len;
+ 
+-        FT_Fixed*    stack;
+-        FT_ListNode  node;
+-        FT_Byte*     q;
++        FT_Fixed*     stack;
++        FT_ListNode   node;
++        CFF_T2_String t2;
++        size_t        t2_size;
++        FT_Byte*      q;
+ 
+ 
+         charstring_base = ++p;
+@@ -1261,16 +1315,26 @@
+         if ( !node )
+           goto Out_Of_Memory_Error;
+ 
++        FT_List_Add( &parser->t2_strings, node );
++
++        t2 = (CFF_T2_String)memory->alloc( memory,
++                                           sizeof ( CFF_T2_StringRec ) );
++        if ( !t2 )
++          goto Out_Of_Memory_Error;
++
++        node->data = t2;
++
+         /* `5' is the conservative upper bound of required bytes per stack */
+         /* element.                                                        */
+-        q = (FT_Byte*)memory->alloc( memory,
+-                                     5 * ( decoder.top - decoder.stack ) );
++
++        t2_size = 5 * ( decoder.top - decoder.stack );
++
++        q = (FT_Byte*)memory->alloc( memory, t2_size );
+         if ( !q )
+           goto Out_Of_Memory_Error;
+ 
+-        node->data = q;
+-
+-        FT_List_Add( &t2s, node );
++        t2->start = q;
++        t2->limit = q + t2_size;
+ 
+         stack = decoder.stack;
+ 
+@@ -1531,9 +1595,6 @@
+     } /* while ( p < limit ) */
+ 
+   Exit:
+-#ifdef CFF_CONFIG_OPTION_OLD_ENGINE
+-    FT_List_Finalize( &t2s, destruct_t2s_item, memory, NULL );
+-#endif
+     return error;
+ 
+ #ifdef CFF_CONFIG_OPTION_OLD_ENGINE
+--- src/cff/cffparse.h.orig	2019-02-23 09:06:07 UTC
++++ src/cff/cffparse.h
+@@ -60,6 +60,10 @@ FT_BEGIN_HEADER
+     FT_Byte**   top;
+     FT_UInt     stackSize;  /* allocated size */
+ 
++#ifdef CFF_CONFIG_OPTION_OLD_ENGINE
++    FT_ListRec  t2_strings;
++#endif /* CFF_CONFIG_OPTION_OLD_ENGINE */
++
+     FT_UInt     object_code;
+     void*       object;
+ 
+@@ -130,6 +134,15 @@ FT_BEGIN_HEADER
+ FT_END_HEADER
+ 
+ 
++#ifdef CFF_CONFIG_OPTION_OLD_ENGINE
++  typedef struct  CFF_T2_String_
++  {
++    FT_Byte*  start;
++    FT_Byte*  limit;
++
++  } CFF_T2_StringRec, *CFF_T2_String;
++#endif /* CFF_CONFIG_OPTION_OLD_ENGINE */
++
+ #endif /* CFFPARSE_H_ */
+ 
+ 
+--- src/pcf/pcf.h.orig	2019-02-23 08:39:04 UTC
++++ src/pcf/pcf.h
+@@ -99,7 +99,8 @@ FT_BEGIN_HEADER
+     FT_Short  ascent;
+     FT_Short  descent;
+     FT_Short  attributes;
+-    FT_ULong  bits;
++
++    FT_ULong  bits;  /* offset into the PCF_BITMAPS table */
+ 
+   } PCF_MetricRec, *PCF_Metric;
+ 
+--- src/pcf/pcfdrivr.c.orig	2019-02-23 08:39:04 UTC
++++ src/pcf/pcfdrivr.c
+@@ -122,9 +122,9 @@ THE SOFTWARE.
+          charcodeCol > enc->lastCol  )
+       return 0;
+ 
+-    return (FT_UInt)enc->offset[ ( charcodeRow - enc->firstRow ) *
+-                                 ( enc->lastCol - enc->firstCol + 1 ) +
+-                                   charcodeCol - enc->firstCol          ];
++    return (FT_UInt)enc->offset[( charcodeRow - enc->firstRow ) *
++                                  ( enc->lastCol - enc->firstCol + 1 ) +
++                                charcodeCol - enc->firstCol];
+   }
+ 
+ 
+@@ -160,9 +160,9 @@ THE SOFTWARE.
+ 
+       charcode = (FT_UInt32)( charcodeRow * 256 + charcodeCol );
+ 
+-      result = (FT_UInt)enc->offset[ ( charcodeRow - enc->firstRow ) *
+-                                     ( enc->lastCol - enc->firstCol + 1 ) +
+-                                       charcodeCol - enc->firstCol          ];
++      result = (FT_UInt)enc->offset[( charcodeRow - enc->firstRow ) *
++                                      ( enc->lastCol - enc->firstCol + 1 ) +
++                                    charcodeCol - enc->firstCol];
+       if ( result != 0xFFFFU )
+         break;
+     }
+--- src/pcf/pcfread.c.orig	2019-02-23 08:39:04 UTC
++++ src/pcf/pcfread.c
+@@ -743,33 +743,39 @@ THE SOFTWARE.
+     if ( !orig_nmetrics )
+       return FT_THROW( Invalid_Table );
+ 
+-    /* PCF is a format from ancient times; Unicode was in its       */
+-    /* infancy, and widely used two-byte character sets for CJK     */
+-    /* scripts (Big 5, GB 2312, JIS X 0208, etc.) did have at most  */
+-    /* 15000 characters.  Even the more exotic CNS 11643 and CCCII  */
+-    /* standards, which were essentially three-byte character sets, */
+-    /* provided less then 65536 assigned characters.                */
+-    /*                                                              */
+-    /* While technically possible to have a larger number of glyphs */
+-    /* in PCF files, we thus limit the number to 65536.             */
+-    if ( orig_nmetrics > 65536 )
++    /*
++     * PCF is a format from ancient times; Unicode was in its infancy, and
++     * widely used two-byte character sets for CJK scripts (Big 5, GB 2312,
++     * JIS X 0208, etc.) did have at most 15000 characters.  Even the more
++     * exotic CNS 11643 and CCCII standards, which were essentially
++     * three-byte character sets, provided less then 65536 assigned
++     * characters.
++     *
++     * While technically possible to have a larger number of glyphs in PCF
++     * files, we thus limit the number to 65535, taking into account that we
++     * synthesize the metrics of glyph 0 to be a copy of the `default
++     * character', and that 0xFFFF in the encodings array indicates a
++     * missing glyph.
++     */
++    if ( orig_nmetrics > 65534 )
+     {
+       FT_TRACE0(( "pcf_get_metrics:"
+-                  " only loading first 65536 metrics\n" ));
+-      nmetrics = 65536;
++                  " only loading first 65534 metrics\n" ));
++      nmetrics = 65534;
+     }
+     else
+       nmetrics = orig_nmetrics;
+ 
+-    face->nmetrics = nmetrics;
++    face->nmetrics = nmetrics + 1;
+ 
+-    if ( FT_NEW_ARRAY( face->metrics, nmetrics ) )
++    if ( FT_NEW_ARRAY( face->metrics, face->nmetrics ) )
+       return error;
+ 
+-    metrics = face->metrics;
++    /* we handle glyph index 0 later on */
++    metrics = face->metrics + 1;
+ 
+     FT_TRACE4(( "\n" ));
+-    for ( i = 0; i < nmetrics; i++, metrics++ )
++    for ( i = 1; i < face->nmetrics; i++, metrics++ )
+     {
+       FT_TRACE5(( "  idx %ld:", i ));
+       error = pcf_get_metric( stream, format, metrics );
+@@ -808,12 +814,10 @@ THE SOFTWARE.
+   pcf_get_bitmaps( FT_Stream  stream,
+                    PCF_Face   face )
+   {
+-    FT_Error   error;
+-    FT_Memory  memory  = FT_FACE( face )->memory;
+-    FT_ULong*  offsets = NULL;
+-    FT_ULong   bitmapSizes[GLYPHPADOPTIONS];
+-    FT_ULong   format, size;
+-    FT_ULong   nbitmaps, orig_nbitmaps, i, sizebitmaps = 0;
++    FT_Error  error;
++    FT_ULong  bitmapSizes[GLYPHPADOPTIONS];
++    FT_ULong  format, size, pos;
++    FT_ULong  nbitmaps, orig_nbitmaps, i, sizebitmaps = 0;
+ 
+ 
+     error = pcf_seek_to_table_type( stream,
+@@ -859,31 +863,46 @@ THE SOFTWARE.
+     FT_TRACE4(( "  number of bitmaps: %ld\n", orig_nbitmaps ));
+ 
+     /* see comment in `pcf_get_metrics' */
+-    if ( orig_nbitmaps > 65536 )
++    if ( orig_nbitmaps > 65534 )
+     {
+       FT_TRACE0(( "pcf_get_bitmaps:"
+-                  " only loading first 65536 bitmaps\n" ));
+-      nbitmaps = 65536;
++                  " only loading first 65534 bitmaps\n" ));
++      nbitmaps = 65534;
+     }
+     else
+       nbitmaps = orig_nbitmaps;
+ 
+-    if ( nbitmaps != face->nmetrics )
++    /* no extra bitmap for glyph 0 */
++    if ( nbitmaps != face->nmetrics - 1 )
+       return FT_THROW( Invalid_File_Format );
+ 
+-    if ( FT_NEW_ARRAY( offsets, nbitmaps ) )
+-      return error;
++    /* start position of bitmap data */
++    pos = stream->pos + nbitmaps * 4 + 4 * 4;
+ 
+     FT_TRACE5(( "\n" ));
+-    for ( i = 0; i < nbitmaps; i++ )
++    for ( i = 1; i <= nbitmaps; i++ )
+     {
++      FT_ULong  offset;
++
++
+       if ( PCF_BYTE_ORDER( format ) == MSBFirst )
+-        (void)FT_READ_ULONG( offsets[i] );
++        (void)FT_READ_ULONG( offset );
+       else
+-        (void)FT_READ_ULONG_LE( offsets[i] );
++        (void)FT_READ_ULONG_LE( offset );
+ 
+       FT_TRACE5(( "  bitmap %lu: offset %lu (0x%lX)\n",
+-                  i, offsets[i], offsets[i] ));
++                  i, offset, offset ));
++
++      /* right now, we only check the offset with a rough estimate; */
++      /* actual bitmaps are only loaded on demand                   */
++      if ( offset > size )
++      {
++        FT_TRACE0(( "pcf_get_bitmaps:"
++                    " invalid offset to bitmap data of glyph %lu\n", i ));
++        face->metrics[i].bits = pos;
++      }
++      else
++        face->metrics[i].bits = pos + offset;
+     }
+     if ( error )
+       goto Bail;
+@@ -910,24 +929,9 @@ THE SOFTWARE.
+ 
+     FT_UNUSED( sizebitmaps );       /* only used for debugging */
+ 
+-    /* right now, we only check the bitmap offsets; */
+-    /* actual bitmaps are only loaded on demand     */
+-    for ( i = 0; i < nbitmaps; i++ )
+-    {
+-      /* rough estimate */
+-      if ( offsets[i] > size )
+-      {
+-        FT_TRACE0(( "pcf_get_bitmaps:"
+-                    " invalid offset to bitmap data of glyph %lu\n", i ));
+-      }
+-      else
+-        face->metrics[i].bits = stream->pos + offsets[i];
+-    }
+-
+     face->bitmapsFormat = format;
+ 
+   Bail:
+-    FT_FREE( offsets );
+     return error;
+   }
+ 
+@@ -1062,41 +1066,52 @@ THE SOFTWARE.
+       defaultCharCol = enc->firstCol;
+     }
+ 
+-    /* FreeType mandates that glyph index 0 is the `undefined glyph',  */
+-    /* which PCF calls the `default character'.  For this reason, we   */
+-    /* swap the positions of glyph index 0 and the index corresponding */
+-    /* to `defaultChar' in case they are different.                    */
+-
+-    /* `stream->cursor' still points at the beginning of the frame; */
+-    /* we can thus easily get the offset to the default character   */
++    /*
++     * FreeType mandates that glyph index 0 is the `undefined glyph', which
++     * PCF calls the `default character'.  However, FreeType needs glyph
++     * index 0 to be used for the undefined glyph only, which is is not the
++     * case for PCF.  For this reason, we add one slot for glyph index 0 and
++     * simply copy the default character to it.
++     *
++     * `stream->cursor' still points to the beginning of the frame; we can
++     * thus easily get the offset to the default character.
++     */
+     pos = stream->cursor +
+             2 * ( ( defaultCharRow - enc->firstRow ) *
+-                  ( enc->lastCol - enc->firstCol + 1 ) +
+-                    defaultCharCol - enc->firstCol       );
++                    ( enc->lastCol - enc->firstCol + 1 ) +
++                  defaultCharCol - enc->firstCol );
+ 
+     if ( PCF_BYTE_ORDER( format ) == MSBFirst )
+       defaultCharEncodingOffset = FT_PEEK_USHORT( pos );
+     else
+       defaultCharEncodingOffset = FT_PEEK_USHORT_LE( pos );
+ 
+-    if ( defaultCharEncodingOffset >= face->nmetrics )
++    if ( defaultCharEncodingOffset == 0xFFFF )
+     {
+       FT_TRACE0(( "pcf_get_encodings:"
+-                  " Invalid glyph index for default character,"
+-                  " setting to zero\n" ));
+-      defaultCharEncodingOffset = 0;
++                  " No glyph for default character,\n"
++                  "                  "
++                  " setting it to the first glyph of the font\n" ));
++      defaultCharEncodingOffset = 1;
+     }
+-
+-    if ( defaultCharEncodingOffset )
++    else
+     {
+-      /* do the swapping */
+-      PCF_MetricRec  tmp = face->metrics[defaultCharEncodingOffset];
+-
++      defaultCharEncodingOffset++;
+ 
+-      face->metrics[defaultCharEncodingOffset] = face->metrics[0];
+-      face->metrics[0]                         = tmp;
++      if ( defaultCharEncodingOffset >= face->nmetrics )
++      {
++        FT_TRACE0(( "pcf_get_encodings:"
++                    " Invalid glyph index for default character,\n"
++                    "                  "
++                    " setting it to the first glyph of the font\n" ));
++        defaultCharEncodingOffset = 1;
++      }
+     }
+ 
++    /* copy metrics of default character to index 0 */
++    face->metrics[0] = face->metrics[defaultCharEncodingOffset];
++
++    /* now loop over all values */
+     offset = enc->offset;
+     for ( i = enc->firstRow; i <= enc->lastRow; i++ )
+     {
+@@ -1111,15 +1126,9 @@ THE SOFTWARE.
+         else
+           encodingOffset = FT_GET_USHORT_LE();
+ 
+-        if ( encodingOffset != 0xFFFFU )
+-        {
+-          if ( encodingOffset == defaultCharEncodingOffset )
+-            encodingOffset = 0;
+-          else if ( encodingOffset == 0 )
+-            encodingOffset = defaultCharEncodingOffset;
+-        }
+-
+-        *offset++ = encodingOffset;
++        /* everything is off by 1 due to the artificial glyph 0 */
++        *offset++ = encodingOffset == 0xFFFF ? 0xFFFF
++                                             : encodingOffset + 1;
+       }
+     }
+     FT_Stream_ExitFrame( stream );
+--- src/sfnt/ttcmap.c.orig	2019-03-07 08:32:56 UTC
++++ src/sfnt/ttcmap.c
+@@ -3661,7 +3661,7 @@
+   tt_get_glyph_name( TT_Face  face,
+                      FT_UInt  idx )
+   {
+-    FT_String*  PSname;
++    FT_String*  PSname = NULL;
+ 
+ 
+     tt_face_get_ps_name( face, idx, &PSname );
+--- src/smooth/ftgrays.c.orig	2019-02-23 09:06:07 UTC
++++ src/smooth/ftgrays.c
+@@ -1755,7 +1755,6 @@ typedef ptrdiff_t  FT_PtrDist;
+   {
+     const FT_Outline*  outline    = (const FT_Outline*)params->source;
+     const FT_Bitmap*   target_map = params->target;
+-    FT_BBox            clip;
+ 
+ #ifndef FT_STATIC_RASTER
+     gray_TWorker  worker[1];
+@@ -1792,6 +1791,11 @@ typedef ptrdiff_t  FT_PtrDist;
+ 
+       ras.render_span      = (FT_Raster_Span_Func)params->gray_spans;
+       ras.render_span_data = params->user;
++
++      ras.min_ex = params->clip_box.xMin;
++      ras.min_ey = params->clip_box.yMin;
++      ras.max_ex = params->clip_box.xMax;
++      ras.max_ey = params->clip_box.yMax;
+     }
+     else
+     {
+@@ -1816,27 +1820,14 @@ typedef ptrdiff_t  FT_PtrDist;
+ 
+       ras.render_span      = (FT_Raster_Span_Func)NULL;
+       ras.render_span_data = NULL;
+-    }
+ 
+-    /* compute clipping box */
+-    if ( params->flags & FT_RASTER_FLAG_DIRECT &&
+-         params->flags & FT_RASTER_FLAG_CLIP   )
+-      clip = params->clip_box;
+-    else
+-    {
+-      /* compute clip box from target pixmap */
+-      clip.xMin = 0;
+-      clip.yMin = 0;
+-      clip.xMax = (FT_Pos)target_map->width;
+-      clip.yMax = (FT_Pos)target_map->rows;
++      ras.min_ex = 0;
++      ras.min_ey = 0;
++      ras.max_ex = (FT_Pos)target_map->width;
++      ras.max_ey = (FT_Pos)target_map->rows;
+     }
+ 
+-    /* clip to target bitmap, exit if nothing to do */
+-    ras.min_ex = clip.xMin;
+-    ras.min_ey = clip.yMin;
+-    ras.max_ex = clip.xMax;
+-    ras.max_ey = clip.yMax;
+-
++    /* exit if nothing to do */
+     if ( ras.max_ex <= ras.min_ex || ras.max_ey <= ras.min_ey )
+       return 0;
+ 
+--- src/truetype/ttgxvar.c.orig	2019-02-23 09:06:07 UTC
++++ src/truetype/ttgxvar.c
+@@ -3080,7 +3080,12 @@
+                                  mmvar->num_axis,
+                                  named_style->coords );
+       if ( error )
++      {
++        /* internal error code -1 means `no change' */
++        if ( error == -1 )
++          error = FT_Err_Ok;
+         goto Exit;
++      }
+     }
+     else
+       error = TT_Set_Var_Design( face, 0, NULL );
