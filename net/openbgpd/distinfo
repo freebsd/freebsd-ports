@@ -1,3 +1,3 @@
 TIMESTAMP = 1556692508
-SHA256 (openbgpd-6.5p0.tar.gz) = 20c1a40bafcbbea60c4ecc6dd2e87fcba6847bfad62739b705a3806b6b442a56
-SIZE (openbgpd-6.5p0.tar.gz) = 677691
+SHA256 (openbgpd/openbgpd-4.6.tgz) = d9a0a3542e5ec744889ca12871f01aa1d86f12844e093010f37d0601796e15cf
+SIZE (openbgpd/openbgpd-4.6.tgz) = 168197
