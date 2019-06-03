@@ -2,7 +2,7 @@
 
 PORTNAME=	sabbu
 PORTVERSION=	0.3.0
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Sabbu%20${PORTVERSION}
 
@@ -11,18 +11,18 @@ COMMENT=	Program used to time subtitles
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libavcodec0.so:multimedia/ffmpeg0 \
-		libsndfile.so:audio/libsndfile
+LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
-USES=		compiler:c++11-lang tar:bzip2 gmake pkgconfig iconv
+USES=		tar:bzip2 gmake compiler:c++11-lang pkgconfig iconv
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-ffmpeg
 
 USE_SDL=	sdl
 USE_CXXSTD=	gnu++98
 USE_GNOME=	gtk20
-CFLAGS+=	-I${LOCALBASE}/include/ffmpeg0 -I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib/ffmpeg0 -L${LOCALBASE}/lib
-LDFLAGS+=	-lswscale0 -lgmodule-2.0
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+LDFLAGS+=	-lgmodule-2.0
 
 OPTIONS_DEFINE=	GTKSPELL NLS
 OPTIONS_DEFAULT=GTKSPELL
@@ -38,13 +38,5 @@ PLIST_SUB+=	WITH_NLS=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	WITH_NLS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's,ffmpeg/avformat,libavformat/avformat,g' \
-		-e 's,lavcodec,lavcodec0,g' \
-		-e 's,lavformat,lavformat0,g' \
-		-e '/FFMPEG_LIBS=/s/"$$/ -lavutil0"/' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>
