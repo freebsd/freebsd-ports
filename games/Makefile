@@ -513,6 +513,7 @@
     SUBDIR += libmaitretarot
     SUBDIR += libmt_client
     SUBDIR += libshhcards
+    SUBDIR += libtmcg
     SUBDIR += lightsoff
     SUBDIR += lightyears
     SUBDIR += lincity
