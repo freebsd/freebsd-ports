@@ -4,6 +4,7 @@ PORTNAME=	gnuradio
 #MASTER_SITES=	http://gnuradio.org/releases/gnuradio/
 DISTVERSION=	3.8tech-preview-381
 DISTVERSIONSUFFIX=	-g27dd99e49
+PORTREVISION=	1
 CATEGORIES=	comms astro hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -58,9 +59,7 @@ SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-ctrlport-monitor \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-perf-monitorx
 USE_GITHUB=	yes
-GH_ACCOUNT=	gnuradio
-GH_PROJECT=	gnuradio volk:volk
-GH_TAGNAME=	a664001 d250816:volk
+GH_TUPLE=	gnuradio:volk:d250816:volk/volk
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_RPATH:STRING="${LOCALBASE}/lib/gcc${_GCC_VER}" \
 		-DENABLE_GR_CTRLPORT="YES" \
@@ -72,16 +71,13 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_RPATH:STRING="${LOCALBASE}/lib/gcc${_GCC_VER}" \
 		-DXMLTO_EXECUTABLE:STRING=minixmlto
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=	--debug-output --trace
-MAJOR_SUB_VER=	3.8
-#MAJOR_SUB_VER=	${PORTVERSION}
-DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
+DOCSDIR=	share/doc/${PORTNAME}-3.8git
 USE_GNOME=	pygtk2
 USE_PYQT=	core gui opengl
 USE_WX=		3.0
 USE_QT=		buildtools core gui xml qmake widgets
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_LDCONFIG=	yes
-PLIST_SUB+=	MAJOR_SUB_VER="${MAJOR_SUB_VER}"git
 LIBSTRIP_FILES=	analog audio blocks channels digital dtv fec fft\
 		filter pmt qtgui runtime trellis video-sdl\
 		vocoder wavelet
@@ -128,10 +124,6 @@ PLIST_SUB+=	UHD="@comment "
 PATCH_FILES=	docs/doxygen/Doxyfile.in \
 		gr-fec/lib/CMakeLists.txt
 
-post-extract:
-	@${RMDIR} ${WRKSRC}/volk
-	@${MV} ${WRKSRC_volk} ${WRKSRC}/volk
-
 post-patch:
 	@${FIND} ${WRKSRC}/.. -name CMakeLists.txt | \
 	    ${XARGS} ${REINPLACE_CMD} -e \
@@ -143,8 +135,6 @@ post-patch:
 .endfor
 
 post-install:
-.for a in ${LIBSTRIP_FILES}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnuradio-${a}.so.${MAJOR_SUB_VER}git
-.endfor
+	@cd ${STAGEDIR}${PREFIX} && ${RMDIR} include/volk/asm/neon include/volk/asm/orc include/volk/asm
 
 .include <bsd.port.post.mk>
