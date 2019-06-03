@@ -27,7 +27,7 @@ BUILD_DEPENDS=	nasm:devel/nasm
 USES=		cmake compiler:c11
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GH_ACCOUNT=	Intel
+GH_ACCOUNT=	OpenVisualCloud
 GH_PROJECT=	SVT-HEVC
 
 post-patch:
