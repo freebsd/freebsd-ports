@@ -3,6 +3,7 @@
 
 PORTNAME=	supertuxkart
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/supertuxkart/SuperTuxKart/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -30,7 +31,7 @@ BROKEN_powerpc64=	invokes x86 assembler
 BROKEN_i386=		does not build (error: this directive must appear between .cfi_startproc and .cfi_endproc directives)
 
 USES=		alias cmake compiler:c++11-lib gettext gl \
-		jpeg openal:al pkgconfig sdl tar:xz ssl
+		jpeg openal:al pkgconfig sdl tar:xz
 USE_GL=		gl glu glew
 USE_SDL=	sdl
 USE_XORG=	x11 xrandr
@@ -45,12 +46,17 @@ PORTDATA=	*
 CXXFLAGS+=	-DNO_IRR_COMPILE_WITH_JOYSTICK_EVENTS_ \
 		-D__FREE_BSD_
 
-OPTIONS_DEFINE=	FRIBIDI
-OPTIONS_DEFAULT=FRIBIDI
+OPTIONS_DEFINE=	FRIBIDI NETTLE
+OPTIONS_DEFAULT=FRIBIDI NETTLE
 
 FRIBIDI_DESC=		Support for right-to-left languages
 FRIBIDI_CMAKE_BOOL=	USE_FRIBIDI
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
+
+NETTLE_DESC=		Use Nettle instead of OpenSSL for cryptography
+NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
+NETTLE_USES_OFF=	ssl
+NETTLE_CMAKE_BOOL_OFF=	USE_CRYPTO_OPENSSL
 
 # make sure that as much bundled stuff as possible is not used
 post-extract:
