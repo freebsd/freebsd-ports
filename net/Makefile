@@ -1150,6 +1150,7 @@
     SUBDIR += radsecproxy
     SUBDIR += radvd
     SUBDIR += rclone
+    SUBDIR += rclone-browser
     SUBDIR += rdapper
     SUBDIR += rdesktop
     SUBDIR += rdist6
