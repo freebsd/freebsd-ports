@@ -40,6 +40,8 @@ SRCS+=	../libcutils/sockets.cpp
 SRCS+=	socket_inaddr_any_server_unix.cpp
 SRCS+=	socket_network_client_unix.cpp
 SRCS+=	sockets_unix.cpp
+# DragonFly, NetBSD, OpenBSD
+CPPFLAGS.sockets.cpp+=	-o ${.TARGET}
 
 # required by base and libutils
 .PATH:	${.CURDIR}/../liblog

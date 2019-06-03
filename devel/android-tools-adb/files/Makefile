@@ -85,6 +85,8 @@ SRCS+= socket_network_client_unix.cpp
 SRCS+= ../libcutils/sockets.cpp
 SRCS+= load_file.cpp
 SRCS+= threads.cpp
+# DragonFly, NetBSD, OpenBSD
+CPPFLAGS.sockets.cpp+= -o ${.TARGET}
 
 # required by base/file.cpp
 .PATH: ${.CURDIR}/../liblog
