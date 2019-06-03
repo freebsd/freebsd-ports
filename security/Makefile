@@ -854,6 +854,7 @@
     SUBDIR += py-YubiOTP
     SUBDIR += py-acme
     SUBDIR += py-acme-tiny
+    SUBDIR += py-argon2-cffi
     SUBDIR += py-artifacts
     SUBDIR += py-asyncssh
     SUBDIR += py-backports.ssl_match_hostname

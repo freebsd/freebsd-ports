@@ -1,0 +1,6 @@
+Argon2 won the Password Hashing Competition and argon2_cffi is the simplest
+way to use it in Python and PyPy:
+
+passlib 1.7.0 and later offers Argon2 support using this library too.
+
+WWW: https://argon2-cffi.readthedocs.io/
