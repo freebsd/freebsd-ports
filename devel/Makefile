@@ -4368,6 +4368,7 @@
     SUBDIR += py-flake8-polyfill
     SUBDIR += py-flake8-quotes
     SUBDIR += py-flask-babel
+    SUBDIR += py-flatbuffers
     SUBDIR += py-flex
     SUBDIR += py-flexmock
     SUBDIR += py-fluent-logger
