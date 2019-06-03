@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 PORTDOCS=	NEWS
 PORTSCOUT=	ignore:1
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man --prefix="${PREFIX}"
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
