@@ -20,7 +20,6 @@ bin/pod2man%%BINSUFFIX%%
 bin/pod2text%%BINSUFFIX%%
 bin/pod2usage%%BINSUFFIX%%
 bin/podchecker%%BINSUFFIX%%
-bin/podselect%%BINSUFFIX%%
 bin/prove%%BINSUFFIX%%
 bin/ptar%%BINSUFFIX%%
 bin/ptardiff%%BINSUFFIX%%
@@ -315,14 +314,10 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/PerlIO/via/QuotedPrint.pm
 %%PRIV_LIB%%/Pod/Checker.pm
 %%PRIV_LIB%%/Pod/Escapes.pm
-%%PRIV_LIB%%/Pod/Find.pm
 %%PRIV_LIB%%/Pod/Functions.pm
 %%PRIV_LIB%%/Pod/Html.pm
-%%PRIV_LIB%%/Pod/InputObjects.pm
 %%PRIV_LIB%%/Pod/Man.pm
 %%PRIV_LIB%%/Pod/ParseLink.pm
-%%PRIV_LIB%%/Pod/ParseUtils.pm
-%%PRIV_LIB%%/Pod/Parser.pm
 %%PRIV_LIB%%/Pod/Perldoc.pm
 %%PRIV_LIB%%/Pod/Perldoc/BaseTo.pm
 %%PRIV_LIB%%/Pod/Perldoc/GetOptsOO.pm
@@ -336,8 +331,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Pod/Perldoc/ToText.pm
 %%PRIV_LIB%%/Pod/Perldoc/ToTk.pm
 %%PRIV_LIB%%/Pod/Perldoc/ToXml.pm
-%%PRIV_LIB%%/Pod/PlainText.pm
-%%PRIV_LIB%%/Pod/Select.pm
 %%PRIV_LIB%%/Pod/Simple.pm
 %%PRIV_LIB%%/Pod/Simple.pod
 %%PRIV_LIB%%/Pod/Simple/BlackBox.pm
@@ -1128,7 +1121,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/pod2text.1.gz
 %%MAN1%%/pod2usage.1.gz
 %%MAN1%%/podchecker.1.gz
-%%MAN1%%/podselect.1.gz
 %%MAN1%%/prove.1.gz
 %%MAN1%%/ptar.1.gz
 %%MAN1%%/ptardiff.1.gz
@@ -1436,13 +1428,9 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/PerlIO::via::QuotedPrint.3.gz
 %%MAN3%%/Pod::Checker.3.gz
 %%MAN3%%/Pod::Escapes.3.gz
-%%MAN3%%/Pod::Find.3.gz
 %%MAN3%%/Pod::Html.3.gz
-%%MAN3%%/Pod::InputObjects.3.gz
 %%MAN3%%/Pod::Man.3.gz
 %%MAN3%%/Pod::ParseLink.3.gz
-%%MAN3%%/Pod::ParseUtils.3.gz
-%%MAN3%%/Pod::Parser.3.gz
 %%MAN3%%/Pod::Perldoc.3.gz
 %%MAN3%%/Pod::Perldoc::BaseTo.3.gz
 %%MAN3%%/Pod::Perldoc::GetOptsOO.3.gz
@@ -1456,8 +1444,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Pod::Perldoc::ToText.3.gz
 %%MAN3%%/Pod::Perldoc::ToTk.3.gz
 %%MAN3%%/Pod::Perldoc::ToXml.3.gz
-%%MAN3%%/Pod::PlainText.3.gz
-%%MAN3%%/Pod::Select.3.gz
 %%MAN3%%/Pod::Simple.3.gz
 %%MAN3%%/Pod::Simple::Checker.3.gz
 %%MAN3%%/Pod::Simple::Debug.3.gz
