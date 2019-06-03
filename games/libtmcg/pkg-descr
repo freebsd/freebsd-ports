@@ -1,0 +1,19 @@
+LibTMCG is a C++ library for creating secure and fair online card games. The
+library provides a sort of useful classes, algorithms, and high-level protocols
+to support an application programmer in writing such software. The most
+remarkable feature is the absence of a trusted third party (TTP), i.e. neither a
+central game server nor trusted hardware components are necessary. Thus, with
+the present library there is no need for an independent referee, because the
+applied protocols provide a basic level of confidentiality and fairness by
+itself. Consequently, the library is well-suited for peer-to-peer (P2P)
+environments where no TTP is available. Of course, we cannot avoid that
+malicious players share information about their private cards, but the protocols
+ensure that the shuffle of the deck is performed randomly (presumed that at
+least one player is honest) and thus the cards will be distributed uniformly
+among the players. Further, no coalition can learn the private cards of a player
+against his will (except for trivial conclusions). The corresponding
+cryptographic problem, actually called Mental Poker, has been studied since 1979
+(Shamir, Rivest, and Adleman) by many authors. LibTMCG provides the first
+practical implementation of such protocols.
+
+WWW: https://www.nongnu.org/libtmcg/
