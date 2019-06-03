@@ -811,6 +811,7 @@
     SUBDIR += rubygem-numru-misc
     SUBDIR += rubygem-numru-units
     SUBDIR += rubygem-rb-gsl
+    SUBDIR += rumur
     SUBDIR += saga
     SUBDIR += sage
     SUBDIR += sc
