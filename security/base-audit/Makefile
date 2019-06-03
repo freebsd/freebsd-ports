@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	base-audit
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	security
 MASTER_SITES=	# none
 DISTFILES=	# none
