@@ -139,6 +139,7 @@ include/isc/counter.h
 include/isc/crc64.h
 include/isc/deprecated.h
 include/isc/dir.h
+include/isc/endian.h
 include/isc/errno.h
 include/isc/error.h
 include/isc/event.h
@@ -196,6 +197,7 @@ include/isc/resultclass.h
 include/isc/rwlock.h
 include/isc/safe.h
 include/isc/serial.h
+include/isc/siphash.h
 include/isc/sockaddr.h
 include/isc/socket.h
 include/isc/stat.h
