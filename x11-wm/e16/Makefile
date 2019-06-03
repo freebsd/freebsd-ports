@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	e16
-PORTVERSION=	1.0.19
-PORTREVISION=	1
+PORTVERSION=	1.0.20
+PORTREVISION=	0
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}/
 
@@ -13,7 +13,11 @@ COMMENT=	Enlightenment DR16 window manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libImlib2.so:graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		DOCS NLS PANGO SOUND
 OPTIONS_SUB=		yes
