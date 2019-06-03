@@ -12,6 +12,8 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
+BUILD_DEPENDS+=	cmake:devel/cmake
+
 LIB_DEPENDS+=	libgdcmCommon.so:devel/gdcm
 
 # OCTSRC is the name of the directory of the package.
