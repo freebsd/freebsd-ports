@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cptutils
-PORTVERSION=	1.69
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.70
 CATEGORIES=	graphics
 MASTER_SITES=	http://soliton.vm.bytemark.co.uk/pub/jjg/src/
 
@@ -19,10 +18,7 @@ BUILD_DEPENDS=	gengetopt:devel/gengetopt \
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libpng.so:graphics/png
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	jjgreen
-
-USES=		autoreconf bison gmake iconv localbase python shebangfix
+USES=		autoreconf bison gmake gnome iconv localbase python shebangfix
 SHEBANG_FILES=	src/gradient-convert/gradient-convert.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
