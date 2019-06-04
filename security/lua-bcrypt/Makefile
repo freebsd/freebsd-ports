@@ -10,7 +10,7 @@ COMMENT=	Library providing OpenBSD's bcrypt hash function for Lua
 
 LICENSE=	ISCL
 
-USES=		gmake lua
+USES=		compiler:c11 gmake lua
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mikejsavage
