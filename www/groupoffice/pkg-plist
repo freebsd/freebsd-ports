@@ -2661,6 +2661,11 @@
 %%WWWDIR%%/modules/mediawiki/extensions/1.27/Auth_GroupOffice/README.md
 %%WWWDIR%%/modules/mediawiki/extensions/1.27/Auth_GroupOffice/UserNameSessionProvider.php
 %%WWWDIR%%/modules/mediawiki/extensions/1.27/Auth_GroupOffice/extension.json
+%%WWWDIR%%/modules/mediawiki/extensions/1.32/Auth_GroupOffice/AuthRemoteuserSessionProvider.php
+%%WWWDIR%%/modules/mediawiki/extensions/1.32/Auth_GroupOffice/GroupOfficeSessionProvider.php
+%%WWWDIR%%/modules/mediawiki/extensions/1.32/Auth_GroupOffice/README.md
+%%WWWDIR%%/modules/mediawiki/extensions/1.32/Auth_GroupOffice/UserNameSessionProvider.php
+%%WWWDIR%%/modules/mediawiki/extensions/1.32/Auth_GroupOffice/extension.json
 %%WWWDIR%%/modules/mediawiki/install/noautoinstall
 %%WWWDIR%%/modules/mediawiki/json.php
 %%WWWDIR%%/modules/mediawiki/language/bn.php
