@@ -1,3 +1,6 @@
+[
+{
+	message: <<EOD
 ======================================================================
 It is recommended to run Jack with real-time priority (-R).
 
@@ -24,3 +27,7 @@ combinations when COOKEDMODE=off. To achieve the best sound quality
 please make sure your hardware natively supports the sample-rate set
 in jackd_args, and set COOKEDMODE=off.
 ======================================================================
+EOD,
+	type: install
+}
+]
