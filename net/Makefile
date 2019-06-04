@@ -526,6 +526,7 @@
     SUBDIR += opal
     SUBDIR += open-isns
     SUBDIR += openbgpd
+    SUBDIR += openbgpd6
     SUBDIR += openbsc
     SUBDIR += openggsn
     SUBDIR += openldap24-client
