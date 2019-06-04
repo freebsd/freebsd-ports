@@ -1,4 +1,14 @@
 bin/zrepl
 @sample etc/newsyslog.conf.d/zrepl.conf.sample
 @sample etc/syslog.d/zrepl.conf.sample
-@sample etc/zrepl/zrepl.yml.sample
+@sample %%ETCDIR%%/zrepl.yml.sample
+%%DATADIR%%/samples/grafana-prometheus-zrepl-0.1.json
+%%DATADIR%%/samples/local.yml
+%%DATADIR%%/samples/pull.yml
+%%DATADIR%%/samples/pull_ssh.yml
+%%DATADIR%%/samples/push.yml
+%%DATADIR%%/samples/sink.yml
+%%DATADIR%%/samples/snap.yml
+%%DATADIR%%/samples/source.yml
+%%DATADIR%%/samples/source_ssh.yml
+@dir(root,wheel,0750) /var/run/zrepl

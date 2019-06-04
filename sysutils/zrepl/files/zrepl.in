@@ -40,15 +40,18 @@ load_rc_config $name
 : ${zrepl_flags:=""}
 : ${zrepl_facility:="local0"}
 : ${zrepl_priority:="alert"}
-: ${zrepl_options:="${zrepl_flags} --config ${zrepl_config} daemon"}
+: ${zrepl_options:="${zrepl_flags} --config ${zrepl_config}"}
 
 pidfile="/var/run/zrepl/daemon.pid"
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/zrepl"
-command_args="-p ${pidfile} %%DAEMON_LOGGING%% ${procname} ${zrepl_options}"
+command_args="-p ${pidfile} %%DAEMON_LOGGING%% ${procname} ${zrepl_options} daemon"
 
-start_precmd=zrepl_precmd
-stop_postcmd=zrepl_postcmd
+start_precmd="zrepl_precmd"
+stop_postcmd="zrepl_postcmd"
+restart_precmd="zrepl_checkconfig"
+configtest_cmd="zrepl_checkconfig"
+extra_commands="configtest"
 
 zrepl_precmd()
 {
@@ -60,11 +63,19 @@ zrepl_precmd()
 	if [ ! -e "${pidfile}" ]; then
 		install -g ${zrepl_group} -o ${zrepl_user} -- /dev/null "${pidfile}";
 	fi
+
+	zrepl_checkconfig
 }
 
 zrepl_postcmd()
 {
 	rm -f -- "${pidfile}"
+}
+
+zrepl_checkconfig()
+{
+	echo "Performing sanity check on zrepl configuration:"
+	eval ${procname} ${zrepl_options} configcheck
 }
 
 run_rc_command "$1"
