@@ -10,7 +10,7 @@ COMMENT=	 A user-friendly XMPP client for every device
 
 LIB_DEPENDS=	libqxmpp.so:net-im/qxmpp-qt5
 
-USES=		cmake desktop-file-utils kde:5 pkgconfig qt:5
+USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 pkgconfig qt:5
 USE_KDE=	ecm kirigami2
 USE_QT=		core declarative gui network quickcontrols2 sql svg widgets xml \
 		buildtools_build qmake_build
