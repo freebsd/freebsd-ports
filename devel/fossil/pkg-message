@@ -1,3 +1,10 @@
+[
+{
+	message: <<EOD
 After each upgrade do not forget to run the following command:
 
 fossil all rebuild
+EOD,
+	type : upgrade
+}
+]
