@@ -2,24 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	pyspacewar
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	games python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game loosely based on the original Spacewar!
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/GPL.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYGAME}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mgedmin
-GH_TAGNAME=	f872564
+#GH_TAGNAME=	f872564
 
-USES=		python:2.7
+USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
