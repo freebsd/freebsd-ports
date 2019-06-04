@@ -19,7 +19,7 @@ GH_TUPLE=	rmind:bpfjit:5fa111b:DEFAULT \
 WRKSRC_SUBDIR=	src
 USE_LDCONFIG=	yes
 MAKEFILE=	GNUmakefile
-CFLAGS+=	-I${WRKSRC_sljit}/sljit_src
+CFLAGS+=	-I${WRKSRC_sljit}/sljit_src -fPIC
 
 PLIST_FILES=	lib/libbpfjit.a include/bpfjit.h
 
