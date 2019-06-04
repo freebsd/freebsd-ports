@@ -175,6 +175,7 @@ IDN_USES=		iconv
 
 JSON_CONFIGURE_WITH=	json-c
 JSON_LIB_DEPENDS=	libjson-c.so:devel/json-c
+JSON_LDFLAGS=		-L${LOCALBASE}/lib -ljson-c
 
 LARGE_FILE_CONFIGURE_ENABLE=	largefile
 
