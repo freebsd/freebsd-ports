@@ -11,7 +11,7 @@ TINY=		yes
 MASTERDIR=	${.CURDIR}/../vim
 
 PORTDATA=	# Not for -tiny
-PLIST=		pkg-plist
+PLIST=		${.CURDIR}/pkg-plist
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/vim ${STAGEDIR}${PREFIX}/bin
