@@ -16,3 +16,10 @@
 %%PERL5_MAN3%%/CGI::Pretty.3.gz
 %%PERL5_MAN3%%/CGI::Push.3.gz
 %%PERL5_MAN3%%/CGI::Util.3.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clickable_image.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cookie.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crash.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file_upload.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mojo_proxy.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wikipedia_example.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wilogo.gif
