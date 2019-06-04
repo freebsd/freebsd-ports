@@ -4,7 +4,6 @@
 PORTNAME=	mythmusic
 DISTVERSIONPREFIX=	v
 DISTVERSION=	30.0
-PORTREVISION=	0
 CATEGORIES=	audio
 PKGNAMEPREFIX=	mythplugin-
 
@@ -57,6 +56,6 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mythtv/plugins/libmythmusic.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mythtv/plugins/libmythmusic.so
 
 .include <bsd.port.mk>
