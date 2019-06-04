@@ -14,7 +14,7 @@ COMMENT=	Internationalization library for Perl
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext iconv:translit perl5
+USES=		gettext iconv:translit perl5 localbase
 USE_PERL5=	configure
 
 post-install:
