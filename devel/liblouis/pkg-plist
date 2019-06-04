@@ -29,7 +29,6 @@
 %%DATADIR%%/tables/ca-chardefs.cti
 %%DATADIR%%/tables/ca-g1.ctb
 %%DATADIR%%/tables/ca.tbl
-%%DATADIR%%/tables/chardefs.cti
 %%DATADIR%%/tables/chr-us-g1.ctb
 %%DATADIR%%/tables/ckb-chardefs.cti
 %%DATADIR%%/tables/ckb-g1.ctb
@@ -93,6 +92,7 @@
 %%DATADIR%%/tables/en_GB.tbl
 %%DATADIR%%/tables/en_US-comp8-ext.tbl
 %%DATADIR%%/tables/en_US.tbl
+%%DATADIR%%/tables/en-chardefs.cti
 %%DATADIR%%/tables/en-chess.ctb
 %%DATADIR%%/tables/en-gb-comp8.ctb
 %%DATADIR%%/tables/en-gb-g1.utb
@@ -105,7 +105,7 @@
 %%DATADIR%%/tables/en-us-comp6.ctb
 %%DATADIR%%/tables/en-us-comp8.ctb
 %%DATADIR%%/tables/en-us-comp8-ext.utb
-%%DATADIR%%/tables/en-us-compbrl.ctb
+%%DATADIR%%/tables/en-us-compbrl.uti
 %%DATADIR%%/tables/en-us-g1.ctb
 %%DATADIR%%/tables/en-us-g2.ctb
 %%DATADIR%%/tables/en-us-interline.ctb
@@ -167,6 +167,7 @@
 %%DATADIR%%/tables/hu-exceptionwords.cti
 %%DATADIR%%/tables/hu-hu-comp8.ctb
 %%DATADIR%%/tables/hu-hu-g1.ctb
+%%DATADIR%%/tables/hu-hu-g1_braille_input.cti
 %%DATADIR%%/tables/hu-hu-g2.ctb
 %%DATADIR%%/tables/hu-hu-g2_exceptions.cti
 %%DATADIR%%/tables/hu.tbl
@@ -385,7 +386,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.17
-lib/liblouis.so.17.0.1
+lib/liblouis.so.17.0.2
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
