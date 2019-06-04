@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	dfwinreg
-PORTVERSION=	20190329
+PORTVERSION=	20190517
 CATEGORIES=	security devel python
-MASTER_SITES=	CHEESESHOP \
-		https://github.com/log2timeline/dfwinreg/releases/download/${PORTVERSION}/
+#MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	https://github.com/log2timeline/dfwinreg/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -19,9 +19,10 @@ RUN_DEPENDS=	libregf>=a:devel/libregf \
 		${PYTHON_PKGNAMEPREFIX}dfdatetime>=0:security/py-dfdatetime@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
 
-NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist concurrent
+
+NO_ARCH=	yes
 
 post-patch:
 	${REINPLACE_CMD} "s,share/doc/dfwinreg,${DOCSDIR_REL}," ${WRKSRC}/setup.py
