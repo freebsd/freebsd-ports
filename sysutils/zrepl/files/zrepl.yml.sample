@@ -5,10 +5,10 @@
 #
 global:
   logging:
-    - outlet: "stdout"
+    - type: "stdout"
       level:  "error"
       format: "human"
-    - outlet: "syslog"
+    - type: "syslog"
       level:  "info"
       format: "logfmt"
 
