@@ -119,6 +119,7 @@ share/icons/hicolor/scalable/apps/texstudio.svg
 %%DATADIR%%/texstudio48x48.png
 %%DATADIR%%/texstudio64x64.png
 %%DATADIR%%/texstudio_ar.qm
+%%DATADIR%%/texstudio_br.qm
 %%DATADIR%%/texstudio_cs.qm
 %%DATADIR%%/texstudio_de.qm
 %%DATADIR%%/texstudio_el.qm
@@ -135,6 +136,7 @@ share/icons/hicolor/scalable/apps/texstudio.svg
 %%DATADIR%%/texstudio_pl.qm
 %%DATADIR%%/texstudio_pt_BR.qm
 %%DATADIR%%/texstudio_ru_RU.qm
+%%DATADIR%%/texstudio_sv.qm
 %%DATADIR%%/texstudio_tr_TR.qm
 %%DATADIR%%/texstudio_uk.qm
 %%DATADIR%%/texstudio_vi.qm
