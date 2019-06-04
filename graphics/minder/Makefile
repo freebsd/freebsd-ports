@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minder
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	graphics
 # avoid PKGBASE collision with net-p2p/minder
 PKGNAMESUFFIX=	-app
@@ -26,9 +26,9 @@ GLIB_SCHEMAS=	com.github.phase1geo.minder.gschema.xml
 INSTALLS_ICONS=	yes
 SHEBANG_FILES=	meson/post_install.py
 
-OPTIONS_DEFINE=	DOCS
-
 PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
