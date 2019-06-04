@@ -1,29 +1,43 @@
---- Makefile.orig	2019-03-17 16:33:02 UTC
+--- Makefile.orig	2019-03-28 18:57:23 UTC
 +++ Makefile
-@@ -9,7 +9,7 @@
- CC    = gcc
+@@ -8,7 +8,7 @@
+ #
  OFLAGS = -O0 -g
- #OFLAGS  = -O2 -fwhole-program
+ OFLAGS  = -O2
 -CFLAGS  = -std=gnu99 -fPIC -Wall -Wno-format-truncation $(OFLAGS)
 +CFLAGS  = -std=gnu99 -fPIC -Wall $(OFLAGS)
- LDFLAGS = -g
  
  SHELL = /bin/sh
-@@ -58,15 +58,21 @@ UTILS = $(INSTALLABLE) \
+ TAR = tar
+@@ -29,11 +29,11 @@ LIBPOINT=0
+ LIBVER=$(LIBMAJOR).$(LIBMINOR).$(LIBPOINT)
+ 
+ SOURCES = dgif_lib.c egif_lib.c gifalloc.c gif_err.c gif_font.c \
+-	gif_hash.c openbsd-reallocarray.c
++	gif_hash.c openbsd-reallocarray.c quantize.c
+ HEADERS = gif_hash.h  gif_lib.h  gif_lib_private.h
+ OBJECTS = $(SOURCES:.c=.o)
+ 
+-USOURCES = qprintf.c quantize.c getarg.c 
++USOURCES = qprintf.c getarg.c 
+ UHEADERS = getarg.h
+ UOBJECTS = $(USOURCES:.c=.o)
+ 
+@@ -60,15 +60,21 @@ UTILS = $(INSTALLABLE) \
  	gifsponge \
  	gifwedge
  
 -LDLIBS=libgif.a -lm
 +LDLIBS=-Wl,-rpath -Wl,$(LIBDIR) -lm
  
- all: libgif.so libgif.a $(UTILS)
+ all: libgif.so libgif.a libutil.so libutil.a $(UTILS)
  	$(MAKE) -C doc
  
--$(UTILS):: libgif.a
-+$(UTILS):: libgif.so
+-$(UTILS):: libgif.a libutil.a
++$(UTILS):: libgif.so libutil.a
  
 -libgif.so: $(OBJECTS) $(HEADERS)
--	$(CC) $(CFLAGS) -shared $(OFLAGS) -Wl,-soname -Wl,libgif.so.$(LIBMAJOR) -o libgif.so $(OBJECTS)
+-	$(CC) $(CFLAGS) -shared $(LDFLAGS) -Wl,-soname -Wl,libgif.so.$(LIBMAJOR) -o libgif.so $(OBJECTS)
 +libgif.so.$(LIBVER): $(OBJECTS) $(HEADERS)
 +	$(CC) -shared $(LDFLAGS) -Wl,-soname -Wl,libgif.so.$(LIBMAJOR) -o $@ $(OBJECTS)
 +
@@ -35,7 +49,7 @@
  
  libgif.a: $(OBJECTS) $(HEADERS)
  	$(AR) rcs libgif.a $(OBJECTS)
-@@ -92,7 +98,7 @@ install-include:
+@@ -100,7 +106,7 @@ install-include:
  install-lib:
  	$(INSTALL) -d "$(DESTDIR)$(LIBDIR)"
  	$(INSTALL) -m 644 libgif.a "$(DESTDIR)$(LIBDIR)/libgif.a"

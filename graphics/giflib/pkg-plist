@@ -28,8 +28,6 @@ man/man1/giftool.1.gz
 man/man1/gifwedge.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/00README
 %%PORTDOCS%%%%DOCSDIR%%/gif2rgb.html
-%%PORTDOCS%%%%DOCSDIR%%/gif87.txt
-%%PORTDOCS%%%%DOCSDIR%%/gif89.txt
 %%PORTDOCS%%%%DOCSDIR%%/gif_lib.html
 %%PORTDOCS%%%%DOCSDIR%%/gifbg.html
 %%PORTDOCS%%%%DOCSDIR%%/gifbuild.html
@@ -45,7 +43,6 @@ man/man1/gifwedge.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/gifwedge.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/intro.html
-%%PORTDOCS%%%%DOCSDIR%%/lzgif.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsinagif/animation_and_transparency.html
 %%PORTDOCS%%%%DOCSDIR%%/whatsinagif/bits_and_bytes.html
 %%PORTDOCS%%%%DOCSDIR%%/whatsinagif/comment_ext.gif

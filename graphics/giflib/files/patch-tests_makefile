@@ -1,4 +1,4 @@
---- tests/makefile.orig	2019-02-10 22:36:27 UTC
+--- tests/makefile.orig	2019-03-28 17:05:25 UTC
 +++ tests/makefile
 @@ -3,6 +3,8 @@
  
@@ -9,7 +9,7 @@
  # This is what to do by default
  test: render-regress \
  	gifbuild-regress \
-@@ -103,10 +105,10 @@ giffilter-regress:
+@@ -104,10 +106,10 @@ giffilter-regress:
  
  giffix-rebuild:
  	@echo "Rebuilding giffix test."
