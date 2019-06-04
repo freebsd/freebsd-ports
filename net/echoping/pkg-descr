@@ -8,4 +8,4 @@ remote host by sending it TCP "echo" (or other protocol) packets.
 
 It's useful for checking that http servers are running and not wedged.
 
-WWW: http://echoping.sourceforge.net/
+WWW: https://github.com/bortzmeyer/echoping
