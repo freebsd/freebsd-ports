@@ -5,6 +5,34 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190615:
+  AFFECTS: users of samba47
+  AUTHOR: antoine@FreeBSD.org
+
+  The default version of samba has been switched from 4.7 to 4.8.
+  Upgrade instructions:
+
+  For package users having samba47 installed indirectly (as a dependency):
+    # pkg upgrade
+
+  For package users having samba47 installed directly (leaf port):
+    # pkg upgrade
+    # pkg install samba48
+
+  For ports users:
+    If you want to keep samba47, add DEFAULT_VERSIONS+= samba=4.7 to make.conf
+
+    If you want to upgrade to samba48, remove samba47:
+    # pkg delete -f samba47
+
+    Portmaster users:
+    # portmaster net/samba48
+    # portmaster -a
+
+    Portupgrade users:
+    # portinstall net/samba48
+    # portupgrade -a
+
 20180601:
   AFFECTS: www/tt-rss
   AUTHOR: dereks@lifeofadishwasher.com
