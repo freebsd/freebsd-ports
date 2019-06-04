@@ -2,6 +2,7 @@
 
 PORTNAME=	bc
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	math
 PKGNAMEPREFIX=	gh-
 
@@ -26,10 +27,11 @@ do-install:
 		${LN} ${STAGEDIR}${PREFIX}/bin/bc ${STAGEDIR}${PREFIX}/bin/dc
 		${INSTALL_MAN} ${WRKSRC}/manuals/bc.1 ${STAGEDIR}${MANPREFIX}/man/man1
 		${INSTALL_MAN} ${WRKSRC}/manuals/dc.1 ${STAGEDIR}${MANPREFIX}/man/man1
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/nls/C
 		${WRKSRC}/locale_install.sh ${STAGEDIR}${PREFIX}/share/nls/%L/%N.cat ${PORTNAME}
 		${RM} ${STAGEDIR}${PREFIX}/share/nls/en_US/bc.cat
 		${RMDIR} ${STAGEDIR}${PREFIX}/share/nls/en_US
-		${LN} ${STAGEDIR}${PREFIX}/share/nls/en_US.US-ASCII/bc.cat ${STAGEDIR}${PREFIX}/share/nls/C/
+		${LN} ${STAGEDIR}${PREFIX}/share/nls/en_US.ISO8859-1/bc.cat ${STAGEDIR}${PREFIX}/share/nls/C/
 
 do-test:
 		${MAKE} -C ${WRKSRC} test
