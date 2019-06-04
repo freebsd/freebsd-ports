@@ -3,8 +3,7 @@
 
 PORTNAME=	racer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.21
-PORTREVISION=	2
+DISTVERSION=	2.1.22
 CATEGORIES=	devel
 
 MAINTAINER=	beyert@cs.ucr.edu
@@ -73,7 +72,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		regex-1.1.0 \
 		regex-syntax-0.6.5 \
 		remove_dir_all-0.5.1 \
-		rls-span-0.4.1 \
+		rls-span-0.5.1 \
 		rustc-ap-arena-407.0.0 \
 		rustc-ap-graphviz-407.0.0 \
 		rustc-ap-rustc_cratesio_shim-407.0.0 \
