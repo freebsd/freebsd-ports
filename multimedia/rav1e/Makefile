@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190601
+PORTVERSION=	s20190604
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,23 +10,26 @@ COMMENT=	Fast and safe AV1 encoder
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	https://github.com/xiph/rav1e/issues/1330
+
 BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_amd64=	nasm:devel/nasm
 
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	3b08db6d
+GH_TAGNAME=	12f041fc
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.7.3 \
 		ansi_term-0.11.0 \
 		aom-sys-0.1.2 \
+		arc-swap-0.3.11 \
 		arg_enum_proc_macro-0.1.1 \
 		arrayvec-0.4.10 \
 		atty-0.2.11 \
 		autocfg-0.1.4 \
-		backtrace-0.3.26 \
+		backtrace-0.3.28 \
 		backtrace-sys-0.1.28 \
 		bincode-1.1.4 \
 		bindgen-0.49.2 \
@@ -62,8 +65,8 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		itertools-0.8.0 \
 		itoa-0.4.4 \
 		lazy_static-1.3.0 \
-		libc-0.2.55 \
-		libloading-0.5.0 \
+		libc-0.2.58 \
+		libloading-0.5.1 \
 		log-0.4.6 \
 		memchr-2.2.0 \
 		memoffset-0.2.1 \
@@ -103,15 +106,17 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		redox_termios-0.1.1 \
 		regex-1.1.6 \
 		regex-syntax-0.6.6 \
-		rustc-demangle-0.1.14 \
+		rustc-demangle-0.1.15 \
 		ryu-0.2.8 \
 		same-file-1.0.4 \
 		scan_fmt-0.2.2 \
 		scopeguard-0.3.3 \
-		serde-1.0.91 \
-		serde_derive-1.0.91 \
+		serde-1.0.92 \
+		serde_derive-1.0.92 \
 		serde_json-1.0.39 \
 		shlex-0.1.1 \
+		signal-hook-0.1.9 \
+		signal-hook-registry-1.0.1 \
 		strsim-0.8.0 \
 		syn-0.15.34 \
 		termcolor-1.0.4 \
