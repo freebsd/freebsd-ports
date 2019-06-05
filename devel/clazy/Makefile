@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING-LGPL2.txt
 BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 
-USES=		cmake tar:xz
+USES=		cmake compiler:c++11-lang tar:xz
 
 CMAKE_ARGS=	-DLLVM_ROOT=${LOCALBASE}/llvm${LLVM_DEFAULT}
 
