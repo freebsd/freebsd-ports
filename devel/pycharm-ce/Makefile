@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycharm-ce
-PORTVERSION=	2019.1.1
+PORTVERSION=	2019.1.2
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
