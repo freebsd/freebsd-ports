@@ -74,7 +74,7 @@ PERL5_DEFAULT?=		5.28
 # be set manually in /etc/make.conf in the first place, and we're never getting
 # in here.
 .if !defined(_PERL5_FROM_BIN)
-_PERL5_FROM_BIN!=	perl -e 'printf "%vd\n", $$^V;'
+_PERL5_FROM_BIN!=	${LOCALBASE}/bin/perl -e 'printf "%vd\n", $$^V;'
 .endif
 _EXPORTED_VARS+=	_PERL5_FROM_BIN
 PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
