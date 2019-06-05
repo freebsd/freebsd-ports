@@ -1,0 +1,330 @@
+diff --git changelogs/unreleased/ac-package-ps.yml changelogs/unreleased/ac-package-ps.yml
+new file mode 100644
+index 0000000000000000000000000000000000000000..f493fa5c615663b0c08d39f358129602fd596df3
+--- /dev/null
++++ changelogs/unreleased/ac-package-ps.yml
+@@ -0,0 +1,5 @@
++---
++title: Introduce ps package
++merge_request: 1258
++author:
++type: added
+diff --git cmd/gitaly-wrapper/main.go cmd/gitaly-wrapper/main.go
+index 4a8ea6ae25b0c4db300ddb0c27972a49e6df02ed..79f100f6d7a9df2531e7732b912142cb36aff5bf 100644
+--- cmd/gitaly-wrapper/main.go
++++ cmd/gitaly-wrapper/main.go
+@@ -13,6 +13,7 @@ import (
+ 
+ 	"github.com/sirupsen/logrus"
+ 	"gitlab.com/gitlab-org/gitaly/internal/config"
++	"gitlab.com/gitlab-org/gitaly/internal/ps"
+ )
+ 
+ const (
+@@ -43,7 +44,7 @@ func main() {
+ 		log.WithError(err).Fatal("find gitaly")
+ 	}
+ 
+-	if gitaly != nil {
++	if gitaly != nil && isGitaly(gitaly, gitalyBin) {
+ 		log.Info("adopting a process")
+ 	} else {
+ 		log.Info("spawning a process")
+@@ -82,10 +83,6 @@ func findGitaly() (*os.Process, error) {
+ 	}
+ 
+ 	if isAlive(gitaly) {
+-		if ok, err := isGitaly(pid); !ok {
+-			return nil, err
+-		}
+-
+ 		return gitaly, nil
+ 	}
+ 
+@@ -143,17 +140,17 @@ func isAlive(p *os.Process) bool {
+ 	return p.Signal(syscall.Signal(0)) == nil
+ }
+ 
+-func isGitaly(pid int) (bool, error) {
+-	command, err := procPath(pid)
++func isGitaly(p *os.Process, gitalyBin string) bool {
++	command, err := ps.Comm(p.Pid)
+ 	if err != nil {
+-		return false, err
++		return false
+ 	}
+ 
+-	if path.Base(command) == "gitaly" {
+-		return true, nil
++	if path.Base(command) == path.Base(gitalyBin) {
++		return true
+ 	}
+ 
+-	return false, nil
++	return false
+ }
+ 
+ func pidFile() string {
+diff --git cmd/gitaly-wrapper/main_test.go cmd/gitaly-wrapper/main_test.go
+index cde68e840ad191b22cce4355606be11738da295e..f4d98a37480158d17665c698314adf004876152b 100644
+--- cmd/gitaly-wrapper/main_test.go
++++ cmd/gitaly-wrapper/main_test.go
+@@ -1,11 +1,9 @@
+ package main
+ 
+ import (
+-	"io"
+ 	"io/ioutil"
+ 	"os"
+ 	"os/exec"
+-	"path"
+ 	"strconv"
+ 	"testing"
+ 
+@@ -33,60 +31,16 @@ func TestStolenPid(t *testing.T) {
+ 	require.NoError(t, err)
+ 	require.NoError(t, pidFile.Close())
+ 
+-	gitaly, err := findGitaly()
++	tail, err := findGitaly()
+ 	require.NoError(t, err)
+-	require.Nil(t, gitaly)
+-}
+-
+-func TestExistingGitaly(t *testing.T) {
+-	defer func(oldValue string) {
+-		os.Setenv(config.EnvPidFile, oldValue)
+-	}(os.Getenv(config.EnvPidFile))
+-
+-	tmpDir, err := ioutil.TempDir("", "gitaly-pid")
+-	require.NoError(t, err)
+-	defer os.RemoveAll(tmpDir)
+-
+-	pidFile := path.Join(tmpDir, "gitaly.pid")
+-	fakeGitaly := path.Join(tmpDir, "gitaly")
+-
+-	require.NoError(t, buildFakeGitaly(t, fakeGitaly), "Can't build a fake gitaly binary")
+-
+-	os.Setenv(config.EnvPidFile, pidFile)
+-
+-	cmd := exec.Command(fakeGitaly, "-f")
+-	require.NoError(t, cmd.Start())
+-	defer cmd.Process.Kill()
+-
+-	require.NoError(t, ioutil.WriteFile(pidFile, []byte(strconv.Itoa(cmd.Process.Pid)), 0644))
+-
+-	gitaly, err := findGitaly()
+-	require.NoError(t, err)
+-	require.NotNil(t, gitaly)
+-	require.Equal(t, cmd.Process.Pid, gitaly.Pid)
+-	gitaly.Kill()
+-}
+-
+-func buildFakeGitaly(t *testing.T, path string) error {
+-	tail := exec.Command("tail", "-f")
+-	require.NoError(t, tail.Start())
+-	defer tail.Process.Kill()
+-
+-	tailPath, err := procPath(tail.Process.Pid)
+-	require.NoError(t, err)
+-	tail.Process.Kill()
+-
+-	src, err := os.Open(tailPath)
+-	require.NoError(t, err)
+-	defer src.Close()
+-
+-	out, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY, 0744)
+-	require.NoError(t, err)
+-	defer out.Close()
++	require.NotNil(t, tail)
++	require.Equal(t, cmd.Process.Pid, tail.Pid)
+ 
+-	if _, err := io.Copy(out, src); err != nil {
+-		return err
+-	}
++	t.Run("stolen", func(t *testing.T) {
++		require.False(t, isGitaly(tail, "/path/to/gitaly"))
++	})
+ 
+-	return out.Sync()
++	t.Run("not stolen", func(t *testing.T) {
++		require.True(t, isGitaly(tail, "/path/to/tail"))
++	})
+ }
+diff --git cmd/gitaly-wrapper/proc_path_darwin.go cmd/gitaly-wrapper/proc_path_darwin.go
+deleted file mode 100644
+index 4979cc20393c46110698f861fe8cbfd23f65fbf2..0000000000000000000000000000000000000000
+--- cmd/gitaly-wrapper/proc_path_darwin.go
++++ /dev/null
+@@ -1,25 +0,0 @@
+-package main
+-
+-// #include <libproc.h>
+-// #include <stdlib.h>
+-import "C"
+-
+-import (
+-	"fmt"
+-	"unsafe"
+-)
+-
+-func procPath(pid int) (string, error) {
+-	// MacOS does not implement procfs, this simple function calls proc_pidpath from MacOS libproc
+-	// https://opensource.apple.com/source/xnu/xnu-2422.1.72/libsyscall/wrappers/libproc/libproc.h.auto.html
+-	// this is just for testing purpose as we do not support MacOS as a production environment
+-
+-	buf := C.CString(string(make([]byte, C.PROC_PIDPATHINFO_MAXSIZE)))
+-	defer C.free(unsafe.Pointer(buf))
+-
+-	if ret, err := C.proc_pidpath(C.int(pid), unsafe.Pointer(buf), C.PROC_PIDPATHINFO_MAXSIZE); ret <= 0 {
+-		return "", fmt.Errorf("failed process path retrieval: %v", err)
+-	}
+-
+-	return C.GoString(buf), nil
+-}
+diff --git cmd/gitaly-wrapper/proc_path_linux.go cmd/gitaly-wrapper/proc_path_linux.go
+deleted file mode 100644
+index d48828a93ef454d07a7c11a71f30ca0399b740f3..0000000000000000000000000000000000000000
+--- cmd/gitaly-wrapper/proc_path_linux.go
++++ /dev/null
+@@ -1,10 +0,0 @@
+-package main
+-
+-import (
+-	"os"
+-	"strconv"
+-)
+-
+-func procPath(pid int) (path string, err error) {
+-	return os.Readlink("/proc/" + strconv.Itoa(pid) + "/exe")
+-}
+diff --git internal/ps/ps.go internal/ps/ps.go
+new file mode 100644
+index 0000000000000000000000000000000000000000..1115547ac9db363673a5788dbb2f3b085f35d9c6
+--- /dev/null
++++ internal/ps/ps.go
+@@ -0,0 +1,32 @@
++package ps
++
++import (
++	"os/exec"
++	"strconv"
++	"strings"
++)
++
++// Exec invokes ps -o keywords -p pid and returns its output
++func Exec(pid int, keywords string) (string, error) {
++	out, err := exec.Command("ps", "-o", keywords, "-p", strconv.Itoa(pid)).Output()
++	if err != nil {
++		return "", err
++	}
++
++	return strings.TrimSpace(string(out)), nil
++}
++
++// RSS invokes ps -o rss= -p pid and returns its output
++func RSS(pid int) (int, error) {
++	rss, err := Exec(pid, "rss=")
++	if err != nil {
++		return 0, err
++	}
++
++	return strconv.Atoi(rss)
++}
++
++// Comm invokes ps -o comm= -p pid and returns its output
++func Comm(pid int) (string, error) {
++	return Exec(pid, "comm=")
++}
+diff --git internal/ps/ps_test.go internal/ps/ps_test.go
+new file mode 100644
+index 0000000000000000000000000000000000000000..e752d146c6b2b14133a994d7b28853ff5dbbee56
+--- /dev/null
++++ internal/ps/ps_test.go
+@@ -0,0 +1,28 @@
++package ps
++
++import (
++	"os"
++	"testing"
++
++	"github.com/stretchr/testify/require"
++)
++
++var pid = os.Getpid()
++
++func TestFailure(t *testing.T) {
++	_, err := Exec(pid, "not-existing-keyword=")
++	require.Error(t, err)
++}
++
++func TestComm(t *testing.T) {
++	comm, err := Comm(pid)
++	require.NoError(t, err)
++	// the name of the testing binary may vary depending on how test are invoked (make or IDE)
++	require.Contains(t, comm, "test")
++}
++
++func TestRSS(t *testing.T) {
++	rss, err := RSS(pid)
++	require.NoError(t, err)
++	require.True(t, rss > 0, "Expected a positive RSS")
++}
+diff --git internal/supervisor/monitor.go internal/supervisor/monitor.go
+index 4544e259a1ecdc4f968eb7900a3e9e6d5824d1bb..fc1ddb1468fa8992037fd6e6f65b454907a073ea 100644
+--- internal/supervisor/monitor.go
++++ internal/supervisor/monitor.go
+@@ -1,13 +1,11 @@
+ package supervisor
+ 
+ import (
+-	"os/exec"
+-	"strconv"
+ 	"time"
+ 
+ 	"github.com/prometheus/client_golang/prometheus"
+ 	log "github.com/sirupsen/logrus"
+-	"gitlab.com/gitlab-org/gitaly/internal/helper/text"
++	"gitlab.com/gitlab-org/gitaly/internal/ps"
+ )
+ 
+ var (
+@@ -48,7 +46,13 @@ func monitorRss(procs <-chan monitorProcess, done chan<- struct{}, events chan<-
+ 	for mp := range procs {
+ 	monitorLoop:
+ 		for {
+-			rss := 1024 * getRss(mp.pid)
++			rss, err := ps.RSS(mp.pid)
++			if err != nil {
++				log.WithError(err).Warn("getting RSS")
++			}
++
++			// converts from kB to B
++			rss *= 1024
+ 			rssGauge.WithLabelValues(name).Set(float64(rss))
+ 
+ 			if rss > 0 {
+@@ -73,23 +77,6 @@ func monitorRss(procs <-chan monitorProcess, done chan<- struct{}, events chan<-
+ 	}
+ }
+ 
+-// getRss returns RSS in kilobytes.
+-func getRss(pid int) int {
+-	// I tried adding a library to do this but it seemed like overkill
+-	// and YAGNI compared to doing this one 'ps' call.
+-	psRss, err := exec.Command("ps", "-o", "rss=", "-p", strconv.Itoa(pid)).Output()
+-	if err != nil {
+-		return 0
+-	}
+-
+-	rss, err := strconv.Atoi(text.ChompBytes(psRss))
+-	if err != nil {
+-		return 0
+-	}
+-
+-	return rss
+-}
+-
+ func monitorHealth(f func() error, events chan<- Event, name string, shutdown <-chan struct{}) {
+ 	for {
+ 		e := Event{Error: f()}
