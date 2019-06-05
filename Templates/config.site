@@ -80,7 +80,6 @@
 : ${ac_cv_header_strings_h=yes}
 : ${ac_cv_header_sys_acl_h=yes}
 : ${ac_cv_header_sys_cdefs_h=yes}
-: ${ac_cv_header_sys_dir_h=yes}
 : ${ac_cv_header_sys_fcntl_h=yes}
 : ${ac_cv_header_sys_file_h=yes}
 : ${ac_cv_header_sys_ioctl_h=yes}
