@@ -2,7 +2,7 @@
 
 PORTNAME=	ansible
 PORTVERSION?=	2.7.10
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -62,6 +62,7 @@ post-patch:
 	${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-e 's|/etc/ansible|${ETCDIR:S/${PY_FLAVOR}-//}|g' \
 		-e 's|/usr/share/ansible|${DATADIR}|g'
+	${FIND} ${WRKSRC} -type f -name "*.bak" -delete
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
