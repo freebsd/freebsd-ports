@@ -3577,6 +3577,7 @@
 %%WWWDIR%%/app/controllers/concerns/enforces_two_factor_authentication.rb
 %%WWWDIR%%/app/controllers/concerns/group_tree.rb
 %%WWWDIR%%/app/controllers/concerns/hooks_execution.rb
+%%WWWDIR%%/app/controllers/concerns/import_url_params.rb
 %%WWWDIR%%/app/controllers/concerns/internal_redirect.rb
 %%WWWDIR%%/app/controllers/concerns/issuable_actions.rb
 %%WWWDIR%%/app/controllers/concerns/issuable_collections.rb
@@ -6691,6 +6692,7 @@
 %%WWWDIR%%/config/initializers/hamlit.rb
 %%WWWDIR%%/config/initializers/health_check.rb
 %%WWWDIR%%/config/initializers/hipchat_client_patch.rb
+%%WWWDIR%%/config/initializers/http_hostname_override.rb
 %%WWWDIR%%/config/initializers/jira.rb
 %%WWWDIR%%/config/initializers/kaminari_active_record_relation_methods_with_limit.rb
 %%WWWDIR%%/config/initializers/kaminari_config.rb
@@ -7804,6 +7806,7 @@
 %%WWWDIR%%/db/migrate/20190422082247_create_project_metrics_settings.rb
 %%WWWDIR%%/db/migrate/20190426180107_add_deployment_events_to_services.rb
 %%WWWDIR%%/db/migrate/20190506135337_add_temporary_indexes_to_state_id.rb
+%%WWWDIR%%/db/migrate/20190529142545_add_dns_rebinding_protection_enabled_to_application_settings.rb
 %%WWWDIR%%/db/migrate/gpg_keys_limits_to_mysql.rb
 %%WWWDIR%%/db/migrate/limits_ci_build_trace_chunks_raw_data_for_mysql.rb
 %%WWWDIR%%/db/migrate/limits_to_mysql.rb
@@ -11240,6 +11243,7 @@
 %%WWWDIR%%/lib/gitlab/hook_data/note_builder.rb
 %%WWWDIR%%/lib/gitlab/hook_data/wiki_page_builder.rb
 %%WWWDIR%%/lib/gitlab/http.rb
+%%WWWDIR%%/lib/gitlab/http_connection_adapter.rb
 %%WWWDIR%%/lib/gitlab/http_io.rb
 %%WWWDIR%%/lib/gitlab/i18n.rb
 %%WWWDIR%%/lib/gitlab/i18n/metadata_entry.rb
@@ -11432,7 +11436,6 @@
 %%WWWDIR%%/lib/gitlab/prometheus/query_variables.rb
 %%WWWDIR%%/lib/gitlab/prometheus_client.rb
 %%WWWDIR%%/lib/gitlab/protocol_access.rb
-%%WWWDIR%%/lib/gitlab/proxy_http_connection_adapter.rb
 %%WWWDIR%%/lib/gitlab/push_options.rb
 %%WWWDIR%%/lib/gitlab/query_limiting.rb
 %%WWWDIR%%/lib/gitlab/query_limiting/active_support_subscriber.rb
@@ -12236,6 +12239,7 @@
 %%WWWDIR%%/spec/controllers/concerns/controller_with_cross_project_access_check_spec.rb
 %%WWWDIR%%/spec/controllers/concerns/enforces_admin_authentication_spec.rb
 %%WWWDIR%%/spec/controllers/concerns/group_tree_spec.rb
+%%WWWDIR%%/spec/controllers/concerns/import_url_params_spec.rb
 %%WWWDIR%%/spec/controllers/concerns/internal_redirect_spec.rb
 %%WWWDIR%%/spec/controllers/concerns/issuable_collections_spec.rb
 %%WWWDIR%%/spec/controllers/concerns/lfs_request_spec.rb
@@ -14994,6 +14998,7 @@
 %%WWWDIR%%/spec/lib/gitlab/hook_data/issuable_builder_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/hook_data/issue_builder_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/hook_data/merge_request_builder_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/http_connection_adapter_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/http_io_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/http_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/i18n/metadata_entry_spec.rb
@@ -16455,6 +16460,7 @@
 %%WWWDIR%%/spec/support/helpers/stub_gitlab_data.rb
 %%WWWDIR%%/spec/support/helpers/stub_metrics.rb
 %%WWWDIR%%/spec/support/helpers/stub_object_storage.rb
+%%WWWDIR%%/spec/support/helpers/stub_requests.rb
 %%WWWDIR%%/spec/support/helpers/stub_worker.rb
 %%WWWDIR%%/spec/support/helpers/terms_helper.rb
 %%WWWDIR%%/spec/support/helpers/test_env.rb
