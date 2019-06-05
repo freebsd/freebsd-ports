@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendnssec
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 PKGNAMESUFFIX=	2
@@ -16,10 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	ldns>=1.6.16:dns/ldns
 LIB_DEPENDS=	libldns.so:dns/ldns
 
-USES=		ssl
+USES=		ssl gnome
 USE_RC_SUBR=	opendnssec
 USE_GNOME=	libxml2
-USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var" \
