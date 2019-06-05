@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libewf.so:devel/libewf
 
-USES=		autoreconf gmake libtool localbase:ldflags python ssl
+USES=		autoreconf compiler:c++11-lang gmake libtool localbase:ldflags \
+		python ssl
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	NPS-DEEP
