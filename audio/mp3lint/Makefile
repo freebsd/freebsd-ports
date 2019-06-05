@@ -20,6 +20,7 @@ RUN_DEPENDS=	libmp3-archive-perl>=0:audio/libmp3-archive-perl
 USES=		perl5
 USE_PERL5=	configure
 
+MAKE_JOBS_UNSAFE=	yes
 NO_ARCH=	yes
 
 post-patch:
