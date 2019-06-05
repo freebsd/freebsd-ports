@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		ldb
-PORTVERSION=		1.3.6
+PORTVERSION=		1.3.8
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		databases
@@ -25,8 +25,6 @@ LDB_DEPENDS=		talloc>=2.1.14:devel/talloc \
 			popt>=0:devel/popt
 
 CONFLICTS_INSTALL=	ldb-1.1.* ldb12-1.2.*
-
-EXTRA_PATCHES+=		${PATCHDIR}/0001-bug-13362.patch:-p3
 
 #FLAVORS=		default nopython
 #nopython_PKGNAMESUFFIX=	-nopython
@@ -53,9 +51,11 @@ CONFIGURE_ARGS+=	--bundled-libraries=!talloc,!tevent,!tdb,!popt,!cmocka \
 OPTIONS_DEFINE=		MANPAGES DEBUG
 MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
-.include <bsd.port.options.mk>
-
+DEBUG_CONFIGURE_ON=	--verbose --enable-debug
+DEBUG_MAKE_ARGS=	--verbose
 DEBUG_FLAGS=		-g -ggdb3 -O0
+
+.include <bsd.port.options.mk>
 
 LDB_BINS=		bin/ldbedit \
 			bin/ldbmodify \
