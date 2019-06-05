@@ -1,6 +1,6 @@
---- wscript.orig	2017-09-07 10:04:11 UTC
+--- wscript.orig	2019-02-26 17:14:29 UTC
 +++ wscript
-@@ -126,9 +126,15 @@ def build(bld):
+@@ -139,9 +139,15 @@ def build(bld):
      bld.RECURSE('lib/tdb')
  
      if bld.env.standalone_ldb:
@@ -16,7 +16,7 @@
  
      LDB_MAP_SRC = bld.SUBDIR('ldb_map',
                               'ldb_map.c ldb_map_inbound.c ldb_map_outbound.c')
-@@ -149,13 +155,6 @@ def build(bld):
+@@ -162,13 +168,6 @@ def build(bld):
      if bld.PYTHON_BUILD_IS_ENABLED():
          if not bld.CONFIG_SET('USING_SYSTEM_PYLDB_UTIL'):
              for env in bld.gen_python_environments(['PKGCONFIGDIR']):
@@ -30,3 +30,24 @@
  
                  name = bld.pyembed_libname('pyldb-util')
                  bld.SAMBA_LIBRARY(name,
+@@ -364,10 +363,6 @@ def build(bld):
+                          deps='cmocka ldb',
+                          install=False)
+ 
+-        bld.SAMBA_BINARY('ldb_match_test',
+-                         source='tests/ldb_match_test.c',
+-                         deps='cmocka ldb',
+-                         install=False)
+ 
+ def test(ctx):
+     '''run ldb testsuite'''
+@@ -397,8 +392,7 @@ def test(ctx):
+ 
+     cmocka_ret = 0
+     for test_exe in ['ldb_tdb_mod_op_test',
+-                     'ldb_msg_test',
+-                     'ldb_match_test']:
++                     'ldb_msg_test']:
+             cmd = os.path.join(Utils.g_module.blddir, test_exe)
+             cmocka_ret = cmocka_ret or samba_utils.RUN_COMMAND(cmd)
+ 
