@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spectral
-PORTVERSION=	464
-PORTREVISION=	2
+PORTVERSION=	603
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -23,7 +22,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	b0
 GL_PROJECT=	spectral \
 		SortFilterProxyModel:sfpm
-GL_COMMIT=	0473f25d38a064ee4e18203ec16eeae84fea4866 \
+GL_COMMIT=	4ef8e1efd95cd8de3f5c215d2ed27754d8e8c11a \
 		c61f2bdb0da48804a596a9a3a9382eebdba764dc:sfpm
 GL_SUBDIR=	include/SortFilterProxyModel:sfpm
 
