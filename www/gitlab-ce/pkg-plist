@@ -12909,6 +12909,7 @@
 %%WWWDIR%%/spec/features/projects/labels/update_prioritization_spec.rb
 %%WWWDIR%%/spec/features/projects/labels/user_creates_labels_spec.rb
 %%WWWDIR%%/spec/features/projects/labels/user_edits_labels_spec.rb
+%%WWWDIR%%/spec/features/projects/labels/user_promotes_label_spec.rb
 %%WWWDIR%%/spec/features/projects/labels/user_removes_labels_spec.rb
 %%WWWDIR%%/spec/features/projects/labels/user_sees_breadcrumb_links_spec.rb
 %%WWWDIR%%/spec/features/projects/labels/user_sees_links_to_issuables.rb
