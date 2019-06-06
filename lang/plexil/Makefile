@@ -7,9 +7,10 @@ CATEGORIES=	lang devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION:R}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Plan Execution Interchange Language from NASA for robot control
+COMMENT=	PLan EXecution Interchange Language from NASA for robot control
 
-LICENSE=	ISCL
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes
