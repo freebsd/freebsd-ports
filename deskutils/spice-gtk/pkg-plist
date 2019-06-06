@@ -78,13 +78,14 @@ man/man1/spice-client.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/spice-gtk-SpiceQmpPort.html
 %%PORTDOCS%%%%DOCSDIR%%/spice-gtk-SpiceURI.html
 %%PORTDOCS%%%%DOCSDIR%%/spice-gtk-Utilities.html
-%%PORTDOCS%%%%DOCSDIR%%/spice-gtk-Version-Information.html
+%%PORTDOCS%%%%DOCSDIR%%/spice-gtk-spice-version.html
 %%PORTDOCS%%%%DOCSDIR%%/spice-gtk.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%/up.png
 share/gir-1.0/SpiceClientGLib-2.0.gir
 share/gir-1.0/SpiceClientGtk-3.0.gir
+%%NLS%%share/locale/cs/LC_MESSAGES/spice-gtk.mo
 %%NLS%%share/locale/de/LC_MESSAGES/spice-gtk.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/spice-gtk.mo
 %%NLS%%share/locale/it/LC_MESSAGES/spice-gtk.mo
