@@ -2,12 +2,8 @@
 
 PORTNAME=		mtxclient
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.2.0
-PORTREVISION=		1
+DISTVERSION=		0.2.1
 CATEGORIES=		net-im
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	cdbf06f341e9.patch:-p1
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Client API library for the Matrix protocol
