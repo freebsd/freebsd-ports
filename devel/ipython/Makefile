@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipython
-PORTVERSION=	7.2.0
-PORTREVISION=	1
+PORTVERSION=	7.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,8 +25,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}backcall>=0.1.0:devel/py-backcall@${PY_FLAVOR}
 
 USES=		python:3.5+
+USE_PYTHON=	autoplist distutils
 
-USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
