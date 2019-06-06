@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lightdm
-PORTVERSION=	1.28.0
-PORTREVISION=	1
+PORTVERSION=	1.30.0
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/CanonicalLtd/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 
@@ -39,16 +38,16 @@ GROUPS=		lightdm
 PORTSCOUT=	limitw:1,even
 SUB_FILES=	Xsession
 
-OPTIONS_DEFINE=	DOCS VALA
-OPTIONS_DEFAULT=VALA
+OPTIONS_DEFINE=	DOCS VAPI
+OPTIONS_DEFAULT=VAPI
 OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=	gtkdoc-check:textproc/gtk-doc
 DOCS_CONFIGURE_ENABLE=	gtk-doc
 
-VALA_BUILD_DEPENDS=	vapigen:lang/vala
-VALA_CONFIGURE_ENABLE=	vala
-VALA_USE=		gnome=introspection:build
+VAPI_BUILD_DEPENDS=	vapigen:lang/vala
+VAPI_CONFIGURE_ENABLE=	vala
+VAPI_USE=		gnome=introspection:build
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
