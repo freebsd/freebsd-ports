@@ -1,0 +1,16 @@
+PLEXIL (Plan Execution Interchange Language) is a language for representing
+plans for automation, as well a technology for executing these plans on real or
+simulated systems. PLEXIL has been used in robotics, control of unmanned
+vehicles, automation of operations in human habitats, and systems and
+simulations involving intelligent software agents.
+
+PLEXIL was designed initially to meet the requirements of flexible, efficient
+and reliable plan execution in space mission operations. It is compact,
+semantically clear, and deterministic given the same sequence of events from the
+external world. At the same time, the language is quite expressive and can
+represent branches, loops, time- and event- driven activities, concurrent
+activities, sequences, and temporal constraints. The core syntax of the language
+is simple and uniform, making plan interpretation simple and efficient, while
+enabling the application of validation and testing techniques.
+
+WWW: http://plexil.sourceforge.net/wiki/index.php/Main_Page
