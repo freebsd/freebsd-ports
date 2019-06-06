@@ -117,6 +117,7 @@ man/man1/ircII.1.gz
 %%HELP%%%%DATADIR%%/help/exit
 %%HELP%%%%DATADIR%%/help/expressions
 %%HELP%%%%DATADIR%%/help/flush
+%%HELP%%%%DATADIR%%/help/for
 %%HELP%%%%DATADIR%%/help/foreach
 %%HELP%%%%DATADIR%%/help/help
 %%HELP%%%%DATADIR%%/help/history
@@ -128,7 +129,11 @@ man/man1/ircII.1.gz
 %%HELP%%%%DATADIR%%/help/input
 %%HELP%%%%DATADIR%%/help/intro
 %%HELP%%%%DATADIR%%/help/invite
+%%HELP%%%%DATADIR%%/help/ircii/command_line_args
 %%HELP%%%%DATADIR%%/help/ircii/copyright
+%%HELP%%%%DATADIR%%/help/ircii/environment_vars
+%%HELP%%%%DATADIR%%/help/ircii/programming
+%%HELP%%%%DATADIR%%/help/ircii/server_lists
 %%HELP%%%%DATADIR%%/help/ison
 %%HELP%%%%DATADIR%%/help/join
 %%HELP%%%%DATADIR%%/help/kick
@@ -288,11 +293,9 @@ man/man1/ircII.1.gz
 %%HELP%%%%DATADIR%%/help/on/send_msg
 %%HELP%%%%DATADIR%%/help/on/send_notice
 %%HELP%%%%DATADIR%%/help/on/send_public
-%%HELP%%%%DATADIR%%/help/on/send_talk
 %%HELP%%%%DATADIR%%/help/on/serial_numbers
 %%HELP%%%%DATADIR%%/help/on/server_notice
 %%HELP%%%%DATADIR%%/help/on/signoff
-%%HELP%%%%DATADIR%%/help/on/talk
 %%HELP%%%%DATADIR%%/help/on/timer
 %%HELP%%%%DATADIR%%/help/on/topic
 %%HELP%%%%DATADIR%%/help/on/wall
