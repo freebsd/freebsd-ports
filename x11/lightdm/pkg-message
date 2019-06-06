@@ -1,9 +1,16 @@
+[
+{
+	message: <<EOD
 For LightDM to function, it requires one of the available greeters to be
 installed, which are available in the ports tree at x11/lightdm-*greeter*
 
-LightDM needs the maximum amount of memory a daemon may request to be locked
-into main memory using mlock(2) to be increased above the FreeBSD default.
-Without doing this, LightDM will often crash when the service is started.
+If you enable the lock-memory option in lightdm.conf (e.g. due to security
+concerns), you will also need to increase the maximum amount of memory FreeBSD
+will allow a daemon to lock into main memory using mlock(2).
 To increase this limit, run the following commands:
 # sed -i '' -e 's/memorylocked=128M/memorylocked=256M/' /etc/login.conf
 # cap_mkdb /etc/login.conf
+EOD,
+	type: install
+}
+]
