@@ -54,4 +54,5 @@ lib/cmake/MatrixClient/MatrixClientConfig.cmake
 lib/cmake/MatrixClient/MatrixClientConfigVersion.cmake
 lib/cmake/MatrixClient/MatrixClientTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/MatrixClient/MatrixClientTargets.cmake
-lib/libmatrix_client.a
+lib/libmatrix_client.so
+lib/libmatrix_client.so.0.2.1
