@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	krita
-DISTVERSION=	4.1.8
-PORTREVISION=	6
+DISTVERSION=	4.2.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -26,6 +25,7 @@ LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
+		libquazip5.so:archivers/quazip \
 		libraw.so:graphics/libraw \
 		libtiff.so:graphics/tiff \
 		libxcb.so:x11/libxcb \
