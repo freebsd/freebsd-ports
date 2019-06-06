@@ -30,7 +30,6 @@ include/openturns/ArcsineFactory.hxx
 include/openturns/ArcsineMuSigma.hxx
 include/openturns/AtomicFunctions.hxx
 include/openturns/Axial.hxx
-include/openturns/BLUE.hxx
 include/openturns/BarPlot.hxx
 include/openturns/Basis.hxx
 include/openturns/BasisFactory.hxx
@@ -255,6 +254,8 @@ include/openturns/GaussKronrod.hxx
 include/openturns/GaussKronrodRule.hxx
 include/openturns/GaussLegendre.hxx
 include/openturns/GaussProductExperiment.hxx
+include/openturns/GaussianLinearCalibration.hxx
+include/openturns/GaussianNonLinearCalibration.hxx
 include/openturns/GaussianProcess.hxx
 include/openturns/GeneralLinearModelAlgorithm.hxx
 include/openturns/GeneralLinearModelResult.hxx
@@ -750,7 +751,6 @@ include/openturns/TensorizedCovarianceModel.hxx
 include/openturns/TensorizedUniVariateFunctionFactory.hxx
 include/openturns/TestResult.hxx
 include/openturns/Text.hxx
-include/openturns/ThreeDVAR.hxx
 include/openturns/TimeSeries.hxx
 include/openturns/TranslationEvaluation.hxx
 include/openturns/TranslationFunction.hxx
@@ -859,8 +859,6 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/Arcsine_doc.i
 %%PYTHON%%include/openturns/swig/Axial.i
 %%PYTHON%%include/openturns/swig/Axial_doc.i
-%%PYTHON%%include/openturns/swig/BLUE.i
-%%PYTHON%%include/openturns/swig/BLUE_doc.i
 %%PYTHON%%include/openturns/swig/BarPlot.i
 %%PYTHON%%include/openturns/swig/BarPlot_doc.i
 %%PYTHON%%include/openturns/swig/BaseAlgoTemplateDefs.i
@@ -1290,6 +1288,10 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/GaussLegendre_doc.i
 %%PYTHON%%include/openturns/swig/GaussProductExperiment.i
 %%PYTHON%%include/openturns/swig/GaussProductExperiment_doc.i
+%%PYTHON%%include/openturns/swig/GaussianLinearCalibration.i
+%%PYTHON%%include/openturns/swig/GaussianLinearCalibration_doc.i
+%%PYTHON%%include/openturns/swig/GaussianNonLinearCalibration.i
+%%PYTHON%%include/openturns/swig/GaussianNonLinearCalibration_doc.i
 %%PYTHON%%include/openturns/swig/GaussianProcess.i
 %%PYTHON%%include/openturns/swig/GaussianProcess_doc.i
 %%PYTHON%%include/openturns/swig/GeneralLinearModelAlgorithm.i
@@ -2046,8 +2048,6 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/TestResult_doc.i
 %%PYTHON%%include/openturns/swig/Text.i
 %%PYTHON%%include/openturns/swig/Text_doc.i
-%%PYTHON%%include/openturns/swig/ThreeDVAR.i
-%%PYTHON%%include/openturns/swig/ThreeDVAR_doc.i
 %%PYTHON%%include/openturns/swig/TimeSeries.i
 %%PYTHON%%include/openturns/swig/TimeSeries_doc.i
 %%PYTHON%%include/openturns/swig/TranslationEvaluation.i
@@ -2195,8 +2195,8 @@ lib/cmake/openturns/UseOpenTURNS.cmake
 lib/libOT.so
 lib/libOT.so.0
 lib/libOT.so.0.0.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.13rc1.dist-info/METADATA
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.13rc1.dist-info/WHEEL
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.13.dist-info/METADATA
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.13.dist-info/WHEEL
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_algo.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_analytical.so
