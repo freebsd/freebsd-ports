@@ -284,6 +284,7 @@
     SUBDIR += php73
     SUBDIR += php73-extensions
     SUBDIR += picoc
+    SUBDIR += plexil
     SUBDIR += pocl
     SUBDIR += polyml
     SUBDIR += ponyc
