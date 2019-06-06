@@ -1,10 +1,8 @@
 @owner www
 @group www
-%%WWWDIR%%/LICENSE.TXT
 %%WWWDIR%%/changelog.txt
 %%WWWDIR%%/js/tinymce/jquery.tinymce.min.js
 %%WWWDIR%%/js/tinymce/langs/readme.md
-%%WWWDIR%%/js/tinymce/license.txt
 %%WWWDIR%%/js/tinymce/plugins/advlist/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/anchor/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/autolink/plugin.min.js
@@ -60,11 +58,13 @@
 %%WWWDIR%%/js/tinymce/skins/ui/oxide/fonts/tinymce-mobile.woff
 %%WWWDIR%%/js/tinymce/skins/ui/oxide/skin.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide/skin.mobile.min.css
+%%WWWDIR%%/js/tinymce/skins/ui/oxide/tinymce-mobile.woff
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/content.inline.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/content.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/content.mobile.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/skin.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/skin.mobile.min.css
+%%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/tinymce-mobile.woff
 %%WWWDIR%%/js/tinymce/themes/mobile/theme.min.js
 %%WWWDIR%%/js/tinymce/themes/silver/theme.min.js
 %%WWWDIR%%/js/tinymce/tinymce.min.js
