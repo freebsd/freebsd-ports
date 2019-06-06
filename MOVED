@@ -10463,7 +10463,6 @@ graphics/OpenEXR|graphics/openexr|2018-09-22|Renamed to match upstream distribut
 math/mtl||2018-09-27|Has expired: fails to fetch: mastersite times out
 dns/dnscrypt-proxy|dns/dnscrypt-proxy2|2018-09-27|Has expired: Deprecated by upstream, use dns/dnscrypt-proxy2 instead
 www/waterfox||2018-09-29|Has expired: experiment ended: unsustainable
-net/ntp-devel|net/ntp|2018-09-30|Has expired: Use net/ntp instead
 net/xrdp-devel|net/xrdp|2018-09-30|Has expired: Use net/xrdp instead
 net/tigervnc-devel|net/tigervnc|2018-09-30|Has expired: Use net/tigervnc instead
 net/unison-devel|net/unison|2018-09-30|Has expired: Use net/unison instead

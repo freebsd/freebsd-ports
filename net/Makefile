@@ -510,6 +510,7 @@
     SUBDIR += ntlmaps
     SUBDIR += ntopng
     SUBDIR += ntp
+    SUBDIR += ntp-devel
     SUBDIR += ntpa
     SUBDIR += ntraceroute
     SUBDIR += nusoap
