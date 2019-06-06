@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-env
-PORTVERSION=	1.0.5
+PORTVERSION=	1.1.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
