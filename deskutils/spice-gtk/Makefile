@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spice-gtk
-PORTVERSION=	0.36
-PORTREVISION=	3
+PORTVERSION=	0.37
 CATEGORIES?=	deskutils gnome
 MASTER_SITES=	http://www.spice-space.org/download/gtk/
 
