@@ -1,4 +1,4 @@
---- lib/CL/devices/cpuinfo.c.orig	2017-04-05 14:15:40 UTC
+--- lib/CL/devices/cpuinfo.c.orig	2019-04-04 12:06:59 UTC
 +++ lib/CL/devices/cpuinfo.c
 @@ -34,6 +34,12 @@
  #include "config.h"
@@ -13,7 +13,7 @@
  static const char* cpuinfo = "/proc/cpuinfo";
  #define MAX_CPUINFO_SIZE 64*1024
  //#define DEBUG_POCL_CPUINFO
-@@ -153,8 +159,51 @@ pocl_cpuinfo_detect_max_clock_frequency(
+@@ -153,8 +159,51 @@ pocl_cpuinfo_detect_max_clock_frequency()
      } 
    return -1;  
  }
@@ -85,7 +85,7 @@
  
  #ifdef POCL_ANDROID
  
-@@ -270,6 +332,7 @@ pocl_cpuinfo_get_cpu_name_and_vendor(cl_
+@@ -326,6 +388,7 @@ pocl_cpuinfo_get_cpu_name_and_vendor(cl_device_id devi
     * short_name is in the .data anyways.*/
    device->long_name = device->short_name;
  
@@ -93,7 +93,7 @@
    /* default vendor and vendor_id, in case it cannot be found by other means */
    device->vendor = cpuvendor_default;
    if (device->vendor_id == 0)
-@@ -318,7 +381,25 @@ pocl_cpuinfo_get_cpu_name_and_vendor(cl_
+@@ -425,6 +488,25 @@ pocl_cpuinfo_get_cpu_name_and_vendor(cl_device_id devi
    char *new_name = (char*)malloc (len);
    snprintf (new_name, len, "%s-%s", device->short_name, start);
    device->long_name = new_name;
@@ -101,7 +101,7 @@
 +  int mib[2];
 +  size_t len = 0;
 +  char *model;
- 
++
 +  mib[0] = CTL_HW;
 +  mib[1] = HW_MODEL;
 +  if (sysctl(mib, 2, NULL, &len, NULL, 0))
@@ -118,4 +118,4 @@
 +#endif
  }
  
- void
+ /*

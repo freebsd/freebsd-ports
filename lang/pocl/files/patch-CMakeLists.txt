@@ -1,21 +1,12 @@
---- CMakeLists.txt.orig	2017-04-05 14:15:40 UTC
+--- CMakeLists.txt.orig	2019-04-04 12:06:59 UTC
 +++ CMakeLists.txt
-@@ -70,7 +70,7 @@ elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "a
-   set(ARMV6 1)
- elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
-   set(ARM64 1)
--elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "(i.86|AMD64|x86_64)")
-+elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "(i.86|amd64|AMD64|x86_64)")
-   if(POCL_DEVICE_ADDRESS_BITS MATCHES "32")
-     set(I386 1)
-   else()
-@@ -318,6 +318,9 @@ include(CheckFunctionExists)
- check_function_exists(fork HAVE_FORK)
- check_function_exists(vfork HAVE_VFORK)
+@@ -546,6 +546,9 @@ else()
+   set(HAVE_UTIME 0)
+ endif()
  
 +include(CheckIncludeFiles)
 +check_include_files("sys/types.h;sys/sysctl.h" HAVE_SYSCTL_H)
 +
+ 
  ######################################################################################
  
- if(NOT DEFINED DEFAULT_USE_VECMATHLIB)

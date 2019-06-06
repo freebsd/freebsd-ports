@@ -1,6 +1,6 @@
---- config.h.in.cmake.orig	2017-04-05 14:15:40 UTC
+--- config.h.in.cmake.orig	2019-04-04 12:06:59 UTC
 +++ config.h.in.cmake
-@@ -44,6 +44,8 @@
+@@ -41,6 +41,8 @@
  
  #cmakedefine HAVE_VFORK
  
@@ -8,4 +8,4 @@
 +
  #cmakedefine HAVE_CLOCK_GETTIME
  
- #cmakedefine HAVE_LTTNG_UST
+ #cmakedefine HAVE_FDATASYNC
