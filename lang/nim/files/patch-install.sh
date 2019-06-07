@@ -19,7 +19,7 @@
 -      libdir=/usr/lib/nim
 -      docdir=/usr/share/nim/doc
 -      datadir=/usr/share/nim/data
--      nimbleDir="/opt/nimble/pkgs/compiler-0.19.6"
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.20.0"
 -      ;;
 -    "/usr/local/bin")
 -      bindir=/usr/local/bin
@@ -27,7 +27,7 @@
 -      libdir=/usr/local/lib/nim
 -      docdir=/usr/local/share/nim/doc
 -      datadir=/usr/local/share/nim/data
--      nimbleDir="/opt/nimble/pkgs/compiler-0.19.6"
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.20.0"
 -      ;;
 -    "/opt")
 -      bindir="/opt/nim/bin"
@@ -35,7 +35,7 @@
 -      libdir="/opt/nim/lib"
 -      docdir="/opt/nim/doc"
 -      datadir="/opt/nim/data"
--      nimbleDir="/opt/nimble/pkgs/compiler-0.19.6"
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.20.0"
 -      mkdir -p /opt/nim
 -      mkdir -p $bindir
 -      mkdir -p $configdir
