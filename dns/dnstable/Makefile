@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnstable
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11.0
 CATEGORIES=	dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libmtbl.so:devel/mtbl	\
 
 USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
