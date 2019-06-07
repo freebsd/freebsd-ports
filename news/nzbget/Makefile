@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	nzbget
-PORTVERSION=	20.0
-PORTREVISION=	1
+PORTVERSION=	21.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	news
 
-MAINTAINER=	toxic@doobie.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary newsreader supporting NZB files
 
 LICENSE=	GPLv2
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USES=		autoreconf compiler:c++14-lang gmake localbase ncurses pkgconfig shebangfix ssl
 USE_RC_SUBR=	nzbget
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libcurses-includes=${NCURSESINC} \
 		--with-libcurses-libraries=${NCURSESLIB} \
