@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openid_connect
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-activemodel5>=0:databases/rubygem-activemodel5 \
 		rubygem-attr_required>=1.0.0:devel/rubygem-attr_required \
 		rubygem-json-jwt>=1.5.0:www/rubygem-json-jwt \
-		rubygem-rack-oauth2>=1.5.0:security/rubygem-rack-oauth2 \
+		rubygem-rack-oauth2>=1.6.1:security/rubygem-rack-oauth2 \
 		rubygem-swd>=1.0.0:www/rubygem-swd \
 		rubygem-tzinfo>=0:devel/rubygem-tzinfo \
 		rubygem-validate_email>=0:devel/rubygem-validate_email \
