@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpaper.so:print/libpaper \
 		libsane.so:graphics/sane-backends \
 		libtiff.so:graphics/tiff
 
-USES=		cmake kde:5 pkgconfig qt:5
+USES=		cmake compiler:c++11-lang kde:5 pkgconfig qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	KDE
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons \
