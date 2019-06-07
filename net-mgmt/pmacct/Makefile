@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pmacct
-DISTVERSION=	1.7.0
-PORTREVISION=	1
+DISTVERSION=	1.7.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/
 
@@ -14,6 +13,7 @@ LICENSE=	GPLv2
 
 BROKEN_aarch64=		fails to build: undefined reference to sbrk
 
+USES=		libtool
 USE_RC_SUBR=	pmacctd nfacctd sfacctd
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
@@ -104,6 +104,7 @@ CONFIGURE_ARGS+=--disable-mongodb
 
 .if ${PORT_OPTIONS:MRABBITMQ}
 .if ${PORT_OPTIONS:MJANSSON}
+USES+=	pkgconfig
 LIB_DEPENDS+=	libjansson.so:devel/jansson
 CONFIGURE_ARGS+=--enable-jansson
 .else
@@ -115,6 +116,7 @@ CONFIGURE_ARGS+=--enable-rabbitmq
 
 .if ${PORT_OPTIONS:MKAFKA}
 .if ${PORT_OPTIONS:MJANSSON}
+USES+=	pkgconfig
 LIB_DEPENDS+=	libjansson.so:devel/jansson
 CONFIGURE_ARGS+=--enable-jansson
 .else
@@ -159,7 +161,7 @@ post-install:
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
-.for i in AUTHORS CONFIG-KEYS COPYING ChangeLog FAQS INSTALL QUICKSTART TOOLS UPGRADE
+.for i in AUTHORS CONFIG-KEYS COPYING ChangeLog FAQS INSTALL QUICKSTART UPGRADE
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}
