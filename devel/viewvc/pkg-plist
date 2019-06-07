@@ -104,12 +104,14 @@ viewvc/templates-contrib/newvc/templates/docroot/help_query.html
 viewvc/templates-contrib/newvc/templates/docroot/help_rootview.html
 viewvc/templates-contrib/newvc/templates/docroot/images/back.png
 viewvc/templates-contrib/newvc/templates/docroot/images/back_small.png
+viewvc/templates-contrib/newvc/templates/docroot/images/binary.png
 viewvc/templates-contrib/newvc/templates/docroot/images/broken.png
 viewvc/templates-contrib/newvc/templates/docroot/images/cvs-logo.png
 viewvc/templates-contrib/newvc/templates/docroot/images/dir.png
 viewvc/templates-contrib/newvc/templates/docroot/images/down.png
 viewvc/templates-contrib/newvc/templates/docroot/images/feed-icon-16x16.jpg
 viewvc/templates-contrib/newvc/templates/docroot/images/forward.png
+viewvc/templates-contrib/newvc/templates/docroot/images/image.png
 viewvc/templates-contrib/newvc/templates/docroot/images/svn-logo.png
 viewvc/templates-contrib/newvc/templates/docroot/images/text.png
 viewvc/templates-contrib/newvc/templates/docroot/images/up.png
@@ -198,6 +200,7 @@ viewvc/templates/docroot/help_rootview.html
 viewvc/templates/docroot/images/annotate.png
 viewvc/templates/docroot/images/back.png
 viewvc/templates/docroot/images/back_small.png
+viewvc/templates/docroot/images/binary.png
 viewvc/templates/docroot/images/broken.png
 viewvc/templates/docroot/images/chalk.jpg
 viewvc/templates/docroot/images/cvsgraph_16x16.png
@@ -209,6 +212,7 @@ viewvc/templates/docroot/images/download.png
 viewvc/templates/docroot/images/favicon.ico
 viewvc/templates/docroot/images/feed-icon-16x16.jpg
 viewvc/templates/docroot/images/forward.png
+viewvc/templates/docroot/images/image.png
 viewvc/templates/docroot/images/list.png
 viewvc/templates/docroot/images/lock.png
 viewvc/templates/docroot/images/log.png
