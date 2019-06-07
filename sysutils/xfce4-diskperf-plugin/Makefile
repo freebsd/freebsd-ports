@@ -13,10 +13,10 @@ COMMENT=	Graphical representation of the disk IO
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		gettext-tools gnome gmake libtool pkgconfig tar:bzip2 xfce:gtk3
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USES=		gettext-tools gmake libtool pkgconfig tar:bzip2 xfce:gtk3
 USE_GNOME=	gtk30 intltool cairo
 USE_XFCE=	panel
 
@@ -27,12 +27,8 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext-runtime
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if empty(PORT_OPTIONS:MNLS)
+post-patch-NLS-off:
 	@${REINPLACE_CMD} -e 's|[[:blank:]]po||' \
 		-e 's|po$$||'  ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>
