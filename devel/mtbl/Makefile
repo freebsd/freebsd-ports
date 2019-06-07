@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mtbl
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -15,11 +15,11 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libsnappy.so:archivers/snappy \
 		libzstd.so:archivers/zstd
 
-GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
 
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
