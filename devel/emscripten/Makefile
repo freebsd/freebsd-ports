@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	emscripten
-DISTVERSION=	1.38.32
+DISTVERSION=	1.38.34
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +32,7 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	cd ${WRKSRC} && ${CP} -r em* cmake site src system third_party tools ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/
-	${FIND} ${STAGEDIR}${PREFIX}/lib/${PORTNAME} -name "*.bat" -delete
+	${FIND} ${STAGEDIR}${PREFIX}/lib/${PORTNAME} \( -name "*.bat" -o -name "*.orig" \) -delete
 .for s in ${PYSCRIPTS}
 	${RLN} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${s} ${STAGEDIR}${PREFIX}/bin/${s}
 .endfor
