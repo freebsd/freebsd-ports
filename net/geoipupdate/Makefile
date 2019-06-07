@@ -29,7 +29,7 @@ GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
 # Not needed: go-spew, pretty, pty, text, go-difflib, objx, testify
 GH_TUPLE=	gofrs:flock:v0.7.1:flock/src/github.com/gofrs/flock \
 		pkg:errors:v0.8.1:pkg/src/github.com/pkg/errors \
-		spf13:pflag:v1.0.3:pflag/src/github.com/spf13/pflag \
+		spf13:pflag:v1.0.3:pflag/src/github.com/spf13/pflag
 
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
