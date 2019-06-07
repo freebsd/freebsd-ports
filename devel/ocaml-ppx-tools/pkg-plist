@@ -1,8 +1,14 @@
 %%OCAML_SITELIBDIR%%/ppx_tools/META
 %%OCAML_SITELIBDIR%%/ppx_tools/ast_convenience.cmi
+%%OCAML_SITELIBDIR%%/ppx_tools/ast_convenience.cmt
+%%OCAML_SITELIBDIR%%/ppx_tools/ast_convenience.cmti
 %%OCAML_SITELIBDIR%%/ppx_tools/ast_convenience.cmx
+%%OCAML_SITELIBDIR%%/ppx_tools/ast_convenience.mli
 %%OCAML_SITELIBDIR%%/ppx_tools/ast_mapper_class.cmi
+%%OCAML_SITELIBDIR%%/ppx_tools/ast_mapper_class.cmt
+%%OCAML_SITELIBDIR%%/ppx_tools/ast_mapper_class.cmti
 %%OCAML_SITELIBDIR%%/ppx_tools/ast_mapper_class.cmx
+%%OCAML_SITELIBDIR%%/ppx_tools/ast_mapper_class.mli
 %%OCAML_SITELIBDIR%%/ppx_tools/dumpast
 %%OCAML_SITELIBDIR%%/ppx_tools/genlifter
 %%OCAML_SITELIBDIR%%/ppx_tools/ppx_metaquot
