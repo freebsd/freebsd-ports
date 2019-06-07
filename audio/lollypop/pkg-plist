@@ -1,5 +1,4 @@
 bin/lollypop
-bin/lollypop-cli
 %%PYTHON_SITELIBDIR%%/lollypop/adaptive.py
 %%PYTHON_SITELIBDIR%%/lollypop/app_notification.py
 %%PYTHON_SITELIBDIR%%/lollypop/application.py
@@ -14,8 +13,8 @@ bin/lollypop-cli
 %%PYTHON_SITELIBDIR%%/lollypop/collectionscanner.py
 %%PYTHON_SITELIBDIR%%/lollypop/container.py
 %%PYTHON_SITELIBDIR%%/lollypop/container_device.py
-%%PYTHON_SITELIBDIR%%/lollypop/container_donation.py
 %%PYTHON_SITELIBDIR%%/lollypop/container_lists.py
+%%PYTHON_SITELIBDIR%%/lollypop/container_notification.py
 %%PYTHON_SITELIBDIR%%/lollypop/container_playlists.py
 %%PYTHON_SITELIBDIR%%/lollypop/container_scanner.py
 %%PYTHON_SITELIBDIR%%/lollypop/container_views.py
@@ -73,6 +72,7 @@ bin/lollypop-cli
 %%PYTHON_SITELIBDIR%%/lollypop/player_queue.py
 %%PYTHON_SITELIBDIR%%/lollypop/player_radio.py
 %%PYTHON_SITELIBDIR%%/lollypop/player_shuffle.py
+%%PYTHON_SITELIBDIR%%/lollypop/player_similars.py
 %%PYTHON_SITELIBDIR%%/lollypop/playlists.py
 %%PYTHON_SITELIBDIR%%/lollypop/pop_appmenu.py
 %%PYTHON_SITELIBDIR%%/lollypop/pop_artwork.py
@@ -213,4 +213,3 @@ share/locale/zh_CN/LC_MESSAGES/lollypop.mo
 share/locale/zh_Hant/LC_MESSAGES/lollypop.mo
 %%DATADIR%%/lollypop.gresource
 share/metainfo/org.gnome.Lollypop.appdata.xml
-@dir %%PYTHON_SITELIBDIR%%/lollypop/thirdparty
