@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	mysql
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.2
 CATEGORIES=	databases
-MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/870/
+MASTER_SITES=	http://ygrek.org.ua/p/release/ocaml-mysql/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	OCaml bindings to libmysqlclient
 
-USES=			gmake
-USE_MYSQL=		yes
+USES=		gmake mysql
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_CAMLP4=	yes
