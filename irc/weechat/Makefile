@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -32,34 +32,35 @@ OPTIONS_SUB=		yes
 OPTIONS_EXCLUDE_powerpc64=	RUBY
 
 OPTIONS_GROUP=		PLUGINS
-OPTIONS_GROUP_PLUGINS=	ASPELL CHARSET JAVASCRIPT LUA PERL PYTHON PHP RUBY TCL
+OPTIONS_GROUP_PLUGINS=	ASPELL CHARSET GUILE JAVASCRIPT LUA PERL PHP PYTHON RUBY TCL
 
 BACKTRACE_DESC=		Provide crash backtraces
 CA_BUNDLE_DESC=		Include CA bundle for certificate verification
 CHARSET_DESC=		Charset plugin (implies ICONV)
-ICON_DESC=		Desktop icon
+GUILE_DESC=		Guile script support
 HEADLESS_DESC=		Build headless weechat as well
+ICON_DESC=		Desktop icon
 JAVASCRIPT_DESC=	Javascript script support
 PLUGINS_DESC=		Weechat Plugins
 PYTHON_DESC=		Python script support
 RUBY_DESC=		Ruby script support
 
-.for _opt in ASPELL CHARSET ICONV JAVASCRIPT GNUTLS LUA NLS PERL PHP PYTHON RUBY TCL
+.for _opt in ${OPTIONS_GROUP_PLUGINS} BACKTRACE HEADLESS ICONV GNUTLS NLS
 ${_opt}_CMAKE_BOOL=	ENABLE_${_opt}
 .endfor
 
+ASPELL_CMAKE_BOOL=	ENABLE_SPELL
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
-BACKTRACE_CMAKE_BOOL=	ENABLE_BACKTRACE
 CA_BUNDLE_CMAKE_ON=	-DCA_FILE=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 CHARSET_IMPLIES=	ICONV
 DOCS_CMAKE_BOOL=	ENABLE_DOC
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
-HEADLESS_CMAKE_BOOL=	ENABLE_HEADLESS
-ICONV_USES=		iconv
-JAVASCRIPT_LIB_DEPENDS=	libv8.so:lang/v8
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_USES=		pkgconfig
+GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
+ICONV_USES=		iconv
+JAVASCRIPT_LIB_DEPENDS=	libv8.so:lang/v8
 LUA_USES=		lua pkgconfig
 MANPAGES_CMAKE_BOOL=	ENABLE_MAN
 MANPAGES_CMAKE_ON=	-DMANDIR=${MANPREFIX}/man
