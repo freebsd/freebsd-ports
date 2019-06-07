@@ -3,65 +3,79 @@
 
 PORTNAME=	dillo
 PORTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://www.dillo.org/download/ LOCAL/bf/dillo/ \
+MASTER_SITES=	http://www.dillo.org/download/ \
+		LOCAL/bf/dillo/ \
 		TEX_CTAN/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/:hyphen
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	phascolarctos@protonmail.ch
 COMMENT=	Fast, small graphical Web browser built upon fltk
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	wget:ftp/wget
 
 USES=		gmake iconv pkgconfig tar:bzip2
+USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec
-CONFLICTS=	dillo-i18n-[0-9]* \
-		dillo-0*
+CONFIGURE_ARGS=	--disable-efence \
+		--disable-insure \
+		--libdir=${PREFIX}/libexec
+LDFLAGS+=	-lthr
+
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		COOKIES HYPHENATION IPV6 SSL THREADS DOCS
-OPTIONS_DEFAULT=	COOKIES HYPHENATION SSL THREADS
+OPTIONS_DEFINE=		COOKIES DEBUG DOCS HYPHENATION IPV6 JPEG PNG SSL \
+			THREADS
+OPTIONS_DEFAULT=	COOKIES HYPHENATION IPV6 JPEG PNG SSL THREADS
 
 COOKIES_DESC=		Cookie support
 HYPHENATION_DESC=	Hyphenation file(s) for HYPHENATION_LANGS
 SSL_DESC=		Experimental HTTPS support
 
-SSL_USES=			ssl
+DEBUG_CONFIGURE_ENABLE=	gprof rtfl
+
 COOKIES_CONFIGURE_ENABLE=	cookies
-IPV6_CONFIGURE_ENABLE=		ipv6
-SSL_CONFIGURE_ENABLE=		ssl
+
+IPV6_CONFIGURE_ENABLE=	ipv6
+
+JPEG_CONFIGURE_ENABLE=	jpeg
+JPEG_USES=		jpeg
+
+PNG_CONFIGURE_ENABLE=	png
+PNG_LIB_DEPENDS=	libpng16.so:graphics/png
+
+SSL_USES=		ssl
+SSL_CONFIGURE_ENABLE=	ssl
+SSL_EXTRA_PATCHES=	${PATCHDIR}/extra-patches-openssl
+
 THREADS_CONFIGURE_ENABLE=	threaded-dns
 
 .include <bsd.port.pre.mk>
 
-.ifdef(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-gprof --enable-rtfl
-.else
-CONFIGURE_ARGS+=	--disable-gprof --disable-rtfl
-.endif
-
 .if ${PORT_OPTIONS:MHYPHENATION}
-ALL_HYPHENATION_LANGS=	af as bg bn ca cop cs cy da de-1901 de-1996 \
-de-ch-1901 el-monoton el-polyton en-gb en-us eo es et eu fi fr fur ga \
-gl grc gu hi hr hsb hu hy ia id is it ka kmr kn la la-x-classic lt lv ml mn-cyrl mr \
-mul-ethi nb nl nn or pa pl pms pt rm ro ru sa sh-cyrl sh-latn sk sl \
-sr-cyrl sv ta te th tk tr uk zh-latn-pinyin
+ALL_HYPHENATION_LANGS=	af as bg bn ca cop cs cy da de-1901 de-1996 de-ch-1901 \
+			el-monoton el-polyton en-gb en-us eo es et eu fi fr fur \
+			ga gl grc gu hi hr hsb hu hy ia id is it ka kmr kn la \
+			la-x-classic lt lv ml mn-cyrl mr mul-ethi nb nl nn or \
+			pa pl pms pt rm ro ru sa sh-cyrl sh-latn sk sl sr-cyrl \
+			sv ta te th tk tr uk zh-latn-pinyin
 .if defined(MAINTAINER_MODE) || make(makesum)
 HYPHENATION_LANGS?=	${ALL_HYPHENATION_LANGS}
 .else
-HYPHENATION_LANGS?=	\
-	${ALL_HYPHENATION_LANGS:N*-1901:N*-classic:N*-latn:N*-gb:N*-monoton}
+HYPHENATION_LANGS?=	${ALL_HYPHENATION_LANGS:N*-1901:N*-classic:N*-latn:N*-gb:N*-monoton}
 .endif
 .for _l in ${HYPHENATION_LANGS}
 .if !${ALL_HYPHENATION_LANGS:M${_l}}
-IGNORE=	remove the invalid hyphenation language "${_l}" from HYPHENATION_LANGS
+IGNORE=		remove the invalid hyphenation language "${_l}" from HYPHENATION_LANGS
 .else
 DISTFILES+=	hyph-${_l}.pat.txt:hyphen
 PLIST_FILES+=	libexec/dillo/hyphenation/${_l:C/-.*\$//}.pat
