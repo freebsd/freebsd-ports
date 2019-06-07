@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geoipupdate
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
@@ -25,6 +25,12 @@ MAKE_ENV+=	GOPATH=${WRKSRC} \
 		CONFFILE=${PREFIX}/etc/GeoIP.conf \
 		DATADIR=${PREFIX}/share/GeoIP
 
+GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
+# Not needed: go-spew, pretty, pty, text, go-difflib, objx, testify
+GH_TUPLE=	gofrs:flock:v0.7.1:flock/src/github.com/gofrs/flock \
+		pkg:errors:v0.8.1:pkg/src/github.com/pkg/errors \
+		spf13:pflag:v1.0.3:pflag/src/github.com/spf13/pflag \
+
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 
@@ -37,8 +43,8 @@ PLIST_FILES=	bin/geoipupdate \
 		'@dir share/GeoIP'
 PORTDOCS=	GeoIP.conf.md geoipupdate.md
 
-post-extract:
-	${MV} ${WRKSRC}/vendor ${WRKSRC}/src
+post-patch:
+	${RM} ${WRKSRC}/go.mod
 	${REINPLACE_CMD} -e '/make-man-pages.pl/d' ${WRKSRC}/Makefile
 
 do-build-MANPAGES-on:
