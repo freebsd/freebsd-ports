@@ -12,6 +12,9 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}.src${EXTRACT_SUFX}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 
+DEPRECATED=	Obsolete and unmaintained
+EXPIRATION_DATE=	2019-06-30
+
 .include "${.CURDIR}/../llvm-devel/Makefile.LICENSE"
 
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
