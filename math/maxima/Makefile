@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maxima
-PORTVERSION=	5.42.2
-PORTREVISION=	2
+PORTVERSION=	5.43.0
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -27,6 +26,11 @@ CONFIGURE_ARGS=	PYTHON=dummy
 INFO=		imaxima maxima xmaxima abs_integrate drawutils kovacicODE logic
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+PORTDOCS=	*
+PORTDATA=	*
+PORTEXAMPLES=	*
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=		EXAMPLES DOCS NOUSERINIT MANPAGES TEST
 OPTIONS_SINGLE=		LISP
@@ -55,7 +59,6 @@ SBCL_RUN_DEPENDS=	sbcl:lang/sbcl
 SBCL_CONFIGURE_ON=	--enable-sbcl
 SBCL_PLIST_SUB=		BINDIR=binary-sbcl BINNAME=maxima_core
 
-NO_ARCH=	yes
 TEST_TARGET=	check
 TEST_BUILD_DEPENDS=	gnuplot:math/gnuplot \
 			rlwrap:devel/rlwrap
