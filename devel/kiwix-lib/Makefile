@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kiwix-lib
-DISTVERSION=	3.1.1
-PORTREVISION=	1
+DISTVERSION=	5.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	me@int19h.org
@@ -24,9 +23,14 @@ LIB_DEPENDS=	libzim.so:devel/libzim \
 USES=		compiler:c++11-lang meson pkgconfig python:3.6+ shebangfix
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	kiwix
+GH_TUPLE=	kiwix:${PORTNAME}:${PORTVERSION}:DEFAULT \
+		kainjow:Mustache:40ddfe9:mustache
 
 MESON_ARGS=	-Dctpp2-install-prefix=${LOCALBASE}
+CPPFLAGS+=	-I${WRKSRC_mustache}
+CXXFLAGS+=	-I${WRKSRC_mustache}
 SHEBANG_FILES=	scripts/kiwix-compile-resources
 
 .include <bsd.port.mk>
