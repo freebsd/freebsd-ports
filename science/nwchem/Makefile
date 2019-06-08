@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nwchem
-PORTVERSION=	6.8.1.20190509
+PORTVERSION=	6.8.1.20190606
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,11 +19,11 @@ LIB_DEPENDS=	libblas.so:math/blas \
 RUN_DEPENDS=	nwchem-data>0:science/nwchem-data
 
 USES=		fortran gmake perl5 shebangfix
-SHEBANG_FILES=	../contrib/distro-tools/build_* ../contrib/add_*
+SHEBANG_FILES=	../contrib/distro-tools/build_* ../contrib/add_* config/64_to_32
 SHEBANG_GLOB=	*.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	nwchemgit
-GH_TAGNAME=	master-oct22_2018-240-g1589c17cd
+GH_TAGNAME=	master-oct22_2018-262-gbe00273ff
 USE_PERL5=	build
 
 MAKEFILE=	GNUmakefile
