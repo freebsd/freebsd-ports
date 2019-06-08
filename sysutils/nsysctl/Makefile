@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsysctl
-DISTVERSION=	0.9.1
+DISTVERSION=	1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libsysctlmibinfo.so:devel/libsysctlmibinfo
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	alfix
-GL_COMMIT=	a59ec8cfcd5cbb77fa06bc5787c6d718d2b3e501
+GL_COMMIT=	be430829dd2ba9a69aee02f25d56a196983d96b4
 
 PLIST_FILES=	man/man8/${PORTNAME}.8.gz \
 		sbin/${PORTNAME}
