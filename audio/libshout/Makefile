@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libshout
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	audio net
 MASTER_SITES=	https://downloads.xiph.org/releases/libshout/ \
 		https://svn.xiph.org/releases/libshout/ \
