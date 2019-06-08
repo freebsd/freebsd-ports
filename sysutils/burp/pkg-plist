@@ -4,6 +4,7 @@ bin/vss_strip
 %%ETCDIR%%/burp.conf
 %%ETCDIR%%/clientconfdir/incexc/example
 %%ETCDIR%%/clientconfdir/testclient
+etc/rc.d/burp
 man/man8/bedup.8.gz
 man/man8/bsigs.8.gz
 man/man8/bsparse.8.gz
@@ -22,5 +23,5 @@ sbin/burp_ca
 %%DATADIR%%/scripts/timer_script
 @dir %%ETCDIR%%/CA-client
 @dir %%ETCDIR%%/autoupgrade/server/win32
-@dir %%ETCDIR%%/autoupgrade/server/win64/2.2.18
+@dir %%ETCDIR%%/autoupgrade/server/win64/%%PORTVERSION%%
 @dir /var/spool/burp
