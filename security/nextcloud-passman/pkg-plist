@@ -1306,6 +1306,8 @@
 %%WWWDIR%%/js/settings-admin.js
 %%WWWDIR%%/l10n/ast.js
 %%WWWDIR%%/l10n/ast.json
+%%WWWDIR%%/l10n/bg.js
+%%WWWDIR%%/l10n/bg.json
 %%WWWDIR%%/l10n/ca.js
 %%WWWDIR%%/l10n/ca.json
 %%WWWDIR%%/l10n/cs.js
@@ -1358,6 +1360,8 @@
 %%WWWDIR%%/l10n/es_SV.json
 %%WWWDIR%%/l10n/es_UY.js
 %%WWWDIR%%/l10n/es_UY.json
+%%WWWDIR%%/l10n/eu.js
+%%WWWDIR%%/l10n/eu.json
 %%WWWDIR%%/l10n/fi.js
 %%WWWDIR%%/l10n/fi.json
 %%WWWDIR%%/l10n/fr.js
