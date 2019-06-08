@@ -3,6 +3,7 @@
 
 PORTNAME=	weex
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/weex/weex
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,16 +15,25 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 USES=		autoreconf gmake ssl gettext-tools
-GNU_CONFIGURE=	yes
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-cafile=${LOCALBASE}/share/certs/ca-root-nss.crt
+CPPFLAGS+=	-I${OPENSSLINC}
+LIBS+=		-L${OPENSSLLIB}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-# NLS support is very broken in this release
-CONFIGURE_ARGS=	--disable-nls
+OPTIONS_DEFINE=	EXAMPLES NLS
+OPTIONS_SUB=	yes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext-runtime
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(SUBDIRS.*\)debian|\1|' \
-		${WRKSRC}/Makefile.in
+	@${RM} -r ${WRKSRC}/intl
+
+pre-configure:
+	${CP} ${LOCALBASE}/share/gettext/po/Makevars.template \
+		${WRKSRC}/po/Makevars
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

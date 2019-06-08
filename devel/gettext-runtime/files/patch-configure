@@ -1,11 +1,11 @@
---- configure.orig	2014-07-14 07:30:12 UTC
+--- configure.orig	2019-05-12 15:08:34 UTC
 +++ configure
-@@ -16277,7 +16277,7 @@
-              # thread: pthread_create from libc will fail, whereas
-              # pthread_create will actually create a thread.
+@@ -17215,7 +17215,7 @@ if test "x$ac_cv_lib_pthread_pthread_kill" = xyes; the
+              # On Solaris 10 or newer, this test is no longer needed, because
+              # libc contains the fully functional pthread functions.
               case "$host_os" in
--               solaris* | hpux*)
-+               solaris* | hpux* | freebsd*)
+-               solaris | solaris2.1-9 | solaris2.1-9.* | hpux*)
++               solaris | solaris2.1-9 | solaris2.1-9.* | hpux* | freebsd*)
  
  $as_echo "#define PTHREAD_IN_USE_DETECTION_HARD 1" >>confdefs.h
  

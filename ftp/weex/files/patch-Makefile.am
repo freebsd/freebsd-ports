@@ -1,0 +1,8 @@
+--- Makefile.am.orig	2000-06-13 11:56:56 UTC
++++ Makefile.am
+@@ -1,4 +1,4 @@
+ AUTOMAKE_OPTIONS=foreign
+ 
+-SUBDIRS=po intl src doc man debian
++SUBDIRS=po src doc man debian
+ EXTRA_DIST=weex-2.6.1.spec

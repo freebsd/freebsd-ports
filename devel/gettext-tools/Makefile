@@ -5,56 +5,45 @@
 # discretion.
 
 PORTNAME=	gettext-tools
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	GNU gettext development and translation tools
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
 .include "${.CURDIR}/../gettext/Makefile.common"
+
+LIB_DEPENDS=	libtextstyle.so:devel/libtextstyle
+
+USES=		charsetfix cpe gettext-runtime iconv libtool tar:xz
+USE_LDCONFIG=	yes
+
+CPE_PRODUCT=	gettext
+CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-csharp --disable-java --disable-openmp \
 		--with-included-glib --with-included-libcroco \
 		--with-included-libunistring --with-included-libxml \
 		--without-emacs --without-git ac_cv_lib_rt_sched_yield=no
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-PLIST_SUB=	VERSION=${PORTVERSION:R}
 TEST_TARGET=	check
-USES=		charsetfix cpe gettext-runtime iconv libtool tar:xz
-USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	gettext-tools
 
-CPE_PRODUCT=	gettext
-CPE_VENDOR=	gnu
+DATADIR=	${PREFIX}/share/gettext
+DOCSDIR=	${PREFIX}/share/doc/gettext
+PLIST_SUB=	PORTVERSION=${PORTVERSION} VERSION=${PORTVERSION:R}
 
-OPTIONS_DEFINE=	DOCS THREADS
+INFO=		gettext
+
+OPTIONS_DEFINE=	DOCS EXAMPLES THREADS
 OPTIONS_DEFAULT=THREADS
 OPTIONS_EXCLUDE_DragonFly=	THREADS
 
-DOCS_INFO=	gettext
-
 THREADS_CONFIGURE_ENABLE=	threads
 
-post-patch-DOCS-off:
-	@${REINPLACE_CMD} '/^SUBDIRS =/s/doc//' ${WRKSRC}/Makefile.in
-
 post-patch:
-# Exclude examples and gnulib-tests.
-	@${REINPLACE_CMD} -E '/^SUBDIRS =/s/(examples|gnulib-tests)//g' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} \
-		'/^install-data-am:/s/install-examplesbuildauxDATA//' \
-		${WRKSRC}/Makefile.in ${WRKSRC}/m4/Makefile.in
-# Do not install html copies of manpages.
-	@${REINPLACE_CMD} \
-		-e '/^all-local:/s/html-local//' \
-		-e '/^install-data-local:/s/install-html//' \
-		-e '/^installdirs-local:/s/installdirs-html//' \
-		${WRKSRC}/man/Makefile.in
 # Do not patch system float.h.
 	@${REINPLACE_CMD} 's/FLOAT_H=float\.h//' \
 		${WRKSRC}/configure
@@ -64,5 +53,10 @@ post-patch:
 # Use libasprintf installed by gettext-runtime.
 	@${REINPLACE_CMD} 's,[^ ]*libasprintf.la,-lasprintf,' \
 		${WRKSRC}/tests/lang-c++
+# Use system libtextstyle.
+	@${REINPLACE_CMD} \
+		-e '/:/!s,[[:<:]]textstyle[^[:space:]]*\.h,,g' \
+		-e 's,\.\./\.\./libtextstyle/lib/libtextstyle\.la,-ltextstyle,' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

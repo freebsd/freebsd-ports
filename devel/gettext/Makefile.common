@@ -4,7 +4,7 @@
 # experimental ports run.  Untested commits may be backed out at portmgr's
 # discretion.
 
-PORTVERSION=	0.19.8.1
+PORTVERSION=	0.20.1
 PORTREVISION?=	0 # Leave this zero. Set in Makefile instead.
 CATEGORIES=	devel
 MASTER_SITES=	GNU/gettext
@@ -13,6 +13,3 @@ DISTNAME=	gettext-${PORTVERSION}
 MAINTAINER=	tijl@FreeBSD.org
 
 DISTINFO_FILE=	${.CURDIR}/../gettext/distinfo
-
-DATADIR=	${PREFIX}/share/gettext
-DOCSDIR=	${PREFIX}/share/doc/gettext
