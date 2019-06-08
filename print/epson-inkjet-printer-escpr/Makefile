@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	epson-inkjet-printer-escpr
-PORTVERSION=	1.6.38
+PORTVERSION=	1.6.41
 DISTVERSIONSUFFIX=	-1lsb3.2
 CATEGORIES=	print
-MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/09/25/30/1b345288d691386af8a0314a9b11ecbc400522ec/
+MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/09/33/79/927867e2774c98c0fdedb15fc7712f363fe16f41/
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Epson Inkjet Printer Driver (ESC/P-R) for Linux
@@ -12,7 +12,6 @@ COMMENT=	Epson Inkjet Printer Driver (ESC/P-R) for Linux
 LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libcupsimage.so:print/cups
-FETCH_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
 USES=		autoreconf dos2unix gmake libtool
 USE_LDCONFIG=	yes
