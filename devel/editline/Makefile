@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	editline
-PORTVERSION=	1.16.0
+PORTVERSION=	1.16.1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,8 +15,6 @@ USES=		autoreconf libtool ncurses pathfix
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-
-PORTDOCS=	*
 
 GH_ACCOUNT=	troglobit
 USE_GITHUB=	yes
