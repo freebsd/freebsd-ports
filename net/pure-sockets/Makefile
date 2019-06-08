@@ -12,6 +12,9 @@ COMMENT=	Pure language interface to the Berkeley socket functions
 
 LICENSE=	LGPL3+
 
+DEPRECATED=	Depends on expiring devel/llvm35
+EXPIRATION_DATE=2019-08-31
+
 USES=		pkgconfig pure
 
 PORTDOCS=	README

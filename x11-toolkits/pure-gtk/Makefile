@@ -13,6 +13,9 @@ COMMENT=	Set of Pure language bindings for GTK+
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+DEPRECATED=	Depends on expiring devel/llvm35
+EXPIRATION_DATE=2019-08-31
+
 LIB_DEPENDS=	libcairo.so:graphics/cairo
 
 USES=		pkgconfig pure:ffi

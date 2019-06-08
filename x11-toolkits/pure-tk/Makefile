@@ -13,6 +13,9 @@ COMMENT=	Basic interface between Pure and Tcl/Tk
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expiring devel/llvm35
+EXPIRATION_DATE=2019-08-31
+
 USES=		pkgconfig pure tk:86+
 
 #MAKE_ARGS+=	tclvers=${TCL_VER}
