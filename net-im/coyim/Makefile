@@ -3,7 +3,7 @@
 PORTNAME=	coyim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	santhosh.raju@gmail.com
@@ -16,9 +16,14 @@ BUILD_DEPENDS=	go:lang/go
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gnome pkgconfig
+USES=		gnome pkgconfig shebangfix
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
+
+SHEBANG_LANG=   sh
+sh_OLD_CMD=     "/usr/bin/env bash"
+sh_CMD=         /bin/sh
+SHEBANG_FILES=  gen_version_file.sh
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
@@ -47,6 +52,7 @@ INSTALLATION_DIRS+=	share/applications share/pixmaps
 
 do-build:
 	cd ${WRKSRC}/${GH_SUBDIR} && \
+		./gen_version_file.sh ${DISTVERSIONPREFIX}${DISTVERSION} && \
 		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} \
 		go build -tags ${GTK_BUILD_TAG} -o ${PORTNAME}
 
