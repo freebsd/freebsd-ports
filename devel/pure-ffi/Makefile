@@ -13,6 +13,9 @@ COMMENT=	Pure language interface to libffi
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+DEPRECATED=	Depends on expiring devel/llvm35
+EXPIRATION_DATE=2019-08-31
+
 LIB_DEPENDS=	libffi.so:devel/libffi
 
 USES=		pkgconfig pure

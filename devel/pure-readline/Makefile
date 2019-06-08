@@ -14,6 +14,9 @@ COMMENT=	Readline interface for the Pure language
 LICENSE=	BSD3CLAUSE GPLv3+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on expiring devel/llvm35
+EXPIRATION_DATE=2019-08-31
+
 USES=		pkgconfig pure readline
 
 PORTDOCS=	README

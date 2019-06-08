@@ -13,6 +13,9 @@ COMMENT=	Pure language binding to the SQLite3 library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expiring devel/llvm35
+EXPIRATION_DATE=2019-08-31
+
 USES=		pkgconfig pure sqlite
 
 PORTDOCS=	README

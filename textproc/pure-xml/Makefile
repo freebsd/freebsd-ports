@@ -13,6 +13,9 @@ COMMENT=	Pure language interface for libxml2 and libxslt
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+DEPRECATED=	Depends on expiring devel/llvm35
+EXPIRATION_DATE=2019-08-31
+
 USES=		pkgconfig pure
 USE_GNOME=	libxml2 libxslt
 

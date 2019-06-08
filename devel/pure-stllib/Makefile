@@ -14,6 +14,9 @@ COMMENT=	Pure interface to C++ STL map and vectors
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expiring devel/llvm35
+EXPIRATION_DATE=2019-08-31
+
 USES=		compiler:c++11-lib pkgconfig pure
 
 PORTDOCS=	*

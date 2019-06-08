@@ -13,6 +13,9 @@ COMMENT=	Multiprecision floats for Pure
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+DEPRECATED=	Depends on expiring devel/llvm35
+EXPIRATION_DATE=2019-08-31
+
 USES=		pkgconfig pure
 MAKE_ARGS=	libdir="${PREFIX}/lib"
 

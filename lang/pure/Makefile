@@ -14,6 +14,9 @@ COMMENT=	Modern-style functional programming language
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on expiring devel/llvm35
+EXPIRATION_DATE=2019-08-31
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libpcreposix.so:devel/pcre \

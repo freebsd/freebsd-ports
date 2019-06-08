@@ -13,6 +13,9 @@ COMMENT=	CSV reading and writing module for the Pure language
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expiring devel/llvm35
+EXPIRATION_DATE=2019-08-31
+
 USES=		pkgconfig pure
 
 PORTDOCS=	README

@@ -14,6 +14,9 @@ COMMENT=	Rational number library for the Pure language
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expiring devel/llvm35
+EXPIRATION_DATE=2019-08-31
+
 USES=		pure
 NO_ARCH=	yes
 
