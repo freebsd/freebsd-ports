@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	boost-libs
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Framework for interfacing Python and C++
 
-BUILD_DEPENDS=	bjam:devel/boost-jam
+BUILD_DEPENDS=	bjam:devel/boost-jam \
+		${PYNUMPY}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		python
