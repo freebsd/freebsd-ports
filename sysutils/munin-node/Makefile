@@ -75,7 +75,6 @@ post-patch:
 	@${FIND} ${WRKSRC}/node/sbin -type f -name "*.orig" -delete
 
 post-install:
-	${REINPLACE_CMD} -i '' -e '1s,${PERL5},${PERL},' ${STAGEDIR}${PREFIX}/bin/munindoc
 	${MKDIR} ${STAGEDIR}${DBDIR}/plugin-state ${STAGEDIR}${SPOOLDIR}/async
 	${INSTALL_SCRIPT} ${.CURDIR}/plugins/* ${STAGEDIR}${DATADIR}/plugins/
 	${INSTALL_DATA} ${WRKSRC}/build/node/munin-node.conf \
