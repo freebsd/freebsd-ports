@@ -2,6 +2,7 @@
 
 PORTNAME=	check_nwc_health
 PORTVERSION=	7.8
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://labs.consol.de/assets/downloads/nagios/
 
@@ -17,7 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-nagios-user=${NAGIOSUSER} \
 		--with-nagios-group=${NAGIOSGROUP} \
-		--with-perl=${PERL5}
+		--with-perl=${PERL}
 
 NAGIOSUSER?=	nagios
 NAGIOSGROUP?=	nagios
