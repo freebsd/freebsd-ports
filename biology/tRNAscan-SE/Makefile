@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tRNAscan-SE
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	biology
-MASTER_SITES=	http://lowelab.ucsc.edu/software/
+MASTER_SITES=	http://trna.ucsc.edu/software/
 DISTFILES=	${DISTNAME:tl}${EXTRACT_SUFX}
 
 MAINTAINER=	mzaki@niid.go.jp
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	cmsearch:biology/infernal
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S,.0$,,}
+WRKSRC=		${WRKDIR}/${DISTNAME:C,\.[0-9]+$,,}
 
 GNU_CONFIGURE=	yes
 

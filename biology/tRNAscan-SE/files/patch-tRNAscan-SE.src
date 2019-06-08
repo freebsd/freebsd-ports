@@ -1,12 +1,6 @@
---- tRNAscan-SE.src.orig	2017-12-03 01:59:25 UTC
+--- tRNAscan-SE.src.orig	2019-04-30 21:37:37 UTC
 +++ tRNAscan-SE.src
-@@ -1,4 +1,4 @@
--#! /usr/bin/perl
-+#! @PERL@
- #
- # --------------------------------------------------------------------
- # tRNAscan-SE: a program for improved detection of transfer RNA
-@@ -44,7 +44,7 @@ our $release_date = "December 2017";
+@@ -44,7 +44,7 @@ our $release_date = "April 2019";
  our $program_id = "tRNAscan-SE-".$version;
  
  # modified by 'make'
