@@ -145,8 +145,8 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/netty-transport-4.1.32.Final.jar
 %%DATADIR%%/lib/objenesis-2.6.jar
 %%DATADIR%%/lib/openapi.jar
-%%DATADIR%%/lib/org.eclipse.lsp4j-0.3.1.jar
-%%DATADIR%%/lib/org.eclipse.lsp4j.jsonrpc-0.3.0.jar
+%%DATADIR%%/lib/org.eclipse.lsp4j-0.7.1.jar
+%%DATADIR%%/lib/org.eclipse.lsp4j.jsonrpc-0.7.1.jar
 %%DATADIR%%/lib/org.eclipse.xtext.xbase.lib-2.14.0.jar
 %%DATADIR%%/lib/oro-2.0.8.jar
 %%DATADIR%%/lib/picocontainer-1.2.jar

@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	clion
-PORTVERSION=	2019.1.3
-PORTREVISION=	1
+PORTVERSION=	2019.1.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/cpp/
 PKGNAMEPREFIX=	jetbrains-
 DISTNAME=	CLion-${PORTVERSION}
+DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	JetBrains CLion IDE
