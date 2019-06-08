@@ -42,8 +42,4 @@ ICONV_USES=		iconv
 ICONV_CONFIGURE_WITH=	iconv
 ICONV_LDFLAGS=		${ICONV_LIB}
 
-post-patch:
-	@${REINPLACE_CMD} -e '/test .*==/ s/==/=/' \
-		${WRKSRC}/configure
-
 .include <bsd.port.mk>

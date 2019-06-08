@@ -1,0 +1,36 @@
+--- configure.in.orig	2014-09-19 21:34:27 UTC
++++ configure.in
+@@ -1,5 +1,6 @@
+ dnl Process this file with autoconf to produce a configure script.
+ AC_INIT(src/weex.c)
++AC_CONFIG_MACRO_DIR([m4])
+ 
+ PACKAGE=weex
+ VERSION=2.8.0
+@@ -24,8 +25,8 @@ AC_PROG_CC
+ AC_PROG_INSTALL
+ 
+ dnl for gettext
+-AM_GNU_GETTEXT
+-AC_CHECK_FUNC(gettext,,AC_CHECK_LIB(intl, gettext))
++AM_GNU_GETTEXT_VERSION([0.20])
++AM_GNU_GETTEXT([external])
+ localedir='${prefix}/share/locale'
+ AC_SUBST(localedir)
+ 
+@@ -33,7 +34,7 @@ dnl Checks for libraries.
+ AC_CHECK_LIB(socket,socket)
+ AC_CHECK_LIB(nsl,gethostbyname)
+ AC_CHECK_LIB([crypto],[CRYPTO_new_ex_data],
+-    AC_CHECK_LIB([ssl],[SSL_library_init], 
++    AC_CHECK_LIB([ssl],[SSL_new], 
+ 	[LIBS="$LIBS -lssl -lcrypto"; CFLAGS="$CFLAGS -DUSE_SSL=1"], [])
+     )
+ 
+@@ -79,5 +80,5 @@ if test x$CC = xgcc; then
+ fi     
+       
+ 
+-AC_OUTPUT(Makefile intl/Makefile src/Makefile po/Makefile.in \
++AC_OUTPUT(Makefile src/Makefile po/Makefile.in \
+ debian/Makefile doc/Makefile man/Makefile)

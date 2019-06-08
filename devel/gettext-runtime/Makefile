@@ -5,45 +5,40 @@
 # discretion.
 
 PORTNAME=	gettext-runtime
-PORTREVISION=	2
+PORTREVISION=	0
 
 COMMENT=	GNU gettext runtime libraries and programs
 
-LICENSE=	LGPL21 GPLv3
+LICENSE=	LGPL21+ GPLv3+
 LICENSE_COMB=	multi
 LICENSE_FILE_LGPL21=	${WRKSRC}/intl/COPYING.LIB
 LICENSE_FILE_GPLv3=	${WRKSRC}/../COPYING
 
 .include "${.CURDIR}/../gettext/Makefile.common"
 
+USES=		charsetfix cpe iconv libtool tar:xz
+USE_LDCONFIG=	yes
+
+CPE_PRODUCT=	gettext
+CPE_VENDOR=	gnu
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-csharp --disable-java --with-included-gettext \
 		ac_cv_lib_rt_sched_yield=no
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-USES=		charsetfix cpe iconv libtool tar:xz
-USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	gettext-runtime
 
+DATADIR=	${PREFIX}/share/gettext
+DOCSDIR=	${PREFIX}/share/doc/gettext
 INFO=		autosprintf
-CPE_PRODUCT=	gettext
-CPE_VENDOR=	gnu
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == DragonFly
 CONFIGURE_ARGS+=--disable-threads
 .endif
-
-post-patch:
-# Do not install csharp and java documentation.
-	@${REINPLACE_CMD} -E '/^SUBDIRS =/s/(intl-csharp|intl-java)//g' \
-		${WRKSRC}/Makefile.in
-# Do not install html copies of manpages.
-	@${REINPLACE_CMD} \
-		-e '/^all-local:/s/html-local//' \
-		-e '/^install-data-local:/s/install-html//' \
-		-e '/^installdirs-local:/s/installdirs-html//' \
-		${WRKSRC}/libasprintf/Makefile.in ${WRKSRC}/man/Makefile.in
 
 .include <bsd.port.mk>

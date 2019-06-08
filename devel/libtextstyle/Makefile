@@ -1,21 +1,27 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	libtextstyle
-PORTVERSION=	0.8
-CATEGORIES=	devel
-MASTER_SITES=	GNU_ALPHA/gettext
+# NOTE: before committing to this port, contact portmgr to arrange for an
+# experimental ports run.  Untested commits may be backed out at portmgr's
+# discretion.
 
-MAINTAINER=	sunpoet@FreeBSD.org
+PORTNAME=	libtextstyle
+PORTREVISION=	0
+
 COMMENT=	Text styling library
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		iconv libtool ncurses
+.include "${.CURDIR}/../gettext/Makefile.common"
+
+USES=		iconv libtool ncurses tar:xz
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libncurses-prefix=${NCURSESBASE}
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
+WRKSRC_SUBDIR=	libtextstyle
 
 INFO=		libtextstyle
 
