@@ -23,7 +23,17 @@ OPTIONS_DEFINE=	DOCS
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libEGL.so.1
 	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libGL.so.1
+	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libGLESv1_CM.so.1
+	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libGLESv2.so.2
+	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libGLX.so.0
+	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libGLdispatch.so.0
+	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libOpenGL.so.0
 	@${RM} ${STAGEDIR}${PREFIX}/usr/lib64/libEGL.so.1
 	@${RM} ${STAGEDIR}${PREFIX}/usr/lib64/libGL.so.1
+	@${RM} ${STAGEDIR}${PREFIX}/usr/lib64/libGLESv1_CM.so.1
+	@${RM} ${STAGEDIR}${PREFIX}/usr/lib64/libGLESv2.so.2
+	@${RM} ${STAGEDIR}${PREFIX}/usr/lib64/libGLX.so.0
+	@${RM} ${STAGEDIR}${PREFIX}/usr/lib64/libGLdispatch.so.0
+	@${RM} ${STAGEDIR}${PREFIX}/usr/lib64/libOpenGL.so.0
 
 .include <bsd.port.mk>
