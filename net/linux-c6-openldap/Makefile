@@ -10,11 +10,12 @@ CATEGORIES=	net linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Lightweight Directory Access Protocol libraries (Linux CentOS ${LINUX_DIST_VER})
 
-DESCR=		${.CURDIR}/../${PORTNAME}24-server/pkg-descr
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	cyrus-sasl2 nss nspr
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../${PORTNAME}24-server/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

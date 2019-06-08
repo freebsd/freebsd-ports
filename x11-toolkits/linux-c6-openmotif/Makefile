@@ -10,11 +10,12 @@ CATEGORIES=	x11-toolkits linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Motif toolkit libraries (Linux CentOS ${LINUX_DIST_VER})
 
-DESCR=		${.CURDIR}/../open-motif/pkg-descr
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	xorglibs
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../open-motif/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

@@ -14,10 +14,11 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	alsa-lib>0:audio/alsa-lib
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

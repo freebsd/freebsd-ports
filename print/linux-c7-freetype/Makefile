@@ -8,11 +8,12 @@ CATEGORIES=	print linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Font rendering engine (Linux CentOS ${LINUX_DIST_VER})
 
-DESCR=		${.CURDIR}/../${PORTNAME}2/pkg-descr
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	png
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../${PORTNAME}2/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

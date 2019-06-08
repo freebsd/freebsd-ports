@@ -10,10 +10,11 @@ CATEGORIES=	devel
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Generic PCI access library (CentOS ${LINUX_DIST_VER})
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

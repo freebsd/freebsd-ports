@@ -8,10 +8,11 @@ CATEGORIES=	converters linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Unicode Bidirectional Algorithm (Linux CentOS ${LINUX_DIST_VER})
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

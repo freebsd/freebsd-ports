@@ -6,6 +6,14 @@ PORTVERSION=	${LINUX_DIST_VER}
 PORTREVISION=	1
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Base set of packages needed in Linux mode (Linux CentOS ${LINUX_DIST_VER})
+
+USES=		linux:c6
+USE_LINUX=	# empty
+USE_LINUX_RPM=	yes
+
 BIN_DISTNAMES=	bash-4.1.2-48.el6 \
 		bzip2-1.0.5-7.el6_0 \
 		centos-release-6-10.el6.centos.12.3 \
@@ -104,13 +112,7 @@ SRC_DISTFILES=	acl-2.2.49-7.el6_9.1${SRC_SUFX}:SOURCE \
 		which-2.19-6.el6${SRC_SUFX}:SOURCE \
 		zlib-1.2.3-29.el6${SRC_SUFX}:SOURCE
 
-MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Base set of packages needed in Linux mode (Linux CentOS ${LINUX_DIST_VER})
-
 PLIST_SUB=	LINUXBASE=${LINUXBASE} SYSCTLMIB=${SYSCTLMIB}
-USES=		linux:c6
-USE_LINUX=	# empty
-USE_LINUX_RPM=	yes
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

@@ -4,6 +4,17 @@
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
 CATEGORIES=	devel
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Linux compilers and base libraries (CentOS ${LINUX_DIST_VER})
+
+# LICENSE=	Various GNU
+
+USES=		linux:c7
+USE_LDCONFIG=	yes
+USE_LINUX=	libgfortran
+USE_LINUX_RPM=	yes
+
 BIN_DISTNAMES=	binutils-2.27-34.base.el7 \
 		glibc-headers-2.17-260.el7_6.5 \
 		mpfr-3.1.1-4.el7 \
@@ -30,17 +41,7 @@ SRC_DISTFILES=	binutils-2.27-34.base.el7${SRC_SUFX}:SOURCE \
 		mpfr-3.1.1-4.el7${SRC_SUFX}:SOURCE \
 		gcc-4.8.5-36.el7_6.2${SRC_SUFX}:SOURCE
 
-MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Linux compilers and base libraries (CentOS ${LINUX_DIST_VER})
-
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
-
-# LICENSE=	Various GNU
-
-USES=		linux:c7
-USE_LDCONFIG=	yes
-USE_LINUX=	libgfortran
-USE_LINUX_RPM=	yes
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

@@ -11,12 +11,12 @@ COMMENT=	Advanced Linux Sound Architecture utilities (Linux CentOS ${LINUX_DIST_
 
 LICENSE=	GPLv3
 
-CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
-
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 USES=		linux:c7
 USE_LINUX=	alsalib alsa-plugins-oss
 USE_LINUX_RPM=	nolib
+
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

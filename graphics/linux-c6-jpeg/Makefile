@@ -6,17 +6,17 @@ PORTVERSION=	1.2.1
 DISTVERSIONSUFFIX=	-3.el6_5
 PORTREVISION=	3
 CATEGORIES=	graphics linux
-DISTNAME=	${LINUXNAME}-${DISTVERSIONFULL}
+DISTNAME=	libjpeg-turbo-${DISTVERSIONFULL}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	SIMD-accelerated JPEG codec (Linux CentOS ${LINUX_DIST_VER})
 
-DESCR=		${.CURDIR}/../${PORTNAME}-turbo/pkg-descr
-DOCSDIR=	${PREFIX}/usr/share/doc/${LINUXNAME}-${PORTVERSION}
-LINUXNAME=	libjpeg-turbo
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../${PORTNAME}-turbo/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/libjpeg-turbo-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 

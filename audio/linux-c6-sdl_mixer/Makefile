@@ -7,20 +7,18 @@ DISTVERSIONSUFFIX=	-1.el6
 PORTREVISION=	5
 CATEGORIES=	audio linux
 MASTER_SITES=	EPEL/s
-DISTNAME=	${LINUXNAME}-${DISTVERSIONFULL}
+DISTNAME=	SDL_mixer-${DISTVERSIONFULL}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Sample multi-channel audio mixer library (Linux CentOS ${LINUX_DIST_VER})
 
-CONFLICTS=	linux-sdl_mixer-[0-9]* linux-f8-sdl_mixer-[0-9]*
-
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-DOCSDIR=	${PREFIX}/usr/share/doc/${LINUXNAME}-${PORTVERSION}
-LINUXNAME=	SDL_mixer
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	sdl12
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/SDL_mixer-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 

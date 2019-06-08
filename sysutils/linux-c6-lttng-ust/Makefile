@@ -10,12 +10,13 @@ MASTER_SITES=	EPEL/l
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Libraries to instrument and trace user applications (CentOS ${LINUX_DIST_VER})
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	userspace-rcu
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
