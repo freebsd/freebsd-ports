@@ -164,7 +164,6 @@ post-install:
 .for i in AUTHORS CONFIG-KEYS COPYING ChangeLog FAQS INSTALL QUICKSTART UPGRADE
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/sql/* ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>
