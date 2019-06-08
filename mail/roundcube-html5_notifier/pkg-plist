@@ -15,6 +15,8 @@
 %%WWWDIR%%/localization/ja_JP.inc
 %%WWWDIR%%/localization/nl_NL.inc
 %%WWWDIR%%/localization/pl_PL.inc
+%%WWWDIR%%/localization/pt_BR.inc
 %%WWWDIR%%/localization/ru_RU.inc
 %%WWWDIR%%/localization/sk_SK.inc
+%%WWWDIR%%/localization/zh_CN.inc
 %%WWWDIR%%/screenshot.png

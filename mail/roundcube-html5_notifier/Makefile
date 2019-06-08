@@ -1,8 +1,7 @@
-# Created by: Koichiro IWAO <meta+ports@vmeta.jp>
 # $FreeBSD$
 
 PORTNAME=	html5_notifier
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
