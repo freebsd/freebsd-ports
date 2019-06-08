@@ -1,6 +1,6 @@
-TIMESTAMP = 1559591541
-SHA256 (kubernetes-minikube-v1.1.0_GH0.tar.gz) = 65d312139b4b630d9625e61b36464b38a9749079853c7e852cecb329c2e9f665
-SIZE (kubernetes-minikube-v1.1.0_GH0.tar.gz) = 5841870
+TIMESTAMP = 1559987349
+SHA256 (kubernetes-minikube-v1.1.1_GH0.tar.gz) = c5fb9127f56b7d54b97915f7439f7e7e12da7a43cca3208b3a6e7154c826436d
+SIZE (kubernetes-minikube-v1.1.1_GH0.tar.gz) = 5846583
 SHA256 (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = ee1ebe2efef498be1c558bf71e143289db2d21e2d42592503ad2d4a989006821
 SIZE (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = 20946
 SHA256 (Parallels-docker-machine-parallels-v1.3.0_GH0.tar.gz) = dcfd9fefde15ba0e5d264b7f3efdb76cdd14e59fe722a28fff82f3a418f78d8b
