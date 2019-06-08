@@ -11,6 +11,9 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	sergey.dyatko@gmail.com
 COMMENT=	Version Control System plugin for Thunar
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libapr-1.so:devel/apr1
