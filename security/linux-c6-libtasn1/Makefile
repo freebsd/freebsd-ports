@@ -10,11 +10,12 @@ CATEGORIES=	security linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	ASN.1 structure parser library (Linux CentOS ${LINUX_DIST_VER})
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 USES=		cpe linux:c6
 CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

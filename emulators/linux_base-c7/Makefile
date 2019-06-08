@@ -4,6 +4,15 @@ PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
+EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nfilesystem-*:C/:[^:]+$//}
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Base set of packages needed in Linux mode (Linux CentOS ${LINUX_DIST_VER})
+
+USES=		linux:c7
+USE_LINUX=	# empty
+USE_LINUX_RPM=	yes
+
 BIN_DISTNAMES=	bash-4.2.46-31.el7 \
 		bzip2-1.0.6-13.el7 \
 		coreutils-8.22-23.el7 \
@@ -111,15 +120,8 @@ SRC_DISTFILES=	acl-2.2.51-14.el7${SRC_SUFX}:SOURCE \
 		which-2.20-7.el7${SRC_SUFX}:SOURCE \
 		xz-5.2.2-1.el7${SRC_SUFX}:SOURCE \
 		zlib-1.2.7-18.el7${SRC_SUFX}:SOURCE
-EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nfilesystem-*:C/:[^:]+$//}
-
-MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Base set of packages needed in Linux mode (Linux CentOS ${LINUX_DIST_VER})
 
 PLIST_SUB=	LINUXBASE=${LINUXBASE} SYSCTLMIB=${SYSCTLMIB}
-USES=		linux:c7
-USE_LINUX=	# empty
-USE_LINUX_RPM=	yes
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

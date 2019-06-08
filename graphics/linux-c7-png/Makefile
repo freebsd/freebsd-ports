@@ -15,12 +15,12 @@ LICENSE_NAME=	libpng license
 LICENSE_FILE=	${WRKSRC}/usr/share/doc/${PORTNAME}-${PORTVERSION}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
-
-DESCR=		${.CURDIR}/../png/pkg-descr
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
+DESCR=		${.CURDIR}/../png/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

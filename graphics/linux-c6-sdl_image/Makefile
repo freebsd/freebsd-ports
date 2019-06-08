@@ -7,18 +7,18 @@ DISTVERSIONSUFFIX=	-9.el6
 PORTREVISION=	5
 CATEGORIES=	graphics linux
 MASTER_SITES=	EPEL/s
-DISTNAME=	${LINUXNAME}-${DISTVERSIONFULL}
+DISTNAME=	SDL_image-${DISTVERSIONFULL}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Simple library to load images as SDL interfaces (Linux CentOS ${LINUX_DIST_VER})
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-DOCSDIR=	${PREFIX}/usr/share/doc/${LINUXNAME}-${PORTVERSION}
-LINUXNAME=	SDL_image
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	jpeg png sdl12 tiff
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/SDL_image-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 

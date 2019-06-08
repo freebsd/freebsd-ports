@@ -5,6 +5,15 @@ PORTNAME=	xorg-libs
 PORTVERSION=	7.7
 PORTREVISION=	6
 CATEGORIES=	x11 linux
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Xorg libraries (Linux CentOS ${LINUX_DIST_VER})
+
+USES=		linux:c7
+USE_LDCONFIG=	yes
+USE_LINUX=	fontconfig
+USE_LINUX_RPM=	yes
+
 LIB_DISTNAMES=	libICE-1.0.9-9.el7 \
 		libSM-1.2.2-2.el7 \
 		libX11-1.6.5-2.el7 \
@@ -76,15 +85,7 @@ SRC_DISTFILES=	libICE-1.0.9-9.el7${SRC_SUFX}:SOURCE \
 		libxkbfile-1.0.9-3.el7${SRC_SUFX}:SOURCE \
 		libxshmfence-1.2-1.el7${SRC_SUFX}:SOURCE
 
-MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Xorg libraries (Linux CentOS ${LINUX_DIST_VER})
-
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
-
-USES=		linux:c7
-USE_LDCONFIG=	yes
-USE_LINUX=	fontconfig
-USE_LINUX_RPM=	yes
 
 OPTIONS_DEFINE=	DOCS
 

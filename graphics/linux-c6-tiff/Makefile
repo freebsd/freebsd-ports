@@ -12,11 +12,12 @@ COMMENT=	Tools and library routines for working with TIFF images (Linux CentOS $
 
 LICENSE=	BSD3CLAUSE
 
-DESCR=		${.CURDIR}/../tiff/pkg-descr
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	jpeg
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../tiff/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

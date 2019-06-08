@@ -13,11 +13,11 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	alsa-lib>0:audio/alsa-lib
 
-CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
-
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+
+CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 OPTIONS_DEFINE=	DOCS
 

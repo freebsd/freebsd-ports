@@ -10,10 +10,11 @@ MASTER_SITES=	EPEL/u
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Userspace read-copy-update (RCU) data synchronization library (CentOS ${LINUX_DIST_VER})
 
-DESCR=		${.CURDIR}/../liburcu/pkg-descr
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../liburcu/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

@@ -5,6 +5,17 @@ PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
 PORTREVISION=	3
 CATEGORIES=	devel
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Linux compilers and base libraries (CentOS ${LINUX_DIST_VER})
+
+# LICENSE=	Various GNU
+
+USES=		linux:c6
+USE_LDCONFIG=	yes
+USE_LINUX=	libgfortran
+USE_LINUX_RPM=	yes
+
 BIN_DISTNAMES=	binutils-2.20.51.0.2-5.48.el6_10.1 \
 		glibc-headers-2.12-1.212.el6_10.3 \
 		kernel-headers-2.6.32-754.14.2.el6 \
@@ -22,16 +33,6 @@ SRC_DISTFILES=	binutils-2.20.51.0.2-5.48.el6_10.1${SRC_SUFX}:SOURCE \
 		kernel-2.6.32-754.14.2.el6${SRC_SUFX}:SOURCE \
 		mpfr-2.4.1-6.el6${SRC_SUFX}:SOURCE \
 		gcc-4.4.7-23.el6${SRC_SUFX}:SOURCE
-
-MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Linux compilers and base libraries (CentOS ${LINUX_DIST_VER})
-
-# LICENSE=	Various GNU
-
-USES=		linux:c6
-USE_LDCONFIG=	yes
-USE_LINUX=	libgfortran
-USE_LINUX_RPM=	yes
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

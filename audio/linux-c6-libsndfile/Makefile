@@ -10,11 +10,12 @@ CATEGORIES=	audio linux
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF) (Linux CentOS ${LINUX_DIST_VER})
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	flac libogg libvorbis
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

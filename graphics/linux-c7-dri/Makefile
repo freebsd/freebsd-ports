@@ -5,6 +5,15 @@ PORTNAME=	dri
 PORTVERSION=	18.0.5
 DISTVERSIONSUFFIX=	-4.el7_6
 CATEGORIES=	graphics linux
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Mesa libGL runtime libraries (Linux CentOS ${LINUX_DIST_VER})
+
+USES=		linux:c7
+USE_LDCONFIG=	yes
+USE_LINUX=	expat libelf libglvnd libpciaccess wayland xorglibs
+USE_LINUX_RPM=	yes
+
 LIB_DISTNAMES=	freeglut-3.0.0-8.el7 \
 		libdrm-2.4.91-3.el7 \
 		llvm-private-6.0.1-2.el7 \
@@ -28,15 +37,7 @@ SRC_DISTFILES=	freeglut-3.0.0-8.el7${SRC_SUFX}:SOURCE \
 		mesa-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE \
 		mesa-libGLU-9.0.0-4.el7${SRC_SUFX}:SOURCE
 
-MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Mesa libGL runtime libraries (Linux CentOS ${LINUX_DIST_VER})
-
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
-
-USES=		linux:c7
-USE_LDCONFIG=	yes
-USE_LINUX=	expat libelf libglvnd libpciaccess wayland xorglibs
-USE_LINUX_RPM=	yes
 
 OPTIONS_DEFINE=	DOCS
 

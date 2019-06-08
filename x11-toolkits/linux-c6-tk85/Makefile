@@ -11,13 +11,14 @@ PKGNAMESUFFIX=	85
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL (Linux CentOS ${LINUX_DIST_VER})
 
-DATADIR=	${PREFIX}/usr/share/tk${PORTVERSION:R}
-DESCR=		${.CURDIR}/../${PORTNAME}${PKGNAMESUFFIX}/pkg-descr
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	xorglibs
 USE_LINUX_RPM=	yes
 USE_LINUX_RPM_BAD_PERMS=	yes
+
+DATADIR=	${PREFIX}/usr/share/tk${PORTVERSION:R}
+DESCR=		${.CURDIR}/../${PORTNAME}${PKGNAMESUFFIX}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 

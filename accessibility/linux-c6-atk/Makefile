@@ -12,10 +12,11 @@ COMMENT=	Accessibility Toolkit (Linux CentOS ${LINUX_DIST_VER})
 
 LICENSE=	GPLv3
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
