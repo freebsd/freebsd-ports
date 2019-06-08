@@ -3,6 +3,7 @@
 PORTNAME=	fs2open
 DISTVERSIONPREFIX=	release_
 DISTVERSION=	3_8_0
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -17,6 +18,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libpng16.so:graphics/png
 
 USES=		cmake compiler:c++11-lang lua:51 jpeg openal pkgconfig sdl
+LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	scp-fs2open
 GH_PROJECT=	fs2open.github.com
