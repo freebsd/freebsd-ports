@@ -1,3 +1,8 @@
+lib/libboost_numpy%%PYTHON_SUFFIX%%.a
+lib/libboost_numpy%%PYTHON_SUFFIX%%.so
+lib/libboost_numpy%%PYTHON_SUFFIX%%.so.%%MAJOR_VER%%
+lib/libboost_numpy%%PYTHON_SUFFIX%%.so.%%MAJOR_VER%%.%%MINOR_VER%%
+lib/libboost_numpy%%PYTHON_SUFFIX%%.so.%%BOOST_SHARED_LIB_VER%%
 lib/libboost_python%%PYTHON_SUFFIX%%.a
 lib/libboost_python%%PYTHON_SUFFIX%%.so
 lib/libboost_python%%PYTHON_SUFFIX%%.so.%%MAJOR_VER%%
