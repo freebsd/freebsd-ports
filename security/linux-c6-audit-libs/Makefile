@@ -1,8 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=	audit-libs
+PORTNAME=	audit
 PORTVERSION=	2.4.5
+DISTVERSIONSUFFIX=	-6.el6
 CATEGORIES=	security linux
+PKGNAMESUFFIX=	-libs
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Dynamic libraries needed for applications to use the Linux audit framework
@@ -10,8 +12,8 @@ COMMENT=	Dynamic libraries needed for applications to use the Linux audit framew
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
-RPMVERSION=	6.el6
-SRC_DISTFILES=	audit-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}:SOURCE
+
+LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
 
 OPTIONS_DEFINE=	DOCS
 

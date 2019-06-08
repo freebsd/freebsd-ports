@@ -3,6 +3,7 @@
 
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.12
+DISTVERSIONSUFFIX=	-1.el6
 PORTREVISION=	5
 CATEGORIES=	audio linux
 MASTER_SITES=	EPEL/s
@@ -16,7 +17,6 @@ CONFLICTS=	linux-sdl_mixer-[0-9]* linux-f8-sdl_mixer-[0-9]*
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${LINUXNAME}-${PORTVERSION}
 LINUXNAME=	SDL_mixer
-RPMVERSION=	1.el6
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	sdl12

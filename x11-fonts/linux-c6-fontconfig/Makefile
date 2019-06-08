@@ -3,6 +3,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.8.0
+DISTVERSIONSUFFIX=	-5.el6
 PORTREVISION=	3
 CATEGORIES=	x11-fonts linux
 
@@ -10,7 +11,6 @@ MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	XML-based font configuration API for X Windows (Linux CentOS ${LINUX_DIST_VER})
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-RPMVERSION=	5.el6
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	expat

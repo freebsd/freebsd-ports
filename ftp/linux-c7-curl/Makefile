@@ -3,6 +3,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.29.0
+DISTVERSIONSUFFIX=	-51.el7
 PORTREVISION=	5
 CATEGORIES=	ftp linux
 LIB_DISTNAMES=	lib${DISTNAME}
@@ -15,7 +16,6 @@ LICENSE=	MIT
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-RPMVERSION=	51.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	libssh2 nspr nss openldap

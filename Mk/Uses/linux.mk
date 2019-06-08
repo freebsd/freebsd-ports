@@ -184,8 +184,6 @@ DEV_ERROR+=		"USE_LINUX=${i}: package does not exist"
 
 .ifdef USE_LINUX_RPM
 
-DISTVERSIONSUFFIX?=	-${RPMVERSION}
-
 .if ${linux_ARGS} == c6
 .ifndef MASTER_SITES
 MASTER_SITES=		${MASTER_SITE_CENTOS_LINUX}
