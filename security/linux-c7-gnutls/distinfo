@@ -1,7 +1,7 @@
-TIMESTAMP = 1507316651
-SHA256 (centos/gnutls-3.3.26-9.el7.i686.rpm) = 811369a08349305c82e1513ad5a16760fd73784bea627224998ec3faee7aa3e0
-SIZE (centos/gnutls-3.3.26-9.el7.i686.rpm) = 660940
-SHA256 (centos/gnutls-3.3.26-9.el7.x86_64.rpm) = 96ec78063479ef8f4b7ef38b18072f1b4b46f818f77dd96ef49a1a1ee379dba0
-SIZE (centos/gnutls-3.3.26-9.el7.x86_64.rpm) = 693084
-SHA256 (centos/gnutls-3.3.26-9.el7.src.rpm) = 6d3db8da8341d9d39193ddb4976ea9135250e4e686391add6764edef77e3ecca
-SIZE (centos/gnutls-3.3.26-9.el7.src.rpm) = 6358944
+TIMESTAMP = 1556463454
+SHA256 (centos/gnutls-3.3.29-9.el7_6.i686.rpm) = ad8e6b740e9056a96e05890bdd3e63cb406fdff71a0fa153d192c94b63c3c7bc
+SIZE (centos/gnutls-3.3.29-9.el7_6.i686.rpm) = 664984
+SHA256 (centos/gnutls-3.3.29-9.el7_6.x86_64.rpm) = b84d58006d1aa9e87f96b70c7572179e8693ac49f1f0dc356b3ff73a9c5c7e63
+SIZE (centos/gnutls-3.3.29-9.el7_6.x86_64.rpm) = 696796
+SHA256 (centos/gnutls-3.3.29-9.el7_6.src.rpm) = 52484cece03a6709fc15ec15d95e1f4392b6860550c3107484c5946e2814f8fe
+SIZE (centos/gnutls-3.3.29-9.el7_6.src.rpm) = 9960514

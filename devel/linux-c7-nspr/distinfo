@@ -1,7 +1,7 @@
-TIMESTAMP = 1489071319
-SHA256 (centos/nspr-4.13.1-1.0.el7_3.i686.rpm) = 09b3e71758a143e0aff8ec7669fe75ca87981b1c6a45cb1efe38cf53a54c04b9
-SIZE (centos/nspr-4.13.1-1.0.el7_3.i686.rpm) = 130748
-SHA256 (centos/nspr-4.13.1-1.0.el7_3.x86_64.rpm) = 3a6c20e7132e12ba31fbb56ae97cf0397dc5b512b175454df3f0be34e1acbe72
-SIZE (centos/nspr-4.13.1-1.0.el7_3.x86_64.rpm) = 129156
-SHA256 (centos/nspr-4.13.1-1.0.el7_3.src.rpm) = 7449a93d80a5bb372f618feb8d965cd10806b78d07104eacd716ff6b8692efc7
-SIZE (centos/nspr-4.13.1-1.0.el7_3.src.rpm) = 1156388
+TIMESTAMP = 1530375408
+SHA256 (centos/nspr-4.19.0-1.el7_5.i686.rpm) = 9ed208aeaa8a4e9b2c2cffe0b077d0a1ac264a921eba5b2b0b135485b9e908ae
+SIZE (centos/nspr-4.19.0-1.el7_5.i686.rpm) = 131236
+SHA256 (centos/nspr-4.19.0-1.el7_5.x86_64.rpm) = fb847c4bac128f2ef6a272ee6559015205e9710398df13318dad31ae2e97ca50
+SIZE (centos/nspr-4.19.0-1.el7_5.x86_64.rpm) = 129668
+SHA256 (centos/nspr-4.19.0-1.el7_5.src.rpm) = 5c2aed75a69f6f1d5a497c7f10ba4ce725295cf94ff4f60de089e8b5b23dba7d
+SIZE (centos/nspr-4.19.0-1.el7_5.src.rpm) = 1208047

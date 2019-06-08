@@ -1,7 +1,7 @@
-TIMESTAMP = 1507235407
-SHA256 (centos/cairo-1.14.8-2.el7.i686.rpm) = b08da780178596e5902a7c97e4c5cc193f90182280a0a2a4ffb8f5503574a8f5
-SIZE (centos/cairo-1.14.8-2.el7.i686.rpm) = 760436
-SHA256 (centos/cairo-1.14.8-2.el7.x86_64.rpm) = 76971fb83600411f2458a1d9ef2758069dc86ca6d9ae156d97d9ca63e8c02a1b
-SIZE (centos/cairo-1.14.8-2.el7.x86_64.rpm) = 730468
-SHA256 (centos/cairo-1.14.8-2.el7.src.rpm) = c7871890509f5cca1f6a92a5a260535b065053b70db261dd7c104b960dfd338f
-SIZE (centos/cairo-1.14.8-2.el7.src.rpm) = 35419132
+TIMESTAMP = 1556483610
+SHA256 (centos/cairo-1.15.12-3.el7.i686.rpm) = fabbf5a58554ca86052490fe3ace7f250b9cf9e93f3ea6b0225d7372427e4441
+SIZE (centos/cairo-1.15.12-3.el7.i686.rpm) = 790068
+SHA256 (centos/cairo-1.15.12-3.el7.x86_64.rpm) = 9ae46153ec4566f2acc31e31b9004331ff7cec226ed2a7b0fb48e9cc7cf7312e
+SIZE (centos/cairo-1.15.12-3.el7.x86_64.rpm) = 758504
+SHA256 (centos/cairo-1.15.12-3.el7.src.rpm) = 466d800d523211017c26429c5d02597c20db40403334a57ced716d20c4a9fd84
+SIZE (centos/cairo-1.15.12-3.el7.src.rpm) = 41912306

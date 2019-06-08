@@ -1,10 +1,10 @@
 usr/lib/girepository-1.0/Atk-1.0.typelib
 usr/lib/libatk-1.0.so.0
-usr/lib/libatk-1.0.so.0.22209.1
+usr/lib/libatk-1.0.so.0.22810.1
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-usr/share/licenses/atk-2.22.0/COPYING
+usr/share/licenses/atk-2.28.1/COPYING
 %%NLS%%usr/share/locale/af/LC_MESSAGES/atk10.mo
 %%NLS%%usr/share/locale/am/LC_MESSAGES/atk10.mo
 %%NLS%%usr/share/locale/an/LC_MESSAGES/atk10.mo
@@ -36,6 +36,7 @@ usr/share/licenses/atk-2.22.0/COPYING
 %%NLS%%usr/share/locale/fa/LC_MESSAGES/atk10.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/atk10.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/atk10.mo
+%%NLS%%usr/share/locale/fur/LC_MESSAGES/atk10.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/atk10.mo
 %%NLS%%usr/share/locale/gd/LC_MESSAGES/atk10.mo
 %%NLS%%usr/share/locale/gl/LC_MESSAGES/atk10.mo

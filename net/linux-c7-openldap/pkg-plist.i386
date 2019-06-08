@@ -7,6 +7,7 @@ usr/lib/libldap_r-2.4.so.2
 usr/lib/libldap_r-2.4.so.2.10.7
 usr/lib/libslapi-2.4.so.2
 usr/lib/libslapi-2.4.so.2.10.7
+usr/lib/tmpfiles.d/openldap.conf
 usr/libexec/openldap/create-certdb.sh
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCEMENT
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES

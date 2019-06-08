@@ -1,7 +1,7 @@
-TIMESTAMP = 1482085226
-SHA256 (centos/dbus-libs-1.6.12-17.el7.i686.rpm) = 5a60554034f75c24a5abc784def634599a590101ebef36bbe182885042bde63a
-SIZE (centos/dbus-libs-1.6.12-17.el7.i686.rpm) = 155360
-SHA256 (centos/dbus-libs-1.6.12-17.el7.x86_64.rpm) = 3a55239b3c781f1c4074c85e475140a7b1e3fc7b69efd84b4f1b948711bcd8fe
-SIZE (centos/dbus-libs-1.6.12-17.el7.x86_64.rpm) = 154672
-SHA256 (centos/dbus-1.6.12-17.el7.src.rpm) = 3f13209be818abc238e2f561de52fe72315b4f3c95d2b343965accfe7ba2e371
-SIZE (centos/dbus-1.6.12-17.el7.src.rpm) = 1991380
+TIMESTAMP = 1556462930
+SHA256 (centos/dbus-libs-1.10.24-13.el7_6.i686.rpm) = 3753a695776509864bc04df2a82d020ac265ca4d185a873b06e9a5ca3483f9d9
+SIZE (centos/dbus-libs-1.10.24-13.el7_6.i686.rpm) = 173752
+SHA256 (centos/dbus-libs-1.10.24-13.el7_6.x86_64.rpm) = 8aa1dad54b65cdc84a57025c00407a198214279cf0b62cb9bc1942e2ef3a0eae
+SIZE (centos/dbus-libs-1.10.24-13.el7_6.x86_64.rpm) = 173096
+SHA256 (centos/dbus-1.10.24-13.el7_6.src.rpm) = fea357cb28861eee8c339427e9bbed5fa9cc71d203cce0e147c68018cd5f40f0
+SIZE (centos/dbus-1.10.24-13.el7_6.src.rpm) = 2050987

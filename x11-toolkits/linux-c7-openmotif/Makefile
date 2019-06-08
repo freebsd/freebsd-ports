@@ -3,7 +3,7 @@
 
 PORTNAME=	motif
 PORTVERSION=	2.3.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,7 +12,7 @@ COMMENT=	Motif toolkit libraries (Linux CentOS ${LINUX_DIST_VER})
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 DESCR=		${.CURDIR}/../open-${PORTNAME}/pkg-descr
-RPMVERSION=	12.el7_4
+RPMVERSION=	14.el7_5
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	xorglibs

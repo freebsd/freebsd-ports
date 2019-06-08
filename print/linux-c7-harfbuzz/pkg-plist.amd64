@@ -1,8 +1,8 @@
 usr/lib/libharfbuzz.so.0
-usr/lib/libharfbuzz.so.0.10302.0
+usr/lib/libharfbuzz.so.0.10705.0
 usr/lib64/libharfbuzz.so.0
-usr/lib64/libharfbuzz.so.0.10302.0
+usr/lib64/libharfbuzz.so.0.10705.0
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-usr/share/licenses/harfbuzz-1.3.2/COPYING
+usr/share/licenses/harfbuzz-1.7.5/COPYING

@@ -49,6 +49,7 @@ usr/include/arpa/telnet.h
 usr/include/arpa/tftp.h
 usr/include/asm-generic/auxvec.h
 usr/include/asm-generic/bitsperlong.h
+usr/include/asm-generic/bpf_perf_event.h
 usr/include/asm-generic/errno-base.h
 usr/include/asm-generic/errno.h
 usr/include/asm-generic/fcntl.h
@@ -87,6 +88,7 @@ usr/include/asm/auxvec.h
 usr/include/asm/bitsperlong.h
 usr/include/asm/boot.h
 usr/include/asm/bootparam.h
+usr/include/asm/bpf_perf_event.h
 usr/include/asm/byteorder.h
 usr/include/asm/debugreg.h
 usr/include/asm/e820.h
@@ -1040,6 +1042,9 @@ usr/include/linux/bfs_fs.h
 usr/include/linux/binfmts.h
 usr/include/linux/blkpg.h
 usr/include/linux/blktrace_api.h
+usr/include/linux/bpf.h
+usr/include/linux/bpf_common.h
+usr/include/linux/bpf_perf_event.h
 usr/include/linux/bpqether.h
 usr/include/linux/bsg.h
 usr/include/linux/bt-bmc.h
@@ -1174,7 +1179,10 @@ usr/include/linux/if_tun.h
 usr/include/linux/if_tunnel.h
 usr/include/linux/if_vlan.h
 usr/include/linux/if_x25.h
+usr/include/linux/ife.h
 usr/include/linux/igmp.h
+usr/include/linux/iio/events.h
+usr/include/linux/iio/types.h
 usr/include/linux/in.h
 usr/include/linux/in6.h
 usr/include/linux/in_route.h
@@ -1229,6 +1237,7 @@ usr/include/linux/matroxfb.h
 usr/include/linux/mdio.h
 usr/include/linux/media.h
 usr/include/linux/mei.h
+usr/include/linux/membarrier.h
 usr/include/linux/memfd.h
 usr/include/linux/mempolicy.h
 usr/include/linux/meye.h
@@ -1443,6 +1452,7 @@ usr/include/linux/ppp-ioctl.h
 usr/include/linux/ppp_defs.h
 usr/include/linux/pps.h
 usr/include/linux/prctl.h
+usr/include/linux/psample.h
 usr/include/linux/ptp_clock.h
 usr/include/linux/ptrace.h
 usr/include/linux/qnx4_fs.h
@@ -1501,13 +1511,20 @@ usr/include/linux/sysctl.h
 usr/include/linux/sysinfo.h
 usr/include/linux/target_core_user.h
 usr/include/linux/taskstats.h
+usr/include/linux/tc_act/tc_connmark.h
 usr/include/linux/tc_act/tc_csum.h
+usr/include/linux/tc_act/tc_defact.h
 usr/include/linux/tc_act/tc_gact.h
+usr/include/linux/tc_act/tc_ife.h
 usr/include/linux/tc_act/tc_ipt.h
 usr/include/linux/tc_act/tc_mirred.h
 usr/include/linux/tc_act/tc_nat.h
 usr/include/linux/tc_act/tc_pedit.h
+usr/include/linux/tc_act/tc_sample.h
 usr/include/linux/tc_act/tc_skbedit.h
+usr/include/linux/tc_act/tc_skbmod.h
+usr/include/linux/tc_act/tc_tunnel_key.h
+usr/include/linux/tc_act/tc_vlan.h
 usr/include/linux/tc_ematch/tc_em_cmp.h
 usr/include/linux/tc_ematch/tc_em_meta.h
 usr/include/linux/tc_ematch/tc_em_nbyte.h
@@ -1578,6 +1595,7 @@ usr/include/linux/virtio_scsi.h
 usr/include/linux/virtio_types.h
 usr/include/linux/virtio_vsock.h
 usr/include/linux/vm_sockets.h
+usr/include/linux/vsockmon.h
 usr/include/linux/vt.h
 usr/include/linux/vtpm_proxy.h
 usr/include/linux/wait.h
@@ -1586,6 +1604,7 @@ usr/include/linux/watchdog.h
 usr/include/linux/wimax.h
 usr/include/linux/wimax/i2400m.h
 usr/include/linux/wireless.h
+usr/include/linux/wmi.h
 usr/include/linux/x25.h
 usr/include/linux/xattr.h
 usr/include/linux/xfrm.h
@@ -1654,6 +1673,7 @@ usr/include/pwd.h
 usr/include/rdma/cxgb3-abi.h
 usr/include/rdma/cxgb4-abi.h
 usr/include/rdma/hfi/hfi1_user.h
+usr/include/rdma/hfi/hfi1_ioctl.h
 usr/include/rdma/ib_user_cm.h
 usr/include/rdma/ib_user_mad.h
 usr/include/rdma/ib_user_sa.h
@@ -1666,7 +1686,9 @@ usr/include/rdma/ocrdma-abi.h
 usr/include/rdma/qedr-abi.h
 usr/include/rdma/rdma_netlink.h
 usr/include/rdma/rdma_user_cm.h
+usr/include/rdma/rdma_user_ioctl.h
 usr/include/rdma/rdma_user_rxe.h
+usr/include/rdma/vmw_pvrdma-abi.h
 usr/include/re_comp.h
 usr/include/regex.h
 usr/include/regexp.h
@@ -1974,7 +1996,7 @@ usr/lib/gcc/i686-redhat-linux/4.8.5
 usr/lib/gcrt1.o
 usr/lib/libBrokenLocale.so
 usr/lib/libanl.so
-usr/lib/libbfd-2.25.1-32.base.el7_4.2.so
+usr/lib/libbfd-2.27-34.base.el7.so
 usr/lib/libbfd.a
 usr/lib/libbfd.so
 usr/lib/libbsd-compat.a
@@ -2003,7 +2025,7 @@ usr/lib/libnss_files.so
 usr/lib/libnss_hesiod.so
 usr/lib/libnss_nis.so
 usr/lib/libnss_nisplus.so
-usr/lib/libopcodes-2.25.1-32.base.el7_4.2.so
+usr/lib/libopcodes-2.27-34.base.el7.so
 usr/lib/libopcodes.a
 usr/lib/libopcodes.so
 usr/lib/libpthread.so
@@ -2024,7 +2046,7 @@ usr/libexec/gcc/i686-redhat-linux/4.8.2/lto-wrapper
 usr/libexec/gcc/i686-redhat-linux/4.8.2/lto1
 usr/libexec/gcc/i686-redhat-linux/4.8.5
 usr/libexec/getconf/default
-%%PORTDOCS%%usr/share/doc/binutils-2.25.1/README
+%%PORTDOCS%%usr/share/doc/binutils-2.27/README
 %%PORTDOCS%%usr/share/doc/gcc-4.8.5/COPYING
 %%PORTDOCS%%usr/share/doc/gcc-4.8.5/COPYING.LIB
 %%PORTDOCS%%usr/share/doc/gcc-4.8.5/COPYING.RUNTIME
@@ -2168,11 +2190,17 @@ usr/share/info/libc.info-8.gz
 usr/share/info/libc.info-9.gz
 usr/share/info/libc.info.gz
 usr/share/info/libgomp.info.gz
+usr/share/info/standards.info.gz
+usr/share/licenses/binutils-2.27/COPYING
+usr/share/licenses/binutils-2.27/COPYING.LIB
+usr/share/licenses/binutils-2.27/COPYING3
+usr/share/licenses/binutils-2.27/COPYING3.LIB
 %%NLS%%usr/share/locale/be/LC_MESSAGES/cpplib.mo
 %%NLS%%usr/share/locale/be/LC_MESSAGES/gcc.mo
 %%NLS%%usr/share/locale/bg/LC_MESSAGES/binutils.mo
 %%NLS%%usr/share/locale/bg/LC_MESSAGES/gprof.mo
 %%NLS%%usr/share/locale/bg/LC_MESSAGES/ld.mo
+%%NLS%%usr/share/locale/ca/LC_MESSAGES/binutils.mo
 %%NLS%%usr/share/locale/ca/LC_MESSAGES/cpplib.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/bfd.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/binutils.mo
@@ -2212,6 +2240,7 @@ usr/share/info/libgomp.info.gz
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/cpplib.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/gas.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/gcc.mo
+%%NLS%%usr/share/locale/fr/LC_MESSAGES/gold.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/gprof.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/ld.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/opcodes.mo
@@ -2265,6 +2294,7 @@ usr/share/info/libgomp.info.gz
 %%NLS%%usr/share/locale/rw/LC_MESSAGES/gas.mo
 %%NLS%%usr/share/locale/rw/LC_MESSAGES/gprof.mo
 %%NLS%%usr/share/locale/sk/LC_MESSAGES/binutils.mo
+%%NLS%%usr/share/locale/sr/LC_MESSAGES/bfd.mo
 %%NLS%%usr/share/locale/sr/LC_MESSAGES/binutils.mo
 %%NLS%%usr/share/locale/sr/LC_MESSAGES/cpplib.mo
 %%NLS%%usr/share/locale/sr/LC_MESSAGES/gcc.mo
@@ -2302,7 +2332,9 @@ usr/share/info/libgomp.info.gz
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/bfd.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/binutils.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/cpplib.mo
+%%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/gas.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/gcc.mo
+%%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/gold.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/ld.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/opcodes.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/binutils.mo

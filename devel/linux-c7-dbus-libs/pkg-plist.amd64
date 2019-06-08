@@ -1,4 +1,5 @@
 usr/lib/libdbus-1.so.3
-usr/lib/libdbus-1.so.3.7.4
+usr/lib/libdbus-1.so.3.14.14
 usr/lib64/libdbus-1.so.3
-usr/lib64/libdbus-1.so.3.7.4
+usr/lib64/libdbus-1.so.3.14.14
+usr/share/licenses/dbus-libs-1.10.24/COPYING

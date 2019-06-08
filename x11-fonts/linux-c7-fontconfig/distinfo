@@ -1,7 +1,7 @@
-TIMESTAMP = 1507317997
-SHA256 (centos/fontconfig-2.10.95-11.el7.i686.rpm) = 81073a3d0e3a3be990615e6db546f55651bdf04f24dd44248c7875d73d63b246
-SIZE (centos/fontconfig-2.10.95-11.el7.i686.rpm) = 235900
-SHA256 (centos/fontconfig-2.10.95-11.el7.x86_64.rpm) = ba7d28d5326f02ce46d6c26b6ae902858124768420b3600494ccdd805e99c8fd
-SIZE (centos/fontconfig-2.10.95-11.el7.x86_64.rpm) = 234724
-SHA256 (centos/fontconfig-2.10.95-11.el7.src.rpm) = 644b249ea56a5ee6967f1b3ab5cafc107b43db535a9c5f3af5d6483ce6167ac9
-SIZE (centos/fontconfig-2.10.95-11.el7.src.rpm) = 1569980
+TIMESTAMP = 1556530645
+SHA256 (centos/fontconfig-2.13.0-4.3.el7.i686.rpm) = 3a9ad39e24733b7d4053ed51800ff55d5a71dae19889c1c9624d9c1fa0e3270d
+SIZE (centos/fontconfig-2.13.0-4.3.el7.i686.rpm) = 261088
+SHA256 (centos/fontconfig-2.13.0-4.3.el7.x86_64.rpm) = adf21042079dd4754a2d77f5ddf83b8537407081e95edeb553b1b0e8130aa558
+SIZE (centos/fontconfig-2.13.0-4.3.el7.x86_64.rpm) = 260512
+SHA256 (centos/fontconfig-2.13.0-4.3.el7.src.rpm) = a9aab224f56ccb32f6c2ce57670d792dfeae8cd7b5ee18046cade1ae0ca3f0b2
+SIZE (centos/fontconfig-2.13.0-4.3.el7.src.rpm) = 1750590

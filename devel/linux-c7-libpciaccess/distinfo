@@ -1,7 +1,7 @@
-TIMESTAMP = 1515613745
-SHA256 (centos/libpciaccess-0.13.4-3.1.el7_4.i686.rpm) = 292ac96faac2115a2cef368fcef95d8aa68c15b5600ea021b531ecdfeabcec87
-SIZE (centos/libpciaccess-0.13.4-3.1.el7_4.i686.rpm) = 28024
-SHA256 (centos/libpciaccess-0.13.4-3.1.el7_4.x86_64.rpm) = e1ec0ece353939e71a86a8e5f0298236f0f944b7a732097424cadd3e9fd2feb5
-SIZE (centos/libpciaccess-0.13.4-3.1.el7_4.x86_64.rpm) = 26452
-SHA256 (centos/libpciaccess-0.13.4-3.1.el7_4.src.rpm) = 44c5f63dc6dcae6892855b6cb297ae160c56d03324e7bbec17f652a9079510ee
-SIZE (centos/libpciaccess-0.13.4-3.1.el7_4.src.rpm) = 390166
+TIMESTAMP = 1530376904
+SHA256 (centos/libpciaccess-0.14-1.el7.i686.rpm) = 8b9fdeffce6bd83320dd87feff00f6141c9c791e6b9f77bc49303ddaa7fdb46e
+SIZE (centos/libpciaccess-0.14-1.el7.i686.rpm) = 28312
+SHA256 (centos/libpciaccess-0.14-1.el7.x86_64.rpm) = d3b75fd9509c2e905ee5f29a47216274ce59fa8d0826415441dcdb79e0073d01
+SIZE (centos/libpciaccess-0.14-1.el7.x86_64.rpm) = 26688
+SHA256 (centos/libpciaccess-0.14-1.el7.src.rpm) = 8c34de346225b812766b16f67dbec00da760a0878156f77f6ed441fc0db4c14e
+SIZE (centos/libpciaccess-0.14-1.el7.src.rpm) = 374398
