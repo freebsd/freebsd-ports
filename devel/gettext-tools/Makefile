@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 .include "${.CURDIR}/../gettext/Makefile.common"
 
+BUILD_DEPENDS=	libtextstyle>=${PORTVERSION}:devel/libtextstyle
 LIB_DEPENDS=	libtextstyle.so:devel/libtextstyle
 
 USES=		charsetfix cpe gettext-runtime iconv libtool tar:xz
