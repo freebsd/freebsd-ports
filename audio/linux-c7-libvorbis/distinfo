@@ -1,7 +1,7 @@
-TIMESTAMP = 1482089875
-SHA256 (centos/libvorbis-1.3.3-8.el7.i686.rpm) = 58049ebe1fbafe6073befa04935ea11f8a1482c4a165927371797f8ec6e78b8b
-SIZE (centos/libvorbis-1.3.3-8.el7.i686.rpm) = 199332
-SHA256 (centos/libvorbis-1.3.3-8.el7.x86_64.rpm) = cd226342ddb3b71cfe0f84ed3858364440d301e6619cbd9eccaacbf5fd8afe69
-SIZE (centos/libvorbis-1.3.3-8.el7.x86_64.rpm) = 209376
-SHA256 (centos/libvorbis-1.3.3-8.el7.src.rpm) = f3074b1eac13d8993395fdbdade24e4c10431830f8903006ffec310ea2662f83
-SIZE (centos/libvorbis-1.3.3-8.el7.src.rpm) = 1103121
+TIMESTAMP = 1556469764
+SHA256 (centos/libvorbis-1.3.3-8.el7.1.i686.rpm) = 89800188336771d97fd95d824a7d80e08635537a1fc315ea1898d0e61074d691
+SIZE (centos/libvorbis-1.3.3-8.el7.1.i686.rpm) = 199304
+SHA256 (centos/libvorbis-1.3.3-8.el7.1.x86_64.rpm) = 103a96863323b13b8c59cc4a095884150426a54ff3c72afc1ef44cd191f3b0be
+SIZE (centos/libvorbis-1.3.3-8.el7.1.x86_64.rpm) = 209072
+SHA256 (centos/libvorbis-1.3.3-8.el7.1.src.rpm) = c7fd26d7e69522f4ca1c43743e48c75d0b07d0327b607f1688991599bf5e392f
+SIZE (centos/libvorbis-1.3.3-8.el7.1.src.rpm) = 1104703

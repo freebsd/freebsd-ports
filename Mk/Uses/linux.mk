@@ -47,7 +47,7 @@ LINUX_ARCH=		${ARCH}
 IGNORE=			Linux CentOS ${LINUX_DIST_VER} is unsupported on ${ARCH}
 .endif
 .elif ${linux_ARGS} == c7
-LINUX_DIST_VER?=	7.4.1708
+LINUX_DIST_VER?=	7.6.1810
 .if ${ARCH} == amd64
 LINUX_ARCH=		x86_64
 .elif ${ARCH} == i386
@@ -82,6 +82,8 @@ linux_flac_DEP=			linux-${linux_ARGS}-flac>0:audio/linux-${linux_ARGS}-flac
 linux_flac_DEP=			linux-${linux_ARGS}-flac-libs>0:audio/linux-${linux_ARGS}-flac
 .endif
 linux_fontconfig_DEP=		linux-${linux_ARGS}-fontconfig>0:x11-fonts/linux-${linux_ARGS}-fontconfig
+linux_freetype_DEP=		linux-${linux_ARGS}-freetype>0:print/linux-${linux_ARGS}-freetype
+linux_fribidi_DEP=		linux-${linux_ARGS}-fribidi>0:converters/linux-${linux_ARGS}-fribidi
 linux_gdkpixbuf2_DEP=		linux-${linux_ARGS}-gdk-pixbuf2>0:graphics/linux-${linux_ARGS}-gdk-pixbuf2
 linux_gnutls_DEP=		linux-${linux_ARGS}-gnutls>0:security/linux-${linux_ARGS}-gnutls
 linux_graphite2_DEP=		linux-${linux_ARGS}-graphite2>0:graphics/linux-${linux_ARGS}-graphite2
@@ -100,6 +102,7 @@ linux_libaudiofile_DEP=		linux-${linux_ARGS}-audiofile>0:audio/linux-${linux_ARG
 linux_libelf_DEP=		linux-${linux_ARGS}-elfutils-libelf>0:devel/linux-${linux_ARGS}-libelf
 linux_libgcrypt_DEP=		linux-${linux_ARGS}-libgcrypt>0:security/linux-${linux_ARGS}-libgcrypt
 linux_libgfortran_DEP=		linux-${linux_ARGS}-libgfortran>0:devel/linux-${linux_ARGS}-libgfortran
+linux_libglvnd_DEP=		linux-${linux_ARGS}-libglvnd>0:graphics/linux-${linux_ARGS}-libglvnd
 linux_libgpg-error_DEP=		linux-${linux_ARGS}-libgpg-error>0:security/linux-${linux_ARGS}-libgpg-error
 linux_libmng_DEP=		linux-${linux_ARGS}-libmng>0:graphics/linux-${linux_ARGS}-libmng
 linux_libogg_DEP=		linux-${linux_ARGS}-libogg>0:audio/linux-${linux_ARGS}-libogg
@@ -159,6 +162,7 @@ linux_tk85_DEP=			linux-${linux_ARGS}-tk85>0:x11-toolkits/linux-${linux_ARGS}-tk
 linux_trousers_DEP=		linux-${linux_ARGS}-trousers>0:security/linux-${linux_ARGS}-trousers
 linux_ucl_DEP=			linux-${linux_ARGS}-ucl>0:archivers/linux-${linux_ARGS}-ucl
 linux_userspace-rcu_DEP=	linux-${linux_ARGS}-userspace-rcu>0:sysutils/linux-${linux_ARGS}-userspace-rcu
+linux_wayland_DEP=		linux-${linux_ARGS}-wayland>0:graphics/linux-${linux_ARGS}-wayland
 linux_xorglibs_DEP=		linux-${linux_ARGS}-xorg-libs>0:x11/linux-${linux_ARGS}-xorg-libs
 
 USE_LINUX?=		base

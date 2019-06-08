@@ -1,7 +1,7 @@
-usr/lib/.libgnutls.so.28.43.0.hmac
+usr/lib/.libgnutls.so.28.43.3.hmac
 usr/lib/.libgnutls.so.28.hmac
 usr/lib/libgnutls.so.28
-usr/lib/libgnutls.so.28.43.0
+usr/lib/libgnutls.so.28.43.3
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.LESSER

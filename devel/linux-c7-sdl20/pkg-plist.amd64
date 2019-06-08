@@ -1,6 +1,6 @@
 usr/lib64/libSDL2-2.0.so.0
-usr/lib64/libSDL2-2.0.so.0.2.1
+usr/lib64/libSDL2-2.0.so.0.9.0
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-SDL.txt
+usr/share/licenses/SDL2-2.0.9/COPYING.txt

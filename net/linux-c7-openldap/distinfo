@@ -1,7 +1,7 @@
-TIMESTAMP = 1507237387
-SHA256 (centos/openldap-2.4.44-5.el7.i686.rpm) = 97a3c27ea19f3bb8d2811c56057db3a1db3d4c109eb8f5a33c3fdf3efee43b2d
-SIZE (centos/openldap-2.4.44-5.el7.i686.rpm) = 359140
-SHA256 (centos/openldap-2.4.44-5.el7.x86_64.rpm) = c46d3fcbab05e8a9ba2bf845b4fd817aa0623d13055126f7ae059687bdedbd2e
-SIZE (centos/openldap-2.4.44-5.el7.x86_64.rpm) = 362248
-SHA256 (centos/openldap-2.4.44-5.el7.src.rpm) = cb0c82499fcc54ffedcc9a998f3d8130caae2185107ba23bf8664001684b84f7
-SIZE (centos/openldap-2.4.44-5.el7.src.rpm) = 5761379
+TIMESTAMP = 1556465686
+SHA256 (centos/openldap-2.4.44-21.el7_6.i686.rpm) = 3b43fd9701dbe79806d51560738e39ceeae736620084df9797ffc39c5da52430
+SIZE (centos/openldap-2.4.44-21.el7_6.i686.rpm) = 362796
+SHA256 (centos/openldap-2.4.44-21.el7_6.x86_64.rpm) = d8ee82fc74fc40fa111ec55288f7d53165e6d1d6882dde80eb4e30650faf4d53
+SIZE (centos/openldap-2.4.44-21.el7_6.x86_64.rpm) = 364232
+SHA256 (centos/openldap-2.4.44-21.el7_6.src.rpm) = 87727fc8dd214933379a04901b1810595e5226d23e79b97a701fcd61e999dbb3
+SIZE (centos/openldap-2.4.44-21.el7_6.src.rpm) = 5772802

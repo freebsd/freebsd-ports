@@ -1,7 +1,7 @@
-TIMESTAMP = 1482092360
-SHA256 (centos/libssh2-1.4.3-10.el7_2.1.i686.rpm) = 3a25e00b04b27ba59fa17adb97791702dcccb56e130eb5f51651d6fe4fe42f89
-SIZE (centos/libssh2-1.4.3-10.el7_2.1.i686.rpm) = 136352
-SHA256 (centos/libssh2-1.4.3-10.el7_2.1.x86_64.rpm) = 1e1f93e449e678597bfdd99bed306c9bb8d5b513ffcaea13d32f5b7434900300
-SIZE (centos/libssh2-1.4.3-10.el7_2.1.x86_64.rpm) = 136848
-SHA256 (centos/libssh2-1.4.3-10.el7_2.1.src.rpm) = 2181b44f7d4636eb0920582a519d1adabae94f34cb49c531a5a2b31e2ad4cf57
-SIZE (centos/libssh2-1.4.3-10.el7_2.1.src.rpm) = 720459
+TIMESTAMP = 1556463972
+SHA256 (centos/libssh2-1.4.3-12.el7_6.2.i686.rpm) = 2e52fb2afb36097363998a061245692214c6cc876685852d1ebb0f67d044da45
+SIZE (centos/libssh2-1.4.3-12.el7_6.2.i686.rpm) = 137260
+SHA256 (centos/libssh2-1.4.3-12.el7_6.2.x86_64.rpm) = 271086e4e3ad6006c98c69bebbcfc0104d73910d8fd7082b9661ba17e8bb43d2
+SIZE (centos/libssh2-1.4.3-12.el7_6.2.x86_64.rpm) = 137760
+SHA256 (centos/libssh2-1.4.3-12.el7_6.2.src.rpm) = ab40ac2c21c400314fd94093329604076577affca5ef2f616656e8441186a321
+SIZE (centos/libssh2-1.4.3-12.el7_6.2.src.rpm) = 727187

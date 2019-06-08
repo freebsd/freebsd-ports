@@ -1,6 +1,4 @@
 @preexec [ -n "`/sbin/sysctl -q %%SYSCTLMIB%%`" ] || ( echo "Cannot install package: kernel missing 64-bit Linux support" >&2; exit 1 )
-@comment The command below may be removed after FreeBSD 10.3 EoL 2018-04-30
-@preexec [ ! -e %D/usr/share/icons -o -L %D/usr/share/icons ] || ( cd %D/usr/share && find icons | cpio -dumpl --quiet %%LOCALBASE%%/share && rm -r icons )
 bin
 etc/DIR_COLORS
 etc/DIR_COLORS.256color
@@ -50,8 +48,10 @@ etc/profile.d/colorgrep.csh
 etc/profile.d/colorgrep.sh
 etc/profile.d/colorls.csh
 etc/profile.d/colorls.sh
+etc/profile.d/csh.local
 etc/profile.d/less.csh
 etc/profile.d/less.sh
+etc/profile.d/sh.local
 etc/profile.d/which2.csh
 etc/profile.d/which2.sh
 etc/redhat-lsb/lsb_killproc
@@ -111,6 +111,7 @@ usr/bin/chattr
 usr/bin/chcon
 usr/bin/chfn
 usr/bin/chgrp
+usr/bin/chmem
 usr/bin/chmod
 usr/bin/chown
 usr/bin/chrt
@@ -238,6 +239,7 @@ usr/bin/lscpu
 usr/bin/lsipc
 usr/bin/lslocks
 usr/bin/lslogins
+usr/bin/lsmem
 usr/bin/lsns
 usr/bin/makedb
 usr/bin/mcookie
@@ -674,8 +676,6 @@ usr/lib/libfreebl3.chk
 usr/lib/libfreebl3.so
 usr/lib/libfreeblpriv3.chk
 usr/lib/libfreeblpriv3.so
-usr/lib/libfreetype.so.6
-usr/lib/libfreetype.so.6.10.0
 usr/lib/libgamin-1.so.0
 usr/lib/libgamin-1.so.0.1.10
 usr/lib/libgcc_s-4.8.5-20150702.so.1
@@ -685,23 +685,23 @@ usr/lib/libgdbm.so.4.0.0
 usr/lib/libgdbm_compat.so.4
 usr/lib/libgdbm_compat.so.4.0.0
 usr/lib/libgio-2.0.so.0
-usr/lib/libgio-2.0.so.0.5000.3
+usr/lib/libgio-2.0.so.0.5600.1
 usr/lib/libglib-2.0.so.0
-usr/lib/libglib-2.0.so.0.5000.3
+usr/lib/libglib-2.0.so.0.5600.1
 usr/lib/libgmodule-2.0.so.0
-usr/lib/libgmodule-2.0.so.0.5000.3
+usr/lib/libgmodule-2.0.so.0.5600.1
 usr/lib/libgmp.so.10
 usr/lib/libgmp.so.10.2.0
 usr/lib/libgmpxx.so.4
 usr/lib/libgmpxx.so.4.4.0
 usr/lib/libgobject-2.0.so.0
-usr/lib/libgobject-2.0.so.0.5000.3
+usr/lib/libgobject-2.0.so.0.5600.1
 usr/lib/libgssapi_krb5.so.2
 usr/lib/libgssapi_krb5.so.2.2
 usr/lib/libgssrpc.so.4
 usr/lib/libgssrpc.so.4.2
 usr/lib/libgthread-2.0.so.0
-usr/lib/libgthread-2.0.so.0.5000.3
+usr/lib/libgthread-2.0.so.0.5600.1
 usr/lib/libhistory.so.6
 usr/lib/libhistory.so.6.2
 usr/lib/libidn.so.11
@@ -1128,8 +1128,6 @@ usr/lib64/libfreebl3.chk
 usr/lib64/libfreebl3.so
 usr/lib64/libfreeblpriv3.chk
 usr/lib64/libfreeblpriv3.so
-usr/lib64/libfreetype.so.6
-usr/lib64/libfreetype.so.6.10.0
 usr/lib64/libgamin-1.so.0
 usr/lib64/libgamin-1.so.0.1.10
 usr/lib64/libgcc_s-4.8.5-20150702.so.1
@@ -1139,23 +1137,23 @@ usr/lib64/libgdbm.so.4.0.0
 usr/lib64/libgdbm_compat.so.4
 usr/lib64/libgdbm_compat.so.4.0.0
 usr/lib64/libgio-2.0.so.0
-usr/lib64/libgio-2.0.so.0.5000.3
+usr/lib64/libgio-2.0.so.0.5600.1
 usr/lib64/libglib-2.0.so.0
-usr/lib64/libglib-2.0.so.0.5000.3
+usr/lib64/libglib-2.0.so.0.5600.1
 usr/lib64/libgmodule-2.0.so.0
-usr/lib64/libgmodule-2.0.so.0.5000.3
+usr/lib64/libgmodule-2.0.so.0.5600.1
 usr/lib64/libgmp.so.10
 usr/lib64/libgmp.so.10.2.0
 usr/lib64/libgmpxx.so.4
 usr/lib64/libgmpxx.so.4.4.0
 usr/lib64/libgobject-2.0.so.0
-usr/lib64/libgobject-2.0.so.0.5000.3
+usr/lib64/libgobject-2.0.so.0.5600.1
 usr/lib64/libgssapi_krb5.so.2
 usr/lib64/libgssapi_krb5.so.2.2
 usr/lib64/libgssrpc.so.4
 usr/lib64/libgssrpc.so.4.2
 usr/lib64/libgthread-2.0.so.0
-usr/lib64/libgthread-2.0.so.0.5000.3
+usr/lib64/libgthread-2.0.so.0.5600.1
 usr/lib64/libhistory.so.6
 usr/lib64/libhistory.so.6.2
 usr/lib64/libidn.so.11
@@ -1465,9 +1463,9 @@ usr/share/centos-release/EULA
 %%PORTDOCS%%usr/share/doc/e2fsprogs-1.42.9/README
 %%PORTDOCS%%usr/share/doc/e2fsprogs-1.42.9/RELEASE-NOTES
 %%PORTDOCS%%usr/share/doc/e2fsprogs-libs-1.42.9/COPYING
-%%PORTDOCS%%usr/share/doc/elfutils-0.168/CONTRIBUTING
-%%PORTDOCS%%usr/share/doc/elfutils-0.168/README
-%%PORTDOCS%%usr/share/doc/elfutils-0.168/TODO
+%%PORTDOCS%%usr/share/doc/elfutils-0.172/CONTRIBUTING
+%%PORTDOCS%%usr/share/doc/elfutils-0.172/README
+%%PORTDOCS%%usr/share/doc/elfutils-0.172/TODO
 %%PORTDOCS%%usr/share/doc/findutils-4.5.11/AUTHORS
 %%PORTDOCS%%usr/share/doc/findutils-4.5.11/COPYING
 %%PORTDOCS%%usr/share/doc/findutils-4.5.11/ChangeLog
@@ -1475,14 +1473,6 @@ usr/share/centos-release/EULA
 %%PORTDOCS%%usr/share/doc/findutils-4.5.11/README
 %%PORTDOCS%%usr/share/doc/findutils-4.5.11/THANKS
 %%PORTDOCS%%usr/share/doc/findutils-4.5.11/TODO
-%%PORTDOCS%%usr/share/doc/freetype-2.4.11/CHANGES
-%%PORTDOCS%%usr/share/doc/freetype-2.4.11/FTL.TXT
-%%PORTDOCS%%usr/share/doc/freetype-2.4.11/GPLv2.TXT
-%%PORTDOCS%%usr/share/doc/freetype-2.4.11/LICENSE.TXT
-%%PORTDOCS%%usr/share/doc/freetype-2.4.11/README
-%%PORTDOCS%%usr/share/doc/freetype-2.4.11/VERSION.DLL
-%%PORTDOCS%%usr/share/doc/freetype-2.4.11/formats.txt
-%%PORTDOCS%%usr/share/doc/freetype-2.4.11/ft2faq.html
 %%PORTDOCS%%usr/share/doc/gamin-0.1.10/AUTHORS
 %%PORTDOCS%%usr/share/doc/gamin-0.1.10/COPYING
 %%PORTDOCS%%usr/share/doc/gamin-0.1.10/ChangeLog
@@ -1516,9 +1506,9 @@ usr/share/centos-release/EULA
 %%PORTDOCS%%usr/share/doc/gdbm-1.10/NOTE-WARNING
 %%PORTDOCS%%usr/share/doc/gdbm-1.10/README
 %%PORTDOCS%%usr/share/doc/gdbm-1.10/THANKS
-%%PORTDOCS%%usr/share/doc/glib2-2.50.3/AUTHORS
-%%PORTDOCS%%usr/share/doc/glib2-2.50.3/NEWS
-%%PORTDOCS%%usr/share/doc/glib2-2.50.3/README
+%%PORTDOCS%%usr/share/doc/glib2-2.56.1/AUTHORS
+%%PORTDOCS%%usr/share/doc/glib2-2.56.1/NEWS
+%%PORTDOCS%%usr/share/doc/glib2-2.56.1/README
 %%PORTDOCS%%usr/share/doc/glibc-2.17/BUGS
 %%PORTDOCS%%usr/share/doc/glibc-2.17/CONFORMANCE
 %%PORTDOCS%%usr/share/doc/glibc-2.17/COPYING
@@ -2221,10 +2211,10 @@ usr/share/info/rluserman.info.gz
 usr/share/info/sed.info.gz
 usr/share/info/which.info.gz
 usr/share/keyutils/request-key-debug.sh
-usr/share/licenses/elfutils-0.168/COPYING
-usr/share/licenses/elfutils-0.168/COPYING-GPLV2
-usr/share/licenses/elfutils-0.168/COPYING-LGPLV3
-usr/share/licenses/glib2-2.50.3/COPYING
+usr/share/licenses/elfutils-0.172/COPYING
+usr/share/licenses/elfutils-0.172/COPYING-GPLV2
+usr/share/licenses/elfutils-0.172/COPYING-LGPLV3
+usr/share/licenses/glib2-2.56.1/COPYING
 usr/share/licenses/gmp-6.0.0/COPYING
 usr/share/licenses/gmp-6.0.0/COPYING.LESSERv3
 usr/share/licenses/gmp-6.0.0/COPYINGv2
@@ -2304,6 +2294,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/de/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/libc.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/libidn.mo
+%%NLS%%usr/share/locale/de/LC_MESSAGES/mit-krb5.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/popt.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/sed.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/util-linux.mo
@@ -2383,6 +2374,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/sed.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/util-linux.mo
 %%NLS%%usr/share/locale/fr/LC_TIME/coreutils.mo
+%%NLS%%usr/share/locale/fur/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/findutils.mo
@@ -2783,8 +2775,8 @@ usr/share/man/man1/gapplication.1.gz
 usr/share/man/man1/gdbus.1.gz
 usr/share/man/man1/getopt.1.gz
 usr/share/man/man1/getopts.1.gz
-usr/share/man/man1/gio.1.gz
 usr/share/man/man1/gio-querymodules.1.gz
+usr/share/man/man1/gio.1.gz
 usr/share/man/man1/glib-compile-schemas.1.gz
 usr/share/man/man1/grep.1.gz
 usr/share/man/man1/groups.1.gz
@@ -2829,6 +2821,7 @@ usr/share/man/man1/lsb_release.1.gz
 usr/share/man/man1/lscpu.1.gz
 usr/share/man/man1/lsipc.1.gz
 usr/share/man/man1/lslogins.1.gz
+usr/share/man/man1/lsmem.1.gz
 usr/share/man/man1/mapfile.1.gz
 usr/share/man/man1/mcookie.1.gz
 usr/share/man/man1/md5sum.1.gz
@@ -2970,6 +2963,7 @@ usr/share/man/man8/blkid.8.gz
 usr/share/man/man8/blockdev.8.gz
 usr/share/man/man8/cfdisk.8.gz
 usr/share/man/man8/chcpu.8.gz
+usr/share/man/man8/chmem.8.gz
 usr/share/man/man8/clock.8.gz
 usr/share/man/man8/ctrlaltdel.8.gz
 usr/share/man/man8/cytune.8.gz

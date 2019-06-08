@@ -1,7 +1,7 @@
-TIMESTAMP = 1507910703
-SHA256 (centos/glx-utils-8.2.0-3.el7.i686.rpm) = 14a71f1ed3ef6ae4e5c215aeecae1f5d7aa6b352e0731d5abff04804ef437f73
-SIZE (centos/glx-utils-8.2.0-3.el7.i686.rpm) = 32444
-SHA256 (centos/glx-utils-8.2.0-3.el7.x86_64.rpm) = 914a13daa9ca6c6f4495097a33a94633ac634dfe702b6d40e22189a3afb42ae5
-SIZE (centos/glx-utils-8.2.0-3.el7.x86_64.rpm) = 32688
-SHA256 (centos/mesa-demos-8.2.0-3.el7.src.rpm) = 2db565bd98592c7c663a5c29a88a3a4b9c14be6c9049eb38c029130e345b202d
-SIZE (centos/mesa-demos-8.2.0-3.el7.src.rpm) = 9981929
+TIMESTAMP = 1544570156
+SHA256 (centos/glx-utils-8.3.0-10.el7.i686.rpm) = dfa82bdcfe63079b380092ba64797c3360c6d1354022190dd54806781bf375a2
+SIZE (centos/glx-utils-8.3.0-10.el7.i686.rpm) = 34820
+SHA256 (centos/glx-utils-8.3.0-10.el7.x86_64.rpm) = 5f87660d7fe1253ae5365285fd90694201191539a9acb87b91b7ee00c1fb2eb5
+SIZE (centos/glx-utils-8.3.0-10.el7.x86_64.rpm) = 35152
+SHA256 (centos/mesa-demos-8.3.0-10.el7.src.rpm) = bd1e12fb3ed3e3019447fe028070ada4698dff4c7c3b62463202eacfe4df6a89
+SIZE (centos/mesa-demos-8.3.0-10.el7.src.rpm) = 16848869

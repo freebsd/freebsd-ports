@@ -519,10 +519,12 @@
     SUBDIR += linux-c7-jasper
     SUBDIR += linux-c7-jbigkit
     SUBDIR += linux-c7-jpeg
+    SUBDIR += linux-c7-libglvnd
     SUBDIR += linux-c7-png
     SUBDIR += linux-c7-sdl_image
     SUBDIR += linux-c7-sdl_ttf
     SUBDIR += linux-c7-tiff
+    SUBDIR += linux-c7-wayland
     SUBDIR += lua-gd
     SUBDIR += luminance-qt5
     SUBDIR += luxrender

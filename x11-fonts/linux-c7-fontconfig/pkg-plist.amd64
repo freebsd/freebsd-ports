@@ -1,6 +1,9 @@
 etc/fonts
 usr/bin/fc-cache
+usr/bin/fc-cache-32
+usr/bin/fc-cache-64
 usr/bin/fc-cat
+usr/bin/fc-conflist
 usr/bin/fc-list
 usr/bin/fc-match
 usr/bin/fc-pattern
@@ -8,16 +11,19 @@ usr/bin/fc-query
 usr/bin/fc-scan
 usr/bin/fc-validate
 usr/lib/libfontconfig.so.1
-usr/lib/libfontconfig.so.1.7.0
+usr/lib/libfontconfig.so.1.11.1
 usr/lib64/libfontconfig.so.1
-usr/lib64/libfontconfig.so.1.7.0
+usr/lib64/libfontconfig.so.1.11.1
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/fontconfig-user.html
 %%PORTDOCS%%%%DOCSDIR%%/fontconfig-user.txt
+%%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/fontconfig-conf.mo
+%%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/fontconfig.mo
 usr/share/man/man1/fc-cache.1.gz
 usr/share/man/man1/fc-cat.1.gz
+usr/share/man/man1/fc-conflist.1.gz
 usr/share/man/man1/fc-list.1.gz
 usr/share/man/man1/fc-match.1.gz
 usr/share/man/man1/fc-pattern.1.gz
@@ -26,7 +32,9 @@ usr/share/man/man1/fc-scan.1.gz
 usr/share/man/man1/fc-validate.1.gz
 usr/share/man/man5/fonts-conf.5.gz
 usr/share/xml/fontconfig/fonts.dtd
-@rmtry var/db/fontconfig/*-le64.cache-4
+@rmtry var/db/fontconfig/*-le32d4.cache-7
+@rmtry var/db/fontconfig/*-le64.cache-7
 @rmtry var/db/fontconfig/CACHEDIR.TAG
 @dir var/db/fontconfig
-@postexec %D/usr/bin/fc-cache -f -s
+@postexec %D/usr/bin/fc-cache-32 -f -s
+@postexec %D/usr/bin/fc-cache-64 -f -s
