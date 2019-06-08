@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	2.3.8
+PORTVERSION=	2.3.9
 CATEGORIES=	news
 
 MAINTAINER=	joshruehlig@gmail.com
