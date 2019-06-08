@@ -3,6 +3,7 @@
 
 PORTNAME=	dri
 PORTVERSION=	11.0.7
+DISTVERSIONSUFFIX=	-4.el6
 PORTREVISION=	5
 CATEGORIES=	graphics linux
 LIB_DISTNAMES=	mesa-libGL-${DISTVERSIONFULL} \
@@ -19,7 +20,6 @@ SRC_DISTFILES=	mesa-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE \
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Mesa libGL runtime libraries (Linux CentOS ${LINUX_DIST_VER})
 
-RPMVERSION=	4.el6
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	expat libelf libpciaccess xorglibs

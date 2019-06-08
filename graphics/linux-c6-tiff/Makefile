@@ -3,6 +3,7 @@
 
 PORTNAME=	libtiff
 PORTVERSION=	3.9.4
+DISTVERSIONSUFFIX=	-21.el6_8
 PORTREVISION=	5
 CATEGORIES=	graphics linux
 
@@ -12,7 +13,6 @@ COMMENT=	Tools and library routines for working with TIFF images (Linux CentOS $
 LICENSE=	BSD3CLAUSE
 
 DESCR=		${.CURDIR}/../tiff/pkg-descr
-RPMVERSION=	21.el6_8
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	jpeg

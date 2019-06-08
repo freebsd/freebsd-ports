@@ -3,6 +3,7 @@
 
 PORTNAME=	qt47-x11
 PORTVERSION=	4.7.2
+DISTVERSIONSUFFIX=	-1_18.el6
 PORTREVISION=	6
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	LOCAL/tijl/atrpms:amd64,i386
@@ -14,7 +15,6 @@ COMMENT=	Cross-platform application and UI framework (Linux CentOS ${LINUX_DIST_
 
 DATADIR=	${PREFIX}/usr/share/qt47
 DESCR=		${.CURDIR}/../../devel/linux-c6-qt47/pkg-descr
-RPMVERSION=	1_18.el6
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	alsalib dri fontconfig jpeg openssl png qt tiff xorglibs

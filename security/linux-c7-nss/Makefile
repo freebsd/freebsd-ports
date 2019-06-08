@@ -3,6 +3,7 @@
 
 PORTNAME=	nss
 PORTVERSION=	3.36.0
+DISTVERSIONSUFFIX=	-7.1.el7_6
 CATEGORIES=	security linux
 LIB_DISTNAMES=	${DISTNAME} \
 		${PORTNAME}-pem-1.0.3-5.el7_6.1 \
@@ -19,7 +20,6 @@ COMMENT=	Network Security Services (Linux CentOS ${LINUX_DIST_VER})
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-RPMVERSION=	7.1.el7_6
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	nspr sqlite3

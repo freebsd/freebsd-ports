@@ -3,6 +3,7 @@
 
 PORTNAME=	alsa-utils
 PORTVERSION=	1.1.6
+DISTVERSIONSUFFIX=	-1.el7
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,7 +14,6 @@ LICENSE=	GPLv3
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-RPMVERSION=	1.el7
 USES=		linux:c7
 USE_LINUX=	alsalib alsa-plugins-oss
 USE_LINUX_RPM=	nolib

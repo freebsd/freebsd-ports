@@ -3,6 +3,7 @@
 
 PORTNAME=	libpng
 PORTVERSION=	1.5.13
+DISTVERSIONSUFFIX=	-7.el7_2
 PORTREVISION=	2
 CATEGORIES=	graphics linux
 
@@ -17,7 +18,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 DESCR=		${.CURDIR}/../png/pkg-descr
-RPMVERSION=	7.el7_2
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes

@@ -3,6 +3,7 @@
 
 PORTNAME=	qt47
 PORTVERSION=	4.7.2
+DISTVERSIONSUFFIX=	-1_18.el6
 PORTREVISION=	4
 CATEGORIES=	devel linux
 MASTER_SITES=	LOCAL/tijl/atrpms:amd64,i386
@@ -12,7 +13,6 @@ DIST_SUBDIR=	atrpms
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Cross-platform application and UI framework (Linux CentOS ${LINUX_DIST_VER})
 
-RPMVERSION=	1_18.el6
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	fontconfig png dbuslibs sqlite3 openssl

@@ -3,6 +3,7 @@
 
 PORTNAME=	libtiff
 PORTVERSION=	4.0.3
+DISTVERSIONSUFFIX=	-27.el7_3
 PORTREVISION=	3
 CATEGORIES=	graphics linux
 
@@ -12,7 +13,6 @@ COMMENT=	Library routines for working with TIFF images (Linux CentOS ${LINUX_DIS
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 DESCR=		${.CURDIR}/../tiff/pkg-descr
-RPMVERSION=	27.el7_3
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	jbigkit jpeg

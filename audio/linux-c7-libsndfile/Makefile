@@ -3,6 +3,7 @@
 
 PORTNAME=	libsndfile
 PORTVERSION=	1.0.25
+DISTVERSIONSUFFIX=	-10.el7
 PORTREVISION=	3
 CATEGORIES=	audio linux
 
@@ -12,7 +13,6 @@ COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF) (
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-RPMVERSION=	10.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	flac libogg libvorbis

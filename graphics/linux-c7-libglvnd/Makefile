@@ -2,6 +2,7 @@
 
 PORTNAME=	libglvnd
 PORTVERSION=	1.0.1
+DISTVERSIONSUFFIX=	-0.8.git5baa1e5.el7
 CATEGORIES=	graphics linux
 LIB_DISTNAMES=	libglvnd-${DISTVERSIONFULL} \
 		libglvnd-egl-${DISTVERSIONFULL} \
@@ -12,7 +13,6 @@ LIB_DISTNAMES=	libglvnd-${DISTVERSIONFULL} \
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GL Vendor-Neutral Dispatch library (Linux CentOS ${LINUX_DIST_VER})
 
-RPMVERSION=	0.8.git5baa1e5.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	xorglibs

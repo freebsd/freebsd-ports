@@ -3,6 +3,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	4.8.7
+DISTVERSIONSUFFIX=	-2.el7
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -12,7 +13,6 @@ CONFLICTS=	linux-c6-${PORTNAME}47-[0-9]*
 
 DATADIR=	${PREFIX}/usr/share/${PORTNAME}4
 DESCR=		${.CURDIR}/../../devel/linux-c6-qt47/pkg-descr
-RPMVERSION=	2.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	fontconfig png dbuslibs sqlite3 openssl

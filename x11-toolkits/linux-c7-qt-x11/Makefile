@@ -3,6 +3,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	4.8.7
+DISTVERSIONSUFFIX=	-2.el7
 CATEGORIES=	x11-toolkits linux
 PKGNAMESUFFIX=	-x11
 LIB_DISTNAMES=	${LINUXNAME}-${DISTVERSIONFULL}
@@ -15,7 +16,6 @@ CONFLICTS=	linux-c6-qt47-x11-[0-9]*
 DATADIR=	${PREFIX}/usr/share/${PORTNAME}4
 DESCR=		${.CURDIR}/../../devel/linux-c6-qt47/pkg-descr
 LINUXNAME=	${PORTNAME}${PKGNAMESUFFIX}
-RPMVERSION=	2.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	alsalib dri fontconfig jpeg openssl png qt tiff xorglibs

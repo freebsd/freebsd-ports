@@ -3,6 +3,7 @@
 
 PORTNAME=	atk
 PORTVERSION=	1.30.0
+DISTVERSIONSUFFIX=	-1.el6
 PORTREVISION=	2
 CATEGORIES=	accessibility linux
 
@@ -12,7 +13,6 @@ COMMENT=	Accessibility Toolkit (Linux CentOS ${LINUX_DIST_VER})
 LICENSE=	GPLv3
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-RPMVERSION=	1.el6
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes

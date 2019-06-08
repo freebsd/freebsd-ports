@@ -2,13 +2,13 @@
 
 PORTNAME=	trousers
 PORTVERSION=	0.3.14
+DISTVERSIONSUFFIX=	-2.el7
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Open-source TCG Software Stack (Linux CentOS ${LINUX_DIST_VER})
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-RPMVERSION=	2.el7
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	openssl

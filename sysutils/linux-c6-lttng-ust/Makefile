@@ -3,6 +3,7 @@
 
 PORTNAME=	lttng-ust
 PORTVERSION=	2.4.1
+DISTVERSIONSUFFIX=	-1.el6
 CATEGORIES=	sysutils linux
 MASTER_SITES=	EPEL/l
 
@@ -11,7 +12,6 @@ COMMENT=	Libraries to instrument and trace user applications (CentOS ${LINUX_DIS
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}
-RPMVERSION=	1.el6
 USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX=	userspace-rcu

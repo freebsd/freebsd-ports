@@ -3,6 +3,7 @@
 
 PORTNAME=	power9-functional-sim
 PORTVERSION=	1.1
+DISTVERSIONSUFFIX=	-0.el7
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://public.dhe.ibm.com/software/server/powerfuncsim/p9/packages/v1.1-0/
 
@@ -23,7 +24,5 @@ USE_LINUX_RPM=	nolib
 
 BIN_DISTNAMES=	systemsim-p9-${DISTVERSION}${DISTVERSIONSUFFIX}
 SRC_DISTFILES=
-LINUXNAME=	${PORTNAME}${PKGNAMESUFFIX}
-RPMVERSION=	0.el7
 
 .include <bsd.port.mk>

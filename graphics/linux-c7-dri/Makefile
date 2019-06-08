@@ -3,6 +3,7 @@
 
 PORTNAME=	dri
 PORTVERSION=	18.0.5
+DISTVERSIONSUFFIX=	-4.el7_6
 CATEGORIES=	graphics linux
 LIB_DISTNAMES=	freeglut-3.0.0-8.el7 \
 		libdrm-2.4.91-3.el7 \
@@ -32,7 +33,6 @@ COMMENT=	Mesa libGL runtime libraries (Linux CentOS ${LINUX_DIST_VER})
 
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
-RPMVERSION=	4.el7_6
 USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX=	expat libelf libglvnd libpciaccess wayland xorglibs
