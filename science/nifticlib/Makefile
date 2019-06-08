@@ -18,6 +18,7 @@ USES=		gmake
 CONFLICTS=	afni-[0-9]* dbh-[0-9]*
 
 CFLAGS+=	-fPIC
+MAKE_JOBS_UNSAFE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
