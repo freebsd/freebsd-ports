@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kiwix-tools
-DISTVERSION=	0.8.0
+DISTVERSION=	2.0.0
 CATEGORIES=	www
 
 MAINTAINER=	me@int19h.org
