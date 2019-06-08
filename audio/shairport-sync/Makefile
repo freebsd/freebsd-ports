@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shairport-sync
-DISTVERSION=	3.3
+DISTVERSION=	3.3.1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -50,5 +50,9 @@ SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 
 PULSEAUDIO_CONFIGURE_ON=--with-pa
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/-Wno-clobbered -Wno-psabi //' \
+		${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
