@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	trans
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	d.pryadko@rambler-co.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Module for performing transliteration
 
 LICENSE=	BSDunclear
@@ -18,7 +17,9 @@ LICENSE_TEXT=	License of this software is declared as 'BSD' in CHANGELOG. \
 		the source archive contains license information.
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		python:2.7 tar:bzip2
+USES=		python tar:bzip2
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
