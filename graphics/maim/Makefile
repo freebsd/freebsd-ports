@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	maim
-PORTVERSION=	5.5.2
+PORTVERSION=	5.5.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	neel@neelc.org
@@ -22,6 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	naelstrof
 USE_GL=		gl glut
 USE_XORG=	ice sm x11 xcomposite xext xfixes xrandr xrender
+
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 CMAKE_ARGS=	-DSLOP_LIBRARIES=${LOCALBASE}/lib/libslopy.so
