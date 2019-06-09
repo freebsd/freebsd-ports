@@ -56,6 +56,8 @@ LATTE_DESC=		Use LATTE package
 LATTE_CMAKE_BOOL=	PKG_LATTE
 LATTE_LIB_DEPENDS=	liblatte.so:science/latte
 
+PORTSCOUT=	ignore # due to a special version tagging scheme that this project uses portscout fails to find new versions, watching their GitHub release page instead
+
 post-patch:
 	@${REINPLACE_CMD} 's|SHELL = /bin/bash|SHELL = ${LOCALBASE}/bin/bash|' ${WRKSRC}/src/Makefile
 
