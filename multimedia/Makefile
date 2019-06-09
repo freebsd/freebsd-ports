@@ -182,6 +182,7 @@
     SUBDIR += kodi-addon-peripheral-joystick
     SUBDIR += kodi-addon-pvr-hts
     SUBDIR += kodi-addon-pvr-iptvsimple
+    SUBDIR += kodi-addon-vfs.libarchive-devel
     SUBDIR += kodi-devel
     SUBDIR += kvazaar
     SUBDIR += l-smash
