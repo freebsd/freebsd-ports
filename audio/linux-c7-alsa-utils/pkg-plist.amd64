@@ -26,9 +26,8 @@ usr/lib/alsa/init/info
 usr/lib/alsa/init/test
 usr/lib/systemd/system/alsa-restore.service
 usr/lib/systemd/system/alsa-state.service
-usr/lib/systemd/system/alsa-store.service
-usr/lib/systemd/system/basic.target.wants/alsa-restore.service
-usr/lib/systemd/system/basic.target.wants/alsa-state.service
+usr/lib/systemd/system/sound.target.wants/alsa-restore.service
+usr/lib/systemd/system/sound.target.wants/alsa-state.service
 usr/lib/udev/rules.d/90-alsa-restore.rules
 usr/sbin/alsa-info
 usr/sbin/alsa-info.sh
