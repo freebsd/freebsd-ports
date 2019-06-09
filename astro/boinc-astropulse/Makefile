@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3 \
 RUN_DEPENDS=	boinc_client:net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
-USES=		autoreconf gmake libtool pkgconfig tar:xz
+USES=		autoreconf compiler:c++11-lang gmake libtool pkgconfig tar:xz
 
 GNU_CONFIGURE=	yes
 
