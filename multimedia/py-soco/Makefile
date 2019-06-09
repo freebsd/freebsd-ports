@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	soco
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,10 +17,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	autoplist distutils
-NO_ARCH=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	SoCo
 GH_PROJECT=	SoCo
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
