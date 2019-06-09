@@ -4696,6 +4696,7 @@
     SUBDIR += py-pip
     SUBDIR += py-pip-api
     SUBDIR += py-pip-tools
+    SUBDIR += py-pip-tools2
     SUBDIR += py-pipenv
     SUBDIR += py-pkgconfig
     SUBDIR += py-plan
