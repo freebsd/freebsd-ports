@@ -1,0 +1,43 @@
+--- Makefile.orig	2019-03-31 19:01:16 UTC
++++ Makefile
+@@ -105,8 +105,8 @@ DATADIR ?= $(PREFIX)/share/pachi
+ # unless PROFILING=gprof.)
+ OPT ?= -O3
+ COMMON_FLAGS := -Wall -ggdb3 $(OPT) -D_GNU_SOURCE
+-CFLAGS       := -std=gnu99 -pthread -Wsign-compare -Wno-format-zero-length
+-CXXFLAGS     := -std=c++11
++CFLAGS       += -std=gnu99 -pthread -Wsign-compare -Wno-format-zero-length
++CXXFLAGS     += -std=c++11
+ 
+ 
+ ##############################################################################
+@@ -290,7 +290,7 @@ spudfrog: FORCE
+ 	@CC="$(CC)" CFLAGS="$(CFLAGS)" ./spudfrog
+ 
+ # Build info
+-build.h: .git/HEAD .git/index Makefile
++build.h: Makefile
+ 	+@make spudfrog
+ 	@echo "[make] build.h"
+ 	@CC="$(CC)" CFLAGS="$(CFLAGS)" ./genbuild > $@
+@@ -324,15 +324,15 @@ distribute: FORCE
+ 
+ # install-recursive?
+ install: distribute
+-	$(INSTALL) -d $(BINDIR)
+-	$(INSTALL) distribute/pachi $(BINDIR)/
++	$(INSTALL) -d $(DESTDIR)/$(BINDIR)
++	$(INSTALL) distribute/pachi $(DESTDIR)/$(BINDIR)/
+ 
+ install-data:
+-	$(INSTALL) -d $(DATADIR)
++	$(INSTALL) -d $(DESTDIR)/$(DATADIR)
+ 	@for file in $(DATAFILES); do                               \
+ 		if [ -f $$file ]; then                              \
+-                        echo $(INSTALL) $$file $(DATADIR)/;         \
+-			$(INSTALL) $$file $(DATADIR)/;              \
++                        echo $(INSTALL) $$file $(DESTDIR)/$(DATADIR)/;         \
++			$(INSTALL) $$file $(DESTDIR)/$(DATADIR)/;              \
+ 		else                                                \
+ 			echo "WARNING: $$file datafile is missing"; \
+                 fi                                                  \

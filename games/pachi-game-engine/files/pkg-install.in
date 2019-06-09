@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $FreeBSD: head/games/pachi/files/pkg-install.in 353752 2014-05-12 00:27:51Z amdmi3 $
+
+[ "$2" != "POST-INSTALL" ] && exit 0
+[ -e "%%SCOREFILE%%" ] && exit 0
+
+mkdir -p "%%SCOREDIR%%"
+
+# Empty scorefile contains 170 zero bytes
+dd if=/dev/zero of="%%SCOREFILE%%" bs=170 count=1 2>/dev/null
+chgrp -R games "%%SCOREDIR%%"
+chmod g+w "%%SCOREFILE%%"
