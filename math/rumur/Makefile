@@ -11,6 +11,8 @@ COMMENT=	Model checker, a formal verification tool for state machines
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	no matching function for call to 'make_ul', see https://github.com/Smattr/rumur/issues/136
+
 LIB_DEPENDS=	libgmpxx.so:math/gmp
 
 USES=		bison cmake compiler:c++11-lang python shebangfix
