@@ -7,7 +7,7 @@ DISTVERSION=	2.1.10
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for executing callback functions on events or timeouts
 
 LICENSE=	BSD3CLAUSE
