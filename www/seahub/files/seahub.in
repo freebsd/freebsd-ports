@@ -57,7 +57,7 @@ clearsessions_cmd="seahub_clearsessions"
 : ${seahub_port:="8000"}
 
 manage_py=${seafile_path}/seahub/manage.py
-gunicorn_exe=%%PREFIX%%/bin/gunicorn
+gunicorn_exe=%%PREFIX%%/bin/gunicorn-%%PYTHON_VER%%
 gunicorn_conf=${seafile_conf}/gunicorn.conf
 pidfile=%%PREFIX%%/%%HAIWENDIR%%/pids/seahub.pid
 
