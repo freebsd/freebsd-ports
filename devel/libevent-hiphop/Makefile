@@ -14,15 +14,18 @@ COMMENT=	Static libevent with custom patches for HipHop
 
 LICENSE=	BSD3CLAUSE
 
-HIPHOP_DIR=	share/hiphop-php
+DEPRECATED=	Obsoleted with removal of lang/hiphop-php
+EXPIRATION_DATE=2019-07-09
 
+USES=		libtool
+
+HIPHOP_DIR=	share/hiphop-php
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-shared --enable-static
 GNU_CONFIGURE_PREFIX=	${PREFIX}/${HIPHOP_DIR}/ext
 INSTALL_TARGET=	install-libLTLIBRARIES \
 		install-includeHEADERS \
 		install-nodist_includeHEADERS
-USES=		libtool
 PLIST_SUB+=	HIPHOP_DIR="${HIPHOP_DIR}"
 
 pre-configure:
