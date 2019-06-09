@@ -744,6 +744,7 @@
     SUBDIR += pho
     SUBDIR += photivo
     SUBDIR += photoflare
+    SUBDIR += photoflow
     SUBDIR += photopc
     SUBDIR += photoqt
     SUBDIR += phototonic
