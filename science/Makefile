@@ -308,6 +308,7 @@
     SUBDIR += simint
     SUBDIR += simlib
     SUBDIR += simsmith
+    SUBDIR += smoldyn
     SUBDIR += sparta
     SUBDIR += spglib
     SUBDIR += step
