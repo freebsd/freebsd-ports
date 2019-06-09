@@ -3,7 +3,7 @@
 
 PORTNAME=	aws
 PORTVERSION=	17.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -35,18 +35,18 @@ BUILD_TYPE=	release
 ADDL_RPATH=	${LOCALBASE}/lib:${LOCALBASE}/lib/aws/native/relocatable
 SHEBANG_FILES=	tools/awsascb
 
-OPTIONS_SINGLE=		Secure-Socket-Layer
+OPTIONS_SINGLE=		SSL
 OPTIONS_DEFINE=		IP6 DEBUG LDAP SHARED DOCS
-OPTIONS_DEFAULT=	SSL SHARED
+OPTIONS_DEFAULT=	OPENSSL SHARED
 OPTIONS_SUB=		yes
 NO_OPTIONS_SORT=	yes
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
-OPTIONS_SINGLE_Secure-Socket-Layer= SSL GNUTLS
+OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
 
 SHARED_DESC=		Build shared libraries in addition to static ones
 IP6_DESC=		Support IPv6 instead of IPv4
 
-SSL_USES=		ssl
+OPENSSL_USES=		ssl
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 LDAP_USE=		OPENLDAP=yes
 
@@ -67,7 +67,7 @@ CONF_ARGS+=	DEFAULT_LIBRARY_TYPE=static
 ##  SSL Support  ##
 ###################
 
-.if ${PORT_OPTIONS:MSSL}
+.if ${PORT_OPTIONS:MOPENSSL}
 CONF_ARGS+=	SOCKET=openssl
 CONF_ARGS+=	LPATH=${OPENSSLLIB}
 LINK_SSL=
