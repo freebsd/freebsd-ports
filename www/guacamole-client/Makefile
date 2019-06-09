@@ -3,7 +3,7 @@
 
 PORTNAME=	guacamole-client
 DISTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES+=	https://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo \
 		http://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo
@@ -38,7 +38,10 @@ OPTIONS_SUB=		yes
 SERVER_DESC=		Include Guacamole Server
 TOMCAT_DESC=		Use Tomcat as your servlet
 
-TOMCAT_RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-8.0/bin/bootstrap.jar:www/tomcat8
+TOMCAT_PLIST_SUB=	TOMCAT_VER=${TOMCAT_VER}
+TOMCAT_RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-${TOMCAT_VER}/bin/bootstrap.jar:www/tomcat${TOMCAT_VER:C/\.[0]?//}
+TOMCAT_VARS=		TOMCAT_VER=9.0
+
 SERVER_RUN_DEPENDS=	guacd:net/guacamole-server
 
 AUTH_EXTENSION=	cas duo header ldap openid quickconnect totp
@@ -68,8 +71,8 @@ do-install:
 		${INSTALL_DATA} ${FILESDIR}/guacamole.properties.sample ${STAGEDIR}${ETCDIR}/
 
 do-install-TOMCAT-on:
-		@${MKDIR} ${STAGEDIR}${PREFIX}/apache-tomcat-8.0/webapps
+		@${MKDIR} ${STAGEDIR}${PREFIX}/apache-tomcat-${TOMCAT_VER}/webapps
 		${RLN} ${STAGEDIR}${DATADIR}/guacamole.war \
-			${STAGEDIR}${PREFIX}/apache-tomcat-8.0/webapps
+			${STAGEDIR}${PREFIX}/apache-tomcat-${TOMCAT_VER}/webapps
 
 .include <bsd.port.mk>
