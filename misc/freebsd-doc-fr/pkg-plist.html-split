@@ -478,9 +478,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-pre.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-start.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ch21s03.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ch21s04.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ch21s07.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ch22s03.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ch22s04.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/ch22s07.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/colophon.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/common-tasks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/config-network-setup.html
@@ -490,7 +490,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-core-configuration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-cron.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-disk.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-initial.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-kernel-limits.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-rcd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-starting-services.html
@@ -531,6 +530,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-shell.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-web.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems-linux.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-apps.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-concepts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-ipf.html
@@ -546,18 +547,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/handbook.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/history.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/index.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-advanced.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-choosing.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-diff-media.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-final-warning.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-hardware.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-media.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-post.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-pre.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-start.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-steps.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install-trouble.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/install.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ipsec.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
@@ -684,6 +673,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/term.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tvcard.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-documentation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-freebsdupdate.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-portsnap.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading.html
@@ -700,7 +690,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-bsdinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-live-cd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-localization.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-sysinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/video-playback.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-examples.html
@@ -717,3 +706,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/zfs-links.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/zfs-quickstart.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/zfs-term.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/zfs-zfs-allow.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/zfs-zfs.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/zfs-zpool.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/zfs.html
