@@ -32,11 +32,11 @@ LDFLAGS+=	-lexecinfo
 
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=			OCIO_ENABLED
-OPTIONS_SUB=			yes
+OPTIONS_DEFINE=		OCIO
+OPTIONS_SUB=		yes
 
-OCIO_ENABLED_DESC=		Enable the integration of OpenColorIO
-OCIO_ENABLED_CMAKE_BOOL=	OCIO_ENABLED
-OCIO_ENABLED_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio
+OCIO_DESC=		Enable the integration of OpenColorIO
+OCIO_CMAKE_BOOL=	OCIO_ENABLED
+OCIO_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio
 
 .include <bsd.port.mk>
