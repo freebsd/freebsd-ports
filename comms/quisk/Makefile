@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quisk
-DISTVERSION=	4.1.39
+DISTVERSION=	4.1.40
 CATEGORIES=	comms hamradio
 MASTER_SITES=	CHEESESHOP
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libpulse.so:audio/pulseaudio
 
 USES=		python:2.7
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils noflavors autoplist
 USE_WX=		3.0+
 
 WX_COMPS=	python
