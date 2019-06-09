@@ -175,9 +175,11 @@ lib/pony/%%VERSION%%/packages/promises/_then.pony
 lib/pony/%%VERSION%%/packages/promises/fulfill.pony
 lib/pony/%%VERSION%%/packages/promises/promise.pony
 lib/pony/%%VERSION%%/packages/random/_test.pony
+lib/pony/%%VERSION%%/packages/random/benchmarks/main.pony
 lib/pony/%%VERSION%%/packages/random/dice.pony
 lib/pony/%%VERSION%%/packages/random/mt.pony
 lib/pony/%%VERSION%%/packages/random/random.pony
+lib/pony/%%VERSION%%/packages/random/splitmix64.pony
 lib/pony/%%VERSION%%/packages/random/xoroshiro.pony
 lib/pony/%%VERSION%%/packages/random/xorshift.pony
 lib/pony/%%VERSION%%/packages/regex/_test.pony
