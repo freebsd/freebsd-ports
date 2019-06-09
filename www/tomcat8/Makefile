@@ -3,7 +3,7 @@
 
 PORTNAME=	tomcat
 PORTVERSION=	8.0.50
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/tomcat/tomcat-8/v${PORTVERSION}/bin
 PKGNAMESUFFIX=	8
@@ -13,6 +13,9 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 8.x branch
 
 LICENSE=	APACHE20
+
+DEPRECATED=	EoL since 2018-06-30
+EXPIRATION_DATE=	2019-06-30
 
 RUN_DEPENDS=	jsvc:devel/jakarta-commons-daemon
 
