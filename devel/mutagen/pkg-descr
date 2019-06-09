@@ -1,0 +1,11 @@
+Mutagen is a fast, continuous, multidirectional file synchronization tool. It
+can safely, scalably, and efficiently synchronize filesystem contents between
+arbitrary pairs of locations in near real-time. Support is currently implemented
+for locations on local filesystems, SSH-accessible filesystems, and Docker
+container filesystems.
+
+Mutagen is designed specifically to support remote development scenarios, with
+configurable behaviors specifically designed to help developers edit code
+locally while building, running, or packaging it in a remote environment.
+
+WWW: https://mutagen.io/
