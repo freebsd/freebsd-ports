@@ -1,5 +1,17 @@
+- Unbreak --platform freebsd (required on DragonFly)
+- .git/ is missing in archive, so use version from environment
+
 --- build/gen.py.orig	2019-05-30 09:42:43 UTC
 +++ build/gen.py
+@@ -46,7 +46,7 @@ class Platform(object):
+ 
+   @staticmethod
+   def known_platforms():
+-    return ['linux', 'darwin', 'msvc', 'aix', 'fuchsia', 'openbsd']
++    return ['linux', 'darwin', 'msvc', 'aix', 'fuchsia', 'freebsd', 'openbsd']
+ 
+   def platform(self):
+     return self._platform
 @@ -117,24 +117,15 @@ def main(argv):
  
  
