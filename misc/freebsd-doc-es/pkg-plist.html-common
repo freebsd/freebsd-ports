@@ -8,11 +8,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/1.png
-%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/2.png
-%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/3.png
-%%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/4.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-head.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/branches-releng3.png

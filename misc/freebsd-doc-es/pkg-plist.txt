@@ -9,6 +9,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/book.txt
