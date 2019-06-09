@@ -271,6 +271,9 @@ share/teamspeak/server/sql/server_update_autostart.sql
 share/teamspeak/server/sql/server_update_machine_id.sql
 share/teamspeak/server/sql/server_update_port.sql
 share/teamspeak/server/sql/server_update_traffic_stats.sql
+share/teamspeak/server/sql/temporary_password_delete.sql
+share/teamspeak/server/sql/temporary_password_insert.sql
+share/teamspeak/server/sql/temporary_password_list.sql
 share/teamspeak/server/sql/token_delete_by_key.sql
 share/teamspeak/server/sql/token_get_by_key.sql
 share/teamspeak/server/sql/token_insert.sql
@@ -295,15 +298,18 @@ share/teamspeak/server/sql/update_28.sql
 share/teamspeak/server/sql/update_29.sql
 share/teamspeak/server/sql/update_30.sql
 share/teamspeak/server/sql/update_31.sql
+share/teamspeak/server/sql/update_32.sql
 share/teamspeak/server/sql/update_database_version.sql
 share/teamspeak/server/sql/update_mariadb_26.sql
 share/teamspeak/server/sql/update_mariadb_27.sql
 share/teamspeak/server/sql/update_mariadb_28.sql
 share/teamspeak/server/sql/update_mariadb_29.sql
+share/teamspeak/server/sql/update_mariadb_32.sql
 share/teamspeak/server/sql/update_permissions_12.sql
 share/teamspeak/server/sql/update_sqlite_27.sql
 share/teamspeak/server/sql/update_sqlite_28.sql
 share/teamspeak/server/sql/update_sqlite_29.sql
+share/teamspeak/server/sql/update_sqlite_32.sql
 share/teamspeak/server/sql/updates_and_fixes/convert_mysql_to_mariadb.sql
 share/teamspeak/server/sql/updates_and_fixes/mariadb_fix_latin_utf8.sql
 @dir(teamspeak,teamspeak,) %%ETCDIR%%
