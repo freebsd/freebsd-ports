@@ -2,7 +2,7 @@
 
 PORTNAME=	flif
 DISTVERSIONPREFIX=	v
-DISTVERSION=	v0.3-96
+DISTVERSION=	0.3-96
 DISTVERSIONSUFFIX=	-g74ea92b
 CATEGORIES=	graphics
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE_Apache2
 
 LIB_DEPENDS=	libpng16.so:graphics/png
 
-USES=		cmake compiler:c++11-lang gettext-runtime gnome localbase:ldflags pkgconfig shared-mime-info
+USES=		cmake compiler:c++11-lang gettext-runtime gnome localbase:ldflags pkgconfig sdl shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	FLIF-hub
 GH_PROJECT=	FLIF
