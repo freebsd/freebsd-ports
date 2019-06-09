@@ -16,7 +16,7 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 		libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl
 
-USES=		autoreconf ncurses pkgconfig
+USES=		autoreconf compiler:c++11-lang ncurses pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	boysetsfrog
