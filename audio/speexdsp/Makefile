@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	speexdsp
-DISTVERSION=	1.2rc3
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
 
