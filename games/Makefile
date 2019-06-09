@@ -369,6 +369,7 @@
     SUBDIR += gnustep-ladder
     SUBDIR += gnustep-sudoku
     SUBDIR += gogrepo
+    SUBDIR += gogui
     SUBDIR += golddig
     SUBDIR += golly
     SUBDIR += gomoku
