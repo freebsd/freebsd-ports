@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ponyc
-DISTVERSION=	0.28.0
+DISTVERSION=	0.28.1
 CATEGORIES=	lang
 
 MAINTAINER=	greg@unrelenting.technology
