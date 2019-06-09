@@ -10,7 +10,7 @@ COMMENT=	Header-only C++ utilities in the style of the standard library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	fizyr
 
