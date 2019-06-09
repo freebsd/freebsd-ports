@@ -10,10 +10,13 @@ SRCS+=	transupp.c
 .PATH: ${.CURDIR}/../../rd
 SRCS+=	read-jpeg.c
 
-LDADD=	-L${PREFIX}/lib -ljpeg -lexif -lm
+LDADD=	-L${LOCALBASE}/lib -ljpeg -lexif -lm -lpixman-1
 
-CFLAGS+= -I${PREFIX}/include -I${.CURDIR}/../../jpeg/80 \
-	-I${.CURDIR}/../.. -DHAVE_NEW_EXIF
+CFLAGS+=	-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/pixman-1 \
+		-I${.CURDIR}/../../jpeg/80 \
+		-I${.CURDIR}/../.. \
+		-DHAVE_NEW_EXIF
 
 MAN=
 
