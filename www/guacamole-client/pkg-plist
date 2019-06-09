@@ -1,4 +1,4 @@
-%%TOMCAT%%apache-tomcat-8.0/webapps/guacamole.war
+%%TOMCAT%%apache-tomcat-%%TOMCAT_VER%%/webapps/guacamole.war
 %%ETCDIR%%/guacamole.properties.sample
 %%ETCDIR%%/logback.xml.sample
 %%ETCDIR%%/user-mapping.xml.sample
