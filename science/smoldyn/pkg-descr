@@ -1,0 +1,15 @@
+Smoldyn is a computer program for cell-scale biochemical simulations. It
+simulates each molecule of interest individually to capture natural
+stochasticity and to yield nanometer-scale spatial resolution. It treats other
+molecules implicitly, enabling it to simulate hundreds of thousands of molecules
+over several minutes of real time. Simulated molecules diffuse, react, are
+confined by surfaces, and bind to membranes much as they would in a real
+biological system.
+
+Smoldyn is easy to use and easy to install. It is more accurate and faster than
+other particle-based simulators. Smoldyn's unique features include:
+a "virtual experimenter" who can manipulate or measure the simulated system,
+support for spatial compartments, molecules with excluded volume, and
+simulations in 1, 2, or 3 dimensions.
+
+WWW: http://www.smoldyn.org/
