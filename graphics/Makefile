@@ -257,6 +257,7 @@
     SUBDIR += gimp-wavelet-sharpen-plugin
     SUBDIR += giram
     SUBDIR += gkrellkam2
+    SUBDIR += glad
     SUBDIR += gle
     SUBDIR += glee
     SUBDIR += glew
