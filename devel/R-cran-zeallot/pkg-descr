@@ -1,0 +1,6 @@
+Provides a %<-% operator to perform multiple, unpacking, and
+destructuring assignment in R. The operator unpacks the right-hand
+side of an assignment into multiple values and assigns these values
+to variables on the left-hand side of the assignment.
+
+WWW: https://cran.r-project.org/web/packages/zeallot/
