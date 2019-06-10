@@ -7,6 +7,7 @@
     SUBDIR += adcomplain
     SUBDIR += addresses
     SUBDIR += addresses-goodies
+    SUBDIR += aerc
     SUBDIR += akpop3d
     SUBDIR += alpine
     SUBDIR += altermime

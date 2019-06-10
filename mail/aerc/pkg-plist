@@ -1,0 +1,12 @@
+bin/aerc
+man/man1/aerc.1.gz
+man/man5/aerc-config.5.gz
+man/man5/aerc-imap.5.gz
+man/man5/aerc-smtp.5.gz
+man/man7/aerc-tutorial.7.gz
+%%DATADIR%%/accounts.conf
+%%DATADIR%%/aerc.conf
+%%DATADIR%%/binds.conf
+%%DATADIR%%/filters/hldiff
+%%HTML_FILTER%%%%DATADIR%%/filters/html
+%%DATADIR%%/filters/plaintext
