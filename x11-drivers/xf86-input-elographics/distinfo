@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-input-elographics-1.4.1.tar.bz2) = a21af744d57f158e6dff9d60a68aaac46b8d726d602911940cb61f4d6bb2c6a4
-SIZE (xorg/driver/xf86-input-elographics-1.4.1.tar.bz2) = 280311
+TIMESTAMP = 1560182630
+SHA256 (xorg/driver/xf86-input-elographics-1.4.2.tar.bz2) = 2bd91c0509d0e01bd77371893d0b3580f8a7b5958a781074bf44b01b08f1a5aa
+SIZE (xorg/driver/xf86-input-elographics-1.4.2.tar.bz2) = 306167
