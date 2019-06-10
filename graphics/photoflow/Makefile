@@ -2,16 +2,16 @@
 
 PORTNAME=	photoflow
 DISTVERSION=	0.2.8-1260
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Non-destructive photo retouching program
 
-LICENSE=	APACHE20
-xLICENSE_FILE=	${WRKSRC}/../LICENSE_Apache2
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
-		libfftw3.so:math/fftw3 \
 		libfftw3.so:math/fftw3 \
 		liblcms2.so:graphics/lcms2 \
 		liblensfun.so:graphics/lensfun \
@@ -33,10 +33,13 @@ LDFLAGS+=	-lexecinfo
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		OCIO
+OPTIONS_DEFAULT=	OCIO
 OPTIONS_SUB=		yes
 
 OCIO_DESC=		Enable the integration of OpenColorIO
 OCIO_CMAKE_BOOL=	OCIO_ENABLED
 OCIO_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio
+OCIO_VARS=		GH_TUPLE+=sobotka:filmic-blender:1.1.1:fb/../.build/data/filmic-blender \
+			GH_TUPLE+=imageworks:OpenColorIO-Configs:0bb079c08be410030669cbf5f19ff869b88af953:c/../.build/data/ocio-configs
 
 .include <bsd.port.mk>
