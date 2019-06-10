@@ -4717,6 +4717,7 @@
     SUBDIR += py-pqueue
     SUBDIR += py-pre-commit
     SUBDIR += py-pretend
+    SUBDIR += py-prettyprinter
     SUBDIR += py-prettytable
     SUBDIR += py-prioritized_methods
     SUBDIR += py-proglog
