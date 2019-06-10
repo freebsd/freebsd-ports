@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gobuffalo
-PORTVERSION=	0.14.4
+PORTVERSION=	0.14.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -55,7 +55,7 @@ GH_TUPLE=	\
 		gobuffalo:meta:e161e8a93e3b:gobuffalo_meta/vendor/github.com/gobuffalo/meta \
 		gobuffalo:nulls:85f3c9250d87:gobuffalo_nulls/vendor/github.com/gobuffalo/nulls \
 		gobuffalo:packd:v0.1.0:gobuffalo_packd/vendor/github.com/gobuffalo/packd \
-		gobuffalo:packr:v2.2.0:gobuffalo_packr/vendor/github.com/gobuffalo/packr \
+		gobuffalo:packr:v2.3.2:gobuffalo_packr/vendor/github.com/gobuffalo/packr \
 		gobuffalo:plush:v3.8.2:gobuffalo_plush/vendor/github.com/gobuffalo/plush \
 		gobuffalo:plushgen:v0.1.0:gobuffalo_plushgen/vendor/github.com/gobuffalo/plushgen \
 		gobuffalo:pop:v4.11.0:gobuffalo_pop/vendor/github.com/gobuffalo/pop \
@@ -66,12 +66,12 @@ GH_TUPLE=	\
 		gobuffalo:x:6bb134105960:gobuffalo_x/vendor/github.com/gobuffalo/x \
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		golang:appengine:v1.6.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:22d7a77e9e5f:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:f99c8df09eb5:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:f3200d17e092:golang_net/vendor/golang.org/x/net \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:06a5c4944438:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		golang:tools:7be61e1b0e51:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:8aaa1484dc10:golang_tools/vendor/golang.org/x/tools \
 		gorilla:context:v1.1.1:gorilla_context/vendor/github.com/gorilla/context \
 		gorilla:mux:v1.7.2:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:securecookie:v1.1.1:gorilla_securecookie/vendor/github.com/gorilla/securecookie \
