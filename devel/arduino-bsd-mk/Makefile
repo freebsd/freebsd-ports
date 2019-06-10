@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arduino-bsd-mk
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	https://xse.com/leres/arduino/arduino-bsd-mk/ \
 		LOCAL/leres/arduino-bsd-mk
@@ -16,7 +15,7 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	arduino:devel/arduino \
 		avr-gcc:devel/avr-gcc
 
-USES=		python:2.7,run shebangfix
+USES=		python:3.5+,run shebangfix
 
 SHEBANG_FILES=	arduino-boards.py
 
