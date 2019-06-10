@@ -32,7 +32,6 @@
     SUBDIR += cacti88-spine
     SUBDIR += carbon-relay-ng
     SUBDIR += carbonzipper
-    SUBDIR += ccnet-client
     SUBDIR += ccnet-server
     SUBDIR += cdpd
     SUBDIR += cdpr
