@@ -3,8 +3,7 @@
 
 PORTNAME=	lmms
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0-rc8
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 PORTEPOCH=	2
 CATEGORIES=	audio
 
@@ -30,11 +29,11 @@ RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:audio/caps-plugins \
 		${LOCALBASE}/share/ladspa/rdf/swh-plugins.rdf:audio/swhplugins \
 		${LOCALBASE}/share/ladspa/rdf/tap-plugins.rdf:audio/tap-plugins
 
-USES=		cmake desktop-file-utils localbase:ldflags pkgconfig \
-		qt:5 shared-mime-info
+USES=		cmake compiler:c++11-lang desktop-file-utils localbase:ldflags \
+		pkgconfig qt:5 shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	LMMS
-GH_TUPLE=	rampantpixels:rpmalloc:1.3.1:rpmalloc/src/3rdparty/rpmalloc/rpmalloc \
+GH_TUPLE=	mjansson:rpmalloc:1.3.2:rpmalloc/src/3rdparty/rpmalloc/rpmalloc \
 		lukas-w:qt5-x11embed:ec77d4ba40bebc0c53a016adb646b6fa65dd5faf:qt5x11embed/src/3rdparty/qt5-x11embed
 USE_LDCONFIG=	yes
 USE_QT=		core gui widgets x11extras xml buildtools_build linguisttools_build qmake_build
