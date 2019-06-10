@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgroonga
-PORTVERSION=	2.1.9
+PORTVERSION=	2.2.0
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
 
