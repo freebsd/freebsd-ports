@@ -1,0 +1,15 @@
+======================================================================
+You installed leela-zero: the Go engine.
+
+You need at least one OpenCL provider installed in order for leela-zero
+to run.
+
+To see the list of OpenCL providers, install the 'clinfo' package and run:
+$ clinfo
+
+If 'clinfo' shows zero providers, you need to install some providers,
+for example:
+* pocl: for a simple CPU provider
+* beignet: for the Intel GPU provider
+* etc.
+======================================================================
