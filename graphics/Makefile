@@ -813,6 +813,7 @@
     SUBDIR += py-cairocffi
     SUBDIR += py-cartopy
     SUBDIR += py-chart
+    SUBDIR += py-descartes
     SUBDIR += py-django-easy-thumbnails
     SUBDIR += py-djvulibre
     SUBDIR += py-editobj
