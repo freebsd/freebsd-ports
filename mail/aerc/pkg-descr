@@ -1,0 +1,27 @@
+Aerc is an email client that runs in your terminal.  It is highly
+efficient and extensible, perfect for the discerning hacker.
+
+Some of its more interesting features include:
+
+- Editing emails in an embedded terminal tmux-style, allowing you
+  to check on incoming emails and reference other threads while you
+  compose your replies
+- Render HTML emails with an interactive terminal web browser,
+  highlight patches with diffs, and browse with an embedded less
+  session
+- Vim-style keybindings and ex-command system, allowing for powerful
+  automation at a single keystroke
+- First-class support for working with git & email
+- Open a new tab with a terminal emulator and a shell running for
+  easy access to nearby git repos for parallel work
+- Support for multiple accounts, with support for IMAP, Maildir, SMTP,
+  and sendmail transfer protocols
+- CalDAV and CardDAV support for synchronizing contacts & calendar
+  events
+- Asynchronous IMAP support ensures the UI never gets locked up by
+  a flaky network, as mutt often does
+- Efficient network usage - aerc only downloads the information
+  which is necessary to present the UI, making for a snappy and
+  bandwidth-efficient experience
+
+WWW: https://aerc-mail.org/
