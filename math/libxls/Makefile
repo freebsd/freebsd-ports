@@ -10,7 +10,7 @@ COMMENT=	Extract Cell Data From Excel xls files
 
 LICENSE=	BSD2CLAUSE
 
-USES=	libtool
+USES=	compiler:c++11-lang libtool
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
