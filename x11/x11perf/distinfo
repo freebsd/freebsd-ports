@@ -1,2 +1,3 @@
-SHA256 (xorg/app/x11perf-1.6.0.tar.bz2) = e87098dec1947572d70c62697a7b70bde1ab5668237d4660080eade6bc096751
-SIZE (xorg/app/x11perf-1.6.0.tar.bz2) = 191086
+TIMESTAMP = 1560181780
+SHA256 (xorg/app/x11perf-1.6.1.tar.bz2) = 1c7e0b8ffc2794b4ccf11e04d551823abe0ea47b4f7db0637390db6fbe817c34
+SIZE (xorg/app/x11perf-1.6.1.tar.bz2) = 189446
