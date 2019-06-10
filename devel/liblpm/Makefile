@@ -10,7 +10,7 @@ COMMENT=	Longest Prefix Match library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-USES=		gmake libtool:build
+USES=		compiler gmake libtool:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rmind
@@ -29,4 +29,10 @@ PLIST_FILES=	include/lpm.h \
 		lib/liblpm.so.1 \
 		lib/liblpm.so.1.0.0
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile
+.endif
+
+.include <bsd.port.post.mk>
