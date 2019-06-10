@@ -1602,6 +1602,7 @@
     SUBDIR += ocaml-cmdliner
     SUBDIR += ocaml-cppo
     SUBDIR += ocaml-deriving-ocsigen
+    SUBDIR += ocaml-dune
     SUBDIR += ocaml-extlib
     SUBDIR += ocaml-findlib
     SUBDIR += ocaml-ipaddr
