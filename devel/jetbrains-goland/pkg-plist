@@ -118,8 +118,8 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/netty-transport-4.1.32.Final.jar
 %%DATADIR%%/lib/objenesis-2.6.jar
 %%DATADIR%%/lib/openapi.jar
-%%DATADIR%%/lib/org.eclipse.lsp4j-0.3.1.jar
-%%DATADIR%%/lib/org.eclipse.lsp4j.jsonrpc-0.3.0.jar
+%%DATADIR%%/lib/org.eclipse.lsp4j-0.7.1.jar
+%%DATADIR%%/lib/org.eclipse.lsp4j.jsonrpc-0.7.1.jar
 %%DATADIR%%/lib/oro-2.0.8.jar
 %%DATADIR%%/lib/picocontainer-1.2.jar
 %%DATADIR%%/lib/platform-api.jar
@@ -195,7 +195,7 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/CSS/lib/resources_en.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/database-impl.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/database-openapi.jar
-%%DATADIR%%/plugins/DatabaseTools/lib/dekaf-single-2.0.0.387.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/dekaf-single-2.0.0.390.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/jdbc-console.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/resources_en.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/unidecode-0.0.7.jar
