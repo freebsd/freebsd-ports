@@ -9,7 +9,7 @@ COMMENT=	C++ classes that provide a common API for realtime audio input/output
 
 LICENSE=	MIT
 
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf compiler:c++11-lang libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	thestk
 GNU_CONFIGURE=	yes
