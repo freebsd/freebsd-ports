@@ -5,4 +5,4 @@ storage. It supports importing and exporting keys and PEM DER PKCS8
 certificates, signing and revoking of PEM DER PKCS12, and selection of
 x509v3 extensions. A tree view of certificates is presented.
 
-WWW: https://www.hohnstaedt.de/xca/
+WWW: https://hohnstaedt.de/xca
