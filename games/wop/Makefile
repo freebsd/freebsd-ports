@@ -18,12 +18,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	makedepend:devel/makedepend
 
-USES=		tar:bzip2 gmake
+USES=		compiler gmake tar:bzip2
 USE_SDL=	sdl net mixer ttf image
 
 MAKE_JOBS_UNSAFE=	yes
 
-CXXFLAGS+=	-Wno-c++11-narrowing -Wno-reserved-user-defined-literal
+CXXFLAGS_clang=	-Wno-c++11-narrowing -Wno-reserved-user-defined-literal
+CXXFLAGS+=      ${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 
 DATAVERSION=	2005-12-21
 DESKTOP_ENTRIES="Worms of Prey" \
