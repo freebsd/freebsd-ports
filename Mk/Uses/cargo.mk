@@ -86,6 +86,7 @@ CARGO_CARGO_RUN= \
 # User arguments for cargo targets.
 CARGO_BUILD_ARGS?=
 CARGO_INSTALL_ARGS?=
+CARGO_INSTALL_PATH?=	.
 CARGO_TEST_ARGS?=
 CARGO_UPDATE_ARGS?=
 
@@ -257,12 +258,14 @@ do-build:
 
 .if !target(do-install) && ${CARGO_INSTALL:tl} == "yes"
 do-install:
+.  for path in ${CARGO_INSTALL_PATH}
 	@${CARGO_CARGO_RUN} install \
-		--path . \
+		--path "${path}" \
 		--root "${STAGEDIR}${PREFIX}" \
 		--verbose \
 		${CARGO_INSTALL_ARGS}
 	@${RM} -- "${STAGEDIR}${PREFIX}/.crates.toml"
+.  endfor
 .endif
 
 .if !target(do-test) && ${CARGO_TEST:tl} == "yes"
