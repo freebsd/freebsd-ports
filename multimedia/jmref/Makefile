@@ -17,6 +17,7 @@ PLIST_FILES=	bin/ldecod bin/lencod \
 		bin/rtp_loss bin/rtpdump
 
 DOS2UNIX_FILES=	Makefile
+MAKE_JOBS_UNSAFE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ldecod.exe \
