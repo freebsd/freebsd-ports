@@ -987,6 +987,7 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v320/v320rc2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/.htaccess
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/cookie_notice_p2.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/disable_remote_avatar.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/email_force_sender.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/enable_accurate_pm_button.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/f_list_topics_permission_add.php
@@ -996,6 +997,7 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/load_user_activity_limit.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/merge_duplicate_bbcodes.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/remove_imagick.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/smtp_dynamic_data.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/update_prosilver_bitfield.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/user_notifications_table_index_p1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/user_notifications_table_index_p2.php
@@ -1015,6 +1017,10 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v324rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v325.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v325rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v326.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v326rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v327.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v327rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/exception.php
 %%PHPBBDIR%%/phpbb/db/migration/helper.php
 %%PHPBBDIR%%/phpbb/db/migration/migration.php
@@ -2421,11 +2427,10 @@
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Configurator/Collections/AttributeList.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Configurator/Collections/MinifierList.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Configurator/Collections/TagList.php
-%%PHPBBDIR%%/vendor/s9e/text-formatter/src/Configurator/Exceptions/InvalidTemplateException.php
-%%PHPBBDIR%%/vendor/s9e/text-formatter/src/Configurator/Exceptions/InvalidXslException.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Configurator/Exceptions/UnsafeTemplateException.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Configurator/Helpers/ContextSafeness.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Configurator/Helpers/RegexpParser.php
+%%PHPBBDIR%%/vendor/s9e/text-formatter/src/Configurator/Helpers/TemplateModifier.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Configurator/Items/AttributeFilters/AlnumFilter.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Configurator/Items/AttributeFilters/ChoiceFilter.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Configurator/Items/AttributeFilters/ColorFilter.php
@@ -2505,6 +2510,8 @@
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Parser/AttributeFilters/TimestampFilter.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Parser/AttributeFilters/UrlFilter.js
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Parser/AttributeFilters/UrlFilter.php
+%%PHPBBDIR%%/vendor/s9e/text-formatter/src/Parser/FilterProcessing.js
+%%PHPBBDIR%%/vendor/s9e/text-formatter/src/Parser/FilterProcessing.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Parser/Logger.js
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Parser/Logger.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Parser/NullLogger.js
@@ -2524,7 +2531,6 @@
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/Autovideo/Parser.js
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/Autovideo/Parser.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/BBCodes/Configurator.php
-%%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/BBCodes/Configurator/AttributeValueCollection.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/BBCodes/Configurator/BBCode.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/BBCodes/Configurator/BBCodeCollection.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/BBCodes/Configurator/BBCodeMonkey.php
@@ -2594,7 +2600,6 @@
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/Litedown/Parser/Passes/Superscript.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/MediaEmbed/Configurator.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/MediaEmbed/Configurator/Collections/CachedDefinitionCollection.php
-%%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/MediaEmbed/Configurator/Collections/SiteCollection.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/MediaEmbed/Configurator/Collections/SiteDefinitionCollection.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/MediaEmbed/Configurator/Collections/XmlFileDefinitionCollection.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/MediaEmbed/Configurator/TemplateBuilder.php
@@ -2604,7 +2609,6 @@
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/MediaEmbed/Configurator/TemplateGenerators/Iframe.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/MediaEmbed/Parser.js
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/MediaEmbed/Parser.php
-%%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/MediaEmbed/Parser/hasNonDefaultAttribute.js
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/MediaEmbed/Parser/tagFilter.js
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/ParserBase.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Plugins/PipeTables/Configurator.php
@@ -2621,6 +2625,7 @@
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Utils.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Utils/Http.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Utils/Http/Client.php
+%%PHPBBDIR%%/vendor/s9e/text-formatter/src/Utils/Http/Clients/Cached.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Utils/Http/Clients/Curl.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Utils/Http/Clients/Native.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Utils/XPath.php
@@ -3339,6 +3344,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/BlockReference.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Body.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/CheckSecurity.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Deprecated.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Do.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Embed.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/Node/Expression.php
@@ -3460,6 +3466,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParser.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParser/AutoEscape.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParser/Block.php
+%%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParser/Deprecated.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParser/Do.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParser/Embed.php
 %%PHPBBDIR%%/vendor/twig/twig/lib/Twig/TokenParser/Extends.php
@@ -3519,6 +3526,8 @@
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/BlockReferenceNode.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/BodyNode.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/CheckSecurityNode.php
+%%PHPBBDIR%%/vendor/twig/twig/src/Node/CheckToStringNode.php
+%%PHPBBDIR%%/vendor/twig/twig/src/Node/DeprecatedNode.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/DoNode.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/EmbedNode.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/AbstractExpression.php
@@ -3558,6 +3567,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/FilterExpression.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/FunctionExpression.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/GetAttrExpression.php
+%%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/InlinePrint.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/MethodCallExpression.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/NameExpression.php
 %%PHPBBDIR%%/vendor/twig/twig/src/Node/Expression/NullCoalesceExpression.php
@@ -3630,6 +3640,7 @@
 %%PHPBBDIR%%/vendor/twig/twig/src/TokenParser/AbstractTokenParser.php
 %%PHPBBDIR%%/vendor/twig/twig/src/TokenParser/AutoEscapeTokenParser.php
 %%PHPBBDIR%%/vendor/twig/twig/src/TokenParser/BlockTokenParser.php
+%%PHPBBDIR%%/vendor/twig/twig/src/TokenParser/DeprecatedTokenParser.php
 %%PHPBBDIR%%/vendor/twig/twig/src/TokenParser/DoTokenParser.php
 %%PHPBBDIR%%/vendor/twig/twig/src/TokenParser/EmbedTokenParser.php
 %%PHPBBDIR%%/vendor/twig/twig/src/TokenParser/ExtendsTokenParser.php
