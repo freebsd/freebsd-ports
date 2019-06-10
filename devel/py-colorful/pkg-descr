@@ -1,0 +1,16 @@
+Colorizes and styles the text of terminals in the right way.
+
+Key Features:
+
+* Expressive and consistent API
+* Support for different color modes (8 ANSI, 256 ANSI, true colors)
+* Support for predefined awesome styles (solarized, ...)
+* Support for custom color palettes
+* Support nesting styles
+* Support for different platforms
+* Context managers for clean color mode, color palette or style switch
+* Support len() on colored strings
+* Support color names from X11 rgb.txt
+* No dependencies
+
+WWW: https://pypi.org/project/colorful/
