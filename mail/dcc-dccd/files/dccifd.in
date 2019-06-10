@@ -32,8 +32,8 @@ load_rc_config $name
 
 # Set defaults
 : ${dccifd_enable:="NO"}
-: ${dccifd_home="%%DCCHOME%%"}
-: ${dccifd_libexec="%%PREFIX%%/dcc/libexec"}
+: ${dccifd_home="%%DCCDATA%%"}
+: ${dccifd_libexec="%%PREFIX%%/libexec"}
 : ${dccifd_conf="$dccifd_home/dcc_conf"}
 
 pidfile=${dccifd_pidfile:-"/var/run/dcc/dccifd.pid"}
