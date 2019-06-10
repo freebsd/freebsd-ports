@@ -1,0 +1,36 @@
+--- CMakeLists.txt.orig	2019-04-04 06:38:39 UTC
++++ CMakeLists.txt
+@@ -20,6 +20,8 @@ include(GNUInstallDirs)
+ project(leelaz)
+ add_subdirectory(gtest EXCLUDE_FROM_ALL) # We don't want to install gtest, exclude it from `all`
+ 
++link_directories(${CMAKE_INSTALL_PREFIX}/lib)
++
+ # Required Packages
+ set(Boost_MIN_VERSION "1.58.0")
+ set(Boost_USE_MULTITHREADED ON)
+@@ -86,7 +88,7 @@ if(USE_HALF)
+   add_definitions(-DUSE_HALF)
+ endif()
+ 
+-set(IncludePath "${CMAKE_CURRENT_SOURCE_DIR}/src" "${CMAKE_CURRENT_SOURCE_DIR}/src/Eigen")
++set(IncludePath "${CMAKE_CURRENT_SOURCE_DIR}/src" "${CMAKE_INSTALL_PREFIX}/include/eigen3")
+ set(SrcPath "${CMAKE_CURRENT_SOURCE_DIR}/src")
+ 
+ include_directories(${IncludePath})
+@@ -130,6 +132,7 @@ else()
+ endif()
+ 
+ # Google Test below
++if (BUILD_TESTING)
+ file(GLOB tests_SRC "${SrcPath}/tests/*.cpp")
+ 
+ add_executable(tests ${tests_SRC} $<TARGET_OBJECTS:objs>)
+@@ -142,6 +145,7 @@ target_link_libraries(tests ${BLAS_LIBRARIES})
+ target_link_libraries(tests ${OpenCL_LIBRARIES})
+ target_link_libraries(tests ${ZLIB_LIBRARIES})
+ target_link_libraries(tests gtest_main ${CMAKE_THREAD_LIBS_INIT})
++endif(BUILD_TESTING)
+ 
+ include(GetGitRevisionDescription)
+ git_describe(VERSION --tags)

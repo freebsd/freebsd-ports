@@ -501,6 +501,7 @@
     SUBDIR += lbreakout
     SUBDIR += lbreakout2
     SUBDIR += ldmud
+    SUBDIR += leela-zero
     SUBDIR += legend-of-edgar
     SUBDIR += legends
     SUBDIR += legesmotus
