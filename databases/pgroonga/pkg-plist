@@ -44,7 +44,8 @@ share/postgresql/extension/pgroonga--2.1.5--2.1.6.sql
 share/postgresql/extension/pgroonga--2.1.6--2.1.7.sql
 share/postgresql/extension/pgroonga--2.1.7--2.1.8.sql
 share/postgresql/extension/pgroonga--2.1.8--2.1.9.sql
-share/postgresql/extension/pgroonga--2.1.9.sql
-share/postgresql/extension/pgroonga_database--2.1.9.sql
+share/postgresql/extension/pgroonga--2.1.9--2.2.0.sql
+share/postgresql/extension/pgroonga--2.2.0.sql
+share/postgresql/extension/pgroonga_database--2.2.0.sql
 share/postgresql/extension/pgroonga_database.control
 share/postgresql/extension/pgroonga.control
