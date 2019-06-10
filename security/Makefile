@@ -995,6 +995,7 @@
     SUBDIR += py-service_identity
     SUBDIR += py-signedjson
     SUBDIR += py-slowaes
+    SUBDIR += py-social-auth-core
     SUBDIR += py-spake2
     SUBDIR += py-ssh
     SUBDIR += py-ssh-audit
