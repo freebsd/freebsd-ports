@@ -87,7 +87,7 @@ PORTVERSION=	3.7.1
 
 .if defined(WITH_CCACHE_BUILD) && empty(OPTIONS_SLAVE:MMEMCACHED)
 .if !empty(BUILD_DEPENDS)
-.error MAINTAINER NOTE: Cannot have any BUILD_DEPENDS for default ccache packages
+.error MAINTAINER NOTE: Cannot have any BUILD_DEPENDS for default ccache packages: ${BUILD_DEPENDS}
 .endif
 .endif
 
