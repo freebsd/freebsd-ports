@@ -10,7 +10,7 @@ COMMENT=	Concurrent trie-hash map library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-USES=		gmake libtool:build
+USES=		compiler:c11 gmake libtool:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rmind
