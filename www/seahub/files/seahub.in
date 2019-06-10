@@ -29,7 +29,7 @@
 # seafile_logdir (str):		Set to "" by default will use the path
 #				%%PREFIX%%/%%HAIWENDIR%%/logs.
 #				Set it to a different path.
-# seahub_host (int):		Default is 127.0.0.1.
+# seahub_host (int):		Default is 0.0.0.0.
 # seahub_port (int):		Default is 8000.
 
 . /etc/rc.subr
@@ -53,11 +53,11 @@ clearsessions_cmd="seahub_clearsessions"
 : ${seafile_conf:="%%PREFIX%%/%%HAIWENDIR%%/conf"}
 : ${seafile_datadir:="`cat ${seafile_ccnet}/seafile.ini 2>/dev/null`"}
 : ${seafile_logdir:="%%PREFIX%%/%%HAIWENDIR%%/logs"}
-: ${seahub_host:="127.0.0.1"}
+: ${seahub_host:="0.0.0.0"}
 : ${seahub_port:="8000"}
 
 manage_py=${seafile_path}/seahub/manage.py
-gunicorn_exe=%%PREFIX%%/bin/gunicorn
+gunicorn_exe=%%PREFIX%%/bin/gunicorn-%%PYTHON_VER%%
 gunicorn_conf=${seafile_conf}/gunicorn.conf
 pidfile=%%PREFIX%%/%%HAIWENDIR%%/pids/seahub.pid
 
@@ -123,7 +123,7 @@ seahub_start()
 		check_required_before;
 		before_start;
 		echo "Starting seahub at port ${seahub_port} ..."
-		su -m "${seafile_user}" -c "$command \"${gunicorn_exe}\" seahub.wsgi:application -c \"${gunicorn_conf}\" -b \"0.0.0.0:${seahub_port}\" --preload --chdir \"$seafile_path/seahub\""
+		su -m "${seafile_user}" -c "$command \"${gunicorn_exe}\" seahub.wsgi:application -c \"${gunicorn_conf}\" -b \"${seahub_host}:${seahub_port}\" --preload --chdir \"$seafile_path/seahub\""
 
 	# Ensure seahub is started successfully
 		sleep 5
