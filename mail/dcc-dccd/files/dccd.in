@@ -31,8 +31,8 @@ load_rc_config $name
 
 # Set defaults
 : ${dccd_enable:="NO"}
-: ${dccd_home="%%DCCHOME%%"}
-: ${dccd_libexec="%%PREFIX%%/dcc/libexec"}
+: ${dccd_home="%%DCCDATA%%"}
+: ${dccd_libexec="%%PREFIX%%/libexec"}
 : ${dccd_conf="$dccd_home/dcc_conf"}
 
 

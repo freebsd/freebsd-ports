@@ -32,8 +32,8 @@ load_rc_config $name
 
 # Set defaults
 : ${dccgrey_enable:="NO"}
-: ${dccgrey_home="%%DCCHOME%%"}
-: ${dccgrey_libexec="%%PREFIX%%/dcc/libexec"}
+: ${dccgrey_home="%%DCCDATA%%"}
+: ${dccgrey_libexec="%%PREFIX%%/libexec"}
 : ${dccgrey_conf="$dccgrey_home/dcc_conf"}
 
 

@@ -2,20 +2,20 @@
 # $FreeBSD: /tmp/pcvs/ports/mail/dcc-dccd/files/pkg-install.in,v 1.2 2011-07-04 19:39:45 crees Exp $
 
 PREFIX=${PKG_PREFIX:-%%PREFIX%%}
-DCCHOME=%%DCCHOME%%
+DCCDATA=%%DCCDATA%%
 DCCUSER=%%DCCUSER%%
 
 if [ "$2" = "POST-INSTALL" ]; then
 
-	/bin/sh $PREFIX/dcc/libexec/fix-map \
+	/bin/sh $PREFIX/libexec/fix-map \
 	-n .nopasswd \
-	-I $DCCHOME/ids.nopasswd -i $DCCHOME/ids \
-	-T $DCCHOME/map.txt.nopasswd -t $DCCHOME/map.txt \
-	-m $DCCHOME/map
+	-I $DCCDATA/ids.nopasswd -i $DCCHOME/ids \
+	-T $DCCDATA/map.txt.nopasswd -t $DCCHOME/map.txt \
+	-m $DCCDATA/map
 
         for file in ids map map.txt ; do
-                /bin/cp -p $DCCHOME/$file $DCCHOME/${file}.nopasswd
-		/usr/sbin/chown $DCCUSER $DCCHOME/${file} $DCCHOME/${file}.nopasswd
+                /bin/cp -p $DCCDATA/$file $DCCDATA/${file}.nopasswd
+		/usr/sbin/chown $DCCUSER $DCCDATA/${file} $DCCDATA/${file}.nopasswd
         done
 fi
 

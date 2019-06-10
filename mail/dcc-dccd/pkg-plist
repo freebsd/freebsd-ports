@@ -12,39 +12,40 @@ dcc/cgi-bin/list-msg
 dcc/cgi-bin/webuser-notify
 @sample dcc/cgi-bin/footer.sample
 @sample dcc/cgi-bin/header.sample
-dcc/libexec/check_ip_range
-dcc/libexec/ck2ip
-dcc/libexec/cron-dccd
-%%DCCIFD%%dcc/libexec/dccifd
-%%DCCM%%dcc/libexec/dccm
-%%DCCD%%dcc/libexec/dbclean
-%%DCCD%%dcc/libexec/dblist
-%%DCCD%%dcc/libexec/dump-clients
-dcc/libexec/dcc-nagios
-dcc/libexec/dcc-stats-collect
-dcc/libexec/dcc-stats-graph
-dcc/libexec/dcc-stats-init
-dcc/libexec/dcc-stats-update
-%%DCCD%%dcc/libexec/dccd
-@(%%DCCUSER%%,%%DCCGROUP%%,4555) dcc/libexec/dccsight
-%%IFD_MILT%%dcc/libexec/dns-helper
-dcc/libexec/fetchblack
-dcc/libexec/fetch-testmsg-whitelist
-dcc/libexec/fix-map
-dcc/libexec/hackmc
-dcc/libexec/list-clients
-dcc/libexec/logger
-dcc/libexec/newwebuser
-dcc/libexec/rcDCC
-dcc/libexec/start-dccd
-dcc/libexec/start-dccifd
-dcc/libexec/start-dccm
-dcc/libexec/start-grey
-dcc/libexec/stats-get
-dcc/libexec/stop-dccd
-dcc/libexec/updatedcc
-dcc/libexec/uninstalldcc
-dcc/libexec/wlist
+libexec/check_ip_range
+libexec/ck2ip
+libexec/cron-dccd
+%%DCCIFD%%libexec/dccifd
+%%DCCM%%libexec/dccm
+%%DCCD%%libexec/dbclean
+%%DCCD%%libexec/dblist
+%%DCCD%%libexec/dump-clients
+libexec/dcc-nagios
+libexec/dcc-stats-collect
+libexec/dcc-stats-graph
+libexec/dcc-stats-init
+libexec/dcc-stats-update
+%%DCCD%%libexec/dccd
+@(%%DCCUSER%%,%%DCCGROUP%%,4555) libexec/dccsight
+%%IFD_MILT%%libexec/dns-helper
+libexec/fetchblack
+libexec/fetchids
+libexec/fetch-testmsg-whitelist
+libexec/fix-map
+libexec/hackmc
+libexec/list-clients
+libexec/logger
+libexec/newwebuser
+libexec/rcDCC
+libexec/start-dccd
+libexec/start-dccifd
+libexec/start-dccm
+libexec/start-grey
+libexec/stats-get
+libexec/stop-dccd
+libexec/updatedcc
+libexec/uninstalldcc
+libexec/wlist
 man/man8/cdcc.8.gz
 man/man8/dbclean.8.gz
 man/man8/dblist.8.gz
@@ -56,24 +57,27 @@ man/man8/dccproc.8.gz
 man/man8/dccsight.8.gz
 @owner %%DCCUSER%%
 @group %%DCCGROUP%%
-@sample dcc/dcc_conf.sample
-@sample dcc/flod.sample
-@sample dcc/grey_flod.sample
-@sample dcc/grey_whitelist.sample
-@sample dcc/ids.sample
-@sample dcc/map.txt.sample
-@sample dcc/map.sample
-@sample dcc/whiteclnt.sample
-@sample dcc/whitecommon.sample
-@sample dcc/whitelist.sample
-%%IFD_MILT%%@unexec [ -e %D/dcc/whiteclnt.dccw ] && rm -f %D/dcc/whiteclnt.dccw || true
-%%IFD_MILT%%@unexec [ -e %D/dcc/whiteclnt.dccx ] && rm -f %D/dcc/whiteclnt.dccx || true
-%%DCCD%%@unexec [ -e %D/dcc/dcc_db ] && rm -f %D/dcc/dcc_db || true
-%%DCCD%%@unexec [ -e %D/dcc/dcc_db.hash ] && rm -f %D/dcc/dcc_db.hash || true
-%%DCCD%%@unexec [ -e %D/dcc/flod.map ] && rm -f %D/dcc/flod.map || true
-%%DCCD%%@unexec [ -e %D/dcc/dccd_clients ] && rm -f %D/dcc/dccd_clients || true
-%%DCCGREY%%@unexec [ -e %D/dcc/grey_db.hash ] && rm -f %D/dcc/grey_db.hash || true
-%%DCCGREY%%@unexec [ -e %D/dcc/grey_flod.map ] && rm -f %D/dcc/grey_flod.map || true
-%%DCCGREY%%@unexec [ -e %D/dcc/grey_clients ] && rm -f %D/dcc/grey_clients || true
-@dir dcc/log
-@dir dcc
+@sample %%DCCDATA%%/dcc_conf.sample
+@sample %%DCCDATA%%/flod.sample
+@sample %%DCCDATA%%/grey_flod.sample
+@sample %%DCCDATA%%/grey_whitelist.sample
+@sample %%DCCDATA%%/ids.sample
+@sample %%DCCDATA%%/map.txt.sample
+@sample %%DCCDATA%%/map.sample
+@sample %%DCCDATA%%/whiteclnt.sample
+@sample %%DCCDATA%%/whitecommon.sample
+@sample %%DCCDATA%%/whitelist.sample
+@postunexec [ -e %%DCCDATA%%/ids.nopasswd ] && rm -f %%DCCDATA%%/ids.nopasswd
+@postunexec [ -e %%DCCDATA%%/map.nopasswd ] && rm -f %%DCCDATA%%/map.nopasswd
+@postunexec [ -e %%DCCDATA%%/map.txt.nopasswd ] && rm -f %%DCCDATA%%/map.txt.nopasswd
+%%IFD_MILT%%@postunexec [ -e %%DCCDATA%%/whiteclnt.dccw ] && rm -f %%DCCDATA%%/whiteclnt.dccw || true
+%%IFD_MILT%%@postunexec [ -e %%DCCDATA%%/whiteclnt.dccx ] && rm -f %%DCCDATA%%/whiteclnt.dccx || true
+%%DCCD%%@postunexec [ -e %%DCCDATA%%/dcc_db ] && rm -f %%DCCDATA%%/dcc_db || true
+%%DCCD%%@postunexec [ -e %%DCCDATA%%/dcc_db.hash ] && rm -f %%DCCDATA%%/dcc_db.hash || true
+%%DCCD%%@postunexec [ -e %%DCCDATA%%/flod.map ] && rm -f %%DCCDATA%%/flod.map || true
+%%DCCD%%@postunexec [ -e %%DCCDATA%%/dccd_clients ] && rm -f %%DCCDATA%%/dccd_clients || true
+%%DCCGREY%%@postunexec [ -e %%DCCDATA%%/grey_db.hash ] && rm -f %%DCCDATA%%/grey_db.hash || true
+%%DCCGREY%%@postunexec [ -e %%DCCDATA%%/grey_flod.map ] && rm -f %%DCCDATA%%/grey_flod.map || true
+%%DCCGREY%%@postunexec [ -e %%DCCDATA%%/grey_clients ] && rm -f %%DCCDATA%%/grey_clients || true
+@dir %%DCCDATA%%/log
+@dir %%DCCDATA%%
