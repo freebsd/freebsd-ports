@@ -42,6 +42,13 @@ libdata/pkgconfig/libseafile.pc
 %%SEAFILE_SERVER%%/setup-seafile.sh
 %%SEAFILE_SERVER%%/sqlite2mysql.py
 %%SEAFILE_SERVER%%/sqlite2mysql.sh
+%%SEAFILE_SERVER%%/sql/mysql/ccnet.sql
+%%SEAFILE_SERVER%%/sql/mysql/%%USERS%%.sql
+%%SEAFILE_SERVER%%/sql/sqlite/config.sql
+%%SEAFILE_SERVER%%/sql/sqlite/groupmgr.sql
+%%SEAFILE_SERVER%%/sql/sqlite/org.sql
+%%SEAFILE_SERVER%%/sql/sqlite/%%USERS%%.sql
+%%SEAFILE_SERVER%%/sql/sqlite/user.sql
 %%SEAFILE_SERVER%%/upgrade/add_collate.sh
 %%SEAFILE_SERVER%%/upgrade/db_update_1.3_1.4.py
 %%SEAFILE_SERVER%%/upgrade/db_update_helper.py
@@ -101,6 +108,12 @@ libdata/pkgconfig/libseafile.pc
 %%SEAFILE_SERVER%%/upgrade/sql/6.3.0/sqlite3/seafevents.sql
 %%SEAFILE_SERVER%%/upgrade/sql/6.3.0/sqlite3/%%USERS%%.sql
 %%SEAFILE_SERVER%%/upgrade/sql/6.3.0/sqlite3/seahub.sql
+%%SEAFILE_SERVER%%/upgrade/sql/7.0.0/mysql/ccnet.sql
+%%SEAFILE_SERVER%%/upgrade/sql/7.0.0/mysql/%%USERS%%.sql
+%%SEAFILE_SERVER%%/upgrade/sql/7.0.0/mysql/seahub.sql
+%%SEAFILE_SERVER%%/upgrade/sql/7.0.0/sqlite3/ccnet/usermgr.sql
+%%SEAFILE_SERVER%%/upgrade/sql/7.0.0/sqlite3/%%USERS%%.sql
+%%SEAFILE_SERVER%%/upgrade/sql/7.0.0/sqlite3/seahub.sql
 %%SEAFILE_SERVER%%/upgrade/upgrade_1.2_1.3.sh
 %%SEAFILE_SERVER%%/upgrade/upgrade_1.3_1.4.sh
 %%SEAFILE_SERVER%%/upgrade/upgrade_1.4_1.5.sh
@@ -123,4 +136,5 @@ libdata/pkgconfig/libseafile.pc
 %%SEAFILE_SERVER%%/upgrade/upgrade_6.0_6.1.sh
 %%SEAFILE_SERVER%%/upgrade/upgrade_6.1_6.2.sh
 %%SEAFILE_SERVER%%/upgrade/upgrade_6.2_6.3.sh
+%%SEAFILE_SERVER%%/upgrade/upgrade_6.3_7.0.sh
 @dir(%%USERS%%,%%GROUPS%%,755) %%HAIWENDIR%%
