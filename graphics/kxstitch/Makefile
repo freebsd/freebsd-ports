@@ -1,12 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	kxstitch
-DISTVERSION=	2.1.1
+DISTVERSION=	2.2.0
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 CATEGORIES=	graphics kde
-
-PATCH_SITES=    https://github.com/KDE/${PORTNAME}/commit/
-PATCHFILES=     9db3fcf9cd367681c0864238dc5009a604f3896c.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross stitch pattern editor
