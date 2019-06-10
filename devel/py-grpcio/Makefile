@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grpcio
-PORTVERSION=	1.20.1
+PORTVERSION=	1.21.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>1:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3:devel/py-protobuf@${PY_FLAVOR}
 LIB_DEPENDS=	libcares.so:dns/c-ares
 
-USES=		compiler:gcc-c++11-lib localbase:ldflags python
+USES=		compiler:c++11-lib localbase:ldflags python
 USE_PYTHON=	autoplist distutils
 MAKE_ENV+=	GRPC_PYTHON_BUILD_SYSTEM_ZLIB=true \
 		GRPC_PYTHON_BUILD_SYSTEM_CARES=true
