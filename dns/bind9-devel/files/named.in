@@ -143,19 +143,10 @@ chroot_autoupdate()
 		fi
 	fi
 
-	# The OpenSSL engines should be present in the chroot, named loads them
-	# after chrooting.
-	if [ -d ${_openssl_engines} ]; then
-		mkdir -p ${named_chrootdir}${_openssl_engines}
-		if can_mount nullfs ; then
-			mount -t nullfs ${_openssl_engines} ${named_chrootdir}${_openssl_engines}
-		else
-			warn "named chroot: cannot nullfs mount OpenSSL" \
-				"engines into the chroot, will copy the shared" \
-				"libraries instead."
-			cp -f ${_openssl_engines}/*.so ${named_chrootdir}${_openssl_engines}
-		fi
-	fi
+	# The OpenSSL engines and BIND9 plugins should be present in the
+	# chroot, named loads them after chrooting.
+	null_mount_or_copy ${_openssl_engines}
+	null_mount_or_copy %%PREFIX%%/lib/named
 
 	# Copy and/or update key files to the chroot /etc
 	#
@@ -239,13 +230,8 @@ named_stop()
 named_poststop()
 {
 	if [ -n "${named_chrootdir}" ]; then
-		# if using OpenSSL from ports, unmount OpenSSL engines, if they
-		# were not mounted but only copied, do nothing.
-		if [ -d ${_openssl_engines} ]; then
-			if can_mount nullfs; then
-				umount ${named_chrootdir}${_openssl_engines}
-			fi
-		fi
+		null_umount %%PREFIX%%/lib/named
+		null_umount ${_openssl_engines}
 		if [ -c ${named_chrootdir}/dev/null ]; then
 			# unmount /dev
 			if [ `${SYSCTL_N} security.jail.jailed` -eq 0 ]; then
@@ -271,6 +257,36 @@ can_mount()
 		return 0
 	fi
 	return 1
+}
+
+null_mount_or_copy()
+{
+	local dir
+	dir=$1
+
+	if [ -d ${dir} ]; then
+		mkdir -p ${named_chrootdir}${dir}
+		if can_mount nullfs ; then
+			mount -t nullfs ${dir} ${named_chrootdir}${dir}
+		else
+			warn "named chroot: cannot nullfs mount OpenSSL" \
+				"engines into the chroot, will copy the shared" \
+				"libraries instead."
+			cp -f ${dir}/*.so ${named_chrootdir}${dir}
+		fi
+	fi
+}
+
+null_umount()
+{
+	local dir
+	dir=$1
+
+	if [ -d ${dir} ]; then
+		if can_mount nullfs; then
+			umount ${named_chrootdir}${dir}
+		fi
+	fi
 }
 
 create_file()
