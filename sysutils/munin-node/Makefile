@@ -3,6 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
@@ -47,6 +48,7 @@ SNMP_BUILD_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 SNMP_RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 PERL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Net-DNS>=0:dns/p5-Net-DNS \
+		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
 PYTHON_USES=	python
