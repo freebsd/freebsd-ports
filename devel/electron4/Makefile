@@ -62,7 +62,7 @@ GH_TUPLE=	electron:node:8bc5d171a0873c0ba49f9433798bc8b67399788c:node
 		# yaml:pyyaml:3.12:pyyaml \
 		# kennethreitz:requests:e4d59bedfd3c7f4f254f4f5d036587bcd8152458:requests
 
-ELECTRON_VER=	4.2.2
+ELECTRON_VER=	4.2.4
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
 CHROMIUM_VER=	69.0.3497.128
 # See ${WRKSRC}/third_party/node/node_modules.tar.gz.sha1 for CHROMIUM_NODE_MODULES_HASH
@@ -106,7 +106,7 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		extra_cxxflags="${CXXFLAGS}" \
 		extra_ldflags="${LDFLAGS}"
 
-ALL_TARGET=	electron licenses version
+ALL_TARGET=	electron
 MAKE_ARGS=	-C out/${BUILDTYPE}
 MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 		CPLUS_INCLUDE_PATH=${LOCALBASE}/include
@@ -136,8 +136,7 @@ DEBUG_VARS=	BUILDTYPE=Debug \
 		GN_ARGS+=is_component_build=false
 DEBUG_VARS_OFF=	BUILDTYPE=Release
 
-DIST_ALL_TARGET=	dist.zip chromedriver.zip mksnapshot.zip
-DIST_IMPLIES=		DRIVER
+DIST_IMPLIES=	DRIVER
 
 DRIVER_ALL_TARGET=	chromedriver
 
@@ -153,7 +152,10 @@ TEST_DISTFILES=		${CHROMIUM_TEST_FONTS_HASH}:chromium_testfonts
 TEST_ALL_TARGET=	${TEST_TARGETS}
 TEST_ALL_TARGET+=	third_party/electron_node:headers
 
-NPM_TIMESTAMP=	1558165815
+POST_BUILD_TARGETS=	licenses version
+POST_BUILD_DIST_TARGETS=	dist.zip chromedriver.zip mksnapshot.zip
+
+NPM_TIMESTAMP=	1559880317
 
 pre-fetch:
 	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
@@ -221,6 +223,14 @@ do-configure:
 
 # do-build:
 # 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ninja -C out/${BUILDTYPE} ${ALL_TARGET}
+
+post-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_ARGS} ${POST_BUILD_TARGETS}
+
+post-build-DIST-on:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_ARGS} ${POST_BUILD_DIST_TARGETS}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

@@ -1,6 +1,6 @@
---- electron/lib/browser/api/app.js.orig	2019-05-23 00:26:57 UTC
+--- electron/lib/browser/api/app.js.orig	2019-05-30 22:14:00 UTC
 +++ electron/lib/browser/api/app.js
-@@ -83,7 +83,7 @@ if (process.platform === 'darwin') {
+@@ -71,7 +71,7 @@ if (process.platform === 'darwin') {
    }
  }
  

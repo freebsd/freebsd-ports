@@ -1,6 +1,6 @@
---- v8/BUILD.gn.orig	2019-03-16 09:15:22 UTC
+--- v8/BUILD.gn.orig	2019-06-07 04:25:16 UTC
 +++ v8/BUILD.gn
-@@ -2606,7 +2606,7 @@ v8_source_set("v8_base") {
+@@ -2610,7 +2610,7 @@ v8_source_set("v8_base") {
        "src/x64/simulator-x64.h",
        "src/x64/sse-instr.h",
      ]
@@ -9,7 +9,7 @@
        sources += [
          "src/trap-handler/handler-inside-linux.cc",
          "src/trap-handler/handler-outside-linux.cc",
-@@ -2955,7 +2955,7 @@ v8_component("v8_libbase") {
+@@ -2959,7 +2959,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -18,7 +18,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -2975,6 +2975,12 @@ v8_component("v8_libbase") {
+@@ -2979,6 +2979,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]
@@ -31,7 +31,7 @@
    } else if (is_android) {
      if (current_toolchain == host_toolchain) {
        libs = [
-@@ -3144,6 +3150,7 @@ if (v8_use_snapshot && current_toolchain == v8_snapsho
+@@ -3148,6 +3154,7 @@ if (v8_use_snapshot && current_toolchain == v8_snapsho
      sources = [
        "src/snapshot/mksnapshot.cc",
      ]
