@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cdo
-PORTVERSION=	1.9.6
-PORTREVISION=	1
+PORTVERSION=	1.9.7
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/19299/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/20101/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
