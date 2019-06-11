@@ -1,13 +1,13 @@
 # $FreeBSD$
 
-PORTNAME=	zol
-PORTVERSION=	2019053000
+PORTNAME=	openzfs
+PORTVERSION=	2019061000
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	-kmod
 
 MAINTAINER=	kmoore@FreeBSD.org
-COMMENT=	ZFS on Linux kernel module for FreeBSD
+COMMENT=	OpenZFS kernel module for FreeBSD
 
 LICENSE=	CDDL
 
@@ -15,8 +15,8 @@ USES=		kmod
 USE_GITHUB=	yes
 GH_ACCOUNT=	zfsonfreebsd
 GH_PROJECT=	ZoF
-GH_TAGNAME=	a67416d
-KMODTARGET?=	zfs.ko
+GH_TAGNAME=	ea4b6fc
+KMODTARGET?=	openzfs.ko
 
 PLIST_FILES=	${KMODDIR}/${KMODTARGET}
 
@@ -47,9 +47,9 @@ do-build:
 	(cd ${WRKSRC}/module/ && make -f Makefile.bsd CC=${CC} ${MAKE_OPTS})
 
 do-install:
-	${INSTALL} ${WRKSRC}/module/zfs.ko ${STAGEDIR}${KMODDIR}/${KMODTARGET}
+	${INSTALL} ${WRKSRC}/module/openzfs.ko ${STAGEDIR}${KMODDIR}/${KMODTARGET}
 .if ${PORT_OPTIONS:MDEBUG}
-	${INSTALL} ${WRKSRC}/module/zfs.ko.debug ${STAGEDIR}${KMODDIR}/${KMODTARGET}.debug
+	${INSTALL} ${WRKSRC}/module/openzfs.ko.debug ${STAGEDIR}${KMODDIR}/${KMODTARGET}.debug
 .endif
 
 .include <bsd.port.post.mk>
