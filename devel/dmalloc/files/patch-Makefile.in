@@ -1,6 +1,6 @@
---- Makefile.in	2014-05-27 11:10:16.000000000 -0700
-+++ Makefile.in.3	2014-05-27 11:12:56.000000000 -0700
-@@ -41,7 +41,7 @@
+--- Makefile.in.orig	2007-05-14 10:26:14.000000000 -0700
++++ Makefile.in	2019-06-11 15:24:34.190572000 -0700
+@@ -41,7 +41,7 @@ LIBRARY	= lib$(MODULE).a
  
  # thread version of the library
  LIB_TH	= lib$(MODULE)th.a
@@ -9,7 +9,7 @@
  @TH_ON@BUILD_ALL_1 = threads
  @TH_ON@INSTALL_LIB_1 = installth
  @SL_ON@BUILD_THREADS_1 = $(LIB_TH_SL)
-@@ -51,7 +51,7 @@
+@@ -51,7 +51,7 @@ LIB_TH_SL = lib$(MODULE)th.@shlibext@
  
  # C++ version of the library
  LIB_CXX	= lib$(MODULE)xx.a
@@ -18,7 +18,7 @@
  @CXX_ON@BUILD_ALL_3 = $(LIB_CXX)
  @CXX_ON@INSTALL_LIB_3 = installcxx
  @SL_ON@BUILD_CXX_3 = $(LIB_CXX_SL)
-@@ -61,7 +61,7 @@
+@@ -61,7 +61,7 @@ LIB_CXX_SL = lib$(MODULE)xx.@shlibext@
  
  # threads + C++
  LIB_TH_CXX = lib$(MODULE)thcxx.a
@@ -27,7 +27,7 @@
  @TH_ON@@CXX_ON@BUILD_ALL_5 = $(LIB_TH_CXX)
  @TH_ON@@CXX_ON@INSTALL_LIB_5 = installthcxx
  @TH_ON@BUILD_CXX_5 = $(LIB_TH_CXX)
-@@ -76,7 +76,7 @@
+@@ -76,7 +76,7 @@ LIB_TH_CXX_SL = lib$(MODULE)thcxx.@shlibext@
  @CXX_ON@@SL_ON@INSTALL_THREADS_6 = installthcxxsl
  
  # shared versions of the libraries
@@ -36,7 +36,7 @@
  @SL_ON@BUILD_ALL_7 = $(LIB_SL)
  @SL_ON@INSTALL_LIB_7 = installsl
  @SL_ON@BUILD_TH_CXX_7 = $(LIB_TH_CXX_SL)
-@@ -218,7 +218,6 @@
+@@ -218,7 +218,6 @@ installsl : $(LIB_SL)
  installlib : $(INSTALL_LIB)
  	$(srcdir)/mkinstalldirs $(libdir)
  	$(INSTALL_PROGRAM) $(LIBRARY) $(libdir)
@@ -44,7 +44,7 @@
  @SL_OFF@	@echo "Enter 'make installsl' to install $(LIB_SL) in $(shlibdir)"
  @CXX_OFF@	@echo "Enter 'make installcxx' to install the C++ library"
  @TH_OFF@	@echo "Enter 'make installth' to install thread library"
-@@ -257,7 +256,7 @@
+@@ -257,7 +256,7 @@ shlib : $(BUILD_SL)
  # via: http://256.com/gray/email.html
  $(LIB_SL) : $(LIBRARY)
  	rm -f $@ $@.t
@@ -53,7 +53,7 @@
  	mv $@.t $@
  
  $(LIBRARY) : $(OBJS) $(NORMAL_OBJS)
-@@ -270,7 +269,7 @@
+@@ -270,7 +269,7 @@ $(LIB_TH) : $(OBJS) $(THREAD_OBJS)
  
  $(LIB_TH_SL) : $(LIB_TH)
  	rm -f $@ $@.t
@@ -62,7 +62,7 @@
  	mv $@.t $@
  
  $(LIB_CXX) : $(OBJS) $(NORMAL_OBJS) $(CXX_OBJS)
-@@ -279,7 +278,7 @@
+@@ -279,7 +278,7 @@ $(LIB_CXX) : $(OBJS) $(NORMAL_OBJS) $(CXX_OBJS)
  
  $(LIB_CXX_SL) : $(LIB_CXX)
  	rm -f $@ $@.t
@@ -71,7 +71,7 @@
  	mv $@.t $@
  
  $(LIB_TH_CXX) : $(OBJS) $(THREAD_OBJS) $(CXX_OBJS)
-@@ -288,7 +287,7 @@
+@@ -288,7 +287,7 @@ $(LIB_TH_CXX) : $(OBJS) $(THREAD_OBJS) $(CXX_OBJS)
  
  $(LIB_TH_CXX_SL) : $(LIB_TH_CXX)
  	rm -f $@ $@.t
@@ -80,3 +80,30 @@
  	mv $@.t $@
  
  threadssl : $(LIB_TH_SL)
+@@ -311,9 +310,8 @@ utils : $(UTIL)
+ 
+ $(UTIL) : $(UTIL).o dmalloc_argv.o compat.o env.o
+ 	rm -f $@
+-	$(CC) $(LDFLAGS) -o $(A_OUT) $(UTIL).o dmalloc_argv.o compat.o env.o \
++	$(CC) $(LDFLAGS) -o $@ $(UTIL).o dmalloc_argv.o compat.o env.o \
+ 		$(LIBS)
+-	mv $(A_OUT) $@
+ 
+ # special _th versions of objects with the LOCK_THREADS variable defined to 1
+ chunk_th.o : $(srcdir)/chunk.c
+@@ -335,13 +333,11 @@ tests : $(TEST) $(TEST_FC)
+ 
+ $(TEST) : $(TEST).o dmalloc_argv.o $(LIBRARY)
+ 	rm -f $@
+-	$(CC) $(LDFLAGS) -o $(A_OUT) $(TEST).o dmalloc_argv.o $(LIBRARY)
+-	mv $(A_OUT) $@
++	$(CC) $(LDFLAGS) -o $@ $(TEST).o dmalloc_argv.o $(LIBRARY)
+ 
+ $(TEST_FC) : $(TEST_FC).o dmalloc_argv.o $(LIBRARY)
+ 	rm -f $@
+-	$(CC) $(LDFLAGS) -o $(A_OUT) $(TEST_FC).o dmalloc_argv.o $(LIBRARY)
+-	mv $(A_OUT) $@
++	$(CC) $(LDFLAGS) -o $@ $(TEST_FC).o dmalloc_argv.o $(LIBRARY)
+ 
+ check light : $(TEST) $(TEST_FC)
+ 	./$(TEST_FC) -s
