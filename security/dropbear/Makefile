@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dropbear
-PORTVERSION=	2018.76
+PORTVERSION=	2019.78
 CATEGORIES=	security ipv6
 MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	SSH 2 server, designed to be usable in small memory environments
 
 LICENSE=	MIT
