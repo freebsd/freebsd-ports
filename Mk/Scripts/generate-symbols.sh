@@ -10,18 +10,11 @@ msg "Finding symbols"
 
 # Find all ELF files, strip them, and move symbols to PREFIX/usr/lib/debug/ORIG_PATH
 ELF_FILES=$(mktemp -t elf_files)
-LF=$(printf '\nX')
-LF=${LF%X}
 find ${STAGEDIR} -type f \
-    -exec /usr/bin/file -nNF "${LF}" {} + | while read -r f; do
-	read -r output
-	case "${output}" in
-	ELF\ *\ executable,\ *FreeBSD*,\ not\ stripped*|\
-	ELF\ *\ shared\ object,\ *FreeBSD*,\ not\ stripped*)
-		echo "${f}"
-		;;
-	esac
-done > ${ELF_FILES}
+    -exec /usr/bin/readelf -S {} + 2>/dev/null | awk ' \
+    /File:/ {sub(/File: /, "", $0); file=$0}
+    /[[:space:]]\.debug_info[[:space:]]*PROGBITS/ {print file}' \
+    > ${ELF_FILES}
 
 # Create all of the /usr/local/lib/* dirs
 lib_dir="${STAGEDIR}.debug${PREFIX}/lib/debug"
