@@ -5,7 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20190615:
+20190611:
+  AFFECTS: users of net/routinator
+  AUTHOR: rodrigo@FreeBSD.org
+
+  Release 0.4.0 fundamentally changes the command line options for
+  running the server and introduces a new way to initialize the local RPKI
+  repository used by Routinator.
+  If you have been using previous releases, you will likely have to adjust
+  your tooling. We apologize for this, but we also feel that the new commands
+  are more intuitive and logical.
+
+20190604:
   AFFECTS: users of samba47
   AUTHOR: antoine@FreeBSD.org
 
