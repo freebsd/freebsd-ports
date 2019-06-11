@@ -81,7 +81,6 @@
     SUBDIR += castxml
     SUBDIR += catdoc
     SUBDIR += cdif
-    SUBDIR += cdiff
     SUBDIR += cgrep
     SUBDIR += chkascii
     SUBDIR += chpp
@@ -1844,6 +1843,7 @@
     SUBDIR += yali
     SUBDIR += yamcha
     SUBDIR += yaml-mode.el
+    SUBDIR += ydiff
     SUBDIR += yelp-tools
     SUBDIR += yelp-xsl
     SUBDIR += yi-aspell

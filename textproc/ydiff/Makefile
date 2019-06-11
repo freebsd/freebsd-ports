@@ -1,12 +1,10 @@
 # Created by: eivind
 # $FreeBSD$
 
-PORTNAME=	cdiff
-DISTVERSION=	1.0-3
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-ga1a33a5
+PORTNAME=	ydiff
+DISTVERSION=	1.1
 PORTEPOCH=	1
-MASTER_SITES=	LOCAL/mat/cdiff GH
+MASTER_SITES=	LOCAL/mat/ydiff
 CATEGORIES=	textproc
 
 MAINTAINER=	mat@FreeBSD.org
@@ -15,16 +13,16 @@ COMMENT=	Diff readability enhancer for color terminals
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		python
+USE_PYTHON=	distutils autoplist concurrent noflavors
 USE_GITHUB=
 GH_ACCOUNT=	ymattw
 
-USES=		python
-USE_PYTHON=	distutils autoplist concurrent optsuffix
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS
-
 PORTDOCS=	CHANGES.rst README.rst
+
+OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
