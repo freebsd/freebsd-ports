@@ -2,20 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	lablgtk2
-PORTVERSION=	2.18.3
-PORTREVISION=	2
+PORTVERSION=	2.18.5
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/1479/ \
-		LOCAL/bf
+MASTER_SITES=	https://download.ocamlcore.org/lablgtk/Lablgtk2/${PORTVERSION}/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	lablgtk-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Objective Caml interface to GTK+ 2.x
 
 LICENSE=	LGPL21
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 USE_GNOME=	gtk20
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
