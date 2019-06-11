@@ -1,6 +1,6 @@
---- Makefile.am.orig	2014-11-27 00:40:08 UTC
+--- Makefile.am.orig	2019-04-13 07:38:39 UTC
 +++ Makefile.am
-@@ -43,7 +43,7 @@ GITIGNOREFILES = \
+@@ -46,7 +46,7 @@ GITIGNOREFILES = \
  AM_CPPFLAGS =
  AM_LDFLAGS =
  
@@ -9,15 +9,15 @@
  EXTRA_DIST =
  CLEANFILES =
  MOSTLYCLEANFILES =
-@@ -113,7 +113,6 @@ EXTRA_DIST += \
- 	Packaging/FontForge-doc.spec \
+@@ -116,7 +116,6 @@ EXTRA_DIST += \
  	Packaging/FontForge.spec \
  	Packaging/FontForge.static.spec \
+ 	README \
 -	uthash/src \
  	$(NULL)
  
  #--------------------------------------------------------------------------
-@@ -129,11 +128,6 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-the
+@@ -132,11 +131,6 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-theme-2012 --enab
  
  
  #--------------------------------------------------------------------------

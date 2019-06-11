@@ -1,6 +1,6 @@
---- fontforge/cvexport.c.orig	2014-11-27 00:40:08 UTC
+--- fontforge/cvexport.c.orig	2019-04-13 07:38:39 UTC
 +++ fontforge/cvexport.c
-@@ -213,20 +213,7 @@ int _ExportPDF(FILE *pdf,SplineChar *sc,
+@@ -232,20 +232,7 @@ int _ExportPDF(FILE *pdf,SplineChar *sc,int layer) {
      fprintf( pdf, "    /CreationDate (D:%04d%02d%02d%02d%02d%02d",
  	    1900+tm->tm_year, tm->tm_mon+1, tm->tm_mday,
  	    tm->tm_hour, tm->tm_min, tm->tm_sec );
@@ -8,7 +8,7 @@
      fprintf( pdf, "Z)\n" );
 -#else
 -    tzset();
--    if ( timezone==0 )
+-    if ( timezone==0  || getenv("SOURCE_DATE_EPOCH") )
 -	fprintf( pdf, "Z)\n" );
 -    else {
 -	if ( timezone<0 ) /* fprintf bug - this is a kludge to print +/- in front of a %02d-padded value */
