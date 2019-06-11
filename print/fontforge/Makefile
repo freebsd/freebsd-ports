@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	fontforge
-PORTVERSION=	20170731
-PORTREVISION=	1
+PORTVERSION=	20190413
 CATEGORIES=	print
-DISTFILES=	# Empty but needed because of the freetype distfile
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
@@ -24,15 +22,15 @@ LIB_DEPENDS=	libuninameslist.so:textproc/libuninameslist \
 		libltdl.so:devel/libltdl \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USE_GITHUB=	yes
-
 USES=		autoreconf:build compiler desktop-file-utils gettext \
-		gmake iconv jpeg libtool pkgconfig python readline:port \
-		shared-mime-info shebangfix
-SHEBANG_FILES=	pycontrib/gdraw/__init__.py \
-		pycontrib/gdraw/gdraw.py
+		gmake gnome iconv jpeg libtool pkgconfig python \
+		readline:port shared-mime-info shebangfix
+USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xi xkbui xft
 USE_GNOME=	cairo glib20 gtk20 libxml2 pango
+
+SHEBANG_FILES=	pycontrib/gdraw/__init__.py \
+		pycontrib/gdraw/gdraw.py
 
 CONFIGURE_ARGS=	--enable-tile-path --enable-gtk2-use
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -49,26 +47,15 @@ OPTIONS_DEFINE=	DOCS FREETYPE CAIRO PYTHON
 OPTIONS_SUB=	yes
 FREETYPE_DESC=	Include freetype's internal debugger
 
-PYTHON_CONFIGURE_ENABLE=	python-scripting python-extension
+FREETYPE_PATCH_DEPENDS=	${NONEXISTENT}:print/freetype2:extract
+FREETYPE_CONFIGURE_ENABLE=	freetype-debugger=${WRKSRC}/freetype
 
 CAIRO_CONFIGURE_WITH=	cairo
 
-.include <bsd.port.options.mk>
+PYTHON_CONFIGURE_ENABLE=	python-scripting python-extension
 
-.if ${PORT_OPTIONS:MFREETYPE}
-MASTER_SITES+=	http://savannah.nongnu.org/download/freetype/:freetype \
-		SF/freetype/freetype2/${FREETYPE_VERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/:freetype \
-		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/:freetype \
-		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype2/:freetype \
-		http://ftp.sunet.se/pub/text-processing/freetype/freetype2/:freetype \
-		ftp://ftp.freetype.org/freetype/freetype2/:freetype
-FREETYPE_VERSION=	2.8
-FREETYPE_SRC=	freetype-${FREETYPE_VERSION}.tar.bz2
-DISTFILES+=	${FREETYPE_SRC:C/$/:freetype/}
-CONFIGURE_ARGS+=	--enable-freetype-debugger=${WRKDIR}/freetype-${FREETYPE_VERSION}
-.else
-CONFIGURE_ARGS+=	--disable-freetype-debugger
-.endif
+post-patch-FREETYPE-on:
+	@${LN} -s $$(${MAKE} -C ${PORTSDIR}/print/freetype2 -V WRKSRC) ${WRKSRC}/freetype
 
 # This is to get around calling fontforge's bootstrap script, as that script fails
 # if git isn't installed on a system DESPITE there being a --skip-git argument that

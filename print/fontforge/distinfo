@@ -1,5 +1,3 @@
-TIMESTAMP = 1501649554
-SHA256 (freetype-2.8.tar.bz2) = a3c603ed84c3c2495f9c9331fe6bba3bb0ee65e06ec331e0a0fb52158291b40b
-SIZE (freetype-2.8.tar.bz2) = 1873526
-SHA256 (fontforge-fontforge-20170731_GH0.tar.gz) = 3f53d06caba2a96dc498df81717e35504815046b3178e811c85c4cc135492d8c
-SIZE (fontforge-fontforge-20170731_GH0.tar.gz) = 25125022
+TIMESTAMP = 1558768709
+SHA256 (fontforge-fontforge-20190413_GH0.tar.gz) = d3b60f22d7a52fc2b11e1bd515ab7ba3176f8a3228330d2aea4d076896fe025d
+SIZE (fontforge-fontforge-20190413_GH0.tar.gz) = 24380527
