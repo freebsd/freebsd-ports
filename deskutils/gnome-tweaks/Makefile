@@ -10,7 +10,10 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Allows to tweak some hidden settings in GNOME3
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+ CC0-1.0
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSES/GPL-3.0
+LICENSE_FILE_CC0-1.0=	${WRKSRC}/LICENSES/CC0-1.0
 
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
