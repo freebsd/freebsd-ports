@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 USES=		gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --disable-gantt --disable-ipc --disable-sas --disable-test-exec --disable-udp
-USE_GCC=	any # clang fails: undefined symbol: std::__1::unique_ptr
+USE_GCC=	yes # clang fails: undefined symbol: std::__1::unique_ptr
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
