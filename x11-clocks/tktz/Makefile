@@ -10,7 +10,7 @@ MASTER_SITES=	http://gromnizki.unixdev.net/soft/
 MAINTAINER=	gromnizki@unixdev.net
 COMMENT=	Tcl/Tk-based timezone viewer
 
-USES=		tk:85+,run
+USES=		tk:run
 NO_BUILD=	yes
 
 post-patch:
