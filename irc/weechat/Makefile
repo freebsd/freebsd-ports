@@ -72,7 +72,7 @@ PYTHON_USES=		python
 RUBY_USE=		ruby=yes
 TCL_CMAKE_ON=		-DTCL_VERSION:STRING="${TCL_VER}" \
 			-DTCL_TCLSH:PATH="${TCLSH}"
-TCL_USES=		tcl:85+
+TCL_USES=		tcl
 
 .include <bsd.port.pre.mk>
 
