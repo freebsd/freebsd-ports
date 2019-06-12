@@ -8445,6 +8445,7 @@
 %%WWWDIR%%/doc/ci/variables/img/new_custom_variables_example.png
 %%WWWDIR%%/doc/ci/variables/img/override_value_via_manual_pipeline_output.png
 %%WWWDIR%%/doc/ci/variables/img/override_variable_manual_pipeline.png
+%%WWWDIR%%/doc/ci/variables/img/variable_types_usage_example.png
 %%WWWDIR%%/doc/ci/variables/predefined_variables.md
 %%WWWDIR%%/doc/ci/variables/where_variables_can_be_used.md
 %%WWWDIR%%/doc/ci/yaml/README.md
