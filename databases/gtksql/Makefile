@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-testing/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical query tool for PostgreSQL/MySQL/SQLite
 
+DEPRECATED=	Abandonware using sys/dir.h
+EXPIRATION_DATE=	2019-07-12
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

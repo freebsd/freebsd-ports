@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text editor for X
 
+DEPRECATED=	Abandonware using sys/dir.h
+EXPIRATION_DATE=	2019-07-12
+
 LICENSE=	MIT
 
 USES=		imake tar:Z
