@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tcl.gz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Frontend to crontab
 
-DEPRECATED=	Tcl/Tk 8.5 is nearing EOL, please consider porting to Tcl/Tk 8.6
-
 USES=		tk:85,run
 
 EXTRACT_CMD=	${GZIP_CMD}

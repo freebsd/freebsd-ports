@@ -95,6 +95,9 @@ _TCLTK_PORT?=	tcl
 .if ${tcl_ARGS:M*+}
 _TCLTK_MIN_VERSION:=	${tcl_ARGS:M*+:S/+//}
 _TCLTK_WANTED_VERSIONS:=${_TCLTK_DEFAULT_VERSION}
+.if ${_TCLTK_MIN_VERSION} == "85"
+IGNORE=	Minimum tcltk version 85+ is meaningless
+.endif
 .endif
 
 #
@@ -151,6 +154,12 @@ _TCLTK_WANTED_VERSION:=	${_TCLTK_DEFAULT_VERSION}
 .  else
 _TCLTK_WANTED_VERSION:= ${_TCLTK_HIGHEST_VERSION}
 .  endif
+.endif
+
+#
+# Deprecate by default all ports depending on 8.5
+.if ${_TCLTK_WANTED_VERSION} == "85"
+DEPRECATED=	Tcl/Tk 8.5 is nearing EOL, please consider porting to Tcl/Tk 8.6
 .endif
 
 #

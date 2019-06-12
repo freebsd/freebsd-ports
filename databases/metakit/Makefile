@@ -13,8 +13,6 @@ COMMENT=	C++ embedded database engine with Python and Tcl support
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../license.terms
 
-DEPRECATED=	Tcl/Tk 8.5 is nearing EOL, please consider porting to Tcl/Tk 8.6
-
 USE_CXXSTD=	c++98
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../unix/configure
@@ -33,7 +31,7 @@ PYTHON_USES=		python:2.7
 PYTHON_CONFIGURE_ON=	--with-python=${LOCALBASE}
 PYTHON_CATEGORIES=	python
 
-TCL_USES=		tcl:85
+TCL_USES=		tcl:85+
 TCL_CATEGORIES=		tcl
 TCL_CONFIGURE_ON=	--with-tcl=${TCL_INCLUDEDIR}
 TCL_CONFIGURE_ENV=	TCL_LIBDIR=${TCL_LIBDIR}
