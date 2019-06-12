@@ -147,7 +147,7 @@ SCHEME_RUN_DEPENDS=	${SCHEME_BUILD_DEPENDS}
 
 TCL_CONFIGURE_ENABLE=	tclinterp
 TCL_CONFIGURE_WITH=	tclsh=tclsh${TCL_VER}
-TCL_USES=		tcl:85+
+TCL_USES=		tcl
 
 post-extract:
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${WRKSRC}/runtime/keymap
