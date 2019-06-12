@@ -11,6 +11,8 @@ COMMENT=	Idiomatic Elixir wrapper for gen_statem in OTP 19
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to build
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	antipax
