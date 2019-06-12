@@ -8,4 +8,4 @@ backends located in ijson/backends:
 - yajl: deprecated YAJL 1.x + ctypes wrapper, for even older systems.
 - python: pure Python parser, good to use with PyPy
 
-WWW: https://github.com/isagalaev/ijson
+WWW: https://github.com/ICRAR/ijson
