@@ -3,6 +3,7 @@
 PORTNAME=	caronade
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	https://code.bluelife.at/decke/caronade/archive/ \
 		LOCAL/decke/caronade/
