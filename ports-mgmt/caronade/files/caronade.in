@@ -17,4 +17,6 @@ load_rc_config $name
 : ${caronade_enable:="NO"}
 : ${caronade_chdir:="%%PREFIX%%/caronade"}
 
+PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin"
+
 run_rc_command "$1"
