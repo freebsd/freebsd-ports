@@ -12793,3 +12793,4 @@ net-mgmt/ccnet-client||2019-06-10|Removed, no longer has dependencies and has be
 textproc/cdiff|textproc/ydiff|2019-06-11|Renamed to match upstream
 sysutils/zol|sysutils/openzfs|2019-06-11|Renamed to match upstream changes
 sysutils/zol-kmod|sysutils/openzfs-kmod|2019-06-11|Renamed to match upstream changes
+archivers/nulib||2019-06-12|Abandonware
