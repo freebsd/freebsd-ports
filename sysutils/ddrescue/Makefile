@@ -5,15 +5,13 @@ PORTNAME=	ddrescue
 PORTVERSION=	1.24
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
-EXTRACT_SUFX=	.tar.lz
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Data recovery tool
 
 LICENSE=	GPLv2
 
-EXTRACT_DEPENDS=lzip:archivers/lzip
-
+USES=		tar:lz
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}"
@@ -26,11 +24,6 @@ PLIST_FILES=	bin/ddrescue \
 		man/man1/ddrescuelog.1.gz
 
 OPTIONS_DEFINE=	DOCS
-
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${LOCALBASE}/bin/lzip -dc ${DISTDIR}/${DISTFILES} | \
-	${TAR} -x -f - -C ${WRKDIR} --no-same-owner --no-same-permissions
 
 do-install:
 .for i in ddrescue ddrescuelog
