@@ -599,6 +599,7 @@ include/wine/windows/netfw.idl
 include/wine/windows/netioapi.h
 include/wine/windows/netlistmgr.h
 include/wine/windows/netlistmgr.idl
+include/wine/windows/newdev.h
 include/wine/windows/nldef.h
 include/wine/windows/npapi.h
 include/wine/windows/nserror.h
@@ -788,6 +789,7 @@ include/wine/windows/tcpmib.h
 include/wine/windows/textserv.h
 include/wine/windows/textstor.h
 include/wine/windows/textstor.idl
+include/wine/windows/timezoneapi.h
 include/wine/windows/tlhelp32.h
 include/wine/windows/tlogstg.h
 include/wine/windows/tlogstg.idl
@@ -1438,6 +1440,9 @@ lib/wine/ext-ms-win-rtcore-ntuser-syscolors-l1-1-0.dll.so
 lib/wine/ext-ms-win-rtcore-ntuser-sysparams-l1-1-0.dll.so
 lib/wine/ext-ms-win-security-credui-l1-1-0.dll.so
 lib/wine/ext-ms-win-security-cryptui-l1-1-0.dll.so
+lib/wine/ext-ms-win-shell-comctl32-init-l1-1-0.dll.so
+lib/wine/ext-ms-win-shell-comdlg32-l1-1-0.dll.so
+lib/wine/ext-ms-win-shell-shell32-l1-2-0.dll.so
 lib/wine/ext-ms-win-uxtheme-themes-l1-1-0.dll.so
 %%STAGING%%lib/wine/ext-ms-win-xaml-pal-l1-1-0.dll.so
 lib/wine/extrac32.exe.so
@@ -1885,6 +1890,9 @@ lib/wine/fakedlls/ext-ms-win-rtcore-ntuser-syscolors-l1-1-0.dll
 lib/wine/fakedlls/ext-ms-win-rtcore-ntuser-sysparams-l1-1-0.dll
 lib/wine/fakedlls/ext-ms-win-security-credui-l1-1-0.dll
 lib/wine/fakedlls/ext-ms-win-security-cryptui-l1-1-0.dll
+lib/wine/fakedlls/ext-ms-win-shell-comctl32-init-l1-1-0.dll
+lib/wine/fakedlls/ext-ms-win-shell-comdlg32-l1-1-0.dll
+lib/wine/fakedlls/ext-ms-win-shell-shell32-l1-2-0.dll
 lib/wine/fakedlls/ext-ms-win-uxtheme-themes-l1-1-0.dll
 %%STAGING%%lib/wine/fakedlls/ext-ms-win-xaml-pal-l1-1-0.dll
 lib/wine/fakedlls/extrac32.exe
@@ -3098,6 +3106,7 @@ man/man1/wmc.1.gz
 man/man1/wrc.1.gz
 %%WINE32%%man/pl.UTF-8/man1/wine.1.gz
 share/applications/wine.desktop
+%%DATADIR%%/winehid.inf
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
