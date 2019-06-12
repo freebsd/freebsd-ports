@@ -21,7 +21,7 @@ LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 RUN_DEPENDS=	dtplite:devel/tcllib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		tk:85
+USES=		tk
 NO_BUILD=	yes
 NO_ARCH=	yes
 
