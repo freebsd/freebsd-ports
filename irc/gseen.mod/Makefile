@@ -17,7 +17,7 @@ EXTRACT_DEPENDS=${NONEXISTENT}:irc/eggdrop:extract
 BUILD_DEPENDS=	eggdrop:irc/eggdrop
 RUN_DEPENDS=	eggdrop:irc/eggdrop
 
-USES=		tcl:85+
+USES=		tcl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
 		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
