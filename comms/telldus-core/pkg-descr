@@ -6,4 +6,4 @@ devices. Through a UNIX socket, the sensors and devices can be used/
 controlled from the command line tool "tdtool", or via the libtelldus-core
 C client library.
 
-WWW: http://www.telldus.com/products/tellstick
+WWW: http://developer.telldus.com/wiki/TellStickInstallationSource
