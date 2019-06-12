@@ -9,6 +9,22 @@
  # Required Packages
  set(Boost_MIN_VERSION "1.58.0")
  set(Boost_USE_MULTITHREADED ON)
+@@ -70,13 +72,13 @@ if(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_T
+ endif(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
+ 
+ if(GccSpecificFlags)
+-  set(GCC_COMPILE_FLAGS "-Wall -Wextra -ffast-math -flto -march=native")
++  set(GCC_COMPILE_FLAGS "-Wall -Wextra -ffast-math -march=native") # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=238514
+   set(GCC_DISABLED_WARNING_COMPILE_FLAGS "-Wno-ignored-attributes -Wno-maybe-uninitialized \
+       -Wno-mismatched-tags")
+   set(GCC_FLAGS "${GCC_COMPILE_FLAGS} ${GCC_DISABLED_WARNING_COMPILE_FLAGS}")
+   set(CMAKE_CXX_FLAGS_DEBUG "${GCC_FLAGS} -g -Og")
+   set(CMAKE_CXX_FLAGS_RELEASE "${GCC_FLAGS} -g -O3 -DNDEBUG")
+-  set(CMAKE_EXE_LINKER_FLAGS "-flto -g")
++  set(CMAKE_EXE_LINKER_FLAGS "-g") # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=238514
+ endif(GccSpecificFlags)
+ 
+ if(USE_CPU_ONLY)
 @@ -86,7 +88,7 @@ if(USE_HALF)
    add_definitions(-DUSE_HALF)
  endif()
