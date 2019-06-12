@@ -88,7 +88,6 @@
     SUBDIR += mscompress
     SUBDIR += mtf
     SUBDIR += nomarch
-    SUBDIR += nulib
     SUBDIR += nwreckdum
     SUBDIR += ocaml-bz2
     SUBDIR += ocaml-zip

@@ -1,5 +1,0 @@
-Nulib is a shell-based NuFX archive utility, based loosely on ARC for the
-IBM PC and ar(1) under Unix.  It allows you to perform certain operations
-on the same archives used by ShrinkIt, e.g. view archive contents, add to
-archive, extract from archive, and delete from archive.  Additionally, it
-will list and unpack files from Binary II archives.
