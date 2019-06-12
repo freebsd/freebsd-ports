@@ -13,7 +13,7 @@ COMMENT=	TCL interface to the Thomas Boutell's Gd library
 
 LIB_DEPENDS=	libgd.so:graphics/gd
 
-USES=		tcl:85+ uidfix
+USES=		tcl uidfix
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ENV=	TCL_VER=${TCL_VER} MKDIR="${MKDIR}" \
