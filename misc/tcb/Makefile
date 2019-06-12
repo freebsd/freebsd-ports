@@ -10,6 +10,9 @@ MASTER_SITES=	SUNSITE/utils/file
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File viewer for terminal
 
+DEPRECATED=	Abandonware that uses sys/dir.h
+EXPIRATION_DATE=	2019-07-12
+
 USES=		gmake
 
 OPTIONS_DEFINE=	DOCS

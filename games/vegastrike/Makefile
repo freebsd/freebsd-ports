@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source 3D space simulator
 
+DEPRECATED=	Abandonware using sys/dir.h
+EXPIRATION_DATE=	2019-07-12
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

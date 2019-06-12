@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Verilog HDL simulator
 
+DEPRECATED=	Abandonware using sys/dir.h
+EXPIRATION_DATE=	2019-07-12
+
 USES=		tar:bzip2 gmake
 
 BUILD_WRKSRC=	${WRKSRC}/src
