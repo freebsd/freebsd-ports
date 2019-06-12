@@ -1,4 +1,4 @@
---- Gemfile.orig	2019-05-16 20:05:12 UTC
+--- Gemfile.orig	2019-06-10 10:52:55 UTC
 +++ Gemfile
 @@ -14,7 +14,7 @@ gem 'sprockets', '~> 3.7.0'
  gem 'gitlab-default_value_for', '~> 3.1.1', require: 'default_value_for'
@@ -51,7 +51,7 @@
 -  gem 'database_cleaner', '~> 1.7.0'
 -  gem 'factory_bot_rails', '~> 4.8.2'
 -  gem 'rspec-rails', '~> 3.7.0'
--  gem 'rspec-retry', '~> 0.4.5'
+-  gem 'rspec-retry', '~> 0.6.1'
 -  gem 'rspec_profiling', '~> 0.0.5'
 -  gem 'rspec-set', '~> 0.1.3'
 -  gem 'rspec-parameterized', require: false
