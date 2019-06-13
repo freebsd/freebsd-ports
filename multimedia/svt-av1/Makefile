@@ -2,8 +2,8 @@
 
 PORTNAME=	svt-av1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0-264
-DISTVERSIONSUFFIX=	-g6fd56461
+DISTVERSION=	0.5.0-283
+DISTVERSIONSUFFIX=	-g6a003487
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -47,8 +47,5 @@ post-patch:
 		${WRKSRC}/Source/Lib/*/*/CMakeLists.txt
 	@${GREP} --exclude='*/third_party/*' -Flr '__linux' ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -i .opsys -E 's/__linux(__)?/__${OPSYS}__/'
-# Avoid -msse4.1 for (unused) function not under Source/Lib/ASM_SSE4_1/
-	@${REINPLACE_CMD} -e '/_sse4_1/,/}/d; /smmintrin\.h/d' \
-		${WRKSRC}/Source/Lib/Common/Codec/EbInterPrediction.c
 
 .include <bsd.port.mk>
