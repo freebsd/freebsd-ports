@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	makedepend:devel/makedepend
 
-USES=		compiler gmake tar:bzip2
+USES=		compiler gmake sdl tar:bzip2
 USE_SDL=	sdl net mixer ttf image
 
 MAKE_JOBS_UNSAFE=	yes
