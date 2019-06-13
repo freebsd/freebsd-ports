@@ -3,7 +3,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.29
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -176,6 +176,20 @@ post-patch:
 	${REINPLACE_CMD} -e 's/messages//' ${WRKSRC}/Makefile.in
 .endif
 	${MV} ${WRKSRC}/configure.in ${WRKSRC}/configure.ac # suppress warning
+
+# post-patch-HTDIG-on is to fix https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=238508
+post-patch-HTDIG-on:
+	# these should match those in ht://Dig's ${LOCALBASE}/bin/rundig
+	${REINPLACE_CMD} -E \
+		-e 's#^(DBDIR)=/opt/www/var/htdig#\1=${LOCALBASE}/share/htdig/database#' \
+		-e 's#^(COMMONDIR)=/opt/www/share/htdig#\1=${LOCALBASE}/share/htdig/common#' \
+		-e 's#^(BINDIR)=/opt/www/bin#\1=${LOCALBASE}/bin#' \
+		-e 's#^(conffile)=/opt/www/conf/#\1=${LOCALBASE}/etc/htdig/#' \
+		${WRKSRC}/cron/rundig
+	${REINPLACE_CMD} -E \
+		-e 's#/opt/www/htdig/bin#${LOCALBASE}/bin#' \
+		${WRKSRC}/Mailman/Cgi/remote?mmsearch
+
 
 .if ${PORT_OPTIONS:MPOSTFIX}
 pre-configure:
