@@ -12,4 +12,4 @@ Rubinius uses a precise, compacting, generational garbage collector.  It
 includes a compatible C-API for C extensions written for the standard Ruby
 interpreter (often referred to as MRI Matz's Ruby Implementation).
 
-WWW: http://rubini.us/
+WWW: https://rubinius.com/
