@@ -41,7 +41,6 @@
     SUBDIR += pear-PHP_Shell
     SUBDIR += psh
     SUBDIR += rc
-    SUBDIR += rssh
     SUBDIR += rush
     SUBDIR += sash
     SUBDIR += scponly

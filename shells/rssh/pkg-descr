@@ -1,6 +1,0 @@
-rssh is a restricted shell for use with OpenSSH, allowing only scp and/or sftp.
-It now also includes support for rdist, rsync, and CVS. For example, if you
-have a server which you only want to allow users to copy files off of via scp,
-without providing shell access, you can use rssh to do that.
-
-WWW: http://www.pizzashack.org/rssh/index.shtml
