@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet-resource_api
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
