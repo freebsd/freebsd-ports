@@ -1,4 +1,5 @@
 bin/obs
+bin/obs-ffmpeg-mux
 include/obs/audio-monitoring/pulse/pulseaudio-wrapper.h
 include/obs/callback/calldata.h
 include/obs/callback/decl.h
@@ -115,8 +116,9 @@ lib/obs-scripting/_obspython.so
 lib/obs-scripting/obslua.so
 lib/obs-scripting/obspython.py
 libdata/pkgconfig/libobs.pc
-share/applications/obs.desktop
-share/icons/hicolor/256x256/apps/obs.png
+share/applications/com.obsproject.Studio.desktop
+share/icons/hicolor/256x256/apps/com.obsproject.Studio.png
+share/metainfo/com.obsproject.Studio.appdata.xml
 share/obs/libobs/area.effect
 share/obs/libobs/bicubic_scale.effect
 share/obs/libobs/bilinear_lowres_scale.effect
@@ -321,6 +323,7 @@ share/obs/obs-plugins/linux-jack/locale/sr-SP.ini
 share/obs/obs-plugins/linux-jack/locale/sv-SE.ini
 share/obs/obs-plugins/linux-jack/locale/tr-TR.ini
 share/obs/obs-plugins/linux-jack/locale/uk-UA.ini
+share/obs/obs-plugins/linux-jack/locale/ur-PK.ini
 share/obs/obs-plugins/linux-jack/locale/vi-VN.ini
 share/obs/obs-plugins/linux-jack/locale/zh-CN.ini
 share/obs/obs-plugins/linux-jack/locale/zh-TW.ini
@@ -413,7 +416,6 @@ share/obs/obs-plugins/linux-v4l2/locale/uk-UA.ini
 share/obs/obs-plugins/linux-v4l2/locale/vi-VN.ini
 share/obs/obs-plugins/linux-v4l2/locale/zh-CN.ini
 share/obs/obs-plugins/linux-v4l2/locale/zh-TW.ini
-share/obs/obs-plugins/obs-ffmpeg/ffmpeg-mux
 share/obs/obs-plugins/obs-ffmpeg/locale/ar-SA.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/bg-BG.ini
 share/obs/obs-plugins/obs-ffmpeg/locale/bn-BD.ini
@@ -484,6 +486,7 @@ share/obs/obs-plugins/obs-filters/locale/en-US.ini
 share/obs/obs-plugins/obs-filters/locale/es-ES.ini
 share/obs/obs-plugins/obs-filters/locale/et-EE.ini
 share/obs/obs-plugins/obs-filters/locale/eu-ES.ini
+share/obs/obs-plugins/obs-filters/locale/fa-IR.ini
 share/obs/obs-plugins/obs-filters/locale/fi-FI.ini
 share/obs/obs-plugins/obs-filters/locale/fil-PH.ini
 share/obs/obs-plugins/obs-filters/locale/fr-FR.ini
@@ -514,6 +517,7 @@ share/obs/obs-plugins/obs-filters/locale/uk-UA.ini
 share/obs/obs-plugins/obs-filters/locale/vi-VN.ini
 share/obs/obs-plugins/obs-filters/locale/zh-CN.ini
 share/obs/obs-plugins/obs-filters/locale/zh-TW.ini
+share/obs/obs-plugins/obs-filters/luma_key_filter.effect
 share/obs/obs-plugins/obs-filters/mask_alpha_filter.effect
 share/obs/obs-plugins/obs-filters/mask_color_filter.effect
 share/obs/obs-plugins/obs-filters/sharpness.effect
@@ -686,7 +690,6 @@ share/obs/obs-plugins/obs-transitions/luma_wipes/watercolor.png
 share/obs/obs-plugins/obs-transitions/luma_wipes/wipes.json
 share/obs/obs-plugins/obs-transitions/luma_wipes/zigzag-h.png
 share/obs/obs-plugins/obs-transitions/luma_wipes/zigzag-v.png
-share/obs/obs-plugins/obs-transitions/premultiplied.inc
 share/obs/obs-plugins/obs-transitions/slide_transition.effect
 share/obs/obs-plugins/obs-transitions/swipe_transition.effect
 share/obs/obs-plugins/obs-x264/locale/ar-SA.ini
@@ -701,6 +704,7 @@ share/obs/obs-plugins/obs-x264/locale/en-US.ini
 share/obs/obs-plugins/obs-x264/locale/es-ES.ini
 share/obs/obs-plugins/obs-x264/locale/et-EE.ini
 share/obs/obs-plugins/obs-x264/locale/eu-ES.ini
+share/obs/obs-plugins/obs-x264/locale/fa-IR.ini
 share/obs/obs-plugins/obs-x264/locale/fi-FI.ini
 share/obs/obs-plugins/obs-x264/locale/fil-PH.ini
 share/obs/obs-plugins/obs-x264/locale/fr-FR.ini
@@ -794,6 +798,7 @@ share/obs/obs-plugins/text-freetype2/locale/en-US.ini
 share/obs/obs-plugins/text-freetype2/locale/es-ES.ini
 share/obs/obs-plugins/text-freetype2/locale/et-EE.ini
 share/obs/obs-plugins/text-freetype2/locale/eu-ES.ini
+share/obs/obs-plugins/text-freetype2/locale/fa-IR.ini
 share/obs/obs-plugins/text-freetype2/locale/fi-FI.ini
 share/obs/obs-plugins/text-freetype2/locale/fil-PH.ini
 share/obs/obs-plugins/text-freetype2/locale/fr-FR.ini
@@ -896,12 +901,6 @@ share/obs/obs-studio/themes/Acri/checkbox_checked_focus.png
 share/obs/obs-studio/themes/Acri/checkbox_unchecked.png
 share/obs/obs-studio/themes/Acri/checkbox_unchecked_disabled.png
 share/obs/obs-studio/themes/Acri/checkbox_unchecked_focus.png
-share/obs/obs-studio/themes/Acri/cogwheel.png
-share/obs/obs-studio/themes/Acri/cogwheel_2x.png
-share/obs/obs-studio/themes/Acri/down_arrow.png
-share/obs/obs-studio/themes/Acri/minus.png
-share/obs/obs-studio/themes/Acri/mute.png
-share/obs/obs-studio/themes/Acri/plus.png
 share/obs/obs-studio/themes/Acri/radio_checked.png
 share/obs/obs-studio/themes/Acri/radio_checked_disabled.png
 share/obs/obs-studio/themes/Acri/radio_checked_focus.png
@@ -910,19 +909,16 @@ share/obs/obs-studio/themes/Acri/radio_unchecked_disabled.png
 share/obs/obs-studio/themes/Acri/radio_unchecked_focus.png
 share/obs/obs-studio/themes/Acri/sizegrip.png
 share/obs/obs-studio/themes/Acri/top_hook.png
-share/obs/obs-studio/themes/Acri/unmute.png
-share/obs/obs-studio/themes/Acri/up_arrow.png
-share/obs/obs-studio/themes/Acri/updown.png
 share/obs/obs-studio/themes/Dark.qss
-share/obs/obs-studio/themes/Dark/cogwheel.png
-share/obs/obs-studio/themes/Dark/cogwheel_2x.png
-share/obs/obs-studio/themes/Dark/collapse.png
-share/obs/obs-studio/themes/Dark/down_arrow.png
-share/obs/obs-studio/themes/Dark/expand.png
-share/obs/obs-studio/themes/Dark/minus.png
-share/obs/obs-studio/themes/Dark/mute.png
-share/obs/obs-studio/themes/Dark/plus.png
-share/obs/obs-studio/themes/Dark/refresh.png
+share/obs/obs-studio/themes/Dark/down.svg
+share/obs/obs-studio/themes/Dark/expand.svg
+share/obs/obs-studio/themes/Dark/locked.svg
+share/obs/obs-studio/themes/Dark/minus.svg
+share/obs/obs-studio/themes/Dark/mute.svg
+share/obs/obs-studio/themes/Dark/no_sources.svg
+share/obs/obs-studio/themes/Dark/plus.svg
+share/obs/obs-studio/themes/Dark/refresh.svg
+share/obs/obs-studio/themes/Dark/revert.svg
 share/obs/obs-studio/themes/Dark/settings/advanced.svg
 share/obs/obs-studio/themes/Dark/settings/audio.svg
 share/obs/obs-studio/themes/Dark/settings/general.svg
@@ -930,10 +926,10 @@ share/obs/obs-studio/themes/Dark/settings/hotkeys.svg
 share/obs/obs-studio/themes/Dark/settings/output.svg
 share/obs/obs-studio/themes/Dark/settings/stream.svg
 share/obs/obs-studio/themes/Dark/settings/video.svg
-share/obs/obs-studio/themes/Dark/unmute.png
-share/obs/obs-studio/themes/Dark/up_arrow.png
-share/obs/obs-studio/themes/Dark/updown.png
-share/obs/obs-studio/themes/Default.qss
+share/obs/obs-studio/themes/Dark/trash.svg
+share/obs/obs-studio/themes/Dark/up.svg
+share/obs/obs-studio/themes/Dark/updown.svg
+share/obs/obs-studio/themes/Dark/visible.svg
 share/obs/obs-studio/themes/Rachni.qss
 share/obs/obs-studio/themes/Rachni/checkbox_checked.png
 share/obs/obs-studio/themes/Rachni/checkbox_checked_disabled.png
@@ -956,3 +952,4 @@ share/obs/obs-studio/themes/Rachni/right_arrow_disabled.png
 share/obs/obs-studio/themes/Rachni/sizegrip.png
 share/obs/obs-studio/themes/Rachni/up_arrow.png
 share/obs/obs-studio/themes/Rachni/up_arrow_disabled.png
+share/obs/obs-studio/themes/System.qss
