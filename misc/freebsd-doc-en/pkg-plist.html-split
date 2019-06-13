@@ -36,6 +36,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/pgpkeys.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/phabricator.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/ports.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/pre-commit-review.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/pref-license.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/rules.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/ssh.guide.html
@@ -859,7 +860,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/bundled-libs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/conflicts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-arch-neutral.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-arch.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-cc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-cflags.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-deprecated.html
@@ -984,7 +985,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fonts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fortran.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fuse.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gecko.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gem.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gettext-runtime.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gettext-tools.html

@@ -1,11 +1,15 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/cups/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/fdp-es/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/leap-seconds/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/book.txt
