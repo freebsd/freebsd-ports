@@ -85,12 +85,6 @@ PORTVERSION=	3.7.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CCACHE_BUILD) && empty(OPTIONS_SLAVE:MMEMCACHED)
-.if !empty(BUILD_DEPENDS)
-.error MAINTAINER NOTE: Cannot have any BUILD_DEPENDS for default ccache packages: ${BUILD_DEPENDS}
-.endif
-.endif
-
 .  if ${COMPILER_TYPE} == clang
 CPPFLAGS+=	-DCC_IS_CLANG
 .  elif ${COMPILER_TYPE} == gcc
