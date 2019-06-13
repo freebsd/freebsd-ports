@@ -39,7 +39,7 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 .endif
 
 # XXX: remove tar:bz2
-USES=	compiler:c11 cpe libedit ssl tar:bz2
+USES=	compiler:c11 cpe libedit pkgconfig ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
 ISCVERSION=	9.15.0a0.2019.06.10
 # XXX: Remove gitlab
@@ -210,7 +210,7 @@ TUNING_LARGE_CONFIGURE_OFF=	--with-tuning=default
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-symtable \
 			--enable-developer
-USES+=	perl5 pkgconfig
+USES+=	perl5
 USE_PERL5=	build
 BUILD_DEPENDS+=	cmocka>0:sysutils/cmocka
 .else
