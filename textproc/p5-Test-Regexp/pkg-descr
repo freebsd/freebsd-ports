@@ -1,0 +1,12 @@
+This module is intended to test your regular expressions.
+
+Given a subject string and a regular expression (aka pattern), the module not
+only tests whether the regular expression complete matches the subject string,
+it performs a utf8::upgrade or utf8::downgrade on the subject string and
+performs the tests again, if necessary.
+
+Furthermore, given a pattern with capturing parenthesis, it checks whether all
+captures are present, and in the right order. Both named and unnamed captures
+are checked.
+
+WWW: https://metacpan.org/release/Test-Regexp

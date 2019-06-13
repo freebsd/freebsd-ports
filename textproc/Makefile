@@ -802,6 +802,7 @@
     SUBDIR += p5-Term-QRCode
     SUBDIR += p5-Test-Groonga
     SUBDIR += p5-Test-Perl-Critic
+    SUBDIR += p5-Test-Regexp
     SUBDIR += p5-Text-ANSI-Util
     SUBDIR += p5-Text-ANSI-WideUtil
     SUBDIR += p5-Text-ANSITable
