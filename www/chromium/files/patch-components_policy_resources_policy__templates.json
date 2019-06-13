@@ -1,4 +1,4 @@
---- components/policy/resources/policy_templates.json.orig	2019-04-30 22:22:43 UTC
+--- components/policy/resources/policy_templates.json.orig	2019-06-04 18:55:21 UTC
 +++ components/policy/resources/policy_templates.json
 @@ -984,7 +984,7 @@
        'name': 'HomepageLocation',
@@ -36,7 +36,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -3338,7 +3338,7 @@
+@@ -3369,7 +3369,7 @@
        'name': 'GSSAPILibraryName',
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -45,7 +45,7 @@
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -3390,7 +3390,7 @@
+@@ -3421,7 +3421,7 @@
        'name': 'NtlmV2Enabled',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -54,7 +54,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -6448,7 +6448,7 @@
+@@ -6537,7 +6537,7 @@
        'name': 'RequireOnlineRevocationChecksForLocalAnchors',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -63,7 +63,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -7578,7 +7578,7 @@
+@@ -7667,7 +7667,7 @@
        'name': 'BackgroundModeEnabled',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -72,7 +72,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -8094,7 +8094,7 @@
+@@ -8183,7 +8183,7 @@
        'name': 'FullscreenAllowed',
        'type': 'main',
        'schema': { 'type': 'boolean' },

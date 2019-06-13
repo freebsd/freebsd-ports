@@ -1,6 +1,6 @@
---- chrome/common/webui_url_constants.cc.orig	2019-04-30 22:22:38 UTC
+--- chrome/common/webui_url_constants.cc.orig	2019-06-04 18:55:19 UTC
 +++ chrome/common/webui_url_constants.cc
-@@ -243,7 +243,7 @@ const char kChromeUIMetroFlowURL[] = "chrome://make-me
+@@ -251,7 +251,7 @@ const char kChromeUIMetroFlowURL[] = "chrome://make-me
  const char kChromeUICastHost[] = "cast";
  #endif
  
@@ -9,7 +9,7 @@
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  const char kChromeUIHatsHost[] = "hats";
-@@ -254,17 +254,17 @@ const char kChromeUIHatsURL[] = "chrome://hats/";
+@@ -262,17 +262,17 @@ const char kChromeUIHatsURL[] = "chrome://hats/";
  const char kChromeUILinuxProxyConfigHost[] = "linux-proxy-config";
  #endif
  
@@ -18,9 +18,9 @@
  const char kChromeUISandboxHost[] = "sandbox";
  #endif
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || \
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_BSD) || \
-     (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+ #if defined(OS_WIN) || defined(OS_MACOSX) || \
+-    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  const char kChromeUIBrowserSwitchHost[] = "browser-switch";
  const char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
  #endif
@@ -30,7 +30,7 @@
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
  
-@@ -418,13 +418,13 @@ const char* const kChromeHostURLs[] = {
+@@ -463,13 +463,13 @@ const char* const kChromeHostURLs[] = {
      kChromeUIInternetDetailDialogHost,
      kChromeUIAssistantOptInHost,
  #endif

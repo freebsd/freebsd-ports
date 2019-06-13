@@ -1,4 +1,4 @@
---- pdf/pdfium/pdfium_engine.cc.orig	2019-04-30 22:22:55 UTC
+--- pdf/pdfium/pdfium_engine.cc.orig	2019-06-04 18:55:27 UTC
 +++ pdf/pdfium/pdfium_engine.cc
 @@ -134,7 +134,7 @@ constexpr base::TimeDelta kMaxInitialProgressivePaintT
  
@@ -54,7 +54,7 @@
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -2974,7 +2974,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+@@ -2978,7 +2978,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK(image_data);
  
    last_progressive_start_time_ = base::Time::Now();
@@ -63,7 +63,7 @@
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -3449,7 +3449,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3453,7 +3453,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form(), FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

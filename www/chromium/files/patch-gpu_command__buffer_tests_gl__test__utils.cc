@@ -1,7 +1,7 @@
---- gpu/command_buffer/tests/gl_test_utils.cc.orig	2019-03-17 17:06:00 UTC
+--- gpu/command_buffer/tests/gl_test_utils.cc.orig	2019-06-04 18:55:24 UTC
 +++ gpu/command_buffer/tests/gl_test_utils.cc
-@@ -22,7 +22,7 @@
- #include "ui/gfx/geometry/size.h"
+@@ -23,7 +23,7 @@
+ #include "ui/gl/gl_version_info.h"
  #include "ui/gl/init/gl_factory.h"
  
 -#if defined(OS_LINUX)
@@ -9,7 +9,7 @@
  #include "ui/gl/gl_image_native_pixmap.h"
  #endif
  
-@@ -425,7 +425,7 @@ void GpuCommandBufferTestEGL::RestoreGLDefault() {
+@@ -429,7 +429,7 @@ void GpuCommandBufferTestEGL::RestoreGLDefault() {
    window_system_binding_info_ = gl::GLWindowSystemBindingInfo();
  }
  

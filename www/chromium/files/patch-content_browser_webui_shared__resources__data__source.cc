@@ -1,6 +1,6 @@
---- content/browser/webui/shared_resources_data_source.cc.orig	2019-04-30 22:22:47 UTC
+--- content/browser/webui/shared_resources_data_source.cc.orig	2019-06-04 18:55:23 UTC
 +++ content/browser/webui/shared_resources_data_source.cc
-@@ -102,9 +102,9 @@ const std::map<int, std::string> CreateMojoResourceIdT
+@@ -101,9 +101,9 @@ const std::map<int, std::string> CreateMojoResourceIdT
          {IDR_MOJO_BIG_BUFFER_MOJOM_LITE_JS, "js/big_buffer.mojom-lite.js"},
          {IDR_MOJO_FILE_MOJOM_LITE_JS, "js/file.mojom-lite.js"},
          {IDR_MOJO_STRING16_MOJOM_LITE_JS, "js/string16.mojom-lite.js"},

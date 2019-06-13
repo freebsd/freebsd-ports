@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/BUILD.gn.orig	2019-03-11 22:01:04 UTC
+--- third_party/blink/renderer/platform/BUILD.gn.orig	2019-06-04 18:55:30 UTC
 +++ third_party/blink/renderer/platform/BUILD.gn
-@@ -129,6 +129,7 @@ executable("character_data_generator") {
+@@ -137,6 +137,7 @@ executable("character_data_generator") {
      "//build/win:default_exe_manifest",
      "//third_party/icu",
    ]

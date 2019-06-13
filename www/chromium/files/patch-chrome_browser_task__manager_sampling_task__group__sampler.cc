@@ -1,6 +1,6 @@
---- chrome/browser/task_manager/sampling/task_group_sampler.cc.orig	2019-03-11 22:00:54 UTC
+--- chrome/browser/task_manager/sampling/task_group_sampler.cc.orig	2019-06-04 18:55:18 UTC
 +++ chrome/browser/task_manager/sampling/task_group_sampler.cc
-@@ -42,9 +42,9 @@ TaskGroupSampler::TaskGroupSampler(
+@@ -43,9 +43,9 @@ TaskGroupSampler::TaskGroupSampler(
      const OnCpuRefreshCallback& on_cpu_refresh,
      const OnSwappedMemRefreshCallback& on_swapped_mem_refresh,
      const OnIdleWakeupsCallback& on_idle_wakeups,
@@ -12,7 +12,7 @@
      const OnProcessPriorityCallback& on_process_priority)
      : process_(std::move(process)),
        process_metrics_(CreateProcessMetrics(process_.Handle())),
-@@ -52,9 +52,9 @@ TaskGroupSampler::TaskGroupSampler(
+@@ -53,9 +53,9 @@ TaskGroupSampler::TaskGroupSampler(
        on_cpu_refresh_callback_(on_cpu_refresh),
        on_swapped_mem_refresh_callback_(on_swapped_mem_refresh),
        on_idle_wakeups_callback_(on_idle_wakeups),
@@ -24,7 +24,7 @@
        on_process_priority_callback_(on_process_priority) {
    DCHECK(blocking_pool_runner.get());
  
-@@ -85,7 +85,7 @@ void TaskGroupSampler::Refresh(int64_t refresh_flags) 
+@@ -86,7 +86,7 @@ void TaskGroupSampler::Refresh(int64_t refresh_flags) 
          on_swapped_mem_refresh_callback_);
    }
  
@@ -33,7 +33,7 @@
    if (TaskManagerObserver::IsResourceRefreshEnabled(REFRESH_TYPE_IDLE_WAKEUPS,
                                                      refresh_flags)) {
      base::PostTaskAndReplyWithResult(
-@@ -94,9 +94,9 @@ void TaskGroupSampler::Refresh(int64_t refresh_flags) 
+@@ -95,9 +95,9 @@ void TaskGroupSampler::Refresh(int64_t refresh_flags) 
          base::Bind(&TaskGroupSampler::RefreshIdleWakeupsPerSecond, this),
          on_idle_wakeups_callback_);
    }
@@ -45,7 +45,7 @@
    if (TaskManagerObserver::IsResourceRefreshEnabled(REFRESH_TYPE_FD_COUNT,
                                                      refresh_flags)) {
      base::PostTaskAndReplyWithResult(
-@@ -105,7 +105,7 @@ void TaskGroupSampler::Refresh(int64_t refresh_flags) 
+@@ -106,7 +106,7 @@ void TaskGroupSampler::Refresh(int64_t refresh_flags) 
          base::Bind(&TaskGroupSampler::RefreshOpenFdCount, this),
          on_open_fd_count_callback_);
    }
@@ -54,7 +54,7 @@
  
    if (TaskManagerObserver::IsResourceRefreshEnabled(REFRESH_TYPE_PRIORITY,
                                                      refresh_flags)) {
-@@ -144,13 +144,13 @@ int TaskGroupSampler::RefreshIdleWakeupsPerSecond() {
+@@ -151,13 +151,13 @@ int TaskGroupSampler::RefreshIdleWakeupsPerSecond() {
    return process_metrics_->GetIdleWakeupsPerSecond();
  }
  

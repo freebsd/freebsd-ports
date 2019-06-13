@@ -1,6 +1,6 @@
---- ui/gl/BUILD.gn.orig	2019-05-14 20:51:39.000000000 +0200
-+++ ui/gl/BUILD.gn	2019-05-28 10:25:43.492274000 +0200
-@@ -213,7 +213,7 @@
+--- ui/gl/BUILD.gn.orig	2019-06-04 18:55:50 UTC
++++ ui/gl/BUILD.gn
+@@ -215,7 +215,7 @@ jumbo_component("gl") {
        ]
      }
  
@@ -9,7 +9,7 @@
        # Windows has USE_EGL but doesn't support base::FileDescriptor.
        # libsync isn't supported or needed on MacOSX.
        # Fuchsia is excluded due to a libsync dependency and because it's
-@@ -272,7 +272,10 @@
+@@ -274,7 +274,10 @@ jumbo_component("gl") {
        "//build/config/linux:xext",
      ]
  

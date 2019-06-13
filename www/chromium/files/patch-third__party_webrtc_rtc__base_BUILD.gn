@@ -1,6 +1,6 @@
---- third_party/webrtc/rtc_base/BUILD.gn.orig	2019-04-30 22:26:00 UTC
+--- third_party/webrtc/rtc_base/BUILD.gn.orig	2019-06-04 18:58:09 UTC
 +++ third_party/webrtc/rtc_base/BUILD.gn
-@@ -969,8 +969,6 @@ rtc_static_library("rtc_base") {
+@@ -947,8 +947,6 @@ rtc_static_library("rtc_base") {
  
    if (rtc_use_x11) {
      libs += [
@@ -9,7 +9,7 @@
        "Xext",
        "X11",
        "Xcomposite",
-@@ -978,7 +976,7 @@ rtc_static_library("rtc_base") {
+@@ -956,7 +954,7 @@ rtc_static_library("rtc_base") {
      ]
    }
  

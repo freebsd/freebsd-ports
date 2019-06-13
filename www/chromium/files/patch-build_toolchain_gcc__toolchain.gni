@@ -1,8 +1,8 @@
---- build/toolchain/gcc_toolchain.gni.orig	2019-04-30 22:22:28 UTC
+--- build/toolchain/gcc_toolchain.gni.orig	2019-06-04 18:55:15 UTC
 +++ build/toolchain/gcc_toolchain.gni
-@@ -44,6 +44,11 @@ analyzer_wrapper =
-     rebase_path("//build/toolchain/clang_static_analyzer_wrapper.py",
-                 root_build_dir) + " --mode=clang"
+@@ -36,6 +36,11 @@ if (is_linux && target_os == "android") {
+   enable_resource_whitelist_generation = false
+ }
  
 +declare_args() {
 +  extra_cxxflags = ""
@@ -12,7 +12,7 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -636,13 +641,23 @@ template("clang_toolchain") {
+@@ -617,13 +622,23 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {

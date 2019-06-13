@@ -1,4 +1,4 @@
---- google_apis/gcm/engine/heartbeat_manager.cc.orig	2019-05-04 08:44:56 UTC
+--- google_apis/gcm/engine/heartbeat_manager.cc.orig	2019-06-04 18:55:24 UTC
 +++ google_apis/gcm/engine/heartbeat_manager.cc
 @@ -32,13 +32,13 @@ const int kMinClientHeartbeatIntervalMs = 1000 * 30;  
  // Minimum time spent sleeping before we force a new heartbeat.
@@ -34,3 +34,20 @@
  }
  
  void HeartbeatManager::CheckForMissedHeartbeat() {
+@@ -213,14 +213,14 @@ void HeartbeatManager::CheckForMissedHeartbeat() {
+     return;
+   }
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+   // Otherwise check again later.
+   base::ThreadTaskRunnerHandle::Get()->PostDelayedTask(
+       FROM_HERE,
+       base::BindOnce(&HeartbeatManager::CheckForMissedHeartbeat,
+                      weak_ptr_factory_.GetWeakPtr()),
+       base::TimeDelta::FromMilliseconds(kHeartbeatMissedCheckMs));
+-#endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#endif  // (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ }
+ 
+ void HeartbeatManager::UpdateHeartbeatInterval() {

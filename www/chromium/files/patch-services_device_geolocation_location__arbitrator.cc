@@ -1,11 +1,11 @@
---- services/device/geolocation/location_arbitrator.cc.orig	2019-04-30 22:22:56 UTC
+--- services/device/geolocation/location_arbitrator.cc.orig	2019-06-04 18:55:28 UTC
 +++ services/device/geolocation/location_arbitrator.cc
-@@ -157,7 +157,7 @@ LocationArbitrator::NewNetworkLocationProvider(
+@@ -156,7 +156,7 @@ LocationArbitrator::NewNetworkLocationProvider(
+ 
  std::unique_ptr<LocationProvider>
  LocationArbitrator::NewSystemLocationProvider() {
- #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
--    defined(OS_FUCHSIA)
-+    defined(OS_FUCHSIA) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD) || \
+     defined(OS_FUCHSIA)
    return nullptr;
  #else
-   return device::NewSystemLocationProvider();

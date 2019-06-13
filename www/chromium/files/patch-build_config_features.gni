@@ -1,6 +1,6 @@
---- build/config/features.gni.orig	2019-03-11 22:00:52 UTC
+--- build/config/features.gni.orig	2019-06-04 18:55:15 UTC
 +++ build/config/features.gni
-@@ -41,7 +41,7 @@ declare_args() {
+@@ -45,7 +45,7 @@ declare_args() {
    }
  
    # libudev usage. This currently only affects the content layer.

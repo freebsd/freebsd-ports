@@ -1,6 +1,6 @@
---- third_party/pdfium/xfa/fgas/font/cfx_fontsourceenum_file.cpp.orig	2019-03-11 22:08:03 UTC
+--- third_party/pdfium/xfa/fgas/font/cfx_fontsourceenum_file.cpp.orig	2019-06-04 18:58:01 UTC
 +++ third_party/pdfium/xfa/fgas/font/cfx_fontsourceenum_file.cpp
-@@ -14,8 +14,9 @@ constexpr char kFolderSeparator = '/';
+@@ -16,8 +16,9 @@ constexpr char kFolderSeparator = '/';
  
  constexpr const char* g_FontFolders[] = {
  #if _FX_PLATFORM_ == _FX_PLATFORM_LINUX_
@@ -11,4 +11,4 @@
 +    "/usr/local/share/fonts",
  #elif _FX_PLATFORM_ == _FX_PLATFORM_APPLE_
      "~/Library/Fonts", "/Library/Fonts", "/System/Library/Fonts",
- #elif _FX_PLATFORM_ == _FX_PLATFORM_ANDROID_
+ #elif defined(OS_ANDROID)

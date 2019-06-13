@@ -1,8 +1,8 @@
---- chrome/common/chrome_features.h.orig	2019-04-30 22:22:37 UTC
+--- chrome/common/chrome_features.h.orig	2019-06-04 18:55:18 UTC
 +++ chrome/common/chrome_features.h
-@@ -66,10 +66,10 @@ COMPONENT_EXPORT(CHROME_FEATURES)
- extern const base::Feature kAutomaticTabDiscarding;
- #endif  // defined(OS_WIN) || defined(OS_MACOSX)
+@@ -60,10 +60,10 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+ extern const base::Feature kAutoFetchOnNetErrorPage;
+ #endif
  
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
@@ -13,7 +13,7 @@
  
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBlockPromptsIfDismissedOften;
-@@ -89,7 +89,7 @@ extern const base::Feature kBrowserHangFixesExperiment
+@@ -79,7 +79,7 @@ extern const base::Feature kBrowserHangFixesExperiment
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBundledConnectionHelpFeature;
  

@@ -1,4 +1,4 @@
---- chrome/browser/download/download_prefs.cc.orig	2019-03-11 22:00:53 UTC
+--- chrome/browser/download/download_prefs.cc.orig	2019-06-04 18:55:17 UTC
 +++ chrome/browser/download/download_prefs.cc
 @@ -62,7 +62,7 @@ namespace {
  // Consider downloads 'dangerous' if they go to the home directory on Linux and
@@ -18,7 +18,7 @@
    should_open_pdf_in_system_reader_ =
        prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader);
  #endif
-@@ -252,7 +252,7 @@ void DownloadPrefs::RegisterProfilePrefs(
+@@ -257,7 +257,7 @@ void DownloadPrefs::RegisterProfilePrefs(
                                   default_download_path);
    registry->RegisterFilePathPref(prefs::kSaveFileDefaultDirectory,
                                   default_download_path);

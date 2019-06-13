@@ -1,6 +1,6 @@
---- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2019-04-30 22:22:36 UTC
+--- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2019-06-04 18:55:18 UTC
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
-@@ -79,7 +79,7 @@
+@@ -82,7 +82,7 @@
  #include "chrome/browser/ui/user_manager.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
  
-@@ -634,8 +634,10 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+@@ -652,8 +652,10 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
    }
  #endif  // OS_CHROMEOS
  

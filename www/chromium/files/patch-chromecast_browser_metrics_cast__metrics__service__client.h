@@ -1,6 +1,6 @@
---- chromecast/browser/metrics/cast_metrics_service_client.h.orig	2019-04-30 22:22:40 UTC
+--- chromecast/browser/metrics/cast_metrics_service_client.h.orig	2019-06-04 18:55:20 UTC
 +++ chromecast/browser/metrics/cast_metrics_service_client.h
-@@ -98,10 +98,10 @@ class CastMetricsServiceClient : public ::metrics::Met
+@@ -111,10 +111,10 @@ class CastMetricsServiceClient : public ::metrics::Met
    std::string force_client_id_;
    bool client_info_loaded_;
  

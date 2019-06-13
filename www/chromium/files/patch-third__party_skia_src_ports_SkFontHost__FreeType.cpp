@@ -1,6 +1,6 @@
---- third_party/skia/src/ports/SkFontHost_FreeType.cpp.orig	2019-03-11 22:08:28 UTC
+--- third_party/skia/src/ports/SkFontHost_FreeType.cpp.orig	2019-06-04 18:58:12 UTC
 +++ third_party/skia/src/ports/SkFontHost_FreeType.cpp
-@@ -122,8 +122,6 @@ class FreeTypeLibrary : SkNoncopyable { (public)
+@@ -128,8 +128,6 @@ class FreeTypeLibrary : SkNoncopyable { (public)
          : fGetVarDesignCoordinates(nullptr)
          , fGetVarAxisFlags(nullptr)
          , fLibrary(nullptr)
@@ -9,7 +9,7 @@
      {
          if (FT_New_Library(&gFTMemory, &fLibrary)) {
              return;
-@@ -183,12 +181,7 @@ class FreeTypeLibrary : SkNoncopyable { (public)
+@@ -189,12 +187,7 @@ class FreeTypeLibrary : SkNoncopyable { (public)
          }
  #endif
  
@@ -23,7 +23,7 @@
      }
      ~FreeTypeLibrary() {
          if (fLibrary) {
-@@ -197,8 +190,6 @@ class FreeTypeLibrary : SkNoncopyable { (public)
+@@ -203,8 +196,6 @@ class FreeTypeLibrary : SkNoncopyable { (public)
      }
  
      FT_Library library() { return fLibrary; }
@@ -32,7 +32,7 @@
  
      // FT_Get_{MM,Var}_{Blend,Design}_Coordinates were added in FreeType 2.7.1.
      // Prior to this there was no way to get the coordinates out of the FT_Face.
-@@ -215,8 +206,6 @@ class FreeTypeLibrary : SkNoncopyable { (public)
+@@ -221,8 +212,6 @@ class FreeTypeLibrary : SkNoncopyable { (public)
  
  private:
      FT_Library fLibrary;
@@ -41,7 +41,7 @@
  
      // FT_Library_SetLcdFilterWeights was introduced in FreeType 2.4.0.
      // The following platforms provide FreeType of at least 2.4.0.
-@@ -713,17 +702,6 @@ void SkTypeface_FreeType::onFilterRec(SkScalerContextR
+@@ -718,17 +707,6 @@ void SkTypeface_FreeType::onFilterRec(SkScalerContextR
          rec->fTextSize = SkIntToScalar(1 << 14);
      }
  

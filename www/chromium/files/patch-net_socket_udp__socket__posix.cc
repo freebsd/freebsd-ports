@@ -1,4 +1,4 @@
---- net/socket/udp_socket_posix.cc.orig	2019-04-30 22:22:55 UTC
+--- net/socket/udp_socket_posix.cc.orig	2019-06-04 18:55:27 UTC
 +++ net/socket/udp_socket_posix.cc
 @@ -69,7 +69,7 @@ const int kActivityMonitorMinimumSamplesForThroughputE
  const base::TimeDelta kActivityMonitorMsThreshold =
@@ -57,34 +57,28 @@
    rv = setsockopt(socket_, SOL_SOCKET, SO_BROADCAST, &value, sizeof(value));
  
    return rv == 0 ? OK : MapSystemError(errno);
-@@ -945,19 +948,23 @@ int UDPSocketPosix::SetMulticastOptions() {
-         return OK;
- #endif
- 
+@@ -938,7 +941,7 @@ int UDPSocketPosix::SetMulticastOptions() {
+   if (multicast_interface_ != 0) {
+     switch (addr_family_) {
+       case AF_INET: {
 -#if defined(OS_MACOSX)
 +#if defined(OS_MACOSX) || defined(OS_BSD)
          ip_mreq mreq = {};
          int error = GetIPv4AddressFromIndex(socket_, multicast_interface_,
                                              &mreq.imr_interface.s_addr);
-         if (error != OK)
-           return error;
--#else   //  defined(OS_MACOSX)
-+#else   //  defined(OS_MACOSX) || defined(OS_BSD)
-         ip_mreqn mreq = {};
-         mreq.imr_ifindex = multicast_interface_;
+@@ -950,7 +953,11 @@ int UDPSocketPosix::SetMulticastOptions() {
          mreq.imr_address.s_addr = htonl(INADDR_ANY);
--#endif  //  !defined(OS_MACOSX)
-+#endif  //  !defined(OS_MACOSX) || defined(OS_BSD)
+ #endif  //  !defined(OS_MACOSX)
          int rv = setsockopt(socket_, IPPROTO_IP, IP_MULTICAST_IF,
 +#if defined(OS_BSD)
-+			    reinterpret_cast<const char*>(&mreq.imr_interface.s_addr), sizeof(mreq.imr_interface.s_addr));
++                            reinterpret_cast<const char*>(&mreq.imr_interface.s_addr), sizeof(mreq.imr_interface.s_addr));
 +#else
                              reinterpret_cast<const char*>(&mreq), sizeof(mreq));
 +#endif
          if (rv)
            return MapSystemError(errno);
          break;
-@@ -1019,7 +1026,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
+@@ -1012,7 +1019,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;
  
@@ -93,7 +87,7 @@
        ip_mreq mreq = {};
        int error = GetIPv4AddressFromIndex(socket_, multicast_interface_,
                                            &mreq.imr_interface.s_addr);
-@@ -1067,9 +1074,18 @@ int UDPSocketPosix::LeaveGroup(const IPAddress& group_
+@@ -1060,9 +1067,18 @@ int UDPSocketPosix::LeaveGroup(const IPAddress& group_
      case IPAddress::kIPv4AddressSize: {
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;

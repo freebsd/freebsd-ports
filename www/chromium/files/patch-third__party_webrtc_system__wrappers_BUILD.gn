@@ -1,6 +1,6 @@
---- third_party/webrtc/system_wrappers/BUILD.gn.orig	2019-03-11 22:08:22 UTC
+--- third_party/webrtc/system_wrappers/BUILD.gn.orig	2019-06-04 18:58:11 UTC
 +++ third_party/webrtc/system_wrappers/BUILD.gn
-@@ -59,8 +59,6 @@ rtc_static_library("system_wrappers") {
+@@ -57,8 +57,6 @@ rtc_static_library("system_wrappers") {
      if (!build_with_chromium) {
        deps += [ ":cpu_features_linux" ]
      }
