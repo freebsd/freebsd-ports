@@ -56,10 +56,6 @@ do-configure:
 		${CONFIGURE_ARGS} \
 		> ${WRKSRC}/Makefile.config
 
-# work around race condition in Sphinx (cf. PR-227460)
-pre-build:
-	@${MKDIR} ${WRKSRC}/doc/_build/doctrees
-
 post-install:
 	@${GZIP_CMD} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/*.el
 
