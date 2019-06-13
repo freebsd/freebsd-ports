@@ -12,7 +12,8 @@ COMMENT=	Qt 5 chess database application
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		desktop-file-utils qmake:outsource qt:5 shared-mime-info tar:tgz
+USES=		compiler:c++11-lang desktop-file-utils qmake:outsource qt:5 \
+		shared-mime-info tar:tgz
 USE_QT=		buildtools_build concurrent core gui linguisttools_build multimedia \
 		network opengl printsupport svg widgets xml
 
