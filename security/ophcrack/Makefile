@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		gmake localbase ssl tar:bzip2
+USES=		compiler:c++11-lang gmake localbase ssl tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ophcrack
