@@ -22,4 +22,6 @@ TEST_DEPENDS=	p5-Crypt-Blowfish>=0:security/p5-Crypt-Blowfish \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
