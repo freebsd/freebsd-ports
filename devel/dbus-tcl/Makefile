@@ -21,7 +21,7 @@ PORTDOCS=	*
 
 TEST_TARGET=	do-test
 
-USES=		pkgconfig tcl:85+,tea
+USES=		pkgconfig tcl:tea
 
 PLIST_FILES=	lib/dbus/libdbus21.so.1 \
 		lib/dbus/pkgIndex.tcl \

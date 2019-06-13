@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 HAS_CONFIGURE=	yes
-USES=		gmake python shebangfix tk:85+ zip
+USES=		gmake python shebangfix tk zip
 SHEBANG_FILES=	tcl/lang/checklangs.tcl \
 		tcl/lang/propagatelang.tcl \
 		tcl/lang/removetoken.tcl \

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libyajl.so:devel/yajl
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
 
-USES+=		autoreconf pkgconfig tcl:85+,tea
+USES+=		autoreconf pkgconfig tcl:tea
 
 TEST_TARGET=	test
 TEST_DEPENDS=	dtplite:devel/tcllib

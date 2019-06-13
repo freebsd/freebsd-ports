@@ -18,7 +18,7 @@ LICENSE_PERMS_MAXIMAEXTRACLAUSE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-
 RUN_DEPENDS=	gnuplot:math/gnuplot \
 		rlwrap:devel/rlwrap
 
-USES=		autoreconf gmake makeinfo shared-mime-info tk:85+
+USES=		autoreconf gmake makeinfo shared-mime-info tk
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	PYTHON=dummy
