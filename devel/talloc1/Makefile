@@ -5,6 +5,7 @@ PORTVERSION=		2.1.14
 PORTREVISION=		0
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA
+PKGNAMESUFFIX=		1
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Hierarchical pool based memory allocator

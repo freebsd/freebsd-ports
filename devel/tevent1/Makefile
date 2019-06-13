@@ -6,6 +6,7 @@ PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA
+PKGNAMESUFFIX=		1
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Talloc based event loop library
