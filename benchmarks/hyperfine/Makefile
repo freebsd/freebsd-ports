@@ -2,8 +2,8 @@
 
 PORTNAME=	hyperfine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
-PORTREVISION=	5
+DISTVERSION=	1.6.0
+PORTREVISION=	0
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -22,83 +22,89 @@ GH_ACCOUNT=	sharkdp
 
 PLIST_FILES=	bin/hyperfine
 
-CARGO_CRATES=	aho-corasick-0.6.9 \
+CARGO_CRATES=	aho-corasick-0.7.3 \
 		ansi_term-0.11.0 \
-		approx-0.3.0 \
+		approx-0.1.1 \
+		approx-0.3.2 \
 		atty-0.2.11 \
-		bitflags-1.0.4 \
-		cfg-if-0.1.6 \
-		clap-2.32.0 \
-		clicolors-control-0.2.0 \
+		autocfg-0.1.4 \
+		bitflags-1.1.0 \
+		cfg-if-0.1.9 \
+		cgmath-0.16.1 \
+		clap-2.33.0 \
+		clicolors-control-1.0.0 \
 		cloudabi-0.0.3 \
-		colored-1.6.1 \
-		console-0.6.2 \
-		csv-1.0.2 \
-		csv-core-0.1.4 \
-		fuchsia-zircon-0.3.3 \
-		fuchsia-zircon-sys-0.3.3 \
-		indicatif-0.9.0 \
-		itoa-0.4.3 \
+		colored-1.8.0 \
+		console-0.7.5 \
+		csv-1.0.7 \
+		csv-core-0.1.5 \
+		encode_unicode-0.3.5 \
+		fuchsia-cprng-0.1.1 \
+		indicatif-0.11.0 \
+		itoa-0.4.4 \
 		kernel32-sys-0.2.2 \
-		lazy_static-0.2.11 \
-		lazy_static-1.2.0 \
-		libc-0.2.49 \
-		lock_api-0.1.5 \
-		memchr-2.1.1 \
-		num-0.1.42 \
-		num-bigint-0.1.44 \
-		num-complex-0.1.43 \
-		num-integer-0.1.39 \
-		num-iter-0.1.37 \
-		num-rational-0.1.42 \
-		num-traits-0.2.6 \
-		owning_ref-0.4.0 \
-		parking_lot-0.6.4 \
-		parking_lot_core-0.3.1 \
-		proc-macro2-0.4.24 \
-		quote-0.6.10 \
-		rand-0.3.22 \
-		rand-0.4.3 \
-		rand-0.5.5 \
-		rand_core-0.2.2 \
-		rand_core-0.3.0 \
-		redox_syscall-0.1.42 \
+		lazy_static-1.3.0 \
+		libc-0.2.58 \
+		lock_api-0.2.0 \
+		memchr-2.2.0 \
+		num-0.2.0 \
+		num-bigint-0.2.2 \
+		num-complex-0.2.1 \
+		num-integer-0.1.41 \
+		num-iter-0.1.39 \
+		num-rational-0.2.1 \
+		num-traits-0.1.43 \
+		num-traits-0.2.8 \
+		number_prefix-0.2.8 \
+		numtoa-0.1.0 \
+		parking_lot-0.8.0 \
+		parking_lot_core-0.5.0 \
+		proc-macro2-0.4.30 \
+		quote-0.6.12 \
+		rand-0.4.6 \
+		rand-0.6.5 \
+		rand_chacha-0.1.1 \
+		rand_core-0.3.1 \
+		rand_core-0.4.0 \
+		rand_hc-0.1.0 \
+		rand_isaac-0.1.1 \
+		rand_jitter-0.1.4 \
+		rand_os-0.1.3 \
+		rand_pcg-0.1.2 \
+		rand_xorshift-0.1.1 \
+		rdrand-0.4.0 \
+		redox_syscall-0.1.54 \
 		redox_termios-0.1.1 \
-		regex-0.2.11 \
-		regex-1.0.6 \
-		regex-syntax-0.5.6 \
-		regex-syntax-0.6.3 \
-		rustc-serialize-0.3.24 \
+		regex-1.1.6 \
+		regex-syntax-0.6.6 \
+		rgb-0.8.13 \
 		rustc_version-0.2.3 \
-		ryu-0.2.7 \
-		scopeguard-0.3.3 \
+		ryu-0.2.8 \
+		scopeguard-1.0.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.82 \
-		serde_derive-1.0.82 \
-		serde_json-1.0.33 \
-		smallvec-0.6.6 \
-		stable_deref_trait-1.1.1 \
-		statistical-0.1.1 \
-		strsim-0.7.0 \
-		syn-0.15.22 \
+		serde-1.0.92 \
+		serde_derive-1.0.92 \
+		serde_json-1.0.39 \
+		smallvec-0.6.9 \
+		statistical-1.0.0 \
+		strsim-0.8.0 \
+		syn-0.15.34 \
 		term_size-0.3.1 \
-		termion-1.5.1 \
+		termion-1.5.2 \
 		termios-0.3.1 \
-		textwrap-0.10.0 \
+		textwrap-0.11.0 \
 		thread_local-0.3.6 \
 		ucd-util-0.1.3 \
 		unicode-width-0.1.5 \
 		unicode-xid-0.1.0 \
-		unreachable-1.0.0 \
 		utf8-ranges-1.0.2 \
-		version_check-0.1.5 \
-		void-1.0.2 \
 		winapi-0.2.8 \
-		winapi-0.3.6 \
+		winapi-0.3.7 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		winconsole-0.10.0
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hyperfine
