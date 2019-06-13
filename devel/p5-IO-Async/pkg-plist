@@ -1,3 +1,4 @@
+%%SITE_PERL%%/Future/IO/Impl/IOAsync.pm
 %%SITE_PERL%%/IO/Async.pm
 %%SITE_PERL%%/IO/Async/Channel.pm
 %%SITE_PERL%%/IO/Async/Debug.pm
@@ -34,6 +35,7 @@
 %%SITE_PERL%%/IO/Async/Timer/Absolute.pm
 %%SITE_PERL%%/IO/Async/Timer/Countdown.pm
 %%SITE_PERL%%/IO/Async/Timer/Periodic.pm
+%%PERL5_MAN3%%/Future::IO::Impl::IOAsync.3.gz
 %%PERL5_MAN3%%/IO::Async.3.gz
 %%PERL5_MAN3%%/IO::Async::Channel.3.gz
 %%PERL5_MAN3%%/IO::Async::Debug.3.gz

@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.72
+PORTVERSION=	0.73
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl modules that implement asynchronous filehandle IO
 
 LICENSE=	ART10 GPLv1+
@@ -23,8 +23,9 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Pod>=1:devel/p5-Test-Pod \
 		p5-Test-Refcount>=0:devel/p5-Test-Refcount
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
