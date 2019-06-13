@@ -1,6 +1,6 @@
---- content/renderer/render_process_impl.cc.orig	2019-05-04 08:57:40 UTC
+--- content/renderer/render_process_impl.cc.orig	2019-06-04 18:55:23 UTC
 +++ content/renderer/render_process_impl.cc
-@@ -163,7 +163,7 @@ RenderProcessImpl::RenderProcessImpl(
+@@ -161,7 +161,7 @@ RenderProcessImpl::RenderProcessImpl(
  
    SetV8FlagIfNotFeature(features::kWebAssemblyTrapHandler,
                          "--no-wasm-trap-handler");

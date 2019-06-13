@@ -1,4 +1,4 @@
---- ipc/ipc_channel_common.cc.orig	2019-03-11 22:00:59 UTC
+--- ipc/ipc_channel_common.cc.orig	2019-06-04 18:55:25 UTC
 +++ ipc/ipc_channel_common.cc
 @@ -9,7 +9,7 @@
  
@@ -9,3 +9,12 @@
  
  namespace {
  int g_global_pid = 0;
+@@ -25,7 +25,7 @@ int Channel::GetGlobalPid() {
+   return g_global_pid;
+ }
+ 
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_LINUX) || defined(OS_BSD)
+ 
+ // static
+ std::unique_ptr<Channel> Channel::CreateClient(

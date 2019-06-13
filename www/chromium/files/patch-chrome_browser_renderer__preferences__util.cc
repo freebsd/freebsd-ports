@@ -1,4 +1,4 @@
---- chrome/browser/renderer_preferences_util.cc.orig	2019-04-30 22:22:34 UTC
+--- chrome/browser/renderer_preferences_util.cc.orig	2019-06-04 18:55:17 UTC
 +++ chrome/browser/renderer_preferences_util.cc
 @@ -29,7 +29,7 @@
  #include "ui/base/cocoa/defaults_utils.h"
@@ -25,5 +25,5 @@
 -#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_WIN) || defined(OS_BSD)
    content::UpdateFontRendererPreferencesFromSystemSettings(prefs);
-   content::UpdateFocusRingPreferencesFromSystemSettings(prefs);
  #endif
+ 

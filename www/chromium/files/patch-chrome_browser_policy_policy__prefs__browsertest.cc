@@ -1,6 +1,6 @@
---- chrome/browser/policy/policy_prefs_browsertest.cc.orig	2019-03-11 22:00:53 UTC
+--- chrome/browser/policy/policy_prefs_browsertest.cc.orig	2019-06-04 18:55:17 UTC
 +++ chrome/browser/policy/policy_prefs_browsertest.cc
-@@ -185,6 +185,8 @@ class PolicyTestCase {
+@@ -183,6 +183,8 @@ class PolicyTestCase {
      const std::string os("chromeos");
  #elif defined(OS_LINUX)
      const std::string os("linux");

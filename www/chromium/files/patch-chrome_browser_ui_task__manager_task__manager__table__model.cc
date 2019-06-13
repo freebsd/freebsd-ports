@@ -1,6 +1,6 @@
---- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig	2019-04-30 22:22:36 UTC
+--- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig	2019-06-04 18:55:18 UTC
 +++ chrome/browser/ui/task_manager/task_manager_table_model.cc
-@@ -439,13 +439,13 @@ base::string16 TaskManagerTableModel::GetText(int row,
+@@ -451,13 +451,13 @@ base::string16 TaskManagerTableModel::GetText(int row,
            ? stringifier_->backgrounded_string()
            : stringifier_->foregrounded_string();
  
@@ -16,7 +16,7 @@
  
      case IDS_TASK_MANAGER_KEEPALIVE_COUNT_COLUMN: {
        return stringifier_->GetKeepaliveCountText(
-@@ -605,7 +605,7 @@ int TaskManagerTableModel::CompareValues(int row1,
+@@ -617,7 +617,7 @@ int TaskManagerTableModel::CompareValues(int row1,
        return BooleanCompare(is_proc1_bg, is_proc2_bg);
      }
  
@@ -25,7 +25,7 @@
      case IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN: {
        const int proc1_fd_count =
            observed_task_manager()->GetOpenFdCount(tasks_[row1]);
-@@ -613,7 +613,7 @@ int TaskManagerTableModel::CompareValues(int row1,
+@@ -625,7 +625,7 @@ int TaskManagerTableModel::CompareValues(int row1,
            observed_task_manager()->GetOpenFdCount(tasks_[row2]);
        return ValueCompare(proc1_fd_count, proc2_fd_count);
      }
@@ -34,7 +34,7 @@
  
      default:
        NOTREACHED();
-@@ -779,11 +779,11 @@ void TaskManagerTableModel::UpdateRefreshTypes(int col
+@@ -791,11 +791,11 @@ void TaskManagerTableModel::UpdateRefreshTypes(int col
        type = REFRESH_TYPE_KEEPALIVE_COUNT;
        break;
  

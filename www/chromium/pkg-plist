@@ -192,6 +192,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/audits2_test_runner/audits2_test_runner_module.js
 %%DATADIR%%/resources/inspector/audits2_worker.js
 %%DATADIR%%/resources/inspector/audits2_worker/audits2_worker_module.js
+%%DATADIR%%/resources/inspector/axe_core_test_runner/axe_core_test_runner_module.js
 %%DATADIR%%/resources/inspector/bindings_test_runner/bindings_test_runner_module.js
 %%DATADIR%%/resources/inspector/browser_debugger/browser_debugger_module.js
 %%DATADIR%%/resources/inspector/changes/changes_module.js

@@ -1,4 +1,4 @@
---- services/device/hid/BUILD.gn.orig	2019-03-11 22:01:01 UTC
+--- services/device/hid/BUILD.gn.orig	2019-06-04 18:55:28 UTC
 +++ services/device/hid/BUILD.gn
 @@ -51,6 +51,19 @@ source_set("hid") {
      deps += [ "//device/udev_linux" ]
@@ -18,5 +18,5 @@
 +  }
 +
    if (is_chromeos) {
-     deps += [ "//chromeos/dbus" ]
+     deps += [ "//chromeos/dbus/permission_broker" ]
    }

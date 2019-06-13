@@ -1,4 +1,4 @@
---- third_party/leveldatabase/env_chromium.cc.orig	2019-04-30 22:23:32 UTC
+--- third_party/leveldatabase/env_chromium.cc.orig	2019-06-04 18:55:45 UTC
 +++ third_party/leveldatabase/env_chromium.cc
 @@ -40,7 +40,11 @@
  #include "third_party/leveldatabase/leveldb_chrome.h"
@@ -10,5 +10,5 @@
  #include "third_party/re2/src/re2/re2.h"
 +#endif
  
- using base::FilePath;
- using base::trace_event::MemoryAllocatorDump;
+ #if defined(OS_WIN)
+ #undef DeleteFile

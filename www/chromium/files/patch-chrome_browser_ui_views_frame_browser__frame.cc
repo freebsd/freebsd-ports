@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2019-04-30 22:22:36 UTC
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig	2019-06-04 18:55:18 UTC
 +++ chrome/browser/ui/views/frame/browser_frame.cc
-@@ -38,7 +38,7 @@
+@@ -39,7 +39,7 @@
  #include "components/user_manager/user_manager.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/views/frame/browser_command_handler_linux.h"
  #endif
  
-@@ -49,7 +49,7 @@
+@@ -50,7 +50,7 @@
  namespace {
  
  bool IsUsingGtkTheme(Profile* profile) {
@@ -18,7 +18,7 @@
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -105,7 +105,7 @@ void BrowserFrame::InitBrowserFrame() {
+@@ -111,7 +111,7 @@ void BrowserFrame::InitBrowserFrame() {
      non_client_view()->set_context_menu_controller(this);
    }
  

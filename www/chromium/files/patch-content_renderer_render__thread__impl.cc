@@ -1,4 +1,4 @@
---- content/renderer/render_thread_impl.cc.orig	2019-04-30 22:22:47 UTC
+--- content/renderer/render_thread_impl.cc.orig	2019-06-04 18:55:23 UTC
 +++ content/renderer/render_thread_impl.cc
 @@ -191,12 +191,21 @@
  #include "mojo/public/cpp/bindings/message_dumper.h"
@@ -40,12 +40,7 @@
    render_message_filter()->SetThreadPriority(
        ChildProcess::current()->io_thread_id(), base::ThreadPriority::DISPLAY);
  #endif
-@@ -1329,11 +1338,11 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
-        gpu::kGpuFeatureStatusEnabled);
-   const bool enable_gpu_memory_buffers =
-       !is_gpu_compositing_disabled_ &&
--#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_WIN)
-+#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+@@ -1332,7 +1341,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
        !cmd_line->HasSwitch(switches::kDisableGpuMemoryBufferVideoFrames);
  #else
        cmd_line->HasSwitch(switches::kEnableGpuMemoryBufferVideoFrames);

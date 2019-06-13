@@ -1,4 +1,4 @@
---- net/base/address_tracker_linux.cc.orig	2019-04-30 22:22:54 UTC
+--- net/base/address_tracker_linux.cc.orig	2019-06-04 18:55:26 UTC
 +++ net/base/address_tracker_linux.cc
 @@ -21,96 +21,10 @@
  namespace net {
@@ -99,16 +99,40 @@
  }
  
  AddressTrackerLinux::AddressTrackerLinux()
-@@ -151,6 +65,7 @@ AddressTrackerLinux::~AddressTrackerLinux() {
- }
+@@ -147,6 +61,7 @@ AddressTrackerLinux::AddressTrackerLinux(
+ AddressTrackerLinux::~AddressTrackerLinux() = default;
  
  void AddressTrackerLinux::Init() {
 +#if !defined(OS_FREEBSD)
    netlink_fd_.reset(socket(AF_NETLINK, SOCK_RAW, NETLINK_ROUTE));
    if (!netlink_fd_.is_valid()) {
      PLOG(ERROR) << "Could not create NETLINK socket";
-@@ -239,6 +154,10 @@ void AddressTrackerLinux::Init() {
-       return;
+@@ -242,6 +157,7 @@ void AddressTrackerLinux::AbortAndForceOnline() {
+   connection_type_initialized_cv_.Broadcast();
+ }
+ 
++#if !defined(OS_BSD)
+ AddressTrackerLinux::AddressMap AddressTrackerLinux::GetAddressMap() const {
+   AddressTrackerAutoLock lock(*this, address_map_lock_);
+   return address_map_;
+@@ -260,6 +176,7 @@ bool AddressTrackerLinux::IsInterfaceIgnored(int inter
+   const char* interface_name = get_interface_name_(interface_index, buf);
+   return ignored_interfaces_.find(interface_name) != ignored_interfaces_.end();
+ }
++#endif // !OS_BSD
+ 
+ NetworkChangeNotifier::ConnectionType
+ AddressTrackerLinux::GetCurrentConnectionType() {
+@@ -318,6 +235,7 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
+                                         bool* address_changed,
+                                         bool* link_changed,
+                                         bool* tunnel_changed) {
++#if !defined(OS_FREEBSD)
+   DCHECK(buffer);
+   for (struct nlmsghdr* header = reinterpret_cast<struct nlmsghdr*>(buffer);
+        NLMSG_OK(header, length);
+@@ -414,6 +332,10 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
+         break;
      }
    }
 +#else  // !OS_FREEBSD
@@ -117,138 +141,8 @@
 +#endif // !OS_FREEBSD
  }
  
- void AddressTrackerLinux::AbortAndForceOnline() {
-@@ -250,25 +169,6 @@ void AddressTrackerLinux::AbortAndForceOnline() {
-   connection_type_initialized_cv_.Broadcast();
- }
- 
--AddressTrackerLinux::AddressMap AddressTrackerLinux::GetAddressMap() const {
--  AddressTrackerAutoLock lock(*this, address_map_lock_);
--  return address_map_;
--}
--
--std::unordered_set<int> AddressTrackerLinux::GetOnlineLinks() const {
--  AddressTrackerAutoLock lock(*this, online_links_lock_);
--  return online_links_;
--}
--
--bool AddressTrackerLinux::IsInterfaceIgnored(int interface_index) const {
--  if (ignored_interfaces_.empty())
--    return false;
--
--  char buf[IFNAMSIZ] = {0};
--  const char* interface_name = get_interface_name_(interface_index, buf);
--  return ignored_interfaces_.find(interface_name) != ignored_interfaces_.end();
--}
--
- NetworkChangeNotifier::ConnectionType
- AddressTrackerLinux::GetCurrentConnectionType() {
-   // http://crbug.com/125097
-@@ -326,102 +226,7 @@ void AddressTrackerLinux::HandleMessage(char* buffer,
-                                         bool* address_changed,
-                                         bool* link_changed,
-                                         bool* tunnel_changed) {
--  DCHECK(buffer);
--  for (struct nlmsghdr* header = reinterpret_cast<struct nlmsghdr*>(buffer);
--       NLMSG_OK(header, length);
--       header = NLMSG_NEXT(header, length)) {
--    switch (header->nlmsg_type) {
--      case NLMSG_DONE:
--        return;
--      case NLMSG_ERROR: {
--        const struct nlmsgerr* msg =
--            reinterpret_cast<struct nlmsgerr*>(NLMSG_DATA(header));
--        LOG(ERROR) << "Unexpected netlink error " << msg->error << ".";
--      } return;
--      case RTM_NEWADDR: {
--        IPAddress address;
--        bool really_deprecated;
--        struct ifaddrmsg* msg =
--            reinterpret_cast<struct ifaddrmsg*>(NLMSG_DATA(header));
--        if (IsInterfaceIgnored(msg->ifa_index))
--          break;
--        if (GetAddress(header, &address, &really_deprecated)) {
--          AddressTrackerAutoLock lock(*this, address_map_lock_);
--          // Routers may frequently (every few seconds) output the IPv6 ULA
--          // prefix which can cause the linux kernel to frequently output two
--          // back-to-back messages, one without the deprecated flag and one with
--          // the deprecated flag but both with preferred lifetimes of 0. Avoid
--          // interpretting this as an actual change by canonicalizing the two
--          // messages by setting the deprecated flag based on the preferred
--          // lifetime also.  http://crbug.com/268042
--          if (really_deprecated)
--            msg->ifa_flags |= IFA_F_DEPRECATED;
--          // Only indicate change if the address is new or ifaddrmsg info has
--          // changed.
--          auto it = address_map_.find(address);
--          if (it == address_map_.end()) {
--            address_map_.insert(it, std::make_pair(address, *msg));
--            *address_changed = true;
--          } else if (memcmp(&it->second, msg, sizeof(*msg))) {
--            it->second = *msg;
--            *address_changed = true;
--          }
--        }
--      } break;
--      case RTM_DELADDR: {
--        IPAddress address;
--        const struct ifaddrmsg* msg =
--            reinterpret_cast<struct ifaddrmsg*>(NLMSG_DATA(header));
--        if (IsInterfaceIgnored(msg->ifa_index))
--          break;
--        if (GetAddress(header, &address, NULL)) {
--          AddressTrackerAutoLock lock(*this, address_map_lock_);
--          if (address_map_.erase(address))
--            *address_changed = true;
--        }
--      } break;
--      case RTM_NEWLINK: {
--        const struct ifinfomsg* msg =
--            reinterpret_cast<struct ifinfomsg*>(NLMSG_DATA(header));
--        if (IsInterfaceIgnored(msg->ifi_index))
--          break;
--        if (IgnoreWirelessChange(header, msg)) {
--          VLOG(2) << "Ignoring RTM_NEWLINK message";
--          break;
--        }
--        if (!(msg->ifi_flags & IFF_LOOPBACK) && (msg->ifi_flags & IFF_UP) &&
--            (msg->ifi_flags & IFF_LOWER_UP) && (msg->ifi_flags & IFF_RUNNING)) {
--          AddressTrackerAutoLock lock(*this, online_links_lock_);
--          if (online_links_.insert(msg->ifi_index).second) {
--            *link_changed = true;
--            if (IsTunnelInterface(msg->ifi_index))
--              *tunnel_changed = true;
--          }
--        } else {
--          AddressTrackerAutoLock lock(*this, online_links_lock_);
--          if (online_links_.erase(msg->ifi_index)) {
--            *link_changed = true;
--            if (IsTunnelInterface(msg->ifi_index))
--              *tunnel_changed = true;
--          }
--        }
--      } break;
--      case RTM_DELLINK: {
--        const struct ifinfomsg* msg =
--            reinterpret_cast<struct ifinfomsg*>(NLMSG_DATA(header));
--        if (IsInterfaceIgnored(msg->ifi_index))
--          break;
--        AddressTrackerAutoLock lock(*this, online_links_lock_);
--        if (online_links_.erase(msg->ifi_index)) {
--          *link_changed = true;
--          if (IsTunnelInterface(msg->ifi_index))
--            *tunnel_changed = true;
--        }
--      } break;
--      default:
--        break;
--    }
--  }
-+  NOTIMPLEMENTED();
- }
- 
- void AddressTrackerLinux::OnFileCanReadWithoutBlocking(int fd) {
-@@ -452,31 +257,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
+ void AddressTrackerLinux::OnFileCanReadWithoutBlocking() {
+@@ -441,31 +363,7 @@ bool AddressTrackerLinux::IsTunnelInterfaceName(const 
  }
  
  void AddressTrackerLinux::UpdateCurrentConnectionType() {

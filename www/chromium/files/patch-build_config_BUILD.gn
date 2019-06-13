@@ -1,6 +1,6 @@
---- build/config/BUILD.gn.orig	2019-04-30 22:22:28 UTC
+--- build/config/BUILD.gn.orig	2019-06-04 18:55:15 UTC
 +++ build/config/BUILD.gn
-@@ -162,7 +162,7 @@ config("debug") {
+@@ -163,7 +163,7 @@ config("debug") {
        # builds, and we have to tell it to turn it off.
        defines += [ "_HAS_ITERATOR_DEBUGGING=0" ]
      }
@@ -9,7 +9,7 @@
      # Enable libstdc++ debugging facilities to help catch problems early, see
      # http://crbug.com/65151 .
      # TODO(phajdan.jr): Should we enable this for all of POSIX?
-@@ -263,9 +263,7 @@ config("default_libs") {
+@@ -264,9 +264,7 @@ config("default_libs") {
      ]
    } else if (is_linux) {
      libs = [
@@ -19,7 +19,7 @@
      ]
    }
  }
-@@ -346,7 +344,7 @@ config("executable_config") {
+@@ -354,7 +352,7 @@ config("executable_config") {
        "//build/config/ios:ios_dynamic_flags",
        "//build/config/ios:ios_executable_flags",
      ]

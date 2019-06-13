@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.cc.orig	2019-04-30 22:22:37 UTC
+--- chrome/common/chrome_paths.cc.orig	2019-06-04 18:55:18 UTC
 +++ chrome/common/chrome_paths.cc
 @@ -52,21 +52,21 @@ const base::FilePath::CharType kPepperFlashSystemBaseD
      FILE_PATH_LITERAL("Internet Plug-Ins/PepperFlashPlayer");
@@ -34,7 +34,7 @@
        if (!GetUserDownloadsDirectorySafe(&cur))
          return false;
        break;
-@@ -459,10 +459,12 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -459,17 +459,19 @@ bool PathProvider(int key, base::FilePath* result) {
        if (!base::PathExists(cur))  // We don't want to create this
          return false;
        break;
@@ -48,15 +48,14 @@
  #else
        cur = base::FilePath(FILE_PATH_LITERAL("/etc/chromium/policies"));
  #endif
-@@ -470,7 +472,7 @@ bool PathProvider(int key, base::FilePath* result) {
+       break;
      }
  #endif
- #if defined(OS_CHROMEOS) || (defined(OS_LINUX) && defined(CHROMIUM_BUILD)) || \
--    defined(OS_MACOSX)
-+    defined(OS_MACOSX) || defined(OS_BSD)
+-#if defined(OS_CHROMEOS) || (defined(OS_LINUX) && defined(CHROMIUM_BUILD)) || \
++#if defined(OS_CHROMEOS) || (defined(OS_LINUX) && defined(CHROMIUM_BUILD)) || defined(OS_BSD) || \
+     defined(OS_MACOSX)
      case chrome::DIR_USER_EXTERNAL_EXTENSIONS: {
        if (!base::PathService::Get(chrome::DIR_USER_DATA, &cur))
-         return false;
 @@ -478,7 +480,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
      }

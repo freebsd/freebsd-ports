@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_view.cc.orig	2019-04-30 22:22:36 UTC
+--- chrome/browser/ui/views/frame/browser_view.cc.orig	2019-06-04 18:55:18 UTC
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -1504,7 +1504,7 @@ void BrowserView::UserChangedTheme(BrowserThemeChangeT
+@@ -1502,7 +1502,7 @@ void BrowserView::UserChangedTheme(BrowserThemeChangeT
    // light to dark mode.
    const bool should_use_native_frame = frame_->ShouldUseNativeFrame();
    bool must_regenerate_frame;

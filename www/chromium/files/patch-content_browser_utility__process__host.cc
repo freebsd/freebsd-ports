@@ -1,6 +1,6 @@
---- content/browser/utility_process_host.cc.orig	2019-05-04 09:00:43 UTC
+--- content/browser/utility_process_host.cc.orig	2019-06-04 18:55:23 UTC
 +++ content/browser/utility_process_host.cc
-@@ -209,7 +209,7 @@ UtilityProcessHost::UtilityProcessHost(
+@@ -213,7 +213,7 @@ UtilityProcessHost::UtilityProcessHost(
      : client_(client),
        client_task_runner_(client_task_runner),
        sandbox_type_(service_manager::SANDBOX_TYPE_UTILITY),

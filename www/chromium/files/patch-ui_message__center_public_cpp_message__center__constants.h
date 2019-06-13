@@ -1,6 +1,6 @@
---- ui/message_center/public/cpp/message_center_constants.h.orig	2019-03-11 22:01:19 UTC
+--- ui/message_center/public/cpp/message_center_constants.h.orig	2019-06-04 18:55:50 UTC
 +++ ui/message_center/public/cpp/message_center_constants.h
-@@ -101,7 +101,7 @@ const int kButtonHorizontalPadding = 16;   // In DIPs.
+@@ -105,7 +105,7 @@ const int kButtonHorizontalPadding = 16;   // In DIPs.
  const int kButtonIconTopPadding = 11;      // In DIPs.
  const int kButtonIconToTitlePadding = 16;  // In DIPs.
  

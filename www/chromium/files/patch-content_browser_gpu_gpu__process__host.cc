@@ -1,6 +1,6 @@
---- content/browser/gpu/gpu_process_host.cc.orig	2019-05-04 09:09:15 UTC
+--- content/browser/gpu/gpu_process_host.cc.orig	2019-06-04 18:55:23 UTC
 +++ content/browser/gpu/gpu_process_host.cc
-@@ -1071,7 +1071,7 @@ bool GpuProcessHost::LaunchGpuProcess() {
+@@ -1082,7 +1082,7 @@ bool GpuProcessHost::LaunchGpuProcess() {
    std::unique_ptr<base::CommandLine> cmd_line =
        std::make_unique<base::CommandLine>(base::CommandLine::NO_PROGRAM);
  #else

@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/accelerator_table.cc.orig	2019-03-11 22:00:54 UTC
+--- chrome/browser/ui/views/accelerator_table.cc.orig	2019-06-04 18:55:18 UTC
 +++ chrome/browser/ui/views/accelerator_table.cc
 @@ -50,7 +50,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_S, ui::EF_PLATFORM_ACCELERATOR, IDC_SAVE_PAGE},
@@ -27,8 +27,8 @@
      {ui::VKEY_B, ui::EF_SHIFT_DOWN | ui::EF_PLATFORM_ACCELERATOR,
       IDC_SHOW_BOOKMARK_BAR},
      {ui::VKEY_OEM_MINUS, ui::EF_PLATFORM_ACCELERATOR, IDC_ZOOM_MINUS},
-@@ -122,14 +122,14 @@ const AcceleratorMapping kAcceleratorMap[] = {
-     {ui::VKEY_F11, ui::EF_NONE, IDC_FULLSCREEN},
+@@ -124,14 +124,14 @@ const AcceleratorMapping kAcceleratorMap[] = {
+      IDC_SHOW_AVATAR_MENU},
  
    // Platform-specific key maps.
 -#if defined(OS_LINUX)

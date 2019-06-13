@@ -1,5 +1,5 @@
---- ui/gl/gl_surface_glx.cc.orig	2019-05-28 10:26:51.705074000 +0200
-+++ ui/gl/gl_surface_glx.cc	2019-05-28 10:44:19.461809000 +0200
+--- ui/gl/gl_surface_glx.cc.orig	2019-06-04 18:55:50 UTC
++++ ui/gl/gl_surface_glx.cc
 @@ -21,6 +21,7 @@
  #include "base/time/time.h"
  #include "base/trace_event/trace_event.h"
@@ -8,7 +8,7 @@
  #include "ui/events/platform/platform_event_source.h"
  #include "ui/gfx/x/x11.h"
  #include "ui/gfx/x/x11_connection.h"
-@@ -431,7 +432,9 @@
+@@ -431,7 +432,9 @@ bool GLSurfaceGLX::InitializeOneOff() {
    }
  
    const XVisualInfo& visual_info =
@@ -19,7 +19,7 @@
    g_visual = visual_info.visual;
    g_depth = visual_info.depth;
    g_colormap =
-@@ -581,18 +584,30 @@
+@@ -581,18 +584,30 @@ bool NativeViewGLSurfaceGLX::Initialize(GLSurfaceForma
    }
    size_ = gfx::Size(attributes.width, attributes.height);
  

@@ -1,6 +1,6 @@
---- third_party/pdfium/core/fxcrt/fx_system.h.orig	2019-03-11 22:08:02 UTC
+--- third_party/pdfium/core/fxcrt/fx_system.h.orig	2019-06-04 18:58:01 UTC
 +++ third_party/pdfium/core/fxcrt/fx_system.h
-@@ -41,7 +41,7 @@
+@@ -36,7 +36,7 @@
  #elif defined(_WIN64)
  #define _FX_OS_ _FX_OS_WIN64_
  #define _FX_PLATFORM_ _FX_PLATFORM_WINDOWS_

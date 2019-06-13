@@ -1,6 +1,6 @@
---- chromecast/browser/metrics/cast_metrics_service_client.cc.orig	2019-04-30 22:22:40 UTC
+--- chromecast/browser/metrics/cast_metrics_service_client.cc.orig	2019-06-04 18:55:20 UTC
 +++ chromecast/browser/metrics/cast_metrics_service_client.cc
-@@ -40,9 +40,9 @@
+@@ -38,9 +38,9 @@
  #include "content/public/common/content_switches.h"
  #include "services/network/public/cpp/shared_url_loader_factory.h"
  
@@ -12,7 +12,7 @@
  
  #if defined(OS_ANDROID)
  #include "chromecast/base/android/dumpstate_writer.h"
-@@ -62,10 +62,10 @@ const char kMetricsOldClientID[] = "user_experience_me
+@@ -60,10 +60,10 @@ const char kMetricsOldClientID[] = "user_experience_me
  const char kClientIdName[] = "Client ID";
  #else
  
@@ -26,8 +26,8 @@
  const struct ChannelMap {
    const char* chromecast_channel;
 @@ -280,19 +280,19 @@ CastMetricsServiceClient::CastMetricsServiceClient(
-     scoped_refptr<network::SharedURLLoaderFactory> url_loader_factory)
-     : pref_service_(pref_service),
+     : delegate_(delegate),
+       pref_service_(pref_service),
        client_info_loaded_(false),
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

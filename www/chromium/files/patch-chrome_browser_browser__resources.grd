@@ -1,6 +1,6 @@
---- chrome/browser/browser_resources.grd.orig	2019-04-30 22:22:32 UTC
+--- chrome/browser/browser_resources.grd.orig	2019-06-04 18:55:16 UTC
 +++ chrome/browser/browser_resources.grd
-@@ -81,7 +81,7 @@
+@@ -77,7 +77,7 @@
          <include name="IDR_DISCARDS_SORTED_TABLE_BEHAVIOR_JS" file="resources\discards\sorted_table_behavior.js" compress="gzip" type="BINDATA" />
          <include name="IDR_DISCARDS_WEBUI_GRAPH_DUMP_MOJOM_LITE_JS" file="${root_gen_dir}\services\resource_coordinator\public\mojom\webui_graph_dump.mojom-lite.js" compress="gzip" use_base_dir="false" type="BINDATA" />
        </if>
@@ -9,7 +9,7 @@
          <include name="IDR_BROWSER_SWITCHER_APP_HTML" file="resources\browser_switcher\app.html" compress="gzip" allowexternalscript="true" type="BINDATA" />
          <include name="IDR_BROWSER_SWITCHER_APP_JS" file="resources\browser_switcher\app.js" compress="gzip" type="BINDATA" />
          <include name="IDR_BROWSER_SWITCHER_BROWSER_SWITCHER_PROXY_HTML" file="resources\browser_switcher\browser_switcher_proxy.html" compress="gzip" allowexternalscript="true" type="BINDATA" />
-@@ -689,7 +689,7 @@
+@@ -690,7 +690,7 @@
          <include name="IDR_WELCOME_WIN10_PIN_WEBP" file="resources\welcome\pin.webp" type="BINDATA" />
        </if>
        <include name="IDR_SSL_ERROR_ASSISTANT_PB" file="${root_gen_dir}/chrome/browser/resources/ssl/ssl_error_assistant/ssl_error_assistant.pb" use_base_dir="false" type="BINDATA" />

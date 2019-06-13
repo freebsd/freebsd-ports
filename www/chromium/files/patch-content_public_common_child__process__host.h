@@ -1,6 +1,6 @@
---- content/public/common/child_process_host.h.orig	2019-03-11 22:00:58 UTC
+--- content/public/common/child_process_host.h.orig	2019-06-04 18:55:23 UTC
 +++ content/public/common/child_process_host.h
-@@ -47,7 +47,7 @@ class CONTENT_EXPORT ChildProcessHost : public IPC::Se
+@@ -51,7 +51,7 @@ class CONTENT_EXPORT ChildProcessHost : public IPC::Se
      // No special behavior requested.
      CHILD_NORMAL = 0,
  
@@ -9,7 +9,7 @@
      // Indicates that the child execed after forking may be execced from
      // /proc/self/exe rather than using the "real" app path. This prevents
      // autoupdate from confusing us if it changes the file out from under us.
-@@ -56,7 +56,7 @@ class CONTENT_EXPORT ChildProcessHost : public IPC::Se
+@@ -60,7 +60,7 @@ class CONTENT_EXPORT ChildProcessHost : public IPC::Se
      // gdb). In this case, you'd use GetChildPath to get the real executable
      // file name, and then prepend the GDB command to the command line.
      CHILD_ALLOW_SELF = 1 << 0,

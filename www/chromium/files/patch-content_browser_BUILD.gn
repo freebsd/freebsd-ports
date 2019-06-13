@@ -1,6 +1,6 @@
---- content/browser/BUILD.gn.orig	2019-04-30 22:22:45 UTC
+--- content/browser/BUILD.gn.orig	2019-06-04 18:55:22 UTC
 +++ content/browser/BUILD.gn
-@@ -1959,11 +1959,6 @@ jumbo_source_set("browser") {
+@@ -1982,11 +1982,6 @@ jumbo_source_set("browser") {
        "tracing/cros_tracing_agent.h",
      ]
      deps += [ "//chromeos/resources" ]

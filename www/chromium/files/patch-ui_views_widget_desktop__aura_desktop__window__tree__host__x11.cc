@@ -1,7 +1,7 @@
---- ui/views/widget/desktop_aura/desktop_window_tree_host_x11.cc.orig	2019-05-28 10:19:21.517467000 +0200
-+++ ui/views/widget/desktop_aura/desktop_window_tree_host_x11.cc	2019-05-28 10:22:46.373548000 +0200
-@@ -1440,24 +1440,15 @@
-   if (swa.override_redirect)
+--- ui/views/widget/desktop_aura/desktop_window_tree_host_x11.cc.orig	2019-06-04 18:55:50 UTC
++++ ui/views/widget/desktop_aura/desktop_window_tree_host_x11.cc
+@@ -1423,24 +1423,15 @@ void DesktopWindowTreeHostX11::InitX11Window(
+   if (override_redirect_)
      attribute_mask |= CWOverrideRedirect;
  
 -  bool enable_transparent_visuals;

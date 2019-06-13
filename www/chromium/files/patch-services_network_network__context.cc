@@ -1,6 +1,6 @@
---- services/network/network_context.cc.orig	2019-04-30 22:22:56 UTC
+--- services/network/network_context.cc.orig	2019-06-04 18:55:28 UTC
 +++ services/network/network_context.cc
-@@ -133,7 +133,7 @@
+@@ -132,7 +132,7 @@
  #endif  // defined(USE_NSS_CERTS)
  
  #if defined(OS_ANDROID) || defined(OS_FUCHSIA) || \
@@ -18,7 +18,7 @@
      net::ShutdownGlobalCertNetFetcher();
  #endif
    }
-@@ -1747,7 +1747,7 @@ URLRequestContextOwner NetworkContext::ApplyContextPar
+@@ -1764,7 +1764,7 @@ URLRequestContextOwner NetworkContext::ApplyContextPar
  
      net::CookieCryptoDelegate* crypto_delegate = nullptr;
      if (params_->enable_encrypted_cookies) {
@@ -27,7 +27,7 @@
        DCHECK(network_service_->os_crypt_config_set())
            << "NetworkService::SetCryptConfig must be called before creating a "
               "NetworkContext with encrypted cookies.";
-@@ -2069,7 +2069,7 @@ URLRequestContextOwner NetworkContext::ApplyContextPar
+@@ -2090,7 +2090,7 @@ URLRequestContextOwner NetworkContext::ApplyContextPar
      net::SetURLRequestContextForNSSHttpIO(result.url_request_context.get());
  #endif
  #if defined(OS_ANDROID) || defined(OS_FUCHSIA) || \

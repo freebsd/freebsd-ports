@@ -1,5 +1,5 @@
---- ui/base/ime/input_method_initializer.cc.orig	2019-03-11 22:01:19 UTC
-+++ ui/base/ime/input_method_initializer.cc
+--- ui/base/ime/init/input_method_initializer.cc.orig	2019-06-04 18:55:49 UTC
++++ ui/base/ime/init/input_method_initializer.cc
 @@ -8,7 +8,7 @@
  
  #if defined(OS_CHROMEOS)
@@ -32,7 +32,7 @@
  #if defined(OS_CHROMEOS)
    IMEBridge::Shutdown();
 -#elif defined(USE_AURA) && defined(OS_LINUX)
-+#elif defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD)) 
++#elif defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
    const LinuxInputMethodContextFactory* factory =
        LinuxInputMethodContextFactory::instance();
    CHECK(!factory || factory == g_linux_input_method_context_factory_for_testing)

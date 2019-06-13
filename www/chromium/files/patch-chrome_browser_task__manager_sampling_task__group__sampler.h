@@ -1,4 +1,4 @@
---- chrome/browser/task_manager/sampling/task_group_sampler.h.orig	2019-03-11 22:00:54 UTC
+--- chrome/browser/task_manager/sampling/task_group_sampler.h.orig	2019-06-04 18:55:18 UTC
 +++ chrome/browser/task_manager/sampling/task_group_sampler.h
 @@ -32,9 +32,9 @@ class TaskGroupSampler : public base::RefCountedThread
    using OnCpuRefreshCallback = base::Callback<void(double)>;
@@ -36,7 +36,7 @@
    bool RefreshProcessPriority();
  
    // The process that holds the handle that we own so that we can use it for
-@@ -80,9 +80,9 @@ class TaskGroupSampler : public base::RefCountedThread
+@@ -84,9 +84,9 @@ class TaskGroupSampler : public base::RefCountedThread
    const OnCpuRefreshCallback on_cpu_refresh_callback_;
    const OnSwappedMemRefreshCallback on_swapped_mem_refresh_callback_;
    const OnIdleWakeupsCallback on_idle_wakeups_callback_;

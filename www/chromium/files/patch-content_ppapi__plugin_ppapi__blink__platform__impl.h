@@ -1,4 +1,4 @@
---- content/ppapi_plugin/ppapi_blink_platform_impl.h.orig	2019-03-11 22:00:58 UTC
+--- content/ppapi_plugin/ppapi_blink_platform_impl.h.orig	2019-06-04 18:55:23 UTC
 +++ content/ppapi_plugin/ppapi_blink_platform_impl.h
 @@ -13,7 +13,7 @@
  #include "build/build_config.h"
@@ -9,7 +9,7 @@
  #include "components/services/font/public/cpp/font_loader.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  #endif
-@@ -42,11 +42,11 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
+@@ -41,11 +41,11 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
                           bool sync_dir) override;
  
   private:

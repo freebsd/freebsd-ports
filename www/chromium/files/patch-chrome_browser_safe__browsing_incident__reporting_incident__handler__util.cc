@@ -1,8 +1,8 @@
---- chrome/browser/safe_browsing/incident_reporting/incident_handler_util.cc.orig	2019-03-11 22:00:54 UTC
+--- chrome/browser/safe_browsing/incident_reporting/incident_handler_util.cc.orig	2019-06-04 18:55:18 UTC
 +++ chrome/browser/safe_browsing/incident_reporting/incident_handler_util.cc
 @@ -8,7 +8,12 @@
  
- #include "base/hash.h"
+ #include "base/hash/hash.h"
  #include "base/logging.h"
 +//XXX(rene) needs shim headers?
 +#if defined(USE_SYSTEM_PROTOBUF)

@@ -1,14 +1,15 @@
---- ui/gfx/native_pixmap_handle.cc.orig	2019-04-30 22:23:42 UTC
+--- ui/gfx/native_pixmap_handle.cc.orig	2019-06-04 18:55:50 UTC
 +++ ui/gfx/native_pixmap_handle.cc
-@@ -4,14 +4,14 @@
+@@ -8,7 +8,7 @@
  
- #include "ui/gfx/native_pixmap_handle.h"
+ #include "build/build_config.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
  #include <drm_fourcc.h>
  #include "base/posix/eintr_wrapper.h"
  #endif
+@@ -20,7 +20,7 @@
  
  namespace gfx {
  
@@ -17,20 +18,30 @@
  static_assert(NativePixmapPlane::kNoModifier == DRM_FORMAT_MOD_INVALID,
                "gfx::NativePixmapPlane::kNoModifier should be an alias for"
                "DRM_FORMAT_MOD_INVALID");
-@@ -36,7 +36,7 @@ NativePixmapHandle::NativePixmapHandle(const NativePix
- 
- NativePixmapHandle::~NativePixmapHandle() {}
- 
+@@ -32,7 +32,7 @@ NativePixmapPlane::NativePixmapPlane()
+ NativePixmapPlane::NativePixmapPlane(int stride,
+                                      int offset,
+                                      uint64_t size,
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
+                                      base::ScopedFD fd,
+ #elif defined(OS_FUCHSIA)
+                                      zx::vmo vmo,
+@@ -42,7 +42,7 @@ NativePixmapPlane::NativePixmapPlane(int stride,
+       offset(offset),
+       size(size),
+       modifier(modifier)
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+       ,
+       fd(std::move(fd))
+ #elif defined(OS_FUCHSIA)
+@@ -70,7 +70,7 @@ NativePixmapHandle& NativePixmapHandle::operator=(Nati
  NativePixmapHandle CloneHandleForIPC(const NativePixmapHandle& handle) {
    NativePixmapHandle clone;
-   std::vector<base::ScopedFD> scoped_fds;
-@@ -53,6 +53,6 @@ NativePixmapHandle CloneHandleForIPC(const NativePixma
-   clone.planes = handle.planes;
-   return clone;
- }
--#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_LINUX) || defined(OS_BSD)
- 
- }  // namespace gfx
+   for (auto& plane : handle.planes) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+     DCHECK(plane.fd.is_valid());
+     base::ScopedFD fd_dup(HANDLE_EINTR(dup(plane.fd.get())));
+     if (!fd_dup.is_valid()) {
