@@ -38,6 +38,17 @@
  
      EXPECT_CALL(callback_, OnError()).Times(2);
  
+--- src/3rdparty/chromium/third_party/libjingle_xmpp/task_runner/taskrunner.cc.orig	2019-03-07 09:23:57 UTC
++++ src/3rdparty/chromium/third_party/libjingle_xmpp/task_runner/taskrunner.cc
+@@ -95,7 +95,7 @@ void TaskRunner::InternalRunTasks(bool in_destructor) 
+   std::vector<Task *>::iterator it;
+   it = std::remove(tasks_.begin(),
+                    tasks_.end(),
+-                   reinterpret_cast<Task *>(NULL));
++                   static_cast<Task *>(NULL));
+ 
+   tasks_.erase(it, tasks_.end());
+ 
 --- src/3rdparty/chromium/third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc.orig	2018-11-13 18:25:11 UTC
 +++ src/3rdparty/chromium/third_party/sfntly/src/cpp/src/sfntly/table/core/cmap_table.cc
 @@ -439,7 +439,7 @@ CMapTable::CMapFormat0::Builder::Builder(
