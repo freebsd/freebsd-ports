@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.28.2
+PORTVERSION=	0.29.1
 CATEGORIES?=	mail
 MASTER_SITES=	https://notmuchmail.org/releases/
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/${WRKSRC_SUBDIR:C/[^\/]+/../g}/COPYING-GPL-3
 
 .ifndef MASTERDIR
-LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \
+LIB_DEPENDS=	libgmime-3.0.so:mail/gmime30 \
 		libxapian.so:databases/xapian-core \
 		libtalloc.so:devel/talloc
 TEST_DEPENDS=	bash:shells/bash \
@@ -30,7 +30,11 @@ TEST_DEPENDS=	bash:shells/bash \
 USES=		compiler:c++11-lang gmake gnome pkgconfig python:build,test
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+.endif
 
+USES+=		tar:xz
+
+.ifndef MASTERDIR
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--infodir=${PREFIX}/${INFO_PATH} \
 		--mandir=${MANPREFIX}/man \
@@ -60,20 +64,17 @@ DOXYGEN_CONFIGURE_WITH=	api-docs
 MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 MANPAGES_CONFIGURE_WITH=	docs
 
-post-patch:
 # Avoid conflict with C++20 <version> by ignoring <...> under WRKSRC
+post-patch:
 	@${REINPLACE_CMD} -i .c++20 's/-I$$(srcdir)/-iquote$$(srcdir)/' \
 		${WRKSRC}/*/Makefile.local
 
-# Install bash completions without incurring a dependcy on
-# shells/bash-completion.  Also avoid automatic installation of
-# info pages on FreeBSD 10.
+# Install bash completions without incurring a dependency on
+# shells/bash-completion.
 post-configure:
 	${REINPLACE_CMD} \
 		-e '/^BASH_ABSOLUTE[[:blank:]]*=/s|=.*|=${LOCALBASE}/bin/bash|' \
 		-e '/^HAVE_BASH[[:blank:]]*=/s/=.*/=1/' \
-		-e '/^HAVE_INSTALL_INFO[[:blank:]]*=/s/=.*/=0/' \
-		-e '/^HAVE_MAKEINFO[[:blank:]]*=/s/=.*/=0/' \
 		-e '/^WITH_BASH[[:blank:]]*=/s/=.*/=1/' \
 		${WRKSRC}/Makefile.config
 
@@ -81,7 +82,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notmuch
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotmuch.so.?*.?*.?*
 
-# keep poudriere testport happy
+# Keep poudriere-testport(8) happy.
 post-install-MANPAGES-on:
 	@${RM} ${STAGEDIR}${MANPREFIX}/man/man1/notmuch-emacs-mua.1.gz
 .endif
