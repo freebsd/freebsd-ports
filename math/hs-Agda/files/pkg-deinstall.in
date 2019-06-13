@@ -1,9 +1,0 @@
-#!/bin/sh
-
-PKG_DATADIR=%%DATADIR%%
-
-if [ "$2" = "POST-DEINSTALL" ]; then
-    for ai in $(find ${PKG_DATADIR}/lib/prim/Agda -name '*.agdai'); do
-        rm $ai
-    done
-fi

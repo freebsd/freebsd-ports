@@ -1,9 +1,0 @@
-#!/bin/sh
-
-PKG_DATADIR=%%DATADIR%%
-
-if [ "$2" = "POST-INSTALL" ]; then
-    for a in $(find ${PKG_DATADIR}/lib/prim/Agda -name '*.agda'); do
-        ${PKG_PREFIX}/bin/agda $a
-    done
-fi
