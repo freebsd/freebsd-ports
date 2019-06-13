@@ -23,8 +23,8 @@ LIB_DEPENDS=	liblmdb.so:databases/lmdb \
 		libyajl.so:devel/yajl
 RUN_DEPENDS=	sie-nmsg>0:net/sie-nmsg
 
-USES=		autoreconf gmake libedit libtool pathfix pkgconfig shebangfix \
-		ssl
+USES=		autoreconf compiler gmake libedit libtool pathfix \
+		pkgconfig shebangfix ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
@@ -53,7 +53,12 @@ CONFIGURE_ENV+=	libcrypto_CFLAGS="-I${OPENSSLINC}"	\
 
 post-extract:
 	(${ECHO} "For libmy/b64_encode.c:" ; \
-	 ${SED} -ne "1,/\*\//p" ${WRKSRC}/libmy/b64_encode.c ) > ${LICENSE_FILE_PD}
+	${SED} -ne "1,/\*\//p" ${WRKSRC}/libmy/b64_encode.c ) > ${LICENSE_FILE_PD}
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+pre-configure:
+	${REINPLACE_CMD} -e 's|-Wno-unused-command-line-argument||' ${WRKSRC}/configure.ac
+.endif
 
 post-install-DOXYGEN-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
