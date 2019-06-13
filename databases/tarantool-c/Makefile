@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libmsgpuck.so:devel/msgpuck
 
-USES=		cmake
+USES=		cmake compiler
 
 CMAKE_OFF=	ENABLE_BUNDLED_DOCS ENABLE_BUNDLED_MSGPUCK
 
@@ -23,4 +23,10 @@ GH_TAGNAME=	d93096a
 post-patch:
 	@${GREP} -lr 'msgpuck/msgpuck.h' ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's|msgpuck/msgpuck.h|msgpuck.h|'
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-tnt_CMakeLists.txt
+.endif
+
+.include <bsd.port.post.mk>
