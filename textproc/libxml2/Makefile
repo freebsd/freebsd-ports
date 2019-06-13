@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxml2
-PORTVERSION=	2.9.8
+PORTVERSION=	2.9.9
 PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	http://xmlsoft.org/sources/
