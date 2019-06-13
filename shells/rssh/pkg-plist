@@ -1,5 +1,0 @@
-@shell bin/rssh
-man/man1/rssh.1.gz
-man/man5/rssh.conf.5.gz
-etc/rssh.conf.default.dist
-libexec/rssh_chroot_helper
