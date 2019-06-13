@@ -28,6 +28,9 @@
 #			and "-${opt_CABAL_FLAGS}" otherwise.
 #  opt_EXECUTABLES	Variant of EXECUTABLES to be used with options framework.
 #
+#  FOO_DATADIR_VARS     Additional environment vars to add to FOO executable's
+#                       wrapper script.
+#
 # MAINTAINER: haskell@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_CABAL_MK)
@@ -134,10 +137,20 @@ do-build:
 
 .    if !target(do-install)
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/cabal
 .      for exe in ${EXECUTABLES}
 	${INSTALL_PROGRAM} \
 		$$(find ${WRKSRC}/dist-newstyle -name ${exe} -type f -perm +111) \
-		${STAGEDIR}${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/libexec/cabal/${exe}
+	${ECHO} '#!/bin/sh' > ${STAGEDIR}${PREFIX}/bin/${exe}
+	${ECHO} '' >> ${STAGEDIR}${PREFIX}/bin/${exe}
+	${ECHO} 'export ${exe:S/-/_/}_datadir=${DATADIR}' >> ${STAGEDIR}${PREFIX}/bin/${exe}
+.         for dep in ${${exe}_DATADIR_VARS}
+	${ECHO} 'export ${dep:S/-/_/}_datadir=${DATADIR}' >> ${STAGEDIR}${PREFIX}/bin/${exe}
+.         endfor
+	${ECHO} '' >> ${STAGEDIR}${PREFIX}/bin/${exe}
+	${ECHO} '${PREFIX}/libexec/cabal/${exe} $$*' >> ${STAGEDIR}${PREFIX}/bin/${exe}
+	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${exe}
 .      endfor
 .    endif
 
@@ -145,6 +158,7 @@ do-install:
 cabal-post-install-script:
 .      for exe in ${EXECUTABLES}
 		${ECHO_CMD} 'bin/${exe}' >> ${TMPPLIST}
+		${ECHO_CMD} 'libexec/cabal/${exe}' >> ${TMPPLIST}
 .      endfor
 .    endif
 

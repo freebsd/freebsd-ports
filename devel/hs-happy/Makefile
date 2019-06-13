@@ -3,6 +3,7 @@
 
 PORTNAME=	happy
 PORTVERSION=	1.19.10
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,5 +20,9 @@ OPTIONS_DEFINE=	EXAMPLES
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} $$(find ${WRKSRC} -name 'HappyTemplate*') ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	git-annex
 PORTVERSION=	7.20190129
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -123,55 +124,58 @@ CABAL_FLAGS=		torrentparser magicmime \
 			-benchmark -debuglocks
 
 EXECUTABLES=	git-annex
-#EXECUTABLES=	git-annex git-annex-shell git-remote-tor-annex
 
-MAN1PAGES=	git-annex-add.1 git-annex-expire.1 git-annex-lookupkey.1 \
-		git-annex-remotedaemon.1 git-annex-ungroup.1 \
-		git-annex-addunused.1 git-annex-find.1 git-annex-map.1 \
-		git-annex-repair.1 git-annex-uninit.1 git-annex-addurl.1 \
-		git-annex-findref.1 git-annex-matchexpression.1 \
-		git-annex-required.1 git-annex-unlock.1 git-annex-adjust.1 \
-		git-annex-fix.1 git-annex-matching-options.1 \
-		git-annex-resolvemerge.1 git-annex-untrust.1 \
-		git-annex-assistant.1 git-annex-forget.1 git-annex-merge.1 \
-		git-annex-rmurl.1 git-annex-unused.1 git-annex-calckey.1 \
-		git-annex-fromkey.1 git-annex-metadata.1 git-annex-schedule.1 \
-		git-annex-upgrade.1 git-annex-checkpresentkey.1 \
-		git-annex-fsck.1 git-annex-migrate.1 git-annex-semitrust.1 \
-		git-annex-vadd.1 git-annex-contentlocation.1 \
-		git-annex-fuzztest.1 git-annex-mirror.1 git-annex-setkey.1 \
-		git-annex-vcycle.1 git-annex-copy.1 git-annex-get.1 \
-		git-annex-move.1 git-annex-setpresentkey.1 \
-		git-annex-version.1 git-annex-dead.1 git-annex-group.1 \
-		git-annex-multicast.1 git-annex-shell.1 git-annex-vfilter.1 \
-		git-annex-describe.1 git-annex-groupwanted.1 \
-		git-annex-numcopies.1 git-annex-smudge.1 git-annex-vicfg.1 \
-		git-annex-diffdriver.1 git-annex-import.1 git-annex-p2p.1 \
-		git-annex-status.1 git-annex-view.1 git-annex-direct.1 \
-		git-annex-importfeed.1 git-annex-pre-commit.1 \
-		git-annex-sync.1 git-annex-vpop.1 git-annex-drop.1 \
-		git-annex-indirect.1 git-annex-preferred-content.1 \
-		git-annex-test.1 git-annex-wanted.1 git-annex-dropkey.1 \
-		git-annex-info.1 git-annex-proxy.1 git-annex-testremote.1 \
-		git-annex-watch.1 git-annex-dropunused.1 git-annex-init.1 \
-		git-annex-readpresentkey.1 git-annex-transferkey.1 \
-		git-annex-webapp.1 git-annex-edit.1 git-annex-initremote.1 \
-		git-annex-registerurl.1 git-annex-transferkeys.1 \
-		git-annex-whereis.1 git-annex-enable-tor.1 git-annex-list.1 \
-		git-annex-reinit.1 git-annex-trust.1 git-annex.1 \
-		git-annex-enableremote.1 git-annex-lock.1 \
-		git-annex-reinject.1 git-annex-unannex.1 \
-		git-remote-tor-annex.1 git-annex-examinekey.1 git-annex-log.1 \
-		git-annex-rekey.1 git-annex-undo.1
+MAN1PAGES=	git-annex-add git-annex-expire git-annex-lookupkey \
+		git-annex-remotedaemon git-annex-ungroup \
+		git-annex-addunused git-annex-find git-annex-map \
+		git-annex-repair git-annex-uninit git-annex-addurl \
+		git-annex-findref git-annex-matchexpression \
+		git-annex-required git-annex-unlock git-annex-adjust \
+		git-annex-fix git-annex-matching-options \
+		git-annex-resolvemerge git-annex-untrust \
+		git-annex-assistant git-annex-forget git-annex-merge \
+		git-annex-rmurl git-annex-unused git-annex-calckey \
+		git-annex-fromkey git-annex-metadata git-annex-schedule \
+		git-annex-upgrade git-annex-checkpresentkey \
+		git-annex-fsck git-annex-migrate git-annex-semitrust \
+		git-annex-vadd git-annex-contentlocation \
+		git-annex-fuzztest git-annex-mirror git-annex-setkey \
+		git-annex-vcycle git-annex-copy git-annex-get \
+		git-annex-move git-annex-setpresentkey \
+		git-annex-version git-annex-dead git-annex-group \
+		git-annex-multicast git-annex-shell git-annex-vfilter \
+		git-annex-describe git-annex-groupwanted \
+		git-annex-numcopies git-annex-smudge git-annex-vicfg \
+		git-annex-diffdriver git-annex-import git-annex-p2p \
+		git-annex-status git-annex-view git-annex-direct \
+		git-annex-importfeed git-annex-pre-commit \
+		git-annex-sync git-annex-vpop git-annex-drop \
+		git-annex-indirect git-annex-preferred-content \
+		git-annex-test git-annex-wanted git-annex-dropkey \
+		git-annex-info git-annex-proxy git-annex-testremote \
+		git-annex-watch git-annex-dropunused git-annex-init \
+		git-annex-readpresentkey git-annex-transferkey \
+		git-annex-webapp git-annex-edit git-annex-initremote \
+		git-annex-registerurl git-annex-transferkeys \
+		git-annex-whereis git-annex-enable-tor git-annex-list \
+		git-annex-reinit git-annex-trust git-annex \
+		git-annex-enableremote git-annex-lock \
+		git-annex-reinject git-annex-unannex \
+		git-remote-tor-annex git-annex-examinekey git-annex-log \
+		git-annex-rekey git-annex-undo
 
-PLIST_FILES=	bin/git-annex-shell bin/git-remote-tor-annex
+post-build:
+.for man in ${MAN1PAGES}
+	${WRKSRC}/Build/mdwn2man ${man} 1 ${WRKSRC}/doc/${man}.mdwn > ${WRKSRC}/doc/${man}.1
+.endfor
+
+post-install:
+.for man in ${MAN1PAGES}
+	${INSTALL_MAN} ${WRKSRC}/doc/${man}.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+.endfor
 
 post-stage:
-	${LN} -sf ${PREFIX}/bin/git-annex ${STAGEDIR}${PREFIX}/bin/git-annex-shell
-	${LN} -sf ${PREFIX}/bin/git-annex ${STAGEDIR}${PREFIX}/bin/git-remote-tor-annex
-
-# .for man in ${MAN1PAGES}
-# 	${INSTALL_MAN} ${WRKSRC}/${man} ${STAGEDIR}${MANPREFIX}/man/man1/
-# .endfor
+	${LN} -sf git-annex ${STAGEDIR}${PREFIX}/bin/git-annex-shell
+	${LN} -sf git-annex ${STAGEDIR}${PREFIX}/bin/git-remote-tor-annex
 
 .include <bsd.port.mk>

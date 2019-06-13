@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandoc
-PORTVERSION=	2.7.1
-PORTREVISION=	1
+PORTVERSION=	2.7.2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,7 +13,6 @@ LICENSE=	GPLv2
 USES=		cabal
 
 OPTIONS_DEFINE=		EMBED_DATA TRYPANDOC
-OPTIONS_DEFAULT=	EMBED_DATA
 
 EMBED_DATA_DESC=	Embed data files in binary for relocatable executable
 EMBED_DATA_CABAL_FLAGS=	embed_data_files
@@ -64,9 +62,8 @@ USE_CABAL=	Glob-0.10.0 HTTP-4000.3.12_2 HsYAML-0.1.1.3 JuicyPixels-3.3.3_1 \
 
 CABAL_FLAGS=	-static derive_json_via_th
 
-PLIST_FILES=	man/man1/pandoc.1.gz
-
 post-install:
+	cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/man/pandoc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

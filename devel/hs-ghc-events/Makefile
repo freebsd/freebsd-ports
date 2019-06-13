@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghc-events
-PORTVERSION=	0.8.0.1
-PORTREVISION=	2
+PORTVERSION=	0.9.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
