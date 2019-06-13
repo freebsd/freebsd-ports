@@ -19,7 +19,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 RUN_DEPENDS+=	dtplite:devel/tcllib
 
 NO_ARCH?=	yes
-USES+=		pgsql:9.1+ tcl:85+
+USES+=		pgsql:9.1+ tcl
 WANT_PGSQL+=	pgtcl
 
 SLAVEDIRS=	net-mgmt/netmagis-common \

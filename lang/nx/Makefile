@@ -15,7 +15,7 @@ LICENSE=	MIT
 
 OPTIONS_DEFINE=	DOCS
 
-USES+=		gmake tcl:85+,tea
+USES+=		gmake tcl:tea
 USE_LDCONFIG=	yes
 TEST_TARGET=	test
 PLIST_SUB+=	PKGNAME=${DISTNAME}

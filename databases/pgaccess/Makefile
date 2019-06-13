@@ -14,7 +14,7 @@ LICENSE=	BSD4CLAUSE
 
 RUN_DEPENDS=	${LOCALBASE}/lib/pgtcl/pkgIndex.tcl:databases/pgtcl
 
-USES=		pgsql tk:85+ tar:xz
+USES=		pgsql tk tar:xz
 
 NO_ARCH=	yes
 
