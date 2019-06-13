@@ -8,8 +8,6 @@
 # - We are using several stub files, especially in Chromium's base/ and net/
 #   layers. We should look at implementing the missing bits instead.
 # - We are currently not using any sandboxing mechanism.
-# - We are disabling support for features such as WebRTC. We need to see what
-#   it would take to properly support them.
 # - We need to see if more "use_system_<FOO>" flags can be passed.
 # - The process of porting QtWebEngine needs to be documented so we can move to
 #   newer releases more easily.
@@ -20,6 +18,7 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -85,7 +84,7 @@ USE_XORG=	x11 xcb xcomposite xcursor xext xi xorgproto \
 
 USE_LDCONFIG=	${QT_LIBDIR}
 
-QMAKE_CONFIGURE_ARGS=	-proprietary-codecs -system-ffmpeg -disable-webrtc
+QMAKE_CONFIGURE_ARGS=	-proprietary-codecs -system-ffmpeg
 
 # We could just set it to an empty string as well. "all" does not account for
 # dependencies correctly in the generated Makefiles, use the right target here.

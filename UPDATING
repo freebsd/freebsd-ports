@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190613:
+  AFFECTS: users of www/qt5-webengine
+  AUTHOR: kai@FreeBSD.org
+
+  Users that upgrade www/qt5-webengine without using pkg/poudriere might
+  experience failures due to conflicts with the installed version of 5.12.2.
+
+  In that case, pkg delete -f the qt5-webengine package before building
+  the updated version.
+
 20190611:
   AFFECTS: users of net/routinator
   AUTHOR: rodrigo@FreeBSD.org
