@@ -2,7 +2,7 @@
 
 PORTNAME=	bytestring-nums
 PORTVERSION=	0.3.6
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

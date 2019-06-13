@@ -1,6 +1,6 @@
-TIMESTAMP = 1553705725
-SHA256 (cabal/xmobar-0.29.4.tar.gz) = 59378f117d41dbf5312bd1eaaf7b2d82d09e95652c6d777b64e300de2fd17122
-SIZE (cabal/xmobar-0.29.4.tar.gz) = 115342
+TIMESTAMP = 1559929281
+SHA256 (cabal/xmobar-0.29.5.tar.gz) = 15fc38acd2ff62d44a899bcd243af9b166e97291c3d6e23a34d2aa1df295b04c
+SIZE (cabal/xmobar-0.29.5.tar.gz) = 115733
 SHA256 (cabal/X11-1.9/X11-1.9.tar.gz) = 10138e863d8c6f860aad1755a6f1a36949cc02d83e5afacf6677fb3999f10db9
 SIZE (cabal/X11-1.9/X11-1.9.tar.gz) = 191779
 SHA256 (cabal/X11-xft-0.3.1/X11-xft-0.3.1.tar.gz) = 4eba3fee62570e06447654030a62fb55f19587884bc2cef77a9c3b2c3458f8d1

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hoogle
-PORTVERSION=	5.0.17.4
-PORTREVISION=	2
+PORTVERSION=	5.0.17.9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,14 +11,15 @@ COMMENT=	Haskell API Search
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	happy:devel/hs-happy
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
 USES=		cabal
 
 USE_CABAL=	ListLike-4.6_2 QuickCheck-2.12.6.1_1 aeson-1.4.2.0_1 appar-0.1.7 \
 		asn1-encoding-0.9.5 asn1-parse-0.9.4 asn1-types-0.3.2 async-2.2.1_1 \
 		attoparsec-0.13.2.2 auto-update-0.1.4 base-compat-0.10.5 \
-		base-orphans-0.8 basement-0.0.10_1 blaze-builder-0.4.1.0 \
-		bsb-http-chunked-0.0.0.4 byteable-0.1.1 byteorder-1.0.4 \
+		base-orphans-0.8 basement-0.0.10_1 blaze-builder-0.4.1.0 blaze-html-0.9.1.1 \
+		blaze-markup-0.8.2.2_1 bsb-http-chunked-0.0.0.4 byteable-0.1.1 byteorder-1.0.4 \
 		cabal-doctest-1.0.6_2 case-insensitive-1.2.0.11 cereal-0.5.8.0 \
 		clock-0.7.2 cmdargs-0.10.20 conduit-1.3.1 conduit-extra-1.3.0 \
 		connection-0.2.8 cookie-0.4.4 cryptonite-0.25 \

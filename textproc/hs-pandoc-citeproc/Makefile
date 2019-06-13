@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandoc-citeproc
-PORTVERSION=	0.16.1
+PORTVERSION=	0.16.2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -65,5 +65,10 @@ USE_CABAL=	Glob-0.10.0 HTTP-4000.3.12_2 HsYAML-0.1.1.3 JuicyPixels-3.3.3_1 \
 		xml-types-0.3.6 yaml-0.11.0.0 zip-archive-0.4 zlib-0.6.2
 
 CABAL_FLAGS=	-test_citeproc -debug
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/man/man1/pandoc-citeproc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	cd ${WRKSRC} && ${COPYTREE_SHARE} locales ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/chicago-author-date.csl ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

@@ -1,2 +1,15 @@
-@postexec /bin/ln -sf %%EXECUTABLE%% %%HADDOCK%%
-@postunexec [ -f %%GHC_HADDOCK_CMD%% ] && /bin/ln -sf %%GHC_HADDOCK_CMD%% %%HADDOCK%% || rm -f %%HADDOCK%%
+%%DATADIR%%/html/Classic.theme/haskell_icon.gif
+%%DATADIR%%/html/Classic.theme/minus.gif
+%%DATADIR%%/html/Classic.theme/plus.gif
+%%DATADIR%%/html/Classic.theme/xhaddock.css
+%%DATADIR%%/html/Ocean.std-theme/hslogo-16.png
+%%DATADIR%%/html/Ocean.std-theme/minus.gif
+%%DATADIR%%/html/Ocean.std-theme/ocean.css
+%%DATADIR%%/html/Ocean.std-theme/plus.gif
+%%DATADIR%%/html/Ocean.std-theme/synopsis.png
+%%DATADIR%%/html/haddock-bundle.min.js
+%%DATADIR%%/html/highlight.js
+%%DATADIR%%/html/quick-jump.css
+%%DATADIR%%/html/quick-jump.min.js
+%%DATADIR%%/html/solarized.css
+%%DATADIR%%/latex/haddock.sty

@@ -1,6 +1,6 @@
-TIMESTAMP = 1553686178
-SHA256 (cabal/pandoc-citeproc-0.16.1.tar.gz) = a3f12beef8dc8cd24c1365462a5d310a452f29ba6f9109e14ff974ff9b9fc36e
-SIZE (cabal/pandoc-citeproc-0.16.1.tar.gz) = 326662
+TIMESTAMP = 1559921430
+SHA256 (cabal/pandoc-citeproc-0.16.2.tar.gz) = 5b6725b003474f19fd7de65f3371a015a7b210b42543fe952f2bc4c7d509b596
+SIZE (cabal/pandoc-citeproc-0.16.2.tar.gz) = 353416
 SHA256 (cabal/Glob-0.10.0/Glob-0.10.0.tar.gz) = 473355bd6ba0a97902e0edada1acbc0d76cfda77596f0188b2cc0ae34272a324
 SIZE (cabal/Glob-0.10.0/Glob-0.10.0.tar.gz) = 29500
 SHA256 (cabal/HTTP-4000.3.12/HTTP-4000.3.12.tar.gz) = a3ff6a9c93771079121083f1691188fe45f84380118e0f76bc4578153c361990

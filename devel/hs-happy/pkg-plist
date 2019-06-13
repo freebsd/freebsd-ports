@@ -1,0 +1,9 @@
+%%DATADIR%%/HappyTemplate
+%%DATADIR%%/HappyTemplate-arrays
+%%DATADIR%%/HappyTemplate-arrays-coerce
+%%DATADIR%%/HappyTemplate-arrays-coerce-debug
+%%DATADIR%%/HappyTemplate-arrays-debug
+%%DATADIR%%/HappyTemplate-arrays-ghc
+%%DATADIR%%/HappyTemplate-arrays-ghc-debug
+%%DATADIR%%/HappyTemplate-coerce
+%%DATADIR%%/HappyTemplate-ghc

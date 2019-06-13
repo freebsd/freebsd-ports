@@ -1,6 +1,6 @@
-TIMESTAMP = 1553624567
-SHA256 (cabal/wai-app-static-3.1.6.2.tar.gz) = d0b0a566be61ef4c8f800922a71dbc4de64287f8f73782b1461cd5d294c1dc3e
-SIZE (cabal/wai-app-static-3.1.6.2.tar.gz) = 22509
+TIMESTAMP = 1559927442
+SHA256 (cabal/wai-app-static-3.1.6.3.tar.gz) = 8cb091eab6b4b303b3cd3a5cb90c81c19ce4792d3e706bd749c7cbfacabfcb68
+SIZE (cabal/wai-app-static-3.1.6.3.tar.gz) = 22673
 SHA256 (cabal/aeson-1.4.2.0/aeson-1.4.2.0.tar.gz) = 75ce71814a33d5e5568208e6806a8847e7ba47fea74d30f6a8b1b56ecb318bd0
 SIZE (cabal/aeson-1.4.2.0/aeson-1.4.2.0.tar.gz) = 268052
 SHA256 (cabal/aeson-1.4.2.0/revision/1.cabal) = 8166752a9669597db375343df19805069595fed9c613f98504e418849f40fe18

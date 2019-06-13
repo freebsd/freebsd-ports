@@ -1,16 +1,9 @@
 # Created by: Tobias Kortkamp <t@tobik.me>
 # $FreeBSD$
 
-# To update this port first go to
-# https://github.com/arrowd/stack-dependencies, change the
-# version in the Makefile there, regenerate the stack-dependencies
-# tarball, commit Makefile changes, create a new tag (release)
-# matching the new stack version, and upload the tarball.  Finally
-# bump the version here.
-
 PORTNAME=	stack
 PORTVERSION=	1.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -2,7 +2,7 @@
 
 PORTNAME=	ShellCheck
 DISTVERSION=	0.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	pizzamig@FreeBSD.org
