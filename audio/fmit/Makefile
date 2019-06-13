@@ -17,7 +17,7 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING_LGPL.txt
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
-USES=		gl gnome pkgconfig qmake qt:5 tar:bzip2
+USES=		compiler:c++11-lang gl gnome pkgconfig qmake qt:5 tar:bzip2
 
 USE_QT=		buildtools_build core gui opengl qmake_build multimedia network svg widgets
 USE_GL=		gl glut
