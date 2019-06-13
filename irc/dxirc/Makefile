@@ -12,8 +12,8 @@ COMMENT=	Simple IRC client
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cmake compiler:c++11-lang pkgconfig
 USE_XORG=	ice sm x11 xext
-USES=		cmake pkgconfig
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=		NLS LUA ENCHANT NOTIFY
