@@ -14,7 +14,7 @@ COMMENT=	GNU Compiler Collection 5
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-DEPRECATED=	Unsupported by upstream. Use GCC 7 or newer instead.
+DEPRECATED=	Unsupported by upstream. Use GCC 8 or newer instead.
 ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 i386 powerpc powerpc64 powerpcspe sparc64
 BROKEN_sparc64=	Does not build: bootstrap comparison failure
 
