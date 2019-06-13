@@ -1,0 +1,13 @@
+Lziprecover is a data recovery tool and decompressor for files in the
+Lzip compressed data format (.lz).  Lziprecover is able to repair slightly
+damaged files, produce a correct file by merging the good parts of two or
+more damaged copies, extract data from damaged files, and test integrity
+of files.
+
+Lziprecover can remove the damaged members from multimember files, for
+example multimember .tar.lz archives.
+
+Lziprecover provides random access to the data in multimember files; it
+only decompresses the members containing the desired data.
+
+WWW: http://www.nongnu.org/lzip/lziprecover.html

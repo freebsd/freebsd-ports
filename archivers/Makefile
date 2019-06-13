@@ -76,6 +76,7 @@
     SUBDIR += lua51-zlib
     SUBDIR += lzfse
     SUBDIR += lzip
+    SUBDIR += lziprecover
     SUBDIR += lzlib
     SUBDIR += lzma
     SUBDIR += lzmalib
