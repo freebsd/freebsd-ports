@@ -1,0 +1,14 @@
+--- tnt/CMakeLists.txt.orig	2019-02-21 14:33:51 UTC
++++ tnt/CMakeLists.txt
+@@ -49,8 +49,9 @@ set (TNT_SOURCES
+ # Builds
+ #----------------------------------------------------------------------------#
+ 
+-set_source_files_properties(${PROJECT_SOURCE_DIR}/third_party/uri.c PROPERTIES
+-    COMPILE_FLAGS "-Wno-implicit-fallthrough")
++# -Wno-implicit-fallthrough only has meaning for llvm
++#set_source_files_properties(${PROJECT_SOURCE_DIR}/third_party/uri.c PROPERTIES
++#    COMPILE_FLAGS "-Wno-implicit-fallthrough")
+ 
+ ## Static library
+ project(tnt)
