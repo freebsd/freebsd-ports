@@ -20,4 +20,6 @@ RUN_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
