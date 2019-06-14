@@ -1,0 +1,6 @@
+The Btor2Tools package provides a generic parser and tools for the BTOR2 format.
+
+Btor2 is a word-level model checking format for capturing models of hardware and
+potentially software in a bit-precise manner.
+
+WWW: https://github.com/Boolector/btor2tools
