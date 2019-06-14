@@ -765,6 +765,7 @@
     SUBDIR += gecode
     SUBDIR += generate
     SUBDIR += gengetopt
+    SUBDIR += genie
     SUBDIR += genproto
     SUBDIR += gettext
     SUBDIR += gettext-lint
