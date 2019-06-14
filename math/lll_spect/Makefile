@@ -16,6 +16,8 @@ COMMENT=	LLL-spectral test of linear congruential random number generators
 BUILD_DEPENDS=	${LOCALBASE}/lib/libntl.a:math/ntl
 RUN_DEPENDS=	${LOCALBASE}/lib/libntl.a:math/ntl
 
+USES=		compiler:c++11-lang
+
 PLIST_FILES=	bin/lll_spect bin/lll_search
 PORTEXAMPLES=	examples.txt
 NO_WRKSUBDIR=	yes
