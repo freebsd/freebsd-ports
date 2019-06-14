@@ -148,6 +148,7 @@
     SUBDIR += blis
     SUBDIR += blitz++
     SUBDIR += blocksolve95
+    SUBDIR += boolector
     SUBDIR += bsdnt
     SUBDIR += btor2tools
     SUBDIR += cadabra2

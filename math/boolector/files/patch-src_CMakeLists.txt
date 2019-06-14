@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2019-06-14 07:01:21 UTC
++++ src/CMakeLists.txt
+@@ -129,7 +129,7 @@ set_target_properties(boolector-bin
+   PROPERTIES
+     OUTPUT_NAME boolector
+     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+-if(NOT SHARED AND NOT APPLE)
++if(NOT SHARED AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+   set_target_properties(boolector-bin
+     PROPERTIES
+       LINK_FLAGS "-static -Wl,--no-export-dynamic"
