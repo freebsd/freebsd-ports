@@ -26,3 +26,14 @@
  
  extern value *imglib_error;
  
+@@ -56,8 +63,8 @@ value open_tiff_file_for_write( value file,
+     /* Resolution */
+     /* FillOrder */
+     
+-    TIFFSetField(tif, TIFFTAG_IMAGEWIDTH, (uint32) image_width);
+-    TIFFSetField(tif, TIFFTAG_IMAGELENGTH, (uint32) image_height);
++    TIFFSetField(tif, TIFFTAG_IMAGEWIDTH, image_width);
++    TIFFSetField(tif, TIFFTAG_IMAGELENGTH, image_height);
+     TIFFSetField(tif, TIFFTAG_ORIENTATION, ORIENTATION_TOPLEFT);
+     TIFFSetField(tif, TIFFTAG_SAMPLESPERPIXEL, 3);
+     TIFFSetField(tif, TIFFTAG_BITSPERSAMPLE, 8);
