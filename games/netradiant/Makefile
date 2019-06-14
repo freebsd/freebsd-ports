@@ -23,17 +23,13 @@ BROKEN_aarch64=		fails to link: ldd: install/modules/archivepak.so: not a FreeBS
 BROKEN_armv6=		fails to build: h2data.armv6: No such file or directory
 BROKEN_armv7=		fails to build: h2data.armv7: No such file or directory
 
-USES=		gmake jpeg pkgconfig tar:bzip2
-USE_GL=		gl
-USE_GNOME=	gtk20 libxml2
+USES=		compiler:c++11-lang gl gmake gnome jpeg localbase:ldflags \
+		pkgconfig tar:bzip2
 MAKE_ENV=	BUILD=release DOWNLOAD_GAMEPACKS=no LIBS_DL="" \
 		RADIANT_ABOUTMSG="For ${OPSYS} ${OSREL} (${ARCH})"
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 SUB_FILES=	${PORTNAME}
-SUB_LIST=	ARCH=${ARCH}
+SUB_LIST=	ARCH=${ARCH:S/powerpc64/powerpc/}
 PLIST_SUB:=	${SUB_LIST}
 
 post-patch:
