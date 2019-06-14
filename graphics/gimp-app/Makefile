@@ -36,7 +36,11 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		mypaint-brushes>0:graphics/mypaint-brushes
 
 LIB_DEPENDS+=	libjson-glib-1.0.so:devel/json-glib \
-		libunwind.so:devel/libunwind
+		${LIB_DEPENDS_${ARCH}}
+
+LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
 
 GNU_CONFIGURE=	yes
 USES+=		compiler:c++14-lang cpe gettext gmake gnome jpeg libtool \
