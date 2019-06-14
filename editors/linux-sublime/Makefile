@@ -5,7 +5,7 @@ PORTNAME=	sublime
 PORTVERSION=	2.0.2
 PORTREVISION=	6
 CATEGORIES=	editors linux
-MASTER_SITES=	http://c758482.r82.cf2.rackcdn.com/
+MASTER_SITES=	https://download.sublimetext.com/
 DISTNAME=	Sublime%20Text%202.0.2
 PKGNAMEPREFIX=	linux-
 
