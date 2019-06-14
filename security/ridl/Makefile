@@ -11,6 +11,9 @@ COMMENT=	Tool to check whether the system is affected by various attacks
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	specific to Intel CPUs per https://mdsattacks.com/
+
 LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
 USES=		cmake localbase:ldflags
