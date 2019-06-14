@@ -1,0 +1,11 @@
+%%OCAML_SITELIBDIR%%/result/META
+%%OCAML_SITELIBDIR%%/result/result.a
+%%OCAML_SITELIBDIR%%/result/result.cma
+%%OCAML_SITELIBDIR%%/result/result.cmi
+%%OCAML_SITELIBDIR%%/result/result.cmo
+%%OCAML_SITELIBDIR%%/result/result.cmx
+%%OCAML_SITELIBDIR%%/result/result.cmxa
+%%OCAML_SITELIBDIR%%/result/result.cmxs
+%%OCAML_SITELIBDIR%%/result/result.install
+%%OCAML_SITELIBDIR%%/result/result.ml
+%%OCAML_SITELIBDIR%%/result/result.o
