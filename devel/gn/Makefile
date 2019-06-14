@@ -27,16 +27,9 @@ CONFIGURE_ARGS=	--platform freebsd ${WITH_DEBUG:D--debug}
 ALL_TARGET=	# empty
 PLIST_FILES=	bin/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} 's/"python"/"${PYTHON_CMD:T}"/' \
 		${WRKSRC}/tools/gn/exec_process_unittest.cc
-# fix hardwired assumption that FreeBSD implies clang
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-	@${REINPLACE_CMD} 's/clang/gcc/' \
-		${WRKSRC}/build/gen.py
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
@@ -44,4 +37,4 @@ do-install:
 do-test:
 	${TEST_WRKSRC}/gn_unittests
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
