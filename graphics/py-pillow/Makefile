@@ -48,10 +48,10 @@ LCMS_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 LCMS_VARS=		PYDISTUTILS_BUILDARGS+=--enable-lcms
 LCMS_VARS_OFF=		PYDISTUTILS_BUILDARGS+=--disable-lcms
 
+OLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}olefile>0:devel/py-olefile@${PY_FLAVOR}
+
 PNG_VARS=		PYDISTUTILS_BUILDARGS+=--enable-zlib
 PNG_VARS_OFF=		PYDISTUTILS_BUILDARGS+=--disable-zlib
-
-OLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}olefile>0:devel/py-olefile@${PY_FLAVOR}
 
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_VARS=		PYDISTUTILS_BUILDARGS+=--enable-tiff
