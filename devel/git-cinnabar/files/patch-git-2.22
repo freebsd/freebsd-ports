@@ -1,0 +1,94 @@
+https://github.com/glandium/git-cinnabar/commit/b35af295e18a
+
+--- CI/tools.py.orig	2019-05-08 21:36:37 UTC
++++ CI/tools.py
+@@ -12,7 +12,7 @@ import msys
+ 
+ 
+ MERCURIAL_VERSION = '5.0'
+-GIT_VERSION = '2.21.0'
++GIT_VERSION = '2.22.0'
+ 
+ ALL_MERCURIAL_VERSIONS = (
+     '1.9.3', '2.0.2', '2.1.2', '2.2.3', '2.3.2', '2.4.2', '2.5.4',
+--- helper/GIT-VERSION.mk.orig	2019-05-08 21:36:37 UTC
++++ helper/GIT-VERSION.mk
+@@ -1,2 +1,2 @@
+-GIT_VERSION ?= v2.21.0
++GIT_VERSION ?= v2.22.0
+ WINDOWS_GIT_VERSION ?= $(GIT_VERSION).windows.1
+--- helper/cinnabar-fast-import.c.orig	2019-05-08 21:36:37 UTC
++++ helper/cinnabar-fast-import.c
+@@ -245,7 +245,7 @@ static uintmax_t parse_mark_ref(const char *p, char **
+ 	if (**endptr == ':') {
+ 		char *path_end = strpbrk(++(*endptr), " \n");
+ 		if (path_end) {
+-			unsigned mode;
++			unsigned short mode;
+ 			char *path = xstrndup(*endptr, path_end - *endptr);
+ 			if (!get_tree_entry(note, path, &git_oid, &mode))
+ 				note = &git_oid;
+--- helper/notes.c.patch.orig	2019-05-08 21:36:37 UTC
++++ helper/notes.c.patch
+@@ -1,10 +1,10 @@
+ diff --git a/notes.c b/notes.c
+-index 7f7cc4d511..1c127dcbe0 100644
++index 532ec37865..b1ffc4975e 100644
+ --- a/notes.c
+ +++ b/notes.c
+-@@ -413,11 +413,6 @@ static void load_subtree(struct notes_tree *t, struct leaf_node *subtree,
++@@ -415,11 +415,6 @@ static void load_subtree(struct notes_tree *t, struct leaf_node *subtree,
+  
+- 		if (path_len == 2 * (GIT_SHA1_RAWSZ - prefix_len)) {
++ 		if (path_len == 2 * (hashsz - prefix_len)) {
+  			/* This is potentially the remainder of the SHA-1 */
+ -
+ -			if (!S_ISREG(entry.mode))
+@@ -12,9 +12,9 @@ index 7f7cc4d511..1c127dcbe0 100644
+ -				goto handle_non_note;
+ -
+  			if (hex_to_bytes(object_oid.hash + prefix_len, entry.path,
+- 					 GIT_SHA1_RAWSZ - prefix_len))
++ 					 hashsz - prefix_len))
+  				goto handle_non_note; /* entry.path is not a SHA1 */
+-@@ -720,6 +715,7 @@ static int write_each_note_helper(struct tree_write_stack *tws,
++@@ -722,6 +717,7 @@ static int write_each_note_helper(struct tree_write_stack *tws,
+  struct write_each_note_data {
+  	struct tree_write_stack *root;
+  	struct non_note *next_non_note;
+@@ -22,7 +22,7 @@ index 7f7cc4d511..1c127dcbe0 100644
+  };
+  
+  static int write_each_non_note_until(const char *note_path,
+-@@ -749,7 +745,7 @@ static int write_each_note(const struct object_id *object_oid,
++@@ -751,7 +747,7 @@ static int write_each_note(const struct object_id *object_oid,
+  	struct write_each_note_data *d =
+  		(struct write_each_note_data *) cb_data;
+  	size_t note_path_len = strlen(note_path);
+@@ -31,7 +31,7 @@ index 7f7cc4d511..1c127dcbe0 100644
+  
+  	if (note_path[note_path_len - 1] == '/') {
+  		/* subtree entry */
+-@@ -1124,7 +1120,8 @@ int for_each_note(struct notes_tree *t, int flags, each_note_fn fn,
++@@ -1126,7 +1122,8 @@ int for_each_note(struct notes_tree *t, int flags, each_note_fn fn,
+  	return for_each_note_helper(t, t->root, 0, 0, flags, fn, cb_data);
+  }
+  
+@@ -41,7 +41,7 @@ index 7f7cc4d511..1c127dcbe0 100644
+  {
+  	struct tree_write_stack root;
+  	struct write_each_note_data cb_data;
+-@@ -1141,6 +1138,7 @@ int write_notes_tree(struct notes_tree *t, struct object_id *result)
++@@ -1143,6 +1140,7 @@ int write_notes_tree(struct notes_tree *t, struct object_id *result)
+  	root.path[0] = root.path[1] = '\0';
+  	cb_data.root = &root;
+  	cb_data.next_non_note = t->first_non_note;
+@@ -49,7 +49,7 @@ index 7f7cc4d511..1c127dcbe0 100644
+  
+  	/* Write tree objects representing current notes tree */
+  	flags = FOR_EACH_NOTE_DONT_UNPACK_SUBTREES |
+-@@ -1153,6 +1151,11 @@ int write_notes_tree(struct notes_tree *t, struct object_id *result)
++@@ -1155,6 +1153,11 @@ int write_notes_tree(struct notes_tree *t, struct object_id *result)
+  	return ret;
+  }
+  
