@@ -12,7 +12,7 @@ https://archive.codeplex.com/projects/jxrlib/issues/13/1483483).
 -#ifdef _BIG__ENDIAN_
 -#define _byteswap_ulong(x)  (x)
 -#else // _BIG__ENDIAN_
-+#ifndef _BIG__ENDIAN__
++#ifndef _BIG__ENDIAN_
  U32 _byteswap_ulong(U32 bits)
  {
      U32 r = (bits & 0xffu) << 24;
