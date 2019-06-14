@@ -1619,6 +1619,7 @@
     SUBDIR += ocaml-re
     SUBDIR += ocaml-react
     SUBDIR += ocaml-res
+    SUBDIR += ocaml-result
     SUBDIR += ocaml-sdl
     SUBDIR += ocaml-sem
     SUBDIR += ocaml-sexplib
