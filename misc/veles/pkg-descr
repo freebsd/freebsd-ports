@@ -1,0 +1,23 @@
+Veles is an open source tool for binary data analysis.
+
+Features:
+* Binary data visualization
+  It is a very difficult task for a human to notice subtle patterns in large
+  amounts of binary data, however, us humans are very good at finding patterns
+  in images. Statistical visualizations let you find the important bits in a
+  sea of binary data - all at a glance.
+
+* Binary data analysis
+  Veles combines advanced hex explorer and data visualization features with an
+  extensible framework for binary data analysis. Reverse engineering binaries?
+  Veles can support your work in these fields: reverse engineering binaries,
+  exploring file system images, steganography.
+
+* Easy extendibility
+  With the number of different architectures, file formats and encodings you
+  can't always expect to find the tool you need online. Veles uses client-server
+  architecture, where each analyser can run in a separate process. All you need
+  to do is get the data from the server, implement a Python function to parse it
+  and return the results.
+
+WWW: https://codisec.com/veles/
