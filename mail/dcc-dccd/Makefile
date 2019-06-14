@@ -3,6 +3,7 @@
 
 PORTNAME=	dcc-dccd
 PORTVERSION=	2.3.165
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://www.dcc-servers.net/dcc/source/old/
 DISTNAME=	dcc-${PORTVERSION}
@@ -22,7 +23,7 @@ GROUPS=		${DCCGROUP}
 
 PLIST_SUB=	DCCDATA="${DCCDATA}" DCCUSER="${DCCUSER}" DCCGROUP="${DCCGROUP}"
 SUB_FILES=	pkg-install pkg-message
-SUB_LIST=	${PLIST_SUB} WRKSRC=${WRKSRC} DCCHOME=${DCCHOME}
+SUB_LIST=	DCCDATA="${DCCDATA}" DCCUSER="${DCCUSER}" DCCGROUP="${DCCGROUP}" ${PLIST_SUB} WRKSRC=${WRKSRC} DCCHOME=${DCCHOME}
 
 ## Use the configure script to explicitly set the locations of all files,
 ## in case the standard locations have been locally overridden
