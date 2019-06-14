@@ -13,8 +13,6 @@ COMMENT=	NCBI implementation of Basic Local Alignment Search Tool
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
 
-BROKEN_powerpc64=	fails to build: Error 2
-
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		liblmdb.so:databases/lmdb \
 		liblzo2.so:archivers/lzo2 \
@@ -29,7 +27,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
 		libsqlite3.so:databases/sqlite3
-RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
+RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+		p5-JSON>=0:converters/p5-JSON
 
 USES=		compiler:openmp gmake shebangfix perl5 python
 USE_LDCONFIG=	yes
@@ -48,10 +47,17 @@ CONFIGURE_ARGS=	AR="ar cr" --without-boost --libdir=${PREFIX}/lib/ncbi-tools++
 
 WRKSRC_SUBDIR=		c++
 
+.include <bsd.port.pre.mk>
+
+# Force newer GCC on platforms using GCC 4.2 as base
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+USE_GCC=	yes
+.endif
+
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/ncbi-tools++/*/*/.cvsignore.extra
 	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/X11
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/debug
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ncbi-tools++/*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
