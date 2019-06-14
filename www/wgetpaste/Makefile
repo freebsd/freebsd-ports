@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wgetpaste
-PORTVERSION=	2.28
+PORTVERSION=	2.29
 CATEGORIES=	www
 MASTER_SITES=	http://wgetpaste.zlin.dk/ \
 		LOCAL/sunpoet
@@ -15,9 +15,10 @@ COMMENT=	Paste to several pastebin services via bash script
 RUN_DEPENDS=	bash:shells/bash \
 		wget:ftp/wget
 
+USES=		tar:bzip2
+
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		tar:bzip2
 
 post-patch:
 	@${REINPLACE_CMD} \
