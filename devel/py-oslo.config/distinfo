@@ -1,3 +1,3 @@
-TIMESTAMP = 1556375487
-SHA256 (oslo.config-6.9.0.tar.gz) = 70fb3ad10f0efe6ff0c9c1c8c186ac8253c16faddd1f85cf80dca262a65ac896
-SIZE (oslo.config-6.9.0.tar.gz) = 151079
+TIMESTAMP = 1560537270
+SHA256 (oslo.config-6.10.0.tar.gz) = 98427e4a4c1d0530ed2954c3efe610fa8de377f4dfeabe7eb951d02508797408
+SIZE (oslo.config-6.10.0.tar.gz) = 152458
