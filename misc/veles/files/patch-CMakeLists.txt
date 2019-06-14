@@ -1,0 +1,42 @@
+--- CMakeLists.txt.orig	2018-05-18 10:32:48 UTC
++++ CMakeLists.txt
+@@ -30,7 +30,7 @@ include("cmake/qt.cmake")
+ include("cmake/zlib.cmake")
+ include("cmake/msgpack.cmake")
+ include("cmake/cppgen.cmake")
+-include("cmake/server.cmake")
++#include("cmake/server.cmake") # server.cmake installs into a virtual environment using pip, which is undesirable when it is installed as a package
+ include("cmake/openssl.cmake")
+ 
+ # Compiler flags
+@@ -356,6 +356,7 @@ target_link_libraries(main_exe veles_base Qt5::Widgets
+ set_target_properties(main_exe PROPERTIES OUTPUT_NAME "veles")
+ add_dependencies(main_exe openssl zlib msgpack-c)
+ 
++if (BUILD_TESTING)
+ if(GTEST_FOUND AND GMOCK_FOUND)
+   include_directories(${GTEST_INCLUDE_DIRS} ${GMOCK_INCLUDE_DIRS})
+   add_executable(run_test
+@@ -390,11 +391,12 @@ if(GTEST_FOUND AND GMOCK_FOUND)
+ else()
+   message("gtest and/or gmock not found - tests won't be built")
+ endif()
++endif(BUILD_TESTING)
+ 
+ # Post-build: linting
+ 
+ message(STATUS "Looking for clang-format")
+-find_program(CLANG_FORMAT NAMES clang-format-6.0 clang-format HINTS ${CLANG_TOOLS_PATH})
++find_program(CLANG_FORMAT NAMES clang-format${FREEBSD_LLVM_VERSION} HINTS ${CLANG_TOOLS_PATH})
+ 
+ if(CLANG_FORMAT)
+   message(STATUS "Looking for clang-format - found")
+@@ -419,7 +421,7 @@ endif()
+ 
+ 
+ message(STATUS "Looking for clang-tidy")
+-find_program(CLANG_TIDY NAMES clang-tidy-6.0 clang-tidy HINTS ${CLANG_TOOLS_PATH})
++find_program(CLANG_TIDY NAMES clang-tidy${FREEBSD_LLVM_VERSION} HINTS ${CLANG_TOOLS_PATH})
+ 
+ if(CLANG_TIDY)
+   # Generate 'lint' target.

@@ -511,6 +511,7 @@
     SUBDIR += valentina
     SUBDIR += valspeak
     SUBDIR += vdmfec
+    SUBDIR += veles
     SUBDIR += vera
     SUBDIR += vifm
     SUBDIR += visp
