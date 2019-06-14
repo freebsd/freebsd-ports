@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	picosat>0:math/picosat
 LIB_DEPENDS=	libbtor2parser.so:math/btor2tools
 
-USES=		cmake:noninja # ninja fails to build tests
+USES=		cmake:noninja compiler:c++11-lang # ninja fails to build tests
 USE_GITHUB=	yes
 GH_ACCOUNT=	Boolector
 
