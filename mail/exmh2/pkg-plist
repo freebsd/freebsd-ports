@@ -47,6 +47,7 @@ lib/exmh-%%EXMH_VERSION%%/bitmaps/write.xbm
 lib/exmh-%%EXMH_VERSION%%/bogo.tcl
 lib/exmh-%%EXMH_VERSION%%/busy.tcl
 lib/exmh-%%EXMH_VERSION%%/buttons.tcl
+lib/exmh-%%EXMH_VERSION%%/calendar.tcl
 lib/exmh-%%EXMH_VERSION%%/clink.au
 lib/exmh-%%EXMH_VERSION%%/crypt.tcl
 lib/exmh-%%EXMH_VERSION%%/cutbuffer.tcl
@@ -209,6 +210,7 @@ lib/exmh-%%EXMH_VERSION%%/sequences.tcl
 lib/exmh-%%EXMH_VERSION%%/seqwin.tcl
 lib/exmh-%%EXMH_VERSION%%/sound.tcl
 lib/exmh-%%EXMH_VERSION%%/source.tcl
+lib/exmh-%%EXMH_VERSION%%/stacktrace.tcl
 lib/exmh-%%EXMH_VERSION%%/tclIndex
 lib/exmh-%%EXMH_VERSION%%/text.tcl
 lib/exmh-%%EXMH_VERSION%%/textButton.tcl

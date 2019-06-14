@@ -4,10 +4,10 @@
 # "+=" and "?=" lines are for sharing this Makefile with japanese/exmh2.
 
 PORTNAME=	exmh
-PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTVERSION=	2.9.0
 CATEGORIES+=	mail tk
-MASTER_SITES=	TCLTK/${PORTNAME} SF/${PORTNAME}
+# XXX: Standard SF fails with a hung download
+MASTER_SITES=	https://sourceforge.net/projects/${PORTNAME}/files/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER?=	cy@FreeBSD.org
 COMMENT?=	X11/TK based mail reader front end to MH
