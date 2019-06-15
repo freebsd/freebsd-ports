@@ -1,3 +1,3 @@
-%%PERL5_MAN3%%/Test::Taint.3.gz
 %%SITE_ARCH%%/Test/Taint.pm
 %%SITE_ARCH%%/auto/Test/Taint/Taint.so
+%%PERL5_MAN3%%/Test::Taint.3.gz
