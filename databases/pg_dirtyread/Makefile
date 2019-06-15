@@ -2,22 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	pg_dirtyread
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read dead but unvacuumed tuples from a PostgreSQL relation
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake pgsql:9.2+
+USES=		gmake pgsql
+
 LLD_UNSAFE=	yes
-USE_GITHUB=	yes
-GH_ACCOUNT=	ChristophBerg
-
 WANT_PGSQL=	server
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	df7cb
 
 PLIST_FILES=	lib/postgresql/pg_dirtyread.so \
 		share/postgresql/extension/pg_dirtyread--1.0.sql \
