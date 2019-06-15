@@ -32,8 +32,8 @@ lib/libprocesscore.so.7
 lib/libprocessui.so
 lib/libprocessui.so.%%KDE_PLASMA_VERSION%%
 lib/libprocessui.so.7
-share/dbus-1/system-services/org.kde.ksysguard.processlisthelper.service
 share/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
+share/dbus-1/system-services/org.kde.ksysguard.processlisthelper.service
 share/ksysguard/scripts/README
 share/ksysguard/scripts/smaps/helper.js
 share/ksysguard/scripts/smaps/index.html

@@ -1,7 +1,6 @@
 bin/ksysguard
 bin/ksysguardd
 etc/ksysguarddrc
-etc/xdg/ksysguard.knsrc
 lib/libkdeinit5_ksysguard.so
 share/applications/org.kde.ksysguard.desktop
 share/doc/HTML/ca/ksysguard/index.cache.bz2
@@ -36,6 +35,7 @@ share/icons/hicolor/16x16/apps/shell.png
 share/icons/hicolor/16x16/apps/unknownapp.png
 share/icons/hicolor/16x16/apps/waiting.png
 share/knotifications5/ksysguard.notifyrc
+share/knsrcfiles/ksysguard.knsrc
 %%DATADIR%%/ProcessTable.sgrd
 %%DATADIR%%/SystemLoad2.sgrd
 share/kxmlgui5/ksysguard/ksysguardui.rc

@@ -546,6 +546,7 @@ share/locale/lv/LC_MESSAGES/kcmsamba.mo
 share/locale/lv/LC_MESSAGES/kcmusb.mo
 share/locale/lv/LC_MESSAGES/kcmview1394.mo
 share/locale/lv/LC_MESSAGES/kinfocenter.mo
+share/locale/lt/LC_MESSAGES/kcm_fileindexermonitor.mo
 share/locale/mai/LC_MESSAGES/kcm_memory.mo
 share/locale/mai/LC_MESSAGES/kcm_pci.mo
 share/locale/mai/LC_MESSAGES/kcmdevinfo.mo
@@ -977,3 +978,4 @@ share/locale/zh_TW/LC_MESSAGES/kcmsamba.mo
 share/locale/zh_TW/LC_MESSAGES/kcmusb.mo
 share/locale/zh_TW/LC_MESSAGES/kcmview1394.mo
 share/locale/zh_TW/LC_MESSAGES/kinfocenter.mo
+share/metainfo/org.kde.kinfocenter.appdata.xml

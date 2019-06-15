@@ -1,6 +1,5 @@
 bin/plasma-discover
 etc/xdg/discover.categories
-etc/xdg/discover_ktexteditor_codesnippets_core.knsrc
 lib/plasma-discover/libDiscoverCommon.so
 lib/plasma-discover/libDiscoverNotifiers.so
 %%QT_PLUGINDIR%%/discover/kns-backend.so
@@ -16,6 +15,7 @@ share/icons/hicolor/32x32/apps/plasmadiscover.png
 share/icons/hicolor/48x48/apps/plasmadiscover.png
 share/icons/hicolor/scalable/apps/plasmadiscover.svgz
 share/knotifications5/discoverabstractnotifier.notifyrc
+share/knsrcfiles/discover_ktexteditor_codesnippets_core.knsrc
 share/kservices5/plasma-applet-org.kde.discovernotifier.desktop
 share/kxmlgui5/plasmadiscover/plasmadiscoverui.rc
 share/locale/ar/LC_MESSAGES/libdiscover.mo
@@ -204,7 +204,6 @@ share/locale/zh_TW/LC_MESSAGES/plasma-discover.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.discovernotifier.mo
 share/metainfo/org.kde.discover.appdata.xml
 share/metainfo/org.kde.discovernotifier.appdata.xml
-share/plasma/plasmoids/org.kde.discovernotifier/contents/ui/Full.qml
 share/plasma/plasmoids/org.kde.discovernotifier/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.discovernotifier/metadata.desktop
 share/plasma/plasmoids/org.kde.discovernotifier/metadata.json
