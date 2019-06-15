@@ -12,6 +12,9 @@ COMMENT=	The GGZ Gaming Zone - GTK+ Frontend
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2019-06-30
+
 USES=		gettext libtool pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

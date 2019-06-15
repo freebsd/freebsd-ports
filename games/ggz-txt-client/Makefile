@@ -9,6 +9,9 @@ CATEGORIES=	games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - Console (Text) Frontend
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2019-06-30
+
 USES=		gettext readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
