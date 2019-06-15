@@ -19,12 +19,15 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libwebp.so:graphics/webp
 
+BROKEN=		No more public distfiles and uses sys/dir.h
+
 BROKEN_aarch64=		fails to link: ldd: install/modules/archivepak.so: not a FreeBSD ELF shared object
 BROKEN_armv6=		fails to build: h2data.armv6: No such file or directory
 BROKEN_armv7=		fails to build: h2data.armv7: No such file or directory
 
 USES=		compiler:c++11-lang gl gmake gnome jpeg localbase:ldflags \
 		pkgconfig tar:bzip2
+USE_GL=		glu
 MAKE_ENV=	BUILD=release DOWNLOAD_GAMEPACKS=no LIBS_DL="" \
 		RADIANT_ABOUTMSG="For ${OPSYS} ${OSREL} (${ARCH})"
 
