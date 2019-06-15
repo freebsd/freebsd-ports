@@ -2,7 +2,7 @@
 
 PORTNAME=	zrythm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.151
+DISTVERSION=	0.5.074
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,16 +29,17 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		kf5-breeze-icons>0:x11-themes/kf5-breeze-icons
 
-USES=		autoreconf gettext-tools gmake python:3.5+,build gettext-runtime gnome libtool pkgconfig
+USES=		gettext-tools meson python:3.5+,build gettext-runtime gnome libtool pkgconfig shebangfix
 USE_GITLAB=	yes
 GL_SITE=	https://git.zrythm.org
-GL_COMMIT=	c587a4c1b7da0273e3003940ce2a4ea00079f6b0
-GNU_CONFIGURE=	yes
+GL_COMMIT=	5a57bff53facbf914bfbc90ac0113d2eedd0d0f3
+SHEBANG_FILES=	resources/gen-gtk-gresources-xml.py scripts/collect_translatables.sh scripts/meson_post_install.py
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 libxml2 pango
 USE_XORG=	x11
 GLIB_SCHEMAS=	org.zrythm.gschema.xml
 INSTALLS_ICONS=	yes
 
-BINARY_ALIAS=	python3=${PYTHON_CMD} make=${GMAKE}
+post-patch: # https://git.zrythm.org/zrythm/zrythm/issues/299
+	@${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/ext/midilib/src/*.c
 
 .include <bsd.port.mk>
