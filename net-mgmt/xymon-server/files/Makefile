@@ -60,9 +60,14 @@ DORRD = yes
 #
 # OpenSSL settings
 SSLFLAGS = -DHAVE_OPENSSL
+
+ifneq (${OPENSSLLIB},/usr/lib)
 SSLINCDIR = -I${OPENSSLINC}
 SSLLIBS = -L${OPENSSLLIB} -lssl -lcrypto
 RPATHVAL += ${OPENSSLLIB}
+else
+SSLLIBS = -lssl -lcrypto
+endif
 DOSSL = yes
 #
 ifdef WITH_LDAP
@@ -70,7 +75,9 @@ ifdef WITH_LDAP
 LDAPFLAGS = -DXYMON_LDAP -DXYMON_LDAP_USESTARTTLS -DHAVE_LDAP
 LDAPINCDIR = -I${PREFIX}/include
 LDAPLIBS = -L${PREFIX}/lib -lldap -llber
+ifneq (${OPENSSLLIB},/usr/lib)
 RPATHVAL += ${PREFIX}/lib
+endif
 RPATHVAL += /usr/local/lib
 DOLDAP = yes
 endif
