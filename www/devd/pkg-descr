@@ -1,0 +1,10 @@
+Devd is a single statically compiled binary with no external dependencies.
+No need to install gigantic frameworks like Node JS, just copy over the devd
+binary and be done with it.
+
+No config file, no daemonization, and logs that are designed to be read in the
+terminal by a developer. Logs are colorized and log entries span multiple lines.
+Devd's logs are detailed, warn about corner cases that other daemons ignore, and
+can optionally include things like detailed timing information and full headers.
+
+WWW: https://github.com/cortesi/devd

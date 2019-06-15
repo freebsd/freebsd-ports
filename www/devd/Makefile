@@ -1,0 +1,23 @@
+# $FreeBSD$
+
+PORTNAME=	devd
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9
+CATEGORIES=	www
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Local webserver for developers
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		go
+USE_GITHUB=	yes
+GH_ACCOUNT=	cortesi
+
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_TARGET=	${GO_PKGNAME}/cmd/${PORTNAME}
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>
