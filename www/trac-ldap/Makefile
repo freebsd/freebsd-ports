@@ -7,7 +7,7 @@ MASTER_SITES=	LOCAL/matthew
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Trac plugin to use LDAP to store permissions
 
 LICENSE=	BSD3CLAUSE
