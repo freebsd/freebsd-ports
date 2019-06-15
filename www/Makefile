@@ -107,6 +107,7 @@
     SUBDIR += ddgr
     SUBDIR += decss
     SUBDIR += demoroniser
+    SUBDIR += devd
     SUBDIR += dfileserver
     SUBDIR += dhttpd
     SUBDIR += dillo2
