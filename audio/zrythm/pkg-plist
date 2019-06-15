@@ -1,7 +1,5 @@
 bin/zrythm
 share/applications/zrythm.desktop
-share/fonts/zrythm/Segment7Standard/OFL.txt
-share/icons/hicolor/48x48/apps/zrythm.svg
 share/icons/hicolor/scalable/apps/zrythm.svg
 share/locale/ar/LC_MESSAGES/zrythm.mo
 share/locale/de/LC_MESSAGES/zrythm.mo
@@ -14,3 +12,5 @@ share/locale/ko/LC_MESSAGES/zrythm.mo
 share/locale/pt/LC_MESSAGES/zrythm.mo
 share/locale/ru/LC_MESSAGES/zrythm.mo
 share/locale/zh/LC_MESSAGES/zrythm.mo
+%%DATADIR%%/Segment7Standard/OFL.txt
+%%DATADIR%%/Segment7Standard/Segment7Standard.otf
