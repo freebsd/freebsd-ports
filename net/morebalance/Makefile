@@ -10,6 +10,9 @@ MASTER_SITES=	http://morebalance.coolprojects.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular open source user-space load balancing system
 
+DEPRECATED=	Abandonware and depends on expiring games/libggz
+EXPIRATION_DATE=	2019-06-30
+
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libgnutls.so:security/gnutls \
 		libggz.so:games/libggz
