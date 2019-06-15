@@ -1,0 +1,10 @@
+Modd is a developer tool that triggers commands and manages daemons in response
+to filesystem changes.
+
+If you use modd, you should also look at devd, a compact HTTP daemon for
+developers. Devd integrates with modd, allowing you to trigger in-browser
+live-reload with modd.
+
+devd (www/devd) is a sister-project of modd.
+
+WWW: https://github.com/cortesi/modd
