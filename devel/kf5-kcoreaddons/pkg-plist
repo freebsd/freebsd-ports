@@ -19,6 +19,7 @@ include/KF5/KCoreAddons/KPluginFactory
 include/KF5/KCoreAddons/KPluginLoader
 include/KF5/KCoreAddons/KPluginMetaData
 include/KF5/KCoreAddons/KProcess
+include/KF5/KCoreAddons/KProcessList
 include/KF5/KCoreAddons/KRandom
 include/KF5/KCoreAddons/KRandomSequence
 include/KF5/KCoreAddons/KSharedDataCache
@@ -52,6 +53,7 @@ include/KF5/KCoreAddons/kpluginfactory.h
 include/KF5/KCoreAddons/kpluginloader.h
 include/KF5/KCoreAddons/kpluginmetadata.h
 include/KF5/KCoreAddons/kprocess.h
+include/KF5/KCoreAddons/kprocesslist.h
 include/KF5/KCoreAddons/krandom.h
 include/KF5/KCoreAddons/krandomsequence.h
 include/KF5/KCoreAddons/kshareddatacache.h

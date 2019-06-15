@@ -129,6 +129,7 @@ share/locale/da/LC_MESSAGES/purpose-fileitemaction.mo
 share/locale/da/LC_MESSAGES/purpose_email.mo
 share/locale/da/LC_MESSAGES/purpose_imgur.mo
 share/locale/da/LC_MESSAGES/purpose_kdeconnect.mo
+share/locale/da/LC_MESSAGES/purpose_kdeconnectsms.mo
 share/locale/da/LC_MESSAGES/purpose_ktp-sendfile.mo
 share/locale/da/LC_MESSAGES/purpose_nextcloud.mo
 share/locale/da/LC_MESSAGES/purpose_pastebin.mo
@@ -366,6 +367,7 @@ share/locale/pl/LC_MESSAGES/purpose-fileitemaction.mo
 share/locale/pl/LC_MESSAGES/purpose_email.mo
 share/locale/pl/LC_MESSAGES/purpose_imgur.mo
 share/locale/pl/LC_MESSAGES/purpose_kdeconnect.mo
+share/locale/pl/LC_MESSAGES/purpose_kdeconnectsms.mo
 share/locale/pl/LC_MESSAGES/purpose_ktp-sendfile.mo
 share/locale/pl/LC_MESSAGES/purpose_nextcloud.mo
 share/locale/pl/LC_MESSAGES/purpose_pastebin.mo
@@ -410,6 +412,7 @@ share/locale/ru/LC_MESSAGES/purpose-fileitemaction.mo
 share/locale/ru/LC_MESSAGES/purpose_email.mo
 share/locale/ru/LC_MESSAGES/purpose_imgur.mo
 share/locale/ru/LC_MESSAGES/purpose_kdeconnect.mo
+share/locale/ru/LC_MESSAGES/purpose_kdeconnectsms.mo
 share/locale/ru/LC_MESSAGES/purpose_ktp-sendfile.mo
 share/locale/ru/LC_MESSAGES/purpose_nextcloud.mo
 share/locale/ru/LC_MESSAGES/purpose_pastebin.mo

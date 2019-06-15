@@ -1,11 +1,11 @@
 bin/kwalletmanager5
-etc/dbus-1/system.d/org.kde.kcontrol.kcmkwallet5.conf
 etc/xdg/kwalletmanager.categories
 lib/libexec/kauth/kcm_kwallet_helper5
 %%QT_PLUGINDIR%%/kcm_kwallet5.so
 share/applications/kwalletmanager5-kwalletd.desktop
 share/applications/org.kde.kwalletmanager5.desktop
 share/dbus-1/system-services/org.kde.kcontrol.kcmkwallet5.service
+share/dbus-1/system.d/org.kde.kcontrol.kcmkwallet5.conf
 share/icons/hicolor/128x128/apps/kwalletmanager.png
 share/icons/hicolor/128x128/apps/kwalletmanager2.png
 share/icons/hicolor/16x16/apps/kwalletmanager.png
