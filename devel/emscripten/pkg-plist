@@ -84,6 +84,7 @@ lib/emscripten/site/source/docs/building_from_source/toolchain_what_is_needed.rs
 lib/emscripten/site/source/docs/building_from_source/verify_emscripten_environment.rst
 lib/emscripten/site/source/docs/compiling/Building-Projects.rst
 lib/emscripten/site/source/docs/compiling/Deploying-Pages.rst
+lib/emscripten/site/source/docs/compiling/GitLab.rst
 lib/emscripten/site/source/docs/compiling/Running-html-files-with-emrun.rst
 lib/emscripten/site/source/docs/compiling/Travis.rst
 lib/emscripten/site/source/docs/compiling/WebAssembly.rst
@@ -183,6 +184,7 @@ lib/emscripten/src/library_browser.js
 lib/emscripten/src/library_cyberdwarf.js
 lib/emscripten/src/library_debugger_toolkit.js
 lib/emscripten/src/library_egl.js
+lib/emscripten/src/library_exceptions.js
 lib/emscripten/src/library_fetch.js
 lib/emscripten/src/library_formatString.js
 lib/emscripten/src/library_fs.js
@@ -246,6 +248,7 @@ lib/emscripten/src/shell_minimal_runtime.html
 lib/emscripten/src/shell_pthreads.js
 lib/emscripten/src/shell_sharedlib.js
 lib/emscripten/src/socket.io.js
+lib/emscripten/src/source_map_support.js
 lib/emscripten/src/spidermonkey-externs.js
 lib/emscripten/src/struct_info.json
 lib/emscripten/src/support.js
@@ -253,6 +256,7 @@ lib/emscripten/src/threadprofiler.js
 lib/emscripten/src/utility.js
 lib/emscripten/src/v8-externs.js
 lib/emscripten/src/wasm2js.js
+lib/emscripten/src/wasm_offset_converter.js
 lib/emscripten/src/webGLClient.js
 lib/emscripten/src/webGLWorker.js
 lib/emscripten/src/worker.js
@@ -1033,6 +1037,7 @@ lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_stackdepot.
 lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_stackdepotbase.h
 lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_stacktrace.cc
 lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_stacktrace.h
+lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_stacktrace_emscripten.cc
 lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_stacktrace_libcdep.cc
 lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_stacktrace_printer.cc
 lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_stacktrace_printer.h
@@ -1044,6 +1049,7 @@ lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_suppression
 lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_suppressions.h
 lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_symbolizer.cc
 lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_symbolizer.h
+lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_symbolizer_emscripten.cc
 lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_symbolizer_fuchsia.h
 lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_symbolizer_internal.h
 lib/emscripten/system/lib/compiler-rt/lib/sanitizer_common/sanitizer_symbolizer_libbacktrace.cc
