@@ -54,7 +54,7 @@ _KDE_RELNAME=		KDE${_KDE_VERSION}
 
 # === VERSIONS OF THE DIFFERENT COMPONENTS =====================================
 # Current KDE desktop.
-KDE_PLASMA_VERSION?=		5.15.5
+KDE_PLASMA_VERSION?=		5.16.0
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
@@ -554,7 +554,7 @@ kde-milou_PORT=			deskutils/plasma5-milou
 kde-milou_LIB=			libmilou.so.5
 
 kde-oxygen_PORT= 		x11-themes/plasma5-oxygen
-kde-oxygen_LIB=			liboxygenstyle5.so
+kde-oxygen_PATH=			${QT_PLUGINDIR}/styles/oxygen.so
 
 kde-plasma-browser-integration_PORT=	www/plasma5-plasma-browser-integration
 kde-plasma-browser-integration_PATH=	${KDE_PREFIX}/bin/plasma-browser-integration-host

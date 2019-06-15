@@ -1,9 +1,9 @@
-etc/xdg/cgcgtk3.knsrc
-etc/xdg/cgctheme.knsrc
 lib/libexec/gtk3_preview
 lib/libexec/gtk_preview
 lib/libexec/reload_gtk_apps
 %%QT_PLUGINDIR%%/kcm_kdegtkconfig.so
+share/knsrcfiles/cgcgtk3.knsrc
+share/knsrcfiles/cgctheme.knsrc
 share/icons/hicolor/128x128/apps/kde-gtk-config.png
 share/icons/hicolor/16x16/apps/kde-gtk-config.png
 share/icons/hicolor/22x22/apps/kde-gtk-config.png

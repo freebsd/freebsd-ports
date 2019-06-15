@@ -14,6 +14,8 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/cs/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/cs/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_browsertabs.mo
+share/locale/da/LC_MESSAGES/plasma-browser-integration-host.mo
+share/locale/da/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/da/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/de/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/de/LC_MESSAGES/plasma_runner_browsertabs.mo
@@ -38,6 +40,7 @@ share/locale/gl/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/id/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/id/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/id/LC_MESSAGES/plasma_runner_browsertabs.mo
+share/locale/it/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/it/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/it/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/ja/LC_MESSAGES/plasma-browser-integration-host.mo
@@ -46,6 +49,9 @@ share/locale/ja/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/ko/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/ko/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_browsertabs.mo
+share/locale/lt/LC_MESSAGES/plasma-browser-integration-host.mo
+share/locale/lt/LC_MESSAGES/plasma-browser-integration-reminder.mo
+share/locale/lt/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/nb/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/nl/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/nl/LC_MESSAGES/plasma-browser-integration-reminder.mo
@@ -54,13 +60,16 @@ share/locale/nn/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/nn/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/pa/LC_MESSAGES/plasma_runner_browsertabs.mo
+share/locale/pl/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/pl/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/pt/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/pt/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/pt/LC_MESSAGES/plasma_runner_browsertabs.mo
+share/locale/pt_BR/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/pt_BR/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_browsertabs.mo
+share/locale/ru/LC_MESSAGES/plasma-browser-integration-host.mo
 share/locale/ru/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/sk/LC_MESSAGES/plasma-browser-integration-host.mo

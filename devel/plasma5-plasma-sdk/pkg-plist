@@ -266,6 +266,8 @@ share/locale/ko/LC_MESSAGES/plasmoidviewer.mo
 share/locale/ku/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/ku/LC_MESSAGES/plasmoidviewer.mo
 share/locale/lt/LC_MESSAGES/cuttlefish.mo
+share/locale/lt/LC_MESSAGES/cuttlefish_editorplugin.mo
+share/locale/lt/LC_MESSAGES/org.kde.plasma.lookandfeelexplorer.mo
 share/locale/lt/LC_MESSAGES/org.kde.plasma.themeexplorer.mo
 share/locale/lt/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/lt/LC_MESSAGES/plasmaengineexplorer.mo

@@ -30,6 +30,7 @@ share/locale/cs/LC_MESSAGES/kscreen.mo
 share/locale/cs/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/da/LC_MESSAGES/kcm_displayconfiguration.mo
 share/locale/da/LC_MESSAGES/kscreen.mo
+share/locale/da/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/de/LC_MESSAGES/kcm_displayconfiguration.mo
 share/locale/de/LC_MESSAGES/kscreen.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
@@ -75,6 +76,7 @@ share/locale/ko/LC_MESSAGES/kscreen.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/lt/LC_MESSAGES/kcm_displayconfiguration.mo
 share/locale/lt/LC_MESSAGES/kscreen.mo
+share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/nb/LC_MESSAGES/kcm_displayconfiguration.mo
 share/locale/nb/LC_MESSAGES/kscreen.mo
 share/locale/nl/LC_MESSAGES/kcm_displayconfiguration.mo
