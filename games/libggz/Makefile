@@ -9,6 +9,9 @@ CATEGORIES=	games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - Base Library
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2019-06-30
+
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 USES=		libtool pathfix
