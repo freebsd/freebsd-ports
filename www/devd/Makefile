@@ -3,7 +3,8 @@
 PORTNAME=	devd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9
-CATEGORIES=	www
+PORTREVISION=	1
+CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Local webserver for developers
