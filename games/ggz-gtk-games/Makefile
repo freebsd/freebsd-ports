@@ -9,6 +9,9 @@ CATEGORIES=	games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - GTK+ Games
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2019-06-30
+
 RUN_DEPENDS=	${LOCALBASE}/bin/ggz-gtk:games/ggz-gtk-client
 
 USES=		gettext pkgconfig

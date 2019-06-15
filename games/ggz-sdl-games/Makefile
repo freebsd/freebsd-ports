@@ -9,6 +9,9 @@ CATEGORIES=	games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - SDL-based games
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2019-06-30
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 USES=		gettext
