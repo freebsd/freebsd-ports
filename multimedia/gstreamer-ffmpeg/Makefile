@@ -4,18 +4,20 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.13
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/:ffmpeg \
 		http://libav.org/releases/:libav
 PKGNAMESUFFIX=	-ffmpeg
-DISTFILES=	gst-ffmpeg-${PORTVERSION}.tar.bz2:ffmpeg
+DISTFILES=	gst-ffmpeg-${PORTVERSION}.tar.bz2:ffmpeg \
+		libav-${LIBAV_VERSION}.tar.xz:libav
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	yasm:devel/yasm
 LIB_DEPENDS=	liborc-0.4.so:devel/orc
 
 PORTSCOUT=	limit:0\.10\..*
@@ -26,20 +28,15 @@ USES=		compiler:features gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-system-ffmpeg \
+		--with-ffmpeg-extra-configure="${FFMPEG_CONFIG}"
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
+
+LDFLAGS+=	-Wl,-Bsymbolic
 LDFLAGS_i386=	-Wl,-znotext
 
-OPTIONS_DEFINE=	FFMPEG
-FFMPEG_DESC?=	Use system ffmpeg instead of internal libav
+NOPRECIOUSMAKEVARS=	yes # ARCH
 
-FFMPEG_LIB_DEPENDS=libavcodec0.so:multimedia/ffmpeg0
-FFMPEG_CONFIGURE_WITH=system-ffmpeg
-FFMPEG_VARS_OFF=NOPRECIOUSMAKEVARS=yes # ARCH
-
-FFMPEG_DISTFILES_OFF=libav-${LIBAV_VERSION}.tar.xz:libav
-FFMPEG_BUILD_DEPENDS_OFF=yasm:devel/yasm
-FFMPEG_LDFLAGS_OFF=-Wl,-Bsymbolic
-FFMPEG_CONFIGURE_OFF=--with-ffmpeg-extra-configure="${FFMPEG_CONFIG}"
 FFMPEG_CONFIG=	--cc=${CC} \
 		--enable-runtime-cpudetect \
 		--enable-pic
@@ -59,12 +56,10 @@ WITHOUT_BUILTIN_VECTOR=	yes
 
 # builtin vector, requires mmx and sse
 .if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
-FFMPEG_CFLAGS_OFF+=-msse
+CFLAGS+=	-msse
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ! ${PORT_OPTIONS:MFFMPEG}
 
 .if ${ARCH} == powerpc64
 FFMPEG_CONFIG+=	--arch=ppc64
@@ -79,7 +74,6 @@ post-extract:
 	@${MV} ${WRKDIR}/libav-${LIBAV_VERSION} ${WRKSRC}/gst-libs/ext/libav
 	@${CP} ${WRKSRC}/gst-libs/ext/libav.old/config.* \
 		${WRKSRC}/gst-libs/ext/libav/
-.endif # FFMPEG
 
 post-patch:
 	@${REINPLACE_CMD} -Ee '/sleep 15/d; /PKG_CONFIG/\
