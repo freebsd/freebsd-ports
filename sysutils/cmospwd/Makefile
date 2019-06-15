@@ -10,14 +10,15 @@ MASTER_SITES=	http://www.cgsecurity.org/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	BIOS password recovery tool
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		tar:bzip2
 
 PLIST_FILES=	bin/cmospwd
 PORTDOCS=	cmospwd.txt
-
-ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONS_DEFINE=	DOCS
 
@@ -30,6 +31,8 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
