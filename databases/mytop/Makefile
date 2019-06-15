@@ -5,7 +5,7 @@ PORTNAME=	mytop
 PORTVERSION=	1.7
 CATEGORIES=	databases
 
-MAINTAINER=	matthew@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Top clone for MySQL
 
 LICENSE=	GPLv2
