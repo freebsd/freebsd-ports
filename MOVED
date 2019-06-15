@@ -12795,3 +12795,5 @@ sysutils/zol|sysutils/openzfs|2019-06-11|Renamed to match upstream changes
 sysutils/zol-kmod|sysutils/openzfs-kmod|2019-06-11|Renamed to match upstream changes
 archivers/nulib||2019-06-12|Abandonware
 shells/rssh||2019-06-13|Has expired: Abandoned by upstream
+multimedia/mpeg4ip||2019-06-15|Has expired: old, unmaintained version; superseded by multimedia/ffmpeg
+multimedia/ffmpeg0||2019-06-15|Has expired: vulnerable and old version; use multimedia/ffmpeg instead
