@@ -1,5 +1,3 @@
-etc/dbus-1/system.d/org.kde.powerdevil.backlighthelper.conf
-etc/dbus-1/system.d/org.kde.powerdevil.discretegpuhelper.conf
 etc/xdg/autostart/powerdevil.desktop
 lib/libexec/kauth/backlighthelper
 lib/libexec/kauth/discretegpuhelper
@@ -27,6 +25,8 @@ lib/libpowerdevilui.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/powerdevilsuspendsessionaction_config.so
 share/dbus-1/system-services/org.kde.powerdevil.backlighthelper.service
 share/dbus-1/system-services/org.kde.powerdevil.discretegpuhelper.service
+share/dbus-1/system.d/org.kde.powerdevil.backlighthelper.conf
+share/dbus-1/system.d/org.kde.powerdevil.discretegpuhelper.conf
 share/doc/HTML/ca/kcontrol/powerdevil/index.cache.bz2
 share/doc/HTML/ca/kcontrol/powerdevil/index.docbook
 share/doc/HTML/de/kcontrol/powerdevil/index.cache.bz2

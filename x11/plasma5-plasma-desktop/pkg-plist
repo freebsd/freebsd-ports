@@ -8,8 +8,6 @@ bin/knetattach
 bin/krdb
 bin/lookandfeeltool
 bin/solid-action-desktop-gen
-etc/dbus-1/system.d/org.kde.fontinst.conf
-etc/dbus-1/system.d/org.kde.kcontrol.kcmclock.conf
 etc/xdg/colorschemes.knsrc
 etc/xdg/emoticons.knsrc
 etc/xdg/icons.knsrc
@@ -117,6 +115,8 @@ share/color-schemes/ZionReversed.colors
 share/dbus-1/services/org.kde.fontinst.service
 share/dbus-1/system-services/org.kde.fontinst.service
 share/dbus-1/system-services/org.kde.kcontrol.kcmclock.service
+share/dbus-1/system.d/org.kde.fontinst.conf
+share/dbus-1/system.d/org.kde.kcontrol.kcmclock.conf
 share/doc/HTML/ca/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/ca/kcontrol/autostart/index.docbook
 share/doc/HTML/ca/kcontrol/baloo/index.cache.bz2

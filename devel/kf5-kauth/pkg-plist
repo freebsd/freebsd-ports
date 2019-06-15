@@ -1,4 +1,3 @@
-etc/dbus-1/system.d/org.kde.kf5auth.conf
 etc/xdg/kauth.categories
 include/KF5/KAuth/KAuth
 include/KF5/KAuth/KAuthAction
@@ -32,6 +31,7 @@ lib/libexec/kauth/kauth-policy-gen
 %%QT_PLUGINDIR%%/kauth/backend/kauth_backend_plugin.so
 %%QT_PLUGINDIR%%/kauth/helper/kauth_helper_plugin.so
 %%QT_MKSPECDIR%%/modules/qt_KAuth.pri
+share/dbus-1/system.d/org.kde.kf5auth.conf
 share/kf5/kauth/dbus_policy.stub
 share/kf5/kauth/dbus_service.stub
 share/locale/af/LC_MESSAGES/kauth5_qt.qm

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	frameworkintegration
-DISTVERSION=	5.58.2 # Rerespin
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	x11 kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
