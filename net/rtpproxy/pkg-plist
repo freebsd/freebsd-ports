@@ -2,4 +2,6 @@ etc/rc.d/rtpproxy
 bin/makeann
 bin/rtpproxy
 bin/rtpproxy_debug
+lib/rtpproxy/rtpp_acct_csv.so
+lib/rtpproxy/rtpp_acct_csv_debug.so
 man/man8/rtpproxy.8.gz
