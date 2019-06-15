@@ -7,4 +7,6 @@ terminal by a developer. Logs are colorized and log entries span multiple lines.
 Devd's logs are detailed, warn about corner cases that other daemons ignore, and
 can optionally include things like detailed timing information and full headers.
 
+modd (devel/modd) is a sister-project of modd.
+
 WWW: https://github.com/cortesi/devd
