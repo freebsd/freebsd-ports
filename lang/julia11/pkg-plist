@@ -478,6 +478,7 @@ man/man1/julia11.1.gz
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/bin/update.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/bin/utils.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/docs/Project.toml
+%%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/docs/generate.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/docs/make.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/docs/src/api.md
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/docs/src/assets/custom.css
@@ -557,6 +558,10 @@ man/man1/julia11.1.gz
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BigProject/test/LibFoo.jl/test/runtests.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BigProject/test/REQUIRE
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BigProject/test/runtests.jl
+%%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BuildProjectFixedDeps/Manifest.toml
+%%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BuildProjectFixedDeps/Project.toml
+%%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BuildProjectFixedDeps/deps/build.jl
+%%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BuildProjectFixedDeps/src/BuildProjectFixedDeps.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/PackageWithBuildSpecificTestDeps/src/PackageWithBuildSpecificTestDeps.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/PackageWithBuildSpecificTestDeps/test/REQUIRE
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/PackageWithBuildSpecificTestDeps/test/runtests.jl
