@@ -4722,6 +4722,7 @@
     SUBDIR += py-pp
     SUBDIR += py-pqueue
     SUBDIR += py-pre-commit
+    SUBDIR += py-preshed
     SUBDIR += py-pretend
     SUBDIR += py-prettyprinter
     SUBDIR += py-prettytable
