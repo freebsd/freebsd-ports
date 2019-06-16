@@ -2,10 +2,12 @@
 %%SITE_ARCH%%/Proc/Killfam.pm
 %%SITE_ARCH%%/Proc/ProcessTable.pm
 %%SITE_ARCH%%/Proc/ProcessTable/Process.pm
-%%SITE_ARCH%%/Proc/example.pl
 %%SITE_ARCH%%/auto/Proc/ProcessTable/Process/autosplit.ix
 %%SITE_ARCH%%/auto/Proc/ProcessTable/ProcessTable.so
 %%PERL5_MAN3%%/Proc::Killall.3.gz
 %%PERL5_MAN3%%/Proc::Killfam.3.gz
 %%PERL5_MAN3%%/Proc::ProcessTable.3.gz
 %%PERL5_MAN3%%/Proc::ProcessTable::Process.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.freebsd-kvm
+%%PORTDOCS%%%%DOCSDIR%%/README.freebsd-procfs
