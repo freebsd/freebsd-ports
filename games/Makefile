@@ -289,7 +289,6 @@
     SUBDIR += freecell-solver
     SUBDIR += freeciv
     SUBDIR += freeciv-nox11
-    SUBDIR += freeciv-sounds
     SUBDIR += freecol
     SUBDIR += freedink
     SUBDIR += freedink-data
