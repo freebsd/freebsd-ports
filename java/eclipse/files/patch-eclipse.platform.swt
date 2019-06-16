@@ -74,14 +74,11 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library
  	*)
  		SWT_ARCH=$MODEL
  		AWT_ARCH=$MODEL
-@@ -118,6 +116,16 @@
+@@ -118,6 +116,13 @@
  esac
  
  case $SWT_OS.$SWT_ARCH in
 +	"freebsd.ppc64")
-+		if [ "${CC}" = "" ]; then
-+			export CC=gcc
-+		fi
 +		if [ "${JAVA_HOME}" = "" ]; then
 +			DYNAMIC_JAVA_HOME=`readlink -f /usr/local/bin/java | sed "s:jre/::" | sed "s:bin/java::"`
 +			JAVA_HOME = $DYNAMIC_JAVA_HOME
