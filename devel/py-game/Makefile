@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/docs/LGPL
 
 BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libsmpeg.so:multimedia/smpeg
 RUN_DEPENDS=	${PYNUMPY} \
 		v4l_compat>0:multimedia/v4l_compat

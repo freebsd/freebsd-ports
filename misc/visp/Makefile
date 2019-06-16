@@ -22,7 +22,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libopencv_videoio.so:graphics/opencv \
 		libpcl_common.so:graphics/pcl-pointclouds \
 		libqhull.so:math/qhull5 \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libv4l2.so:multimedia/libv4l
 
 USES=		cmake compiler:c++11-lang eigen:3 fortran gnome jpeg

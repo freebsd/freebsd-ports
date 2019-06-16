@@ -22,7 +22,7 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libgsl.so:math/gsl \
 		libexiv2.so:graphics/exiv2 \
 		liblcms2.so:graphics/lcms2 \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libIlmImf.so:graphics/openexr \
 		libboost_date_time.so:devel/boost-libs
 

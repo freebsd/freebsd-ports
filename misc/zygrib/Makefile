@@ -17,7 +17,7 @@ BROKEN_i386=	g2clib/libg2c.a: could not read symbols: File format not recognized
 FETCH_DEPENDS=	curl:ftp/curl
 LIB_DEPENDS=	libjasper.so:graphics/jasper \
 		libnova.so:astro/libnova \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libproj.so:graphics/proj \
 		libqwt6.so:x11-toolkits/qwt6
 

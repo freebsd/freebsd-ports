@@ -25,7 +25,7 @@ LIB_DEPENDS=	libccp4c.so:science/libccp4 \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libgsl.so:math/gsl \
 		libmmdb2.so:science/mmdb2 \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libsfftw.so:math/fftw-float \
 		libssm.so:science/libssm
 RUN_DEPENDS=	bash:shells/bash

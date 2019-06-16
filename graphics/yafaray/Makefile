@@ -25,7 +25,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libIlmImf.so:graphics/openexr \
 		libopencv_photo.so:graphics/opencv \
 		libopencv_core.so:graphics/opencv-core \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		cmake gnome jpeg

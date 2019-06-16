@@ -51,7 +51,7 @@ JPEG_CONFIGURE_ENABLE=	jpeg
 JPEG_USES=		jpeg
 
 PNG_CONFIGURE_ENABLE=	png
-PNG_LIB_DEPENDS=	libpng16.so:graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 
 SSL_USES=		ssl
 SSL_CONFIGURE_ENABLE=	ssl

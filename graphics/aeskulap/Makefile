@@ -15,7 +15,7 @@ LIB_DEPENDS=	libdcmimage.so:graphics/dcmtk \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libglademm-2.4.so:devel/libglademm24 \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		compiler:c++11-lang autoreconf desktop-file-utils gettext \

@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/vegastrike.ico:games/vegastrike-data
 LIB_DEPENDS=	${PY_BOOST} \
 		libexpat.so:textproc/expat2 \
 		libogg.so:audio/libogg \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2

@@ -36,7 +36,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libgnutls.so:security/gnutls \
 		libogg.so:audio/libogg \
 		libopus.so:audio/opus \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libtheora.so:multimedia/libtheora \
 		libva.so:multimedia/libva \
 		libvorbis.so:audio/libvorbis \

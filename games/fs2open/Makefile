@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror auto-accept
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		cmake compiler:c++11-lang lua:51 jpeg openal pkgconfig sdl
 LLD_UNSAFE=	yes

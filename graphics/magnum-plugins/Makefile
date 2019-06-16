@@ -17,7 +17,7 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libfreetype.so:print/freetype2 \
 		libIL.so:graphics/devil \
 		libMagnum.so:graphics/magnum \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		cmake compiler:c++14-lang gl jpeg openal
 USE_GITHUB=	yes
