@@ -1,0 +1,27 @@
+# $FreeBSD$
+
+PORTNAME=	yash
+DISTVERSION=	2.48
+CATEGORIES=	shells
+MASTER_SITES=	OSDN/yash/70439
+
+MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	POSIX-compliant command line shell
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		tar:xz
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CPPFLAGS=	-I${LOCALBASE}/include
+NLS_LDFLAGS=	-L${LOCALBASE}/lib
+
+.include <bsd.port.mk>
