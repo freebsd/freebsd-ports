@@ -6,4 +6,4 @@ based on the Gregorian calendar. Using other DT calendar objects will return
 results, but the behavior is unpredictable for calendars that have more than
 365 or 366 days.
 
-WWW: http://datetime.perl.org/
+WWW: https://metacpan.org/release/DateTime-Fiscal-Year
