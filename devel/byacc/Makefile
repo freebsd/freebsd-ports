@@ -11,11 +11,12 @@ COMMENT=	Best yacc variant available
 
 LICENSE=	PD
 
+USES=		tar:tgz
+
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	DEFINES="-DMAXTABLE=INT_MAX"
 MAKEFILE=	makefile
 TEST_TARGET=	check
-USES=		tar:tgz
 
 PLIST_FILES=	bin/yacc \
 		man/man1/yacc.1.gz
