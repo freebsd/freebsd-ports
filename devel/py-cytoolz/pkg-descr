@@ -1,0 +1,4 @@
+Cython implementation of the toolz package, which provides high performance
+utility functions for iterables, functions, and dictionaries.
+
+WWW: https://github.com/pytoolz/cytoolz
