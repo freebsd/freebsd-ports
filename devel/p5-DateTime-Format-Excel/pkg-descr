@@ -3,4 +3,4 @@ module allows you to convert between a few of the Excel raw formats and
 DateTime objects, which can then be further converted via any of the other
 DateTime::Format::* modules, or just with DateTime's methods.
 
-WWW: http://datetime.perl.org/
+WWW: https://metacpan.org/release/DateTime-Format-Excel
