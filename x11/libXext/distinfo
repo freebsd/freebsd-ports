@@ -1,2 +1,3 @@
-SHA256 (xorg/lib/libXext-1.3.3.tar.bz2) = b518d4d332231f313371fdefac59e3776f4f0823bcb23cf7c7305bfb57b16e35
-SIZE (xorg/lib/libXext-1.3.3.tar.bz2) = 389523
+TIMESTAMP = 1560362418
+SHA256 (xorg/lib/libXext-1.3.4.tar.bz2) = 59ad6fcce98deaecc14d39a672cf218ca37aba617c9a0f691cac3bcd28edf82b
+SIZE (xorg/lib/libXext-1.3.4.tar.bz2) = 389114
