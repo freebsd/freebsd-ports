@@ -1,5 +1,5 @@
---- conf.h	1995/06/11 13:16:09	1.6
-+++ conf.h	1996/07/02 06:08:08
+--- conf.h.orig	1995-06-11 09:16:14 UTC
++++ conf.h
 @@ -4,16 +4,16 @@
   */
  
@@ -50,3 +50,12 @@
  	/*  wait time slot to re-check disk space (-m) or batch process (-I)
  	    if not define, when exit(2) without wait */
  /* #define	MINFTIME	60*10	/* time to sleep between new check */
+@@ -70,7 +72,7 @@
+ #include	<string.h>
+ #include	<ctype.h>
+ #include	<time.h>
+-#include	<sys/dir.h>
++#include	<sys/dirent.h>
+ 
+ #define DFREE_OK		0
+ #define DFREE_INODES	1
