@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xkeyboard-config
-PORTVERSION=	2.24
-PORTREVISION=	1
+PORTVERSION=	2.27
 CATEGORIES=	x11
 MASTER_SITES=	XORG/individual/${XORG_CAT}/${PORTNAME}
 
@@ -14,11 +13,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xkbcomp:x11/xkbcomp
 
-XORG_CAT=	data
+USES=		gmake gnome localbase pathfix perl5
 
+XORG_CAT=	data
 NO_ARCH=	yes
-USES=		gmake localbase pathfix perl5
-USE_GNOME=	intlhack libxslt:build
+USE_GNOME=	libxslt:build
 USE_PERL5=	build
 
 CONFIGURE_ARGS=	--with-xkb-base=${PREFIX}/share/X11/xkb \
