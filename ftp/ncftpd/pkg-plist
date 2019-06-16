@@ -1,7 +1,0 @@
-sbin/ncftpd
-bin/ncftpd_edquota
-bin/ncftpd_passwd
-bin/ncftpd_repquota
-bin/ncftpd_spy
-etc/ncftpd/general.cf-dist
-etc/ncftpd/domain.cf-dist

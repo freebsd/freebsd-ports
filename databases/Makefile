@@ -51,7 +51,6 @@
     SUBDIR += db48
     SUBDIR += db5
     SUBDIR += db6
-    SUBDIR += dbconnect
     SUBDIR += dbf
     SUBDIR += dbh
     SUBDIR += dbixx
@@ -661,9 +660,6 @@
     SUBDIR += plpgsql_check
     SUBDIR += pointcloud
     SUBDIR += postgis-jdbc
-    SUBDIR += postgis20
-    SUBDIR += postgis21
-    SUBDIR += postgis22
     SUBDIR += postgis23
     SUBDIR += postgis24
     SUBDIR += postgis25
