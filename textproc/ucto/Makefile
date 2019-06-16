@@ -21,7 +21,8 @@ LIB_DEPENDS=	libexttextcat-2.0.so:textproc/libexttextcat \
 		libticcutils.so:devel/ticcutils
 RUN_DEPENDS=	uctodata>0:textproc/uctodata
 
-USES=		autoreconf gmake gnome libedit libtool pkgconfig readline
+USES=		autoreconf compiler:c++11-lang gmake gnome libedit libtool \
+		pkgconfig readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 USE_GITHUB=	yes
