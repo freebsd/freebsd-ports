@@ -12797,3 +12797,8 @@ archivers/nulib||2019-06-12|Abandonware
 shells/rssh||2019-06-13|Has expired: Abandoned by upstream
 multimedia/mpeg4ip||2019-06-15|Has expired: old, unmaintained version; superseded by multimedia/ffmpeg
 multimedia/ffmpeg0||2019-06-15|Has expired: vulnerable and old version; use multimedia/ffmpeg instead
+ftp/ncftpd||2019-06-16|Has expired: binary only abandoned trialware
+databases/dbconnect||2019-06-16|Has expired: Abandonware and unused in the tree
+databases/postgis21|databases/postgis23|2019-06-16|Has expired: Upstream no longer maintained
+databases/postgis20|databases/postgis23|2019-06-16|Has expired: Upstream no longer maintained
+databases/postgis22|databases/postgis23|2019-06-16|Has expired: Upstream no longer maintained

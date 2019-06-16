@@ -43,7 +43,6 @@
     SUBDIR += mirror
     SUBDIR += multiget
     SUBDIR += ncftp3
-    SUBDIR += ncftpd
     SUBDIR += net2ftp
     SUBDIR += netdumpd
     SUBDIR += ocaml-ocurl

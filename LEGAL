@@ -152,7 +152,6 @@ mindfocus-*		games/mindfocus		Contains commercial character data
 mindterm-*		security/mindterm-binary Do not sell for profit
 mist64-cbmbasic-*	lang/cbmbasic		Based on decompiled C64 KERNAL binary; not really sure about the legal status
 molden*			biology/molden		Free for academic, non-profit usage; do not redistribute source and executable
-ncftpd-*		ftp/ncftpd		30 day evaluation license
 nero2_linux_*		games/linux-nerogame	Freeware, but license terms are unclear
 NetComponents-*		java/netcomponents	No redistribution except as part of a substantially different product
 nntpcache-*		news/nntpcache		Free for individuals and non-military, non-profit organisations only
