@@ -1,2 +1,3 @@
-SHA256 (xorg/lib/libxshmfence-1.2.tar.bz2) = d21b2d1fd78c1efbe1f2c16dae1cb23f8fd231dcf891465b8debe636a9054b0c
-SIZE (xorg/lib/libxshmfence-1.2.tar.bz2) = 267170
+TIMESTAMP = 1560369445
+SHA256 (xorg/lib/libxshmfence-1.3.tar.bz2) = b884300d26a14961a076fbebc762a39831cb75f92bed5ccf9836345b459220c7
+SIZE (xorg/lib/libxshmfence-1.3.tar.bz2) = 308644
