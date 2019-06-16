@@ -501,6 +501,7 @@ man/man1/julia10.1.gz
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/NastyGenerator.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/api.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/pkg.jl
+%%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/project/good/pkg.toml
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/repl.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/resolve.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/resolvedata1.jl
@@ -526,6 +527,10 @@ man/man1/julia10.1.gz
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BigProject/test/LibFoo.jl/test/runtests.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BigProject/test/REQUIRE
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BigProject/test/runtests.jl
+%%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BuildProjectFixedDeps/Manifest.toml
+%%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BuildProjectFixedDeps/Project.toml
+%%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BuildProjectFixedDeps/deps/build.jl
+%%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/BuildProjectFixedDeps/src/BuildProjectFixedDeps.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/PackageWithBuildSpecificTestDeps/src/PackageWithBuildSpecificTestDeps.jl
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/PackageWithBuildSpecificTestDeps/test/REQUIRE
 %%JULIA%%/share/julia/stdlib/v%%VERSION%%/Pkg/test/test_packages/PackageWithBuildSpecificTestDeps/test/runtests.jl
@@ -686,6 +691,7 @@ man/man1/julia10.1.gz
 %%JULIA%%/share/julia/test/codegen.jl
 %%JULIA%%/share/julia/test/combinatorics.jl
 %%JULIA%%/share/julia/test/compiler/compiler.jl
+%%JULIA%%/share/julia/test/compiler/irpasses.jl
 %%JULIA%%/share/julia/test/compiler/ssair.jl
 %%JULIA%%/share/julia/test/compiler/validation.jl
 %%JULIA%%/share/julia/test/complex.jl
