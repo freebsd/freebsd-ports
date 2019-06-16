@@ -9,6 +9,8 @@ MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/news/
 MAINTAINER=	dk@farm.org
 COMMENT=	NNTP bulk transfer
 
+BROKEN=		No more public distfiles
+
 USES=	tar:Z
 PLIST_FILES=	sbin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
