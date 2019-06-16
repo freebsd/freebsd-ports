@@ -8,4 +8,4 @@ and Easter Sunday. If that's not enough, the module will also accept an offset
 so you can get the date for Pentecost (49 days after Easter Sunday) by passing
 49.
 
-WWW: http://datetime.perl.org/
+WWW: https://metacpan.org/release/DateTime-Event-Easter
