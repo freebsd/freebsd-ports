@@ -3,4 +3,4 @@ and TIMESTAMP data types. It can be used to parse these formats in order to
 create DateTime objects, and it can take a DateTime object and produce a string
 representing it in the MySQL format.
 
-WWW: http://datetime.perl.org/
+WWW: https://metacpan.org/release/DateTime-Format-MySQL
