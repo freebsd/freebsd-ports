@@ -14,6 +14,9 @@ COMMENT=	MessagePack (de)serializer for Python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Use devel/py-msgpack instead
+EXPIRATION_DATE=2019-06-30
+
 USES=		python
 USE_PYTHON=	autoplist distutils
 
