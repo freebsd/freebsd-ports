@@ -735,6 +735,7 @@
     SUBDIR += pecl-imagick
     SUBDIR += pecl-imagick-im7
     SUBDIR += pecl-qrencode
+    SUBDIR += pecl-vips
     SUBDIR += pecomato
     SUBDIR += pencil2d
     SUBDIR += peps
