@@ -1,6 +1,6 @@
---- compile/unix.mak.orig	2011-02-27 19:45:40.000000000 +0900
-+++ compile/unix.mak	2011-08-21 14:23:10.000000000 +0900
-@@ -39,36 +39,48 @@
+--- compile/unix.mak.orig	2014-12-20 04:39:02 UTC
++++ compile/unix.mak
+@@ -39,36 +39,48 @@ install-mkdir:
  	$(MKDIR) $(bindir)
  	$(MKDIR) $(libdir)
  	$(MKDIR) $(incdir)
