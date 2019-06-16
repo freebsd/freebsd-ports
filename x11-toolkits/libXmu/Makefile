@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libXmu
-PORTVERSION=	1.1.2
-PORTREVISION=	5
+PORTVERSION=	1.1.3
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 
@@ -15,5 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 XORG_CAT=	lib
 USE_XORG=	xorgproto x11 xt xext
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
