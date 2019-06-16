@@ -3,7 +3,7 @@
 
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	6.3.74
+DISTVERSION=	6.4.21
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-php-71
@@ -12,7 +12,6 @@ MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Modular web application framework for office
 
 LICENSE=	AGPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE.AGPL
 
 USES=		mysql shebangfix php:web python
 
