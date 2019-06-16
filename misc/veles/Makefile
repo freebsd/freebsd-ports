@@ -2,7 +2,11 @@
 
 PORTNAME=	veles
 DISTVERSION=	2018.05.0
+PORTREVISION=	1
 CATEGORIES=	misc
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	f9125454bfb2cd28d78544ba41d92c028be6a277.patch:-p1 # Lift the default size limit of 1MB that msgpack imposes on binary data: https://github.com/root-project/root/pull/2218/commits
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for binary data visualization and analysis
