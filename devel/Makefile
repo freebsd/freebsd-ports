@@ -4288,6 +4288,7 @@
     SUBDIR += py-curtsies
     SUBDIR += py-cxx
     SUBDIR += py-cycler
+    SUBDIR += py-cymem
     SUBDIR += py-d2to1
     SUBDIR += py-daemon
     SUBDIR += py-daemon-runner
