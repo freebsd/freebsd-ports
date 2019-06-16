@@ -4707,6 +4707,7 @@
     SUBDIR += py-pip-tools2
     SUBDIR += py-pipenv
     SUBDIR += py-pkgconfig
+    SUBDIR += py-plac
     SUBDIR += py-plan
     SUBDIR += py-plex
     SUBDIR += py-pluggy
