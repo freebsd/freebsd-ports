@@ -80,6 +80,7 @@ share/X11/xkb/rules/evdev
 share/X11/xkb/rules/evdev.extras.xml
 share/X11/xkb/rules/evdev.lst
 share/X11/xkb/rules/evdev.xml
+share/X11/xkb/rules/xkb.its
 share/X11/xkb/rules/xfree98
 share/X11/xkb/rules/xkb.dtd
 share/X11/xkb/rules/xorg
@@ -317,6 +318,7 @@ share/X11/xkb/types/pc
 %%NLS%%share/locale/nb/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xkeyboard-config.mo
