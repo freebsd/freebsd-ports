@@ -2,4 +2,4 @@ DateTime::Calendar::Julian implements the Julian Calendar. This module
 implements all methods of DateTime; see the DateTime(3) man page for all
 methods.
 
-WWW: http://datetime.perl.org/
+WWW: https://metacpan.org/release/DateTime-Calendar-Julian
