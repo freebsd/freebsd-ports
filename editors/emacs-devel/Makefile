@@ -32,7 +32,7 @@ USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xrender xt
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	ec4b2c8
+GH_TAGNAME=	83095a8
 
 CONFIGURE_ARGS=	--disable-build-details \
 		--localstatedir=/var
@@ -195,7 +195,7 @@ XWIDGETS_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 XWIDGETS_IMPLIES=	GTK3
 
 EMACS_VER=	27.0.50
-EMACS_REV=	20190525
+EMACS_REV=	20190616
 
 .include <bsd.port.options.mk>
 
@@ -211,6 +211,10 @@ CONFIGURE_ARGS+=	--with-x-toolkit=no
 
 pre-configure:
 	@(cd ${WRKSRC} && ./autogen.sh all)
+	@${REINPLACE_CMD} \
+	  -e '/emacs-repository-version/s/^.*$$/(setq emacs-repository-version "${GH_TAGNAME}")/' \
+	  -e '/emacs-repository-branch/s/^.*$$/(setq emacs-repository-branch "master")/' \
+	  ${WRKSRC}/lisp/loadup.el
 
 .if ${FLAVOR} == nox
 # With a desktop entry stage-qa will give a warning about requiring

@@ -3991,6 +3991,7 @@ share/metainfo/emacs.appdata.xml
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/gnutls.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/gtkutil.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/gtkutil.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/hbfont.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/image.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/indent.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/indent.h
