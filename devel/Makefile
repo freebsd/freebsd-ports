@@ -4600,6 +4600,7 @@
     SUBDIR += py-multipledispatch
     SUBDIR += py-multiprocess
     SUBDIR += py-munch
+    SUBDIR += py-murmurhash
     SUBDIR += py-mwlib
     SUBDIR += py-mwlib.ext
     SUBDIR += py-mwlib.rl
