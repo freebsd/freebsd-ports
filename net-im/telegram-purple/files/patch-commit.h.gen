@@ -17,7 +17,7 @@
 -fi
 -
 -GIT_COMMIT=`git rev-parse HEAD | cut -c1-10`
-+GIT_COMMIT="0340e4f14b"
++GIT_COMMIT="d3d090917d"
  
  if grep -scq "${GIT_COMMIT}" commit.h
  then
