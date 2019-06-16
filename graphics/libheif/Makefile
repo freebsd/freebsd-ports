@@ -50,7 +50,7 @@ LIB_DEPENDS+=		libde265.so:multimedia/libde265
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=		libpng16.so:graphics/png
+LIB_DEPENDS+=		libpng.so:graphics/png
 .endif
 
 .if ${PORT_OPTIONS:MX265}

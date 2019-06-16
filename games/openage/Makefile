@@ -24,7 +24,7 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libogg.so:audio/libogg \
 		libopus.so:audio/opus \
 		libopusfile.so:audio/opusfile \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libnyan.so:lang/nyan
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \

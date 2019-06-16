@@ -42,7 +42,7 @@ JPEG_CMAKE_BOOL=	WITH_JPEG
 JPEG_USES=		jpeg
 
 PNG_CMAKE_BOOL=		WITH_PNG
-PNG_LIB_DEPENDS=	libpng16.so:graphics/png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 
 GZIP_CMAKE_BOOL=	WITH_GZIP
 

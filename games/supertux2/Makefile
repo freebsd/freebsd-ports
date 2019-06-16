@@ -16,7 +16,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libogg.so:audio/libogg \
 		libphysfs.so:devel/physfs \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libcurl.so:ftp/curl \
 		libvorbis.so:audio/libvorbis
 

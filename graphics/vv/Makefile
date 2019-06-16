@@ -18,7 +18,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libgdcmCommon.so:devel/gdcm \
 		libhdf5_cpp.so:science/hdf5 \
 		libITKLabelMap-4.13.so:science/InsightToolkit \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libsz.so:science/szip \
 		libtiff.so:graphics/tiff \
 		libvtkIOSQL-8.1.so:math/vtk8

@@ -15,7 +15,7 @@ BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
 		libmpi.so:net/openmpi \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libvtkViewsCore-8.1.so:math/vtk8
 

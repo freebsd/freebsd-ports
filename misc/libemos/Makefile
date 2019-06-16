@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libeccodes.so:science/eccodes \
 		libfftw3.so:math/fftw3 \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		cmake:noninja fortran
 

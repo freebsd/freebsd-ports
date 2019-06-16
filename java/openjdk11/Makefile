@@ -22,7 +22,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfreetype.so:print/freetype2 \
 		libgif.so:graphics/giflib \
 		liblcms2.so:graphics/lcms2 \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		compiler:features gmake iconv jpeg pkgconfig
 USE_XORG=	x11 xext xi xrender xt xtst

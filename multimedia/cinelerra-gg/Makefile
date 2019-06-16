@@ -33,7 +33,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libogg.so:audio/libogg \
 		libopenjp2.so:graphics/openjpeg \
 		libopus.so:audio/opus \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libsndfile.so:audio/libsndfile \
 		libtheoraenc.so:multimedia/libtheora \
 		libtiff.so:graphics/tiff \

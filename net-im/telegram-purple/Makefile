@@ -20,7 +20,7 @@ RUN_DEPENDS=	pidgin:net-im/pidgin
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libwebp.so:graphics/webp \
 		libpurple.so:net-im/libpurple \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 USES=		gettext gmake gnome pkgconfig
 USE_GNOME=	glib20
