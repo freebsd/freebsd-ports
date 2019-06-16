@@ -3,7 +3,7 @@
 
 PORTNAME=	bluefish
 PORTVERSION=	2.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www editors
 MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
 		http://bluefish.mrball.net/stable/source/
@@ -26,7 +26,8 @@ USE_GNOME=	cairo intltool libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-freedesktop_org-menu=${PREFIX}/share/applications \
 		--with-freedesktop_org-mime=${PREFIX}/share/mime \
-		--with-icon-path=${PREFIX}/share/pixmaps
+		--with-icon-path=${PREFIX}/share/pixmaps \
+		--disable-update-databases
 INSTALL_TARGET=	install-strip
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
