@@ -6,10 +6,6 @@ PORTVERSION=	20141220
 CATEGORIES=	japanese
 DIST_SUBDIR=	cmigemo
 
-USE_GITHUB= yes
-GH_ACCOUNT= koron
-GH_TAGNAME= 6a1c438
-
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	C implementation of Migemo Japanese incremental search tool
 
@@ -26,15 +22,20 @@ INSTALL_TARGET=	gcc-install
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 PORTDOCS=	README_j.txt
-
 .endif
 
-OPTIONS_DEFINE+=DOCS
-USES+=		gmake
 BUILD_DEPENDS=	${LOCALBASE}/bin/nkf:japanese/nkf
+
+USES+=		gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	koron
+GH_TAGNAME=	6a1c438
+
+OPTIONS_DEFINE+=DOCS
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX}
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
 

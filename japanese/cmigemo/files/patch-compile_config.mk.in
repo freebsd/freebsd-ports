@@ -1,6 +1,6 @@
---- compile/config.mk.in.orig	2011-02-27 19:45:40.000000000 +0900
-+++ compile/config.mk.in	2014-06-17 21:59:03.000000000 +0900
-@@ -18,8 +18,8 @@
+--- compile/config.mk.in.orig	2014-12-20 04:39:02 UTC
++++ compile/config.mk.in
+@@ -18,8 +18,8 @@ libdir		= $(prefix)/lib
  incdir		= $(prefix)/include
  # WARNING: Directories $(dictdir) and $(docdir) will be deleted whole the
  # directory when unintall.
@@ -11,7 +11,7 @@
  
  ##############################################################################
  # Commands
-@@ -33,9 +33,9 @@
+@@ -33,9 +33,9 @@ HTTP		= ${PROGRAM_HTTP}
  PERL		= perl
  BUNZIP2		= bzip2 -d
  GUNZIP		= gzip -d

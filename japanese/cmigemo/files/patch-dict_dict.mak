@@ -1,6 +1,6 @@
---- dict/dict.mak.orig	2014-12-20 13:39:02.000000000 +0900
-+++ dict/dict.mak	2014-12-21 22:31:28.000000000 +0900
-@@ -15,7 +15,7 @@
+--- dict/dict.mak.orig	2014-12-20 04:39:02 UTC
++++ dict/dict.mak
+@@ -15,7 +15,7 @@ UTF8_DIR	= utf-8.d
  # Dictionary
  #
  $(DICT): $(DICT_BASE)
@@ -9,7 +9,7 @@
  $(DICT_BASE): $(SKKDIC_FILE) ../tools/skk2migemo.pl ../tools/optimize-dict.pl
  	$(PERL) ../tools/skk2migemo.pl < $(SKKDIC_FILE) > dict.tmp
  	$(PERL) ../tools/optimize-dict.pl < dict.tmp > $@
-@@ -32,42 +32,42 @@
+@@ -32,42 +32,42 @@ cp932:		$(DICT)
  ##############################################################################
  # Dictionary in euc-jp
  #
@@ -70,7 +70,7 @@
  
  ##############################################################################
  # for Microsoft Visual C
-@@ -92,7 +92,8 @@
+@@ -92,7 +92,8 @@ mingw:		cp932 utf-8
  ##############################################################################
  # for GNU/gcc(Linux‘¼)
  #
