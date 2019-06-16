@@ -29,7 +29,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=LWGEOM
 LWGEOM_DESC=Enable lwgeom (PostGIS) functions
 LWGEOM_CONFIGURE_ENABLE=	lwgeom
-LWGEOM_LIB_DEPENDS=	liblwgeom.so:databases/postgis21
+LWGEOM_LIB_DEPENDS=	liblwgeom.so:databases/postgis23
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/src/Makefile.am
