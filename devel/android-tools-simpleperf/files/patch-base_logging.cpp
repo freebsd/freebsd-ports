@@ -18,13 +18,11 @@
  #include <iostream>
  #include <limits>
  #include <sstream>
-@@ -71,6 +72,14 @@
+@@ -71,6 +72,12 @@
  #include <unistd.h>
  #elif defined(_WIN32)
  #include <windows.h>
-+#elif defined(__DragonFly__)
-+#include <unistd.h>
-+#elif defined(__FreeBSD__)
++#elif defined(__DragonFly__) || defined(__FreeBSD__)
 +#include <pthread_np.h>
 +#elif defined(__NetBSD__)
 +#include <lwp.h>
@@ -33,15 +31,13 @@
  #endif
  
  #if defined(_WIN32)
-@@ -88,6 +97,14 @@ static thread_id GetThreadId() {
+@@ -88,6 +97,12 @@ static thread_id GetThreadId() {
    return syscall(__NR_gettid);
  #elif defined(_WIN32)
    return GetCurrentThreadId();
-+#elif defined(__DragonFly__)
-+  return lwp_gettid();
 +#elif defined(__NetBSD__)
 +  return _lwp_self();
-+#elif defined(__FreeBSD__)
++#elif defined(__DragonFly__) || defined(__FreeBSD__)
 +  return pthread_getthreadid_np();
 +#else
 +  return (intptr_t) pthread_self();

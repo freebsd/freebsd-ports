@@ -16,13 +16,11 @@
  namespace rtc {
  
  PlatformThreadId CurrentThreadId() {
-@@ -32,9 +38,17 @@ PlatformThreadId CurrentThreadId() {
+@@ -32,9 +38,15 @@ PlatformThreadId CurrentThreadId() {
    ret =  syscall(__NR_gettid);
  #elif defined(WEBRTC_ANDROID)
    ret = gettid();
-+#elif defined(__DragonFly__) // WEBRTC_BSD
-+  ret = lwp_gettid();
-+#elif defined(__FreeBSD__) // WEBRTC_BSD
++#elif defined(__DragonFly__) || defined(__FreeBSD__) // WEBRTC_BSD
 +  ret = pthread_getthreadid_np();
 +#elif defined(__NetBSD__) // WEBRTC_BSD
 +  ret = _lwp_self();
