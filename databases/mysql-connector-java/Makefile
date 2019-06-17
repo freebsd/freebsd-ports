@@ -6,7 +6,7 @@ PORTVERSION=	8.0.16
 CATEGORIES=	databases java
 MASTER_SITES=	MYSQL/Connector-J
 
-MAINTAINER=	matthew@FreeBSD.org
+MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 
 LICENSE=	GPLv2
