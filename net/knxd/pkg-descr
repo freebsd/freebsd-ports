@@ -1,0 +1,5 @@
+KNX is a very common building automation protocol which runs on dedicated
+9600-baud wire as well as IP multicast. knxd is an advanced router/gateway
+which runs on any Linux computer; it can talk to all known KNX interfaces.
+
+WWW: https://github.com/knxd/knxd

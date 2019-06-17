@@ -312,6 +312,7 @@
     SUBDIR += kmbox
     SUBDIR += kmime
     SUBDIR += knc
+    SUBDIR += knxd
     SUBDIR += kontactinterface
     SUBDIR += kpimtextedit
     SUBDIR += krdc
