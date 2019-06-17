@@ -16,6 +16,11 @@ ONLY_FOR_ARCHS_REASON=	The vmware gfx protocol is only supported on x86-compatib
 
 XORG_CAT=	driver
 
+LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
+		libxatracker.so:graphics/libxatracker
+
+CONFIGURE_ARGS= --without-libudev
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == i386
