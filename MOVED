@@ -12803,3 +12803,4 @@ databases/postgis21|databases/postgis23|2019-06-16|Has expired: Upstream no long
 databases/postgis20|databases/postgis23|2019-06-16|Has expired: Upstream no longer maintained
 databases/postgis22|databases/postgis23|2019-06-16|Has expired: Upstream no longer maintained
 games/freeciv-sounds||2019-06-16|Unused and already part of games/freeciv
+security/py-bro-pkg|security/py-zkg|2019-06-17|Renamed to match upstream changes

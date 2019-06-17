@@ -1,0 +1,13 @@
+======================================================================
+
+Run the following to configure zkg:
+
+zkg autoconfig
+
+NOTE:
+
+The previous command "bro-pkg" can also be used intermittently for a
+while but its usage is deprecated and may be removed in a future
+release.
+
+======================================================================
