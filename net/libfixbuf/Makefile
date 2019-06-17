@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfixbuf
-PORTVERSION=	2.1.0
+PORTVERSION=	2.3.1
 CATEGORIES=	net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix perl5 pkgconfig
+USES=		gnome libtool pathfix perl5 pkgconfig
 USE_GNOME=	glib20
 USE_PERL5=	build
 USE_LDCONFIG=	yes

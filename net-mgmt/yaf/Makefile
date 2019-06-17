@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaf
-PORTVERSION=	2.10.0
+PORTVERSION=	2.11.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfixbuf.so:net/libfixbuf \
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix perl5 pkgconfig
+USES=		gnome libtool pathfix perl5 pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--sysconfdir="${ETCDIR}"

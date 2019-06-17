@@ -1,9 +1,12 @@
+bin/ipfixDump
 include/fixbuf/autoinc.h
 include/fixbuf/private.h
 include/fixbuf/public.h
 include/fixbuf/version.h
 lib/libfixbuf.a
 lib/libfixbuf.so
-lib/libfixbuf.so.6
-lib/libfixbuf.so.6.1.0
+lib/libfixbuf.so.9
+lib/libfixbuf.so.9.0.1
 libdata/pkgconfig/libfixbuf.pc
+man/man1/ipfixDump.1.gz
+%%DATADIR%%/cert_ipfix.xml
