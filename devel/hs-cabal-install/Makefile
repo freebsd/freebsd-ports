@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	ghc:lang/ghc
 
-USES=		cabal
+USES=		cabal compiler:c11
 
 USE_CABAL=	async-2.2.1_1 base16-bytestring-0.1.1.6 base64-bytestring-1.0.0.1 \
 		cryptohash-sha256-0.11.101.0_2 digest-0.0.1.2 echo-0.1.3_1 \
