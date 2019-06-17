@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uv
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.4
 CATEGORIES=	devel
 
 MAINTAINER=	joneum@FreeBSD.org
