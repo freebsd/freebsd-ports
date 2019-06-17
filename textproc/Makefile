@@ -1313,6 +1313,7 @@
     SUBDIR += py-parsel
     SUBDIR += py-parsimonious
     SUBDIR += py-parso
+    SUBDIR += py-patiencediff
     SUBDIR += py-pdfminer
     SUBDIR += py-pdfminer.six
     SUBDIR += py-pdfminer3k

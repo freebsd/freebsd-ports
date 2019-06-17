@@ -1,0 +1,9 @@
+This package contains the Python implementation of the "Patience Diff"
+algorithm, as first described by Bram Cohen.
+
+"Patience Diff" provides a good balance of performance, nice output for humans,
+and implementation simplicity.
+
+The code in this package was extracted from the Bazaar code base.
+
+WWW: https://pypi.org/project/patiencediff/
