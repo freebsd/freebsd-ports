@@ -1,0 +1,4 @@
+mstch is a complete implementation of {{mustache}} templates using modern C++.
+It's compliant with specifications v1.1.3, including the lambda module.
+
+WWW: https://github.com/no1msd/mstch
