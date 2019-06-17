@@ -1,6 +1,6 @@
---- misc/units.orig	2018-09-09 00:07:09 UTC
+--- misc/units.orig	2019-05-22 11:44:20 UTC
 +++ misc/units
-@@ -1872,7 +1872,7 @@ failed_git_marker ()
+@@ -1929,7 +1929,7 @@ failed_git_marker ()
      local f=$1
      local l
  
