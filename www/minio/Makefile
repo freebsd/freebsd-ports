@@ -14,8 +14,8 @@ BUILD_DEPENDS=	go>=1.9.4:lang/go
 USES=		compiler
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2019-06-13T01-41-13Z
-COMMIT_ID=	c22439c82e5679175a99b051d10fac48cd311af0
+GHTAG=		RELEASE.2019-06-15T23-07-18Z
+COMMIT_ID=	99bf4d0c429f04dbd013ba98840d07b759ae1702
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT/src/github.com/${PORTNAME}/${PORTNAME} \
 		Azure:azure-sdk-for-go:v27.0.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:go-autorest:v11.7.0:azure_go_autorest/vendor/github.com/Azure/go-autorest \
@@ -48,8 +48,8 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT/src/github.com/${PORTNAME}/${
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.4.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:f99c8df09eb5:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:461777fb6f67:golang_net/vendor/golang.org/x/net \
+		golang:crypto:5c40567a22f8:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:3f473d35a33a:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:e64efc72b421:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
@@ -105,8 +105,8 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT/src/github.com/${PORTNAME}/${
 		minio:highwayhash:v1.0.0:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:lsync:v0.1.0:minio_lsync/vendor/github.com/minio/lsync \
 		minio:mc:f4bb0b8850cb:minio_mc/vendor/github.com/minio/mc \
-		swills:minio-go:5325257a208f:swills_minio_go/vendor/github.com/swills/minio-go \
-		minio:minio-go:v6.0.29:minio_minio_go/vendor/github.com/minio/minio-go/v6 \
+		minio:minio-go:5325257a208f:minio_minio_go/vendor/github.com/minio/minio-go \
+		minio:minio-go:v6.0.29:dup_minio_go/vendor/github.com/minio/minio-go/v6 \
 		minio:parquet-go:9d767baf1679:minio_parquet_go/vendor/github.com/minio/parquet-go \
 		minio:sha256-simd:v0.1.0:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:sio:v0.2.0:minio_sio/vendor/github.com/minio/sio \
@@ -142,7 +142,6 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT/src/github.com/${PORTNAME}/${
 		tidwall:sjson:v1.0.4:tidwall_sjson/vendor/github.com/tidwall/sjson \
 		uber-go:atomic:v1.3.2:uber_go_atomic/vendor/go.uber.org/atomic \
 		valyala:tcplisten:ceec8f93295a:valyala_tcplisten/vendor/github.com/valyala/tcplisten
-
 PLIST_FILES=	bin/${PORTNAME}
 USE_RC_SUBR=	minio
 
