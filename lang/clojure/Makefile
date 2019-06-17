@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clojure
-PORTVERSION=	1.10.0.411
+PORTVERSION=	1.10.1.447
 CATEGORIES=	lang lisp java
 MASTER_SITES=	https://download.clojure.org/install/
 DISTNAME=	clojure-tools-${PORTVERSION}
