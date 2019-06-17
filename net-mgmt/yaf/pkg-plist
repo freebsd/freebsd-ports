@@ -1,7 +1,6 @@
 bin/airdaemon
 bin/filedaemon
 bin/getFlowKeyHash
-bin/ipfixDump
 bin/yaf
 bin/yafMeta2Pcap
 bin/yafcollect
@@ -174,7 +173,6 @@ man/man1/airdaemon.1.gz
 man/man1/applabel.1.gz
 man/man1/filedaemon.1.gz
 man/man1/getFlowKeyHash.1.gz
-man/man1/ipfixDump.1.gz
 man/man1/yaf.1.gz
 man/man1/yafMeta2Pcap.1.gz
 man/man1/yafdhcp.1.gz

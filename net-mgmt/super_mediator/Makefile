@@ -3,6 +3,7 @@
 
 PORTNAME=	super_mediator
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
