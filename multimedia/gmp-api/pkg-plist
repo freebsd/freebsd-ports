@@ -1,9 +1,3 @@
-include/gmp-api/gmp-async-shutdown.h
-include/gmp-api/gmp-audio-codec.h
-include/gmp-api/gmp-audio-decode.h
-include/gmp-api/gmp-audio-host.h
-include/gmp-api/gmp-audio-samples.h
-include/gmp-api/gmp-decryption.h
 include/gmp-api/gmp-entrypoints.h
 include/gmp-api/gmp-errors.h
 include/gmp-api/gmp-platform.h
