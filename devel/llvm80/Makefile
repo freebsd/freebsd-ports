@@ -4,7 +4,11 @@ PORTNAME=	llvm
 DISTVERSION=	8.0.0
 PORTREVISION=	2
 CATEGORIES=	devel lang
-MASTER_SITES=	http://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
+.if ${DISTVERSION:M*rc*}
+MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_RELEASE}-${DISTVERSION:S/${LLVM_RELEASE}//}/
+.else
+MASTER_SITES=	http://releases.llvm.org/${LLVM_RELEASE}/
+.endif
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
 DISTFILES=	${PORTNAME}-${DISTVERSION}.src${EXTRACT_SUFX}
@@ -16,8 +20,6 @@ COMMENT=	LLVM and Clang
 
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 LLVM_MAJOR=	${LLVM_RELEASE:C/\.[0-9]\.[0-9]$//}
-RCDIR=		${DISTVERSION:S/${LLVM_RELEASE}//:C|(rc.*)|\1/|}
-PRE_=		${DISTVERSION:C/.*rc.*/pre/:N*[0-9]*}
 LLVM_SUFFIX=	${LLVM_RELEASE:C/\.[0-9]$//:C/\.//}
 
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
@@ -417,7 +419,7 @@ post-build-COMPILER_RT-on:
 
 post-install:
 	${RM} -r ${STAGEDIR}${LLVM_PREFIX}/include/llvm/MC/MCAnalysis
-	${RMDIR} ${STAGEDIR}/usr/local/llvm80/include/llvm/TextAPI/MachO
+	${RMDIR} ${STAGEDIR}/${PREFIX}/llvm80/include/llvm/TextAPI/MachO
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
 	    ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
 .for command in ${COMMANDS:C/^/XXXX/1:NXXXX*}
