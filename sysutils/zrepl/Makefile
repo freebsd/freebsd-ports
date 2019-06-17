@@ -12,6 +12,8 @@ COMMENT=	ZFS dataset replication tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	https://github.com/zrepl/zrepl/issues/184
+
 USES=		gmake go
 USE_RC_SUBR=	zrepl
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
