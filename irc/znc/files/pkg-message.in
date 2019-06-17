@@ -1,9 +1,7 @@
-*****************************************************************************
-
-# Configuration
-
- Configs written before ZNC 0.206 can't be read anymore!
-  
+[
+{
+	message: <<EOM
+*******************************************************************************
  To generate a basic configuration file, run znc --makeconf after installation.
  It is NOT a good idea to create a new config file manually.
 
@@ -14,14 +12,19 @@
    sudo -u znc znc -d %%ETCDIR%% --makeconf
 
  http://wiki.znc.in/Configuration
-
-# Modules
-
- If you upgrade your ZNC version you must recompile all your external modules,
- ZNC ABI is not stable.
-
-   znc-buildmod <modulename>.cpp
+*******************************************************************************
+EOM
+	type: install
+},
+{
+	message: <<EOM
+*******************************************************************************
+ After each upgrade you must recompile all your external modules, ZNC ABI is
+ not stable. $ znc-buildmod <modulename>.cpp
 
  http://wiki.znc.in/Compiling_modules
-
-*****************************************************************************
+*******************************************************************************
+EOM
+	type: upgrade
+}
+]
