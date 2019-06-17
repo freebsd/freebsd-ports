@@ -1560,6 +1560,7 @@
     SUBDIR += msgpuck
     SUBDIR += msp430-debug-stack
     SUBDIR += mspdebug
+    SUBDIR += mstch
     SUBDIR += mtbl
     SUBDIR += mutagen
     SUBDIR += myrepos

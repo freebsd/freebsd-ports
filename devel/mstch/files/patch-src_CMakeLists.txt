@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2019-06-16 23:58:00 UTC
++++ src/CMakeLists.txt
+@@ -22,7 +22,7 @@ set(SRC
+     token.cpp
+     utils.cpp)
+ 
+-add_library(mstch STATIC ${SRC})
++add_library(mstch ${SRC})
+ 
+ set_property(TARGET mstch PROPERTY VERSION ${mstch_VERSION})
+ 
