@@ -1,0 +1,19 @@
+ITS Tool allows you to translate your XML documents with PO files, using rules
+from the W3C Internationalization Tag Set (ITS) to determine what to translate
+and how to separate it into PO file messages.
+
+PO files are the standard translation format for GNU and other Unix-like
+systems. They present translatable information as discrete messages, allowing
+each message to be translated independently. In contrast to whole-page
+translation, translating with a message-based format like PO means you can
+easily track changes to the source document down to the paragraph. When new
+strings are added or existing strings are modified, you only need to update
+the corresponding messages.
+
+ITS Tool is designed to make XML documents translatable through PO files by
+applying standard ITS rules, as well as extension rules specific to ITS Tool.
+ITS also provides an industry standard way for authors to override translation
+information in their documents, such as whether a particular element should be
+translated.
+
+WWW: http://itstool.org/
