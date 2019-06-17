@@ -3,16 +3,20 @@ include/wels/codec_app_def.h
 include/wels/codec_def.h
 include/wels/codec_ver.h
 %%PLUGINS%%%%WEBPLUGIN_DIR%%/gmpopenh264.info
+%%PLUGINS%%@rmtry lib/cliqz/defaults/pref/gmpopenh264.js
 %%PLUGINS%%@rmtry lib/firefox-nightly/defaults/pref/gmpopenh264.js
 %%PLUGINS%%@rmtry lib/firefox/defaults/pref/gmpopenh264.js
 %%PLUGINS%%@rmtry lib/seamonkey/defaults/pref/gmpopenh264.js
+%%PLUGINS%%@rmtry lib/thunderbird/defaults/pref/gmpopenh264.js
 %%PLUGINS%%%%WEBPLUGIN_DIR%%/gmpopenh264.js
+%%PLUGINS%%@postexec ln -sf %D/%F %D/lib/cliqz/defaults/pref/ 2>/dev/null || true
 %%PLUGINS%%@postexec ln -sf %D/%F %D/lib/firefox-nightly/defaults/pref/ 2>/dev/null || true
 %%PLUGINS%%@postexec ln -sf %D/%F %D/lib/firefox/defaults/pref/ 2>/dev/null || true
 %%PLUGINS%%@postexec ln -sf %D/%F %D/lib/seamonkey/defaults/pref/ 2>/dev/null || true
+%%PLUGINS%%@postexec ln -sf %D/%F %D/lib/thunderbird/defaults/pref/ 2>/dev/null || true
 %%PLUGINS%%%%WEBPLUGIN_DIR%%/libgmpopenh264.so
 lib/libopenh264.a
 lib/libopenh264.so
 lib/libopenh264.so.%%PORTVERSION%%
-lib/libopenh264.so.4
+lib/libopenh264.so.5
 libdata/pkgconfig/openh264.pc
