@@ -3,7 +3,6 @@ sbin/halog
 sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/51Degrees-device-detection.txt
 %%PORTDOCS%%%%DOCSDIR%%/DeviceAtlas-device-detection.txt
-%%PORTDOCS%%%%DOCSDIR%%/SOCKS4.protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/SPOE.txt
 %%PORTDOCS%%%%DOCSDIR%%/WURFL-device-detection.txt
 %%PORTDOCS%%%%DOCSDIR%%/acl.fig
@@ -75,9 +74,14 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/proxy-protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/queuing.fig
 %%PORTDOCS%%%%DOCSDIR%%/regression-testing.txt
-%%PORTDOCS%%%%DOCSDIR%%/seamless_reload.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl-content-sw.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/check
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/check.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/content-sw-sample.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/debug2ansi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/debug2html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/debugfind
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/400.http
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/403.http
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/408.http
@@ -87,7 +91,12 @@ sbin/haproxy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/504.http
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/haproxy.init
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/haproxy.spec
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/haproxy.vim
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/init.haproxy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/option-http_proxy.cfg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/socks4.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seamless_reload.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stats_haproxy.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/transparent_proxy.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wurfl-example.cfg
