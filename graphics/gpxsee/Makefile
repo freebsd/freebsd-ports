@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpxsee
-DISTVERSION=	7.8
+DISTVERSION=	7.9
 CATEGORIES=	graphics geography
 
 MAINTAINER=	sikmir@gmail.com
