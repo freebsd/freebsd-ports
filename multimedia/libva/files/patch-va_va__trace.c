@@ -2,7 +2,7 @@
 
 --- va/va_trace.c.orig	2018-02-12 06:32:11 UTC
 +++ va/va_trace.c
-@@ -48,12 +48,40 @@
+@@ -48,12 +48,36 @@
  #include <unistd.h>
  #include <sys/types.h>
  #include <sys/stat.h>
@@ -14,9 +14,7 @@
  
 +#if defined(__linux__)
 +#include <sys/syscall.h>
-+#elif defined(__DragonFly__)
-+#include <sys/lwp.h>
-+#elif defined(__FreeBSD__)
++#elif defined(__DragonFly__) || defined(__FreeBSD__)
 +#include <pthread_np.h>
 +#elif defined(__NetBSD__)
 +#include <lwp.h>
@@ -29,9 +27,7 @@
 +{
 +#if defined(__linux__)
 +  return syscall(__NR_gettid);
-+#elif defined(__DragonFly__)
-+  return lwp_gettid();
-+#elif defined(__FreeBSD__)
++#elif defined(__DragonFly__) || defined(__FreeBSD__)
 +  return pthread_getthreadid_np();
 +#elif defined(__NetBSD__)
 +  return _lwp_self();
