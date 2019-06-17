@@ -8,10 +8,6 @@ lib/frama-c/FCBuffer.cmi
 lib/frama-c/FCBuffer.cmo
 lib/frama-c/FCBuffer.cmx
 lib/frama-c/FCBuffer.o
-lib/frama-c/FCDynlink.cmi
-lib/frama-c/FCDynlink.cmo
-lib/frama-c/FCDynlink.cmx
-lib/frama-c/FCDynlink.o
 lib/frama-c/FCHashtbl.cmi
 lib/frama-c/FCHashtbl.cmo
 lib/frama-c/FCHashtbl.cmx
@@ -150,6 +146,10 @@ lib/frama-c/cil_state_builder.cmo
 lib/frama-c/cil_state_builder.cmx
 lib/frama-c/cil_state_builder.o
 lib/frama-c/cil_types.cmi
+lib/frama-c/cil_types_debug.cmi
+lib/frama-c/cil_types_debug.cmo
+lib/frama-c/cil_types_debug.cmx
+lib/frama-c/cil_types_debug.o
 lib/frama-c/cilconfig.cmi
 lib/frama-c/cilconfig.cmo
 lib/frama-c/cilconfig.cmx
@@ -222,6 +222,10 @@ lib/frama-c/design.cmi
 lib/frama-c/design.cmo
 lib/frama-c/design.cmx
 lib/frama-c/design.o
+lib/frama-c/destructors.cmi
+lib/frama-c/destructors.cmo
+lib/frama-c/destructors.cmx
+lib/frama-c/destructors.o
 lib/frama-c/dominators.cmi
 lib/frama-c/dominators.cmo
 lib/frama-c/dominators.cmx
@@ -810,10 +814,6 @@ lib/frama-c/tr_offset.cmi
 lib/frama-c/tr_offset.cmo
 lib/frama-c/tr_offset.cmx
 lib/frama-c/tr_offset.o
-lib/frama-c/trace.cmi
-lib/frama-c/trace.cmo
-lib/frama-c/trace.cmx
-lib/frama-c/trace.o
 lib/frama-c/transitioning.cmi
 lib/frama-c/transitioning.cmo
 lib/frama-c/transitioning.cmx
@@ -830,6 +830,10 @@ lib/frama-c/typed_parameter.cmi
 lib/frama-c/typed_parameter.cmo
 lib/frama-c/typed_parameter.cmx
 lib/frama-c/typed_parameter.o
+lib/frama-c/undefined_sequence.cmi
+lib/frama-c/undefined_sequence.cmo
+lib/frama-c/undefined_sequence.cmx
+lib/frama-c/undefined_sequence.o
 lib/frama-c/unicode.cmi
 lib/frama-c/unicode.cmo
 lib/frama-c/unicode.cmx
@@ -838,10 +842,6 @@ lib/frama-c/unmarshal.cmi
 lib/frama-c/unmarshal.cmo
 lib/frama-c/unmarshal.cmx
 lib/frama-c/unmarshal.o
-lib/frama-c/unmarshal_nums.cmi
-lib/frama-c/unmarshal_nums.cmo
-lib/frama-c/unmarshal_nums.cmx
-lib/frama-c/unmarshal_nums.o
 lib/frama-c/unmarshal_z.cmi
 lib/frama-c/unmarshal_z.cmo
 lib/frama-c/unmarshal_z.cmx
@@ -921,6 +921,7 @@ lib/frama-c/wutil.o
 %%DATADIR%%/Makefile.generic
 %%DATADIR%%/Makefile.kernel
 %%DATADIR%%/Makefile.plugin.template
+%%DATADIR%%/autocomplete_frama-c
 %%DATADIR%%/builtin.h
 %%DATADIR%%/configure.ac
 %%DATADIR%%/doc/code/docgen.ml
@@ -1019,6 +1020,7 @@ lib/frama-c/wutil.o
 %%DATADIR%%/libc/netinet/in_systm.h
 %%DATADIR%%/libc/netinet/ip.h
 %%DATADIR%%/libc/netinet/ip_icmp.h
+%%DATADIR%%/libc/netinet/tcp.h
 %%DATADIR%%/libc/nl_types.h
 %%DATADIR%%/libc/pwd.h
 %%DATADIR%%/libc/regex.h
