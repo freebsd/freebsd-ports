@@ -1179,6 +1179,7 @@
     SUBDIR += ripe-whois
     SUBDIR += routinator
     SUBDIR += rp-pppoe
+    SUBDIR += rsocket-cpp
     SUBDIR += rsplib
     SUBDIR += rsync
     SUBDIR += rsync-bpc
