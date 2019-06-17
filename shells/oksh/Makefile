@@ -1,11 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	oksh
-DISTVERSION=	20181009
+DISTVERSION=	6.5
+PORTEPOCH=	1
 CATEGORIES=	shells
-MASTER_SITES=	https://mirrors.nycbug.org/pub/distfiles/
+MASTER_SITES=	https://github.com/ibara/oksh/releases/download/oksh-${DISTVERSION}/
 
-MAINTAINER=	bcallah@openbsd.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Portable OpenBSD Korn shell
 
 LICENSE=	PD
@@ -17,8 +18,8 @@ OPTIONS_DEFAULT=	CURSES
 
 CURSES_DESC=	Use ncurses for screen clearing routines
 
-CURSES_CONFIGURE_ENABLE=	curses
 CURSES_USES=			ncurses
+CURSES_CONFIGURE_ENABLE=	curses
 
 STATIC_CONFIGURE_ENABLE=	static
 
