@@ -38,7 +38,7 @@
  	  $(wildcard share/*.c share/*.h) \
  	  share/Makefile.dynamic share/Makefile.plugin.template share/Makefile.kernel \
  	  share/Makefile.config share/Makefile.common share/Makefile.generic \
- 	  share/configure.ac \
+ 	  share/configure.ac share/autocomplete_frama-c \
 -	  $(FRAMAC_DATADIR)
 -	$(MKDIR) $(FRAMAC_DATADIR)/emacs
 -	$(CP) $(wildcard share/emacs/*.el) $(FRAMAC_DATADIR)/emacs
