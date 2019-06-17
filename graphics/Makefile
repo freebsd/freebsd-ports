@@ -499,6 +499,7 @@
     SUBDIR += libwmf
     SUBDIR += libwmf-nox11
     SUBDIR += libwpg03
+    SUBDIR += libxatracker
     SUBDIR += libyuv
     SUBDIR += libzmf
     SUBDIR += lightzone
