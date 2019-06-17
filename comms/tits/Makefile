@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tits
-PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTVERSION=	1.3.0
 CATEGORIES=	comms
 MASTER_SITES=	http://www.mctavish.co.uk/tits/
 
@@ -14,6 +13,7 @@ LICENSE=	BSD4CLAUSE
 
 USES=		uidfix
 USE_RC_SUBR=	tits
+
 MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 
 post-patch:

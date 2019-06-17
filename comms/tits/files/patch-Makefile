@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Sep 24 16:05:07 2003
-+++ Makefile	Wed Sep 24 16:06:52 2003
-@@ -29,15 +29,15 @@
+--- Makefile.orig	2011-01-15 12:47:19 UTC
++++ Makefile
+@@ -29,22 +29,22 @@
  # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
@@ -11,11 +11,20 @@
 -MAN=	tits.8
 +MAN8=	tits.8
  
- SRCS=	main.c buffer.c client.c context.c listener.c telnet.c tty.c
- SRCS+=	dispatcher.c setup.c config.c server.c logger.c
+ SRCS=	main.c buffer.c client.c context.c listener.c masterpty.c telnet.c
+ SRCS+=	tty.c dispatcher.c setup.c config.c server.c logger.c stdio2pty.c
+ SRCS+=	rtelnet.c
  
+ .if !defined(SMALLPROG)
 -CPPFLAGS+= -DLIBWRAP -DTITS_DEFAULT_CONFIG_FILE=\"${LOCALBASE}/etc/tits.conf\"
 +CFLAGS+= -DLIBWRAP -DTITS_DEFAULT_CONFIG_FILE=\"${LOCALBASE}/etc/tits.conf\"
  LDADD+=	-lwrap
+ .else
+-CPPFLAGS+= -DTITS_DEFAULT_CONFIG_FILE=\"/etc/tits.conf\"
++CFLAGS+= -DTITS_DEFAULT_CONFIG_FILE=\"${LOCALBASE}/etc/tits.conf\"
+ .endif
+-CPPFLAGS+= -DTITS_DEFAULT_LINKDIR=\"/var/run\"
++CFLAGS+= -DTITS_DEFAULT_LINKDIR=\"/var/run\"
  PREFIX?= /usr/local
  BINDIR?= ${PREFIX}/sbin
+ 
