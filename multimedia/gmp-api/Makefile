@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmp-api
-DISTVERSIONPREFIX=	Firefox
-DISTVERSION=	39 # tracking www/firefox
+DISTVERSION=	58 # from config/milestone.txt of mozilla-central commit
 CATEGORIES=	multimedia
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -12,6 +11,7 @@ LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
+GH_TAGNAME=	e393575
 
 NO_BUILD=	yes
 NO_ARCH=	yes
