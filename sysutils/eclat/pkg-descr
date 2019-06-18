@@ -1,0 +1,7 @@
+Eclat stands for EC2 Command Line Administrator Tool.  It allows you to
+manage Amazon EC2 services from the command line, fast and easy.  It does
+not require resource-consuming libraries.  It is written in plain C,
+depends only on libraries which are always installed on any decent system,
+and has low resource requirements.
+
+WWW: http://puszcza.gnu.org.ua/software/eclat/
