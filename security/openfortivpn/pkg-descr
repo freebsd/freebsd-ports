@@ -1,0 +1,5 @@
+Openfortivpn is a client for PPP+SSL VPN tunnel services.
+It spawns a pppd process and operates the communication between
+the gateway and the process. It is compatible with Fortinet VPNs.
+
+WWW: https://github.com/adrienverge/openfortivpn

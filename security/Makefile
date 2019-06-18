@@ -409,6 +409,7 @@
     SUBDIR += openconnect-gui
     SUBDIR += opencryptoki
     SUBDIR += openct
+    SUBDIR += openfortivpn
     SUBDIR += openiked
     SUBDIR += opensaml
     SUBDIR += opensc
