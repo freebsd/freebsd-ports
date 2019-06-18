@@ -14,7 +14,7 @@ CONFLICTS_INSTALL=	rust
 # Which source to pull:
 #   https://static.rust-lang.org/dist/${NIGHTLY_DATE}/rustc-nightly-src.tar.gz
 #   https://static.rust-lang.org/dist/channel-rust-nightly.toml
-NIGHTLY_DATE=			2019-06-01
+NIGHTLY_DATE=			2019-06-18
 NIGHTLY_SUBDIR=			${NIGHTLY_DATE}/
 
 # See WRKSRC/src/stage0.txt for this date
@@ -24,7 +24,6 @@ CARGO_BOOTSTRAP_VERSION=	beta
 
 CARGO_VENDOR_DIR=	${WRKSRC}/vendor
 
-BROKEN=			https://github.com/rust-lang/rust/issues/61435
 # Other bootstraps aren't provided by upstream yet
 ONLY_FOR_ARCHS=			amd64 i386
 
