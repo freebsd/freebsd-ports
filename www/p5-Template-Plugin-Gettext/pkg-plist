@@ -1,0 +1,8 @@
+bin/xgettext-tt2
+%%SITE_PERL%%/Locale/XGettext/TT2.pm
+%%SITE_PERL%%/Locale/XGettext/TT2.pod
+%%SITE_PERL%%/Template/Plugin/Gettext.pm
+%%SITE_PERL%%/Template/Plugin/Gettext.pod
+%%PERL5_MAN1%%/xgettext-tt2.1.gz
+%%PERL5_MAN3%%/Locale::XGettext::TT2.3.gz
+%%PERL5_MAN3%%/Template::Plugin::Gettext.3.gz
