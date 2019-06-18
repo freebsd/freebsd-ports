@@ -1,16 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	renpy
-PORTVERSION?=	7.2.2
+PORTVERSION?=	7.3.0
 DISTVERSIONSUFFIX=-sdk
 PORTREVISION?=	0
 CATEGORIES=	games devel
 MASTER_SITES=	https://www.renpy.org/dl/${PORTVERSION}/
-
-.ifndef PKGNAMESUFFIX
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES+=	15738d1dfb41.patch:-p1
-.endif
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Framework for developing visual-novel type games
