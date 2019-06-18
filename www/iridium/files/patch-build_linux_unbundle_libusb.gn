@@ -1,5 +1,5 @@
---- build/linux/unbundle/libusb.gn.orig	2018-07-20 03:07:05.793992000 +0200
-+++ build/linux/unbundle/libusb.gn	2018-07-20 03:07:35.792417000 +0200
+--- build/linux/unbundle/libusb.gn.orig	2019-03-17 01:47:13 UTC
++++ build/linux/unbundle/libusb.gn
 @@ -0,0 +1,24 @@
 +# Copyright 2016 The Chromium Authors. All rights reserved.
 +# Use of this source code is governed by a BSD-style license that can be

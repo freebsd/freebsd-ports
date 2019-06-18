@@ -1,4 +1,4 @@
---- media/capture/video/file_video_capture_device_factory.cc.orig	2017-06-05 19:03:08 UTC
+--- media/capture/video/file_video_capture_device_factory.cc.orig	2019-03-11 22:00:59 UTC
 +++ media/capture/video/file_video_capture_device_factory.cc
 @@ -53,7 +53,7 @@ void FileVideoCaptureDeviceFactory::GetDeviceDescripto
  #elif defined(OS_MACOSX)

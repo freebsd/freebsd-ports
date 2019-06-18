@@ -1,6 +1,6 @@
---- chrome/service/cloud_print/print_system.cc.orig	2018-03-24 13:33:28.414570000 +0100
-+++ chrome/service/cloud_print/print_system.cc	2018-03-24 13:31:35.144592000 +0100
-@@ -36,7 +36,7 @@
+--- chrome/service/cloud_print/print_system.cc.orig	2019-03-11 22:00:54 UTC
++++ chrome/service/cloud_print/print_system.cc
+@@ -36,7 +36,7 @@ std::string PrintSystem::GenerateProxyId() {
    return base::GenerateGUID();
  }
  

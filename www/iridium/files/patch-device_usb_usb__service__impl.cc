@@ -1,6 +1,6 @@
---- device/usb/usb_service_impl.cc.orig	2018-06-13 00:10:18.000000000 +0200
-+++ device/usb/usb_service_impl.cc	2018-07-20 12:49:59.699912000 +0200
-@@ -239,8 +239,10 @@
+--- device/usb/usb_service_impl.cc.orig	2019-03-11 22:00:58 UTC
++++ device/usb/usb_service_impl.cc
+@@ -231,8 +231,10 @@ UsbServiceImpl::UsbServiceImpl()
  }
  
  UsbServiceImpl::~UsbServiceImpl() {
@@ -11,7 +11,7 @@
  }
  
  void UsbServiceImpl::GetDevices(const GetDevicesCallback& callback) {
-@@ -295,6 +297,7 @@
+@@ -287,6 +289,7 @@ void UsbServiceImpl::OnUsbContext(scoped_refptr<UsbCon
  
    context_ = std::move(context);
  
@@ -19,7 +19,7 @@
    int rv = libusb_hotplug_register_callback(
        context_->context(),
        static_cast<libusb_hotplug_event>(LIBUSB_HOTPLUG_EVENT_DEVICE_ARRIVED |
-@@ -307,6 +310,7 @@
+@@ -299,6 +302,7 @@ void UsbServiceImpl::OnUsbContext(scoped_refptr<UsbCon
  
    // This will call any enumeration callbacks queued while initializing.
    RefreshDevices();
@@ -27,7 +27,7 @@
  
  #if defined(OS_WIN)
    DeviceMonitorWin* device_monitor = DeviceMonitorWin::GetForAllInterfaces();
-@@ -503,6 +507,7 @@
+@@ -495,6 +499,7 @@ void UsbServiceImpl::RemoveDevice(scoped_refptr<UsbDev
    device->OnDisconnect();
  }
  
@@ -35,7 +35,7 @@
  // static
  int LIBUSB_CALL UsbServiceImpl::HotplugCallback(libusb_context* context,
                                                  libusb_device* device_raw,
-@@ -537,6 +542,7 @@
+@@ -528,6 +533,7 @@ int LIBUSB_CALL UsbServiceImpl::HotplugCallback(libusb
  
    return 0;
  }

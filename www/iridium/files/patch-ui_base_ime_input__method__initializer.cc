@@ -1,5 +1,5 @@
---- ui/base/ime/input_method_initializer.cc.orig	2018-06-13 00:11:09.000000000 +0200
-+++ ui/base/ime/input_method_initializer.cc	2018-07-19 21:52:04.744818000 +0200
+--- ui/base/ime/input_method_initializer.cc.orig	2019-03-11 22:01:19 UTC
++++ ui/base/ime/input_method_initializer.cc
 @@ -8,7 +8,7 @@
  
  #if defined(OS_CHROMEOS)
@@ -18,7 +18,7 @@
  const ui::LinuxInputMethodContextFactory*
      g_linux_input_method_context_factory_for_testing;
  #endif
-@@ -46,7 +46,7 @@
+@@ -46,7 +46,7 @@ void ShutdownInputMethod() {
  void InitializeInputMethodForTesting() {
  #if defined(OS_CHROMEOS)
    IMEBridge::Initialize();
@@ -27,7 +27,7 @@
    if (!g_linux_input_method_context_factory_for_testing)
      g_linux_input_method_context_factory_for_testing =
          new FakeInputMethodContextFactory();
-@@ -67,7 +67,7 @@
+@@ -67,7 +67,7 @@ void InitializeInputMethodForTesting() {
  void ShutdownInputMethodForTesting() {
  #if defined(OS_CHROMEOS)
    IMEBridge::Shutdown();

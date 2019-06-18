@@ -1,6 +1,6 @@
---- sandbox/features.gni.orig	2017-12-15 02:04:24.000000000 +0100
-+++ sandbox/features.gni	2017-12-24 17:50:45.309732000 +0100
-@@ -12,6 +12,6 @@
+--- sandbox/features.gni.orig	2019-03-11 22:01:01 UTC
++++ sandbox/features.gni
+@@ -12,6 +12,6 @@ use_seccomp_bpf =
      (is_linux || is_android) &&
      (current_cpu == "x86" || current_cpu == "x64" || current_cpu == "arm" ||
       current_cpu == "arm64" || current_cpu == "mipsel" ||

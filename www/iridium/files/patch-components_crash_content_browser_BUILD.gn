@@ -1,10 +1,7 @@
---- components/crash/content/browser/BUILD.gn.orig	2018-06-13 00:10:13.000000000 +0200
-+++ components/crash/content/browser/BUILD.gn	2018-07-18 23:37:00.046473000 +0200
-@@ -24,10 +24,9 @@
-     "//components/crash/content/app",
-     "//content/public/browser",
+--- components/crash/content/browser/BUILD.gn.orig	2019-03-11 22:00:56 UTC
++++ components/crash/content/browser/BUILD.gn
+@@ -28,7 +28,7 @@ source_set("browser") {
      "//content/public/common",
--    "//third_party/breakpad:client",
    ]
  
 -  if (is_linux || is_android) {
@@ -12,7 +9,14 @@
      set_sources_assignment_filter([])
  
      # Want this file on both Linux and Android.
-@@ -43,7 +42,7 @@
+@@ -42,13 +42,13 @@ source_set("browser") {
+     deps += [ "//third_party/crashpad/crashpad/client" ]
+   }
+ 
+-  if (!is_android) {
++  if (!is_android && !is_bsd) {
+     deps += [ "//third_party/breakpad:client" ]
+   }
  
    # This is not in the GYP build but this target includes breakpad client
    # headers, so add the dependency here.

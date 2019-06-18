@@ -1,6 +1,6 @@
---- device/usb/usb_service_impl.h.orig	2018-06-13 00:10:18.000000000 +0200
-+++ device/usb/usb_service_impl.h	2018-07-20 12:47:42.413625000 +0200
-@@ -73,11 +73,13 @@
+--- device/usb/usb_service_impl.h.orig	2019-03-11 22:00:58 UTC
++++ device/usb/usb_service_impl.h
+@@ -73,11 +73,13 @@ class UsbServiceImpl :
                   scoped_refptr<UsbDeviceImpl> device);
    void RemoveDevice(scoped_refptr<UsbDeviceImpl> device);
  
@@ -14,7 +14,7 @@
    // These functions release a reference to the provided platform device.
    void OnPlatformDeviceAdded(ScopedLibusbDeviceRef platform_device);
    void OnPlatformDeviceRemoved(ScopedLibusbDeviceRef platform_device);
-@@ -95,7 +97,9 @@
+@@ -97,7 +99,9 @@ class UsbServiceImpl :
    // connected instead of only when a full enumeration is requested.
    // TODO(reillyg): Support this on all platforms. crbug.com/411715
    bool hotplug_enabled_ = false;

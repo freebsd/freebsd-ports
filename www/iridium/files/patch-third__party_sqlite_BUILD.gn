@@ -1,29 +1,11 @@
---- third_party/sqlite/BUILD.gn.orig	2018-06-13 00:11:05.000000000 +0200
-+++ third_party/sqlite/BUILD.gn	2018-07-19 20:59:10.723249000 +0200
-@@ -155,7 +155,7 @@
-     # sqlite3Fts3InitTok).
-     cflags += [ "-Wno-unused-function" ]
+--- third_party/sqlite/BUILD.gn.orig	2019-03-11 22:01:16 UTC
++++ third_party/sqlite/BUILD.gn
+@@ -251,7 +251,7 @@ config("sqlite_warnings") {
+       ]
+     }
    }
 -  if (is_linux) {
 +  if (is_linux && !is_bsd) {
      cflags += [
-       # SQLite doesn"t believe in compiler warnings,
-       # preferring testing.
-@@ -208,7 +208,7 @@
-     }
-   }
- 
--  if (is_linux || is_android) {
-+  if ((is_linux && !is_bsd) || is_android) {
-     defines += [
-       # Linux provides fdatasync(), a faster equivalent of fsync().
-       "fdatasync=fdatasync",
-@@ -243,7 +243,7 @@
-     ":sqlite_warnings",
-   ]
- 
--  if (is_linux) {
-+  if (is_linux && !is_bsd) {
-     libs = [ "dl" ]
-   } else if (is_mac || is_ios) {
-     libs = [ "CoreFoundation.framework" ]
+       # SQLite doesn't believe in compiler warnings, preferring testing.
+       # http://www.sqlite.org/faq.html#q17

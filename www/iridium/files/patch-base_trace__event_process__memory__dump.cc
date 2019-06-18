@@ -1,11 +1,11 @@
---- base/trace_event/process_memory_dump.cc.orig	2018-05-09 21:05:33.000000000 +0200
-+++ base/trace_event/process_memory_dump.cc	2018-08-16 02:36:46.780728000 +0200
-@@ -92,7 +92,7 @@
-   const size_t kMaxChunkSize = 8 * 1024 * 1024;
-   size_t max_vec_size =
-       GetSystemPageCount(std::min(mapped_size, kMaxChunkSize), page_size);
--#if defined(OS_MACOSX)
-+#if defined(OS_MACOSX) || defined(OS_BSD)
-   std::unique_ptr<char[]> vec(new char[max_vec_size]);
- #elif defined(OS_WIN)
+--- base/trace_event/process_memory_dump.cc.orig	2019-03-11 22:00:51 UTC
++++ base/trace_event/process_memory_dump.cc
+@@ -94,7 +94,7 @@ size_t ProcessMemoryDump::CountResidentBytes(void* sta
+ #if defined(OS_WIN)
    std::unique_ptr<PSAPI_WORKING_SET_EX_INFORMATION[]> vec(
+       new PSAPI_WORKING_SET_EX_INFORMATION[max_vec_size]);
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_BSD)
+   std::unique_ptr<char[]> vec(new char[max_vec_size]);
+ #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
+   std::unique_ptr<unsigned char[]> vec(new unsigned char[max_vec_size]);

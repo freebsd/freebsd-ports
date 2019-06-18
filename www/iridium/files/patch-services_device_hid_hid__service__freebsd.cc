@@ -1,6 +1,6 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2018-07-20 13:47:11.569682000 +0200
-+++ services/device/hid/hid_service_freebsd.cc	2018-07-20 15:20:19.980971000 +0200
-@@ -0,0 +1,371 @@
+--- services/device/hid/hid_service_freebsd.cc.orig	2019-04-15 17:58:16 UTC
++++ services/device/hid/hid_service_freebsd.cc
+@@ -0,0 +1,373 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -29,8 +29,8 @@
 +#include "base/strings/sys_string_conversions.h"
 +#include "base/strings/string_util.h"
 +#include "base/strings/string_split.h"
-+#include "base/task_scheduler/post_task.h"
-+#include "base/threading/thread_restrictions.h"
++#include "base/task/post_task.h"
++#include "base/threading/scoped_blocking_call.h"
 +#include "base/threading/thread_task_runner_handle.h"
 +#include "components/device_event_log/device_event_log.h"
 +#include "services/device/hid/hid_connection_freebsd.h"
@@ -71,7 +71,6 @@
 +  }
 +
 +  void Start() {
-+    base::AssertBlockingAllowed();
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +
 +    const base::FilePath kDevRoot("/dev");
@@ -97,7 +96,7 @@
 +
 +  bool HaveReadWritePermissions(std::string device_id) {
 +    std::string device_node = "/dev/" + device_id;
-+    base::AssertBlockingAllowed();
++    base::internal::AssertBlockingAllowed();
 +
 +    base::FilePath device_path(device_node);
 +    base::File device_file;
@@ -111,6 +110,8 @@
 +  }
 +
 +  void OnDeviceAdded(std::string device_id) {
++    base::ScopedBlockingCall scoped_blocking_call(
++        base::BlockingType::MAY_BLOCK);
 +    std::string device_node = "/dev/" + device_id;
 +    uint16_t vendor_id = 0xffff;
 +    uint16_t product_id = 0xffff;
@@ -119,7 +120,7 @@
 +
 +    std::vector<uint8_t> report_descriptor;
 +
-+    base::AssertBlockingAllowed();
++    base::internal::AssertBlockingAllowed();
 +
 +    base::FilePath device_path(device_node);
 +    base::File device_file;
@@ -169,6 +170,8 @@
 +  }
 +
 +  void OnDeviceRemoved(std::string device_id) {
++    base::ScopedBlockingCall scoped_blocking_call(
++        base::BlockingType::MAY_BLOCK);
 +    task_runner_->PostTask(
 +        FROM_HERE, base::Bind(&HidServiceFreeBSD::RemoveDevice, service_,
 +                              device_id));
@@ -177,7 +180,7 @@
 + private:
 +
 +  void CheckPendingPermissionChange() {
-+    base::AssertBlockingAllowed();
++    base::internal::AssertBlockingAllowed();
 +    std::map<std::string, int>::iterator it;
 +    for (it = permissions_checks_attempts_.begin(); it != permissions_checks_attempts_.end();) {
 +      std::string device_name = it->first;
@@ -203,7 +206,7 @@
 +  }
 +
 +  void SetupDevdMonitor() {
-+    base::AssertBlockingAllowed();
++    base::internal::AssertBlockingAllowed();
 +
 +    int devd_fd = socket(AF_UNIX, SOCK_SEQPACKET, 0);
 +    if (devd_fd < 0)
@@ -312,7 +315,7 @@
 +// static
 +void HidServiceFreeBSD::OpenOnBlockingThread(
 +    std::unique_ptr<ConnectParams> params) {
-+  base::AssertBlockingAllowed();
++  base::ScopedBlockingCall scoped_blocking_call(base::BlockingType::MAY_BLOCK);
 +  scoped_refptr<base::SequencedTaskRunner> task_runner = params->task_runner;
 +
 +  base::FilePath device_path(params->device_info->device_node());
@@ -333,7 +336,7 @@
 +
 +void HidServiceFreeBSD::Connect(const std::string& device_guid,
 +                            const ConnectCallback& callback) {
-+  DCHECK(thread_checker_.CalledOnValidThread());
++  DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +
 +  const auto& map_entry = devices().find(device_guid);
 +  if (map_entry == devices().end()) {
@@ -355,7 +358,6 @@
 +
 +// static
 +void HidServiceFreeBSD::FinishOpen(std::unique_ptr<ConnectParams> params) {
-+  base::AssertBlockingAllowed();
 +  scoped_refptr<base::SequencedTaskRunner> task_runner = params->task_runner;
 +
 +  task_runner->PostTask(

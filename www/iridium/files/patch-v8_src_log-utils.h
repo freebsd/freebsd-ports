@@ -1,8 +1,8 @@
---- v8/src/log-utils.h.orig	2017-07-04 22:40:30.657540000 +0200
-+++ v8/src/log-utils.h	2017-07-04 22:40:59.090730000 +0200
-@@ -14,6 +14,8 @@
- #include "src/base/platform/mutex.h"
+--- v8/src/log-utils.h.orig	2019-03-11 22:08:08 UTC
++++ v8/src/log-utils.h
+@@ -16,6 +16,8 @@
  #include "src/flags.h"
+ #include "src/ostreams.h"
  
 +#include <stdarg.h>
 +
