@@ -12,6 +12,8 @@ COMMENT=	Ping-like program that uses TCP and/or HTTP
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to configure
+
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libidn.so:dns/libidn
 
