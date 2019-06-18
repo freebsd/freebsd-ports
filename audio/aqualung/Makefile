@@ -30,9 +30,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libcdio_paranoia.so:sysutils/libcdio-paranoia \
 		liblrdf.so:textproc/liblrdf
 
-BROKEN_powerpc64=	fails to link: libicuuc.so: undefined reference to __cxa_throw_bad_array_new_length
-
-USES=		gettext localbase lua pkgconfig
+USES=		compiler:c++11-lang gettext localbase lua pkgconfig
 USE_GNOME=	gtk20 libxml2 libxslt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ifp=no
