@@ -2,13 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	chicken
-DISTVERSION=	5.0.0
+DISTVERSION=	5.1.0
 CATEGORIES=	lang scheme
 MASTER_SITES=	https://code.call-cc.org/releases/${DISTVERSION}/
 PKGNAMESUFFIX=	5
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Scheme-to-C compiler
+
+LICENSE=	BSD3CLAUSE PD
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gmake
 CPE_VENDOR=	call-cc
@@ -33,7 +37,8 @@ TEST_TARGET=	check
 DATADIR=	${PREFIX}/share/chicken${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/chicken${PKGNAMESUFFIX}
 
-PLIST_SUB=	SUFFIX=${PKGNAMESUFFIX}
+PLIST_SUB=	BINARYVERSION=${_CHICKEN_BINARYVERSION} \
+		SUFFIX=${PKGNAMESUFFIX}
 
 OPTIONS_DEFINE=	DOCS FEATHERS
 OPTIONS_SUB=	yes
@@ -43,9 +48,11 @@ FEATHERS_DESC=	Install the Feathers debugger (requires Tcl/Tk)
 
 FEATHERS_USES=	tk:wrapper,run
 
+_CHICKEN_BINARYVERSION=	11
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/c* \
-		${STAGEDIR}${PREFIX}/lib/chicken${PKGNAMESUFFIX}/?/*.so \
+		${STAGEDIR}${PREFIX}/lib/chicken${PKGNAMESUFFIX}/${_CHICKEN_BINARYVERSION}/*.so \
 		${STAGEDIR}${PREFIX}/lib/libchicken${PKGNAMESUFFIX}.so
 
 post-install-DOCS-on:
