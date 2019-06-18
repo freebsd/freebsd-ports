@@ -1,0 +1,4 @@
+Catalyst::View::vCard is a Catalyst View handler that returns stash
+data in vCard format.
+
+WWW: https://metacpan.org/release/Catalyst-View-vCard
