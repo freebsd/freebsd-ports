@@ -1,6 +1,6 @@
 --- bin/daemon.sh.orig
 +++ bin/daemon.sh
-@@ -113,12 +113,9 @@
+@@ -115,12 +115,9 @@
  test ".$CATALINA_HOME" = . && CATALINA_HOME=`cd "$DIRNAME/.." >/dev/null; pwd`
  test ".$CATALINA_BASE" = . && CATALINA_BASE="$CATALINA_HOME"
  test ".$CATALINA_MAIN" = . && CATALINA_MAIN=org.apache.catalina.startup.Bootstrap
@@ -15,10 +15,10 @@
  fi
  # Set the default service-start wait time if necessary
  test ".$SERVICE_START_WAIT_TIME" = . && SERVICE_START_WAIT_TIME=10
-@@ -135,7 +132,7 @@
+@@ -137,7 +134,7 @@
  
  # Add on extra jar files to CLASSPATH
- test ".$CLASSPATH" != . && CLASSPATH="${CLASSPATH}:"
+ test ".$CLASSPATH" != . && CLASSPATH="$CLASSPATH:"
 -CLASSPATH="$CLASSPATH$CATALINA_HOME/bin/bootstrap.jar:$CATALINA_HOME/bin/commons-daemon.jar"
 +CLASSPATH="$CLASSPATH$CATALINA_HOME/bin/bootstrap.jar:%%JAVAJARDIR%%/commons-daemon.jar"
  
