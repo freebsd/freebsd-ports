@@ -5,4 +5,4 @@ the children is received by shmux and either (optionally) output in turn to the
 user using an easy to read format, or written to files for later processing
 making it well suited for use in scripts.
 
-WWW: http://web.taranis.org/shmux/
+WWW: https://github.com/shmux/shmux
