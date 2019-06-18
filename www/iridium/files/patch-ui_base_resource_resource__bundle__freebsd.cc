@@ -1,5 +1,5 @@
---- ui/base/resource/resource_bundle_freebsd.cc.orig	2017-09-08 18:23:28.279481000 +0200
-+++ ui/base/resource/resource_bundle_freebsd.cc	2017-09-08 18:23:04.528326000 +0200
+--- ui/base/resource/resource_bundle_freebsd.cc.orig	2019-03-17 01:47:14 UTC
++++ ui/base/resource/resource_bundle_freebsd.cc
 @@ -0,0 +1,21 @@
 +// Copyright 2017 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be

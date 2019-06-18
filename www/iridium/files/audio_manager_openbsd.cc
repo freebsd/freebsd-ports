@@ -73,7 +73,7 @@ AudioParameters AudioManagerOpenBSD::GetInputStreamParameters(
 
   return AudioParameters(
       AudioParameters::AUDIO_PCM_LOW_LATENCY, CHANNEL_LAYOUT_STEREO,
-      kDefaultSampleRate, 16, buffer_size);
+      kDefaultSampleRate, buffer_size);
 }
 
 AudioManagerOpenBSD::AudioManagerOpenBSD(std::unique_ptr<AudioThread> audio_thread,
@@ -130,10 +130,8 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutputStreamParameters(
   ChannelLayout channel_layout = CHANNEL_LAYOUT_STEREO;
   int sample_rate = kDefaultSampleRate;
   int buffer_size = kDefaultOutputBufferSize;
-  int bits_per_sample = 16;
   if (input_params.IsValid()) {
     sample_rate = input_params.sample_rate();
-    bits_per_sample = input_params.bits_per_sample();
     channel_layout = input_params.channel_layout();
     buffer_size = std::min(buffer_size, input_params.frames_per_buffer());
   }
@@ -144,7 +142,7 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutputStreamParameters(
 
   return AudioParameters(
       AudioParameters::AUDIO_PCM_LOW_LATENCY, channel_layout,
-      sample_rate, bits_per_sample, buffer_size);
+      sample_rate, buffer_size);
 }
 
 AudioInputStream* AudioManagerOpenBSD::MakeInputStream(

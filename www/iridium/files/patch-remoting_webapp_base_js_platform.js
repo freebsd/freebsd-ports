@@ -1,6 +1,6 @@
---- remoting/webapp/base/js/platform.js.orig	2017-08-10 16:21:23.900363000 +0200
-+++ remoting/webapp/base/js/platform.js	2017-08-10 16:24:46.113671000 +0200
-@@ -107,6 +107,14 @@
+--- remoting/webapp/base/js/platform.js.orig	2019-03-11 22:01:01 UTC
++++ remoting/webapp/base/js/platform.js
+@@ -107,6 +107,14 @@ remoting.getSystemInfo = function() {
      return result;
    }
  

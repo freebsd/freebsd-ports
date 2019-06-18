@@ -1,7 +1,7 @@
---- build/config/features.gni.orig	2017-12-15 02:04:05.000000000 +0100
-+++ build/config/features.gni	2017-12-23 23:30:21.417932000 +0100
-@@ -46,7 +46,7 @@
-   fieldtrial_testing_like_official_build = is_chrome_branded
+--- build/config/features.gni.orig	2019-03-11 22:00:52 UTC
++++ build/config/features.gni
+@@ -41,7 +41,7 @@ declare_args() {
+   }
  
    # libudev usage. This currently only affects the content layer.
 -  use_udev = is_linux && !is_chromecast

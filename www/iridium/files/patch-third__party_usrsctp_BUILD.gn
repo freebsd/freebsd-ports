@@ -1,6 +1,6 @@
---- third_party/usrsctp/BUILD.gn.orig	2017-12-15 02:04:50.000000000 +0100
-+++ third_party/usrsctp/BUILD.gn	2018-01-03 13:28:10.295173000 +0100
-@@ -109,11 +109,16 @@
+--- third_party/usrsctp/BUILD.gn.orig	2019-03-11 22:01:18 UTC
++++ third_party/usrsctp/BUILD.gn
+@@ -116,11 +116,16 @@ static_library("usrsctp") {
      "-UINET6",
    ]
  

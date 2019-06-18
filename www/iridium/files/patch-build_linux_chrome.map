@@ -1,5 +1,5 @@
---- build/linux/chrome.map.orig	2019-01-07 21:40:23.691384000 +0100
-+++ build/linux/chrome.map	2019-01-07 21:43:11.729540000 +0100
+--- build/linux/chrome.map.orig	2019-03-11 22:00:52 UTC
++++ build/linux/chrome.map
 @@ -1,4 +1,7 @@
  {
 +local:
@@ -8,7 +8,7 @@
  global:
    __bss_start;
    __data_start;
-@@ -20,6 +23,10 @@
+@@ -20,6 +23,10 @@ global:
    # Program entry point.
    _start;
  
@@ -19,7 +19,7 @@
    # Memory allocation symbols.  We want chrome and any libraries to
    # share the same heap, so it is correct to export these symbols.
    calloc;
-@@ -81,7 +88,4 @@
+@@ -81,7 +88,4 @@ global:
    localtime64;
    localtime64_r;
    localtime_r;

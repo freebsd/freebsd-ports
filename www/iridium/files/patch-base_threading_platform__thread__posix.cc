@@ -1,6 +1,6 @@
---- base/threading/platform_thread_posix.cc.orig	2017-04-19 19:06:28 UTC
+--- base/threading/platform_thread_posix.cc.orig	2019-03-11 22:00:51 UTC
 +++ base/threading/platform_thread_posix.cc
-@@ -56,7 +56,7 @@ void* ThreadFunc(void* params) {
+@@ -66,7 +66,7 @@ void* ThreadFunc(void* params) {
      if (!thread_params->joinable)
        base::ThreadRestrictions::SetSingletonAllowed(false);
  

@@ -1,5 +1,5 @@
---- extensions/browser/api/web_request/form_data_parser.cc.orig	2018-06-13 00:10:18.000000000 +0200
-+++ extensions/browser/api/web_request/form_data_parser.cc	2018-07-19 13:36:19.375722000 +0200
+--- extensions/browser/api/web_request/form_data_parser.cc.orig	2019-03-11 22:00:58 UTC
++++ extensions/browser/api/web_request/form_data_parser.cc
 @@ -15,7 +15,11 @@
  #include "base/values.h"
  #include "net/base/escape.h"

@@ -1,11 +1,11 @@
---- services/service_manager/sandbox/BUILD.gn.orig	2018-03-03 20:51:40.189699000 +0100
-+++ services/service_manager/sandbox/BUILD.gn	2018-03-03 20:51:56.739150000 +0100
-@@ -23,7 +23,7 @@
-   deps = [
+--- services/service_manager/sandbox/BUILD.gn.orig	2019-03-11 22:01:02 UTC
++++ services/service_manager/sandbox/BUILD.gn
+@@ -28,7 +28,7 @@ component("sandbox") {
      "//base",
+     "//sandbox:common",
    ]
 -  if (is_linux) {
 +  if (is_linux && !is_bsd) {
      sources += [
-       "linux/bpf_base_policy_linux.cc",
-       "linux/bpf_base_policy_linux.h",
+       "linux/bpf_audio_policy_linux.cc",
+       "linux/bpf_audio_policy_linux.h",

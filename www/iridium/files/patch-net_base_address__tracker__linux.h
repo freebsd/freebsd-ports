@@ -1,5 +1,5 @@
---- net/base/address_tracker_linux.h.orig	2018-01-04 21:05:55.000000000 +0100
-+++ net/base/address_tracker_linux.h	2018-01-21 13:43:10.477307000 +0100
+--- net/base/address_tracker_linux.h.orig	2019-03-11 22:01:00 UTC
++++ net/base/address_tracker_linux.h
 @@ -7,9 +7,6 @@
  
  #include <sys/socket.h>  // Needed to include netlink.

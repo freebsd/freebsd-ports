@@ -1,6 +1,6 @@
---- base/third_party/libevent/BUILD.gn.orig	2018-01-04 21:05:38.000000000 +0100
-+++ base/third_party/libevent/BUILD.gn	2018-01-06 01:02:53.058845000 +0100
-@@ -43,13 +43,20 @@
+--- base/third_party/libevent/BUILD.gn.orig	2019-03-11 22:00:51 UTC
++++ base/third_party/libevent/BUILD.gn
+@@ -43,13 +43,20 @@ static_library("libevent") {
        "mac/event-config.h",
      ]
      include_dirs = [ "mac" ]

@@ -1,6 +1,6 @@
---- base/security_unittest.cc.orig	2017-04-19 19:06:28 UTC
+--- base/security_unittest.cc.orig	2019-03-11 22:00:51 UTC
 +++ base/security_unittest.cc
-@@ -74,7 +74,7 @@ bool IsTcMallocBypassed() {
+@@ -59,7 +59,7 @@ NOINLINE Type HideValueFromCompiler(volatile Type valu
  // FAILS_ is too clunky.
  void OverflowTestsSoftExpectTrue(bool overflow_detected) {
    if (!overflow_detected) {

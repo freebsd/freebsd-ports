@@ -1,6 +1,6 @@
---- extensions/common/features/feature.cc.orig	2018-01-21 13:38:52.998785000 +0100
-+++ extensions/common/features/feature.cc	2018-01-21 13:39:29.946264000 +0100
-@@ -26,6 +26,8 @@
+--- extensions/common/features/feature.cc.orig	2019-03-11 22:00:58 UTC
++++ extensions/common/features/feature.cc
+@@ -26,6 +26,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
    return MACOSX_PLATFORM;
  #elif defined(OS_WIN)
    return WIN_PLATFORM;

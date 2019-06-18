@@ -1,15 +1,15 @@
---- chrome/browser/extensions/external_provider_impl.cc.orig	2018-03-20 23:05:17.000000000 +0100
-+++ chrome/browser/extensions/external_provider_impl.cc	2018-03-24 13:22:20.011401000 +0100
-@@ -689,7 +689,7 @@
-         Manifest::EXTERNAL_PREF, Manifest::EXTERNAL_PREF_DOWNLOAD,
-         oem_extension_creation_flags));
+--- chrome/browser/extensions/external_provider_impl.cc.orig	2019-03-11 22:00:53 UTC
++++ chrome/browser/extensions/external_provider_impl.cc
+@@ -747,7 +747,7 @@ void ExternalProviderImpl::CreateExternalProviders(
+     chromeos::DemoSession::Get()->SetExtensionsExternalLoader(loader);
+     provider_list->push_back(std::move(demo_apps_provider));
    }
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
-   if (!profile->IsLegacySupervised()) {
-     provider_list->push_back(std::make_unique<ExternalProviderImpl>(
-         service,
-@@ -717,7 +717,7 @@
+   provider_list->push_back(std::make_unique<ExternalProviderImpl>(
+       service,
+       new ExternalPrefLoader(chrome::DIR_STANDALONE_EXTERNAL_EXTENSIONS,
+@@ -774,7 +774,7 @@ void ExternalProviderImpl::CreateExternalProviders(
          bundled_extension_creation_flags));
  
      // Define a per-user source of external extensions.

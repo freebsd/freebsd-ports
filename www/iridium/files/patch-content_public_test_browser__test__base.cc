@@ -1,8 +1,8 @@
---- content/public/test/browser_test_base.cc.orig	2018-02-24 16:25:14.000000000 +0100
-+++ content/public/test/browser_test_base.cc	2018-03-04 01:33:57.278528000 +0100
-@@ -49,6 +49,10 @@
- #include "ui/gl/gl_implementation.h"
- #include "ui/gl/gl_switches.h"
+--- content/public/test/browser_test_base.cc.orig	2019-03-11 22:00:58 UTC
++++ content/public/test/browser_test_base.cc
+@@ -62,6 +62,10 @@
+ #include "ui/views/test/event_generator_delegate_mac.h"
+ #endif
  
 +#if defined(OS_FREEBSD)
 +#include <sys/signal.h>

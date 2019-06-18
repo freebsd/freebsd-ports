@@ -1,8 +1,8 @@
---- components/policy/core/common/schema.cc.orig	2017-04-19 19:06:33 UTC
+--- components/policy/core/common/schema.cc.orig	2019-03-11 22:00:56 UTC
 +++ components/policy/core/common/schema.cc
-@@ -21,7 +21,11 @@
- #include "components/json_schema/json_schema_constants.h"
- #include "components/json_schema/json_schema_validator.h"
+@@ -23,7 +23,11 @@
+ #include "base/strings/stringprintf.h"
+ #include "components/policy/core/common/json_schema_constants.h"
  #include "components/policy/core/common/schema_internal.h"
 +#if defined(OS_FREEBSD)
 +#include <re2/re2.h>

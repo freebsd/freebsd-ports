@@ -1,6 +1,6 @@
---- ui/base/webui/web_ui_util.cc.orig	2017-04-19 19:06:54 UTC
+--- ui/base/webui/web_ui_util.cc.orig	2019-03-11 22:01:19 UTC
 +++ ui/base/webui/web_ui_util.cc
-@@ -161,7 +161,7 @@ std::string GetFontFamily() {
+@@ -217,7 +217,7 @@ std::string GetFontFamily() {
  
  // TODO(dnicoara) Remove Ozone check when PlatformFont support is introduced
  // into Ozone: crbug.com/320050
