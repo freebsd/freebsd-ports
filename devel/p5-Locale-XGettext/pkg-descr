@@ -1,0 +1,11 @@
+When using GNU gettext you often find yourself extracting translatable strings
+from more or less exotic file formats that cannot be handled by xgettext from
+the GNU gettext suite directly. This package simplifies the task of writing a
+string extractor in Perl, Python, Java, Ruby or other languages by providing a
+common base needed for such scripts.
+
+Locale::XGettext is the base class for various string extractors. These string
+extractors can be used as standalone programs on the command-line or as a module
+as a part of other software.
+
+https://metacpan.org/release/Locale-XGettext

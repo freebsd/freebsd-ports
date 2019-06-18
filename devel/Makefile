@@ -2615,6 +2615,7 @@
     SUBDIR += p5-Locale-Msgfmt
     SUBDIR += p5-Locale-PGetText
     SUBDIR += p5-Locale-PO
+    SUBDIR += p5-Locale-XGettext
     SUBDIR += p5-Locale-gettext
     SUBDIR += p5-Locale-libintl
     SUBDIR += p5-LockFile-Simple
