@@ -2,7 +2,7 @@
 
 PORTNAME=		libnormaliz
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.7.2
+DISTVERSION=		3.7.3
 CATEGORIES=		math
 
 MAINTAINER=	phascolarctos@protonmail.ch
@@ -23,7 +23,8 @@ GH_PROJECT=	Normaliz
 BUILD_WRKSRC=	${WRKSRC}/source/libnormaliz
 INSTALL_WRKSRC=	${WRKSRC}/source/libnormaliz
 
-CXXFLAGS+=	-I ${LOCALBASE}/include
+CXXFLAGS+=	-I ${LOCALBASE}/include \
+		-I ${WRKSRC}/source
 MAKEFILE=	Makefile.classic
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
