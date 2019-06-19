@@ -2082,6 +2082,7 @@ share/locale/eu/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/eu/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
 share/locale/eu/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
+share/locale/eu/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/eu/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/fa/LC_MESSAGES/attica_kde_plugin.mo
 share/locale/fa/LC_MESSAGES/kaccess.mo

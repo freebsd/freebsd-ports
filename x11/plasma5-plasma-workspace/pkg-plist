@@ -4703,6 +4703,7 @@ share/plasma/wallpapers/org.kde.slideshow/contents/ui/main.qml
 share/plasma/wallpapers/org.kde.slideshow/metadata.desktop
 share/plasma/wallpapers/org.kde.slideshow/metadata.json
 share/sddm/themes/breeze/Background.qml
+share/sddm/themes/breeze/BreezeMenuStyle.qml
 share/sddm/themes/breeze/KeyboardButton.qml
 share/sddm/themes/breeze/Login.qml
 share/sddm/themes/breeze/Main.qml
