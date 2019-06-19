@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{
+message: <<EOT
 gitolite v2 -> v3 migration procedures:
 
 WARNING: gitolite v3 is NOT "API" compatible with gitolite v2. Any local
@@ -18,8 +19,12 @@ tl;dr:
 
 [0] http://sitaramc.github.com/gitolite/install.html#migr
 [1] http://sitaramc.github.com/gitolite/master-toc.html
-
-
+EOT
+  type: upgrade
+  maximum_version: "2.99"
+}
+{
+  message: <<EOT
 Final gitolite setup instructions:
 
 Any ssh user can be a gitolite provider. Simply run the following command as
@@ -34,9 +39,10 @@ additional users and repositories can be configured.
 
 By default, the git user is created for use by gitolite.
 
-
 A quick-install guide can be found in:
 
 %%DOCSDIR%%/README.txt
-
-==============================================================================
+EOT
+  type: install
+}
+]

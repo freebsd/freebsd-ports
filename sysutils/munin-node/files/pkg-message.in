@@ -1,10 +1,10 @@
-********************************************************************
+[
+{
+message: <<EOT
 Unless this file already existed, a sample configuration file
 has been placed in %%ETCDIR%%/munin-node.conf.
 
 Please edit it according to your needs.
-
-********************************************************************
 
 The Munin client will *not* be started automatically. To allow it
 to start, put this line in /etc/rc.conf:
@@ -16,7 +16,6 @@ present, the client will be started now.  Otherwise, edit
 /etc/rc.conf and execute this command:
 
     %%PREFIX%%/etc/rc.d/munin-node start
-********************************************************************
 
 For a list of plugins that will probably work run
 %%PREFIX%%/sbin/munin-node-configure --suggest
@@ -25,7 +24,11 @@ If this is a fresh install run
 %%PREFIX%%/sbin/munin-node-configure --shell | sh -x
 to install the plugins automatically
 
-********************************************************************
+EOT
+type: install
+}
+{
+message: <<EOT
 The munin-node newsyslog.conf(5) filename has been changed:
   OLD: ${PREFIX}/etc/newsyslog.conf.d/munin-node
   NEW: ${PREFIX}/etc/newsyslog.conf.d/munin-node.conf
@@ -39,4 +42,8 @@ newsyslog configuration now only includes filenames that end with
 If you use provisioning/configuration management tools to create or
 edit this file, you will need to change their configuration to use
 the new filename.
-********************************************************************
+EOT
+type: upgrade
+maximum_version: "2.0.43_1"
+}
+]

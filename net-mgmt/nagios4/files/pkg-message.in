@@ -1,5 +1,6 @@
-**********************************************************************
-
+[
+{
+message: <<EOT
  Enable Nagios in /etc/rc.conf with the following line:
 
    nagios_enable="YES"
@@ -25,5 +26,7 @@
 
    ScriptAlias %%NAGIOSCGIURL%%/ %%WWWDIR%%/cgi-bin/
    Alias %%NAGIOSHTMURL%%/ %%WWWDIR%%/
-
-**********************************************************************
+EOT
+type: install
+}
+]

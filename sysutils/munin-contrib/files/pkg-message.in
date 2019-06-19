@@ -1,3 +1,6 @@
+[
+{
+message: <<EOD
 To avoid having too many plugins activating at once when this port
 is installed, the contributed plugins from this port are NOT installed
 in munin's plugins directory.
@@ -9,4 +12,7 @@ it to munin's plugins directory, for example:
 
 Note that as this is a "contrib" port, some plugins may need some
 dependencies to run that are not provided by this port.
-
+EOD
+type: install
+}
+]
