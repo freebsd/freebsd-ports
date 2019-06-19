@@ -17,12 +17,10 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-BROKEN_powerpc64=	fails to configure: C compiler cannot create executables
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	snes9xgit
 
-USES=		autoreconf desktop-file-utils gettext gmake \
+USES=		autoreconf compiler:c11 desktop-file-utils gettext gmake \
 		localbase perl5 pkgconfig tar:bzip2
 USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool libxml2
 USE_SDL=	sdl2
