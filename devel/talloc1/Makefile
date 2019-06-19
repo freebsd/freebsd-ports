@@ -14,6 +14,8 @@ LICENSE=		LGPL3
 
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
+CONFLICTS_INSTALL=	talloc-*
+
 #FLAVORS=		default nopython
 #nopython_PKGNAMESUFFIX=	-nopython
 #nopython_CONFLICTS=	talloc

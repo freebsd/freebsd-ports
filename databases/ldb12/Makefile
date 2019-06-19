@@ -2,7 +2,7 @@
 
 PORTNAME=		ldb
 PORTVERSION=		1.2.3
-PORTREVISION=		1
+PORTREVISION=		2
 PORTEPOCH=		0
 CATEGORIES=		databases
 MASTER_SITES=		SAMBA
@@ -18,13 +18,13 @@ IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with 
 BUILD_DEPENDS=		${LDB_DEPENDS}
 RUN_DEPENDS=		${LDB_DEPENDS}
 
-LDB_DEPENDS=		talloc>=2.1.10:devel/talloc \
-			tevent>=0.9.34:devel/tevent \
-			tdb>=1.3.15:databases/tdb \
+LDB_DEPENDS=		talloc1>=2.1.10:devel/talloc1 \
+			tevent1>=0.9.34:devel/tevent1 \
+			tdb1>=1.3.15:databases/tdb1 \
 			cmocka>=1.1.1:sysutils/cmocka \
 			popt>=0:devel/popt
 
-CONFLICTS_INSTALL=	ldb-1.1.* ldb13-1.3.*
+CONFLICTS_INSTALL=	ldb-1.1.* ldb1[3-6]-1.*
 
 #FLAVORS=		default nopython
 #nopython_PKGNAMESUFFIX=	-nopython
