@@ -14,20 +14,16 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		ncurses perl5 shebangfix
-USE_PERL5=	run build patch
-SHEBANG_FILES=	wrap breed
+USE_PERL5=	run
+SHEBANG_FILES=	wrap breed fix_bookmarks.pl
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configures
 CONFIGURE_ENV+=		INCDIR="${NCURSESINC}"
 
 post-patch:
-	@${PERL} -pi -e 's!/usr/local!${PREFIX}!g' ${WRKSRC}/configures
-	@${PERL} -pi -e 's!sys/dir.h!dirent.h!g;s!.*getopt.h.*\n!!' \
+	@${REINPLACE_CMD} 's!/usr/local!${PREFIX}!g' ${WRKSRC}/configures
+	@${REINPLACE_CMD} 's!sys/dir.h!dirent.h!g;\!getopt.h!d' \
 		${WRKSRC}/reed.c
-	@${PERL} -pi -e 's!getopt.h !!' ${WRKSRC}/cfg.data
-	@${PERL} -pi -e 's!-O2!${CFLAGS}!' ${WRKSRC}/Makefile.in
-	@${PERL} -pi -e 's!^#!/usr/bin/perl!#!${PERL}!' \
-		${WRKSRC}/fix_bookmarks.pl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/reed ${STAGEDIR}${PREFIX}/bin
