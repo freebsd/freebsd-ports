@@ -30,6 +30,9 @@ PLIST_FILES=	bin/schismtracker man/man1/schismtracker.1.gz \
 		share/pixmaps/schism-icon-128.png \
 		share/pixmaps/schism-itf-icon-128.png
 
+# changes only affect macOS
+PORTSCOUT=	ignore:20190614
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s|^\(AC_INIT.*\)\[last_git_commit\]|\1${PORTVERSION}|" \
