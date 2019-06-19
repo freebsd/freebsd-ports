@@ -1,6 +1,6 @@
 @mode 4555
 sbin/fping
-sbin/fping6
+%%IPV6%%sbin/fping6
 @mode
 man/man8/fping.8.gz
-man/man8/fping6.8.gz
+%%IPV6%%man/man8/fping6.8.gz
