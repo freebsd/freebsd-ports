@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	php-mode.el
-PORTVERSION=	1.21.0
+PORTVERSION=	1.21.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -18,18 +18,22 @@ GH_ACCOUNT=	emacs-php
 GH_PROJECT=	${PORTNAME:S/.el$//}
 
 NO_ARCH=	yes
-PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/php-mode.el \
-		${EMACS_VERSION_SITE_LISPDIR}/php-mode.elc \
-		${EMACS_VERSION_SITE_LISPDIR}/php-project.el \
-		${EMACS_VERSION_SITE_LISPDIR}/php-project.elc
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 	${INSTALL_DATA} \
+		${WRKSRC}/php-face.el \
+		${WRKSRC}/php-face.elc \
+		${WRKSRC}/php-mode-debug.el \
+		${WRKSRC}/php-mode-debug.elc \
+		${WRKSRC}/php-mode-test.el \
+		${WRKSRC}/php-mode-test.elc \
 		${WRKSRC}/php-mode.el \
 		${WRKSRC}/php-mode.elc \
 		${WRKSRC}/php-project.el \
 		${WRKSRC}/php-project.elc \
+		${WRKSRC}/php.el \
+		${WRKSRC}/php.elc \
 		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 
 .include <bsd.port.mk>
