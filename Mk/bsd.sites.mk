@@ -1175,15 +1175,15 @@ MASTER_SITE_XCONTRIB+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XFCE)
+_XFCE_PATH=	${DISTNAME:S/-${DISTVERSIONFULL}//:tl}/${DISTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+
 MASTER_SITE_XFCE+= \
-	https://mirror.netcologne.de/xfce/%SUBDIR%/ \
-	http://ftp.udc.es/xfce/%SUBDIR%/ \
-	http://xfce.mirror.uber.com.au/%SUBDIR%/ \
-	https://archive.be.xfce.org/%SUBDIR%/ \
-	http://archive.be2.xfce.org/%SUBDIR%/ \
-	https://archive.al-us.xfce.org/%SUBDIR%/ \
-	http://mirrors.tummy.com/pub/archive.xfce.org/%SUBDIR%/ \
-	http://mirror.perldude.de/archive.xfce.org/%SUBDIR%/
+	https://archive.xfce.org/src/%SUBDIR%/${_XFCE_PATH}/ \
+	https://mirror.netcologne.de/xfce/src/%SUBDIR%/${_XFCE_PATH}/ \
+	https://ftp.cixug.es/xfce/src/%SUBDIR%/${_XFCE_PATH}/ \
+	https://archive.be.xfce.org/src/%SUBDIR%/${_XFCE_PATH}/ \
+	https://archive.al-us.xfce.org/src/%SUBDIR%/${_XFCE_PATH}/ \
+	http://mirror.perldude.de/archive.xfce.org/src/%SUBDIR%/${_XFCE_PATH}/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XORG)
@@ -1262,7 +1262,7 @@ MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			SAMBA:${PORTNAME} \
 			SAVANNAH:${PORTNAME:tl} \
 			SOURCEFORGE:${PORTNAME:tl}/${PORTNAME:tl}/${PORTVERSION} \
-			XFCE:xfce/${XFCE_MASTER_SITE_VER}/src
+			XFCE:xfce
 
 .if defined(MASTER_SITES) && ${MASTER_SITES:N*\:/*}
 

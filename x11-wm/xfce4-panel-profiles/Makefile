@@ -3,7 +3,7 @@
 PORTNAME=	xfce4-panel-profiles
 PORTVERSION=	1.0.8
 CATEGORIES=	x11-wm xfce
-MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org

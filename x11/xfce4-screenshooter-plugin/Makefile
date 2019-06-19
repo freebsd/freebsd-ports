@@ -4,8 +4,8 @@
 PORTNAME=	xfce4-screenshooter-plugin
 PORTVERSION=	1.9.5
 CATEGORIES=	x11 xfce
-MASTER_SITES=	XFCE/src/apps/xfce4-screenshooter/${PORTVERSION:R}
-DISTNAME=	xfce4-screenshooter-${PORTVERSION}
+MASTER_SITES=	XFCE/apps
+DISTNAME=	xfce4-screenshooter-${DISTVERSIONFULL}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org

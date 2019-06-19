@@ -5,7 +5,7 @@ PORTNAME=	xfce4-wavelan-plugin
 PORTVERSION=	0.6.0
 PORTREVISION=	1
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org

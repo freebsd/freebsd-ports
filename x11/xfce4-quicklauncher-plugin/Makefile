@@ -5,7 +5,7 @@ PORTNAME=	xfce4-quicklauncher-plugin
 PORTVERSION=	1.9.4
 PORTREVISION=	18
 CATEGORIES=	x11 xfce
-MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org

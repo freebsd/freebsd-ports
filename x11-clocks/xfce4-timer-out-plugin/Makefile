@@ -5,7 +5,7 @@ PORTNAME=	xfce4-time-out-plugin
 PORTVERSION=	1.0.2
 PORTREVISION=	2
 CATEGORIES=	x11-clocks xfce
-MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
