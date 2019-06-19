@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2019-06-19 15:19:07 UTC
++++ src/Makefile.am
+@@ -21,7 +21,7 @@
+ bin_PROGRAMS = cdecl
+ 
+ AM_CPPFLAGS = -I$(top_srcdir)/lib -I$(top_builddir)/lib
+-AM_YFLAGS = -d
++AM_YFLAGS = -d -Wno-yacc
+ LDADD = $(top_builddir)/lib/libgnu.a
+ 
+ BUILT_SOURCES =	parser.c parser.h lexer.c
