@@ -9,12 +9,3 @@
          private_library = False
      else:
          private_library = True
-@@ -120,7 +120,7 @@ def build(bld):
-                             cflags='-DPACKAGE_VERSION=\"%s\"' % VERSION)
- 
- 
--            bld.INSTALL_WILDCARD('${PYTHONARCHDIR}', 'tevent.py', flat=False)
-+            bld.INSTALL_WILDCARD('${PYTHONARCHDIR}', 'tevent.py*', flat=False)
- 
-         # install out various python scripts for use by make test
-         bld.SAMBA_SCRIPT('tevent_python',

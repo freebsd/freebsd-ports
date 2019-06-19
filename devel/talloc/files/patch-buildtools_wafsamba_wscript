@@ -1,6 +1,6 @@
---- buildtools/wafsamba/wscript.orig	2017-04-28 11:57:26 UTC
+--- buildtools/wafsamba/wscript.orig	2019-03-21 10:12:32 UTC
 +++ buildtools/wafsamba/wscript
-@@ -76,10 +76,10 @@ def set_options(opt):
+@@ -82,10 +82,10 @@ def options(opt):
  
      opt.add_option('--with-libiconv',
                     help='additional directory to search for libiconv',

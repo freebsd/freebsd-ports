@@ -1,6 +1,6 @@
---- talloc.c.orig	2018-01-13 09:07:51 UTC
+--- talloc.c.orig	2019-03-21 10:12:32 UTC
 +++ talloc.c
-@@ -387,6 +387,9 @@ void talloc_lib_init(void) __attribute__
+@@ -396,6 +396,9 @@ void talloc_lib_init(void) __attribute__
  void talloc_lib_init(void)
  {
  	uint32_t random_value;
@@ -10,7 +10,7 @@
  #if defined(HAVE_GETAUXVAL) && defined(AT_RANDOM)
  	uint8_t *p;
  	/*
-@@ -420,6 +423,7 @@ void talloc_lib_init(void)
+@@ -429,6 +432,7 @@ void talloc_lib_init(void)
  		 */
  		random_value = ((uintptr_t)talloc_lib_init & 0xFFFFFFFF);
  	}
