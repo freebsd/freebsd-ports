@@ -11,9 +11,6 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source 3D space simulator
 
-DEPRECATED=	Abandonware using sys/dir.h
-EXPIRATION_DATE=	2019-07-12
-
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
@@ -64,6 +61,8 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's/-lboost_python/-l${PY_BOOST_LIB}/' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/#include <sys\/dir\.h>/d' \
+		${WRKSRC}/setup/src/c/setup.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${BIN_FILES:S|bin|${WRKSRC}|} \
