@@ -1,6 +1,6 @@
 bin/eclat
 bin/ispeek
-etc/eclat.conf
+@sample etc/eclat.conf.sample
 man/man1/eclat-assocaddr.1.gz
 man/man1/eclat-atvol.1.gz
 man/man1/eclat-clrsattr.1.gz
