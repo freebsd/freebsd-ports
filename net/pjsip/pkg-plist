@@ -220,6 +220,7 @@ include/pjmedia/transport.h
 include/pjmedia/types.h
 include/pjmedia/vid_codec_util.h
 include/pjmedia/vid_codec.h
+include/pjmedia/vid_conf.h
 include/pjmedia/vid_port.h
 include/pjmedia/vid_stream.h
 include/pjmedia/vid_tee.h
