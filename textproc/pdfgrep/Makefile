@@ -17,10 +17,8 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libpoppler.so:graphics/poppler \
 		libgpg-error.so:security/libgpg-error
 
-BROKEN_powerpc64=	fails to link: pdfgrep.cc: undefined reference to poppler::set_debug_error_function
-
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		compiler:c11 pkgconfig
 
 PLIST_FILES=	bin/pdfgrep man/man1/pdfgrep.1.gz \
 		share/bash-completion/completions/pdfgrep \
