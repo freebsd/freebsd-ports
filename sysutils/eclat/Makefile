@@ -3,6 +3,7 @@
 
 PORTNAME=	eclat
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
@@ -29,6 +30,10 @@ GDBM_CONFIGURE_WITH=	gdbm
 
 LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_WITH=	ldap
+
+post-patch:
+	@${REINPLACE_CMD} -e '/DESTDIR/s,eclat\.conf,&.sample,' \
+		${WRKSRC}/etc/Makefile.in
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
