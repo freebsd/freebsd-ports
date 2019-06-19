@@ -5,7 +5,7 @@ PORTNAME=	xfce4-embed-plugin
 PORTVERSION=	1.6.0
 PORTREVISION=	1
 CATEGORIES=	x11 xfce
-MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org

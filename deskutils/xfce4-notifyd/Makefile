@@ -8,7 +8,7 @@
 PORTNAME=	xfce4-notifyd
 PORTVERSION=	0.4.4
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	ehaupt@FreeBSD.org

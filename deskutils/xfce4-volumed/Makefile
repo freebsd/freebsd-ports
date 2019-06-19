@@ -5,7 +5,7 @@ PORTNAME=	xfce4-volumed
 PORTVERSION=	0.1.13
 PORTREVISION=	3
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	sergey.dyatko@gmail.com

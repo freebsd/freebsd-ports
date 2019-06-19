@@ -5,7 +5,7 @@ PORTNAME=	xfce4-wmdock-plugin
 PORTVERSION=	0.6.0
 PORTREVISION=	3
 CATEGORIES=	x11 xfce
-MASTER_SITES=	XFCE/src/panel-plugins/xfce4-wmdock-plugin/0.6
+MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org

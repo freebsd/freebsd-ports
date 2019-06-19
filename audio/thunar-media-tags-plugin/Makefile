@@ -5,7 +5,7 @@ PORTNAME=	thunar-media-tags-plugin
 PORTVERSION=	0.2.1
 PORTREVISION=	5
 CATEGORIES=	audio xfce
-MASTER_SITES=	XFCE/src/thunar-plugins/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/thunar-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org

@@ -5,7 +5,7 @@ PORTNAME=	thunar-archive-plugin
 PORTVERSION=	0.3.1
 PORTREVISION=	6
 CATEGORIES=	archivers xfce
-MASTER_SITES=	XFCE/src/thunar-plugins/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/thunar-plugins
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org

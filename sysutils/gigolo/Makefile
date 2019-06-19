@@ -4,7 +4,7 @@
 PORTNAME=	gigolo
 PORTVERSION=	0.4.91
 CATEGORIES=	sysutils
-MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	XFCE/apps
 
 MAINTAINER=	koalative@gmail.com
 COMMENT=	Frontend to easily manage filesystem connections
