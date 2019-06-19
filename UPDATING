@@ -5,6 +5,31 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190619:
+  AFFECTS: users of samba4[6-8] and devel/talloc, devel/tevent, databases/tdb, databases/ldb*
+  AUTHOR: timur@FreeBSD.org
+
+  To introduce samba410(we deliberatly skip samba49 due the complexity of handling)
+  and to drop dependency on deprecated Python 2.7, Samba supplimentary libraries
+  talloc, tevent and tdb were splitted into current Python 3 compatiable versions
+  and legacy ones, with the suffix "1".
+
+  Old versions of Samba were changed to depend on the legacy supplimentary libraries,
+  so if you need to install samba46, samba47 or samba48 over previous Samba
+  installations you need to downgrade supplimentary libs with the following commands:
+
+  for users of portmaster:
+        portmaster -o devel/talloc1 devel/talloc
+        portmaster -o devel/tevent1 devel/tevent
+        portmaster -o databases/tdb1 databases/tdb
+        portmaster -r devel/talloc1
+
+  for users of portupgrade:
+        portupgrade -o devel/talloc1 devel/talloc
+        portupgrade -o devel/tevent1 devel/tevent
+        portupgrade -o databases/tdb1 databases/tdb
+        portupgrade -fr devel/talloc1
+
 20190613:
   AFFECTS: users of www/qt5-webengine
   AUTHOR: kai@FreeBSD.org
