@@ -48,7 +48,7 @@ CPE_VENDOR=	digium
 SHEBANG_FILES=	agi/agi-test.agi \
 		agi/jukebox.agi \
 		contrib/scripts/astversion
-LDFLAGS=	-L.
+LDFLAGS+=	-L.
 MAKE_ENV=	PTHREAD_LIBS="-lpthread" \
 		MKDIR="${MKDIR}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
