@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qcengine
-PORTVERSION=	0.6.4
+PORTVERSION=	0.7.1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py-cpuinfo>0:sysutils/py-cpuinfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic>=0.18.0:devel/py-pydantic@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qcelemental>=0.3.0:science/py-qcelemental@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic>=0.20.0:devel/py-pydantic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qcelemental>=0.4.2:science/py-qcelemental@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
 USES=		python:3.6+
