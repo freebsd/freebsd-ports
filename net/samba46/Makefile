@@ -3,7 +3,7 @@
 
 PORTNAME?=			${SAMBA4_BASENAME}46
 PORTVERSION?=			${SAMBA4_VERSION}
-PORTREVISION?=			2
+PORTREVISION?=			3
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -131,16 +131,16 @@ BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_F
 RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 PLIST_SUB+=			PY_ISO8601="@comment "
 # talloc
-BUILD_DEPENDS+=			talloc>=2.1.9:devel/talloc
-RUN_DEPENDS+=			talloc>=2.1.9:devel/talloc
+BUILD_DEPENDS+=			talloc1>=2.1.9:devel/talloc1
+RUN_DEPENDS+=			talloc1>=2.1.9:devel/talloc1
 SAMBA4_BUNDLED_LIBS+=		!talloc
 # tevent
-BUILD_DEPENDS+=			tevent>=0.9.34:devel/tevent
-RUN_DEPENDS+=			tevent>=0.9.34:devel/tevent
+BUILD_DEPENDS+=			tevent1>=0.9.34:devel/tevent1
+RUN_DEPENDS+=			tevent1>=0.9.34:devel/tevent1
 SAMBA4_BUNDLED_LIBS+=		!tevent
 # tdb
-BUILD_DEPENDS+=			tdb>=1.3.12:databases/tdb
-RUN_DEPENDS+=			tdb>=1.3.12:databases/tdb
+BUILD_DEPENDS+=			tdb1>=1.3.12:databases/tdb1
+RUN_DEPENDS+=			tdb1>=1.3.12:databases/tdb1
 SAMBA4_BUNDLED_LIBS+=		!tdb
 # ldb
 BUILD_DEPENDS+=			ldb>=1.1.29:databases/ldb
