@@ -1,5 +1,5 @@
-This module provides methods for manipulating objects that represent
-entries in a gettext po-file (untranslated and translated strings, with
-associated comments). It can load and save complete po-files.
+This module provides methods for manipulating objects that represent entries in
+a gettext po-file (untranslated and translated strings, with associated
+comments). It can load and save complete po-files.
 
 WWW: https://metacpan.org/release/Locale-PO
