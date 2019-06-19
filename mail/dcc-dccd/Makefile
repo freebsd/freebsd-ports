@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	2.3.165
-PORTREVISION=	2
+PORTVERSION=	2.3.167
 CATEGORIES=	mail
 MASTER_SITES=	https://www.dcc-servers.net/dcc/source/old/
 DISTNAME=	dcc-${PORTVERSION}
