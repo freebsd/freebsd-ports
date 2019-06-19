@@ -3,12 +3,12 @@
 
 PORTNAME=	eclat
 PORTVERSION=	2.0
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils net
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
 
 MAINTAINER=	zeus@gnu.org.ua
-COMMENT=	EC2 command line administration tool
+COMMENT=	Amazon EC2 command line administration tool
 
 LICENSE=	GPLv3
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		localbase tar:xz
 GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
+TEST_TARGET=	check
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS TODO
 
