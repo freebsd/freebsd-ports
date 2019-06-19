@@ -1,7 +1,7 @@
 '\" t
 .\"     Title: talloc
 .\"    Author: [see the "AUTHOR" section]
-.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
 .\"      Date: 2015-04-10
 .\"    Manual: System Administration tools
 .\"    Source: Samba 4.0
@@ -131,8 +131,6 @@ From the 2\&.0 version of talloc, as a special case, talloc_free() is refused on
 .PP
 To help you find problems in your code caused by this behaviour, if you do try and free a pointer with more than one parent then the talloc logging function will be called to give output like this:
 .PP
-
-.sp
 .if n \{\
 .RS 4
 .\}
@@ -163,8 +161,6 @@ is NULL, then the function is a no\-op, and simply returns NULL\&.
 .PP
 After creating a reference you can free it in one of the following ways:
 .PP
-
-.sp
 .RS 4
 .ie n \{\
 \h'-04'\(bu\h'+03'\c
@@ -365,8 +361,6 @@ It is possible to produce loops in the parent/child relationship if you are not 
 .PP
 Note that if you try and call talloc_steal() on a pointer that has more than one parent then the result is ambiguous\&. Talloc will choose to remove the parent that is currently indicated by talloc_parent() and replace it with the chosen parent\&. You will also get a message like this via the talloc logging functions:
 .PP
-
-.sp
 .if n \{\
 .RS 4
 .\}

@@ -1,6 +1,6 @@
---- wscript.orig	2018-01-13 09:07:51 UTC
+--- wscript.orig	2019-03-21 10:12:32 UTC
 +++ wscript
-@@ -46,13 +46,14 @@ def configure(conf):
+@@ -45,13 +45,14 @@ def configure(conf):
      conf.env.TALLOC_COMPAT1 = False
      if conf.env.standalone_talloc:
          conf.env.TALLOC_COMPAT1 = Options.options.TALLOC_COMPAT1
