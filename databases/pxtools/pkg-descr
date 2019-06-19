@@ -5,6 +5,6 @@ pxtools consists of the following:
   the important information.
 * pxsqldump/pxcsvdump are utilities to extract the data from a
   Paradox-database.  The output is an SQL-/CSV-dump that can be
-  used to recreate the database in an SQL-enviroment.
+  used to recreate the database in an SQL environment.
 
 WWW: http://jan.kneschke.de/projects/pxtools/
