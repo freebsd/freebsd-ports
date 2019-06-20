@@ -1,0 +1,11 @@
+--- configure.ac.orig	2019-06-11 07:14:11 UTC
++++ configure.ac
+@@ -198,7 +198,7 @@ AC_TRY_COMPILE(
+ 	[#include <sys/timeb.h>],
+ 	[timeb tb;
+          ftime(&tb)],
+-	has_ftime=true, has_ftime=false)
++	has_ftime=false, has_ftime=false)
+ 
+ if test $has_ftime = true
+ then AC_MSG_RESULT(yes)

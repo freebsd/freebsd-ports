@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	quickfix
-PORTVERSION=	1.14.3
+PORTVERSION=	1.15.1
 CATEGORIES=	finance devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Free FIX Protocol Implementation
@@ -15,14 +14,17 @@ BROKEN_powerpc64=	fails to configure: unable to find set_terminate in std or glo
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake iconv libtool shebangfix ssl
+USES=		gmake iconv libtool autoreconf shebangfix ssl
+
+USE_GITHUB=	yes
+GH_TAGNAME=	v1.15.1
+
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	examples/tradeclientgui/banzai/build.sh
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CXX=${CXX} CC=${CC} LIBS=-L${LOCALBASE}/lib/
-WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_JOBS_UNSAFE=yes
+CONFIGURE_ARGS+=	--without-python --without-python3
 
 OPTIONS_DEFINE=	MYSQL PGSQL PYTHON RUBY JAVA
 OPTIONS_DEFAULT=	MYSQL
@@ -31,10 +33,11 @@ PGSQL_USES=	pgsql
 PGSQL_CONFIGURE_WITH=	postgresql
 MYSQL_USES=	mysql
 MYSQL_CONFIGURE_WITH=	mysql
-PYTHON_USES=	python
-PYTHON_CONFIGURE_WITH=	python
+PYTHON_USES=	python:2.7
+PYTHON_CONFIGURE_WITH=	python2
 RUBY_USE=	ruby=yes
 RUBY_CONFIGURE_WITH=	ruby
+RUBY_LIB_DEPENDS+=libunwind.so:devel/libunwind
 JAVA_USE=	java=yes
 JAVA_CONFIGURE_WITH=	java
 
@@ -45,12 +48,14 @@ post-extract:
 		${WRKSRC}/src/ruby/make_ruby.sh
 	@${REINPLACE_CMD} -e 's|CXX = g++|CXX = ${CXX}|' \
 		${WRKSRC}/UnitTest++/Makefile
+pre-configure:
+	cd ${WRKSRC} && ${sh} ${WRKSRC}/bootstrap
 	@${REINPLACE_CMD} -e 's|pkgconfdir = .*|pkgconfdir=${LOCALBASE}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
-post-configure:
+pre-build:
 	${GMAKE} -C ${WRKSRC}/UnitTest++ TestUnitTest++
 
 post-install-RUBY-on:
-	${STRIP_CMD} ${STAGEDIR}${RUBY_SITELIBDIR}/quickfix.so
+	${STRIP_CMD} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/quickfix.so
 
 .include <bsd.port.mk>
