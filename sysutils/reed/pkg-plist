@@ -4,4 +4,4 @@ bin/wrap
 man/man1/breed.1.gz
 man/man1/reed.1.gz
 man/man1/wrap.1.gz
-share/reed/fix_bookmarks.pl
+share/reed/fix_bookmarks.sh
