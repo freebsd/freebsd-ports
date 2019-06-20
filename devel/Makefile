@@ -4118,6 +4118,7 @@
     SUBDIR += py-aws-sam-translator
     SUBDIR += py-aws-xray-sdk
     SUBDIR += py-azure-batch
+    SUBDIR += py-azure-cosmos
     SUBDIR += py-azure-datalake-store
     SUBDIR += py-azure-graphrbac
     SUBDIR += py-azure-keyvault
@@ -4769,7 +4770,6 @@
     SUBDIR += py-pydevd
     SUBDIR += py-pydispatcher
     SUBDIR += py-pydocstyle
-    SUBDIR += py-pydocumentdb
     SUBDIR += py-pydoop
     SUBDIR += py-pydrive
     SUBDIR += py-pyechonest
