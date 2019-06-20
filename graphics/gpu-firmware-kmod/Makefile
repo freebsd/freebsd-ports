@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpu-firmware-kmod
-PORTVERSION=	g20190219
+PORTVERSION=	g20190620
 CATEGORIES=	graphics
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -22,7 +22,7 @@ USES=		kmod uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	kms-firmware
-GH_TAGNAME=	858e54d
+GH_TAGNAME=	bcb71d0
 
 .include <bsd.port.pre.mk>
 
