@@ -3,7 +3,7 @@
 
 PORTNAME=	sssd
 PORTVERSION=	1.11.7
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	security
 MASTER_SITES=	https://releases.pagure.org/SSSD/${PORTNAME}/
 
@@ -14,9 +14,6 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpopt.so:devel/popt \
-		libtalloc.so:devel/talloc \
-		libtevent.so:devel/tevent \
-		libtdb.so:databases/tdb \
 		libldb.so:databases/ldb \
 		libcares.so:dns/c-ares \
 		libdbus-1.so:devel/dbus \
@@ -27,12 +24,18 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 		libsasl2.so:security/cyrus-sasl2 \
 		libinotify.so:devel/libinotify \
 		libplds4.so:devel/nspr
-BUILD_DEPENDS=	xmlcatalog:textproc/libxml2 \
+BUILD_DEPENDS=	talloc1>0:devel/talloc1 \
+		tevent1>0:devel/tevent1 \
+		tdb1>0:databases/tdb1 \
+		xmlcatalog:textproc/libxml2 \
 		docbook-xsl>=1:textproc/docbook-xsl \
 		xsltproc:textproc/libxslt \
 		xmlcatmgr:textproc/xmlcatmgr \
 		krb5>=1.10:security/krb5 \
 		nsupdate:dns/bind-tools
+RUN_DEPENDS=	talloc1>0:devel/talloc1 \
+		tevent1>0:devel/tevent1 \
+		tdb1>0:databases/tdb1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-selinux=no --with-semanage=no \
