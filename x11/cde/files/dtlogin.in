@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: dtlogin
+# REQUIRE: LOGIN dbus hald dtspc
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable slim:
+# dtlogin_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=dtlogin
+rcvar=dtlogin_enable
+desc="Display manager for CDE"
+
+load_rc_config dtlogin
+
+: ${dtlogin_enable:=NO}
+
+command=%%PREFIX%%/dt/bin/dtlogin
+command_args=-daemon
+
+run_rc_command $1
