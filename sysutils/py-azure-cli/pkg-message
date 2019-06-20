@@ -1,3 +1,6 @@
+[
+{
+	message: <<EOM
 ================================================================================
 
 Welcome to the Azure CLI! The CLI is a tool designed to get you working quickly
@@ -14,3 +17,7 @@ machine with the Azure CLI. The tutorial also covers output queries, Azure
 resource reuse, and resource cleanup.
 
 ================================================================================
+EOM
+	type: install
+}
+]
