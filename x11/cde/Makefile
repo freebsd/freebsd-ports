@@ -2,7 +2,7 @@
 
 PORTNAME=	cde
 DISTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	ksh93:shells/ksh93			\
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig \
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2 \
-		ksh93:shells/ksh93 \
 		xrdb:x11/xrdb \
 		xset:x11/xset
 
@@ -33,7 +32,7 @@ SHEBANG_FILES=	programs/dtdocbook/sgmls/sgmls.pl \
 		programs/dtdocbook/doc2sdl/docbook.tcl \
 		programs/dtdocbook/doc2sdl/dtdocbook
 USE_LDCONFIG=	${PREFIX}/dt/lib
-USE_RC_SUBR=	dtcms dtspc
+USE_RC_SUBR=	dtcms dtspc dtlogin
 USE_XORG=	ice sm x11 xau xdmcp xext xinerama xmu xp xscrnsaver xt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
@@ -41,6 +40,12 @@ ALL_TARGET=	World
 MAKE_ARGS+=	PERL=${PERL}
 MAKE_JOBS_UNSAFE=yes
 SUB_FILES=	pkg-message
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} >= 1300018
+BROKEN=	Fails to build: ld: error: ../../../exports/lib/libDtHelp.so: undefined reference to jpeg_CreateDecompress
+.endif
 
 post-patch:
 	@if [ -f /usr/include/iconv.h ]; then \
