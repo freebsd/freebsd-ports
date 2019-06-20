@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	node_exporter
-PORTVERSION=	0.18.0
+PORTVERSION=	0.18.1
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@ecadlabs.com
