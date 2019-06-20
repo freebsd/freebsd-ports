@@ -3,7 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	11.11.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -98,7 +98,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-creole>=0.5.0:textproc/rubygem-creole \
 	rubygem-wikicloth081>=0.8.1:textproc/rubygem-wikicloth081 \
 	rubygem-asciidoctor>=1.5.8:textproc/rubygem-asciidoctor \
-	rubygem-asciidoctor-plantuml>=0.0.8:textproc/rubygem-asciidoctor-plantuml \
+	rubygem-asciidoctor-plantuml008>=0.0.8:textproc/rubygem-asciidoctor-plantuml008 \
 	rubygem-rouge>=3.1:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.11:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=4.2.0:devel/rubygem-bootstrap_form \
