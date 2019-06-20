@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 
 USES=		elixir gmake
 USE_GITHUB=	yes
-GH_ACCOUNT=	elixircnx
+GH_ACCOUNT=	riverrun
 
 MIX_BUILD_DEPS=	devel/elixir-make \
 		security/elixir-comeonin_i18n
