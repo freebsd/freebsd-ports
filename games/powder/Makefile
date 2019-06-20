@@ -12,14 +12,12 @@ DISTNAME=	${PORTNAME}${PORTVERSION}_src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical dungeon crawling game
 
-USES=		compiler gmake
+USES=		gmake
 USE_SDL=	sdl
+USE_CXXSTD=	c++98
 MAKE_JOBS_UNSAFE=yes
 
 BUILD_WRKSRC=	${WRKSRC}/port/linux
-
-CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
-CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 PLIST_FILES=	bin/powder
 PORTDOCS=	README.TXT LICENSE.TXT CREDITS.TXT
