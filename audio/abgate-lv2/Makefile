@@ -13,11 +13,9 @@ COMMENT=	Noise gate LV2 plugin
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	fails to build: cc1plus: unrecognized command line option -std=c++11
-
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
-USES=		gmake pkgconfig qt:5
+USES=		compiler:c++11-lang gmake pkgconfig qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	antanasbruzas
 USE_CXXSTD=	c++11
