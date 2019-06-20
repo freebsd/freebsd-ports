@@ -1,24 +1,10 @@
---- fog.gemspec.orig	2018-11-12 20:55:32 UTC
+--- fog.gemspec.orig	2019-06-20 18:10:08 UTC
 +++ fog.gemspec
-@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
-     s.specification_version = 2
- 
-     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<fog-core>.freeze, ["~> 1.45"])
-+      s.add_runtime_dependency(%q<fog-core>.freeze, [">= 1.45"])
-       s.add_runtime_dependency(%q<fog-json>.freeze, [">= 0"])
-       s.add_runtime_dependency(%q<fog-xml>.freeze, ["~> 0.1.1"])
-       s.add_runtime_dependency(%q<json>.freeze, ["~> 2.0"])
-@@ -36,10 +36,10 @@ Gem::Specification.new do |s|
-       s.add_runtime_dependency(%q<fog-atmos>.freeze, [">= 0"])
-       s.add_runtime_dependency(%q<fog-aws>.freeze, [">= 0.6.0"])
-       s.add_runtime_dependency(%q<fog-brightbox>.freeze, ["~> 0.4"])
--      s.add_runtime_dependency(%q<fog-cloudatcost>.freeze, ["~> 0.1.0"])
-+      s.add_runtime_dependency(%q<fog-cloudatcost>.freeze, ["~> 0.1"])
+@@ -40,7 +40,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<fog-cloudstack>.freeze, ["~> 0.1.0"])
        s.add_runtime_dependency(%q<fog-digitalocean>.freeze, [">= 0.3.0"])
--      s.add_runtime_dependency(%q<fog-dnsimple>.freeze, ["~> 1.0"])
+       s.add_runtime_dependency(%q<fog-dnsimple>.freeze, ["~> 2.1"])
 -      s.add_runtime_dependency(%q<fog-dynect>.freeze, ["~> 0.0.2"])
-+      s.add_runtime_dependency(%q<fog-dnsimple>.freeze, [">= 1.0"])
 +      s.add_runtime_dependency(%q<fog-dynect>.freeze, [">= 0.0.2"])
        s.add_runtime_dependency(%q<fog-ecloud>.freeze, ["~> 0.1"])
        s.add_runtime_dependency(%q<fog-google>.freeze, ["~> 1.0"])

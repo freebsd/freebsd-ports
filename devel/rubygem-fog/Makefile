@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,15 +16,15 @@ RUN_DEPENDS=	rubygem-fog-aliyun>=0.1.0:net/rubygem-fog-aliyun \
 		rubygem-fog-atmos>=0:net/rubygem-fog-atmos \
 		rubygem-fog-aws>=0.6.0:net/rubygem-fog-aws \
 		rubygem-fog-brightbox0>=0.4:net/rubygem-fog-brightbox0 \
-		rubygem-fog-cloudatcost>=0.1.0:net/rubygem-fog-cloudatcost \
-		rubygem-fog-core>=1.45:devel/rubygem-fog-core \
+		rubygem-fog-cloudatcost>=0.4:net/rubygem-fog-cloudatcost \
+		rubygem-fog-cloudstack>=0.1.0:net/rubygem-fog-cloudstack \
+		rubygem-fog-core>=2.1:devel/rubygem-fog-core \
 		rubygem-fog-digitalocean>=0.3.0:net/rubygem-fog-digitalocean \
-		rubygem-fog-dnsimple>=1.0:net/rubygem-fog-dnsimple \
+		rubygem-fog-dnsimple>=2.1:net/rubygem-fog-dnsimple \
 		rubygem-fog-dynect>=0.0.2:net/rubygem-fog-dynect \
 		rubygem-fog-ecloud>=0.1:net/rubygem-fog-ecloud \
 		rubygem-fog-google>=1.0:net/rubygem-fog-google \
 		rubygem-fog-internet-archive>=0:net/rubygem-fog-internet-archive \
-		rubygem-fog-joyent>=0:net/rubygem-fog-joyent \
 		rubygem-fog-json>=0:devel/rubygem-fog-json \
 		rubygem-fog-local>=0:net/rubygem-fog-local \
 		rubygem-fog-openstack>=0:net/rubygem-fog-openstack \
