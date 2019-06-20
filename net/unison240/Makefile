@@ -58,6 +58,11 @@ USES+=			gettext-runtime
 PLIST_SUB+=		X11=""
 .endif
 
+pre-patch:
+# BCP 5/16: Eta-expand for backward compatibility with OCaml >4.02
+	@${REINPLACE_CMD} -e 's,= Unix\.symlink,s1 s2 & s1 s2,' \
+		${WRKSRC}/system/system_generic.ml
+
 .if ${FLAVOR} == x11
 post-patch:
 	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk2)@\1site-lib/\2@' \
