@@ -174,7 +174,6 @@
 /%%KMODDIR%%/amdgpu_raven2_mec_bin.ko
 /%%KMODDIR%%/amdgpu_raven2_pfp_bin.ko
 /%%KMODDIR%%/amdgpu_raven2_rlc_bin.ko
-/%%KMODDIR%%/amdgpu_raven2_sdma1_bin.ko
 /%%KMODDIR%%/amdgpu_raven2_sdma_bin.ko
 /%%KMODDIR%%/amdgpu_raven2_vcn_bin.ko
 /%%KMODDIR%%/amdgpu_raven_asd_bin.ko
