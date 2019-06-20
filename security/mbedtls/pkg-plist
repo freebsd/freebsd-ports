@@ -37,7 +37,6 @@ bin/mbedtls_rsa_sign_pss
 bin/mbedtls_rsa_verify
 bin/mbedtls_rsa_verify_pss
 bin/mbedtls_selftest
-bin/mbedtls_ssl_cert_test
 bin/mbedtls_ssl_client1
 bin/mbedtls_ssl_client2
 bin/mbedtls_ssl_fork_server
