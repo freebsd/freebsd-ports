@@ -1,5 +1,3 @@
 %%SITE_PERL%%/DefHash.pm
 %%SITE_PERL%%/DefHash.pod
-%%SITE_PERL%%/Sah/Schema/DefHash.pm
 %%PERL5_MAN3%%/DefHash.3.gz
-%%PERL5_MAN3%%/Sah::Schema::DefHash.3.gz
