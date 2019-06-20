@@ -1,3 +1,3 @@
-TIMESTAMP = 1555590199
-SHA256 (mozilla-sops-3.3.0_GH0.tar.gz) = ba9cf4dffeba97ae738a71b1f647780ef71e01466e1fe5a9b61bca5e89d25a19
-SIZE (mozilla-sops-3.3.0_GH0.tar.gz) = 53717019
+TIMESTAMP = 1560342346
+SHA256 (mozilla-sops-3.3.1_GH0.tar.gz) = 9f6a4a369378cef9e8e7cdd8ba00b3105b0b6875404c3b9f482f804b2f355a77
+SIZE (mozilla-sops-3.3.1_GH0.tar.gz) = 62451483
