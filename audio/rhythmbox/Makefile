@@ -3,7 +3,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	3.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,7 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		valac:lang/vala \
 		gtkdoc-check:textproc/gtk-doc \
-		itstool:textproc/itstool
+		itstool:textproc/itstool \
+		tdb1>0:databases/tdb1
+RUN_DEPENDS=	tdb1>0:databases/tdb1
 LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
 		libtotem-plparser.so:multimedia/totem-pl-parser \
 		libdbus-1.so:devel/dbus \
@@ -28,8 +30,7 @@ LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
 		libpeas-1.0.so:devel/libpeas \
 		libjson-glib-1.0.so:devel/json-glib \
 		libsoup-gnome-2.4.so:devel/libsoup-gnome \
-		libsecret-1.so:security/libsecret \
-		libtdb.so:databases/tdb
+		libsecret-1.so:security/libsecret
 
 USES=		desktop-file-utils gmake gnome libtool localbase \
 		pathfix pkgconfig tar:xz
