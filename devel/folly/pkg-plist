@@ -481,6 +481,8 @@ include/folly/memory/Arena.h
 include/folly/memory/EnableSharedFromThis.h
 include/folly/memory/MallctlHelper.h
 include/folly/memory/Malloc.h
+include/folly/memory/MemoryResource.h
+include/folly/memory/SanitizeLeak.h
 include/folly/memory/ThreadCachedArena.h
 include/folly/memory/UninitializedMemoryHacks.h
 include/folly/memory/detail/MallocImpl.h
