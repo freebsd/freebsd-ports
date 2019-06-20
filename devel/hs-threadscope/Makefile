@@ -2,7 +2,7 @@
 
 PORTNAME=	threadscope
 PORTVERSION=	0.2.11.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
