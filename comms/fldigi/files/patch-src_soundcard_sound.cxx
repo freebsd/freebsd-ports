@@ -1,6 +1,6 @@
---- src/soundcard/sound.cxx.orig	2018-12-06 14:41:46 UTC
+--- src/soundcard/sound.cxx.orig	2019-05-25 01:35:59 UTC
 +++ src/soundcard/sound.cxx
-@@ -651,7 +651,27 @@ int SoundOSS::Open(int md, int freq)
+@@ -651,7 +651,26 @@ int SoundOSS::Open(int md, int freq)
  			oflags = oflags | O_CLOEXEC;
  #	   endif
  
@@ -16,10 +16,9 @@
 +		char *p;
 +		/* Look for a '.' if found, blow it away */
 +		fixed_name = strdup(device.c_str());
-+		p = fixed_name;
-+		while (*p++)
-+			if(*p == '.')
-+				*p = '\0';
++		p = strchr(fixed_name, '.');
++		if(p != NULL)
++			*p = '\0';
 +		device_fd = fl_open(fixed_name, oflags, 0);
 +		free(fixed_name);
 +#else
@@ -28,7 +27,7 @@
  		if (device_fd == -1)
  			throw SndException(errno);
  
-@@ -677,12 +697,11 @@ void SoundOSS::Close(unsigned dir)
+@@ -677,12 +696,11 @@ void SoundOSS::Close(unsigned dir)
  void SoundOSS::getVersion()
  {
  	version = 0;
