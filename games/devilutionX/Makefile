@@ -23,7 +23,6 @@ PLIST_FILES=	bin/devilutionx
 USE_GITHUB=	yes
 GH_ACCOUNT=	diasurgical
 GH_PROJECT=	devilutionX
-GH_TAGNAME=	${PORTVERSION}
 
 OPTIONS_DEFAULT=	RELEASE
 

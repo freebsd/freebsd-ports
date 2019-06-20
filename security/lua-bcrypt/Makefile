@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bcrypt
+DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1-4
 CATEGORIES=	security
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -15,7 +16,6 @@ USES=		compiler:c11 gmake lua
 USE_GITHUB=	yes
 GH_ACCOUNT=	mikejsavage
 GH_PROJECT=	lua-bcrypt
-GH_TAGNAME=	v2.1-4
 
 PLIST_FILES=	${LUA_MODLIBDIR}/bcrypt.so
 
