@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	event
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 CATEGORIES=	devel
 
 MAINTAINER=	joneum@FreeBSD.org
