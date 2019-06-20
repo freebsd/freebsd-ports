@@ -1218,6 +1218,7 @@
     SUBDIR += rubygem-fog-brightbox
     SUBDIR += rubygem-fog-brightbox0
     SUBDIR += rubygem-fog-cloudatcost
+    SUBDIR += rubygem-fog-cloudstack
     SUBDIR += rubygem-fog-digitalocean
     SUBDIR += rubygem-fog-dnsimple
     SUBDIR += rubygem-fog-dynect
