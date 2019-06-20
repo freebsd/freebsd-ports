@@ -31,7 +31,8 @@ SUB_LIST=	PYTHON_CMD="${PYTHON_CMD}" \
 OPTIONS_DEFINE=	HTTP LDAP
 HTTP_DESC=	HTTP authentication support
 
-HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests1>=0:www/py-requests1@${PY_FLAVOR}
+#HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests1>=0:www/py-requests1@${PY_FLAVOR}
+HTTP_BROKEN=		www/py-requests1 does not exist any more
 LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap>=0:net/py-ldap@${PY_FLAVOR}
 
 post-patch:
