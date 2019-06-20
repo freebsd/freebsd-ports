@@ -2,8 +2,8 @@
 
 PORTNAME=	svt-av1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0-370
-DISTVERSIONSUFFIX=	-g5fd69642
+DISTVERSION=	0.5.0-457
+DISTVERSIONSUFFIX=	-gcc2ee452
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,25 +26,14 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	OpenVisualCloud
 GH_PROJECT=	SVT-AV1
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	NATIVE
 
 post-patch:
-# Default CFLAGS are already set by USES=cmake
-	@${REINPLACE_CMD} -i .flags -E -e 's/ -mavx//' \
-		-e 's/CMAKE_C_FLAGS "/&$${CMAKE_C_FLAGS} /' \
-		-e '/C_FLAGS_(RELEASE|DEBUG)/d' \
-		-e '/NASM_FLAGS_DEBUG/d' \
+# Keep using nasm and drop vendor -O/-g
+	@${REINPLACE_CMD} -e '/find_program.*yasm/d' \
+		-Ee '/set.*(release|debug)_flags_to_test/,/\)/d' \
 		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -i .flags -e 's/-march=core-avx2/-mavx2/' \
-		${WRKSRC}/Source/Lib/Common/ASM_AVX2/CMakeLists.txt \
-# Avoid lang/gcc* dependency
-	@${REINPLACE_CMD} -i .gcc -e 's/gcc-//' \
-		-e '/CMAKE_C/{ s/STREQUAL/MATCHES/; s/"GNU/&|Clang/; }' \
-		${WRKSRC}/CMakeLists.txt \
-		${WRKSRC}/Source/Lib/Common/*/CMakeLists.txt
 # Avoid platform whitelists for generic non-Windows code
-	@${REINPLACE_CMD} -i .opsys 's/Linux/${OPSYS}/' \
-		${WRKSRC}/CMakeLists.txt \
-		${WRKSRC}/Source/Lib/*/*/CMakeLists.txt
 	@${GREP} --exclude='*/third_party/*' -Flr '__linux' ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -i .opsys -E 's/__linux(__)?/__${OPSYS}__/'
 
