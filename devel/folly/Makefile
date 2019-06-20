@@ -15,6 +15,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	error: use of undeclared identifier 'DCHECK': https://github.com/facebook/folly/issues/1168
+BROKEN_FreeBSD_13=	clang crashes: https://bugs.llvm.org/show_bug.cgi?id=42338
 
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libdouble-conversion.so:devel/double-conversion \
