@@ -3,6 +3,7 @@
 
 PORTNAME=	quickfix
 PORTVERSION=	1.15.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	finance devel
 
 MAINTAINER=	m.tsatsenko@gmail.com
@@ -17,7 +18,6 @@ BUILD_DEPENDS=	bash:shells/bash
 USES=		gmake iconv libtool autoreconf shebangfix ssl
 
 USE_GITHUB=	yes
-GH_TAGNAME=	v1.15.1
 
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes

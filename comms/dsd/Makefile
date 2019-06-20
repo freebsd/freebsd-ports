@@ -2,6 +2,7 @@
 
 PORTNAME=	dsd
 PORTVERSION=	1.6.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	takefu@airport.fm
@@ -13,7 +14,6 @@ LIB_DEPENDS=	libmbe.so:comms/mbelib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	szechyjs
-GH_TAGNAME=	v${PORTVERSION}
 
 USE_LDCONFIG=	yes
 PLIST_FILES=	"@(,uucp,4555) bin/dsd"
