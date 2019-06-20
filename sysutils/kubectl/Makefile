@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kubectl
-PORTVERSION=	1.14.3
+PORTVERSION=	1.15.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -19,10 +19,11 @@ GH_PROJECT=	kubernetes
 
 GO_PKGNAME=	k8s.io/kubernetes
 GO_TARGET=	${GO_PKGNAME}/cmd/${PORTNAME}
-GO_BUILDFLAGS=	-ldflags="-X k8s.io/kubernetes/pkg/version.gitMajor=${PORTVERSION:R:R} \
-		-X k8s.io/kubernetes/pkg/version.gitMinor=${PORTVERSION:R:E} \
-		-X k8s.io/kubernetes/pkg/version.buildDate=$$(date +'%Y-%m-%dT%H:%M:%SZ') \
-		-X k8s.io/kubernetes/pkg/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION}"
+GO_BUILDFLAGS=	-ldflags="-X k8s.io/kubernetes/pkg/kubectl/version.gitMajor=${PORTVERSION:R:R} \
+		-X k8s.io/kubernetes/pkg/kubectl/version.gitMinor=${PORTVERSION:R:E} \
+		-X k8s.io/kubernetes/pkg/kubectl/version.buildDate=$$(date +'%Y-%m-%dT%H:%M:%SZ') \
+		-X k8s.io/kubernetes/pkg/kubectl/version.gitCommit="" \
+		-X k8s.io/kubernetes/pkg/kubectl/version.gitVersion=${DISTVERSIONPREFIX}${PORTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}
 
