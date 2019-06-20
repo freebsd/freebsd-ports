@@ -2,8 +2,7 @@
 
 PORTNAME=	gobuster
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.1-15
-DISTVERSIONSUFFIX=	-g0e209e5
+DISTVERSION=	3.0.0
 CATEGORIES=	misc dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +18,8 @@ GH_TUPLE=	google:uuid:c2e93f3:uuid/vendor/github.com/google/uuid \
 		hashicorp:errwrap:8a6fb52:errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-multierror:886a7fb:gomultierror/vendor/github.com/hashicorp/go-multierror \
 		golang:crypto:0e37d00:crypto/vendor/golang.org/x/crypto \
+		spf13:cobra:0.0.5:cobra/vendor/github.com/spf13/cobra \
+		spf13:pflag:v1.0.3:pflag/vendor/github.com/spf13/pflag \
 		golang:sys:d8f5ea2:sys/vendor/golang.org/x/sys
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
