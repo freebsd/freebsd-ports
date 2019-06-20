@@ -10,4 +10,4 @@ comprehensive service level agreements (SLAs) for throughput, latency,
 availability, and consistency guarantees, something no other database service
 can offer.
 
-WWW: https://pypi.org/project/pydocumentdb/
+WWW: https://pypi.org/project/azure-cosmos/
