@@ -19,7 +19,6 @@ BROKEN_aarch64=		invokes x86 assembler
 BROKEN_armv6=		invokes x86 assembler
 BROKEN_armv7=		invokes x86 assembler
 BROKEN_mips64=		invokes x86 assembler
-BROKEN_powerpc64=	invokes x86 assembler
 BROKEN_sparc64=		invokes x86 assembler
 
 USES=		gmake perl5
@@ -31,10 +30,17 @@ OPTIONS_DEFINE=	SIMD
 
 SIMD_CONFIGURE_OFF=	--disable-builtin-popcount --disable-simd
 
+.include <bsd.port.pre.mk>
+
 # shebang_fix operates during patch.
 # These scripts are created during configure.
 post-configure:
 	${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' \
 		${WRKSRC}/Makefile ${WRKSRC}/util/*.pl
+.if ${ARCH:Mpowerpc*}
+# XXX MCL unknown why this shows up as true.  knowledge of autoconf needed.
+	${REINPLACE_CMD} -e 's|#define HAVE_ASM_BSR 1||' \
+		${WRKSRC}/src/config.h
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
