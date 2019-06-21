@@ -1079,6 +1079,7 @@
     SUBDIR += kimwitu
     SUBDIR += kio-extras
     SUBDIR += kiwix-lib
+    SUBDIR += kms-cmake-utils
     SUBDIR += kodi-platform
     SUBDIR += kore
     SUBDIR += kronosnet
