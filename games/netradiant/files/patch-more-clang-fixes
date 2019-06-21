@@ -30,17 +30,6 @@
  #include <gtk/gtk.h>
  #include "gtkutil/pointer.h"
  
---- contrib/bobtoolz/misc.cpp.orig	2013-06-30 14:04:35 UTC
-+++ contrib/bobtoolz/misc.cpp
-@@ -31,7 +31,7 @@
- 
- #include "funchandlers.h"
- 
--#ifdef __linux__
-+#if defined (__linux__) || defined(__FreeBSD__)
- #include <sys/types.h>
- #include <unistd.h>
- #endif
 --- contrib/bobtoolz/shapes.cpp.orig	2013-06-30 14:04:35 UTC
 +++ contrib/bobtoolz/shapes.cpp
 @@ -40,6 +40,7 @@

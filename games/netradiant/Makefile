@@ -2,55 +2,75 @@
 # $FreeBSD$
 
 PORTNAME=	netradiant
-PORTVERSION=	20130630
-PORTREVISION=	8
+PORTVERSION=	20150621
 CATEGORIES=	games cad
-MASTER_SITES=	http://ingar.satgnu.net/gtkradiant/files/ \
-		http://freebsd.nsu.ru/distfiles/
+MASTER_SITES=	http://ingar.intranifty.net/gtkradiant/files/ LOCAL/danfe \
+		http://ingar.intranifty.net/gtkradiant/files/gamepacks/:gp
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} q3map2.6
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${_DISTFILES:Nq3map2.6}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Fork of the well-known GtkRadiant 1.5 FPS games map editor
+COMMENT=	Fork of GtkRadiant v1.5 FPS games map editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
-		libwebp.so:graphics/webp
-
-BROKEN=		No more public distfiles and uses sys/dir.h
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libwebp.so:graphics/webp \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 
 BROKEN_aarch64=		fails to link: ldd: install/modules/archivepak.so: not a FreeBSD ELF shared object
 BROKEN_armv6=		fails to build: h2data.armv6: No such file or directory
 BROKEN_armv7=		fails to build: h2data.armv7: No such file or directory
 
 USES=		compiler:c++11-lang gl gmake gnome jpeg localbase:ldflags \
-		pkgconfig tar:bzip2
-USE_GL=		glu
-MAKE_ENV=	BUILD=release DOWNLOAD_GAMEPACKS=no LIBS_DL="" \
+		pkgconfig tar:xz
+USE_GL=		gl glu
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 libxml2 pango pangox-compat
+USE_XORG=	x11
+MAKE_ENV=	BUILD=release DOWNLOAD_GAMEPACKS=no EXE=${ARCH} \
 		RADIANT_ABOUTMSG="For ${OPSYS} ${OSREL} (${ARCH})"
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	ARCH=${ARCH:S/powerpc64/powerpc/}
 PLIST_SUB:=	${SUB_LIST}
 
+OPTIONS_DEFINE=	GAMEPACK
+OPTIONS_DEFAULT=	GAMEPACK
+GAMEPACK_DESC=	Install gamepacks for some popular games
+OPTIONS_SUB=	yes
+
+GAMES=	DarkPlaces Doom3 ET Neverball Nexuiz OpenArena Osirion Quake1 \
+	Quake2 Quake2World Quake3 Quake4 Quake Quetoo Tremulous UFOAI \
+	Unvanquished Warsow Xonotic
+GAMEPACK_DISTFILES= ${GAMES:S/$/Pack.zip:gp/}
+
 post-patch:
+	@${REINPLACE_CMD} -e '/#include/s,<sys/dir,&ent,' \
+		${WRKSRC}/tools/quake2/qdata/qdata.c
+	@${REINPLACE_CMD} -e 's,#ifndef WIN32,#ifdef NeXT,' \
+		${WRKSRC}/tools/quake3/q3data/q3data.c
 # Add missing checks for __FreeBSD__
 	@${FIND} ${WRKSRC}/tools -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's/__linux__/__${OPSYS}__ ) || defined ( &/'
 
 pre-install:
-# Fix permissions of some files (drop bogus execute bit)
-	@${FIND} ${WRKSRC}/install/osirion.game -type f | ${XARGS} ${CHMOD} a-x
-	@${CHMOD} a-x ${WRKSRC}/install/games/osirion.game
 # Remove a copy of GNU GPL from what we are going to install
 	@${RM} ${WRKSRC}/install/GPL.txt
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${RMDIR} ${WRKSRC}/install/games
 	${CP} -a ${WRKSRC}/install/* ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${DISTDIR}/q3map2.6 ${STAGEDIR}${MANPREFIX}/man/man6
+
+do-install-GAMEPACK-on:
+.for g in ${GAMES}
+	${CP} -a ${WRKDIR}/${g}Pack/games ${WRKDIR}/${g}Pack/*.game \
+		${STAGEDIR}${DATADIR}
+.endfor
 
 .include <bsd.port.mk>
