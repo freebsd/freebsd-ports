@@ -3,6 +3,7 @@ lib/X11/EmiClock/myu.au
 lib/X11/app-defaults/EmiClock
 lib/X11/ja_JP.EUC/app-defaults/EmiClock
 lib/X11/ja_JP.eucJP/app-defaults/EmiClock
+lib/X11/ja_JP.UTF-8/app-defaults/EmiClock
 man/man1/emiclock.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.en
