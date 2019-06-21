@@ -1,0 +1,12 @@
+--- server/Makefile.am.orig	2019-06-16 16:26:20 UTC
++++ server/Makefile.am
+@@ -153,7 +153,8 @@ srvlibs = \
+ 
+ libfreeciv_srv_la_LIBADD = \
+  $(srvlibs) $(SRV_LIB_LIBS) \
+- $(LUA_LIBS) $(TOLUA_LIBS) $(LUASQL_LIBS)
++ $(LUA_LIBS) $(TOLUA_LIBS) $(LUASQL_LIBS) \
++ $(SERVER_LIBS)
+ 
+ exe_ldflags =
+ 

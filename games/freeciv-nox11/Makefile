@@ -1,10 +1,10 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
 
+PKGNAMESUFFIX=	-nox11
+
 MASTERDIR=	${.CURDIR}/../freeciv
 
-# Explicitly exclude X11 options
-OPTIONS_EXCLUDE=	SDL X11
-PKGNAMESUFFIX=	-nox11
+OPTIONS_EXCLUDE=	${OPTIONS_MULTI_UI}
 
 .include "${MASTERDIR}/Makefile"
