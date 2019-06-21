@@ -1,3 +1,3 @@
-TIMESTAMP = 1556208631
-SHA256 (django-cors-headers-2.5.2.tar.gz) = fb44f6b9f10de847919305c3f0d38fcfbadfe0dd5cf1c866f37df66ad0dda1bb
-SIZE (django-cors-headers-2.5.2.tar.gz) = 22721
+TIMESTAMP = 1561104731
+SHA256 (django-cors-headers-3.0.2.tar.gz) = ebf3e2cf25aa6993b959a8e6a87828ebb3c8fe5bc3ec4a2d6e65f3b8d9b4212c
+SIZE (django-cors-headers-3.0.2.tar.gz) = 24497
