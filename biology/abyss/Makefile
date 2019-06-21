@@ -6,6 +6,9 @@ PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	http://www.bcgsc.ca/platform/bioinfo/software/${PORTNAME}/releases/${DISTVERSION}/
 
+PATCH_SITES=	https://github.com/bcgsc/${PORTNAME}/commit/
+PATCHFILES=	25eb9d2a914fb211fdfe04fcda5593f29fd23ff5.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Assembly By Short Sequences: parallel, paired-end sequence assembler
 
@@ -21,7 +24,7 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 RUN_DEPENDS=	bash:shells/bash \
 		gmake:devel/gmake
 
-USES=		gmake iconv:wchar_t localbase:ldflags shebangfix sqlite
+USES=		compiler:c++11-lang gmake iconv:wchar_t localbase:ldflags shebangfix sqlite
 SHEBANG_FILES=	bin/${PORTNAME}-*
 SHEBANG_LANG=	make
 make_OLD_CMD=	/usr/bin/make
