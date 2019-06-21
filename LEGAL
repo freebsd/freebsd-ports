@@ -72,6 +72,7 @@ ecw_jpeg_2000_*.zip	graphics/libecwj2	Registration required to download sources,
 edith*			editors/edith		Redistribution not allowed
 eijiro*			japanese/eijiro-fpw	The original dictionary is not free
 emc2*			math/emc2		No resale, contact author for commercial usage
+emiclock-*		x11-clocks/emiclock	Changes on the code or repackaging requires author approval
 et-linux-*		games/linux-enemyterritory Redistribution limited
 etqw*			games/linux-etqw-demo-server Redistribution limited
 etqw*			games/linux-etqw-server Redistribution limited
