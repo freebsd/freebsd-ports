@@ -8,7 +8,7 @@ CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bindings for Chromaprint acoustic fingerprinting and the Acoustid API
 
 LICENSE=	MIT
@@ -16,6 +16,8 @@ LICENSE=	MIT
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
