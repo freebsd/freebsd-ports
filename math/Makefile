@@ -707,6 +707,7 @@
     SUBDIR += py-gnuplot
     SUBDIR += py-grandalf
     SUBDIR += py-graphillion
+    SUBDIR += py-gym
     SUBDIR += py-igakit
     SUBDIR += py-igraph
     SUBDIR += py-intspan
