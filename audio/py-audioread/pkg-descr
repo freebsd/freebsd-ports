@@ -1,0 +1,9 @@
+audioread decodes audio files using whichever backend is available. The library
+currently supports:
+- Gstreamer via PyGObject.
+- MAD via the pymad bindings.
+- FFmpeg or Libav via its command-line interface.
+- The standard library wave, aifc, and sunau modules (for uncompressed audio
+  formats).
+
+WWW: https://github.com/beetbox/audioread
