@@ -1,9 +1,9 @@
---- mozilla-release/browser/config/cliqz.mozconfig.orig	2018-11-16 08:40:07 UTC
+--- mozilla-release/browser/config/cliqz.mozconfig.orig	2019-05-29 12:52:42 UTC
 +++ mozilla-release/browser/config/cliqz.mozconfig
-@@ -10,6 +10,11 @@ ac_add_options --enable-official-brandin
- ac_add_options --with-app-name=cliqz  # name for binaries
- ac_add_options --enable-crashreporter
- ac_add_options --enable-js-shell
+@@ -14,6 +14,11 @@ ac_add_options --enable-verify-mar
+ ac_add_options --with-mozilla-api-keyfile=$ROOT_PATH/mozilla-desktop-geoloc-api.key
+ ac_add_options --with-google-safebrowsing-api-keyfile=$ROOT_PATH/google-desktop-api.key
+ ac_add_options "MOZ_ALLOW_LEGACY_EXTENSIONS=1"
 +ac_add_options --disable-crashreporter
 +ac_add_options --disable-updater
 +ac_add_options --disable-tests
