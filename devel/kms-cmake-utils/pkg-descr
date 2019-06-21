@@ -1,0 +1,7 @@
+Common CMake utilities for Kurento projects.
+
+Kurento is an open source software project providing a platform suitable for
+creating modular applications with advanced real-time communication
+capabilities.
+
+WWW: https://github.com/Kurento/kms-cmake-utils

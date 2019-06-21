@@ -1,0 +1,10 @@
+share/cmake-3.14/Modules/CommonBuildFlags.cmake
+share/cmake-3.14/Modules/DpkgBuildFlags.cmake
+share/cmake-3.14/Modules/FindGLIB-GENMARSHAL.cmake
+share/cmake-3.14/Modules/FindGLIB-MKENUMS.cmake
+share/cmake-3.14/Modules/FindKurentoHelpers.cmake
+share/cmake-3.14/Modules/GLibHelpers.cmake
+share/cmake-3.14/Modules/GenericFind.cmake
+share/cmake-3.14/Modules/KurentoGitHelpers.cmake
+share/cmake-3.14/Modules/TestHelpers.cmake
+share/cmake-3.14/Modules/VersionHelpers.cmake
