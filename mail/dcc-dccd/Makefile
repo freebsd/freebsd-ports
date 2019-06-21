@@ -3,6 +3,7 @@
 
 PORTNAME=	dcc-dccd
 PORTVERSION=	2.3.167
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://www.dcc-servers.net/dcc/source/old/
 DISTNAME=	dcc-${PORTVERSION}
