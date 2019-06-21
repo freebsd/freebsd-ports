@@ -1,6 +1,6 @@
-TIMESTAMP = 1561066377
-SHA256 (OJ-gobuster-v3.0.0_GH0.tar.gz) = 71d75bbbe4dc74ad2e156381e57eb53dffc6a16e549fb07ba34ec3c677d57888
-SIZE (OJ-gobuster-v3.0.0_GH0.tar.gz) = 29180
+TIMESTAMP = 1561094830
+SHA256 (OJ-gobuster-v3.0.1_GH0.tar.gz) = 9c70c73b4c08b02d1fc722cd82eda3d8ce683de53b08c8bddd31fc5c4d90a977
+SIZE (OJ-gobuster-v3.0.1_GH0.tar.gz) = 29393
 SHA256 (google-uuid-c2e93f3_GH0.tar.gz) = 61a0e56aa49810b3a3a1983d7ce9b09ff2fe3c7e7c807572426bff33ed36d934
 SIZE (google-uuid-c2e93f3_GH0.tar.gz) = 13862
 SHA256 (hashicorp-errwrap-8a6fb52_GH0.tar.gz) = a7a95f9731829c7d9a66d49de0d8cd0e0d9d55da95c1124a80e6719278236e4c
