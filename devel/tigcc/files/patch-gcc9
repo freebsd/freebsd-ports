@@ -1,0 +1,42 @@
+Unbreak build with GCC 9
+
+.../gnu/gcc-4.1-20060728/gcc/c-decl.c: At top level:
+.../gnu/gcc-4.1-20060728/gcc/c-decl.c:1130:1: error: 'cgraph_node' is not defined as a type
+ 1130 | locate_old_decl (tree decl, void (*diag)(const char *, ...) ATTRIBUTE_GCC_CDIAG(1,2))
+      | ^~~~~~~~~~~~~~~
+
+Workaround for https://gcc.gnu.org/bugzilla/show_bug.cgi?id=90677
+
+--- gnu/gcc-4.1-20060728/gcc/c-tree.h.orig	2019-06-21 11:59:14 UTC
++++ gnu/gcc-4.1-20060728/gcc/c-tree.h
+@@ -613,7 +613,7 @@ extern void c_write_global_declarations (void);
+ /* In order for the format checking to accept the C frontend
+    diagnostic framework extensions, you must include this file before
+    toplev.h, not after.  */
+-#if GCC_VERSION >= 4001
++#if GCC_VERSION >= 4001 && GCC_VERSION < 9001
+ #define ATTRIBUTE_GCC_CDIAG(m, n) __attribute__ ((__format__ (GCC_DIAG_STYLE, m ,n))) ATTRIBUTE_NONNULL(m)
+ #else
+ #define ATTRIBUTE_GCC_CDIAG(m, n) ATTRIBUTE_NONNULL(m)
+--- gnu/gcc-4.1-20060728/gcc/pretty-print.h.orig	2019-06-21 11:57:02 UTC
++++ gnu/gcc-4.1-20060728/gcc/pretty-print.h
+@@ -301,7 +301,7 @@ extern void pp_base_append_text (pretty_printer *, con
+ 
+ /* This header may be included before toplev.h, hence the duplicate
+    definitions to allow for GCC-specific formats.  */
+-#if GCC_VERSION >= 3005
++#if GCC_VERSION >= 3005 && GCC_VERSION < 9001
+ #define ATTRIBUTE_GCC_PPDIAG(m, n) __attribute__ ((__format__ (__gcc_diag__, m ,n))) ATTRIBUTE_NONNULL(m)
+ #else
+ #define ATTRIBUTE_GCC_PPDIAG(m, n) ATTRIBUTE_NONNULL(m)
+--- gnu/gcc-4.1-20060728/gcc/toplev.h.orig	2019-06-21 11:58:27 UTC
++++ gnu/gcc-4.1-20060728/gcc/toplev.h
+@@ -49,7 +49,7 @@ extern void _fatal_insn (const char *, rtx, const char
+ /* None of these functions are suitable for ATTRIBUTE_PRINTF, because
+    each language front end can extend them with its own set of format
+    specifiers.  We must use custom format checks.  */
+-#if GCC_VERSION >= 4001
++#if GCC_VERSION >= 4001 && GCC_VERSION < 9001
+ #define ATTRIBUTE_GCC_DIAG(m, n) __attribute__ ((__format__ (GCC_DIAG_STYLE, m, n))) ATTRIBUTE_NONNULL(m)
+ #else
+ #define ATTRIBUTE_GCC_DIAG(m, n) ATTRIBUTE_NONNULL(m)
