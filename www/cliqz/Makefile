@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cliqz
-DISTVERSION=	1.26.5
-PORTREVISION=	1
+DISTVERSION=	1.27.3
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/cdn.cliqz.com/browser-f/APT/:amazon \
 		http://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/${CLIQZ_LAST_BUILD_ID}/:cliqz
@@ -38,6 +37,7 @@ BUILD_DEPENDS=	autoconf-2.13:devel/autoconf213 \
 		libvpx>=1.5.0:multimedia/libvpx \
 		${LOCALBASE}/libdata/pkgconfig/xt.pc:x11-toolkits/libXt \
 		llvm${LLVM_DEFAULT}>=0:devel/llvm${LLVM_DEFAULT} \
+		nasm:devel/nasm \
 		node:www/node \
 		nspr>=4.19:devel/nspr \
 		nss>=3.39:security/nss \
@@ -52,7 +52,7 @@ BUILD_DEPENDS=	autoconf-2.13:devel/autoconf213 \
 		zip:archivers/zip
 
 USES=		tar:xz gmake pkgconfig gnome python desktop-file-utils \
-		compiler:c11
+		compiler:c11 shebangfix
 
 USE_GNOME=	gconf2 gtk20 gtk30 cairo gdkpixbuf2
 
@@ -65,16 +65,21 @@ GH_PROJECT=	browser-f
 
 USE_LDCONFIG=	yes
 
+bash_OLD_CMD=	"/bin/bash"
+bash_CMD=	${LOCALBASE}/bin/bash
+SHEBANG_FILES=	magic_build_and_package.sh
+
 CLIQZ_CHANNEL=		release
 # If the DISTVERSION is updated, make sure to update the last build id from
 # fetch -qo - https://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/lastbuildid
-CLIQZ_LAST_BUILD_ID=	20190507112044
+CLIQZ_LAST_BUILD_ID=	20190619154110
 CLIQZ_ICON=		${PORTNAME}.png
 CLIQZ_ICON_SRC=		${WRKSRC}/mozilla-release/browser/branding/${PORTNAME}/default48.png
 MOZ_DESKTOP=		${WRKSRC}/mozilla-release/toolkit/mozapps/installer/linux/rpm/mozilla.desktop
 CLIQZ_DESKTOP=		${WRKSRC}/mozilla-release/toolkit/mozapps/installer/linux/rpm/cliqz.desktop
 
 MAKE_ENV+=	LLVM_CONFIG=llvm-config${LLVM_DEFAULT}
+MAKE_ENV+=	LLVM_OBJDUMP=${LOCALBASE}/llvm${LLVM_DEFAULT}/bin/llvm-objdump
 MAKE_ENV+=	CQZ_RELEASE_CHANNEL=${CLIQZ_CHANNEL}
 MAKE_ENV+=	CQZ_BUILD_ID=${CLIQZ_LAST_BUILD_ID}
 MAKE_ENV+=	MOZBUILD_STATE_PATH=${WRKDIR}
