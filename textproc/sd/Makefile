@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sd
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.5
 CATEGORIES=	textproc
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -32,6 +32,7 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		heck-0.3.1 \
 		lazy_static-1.3.0 \
 		libc-0.2.51 \
+		man-0.3.0 \
 		memchr-2.2.0 \
 		memmap-0.7.0 \
 		memoffset-0.2.1 \
@@ -57,6 +58,7 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		regex-1.1.7 \
 		regex-syntax-0.6.6 \
 		remove_dir_all-0.5.1 \
+		roff-0.1.0 \
 		scopeguard-0.3.3 \
 		strsim-0.8.0 \
 		structopt-0.2.16 \
@@ -77,13 +79,33 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
-PLIST_FILES=	bin/sd
+_SD_OUT_DIR=	${WRKDIR}/cargo-out
+MAKE_ENV=	SD_OUT_DIR=${_SD_OUT_DIR}
+PLIST_FILES=	bin/sd \
+		etc/bash_completion.d/sd.bash \
+		man/man1/sd.1.gz \
+		share/fish/completions/sd.fish \
+		share/zsh/site-functions/_sd
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+	@${REINPLACE_CMD} 's,"OUT_DIR","SD_OUT_DIR",g' ${WRKSRC}/build.rs
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sd
+	${INSTALL_MAN} ${_SD_OUT_DIR}/sd.1 \
+		${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	${INSTALL_DATA} ${_SD_OUT_DIR}/sd.bash \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
+	${INSTALL_DATA} ${_SD_OUT_DIR}/sd.fish \
+		${STAGEDIR}${PREFIX}/share/fish/completions
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${_SD_OUT_DIR}/_sd \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
