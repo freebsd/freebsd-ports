@@ -2,84 +2,103 @@
 # $FreeBSD$
 
 PORTNAME=	freeciv
-PORTVERSION=	2.5.10
-PORTREVISION=	4
+PORTVERSION=	2.6.0
 CATEGORIES=	games
-MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
-		http://download.gna.org/freeciv/stable/
+MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Free turn-based multiplayer strategy
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	hicolor-icon-theme>=0:misc/hicolor-icon-theme
-LIB_DEPENDS=	libltdl.so:devel/libltdl \
-		libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libltdl.so:devel/libltdl
 
-USES=		gmake iconv libtool localbase pkgconfig tar:bzip2 python \
-		sqlite readline
+USES=		autoreconf compiler:c++11-lang gmake iconv libtool lua:53 \
+		pkgconfig readline ssl tar:bzip2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
+		--disable-static \
 		--enable-aimodules \
-		--enable-fcdb=sqlite3 \
-		--enable-shared \
-		--program-transform-name= \
-		--without-ggz-client \
-		--without-ggz-server
+		--enable-client=${_FREECIV_CLIENT:ts,} \
+		--enable-fcdb=${_FREECIV_DB:ts,} \
+		--enable-fcmp=${_FREECIV_MP:U:S/^/cli /:ts,} \
+		--enable-mapimg=no \
+		--enable-shared
+
+LDFLAGS+=	-Wl,--as-needed
 
 PORTDATA=	*
 
-OPTIONS_DEFINE?=	NLS X11 SDL MYSQL IPV6 DOCS
-OPTIONS_DEFAULT?=	X11
+OPTIONS_DEFINE=		DOCS IPV6 NLS
+OPTIONS_DEFAULT=	QT5 SQLITE3
+OPTIONS_MULTI=		DB UI
+OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE3
+OPTIONS_MULTI_UI=	GTK2 GTK3 QT5 SDL
 OPTIONS_SUB=		yes
-SDL_CONFIGURE_ON=	--enable-client=gtk,sdl
-SDL_USE=		SDL=sdl,image,ttf,gfx
-MYSQL_CONFIGURE_ON=	--enable-fcdb=mysql --with-mysql-prefix=${LOCALBASE}
-MYSQL_USES=		mysql
+
+DB_DESC=	Database support
+UI_DESC=	GUI clients
+
+GTK2_USES=	gnome sdl
+GTK2_USE=	GNOME=gdkpixbuf2,glib20,gtk20,pango SDL=mixer2
+GTK2_VARS=	_FREECIV_CLIENT+=gtk2 \
+		_FREECIV_MP+=gtk2
+
+GTK3_USES=	gnome sdl
+GTK3_USE=	GNOME=cairo,gdkpixbuf2,glib20,gtk30,pango SDL=mixer2
+GTK3_VARS=	_FREECIV_CLIENT+=gtk3 \
+		_FREECIV_MP+=gtk3
+
 IPV6_CONFIGURE_ENABLE=	ipv6
+
+MYSQL_USES=		mysql
+MYSQL_CONFIGURE_ON=	--with-mysql-prefix=${LOCALBASE}
+MYSQL_VARS=		_FREECIV_DB+=mysql
+
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-.include <bsd.port.options.mk>
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_ON=	--with-postgres-prefix=${LOCALBASE}
+PGSQL_VARS=		_FREECIV_DB+=postgres
 
-.if ${PORT_OPTIONS:MSDL} && empty(PORT_OPTIONS:MX11)
-IGNORE=		cannot use SDL without X11: re-run make config
-.endif
+QT5_USES=		qt:5 sdl
+QT5_USE=		QT=core,gui,widgets,buildtools_build SDL=mixer2
+QT5_CONFIGURE_ON=	--with-qt5-includes=${LOCALBASE}/${QT_INCDIR_REL} \
+			--with-qt5-libs=${LOCALBASE}/${QT_LIBDIR_REL}
+QT5_CONFIGURE_ENABLE=	ruledit
+QT5_VARS=		_FREECIV_CLIENT+=qt \
+			_FREECIV_MP+=qt
 
-.if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=	libtiff.so:graphics/tiff \
-		libpng.so:graphics/png \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
-USE_XORG=	xpm
-USE_SDL+=	mixer
-USE_GNOME=	gtk20 cairo
-INSTALLS_ICONS=	yes
-. if ! ${PORT_OPTIONS:MSDL}
-CONFIGURE_ARGS+=--enable-client=gtk
-. endif
-CONFLICTS=	freeciv-nox11-[0-9]*
-PLIST_SUB+=	GTK=""
+SDL_USES=	sdl
+SDL_USE=	SDL=gfx2,image2,mixer2,ttf2
+SDL_VARS=	_FREECIV_CLIENT+=sdl2
+
+SQLITE3_USES=	sqlite
+SQLITE3_VARS=	_FREECIV_DB+=sqlite3
+
+# Save OPTIONS_MULTI_UI value for later before the framework
+# does things with it.
+_FREECIV_CLIENTS:=	${OPTIONS_MULTI_UI}
+
+.include <bsd.port.pre.mk>
+
+.if ${_FREECIV_CLIENT:Uno} == no
+CONFLICTS=	freeciv
+PLIST_SUB+=	${_FREECIV_CLIENTS:S/$/="@comment "/} \
+		CLIENT="@comment "
 .else
-CONFIGURE_ARGS+=--enable-client=no --enable-fcmp=no
-CONFLICTS=	freeciv-[0-9]*
-PLIST_SUB+=	GTK="@comment "
+CONFLICTS=	freeciv-nox11
+PLIST_SUB+=	CLIENT=""
 .endif
 
-post-patch:
-	${FIND} ${WRKSRC} -name Makefile.in|${XARGS} ${REINPLACE_CMD} -e \
-		'/pkgdatadir/s|[(]datadir)/@PACKAGE@|(prefix)/${DATADIR_REL}|'
-	${REINPLACE_CMD} 's/minor=99/minor=0/' ${WRKSRC}/configure
-	${REINPLACE_CMD} 's/(LIB_GGZMOD)/& $$(LIB_GGZ_GTK)/' \
-		${WRKSRC}/client/Makefile.in
+# Avoid annoying and too general LUA_LIBDIR=lib sub from USES=lua
+PLIST_SUB:=	${PLIST_SUB:NLUA_LIBDIR=*}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfreeciv*.so
-	${RM} ${STAGEDIR}${PREFIX}/etc/ggz.modules
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfreeciv*.so
 
-post-install-X11-on:
-	${INSTALL_DATA} ${WRKSRC}/data/civclient.dsc ${STAGEDIR}${DATADIR}/
-	cd ${STAGEDIR}/${PREFIX}/bin && ${LN} -s freeciv-gtk2 freeciv-client
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
