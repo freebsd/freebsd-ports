@@ -14,9 +14,6 @@ COMMENT=	Virtual versatile amplification for Jack and set of LV2 plugins
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_armv6=		fails to compile: unknown FP unit 'sse'
-BROKEN_armv7=		fails to compile: unknown FP unit 'sse'
-
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/fftw3.h:math/fftw3 \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf \
