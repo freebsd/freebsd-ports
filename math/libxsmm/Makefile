@@ -11,7 +11,8 @@ COMMENT=	Library for dense and sparse matrix operations and deep learning
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_i386=	LIBXSMM is only supported on a 64-bit platform!
+ONLY_FOR_ARCHS=		amd64
+ONLY_FOR_ARCHS_REASON=	relies on hard-coded x86 code, and is only supported on 64-bit
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libomp.so:devel/openmp
