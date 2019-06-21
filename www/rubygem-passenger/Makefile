@@ -37,7 +37,7 @@ USES+=		apache:2.2+
 
 USE_RUBY=	yes
 RAKE_BIN=	${LOCALBASE}/bin/rake
-USES+=		cpe gem libtool python:env shebangfix ssl
+USES+=		compiler:c++11-lang cpe gem libtool python:env shebangfix ssl
 SHEBANG_FILES=	src/cxx_supportlib/vendor-copy/libuv/gyp_uv.py
 
 LIB_DEPENDS+=	libuv.so:devel/libuv \
