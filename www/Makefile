@@ -1492,6 +1492,7 @@
     SUBDIR += py-dj22-django-filter
     SUBDIR += py-dj22-django-js-asset
     SUBDIR += py-dj22-django-mptt
+    SUBDIR += py-dj22-django-prometheus
     SUBDIR += py-dj22-django-tables2
     SUBDIR += py-dj22-django-taggit
     SUBDIR += py-dj22-django-taggit-serializer
