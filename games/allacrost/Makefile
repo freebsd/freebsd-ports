@@ -20,15 +20,15 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libboost_thread.so:devel/boost-libs
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang gettext gmake iconv jpeg lua:51 openal:al
+USES=		gettext gmake iconv jpeg localbase lua:51 openal:al
 USE_SDL=	sdl ttf net
 USE_GL=		gl glu
 USE_XORG=	x11
+USE_CXXSTD=	c++98
 
 CONFIGURE_ARGS=	--datadir=${DATADIR} --enable-editor=no
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
-CXXFLAGS+=	-Wno-c++11-narrowing
+CPPFLAGS+=	-isystem${LUA_INCDIR}
+LDFLAGS+=	-L${LUA_LIBDIR}
 LLD_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
