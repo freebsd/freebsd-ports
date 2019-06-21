@@ -661,6 +661,7 @@
     SUBDIR += py-ao
     SUBDIR += py-apetag
     SUBDIR += py-aubio
+    SUBDIR += py-audioread
     SUBDIR += py-cddb
     SUBDIR += py-discid
     SUBDIR += py-discogs-client
