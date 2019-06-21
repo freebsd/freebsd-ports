@@ -7,7 +7,7 @@ CATEGORIES=	cad
 PKGNAMESUFFIX=	-doc
 
 MAINTAINER=	cmt@FreeBSD.org
-COMMENT=	KiCad Online Documentation/Help Files
+COMMENT=	KiCad Documentation and Help Files
 
 LICENSE=	GPLv3+ CC-BY-3.0
 LICENSE_COMB=	dual
@@ -33,8 +33,6 @@ CONFLICTS=	kicad-devel-r2*
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DLANGUAGES="ca;de;en;es;fr;id;it;ja;nl;ru"
 INSTALL_TARGET=	install
-
-PLIST_SUB=	PORTDOCS=""
 
 NO_ARCH=	yes
 
