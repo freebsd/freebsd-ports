@@ -39,8 +39,8 @@ post-patch:
 		${WRKSRC}/tigcc/sources/patcher/src/Makefile ${WRKSRC}/tigcc/sources/tigcc/src/Makefile \
 		${WRKSRC}/tigcc/sources/tprbuilder/src/Makefile
 
-do-build:
-	@${ECHO} Building GNU AS
+do-configure:
+	@${ECHO} Configuring GNU AS
 	@${MKDIR} ${WRKSRC}/gnu/binutils_build
 	@cd ${WRKSRC}/gnu/binutils_build; \
 		${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
@@ -49,9 +49,7 @@ do-build:
 		${CONFIGURE_ENV} \
 		${WRKSRC}/gnu/binutils-2.16.1/configure --disable-serial-configure --target=m68k-coff --disable-shared \
 		--enable-static --disable-multilib --disable-nls --disable-win32-registry
-	@cd ${WRKSRC}/gnu/binutils_build; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS}
-
-	@${ECHO} Building the GNU C COMPILER
+	@${ECHO} Configuring the GNU C COMPILER
 	@${MKDIR} ${WRKSRC}/gnu/gcc_build
 	@cd ${WRKSRC}/gnu/gcc_build; \
 		${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
@@ -61,6 +59,12 @@ do-build:
 		${WRKSRC}/gnu/gcc-4.1-20060728/configure --target=m68k-coff --with-gnu-as --disable-nls --disable-multilib \
 		--disable-shared --enable-static --disable-threads --disable-win32-registry --disable-checking --disable-werror \
 		--disable-pch --disable-mudflap --disable-libssp
+
+do-build:
+	@${ECHO} Building GNU AS
+	@cd ${WRKSRC}/gnu/binutils_build; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS}
+
+	@${ECHO} Building the GNU C COMPILER
 	@cd ${WRKSRC}/gnu/gcc_build; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS}
 
 	@${ECHO} Building A68K
