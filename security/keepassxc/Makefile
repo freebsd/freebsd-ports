@@ -1,10 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	keepassxc
-DISTVERSION=	2.4.1
-PORTREVISION=	1
+DISTVERSION=	2.4.3
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/${PORTNAME}-${DISTVERSION}-src.tar.xz?dummy=/
+
+PATCH_SITES=	https://github.com/keepassxreboot/keepassxc/commit/
+PATCHFILES=	ef3c2daef142cc4dc60ec779d1019d50ed679a99.patch:-p1
 
 MAINTAINER=	melanhit@gmail.com
 COMMENT=	KeePass Cross-platform Community Edition
@@ -20,10 +22,10 @@ LICENSE_PERMS_BOOST-1.0=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_NOKIA-LGPL-EXCEPTION=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
-		libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
-		libqrencode.so:graphics/libqrencode
+		libqrencode.so:graphics/libqrencode \
+		libsodium.so:security/libsodium
 
 USES=		cmake compiler:c++11-lang desktop-file-utils qt:5 \
 		shared-mime-info tar:xz
@@ -32,14 +34,12 @@ USE_QT=		buildtools_build concurrent core dbus gui linguisttools network \
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
-# patching CMakeLists.txt does not help because that is being overided by
-# cmake/GNUInstallDirs.cmake
-CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/man
+CMAKE_OFF=	WITH_XC_UPDATECHECK
 
 CONFLICTS_INSTALL=	keepassx-0.* keepassx2-* keepassx-*
 
 OPTIONS_DEFINE=		AUTOTYPE BROWSER KEESHARE NETWORKING YUBIKEY SSHAGENT TEST
-OPTIONS_DEFAULT=	AUTOTYPE BROWSER KEESHARE NETWORKING SSHAGENT
+OPTIONS_DEFAULT=	AUTOTYPE BROWSER KEESHARE NETWORKING SSHAGENT YUBIKEY
 OPTIONS_SUB=		yes
 
 AUTOTYPE_CMAKE_BOOL=	WITH_XC_AUTOTYPE
@@ -48,7 +48,6 @@ AUTOTYPE_USE=		QT=x11extras XORG=xi,xtst
 
 BROWSER_CMAKE_BOOL=	WITH_XC_BROWSER
 BROWSER_DESC=		Browser integration with KeePassXC-Browser
-BROWSER_LIB_DEPENDS=	libsodium.so:security/libsodium
 
 KEESHARE_CMAKE_BOOL=	WITH_XC_KEESHARE WITH_XC_KEESHARE_SECURE
 KEESHARE_DESC=		Sharing integration with KeeShare
@@ -68,9 +67,5 @@ YUBIKEY_LIB_DEPENDS=	libykpers-1.so:security/ykpers \
 
 TEST_CMAKE_BOOL=	WITH_TESTS WITH_GUI_TESTS
 TEST_TEST_TARGET=	test
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|Q_OS_LINUX|Q_OS_UNIX|g' \
-		${WRKSRC}/src/browser/HostInstaller.cpp
 
 .include <bsd.port.mk>
