@@ -90,6 +90,7 @@
     SUBDIR += cntlm
     SUBDIR += codeigniter
     SUBDIR += coppermine
+    SUBDIR += colly
     SUBDIR += cplanet
     SUBDIR += cppcms
     SUBDIR += cpr

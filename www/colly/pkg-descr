@@ -1,0 +1,17 @@
+With Colly you can easily extract structured data from websites, which can be
+used for a wide range of applications, like data mining, data processing or
+archiving.
+
+Features:
+* Clean API
+* Fast (>1k request/sec on a single core)
+* Manages request delays and maximum concurrency per domain
+* Automatic cookie and session handling
+* Sync/async/parallel scraping
+* Distributed scraping
+* Caching
+* Automatic encoding of non-unicode responses
+* Robots.txt support
+* Google App Engine support
+
+WWW: http://go-colly.org/
