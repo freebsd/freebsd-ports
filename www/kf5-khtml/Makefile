@@ -2,6 +2,7 @@
 
 PORTNAME=	khtml
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,7 +17,7 @@ USE_KDE=	archive auth bookmarks codecs completion config \
 		configwidgets coreaddons ecm globalaccel i18n iconthemes \
 		jobwidgets js kio notifications parts service sonnet \
 		textwidgets wallet widgetsaddons windowsystem xmlgui
-USE_QT=		buildtools_build core dbus gui network phonon4 \
+USE_QT=		buildtools_build concurrent core dbus gui network phonon4 \
 		printsupport qmake_build widgets x11extras xml
 USE_XORG=	ice sm x11 xext
 
