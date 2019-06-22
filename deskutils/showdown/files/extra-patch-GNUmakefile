@@ -1,0 +1,11 @@
+--- GNUmakefile.orig	2017-12-22 05:00:34 UTC
++++ GNUmakefile
+@@ -41,7 +41,7 @@ INSTALL_DIR = $(INSTALL) -d -m755
+ RM = rm -f
+ 
+ VALAPKGS = --pkg gtk+-3.0 --pkg webkit2gtk-4.0 --vapidir src --pkg libmarkdown
+-CWARNFLAGS = -Wno-incompatible-pointer-types -Wno-discarded-qualifiers
++CWARNFLAGS = -Wno-discarded-qualifiers
+ 
+ VALAFLAGS = \
+     --target-glib=2.48 \
