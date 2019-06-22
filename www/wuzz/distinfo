@@ -1,6 +1,6 @@
-TIMESTAMP = 1534060120
-SHA256 (asciimoo-wuzz-v0.4.0-9-g1b75b60_GH0.tar.gz) = d86e7c90b6fd7144898ac0e8c555a2bab48a6f9d84223cd604610168228e38bd
-SIZE (asciimoo-wuzz-v0.4.0-9-g1b75b60_GH0.tar.gz) = 124106
+TIMESTAMP = 1561173631
+SHA256 (asciimoo-wuzz-v0.4.0-13-g4c6d320_GH0.tar.gz) = 67625b81087f9fcac23e170d8f20494266cf795317660033f64466bc72735d52
+SIZE (asciimoo-wuzz-v0.4.0-13-g4c6d320_GH0.tar.gz) = 124208
 SHA256 (alessio-shellescape-v1.2_GH0.tar.gz) = 9edd29a26e8b4c2ebd895ba231dff492b1fe7ba1e19876a0535ff40b63854ea6
 SIZE (alessio-shellescape-v1.2_GH0.tar.gz) = 2967
 SHA256 (andybalholm-cascadia-v1.0.0_GH0.tar.gz) = 00ab6f915e958c9e0509836cd67082a802513459c12c4aa6e7a28ef37743ce52
