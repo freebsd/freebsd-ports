@@ -1,0 +1,15 @@
+TIMESTAMP = 1561172827
+SHA256 (asciimoo-morty-v0.2.0-12-gfe94d9a_GH0.tar.gz) = eb76de6f86e731c533ab5837e0c7e48781d39b95933a142a99257d96f212ed29
+SIZE (asciimoo-morty-v0.2.0-12-gfe94d9a_GH0.tar.gz) = 25204
+SHA256 (golang-net-0ed95ab_GH0.tar.gz) = c47997a853b9e9accfb3192498e1b3333f6d000b6674fdfc9e22bd3675c4ff0f
+SIZE (golang-net-0ed95ab_GH0.tar.gz) = 929664
+SHA256 (golang-text-v0.3.2_GH0.tar.gz) = 0b9309698f5708531c5377ab1e29b423a6d9e20c55a8d386c3b8283428212f22
+SIZE (golang-text-v0.3.2_GH0.tar.gz) = 7168069
+SHA256 (klauspost-cpuid-v1.2.1_GH0.tar.gz) = fd66be8517ba837d0f582ad095d2e42e7464c08ef2a3eaffa3bf83330223fa92
+SIZE (klauspost-cpuid-v1.2.1_GH0.tar.gz) = 279083
+SHA256 (klauspost-compress-v1.7.1_GH0.tar.gz) = 4728ba58238042b5286744e8585f8f706358fd30ebb98d2fb48a67bbbc8e58ea
+SIZE (klauspost-compress-v1.7.1_GH0.tar.gz) = 12632704
+SHA256 (valyala-bytebufferpool-v1.0.0_GH0.tar.gz) = 089013e3429ebe7fd2bc3527f003bf3f3f639891e5d8ba6a56010e3671465e1f
+SIZE (valyala-bytebufferpool-v1.0.0_GH0.tar.gz) = 5025
+SHA256 (valyala-fasthttp-v1.3.0_GH0.tar.gz) = 34f6190e7b5f993121cc949e2367813482ad83e6cbb51170ff92d34a40231528
+SIZE (valyala-fasthttp-v1.3.0_GH0.tar.gz) = 182300
