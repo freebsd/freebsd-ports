@@ -2,6 +2,7 @@
 
 PORTNAME=	kio
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,7 +12,7 @@ USES=		cmake compiler:c++11-lib desktop-file-utils \
 		gettext kde:5 qt:5 ssl tar:xz
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	archive auth bookmarks codecs completion config \
-		configwidgets coreaddons dbusaddons doctools ecm \
+		configwidgets coreaddons crash dbusaddons doctools ecm \
 		i18n iconthemes itemviews jobwidgets \
 		notifications service solid sonnet textwidgets wallet \
 		widgetsaddons windowsystem xmlgui

@@ -2,7 +2,7 @@
 
 PORTNAME=	ktextwidgets
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +13,8 @@ USE_KDE=	auth codecs completion config configwidgets \
 		coreaddons dbusaddons ecm guiaddons i18n \
 		iconthemes itemviews service sonnet \
 		widgetsaddons windowsystem
-USE_QT=		buildtools_build core dbus gui qmake_build widgets xml
+USE_QT=		buildtools_build concurrent core dbus declarative \
+		gui qmake_build widgets xml
 
 OPTIONS_DEFINE=		AUDIO
 OPTIONS_DEFAULT=	AUDIO
