@@ -1,4 +1,4 @@
-Web content sanitizer proxy as a service
+Web content sanitizer proxy as a service.
 
 Morty rewrites web pages to exclude malicious HTML tags and attributes. It also
 replaces external resource references to prevent third party information leaks.
@@ -10,9 +10,9 @@ Features:
 * HTML sanitization
 * Rewrites HTML/CSS external references to locals
 * JavaScript blocking
-* No Cookies forwarded
-* No Referrers
-* No Caching/Etag
+* No cookies forwarded
+* No referrers
+* No caching/etag
 * Supports GET/POST forms and IFrames
 * Optional HMAC URL verifier key to prevent service abuse
 

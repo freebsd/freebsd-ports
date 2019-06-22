@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-gfe94d9a
 CATEGORIES=	www net
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Privacy aware web content sanitizer proxy as a service
+COMMENT=	Privacy-aware web content sanitizer proxy as a service
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
