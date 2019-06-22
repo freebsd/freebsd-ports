@@ -3,7 +3,7 @@
 
 PORTNAME=	gitea
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.2
+DISTVERSION=	1.8.3
 CATEGORIES=	www
 
 MAINTAINER=	stb@lassitu.de
@@ -17,11 +17,11 @@ RUN_DEPENDS=	git:devel/git
 USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	go-gitea
+USE_RC_SUBR=	gitea
 
 GO_PKGNAME=	code.gitea.io/${PORTNAME}
 GO_TARGET=	-tags "${GO_TAGS}"
 
-USE_RC_SUBR=	gitea
 SUB_FILES+=	app.ini.sample
 SUB_LIST+=	GITUSER=${USERS}
 
@@ -29,10 +29,10 @@ USERS=		git
 GROUPS=		git
 
 OPTIONS_DEFINE=	CERT PAM SQLITE
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+
 CERT_DESC=	Automatic creation of self-signed certificates
 PAM_DESC=	Authentication using PAM
-
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 CERT_VARS=	GO_TAGS+=cert
 PAM_VARS=	GO_TAGS+=pam
