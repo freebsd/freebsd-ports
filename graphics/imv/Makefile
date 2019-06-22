@@ -3,7 +3,7 @@
 
 PORTNAME=	imv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
+DISTVERSION=	3.1.0
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,11 +13,14 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreeimage.so:graphics/freeimage
+		libfreeimage.so:graphics/freeimage \
+		librsvg-2.so:graphics/librsvg2
 TEST_DEPENDS=	${LOCALBASE}/lib/libcmocka.so:sysutils/cmocka
 
-USES=		desktop-file-utils localbase gmake
+USES=		desktop-file-utils gmake gnome \
+		localbase pkgconfig sdl
 USE_SDL=	sdl2 ttf2
+USE_GNOME=	glib20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eXeC64
