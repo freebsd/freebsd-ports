@@ -13,6 +13,9 @@ COMMENT=	Simple Ruby DSL for making HTTP requests
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
+DEPRECATED=	Use www/rubygem-responders (depends on Rails 5.0) instead
+EXPIRATION_DATE=2019-06-30
+
 RUN_DEPENDS=	rubygem-actionpack50>=4.2.0:www/rubygem-actionpack50 \
 		rubygem-railties50>=4.2.0:www/rubygem-railties50
 
