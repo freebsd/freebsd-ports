@@ -15,26 +15,22 @@ COMMENT=	Bindings allowing Xapian to be used from various programming languages
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_RUBY25=	yes
-
 LIB_DEPENDS=	libxapian.so:databases/xapian-core12
 
 CONFLICTS=	xapian-bindings
 
-OPTIONS_DEFINE=	DOCS LUA PYTHON RUBY
-OPTIONS_DEFAULT=PYTHON RUBY
+OPTIONS_DEFINE=	DOCS LUA PYTHON
+OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
-
-# BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
-OPTIONS_EXCLUDE_powerpc64=	RUBY
 
 PORTSCOUT=	limitw:1,even
 
+USES=		libtool tar:xz
+
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
-		--without-csharp --without-java --without-perl --without-tcl
+		--without-csharp --without-java --without-perl --without-ruby --without-tcl
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool tar:xz
 
 PORTDOCS=	*
 
@@ -44,12 +40,8 @@ LUA_USES=		lua
 PYTHON_CONFIGURE_ENV=	PYTHON_LIB=${PYTHON_SITELIBDIR}
 PYTHON_CONFIGURE_WITH=	python
 PYTHON_USES=		python:2.7
-RUBY_CONFIGURE_WITH=	ruby
-RUBY_USE=		RUBY=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
-# do not install rdoc
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' ${WRKSRC}/ruby/Makefile.in
 
 .include <bsd.port.mk>
