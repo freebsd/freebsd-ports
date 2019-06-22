@@ -1,0 +1,11 @@
+TIMESTAMP = 1561174409
+SHA256 (asciimoo-filtron-g20180218-93f8b22_GH0.tar.gz) = 80538e7d824992be74e9ac190945071e60e410cd6c99c5eac33b7ba7021ca2f7
+SIZE (asciimoo-filtron-g20180218-93f8b22_GH0.tar.gz) = 106294
+SHA256 (klauspost-compress-v1.7.1_GH0.tar.gz) = 4728ba58238042b5286744e8585f8f706358fd30ebb98d2fb48a67bbbc8e58ea
+SIZE (klauspost-compress-v1.7.1_GH0.tar.gz) = 12632704
+SHA256 (klauspost-cpuid-v1.2.1_GH0.tar.gz) = fd66be8517ba837d0f582ad095d2e42e7464c08ef2a3eaffa3bf83330223fa92
+SIZE (klauspost-cpuid-v1.2.1_GH0.tar.gz) = 279083
+SHA256 (valyala-bytebufferpool-v1.0.0_GH0.tar.gz) = 089013e3429ebe7fd2bc3527f003bf3f3f639891e5d8ba6a56010e3671465e1f
+SIZE (valyala-bytebufferpool-v1.0.0_GH0.tar.gz) = 5025
+SHA256 (valyala-fasthttp-v1.3.0_GH0.tar.gz) = 34f6190e7b5f993121cc949e2367813482ad83e6cbb51170ff92d34a40231528
+SIZE (valyala-fasthttp-v1.3.0_GH0.tar.gz) = 182300
