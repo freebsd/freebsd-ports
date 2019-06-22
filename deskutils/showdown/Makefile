@@ -10,14 +10,13 @@ COMMENT=	Simple markdown viewer, written in Vala and GTK 3
 
 LICENSE=	GPLv3
 
-BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-incompatible-pointer-types"
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmarkdown.a:textproc/discount \
 		valac:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
-USES=		desktop-file-utils gmake pkgconfig
+USES=		compiler:c++11-lang desktop-file-utils gmake gnome \
+		pkgconfig
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_XORG=	x11
 USE_GITHUB=	yes
@@ -35,6 +34,12 @@ PLIST_FILES=	bin/showdown \
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-GNUmakefile
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/showdown
 
@@ -42,4 +47,4 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
