@@ -2,7 +2,7 @@
 
 PORTNAME=	zrythm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.074
+DISTVERSION=	0.5.097
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +32,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 USES=		gettext-tools meson python:3.5+,build gettext-runtime gnome libtool pkgconfig shebangfix
 USE_GITLAB=	yes
 GL_SITE=	https://git.zrythm.org
-GL_COMMIT=	5a57bff53facbf914bfbc90ac0113d2eedd0d0f3
+GL_COMMIT=	5b1f4efa53ca33090ef7795204dfc387072f58f5
 SHEBANG_FILES=	resources/gen-gtk-gresources-xml.py scripts/collect_translatables.sh scripts/meson_post_install.py
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 libxml2 pango
 USE_XORG=	x11
