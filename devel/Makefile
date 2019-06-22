@@ -326,6 +326,7 @@
     SUBDIR += clazy
     SUBDIR += cld2
     SUBDIR += clewn
+    SUBDIR += cli11
     SUBDIR += clig
     SUBDIR += cligen
     SUBDIR += clinfo

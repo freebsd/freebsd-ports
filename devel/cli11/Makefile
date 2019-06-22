@@ -1,0 +1,23 @@
+# $FreeBSD$
+
+PORTNAME=	cli11
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.8.0
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Command line parser for C++11 and beyond
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cmake compiler:c++11-lang
+USE_GITHUB=	yes
+GH_ACCOUNT=	CLIUtils
+GH_PROJECT=	CLI11
+
+CMAKE_OFF=	BUILD_TESTING
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>
