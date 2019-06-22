@@ -9,6 +9,8 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Daily organizer for KDE
 
+BROKEN=		Broken by update to appliations 19.04.2
+
 LIB_DEPENDS=	libical.so:devel/libical
 
 USES=		cmake compiler:c++14-lang gettext kde:5 qt:5 tar:xz
