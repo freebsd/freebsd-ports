@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tmux
-PORTVERSION=	2.8
-PORTREVISION=	1
+PORTVERSION=	2.9a
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
