@@ -22,6 +22,8 @@ GNU_CONFIGURE=	yes
 
 CONFLICTS_INSTALL=	itstool
 
+PORTSCOUT=	ignore:1
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PYTHON@|${PYTHON_CMD}|g' \
 		${WRKSRC}/itstool.in
