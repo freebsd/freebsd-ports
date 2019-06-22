@@ -13,6 +13,9 @@ COMMENT=	Barebones two-factor authentication with Devise
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use security/rubygem-devise-two-factor (depends on Rails 5.0) instead
+EXPIRATION_DATE=2019-06-30
+
 RUN_DEPENDS=	rubygem-activesupport50>=0:devel/rubygem-activesupport50 \
 		rubygem-attr_encrypted>=1.3:security/rubygem-attr_encrypted \
 		rubygem-devise-rails50>0:devel/rubygem-devise-rails50 \
