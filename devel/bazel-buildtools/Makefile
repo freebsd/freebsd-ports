@@ -1,0 +1,27 @@
+# $FreeBSD$
+
+PORTNAME=	bazel-buildtools
+DISTVERSION=	0.26.0
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Bazel BUILD file formatter and editor
+
+LICENSE=	APACHE20
+
+USES=		go
+USE_GITHUB=	yes
+GH_ACCOUNT=	bazelbuild
+GH_PROJECT=	buildtools
+GH_TUPLE=	\
+		golang:protobuf:v1.3.1:protobuf/vendor/github.com/golang/protobuf \
+		google:skylark:a5f7082:skylark/vendor/github.com/google/skylark
+
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
+GO_TARGET=	${EXES:S/^/${GO_PKGNAME}\//}
+
+PLIST_FILES=	${EXES:S/^/bin\//}
+
+EXES=		buildifier buildifier2 buildozer unused_deps
+
+.include <bsd.port.mk>

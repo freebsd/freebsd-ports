@@ -1,0 +1,6 @@
+This project provides developer tools for working with Google's bazel buildtool:
+* buildifier For formatting BUILD, BUILD.bazel and BUCK files in a standard way
+* buildozer For doing command-line operations on these files.
+* unused_deps For finding unneeded dependencies in java_library rules.
+
+WWW: https://github.com/bazelbuild/buildtools
