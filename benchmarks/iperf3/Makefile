@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 USES=		libtool ssl
 USE_LDCONFIG=	yes
 
-PORTDOCS=	README.md RELEASE_NOTES
+PORTDOCS=	README.md RELNOTES.md
 
 # Set ${DOCSDIR} to avoid conflict with benchmarks/iperf ${DOCSDIR}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
