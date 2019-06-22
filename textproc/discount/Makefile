@@ -51,4 +51,6 @@ SAMPLES_PLIST_FILES=	bin/makepage bin/mkd2html bin/theme \
 			man/man1/makepage.1.gz man/man1/mkd2html.1.gz \
 			man/man1/theme.1.gz
 
+CONFLICTS_INSTALL=	markdown
+
 .include <bsd.port.mk>

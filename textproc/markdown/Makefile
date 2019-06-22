@@ -24,6 +24,8 @@ PORTDOCS=	Markdown-Readme.text
 
 PLIST_FILES=	bin/markdown
 
+CONFLICTS_INSTALL=	discount
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Markdown.pl ${STAGEDIR}${PREFIX}/bin/markdown
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
