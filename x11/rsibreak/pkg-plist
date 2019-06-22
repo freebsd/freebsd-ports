@@ -1,6 +1,6 @@
 bin/rsibreak
 etc/xdg/autostart/rsibreak_autostart.desktop
-share/applications/rsibreak.desktop
+share/applications/org.kde.rsibreak.desktop
 share/dbus-1/interfaces/org.rsibreak.rsiwidget.xml
 share/doc/HTML/ca/rsibreak/index.cache.bz2
 share/doc/HTML/ca/rsibreak/index.docbook
@@ -62,7 +62,6 @@ share/icons/hicolor/48x48/actions/rsibreak4.png
 share/icons/hicolor/48x48/actions/rsibreakx.png
 share/knotifications5/rsibreak.notifyrc
 share/locale/ar/LC_MESSAGES/rsibreak.mo
-share/locale/ast/LC_MESSAGES/rsibreak.mo
 share/locale/be/LC_MESSAGES/rsibreak.mo
 share/locale/bs/LC_MESSAGES/rsibreak.mo
 share/locale/ca/LC_MESSAGES/rsibreak.mo
@@ -109,3 +108,4 @@ share/locale/ug/LC_MESSAGES/rsibreak.mo
 share/locale/uk/LC_MESSAGES/rsibreak.mo
 share/locale/zh_CN/LC_MESSAGES/rsibreak.mo
 share/locale/zh_TW/LC_MESSAGES/rsibreak.mo
+share/metainfo/org.kde.rsibreak.appdata.xml
