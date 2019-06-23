@@ -12,16 +12,14 @@ COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	APACHE20
 
+RUN_DEPENDS=	${PY_FUTURES}
+
 CONFLICTS=	py[0-9]*-tornado[46]-*
 
 USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3200
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures@${PY_FLAVOR}
-.endif
 
 .if ${PYTHON_REL} < 3400
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>0:devel/py-singledispatch@${PY_FLAVOR}
