@@ -2,6 +2,7 @@
 
 PORTNAME=	akonadi-import-wizard
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,9 +20,9 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		widgetsaddons xmlgui
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime contacts identitymanagement \
-		libkdepim libkleo mailcommon mailimporter mailtransport \
+		imap libkdepim libkleo mailcommon mailimporter mailtransport \
 		messagelib mime pimcommon pimtextedit
-USE_QT=		core dbus gui network widgets xml \
+USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

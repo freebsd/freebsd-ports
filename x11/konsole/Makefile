@@ -2,6 +2,7 @@
 
 PORTNAME=	konsole
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-applications # kde kde-applications-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -18,7 +19,7 @@ USE_KDE=	auth attica bookmarks codecs completion config configwidgets \
 		iconthemes init itemmodels jobwidgets kdelibs4support kio \
 		newstuff notifications notifyconfig parts pty service sonnet \
 		textwidgets widgetsaddons windowsystem xmlgui
-USE_QT=		core dbus gui network printsupport script scripttools sql \
+USE_QT=		concurrent core dbus gui network printsupport script scripttools sql \
 		widgets xml \
 		buildtools_build qmake_build
 

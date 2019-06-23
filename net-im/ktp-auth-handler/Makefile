@@ -2,6 +2,7 @@
 
 PORTNAME=	ktp-auth-handler
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -21,7 +22,7 @@ USES=		compiler:c++11-lang cmake gettext kde:5 pkgconfig \
 		qt:5 tar:xz
 USE_KDE=	completion config coreaddons ecm i18n jobwidgets kdewebkit \
 		kio wallet service widgetsaddons
-USE_QT=		core dbus gui network webkit widgets xml \
+USE_QT=		concurrent core dbus gui network webkit widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	DOCS

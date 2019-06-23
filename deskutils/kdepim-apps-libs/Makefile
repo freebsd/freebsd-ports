@@ -2,6 +2,7 @@
 
 PORTNAME=	kdepim-apps-libs
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -22,7 +23,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 # pim components
 USE_KDE+=	akonadi akonadicontacts contacts grantleetheme  libkleo mime \
 		pimcommon pimtextedit
-USE_QT=		core dbus gui network testlib uitools webkit widgets xml \
+USE_QT=		concurrent core dbus gui network testlib uitools webkit widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

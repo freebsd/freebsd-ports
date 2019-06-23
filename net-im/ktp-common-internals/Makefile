@@ -2,6 +2,7 @@
 
 PORTNAME=	ktp-common-internals
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -24,7 +25,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		kio notifications notifyconfig parts people service solid \
 		sonnet texteditor textwidgets wallet widgetsaddons windowsystem \
 		xmlgui
-USE_QT=		core dbus declarative gui network sql widgets xml \
+USE_QT=		concurrent core dbus declarative gui network sql widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

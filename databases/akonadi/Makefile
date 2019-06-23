@@ -2,6 +2,7 @@
 
 PORTNAME=	akonadi
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	databases kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -22,7 +23,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons ecm guiaddons i18n iconthemes itemmodels itemviews \
 		kio service windowsystem widgetsaddons xmlgui \
 		designerplugin_build designerplugin_run
-USE_QT=		core dbus designer gui network sql testlib widgets xml \
+USE_QT=		concurrent core dbus designer gui network sql testlib widgets xml \
 		buildtools_build qmake_build
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 

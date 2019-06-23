@@ -2,6 +2,7 @@
 
 PORTNAME=	k3b
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils multimedia kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -28,7 +29,7 @@ USE_KDE=	archive attica auth bookmarks codecs completion config \
 		configwidgets coreaddons ecm filemetadata i18n iconthemes \
 		itemviews jobwidgets kcmutils kio newstuff notifications \
 		notifyconfig service solid widgetsaddons xmlgui
-USE_QT=		core dbus gui network webkit widgets xml \
+USE_QT=		concurrent core dbus gui network webkit widgets xml \
 		buildtools_build qmake_build
 
 # The ffmpeg-plugin needs patching
