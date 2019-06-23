@@ -11,7 +11,7 @@ COMMENT=	POSIX-compliant command line shell
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz
+USES=		compiler:c11 tar:xz
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
