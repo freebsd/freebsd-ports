@@ -2,6 +2,7 @@
 
 PORTNAME=	audiocd-kio
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	audio kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -22,7 +23,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		jobwidgets kcmutils kdelibs4support kio notifications parts \
 		service solid sonnet textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui
-USE_QT=		core dbus gui network phonon4 printsupport widgets xml \
+USE_QT=		concurrent core dbus gui network phonon4 printsupport widgets xml \
 		buildtools_build qmake_build
 
 USE_LDCONFIG=	yes

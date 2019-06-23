@@ -2,7 +2,7 @@
 
 PORTNAME=	kwalletmanager
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,7 +15,7 @@ USE_KDE=	archive auth codecs config configwidgets coreaddons crash \
 		itemmodels itemviews kcmutils kdelibs4support kio \
 		jobwidgets notifications service wallet widgetsaddons \
 		windowsystem xmlgui
-USE_QT=		core dbus gui network widgets xml \
+USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	DOCS

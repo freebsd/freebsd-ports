@@ -2,6 +2,7 @@
 
 PORTNAME=	eventviews
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,7 +18,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons ecm \
 		guiaddons i18n iconthemes itemmodels service widgetsaddons
 # pim components
 USE_KDE+=	akonadi akonadicalendar akonadicontacts calendarcore \
-		calendarsupport calendarutils contacts identitymanagement \
+		calendarsupport calendarutils contacts holidays identitymanagement \
 		libkdepim mime pimtextedit
 USE_QT=		core gui printsupport testlib uitools widgets xml \
 		buildtools_build qmake_build

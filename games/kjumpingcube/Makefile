@@ -2,6 +2,7 @@
 
 PORTNAME=	kjumpingcube
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +13,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons ecm guiaddons i18n  iconthemes itemviews jobwidgets \
 		kio libkdegames newstuff notifyconfig service widgetsaddons \
 		xmlgui
-USE_QT=		core dbus declarative gui network svg widgets xml \
+USE_QT=		concurrent core dbus declarative gui network svg widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	DOCS

@@ -2,6 +2,7 @@
 
 PORTNAME=	klickety
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +15,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons doctools ecm i18n itemviews \
 		jobwidgets kio libkdegames notifications notifyconfig service \
 		solid widgetsaddons xmlgui
-USE_QT=		core dbus declarative gui network widgets xml \
+USE_QT=		concurrent core dbus declarative gui network widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	DOCS

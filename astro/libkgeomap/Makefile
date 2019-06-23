@@ -2,6 +2,7 @@
 
 PORTNAME=	libkgeomap
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	astro kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -18,7 +19,8 @@ LIB_DEPENDS=	libopencv_video.so:graphics/opencv
 USES=		cmake compiler:c++11-lang gettext kde:5 pkgconfig \
 		qt:5 tar:xz
 USE_KDE=	config coreaddons ecm i18n kio marble service textwidgets
-USE_QT=		concurrent core gui network webkit widgets xml \
+USE_QT=		concurrent core dbus declarative gui location network \
+		printsupport webchannel webengine webkit widgets xml \
 		buildtools_build qmake_build
 
 USE_LDCONFIG=	yes

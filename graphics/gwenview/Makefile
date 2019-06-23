@@ -2,6 +2,7 @@
 
 PORTNAME=	gwenview
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png
 
-USES=		compiler:c++11-lang cmake gettext jpeg pkgconfig \
+USES=		compiler:c++11-lang cmake desktop-file-utils gettext jpeg pkgconfig \
 		kde:5 qt:5 tar:xz
 USE_KDE=	activities auth baloo bookmarks codecs completion config \
 		configwidgets coreaddons ecm emoticons filemetadata i18n \

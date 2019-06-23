@@ -2,6 +2,7 @@
 
 PORTNAME=	mbox-importer
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,14 +14,14 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgmepp.so:security/gpgme-cpp \
 		libqgpgme.so:security/gpgme-qt5
 
-USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib desktop-file-utils gettext kde:5 qt:5 tar:xz
 USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		crash ecm i18n itemmodels kio service widgetsaddons
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime contacts \
-		identitymanagement libkleo mailcommon mailimporter messagelib \
-		mime pimcommon pimtextedit
-USE_QT=		core gui network widgets xml \
+		identitymanagement imap libkdepim libkleo mailcommon \
+		mailimporter messagelib mime pimcommon pimtextedit
+USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

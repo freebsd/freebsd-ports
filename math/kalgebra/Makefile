@@ -2,6 +2,7 @@
 
 PORTNAME=	kalgebra
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	math kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,14 +12,15 @@ LIB_DEPENDS=	libAnalitza.so:math/analitza
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml
 
-CMAKE_ARGS=	-DBUILD_mobile:BOOL=FALSE
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
+		readline qt:5 tar:xz
 USE_GL=		glu
 USE_KDE=	auth codecs config configwidgets coreaddons doctools ecm i18n \
 		kio service widgetsaddons xmlgui
-USE_QT=		core dbus declarative gui location network opengl printsupport \
+USE_QT=		concurrent core dbus declarative gui location network opengl printsupport \
 		svg testlib webchannel widgets xml \
 		buildtools_build qmake_build
+CMAKE_ARGS=	-DBUILD_mobile:BOOL=FALSE
 
 OPTIONS_DEFINE=	DOCS WEBENGINE
 OPTIONS_DEFAULT_amd64=	WEBENGINE

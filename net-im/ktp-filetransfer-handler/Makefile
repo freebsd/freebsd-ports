@@ -2,6 +2,7 @@
 
 PORTNAME=	ktp-filetransfer-handler
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,7 +18,7 @@ USES=		compiler:c++11-lang cmake gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons ecm i18n itemviews jobwidgets kio service solid \
 		wallet widgetsaddons xmlgui
-USE_QT=		core dbus gui network xml widgets \
+USE_QT=		concurrent core dbus gui network xml widgets \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	DOCS

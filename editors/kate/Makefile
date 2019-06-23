@@ -2,6 +2,7 @@
 
 PORTNAME=	kate
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	editors kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,7 +20,7 @@ USE_KDE=	activities attica auth bookmarks codecs completion config \
 		jobwidgets kio newstuff package parts plasma-framework \
 		service solid sonnet texteditor textwidgets threadweaver \
 		wallet widgetsaddons windowsystem xmlgui
-USE_QT=		core dbus gui network script sql widgets xml \
+USE_QT=		concurrent core dbus gui network script sql widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	DOCS

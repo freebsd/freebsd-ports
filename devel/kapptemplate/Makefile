@@ -2,6 +2,7 @@
 
 PORTNAME=	kapptemplate
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth archive codecs completion config configwidgets coreaddons \
 		doctools ecm i18n jobwidgets kio newstuff service widgetsaddons
-USE_QT=		core dbus gui network testlib widgets xml \
+USE_QT=		concurrent core dbus gui network testlib widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	DOCS

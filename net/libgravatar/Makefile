@@ -2,6 +2,7 @@
 
 PORTNAME=	libgravatar
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +15,7 @@ USE_KDE=	auth codecs config configwidgets coreaddons ecm i18n kio \
 		service sonnet textwidgets widgetsaddons
 # pim components
 USE_KDE+=	pimcommon
-USE_QT=		core gui network testlib widgets xml \
+USE_QT=		concurrent core dbus gui network testlib widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

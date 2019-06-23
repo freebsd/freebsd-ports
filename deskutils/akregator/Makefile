@@ -2,6 +2,7 @@
 
 PORTNAME=	akregator
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgmepp.so:security/gpgme-cpp \
 		libqgpgme.so:security/gpgme-qt5
 
-USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib desktop-file-utils gettext grantlee:5 kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		ecm i18n iconthemes itemmodels jobwidgets kcmutils kio \
 		notifications notifyconfig parts service sonnet texteditor\
@@ -23,7 +24,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 # pim components
 USE_KDE+=	akonadi akonadimime contacts grantleetheme kontactinterface \
 		libkdepim libkleo messagelib mime pimcommon pimtextedit syndication
-USE_QT=		core dbus declarative gui location network printsupport \
+USE_QT=		concurrent core dbus declarative gui location network printsupport \
 		webchannel webengine widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes

@@ -2,6 +2,7 @@
 
 PORTNAME=	lokalize
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,7 +16,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons doctools ecm i18n itemviews \
 		jobwidgets kio kross notifications parts service solid sonnet \
 		textwidgets widgetsaddons xmlgui
-USE_QT=		core dbus gui network script sql widgets xml \
+USE_QT=		concurrent core dbus gui network script sql widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	DOCS

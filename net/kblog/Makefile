@@ -2,6 +2,7 @@
 
 PORTNAME=	kblog
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,7 @@ USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	config coreaddons ecm i18n kdelibs4support kio service xmlrpcclient
 # pim components
 USE_KDE+=	calendarcore syndication
-USE_QT=		core gui webkit \
+USE_QT=		concurrent core dbus gui network webkit \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

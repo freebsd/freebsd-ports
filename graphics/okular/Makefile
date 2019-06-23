@@ -2,6 +2,7 @@
 
 PORTNAME=	okular
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -27,12 +28,12 @@ LIB_DEPENDS=	libchm.so:misc/chmlib \
 USES=		cmake compiler:c++11-lib desktop-file-utils \
 		gettext jpeg kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	activities archive auth bookmarks codecs completion config \
-		configwidgets coreaddons dbusaddons ecm emoticons i18n \
+		configwidgets coreaddons crash dbusaddons ecm emoticons i18n \
 		iconthemes init itemmodels itemviews jobwidgets js \
 		kdelibs4support khtml kio libkexiv2 parts pty \
 		service solid sonnet textwidgets threadweaver wallet \
 		widgetsaddons windowsystem xmlgui
-USE_QT=		core dbus declarative gui network phonon4 printsupport speech \
+USE_QT=		concurrent core dbus declarative gui network phonon4 printsupport speech \
 		svg widgets xml \
 		buildtools_build qmake_build
 
