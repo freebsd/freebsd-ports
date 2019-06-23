@@ -16,7 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h2>=2.4:www/py-h2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hyperframe>=3.2:www/py-hyperframe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}brotlipy>=0.7.0:archivers/py-brotlipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rfc3986>=1.1.0,<2.0:www/py-rfc3986@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
+TEST_DEPENDS=	${PY_FUTURES} \
+		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hpack>0:www/py-hpack@${PY_FLAVOR}
@@ -35,10 +36,4 @@ py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enum34>=1.0.4,<2:devel/py-enum34@${PY_F
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -k 'not test_HTTPConnection_with_custom_context' test
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_VER} < 3.0
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
