@@ -2,40 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.12.6
-PORTEPOCH=	1
+PORTVERSION=	g20190604
 CATEGORIES=	lang
-MASTER_SITES=	https://golang.org/dl/
-DISTNAME=	go${PORTVERSION}.src
+PKGNAMESUFFIX=	-devel
 
-PATCH_SITES=	https://github.com/golang/go/commit/
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=221297#c23
-PATCHFILES=	3b6216ed0601c81fe42c2a4738d419afccb62163.patch:-p1 \
-		0bd101cecc5458a8463b8d672bf1745c3cbb7c02.patch:-p1 \
-		a6e892d26d6ee59799f55bc50521605ebf75ea67.patch:-p1
-
-MAINTAINER=	jlaffaye@FreeBSD.org
-COMMENT=	Go programming language
+MAINTAINER=	dg@syrec.org
+COMMENT=	Go programming language (development version)
 
 LICENSE=	BSD3CLAUSE
+
+ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
 
 BUILD_DEPENDS=	go14>=1.4:lang/go14
 
 USES=		shebangfix
-SHEBANG_LANG=	sh perl
+USE_GITHUB=	yes
+GH_ACCOUNT=	golang
+GH_TAGNAME=	ac8dbe7747
+
 SHEBANG_FILES=	misc/benchcmp \
 		misc/nacl/go_nacl_*_exec \
 		misc/wasm/go_js_wasm_exec \
 		src/net/http/cgi/testdata/test.cgi
 SHEBANG_GLOB=	*.bash *.pl *.sh
-
+SHEBANG_LANG=	sh
 sh_OLD_CMD=	/bin/bash "/usr/bin/env bash"
 sh_CMD=		${SH}
 
-WRKSRC=		${WRKDIR}/go
-ONLY_FOR_ARCHS=	i386 amd64 armv6 armv7
-
-CONFLICTS_INSTALL=	go-devel
+CONFLICTS_INSTALL=	go
 
 OPTIONS_DEFINE_i386=	GO387
 GO387_DESC=	Do not generate code with SSE2 (for old x86 CPU)
@@ -48,53 +42,49 @@ GOARCH=386
 GOARCH=amd64
 .elif ${ARCH} == armv6 || ${ARCH} == armv7
 GOARCH=arm
-GOARM=${ARCH:C/armv//}
 .else
 IGNORE=		unknown arch ${ARCH}
-.endif
-
-.ifdef QEMU_EMULATING
-IGNORE=		fails to build with qemu-user-static
 .endif
 
 .if ${PORT_OPTIONS:MGO387}
 GO386=387
 .endif
 
-PLIST_SUB+=	opsys_ARCH=${OPSYS:tl}_${GOARCH}
+BINARIES=	go gofmt
 
 post-patch:
 	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete
 	@${REINPLACE_CMD} -e 's|^if ulimit -T|false \&\& &|' ${WRKSRC}/src/run.bash
+	@${ECHO_CMD} "devel-${GH_TAGNAME}" > ${WRKSRC}/VERSION
 
 do-build:
 	cd ${WRKSRC}/src && \
 		GOROOT=${WRKSRC} GOROOT_FINAL=${PREFIX}/go \
 		GOROOT_BOOTSTRAP=${LOCALBASE}/go14 \
 		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:tl} \
-		GO386=${GO386} GOARM=${GOARM} CGO_ENABLED=1 \
+		GO386=${GO386} \
 		${SH} make.bash -v
 	${RM} -r ${WRKSRC}/pkg/obj \
 	    ${WRKSRC}/pkg/bootstrap \
 	    ${WRKSRC}/pkg/${OPSYS:tl}_${GOARCH}/cmd
 
 do-install:
-	@${CP} -a ${WRKSRC} ${STAGEDIR}${PREFIX}
-.for f in go gofmt
+	@${MKDIR} ${STAGEDIR}${PREFIX}/go
+	@${CP} -a ${WRKSRC}/* ${STAGEDIR}${PREFIX}/go
+.for f in ${BINARIES}
 	@${LN} -sf ../go/bin/${f} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
-do-test:
-	cd ${WRKSRC}/src && GOROOT=${WRKSRC} PATH=${WRKSRC}/bin:${PATH} ${SH} run.bash -no-rebuild -banner ""
-
-pkg-plist: stage
-	${RM} ${WRKDIR}/pkg-plist
-.for command in go gofmt
-	${ECHO_CMD} bin/${command} >> ${WRKDIR}/pkg-plist
+post-install:
+.for f in ${BINARIES}
+	@${ECHO_CMD} bin/${f} >> ${TMPPLIST}
 .endfor
-	cd ${WRKDIR} && ${FIND} go -type f | \
-		${SED} -e "s/\/${OPSYS:tl}_${GOARCH}\//\/%%opsys_ARCH%%\//g" | \
-		${SORT} >> ${WRKDIR}/pkg-plist
-	${CP} ${WRKDIR}/pkg-plist ${.CURDIR}/pkg-plist
+	@cd ${STAGEDIR}${PREFIX} && \
+		${FIND} go -type f >> ${TMPPLIST}
+
+do-test:
+	cd ${WRKSRC}/src && \
+		GOROOT=${WRKSRC} PATH=${WRKSRC}/bin:${PATH} \
+		${SH} run.bash -no-rebuild -banner ""
 
 .include <bsd.port.post.mk>
