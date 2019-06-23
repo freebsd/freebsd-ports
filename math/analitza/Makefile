@@ -10,7 +10,7 @@ COMMENT=	Library from KDE Education project
 LICENSE=		GFDL GPLv2
 LICENSE_COMB=		multi
 LICENSE_FILE_GFDL=	${WRKSRC}/COPYING.DOC
-LICENSE_FILE_GPLv2=	 ${WRKSRC}/COPYING
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang eigen:3 gl kde:5 qt:5 tar:xz
 USE_GL=		glu
