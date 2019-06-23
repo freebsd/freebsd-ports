@@ -128,6 +128,7 @@
     SUBDIR += gnu-cobol
     SUBDIR += gnustep-base
     SUBDIR += go
+    SUBDIR += go-devel
     SUBDIR += go14
     SUBDIR += gomacro
     SUBDIR += gprolog
