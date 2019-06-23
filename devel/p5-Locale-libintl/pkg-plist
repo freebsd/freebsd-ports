@@ -145,10 +145,10 @@
 %%SITE_PERL%%/Locale/Util.pm
 %%SITE_PERL%%/Locale/gettext_dumb.pm
 %%SITE_PERL%%/Locale/gettext_pp.pm
-%%SITE_PERL%%/Locale/gettext_xs.pm
+%%NLS%%%%SITE_PERL%%/Locale/gettext_xs.pm
 %%SITE_PERL%%/Locale/gettext_xs.pod
 %%SITE_PERL%%/Locale/libintlFAQ.pod
-%%SITE_ARCH%%/auto/Locale/gettext_xs/gettext_xs.so
+%%NLS%%%%SITE_ARCH%%/auto/Locale/gettext_xs/gettext_xs.so
 %%PERL5_MAN3%%/Locale::Messages.3.gz
 %%PERL5_MAN3%%/Locale::Recode.3.gz
 %%PERL5_MAN3%%/Locale::Recode::_Aliases.3.gz
