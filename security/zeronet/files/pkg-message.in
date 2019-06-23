@@ -27,6 +27,6 @@ For Tor integration (recommended) please make sure:
 Without the Tor integration, you need to make sure that your router
 has either UPnP enabled, or port 15441 open.
 
-For more details please see ZeroNet documentation here:
+For more details please see the ZeroNet documentation here:
 http://zeronet.readthedocs.io/en/latest
 ======================================================================
