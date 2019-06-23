@@ -682,7 +682,7 @@ PY_IPADDRESS=
 .endif
 
 .if ${PYTHON_REL} < 3200
-PY_FUTURES=	${PYTHON_PKGNAMEPREFIX}futures>0:devel/py-futures@${PY_FLAVOR}
+PY_FUTURES=	${PYTHON_PKGNAMEPREFIX}futures>=3.2:devel/py-futures@${PY_FLAVOR}
 .else
 PY_FUTURES=
 .endif
