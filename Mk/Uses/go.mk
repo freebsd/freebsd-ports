@@ -36,6 +36,12 @@
 # GO_BUILDFLAGS
 #	Additional build arguments to be passed to the `go install` command
 #
+# GO_PORT
+#	The Go port to use.  By default this is lang/go but can be set
+#	to lang/go-devel in make.conf for testing with future Go versions.
+#
+#	This variable should not be set by individual ports!
+#
 # MAINTAINER: jlaffaye@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GO_MK)
@@ -83,7 +89,8 @@ GO_ENV+=	GOPATH="${WRKDIR}" \
 		GOBIN=""
 .endif
 
-BUILD_DEPENDS+=	${GO_CMD}:lang/go
+GO_PORT?=	lang/go
+BUILD_DEPENDS+=	${GO_CMD}:${GO_PORT}
 PLIST_SUB+=	GO_PKGNAME=${GO_PKGNAME}
 
 _USES_POST+=	go
