@@ -24,7 +24,7 @@ LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm \
 
 USES=		autoreconf compiler:c11 gmake libtool pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	01org
+GH_ACCOUNT=	intel
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	lib/dri/hybrid_drv_video.so
