@@ -2,6 +2,7 @@
 
 PORTNAME=	kde-gtk-config
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -21,7 +22,7 @@ USE_GNOME=	cairo gdkpixbuf2 gtk20 gtk30 glib20
 USE_KDE=	archive attica auth codecs completion config configwidgets \
 		coreaddons ecm i18n iconthemes jobwidgets kcmutils kio \
 		newstuff service widgetsaddons xmlgui
-USE_QT=		concurrent core dbus gui network testlib widgets xml \
+USE_QT=		concurrent core dbus gui network svg testlib widgets xml \
 		buildtools_build qmake_build
 USE_XORG=	xcursor
 
