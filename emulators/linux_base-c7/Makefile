@@ -2,6 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nfilesystem-*:C/:[^:]+$//}
@@ -35,7 +36,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		e2fsprogs-libs-1.42.9-13.el7 \
 		gamin-0.1.10-16.el7 \
 		gdbm-1.10-8.el7 \
-		glib2-2.56.1-2.el7 \
+		glib2-2.56.1-4.el7_6 \
 		glibc-2.17-260.el7_6.5 \
 		gmp-6.0.0-15.el7 \
 		keyutils-libs-1.5.8-3.el7 \
@@ -92,7 +93,7 @@ SRC_DISTFILES=	acl-2.2.51-14.el7${SRC_SUFX}:SOURCE \
 		gamin-0.1.10-16.el7${SRC_SUFX}:SOURCE \
 		gcc-4.8.5-36.el7_6.2${SRC_SUFX}:SOURCE \
 		gdbm-1.10-8.el7${SRC_SUFX}:SOURCE \
-		glib2-2.56.1-2.el7${SRC_SUFX}:SOURCE \
+		glib2-2.56.1-4.el7_6${SRC_SUFX}:SOURCE \
 		glibc-2.17-260.el7_6.5${SRC_SUFX}:SOURCE \
 		gmp-6.0.0-15.el7${SRC_SUFX}:SOURCE \
 		grep-2.20-3.el7${SRC_SUFX}:SOURCE \
