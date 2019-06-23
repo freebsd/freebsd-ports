@@ -1,0 +1,20 @@
+--- meson.build.orig	2019-06-23 03:48:31 UTC
++++ meson.build
+@@ -39,7 +39,7 @@ c_args = [
+ 
+ # Find libMarkdown
+ cc = meson.get_compiler('c')
+-libmarkdown = cc.find_library('markdown', required: true)
++#libmarkdown = cc.find_library('markdown', required: true)
+ 
+ # Let's define our executable
+ add_project_arguments(['--vapidir', join_paths(meson.current_source_dir(), 'vapi')], language: 'vala')
+@@ -78,7 +78,7 @@ executable(
+         dependency('gtk+-3.0'),
+         dependency('webkit2gtk-4.0'),
+         dependency('gtkspell3-3.0'),
+-        libmarkdown
++        #libmarkdown
+     ],
+     vala_args: [
+         meson.source_root() + '/vapi/config.vapi',
