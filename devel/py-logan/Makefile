@@ -14,12 +14,12 @@ COMMENT=	Toolkit for running standalone Django applications
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.5:www/py-django111@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.5:www/py-django111@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mock>=0.8.0:devel/py-mock@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0.8.0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>=1.1.2:devel/py-nose@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
