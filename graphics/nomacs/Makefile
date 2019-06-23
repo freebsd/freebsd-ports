@@ -18,7 +18,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libtbb.so:devel/tbb
 
 USES=		cmake desktop-file-utils dos2unix pkgconfig qt:5 tar:bzip2
-USE_QT=	        concurrent core gui network printsupport svg widgets \
+USE_QT=		concurrent core gui network printsupport svg widgets \
 		buildtools_build linguisttools_build qmake_build
 
 DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
