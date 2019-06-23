@@ -3,7 +3,4 @@ realistic sky in 3D, just like what you see with the naked eye, binoculars,
 or a telescope.  It is being used in planetarium projectors.  Just set your
 coordinates and go.
 
-This is current stable version based on Qt 5.  For the previous, Qt 4 based
-one, please install `astro/stellarium-qt4' port instead.
-
 WWW: http://www.stellarium.org/
