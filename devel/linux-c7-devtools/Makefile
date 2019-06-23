@@ -3,6 +3,7 @@
 
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -30,13 +31,13 @@ LIB_DISTNAMES=	binutils-devel-2.27-34.base.el7 \
 DISTFILES_amd64=${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 		${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 		${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
-		kernel-headers-3.10.0-957.12.2.el7${EXTRACT_SUFX_amd64}:amd64
+		kernel-headers-3.10.0-957.21.3.el7${EXTRACT_SUFX_amd64}:amd64
 DISTFILES_i386=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 		${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:i386/} \
-		kernel-headers-3.10.0-957.12.2.el7.centos.plus${EXTRACT_SUFX_i386}:i386
+		kernel-headers-3.10.0-957.21.3.el7.centos.plus${EXTRACT_SUFX_i386}:i386
 SRC_DISTFILES=	binutils-2.27-34.base.el7${SRC_SUFX}:SOURCE \
 		glibc-2.17-260.el7_6.5${SRC_SUFX}:SOURCE \
-		kernel-3.10.0-957.12.2.el7${SRC_SUFX}:SOURCE \
+		kernel-3.10.0-957.21.3.el7${SRC_SUFX}:SOURCE \
 		libmpc-1.0.1-3.el7${SRC_SUFX}:SOURCE \
 		mpfr-3.1.1-4.el7${SRC_SUFX}:SOURCE \
 		gcc-4.8.5-36.el7_6.2${SRC_SUFX}:SOURCE
