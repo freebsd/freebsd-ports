@@ -35,6 +35,7 @@
     SUBDIR += R-cran-fansi
     SUBDIR += R-cran-foreach
     SUBDIR += R-cran-gbm
+    SUBDIR += R-cran-gbRd
     SUBDIR += R-cran-gdata
     SUBDIR += R-cran-generics
     SUBDIR += R-cran-glmnet
