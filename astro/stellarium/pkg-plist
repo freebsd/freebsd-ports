@@ -14,7 +14,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/data/DejaVuSans.ttf
 %%DATADIR%%/data/DejaVuSansMono.ttf
 %%DATADIR%%/data/base_locations.bin.gz
-%%DATADIR%%/data/constellations_boundaries.dat
+%%DATADIR%%/data/constellation_boundaries.dat
 %%DATADIR%%/data/constellations_spans.dat
 %%DATADIR%%/data/countryCodes.dat
 %%DATADIR%%/data/default_cfg.ini
@@ -43,9 +43,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/data/ssystem_major.ini
 %%DATADIR%%/data/ssystem_minor.ini
 %%DATADIR%%/data/stellarium.ico
-%%DATADIR%%/landscapes/armintxe_cave/armintxe_cave.png
-%%DATADIR%%/landscapes/armintxe_cave/description.en.utf8
-%%DATADIR%%/landscapes/armintxe_cave/landscape.ini
 %%DATADIR%%/landscapes/garching/description.ar.utf8
 %%DATADIR%%/landscapes/garching/description.be.utf8
 %%DATADIR%%/landscapes/garching/description.bg.utf8
@@ -599,6 +596,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/n2685-vasey.png
 %%DATADIR%%/nebulae/default/n2736.png
 %%DATADIR%%/nebulae/default/n2775.png
+%%DATADIR%%/nebulae/default/n2805-vasey.png
 %%DATADIR%%/nebulae/default/n2808.png
 %%DATADIR%%/nebulae/default/n2818.png
 %%DATADIR%%/nebulae/default/n281kepler.png
@@ -623,6 +621,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/n3314.png
 %%DATADIR%%/nebulae/default/n3344-vasey.png
 %%DATADIR%%/nebulae/default/n3359-vasey.png
+%%DATADIR%%/nebulae/default/n3504-vasey.png
 %%DATADIR%%/nebulae/default/n3521-vasey.png
 %%DATADIR%%/nebulae/default/n3532.png
 %%DATADIR%%/nebulae/default/n3603.png
@@ -666,6 +665,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/n4676.png
 %%DATADIR%%/nebulae/default/n4697-dss.png
 %%DATADIR%%/nebulae/default/n4725.png
+%%DATADIR%%/nebulae/default/n474-vasey.png
 %%DATADIR%%/nebulae/default/n4755.png
 %%DATADIR%%/nebulae/default/n4833-dss.png
 %%DATADIR%%/nebulae/default/n488-vasey.png
@@ -719,6 +719,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/n6624-dss.png
 %%DATADIR%%/nebulae/default/n663.png
 %%DATADIR%%/nebulae/default/n6712-2mass.png
+%%DATADIR%%/nebulae/default/n672-vasey.png
 %%DATADIR%%/nebulae/default/n6726.png
 %%DATADIR%%/nebulae/default/n6744.png
 %%DATADIR%%/nebulae/default/n6752.png
@@ -731,6 +732,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/n6894.png
 %%DATADIR%%/nebulae/default/n6905.png
 %%DATADIR%%/nebulae/default/n6914.png
+%%DATADIR%%/nebulae/default/n691group-vasey.png
 %%DATADIR%%/nebulae/default/n6934-dss.png
 %%DATADIR%%/nebulae/default/n6946dumont.png
 %%DATADIR%%/nebulae/default/n6960.png
@@ -751,6 +753,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/n7538.png
 %%DATADIR%%/nebulae/default/n7590-trev.png
 %%DATADIR%%/nebulae/default/n7635-vasey.png
+%%DATADIR%%/nebulae/default/n7640-vasey.png
 %%DATADIR%%/nebulae/default/n7662.png
 %%DATADIR%%/nebulae/default/n772.png
 %%DATADIR%%/nebulae/default/n7742.png
@@ -1009,24 +1012,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/arabic_moon_stations/description.zh_TW.utf8
 %%DATADIR%%/skycultures/arabic_moon_stations/info.ini
 %%DATADIR%%/skycultures/arabic_moon_stations/star_names.fab
-%%DATADIR%%/skycultures/armintxe/Armintxesala.png
-%%DATADIR%%/skycultures/armintxe/bison1.png
-%%DATADIR%%/skycultures/armintxe/bison2.png
-%%DATADIR%%/skycultures/armintxe/constellation_names.eng.fab
-%%DATADIR%%/skycultures/armintxe/constellationsart.fab
-%%DATADIR%%/skycultures/armintxe/constellationship.fab
-%%DATADIR%%/skycultures/armintxe/description.en.utf8
-%%DATADIR%%/skycultures/armintxe/horse2.png
-%%DATADIR%%/skycultures/armintxe/horse3.png
-%%DATADIR%%/skycultures/armintxe/horsehead.png
-%%DATADIR%%/skycultures/armintxe/ibex.png
-%%DATADIR%%/skycultures/armintxe/ibex2.png
-%%DATADIR%%/skycultures/armintxe/ibex3.png
-%%DATADIR%%/skycultures/armintxe/info.ini
-%%DATADIR%%/skycultures/armintxe/lion.png
-%%DATADIR%%/skycultures/armintxe/osoa.png
-%%DATADIR%%/skycultures/armintxe/river.png
-%%DATADIR%%/skycultures/armintxe/twoheadhorse.png
 %%DATADIR%%/skycultures/aztec/Primeros_Memoriales.png
 %%DATADIR%%/skycultures/aztec/Tianquiztli_T.png
 %%DATADIR%%/skycultures/aztec/aztec0.png
@@ -1143,9 +1128,9 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/boorong/won.png
 %%DATADIR%%/skycultures/boorong/yerredkr.png
 %%DATADIR%%/skycultures/boorong/yurree.png
+%%DATADIR%%/skycultures/chinese/constellation_boundaries.dat
 %%DATADIR%%/skycultures/chinese/constellation_names.eng.fab
 %%DATADIR%%/skycultures/chinese/constellation_names.zh_CN.fab
-%%DATADIR%%/skycultures/chinese/constellations_boundaries.dat
 %%DATADIR%%/skycultures/chinese/constellationship.fab
 %%DATADIR%%/skycultures/chinese/description.ar.utf8
 %%DATADIR%%/skycultures/chinese/description.be.utf8
@@ -1259,9 +1244,9 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/chinese_contemporary/virgo.png
 %%DATADIR%%/skycultures/chinese_contemporary/volans.png
 %%DATADIR%%/skycultures/chinese_contemporary/vulpecula.png
+%%DATADIR%%/skycultures/chinese_medieval/constellation_boundaries.dat
 %%DATADIR%%/skycultures/chinese_medieval/constellation_names.eng.fab
 %%DATADIR%%/skycultures/chinese_medieval/constellation_names.zh_CN.fab
-%%DATADIR%%/skycultures/chinese_medieval/constellations_boundaries.dat
 %%DATADIR%%/skycultures/chinese_medieval/constellationship.fab
 %%DATADIR%%/skycultures/chinese_medieval/description.en.utf8
 %%DATADIR%%/skycultures/chinese_medieval/description.zh_CN.utf8
@@ -1474,8 +1459,8 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/korean/description.zh_TW.utf8
 %%DATADIR%%/skycultures/korean/info.ini
 %%DATADIR%%/skycultures/korean/star_names.fab
+%%DATADIR%%/skycultures/lokono/constellation_boundaries.dat
 %%DATADIR%%/skycultures/lokono/constellation_names.eng.fab
-%%DATADIR%%/skycultures/lokono/constellations_boundaries.dat
 %%DATADIR%%/skycultures/lokono/constellationsart.fab
 %%DATADIR%%/skycultures/lokono/constellationship.fab
 %%DATADIR%%/skycultures/lokono/description.en.utf8
@@ -2129,6 +2114,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/translations/stellarium-planetary-features/ka.qm
 %%DATADIR%%/translations/stellarium-planetary-features/kk.qm
 %%DATADIR%%/translations/stellarium-planetary-features/ko.qm
+%%DATADIR%%/translations/stellarium-planetary-features/ku.qm
 %%DATADIR%%/translations/stellarium-planetary-features/ky.qm
 %%DATADIR%%/translations/stellarium-planetary-features/la.qm
 %%DATADIR%%/translations/stellarium-planetary-features/lt.qm
@@ -2217,6 +2203,7 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/ka.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/kk.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/ko.qm
+%%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/ku.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/ky.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/la.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/lt.qm
@@ -2305,6 +2292,7 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/ka.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/kk.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/ko.qm
+%%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/ku.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/ky.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/la.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-scripts/lt.qm
@@ -2405,6 +2393,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/translations/stellarium-skycultures/kg.qm
 %%DATADIR%%/translations/stellarium-skycultures/kk.qm
 %%DATADIR%%/translations/stellarium-skycultures/ko.qm
+%%DATADIR%%/translations/stellarium-skycultures/ku.qm
 %%DATADIR%%/translations/stellarium-skycultures/ky.qm
 %%DATADIR%%/translations/stellarium-skycultures/la.qm
 %%DATADIR%%/translations/stellarium-skycultures/lt.qm
@@ -2509,6 +2498,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/translations/stellarium/kg.qm
 %%DATADIR%%/translations/stellarium/kk.qm
 %%DATADIR%%/translations/stellarium/ko.qm
+%%DATADIR%%/translations/stellarium/ku.qm
 %%DATADIR%%/translations/stellarium/ky.qm
 %%DATADIR%%/translations/stellarium/la.qm
 %%DATADIR%%/translations/stellarium/lt.qm
@@ -2602,7 +2592,7 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/webroot/js/api/viewcontrol.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/api/viewoptions.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/globalize.js
-%%SCRIPTS%%%%DATADIR%%/webroot/js/jquery-3.3.1.js
+%%SCRIPTS%%%%DATADIR%%/webroot/js/jquery-3.4.1.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/jquery-ui.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/jquery.ui.touch-punch.js
 %%SCRIPTS%%%%DATADIR%%/webroot/js/main.js

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.19.0
+PORTVERSION=	0.19.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro
 EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
@@ -74,10 +74,6 @@ PLIST_SUB+=	SCRIPTS="@comment "
 post-extract-DOCS-on:
 	@${LN} -sf ${_DISTDIR}/stellarium_user_guide-${GUIDE_VERSION}-1.pdf \
 		${WRKSRC}
-
-post-patch:
-	@${REINPLACE_CMD} -e '/<sys\/time\.h>/s,^//,,' \
-		${WRKSRC}/src/external/libindi/libs/indibase/indilogger.h
 
 post-install-MORE_STARS-on:
 	${INSTALL_DATA} ${DISTDIR}/stars_4_1v0_2.cat \
