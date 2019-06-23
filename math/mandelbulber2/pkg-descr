@@ -1,0 +1,24 @@
+Mandelbulber creatively generates three-dimensional fractals.
+Explore trigonometric, hyper-complex, Mandelbox, IFS, and many other
+3D fractals.
+
+Render with a great palette of customizable materials to create stunning images
+and videos.
+
+Features:
+* Enlightening Documentation
+* Renders trigonometric, hyper-complex, Mandelbox, IFS, and many other 3D
+  fractals
+* Complex 3D ray-marching: hard shadows, ambient occlusion, depth of field,
+  translucency & refraction, etc.
+* Rich GUI in Qt 5 environment
+* Unlimited image resolution on 64-bit systems
+* Program compiled for x86 and x64 CPUs (Linux, Windows, OSX)
+* Simple 3D navigator
+* Distributed Network Rendering
+* Rendering using OpenCL
+* Key-frame animation for all parameters with different interpolations
+* Material management
+* Texture mapping (color, luminosity, diffusion, normal maps, displacement)
+
+WWW: https://github.com/buddhi1980/mandelbulber2
