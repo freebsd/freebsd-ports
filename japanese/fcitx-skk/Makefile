@@ -35,7 +35,7 @@ PLIST_SUB+=	QT5=""
 LIB_DEPENDS+=	libFcitxQt5WidgetsAddons.so:textproc/fcitx-qt5
 .else
 CMAKE_ARGS+=	-DENABLE_QT=OFF
-PLIST_SUB+=	 QT5="@comment "
+PLIST_SUB+=	QT5="@comment "
 .endif
 
 .include <bsd.port.mk>
