@@ -2,7 +2,7 @@
 
 PORTNAME=	wsjtx
 PORTVERSION=	2.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
@@ -26,7 +26,8 @@ USES=		cmake compiler:c++11-lib fortran gl \
 		makeinfo pkgconfig qt:5 tar:tgz
 USE_GL=		glu
 USE_QT=		core gui buildtools network qmake_build widgets \
-		multimedia concurrent printsupport serialport sql
+		multimedia concurrent printsupport serialport sql \
+		sql-sqlite3
 
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH+=${LOCALBASE}/wsjtx/lib \
 		-DLOCALBASE::STRING="${LOCALBASE}"
