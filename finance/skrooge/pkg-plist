@@ -415,8 +415,6 @@ share/kservices5/org.kde.skrooge-plugin-scheduled.desktop
 share/kservices5/org.kde.skrooge-plugin-search.desktop
 share/kservices5/org.kde.skrooge-plugin-tracker.desktop
 share/kservices5/org.kde.skrooge-plugin-unit.desktop
-share/kservices5/sources/org.kde.skrooge-source-bitcoinaverage.desktop
-share/kservices5/sources/org.kde.skrooge-source-bitcoincharts.desktop
 share/kservices5/sources/org.kde.skrooge-source-coinmarketcap.desktop
 share/kservices5/sources/org.kde.skrooge-source-grandtrunk.desktop
 share/kservices5/sources/org.kde.skrooge-source-msn.desktop
