@@ -6,7 +6,7 @@ DISTVERSION=	0.4.0-rc1
 CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	 A user-friendly XMPP client for every device
+COMMENT=	User-friendly XMPP client for every device
 
 LIB_DEPENDS=	libqxmpp.so:net-im/qxmpp-qt5
 
