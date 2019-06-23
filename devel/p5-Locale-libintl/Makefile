@@ -14,10 +14,16 @@ COMMENT=	Internationalization library for Perl
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext iconv:translit localbase perl5
+USES=		iconv:translit localbase perl5
 USE_PERL5=	configure
 
-post-install:
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Makefile.PL
+NLS_USES=		gettext
+
+post-install-NLS-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Locale/gettext_xs/gettext_xs.so
 
 .include <bsd.port.mk>
