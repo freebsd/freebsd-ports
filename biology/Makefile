@@ -164,6 +164,7 @@
     SUBDIR += vcflib
     SUBDIR += vcftools
     SUBDIR += velvet
+    SUBDIR += viennarna
     SUBDIR += vsearch
     SUBDIR += wise
 

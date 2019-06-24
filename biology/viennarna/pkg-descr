@@ -1,0 +1,15 @@
+LocARNA is a collection of alignment tools for the structural analysis of RNA.
+Given a set of RNA sequences, LocARNA simultaneously aligns and predicts common
+structures for your RNAs. In this way, LocARNA performs Sankoff-like alignment
+and is in particular suited for analyzing sets of related RNAs without known
+common structure.
+
+LocARNA distinguishes itself from many other Sankoff-style multiple alignment
+programs by its performance and low memory complexity, high accuracy, and
+richness of features. As unique features, it offers structure-local alignment,
+flexible structure and anchor constraints, and provides efficient computation of
+reliabilities in sequence-structure alignment. The package offers a robust core
+of features and is used as experimental platform for the incorporation of new
+features in RNA sequence-structure alignment.
+
+WWW: https://github.com/s-will/LocARNA
