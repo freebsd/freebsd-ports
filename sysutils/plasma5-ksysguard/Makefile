@@ -23,5 +23,6 @@ OPTIONS_SUB=	yes
 
 INOTIFY_DESC=		Filesystem alteration notifications using inotify
 INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
+INOTIFY_LDFLAGS=	-linotify
 
 .include <bsd.port.mk>
