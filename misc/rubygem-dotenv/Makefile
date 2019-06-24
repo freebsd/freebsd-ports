@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dotenv
-PORTVERSION=	2.7.3
+PORTVERSION=	2.7.4
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
