@@ -4,23 +4,25 @@
 PORTNAME=	nano
 PORTVERSION=	4.2
 CATEGORIES=	editors
-MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ GNU
+MASTER_SITES=	https://www.nano-editor.org/dist/v${PORTVERSION:R}/ GNU
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		charsetfix ncurses
+USES=		charsetfix ncurses tar:xz
 
 CONFLICTS=	nano-devel-2*
 
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --enable-utf8
+CONFIGURE_ENV+=	NCURSESW_CFLAGS="-I${NCURSESINC}" \
+		NCURSESW_LIBS="-L${NCURSESLIB} -lncursesw"
+
 MAKE_ARGS+=	install_htmlmanDATA=install-htmlmanDATA
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
