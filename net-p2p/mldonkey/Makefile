@@ -117,10 +117,12 @@ post-patch:
 		${WRKSRC}/src/daemon/common/commonOptions.ml \
 		${WRKSRC}/src/networks/donkey/donkeyServers.ml
 	@${REINPLACE_CMD} \
-		-e 's/[u(]int32/&_t/' ${WRKSRC}/src/utils/cdk/zlibstubs.c
+		-e 's/[u(]int32/&_t/' ${WRKSRC}/src/utils/cdk/zlibstubs.c \
+		${WRKSRC}/src/utils/cdk/gdstubs.c
 	@${REINPLACE_CMD} \
 		-e 's/int64/&_t/' ${WRKSRC}/src/config/unix/os_stubs_c.c \
-		${WRKSRC}/src/utils/lib/os_stubs.h
+		${WRKSRC}/src/utils/lib/os_stubs.h \
+		${WRKSRC}/src/utils/lib/fst_hash.c
 
 do-install:
 .if ${PORT_OPTIONS:MCORE}

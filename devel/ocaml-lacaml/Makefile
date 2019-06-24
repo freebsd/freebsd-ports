@@ -14,6 +14,8 @@ COMMENT=	OCaml interface to BLAS and LAPACK libraries
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
 USE_OCAMLFIND_PLIST=yes

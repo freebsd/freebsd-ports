@@ -36,12 +36,18 @@ TOOLBOX_CONFIGURE_ON=	-with-toolbox
 TOOLBOX_RUN_DEPENDS=	labltk:x11-toolkits/ocaml-labltk
 TOOLBOX_BUILD_DEPENDS=	${TOOLBOX_RUN_DEPENDS}
 
+.include <bsd.port.pre.mk>
+
 post-install:
 	cd ${STAGEDIR}${PREFIX} && \
 	    ${STRIP_CMD} bin/ocamlfind \
 	    ${OCAML_SITELIBDIR}/findlib/findlib.cmxs \
 	    ${OCAML_SITELIBDIR}/findlib/findlib_dynload.cmxs \
 	    ${OCAML_SITELIBDIR}/findlib/findlib_top.cmxs
+# Spacetime profiling is only available for native code on 64-bit targets
+.if ${ARCH} == i386 || ${ARCH} == powerpc
+	@${REINPLACE_CMD} -e '/raw_spacetime/d' ${TMPPLIST}
+.endif
 
 post-install-TOOLBOX-on:
 	${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/ocamlfind \
@@ -52,4 +58,4 @@ post-install-DOCS-on:
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR} \
 	    "! -regex .*ref-man.*"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

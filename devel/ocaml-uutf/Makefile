@@ -12,6 +12,8 @@ COMMENT=	Non-blocking streaming Unicode codec for OCaml
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+
 USES=	tar:tbz
 USE_OCAML=		yes
 

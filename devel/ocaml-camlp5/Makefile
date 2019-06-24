@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	camlp5
-PORTVERSION=	6.16
+PORTVERSION=	7.07
 CATEGORIES=	devel
-MASTER_SITES=	http://camlp5.gforge.inria.fr/distrib/src/ \
-		http://cristal.inria.fr/~ddr/camlp5/distrib/src/ \
-		http://pauillac.inria.fr/~ddr/camlp5/distrib/src/
 PKGNAMEPREFIX=	ocaml-
 DIST_SUBDIR=	${PKGBASE}
 
@@ -19,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		tar:tgz
+USE_GITHUB=	yes
+GH_TAGNAME=	rel${PORTVERSION:S/.//}
 USE_OCAML=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}

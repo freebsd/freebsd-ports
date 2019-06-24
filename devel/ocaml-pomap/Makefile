@@ -13,6 +13,8 @@ COMMENT=	OCaml library to maintain a list of partially ordered elements
 LICENSE=	LGPL20+ # source says LGPL20+, COPYING says LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmottl
 

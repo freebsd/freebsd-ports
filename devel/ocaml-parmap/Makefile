@@ -12,6 +12,8 @@ COMMENT=	Minimalistic library allowing to exploit multicore architecture
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	rdicosmo
 

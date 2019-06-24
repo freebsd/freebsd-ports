@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocamlbuild
-PORTVERSION=	0.9.3
+PORTVERSION=	0.14.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -11,15 +11,11 @@ COMMENT=	Build tool for OCaml libraries and programs
 
 LICENSE=	GPLv2
 
-BROKEN=		conflicts with ocaml
-
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml
 USE_OCAML=	yes
 
 ALL_TARGET=	configure all
-
-MAKE_ARGS=	CHECK_IF_PREINSTALLED=false	# XXX: remove after 4.03.0+
 
 .include <bsd.port.mk>

@@ -35,6 +35,7 @@ post-extract:
 
 	@${REINPLACE_CMD} -e \
 		"/^install/,/^$$/s,\([ \t]*\)cp,\1${INSTALL_SCRIPT},g" \
+		-e 's,$$(OCAMLC),& -warn-error -a,' \
 		${WRKSRC}/compiler/Makefile
 
 	@${REINPLACE_CMD} -e \

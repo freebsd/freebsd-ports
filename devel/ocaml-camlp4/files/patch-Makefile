@@ -1,18 +1,11 @@
---- Makefile.orig	2014-10-21 11:41:15 UTC
+--- Makefile.orig	2017-10-11 20:17:38 UTC
 +++ Makefile
-@@ -19,12 +19,12 @@ all: byte native
+@@ -21,7 +21,7 @@ all: byte native
  
  .PHONY: install
  install:
--	./build/install.sh
-+	env LIBDIR=$(LIBDIR) BINDIR=$(BINDIR) DESTDIR=$(DESTDIR) ./build/install.sh
+-	env DESTDIR=$(DESTDIR) sh ./build/install.sh
++	env LIBDIR=$(LIBDIR) BINDIR=$(BINDIR) DESTDIR=$(DESTDIR) sh ./build/install.sh
  
  .PHONY: install-META
  install-META: camlp4/META
--	mkdir -p ${PKGDIR}/camlp4/
--	cp -f camlp4/META ${PKGDIR}/camlp4/
-+	mkdir -p ${DESTDIR}${PKGDIR}/camlp4/
-+	cp -f camlp4/META ${DESTDIR}${PKGDIR}/camlp4/
- 
- camlp4/META: camlp4/META.in
- 	sed -e s/@@VERSION@@/${version}/g $? > $@

@@ -9,6 +9,8 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml library for dealing with text
 
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	vbmithr
 GH_PROJECT=	${PKGNAMEPREFIX}${PORTNAME}

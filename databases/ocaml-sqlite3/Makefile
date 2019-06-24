@@ -15,6 +15,8 @@ LICENSE_NAME=	OCaml-SQLite3 unique permissive license
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+
 USES=			compiler:features gmake pkgconfig sqlite
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes

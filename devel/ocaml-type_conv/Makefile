@@ -13,6 +13,8 @@ COMMENT=	Type conversion routines for OCaml
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+
 OPTIONS_DEFINE=	DOCS
 
 CONFIGURE_ARGS=	--disable-docs --prefix ${PREFIX}

@@ -23,6 +23,7 @@ post-patch:
 		-e "s,^\(CC=\).*,#\&,g" \
 		-e "s,i386,${ARCH},g" \
 		${WRKSRC}/Makefile.config
+	@${REINPLACE_CMD} -e 's,(int64,&_t,' ${WRKSRC}/lib/jnistubs.c
 
 test:
 	@${ECHO_CMD} "Testing IDL library"
