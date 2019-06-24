@@ -8,7 +8,6 @@ bin/electron
 %%DATADIR%%/icudtl.dat
 %%DATADIR%%/libEGL.so
 %%DATADIR%%/libGLESv2.so
-%%DATADIR%%/libVkICD_mock_icd.so
 %%DATADIR%%/locales/am.pak
 %%DATADIR%%/locales/ar.pak
 %%DATADIR%%/locales/bg.pak
