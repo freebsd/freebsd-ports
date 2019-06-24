@@ -31,7 +31,6 @@ KSH_DESC=		Install to ${PREFIX}/bin/ksh
 KSH93_DESC=		Install to ${PREFIX}/bin/ksh93
 
 KSH93_EXTRA_PATCHES=	${FILESDIR}/extra-patch-install-as-ksh93
-KSH93_DESC=	Install to ${PREFIX}/bin/ksh93
 
 KSH_PLIST_SUB=		93=""
 KSH93_PLIST_SUB=	93="93"
