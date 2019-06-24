@@ -16,6 +16,7 @@
     SUBDIR += aescrypt
     SUBDIR += aespipe
     SUBDIR += afl
+    SUBDIR += afl++
     SUBDIR += afterglow
     SUBDIR += aide
     SUBDIR += akmos
