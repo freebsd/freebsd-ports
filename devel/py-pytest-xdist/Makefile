@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pytest-xdist
-PORTVERSION=	1.28.0
+PORTVERSION=	1.29.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>=0:sysutils/py-filelock@${PY_FLAVO
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
+TEST_ENV=	PYTHONPATH=${WRKSRC}/src
 
 NO_ARCH=	yes
 

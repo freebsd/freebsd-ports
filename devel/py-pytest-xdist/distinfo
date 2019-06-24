@@ -1,3 +1,3 @@
-TIMESTAMP = 1556192690
-SHA256 (pytest-xdist-1.28.0.tar.gz) = f83a485293e81fd57c8a5a85a3f12473a532c5ca7dec518857cbb72766bb526c
-SIZE (pytest-xdist-1.28.0.tar.gz) = 61486
+TIMESTAMP = 1561352686
+SHA256 (pytest-xdist-1.29.0.tar.gz) = 3489d91516d7847db5eaecff7a2e623dba68984835dbe6cedb05ae126c4fb17f
+SIZE (pytest-xdist-1.29.0.tar.gz) = 61788
