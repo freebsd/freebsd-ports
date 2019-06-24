@@ -13,6 +13,7 @@ LICENSE=	LGPL21+
 
 BUILD_DEPENDS=	menhir:devel/menhir \
 		ocaml-cfg>0:devel/ocaml-cfg \
+		ocamlbuild:devel/ocaml-ocamlbuild \
 		ocaml-pcre>0:devel/ocaml-pcre \
 		ocaml-res>0:devel/ocaml-res
 LIB_DEPENDS=	libpcre.so:devel/pcre

@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libgsl.so:math/gsl
 BUILD_DEPENDS=	gawk:lang/gawk \
+		ocamlbuild:devel/ocaml-ocamlbuild \
 		${OCAMLC_DEPEND}
 RUN_DEPENDS=	ocamlfind:devel/ocaml-findlib
 

@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Base64 encoding and decoding in OCaml
 
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	mirage
 GH_PROJECT=	ocaml-base64

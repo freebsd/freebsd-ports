@@ -12,6 +12,8 @@ COMMENT=	Pure OCaml regular expressions
 
 LICENSE=	LGPL21
 
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+
 USES=	gmake
 HAS_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes

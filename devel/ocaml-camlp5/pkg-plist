@@ -8,6 +8,8 @@ bin/mkcamlp5
 bin/mkcamlp5.opt
 bin/ocpp5
 lib/ocaml/camlp5/META
+lib/ocaml/camlp5/ast2pt.cmi
+lib/ocaml/camlp5/ast2pt.mli
 lib/ocaml/camlp5/camlp5.a
 lib/ocaml/camlp5/camlp5.cma
 lib/ocaml/camlp5/camlp5.cmxa

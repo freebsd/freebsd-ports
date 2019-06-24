@@ -13,6 +13,8 @@ COMMENT=	Automatically Resizing Contiguous Memory for OCaml
 LICENSE=	LGPL20+ # source says LGPL20+, COPYING says LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
 USE_OCAMLFIND_PLIST=yes

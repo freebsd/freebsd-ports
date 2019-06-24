@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Function derivation library
 
+BROKEN=		old version, incompatible with modern OCaml
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 

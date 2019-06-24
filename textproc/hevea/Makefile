@@ -12,7 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Convert LaTeX to HTML
 
-BUILD_DEPENDS=	ocamlc:lang/ocaml
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 
 OPTIONS_DEFINE=	DOCS
 

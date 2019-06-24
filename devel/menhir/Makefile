@@ -12,6 +12,8 @@ COMMENT=	LR(1) parser generator for OCaml
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+
 USES=		gmake shebangfix
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes

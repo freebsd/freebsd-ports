@@ -11,6 +11,8 @@ COMMENT=	OCaml module for handling of command line interfaces
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+
 USES=			tar:tbz
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes

@@ -12,6 +12,8 @@ COMMENT=	OCaml module for functional reactive programming
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+
 USES=		tar:tbz
 USE_OCAML=		yes
 OPTIONS_DEFINE=	X11

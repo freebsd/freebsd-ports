@@ -1,62 +1,30 @@
---- configure.orig	2015-05-12 14:46:37 UTC
+--- configure.orig	2017-07-13 08:56:44 UTC
 +++ configure
-@@ -446,7 +446,7 @@ esac
- 
- # Configure compiler to use in further tests
- 
--cc="$bytecc -O $bytecclinkopts"
-+cc="$bytecc $bytecclinkopts"
- export cc cclibs verbose
- 
- # Check C compiler
-@@ -688,9 +688,9 @@ if test $with_sharedlibs = "yes"; then
-       mksharedlib="$flexlink"
-       mkmaindll="$flexlink -maindll"
-       shared_libraries_supported=true;;
--    *-*-linux-gnu|*-*-linux|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*|*-*-haiku*)
-+    *-*-linux-gnu|*-*-linux|*-*-dragonfly*|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*|*-*-openbsd*|*-*-netbsd*|*-*-gnu*|*-*-haiku*)
-       sharedcccompopts="-fPIC"
--      mksharedlib="$bytecc -shared"
-+      mksharedlib="$bytecc $bytecclinkopts -shared"
-       bytecclinkopts="$bytecclinkopts -Wl,-E"
-       byteccrpath="-Wl,-rpath,"
-       mksharedlibrpath="-Wl,-rpath,"
-@@ -790,9 +790,11 @@ if test $with_sharedlibs = "yes"; then
-       fi;;
+@@ -838,6 +838,7 @@ if test $with_sharedlibs = "yes"; then
      x86_64-*-darwin*)             natdynlink=true;;
+     s390x*-*-linux*)              natdynlink=true;;
      powerpc*-*-linux*)            natdynlink=true;;
 +    powerpc*-*-freebsd*)          natdynlink=true;;
      sparc*-*-linux*)              natdynlink=true;;
      i686-*-kfreebsd*)             natdynlink=true;;
      x86_64-*-kfreebsd*)           natdynlink=true;;
-+    x86_64-*-dragonfly*)          natdynlink=true;;
-     i[3456]86-*-freebsd*)         natdynlink=true;;
-     x86_64-*-freebsd*)            natdynlink=true;;
-     i[3456]86-*-openbsd*)         natdynlink=true;;
-@@ -804,6 +806,7 @@ if test $with_sharedlibs = "yes"; then
-     arm*-*-linux*)                natdynlink=true;;
+@@ -854,6 +855,7 @@ if test $with_sharedlibs = "yes"; then
      arm*-*-freebsd*)              natdynlink=true;;
+     earm*-*-netbsd*)              natdynlink=true;;
      aarch64-*-linux*)             natdynlink=true;;
 +    aarch64-*-freebsd*)           natdynlink=true;;
    esac
  fi
  
-@@ -844,6 +847,7 @@ case "$target" in
-   i[3456]86-*-gnu*)             arch=i386; system=gnu;;
-   i[3456]86-*-mingw*)           arch=i386; system=mingw;;
-   powerpc*-*-linux*)            arch=power; model=ppc; system=elf;;
+@@ -921,6 +923,7 @@ case "$target" in
+   powerpc*-*-linux*)            arch=power;
+                                 if $arch64; then model=ppc64; else model=ppc; fi
+                                 system=elf;;
 +  powerpc-*-freebsd*)           arch=power; model=ppc; system=bsd_elf;;
    powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
    powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd_elf;;
-   powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
-@@ -862,12 +866,14 @@ case "$target" in
-   zaurus*-*-openbsd*)           arch=arm; system=bsd;;
-   x86_64-*-linux*)              arch=amd64; system=linux;;
-   x86_64-*-gnu*)                arch=amd64; system=gnu;;
-+  x86_64-*-dragonfly*)          arch=amd64; system=dragonfly;;
-   x86_64-*-freebsd*)            arch=amd64; system=freebsd;;
-   x86_64-*-netbsd*)             arch=amd64; system=netbsd;;
-   x86_64-*-openbsd*)            arch=amd64; system=openbsd;;
+   s390x*-*-linux*)              arch=s390x; model=z10; system=elf;;
+@@ -946,6 +949,7 @@ case "$target" in
    x86_64-*-darwin*)             arch=amd64; system=macosx;;
    x86_64-*-mingw*)              arch=amd64; system=mingw;;
    aarch64-*-linux*)             arch=arm64; system=linux;;
@@ -64,106 +32,25 @@
    x86_64-*-cygwin*)             arch=amd64; system=cygwin;;
  esac
  
-@@ -889,7 +895,7 @@ else
- fi
- 
- nativecccompopts=''
--nativecclinkopts=''
-+nativecclinkopts=""
- # FIXME the naming of nativecclinkopts is broken: these are options for
- # ld (for shared libs), not for cc
- nativeccrpath="$byteccrpath"
-@@ -932,6 +938,8 @@ case "$arch,$system" in
-                   esac;;
-   arm,freebsd)    as="${TOOLPREF}cc -c"
-                   aspp="${TOOLPREF}cc -c";;
-+  *,dragonfly)    as="${TOOLPREF}as"
-+                  aspp="${TOOLPREF}cc -c";;
-   *,freebsd)      as="${TOOLPREF}as"
-                   aspp="${TOOLPREF}cc -c";;
-   amd64,*|arm,*|arm64,*|i386,*|power,bsd*|sparc,*)
-@@ -955,9 +963,11 @@ case "$arch,$system" in
+@@ -1051,10 +1055,12 @@ case "$arch,$system" in
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
-   amd64,linux) profiling='prof';;
-   amd64,openbsd) profiling='prof';;
-+  amd64,dragonfly) profiling='prof';;
-   amd64,freebsd) profiling='prof';;
-   amd64,netbsd) profiling='prof';;
-   amd64,gnu) profiling='prof';;
-+  arm,freebsd) profiling='prof';;
-   arm,linux*) profiling='prof';;
-   power,elf) profiling='prof';;
-   power,bsd*) profiling='prof';;
-@@ -1415,6 +1425,8 @@ if test "$pthread_wanted" = "yes"; then
-   case "$target" in
-     *-*-solaris*)  pthread_link="-lpthread -lposix4"
-                    pthread_caml_link="-cclib -lpthread -cclib -lposix4";;
-+    *-*-dragon*)   pthread_link="-pthread"
-+                   pthread_caml_link="-cclib -pthread";;
-     *-*-freebsd*)  pthread_link="-pthread"
-                    pthread_caml_link="-cclib -pthread";;
-     *-*-openbsd*)  pthread_link="-pthread"
-@@ -1431,7 +1443,7 @@ if test "$pthread_wanted" = "yes"; then
-     bytecccompopts="$bytecccompopts -D_REENTRANT"
-     nativecccompopts="$nativecccompopts -D_REENTRANT"
-     case "$target" in
--      *-*-freebsd*)
-+      *-*-freebsd*|*-*-dragonfly*)
-           bytecccompopts="$bytecccompopts -D_THREAD_SAFE"
-           nativecccompopts="$nativecccompopts -D_THREAD_SAFE";;
-       *-*-openbsd*)
-@@ -1601,6 +1613,7 @@ if test "$x11_include" = "not found"; then
-       else
-         x11_libs="-L$dir"
-         case "$target" in
-+          *-*-freebsd*|*-*-dragonfly*) x11_link="-L$dir -lX11";;
-           *-kfreebsd*-gnu) x11_link="-L$dir -lX11";;
-           *-*-*bsd*) x11_link="-R$dir -L$dir -lX11";;
-           *) x11_link="-L$dir -lX11";;
-@@ -1644,10 +1657,10 @@ echo "X11_LINK=$x11_link" >> Makefile
- # Look for BFD library
- 
- if sh ./hasgot -DPACKAGE=ocaml -i bfd.h && \
--   sh ./hasgot -DPACKAGE=ocaml -lbfd -ldl -liberty -lz bfd_openr; then
-+   sh ./hasgot -DPACKAGE=ocaml -lbfd $dllib -liberty -lz bfd_openr; then
-   inf "BFD library found."
-   echo "#define HAS_LIBBFD" >> s.h
--  echo "LIBBFD_LINK=-lbfd -ldl -liberty -lz" >> Makefile
-+  echo "LIBBFD_LINK=-lbfd $dllib -liberty -lz" >> Makefile
- else
-   wrn "BFD library not found, 'objinfo' will be unable to display info on .cmxs files."
-   echo "LIBBFD_LINK=" >> Makefile
-@@ -1686,12 +1699,6 @@ if $no_naked_pointers; then
-   echo "#define NO_NAKED_POINTERS" >> m.h
- fi
- 
--# Add Unix-style optimization flag
--bytecccompopts="-O $bytecccompopts"
--dllcccompopts="-O $dllcccompopts"
--nativecccompopts="-O $nativecccompopts"
--sharedcccompopts="-O $sharedcccompopts"
--
- # Final twiddling of compiler options to work around known bugs
- 
- nativeccprofopts="$nativecccompopts"
-@@ -1701,6 +1708,11 @@ case "$buggycc" in
-     nativecccompopts="$nativecccompopts -fomit-frame-pointer";;
- esac
- 
-+# Allow user-defined C compiler flags
-+
-+bytecccompopts="$bytecccompopts $CFLAGS"
-+nativecccompopts="$nativecccompopts $CFLAGS"
-+
- # Finish generated files
- 
- cclibs="$cclibs $mathlib"
-@@ -1723,7 +1735,7 @@ SYSLIB=-l\$(1)
- MKLIB=${TOOLPREF}ar rc \$(1) \$(2); ${TOOLPREF}ranlib \$(1)
- #ml let mklib out files opts = Printf.sprintf "${TOOLPREF}ar rc %s %s %s; ${TOOLPREF}ranlib %s" out opts files out;;
+   amd64,linux) profiling='true';;
+   amd64,openbsd) profiling='true';;
++  amd64,dragonfly) profiling='true';;
+   amd64,freebsd) profiling='true';;
+   amd64,netbsd) profiling='true';;
+   arm,netbsd) profiling='true';;
+   amd64,gnu) profiling='true';;
++  arm,freebsd) profiling='true';;
+   arm,linux*) profiling='true';;
+   power,elf) profiling='true';;
+   power,bsd*) profiling='true';;
+@@ -2029,7 +2035,7 @@ MKLIB=${TOOLPREF}ar rc \$(1) \$(2); ${TOOLPREF}ranlib 
+ #ml   Printf.sprintf "${TOOLPREF}ar rc %s %s %s; ${TOOLPREF}ranlib %s"
+ #ml                  out opts files out;;
  EOF
 -echo "ARCH=$arch" >> Makefile
 +echo "SYSTEM_ARCH=$arch" >> Makefile
  echo "MODEL=$model" >> Makefile
  echo "SYSTEM=$system" >> Makefile
- echo "NATIVECC=$nativecc" >> Makefile
+ echo "NATIVECC=$nativecc $nativecccompopts" >> Makefile

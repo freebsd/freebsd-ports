@@ -19,4 +19,7 @@ lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.o
 lib/ocaml/ocamlbuild/ocamlbuildlib.a
 lib/ocaml/ocamlbuild/ocamlbuildlib.cma
 lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa
+lib/ocaml/ocamlbuild/signatures.cmi
+lib/ocaml/ocamlbuild/signatures.cmti
 lib/ocaml/ocamlbuild/signatures.mli
+man/man1/ocamlbuild.1.gz

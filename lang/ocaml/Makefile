@@ -3,7 +3,7 @@
 # for committer: bump PORTREVISION for math/facile whenever ocaml gets updated
 
 PORTNAME=	ocaml
-PORTVERSION=	4.02.3
+PORTVERSION=	4.05.0
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ GENTOO \
 		http://caml.inria.fr/pub/distrib/${DISTNAME:R}/:docs
@@ -118,7 +118,8 @@ post-patch:
 		-e "\|nativecclinkopts=|s|''|\"${LDFLAGS:C/-Wl,//}\"|" \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,$$(ARCH),$$(SYSTEM_ARCH),' \
-		${WRKSRC}/Makefile ${WRKSRC}/asmrun/Makefile \
+		${WRKSRC}/Makefile ${WRKSRC}/Makefile.tools \
+		${WRKSRC}/asmrun/Makefile \
 		${WRKSRC}/otherlibs/systhreads/Makefile \
 		${WRKSRC}/testsuite/makefiles/Makefile.common \
 		${WRKSRC}/testsuite/tests/asmcomp/Makefile
@@ -127,7 +128,6 @@ post-configure:
 	@${REINPLACE_CMD} -E \
 		-e '/^PTHREAD_LINK/s,-pthread,${THR_LD},g' \
 		${WRKSRC}/config/Makefile
-
 # INSTALL* safeness (which preserves the correct permissions despite
 # user's umask(1)
 	@${FIND} ${WRKDIR} -type f -name Makefile -print0 | \
@@ -149,6 +149,10 @@ post-install:
 	(cd ${WRKDIR} && ${COPYTREE_SHARE} htmlman ${STAGEDIR}${DOCSDIR})
 	${INSTALL_DATA} ${_DISTDIR}${DOCSDISTNAME}-refman.ps.gz ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${_DISTDIR}${DOCSDISTNAME}-refman.pdf ${STAGEDIR}${DOCSDIR}
+.endif
+# Spacetime profiling is only available for native code on 64-bit targets
+.if ${ARCH} == i386 || ${ARCH} == powerpc
+	@${REINPLACE_CMD} -e '/raw_spacetime_lib/d' ${TMPPLIST}
 .endif
 
 .include <bsd.port.post.mk>

@@ -13,6 +13,7 @@ LICENSE=	LGPL21
 
 BUILD_DEPENDS=	${SA_DIR}/react/react.a:devel/ocaml-react \
 		${SA_DIR}/ssl/ssl.a:security/ocaml-ssl
+BUILD_DEPENDS+=	ocamlbuild:devel/ocaml-ocamlbuild
 RUN_DEPENDS=	${SA_DIR}/react/react.a:devel/ocaml-react \
 		${SA_DIR}/ssl/ssl.a:security/ocaml-ssl
 
@@ -51,6 +52,10 @@ DOCS_RUN_DEPENDS=	${SA_DIR}/text/text.a:textproc/ocaml-text
 post-patch:
 	@${REINPLACE_CMD} -e 's,"install" :: findlib_name,"install" :: "-destdir ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib" :: "-ldconf /dev/null" :: findlib_name,' \
 		${WRKSRC}/setup.ml
+	@${REINPLACE_CMD} -e 's,| O_CLOEXEC,& | O_KEEPEXEC, \
+	    ; s,else Unix\.socketpair ,&?cloexec:None,' \
+		${WRKSRC}/src/unix/lwt_unix.ml \
+		${WRKSRC}/src/unix/lwt_unix.mli
 
 do-configure:
 	cd ${WRKSRC}; ocaml setup.ml -configure ${CONFIGURE_ARGS}
