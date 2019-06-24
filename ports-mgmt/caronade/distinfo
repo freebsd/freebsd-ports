@@ -1,6 +1,6 @@
-TIMESTAMP = 1552658543
-SHA256 (caronade/v0.1.0.tar.gz) = f38ef48bb783588610a3a65191cff9f230087a074668f1b7846ee089aab3335f
-SIZE (caronade/v0.1.0.tar.gz) = 59372
+TIMESTAMP = 1561385995
+SHA256 (caronade/v0.2.0.tar.gz) = f8dde847d7bcbf3ac755143e7404e567bed619d367f42629ae03b2e87c697758
+SIZE (caronade/v0.2.0.tar.gz) = 49438
 SHA256 (caronade/NYTimes-gziphandler-v1.1.1_GH0.tar.gz) = c236c216a16e4286338e66e0947938944992f918fe827c31f8745c0be98818d2
 SIZE (caronade/NYTimes-gziphandler-v1.1.1_GH0.tar.gz) = 52107
 SHA256 (caronade/go-yaml-yaml-v2.2.2_GH0.tar.gz) = 42c3e4ef9eca2860d22b3c6c5582c6c13fb4b417e5ebc1acc56ee5e2c4ddcaff
