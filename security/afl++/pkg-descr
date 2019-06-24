@@ -1,0 +1,10 @@
+American fuzzy lop is a fuzzer that employs a novel type of compile-time
+instrumentation and genetic algorithms to automatically discover clean,
+interesting test cases that trigger new internal states in the targeted
+binary. This substantially improves the functional coverage for the
+fuzzed code.
+
+afl++ is a fork of afl that incorporates all community patches into
+a single source distribution.
+
+WWW: https://github.com/vanhauser-thc/AFLplusplus
