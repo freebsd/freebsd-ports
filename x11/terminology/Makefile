@@ -22,6 +22,6 @@ OPTIONS_SUB=		yes
 
 NLS_USES=		gettext
 NLS_MESON_TRUE=		nls
-NLS_LDFLAGS=		-lintl
+NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
 
 .include <bsd.port.mk>

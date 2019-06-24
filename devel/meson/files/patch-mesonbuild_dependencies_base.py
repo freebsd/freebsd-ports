@@ -1,6 +1,6 @@
 https://github.com/mesonbuild/meson/pull/4325
 
-From 158d627c141859e28bbca2c2126b5306608aac6e Mon Sep 17 00:00:00 2001
+From c4686de2612157a4040766738a700b710d866da4 Mon Sep 17 00:00:00 2001
 From: Ting-Wei Lan <lantw@src.gnome.org>
 Date: Thu, 4 Oct 2018 23:30:28 +0800
 Subject: [PATCH] PkgConfigDependency: Sort -L flags according to
@@ -51,9 +51,10 @@ library files. This makes sure that we always follow the preferences of
 users, without depending on the unreliable part of pkg-config output.
 
 Fixes https://github.com/mesonbuild/meson/issues/4271.
---- mesonbuild/dependencies/base.py.orig	2018-09-22 13:22:03 UTC
+
+--- mesonbuild/dependencies/base.py.orig
 +++ mesonbuild/dependencies/base.py
-@@ -604,6 +604,21 @@ class PkgConfigDependency(ExternalDepend
+@@ -706,6 +706,21 @@ def _set_cargs(self):
                                        (self.name, out))
          self.compile_args = self._convert_mingw_paths(shlex.split(out))
  
@@ -75,10 +76,10 @@ Fixes https://github.com/mesonbuild/meson/issues/4271.
      def _search_libs(self, out, out_raw):
          '''
          @out: PKG_CONFIG_ALLOW_SYSTEM_LIBS=1 pkg-config --libs
-@@ -635,6 +650,22 @@ class PkgConfigDependency(ExternalDepend
-         for arg in raw_link_args:
-             if arg.startswith('-L') and not arg.startswith(('-L-l', '-L-L')):
-                 prefix_libpaths.add(arg[2:])
+@@ -741,6 +756,22 @@ def _search_libs(self, out, out_raw):
+                     # Resolve the path as a compiler in the build directory would
+                     path = os.path.join(self.env.get_build_dir(), path)
+                 prefix_libpaths.add(path)
 +        # Library paths are not always ordered in a meaningful way
 +        #
 +        # Instead of relying on pkg-config or pkgconf to provide -L flags in a
