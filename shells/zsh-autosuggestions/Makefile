@@ -2,7 +2,7 @@
 
 PORTNAME=	zsh-autosuggestions
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.3
 CATEGORIES=	shells
 
 MAINTAINER=	jrm@FreeBSD.org
