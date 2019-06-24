@@ -1,0 +1,11 @@
+--- RNA-Tutorial/Makefile.am.orig	2019-06-24 18:48:09 UTC
++++ RNA-Tutorial/Makefile.am
+@@ -95,7 +95,7 @@ vrna_htmltutorial_uninst:
+ 
+ if WITH_TUTORIAL_PDF
+ 
+-tut_datadir         = $(pkgdatadir)/tutorial
++tut_datadir         = $(prefix)/share/doc/ViennaRNA/tutorial
+ tut_programsdir     = $(tut_datadir)/programs
+ tut_alifoldzdir     = $(tut_datadir)/alifoldz
+ tut_qrnadir         = $(tut_datadir)/qrna
