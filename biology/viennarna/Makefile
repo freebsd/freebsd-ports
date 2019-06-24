@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libgsl.so:math/gsl \
 		libmpfr.so:math/mpfr
 
-USES=		compiler:c++11-lang gmake libtool localbase perl5
+USES=		autoreconf compiler:c++11-lang gmake libtool localbase perl5 pkgconfig # w/out autoreconf -lstdc++ is present in configure and Makefiles and this causes link failure
 USE_XORG=	x11 xext # only for build
 
 GNU_CONFIGURE=	yes
