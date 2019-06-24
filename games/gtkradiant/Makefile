@@ -56,6 +56,11 @@ post-patch:
 # page size is deprecated" (very annoying)
 	@${GREP} -Rl --null gtk_adjustment_new ${WRKSRC} | ${XARGS} -0 \
 		${REINPLACE_CMD} -E 's|(gtk_adjustment_new[^)]*,)[^)]*|\1 0|'
+# Do not #include <sys/dir.h> header which is deprecated
+	@${REINPLACE_CMD} -e '/#include/s,<sys/dir,&ent,' \
+		${WRKSRC}/tools/quake2/qdata/qdata.c
+	@${REINPLACE_CMD} -e 's,#ifndef WIN32,#ifdef NeXT,' \
+		${WRKSRC}/tools/quake3/q3data/q3data.c
 
 pre-install:
 	cd ${WRKSRC} && ${PYTHON_CMD} install.py
