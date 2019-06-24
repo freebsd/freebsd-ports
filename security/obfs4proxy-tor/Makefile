@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	obfs4proxy
-DISTVERSION=	0.0.10
+DISTVERSION=	0.0.11
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://people.torproject.org/~yawning/releases/${PORTNAME}/
 PKGNAMESUFFIX=	-tor
@@ -24,14 +24,14 @@ GH_TUPLE=	ahf:goptlib:7d56ec4:goptlib/src/git.torproject.org/pluggable-transport
 		agl:ed25519:5312a61:ed25519/src/github.com/agl/ed25519 \
 		dchest:siphash:v1.2.1:siphash/src/github.com/dchest/siphash \
 		dsnet:compress:v0.0.1:dsnet_compress/src/github.com/dsnet/compress \
-		golang:crypto:a5d413f:golang_crypto/src/golang.org/x/crypto \
-		golang:net:eb5bcb5:golang_net/src/golang.org/x/net \
+		golang:crypto:cc06ce4:golang_crypto/src/golang.org/x/crypto \
+		golang:net:3b0461e:golang_net/src/golang.org/x/net \
 		golang:text:v0.3.0:golang_text/src/golang.org/x/text \
-		golang:sys:b44545b:golang_sys/src/golang.org/x/sys \
+		golang:sys:d432491:golang_sys/src/golang.org/x/sys \
 		Yawning:bsaes:26d1add:Yawning_bsaes/src/git.schwanenlied.me/yawning/bsaes.git
 
 USE_GITLAB=	nodefault
-GL_TUPLE=	yawning:utls:6fb25fe80308b52db645922e9b919fbbe519656b:yawning_utls/src/gitlab.com/yawning/utls.git
+GL_TUPLE=	yawning:utls:dd99191913e03b2cd62655cd260d79187fbf8a9f:yawning_utls/src/gitlab.com/yawning/utls.git
 
 SUB_FILES=	pkg-message
 
