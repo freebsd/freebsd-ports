@@ -3,6 +3,7 @@ bin/pot
 @sample %%ETCDIR%%/pot.conf.sample
 %%ETCDIR%%/pot.default.conf
 %%DATADIR%%/add-dep.sh
+%%DATADIR%%/add-file.sh
 %%DATADIR%%/add-fscomp.sh
 %%DATADIR%%/clone-fscomp.sh
 %%DATADIR%%/clone.sh
@@ -14,8 +15,10 @@ bin/pot
 %%DATADIR%%/create.sh
 %%DATADIR%%/de-init.sh
 %%DATADIR%%/destroy.sh
+%%DATADIR%%/execute.sh
 %%DATADIR%%/export.sh
 %%DATADIR%%/export-ports.sh
+%%DATADIR%%/get-attribute.sh
 %%DATADIR%%/help.sh
 %%DATADIR%%/import.sh
 %%DATADIR%%/info.sh
@@ -26,6 +29,7 @@ bin/pot
 %%DATADIR%%/purge-snapshots.sh
 %%DATADIR%%/rename.sh
 %%DATADIR%%/revert.sh
+%%DATADIR%%/set-attribute.sh
 %%DATADIR%%/set-cmd.sh
 %%DATADIR%%/set-rss.sh
 %%DATADIR%%/show.sh

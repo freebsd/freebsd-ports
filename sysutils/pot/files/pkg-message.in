@@ -3,3 +3,10 @@ Now, before to run 'pot init', it would be wise to edit the configuration file
 Do not edit pot.default.conf, but pot.conf instead.
 Configuration files are stored in %%ETCDIR%%/
 
+To upgrade from prevoius versions of pot (<0.6.0) to 0.6.0+ the following steps are suggested:
+* stop all your pots
+* re-run `pot init`
+* if needed, restart pf
+
+The variable `pot_list` in the rc.conf file is deprecated.
+Use `pot set-attr` to enable the attribute start-at-boot to your pot
