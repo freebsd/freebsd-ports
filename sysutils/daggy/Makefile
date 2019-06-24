@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libbotan-2.so:security/botan2 \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		gl pkgconfig qmake qt:5
+USES=		compiler:c++17-lang gl pkgconfig qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	synacker
 USE_QT=		core gui network buildtools_build
