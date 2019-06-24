@@ -4,6 +4,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	21.3.8.4
+PORTREVISION=	1
 # NB when bumping OTP versions also bump PORTREVISION in databases/couchdb2
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime21
@@ -57,8 +58,6 @@ OPTIONS_EXCLUDE_aarch64=	DTRACE
 OPTIONS_EXCLUDE_armv6=		DTRACE
 OPTIONS_EXCLUDE_armv7=		DTRACE
 OPTIONS_EXCLUDE_i386=		DTRACE
-
-OPENSSL_VARS=	BROKEN_SSL=openssl111
 
 # If you run Erlang and get a message resembling "WARNING: number of
 # probes fixed does not match the number of defined probes (54 != 132,
@@ -141,9 +140,16 @@ post-install-WX-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/observer-*
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/wx-*
 
+post-install-DTRACE-on:
+	${MKDIR} ${STAGEDIR}${DATADIR}/dtrace
+	${INSTALL_DATA} ${WRKSRC}/erts/emulator/beam/*.d \
+		${WRKSRC}/lib/runtime_tools/c_src/*.d \
+		${WRKSRC}/lib/runtime_tools/examples/*.d \
+		${STAGEDIR}${DATADIR}/dtrace
+
 post-stage:
 	${FIND} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/* -type d -empty -delete
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type f -o -type l \
+	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* ${DATADIR_REL}/* -type f -o -type l \
 		| ${SORT} >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
