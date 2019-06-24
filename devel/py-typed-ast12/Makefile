@@ -15,6 +15,9 @@ LICENSE=	APACHE20 PSFL
 LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use devel/py-typed-ast instead
+EXPIRATION_DATE=2019-06-30
+
 USES=		python:3.3+
 USE_PYTHON=	autoplist distutils
 
