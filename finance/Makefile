@@ -92,6 +92,7 @@
     SUBDIR += p5-PayflowPro
     SUBDIR += pear_Payment_DTA
     SUBDIR += prestashop
+    SUBDIR += py-backtrader
     SUBDIR += py-bitcoin
     SUBDIR += py-pycoin
     SUBDIR += py-python-bitcoinlib
