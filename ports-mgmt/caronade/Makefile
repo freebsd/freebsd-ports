@@ -2,8 +2,7 @@
 
 PORTNAME=	caronade
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.1.0
-PORTREVISION=	1
+DISTVERSION=	0.2.0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	https://code.bluelife.at/decke/caronade/archive/ \
 		LOCAL/decke/caronade/
@@ -16,7 +15,7 @@ COMMENT=	Small and light tool to help with FreeBSD Ports CI
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
 USE_RC_SUBR=	caronade
 
 USE_GITHUB=	nodefault
@@ -24,7 +23,6 @@ GH_TUPLE=	NYTimes:gziphandler:v1.1.1:gziphandler/vendor/github.com/NYTimes/gziph
 		go-yaml:yaml:v2.2.2:yaml/vendor/gopkg.in/yaml.v2
 
 GO_PKGNAME=	code.bluelife.at/decke/caronade
-MAKE_ENV+=	GOFLAGS=-mod=vendor
 
 post-install:
 		${MKDIR} ${STAGEDIR}${ETCDIR}
