@@ -122,6 +122,7 @@ include/mailutils/sys/auth.h
 include/mailutils/sys/body.h
 include/mailutils/sys/dbm.h
 include/mailutils/sys/debcat.h
+include/mailutils/sys/dotmail.h
 include/mailutils/sys/envelope.h
 include/mailutils/sys/file_stream.h
 include/mailutils/sys/filter.h
@@ -187,6 +188,10 @@ lib/libmu_dbm.a
 lib/libmu_dbm.so
 lib/libmu_dbm.so.%%LIBSUFX%%
 lib/libmu_dbm.so.%%LIBVERSION%%
+lib/libmu_dotmail.a
+lib/libmu_dotmail.so
+lib/libmu_dotmail.so.%%LIBSUFX%%
+lib/libmu_dotmail.so.%%LIBVERSION%%
 lib/libmu_imap.a
 lib/libmu_imap.so
 lib/libmu_imap.so.%%LIBSUFX%%
