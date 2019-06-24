@@ -19,7 +19,7 @@ RUN_DEPENDS=	openvpn:security/openvpn
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_ARCH=	yes
-PORTSCOUT=	ignore
+PORTSCOUT=	ignore:${PORTVERSION}${DISTVERSIONSUFFIX}
 
 USES=		gettext gmake pkgconfig
 USE_GNOME=	gtksharp20 intltool
