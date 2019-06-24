@@ -18,9 +18,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports>0:devel/py-backports@${PY_FLAVOR}
 
-NO_ARCH=	yes
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 POST_PLIST=	trim-backports-namespace
 
