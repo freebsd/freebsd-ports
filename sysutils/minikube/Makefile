@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minikube
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -37,15 +37,16 @@ GH_TUPLE=	\
 		go-inf:inf:v0.9.0:go_inf_inf/vendor/gopkg.in/inf.v0 \
 		go-yaml:yaml:v2.2.1:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:c0656edd0d9e:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang-collections:collections:604e922904d3:golang_collections_collections/vendor/github.com/golang-collections/collections \
 		golang:appengine:v1.4.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:c2843e01d9a2:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:e1dfcc566284:golang_crypto/vendor/golang.org/x/crypto \
 		golang:glog:44145f04b68c:golang_glog/vendor/github.com/golang/glog \
 		golang:groupcache:02826c3e7903:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:d8887717615a:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:5dab4167f31c:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.2.0:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:e225da77a7e6:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:a9d3bda3a223:golang_sys/vendor/golang.org/x/sys \
+		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:ecd444e8653b:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:f51c12702a4d:golang_time/vendor/golang.org/x/time \
 		google:btree:v1.0.0:google_btree/vendor/github.com/google/btree \
@@ -57,7 +58,9 @@ GH_TUPLE=	\
 		googleapis:gnostic:0c5108395e2d:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
 		gregjones:httpcache:9cad4c3443a7:gregjones_httpcache/vendor/github.com/gregjones/httpcache \
 		hashicorp:errwrap:7554cd9344ce:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
+		hashicorp:go-cleanhttp:v0.5.0:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
 		hashicorp:go-multierror:8c5f0ad93604:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
+		hashicorp:go-retryablehttp:v0.5.4:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
 		hashicorp:go-version:v1.1.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
 		hashicorp:golang-lru:a0d98a5f2880:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		hashicorp:hcl:d8c773c4cba1:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
@@ -116,7 +119,7 @@ GH_TUPLE=	\
 GO_PKGNAME=	k8s.io/${PORTNAME}
 GO_TARGET=	${GO_PKGNAME}/cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-X k8s.io/minikube/pkg/version.version=v${PORTVERSION} \
-		-X k8s.io/minikube/pkg/version.isoVersion=v1.1.1 \
+		-X k8s.io/minikube/pkg/version.isoVersion=v1.2.0 \
 		-X k8s.io/minikube/pkg/version.isoPath=minikube/iso"
 
 PLIST_FILES=	bin/${PORTNAME}
