@@ -1,4 +1,4 @@
---- electron/atom/browser/api/atom_api_web_contents.cc.orig	2019-05-23 00:41:30 UTC
+--- electron/atom/browser/api/atom_api_web_contents.cc.orig	2019-06-19 18:06:58 UTC
 +++ electron/atom/browser/api/atom_api_web_contents.cc
 @@ -95,7 +95,7 @@
  #include "ui/aura/window.h"
@@ -9,7 +9,7 @@
  #include "content/public/common/renderer_preferences.h"
  #include "ui/gfx/font_render_params.h"
  #endif
-@@ -411,7 +411,7 @@ void WebContents::InitWithSessionAndOptions(v8::Isolat
+@@ -413,7 +413,7 @@ void WebContents::InitWithSessionAndOptions(v8::Isolat
    auto* prefs = web_contents->GetMutableRendererPrefs();
    prefs->accept_languages = g_browser_process->GetApplicationLocale();
  
