@@ -4,7 +4,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	21.3.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 # NB when bumping OTP versions also bump PORTREVISION in databases/couchdb2
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime21
@@ -24,6 +24,7 @@ GH_PROJECT=	otp:otp corba:corba
 GH_TAGNAME=	4.5.2:corba
 USE_PERL5=	build
 
+DATADIR=        ${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKSRC_otp}
 
 GNU_CONFIGURE=	yes
