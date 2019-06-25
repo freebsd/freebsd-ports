@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	rofi
-DISTVERSION=	1.5.2
+DISTVERSION=	1.5.3
 CATEGORIES=	x11
-MASTER_SITES=	https://github.com/DaveDavenport/rofi/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/davatorium/rofi/releases/download/${PORTVERSION}/
 
 MAINTAINER=	nomoo@nomoo.ru
 COMMENT=	Window switcher, run dialog and dmenu replacement
