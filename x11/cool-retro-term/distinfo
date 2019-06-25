@@ -1,4 +1,5 @@
-SHA256 (Swordfish90-cool-retro-term-v1.0.0_GH0.tar.gz) = db799084680545b6961e1b3d1bb7ff0cb8105e82279fe734c2c07c32525350d9
-SIZE (Swordfish90-cool-retro-term-v1.0.0_GH0.tar.gz) = 7809236
-SHA256 (Swordfish90-qmltermwidget-v0.1.0_GH0.tar.gz) = 127f529a96cf1c96ff201c79458cff67f497b1820b04b0b30cb473423ccb30f9
-SIZE (Swordfish90-qmltermwidget-v0.1.0_GH0.tar.gz) = 196864
+TIMESTAMP = 1547928537
+SHA256 (Swordfish90-cool-retro-term-1.1.1_GH0.tar.gz) = 1252bafa33c8befbb86528ed75db98677cdc1298704db728e326ffd258d5ed13
+SIZE (Swordfish90-cool-retro-term-1.1.1_GH0.tar.gz) = 1975853
+SHA256 (Swordfish90-qmltermwidget-0.2.0_GH0.tar.gz) = 23e19eedb59d6fe3e37ecc06872f54befd94384946926e009c42c4b39914cfe2
+SIZE (Swordfish90-qmltermwidget-0.2.0_GH0.tar.gz) = 219516
