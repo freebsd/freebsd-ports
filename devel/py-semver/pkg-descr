@@ -1,0 +1,4 @@
+Semver is a Python module for semantic versioning. It simplifies comparing
+versions.
+
+WWW: https://github.com/k-bx/python-semver
