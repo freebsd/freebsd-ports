@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cool-retro-term
-PORTVERSION=	1.0.0
-PORTREVISION=	7
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.1.1
 CATEGORIES=	x11
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -15,11 +13,13 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	Swordfish90
 GH_PROJECT=	qmltermwidget:qtw
-GH_TAGNAME=	v0.1.0:qtw
+GH_TAGNAME=	0.2.0:qtw
 
-USES=		gmake desktop-file-utils qmake qt:5
-USE_QT=		qmake_build buildtools_build core declarative gui widgets \
-		graphicaleffects_run quickcontrols_run
+USES=		gmake gl qmake qt:5
+USE_GL=		gl
+USE_QT=		qmake_build buildtools_build core declarative gui \
+		network sql widgets graphicaleffects_run \
+		quickcontrols_run sql-sqlite3_run
 
 .include <bsd.port.pre.mk>
 
@@ -33,7 +33,7 @@ CPP=		clang-cpp
 
 post-extract:
 	@${RMDIR} ${WRKSRC}/qmltermwidget
-	@${LN} -s ../qmltermwidget-0.1.0 ${WRKSRC}/qmltermwidget
+	@${LN} -s ../qmltermwidget-0.2.0 ${WRKSRC}/qmltermwidget
 
 post-patch:
 	@${REINPLACE_CMD} -e '/DEFINES +=/s,^macx:,,' \
@@ -42,5 +42,9 @@ post-patch:
 		${WRKSRC}/app/app.pro ${WRKSRC}/cool-retro-term.pro
 	@${REINPLACE_CMD} -e 's,\.\./icons,/icons,' \
 		${WRKSRC}/app/main.cpp
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/packaging/debian/cool-retro-term.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
