@@ -3,6 +3,7 @@
 
 PORTNAME=	afl
 PORTVERSION=	2.52c
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	++
 
@@ -12,10 +13,10 @@ COMMENT=	Fast instrumented fuzzer
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-# In theory afl supports other architectures with the LLVM plugin.
-# It has to be compiled with AFL_NO_X86=1 in that case.
-ONLY_FOR_ARCHS=	amd64 i386
-ONLY_FOR_ARCHS_REASON=	Uses binary instrumentation
+# In theory afl supports non-x86 architectures with the LLVM plugin.
+# This has only been run tested on aarch64 so far.
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS_REASON=	uses x86-only instrumentation or requires complete LLVM support
 
 USES=		gmake tar:tgz
 USE_GITHUB=	yes
@@ -29,6 +30,8 @@ CONFLICTS_INSTALL=	afl
 
 OPTIONS_DEFINE=		DEBUG DOCS LLVM
 OPTIONS_DEFAULT=	LLVM
+# On non-x86 architectures LLVM is mandatory
+OPTIONS_SLAVE=		${ARCH:Namd64:Ni386:S/${ARCH}/LLVM/}
 OPTIONS_SUB=		yes
 
 LLVM_DESC=	LLVM-based instrumentation
@@ -42,6 +45,13 @@ LLVM_VARS=		CC=clang${LLVM_DEFAULT} \
 			CXX=clang++${LLVM_DEFAULT}
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+PLIST_SUB+=	X86=""
+.else
+MAKE_ARGS+=	AFL_NO_X86=1
+PLIST_SUB+=	X86="@comment "
+.endif
 
 .if ${ARCH} == "i386"
 # Clang i386 emits .cfi_sections which base as(1) doesn't understand
@@ -83,7 +93,8 @@ post-install:
 post-install-LLVM-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/afl/*.so \
 		${STAGEDIR}${PREFIX}/bin/afl-clang-fast
-	${INSTALL_DATA} ${WRKSRC}/llvm_mode/README.llvm \
+	${INSTALL_MAN} ${WRKSRC}/llvm_mode/README.laf-intel \
+		${WRKSRC}/llvm_mode/README.llvm \
 		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

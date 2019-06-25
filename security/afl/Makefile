@@ -24,6 +24,8 @@ USES=		gmake tar:tgz
 ALL_TARGET=	all libdislocator
 TEST_TARGET=	test_build
 
+CONFLICTS_INSTALL=	afl++
+
 OPTIONS_DEFINE=		DEBUG DOCS LLVM
 OPTIONS_DEFAULT=	LLVM
 OPTIONS_SUB=		yes
