@@ -1763,11 +1763,11 @@ lib/ocaml/sys.cmx
 lib/ocaml/sys.ml
 lib/ocaml/sys.mli
 lib/ocaml/sys.p.cmt
-lib/ocaml/threads/condition.cmti
-lib/ocaml/threads/event.cmti
-lib/ocaml/threads/mutex.cmti
-lib/ocaml/threads/thread.cmti
-lib/ocaml/threads/threadUnix.cmti
+%%THREADS%%lib/ocaml/threads/condition.cmti
+%%THREADS%%lib/ocaml/threads/event.cmti
+%%THREADS%%lib/ocaml/threads/mutex.cmti
+%%THREADS%%lib/ocaml/threads/thread.cmti
+%%THREADS%%lib/ocaml/threads/threadUnix.cmti
 lib/ocaml/topdirs.cmi
 lib/ocaml/topdirs.cmt
 lib/ocaml/topdirs.cmti
