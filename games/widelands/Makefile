@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	widelands
-DISTVERSION=	build19
-PORTREVISION=	18
+DISTVERSION=	build20
 CATEGORIES=	games
 MASTER_SITES=	https://launchpad.net/widelands/${DISTVERSION}/${DISTVERSION}/+download/ \
 		http://mirror.amdmi3.ru/distfiles/
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Realtime strategy game inspired by Settlers II
@@ -27,7 +25,7 @@ CMAKE_ARGS=	-DWL_INSTALL_BASEDIR="${PREFIX}" \
 		-DWL_VERSION="${DISTVERSION}" \
 		-DWL_OPTIMIZE_FLAGS=""
 USE_GL=		gl glew
-USE_SDL=	sdl2 mixer2 image2 net2 ttf2
+USE_SDL=	sdl2 mixer2 image2 ttf2
 
 PORTDATA=	*
 PORTDOCS=	*

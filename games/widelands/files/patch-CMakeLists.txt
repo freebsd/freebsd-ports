@@ -1,26 +1,23 @@
---- CMakeLists.txt.orig	2016-11-10 07:28:01 UTC
+--- CMakeLists.txt.orig	2019-05-02 05:23:39 UTC
 +++ CMakeLists.txt
-@@ -93,7 +93,7 @@ endif (NOT CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE STREQU
- if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-   set(WL_DEBUG_FLAGS "-g -DDEBUG")
- elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
--  set(WL_OPTIMIZE_FLAGS "-O3")
-+  set(WL_OPTIMIZE_FLAGS "-O3" CACHE STRING "")
+@@ -164,7 +164,6 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
    set(WL_DEBUG_FLAGS "-DNDEBUG -DNOPARACHUTE")
- elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
-   set(WL_OPTIMIZE_FLAGS "-O3")
-@@ -179,8 +179,8 @@ endif()
- # Turn some warnings into errors.
- wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=format-security")
- wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=return-type")
--wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=shadow")
--wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=uninitialized")
-+wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Wshadow")
-+wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Wuninitialized")
+   option(OPTION_ASAN "Build with AddressSanitizer" ON)
+ else()
+-  message(FATAL_ERROR "Unknown CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
+ endif()
  
- IF (WIN32)
-   add_definitions(-DMINGW_HAS_SECURE_API)
-@@ -225,7 +225,7 @@ if (NOT DEFINED WL_VERSION)
+ wl_add_flag(WL_GENERIC_CXX_FLAGS "-std=c++11")
+@@ -181,7 +180,7 @@ endif(OPTION_ASAN)
+ 
+ # This is set to avoid linker errors when using GLVND-libs on Linux
+ if("${OpenGL_GL_PREFERENCE}" STREQUAL "GLVND")
+-   set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lGL")
++   set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenGL_GL_LIBRARY}")
+    add_compile_definitions(WL_USE_GLVND)
+    message(STATUS "Adding linker flags for GLVND.")
+ endif()
+@@ -293,7 +292,7 @@ if (NOT DEFINED WL_VERSION)
  else (NOT DEFINED WL_VERSION)
    add_custom_target (
      InputRevision ALL
@@ -29,7 +26,7 @@
    )
  endif (NOT DEFINED WL_VERSION)
  
-@@ -244,7 +244,7 @@ add_custom_target(_run_all_tests ALL
+@@ -312,7 +311,7 @@ add_custom_target(_run_all_tests ALL
  
  install (
    FILES ${CMAKE_CURRENT_BINARY_DIR}/VERSION
@@ -38,8 +35,11 @@
    CONFIGURATIONS Debug;Release
    COMPONENT CoreVersionFile
  )
-@@ -294,7 +294,7 @@ install(
-     COPYING
+@@ -361,10 +360,9 @@ install(
+ 
+ install(
+   FILES
+-    COPYING
      CREDITS
      ChangeLog
 -  DESTINATION ${WL_INSTALL_BASEDIR}
@@ -47,7 +47,7 @@
    CONFIGURATIONS Debug;Release
    COMPONENT CoreLicenseFiles
  )
-@@ -302,7 +302,7 @@ install(
+@@ -372,7 +370,7 @@ install(
  install(
    DIRECTORY
      doc
