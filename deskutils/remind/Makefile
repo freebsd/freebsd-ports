@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	remind
-PORTVERSION=	3.1.15
-PORTREVISION=	1
+PORTVERSION=	3.1.16
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.roaringpenguin.com/files/download/ \
-		http://freebsd.unixfreunde.de/sources/
-DISTNAME=	${PORTNAME}-03.01.15
+MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/
+DISTNAME=	${PORTNAME}-03.01.16
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Sophisticated calendar and alarm program
