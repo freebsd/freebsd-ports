@@ -6,4 +6,4 @@ ENet is NOT intended to be a general purpose high level networking library that
 handles authentication, lobbying, server discovery, compression, encryption and
 other high level, often application level or dependent tasks.
 
-WWW: http://enet.bespin.org
+WWW: http://enet.bespin.org/
