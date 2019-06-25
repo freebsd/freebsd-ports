@@ -24,6 +24,7 @@ man/man5/rofi-theme.5.gz
 %%DATADIR%%/themes/blue.rasi
 %%DATADIR%%/themes/c64.rasi
 %%DATADIR%%/themes/dmenu.rasi
+%%DATADIR%%/themes/fancy.rasi
 %%DATADIR%%/themes/glue_pro_blue.rasi
 %%DATADIR%%/themes/gruvbox-common.rasi
 %%DATADIR%%/themes/gruvbox-dark-hard.rasi
