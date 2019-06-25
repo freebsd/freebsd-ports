@@ -1435,6 +1435,7 @@ share/locale/fi/LC_MESSAGES/klipper.mo
 share/locale/fi/LC_MESSAGES/krunner.mo
 share/locale/fi/LC_MESSAGES/ksmserver.mo
 share/locale/fi/LC_MESSAGES/libkworkspace.mo
+share/locale/fi/LC_MESSAGES/libnotificationmanager.mo
 share/locale/fi/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -1636,6 +1637,7 @@ share/locale/gl/LC_MESSAGES/klipper.mo
 share/locale/gl/LC_MESSAGES/krunner.mo
 share/locale/gl/LC_MESSAGES/ksmserver.mo
 share/locale/gl/LC_MESSAGES/libkworkspace.mo
+share/locale/gl/LC_MESSAGES/libnotificationmanager.mo
 share/locale/gl/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
@@ -3084,6 +3086,7 @@ share/locale/pl/LC_MESSAGES/klipper.mo
 share/locale/pl/LC_MESSAGES/krunner.mo
 share/locale/pl/LC_MESSAGES/ksmserver.mo
 share/locale/pl/LC_MESSAGES/libkworkspace.mo
+share/locale/pl/LC_MESSAGES/libnotificationmanager.mo
 share/locale/pl/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
