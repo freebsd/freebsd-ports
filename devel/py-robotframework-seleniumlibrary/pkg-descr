@@ -1,0 +1,7 @@
+SeleniumLibrary is a web testing library for Robot Framework that utilizes
+the Selenium tool internally.
+
+SeleniumLibrary is based on the old SeleniumLibrary that was forked
+to Selenium2Library and then later renamed back to SeleniumLibrary.
+
+WWW: https://github.com/robotframework/SeleniumLibrary

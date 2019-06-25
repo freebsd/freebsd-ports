@@ -4921,7 +4921,7 @@
     SUBDIR += py-robotframework-databaselibrary
     SUBDIR += py-robotframework-pabot
     SUBDIR += py-robotframework-ride
-    SUBDIR += py-robotframework-selenium2library
+    SUBDIR += py-robotframework-seleniumlibrary
     SUBDIR += py-robotremoteserver
     SUBDIR += py-rope
     SUBDIR += py-rose

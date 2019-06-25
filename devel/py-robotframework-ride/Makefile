@@ -3,6 +3,7 @@
 
 PORTNAME=	robotframework-ride
 PORTVERSION=	1.5.2.1
+PORTREVISION=	1
 CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	Test data editor for Robot Framework
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}robotframework>=2.7.5:devel/py-robotframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}robotframework-selenium2library>=1.1.0:devel/py-robotframework-selenium2library@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}robotframework-seleniumlibrary>=1.1.0:devel/py-robotframework-seleniumlibrary@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
 
 NO_ARCH=	yes

@@ -1,7 +1,0 @@
-Selenium2Library is a web testing library for Robot Framework that leverages
-the Selenium 2 (WebDriver) libraries from the Selenium project.
-
-It is modeled after (and forked from) the SeleniumLibrary library, but
-re-implemented to use Selenium 2 and WebDriver technologies.
-
-WWW: https://github.com/rtomac/robotframework-selenium2library/
