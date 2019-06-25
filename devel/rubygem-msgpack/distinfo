@@ -1,3 +1,3 @@
-TIMESTAMP = 1556375568
-SHA256 (rubygem/msgpack-1.2.10.gem) = 9099f8eb23b29232e130193b08903f3612ba12c1f17934791364b651698468f0
-SIZE (rubygem/msgpack-1.2.10.gem) = 79872
+TIMESTAMP = 1561479300
+SHA256 (rubygem/msgpack-1.3.0.gem) = f61b1471f41114c5ea4d6e964405a54e2a07bcd3b9af66b6cf85c76e39a40685
+SIZE (rubygem/msgpack-1.3.0.gem) = 82432
