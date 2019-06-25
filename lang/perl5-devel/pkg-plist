@@ -957,6 +957,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5300delta.1.gz
 %%MAN1%%/perl5310delta.1.gz
 %%MAN1%%/perl5311delta.1.gz
+%%MAN1%%/perl5312delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -981,7 +982,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perlbs2000.1.gz
 %%MAN1%%/perlbug.1.gz
 %%MAN1%%/perlcall.1.gz
-%%MAN1%%/perlce.1.gz
 %%MAN1%%/perlcheat.1.gz
 %%MAN1%%/perlclib.1.gz
 %%MAN1%%/perlcn.1.gz
@@ -1742,6 +1742,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5300delta.pod
 %%PRIV_LIB%%/pod/perl5310delta.pod
 %%PRIV_LIB%%/pod/perl5311delta.pod
+%%PRIV_LIB%%/pod/perl5312delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -1765,7 +1766,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perlbot.pod
 %%PRIV_LIB%%/pod/perlbs2000.pod
 %%PRIV_LIB%%/pod/perlcall.pod
-%%PRIV_LIB%%/pod/perlce.pod
 %%PRIV_LIB%%/pod/perlcheat.pod
 %%PRIV_LIB%%/pod/perlclib.pod
 %%PRIV_LIB%%/pod/perlcn.pod
