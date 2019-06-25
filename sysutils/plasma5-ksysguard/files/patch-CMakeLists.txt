@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2019-06-18 09:56:54 UTC
++++ CMakeLists.txt
+@@ -63,6 +63,11 @@ add_subdirectory( doc )
+ add_subdirectory( pics )
+ add_subdirectory( example )
+ 
++find_package(Inotify)
++set_package_properties(Inotify PROPERTIES
++                       TYPE OPTIONAL
++                       PURPOSE "Filesystem alteration notifications using inotify")
++
+ add_subdirectory( ksysguardd )
+ 
+ feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

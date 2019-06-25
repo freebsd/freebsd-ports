@@ -1,0 +1,19 @@
+--- ksysguardd/CMakeLists.txt.orig	2019-06-18 09:56:21 UTC
++++ ksysguardd/CMakeLists.txt
+@@ -9,6 +9,7 @@ add_definitions(-DOSTYPE_${CMAKE_SYSTEM_NAME})
+ 
+ set(HAVE_LMSENSORS ${SENSORS_FOUND})
+ 
++include_directories(${Inotify_INCLUDE_DIRS})
+ check_include_files(sys/inotify.h SYS_INOTIFY_H_FOUND)
+ set(HAVE_SYS_INOTIFY_H ${SYS_INOTIFY_H_FOUND})
+ 
+@@ -46,7 +47,7 @@ endif()
+ 
+     add_executable(ksysguardd ${ksysguardd_SRCS})
+     set_property(TARGET ksysguardd PROPERTY C_STANDARD 11)
+-    target_link_libraries(ksysguardd libksysguardd)
++    target_link_libraries(ksysguardd libksysguardd ${Inotify_LIBRARIES})
+ 
+ if( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" )
+   message(STATUS "Adding kvm library on NetBSD")
