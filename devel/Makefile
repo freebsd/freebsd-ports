@@ -4647,6 +4647,7 @@
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
     SUBDIR += py-openapi-codec
+    SUBDIR += py-openapi-spec-validator
     SUBDIR += py-opendht
     SUBDIR += py-opengrok-tools
     SUBDIR += py-openstacksdk
