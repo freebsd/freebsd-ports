@@ -1,14 +1,13 @@
 bin/widelands
 bin/wl_map_info
 bin/wl_map_object_info
-bin/wl_render_richtext
 @dir %%DATADIR%%/maps/Archipelago_Sea.wmf/scripting
 @dir %%DATADIR%%/maps/Atoll.wmf/scripting
 @dir %%DATADIR%%/maps/Calvisson.wmf/scripting
 @dir %%DATADIR%%/maps/Checkmate.wmf/scripting
 @dir %%DATADIR%%/maps/Comet_Island_v2.wmf/scripting
 @dir %%DATADIR%%/maps/Crater.wmf/scripting
-@dir %%DATADIR%%/maps/Crossing_the_Horizon.wmf/scripting
+@dir %%DATADIR%%/maps/Crossing_the_Horizon_v2.wmf/scripting
 @dir %%DATADIR%%/maps/Desert_Tournament.wmf/scripting
 @dir %%DATADIR%%/maps/Dolomites_v2.wmf/scripting
 @dir %%DATADIR%%/maps/Elven_Forests.wmf/scripting
@@ -49,3 +48,4 @@ bin/wl_render_richtext
 @dir %%DATADIR%%/maps/Volcanic_Winter.wmf/scripting
 @dir %%DATADIR%%/maps/Wideworld.wmf/scripting
 @dir %%DATADIR%%/maps/Wisent_Valley.wmf/scripting
+@dir %%DATADIR%%/tribes/buildings/markets/barbarians
