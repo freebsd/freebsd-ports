@@ -25,10 +25,4 @@ post-patch:
 	@${GREP} -lr 'msgpuck/msgpuck.h' ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's|msgpuck/msgpuck.h|msgpuck.h|'
 	@${REINPLACE_CMD} -e 's|libmsgpuck.a|libmsgpuck.so|' ${WRKSRC}/cmake/FindMsgPuck.cmake
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-tnt_CMakeLists.txt
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
