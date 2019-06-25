@@ -156,7 +156,6 @@ include/isc/ht.h
 include/isc/httpd.h
 include/isc/interfaceiter.h
 include/isc/iterated_hash.h
-include/isc/json.h
 include/isc/lang.h
 include/isc/lex.h
 include/isc/lfsr.h
@@ -218,7 +217,6 @@ include/isc/tm.h
 include/isc/types.h
 include/isc/util.h
 include/isc/version.h
-include/isc/xml.h
 include/isccc/alist.h
 include/isccc/base64.h
 include/isccc/cc.h
