@@ -2,6 +2,7 @@
 
 PORTNAME=	kde-telepathy
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -22,7 +23,7 @@ OPTIONS_DEFINE=		CALL_UI PLASMA SEND_FILE
 OPTIONS_DEFAULT=	PLASMA SEND_FILE
 
 CALL_UI_DESC=		Voice/Video Call UI for Telepathy
-CALL_UI_RUN_DEPENDS=	ktp-dialout-ui>=${KDE_APPLICATIONS_VERSION}:net-im/ktp-call-ui
+CALL_UI_RUN_DEPENDS=	ktp-call-ui>=${KDE_APPLICATIONS_VERSION}:net-im/ktp-call-ui
 
 PLASMA_DESC=		Applets for KDE Plasma Desktop integration
 PLASMA_RUN_DEPENDS=	ktp-desktop-applets>=${KDE_APPLICATIONS_VERSION}:net-im/ktp-desktop-applets
