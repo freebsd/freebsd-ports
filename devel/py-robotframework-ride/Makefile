@@ -13,6 +13,8 @@ COMMENT=	Test data editor for Robot Framework
 
 LICENSE=	APACHE20
 
+BROKEN=		Not compatible with wxWidgets 3.0 or later
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}robotframework>=2.7.5:devel/py-robotframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}robotframework-seleniumlibrary>=1.1.0:devel/py-robotframework-seleniumlibrary@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
