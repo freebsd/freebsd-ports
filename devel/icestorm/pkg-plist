@@ -22,9 +22,11 @@ share/icebox/chipdb-384.txt
 share/icebox/chipdb-5k.txt
 share/icebox/chipdb-8k.txt
 share/icebox/chipdb-lm4k.txt
+share/icebox/chipdb-u4k.txt
 share/icebox/timings_hx1k.txt
 share/icebox/timings_hx8k.txt
 share/icebox/timings_lp1k.txt
 share/icebox/timings_lp384.txt
 share/icebox/timings_lp8k.txt
+share/icebox/timings_u4k.txt
 share/icebox/timings_up5k.txt
