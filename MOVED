@@ -12809,3 +12809,4 @@ www/rubygem-lograge-rails50|www/rubygem-lograge-rails5|2019-06-21|Obsolete by gi
 devel/rubygem-batch-loader12|devel/rubygem-batch-loader|2019-06-21|Obsolete by gitlab-ce upgrade, use devel/rubygem-batch-loader instead
 security/easy-rsa2|security/easy-rsa|2019-06-23|Has expired: Use easy-rsa 3 instead.
 devel/py-robotframework-selenium2library|devel/py-robotframework-seleniumlibrary|2019-06-25|Renamed to match upstream
+net-p2p/zetacoin-nox11|net-p2p/zetacoin|2019-06-26|Slave port folded back into now text-only master port.
