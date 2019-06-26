@@ -182,6 +182,7 @@ share/gauche-0.97/%%VERSION%%/lib/gauche/computil.scm
 share/gauche-0.97/%%VERSION%%/lib/gauche/condutil.scm
 share/gauche-0.97/%%VERSION%%/lib/gauche/config.scm
 share/gauche-0.97/%%VERSION%%/lib/gauche/configure.scm
+share/gauche-0.97/%%VERSION%%/lib/gauche/connection.scm
 share/gauche-0.97/%%VERSION%%/lib/gauche/defvalues.scm
 share/gauche-0.97/%%VERSION%%/lib/gauche/dictionary.scm
 share/gauche-0.97/%%VERSION%%/lib/gauche/experimental/app.scm
@@ -266,12 +267,7 @@ share/gauche-0.97/%%VERSION%%/lib/math/prime.scm
 share/gauche-0.97/%%VERSION%%/lib/os/windows.scm
 share/gauche-0.97/%%VERSION%%/lib/os/windows/console/codepage.scm
 share/gauche-0.97/%%VERSION%%/lib/parser/peg.scm
-share/gauche-0.97/%%VERSION%%/lib/gauche/connection.scm
 share/gauche-0.97/%%VERSION%%/lib/parser/peg/deprecated.scm
-share/gauche-0.97/%%VERSION%%/lib/rfc/http/tunnel.scm
-share/gauche-0.97/%%VERSION%%/lib/srfi/154.scm
-share/gauche-0.97/%%VERSION%%/lib/text/edn.scm
-share/gauche-0.97/%%VERSION%%/lib/text/mexpr.scm
 share/gauche-0.97/%%VERSION%%/lib/precomp
 share/gauche-0.97/%%VERSION%%/lib/r7rs.scm
 share/gauche-0.97/%%VERSION%%/lib/rfc/822.scm
@@ -280,6 +276,7 @@ share/gauche-0.97/%%VERSION%%/lib/rfc/cookie.scm
 share/gauche-0.97/%%VERSION%%/lib/rfc/ftp.scm
 share/gauche-0.97/%%VERSION%%/lib/rfc/hmac.scm
 share/gauche-0.97/%%VERSION%%/lib/rfc/http.scm
+share/gauche-0.97/%%VERSION%%/lib/rfc/http/tunnel.scm
 share/gauche-0.97/%%VERSION%%/lib/rfc/icmp.scm
 share/gauche-0.97/%%VERSION%%/lib/rfc/ip.scm
 share/gauche-0.97/%%VERSION%%/lib/rfc/json.scm
@@ -410,6 +407,7 @@ share/gauche-0.97/%%VERSION%%/lib/srfi/146.scm
 share/gauche-0.97/%%VERSION%%/lib/srfi/149.scm
 share/gauche-0.97/%%VERSION%%/lib/srfi/151.scm
 share/gauche-0.97/%%VERSION%%/lib/srfi/152.scm
+share/gauche-0.97/%%VERSION%%/lib/srfi/154.scm
 share/gauche-0.97/%%VERSION%%/lib/srfi/158.scm
 share/gauche-0.97/%%VERSION%%/lib/srfi/16.scm
 share/gauche-0.97/%%VERSION%%/lib/srfi/17.scm
@@ -468,11 +466,13 @@ share/gauche-0.97/%%VERSION%%/lib/text/console/generic.scm
 share/gauche-0.97/%%VERSION%%/lib/text/console/windows.scm
 share/gauche-0.97/%%VERSION%%/lib/text/csv.scm
 share/gauche-0.97/%%VERSION%%/lib/text/diff.scm
+share/gauche-0.97/%%VERSION%%/lib/text/edn.scm
 share/gauche-0.97/%%VERSION%%/lib/text/gap-buffer.scm
 share/gauche-0.97/%%VERSION%%/lib/text/gettext.scm
 share/gauche-0.97/%%VERSION%%/lib/text/html-lite.scm
 share/gauche-0.97/%%VERSION%%/lib/text/info.scm
 share/gauche-0.97/%%VERSION%%/lib/text/line-edit.scm
+share/gauche-0.97/%%VERSION%%/lib/text/mexpr.scm
 share/gauche-0.97/%%VERSION%%/lib/text/parse.scm
 share/gauche-0.97/%%VERSION%%/lib/text/progress.scm
 share/gauche-0.97/%%VERSION%%/lib/text/sql.scm
