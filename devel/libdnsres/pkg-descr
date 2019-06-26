@@ -7,4 +7,4 @@ The code borrows heavily from the BSD resolver library. In fact, it is an
 extremely ugly hack to make the BSD resolver library non-blocking and
 thread-safe without changing the API too much.
 
-WWW: http://www.monkey.org/~provos/libdnsres/
+WWW: https://www.monkey.org/~provos/libdnsres/
