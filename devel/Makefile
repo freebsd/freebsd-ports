@@ -1586,6 +1586,7 @@
     SUBDIR += newfile
     SUBDIR += newt
     SUBDIR += newtonsoft-json
+    SUBDIR += nextpnr
     SUBDIR += nexus2-oss
     SUBDIR += nimble
     SUBDIR += nini
