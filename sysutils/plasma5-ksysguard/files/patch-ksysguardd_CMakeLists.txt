@@ -1,14 +1,17 @@
---- ksysguardd/CMakeLists.txt.orig	2019-06-18 09:56:21 UTC
+--- ksysguardd/CMakeLists.txt.orig	2019-06-26 08:37:14 UTC
 +++ ksysguardd/CMakeLists.txt
-@@ -9,6 +9,7 @@ add_definitions(-DOSTYPE_${CMAKE_SYSTEM_NAME})
+@@ -9,8 +9,8 @@ add_definitions(-DOSTYPE_${CMAKE_SYSTEM_NAME})
  
  set(HAVE_LMSENSORS ${SENSORS_FOUND})
  
+-check_include_files(sys/inotify.h SYS_INOTIFY_H_FOUND)
+-set(HAVE_SYS_INOTIFY_H ${SYS_INOTIFY_H_FOUND})
 +include_directories(${Inotify_INCLUDE_DIRS})
- check_include_files(sys/inotify.h SYS_INOTIFY_H_FOUND)
- set(HAVE_SYS_INOTIFY_H ${SYS_INOTIFY_H_FOUND})
++set(HAVE_SYS_INOTIFY_H ${Inotify_FOUND})
  
-@@ -46,7 +47,7 @@ endif()
+ 
+ configure_file(config-ksysguardd.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksysguardd.h)
+@@ -46,7 +46,7 @@ endif()
  
      add_executable(ksysguardd ${ksysguardd_SRCS})
      set_property(TARGET ksysguardd PROPERTY C_STANDARD 11)
