@@ -1,7 +1,7 @@
-lib/gauche-0.9/site/%%TARGET%%/libgauche-gl.so
-lib/gauche-0.9/site/%%TARGET%%/libgauche-glut.so
-lib/gauche-0.9/site/%%TARGET%%/libgauche-math3d.so
-lib/gauche-0.9/site/include/gauche/math3d.h
+lib/gauche-%%ABI_VER%%/site/%%TARGET%%/libgauche-gl.so
+lib/gauche-%%ABI_VER%%/site/%%TARGET%%/libgauche-glut.so
+lib/gauche-%%ABI_VER%%/site/%%TARGET%%/libgauche-math3d.so
+lib/gauche-%%ABI_VER%%/site/include/gauche/math3d.h
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cg/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cg/cg-gl-vertex-example.cg
@@ -74,9 +74,9 @@ lib/gauche-0.9/site/include/gauche/math3d.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slbook/ogl2particle/particle.frag
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slbook/ogl2particle/particle.vert
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slbook/ogl2particle/run.sh
-share/gauche-0.9/site/lib/gl.scm
-share/gauche-0.9/site/lib/gl/glut.scm
-share/gauche-0.9/site/lib/gl/math3d.scm
-share/gauche-0.9/site/lib/gl/simple-image.scm
-share/gauche-0.9/site/lib/gl/simple/image.scm
-share/gauche-0.9/site/lib/gl/simple/viewer.scm
+share/gauche-%%ABI_VER%%/site/lib/gl.scm
+share/gauche-%%ABI_VER%%/site/lib/gl/glut.scm
+share/gauche-%%ABI_VER%%/site/lib/gl/math3d.scm
+share/gauche-%%ABI_VER%%/site/lib/gl/simple-image.scm
+share/gauche-%%ABI_VER%%/site/lib/gl/simple/image.scm
+share/gauche-%%ABI_VER%%/site/lib/gl/simple/viewer.scm
