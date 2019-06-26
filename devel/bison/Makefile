@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bison
-PORTVERSION=	3.3.2
+PORTVERSION=	3.4.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
@@ -34,6 +34,8 @@ TEST_TARGET=	check
 INFO=		bison
 
 NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_OFF=	ac_cv_libtextstyle=no
+NLS_LIB_DEPENDS=	libtextstyle.so:devel/libtextstyle
 NLS_USES=		gettext
 
 post-patch:
