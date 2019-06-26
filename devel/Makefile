@@ -6183,6 +6183,7 @@
     SUBDIR += trac-bitten
     SUBDIR += tradcpp
     SUBDIR += treepy.el
+    SUBDIR += trellis
     SUBDIR += trio
     SUBDIR += truc
     SUBDIR += ua_parser-core

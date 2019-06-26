@@ -1,0 +1,6 @@
+Project Trellis enables a fully open-source flow for ECP5 FPGAs
+using Yosys for Verilog synthesis and nextpnr for place and route.
+Project Trellis itself provides the device database and tools for
+bitstream creation.
+
+WWW: https://github.com/SymbiFlow/prjtrellis
