@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yosys
-DISTVERSIONPREFIX=	yosys-
-DISTVERSION=	0.8
-PORTREVISION=	2
+PORTVERSION=	g20190531
 CATEGORIES=	devel
 
 MAINTAINER=	jsorocil@gmail.com
@@ -20,11 +18,13 @@ LIB_DEPENDS=	libffi.so:devel/libffi
 
 USES=		bison compiler:c++11-lang gmake pkgconfig python:3.6+ readline \
 		shebangfix tcl
+
 SHEBANG_FILES=	backends/smt2/smtbmc.py \
 		misc/yosys-config.in
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	YosysHQ
+GH_TAGNAME=		90ec2cda
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} tclsh=${TCLSH}
 MAKE_ARGS=	ABCEXTERNAL=abc
