@@ -17,7 +17,7 @@ find ${STAGEDIR} -type f \
     > ${ELF_FILES}
 
 # Create all of the /usr/local/lib/* dirs
-lib_dir="${STAGEDIR}.debug${PREFIX}/lib/debug"
+lib_dir="${STAGEDIR}${PREFIX}/lib/debug"
 sed -e "s,^${STAGEDIR}${PREFIX}/,${lib_dir}/," -e 's,/[^/]*$,,' \
     ${ELF_FILES} | sort -u | xargs mkdir -p
 
@@ -27,13 +27,12 @@ while read -r staged_elf_file; do
 	# Strip off filename
 	lib_dir_dest="${lib_dir_dest%/*}"
 	# Save symbols to f.debug
-	objcopy --only-keep-debug "${staged_elf_file}" \
-	    "${lib_dir_dest}/${elf_file_name}.debug"
+	debug_file_name="${lib_dir_dest}/${elf_file_name}.debug"
+	objcopy --only-keep-debug "${staged_elf_file}" "${debug_file_name}"
 	# Strip and add a reference to f.debug for finding the symbols.
 	objcopy --strip-debug --strip-unneeded \
-	    --add-gnu-debuglink="${lib_dir_dest}/${elf_file_name}.debug" \
-	    "${staged_elf_file}"
+	    --add-gnu-debuglink="${debug_file_name}" "${staged_elf_file}"
 	msg "Saved symbols for ${staged_elf_file}"
-done < ${ELF_FILES}
+done < ${ELF_FILES} 3>> ${TMPPLIST}
 
 rm -f ${ELF_FILES}
