@@ -6,7 +6,6 @@ bin/partview
 include/Partio.h
 include/PartioAttribute.h
 include/PartioIterator.h
-include/PartioSe.h
 include/PartioVec3.h
 lib/libpartio.so
 %%PYTHON_SITELIBDIR%%/_partio.so
