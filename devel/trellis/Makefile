@@ -16,7 +16,7 @@ LIB_DEPENDS=	libftdi1.so:devel/libftdi1 \
 		libboost_date_time.so:devel/boost-libs \
 		libboost_filesystem.so:devel/boost-libs \
 		libboost_program_options.so:devel/boost-libs \
-		libboost_python${PYTHON_SUFFIX}.so:devel/boost-python-libs \
+		${PY_BOOST} \
 		libboost_thread.so:devel/boost-libs
 
 USES=		compiler:c++14-lang cmake python:3.5+ shebangfix
