@@ -89,8 +89,8 @@
     SUBDIR += closure-compiler
     SUBDIR += cntlm
     SUBDIR += codeigniter
-    SUBDIR += coppermine
     SUBDIR += colly
+    SUBDIR += coppermine
     SUBDIR += cplanet
     SUBDIR += cppcms
     SUBDIR += cpr

@@ -15,6 +15,7 @@
     SUBDIR += R-cran-R6
     SUBDIR += R-cran-RUnit
     SUBDIR += R-cran-Rcpp
+    SUBDIR += R-cran-Rdpack
     SUBDIR += R-cran-abind
     SUBDIR += R-cran-bindr
     SUBDIR += R-cran-bindrcpp
@@ -34,8 +35,8 @@
     SUBDIR += R-cran-evaluate
     SUBDIR += R-cran-fansi
     SUBDIR += R-cran-foreach
-    SUBDIR += R-cran-gbm
     SUBDIR += R-cran-gbRd
+    SUBDIR += R-cran-gbm
     SUBDIR += R-cran-gdata
     SUBDIR += R-cran-generics
     SUBDIR += R-cran-glmnet
@@ -63,7 +64,6 @@
     SUBDIR += R-cran-proto
     SUBDIR += R-cran-purrr
     SUBDIR += R-cran-randomForest
-    SUBDIR += R-cran-Rdpack
     SUBDIR += R-cran-registry
     SUBDIR += R-cran-repr
     SUBDIR += R-cran-reshape
