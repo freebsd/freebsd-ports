@@ -101,7 +101,8 @@ php_ARGS:=	${php_ARGS:Nflavors}
 php_ARGS+=	ext
 .    if !defined(USE_GITHUB)
 EXTRACT_SUFX=	.tgz
-MASTER_SITES=	http://pecl.php.net/get/
+MASTER_SITES=	https://pecl.php.net/get/ \
+		http://pecl.php.net/get/
 .    endif
 PKGNAMEPREFIX=	${PECL_PKGNAMEPREFIX}
 DIST_SUBDIR=	PECL
