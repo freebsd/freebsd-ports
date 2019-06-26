@@ -3,7 +3,7 @@
 @@ -267,7 +267,7 @@ test-extra$(EXEEXT) : $(LIBGAUCHE).$(SOEXT) $(test_ext
  # need to relink gosh-noconsole.exe (windows no-console version).
  relink :
- 	$(RELINK) $(libgauche_LDFLAGS) $(LIBGAUCHE).$(SOEXT) $(libgauche_OBJECTS) $(libgc_pic_LIBRARY) $(GC_ATOMIC_OPS_LIBS) $(LIBS)
+ 	$(RELINK) $(libgauche_LDFLAGS) $(LIBGAUCHE).$(SOEXT) $(libgauche_OBJECTS) $(libgc_pic_LIBRARY) $(ATOMIC_OPS_LIBS) $(LIBS)
 -	$(RELINK) $(gosh_LDFLAGS) -o gosh$(EXEEXT)  $(gosh_OBJECTS) $(gosh_LDADD) $(LIBS)
 +	$(RELINK) $(gosh_LDFLAGS) -o gosh-relinked$(EXEEXT) $(gosh_OBJECTS) $(gosh_LDADD) $(LIBS)
  	$(RELINK) -o gauche-config$(EXEEXT) gauche-config.$(OBJEXT) $(LIBS)
