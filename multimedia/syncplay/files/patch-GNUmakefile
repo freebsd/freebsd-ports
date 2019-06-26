@@ -1,6 +1,6 @@
---- GNUmakefile.orig	2019-03-15 11:21:49 UTC
+--- GNUmakefile.orig	2019-06-23 10:53:06 UTC
 +++ GNUmakefile
-@@ -34,17 +34,22 @@ endif
+@@ -34,17 +34,25 @@ endif
  	APP_SHORTCUT_PATH = ${DESTDIR}${PREFIX}/share/applications
  	SHARE_PATH        = ${DESTDIR}${PREFIX}/share
  
@@ -9,25 +9,29 @@
 +all:
 +
  common:
--	-mkdir -p $(LIB_PATH)/syncplay/resources/lua/intf
+-	-mkdir -p $(LIB_PATH)/syncplay/syncplay/resources/lua/intf
 +	-mkdir -p $(SHARE_PATH)/syncplay/resources/lua/intf
  	-mkdir -p $(APP_SHORTCUT_PATH)
  	-mkdir -p $(SHARE_PATH)/app-install/icons
  	-mkdir -p $(SHARE_PATH)/pixmaps/
-+	-mkdir -p $(LIB_PATH)/syncplay
- 	cp -r syncplay $(LIB_PATH)/syncplay/
+-	cp -r syncplay $(LIB_PATH)/syncplay/
++	-mkdir -p $(LIB_PATH)/syncplay/syncplay
++	cp -r syncplay/*.py $(LIB_PATH)/syncplay/syncplay/
++	cp -r syncplay/players $(LIB_PATH)/syncplay/syncplay/
++	cp -r syncplay/ui $(LIB_PATH)/syncplay/syncplay/
++	cp -r syncplay/vendor $(LIB_PATH)/syncplay/syncplay/
  	chmod 755 $(LIB_PATH)/syncplay/
- 	cp -r resources/hicolor $(SHARE_PATH)/icons/
--	cp -r resources/*.png $(LIB_PATH)/syncplay/resources/
--	cp -r resources/*.lua $(LIB_PATH)/syncplay/resources/
--	cp -r resources/lua/intf/*.lua $(LIB_PATH)/syncplay/resources/lua/intf/
-+	cp -r resources/*.png $(SHARE_PATH)/syncplay/resources/
-+	cp -r resources/*.lua $(SHARE_PATH)/syncplay/resources/
-+	cp -r resources/lua/intf/*.lua $(SHARE_PATH)/syncplay/resources/lua/intf/
- 	cp resources/hicolor/48x48/apps/syncplay.png $(SHARE_PATH)/app-install/icons/
- 	cp resources/hicolor/48x48/apps/syncplay.png $(SHARE_PATH)/pixmaps/
+ 	cp -r syncplay/resources/hicolor $(SHARE_PATH)/icons/
+-	cp -r syncplay/resources/*.png $(LIB_PATH)/syncplay/syncplay/resources/
+-	cp -r syncplay/resources/*.lua $(LIB_PATH)/syncplay/syncplay/resources/
+-	cp -r syncplay/resources/lua/intf/*.lua $(LIB_PATH)/syncplay/syncplay/resources/lua/intf/
++	cp -r syncplay/resources/*.png $(SHARE_PATH)/syncplay/resources/
++	cp -r syncplay/resources/*.lua $(SHARE_PATH)/syncplay/resources/
++	cp -r syncplay/resources/lua/intf/*.lua $(SHARE_PATH)/syncplay/resources/lua/intf/
+ 	cp syncplay/resources/hicolor/48x48/apps/syncplay.png $(SHARE_PATH)/app-install/icons/
+ 	cp syncplay/resources/hicolor/48x48/apps/syncplay.png $(SHARE_PATH)/pixmaps/
  
-@@ -56,8 +61,8 @@ u-common:
+@@ -56,8 +64,8 @@ u-common:
  
  client:
  	-mkdir -p $(BIN_PATH)
@@ -36,8 +40,8 @@
 -	sed -i -e '/# libpath/ a\import site\nsite.addsitedir\("${PREFIX}/lib/syncplay"\)' $(BIN_PATH)/syncplay
  	chmod 755 $(BIN_PATH)/syncplay
  	cp syncplayClient.py $(LIB_PATH)/syncplay/
- 	cp resources/syncplay.desktop $(APP_SHORTCUT_PATH)/
-@@ -75,8 +80,8 @@ u-client:
+ 	cp syncplay/resources/syncplay.desktop $(APP_SHORTCUT_PATH)/
+@@ -75,8 +83,8 @@ u-client:
  
  server:
  	-mkdir -p $(BIN_PATH)
@@ -46,4 +50,4 @@
 -	sed -i -e '/# libpath/ a\import site\nsite.addsitedir\("${PREFIX}/lib/syncplay"\)' $(BIN_PATH)/syncplay-server
  	chmod 755 $(BIN_PATH)/syncplay-server
  	cp syncplayServer.py $(LIB_PATH)/syncplay/
- 	cp resources/syncplay-server.desktop $(APP_SHORTCUT_PATH)/
+ 	cp syncplay/resources/syncplay-server.desktop $(APP_SHORTCUT_PATH)/

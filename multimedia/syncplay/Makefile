@@ -2,7 +2,7 @@
 
 PORTNAME=	syncplay
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.3
+DISTVERSION=	1.6.4a
 CATEGORIES=	multimedia
 
 MAINTAINER=	heckendorfc@gmail.com
@@ -11,7 +11,11 @@ COMMENT=	Synchronize video playback over networks
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}service_identity>=0:security/py-service_identity@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}idna>=0:dns/py-idna@${PY_FLAVOR}
 
 USES=		desktop-file-utils gmake python:3.4+ shebangfix
 USE_GITHUB=	yes
@@ -39,6 +43,6 @@ CLIENT_INSTALL_TARGET=	install-client
 SERVER_INSTALL_TARGET=	install-server
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|path = os.path.dirname(os.path.dirname(__file__))|path = "'${DATADIR}'"|g' ${WRKSRC}/syncplay/utils.py
+	@${REINPLACE_CMD} -e 's|path = os.path.dirname(__file__)|path = "'${DATADIR}'"|g' ${WRKSRC}/syncplay/utils.py
 
 .include <bsd.port.mk>
