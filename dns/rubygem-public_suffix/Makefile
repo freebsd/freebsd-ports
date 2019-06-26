@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	public_suffix
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
