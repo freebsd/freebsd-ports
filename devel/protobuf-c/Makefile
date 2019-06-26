@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=		protobuf-c
-PORTVERSION=		1.3.1
+PORTVERSION=		1.3.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=		devel
 
 MAINTAINER=	truckman@FreeBSD.org
@@ -16,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USES=		autoreconf compiler:c++11-lang gmake libtool pkgconfig
-GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
