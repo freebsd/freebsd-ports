@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gems
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	devel ruby
 MASTER_SITES=	https://rubygems.org/rubygems/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -55,6 +55,7 @@ OPTIONS_DEFINE=	DOCS
 DOCS_VARS_OFF=	RUBY_SETUP_OPTIONS+="--no-ri --no-rdoc"
 
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${GEMS_VER_DIR}
 	cd ${WRKSRC}/ && ${SETENV} ${GEMS_ENV} ${RUBY} ${RUBY_SETUP} ${RUBY_SETUP_OPTIONS}
 	${LN} -sf gem${RUBY_VER_SHORT} ${STAGEDIR}${PREFIX}/bin/gem
 
