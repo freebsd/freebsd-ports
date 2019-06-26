@@ -13,6 +13,8 @@ COMMENT=	X Amateur Station Tracking and Information Reporting
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		magick/image-private.h: No such file or directory
+
 BUILD_DEPENDS=	xfontsel:x11-fonts/xfontsel
 RUN_DEPENDS=	wget:ftp/wget
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
