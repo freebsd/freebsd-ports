@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	shelldap
-PORTVERSION=	1.3.2
+PORTVERSION=	1.5.0
 CATEGORIES=	net perl5
 MASTER_SITES=	https://bitbucket.org/mahlon/shelldap/downloads/ \
-		http://dl.dropbox.com/u/7234177/Releases/ \
 		http://www.martini.nu/misc/
 
 MAINTAINER=	mahlon@martini.nu
@@ -18,6 +17,7 @@ RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
 		p5-Term-Shell>=0:devel/p5-Term-Shell \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
 		p5-Term-ReadLine-Gnu>=0:devel/p5-Term-ReadLine-Gnu \
+		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash \
 		p5-YAML-Syck>=0:textproc/p5-YAML-Syck
 
 USES=		perl5
