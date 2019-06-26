@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mandelbulber
-PORTVERSION=	2.17
-PORTREVISION=	1
+PORTVERSION=	2.18
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -20,6 +19,7 @@ LIB_DEPENDS=	libgsl.so:math/gsl \
 USE_GITHUB=	yes
 GH_ACCOUNT=	buddhi1980
 GH_PROJECT=	${PORTNAME}2
+GH_TAGNAME=	a8f3449 # contains build fix
 
 USES=		cmake compiler:c++11-lang gnome jpeg localbase:ldflags \
 		pkgconfig qt:5
