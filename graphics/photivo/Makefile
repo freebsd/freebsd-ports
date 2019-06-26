@@ -31,8 +31,6 @@ DOS2UNIX_FILES=	Sources/ptImage.cpp Sources/ptCheck.cpp Sources/filemgmt/ptFileM
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-CONFLICTS_INSTALL=	${PORTNAME}-qt4
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,#define cimg_use_openmp 1,//&,' \
 		${WRKSRC}/Sources/ptCimg.cpp \

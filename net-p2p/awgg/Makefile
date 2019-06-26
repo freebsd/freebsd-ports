@@ -17,9 +17,8 @@ RUN_DEPENDS=	aria2c:www/aria2 \
 		youtube-dl:www/youtube_dl \
 		axel:ftp/axel
 
-gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt4 ${PORTNAME}-qt5
-qt4_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5
-qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt4
+gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
 
 USES=		fpc lazarus:flavors
 USE_FPC=	chm fcl-base fcl-db fcl-image fcl-json fcl-registry fcl-xml \

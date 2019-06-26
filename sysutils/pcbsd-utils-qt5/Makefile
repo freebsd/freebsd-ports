@@ -27,8 +27,6 @@ RUN_DEPENDS=	pc-updatemanager:sysutils/pcbsd-utils \
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpoppler-qt5.so:graphics/poppler-qt5
 
-CONFLICTS?=	pcbsd-utils-qt4-[0-9]*
-
 MAKE_JOBS_UNSAFE=yes
 ONLY_FOR_ARCHS=	amd64
 USE_LDCONFIG=	yes

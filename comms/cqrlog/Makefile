@@ -40,9 +40,6 @@ LAZARUS_NO_FLAVORS=qt5
 INSTALLS_ICONS=	yes
 DOS2UNIX_WRKSRC=${WRKSRC}/src/synapse/
 
-gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt4
-qt4_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
-
 post-extract:
 	@${RM} -r ${WRKSRC}/src/lnet/lib/openssl.pas
 

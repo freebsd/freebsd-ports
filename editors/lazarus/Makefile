@@ -12,7 +12,7 @@ DIST_SUBDIR=	freepascal
 MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Portable Delphi-like IDE for the FreePascal compiler (GTK2)
 
-CONFLICTS?=	${PORTNAME}-qt4-* ${PORTNAME}-qt5-*
+CONFLICTS?=	${PORTNAME}-qt5-*
 
 BUILD_DEPENDS?=	fpcres:lang/fpc-utils
 RUN_DEPENDS?=	fpcres:lang/fpc-utils

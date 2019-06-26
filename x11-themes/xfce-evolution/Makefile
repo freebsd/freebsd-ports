@@ -6,7 +6,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	fbsd@opal.com
-COMMENT=	Complete Xfce Evolution Gtk2, Gtk3, Qt4, Qt5, wxWidgets, Xfce themes
+COMMENT=	Complete Xfce Evolution Gtk2, Gtk3, Qt5, wxWidgets, Xfce themes
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL-v2

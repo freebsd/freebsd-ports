@@ -15,7 +15,6 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain
 
-CONFLICTS_INSTALL=	trojita-qt4-[0-9]*
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 

@@ -415,7 +415,6 @@ PYMALLOC_DESC?=		Use Python's internal malloc()
 PYTHON_DESC?=		Python bindings or support
 PYTHON2_DESC?=		Python 2.x bindings or support
 PYTHON3_DESC?=		Python 3.x bindings or support
-QT4_DESC?=		Qt 4 toolkit support
 QT5_DESC?=		Qt 5 toolkit support
 QUICKTIME_DESC?=	QuickTime media support
 RADIUS_DESC?=		RADIUS protocol support

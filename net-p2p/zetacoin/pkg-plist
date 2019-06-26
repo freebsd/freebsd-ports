@@ -1,6 +1,3 @@
-%%NO_X11%%%%EXECUTABLE_DAEMON%%
-%%NO_X11%%@sample etc/%%PORTNAME%%.conf.sample
+%%EXECUTABLE_DAEMON%%
+@sample etc/%%PORTNAME%%.conf.sample
 %%CLI%%%%EXECUTABLE_CLI%%
-%%X11%%%%EXECUTABLE_QT%%
-%%X11%%share/applications/%%PORTNAME%%-qt.desktop
-%%X11%%share/pixmaps/%%PORTNAME%%.png
