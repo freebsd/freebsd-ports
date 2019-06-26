@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spine
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
 DISTNAME=	cacti-${PORTNAME}-${PORTVERSION}
