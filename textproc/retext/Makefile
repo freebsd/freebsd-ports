@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	retext
-DISTVERSION=	7.0.0-130
-DISTVERSIONSUFFIX=-g1c34ae3
+DISTVERSION=	7.0.4
 CATEGORIES=	textproc
 
 MAINTAINER=	arved@FreeBSD.org
@@ -25,6 +24,8 @@ USE_PYTHON=	distutils autoplist noflavors
 USE_QT=		linguisttools_build
 USE_PYQT=	core_run sip_run gui_run widgets_run printsupport_run \
 		network_run
+
+PYDISTUTILS_INSTALLARGS+=	--no-rename
 
 BINARY_ALIAS=	lrelease=${LRELEASE}
 
