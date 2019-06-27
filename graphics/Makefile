@@ -801,6 +801,7 @@
     SUBDIR += price
     SUBDIR += processing
     SUBDIR += proj
+    SUBDIR += proj5
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
     SUBDIR += ptex
