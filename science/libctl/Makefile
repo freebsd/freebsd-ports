@@ -3,7 +3,7 @@
 
 PORTNAME=	libctl
 PORTVERSION=	3.2.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science math
 MASTER_SITES=	http://ab-initio.mit.edu/libctl/
 
@@ -12,7 +12,7 @@ COMMENT=	Control Language Library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libguile-2.0.so:lang/guile2
+LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared

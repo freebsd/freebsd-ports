@@ -5,7 +5,7 @@ lib/cmake/nlopt/NLoptConfig.cmake
 lib/cmake/nlopt/NLoptConfigVersion.cmake
 lib/cmake/nlopt/NLoptLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/nlopt/NLoptLibraryDepends.cmake
-lib/guile/2.0/extensions/nlopt_guile.so
+lib/guile/2.2/extensions/nlopt_guile.so
 lib/libnlopt.so
 lib/libnlopt.so.0
 lib/libnlopt.so.0.10.0
@@ -15,4 +15,4 @@ libdata/pkgconfig/nlopt.pc
 man/man3/nlopt.3.gz
 man/man3/nlopt_minimize.3.gz
 man/man3/nlopt_minimize_constrained.3.gz
-share/guile/site/2.0/nlopt.scm
+share/guile/site/2.2/nlopt.scm

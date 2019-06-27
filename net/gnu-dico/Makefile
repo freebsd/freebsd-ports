@@ -3,7 +3,7 @@
 
 PORTNAME=	dico
 PORTVERSION=	2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu-
@@ -33,7 +33,7 @@ PYTHON_USES=		python
 PYTHON_CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
 PYTHON_CONFIGURE_OFF=	--without-python
 
-GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
+GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 GUILE_CONFIGURE_OFF=	--without-guile
 
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre

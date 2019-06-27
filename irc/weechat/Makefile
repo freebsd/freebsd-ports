@@ -3,6 +3,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -19,8 +20,7 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 USES=		cmake:noninja ncurses libtool tar:xz
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS+=	-DENABLE_GUILE=no \
-		-DLIBDATADIR=${LOCALBASE}/libdata
+CMAKE_ARGS=	-DLIBDATADIR=${LOCALBASE}/libdata
 
 OPTIONS_DEFINE=		BACKTRACE DOCS CA_BUNDLE GNUTLS HEADLESS ICON ICONV \
 			MANPAGES NLS
@@ -58,7 +58,8 @@ DOCS_CMAKE_BOOL=	ENABLE_DOC
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_USES=		pkgconfig
-GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
+GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
+GUILE_CMAKE_BOOL=	ENABLE_GUILE
 ICONV_USES=		iconv
 JAVASCRIPT_LIB_DEPENDS=	libv8.so:lang/v8
 LUA_USES=		lua pkgconfig

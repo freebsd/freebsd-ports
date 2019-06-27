@@ -3,7 +3,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -80,7 +80,8 @@ BUNDLED_READLINE_CONFIGURE_OFF=	--with-system-readline
 DEBUG_CFLAGS=		-g
 GUILE_CONFIGURE_WITH=	guile
 GUILE_USES=		pkgconfig
-GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
+GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
+GUILE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-guile22
 NLS_USES=	gettext-runtime
 PORT_READLINE_USES=	readline:port
 PORT_ICONV_USES=	iconv:wchar_t

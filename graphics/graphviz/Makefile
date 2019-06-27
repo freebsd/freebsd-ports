@@ -3,7 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.40.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://graphviz.gitlab.io/pub/graphviz/stable/SOURCES/
 
@@ -106,7 +106,7 @@ SMYRNA_LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2 \
 			libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 MING_LIB_DEPENDS=	libming.so:graphics/ming
 DEVIL_LIB_DEPENDS=	libIL.so:graphics/devil
-GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
+GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
 			libgc-threaded.so:devel/boehm-gc-threaded
 
 XPM_CONFIGURE_WITH=		x
