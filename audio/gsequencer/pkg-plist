@@ -92,6 +92,7 @@ include/ags/audio/osc/ags_osc_util.h
 include/ags/audio/osc/controller/ags_osc_action_controller.h
 include/ags/audio/osc/controller/ags_osc_config_controller.h
 include/ags/audio/osc/controller/ags_osc_controller.h
+include/ags/audio/osc/controller/ags_osc_export_controller.h
 include/ags/audio/osc/controller/ags_osc_front_controller.h
 include/ags/audio/osc/controller/ags_osc_info_controller.h
 include/ags/audio/osc/controller/ags_osc_meter_controller.h
@@ -276,6 +277,7 @@ include/ags/object/ags_async_queue.h
 include/ags/object/ags_config.h
 include/ags/object/ags_connectable.h
 include/ags/object/ags_countable.h
+include/ags/object/ags_cursor.h
 include/ags/object/ags_globals.h
 include/ags/object/ags_macros.h
 include/ags/object/ags_main_loop.h
@@ -301,6 +303,8 @@ include/ags/plugin/ags_lv2_manager.h
 include/ags/plugin/ags_lv2_option_manager.h
 include/ags/plugin/ags_lv2_plugin.h
 include/ags/plugin/ags_lv2_preset.h
+include/ags/plugin/ags_lv2_preset_manager.h
+include/ags/plugin/ags_lv2_turtle_parser.h
 include/ags/plugin/ags_lv2_uri_map_manager.h
 include/ags/plugin/ags_lv2_urid_manager.h
 include/ags/plugin/ags_lv2_worker.h
