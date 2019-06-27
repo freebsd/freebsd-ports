@@ -14,7 +14,7 @@ LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		gmake libtool localbase readline tar:xz
+USES=		gmake iconv libtool localbase readline tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	comsatd imap4d pop3d
