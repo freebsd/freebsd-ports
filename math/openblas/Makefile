@@ -17,8 +17,6 @@ COMMENT=	Optimized BLAS library based on GotoBLAS2
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	fails to compile: gemm.c:403: 'SGEMM_DEFAULT_Q' undeclared (first use in this function)
-
 USES=		fortran gmake perl5
 
 USE_GITHUB=	yes
@@ -56,6 +54,10 @@ AVX2_DESC=		Support Advanced Vector Extensions 2 (AVX2)
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == powerpc64
+TARGET_CPU_ARCH=	POWER6
+.endif
+
 .if defined(TARGET_CPU_ARCH)
 BUILDFLAGS+=	TARGET=${TARGET_CPU_ARCH}
 .endif
@@ -84,6 +86,8 @@ BUILDFLAGS+=	INTERFACE64=1
 .if ${PORT_OPTIONS:MOPENMP}
 USES+=		compiler:openmp
 BUILDFLAGS_THREAD+=	USE_OPENMP=1
+.else
+USES+=		compiler:c11
 .endif
 
 .if ! ${PORT_OPTIONS:MAVX}
@@ -131,6 +135,10 @@ post-patch:
 	-e 's+$${CROSS_SUFFIX}+${LOCALBASE}/bin/+' \
 	-e '/Clang.*OpenMP/g' \
 		${WRKSRC}/Makefile.system
+	${REINPLACE_CMD} \
+	-e 's/defined(linux)/(defined(linux) || defined(__FreeBSD__))/g' \
+	-e 's/ifdef linux/if defined(linux) || defined(__FreeBSD__)/g' \
+		${WRKSRC}/kernel/power/*.S
 
 post-patch-OPENMP-on:
 	${REINPLACE_CMD} -e "s+OPENBLAS_NUM_THREADS+OMP_NUM_THREADS+g" \
