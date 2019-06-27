@@ -3,7 +3,7 @@
 
 PORTNAME=	mdk
 PORTVERSION=	1.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNU/${PORTNAME}/v${PORTVERSION}
 
@@ -29,7 +29,7 @@ GLADE_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 GLADE_USE=		GNOME=cairo,gdkpixbuf2,libglade2
 
 GUILE_CONFIGURE_WITH=	guile
-GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
+GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
 			libgc-threaded.so:devel/boehm-gc-threaded
 
 NLS_CONFIGURE_ENABLE=	nls

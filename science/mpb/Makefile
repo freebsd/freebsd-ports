@@ -3,7 +3,7 @@
 
 PORTNAME=	mpb
 PORTVERSION=	1.5
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/mpb/
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libfftw.so:math/fftw \
 		libhdf5.so:science/hdf5 \
 		libctl.so:science/libctl \
-		libguile-2.0.so:lang/guile2
+		libguile-2.2.so:lang/guile2
 
 OPTIONS_DEFINE=	ATLAS NLOPT
 ATLAS_DESC=	Use math/atlas instead of math/lapack

@@ -4,7 +4,7 @@
 PORTNAME=	trackballs
 PORTVERSION=	1.3.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -13,7 +13,7 @@ COMMENT=	SDL-based Marble Madness clone
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
+LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
 		libgc.so:devel/boehm-gc
 
 USES=		cmake desktop-file-utils gettext-runtime gl gnome pkgconfig sdl

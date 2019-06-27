@@ -3,7 +3,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring \
 		libfreetype.so:print/freetype2 \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup \
-		libguile-2.0.so:lang/guile2 \
+		libguile-2.2.so:lang/guile2 \
 		libgc-threaded.so:devel/boehm-gc-threaded \
 		libboost_date_time.so:devel/boost-libs \
 		libicudata.so:devel/icu

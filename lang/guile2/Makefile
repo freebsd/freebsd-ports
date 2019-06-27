@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guile
-PORTVERSION=	2.0.14
-PORTREVISION=	10
+PORTVERSION=	2.2.5
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	2
@@ -24,7 +23,7 @@ CONFLICTS_INSTALL=	guile-[0-9]*
 MAKE_JOBS_UNSAFE=	yes
 
 USES=		charsetfix ${USES_${ARCH}} gmake iconv libtool makeinfo ncurses pathfix \
-		pkgconfig readline
+		pkgconfig readline tar:lz
 USES_powerpc64=	compiler:c11
 
 USE_LDCONFIG=	yes
@@ -57,6 +56,8 @@ post-patch:
 	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
 	@${REINPLACE_CMD} -e 's|sys/time.h sys/timeb.h|sys/time.h |g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-i -e|-i.bak -e|' \
+		${WRKSRC}/libguile/Makefile.in
 
 post-patch-THREADS-on:
 	@${REINPLACE_CMD} -e 's|bdw-gc|bdw-gc-threaded|g' ${WRKSRC}/configure

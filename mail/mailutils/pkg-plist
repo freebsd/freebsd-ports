@@ -338,8 +338,8 @@ sbin/pop3d
 share/aclocal/mailutils.m4
 %%MH%%%%EMACS%%share/emacs/site-lisp/mailutils-mh.el
 %%MH%%%%EMACS%%share/emacs/site-lisp/mailutils-mh.elc
-%%GUILE%%share/guile/site/mailutils/guile-procedures.txt
-%%GUILE%%share/guile/site/mailutils/mailutils.scm
+%%GUILE%%share/guile/site/2.2/mailutils/guile-procedures.txt
+%%GUILE%%share/guile/site/2.2/mailutils/mailutils.scm
 %%NLS%%share/locale/ca/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/da/LC_MESSAGES/mailutils.mo
 %%NLS%%share/locale/de/LC_MESSAGES/mailutils.mo

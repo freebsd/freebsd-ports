@@ -3,6 +3,7 @@
 
 PORTNAME=	autogen
 PORTVERSION=	5.18.16
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU/${PORTNAME}/rel${PORTVERSION}
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		gmktemp:sysutils/coreutils
-LIB_DEPENDS=	libguile-2.0.so:lang/guile2
+LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 RUN_DEPENDS=	bash:shells/bash
 
 # bin/columns

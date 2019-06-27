@@ -2,6 +2,7 @@
 
 PORTNAME=	lepton-eda
 PORTVERSION=	1.9.7
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-20181211
 CATEGORIES=	cad
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgc-threaded.so:devel/boehm-gc-threaded \
-		libguile-2.0.so:lang/guile2 \
+		libguile-2.2.so:lang/guile2 \
 		libpng.so:graphics/png \
 		libstroke.so:devel/libstroke
 
@@ -52,18 +53,20 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,guile-2\.0,guile-2.2,' \
+		${WRKSRC}/m4/geda-guile.m4
+
 # work around for errors while running
 # build-tools/icon-theme-installer:
 #
 # Cannot find 'install -m 0644'; You probably want to pass -x ${INSTALL_DATA}
 #
-#
-# NOTE: in the error message above (I wanted to show it
-# verbatim), INSTALL_DATA actually is enclosed in
-# parenthesis, not in curly brackets.
-# I had to change it to appease portlint(1), which does
-# not ignore comments in makefiles.
-#
+#   NOTE: in the error message above (I wanted to show it
+#   verbatim), INSTALL_DATA actually is enclosed in
+#   parenthesis, not in curly brackets.
+#   I had to change it to appease portlint(1), which does
+#   not ignore comments in makefiles.
 #
 # for 3 dirs (attrib/data, liblepton/data, schematic/data)
 # the following lines should be in the generated Makefile:

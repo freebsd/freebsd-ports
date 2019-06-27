@@ -3,14 +3,14 @@
 
 PORTNAME=	harminv
 PORTVERSION=	1.3.1
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/harminv/
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Solver of harmonic inversion
 
-LIB_DEPENDS+=	libguile-2.0.so:lang/guile2
+LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 
 USES=		blaslapack fortran gmake libtool pathfix
 GNU_CONFIGURE=	yes
