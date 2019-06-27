@@ -2,7 +2,7 @@
 
 PORTNAME=	zygrib
 DISTVERSION=	8.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.zygrib.org/getfile.php?file=
 DISTNAME=	zyGrib-${DISTVERSION}
@@ -12,13 +12,16 @@ COMMENT=	Weather data visualization, GRIB file viewer
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Can not build with graphics/proj
+EXPIRATION_DATE=	2019-09-27
+
 BROKEN_i386=	g2clib/libg2c.a: could not read symbols: File format not recognized
 
 FETCH_DEPENDS=	curl:ftp/curl
 LIB_DEPENDS=	libjasper.so:graphics/jasper \
 		libnova.so:astro/libnova \
 		libpng.so:graphics/png \
-		libproj.so:graphics/proj \
+		libproj.so:graphics/proj5 \
 		libqwt6.so:x11-toolkits/qwt6
 
 USES=		gmake localbase tar:tgz qt:5
