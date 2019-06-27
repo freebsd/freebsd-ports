@@ -47,3 +47,12 @@
  
  class String : public Streamable {
  
+@@ -303,7 +343,7 @@ public:
+     // representation by the character itself, e.g. replace "\n" by the
+     // character with code 13.
+ 
+-    friend String ShowControls (const String& S, unsigned Style = ccDefault);
++    friend String ShowControls (const String& S, unsigned Style);
+     // Recode the given string and replace every control character by it's
+     // visible representation, e.g. "\n" instead of the character with code
+     // code 13.
