@@ -36,14 +36,13 @@ CONFIGURE_ARGS=	--disable-data \
 		--enable-cdi-lib \
 		--program-transform-name="" \
 		--with-zlib=/usr
+CXXFLAGS+=	-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
-
-CXXFLAGS+=	"-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1"
 
 CGRIBEX_CONFIGURE_WITH=	cgribex
 CGRIBEX_LIB_DEPENDS=	libcgribex.so:science/cgribex
