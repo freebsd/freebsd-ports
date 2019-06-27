@@ -3,7 +3,7 @@
 
 PORTNAME=	merkaartor
 PORTVERSION=	0.18.2
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	astro
 
 MAINTAINER=	dev2@heesakkers.info
@@ -20,6 +20,8 @@ USES=		compiler:c++11-lang pkgconfig qmake qt:5 sqlite:3
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
 USE_LDCONFIG=	yes
+
+CFLAGS+=	"-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1"
 
 QMAKE_ARGS=	SYSTEM_QUAZIP=1
 USE_QT=		buildtools_build \

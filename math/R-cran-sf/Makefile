@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sf
-DISTVERSION=	0.7-1
-PORTREVISION=	1
+DISTVERSION=	0.7-4
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -24,6 +23,8 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=		compiler:c++11-lang cran:auto-plist,compiles
+USES=		compiler:c++11-lang cran:auto-plist,compiles pkgconfig
+
+CONFIGURE_ARGS+=	"--with-proj-api=yes"
 
 .include <bsd.port.mk>

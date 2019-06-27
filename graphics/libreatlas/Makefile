@@ -3,7 +3,7 @@
 
 PORTNAME=	libreatlas
 PORTVERSION=	1.0.0a
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
@@ -37,7 +37,7 @@ USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 USE_GNOME=	atk gdkpixbuf2 glib20 gtk20 pango
 USE_WX=		2.8
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
 LDFLAGS+=	-L${LOCALBASE}/lib
 LIBS+=		-lgeos_c -lsqlite3
 

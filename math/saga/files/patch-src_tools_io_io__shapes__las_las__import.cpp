@@ -1,9 +1,9 @@
---- src/tools/io/io_shapes_las/las_import.cpp.orig	2018-05-01 09:07:10 UTC
+--- src/tools/io/io_shapes_las/las_import.cpp.orig	2019-06-24 16:44:36 UTC
 +++ src/tools/io/io_shapes_las/las_import.cpp
-@@ -60,9 +60,9 @@
- //---------------------------------------------------------
- #include "las_import.h"
+@@ -58,9 +58,9 @@
+ ///////////////////////////////////////////////////////////
  
+ //---------------------------------------------------------
 -#include <liblas/laspoint.hpp>
 -#include <liblas/lasreader.hpp>
 -#include <liblas/capi/las_version.h>

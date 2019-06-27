@@ -3,6 +3,7 @@
 
 PORTNAME=	cdo
 PORTVERSION=	1.9.7
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/20101/ \
 		LOCAL/sunpoet
@@ -41,6 +42,8 @@ MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
+
+CXXFLAGS+=	"-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1"
 
 CGRIBEX_CONFIGURE_WITH=	cgribex
 CGRIBEX_LIB_DEPENDS=	libcgribex.so:science/cgribex

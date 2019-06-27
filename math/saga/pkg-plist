@@ -31,12 +31,12 @@ lib/libsaga_api-%%PORTVERSION%%.so
 lib/libsaga_api.so
 lib/libsaga_gdi-%%PORTVERSION%%.so
 lib/libsaga_gdi.so
+%%PYTHON_SITELIBDIR%%/__pycache__/saga_api.cpython-36.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/__pycache__/saga_api.cpython-36.pyc
 %%PYTHON_SITELIBDIR%%/_saga_api-%%PORTVERSION%%.so
 %%PYTHON_SITELIBDIR%%/_saga_api.a
 %%PYTHON_SITELIBDIR%%/_saga_api.so
 %%PYTHON_SITELIBDIR%%/saga_api.py
-%%PYTHON_SITELIBDIR%%/saga_api.pyc
-%%PYTHON_SITELIBDIR%%/saga_api.pyo
 lib/saga/libclimate_tools.so
 lib/saga/libcontrib_perego.so
 lib/saga/libdb_odbc.so
@@ -210,6 +210,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/toolchains/polygons_remove_from_boundary.xml
 %%DATADIR%%/toolchains/shapes_select_delete.xml
 %%DATADIR%%/toolchains/sieve_and_clump.xml
+%%DATADIR%%/toolchains/ta_flow_accumulation.xml
 %%DATADIR%%/toolchains/ta_summits.xml
 %%DATADIR%%/toolchains/temperature_downscaling.xml
 %%DATADIR%%/toolchains/temperature_downscaling_bulk.xml

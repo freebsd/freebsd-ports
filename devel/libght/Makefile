@@ -3,6 +3,7 @@
 
 PORTNAME=	libght
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel geography
 
@@ -19,6 +20,7 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 USES=		cmake
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+CFLAGS+=	"-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pramsey
