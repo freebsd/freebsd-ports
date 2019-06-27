@@ -1314,6 +1314,7 @@
     SUBDIR += syslog-ng319
     SUBDIR += syslog-ng320
     SUBDIR += syslog-ng321
+    SUBDIR += syslog-ng322
     SUBDIR += syslog-ng39
     SUBDIR += syslogger
     SUBDIR += sysrc
