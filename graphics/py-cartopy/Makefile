@@ -28,6 +28,6 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
 
-CPPFLAGS+=	-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
+CPPFLAGS+=	-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H
 
 .include <bsd.port.mk>
