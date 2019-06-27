@@ -2,6 +2,7 @@
 
 PORTNAME=	survex
 DISTVERSION=	1.2.38
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	https://survex.com/software/${DISTVERSION}/
 
@@ -11,8 +12,11 @@ COMMENT=	Cave survey software
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Can not build with graphics/proj
+EXPIRATION_DATE=2019-09-27
+
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
-		libproj.so:graphics/proj
+		libproj.so:graphics/proj5
 
 USES=		compiler:c++11-lang desktop-file-utils gl gmake gnome pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes

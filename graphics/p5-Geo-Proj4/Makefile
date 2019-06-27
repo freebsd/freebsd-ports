@@ -3,6 +3,7 @@
 
 PORTNAME=	Geo-Proj4
 PORTVERSION=	1.07
+PORTREVISION=	1
 CATEGORIES=	graphics devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +14,10 @@ COMMENT=	Cartographic projections wrapper for Proj library
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libproj.so:graphics/proj
+DEPRECATED=	Can not build with graphics/proj
+EXPIRATION_DATE=2019-09-27
+
+LIB_DEPENDS=	libproj.so:graphics/proj5
 
 CONFIGURE_ENV=	GEOPROJ_FWTOOLS_DIR=${LOCALBASE}
 MAKE_ENV=	INC=-I${LOCALBASE}/include
