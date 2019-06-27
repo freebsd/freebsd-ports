@@ -1,9 +1,9 @@
---- src/tools/io/io_shapes_las/las_info.h.orig	2018-05-01 09:07:11 UTC
+--- src/tools/io/io_shapes_las/las_info.h.orig	2019-06-24 16:47:07 UTC
 +++ src/tools/io/io_shapes_las/las_info.h
-@@ -76,9 +76,9 @@
- //---------------------------------------------------------
- #include "MLB_Interface.h"
+@@ -74,9 +74,9 @@
+ ///////////////////////////////////////////////////////////
  
+ //---------------------------------------------------------
 -#include <liblas/laspoint.hpp>
 -#include <liblas/lasreader.hpp>
 -#include <liblas/capi/las_version.h>

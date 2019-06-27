@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-octproj
 PORTVERSION=	1.1.5
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -21,6 +21,8 @@ OCTSRC=		${DISTNAME}
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 USES+=		compiler:gcc-c++11-lib
+
+CPPFLAGS+=	-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
