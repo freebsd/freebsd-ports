@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bindgen
-DISTVERSION=	0.49.2
-PORTREVISION=	1
+DISTVERSION=	0.49.3
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 PKGNAMEPREFIX=	rust-
@@ -23,11 +22,10 @@ PLIST_FILES=	bin/${PORTNAME}
 CARGO_CRATES=	aho-corasick-0.7.3 \
 		ansi_term-0.11.0 \
 		atty-0.2.11 \
-		autocfg-0.1.4 \
-		backtrace-0.3.20 \
-		backtrace-sys-0.1.28 \
-		bitflags-1.0.4 \
-		byteorder-1.3.1 \
+		backtrace-0.3.32 \
+		backtrace-sys-0.1.29 \
+		bitflags-1.1.0 \
+		byteorder-1.3.2 \
 		cc-1.0.37 \
 		cexpr-0.3.5 \
 		cfg-if-0.1.9 \
@@ -40,8 +38,8 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		glob-0.2.11 \
 		humantime-1.2.0 \
 		lazy_static-1.3.0 \
-		libc-0.2.55 \
-		libloading-0.5.0 \
+		libc-0.2.58 \
+		libloading-0.5.1 \
 		log-0.4.6 \
 		memchr-2.2.0 \
 		nom-4.2.3 \
@@ -52,19 +50,19 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		quote-0.6.12 \
 		redox_syscall-0.1.54 \
 		redox_termios-0.1.1 \
-		regex-1.1.6 \
-		regex-syntax-0.6.6 \
-		rustc-demangle-0.1.14 \
+		regex-1.1.7 \
+		regex-syntax-0.6.7 \
+		rustc-demangle-0.1.15 \
 		shlex-0.1.1 \
 		strsim-0.8.0 \
-		termcolor-1.0.4 \
-		termion-1.5.2 \
+		termcolor-1.0.5 \
+		termion-1.5.3 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
 		ucd-util-0.1.3 \
 		unicode-width-0.1.5 \
 		unicode-xid-0.1.0 \
-		utf8-ranges-1.0.2 \
+		utf8-ranges-1.0.3 \
 		vec_map-0.8.1 \
 		version_check-0.1.5 \
 		which-2.0.1 \
