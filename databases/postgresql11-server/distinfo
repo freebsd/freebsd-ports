@@ -1,3 +1,3 @@
-TIMESTAMP = 1557217836
-SHA256 (postgresql/postgresql-11.3.tar.bz2) = 2a85e082fc225944821dfd23990e32dfcd2284c19060864b0ad4ca537d30522d
-SIZE (postgresql/postgresql-11.3.tar.bz2) = 19718775
+TIMESTAMP = 1561409449
+SHA256 (postgresql/postgresql-11.4.tar.bz2) = 02802ddffd1590805beddd1e464dd28a46a41a5f1e1df04bab4f46663195cc8b
+SIZE (postgresql/postgresql-11.4.tar.bz2) = 19759635

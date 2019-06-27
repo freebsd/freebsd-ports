@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	databases
 
 MAINTAINER=	pgsql@FreeBSD.org
