@@ -1,4 +1,0 @@
-Edit the configuration files in %%ETCDIR%% to suit your needs.
-
-Run sysrc hiawatha_enable="YES" and start Hiawatha by running:
-service hiawatha start
