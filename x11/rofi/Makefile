@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rofi
-DISTVERSION=	1.5.3
+DISTVERSION=	1.5.4
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/davatorium/rofi/releases/download/${PORTVERSION}/
 
