@@ -154,6 +154,7 @@
     SUBDIR += mmdb2
     SUBDIR += mmtf-cpp
     SUBDIR += mol2ps
+    SUBDIR += molden
     SUBDIR += molgif
     SUBDIR += molscript
     SUBDIR += molsketch
