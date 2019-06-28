@@ -165,3 +165,10 @@ libdata/pkgconfig/Cutelyst2Qt5WSGI.pc
 man/man1/cutelyst-wsgi2.1.gz
 man/man1/cutelyst2.1.gz
 man/man5/Cutelyst2Qt5Session.5.gz
+%%DATADIR%%2/translations/cutelystcmd.en.qm
+%%DATADIR%%2/translations/cutelystcore.en.qm
+%%DATADIR%%2/translations/cutelystwsgi.en.qm
+%%DATADIR%%2/translations/plugin_csrfprotection.en.qm
+%%DATADIR%%2/translations/plugin_memcached.en.qm
+%%DATADIR%%2/translations/plugin_utils_validator.en.qm
+%%DATADIR%%2/translations/plugin_view_grantlee.en.qm
