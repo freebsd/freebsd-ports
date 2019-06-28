@@ -1,0 +1,21 @@
+--- configure.ac.orig	2018-03-24 23:40:31 UTC
++++ configure.ac
+@@ -4,9 +4,6 @@ dnl init autoconf and automake
+ AC_INIT(pinball, 0.3.4.1)
+ 
+ AC_CONFIG_HEADERS(pinconfig.h)
+-LT_CONFIG_LTDL_DIR([libltdl])
+-AC_CONFIG_AUX_DIR([libltdl/config])
+-AC_CONFIG_MACRO_DIR([libltdl/m4])
+ 
+ AC_CANONICAL_HOST
+ AC_CANONICAL_TARGET
+@@ -22,7 +19,7 @@ AC_PROG_MKDIR_P
+ AM_GNU_GETTEXT([external])
+ #For rhel6 but rhel6 doesn't have SDL2
+ #AM_GNU_GETTEXT_VERSION(0.17)
+-AM_GNU_GETTEXT_VERSION(0.19.8)
++AM_GNU_GETTEXT_VERSION(0.20)
+ 
+ dnl this is a c++ program
+ dnl CFLAGS="-g -W -Wall -O2"
