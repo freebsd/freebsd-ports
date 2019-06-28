@@ -3,7 +3,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.6.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm/releases/download/${PORTVERSION}/ \
 		http://www.fvwm.org/generated/icon_download/
