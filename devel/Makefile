@@ -4327,6 +4327,7 @@
     SUBDIR += py-delfick_error
     SUBDIR += py-deliciousapi
     SUBDIR += py-demjson
+    SUBDIR += py-deprecated
     SUBDIR += py-deprecation
     SUBDIR += py-dexml
     SUBDIR += py-dialog
