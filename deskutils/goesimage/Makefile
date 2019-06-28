@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	goesimage
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.3
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
