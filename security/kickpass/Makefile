@@ -26,7 +26,6 @@ PLIST_FILES=	bin/kickpass \
 		share/zsh/site-functions/_kickpass
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	paulfariello
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
