@@ -2,8 +2,7 @@
 
 PORTNAME=	coredns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0-25
-DISTVERSIONSUFFIX=	-ga84413bd
+DISTVERSION=	1.5.1
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_TUPLE=	\
-		DataDog:dd-trace-go:v0.6.1:datadog_dd_trace_go_v0/vendor/gopkg.in/DataDog/dd-trace-go.v0 \
+		DataDog:dd-trace-go:v1.15.0:datadog_dd_trace_go_v0/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
 		DataDog:zstd:v1.3.5:datadog_zstd/vendor/github.com/DataDog/zstd \
 		Shopify:sarama:v1.21.0:shopify_sarama/vendor/github.com/Shopify/sarama \
 		apache:thrift:v0.12.0:apache_thrift/vendor/github.com/apache/thrift \
@@ -47,6 +46,7 @@ GH_TUPLE=	\
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
 		google:btree:4030bb1f1f0c:google_btree/vendor/github.com/google/btree \
 		google:go-genproto:c66870c02cf8:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-cmp:v0.3.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:gofuzz:24818f796faf:google_gofuzz/vendor/github.com/google/gofuzz \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gnostic:v0.2.0:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
@@ -69,6 +69,7 @@ GH_TUPLE=	\
 		opentracing:opentracing-go:v1.0.2:opentracing_opentracing_go/vendor/github.com/opentracing/opentracing-go \
 		openzipkin:zipkin-go-opentracing:v0.3.4:openzipkin_zipkin_go_opentracing/vendor/github.com/openzipkin/zipkin-go-opentracing \
 		peterbourgon:diskv:v2.0.1:peterbourgon_diskv/vendor/github.com/peterbourgon/diskv \
+		philhofer:fwd:v1.0.0:fwd/vendor/github.com/philhofer/fwd \
 		pierrec:lz4:v2.0.5:pierrec_lz4/vendor/github.com/pierrec/lz4 \
 		prometheus:client_golang:v0.9.2:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:5c3871d89910:prometheus_client_model/vendor/github.com/prometheus/client_model \
@@ -76,12 +77,14 @@ GH_TUPLE=	\
 		prometheus:procfs:1dc9a6cbc91a:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		rcrowley:go-metrics:3113b8401b8a:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
+		tinylib:msgp:v1.1.0:msgp/vendor/github.com/tinylib/msgp \
 		ugorji:go:c4a1c341dc93:ugorji_go/vendor/github.com/ugorji/go \
-		kubernetes:api:89a74a8d264d:kubernetes_api/vendor/k8s.io/api \
-		kubernetes:apimachinery:2b1284ed4c93:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
-		kubernetes:client-go:v10.0.0:kubernetes_client_go/vendor/k8s.io/client-go \
-		kubernetes:klog:8139d8cb77af:kubernetes_klog/vendor/k8s.io/klog \
-		kubernetes:kube-openapi:15615b16d372:kubernetes_kube_openapi/vendor/k8s.io/kube-openapi \
+		kubernetes:api:kubernetes-1.15.1-beta.0:kubernetes_api/vendor/k8s.io/api \
+		kubernetes:apimachinery:kubernetes-1.15.1-beta.0:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
+		kubernetes:client-go:kubernetes-1.15.1-beta.0:kubernetes_client_go/vendor/k8s.io/client-go \
+		kubernetes:klog:v0.3.3:kubernetes_klog/vendor/k8s.io/klog \
+		kubernetes:kube-openapi:db7b694:kubernetes_kube_openapi/vendor/k8s.io/kube-openapi \
+		kubernetes:utils:c55fbcf:kubernetes_utils/vendor/k8s.io/utils \
 		kubernetes-sigs:yaml:v1.1.0:kubernetes_yaml/vendor/sigs.k8s.io/yaml
 
 GO_PKGNAME=	github.com/${PORTNAME}/${PORTNAME}
