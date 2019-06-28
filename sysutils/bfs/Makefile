@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bfs
-DISTVERSION=	1.4.1
+DISTVERSION=	1.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -18,13 +18,18 @@ USES=		gmake shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	tavianator
 
-SHEBANG_FILES=	tests/*.sh
-PLIST_FILES=	bin/bfs \
-		man/man1/bfs.1.gz
+SHEBANG_FILES=	tests.sh tests/*.sh
+
 TEST_TARGET=	check
 
+PLIST_FILES=	bin/bfs \
+		man/man1/bfs.1.gz
+
 post-patch:
-	@${REINPLACE_CMD} 's,/bin/bash,${LOCALBASE}/bin/bash,g' ${WRKSRC}/tests.sh
+# Disable test_L_acl and test_acl tests since they assume POSIX.1e
+# ACLs and will fail on ZFS or tmpfs.
+	@${REINPLACE_CMD} -e '/^    test_acl/d' -e '/^    test_L_acl/d' \
+		${WRKSRC}/tests.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bfs ${STAGEDIR}${PREFIX}/bin
