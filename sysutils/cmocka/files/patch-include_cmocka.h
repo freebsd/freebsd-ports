@@ -1,6 +1,6 @@
---- include/cmocka.h.orig	2018-01-02 22:14:13.670138000 -0600
-+++ include/cmocka.h	2018-01-02 22:35:26.399769000 -0600
-@@ -110,7 +110,7 @@
+--- include/cmocka.h.orig	2018-09-06 06:15:11 UTC
++++ include/cmocka.h
+@@ -111,7 +111,7 @@ typedef uintmax_t LargestIntegralType;
      ((LargestIntegralType)(value))
  
  /* Smallest integral type capable of holding a pointer. */
@@ -9,7 +9,7 @@
  # if defined(_WIN32)
      /* WIN32 is an ILP32 platform */
      typedef unsigned int uintptr_t;
-@@ -136,6 +136,7 @@
+@@ -137,6 +137,7 @@ typedef uintmax_t LargestIntegralType;
  
  # define _UINTPTR_T
  # define _UINTPTR_T_DEFINED
