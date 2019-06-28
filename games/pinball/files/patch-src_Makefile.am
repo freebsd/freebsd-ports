@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2018-03-24 23:40:31 UTC
++++ src/Makefile.am
+@@ -10,7 +10,7 @@ bin_PROGRAMS = pinball
+ AM_CPPFLAGS = -I../base -I../addon @INCLTDL@
+ 
+ pinball_LDADD = \
+- libemilia_pin.a ../addon/libemilia_addon.a ../base/libemilia_base.a @LIBLTDL@
++ libemilia_pin.a ../addon/libemilia_addon.a ../base/libemilia_base.a @LIBLTDL@ @LIBINTL@
+ 
+ pinball_LDFLAGS = -export-dynamic
+ 

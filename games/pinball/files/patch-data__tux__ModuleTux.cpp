@@ -1,5 +1,5 @@
---- data/tux/ModuleTux.cpp.orig	Thu Nov 20 17:46:17 2003
-+++ data/tux/ModuleTux.cpp	Fri Dec 12 21:30:15 2003
+--- data/tux/ModuleTux.cpp.orig	2018-03-24 23:40:31 UTC
++++ data/tux/ModuleTux.cpp
 @@ -7,6 +7,7 @@
   ***************************************************************************/
  
@@ -8,11 +8,12 @@
  #include "Behavior.h"
  #include "Group.h"
  #include "Pinball.h"
-@@ -15,7 +16,6 @@
+@@ -15,7 +16,7 @@
  #include "Score.h"
  #include "Keyboard.h"
  #include "Table.h"
 -#include "Config.h"
++#include <libintl.h>
  
- #define MISSION_TEXT_TIMEOUT 6000
- #define INFO_TEXT_TIME 600
+ #include <locale>
+ 
