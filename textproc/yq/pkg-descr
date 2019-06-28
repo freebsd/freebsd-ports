@@ -1,0 +1,4 @@
+yq is a command line processor for Yaml/Xml documents, similar to jq
+for Json.
+
+WWW: https://github.com/kislyuk/yq

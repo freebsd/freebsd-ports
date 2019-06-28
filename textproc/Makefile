@@ -1854,6 +1854,7 @@
     SUBDIR += yi-hunspell
     SUBDIR += yodl
     SUBDIR += yould
+    SUBDIR += yq
     SUBDIR += zenxml
     SUBDIR += zorba
     SUBDIR += zu-aspell
