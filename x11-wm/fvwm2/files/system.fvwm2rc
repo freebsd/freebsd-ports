@@ -36,20 +36,20 @@ Style "FvwmBanner"  StaysOnTop
 Style "FvwmButtons" Icon toolbox.xpm, ClickToFocus
 
 # Styles for your common terminal emulator programs:
-Style "XTerm"       Icon xterm.xpm, SloppyFocus, IconBox -70 1 -1 -140
-Style "rxvt"        Icon term.xpm, SloppyFocus, IconBox -70 1 -1 -140
-Style "rxvt"        MWMBorder, MWMButtons
+# Style "XTerm"       Icon xterm.xpm, SloppyFocus, IconBox -70 1 -1 -140
+# Style "rxvt"        Icon term.xpm, SloppyFocus, IconBox -70 1 -1 -140
+# Style "rxvt"        MWMBorder, MWMButtons
 
 # Styles for various common programs:
-Style "*lock"       !Title, !Handles, Sticky, WindowListSkip, ClickToFocus
-Style "xbiff"       !Title, Sticky, WindowListSkip, ClickToFocus
-Style "xcalc"       Icon xcalc.xpm, !Button 2,ClickToFocus
-Style "xmh"         Icon mail1.xpm, !IconTitle,StickyIcon
-Style "xmh"	    !Button 2
-Style "xman"	    Icon xman.xpm, ClickToFocus
-Style "xmag"	    Icon mag_glass.xpm, ClickToFocus
-Style "xgraph"      Icon graphs.xpm, ClickToFocus
-Style "xmosaic"     Color Green/Yellow, ClickToFocus
+# Style "*lock"       !Title, !Handles, Sticky, WindowListSkip, ClickToFocus
+# Style "xbiff"       !Title, Sticky, WindowListSkip, ClickToFocus
+# Style "xcalc"       Icon xcalc.xpm, !Button 2,ClickToFocus
+# Style "xmh"         Icon mail1.xpm, !IconTitle,StickyIcon
+# Style "xmh"	    !Button 2
+# Style "xman"	    Icon xman.xpm, ClickToFocus
+# Style "xmag"	    Icon mag_glass.xpm, ClickToFocus
+# Style "xgraph"      Icon graphs.xpm, ClickToFocus
+# Style "xmosaic"     Color Green/Yellow, ClickToFocus
 
 
 # some simple default key bindings:
@@ -88,13 +88,13 @@ AddToFunc SessionInitFunction
 
 ######################## Menus ###################
 AddToMenu RootMenu	"Root Menu"	Title
-+			"XTerm"		Exec exec xterm
-+			"Rxvt"		Exec exec rxvt
-+			""		Nop
-+			"Remote Logins"	Popup Remote-Logins
-+			""		Nop
-+                       "Utilities"     Popup Utilities
-+			""		Nop
+# +			"XTerm"		Exec exec xterm
+# +			"Rxvt"		Exec exec rxvt
+# +			""		Nop
+# +			"Remote Logins"	Popup Remote-Logins
+# +			""		Nop
+# +			"Utilities"     Popup Utilities
+# +			""		Nop
 +			"Fvwm Modules"	          Popup Module-Popup
 +                       "Fvwm Window Ops"         Popup Window-Ops
 +                       "Fvwm Simple Config Ops"  Popup Misc-Ops
@@ -104,19 +104,19 @@ AddToMenu RootMenu	"Root Menu"	Title
 +			""		Nop
 +			"Exit Fvwm"	Popup Quit-Verify
 
-AddToMenu Utilities     "Utilities" Title
-+			"Top"		Exec exec xterm -T Top -n Top -e top
-+			"Calculator"	Exec exec xcalc
-+			"Xman"		Exec exec xman
-+			"Xmag"		Exec exec xmag
-+                       "Editres"       Exec exec editres
-+			""		Nop
-+			"XEmacs"	Exec exec xemacs
-+                       "Mail"          MailFunction xmh "-font fixed"
-+			""		Nop
-+                       "XLock"         Exec exec xlock -mode random
-+			""		Nop
-+                       "Reset X defaults" Exec xrdb -load $HOME/.Xdefaults
+# AddToMenu Utilities     "Utilities" Title
+# +			"Top"		Exec exec xterm -T Top -n Top -e top
+# +			"Calculator"	Exec exec xcalc
+# +			"Xman"		Exec exec xman
+# +			"Xmag"		Exec exec xmag
+# +			"Editres"       Exec exec editres
+# +			""		Nop
+# +			"XEmacs"	Exec exec xemacs
+# +			"Mail"          MailFunction xmh "-font fixed"
+# +			""		Nop
+# +			"XLock"         Exec exec xlock -mode random
+# +			""		Nop
+# +			"Reset X defaults" Exec xrdb -load $HOME/.Xdefaults
 
 AddToMenu Misc-Ops "Misc Config Opts" Title
 +                  "Sloppy Focus"        ChangeDefaultFocus SloppyFocus
@@ -165,14 +165,14 @@ AddToMenu Window-Ops2	"&Move"		Move
 +                       "Print Reverse" PrintReverseFunction
 
 # be sure to fill these in with your correct machine names:
-AddToMenu Remote-Logins	"dopey"	 Exec ssh dopey rxvt -display $HOSTDISPLAY &
-+			"snoopy" Exec ssh snoopy rxvt -display $HOSTDISPLAY &
-+			"grumpy" Exec ssh grumpy rxvt -display $HOSTDISPLAY &
-+			"happy"	 Exec ssh happy rxvt -display $HOSTDISPLAY &
-+			"bailey" Exec ssh bailey rxvt -display $HOSTDISPLAY &
-+			"barnum" Exec ssh barnum rxvt -display $HOSTDISPLAY &
-+			"joker"	 Exec ssh joker rxvt -display $HOSTDISPLAY &
-+			"signal" Exec rxterm signal
+# AddToMenu Remote-Logins	"dopey"	 Exec ssh dopey rxvt -display $HOSTDISPLAY &
+# +			"snoopy" Exec ssh snoopy rxvt -display $HOSTDISPLAY &
+# +			"grumpy" Exec ssh grumpy rxvt -display $HOSTDISPLAY &
+# +			"happy"	 Exec ssh happy rxvt -display $HOSTDISPLAY &
+# +			"bailey" Exec ssh bailey rxvt -display $HOSTDISPLAY &
+# +			"barnum" Exec ssh barnum rxvt -display $HOSTDISPLAY &
+# +			"joker"	 Exec ssh joker rxvt -display $HOSTDISPLAY &
+# +			"signal" Exec rxterm signal
 
 AddToMenu Module-Popup	"FvwmModules"	Title
 +			"Identify"	Module	FvwmIdent
@@ -200,17 +200,17 @@ AddToMenu Quit-Verify 	"Really Quit Fvwm?" Title
 +		      	"Yes, Really Quit"  Quit
 +		      	""		    Nop
 +                       "Restart Fvwm"      Restart
-+		      	"Restart Fvwm 1.x"  Restart fvwm -s
-+		      	""		    Nop
-+		      	"Start twm"         Restart twm
-+		      	"Start ctwm"        Restart ctwm
-+		        "Start tvtwm"       Restart tvtwm
-+		        "Start vtwm"        Restart vtwm
-+		      	"Start mwm"    	    Restart mwm
-+	      	      	"Start olwm"        Restart /usr/openwin/bin/olwm
-+		      	""		    Nop
-+		      	"Start dummy"       Restart xterm
-+		      	""		    Nop
+# +		      	"Restart Fvwm 1.x"  Restart fvwm -s
+# +		      	""		    Nop
+# +		      	"Start twm"         Restart twm
+# +		      	"Start ctwm"        Restart ctwm
+# +		        "Start tvtwm"       Restart tvtwm
+# +		        "Start vtwm"        Restart vtwm
+# +		      	"Start mwm"    	    Restart mwm
+# +	      	      	"Start olwm"        Restart /usr/openwin/bin/olwm
+# +		      	""		    Nop
+# +		      	"Start dummy"       Restart xterm
+# +		      	""		    Nop
 +		      	"No, Don't Quit"    Nop
 
 ######################## Sample Functions ##########################
@@ -275,9 +275,9 @@ AddToFunc ChangeDefaultFocus I Style * $0
 *FvwmButtons: (3x2 Frame 2 Swallow "FvwmIconMan" "Module FvwmIconMan")
 *FvwmButtons: (1x2 Frame 2 Swallow(UseOld) "FvwmPager" "Module FvwmPager 0 0")
 *FvwmButtons: (1x2 Frame 0 Container(Rows 2 Columns 2 Frame 0))
-*FvwmButtons: (Frame 2 Swallow(UseOld,NoHints,Respawn) "xbiff" `Exec exec xbiff -bg bisque3`)
-*FvwmButtons: (Frame 3 Swallow(UseOld,NoHints,Respawn) "xclock" `Exec exec xclock -bg bisque3 -fg black -hd black -hl black -padding 0 -update 1`)
-*FvwmButtons: (2x1 Frame 2 Swallow(UseOld,NoHints,Respawn) "xload" `Exec exec xload -bg bisque3 -fg black -update 5 -nolabel`)
+# *FvwmButtons: (Frame 2 Swallow(UseOld,NoHints,Respawn) "xbiff" `Exec exec xbiff -bg bisque3`)
+# *FvwmButtons: (Frame 3 Swallow(UseOld,NoHints,Respawn) "xclock" `Exec exec xclock -bg bisque3 -fg black -hd black -hl black -padding 0 -update 1`)
+# *FvwmButtons: (2x1 Frame 2 Swallow(UseOld,NoHints,Respawn) "xload" `Exec exec xload -bg bisque3 -fg black -update 5 -nolabel`)
 *FvwmButtons: (End)
 *FvwmButtons: (End)
 
