@@ -24,7 +24,6 @@ USES=		cmake compiler:c++11-lang pkgconfig python:3.5+ qt:5
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
-USE_PYTHON=	noflavors
 USE_QT=		core gui network multimedia widgets qmake_build buildtools_build
 
 CMAKE_ON=	USE_SYSTEM_JSONCPP \
