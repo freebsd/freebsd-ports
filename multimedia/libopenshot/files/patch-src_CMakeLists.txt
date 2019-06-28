@@ -1,0 +1,19 @@
+--- src/CMakeLists.txt.orig	2019-05-08 19:16:50 UTC
++++ src/CMakeLists.txt
+@@ -45,6 +45,8 @@ IF (APPLE)
+ 	SET(JUCE_PLATFORM_SPECIFIC_LIBRARIES "-framework Carbon -framework Cocoa -framework CoreFoundation -framework CoreAudio -framework CoreMidi -framework IOKit -framework AGL -framework AudioToolbox -framework QuartzCore -lobjc -framework Accelerate")
+ ENDIF(APPLE)
+ 
++find_library(EXECINFO_LIBRARY NAMES execinfo)
++
+ ################ IMAGE MAGICK ##################
+ # Set the Quantum Depth that ImageMagick was built with (default to 16 bits)
+ IF (MAGICKCORE_QUANTUM_DEPTH)
+@@ -312,6 +314,7 @@ SET ( REQUIRED_LIBRARIES
+ 		${PROFILER}
+ 		${JSONCPP_LIBRARY}
+ 		${ZMQ_LIBRARIES}
++		${EXECINFO_LIBRARY}
+ 		)
+ 
+ IF (AVCODEC_FOUND)
