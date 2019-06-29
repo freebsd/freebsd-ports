@@ -4842,6 +4842,7 @@
     SUBDIR += py-pytest-mock
     SUBDIR += py-pytest-pycodestyle
     SUBDIR += py-pytest-relaxed
+    SUBDIR += py-pytest-rerunfailures
     SUBDIR += py-pytest-runner
     SUBDIR += py-pytest-sugar
     SUBDIR += py-pytest-timeout
