@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	amass
-DISTVERSION=	3.0.15
+DISTVERSION=	3.0.16
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/LICENSE
 
 USES=		go
-
 USE_GITHUB=	nodefault # main code is in GH_TUPLE, otherwise build fails with circular dependency errors
 GH_ACCOUNT=	OWASP
 GH_PROJECT=	Amass
