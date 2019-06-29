@@ -2,7 +2,8 @@
 
 PORTNAME=	postgresql
 CATEGORIES=	databases python
-PORTREVISION=	0
+# Keep the ?=, it is used as master by the other plpython ports.
+PORTREVISION?=	0
 PKGNAMESUFFIX?=	${WANT_PGSQL_VER:S/.//}${COMPONENT}
 
 MAINTAINER=	pgsql@FreeBSD.org

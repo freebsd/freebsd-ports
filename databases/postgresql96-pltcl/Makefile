@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTREVISION=	0
+# Keep the ?=, it is used by the other pltcl ports.
+PORTREVISION?=	0
 CATEGORIES=	databases tcl
 PKGNAMESUFFIX?=	${WANT_PGSQL_VER:S/.//}${COMPONENT}
 
