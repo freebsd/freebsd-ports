@@ -1,0 +1,4 @@
+This library is a goodie-bag of Unix shell and environment management tools for
+automated tests.
+
+WWW: https://github.com/manahl/pytest-plugins/tree/master/pytest-shutil
