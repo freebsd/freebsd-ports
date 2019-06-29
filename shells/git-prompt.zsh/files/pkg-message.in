@@ -1,12 +1,15 @@
-=============================================================
+[
+{
+message: <<EOT
+Final git-prompt.zsh setup instructions:
 
-To add the git status indicator to your prompt, source
-git-prompt.zsh in one of your Zsh startup files using
+To add the git status indicator to your prompt, source git-prompt.zsh in
+one of your Zsh startup files using
 
 source %%DATADIR%%${PORTNAME}/${PORTNAME}
 
-Next, add ' $(gitprompt)%# ' to the end of the PROMPT value
-like in the example below.
+Next, add ' $(gitprompt)%# ' to the end of the PROMPT value like in the
+example below.
 
 PROMPT='%n@%m %~ $(gitprompt)%# '
 
@@ -17,5 +20,7 @@ For details, refer to
 or
 
 https://github.com/woefe/git-prompt.zsh
-
-=============================================================
+EOT
+  type: install
+}
+]
