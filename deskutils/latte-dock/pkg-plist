@@ -116,8 +116,10 @@ share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.latte.containment.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.latte.plasmoid.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.latte.spacer.mo
 share/locale/ja/LC_MESSAGES/plasma_containmentactions_lattecontextmenu.mo
+share/locale/ko/LC_MESSAGES/latte-dock.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_audoban.applet.separator.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.latte.containment.mo
+share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.latte.plasmoid.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.latte.spacer.mo
 share/locale/ko/LC_MESSAGES/plasma_containmentactions_lattecontextmenu.mo
 share/locale/pl/LC_MESSAGES/plasma_containmentactions_lattecontextmenu.mo
