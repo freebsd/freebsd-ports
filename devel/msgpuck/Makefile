@@ -11,7 +11,7 @@ COMMENT=	Lightweight MessagePack library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		compiler:c11 cmake
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
