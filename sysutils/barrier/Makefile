@@ -2,7 +2,7 @@
 
 PORTNAME=	barrier
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.2
+DISTVERSION=	2.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -26,11 +26,11 @@ OPTIONS_SUB=		yes
 
 GUI_DESC=	Build configuration utility (requires Qt 5)
 
-GUI_CMAKE_BOOL=		BARRIER_BUILD_GUI
 GUI_LIB_DEPENDS=	libcurl.so:ftp/curl \
 			libdns_sd.so:net/avahi-libdns
 GUI_USES=		qt:5
 GUI_USE=		QT=core,gui,network,widgets,buildtools_build,qmake_build
+GUI_CMAKE_BOOL=		BARRIER_BUILD_GUI
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/etc/barrier/|"${ETCDIR}/|' \
