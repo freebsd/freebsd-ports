@@ -1,0 +1,9 @@
+pet is a simple command-line snippet manager (inspired by memo). Users often
+forget commands that they rarely use. Moreover, it is difficult to search for
+them in shell history. There are many similar commands, but they are all
+different.
+
+pet makes it possible to register snippets with description and search them
+easily.
+
+WWW: https://github.com/knqyf263/pet
