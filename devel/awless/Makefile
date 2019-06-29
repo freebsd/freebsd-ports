@@ -11,7 +11,7 @@ COMMENT=	Fast, powerful and easy-to-use CLI for AWS
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wallix

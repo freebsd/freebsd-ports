@@ -11,10 +11,9 @@ COMMENT=	Go web development eco-system, designed to make the life easier
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	go:lang/go \
-		git:devel/git
+RUN_DEPENDS=	git:devel/git
 
-USES=		go:modules
+USES=		go:modules,run
 
 GO_PKGNAME=	github.com/gobuffalo/buffalo
 GO_TARGET=	./buffalo

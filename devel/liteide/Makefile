@@ -11,10 +11,7 @@ COMMENT=	Simple, open source, cross-platform Go IDE
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
 
-BUILD_DEPENDS=	go:lang/go
-RUN_DEPENDS=	go:lang/go
-
-USES=		gl qmake qt:5
+USES=		gl go:no_targets,run qmake qt:5
 USE_GL=		gl
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_QT=		buildtools_build core gui network printsupport widgets xml

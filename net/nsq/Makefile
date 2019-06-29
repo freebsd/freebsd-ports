@@ -12,8 +12,6 @@ LICENSE=	MIT
 
 ONLY_FOR_ARCHS=	amd64
 
-BUILD_DEPENDS=	go>=1.7:lang/go
-
 USES=	compiler go
 
 USE_RC_SUBR=	nsqd nsqlookupd nsqadmin

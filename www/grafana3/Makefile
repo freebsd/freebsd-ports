@@ -12,8 +12,6 @@ COMMENT=	Dashboard and graph editor for Graphite, InfluxDB & OpenTSDB
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
-
 RUN_DEPENDS=	${LOCALBASE}/bin/phantomjs:lang/phantomjs \
 		webfonts>=0:x11-fonts/webfonts
 
@@ -21,7 +19,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USE_RC_SUBR=	grafana3
 
-USES=	compiler
+USES=	compiler go
 
 USE_GITHUB=	yes
 

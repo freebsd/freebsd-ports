@@ -10,8 +10,9 @@ COMMENT=	Amazon Simple Systems Manager Agent
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aws

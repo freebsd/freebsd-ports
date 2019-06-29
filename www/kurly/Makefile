@@ -11,7 +11,7 @@ COMMENT=	Alternative implementation of curl written in Golang
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC_kurly}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITLAB=	nodefault
 GL_TUPLE=	davidjpeacock:kurly:369c1998dfbfca7043f8c995c8ef8714496530ea:kurly/src/gitlab.com/davidjpeacock/kurly

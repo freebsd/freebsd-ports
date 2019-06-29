@@ -9,7 +9,7 @@ COMMENT=	Quantum Insert detector and 0-day catcher
 
 BROKEN=		fails to build
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_TUPLE=	david415:HoneyBadger:11dc0ca:DEFAULT/src/github.com/david415/HoneyBadger \

@@ -64,7 +64,7 @@ DOXYGEN_MAKE_ARGS=		HAS_doxygen=yes
 DOXYGEN_MAKE_ARGS_OFF=		HAS_doxygen=no
 
 GO_DESC=			go
-GO_BUILD_DEPENDS=		go>=1.5:lang/go
+GO_USES=			go:no_targets
 GO_MAKE_ARGS=			HAS_go=yes
 GO_MAKE_ARGS_OFF=		HAS_go=no
 

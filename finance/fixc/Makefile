@@ -8,7 +8,7 @@ CATEGORIES=		finance
 MAINTAINER=		blttll@gmail.com
 COMMENT=		Simple Financial Information eXchange (FIX) protocol console client
 
-BUILD_DEPENDS=		${LOCALBASE}/bin/go:lang/go
+USES=			go
 
 PLIST_FILES=		bin/fixc
 USE_GITHUB=		yes

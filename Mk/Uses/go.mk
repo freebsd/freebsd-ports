@@ -5,11 +5,17 @@
 #
 # Feature:	go
 # Usage:	USES=go
-# Valid ARGS:	(none), modules
+# Valid ARGS:	(none), modules, no_targets, run
 #
 # (none)	Setup GOPATH and build in GOPATH mode.
 # modules	If the upstream uses Go modules, this can be set to build
 #		in modules-aware mode.
+# no_targets	Indicates that Go is needed at build time as a part of
+#		make/CMake build.  This will setup build environment like
+#		GO_ENV, GO_BUILDFLAGS but will not create post-extract, do-build
+#		and do-install targets.
+# run		Indicates that Go is needed at run time and adds it to
+#		RUN_DEPENDS.
 #
 # You can set the following variables to control the process.
 #
@@ -40,15 +46,15 @@
 #	The Go port to use.  By default this is lang/go but can be set
 #	to lang/go-devel in make.conf for testing with future Go versions.
 #
-#	This variable should not be set by individual ports!
+#	This variable must not be set by individual ports!
 #
 # MAINTAINER: jlaffaye@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GO_MK)
 _INCLUDE_USES_GO_MK=	yes
 
-.if !empty(go_ARGS) && ${go_ARGS:Nmodules}
-IGNORE=	USES=go only accepts no arguments or 'modules'
+.if !empty(go_ARGS:Nmodules:Nno_targets:Nrun)
+IGNORE=	USES=go has invalid arguments: ${go_ARGS:Nmodules:Nno_targets:Nrun}
 .endif
 
 # Settable variables
@@ -91,6 +97,9 @@ GO_ENV+=	GOPATH="${WRKDIR}" \
 
 GO_PORT?=	lang/go
 BUILD_DEPENDS+=	${GO_CMD}:${GO_PORT}
+.if ${go_ARGS:Mrun}
+RUN_DEPENDS+=	${GO_CMD}:${GO_PORT}
+.endif
 PLIST_SUB+=	GO_PKGNAME=${GO_PKGNAME}
 
 _USES_POST+=	go
@@ -105,13 +114,13 @@ post-extract:
 	@${LN} -sf ${WRKSRC} ${GO_WRKSRC}
 .endif
 
-.if !target(do-build)
+.if !target(do-build) && empty(go_ARGS:Mno_targets)
 do-build:
 	(cd ${GO_WRKSRC}; \
 		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install ${GO_BUILDFLAGS} ${GO_TARGET})
 .endif
 
-.if !target(do-install)
+.if !target(do-install) && empty(go_ARGS:Mno_targets)
 do-install:
 .for _TARGET in ${GO_TARGET}
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${_TARGET:T} ${STAGEDIR}${PREFIX}/bin

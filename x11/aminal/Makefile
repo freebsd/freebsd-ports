@@ -11,9 +11,7 @@ COMMENT=	Golang terminal emulator from scratch
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
-
-USES=		gl
+USES=		gl go
 USE_GITHUB=	nodefault # the main code is in GH_TUPLE
 GH_ACCOUNT=	liamg
 GH_TUPLE=	liamg:aminal:${DISTVERSIONFULL}:main/src/github.com/liamg/aminal \

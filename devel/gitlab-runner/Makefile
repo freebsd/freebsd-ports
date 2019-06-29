@@ -18,11 +18,12 @@ COMMENT=	Official GitLab Runner written in Go
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go \
-		go-bindata:devel/go-bindata
+BUILD_DEPENDS=	go-bindata:devel/go-bindata
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		bash:shells/bash \
 		git:devel/git
+
+USES=		go
 
 USE_GITLAB=	yes
 

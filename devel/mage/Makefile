@@ -11,7 +11,7 @@ COMMENT=	Command-line make-like build tool using Go as input files
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	magefile

@@ -9,9 +9,7 @@ COMMENT=	Amazon S3 compatible object storage server
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	go>=1.9.4:lang/go
-
-USES=		compiler
+USES=		compiler go
 
 USE_GITHUB=	yes
 GHTAG=		RELEASE.2019-06-15T23-07-18Z

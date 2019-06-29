@@ -10,7 +10,7 @@ COMMENT=	Official GitLab Pages daemon
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org

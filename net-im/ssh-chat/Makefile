@@ -12,7 +12,7 @@ COMMENT=	Chat over SSH
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	nodefault # the main code is in GH_TUPLE
 GH_ACCOUNT=	shazow

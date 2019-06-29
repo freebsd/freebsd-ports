@@ -9,7 +9,7 @@ COMMENT=	Cryptographically secure online voting
 
 LICENSE=	AGPLv3
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_TAGNAME=	3753e1b

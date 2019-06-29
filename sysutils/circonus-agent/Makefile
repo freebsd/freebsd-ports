@@ -11,7 +11,7 @@ COMMENT=	Circonus host agent for metric collection
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go>=1.10:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 

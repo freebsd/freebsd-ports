@@ -10,9 +10,7 @@ COMMENT=		Go implementation of carbonapi
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=		go>=1.8:lang/go
-
-USES=			gmake
+USES=			gmake go
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		go-graphite

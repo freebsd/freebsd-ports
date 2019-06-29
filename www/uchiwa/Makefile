@@ -10,7 +10,7 @@ COMMENT=	Simple dashboard for Sensu
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	go>=1.6.0:lang/go
+USES=		go
 
 UCHIWA_LOGDIR=		/var/log/uchiwa
 UCHIWA_CONFDIR=		${PREFIX}/etc/uchiwa

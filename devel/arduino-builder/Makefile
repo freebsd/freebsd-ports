@@ -11,7 +11,7 @@ COMMENT=	Command line tool for building Arduino sketches
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arduino
@@ -27,7 +27,6 @@ TOOLS_DESC=		Add arduino-tools for a standalone build setup
 TOOLS_RUN_DEPENDS=	arduino-tools>=${_COMPAT_VER}:devel/arduino-tools
 TOOLS_PLIST_FILES=	arduino/arduino-builder.options
 
-GO_ENV+=	GOPATH=${WRKSRC}
 _COMPAT_VER=	1.6.12
 _IDE_VER=	10612
 
@@ -42,7 +41,7 @@ do-patch-TOOLS-on:
 			${WRKSRC}/arduino-builder.options
 
 do-build:
-	@( cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GO_ENV} go build arduino.cc/arduino-builder )
+	@( cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC} go build arduino.cc/arduino-builder )
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

@@ -12,7 +12,7 @@ COMMENT=	Go Tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_TUPLE=	golang:tools:bfb5194:DEFAULT/src/golang.org/x/tools \

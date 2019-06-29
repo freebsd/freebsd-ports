@@ -12,8 +12,6 @@ LICENSE=	APACHE20
 
 BROKEN=		fails to build
 
-BUILD_DEPENDS=	go:lang/go
-
 USES=		go gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	driskell

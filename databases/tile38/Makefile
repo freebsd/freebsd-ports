@@ -11,10 +11,9 @@ COMMENT=	In-memory geolocation data store, spatial index, and realtime geofence
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go>=1.7:lang/go \
-		bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
-USES=		shebangfix
+USES=		go shebangfix
 SHEBANG_FILES=	build.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	tidwall

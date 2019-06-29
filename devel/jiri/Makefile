@@ -13,10 +13,11 @@ COMMENT=	Tool for multi-repo development
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/go/src/fuchsia.googlesource.com/jiri/LICENSE
 
-BUILD_DEPENDS=	go:lang/go \
-		cmake:devel/cmake \
+BUILD_DEPENDS=	cmake:devel/cmake \
 		ninja:devel/ninja
 RUN_DEPENDS=	git:devel/git
+
+USES=		go
 
 GITHASH=	56b2a541f92f3bd9d28b29e1cbcb16f96d6bc6c1
 TIMESTAMP=	2019-01-03T00:00:00.000000
@@ -28,7 +29,7 @@ pre-extract:
 
 do-build:
 	cd ${WRKSRC}/go/src/fuchsia.googlesource.com/jiri && \
-		${SETENV} GOPATH=${WRKSRC}/go \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC}/go \
 			go build -ldflags "-s -w -X \"fuchsia.googlesource.com/jiri/version.GitCommit=${GITHASH}\" -X \"fuchsia.googlesource.com/jiri/version.BuildTime=${TIMESTAMP}\"" -a -o jiri fuchsia.googlesource.com/jiri/cmd/jiri
 
 do-install:

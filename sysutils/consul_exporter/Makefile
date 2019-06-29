@@ -10,9 +10,7 @@ COMMENT=	Exporter for Consul metrics
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
-
-USES=		compiler
+USES=		compiler go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	prometheus

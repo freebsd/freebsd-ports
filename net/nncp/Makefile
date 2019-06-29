@@ -11,9 +11,7 @@ COMMENT=	Utilities for secure store-and-forward files, mail, command exchanging
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	go:lang/go
-
-USES=		tar:xz
+USES=		go:no_targets tar:xz
 MAKEFILE=	BSDmakefile
 USE_RC_SUBR=	nncp-caller nncp-daemon nncp-toss
 INSTALL_TARGET=	install-strip

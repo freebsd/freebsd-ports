@@ -28,13 +28,12 @@ MY_DEPENDS=	git>=2.21:devel/git \
 		rubygem-rbtrace>0:devel/rubygem-rbtrace \
 		rubygem-licensee8>=8.9.0:devel/rubygem-licensee8 \
 		rubygem-google-protobuf371>=3.7.1:devel/rubygem-google-protobuf371
-BUILD_DEPENDS=	go>=1.11:lang/go \
-		gem:devel/ruby-gems \
+BUILD_DEPENDS=	gem:devel/ruby-gems \
 		${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS} \
 		gitlab-shell>=6.0.4:devel/gitlab-shell
 
-USES=		gmake
+USES=		gmake go:no_targets
 USE_RUBY=	yes
 
 USE_GITLAB=	yes

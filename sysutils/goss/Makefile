@@ -12,7 +12,7 @@ COMMENT=		Quick and Easy server validation
 LICENSE=		APACHE20
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=		go:lang/go
+USES=			go
 
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	go-ps only supports amd64

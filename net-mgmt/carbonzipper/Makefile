@@ -10,8 +10,6 @@ COMMENT=		Proxy between carbonapi and go-carbon
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=		go>=1.8:lang/go
-
 USES=			go
 
 USE_GITHUB=		yes

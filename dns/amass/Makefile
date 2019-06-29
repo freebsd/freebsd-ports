@@ -10,7 +10,7 @@ COMMENT=	In-depth DNS enumeration
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	nodefault # main code is in GH_TUPLE, otherwise build fails with circular dependency errors
 GH_ACCOUNT=	OWASP

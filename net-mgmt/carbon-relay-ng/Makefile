@@ -10,10 +10,9 @@ COMMENT=		Go implementation of carbonapi
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=		go>=1.8:lang/go \
-			go-bindata:devel/go-bindata
+BUILD_DEPENDS=		go-bindata:devel/go-bindata
 
-USES=			gmake
+USES=			gmake go
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		graphite-ng

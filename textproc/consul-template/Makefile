@@ -11,7 +11,7 @@ COMMENT=	Generic template rendering and notifications with Consul
 
 LICENSE=	MPL20
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp

@@ -7,12 +7,10 @@ CATEGORIES=	security
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Fork of OpenSSL
 
-BUILD_DEPENDS=	go:lang/go
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_TAGNAME=	144d924
-USES=		cmake:insource localbase perl5
+USES=		cmake:insource go:no_targets localbase perl5
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=1
 USE_LDCONFIG=	yes
 LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib

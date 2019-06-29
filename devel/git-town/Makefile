@@ -11,8 +11,9 @@ COMMENT=	Git extension for generic, high-level git workflow support
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
 RUN_DEPENDS=	git:devel/git
+
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Originate

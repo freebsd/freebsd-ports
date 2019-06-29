@@ -11,9 +11,10 @@ COMMENT=	Collect and display info & stats from a running PostgreSQL server
 
 LICENSE=	APACHE20
 
+USES=		go
+
 USE_GITHUB=	yes
 
-BUILD_DEPENDS=	go>=1.9:lang/go
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GH_ACCOUNT=	rapidloop
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT_DEFAULT}

@@ -10,7 +10,7 @@ COMMENT=	Command line utility for querying IP information
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_SUBDIR=	src/github.com/hashicorp/go-sockaddr
