@@ -35,8 +35,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>0:devel/py-freezegun@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 		bzr>0:devel/bzr \
 		git>0:devel/git \
-		svn:devel/subversion \
-		python:lang/python
+		svn:devel/subversion
 
 USES=		python shebangfix
 
