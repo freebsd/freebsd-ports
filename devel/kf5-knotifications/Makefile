@@ -2,7 +2,7 @@
 
 PORTNAME=	knotifications
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -20,7 +20,7 @@ OPTIONS_DEFINE=		AUDIO
 OPTIONS_DEFAULT=	AUDIO
 
 AUDIO_DESC=		Audio notifications/text-to-speech support
-AUDIO_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
+AUDIO_LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3
 AUDIO_USE=		QT=speech
 AUDIO_USES=		pkgconfig
 
