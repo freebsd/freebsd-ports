@@ -1,0 +1,37 @@
+--- gradleScripts/distribution.gradle.orig	2019-05-16 19:36:27 UTC
++++ gradleScripts/distribution.gradle
+@@ -526,7 +526,7 @@ project.OS_NAMES.each { platform ->
+ 			/////////////////
+ 			// SUPPORT SCRIPTS
+ 			/////////////////
+-			if( isLinux(platform) || isMac(platform) ) {
++			if( isLinux(platform) || isMac(platform) || isFreeBSD(platform) ) {
+ 			    with getMultiRepoCopySpec( "Ghidra/RuntimeScripts/Linux/support", "support" ) 
+ 			}
+ 			if( isWindows(platform) ) {
+@@ -536,7 +536,7 @@ project.OS_NAMES.each { platform ->
+ 			/////////////////
+ 			// SERVER SCRIPTS
+ 			/////////////////
+-			if( isLinux(platform) || isMac(platform) ) {
++			if( isLinux(platform) || isMac(platform) || isFreeBSD(platform) ) {
+ 				from (ROOT_PROJECT_DIR + "/Ghidra/RuntimeScripts/Linux/server") {
+ 					into "server"
+ 				}
+@@ -550,7 +550,7 @@ project.OS_NAMES.each { platform ->
+ 			/////////////////
+ 			// GHIDRA RUN SCRIPT
+ 			/////////////////		
+-			if( isLinux(platform) || isMac(platform) ) {
++			if( isLinux(platform) || isMac(platform) || isFreeBSD(platform) ) {
+ 				from (ROOT_PROJECT_DIR + "/Ghidra/RuntimeScripts/Linux") {
+ 					include "ghidraRun"
+ 				}
+@@ -987,6 +987,7 @@ task createMultiPlatformInstallationZip(type: Zip) { t
+ 	dependsOn ":assemblewin64"
+ 	dependsOn ":assemblelinux64"
+ 	dependsOn ":assembleosx64"
++	dependsOn ":assemblefreebsd64"
+ 	dependsOn ":assembleSourceCommon"
+ 
+ 	addDecompilerPdfsToZip(t)

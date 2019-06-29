@@ -1,0 +1,30 @@
+--- Ghidra/Features/Decompiler/build.gradle.orig	2019-04-03 17:38:23 UTC
++++ Ghidra/Features/Decompiler/build.gradle
+@@ -75,8 +75,9 @@ task buildDecompilerDocumentationPdfs(type: Exec) {
+ 
+ 	// Check the OS before enabling task.
+ 	if (!(org.gradle.internal.os.OperatingSystem.current().isLinux() 
+-		|| org.gradle.internal.os.OperatingSystem.current().isMacOsX())) {
+-			println "The '$it.name' task only works on Linux or Mac Os X and is therefore disabled."
++		|| org.gradle.internal.os.OperatingSystem.current().isMacOsX()
++		|| org.gradle.internal.os.OperatingSystem.current().getName().contains("FreeBSD"))) {
++			println "The '$it.name' task only works on Linux, FreeBSD or Mac Os X and is therefore disabled."
+ 			it.enabled = false
+ 	}
+ 
+@@ -245,6 +246,7 @@ model {
+ 			targetPlatform "win64"
+ 			targetPlatform "linux64"
+ 			targetPlatform "osx64"
++			targetPlatform "freebsd64"
+ 			sources {
+ 				cpp {
+ 		            source {
+@@ -342,6 +344,7 @@ model {
+ 			targetPlatform "win64"
+ 			targetPlatform "linux64"
+ 			targetPlatform "osx64"
++			targetPlatform "freebsd64"
+ 			sources {
+ 				cpp {
+ 					source {

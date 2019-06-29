@@ -1,0 +1,11 @@
+--- GPL/CabExtract/build.gradle.orig	2019-04-03 17:38:23 UTC
++++ GPL/CabExtract/build.gradle
+@@ -40,7 +40,7 @@ project.ext.cabextract = "cabextract-1.6"
+  *
+  * The cabextract tool requires that its 'configure' script is called before make.
+  *********************************************************************************/
+-['linux64', 'osx64'].each { platform ->
++['linux64', 'osx64', 'freebsd64'].each { platform ->
+ 		
+ 	def configureName = "${platform}CabExtractConfigure"
+ 	def makeName = "${platform}CabExtractMake" // native Make task found automatically
