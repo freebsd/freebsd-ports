@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.5.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}smart_open>=1.7.1:net/py-smart_open@${PY_FLAVOR}
 
-USES=		python
+USES=		compiler:c++11-lang python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
