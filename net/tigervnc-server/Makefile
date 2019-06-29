@@ -76,8 +76,7 @@ post-install:
 	@cd ${WRKSRC}/unix/xserver/hw/vnc/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/Xvnc ${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/libvnc.so
 
-MASTERDIR=	${.CURDIR}/../tigervnc
-.include "${MASTERDIR}/Makefile.common.mk"
+.include "${.CURDIR}/Makefile.common.mk"
 
 # import from x11-server/xorg-server/Makefile
 .if ${SSL_DEFAULT} == base

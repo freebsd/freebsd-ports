@@ -36,5 +36,5 @@ post-patch:
 		-e 's|add_subdirectory(tests)||' \
 		${WRKSRC}/CMakeLists.txt
 
-MASTERDIR=	${.CURDIR}/../tigervnc
+MASTERDIR=	${.CURDIR}/../tigervnc-server
 .include "${MASTERDIR}/Makefile.common.mk"
