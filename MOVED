@@ -12811,4 +12811,3 @@ security/easy-rsa2|security/easy-rsa|2019-06-23|Has expired: Use easy-rsa 3 inst
 devel/py-robotframework-selenium2library|devel/py-robotframework-seleniumlibrary|2019-06-25|Renamed to match upstream
 net-p2p/zetacoin-nox11|net-p2p/zetacoin|2019-06-26|Slave port folded back into now text-only master port.
 net/tigervnc||2019-06-29|Removed: Non-essential meta port
-
