@@ -3,7 +3,6 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}
-PORTREVISION=	2
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -14,7 +13,7 @@ COMMENT=	High performance media player supporting many formats
 OPTIONS_DEFINE=	AALIB AMR_NB AMR_WB ASS BLURAY CACA CDIO DEBUG DV DVDNAV \
 		ENCA FONTCONFIG FRIBIDI GIF GNUTLS GSM GUI IPV6 JACK \
 		LADSPA LIBMNG LIRC LZO NAS OPENAL OPENGL \
-		OPENJPEG OPUS PULSEAUDIO RTC RTMP \
+		OPENJPEG OPUS PULSEAUDIO RTMP \
 		SDL SKINS SNDIO SMB SPEEX SVGALIB V4L VDPAU VPX \
 		X11 X11DGA X11VM XINERAMA XVIDEO XVMC
 
@@ -34,7 +33,6 @@ BLURAY_DESC?=	BluRay support
 DVDNAV_DESC?=	DVD navigation features support
 ENCA_DESC?=	Charset conversion via enca
 LZO_DESC?=	External liblzo support
-RTC_DESC?=	Add support for kernel real time clock
 RTCPU_DESC?=	Use runtime CPU detection
 SKINS_DESC?=	Install skins for GUI
 X11DGA_DESC?=	X11 DGA video driver support
@@ -84,9 +82,6 @@ pre-everything::
 .endif
 
 post-patch: common-post-patch
-
-post-patch-RTC-on:
-	@${REINPLACE_CMD} -e 's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' ${WRKSRC}/mplayer.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
