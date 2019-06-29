@@ -1,5 +1,3 @@
-TIMESTAMP = 1556410895
-SHA256 (hashicorp-nomad-v0.9.0_GH0.tar.gz) = fb6a0afd6895540dd5e18c878421c39e2a2759e90af8eb771c84802d082475df
-SIZE (hashicorp-nomad-v0.9.0_GH0.tar.gz) = 31846577
-SHA256 (golang-sys-fa43e7bc11b_GH0.tar.gz) = 085dd1dbc2865751cea75649dd59608bd0d0873ae852fda587b7d089734266f9
-SIZE (golang-sys-fa43e7bc11b_GH0.tar.gz) = 1093021
+TIMESTAMP = 1561688709
+SHA256 (hashicorp-nomad-v0.9.3_GH0.tar.gz) = 65ae3d7c7c88f9a344f88c2444356662eaa16683d0033bf9fbff691633f4e6fe
+SIZE (hashicorp-nomad-v0.9.3_GH0.tar.gz) = 32247842
