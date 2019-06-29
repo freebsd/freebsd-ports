@@ -48,7 +48,6 @@
 %%EXAMPLESDIR%%/masterfiles/inventory/redhat.cf
 %%EXAMPLESDIR%%/masterfiles/inventory/suse.cf
 %%EXAMPLESDIR%%/masterfiles/inventory/windows.cf
-%%EXAMPLESDIR%%/masterfiles/lib/3.7/README.md
 %%EXAMPLESDIR%%/masterfiles/lib/autorun.cf
 %%EXAMPLESDIR%%/masterfiles/lib/bundles.cf
 %%EXAMPLESDIR%%/masterfiles/lib/cfe_internal.cf
