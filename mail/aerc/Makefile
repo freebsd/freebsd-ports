@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	scdoc:textproc/scdoc
 
-USES=		go:modules
+USES=		go:modules,no_targets
 USE_GITHUB=	nodefault
 GH_TUPLE=	danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -80,13 +80,5 @@ post-patch:
 		-e '/MANDIR/ s,install -m644,${INSTALL_MAN},' \
 		-e '/SHAREDIR/ s,install -m644,${INSTALL_DATA},' \
 		${WRKSRC}/Makefile
-
-# Prevent USES=go do-{build,install} targets.  We do want the
-# environmental setup USES=go does though.
-do-build:
-	@${DO_MAKE_BUILD} -C ${WRKSRC} ${ALL_TARGET}
-
-do-install:
-	@${DO_MAKE_BUILD} -C ${WRKSRC} DESTDIR=${STAGEDIR} ${INSTALL_TARGET}
 
 .include <bsd.port.post.mk>
