@@ -1,0 +1,10 @@
+--- GhidraBuild/Skeleton/certification.manifest.orig	2019-04-03 17:38:23 UTC
++++ GhidraBuild/Skeleton/certification.manifest
+@@ -17,6 +17,7 @@ extension.properties||GHIDRA||||END|
+ ghidra_scripts/README.txt||GHIDRA||||END|
+ lib/README.txt||GHIDRA||||END|
+ os/linux64/README.txt||GHIDRA||||END|
++os/freebsd64/README.txt||GHIDRA||||END|
+ os/osx64/README.txt||GHIDRA||||END|
+ os/win64/README.txt||GHIDRA||||END|
+ src/main/help/help/TOC_Source.xml||GHIDRA||||END|

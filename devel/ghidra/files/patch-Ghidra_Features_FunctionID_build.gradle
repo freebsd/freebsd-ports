@@ -1,0 +1,33 @@
+--- Ghidra/Features/FunctionID/build.gradle.orig	2019-04-03 17:38:23 UTC
++++ Ghidra/Features/FunctionID/build.gradle
+@@ -71,7 +71,7 @@ task buildFidDocumentationPdf(type: Exec) {
+ 		cp $installPoint/topics/FunctionID/images/*.png $buildDir/images
+ 
+ 		echo '** Building FunctionID.fo **'
+-		xsltproc --output $buildDir/fid_withscaling.xml --stringparam profile.condition "withscaling" /usr/share/sgml/docbook/xsl-stylesheets/profiling/profile.xsl fid.xml 2>&1
++		xsltproc --output $buildDir/fid_withscaling.xml --stringparam profile.condition "withscaling" /usr/local/share/xsl/docbook/profiling/profile.xsl fid.xml 2>&1
+ 		xsltproc --output $buildDir/FunctionID.fo fid_pdf.xsl $buildDir/fid_withscaling.xml 2>&1
+ 
+ 		echo '** Building FunctionID.pdf **'
+@@ -94,9 +94,10 @@ task buildFidDocumentationPdf(type: Exec) {
+ 	// Check the OS before executing command.
+ 	doFirst {
+ 		if ( !(org.gradle.internal.os.OperatingSystem.current().isLinux() 
+-			|| org.gradle.internal.os.OperatingSystem.current().isMacOsX())) {
++			|| org.gradle.internal.os.OperatingSystem.current().isMacOsX()
++			|| org.gradle.internal.os.OperatingSystem.current().getName().contains("FreeBSD"))) {
+ 			throw new TaskExecutionException( it,
+-				new Exception( "The '$it.name' task only works on Linux or Mac Os X" ))
++				new Exception( "The '$it.name' task only works on Linux, FreeBSD or Mac Os X" ))
+ 		}
+ 	}
+ 
+@@ -138,7 +139,7 @@ task buildFidDocumentationHtml(type: Exec) {
+ 	rm -f $installPoint/topics/FunctionID/*.html
+ 
+ 	echo '** Building html files **'
+-	xsltproc --output $buildDir/fid_noscaling.xml --stringparam profile.condition "noscaling" /usr/share/sgml/docbook/xsl-stylesheets/profiling/profile.xsl fid.xml 2>&1
++	xsltproc --output $buildDir/fid_noscaling.xml --stringparam profile.condition "noscaling" /usr/local/share/xsl/docbook/profiling/profile.xsl fid.xml 2>&1
+ 	xsltproc --stringparam base.dir ${installPoint}/topics/FunctionID/ fid_html.xsl $buildDir/fid_noscaling.xml 2>&1
+ 	sed -i -e '/Frontpage.css/ { p; s/Frontpage.css/languages.css/; }' ${installPoint}/topics/FunctionID/*.html
+ 

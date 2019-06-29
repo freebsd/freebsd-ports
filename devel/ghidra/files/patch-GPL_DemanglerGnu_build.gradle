@@ -1,0 +1,31 @@
+--- GPL/DemanglerGnu/build.gradle.orig	2019-04-03 17:38:23 UTC
++++ GPL/DemanglerGnu/build.gradle
+@@ -24,6 +24,10 @@ model {
+ 			architecture 'x86_64'
+ 			operatingSystem 'osx'
+ 		}
++		freebsd64 {
++			architecture 'x86_64'
++			operatingSystem 'freebsd'
++		}
+ 	}	
+ }
+ 
+@@ -64,6 +68,7 @@ model {
+ 			targetPlatform "win64"
+ 			targetPlatform "linux64"
+ 			targetPlatform "osx64"
++			targetPlatform "freebsd64"
+ 			sources {
+ 				c {
+ 					source {
+@@ -80,6 +85,9 @@ model {
+ }
+ 
+ model {
++	toolChains {
++		clang(Clang)
++	}
+ 	binaries {
+ 		all{ b ->
+ 			if (toolChain in Gcc) {
