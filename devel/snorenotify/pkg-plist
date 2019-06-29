@@ -45,11 +45,11 @@ lib/libsnoresettings-qt5.so.0.7.0
 %%QT_PLUGINDIR%%/libsnore-qt5/libsnore_frontend_freedesktop.so
 %%QT_PLUGINDIR%%/libsnore-qt5/libsnore_frontend_snarlnetwork.so
 %%QT_PLUGINDIR%%/libsnore-qt5/libsnore_secondarybackend_nma.so
-%%QT_PLUGINDIR%%/libsnore-qt5/libsnore_secondarybackend_puhover.so
+%%QT_PLUGINDIR%%/libsnore-qt5/libsnore_secondarybackend_pushover.so
 %%QT_PLUGINDIR%%/libsnore-qt5/libsnore_secondarybackend_toasty.so
 %%QT_PLUGINDIR%%/libsnore-qt5/libsnore_backend_trayicon.so
 %%QT_PLUGINDIR%%/libsnore-qt5/libsnore_settings_secondarybackend_nma.so
-%%QT_PLUGINDIR%%/libsnore-qt5/libsnore_settings_secondarybackend_puhover.so
+%%QT_PLUGINDIR%%/libsnore-qt5/libsnore_settings_secondarybackend_pushover.so
 %%QT_PLUGINDIR%%/libsnore-qt5/libsnore_settings_secondarybackend_toasty.so
 share/applications/snorenotify.desktop
 share/applications/snoresettings.desktop
