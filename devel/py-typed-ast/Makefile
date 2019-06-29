@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	typed-ast
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	typed_ast-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Fast version of Python's ast module with support for PEP484 typed comments #'
+COMMENT=	Fork of Python ast modules with type comment support
 
 LICENSE=	APACHE20 PSFL
 LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE
 
-USES=		python:3.3+
+USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
 post-install:
