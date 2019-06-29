@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTREVISION=	0
+# Keep the ?=, this port is used as master by the other plperl.
+PORTREVISION?=	0
 CATEGORIES=	databases perl5
 PKGNAMESUFFIX?=	${WANT_PGSQL_VER:S/.//}${COMPONENT}
 
