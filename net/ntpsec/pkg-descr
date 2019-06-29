@@ -1,0 +1,21 @@
+A reimplementation of the NNTP protocol daemon and tools in a secure way.
+
+A major new feature is that it implements IETF's Network Time Security standard
+for strong cryptographic authentication of time service.
+
+Security improvements:
+* Network Time Security is implemented.
+* The deprecated ntpdc utility, long a chronic locus of security
+  vulnerabilities, has been removed
+* Autokey is not supported; that code has been removed, as it was chronically
+  prone to security vulnerabilities.
+* Peer mode has been removed. The keyword peer in ntp.conf is now just an alias
+  for keyword server.
+* Broadcast- and multicast modes, which are impossible to secure, have been
+  removed.
+* The authentication requirement for remote configuration commands (e.g., via
+  ntpq) can no longer be disabled.
+* The deprecated and vulnerability-prone ntpdate program has been replaced with
+  a shell wrapper around ntpdig.
+
+WWW: https://gitlab.com/NTPsec/ntpsec/
