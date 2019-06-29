@@ -1,5 +1,13 @@
-############################################
-Add this line to your Emacs initialization.
+[
+{
+message: <<EOT
+Final pdf-tools setup instructions:
+
+Add the line below to your Emacs initialization.
 
 (load "pdf-tools-init.el")
-############################################
+
+EOT
+  type: install
+}
+]
