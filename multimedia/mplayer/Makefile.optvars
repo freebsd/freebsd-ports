@@ -96,10 +96,6 @@ OPUS_CONFIGURE_OFF=	--disable-libopus
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 
-RTC_BUILD_DEPENDS=	${LOCALBASE}/modules/rtc.ko:emulators/rtc
-RTC_RUN_DEPENDS=	${LOCALBASE}/modules/rtc.ko:emulators/rtc
-RTC_CONFIGURE_ENABLE=	rtc
-
 RTCPU_CONFIGURE_ON=	--enable-runtime-cpudetection
 
 RTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
