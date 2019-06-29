@@ -10,8 +10,6 @@ COMMENT=	Terminal based graphical activity monitor inspired by gtop and vtop
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
-
 USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	cjbassi

@@ -12,11 +12,10 @@ COMMENT=	Safe and secure by default chat client
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gnome pkgconfig shebangfix
+USES=		gnome go pkgconfig shebangfix
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 

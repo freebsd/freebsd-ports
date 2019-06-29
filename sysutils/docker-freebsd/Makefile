@@ -14,12 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		fails to build
 
-BUILD_DEPENDS=	go>=1.4:lang/go \
-		bash:shells/bash \
+BUILD_DEPENDS=	bash:shells/bash \
 		sqlite3:databases/sqlite3
-RUN_DEPENDS=	go>=1.4:lang/go \
-		bash:shells/bash \
+RUN_DEPENDS=	bash:shells/bash \
 		sqlite3:databases/sqlite3
+
+USES=		go:run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kvasdopil

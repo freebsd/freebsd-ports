@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
 ONLY_FOR_ARCHS_REASON=	depends on go which is not supported in this architecture
 
-BUILD_DEPENDS=	go>=1.10.3:lang/go
+USES=		go
 
 USE_RC_SUBR=	influxd
 

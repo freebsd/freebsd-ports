@@ -13,13 +13,13 @@ COMMENT=	HTTP/2-based RPC framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go \
-		yasm:devel/yasm
+BUILD_DEPENDS=	yasm:devel/yasm
 LIB_DEPENDS=	libgflags.so:devel/gflags \
 		libprotobuf.so:devel/protobuf \
 		libcares.so:dns/c-ares
 
-USES=		cmake localbase:ldflags perl5 pkgconfig ssl
+USES=		cmake go:no_targets localbase:ldflags perl5 pkgconfig ssl
+
 USE_GITHUB=	yes
 GH_TUPLE=	google:benchmark:v1.4.1:benchmark/third_party/benchmark
 USE_LDCONFIG=	yes

@@ -17,12 +17,11 @@ LICENSE_FILE_MIT=		${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-BUILD_DEPENDS=	go:lang/go
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=${PYTHON_VER}:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6:security/py-pycrypto@${PY_FLAVOR}
 
-USES=		gettext python:2.7 shebangfix zip
+USES=		gettext go python:2.7 shebangfix zip
 
 SHEBANG_GLOB=	*.py *.bash *.sh *.pl *.cgi goapp
 WRKSRC=		${WRKDIR}/go_appengine

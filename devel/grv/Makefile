@@ -12,10 +12,9 @@ COMMENT=	Terminal interface for viewing git repositories
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
-USES=		ncurses pkgconfig readline:port
+USES=		go ncurses pkgconfig readline:port
 USE_GITHUB=	yes
 GH_ACCOUNT=	rgburke
 GH_SUBDIR=	src/github.com/rgburke/grv

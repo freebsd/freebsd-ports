@@ -14,10 +14,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-BUILD_DEPENDS=	go:lang/go
 RUN_DEPENDS=	ca_root_nss>=3:security/ca_root_nss
 
-USES=		gmake
+USES=		gmake go:no_targets
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 

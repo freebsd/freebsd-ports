@@ -11,10 +11,9 @@ COMMENT=	Environment variable manager for your shell
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go \
-		bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake
+USES=		gmake go:no_targets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	direnv

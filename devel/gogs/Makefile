@@ -11,9 +11,10 @@ COMMENT=	Painless self-hosted Git service
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
 RUN_DEPENDS=	git:devel/git \
 		bash:shells/bash
+
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gogs

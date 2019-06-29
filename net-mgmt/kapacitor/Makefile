@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
 
-BUILD_DEPENDS=	go>=1.6.0:lang/go
+USES=		go
 
 USE_RC_SUBR=	kapacitord
 

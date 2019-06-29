@@ -11,7 +11,7 @@ COMMENT=	CLI tool to create quick plots
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go>=1.10:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 

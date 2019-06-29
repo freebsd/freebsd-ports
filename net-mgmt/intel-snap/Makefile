@@ -10,7 +10,7 @@ COMMENT=	Intels open telemetry framework
 
 #LICENSE=	APACHE2
 
-BUILD_DEPENDS=	go>=1.5:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stdale

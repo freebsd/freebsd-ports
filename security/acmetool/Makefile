@@ -10,7 +10,7 @@ COMMENT=	CLI tool for automatically acquiring certificates from ACME servers
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	go>=1.8:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hlandau

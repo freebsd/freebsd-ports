@@ -13,9 +13,7 @@ COMMENT=	Simple secure, DPI-resistant VPN daemon
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	go:lang/go
-
-USES=		tar:xz
+USES=		go:no_targets tar:xz
 MAKEFILE=	BSDmakefile
 
 PORTDOCS=	AUTHORS INSTALL NEWS NEWS.RU README README.RU THANKS

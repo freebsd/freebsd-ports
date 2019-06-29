@@ -11,7 +11,7 @@ COMMENT=	Command-line tool that lets you interact with gRPC servers
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fullstorydev

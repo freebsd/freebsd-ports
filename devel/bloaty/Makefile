@@ -12,14 +12,13 @@ COMMENT=	Size profiler for binaries
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go \
-		cmake:devel/cmake \
+BUILD_DEPENDS=	cmake:devel/cmake \
 		ninja:devel/ninja
 LIB_DEPENDS=	libre2.so:devel/re2 \
 		libcapstone.so:devel/capstone4 \
 		libprotobuf.so:devel/protobuf
 
-USES=		cmake pkgconfig
+USES=		cmake go:no_targets pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google

@@ -11,7 +11,7 @@ COMMENT=	XMPP client with OTR support
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_TUPLE=	agl:xmpp-client:3030ad4:DEFAULT/src/github.com/agl/xmpp-client \

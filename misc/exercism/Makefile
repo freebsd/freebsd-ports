@@ -11,7 +11,7 @@ COMMENT=	CLI client for exercism.io
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 

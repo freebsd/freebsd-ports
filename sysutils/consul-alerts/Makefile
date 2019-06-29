@@ -10,8 +10,6 @@ COMMENT=	Simple daemon to send notifications based on Consul health checks
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
-
 USES=		compiler go
 
 USE_GITHUB=	yes

@@ -11,7 +11,7 @@ COMMENT=	Populate values from Consul into a process environment
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp

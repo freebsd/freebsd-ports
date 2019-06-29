@@ -18,10 +18,9 @@ ONLY_FOR_ARCHS_REASON=	"Only supported on amd64"
 
 BUILD_DEPENDS=	autoconf:devel/autoconf \
 		bash:shells/bash \
-		cmake:devel/cmake \
-		go:lang/go
+		cmake:devel/cmake
 
-USES=		gmake libedit
+USES=		gmake go libedit
 
 USE_RC_SUBR=	cockroach
 

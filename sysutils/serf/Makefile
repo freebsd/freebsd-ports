@@ -11,7 +11,7 @@ COMMENT=	Service discovery and configuration made easy
 
 LICENSE=	MPL20
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 

@@ -14,13 +14,11 @@ COMMENT=	Dashboard and graph editor for Graphite, InfluxDB & OpenTSDB
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
-
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_RC_SUBR=	grafana
 
-USES=	compiler
+USES=	compiler go
 
 USE_GITHUB=	yes
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}

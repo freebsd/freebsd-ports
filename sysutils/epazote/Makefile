@@ -10,9 +10,7 @@ COMMENT=	Automated HTTP (microservices) supervisor
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go>=1.7:lang/go
-
-USES=	compiler
+USES=		compiler go
 
 USE_GITHUB=	yes
 GH_TUPLE=	epazote:scheduler:0.1.0:scheduler/src/github.com/epazote/scheduler \

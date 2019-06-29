@@ -1,6 +1,6 @@
-TIMESTAMP = 1531335199
-SHA256 (google-cloud-print-connector-1.16-7d5f127_GH0.tar.gz) = abd89462880284d8c8d42b6ddd7bf2517881f21ad62619124715c7b4f230ab02
-SIZE (google-cloud-print-connector-1.16-7d5f127_GH0.tar.gz) = 122101
+TIMESTAMP = 1561470998
+SHA256 (google-cloud-print-connector-v1.16_GH0.tar.gz) = e7ef1dbc9e326c59a08fea1a37b62d2e689d2a1aed8c717969be89055c4996c8
+SIZE (google-cloud-print-connector-v1.16_GH0.tar.gz) = 122106
 SHA256 (urfave-cli-8e01ec4_GH0.tar.gz) = d8654573173cef6b639f00884c146bdb7f9130817e0b2d3f44d86d701428a63d
 SIZE (urfave-cli-8e01ec4_GH0.tar.gz) = 64657
 SHA256 (satori-go.uuid-36e9d2e_GH0.tar.gz) = aa54b317ac4122e7a4db33f84bac64fa9079637f4fd0517206c06d1aa1341b2d

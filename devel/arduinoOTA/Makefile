@@ -9,7 +9,7 @@ COMMENT=	OTA upload tool for Arduino/ESP8266
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arduino

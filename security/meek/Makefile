@@ -14,7 +14,7 @@ COMMENT=	Pluggable transport proxy that relays through third-party server
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	golang:crypto:c126467:crypto/src/golang.org/x/crypto \

@@ -13,8 +13,9 @@ COMMENT=	Go support for Google's protocol buffers
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go:lang/go
 RUN_DEPENDS=	protoc:devel/protobuf
+
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang

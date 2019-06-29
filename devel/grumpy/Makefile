@@ -9,14 +9,11 @@ COMMENT=	Python to Go source code transcompiler and runtime
 
 BROKEN_i386=	constant 2147762812 overflows int
 
-BUILD_DEPENDS=	go:lang/go
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_TAGNAME=	3ec8795
 
-USES=		gmake python:2.7 shebangfix
+USES=		gmake go:no_targets,run python:2.7 shebangfix
 SHEBANG_FILES=	tools/benchcmp tools/coverparse tools/diffrange tools/grumpc
 BINARY_ALIAS=	python=${PYTHON_CMD}
 

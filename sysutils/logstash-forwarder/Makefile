@@ -12,8 +12,6 @@ LICENSE=	APACHE20
 
 DEPRECATED=	Migrate to sysutils/beats
 
-BUILD_DEPENDS=	go:lang/go
-
 USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	elasticsearch

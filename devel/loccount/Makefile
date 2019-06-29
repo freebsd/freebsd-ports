@@ -10,7 +10,7 @@ COMMENT=	Count source lines of code in a project
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	esr

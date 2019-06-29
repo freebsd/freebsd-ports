@@ -12,8 +12,6 @@ COMMENT=		Go implementation of carbon
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=		go>=1.8:lang/go
-
 USES=			go
 
 USE_GITHUB=		yes

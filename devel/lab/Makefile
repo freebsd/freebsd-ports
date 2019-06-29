@@ -11,7 +11,7 @@ COMMENT=	Lab makes it simple to work with repositories on GitLab
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go>=1.10,1:lang/go
+USES=		go
 
 OPTIONS_DEFINE=	GIT_SUBVERSION
 

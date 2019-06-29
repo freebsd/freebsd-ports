@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	gopkg.in/mgo.v2/bson/json.go:320:7: constant 9007199254740992 overflows int
 
-BUILD_DEPENDS=	go:lang/go
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}graph

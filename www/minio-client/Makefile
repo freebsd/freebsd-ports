@@ -9,8 +9,9 @@ COMMENT=	Replacement for ls, cp, mkdir, diff and rsync commands for filesystems
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	go>=1.9.4:lang/go \
-		bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash
+
+USES=		go
 
 OPTIONS_DEFINE=	MC
 

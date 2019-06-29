@@ -11,11 +11,10 @@ COMMENT=	Smart reverse proxy for GitLab
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go>=1.8.0:lang/go \
-		git>=2.16.2:devel/git
+BUILD_DEPENDS=	git>=2.16.2:devel/git
 RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool
 
-USES=	gmake
+USES=		gmake go:no_targets
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	gitlab-org
