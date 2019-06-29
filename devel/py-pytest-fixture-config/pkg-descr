@@ -1,0 +1,4 @@
+Simple configuration objects for Py.test fixtures. Allows you to skip tests
+when their required config variables aren't set.
+
+WWW: https://github.com/manahl/pytest-plugins/tree/master/pytest-fixture-config
