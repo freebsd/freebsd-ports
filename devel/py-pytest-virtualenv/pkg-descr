@@ -1,0 +1,4 @@
+Create a Python virtual environment in your test that cleans up on teardown.
+The fixture has utility methods to install packages and list what's installed.
+
+WWW: https://github.com/manahl/pytest-plugins/tree/master/pytest-virtualenv
