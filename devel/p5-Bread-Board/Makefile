@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Bread-Board
-PORTVERSION=	0.36
+PORTVERSION=	0.37
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:YANICK
@@ -26,8 +26,9 @@ TEST_DEPENDS=	p5-Form-Sensible>=0:devel/p5-Form-Sensible \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:devel/p5-Test-Requires
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
