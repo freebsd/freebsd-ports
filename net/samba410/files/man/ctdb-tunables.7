@@ -2,12 +2,12 @@
 .\"     Title: ctdb-tunables
 .\"    Author: 
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 11/20/2017
+.\"      Date: 11/18/2018
 .\"    Manual: CTDB - clustered TDB database
 .\"    Source: ctdb
 .\"  Language: English
 .\"
-.TH "CTDB\-TUNABLES" "7" "11/20/2017" "ctdb" "CTDB \- clustered TDB database"
+.TH "CTDB\-TUNABLES" "7" "11/18/2018" "ctdb" "CTDB \- clustered TDB database"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -41,7 +41,35 @@ commands for more details\&.
 .PP
 Unless otherwise stated, tunables should be set to the same value on all nodes\&. Setting tunables to different values across nodes may produce unexpected results\&. Future releases may set (some or most) tunables globally across the cluster but doing so is currently a manual process\&.
 .PP
-The tunable variables are listed alphabetically\&.
+Tunables can be set at startup from the
+/usr/local/etc/ctdb/ctdb\&.tunables
+configuration file\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+\fITUNABLE\fR=\fIVALUE\fR
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+For example:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+MonitorInterval=20
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+The available tunable variables are listed alphabetically below\&.
 .SS "AllowClientDBAttach"
 .PP
 Default: 1
@@ -98,13 +126,6 @@ Default: 120
 When databases are frozen we do not allow clients to attach to the databases\&. Instead of returning an error immediately to the client, the attach request from the client is deferred until the database becomes available again at which stage we respond to the client\&.
 .PP
 This timeout controls how long we will defer the request from the client before timing it out and returning an error to the client\&.
-.SS "DisableIPFailover"
-.PP
-Default: 0
-.PP
-When set to non\-zero, ctdb will not perform failover or failback\&. Even if a node fails while holding public IPs, ctdb will not recover the IPs or assign them to another node\&.
-.PP
-When this tunable is enabled, ctdb will no longer attempt to recover the cluster by failing IP addresses over to other nodes\&. This leads to a service outage until the administrator has manually performed IP failover to replacement nodes using the \*(Aqctdb moveip\*(Aq command\&.
 .SS "ElectionTimeout"
 .PP
 Default: 3
@@ -218,16 +239,11 @@ When set to 1, ctdb will not perform failback of IP addresses when a node become
 Use with caution! Normally when a node becomes available to the cluster ctdb will try to reassign public IP addresses onto the new node as a way to distribute the workload evenly across the clusternode\&. Ctdb tries to make sure that all running nodes have approximately the same number of public addresses it hosts\&.
 .PP
 When you enable this tunable, ctdb will no longer attempt to rebalance the cluster by failing IP addresses back to the new nodes\&. An unbalanced cluster will therefore remain unbalanced until there is manual intervention from the administrator\&. When this parameter is set, you can manually fail public IP addresses over to the new node(s) using the \*(Aqctdb moveip\*(Aq command\&.
-.SS "NoIPHostOnAllDisabled"
-.PP
-Default: 0
-.PP
-If no nodes are HEALTHY then by default ctdb will happily host public IPs on disabled (unhealthy or administratively disabled) nodes\&. This can cause problems, for example if the underlying cluster filesystem is not mounted\&. When set to 1 and a node is disabled, any IPs hosted by this node will be released and the node will not takeover any IPs until it is no longer disabled\&.
 .SS "NoIPTakeover"
 .PP
 Default: 0
 .PP
-When set to 1, ctdb will not allow IP addresses to be failed over to other nodes\&. Any IP addresses already hosted on healthy nodes will remain\&. Usually IP addresses hosted on unhealthy nodes will also remain, if NoIPHostOnAllDisabled is 0\&. However, if NoIPHostOnAllDisabled is 1 then IP addresses will be released by unhealthy nodes and will become un\-hosted\&.
+When set to 1, ctdb will not allow IP addresses to be failed over to other nodes\&. Any IP addresses already hosted on healthy nodes will remain\&. Any IP addresses hosted on unhealthy nodes will be released by unhealthy nodes and will become un\-hosted\&.
 .SS "PullDBPreallocation"
 .PP
 Default: 10*1024*1024
@@ -310,7 +326,7 @@ Once a recovery has completed, no additional recoveries are permitted until this
 .PP
 Default: 1000
 .PP
-Some databases have seqnum tracking enabled, so that samba will be able to detect asynchronously when there has been updates to the database\&. Everytime a database is updated its sequence number is increased\&.
+Some databases have seqnum tracking enabled, so that samba will be able to detect asynchronously when there has been updates to the database\&. Every time a database is updated its sequence number is increased\&.
 .PP
 This tunable is used to specify in milliseconds how frequently ctdb will send out updates to remote nodes to inform them that the sequence number is increased\&.
 .SS "StatHistoryInterval"
@@ -333,11 +349,6 @@ Once a STICKY record has been migrated onto a node, it will be pinned down on th
 Default: 9
 .PP
 This is the duration in seconds in which ctdb tries to complete IP failover\&.
-.SS "TDBMutexEnabled"
-.PP
-Default: 1
-.PP
-This parameter enables TDB_MUTEX_LOCKING feature on volatile databases if the robust mutexes are supported\&. This optimizes the record locking using robust mutexes and is much more efficient that using posix locks\&.
 .SS "TickleUpdateInterval"
 .PP
 Default: 20
@@ -384,11 +395,15 @@ The maximum time in seconds for which the vacuuming process is allowed to run\&.
 Default: 0
 .PP
 When set to non\-zero, ctdb assigns verbose names for some of the talloc allocated memory objects\&. These names are visible in the talloc memory report generated by \*(Aqctdb dumpmemory\*(Aq\&.
+.SH "FILES>"
+.RS 4
+/usr/local/etc/ctdb/ctdb\&.tunables
+.RE
 .SH "SEE ALSO"
 .PP
 \fBctdb\fR(1),
 \fBctdbd\fR(1),
-\fBctdbd.conf\fR(5),
+\fBctdb.conf\fR(5),
 \fBctdb\fR(7),
 \m[blue]\fB\%http://ctdb.samba.org/\fR\m[]
 .SH "AUTHOR"

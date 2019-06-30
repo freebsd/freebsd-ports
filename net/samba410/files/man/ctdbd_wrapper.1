@@ -2,12 +2,12 @@
 .\"     Title: ctdbd_wrapper
 .\"    Author: 
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 11/20/2017
+.\"      Date: 11/18/2018
 .\"    Manual: CTDB - clustered TDB database
 .\"    Source: ctdb
 .\"  Language: English
 .\"
-.TH "CTDBD_WRAPPER" "1" "11/20/2017" "ctdb" "CTDB \- clustered TDB database"
+.TH "CTDBD_WRAPPER" "1" "11/18/2018" "ctdb" "CTDB \- clustered TDB database"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -31,16 +31,10 @@
 ctdbd_wrapper \- Wrapper for ctdbd
 .SH "SYNOPSIS"
 .HP \w'\fBctdbd_wrapper\fR\ 'u
-\fBctdbd_wrapper\fR {\fIPIDFILE\fR} {start | stop}
+\fBctdbd_wrapper\fR {start | stop}
 .SH "DESCRIPTION"
 .PP
 ctdbd_wrapper is used to start or stop the main CTDB daemon\&.
-.PP
-\fIPIDFILE\fR
-specifies the location of the file containing the PID of the main CTDB daemon\&.
-.PP
-ctdbd_wrapper constructs command\-line options for ctdbd from configuration variables specified in
-\fBctdbd.conf\fR(5)\&.
 .PP
 See
 \fBctdb\fR(7)
@@ -48,7 +42,7 @@ for an overview of CTDB\&.
 .SH "SEE ALSO"
 .PP
 \fBctdbd\fR(1),
-\fBctdbd.conf\fR(5),
+\fBctdb.sysconfig\fR(5),
 \fBctdb\fR(7),
 \m[blue]\fB\%http://ctdb.samba.org/\fR\m[]
 .SH "AUTHOR"

@@ -2,12 +2,12 @@
 .\"     Title: ctdb-statistics
 .\"    Author: 
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 11/20/2017
+.\"      Date: 11/18/2018
 .\"    Manual: CTDB - clustered TDB database
 .\"    Source: ctdb
 .\"  Language: English
 .\"
-.TH "CTDB\-STATISTICS" "7" "11/20/2017" "ctdb" "CTDB \- clustered TDB database"
+.TH "CTDB\-STATISTICS" "7" "11/18/2018" "ctdb" "CTDB \- clustered TDB database"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -237,6 +237,17 @@ Number of REQ_CONTROL messages from the other nodes\&.
 .PP
 Number of REPLY_CONTROL messages from the other nodes\&.
 .RE
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBreq_tunnel\fR
+.RS 4
+.PP
+Number of REQ_TUNNEL messages from the other nodes\&.
+.RE
 .SS "client"
 .PP
 This section lists various types of messages processed which originated from clients via unix domain socket\&.
@@ -272,6 +283,17 @@ Number of REQ_MESSAGE messages from the clients\&.
 .RS 4
 .PP
 Number of REQ_CONTROL messages from the clients\&.
+.RE
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBreq_tunnel\fR
+.RS 4
+.PP
+Number of REQ_TUNNEL messages from the clients\&.
 .RE
 .SS "timeouts"
 .PP

@@ -1,0 +1,11 @@
+--- lib/util/wscript_build.orig	2019-05-07 08:38:21 UTC
++++ lib/util/wscript_build
+@@ -151,7 +151,7 @@ else:
+ 
+     bld.SAMBA_LIBRARY('samba-modules',
+                       source='modules.c',
+-                      deps='samba-errors samba-util',
++                      deps='samba-errors samba-util samba-debug',
+                       local_include=False,
+                       private_library=True)
+ 
