@@ -74,19 +74,13 @@ INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
-# need LLVM for libEGL wherever possible, but mixing GCC and LLVM breaks Gallium
-.if ${CHOSEN_COMPILER_TYPE} == clang \
- || (${COMPONENT} == libs && ${ARCH} != sparc64)	# no working LLVM
-MESA_LLVM_VER?=	60
-.endif
-
-.if "${MESA_LLVM_VER}" != ""
-BUILD_DEPENDS+=	llvm${MESA_LLVM_VER}>=3.9.0_4:devel/llvm${MESA_LLVM_VER}
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Marm*} || ${ARCH} == i386 || ${ARCH:Mmips*} || ${ARCH:Mpowerpc*}
+BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>=3.9.0_4:devel/llvm${LLVM_DEFAULT}
 .if ${COMPONENT} != libs
-RUN_DEPENDS+=	llvm${MESA_LLVM_VER}>=3.9.0_4:devel/llvm${MESA_LLVM_VER}
+RUN_DEPENDS+=	llvm${LLVM_DEFAULT}>=3.9.0_4:devel/llvm${LLVM_DEFAULT}
 .endif
-CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${MESA_LLVM_VER}
-LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${MESA_LLVM_VER}/lib
+CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}
+LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib
 CONFIGURE_ARGS+=	--enable-llvm
 .else
 CONFIGURE_ARGS+=	--disable-llvm
