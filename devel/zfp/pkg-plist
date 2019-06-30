@@ -1,6 +1,8 @@
 include/bitstream.h
 include/zfp.h
 include/zfp/cache.h
+include/zfp/header.h
+include/zfp/headerHelpers.h
 include/zfp/iterator1.h
 include/zfp/iterator2.h
 include/zfp/iterator3.h
@@ -24,10 +26,11 @@ include/zfparray3.h
 include/zfpcodec.h
 include/zfpcodecd.h
 include/zfpcodecf.h
+include/zfpfactory.h
 lib/cmake/zfp/zfp-config-version.cmake
 lib/cmake/zfp/zfp-config.cmake
 lib/cmake/zfp/zfp-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/zfp/zfp-targets.cmake
 lib/libzfp.so
 lib/libzfp.so.0
-lib/libzfp.so.0.5.4
+lib/libzfp.so.0.5.5
