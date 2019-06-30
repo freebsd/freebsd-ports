@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zfp
-DISTVERSION=	0.5.4
+DISTVERSION=	0.5.5
 CATEGORIES=	devel science
 MASTER_SITES=	https://computation.llnl.gov/projects/floating-point-compression/download/
 
