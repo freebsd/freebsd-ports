@@ -12,7 +12,7 @@
 -  if (GIT_REVISION)
 -    set(LIB_INFO "git revision: ${GIT_REVISION},")
 -  endif()
-+  set(LIB_INFO "git revision: 4.0.2,")
++  set(LIB_INFO "git revision: 4.0.4,")
  
    # add compilation date to compile info
    find_program(HAVE_DATE_BIN date /bin /usr/bin /usr/local/bin)
