@@ -54,6 +54,11 @@ CONFIGURE_ARGS?=	--prefix=${PREFIX}/${PSP_GCC_STAGE_PREFIX} \
 			--mandir=${PREFIX}/man
 SSP_CFLAGS?=		-fstack-protector # XXX -strong isn't supported by GCC < 4.9
 
+# make sure xgcc doesn't get any -march=... from env C(XX)?FLAGS (e.g. set by CPUTYPE in make.conf); also "disable" info file gen
+CONFIGURE_ENV+=		CFLAGS_FOR_TARGET="${CFLAGS:C/(^|[[:space:]])-march=[^[:space:]]*//g}" \
+			CXXFLAGS_FOR_TARGET="${CXXFLAGS:C/(^|[[:space:]])-march=[^[:space:]]*//g}" \
+			MAKEINFO=true
+
 # Don't install any documentation for psptoolchain's gcc stage 1 - makes no sense.
 # Disable installation of .info files and libiberty for both stages.
 post-patch:
