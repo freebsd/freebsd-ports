@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gobuffalo
-PORTVERSION=	0.14.5
+PORTVERSION=	0.14.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -34,30 +34,33 @@ GH_TUPLE=	\
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-sql-driver:mysql:v1.4.1:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		gobuffalo:attrs:a9411de4debd:gobuffalo_attrs/vendor/github.com/gobuffalo/attrs \
+		gobuffalo:attrs:v0.1.0:gobuffalo_attrs/vendor/github.com/gobuffalo/attrs \
 		gobuffalo:buffalo-docker:v1.0.7:gobuffalo_buffalo_docker/vendor/github.com/gobuffalo/buffalo-docker \
-		gobuffalo:buffalo-plugins:v1.14.1:gobuffalo_buffalo_plugins/vendor/github.com/gobuffalo/buffalo-plugins \
-		gobuffalo:buffalo-pop:v1.12.0:gobuffalo_buffalo_pop/vendor/github.com/gobuffalo/buffalo-pop \
-		gobuffalo:clara:v0.4.1:gobuffalo_clara/vendor/github.com/gobuffalo/clara \
-		gobuffalo:depgen:v0.1.1:gobuffalo_depgen/vendor/github.com/gobuffalo/depgen \
+		gobuffalo:buffalo-pop:v1.13.0:gobuffalo_buffalo_pop/vendor/github.com/gobuffalo/buffalo-pop \
+		gobuffalo:clara:v0.6.0:gobuffalo_clara/vendor/github.com/gobuffalo/clara \
+		gobuffalo:depgen:v0.2.0:gobuffalo_depgen/vendor/github.com/gobuffalo/depgen \
 		gobuffalo:envy:v1.7.0:gobuffalo_envy/vendor/github.com/gobuffalo/envy \
 		gobuffalo:events:v1.3.1:gobuffalo_events/vendor/github.com/gobuffalo/events \
-		gobuffalo:fizz:v1.8.0:gobuffalo_fizz/vendor/github.com/gobuffalo/fizz \
-		gobuffalo:flect:v0.1.3:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
-		gobuffalo:genny:v0.1.1:gobuffalo_genny/vendor/github.com/gobuffalo/genny \
+		gobuffalo:fizz:v1.9.0:gobuffalo_fizz/vendor/github.com/gobuffalo/fizz \
+		gobuffalo:flect:v0.1.5:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
+		gobuffalo:genny:v0.2.0:gobuffalo_genny/vendor/github.com/gobuffalo/genny \
+		gobuffalo:gitgen:cc086187d211:gobuffalo_gitgen/vendor/github.com/gobuffalo/gitgen \
 		gobuffalo:github_flavored_markdown:v1.0.7:gobuffalo_github_flavored_markdown/vendor/github.com/gobuffalo/github_flavored_markdown \
-		gobuffalo:gogen:v0.1.1:gobuffalo_gogen/vendor/github.com/gobuffalo/gogen \
-		gobuffalo:helpers:8e6f634af7c3:gobuffalo_helpers/vendor/github.com/gobuffalo/helpers \
+		gobuffalo:gogen:v0.2.0:gobuffalo_gogen/vendor/github.com/gobuffalo/gogen \
+		gobuffalo:helpers:v0.2.2:gobuffalo_helpers/vendor/github.com/gobuffalo/helpers \
+		gobuffalo:licenser:v1.1.0:gobuffalo_licenser/vendor/github.com/gobuffalo/licenser \
 		gobuffalo:logger:86e12af44bc2:gobuffalo_logger/vendor/github.com/gobuffalo/logger \
 		gobuffalo:makr:v1.1.5:gobuffalo_makr/vendor/github.com/gobuffalo/makr \
-		gobuffalo:mapi:v1.0.2:gobuffalo_mapi/vendor/github.com/gobuffalo/mapi \
+		gobuffalo:mapi:v1.1.0:gobuffalo_mapi/vendor/github.com/gobuffalo/mapi \
 		gobuffalo:meta:e161e8a93e3b:gobuffalo_meta/vendor/github.com/gobuffalo/meta \
 		gobuffalo:nulls:85f3c9250d87:gobuffalo_nulls/vendor/github.com/gobuffalo/nulls \
-		gobuffalo:packd:v0.1.0:gobuffalo_packd/vendor/github.com/gobuffalo/packd \
-		gobuffalo:packr:v2.3.2:gobuffalo_packr/vendor/github.com/gobuffalo/packr \
+		gobuffalo:packd:v0.2.0:gobuffalo_packd/vendor/github.com/gobuffalo/packd \
+		gobuffalo:packr:v2.4.0:gobuffalo_packr/vendor/github.com/gobuffalo/packr \
 		gobuffalo:plush:v3.8.2:gobuffalo_plush/vendor/github.com/gobuffalo/plush \
-		gobuffalo:plushgen:v0.1.0:gobuffalo_plushgen/vendor/github.com/gobuffalo/plushgen \
-		gobuffalo:pop:v4.11.0:gobuffalo_pop/vendor/github.com/gobuffalo/pop \
+		gobuffalo:plushgen:v0.1.2:gobuffalo_plushgen/vendor/github.com/gobuffalo/plushgen \
+		gobuffalo:pop:v4.11.1:gobuffalo_pop/vendor/github.com/gobuffalo/pop \
+		gobuffalo:release:v1.7.0:gobuffalo_release/vendor/github.com/gobuffalo/release \
+		gobuffalo:shoulders:v1.1.0:gobuffalo_shoulders/vendor/github.com/gobuffalo/shoulders \
 		gobuffalo:syncx:33c29581e754:gobuffalo_syncx/vendor/github.com/gobuffalo/syncx \
 		gobuffalo:tags:v2.1.0:gobuffalo_tags/vendor/github.com/gobuffalo/tags \
 		gobuffalo:uuid:v2.0.5:gobuffalo_uuid/vendor/github.com/gobuffalo/uuid \
@@ -65,12 +68,12 @@ GH_TUPLE=	\
 		gobuffalo:x:6bb134105960:gobuffalo_x/vendor/github.com/gobuffalo/x \
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
 		golang:appengine:v1.6.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:f99c8df09eb5:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:5c40567a22f8:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:f3200d17e092:golang_net/vendor/golang.org/x/net \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:06a5c4944438:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		golang:tools:8aaa1484dc10:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:ed0dc450797f:golang_tools/vendor/golang.org/x/tools \
 		gorilla:context:v1.1.1:gorilla_context/vendor/github.com/gorilla/context \
 		gorilla:mux:v1.7.2:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:securecookie:v1.1.1:gorilla_securecookie/vendor/github.com/gorilla/securecookie \
@@ -85,7 +88,7 @@ GH_TUPLE=	\
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		lib:pq:v1.0.0:lib_pq/vendor/github.com/lib/pq \
 		magiconair:properties:v1.8.0:magiconair_properties/vendor/github.com/magiconair/properties \
-		markbates:deplist:v1.1.3:markbates_deplist/vendor/github.com/markbates/deplist \
+		markbates:deplist:v1.2.0:markbates_deplist/vendor/github.com/markbates/deplist \
 		markbates:going:v1.0.3:markbates_going/vendor/github.com/markbates/going \
 		markbates:grift:v1.0.6:markbates_grift/vendor/github.com/markbates/grift \
 		markbates:inflect:v1.0.4:markbates_inflect/vendor/github.com/markbates/inflect \
@@ -93,8 +96,8 @@ GH_TUPLE=	\
 		markbates:refresh:v1.7.1:markbates_refresh/vendor/github.com/markbates/refresh \
 		markbates:safe:v1.0.1:markbates_safe/vendor/github.com/markbates/safe \
 		markbates:sigtx:v1.0.0:markbates_sigtx/vendor/github.com/markbates/sigtx \
-		mattn:go-colorable:v0.1.1:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.7:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-sqlite3:v1.10.0:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		microcosm-cc:bluemonday:v1.0.2:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
@@ -110,7 +113,7 @@ GH_TUPLE=	\
 		sourcegraph:syntaxhighlight:bd320f5d308e:sourcegraph_syntaxhighlight/vendor/github.com/sourcegraph/syntaxhighlight \
 		spf13:afero:v1.2.1:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
-		spf13:cobra:v0.0.4:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v0.0.5:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.4.0:spf13_viper/vendor/github.com/spf13/viper
