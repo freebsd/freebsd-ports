@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	subtitlecomposer
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 CATEGORIES=	multimedia kde
 
 MAINTAINER=	makc@FreeBSD.org
@@ -31,6 +30,8 @@ VIDEO_DESC=	Video players
 OPTIONS_GROUP_VIDEO=	GSTREAMER MPLAYER MPV PHONON XINE
 OPTIONS_DEFAULT=	PHONON
 OPTIONS_SUB=	yes
+
+WRKSRC=		${WRKDIR}/SubtitleComposer-${PORTVERSION}
 
 # Requires PocketSphinx-5prealpha
 SPHINX_DESC=	Speech recognition via PocketSphinx
