@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=		webkit
-DISTVERSION=		5.212.0-alpha2
-PORTREVISION=	21
+DISTVERSION=		5.212.0-alpha3
 CATEGORIES=		www
-MASTER_SITES=		https://github.com/annulen/${PORTNAME}/releases/download/${DISTNAME}/
+MASTER_SITES=		https://github.com/qt${PORTNAME}/qt${PORTNAME}/releases/download/${DISTNAME}/
 PKGNAMEPREFIX=		qt5-
 DISTNAME=		qt${PORTNAME}-${DISTVERSION}
 

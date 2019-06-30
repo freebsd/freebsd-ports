@@ -26,19 +26,3 @@ Date:   Sat Oct 7 17:38:32 2017 +0300
      )
      install(FILES ${WebKitWidgets_PKGCONFIG_FILENAME} DESTINATION ${ECM_PKGCONFIG_INSTALL_DIR} COMPONENT Data)
  endif ()
-@@ -786,6 +790,7 @@ if (COMPILER_IS_GCC_OR_CLANG)
-     set_source_files_properties(
-         qt/Api/qwebdatabase.cpp
-         qt/Api/qwebelement.cpp
-+        qt/Api/qwebfullscreenrequest.cpp
-         qt/Api/qwebhistory.cpp
-         qt/Api/qwebhistoryinterface.cpp
-         qt/Api/qwebpluginfactory.cpp
-@@ -795,7 +800,6 @@ if (COMPILER_IS_GCC_OR_CLANG)
- 
-         qt/WidgetApi/qgraphicswebview.cpp
-         qt/WidgetApi/qwebframe.cpp
--        qt/WidgetApi/qwebfullscreenrequest.cpp
-         qt/WidgetApi/qwebinspector.cpp
-         qt/WidgetApi/qwebpage.cpp
-         qt/WidgetApi/qwebview.cpp
