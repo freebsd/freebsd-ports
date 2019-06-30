@@ -789,7 +789,7 @@ man/man3/XkbAllocGeomDoodads.3.gz
 man/man3/XkbAllocGeomKeyAliases.3.gz
 man/man3/XkbAllocGeomKeys.3.gz
 man/man3/XkbAllocGeomOutlines.3.gz
-man/man3/XkbAllocGeomOverlayKey.3.gz
+man/man3/XkbAllocGeomOverlayKeys.3.gz
 man/man3/XkbAllocGeomOverlayRows.3.gz
 man/man3/XkbAllocGeomOverlays.3.gz
 man/man3/XkbAllocGeomPoints.3.gz
