@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	diva
-PORTVERSION=	0.3.2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Implementation of expression for handling things
 
 LICENSE=	MIT
