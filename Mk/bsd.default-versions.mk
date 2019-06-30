@@ -59,6 +59,8 @@ LINUX_DEFAULT?=		c6_64
 LINUX_DEFAULT?=		c6
 .endif
 # Possible values: 60, 70, 80, -devel (to be used when non-base compiler is required)
+# Please give notice to the Graphics Team (x11@FreeBSD.org) in advance before 
+# bumping the LLVM version.
 LLVM_DEFAULT?=		80
 # Possible values: 5.1, 5.2, 5.3
 LUA_DEFAULT?=		5.2
