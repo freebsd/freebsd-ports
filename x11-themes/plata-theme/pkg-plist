@@ -672,7 +672,6 @@ share/themes/Plata-Lumine-Compact/index.theme
 %%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/misc/close-active.svg
 %%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/misc/close-hover.svg
 %%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/misc/close.svg
-%%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/misc/message.svg
 %%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/misc/osd.svg
 %%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/misc/overview-hover.svg
 %%CINNAMON%%share/themes/Plata-Lumine/cinnamon/assets/misc/overview.svg
@@ -1358,7 +1357,6 @@ share/themes/Plata-Noir-Compact/index.theme
 %%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/misc/close-active.svg
 %%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/misc/close-hover.svg
 %%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/misc/close.svg
-%%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/misc/message.svg
 %%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/misc/osd.svg
 %%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/misc/overview-hover.svg
 %%CINNAMON%%share/themes/Plata-Noir/cinnamon/assets/misc/overview.svg
@@ -1714,7 +1712,6 @@ share/themes/Plata-Noir/index.theme
 %%CINNAMON%%share/themes/Plata/cinnamon/assets/misc/close-active.svg
 %%CINNAMON%%share/themes/Plata/cinnamon/assets/misc/close-hover.svg
 %%CINNAMON%%share/themes/Plata/cinnamon/assets/misc/close.svg
-%%CINNAMON%%share/themes/Plata/cinnamon/assets/misc/message.svg
 %%CINNAMON%%share/themes/Plata/cinnamon/assets/misc/osd.svg
 %%CINNAMON%%share/themes/Plata/cinnamon/assets/misc/overview-hover.svg
 %%CINNAMON%%share/themes/Plata/cinnamon/assets/misc/overview.svg

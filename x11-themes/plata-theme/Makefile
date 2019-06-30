@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plata-theme
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.6
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@yandex.com
@@ -24,18 +24,22 @@ USE_GNOME=	gdkpixbuf2 gtk30 libxml2
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com
 GL_ACCOUNT=	tista500
-GL_COMMIT=	fb399f8ded13db09617baad4685606d24df48641
+GL_COMMIT=	b503811645a7b241f6381d34e4f16fc63566ef72
 
 NO_ARCH=	yes
 
 SHEBANG_REGEX=	./src/.*\.sh$$
 
 GNU_CONFIGURE=	yes
+# FIXME: Mate support has been re-added in 0.8.6 but it requires marco 1.22.2,
+# which is not yet supported in Ports. So disabling Mate support for now.
+# Will revisit when marco is updated.
 CONFIGURE_ARGS=	--disable-gtk_next \
 		--disable-flashback \
 		--disable-telegram \
 		--disable-tweetdeck \
-		--disable-airforsteam
+		--disable-airforsteam \
+		--disable-mate
 
 PORTDOCS=	README.md README.window-list
 
