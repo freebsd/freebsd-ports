@@ -1,42 +1,44 @@
 # Created by: Klaus Aehlig <aehlig@linta.de>
 # $FreeBSD$
 
-PORTNAME=		bazel
-DISTVERSION=		0.26.0
-CATEGORIES=		devel java
-MASTER_SITES=		https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
-DISTNAME=		bazel-${PORTVERSION}rc${FINALRC}-dist
+PORTNAME=	bazel
+DISTVERSION=	0.27.0
+CATEGORIES=	devel java
+MASTER_SITES=	https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
+DISTNAME=	bazel-${PORTVERSION}rc${FINALRC}-dist
 
-MAINTAINER?=		aehlig@linta.de
-COMMENT=		Fast and correct build system
+MAINTAINER=	aehlig@linta.de
+COMMENT=	Fast and correct build system
 
-LICENSE=		APACHE20
-LICENSE_FILE=		${WRKSRC}/LICENSE
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to build: java.lang.OutOfMemoryError: Java heap space
 BROKEN_armv6=		fails to package: cp: bazel: No such file or directory
 BROKEN_armv7=		fails to package: cp: bazel: No such file or directory
 BROKEN_powerpc64=	fails to compile: Action failed to execute: java.io.IOException: Cannot run program /usr/bin/clang
 
-BUILD_DEPENDS=		bash:shells/bash \
-			zip:archivers/zip
+BUILD_DEPENDS=	bash:shells/bash \
+		zip:archivers/zip
+
+USES=		python:3.3+ shebangfix zip:infozip
 
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
 # candidates.
-FINALRC=		16
+FINALRC=	5
 
-USES=			shebangfix zip:infozip python
-SHEBANG_REGEX=		.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
-USE_JAVA=		yes
-JAVA_VENDOR=		openjdk
-JAVA_VERSION=		1.8
-JAVA_BUILD=		yes
-JAVA_RUN=		yes
+SHEBANG_REGEX=	.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
+USE_JAVA=	yes
+JAVA_VENDOR=	openjdk
+JAVA_VERSION=	1.8
+JAVA_BUILD=	yes
+JAVA_RUN=	yes
 
-NO_WRKSUBDIR=		YES
+NO_WRKSUBDIR=	YES
 
-STRIP=	# The bazel binary is also a zip archive (extracted by the elf part), it must not be stripped
+# The bazel binary is also a zip archive (extracted by the elf part), it must not be stripped
+STRIP=
 
 .include <bsd.port.pre.mk>
 
@@ -53,12 +55,11 @@ post-patch:
 	${WRKSRC}/src/main/cpp/blaze_util_posix.cc \
 	${WRKSRC}/src/main/cpp/BUILD
 	@${ECHO_CMD} build --strategy=Javac=standalone >> ${WRKSRC}/scripts/packages/bazel.bazelrc
-	@${ECHO_CMD} build --python_path=${PYTHON_CMD} >> ${WRKSRC}/scripts/packages/bazel.bazelrc
 	@${ECHO_CMD} build --host_javabase=@local_jdk//:jdk >> ${WRKSRC}/scripts/packages/bazel.bazelrc
 	@${ECHO_CMD} build --action_env=PATH=/bin:/usr/bin/:${LOCALBASE}/bin >> ${WRKSRC}/scripts/packages/bazel.bazelrc
 	@${REINPLACE_CMD} \
-	-e 's|\$$command|$$command --python_path=${PYTHON_CMD}|' \
-	${WRKSRC}/scripts/bootstrap/bootstrap.sh
+	-e 's|^\(PYTHON_BIN=.*\)|if [ "%VERSION%" = "3" ] ; then PYTHON_BIN=${PYTHON_CMD}; else \1 ; fi|' \
+	${WRKSRC}/tools/python/pywrapper_template.txt
 	@${REINPLACE_CMD} \
 	-e 's|/usr/bin/env python|${PYTHON_CMD}|' \
 	${WRKSRC}/src/main/java/com/google/devtools/build/lib/bazel/rules/python/BazelPythonSemantics.java
