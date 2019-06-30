@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpciaccess
-PORTVERSION=	0.13.5
+PORTVERSION=	0.14
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
@@ -9,6 +9,8 @@ COMMENT=	Generic PCI access library
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		autoreconf
 
 BUILD_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:misc/pciids
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:misc/pciids
