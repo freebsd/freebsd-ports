@@ -1,0 +1,1566 @@
+'\" t
+.\"     Title: ctdb
+.\"    Author: 
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 11/20/2017
+.\"    Manual: CTDB - clustered TDB database
+.\"    Source: ctdb
+.\"  Language: English
+.\"
+.TH "CTDB" "1" "11/20/2017" "ctdb" "CTDB \- clustered TDB database"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+ctdb \- CTDB management utility
+.SH "SYNOPSIS"
+.HP \w'\fBctdb\fR\ 'u
+\fBctdb\fR [\fIOPTION\fR...] {\fICOMMAND\fR} [\fICOMMAND\-ARGS\fR]
+.SH "DESCRIPTION"
+.PP
+ctdb is a utility to view and manage a CTDB cluster\&.
+.PP
+The following terms are used when referring to nodes in a cluster:
+.PP
+PNN
+.RS 4
+Physical Node Number\&. The physical node number is an integer that describes the node in the cluster\&. The first node has physical node number 0\&. in a cluster\&.
+.RE
+.PP
+PNN\-LIST
+.RS 4
+This is either a single PNN, a comma\-separate list of PNNs or "all"\&.
+.RE
+.PP
+Commands that reference a database use the following terms:
+.PP
+DB
+.RS 4
+This is either a database name, such as
+locking\&.tdb
+or a database ID such as "0x42fe72c5"\&.
+.RE
+.PP
+DB\-LIST
+.RS 4
+A space separated list of at least one
+\fIDB\fR\&.
+.RE
+.SH "OPTIONS"
+.PP
+\-n \fIPNN\fR
+.RS 4
+The node specified by PNN should be queried for the requested information\&. Default is to query the daemon running on the local host\&.
+.RE
+.PP
+\-Y
+.RS 4
+Produce output in machine readable form for easier parsing by scripts\&. This uses a field delimiter of \*(Aq:\*(Aq\&. Not all commands support this option\&.
+.RE
+.PP
+\-x \fISEPARATOR\fR
+.RS 4
+Use SEPARATOR to delimit fields in machine readable output\&. This implies \-Y\&.
+.RE
+.PP
+\-X
+.RS 4
+Produce output in machine readable form for easier parsing by scripts\&. This uses a field delimiter of \*(Aq|\*(Aq\&. Not all commands support this option\&.
+.sp
+This is equivalent to "\-x|" and avoids some shell quoting issues\&.
+.RE
+.PP
+\-t \fITIMEOUT\fR
+.RS 4
+Indicates that ctdb should wait up to TIMEOUT seconds for a response to most commands sent to the CTDB daemon\&. The default is 10 seconds\&.
+.RE
+.PP
+\-T \fITIMELIMIT\fR
+.RS 4
+Indicates that TIMELIMIT is the maximum run time (in seconds) for the ctdb command\&. When TIMELIMIT is exceeded the ctdb command will terminate with an error\&. The default is 120 seconds\&.
+.RE
+.PP
+\-? \-\-help
+.RS 4
+Print some help text to the screen\&.
+.RE
+.PP
+\-\-usage
+.RS 4
+Print useage information to the screen\&.
+.RE
+.PP
+\-d \-\-debug=\fIDEBUGLEVEL\fR
+.RS 4
+Change the debug level for the command\&. Default is NOTICE\&.
+.RE
+.PP
+\-\-socket=\fIFILENAME\fR
+.RS 4
+Specify that FILENAME is the name of the Unix domain socket to use when connecting to the local CTDB daemon\&. The default is
+/usr/local/var/run/ctdb/ctdbd\&.socket\&.
+.RE
+.SH "ADMINISTRATIVE COMMANDS"
+.PP
+These are commands used to monitor and administer a CTDB cluster\&.
+.SS "pnn"
+.PP
+This command displays the PNN of the current node\&.
+.SS "status"
+.PP
+This command shows the current status of all CTDB nodes based on information from the queried node\&.
+.PP
+Note: If the the queried node is INACTIVE then the status might not be current\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBNode status\fR
+.RS 4
+.PP
+This includes the number of physical nodes and the status of each node\&. See
+\fBctdb\fR(7)
+for information about node states\&.
+.RE
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBGeneration\fR
+.RS 4
+.PP
+The generation id is a number that indicates the current generation of a cluster instance\&. Each time a cluster goes through a reconfiguration or a recovery its generation id will be changed\&.
+.PP
+This number does not have any particular meaning other than to keep track of when a cluster has gone through a recovery\&. It is a random number that represents the current instance of a ctdb cluster and its databases\&. The CTDB daemon uses this number internally to be able to tell when commands to operate on the cluster and the databases was issued in a different generation of the cluster, to ensure that commands that operate on the databases will not survive across a cluster database recovery\&. After a recovery, all old outstanding commands will automatically become invalid\&.
+.PP
+Sometimes this number will be shown as "INVALID"\&. This only means that the ctdbd daemon has started but it has not yet merged with the cluster through a recovery\&. All nodes start with generation "INVALID" and are not assigned a real generation id until they have successfully been merged with a cluster through a recovery\&.
+.RE
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBVirtual Node Number (VNN) map\fR
+.RS 4
+.PP
+Consists of the number of virtual nodes and mapping from virtual node numbers to physical node numbers\&. Virtual nodes host CTDB databases\&. Only nodes that are participating in the VNN map can become lmaster or dmaster for database records\&.
+.RE
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBRecovery mode\fR
+.RS 4
+.PP
+This is the current recovery mode of the cluster\&. There are two possible modes:
+.PP
+NORMAL \- The cluster is fully operational\&.
+.PP
+RECOVERY \- The cluster databases have all been frozen, pausing all services while the cluster awaits a recovery process to complete\&. A recovery process should finish within seconds\&. If a cluster is stuck in the RECOVERY state this would indicate a cluster malfunction which needs to be investigated\&.
+.PP
+Once the recovery master detects an inconsistency, for example a node becomes disconnected/connected, the recovery daemon will trigger a cluster recovery process, where all databases are remerged across the cluster\&. When this process starts, the recovery master will first "freeze" all databases to prevent applications such as samba from accessing the databases and it will also mark the recovery mode as RECOVERY\&.
+.PP
+When the CTDB daemon starts up, it will start in RECOVERY mode\&. Once the node has been merged into a cluster and all databases have been recovered, the node mode will change into NORMAL mode and the databases will be "thawed", allowing samba to access the databases again\&.
+.RE
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBRecovery master\fR
+.RS 4
+.PP
+This is the cluster node that is currently designated as the recovery master\&. This node is responsible of monitoring the consistency of the cluster and to perform the actual recovery process when reqired\&.
+.PP
+Only one node at a time can be the designated recovery master\&. Which node is designated the recovery master is decided by an election process in the recovery daemons running on each node\&.
+.RE
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb status
+Number of nodes:4
+pnn:0 192\&.168\&.2\&.200       OK (THIS NODE)
+pnn:1 192\&.168\&.2\&.201       OK
+pnn:2 192\&.168\&.2\&.202       OK
+pnn:3 192\&.168\&.2\&.203       OK
+Generation:1362079228
+Size:4
+hash:0 lmaster:0
+hash:1 lmaster:1
+hash:2 lmaster:2
+hash:3 lmaster:3
+Recovery mode:NORMAL (0)
+Recovery master:0
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "nodestatus [\fIPNN\-LIST\fR]"
+.PP
+This command is similar to the
+\fBstatus\fR
+command\&. It displays the "node status" subset of output\&. The main differences are:
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+The exit code is the bitwise\-OR of the flags for each specified node, while
+\fBctdb status\fR
+exits with 0 if it was able to retrieve status for all nodes\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+\fBctdb status\fR
+provides status information for all nodes\&.
+\fBctdb nodestatus\fR
+defaults to providing status for only the current node\&. If PNN\-LIST is provided then status is given for the indicated node(s)\&.
+.RE
+.PP
+A common invocation in scripts is
+\fBctdb nodestatus all\fR
+to check whether all nodes in a cluster are healthy\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb nodestatus
+pnn:0 10\&.0\&.0\&.30        OK (THIS NODE)
+
+# ctdb nodestatus all
+Number of nodes:2
+pnn:0 10\&.0\&.0\&.30        OK (THIS NODE)
+pnn:1 10\&.0\&.0\&.31        OK
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "recmaster"
+.PP
+This command shows the pnn of the node which is currently the recmaster\&.
+.PP
+Note: If the the queried node is INACTIVE then the status might not be current\&.
+.SS "uptime"
+.PP
+This command shows the uptime for the ctdb daemon\&. When the last recovery or ip\-failover completed and how long it took\&. If the "duration" is shown as a negative number, this indicates that there is a recovery/failover in progress and it started that many seconds ago\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb uptime
+Current time of node          :                Thu Oct 29 10:38:54 2009
+Ctdbd start time              : (000 16:54:28) Wed Oct 28 17:44:26 2009
+Time of last recovery/failover: (000 16:53:31) Wed Oct 28 17:45:23 2009
+Duration of last recovery/failover: 2\&.248552 seconds
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "listnodes"
+.PP
+This command shows lists the ip addresses of all the nodes in the cluster\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb listnodes
+192\&.168\&.2\&.200
+192\&.168\&.2\&.201
+192\&.168\&.2\&.202
+192\&.168\&.2\&.203
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "natgw {master|list|status}"
+.PP
+This command shows different aspects of NAT gateway status\&. For an overview of CTDB\*(Aqs NAT gateway functionality please see the
+NAT GATEWAY
+section in
+\fBctdb\fR(7)\&.
+.PP
+master
+.RS 4
+Show the PNN and private IP address of the current NAT gateway master node\&.
+.sp
+Example output:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+1 192\&.168\&.2\&.201
+	    
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+list
+.RS 4
+List the private IP addresses of nodes in the current NAT gateway group, annotating the master node\&.
+.sp
+Example output:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+192\&.168\&.2\&.200
+192\&.168\&.2\&.201	MASTER
+192\&.168\&.2\&.202
+192\&.168\&.2\&.203
+	    
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+status
+.RS 4
+List the nodes in the current NAT gateway group and their status\&.
+.sp
+Example output:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+pnn:0 192\&.168\&.2\&.200       UNHEALTHY (THIS NODE)
+pnn:1 192\&.168\&.2\&.201       OK
+pnn:2 192\&.168\&.2\&.202       OK
+pnn:3 192\&.168\&.2\&.203       OK
+	    
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "ping"
+.PP
+This command will "ping" specified CTDB nodes in the cluster to verify that they are running\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb ping
+response from 0 time=0\&.000054 sec  (3 clients)
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "ifaces"
+.PP
+This command will display the list of network interfaces, which could host public addresses, along with their status\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb ifaces
+Interfaces on node 0
+name:eth5 link:up references:2
+name:eth4 link:down references:0
+name:eth3 link:up references:1
+name:eth2 link:up references:1
+
+# ctdb \-X ifaces
+|Name|LinkStatus|References|
+|eth5|1|2|
+|eth4|0|0|
+|eth3|1|1|
+|eth2|1|1|
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "ip"
+.PP
+This command will display the list of public addresses that are provided by the cluster and which physical node is currently serving this ip\&. By default this command will ONLY show those public addresses that are known to the node itself\&. To see the full list of all public ips across the cluster you must use "ctdb ip all"\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb ip \-v
+Public IPs on node 0
+172\&.31\&.91\&.82 node[1] active[] available[eth2,eth3] configured[eth2,eth3]
+172\&.31\&.91\&.83 node[0] active[eth3] available[eth2,eth3] configured[eth2,eth3]
+172\&.31\&.91\&.84 node[1] active[] available[eth2,eth3] configured[eth2,eth3]
+172\&.31\&.91\&.85 node[0] active[eth2] available[eth2,eth3] configured[eth2,eth3]
+172\&.31\&.92\&.82 node[1] active[] available[eth5] configured[eth4,eth5]
+172\&.31\&.92\&.83 node[0] active[eth5] available[eth5] configured[eth4,eth5]
+172\&.31\&.92\&.84 node[1] active[] available[eth5] configured[eth4,eth5]
+172\&.31\&.92\&.85 node[0] active[eth5] available[eth5] configured[eth4,eth5]
+
+# ctdb \-X ip \-v
+|Public IP|Node|ActiveInterface|AvailableInterfaces|ConfiguredInterfaces|
+|172\&.31\&.91\&.82|1||eth2,eth3|eth2,eth3|
+|172\&.31\&.91\&.83|0|eth3|eth2,eth3|eth2,eth3|
+|172\&.31\&.91\&.84|1||eth2,eth3|eth2,eth3|
+|172\&.31\&.91\&.85|0|eth2|eth2,eth3|eth2,eth3|
+|172\&.31\&.92\&.82|1||eth5|eth4,eth5|
+|172\&.31\&.92\&.83|0|eth5|eth5|eth4,eth5|
+|172\&.31\&.92\&.84|1||eth5|eth4,eth5|
+|172\&.31\&.92\&.85|0|eth5|eth5|eth4,eth5|
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "ipinfo \fIIP\fR"
+.PP
+This command will display details about the specified public addresses\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb ipinfo 172\&.31\&.92\&.85
+Public IP[172\&.31\&.92\&.85] info on node 0
+IP:172\&.31\&.92\&.85
+CurrentNode:0
+NumInterfaces:2
+Interface[1]: Name:eth4 Link:down References:0
+Interface[2]: Name:eth5 Link:up References:2 (active)
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "event run|status|script list|script enable|script disable"
+.PP
+This command is used to control event daemon and to inspect status of various events\&.
+.PP
+run \fIEVENT\fR \fITIMEOUT\fR [\fIARGUMENTS\fR]
+.RS 4
+This command can be used to manually run specified EVENT with optional ARGUMENTS\&. The event will be allowed to run a maximum of TIMEOUT seconds\&. If TIMEOUT is 0, then there is no time limit for running the event\&.
+.RE
+.PP
+status [\fIEVENT\fR] [lastrun|lastpass|lastfail]
+.RS 4
+This command displays the last execution status of the specified EVENT\&. If no event is specified, then the status of last executed monitor event will be displayed\&.
+.sp
+To see the last successful execution of the event, lastpass can be specified\&. Similarly lastfail can be specified to see the last unsuccessful execution of the event\&. The optional lastrun can be specified to query the last execution of the event\&.
+.sp
+The command will terminate with the exit status corresponding to the overall status of event that is displayed\&. If lastpass is specified, then the command will always terminate with 0\&. If lastfail is specified then the command will always terminate with non\-zero exit status\&. If lastrun is specified, then the command will terminate with 0 or not depending on if the last execution of the event was successful or not\&.
+.sp
+The output is the list of event scripts executed\&. Each line shows the name, status, duration and start time for each script\&.
+.sp
+Example output:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+00\&.ctdb              OK         0\&.014 Sat Dec 17 19:39:11 2016
+01\&.reclock           OK         0\&.013 Sat Dec 17 19:39:11 2016
+05\&.system            OK         0\&.029 Sat Dec 17 19:39:11 2016
+06\&.nfs               OK         0\&.014 Sat Dec 17 19:39:11 2016
+10\&.external          DISABLED  
+10\&.interface         OK         0\&.037 Sat Dec 17 19:39:11 2016
+11\&.natgw             OK         0\&.011 Sat Dec 17 19:39:11 2016
+11\&.routing           OK         0\&.007 Sat Dec 17 19:39:11 2016
+13\&.per_ip_routing    OK         0\&.007 Sat Dec 17 19:39:11 2016
+20\&.multipathd        OK         0\&.007 Sat Dec 17 19:39:11 2016
+31\&.clamd             OK         0\&.007 Sat Dec 17 19:39:11 2016
+40\&.vsftpd            OK         0\&.013 Sat Dec 17 19:39:11 2016
+41\&.httpd             OK         0\&.018 Sat Dec 17 19:39:11 2016
+49\&.winbind           OK         0\&.023 Sat Dec 17 19:39:11 2016
+50\&.samba             OK         0\&.100 Sat Dec 17 19:39:12 2016
+60\&.nfs               OK         0\&.376 Sat Dec 17 19:39:12 2016
+70\&.iscsi             OK         0\&.009 Sat Dec 17 19:39:12 2016
+91\&.lvs               OK         0\&.007 Sat Dec 17 19:39:12 2016
+99\&.timeout           OK         0\&.007 Sat Dec 17 19:39:12 2016
+	    
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+script list
+.RS 4
+List the available event scripts\&.
+.sp
+Example output:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+00\&.ctdb             
+01\&.reclock          
+05\&.system           
+06\&.nfs              
+10\&.external          DISABLED
+10\&.interface        
+11\&.natgw            
+11\&.routing          
+13\&.per_ip_routing   
+20\&.multipathd       
+31\&.clamd            
+40\&.vsftpd           
+41\&.httpd            
+49\&.winbind          
+50\&.samba            
+60\&.nfs              
+70\&.iscsi            
+91\&.lvs              
+99\&.timeout          
+	    
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+script enable \fISCRIPT\fR
+.RS 4
+Enable the specified event SCRIPT\&. Only enabled scripts will be executed when running any event\&.
+.RE
+.PP
+script disable \fISCRIPT\fR
+.RS 4
+Disable the specified event SCRIPT\&. This will prevent the script from executing when running any event\&.
+.RE
+.SS "scriptstatus"
+.PP
+This command displays which event scripts where run in the previous monitoring cycle and the result of each script\&. If a script failed with an error, causing the node to become unhealthy, the output from that script is also shown\&.
+.PP
+This command is deprecated\&. It\*(Aqs provided for backward compatibility\&. In place of
+\fBctdb scriptstatus\fR, use
+\fBctdb event status\fR\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb scriptstatus
+00\&.ctdb              OK         0\&.011 Sat Dec 17 19:40:46 2016
+01\&.reclock           OK         0\&.010 Sat Dec 17 19:40:46 2016
+05\&.system            OK         0\&.030 Sat Dec 17 19:40:46 2016
+06\&.nfs               OK         0\&.014 Sat Dec 17 19:40:46 2016
+10\&.external          DISABLED  
+10\&.interface         OK         0\&.041 Sat Dec 17 19:40:46 2016
+11\&.natgw             OK         0\&.008 Sat Dec 17 19:40:46 2016
+11\&.routing           OK         0\&.007 Sat Dec 17 19:40:46 2016
+13\&.per_ip_routing    OK         0\&.007 Sat Dec 17 19:40:46 2016
+20\&.multipathd        OK         0\&.007 Sat Dec 17 19:40:46 2016
+31\&.clamd             OK         0\&.007 Sat Dec 17 19:40:46 2016
+40\&.vsftpd            OK         0\&.013 Sat Dec 17 19:40:46 2016
+41\&.httpd             OK         0\&.015 Sat Dec 17 19:40:46 2016
+49\&.winbind           OK         0\&.022 Sat Dec 17 19:40:46 2016
+50\&.samba             ERROR      0\&.077 Sat Dec 17 19:40:46 2016
+  OUTPUT: ERROR: samba tcp port 445 is not responding
+      
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "listvars"
+.PP
+List all tuneable variables, except the values of the obsolete tunables like VacuumMinInterval\&. The obsolete tunables can be retrieved only explicitly with the "ctdb getvar" command\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb listvars
+SeqnumInterval          = 1000
+ControlTimeout          = 60
+TraverseTimeout         = 20
+KeepaliveInterval       = 5
+KeepaliveLimit          = 5
+RecoverTimeout          = 120
+RecoverInterval         = 1
+ElectionTimeout         = 3
+TakeoverTimeout         = 9
+MonitorInterval         = 15
+TickleUpdateInterval    = 20
+EventScriptTimeout      = 30
+MonitorTimeoutCount     = 20
+RecoveryGracePeriod     = 120
+RecoveryBanPeriod       = 300
+DatabaseHashSize        = 100001
+DatabaseMaxDead         = 5
+RerecoveryTimeout       = 10
+EnableBans              = 1
+NoIPFailback            = 0
+DisableIPFailover       = 0
+VerboseMemoryNames      = 0
+RecdPingTimeout         = 60
+RecdFailCount           = 10
+LogLatencyMs            = 0
+RecLockLatencyMs        = 1000
+RecoveryDropAllIPs      = 120
+VacuumInterval          = 10
+VacuumMaxRunTime        = 120
+RepackLimit             = 10000
+VacuumLimit             = 5000
+VacuumFastPathCount     = 60
+MaxQueueDropMsg         = 1000000
+AllowUnhealthyDBRead    = 0
+StatHistoryInterval     = 1
+DeferredAttachTO        = 120
+AllowClientDBAttach     = 1
+RecoverPDBBySeqNum      = 1
+DeferredRebalanceOnNodeAdd = 300
+FetchCollapse           = 1
+HopcountMakeSticky      = 50
+StickyDuration          = 600
+StickyPindown           = 200
+NoIPTakeover            = 0
+DBRecordCountWarn       = 100000
+DBRecordSizeWarn        = 10000000
+DBSizeWarn              = 100000000
+PullDBPreallocation     = 10485760
+NoIPHostOnAllDisabled   = 0
+TDBMutexEnabled         = 1
+LockProcessesPerDB      = 200
+RecBufferSizeLimit      = 1000000
+QueueBufferSize         = 1024
+IPAllocAlgorithm        = 2
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "getvar \fINAME\fR"
+.PP
+Get the runtime value of a tuneable variable\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb getvar MonitorInterval
+MonitorInterval         = 15
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "setvar \fINAME\fR \fIVALUE\fR"
+.PP
+Set the runtime value of a tuneable variable\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb setvar MonitorInterval 20
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "lvs {master|list|status}"
+.PP
+This command shows different aspects of LVS status\&. For an overview of CTDB\*(Aqs LVS functionality please see the
+LVS
+section in
+\fBctdb\fR(7)\&.
+.PP
+master
+.RS 4
+Shows the PNN of the current LVS master node\&.
+.sp
+Example output:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+2
+      
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+list
+.RS 4
+Lists the currently usable LVS nodes\&.
+.sp
+Example output:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+2 10\&.0\&.0\&.13
+3 10\&.0\&.0\&.14
+      
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.PP
+status
+.RS 4
+List the nodes in the current LVS group and their status\&.
+.sp
+Example output:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+pnn:0 10\&.0\&.0\&.11        UNHEALTHY (THIS NODE)
+pnn:1 10\&.0\&.0\&.12        UNHEALTHY
+pnn:2 10\&.0\&.0\&.13        OK
+pnn:3 10\&.0\&.0\&.14        OK
+      
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "getcapabilities"
+.PP
+This command shows the capabilities of the current node\&. See the
+CAPABILITIES
+section in
+\fBctdb\fR(7)
+for more details\&.
+.PP
+Example output:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+RECMASTER: YES
+LMASTER: YES
+      
+.fi
+.if n \{\
+.RE
+.\}
+.SS "statistics"
+.PP
+Collect statistics from the CTDB daemon about how many calls it has served\&. Information about various fields in statistics can be found in
+\fBctdb-statistics\fR(7)\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb statistics
+CTDB version 1
+Current time of statistics  :                Tue Mar  8 15:18:51 2016
+Statistics collected since  : (003 21:31:32) Fri Mar  4 17:47:19 2016
+ num_clients                        9
+ frozen                             0
+ recovering                         0
+ num_recoveries                     2
+ client_packets_sent          8170534
+ client_packets_recv          7166132
+ node_packets_sent           16549998
+ node_packets_recv            5244418
+ keepalive_packets_sent        201969
+ keepalive_packets_recv        201969
+ node
+     req_call                      26
+     reply_call                     0
+     req_dmaster                    9
+     reply_dmaster                 12
+     reply_error                    0
+     req_message              1339231
+     req_control              8177506
+     reply_control            6831284
+ client
+     req_call                      15
+     req_message               334809
+     req_control              6831308
+ timeouts
+     call                           0
+     control                        0
+     traverse                       0
+ locks
+     num_calls                      8
+     num_current                    0
+     num_pending                    0
+     num_failed                     0
+ total_calls                       15
+ pending_calls                      0
+ childwrite_calls                   0
+ pending_childwrite_calls             0
+ memory_used                   394879
+ max_hop_count                      1
+ total_ro_delegations               0
+ total_ro_revokes                   0
+ hop_count_buckets: 8 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ lock_buckets: 0 0 8 0 0 0 0 0 0 0 0 0 0 0 0 0
+ locks_latency      MIN/AVG/MAX     0\&.010005/0\&.010418/0\&.011010 sec out of 8
+ reclock_ctdbd      MIN/AVG/MAX     0\&.002538/0\&.002538/0\&.002538 sec out of 1
+ reclock_recd       MIN/AVG/MAX     0\&.000000/0\&.000000/0\&.000000 sec out of 0
+ call_latency       MIN/AVG/MAX     0\&.000044/0\&.002142/0\&.011702 sec out of 15
+ childwrite_latency MIN/AVG/MAX     0\&.000000/0\&.000000/0\&.000000 sec out of 0
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "statisticsreset"
+.PP
+This command is used to clear all statistics counters in a node\&.
+.PP
+Example: ctdb statisticsreset
+.SS "dbstatistics \fIDB\fR"
+.PP
+Display statistics about the database DB\&. Information about various fields in dbstatistics can be found in
+\fBctdb-statistics\fR(7)\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb dbstatistics locking\&.tdb
+DB Statistics: locking\&.tdb
+ ro_delegations                     0
+ ro_revokes                         0
+ locks
+     total                      14356
+     failed                         0
+     current                        0
+     pending                        0
+ hop_count_buckets: 28087 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+ lock_buckets: 0 14188 38 76 32 19 3 0 0 0 0 0 0 0 0 0
+ locks_latency      MIN/AVG/MAX     0\&.001066/0\&.012686/4\&.202292 sec out of 14356
+ vacuum_latency     MIN/AVG/MAX     0\&.000472/0\&.002207/15\&.243570 sec out of 224530
+ Num Hot Keys:     1
+     Count:8 Key:ff5bd7cb3ee3822edc1f0000000000000000000000000000
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "getreclock"
+.PP
+Show details of the recovery lock, if any\&.
+.PP
+Example output:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+	/clusterfs/\&.ctdb/recovery\&.lock
+      
+.fi
+.if n \{\
+.RE
+.\}
+.SS "getdebug"
+.PP
+Get the current debug level for the node\&. the debug level controls what information is written to the log file\&.
+.PP
+The debug levels are mapped to the corresponding syslog levels\&. When a debug level is set, only those messages at that level and higher levels will be printed\&.
+.PP
+The list of debug levels from highest to lowest are :
+.PP
+ERROR WARNING NOTICE INFO DEBUG
+.SS "setdebug \fIDEBUGLEVEL\fR"
+.PP
+Set the debug level of a node\&. This controls what information will be logged\&.
+.PP
+The debuglevel is one of ERROR WARNING NOTICE INFO DEBUG
+.SS "getpid"
+.PP
+This command will return the process id of the ctdb daemon\&.
+.SS "disable"
+.PP
+This command is used to administratively disable a node in the cluster\&. A disabled node will still participate in the cluster and host clustered TDB records but its public ip address has been taken over by a different node and it no longer hosts any services\&.
+.SS "enable"
+.PP
+Re\-enable a node that has been administratively disabled\&.
+.SS "stop"
+.PP
+This command is used to administratively STOP a node in the cluster\&. A STOPPED node is connected to the cluster but will not host any public ip addresse, nor does it participate in the VNNMAP\&. The difference between a DISABLED node and a STOPPED node is that a STOPPED node does not host any parts of the database which means that a recovery is required to stop/continue nodes\&.
+.SS "continue"
+.PP
+Re\-start a node that has been administratively stopped\&.
+.SS "addip \fIIPADDR\fR/\fImask\fR \fIIFACE\fR"
+.PP
+This command is used to add a new public ip to a node during runtime\&. It should be followed by a
+\fBctdb ipreallocate\fR\&. This allows public addresses to be added to a cluster without having to restart the ctdb daemons\&.
+.PP
+Note that this only updates the runtime instance of ctdb\&. Any changes will be lost next time ctdb is restarted and the public addresses file is re\-read\&. If you want this change to be permanent you must also update the public addresses file manually\&.
+.SS "delip \fIIPADDR\fR"
+.PP
+This command flags IPADDR for deletion from a node at runtime\&. It should be followed by a
+\fBctdb ipreallocate\fR\&. If IPADDR is currently hosted by the node it is being removed from, this ensures that the IP will first be failed over to another node, if possible, and that it is then actually removed\&.
+.PP
+Note that this only updates the runtime instance of CTDB\&. Any changes will be lost next time CTDB is restarted and the public addresses file is re\-read\&. If you want this change to be permanent you must also update the public addresses file manually\&.
+.SS "moveip \fIIPADDR\fR \fIPNN\fR"
+.PP
+This command can be used to manually fail a public ip address to a specific node\&.
+.PP
+In order to manually override the "automatic" distribution of public ip addresses that ctdb normally provides, this command only works when you have changed the tunables for the daemon to:
+.PP
+IPAllocAlgorithm != 0
+.PP
+NoIPFailback = 1
+.SS "shutdown"
+.PP
+This command will shutdown a specific CTDB daemon\&.
+.SS "setlmasterrole on|off"
+.PP
+This command is used ot enable/disable the LMASTER capability for a node at runtime\&. This capability determines whether or not a node can be used as an LMASTER for records in the database\&. A node that does not have the LMASTER capability will not show up in the vnnmap\&.
+.PP
+Nodes will by default have this capability, but it can be stripped off nodes by the setting in the sysconfig file or by using this command\&.
+.PP
+Once this setting has been enabled/disabled, you need to perform a recovery for it to take effect\&.
+.PP
+See also "ctdb getcapabilities"
+.SS "setrecmasterrole on|off"
+.PP
+This command is used ot enable/disable the RECMASTER capability for a node at runtime\&. This capability determines whether or not a node can be used as an RECMASTER for the cluster\&. A node that does not have the RECMASTER capability can not win a recmaster election\&. A node that already is the recmaster for the cluster when the capability is stripped off the node will remain the recmaster until the next cluster election\&.
+.PP
+Nodes will by default have this capability, but it can be stripped off nodes by the setting in the sysconfig file or by using this command\&.
+.PP
+See also "ctdb getcapabilities"
+.SS "reloadnodes"
+.PP
+This command is used when adding new nodes, or removing existing nodes from an existing cluster\&.
+.PP
+Procedure to add nodes:
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 1.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  1." 4.2
+.\}
+To expand an existing cluster, first ensure with
+\fBctdb status\fR
+that all nodes are up and running and that they are all healthy\&. Do not try to expand a cluster unless it is completely healthy!
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 2.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  2." 4.2
+.\}
+On all nodes, edit
+/usr/local/etc/ctdb/nodes
+and
+\fIadd the new nodes at the end of this file\fR\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 3.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  3." 4.2
+.\}
+Verify that all the nodes have identical
+/usr/local/etc/ctdb/nodes
+files after adding the new nodes\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 4.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  4." 4.2
+.\}
+Run
+\fBctdb reloadnodes\fR
+to force all nodes to reload the nodes file\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 5.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  5." 4.2
+.\}
+Use
+\fBctdb status\fR
+on all nodes and verify that they now show the additional nodes\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 6.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  6." 4.2
+.\}
+Install and configure the new node and bring it online\&.
+.RE
+.PP
+Procedure to remove nodes:
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 1.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  1." 4.2
+.\}
+To remove nodes from an existing cluster, first ensure with
+\fBctdb status\fR
+that all nodes, except the node to be deleted, are up and running and that they are all healthy\&. Do not try to remove nodes from a cluster unless the cluster is completely healthy!
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 2.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  2." 4.2
+.\}
+Shutdown and power off the node to be removed\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 3.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  3." 4.2
+.\}
+On all other nodes, edit the
+/usr/local/etc/ctdb/nodes
+file and
+\fIcomment out\fR
+the nodes to be removed\&.
+\fIDo not delete the lines for the deleted nodes\fR, just comment them out by adding a \*(Aq#\*(Aq at the beginning of the lines\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 4.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  4." 4.2
+.\}
+Run
+\fBctdb reloadnodes\fR
+to force all nodes to reload the nodes file\&.
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04' 5.\h'+01'\c
+.\}
+.el \{\
+.sp -1
+.IP "  5." 4.2
+.\}
+Use
+\fBctdb status\fR
+on all nodes and verify that the deleted nodes are no longer listed\&.
+.RE
+.SS "reloadips [\fIPNN\-LIST\fR]"
+.PP
+This command reloads the public addresses configuration file on the specified nodes\&. When it completes addresses will be reconfigured and reassigned across the cluster as necessary\&.
+.PP
+This command is currently unable to make changes to the netmask or interfaces associated with existing addresses\&. Such changes must be made in 2 steps by deleting addresses in question and re\-adding then\&. Unfortunately this will disrupt connections to the changed addresses\&.
+.SS "getdbmap"
+.PP
+This command lists all clustered TDB databases that the CTDB daemon has attached to\&. Some databases are flagged as PERSISTENT, this means that the database stores data persistently and the data will remain across reboots\&. One example of such a database is secrets\&.tdb where information about how the cluster was joined to the domain is stored\&. Some database are flagged as REPLICATED, this means that the data in that database is replicated across all the nodes\&. But the data will not remain across reboots\&. This type of database is used by CTDB to store it\*(Aqs internal state\&.
+.PP
+If a PERSISTENT database is not in a healthy state the database is flagged as UNHEALTHY\&. If there\*(Aqs at least one completely healthy node running in the cluster, it\*(Aqs possible that the content is restored by a recovery run automaticly\&. Otherwise an administrator needs to analyze the problem\&.
+.PP
+See also "ctdb getdbstatus", "ctdb backupdb", "ctdb restoredb", "ctdb dumpbackup", "ctdb wipedb", "ctdb setvar AllowUnhealthyDBRead 1" and (if samba or tdb\-utils are installed) "tdbtool check"\&.
+.PP
+Most databases are not persistent and only store the state information that the currently running samba daemons need\&. These databases are always wiped when ctdb/samba starts and when a node is rebooted\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb getdbmap
+Number of databases:10
+dbid:0x435d3410 name:notify\&.tdb path:/usr/local/var/lib/ctdb/notify\&.tdb\&.0
+dbid:0x42fe72c5 name:locking\&.tdb path:/usr/local/var/lib/ctdb/locking\&.tdb\&.0
+dbid:0x1421fb78 name:brlock\&.tdb path:/usr/local/var/lib/ctdb/brlock\&.tdb\&.0
+dbid:0x17055d90 name:connections\&.tdb path:/usr/local/var/lib/ctdb/connections\&.tdb\&.0
+dbid:0xc0bdde6a name:sessionid\&.tdb path:/usr/local/var/lib/ctdb/sessionid\&.tdb\&.0
+dbid:0x122224da name:test\&.tdb path:/usr/local/var/lib/ctdb/test\&.tdb\&.0
+dbid:0x2672a57f name:idmap2\&.tdb path:/usr/local/var/lib/ctdb/persistent/idmap2\&.tdb\&.0 PERSISTENT
+dbid:0xb775fff6 name:secrets\&.tdb path:/usr/local/var/lib/ctdb/persistent/secrets\&.tdb\&.0 PERSISTENT
+dbid:0xe98e08b6 name:group_mapping\&.tdb path:/usr/local/var/lib/ctdb/persistent/group_mapping\&.tdb\&.0 PERSISTENT
+dbid:0x7bbbd26c name:passdb\&.tdb path:/usr/local/var/lib/ctdb/persistent/passdb\&.tdb\&.0 PERSISTENT
+
+# ctdb getdbmap  # example for unhealthy database
+Number of databases:1
+dbid:0xb775fff6 name:secrets\&.tdb path:/usr/local/var/lib/ctdb/persistent/secrets\&.tdb\&.0 PERSISTENT UNHEALTHY
+
+# ctdb \-X getdbmap
+|ID|Name|Path|Persistent|Unhealthy|
+|0x7bbbd26c|passdb\&.tdb|/usr/local/var/lib/ctdb/persistent/passdb\&.tdb\&.0|1|0|
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "backupdb \fIDB\fR \fIFILE\fR"
+.PP
+Copy the contents of database DB to FILE\&. FILE can later be read back using
+\fBrestoredb\fR\&. This is mainly useful for backing up persistent databases such as
+secrets\&.tdb
+and similar\&.
+.SS "restoredb \fIFILE\fR [\fIDB\fR]"
+.PP
+This command restores a persistent database that was previously backed up using backupdb\&. By default the data will be restored back into the same database as it was created from\&. By specifying dbname you can restore the data into a different database\&.
+.SS "setdbreadonly \fIDB\fR"
+.PP
+This command will enable the read\-only record support for a database\&. This is an experimental feature to improve performance for contended records primarily in locking\&.tdb and brlock\&.tdb\&. When enabling this feature you must set it on all nodes in the cluster\&.
+.SS "setdbsticky \fIDB\fR"
+.PP
+This command will enable the sticky record support for the specified database\&. This is an experimental feature to improve performance for contended records primarily in locking\&.tdb and brlock\&.tdb\&. When enabling this feature you must set it on all nodes in the cluster\&.
+.SH "INTERNAL COMMANDS"
+.PP
+Internal commands are used by CTDB\*(Aqs scripts and are not required for managing a CTDB cluster\&. Their parameters and behaviour are subject to change\&.
+.SS "gettickles \fIIPADDR\fR"
+.PP
+Show TCP connections that are registered with CTDB to be "tickled" if there is a failover\&.
+.SS "gratarp \fIIPADDR\fR \fIINTERFACE\fR"
+.PP
+Send out a gratuitous ARP for the specified interface through the specified interface\&. This command is mainly used by the ctdb eventscripts\&.
+.SS "pdelete \fIDB\fR \fIKEY\fR"
+.PP
+Delete KEY from DB\&.
+.SS "pfetch \fIDB\fR \fIKEY\fR"
+.PP
+Print the value associated with KEY in DB\&.
+.SS "pstore \fIDB\fR \fIKEY\fR \fIFILE\fR"
+.PP
+Store KEY in DB with contents of FILE as the associated value\&.
+.SS "ptrans \fIDB\fR [\fIFILE\fR]"
+.PP
+Read a list of key\-value pairs, one per line from FILE, and store them in DB using a single transaction\&. An empty value is equivalent to deleting the given key\&.
+.PP
+The key and value should be separated by spaces or tabs\&. Each key/value should be a printable string enclosed in double\-quotes\&.
+.SS "runstate [setup|first_recovery|startup|running]"
+.PP
+Print the runstate of the specified node\&. Runstates are used to serialise important state transitions in CTDB, particularly during startup\&.
+.PP
+If one or more optional runstate arguments are specified then the node must be in one of these runstates for the command to succeed\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb runstate
+RUNNING
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "setifacelink \fIIFACE\fR up|down"
+.PP
+Set the internal state of network interface IFACE\&. This is typically used in the
+10\&.interface
+script in the "monitor" event\&.
+.PP
+Example: ctdb setifacelink eth0 up
+.SS "tickle"
+.PP
+Read a list of TCP connections, one per line, from standard input and send a TCP tickle to the source host for each connection\&. A connection is specified as:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+	\fISRC\-IPADDR\fR:\fISRC\-PORT\fR \fIDST\-IPADDR\fR:\fIDST\-PORT\fR
+      
+.fi
+.if n \{\
+.RE
+.\}
+.PP
+A single connection can be specified on the command\-line rather than on standard input\&.
+.PP
+A TCP tickle is a TCP ACK packet with an invalid sequence and acknowledge number and will when received by the source host result in it sending an immediate correct ACK back to the other end\&.
+.PP
+TCP tickles are useful to "tickle" clients after a IP failover has occurred since this will make the client immediately recognize the TCP connection has been disrupted and that the client will need to reestablish\&. This greatly speeds up the time it takes for a client to detect and reestablish after an IP failover in the ctdb cluster\&.
+.SS "version"
+.PP
+Display the CTDB version\&.
+.SH "DEBUGGING COMMANDS"
+.PP
+These commands are primarily used for CTDB development and testing and should not be used for normal administration\&.
+.SS "OPTIONS"
+.PP
+\-\-print\-emptyrecords
+.RS 4
+This enables printing of empty records when dumping databases with the catdb, cattbd and dumpdbbackup commands\&. Records with empty data segment are considered deleted by ctdb and cleaned by the vacuuming mechanism, so this switch can come in handy for debugging the vacuuming behaviour\&.
+.RE
+.PP
+\-\-print\-datasize
+.RS 4
+This lets database dumps (catdb, cattdb, dumpdbbackup) print the size of the record data instead of dumping the data contents\&.
+.RE
+.PP
+\-\-print\-lmaster
+.RS 4
+This lets catdb print the lmaster for each record\&.
+.RE
+.PP
+\-\-print\-hash
+.RS 4
+This lets database dumps (catdb, cattdb, dumpdbbackup) print the hash for each record\&.
+.RE
+.PP
+\-\-print\-recordflags
+.RS 4
+This lets catdb and dumpdbbackup print the record flags for each record\&. Note that cattdb always prints the flags\&.
+.RE
+.SS "process\-exists \fIPID\fR \fI[SRVID]\fR"
+.PP
+This command checks if a specific process exists on the CTDB host\&. This is mainly used by Samba to check if remote instances of samba are still running or not\&. When the optional SRVID argument is specified, the command check if a specific process exists on the CTDB host and has registered for specified SRVID\&.
+.SS "getdbstatus \fIDB\fR"
+.PP
+This command displays more details about a database\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb getdbstatus test\&.tdb\&.0
+dbid: 0x122224da
+name: test\&.tdb
+path: /usr/local/var/lib/ctdb/test\&.tdb\&.0
+PERSISTENT: no
+HEALTH: OK
+
+# ctdb getdbstatus registry\&.tdb  # with a corrupted TDB
+dbid: 0xf2a58948
+name: registry\&.tdb
+path: /usr/local/var/lib/ctdb/persistent/registry\&.tdb\&.0
+PERSISTENT: yes
+HEALTH: NO\-HEALTHY\-NODES \- ERROR \- Backup of corrupted TDB in \*(Aq/usr/local/var/lib/ctdb/persistent/registry\&.tdb\&.0\&.corrupted\&.20091208091949\&.0Z\*(Aq
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SS "catdb \fIDB\fR"
+.PP
+Print a dump of the clustered TDB database DB\&.
+.SS "cattdb \fIDB\fR"
+.PP
+Print a dump of the contents of the local TDB database DB\&.
+.SS "dumpdbbackup \fIFILE\fR"
+.PP
+Print a dump of the contents from database backup FILE, similar to
+\fBcatdb\fR\&.
+.SS "wipedb \fIDB\fR"
+.PP
+Remove all contents of database DB\&.
+.SS "recover"
+.PP
+This command will trigger the recovery daemon to do a cluster recovery\&.
+.SS "ipreallocate, sync"
+.PP
+This command will force the recovery master to perform a full ip reallocation process and redistribute all ip addresses\&. This is useful to "reset" the allocations back to its default state if they have been changed using the "moveip" command\&. While a "recover" will also perform this reallocation, a recovery is much more hevyweight since it will also rebuild all the databases\&.
+.SS "getmonmode"
+.PP
+This command prints the monitoring mode of a node\&. This indicates when CTDB is monitoring services on the node\&. The monitoring mode is either ENABLED or DISABLED\&.
+.SS "attach \fIDBNAME\fR [persistent|replicated]"
+.PP
+Create a new CTDB database called DBNAME and attach to it on all nodes\&.
+.SS "detach \fIDB\-LIST\fR"
+.PP
+Detach specified non\-persistent database(s) from the cluster\&. This command will disconnect specified database(s) on all nodes in the cluster\&. This command should only be used when none of the specified database(s) are in use\&.
+.PP
+All nodes should be active and tunable AllowClientDBAccess should be disabled on all nodes before detaching databases\&.
+.SS "dumpmemory"
+.PP
+This is a debugging command\&. This command will make the ctdb daemon to write a fill memory allocation map to standard output\&.
+.SS "rddumpmemory"
+.PP
+This is a debugging command\&. This command will dump the talloc memory allocation tree for the recovery daemon to standard output\&.
+.SS "ban \fIBANTIME\fR"
+.PP
+Administratively ban a node for BANTIME seconds\&. The node will be unbanned after BANTIME seconds have elapsed\&.
+.PP
+A banned node does not participate in the cluster\&. It does not host any records for the clustered TDB and does not host any public IP addresses\&.
+.PP
+Nodes are automatically banned if they misbehave\&. For example, a node may be banned if it causes too many cluster recoveries\&.
+.PP
+To administratively exclude a node from a cluster use the
+\fBstop\fR
+command\&.
+.SS "unban"
+.PP
+This command is used to unban a node that has either been administratively banned using the ban command or has been automatically banned\&.
+.SS "check_srvids \fISRVID\fR \&.\&.\&."
+.PP
+This command checks whether a set of srvid message ports are registered on the node or not\&. The command takes a list of values to check\&.
+.sp
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBExample\fR
+.RS 4
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# ctdb check_srvids 1 2 3 14765
+Server id 0:1 does not exist
+Server id 0:2 does not exist
+Server id 0:3 does not exist
+Server id 0:14765 exists
+	
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.SH "SEE ALSO"
+.PP
+\fBctdbd\fR(1),
+\fBonnode\fR(1),
+\fBctdb\fR(7),
+\fBctdb-statistics\fR(7),
+\fBctdb-tunables\fR(7),
+\m[blue]\fB\%http://ctdb.samba.org/\fR\m[]
+.SH "AUTHOR"
+.br
+.PP
+This documentation was written by Ronnie Sahlberg, Amitay Isaacs, Martin Schwenke
+.SH "COPYRIGHT"
+.br
+Copyright \(co 2007 Andrew Tridgell, Ronnie Sahlberg
+.br
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version\&.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\&. See the GNU General Public License for more details\&.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, see
+\m[blue]\fB\%http://www.gnu.org/licenses\fR\m[]\&.
+.sp
