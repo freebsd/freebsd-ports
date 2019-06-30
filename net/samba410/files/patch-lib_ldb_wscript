@@ -1,0 +1,24 @@
+--- lib/ldb/wscript.orig	2019-05-07 08:38:21 UTC
++++ lib/ldb/wscript
+@@ -451,7 +451,7 @@ def build(bld):
+ 
+         LDB_TOOLS='ldbadd ldbsearch ldbdel ldbmodify ldbedit ldbrename'
+         for t in LDB_TOOLS.split():
+-            bld.SAMBA_BINARY(t, 'tools/%s.c' % t, deps='ldb-cmdline ldb',
++            bld.SAMBA_BINARY('samba-%s' % t, 'tools/%s.c' % t, deps='ldb-cmdline ldb',
+                              manpages='man/%s.1' % t)
+ 
+         # ldbtest doesn't get installed
+@@ -463,10 +463,10 @@ def build(bld):
+         else:
+             lmdb_deps = ''
+         # ldbdump doesn't get installed
+-        bld.SAMBA_BINARY('ldbdump',
++        bld.SAMBA_BINARY('samba-ldbdump',
+                          'tools/ldbdump.c',
+                          deps='ldb-cmdline ldb' + lmdb_deps,
+-                         install=False)
++                         install=True)
+ 
+         bld.SAMBA_LIBRARY('ldb-cmdline',
+                           source='tools/ldbutil.c tools/cmdline.c',

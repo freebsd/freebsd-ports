@@ -40,8 +40,8 @@ index 5de986463a5..cd3b91f41b9 100644
 +        file = tempfile.NamedTemporaryFile(dir=sysvol_dir)
          try:
              try:
--                smbd.set_simple_acl(file.name, 0755, gid)
-+                set_simple_acl(file.name, 0755, gid)
+-                smbd.set_simple_acl(file.name, 0o755, gid)
++                set_simple_acl(file.name, 0o755, gid)
              except OSError:
 -                if not smbd.have_posix_acls():
 +                if not smbd.have_posix_acls() and not smbd.have_nfsv4_acls():
@@ -69,7 +69,7 @@ index 5de986463a5..cd3b91f41b9 100644
          if not skip_sysvolacl:
 @@ -2184,6 +2194,9 @@ def provision(logger, session_info, smbconf=None,
              if not os.path.isdir(paths.netlogon):
-                 os.makedirs(paths.netlogon, 0755)
+                 os.makedirs(paths.netlogon, 0o755)
  
 +            if smbd.have_nfsv4_acls() and smbd.has_nfsv4_acls(paths.sysvol):
 +                smbd.set_nfsv4_defaults()
@@ -120,7 +120,7 @@ diff --git a/source3/smbd/pysmbd.c b/source3/smbd/pysmbd.c
 index 63fc5d68c33..f5a536ee186 100644
 --- a/source3/smbd/pysmbd.c
 +++ b/source3/smbd/pysmbd.c
-@@ -368,6 +368,20 @@ static SMB_ACL_T make_simple_acl(TALLOC_
+@@ -387,6 +387,20 @@ static SMB_ACL_T make_simple_acl(TALLOC_
  	return acl;
  }
  
@@ -141,10 +141,12 @@ index 63fc5d68c33..f5a536ee186 100644
  /*
    set a simple ACL on a file, as a test
   */
-@@ -413,6 +427,53 @@ static PyObject *py_smbd_set_simple_acl(
+@@ -432,6 +446,57 @@ static PyObject *py_smbd_set_simple_acl(
+ 	Py_RETURN_NONE;
  }
  
- /*
++
++/*
 +  set a simple NFSv4 ACL on a file, as a test
 + */
 +static PyObject *py_smbd_set_simple_nfsv4_acl(PyObject *self, PyObject *args, PyObject *kwargs)
@@ -170,8 +172,9 @@ index 63fc5d68c33..f5a536ee186 100644
 +		return NULL;
 +	}
 +
-+	conn = get_conn(frame, service);
++	conn = get_conn_tos(service, NULL);
 +	if (!conn) {
++		TALLOC_FREE(frame);
 +		return NULL;
 +	}
 +
@@ -179,6 +182,8 @@ index 63fc5d68c33..f5a536ee186 100644
 +	 * SMB_ACL_TYPE_ACCESS -> ACL_TYPE_ACCESS -> Not valid for NFSv4 ACL
 +	 */
 +	ret = 0;
++
++	/* ret = set_sys_acl_conn(fname, SMB_ACL_TYPE_ACCESS, acl, conn); */
 +
 +	if (ret != 0) {
 +		TALLOC_FREE(frame);
@@ -191,11 +196,10 @@ index 63fc5d68c33..f5a536ee186 100644
 +	Py_RETURN_NONE;
 +}
 +
-+/*
+ /*
    chown a file
   */
- static PyObject *py_smbd_chown(PyObject *self, PyObject *args, PyObject *kwargs)
-@@ -519,7 +580,7 @@ static PyObject *py_smbd_unlink(PyObject
+@@ -540,7 +605,7 @@ static PyObject *py_smbd_unlink(PyObject
  }
  
  /*
@@ -204,7 +208,7 @@ index 63fc5d68c33..f5a536ee186 100644
   */
  static PyObject *py_smbd_have_posix_acls(PyObject *self)
  {
-@@ -530,6 +591,86 @@ static PyObject *py_smbd_have_posix_acls
+@@ -551,6 +616,86 @@ static PyObject *py_smbd_have_posix_acls
  #endif
  }
  
@@ -291,7 +295,7 @@ index 63fc5d68c33..f5a536ee186 100644
  /*
    set the NT ACL on a file
   */
-@@ -717,9 +858,24 @@ static PyMethodDef py_smbd_methods[] = {
+@@ -843,9 +988,24 @@ static PyMethodDef py_smbd_methods[] = {
  	{ "have_posix_acls",
  		(PyCFunction)py_smbd_have_posix_acls, METH_NOARGS,
  		NULL },

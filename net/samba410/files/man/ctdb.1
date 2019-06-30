@@ -2,12 +2,12 @@
 .\"     Title: ctdb
 .\"    Author: 
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 11/20/2017
+.\"      Date: 11/18/2018
 .\"    Manual: CTDB - clustered TDB database
 .\"    Source: ctdb
 .\"  Language: English
 .\"
-.TH "CTDB" "1" "11/20/2017" "ctdb" "CTDB \- clustered TDB database"
+.TH "CTDB" "1" "11/18/2018" "ctdb" "CTDB \- clustered TDB database"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -110,12 +110,6 @@ Print useage information to the screen\&.
 .RS 4
 Change the debug level for the command\&. Default is NOTICE\&.
 .RE
-.PP
-\-\-socket=\fIFILENAME\fR
-.RS 4
-Specify that FILENAME is the name of the Unix domain socket to use when connecting to the local CTDB daemon\&. The default is
-/usr/local/var/run/ctdb/ctdbd\&.socket\&.
-.RE
 .SH "ADMINISTRATIVE COMMANDS"
 .PP
 These are commands used to monitor and administer a CTDB cluster\&.
@@ -164,7 +158,7 @@ Sometimes this number will be shown as "INVALID"\&. This only means that the ctd
 \fBVirtual Node Number (VNN) map\fR
 .RS 4
 .PP
-Consists of the number of virtual nodes and mapping from virtual node numbers to physical node numbers\&. Virtual nodes host CTDB databases\&. Only nodes that are participating in the VNN map can become lmaster or dmaster for database records\&.
+Consists of the number of virtual nodes and mapping from virtual node numbers to physical node numbers\&. Only nodes that are participating in the VNN map can become lmaster for database records\&.
 .RE
 .sp
 .it 1 an-trap
@@ -553,18 +547,19 @@ Interface[2]: Name:eth5 Link:up References:2 (active)
 .PP
 This command is used to control event daemon and to inspect status of various events\&.
 .PP
-run \fIEVENT\fR \fITIMEOUT\fR [\fIARGUMENTS\fR]
+The commands below require a component to be specified\&. In the current version the only valid component is
+legacy\&.
+.PP
+run \fITIMEOUT\fR \fICOMPONENT\fR \fIEVENT\fR [\fIARGUMENTS\fR]
 .RS 4
-This command can be used to manually run specified EVENT with optional ARGUMENTS\&. The event will be allowed to run a maximum of TIMEOUT seconds\&. If TIMEOUT is 0, then there is no time limit for running the event\&.
+This command can be used to manually run specified EVENT in COMPONENT with optional ARGUMENTS\&. The event will be allowed to run a maximum of TIMEOUT seconds\&. If TIMEOUT is 0, then there is no time limit for running the event\&.
 .RE
 .PP
-status [\fIEVENT\fR] [lastrun|lastpass|lastfail]
+status \fICOMPONENT\fR \fIEVENT\fR
 .RS 4
-This command displays the last execution status of the specified EVENT\&. If no event is specified, then the status of last executed monitor event will be displayed\&.
+This command displays the last execution status of the specified EVENT in COMPONENT\&.
 .sp
-To see the last successful execution of the event, lastpass can be specified\&. Similarly lastfail can be specified to see the last unsuccessful execution of the event\&. The optional lastrun can be specified to query the last execution of the event\&.
-.sp
-The command will terminate with the exit status corresponding to the overall status of event that is displayed\&. If lastpass is specified, then the command will always terminate with 0\&. If lastfail is specified then the command will always terminate with non\-zero exit status\&. If lastrun is specified, then the command will terminate with 0 or not depending on if the last execution of the event was successful or not\&.
+The command will terminate with the exit status corresponding to the overall status of event that is displayed\&.
 .sp
 The output is the list of event scripts executed\&. Each line shows the name, status, duration and start time for each script\&.
 .sp
@@ -578,7 +573,6 @@ Example output:
 01\&.reclock           OK         0\&.013 Sat Dec 17 19:39:11 2016
 05\&.system            OK         0\&.029 Sat Dec 17 19:39:11 2016
 06\&.nfs               OK         0\&.014 Sat Dec 17 19:39:11 2016
-10\&.external          DISABLED  
 10\&.interface         OK         0\&.037 Sat Dec 17 19:39:11 2016
 11\&.natgw             OK         0\&.011 Sat Dec 17 19:39:11 2016
 11\&.routing           OK         0\&.007 Sat Dec 17 19:39:11 2016
@@ -592,7 +586,6 @@ Example output:
 60\&.nfs               OK         0\&.376 Sat Dec 17 19:39:12 2016
 70\&.iscsi             OK         0\&.009 Sat Dec 17 19:39:12 2016
 91\&.lvs               OK         0\&.007 Sat Dec 17 19:39:12 2016
-99\&.timeout           OK         0\&.007 Sat Dec 17 19:39:12 2016
 	    
 .fi
 .if n \{\
@@ -600,9 +593,11 @@ Example output:
 .\}
 .RE
 .PP
-script list
+script list \fICOMPONENT\fR
 .RS 4
-List the available event scripts\&.
+List the available event scripts in COMPONENT\&. Enabled scripts are flagged with a \*(Aq*\*(Aq\&.
+.sp
+Generally, event scripts are provided by CTDB\&. However, local or 3rd party event scripts may also be available\&. These are shown in a separate section after those provided by CTDB\&.
 .sp
 Example output:
 .sp
@@ -610,25 +605,25 @@ Example output:
 .RS 4
 .\}
 .nf
-00\&.ctdb             
-01\&.reclock          
-05\&.system           
-06\&.nfs              
-10\&.external          DISABLED
-10\&.interface        
-11\&.natgw            
-11\&.routing          
-13\&.per_ip_routing   
-20\&.multipathd       
-31\&.clamd            
-40\&.vsftpd           
-41\&.httpd            
-49\&.winbind          
-50\&.samba            
-60\&.nfs              
-70\&.iscsi            
-91\&.lvs              
-99\&.timeout          
+* 00\&.ctdb             
+* 01\&.reclock          
+* 05\&.system           
+* 06\&.nfs              
+* 10\&.interface        
+  11\&.natgw            
+  11\&.routing          
+  13\&.per_ip_routing   
+  20\&.multipathd       
+  31\&.clamd            
+  40\&.vsftpd           
+  41\&.httpd            
+* 49\&.winbind          
+* 50\&.samba            
+* 60\&.nfs              
+  70\&.iscsi            
+  91\&.lvs              
+
+* 02\&.local            
 	    
 .fi
 .if n \{\
@@ -636,14 +631,14 @@ Example output:
 .\}
 .RE
 .PP
-script enable \fISCRIPT\fR
+script enable \fICOMPONENT\fR \fISCRIPT\fR
 .RS 4
-Enable the specified event SCRIPT\&. Only enabled scripts will be executed when running any event\&.
+Enable the specified event SCRIPT in COMPONENT\&. Only enabled scripts will be executed when running any event\&.
 .RE
 .PP
-script disable \fISCRIPT\fR
+script disable \fICOMPONENT\fR \fISCRIPT\fR
 .RS 4
-Disable the specified event SCRIPT\&. This will prevent the script from executing when running any event\&.
+Disable the specified event SCRIPT in COMPONENT\&. This will prevent the script from executing when running any event\&.
 .RE
 .SS "scriptstatus"
 .PP
@@ -670,7 +665,6 @@ This command is deprecated\&. It\*(Aqs provided for backward compatibility\&. In
 01\&.reclock           OK         0\&.010 Sat Dec 17 19:40:46 2016
 05\&.system            OK         0\&.030 Sat Dec 17 19:40:46 2016
 06\&.nfs               OK         0\&.014 Sat Dec 17 19:40:46 2016
-10\&.external          DISABLED  
 10\&.interface         OK         0\&.041 Sat Dec 17 19:40:46 2016
 11\&.natgw             OK         0\&.008 Sat Dec 17 19:40:46 2016
 11\&.routing           OK         0\&.007 Sat Dec 17 19:40:46 2016
@@ -725,7 +719,6 @@ DatabaseMaxDead         = 5
 RerecoveryTimeout       = 10
 EnableBans              = 1
 NoIPFailback            = 0
-DisableIPFailover       = 0
 VerboseMemoryNames      = 0
 RecdPingTimeout         = 60
 RecdFailCount           = 10
@@ -753,8 +746,6 @@ DBRecordCountWarn       = 100000
 DBRecordSizeWarn        = 10000000
 DBSizeWarn              = 100000000
 PullDBPreallocation     = 10485760
-NoIPHostOnAllDisabled   = 0
-TDBMutexEnabled         = 1
 LockProcessesPerDB      = 200
 RecBufferSizeLimit      = 1000000
 QueueBufferSize         = 1024
@@ -1278,24 +1269,24 @@ Most databases are not persistent and only store the state information that the 
 .nf
 # ctdb getdbmap
 Number of databases:10
-dbid:0x435d3410 name:notify\&.tdb path:/usr/local/var/lib/ctdb/notify\&.tdb\&.0
-dbid:0x42fe72c5 name:locking\&.tdb path:/usr/local/var/lib/ctdb/locking\&.tdb\&.0
-dbid:0x1421fb78 name:brlock\&.tdb path:/usr/local/var/lib/ctdb/brlock\&.tdb\&.0
-dbid:0x17055d90 name:connections\&.tdb path:/usr/local/var/lib/ctdb/connections\&.tdb\&.0
-dbid:0xc0bdde6a name:sessionid\&.tdb path:/usr/local/var/lib/ctdb/sessionid\&.tdb\&.0
-dbid:0x122224da name:test\&.tdb path:/usr/local/var/lib/ctdb/test\&.tdb\&.0
-dbid:0x2672a57f name:idmap2\&.tdb path:/usr/local/var/lib/ctdb/persistent/idmap2\&.tdb\&.0 PERSISTENT
-dbid:0xb775fff6 name:secrets\&.tdb path:/usr/local/var/lib/ctdb/persistent/secrets\&.tdb\&.0 PERSISTENT
-dbid:0xe98e08b6 name:group_mapping\&.tdb path:/usr/local/var/lib/ctdb/persistent/group_mapping\&.tdb\&.0 PERSISTENT
-dbid:0x7bbbd26c name:passdb\&.tdb path:/usr/local/var/lib/ctdb/persistent/passdb\&.tdb\&.0 PERSISTENT
+dbid:0x435d3410 name:notify\&.tdb path:/var/lib/ctdb/notify\&.tdb\&.0
+dbid:0x42fe72c5 name:locking\&.tdb path:/var/lib/ctdb/locking\&.tdb\&.0
+dbid:0x1421fb78 name:brlock\&.tdb path:/var/lib/ctdb/brlock\&.tdb\&.0
+dbid:0x17055d90 name:connections\&.tdb path:/var/lib/ctdb/connections\&.tdb\&.0
+dbid:0xc0bdde6a name:sessionid\&.tdb path:/var/lib/ctdb/sessionid\&.tdb\&.0
+dbid:0x122224da name:test\&.tdb path:/var/lib/ctdb/test\&.tdb\&.0
+dbid:0x2672a57f name:idmap2\&.tdb path:/var/lib/ctdb/persistent/idmap2\&.tdb\&.0 PERSISTENT
+dbid:0xb775fff6 name:secrets\&.tdb path:/var/lib/ctdb/persistent/secrets\&.tdb\&.0 PERSISTENT
+dbid:0xe98e08b6 name:group_mapping\&.tdb path:/var/lib/ctdb/persistent/group_mapping\&.tdb\&.0 PERSISTENT
+dbid:0x7bbbd26c name:passdb\&.tdb path:/var/lib/ctdb/persistent/passdb\&.tdb\&.0 PERSISTENT
 
 # ctdb getdbmap  # example for unhealthy database
 Number of databases:1
-dbid:0xb775fff6 name:secrets\&.tdb path:/usr/local/var/lib/ctdb/persistent/secrets\&.tdb\&.0 PERSISTENT UNHEALTHY
+dbid:0xb775fff6 name:secrets\&.tdb path:/var/lib/ctdb/persistent/secrets\&.tdb\&.0 PERSISTENT UNHEALTHY
 
 # ctdb \-X getdbmap
 |ID|Name|Path|Persistent|Unhealthy|
-|0x7bbbd26c|passdb\&.tdb|/usr/local/var/lib/ctdb/persistent/passdb\&.tdb\&.0|1|0|
+|0x7bbbd26c|passdb\&.tdb|/var/lib/ctdb/persistent/passdb\&.tdb\&.0|1|0|
 	
 .fi
 .if n \{\
@@ -1447,16 +1438,16 @@ This command displays more details about a database\&.
 # ctdb getdbstatus test\&.tdb\&.0
 dbid: 0x122224da
 name: test\&.tdb
-path: /usr/local/var/lib/ctdb/test\&.tdb\&.0
+path: /var/lib/ctdb/test\&.tdb\&.0
 PERSISTENT: no
 HEALTH: OK
 
 # ctdb getdbstatus registry\&.tdb  # with a corrupted TDB
 dbid: 0xf2a58948
 name: registry\&.tdb
-path: /usr/local/var/lib/ctdb/persistent/registry\&.tdb\&.0
+path: /var/lib/ctdb/persistent/registry\&.tdb\&.0
 PERSISTENT: yes
-HEALTH: NO\-HEALTHY\-NODES \- ERROR \- Backup of corrupted TDB in \*(Aq/usr/local/var/lib/ctdb/persistent/registry\&.tdb\&.0\&.corrupted\&.20091208091949\&.0Z\*(Aq
+HEALTH: NO\-HEALTHY\-NODES \- ERROR \- Backup of corrupted TDB in \*(Aq/var/lib/ctdb/persistent/registry\&.tdb\&.0\&.corrupted\&.20091208091949\&.0Z\*(Aq
 	
 .fi
 .if n \{\
@@ -1482,9 +1473,6 @@ This command will trigger the recovery daemon to do a cluster recovery\&.
 .SS "ipreallocate, sync"
 .PP
 This command will force the recovery master to perform a full ip reallocation process and redistribute all ip addresses\&. This is useful to "reset" the allocations back to its default state if they have been changed using the "moveip" command\&. While a "recover" will also perform this reallocation, a recovery is much more hevyweight since it will also rebuild all the databases\&.
-.SS "getmonmode"
-.PP
-This command prints the monitoring mode of a node\&. This indicates when CTDB is monitoring services on the node\&. The monitoring mode is either ENABLED or DISABLED\&.
 .SS "attach \fIDBNAME\fR [persistent|replicated]"
 .PP
 Create a new CTDB database called DBNAME and attach to it on all nodes\&.
@@ -1513,33 +1501,6 @@ command\&.
 .SS "unban"
 .PP
 This command is used to unban a node that has either been administratively banned using the ban command or has been automatically banned\&.
-.SS "check_srvids \fISRVID\fR \&.\&.\&."
-.PP
-This command checks whether a set of srvid message ports are registered on the node or not\&. The command takes a list of values to check\&.
-.sp
-.it 1 an-trap
-.nr an-no-space-flag 1
-.nr an-break-flag 1
-.br
-.ps +1
-\fBExample\fR
-.RS 4
-.sp
-.if n \{\
-.RS 4
-.\}
-.nf
-# ctdb check_srvids 1 2 3 14765
-Server id 0:1 does not exist
-Server id 0:2 does not exist
-Server id 0:3 does not exist
-Server id 0:14765 exists
-	
-.fi
-.if n \{\
-.RE
-.\}
-.RE
 .SH "SEE ALSO"
 .PP
 \fBctdbd\fR(1),

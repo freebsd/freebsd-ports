@@ -2,12 +2,12 @@
 .\"     Title: ctdb
 .\"    Author: 
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 11/20/2017
+.\"      Date: 11/18/2018
 .\"    Manual: CTDB - clustered TDB database
 .\"    Source: ctdb
 .\"  Language: English
 .\"
-.TH "CTDB" "7" "11/20/2017" "ctdb" "CTDB \- clustered TDB database"
+.TH "CTDB" "7" "11/18/2018" "ctdb" "CTDB \- clustered TDB database"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -87,12 +87,16 @@ model of cluster management\&. All nodes in a cluster elect one node to be the l
 \fIrecovery master\fR\&. This node takes and holds the recovery lock to assert its privileged role in the cluster\&.
 .PP
 By default, the recovery lock is implemented using a file (specified by
-\fICTDB_RECOVERY_LOCK\fR) residing in shared storage (usually) on a cluster filesystem\&. To support a recovery lock the cluster filesystem must support lock coherence\&. See
+\fIrecovery lock\fR
+in the
+[cluster]
+section of
+\fBctdb.conf\fR(5)) residing in shared storage (usually) on a cluster filesystem\&. To support a recovery lock the cluster filesystem must support lock coherence\&. See
 \fBping_pong\fR(1)
 for more details\&.
 .PP
 The recovery lock can also be implemented using an arbitrary cluster mutex call\-out by using an exclamation point (\*(Aq!\*(Aq) as the first character of
-\fICTDB_RECOVERY_LOCK\fR\&. For example, a value of
+\fIrecovery lock\fR\&. For example, a value of
 \fB!/usr/local/bin/myhelper recovery\fR
 would run the given helper with the specified arguments\&. See the source code relating to cluster mutexes for clues about writing call\-outs\&.
 .PP
@@ -131,11 +135,10 @@ One or more public IP addresses that are used to provide NAS or other services\&
 .PP
 Each node is configured with a unique, permanently assigned private address\&. This address is configured by the operating system\&. This address uniquely identifies a physical node in the cluster and is the address that CTDB daemons will use to communicate with the CTDB daemons on other nodes\&.
 .PP
-Private addresses are listed in the file specified by the
-\fICTDB_NODES\fR
-configuration variable (see
-\fBctdbd.conf\fR(5), default
+Private addresses are listed in the file
 /usr/local/etc/ctdb/nodes)\&. This file contains the list of private addresses for all nodes in the cluster, one per line\&. This file must be the same on all nodes in the cluster\&.
+.PP
+Some users like to put this configuration file in their cluster filesystem\&. A symbolic link should be used in this case\&.
 .PP
 Private addresses should not be used by clients to connect to services provided by the cluster\&.
 .PP
@@ -164,11 +167,11 @@ Public addresses are used to provide services to clients\&. Public addresses are
 .PP
 The CTDB cluster will assign/reassign these public addresses across the available healthy nodes in the cluster\&. When one node fails, its public addresses will be taken over by one or more other nodes in the cluster\&. This ensures that services provided by all public addresses are always available to clients, as long as there are nodes available capable of hosting this address\&.
 .PP
-The public address configuration is stored in a file on each node specified by the
-\fICTDB_PUBLIC_ADDRESSES\fR
-configuration variable (see
-\fBctdbd.conf\fR(5), recommended
-/usr/local/etc/ctdb/public_addresses)\&. This file contains a list of the public addresses that the node is capable of hosting, one per line\&. Each entry also contains the netmask and the interface to which the address should be assigned\&.
+The public address configuration is stored in
+/usr/local/etc/ctdb/public_addresses
+on each node\&. This file contains a list of the public addresses that the node is capable of hosting, one per line\&. Each entry also contains the netmask and the interface to which the address should be assigned\&. If this file is missing then no public addresses are configured\&.
+.PP
+Some users who have the same public addresses on all nodes like to put this configuration file in their cluster filesystem\&. A symbolic link should be used in this case\&.
 .PP
 Example
 /usr/local/etc/ctdb/public_addresses
@@ -311,7 +314,7 @@ Client access to the cluster is load\-balanced across the HEALTHY nodes in an LV
 command is used to show which nodes are currently load\-balanced across\&.
 .PP
 In each LVS group, one of the nodes is selected by CTDB to be the LVS master\&. This node receives all traffic from clients coming in to the LVS public address and multiplexes it across the internal network to one of the nodes that LVS is using\&. When responding to the client, that node will send the data back directly to the client, bypassing the LVS master node\&. The command
-\fBctdb lvsmaster\fR
+\fBctdb lvs master\fR
 will show which node is the current LVS master\&.
 .PP
 The path used for a client I/O is:
@@ -360,7 +363,7 @@ Selected node processes the request\&.
 Node responds back to client\&.
 .RE
 .PP
-This means that all incoming traffic to the cluster will pass through one physical node, which limits scalability\&. You can send more data to the LVS address that one physical node can multiplex\&. This means that you should not use LVS if your I/O pattern is write\-intensive since you will be limited in the available network bandwidth that node can handle\&. LVS does work wery well for read\-intensive workloads where only smallish READ requests are going through the LVSMASTER bottleneck and the majority of the traffic volume (the data in the read replies) goes straight from the processing node back to the clients\&. For read\-intensive i/o patterns you can achieve very high throughput rates in this mode\&.
+This means that all incoming traffic to the cluster will pass through one physical node, which limits scalability\&. You can send more data to the LVS address that one physical node can multiplex\&. This means that you should not use LVS if your I/O pattern is write\-intensive since you will be limited in the available network bandwidth that node can handle\&. LVS does work very well for read\-intensive workloads where only smallish READ requests are going through the LVSMASTER bottleneck and the majority of the traffic volume (the data in the read replies) goes straight from the processing node back to the clients\&. For read\-intensive i/o patterns you can achieve very high throughput rates in this mode\&.
 .PP
 Note: you can use LVS and public addresses at the same time\&.
 .PP
@@ -474,7 +477,7 @@ file to limit the NATGW functionality of those nodes\&.
 See the
 NAT GATEWAY
 section in
-\fBctdbd.conf\fR(5)
+\fBctdb-script.options\fR(5)
 for more details of NATGW configuration\&.
 .SS "Implementation details"
 .PP
@@ -499,7 +502,7 @@ This is implemented in the
 eventscript\&. Please see the eventscript file and the
 NAT GATEWAY
 section in
-\fBctdbd.conf\fR(5)
+\fBctdb-script.options\fR(5)
 for more details\&.
 .SH "POLICY ROUTING"
 .PP
@@ -515,7 +518,7 @@ There are 4 configuration variables related to policy routing:
 \fICTDB_PER_IP_ROUTING_TABLE_ID_HIGH\fR\&. See the
 POLICY ROUTING
 section in
-\fBctdbd.conf\fR(5)
+\fBctdb-script.options\fR(5)
 for more details\&.
 .SS "Configuration"
 .PP
@@ -682,18 +685,12 @@ Here is a more complete example configuration\&.
 .\}
 .PP
 The routes local packets as expected, the default route is as previously discussed, but packets to 192\&.168\&.200\&.0/24 are routed via the alternate gateway 192\&.168\&.1\&.254\&.
-.SH "NOTIFICATION SCRIPT"
+.SH "NOTIFICATIONS"
 .PP
-When certain state changes occur in CTDB, it can be configured to perform arbitrary actions via a notification script\&. For example, sending SNMP traps or emails when a node becomes unhealthy or similar\&.
+When certain state changes occur in CTDB, it can be configured to perform arbitrary actions via notifications\&. For example, sending SNMP traps or emails when a node becomes unhealthy or similar\&.
 .PP
-This is activated by setting the
-\fICTDB_NOTIFY_SCRIPT\fR
-configuration variable\&. The specified script must be executable\&.
-.PP
-Use of the provided
-/usr/local/etc/ctdb/notify\&.sh
-script is recommended\&. It executes files in
-/usr/local/etc/ctdb/notify\&.d/\&.
+The notification mechanism runs all executable files ending in "\&.script" in
+/usr/local/etc/ctdb/events/notification/, ignoring any failures and continuing to run all files\&.
 .PP
 CTDB currently generates notifications after CTDB changes to these states:
 .RS 4
@@ -711,11 +708,11 @@ healthy
 .RS 4
 unhealthy
 .RE
-.SH "DEBUG LEVELS"
+.SH "LOG LEVELS"
 .PP
-Valid values for DEBUGLEVEL are:
+Valid log levels, in increasing order of verbosity, are:
 .RS 4
-ERR
+ERROR
 .RE
 .RS 4
 WARNING
@@ -737,14 +734,15 @@ See the cluster as one single multihomed samba server where one of the NICs (the
 .PP
 NOTE: This does require that the cluster filesystem you use can cope with WAN\-link latencies\&. Not all cluster filesystems can handle WAN\-link latencies! Whether this will provide very good WAN\-accelerator performance or it will perform very poorly depends entirely on how optimized your cluster filesystem is in handling high latency for data and metadata operations\&.
 .PP
-To activate a node as being a remote cluster node you need to set the following two parameters in /etc/sysconfig/ctdb for the remote node:
+To activate a node as being a remote cluster node you need to set the following two parameters in /usr/local/etc/ctdb/ctdb\&.conf for the remote node:
 .sp
 .if n \{\
 .RS 4
 .\}
 .nf
-CTDB_CAPABILITY_LMASTER=no
-CTDB_CAPABILITY_RECMASTER=no
+[legacy]
+  lmaster capability = false
+  recmaster capability = false
 	
 .fi
 .if n \{\
@@ -761,7 +759,9 @@ Verify with the command "ctdb getcapabilities" that that node no longer has the 
 \fBltdbtool\fR(1),
 \fBonnode\fR(1),
 \fBping_pong\fR(1),
-\fBctdbd.conf\fR(5),
+\fBctdb.conf\fR(5),
+\fBctdb-script.options\fR(5),
+\fBctdb.sysconfig\fR(5),
 \fBctdb-statistics\fR(7),
 \fBctdb-tunables\fR(7),
 \m[blue]\fB\%http://ctdb.samba.org/\fR\m[]
