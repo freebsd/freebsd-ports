@@ -12,6 +12,7 @@ COMMENT=	Free FIX Protocol Implementation
 LICENSE=	GPLv3+
 
 BROKEN_powerpc64=	fails to configure: unable to find set_terminate in std or global namespace
+BROKEN_i386=	fails to build
 
 BUILD_DEPENDS=	bash:shells/bash
 
