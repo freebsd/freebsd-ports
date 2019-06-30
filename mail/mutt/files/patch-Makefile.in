@@ -1,4 +1,4 @@
---- Makefile.in.orig	2019-05-25 16:13:42 UTC
+--- Makefile.in.orig	2019-06-15 16:07:04 UTC
 +++ Makefile.in
 @@ -537,7 +537,7 @@ AUTOMAKE_OPTIONS = 1.6 foreign
  @BUILD_DOC_TRUE@DOC_SUBDIR = doc
@@ -9,7 +9,7 @@
  bin_SCRIPTS = muttbug flea $(SMIMEAUX_TARGET)
  @BUILD_HCACHE_TRUE@HCVERSION = hcversion.h
  BUILT_SOURCES = keymap_defs.h patchlist.c reldate.h conststrings.c version.h $(HCVERSION)
-@@ -1678,18 +1678,9 @@ install-exec-hook:
+@@ -1676,18 +1676,9 @@ install-exec-hook:
  		rm -f $(DESTDIR)$(bindir)/mutt.dotlock ;		\
  		ln -sf $(DESTDIR)$(bindir)/mutt_dotlock $(DESTDIR)$(bindir)/mutt.dotlock ; \
  	fi

@@ -1,12 +1,12 @@
---- PATCHES.orig	2019-05-26 19:28:51 UTC
+--- PATCHES.orig	2019-06-15 21:17:02 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.6.cb.reverse_reply.2
---- init.h.orig	2019-05-26 19:28:51 UTC
+--- init.h.orig	2019-06-15 21:17:01 UTC
 +++ init.h
-@@ -2945,6 +2945,13 @@ struct option_t MuttVars[] = {
-   ** possibly including eventual real names.  When it is \fIunset\fP, mutt will
-   ** override any such real names with the setting of the $$realname variable.
+@@ -2966,6 +2966,13 @@ struct option_t MuttVars[] = {
+   ** In either case, a missing real name will be filled in afterwards
+   ** using the value of $$realname.
    */
 +  { "reverse_reply",	DT_BOOL, R_NONE, OPTREVREPLY, 0 },
 +  /*
@@ -18,9 +18,9 @@
    { "rfc2047_parameters", DT_BOOL, R_NONE, OPTRFC2047PARAMS, 0 },
    /*
    ** .pp
---- mutt.h.orig	2019-04-28 20:41:58 UTC
+--- mutt.h.orig	2019-06-15 21:17:01 UTC
 +++ mutt.h
-@@ -490,6 +490,7 @@ enum
+@@ -491,6 +491,7 @@ enum
    OPTREVALIAS,
    OPTREVNAME,
    OPTREVREAL,
@@ -28,7 +28,7 @@
    OPTRFC2047PARAMS,
    OPTSAVEADDRESS,
    OPTSAVEEMPTY,
---- protos.h.orig	2019-04-28 20:41:58 UTC
+--- protos.h.orig	2019-05-25 16:22:39 UTC
 +++ protos.h
 @@ -85,6 +85,7 @@ ADDRESS *mutt_get_address (ENVELOPE *, char **);
  ADDRESS *mutt_lookup_alias (const char *s);
@@ -38,9 +38,9 @@
  ADDRESS *mutt_expand_aliases (ADDRESS *);
  ADDRESS *mutt_parse_adrlist (ADDRESS *, const char *);
  
---- send.c.orig	2019-05-10 02:20:15 UTC
+--- send.c.orig	2019-06-14 15:57:33 UTC
 +++ send.c
-@@ -716,6 +716,10 @@ void mutt_fix_reply_recipients (ENVELOPE *env)
+@@ -717,6 +717,10 @@ void mutt_fix_reply_recipients (ENVELOPE *env)
    /* the CC field can get cluttered, especially with lists */
    env->to = mutt_remove_duplicates (env->to);
    env->cc = mutt_remove_duplicates (env->cc);
@@ -51,7 +51,7 @@
    env->cc = mutt_remove_xrefs (env->to, env->cc);
  
    if (env->cc && !env->to)
---- sendlib.c.orig	2019-05-09 00:19:59 UTC
+--- sendlib.c.orig	2019-06-14 15:57:30 UTC
 +++ sendlib.c
 @@ -2764,6 +2764,35 @@ static void set_noconv_flags (BODY *b, short flag)
    }
