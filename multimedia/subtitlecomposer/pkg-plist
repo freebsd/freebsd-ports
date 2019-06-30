@@ -26,6 +26,7 @@ share/locale/ru/LC_MESSAGES/subtitlecomposer.mo
 share/locale/sr/LC_MESSAGES/subtitlecomposer.mo
 share/locale/sr@latin/LC_MESSAGES/subtitlecomposer.mo
 share/locale/uk/LC_MESSAGES/subtitlecomposer.mo
+share/metainfo/subtitlecomposer.desktop.appdata.xml
 share/mime/packages/subtitlecomposer.xml
 %%DATADIR%%/icons/hicolor/128x128/categories/waveform.png
 %%DATADIR%%/icons/hicolor/16x16/actions/select_stream.png
@@ -36,6 +37,7 @@ share/mime/packages/subtitlecomposer.xml
 %%DATADIR%%/icons/hicolor/48x48/apps/mplayer.png
 %%DATADIR%%/icons/hicolor/48x48/apps/xine.png
 %%DATADIR%%/icons/hicolor/64x64/apps/mpv.png
+%%DATADIR%%/icons/hicolor/64x64/apps/pocketsphinx.png
 %%DATADIR%%/icons/hicolor/scalable/actions/anchor.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/current_line_follows_video.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/playrate_minus.svg
@@ -66,4 +68,6 @@ share/mime/packages/subtitlecomposer.xml
 %%DATADIR%%/scripts/example_trim_to_selection.py
 %%DATADIR%%/scripts/example_trim_to_selection.rb
 %%DATADIR%%/scripts/fix_dialog_cues.py
+%%DATADIR%%/scripts/prepare_RTL_release.py
 %%DATADIR%%/scripts/remove_hearing_impaired_text.js
+%%DATADIR%%/scripts/undo_RTL_release.py
