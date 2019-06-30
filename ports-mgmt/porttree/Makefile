@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	porttree
-PORTVERSION=	1.0.r${SVN_REV}
+PORTVERSION=	1.1.r${SVN_REV}
 CATEGORIES=	ports-mgmt python
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -15,8 +15,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=2.0:math/py-networkx@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}configargparse>0:devel/py-configargparse@${PY_FLAVOR}
 
 USES=		python tar:bzip2 shebangfix
+#USE_PYTHON=	concurrent
 
-SVN_REV=	102
+SVN_REV=	114
 NO_BUILD=	yes
 PLIST_FILES=	bin/porttree man/man1/porttree.1.gz
 NO_ARCH=	yes
