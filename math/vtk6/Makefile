@@ -26,8 +26,8 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 CONFLICTS=	vtk5 vtk8
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	xt sm ice x11 xext
-USES=		alias cmake jpeg
-CXXFLAGS+=	-I${LOCALBASE}/include
+USES=		alias cmake jpeg localbase
+CXXFLAGS_powerpc64=	-mminimal-toc
 
 VTK_SHORT_VER=	${PORTVERSION:R}
 PLIST_SUB+=	VER2=${VTK_SHORT_VER}
