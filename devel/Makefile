@@ -1445,7 +1445,6 @@
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
     SUBDIR += llvm35
-    SUBDIR += llvm40
     SUBDIR += llvm60
     SUBDIR += llvm70
     SUBDIR += llvm80
@@ -4610,7 +4609,6 @@
     SUBDIR += py-mox
     SUBDIR += py-mox3
     SUBDIR += py-msgpack
-    SUBDIR += py-msgpack05
     SUBDIR += py-multi_key_dict
     SUBDIR += py-multipledispatch
     SUBDIR += py-multiprocess
@@ -5061,7 +5059,6 @@
     SUBDIR += py-txaio
     SUBDIR += py-typechecks
     SUBDIR += py-typed-ast
-    SUBDIR += py-typed-ast12
     SUBDIR += py-typing
     SUBDIR += py-typing-extensions
     SUBDIR += py-tzlocal
@@ -5482,7 +5479,6 @@
     SUBDIR += rubygem-device_detector
     SUBDIR += rubygem-devise
     SUBDIR += rubygem-devise-rails5
-    SUBDIR += rubygem-devise-rails50
     SUBDIR += rubygem-dig_rb
     SUBDIR += rubygem-directory_watcher
     SUBDIR += rubygem-ditz
@@ -5514,7 +5510,6 @@
     SUBDIR += rubygem-fast_xor
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-fastri
-    SUBDIR += rubygem-fastthread
     SUBDIR += rubygem-fattr
     SUBDIR += rubygem-ffi
     SUBDIR += rubygem-ffi-compiler

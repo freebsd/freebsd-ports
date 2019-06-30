@@ -1,9 +1,0 @@
-bin/ggz-txt
-lib/ggz/tttxt
-man/man6/ggz-txt.6.gz
-share/applications/ggz-txt.desktop
-@unexec ggz-config -D --remove --modfile=%D/share/ggz/tttxt.dsc --force
-share/ggz/tttxt.dsc
-@exec ggz-config -D --install --modfile=%D/share/ggz/tttxt.dsc --force
-share/locale/de/LC_MESSAGES/ggz-txt.mo
-@unexec if [ "x`cat %D/etc/ggz.modules`" = "x[Games]" ]; then echo -n > %D/etc/ggz.modules; fi

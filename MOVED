@@ -12811,3 +12811,31 @@ security/easy-rsa2|security/easy-rsa|2019-06-23|Has expired: Use easy-rsa 3 inst
 devel/py-robotframework-selenium2library|devel/py-robotframework-seleniumlibrary|2019-06-25|Renamed to match upstream
 net-p2p/zetacoin-nox11|net-p2p/zetacoin|2019-06-26|Slave port folded back into now text-only master port.
 net/tigervnc||2019-06-29|Removed: Non-essential meta port
+sysutils/cfengine33|sysutils/cfengine313|2019-06-30|Has expired: No longer supported upstream
+sysutils/cfengine-masterfiles38|sysutils/cfengine-masterfiles313|2019-06-30|Has expired: No longer supported upstream
+sysutils/cfengine39|sysutils/cfengine313|2019-06-30|Has expired: No longer supported upstream
+sysutils/cfengine-masterfiles37|sysutils/cfengine-masterfiles313|2019-06-30|Has expired: NO longer supported upstream
+sysutils/cfengine37|sysutils/cfengine313|2019-06-30|Has expired: No longer supported upstream
+net/morebalance||2019-06-30|Has expired: Abandonware and depends on expiring games/libggz
+sysutils/cfengine36|sysutils/cfengine313|2019-06-30|Has expired: No longer supported upstream
+sysutils/cfengine-masterfiles36|sysutils/cfengine-masterfiles313|2019-06-30|Has expired: No longer supported upstream
+sysutils/cfengine34|sysutils/cfengine313|2019-06-30|Has expired: No longer supported upstream
+sysutils/cfengine35|sysutils/cfengine313|2019-06-30|Has expired: No longer supported upstream
+sysutils/cfengine-masterfiles39|sysutils/cfengine-masterfiles313|2019-06-30|Has expired: No longer supported upstream
+devel/py-typed-ast12|devel/py-typed-ast|2019-06-30|Has expired: Use devel/py-typed-ast instead
+devel/rubygem-devise-rails50|devel/rubygem-devise|2019-06-30|Has expired: Use devel/rubygem-devise (depends on Rails 5.0) instead
+security/rubygem-devise-two-factor-rails50|security/rubygem-devise-two-factor|2019-06-30|Has expired: Use security/rubygem-devise-two-factor (depends on Rails 5.0) instead
+emulators/qemu-riscv||2019-06-30|Has expired: The development has been moved to the upstream
+games/libggz||2019-06-30|Has expired: Abandonware
+games/ggz-txt-client||2019-06-30|Has expired: Abandonware
+games/ggz-sdl-games||2019-06-30|Has expired: Abandonware
+games/ggz-client-libs||2019-06-30|Has expired: Abandonware
+games/ggz-gtk-client||2019-06-30|Has expired: Abandonware
+games/ggz-gtk-games||2019-06-30|Has expired: Abandonware
+sysutils/cfengine38|sysutils/cfengine313|2019-06-30|Has expired: No longer supported upstream
+devel/llvm40|devel/llvm80|2019-06-30|Has expired: Obsolete and unmaintained
+www/axis|www/axis2|2019-06-30|Has expired: Abandonware; use www/axis2 instead
+sysutils/cfengine32|sysutils/cfengine313|2019-06-30|Has expired: No longer supported upstream
+devel/py-msgpack05|devel/py-msgpack|2019-06-30|Has expired: Use devel/py-msgpack instead
+devel/rubygem-fastthread||2019-06-30|Has expired: Does not build for all supported Ruby version
+www/rubygem-responders-rails50|www/rubygem-responders|2019-06-30|Has expired: Use www/rubygem-responders (depends on Rails 5.0) instead
