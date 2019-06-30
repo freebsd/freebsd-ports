@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pygraphviz
-PORTVERSION=	1.3.1
+PORTVERSION=	1.5
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcgraph.so:graphics/graphviz
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0.10.1:devel/py-nose@${PY_FLAVOR}
 
-USES=		pkgconfig python
+USES=		pkgconfig python zip
 USE_PYTHON=	autoplist concurrent distutils
 
 PYDISTUTILS_BUILD_TARGET=	build build_ext
