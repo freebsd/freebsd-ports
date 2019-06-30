@@ -1,0 +1,181 @@
+Drop after FreeBSD 12.0 EOL. See https://reviews.llvm.org/rL332768
+
+externals/dynarmic/src/frontend/A64/types.cpp:18:33: fatal error: no viable constructor or deduction guide for deduction of template arguments of 'array'
+    static constexpr std::array cond_strs = {
+                                ^
+/usr/include/c++/v1/__tuple:223:64: note: candidate function template not viable: requires 0 arguments, but 16 were provided
+template <class _Tp, size_t _Size> struct _LIBCPP_TEMPLATE_VIS array;
+                                                               ^
+/usr/include/c++/v1/__tuple:223:64: note: candidate function template not viable: requires 1 argument, but 16 were provided
+
+--- externals/dynarmic/src/frontend/A32/disassembler/disassembler_arm.cpp.orig	2019-05-07 07:17:43 UTC
++++ externals/dynarmic/src/frontend/A32/disassembler/disassembler_arm.cpp
+@@ -18,6 +18,16 @@
+ #include "frontend/A32/disassembler/disassembler.h"
+ #include "frontend/A32/types.h"
+ 
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 7000
++_LIBCPP_BEGIN_NAMESPACE_STD
++template<class _Tp, class... _Args,
++         class = typename enable_if<(is_same_v<_Tp, _Args> && ...), void>::type
++         >
++array(_Tp, _Args...)
++  -> array<_Tp, 1 + sizeof...(_Args)>;
++_LIBCPP_END_NAMESPACE_STD
++#endif
++
+ namespace Dynarmic::A32 {
+ 
+ class DisassemblerVisitor {
+--- externals/dynarmic/src/frontend/A32/types.cpp.orig	2019-05-07 07:17:43 UTC
++++ externals/dynarmic/src/frontend/A32/types.cpp
+@@ -10,6 +10,16 @@
+ #include "common/bit_util.h"
+ #include "frontend/A32/types.h"
+ 
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 7000
++_LIBCPP_BEGIN_NAMESPACE_STD
++template<class _Tp, class... _Args,
++         class = typename enable_if<(is_same_v<_Tp, _Args> && ...), void>::type
++         >
++array(_Tp, _Args...)
++  -> array<_Tp, 1 + sizeof...(_Args)>;
++_LIBCPP_END_NAMESPACE_STD
++#endif
++
+ namespace Dynarmic::A32 {
+ 
+ const char* CondToString(Cond cond, bool explicit_al) {
+--- externals/dynarmic/src/frontend/A64/types.cpp.orig	2019-05-07 07:17:43 UTC
++++ externals/dynarmic/src/frontend/A64/types.cpp
+@@ -12,6 +12,16 @@
+ #include "common/bit_util.h"
+ #include "frontend/A64/types.h"
+ 
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 7000
++_LIBCPP_BEGIN_NAMESPACE_STD
++template<class _Tp, class... _Args,
++         class = typename enable_if<(is_same_v<_Tp, _Args> && ...), void>::type
++         >
++array(_Tp, _Args...)
++  -> array<_Tp, 1 + sizeof...(_Args)>;
++_LIBCPP_END_NAMESPACE_STD
++#endif
++
+ namespace Dynarmic::A64 {
+ 
+ const char* CondToString(Cond cond) {
+--- externals/dynarmic/src/frontend/ir/type.cpp.orig	2019-05-07 07:17:43 UTC
++++ externals/dynarmic/src/frontend/ir/type.cpp
+@@ -13,6 +13,16 @@
+ 
+ #include "frontend/ir/type.h"
+ 
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 7000
++_LIBCPP_BEGIN_NAMESPACE_STD
++template<class _Tp, class... _Args,
++         class = typename enable_if<(is_same_v<_Tp, _Args> && ...), void>::type
++         >
++array(_Tp, _Args...)
++  -> array<_Tp, 1 + sizeof...(_Args)>;
++_LIBCPP_END_NAMESPACE_STD
++#endif
++
+ namespace Dynarmic::IR {
+ 
+ std::string GetNameOf(Type type) {
+--- src/core/file_sys/card_image.cpp.orig	2019-06-28 18:03:38 UTC
++++ src/core/file_sys/card_image.cpp
+@@ -16,6 +16,16 @@
+ #include "core/file_sys/vfs_offset.h"
+ #include "core/loader/loader.h"
+ 
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 7000
++_LIBCPP_BEGIN_NAMESPACE_STD
++template<class _Tp, class... _Args,
++         class = typename enable_if<(is_same_v<_Tp, _Args> && ...), void>::type
++         >
++array(_Tp, _Args...)
++  -> array<_Tp, 1 + sizeof...(_Args)>;
++_LIBCPP_END_NAMESPACE_STD
++#endif
++
+ namespace FileSys {
+ 
+ constexpr std::array partition_names{
+--- src/video_core/renderer_opengl/gl_shader_decompiler.cpp.orig	2019-06-28 18:03:38 UTC
++++ src/video_core/renderer_opengl/gl_shader_decompiler.cpp
+@@ -20,6 +20,16 @@
+ #include "video_core/renderer_opengl/gl_shader_decompiler.h"
+ #include "video_core/shader/shader_ir.h"
+ 
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 7000
++_LIBCPP_BEGIN_NAMESPACE_STD
++template<class _Tp, class... _Args,
++         class = typename enable_if<(is_same_v<_Tp, _Args> && ...), void>::type
++         >
++array(_Tp, _Args...)
++  -> array<_Tp, 1 + sizeof...(_Args)>;
++_LIBCPP_END_NAMESPACE_STD
++#endif
++
+ namespace OpenGL::GLShader {
+ 
+ namespace {
+--- src/video_core/renderer_vulkan/vk_device.cpp.orig	2019-06-28 18:03:38 UTC
++++ src/video_core/renderer_vulkan/vk_device.cpp
+@@ -10,6 +10,16 @@
+ #include "video_core/renderer_vulkan/declarations.h"
+ #include "video_core/renderer_vulkan/vk_device.h"
+ 
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 7000
++_LIBCPP_BEGIN_NAMESPACE_STD
++template<class _Tp, class... _Args,
++         class = typename enable_if<(is_same_v<_Tp, _Args> && ...), void>::type
++         >
++array(_Tp, _Args...)
++  -> array<_Tp, 1 + sizeof...(_Args)>;
++_LIBCPP_END_NAMESPACE_STD
++#endif
++
+ namespace Vulkan {
+ 
+ namespace Alternatives {
+--- src/yuzu/configuration/configure_gamelist.cpp.orig	2019-06-28 18:03:38 UTC
++++ src/yuzu/configuration/configure_gamelist.cpp
+@@ -11,6 +11,16 @@
+ #include "yuzu/configuration/configure_gamelist.h"
+ #include "yuzu/ui_settings.h"
+ 
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 7000
++_LIBCPP_BEGIN_NAMESPACE_STD
++template<class _Tp, class... _Args,
++         class = typename enable_if<(is_same_v<_Tp, _Args> && ...), void>::type
++         >
++array(_Tp, _Args...)
++  -> array<_Tp, 1 + sizeof...(_Args)>;
++_LIBCPP_END_NAMESPACE_STD
++#endif
++
+ namespace {
+ constexpr std::array default_icon_sizes{
+     std::make_pair(0, QT_TR_NOOP("None")),
+--- src/yuzu/util/util.cpp.orig	2019-06-28 18:03:38 UTC
++++ src/yuzu/util/util.cpp
+@@ -7,6 +7,16 @@
+ #include <QPainter>
+ #include "yuzu/util/util.h"
+ 
++#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION < 7000
++_LIBCPP_BEGIN_NAMESPACE_STD
++template<class _Tp, class... _Args,
++         class = typename enable_if<(is_same_v<_Tp, _Args> && ...), void>::type
++         >
++array(_Tp, _Args...)
++  -> array<_Tp, 1 + sizeof...(_Args)>;
++_LIBCPP_END_NAMESPACE_STD
++#endif
++
+ QFont GetMonospaceFont() {
+     QFont font(QStringLiteral("monospace"));
+     // Automatic fallback to a monospace font on on platforms without a font called "monospace"
