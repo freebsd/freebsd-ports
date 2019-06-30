@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicpc
-DISTVERSION=	0.31
+DISTVERSION=	0.32
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpc/0/
 DISTNAME=	mpc-${PORTVERSION}
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 
 USES=		meson pkgconfig tar:xz
+
 MESON_ARGS=	--mandir=${MANPREFIX}
 
 OPTIONS_DEFINE=	DOCS ICONV
