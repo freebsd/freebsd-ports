@@ -1,8 +1,8 @@
---- ./gcc/config.gcc.orig	2011-07-22 16:44:50.000000000 +0000
-+++ ./gcc/config.gcc	2012-01-21 14:11:19.000000000 +0000
-@@ -2033,6 +2033,18 @@
+--- gcc/config.gcc.orig	2015-05-21 20:50:59 UTC
++++ gcc/config.gcc
+@@ -2118,6 +2118,18 @@ mipstx39-*-elf* | mipstx39el-*-elf*)
  	tm_file="elfos.h newlib-stdint.h ${tm_file} mips/r3900.h mips/elf.h"
- 	tmake_file="mips/t-r3900 mips/t-libgcc-mips16"
+ 	tmake_file="mips/t-r3900"
  	;;
 +mipsallegrex-*-elf* | mipsallegrexel-*-elf*)
 +   tm_file="elfos.h ${tm_file} mips/elf.h"

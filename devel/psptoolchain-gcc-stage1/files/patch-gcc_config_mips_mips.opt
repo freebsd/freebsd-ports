@@ -1,6 +1,6 @@
---- ./gcc/config/mips/mips.opt.orig	2011-02-17 01:59:04.000000000 +0000
-+++ ./gcc/config/mips/mips.opt	2012-01-21 14:11:19.000000000 +0000
-@@ -306,5 +306,9 @@
+--- gcc/config/mips/mips.opt.orig	2014-02-21 13:30:47 UTC
++++ gcc/config/mips/mips.opt
+@@ -400,5 +400,9 @@ mxgot
  Target Report Var(TARGET_XGOT)
  Lift restrictions on GOT size
  
