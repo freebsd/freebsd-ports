@@ -1,0 +1,8 @@
+bin/validjson
+%%SITE_ARCH%%/JSON/Parse.pm
+%%SITE_ARCH%%/JSON/Parse.pod
+%%SITE_ARCH%%/JSON/Tokenize.pm
+%%SITE_ARCH%%/JSON/Tokenize.pod
+%%SITE_ARCH%%/auto/JSON/Parse/Parse.so
+%%PERL5_MAN3%%/JSON::Parse.3.gz
+%%PERL5_MAN3%%/JSON::Tokenize.3.gz

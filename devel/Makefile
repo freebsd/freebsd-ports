@@ -2581,6 +2581,7 @@
     SUBDIR += p5-JIRA-REST
     SUBDIR += p5-JQuery
     SUBDIR += p5-JSON-Hyper
+    SUBDIR += p5-JSON-Parse
     SUBDIR += p5-JSON-Path
     SUBDIR += p5-JSON-Pointer
     SUBDIR += p5-JSON-RPC
