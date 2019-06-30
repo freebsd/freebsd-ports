@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
-MAINTAINER=	kikadf.01@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete front-end based on Qt for mplayer
 
 LICENSE=	GPLv2+
