@@ -1,7 +1,0 @@
-TIMESTAMP = 1530807399
-SHA256 (riscv-riscv-qemu-2.13.0-360a780_GH0.tar.gz) = 5c9acac890c6caa3eb15c3fff93b54c0a82d2bd862b27250a597881480918802
-SIZE (riscv-riscv-qemu-2.13.0-360a780_GH0.tar.gz) = 16027938
-SHA256 (qemu-dtc-e543880_GH0.tar.gz) = 84878bdcfca30db1ad32fd60ddfd01e08fc00ff0c042d2a758e7e90c08de0b5e
-SIZE (qemu-dtc-e543880_GH0.tar.gz) = 176916
-SHA256 (qemu-keycodemapdb-6b3d716_GH0.tar.gz) = c9d3412510aac999865d01aaa14b1fa8dc0385db55c5cf6c4d95d160bd0eaee9
-SIZE (qemu-keycodemapdb-6b3d716_GH0.tar.gz) = 47905

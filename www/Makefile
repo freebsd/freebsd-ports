@@ -38,7 +38,6 @@
     SUBDIR += aws
     SUBDIR += aws-demos
     SUBDIR += awstats
-    SUBDIR += axis
     SUBDIR += axis2
     SUBDIR += bacula-web
     SUBDIR += baikal
@@ -2139,7 +2138,6 @@
     SUBDIR += rubygem-redmine_acts_as_taggable_on
     SUBDIR += rubygem-responders
     SUBDIR += rubygem-responders-rails5
-    SUBDIR += rubygem-responders-rails50
     SUBDIR += rubygem-rest-client
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder

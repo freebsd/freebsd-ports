@@ -451,7 +451,6 @@
     SUBDIR += mod_amd
     SUBDIR += mono-zeroconf
     SUBDIR += mopd
-    SUBDIR += morebalance
     SUBDIR += mosh
     SUBDIR += mosquitto
     SUBDIR += motsognir

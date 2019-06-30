@@ -114,7 +114,6 @@
     SUBDIR += qemu-cheri
     SUBDIR += qemu-devel
     SUBDIR += qemu-powernv
-    SUBDIR += qemu-riscv
     SUBDIR += qemu-sbruno
     SUBDIR += qemu-user-static
     SUBDIR += qemu-utils
