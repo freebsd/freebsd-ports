@@ -1,9 +1,11 @@
---- lin-file.c.orig	2007-11-16 22:36:58.000000000 +0300
-+++ lin-file.c	2008-02-07 04:09:32.000000000 +0300
-@@ -9,6 +9,7 @@
+--- lin-file.c.orig	2019-06-15 14:41:01 UTC
++++ lin-file.c
+@@ -8,7 +8,8 @@
+ #include <glob.h>
  #include <sys/types.h>
  #include <sys/stat.h>
- #include <sys/dir.h>
+-#include <sys/dir.h>
++#include <dirent.h>
 +#include <sys/syslimits.h>
  
  //File Routines-----------------------------------------------------------
