@@ -310,7 +310,7 @@
 +        return -1;
 +    }
 +
-+    int type = drmGetNodeType(name);
++    int type = drmGetNodeType(strrchr(name, '/') + 1);
 +    free(name);
 +    if (type < 0)
 +        errno = ENODEV;
