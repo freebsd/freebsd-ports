@@ -22,8 +22,15 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
+.include <bsd.port.pre.mk>
+
+# Force newer GCC on platforms using GCC 4.2 as base
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+USE_GCC=        yes
+.endif
+
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
