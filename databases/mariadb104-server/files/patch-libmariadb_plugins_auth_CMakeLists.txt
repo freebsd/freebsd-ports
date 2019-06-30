@@ -1,0 +1,31 @@
+--- libmariadb/plugins/auth/CMakeLists.txt.orig	2018-05-23 20:38:41 UTC
++++ libmariadb/plugins/auth/CMakeLists.txt
+@@ -38,6 +38,7 @@ IF(GSSAPI_SOURCES)
+                   LIBRARIES ${GSSAPI_LIBS})
+ ENDIF()
+ 
++IF(NOT WITHOUT_CLIENT)
+ IF(${WITH_SSL} STREQUAL "OPENSSL" OR ${WITH_SSL} STREQUAL "SCHANNEL")
+   IF(WIN32)
+     SET(SHA256_LIBS crypt32)
+@@ -51,6 +52,7 @@ IF(${WITH_SSL} STREQUAL "OPENSSL" OR ${W
+                   SOURCES ${AUTH_DIR}/sha256_pw.c
+                   LIBRARIES ${SHA256_LIBS})
+ ENDIF()
++ENDIF()
+ 
+ # old_password plugin
+ REGISTER_PLUGIN(TARGET mysql_old_password
+@@ -60,10 +62,11 @@ REGISTER_PLUGIN(TARGET mysql_old_passwor
+                 SOURCES ${AUTH_DIR}/old_password.c)
+ 
+ 
++IF(NOT WITHOUT_CLIENT)
+ # Cleartext
+ REGISTER_PLUGIN(TARGET mysql_clear_password
+                 TYPE MARIADB_CLIENT_PLUGIN_AUTH
+                 CONFIGURATIONS DYNAMIC STATIC OFF
+                 DEFAULT DYNAMIC
+                 SOURCES ${AUTH_DIR}/mariadb_cleartext.c)
+-
++ENDIF()
