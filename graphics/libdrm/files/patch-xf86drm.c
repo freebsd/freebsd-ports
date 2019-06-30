@@ -10,9 +10,9 @@
  #include <sys/stat.h>
  #define stat_t struct stat
  #include <sys/ioctl.h>
-@@ -59,6 +62,10 @@
- #endif
- #include <math.h>
+@@ -61,6 +64,10 @@
+ 
+ #define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
  
 +#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
 +#include <sys/pciio.h>
@@ -41,16 +41,7 @@
  #endif
  
  #ifdef __NetBSD__
-@@ -177,7 +174,7 @@ drm_public void drmFree(void *pt)
- }
- 
- /**
-- * Call ioctl, restarting if it is interupted
-+ * Call ioctl, restarting if it is interrupted
-  */
- drm_public int
- drmIoctl(int fd, unsigned long request, void *arg)
-@@ -220,6 +217,89 @@ drm_public drmHashEntry *drmGetEntry(int fd)
+@@ -222,6 +219,89 @@ drm_public drmHashEntry *drmGetEntry(int fd)
      return entry;
  }
  
@@ -140,16 +131,7 @@
  /**
   * Compare two busid strings
   *
-@@ -287,7 +367,7 @@ static int drmMatchBusID(const char *id1, const char *
-  *
-  * \internal
-  * Checks for failure. If failure was caused by signal call chown again.
-- * If any other failure happened then it will output error mesage using
-+ * If any other failure happened then it will output error message using
-  * drmMsg() call.
-  */
- #if !UDEV
-@@ -324,8 +404,8 @@ static int chown_check_return(const char *path, uid_t 
+@@ -326,8 +406,8 @@ static int chown_check_return(const char *path, uid_t 
  static int drmOpenDevice(dev_t dev, int minor, int type)
  {
      stat_t          st;
@@ -415,11 +397,11 @@
      base = drmGetMinorBase(type);
      if (base < 0)
          return NULL;
-@@ -3011,7 +3048,7 @@ static int drmParseSubsystemType(int maj, int min)
-         return DRM_BUS_VIRTIO;
+@@ -3032,7 +3069,7 @@ static int drmParseSubsystemType(int maj, int min)
+     }
  
      return -EINVAL;
--#elif defined(__OpenBSD__)
+-#elif defined(__OpenBSD__) || defined(__DragonFly__)
 +#elif defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
      return DRM_BUS_PCI;
  #else
