@@ -1,6 +1,6 @@
---- ./gcc/config/mips/allegrex.md.orig	2012-01-21 14:11:18.000000000 +0000
-+++ ./gcc/config/mips/allegrex.md	2012-01-21 14:11:18.000000000 +0000
-@@ -0,0 +1,191 @@
+--- gcc/config/mips/allegrex.md.orig	2019-06-06 21:32:32 UTC
++++ gcc/config/mips/allegrex.md
+@@ -0,0 +1,172 @@
 +;; Sony ALLEGREX instructions.
 +;; Copyright (C) 2005 Free Software Foundation, Inc.
 +;;
@@ -22,7 +22,6 @@
 +;; Boston, MA 02111-1307, USA.
 +
 +(define_c_enum "unspec" [
-+  UNSPEC_WSBH
 +  UNSPEC_CLO
 +  UNSPEC_CTO
 +  UNSPEC_CACHE
@@ -86,24 +85,6 @@
 +  "bitrev\t%0,%1"
 +  [(set_attr "type"    "arith")
 +   (set_attr "mode"    "SI")])
-+
-+(define_insn "allegrex_wsbh"
-+  [(set (match_operand:SI 0 "register_operand" "=d")
-+   (unspec:SI [(match_operand:SI 1 "register_operand" "d")]
-+          UNSPEC_WSBH))]
-+  "TARGET_ALLEGREX"
-+  "wsbh\t%0,%1"
-+  [(set_attr "type"    "arith")
-+   (set_attr "mode"    "SI")])
-+
-+(define_insn "bswapsi2"
-+  [(set (match_operand:SI 0 "register_operand" "=d")
-+   (bswap:SI (match_operand:SI 1 "register_operand" "d")))]
-+  "TARGET_ALLEGREX"
-+  "wsbw\t%0,%1"
-+  [(set_attr "type"    "shift")
-+   (set_attr "mode"    "SI")])
-+
 +
 +;; Count leading ones, count trailing zeros, and count trailing ones (clz is
 +;; already defined).

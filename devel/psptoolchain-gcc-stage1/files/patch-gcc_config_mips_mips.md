@@ -1,6 +1,6 @@
---- ./gcc/config/mips/mips.md.orig	2011-03-03 21:56:58.000000000 +0000
-+++ ./gcc/config/mips/mips.md	2012-01-21 14:11:19.000000000 +0000
-@@ -37,6 +37,7 @@
+--- gcc/config/mips/mips.md.orig	2014-02-02 16:05:09 UTC
++++ gcc/config/mips/mips.md
+@@ -35,6 +35,7 @@
    74kf2_1
    74kf1_1
    74kf3_2
@@ -8,16 +8,15 @@
    loongson_2e
    loongson_2f
    loongson_3a
-@@ -598,7 +599,7 @@
- ;; This mode iterator allows :MOVECC to be used anywhere that a
- ;; conditional-move-type condition is needed.
+@@ -756,6 +757,7 @@
  (define_mode_iterator MOVECC [SI (DI "TARGET_64BIT")
--                              (CC "TARGET_HARD_FLOAT && !TARGET_LOONGSON_2EF")])
-+                              (CC "TARGET_HARD_FLOAT && !TARGET_LOONGSON_2EF && !TARGET_ALLEGREX")])
+                               (CC "TARGET_HARD_FLOAT
+ 				   && !TARGET_LOONGSON_2EF
++				   && !TARGET_ALLEGREX
+ 				   && !TARGET_MIPS5900")])
  
  ;; 32-bit integer moves for which we provide move patterns.
- (define_mode_iterator IMOVE32
-@@ -1885,11 +1886,11 @@
+@@ -2070,11 +2072,11 @@
  	   (mult:DI
  	      (any_extend:DI (match_operand:SI 1 "register_operand" "d"))
  	      (any_extend:DI (match_operand:SI 2 "register_operand" "d")))))]
@@ -31,10 +30,10 @@
      return "msub<u>\t%1,%2";
    else
      return "msac<u>\t$0,%1,%2";
-@@ -2066,14 +2067,14 @@
+@@ -2312,14 +2314,14 @@
  	 (mult:DI (any_extend:DI (match_operand:SI 1 "register_operand" "d"))
  		  (any_extend:DI (match_operand:SI 2 "register_operand" "d")))
- 	 (match_operand:DI 3 "register_operand" "0")))]
+ 	 (match_operand:DI 3 "muldiv_target_operand" "0")))]
 -  "(TARGET_MAD || ISA_HAS_MACC || GENERATE_MADD_MSUB || ISA_HAS_DSP)
 +  "(TARGET_MAD || ISA_HAS_MACC || GENERATE_MADD_MSUB || ISA_HAS_DSP || TARGET_ALLEGREX)
     && !TARGET_64BIT"
@@ -48,7 +47,7 @@
      return "madd<u>\t%1,%2";
    else
      /* See comment in *macc.  */
-@@ -2500,6 +2501,33 @@
+@@ -2857,6 +2859,33 @@
  ;;
  ;;  ....................
  ;;
@@ -82,8 +81,8 @@
  ;;	NEGATION and ONE'S COMPLEMENT
  ;;
  ;;  ....................
-@@ -2550,6 +2578,25 @@
-   [(set_attr "alu_type" "not")
+@@ -2909,6 +2938,25 @@
+    (set_attr "compression" "micromips,*")
     (set_attr "mode" "<MODE>")])
  
 +(define_expand "rotl<mode>3"
@@ -108,7 +107,7 @@
  ;;
  ;;  ....................
  ;;
-@@ -6301,7 +6348,7 @@
+@@ -6869,7 +6917,7 @@
  		 (const_int 0)])
  	 (match_operand:GPR 2 "reg_or_0_operand" "dJ,0")
  	 (match_operand:GPR 3 "reg_or_0_operand" "0,dJ")))]
@@ -117,7 +116,7 @@
    "@
      mov%T4\t%0,%z2,%1
      mov%t4\t%0,%z3,%1"
-@@ -6331,8 +6378,12 @@
+@@ -6912,8 +6960,12 @@
  	(if_then_else:GPR (match_dup 5)
  			  (match_operand:GPR 2 "reg_or_0_operand")
  			  (match_operand:GPR 3 "reg_or_0_operand")))]
@@ -131,13 +130,13 @@
    mips_expand_conditional_move (operands);
    DONE;
  })
-@@ -6481,6 +6532,9 @@
+@@ -7184,6 +7236,9 @@
+ 
  ; ST-Microelectronics Loongson-2E/2F-specific patterns.
  (include "loongson.md")
- 
++
 +; Sony ALLEGREX instructions.
 +(include "allegrex.md")
-+
+ 
  (define_c_enum "unspec" [
    UNSPEC_ADDRESS_FIRST
- ])

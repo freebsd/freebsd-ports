@@ -1,6 +1,6 @@
---- ./gcc/config/mips/mips.c.orig	2011-05-29 17:48:14.000000000 +0000
-+++ ./gcc/config/mips/mips.c	2012-01-21 14:11:18.000000000 +0000
-@@ -239,7 +239,12 @@
+--- gcc/config/mips/mips.c.orig	2014-03-08 09:27:23 UTC
++++ gcc/config/mips/mips.c
+@@ -248,7 +248,12 @@ enum mips_builtin_type {
    MIPS_BUILTIN_CMP_SINGLE,
  
    /* For generating bposge32 branch instructions in MIPS32 DSP ASE.  */
@@ -14,7 +14,7 @@
  };
  
  /* Invoke MACRO (COND) for each C.cond.fmt condition.  */
-@@ -516,6 +521,10 @@
+@@ -574,6 +579,10 @@ struct mips_asm_switch mips_noat = { "at", 0 };
     normal branch.  */
  static bool mips_branch_likely;
  
@@ -25,15 +25,7 @@
  /* The current instruction-set architecture.  */
  enum processor mips_arch;
  const struct mips_cpu_info *mips_arch_info;
-@@ -691,6 +700,7 @@
- 
-   /* MIPS II processors.  */
-   { "r6000", PROCESSOR_R6000, 2, 0 },
-+  { "allegrex", PROCESSOR_ALLEGREX, 2, 0 },
- 
-   /* MIPS III processors.  */
-   { "r4000", PROCESSOR_R4000, 3, 0 },
-@@ -969,6 +979,9 @@
+@@ -919,6 +928,9 @@ static const struct mips_rtx_cost_data
  		     1,           /* branch_cost */
  		     4            /* memory_latency */
    },
@@ -43,7 +35,7 @@
    { /* Loongson-2E */
      DEFAULT_COSTS
    },
-@@ -12605,6 +12618,7 @@
+@@ -13780,6 +13792,7 @@ AVAIL_NON_MIPS16 (dsp_64, TARGET_64BIT && TARGET_DSP)
  AVAIL_NON_MIPS16 (dspr2_32, !TARGET_64BIT && TARGET_DSPR2)
  AVAIL_NON_MIPS16 (loongson, TARGET_LOONGSON_VECTORS)
  AVAIL_NON_MIPS16 (cache, TARGET_CACHE_BUILTIN)
@@ -51,7 +43,7 @@
  
  /* Construct a mips_builtin_description from the given arguments.
  
-@@ -12701,6 +12715,30 @@
+@@ -13876,6 +13889,30 @@ AVAIL_NON_MIPS16 (cache, TARGET_CACHE_BUILTIN)
    MIPS_BUILTIN (bposge, f, "bposge" #VALUE,				\
  		MIPS_BUILTIN_BPOSGE ## VALUE, MIPS_SI_FTYPE_VOID, AVAIL)
  
@@ -82,7 +74,7 @@
  /* Define a Loongson MIPS_BUILTIN_DIRECT function __builtin_loongson_<FN_NAME>
     for instruction CODE_FOR_loongson_<INSN>.  FUNCTION_TYPE is a
     builtin_description field.  */
-@@ -12945,6 +12983,40 @@
+@@ -14122,6 +14159,38 @@ static const struct mips_builtin_description mips_buil
    DIRECT_BUILTIN (dpsqx_s_w_ph, MIPS_DI_FTYPE_DI_V2HI_V2HI, dspr2_32),
    DIRECT_BUILTIN (dpsqx_sa_w_ph, MIPS_DI_FTYPE_DI_V2HI_V2HI, dspr2_32),
  
@@ -97,8 +89,6 @@
 +   duplicate patterns specifically for the ALLEGREX (as Sony does).  */
 +
 +  DIRECT_ALLEGREX_BUILTIN(bitrev, MIPS_SI_FTYPE_SI, 0),
-+  DIRECT_ALLEGREX_BUILTIN(wsbh, MIPS_SI_FTYPE_SI, 0),
-+  DIRECT_ALLEGREX_NAMED_BUILTIN(wsbw, bswapsi2, MIPS_SI_FTYPE_SI, 0),
 +  DIRECT_ALLEGREX_NAMED_BUILTIN(clz, clzsi2, MIPS_SI_FTYPE_SI, 0),
 +  DIRECT_ALLEGREX_BUILTIN(clo, MIPS_SI_FTYPE_SI, 0),
 +  DIRECT_ALLEGREX_NAMED_BUILTIN(ctz, ctzsi2, MIPS_SI_FTYPE_SI, 0),
@@ -123,7 +113,7 @@
    /* Builtin functions for ST Microelectronics Loongson-2E/2F cores.  */
    LOONGSON_BUILTIN (packsswh, MIPS_V4HI_FTYPE_V2SI_V2SI),
    LOONGSON_BUILTIN (packsshb, MIPS_V8QI_FTYPE_V4HI_V4HI),
-@@ -13096,6 +13168,8 @@
+@@ -14273,6 +14342,8 @@ mips_build_cvpointer_type (void)
  /* Standard mode-based argument types.  */
  #define MIPS_ATYPE_UQI unsigned_intQI_type_node
  #define MIPS_ATYPE_SI intSI_type_node
@@ -132,17 +122,7 @@
  #define MIPS_ATYPE_USI unsigned_intSI_type_node
  #define MIPS_ATYPE_DI intDI_type_node
  #define MIPS_ATYPE_UDI unsigned_intDI_type_node
-@@ -13270,6 +13344,9 @@
- 
-   switch (opno)
-     {
-+    case 0:
-+      emit_insn (GEN_FCN (icode) (0));
-+      break;
-     case 2:
-       emit_insn (GEN_FCN (icode) (ops[0], ops[1]));
-       break;
-@@ -13439,6 +13516,28 @@
+@@ -14575,6 +14646,26 @@ mips_expand_builtin_bposge (enum mips_builtin_type bui
  				       const1_rtx, const0_rtx);
  }
  
@@ -152,26 +132,24 @@
 +static rtx
 +mips_expand_builtin_cache (enum insn_code icode, rtx target, tree exp)
 +{
-+  rtx op0, op1;
++  int argno;
++  struct expand_operand ops[2];
 +
-+  op0 = mips_prepare_builtin_arg (icode, 0, exp, 0);
-+  op1 = mips_prepare_builtin_arg (icode, 1, exp, 1);
++  for (argno = 0; argno < 2; argno++)
++    mips_prepare_builtin_arg (&ops[argno], exp, argno);
 +
-+  if (GET_CODE (op0) == CONST_INT)
-+    if (INTVAL (op0) < 0 || INTVAL (op0) > 0x1f)
-+      {
-+   error ("invalid function code '%d'", INTVAL (op0));
-+   return const0_rtx;
-+      }
++  if (GET_CODE(ops[0].value) != CONST_INT ||
++      INTVAL(ops[0].value) < 0 || INTVAL(ops[0].value) > 0x1f)
++    error("Invalid first argument for cache builtin (0 <= arg <= 31)");
 +
-+  emit_insn (GEN_FCN (icode) (op0, op1));
++  emit_insn(mips_expand_builtin_insn (icode, 2, ops, false));
 +  return target;
 +}
 +
  /* Implement TARGET_EXPAND_BUILTIN.  */
  
  static rtx
-@@ -13484,6 +13583,9 @@
+@@ -14620,6 +14711,9 @@ mips_expand_builtin (tree exp, rtx target, rtx subtarg
  
      case MIPS_BUILTIN_BPOSGE32:
        return mips_expand_builtin_bposge (d->builtin_type, target);
@@ -181,10 +159,10 @@
      }
    gcc_unreachable ();
  }
-@@ -15918,6 +16020,22 @@
-      Do all CPP-sensitive stuff in non-MIPS16 mode; we'll switch to
-      MIPS16 mode afterwards if need be.  */
-   mips_set_mips16_mode (false);
+@@ -17376,6 +17470,22 @@ mips_option_override (void)
+ 
+   if (TARGET_HARD_FLOAT_ABI && TARGET_MIPS5900)
+     REAL_MODE_FORMAT (SFmode) = &spu_single_format;
 +
 +  /* Validate -mpreferred-stack-boundary= value, or provide default.
 +     The default of 128-bit is for newABI else 64-bit.  */
@@ -203,4 +181,4 @@
 +    }
  }
  
- /* Implement TARGET_OPTION_OPTIMIZATION_TABLE.  */
+ /* Swap the register information for registers I and I + 1, which

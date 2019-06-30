@@ -1,29 +1,29 @@
---- ./config.sub.orig	2010-05-25 13:22:07.000000000 +0000
-+++ ./config.sub	2012-01-21 14:11:18.000000000 +0000
-@@ -279,6 +279,7 @@
- 	| mipsisa64sb1 | mipsisa64sb1el \
+--- config.sub.orig	2013-10-01 16:50:56 UTC
++++ config.sub
+@@ -289,6 +289,7 @@ case $basic_machine in
  	| mipsisa64sr71k | mipsisa64sr71kel \
+ 	| mipsr5900 | mipsr5900el \
  	| mipstx39 | mipstx39el \
 +	| mipsallegrex | mipsallegrexel \
  	| mn10200 | mn10300 \
  	| moxie \
  	| mt \
-@@ -375,6 +376,7 @@
- 	| mipsisa64sb1-* | mipsisa64sb1el-* \
+@@ -408,6 +409,7 @@ case $basic_machine in
  	| mipsisa64sr71k-* | mipsisa64sr71kel-* \
+ 	| mipsr5900-* | mipsr5900el-* \
  	| mipstx39-* | mipstx39el-* \
 +	| mipsallegrex-* | mipsallegrexel-* \
  	| mmix-* \
  	| mt-* \
  	| msp430-* \
-@@ -771,6 +773,10 @@
+@@ -809,6 +811,10 @@ case $basic_machine in
+ 	*mint | -mint[0-9]* | *MiNT | *MiNT[0-9]*)
  		basic_machine=m68k-atari
  		os=-mint
- 		;;
++		;;
 +	psp)
 +		basic_machine=mipsallegrexel-psp
 +		os=-elf
-+		;;
+ 		;;
  	mips3*-*)
  		basic_machine=`echo $basic_machine | sed -e 's/mips3/mips64/'`
- 		;;
