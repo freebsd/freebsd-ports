@@ -4,6 +4,12 @@
 #
 # MAINTAINER: portmgr@FreeBSD.org
 
+# Strip (owner,group,perm) from keywords
+_strip_perms() {
+	sed -Ee 's/^@\([^)]*\)[[:space:]]+//' \
+	    -e 's/^(@[[:alpha:]]+)\([^)]*\)[[:space:]]+/\1 /'
+}
+
 # Expand TMPPLIST to absolute paths, splitting files and dirs into separate
 # descriptors.
 # Input:
@@ -25,10 +31,7 @@ parse_plist() {
 	cwd=${PREFIX}
 	cwd_save=
 	commented_cwd=
-	# Strip (owner,group,perm) from keywords
-	sed -Ee 's/^@\([^)]*\)[[:space:]]+//' \
-	    -e 's/^(@[[:alpha:]]+)\([^)]*\)[[:space:]]+/\1 /' \
-	    | while read -r line; do
+	_strip_perms | while read -r line; do
 		# Handle deactivated OPTIONS. Treat "@comment file" as being in
 		# the plist so it does not show up as an orphan. PLIST_SUB uses
 		# a @comment to deactive files. XXX: It would be better to
@@ -37,9 +40,7 @@ parse_plist() {
 			line="${line##*@comment }"
 			# Strip (owner,group,perm) from keywords
 			# Need to do this again after stripping away @comment.
-			line="$(printf %s "$line" \
-			    | sed -Ee 's/^@\([^)]*\)[[:space:]]+//' \
-			    -e 's/^(@[[:alpha:]]+)\([^)]*\)[[:space:]]+/\1 /')"
+			line="$(printf %s "$line" | _strip_perms)"
 			# Remove @comment so it can be parsed as a file,
 			# but later prepend it again to create a list of
 			# all files commented and uncommented.
