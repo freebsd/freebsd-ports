@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbdriverd
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
