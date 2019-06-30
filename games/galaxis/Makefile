@@ -2,24 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	galaxis
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	games
-MASTER_SITES=	http://www.catb.org/~esr/galaxis/ \
-		SF/nemysisfreebsdp/games/:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}.png:icons
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	http://www.catb.org/~esr/galaxis/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alfix86@gmail.com
 COMMENT=	Clone of the nifty little Macintosh game
 
-LICENSE=	BSD3CLAUSE
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake ncurses
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNDEBUG" \
+
+MAKE_ARGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS} -DNDEBUG" \
 		TERMLIB="${LDFLAGS} -lncurses"
+
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME} \
@@ -27,16 +25,14 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png
 
-PORTDOCS=	README
+PORTDOCS=	NEWS README
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

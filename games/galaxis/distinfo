@@ -1,4 +1,3 @@
-SHA256 (galaxis-1.9.tar.gz) = 14dea62d8148f3eb278e2a504981a5de17e87d4dd39177531a6cb9bccabc5eb7
-SIZE (galaxis-1.9.tar.gz) = 11502
-SHA256 (galaxis.png) = 628880218f4979e82a673a8843126dea745526e1bdf78bce0cfc05b93101bc07
-SIZE (galaxis.png) = 1997
+TIMESTAMP = 1560689909
+SHA256 (galaxis-1.10.tar.gz) = b9601c833c379daa84879b0b22bdb281d3a55c592fdeb9c426e9804cfee80185
+SIZE (galaxis-1.10.tar.gz) = 11499
