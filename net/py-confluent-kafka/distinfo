@@ -1,3 +1,3 @@
-TIMESTAMP = 1554227200
-SHA256 (confluent-kafka-1.0.0.tar.gz) = a7427944af963410479c2aaae27cc9d28db39c9a93299f14dcf16df80092c63a
-SIZE (confluent-kafka-1.0.0.tar.gz) = 74781
+TIMESTAMP = 1560516473
+SHA256 (confluent-kafka-1.0.1.tar.gz) = 6f9a99de81028fa687499f2f335374b0ee2366a970bc0664637ab346a1b77a11
+SIZE (confluent-kafka-1.0.1.tar.gz) = 75042
