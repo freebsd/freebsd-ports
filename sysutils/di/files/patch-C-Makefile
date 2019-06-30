@@ -1,7 +1,7 @@
---- C/Makefile.orig	2015-05-18 19:48:09 UTC
+--- C/Makefile.orig	2019-06-26 16:49:05 UTC
 +++ C/Makefile
-@@ -6,7 +6,7 @@
- #  $Id$
+@@ -4,7 +4,7 @@
+ #  Copyright 2001-2018 Brad Lanam Walnut Creek CA, USA
  #
  
 -CC = cc
@@ -9,7 +9,7 @@
  # for tests.done
  DC = gdc
  
-@@ -34,7 +34,7 @@ TEST = test
+@@ -31,7 +31,7 @@ TEST = test
  ###
  # installation options
  #
@@ -18,19 +18,19 @@
  LOCALEDIR = $(prefix)/share/locale
  
  ###
-@@ -141,7 +141,7 @@ bsd43-cc:
+@@ -180,7 +180,7 @@ bsd43-cc:
  	$(MAKE) _MKCONFIG_SHELL=$(MKCONFIG_SHELL) \
  		CC=cc LD=cc EXE_EXT="" OBJ_EXT=".o" \
- 		CFLAGS="$(CFLAGS) -O" \
+ 		DI_CFLAGS="$(DI_CFLAGS) -O" \
 -		LDFLAGS="-O" di-programs
 +		LDFLAGS="-O $(LDFLAGS)" di-programs
  
  .PHONY: bsd43-gcc
  bsd43-gcc:
-@@ -155,7 +155,7 @@ bsd43-gcc:
+@@ -194,7 +194,7 @@ bsd43-gcc:
  	$(MAKE) _MKCONFIG_SHELL=$(MKCONFIG_SHELL) \
  		CC=gcc LD=gcc EXE_EXT="" OBJ_EXT=".o" \
- 		CFLAGS="$(CFLAGS) -O2" \
+ 		DI_CFLAGS="$(DI_CFLAGS) -O2" \
 -		LDFLAGS="-O2" di-programs
 +		LDFLAGS="-O2 $(LDFLAGS)" di-programs
  
