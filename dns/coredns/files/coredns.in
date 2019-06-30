@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# PROVIDE: coredns
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf.local, /etc/rc.conf or
+# /etc/rc.conf.d/coredns to enable this service:
+#
+# coredns_enable (bool):        Set to NO by default.
+#                               Set it to "YES" to enable coredns.
+# coredns_config (str):         Set to $PREFIX/etc/coredns/Corefile by default.
+#                               Path to configuration file.
+# coredns_cpu_cap (str):        Set to "100" by default.
+#                               CPU cap.
+# coredns_listen_port (str):    Set to "53" by default.
+#                               Port to bind to.
+
+. /etc/rc.subr
+
+name=coredns
+rcvar=coredns_enable
+start_precmd="${name}_precmd"
+
+load_rc_config $name
+
+: ${coredns_enable:="NO"}
+: ${coredns_config:="%%PREFIX%%/etc/coredns/Corefile"}
+: ${coredns_cpu_cap:="100"}
+: ${coredns_listen_port:="53"}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/${name}"
+coredns_args="-conf ${coredns_config} -cpu ${coredns_cpu_cap} -dns.port ${coredns_listen_port}"
+command_args="-S -m 3 -s "info" -l "daemon" -p ${pidfile} /usr/bin/env ${procname} ${coredns_args}"
+
+coredns_precmd()
+{
+	/usr/bin/install -d -m 0755 \
+	        %%PREFIX%%/etc/coredns
+}
+
+run_rc_command "$1"

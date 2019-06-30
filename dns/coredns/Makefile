@@ -3,6 +3,7 @@
 PORTNAME=	coredns
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -88,6 +89,8 @@ GH_TUPLE=	\
 		kubernetes-sigs:yaml:v1.1.0:kubernetes_yaml/vendor/sigs.k8s.io/yaml
 
 GO_PKGNAME=	github.com/${PORTNAME}/${PORTNAME}
+
+USE_RC_SUBR=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
