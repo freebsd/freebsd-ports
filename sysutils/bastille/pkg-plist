@@ -7,7 +7,6 @@ bin/bastille
 %%DATADIR%%/cp.sh
 %%DATADIR%%/create.sh
 %%DATADIR%%/destroy.sh
-%%DATADIR%%/freebsd_dist_fetch.sh
 %%DATADIR%%/htop.sh
 %%DATADIR%%/list.sh
 %%DATADIR%%/pkg.sh
@@ -21,3 +20,4 @@ bin/bastille
 %%DATADIR%%/update.sh
 %%DATADIR%%/upgrade.sh
 %%DATADIR%%/verify.sh
+%%DATADIR%%/zfs.sh
