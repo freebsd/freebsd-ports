@@ -2,7 +2,7 @@
 
 # PROVIDE: smfsav
 # REQUIRE: NETWORKING
-# BEFORE: sendmail
+# BEFORE: mail
 
 # Written for FreeBSD.
 #
