@@ -14,7 +14,7 @@
  
  if(GccSpecificFlags)
 -  set(GCC_COMPILE_FLAGS "-Wall -Wextra -ffast-math -flto -march=native")
-+  set(GCC_COMPILE_FLAGS "-Wall -Wextra -ffast-math -march=native") # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=238514
++  set(GCC_COMPILE_FLAGS "-Wall -Wextra -ffast-math") # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=238514
    set(GCC_DISABLED_WARNING_COMPILE_FLAGS "-Wno-ignored-attributes -Wno-maybe-uninitialized \
        -Wno-mismatched-tags")
    set(GCC_FLAGS "${GCC_COMPILE_FLAGS} ${GCC_DISABLED_WARNING_COMPILE_FLAGS}")
