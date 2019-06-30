@@ -2,7 +2,7 @@
 
 PORTNAME=	scrcpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8
+DISTVERSION=	1.9
 CATEGORIES=	comms net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/:jar
 DISTFILES=	${DIST_JARFILE}:jar
@@ -23,7 +23,8 @@ USE_SDL=	sdl2
 USE_GITHUB=	yes
 GH_ACCOUNT=	Genymobile
 
-MESON_ARGS=	-Dbuild_server=false
+MESON_ARGS=	-Dbuild_server=false \
+		-Dportable=false
 
 OPTIONS_DEFINE=	DOCS
 
@@ -34,7 +35,7 @@ INSTALL_JARFILE=	${DIST_JARFILE:C/(server).*/\1/}.jar
 PLIST_FILES=	bin/scrcpy ${DATADIR}/${INSTALL_JARFILE}
 
 post-extract:
-	${CP} ${_DISTDIR}/${DIST_JARFILE} ${WRKSRC}/${INSTALL_JARFILE}
+	${CP} ${DISTDIR}/${DIST_JARFILE} ${WRKSRC}/${INSTALL_JARFILE}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -42,8 +43,6 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
