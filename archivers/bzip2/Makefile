@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	bzip2
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.bzip.org/${PORTVERSION}/
+MASTER_SITES=	https://sourceware.org/pub/bzip2/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Block-sorting file compressor
