@@ -39,20 +39,13 @@ header.add: "Content-Security-Policy: default-src https:"
 # 6 months HSTS pinning
 header.add: "Strict-Transport-Security: max-age=16000000"
 
-# no patience for slow users
-http1-request-timeout: 10
-http2-idle-timeout: 10
 # limit POST bodies
 limit-request-body: 10485760 # 10MiB
-max-connections: 1024
 
 file.mime.addtypes:
-  image/svg+xml: .svg
   text/plain: .log
   text/css: .css
   application/atom+xml: .xml
-  application/zip: .zip
-  application/json: .json
   "text/html; charset=utf-8": .html
 
 # per-host configurations
