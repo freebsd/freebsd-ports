@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	portend
-PORTVERSION=	2.2
+PORTVERSION=	2.4
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tempora>=1.8:devel/py-tempora@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
