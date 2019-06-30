@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	starfighter
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH/${PORTNAME}/${DISTVERSION} \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
@@ -10,42 +10,25 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}-src${EXTRACT_SUFX} \
 		${PORTNAME}-icons${EXTRACT_SUFX}:icons
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alfix86@gmail.com
 COMMENT=	Liberate the universe from the evil company WEAPCO
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-src
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake dos2unix iconv pkgconfig
+USES=		dos2unix gmake gnome iconv pkgconfig sdl
 USE_SDL=	image2 mixer2
+
+GNU_CONFIGURE=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-src
 
 DOS2UNIX_GLOB=	*.txt
 
-PORTDOCS=	*
+OPTIONS_DEFINE=	DOCS
 
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	README.txt
-
-DOCSRCDIR2=	${WRKSRC}/docs/
-DOCSDIR2=	${DOCSDIR}/docs/
-DOC_FILES2=	*.png *.html
-
-OPTIONS_DEFINE= DOCS
-
-INSTALLS_ICONS= yes
-ICON_SIZES=     16x16 32x32 48x48 64x64 72x72 96x96 128x128
-
-post-patch:
-	@${REINPLACE_CMD} \
-	-e 's| -O2 -Wall|${CXXFLAGS}| ; \
-	s|mkdir -p $$(DESTDIR)$$(DOCDIR)|| ; \
-	s|cp $$(DOCS) $$(DESTDIR)$$(DOCDIR)|| ; \
-	s|/usr|${LOCALBASE}| ; \
-	s|$$(PREFIX)/games/|$$(PREFIX)/bin/| ; \
-	s|/share/games/parallelrealities/|/share/starfighter/|' \
-		${WRKSRC}/Makefile
+INSTALLS_ICONS=	yes
+ICON_SIZES=	16x16 32x32 48x48 64x64 72x72 96x96 128x128
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
@@ -55,10 +38,5 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
-
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 .include <bsd.port.mk>
