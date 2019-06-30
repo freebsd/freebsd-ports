@@ -6,11 +6,12 @@ bin/cecc-client-%%PORTVERSION%%
 include/libcec/cec.h
 include/libcec/cecc.h
 include/libcec/cecloader.h
+include/libcec/ceccloader.h
 include/libcec/cectypes.h
 include/libcec/version.h
 lib/libcec.so
 lib/libcec.so.%%PORTVERSION_MAJOR%%
 lib/libcec.so.%%PORTVERSION%%
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/cec/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/cec/_cec.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/cec.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_cec.so
 libdata/pkgconfig/libcec.pc
