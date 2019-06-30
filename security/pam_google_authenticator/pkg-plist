@@ -5,4 +5,3 @@ man/man8/pam_google_authenticator.8.gz
 share/doc/google-authenticator/FILEFORMAT
 share/doc/google-authenticator/README.md
 share/doc/google-authenticator/totp.html
-
