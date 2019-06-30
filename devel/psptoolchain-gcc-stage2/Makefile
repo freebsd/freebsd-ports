@@ -1,13 +1,15 @@
 # Created by: Tassilo Philipp <tphilipp@potion-studios.com>
 # $FreeBSD$
 
-PORTREVISION=		4
+PORTREVISION=		0
 
 PKGNAMESUFFIX=		-stage2
 
 MAINTAINER=		tphilipp@potion-studios.com
 
 BUILD_DEPENDS=		${LOCALBASE}/psp/lib/libc.a:devel/psptoolchain-newlib
+
+USES=			iconv
 
 MAKE_ENV=		CFLAGS_FOR_TARGET="-G0" PATH=${PREFIX}/bin:${PATH}
 CONFIGURE_ARGS=		--prefix=${PREFIX} \
