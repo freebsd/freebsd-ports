@@ -1,8 +1,8 @@
---- PATCHES.orig	2017-12-03 03:10:17 UTC
+--- PATCHES.orig	2019-06-15 21:17:01 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +vvv.quote
---- handler.c.orig	2019-04-28 20:41:58 UTC
+--- handler.c.orig	2019-05-31 16:21:33 UTC
 +++ handler.c
 @@ -1593,7 +1593,31 @@ static int text_plain_handler (BODY *b, STATE *s)
  	buf[--l] = 0;
@@ -46,9 +46,9 @@
  	handler = rfc3676_handler;
        else
  	handler = text_plain_handler;
---- init.h.orig	2019-05-09 20:47:17 UTC
+--- init.h.orig	2019-06-15 21:17:01 UTC
 +++ init.h
-@@ -2731,6 +2731,19 @@ struct option_t MuttVars[] = {
+@@ -2745,6 +2745,19 @@ struct option_t MuttVars[] = {
    ** have no effect, and if it is set to \fIask-yes\fP or \fIask-no\fP, you are
    ** prompted for confirmation when you try to quit.
    */
@@ -68,9 +68,9 @@
    { "quote_regexp",	DT_RX,	 R_PAGER, UL &QuoteRegexp, UL "^([ \t]*[|>:}#])+" },
    /*
    ** .pp
---- mutt.h.orig	2019-04-28 20:41:58 UTC
+--- mutt.h.orig	2019-06-14 01:29:29 UTC
 +++ mutt.h
-@@ -478,6 +478,8 @@ enum
+@@ -479,6 +479,8 @@ enum
    OPTPRINTDECODE,
    OPTPRINTSPLIT,
    OPTPROMPTAFTER,
