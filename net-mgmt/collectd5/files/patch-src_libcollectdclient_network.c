@@ -1,6 +1,6 @@
---- src/libcollectdclient/network.c.orig
+--- src/libcollectdclient/network.c.orig	2019-06-13 09:13:42 UTC
 +++ src/libcollectdclient/network.c
-@@ -174,6 +174,13 @@
+@@ -178,6 +178,13 @@ static int server_open_socket(lcc_server
        continue;
      }
  

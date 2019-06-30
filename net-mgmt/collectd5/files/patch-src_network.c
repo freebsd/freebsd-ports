@@ -1,6 +1,6 @@
---- src/network.c.orig
+--- src/network.c.orig	2019-06-13 09:13:42 UTC
 +++ src/network.c
-@@ -2000,6 +2000,13 @@
+@@ -2013,6 +2013,13 @@ static int sockent_client_connect(socken
        continue;
      }
  
