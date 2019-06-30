@@ -1,6 +1,6 @@
---- src/daemon/collectd.h.orig	2017-11-18 09:03:27 UTC
+--- src/daemon/collectd.h.orig	2019-06-13 09:13:42 UTC
 +++ src/daemon/collectd.h
-@@ -207,7 +207,7 @@
+@@ -213,7 +213,7 @@ typedef int uid_t;
  #endif
  
  #ifndef PKGLOCALSTATEDIR

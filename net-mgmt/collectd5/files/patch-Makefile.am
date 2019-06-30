@@ -1,15 +1,15 @@
---- Makefile.am.orig	2017-11-18 09:03:27 UTC
+--- Makefile.am.orig	2019-06-13 09:13:42 UTC
 +++ Makefile.am
-@@ -165,7 +165,7 @@ AM_CPPFLAGS = \
+@@ -187,7 +187,7 @@ AM_CPPFLAGS = \
  	-DPREFIX='"${prefix}"' \
  	-DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"' \
  	-DLOCALSTATEDIR='"${localstatedir}"' \
--	-DPKGLOCALSTATEDIR='"${localstatedir}/lib/${PACKAGE_NAME}"' \
+-	-DPKGLOCALSTATEDIR='"${cpkglocalstatedir}"' \
 +	-DPKGLOCALSTATEDIR='"/var/db/${PACKAGE_NAME}"' \
- 	-DPLUGINDIR='"${pkglibdir}"' \
- 	-DPKGDATADIR='"${pkgdatadir}"'
- 
-@@ -1964,15 +1964,10 @@ endif
+ 	-DPLUGINDIR='"${cpkglibdir}"' \
+ 	-DPKGDATADIR='"${cpkgdatadir}"'
+ if BUILD_WIN32
+@@ -2184,15 +2184,10 @@ endif
  
  install-exec-hook:
  	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/run
@@ -19,11 +19,11 @@
  	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
 -	if test -e $(DESTDIR)$(sysconfdir)/collectd.conf; \
 -	then \
--		$(INSTALL) -m 0640 $(srcdir)/src/collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf.pkg-orig; \
+-		$(INSTALL) -m 0640 $(builddir)/src/collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf.pkg-orig; \
 -	else \
--		$(INSTALL) -m 0640 $(srcdir)/src/collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf; \
+-		$(INSTALL) -m 0640 $(builddir)/src/collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf; \
 -	fi; \
 +	$(INSTALL) -m 0640 src/collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf.sample
- 	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)
- 	$(INSTALL) -m 0644 $(srcdir)/src/types.db $(DESTDIR)$(pkgdatadir)/types.db;
+ 	$(mkinstalldirs) $(DESTDIR)$(cpkgdatadir)
+ 	$(INSTALL) -m 0644 $(srcdir)/src/types.db $(DESTDIR)$(cpkgdatadir)/types.db;
  	$(INSTALL) -m 0644 $(srcdir)/src/postgresql_default.conf \
