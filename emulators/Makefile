@@ -173,6 +173,8 @@
     SUBDIR += xen-kernel47
     SUBDIR += xhomer
     SUBDIR += xsystem35
+    SUBDIR += yuzu
+    SUBDIR += yuzu-qt5
     SUBDIR += xzx
     SUBDIR += zsnes
 
