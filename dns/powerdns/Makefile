@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-DISTVERSION=	4.1.9
+DISTVERSION=	4.1.10
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
@@ -12,7 +12,7 @@ COMMENT=	Advanced DNS server with multiple backends including SQL
 LICENSE=	GPLv2
 
 BROKEN_powerpc64=	Does not build: undefined reference to std::__throw_out_of_range_fmt
-BROKEN_sparc64=	Does not compile: error: to_string is not a member of std
+BROKEN_sparc64=		Does not compile: error: to_string is not a member of std
 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
 
