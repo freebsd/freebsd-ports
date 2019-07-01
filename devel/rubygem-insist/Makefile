@@ -8,7 +8,11 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple block-driven assertion library
 
-USE_RUBY=	yes
+LICENSE=	APACHE20
+
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
