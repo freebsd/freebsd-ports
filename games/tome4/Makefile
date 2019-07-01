@@ -25,7 +25,7 @@ DESKTOP_ENTRIES="ToME 4" "" "${PORTNAME}" \
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/t-engine4-src-${PORTVERSION}
 MAKE_ARGS+=	config=release verbose=yes ARCH="" CC=${CC}
-USES=		gl gmake openal:al tar:bzip2
+USES=		gl gmake openal:al sdl tar:bzip2
 USE_SDL=	image2 sdl2 ttf2
 USE_GL=		gl glu
 USE_CSTD=	gnu89
