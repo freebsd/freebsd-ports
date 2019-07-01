@@ -11,6 +11,9 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 6.x branch
 
+DEPRECATED=	End-of-life since 2017
+EXPIRATION_DATE=2019-08-01
+
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
