@@ -521,6 +521,7 @@
     SUBDIR += javaservicewrapper
     SUBDIR += jdiskreport
     SUBDIR += jdupes
+    SUBDIR += jest
     SUBDIR += jkill
     SUBDIR += jobd
     SUBDIR += jps
