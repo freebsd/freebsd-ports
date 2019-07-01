@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libXt
-PORTVERSION=	1.1.5
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 
@@ -13,12 +12,15 @@ COMMENT=	X Toolkit library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe
 XORG_CAT=	lib
 USE_XORG=	x11 sm ice xorgproto
-CONFIGURE_ARGS=	--disable-specs
-USES=		cpe
-CPE_PRODUCT=	libxt
 CPE_VENDOR=	x
+CPE_PRODUCT=	libxt
+
+CONFIGURE_ARGS=	--disable-specs
+
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} 's/test.*-traditional.*;/true;/' \

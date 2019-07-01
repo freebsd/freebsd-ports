@@ -1,2 +1,3 @@
-SHA256 (xorg/lib/libXt-1.1.5.tar.bz2) = 46eeb6be780211fdd98c5109286618f6707712235fdd19df4ce1e6954f349f1a
-SIZE (xorg/lib/libXt-1.1.5.tar.bz2) = 771567
+TIMESTAMP = 1561926847
+SHA256 (xorg/lib/libXt-1.2.0.tar.bz2) = b31df531dabed9f4611fc8980bc51d7782967e2aff44c4105251a1acb5a77831
+SIZE (xorg/lib/libXt-1.2.0.tar.bz2) = 810521
