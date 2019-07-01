@@ -14,13 +14,11 @@ COMMENT=	SQLite 3 extension of minimal OGC GeoPackage implementation
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	fails to link: cc: Internal error: Segmentation fault (program ld)
-
 OPTIONS_DEFINE=	GEOS
 OPTIONS_DEFAULT=GEOS
 
 USE_LDCONFIG=	yes
-USES=		cmake:insource tar:bzip2
+USES=		cmake:insource compiler:c11 tar:bzip2
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/luciad-libgpkg-c56e3708453e
