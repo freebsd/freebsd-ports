@@ -3,7 +3,9 @@
 
 PORTNAME=	dot2tex
 PORTVERSION=	2.9.0
-CATEGORIES=	print
+PORTREVISION=	1
+CATEGORIES=	print python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Graphviz to LaTeX converter
@@ -13,11 +15,21 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=1.4.8:devel/py-pyparsing@${PY_FLAVOR} \
 		dot:graphics/graphviz
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
+
+USES=		python
+USE_GITHUB=	yes
+USE_PYTHON=	distutils autoplist concurrent
+
+# Enable this before running test target
+# bsd.tex.mk doesnt support :test (only) depends
+#USE_TEX=	latex
+
+GH_ACCOUNT=	kjellmf
 
 NO_ARCH=	yes
-USES=	python:2.7
-USE_PYTHON=	distutils autoplist
-USE_GITHUB=	yes
-GH_ACCOUNT=	kjellmf
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m nose
 
 .include <bsd.port.mk>
