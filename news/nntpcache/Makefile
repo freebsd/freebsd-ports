@@ -19,7 +19,7 @@ NO_CDROM=	Free for individuals and non-military, non-profit organisations only
 # cache news articles and related data in ${SPOOLDIR}/nntpcache.
 SPOOLDIR?=	/var/spool
 
-USES=		gmake autoreconf shebangfix
+USES=		compiler:c11 gmake autoreconf shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${SPOOLDIR} \
 		--program-transform-name=''
