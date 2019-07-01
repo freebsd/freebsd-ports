@@ -17,7 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_aarch64=		fails to build: MPI compiler wrappers do not work. See http://www.mcs.anl.gov/petsc/documentation/faq.html#mpi-compilers
 BROKEN_armv6=		fails to build: MPI compiler wrappers do not work. See http://www.mcs.anl.gov/petsc/documentation/faq.html#mpi-compilers
 BROKEN_armv7=		fails to build: MPI compiler wrappers do not work. See http://www.mcs.anl.gov/petsc/documentation/faq.html#mpi-compilers
-BROKEN_powerpc64=	fails to build: MPI compiler wrappers do not work. See http://www.mcs.anl.gov/petsc/documentation/faq.html#mpi-compilers
 
 LIB_DEPENDS=	libmpich.so:net/mpich
 
@@ -25,8 +24,10 @@ USES=		blaslapack fortran gmake python:2.7 shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		--with-mpi-dir=${LOCALBASE} \
-		CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2" CPPFLAGS="${CPPFLAGS}" \
+		${CONFIGURE_ARG_${ARCH}} CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" LIBS=""
+CONFIGURE_ARGS_amd64=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
+CONFIGURE_ARGS_i386=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
 USE_XORG=	x11
 MAKEFILE=	makefile
 SHEBANG_FILES=	lib/petsc/bin/*.py lib/petsc/bin/saws/SAWs.py lib/petsc/bin/saws/*.bash config/*.py
