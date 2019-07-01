@@ -59,7 +59,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} \
-	-e "s|%%CXX%%|clang++|g" \
+	-e "s|%%CXX%%|${CXX}|g" \
 	-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 	-e "s|%%DATADIR%%|${DATADIR}|g" \
 	-e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" \
