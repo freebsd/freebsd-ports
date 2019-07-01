@@ -1,2 +1,3 @@
-SHA256 (mysql-connector-odbc-5.3.4-src.tar.gz) = a5f7a490f2958f2768d18b8a57f71909f9699a8619c82776b3ad1c02b8abce0d
-SIZE (mysql-connector-odbc-5.3.4-src.tar.gz) = 667340
+TIMESTAMP = 1560498109
+SHA256 (mysql-connector-odbc-5.3.13-src.tar.gz) = 6127639a503e80cff71e211d7534801a074e781624974807a279c7f6e6f0353a
+SIZE (mysql-connector-odbc-5.3.13-src.tar.gz) = 3009032

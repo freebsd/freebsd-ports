@@ -19,7 +19,8 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libqjson-qt5.so:devel/qjson \
 		libqca-qt5.so:devel/qca \
 		libtag.so:audio/taglib \
-		libtag-extras.so:audio/taglib-extras
+		libtag-extras.so:audio/taglib-extras \
+		liblz4.so:archivers/liblz4
 
 USES=		cmake compiler:c++11-lang desktop-file-utils \
 		kde:5 mysql:client,embedded pkgconfig qt:5 shebangfix ssl

@@ -13,9 +13,10 @@ COMMENT=	Simple n-gram (bi-gram) fulltext parser plugin for MySQL
 
 LICENSE=	LGPL21
 
+USES=		libtool mysql
+
 GNU_CONFIGURE=	yes
-USES=		libtool
-USE_MYSQL=	yes
+IGNORE_WITH_MYSQL=	57 80 101m 102m 103m 57p 57w
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/bi_gram
 

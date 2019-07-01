@@ -16,6 +16,7 @@ LIB_DEPENDS=	libgroonga.so:textproc/groonga
 
 USES=		libtool mysql pkgconfig
 
+IGNORE_WITH_MYSQL=	57 80 101m 102m 103m 57p 57w
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql-source="$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V WRKSRC)" \
 		--with-mysql-build="$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V BUILD_WRKSRC)" \

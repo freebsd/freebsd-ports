@@ -14,8 +14,9 @@ COMMENT=	Message queue that works as a pluggable storage engine of MySQL
 FETCH_DEPENDS+=	${NONEXISTENT}:${_MYSQL_SERVER}:fetch
 BUILD_DEPENDS+=	${NONEXISTENT}:${_MYSQL_SERVER}:build
 
-USES=		gmake perl5 libtool
-USE_MYSQL=	server
+USES=		gmake perl5 libtool mysql:server
+
+IGNORE_WITH_MYSQL=	57 80 101m 102m 103m 57p 57w
 USE_GCC=	any
 USE_PERL5=	run
 
