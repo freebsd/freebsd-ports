@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_mips64=		fails to compile: UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 6865: ordinal not in range(128) #'
 BROKEN_powerpc64=	fails to compile: UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 6865: ordinal not in range(128) #'
+DEPRECATED=	Use devel/py-pip-tools instead
+EXPIRATION_DATE=2019-07-31
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6:devel/py-click@${PY_FLAVOR} \
