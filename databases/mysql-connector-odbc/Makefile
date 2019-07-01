@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql-connector-odbc
-PORTVERSION=	5.3.4
-PORTREVISION=	1
+PORTVERSION=	5.3.13
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/Connector-ODBC/5.3
 PKGNAMESUFFIX=	-${DRIVER_MANAGER}-mysql${MYSQL_VER}
@@ -13,25 +12,22 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ODBC driver for MySQL${MYSQL_VER} / ${DRIVER_MANAGER}
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	unixODBC>=2.2.14_1:databases/unixODBC
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 USES=		cmake mysql
-CMAKE_ARGS=	-DWITH_UNIXODBC=1
+
+CMAKE_ARGS=	-DWITH_UNIXODBC=1 -DDISABLE_GUI=1
 USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=yes
-
-IGNORE_WITH_MYSQL=	55 55m 55p 51 51m 51p
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 DRIVER_MANAGER=	unixodbc
 
-PORTDOCS=	ChangeLog INSTALL \
-		README README.debug Licenses_for_Third-Party_Components.txt
+PORTDOCS=	*
 
 PLIST_FILES=	bin/myodbc-installer \
 		lib/libmyodbc5a.so \

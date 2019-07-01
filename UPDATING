@@ -6,6 +6,28 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20190701:
+  AFFECTS: users of databases/mysql56-(server|client)
+  AUTHOR: ale@FreeBSD.org
+
+  The default MySQL version has been updated from 5.6 to 5.7.
+
+  If you compile your own ports you may keep 5.6 as the default version by
+  adding the following lines to your /etc/make.conf file:
+
+  #
+  # Keep MySQL 5.6 as default version
+  #
+  DEFAULT_VERSIONS+=mysql=5.6
+
+  If you wish to update to the new default version, you need to first stop any
+  running server instance. Then, you will need to follow these steps, depending
+  on installed packages.
+
+  # pkg set -o databases/mysql56-client:databases/mysql57-client
+  # pkg set -o databases/mysql56-server:databases/mysql57-server
+  # pkg upgrade
+
 20190630:
   AFFECTS: users of net/samba410
   AUTHOR: timur@FreeBSD.org

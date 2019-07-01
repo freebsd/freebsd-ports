@@ -17,6 +17,8 @@ LIB_DEPENDS=	libconfig.so:devel/libconfig
 USE_OPENLDAP=	yes
 USES=		gmake mysql:client,server
 
+IGNORE_WITH_MYSQL=	57 80 101m 102m 103m 57p 57w
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ateamsystems
 GH_TAGNAME=	f6a1a5d
