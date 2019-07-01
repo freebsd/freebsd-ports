@@ -169,7 +169,6 @@
     SUBDIR += xbraitenberg
     SUBDIR += xcpc
     SUBDIR += xen-kernel
-    SUBDIR += xen-kernel47
     SUBDIR += xhomer
     SUBDIR += xsystem35
     SUBDIR += yuzu

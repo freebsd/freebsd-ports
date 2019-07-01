@@ -12839,3 +12839,5 @@ sysutils/cfengine32|sysutils/cfengine313|2019-06-30|Has expired: No longer suppo
 devel/py-msgpack05|devel/py-msgpack|2019-06-30|Has expired: Use devel/py-msgpack instead
 devel/rubygem-fastthread||2019-06-30|Has expired: Does not build for all supported Ruby version
 www/rubygem-responders-rails50|www/rubygem-responders|2019-06-30|Has expired: Use www/rubygem-responders (depends on Rails 5.0) instead
+emulators/xen-kernel47|emulators/xen-kernel|2019-07-01|Has expired: This port is about to be removed, please update to a newer Xen version
+sysutils/xen-tools47|sysutils/xen-tools|2019-07-01|Has expired: This port is about to be removed, please update to a newer Xen version
