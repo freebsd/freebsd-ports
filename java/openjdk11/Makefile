@@ -37,12 +37,12 @@ MAKE_ENV=	LANG="C" \
 		CLASSPATH="" \
 		JAVA_HOME="" \
 		LD_LIBRARY_PATH="" \
-		CC=/usr/bin/cc \
-		CXX=/usr/bin/c++ \
-		MAKEFLAGS="" \
-		USE_CLANG=true
+		CC=${CC} \
+		CXX=${CXX} \
+		CPP=${CPP} \
+		MAKEFLAGS=""
 
-JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:S/i386/x86/}
+JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc64/ppc64/}
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-normal-${JDK_BUILD_JVM}-${JDK_BUILD_TYPE}
 JDK_IMAGEDIR=	${JDK_BUILDDIR}/images/jdk
 INSTALLDIR=	${PREFIX}/${PKGBASE}
@@ -56,8 +56,9 @@ JDK_BUILD_NUMBER=	7
 BSD_JDK_VERSION=	2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CC=/usr/bin/cc \
-		CXX=/usr/bin/c++
+CONFIGURE_ENV=	CC=${CC} \
+		CXX=${CXX} \
+		CPP=${CPP}
 CONFIGURE_ARGS=	--with-boot-jdk=${BOOTSTRAPJDKDIR} \
 		--disable-ccache \
 		--disable-javac-server \
@@ -75,7 +76,6 @@ CONFIGURE_ARGS=	--with-boot-jdk=${BOOTSTRAPJDKDIR} \
 		--with-libpng=system \
 		--with-zlib=system \
 		--with-lcms=system \
-		--with-toolchain-type=clang \
 		--x-includes=${LOCALBASE}/include \
 		--x-libraries=${LOCALBASE}/lib \
 		--with-cacerts-file=${FILESDIR}/cacerts \
@@ -107,6 +107,20 @@ BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk11
 .endif
 
 JDK_BUILD_JVM=	server
+
+MAKE_ENV+=		--with-toolchain-type=${COMPILER_TYPE}
+CONFIGURE_ARGS+=	--with-toolchain-type=${COMPILER_TYPE}
+
+.if ${COMPILER_TYPE} == gcc
+USE_GCC=	yes
+CONFIGURE_ARGS+=	--disable-warnings-as-errors \
+			--disable-dtrace \
+			--with-extra-ldflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT} -L/usr/local/lib/gcc${GCC_DEFAULT}" \
+			--with-extra-cflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT}" \
+			--with-extra-cxxflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT}"
+.else
+MAKE_ENV+=	USE_CLANG=true
+.endif
 
 .if empty(ICONV_LIB)
 ICONV_CFLAGS=	-DLIBICONV_PLUG
