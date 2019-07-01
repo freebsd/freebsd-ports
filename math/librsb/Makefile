@@ -3,7 +3,7 @@
 
 PORTNAME=	librsb
 PORTVERSION=	1.2.0r7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	SF/librsb
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-rc/}
@@ -19,11 +19,12 @@ BUILD_DEPENDS=	gsed:textproc/gsed \
 
 USES=		fortran compiler:openmp gmake shebangfix libtool
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	qtests
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--enable-fortran-module-install \
 		--enable-matrix-types="double, double complex"
-SHEBANG_FILES=	scripts/*.sh
+SHEBANG_FILES=	scripts/*.sh examples/make.sh.in
 USE_LDCONFIG=	yes
 
 MANUAL_PACKAGE_BUILD=	Optimizes for the local machine
@@ -32,8 +33,5 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -E s/sed/gsed/g ${WRKSRC}/scripts/*.sh
-
-check regression-test test: build
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} qtests
 
 .include <bsd.port.mk>
