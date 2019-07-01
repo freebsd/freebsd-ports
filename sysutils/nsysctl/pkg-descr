@@ -1,13 +1,10 @@
 The nsysctl utility is a sysctl(8) clone to get or set the
-kernel state with libxo, libsysctlmibinfo and a lot of options.
-Improvements:
+kernel state supporting libxo and extra options, features:
 
- * sysctlmibinfo(3) provides a simple API to the sysctl MIB,
- * output via libxo(3) in human and machine readable formats,
- * isolated code to manage "opaque values",
- * some string value is splitted to show structured output,
+ * new options to show the properties of a state,
  * output is explicitly indicated by the options,
  * the options are not mutually exclusive,
- * new options to show the properties of a state.
+ * output via libxo in human and machine readable formats,
+ * some value is parsed to show structured output.
 
 WWW: https://gitlab.com/alfix/nsysctl/
