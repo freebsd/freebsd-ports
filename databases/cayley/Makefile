@@ -14,72 +14,138 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	gopkg.in/mgo.v2/bson/json.go:320:7: constant 9007199254740992 overflows int
 
-USES=		go
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}graph
-GH_TUPLE=	badgerodon:peg:9e5f7f4:peg/src/github.com/badgerodon/peg \
-		boltdb:bolt:fd01fc7:bolt/src/github.com/boltdb/bolt \
-		dennwc:graphql:12cfed4:graphql/src/github.com/dennwc/graphql \
-		dlclark:regexp2:7632a26:regexp2/src/github.com/dlclark/regexp2 \
-		dop251:goja:9183045:goja/src/github.com/dop251/goja \
-		fsnotify:fsnotify:c282820:fsnotify/src/github.com/fsnotify/fsnotify \
-		hashicorp:hcl:ef8a98b:hcl/src/github.com/hashicorp/hcl \
-		go-kivik:couchdb:d811cc7:couchdb/src/github.com/go-kivik/couchdb \
-		go-kivik:kivik:d2ef974:kivik/src/github.com/go-kivik/kivik \
-		go-mgo:mgo:5466044:mgo/src/gopkg.in/mgo.v2 \
-		go-sourcemap:sourcemap:b019cc3:sourcemap/src/github.com/go-sourcemap/sourcemap \
-		go-sql-driver:mysql:d523deb:mysql/src/github.com/go-sql-driver/mysql \
-		go-yaml:yaml:v2.2.1:yaml/src/gopkg.in/yaml.v2 \
-		gogo:protobuf:30cf7ac:protobuf/src/github.com/gogo/protobuf \
-		golang:glog:23def4e:glog/src/github.com/golang/glog \
-		golang:snappy:2e65f85:snappy/src/github.com/golang/snappy \
-		imdario:mergo:7045960:mergo/src/github.com/imdario/mergo \
-		jackc:pgx:8707449:pgx/src/github.com/jackc/pgx \
-		julienschmidt:httprouter:adbc77e:httprouter/src/github.com/julienschmidt/httprouter \
-		lib:pq:90697d6:pq/src/github.com/lib/pq \
-		linkeddata:gojsonld:4f5db67:gojsonld/src/github.com/linkeddata/gojsonld \
-		magiconair:properties:c235336:properties/src/github.com/magiconair/properties \
-		mailru:easyjson:9825584:easyjson/src/github.com/mailru/easyjson \
-		mattn:go-runewidth:ce7b0b5:runewidth/src/github.com/mattn/go-runewidth \
-		mitchellh:mapstructure:bb74f1d:mapstructure/src/github.com/mitchellh/mapstructure \
-		olivere:elastic:dabcc5d:elastic/src/gopkg.in/olivere/elastic.v5 \
-		pborman:uuid:c65b2f8:uuid/src/github.com/pborman/uuid \
-		pelletier:go-toml:66540cf:toml/src/github.com/pelletier/go-toml \
-		peterh:liner:80ce870:liner/src/github.com/peterh/liner \
-		pkg:errors:816c908:errors/src/github.com/pkg/errors \
-		russross:blackfriday:11635eb:blackfriday/src/github.com/russross/blackfriday \
-		spf13:afero:787d034:afero/src/github.com/spf13/afero \
-		spf13:cast:8965335:cast/src/github.com/spf13/cast \
-		spf13:cobra:1e58aa3:cobra/src/github.com/spf13/cobra \
-		spf13:jWalterWeatherman:7c0cea3:jwalterweatherman/src/github.com/spf13/jwalterweatherman \
-		spf13:pflag:3ebe029:pflag/src/github.com/spf13/pflag \
-		spf13:viper:1573881:viper/src/github.com/spf13/viper \
-		syndtr:goleveldb:5d6fca4:goleveldb/src/github.com/syndtr/goleveldb \
-		tylertreat:BoomFilters:8298e22:boomfilters/src/github.com/tylertreat/BoomFilters \
-		golang:net:6d3beae:net/src/golang.org/x/net \
-		golang:sys:37707fd:sys/src/golang.org/x/sys \
-		golang:text:b7ef84a:text/src/golang.org/x/text
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
+GH_TUPLE=	\
+		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
+		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
+		Microsoft:go-winio:v0.4.11:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
+		Nvveen:Gotty:cd527374f1e5:nvveen_gotty/vendor/github.com/Nvveen/Gotty \
+		armon:consul-api:eb2c6b5be1b6:armon_consul_api/vendor/github.com/armon/consul-api \
+		badgerodon:peg:9e5f7f4d07ca:badgerodon_peg/vendor/github.com/badgerodon/peg \
+		boltdb:bolt:e9cf4fae01b5:boltdb_bolt/vendor/github.com/boltdb/bolt \
+		census-instrumentation:opencensus-go:v0.21.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		cockroachdb:apd:v1.1.0:cockroachdb_apd/vendor/github.com/cockroachdb/apd \
+		containerd:continuity:c7c5070e6f6e:containerd_continuity/vendor/github.com/containerd/continuity \
+		coreos:go-etcd:v2.0.0:coreos_go_etcd/vendor/github.com/coreos/go-etcd \
+		cpuguy83:go-md2man:v1.0.10:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man \
+		cznic:mathutil:1447ad269d64:cznic_mathutil/vendor/github.com/cznic/mathutil \
+		d4l3k:messagediff:v1.2.1:d4l3k_messagediff/vendor/github.com/d4l3k/messagediff \
+		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		dennwc:graphql:12cfed44bc5d:dennwc_graphql/vendor/github.com/dennwc/graphql \
+		dlclark:regexp2:v1.1.4:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
+		moby:moby:0c5f8d2b9b23:docker_docker/vendor/github.com/docker/docker \
+		docker:go-connections:v0.4.0:docker_go_connections/vendor/github.com/docker/go-connections \
+		docker:go-units:v0.3.3:docker_go_units/vendor/github.com/docker/go-units \
+		docker:libnetwork:19279f049241:docker_libnetwork/vendor/github.com/docker/libnetwork \
+		dop251:goja:ef8c030e3c96:dop251_goja/vendor/github.com/dop251/goja \
+		dop251:goja_nodejs:adff31b136e6:dop251_goja_nodejs/vendor/github.com/dop251/goja_nodejs \
+		flimzy:diff:v0.1.4:flimzy_diff/vendor/github.com/flimzy/diff \
+		flimzy:kivik:v1.8.1:flimzy_kivik/vendor/github.com/flimzy/kivik \
+		flimzy:testy:v0.0.13:flimzy_testy/vendor/github.com/flimzy/testy \
+		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
+		fsnotify:fsnotify:c282820:fsnotify_fsnotify_gh/vendor/github.com/fsnotify/fsnotify \
+		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/gopkg.in/fsnotify.v1 \
+		fsouza:go-dockerclient:v1.3.1:fsouza_go_dockerclient/vendor/github.com/fsouza/go-dockerclient \
+		go-check:check:788fd7840127:go_check_check/vendor/gopkg.in/check.v1 \
+		go-kivik:couchdb:74d231fe4324:go_kivik_couchdb/vendor/github.com/go-kivik/couchdb \
+		go-kivik:kivik:2a1f6b9dd407:go_kivik_kivik/vendor/github.com/go-kivik/kivik \
+		go-kivik:kiviktest:v1.1.2:go_kivik_kiviktest/vendor/github.com/go-kivik/kiviktest \
+		go-kivik:pouchdb:v1.3.5:go_kivik_pouchdb/vendor/github.com/go-kivik/pouchdb \
+		go-mgo:mgo:3f83fa500528:go_mgo_mgo/vendor/gopkg.in/mgo.v2 \
+		go-mgo:mgo:7446a0344b78:go_mgo_mgo_unstable/vendor/gopkg.in/mgo.v2-unstable \
+		go-sourcemap:sourcemap:v2.1.2:go_sourcemap_sourcemap/vendor/github.com/go-sourcemap/sourcemap \
+		go-sql-driver:mysql:147bd02c2c51:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
+		go-stack:stack:v1.8.0:go_stack_stack/vendor/github.com/go-stack/stack \
+		go-tomb:tomb:d5d1b5820637:go_tomb_tomb/vendor/gopkg.in/tomb.v2 \
+		go-tomb:tomb:dd632973f1e7:go_tomb_tomb/vendor/gopkg.in/tomb.v1 \
+		go-yaml:yaml:v2.2.1:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go4org:go4:94abd6928b1d:go4org_go4/vendor/go4.org \
+		gogo:protobuf:v1.1.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang:appengine:v1.5.0:golang_appengine/vendor/google.golang.org/appengine \
+		golang:crypto:c2843e01d9a2:golang_crypto/vendor/golang.org/x/crypto \
+		golang:glog:23def4e6c14b:golang_glog/vendor/github.com/golang/glog \
+		golang:net:f4e77d36d62c:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:snappy:553a64147049:golang_snappy/vendor/github.com/golang/snappy \
+		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:ecd444e8653b:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		golang:tools:6cfa55603c28:golang_tools/vendor/golang.org/x/tools \
+		google:go-genproto:fb225487d101:google_go_genproto/vendor/google.golang.org/genproto \
+		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
+		googleapis:google-api-go-client:v0.7.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:v0.40.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		gopherjs:gopherjs:558a9132744c:gopherjs_gopherjs/vendor/github.com/gopherjs/gopherjs \
+		gopherjs:jsbuiltin:67703bfb044e:gopherjs_jsbuiltin/vendor/github.com/gopherjs/jsbuiltin \
+		grpc:grpc-go:v1.20.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		hashicorp:golang-lru:v0.5.1:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
+		hashicorp:hcl:7fa7fff964d0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
+		hpcloud:tail:v1.0.0:hpcloud_tail/vendor/github.com/hpcloud/tail \
+		imdario:mergo:0d4b488675fd:imdario_mergo/vendor/github.com/imdario/mergo \
+		inconshreveable:log15:67afb5ed74ec:inconshreveable_log15/vendor/gopkg.in/inconshreveable/log15.v2 \
+		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
+		jackc:fake:812a484cc733:jackc_fake/vendor/github.com/jackc/fake \
+		jackc:pgx:606697ffdfe6:jackc_pgx/vendor/github.com/jackc/pgx \
+		json-iterator:go:v1.1.6:json_iterator_go/vendor/github.com/json-iterator/go \
+		julienschmidt:httprouter:6f3f3919c878:julienschmidt_httprouter/vendor/github.com/julienschmidt/httprouter \
+		kr:fs:v0.1.0:kr_fs/vendor/github.com/kr/fs \
+		kr:pretty:v0.1.0:kr_pretty/vendor/github.com/kr/pretty \
+		kr:text:v0.1.0:kr_text/vendor/github.com/kr/text \
+		lib:pq:2704adc878c2:lib_pq/vendor/github.com/lib/pq \
+		linkeddata:gojsonld:4f5db6791326:linkeddata_gojsonld/vendor/github.com/linkeddata/gojsonld \
+		magiconair:properties:51463bfca257:magiconair_properties/vendor/github.com/magiconair/properties \
+		mailru:easyjson:b2ccc519800e:mailru_easyjson/vendor/github.com/mailru/easyjson \
+		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
+		mitchellh:mapstructure:cc8532a8e9a5:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
+		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
+		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
+		olivere:elastic:v5.0.58:olivere_elastic/vendor/gopkg.in/olivere/elastic.v5 \
+		olivere:elastic:v6.2.19:olivere_elastic_6/vendor/github.com/olivere/elastic \
+		olivere:env:v1.1.0:olivere_env/vendor/github.com/olivere/env \
+		onsi:ginkgo:v1.7.0:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
+		onsi:gomega:v1.4.3:onsi_gomega/vendor/github.com/onsi/gomega \
+		opencontainers:go-digest:v1.0.0-rc1:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
+		opencontainers:image-spec:v1.0.1:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
+		opencontainers:runc:v0.1.1:opencontainers_runc/vendor/github.com/opencontainers/runc \
+		pborman:uuid:1b00554d8222:pborman_uuid/vendor/github.com/pborman/uuid \
+		pelletier:go-buffruneio:v0.2.0:pelletier_go_buffruneio/vendor/github.com/pelletier/go-buffruneio \
+		pelletier:go-toml:fe206efb84b2:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
+		peterh:liner:88609521dc4b:peterh_liner/vendor/github.com/peterh/liner \
+		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
+		pkg:sftp:v1.10.0:pkg_sftp/vendor/github.com/pkg/sftp \
+		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		pquerna:ffjson:e517b90714f7:pquerna_ffjson/vendor/github.com/pquerna/ffjson \
+		rs:zerolog:v1.14.3:rs_zerolog/vendor/github.com/rs/zerolog \
+		russross:blackfriday:v1.5.2:russross_blackfriday/vendor/github.com/russross/blackfriday \
+		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
+		shopspring:decimal:cd690d0c9e24:shopspring_decimal/vendor/github.com/shopspring/decimal \
+		sirupsen:logrus:v1.0.6:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		smartystreets:go-aws-auth:0c1422d1fdb9:smartystreets_go_aws_auth/vendor/github.com/smartystreets/go-aws-auth \
+		spf13:afero:9be650865eab:spf13_afero/vendor/github.com/spf13/afero \
+		spf13:cast:v1.1.0:spf13_cast/vendor/github.com/spf13/cast \
+		spf13:cobra:7b1b6e8dc027:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:jwalterweatherman:fa7ca7e836cf:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
+		spf13:pflag:f1d95a35e132:spf13_pflag/vendor/github.com/spf13/pflag \
+		spf13:viper:0967fc9aceab:spf13_viper/vendor/github.com/spf13/viper \
+		stretchr:testify:v1.2.2:stretchr_testify/vendor/github.com/stretchr/testify \
+		syndtr:goleveldb:b89cc31ef797:syndtr_goleveldb/vendor/github.com/syndtr/goleveldb \
+		tylertreat:BoomFilters:37e169ae37ed:tylertreat_boomfilters/vendor/github.com/tylertreat/BoomFilters \
+		uber-go:atomic:v1.4.0:uber_go_atomic/vendor/go.uber.org/atomic \
+		uber-go:multierr:v1.1.0:uber_go_multierr/vendor/go.uber.org/multierr \
+		uber-go:zap:v1.10.0:uber_go_zap/vendor/go.uber.org/zap \
+		ugorji:go:v1.1.5-pre:ugorji_go/vendor/github.com/ugorji/go/codec \
+		xordataexchange:crypt:v0.0.2:xordataexchange_crypt/vendor/github.com/xordataexchange/crypt
+
+GO_TARGET=	./cmd/${PORTNAME}
+GO_BUILDFLAGS=	-ldflags="-X github.com/${GH_ACCOUNT}graph/${GH_PROJECT}/version.GitHash=${PORTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-patch:
-	@cd ${WRKSRC} && \
-		${FIND} . -name "*.go" | ${XARGS} ${REINPLACE_CMD} -i '' -e ' \
-			s|github.com/flimzy/kivik|github.com/go-kivik/kivik|; \
-			s|github.com/olivere/elastic|gopkg.in/olivere/elastic.v5|; \
-			s|gopkg.in/mgo.v2-unstable|gopkg.in/mgo.v2|'
-
-do-build:
-	@cd ${WRKSRC} && [ -e ${PORTNAME} ] || ${LN} -s . ${PORTNAME}
-	@cd ${WRKSRC}/${GH_SUBDIR} && \
-		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build \
-			-ldflags="-X github.com/${GH_ACCOUNT}graph/${GH_PROJECT}/version.GitHash=${PORTVERSION}" \
-			-o ${PORTNAME}x \
-			-v ./cmd/cayley
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}x ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
