@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Term-TablePrint
-PORTVERSION=	0.111
+PORTVERSION=	0.112
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Term-Choose>=1.648:devel/p5-Term-Choose \
-		p5-Term-Choose-Util>=0.072:devel/p5-Term-Choose-Util
+RUN_DEPENDS=	p5-Term-Choose>=1.649:devel/p5-Term-Choose \
+		p5-Term-Choose-Util>=0.074:devel/p5-Term-Choose-Util
 
 USES=		perl5
 USE_PERL5=	configure
