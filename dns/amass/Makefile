@@ -8,66 +8,51 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	In-depth DNS enumeration
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
-USE_GITHUB=	nodefault # main code is in GH_TUPLE, otherwise build fails with circular dependency errors
+USES=		go:modules
+
+USE_GITHUB=	yes
 GH_ACCOUNT=	OWASP
 GH_PROJECT=	Amass
-GH_TUPLE=	OWASP:Amass:${DISTVERSIONFULL}:main/src/github.com/OWASP/Amass \
-		andybalholm:cascadia:v1.0.0:cascadia/src/github.com/andybalholm/cascadia \
-		asaskevich:EventBus:d46933a:EventBus/src/github.com/asaskevich/EventBus \
-		boltdb:bolt:fd01fc7:bolt/src/github.com/boltdb/bolt \
-		cayleygraph:cayley:v0.7.5:cayley/src/github.com/cayleygraph/cayley \
-		caffix:cloudflare-roundtripper:4c29d23:roundtripper/src/github.com/caffix/cloudflare-roundtripper \
-		cenkalti:backoff:v2.1.1:backoff/src/github.com/cenkalti/backoff \
-		dghubble:go-twitter:7fd79e2:twitter/src/github.com/dghubble/go-twitter \
-		dghubble:sling:v1.2.0:sling/src/github.com/dghubble/sling \
-		google:go-querystring:v1.0.0:querystring/src/github.com/google/go-querystring \
-		fatih:color:v1.7.0:color/src/github.com/fatih/color \
-		go-ini:ini:f55231c:ini/src/github.com/go-ini/ini \
-		gogo:protobuf:v1.2.1:protobuf/src/github.com/gogo/protobuf \
-		google:uuid:v1.1.1:uuid/src/github.com/google/uuid \
-		irfansharif:cfilter:d07d951:cfilter/src/github.com/irfansharif/cfilter \
-		jmoiron:sqlx:1d3423c:sqlx/src/github.com/jmoiron/sqlx \
-		johnnadratowski:golang-neo4j-bolt-driver:v0.1:neo4j/src/github.com/johnnadratowski/golang-neo4j-bolt-driver \
-		lib:pq:v1.1.0:pq/src/github.com/lib/pq \
-		mattn:go-colorable:v0.0.9:colorable/src/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.4:isatty/src/github.com/mattn/go-isatty \
-		miekg:dns:v1.0.8:dns/src/github.com/miekg/dns \
-		mitchellh:go-homedir:v1.1.0:homedir/src/github.com/mitchellh/go-homedir \
-		PuerkitoBio:fetchbot:1f502d6:fetchbot/src/github.com/PuerkitoBio/fetchbot \
-		PuerkitoBio:goquery:v1.4.1:goquery/src/github.com/PuerkitoBio/goquery \
-		qasaur:gremgo:fa23ada:gremgo/src/github.com/qasaur/gremgo \
-		robertkrimen:otto:15f95af:otto/src/github.com/robertkrimen/otto \
-		sensepost:maltegolocal:6d52c19:maltegolocal/src/github.com/sensepost/maltegolocal \
-		temoto:robotstxt:97ee4a9:robotstxt/src/github.com/temoto/robotstxt-go \
-		tylertreat:BoomFilters:611b3db:BoomFilters/src/github.com/tylertreat/BoomFilters \
-		golang:crypto:0e37d00:crypto/src/golang.org/x/crypto \
-		golang:net:161cd47:net/src/golang.org/x/net \
-		golang:oauth2:d2e6202:oauth2/src/golang.org/x/oauth2 \
-		golang:sync:1d60e46:sync/src/golang.org/x/sync \
-		golang:sys:d0be072:sys/src/golang.org/x/sys \
-		golang:text:4ae1256:text/src/golang.org/x/text \
-		golang:tools:18207bb:tools/src/golang.org/x/tools \
-		go-sourcemap:sourcemap:b019cc3:sourcemap/src/github.com/go-sourcemap/sourcemap
+GH_TUPLE=	PuerkitoBio:fetchbot:v1.1.2:puerkitobio_fetchbot/vendor/github.com/PuerkitoBio/fetchbot \
+		PuerkitoBio:goquery:v1.5.0:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
+		andybalholm:cascadia:v1.0.0:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
+		boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
+		caffix:cloudflare-roundtripper:4c29d231c9cb:caffix_cloudflare_roundtripper/vendor/github.com/caffix/cloudflare-roundtripper \
+		cayleygraph:cayley:v0.7.5:cayleygraph_cayley/vendor/github.com/cayleygraph/cayley \
+		cenkalti:backoff:v2.1.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
+		dghubble:go-twitter:53f972dc4b06:dghubble_go_twitter/vendor/github.com/dghubble/go-twitter \
+		dghubble:sling:v1.2.0:dghubble_sling/vendor/github.com/dghubble/sling \
+		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
+		go-ini:ini:v1.42.0:go_ini_ini/vendor/github.com/go-ini/ini \
+		go-sourcemap:sourcemap:v1.0.5:go_sourcemap_sourcemap/vendor/gopkg.in/sourcemap.v1 \
+		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang:appengine:v1.4.0:golang_appengine/vendor/google.golang.org/appengine \
+		golang:crypto:57b3e21c3d56:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:eb5bcb51f2a3:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.2.0:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:516e3c20635f:golang_sys/vendor/golang.org/x/sys \
+		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
+		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
+		gorilla:websocket:v1.4.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
+		irfansharif:cfilter:v0.1.1:irfansharif_cfilter/vendor/github.com/irfansharif/cfilter \
+		jmoiron:sqlx:v1.2.0:jmoiron_sqlx/vendor/github.com/jmoiron/sqlx \
+		johnnadratowski:golang-neo4j-bolt-driver:6b24c0085aae:johnnadratowski_golang_neo4j_bolt_driver/vendor/github.com/johnnadratowski/golang-neo4j-bolt-driver \
+		lib:pq:v1.1.1:lib_pq/vendor/github.com/lib/pq \
+		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		miekg:dns:v1.1.14:miekg_dns/vendor/github.com/miekg/dns \
+		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
+		qasaur:gremgo:fa23ada7c5da:qasaur_gremgo/vendor/github.com/qasaur/gremgo \
+		robertkrimen:otto:15f95af6e78d:robertkrimen_otto/vendor/github.com/robertkrimen/otto \
+		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
+		temoto:robotstxt:97ee4a9ee6ea:temoto_robotstxt_go/vendor/github.com/temoto/robotstxt-go \
+		tylertreat:BoomFilters:611b3dbe80e8:tylertreat_boomfilters/vendor/github.com/tylertreat/BoomFilters
 
-PROGS=		${PORTNAME}
+GO_TARGET=	./cmd/${PORTNAME}
 
-PLIST_FILES=	${PROGS:C/^/bin\//}
-
-post-patch:
-.for f in src/github.com/robertkrimen/otto/file/file.go src/github.com/robertkrimen/otto/parser/parser.go
-	@cd ${WRKSRC} && ${REINPLACE_CMD} 's|gopkg.in/sourcemap.v1|github.com/go-sourcemap/sourcemap|' ${f}
-.endfor
-
-do-build:
-	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT} && \
-		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go install ./...
-
-do-install:
-.for p in ${PROGS}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${p} ${STAGEDIR}${PREFIX}/bin
-.endfor
+PLIST_FILES=	${GO_TARGET:C/.\/cmd/bin/}
 
 .include <bsd.port.mk>
