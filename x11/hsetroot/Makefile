@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hsetroot
-PORTVERSION=	1.0.2
-PORTREVISION=	14
+PORTVERSION=	1.0.3
 CATEGORIES=	x11
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -16,9 +15,8 @@ RUN_DEPENDS=	xrandr:x11/xrandr
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	himdel
-GH_TAGNAME=	47d887b
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_XORG=	x11
 
 PLIST_FILES=	bin/hsetroot

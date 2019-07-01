@@ -1,28 +1,22 @@
---- Makefile.orig	2016-02-14 00:09:11 UTC
+--- Makefile.orig	2019-06-28 12:36:55 UTC
 +++ Makefile
-@@ -1,4 +1,4 @@
--CC=gcc
-+CC?=gcc
- 
- CFLAGS?=-g -O2 -Wall
- LDFLAGS?=
-@@ -9,14 +9,17 @@ LDFLAGS+=`pkg-config x11 --libs`
- CFLAGS+=`pkg-config imlib2 --cflags`
- LDFLAGS+=`pkg-config imlib2 --libs`
+@@ -18,16 +18,16 @@ LDFLAGS+=$(shell $(PKG_CONFIG) x11 --libs)
+ CFLAGS+=$(shell $(PKG_CONFIG) imlib2 --cflags)
+ LDFLAGS+=$(shell $(PKG_CONFIG) imlib2 --libs)
  
 +all: hsetroot
 +
  hsetroot: hsetroot.o outputs_xrandr.o
-+	$(CC) $(LDFLAGS) -o $@ $>
  
  hsetroot.o: hsetroot.c outputs.h
  
 -outputs.o: outputs.c outputs.h
-+outputs_xrandr.o: outputs_xrandr.c outputs.h
+-
+ outputs_xrandr.o: outputs_xrandr.c outputs.h
  
  install: hsetroot
 -	install -st /usr/local/bin/ hsetroot
-+	$(BSD_INSTALL_PROGRAM) $> $(DESTDIR)$(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) $^ $(DESTDIR)$(PREFIX)/bin
  
  clean:
  	rm -f hsetroot *.o
