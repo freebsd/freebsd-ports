@@ -3,12 +3,15 @@
 
 PORTNAME=	cinnamon
 PORTVERSION=	2.4.6
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Fork of GNOME Shell with layout similar to GNOME 2
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		gnome-autogen.sh:devel/gnome-common
@@ -21,10 +24,17 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libfolks.so:net-im/folks \
 		libpulse.so:audio/pulseaudio \
 		libcroco-0.6.so:textproc/libcroco \
+		libsoup-2.4.so:devel/libsoup \
+		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
+		libcogl.so:graphics/cogl \
+		libpolkit-agent-1.so:sysutils/polkit \
 		libclutter-glx-1.0.so:graphics/clutter \
+		libmozjs-24.so:lang/spidermonkey24 \
 		libcjs.so:lang/cjs \
+		libjson-glib-1.0.so:devel/json-glib \
 		libcinnamon-menu-3.so:x11/cinnamon-menus \
+		libcinnamon-desktop.so:x11/cinnamon-desktop \
 		libaccountsservice.so:sysutils/accountsservice
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
 		ca_root_nss>=0:security/ca_root_nss \
@@ -36,31 +46,33 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
-USES=		autoreconf compiler:c11 gettext gmake libtool \
-		pathfix pkgconfig python:2.7 shebangfix
-USE_GNOME=	evolutiondataserver3 gconf2 gnomedesktop3 \
-		gnomeprefix gtk30 intlhack introspection:build
-
+USES=		autoreconf compiler:c11 gettext gmake gnome gl libtool \
+		localbase:ldflags pathfix pkgconfig python:2.7 shebangfix
 USE_GITHUB=	yes
+USE_GL=		gl egl
+USE_GNOME=	cairo evolutiondataserver3 gconf2 gnomedesktop3 \
+		gnomeprefix gtk30 intlhack introspection
+USE_GSTREAMER1=	yes
+USE_LDCONFIG=	yes
+USE_XORG=	x11 xfixes sm xrandr xext xdamage xcomposite xi
+
 GH_ACCOUNT=	linuxmint
-GH_PROJECT=	Cinnamon
 
 # this happens before moving the file to ${PREFIX} (which then will be copied to ${STAGEDIR}${PREFIX})
-SHEBANG_FILES=	files/usr/bin/cinnamon2d
-USE_XORG=	x11 xfixes sm
-USE_GSTREAMER=	theora vp8 ogg
+SHEBANG_FILES=	files/*	*.py
+
 INSTALLS_ICONS=	yes
-USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-compile-warnings=no \
 		--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
-CPPFLAGS+=	-I${LOCALASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.cinnamon.gschema.xml
 
 OPTIONS_DEFINE=	NLS
+
 NLS_RUN_DEPENDS=	cinnamon-translations>=0:misc/cinnamon-translations
 
 post-patch:
@@ -138,13 +150,6 @@ post-patch:
 		${WRKSRC}/files${PREFIX}/share/xsessions/cinnamon2d.desktop \
 		${WRKSRC}/files${PREFIX}/share/xsessions/cinnamon.desktop \
 		${WRKSRC}/files${PREFIX}/share/applications/cinnamon2d.desktop
-
-# Some python files use #! /usr/bin/python (note the space between the bang and the python interpreter
-	@${FIND} ${WRKSRC} -name \* | ${XARGS} ${EGREP} -l "#!.*\/usr\/bin\/python" | \
-		${XARGS} ${REINPLACE_CMD} -e "s|#!.*python.*|#!/usr/bin/env python|g"
-
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
-	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install:
 	@${PYTHON_CMD} ${WRKSRC}/files/generate_desktop_files
