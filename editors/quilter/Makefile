@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgtkspell3-3.so:textproc/gtkspell3 \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
-USES=		desktop-file-utils gettext gnome meson pkgconfig python:build
+USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	lainsce
 USE_GNOME=	glib20 gtk30 gtksourceview3
