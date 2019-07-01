@@ -1,4 +1,4 @@
---- src/curl.c.orig	2019-06-19 09:02:26 UTC
+--- src/curl.c.orig	2019-01-09 22:29:50 UTC
 +++ src/curl.c
 @@ -24,6 +24,8 @@
  #define BSWAP_32 OSSwapInt32
