@@ -111,7 +111,7 @@ MOZ_EXPORT+=	PYTHON3="${LOCALBASE}/bin/python${PYTHON3_DEFAULT}"
 .endif
 
 .if ${MOZILLA_VER:R:R} >= 63
-BUILD_DEPENDS+=	rust-cbindgen>=0.8.2:devel/rust-cbindgen \
+BUILD_DEPENDS+=	rust-cbindgen>=0.8.7:devel/rust-cbindgen \
 				node:www/node
 .endif
 
@@ -348,7 +348,7 @@ post-patch-SNDIO-on:
 .endif
 
 .if ${PORT_OPTIONS:MRUST} || ${MOZILLA_VER:R:R} >= 54
-BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.32:lang/${RUST_DEFAULT}
+BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.34:lang/${RUST_DEFAULT}
 . if ${MOZILLA_VER:R:R} < 54
 MOZ_OPTIONS+=	--enable-rust
 . endif
