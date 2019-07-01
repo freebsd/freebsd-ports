@@ -1,4 +1,4 @@
---- src/nomos/agent/Makefile.sa.orig	2017-04-21 13:29:41 UTC
+--- src/nomos/agent/Makefile.sa.orig	2019-04-12 08:47:43 UTC
 +++ src/nomos/agent/Makefile.sa
 @@ -2,10 +2,6 @@
  # This is to make a version of nomos that does not require any of the fossology build dependencies.
@@ -11,26 +11,16 @@
  EXE = nomossa
  
  SPEC = STRINGS.in
-@@ -19,33 +15,34 @@ GENOBJS = _precheck.o _autodata.o
- HDRS = nomos.h $(OBJS:.o=.h) _autodefs.h
- 
- #CFLAGS_LOCAL = -DSTANDALONE -g -O2 -Wall -D_FILE_OFFSET_BITS=64
--CFLAGS_LOCAL = -DSTANDALONE -Wall -D_FILE_OFFSET_BITS=64 `pkg-config glib-2.0 --cflags --libs`
-+CFLAGS_LOCAL = -DSTANDALONE -Wall -D_FILE_OFFSET_BITS=64 `pkg-config glib-2.0 --cflags`
-+LDFLAGS_LOCAL = `pkg-config glib-2.0 --libs`
- 
--all: encode $(EXE)
-+all: encode $(EXE)
- 
+@@ -28,26 +24,26 @@ all: encode $(EXE)
  debug: nomos-gl
  
  $(EXE): nomos.o $(OBJS) $(GENOBJS)
--	$(CC) nomos.o $(OBJS) $(GENOBJS) $(CFLAGS_LOCAL) -o $(EXE)
-+	$(CC) nomos.o $(OBJS) $(GENOBJS) $(LDFLAGS) $(LDFLAGS_LOCAL) -o $(EXE)
+-	$(CC) nomos.o $(OBJS) $(GENOBJS) $(CFLAGS_LOCAL) $(FO_LDFLAGS) -o $(EXE)
++	$(CC) nomos.o $(OBJS) $(GENOBJS) $(LDFLAGS) $(FO_LDFLAGS) -o $(EXE)
  
 -nomos.o: nomos.c $(HDRS) $(DB) $(REPO) $(AGENTLIB) $(VARS)
 -	$(CC) -c $< $(CFLAGS_LOCAL) $(DEFS)
-+nomos.o: nomos.c $(HDRS) $(REPO) $(AGENTLIB) $(VARS)
++nomos.o: nomos.c $(HDRS) $(REPO) $(AGENTLIB)
 +	$(CC) -c $< $(CFLAGS) $(CFLAGS_LOCAL)
  
  nomos-gl: nomos-g.o $(OBJS) $(GENOBJS)
@@ -39,7 +29,7 @@
  
 -nomos-g.o: nomos.c $(HDRS) $(DB) $(REPO) $(AGENTLIB) $(VARS)
 -	$(CC) -c -l /usr/lib/libefence.a $< $(CFLAGS_LOCAL)
-+nomos-g.o: nomos.c $(HDRS) $(REPO) $(AGENTLIB) $(VARS)
++nomos-g.o: nomos.c $(HDRS) $(REPO) $(AGENTLIB)
 +	$(CC) -c -l /usr/lib/libefence.a $< $(CFLAGS) $(CFLAGS_LOCAL)
  
 -$(OBJS) $(GENOBJS): %.o: %.c $(HDRS) $(DB) $(VARS)
@@ -57,7 +47,7 @@
  
  _precheck.c:	_autodata.c $(PRE) $(CHECK)
  #	@echo "NOTE: _autodata.c has changed --> regenerate _precheck.c"
-@@ -53,7 +50,7 @@ _precheck.c:	_autodata.c $(PRE) $(CHECK)
+@@ -55,7 +51,7 @@ _precheck.c:	_autodata.c $(PRE) $(CHECK)
  	./$(CHECK)
  #	@$(MAKE) $(STRINGS) $(KEYS)
  
@@ -66,7 +56,7 @@
  	@echo "NOTE: GENSEARCHDATA takes 1-2 minutes to run"
  	./$(LICFIX)
  
-@@ -82,5 +79,3 @@ clean:
+@@ -84,5 +80,3 @@ clean:
             split.OTHER checkstr.OK
  
  .PHONY: all install uninstall clean test

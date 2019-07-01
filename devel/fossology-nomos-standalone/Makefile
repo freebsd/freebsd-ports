@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fossology
-PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTVERSION=	3.5.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-nomos-standalone
 
@@ -14,6 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	gawk:lang/gawk
+LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 USE_GITHUB=	yes
 
