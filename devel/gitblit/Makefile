@@ -34,10 +34,9 @@ OPTIONS_RADIO=			SQL WEBSERVER
 OPTIONS_SINGLE=			TOMCAT
 OPTIONS_RADIO_SQL=		REDIS
 OPTIONS_RADIO_WEBSERVER=APACHE HIAWATHA LIGHTTPD NGINX
-OPTIONS_SINGLE_TOMCAT=	TOMCAT6 TOMCAT7 TOMCAT8
+OPTIONS_SINGLE_TOMCAT=	TOMCAT6 TOMCAT7
 HIAWATHA_DESC=			Hiawatha server support
 NGINX_DESC=				Nginx server support
-TOMCAT8_DESC=			Tomcat 8.x support
 OPTIONS_DEFAULT=		TOMCAT7
 REDIS_RUN_DEPENDS=		redis-server:databases/redis
 
@@ -59,9 +58,6 @@ RUN_DEPENDS+=	${LOCALBASE}/etc/rc.d/tomcat6:www/tomcat6
 .elif ${PORT_OPTIONS:MTOMCAT7}
 GB_HOME=	${PREFIX}/apache-tomcat-7.0/webapps/${PORTNAME}
 RUN_DEPENDS+=	${LOCALBASE}/etc/rc.d/tomcat7:www/tomcat7
-.elif ${PORT_OPTIONS:MTOMCAT8}
-GB_HOME=	${PREFIX}/apache-tomcat-8.0/webapps/${PORTNAME}
-RUN_DEPENDS+=	${LOCALBASE}/etc/rc.d/tomcat8:www/tomcat8
 .endif
 
 do-extract:
