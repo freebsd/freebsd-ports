@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	archive-zip
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.0
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-io-like>=0.3.0:devel/rubygem-io-like
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
