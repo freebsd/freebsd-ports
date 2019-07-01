@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fpm
-PORTVERSION=	1.10.2
+PORTVERSION=	1.11.0
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-arr-pm>=0.0.10:devel/rubygem-arr-pm \
 		rubygem-cabin>=0.6.0:devel/rubygem-cabin \
-		rubygem-childprocess>=0:devel/rubygem-childprocess \
+		rubygem-childprocess>=0.9.0:devel/rubygem-childprocess \
 		rubygem-clamp>=1.0.0:devel/rubygem-clamp \
 		rubygem-ffi>=0:devel/rubygem-ffi \
 		rubygem-json1>=1.7.7:devel/rubygem-json1 \
@@ -21,15 +21,17 @@ RUN_DEPENDS=	rubygem-arr-pm>=0.0.10:devel/rubygem-arr-pm \
 		rubygem-ruby-xz>=0:archivers/rubygem-ruby-xz \
 		rubygem-stud>=0:devel/rubygem-stud
 
+USES=		gem
+USE_RUBY=	yes
+
 NO_ARCH=	yes
 REINPLACE_ARGS=	-i ''
-USE_RUBY=	yes
-USES=		gem
 
 PLIST_FILES=	bin/fpm
 
 post-patch:
-	@${REINPLACE_CMD} -e '/clamp/ s|1\.0\.0|1.0|' ${WRKSRC}/${GEMSPEC}
+	@${REINPLACE_CMD} -e '/childprocess/ s|= 0.9.0|>&|' ${WRKSRC}/${GEMSPEC}
+	@${REINPLACE_CMD} -e '/clamp/ s|~> 1\.0\.0|~> 1.0|' ${WRKSRC}/${GEMSPEC}
 	@${REINPLACE_CMD} -e '/ruby-xz/ s|~> 0\.2\.3|>= 0|' ${WRKSRC}/${GEMSPEC}
 # Remove backports
 	@${REINPLACE_CMD} -e '/backports/d' ${WRKSRC}/${GEMSPEC}
