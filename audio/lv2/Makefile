@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lv2
-PORTVERSION=	1.14.0
-PORTREVISION=	2
+PORTVERSION=	1.16.0
 CATEGORIES=	audio
 MASTER_SITES=	http://lv2plug.in/spec/
 
@@ -38,7 +37,6 @@ EXAMPLES_LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 			libfreetype.so:print/freetype2
 EXAMPLES_USES=		pkgconfig gnome
 EXAMPLES_USE=		GNOME=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
-EXAMPLES_CONFIGURE_ENV=	CC='${CC} -Wl,--as-needed' # Gtk deps
 
 post-install:
 # Waf doesn't have built-in strip support
