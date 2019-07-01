@@ -8,14 +8,10 @@
 # fail2ban_enable="YES"
 # fail2ban_flags="<set as needed>"
 
-fail2ban_enable=${fail2ban_enable-"NO"}
-fail2ban_pidfile=${fail2ban_pidfile-"/var/run/fail2ban/fail2ban.pid"}
-
 . /etc/rc.subr
 
 name="fail2ban"
 rcvar=fail2ban_enable
-pidfile="${fail2ban_pidfile}"
 
 command="%%PREFIX%%/bin/fail2ban-server"
 command_interpreter="%%PYTHON_CMD%%"
@@ -24,6 +20,14 @@ client="%%PREFIX%%/bin/fail2ban-client"
 extra_commands="reload jailstatus"
 
 load_rc_config ${name}
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf FILE
+#
+
+fail2ban_enable=${fail2ban_enable-"NO"}
+pidfile=${fail2ban_pidfile-"/var/run/fail2ban/fail2ban.pid"}
 
 start_cmd="${client} ${fail2ban_flags} start"
 stop_cmd="${client} ${fail2ban_flags} stop"
