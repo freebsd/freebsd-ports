@@ -8,7 +8,7 @@
 
 PORTNAME=	ipsec-tools
 PORTVERSION=	0.8.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -77,8 +77,8 @@ LDAP_CONFIGURE_OFF=	--without-libldap
 SAUNSPEC_CONFIGURE_ENABLE=	samode-unspec
 RC5_CONFIGURE_ENABLE=		rc5
 IDEA_CONFIGURE_ENABLE=		idea
-WCPSKEY_EXTRA_PATCHES=		${FILESDIR}/wildcard-psk.diff
 NATT_EXTRA_PATCHES=		${FILESDIR}/natt.diff
+WCPSKEY_EXTRA_PATCHES=	${FILESDIR}/wildcard-psk.diff ${FILESDIR}/wildcard-psk-oakley.c.diff
 
 .include <bsd.port.pre.mk>
 
