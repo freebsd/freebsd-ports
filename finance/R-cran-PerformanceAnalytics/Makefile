@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PerformanceAnalytics
-PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTVERSION=	1.5.3
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,7 +11,7 @@ COMMENT=	Econometric tools for performance and risk analysis
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-xts>=0.9:math/R-cran-xts \
+CRAN_DEPENDS=	R-cran-xts>=0.10.0:math/R-cran-xts \
 		R-cran-quadprog>0:math/R-cran-quadprog \
 		R-cran-zoo>0:math/R-cran-zoo
 BUILD_DEPENDS=	${CRAN_DEPENDS}
