@@ -1495,7 +1495,6 @@
     SUBDIR += xe-guest-utilities
     SUBDIR += xen-guest-tools
     SUBDIR += xen-tools
-    SUBDIR += xen-tools47
     SUBDIR += xfburn
     SUBDIR += xfce4-battery-plugin
     SUBDIR += xfce4-bsdcpufreq-plugin
