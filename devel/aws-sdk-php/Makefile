@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk
-PORTVERSION=	3.63.1
+PORTVERSION=	3.103.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/aws/${PORTNAME}-php/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
