@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	adb
-DISTVERSION=	1.3.0-5
-DISTVERSIONSUFFIX=	-gd9b94b2
+DISTVERSION=	1.3.0-7
+DISTVERSIONSUFFIX=	-g0e50795
 CATEGORIES=	devel comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,7 @@ COMMENT=	Pure-python implementation of ADB and Fastboot protocols
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libusb1>=1.0.16:devel/py-libusb1@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}m2crypto>=0.21.1:security/py-m2crypto@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USE_GITHUB=	yes
