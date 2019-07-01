@@ -2,8 +2,7 @@
 
 PORTNAME=	dehydrated
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
-PORTREVISION=	1
+DISTVERSION=	0.6.5
 CATEGORIES=	security
 
 MAINTAINER=	sascha@root-login.org
@@ -16,6 +15,7 @@ RUN_DEPENDS=	curl:ftp/curl
 
 USES=		shebangfix
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	lukas2511
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -31,6 +31,7 @@ OPTIONS_DEFINE=	DOCS
 OPTIONS_SINGLE=	SHELL
 OPTIONS_SINGLE_SHELL=	BASH ZSH
 OPTIONS_DEFAULT=	BASH
+
 BASH_DESC=	Use the Bourne Again shell (BASH)
 ZSH_DESC=	Use the Z shell (ZSH)
 
