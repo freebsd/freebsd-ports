@@ -24,7 +24,7 @@ USES=		blaslapack fortran gmake python:2.7 shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		--with-mpi-dir=${LOCALBASE} \
-		${CONFIGURE_ARG_${ARCH}} CPPFLAGS="${CPPFLAGS}" \
+		${CONFIGURE_ARGS_${ARCH}} CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" LIBS=""
 CONFIGURE_ARGS_amd64=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
 CONFIGURE_ARGS_i386=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
