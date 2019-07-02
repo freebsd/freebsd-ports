@@ -35,10 +35,8 @@ PORTDOCS=	*
 
 JAR_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:java/jakarta-commons-beanutils \
 		${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging \
-		${JAVALIBDIR}/commons-collections.jar:java/jakarta-commons-collections
-.if ${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/} != "1.4"
-JAR_DEPENDS+=	${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j
-.endif
+		${JAVALIBDIR}/commons-collections.jar:java/jakarta-commons-collections \
+		${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
