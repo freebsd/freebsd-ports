@@ -11,7 +11,7 @@ COMMENT=	Simple command-line snippet manager, written in Go
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	knqyf263
 GH_TUPLE=	\
