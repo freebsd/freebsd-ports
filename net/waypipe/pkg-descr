@@ -1,0 +1,5 @@
+waypipe is a proxy for Wayland clients. It forwards Wayland messages and
+serializes changes to shared memory buffers over a single socket. This makes
+application forwarding similar to ssh -X feasible.
+
+WWW: https://gitlab.freedesktop.org/mstoeckl/waypipe
