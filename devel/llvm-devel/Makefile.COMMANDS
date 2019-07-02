@@ -25,6 +25,7 @@ LLVM_COMMANDS=	\
 		llvm-extract \
 		llvm-jitlink \
 		llvm-link \
+		llvm-lipo \
 		llvm-mc \
 		llvm-modextract \
 		llvm-mt \
@@ -75,6 +76,7 @@ EXTRAS_COMMANDS= \
 		clang-query \
 		clang-rename \
 		clang-reorder-fields \
+		clang-scan-deps \
 		clang-tidy \
 		find-all-symbols \
 		modularize
