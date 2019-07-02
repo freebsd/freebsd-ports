@@ -34,6 +34,7 @@ bin/yath
 %%SITE_PERL%%/Test2/Harness/Job/Runner/Fork.pm
 %%SITE_PERL%%/Test2/Harness/Job/Runner/IPC.pm
 %%SITE_PERL%%/Test2/Harness/Job/Runner/Open3.pm
+%%SITE_PERL%%/Test2/Harness/LogFormat.pm
 %%SITE_PERL%%/Test2/Harness/Logger.pm
 %%SITE_PERL%%/Test2/Harness/Logger/JSONL.pm
 %%SITE_PERL%%/Test2/Harness/Preload.pm
@@ -96,6 +97,7 @@ bin/yath
 %%PERL5_MAN3%%/Test2::Harness::Job::Runner::Fork.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Job::Runner::IPC.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Job::Runner::Open3.3.gz
+%%PERL5_MAN3%%/Test2::Harness::LogFormat.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Logger.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Logger::JSONL.3.gz
 %%PERL5_MAN3%%/Test2::Harness::Renderer.3.gz
