@@ -2,8 +2,7 @@
 #   $MCom: ports/finance/gnucash/Makefile,v 1.26 2008/12/31 03:25:18 mezz Exp $
 
 PORTNAME=	gnucash
-PORTVERSION=	3.5
-PORTREVISION=	2
+PORTVERSION=	3.6
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -36,7 +35,8 @@ USE_LDCONFIG=	yes
 
 INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DCOMPILE_GSCHEMAS=OFF \
-		-DENABLE_BINRELOC=OFF
+		-DENABLE_BINRELOC=OFF \
+		-DGNC_SHELL=/bin/sh
 SHEBANG_FILES=	common/gnc-test-env.pl libgnucash/quotes/gnc-fq-dump
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
@@ -98,7 +98,7 @@ post-patch-TEST-off:
 		${FIND} . -type f -name CMakeLists.txt \
 		-exec ${REINPLACE_CMD} -e '/add_subdirectory *(test.*)/d' \
 		-e '/enable_testing()/d' -e '/include (GncAddTest)/d' \
-		-e '/gnc_gtest_configure()/d' {} +)
+		-e '/gnc_gtest_configure()/d' -e '/scm-test-core/d' {} +)
 
 post-install:
 	@(cd ${STAGEDIR}${DATADIR}/icons/hicolor && \

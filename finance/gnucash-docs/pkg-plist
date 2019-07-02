@@ -1238,6 +1238,10 @@ share/gnome/help/gnucash-help/C/Help_tips-appendix.xml
 share/gnome/help/gnucash-help/C/Help_txf-categories.xml
 share/gnome/help/gnucash-help/C/figures/Help_AccountReg_Screen.png
 share/gnome/help/gnucash-help/C/figures/Help_AccountTree_Screen.png
+share/gnome/help/gnucash-help/C/figures/Help_Book_Options_Accounts.png
+share/gnome/help/gnucash-help/C/figures/Help_Book_Options_Budgeting.png
+share/gnome/help/gnucash-help/C/figures/Help_Book_Options_Business.png
+share/gnome/help/gnucash-help/C/figures/Help_Book_Options_Counters.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_AccntPeriod.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_Accnts.png
 share/gnome/help/gnucash-help/C/figures/Help_Pref_Business.png
@@ -1258,7 +1262,6 @@ share/gnome/help/gnucash-help/C/figures/Help_Tool_Lots_h_double_arrow.png
 share/gnome/help/gnucash-help/C/figures/Help_Tool_Lots_v_double_arrow.png
 share/gnome/help/gnucash-help/C/figures/Help_TxRptOpt_Screen.png
 share/gnome/help/gnucash-help/C/figures/Main-window-callouts.png
-share/gnome/help/gnucash-help/C/figures/Report_Screen.png
 share/gnome/help/gnucash-help/C/figures/home.png
 share/gnome/help/gnucash-help/C/figures/left.png
 share/gnome/help/gnucash-help/C/figures/right.png

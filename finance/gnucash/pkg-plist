@@ -313,6 +313,7 @@ lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/advanced-portfolio.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/average-balance.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/balance-forecast.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/balance-sheet.go
+lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/balsheet-pnl.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/budget-balance-sheet.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/budget-barchart.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/budget-flow.go
@@ -330,6 +331,7 @@ lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/income-statement.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/net-charts.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/portfolio.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/price-scatter.go
+lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/reconcile-report.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/register.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/sx-summary.go
 %%TEST%%lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/test/test-cash-flow.go
@@ -389,9 +391,11 @@ lib/gnucash/scm/ccache/2.2/qif-import/qif-utils.go
 lib/gnucash/scm/ccache/2.2/report-utilities.go
 lib/gnucash/scm/ccache/2.2/report.go
 lib/gnucash/scm/ccache/2.2/simple-obj.go
+lib/gnucash/scm/ccache/2.2/trep-engine.go
 %%TEST%%lib/gnucash/scm/ccache/2.2/test-account.go
 %%TEST%%lib/gnucash/scm/ccache/2.2/test-c-interface.go
 %%TEST%%lib/gnucash/scm/ccache/2.2/test-create-account.go
+%%TEST%%lib/gnucash/scm/ccache/2.2/test-libgnucash-scm-utilities.go
 %%TEST%%lib/gnucash/scm/ccache/2.2/test-split.go
 lib/gnucash/scm/ccache/2.2/txf-de_DE.go
 lib/gnucash/scm/ccache/2.2/txf-help-de_DE.go
@@ -1106,6 +1110,7 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/scm/gnucash/report/standard-reports/average-balance.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/balance-forecast.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/balance-sheet.scm
+%%DATADIR%%/scm/gnucash/report/standard-reports/balsheet-pnl.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/budget-balance-sheet.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/budget-barchart.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/budget-flow.scm
@@ -1123,6 +1128,7 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/scm/gnucash/report/standard-reports/net-charts.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/portfolio.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/price-scatter.scm
+%%DATADIR%%/scm/gnucash/report/standard-reports/reconcile-report.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/register.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/sx-summary.scm
 %%TEST%%%%DATADIR%%/scm/gnucash/report/standard-reports/test/test-cash-flow.scm
@@ -1184,9 +1190,11 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/scm/report-utilities.scm
 %%DATADIR%%/scm/report.scm
 %%DATADIR%%/scm/simple-obj.scm
+%%DATADIR%%/scm/trep-engine.scm
 %%TEST%%%%DATADIR%%/scm/test-account.scm
 %%TEST%%%%DATADIR%%/scm/test-c-interface.scm
 %%TEST%%%%DATADIR%%/scm/test-create-account.scm
+%%TEST%%%%DATADIR%%/scm/test-libgnucash-scm-utilities.scm
 %%TEST%%%%DATADIR%%/scm/test-split.scm
 %%DATADIR%%/scm/txf-de_DE.scm
 %%DATADIR%%/scm/txf-help-de_DE.scm
