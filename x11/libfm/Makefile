@@ -9,7 +9,9 @@ MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/LibFM/
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT?=	Core library of PCManFM file manager
 
-LICENSE=	LGPL21
+LICENSE=	GPLv2+ LGPL20+
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
 .if ! defined(EXTRA_ONLY)
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
