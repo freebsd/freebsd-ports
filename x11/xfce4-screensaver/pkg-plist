@@ -4,7 +4,6 @@ bin/xfce4-screensaver-preferences
 %%PAM%%etc/pam.d/xfce-screensaver
 etc/xdg/autostart/xfce4-screensaver.desktop
 etc/xdg/menus/xfce4-screensavers.menu
-libdata/pkgconfig/xfce4-screensaver.pc
 libexec/xfce4-screensaver-dialog
 libexec/xfce4-screensaver-gl-helper
 libexec/xfce4-screensaver/floaters

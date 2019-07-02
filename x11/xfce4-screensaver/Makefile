@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-screensaver
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
