@@ -23,10 +23,12 @@ include/yacas/lispobject.h
 include/yacas/lispoperator.h
 include/yacas/lispparser.h
 include/yacas/lispstring.h
-include/yacas/lisptype.h
 include/yacas/lispuserfunc.h
 include/yacas/mathcommands.h
 include/yacas/mathuserfunc.h
+include/yacas/mempool.h
+include/yacas/mp/nn.hpp
+include/yacas/mp/zz.hpp
 include/yacas/noncopyable.h
 include/yacas/numbers.h
 include/yacas/patcher.h
@@ -39,7 +41,6 @@ include/yacas/standard.h
 include/yacas/standard.inl
 include/yacas/string_utils.h
 include/yacas/stringio.h
-include/yacas/stubs.h
 include/yacas/substitute.h
 include/yacas/tokenizer.h
 include/yacas/utf8.h
@@ -50,6 +51,7 @@ include/yacas/xmltokenizer.h
 include/yacas/yacas.h
 include/yacas/yacas_version.h
 lib/libyacas.a
+lib/libyacas_mp.a
 %%DATADIR%%/scripts/array.rep/code.ys
 %%DATADIR%%/scripts/array.rep/code.ys.def
 %%DATADIR%%/scripts/assoc.rep/code.ys
@@ -168,6 +170,8 @@ lib/libyacas.a
 %%DATADIR%%/scripts/predicates.rep/code.ys.def
 %%DATADIR%%/scripts/probability.rep/code.ys
 %%DATADIR%%/scripts/probability.rep/code.ys.def
+%%DATADIR%%/scripts/products.rep/code.ys
+%%DATADIR%%/scripts/products.rep/code.ys.def
 %%DATADIR%%/scripts/pslq.rep/code.ys
 %%DATADIR%%/scripts/pslq.rep/code.ys.def
 %%DATADIR%%/scripts/r_form.rep/code.ys
