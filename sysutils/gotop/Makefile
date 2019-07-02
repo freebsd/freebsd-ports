@@ -10,7 +10,7 @@ COMMENT=	Terminal based graphical activity monitor inspired by gtop and vtop
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	cjbassi
 GH_TUPLE=	docopt:docopt.go:ee0de3b:docopt/src/github.com/docopt/docopt-go \
