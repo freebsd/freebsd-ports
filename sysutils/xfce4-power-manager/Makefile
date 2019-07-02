@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-power-manager
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
