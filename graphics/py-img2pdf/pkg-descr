@@ -1,0 +1,23 @@
+This Python package provides lossless conversion of raster images to PDF. You
+should use img2pdf if your priorities are (in this order):
+
+1. "always lossless": The image embedded in the PDF will always have the exact
+   same color information for every pixel as the input.
+
+2. "small": If possible, the difference in filesize between the input image and
+   the output PDF will only be the overhead of the PDF container itself.
+
+3. "fast": If possible, the input image is just pasted into the PDF document
+   as-is without any CPU hungry re-encoding of the pixel data.
+
+Conventional conversion software (like ImageMagick) would either:
+
+1. Not be lossless because lossy re-encoding to JPEG.
+2. Not be small because using wasteful flate encoding of raw pixel data.
+3. Not be fast because input data gets re-encoded.
+
+Another advantage of not having to re-encode the input (in most common
+situations) is, that img2pdf is able to handle much larger input than other
+software, because the raw pixel data never has to be loaded into memory.
+
+WWW: https://gitlab.mister-muffin.de/josch/img2pdf
