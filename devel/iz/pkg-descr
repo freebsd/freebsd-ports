@@ -1,5 +1,5 @@
-iz is a general purpose library for the D programming language. It includes 
-streams, containers, a serializer, property binder, Pascal-like sets, 
+iz is a general purpose library for the D programming language. It includes
+streams, containers, a serializer, property binder, Pascal-like sets,
 Pascal-like properties and more
 
-WWW: https://github.com/BBasile/iz
+WWW: https://github.com/Basile-z/iz

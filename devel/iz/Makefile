@@ -11,12 +11,13 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	General purpose library for the D programming language
 
 LICENSE=	BSL
+LICENSE_FILE=	${WRKSRC}/LICENSE_1_0..txt
 
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	BBasile
+GH_ACCOUNT=	Basile-z
 
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
