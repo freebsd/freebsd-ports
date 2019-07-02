@@ -2,7 +2,7 @@
 
 PORTNAME=	lepton-eda
 PORTVERSION=	1.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-20181211
 CATEGORIES=	cad
 
@@ -18,9 +18,9 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
 		libstroke.so:devel/libstroke
 
-USES=		autoreconf desktop-file-utils gettext-tools gnome groff:build \
-		libtool localbase makeinfo pathfix perl5 pkgconfig python:run \
-		shared-mime-info shebangfix
+USES=		autoreconf desktop-file-utils gettext-tools gnome \
+		groff:build libtool localbase makeinfo pathfix perl5 \
+		pkgconfig python:2.7,run shared-mime-info shebangfix
 USE_GITHUB=	yes
 USE_GNOME=	cairo gtk20
 USE_LDCONFIG=	yes
@@ -52,10 +52,6 @@ OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,guile-2\.0,guile-2.2,' \
-		${WRKSRC}/m4/geda-guile.m4
 
 # work around for errors while running
 # build-tools/icon-theme-installer:
