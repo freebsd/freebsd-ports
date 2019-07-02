@@ -10,6 +10,8 @@ PKGNAMESUFFIX=		-devel
 HASH=			2063ff0
 MIT_COMMIT_DATE=	2019.07.02
 
+BROKEN_FreeBSD_11=	vsnprintf uninitialized va_list ap
+
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
 
