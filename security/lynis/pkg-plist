@@ -8,6 +8,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/db/languages/az
 %%DATADIR%%/db/languages/br
 %%DATADIR%%/db/languages/cn
+%%DATADIR%%/db/languages/da
 %%DATADIR%%/db/languages/de
 %%DATADIR%%/db/languages/en
 %%DATADIR%%/db/languages/en-GB
