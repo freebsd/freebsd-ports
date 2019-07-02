@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rdflib>0:textproc/py-rdflib@${PY_FLAVOR}
 
-USES=		python:-3.6 shebangfix tar:bzip2 waf
+USES=		python shebangfix tar:bzip2 waf
 
 SHEBANG_FILES=	lv2specgen/lv2specgen.py
 
