@@ -3,12 +3,11 @@
 
 PORTNAME=	cfengine-masterfiles
 PORTVERSION=	3.${CFENGINE_COMMIT_DATE}
-PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://cfengine-package-repos.s3.amazonaws.com/tarballs/
 PKGNAMESUFFIX=	-devel
-HASH=		c48406a
-CFENGINE_COMMIT_DATE=	2019.06.29
+HASH=		7762335
+CFENGINE_COMMIT_DATE=	2019.07.02
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
