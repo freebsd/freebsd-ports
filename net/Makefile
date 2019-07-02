@@ -1490,6 +1490,7 @@
     SUBDIR += wackamole
     SUBDIR += wackford-squeers
     SUBDIR += wakeonlan
+    SUBDIR += waypipe
     SUBDIR += whois
     SUBDIR += widentd
     SUBDIR += wireguard
