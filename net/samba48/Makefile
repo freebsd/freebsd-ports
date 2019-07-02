@@ -161,7 +161,6 @@ SAMBA4_BUNDLED_TALLOC?=		no
 SAMBA4_BUNDLED_TEVENT?=		no
 SAMBA4_BUNDLED_TDB?=		no
 SAMBA4_BUNDLED_LDB?=		yes
-SAMBA4_LDB=			13
 # cmocka
 .if defined(SAMBA4_BUNDLED_CMOCKA) && ${SAMBA4_BUNDLED_CMOCKA} == yes
 SAMBA4_BUNDLED_LIBS+=		cmocka
@@ -178,7 +177,6 @@ SUB_LIST+=			SAMBA4_BUNDLED_CMOCKA="@comment "
 # talloc
 .if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
 SAMBA4_BUNDLED_LIBS+=		talloc
-CONFLICTS+=			talloc1-2.*
 PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC=""
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC=""
 .else
@@ -191,7 +189,6 @@ SUB_LIST+=			SAMBA4_BUNDLED_TALLOC="@comment "
 # tevent
 .if defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes
 SAMBA4_BUNDLED_LIBS+=		tevent
-CONFLICTS+=			tevent1-0.*
 PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT=""
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT=""
 .else
@@ -204,7 +201,6 @@ SUB_LIST+=			SAMBA4_BUNDLED_TEVENT="@comment "
 # tdb
 .if defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes
 SAMBA4_BUNDLED_LIBS+=		tdb
-CONFLICTS+=			tdb1-1.*
 PLIST_SUB+=			SAMBA4_BUNDLED_TDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_TDB=""
 .else
@@ -215,30 +211,23 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TDB="@comment "
 .endif
 # ldb
-.if (defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes) || !defined(SAMBA4_LDB)
+.if defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes
 SAMBA4_BUNDLED_LDB=		yes
 SAMBA4_BUNDLED_LIBS+=		ldb
 CONFLICTS+=			ldb-1.* ldb1[23]-1.*
 PLIST_SUB+=			SAMBA4_BUNDLED_LDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_LDB=""
 .else
-.       if ${SAMBA4_LDB} == 13
-BUILD_DEPENDS+=			ldb13>=1.3.6:databases/ldb13
-RUN_DEPENDS+=			ldb13>=1.3.6:databases/ldb13
-.       elif ${SAMBA4_LDB} == 12
-BUILD_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
-RUN_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
-.       elif ${SAMBA4_LDB} == 11
-BUILD_DEPENDS+=			ldb>=1.1.29:databases/ldb
-RUN_DEPENDS+=			ldb>=1.1.29:databases/ldb
-.       endif
 SAMBA4_BUNDLED_LIBS+=		!ldb
+BUILD_DEPENDS+=			ldb13>=1.3.8:databases/ldb13
+RUN_DEPENDS+=			ldb13>=1.3.8:databases/ldb13
 PLIST_SUB+=			SAMBA4_BUNDLED_LDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_LDB="@comment "
 .endif
 
 .if (defined(SAMBA4_BUNDLED_TALLOC)  && ${SAMBA4_BUNDLED_TEVENT} == yes) \
 	|| (defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes) \
+	|| (defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes) \
 	|| (defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes)
 SAMBA4_BUNDLED_LIBS+=		replace
 .endif
@@ -392,22 +381,6 @@ SAMBA4_MODULES+=		auth_skel pdb_test gpext_security gpext_registry gpext_scripts
 				vfs_nfs4acl_xattr vfs_error_inject vfs_delay_inject
 .endif
 
-.if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
-SAMBA4_MODULES+=		${WANT_EXP_MODULES}
-.endif
-
-.if defined(SAMBA4_BUNDLED_LIBS) && !empty(SAMBA4_BUNDLED_LIBS)
-CONFIGURE_ARGS+=		--bundled-libraries="${SAMBA4_BUNDLED_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"
-.endif
-
-.if defined(SAMBA4_MODULES) && !empty(SAMBA4_MODULES)
-CONFIGURE_ARGS+=		--with-shared-modules="${SAMBA4_MODULES:C|-|_|:Q:C|(\\\\ )+|,|g:S|\\||g}"
-.endif
-# XXX: Hack for nss-info_* -> nss_info/* modules
-# Add selected modules to the plist
-.for module in ${SAMBA4_MODULES}
-PLIST_FILES+=			lib/shared-modules/${module:C|_|/|:C|-|_|}.so
-.endfor
 # Python bindings
 .if defined(NO_PYTHON)
 USES+=				python:2.7,build,test
@@ -421,15 +394,23 @@ SUB_LIST+=			SAMBA4_PYTHON2=""
 
 .if !defined(SAMBA4_BUNDLED_TALLOC)
 SAMBA4_BUNDLED_LIBS+=		!pytalloc-util
+.else
+SAMBA4_BUNDLED_LIBS+=		pytalloc-util
 .endif
 .if !defined(SAMBA4_BUNDLED_TEVENT)
 SAMBA4_BUNDLED_LIBS+=		!pytevent
+.else
+SAMBA4_BUNDLED_LIBS+=		pytevent
 .endif
 .if !defined(SAMBA4_BUNDLED_TDB)
 SAMBA4_BUNDLED_LIBS+=		!pytdb
+.else
+SAMBA4_BUNDLED_LIBS+=		pytdb
 .endif
 .if !defined(SAMBA4_BUNDLED_LDB)
-SAMBA4_BUNDLED_LIBS+=		!pyldb,!pyldb-util
+SAMBA4_BUNDLED_LIBS+=		!pyldb !pyldb-util
+.else
+SAMBA4_BUNDLED_LIBS+=		pyldb pyldb-util
 .endif
 # External Python modules
 BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_FLAVOR}
@@ -468,6 +449,24 @@ PLIST_SUB+=			SAMBA4_PYTHON3="@comment "
 SUB_LIST+=			SAMBA4_PYTHON3="@comment "
 .endif
 .endif
+
+.if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
+SAMBA4_MODULES+=		${WANT_EXP_MODULES}
+.endif
+
+.if defined(SAMBA4_BUNDLED_LIBS) && !empty(SAMBA4_BUNDLED_LIBS)
+CONFIGURE_ARGS+=		--bundled-libraries="${SAMBA4_BUNDLED_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"
+CONFIGURE_ARGS+=		--builtin-libraries="${SAMBA4_BUNDLED_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"
+.endif
+
+.if defined(SAMBA4_MODULES) && !empty(SAMBA4_MODULES)
+CONFIGURE_ARGS+=		--with-shared-modules="${SAMBA4_MODULES:C|-|_|:Q:C|(\\\\ )+|,|g:S|\\||g}"
+.endif
+# XXX: Hack for nss-info_* -> nss_info/* modules
+# Add selected modules to the plist
+.for module in ${SAMBA4_MODULES}
+PLIST_FILES+=			lib/shared-modules/${module:C|_|/|:C|-|_|}.so
+.endfor
 # !SAMBA4_SUBPORT
 .endif
 
