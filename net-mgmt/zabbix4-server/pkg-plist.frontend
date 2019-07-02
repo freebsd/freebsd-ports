@@ -145,7 +145,6 @@
 %%WWWDIR%%/app/views/monitoring.widget.url.view.php
 %%WWWDIR%%/app/views/monitoring.widget.web.view.php
 %%WWWDIR%%/app/views/popup.generic.php
-%%WWWDIR%%/app/views/popup.httpstep.js.php
 %%WWWDIR%%/app/views/popup.httpstep.php
 %%WWWDIR%%/app/views/popup.media.js.php
 %%WWWDIR%%/app/views/popup.media.php
@@ -211,14 +210,6 @@
 %%WWWDIR%%/httpconf.php
 %%WWWDIR%%/httpdetails.php
 %%WWWDIR%%/image.php
-%%WWWDIR%%/images/general/arrow_down.png
-%%WWWDIR%%/images/general/arrow_up.png
-%%WWWDIR%%/images/general/no_icon.png
-%%WWWDIR%%/images/general/tr_space.gif
-%%WWWDIR%%/images/general/tr_top_bottom.gif
-%%WWWDIR%%/images/general/tr_top_right_bottom.gif
-%%WWWDIR%%/images/general/tr_top_right.gif
-%%WWWDIR%%/images/general/tree/zero.gif
 %%WWWDIR%%/imgstore.php
 %%WWWDIR%%/include/.htaccess
 %%WWWDIR%%/include/actions.inc.php
