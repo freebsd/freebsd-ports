@@ -173,6 +173,7 @@ lib/groonga/plugins/sharding/keys_parsable.rb
 %%RUBY%%lib/groonga/scripts/ruby/scan_info_search_index.rb
 %%RUBY%%lib/groonga/scripts/ruby/table.rb
 %%RUBY%%lib/groonga/scripts/ruby/table_cursor.rb
+%%RUBY%%lib/groonga/scripts/ruby/time.rb
 %%RUBY%%lib/groonga/scripts/ruby/variable_size_column.rb
 %%RUBY%%lib/groonga/scripts/ruby/writer.rb
 lib/groonga/plugins/suggest/suggest.a
