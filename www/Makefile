@@ -2202,7 +2202,6 @@
     SUBDIR += scloader
     SUBDIR += script4rss
     SUBDIR += seahub
-    SUBDIR += seamonkey
     SUBDIR += searx
     SUBDIR += selenium
     SUBDIR += serendipity

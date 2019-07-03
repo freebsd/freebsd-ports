@@ -12842,3 +12842,4 @@ www/rubygem-responders-rails50|www/rubygem-responders|2019-06-30|Has expired: Us
 emulators/xen-kernel47|emulators/xen-kernel|2019-07-01|Has expired: This port is about to be removed, please update to a newer Xen version
 sysutils/xen-tools47|sysutils/xen-tools|2019-07-01|Has expired: This port is about to be removed, please update to a newer Xen version
 www/palemoon||2019-07-03|Not maintained and full of security holes
+www/seamonkey||2019-07-03|2.49.* is not maintained upstream and full of security holes
