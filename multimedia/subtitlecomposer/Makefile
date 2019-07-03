@@ -9,7 +9,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Subtitle editor
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libavcodec.so:multimedia/ffmpeg
@@ -22,6 +22,7 @@ USE_QT=		buildtools_build qmake_build core gui widgets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxrd2
+GH_PROJECT=	SubtitleComposer
 
 PORTSCOUT=	ignore:continuous
 
@@ -31,13 +32,12 @@ OPTIONS_GROUP_VIDEO=	GSTREAMER MPLAYER MPV PHONON XINE
 OPTIONS_DEFAULT=	PHONON
 OPTIONS_SUB=	yes
 
-WRKSRC=		${WRKDIR}/SubtitleComposer-${PORTVERSION}
-
 # Requires PocketSphinx-5prealpha
 SPHINX_DESC=	Speech recognition via PocketSphinx
 SPHINX_LIB_DEPENDS=	libpocketsphinx.so:audio/pocketsphinx
 CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_PocketSphinx=ON
 
+GSTREAMER_USES=	gnome
 GSTREAMER_USE=	GNOME=glib20 GSTREAMER1=yes
 GSTREAMER_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_GStreamer=ON
 
