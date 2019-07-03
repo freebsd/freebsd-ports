@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
@@ -15,17 +15,11 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=	amd64
 
 USES=		cpe gmake python:2.7,build
-# LLD 8 changed the behaviour re the placement of orphaned sections, which
-# produces a non-bootable Xen kernel:
-#
-# https://bugs.llvm.org/show_bug.cgi?id=42327
-#
-# Switch to GNU LD (and NM) until this is resolved.
-USE_BINUTILS=	yes
+
 # Ports build environment has ARCH=amd64 set which disables Xen automatic arch
 # detection, but amd64 is not a valid arch for Xen. Hardcode x86_64 on the
 # command line in order to overwrite the one from the environment.
-MAKE_ARGS=	clang=y PYTHON=${PYTHON_CMD} ARCH=x86_64 LD=${LD} NM=${NM}
+MAKE_ARGS=	clang=y PYTHON=${PYTHON_CMD} ARCH=x86_64
 NO_MTREE=	yes
 STRIP=		#
 PLIST_FILES=	/boot/xen \
@@ -44,6 +38,16 @@ EXTRA_PATCHES+=	${PATCHDIR}/xsa297-4.12-1.patch:-p1 \
 		${PATCHDIR}/xsa297-4.12-5.patch:-p1 \
 		${PATCHDIR}/xsa297-4.12-6.patch:-p1 \
 		${PATCHDIR}/xsa297-4.12-7.patch:-p1
+
+# LLD 8 changed the behaviour re the placement of orphaned sections, which
+# produces a non-bootable Xen kernel:
+#
+# https://bugs.llvm.org/show_bug.cgi?id=42327
+#
+# Backport the fixes from upstream
+EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-linker-add-a-reloc-section-to-ELF-linker-script.patch:-p1 \
+		${PATCHDIR}/0003-xen-link-handle-.init.rodata.cst-sections-in-the-lin.patch:-p1 \
+		${PATCHDIR}/0004-x86-check-for-multiboot-1-2-header-presence.patch:-p1
 
 .include <bsd.port.options.mk>
 
