@@ -1,3 +1,7 @@
+This is not necessary for Wine 4.7 and later any more after upstream
+changes, cf. revision r500375 | gerald | 2019-04-28.  Drop this patch
+when moving to Wine 5.0.
+
 --- UTC
 diff --git a/configure b/configure
 index 2646b0b..fc55a0e 100755
