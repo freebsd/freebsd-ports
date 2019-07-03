@@ -59,13 +59,12 @@
 %%WWWDIR%%/js/tinymce/skins/ui/oxide/fonts/tinymce-mobile.woff
 %%WWWDIR%%/js/tinymce/skins/ui/oxide/skin.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide/skin.mobile.min.css
-%%WWWDIR%%/js/tinymce/skins/ui/oxide/tinymce-mobile.woff
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/content.inline.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/content.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/content.mobile.min.css
+%%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/fonts/tinymce-mobile.woff
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/skin.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/skin.mobile.min.css
-%%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/tinymce-mobile.woff
 %%WWWDIR%%/js/tinymce/themes/mobile/theme.min.js
 %%WWWDIR%%/js/tinymce/themes/silver/theme.min.js
 %%WWWDIR%%/js/tinymce/tinymce.min.js
