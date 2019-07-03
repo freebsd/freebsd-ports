@@ -5,33 +5,42 @@
 # consumer ports requiring Python at build or run time.
 #
 # Feature:	python
-# Usage:	USES=python or USES=python:args
-# Valid ARGS:	<version>, patch, build, run, test
+# Usage:	USES=python[:version-spec][,arg,...]
+# Valid ARGS:	<version-spec>, patch, build, run, test
 #
-# version 	If your port requires only some set of Python versions, you
-# 		can set this to [min]-[max] or min+ or -max or as an
-#		explicit version (eg. 3.5-3.6 for [min]-[max], 2.7+ or -3.6
-#		for min+ and -max, 2.7 for an explicit version). Example:
+# version-spec 	Declarative specification for the Python version(s) the
+#		port supports. Subsets and ranges can be specified:
 #
-#			USES=python:2.7		# Only use Python 2.7
-#			USES=python:3.5+	# Use Python 3.5 or newer
-#			USES=python:3.5-3.6	# Use Python 3.5 or 3.6
-#			USES=python:-3.6	# Use any Python up to 3.6
-#			USES=python		# Use the set default Python
-#						# version
+#			* <version>
+#			* <minimum-version>-<maximum-version>
+#			* <minimum-version>+
+#			* -<maximum-version>
 #
-# patch		Indicates that Python is needed at patch time and adds
-#		it to PATCH_DEPENDS.
-# build		Indicates that Python is needed at build time and adds
-#		it to BUILD_DEPENDS.
-# run		Indicates that Python is needed at run time and adds
-#		it to RUN_DEPENDS.
-# test		Indicates that Python is needed at test time and adds
-# 		it to TEST_DEPENDS.
-# env		Indicates that the port does not require a dependency on Python
-#		itself but needs the environment set up. This is mainly used
-#		when depending on flavored python ports, or when a correct
-#		PYTHON_CMD is required.  It has the same effect than setting
+#		Examples:
+#
+#			USES=python:2.7		# Supports Python 2.7 Only
+#			USES=python:3.5+	# Supports Python 3.5 or later
+#			USES=python:3.5-3.7	# Supports Python 3.5 to 3.7
+#			USES=python:-3.6	# Supports Python up to 3.6
+#			USES=python		# Supports any/all Python versions
+#
+# NOTE:	<version-spec> should be as specific as possible, matching the versions
+#	upstream declares support for, without being incorrect. In particular,
+#	USES=python *without* a <version-spec> means any and all past or future
+#	versions, including unreleased versions, which is probably incorrect.
+#
+#	Not specifying a <version-spec> should only be used when a more specific
+#	<version-spec> cannot be specified due to syntax limitations, for
+#	example: 2.7,3.4-3.6, but even in this case, X.Y+ (2.7+), or -X.Y (-3.6)
+#	is preferred and likely more correct.
+#
+# patch		Python is needed at patch time. Adds dependency to PATCH_DEPENDS.
+# build		Python is needed at build time. Adds dependency to BUILD_DEPENDS.
+# run		Python is needed at run time. Adds dependency to RUN_DEPENDS.
+# test		Python is needed at test time. Adds dependency to TEST_DEPENDS.
+# env		Does not depend on Python but needs the environment set up. This
+#		is mainly used when depending on flavored python ports, or when a
+#		correct PYTHON_CMD is required.  It has the same effect as setting
 #		PYTHON_NO_DEPENDS.
 #
 # If build, run and test are omitted, Python will be added as BUILD_DEPENDS,
