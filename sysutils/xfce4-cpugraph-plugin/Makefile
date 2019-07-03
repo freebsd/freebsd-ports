@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-cpugraph-plugin
-PORTVERSION=	1.0.5
-PORTREVISION=	5
+PORTVERSION=	1.1.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -17,8 +16,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		gettext-tools gmake gnome libtool pkgconfig \
-		tar:bzip2 xfce
-USE_GNOME=	cairo gtk20 intlhack intltool
+		tar:bzip2 xfce:gtk3
+USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	panel
 
 GNU_CONFIGURE=	yes
