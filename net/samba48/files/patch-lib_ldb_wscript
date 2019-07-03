@@ -30,6 +30,24 @@
  
                  name = bld.pyembed_libname('pyldb-util')
                  bld.SAMBA_LIBRARY(name,
+@@ -337,7 +336,7 @@ def build(bld):
+ 
+         LDB_TOOLS='ldbadd ldbsearch ldbdel ldbmodify ldbedit ldbrename'
+         for t in LDB_TOOLS.split():
+-            bld.SAMBA_BINARY(t, 'tools/%s.c' % t, deps='ldb-cmdline ldb',
++            bld.SAMBA_BINARY('samba-%s' % t, 'tools/%s.c' % t, deps='ldb-cmdline ldb',
+                              manpages='man/%s.1' % t)
+ 
+         # ldbtest doesn't get installed
+@@ -345,7 +344,7 @@ def build(bld):
+                          install=False)
+ 
+         # ldbdump doesn't get installed
+-        bld.SAMBA_BINARY('ldbdump', 'tools/ldbdump.c', deps='ldb-cmdline ldb',
++        bld.SAMBA_BINARY('samba-ldbdump', 'tools/ldbdump.c', deps='ldb-cmdline ldb',
+                          install=False)
+ 
+         bld.SAMBA_LIBRARY('ldb-cmdline',
 @@ -364,10 +363,6 @@ def build(bld):
                           deps='cmocka ldb',
                           install=False)
