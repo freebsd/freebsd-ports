@@ -1,0 +1,11 @@
+--- cint/lib/prec_stl/multiset.orig	2019-07-03 06:43:37 UTC
++++ cint/lib/prec_stl/multiset
+@@ -105,7 +105,7 @@ class multiset {
+     iterator operator++(int a);
+     iterator& operator--();
+     iterator operator--(int a);
+-#if defined (G__VISUAL) || (defined(G__GNUC) && G__GNUC_VER>=3004)
++#if defined (G__VISUAL) || (defined(G__GNUC) && G__GNUC_VER>=3004 && G__GNUC_VER<9000)
+     bool operator==(const iterator& x) ;
+     bool operator!=(const iterator& x) ;
+ #endif

@@ -1,0 +1,14 @@
+--- cint/lib/prec_stl/list.orig	2019-07-03 06:45:32 UTC
++++ cint/lib/prec_stl/list
+@@ -96,9 +96,11 @@ class list {
+     iterator operator++(int a);
+     iterator& operator--();
+     iterator operator--(int a);
++#if defined(G__GNUC_VER) && G__GNUC_VER<9000
+     bool operator==(const iterator& x) ;
+ #ifndef G__HPUX
+     bool operator!=(const iterator& x) ;
++#endif
+ #endif
+ #if defined(G__VISUAL) && (G__MSC_VER>=1600)
+ 	private:
