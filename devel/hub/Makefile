@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hub
-PORTVERSION=	2.12.0
+PORTVERSION=	2.12.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel sysutils
 
@@ -12,7 +12,7 @@ COMMENT=	Introduces git to GitHub
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	github
