@@ -2,7 +2,7 @@
 
 PORTNAME=	dftbplus
 DISTVERSION=	18.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,11 +11,10 @@ COMMENT=	DFTB+: Package for performing fast atomistic simulations
 LICENSE=	GPLv3 # main code is under LGPL3+, the bundled dftd3-lib is under GPLv1+, this makes the result GPLv3 (based on https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility)
 
 LIB_DEPENDS=	libblas.so:math/blas \
-		liblapack.so:math/lapack \
-		libomp.so:devel/openmp
+		liblapack.so:math/lapack
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		fortran gmake python:2.7 shebangfix
+USES=		compiler:gcc-c++11-lib fortran gmake python:2.7 shebangfix
 SHEBANG_FILES=	tools/dptools/bin/* tools/misc/* utils/srcmanip/* utils/build/* external/fypp/bin/* utils/get_opt_externals \
 		external/fypp/bin/fypp utils/test/testlist_to_fypp test/prog/dftb+/bin/tagdiff
 SHEBANG_GLOB=	*.py
@@ -28,7 +27,7 @@ MAKEFILE=	makefile
 TEST_TARGET=	test
 
 FFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-llapack -lblas ${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so ${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgfortran.so -lm -lomp
+LDFLAGS+=	-llapack -lblas -lgfortran -lm
 
 MAKE_ARGS=	PYTHON=${PYTHON_CMD} FC=${FC} FXX=${FC} LN=${CC} \
 		INSTALLDIR=${STAGEDIR}${PREFIX} FREEBSD_PYDISTUTILS_INSTALLARGS="${PYDISTUTILS_INSTALLARGS} --root=${STAGEDIR}"
