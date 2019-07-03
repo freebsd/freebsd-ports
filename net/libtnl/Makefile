@@ -11,6 +11,9 @@ DISTNAME=	tnl-${PORTVERSION}-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robust, secure, easy to use cross-platform C++ networking API
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
+
 USES=		uidfix
 USE_GCC=	any
 WRKSRC=		${WRKDIR}/tnl/tnl
