@@ -3,7 +3,7 @@
 
 PORTNAME=			${SAMBA4_BASENAME}48
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			2
+PORTREVISION=			3
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -389,13 +389,12 @@ SAMBA4_MODULES+=		auth_skel pdb_test gpext_security gpext_registry gpext_scripts
 				vfs_fake_dfq vfs_skel_opaque vfs_skel_transparent vfs_shadow_copy_test vfs_fake_acls \
 				vfs_nfs4acl_xattr vfs_error_inject vfs_delay_inject
 .endif
-
 # Python bindings
 .if defined(NO_PYTHON)
 USES+=				python:2.7,build,test
 CONFIGURE_ARGS+=		--disable-python
-PLIST_SUB+=			SAMBA4_PYTHON2="@comment " SAMBA4_PYTHON3="@comment "
-SUB_LIST+=			SAMBA4_PYTHON2="@comment " SAMBA4_PYTHON3="@comment "
+PLIST_SUB+=			SAMBA4_PYTHON2="@comment "
+SUB_LIST+=			SAMBA4_PYTHON2="@comment "
 .else
 USES+=				python:2.7
 PLIST_SUB+=			SAMBA4_PYTHON2=""
@@ -406,16 +405,19 @@ SAMBA4_BUNDLED_LIBS+=		!pytalloc-util
 .else
 SAMBA4_BUNDLED_LIBS+=		pytalloc-util
 .endif
+
 .if !defined(SAMBA4_BUNDLED_TEVENT)
 SAMBA4_BUNDLED_LIBS+=		!pytevent
 .else
 SAMBA4_BUNDLED_LIBS+=		pytevent
 .endif
+
 .if !defined(SAMBA4_BUNDLED_TDB)
 SAMBA4_BUNDLED_LIBS+=		!pytdb
 .else
 SAMBA4_BUNDLED_LIBS+=		pytdb
 .endif
+
 .if !defined(SAMBA4_BUNDLED_LDB)
 SAMBA4_BUNDLED_LIBS+=		!pyldb !pyldb-util
 .else
@@ -427,36 +429,6 @@ RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}dnspython>=1.15.0:dns/py-dnspython@${PY_F
 
 BUILD_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
-# XXX: This is a gross hack to make port use both Python 2.7+ and 3.3+
-# This is not officially supported, use at your own risk
-.if defined(WITH_SAMBA4_PYTHON3) && ${WITH_SAMBA4_PYTHON3:M3\.[0-9]}
-SAMBA4_PYTHON3_VERSION=		${WITH_SAMBA4_PYTHON3}
-SAMBA4_PYTHON3=			python${SAMBA4_PYTHON3_VERSION}
-SAMBA4_PYTHON3_VER=		${SAMBA4_PYTHON3_VERSION:C/\.//}
-.if !exists(${PORTSDIR}/lang/python${SAMBA4_PYTHON3_VER})
-.error				unsupported or unknown Python version ${SAMBA4_PYTHON3_VERSION}
-.endif
-BUILD_DEPENDS+=			${SAMBA4_PYTHON3}:lang/python${SAMBA4_PYTHON3_VER}
-RUN_DEPENDS+=			${SAMBA4_PYTHON3}:lang/python${SAMBA4_PYTHON3_VER}
-# External Python modules
-BUILD_DEPENDS+=			py${SAMBA4_PYTHON3_VER}-dnspython>=1.15.0:dns/py-dnspython@py${SAMBA4_PYTHON3_VER}
-RUN_DEPENDS+=			py${SAMBA4_PYTHON3_VER}-dnspython>=1.15.0:dns/py-dnspython@py${SAMBA4_PYTHON3_VER}
-
-BUILD_DEPENDS+=			py${SAMBA4_PYTHON3_VER}-iso8601>=0.1.11:devel/py-iso8601@py${SAMBA4_PYTHON3_VER}
-RUN_DEPENDS+=			py${SAMBA4_PYTHON3_VER}-iso8601>=0.1.11:devel/py-iso8601@py${SAMBA4_PYTHON3_VER}
-# cpython-36m
-SAMBA4_PYTHON3_SO_ABI!=		[ ! -f "${LOCALBASE}/bin/${SAMBA4_PYTHON3}" ] || ${LOCALBASE}/bin/${SAMBA4_PYTHON3} -c 'import sysconfig; print(sysconfig.get_config_var("SOABI") or "")' 2>/dev/null
-SAMBA4_PYTHON3_SITELIBDIR=	lib/python${SAMBA4_PYTHON3_VERSION}/site-packages
-
-CONFIGURE_ENV+=			PYTHON3_SO_ABI_FLAG=.${SAMBA4_PYTHON3_SO_ABI}
-CONFIGURE_ARGS+=		--extra-python=${LOCALBASE}/bin/${SAMBA4_PYTHON3}
-
-PLIST_SUB+=			SAMBA4_PYTHON3="" SAMBA4_PYTHON3_SITELIBDIR="${SAMBA4_PYTHON3_SITELIBDIR}"
-SUB_LIST+=			SAMBA4_PYTHON3="" SAMBA4_PYTHON3_SITELIBDIR="${SAMBA4_PYTHON3_SITELIBDIR}"
-.else
-PLIST_SUB+=			SAMBA4_PYTHON3="@comment "
-SUB_LIST+=			SAMBA4_PYTHON3="@comment "
-.endif
 .endif
 
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
@@ -605,15 +577,27 @@ pre-build-MANDOC-off:
 .endif
 
 post-install-rm-junk:
-.for f in vfs_aio_linux.8 vfs_btrfs.8 vfs_ceph.8 vfs_gpfs.8
-				${RM} ${STAGEDIR}${PREFIX}/man/man8/${f}
-.endfor
 .if defined(NO_PYTHON)
 				${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party/dns \
 					 ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party/iso8601
 .endif
 
-post-install: post-install-rm-junk
+post-install-fix-manpages:
+.for f in vfs_aio_linux.8 vfs_btrfs.8 vfs_ceph.8 vfs_gpfs.8
+				${RM} ${STAGEDIR}${PREFIX}/man/man8/${f}
+.endfor
+.if defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes
+.	for f in ldbadd.1 ldbdel.1 ldbedit.1 ldbmodify.1 ldbrename.1 ldbsearch.1
+				${MV} ${STAGEDIR}${PREFIX}/man/man1/${f} ${STAGEDIR}${PREFIX}/man/man1/samba-${f}
+.	endfor
+.endif
+.if defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes
+.	for f in tdbbackup.8 tdbdump.8 tdbrestore.8 tdbtool.8
+				${MV} ${STAGEDIR}${PREFIX}/man/man8/${f} ${STAGEDIR}${PREFIX}/man/man8/samba-${f}
+.	endfor
+.endif
+
+post-install: post-install-rm-junk post-install-fix-manpages
 				${LN} -sf smb.conf.5.gz ${STAGEDIR}${PREFIX}/man/man5/smb4.conf.5.gz
 # Run post-install script
 .for dir in			${SAMBA4_LOGDIR} ${SAMBA4_RUNDIR} ${SAMBA4_LOCKDIR} ${SAMBA4_MODULEDIR}
