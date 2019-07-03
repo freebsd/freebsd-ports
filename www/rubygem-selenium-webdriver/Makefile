@@ -3,6 +3,7 @@
 
 PORTNAME=	selenium-webdriver
 PORTVERSION=	3.14.1
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -17,5 +18,8 @@ RUN_DEPENDS=	rubygem-childprocess>=0.5:devel/rubygem-childprocess \
 
 USES=		gem
 USE_RUBY=	yes
+# do not strip files as this breaks the build of the port
+# for more details: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=220330
+STRIP_CMD=	${TRUE}
 
 .include <bsd.port.mk>
