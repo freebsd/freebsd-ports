@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=_Release
 PORTREVISION=	6
 CATEGORIES=	www ipv6
 
-MAINTAINER=	lichray@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Goanna-based web browser
 
 BROKEN_FreeBSD_13_amd64=	xpcshell crashes after base Clang updated to 8.0.0
