@@ -12786,7 +12786,7 @@ www/rubygem-heroku||2019-05-31|Has expired: Upstream has changed to node-based C
 multimedia/gmerlin-avdecoder||2019-05-31|Has expired: unused in the ports tree and depends on vulnerable multimedia/ffmpeg0
 security/racoon2-legacy|security/racoon2|2019-05-31|Has expired: No longer supported upstream, use security/racoon2
 www/pivotx||2019-05-31|Has expired: inactive upstream and does not work with PHP 7
-dns/bind912|dns/bind914|2019-05-31|Has expired: Support ends, please move to dns/bind914.
+dns/bind912|dns/bind914|2019-05-31|Has expired: Support ends, please move to dns/bind914
 multimedia/vdr-plugin-softhddevice||2019-05-31|Has expired: unmaintained and depends on vulnerable multimedia/ffmpeg0
 devel/pecl-pthreads||2019-06-02|Has expired: Does not work with recent versions of php
 net-mgmt/ccnet-client||2019-06-10|Removed, no longer has dependencies and has been abandoned upstream
@@ -12807,9 +12807,9 @@ security/py-bro-pkg|security/py-zkg|2019-06-17|Renamed to match upstream changes
 devel/py-pydocumentdb|devel/py-azure-cosmos|2019-06-20|Renamed upstream
 www/rubygem-lograge-rails50|www/rubygem-lograge-rails5|2019-06-21|Obsolete by gitlab-ce upgrade, use www/rubygem-lograge-rails5 instead
 devel/rubygem-batch-loader12|devel/rubygem-batch-loader|2019-06-21|Obsolete by gitlab-ce upgrade, use devel/rubygem-batch-loader instead
-security/easy-rsa2|security/easy-rsa|2019-06-23|Has expired: Use easy-rsa 3 instead.
+security/easy-rsa2|security/easy-rsa|2019-06-23|Has expired: Use easy-rsa 3 instead
 devel/py-robotframework-selenium2library|devel/py-robotframework-seleniumlibrary|2019-06-25|Renamed to match upstream
-net-p2p/zetacoin-nox11|net-p2p/zetacoin|2019-06-26|Slave port folded back into now text-only master port.
+net-p2p/zetacoin-nox11|net-p2p/zetacoin|2019-06-26|Slave port folded back into now text-only master port
 net/tigervnc||2019-06-29|Removed: Non-essential meta port
 sysutils/cfengine33|sysutils/cfengine313|2019-06-30|Has expired: No longer supported upstream
 sysutils/cfengine-masterfiles38|sysutils/cfengine-masterfiles313|2019-06-30|Has expired: No longer supported upstream
@@ -12841,4 +12841,4 @@ devel/rubygem-fastthread||2019-06-30|Has expired: Does not build for all support
 www/rubygem-responders-rails50|www/rubygem-responders|2019-06-30|Has expired: Use www/rubygem-responders (depends on Rails 5.0) instead
 emulators/xen-kernel47|emulators/xen-kernel|2019-07-01|Has expired: This port is about to be removed, please update to a newer Xen version
 sysutils/xen-tools47|sysutils/xen-tools|2019-07-01|Has expired: This port is about to be removed, please update to a newer Xen version
-www/palemoon||2019-07-03|Not maintained and full of security holes.
+www/palemoon||2019-07-03|Not maintained and full of security holes
