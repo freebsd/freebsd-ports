@@ -4498,6 +4498,7 @@
 %%WWWDIR%%/app/policies/project_snippet_policy.rb
 %%WWWDIR%%/app/policies/protected_branch_policy.rb
 %%WWWDIR%%/app/policies/release_policy.rb
+%%WWWDIR%%/app/policies/repository_policy.rb
 %%WWWDIR%%/app/policies/suggestion_policy.rb
 %%WWWDIR%%/app/policies/user_policy.rb
 %%WWWDIR%%/app/presenters/README.md
@@ -11579,6 +11580,7 @@
 %%WWWDIR%%/lib/gitlab/user_access.rb
 %%WWWDIR%%/lib/gitlab/user_extractor.rb
 %%WWWDIR%%/lib/gitlab/utils.rb
+%%WWWDIR%%/lib/gitlab/utils/deep_size.rb
 %%WWWDIR%%/lib/gitlab/utils/merge_hash.rb
 %%WWWDIR%%/lib/gitlab/utils/override.rb
 %%WWWDIR%%/lib/gitlab/utils/strong_memoize.rb
@@ -13490,6 +13492,7 @@
 %%WWWDIR%%/spec/frontend/ide/lib/diff/diff_spec.js
 %%WWWDIR%%/spec/frontend/ide/lib/editor_options_spec.js
 %%WWWDIR%%/spec/frontend/ide/lib/files_spec.js
+%%WWWDIR%%/spec/frontend/ide/services/index_spec.js
 %%WWWDIR%%/spec/frontend/ide/stores/modules/commit/mutations_spec.js
 %%WWWDIR%%/spec/frontend/ide/stores/modules/file_templates/getters_spec.js
 %%WWWDIR%%/spec/frontend/ide/stores/modules/file_templates/mutations_spec.js
@@ -13626,6 +13629,7 @@
 %%WWWDIR%%/spec/graphql/types/issuable_state_enum_spec.rb
 %%WWWDIR%%/spec/graphql/types/issue_state_enum_spec.rb
 %%WWWDIR%%/spec/graphql/types/issue_type_spec.rb
+%%WWWDIR%%/spec/graphql/types/label_type_spec.rb
 %%WWWDIR%%/spec/graphql/types/merge_request_state_enum_spec.rb
 %%WWWDIR%%/spec/graphql/types/merge_request_type_spec.rb
 %%WWWDIR%%/spec/graphql/types/metadata_type_spec.rb
@@ -15261,6 +15265,7 @@
 %%WWWDIR%%/spec/lib/gitlab/usage_data_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/user_access_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/user_extractor_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/utils/deep_size_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/utils/merge_hash_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/utils/override_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/utils/strong_memoize_spec.rb
@@ -16646,6 +16651,7 @@
 %%WWWDIR%%/spec/support/shared_examples/requests/api/diff_discussions.rb
 %%WWWDIR%%/spec/support/shared_examples/requests/api/discussions.rb
 %%WWWDIR%%/spec/support/shared_examples/requests/api/issuable_participants_examples.rb
+%%WWWDIR%%/spec/support/shared_examples/requests/api/issues/merge_requests_count_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/requests/api/notes.rb
 %%WWWDIR%%/spec/support/shared_examples/requests/api/resolvable_discussions.rb
 %%WWWDIR%%/spec/support/shared_examples/requests/api/status_shared_examples.rb
@@ -16727,6 +16733,7 @@
 %%WWWDIR%%/spec/uploaders/workers/object_storage/migrate_uploads_worker_spec.rb
 %%WWWDIR%%/spec/validators/addressable_url_validator_spec.rb
 %%WWWDIR%%/spec/validators/branch_filter_validator_spec.rb
+%%WWWDIR%%/spec/validators/color_validator_spec.rb
 %%WWWDIR%%/spec/validators/devise_email_validator_spec.rb
 %%WWWDIR%%/spec/validators/js_regex_validator_spec.rb
 %%WWWDIR%%/spec/validators/namespace_path_validator_spec.rb
