@@ -12,9 +12,10 @@ COMMENT=	Free interpreter for APL programming language
 
 LICENSE=	GPLv3+
 
+# XXX: should be optional, but no way to disable in the configure script
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
-USES=		gmake libtool localbase
+USES=		compiler:c++11-lang gmake libtool localbase
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -34,7 +35,7 @@ GTK3_CONFIGURE_WITH=	gtk3
 PCRE_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 PCRE_CONFIGURE_WITH=	pcre=${LOCALBASE}
 
-SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+SQLITE_USES=		sqlite:3
 SQLITE_CONFIGURE_WITH=	sqlite3=${LOCALBASE}
 
 post-patch:
@@ -45,5 +46,10 @@ post-patch:
 		${WRKSRC}/src/emacs_mode/UnixSocketListener.cc
 	@${REINPLACE_CMD} -e 's,POLLRDHUP,POLLHUP,' \
 		${WRKSRC}/src/Quad_GTK.cc
+# Fixes below are for GCC-based builds
+	@${REINPLACE_CMD} -e '28s,^,#include <cstring>,' \
+		${WRKSRC}/src/Error.hh
+	@${REINPLACE_CMD} -E '/(total|used)_memory/s,uint64_t,int64_t,' \
+		${WRKSRC}/src/Quad_WA.?? ${WRKSRC}/src/Value.cc
 
 .include <bsd.port.mk>
