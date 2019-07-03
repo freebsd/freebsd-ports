@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -69,6 +69,16 @@ EXTRA_PATCHES+=	${PATCHDIR}/xsa297-4.12-1.patch:-p1 \
 		${PATCHDIR}/xsa297-4.12-5.patch:-p1 \
 		${PATCHDIR}/xsa297-4.12-6.patch:-p1 \
 		${PATCHDIR}/xsa297-4.12-7.patch:-p1
+
+# LLD 8 changed the behaviour re the placement of orphaned sections, which
+# produces a non-bootable Xen kernel:
+#
+# https://bugs.llvm.org/show_bug.cgi?id=42327
+#
+# Backport the fixes from upstream
+EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-linker-add-a-reloc-section-to-ELF-linker-script.patch:-p1 \
+		${PATCHDIR}/0003-xen-link-handle-.init.rodata.cst-sections-in-the-lin.patch:-p1 \
+		${PATCHDIR}/0004-x86-check-for-multiboot-1-2-header-presence.patch:-p1
 
 .include <bsd.port.options.mk>
 
