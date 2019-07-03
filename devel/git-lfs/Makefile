@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		go
+USES=		go:modules
 USE_GITHUB=	yes
 
 GO_PKGNAME=	github.com/${PORTNAME}/${PORTNAME}
