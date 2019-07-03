@@ -21,9 +21,11 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 OPTIONS_DEFINE=	DOCS HASH_BKP SASL2 TLS REPLYFILTER
+OPTIONS_RADIO=	MIME_HTML
 OPTIONS_SINGLE=	MTS LOCKING
 OPTIONS_SINGLE_MTS=	SMTP SENDMAIL_SMTP SENDMAIL_PIPE
 OPTIONS_SINGLE_LOCKING=	DOT FCNTL FLOCK LOCKF
+OPTIONS_RADIO_MIME_HTML=	LINKS ELINKS LYNX W3M
 
 SASL2_DESC=	SASL2 support
 SASL2_CONFIGURE_WITH=	cyrus-sasl
@@ -55,6 +57,25 @@ FLOCK_DESC=	flock() file locking
 FLOCK_CONFIGURE_ON=	--with-locking=flock
 LOCKF_DESC=	lockf file locking
 LOCKF_CONFIGURE_ON=	--with-locking=lockf
+
+# The reason for BUILD_DEPENDS is nmh detects and configures itself for
+# whichever text-based browser is installed.
+
+ELINKS_DESC=	Install dependencies for www/elinks
+ELINKS_BUILD_DEPENDS=	links>=0:www/elinks
+ELINKS_RUN_DEPENDS=	links>=0:www/elinks
+
+LINKS_DESC=	Install dependencies for www/links
+LINKS_BUILD_DEPENDS=	links>=0:www/links
+LINKS_RUN_DEPENDS=	links>=0:www/links
+
+LYNX_DESC=	Install dependencies for www/lynx
+LYNX_BUILD_DEPENDS=	lynx>=0:www/lynx
+LYNX_RUN_DEPENDS=	lynx>=0:www/lynx
+
+W3M_DESC=	Install dependencies for www/w3m
+W3M_BUILD_DEPENDS=	w3m>=0:www/w3m
+W3M_RUN_DEPENDS=	w3m>=0:www/w3m
 
 OPTIONS_DEFAULT=	SMTP FLOCK
 
