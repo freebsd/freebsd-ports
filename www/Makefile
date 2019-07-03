@@ -1323,7 +1323,6 @@
     SUBDIR += p5-pQuery
     SUBDIR += p5-webservice-validator-css-w3c
     SUBDIR += p5-webservice-validator-html-w3c
-    SUBDIR += palemoon
     SUBDIR += paros
     SUBDIR += payara
     SUBDIR += pear-HTML_AJAX
