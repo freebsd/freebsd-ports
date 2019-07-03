@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bindgen
-DISTVERSION=	0.49.3
+DISTVERSION=	0.50.0
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 PKGNAMEPREFIX=	rust-
@@ -19,11 +19,11 @@ RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 USES=		cargo
 PLIST_FILES=	bin/${PORTNAME}
 
-CARGO_CRATES=	aho-corasick-0.7.3 \
+CARGO_CRATES=	aho-corasick-0.7.4 \
 		ansi_term-0.11.0 \
 		atty-0.2.11 \
 		backtrace-0.3.32 \
-		backtrace-sys-0.1.29 \
+		backtrace-sys-0.1.30 \
 		bitflags-1.1.0 \
 		byteorder-1.3.2 \
 		cc-1.0.37 \
@@ -32,7 +32,7 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		clang-sys-0.28.0 \
 		clap-2.33.0 \
 		diff-0.1.11 \
-		env_logger-0.6.1 \
+		env_logger-0.6.2 \
 		failure-0.1.5 \
 		fxhash-0.2.1 \
 		glob-0.2.11 \
