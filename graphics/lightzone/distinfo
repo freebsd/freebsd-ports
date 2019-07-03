@@ -1,3 +1,5 @@
-TIMESTAMP = 1523730077
+TIMESTAMP = 1562142983
 SHA256 (lightzone/ktgw0316-LightZone-4.1.8-3-g36e87773_GH0.tar.gz) = 44b2683d96672715b137c41690a54b29e8f63bd6e66b8b66989c17ea3baa976a
 SIZE (lightzone/ktgw0316-LightZone-4.1.8-3-g36e87773_GH0.tar.gz) = 20302044
+SHA256 (lightzone/376ec67ddfb1.patch) = 90316fbdf08c0bc22bdd1e626343a33e06b9f3a641e7b103572e2c0e9896011e
+SIZE (lightzone/376ec67ddfb1.patch) = 86993
