@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-terminal
-PORTVERSION=	0.8.7.4
-PORTREVISION=	2
+PORTVERSION=	0.8.8
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -16,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libgnutls.so:security/gnutls
-
-#libdbus-glib-1.so:devel/dbus-glib XXX check
 
 USES=		gettext-tools gmake gnome pkgconfig tar:bzip2 xfce:gtk3
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libxml2 vte3
