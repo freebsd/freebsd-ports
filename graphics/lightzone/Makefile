@@ -4,9 +4,12 @@
 PORTNAME=	lightzone
 DISTVERSION=	4.1.8-3
 DISTVERSIONSUFFIX=	-g36e87773
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics java
 DIST_SUBDIR=	${PORTNAME}
+
+PATCH_SITES=	https://github.com/ktgw0316/LightZone/commit/
+PATCHFILES=	376ec67ddfb1.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Professional-level digital darkroom and photo editor
@@ -43,9 +46,11 @@ JAVA_BUILD=	yes
 JAVA_RUN=	yes
 INSTALLS_ICONS=	yes
 
+PATCH_WRKSRC=	${WRKSRC:H}
+WRKSRC_SUBDIR=	linux
+
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 PLIST_SUB=	LIBDIR="${LIBDIR}"
-WRKSRC_SUBDIR=	linux
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' -e 's|g++|${CXX}|' ${WRKSRC}/../lightcrafts/mk/platform.mk
