@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librsvg
-PORTVERSION=	2.45.6
-PORTREVISION=	1
+PORTVERSION=	2.45.7
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2-rust
@@ -39,9 +38,6 @@ MAKE_ENV=	RUSTC=${LOCALBASE}/bin/rustc
 CONFLICTS_INSTALL=	librsvg2
 
 post-patch:
-# Avoid dependency loop with gtk3 (it depends on librsvg2), do not build rsvg-view
-	@${REINPLACE_CMD} -e 's|GTK3_REQUIRED=3.[0-9][0-9].[0-9]|GTK3_REQUIRED=9.90.0|g' \
-		${WRKSRC}/configure
 # Disable vendor checksums
 	@${REINPLACE_CMD} -e 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/vendor/*/.cargo-checksum.json
