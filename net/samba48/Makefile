@@ -3,7 +3,7 @@
 
 PORTNAME=			${SAMBA4_BASENAME}48
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			1
+PORTREVISION=			2
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -73,7 +73,7 @@ USES=				compiler:c++11-lang cpe iconv gettext-runtime \
 				localbase:ldflags perl5 pkgconfig shebangfix \
 				ssl waf
 USE_PERL5=			build
-USE_LDCONFIG=			${SAMBA4_LIBDIR}
+USE_LDCONFIG=			${SAMBA4_LIBDIR} ${SAMBA4_LIBDIR}/private
 WAF_CMD=			buildtools/bin/waf
 CONFIGURE_LOG=			bin/config.log
 
@@ -157,13 +157,14 @@ BUILD_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 ### Bundled libraries
 SAMBA4_BUNDLED_CMOCKA?=		no
-SAMBA4_BUNDLED_TALLOC?=		no
-SAMBA4_BUNDLED_TEVENT?=		no
-SAMBA4_BUNDLED_TDB?=		no
+SAMBA4_BUNDLED_TALLOC?=		yes
+SAMBA4_BUNDLED_TEVENT?=		yes
+SAMBA4_BUNDLED_TDB?=		yes
 SAMBA4_BUNDLED_LDB?=		yes
 # cmocka
 .if defined(SAMBA4_BUNDLED_CMOCKA) && ${SAMBA4_BUNDLED_CMOCKA} == yes
 SAMBA4_BUNDLED_LIBS+=		cmocka
+SAMBA4_BUILTIN_LIBS+=		cmocka
 CONFLICTS+=			cmocka-1.*
 PLIST_SUB+=			SAMBA4_BUNDLED_CMOCKA=""
 SUB_LIST+=			SAMBA4_BUNDLED_CMOCKA=""
@@ -177,6 +178,8 @@ SUB_LIST+=			SAMBA4_BUNDLED_CMOCKA="@comment "
 # talloc
 .if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
 SAMBA4_BUNDLED_LIBS+=		talloc
+SAMBA4_BUILTIN_LIBS+=		talloc
+CONFLICTS+=			talloc1-2.*
 PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC=""
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC=""
 .else
@@ -189,6 +192,8 @@ SUB_LIST+=			SAMBA4_BUNDLED_TALLOC="@comment "
 # tevent
 .if defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes
 SAMBA4_BUNDLED_LIBS+=		tevent
+SAMBA4_BUILTIN_LIBS+=		tevent
+CONFLICTS+=			tevent1-0.*
 PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT=""
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT=""
 .else
@@ -201,6 +206,8 @@ SUB_LIST+=			SAMBA4_BUNDLED_TEVENT="@comment "
 # tdb
 .if defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes
 SAMBA4_BUNDLED_LIBS+=		tdb
+SAMBA4_BUILTIN_LIBS+=		tdb
+CONFLICTS+=			tdb1-1.*
 PLIST_SUB+=			SAMBA4_BUNDLED_TDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_TDB=""
 .else
@@ -214,6 +221,7 @@ SUB_LIST+=			SAMBA4_BUNDLED_TDB="@comment "
 .if defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes
 SAMBA4_BUNDLED_LDB=		yes
 SAMBA4_BUNDLED_LIBS+=		ldb
+SAMBA4_BUILTIN_LIBS+=		ldb
 CONFLICTS+=			ldb-1.* ldb1[23]-1.*
 PLIST_SUB+=			SAMBA4_BUNDLED_LDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_LDB=""
@@ -230,6 +238,7 @@ SUB_LIST+=			SAMBA4_BUNDLED_LDB="@comment "
 	|| (defined(SAMBA4_BUNDLED_LDB) && ${SAMBA4_BUNDLED_LDB} == yes) \
 	|| (defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes)
 SAMBA4_BUNDLED_LIBS+=		replace
+SAMBA4_BUILTIN_LIBS+=		replace
 .endif
 # Don't use external libcom_err
 SAMBA4_BUNDLED_LIBS+=		com_err
@@ -456,7 +465,7 @@ SAMBA4_MODULES+=		${WANT_EXP_MODULES}
 
 .if defined(SAMBA4_BUNDLED_LIBS) && !empty(SAMBA4_BUNDLED_LIBS)
 CONFIGURE_ARGS+=		--bundled-libraries="${SAMBA4_BUNDLED_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"
-CONFIGURE_ARGS+=		--builtin-libraries="${SAMBA4_BUNDLED_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"
+CONFIGURE_ARGS+=		--builtin-libraries="${SAMBA4_BUILTIN_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"
 .endif
 
 .if defined(SAMBA4_MODULES) && !empty(SAMBA4_MODULES)

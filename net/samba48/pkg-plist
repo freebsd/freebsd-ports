@@ -1289,26 +1289,32 @@ man/man8/winbindd.8.gz
 %%CLUSTER%%@dir /var/lib
 %%CLUSTER%%@dir /var/run/ctdb
 @comment Use bundled libraries
-%%SAMBA4_BUNDLED_LDB%%bin/ldbadd
-%%SAMBA4_BUNDLED_LDB%%bin/ldbdel
-%%SAMBA4_BUNDLED_LDB%%bin/ldbedit
-%%SAMBA4_BUNDLED_LDB%%bin/ldbmodify
-%%SAMBA4_BUNDLED_LDB%%bin/ldbrename
-%%SAMBA4_BUNDLED_LDB%%bin/ldbsearch
-%%SAMBA4_BUNDLED_TDB%%bin/tdbbackup
-%%SAMBA4_BUNDLED_TDB%%bin/tdbdump
-%%SAMBA4_BUNDLED_TDB%%bin/tdbrestore
-%%SAMBA4_BUNDLED_TDB%%bin/tdbtool
-%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/_ldb_text.py
+%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbadd
+%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbdel
+%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbedit
+%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbmodify
+%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbrename
+%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbsearch
+%%SAMBA4_BUNDLED_TDB%%bin/samba-tdbbackup
+%%SAMBA4_BUNDLED_TDB%%bin/samba-tdbdump
+%%SAMBA4_BUNDLED_TDB%%bin/samba-tdbrestore
+%%SAMBA4_BUNDLED_TDB%%bin/samba-tdbtool
+%%SAMBA4_BUNDLED_TDB%%%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/tdb.so
 %%SAMBA4_BUNDLED_TDB%%%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/_tdb_text.py
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/ldb.so
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/_ldb_text.py
 %%SAMBA4_BUNDLED_TEVENT%%%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/_tevent.so
-%%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/talloc.so
 %%SAMBA4_BUNDLED_TEVENT%%%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/tevent.py
+%%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/talloc.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/_ldb_text.py
 %%SAMBA4_BUNDLED_TDB%%%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/_tdb_text.py
 %%SAMBA4_BUNDLED_TEVENT%%%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/_tevent.cpython-36m.so
-%%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/talloc.cpython-36m.so
 %%SAMBA4_BUNDLED_TEVENT%%%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/tevent.py
+%%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/talloc.cpython-36m.so
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON3%%lib/samba4/private/libpyldb-util.cpython-36m.so.1
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON2%%lib/samba4/private/libpyldb-util.so.1
+%%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_PYTHON3%%lib/samba4/private/libpytalloc-util.cpython-36m.so.2
+%%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_PYTHON2%%lib/samba4/private/libpytalloc-util.so.2
 %%SAMBA4_BUNDLED_CMOCKA%%lib/samba4/private/libcmocka-samba4.so
 %%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-cmdline-samba4.so
 %%SAMBA4_BUNDLED_LDB%%lib/shared-modules/ldb/asq.so
