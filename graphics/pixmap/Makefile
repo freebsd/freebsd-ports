@@ -23,8 +23,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake
 USE_XORG=	xpm xbitmaps x11 xaw xmu xt sm ice xext
 
-CFLAGS+=	-D_X_SENTINEL\(x\)= -D_X_ATTRIBUTE_PRINTF\(x,y\)= \
-		-D_X_DEPRECATED= -DUSG
+# Remove bundled X11 headers and use headers from X11 libraries
+post-extract:
+	${RM} -rf ${WRKSRC}/X11
 
 post-configure:
 	@${REINPLACE_CMD} 's| $$(PIXMAPDIR|$$(PIXMAPDIR|' \
