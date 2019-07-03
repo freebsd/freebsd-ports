@@ -10,13 +10,13 @@
 #
 # version 	If your port requires only some set of Python versions, you
 # 		can set this to [min]-[max] or min+ or -max or as an
-#		explicit version (eg. 3.3-3.4 for [min]-[max], 2.7+ or -3.3
+#		explicit version (eg. 3.5-3.6 for [min]-[max], 2.7+ or -3.6
 #		for min+ and -max, 2.7 for an explicit version). Example:
 #
 #			USES=python:2.7		# Only use Python 2.7
-#			USES=python:3.3+	# Use Python 3.3 or newer
-#			USES=python:3.3-3.4	# Use Python 3.3 or 3.4
-#			USES=python:-3.3	# Use any Python up to 3.3
+#			USES=python:3.5+	# Use Python 3.5 or newer
+#			USES=python:3.5-3.6	# Use Python 3.5 or 3.6
+#			USES=python:-3.6	# Use any Python up to 3.6
 #			USES=python		# Use the set default Python
 #						# version
 #
@@ -43,7 +43,7 @@
 # Exported variables:
 #
 # PYTHON_VERSION	- The chosen Python interpreter including the version,
-#			  e.g. python2.7, python3.3, etc.
+#			  e.g. python2.7, python3.5, etc.
 #
 # Variables, which can be set by the port:
 #
@@ -170,14 +170,14 @@
 #			  without dots, e.g. 2706, 3401, ...
 #
 # PYTHON_SUFFIX		- The major-minor release number of the chosen Python
-#			  interpreter without dots, e.g. 27, 34, ...
+#			  interpreter without dots, e.g. 27, 36, ...
 #			  Used for prefixes and suffixes.
 #
 # PYTHON_MAJOR_VER	- The major release version of the chosen Python
 #			  interpreter, e.g. 2, 3, ...
 #
 # PYTHON_VER		- The major-minor release version of the chosen Python
-#			  interpreter, e.g. 2.7, 3.4, ...
+#			  interpreter, e.g. 2.7, 3.6, ...
 #
 # PYTHON_ABIVER		- Additional ABI flags set by the chosen Python
 #			  interpreter, e.g. md
@@ -440,7 +440,7 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 # To avoid having dependencies with @ and empty flavor:
 # _PYTHON_VERSION is either set by (first that matches):
 # - If using Python flavors, from the current Python flavor
-# - If using a version restriction (USES=python:3.4+), from the first
+# - If using a version restriction (USES=python:3.5+), from the first
 #   acceptable default Python version.
 # - From PYTHON_DEFAULT
 PY_FLAVOR=	py${_PYTHON_VERSION:S/.//}
@@ -458,8 +458,8 @@ DEPENDS_ARGS+=		PYTHON_VERSION=${PYTHON_VERSION}
 # NOTE:
 #
 #  PYTHON_VERSION will hold whatever is passed down the dependency chain.
-#  If a user runs `make PYTHON_VERSION=python3.3, PYTHON_VERSION will be
-#  set to 'python3.3'. A port however may require a different version,
+#  If a user runs `make PYTHON_VERSION=python3.5, PYTHON_VERSION will be
+#  set to 'python3.5'. A port however may require a different version,
 #  which is stored (above) in _PYTHON_VERSION.
 #  Every python bit below hence should use python${_PYTHON_VERSION}, since
 #  this is the value, the _port_ requires
