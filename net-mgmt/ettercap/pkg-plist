@@ -1,5 +1,5 @@
 bin/ettercap
-%%DESKTOP%%%%GTK2%%bin/ettercap-pkexec
+%%DESKTOP%%%%GTK3%%bin/ettercap-pkexec
 bin/etterfilter
 bin/etterlog
 @sample etc/etter.conf.sample
@@ -40,9 +40,13 @@ bin/etterlog
 %%PLUGINS%%lib/ettercap/ec_smurf_attack.so
 %%PLUGINS%%lib/ettercap/ec_sslstrip.so
 %%PLUGINS%%lib/ettercap/ec_stp_mangler.so
+%%PLUGINS%%lib/ettercap/ec_krb5_downgrade.so
+lib/libettercap-ui.so
+lib/libettercap-ui.so.0
+lib/libettercap-ui.so.0.8.2
 lib/libettercap.so
 lib/libettercap.so.0
-lib/libettercap.so.0.0.0
+lib/libettercap.so.0.8.2
 man/man5/etter.conf.5.gz
 %%DESKTOP%%man/man8/ettercap-pkexec.8.gz
 man/man8/ettercap.8.gz
@@ -50,8 +54,8 @@ man/man8/ettercap_curses.8.gz
 %%PLUGINS%%man/man8/ettercap_plugins.8.gz
 man/man8/etterfilter.8.gz
 man/man8/etterlog.8.gz
-%%DESKTOP%%%%GTK2%%share/appdata/ettercap.appdata.xml
-%%DESKTOP%%%%GTK2%%share/applications/ettercap.desktop
+%%DESKTOP%%%%GTK3%%share/appdata/ettercap.appdata.xml
+%%DESKTOP%%%%GTK3%%share/applications/ettercap.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -86,5 +90,5 @@ man/man8/etterlog.8.gz
 %%DATADIR%%/etterfilter.cnt
 %%DATADIR%%/etterfilter.tbl
 %%DATADIR%%/etterlog.dtd
-%%DESKTOP%%%%GTK2%%share/pixmaps/ettercap.svg
-%%DESKTOP%%%%GTK2%%share/polkit-1/actions/org.pkexec.ettercap.policy
+%%DESKTOP%%%%GTK3%%share/pixmaps/ettercap.svg
+%%DESKTOP%%%%GTK3%%share/polkit-1/actions/org.pkexec.ettercap.policy
