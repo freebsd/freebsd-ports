@@ -25,7 +25,7 @@ OPTIONS_RADIO=	MIME_HTML
 OPTIONS_SINGLE=	MTS LOCKING
 OPTIONS_SINGLE_MTS=	SMTP SENDMAIL_SMTP SENDMAIL_PIPE
 OPTIONS_SINGLE_LOCKING=	DOT FCNTL FLOCK LOCKF
-OPTIONS_RADIO_MIME_HTML=	LINKS ELINKS LYNX W3M
+OPTIONS_RADIO_MIME_HTML=	ELINKS LINKS LYNX W3M
 
 SASL2_DESC=	SASL2 support
 SASL2_CONFIGURE_WITH=	cyrus-sasl
@@ -62,8 +62,8 @@ LOCKF_CONFIGURE_ON=	--with-locking=lockf
 # whichever text-based browser is installed.
 
 ELINKS_DESC=	Install dependencies for www/elinks
-ELINKS_BUILD_DEPENDS=	links>=0:www/elinks
-ELINKS_RUN_DEPENDS=	links>=0:www/elinks
+ELINKS_BUILD_DEPENDS=	elinks>=0:www/elinks
+ELINKS_RUN_DEPENDS=	elinks>=0:www/elinks
 
 LINKS_DESC=	Install dependencies for www/links
 LINKS_BUILD_DEPENDS=	links>=0:www/links
