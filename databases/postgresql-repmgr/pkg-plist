@@ -8,6 +8,8 @@ share/postgresql/extension/repmgr--4.1--4.2.sql
 share/postgresql/extension/repmgr--4.2--4.3.sql
 share/postgresql/extension/repmgr--4.2.sql
 share/postgresql/extension/repmgr--4.3.sql
+share/postgresql/extension/repmgr--4.3--4.4.sql
+share/postgresql/extension/repmgr--4.4.sql
 share/postgresql/extension/repmgr--unpackaged--4.0.sql
 share/postgresql/extension/repmgr.control
 @sample etc/repmgr.conf.sample
