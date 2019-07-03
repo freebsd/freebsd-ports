@@ -1,0 +1,11 @@
+--- cint/lib/prec_stl/map.orig	2019-07-03 06:37:58 UTC
++++ cint/lib/prec_stl/map
+@@ -115,7 +115,7 @@ class map {
+     iterator operator++(int a);
+     iterator& operator--();
+     iterator operator--(int a);
+-#if defined (G__VISUAL) || (defined(G__GNUC_VER) && G__GNUC_VER>=3004) || defined(G__INTEL_COMPILER)
++#if defined (G__VISUAL) || (defined(G__GNUC_VER) && G__GNUC_VER>=3004 && G__GNUC_VER<9000) || defined(G__INTEL_COMPILER)
+     bool operator==(const iterator& x) ;
+     bool operator!=(const iterator& x) ;
+ #endif

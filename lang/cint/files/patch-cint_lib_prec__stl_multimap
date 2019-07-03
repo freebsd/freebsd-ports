@@ -1,0 +1,11 @@
+--- cint/lib/prec_stl/multimap.orig	2019-07-03 06:42:35 UTC
++++ cint/lib/prec_stl/multimap
+@@ -112,7 +112,7 @@ class multimap {
+     iterator operator++(int a);
+     iterator& operator--();
+     iterator operator--(int a);
+-#if defined (G__VISUAL) || (defined(G__GNUC) && G__GNUC_VER>=3004)
++#if defined (G__VISUAL) || (defined(G__GNUC) && G__GNUC_VER>=3004 && G__GNUC_VER<9000)
+     bool operator==(const iterator& x) ;
+     bool operator!=(const iterator& x) ;
+ #endif
