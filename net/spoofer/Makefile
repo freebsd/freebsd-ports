@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	spoofer
-PORTVERSION=	1.2.0
-PORTREVISION=	11
+PORTVERSION=	1.4.5
 CATEGORIES=	net
-MASTER_SITES=	http://www.caida.org/projects/spoofer/downloads/
+MASTER_SITES=	https://www.caida.org/projects/spoofer/downloads/
 
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Spoofer Project testing software
@@ -13,17 +12,18 @@ COMMENT=	Spoofer Project testing software
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	protoc:devel/protobuf
-RUN_DEPENDS=	scamper:net/scamper
 LIB_DEPENDS=	libprotobuf-lite.so:devel/protobuf
+RUN_DEPENDS=	scamper:net/scamper
+
+USES=		compiler:c++11-lib qt:5
+
+CONFIGURE_ARGS=	--disable-development --with-protobuf=${LOCALBASE}
+GNU_CONFIGURE=	yes
 
 PORTDOCS=	README
 
-USES=		compiler:c++11-lib qt:5
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-development
-
 OPTIONS_DEFINE=	DOCS GUI
-OPTIONS_DEFAULT=	GUI
+OPTIONS_DEFAULT=GUI
 OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
@@ -32,7 +32,6 @@ OPTIONS_SUB=	yes
 USE_QT=		buildtools_build qmake_build core network gui widgets
 USE_GL+=	gl
 USE_RC_SUBR=	${PORTNAME}
-INSTALLS_ICONS=	yes
 .else
 CONFIGURE_ARGS+=	--disable-manager
 .endif
