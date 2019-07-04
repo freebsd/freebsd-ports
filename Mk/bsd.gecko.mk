@@ -39,11 +39,6 @@ Gecko_Pre_Include=	bsd.gecko.mk
 # MOZILLA_PLIST_DIRS	List of directories to descend into when installing
 # 						and creating the plist
 #
-# MOZ_SED_ARGS			sed(1) commands through which MOZ_PIS_SCRIPTS are
-# 						filtered. There is a default set defined here, so
-# 						you probably want to add to MOZ_SED_ARGS rather
-# 						than clobber it
-#
 # MOZ_OPTIONS			configure arguments (added to .mozconfig). If
 # 						NOMOZCONFIG is defined, you probably want to set
 # 						CONFIGURE_ARGS+=${MOZ_OPTIONS}
@@ -61,9 +56,6 @@ Gecko_Pre_Include=	bsd.gecko.mk
 #
 # MOZ_TOOLKIT			A variable for the --enable-default-toolkit= in
 # 						CONFIGURE_ARGS. The default is cairo-gtk3.
-#
-# PORT_MOZCONFIG		Defaults to ${FILESDIR}/mozconfig.in, but can be
-# 						set to a generic mozconfig included with the port
 #
 # NOMOZCONFIG			Don't drop a customized .mozconfig into the build
 # 						directory. Options will have to be specified in
@@ -122,7 +114,6 @@ MOZILLA_SUFX?=	none
 MOZSRC?=	${WRKSRC}
 PLISTF?=	${WRKDIR}/plist_files
 
-PORT_MOZCONFIG?=	${FILESDIR}/mozconfig.in
 MOZCONFIG?=		${WRKSRC}/.mozconfig
 MOZILLA_PLIST_DIRS?=	bin lib share/pixmaps share/applications
 
@@ -374,24 +365,6 @@ MOZ_MAKE_FLAGS+=-j${MAKE_JOBS_NUMBER}
 MOZ_MK_OPTIONS+=MOZ_MAKE_FLAGS="${MOZ_MAKE_FLAGS}"
 .endif
 
-MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
-		-e 's|@CFLAGS@|${CFLAGS}|g'		\
-		-e 's|@LDFLAGS@|${LDFLAGS}|g'		\
-		-e 's|@LIBS@|${LIBS}|g'			\
-		-e 's|@LOCALBASE@|${LOCALBASE}|g'	\
-		-e 's|@PERL@|${PERL}|g'			\
-		-e 's|@MOZDIR@|${PREFIX}/lib/${MOZILLA}|g'	\
-		-e 's|%%PREFIX%%|${PREFIX}|g'		\
-		-e 's|%%CFLAGS%%|${CFLAGS}|g'		\
-		-e 's|%%LDFLAGS%%|${LDFLAGS}|g'		\
-		-e 's|%%LIBS%%|${LIBS}|g'		\
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g'	\
-		-e 's|%%PERL%%|${PERL}|g'		\
-		-e 's|%%MOZILLA%%|${MOZILLA}|g'		\
-		-e 's|%%MOZILLA_BIN%%|${MOZILLA_BIN}|g'	\
-		-e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g'
-MOZCONFIG_SED?= ${SED} ${MOZ_SED_ARGS}
-
 .if ${ARCH} == amd64
 . if ${USE_MOZILLA:M-nss}
 USE_BINUTILS=	# intel-gcm.s
@@ -415,9 +388,6 @@ post-patch: gecko-post-patch
 gecko-post-patch:
 	@${RM} ${MOZCONFIG}
 .if !defined(NOMOZCONFIG)
-	@if [ -e ${PORT_MOZCONFIG} ] ; then \
-		${MOZCONFIG_SED} < ${PORT_MOZCONFIG} >> ${MOZCONFIG} ; \
-	fi
 .for arg in ${MOZ_OPTIONS}
 	@${ECHO_CMD} ac_add_options ${arg:Q} >> ${MOZCONFIG}
 .endfor
