@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190628
+PORTVERSION=	s20190703
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,10 +16,10 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	cb4d396f
+GH_TAGNAME=	991f95b8
 PLIST_FILES=	bin/${PORTNAME}
 
-CARGO_CRATES=	aho-corasick-0.7.3 \
+CARGO_CRATES=	aho-corasick-0.7.4 \
 		ansi_term-0.11.0 \
 		aom-sys-0.1.2 \
 		arc-swap-0.3.11 \
@@ -28,9 +28,9 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		atty-0.2.11 \
 		autocfg-0.1.4 \
 		backtrace-0.3.32 \
-		backtrace-sys-0.1.29 \
+		backtrace-sys-0.1.30 \
 		bincode-1.1.4 \
-		bindgen-0.49.3 \
+		bindgen-0.49.2 \
 		bitflags-1.1.0 \
 		bitstream-io-0.8.2 \
 		bstr-0.2.1 \
@@ -49,13 +49,13 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		crossbeam-epoch-0.7.1 \
 		crossbeam-queue-0.1.2 \
 		crossbeam-utils-0.6.5 \
-		csv-1.1.0 \
+		csv-1.1.1 \
 		csv-core-0.1.6 \
 		ctor-0.1.9 \
 		dav1d-sys-0.2.0 \
 		difference-2.0.0 \
 		either-1.5.2 \
-		env_logger-0.6.1 \
+		env_logger-0.6.2 \
 		error-chain-0.10.0 \
 		failure-0.1.5 \
 		failure_derive-0.1.5 \
@@ -110,7 +110,6 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		regex-automata-0.1.7 \
 		regex-syntax-0.6.7 \
 		rustc-demangle-0.1.15 \
-		ryu-0.2.8 \
 		ryu-1.0.0 \
 		same-file-1.0.4 \
 		scan_fmt-0.2.3 \
@@ -119,7 +118,7 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		semver-parser-0.7.0 \
 		serde-1.0.94 \
 		serde_derive-1.0.94 \
-		serde_json-1.0.39 \
+		serde_json-1.0.40 \
 		shlex-0.1.1 \
 		signal-hook-0.1.9 \
 		signal-hook-registry-1.0.1 \
