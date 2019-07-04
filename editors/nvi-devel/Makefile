@@ -5,9 +5,10 @@ PORTNAME=	nvi
 PORTVERSION=	1.81.6
 PORTREVISION=	13
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/nvi/
+MASTER_SITES=	https://mirror.csclub.uwaterloo.ca/MacPorts/mpdistfiles/nvi/ \
+		LOCAL/leres/nvi
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Development snapshot of the world-renown nvi editor
 
 CONFLICTS_INSTALL=	nvi-m17n-[0-9]* xnview-[0-9]*
