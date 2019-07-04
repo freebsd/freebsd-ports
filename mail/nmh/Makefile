@@ -3,7 +3,7 @@
 
 PORTNAME=	nmh
 PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SAVANNAH
 
@@ -77,7 +77,7 @@ W3M_DESC=	Install dependencies for www/w3m
 W3M_BUILD_DEPENDS=	w3m>=0:www/w3m
 W3M_RUN_DEPENDS=	w3m>=0:www/w3m
 
-OPTIONS_DEFAULT=	SMTP FLOCK
+OPTIONS_DEFAULT=	SMTP FLOCK W3M
 
 .include <bsd.port.options.mk>
 
