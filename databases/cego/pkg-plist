@@ -24,7 +24,9 @@ include/cego/CegoAdminHandler.h
 include/cego/CegoAdminThread.h
 include/cego/CegoAdminThreadPool.h
 include/cego/CegoAggregation.h
+include/cego/CegoAliasObject.h
 include/cego/CegoAlterDesc.h
+include/cego/CegoAttrAlias.h
 include/cego/CegoAttrComp.h
 include/cego/CegoAttrCond.h
 include/cego/CegoAttrDesc.h
