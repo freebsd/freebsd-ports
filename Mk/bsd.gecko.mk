@@ -51,12 +51,6 @@ Gecko_Pre_Include=	bsd.gecko.mk
 # 						to .mozconfig). If NOMOZCONFIG is defined, you
 # 						probably want to set MAKE_ENV+=${MOZ_EXPORT}
 #
-# MOZ_CHROME			A variable for the --enable-chrome-format= in
-# 						CONFIGURE_ARGS. The default is omni.
-#
-# MOZ_TOOLKIT			A variable for the --enable-default-toolkit= in
-# 						CONFIGURE_ARGS. The default is cairo-gtk3.
-#
 # NOMOZCONFIG			Don't drop a customized .mozconfig into the build
 # 						directory. Options will have to be specified in
 # 						CONFIGURE_ARGS instead
@@ -209,16 +203,11 @@ BUILD_DEPENDS+=	${-${dep}_BUILD_DEPENDS}
 .endfor
 
 # Standard options
-MOZ_CHROME?=	omni
-MOZ_TOOLKIT?=	cairo-gtk3
-MOZ_CHANNEL?=	${PKGNAMESUFFIX:Urelease:S/^-//}
 MOZ_OPTIONS+=	\
-		--enable-chrome-format=${MOZ_CHROME} \
-		--enable-default-toolkit=${MOZ_TOOLKIT} \
-		--enable-update-channel=${MOZ_CHANNEL} \
-		--disable-updater
-# others
-MOZ_OPTIONS+=	--with-system-zlib		\
+		--enable-default-toolkit=cairo-gtk3${PORT_OPTIONS:MWAYLAND:tl:C/.+/-&/} \
+		--enable-update-channel=${PKGNAMESUFFIX:Urelease:S/^-//} \
+		--disable-updater \
+		--with-system-zlib \
 		--with-system-bz2
 
 # API keys from www/chromium 
@@ -227,10 +216,6 @@ MOZ_OPTIONS+=	--with-system-zlib		\
 # please get your own set of keys.
 MOZ_EXPORT+=	MOZ_GOOGLE_LOCATION_SERVICE_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8
 MOZ_EXPORT+=	MOZ_GOOGLE_SAFEBROWSING_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8
-
-.if ${PORT_OPTIONS:MWAYLAND}
-MOZ_TOOLKIT=	cairo-gtk3-wayland
-.endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=		-O3
