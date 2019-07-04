@@ -3,6 +3,7 @@
 
 PORTNAME=	apl
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu-
@@ -46,10 +47,18 @@ post-patch:
 		${WRKSRC}/src/emacs_mode/UnixSocketListener.cc
 	@${REINPLACE_CMD} -e 's,POLLRDHUP,POLLHUP,' \
 		${WRKSRC}/src/Quad_GTK.cc
+# Prevent needless C[XX]FLAGS pollution
+	@${REINPLACE_CMD} -e 's,-g -O. ,,' \
+		${WRKSRC}/src/APs/Makefile.in \
+		${WRKSRC}/src/native/Makefile.in
 # Fixes below are for GCC-based builds
 	@${REINPLACE_CMD} -e '28s,^,#include <cstring>,' \
 		${WRKSRC}/src/Error.hh
 	@${REINPLACE_CMD} -E '/(total|used)_memory/s,uint64_t,int64_t,' \
 		${WRKSRC}/src/Quad_WA.?? ${WRKSRC}/src/Value.cc
+
+post-install:
+	@${MV} ${STAGEDIR}${PREFIX}/etc/gnu-apl.d/preferences \
+		${STAGEDIR}${PREFIX}/etc/gnu-apl.d/preferences.sample
 
 .include <bsd.port.mk>

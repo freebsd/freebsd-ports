@@ -5,7 +5,7 @@ bin/APserver
 %%GTK3%%bin/Gtk_server
 etc/gnu-apl.d/keyboard1.txt
 etc/gnu-apl.d/parallel_thresholds
-etc/gnu-apl.d/preferences
+@sample etc/gnu-apl.d/preferences.sample
 %%LIBAPL%%include/apl/libapl.h
 %%LIBAPL%%lib/apl/libapl.a
 %%LIBAPL%%lib/apl/libapl.so
