@@ -81,7 +81,7 @@ JUNIT_JAR=	${JAVALIBDIR}/junit.jar
 
 .include <bsd.port.pre.mk>
 
-.if ${JAVA_PORT_VERSION} == "1.6.0"
+.if ${JAVA_PORT_VERSION:M*6*}
 pre-extract:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "IMPORTANT: To build IcedTea-Web ${PORTVERSION}, you have to turn on 'ICEDTEA' option"
