@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtual_oss
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org/distfiles/
@@ -31,7 +31,7 @@ BLUETOOTH_MAKE_ARGS=	HAVE_BLUETOOTH="YES"
 
 BT_SPEAKER_DESC=	Build with bluetooth speaker utility
 BT_SPEAKER_PLIST_FILES= sbin/virtual_bt_speaker \
-                        man/man8/virtual_bt_speaker.8.gz
+			man/man8/virtual_bt_speaker.8.gz
 BT_SPEAKER_MAKE_ARGS=	HAVE_BLUETOOTH_SPEAKER="YES"
 
 DEBUG_MAKE_ARGS=	HAVE_DEBUG="YES"
