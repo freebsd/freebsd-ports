@@ -39,10 +39,6 @@ Gecko_Pre_Include=	bsd.gecko.mk
 # MOZILLA_PLIST_DIRS	List of directories to descend into when installing
 # 						and creating the plist
 #
-# MOZ_PIS_SCRIPTS		List of scripts residing in ${FILESDIR} to be
-# 						filtered through MOZCONFIG_SED and installed along
-# 						with our Pluggable Init Scripts (PIS)
-#
 # MOZ_SED_ARGS			sed(1) commands through which MOZ_PIS_SCRIPTS are
 # 						filtered. There is a default set defined here, so
 # 						you probably want to add to MOZ_SED_ARGS rather
@@ -126,15 +122,9 @@ MOZILLA_SUFX?=	none
 MOZSRC?=	${WRKSRC}
 PLISTF?=	${WRKDIR}/plist_files
 
-MOZ_PIS_DIR?=		lib/${MOZILLA}/init.d
-
 PORT_MOZCONFIG?=	${FILESDIR}/mozconfig.in
 MOZCONFIG?=		${WRKSRC}/.mozconfig
 MOZILLA_PLIST_DIRS?=	bin lib share/pixmaps share/applications
-PKGINSTALL?=	${WRKDIR}/pkg-install
-PKGDEINSTALL?=	${WRKDIR}/pkg-deinstall
-PKGINSTALL_INC?=	${.CURDIR}/../../www/firefox/files/pkg-install.in
-PKGDEINSTALL_INC?=	${.CURDIR}/../../www/firefox/files/pkg-deinstall.in
 
 MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
 			${MOZILLA}-xpcom ${MOZILLA}-plugin
@@ -420,15 +410,9 @@ MOZ_OPTIONS+=	--disable-v1-string-abi
 
 .else # bsd.port.post.mk
 
-post-patch: gecko-post-patch gecko-moz-pis-patch
+post-patch: gecko-post-patch
 
 gecko-post-patch:
-.if exists(${PKGINSTALL_INC})
-	@${MOZCONFIG_SED} < ${PKGINSTALL_INC} > ${PKGINSTALL}
-.endif
-.if exists(${PKGDEINSTALL_INC})
-	@${MOZCONFIG_SED} < ${PKGDEINSTALL_INC} > ${PKGDEINSTALL}
-.endif
 	@${RM} ${MOZCONFIG}
 .if !defined(NOMOZCONFIG)
 	@if [ -e ${PORT_MOZCONFIG} ] ; then \
@@ -483,12 +467,6 @@ gecko-post-patch:
 		${MOZSRC}/extensions/spellcheck/hunspell/*/mozHunspell.cpp
 .endif
 
-# handles mozilla pis scripts.
-gecko-moz-pis-patch:
-.for moz in ${MOZ_PIS_SCRIPTS}
-	@${MOZCONFIG_SED} < ${FILESDIR}/${moz} > ${WRKDIR}/${moz}
-.endfor
-
 pre-configure: gecko-pre-configure
 
 gecko-pre-configure:
@@ -500,7 +478,6 @@ gecko-pre-configure:
 	fi
 .endif
 
-pre-install: gecko-moz-pis-pre-install
 post-install-script: gecko-create-plist
 
 gecko-create-plist:
@@ -511,14 +488,6 @@ gecko-create-plist:
 		${SED} -e 's|^|${dir}/|' >> ${PLISTF}
 .endfor
 	${CAT} ${PLISTF} | ${SORT} >> ${TMPPLIST}
-
-gecko-moz-pis-pre-install:
-.if defined(MOZ_PIS_SCRIPTS)
-	${MKDIR} ${STAGEDIR}${PREFIX}/${MOZ_PIS_DIR}
-.for moz in ${MOZ_PIS_SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKDIR}/${moz} ${STAGEDIR}${PREFIX}/${MOZ_PIS_DIR}
-.endfor
-.endif
 
 .endif
 .endif
