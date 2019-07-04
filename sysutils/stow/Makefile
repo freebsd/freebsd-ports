@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stow
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -16,10 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 TEST_DEPENDS=	p5-Test-Output>0:devel/p5-Test-Output
 
 USES=		gmake perl5 tar:bzip2
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
-INSTALL_TARGET=	install-exec-am install-dist_pmstowDATA install-info-am \
-		install-man install-pmDATA
 
 OPTIONS_DEFINE=	DOCS
 
@@ -29,7 +26,7 @@ NO_ARCH=	yes
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for FILE in ChangeLog README
+.for FILE in ChangeLog README.md
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for FILE in ChangeLog.OLD manual-single.html manual.pdf version.texi
