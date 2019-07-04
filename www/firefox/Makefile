@@ -30,7 +30,6 @@ BUILD_DEPENDS=	nspr>=4.21:devel/nspr \
 
 USE_GECKO=	gecko
 CONFLICTS_INSTALL=	firefox-esr
-MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-hunspell -vpx
 
 USES=		tar:xz

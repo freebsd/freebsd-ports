@@ -32,7 +32,6 @@ BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
 USE_GECKO=	gecko
 CPE_PRODUCT=	${PORTNAME}_esr
 CONFLICTS_INSTALL=	firefox
-MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-webp -vpx
 
 USES=		tar:xz
