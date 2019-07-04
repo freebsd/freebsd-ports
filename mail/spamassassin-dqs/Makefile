@@ -11,7 +11,7 @@ COMMENT=	Real-Time DNSBL's that catch a bunch of additional spam
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${LOCALBASE}/bin/spamassassin:mail/spamassassin
+RUN_DEPENDS=	spamassassin:mail/spamassassin
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	spamhaus
