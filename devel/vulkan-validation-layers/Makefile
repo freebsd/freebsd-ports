@@ -2,8 +2,7 @@
 
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	sdk-
-DISTVERSION=	1.1.82.0
-PORTREVISION=	3
+DISTVERSION=	1.1.108.0
 CATEGORIES=	devel graphics
 
 MAINTAINER=	greg@unrelenting.technology
@@ -25,7 +24,7 @@ GH_PROJECT=	Vulkan-ValidationLayers
 
 # WSI_* in here are leftover from when all of Vulkan SDK was in one repo
 CMAKE_OFF=	BUILD_TESTS BUILD_WSI_XCB_SUPPORT BUILD_WSI_XLIB_SUPPORT \
-		BUILD_WSI_WAYLAND_SUPPORT BUILD_WSI_MIR_SUPPORT
+		BUILD_WSI_WAYLAND_SUPPORT
 CMAKE_ARGS=	-DGLSLANG_INSTALL_DIR=${LOCALBASE}
 
 .include <bsd.port.mk>

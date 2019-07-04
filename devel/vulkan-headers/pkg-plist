@@ -6,9 +6,11 @@ include/vulkan/vulkan.h
 include/vulkan/vulkan.hpp
 include/vulkan/vulkan_android.h
 include/vulkan/vulkan_core.h
+include/vulkan/vulkan_fuchsia.h
+include/vulkan/vulkan_ggp.h
 include/vulkan/vulkan_ios.h
 include/vulkan/vulkan_macos.h
-include/vulkan/vulkan_mir.h
+include/vulkan/vulkan_metal.h
 include/vulkan/vulkan_vi.h
 include/vulkan/vulkan_wayland.h
 include/vulkan/vulkan_win32.h
@@ -16,8 +18,10 @@ include/vulkan/vulkan_xcb.h
 include/vulkan/vulkan_xlib.h
 include/vulkan/vulkan_xlib_xrandr.h
 share/vulkan/registry/cgenerator.py
+share/vulkan/registry/conventions.py
 share/vulkan/registry/generator.py
 share/vulkan/registry/genvk.py
 share/vulkan/registry/reg.py
 share/vulkan/registry/validusage.json
 share/vulkan/registry/vk.xml
+share/vulkan/registry/vkconventions.py

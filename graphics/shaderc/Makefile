@@ -3,6 +3,7 @@
 PORTNAME=	shaderc
 DISTVERSIONPREFIX=v
 DISTVERSION=	2018.0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 PATCH_SITES=	https://github.com/haasn/${GH_PROJECT}/commit/

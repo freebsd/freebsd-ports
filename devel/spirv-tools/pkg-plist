@@ -4,14 +4,17 @@ bin/spirv-dis
 bin/spirv-lesspipe.sh
 bin/spirv-link
 bin/spirv-opt
+bin/spirv-reduce
 bin/spirv-stats
 bin/spirv-val
+include/spirv-tools/instrument.hpp
 include/spirv-tools/libspirv.h
 include/spirv-tools/libspirv.hpp
 include/spirv-tools/linker.hpp
 include/spirv-tools/optimizer.hpp
 lib/libSPIRV-Tools-link.a
 lib/libSPIRV-Tools-opt.a
+lib/libSPIRV-Tools-reduce.a
 lib/libSPIRV-Tools-shared.so
 lib/libSPIRV-Tools.a
 libdata/pkgconfig/SPIRV-Tools-shared.pc
