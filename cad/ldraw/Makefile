@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.ldraw.org/library/updates/
 DISTNAME=	complete
 DIST_SUBDIR=	ldraw/${PORTVERSION}
 
-MAINTAINER=	koalative@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LDraw parts library
 
 LICENSE=	CDDL CC-BY-NC-SA-2.0

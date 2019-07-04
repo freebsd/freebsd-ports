@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	koalative@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert any document from and to any LibreOffice supported format
 
 LICENSE=	GPLv2

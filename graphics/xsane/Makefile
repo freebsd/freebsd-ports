@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/
 
-MAINTAINER=	koalative@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
 
 LICENSE=	GPLv2+

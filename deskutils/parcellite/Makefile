@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	koalative@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight GTK+ clipboard manager
 
 LICENSE=	GPLv3

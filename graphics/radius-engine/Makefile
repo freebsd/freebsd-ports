@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	koalative@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lua script-based 2D engine built on top of OpenGL and SDL
 
 LICENSE=	MIT

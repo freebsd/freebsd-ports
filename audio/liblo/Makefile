@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	koalative@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight Open Sound Control implementation
 
 LICENSE=	LGPL21
