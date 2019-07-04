@@ -1,6 +1,14 @@
---- git-annex.cabal.orig	2019-01-29 19:25:02 UTC
+--- git-annex.cabal.orig	2019-06-26 16:31:40 UTC
 +++ git-annex.cabal
-@@ -507,7 +507,6 @@ Executable git-annex
+@@ -385,7 +385,6 @@ Executable git-annex
+ 
+   -- Avoid linking with unused dynamic libaries.
+   -- (Only tested on Linux).
+-  if os(Linux)
+     GHC-Options: -optl-Wl,--as-needed
+ 
+   if (os(windows))
+@@ -517,18 +516,16 @@ Executable git-annex
            if (! os(solaris) && ! os(gnu) && ! os(linux))
              CPP-Options: -DWITH_KQUEUE
              C-Sources: Utility/libkqueue.c
@@ -8,3 +16,15 @@
              Other-Modules: Utility.DirWatcher.Kqueue
  
    if flag(Dbus)
+-    if (os(linux))
+       Build-Depends: dbus (>= 0.10.7), fdo-notify (>= 0.3)
+       CPP-Options: -DWITH_DBUS -DWITH_DESKTOP_NOTIFY -DWITH_DBUS_NOTIFICATIONS
+       Other-Modules: Utility.DBus
+ 
+   if flag(Webapp)
+     Build-Depends:
+-     yesod (>= 1.4.3), 
++     yesod (>= 1.4.3),
+      yesod-static (>= 1.5.1),
+      yesod-form (>= 1.4.8),
+      yesod-core (>= 1.4.25),

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	network
-PORTVERSION=	2.6.3.2
-PORTREVISION=	5
+PORTVERSION=   2.8.0.1
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org
