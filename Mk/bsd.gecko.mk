@@ -104,15 +104,11 @@ BUILD_DEPENDS+=	rust-cbindgen>=0.8.7:devel/rust-cbindgen \
 MOZ_OPTIONS+=	--enable-pie
 .endif
 
-MOZILLA_SUFX?=	none
 MOZSRC?=	${WRKSRC}
 PLISTF?=	${WRKDIR}/plist_files
 
 MOZCONFIG?=		${WRKSRC}/.mozconfig
 MOZILLA_PLIST_DIRS?=	bin lib share/pixmaps share/applications
-
-MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
-			${MOZILLA}-xpcom ${MOZILLA}-plugin
 
 MOZ_EXPORT+=	${CONFIGURE_ENV} \
 				RUSTFLAGS="${RUSTFLAGS}" \
