@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	worker
-PORTVERSION=	3.15.4
+PORTVERSION=	4.0.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 
 MAINTAINER=	mp39590@gmail.com
 COMMENT=	X11 file manager based on Directory Opus of AmigaOS
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++11-lib pkgconfig python:2.7 shebangfix tar:bzip2
+USES=		compiler:c++14-lang pkgconfig python:2.7 shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xinerama
 
@@ -44,9 +44,5 @@ LUA_USES=	lua:51
 
 XFT_CONFIGURE_OFF=	--disable-xft
 XFT_USE=	xorg=xft
-
-.if exists(/usr/lib/libstdc++.so)
-CXXFLAGS+=	-Wno-error=narrowing
-.endif
 
 .include <bsd.port.mk>
