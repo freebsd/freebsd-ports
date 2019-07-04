@@ -1,22 +1,13 @@
---- Build/DesktopFile.hs.orig	2018-12-11 20:34:28 UTC
+--- Build/DesktopFile.hs.orig	2019-06-26 16:31:40 UTC
 +++ Build/DesktopFile.hs
-@@ -21,6 +21,7 @@ import Utility.OSX
+@@ -20,6 +20,7 @@ import Config.Files
+ import Utility.OSX
  import Assistant.Install.AutoStart
  import Assistant.Install.Menu
- 
 +import System.FilePath ((</>))
+ 
  import System.Environment
  import System.PosixCompat.User
- import Data.Maybe
-@@ -28,7 +29,7 @@ import Control.Applicative
- import Prelude
- 
- systemwideInstall :: IO Bool
--#ifndef mingw32_HOST_OS 
-+#ifndef mingw32_HOST_OS
- systemwideInstall = isroot <||> destdirset
-   where
- 	isroot = do
 @@ -48,13 +49,18 @@ writeFDODesktop :: FilePath -> IO ()
  writeFDODesktop command = do
  	systemwide <- systemwideInstall
