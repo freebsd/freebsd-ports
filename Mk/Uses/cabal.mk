@@ -132,7 +132,7 @@ cabal-post-extract:
 .    if !target(do-build)
 do-build:
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} cabal new-build --offline --flags "${CABAL_FLAGS}" ${BUILD_ARGS} ${BUILD_TARGET}
+		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} cabal new-build --offline --disable-benchmarks --disable-tests --flags "${CABAL_FLAGS}" ${BUILD_ARGS} ${BUILD_TARGET}
 .    endif
 
 .    if !target(do-install)
