@@ -379,12 +379,6 @@ gecko-post-patch:
 	@${ECHO_CMD} export ${var:Q} >> ${MOZCONFIG}
 .endfor
 .endif # .if !defined(NOMOZCONFIG)
-.if exists(${MOZSRC}/build/unix/mozilla-config.in)
-	@${REINPLACE_CMD} -e  's/%{idldir}/%idldir%/g ; \
-		s|"%FULL_NSPR_CFLAGS%"|`nspr-config --cflags`|g ; \
-		s|"%FULL_NSPR_LIBS%"|`nspr-config --libs`|g' \
-			${MOZSRC}/build/unix/mozilla-config.in
-.endif
 .if ${USE_MOZILLA:M-nspr}
 	@${ECHO_MSG} "===>  Applying NSPR patches"
 	@for i in ${.CURDIR}/../../devel/nspr/files/patch-*; do \
