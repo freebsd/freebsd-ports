@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Send2Trash-${PORTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	koalative@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small package that sends files to the Trash
 
 LICENSE=	BSD3CLAUSE

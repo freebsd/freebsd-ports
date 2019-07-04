@@ -14,7 +14,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	BrickUtils-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}
 
-MAINTAINER=	koalative@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for building models with LEGO
 
 LICENSE=	GPLv3

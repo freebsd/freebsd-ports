@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	koalative@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable framework for OpenGL development
 
 LICENSE=	ZLIB
