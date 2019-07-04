@@ -64,7 +64,7 @@ Gecko_Pre_Include=	bsd.gecko.mk
 # 						CONFIGURE_ARGS. The default is omni.
 #
 # MOZ_TOOLKIT			A variable for the --enable-default-toolkit= in
-# 						CONFIGURE_ARGS. The default is cairo-gtk2.
+# 						CONFIGURE_ARGS. The default is cairo-gtk3.
 #
 # PORT_MOZCONFIG		Defaults to ${FILESDIR}/mozconfig.in, but can be
 # 						set to a generic mozconfig included with the port
@@ -81,16 +81,19 @@ MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
 MOZ_RPATH?=	${MOZILLA}
-USES+=		compiler:c++17-lang cpe gl gmake iconv localbase perl5 pkgconfig \
+USES+=		compiler:c++17-lang cpe gl gmake gnome iconv localbase perl5 pkgconfig \
 			python:2.7,build desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_GL=		gl
+USE_GNOME=	cairo gdkpixbuf2 gtk20 gtk30
 USE_PERL5=	build
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrender xt
 HAS_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 
 BUNDLE_LIBS=	yes
+
+BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.34:lang/${RUST_DEFAULT}
 
 .if ${MOZILLA_VER:R:R} >= 56
 BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
@@ -244,18 +247,8 @@ MOZ_OPTIONS+=	--with-system-zlib		\
 MOZ_EXPORT+=	MOZ_GOOGLE_LOCATION_SERVICE_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8
 MOZ_EXPORT+=	MOZ_GOOGLE_SAFEBROWSING_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8
 
-.if ${PORT_OPTIONS:MGTK2}
-MOZ_TOOLKIT=	cairo-gtk2
-.elif ${PORT_OPTIONS:MWAYLAND}
+.if ${PORT_OPTIONS:MWAYLAND}
 MOZ_TOOLKIT=	cairo-gtk3-wayland
-.endif
-
-USES+=		gnome
-.if ${MOZ_TOOLKIT:Mcairo-gtk3*}
-BUILD_DEPENDS+=	gtk3>=3.14.6:x11-toolkits/gtk30
-USE_GNOME+=	gdkpixbuf2 gtk20 gtk30
-.else # gtk2, cairo-gtk2
-USE_GNOME+=	gdkpixbuf2 gtk20
 .endif
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
@@ -345,15 +338,6 @@ post-patch-SNDIO-on:
 		${ECHO_CMD} "OS_LIBS += ['sndio']" >> \
 			${MOZSRC}/media/webrtc/signaling/test/common.build; \
 	fi
-.endif
-
-.if ${PORT_OPTIONS:MRUST} || ${MOZILLA_VER:R:R} >= 54
-BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.34:lang/${RUST_DEFAULT}
-. if ${MOZILLA_VER:R:R} < 54
-MOZ_OPTIONS+=	--enable-rust
-. endif
-.else
-MOZ_OPTIONS+=	--disable-rust
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
