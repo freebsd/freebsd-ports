@@ -1,0 +1,16 @@
+--- gnu-apl.d/preferences.in.orig	2019-06-23 12:39:20 UTC
++++ gnu-apl.d/preferences.in
+@@ -301,10 +301,11 @@
+ # execution mode and ∇-edit mode.
+ #
+ # Below the number of history lines and the location of the history file 
+-# can be configured.
++# can be configured. If the file path starts with "~/", tilde (~) would
++# be expanded to the value of the 'HOME' environment variable.
+ #
+ READLINE_HISTORY_LEN  500
+-READLINE_HISTORY_PATH .apl.history
++READLINE_HISTORY_PATH ~/.apl.history
+ 
+ # The history can serve two purposes: to recall lines that were previously
+ # and to list what was done (with command )HISTORY). For the latter purpose
