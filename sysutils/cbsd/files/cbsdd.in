@@ -53,7 +53,7 @@ restart_cmd=${name}_restart
 extra_commands="restart"
 
 command="${toolsdir}/cbsdd"
-pidfile="/var/run/$name.pid"
+pidfile="${cbsd_workdir}/var/run/$name.pid"
 command_args="&"
 
 cbsdd_prestart() {
