@@ -2,56 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	ldraw
-PORTVERSION=	201501
+DISTVERSION=	20181208
 PORTEPOCH=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://www.ldraw.org/library/updates/
-DISTNAME=	complete
-DIST_SUBDIR=	ldraw/${PORTVERSION}
+MASTER_SITES=	https://www.ldraw.org/library/updates/:parts \
+		https://www.ldraw.org/library/official/:config
+DISTFILES=	complete.zip:parts LDConfig.ldr:config
+DIST_SUBDIR=	${DISTNAME}-${DISTVERSION}
+EXTRACT_ONLY=	complete.zip
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	LDraw parts library
+COMMENT=	LDraw-format CAD files representing many of LEGO bricks produced
 
-LICENSE=	CDDL CC-BY-NC-SA-2.0
-LICENSE_COMB=	dual
-LICENSE_FILE_CC-BY-NC-SA-2.0=	${WRKSRC}/CAlicense.txt
+LICENSE=	CC-BY-2.0
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		zip
 
-USES=		dos2unix gmake zip:infozip
-DOS2UNIX_GLOB=	*.h makefile mklist.c *.txt *.dat
-
-PORTDATA=	*
-PORTDOCS=	Readme.txt
-OPTIONS_DEFINE=	DOCS
-
-SUB_FILES=	pkg-message
-
-BUILD_WRKSRC=	${WRKSRC}/mklist
-MAKEFILE=	makefile
-
-post-extract-script:
-	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo -d \
-		${WRKSRC}/mklist ${WRKSRC}/mklist1_6.zip)
-	@(cd ${WRKSRC}/mklist/include && ${MV} * ..)
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|CC=gcc|CC?=gcc|' \
-		-e 's|CFLAGS=|CFLAGS?=|' \
-		${WRKSRC}/mklist/makefile
-	@${REINPLACE_CMD} -e 's|PARTS|parts|' \
-		${WRKSRC}/mklist/mklist.c
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 do-install:
-.for f in models p parts LDCfgalt.ldr LDConfig.ldr LDConfig_TLG.ldr
-	@(cd ${WRKSRC} ; ${COPYTREE_SHARE} ${f} ${STAGEDIR}${DATADIR})
-.endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/ldraw
+	cd ${WRKDIR}/ldraw && \
+		${COPYTREE_SHARE} p ${STAGEDIR}${PREFIX}/share/ldraw && \
+		${COPYTREE_SHARE} parts ${STAGEDIR}${PREFIX}/share/ldraw
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/LDConfig.ldr ${STAGEDIR}${PREFIX}/share/ldraw
 
-	${INSTALL_PROGRAM} ${WRKSRC}/mklist/mklist ${STAGEDIR}${DATADIR}
-	@(cd ${STAGEDIR}${DATADIR} && ./mklist -d)
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+post-install: # autoplist: ~16k files all under share/ldraw
+	@cd ${STAGEDIR}${PREFIX} && \
+		${FIND} * -type f >> ${TMPPLIST}
 
 .include <bsd.port.mk>
