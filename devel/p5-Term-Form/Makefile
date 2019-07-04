@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Term-Form
-PORTVERSION=	0.515
+PORTVERSION=	0.516
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Term-Choose>=1.649:devel/p5-Term-Choose
+RUN_DEPENDS=	p5-Term-Choose>=1.652:devel/p5-Term-Choose
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5
