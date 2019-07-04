@@ -2,6 +2,7 @@
 
 PORTNAME=	spotifyd
 DISTVERSION=	0.2.9
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org

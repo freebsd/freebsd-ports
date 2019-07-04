@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.35.0
+PORTVERSION?=	1.36.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
-		LOCAL/tobik/rust:rust_bootstrap \
 		https://static.rust-lang.org/dist/:rust_bootstrap \
-		LOCAL/tobik/rust:cargo_bootstrap \
-		https://static.rust-lang.org/dist/:cargo_bootstrap
+		LOCAL/tobik/rust:rust_bootstrap \
+		https://static.rust-lang.org/dist/:cargo_bootstrap \
+		LOCAL/tobik/rust:cargo_bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
 DISTFILES?=	${NIGHTLY_SUBDIR}${DISTNAME}${EXTRACT_SUFX}:src \
 		${RUSTC_BOOTSTRAP}:rust_bootstrap \
@@ -38,18 +38,16 @@ ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 CONFLICTS_INSTALL?=	rust-nightly
 
 # See WRKSRC/src/stage0.txt for this date and version values.
-BOOTSTRAPS_DATE?=		2019-05-14
+BOOTSTRAPS_DATE?=		2019-05-23
+BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
+BOOTSTRAPS_SUFFIX_powerpc64?=	-elfv1
 
-RUST_BOOTSTRAP_VERSION?=	1.34.2
-RUST_BOOTSTRAP_VERSION_aarch64?=	1.34.0
-RUST_BOOTSTRAP_VERSION_armv6?=	1.34.0
-RUST_BOOTSTRAP_VERSION_armv7?=	1.34.0
-RUST_BOOTSTRAP_VERSION_powerpc64?=	1.34.0
-RUSTC_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
-RUST_STD_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
+RUST_BOOTSTRAP_VERSION?=	1.35.0
+RUSTC_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}${BOOTSTRAPS_SUFFIX}.tar.gz
+RUST_STD_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}${BOOTSTRAPS_SUFFIX}.tar.gz
 
-CARGO_BOOTSTRAP_VERSION?=	0.35.0
-CARGO_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
+CARGO_BOOTSTRAP_VERSION?=	0.36.0
+CARGO_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}${BOOTSTRAPS_SUFFIX}.tar.gz
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -126,6 +124,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|gdb|${LOCALBASE}/bin/gdb|' \
 		${WRKSRC}/src/etc/rust-gdb
+	@${ECHO_MSG} "Canonical bootstrap date and version before patching:"
+	@${GREP} -E '^(date|rustc|cargo)' ${WRKSRC}/src/stage0.txt
 # If we override the versions and date of the bootstraps (for instance
 # on aarch64 where we provide our own bootstraps), we need to update
 # places where they are recorded.
@@ -138,6 +138,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^cargo:.*|cargo: ${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}|' \
 		${WRKSRC}/src/stage0.txt
+	@${ECHO_MSG} "Bootstrap date and version after patching:"
+	@${GREP} -E '^(date|rustc|cargo)' ${WRKSRC}/src/stage0.txt
 # Disable vendor checksums
 	@${REINPLACE_CMD} -e \
 		's/"files":{[^}]*}/"files":{}/' \
@@ -294,6 +296,9 @@ makesum:
 	${GREP} ${RUST_ARCH_${arch}} ${DISTINFO_FILE}.${arch} >> ${DISTINFO_FILE}
 	${RM} ${DISTINFO_FILE}.${arch}
 .endfor
+	${MAKE} -D_RUST_MAKESUM_GUARD makesum ARCH=powerpc64 BOOTSTRAPS_SUFFIX="" DISTINFO_FILE=${DISTINFO_FILE}.powerpc64-elfv2
+	${GREP} ${RUST_ARCH_powerpc64} ${DISTINFO_FILE}.powerpc64-elfv2 >> ${DISTINFO_FILE}
+	${RM} ${DISTINFO_FILE}.powerpc64-elfv2
 .endif
 
 BOOTSTRAPS_SOURCE_PKG_FBSDVER=		10
