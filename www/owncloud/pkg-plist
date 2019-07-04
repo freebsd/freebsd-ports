@@ -9700,6 +9700,7 @@
 %%WWWDIR%%/lib/private/Repair/DropOldTables.php
 %%WWWDIR%%/lib/private/Repair/FillETags.php
 %%WWWDIR%%/lib/private/Repair/InnoDB.php
+%%WWWDIR%%/lib/private/Repair/MoveAvatarIntoSubFolder.php
 %%WWWDIR%%/lib/private/Repair/MoveAvatarOutsideHome.php
 %%WWWDIR%%/lib/private/Repair/OldGroupMembershipShares.php
 %%WWWDIR%%/lib/private/Repair/Preview.php
