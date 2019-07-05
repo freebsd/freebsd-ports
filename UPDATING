@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20190705:
+  AFFECTS: users of net/serviio which bought a license for the non-free features
+  AUTHOR: netchild@FreeBSD.org
+
+  Version 2 of serviio needs a new license file. Updating without a new license
+  file will disable the non-free features.
+
 20190701:
   AFFECTS: users of databases/mysql56-(server|client)
   AUTHOR: ale@FreeBSD.org

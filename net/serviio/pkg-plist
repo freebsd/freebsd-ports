@@ -1,13 +1,13 @@
-sbin/serviiod
+%%JAVAJARDIR%%/serviio/activation.jar
 %%JAVAJARDIR%%/serviio/aspectjrt.jar
 %%JAVAJARDIR%%/serviio/aspectjweaver.jar
 %%JAVAJARDIR%%/serviio/commons-codec.jar
 %%JAVAJARDIR%%/serviio/commons-imaging.jar
 %%JAVAJARDIR%%/serviio/commons-io.jar
+%%JAVAJARDIR%%/serviio/commons-jcs-core.jar
 %%JAVAJARDIR%%/serviio/commons-jxpath.jar
 %%JAVAJARDIR%%/serviio/commons-lang.jar
 %%JAVAJARDIR%%/serviio/commons-logging.jar
-%%JAVAJARDIR%%/serviio/concurrent.jar
 %%JAVAJARDIR%%/serviio/derby.jar
 %%JAVAJARDIR%%/serviio/freemarker.jar
 %%JAVAJARDIR%%/serviio/groovy-all.jar
@@ -20,13 +20,13 @@ sbin/serviiod
 %%JAVAJARDIR%%/serviio/jaudiotagger.jar
 %%JAVAJARDIR%%/serviio/javax.xml.soap-api.jar
 %%JAVAJARDIR%%/serviio/jcl-over-slf4j.jar
-%%JAVAJARDIR%%/serviio/jcs.jar
 %%JAVAJARDIR%%/serviio/jdom.jar
 %%JAVAJARDIR%%/serviio/jnat-pmplib.jar
 %%JAVAJARDIR%%/serviio/jul-to-slf4j.jar
 %%JAVAJARDIR%%/serviio/log4j.jar
 %%JAVAJARDIR%%/serviio/lucene-analyzers-common.jar
 %%JAVAJARDIR%%/serviio/lucene-core.jar
+%%JAVAJARDIR%%/serviio/mimepull.jar
 %%JAVAJARDIR%%/serviio/org.restlet.ext.gson.jar
 %%JAVAJARDIR%%/serviio/org.restlet.ext.simple.jar
 %%JAVAJARDIR%%/serviio/org.restlet.ext.slf4j.jar
@@ -35,6 +35,7 @@ sbin/serviiod
 %%JAVAJARDIR%%/serviio/padlock.jar
 %%JAVAJARDIR%%/serviio/rome-modules.jar
 %%JAVAJARDIR%%/serviio/rome.jar
+%%JAVAJARDIR%%/serviio/saaj-impl.jar
 %%JAVAJARDIR%%/serviio/sbbi-upnp.jar
 %%JAVAJARDIR%%/serviio/serviio-mediabrowser-api.jar
 %%JAVAJARDIR%%/serviio/serviio-mediabrowser-web.jar
@@ -44,11 +45,13 @@ sbin/serviiod
 %%JAVAJARDIR%%/serviio/simple.jar
 %%JAVAJARDIR%%/serviio/slf4j-api.jar
 %%JAVAJARDIR%%/serviio/slf4j-log4j12.jar
+%%JAVAJARDIR%%/serviio/stax-api.jar
+%%JAVAJARDIR%%/serviio/stax-ex.jar
 %%JAVAJARDIR%%/serviio/streamflyer-core.jar
 %%JAVAJARDIR%%/serviio/winp.jar
 %%JAVAJARDIR%%/serviio/xstream.jar
-@sample %%ETCDIR%%/profiles.xml.sample
-@sample %%ETCDIR%%/log4j.xml.sample
 @sample %%ETCDIR%%/application-profiles.xml.sample
 @sample %%ETCDIR%%/console-log4j.properties.sample
-@comment @dir %%JAVAJARDIR%%/serviio/plugins
+@sample %%ETCDIR%%/log4j.xml.sample
+@sample %%ETCDIR%%/profiles.xml.sample
+sbin/serviiod
