@@ -2,6 +2,7 @@
 
 PORTNAME=		webkit
 DISTVERSION=		5.212.0-alpha3
+PORTREVISION=	1
 CATEGORIES=		www
 MASTER_SITES=		https://github.com/qt${PORTNAME}/qt${PORTNAME}/releases/download/${DISTNAME}/
 PKGNAMEPREFIX=		qt5-
@@ -16,7 +17,8 @@ LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
 			libhyphen.so:textproc/hyphen \
 			libicui18n.so:devel/icu \
 			libpng.so:graphics/png \
-			libwebp.so:graphics/webp
+			libwebp.so:graphics/webp \
+			libwoff2dec.so:devel/woff2
 
 USES=			bison cmake compiler:c++11-lang gperf jpeg \
 			pathfix perl5 pkgconfig python:2.7,build qt:5 sqlite:3 \
