@@ -2,11 +2,9 @@
 
 PORTNAME=	accountmanager
 PORTVERSION=	0.5.${REV}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www devel python
-MASTER_SITES=	LOCAL/kuriyama \
-		http://trac-hacks.org/changeset/${REV}/accountmanagerplugin/trunk?old_path=/&format=zip&filename=
+MASTER_SITES=	http://trac-hacks.org/changeset/${REV}/accountmanagerplugin/trunk?old_path=/&format=zip&filename=
 PKGNAMEPREFIX=	trac-
 DIST_SUBDIR=	trac
 
@@ -19,10 +17,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	tracd:www/trac
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
-REV=			12583
+REV=			17339
+WRKSRC=			${WRKDIR}/accountmanagerplugin/trunk
 USES=			python:2.7 zip
 USE_PYTHON=		distutils autoplist
-WRKSRC=			${WRKDIR}/accountmanagerplugin/trunk
 NO_ARCH=		yes
 
 # --- trac.ini
