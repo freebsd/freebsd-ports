@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.7.0
-PORTREVISION=	2
+PORTVERSION=	1.7.2
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -20,7 +19,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 USE_RC_SUBR=	rrdcached
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pathfix pkgconfig shebangfix
+USES=		gmake gnome libtool pathfix pkgconfig shebangfix
 USE_GNOME=	glib20 libxml2
 INSTALL_TARGET=	install-strip
 
@@ -46,7 +45,6 @@ GRAPH_CONFIGURE_OFF=	--disable-rrdcgi --disable-rrd_graph
 GRAPH_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libpng.so:graphics/png
 GRAPH_USE=		GNOME=cairo,pango
-GRAPH_USES=		gnome
 MMAP_CONFIGURE_ENABLE=	mmap
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USE=		GNOME=intltool

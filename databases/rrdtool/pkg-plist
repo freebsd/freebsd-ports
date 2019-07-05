@@ -10,7 +10,7 @@ include/rrd_format.h
 lib/librrd.a
 lib/librrd.so
 lib/librrd.so.8
-lib/librrd.so.8.1.0
+lib/librrd.so.8.2.1
 %%PERL%%%%SITE_PERL%%/RRDp.pm
 %%PERL%%%%SITE_ARCH%%/RRDs.pm
 %%PERL%%%%SITE_ARCH%%/auto/RRDs/RRDs.so
@@ -24,6 +24,7 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%man/man1/cdeftutorial.1.gz
 %%PORTDOCS%%man/man1/rpntutorial.1.gz
 %%PORTDOCS%%man/man1/rrd-beginners.1.gz
+%%PORTDOCS%%man/man1/rrd_pdpcalc.1.gz
 %%PORTDOCS%%man/man1/rrdbuild.1.gz
 %%PORTDOCS%%man/man1/rrdcached.1.gz
 %%PORTDOCS%%man/man1/rrdcgi.1.gz
@@ -58,6 +59,7 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/librrd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rpntutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrd-beginners.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rrd_pdpcalc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdbuild.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdcached.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdcgi.html
@@ -92,6 +94,8 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%%%DOCSDIR%%/txt/rpntutorial.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrd-beginners.pod
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrd-beginners.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/rrd_pdpcalc.pod
+%%PORTDOCS%%%%DOCSDIR%%/txt/rrd_pdpcalc.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdbuild.pod
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdbuild.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdcached.pod
@@ -142,4 +146,5 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdupdate.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdxport.pod
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdxport.txt
+%%NLS%%share/locale/fr/LC_MESSAGES/rrdtool.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/rrdtool.mo
