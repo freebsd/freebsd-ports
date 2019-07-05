@@ -14,7 +14,7 @@ COMMENT=	Access a MySQL database through Python
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL-2.0
 
-USES=		mysql python:2.7
+USES=		compiler:c11 mysql python:2.7
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	farcepest
