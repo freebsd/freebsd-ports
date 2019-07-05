@@ -1142,6 +1142,7 @@
     SUBDIR += libchipcard
     SUBDIR += libcidr
     SUBDIR += libcii
+    SUBDIR += libcircllhist
     SUBDIR += libcjson
     SUBDIR += libclc
     SUBDIR += libcli
