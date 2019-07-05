@@ -11,6 +11,7 @@
     SUBDIR += ascii2binary
     SUBDIR += asr10
     SUBDIR += base64
+    SUBDIR += base91
     SUBDIR += bibtexconv
     SUBDIR += bsdconv
     SUBDIR += btoa

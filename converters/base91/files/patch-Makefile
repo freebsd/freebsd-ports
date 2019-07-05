@@ -1,0 +1,35 @@
+--- Makefile.orig	2006-09-03 18:00:00 UTC
++++ Makefile
+@@ -1,15 +1,15 @@
+-CFLAGS = -Wall -W -O2
+-LDFLAGS = -s
++CFLAGS ?= -Wall -W -O2
++LDFLAGS ?= -s
+ 
+-CC = gcc
+-INSTALL = install
+-INSTALL_DATA = $(INSTALL) -m 444
+-INSTALL_PROGRAM = $(INSTALL) -m 555
++CC ?= gcc
++INSTALL ?= install
++INSTALL_DATA ?= $(INSTALL) -m 444
++INSTALL_PROGRAM ?= $(INSTALL) -m 555
+ 
+-prefix = /usr/local
++prefix = ${PREFIX}
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+-mandir = $(prefix)/share/man
++mandir = $(prefix)/man
+ man1dir = $(mandir)/man1
+ manext = .1
+ 
+@@ -23,7 +23,7 @@ all: $(BIN)
+ 	$(CC) $(CFLAGS) -c $<
+ 
+ base91: cli.o base91.o
+-	$(CC) $(LDFLAGS) -o $@ $^
++	$(CC) $(LDFLAGS) -o $@ cli.o base91.o
+ 
+ install: all
+ 	mkdir -p $(DESTDIR)$(bindir)
