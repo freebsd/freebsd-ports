@@ -2,20 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	uhexen2
-PORTVERSION=	1.5.8
-PORTREVISION=	1
+PORTVERSION=	1.5.9
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Hammer%20of%20Thyrion/${PORTVERSION}/Source \
-		SF/${PORTNAME}/Hexen2%20GameData/gamedata-1.29a:data \
+		SF/${PORTNAME}/Hexen2%20GameData/gamedata-1.29b:data \
 		SF/${PORTNAME}/Hexen2%20GameData/hexenworld-pakfiles:hw
 DISTNAME=	hexen2source-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		gamedata-all-1.29a${EXTRACT_SUFX}:data
+		gamedata-all-1.29b${EXTRACT_SUFX}:data
 DIST_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	hexen2source-${PORTVERSION}a.patch
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexen II source port supporting Linux/FreeBSD/Unix/Windows
