@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	elpa
-DISTVERSION=	2018.11.001
-PORTREVISION=	1
+DISTVERSION=	2019.05.001
 CATEGORIES=	math
 MASTER_SITES=	http://elpa.mpcdf.mpg.de/html/Releases/${DISTVERSION}/
 
@@ -21,6 +20,8 @@ SHEBANG_GLOB=	*.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-avx --disable-avx2 --disable-static
 USE_LDCONFIG=	yes
+
+INSTALL_TARGET=	install-strip
 
 BINARY_ALIAS=	make=gmake gcc=gcc${GCC_DEFAULT} g++=g++${GCC_DEFAULT} # build fails with clang: recursively calls cc
 FCFLAGS+=	-I${LOCALBASE}/include
