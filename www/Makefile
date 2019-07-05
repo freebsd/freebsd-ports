@@ -256,6 +256,7 @@
     SUBDIR += htmlpp
     SUBDIR += httest
     SUBDIR += http-analyze
+    SUBDIR += http-parser
     SUBDIR += http_get
     SUBDIR += http_load
     SUBDIR += http_post
