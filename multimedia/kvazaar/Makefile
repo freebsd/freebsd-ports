@@ -52,5 +52,4 @@ pre-install:	do-test
 .include <bsd.port.mk>
 
 # XXX test_external_symbols.sh fails with CRYPTOPP=on
-# XXX beefy5 (fails) vs. beefy4 (succeeds). Missed CPUID check?
 do-test:	.IGNORE
