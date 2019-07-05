@@ -3,7 +3,7 @@
 
 PORTNAME=	paraview
 DISTVERSION=	5.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-v${PORTVERSION}
