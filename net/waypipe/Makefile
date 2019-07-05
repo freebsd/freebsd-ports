@@ -15,7 +15,7 @@ BUILD_DEPENDS=	wayland-protocols>=1.12:graphics/wayland-protocols \
 		wayland>=1.15:graphics/wayland
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-USES=		meson pkgconfig
+USES=		compiler:c11 meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mstoeckl
