@@ -25,7 +25,7 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: and out again" >&5
  $as_echo "and out again" >&6; }
  
--echo $ECHO_N "ordering CD from http://tobi.oetiker.ch/wish $ECHO_C" 1>&6
+-echo $ECHO_N "ordering CD from https://tobi.oetiker.ch/wish $ECHO_C" 1>&6
 -sleep 1
 -echo $ECHO_N ".$ECHO_C" 1>&6
 -sleep 1
