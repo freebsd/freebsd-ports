@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Tool for sharing uinput devices with other machines
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
