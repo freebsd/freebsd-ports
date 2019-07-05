@@ -92,8 +92,10 @@ post-patch:
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
 		${WRKSRC}/src/common/scm_rev.cpp.in
 
+.if !defined(MASTERNAME) || ${MASTERNAME} != 120amd64-default # XXX hangs on beefy6
 .ifndef QEMU_EMULATING
 pre-install:	do-test
+.endif
 .endif
 
 .include <bsd.port.mk>
