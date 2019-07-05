@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	davix
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.4
 CATEGORIES=	www
 MASTER_SITES=	http://grid-deployment.web.cern.ch/grid-deployment/dms/lcgutil/tar/${PORTNAME}/${DISTVERSION}/
 
