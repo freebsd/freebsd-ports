@@ -727,6 +727,7 @@
     SUBDIR += ncdu
     SUBDIR += ndmpd
     SUBDIR += neofetch
+    SUBDIR += netevent
     SUBDIR += nfcutils
     SUBDIR += nfsping
     SUBDIR += nitrogen

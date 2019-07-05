@@ -1,0 +1,11 @@
+--- Makefile.orig	2018-12-07 15:42:58 UTC
++++ Makefile
+@@ -8,7 +8,7 @@ MANDIR = $(DATAROOTDIR)/man
+ MAN1DIR = $(MANDIR)/man1
+ 
+ CPPFLAGS ?= -g
+-CPPFLAGS += -Wall -Werror -Wno-unknown-pragmas
++CPPFLAGS += -Wall -Wno-unknown-pragmas
+ CXX ?= clang++
+ # Code should compile with c++11 as well, but c++14 may have stricter
+ # attributes on some methods.
