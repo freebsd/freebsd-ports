@@ -1,0 +1,5 @@
+Netevent is a tool which can be used to share linux event devices with other
+machines (either via /dev/uinput or by implementing a client for the same
+protocol with other means).
+
+WWW: https://github.com/Blub/netevent

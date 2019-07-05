@@ -1,0 +1,3 @@
+bin/netevent
+%%MANPAGES%%man/man1/netevent.1.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple.ne2
