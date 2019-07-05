@@ -5,7 +5,6 @@ PORTNAME=	xsane
 PORTVERSION=	0.999
 PORTREVISION=	6
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.xsane.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
@@ -20,7 +19,14 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 BUILD_DEPENDS=	scanimage:graphics/sane-backends
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake jpeg localbase:ldflags pkgconfig
+USES=		gmake gnome jpeg localbase:ldflags pkgconfig
+USE_GITLAB=	yes
+# This is a workaround to convert the subproject into a project. It's also
+# required to avoid slashes in the DISTNAME.
+GL_SITE=	https://gitlab.com/sane-project
+GL_ACCOUNT=	frontend # would be 'sane-project'
+# ...and GL_PROJECT would be 'frontend/xsane' then but introduces a '/' to DISTNAME
+GL_COMMIT=	d01b4089ce6778e76fa86a0410d4e80cf6eb819e
 USE_GNOME=	gtk20 gdkpixbuf2
 GNU_CONFIGURE=	yes
 
