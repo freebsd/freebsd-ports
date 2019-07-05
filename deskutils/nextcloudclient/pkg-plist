@@ -12,10 +12,10 @@ include/nextcloudsync/mirall/syncfileitem.h
 include/nextcloudsync/mirall/syncresult.h
 lib/libnextcloudsync.so
 lib/libnextcloudsync.so.0
-lib/libnextcloudsync.so.2.5.2
+lib/libnextcloudsync.so.2.5.3
 lib/nextcloud/libocsync.so
 lib/nextcloud/libocsync.so.0
-lib/nextcloud/libocsync.so.2.5.2
+lib/nextcloud/libocsync.so.2.5.3
 share/applications/nextcloud.desktop
 share/caja-python/extensions/syncstate-Nextcloud.py
 share/icons/hicolor/1024x1024/apps/Nextcloud.png
@@ -89,6 +89,7 @@ share/nextcloud/i18n/client_TW.qm
 share/nextcloud/i18n/client_bg.qm
 share/nextcloud/i18n/client_ca.qm
 share/nextcloud/i18n/client_cs.qm
+share/nextcloud/i18n/client_da.qm
 share/nextcloud/i18n/client_de.qm
 share/nextcloud/i18n/client_el.qm
 share/nextcloud/i18n/client_en.qm
@@ -111,11 +112,14 @@ share/nextcloud/i18n/client_fa.qm
 share/nextcloud/i18n/client_fi.qm
 share/nextcloud/i18n/client_fr.qm
 share/nextcloud/i18n/client_gl.qm
+share/nextcloud/i18n/client_he.qm
 share/nextcloud/i18n/client_hu.qm
+share/nextcloud/i18n/client_id.qm
 share/nextcloud/i18n/client_is.qm
 share/nextcloud/i18n/client_it.qm
 share/nextcloud/i18n/client_ja.qm
 share/nextcloud/i18n/client_lt_LT.qm
+share/nextcloud/i18n/client_lv.qm
 share/nextcloud/i18n/client_nb_NO.qm
 share/nextcloud/i18n/client_nl.qm
 share/nextcloud/i18n/client_pl.qm
