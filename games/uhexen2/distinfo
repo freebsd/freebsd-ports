@@ -1,9 +1,7 @@
-TIMESTAMP = 1486968020
-SHA256 (uhexen2/hexen2source-1.5.8.tgz) = fbe6d05b4a10b82d1817faeccc18996a93b26d0814fe4e5f6e75d94862660463
-SIZE (uhexen2/hexen2source-1.5.8.tgz) = 2473776
-SHA256 (uhexen2/gamedata-all-1.29a.tgz) = f3a8e43d786176599c5b9b1651315f76a6d4391b181d694657796b6e2c6ed646
-SIZE (uhexen2/gamedata-all-1.29a.tgz) = 3703846
+TIMESTAMP = 1562292845
+SHA256 (uhexen2/hexen2source-1.5.9.tgz) = 2aa84c141a820f9087850aacf3684a5f71c434428bc57545899eda1b9a28c3e0
+SIZE (uhexen2/hexen2source-1.5.9.tgz) = 2529121
+SHA256 (uhexen2/gamedata-all-1.29b.tgz) = a1ac5f4df654b1cca692f858c2e4bb70cfdc3e2504e9462a1635a49137963ff6
+SIZE (uhexen2/gamedata-all-1.29b.tgz) = 3703272
 SHA256 (uhexen2/hexenworld-pakfiles-0.15.tgz) = 49462cdf984deee7350d03c7d192d1c34d682647ffc9d06de4308e0a7c71c4d9
 SIZE (uhexen2/hexenworld-pakfiles-0.15.tgz) = 4948641
-SHA256 (uhexen2/hexen2source-1.5.8a.patch) = 60970483edf7f8ba15b30343cfb3e9b33a7d7a1a960ba0c975140baddf49729c
-SIZE (uhexen2/hexen2source-1.5.8a.patch) = 5810
