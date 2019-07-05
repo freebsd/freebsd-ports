@@ -1,0 +1,22 @@
+--- Makefile.orig	2019-04-16 06:33:39 UTC
++++ Makefile
+@@ -54,7 +54,7 @@ CPPFLAGS_BENCH = $(CPPFLAGS_FAST)
+ 
+ CFLAGS += -Wall -Wextra -Werror
+ CFLAGS_DEBUG = $(CFLAGS) -O0 -g $(CFLAGS_DEBUG_EXTRA)
+-CFLAGS_FAST = $(CFLAGS) -O3 $(CFLAGS_FAST_EXTRA)
++CFLAGS_FAST = $(CFLAGS) $(CFLAGS_FAST_EXTRA)
+ CFLAGS_BENCH = $(CFLAGS_FAST) -Wno-unused-parameter
+ CFLAGS_LIB = $(CFLAGS_FAST) -fPIC
+ 
+@@ -137,8 +137,8 @@ install: library
+ 	ln -s $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(SOLIBNAME).$(SOEXT)
+ 
+ install-strip: library
+-	$(INSTALL) -D  http_parser.h $(DESTDIR)$(INCLUDEDIR)/http_parser.h
+-	$(INSTALL) -D -s $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(LIBNAME)
++	$(INSTALL) http_parser.h $(DESTDIR)$(INCLUDEDIR)
++	$(INSTALL) $(STRIP) $(LIBNAME) $(DESTDIR)$(LIBDIR)
+ 	ln -s $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(SONAME)
+ 	ln -s $(LIBNAME) $(DESTDIR)$(LIBDIR)/$(SOLIBNAME).$(SOEXT)
+ 
