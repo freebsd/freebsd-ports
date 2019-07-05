@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	serviio
-PORTVERSION=	1.10.1
+PORTVERSION=	2.0
 #PORTREVISION=	1
 CATEGORIES=	net multimedia java www
 MASTER_SITES=	http://download.serviio.org/releases/
@@ -42,5 +42,11 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/console-log4j.properties	\
 		${STAGEDIR}${ETCDIR}/console-log4j.properties.sample
 	${INSTALL_SCRIPT} ${WRKDIR}/serviiod ${STAGEDIR}${PREFIX}/sbin
+
+# to be used with a non-standard PREFIX for just this port
+# e.g. PREFIX=/porttest
+mkplist:
+	${FIND} ${STAGEDIR}${PREFIX}/ -type f | ${SED} -e "s:${STAGEDIR}${PREFIX}/::g ; s:share/java/classes:%%JAVAJARDIR%%:g ; s:etc/serviio:@sample %%ETCDIR%%:g" | ${GREP} -v etc/rc.d | ${SORT} >${PLIST}.new
+#	${FIND} ${STAGEDIR}${PREFIX}/ -type d | ${SED} -e "s:${STAGEDIR}${PREFIX}/:@dirrm :g ; s:etc/serviio:%%ETCDIR%%:g ; s:share/java/classes:%%JAVAJARDIR%%:g" | ${SORT} -r >>${PLIST}.new
 
 .include <bsd.port.mk>
