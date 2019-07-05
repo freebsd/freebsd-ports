@@ -32,6 +32,8 @@ TEST_DEPENDS=	p5-Test-Base>=0:devel/p5-Test-Base \
 USES=		perl5 shebangfix
 USE_PERL5=	modbuildtiny
 
+NO_ARCH=	yes
+
 SHEBANG_FILES=	bin/scraper
 
 post-install:
