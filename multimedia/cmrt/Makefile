@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	C for Media Runtime
+COMMENT=	Legacy C for Metal Runtime
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
