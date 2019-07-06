@@ -1,3 +1,5 @@
 TIMESTAMP = 1562359126
 SHA256 (mstoeckl-waypipe-8cf7845e63470490af3af95e178ba5fa74d8056b_GL0.tar.gz) = b1db24d2b9cab37ac4eae05ca0c6d8d27faee3121d2bc025ec56ebcb0ae4fcb7
 SIZE (mstoeckl-waypipe-8cf7845e63470490af3af95e178ba5fa74d8056b_GL0.tar.gz) = 110108
+SHA256 (04b9a483e346.patch) = 705a97b2fe678b841b53afebcadda71726c64b15ea39dd52329ae36e3b40715d
+SIZE (04b9a483e346.patch) = 2254
