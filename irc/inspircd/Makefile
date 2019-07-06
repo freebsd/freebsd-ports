@@ -3,7 +3,7 @@
 
 PORTNAME=	inspircd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0
+DISTVERSION=	3.2.0
 CATEGORIES=	irc
 
 MAINTAINER=	dg@syrec.org
@@ -28,7 +28,8 @@ CONFIGURE_ARGS=	--binary-dir=${PREFIX}/bin \
 		--manual-dir=${MANPREFIX}/man/man1 \
 		--module-dir=${PREFIX}/libexec/${PORTNAME}/modules \
 		--prefix=${PREFIX}/libexec/${PORTNAME} \
-		--distribution-label=${OPSYS}-${PORTVERSION}
+		--distribution-label=${OPSYS}-${PORTVERSION} \
+		--disable-auto-extras
 
 USE_RC_SUBR=	${PORTNAME}
 MAKEFILE=	GNUmakefile
@@ -42,7 +43,7 @@ INSPIRCD_DBDIR?=	/var/db/${PORTNAME}
 INSPIRCD_LOGDIR?=	/var/log/${PORTNAME}
 INSPIRCD_RUNDIR?=	/var/run/${PORTNAME}
 
-SUB_FILES=	pkg-deinstall
+SUB_FILES=	pkg-message
 SUB_LIST=	INSPIRCD_DBDIR=${INSPIRCD_DBDIR} \
 		INSPIRCD_GROUP=${GROUPS} \
 		INSPIRCD_LOGDIR=${INSPIRCD_LOGDIR} \
