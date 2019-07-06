@@ -95,7 +95,7 @@ PYTHON3_DEFAULT?=	3.6
 RUBY_DEFAULT?=		2.5
 # Possible values: rust, rust-nightly
 RUST_DEFAULT?=		rust
-# Possible values: 4.6, 4.7, 4.8
+# Possible values: 4.6, 4.7, 4.8, 4.10
 SAMBA_DEFAULT?=		4.8
 # Possible values: base, openssl, openssl111, libressl, libressl-devel
 .if !defined(SSL_DEFAULT)
