@@ -1,7 +1,8 @@
-# gitg crash on exit if built with -fstack-protector-all
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=234607
-# https://gitlab.gnome.org/GNOME/gitg/issues/171
---- libgitg/gitg-repository-list-box.vala
+https://gitlab.gnome.org/GNOME/gitg/issues/213
+https://gitlab.gnome.org/GNOME/gitg/merge_requests/83
+
+
+--- libgitg/gitg-repository-list-box.vala.orig	2019-05-23 11:02:37 UTC
 +++ libgitg/gitg-repository-list-box.vala
 @@ -407,9 +407,12 @@ namespace Gitg
  			return ((Row)b).time.compare(((Row)a).time);
