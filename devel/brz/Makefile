@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	brz
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,23 +13,21 @@ COMMENT=	Distributed version control system based on bzr
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BUILD_DEPENDS=	\
-	${PYTHON_PKGNAMEPREFIX}configobj>=0:devel/py-configobj@${PY_FLAVOR}
-RUN_DEPENDS=	\
-	${PYTHON_PKGNAMEPREFIX}configobj>=0:devel/py-configobj@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}launchpadlib>=0:devel/py-launchpadlib@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=0:devel/py-configobj@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=0:devel/py-configobj@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}launchpadlib>=0:devel/py-launchpadlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}testtools>=0:devel/py-testtools@${PY_FLAVOR}
 
 USES=		gettext python shebangfix
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent distutils
 
-SHEBANG_FILES=	brz
-MAKE_ENV=	BRZ_LOG=/dev/null
-OPTIONS_DEFINE=	SFTP CA_BUNDLE DULWICH
-SFTP_DESC=	Paramiko for SFTP support
-CA_BUNDLE_DESC=	Include CA bundle for SSL cert validation
-DULWICH_DESC=	Depend on Dulwich for git support
+SHEBANG_FILES=		brz
+MAKE_ENV=		BRZ_LOG=/dev/null
+OPTIONS_DEFINE=		CA_BUNDLE DULWICH SFTP
+SFTP_DESC=		Paramiko for SFTP support
+CA_BUNDLE_DESC=		Include CA bundle for SSL cert validation
+DULWICH_DESC=		Depend on Dulwich for git support
 OPTIONS_DEFAULT=	CA_BUNDLE DULWICH
 
 SFTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_FLAVOR}
