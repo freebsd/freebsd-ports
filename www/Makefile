@@ -339,6 +339,7 @@
     SUBDIR += mattermost-webapp
     SUBDIR += mediawiki131
     SUBDIR += mediawiki132
+    SUBDIR += mediawiki133
     SUBDIR += mergelog
     SUBDIR += mgstat
     SUBDIR += mhonarc
