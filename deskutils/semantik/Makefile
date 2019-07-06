@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	semantik
-DISTVERSION=	1.2.1
-PORTREVISION=	1
+DISTVERSION=	1.2.2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	https://waf.io/
 
