@@ -27,7 +27,7 @@ options are available in
 You can find annotated configuration options in config.documented.php
 in the same directory. Nextcloud's configuration documentation is at 
 
-	https://docs.nextcloud.com/server/14/admin_manual/configuration_server
+	https://docs.nextcloud.com/server/16/admin_manual/configuration_server
 
 The caching options require additional Nextcloud configuration.
 
