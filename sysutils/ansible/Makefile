@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION?=	2.7.10
-PORTREVISION?=	1
+PORTVERSION?=	2.8.2
+PORTREVISION?=	0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,9 +32,11 @@ CONFLICTS?=	ansible1-* \
 		ansible23-* \
 		ansible24-* \
 		ansible25-* \
-		ansible26-*
+		ansible27-* \
+		ansible26-* \
+		ansible27-*
 
-EXTRA_PATCHES?=	${FILESDIR}/extra-patch-sesu
+EXTRA_PATCHES?=
 
 NO_ARCH=	yes
 USES?=		cpe python
