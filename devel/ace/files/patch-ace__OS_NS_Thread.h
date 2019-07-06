@@ -13,3 +13,8 @@
  # if defined (ACE_EXPORT_MACRO)
  #   undef ACE_EXPORT_MACRO
  # endif
++
++#if (defined(__FreeBSD__) && (__FreeBSD_version >= 12))
++#define _WANT_SEMUN
++#include <sys/sem.h>
++#endif
