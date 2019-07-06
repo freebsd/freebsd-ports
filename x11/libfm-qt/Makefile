@@ -10,6 +10,7 @@ MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Qt port of libfm
 
 LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
 		libexif.so:graphics/libexif
