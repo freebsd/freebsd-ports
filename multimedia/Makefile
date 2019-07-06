@@ -27,6 +27,7 @@
     SUBDIR += bitstream
     SUBDIR += blind
     SUBDIR += bsdbktr_tvtune
+    SUBDIR += butt
     SUBDIR += camserv
     SUBDIR += ccextractor
     SUBDIR += cclive
