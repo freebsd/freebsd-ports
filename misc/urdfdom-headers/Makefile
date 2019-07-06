@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	urdfdom-headers
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.4
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
