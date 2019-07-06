@@ -1,7 +1,7 @@
---- configure.orig	2019-05-10 20:05:04 UTC
+--- configure.orig	2019-07-05 09:09:06 UTC
 +++ configure
-@@ -199,57 +199,10 @@ if (defined $opt_system) {
- 	$config{SCRIPT_DIR} = $opt_script_dir // $config{SCRIPT_DIR} // $config{BASE_DIR};
+@@ -207,57 +207,10 @@ if (defined $opt_system) {
+ 	$config{SCRIPT_DIR}  = $opt_script_dir  // $config{SCRIPT_DIR}  // $config{BASE_DIR};
  }
  
 -# Parse --gid=123 or --gid=foo and extract the group id.

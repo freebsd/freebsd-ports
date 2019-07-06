@@ -1,0 +1,29 @@
+[
+{
+  type: upgrade,
+  maximum_version: 3,
+  message: <<EOM
+InspIRCd v3 has many configuration changes that are not backwards
+compatible with InspIRCd v2. Please review
+https://docs.inspircd.org/3/configuration-changes/ and update your
+configuration files accrdingly.
+EOM
+}
+{
+  type: remove,
+  message: <<EOM
+To completely remove %%PORTNAME%%, you may wish to remove its
+configuration, database and log directories:
+
+    # rm -rf %%ETCDIR%% \\
+        %%INSPIRCD_DBDIR%% \\
+        %%INSPIRCD_LOGDIR%% \\
+        %%INSPIRCD_RUNDIR%%
+
+To remove the %%INSPIRCD_USER%% user and the %%INSPIRCD_GROUP%% group, run:
+
+    # pw groupdel %%INSPIRCD_GROUP%%
+    # pw userdel %%INSPIRCD_USER%%
+EOM
+}
+]
