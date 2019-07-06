@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notes
-PORTVERSION=	2.6.0
+PORTVERSION=	3.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
@@ -17,7 +17,7 @@ COMMENT=	Notes app for Nextcloud
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=13:www/nextcloud@${PHP_FLAVOR}
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=15:www/nextcloud@${PHP_FLAVOR}
 
 USES=		php:flavors
 NO_BUILD=	yes
