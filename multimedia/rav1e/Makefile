@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190703
-PORTREVISION=	1
+PORTVERSION=	s20190705
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	991f95b8
+GH_TAGNAME=	16ea18ea
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.7.4 \
@@ -87,7 +86,7 @@ CARGO_CRATES=	aho-corasick-0.7.4 \
 		peeking_take_while-0.1.2 \
 		pkg-config-0.3.14 \
 		pretty_assertions-0.6.1 \
-		proc-macro-hack-0.5.7 \
+		proc-macro-hack-0.5.8 \
 		proc-macro2-0.4.30 \
 		quick-error-1.2.2 \
 		quote-0.6.12 \
@@ -105,9 +104,9 @@ CARGO_CRATES=	aho-corasick-0.7.4 \
 		rayon-1.1.0 \
 		rayon-core-1.5.0 \
 		rdrand-0.4.0 \
-		redox_syscall-0.1.54 \
+		redox_syscall-0.1.56 \
 		redox_termios-0.1.1 \
-		regex-1.1.7 \
+		regex-1.1.8 \
 		regex-automata-0.1.7 \
 		regex-syntax-0.6.7 \
 		rustc-demangle-0.1.15 \
