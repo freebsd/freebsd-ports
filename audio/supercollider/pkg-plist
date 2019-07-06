@@ -227,6 +227,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Crackle.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/CuspL.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/CuspN.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/CustomViewAction.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/DC.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Date.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Dbrown.schelp
@@ -512,10 +513,13 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/MIDIdef.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Magnitude.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Main.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/MainMenu.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/MantissaMask.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/MaxLocalBufs.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Maybe.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Median.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Menu.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/MenuAction.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Message.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Method.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/MidEQ.schelp
@@ -788,6 +792,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pxrand.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/QPalette.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/QPenPrinter.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/QtGUI.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/QuadC.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/QuadL.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/QuadN.schelp
@@ -891,7 +896,6 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/SpecCentroid.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/SpecFlatness.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/SpecPcile.schelp
-%%HELP%%share/SuperCollider/HelpSource/Classes/Speech.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Splay.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/SplayAz.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/SplayZ.schelp
@@ -950,6 +954,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Thunk.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Timer.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/ToggleFF.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/ToolBar.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/TouchResponder.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/TreeView.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/TreeViewItem.schelp
@@ -987,7 +992,6 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Wavetable.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/WebView.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/WhiteNoise.schelp
-%%HELP%%share/SuperCollider/HelpSource/Classes/WiiMote.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Window.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Wrap.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/WrapIndex.schelp
@@ -1020,6 +1024,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Guides/More-On-Getting-Help.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/MultiClient_Setups.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/Multichannel-Expansion.schelp
+%%HELP%%share/SuperCollider/HelpSource/Guides/News-3_10.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_5.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_6.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_7.schelp
@@ -1039,6 +1044,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Guides/SuperColliderAU.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/Sync-Async.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/SynthDefsVsSynths.schelp
+%%HELP%%share/SuperCollider/HelpSource/Guides/Tour-of-Special-Functions.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/Tour_of_UGens.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/Tracing-Processes.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/UGens-and-Synths.schelp
@@ -1233,6 +1239,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Tutorials/Mark_Polishook_tutorial/Japanese_version/13.schelp
 %%HELP%%share/SuperCollider/HelpSource/Tutorials/Mark_Polishook_tutorial/Japanese_version/14.schelp
 %%HELP%%share/SuperCollider/HelpSource/Tutorials/Mark_Polishook_tutorial/Japanese_version/15.schelp
+%%HELP%%share/SuperCollider/HelpSource/Tutorials/Server_Tutorial.schelp
 %%HELP%%share/SuperCollider/HelpSource/Tutorials/Streams-Patterns-Events1.schelp
 %%HELP%%share/SuperCollider/HelpSource/Tutorials/Streams-Patterns-Events2.schelp
 %%HELP%%share/SuperCollider/HelpSource/Tutorials/Streams-Patterns-Events3.schelp
@@ -1240,9 +1247,11 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Tutorials/Streams-Patterns-Events5.schelp
 %%HELP%%share/SuperCollider/HelpSource/Tutorials/Streams-Patterns-Events6.schelp
 %%HELP%%share/SuperCollider/HelpSource/Tutorials/Streams-Patterns-Events7.schelp
-%%HELP%%share/SuperCollider/HelpSource/Tutorials/Tutorial.schelp
 %%HELP%%share/SuperCollider/HelpSource/browse.css
 %%HELP%%share/SuperCollider/HelpSource/browse.js
+%%HELP%%share/SuperCollider/HelpSource/codemirror.css
+%%HELP%%share/SuperCollider/HelpSource/editor.css
+%%HELP%%share/SuperCollider/HelpSource/editor.js
 %%HELP%%share/SuperCollider/HelpSource/images/SC_icon.png
 %%HELP%%share/SuperCollider/HelpSource/images/Swamp.png
 %%HELP%%share/SuperCollider/HelpSource/images/duck_alpha.png
@@ -1254,12 +1263,12 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/images/plugin.svg
 %%HELP%%share/SuperCollider/HelpSource/images/vduck2.jpg
 %%HELP%%share/SuperCollider/HelpSource/images/vline.png
-%%HELP%%share/SuperCollider/HelpSource/lang-sc.js
-%%HELP%%share/SuperCollider/HelpSource/prettify.js
+%%HELP%%share/SuperCollider/HelpSource/lib/codemirror-5.39.2.min.js
+%%HELP%%share/SuperCollider/HelpSource/lib/codemirror-addon-simple-5.39.2.min.js
+%%HELP%%share/SuperCollider/HelpSource/lib/jquery.min.js
 %%HELP%%share/SuperCollider/HelpSource/scdoc.css
 %%HELP%%share/SuperCollider/HelpSource/scdoc.js
 %%HELP%%share/SuperCollider/HelpSource/search.js
-%%HELP%%share/SuperCollider/HelpSource/syntax_colors.html
 share/SuperCollider/README.md
 share/SuperCollider/README_LINUX.md
 share/SuperCollider/SCClassLibrary/Common/Audio/BEQSuite.sc
@@ -1416,6 +1425,8 @@ share/SuperCollider/SCClassLibrary/Common/GUI/Base/EZgui.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/Base/FlowLayout.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/Base/Gradient.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/Base/Grid.sc
+share/SuperCollider/SCClassLibrary/Common/GUI/Base/Menu.sc
+share/SuperCollider/SCClassLibrary/Common/GUI/Base/QCallback.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/Base/QDialog.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/Base/QEnvelopeView.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/Base/QFont.sc
@@ -1571,24 +1582,18 @@ share/SuperCollider/SCClassLibrary/SCDoc/SCDoc.sc
 share/SuperCollider/SCClassLibrary/SCDoc/SCDocRenderer.sc
 share/SuperCollider/SCClassLibrary/SCDoc/TODO
 share/SuperCollider/SCClassLibrary/backwards_compatibility/PMOsc.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.9/AudioIn.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.9/Donce.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.9/HistoryGui.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.9/InterplEnv.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.9/JITLib.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.9/TDuty_old.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.9/WII.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.9/Watcher.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.9/WiiMoteGUI.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.9/deprecated-3.9.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.9/osc/OSCpathResponder.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.9/osc/OSCresponder.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.10/AudioIn.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.10/File.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.10/GUI/File.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.10/GUI/QWebView.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.10/deprecated-3.10.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.10/osc/OSCpathResponder.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.10/osc/OSCresponder.sc
 share/SuperCollider/SCClassLibrary/scide_scqt/ScIDE.sc
 share/SuperCollider/examples/GUI examples/ColorBrowser.scd
 share/SuperCollider/examples/GUI examples/GUI_examples1.scd
 share/SuperCollider/examples/GUI examples/GUI_examples2.scd
 share/SuperCollider/examples/GUI examples/Nick's LetterGimmick.scd
-share/SuperCollider/examples/GUI examples/ScopeExample.scd
 share/SuperCollider/examples/GUI examples/TwoMultiSlidersInOne.scd
 share/SuperCollider/examples/GUI examples/analog-drum-tuner.scd
 share/SuperCollider/examples/GUI examples/rotary hommage duchamp.scd
@@ -1602,6 +1607,7 @@ share/SuperCollider/examples/demonstrations/DemandingStudies.scd
 share/SuperCollider/examples/demonstrations/DrumSynths.scd
 share/SuperCollider/examples/demonstrations/GetTheTwits.scd
 share/SuperCollider/examples/demonstrations/HarmonicsVoice.html
+share/SuperCollider/examples/demonstrations/HarmonicsVoice.scd
 share/SuperCollider/examples/demonstrations/Modal Space.scd
 share/SuperCollider/examples/demonstrations/SC2-examples_1.scd
 share/SuperCollider/examples/demonstrations/SC2-examples_2.scd
@@ -1614,7 +1620,7 @@ share/SuperCollider/examples/demonstrations/env automation.scd
 share/SuperCollider/examples/demonstrations/fft.scd
 share/SuperCollider/examples/demonstrations/more graphs.scd
 share/SuperCollider/examples/demonstrations/oh yes more fibs.scd
-share/SuperCollider/examples/demonstrations/sc_onliner.scd
+share/SuperCollider/examples/demonstrations/sc_oneliner.scd
 share/SuperCollider/examples/demonstrations/single_sample_feedback.scd
 share/SuperCollider/examples/demonstrations/single_sample_feedback_02.scd
 share/SuperCollider/examples/demonstrations/snare909.scd
@@ -1622,6 +1628,7 @@ share/SuperCollider/examples/demonstrations/stealthissound.scd
 share/SuperCollider/examples/other/Exploring_SCLang.scd
 share/SuperCollider/examples/other/KeyboardWindow.scd
 share/SuperCollider/examples/other/keepyuppy.scd
+share/SuperCollider/examples/other/onetwoonetwo.sc
 share/SuperCollider/examples/other/quines.scd
 share/SuperCollider/examples/pieces/DreamHouse.scd
 share/SuperCollider/examples/pieces/DrummerSynthDef.scd
@@ -1658,7 +1665,6 @@ share/SuperCollider/translations/scide_ru.qm
 share/SuperCollider/translations/scide_sl.qm
 share/SuperCollider/translations/scide_sv.qm
 share/SuperCollider/translations/scide_zh.qm
-share/doc/SuperCollider/examples/onetwoonetwo.sc
 share/mime/packages/supercollider.xml
 share/pixmaps/sc_ide.svg
 share/pixmaps/supercollider.png
