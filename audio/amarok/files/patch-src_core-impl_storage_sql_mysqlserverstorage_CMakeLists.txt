@@ -1,0 +1,11 @@
+--- src/core-impl/storage/sql/mysqlserverstorage/CMakeLists.txt.orig	2019-04-30 03:42:56 UTC
++++ src/core-impl/storage/sql/mysqlserverstorage/CMakeLists.txt
+@@ -25,6 +25,8 @@ target_link_libraries(amarok_storage-mysqlserverstorag
+     ${MYSQL_LIBRARIES}
+     ${CMAKE_DL_LIBS}
+     ${ZLIB_LIBRARIES}
++    ${OPENSSL_SSL_LIBRARY}
++    ${OPENSSL_CRYPTO_LIBRARY}
+ )
+ 
+ if(NOT WIN32 AND NOT APPLE)
