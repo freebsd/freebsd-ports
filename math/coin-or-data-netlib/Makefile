@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Netlib
-DISTVERSION=	1.2.7
+DISTVERSION=	1.2.8
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/Data/
 PKGNAMEPREFIX=	coin-or-
