@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord-import
-PORTVERSION=	0.28.2
+PORTVERSION=	1.0.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bulk import many records into an ActiveRecord DB
 
 LICENSE=	BSD2CLAUSE RUBY
