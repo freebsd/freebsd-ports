@@ -2,9 +2,9 @@
 
 PORTNAME=	amarok
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.0-277
-DISTVERSIONSUFFIX=	-gd50ecc430c
-PORTREVISION=	4
+DISTVERSION=	2.9.70
+PKGVERSIONSUFFIX=	-g${GH_TAGNAME}
+PORTREVISION=	0
 CATEGORIES=	audio kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -30,7 +30,7 @@ USE_QT=		core concurrent declarative dbus gui location network phonon4 \
 		webkit widgets xml \
 		buildtools_build qmake_build
 
-USE_KDE=        archive auth attica bookmarks codecs config configwidgets \
+USE_KDE=	archive auth attica bookmarks codecs config configwidgets \
 		completion coreaddons crash dbusaddons dnssd globalaccel \
 		guiaddons i18n iconthemes itemviews jobwidgets kdeclarative \
 		kcmutils kio kirigami2 newstuff notifications notifyconfig \
@@ -42,6 +42,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kde
+GH_TAGNAME=	0aa6ae0c77
 
 SHEBANG_FILES=	src/kconf_update/amarok-2.4.1-tokens_syntax_update.pl
 CMAKE_ARGS=	-DOPENSSL_ROOT_DIR=${OPENSSLBASE}
@@ -67,6 +68,7 @@ IPOD_CMAKE_BOOL=	WITH_IPOD
 MP3TUNES_DESC=		MP3tunes support
 MP3TUNES_LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth \
 			libcurl.so:ftp/curl
+MP3TUNES_LIB_DEPENDS_OFF=	libgcrypt.so:security/libgcrypt
 MP3TUNES_USE=		GNOME=glib20,libxml2
 MP3TUNES_USES=		gnome ssl
 

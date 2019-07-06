@@ -1,0 +1,11 @@
+--- src/core-impl/storage/sql/mysqlestorage/CMakeLists.txt.orig	2019-04-30 03:42:56 UTC
++++ src/core-impl/storage/sql/mysqlestorage/CMakeLists.txt
+@@ -25,6 +25,8 @@ target_link_libraries(amarok_storage-mysqlestorage
+     ${MYSQL_EMBEDDED_LIBRARIES}
+     ${CMAKE_DL_LIBS}
+     ${ZLIB_LIBRARIES}
++    ${OPENSSL_SSL_LIBRARY}
++    ${OPENSSL_CRYPTO_LIBRARY}
+ )
+ 
+ if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "FreeBSD")

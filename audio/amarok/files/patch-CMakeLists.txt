@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-04-30 03:42:56 UTC
++++ CMakeLists.txt
+@@ -207,6 +207,8 @@ if( WITH_PLAYER )
+     # zlib is required for mysql embedded
+     find_package(ZLIB REQUIRED)
+     set_package_properties( ZLIB PROPERTIES DESCRIPTION "zlib" TYPE REQUIRED )
++    # SSL is required for mysql embedded
++    find_package(OpenSSL REQUIRED)
+ 
+     # We tell users that we need 1.0.3, but we really check just >= 1.0.0. This is because
+     # upstream forgot to update version in lastfm/global.h, so it looks like 1.0.2. :-(
