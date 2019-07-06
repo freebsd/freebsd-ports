@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{
+message: <<EOD
 To use Ansible, you need at least a host database.
 If you installed examples, you will have a sample
 host database and a sample configuration file:
@@ -7,22 +8,23 @@ host database and a sample configuration file:
   %%EXAMPLESDIR%%/hosts
   %%EXAMPLESDIR%%/ansible.cfg
 
-To use Ansible to control FreeBSD hosts, you need to
-install the lang/python package on remote machines
-and set up a path to the python interpreter. Example:
+EOD
+type: install
+}
+{
+message: <<EOD
+Ansible has been updated to 2.8. Please follow the porting guide
+to update the rulesets:
 
-  [freebsd]
-  host1
-  host2
+https://docs.ansible.com/ansible/devel/porting_guides/porting_guide_2.8.html
 
-  [freebsd:vars]
-  ansible_python_interpreter=%%PYTHON_CMD%%
+If you wish to stay with 2.7 version, you can switch
+to new sysutils/ansible27 port, which tracks stable 2.7 branch:
 
-Python notes:
+# pkg set -n ansible:ansible27
 
-Python 3.x support is BETA. Most modules should work
-and important ones have been audited and tested.
-If you have issues with Python 3, please set
-ansible_python_interpreter=%%LOCALBASE%%/bin/python2
-
-===============================================================================
+EOD
+maximum_version: "2.8"
+type: upgrade
+}
+]

@@ -8,7 +8,8 @@ CONFLICTS=	ansible-* \
 		ansible1-* \
 		ansible24-* \
 		ansible25-* \
-		ansible26-*
+		ansible26-* \
+		ansible27-*
 
 MASTERDIR=	${.CURDIR}/../ansible
 DISTINFO_FILE=	${.CURDIR}/distinfo
