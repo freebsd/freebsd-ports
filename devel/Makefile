@@ -957,6 +957,7 @@
     SUBDIR += hs-mueval
     SUBDIR += hs-old-locale
     SUBDIR += hs-old-time
+    SUBDIR += hs-profiteur
     SUBDIR += hs-random
     SUBDIR += hs-setlocale
     SUBDIR += hs-shake
