@@ -16,8 +16,7 @@ LICENSE=	GPLv3
 
 OPTIONS_SINGLE=	APPSERVER
 APPSERVER_DESC=	Java Application Server
-OPTIONS_SINGLE_APPSERVER=	JETTY TOMCAT8 TOMCAT7 TOMCAT6 RESIN3
-TOMCAT8_DESC=	Use Tomcat 8.x
+OPTIONS_SINGLE_APPSERVER=	JETTY TOMCAT7 TOMCAT6 RESIN3
 TOMCAT7_DESC=	Use Tomcat 7.x
 TOMCAT6_DESC=	Use Tomcat 6.x
 JETTY_DESC=	Use Jetty
@@ -41,8 +40,6 @@ OPTIONS_SUB=	yes
 
 RUN_DEPENDS+=	${JAVALIBDIR}/servlet-api.jar:www/servlet-api \
 	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
-TOMCAT8_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat8
-TOMCAT8_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat8
 TOMCAT7_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat7
 TOMCAT7_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat7
 TOMCAT6_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat6
@@ -80,14 +77,6 @@ PLIST_SUB+=	MADSONIC_HOME="${MADSONIC_HOME}" \
 SUB_FILES=	message-common\
 	message-transcoding
 SUB_LIST=	MADSONIC_HOME="${MADSONIC_HOME}"
-
-.if ${PORT_OPTIONS:MTOMCAT8}
-APPPKGMESSAGE=	pkg-message-tomcat
-DISTVER=	tomcat
-PKGNAMESUFFIX=	-tomcat8
-SERVERDIR=	apache-tomcat-8.0
-SUB_LIST+=	CONTAINERFLAGS="tomcat8_java_opts"
-.endif
 
 .if ${PORT_OPTIONS:MTOMCAT7}
 APPPKGMESSAGE=	pkg-message-tomcat
