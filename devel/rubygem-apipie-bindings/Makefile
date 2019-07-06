@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apipie-bindings
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,8 +16,9 @@ RUN_DEPENDS=	rubygem-json>=1.2.1:devel/rubygem-json \
 		rubygem-oauth>=0:net/rubygem-oauth \
 		rubygem-rest-client>=1.6.5:www/rubygem-rest-client
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
