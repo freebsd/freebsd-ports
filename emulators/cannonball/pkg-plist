@@ -1,0 +1,5 @@
+bin/cannonball
+libexec/cannonball
+%%DATADIR%%/conf/config.xml
+%%DATADIR%%/res/tilemap.bin
+%%DATADIR%%/res/tilepatch.bin
