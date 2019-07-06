@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	binaryen
-DISTVERSION=	1.38.8
-PORTREVISION=	2
+DISTVERSION=	1.38.32
 CATEGORIES=	devel
 
 MAINTAINER=	greg@unrelenting.technology
