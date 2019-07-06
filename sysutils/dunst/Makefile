@@ -3,12 +3,8 @@
 
 PORTNAME=	dunst
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	sysutils
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-# https://github.com/dunst-project/dunst/pull/622
-PATCHFILES=	6e8de70c822a305d5196c991de69317bba875969.patch:-p1
 
 MAINTAINER=	dg@syrec.org
 COMMENT=	Lightweight notification daemon
@@ -19,8 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 USES=		gmake gnome perl5 pkgconfig
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	dunst-project
+
 USE_GNOME=	cairo gdkpixbuf2 pango
 USE_PERL5=	build
 USE_XORG=	x11 xext xinerama xrandr xscrnsaver
