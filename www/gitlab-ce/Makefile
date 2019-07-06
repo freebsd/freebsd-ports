@@ -3,7 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	11.11.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -25,7 +25,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	yarn>=1.10.0:www/yarn \
 	rubygem-rails5>=5.1.7:www/rubygem-rails5 \
 	rubygem-nakayoshi_fork>=0.0.4:devel/rubygem-nakayoshi_fork \
-	rubygem-responders-rails5>=2.0:www/rubygem-responders-rails5 \
+	rubygem-responders2-rails5>=2.0:www/rubygem-responders2-rails5 \
 	rubygem-sprockets3>=3.7:devel/rubygem-sprockets3 \
 	rubygem-gitlab-default_value_for>=3.1.1:devel/rubygem-gitlab-default_value_for \
 	rubygem-rugged>=0.28.0:devel/rubygem-rugged \
