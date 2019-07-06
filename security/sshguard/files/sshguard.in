@@ -78,8 +78,9 @@ pidfile=${sshguard_pidfile:="/var/run/sshguard.pid"}
 
 command=/usr/sbin/daemon
 actual_command="%%PREFIX%%/sbin/sshguard"
-procname="%%PREFIX%%/libexec/sshg-blocker"
+procname="/bin/sh"
 start_precmd=sshguard_prestart
+stop_cmd=sshguard_stop
 command_args="-c ${actual_command} \${sshguard_flags} \${sshguard_blacklist_params} \${sshguard_watch_params} \${sshguard_danger_params} \${sshguard_release_params} \${sshguard_reset_params} \${sshguard_whitelist_params} -i ${pidfile}"
 
 sshguard_prestart()
@@ -113,6 +114,13 @@ sshguard_prestart()
 	if [ ! -z "${sshguard_watch_logs}" ]; then
 		sshguard_watch_params=$(echo ${sshguard_watch_logs} | tr : \\\n | sed -e s/^/-l\ /g | tr \\\n \ )
 	fi
+}
+
+sshguard_stop()
+{
+	sshg_blocker="%%PREFIX%%/libexec/sshg-blocker"
+	rc_pid="$(check_process ${sshg_blocker})"
+	kill $sig_stop "$rc_pid"
 }
 
 run_rc_command "$1"
