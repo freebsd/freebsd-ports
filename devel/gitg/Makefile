@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gitg
-PORTVERSION=	3.30.1
-PORTREVISION=	2
+PORTVERSION=	3.32.0
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GTK-based git repository viewer
@@ -23,6 +22,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libgit2-glib-1.0.so:devel/libgit2-glib \
 		libpeas-1.0.so:devel/libpeas \
 		libgtkspell3-3.so:textproc/gtkspell3 \
+		libdazzle-1.0.so:x11-toolkits/libdazzle \
 		libsecret-1.so:security/libsecret
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
