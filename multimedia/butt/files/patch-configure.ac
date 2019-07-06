@@ -1,0 +1,56 @@
+--- configure.ac.orig	2019-05-12 09:03:53 UTC
++++ configure.ac
+@@ -61,6 +61,7 @@ AM_CONDITIONAL(WINDOWS, test "$host_os" = "windows")
+ 
+ 
+ build_linux=no
++build_freebsd=no
+ build_windows=no
+ build_mac=no
+ 
+@@ -75,6 +76,15 @@ case "${host_os}" in
+ 			    )
+ 	])
+         ;;
++	freebsd*)
++        build_freebsd=yes
++        AC_MSG_NOTICE([FreeBSD detected])
++	AS_IF([test "x$enable_aac" != "xno"], [
++	       AC_CHECK_LIB([fdk-aac], [aacEncOpen], [],
++			    [AC_MSG_ERROR([**** Could not find libfdk-aac     ****])]
++			    )
++	])
++        ;;
+     cygwin*|mingw*|windows)
+         build_windows=yes
+         AC_MSG_NOTICE([Windows detected])
+@@ -90,6 +100,7 @@ esac
+ 
+ # Pass the conditionals to automake
+ AM_CONDITIONAL([LINUX], [test "$build_linux" = "yes"])
++AM_CONDITIONAL([FREEBSD], [test "$build_freebsd" = "yes"])
+ AM_CONDITIONAL([WINDOWS], [test "$build_windows" = "yes"])
+ AM_CONDITIONAL([OSX], [test "$build_mac" = "yes"])
+ 
+@@ -121,6 +132,21 @@ if test "$build_linux" = "yes"; then
+ 		AC_MSG_ERROR([**** Coud not find dbus dev files])
+ 	])
+ fi
++
++#Add dbus library for FreeBSD
++if test "$build_freebsd" = "yes"; then
++	AC_MSG_NOTICE([])
++	PKG_CHECK_MODULES([DBUS], [dbus-1], [
++		AC_DEFINE([HAVE_DBUS], [1], [Use dbus to get current tracks])
++		LIBS="$LIBS $DBUS_LIBS"
++		CFLAGS="$CFLAGS $LIBS $DBUS_CFLAGS"
++		CXXFLAGS="$CXXFLAGS $DBUS_CFLAGS"
++	], [
++		AC_DEFINE([HAVE_DBUS], [0], [Use dbus to get current tracks])
++		AC_MSG_ERROR([**** Coud not find dbus dev files])
++	])
++fi
++
+ 
+ # Checks for header files.
+ AC_PATH_X

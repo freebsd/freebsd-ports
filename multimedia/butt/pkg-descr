@@ -1,0 +1,10 @@
+An easy to use, multi OS streaming tool. It supports SHOUTcast and Icecast.
+
+The main purpose of butt is to stream live audio data from your
+computers Mic or Line input to an Shoutcast or Icecast server.
+Recording is also possible.
+
+It is NOT intended to be a server by itself or automatically stream
+a set of audio files.
+
+WWW: https://danielnoethen.de/butt/
