@@ -6,7 +6,7 @@ CATEGORIES=	audio
 MASTER_SITES=	https://github.com/supercollider/supercollider/releases/download/Version-${PORTVERSION}/
 DISTNAME=	SuperCollider-${PORTVERSION}-Source-linux
 
-MAINTAINER=	brittlehaus@gmail.com
+MAINTAINER=	ports@nicandneal.net
 COMMENT=	Programming language for real time audio synthesis
 
 LICENSE=	GPLv3
