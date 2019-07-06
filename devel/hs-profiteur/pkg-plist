@@ -1,0 +1,14 @@
+%%DATADIR%%/data/css/main.css
+%%DATADIR%%/data/html/body.html
+%%DATADIR%%/data/js/details.js
+%%DATADIR%%/data/js/main.js
+%%DATADIR%%/data/js/model.js
+%%DATADIR%%/data/js/node.js
+%%DATADIR%%/data/js/resizing-canvas.js
+%%DATADIR%%/data/js/selection.js
+%%DATADIR%%/data/js/sorting.js
+%%DATADIR%%/data/js/tree-browser.js
+%%DATADIR%%/data/js/tree-map.js
+%%DATADIR%%/data/js/unicode.js
+%%DATADIR%%/data/js/zoom.js
+%%DATADIR%%/jquery-3.3.1.min.js
