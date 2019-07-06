@@ -11,6 +11,9 @@ COMMENT=	Add-on module for snort to generate real-time web reports
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2019-07-15
+
 OPTIONS_DEFINE=		BARNYARD JPGRAPH MYSQL PGSQL DOCS
 
 BARNYARD_DESC=		Depend on Barnyard2
