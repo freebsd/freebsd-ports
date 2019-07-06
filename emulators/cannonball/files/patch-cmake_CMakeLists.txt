@@ -1,0 +1,16 @@
+Remove the boost directory reference.
+
+Not required in ports, since boost libraries are directly installed
+in ${LOCALBASE}/include
+
+--- cmake/CMakeLists.txt.orig	2019-06-10 03:25:18 UTC
++++ cmake/CMakeLists.txt
+@@ -25,7 +25,7 @@ else()
+     include(${DCMAKE})
+ endif(TARGET)
+ 
+-set(BOOST_INCLUDEDIR ${lib_base}/boost_1_54_0)
++set(BOOST_INCLUDEDIR ${lib_base})
+ find_package(Boost REQUIRED)
+ 
+ # Include
