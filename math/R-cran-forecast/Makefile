@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	forecast
-PORTVERSION=	8.4
-PORTREVISION=	1
+PORTVERSION=	8.7
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -20,7 +19,6 @@ CRAN_DEPENDS=	R-cran-colorspace>0:graphics/R-cran-colorspace \
 		R-cran-timeDate>0:finance/R-cran-timeDate \
 		R-cran-tseries>0:finance/R-cran-tseries \
 		R-cran-urca>0:finance/R-cran-urca \
-		R-cran-uroot>0:math/R-cran-uroot \
 		R-cran-zoo>0:math/R-cran-zoo \
 		R-cran-RcppArmadillo>=0.2.35:math/R-cran-RcppArmadillo
 BUILD_DEPENDS=	${CRAN_DEPENDS}
