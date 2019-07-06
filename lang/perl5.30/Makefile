@@ -19,7 +19,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 #DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
 #EXPIRATION_DATE=	2022-05-22
 
-USES=	cpe tar:xz
+USES=	compiler:c11 cpe tar:xz
 
 # Give a hint of where libperl.so can be found.
 USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE

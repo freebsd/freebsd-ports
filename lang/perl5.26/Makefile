@@ -79,7 +79,7 @@ SITE_MAN1?=	${PREFIX}/${SITE_MAN1_REL}
 _PRIV_LIB=	lib/perl5/${PERL_VER}
 _ARCH_LIB=	${_PRIV_LIB}/${PERL_ARCH}
 
-USES=	cpe tar:xz
+USES=	compiler:c11 cpe tar:xz
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
