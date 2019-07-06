@@ -26,7 +26,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 #EXPIRATION_DATE=<Release date of .0 + 3 years>
 
 # XXX releases are .tar.xz, add: tar:xz
-USES=	compiler:c11 cpe
+USES=	cpe
 
 # Give a hint of where libperl.so can be found.
 USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
