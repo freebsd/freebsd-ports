@@ -1,0 +1,6 @@
+The ellipsis is a powerful tool for extending functions. Unfortunately
+this power comes at a cost: misspelled arguments will be silently
+ignored. The ellipsis package provides a collection of functions
+to catch problems and alert the user.
+
+WWW: https://cran.r-project.org/web/packages/ellipsis/
