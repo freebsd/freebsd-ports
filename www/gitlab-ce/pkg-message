@@ -1,15 +1,22 @@
-vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv GITLAB vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+[
+{
+  message: <<EOM
 Gitlab was installed successfully.
-
-
-!! WARNING: Please make sure you read in UPDATING entry 20190423 !!
-
 
 You now need to set up the various components of Gitlab, so please
 follow the instructions in the guide at:
 
 https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/install/11.11-freebsd.md
-
+EOM
+  type: install
+}
+{
+  message: "!! WARNING: Please make sure you read in UPDATING entry 20190423 !!"
+  maximum_version: "11.9.7"
+  type: upgrade
+}
+{
+  message: <<EOM
 If you just installed an major upgrade of GitLab, for example you
 switched from 11.8.x to 11.9.x, please follow the instructions in the guide at:
 
@@ -19,5 +26,8 @@ If you just installed an minor upgrade of GitLab please follow
 the instructions in the guide at:
 
 https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/freebsd_patch_versions.md
+EOM
+  type: upgrade
+}
+]
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ GITLAB ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

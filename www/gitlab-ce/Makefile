@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.11.5
-PORTREVISION=	1
+PORTVERSION=	12.0.3
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -17,10 +17,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # only rubygem-pg and rubygem-mysql are defined later as RUN_DEPENDS
 # for the options
 MY_DEPENDS=	git>=2.21.0:devel/git \
-	gitlab-shell>=9.1.0:devel/gitlab-shell \
+	gitlab-shell>=9.3.0:devel/gitlab-shell \
 	gitlab-workhorse>=8.7.0:www/gitlab-workhorse \
-	gitaly>=1.42.5:devel/gitaly \
-	gitlab-pages>=1.5.0:www/gitlab-pages \
+	gitaly>=1.47.0:devel/gitaly \
+	gitlab-pages>=1.6.1:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
 	yarn>=1.10.0:www/yarn \
 	rubygem-rails5>=5.1.7:www/rubygem-rails5 \
@@ -31,7 +31,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-rugged>=0.28.0:devel/rubygem-rugged \
 	rubygem-grape-path-helpers>=1.1:devel/rubygem-grape-path-helpers \
 	rubygem-faraday>=0.12.0:www/rubygem-faraday \
-	rubygem-devise-rails5>=4.4:devel/rubygem-devise-rails5 \
+	rubygem-devise-rails5>=4.6:devel/rubygem-devise-rails5 \
 	rubygem-doorkeeper43>=4.3:security/rubygem-doorkeeper43 \
 	rubygem-doorkeeper-openid_connect>=1.5:security/rubygem-doorkeeper-openid_connect \
 	rubygem-omniauth>=1.8:security/rubygem-omniauth \
@@ -49,7 +49,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-omniauth-twitter>=1.4:net/rubygem-omniauth-twitter \
 	rubygem-omniauth_crowd22>=2.2.0:devel/rubygem-omniauth_crowd22 \
 	rubygem-omniauth-authentiq>=0.3.3:net/rubygem-omniauth-authentiq \
-	rubygem-omniauth_openid_connect>=0.3.0:net/rubygem-omniauth_openid_connect \
+	rubygem-omniauth_openid_connect>=0.3.1:net/rubygem-omniauth_openid_connect \
 	rubygem-omniauth-ultraauth>=0.0.2:net/rubygem-omniauth-ultraauth \
 	rubygem-omniauth-salesforce>=1.0.5:net/rubygem-omniauth-salesforce \
 	rubygem-rack-oauth2>=1.9.3:security/rubygem-rack-oauth2 \
@@ -62,6 +62,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-u2f0>=0.2.1:net/rubygem-u2f0 \
 	rubygem-validates_hostname>=1.0.6:dns/rubygem-validates_hostname \
 	rubygem-rubyzip>=1.2.2:archivers/rubygem-rubyzip \
+	rubygem-acme-client-2.0.3>=2.0.2:security/rubygem-acme-client \
 	rubygem-browser>=2.5:www/rubygem-browser \
 	rubygem-gpgme>=2.0.18:security/rubygem-gpgme \
 	rubygem-gitlab_omniauth-ldap>=2.1.1:net/rubygem-gitlab_omniauth-ldap \
@@ -98,6 +99,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-creole>=0.5.0:textproc/rubygem-creole \
 	rubygem-wikicloth081>=0.8.1:textproc/rubygem-wikicloth081 \
 	rubygem-asciidoctor>=1.5.8:textproc/rubygem-asciidoctor \
+	rubygem-asciidoctor-include-ext>=0.3.1:textproc/rubygem-asciidoctor-include-ext \
 	rubygem-asciidoctor-plantuml008>=0.0.8:textproc/rubygem-asciidoctor-plantuml008 \
 	rubygem-rouge>=3.1:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.11:textproc/rubygem-truncato \
@@ -111,13 +113,14 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-unicorn-worker-killer>=0.4.4:www/rubygem-unicorn-worker-killer \
 	rubygem-puma>=3.12:www/rubygem-puma \
 	rubygem-puma_worker_killer>=0:www/rubygem-puma_worker_killer \
+	rubygem-rack-timeout>=0:www/rubygem-rack-timeout \
 	rubygem-state_machines-activerecord05>=0.5.1:databases/rubygem-state_machines-activerecord05 \
 	rubygem-acts-as-taggable-on>=6.0:www/rubygem-acts-as-taggable-on \
 	rubygem-sidekiq>=5.2.7:devel/rubygem-sidekiq \
 	rubygem-sidekiq-cron>=1.0.0:devel/rubygem-sidekiq-cron \
 	rubygem-redis-namespace>=1.6.0:databases/rubygem-redis-namespace \
 	rubygem-gitlab-sidekiq-fetcher>=0.4.0:devel/rubygem-gitlab-sidekiq-fetcher \
-	rubygem-fugit>=1.1:devel/rubygem-fugit \
+	rubygem-fugit>=1.2.1:devel/rubygem-fugit \
 	rubygem-httparty>=0.16.4:www/rubygem-httparty \
 	rubygem-rainbow>=3.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=0:devel/rubygem-ruby-progressbar \
@@ -160,9 +163,9 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-request_store>=1.3:devel/rubygem-request_store \
 	rubygem-virtus>=1.0.1:devel/rubygem-virtus \
 	rubygem-base32>=0.3.0:converters/rubygem-base32 \
-	rubygem-sentry-raven>=2.7:devel/rubygem-sentry-raven \
+	rubygem-sentry-raven>=2.9:devel/rubygem-sentry-raven \
 	rubygem-premailer-rails19-rails5>=1.9.7:mail/rubygem-premailer-rails19-rails5 \
-	rubygem-gitlab-labkit>=0.2.0:devel/rubygem-gitlab-labkit \
+	rubygem-gitlab-labkit>=0.3.0:devel/rubygem-gitlab-labkit \
 	rubygem-ruby_parser>=3.8.4:devel/rubygem-ruby_parser \
 	rubygem-rails-i18n-rails5>=5.1.0:devel/rubygem-rails-i18n-rails5 \
 	rubygem-gettext_i18n_rails>=1.8.0:devel/rubygem-gettext_i18n_rails \
@@ -182,6 +185,9 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-html2text>=0:textproc/rubygem-html2text \
 	rubygem-ruby-prof>=0.17.0:devel/rubygem-ruby-prof \
 	rubygem-rbtrace>=0.4:devel/rubygem-rbtrace \
+	rubygem-memory_profiler>=0.9:devel/rubygem-memory_profiler \
+	rubygem-benchmark-memory>=0.1:benchmarks/rubygem-benchmark-memory \
+	rubygem-activerecord-explain-analyze>=0.1:databases/rubygem-activerecord-explain-analyze \
 	rubygem-oauth2>=1.4.0:net/rubygem-oauth2 \
 	rubygem-health_check26-rails5>=2.6.0:devel/rubygem-health_check26-rails5 \
 	rubygem-vmstat>=2.3.0:sysutils/rubygem-vmstat \
@@ -190,7 +196,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-sshkey>=2.0:security/rubygem-sshkey \
 	rubygem-ed25519>=1.2:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly-proto>=1.27.2:net/rubygem-gitaly-proto \
+	rubygem-gitaly-proto>=1.32.0:net/rubygem-gitaly-proto \
 	rubygem-grpc>=1.19.0:net/rubygem-grpc \
 	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
 	rubygem-google-protobuf371>=3.7.1:devel/rubygem-google-protobuf371 \
@@ -229,7 +235,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	b85e6215a854a02fbb63c4e3be9998fc9fd4e58a
+GL_COMMIT=	08a51a9db938bb05f9a4c999075d010079e16bad
 
 USERS=	git
 GROUPS=	git
