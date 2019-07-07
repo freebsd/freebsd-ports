@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moneta
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,9 +12,11 @@ COMMENT=	Unified interface to key/value stores
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem shebangfix
+USE_RUBY=	yes
+
+NO_ARCH=	yes
+
 SHEBANG_FILES=	script/install-kyotocabinet \
 		script/start-services
 
