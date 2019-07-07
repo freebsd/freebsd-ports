@@ -5669,6 +5669,7 @@
     SUBDIR += rubygem-memoist
     SUBDIR += rubygem-memoizable
     SUBDIR += rubygem-memoize
+    SUBDIR += rubygem-memory_profiler
     SUBDIR += rubygem-mercenary
     SUBDIR += rubygem-message_bus
     SUBDIR += rubygem-metaclass
