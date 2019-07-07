@@ -1,5 +1,5 @@
-This port allows use of SpamHaus Technologies DQS DNSBL's
-to help spamassassin detect more spam.
+This port allows use of SpamHaus Technologies Data Query Service
+(DQS) DNSBL's to help spamassassin detect more spam.
 
 Data Feed License: https://www.spamhaus.org/organization/dnsblusage/
 WWW: https://github.com/spamhaus/spamassassin-dqs/
