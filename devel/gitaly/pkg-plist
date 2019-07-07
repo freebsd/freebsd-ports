@@ -111,7 +111,6 @@
 %%DATADIR%%/ruby/lib/gitlab/git/conflict/parser.rb
 %%DATADIR%%/ruby/lib/gitlab/git/conflict/resolution.rb
 %%DATADIR%%/ruby/lib/gitlab/git/conflict/resolver.rb
-%%DATADIR%%/ruby/lib/gitlab/git/diff.rb
 %%DATADIR%%/ruby/lib/gitlab/git/gitaly_remote_repository.rb
 %%DATADIR%%/ruby/lib/gitlab/git/gitlab_projects.rb
 %%DATADIR%%/ruby/lib/gitlab/git/hook.rb
@@ -157,7 +156,6 @@
 %%DATADIR%%/ruby/spec/lib/gitlab/git/branch_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/commit_patches_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/commit_spec.rb
-%%DATADIR%%/ruby/spec/lib/gitlab/git/diff_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/gitlab_projects_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/hook_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/index_spec.rb
