@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	grape
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for rapid API development with great conventions
 
 LICENSE=	MIT
