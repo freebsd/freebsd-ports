@@ -19,13 +19,10 @@ LIB_DEPENDS=	libee.so:devel/libee \
 		libcurl.so:ftp/curl
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR}
 
-PORTSCOUT=	limit:^8\.
-
 USES=		libtool pkgconfig autoreconf python:env
-
 USE_LDCONFIG=	yes
 
-CONFLICTS_BUILD=	libinotify-*
+PORTSCOUT=	limit:^8\.
 
 OPTIONS_DEFINE=	DBI DOCS ELASTIC GCRYPT GSSAPI HTTP JSONPARSE KAFKA \
 		MYSQL NORMALIZE PGSQL RABBITMQ RELP SNMP
@@ -72,7 +69,7 @@ JSONPARSE_PLIST_FILES=	lib/rsyslog/mmjsonparse.so
 
 KAFKA_DESC=		Kafka input/output module for rsyslog
 KAFKA_LIB_DEPENDS=	librdkafka.so:net/librdkafka
-KAFKA_CONFIGURE_ENABLE=	 imkafka omkafka
+KAFKA_CONFIGURE_ENABLE=	imkafka omkafka
 KAFKA_PLIST_FILES=	lib/rsyslog/imkafka.so \
 			lib/rsyslog/omkafka.so
 
@@ -147,7 +144,8 @@ SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=	--enable-imdiag --enable-imfile --enable-impstats \
 			--enable-mail --enable-omprog --enable-omstdout \
-			--enable-omuxsock --enable-rfc3195 --disable-testbench
+			--enable-omuxsock --enable-rfc3195 --disable-testbench \
+			ac_cv_func_inotify_init=no ac_cv_header_sys_inotify_h=no
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200061
 CONFIGURE_ARGS+=	--enable-imuxsock-rfc5424
