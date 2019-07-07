@@ -13,6 +13,9 @@ COMMENT=	Google Auth Library for Ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Use security/rubygem-googleauth instead
+EXPIRATION_DATE=2019-07-31
+
 RUN_DEPENDS=	rubygem-faraday>=0.12:www/rubygem-faraday \
 		rubygem-jwt>=1.4:www/rubygem-jwt \
 		rubygem-memoist>=0.16:devel/rubygem-memoist \
