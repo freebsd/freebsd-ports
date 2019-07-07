@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	deprecated
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ COMMENT=	@deprecated decorator to deprecate old python classes, functions or met
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wrapt>=1<2:devel/py-wrapt@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wrapt>=1.10<2:devel/py-wrapt@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
