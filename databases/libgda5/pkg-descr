@@ -16,4 +16,4 @@ the GDA model's set of CORBA interfaces.
 libgda was part of the GNOME-DB project, but has been separated from it
 to allow non-GNOME applications to be developed based on it.
 
-WWW: http://www.gnome-db.org/
+WWW: https://www.gnome-db.org/
