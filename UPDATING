@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20190707:
+  AFFECTS: users of www/gitlab-ce
+  AUTHOR: mfechner@FreeBSD.org
+
+  You must at first upgrade to version 11.11.5 before you can upgrade
+  to version 12.
+  Support for MySQL will be dropped with next version.
+  Make sure you use at least Postgresql version 9.6.
+  Follow the normal upgrade manual that can be found here:
+  https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/11.11-12.0-freebsd.md
+
 20190705:
   AFFECTS: users of net/serviio which bought a license for the non-free features
   AUTHOR: netchild@FreeBSD.org

@@ -1,4 +1,4 @@
---- Gemfile.orig	2019-06-10 10:52:55 UTC
+--- Gemfile.orig	2019-07-01 15:47:59 UTC
 +++ Gemfile
 @@ -14,7 +14,7 @@ gem 'sprockets', '~> 3.7.0'
  gem 'gitlab-default_value_for', '~> 3.1.1', require: 'default_value_for'
@@ -9,7 +9,7 @@
  gem 'pg', '~> 1.1', group: :postgres
  
  gem 'rugged', '~> 0.28'
-@@ -205,7 +205,7 @@ gem 'connection_pool', '~> 2.0'
+@@ -209,7 +209,7 @@ gem 'connection_pool', '~> 2.0'
  gem 'discordrb-webhooks-blackst0ne', '~> 3.3', require: false
  
  # HipChat integration
@@ -18,7 +18,7 @@
  
  # JIRA integration
  gem 'jira-ruby', '~> 1.4'
-@@ -304,88 +304,6 @@ group :metrics do
+@@ -308,89 +308,6 @@ group :metrics do
    # Prometheus
    gem 'prometheus-client-mmap', '~> 0.9.4'
    gem 'raindrops', '~> 0.18'
@@ -62,22 +62,22 @@
 -  # Generate Fake data
 -  gem 'ffaker', '~> 2.10'
 -
--  gem 'capybara', '~> 2.18.0'
+-  gem 'capybara', '~> 3.22.0'
 -  gem 'capybara-screenshot', '~> 1.0.22'
 -  gem 'selenium-webdriver', '~> 3.141'
 -
 -  gem 'spring', '~> 2.0.0'
 -  gem 'spring-commands-rspec', '~> 1.0.4'
 -
--  gem 'gitlab-styles', '~> 2.6', require: false
+-  gem 'gitlab-styles', '~> 2.7', require: false
 -  # Pin these dependencies, otherwise a new rule could break the CI pipelines
--  gem 'rubocop', '~> 0.68.1'
+-  gem 'rubocop', '~> 0.69.0'
 -  gem 'rubocop-performance', '~> 1.1.0'
 -  gem 'rubocop-rspec', '~> 1.22.1'
 -
 -  gem 'scss_lint', '~> 0.56.0', require: false
--  gem 'haml_lint', '~> 0.30.0', require: false
--  gem 'simplecov', '~> 0.14.0', require: false
+-  gem 'haml_lint', '~> 0.31.0', require: false
+-  gem 'simplecov', '~> 0.16.1', require: false
 -  gem 'bundler-audit', '~> 0.5.0', require: false
 -
 -  gem 'benchmark-ips', '~> 2.3.0', require: false
@@ -88,6 +88,7 @@
 -  gem 'activerecord_sane_schema_dumper', '1.0'
 -
 -  gem 'stackprof', '~> 0.2.10', require: false
+-  gem 'derailed_benchmarks', require: false
 -
 -  gem 'simple_po_parser', '~> 1.1.2', require: false
 -
@@ -95,7 +96,7 @@
 -end
 -
 -group :test do
--  gem 'shoulda-matchers', '~> 3.1.2', require: false
+-  gem 'shoulda-matchers', '~> 4.0.1', require: false
 -  gem 'email_spec', '~> 2.2.0'
 -  gem 'json-schema', '~> 2.8.0'
 -  gem 'webmock', '~> 3.5.1'
