@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mocha
-PORTVERSION=	1.7.0
+PORTVERSION=	1.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,9 @@ LICENSE_FILE_MIT=	${WRKSRC}/MIT-LICENSE.md
 
 RUN_DEPENDS=	rubygem-metaclass>=0.0.1:devel/rubygem-metaclass
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
