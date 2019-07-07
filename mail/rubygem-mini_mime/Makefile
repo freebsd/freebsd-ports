@@ -5,14 +5,15 @@ PORTVERSION=	1.0.1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight mime type lookup toy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NO_ARCH=	yes
 USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
