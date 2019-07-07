@@ -1,3 +1,9 @@
 TIMESTAMP = 1553005126
 SHA256 (nuspell-nuspell-v2.2.0_GH0.tar.gz) = c6d7664be74e84505f4227836d302c2885f65b165411ef86cc9cffbc1228d0c4
 SIZE (nuspell-nuspell-v2.2.0_GH0.tar.gz) = 400415
+SHA256 (35ae2bd38585.patch) = 72e683f0ad6ecbbd42e2559b729dde8f31e667f42a960b12c50af69ef511fff6
+SIZE (35ae2bd38585.patch) = 4634
+SHA256 (1d4c96d3fe0f.patch) = 064feccad9472467069213d4d5c36467ca990cc90fdf8d157197a5b9a5406522
+SIZE (1d4c96d3fe0f.patch) = 2176
+SHA256 (ad0eea5e8028.patch) = 27a2ad9ea1c7c29dc9a730fe44fdbc52766a541706c4542599f3d96f19ff8bf4
+SIZE (ad0eea5e8028.patch) = 991
