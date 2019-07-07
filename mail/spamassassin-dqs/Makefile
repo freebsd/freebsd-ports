@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		spamassassin-dqs
+PORTREVISION=		1
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.0.2
 CATEGORIES=		mail
