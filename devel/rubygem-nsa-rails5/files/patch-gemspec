@@ -1,14 +1,11 @@
---- nsa.gemspec.orig	2018-11-01 15:11:33 UTC
+--- nsa.gemspec.orig	2019-07-07 12:43:29 UTC
 +++ nsa.gemspec
-@@ -22,9 +22,9 @@ Gem::Specification.new do |s|
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
        s.add_runtime_dependency(%q<activesupport>.freeze, ["< 6", ">= 4.2"])
 -      s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["~> 1.0.0"])
 +      s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["~> 1.0"])
        s.add_runtime_dependency(%q<sidekiq>.freeze, [">= 3.5.0"])
--      s.add_runtime_dependency(%q<statsd-ruby>.freeze, ["~> 1.2.0"])
-+      s.add_runtime_dependency(%q<statsd-ruby>.freeze, ["~> 1.2"])
+       s.add_runtime_dependency(%q<statsd-ruby>.freeze, ["~> 1.4.0"])
        s.add_development_dependency(%q<bundler>.freeze, ["~> 1.10"])
-       s.add_development_dependency(%q<rake>.freeze, ["~> 10.0"])
-       s.add_development_dependency(%q<minitest>.freeze, [">= 0"])
