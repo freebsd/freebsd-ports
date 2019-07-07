@@ -1,6 +1,11 @@
 %%SITE_PERL%%/MCE.pm
 %%SITE_PERL%%/MCE.pod
 %%SITE_PERL%%/MCE/Candy.pm
+%%SITE_PERL%%/MCE/Channel.pm
+%%SITE_PERL%%/MCE/Channel/Mutex.pm
+%%SITE_PERL%%/MCE/Channel/Simple.pm
+%%SITE_PERL%%/MCE/Channel/Threads.pm
+%%SITE_PERL%%/MCE/Child.pm
 %%SITE_PERL%%/MCE/Core.pod
 %%SITE_PERL%%/MCE/Core/Input/Generator.pm
 %%SITE_PERL%%/MCE/Core/Input/Handle.pm
@@ -17,6 +22,7 @@
 %%SITE_PERL%%/MCE/Map.pm
 %%SITE_PERL%%/MCE/Mutex.pm
 %%SITE_PERL%%/MCE/Mutex/Channel.pm
+%%SITE_PERL%%/MCE/Mutex/Channel2.pm
 %%SITE_PERL%%/MCE/Mutex/Flock.pm
 %%SITE_PERL%%/MCE/Queue.pm
 %%SITE_PERL%%/MCE/Relay.pm
@@ -27,6 +33,11 @@
 %%SITE_PERL%%/MCE/Util.pm
 %%PERL5_MAN3%%/MCE.3.gz
 %%PERL5_MAN3%%/MCE::Candy.3.gz
+%%PERL5_MAN3%%/MCE::Channel.3.gz
+%%PERL5_MAN3%%/MCE::Channel::Mutex.3.gz
+%%PERL5_MAN3%%/MCE::Channel::Simple.3.gz
+%%PERL5_MAN3%%/MCE::Channel::Threads.3.gz
+%%PERL5_MAN3%%/MCE::Child.3.gz
 %%PERL5_MAN3%%/MCE::Core.3.gz
 %%PERL5_MAN3%%/MCE::Examples.3.gz
 %%PERL5_MAN3%%/MCE::Flow.3.gz
@@ -35,6 +46,7 @@
 %%PERL5_MAN3%%/MCE::Map.3.gz
 %%PERL5_MAN3%%/MCE::Mutex.3.gz
 %%PERL5_MAN3%%/MCE::Mutex::Channel.3.gz
+%%PERL5_MAN3%%/MCE::Mutex::Channel2.3.gz
 %%PERL5_MAN3%%/MCE::Mutex::Flock.3.gz
 %%PERL5_MAN3%%/MCE::Queue.3.gz
 %%PERL5_MAN3%%/MCE::Relay.3.gz
