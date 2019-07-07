@@ -55,7 +55,9 @@
 %%DATADIR%%/spec/gitlab_metrics_spec.rb
 %%DATADIR%%/spec/gitlab_net_spec.rb
 %%DATADIR%%/spec/gitlab_shell_authorized_keys_check_spec.rb
+%%DATADIR%%/spec/gitlab_shell_custom_git_receive_pack_spec.rb
 %%DATADIR%%/spec/gitlab_shell_gitlab_shell_spec.rb
+%%DATADIR%%/spec/gitlab_shell_lfs_authentication_spec.rb
 %%DATADIR%%/spec/gitlab_shell_spec.rb
 %%DATADIR%%/spec/gitlab_shell_two_factor_recovery_spec.rb
 %%DATADIR%%/spec/hooks_utils_spec.rb
