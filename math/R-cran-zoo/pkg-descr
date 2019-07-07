@@ -4,4 +4,4 @@ vectors/matrices and factors. zoo's key design goals are independence
 of a particular index/date/time class and consistency with ts and
 base R by providing methods to extend standard generics.
 
-WWW: http://zoo.r-forge.r-project.org/
+WWW: https://cran.r-project.org/web/packages/zoo/
