@@ -9,42 +9,6 @@
  
  #endif
 
-From cbdb2dcf8ff0702d0a52f8fc3ee0288c9dde0e92 Mon Sep 17 00:00:00 2001
-From: Peter Trommler <ptrommler@acm.org>
-Date: Fri, 28 Dec 2018 22:30:34 +0100
-Subject: [PATCH] RTS: Use ELF v1 convention on all powerpc64 systems
-
----
- rts/StgCRun.c | 5 -----
- 1 file changed, 5 deletions(-)
-
-diff --git a/rts/StgCRun.c b/rts/StgCRun.c
-index 92b0696c2b..4480198564 100644
---- rts/StgCRun.c
-+++ rts/StgCRun.c
-@@ -749,7 +749,6 @@ StgRunIsImplementedInAssembler(void)
- 
- #if defined(powerpc64_HOST_ARCH)
- 
--#if defined(linux_HOST_OS)
- static void GNUC3_ATTRIBUTE(used)
- StgRunIsImplementedInAssembler(void)
- {
-@@ -871,10 +870,6 @@ StgRunIsImplementedInAssembler(void)
-         : : "i"(RESERVED_C_STACK_BYTES+304 /*stack frame size*/));
- }
- 
--#else // linux_HOST_OS
--#error Only Linux support for power64 right now.
--#endif
--
- #endif
- 
- #if defined(powerpc64le_HOST_ARCH)
-
-
-
-
 From f4399ce96514ab58d766de999896780e93c886c6 Mon Sep 17 00:00:00 2001
 From: Peter Trommler <ptrommler@acm.org>
 Date: Fri, 28 Dec 2018 23:52:31 +0100
@@ -409,3 +373,93 @@ index 2f64d82ee5..82726d90d9 100644
                            II8  -> (1, 0, 8, gprs)
                            II16 -> (1, 0, 8, gprs)
 --- CodeGen.hs.orig	2018-09-16 22:53:54.000000000 +0200
+--- libraries/ghci/GHCi/InfoTable.hsc.orig	2019-07-06 09:00:10.880579000 +0200
++++ libraries/ghci/GHCi/InfoTable.hsc	2019-07-06 08:59:23.613439000 +0200
+@@ -77,7 +77,7 @@ data Arch = ArchSPARC
+           | ArchARM
+           | ArchARM64
+           | ArchPPC64
+-          | ArchPPC64LE
++          | ArchPPC64_ELFv2
+           | ArchUnknown
+  deriving Show
+ 
+@@ -99,8 +99,8 @@ platform =
+        ArchARM64
+ #elif defined(powerpc64_HOST_ARCH)
+        ArchPPC64
+-#elif defined(powerpc64le_HOST_ARCH)
+-       ArchPPC64LE
++#elif defined(_CALL_ELF) && (_CALL_ELF == 2)
++       ArchPPC64_ELFv2
+ #else
+ #    if defined(TABLES_NEXT_TO_CODE)
+ #        error Unimplemented architecture
+@@ -252,7 +252,7 @@ mkJumpToAddr a = case platform of
+                   0xE96C0010,
+                   0x4E800420]
+ 
+-    ArchPPC64LE ->
++    ArchPPC64_ELFv2 ->
+         -- The ABI requires r12 to point to the function's entry point.
+         -- We use the medium code model where code resides in the first
+         -- two gigabytes, so loading a non-negative32 bit address
+--- rts/StgCRun.c.orig	2019-04-07 21:39:58.000000000 +0200
++++ rts/StgCRun.c	2019-07-06 08:57:54.735161000 +0200
+@@ -747,9 +747,8 @@ StgRunIsImplementedInAssembler(void)
+    Everything is in assembler, so we don't have to deal with GCC...
+    -------------------------------------------------------------------------- */
+ 
+-#if defined(powerpc64_HOST_ARCH)
++#if defined(ELF_V1)
+ 
+-#if defined(linux_HOST_OS)
+ static void GNUC3_ATTRIBUTE(used)
+ StgRunIsImplementedInAssembler(void)
+ {
+@@ -871,13 +870,9 @@ StgRunIsImplementedInAssembler(void)
+         : : "i"(RESERVED_C_STACK_BYTES+304 /*stack frame size*/));
+ }
+ 
+-#else // linux_HOST_OS
+-#error Only Linux support for power64 right now.
+ #endif
+ 
+-#endif
+-
+-#if defined(powerpc64le_HOST_ARCH)
++#if defined(ELF_V2)
+ /* -----------------------------------------------------------------------------
+    PowerPC 64 little endian architecture
+ 
+--- rts/StgCRunAsm.S.orig	2018-06-12 22:33:31.000000000 +0200
++++ rts/StgCRunAsm.S	2019-07-06 13:29:26.837367000 +0200
+@@ -1,8 +1,7 @@
+ #include "ghcconfig.h"
+ #include "rts/Constants.h"
+ 
+-#if defined(powerpc64le_HOST_ARCH)
+-# ifdef linux_HOST_OS
++#if defined(_CALL_ELF) && (_CALL_ELF == 2)
+ # define STACK_FRAME_SIZE RESERVED_C_STACK_BYTES+304
+ 	.file	"StgCRun.c"
+ 	.abiversion 2
+@@ -13,6 +12,8 @@
+ .hidden StgRun
+ .type StgRun,@function
+ StgRun:
++	addis %r2, %r12, .TOC.-StgRun@ha
++	addi %r2, %r2, .TOC.-StgRun@l
+ .localentry StgRun,.-StgRun
+ 	mflr 0
+ 	mr 5, 1
+@@ -108,9 +109,6 @@ StgReturn:
+ 	blr
+ 
+ 	.section	.note.GNU-stack,"",@progbits
+-# else // linux_HOST_OS
+-# error Only Linux support for power64 little endian right now.
+-# endif
+ 
+ #elif defined(powerpc_HOST_ARCH)
+ # if defined(aix_HOST_OS)
