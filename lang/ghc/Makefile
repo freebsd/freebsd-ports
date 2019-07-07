@@ -3,6 +3,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot \
@@ -146,11 +147,8 @@ DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${EXTRACT_SUFX}:boot
 # CONFIGURE_TARGET must to be the same as the llvm triple
 CONFIGURE_TARGET=	${ARCH}-unknown-freebsd${"${ARCH:Maarch64}" != "":?:-gnueabihf}
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-aclocal.m4
-BUILD_DEPENDS+=		ld.gold:devel/binutils \
-			llc${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-RUN_DEPENDS+=		ld.gold:devel/binutils \
-			llc${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-USE_GCC=		yes
+BUILD_DEPENDS+=		llc${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+RUN_DEPENDS+=		llc${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 
 # When GHC being compiled and GHC used for bootstrapping support different
 # LLVM versions, we have to pull in both. Luckily, this is relatively rare.
@@ -158,21 +156,16 @@ USE_GCC=		yes
 BUILD_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
 RUN_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
 .  endif
-
-.  if ${OSVERSION} < 1200064
-IGNORE=	lang/ghc on ARM requires at least __FreeBSD_version 1200064
-.  endif
-
-.  ifdef QEMU_EMULATING
-IGNORE=	qemu-user-static isn't able to build lang/ghc, but it builds fine on a real hardware
-.  endif
 .endif
 
-.if ${ARCH} == powerpc64
+.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == powerpc64
 USE_GCC=	yes
 
 .  if ${OSVERSION} < 1200086
-IGNORE=	lang/ghc on powerpc64 requires at least __FreeBSD_version 1200086
+IGNORE=	lang/ghc requires at least FreeBSD 12.0-RELEASE
+.  endif
+.  ifdef QEMU_EMULATING
+IGNORE=	qemu-user-static isn't able to build lang/ghc, but it builds fine on a real hardware
 .  endif
 .endif
 
