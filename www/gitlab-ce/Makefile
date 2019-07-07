@@ -62,7 +62,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-u2f0>=0.2.1:net/rubygem-u2f0 \
 	rubygem-validates_hostname>=1.0.6:dns/rubygem-validates_hostname \
 	rubygem-rubyzip>=1.2.2:archivers/rubygem-rubyzip \
-	rubygem-acme-client-2.0.3>=2.0.2:security/rubygem-acme-client \
+	rubygem-acme-client>=2.0.2:security/rubygem-acme-client \
 	rubygem-browser>=2.5:www/rubygem-browser \
 	rubygem-gpgme>=2.0.18:security/rubygem-gpgme \
 	rubygem-gitlab_omniauth-ldap>=2.1.1:net/rubygem-gitlab_omniauth-ldap \
