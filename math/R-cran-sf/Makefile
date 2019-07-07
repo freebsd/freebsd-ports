@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sf
-DISTVERSION=	0.7-4
+DISTVERSION=	0.7-6
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 CRAN_DEPENDS=	R-cran-classInt>=0.2.1:devel/R-cran-classInt \
 		R-cran-DBI>=0.8:databases/R-cran-DBI \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
-		R-cran-Rcpp>0:devel/R-cran-Rcpp \
+		R-cran-Rcpp>=0.12.18:devel/R-cran-Rcpp \
 		R-cran-units>=0.6.0:math/R-cran-units
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \
