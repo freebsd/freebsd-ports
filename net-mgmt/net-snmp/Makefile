@@ -3,7 +3,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.7.3
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION} \
 		ZI
@@ -15,8 +15,6 @@ COMMENT=	Extendable SNMP implementation
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_SSL=	openssl111
 
 LIB_DEPENDS=	libpkg.so:ports-mgmt/pkg
 
@@ -77,7 +75,7 @@ TLS_CONFIGURE_ON=	--with-security-modules=tsm --with-transports=TLSTCP,DTLSUDP
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 1200085
+.if (${OSVERSION} >= 1200085 || ${SSL_DEFAULT:Mopenssl111*})
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openssl11
 .endif
 
@@ -96,7 +94,7 @@ PLIST_SUB+=	PYDISTUTILS_PKGVERSION=${PYDISTUTILS_PKGVERSION}
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
-CONFIGURE_ARGS+=--with-openssl="/usr"
+CONFIGURE_ARGS+=--with-openssl="${OPENSSLBASE}"
 
 .if ${PORT_OPTIONS:MDUMMY}
 CONFIGURE_ARGS+=--with-dummy-values
@@ -252,6 +250,10 @@ post-patch:
 	    ${WRKSRC}/agent/mibgroup/host/hr_system.c
 	@${REINPLACE_CMD} -E -e 's|return pci_lookup_name|disabled broken|g' \
 		${WRKSRC}/configure
+.if (${OSVERSION} >= 1200085 || ${SSL_DEFAULT:Mopenssl111*})
+	@${REINPLACE_CMD} -E -e 's|SSL_library_init|OPENSSL_init_ssl|g' \
+		${WRKSRC}/configure
+.endif
 	@${CP} ${WRKSRC}/include/net-snmp/system/freebsd12.h \
 		${WRKSRC}/include/net-snmp/system/freebsd13.h
 
