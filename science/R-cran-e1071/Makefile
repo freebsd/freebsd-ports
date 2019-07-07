@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	e1071
-DISTVERSION=	1.7-1
+DISTVERSION=	1.7-2
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Misc Functions of the Department of Statistics (e1071), TU Wien
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 USES=	cran:auto-plist,compiles
 
