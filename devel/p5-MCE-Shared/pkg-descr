@@ -1,0 +1,8 @@
+MCE::Shared provides data sharing capabilities for MCE supporting threads and
+processes.
+
+MCE::Hobo, included with the distribution, provides threads-like parallelization
+for running code asynchronously. Unlike threads, Hobo workers are spawned as
+processes having unique PIDs.
+
+WWW: https://metacpan.org/release/MCE-Shared
