@@ -47,6 +47,7 @@ usr/lib/qt4/plugins/sqldrivers/libqsqlite.so
 %%DATADIR%%/translations/qt_da.qm
 %%DATADIR%%/translations/qt_de.qm
 %%DATADIR%%/translations/qt_es.qm
+%%DATADIR%%/translations/qt_eu.qm
 %%DATADIR%%/translations/qt_fa.qm
 %%DATADIR%%/translations/qt_fr.qm
 %%DATADIR%%/translations/qt_gl.qm
