@@ -2,7 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nfilesystem-*:C/:[^:]+$//}
@@ -21,7 +21,7 @@ BIN_DISTNAMES=	bash-4.2.46-31.el7 \
 		elfutils-0.172-2.el7 \
 		filesystem-3.2-25.el7 \
 		findutils-4.5.11-6.el7 \
-		glibc-common-2.17-260.el7_6.5 \
+		glibc-common-2.17-260.el7_6.6 \
 		grep-2.20-3.el7 \
 		info-5.1-5.el7 \
 		keyutils-1.5.8-3.el7 \
@@ -37,7 +37,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		gamin-0.1.10-16.el7 \
 		gdbm-1.10-8.el7 \
 		glib2-2.56.1-4.el7_6 \
-		glibc-2.17-260.el7_6.5 \
+		glibc-2.17-260.el7_6.6 \
 		gmp-6.0.0-15.el7 \
 		keyutils-libs-1.5.8-3.el7 \
 		krb5-libs-1.15.1-37.el7_6 \
@@ -94,7 +94,7 @@ SRC_DISTFILES=	acl-2.2.51-14.el7${SRC_SUFX}:SOURCE \
 		gcc-4.8.5-36.el7_6.2${SRC_SUFX}:SOURCE \
 		gdbm-1.10-8.el7${SRC_SUFX}:SOURCE \
 		glib2-2.56.1-4.el7_6${SRC_SUFX}:SOURCE \
-		glibc-2.17-260.el7_6.5${SRC_SUFX}:SOURCE \
+		glibc-2.17-260.el7_6.6${SRC_SUFX}:SOURCE \
 		gmp-6.0.0-15.el7${SRC_SUFX}:SOURCE \
 		grep-2.20-3.el7${SRC_SUFX}:SOURCE \
 		keyutils-1.5.8-3.el7${SRC_SUFX}:SOURCE \
