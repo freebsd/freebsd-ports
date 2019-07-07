@@ -1,7 +1,7 @@
---- _support/makegen.go.orig	2019-04-05 16:17:09 UTC
+--- _support/makegen.go.orig	2019-06-18 09:53:31 UTC
 +++ _support/makegen.go
-@@ -253,7 +253,7 @@ var templateText = `
- # These variables may be overriden at runtime by top-level make
+@@ -282,7 +282,7 @@ var templateText = `
+ # These variables may be overridden at runtime by top-level make
  PREFIX ?= /usr/local
  INSTALL_DEST_DIR := $(DESTDIR)$(PREFIX)/bin/
 -BUNDLE_FLAGS ?= --deployment
@@ -9,7 +9,7 @@
  ASSEMBLY_ROOT ?= {{ .BuildDir }}/assembly
  BUILD_TAGS := tracer_static tracer_static_jaeger
  
-@@ -274,8 +274,8 @@ build: ../.ruby-bundle
+@@ -330,8 +330,8 @@ build: ../.ruby-bundle
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ../.ruby-bundle:  {{ .GitalyRubyDir }}/Gemfile.lock  {{ .GitalyRubyDir }}/Gemfile
