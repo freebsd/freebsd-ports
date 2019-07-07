@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	faker
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for generating fake data: names, addresses, phone numbers
 
 LICENSE=	MIT
