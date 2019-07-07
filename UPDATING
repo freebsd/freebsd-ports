@@ -13,7 +13,7 @@ you update your ports collection, before attempting any port upgrades.
   You must at first upgrade to version 11.11.5 before you can upgrade
   to version 12.
   Support for MySQL will be dropped with next version.
-  Make sure you use at least Postgresql version 9.6.
+  Make sure you use at least PostgreSQL version 9.6.
   Follow the normal upgrade manual that can be found here:
   https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/11.11-12.0-freebsd.md
 
@@ -52,7 +52,7 @@ you update your ports collection, before attempting any port upgrades.
 
   If you used Samba in AD/DC mode with the previous versions of the port on UFS2
   backed storage you have to add usage of vfs_freebsd VFS module for at least
-  SYSVOL share and confugure it to use 'legacy' mode(see manpage).
+  SYSVOL share and configure it to use 'legacy' mode(see manpage).
 
   The reason behind this is that previous versions Samba port used a hack to
   workaround broken mapping of Linux security and trusted extended attributes
@@ -66,7 +66,7 @@ you update your ports collection, before attempting any port upgrades.
   (as ZFS uses it's own way of mapping SYSVOL, thanks to the iXsystems patches)
   the vfs_freebsd module provides 'legacy' mode that implements old functionality.
 
-  For the presh installations it is recommended to use 'secure' mode of operations
+  For the fresh installations it is recommended to use 'secure' mode of operations
   for this module and use it as a global vfs objects.
 
   Caution: The given module is still considered EXPERIMENTAL.
@@ -76,7 +76,7 @@ you update your ports collection, before attempting any port upgrades.
            databases/tdb?, databases/ldb*
   AUTHOR: timur@FreeBSD.org
 
-  The port of the new version of Samba 4.10 is introduced. Due necessirity
+  The port of the new version of Samba 4.10 is introduced. Due necessarily
   to keep backwards compatibility for the legacy samba4[6-8] ports the 
   upgrade procedure is a bit convoluted.
 
@@ -114,14 +114,14 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of samba4[6-8] and devel/talloc, devel/tevent, databases/tdb, databases/ldb*
   AUTHOR: timur@FreeBSD.org
 
-  To introduce samba410(we deliberatly skip samba49 due the complexity of handling)
-  and to drop dependency on deprecated Python 2.7, Samba supplimentary libraries
-  talloc, tevent and tdb were splitted into current Python 3 compatiable versions
+  To introduce samba410(we deliberately skip samba49 due the complexity of handling)
+  and to drop dependency on deprecated Python 2.7, Samba supplementary libraries
+  talloc, tevent and tdb were split into current Python 3 compatible versions
   and legacy ones, with the suffix "1".
 
-  Old versions of Samba were changed to depend on the legacy supplimentary libraries,
+  Old versions of Samba were changed to depend on the legacy supplementary libraries,
   so if you need to install samba46, samba47 or samba48 over previous Samba
-  installations you need to downgrade supplimentary libs with the following commands:
+  installations you need to downgrade supplementary libs with the following commands:
 
   for users of portmaster:
         portmaster -o devel/talloc1 devel/talloc
@@ -550,7 +550,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of german/webalizer2, japanese/webalizer, polish/webalizer2, portuguese/webalizer-pt_BR, portuguese/webalizer-pt_PT, ukrainian/webalizer, www/geolizer, www/webalizer
   AUTHOR: dinoex@FreeBSD.org
 
-  The option GEOIP has beeen changed to used the new database.
+  The option GEOIP has been changed to used the new database.
   Either copy GeoLite2-Country.mmdb in the working directory,
   or set the GeoIPDatabase option to the location of the file.
 
