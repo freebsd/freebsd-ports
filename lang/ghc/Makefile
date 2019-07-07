@@ -3,7 +3,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot \
@@ -29,8 +29,6 @@ CONFIGURE_ARGS=		--with-iconv-includes=${LOCALBASE}/include \
 			--with-iconv-libraries=${LOCALBASE}/lib
 CONFIGURE_ENV=		CC=${CC} LD=${LD} PATH=${SLAVES_PREFIX}/bin:${PATH}
 MAKE_ENV=		PATH=${SLAVES_PREFIX}/bin:${PATH}
-# Turn off for a while, see PR 228727
-CONFIGURE_ARGS+=	--enable-dtrace=0
 
 SUB_FILES=		build.mk
 SUB_LIST=		GHC_VERSION=${GHC_VERSION} \
@@ -91,6 +89,8 @@ ONLY_FOR_ARCHS+=	aarch64 armv6 armv7 powerpc64
 
 .if ${GHC_VERSION_MAJOR} == 8 && ${GHC_VERSION_MINOR} <= 4
 LLVM_VERSION=		50
+# Turn off for old GHCs, see PR 228727
+CONFIGURE_ARGS+=	--enable-dtrace=0
 .else
 LLVM_VERSION=		60
 .endif
