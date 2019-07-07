@@ -41,7 +41,7 @@ OPENSSL_AES_USES=	ssl
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL_AES} && ${OPENSSLLIB} != "/usr/lib"
-LDFLAGS+	-L${OPENSSLLIB}
+LDFLAGS+=	-L${OPENSSLLIB}
 .endif
 
 do-install:
