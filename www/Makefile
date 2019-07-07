@@ -1470,6 +1470,7 @@
     SUBDIR += py-collective.templateengines
     SUBDIR += py-cookies
     SUBDIR += py-css-parser
+    SUBDIR += py-csscompressor
     SUBDIR += py-cssmin
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
