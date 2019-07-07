@@ -1,0 +1,5 @@
+Extends ActiveRecord#explain with support for EXPLAIN ANALYZE
+and output formats of JSON, XML, and YAML.
+It currently supports ActiveRecord 4 and 5, and PostgreSQL only.
+
+WWW: https://github.com/6/activerecord-explain-analyze
