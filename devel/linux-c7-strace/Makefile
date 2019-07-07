@@ -10,6 +10,6 @@ MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	System call tracer (CentOS ${LINUX_DIST_VER})
 
 USES=		linux:c7
-USE_LINUX_RPM=	yes
+USE_LINUX_RPM=	nolib
 
 .include <bsd.port.mk>
