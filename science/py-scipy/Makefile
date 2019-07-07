@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	scipy
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	science python
-MASTER_SITES=	https://docs.scipy.org/doc/scipy/:doc \
+MASTER_SITES=	https://docs.scipy.org/doc/scipy-${PORTVERSION:R}.1/:doc \
 		CHEESESHOP:source \
 		SF:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \
-		scipy-ref-${PORTVERSION}.pdf:doc
+		scipy-ref-${PORTVERSION:R}.1.pdf:doc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -22,15 +21,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		fortran python
+USES=		fortran python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
+
 LDFLAGS+=	-shared
 PYDISTUTILS_BUILDARGS=	--fcompiler=gnu95
 PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
 
-OPTIONS_DEFINE=	DOCS
+PORTDOCS=	scipy-ref-${PORTVERSION:R}.1.pdf
 
-PORTDOCS=	scipy-ref-${PORTVERSION}.pdf
+SHEBANG_FILES=	scipy/sparse/linalg/isolve/tests/test_gcrotmk.py
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 # Syntax error with GCC 5
@@ -43,6 +45,6 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/scipy-ref-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
