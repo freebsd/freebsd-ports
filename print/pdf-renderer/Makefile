@@ -39,7 +39,7 @@ ALL_TARGET+=	javadoc
 
 .include <bsd.port.pre.mk>
 
-.if ${JAVA_PORT_VERSION:M1.8.*}
+.if ${JAVA_PORT_VERSION:M*8*}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-swinglabs-build-impl.xml
 .endif
 
