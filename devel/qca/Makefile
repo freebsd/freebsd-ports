@@ -35,6 +35,7 @@ OPTIONS_DEFAULT=GNUPG OPENSSL
 OPTIONS_SUB=	yes
 
 BOTAN_CMAKE_ON=		-DWITH_botan_PLUGIN=yes
+BOTAN_DESC=		Build with Botan crypto library
 BOTAN_LIB_DEPENDS=	libbotan-2.so:security/botan2
 BOTAN_USES=		pkgconfig
 
