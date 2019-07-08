@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	contrib
-DISTVERSION=	git.2019-02-16
+DISTVERSION=	git.2019-06-28
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	munin-
 
@@ -20,7 +20,7 @@ zsh_CMD=	${LOCALBASE}/bin/zsh
 python3_CMD=	${LOCALBASE}/bin/python${PYTHON3_DEFAULT}
 USE_GITHUB=	yes
 GH_ACCOUNT=	munin-monitoring
-GH_TAGNAME=	5c3ee237
+GH_TAGNAME=	33270dd
 GH_TUPLE=	shuque:bind9stats:a920ded:bind9stats
 
 NO_BUILD=	yes
