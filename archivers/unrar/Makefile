@@ -35,16 +35,10 @@ PLIST_FILES=	bin/unrar
 SLAVEDIRS=	archivers/unrar-iconv
 
 OPENSSL_AES_CPPFLAGS=	-DOPENSSL_AES -I${OPENSSLINC}
-OPENSSL_AES_LDFLAGS=	-lcrypto
+OPENSSL_AES_LDFLAGS=	${${OPENSSLLIB} == /usr/lib :? :-L${OPENSSLLIB}} -lcrypto
 OPENSSL_AES_USES=	ssl
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL_AES} && ${OPENSSLLIB} != "/usr/lib"
-LDFLAGS+=	-L${OPENSSLLIB}
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
