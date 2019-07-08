@@ -28,7 +28,8 @@ OPTIONS_DEFINE=	DOCS GTK3 LIBAPL PCRE PGSQL SQLITE
 OPTIONS_SUB=	yes
 
 LIBAPL_DESC=	Build libapl.so instead of executable
-LIBAPL_CONFIGURE_WITH=	libapl
+# XXX: LIBAPL_CONFIGURE_WITH won't work for some reason
+LIBAPL_CONFIGURE_ON=	--with-libapl
 
 GTK3_USES=	pkgconfig gnome
 GTK3_USE=	GNOME=gtk30
