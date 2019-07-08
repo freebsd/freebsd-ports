@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	granite
-DISTVERSION=	5.2.3
+DISTVERSION=	5.2.4
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	tobik@FreeBSD.org
