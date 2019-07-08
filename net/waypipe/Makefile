@@ -2,8 +2,12 @@
 
 PORTNAME=	waypipe
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0-31
+DISTVERSION=	0.3.0
+PORTREVISION=	2
 CATEGORIES=	net
+
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/commit/
+PATCHFILES+=	04b9a483e346.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Network transparency with Wayland
@@ -13,13 +17,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	wayland-protocols>=1.12:graphics/wayland-protocols \
 		wayland>=1.15:graphics/wayland
-LIB_DEPENDS=	libffi.so:devel/libffi
 
 USES=		compiler:c11 meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mstoeckl
-GL_COMMIT=	a4b8d6b284882f0d8298bb0ba8cd31eea92bc447
+GL_COMMIT=	8cf7845e63470490af3af95e178ba5fa74d8056b
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	DMABUF FFMPEG LZ4 MANPAGES ZSTD
