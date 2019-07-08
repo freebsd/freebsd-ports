@@ -6023,10 +6023,19 @@
 %%PORTDOCS%%%%DOCSDIR%%/update_openemm-6.RC2-6.0.sql
 @mode 555
 %%PORTDOCS%%%%DOCSDIR%%/upgrade-postproc.sh
+@mode 755
 @(www,www,) /var/log/%%APP_HOME%%/daily.log
+@mode 755
+@(www,www,) /var/log/%%APP_HOME%%/openemm.log
+@mode 755
+@(www,www,) /var/log/%%APP_HOME%%/openemm-ws.log
+@mode 755
 @(www,www,) /var/log/%%APP_HOME%%/openemm_axis.log
+@mode 755
 @(www,www,) /var/log/%%APP_HOME%%/openemm_core.log
+@mode 755
 @(www,www,) /var/log/%%APP_HOME%%/userlogs.log
+@mode 755
 @dir(www,www,) /var/log/%%APP_HOME%%
 @dir %%DOCSDIR%%/ThirdPartyLicences
 @dir %%DOCSDIR%%

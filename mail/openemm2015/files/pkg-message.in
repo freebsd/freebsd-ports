@@ -6,7 +6,7 @@ $> mysqldump -aCceQx --hex-blob --routines --triggers -u root -p -r /tmp/openemm
 
 To integrate the OpenEMM 2015 to the installed Tomcat add this
 chunk to the server.xml of Tomcat:
-TOMCAT_HOME= %%PREFIX%%/apache-tomcat-8.0/lib/
+TOMCAT_HOME= %%PREFIX%%/apache-tomcat-8.5/lib/
 
 vi TOMCAT_HOME/conf/server.xml
 
@@ -28,6 +28,7 @@ vi TOMCAT_HOME/conf/server.xml
 	<!-- add this part END -->
    </Engine>
 
+Change the Engine name="Catalina" to point to defaultHost="OpenEMM"
 Don't forget securing tomcat, or add a httpd in front secured
 
 additional for the jndi database connect:
@@ -38,30 +39,24 @@ vi TOMCAT_HOME/conf/context.xml
         ....
         <Resource
                 name="jdbc/openemm_db"
-                driverClassName="com.mysql.jdbc.Driver"
+                driverClassName="com.mysql.cj.jdbc.Driver"
                 type="javax.sql.DataSource"
-                maxCount="30"
-                maxActive="50"
-                maxWait="10000"
+                maxTotal="30"
                 auth="Container"
                 username="agnitas"
                 password="openemm"
-                url="jdbc:mysql://localhost/openemm?useUnicode=yes&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior
-=convertToNull"
+                url="jdbc:mysql://localhost/openemm?useUnicode=yes&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull"
         />
 
         <Resource
                 name="jdbc/openemm_cms_db"
-                driverClassName="com.mysql.jdbc.Driver"
+                driverClassName="com.mysql.cj.jdbc.Driver"
                 type="javax.sql.DataSource"
-                maxCount="30"
-                maxActive="50"
-                maxWait="10000"
+                maxTotal="30"
                 auth="Container"
                 username="agnitas"
                 password="openemm"
-                url="jdbc:mysql://localhost/openemm_cms?useUnicode=yes&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBeha
-vior=convertToNull"
+                url="jdbc:mysql://localhost/openemm_cms?useUnicode=yes&amp;characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull
         />
 </Context>
 
@@ -81,20 +76,20 @@ chmod 644 /var/log/maillog
 # to keep this change permanent change cron info in /etc/newsyslog.conf
 # change line /var/log/maillog                      644  7     *    @T00  JC
 
-if not change tracking of mail sending / bounces is not working correct
+#if not change tracking of mail sending / bounces is not working correct
 
 # don't forget to add the link for mysql driver jar to tomcat
+# if not already installed add:  pkg install mysql-connector-java
 ln -s %%PREFIX%%/share/java/classes/mysql-connector-java.jar TOMCAT_HOME/lib
 chown -h www TOMCAT_HOME/lib/mysql-connector-java.jar
 
 # setup the database scripts
-
-in the installed mysql add 2 databases
+#in the installed mysql add 2 databases
 
 create database openemm;
 create database openemm_cms;
 
-grant the privileges for the 2 db's from where you want to access
+#grant the privileges for the 2 db's from where you want to access
 grant all privileges on openemm.* to agnitas@'X.Y.%' identified by 'openemm';
 grant all privileges on openemm_cms.* to agnitas@'X.Y.%' identified by 'openemm';
 
@@ -111,16 +106,16 @@ or
 
 # startup config for tomcat and OpenEMM
 add to /etc/rc.conf
-# Tomcat8 Server startup with initial config params for OpenEMM
-tomcat8_enable="YES"
-tomcat8_java_opts="-server -Djava.awt.headless=true -Xms256m -Xmx512m -XX:MaxPermSize=256m -Xss256k"
+# Tomcat85 Server startup with initial config params for OpenEMM
+tomcat85_enable="YES"
+tomcat85_java_opts="-server -Djava.awt.headless=true -Xms256m -Xmx512m -Xss256k"
 
 # Openemm 2015
 openemm2015_enable="YES"
 
 #NOW you are ready to start the tomcat and OpenEMM
 
-service tomcat8 start
+service tomcat85 start
 service openemm2015 start
 or
 %%PREFIX%%/etc/rc.d/openemm2015 start
