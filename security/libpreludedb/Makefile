@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libprelude.so:security/libprelude
 
-USES=		gmake libtool
+USES=		compiler:c11 gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-swig \
 		--without-python3
