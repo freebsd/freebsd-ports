@@ -14,6 +14,8 @@ COMMENT=	Set of LV2 plugins
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BROKEN=		fails to stage
+
 BUILD_DEPENDS=	lv2>=1.14.0_1:audio/lv2
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth \
 		libfontconfig.so:x11-fonts/fontconfig \
