@@ -1,6 +1,5 @@
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/b2ea757f68
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/d12d4d4515
-https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/b87063c06d
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/2ddaaaf595
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/e3991a5a45
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/995889abbf
@@ -202,16 +201,6 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/1e8475b507
  };
  
  static av_cold void log_encoder_error(AVCodecContext *avctx, const char *desc)
-@@ -505,7 +541,8 @@ static av_cold int aom_init(AVCodecContext *avctx,
-     enccfg.g_h            = avctx->height;
-     enccfg.g_timebase.num = avctx->time_base.num;
-     enccfg.g_timebase.den = avctx->time_base.den;
--    enccfg.g_threads      = avctx->thread_count ? avctx->thread_count : av_cpu_count();
-+    enccfg.g_threads      =
-+        FFMIN(avctx->thread_count ? avctx->thread_count : av_cpu_count(), 64);
- 
-     if (ctx->lag_in_frames >= 0)
-         enccfg.g_lag_in_frames = ctx->lag_in_frames;
 @@ -558,10 +595,14 @@ static av_cold int aom_init(AVCodecContext *avctx,
  
      // 0-100 (0 => CBR, 100 => VBR)
