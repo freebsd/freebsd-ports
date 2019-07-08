@@ -34,7 +34,7 @@ USE_TEX=	kpathsea
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PORTDOCS=		Changes manual.pdf README.pod
+PORTDOCS=		Changes README.pod manual.pdf
 
 OPTIONS_DEFINE=	DOCS
 
