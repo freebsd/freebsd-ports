@@ -4,7 +4,7 @@
 PORTNAME=	mpv
 PORTVERSION=	0.29.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://waf.io/:waf
@@ -179,6 +179,9 @@ CONFIGURE_ARGS+=	--disable-vaapi-wayland
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|sys/vt.h|sys/consio.h|g' \
+		${WRKSRC}/video/out/drm_common.c \
+		${WRKSRC}/wscript
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \
 		${WRKSRC}/wscript_build.py
 	@${REINPLACE_CMD} -e 's|DBL_EPSILON|FLT_EPSILON|'g \
