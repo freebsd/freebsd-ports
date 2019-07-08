@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	LaTeXML
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN \
 		http://dlmf.nist.gov/LaTeXML/releases/
@@ -34,7 +34,7 @@ USE_TEX=	kpathsea
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PORTDOCS=		Changes README.pod manual.pdf
+PORTDOCS=		Changes manual.pdf README.pod
 
 OPTIONS_DEFINE=	DOCS
 
