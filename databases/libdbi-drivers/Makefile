@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbi.so:databases/libdbi
 
-USES=		gmake libtool
+USES=		compiler:c11 gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--with-dbi-incdir=${LOCALBASE}/include \
