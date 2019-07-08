@@ -1,6 +1,6 @@
-TIMESTAMP = 1562308131
-SHA256 (OWASP-Amass-3.0.17_GH0.tar.gz) = 814cae3ca63b67d8d60537af12498890ffffabe1ed840fd837ecaeae2dce7f81
-SIZE (OWASP-Amass-3.0.17_GH0.tar.gz) = 8172236
+TIMESTAMP = 1562573495
+SHA256 (OWASP-Amass-3.0.18_GH0.tar.gz) = cd957b061435aca614dc65edb9e8c5c69166be4b0267f9b53beb1e0a8dae36b3
+SIZE (OWASP-Amass-3.0.18_GH0.tar.gz) = 8172302
 SHA256 (PuerkitoBio-fetchbot-v1.1.2_GH0.tar.gz) = 3d83b4ea30a6a477644906b8acbaecdfae0dd4def365295b9d5adc5c6619db98
 SIZE (PuerkitoBio-fetchbot-v1.1.2_GH0.tar.gz) = 21319
 SHA256 (PuerkitoBio-goquery-v1.5.0_GH0.tar.gz) = 0307341d56ae12648584b3990fb1e84f465870247e46aff00381c98c5ad231c7
