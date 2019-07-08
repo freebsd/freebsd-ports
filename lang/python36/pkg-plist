@@ -5205,6 +5205,7 @@ lib/python%%XYDOT%%/test/support/__pycache__/testresult.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/support/__pycache__/testresult.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/support/script_helper.py
 lib/python%%XYDOT%%/test/support/testresult.py
+lib/python%%XYDOT%%/test/talos-2019-0758.pem
 lib/python%%XYDOT%%/test/test___all__.py
 lib/python%%XYDOT%%/test/test___future__.py
 lib/python%%XYDOT%%/test/test__locale.py
