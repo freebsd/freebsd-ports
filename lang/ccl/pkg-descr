@@ -20,4 +20,4 @@ implementation. Features include:
     for fast file I/O; thread local hash tables and streams to
     eliminate locking overhead; cons hashing support.
 
-WWW: http://www.clozure.com/clozurecl.html
+WWW: https://www.clozure.com/ccl
