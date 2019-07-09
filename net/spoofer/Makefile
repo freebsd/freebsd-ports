@@ -16,7 +16,7 @@ BUILD_DEPENDS=	protoc:devel/protobuf
 LIB_DEPENDS=	libprotobuf-lite.so:devel/protobuf
 RUN_DEPENDS=	scamper:net/scamper
 
-USES=		compiler:c++11-lib
+USES=		compiler:c++11-lib qt:5
 
 CONFIGURE_ARGS=	--disable-development --with-protobuf=${LOCALBASE}
 GNU_CONFIGURE=	yes
@@ -27,20 +27,29 @@ OPTIONS_DEFINE=	DOCS GUI
 OPTIONS_DEFAULT=GUI
 OPTIONS_SUB=	yes
 
-GUI_CONFIGURE_ENABLE=	manager
-GUI_USE=	GL=gl QT=buildtools_build,qmake_build,core,network,gui,widgets
-GUI_USES=	gl qt:5
-GUI_VARS=	USE_RC_SUBR=${PORTNAME}
+.include <bsd.port.options.mk>
 
-do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+.if ${PORT_OPTIONS:MGUI}
+USE_QT=		buildtools_build qmake_build core network gui widgets
+USE_GL+=	gl
+USE_RC_SUBR=	${PORTNAME}
+.else
+CONFIGURE_ARGS+=	--disable-manager
+.endif
 
-do-install-GUI-on:
+post-install:
+.if ${PORT_OPTIONS:MGUI}
 .for r in 16 32 48 64 128 256
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${r}x${r}/apps
 	${INSTALL_DATA} ${WRKSRC}/icons/spoofer${r}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${r}x${r}/apps/spoofer.png
+.endfor
+.endif
+
+do-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
