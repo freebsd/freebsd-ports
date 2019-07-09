@@ -3,6 +3,7 @@
 
 PORTNAME=	libkpass
 PORTVERSION=	6
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org

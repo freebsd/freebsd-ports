@@ -3,6 +3,7 @@
 
 PORTNAME=	radcli
 PORTVERSION=	1.2.11
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	neel@neelc.org
