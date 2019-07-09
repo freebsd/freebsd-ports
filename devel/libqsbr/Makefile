@@ -10,6 +10,8 @@ COMMENT=	QSBR and EBR library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+BROKEN_i386=	fails to build
+
 USES=		compiler:c11 gmake libtool:build
 
 USE_GITHUB=	yes
