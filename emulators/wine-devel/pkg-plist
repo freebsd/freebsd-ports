@@ -605,6 +605,7 @@ include/wine/windows/npapi.h
 include/wine/windows/nserror.h
 include/wine/windows/nspapi.h
 include/wine/windows/ntddcdrm.h
+include/wine/windows/ntddmou.h
 include/wine/windows/ntddndis.h
 include/wine/windows/ntddscsi.h
 include/wine/windows/ntddstor.h
