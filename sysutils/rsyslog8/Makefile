@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	8.1905.0
+PORTVERSION=	8.1907.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -146,12 +146,6 @@ CONFIGURE_ARGS+=	--enable-imdiag --enable-imfile --enable-impstats \
 			--enable-mail --enable-omprog --enable-omstdout \
 			--enable-omuxsock --enable-rfc3195 --disable-testbench \
 			ac_cv_func_inotify_init=no ac_cv_header_sys_inotify_h=no
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200061
-CONFIGURE_ARGS+=	--enable-imuxsock-rfc5424
-.else
-CONFIGURE_ARGS+=	--disable-imuxsock-rfc5424
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
