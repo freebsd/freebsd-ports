@@ -12,6 +12,8 @@ COMMENT=	Free, multi-source, network-controlled music player daemon
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	fails to build
+
 LIB_DEPENDS=	libao.so:audio/libao \
 	libavcodec.so:multimedia/ffmpeg \
 	libgcrypt.so:security/libgcrypt \
