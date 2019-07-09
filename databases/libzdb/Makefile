@@ -12,6 +12,8 @@ COMMENT=	Thread-safe connection pool library
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	fails to build
+
 USES=		compiler:c11 gmake libtool localbase pathfix
 
 GNU_CONFIGURE=	yes
