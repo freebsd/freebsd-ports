@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nettle
-PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTVERSION=	3.5.1
 CATEGORIES=	security
 MASTER_SITES=	GNU \
 		https://www.lysator.liu.se/~nisse/archive/
@@ -27,11 +26,10 @@ USES=		compiler:c11 gmake localbase makeinfo pathfix
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	M4="/usr/bin/m4 -g"
 GNU_CONFIGURE=	yes
-#USE_CSTD=	c11
 USE_LDCONFIG=	yes
 
 INFO=		nettle
-PORTDOCS=	NEWS README TODO nettle.html nettle.pdf
+PORTDOCS=	NEWS README nettle.html nettle.pdf
 PORTEXAMPLES=	*.c *.h
 
 .include <bsd.port.options.mk>
