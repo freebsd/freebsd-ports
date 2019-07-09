@@ -331,6 +331,7 @@ go/misc/cgo/test/issue29781.go
 go/misc/cgo/test/issue30065.go
 go/misc/cgo/test/issue3250.go
 go/misc/cgo/test/issue3250w.go
+go/misc/cgo/test/issue32579.go
 go/misc/cgo/test/issue3261.go
 go/misc/cgo/test/issue3729.go
 go/misc/cgo/test/issue3729w.go
@@ -8197,6 +8198,9 @@ go/test/fixedbugs/issue31252.dir/main.go
 go/test/fixedbugs/issue31252.go
 go/test/fixedbugs/issue31987.go
 go/test/fixedbugs/issue32477.go
+go/test/fixedbugs/issue32560.go
+go/test/fixedbugs/issue32680.go
+go/test/fixedbugs/issue32680.out
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
 go/test/fixedbugs/issue3552.go
