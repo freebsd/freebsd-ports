@@ -5,7 +5,7 @@ PORTNAME=	drm-current-kmod
 PORTVERSION=	4.16.g20190519
 CATEGORIES=	graphics kld
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	DRM modules for the linuxkpi-based KMS components
 
 LICENSE=	BSD2CLAUSE MIT GPLv2
