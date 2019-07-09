@@ -21,11 +21,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake gnome jpeg localbase:ldflags pkgconfig
 USE_GITLAB=	yes
-# This is a workaround to convert the subproject into a project. It's also
-# required to avoid slashes in the DISTNAME.
 GL_SITE=	https://gitlab.com/sane-project
-GL_ACCOUNT=	frontend # would be 'sane-project'
-# ...and GL_PROJECT would be 'frontend/xsane' then but introduces a '/' to DISTNAME
+GL_ACCOUNT=	frontend
 GL_COMMIT=	d01b4089ce6778e76fa86a0410d4e80cf6eb819e
 USE_GNOME=	gtk20 gdkpixbuf2
 GNU_CONFIGURE=	yes
