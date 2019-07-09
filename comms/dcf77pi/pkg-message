@@ -1,3 +1,6 @@
+[
+{
+  message: <<EOM
 Normally, dcf77pi and readpin need to be run as root due to the permissions of
 /dev/gpioc* , but they can be run as a regular user by changing the permissions
 of the device node:
@@ -7,3 +10,7 @@ of the device node:
 And to make the change persistent across reboots:
 
 # echo "perm gpioc* 0660" >> /etc/devfs.conf
+EOM
+  type: install
+}
+]

@@ -1,7 +1,6 @@
-===============================================================================
-
-This port has installed the biosfont kernel module.
-
+[
+{
+  message: <<EOM
 To load the kernel module immediately, type the following command:
 
 	kldload biosfont
@@ -9,5 +8,7 @@ To load the kernel module immediately, type the following command:
 To load the kernel module at boot, add the following line to /boot/loader.conf:
 
 	biosfont_load="YES"
-
-===============================================================================
+EOM
+  type: [install, upgrade]
+}
+]
