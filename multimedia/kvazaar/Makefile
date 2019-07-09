@@ -2,15 +2,8 @@
 
 PORTNAME=	kvazaar
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.2.0
-PORTREVISION?=	3
+DISTVERSION?=	1.3.0
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	93e1c9f1c39c.patch:-p1 \
-		4f4bea749680.patch:-p1 \
-		4b24cd03a24e.patch:-p1 \
-		411276d6f2b2.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	H.265/HEVC encoder implemented in C
