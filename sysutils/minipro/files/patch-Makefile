@@ -1,0 +1,31 @@
+--- Makefile.orig	2019-02-27 06:19:06 UTC
++++ Makefile
+@@ -1,16 +1,16 @@
+ # Install Configuration
+ 
+ # Your C compiler
+-CC=gcc
++CC?=gcc
+ #CC=clang
+ 
+ # Compiler options
+-CFLAGS = -g -O0 -Wall
++CFLAGS ?= -g -O0 -Wall
+ 
+ # Normally minipro is installed to /usr/local.  If you want to put it
+ # somewhere else, define that location here.
+ PREFIX ?= /usr/local
+-MANDIR ?= $(PREFIX)/share/man
++MANDIR ?= $(PREFIX)/man
+ 
+ # Some older releases of MacOS need some extra library flags.
+ #EXTRA_LIBS += "-framework Foundation -framework IOKit"
+@@ -58,7 +58,7 @@ OBJCOPY=objcopy
+ 
+ DIST_DIR = $(MINIPRO)-$(VERSION)
+ BIN_INSTDIR=$(DESTDIR)$(PREFIX)/bin
+-MAN_INSTDIR=$(DESTDIR)$(PREFIX)/share/man/man1
++MAN_INSTDIR=$(DESTDIR)$(PREFIX)/man/man1
+ 
+ UDEV_DIR=$(shell $(PKG_CONFIG) --define-variable=prefix=$(PREFIX) --silence-errors --variable=udevdir udev)
+ UDEV_RULES_INSTDIR=$(DESTDIR)$(UDEV_DIR)/rules.d
