@@ -13,9 +13,6 @@ COMMENT=	C-based extension implementing fast integer bit sets
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv6=		fails to compile: the clang compiler does not support -march=core2
-BROKEN_armv7=		fails to compile: the clang compiler does not support -march=core2
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
