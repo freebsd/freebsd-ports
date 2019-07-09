@@ -1,4 +1,4 @@
-TIMESTAMP = 1560263000
+TIMESTAMP = 1562397908
 SHA256 (rust/crates/aho-corasick-0.7.3.tar.gz) = e6f484ae0c99fec2e858eb6134949117399f222608d84cadb3f58c1f97c2364c
 SIZE (rust/crates/aho-corasick-0.7.3.tar.gz) = 55093
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -273,5 +273,5 @@ SHA256 (rust/crates/wincolor-1.0.1.tar.gz) = 561ed901ae465d6185fa7864d63fbd5720d
 SIZE (rust/crates/wincolor-1.0.1.tar.gz) = 4737
 SHA256 (rust/crates/yaml-rust-0.4.3.tar.gz) = 65923dd1784f44da1d2c3dbbc5e822045628c590ba72123e1c73d3c230c4434d
 SIZE (rust/crates/yaml-rust-0.4.3.tar.gz) = 45768
-SHA256 (XAMPPRocky-tokei-v10.0.0_GH0.tar.gz) = e2dab2f028061c50ba8dd242cd7691488af8bf5e389ba8800f0843c1ff45df20
-SIZE (XAMPPRocky-tokei-v10.0.0_GH0.tar.gz) = 82383
+SHA256 (XAMPPRocky-tokei-v10.0.1_GH0.tar.gz) = 4c58388c293d6c37b603fbbcf0bdefec244dc057accff623b44b77af65998b60
+SIZE (XAMPPRocky-tokei-v10.0.1_GH0.tar.gz) = 82884
