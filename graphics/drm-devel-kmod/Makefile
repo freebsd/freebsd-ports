@@ -6,7 +6,7 @@ PORTVERSION=	5.0.g20190520
 PORTREVISION=	1
 CATEGORIES=	graphics kld
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	DRM modules for the linuxkpi-based KMS components (development version)
 
 LICENSE=	BSD2CLAUSE MIT GPLv2

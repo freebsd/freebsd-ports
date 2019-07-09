@@ -5,7 +5,7 @@ PORTNAME=	drm-kmod
 PORTVERSION=	g20181126
 CATEGORIES=	graphics
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Metaport of DRM modules for the linuxkpi-based KMS components
 
 USES=		metaport
