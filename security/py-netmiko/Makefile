@@ -2,7 +2,7 @@
 
 PORTNAME=	netmiko
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.3
+DISTVERSION=	2.4.0
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,9 +12,9 @@ COMMENT=	Multi-vendor library to simplify SSH connections to network devices
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=2.4.1:security/py-paramiko@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=2.4.3:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}serial>0:comms/py-serial@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scp>=0.10.0:security/py-scp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scp>=0.13.2:security/py-scp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}textfsm>0:textproc/py-textfsm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 		${PY_IPADDRESS} \
