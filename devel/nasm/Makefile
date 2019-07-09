@@ -5,7 +5,7 @@ PORTNAME=	nasm
 PORTVERSION=	2.14.02
 PORTEPOCH=	1
 CATEGORIES=	devel lang
-MASTER_SITES=	http://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/ \
+MASTER_SITES=	https://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/ \
 		https://mirror.sobukus.de/files/src/nasm/
 
 MAINTAINER=	zeising@FreeBSD.org
