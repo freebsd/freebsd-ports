@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	psftools
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.13
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.seasip.info/Unix/PSF/
 
