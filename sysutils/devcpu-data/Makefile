@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/sbruno:amd
 PKGNAMEPREFIX=	devcpu-
@@ -19,7 +19,7 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 GH_PROJECT=	Intel-Linux-Processor-Microcode-Data-Files
-GH_TAGNAME=	microcode-20190514
+GH_TAGNAME=	microcode-20190618
 
 ONLY_FOR_ARCHS=	amd64 i386
 NO_ARCH=	yes
