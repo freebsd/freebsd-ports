@@ -48,7 +48,7 @@ bash_CMD=	${SH}
 
 .include <bsd.port.pre.mk>
 
-.if ${LINUX_ARCH} == "i386"
+.if ${ARCH} == i386
 PLIST_SUB+=		JAVA_ARCHLIBDIR="i386" \
 			ECLIPSE_ARCHPATH="x86" \
 			VISUALVM_ARCHLIBDIR="linux" \
