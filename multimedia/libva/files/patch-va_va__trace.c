@@ -2,7 +2,7 @@
 
 --- va/va_trace.c.orig	2019-07-05 13:14:31 UTC
 +++ va/va_trace.c
-@@ -48,12 +48,36 @@
+@@ -48,12 +48,42 @@
  #include <unistd.h>
  #include <sys/types.h>
  #include <sys/stat.h>
@@ -18,7 +18,9 @@
 +#include <pthread_np.h>
 +#elif defined(__NetBSD__)
 +#include <lwp.h>
-+#else // OpenBSD, Solaris
++#elif defined(__sun)
++#include <thread.h>
++#else // fallback
 +#include <stdint.h>
 +#endif
 +
@@ -31,7 +33,11 @@
 +  return pthread_getthreadid_np();
 +#elif defined(__NetBSD__)
 +  return _lwp_self();
-+#else // OpenBSD, Solaris
++#elif defined(__OpenBSD__)
++  return getthrid();
++#elif defined(__sun)
++  return thr_self();
++#else // fallback
 +  return (intptr_t) pthread_self();
 +#endif
 +}

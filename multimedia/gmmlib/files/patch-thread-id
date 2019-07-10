@@ -2,7 +2,7 @@ Add more BSDs and update to modern way to get thread ID
 
 --- Source/GmmLib/Utility/GmmLog/spdlog/details/os.h.orig	2018-09-28 18:59:39 UTC
 +++ Source/GmmLib/Utility/GmmLog/spdlog/details/os.h
-@@ -39,9 +39,13 @@
+@@ -39,9 +39,16 @@
  #include <unistd.h>
  #include <chrono>
  
@@ -15,10 +15,13 @@ Add more BSDs and update to modern way to get thread ID
 +#elif defined(__NetBSD__)
 +#include <lwp.h>         // for _lwp_self
 +
++#elif defined(__sun)
++#include <thread.h>      // for thr_self
++
  #else
  #include <thread>
  
-@@ -302,10 +308,10 @@ inline size_t thread_id()
+@@ -302,10 +308,14 @@ inline size_t thread_id()
  #  define SYS_gettid __NR_gettid
  # endif
      return  static_cast<size_t>(syscall(SYS_gettid));
@@ -30,6 +33,10 @@ Add more BSDs and update to modern way to get thread ID
 +    return static_cast<size_t>(pthread_getthreadid_np());
 +#elif defined(__NetBSD__)
 +    return static_cast<size_t>(_lwp_self());
++#elif defined(__OpenBSD__)
++    return getthrid();
++#elif defined(__sun)
++    return thr_self();
  #else //Default to standard C++11 (OSX and other Unix)
      return static_cast<size_t>(std::hash<std::thread::id>()(std::this_thread::get_id()));
  #endif
