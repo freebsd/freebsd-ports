@@ -1,4 +1,4 @@
---- makefile.orig	2018-04-10 01:38:39 UTC
+--- makefile.orig	2019-04-16 20:34:45 UTC
 +++ makefile
 @@ -11,9 +11,7 @@
  srcdir ?= .
@@ -24,7 +24,7 @@
  endif
  
  vpath %.h $(srcdir) $(srcdir)/../src $(srcdir)/../include $(srcdir)/../lexlib
-@@ -87,7 +90,7 @@ CXXTFLAGS:=--std=gnu++17 $(CTFLAGS) $(RE
+@@ -87,7 +90,7 @@ CXXTFLAGS:=--std=gnu++17 $(CTFLAGS) $(REFLAGS)
  CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
  MARSHALLER=scintilla-marshal.o
  
@@ -33,10 +33,10 @@
  
  clean:
  	$(DEL) *.o $(COMPLIB) *.plist
-@@ -123,9 +126,11 @@ $(COMPLIB): Accessor.o CharacterSet.o De
+@@ -119,9 +122,11 @@ $(COMPLIB): Accessor.o CharacterSet.o DefaultLexer.o L
  	PropSetSimple.o PlatGTK.o \
  	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o ScintillaGTKAccessible.o CellBuffer.o CharacterCategory.o ViewStyle.o \
- 	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o XPM.o \
+ 	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o UniqueString.o XPM.o \
 -	$(MARSHALLER) $(LEXOBJS)
 -	$(AR) $(ARFLAGS) $@ $^
 -	$(RANLIB) $@
