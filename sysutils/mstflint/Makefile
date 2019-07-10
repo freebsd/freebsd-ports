@@ -5,8 +5,8 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.12.0-1
 CATEGORIES=	sysutils
 
-MAINTAINER=	swills@FreeBSD.org
-COMMENT=	Mellanox Firmware Tools
+MAINTAINER=	slavash@FreeBSD.org
+COMMENT=	Firmware Burning and Diagnostics Tools for Mellanox devices
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
