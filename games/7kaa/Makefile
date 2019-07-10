@@ -18,7 +18,8 @@ LIB_DEPENDS=	libenet.so:net/enet \
 USE_GITHUB=	yes
 GH_ACCOUNT=	the3dfxdude
 
-USES=		autoreconf gettext-tools gmake localbase openal:al pkgconfig sdl
+USES=		autoreconf compiler:c++11-lang gettext-tools gmake localbase \
+		openal:al pkgconfig sdl
 USE_SDL=	sdl2
 GNU_CONFIGURE=	yes
 
