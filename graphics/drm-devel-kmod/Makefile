@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drm-devel-kmod
-PORTVERSION=	5.0.g20190520
-PORTREVISION=	1
+PORTVERSION=	5.0.g20190710
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
@@ -29,7 +28,7 @@ USES=		kmod uidfix compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	kms-drm
-GH_TAGNAME=	4d4b2ba
+GH_TAGNAME=	284fe88
 
 .include <bsd.port.options.mk>
 
@@ -45,11 +44,21 @@ PLIST_SUB+=	AMDGPU=""
 PLIST_SUB+=	AMDKFD="@comment "
 PLIST_SUB+=	I915=""
 PLIST_SUB+=	VMWGFX=""
+.  if ${OSVERSION} >= 1300033
+PLIST_SUB+=	VBOXVIDEO=""
+.  else
+PLIST_SUB+=	VBOXVIDEO="@comment "
+.  endif
 .elif ${ARCH} == "i386"
 PLIST_SUB+=	AMDGPU="@comment "
 PLIST_SUB+=	AMDKFD="@comment "
 PLIST_SUB+=	I915=""
 PLIST_SUB+=     VMWGFX=""
+.  if ${OSVERSION} >= 1300033
+PLIST_SUB+=	VBOXVIDEO=""
+.  else
+PLIST_SUB+=	VBOXVIDEO="@comment "
+.  endif
 .elif ${ARCH} == "powerpc64"
 PLIST_SUB+=	AMDGPU=""
 PLIST_SUB+=	AMDKFD="@comment " 
