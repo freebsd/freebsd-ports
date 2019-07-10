@@ -24,7 +24,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		python:2.7 # 3.X support is still in the pull request: https://github.com/coin-or/CyLP/pull/28
+USES=		compiler:c++11-lang python:2.7 # 3.X support is still in the pull request: https://github.com/coin-or/CyLP/pull/28
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
 USE_PYTHON=	distutils cython autoplist
