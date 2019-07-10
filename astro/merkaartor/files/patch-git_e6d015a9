@@ -6,7 +6,7 @@ Date:   Mon Jul 27 14:22:37 2015 +0200
 
 --- src/Docks/GeoImageDock.cpp.orig	2015-07-19 14:50:09 UTC
 +++ src/Docks/GeoImageDock.cpp
-@@ -458,7 +458,7 @@ void GeoImageDock::loadImages(QStringLis
+@@ -458,7 +458,7 @@ void GeoImageDock::loadImages(QStringList fileNames)
  
      Exiv2::Image::AutoPtr image;
      Exiv2::ExifData exifData;
@@ -15,7 +15,7 @@ Date:   Mon Jul 27 14:22:37 2015 +0200
  
      Layer *theLayer;
      if (photoLayer == NULL) {
-@@ -894,7 +894,7 @@ Coord GeoImageDock::getGeoDataFromImage(
+@@ -894,7 +894,7 @@ Coord GeoImageDock::getGeoDataFromImage(const QString 
      double lat = 0.0, lon = 0.0;
      Exiv2::Image::AutoPtr image;
      Exiv2::ExifData exifData;
@@ -26,10 +26,13 @@ Date:   Mon Jul 27 14:22:37 2015 +0200
          return pos;
 --- src/Docks/GeoImageDock.h.orig	2015-07-19 14:50:09 UTC
 +++ src/Docks/GeoImageDock.h
-@@ -9,6 +9,7 @@
+@@ -7,8 +7,8 @@
+ #include <QtWidgets/QDockWidget>
+ #include <QtGui/QMouseEvent>
  #include <QtWidgets/QShortcut>
- #include <exiv2/image.hpp>
- #include <exiv2/exif.hpp>
+-#include <exiv2/image.hpp>
+-#include <exiv2/exif.hpp>
++#include <exiv2/exiv2.hpp>
 +#include <QDrag>
  
  class ImageView;
