@@ -296,7 +296,7 @@ PLIST_SUB+=	LINUXBASE=${LINUXBASE} \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLINUX}
-.if ${NVVERSION} >= 390.042 && ${LINUX_DEFAULT:S/_64//} == c7
+.if ${NVVERSION} >= 390.042 && ${LINUX_DEFAULT} != c6
 USE_LINUX+=	libglvnd
 PLIST_RE+=	'\,${LINUXBASE}.*libEGL\.so,d' \
 		'\,${LINUXBASE}.*libGL\.so,d' \
@@ -392,7 +392,7 @@ LINUX32_LIBS+=	libGLdispatch.so.0 \
 PLIST_RE+=	'\,${LINUXBASE}.*libGLdispatch\.so,d' \
 		'\,${LINUXBASE}.*libOpenGL\.so,d'
 .endif
-.endif	# ${NVVERSION} >= 390.042 && ${LINUX_DEFAULT:S/_64//} == c7
+.endif	# ${NVVERSION} >= 390.042 && ${LINUX_DEFAULT} != c6
 
 .if ${ARCH} == amd64
 .if ${NVVERSION} >= 310.014
