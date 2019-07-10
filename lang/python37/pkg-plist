@@ -1456,6 +1456,7 @@ lib/python%%XYDOT%%/distutils/tests/__pycache__/test_version.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/distutils/tests/__pycache__/test_versionpredicate.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/distutils/tests/__pycache__/test_versionpredicate.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/distutils/tests/__pycache__/test_versionpredicate.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/distutils/tests/includetest.rst
 lib/python%%XYDOT%%/distutils/tests/support.py
 lib/python%%XYDOT%%/distutils/tests/test_archive_util.py
 lib/python%%XYDOT%%/distutils/tests/test_bdist.py
@@ -5196,6 +5197,9 @@ lib/python%%XYDOT%%/test/libregrtest/__pycache__/setup.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/libregrtest/__pycache__/utils.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/libregrtest/__pycache__/utils.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/libregrtest/__pycache__/utils.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/libregrtest/__pycache__/win_utils.cpython-37.opt-1.pyc
+lib/python%%XYDOT%%/test/libregrtest/__pycache__/win_utils.cpython-37.opt-2.pyc
+lib/python%%XYDOT%%/test/libregrtest/__pycache__/win_utils.cpython-37.pyc
 lib/python%%XYDOT%%/test/libregrtest/cmdline.py
 lib/python%%XYDOT%%/test/libregrtest/main.py
 lib/python%%XYDOT%%/test/libregrtest/refleak.py
@@ -5204,6 +5208,7 @@ lib/python%%XYDOT%%/test/libregrtest/runtest_mp.py
 lib/python%%XYDOT%%/test/libregrtest/save_env.py
 lib/python%%XYDOT%%/test/libregrtest/setup.py
 lib/python%%XYDOT%%/test/libregrtest/utils.py
+lib/python%%XYDOT%%/test/libregrtest/win_utils.py
 lib/python%%XYDOT%%/test/list_tests.py
 lib/python%%XYDOT%%/test/lock_tests.py
 lib/python%%XYDOT%%/test/mailcap.txt
@@ -6319,6 +6324,9 @@ lib/python%%XYDOT%%/test/test_tools/__pycache__/test_gprof2html.cpython-%%XY%%.p
 lib/python%%XYDOT%%/test/test_tools/__pycache__/test_i18n.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_tools/__pycache__/test_i18n.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_tools/__pycache__/test_i18n.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_tools/__pycache__/test_lll.cpython-37.opt-1.pyc
+lib/python%%XYDOT%%/test/test_tools/__pycache__/test_lll.cpython-37.opt-2.pyc
+lib/python%%XYDOT%%/test/test_tools/__pycache__/test_lll.cpython-37.pyc
 lib/python%%XYDOT%%/test/test_tools/__pycache__/test_md5sum.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_tools/__pycache__/test_md5sum.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_tools/__pycache__/test_md5sum.cpython-%%XY%%.pyc
@@ -6340,6 +6348,7 @@ lib/python%%XYDOT%%/test/test_tools/__pycache__/test_unparse.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_tools/test_fixcid.py
 lib/python%%XYDOT%%/test/test_tools/test_gprof2html.py
 lib/python%%XYDOT%%/test/test_tools/test_i18n.py
+lib/python%%XYDOT%%/test/test_tools/test_lll.py
 lib/python%%XYDOT%%/test/test_tools/test_md5sum.py
 lib/python%%XYDOT%%/test/test_tools/test_pdeps.py
 lib/python%%XYDOT%%/test/test_tools/test_pindent.py
