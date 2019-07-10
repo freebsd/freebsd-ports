@@ -1,0 +1,9 @@
+Abseil is an open source collection of libraries drawn from the most fundamental
+pieces of Google internal codebase. These libraries are the nuts-and-bolts that
+underpin almost everything Google runs. Bits and pieces of these APIs are
+embedded in most of our open source projects, and Abseil aims to bring them
+together into one comprehensive project. Abseil encompasses the most basic
+building blocks of Googles codebase: code that is production-tested and will be
+fully maintained for years to come.
+
+WWW: https://github.com/abseil/abseil-py
