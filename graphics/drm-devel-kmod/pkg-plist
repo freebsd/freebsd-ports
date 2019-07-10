@@ -6,3 +6,4 @@
 /%%KMODDIR%%/radeonkms.ko
 /%%KMODDIR%%/ttm.ko
 %%VMWGFX%%/%%KMODDIR%%/vmwgfx.ko
+%%VBOXVIDEO%%/%%KMODDIR%%/vboxvideo.ko
