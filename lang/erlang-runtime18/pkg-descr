@@ -7,4 +7,4 @@ concurrency, distribution and fault tolerance.
 This port contains a standalone runtime environment of Erlang 18
 to be used during the development of OTP applications.
 
-WWW: http://www.erlang.org/
+WWW: https://www.erlang.org/
