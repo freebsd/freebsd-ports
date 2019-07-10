@@ -1,0 +1,10 @@
+lib/lv2/BSEQuencer.lv2/BSEQuencer.so
+lib/lv2/BSEQuencer.lv2/BSEQuencer.ttl
+lib/lv2/BSEQuencer.lv2/BSEQuencer_GUI.so
+lib/lv2/BSEQuencer.lv2/DrumSymbol.png
+lib/lv2/BSEQuencer.lv2/EditSymbol.png
+lib/lv2/BSEQuencer.lv2/LICENSE
+lib/lv2/BSEQuencer.lv2/NoteSymbol.png
+lib/lv2/BSEQuencer.lv2/ScaleEditor.png
+lib/lv2/BSEQuencer.lv2/manifest.ttl
+lib/lv2/BSEQuencer.lv2/surface.png
