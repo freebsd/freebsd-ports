@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scite
-DISTVERSION=	4.1.0
+DISTVERSION=	4.2.0
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libscintilla.so:x11-toolkits/scintilla
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		compiler:c++17-lang desktop-file-utils gmake pkgconfig tar:tgz
+USES=		compiler:c++17-lang desktop-file-utils gmake gnome pkgconfig tar:tgz
 
 OPTIONS_DEFINE=	DOCS
 
