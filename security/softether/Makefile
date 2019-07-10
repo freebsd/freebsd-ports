@@ -2,7 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	4.29-9680
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-rtm-2019.02.28-tree/Source_Code/
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}-rtm
@@ -75,7 +75,7 @@ post-patch:
 		-e "s|@save_binary|${SE_DBDIR}/save_binary|" \
 		-e "s|@lang|${SE_DBDIR}/lang|" \
 		-e "s|@azureserver|${SE_DBDIR}/azureserver|" \
-		-e "s|@server_log|${SE_DIR}/server|" \
+		-e "s|@server_log|${SE_LOGDIR}/server|" \
 		-e "s|@security_log|${SE_LOGDIR}/security|" \
 		-e "s|@packet_log|${SE_LOGDIR}/packet|" \
 		-e "s|@secure_nat_log|${SE_LOGDIR}/secure_nat|" \
