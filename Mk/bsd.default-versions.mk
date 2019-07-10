@@ -52,7 +52,7 @@ JULIA_DEFAULT?=		1.0
 # Possible values: 2.0.0
 LAZARUS_DEFAULT?=	2.0.0
 # Possible values: c6, c7
-LINUX_DEFAULT?=		c6
+LINUX_DEFAULT?=		c7
 # Possible values: 60, 70, 80, -devel (to be used when non-base compiler is required)
 # Please give notice to the Graphics Team (x11@FreeBSD.org) in advance before 
 # bumping the LLVM version.
