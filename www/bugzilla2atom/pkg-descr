@@ -1,0 +1,4 @@
+A small filter program to convert Bugzilla bugs into Atom feeds to
+be able to subscribe to individual bugs in your RSS reader.
+
+WWW: https://github.com/t6/bugzilla2atom

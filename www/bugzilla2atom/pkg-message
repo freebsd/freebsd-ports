@@ -1,0 +1,11 @@
+[
+{ type: install,
+  message: <<EOD
+Add this to your ~/.newsboat/urls to follow Bugzilla bugs with Newsboat:
+
+filter:bugzilla2atom:https://bugs.freebsd.org/bugzilla/show_bug.cgi?ctype=xml&id=XYZ
+
+where XYZ is the bug id.
+EOD
+}
+]

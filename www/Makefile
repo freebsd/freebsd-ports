@@ -53,6 +53,7 @@
     SUBDIR += boa
     SUBDIR += bolt
     SUBDIR += bozohttpd
+    SUBDIR += bugzilla2atom
     SUBDIR += buku
     SUBDIR += butterfly
     SUBDIR += c-icap
