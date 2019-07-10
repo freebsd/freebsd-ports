@@ -720,8 +720,8 @@ share/doc/gimp/libgimpwidgets/GimpUnitComboBox.html
 share/doc/gimp/libgimpwidgets/GimpUnitMenu.html
 share/doc/gimp/libgimpwidgets/GimpUnitStore.html
 share/doc/gimp/libgimpwidgets/GimpZoomModel.html
-share/doc/gimp/libgimpwidgets/api-index-2-10-4.html
 share/doc/gimp/libgimpwidgets/api-index-2-10-10.html
+share/doc/gimp/libgimpwidgets/api-index-2-10-4.html
 share/doc/gimp/libgimpwidgets/api-index-2-10.html
 share/doc/gimp/libgimpwidgets/api-index-2-2.html
 share/doc/gimp/libgimpwidgets/api-index-2-4.html
@@ -769,6 +769,8 @@ share/doc/gimp/libgimpwidgets/gimp-convert-indexed.png
 share/doc/gimp/libgimpwidgets/gimp-convert-rgb.png
 share/doc/gimp/libgimpwidgets/gimp-cursor.png
 share/doc/gimp/libgimpwidgets/gimp-curve-free.png
+share/doc/gimp/libgimpwidgets/gimp-curve-point-corner.png
+share/doc/gimp/libgimpwidgets/gimp-curve-point-smooth.png
 share/doc/gimp/libgimpwidgets/gimp-curve-smooth.png
 share/doc/gimp/libgimpwidgets/gimp-dashboard.png
 share/doc/gimp/libgimpwidgets/gimp-default-colors.png
@@ -967,6 +969,7 @@ share/doc/gimp/libgimpwidgets/gimp-tool-measure.png
 share/doc/gimp/libgimpwidgets/gimp-tool-move.png
 share/doc/gimp/libgimpwidgets/gimp-tool-mypaint-brush.png
 share/doc/gimp/libgimpwidgets/gimp-tool-n-point-deformation.png
+share/doc/gimp/libgimpwidgets/gimp-tool-offset.png
 share/doc/gimp/libgimpwidgets/gimp-tool-options.png
 share/doc/gimp/libgimpwidgets/gimp-tool-paintbrush.png
 share/doc/gimp/libgimpwidgets/gimp-tool-path.png
@@ -1532,6 +1535,7 @@ share/gimp/icons/Color/24x24/apps/gimp-tool-levels.svg
 share/gimp/icons/Color/24x24/apps/gimp-tool-measure.svg
 share/gimp/icons/Color/24x24/apps/gimp-tool-mypaint-brush.svg
 share/gimp/icons/Color/24x24/apps/gimp-tool-n-point-deformation.svg
+share/gimp/icons/Color/24x24/apps/gimp-tool-offset.svg
 share/gimp/icons/Color/24x24/apps/gimp-tool-options.svg
 share/gimp/icons/Color/24x24/apps/gimp-tool-paintbrush.svg
 share/gimp/icons/Color/24x24/apps/gimp-tool-path.svg
@@ -1632,6 +1636,8 @@ share/gimp/icons/Color/scalable/apps/gimp-convert-indexed.svg
 share/gimp/icons/Color/scalable/apps/gimp-convert-rgb.svg
 share/gimp/icons/Color/scalable/apps/gimp-cursor.svg
 share/gimp/icons/Color/scalable/apps/gimp-curve-free.svg
+share/gimp/icons/Color/scalable/apps/gimp-curve-point-corner.svg
+share/gimp/icons/Color/scalable/apps/gimp-curve-point-smooth.svg
 share/gimp/icons/Color/scalable/apps/gimp-curve-smooth.svg
 share/gimp/icons/Color/scalable/apps/gimp-dashboard.svg
 share/gimp/icons/Color/scalable/apps/gimp-default-colors.svg
@@ -1828,6 +1834,7 @@ share/gimp/icons/Color/scalable/apps/gimp-tool-measure.svg
 share/gimp/icons/Color/scalable/apps/gimp-tool-move.svg
 share/gimp/icons/Color/scalable/apps/gimp-tool-mypaint-brush.svg
 share/gimp/icons/Color/scalable/apps/gimp-tool-n-point-deformation.svg
+share/gimp/icons/Color/scalable/apps/gimp-tool-offset.svg
 share/gimp/icons/Color/scalable/apps/gimp-tool-options.svg
 share/gimp/icons/Color/scalable/apps/gimp-tool-paintbrush.svg
 share/gimp/icons/Color/scalable/apps/gimp-tool-path.svg
@@ -2482,6 +2489,7 @@ share/gimp/icons/Symbolic-Inverted/24x24/apps/gimp-tool-levels.svg
 share/gimp/icons/Symbolic-Inverted/24x24/apps/gimp-tool-measure.svg
 share/gimp/icons/Symbolic-Inverted/24x24/apps/gimp-tool-mypaint-brush.svg
 share/gimp/icons/Symbolic-Inverted/24x24/apps/gimp-tool-n-point-deformation.svg
+share/gimp/icons/Symbolic-Inverted/24x24/apps/gimp-tool-offset.svg
 share/gimp/icons/Symbolic-Inverted/24x24/apps/gimp-tool-options.svg
 share/gimp/icons/Symbolic-Inverted/24x24/apps/gimp-tool-paintbrush.svg
 share/gimp/icons/Symbolic-Inverted/24x24/apps/gimp-tool-path.svg
@@ -2582,6 +2590,8 @@ share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-convert-indexed.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-convert-rgb.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-cursor.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-curve-free.svg
+share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-curve-point-corner.svg
+share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-curve-point-smooth.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-curve-smooth.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-dashboard.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-default-colors.svg
@@ -2778,6 +2788,7 @@ share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-tool-measure.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-tool-move.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-tool-mypaint-brush.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-tool-n-point-deformation.svg
+share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-tool-offset.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-tool-options.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-tool-paintbrush.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-tool-path.svg
@@ -2985,6 +2996,7 @@ share/gimp/icons/Symbolic/24x24/apps/gimp-tool-levels.svg
 share/gimp/icons/Symbolic/24x24/apps/gimp-tool-measure.svg
 share/gimp/icons/Symbolic/24x24/apps/gimp-tool-mypaint-brush.svg
 share/gimp/icons/Symbolic/24x24/apps/gimp-tool-n-point-deformation.svg
+share/gimp/icons/Symbolic/24x24/apps/gimp-tool-offset.svg
 share/gimp/icons/Symbolic/24x24/apps/gimp-tool-options.svg
 share/gimp/icons/Symbolic/24x24/apps/gimp-tool-paintbrush.svg
 share/gimp/icons/Symbolic/24x24/apps/gimp-tool-path.svg
@@ -3085,6 +3097,8 @@ share/gimp/icons/Symbolic/scalable/apps/gimp-convert-indexed.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-convert-rgb.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-cursor.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-curve-free.svg
+share/gimp/icons/Symbolic/scalable/apps/gimp-curve-point-corner.svg
+share/gimp/icons/Symbolic/scalable/apps/gimp-curve-point-smooth.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-curve-smooth.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-dashboard.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-default-colors.svg
@@ -3281,6 +3295,7 @@ share/gimp/icons/Symbolic/scalable/apps/gimp-tool-measure.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-tool-move.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-tool-mypaint-brush.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-tool-n-point-deformation.svg
+share/gimp/icons/Symbolic/scalable/apps/gimp-tool-offset.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-tool-options.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-tool-paintbrush.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-tool-path.svg
