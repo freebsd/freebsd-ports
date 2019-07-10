@@ -1,0 +1,90 @@
+# $FreeBSD$
+
+LOCALBASE?=	/usr/local
+PROTOC_FLAGS=	-I. -I$(LOCALBASE)/include
+
+PB_HEADERS=	\
+	envoy/admin/v2alpha/certs.pb.h \
+	envoy/admin/v2alpha/clusters.pb.h \
+	envoy/admin/v2alpha/config_dump.pb.h \
+	envoy/admin/v2alpha/memory.pb.h \
+	envoy/admin/v2alpha/metrics.pb.h \
+	envoy/admin/v2alpha/mutex_stats.pb.h \
+	envoy/admin/v2alpha/server_info.pb.h \
+	envoy/api/v2/auth/cert.pb.h \
+	envoy/api/v2/cds.pb.h \
+	envoy/api/v2/cluster/circuit_breaker.pb.h \
+	envoy/api/v2/cluster/outlier_detection.pb.h \
+	envoy/api/v2/core/address.pb.h \
+	envoy/api/v2/core/base.pb.h \
+	envoy/api/v2/core/config_source.pb.h \
+	envoy/api/v2/core/grpc_service.pb.h \
+	envoy/api/v2/core/health_check.pb.h \
+	envoy/api/v2/core/http_uri.pb.h \
+	envoy/api/v2/core/protocol.pb.h \
+	envoy/api/v2/discovery.pb.h \
+	envoy/api/v2/eds.pb.h \
+	envoy/api/v2/endpoint/endpoint.pb.h \
+	envoy/api/v2/endpoint/load_report.pb.h \
+	envoy/api/v2/lds.pb.h \
+	envoy/api/v2/listener/listener.pb.h \
+	envoy/api/v2/ratelimit/ratelimit.pb.h \
+	envoy/api/v2/rds.pb.h \
+	envoy/api/v2/route/route.pb.h \
+	envoy/config/accesslog/v2/als.pb.h \
+	envoy/config/accesslog/v2/file.pb.h \
+	envoy/config/bootstrap/v2/bootstrap.pb.h \
+	envoy/config/filter/accesslog/v2/accesslog.pb.h \
+	envoy/config/filter/fault/v2/fault.pb.h \
+	envoy/config/filter/http/buffer/v2/buffer.pb.h \
+	envoy/config/filter/http/fault/v2/fault.pb.h \
+	envoy/config/filter/http/health_check/v2/health_check.pb.h \
+	envoy/config/filter/http/lua/v2/lua.pb.h \
+	envoy/config/filter/http/rate_limit/v2/rate_limit.pb.h \
+	envoy/config/filter/http/router/v2/router.pb.h \
+	envoy/config/filter/http/squash/v2/squash.pb.h \
+	envoy/config/filter/http/transcoder/v2/transcoder.pb.h \
+	envoy/config/filter/network/client_ssl_auth/v2/client_ssl_auth.pb.h \
+	envoy/config/filter/network/http_connection_manager/v2/http_connection_manager.pb.h \
+	envoy/config/filter/network/mongo_proxy/v2/mongo_proxy.pb.h \
+	envoy/config/filter/network/rate_limit/v2/rate_limit.pb.h \
+	envoy/config/filter/network/redis_proxy/v2/redis_proxy.pb.h \
+	envoy/config/filter/network/tcp_proxy/v2/tcp_proxy.pb.h \
+	envoy/config/metrics/v2/metrics_service.pb.h \
+	envoy/config/metrics/v2/stats.pb.h \
+	envoy/config/overload/v2alpha/overload.pb.h \
+	envoy/config/ratelimit/v2/rls.pb.h \
+	envoy/config/rbac/v2alpha/rbac.pb.h \
+	envoy/config/trace/v2/trace.pb.h \
+	envoy/data/accesslog/v2/accesslog.pb.h \
+	envoy/data/cluster/v2alpha/outlier_detection_event.pb.h \
+	envoy/data/core/v2alpha/health_check_event.pb.h \
+	envoy/service/accesslog/v2/als.pb.h \
+	envoy/service/discovery/v2/ads.pb.h \
+	envoy/service/discovery/v2/hds.pb.h \
+	envoy/service/discovery/v2/sds.pb.h \
+	envoy/service/load_stats/v2/lrs.pb.h \
+	envoy/service/metrics/v2/metrics_service.pb.h \
+	envoy/service/ratelimit/v2/rls.pb.h \
+	envoy/type/matcher/metadata.pb.h \
+	envoy/type/matcher/number.pb.h \
+	envoy/type/matcher/string.pb.h \
+	envoy/type/matcher/value.pb.h \
+	envoy/type/percent.pb.h \
+	envoy/type/range.pb.h \
+	gogoproto/gogo.pb.h \
+	google/api/annotations.pb.h \
+	google/api/http.pb.h \
+	google/rpc/status.pb.h \
+	metrics.pb.h \
+	src/proto/grpc/health/v1/health.pb.h \
+	validate/validate.pb.h
+
+%.pb.h: %.proto
+	protoc -I. -I$(LOCALBASE)/include --cpp_out=. $<
+# XXX: we're not ready for semantic validation just yet :(
+	echo >> $(basename $@).validate.h
+
+all: $(PB_HEADERS)
+
+.phony: all
