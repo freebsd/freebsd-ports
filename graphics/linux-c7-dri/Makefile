@@ -41,14 +41,14 @@ CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-install:
 	${LN} -sf libGLX_mesa.so.0 \
 		${STAGEDIR}${PREFIX}/usr/lib/libGLX_system.so.0
-.if ${LINUX_ARCH} == x86_64
+.if ${ARCH} == amd64
 	${LN} -sf libGLX_mesa.so.0 \
 		${STAGEDIR}${PREFIX}/usr/lib64/libGLX_system.so.0
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

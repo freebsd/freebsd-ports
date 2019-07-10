@@ -47,11 +47,11 @@ CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-install:
 	${LN} -sf ld.bfd ${STAGEDIR}${PREFIX}/usr/bin/ld
-.if ${LINUX_ARCH} == x86_64
+.if ${ARCH} == amd64
 	${LN} -sfh ../../../../lib64/libgcc_s.so.1 \
 	${STAGEDIR}${PREFIX}/usr/lib/gcc/x86_64-redhat-linux/4.8.2/libgcc_s.so
 
@@ -62,4 +62,4 @@ post-install:
 	${STAGEDIR}${PREFIX}/usr/lib/gcc/i686-redhat-linux/4.8.2/libgcc_s.so
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

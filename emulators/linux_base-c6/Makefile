@@ -121,9 +121,9 @@ REMOVE_DIRS=	boot home media mnt proc root sys tmp var/log var/run var/tmp
 REMOVE_FILES=	bin/df bin/su etc/exports etc/group etc/gshadow etc/motd \
 		etc/passwd etc/printcap etc/protocols etc/services etc/shadow
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${LINUX_ARCH} == x86_64
+.if ${ARCH} == amd64
 SYSCTLMIB=	kern.features.linux64
 .else
 SYSCTLMIB=	compat.linux.osrelease
@@ -135,7 +135,7 @@ post-patch:
 	@${FIND} ${WRKSRC}/lib -type d -empty -delete
 	@${FIND} ${WRKSRC}/usr -type d -empty -delete
 	@${BRANDELF} -t Linux ${WRKSRC}/lib/ld-2.12.so
-.if ${LINUX_ARCH} == x86_64
+.if ${ARCH} == amd64
 	@${FIND} ${WRKSRC}/lib64 -type d -empty -delete
 	@${BRANDELF} -t Linux ${WRKSRC}/lib64/ld-2.12.so
 .endif
@@ -155,8 +155,8 @@ post-install:
 	${LN} -sf usr/bin ${STAGEDIR}${PREFIX}
 	${LN} -sf usr/lib ${STAGEDIR}${PREFIX}
 	${LN} -sf usr/sbin ${STAGEDIR}${PREFIX}
-.if ${LINUX_ARCH} == x86_64
+.if ${ARCH} == amd64
 	${LN} -sf usr/lib64 ${STAGEDIR}${PREFIX}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

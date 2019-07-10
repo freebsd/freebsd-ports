@@ -51,13 +51,8 @@ GHOSTSCRIPT_DEFAULT?=	agpl
 JULIA_DEFAULT?=		1.0
 # Possible values: 2.0.0
 LAZARUS_DEFAULT?=	2.0.0
-.if ${ARCH} == amd64
-# Possible values: c6, c6_64, c7
-LINUX_DEFAULT?=		c6_64
-.else
-# Possible values: c6
+# Possible values: c6, c7
 LINUX_DEFAULT?=		c6
-.endif
 # Possible values: 60, 70, 80, -devel (to be used when non-base compiler is required)
 # Please give notice to the Graphics Team (x11@FreeBSD.org) in advance before 
 # bumping the LLVM version.

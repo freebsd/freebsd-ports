@@ -29,11 +29,11 @@ PLIST_SUB=	LINUXBASE=${LINUXBASE} \
 USES=		linux
 USE_LINUX=	cups-libs jpeg
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${LINUX_ARCH} == i386
+.if ${ARCH} == i386
 PLIST_SUB+=	LIBDIR=lib
-.elif ${LINUX_ARCH} == x86_64
+.elif ${ARCH} == amd64
 PLIST_SUB+=	LIBDIR=lib64
 .endif
 
@@ -50,4 +50,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/cups/model/
 	${LN} -sf ${LINUXBASE}/opt/${PORTNAME}/ppds/Epson ${STAGEDIR}${PREFIX}/share/cups/model/Epson-201401w
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

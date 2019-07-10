@@ -101,14 +101,13 @@ OPTIONS_DEFINE+=	FREEBSD_AGP
 FREEBSD_AGP_DESC=	Use FreeBSD AGP GART driver
 .endif
 
-LINUX_MASTER_SITES=NVIDIA/XFree86/Linux-${LINUX_ARCH_SUFX}/${DISTVERSION}/:linux
-LINUX_DISTFILES=NVIDIA-Linux-${LINUX_ARCH_SUFX}-${DISTVERSION}.run:linux
+LINUX_MASTER_SITES=NVIDIA/XFree86/Linux-${ARCH_SUFX}/${DISTVERSION}/:linux
+LINUX_DISTFILES=NVIDIA-Linux-${ARCH_SUFX}-${DISTVERSION}.run:linux
 LINUX_USES=	linux
 LINUX_USE=	LINUX=xorglibs
 
-LINUX_ARCH_SUFX=${LINUX_ARCH:S/i386/x86/}
-LINUX_LIBDIR=	/usr/lib${LINUX_ARCH:S/i386//:S/x86_64/64/}
-LINUX_WRKSRC=	${WRKDIR}/NVIDIA-Linux-${LINUX_ARCH_SUFX}-${DISTVERSION}
+LINUX_LIBDIR=	/usr/lib${ARCH:S/i386//:S/amd//}
+LINUX_WRKSRC=	${WRKDIR}/NVIDIA-Linux-${ARCH_SUFX}-${DISTVERSION}
 
 LINUX_LIBS=	libcuda.so.${PORTVERSION} \
 		libnvcuvid.so.${PORTVERSION} \
@@ -394,27 +393,30 @@ PLIST_RE+=	'\,${LINUXBASE}.*libGLdispatch\.so,d' \
 		'\,${LINUXBASE}.*libOpenGL\.so,d'
 .endif
 .endif	# ${NVVERSION} >= 390.042 && ${LINUX_DEFAULT:S/_64//} == c7
-.endif	# ${PORT_OPTIONS:MLINUX}
 
-.include <bsd.port.pre.mk>
-
+.if ${ARCH} == amd64
 .if ${NVVERSION} >= 310.014
 LINUX32_LIBS+=	libnvcuvid.so.${PORTVERSION}
 LINUX32_LINKS+=	libnvcuvid.so.${PORTVERSION} libnvcuvid.so.1 \
 		libnvcuvid.so.${PORTVERSION} libnvcuvid.so
-.elif "${LINUX_ARCH}" == "x86_64"
+.else
 PLIST_RE+=	'\,${LINUXBASE}/usr/lib/libnvcuvid\.so,d'
 .endif
+.endif
+.endif	# ${PORT_OPTIONS:MLINUX}
 
-.if "${LINUX_ARCH}" == "x86_64"
+.if ${PORT_OPTIONS:MLINUX} && ${ARCH} == amd64
 PLIST_SUB+=	LINUX32=""
 .else
 PLIST_SUB+=	LINUX32="@comment "
 .endif
 
+# XXX Only needed to obtain PORTVERSION.
+.include <bsd.port.pre.mk>
+
 post-extract-LINUX-on:
 	@(cd ${WRKDIR} && ${SH} \
-		${DISTDIR}/NVIDIA-Linux-${LINUX_ARCH_SUFX}-${DISTVERSION}.run \
+		${DISTDIR}/NVIDIA-Linux-${ARCH_SUFX}-${DISTVERSION}.run \
 		--extract-only > /dev/null)
 
 pre-patch:
@@ -615,7 +617,7 @@ post-install-LINUX-on:
 	${RLN} ${STAGEDIR}${LINUXBASE}${LINUX_LIBDIR}/${s} \
 		${STAGEDIR}${LINUXBASE}${LINUX_LIBDIR}/${t}
 .endfor
-.if "${LINUX_ARCH}" == "x86_64"
+.if ${ARCH} == amd64
 	${MKDIR} ${STAGEDIR}${LINUXBASE}/usr/lib/tls
 	${MKDIR} ${STAGEDIR}${LINUXBASE}/usr/lib/vdpau
 .for l in ${LINUX32_LIBS}
