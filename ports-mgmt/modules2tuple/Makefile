@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	modules2tuple
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
@@ -20,5 +20,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dmgk
 
 PLIST_FILES=	bin/${PORTNAME}
+
+do-test:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} test ${GO_BUILDFLAGS} ./...
 
 .include <bsd.port.mk>
