@@ -15,7 +15,7 @@ media_driver/linux/common/cm/cm_innerdef_os.h:98:37: note: expanded from macro '
 
 --- media_driver/linux/common/cm/cm_innerdef_os.h.orig	2018-10-01 21:39:52 UTC
 +++ media_driver/linux/common/cm/cm_innerdef_os.h
-@@ -35,8 +35,16 @@
+@@ -35,8 +35,18 @@
  
  #include "mos_os.h"
  #include "media_libva_common.h"
@@ -26,13 +26,15 @@ media_driver/linux/common/cm/cm_innerdef_os.h:98:37: note: expanded from macro '
 +#include <pthread_np.h>
 +#elif defined(__NetBSD__)
 +#include <lwp.h>
-+#else // OpenBSD, Solaris
++#elif defined(__sun)
++#include <thread.h>
++#else // fallback
 +#include <stdint.h>
 +#endif
  #include <unistd.h>
  
  //Require DRM VMAP patch,
-@@ -95,5 +103,13 @@ inline void GetLocalTime(PSYSTEMTIME psystime)
+@@ -95,5 +103,17 @@ inline void GetLocalTime(PSYSTEMTIME psystime)
  #endif
  
  #define CmGetCurProcessId() getpid()
@@ -42,7 +44,11 @@ media_driver/linux/common/cm/cm_innerdef_os.h:98:37: note: expanded from macro '
 +#define CmGetCurThreadId()  pthread_getthreadid_np()
 +#elif defined(__NetBSD__)
 +#define CmGetCurThreadId()  _lwp_self()
-+#else // OpenBSD, Solaris
++#elif defined(__OpenBSD__)
++#define CmGetCurThreadId()  getthrid()
++#elif defined(__sun)
++#define CmGetCurThreadId()  thr_self()
++#else // fallback
 +#define CmGetCurThreadId()  (uintptr_t)pthread_self()
 +#endif
  
