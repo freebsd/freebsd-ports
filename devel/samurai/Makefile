@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	samurai
-DISTVERSION=	0.6
+DISTVERSION=	0.7
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/michaelforney/samurai/releases/download/${DISTVERSION}/
 
@@ -14,7 +14,8 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
 ALL_TARGET=	samu
-PLIST_FILES=	bin/samu man/man1/samu.1.gz
+PLIST_FILES=	bin/samu \
+		man/man1/samu.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/samu ${STAGEDIR}${PREFIX}/bin
