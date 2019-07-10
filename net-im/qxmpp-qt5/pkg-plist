@@ -5,10 +5,10 @@ include/qxmpp/QXmppBookmarkManager.h
 include/qxmpp/QXmppBookmarkSet.h
 include/qxmpp/QXmppByteStreamIq.h
 include/qxmpp/QXmppCallManager.h
+include/qxmpp/QXmppCarbonManager.h
 include/qxmpp/QXmppClient.h
 include/qxmpp/QXmppClientExtension.h
 include/qxmpp/QXmppConfiguration.h
-include/qxmpp/QXmppConstants.h
 include/qxmpp/QXmppDataForm.h
 include/qxmpp/QXmppDialback.h
 include/qxmpp/QXmppDiscoveryIq.h
@@ -24,6 +24,8 @@ include/qxmpp/QXmppInvokable.h
 include/qxmpp/QXmppIq.h
 include/qxmpp/QXmppJingleIq.h
 include/qxmpp/QXmppLogger.h
+include/qxmpp/QXmppMamIq.h
+include/qxmpp/QXmppMamManager.h
 include/qxmpp/QXmppMessage.h
 include/qxmpp/QXmppMessageReceiptManager.h
 include/qxmpp/QXmppMucIq.h
@@ -61,10 +63,11 @@ include/qxmpp/QXmppVCardIq.h
 include/qxmpp/QXmppVCardManager.h
 include/qxmpp/QXmppVersionIq.h
 include/qxmpp/QXmppVersionManager.h
-%%QDNS%%include/qxmpp/qdnslookup.h
-%%QDNS%%include/qxmpp/qdnslookup_p.h
+lib/cmake/qxmpp/QXmpp-release.cmake
+lib/cmake/qxmpp/QXmpp.cmake
+lib/cmake/qxmpp/QXmppConfig.cmake
+lib/cmake/qxmpp/QXmppConfigVersion.cmake
 lib/libqxmpp.so
 lib/libqxmpp.so.0
-lib/libqxmpp.so.%%VERSION_MAJOR%%
 lib/libqxmpp.so.%%VERSION%%
 libdata/pkgconfig/qxmpp.pc
