@@ -37,10 +37,10 @@ SRC_DISTFILES=	binutils-2.20.51.0.2-5.48.el6_10.1${SRC_SUFX}:SOURCE \
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-install:
-.if ${LINUX_ARCH} == x86_64
+.if ${ARCH} == amd64
 	${LN} -sfh ../../../../lib64/libgcc_s.so.1 \
 	${STAGEDIR}${PREFIX}/usr/lib/gcc/x86_64-redhat-linux/4.4.4/libgcc_s.so
 
@@ -51,4 +51,4 @@ post-install:
 	${STAGEDIR}${PREFIX}/usr/lib/gcc/i686-redhat-linux/4.4.4/libgcc_s.so
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

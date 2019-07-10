@@ -6,6 +6,42 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20190710:
+  AFFECTS: users with DEFAULT_VERSIONS+=linux=c6 or c6_64 in /etc/make.conf
+  AUTHOR: tij@FreeBSD.org
+
+  On amd64 adding DEFAULT_VERSIONS+=linux=c6 to /etc/make.conf made Linux
+  infrastructure ports (linux_base-c6 and linux-c6*) install i386 CentOS 6
+  packages.  Using c6_64 instead of c6 made them install mixed amd64/i386
+  CentOS 6 packages and allowed Linux application ports to install amd64
+  binaries when available.  The i386-only configuration was only useful for
+  users of x11/nvidia-driver* which didn't provide Linux amd64 emulation
+  until recently.
+
+  With x11/nvidia-driver* now supporting Linux amd64 there's no longer a
+  need for i386-only Linux on amd64 so DEFAULT_VERSIONS+=linux=c6 has been
+  changed to make Linux infrastructure ports install mixed amd64/i386
+  CentOS 6 packages, like c6_64 before, and support for c6_64 has been
+  removed.
+
+  Users with DEFAULT_VERSIONS+=linux=c6 should reinstall linux_base-c6 and
+  all packages that depend on it.  A list of dependent packages can be
+  obtained with the following command:
+
+    pkg info -r linux_base-c6
+
+  Users with DEFAULT_VERSIONS+=linux=c6_64 only need to replace c6_64 with
+  c6 in /etc/make.conf.
+
+  Users of x11/nvidia-driver* should upgrade to FreeBSD 11.3 or 12.0 if
+  they want to run Linux amd64 OpenGL programs.  If you are running an
+  older version you may want to postpone installing or updating Linux
+  application ports until you find the time to upgrade because application
+  ports may install amd64 binaries now.  Infrastructure ports are safe to
+  reinstall, and so is x11/nvidia-driver*.
+
+  On i386 nothing has changed.
+
 20190707:
   AFFECTS: users of www/gitlab-ce
   AUTHOR: mfechner@FreeBSD.org

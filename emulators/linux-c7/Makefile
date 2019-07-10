@@ -69,9 +69,9 @@ RUN_DEPENDS=	linux-c7-libasyncns>0:dns/linux-c7-libasyncns \
 
 USES=		linux:c7 metaport
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${LINUX_ARCH} == x86_64
+.if ${ARCH} == amd64
 RUN_DEPENDS+=	linux-c7-sdl_image>0:graphics/linux-c7-sdl_image \
 		linux-c7-openal-soft>0:audio/linux-c7-openal-soft \
 		linux-c7-sdl20>0:devel/linux-c7-sdl20 \
@@ -80,4 +80,4 @@ RUN_DEPENDS+=	linux-c7-sdl_image>0:graphics/linux-c7-sdl_image \
 		linux-c7-qtwebkit>0:www/linux-c7-qtwebkit
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

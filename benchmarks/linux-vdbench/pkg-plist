@@ -39,8 +39,7 @@ bin/linux-vdbench
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/raw/seq_write_xfersizes
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/raw/tpcc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/readme.txt
-%%LINUX_ARCH_32%%%%DATADIR%%/linux/linux32.so
-%%LINUX_ARCH_64%%%%DATADIR%%/linux/linux64.so
+%%DATADIR%%/linux/linux%%LINUX_ARCH%%.so
 %%DATADIR%%/build_sds.txt
 %%DATADIR%%/linux/config.sh
 %%DATADIR%%/swatcharts.txt

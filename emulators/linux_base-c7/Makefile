@@ -131,9 +131,9 @@ REMOVE_DIRS=	boot home media mnt proc root run sys tmp var/log var/tmp
 REMOVE_FILES=	bin/su etc/exports etc/group etc/gshadow etc/motd \
 		etc/passwd etc/printcap etc/protocols etc/services etc/shadow
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${LINUX_ARCH} == x86_64
+.if ${ARCH} == amd64
 SYSCTLMIB=	kern.features.linux64
 .else
 SYSCTLMIB=	compat.linux.osrelease
@@ -148,11 +148,11 @@ post-extract:
 		${FIND} ${d} | ${CPIO} -dumpl --quiet usr && ${RM} -r ${d}; fi)
 .endfor
 	@(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${DIST_SUBDIR}/filesystem-3.2-25.el7${EXTRACT_SUFX_${LINUX_ARCH:S/x86_64/amd64/}} \
+		${DISTDIR}/${DIST_SUBDIR}/filesystem-3.2-25.el7${EXTRACT_SUFX_${ARCH}} \
 		${EXTRACT_AFTER_ARGS})
-.if ${LINUX_ARCH} == i386
+.if ${ARCH} == i386
 	@${CHMOD} u+w ${WRKSRC}/usr/lib/pm-utils
-.elif ${LINUX_ARCH} == x86_64
+.elif ${ARCH} == amd64
 	@${CHMOD} u+w ${WRKSRC}/usr/lib64/pm-utils
 .endif
 
@@ -161,7 +161,7 @@ post-patch:
 	@${RM} ${REMOVE_FILES:S|^|${WRKSRC}/|}
 	@${FIND} ${WRKSRC}/usr -type d -empty -not -path '*/lib*/gio/*' -delete
 	@${BRANDELF} -t Linux ${WRKSRC}/usr/lib/ld-2.17.so
-.if ${LINUX_ARCH} == x86_64
+.if ${ARCH} == amd64
 	@${BRANDELF} -t Linux ${WRKSRC}/usr/lib64/ld-2.17.so
 .endif
 
@@ -177,4 +177,4 @@ post-install:
 	${LN} -sf /var/run ${STAGEDIR}${PREFIX}/run
 	${LN} -sf /var/tmp ${STAGEDIR}${PREFIX}/usr/tmp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
