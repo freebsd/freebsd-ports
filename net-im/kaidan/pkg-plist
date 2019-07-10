@@ -7,4 +7,5 @@ share/icons/hicolor/scalable/apps/kaidan.svg
 %%DATADIR%%/images/images.qrc
 %%DATADIR%%/images/kaidan.svg
 %%DATADIR%%/images/message_checkmark.svg
+share/knotifications5/kaidan.notifyrc
 share/metainfo/im.kaidan.kaidan.appdata.xml
