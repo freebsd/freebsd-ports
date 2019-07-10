@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyinstaller
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dis3>0:devel/py-dis3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}altgraph>0:math/py-altgraph@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}macholib>=1.8:devel/py-macholib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pefile>=2017.8.1:devel/py-pefile@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}altgraph>0:math/py-altgraph@${PY_FLAVOR}
 
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
