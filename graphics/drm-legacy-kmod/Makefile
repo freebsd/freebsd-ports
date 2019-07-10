@@ -5,7 +5,7 @@ PORTNAME=	drm-legacy-kmod
 PORTVERSION=	g20190709
 CATEGORIES=	graphics
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Legacy DRM modules for the linuxkpi-based KMS components
 
 LICENSE=	BSD2CLAUSE MIT GPLv2

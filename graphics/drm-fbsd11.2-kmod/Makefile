@@ -5,7 +5,7 @@ PORTNAME=	drm-fbsd11.2-kmod
 PORTVERSION=	4.11g20190424
 CATEGORIES=	graphics
 
-MAINTAINER=	jmd@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	DRM modules for the linuxkpi-based KMS components
 
 LICENSE=	BSD2CLAUSE MIT GPLv2
