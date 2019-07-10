@@ -1,0 +1,21 @@
+# $FreeBSD$
+
+PORTNAME=	absl
+DISTVERSION=	0.7.1
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	absl-py-${PORTVERSION}
+
+MAINTAINER=	amzo1337@gmail.com
+COMMENT=	Abseil Python Common Libraries
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	distutils autoplist
+
+.include <bsd.port.mk>
