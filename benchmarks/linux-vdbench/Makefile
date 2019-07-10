@@ -34,7 +34,7 @@ DOWNLOAD_URL=	https://www.oracle.com/technetwork/server-storage/vdbench-download
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTFILES})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=You must manually download ${DISTFILES} from ${DOWNLOAD_URL} and place it in ${DISTDIR} then run make again
 .endif
 
