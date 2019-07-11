@@ -1,0 +1,4 @@
+Set of C++ classes and macros which provide an event-driven simulation interface
+for modeling and describing complex hardware systems.
+
+WWW: https://www.accellera.org/downloads/standards/systemc
