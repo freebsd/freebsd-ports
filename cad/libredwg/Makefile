@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libredwg
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	cad devel
 MASTER_SITES=	GNU
 
@@ -14,11 +14,12 @@ LICENSE=	GPLv3+
 USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+TEST_TARGET=	check
 
 INFO=		LibreDWG
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
-OPTIONS_DEFINE=	DOCS PSLIB
+OPTIONS_DEFINE=	DOCS PSLIB PYTHON
 OPTIONS_DEFAULT=	PSLIB
 PSLIB_DESC=	PostScript export support (dwg2ps)
 
@@ -27,6 +28,14 @@ PSLIB_LIB_DEPENDS=	libps.so:print/pslib
 # PSLIB_CONFIGURE_ENV_OFF=	ac_cv_lib_ps_PS_open_file=no
 PSLIB_USES=		localbase
 PSLIB_PLIST_FILES=	bin/dwg2ps
+
+PYTHON_CONFIGURE_OFF=	--disable-python
+
+post-patch:
+# XXX: switch the order of #include's to unbreak on powerpc/sparc64
+# which are still based on gcc-4.2.1 (should be no-op elsewhere)
+	@${REINPLACE_CMD} -e '/bits\.h/ { x; s/^/#include "suffix.inc"/; \
+		G; } ; 32d' ${WRKSRC}/programs/dwgwrite.c
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
