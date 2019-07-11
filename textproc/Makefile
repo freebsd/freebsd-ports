@@ -1320,6 +1320,7 @@
     SUBDIR += py-pdfminer3k
     SUBDIR += py-pdfrw
     SUBDIR += py-pdftotext
+    SUBDIR += py-pikepdf
     SUBDIR += py-precis_i18n
     SUBDIR += py-pss
     SUBDIR += py-pyPEG2
