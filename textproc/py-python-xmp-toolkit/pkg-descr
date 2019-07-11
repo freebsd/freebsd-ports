@@ -1,0 +1,14 @@
+Python XMP Toolkit is a library for working with XMP (= Extensible Metadata
+Platform) metadata, as well as reading/writing XMP metadata stored in many
+different file formats.
+
+Python XMP Toolkit is wrapping Exempi (using ctypes), a C/C++ XMP library
+based on Adobe XMP Toolkit, ensuring that future updates to the XMP standard
+are easily incorporated into the library with a minimum amount of work.
+
+Python XMP Toolkit has been developed by:
+* ESA/Hubble - European Space Agency
+* ESO - European Southern Observatory
+* CRS4 - Centre for Advanced Studies, Research and Development in Sardinia
+
+WWW: https://github.com/python-xmp-toolkit/python-xmp-toolkit
