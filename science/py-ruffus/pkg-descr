@@ -1,0 +1,13 @@
+The Ruffus module is a lightweight way to add support for running computational
+pipelines.
+
+Computational pipelines are often conceptually quite simple, especially if we
+breakdown the process into simple stages, or separate tasks.
+
+Each stage or task in a computational pipeline is represented by a Python
+function. Each Python function can be called in parallel to run multiple jobs.
+
+Ruffus was originally designed for use in bioinformatics to analyse multiple
+genome data sets.
+
+WWW: http://www.ruffus.org.uk
