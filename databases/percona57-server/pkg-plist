@@ -146,6 +146,7 @@ lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
 lib/mysql/plugin/test_security_context.so
 lib/mysql/plugin/test_udf_services.so
+lib/mysql/plugin/udf_example.so
 lib/mysql/plugin/validate_password.so
 lib/mysql/plugin/version_token.so
 libdata/pkgconfig/LIBMYSQL_OS_OUTPUT_NAME-NOTFOUND.pc
@@ -162,7 +163,6 @@ man/man1/mysqlman.1.gz
 man/man1/mysql_plugin.1.gz
 man/man1/mysql_secure_installation.1.gz
 man/man1/mysql.server.1.gz
-man/man1/mysqltest.1.gz
 man/man1/mysql_tzinfo_to_sql.1.gz
 man/man1/mysql_upgrade.1.gz
 man/man1/perror.1.gz
