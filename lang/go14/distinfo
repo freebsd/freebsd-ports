@@ -1,2 +1,3 @@
-SHA256 (go1.4.3.src.tar.gz) = 9947fc705b0b841b5938c48b22dc33e9647ec0752bae66e50278df4f23f64959
-SIZE (go1.4.3.src.tar.gz) = 10875170
+TIMESTAMP = 1538596297
+SHA256 (go1.4-bootstrap-20171003.tar.gz) = f4ff5b5eb3a3cae1c993723f3eab519c5bae18866b5e5f96fe1102f0cb5c3e52
+SIZE (go1.4-bootstrap-20171003.tar.gz) = 11009739
