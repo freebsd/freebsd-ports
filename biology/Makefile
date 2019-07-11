@@ -65,6 +65,7 @@
     SUBDIR += kallisto
     SUBDIR += lagan
     SUBDIR += lamarc
+    SUBDIR += libbigwig
     SUBDIR += libgtextutils
     SUBDIR += libsbml
     SUBDIR += linux-foldingathome
