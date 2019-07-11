@@ -62,6 +62,7 @@ CLANG_COMMANDS=	\
 		clang-format \
 		clang-import-test \
 		clang-offload-bundler \
+		clang-scan-deps \
 		clangd \
 		diagtool \
 		hmaptool \
@@ -76,7 +77,6 @@ EXTRAS_COMMANDS= \
 		clang-query \
 		clang-rename \
 		clang-reorder-fields \
-		clang-scan-deps \
 		clang-tidy \
 		find-all-symbols \
 		modularize

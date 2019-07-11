@@ -24,6 +24,7 @@ bin/llvm-exegesis-devel
 bin/llvm-extract-devel
 bin/llvm-jitlink-devel
 bin/llvm-link-devel
+bin/llvm-lipo-devel
 bin/llvm-mc-devel
 bin/llvm-modextract-devel
 bin/llvm-mt-devel
@@ -58,6 +59,7 @@ bin/sancov-devel
 %%CLANG%%bin/clang-format-devel
 %%CLANG%%bin/clang-import-test-devel
 %%CLANG%%bin/clang-offload-bundler-devel
+%%CLANG%%bin/clang-scan-deps-devel
 %%CLANG%%bin/clangd-devel
 bin/diagtool-devel
 bin/hmaptool-devel
@@ -2377,6 +2379,7 @@ llvm-devel/include/llvm/Support/FormatVariadicDetails.h
 llvm-devel/include/llvm/Support/FormattedStream.h
 llvm-devel/include/llvm/Support/GenericDomTree.h
 llvm-devel/include/llvm/Support/GenericDomTreeConstruction.h
+llvm-devel/include/llvm/Support/GenericIteratedDominanceFrontier.h
 llvm-devel/include/llvm/Support/GlobPattern.h
 llvm-devel/include/llvm/Support/GraphWriter.h
 llvm-devel/include/llvm/Support/Host.h
