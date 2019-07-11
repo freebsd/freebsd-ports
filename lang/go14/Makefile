@@ -2,10 +2,10 @@
 
 PORTNAME=	go14
 PORTVERSION=	1.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
-MASTER_SITES=	http://golang.org/dl/
-DISTNAME=	go${PORTVERSION}.src
+MASTER_SITES=	https://dl.google.com/go/
+DISTNAME=	go1.4-bootstrap-20171003
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Go programming language
