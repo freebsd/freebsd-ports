@@ -68,7 +68,7 @@
     SUBDIR += poudriere
     SUBDIR += poudriere-devel
     SUBDIR += psearch
-    SUBDIR += py-FreeBSD-Ports
+    SUBDIR += py-FreeBSD-ports
     SUBDIR += py-pytoport
     SUBDIR += py-skog
     SUBDIR += symports
