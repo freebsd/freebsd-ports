@@ -139,7 +139,7 @@ _EXECUTABLES+=	${GHC_LIBDIR}/bin/ghc-iserv-dyn
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MBOOT)
-.  if ${ARCH} == powerpc64 && ${OSVERSION} < 1300036
+.  if ${ARCH} == powerpc64 && ${OSVERSION} < 1300040
 ELF_V=		-elfv1
 .  endif
 DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${ELF_V}${EXTRACT_SUFX}:boot
@@ -248,7 +248,7 @@ post-patch:
 .endif
 
 # XXX osversion powerpc64 elfv2
-.if ${OSVERSION} >= 1300036
+.if ${OSVERSION} >= 1300040
 	@${REINPLACE_CMD} -e 's/ELF_V1/ELF_V2/' \
 		${WRKSRC}/configure ${WRKSRC}/aclocal.m4
 .endif
