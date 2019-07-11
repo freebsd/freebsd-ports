@@ -24,8 +24,6 @@ SHEBANG_FILES=	bin/csmake bin/cswc
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
 post-patch:
 .if exists(/usr/include/g++/)
 	${REINPLACE_CMD} -i "" -e 's:g++-3:g++:g' \
@@ -46,13 +44,13 @@ do-install:
 	cd ${WRKSRC}/etc && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/etc/cscout_incs.FBSD_GCC ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/
 	${INSTALL_DATA} ${WRKSRC}/etc/cscout_defs.FBSD_GCC ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/
-.if ${PORT_OPTIONS:MEXAMPLES}
-	cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-.endif
 	${INSTALL_MAN} ${WRKSRC}/man/cscout.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/cswc.1 ${STAGEDIR}${PREFIX}/man/man1
+
+do-install-DOCS-on:
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
