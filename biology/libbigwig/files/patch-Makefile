@@ -1,0 +1,14 @@
+--- Makefile.orig	2019-07-11 16:45:26 UTC
++++ Makefile
+@@ -71,7 +71,7 @@ clean:
+ 	rm -f *.o libBigWig.a libBigWig.so *.pico test/testLocal test/testRemote test/testWrite test/exampleWrite test/testRemoteManyContigs test/testBigBed test/testIterator example_output.bw
+ 
+ install: libBigWig.a libBigWig.so
+-	install -d $(prefix)/lib $(prefix)/include
+-	install libBigWig.a $(prefix)/lib
+-	install libBigWig.so $(prefix)/lib
+-	install *.h $(prefix)/include
++	install -d $(prefix)/lib $(DESTDIR)$(prefix)/include
++	install libBigWig.a $(DESTDIR)$(prefix)/lib
++	install libBigWig.so $(DESTDIR)$(prefix)/lib
++	install *.h $(DESTDIR)$(prefix)/include

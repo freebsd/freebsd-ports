@@ -1,0 +1,3 @@
+A C library for reading/parsing local and remote bigWig and bigBed files.
+
+WWW: https://github.com/dpryan79/libBigWig
