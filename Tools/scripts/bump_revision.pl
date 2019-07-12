@@ -14,8 +14,8 @@
 # about the envionment, for security reasons, and is considered
 # good Perl practice.
 #
-# You must use either the -l (shaLlow, avoid grandparent dependencies,
-# slower) or -g option (include grandparend dependencies) option.
+# You can use either the -l (shaLlow, avoid grandparent dependencies,
+# slower) or -g option (include grandparent dependencies) option.
 #
 # MAINTAINER=	mandree@FreeBSD.org
 #
@@ -176,7 +176,7 @@ my %DEPPORTS = ();
 
 foreach my $PORT (@ARGV) {
     #
-    # See if the port does really exists.
+    # See if the port really exists.
     # If specified as category/portname, that should be enough.
     # If specified as portname, check all categories for existence or duplicates.
     #
