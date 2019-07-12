@@ -62,7 +62,7 @@ NO_ARCH=	yes
 #
 # See here for a related issue from another port (audio/py-sounddevice):
 # https://github.com/spatialaudio/python-sounddevice/issues/116
-post-stage:
+post-install:
 	${ECHO} "${PYTHONPREFIX_SITELIBDIR}/ocrmypdf/lib/__pycache__/_leptonica.cpython-${PYTHON_SUFFIX}.opt-1.pyc" >> ${_PYTHONPKGLIST}
 	${ECHO} "${PYTHONPREFIX_SITELIBDIR}/ocrmypdf/lib/__pycache__/_leptonica.cpython-${PYTHON_SUFFIX}.pyc" >> ${_PYTHONPKGLIST}
 	${ECHO} "${PYTHONPREFIX_SITELIBDIR}/ocrmypdf/lib/_leptonica.py" >> ${_PYTHONPKGLIST}
