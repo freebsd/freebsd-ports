@@ -3,7 +3,7 @@
 
 PORTNAME=	openrct2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
+DISTVERSION=	0.2.3
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@anongoth.pl
@@ -26,8 +26,8 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gnome gl iconv \
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenRCT2
 GH_PROJECT=	OpenRCT2
-GH_TUPLE=	OpenRCT2:objects:v1.0.10:objects \
-		OpenRCT2:title-sequences:v0.1.2a:title_sequences
+GH_TUPLE=	OpenRCT2:objects:v1.0.11:objects \
+		OpenRCT2:title-sequences:v0.1.2b:title_sequences
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_SDL=	sdl2
@@ -49,9 +49,9 @@ post-patch:
 		${WRKSRC}/src/openrct2/config/Config.cpp
 
 post-install:
-	(cd ${WRKDIR}/title-sequences-0.1.2a; \
+	(cd ${WRKDIR}/title-sequences-0.1.2b; \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/title)
-	(cd ${WRKDIR}/objects-1.0.10; \
+	(cd ${WRKDIR}/objects-1.0.11; \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/object)
 
 .include <bsd.port.mk>
