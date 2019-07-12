@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openssh
-DISTVERSION=	7.9p1
-PORTREVISION=	1
+DISTVERSION=	8.0p1
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -39,6 +39,8 @@ x509_CONFLICTS_INSTALL=		openssh-portable openssh-portable-hpn \
 				openssh-portable-gssapi
 x509_PKGNAMESUFFIX=		-portable-x509
 
+GSSAPI_BROKEN=		GSSAPI not yet updated for ${DISTVERSION}
+X509_BROKEN=		X509 not yet updated for ${DISTVERSION} - Does anyone use this? Contact maintainer bdrewery@FreeBSD.org
 OPTIONS_DEFINE=		DOCS PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN X509 KERB_GSSAPI \
 			LDNS NONECIPHER XMSS
@@ -101,13 +103,9 @@ ETCDIR?=		${PREFIX}/etc/ssh
 
 PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509,hpn,gsskex
 
-# Upstream OpenSSL fix but does not apply for x509 patch.
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-c0a35265907533be10ca151ac797f34ae0d68969
-
 # X509 patch includes TCP Wrapper support already
 .if ${PORT_OPTIONS:MX509}
 EXTRA_PATCHES:=		${EXTRA_PATCHES:N${TCP_WRAPPERS_EXTRA_PATCHES}}
-EXTRA_PATCHES:=		${EXTRA_PATCHES:N${FILESDIR}/extra-patch-c0a35265907533be10ca151ac797f34ae0d68969}
 .endif
 
 # Must add this patch before HPN due to conflicts
