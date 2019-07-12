@@ -16,12 +16,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/dvb/version.h:multimedia/v4l_compat \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
-USES=		gmake iconv localbase:ldflags perl5 tar:bzip2
+USES=		compiler gmake iconv localbase:ldflags perl5 tar:bzip2
 
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 
 MAKE_ARGS+=	prefix="${PREFIX}"
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/include|${LOCALBASE}/include|' \
@@ -47,9 +49,9 @@ post-patch:
 		${WRKSRC}/test/test_vevent.c \
 		${WRKSRC}/test/test_stillimage.c \
 		${WRKSRC}/test/test_av.c
-.if exists(/usr/lib/libstdc++.so)
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 	@${REINPLACE_CMD} -e 's/-Wno-packed-bitfield-compat//' \
 		${WRKSRC}/util/scan/Makefile
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

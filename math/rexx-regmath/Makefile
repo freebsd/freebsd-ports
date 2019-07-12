@@ -17,7 +17,7 @@ LICENSE=	MPL10
 
 BUILD_DEPENDS=	rexx:lang/rexx-regina
 
-USES=		zip
+USES=		compiler zip
 
 WRKSRC=		${WRKDIR}/math
 USE_LDCONFIG=	yes
@@ -32,7 +32,9 @@ PORTEXAMPLES=	README testrxmath testrexxmath
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.if !exists(/usr/lib/libstdc++.so)
+.include <bsd.port.pre.mk>
+
+.if ! ${CHOSEN_COMPILER_TYPE} == gcc
 CFLAGS+=	-Wno-incompatible-pointer-types
 .endif
 
@@ -51,4 +53,4 @@ do-install-EXAMPLES-on:
 		${INSTALL_DATA} ${WRKDIR}/testrxmath ${STAGEDIR}${EXAMPLESDIR}/
 		${INSTALL_DATA} ${WRKDIR}/testrexxmath ${STAGEDIR}${EXAMPLESDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
