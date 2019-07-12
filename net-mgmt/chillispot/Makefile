@@ -32,7 +32,9 @@ APACHE_USE=	apache_run=22+
 FREERADIUS_RUN_DEPENDS=	radiusd:net/freeradius
 OPENRADIUS_RUN_DEPENDS=	radiusd:net/openradius
 
-.if exists(/usr/lib/libstdc++.so)
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 CFLAGS+=	-fnested-functions
 .endif
 
@@ -46,4 +48,4 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/pf.conf.sample ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${FILESDIR}/ipfw-config.sample ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
