@@ -11,7 +11,7 @@
 %%DATADIR%%/stopwords/stopwords_ro.txt
 %%DATADIR%%/stopwords/stopwords_ru.txt
 %%DATADIR%%/stopwords/stopwords_sv.txt
-%%ETCDIR%%/README
+%%DATADIR%%/stopwords/stopwords_tr.txt
 %%ETCDIR%%/example-config/conf.d/10-auth.conf
 %%ETCDIR%%/example-config/conf.d/10-director.conf
 %%ETCDIR%%/example-config/conf.d/10-logging.conf
@@ -42,6 +42,7 @@
 %%ETCDIR%%/example-config/dovecot-ldap.conf.ext
 %%ETCDIR%%/example-config/dovecot-sql.conf.ext
 %%ETCDIR%%/example-config/dovecot.conf
+%%ETCDIR%%/README
 %%LDAP%%include/dovecot/ldap-client.h
 %%LDAP%%lib/dovecot/libdovecot-ldap.a
 %%LDAP%%lib/dovecot/libdovecot-ldap.so
@@ -82,7 +83,6 @@ include/dovecot/auth-cache.h
 include/dovecot/auth-client-connection.h
 include/dovecot/auth-client-interface.h
 include/dovecot/auth-client-private.h
-include/dovecot/auth-client-request.h
 include/dovecot/auth-client.h
 include/dovecot/auth-common.h
 include/dovecot/auth-fields.h
@@ -95,7 +95,6 @@ include/dovecot/auth-request-handler.h
 include/dovecot/auth-request-stats.h
 include/dovecot/auth-request-var-expand.h
 include/dovecot/auth-request.h
-include/dovecot/auth-server-connection.h
 include/dovecot/auth-settings.h
 include/dovecot/auth-stats.h
 include/dovecot/auth-token.h
@@ -361,6 +360,11 @@ include/dovecot/lib-event.h
 include/dovecot/lib-signals.h
 include/dovecot/lib.h
 include/dovecot/llist.h
+include/dovecot/lmtp-client.h
+include/dovecot/lmtp-commands.h
+include/dovecot/lmtp-common.h
+include/dovecot/lmtp-recipient.h
+include/dovecot/lmtp-settings.h
 include/dovecot/log-throttle.h
 include/dovecot/login-common.h
 include/dovecot/login-proxy-state.h
