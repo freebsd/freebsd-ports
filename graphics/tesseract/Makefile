@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tesseract
-PORTVERSION=	4.0.0
-PORTREVISION=	3
+PORTVERSION=	4.1.0
 CATEGORIES=	graphics
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Commercial quality open source OCR engine
 
 LICENSE=	APACHE20
@@ -49,7 +48,6 @@ OPENMP_LIB_DEPENDS=libomp.so:devel/openmp
 TOOLS_DESC=	Include training tools
 TOOLS_LIB_DEPENDS=libicui18n.so:devel/icu \
 		libfontconfig.so:x11-fonts/fontconfig
-TOOLS_USES=	compiler:c++11-lib
 TOOLS_USE=	GNOME=cairo,glib20,pango
 
 post-patch:

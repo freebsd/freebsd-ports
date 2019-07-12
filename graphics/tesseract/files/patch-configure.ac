@@ -3,16 +3,15 @@ libpthread. Look for a symbol that causes us to load it.
 libtesseract.so is not linked against libomp if openmp is enabled,
 which makes dependent ports fail. This adds a workaround by linking
 directly against libomp.
---- configure.ac.orig	2019-03-26 21:58:42 UTC
+--- configure.ac.orig	2019-07-07 12:34:08 UTC
 +++ configure.ac
-@@ -375,6 +375,10 @@ CXXFLAGS="$OLD_CXXFLAGS"
+@@ -372,6 +372,9 @@ esac
  # ----------------------------------------
  
- AC_SEARCH_LIBS([sem_init], [pthread rt])
-+AC_SEARCH_LIBS([pthread_create], [pthread])
+ AC_SEARCH_LIBS([pthread_create], [pthread])
 +if test "$enable_openmp" != no; then
 +  AC_SEARCH_LIBS([omp_get_thread_num ], [omp])
 +fi
-
+ 
  
  # ----------------------------------------
