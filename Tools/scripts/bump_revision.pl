@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 #
-# MAINTAINER=	gerald@FreeBSD.org
+# MAINTAINER=	mandree@FreeBSD.org
 #
 
 use Getopt::Std;
