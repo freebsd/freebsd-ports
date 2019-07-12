@@ -11,7 +11,7 @@ COMMENT=	Libraries and utilities to access smart cards
 
 LICENSE=	LGPL21
 
-USES=		libtool pkgconfig gmake ssl autoreconf
+USES=		autoreconf compiler gmake libtool pkgconfig ssl
 
 OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=PCSC OPENCT CTAPI
@@ -66,10 +66,12 @@ CONFIGURE_ENV+=	XSLTPROC="${FALSE}"
 CONFIGURE_ARGS+=--without-xsl-stylesheetsdir
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 post-patch:
-.if exists(/usr/lib/libstdc++.so)
 	${REINPLACE_CMD} -e '/-Wno-unused-but-set-variable/d' \
 		${WRKSRC}/src/tools/Makefile.am
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

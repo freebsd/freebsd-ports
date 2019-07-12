@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	gtkdoc-check:textproc/gtk-doc
 
-USES=		gnome meson pkgconfig python:3.3+ #shebangfix
+USES=		compiler gnome meson pkgconfig python:3.3+ #shebangfix
 USE_GNOME=	introspection
 USE_GSTREAMER1=	core
 USE_LDCONFIG=	yes
@@ -25,10 +25,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pitivi
 GH_PROJECT=	gst-transcoder
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 post-patch:
-.if exists(/usr/lib/libstdc++.so)
 	${REINPLACE_CMD} -e '/-Wno-pedantic/d' \
 		${WRKSRC}/meson.build
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

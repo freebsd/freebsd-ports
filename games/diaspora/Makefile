@@ -25,13 +25,15 @@ LICENSE_FILE_VOLITION=	${WRKSRC}/COPYING
 LICENSE_FILE_GPLv2=	${WRKDIR_DIASPORA}/wxlauncher/GPLv2.txt
 LICENSE_PERMS_VOLITION=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
+BROKEN_aarch64=		Fails to compile: cast from pointer to smaller type loses information
+
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libpng.so:graphics/png \
 		libogg.so:audio/libogg \
 		libvorbisfile.so:audio/libvorbis \
 		libtheora.so:multimedia/libtheora
 
-USES=		autoreconf gl jpeg lua:51 openal pkgconfig sdl tar:lzma
+USES=		autoreconf compiler gl jpeg lua:51 openal pkgconfig sdl tar:lzma
 USE_CXXSTD=	gnu++98
 USE_GL=		gl glu
 USE_SDL=	sdl
@@ -70,9 +72,9 @@ WXLAUNCHER_VARS=	PORTDATA+="resources *.ini *.png *.bmp"
 
 POST_PLIST+=	build-plist-empty
 
-BROKEN_aarch64=		Fails to compile: cast from pointer to smaller type loses information
+.include <bsd.port.pre.mk>
 
-.if exists(/usr/lib/libstdc++.so)
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 CXXFLAGS+=	-fpermissive
 .endif
 
@@ -131,4 +133,4 @@ build-plist-empty: .SILENT
 	${FIND} ${STAGEDIR}${DATADIR}/data -type d -empty | \
 		${SED} -e 's|^${STAGEDIR}|@dir |' >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

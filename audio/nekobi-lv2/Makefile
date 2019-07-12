@@ -29,7 +29,9 @@ USE_XORG=	x11
 CFLAGS+=	-I${FILESDIR}
 CFLAGS+=	-Wno-c++11-narrowing # clang prints errors: https://github.com/DISTRHO/Nekobi/issues/7
 
-.if exists(/usr/lib/libstdc++.so)
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 post-patch:
 	@${REINPLACE_CMD} -e 's/-mtune=generic -msse -msse2 //' \
 		${WRKSRC}/dpf/Makefile.base.mk
@@ -40,4 +42,4 @@ do-install: # https://github.com/DISTRHO/Nekobi/issues/8
 	cd ${WRKSRC}/bin && ${COPYTREE_SHARE} Nekobi.lv2 ${STAGEDIR}${PREFIX}/lib/lv2/
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/Nekobi ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -27,7 +27,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpcap.so:net/libpcap \
 		libtiff.so:graphics/tiff
 
-USES=		cmake eigen:3 jpeg python
+USES=		cmake compiler eigen:3 jpeg python
 USE_GITHUB=	yes
 GH_ACCOUNT=	PointCloudLibrary
 USE_XORG=	x11 xext xt ice sm
@@ -60,7 +60,9 @@ VTK_CMAKE_BOOL=		WITH_VTK
 VTK_LIB_DEPENDS=	libvtkCommonCore-8.1.so:math/vtk8
 VTK_BROKEN=		VTK has missing ompxx symbols: https://gitlab.kitware.com/vtk/vtk/issues/17444
 
-.if !exists(/usr/lib/libstdc++.so)
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
 # use clang from ports because cmake can't find OpenMP with base clang, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=223678
 # This should also be an port option, but PCL fails to build w/out OpenMP: https://github.com/PointCloudLibrary/pcl/issues/2638
 BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
@@ -74,4 +76,4 @@ USE_GCC=	yes
 post-patch:  # 10 doesn't have std::sqrt, switching to ::sqrt from math.h
 	@${GREP} -rl std::sqrt ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e 's|::std::sqrt|::sqrt|g ; s|std::sqrt|::sqrt|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

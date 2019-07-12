@@ -45,4 +45,10 @@ LUA_USES=	lua:51
 XFT_CONFIGURE_OFF=	--disable-xft
 XFT_USE=	xorg=xft
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+CXXFLAGS+=	-Wno-error=narrowing
+.endif
+
+.include <bsd.port.post.mk>

@@ -37,7 +37,9 @@ GUI_CMAKE_BOOL=	BUILD_GUI
 GUI_CMAKE_ON=	-DwxWidgets_CONFIG_EXECUTABLE:STRING=${WX_CONFIG}
 GUI_USE=	WX=3.0
 
-.if exists(/usr/lib/libstdc++.so)
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 CXXFLAGS+=	-Wno-narrowing
 USE_CXXSTD=	c++11
 .endif
@@ -52,4 +54,4 @@ post-patch-CAIRO-off:
 	${REINPLACE_CMD} -e '/find_package(Cairo)/d' \
 		${WRKSRC}/CMakeLists.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
