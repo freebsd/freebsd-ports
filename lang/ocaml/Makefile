@@ -20,12 +20,11 @@ LICENSE_PERMS_QPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=		Does not build: sh: as: not found
 BROKEN_armv7=		Does not build: hasgot.c: undefined reference to `tgetent'
-BROKEN_powerpc64=	Does not build: error: too few arguments to function gethostbyname_r
 BROKEN_sparc64=	No rule to make target 'none.o', needed by 'libasmrun.a'
 BROKEN_mips64=	No ASM support
 BROKEN_mips=	No ASM support
 
-USES=		cpe gmake tar:xz
+USES=		cpe compiler:c11 gmake tar:xz
 USE_LDCONFIG=	yes
 CPE_VENDOR=	inria
 HAS_CONFIGURE=	yes
