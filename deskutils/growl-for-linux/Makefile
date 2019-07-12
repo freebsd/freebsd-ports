@@ -41,7 +41,9 @@ USE_GNOME=	cairo gdkpixbuf2 gtk20 libxml2
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/display \
 		${PREFIX}/lib/${PORTNAME}/subscribe
 
-.if exists(/usr/lib/libstdc++.so)
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 CFLAGS+=	-fnested-functions
 .endif
 
@@ -52,4 +54,4 @@ post-patch:
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/libgolplug.a
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
