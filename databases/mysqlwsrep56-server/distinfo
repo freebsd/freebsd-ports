@@ -1,5 +1,5 @@
-TIMESTAMP = 1547906403
-SHA256 (codership-mysql-wsrep-wsrep_5.6.42-25.24_GH0.tar.gz) = 4bfb8ce3738531b86767757da127c6597f7b8b8b2ed11c192c5004a80cea22b7
-SIZE (codership-mysql-wsrep-wsrep_5.6.42-25.24_GH0.tar.gz) = 32429012
+TIMESTAMP = 1555423195
+SHA256 (codership-mysql-wsrep-wsrep_5.6.43-25.25_GH0.tar.gz) = 12260d27032be278f139ed910d0e0ea8146161fdb59fbfc8e0c825294f567911
+SIZE (codership-mysql-wsrep-wsrep_5.6.43-25.25_GH0.tar.gz) = 32446195
 SHA256 (codership-wsrep-API-eab2d5d5a31672c0b7d116ef1629ff18392fd7d0_GH0.tar.gz) = 3c235868ed330d8d702e7b7541c24c1926b1fd9e6b8aa673b032a2318896e8a0
 SIZE (codership-wsrep-API-eab2d5d5a31672c0b7d116ef1629ff18392fd7d0_GH0.tar.gz) = 47032
