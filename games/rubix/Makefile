@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == mips || ${ARCH} == mips64 || ${ARCH} == powerpc || ${ARCH} == powerpc64) && ${CHOSEN_COMPILER_TYPE} == gcc
+.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 CFLAGS+=	-fnested-functions
 .endif
 
