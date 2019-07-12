@@ -17,6 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce:gtk3
+USE_CSTD=	c99
 USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	panel
 
