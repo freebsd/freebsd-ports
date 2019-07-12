@@ -45,19 +45,19 @@ PLIST_SUB+=	X86_ONLY=""
 PLIST_SUB+=	X86_ONLY="@comment "
 .endif
 
-.if ${ARCH} == arm || ${ARCH} == armv6 || ${ARCH} == armv7
+.if ${ARCH} == aarch64 || ${ARCH:Marm*}
 PLIST_SUB+=	ARM_ONLY=""
 .else
 PLIST_SUB+=	ARM_ONLY="@comment "
 .endif
 
-.if ${ARCH} == mips || ${ARCH} == mips64
+.if ${ARCH:Mmips*}
 PLIST_SUB+=	MIPS_ONLY=""
 .else
 PLIST_SUB+=	MIPS_ONLY="@comment "
 .endif
 
-.if ${ARCH} == powerpc || ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc*}
 PLIST_SUB+=	PPC_ONLY=""
 .else
 PLIST_SUB+=	PPC_ONLY="@comment "
