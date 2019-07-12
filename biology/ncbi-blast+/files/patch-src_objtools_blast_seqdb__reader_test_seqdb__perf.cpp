@@ -1,14 +1,16 @@
---- src/objtools/blast/seqdb_reader/test/seqdb_perf.cpp.orig	2019-07-10 10:11:51.713901000 -0500
-+++ src/objtools/blast/seqdb_reader/test/seqdb_perf.cpp	2019-07-10 10:15:40.994964000 -0500
-@@ -137,8 +137,10 @@ CSeqDBPerfApp::x_ScanDatabase()
+--- src/objtools/blast/seqdb_reader/test/seqdb_perf.cpp.orig	2018-10-23 19:28:52 UTC
++++ src/objtools/blast/seqdb_reader/test/seqdb_perf.cpp
+@@ -137,8 +137,13 @@ CSeqDBPerfApp::x_ScanDatabase()
      }
      LOG_POST(Info << "Will go over " << oids2iterate.size() << " sequences");
  
-+    // kScanUncompressed is read only and initialized before threading
-+    // so shared should be fine here
++#if defined(NCBI_COMPILER_GCC) && (NCBI_COMPILER_VERSION >= 900)
      #pragma omp parallel default(none) num_threads(m_DbHandles.size()) \
--                         shared(oids2iterate) if(m_DbHandles.size() > 1)
 +                         shared(oids2iterate,kScanUncompressed) if(m_DbHandles.size() > 1)
++#else
++    #pragma omp parallel default(none) num_threads(m_DbHandles.size()) \
+                          shared(oids2iterate) if(m_DbHandles.size() > 1)
++#endif
      {
          int thread_id = 0;
  #ifdef _OPENMP
