@@ -11,7 +11,7 @@ COMMENT=	Utility to modify the dynamic linker
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake
+USES=		autoreconf compiler:c++11-lang gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	NixOS
 
