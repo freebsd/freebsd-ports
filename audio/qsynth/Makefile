@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qsynth
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.7
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -20,13 +20,13 @@ USE_QT=		core gui network widgets x11extras buildtools_build \
 		linguisttools_build qmake_build
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localedir=${DATADIR} \
+		--with-fluidsynth=${LOCALBASE}
 CONFIGURE_ENV=	ac_cv_path_ac_cv_qmake=${QMAKE} \
 		ac_cv_path_ac_lrelease=${LRELEASE} \
 		ac_cv_path_ac_lupdate=${LUPDATE} \
 		ac_cv_path_ac_moc=${MOC} \
 		ac_cv_path_ac_uic=${UIC}
-CONFIGURE_ARGS=	--localedir=${DATADIR} \
-		--with-fluidsynth=${LOCALBASE}
 
 # cf. PR 224488
 LDFLAGS+=	-Wl,--as-needed
@@ -40,8 +40,8 @@ XUNIQUE_DESC=		X11 unique/single instance
 
 GRADIENT_CONFIGURE_ENABLE=	gradient
 SYSTEM_TRAY_CONFIGURE_ENABLE=	system-tray
-XUNIQUE_CONFIGURE_ENABLE=	xunique
 XUNIQUE_USE=			XORG=x11
+XUNIQUE_CONFIGURE_ENABLE=	xunique
 
 post-patch:
 	@${REINPLACE_CMD} -e ' \
