@@ -167,6 +167,16 @@ include/node/node_version.h
 %%BUNDLED_SSL%%include/node/openssl/archs/linux-elf/no-asm/crypto/include/internal/dso_conf.h
 %%BUNDLED_SSL%%include/node/openssl/archs/linux-elf/no-asm/include/openssl/opensslconf.h
 %%BUNDLED_SSL%%include/node/openssl/archs/linux-elf/no-asm/include/progs.h
+%%BUNDLED_SSL%%include/node/openssl/archs/linux64-mips64/asm/crypto/buildinf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/linux64-mips64/asm/crypto/include/internal/bn_conf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/linux64-mips64/asm/crypto/include/internal/dso_conf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/linux64-mips64/asm/include/openssl/opensslconf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/linux64-mips64/asm/include/progs.h
+%%BUNDLED_SSL%%include/node/openssl/archs/linux64-mips64/no-asm/crypto/buildinf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/linux64-mips64/no-asm/crypto/include/internal/bn_conf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/linux64-mips64/no-asm/crypto/include/internal/dso_conf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/linux64-mips64/no-asm/include/openssl/opensslconf.h
+%%BUNDLED_SSL%%include/node/openssl/archs/linux64-mips64/no-asm/include/progs.h
 %%BUNDLED_SSL%%include/node/openssl/archs/linux-ppc/asm/crypto/buildinf.h
 %%BUNDLED_SSL%%include/node/openssl/archs/linux-ppc/asm/crypto/include/internal/bn_conf.h
 %%BUNDLED_SSL%%include/node/openssl/archs/linux-ppc/asm/crypto/include/internal/dso_conf.h
