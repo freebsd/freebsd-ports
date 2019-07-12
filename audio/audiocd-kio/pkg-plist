@@ -203,6 +203,7 @@ share/locale/pa/LC_MESSAGES/kcmaudiocd.mo
 share/locale/pa/LC_MESSAGES/kio_audiocd.mo
 share/locale/pl/LC_MESSAGES/audiocd_encoder_flac.mo
 share/locale/pl/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/pl/LC_MESSAGES/audiocd_encoder_opus.mo
 share/locale/pl/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/pl/LC_MESSAGES/kcmaudiocd.mo
 share/locale/pl/LC_MESSAGES/kio_audiocd.mo

@@ -156,5 +156,14 @@ share/umbrello5/layouts/object-vertical.desktop
 share/umbrello5/layouts/state-export.desktop
 share/umbrello5/layouts/state-vertical.desktop
 share/umbrello5/layouts/usecase-default.desktop
+share/umbrello5/simple4125/sdbcent.mod
+share/umbrello5/simple4125/sdbhier.mod
+share/umbrello5/simple4125/sdbpool.mod
+share/umbrello5/simple4125/sdocbook-custom.dtd
+share/umbrello5/simple4125/sdocbook.css
+share/umbrello5/simple4125/sdocbook.dtd
+share/umbrello5/simple4125/sdocbookref-custom.dtd
+share/umbrello5/simple4125/sdocbookref.dtd
+share/umbrello5/simple4125/sinclist.mod
 share/umbrello5/xmi.css
 share/umbrello5/xmi2docbook.xsl
