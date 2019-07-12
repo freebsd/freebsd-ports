@@ -49,10 +49,10 @@ PLIST_SUB=	DISTNAME=${SWIPLDIR} ARCH=${ARCH} OS=${OPSYS:tl} \
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc)
-PLIST_SUB+=	BITS=32
-.else
+.if ${ARCH:M*64*}
 PLIST_SUB+=	BITS=64
+.else
+PLIST_SUB+=	BITS=32
 .endif
 
 .if (${ARCH} == amd64)
