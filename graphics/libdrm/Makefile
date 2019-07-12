@@ -44,7 +44,7 @@ PLIST_SUB+=	ARM_DRIVERS="@comment "
 PLIST_SUB+=	INTEL_DRIVER=""
 PLIST_SUB+=	NOUVEAU_DRIVER=""
 PLIST_SUB+=	RADEON_DRIVERS=""
-.elif ${ARCH} == powerpc || ${ARCH} == powerpc64
+.elif ${ARCH:Mpowerpc*}
 PLIST_SUB+=	ARM_DRIVERS="@comment "
 PLIST_SUB+=	INTEL_DRIVER="@comment "
 PLIST_SUB+=	NOUVEAU_DRIVER=""
@@ -54,7 +54,7 @@ PLIST_SUB+=	ARM_DRIVERS=""
 PLIST_SUB+=	INTEL_DRIVER="@comment "
 PLIST_SUB+=	NOUVEAU_DRIVER=""
 PLIST_SUB+=	RADEON_DRIVERS=""
-.elif ${ARCH} == armv6 || ${ARCH} == armv7
+.elif ${ARCH:Marm*}
 PLIST_SUB+=	ARM_DRIVERS=""
 PLIST_SUB+=	INTEL_DRIVER="@comment "
 PLIST_SUB+=	NOUVEAU_DRIVER="@comment "
