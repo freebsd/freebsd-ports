@@ -29,10 +29,10 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == mips || ${ARCH} == powerpc
-CONFIGURE_ARGS+=	--enable-32-bit
-.else
+.if ${ARCH:M*64*}
 CONFIGURE_ARGS+=	--enable-64-bit
+.else
+CONFIGURE_ARGS+=	--enable-32-bit
 .endif
 
 post-install:
