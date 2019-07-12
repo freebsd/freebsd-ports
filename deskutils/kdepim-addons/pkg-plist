@@ -546,8 +546,10 @@ share/locale/ko/LC_MESSAGES/customtoolsplugin.mo
 share/locale/ko/LC_MESSAGES/importwizard_plugins.mo
 share/locale/ko/LC_MESSAGES/kaddressbook_contacteditor.mo
 share/locale/ko/LC_MESSAGES/kaddressbook_importexportplugins.mo
+share/locale/ko/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/ko/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/ko/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
+share/locale/ko/LC_MESSAGES/kmail_editorgrammar_plugins.mo
 share/locale/ko/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/ko/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/ko/LC_MESSAGES/kmail_plugins.mo

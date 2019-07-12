@@ -323,6 +323,7 @@ share/locale/et/LC_MESSAGES/ktp-filters.mo
 share/locale/et/LC_MESSAGES/ktp-log-viewer.mo
 share/locale/et/LC_MESSAGES/ktp-text-ui.mo
 share/locale/et/LC_MESSAGES/ktpchat.mo
+share/locale/eu/LC_MESSAGES/kcm_ktp_chat_appearance.mo
 share/locale/fi/LC_MESSAGES/kcm_ktp_chat_appearance.mo
 share/locale/fi/LC_MESSAGES/kcm_ktp_chat_behavior.mo
 share/locale/fi/LC_MESSAGES/kcm_ktp_chat_messages.mo
