@@ -1,7 +1,7 @@
-TIMESTAMP = 1556126577
-SHA256 (OpenRCT2-OpenRCT2-v0.2.2_GH0.tar.gz) = 4b7b003fc0cf365be8a43d8784827415dbba3335de59cb948ab720ec1ebcaa7b
-SIZE (OpenRCT2-OpenRCT2-v0.2.2_GH0.tar.gz) = 8064579
-SHA256 (OpenRCT2-objects-v1.0.10_GH0.tar.gz) = a79e3a40b59a79e024f76dd1eae70b6e5009a53c11fe3909609e4564fafdcf6c
-SIZE (OpenRCT2-objects-v1.0.10_GH0.tar.gz) = 637654
-SHA256 (OpenRCT2-title-sequences-v0.1.2a_GH0.tar.gz) = 83e935186435116d6ea79e48daeea99c1158800a3fa92069100cfb8dbd80c9d7
-SIZE (OpenRCT2-title-sequences-v0.1.2a_GH0.tar.gz) = 21298525
+TIMESTAMP = 1562836280
+SHA256 (OpenRCT2-OpenRCT2-v0.2.3_GH0.tar.gz) = a1841247a513cf45ca0820f2fc2db81ae4f309742035cca4a280fe29b02b4727
+SIZE (OpenRCT2-OpenRCT2-v0.2.3_GH0.tar.gz) = 8106889
+SHA256 (OpenRCT2-objects-v1.0.11_GH0.tar.gz) = a91ab6496828dcc3cc5a38a67fa56b98cbc18ebf36cfdbd7228faab595f4d4fa
+SIZE (OpenRCT2-objects-v1.0.11_GH0.tar.gz) = 637640
+SHA256 (OpenRCT2-title-sequences-v0.1.2b_GH0.tar.gz) = f8988518c9591d285f7c867815ced31a0ddad1db076c07ab4044499ea28e586a
+SIZE (OpenRCT2-title-sequences-v0.1.2b_GH0.tar.gz) = 20475951
