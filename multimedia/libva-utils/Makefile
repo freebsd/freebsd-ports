@@ -2,6 +2,7 @@
 
 PORTNAME=	libva-utils
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
