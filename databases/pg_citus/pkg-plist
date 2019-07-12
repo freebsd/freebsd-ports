@@ -1,5 +1,6 @@
 include/postgresql/server/citus_version.h
 include/postgresql/server/distributed/backend_data.h
+include/postgresql/server/distributed/citus_acquire_lock.h
 include/postgresql/server/distributed/citus_clauses.h
 include/postgresql/server/distributed/citus_custom_scan.h
 include/postgresql/server/distributed/citus_nodefuncs.h
@@ -186,4 +187,7 @@ share/postgresql/extension/citus--8.0-8--8.0-9.sql
 share/postgresql/extension/citus--8.0-9--8.0-10.sql
 share/postgresql/extension/citus--8.1-1--8.2-1.sql
 share/postgresql/extension/citus--8.2-1--8.2-2.sql
+share/postgresql/extension/citus--8.2-2--8.2-3.sql
+share/postgresql/extension/citus--8.2-3--8.2-4.sql
+share/postgresql/extension/citus--8.2-4--8.3-1.sql
 share/postgresql/extension/citus.control

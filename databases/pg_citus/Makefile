@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	citus
-PORTVERSION=	8.2.2
+PORTVERSION=	8.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	pg_
@@ -13,6 +13,7 @@ COMMENT=	Horizontally scale Postgresql using sharding and replication
 LICENSE=	AGPLv3
 
 USES=		gmake pgsql:10+ autoreconf readline
+
 WANT_PGSQL=	lib server
 GNU_CONFIGURE=	yes
 
