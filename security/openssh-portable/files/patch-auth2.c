@@ -43,12 +43,12 @@ Apply class-imposed login restrictions.
 +		if (!auth_hostok(lc, from_host, from_ip)) {
 +			logit("Denied connection for %.200s from %.200s [%.200s].",
 +			    authctxt->pw->pw_name, from_host, from_ip);
-+			packet_disconnect("Sorry, you are not allowed to connect.");
++			ssh_packet_disconnect(ssh, "Sorry, you are not allowed to connect.");
 +		}
 +		if (!auth_timeok(lc, time(NULL))) {
 +			logit("LOGIN %.200s REFUSED (TIME) FROM %.200s",
 +			    authctxt->pw->pw_name, from_host);
-+			packet_disconnect("Logins not available right now.");
++			ssh_packet_disconnect(ssh, "Logins not available right now.");
 +		}
 +		login_close(lc);
 +		lc = NULL;
