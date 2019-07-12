@@ -14,6 +14,12 @@ LICENSE_FILE=	${WRKSRC}/lib/node_modules/npm/LICENSE
 
 RUN_DEPENDS=	gmake:devel/gmake
 
+USES=		cpe python:2.7,run shebangfix tar:xz
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+REINPLACE_ARGS=	-i ''
+
 CONFLICTS_INSTALL?=	npm-node10 npm-node8
 
 OPTIONS_SINGLE=	BACKEND
@@ -22,12 +28,6 @@ OPTIONS_DEFAULT=NODE
 NODE_DESC=	Use Node.js 11.x/12.x (www/node) as backend
 NODE10_DESC=	Use Node.js 10.x (www/node10) as backend
 NODE8_DESC=	Use Node.js 8.x (www/node8) as backend
-
-USES=		cpe python:2.7,run shebangfix tar:xz
-
-NO_ARCH=	yes
-NO_BUILD=	yes
-REINPLACE_ARGS=	-i ''
 
 CPE_VENDOR=	npmjs
 CPE_PRODUCT=	node_packaged_modules
@@ -41,7 +41,7 @@ NODE8_RUN_DEPENDS=	node8>=0.8.0:www/node8
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if ${ARCH} == i386
 # Workaround for kernel bug 178881
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bug-178881
 .endif
