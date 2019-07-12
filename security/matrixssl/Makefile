@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == mips64 || ${ARCH} == powerpc64 || ${ARCH} == sparc64
+.if ${ARCH:M*64*}
 CFLAGS+=	-DPSTM_64BIT
 .endif
 

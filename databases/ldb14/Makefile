@@ -78,7 +78,7 @@ LDB_LIBS=		lib/libldb.so \
 			lib/shared-modules/ldb/tdb.so
 
 # Only for 64-bit architectures
-.if ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386 && ${ARCH} != mips && ${ARCH} != powerpc && ${ARCH} != powerpcspe
+.if ${ARCH:M*64*}
 LDB_DEPENDS+=		lmdb>=0.9.16:databases/lmdb
 LDB_LIBS+=		lib/ldb/libldb-mdb-int.so \
 			lib/shared-modules/ldb/mdb.so
@@ -148,7 +148,6 @@ CFLAGS+=		-fno-color-diagnostics
 .endif
 CONFIGURE_ENV+=		NOCOLOR=yes
 MAKE_ENV+=		NOCOLOR=yes
-
 
 LDB_MAN1=		man/man1/ldbadd.1.gz \
 			man/man1/ldbdel.1.gz \

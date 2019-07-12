@@ -25,7 +25,7 @@ PORTDOCS=	README.md tested-boards.md tutorial.md
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == "powerpc" || ${ARCH} == "arm" || ${ARCH} == "armv6" || ${ARCH} == "mips"
+.if ! ${ARCH:M*64*}
 EXTRA_PATCHES+=	${FILESDIR}/extra-pacth-32bit
 .endif
 
