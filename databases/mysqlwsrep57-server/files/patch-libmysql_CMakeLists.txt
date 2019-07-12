@@ -1,7 +1,13 @@
---- libmysql/CMakeLists.txt.orig	2018-01-23 20:34:50.742425000 +0200
-+++ libmysql/CMakeLists.txt	2018-01-23 20:36:13.066280000 +0200
-@@ -235,7 +235,7 @@
- ADD_SUBDIRECTORY(authentication_ldap)
+--- libmysql/CMakeLists.txt.orig       2019-03-22 10:07:57 UTC
++++ libmysql/CMakeLists.txt
+@@ -231,11 +231,11 @@ IF(WIN32)
+ ENDIF()
+ 
+ # LDAP authentication SASL client plugin
+-MESSAGE(STATUS "Creating LDAP authentication SASL client library.")
+-ADD_SUBDIRECTORY(authentication_ldap)
++# MESSAGE(STATUS "Creating LDAP authentication SASL client library.")
++# ADD_SUBDIRECTORY(authentication_ldap)
    
  # Merge several convenience libraries into one big mysqlclient
 -MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS} COMPONENT Development)
@@ -9,7 +15,7 @@
  
  # Visual Studio users need debug  static library for debug projects
  IF(MSVC)
-@@ -271,7 +271,8 @@
+@@ -284,7 +284,8 @@ IF(NOT DISABLE_SHARED)
    # and link them together into shared library.
    MERGE_LIBRARIES_SHARED(libmysql ${LIBS}
      EXPORTS ${CLIENT_API_FUNCTIONS} ${CLIENT_API_FUNCTIONS_UNDOCUMENTED}
@@ -19,11 +25,11 @@
    IF(UNIX)
      # libtool compatability
      IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
-@@ -316,6 +317,7 @@
+@@ -328,6 +329,7 @@ IF(NOT DISABLE_SHARED)
+     SET_TARGET_PROPERTIES(mysqlclient PROPERTIES CLEAN_DIRECT_OUTPUT 1)
      SET_TARGET_PROPERTIES(libmysql PROPERTIES CLEAN_DIRECT_OUTPUT 1)
  
-   ENDIF()
 +  ENDIF()
+   ENDIF()
  ENDIF()
  
- #
