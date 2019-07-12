@@ -8,7 +8,7 @@ bin/mpeg2vaenc
 bin/mpeg2vldemo
 %%X11%%bin/putsurface
 %%WAYLAND%%bin/putsurface_wayland
-%%X11%%bin/sfcsample
+bin/sfcsample
 bin/vainfo
 bin/vavpp
 bin/vp8enc
