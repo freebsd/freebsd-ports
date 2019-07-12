@@ -2,7 +2,7 @@
 
 PORTNAME=	sonic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	textproc
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -20,8 +20,8 @@ USE_RC_SUBR=	sonic
 
 CARGO_CRATES=	aho-corasick-0.7.4 \
 		ansi_term-0.11.0 \
-		arrayvec-0.4.10 \
-		atty-0.2.11 \
+		arrayvec-0.4.11 \
+		atty-0.2.12 \
 		autocfg-0.1.4 \
 		backtrace-0.3.32 \
 		backtrace-sys-0.1.30 \
@@ -64,7 +64,7 @@ CARGO_CRATES=	aho-corasick-0.7.4 \
 		librocksdb-sys-5.18.3 \
 		linked-hash-map-0.5.2 \
 		linked_hash_set-0.1.3 \
-		log-0.4.6 \
+		log-0.4.7 \
 		memchr-2.2.1 \
 		memmap-0.6.2 \
 		memoffset-0.2.1 \
@@ -72,12 +72,11 @@ CARGO_CRATES=	aho-corasick-0.7.4 \
 		nodrop-0.1.13 \
 		nom-4.2.3 \
 		num_cpus-1.10.1 \
-		numtoa-0.1.0 \
 		peeking_take_while-0.1.2 \
 		ppv-lite86-0.2.5 \
 		proc-macro2-0.4.30 \
 		quick-error-1.2.2 \
-		quote-0.6.12 \
+		quote-0.6.13 \
 		radix-0.5.0 \
 		rand-0.6.5 \
 		rand-0.7.0 \
@@ -96,8 +95,6 @@ CARGO_CRATES=	aho-corasick-0.7.4 \
 		rayon-1.1.0 \
 		rayon-core-1.5.0 \
 		rdrand-0.4.0 \
-		redox_syscall-0.1.56 \
-		redox_termios-0.1.1 \
 		regex-1.1.9 \
 		regex-syntax-0.3.9 \
 		regex-syntax-0.6.8 \
@@ -112,7 +109,6 @@ CARGO_CRATES=	aho-corasick-0.7.4 \
 		strsim-0.8.0 \
 		syn-0.15.39 \
 		termcolor-1.0.5 \
-		termion-1.5.3 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
 		toml-0.5.1 \
