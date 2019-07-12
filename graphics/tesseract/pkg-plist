@@ -22,7 +22,6 @@ include/tesseract/baseapi.h
 include/tesseract/capi.h
 include/tesseract/genericvector.h
 include/tesseract/helpers.h
-include/tesseract/host.h
 include/tesseract/ltrresultiterator.h
 include/tesseract/ocrclass.h
 include/tesseract/osdetect.h
@@ -40,7 +39,7 @@ include/tesseract/unichar.h
 lib/libtesseract.a
 lib/libtesseract.so
 lib/libtesseract.so.4
-lib/libtesseract.so.4.0.0
+lib/libtesseract.so.4.0.1
 libdata/pkgconfig/tesseract.pc
 man/man1/ambiguous_words.1.gz
 man/man1/classifier_tester.1.gz
