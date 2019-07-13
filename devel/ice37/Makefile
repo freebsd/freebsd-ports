@@ -55,7 +55,8 @@ USE_GITHUB=		yes
 GH_ACCOUNT=		zeroc-ice
 GH_PROJECT=		ice
 
-.if ((${ARCH} != i386) && (${ARCH} != powerpc))
+# determine if we are on a 64-bit arch
+.if ${ARCH:M*64*}
 MAKE_ENV+=		LP64=yes
 .endif
 
