@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 
 USE_LDCONFIG=	yes
 
-.if defined(NO_PROFILE) || defined(NOPROFILE) || defined(WITHOUT_PROFILE)
+.if defined(NO_PROFILE) || defined(NOPROFILE) || defined(WITHOUT_PROFILE) || "${MK_PROFILE}" == "no"
 PLIST_SUB+=	PROFLIB="@comment "
 .else
 PLIST_SUB+=	PROFLIB=""
