@@ -41,7 +41,7 @@ PLIST_FILES=	bin/comical \
 pre-patch:
 	@${MV} ${WRKSRC}/Comical\ Icons ${WRKSRC}/ComicalIcons
 
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 pre-configure:
 	${REINPLACE_CMD} -e 's|-Wno-unused-local-typedef||' ${WRKSRC}/src/Makefile
 .endif

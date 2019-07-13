@@ -29,7 +29,7 @@ WRKSRC=	${WRKDIR}/nget-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 CXXFLAGS+=	-std=c++11
 .else
 CXXFLAGS+=	-std=c++98
