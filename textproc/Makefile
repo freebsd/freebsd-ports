@@ -43,7 +43,6 @@
     SUBDIR += antiword
     SUBDIR += apache-poi
     SUBDIR += apache-solr
-    SUBDIR += apache-solr3
     SUBDIR += apertium
     SUBDIR += archmage
     SUBDIR += artha
