@@ -1,4 +1,5 @@
 %%SITE_PERL%%/BSON.pm
+%%SITE_PERL%%/BSON/Array.pm
 %%SITE_PERL%%/BSON/Binary.pm
 %%SITE_PERL%%/BSON/Bool.pm
 %%SITE_PERL%%/BSON/Bytes.pm
@@ -23,6 +24,7 @@
 %%SITE_PERL%%/BSON/Timestamp.pm
 %%SITE_PERL%%/BSON/Types.pm
 %%PERL5_MAN3%%/BSON.3.gz
+%%PERL5_MAN3%%/BSON::Array.3.gz
 %%PERL5_MAN3%%/BSON::Binary.3.gz
 %%PERL5_MAN3%%/BSON::Bool.3.gz
 %%PERL5_MAN3%%/BSON::Bytes.3.gz
