@@ -100,7 +100,6 @@
     SUBDIR += gom
     SUBDIR += gqlplus
     SUBDIR += grass7
-    SUBDIR += gtksql
     SUBDIR += hamsterdb
     SUBDIR += hashtypes
     SUBDIR += hbase

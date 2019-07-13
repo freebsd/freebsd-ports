@@ -12846,3 +12846,6 @@ www/seamonkey||2019-07-03|2.49.* is not maintained upstream and full of security
 www/tomcat8||2019-07-06|Has expired: EoL since 2018-06-30
 devel/libevent-hiphop||2019-07-10|Has expired: Obsoleted with removal of lang/hiphop-php
 textproc/apache-solr3|textproc/apache-solr|2019-07-12|Obsolete
+misc/tcb||2019-07-13|Has expired: Abandonware that uses sys/dir.h
+editors/xed||2019-07-13|Has expired: Abandonware using sys/dir.h
+databases/gtksql||2019-07-13|Has expired: Abandonware using sys/dir.h

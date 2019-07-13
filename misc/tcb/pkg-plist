@@ -1,7 +1,0 @@
-bin/tcb
-man/man1/tcb.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%DATADIR%%/HELP
-%%DATADIR%%/tcbrc
