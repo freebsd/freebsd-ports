@@ -30,6 +30,10 @@ DESKTOP_ENTRIES=	"QtPass" "" \
 			"${PREFIX}/bin/qtpass" \
 			"Security;Utility;" true
 
+# Fix build with Qt 5.13
+pre-build:
+	cd ${WRKSRC}/localization && ${LRELEASE} *ts
+
 # Install the icon of the port.
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/artwork/icon.png \
