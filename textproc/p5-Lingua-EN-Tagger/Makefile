@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Lingua-EN-Tagger
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,8 +18,9 @@ RUN_DEPENDS=	p5-HTML-Parser>=3.45:www/p5-HTML-Parser \
 		p5-Lingua-Stem>=0.81:textproc/p5-Lingua-Stem \
 		p5-Memoize-ExpireLRU>=0.55:devel/p5-Memoize-ExpireLRU
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
