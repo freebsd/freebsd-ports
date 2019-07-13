@@ -17,7 +17,7 @@ msg "Finding symbols"
 
 # Find all ELF files
 ELF_FILES=$(mktemp -t elf_files)
-find ${STAGEDIR} -type f \
+find ${STAGEDIR} -type f ! -name '*.a' \
     -exec /usr/bin/readelf -S /dev/null {} + 2>/dev/null | awk ' \
     /File:/ {sub(/File: /, "", $0); file=$0}
     /[[:space:]]\.debug_info[[:space:]]*PROGBITS/ {print file}' \
