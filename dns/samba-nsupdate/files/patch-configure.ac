@@ -1,6 +1,6 @@
---- configure.in.orig	2018-09-06 04:15:26 UTC
-+++ configure.in
-@@ -1126,7 +1126,7 @@ case "$use_gssapi" in
+--- configure.ac.orig	2019-05-10 06:51:34 UTC
++++ configure.ac
+@@ -966,7 +966,7 @@ case "$use_gssapi" in
  	    saved_libs="$LIBS"
  	    LIBS=$gssapi_libs
  	    AC_MSG_CHECKING([krb5-config linking as $LIBS])
@@ -9,7 +9,7 @@
  		gssapi_linked=yes, gssapi_linked=no)
  	    case $gssapi_linked in
  		yes) AC_MSG_RESULT([krb5-config: linked]);;
-@@ -1255,27 +1255,9 @@ case "$use_gssapi" in
+@@ -1098,27 +1098,9 @@ case "$use_gssapi" in
  		# problems start to show up.
  		saved_libs="$LIBS"
  		for TRY_LIBS in \
@@ -39,7 +39,7 @@
  		    AC_MSG_CHECKING(linking as $TRY_LIBS)
  		    AC_TRY_LINK([
  #include <sys/types.h>
-@@ -1299,47 +1281,7 @@ gsskrb5_register_acceptor_identity(NULL)
+@@ -1142,47 +1124,7 @@ gsskrb5_register_acceptor_identity(NULL)
  		no) AC_MSG_ERROR(could not determine proper GSSAPI linkage) ;;
  		esac
  
