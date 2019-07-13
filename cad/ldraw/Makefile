@@ -16,6 +16,8 @@ COMMENT=	LDraw-format CAD files representing many of LEGO bricks produced
 
 LICENSE=	CC-BY-2.0
 
+BROKEN=		unfetchable
+
 USES=		zip
 
 NO_BUILD=	yes
