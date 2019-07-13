@@ -1,6 +1,14 @@
 include/scs/aa.h
+include/scs/cones.h
+include/scs/ctrlc.h
 include/scs/glbopts.h
+include/scs/linalg.h
+include/scs/linsys.h
+include/scs/normalize.h
+include/scs/rw.h
 include/scs/scs.h
+include/scs/scs_blas.h
+include/scs/util.h
 lib/libscsdir.a
 lib/libscsdir.so
 lib/libscsindir.a
