@@ -18,13 +18,18 @@ BUILD_DEPENDS=	re2c:devel/re2c \
 		check>=0:devel/check \
 		${LOCALBASE}/include/openvpn-plugin.h:security/openvpn
 
-USES=		autoreconf objc tar:xz
+# this port doesn't require ssl itself, but OpenLDAP needs it
+# and https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=235776
+# appears to document issues on some systems when --with-openssl
+# is missing.
+USES=		autoreconf objc ssl tar:xz
 
 GNU_CONFIGURE=	yes
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE} \
 			--with-openvpn=${LOCALBASE}/include \
-			--with-objc-runtime=GNU
+			--with-objc-runtime=GNU \
+			--with-openssl=${OPENSSLBASE}
 
 PORTDOCS=	README
 PORTEXAMPLES=	auth-ldap.conf
