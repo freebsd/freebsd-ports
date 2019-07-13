@@ -2,7 +2,7 @@
 
 PORTNAME=	ustreamer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.79
+DISTVERSION=	1.0
 CATEGORIES=	multimedia ipv6 net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +18,8 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 USES=		compiler:c11 gmake jpeg localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	pi-kvm
+
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/ustreamer
 
