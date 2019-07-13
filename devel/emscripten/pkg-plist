@@ -798,9 +798,7 @@ lib/emscripten/system/include/uuid/uuid.h
 lib/emscripten/system/include/wasm_simd128.h
 lib/emscripten/system/lib/al.c
 lib/emscripten/system/lib/al.symbols
-lib/emscripten/system/lib/asmjs_pthreads.symbols
 lib/emscripten/system/lib/build_cxx_natively.sh
-lib/emscripten/system/lib/compiler-rt.symbols
 lib/emscripten/system/lib/compiler-rt/CREDITS.TXT
 lib/emscripten/system/lib/compiler-rt/LICENSE.TXT
 lib/emscripten/system/lib/compiler-rt/extras.c
@@ -956,6 +954,7 @@ lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_common.cc
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_common.h
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_common_linux.cc
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_common_mac.cc
+lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_emscripten.cc
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_flags.inc
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_interceptors.cc
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_linux.cc
@@ -1202,6 +1201,8 @@ lib/emscripten/system/lib/gl/webgl2_ext.h
 lib/emscripten/system/lib/html5.symbols
 lib/emscripten/system/lib/html5/dom_pk_codes.c
 lib/emscripten/system/lib/html5/key_codes.c
+lib/emscripten/system/lib/libc-extras.symbols
+lib/emscripten/system/lib/libc-wasm.symbols
 lib/emscripten/system/lib/libc.symbols
 lib/emscripten/system/lib/libc/README.md
 lib/emscripten/system/lib/libc/emscripten_memcpy.c
@@ -2660,7 +2661,8 @@ lib/emscripten/system/lib/libc/musl/src/unistd/unlinkat.c
 lib/emscripten/system/lib/libc/musl/src/unistd/usleep.c
 lib/emscripten/system/lib/libc/musl/src/unistd/write.c
 lib/emscripten/system/lib/libc/musl/src/unistd/writev.c
-lib/emscripten/system/lib/libc_extras.symbols
+lib/emscripten/system/lib/libcompiler_rt.symbols
+lib/emscripten/system/lib/libcxx.symbols
 lib/emscripten/system/lib/libcxx/CREDITS.TXT
 lib/emscripten/system/lib/libcxx/LICENSE.TXT
 lib/emscripten/system/lib/libcxx/algorithm.cpp
@@ -2711,7 +2713,6 @@ lib/emscripten/system/lib/libcxx/support/solaris/wcsnrtombs.inc
 lib/emscripten/system/lib/libcxx/support/solaris/xlocale.cpp
 lib/emscripten/system/lib/libcxx/support/win32/locale_win32.cpp
 lib/emscripten/system/lib/libcxx/support/win32/support.cpp
-lib/emscripten/system/lib/libcxx/symbols
 lib/emscripten/system/lib/libcxx/system_error.cpp
 lib/emscripten/system/lib/libcxx/thread.cpp
 lib/emscripten/system/lib/libcxx/typeinfo.cpp
@@ -2719,6 +2720,7 @@ lib/emscripten/system/lib/libcxx/utility.cpp
 lib/emscripten/system/lib/libcxx/valarray.cpp
 lib/emscripten/system/lib/libcxx/variant.cpp
 lib/emscripten/system/lib/libcxx/vector.cpp
+lib/emscripten/system/lib/libcxxabi.symbols
 lib/emscripten/system/lib/libcxxabi/CREDITS.TXT
 lib/emscripten/system/lib/libcxxabi/LICENSE.TXT
 lib/emscripten/system/lib/libcxxabi/include/cxxabi.h
@@ -2767,15 +2769,14 @@ lib/emscripten/system/lib/libcxxabi/src/private_typeinfo.cpp
 lib/emscripten/system/lib/libcxxabi/src/private_typeinfo.h
 lib/emscripten/system/lib/libcxxabi/src/stdexcept.cpp
 lib/emscripten/system/lib/libcxxabi/src/typeinfo.cpp
-lib/emscripten/system/lib/libcxxabi/symbols
 lib/emscripten/system/lib/pthread/library_pthread.c
 lib/emscripten/system/lib/pthread/library_pthread_asmjs.c
 lib/emscripten/system/lib/pthread/library_pthread_stub.c
 lib/emscripten/system/lib/pthread/library_pthread_wasm.c
 lib/emscripten/system/lib/pthreads.symbols
-lib/emscripten/system/lib/stub_pthreads.symbols
+lib/emscripten/system/lib/pthreads_asmjs.symbols
+lib/emscripten/system/lib/pthreads_stub.symbols
 lib/emscripten/system/lib/test.cpp
-lib/emscripten/system/lib/wasm-libc.symbols
 lib/emscripten/system/local/include/README.txt
 lib/emscripten/third_party/WebIDL.py
 lib/emscripten/third_party/__init__.py
@@ -3511,7 +3512,7 @@ lib/emscripten/tools/tempfiles.py
 lib/emscripten/tools/toolchain_profiler.py
 lib/emscripten/tools/toolchain_profiler.results_template.html
 lib/emscripten/tools/update_js.py
-lib/emscripten/tools/update_libc_symbols.sh
+lib/emscripten/tools/update_symbols.py
 lib/emscripten/tools/validate_asmjs.py
 lib/emscripten/tools/wasm-sourcemap.py
 lib/emscripten/tools/webidl_binder.py
