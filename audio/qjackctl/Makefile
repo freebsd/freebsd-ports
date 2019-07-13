@@ -3,7 +3,7 @@
 
 PORTNAME=	qjackctl
 DISTVERSIONPREFIX=	qjackctl_
-DISTVERSION=	0_5_8
+DISTVERSION=	0_5_9
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,6 +21,8 @@ GH_ACCOUNT=	rncbc
 USE_QT=		core gui network widgets x11extras xml buildtools_build linguisttools_build qmake_build
 USE_GL=		gl
 USE_CXXSTD=	c++11
+
+BINARY_ALIAS=	qmake=${QMAKE}
 
 OPTIONS_DEFINE=		DBUS SYSTRAY XUNIQUE
 OPTIONS_DEFAULT=	DBUS SYSTRAY XUNIQUE

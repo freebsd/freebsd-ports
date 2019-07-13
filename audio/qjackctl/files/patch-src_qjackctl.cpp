@@ -1,17 +1,6 @@
---- src/qjackctl.cpp.orig	2016-04-05 15:57:30 UTC
+--- src/qjackctl.cpp.orig	2019-07-12 10:07:12 UTC
 +++ src/qjackctl.cpp
-@@ -30,6 +30,10 @@
- 
- #include <QSessionManager>
- 
-+#ifdef HAVE_UNISTD_H
-+#include <unistd.h>
-+#endif
-+
- #if QT_VERSION < 0x040500
- namespace Qt {
- const WindowFlags WindowCloseButtonHint = WindowFlags(0x08000000);
-@@ -218,7 +222,7 @@ public:
+@@ -190,7 +190,7 @@ bool qjackctlApplication::setup ( const QString& sServ
  			sUnique += sServerName;
  		}
  		char szHostName[255];
