@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2019-03-09 23:08:57 UTC
+--- CMakeLists.txt.orig	2016-07-19 13:57:16 UTC
 +++ CMakeLists.txt
-@@ -130,8 +130,8 @@ CONFIGURE_FILE(${CMAKE_SOURCE_DIR}/CMake
+@@ -130,8 +130,8 @@ CONFIGURE_FILE(${CMAKE_SOURCE_DIR}/CMakeTemplates/conf
  # install stuff
  
  # The license file
@@ -29,3 +29,12 @@
    ENDIF(UNIX AND NOT APPLE)
    
    #################
+@@ -213,6 +213,8 @@ IF(${BUILD_USERMANUAL})
+ 
+ ENDIF(${BUILD_USERMANUAL})
+ 
++# Fix build with Qt 5.13
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DQT_NO_DEPRECATED_WARNINGS=Y")
+ 
+ #############################################################
+ # summary
