@@ -16,6 +16,7 @@ include/opendht/infohash.h
 include/opendht/log.h
 include/opendht/log_enable.h
 include/opendht/network_engine.h
+include/opendht/network_utils.h
 include/opendht/node.h
 include/opendht/node_cache.h
 include/opendht/peer_discovery.h
