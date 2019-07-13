@@ -63,7 +63,7 @@ pre-build:
 	@${FIND} ${WRKSRC} -name '.depend' -delete
 
 post-build-NLS-on:
-	${LRELEASE} ${WRKSRC}/src/src.pro
+	cd ${BUILD_WRKSRC}/translations && ${LRELEASE} *.ts
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/64x64/apps
