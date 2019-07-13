@@ -1237,7 +1237,6 @@ lib/calibre/calibre/utils/config.py
 lib/calibre/calibre/utils/date.py
 lib/calibre/calibre/utils/dbus_service.py
 lib/calibre/calibre/utils/exim.py
-lib/calibre/calibre/utils/file_associations.py
 lib/calibre/calibre/utils/file_type_icons.py
 lib/calibre/calibre/utils/filenames.py
 lib/calibre/calibre/utils/fonts/__init__.py
@@ -1335,6 +1334,8 @@ lib/calibre/calibre/utils/unicode_getpass.py
 lib/calibre/calibre/utils/unicode_names.py
 lib/calibre/calibre/utils/unrar.py
 lib/calibre/calibre/utils/unsmarten.py
+lib/calibre/calibre/utils/windows/__init__.py
+lib/calibre/calibre/utils/windows/wintest.py
 lib/calibre/calibre/utils/winreg/__init__.py
 lib/calibre/calibre/utils/winreg/dde.py
 lib/calibre/calibre/utils/winreg/default_programs.py
