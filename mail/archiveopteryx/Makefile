@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	jam:devel/jam
 
-USES=		perl5 ssl tar:bzip2
+USES=		compiler perl5 ssl tar:bzip2
 USE_PERL5=	build
 WITH_PGSQL=	client
 
@@ -38,7 +38,7 @@ OPTIONS_DEFINE=	DOCS
 
 # force Clang when on FreeBSD with clang in base
 .if ${OPSYS} == FreeBSD
-.if ! ${ARCH:Mmips*} && ! ${ARCH:Mpowerpc*} && ! ${ARCH} == sparc64
+.if ${CHOSEN_COMPILER_TYPE} == clang
 JAMARG+=	"-sCLANG=1"
 .endif
 .endif

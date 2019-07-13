@@ -27,7 +27,7 @@ LIB_DEPENDS=	libslang.so:devel/libslang2\
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		bison gmake shebangfix ssl
+USES=		bison compiler gmake shebangfix ssl
 
 SHEBANG_FILES=	bin/hb3rdpat.hbs
 SHEBANG_LANG=	hbrun
@@ -122,7 +122,7 @@ post-patch:
 		-e 's|utmp.h|utmpx.h|g' ${WRKSRC}/src/rtl/gtcrs/gtcrs.h
 
 # override default for gcc-based archs
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 HB_COMPILER=	gcc
 .endif
 

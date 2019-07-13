@@ -35,7 +35,7 @@ NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	${REINPLACE_CMD} -e 's|games/lpairs|lpairs|' ${WRKSRC}/configure.in
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 	${REINPLACE_CMD} -e 's|-Wno-unused-result||' ${WRKSRC}/configure.in
 .endif
 

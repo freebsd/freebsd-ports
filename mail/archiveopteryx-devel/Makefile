@@ -19,7 +19,7 @@ GH_ACCOUNT=	aox
 GH_PROJECT=	aox
 GH_TAGNAME=	96ab17e
 
-USES=		perl5 ssl
+USES=		compiler perl5 ssl
 USE_PERL5=	build
 WITH_PGSQL=	client
 
@@ -44,7 +44,7 @@ OPTIONS_DEFINE=	DOCS
 
 # force Clang when on FreeBSD with clang in base
 .if ${OPSYS} == FreeBSD
-.if ! ${ARCH:Mmips*} && ! ${ARCH:Mpowerpc*} && ! ${ARCH} == sparc64
+.if ${CHOSEN_COMPILER_TYPE} == clang
 JAMARG+=	"-sCLANG=1"
 .endif
 .endif

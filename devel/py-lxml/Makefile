@@ -13,7 +13,7 @@ COMMENT=	Pythonic binding for the libxml2 and libxslt libraries
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/licenses/BSD.txt
 
-USES=		gnome python uniquefiles:dirs
+USES=		compiler gnome python uniquefiles:dirs
 USE_GNOME=	libxml2 libxslt
 USE_PYTHON=	autoplist concurrent distutils
 
@@ -35,8 +35,8 @@ post-install-DOCS-on:
 
 .include <bsd.port.pre.mk>
 
-# on gcc-based architectures, use modern GCC due to use of #pragma
-.if ${ARCH} == mips || ${ARCH} == mips64 || ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpcspe || ${ARCH} == sparc64
+# if using gcc, force modern GCC due to use of #pragma
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 USE_GCC=	yes
 .endif
 
