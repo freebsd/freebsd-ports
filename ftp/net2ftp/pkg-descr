@@ -1,6 +1,6 @@
-net2ftp is a web-based FTP client written in PHP
+net2ftp is a web-based FTP client written in PHP.
 
-Features
+Features:
  - Navigate the FTP server
  - Upload and download files
  - Edit files (WYSIWYG and syntax highlighting)
@@ -12,4 +12,4 @@ Features
  - Search for words or phrases
  - Calculate the size of directories and files
 
-WWW: http://www.net2ftp.com/
+WWW: https://www.net2ftp.com/
