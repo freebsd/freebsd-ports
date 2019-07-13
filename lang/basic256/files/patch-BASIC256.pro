@@ -32,7 +32,7 @@
 +	INCLUDEPATH                             +=      $$LOCALBASE/include/qt5/QtMultimedia
 +	INCLUDEPATH                             +=      $$LOCALBASE/include/qt5/QtSerialPort
 + 	INCLUDEPATH				+=	QtMobility
-+	LIBS                                    +=      -L$$LOCALBASE/lib -lQt5Gui -lQt5Core -lQt5Widgets -lQt5Sql -lQt5Multimedia -lQt5PrintSupport -lQt5SerialPort
++	LIBS                                    +=      -L$$LOCALBASE/lib -L$$LOCALBASE/lib/qt5 -lQt5Gui -lQt5Core -lQt5Widgets -lQt5Sql -lQt5Multimedia -lQt5PrintSupport -lQt5SerialPort
  	INCLUDEPATH				+=	QtMobility
  
  
