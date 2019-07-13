@@ -52,7 +52,8 @@ CFLAGS+=		-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT -I${LOCALBASE}/inc
 CFLAGS+=		-DNDEBUG
 .endif
 
-.if ((${ARCH} != i386) && (${ARCH} != powerpc))
+# determine if we are on a 64-bit arch
+.if ${ARCH:M*64*}
 MAKE_ENV+=		LP64=yes
 .endif
 
