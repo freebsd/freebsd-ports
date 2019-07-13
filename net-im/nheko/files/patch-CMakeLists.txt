@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2019-07-13 12:11:29 UTC
++++ CMakeLists.txt
+@@ -114,6 +114,9 @@ if(NOT MSVC)
+     endif()
+ endif()
+ 
++# Fix build with Qt 5.13
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DQT_NO_DEPRECATED_WARNINGS=Y")
++
+ if (MSVC)
+   set(
+       CMAKE_CXX_FLAGS
