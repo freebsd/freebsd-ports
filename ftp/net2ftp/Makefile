@@ -2,28 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	net2ftp
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.net2ftp.com/download/
+MASTER_SITES=	https://www.net2ftp.com/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Web-based FTP client written in PHP
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/files_to_upload/LICENSE.txt
 
 USES=		php zip
-NO_BUILD=	YES
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	ftp mysqli pcre session zlib
 .endif
 
-SUB_FILES+=	pkg-message
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+SUB_FILES=	pkg-message
+
+post-patch:
+	@${FIND} ${WRKSRC}/files_to_upload -name 'settings*.inc.php' | ${XARGS} -I % ${MV} % %.sample
 
 do-install:
-	@(for samplefile in $$( ${FIND} ${WRKSRC}/files_to_upload -name "settings*.inc.php" ) ; do \
-		${MV} $$samplefile $$samplefile.sample ; \
-	done)
-	@(cd ${WRKSRC}/files_to_upload && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+	cd ${WRKSRC}/files_to_upload && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
