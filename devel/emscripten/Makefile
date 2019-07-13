@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	emscripten
-DISTVERSION=	1.38.37
+DISTVERSION=	1.38.38
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org
