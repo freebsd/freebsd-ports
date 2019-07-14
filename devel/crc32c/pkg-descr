@@ -1,0 +1,9 @@
+This project collects a few CRC32C implementations under an umbrella
+that dispatches to a suitable implementation based on the host
+computer's hardware capabilities.
+
+CRC32C is specified as the CRC that uses the iSCSI polynomial in RFC 3720.
+The polynomial was introduced by G. Castagnoli, S. Braeuer and M. Herrmann.
+CRC32C is used in software such as Btrfs, ext4, Ceph and leveldb.
+
+WWW: https://github.com/google/crc32c
