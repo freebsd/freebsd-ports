@@ -6,18 +6,13 @@ zookeeper_rootlogger="WARN,CONSOLE"
 zookeeper_logdir="%%ZOOKEEPER_LOGDIR%%"
 
 JAVA=%%JAVA%%
-JAVAJARDIR=%%JAVAJARDIR%%
 
-for i in zookeeper jline slf4j-api netty log4j
-do
-    CLASSPATH="${JAVAJARDIR}/$i.jar:$CLASSPATH"
-done
-CLASSPATH=/usr/local/share/slf4j/slf4j-log4j12.jar:$CLASSPATH
+CLASSPATH=":%%DATADIR%%/*"
 
 zookeeper_main="org.apache.zookeeper.ZooKeeperMain"
 log4j_params="-Dzookeeper.log.dir=${zookeeper_logdir} \
-            -Dzookeeper.root.logger=${zookeeper_rootlogger} \
-            -Dlog4j.configuration=${zookeeper_log4jpropfile}"
+		-Dzookeeper.root.logger=${zookeeper_rootlogger} \
+		-Dlog4j.configuration=${zookeeper_log4jpropfile}"
 
 ${JAVA} -cp "$CLASSPATH" $CLIENT_JVMFLAGS $JVMFLAGS \
-    ${log4j_params} ${zookeeper_main} $@
+	${log4j_params} ${zookeeper_main} $@
