@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rvest
-PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTVERSION=	0.3.4
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,10 +11,12 @@ COMMENT=	Easily Harvest (Scrape) Web Pages
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	R-cran-xml2>0:textproc/R-cran-xml2 \
+CRAN_DEPENDS=	R-cran-xml2>0:textproc/R-cran-xml2 \
 		R-cran-httr>=0.5:www/R-cran-httr \
-		R-cran-selectr>0:www/R-cran-selectr \
-		R-cran-magrittr>0:devel/R-cran-magrittr
+		R-cran-magrittr>0:devel/R-cran-magrittr \
+		R-cran-selectr>0:www/R-cran-selectr
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=	cran:auto-plist
 
