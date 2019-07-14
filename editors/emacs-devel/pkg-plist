@@ -2900,6 +2900,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/lucid.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mailpost.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mailpost.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mantemp.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mantemp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/meese.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/meese.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/messcompat.el
@@ -2957,8 +2959,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vip.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/ws-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/ws-mode.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/xesam.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/xesam.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/yow.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/yow.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-C.el.gz
@@ -3404,8 +3404,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/m4-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/make-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/make-mode.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/mantemp.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/mantemp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/meta-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/meta-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/mixal-mode.el.gz
@@ -3517,6 +3515,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/simple.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/skeleton.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/skeleton.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/so-long.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/so-long.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/sort.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/sort.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/soundex.el.gz
