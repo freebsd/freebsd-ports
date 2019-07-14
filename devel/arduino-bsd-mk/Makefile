@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arduino-bsd-mk
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	devel
 MASTER_SITES=	https://xse.com/leres/arduino/arduino-bsd-mk/ \
 		LOCAL/leres/arduino-bsd-mk
