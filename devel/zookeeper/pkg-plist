@@ -1,9 +1,26 @@
 bin/zkCli.sh
-bin/zkServer.sh
-%%JAVAJARDIR%%/zookeeper-%%PORTVERSION%%.jar
-%%JAVAJARDIR%%/zookeeper.jar
+%%DATADIR%%/audience-annotations-0.5.0.jar
+%%DATADIR%%/commons-cli-1.2.jar
+%%DATADIR%%/jackson-annotations-2.9.0.jar
+%%DATADIR%%/jackson-core-2.9.8.jar
+%%DATADIR%%/jackson-databind-2.9.8.jar
+%%DATADIR%%/javax.servlet-api-3.1.0.jar
+%%DATADIR%%/jetty-http-9.4.17.v20190418.jar
+%%DATADIR%%/jetty-io-9.4.17.v20190418.jar
+%%DATADIR%%/jetty-security-9.4.17.v20190418.jar
+%%DATADIR%%/jetty-server-9.4.17.v20190418.jar
+%%DATADIR%%/jetty-servlet-9.4.17.v20190418.jar
+%%DATADIR%%/jetty-util-9.4.17.v20190418.jar
+%%DATADIR%%/jline-2.11.jar
+%%DATADIR%%/json-simple-1.1.1.jar
+%%DATADIR%%/log4j-1.2.17.jar
+%%DATADIR%%/netty-all-4.1.29.Final.jar
+%%DATADIR%%/slf4j-api-1.7.25.jar
+%%DATADIR%%/slf4j-log4j12-1.7.25.jar
+%%DATADIR%%/zookeeper-%%PORTVERSION%%.jar
+%%DATADIR%%/zookeeper-jute-%%PORTVERSION%%.jar
 @sample %%ETCDIR%%/log4j.properties.sample
 @sample %%ETCDIR%%/configuration.xsl.sample
 @sample %%ETCDIR%%/zoo.cfg.sample
-@dir(zookeeper,zookeeper,755) %%ZOOKEEPER_LOGDIR%%
-@dir(zookeeper,zookeeper,755) %%ZOOKEEPER_DBDIR%%
+@dir(%%USERS%%,%%GROUPS%%,755) %%ZOOKEEPER_LOGDIR%%
+@dir(%%USERS%%,%%GROUPS%%,755) %%ZOOKEEPER_DBDIR%%
