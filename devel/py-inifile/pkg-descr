@@ -1,0 +1,4 @@
+Small INI library for Python. Unlike a regular INI serializer it only
+overwrites the lines that were modified.
+
+WWW: https://pypi.org/project/inifile/
