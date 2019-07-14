@@ -1,15 +1,18 @@
---- make/Makefile.orig	2019-01-16 04:21:45 UTC
+--- make/Makefile.orig	2019-07-11 19:35:55 UTC
 +++ make/Makefile
-@@ -84,7 +84,7 @@ APBS_LIBS = -lapbsmainroutines -lapbs -l
+@@ -84,9 +84,9 @@ APBS_LIBS = -lapbsmainroutines -lapbs -lmaloc -lapbsbl
  
  F77 = gfortran
  F77FLAGS = -c
 -OPTFLAGS = -Ofast -mssse3 -fopenmp
 +OPTFLAGS = -Ofast $(PORT_SIMD_FLAGS) -fopenmp
  #OPTFLAGS = -Og -fbacktrace -fcheck=bounds -Wunused -Wmaybe-uninitialized
- LIBDIR = -L. -L$(TINKER_LIBDIR)/macos
+-LIBDIR = -L. -L$(TINKER_LIBDIR)/macos
++#LIBDIR = -L. -L$(TINKER_LIBDIR)/macos
  LIBS = 
-@@ -787,132 +787,132 @@ listing:
+ LIBFLAGS = -crusv
+ RANLIB = ranlib -c
+@@ -802,132 +802,132 @@ listing:
  	cat *.f *.c > tinker.txt
  
  rename_bin:
