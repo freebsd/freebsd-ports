@@ -1,0 +1,4 @@
+Simple utility functions to read from and write to the Windows, OS
+X, and X11 clipboards.
+
+WWW: https://cran.r-project.org/web/packages/clipr/
