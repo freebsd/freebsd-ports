@@ -1,5 +1,5 @@
---- chu.c.orig	1999-03-17 11:42:18.000000000 -0500
-+++ chu.c	2011-07-01 08:42:06.000000000 -0400
+--- chu.c.orig	1999-03-17 16:42:18 UTC
++++ chu.c
 @@ -20,15 +20,21 @@
  #include <stdlib.h>
  #include <string.h>
@@ -24,7 +24,7 @@
  #define SAMPLE_RATE 8000
  #define SAMPLES 512
  #define OVERLAP 50
-@@ -389,6 +395,21 @@
+@@ -389,6 +395,21 @@ void saveAdjTime()
    }
  }
  
@@ -46,7 +46,7 @@
  #ifdef USE_TIMEX
  void timex_adjustment(int microsec)
  {
-@@ -462,7 +483,8 @@
+@@ -462,7 +483,8 @@ double gettimexoffset()
    adjtimex(&t);
    offset = t.offset;
  #endif
@@ -56,7 +56,7 @@
    return (double) offset; 
  }
  
-@@ -655,13 +677,18 @@
+@@ -655,13 +677,18 @@ void adj_time(double d)
      tv.tv_usec += 1000000;
    }
  
@@ -75,7 +75,7 @@
    {
      printf("standard adjustment ");
  
-@@ -1267,7 +1294,7 @@
+@@ -1267,7 +1294,7 @@ char *parseArgs(int argc, char **argv)
    return fname;
  }
  
@@ -84,7 +84,7 @@
  {
    FILE *fp;
    signed char buf[8192];
-@@ -1278,7 +1305,7 @@
+@@ -1278,7 +1305,7 @@ void main(int argc, char **argv)
  
    fname = parseArgs(argc, argv);
    if (fname == NULL)
@@ -93,7 +93,7 @@
  
    /* Set priority to maximum -- just long enough for us
       to open the audio device and timestamp it.  This should
-@@ -1293,7 +1320,7 @@
+@@ -1293,7 +1320,7 @@ void main(int argc, char **argv)
    if (fp == NULL)
    {
      printf("fopen(): Unable to open file: %s  %s\n", fname, strerror(errno));
