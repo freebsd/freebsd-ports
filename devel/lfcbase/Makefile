@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lfcbase
-PORTVERSION=	1.13.1
+PORTVERSION=	1.14.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
