@@ -40,7 +40,7 @@ FLAC_RUN_DEPENDS=	flac:audio/flac
 MPP_RUN_DEPENDS=	mpcenc:audio/musepack
 MUSICBRAINZ_DESC=	Enable MusicBrainz DiscID support
 MUSICBRAINZ_USES=	perl5
-MUSICBRAINZ_USE_PERL5=	run
+MUSICBRAINZ_USE=	PERL5=run
 MUSICBRAINZ_RUN_DEPENDS=	\
 		p5-MusicBrainz-DiscID>=0:audio/p5-MusicBrainz-DiscID \
 		p5-WebService-MusicBrainz>=1:www/p5-WebService-MusicBrainz

@@ -1,7 +1,8 @@
-******************************************************************
+[
+{ type: install
+  message: <<EOD
 Please copy %%PREFIX%%/etc/abcde.conf.sample to ~/.abcde.conf and
 edit as necessary. Sane defaults have been set.
-
-NOTE: If you have been using abcde-2.1.4 or older, you must start
-with a fresh ~/.abcde.conf.
-******************************************************************
+EOD
+}
+]
