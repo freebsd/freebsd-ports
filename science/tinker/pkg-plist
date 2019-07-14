@@ -71,13 +71,14 @@ bin/xyzpdb
 %%DATADIR%%/params/amoebabio09.prm
 %%DATADIR%%/params/amoebabio18.prm
 %%DATADIR%%/params/amoebanuc17.prm
+%%DATADIR%%/params/amoebaplus.prm
 %%DATADIR%%/params/amoebapro04.prm
 %%DATADIR%%/params/amoebapro13.prm
 %%DATADIR%%/params/charmm19.prm
 %%DATADIR%%/params/charmm22.prm
 %%DATADIR%%/params/charmm22cmap.prm
 %%DATADIR%%/params/dang.prm
-%%DATADIR%%/params/hippo18.prm
+%%DATADIR%%/params/hippo19.prm
 %%DATADIR%%/params/hoch.prm
 %%DATADIR%%/params/iwater.prm
 %%DATADIR%%/params/mm2.prm
@@ -92,6 +93,7 @@ bin/xyzpdb
 %%DATADIR%%/params/tiny.prm
 %%DATADIR%%/params/water03.prm
 %%DATADIR%%/params/water14.prm
+%%DATADIR%%/params/water19.prm
 %%DATADIR%%/test/0README
 %%DATADIR%%/test/anion.dat
 %%DATADIR%%/test/anion.dyn0
@@ -165,9 +167,9 @@ bin/xyzpdb
 %%DATADIR%%/test/ice.xyz
 %%DATADIR%%/test/ifabp.dat
 %%DATADIR%%/test/ifabp.key
+%%DATADIR%%/test/ifabp.log
 %%DATADIR%%/test/ifabp.run
 %%DATADIR%%/test/ifabp.xyz
-%%DATADIR%%/test/ifapb.log
 %%DATADIR%%/test/nitrogen.arc
 %%DATADIR%%/test/nitrogen.key
 %%DATADIR%%/test/nitrogen.log
