@@ -256,6 +256,7 @@
 %%WWWDIR%%/share/frontend/nagvis-js/images/internal/favicon_up.png
 %%WWWDIR%%/share/frontend/nagvis-js/images/internal/favicon_warning.png
 %%WWWDIR%%/share/frontend/nagvis-js/images/internal/info.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/leaflet/layers-2x.png
 %%WWWDIR%%/share/frontend/nagvis-js/images/internal/loading.gif
 %%WWWDIR%%/share/frontend/nagvis-js/images/internal/logo.png
 %%WWWDIR%%/share/frontend/nagvis-js/images/internal/logo_small.png
@@ -277,7 +278,6 @@
 %%WWWDIR%%/share/frontend/nagvis-js/images/jscolor/cross.gif
 %%WWWDIR%%/share/frontend/nagvis-js/images/jscolor/hs.png
 %%WWWDIR%%/share/frontend/nagvis-js/images/jscolor/hv.png
-%%WWWDIR%%/share/frontend/nagvis-js/images/leaflet/layers-2x.png
 %%WWWDIR%%/share/frontend/nagvis-js/images/leaflet/layers.png
 %%WWWDIR%%/share/frontend/nagvis-js/images/leaflet/marker-icon-2x.png
 %%WWWDIR%%/share/frontend/nagvis-js/images/leaflet/marker-icon.png
