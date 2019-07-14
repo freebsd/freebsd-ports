@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinytex
-DISTVERSION=	0.9
-PORTREVISION=	1
+DISTVERSION=	0.14
 CATEGORIES=	print
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,7 +10,7 @@ COMMENT=	Helper functions to maintain LaTeX distribution
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-xfun>=0.3:misc/R-cran-xfun
+CRAN_DEPENDS=	R-cran-xfun>=0.5:misc/R-cran-xfun
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
