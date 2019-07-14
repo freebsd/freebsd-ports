@@ -1,0 +1,5 @@
+Lektor is a static website generator. It builds out an entire project from
+static files into many individual HTML pages and has a built-in admin UI and
+minimal desktop app.
+
+WWW: https://www.getlektor.com/
