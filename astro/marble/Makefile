@@ -37,7 +37,7 @@ OPTIONS_SUB=	yes
 
 GPS_DESC=		Support for GPS position provider
 GPS_LIB_DEPENDS=	libgps.so:astro/gpsd
-GPS_CMAKE_BOOL_ON=		WITH_libgps
+GPS_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_libgps
 
 WEBENGINE_DESC=		Add dependency on qt5-webengine
 WEBENGINE_USE=		QT=webengine
