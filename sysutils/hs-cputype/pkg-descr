@@ -1,0 +1,6 @@
+This small utility can help figuring out proper value for CPUTYPE variable used
+by FreeBSD build machinery in src and ports Makefiles. It uses clang for this
+and checks its output against bsd.cpu.mk file. It also allows you to list CPU
+features, and compare between several CPUs to find out which one is most featured.
+
+WWW: https://bitbucket.org/arrowd/cputype
