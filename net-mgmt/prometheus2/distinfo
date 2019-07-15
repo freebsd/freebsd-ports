@@ -1,3 +1,3 @@
-TIMESTAMP = 1558923211
-SHA256 (prometheus-prometheus-v2.10.0_GH0.tar.gz) = 0362f4aa2fb44cc2c572df140da742bdf99fe9f338157a83f6634694fd693000
-SIZE (prometheus-prometheus-v2.10.0_GH0.tar.gz) = 11752395
+TIMESTAMP = 1562676113
+SHA256 (prometheus-prometheus-v2.11.0_GH0.tar.gz) = b83f490a59292f00ab9679b008e2876ccc3a0c153916e2c141566395c7dcc7ee
+SIZE (prometheus-prometheus-v2.11.0_GH0.tar.gz) = 12133603
