@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hms
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -13,7 +12,8 @@ COMMENT=	Pretty Time of Day
 LICENSE=	GPLv3
 
 CRAN_DEPENDS=	R-cran-pkgconfig>0:devel/R-cran-pkgconfig \
-		R-cran-rlang>0:devel/R-cran-rlang
+		R-cran-rlang>0:devel/R-cran-rlang \
+		R-cran-vctrs>=0.2.0:devel/R-cran-vctrs
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
