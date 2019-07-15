@@ -1,0 +1,9 @@
+In order to access the Atlassian Connect REST APIs, an app authenticates using a
+JSON Web Token (JWT). The token is generated using the app's secret key and
+contains a claim which includes the app's key and a hashed version of the API
+URL the app is accessing. This gem simplifies generating the claim.
+
+This gem provides helpers for generating Atlassian specific JWT claims. It also
+exposes the ruby-jwt gem's encode and decode methods.
+
+https://bitbucket.org/atlassian/atlassian-jwt-ruby
