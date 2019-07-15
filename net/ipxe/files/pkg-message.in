@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOD
 The following files have been installed in %%DATADIR%%:
 - ipxe.dsk for creating a bootable floppy disk
 - ipxe.efi-i386 for loading from EFI on i386 systems
@@ -11,3 +14,6 @@ The following files have been installed in %%DATADIR%%:
 - {8086100f,808610d3,10222000,15ad07b0}.rom for replacing the
   VMware PXE ROM.  See http://ipxe.org/howto/vmware for more
   information.
+EOD
+}
+]
