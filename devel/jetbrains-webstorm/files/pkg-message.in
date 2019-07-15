@@ -1,0 +1,6 @@
+There is native (faster) file watching support backed by kqueue which is
+enabled by default.  If you encounter problems  problems with watching large
+trees, you disable it by appending the following property into
+%%DATADIR%%/bin/idea.properties:
+
+      idea.filewatcher.disabled=true

@@ -1027,6 +1027,7 @@
     SUBDIR += jetbrains-clion
     SUBDIR += jetbrains-goland
     SUBDIR += jetbrains-phpstorm
+    SUBDIR += jetbrains-webstorm
     SUBDIR += jfrog-cli
     SUBDIR += jiic
     SUBDIR += jiri
