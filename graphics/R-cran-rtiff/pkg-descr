@@ -10,4 +10,4 @@ inherently support a wide range of image formats and compression
 schemes. This package also provides an implementation of the Ridler
 Autothresholding algorithm for easy generation of binary masks.
 
-WWW: http://cran.r-project.org/web/packages/rtiff/
+WWW: https://cran.r-project.org/web/packages/rtiff/
