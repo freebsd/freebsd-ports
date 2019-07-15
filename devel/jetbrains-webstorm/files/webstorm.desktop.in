@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=WebStorm
+GenericName=webStorm
+Comment=WebStorm Integrated Development Environment
+Icon=%%DATADIR%%/bin/webstorm.png
+Exec=%%DATADIR%%/bin/webstorm.sh
+Terminal=false
+StartupNotify=true
+Categories=Application;Development;
