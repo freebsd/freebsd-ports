@@ -145,13 +145,6 @@ CCACHE_VALUE=	"${CCACHE_WRAPPER_PATH:C,/libexec/ccache$,,}/bin/ccache"
 CCACHE_VALUE=	false
 .endif
 
-pre-configure:
-	@for file in \
-		${CARGO_VENDOR_DIR}/backtrace-sys/src/libbacktrace/configure \
-		${CARGO_VENDOR_DIR}/backtrace-sys/src/libbacktrace/config/libtool.m4; do \
-		mv "$$file" "$$file.dont-fix"; \
-	done
-
 do-configure:
 	${SED} -E \
 		-e 's,%PREFIX%,${PREFIX},' \
@@ -174,13 +167,6 @@ do-configure:
 	@${REINPLACE_CMD} -e 's,%CC%,${CC},g' \
 		${WRKSRC}/src/librustc_llvm/build.rs \
 		${WRKSRC}/src/bootstrap/native.rs
-
-post-configure:
-	@for file in \
-		${CARGO_VENDOR_DIR}/backtrace-sys/src/libbacktrace/configure \
-		${CARGO_VENDOR_DIR}/backtrace-sys/src/libbacktrace/config/libtool.m4; do \
-		mv "$$file.dont-fix" "$$file"; \
-	done
 
 post-configure-DOCS-on:
 	${REINPLACE_CMD} -e 's,%DOCS%,true,' ${WRKSRC}/config.toml
