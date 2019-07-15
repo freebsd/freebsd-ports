@@ -1,3 +1,5 @@
-TIMESTAMP = 1562435526
+TIMESTAMP = 1562526809
 SHA256 (anydesk-freebsd-5.1.0-x86_64.tar.gz) = f5bf21e896f183391da64de4263ab186cdeab7ceaa9b9927dccca0a5d68f4c02
 SIZE (anydesk-freebsd-5.1.0-x86_64.tar.gz) = 4280118
+SHA256 (anydesk-freebsd-5.1.0-i386.tar.gz) = 24c5fc26aa1b9ff1eb4e56014213b05cbccec87c19c16897c7268566ba70ae99
+SIZE (anydesk-freebsd-5.1.0-i386.tar.gz) = 3888887
