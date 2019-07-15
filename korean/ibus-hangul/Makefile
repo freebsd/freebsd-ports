@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-hangul
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	korean
 MASTER_SITES=	https://github.com/choehwanjin/ibus-hangul/releases/download/${PORTVERSION}/
 
