@@ -62,6 +62,7 @@
     SUBDIR += elixir
     SUBDIR += elixir-mode.el
     SUBDIR += elk
+    SUBDIR += elm
     SUBDIR += emacs-lisp-intro
     SUBDIR += erlang
     SUBDIR += erlang-doc
