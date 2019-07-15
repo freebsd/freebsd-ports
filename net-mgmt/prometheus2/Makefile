@@ -2,7 +2,7 @@
 
 PORTNAME=	prometheus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.0
+DISTVERSION=	2.11.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dor.bsd@xm0.uk
@@ -11,11 +11,13 @@ COMMENT=	Systems monitoring and alerting toolkit
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go gmake
+USES=		go:modules gmake
 USE_GITHUB=	yes
 USE_RC_SUBR=	prometheus
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
+
+OPTIONS_DEFINE=	DOCS
 
 PROMETHEUS_USER?=	prometheus
 PROMETHEUS_GROUP?=	prometheus
@@ -55,19 +57,11 @@ LD_FLAG_STRING=		-s \
 		${LD_FLAG_X_PREFIX}.Revision=${PORTREVISION} \
 		${LD_FLAG_X_PREFIX}.Branch=release-${PORTVERSION:R} \
 		${LD_FLAG_X_PREFIX}.BuildUser=${BUILD_USER}
+
 GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
+GO_TARGET=	${PROMETHEUS_BINARIES:S/^/.\/cmd\//}
 
-do-build:
-.for bin in ${PROMETHEUS_BINARIES}
-	( cd ${GO_WRKSRC}/cmd/${bin} ; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} \
-		${GO_CMD} install ${GO_BUILDFLAGS} )
-.endfor
-
-do-install:
-.for bin in ${PROMETHEUS_BINARIES}
-	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${bin} ${STAGEDIR}${PREFIX}/bin
-.endfor
+post-install:
 	${INSTALL_DATA} \
 		${WRKSRC}/documentation/examples/prometheus.yml \
 		${STAGEDIR}${LOCALBASE}/etc/prometheus.yml.sample
@@ -81,5 +75,10 @@ do-install:
 	( cd ${WRKSRC}/consoles \
 		&& ${COPYTREE_SHARE} . ${STAGEDIR}${PROMETHEUS_CONSOLES_DIR} \
 	)
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

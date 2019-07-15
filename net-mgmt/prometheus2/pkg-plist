@@ -9,6 +9,27 @@ bin/promtool
 %%PROMETHEUS_CONSOLES_DIR%%/node.html
 %%PROMETHEUS_CONSOLES_DIR%%/prometheus-overview.html
 %%PROMETHEUS_CONSOLES_DIR%%/prometheus.html
+%%PORTDOCS%%%%DOCSDIR%%/configuration/alerting_rules.md
+%%PORTDOCS%%%%DOCSDIR%%/configuration/configuration.md
+%%PORTDOCS%%%%DOCSDIR%%/configuration/index.md
+%%PORTDOCS%%%%DOCSDIR%%/configuration/recording_rules.md
+%%PORTDOCS%%%%DOCSDIR%%/configuration/template_examples.md
+%%PORTDOCS%%%%DOCSDIR%%/configuration/template_reference.md
+%%PORTDOCS%%%%DOCSDIR%%/configuration/unit_testing_rules.md
+%%PORTDOCS%%%%DOCSDIR%%/federation.md
+%%PORTDOCS%%%%DOCSDIR%%/getting_started.md
+%%PORTDOCS%%%%DOCSDIR%%/images/remote_integrations.png
+%%PORTDOCS%%%%DOCSDIR%%/index.md
+%%PORTDOCS%%%%DOCSDIR%%/installation.md
+%%PORTDOCS%%%%DOCSDIR%%/migration.md
+%%PORTDOCS%%%%DOCSDIR%%/querying/api.md
+%%PORTDOCS%%%%DOCSDIR%%/querying/basics.md
+%%PORTDOCS%%%%DOCSDIR%%/querying/examples.md
+%%PORTDOCS%%%%DOCSDIR%%/querying/functions.md
+%%PORTDOCS%%%%DOCSDIR%%/querying/index.md
+%%PORTDOCS%%%%DOCSDIR%%/querying/operators.md
+%%PORTDOCS%%%%DOCSDIR%%/stability.md
+%%PORTDOCS%%%%DOCSDIR%%/storage.md
 @sample etc/prometheus.yml.sample
 @dir(prometheus,prometheus) %%PROMETHEUS_DB_DIR%%
 @dir(root,root) %%PROMETHEUS_LOG_DIR%%

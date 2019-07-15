@@ -1,3 +1,44 @@
+[
+{
+  message: <<EOF
+The `prometheus_tsdb_wal_reader_corruption_errors` metric was renamed to
+`prometheus_tsdb_wal_reader_corruption_errors_total`.
+EOF
+  maximum_version: "2.11"
+  type: upgrade
+}
+{
+  message: <<EOF
+The `prometheus_tsdb_storage_blocks_bytes_total` metric is now
+`prometheus_tsdb_storage_blocks_bytes`.
+EOF
+  maximum_version: "2.8"
+  type: upgrade
+}
+{
+  message: <<EOF
 The `storage.tsdb.retention` flag has been deprecated in Prometheus 2.7.0.
 Users of this flag will want to update their configuration to use the newer
 `storage.tsdb.retention.time` flag.
+EOF
+  maximum_version: "2.7"
+  type: upgrade
+}
+{
+  message: <<EOF
+Users of `marathon_sd` should now use `auth_token` and `auth_token_file` for
+token-based authentication instead of `bearer_token` and `bearer_token_file`
+respectively.
+Metric names for the HTTP server metrics were changed.
+EOF
+  maximum_version: "2.3"
+  type: upgrade
+}
+{
+  message: <<EOF
+The `file_sd` mtime metric was renamed.
+EOF
+  maximum_version: "2.2"
+  type: upgrade
+}
+]
