@@ -479,6 +479,7 @@
     SUBDIR += hpacucli
     SUBDIR += hploscripts
     SUBDIR += hptcli
+    SUBDIR += hs-cputype
     SUBDIR += hstr
     SUBDIR += htop
     SUBDIR += httplog
