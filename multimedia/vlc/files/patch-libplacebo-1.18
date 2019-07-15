@@ -1,4 +1,6 @@
-https://mailman.videolan.org/pipermail/vlc-devel/2019-May/124293.html
+https://code.videolan.org/videolan/vlc/commit/b579384a2396
+https://code.videolan.org/videolan/vlc/commit/29773f496f33
+https://code.videolan.org/videolan/vlc/commit/24dc03640d3c
 
 --- modules/video_output/opengl/fragment_shaders.c.orig	2018-12-16 20:40:54 UTC
 +++ modules/video_output/opengl/fragment_shaders.c
@@ -62,7 +64,7 @@ https://mailman.videolan.org/pipermail/vlc-devel/2019-May/124293.html
  #define DITHER_TEXT "Dithering algorithm"
  #define DITHER_LONGTEXT "The algorithm to use when dithering to a lower bit depth (degrades performance on some platforms)."
  
-@@ -171,6 +195,21 @@ static const char * const dither_text[] = {
+@@ -171,6 +195,22 @@ static const char * const dither_text[] = {
  #define DEPTH_TEXT "Dither depth override (0 = framebuffer depth)"
  #define DEPTH_LONGTEXT "Overrides the detected framebuffer depth. Useful to dither to lower bit depths than otherwise required."
  
@@ -74,7 +76,8 @@ https://mailman.videolan.org/pipermail/vlc-devel/2019-May/124293.html
 +    add_float("desat-exponent", pl_color_map_default_params.desaturation_exponent, \
 +              DESAT_EXPONENT_TEXT, DESAT_EXPONENT_LONGTEXT, false) \
 +    add_float("desat-base", pl_color_map_default_params.desaturation_base, \
-+              DESAT_BASE_TEXT, DESAT_BASE_LONGTEXT, false)
++              DESAT_BASE_TEXT, DESAT_BASE_LONGTEXT, false) \
++    add_obsolete_string("tone-mapping-desat")
 +#else
 +#define add_desat_params() \
 +    add_float("tone-mapping-desat", pl_color_map_default_params.tone_mapping_desaturate, \
