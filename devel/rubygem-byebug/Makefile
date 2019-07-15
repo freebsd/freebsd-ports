@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	byebug
-PORTVERSION=	10.0.2
+PORTVERSION=	11.0.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby 2 debugger
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 PLIST_FILES=	bin/byebug
 
