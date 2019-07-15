@@ -6,7 +6,20 @@ It comes with several tools:
 - portfmt formats Makefiles
 - portclippy is a linter that checks if variables are in the correct
   order in a more comprehensive way than portlint
-- portedit edits Makefiles.  At the moment it only comes with a
-  bump-revision command
+- portedit edits Makefiles.  It comes with several commands
+  that can be used as a basis for your own port update scripts:
+  - bump-epoch: bumps PORTEPOCH or inserts it at the right place
+  - bump-revision: bumps PORTREVISION or inserts it at the right place
+  - get: lookup unevaluated variable values
+  - merge: Generic command to set/update variables while also
+    formatting the updated variables properly and inserting them
+    in the right places if necessary.  Useful for merging output
+    of other tools like make cargo-crates, modules2tuple, or make
+    stage-qa.  For example to mark a port deprecated:
+
+	printf "DEPRECATED=%s\nEXPIRATION_DATE=%s" \
+		Abandonware 2019-08-15 | portedit merge -i Makefile
+
+  - set-version: resets PORTREVISION, sets DISTVERSION or PORTVERSION
 
 WWW: https://github.com/t6/portfmt
