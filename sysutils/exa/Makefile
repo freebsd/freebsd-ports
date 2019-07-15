@@ -2,8 +2,7 @@
 
 PORTNAME=	exa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
-PORTREVISION=	13
+DISTVERSION=	0.9.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -18,67 +17,69 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	ogham
 
-CARGO_CRATES=	aho-corasick-0.5.3 \
-		ansi_term-0.8.0 \
-		bitflags-0.7.0 \
-		bitflags-0.9.1 \
-		byteorder-0.4.2 \
-		cmake-0.1.25 \
-		conv-0.3.3 \
-		custom_derive-0.1.7 \
-		datetime-0.4.5 \
-		env_logger-0.3.5 \
-		gcc-0.3.53 \
-		getopts-0.2.14 \
-		git2-0.6.8 \
-		glob-0.2.11 \
-		idna-0.1.4 \
+CARGO_CRATES=	aho-corasick-0.7.3 \
+		ansi_term-0.12.0 \
+		atty-0.2.11 \
+		autocfg-0.1.4 \
+		bitflags-1.0.4 \
+		byteorder-1.3.2 \
+		cc-1.0.35 \
+		cfg-if-0.1.7 \
+		datetime-0.4.7 \
+		env_logger-0.6.1 \
+		git2-0.9.1 \
+		glob-0.3.0 \
+		humantime-1.2.0 \
+		idna-0.1.5 \
 		iso8601-0.1.1 \
 		kernel32-sys-0.2.2 \
-		lazy_static-0.2.8 \
-		libc-0.2.49 \
-		libgit2-sys-0.6.14 \
-		libz-sys-1.0.16 \
+		lazy_static-1.3.0 \
+		libc-0.2.51 \
+		libgit2-sys-0.8.1 \
+		libz-sys-1.0.25 \
 		locale-0.2.2 \
-		log-0.3.8 \
-		magenta-0.1.1 \
-		magenta-sys-0.1.1 \
-		matches-0.1.6 \
-		memchr-0.1.11 \
+		log-0.4.6 \
+		matches-0.1.8 \
+		memchr-2.2.0 \
 		natord-1.0.9 \
 		nom-1.2.4 \
-		num-0.1.40 \
-		num-bigint-0.1.40 \
-		num-complex-0.1.40 \
-		num-integer-0.1.35 \
-		num-iter-0.1.34 \
-		num-rational-0.1.39 \
-		num-traits-0.1.40 \
-		num_cpus-1.6.2 \
-		number_prefix-0.2.7 \
-		pad-0.1.4 \
-		percent-encoding-1.0.0 \
-		pkg-config-0.3.9 \
-		rand-0.3.16 \
-		redox_syscall-0.1.31 \
-		regex-0.1.80 \
-		regex-syntax-0.3.9 \
-		rustc-serialize-0.3.24 \
-		scoped_threadpool-0.1.7 \
-		term_grid-0.1.6 \
-		term_size-0.3.0 \
-		thread-id-2.0.0 \
-		thread_local-0.2.7 \
+		num-traits-0.1.43 \
+		num-traits-0.2.6 \
+		num_cpus-1.10.0 \
+		number_prefix-0.3.0 \
+		openssl-src-111.3.0+1.1.1c \
+		openssl-sys-0.9.47 \
+		pad-0.1.5 \
+		percent-encoding-1.0.1 \
+		pkg-config-0.3.14 \
+		quick-error-1.2.2 \
+		redox_syscall-0.1.54 \
+		redox_termios-0.1.1 \
+		regex-1.1.6 \
+		regex-syntax-0.6.6 \
+		scoped_threadpool-0.1.9 \
+		smallvec-0.6.9 \
+		term_grid-0.1.7 \
+		term_size-0.3.1 \
+		termcolor-1.0.4 \
+		termion-1.5.1 \
+		thread_local-0.3.6 \
+		ucd-util-0.1.3 \
 		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.5 \
-		unicode-width-0.1.4 \
-		url-1.5.1 \
-		users-0.5.3 \
-		utf8-ranges-0.1.3 \
-		vcpkg-0.2.2 \
+		unicode-normalization-0.1.8 \
+		unicode-width-0.1.5 \
+		url-1.7.2 \
+		users-0.9.1 \
+		utf8-ranges-1.0.2 \
+		vcpkg-0.2.6 \
 		winapi-0.2.8 \
+		winapi-0.3.7 \
 		winapi-build-0.1.1 \
-		zoneinfo_compiled-0.4.5
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.2 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		wincolor-1.0.1 \
+		zoneinfo_compiled-0.4.8
 
 PLIST_FILES=	bin/exa \
 		man/man1/exa.1.gz \
