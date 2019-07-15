@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rtrlib
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt sysutils
 
@@ -9,15 +9,12 @@ MAINTAINER=	freebsd@bodems.net
 COMMENT=	Open-source C implementation of the RPKI/Router Protocol client
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libssh.so:security/libssh
-BUILD_DEPENDS=	cmake:devel/cmake
 
 USES=		cmake
-USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DCMAKE_BUILD_TYPE=Release
-
 USE_GITHUB=	yes
-GH_ACCOUNT=	rtrlib
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
