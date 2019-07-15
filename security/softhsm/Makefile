@@ -13,6 +13,9 @@ LICENSE=	BSD2CLAUSE ISCL
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	End-of-life announced, update to softhsm2 ASAP.
+EXPIRATION_DATE=	2019-10-01
+
 LIB_DEPENDS=	libbotan-1.10.so:security/botan110 \
 		libsqlite3.so:databases/sqlite3
 
