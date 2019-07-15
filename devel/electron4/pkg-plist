@@ -63,6 +63,13 @@ bin/electron
 %%DATADIR%%/locales/zh-TW.pak
 %%DATADIR%%/mksnapshot
 %%DATADIR%%/natives_blob.bin
+%%DATADIR%%/releases/SHASUMS256.txt
+%%AMD64%%%%DATADIR%%/releases/chromedriver-v%%ELECTRON_VER%%-freebsd-x64.zip
+%%I386%%%%DATADIR%%/releases/chromedriver-v%%ELECTRON_VER%%-freebsd-ia32.zip
+%%AMD64%%%%DATADIR%%/releases/electron-v%%ELECTRON_VER%%-freebsd-x64.zip
+%%I386%%%%DATADIR%%/releases/electron-v%%ELECTRON_VER%%-freebsd-ia32.zip
+%%AMD64%%%%DATADIR%%/releases/mksnapshot-v%%ELECTRON_VER%%-freebsd-x64.zip
+%%I386%%%%DATADIR%%/releases/mksnapshot-v%%ELECTRON_VER%%-freebsd-ia32.zip
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/default_app.asar
 %%DATADIR%%/resources/electron.asar
