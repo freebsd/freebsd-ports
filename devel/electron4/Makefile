@@ -62,7 +62,7 @@ GH_TUPLE=	electron:node:8bc5d171a0873c0ba49f9433798bc8b67399788c:node
 		# yaml:pyyaml:3.12:pyyaml \
 		# kennethreitz:requests:e4d59bedfd3c7f4f254f4f5d036587bcd8152458:requests
 
-ELECTRON_VER=	4.2.5
+ELECTRON_VER=	4.2.6
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
 CHROMIUM_VER=	69.0.3497.128
 # See ${WRKSRC}/third_party/node/node_modules.tar.gz.sha1 for CHROMIUM_NODE_MODULES_HASH
@@ -116,7 +116,7 @@ DIST_DESC=	Build distribution zip files
 DRIVER_DESC=	Install chromedriver
 OPTIONS_GROUP=	AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
-OPTIONS_DEFAULT=	CUPS DRIVER KERBEROS ALSA
+OPTIONS_DEFAULT=	CUPS DIST DRIVER KERBEROS ALSA
 OPTIONS_SUB=	yes
 
 .if make(makesum)
@@ -155,7 +155,23 @@ TEST_ALL_TARGET+=	third_party/electron_node:headers
 POST_BUILD_TARGETS=	licenses version
 POST_BUILD_DIST_TARGETS=	dist.zip chromedriver.zip mksnapshot.zip
 
-NPM_TIMESTAMP=	1561192435
+NPM_TIMESTAMP=	1562065273
+
+PLIST_SUB=	ELECTRON_VER=${ELECTRON_VER}
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+PLIST_SUB+=	AMD64=""
+.else
+PLIST_SUB+=	AMD64="@comment "
+.endif
+
+.if ${ARCH} == "i386"
+PLIST_SUB+=	I386=""
+.else
+PLIST_SUB+=	I386="@comment "
+.endif
 
 pre-fetch:
 	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
@@ -231,6 +247,11 @@ post-build:
 post-build-DIST-on:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} ${POST_BUILD_DIST_TARGETS}
+	cd ${WRKSRC}/out/${BUILDTYPE} && \
+		${CP} chromedriver.zip chromedriver-v${ELECTRON_VER}-freebsd-${ARCH:S/amd64/x64/:S/i386/ia32/}.zip && \
+		${CP} dist.zip electron-v${ELECTRON_VER}-freebsd-${ARCH:S/amd64/x64/:S/i386/ia32/}.zip && \
+		${CP} mksnapshot.zip mksnapshot-v${ELECTRON_VER}-freebsd-${ARCH:S/amd64/x64/:S/i386/ia32/}.zip && \
+		${SHA256} -r *-v${ELECTRON_VER}-freebsd-*.zip | ${SED} -e 's/ / */' > SHASUMS256.txt
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -258,6 +279,11 @@ do-install:
 .endfor
 	${RLN} ${STAGEDIR}${DATADIR}/electron ${STAGEDIR}${PREFIX}/bin
 
+post-install-DIST-on:
+	${MKDIR} ${STAGEDIR}${DATADIR}/releases
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/SHASUMS256.txt ${STAGEDIR}${DATADIR}/releases
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/*-v${ELECTRON_VER}-freebsd-*.zip ${STAGEDIR}${DATADIR}/releases
+
 post-install-DRIVER-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chromedriver ${STAGEDIR}${DATADIR}
 
@@ -276,4 +302,4 @@ do-test-TEST-on:
 		npm run test -- --ci -g '${t}' || ${TRUE}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

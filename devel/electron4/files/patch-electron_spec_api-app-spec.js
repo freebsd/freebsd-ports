@@ -1,6 +1,6 @@
---- electron/spec/api-app-spec.js.orig	2019-05-02 21:34:52 UTC
+--- electron/spec/api-app-spec.js.orig	2019-07-01 21:24:47 UTC
 +++ electron/spec/api-app-spec.js
-@@ -174,7 +174,7 @@ describe('app module', () => {
+@@ -175,7 +175,7 @@ describe('app module', () => {
      })
  
      it('exits gracefully', async function () {
@@ -9,7 +9,7 @@
          this.skip()
          return
        }
-@@ -274,7 +274,7 @@ describe('app module', () => {
+@@ -275,7 +275,7 @@ describe('app module', () => {
      let w = null
  
      before(function () {
@@ -18,7 +18,7 @@
          this.skip()
        }
      })
-@@ -421,7 +421,8 @@ describe('app module', () => {
+@@ -422,7 +422,8 @@ describe('app module', () => {
    describe('app.setBadgeCount', () => {
      const platformIsNotSupported =
          (process.platform === 'win32') ||
@@ -28,7 +28,7 @@
      const platformIsSupported = !platformIsNotSupported
  
      const expectedBadgeCount = 42
-@@ -475,7 +476,7 @@ describe('app module', () => {
+@@ -476,7 +477,7 @@ describe('app module', () => {
      ]
  
      before(function () {
@@ -37,7 +37,7 @@
      })
  
      beforeEach(() => {
-@@ -582,7 +583,7 @@ describe('app module', () => {
+@@ -605,7 +606,7 @@ describe('app module', () => {
      let w = null
  
      before(function () {
@@ -46,7 +46,7 @@
          this.skip()
        }
      })
-@@ -775,7 +776,7 @@ describe('app module', () => {
+@@ -798,7 +799,7 @@ describe('app module', () => {
      // doesn't affect nested `describe`s.
      beforeEach(function () {
        // FIXME Get these specs running on Linux CI
@@ -55,7 +55,7 @@
          this.skip()
        }
      })
-@@ -913,7 +914,7 @@ describe('app module', () => {
+@@ -936,7 +937,7 @@ describe('app module', () => {
  
      it('succeeds with complete GPUInfo', async () => {
        const completeInfo = await getGPUInfo('complete')
@@ -64,7 +64,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo)
          const basicInfo = await getGPUInfo('basic')
-@@ -944,7 +945,7 @@ describe('app module', () => {
+@@ -967,7 +968,7 @@ describe('app module', () => {
        // XXX(alexeykuzmin): Calling `.skip()` inside a `before` hook
        // doesn't affect nested `describe`s.
        // FIXME Get these specs running on Linux
