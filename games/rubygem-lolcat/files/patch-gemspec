@@ -1,0 +1,11 @@
+--- lolcat.gemspec.orig	2019-07-14 18:10:52 UTC
++++ lolcat.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_development_dependency(%q<rake>.freeze, [">= 0"])
+-      s.add_runtime_dependency(%q<paint>.freeze, ["~> 2.0.0"])
++      s.add_runtime_dependency(%q<paint>.freeze, ["~> 2.0"])
+       s.add_runtime_dependency(%q<optimist>.freeze, ["~> 3.0.0"])
+       s.add_runtime_dependency(%q<manpages>.freeze, ["~> 0.6.1"])
+     else
