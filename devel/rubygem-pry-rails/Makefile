@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pry-rails
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Use Pry as your rails console
 
 LICENSE=	MIT
