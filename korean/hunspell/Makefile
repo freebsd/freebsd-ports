@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.90
 CATEGORIES=	korean textproc
 
 MAINTAINER=	jkim@FreeBSD.org
