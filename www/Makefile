@@ -1959,6 +1959,7 @@
     SUBDIR += rubygem-anemone
     SUBDIR += rubygem-asana
     SUBDIR += rubygem-async_sinatra
+    SUBDIR += rubygem-atlassian-jwt
     SUBDIR += rubygem-best_in_place
     SUBDIR += rubygem-best_in_place-rails5
     SUBDIR += rubygem-bluecloth
