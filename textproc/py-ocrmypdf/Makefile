@@ -52,7 +52,7 @@ SHEBANG_FILES=	src/ocrmypdf/__main__.py \
 		tests/spoof/gs_raster_failure.py \
 		tests/spoof/tesseract_crash.py
 
-MAKE_ENV=	LC_ALL=en_US.UTF-8
+USE_LOCALE=	en_US.UTF-8
 
 NO_ARCH=	yes
 
@@ -63,14 +63,14 @@ NO_ARCH=	yes
 # See here for a related issue from another port (audio/py-sounddevice):
 # https://github.com/spatialaudio/python-sounddevice/issues/116
 post-install:
-	${ECHO} "${PYTHONPREFIX_SITELIBDIR}/ocrmypdf/lib/__pycache__/_leptonica.cpython-${PYTHON_SUFFIX}.opt-1.pyc" >> ${_PYTHONPKGLIST}
-	${ECHO} "${PYTHONPREFIX_SITELIBDIR}/ocrmypdf/lib/__pycache__/_leptonica.cpython-${PYTHON_SUFFIX}.pyc" >> ${_PYTHONPKGLIST}
-	${ECHO} "${PYTHONPREFIX_SITELIBDIR}/ocrmypdf/lib/_leptonica.py" >> ${_PYTHONPKGLIST}
+	${ECHO_CMD} "${PYTHONPREFIX_SITELIBDIR}/ocrmypdf/lib/__pycache__/_leptonica.cpython-${PYTHON_SUFFIX}.opt-1.pyc" >> ${_PYTHONPKGLIST}
+	${ECHO_CMD} "${PYTHONPREFIX_SITELIBDIR}/ocrmypdf/lib/__pycache__/_leptonica.cpython-${PYTHON_SUFFIX}.pyc" >> ${_PYTHONPKGLIST}
+	${ECHO_CMD} "${PYTHONPREFIX_SITELIBDIR}/ocrmypdf/lib/_leptonica.py" >> ${_PYTHONPKGLIST}
 
 # Some unittests use a custom marker (= "slow") which is also used here, so
 # that the overall test doesn't finish with a warning.
 do-test:
-	@cd ${WRKSRC} && ${SETENV} LC_ALL=en_US.UTF-8 ${PYTHON_CMD} -m pytest -rs -v \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} -m pytest -rs -v \
 	       	-n ${MAKE_JOBS_NUMBER} -o 'markers=slow' -o 'addopts="--runslow"' -k ' \
 		not test_dev_null and \
 		not test_mono_not_inverted'
