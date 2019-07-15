@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cookbook-omnifetch
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
