@@ -129,7 +129,6 @@ include/directfb-internal/windows/idirectfbwindow.h
 include/directfb/dfb_types.h
 include/directfb/dfiff.h
 include/directfb/dgiff.h
-%%ARCH_ARM%%include/directfb/direct/armasm_memcpy.h
 include/directfb/direct/build.h
 include/directfb/direct/clock.h
 include/directfb/direct/conf.h
@@ -146,8 +145,6 @@ include/directfb/direct/memcpy.h
 include/directfb/direct/messages.h
 include/directfb/direct/modules.h
 include/directfb/direct/mutex.h
-%%ARCH_POWERPC%%include/directfb/direct/ppc_asm.h
-%%ARCH_POWERPC%%include/directfb/direct/ppcasm_memcpy.h
 include/directfb/direct/serial.h
 include/directfb/direct/signals.h
 include/directfb/direct/stream.h
