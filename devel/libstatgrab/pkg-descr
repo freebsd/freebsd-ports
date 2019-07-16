@@ -6,4 +6,4 @@ Also part of the package are two tools; saidar provides a curses-based
 interface to viewing live system statistics, and statgrab is a
 sysctl-like interface to the statistics.
 
-WWW: http://www.i-scream.org/libstatgrab/
+WWW: https://libstatgrab.org/

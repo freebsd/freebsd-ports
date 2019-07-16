@@ -6,7 +6,7 @@ include/statgrab.h
 lib/libstatgrab.a
 lib/libstatgrab.so
 lib/libstatgrab.so.10
-lib/libstatgrab.so.10.0.0
+lib/libstatgrab.so.10.0.1
 libdata/pkgconfig/libstatgrab.pc
 %%TOOLS%%man/man1/saidar.1.gz
 %%TOOLS%%man/man1/statgrab-make-mrtg-config.1.gz
