@@ -397,9 +397,6 @@ lib/virtualbox/VBoxManage
 lib/virtualbox/VBoxNetDHCP.so
 @(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetNAT
 lib/virtualbox/VBoxNetNAT.so
-%%X11%%lib/virtualbox/VBoxOGLhostcrutil.so
-%%X11%%lib/virtualbox/VBoxOGLhosterrorspu.so
-%%X11%%lib/virtualbox/VBoxOGLrenderspu.so
 %%PYTHON%%lib/virtualbox/VBoxPython.so
 %%PYTHON%%lib/virtualbox/VBoxPython%%PYTHON_VERU%%.so
 lib/virtualbox/VBoxREM.so

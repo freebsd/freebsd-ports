@@ -4,12 +4,6 @@
 %%X11%%etc/xdg/autostart/vboxclient.desktop
 %%OPENGL%%lib/VBoxEGL.so
 %%OPENGL%%lib/VBoxOGL.so
-%%OPENGL%%lib/VBoxOGLarrayspu.so
-%%OPENGL%%lib/VBoxOGLcrutil.so
-%%OPENGL%%lib/VBoxOGLerrorspu.so
-%%OPENGL%%lib/VBoxOGLfeedbackspu.so
-%%OPENGL%%lib/VBoxOGLpackspu.so
-%%OPENGL%%lib/VBoxOGLpassthroughspu.so
 lib/pam_vbox.so
 %%X11%%lib/xorg/modules/drivers/vboxvideo_drv.so
 %%X11%%lib/xorg/modules/input/vboxmouse_drv.so
