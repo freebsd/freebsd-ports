@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsc
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/dsc/ \
 		https://dns.company/files/dsc/
@@ -22,7 +22,8 @@ RUN_DEPENDS=	libpcap>=1.8.1:net/libpcap \
 USES=		gmake perl5 shebangfix
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-extra-cflags=-I${LOCALBASE}/include
+CONFIGURE_ARGS=	--with-extra-cflags=-I${LOCALBASE}/include \
+		--with-extra-ldflags=-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message
 SHEBANG_FILES=	cron/upload-prep.pl
