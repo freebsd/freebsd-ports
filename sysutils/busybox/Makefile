@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	busybox
-PORTVERSION=	1.26.2
+PORTVERSION=	1.30.1
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	https://busybox.net/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Set of common utilities built as single binary
 
 LICENSE=	GPLv2
@@ -16,16 +16,25 @@ BUILD_DEPENDS=	gsed:textproc/gsed
 USES=		cpe gmake perl5 tar:bzip2
 USE_PERL5=	build
 
-CFLAGS+=	-fno-builtin-mempcpy	# avoid -Wshadow warnings
+OPTIONS_DEFINE=	DOCS STATIC
+STATIC_LDFLAGS=	-static
+
 CONFLICTS_INSTALL=	busybox-unstable-*
+.include <bsd.port.options.mk>
+# fix ash crash on arm, see shell/ash.c
+.if ${ARCH} == "armv6"
+CFLAGS+=	-DBB_GLOBAL_CONST=''
+.endif
+.if ${ARCH} == "i386"
+# clang doesn't swallow some inline assembly
+USE_GCC=	yes
+.endif
+
 MAKE_ARGS=	CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}" \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		SKIP_STRIP=y V=1
 PLIST_FILES=	bin/busybox man/man1/busybox.1.gz
 PORTDOCS=	*
-
-OPTIONS_DEFINE=	DOCS STATIC
-
-STATIC_LDFLAGS=	-static
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -35,6 +44,9 @@ post-patch:
 		${REINPLACE_CMD} -e \
 		's|<alloca.h>|<stdlib.h>| ; \
 		 s|<malloc.h>|<stdlib.h>|'
+	@${FIND} ${WRKSRC} -name "*.[ch]" -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e \
+		's|"/proc|"/compat/linux/proc|'
 
 do-configure:
 	@${CP} ${FILESDIR}/data-.config ${WRKSRC}/.config
