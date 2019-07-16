@@ -793,6 +793,7 @@
     SUBDIR += stk
     SUBDIR += streamripper
     SUBDIR += streamtranscoder
+    SUBDIR += string-machine-lv2
     SUBDIR += stymulator
     SUBDIR += suil
     SUBDIR += supercollider
