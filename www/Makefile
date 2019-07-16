@@ -1953,6 +1953,7 @@
     SUBDIR += rubygem-acts_as_taggable
     SUBDIR += rubygem-addressable
     SUBDIR += rubygem-addressable23
+    SUBDIR += rubygem-addressable25
     SUBDIR += rubygem-adsf
     SUBDIR += rubygem-akami
     SUBDIR += rubygem-amazon-ecs
