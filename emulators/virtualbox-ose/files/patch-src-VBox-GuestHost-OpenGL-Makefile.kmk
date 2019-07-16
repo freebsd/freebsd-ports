@@ -1,15 +1,15 @@
---- src/VBox/GuestHost/OpenGL/Makefile.kmk.orig	2014-11-21 10:22:21.000000000 -0500
-+++ src/VBox/GuestHost/OpenGL/Makefile.kmk	2014-12-22 17:20:31.000000000 -0500
-@@ -116,7 +116,7 @@
+--- src/VBox/GuestHost/OpenGL/Makefile.kmk.orig	2019-07-12 08:49:27 UTC
++++ src/VBox/GuestHost/OpenGL/Makefile.kmk
+@@ -94,7 +94,7 @@ VBoxOGLcrutil_DEFS.win    += CR_DEBUG_BACKDOOR_ENABLE
+ VBoxOGLcrutil_INCS.win    += $(PATH_ROOT)/src/VBox/Additions/WINNT/Graphics/Video/disp/wddm
+ VBoxOGLcrutil_LIBS.win    += $(VBOX_PATH_ADDITIONS_LIB)/VBoxDispMpLogger$(VBOX_SUFF_LIB)
  endif
- VBoxOGLcrutil_CLEAN = \
- 	$(VBOX_PATH_CROGL_GENFILES)/debug_opcodes.c
 -if1of ($(KBUILD_TARGET), linux)
 +if1of ($(KBUILD_TARGET), linux freebsd)
  VBoxOGLcrutil_LDFLAGS += -Wl,-z,nodelete
  endif
  
-@@ -160,7 +160,7 @@
+@@ -140,7 +140,7 @@ VBoxOGLhostcrutil_TEMPLATE = VBOXCROGLR3HOSTLIB
  if defined(VBOX_SIGNING_MODE) && defined(VBOX_WITH_WDDM)
   VBoxOGLhostcrutil_INSTTYPE.win = both
  endif
@@ -17,4 +17,4 @@
 +if1of ($(KBUILD_TARGET), linux freebsd)
  VBoxOGLhostcrutil_LDFLAGS = $(NO_SUCH_VARIABLE)
  endif
- VBoxOGLhostcrutil_LDFLAGS.darwin = $(VBoxOGLcrutil_LDFLAGS.darwin) \
+ VBoxOGLhostcrutil_LIBS.win =  \
