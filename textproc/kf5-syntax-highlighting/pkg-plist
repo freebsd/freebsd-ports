@@ -1,5 +1,4 @@
 bin/kate-syntax-highlighter
-etc/xdg/org_kde_ksyntaxhighlighting.categories
 include/KF5/KSyntaxHighlighting/AbstractHighlighter
 include/KF5/KSyntaxHighlighting/Definition
 include/KF5/KSyntaxHighlighting/DefinitionDownloader
@@ -112,3 +111,4 @@ share/locale/wa/LC_MESSAGES/syntaxhighlighting5_qt.qm
 share/locale/xh/LC_MESSAGES/syntaxhighlighting5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/syntaxhighlighting5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/syntaxhighlighting5_qt.qm
+share/qlogging-categories5/org_kde_ksyntaxhighlighting.categories

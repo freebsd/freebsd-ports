@@ -1,4 +1,3 @@
-etc/xdg/kpeople.categories
 include/KF5/KPeople/KPeople/Global
 include/KF5/KPeople/KPeople/PersonData
 include/KF5/KPeople/KPeople/PersonsModel
@@ -94,3 +93,4 @@ share/locale/tr/LC_MESSAGES/kpeople5.mo
 share/locale/uk/LC_MESSAGES/kpeople5.mo
 share/locale/zh_CN/LC_MESSAGES/kpeople5.mo
 share/locale/zh_TW/LC_MESSAGES/kpeople5.mo
+share/qlogging-categories5/kpeople.categories

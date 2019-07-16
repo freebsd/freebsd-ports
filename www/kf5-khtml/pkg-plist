@@ -1,5 +1,4 @@
 etc/xdg/khtmlrc
-etc/xdg/khtml.categories
 include/KF5/KHtml/KHTMLPart
 include/KF5/KHtml/KHTMLSettings
 include/KF5/KHtml/KHTMLView
@@ -167,3 +166,4 @@ share/locale/xh/LC_MESSAGES/khtml5.mo
 share/locale/zh_CN/LC_MESSAGES/khtml5.mo
 share/locale/zh_HK/LC_MESSAGES/khtml5.mo
 share/locale/zh_TW/LC_MESSAGES/khtml5.mo
+share/qlogging-categories5/khtml.categories

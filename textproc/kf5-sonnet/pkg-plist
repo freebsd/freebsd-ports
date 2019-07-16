@@ -1,6 +1,5 @@
 bin/gentrigrams
 bin/parsetrigrams
-etc/xdg/sonnet.categories
 include/KF5/SonnetCore/Sonnet/BackgroundChecker
 include/KF5/SonnetCore/Sonnet/GuessLanguage
 include/KF5/SonnetCore/Sonnet/Speller
@@ -136,3 +135,4 @@ share/locale/xh/LC_MESSAGES/sonnet5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/sonnet5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/sonnet5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/sonnet5_qt.qm
+share/qlogging-categories5/sonnet.categories

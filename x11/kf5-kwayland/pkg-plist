@@ -1,4 +1,3 @@
-etc/xdg/org_kde_kwayland.categories
 include/KF5/KWayland/Client/appmenu.h
 include/KF5/KWayland/Client/blur.h
 include/KF5/KWayland/Client/buffer.h
@@ -16,6 +15,8 @@ include/KF5/KWayland/Client/fullscreen_shell.h
 include/KF5/KWayland/Client/idle.h
 include/KF5/KWayland/Client/idleinhibit.h
 include/KF5/KWayland/Client/keyboard.h
+include/KF5/KWayland/Client/keystate.h
+include/KF5/KWayland/Server/keystate_interface.h
 include/KF5/KWayland/Client/kwaylandclient_export.h
 include/KF5/KWayland/Client/output.h
 include/KF5/KWayland/Client/outputconfiguration.h
@@ -112,3 +113,4 @@ lib/libKF5WaylandServer.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libexec/org-kde-kf5-kwayland-testserver
 %%QT_MKSPECDIR%%/modules/qt_KWaylandClient.pri
 %%QT_MKSPECDIR%%/modules/qt_KWaylandServer.pri
+share/qlogging-categories5/org_kde_kwayland.categories

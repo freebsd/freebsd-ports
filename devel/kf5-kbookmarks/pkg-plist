@@ -1,4 +1,3 @@
-etc/xdg/kbookmarks.categories
 include/KF5/KBookmarks/KBookmark
 include/KF5/KBookmarks/KBookmarkAction
 include/KF5/KBookmarks/KBookmarkActionInterface
@@ -120,3 +119,4 @@ share/locale/wa/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/xh/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kbookmarks5_qt.qm
+share/qlogging-categories5/kbookmarks.categories

@@ -1,5 +1,4 @@
 bin/preparetips5
-etc/xdg/kconfigwidgets.categories
 include/KF5/KConfigWidgets/KCModule
 include/KF5/KConfigWidgets/KCodecAction
 include/KF5/KConfigWidgets/KColorScheme
@@ -249,3 +248,4 @@ share/locale/zh_HK/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/zh_HK/kf5_entry.desktop
 share/locale/zh_TW/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/zh_TW/kf5_entry.desktop
+share/qlogging-categories5/kconfigwidgets.categories

@@ -1,5 +1,4 @@
 bin/desktoptojson
-etc/xdg/kcoreaddons.categories
 include/KF5/KCoreAddons/KAboutData
 include/KF5/KCoreAddons/KAutoSaveFile
 include/KF5/KCoreAddons/KBackup
@@ -184,3 +183,4 @@ share/locale/zh_CN/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kcoreaddons5_qt.qm
 share/mime/packages/kde5.xml
+share/qlogging-categories5/kcoreaddons.categories

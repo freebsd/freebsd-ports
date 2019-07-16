@@ -1,4 +1,3 @@
-etc/xdg/kcrash.categories
 include/KF5/KCrash/KCrash
 include/KF5/KCrash/kcrash.h
 include/KF5/KCrash/kcrash_export.h
@@ -11,3 +10,4 @@ lib/libKF5Crash.so
 lib/libKF5Crash.so.5
 lib/libKF5Crash.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KCrash.pri
+share/qlogging-categories5/kcrash.categories

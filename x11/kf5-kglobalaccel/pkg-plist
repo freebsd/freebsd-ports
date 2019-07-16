@@ -1,5 +1,4 @@
 bin/kglobalaccel5
-etc/xdg/kglobalaccel.categories
 include/KF5/KGlobalAccel/KGlobalAccel
 include/KF5/KGlobalAccel/KGlobalShortcutInfo
 include/KF5/KGlobalAccel/kglobalaccel.h
@@ -123,3 +122,4 @@ share/locale/xh/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kglobalaccel5_qt.qm
+share/qlogging-categories5/kglobalaccel.categories

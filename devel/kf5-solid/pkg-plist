@@ -1,5 +1,4 @@
 bin/solid-hardware5
-etc/xdg/solid.categories
 include/KF5/Solid/Solid/Battery
 include/KF5/Solid/Solid/Block
 include/KF5/Solid/Solid/Camera
@@ -106,3 +105,4 @@ share/locale/ug/LC_MESSAGES/solid5_qt.qm
 share/locale/uk/LC_MESSAGES/solid5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/solid5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/solid5_qt.qm
+share/qlogging-categories5/solid.categories
