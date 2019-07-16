@@ -1,0 +1,10 @@
+Dive is a tool for exploring a docker image, layer contents, and discovering
+ways to shrink your Docker image size.
+
+Basic features:
+* Show Docker image contents broken down by layer
+* Indicate what's changed in each layer
+* Estimate "image efficiency"
+* Quick build/analysis cycles
+
+WWW: https://github.com/wagoodman/dive
