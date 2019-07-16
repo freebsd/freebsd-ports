@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libstatgrab
-PORTVERSION=	0.91
-PORTREVISION=	1
+PORTVERSION=	0.92
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.mirrorservice.org/pub/i-scream/libstatgrab/ \
-		http://dl.ambiweb.de/mirrors/ftp.i-scream.org/libstatgrab/ \
+MASTER_SITES=	https://github.com/libstatgrab/libstatgrab/releases/download/LIBSTATGRAB_${PORTVERSION:S/./_/}/ \
+		http://ftp.mirrorservice.org/pub/i-scream/libstatgrab/ \
 		http://ftp.i-scream.org/pub/i-scream/libstatgrab/
 
 MAINTAINER=	tdb@FreeBSD.org
@@ -31,11 +30,5 @@ TOOLS_VARS=	SHEBANG_FILES+="src/statgrab/statgrab-make-mrtg-config.in \
 		LICENSE+=GPLv2 LICENSE_COMB=multi
 
 OPTIONS_SUB=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200016
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_libstatgrab_memory__stats.c
-.endif
 
 .include <bsd.port.mk>
