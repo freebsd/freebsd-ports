@@ -25,7 +25,7 @@
 %%T%%/lib/catalina-storeconfig.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-4.10.jar
+%%T%%/lib/ecj-4.12.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -104,6 +104,7 @@
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/serverStartup.txt
 %%DOCS%%%%T%%/webapps/docs/balancer-howto.html
 %%DOCS%%%%T%%/webapps/docs/building.html
+%%DOCS%%%%T%%/webapps/docs/cdi.html
 %%DOCS%%%%T%%/webapps/docs/cgi-howto.html
 %%DOCS%%%%T%%/webapps/docs/changelog.html
 %%DOCS%%%%T%%/webapps/docs/class-loader-howto.html
