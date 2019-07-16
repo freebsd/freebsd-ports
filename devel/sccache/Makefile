@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	sccache
-DISTVERSION=	0.2.8
-PORTREVISION=	3
+DISTVERSION=	0.2.9
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -27,6 +27,7 @@ PLIST_FILES=	bin/sccache
 PORTDOCS=	README.md
 
 CARGO_FEATURES=	all
+
 CARGO_CRATES=	adler32-1.0.3 \
 		aho-corasick-0.6.9 \
 		ansi_term-0.11.0 \
@@ -76,7 +77,8 @@ CARGO_CRATES=	adler32-1.0.3 \
 		either-1.5.0 \
 		encoding_rs-0.8.10 \
 		env_logger-0.5.13 \
-		error-chain-0.12.0 \
+		error-chain-0.11.0 \
+		error-chain-0.12.1 \
 		escargot-0.3.1 \
 		failure-0.1.3 \
 		failure_derive-0.1.3 \
@@ -195,7 +197,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		reqwest-0.8.8 \
 		reqwest-0.9.5 \
 		retry-0.4.0 \
-		ring-0.13.2 \
+		ring-0.13.5 \
 		rouille-2.2.0 \
 		rust-crypto-0.2.36 \
 		rustc-demangle-0.1.9 \
@@ -234,6 +236,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		syn-0.15.21 \
 		synom-0.11.3 \
 		synstructure-0.10.1 \
+		syslog-4.0.1 \
 		tar-0.4.20 \
 		tempdir-0.3.7 \
 		tempfile-3.0.4 \
