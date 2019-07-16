@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geogebra
-PORTVERSION=	5.0.536.0
+PORTVERSION=	5.0.549.0
 CATEGORIES=	math java
 MASTER_SITES=	http://download.geogebra.org/installers/5.0/ \
 		https://static.geogebra.org/images/ \
@@ -21,11 +21,13 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-CONFLICTS=	math/geogebra-i18n-[0-9]*
-NO_BUILD=	yes
-NO_ARCH=	yes
 USES=		tar:bzip2 desktop-file-utils gnome shebangfix
 USE_JAVA=	yes
+
+CONFLICTS=	math/geogebra-i18n-[0-9]*
+
+NO_BUILD=	yes
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 SUB_FILES=	geogebra.desktop geogebra.sh
