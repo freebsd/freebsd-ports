@@ -1992,6 +1992,7 @@ lib/wine/fakedlls/mofcomp.exe
 %%WINE32%%lib/wine/fakedlls/monodebg.vxd
 lib/wine/fakedlls/mountmgr.sys
 %%WINE32%%lib/wine/fakedlls/mouse.drv16
+%%MPG123%%lib/wine/fakedlls/mp3dmod.dll
 lib/wine/fakedlls/mpr.dll
 lib/wine/fakedlls/mprapi.dll
 %%WINE32%%lib/wine/fakedlls/msacm.dll16
@@ -2681,6 +2682,7 @@ lib/wine/mofcomp.exe.so
 %%WINE32%%lib/wine/monodebg.vxd.so
 lib/wine/mountmgr.sys.so
 %%WINE32%%lib/wine/mouse.drv16.so
+%%MPG123%%lib/wine/mp3dmod.dll.so
 lib/wine/mpr.dll.so
 lib/wine/mprapi.dll.so
 %%WINE32%%lib/wine/msacm.dll16.so
