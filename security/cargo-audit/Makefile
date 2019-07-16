@@ -2,8 +2,7 @@
 
 PORTNAME=	cargo-audit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
-PORTREVISION=	8
+DISTVERSION=	0.7.0
 CATEGORIES=	security
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -21,65 +20,82 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	RustSec
 
-CARGO_CRATES=	atty-0.2.11 \
-		autocfg-0.1.1 \
-		backtrace-0.3.13 \
-		backtrace-sys-0.1.26 \
-		bitflags-1.0.4 \
-		byteorder-1.2.7 \
-		cc-1.0.26 \
-		cfg-if-0.1.6 \
-		chrono-0.4.6 \
-		curl-sys-0.4.15 \
+CARGO_CRATES=	assert_cmd-0.11.1 \
+		autocfg-0.1.4 \
+		backtrace-0.3.32 \
+		backtrace-sys-0.1.30 \
+		bitflags-1.1.0 \
+		c2-chacha-0.2.2 \
+		cc-1.0.37 \
+		cfg-if-0.1.9 \
+		chrono-0.4.7 \
+		curl-sys-0.4.20 \
+		difference-2.0.0 \
 		directories-1.0.2 \
-		failure-0.1.3 \
-		failure_derive-0.1.3 \
+		escargot-0.4.0 \
+		failure-0.1.5 \
+		failure_derive-0.1.5 \
+		getrandom-0.1.6 \
 		git2-0.8.0 \
-		gumdrop-0.5.0 \
-		gumdrop_derive-0.5.0 \
+		gumdrop-0.6.0 \
+		gumdrop_derive-0.6.0 \
 		idna-0.1.5 \
-		itoa-0.4.3 \
-		lazy_static-1.2.0 \
-		libc-0.2.49 \
+		itoa-0.4.4 \
+		lazy_static-1.3.0 \
+		libc-0.2.60 \
 		libgit2-sys-0.7.11 \
 		libssh2-sys-0.2.11 \
 		libz-sys-1.0.25 \
-		log-0.4.6 \
+		log-0.4.7 \
 		matches-0.1.8 \
-		num-integer-0.1.39 \
-		num-traits-0.2.6 \
+		num-integer-0.1.41 \
+		num-traits-0.2.8 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.39 \
+		openssl-sys-0.9.47 \
 		percent-encoding-1.0.1 \
 		pkg-config-0.3.14 \
-		platforms-0.1.4 \
-		proc-macro2-0.4.24 \
-		quote-0.6.10 \
-		redox_syscall-0.1.44 \
-		redox_termios-0.1.1 \
-		rustc-demangle-0.1.11 \
-		rustsec-0.10.0 \
-		ryu-0.2.7 \
+		platforms-0.2.0 \
+		ppv-lite86-0.2.5 \
+		predicates-1.0.1 \
+		predicates-core-1.0.0 \
+		predicates-tree-1.0.0 \
+		proc-macro2-0.4.30 \
+		quote-0.6.13 \
+		rand-0.7.0 \
+		rand_chacha-0.2.0 \
+		rand_core-0.5.0 \
+		rand_hc-0.2.0 \
+		redox_syscall-0.1.56 \
+		remove_dir_all-0.5.2 \
+		rustc-demangle-0.1.15 \
+		rustsec-0.12.0 \
+		ryu-1.0.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.82 \
-		serde_derive-1.0.82 \
-		serde_json-1.0.33 \
-		syn-0.14.9 \
-		syn-0.15.23 \
-		synstructure-0.10.1 \
-		term-0.5.1 \
-		termion-1.5.1 \
-		time-0.1.41 \
-		toml-0.4.10 \
+		serde-1.0.94 \
+		serde_derive-1.0.94 \
+		serde_json-1.0.40 \
+		serial_test-0.2.0 \
+		serial_test_derive-0.2.0 \
+		smallvec-0.6.10 \
+		spin-0.5.0 \
+		syn-0.15.39 \
+		synstructure-0.10.2 \
+		tempfile-3.1.0 \
+		termcolor-1.0.5 \
+		time-0.1.42 \
+		toml-0.5.1 \
+		treeline-0.1.0 \
 		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.7 \
+		unicode-normalization-0.1.8 \
 		unicode-xid-0.1.0 \
 		url-1.7.2 \
-		vcpkg-0.2.6 \
-		winapi-0.3.6 \
+		vcpkg-0.2.7 \
+		winapi-0.3.7 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-util-0.1.2 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		wincolor-1.0.1
 
 PLIST_FILES=	bin/cargo-audit
 
