@@ -2,21 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	parcellite
-PORTVERSION=	1.1.9
+PORTVERSION=	1.2.1
 PORTEPOCH=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Lightweight GTK+ clipboard manager
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		localbase pkgconfig
-GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 pango
 USE_XORG=	x11
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-appindicator
 
 PORTDOCS=	AUTHORS ChangeLog README
