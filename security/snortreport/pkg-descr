@@ -1,6 +1,0 @@
-Snort Report is an add-on module for the Snort Intrusion Detection System.
-
-It generates real-time intrusion detection reports in an easy to read format
-based on data collected from a MySQL or PostgreSQL database.
-
-WWW: http://www.symmetrixtech.com/download.html
