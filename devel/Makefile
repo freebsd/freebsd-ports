@@ -4751,6 +4751,7 @@
     SUBDIR += py-poyo
     SUBDIR += py-pp
     SUBDIR += py-pqueue
+    SUBDIR += py-prance
     SUBDIR += py-pre-commit
     SUBDIR += py-preshed
     SUBDIR += py-pretend
