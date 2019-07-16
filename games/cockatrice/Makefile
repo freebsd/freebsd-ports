@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Cockatrice
-PORTVERSION=	2.7.0
-PORTREVISION=	2
+PORTVERSION=	2.7.1
 CATEGORIES=	games
 
 MAINTAINER=	sbruno@FreeBSD.org
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 USES=		cmake compiler:c++11-lib qt:5
 USE_QT=		buildtools_build concurrent core network qmake_build websockets widgets
 USE_GITHUB=	yes
-GH_TAGNAME=	2019-03-04-Release-2.7.0
+GH_TAGNAME=	2019-06-08-Release-2.7.1
 
 INSTALLS_ICONS=	yes
 DATADIR=	${PREFIX}/share/${PORTNAME:tl}
