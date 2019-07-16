@@ -12,10 +12,10 @@ COMMENT=	Replacement for the URI implementation
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-PORTSCOUT=	limit:^2\.3
-
-NO_ARCH=	yes
 USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
+PORTSCOUT=	limit:^2\.3
 
 .include <bsd.port.mk>
