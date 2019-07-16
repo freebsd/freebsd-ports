@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bc
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	gh-
 
@@ -29,6 +29,7 @@ do-install:
 		${MKDIR} ${STAGEDIR}${PREFIX}/share/nls/C
 		${WRKSRC}/locale_install.sh ${STAGEDIR}${PREFIX}/share/nls/%L/%N.cat ${PORTNAME}
 		${MV} ${STAGEDIR}${PREFIX}/share/nls/en_US/bc.cat ${STAGEDIR}${PREFIX}/share/nls/C/
+		${RMDIR} ${STAGEDIR}${PREFIX}/share/nls/en_US
 
 do-test:
 		${MAKE} -C ${WRKSRC} test
