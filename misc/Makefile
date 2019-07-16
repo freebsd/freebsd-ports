@@ -77,6 +77,7 @@
     SUBDIR += diction
     SUBDIR += digitemp
     SUBDIR += display
+    SUBDIR += dive
     SUBDIR += dnetc
     SUBDIR += dphys-config
     SUBDIR += dtach
