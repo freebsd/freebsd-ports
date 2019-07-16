@@ -27,7 +27,7 @@ BUILD_DEPENDS=
 USES=		cmake compiler:c++11-lib libedit perl5 \
 		shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
-_USES_PYTHON?=	python:build
+_USES_PYTHON?=	python:build:3.6
 USES+=		${_USES_PYTHON}
 SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
 		tools/clang/utils/hmaptool/hmaptool \
@@ -124,7 +124,7 @@ LLDB_GH_SUBDIR=		tools/lldb:lldb
 LLDB_GH_TAGNAME=	${LLDB_COMMIT}:lldb
 LLDB_IMPLIES=		CLANG
 LLDB_PORTDOCS=		lldb
-LLDB_VARS=		_USES_PYTHON=python
+LLDB_VARS=		_USES_PYTHON=python:3.6
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 OPENMP_GH_PROJECT=	openmp:openmp
