@@ -72,7 +72,6 @@ share/locale/fj/LC_MESSAGES/go-for-it.mo
 share/locale/fo/LC_MESSAGES/go-for-it.mo
 share/locale/fr/LC_MESSAGES/go-for-it.mo
 share/locale/fr_CA/LC_MESSAGES/go-for-it.mo
-share/locale/fr_FR/LC_MESSAGES/go-for-it.mo
 share/locale/fy/LC_MESSAGES/go-for-it.mo
 share/locale/ga/LC_MESSAGES/go-for-it.mo
 share/locale/gd/LC_MESSAGES/go-for-it.mo
@@ -137,7 +136,6 @@ share/locale/ms/LC_MESSAGES/go-for-it.mo
 share/locale/mt/LC_MESSAGES/go-for-it.mo
 share/locale/my/LC_MESSAGES/go-for-it.mo
 share/locale/na/LC_MESSAGES/go-for-it.mo
-share/locale/nb/LC_MESSAGES/go-for-it.mo
 share/locale/nd/LC_MESSAGES/go-for-it.mo
 share/locale/ne/LC_MESSAGES/go-for-it.mo
 share/locale/ng/LC_MESSAGES/go-for-it.mo
@@ -212,7 +210,6 @@ share/locale/yi/LC_MESSAGES/go-for-it.mo
 share/locale/yo/LC_MESSAGES/go-for-it.mo
 share/locale/za/LC_MESSAGES/go-for-it.mo
 share/locale/zh/LC_MESSAGES/go-for-it.mo
-share/locale/zh_CN/LC_MESSAGES/go-for-it.mo
 share/locale/zh_HK/LC_MESSAGES/go-for-it.mo
 share/locale/zh_TW/LC_MESSAGES/go-for-it.mo
 share/locale/zu/LC_MESSAGES/go-for-it.mo
