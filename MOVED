@@ -12849,3 +12849,4 @@ textproc/apache-solr3|textproc/apache-solr|2019-07-12|Obsolete
 misc/tcb||2019-07-13|Has expired: Abandonware that uses sys/dir.h
 editors/xed||2019-07-13|Has expired: Abandonware using sys/dir.h
 databases/gtksql||2019-07-13|Has expired: Abandonware using sys/dir.h
+security/snortreport||2019-07-16|Has expired: Abandonware
