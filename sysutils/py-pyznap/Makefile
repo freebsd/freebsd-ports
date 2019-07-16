@@ -2,7 +2,7 @@
 
 PORTNAME=		pyznap
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.1.2
+DISTVERSION=		1.2.1
 CATEGORIES=		sysutils python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
@@ -12,12 +12,12 @@ COMMENT=	ZFS snapshot tool written in Python
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configparser>3.5.0:devel/py-configparser@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}paramiko>=2.4.2:security/py-paramiko@${PY_FLAVOR} \
+RUN_DEPENDS=	lzop:archivers/lzop \
 		mbuffer:misc/mbuffer \
 		pv:sysutils/pv
 
-#TEST_DEPENDS=	${YPTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
+#TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=2.4.2:security/py-paramiko@${PY_FLAVOR} \
+#		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 #		${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR} \
 #		faketime:devel/faketime
 
