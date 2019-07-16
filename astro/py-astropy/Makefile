@@ -13,6 +13,7 @@ MAINTAINER=	nwhitehorn@FreeBSD.org
 COMMENT=	Community-developed python astronomy tools
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/licenses/LICENSE.rst
 
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
