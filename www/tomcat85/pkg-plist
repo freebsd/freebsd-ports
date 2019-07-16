@@ -8,6 +8,7 @@
 %%T%%/bin/bootstrap.jar
 %%T%%/bin/catalina-tasks.xml
 %%T%%/bin/catalina.sh
+%%T%%/bin/ciphers.sh
 %%T%%/bin/configtest.sh
 %%T%%/bin/daemon.sh
 %%T%%/bin/digest.sh
@@ -171,10 +172,8 @@
 %%DOCS%%%%T%%/webapps/docs/images/fonts/OpenSans700.woff
 %%DOCS%%%%T%%/webapps/docs/images/fonts/OpenSans700italic.woff
 %%DOCS%%%%T%%/webapps/docs/images/fonts/fonts.css
-%%DOCS%%%%T%%/webapps/docs/images/printer.gif
 %%DOCS%%%%T%%/webapps/docs/images/tomcat.gif
 %%DOCS%%%%T%%/webapps/docs/images/tomcat.png
-%%DOCS%%%%T%%/webapps/docs/images/tomcat.svg
 %%DOCS%%%%T%%/webapps/docs/images/update.gif
 %%DOCS%%%%T%%/webapps/docs/images/void.gif
 %%DOCS%%%%T%%/webapps/docs/index.html
@@ -217,7 +216,6 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/HelloWorldExample.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/HelloWorldExample.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings.properties
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_en.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_es.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_fr.properties
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/LocalStrings_pt.properties
@@ -441,7 +439,6 @@
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/forward/two.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/images/code.gif
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/images/execute.gif
-%%EXAMPLES%%%%T%%/webapps/examples/jsp/images/read.gif
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/images/return.gif
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/include/foo.html
 %%EXAMPLES%%%%T%%/webapps/examples/jsp/include/foo.jsp
@@ -589,15 +586,8 @@
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/WEB-INF/jsp/403.jsp
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/WEB-INF/jsp/404.jsp
 %%HOST_MANAGER%%@sample %%T%%/webapps/host-manager/WEB-INF/web.xml.sample
-%%HOST_MANAGER%%%%T%%/webapps/host-manager/images/add.gif
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/images/asf-logo.svg
-%%HOST_MANAGER%%%%T%%/webapps/host-manager/images/code.gif
-%%HOST_MANAGER%%%%T%%/webapps/host-manager/images/design.gif
-%%HOST_MANAGER%%%%T%%/webapps/host-manager/images/docs.gif
-%%HOST_MANAGER%%%%T%%/webapps/host-manager/images/fix.gif
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/images/tomcat.gif
-%%HOST_MANAGER%%%%T%%/webapps/host-manager/images/update.gif
-%%HOST_MANAGER%%%%T%%/webapps/host-manager/images/void.gif
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/index.jsp
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/manager.xml
 %%MANAGER%%@sample %%T%%/webapps/manager/META-INF/context.xml.sample
@@ -610,15 +600,8 @@
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/sessionsList.jsp
 %%MANAGER%%@sample %%T%%/webapps/manager/WEB-INF/web.xml.sample
-%%MANAGER%%%%T%%/webapps/manager/images/add.gif
 %%MANAGER%%%%T%%/webapps/manager/images/asf-logo.svg
-%%MANAGER%%%%T%%/webapps/manager/images/code.gif
-%%MANAGER%%%%T%%/webapps/manager/images/design.gif
-%%MANAGER%%%%T%%/webapps/manager/images/docs.gif
-%%MANAGER%%%%T%%/webapps/manager/images/fix.gif
 %%MANAGER%%%%T%%/webapps/manager/images/tomcat.gif
-%%MANAGER%%%%T%%/webapps/manager/images/update.gif
-%%MANAGER%%%%T%%/webapps/manager/images/void.gif
 %%MANAGER%%%%T%%/webapps/manager/index.jsp
 %%MANAGER%%%%T%%/webapps/manager/status.xsd
 %%MANAGER%%%%T%%/webapps/manager/xform.xsl
@@ -627,7 +610,6 @@
 %%ROOT%%%%T%%/webapps/ROOT/asf-logo-wide.svg
 %%ROOT%%%%T%%/webapps/ROOT/bg-button.png
 %%ROOT%%%%T%%/webapps/ROOT/bg-middle.png
-%%ROOT%%%%T%%/webapps/ROOT/bg-nav-item.png
 %%ROOT%%%%T%%/webapps/ROOT/bg-nav.png
 %%ROOT%%%%T%%/webapps/ROOT/bg-upper.png
 %%ROOT%%%%T%%/webapps/ROOT/favicon.ico
