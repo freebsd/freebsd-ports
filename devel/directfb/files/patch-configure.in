@@ -1,0 +1,17 @@
+--- configure.in.orig	2012-05-23 13:43:12 UTC
++++ configure.in
+@@ -222,12 +222,12 @@ case "$target_or_host" in
+     AC_DEFINE(ARCH_X86_64,1,[Define to 1 if you are compiling for AMD64.])
+     ;;
+ 
+-  *arm*)
++  *arm* | *aarch64* )
+     have_arm=yes
+ 	AC_DEFINE(ARCH_ARM,1,[Define to 1 if you are compiling for ARM.])
+     ;;
+ 
+-  ppc-*-linux* | powerpc-*)
++  ppc-*-linux* | powerpc*)
+     have_ppc=yes
+     AC_DEFINE(ARCH_PPC,1,[Define to 1 if you are compiling for PowerPC.])
+     ;;
