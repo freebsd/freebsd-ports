@@ -5,6 +5,7 @@
 %%SERVATRICE%%share/servatrice/servatrice.ini.example
 %%SERVATRICE%%share/servatrice/servatrice.sql
 %%COCKATRICE%%bin/cockatrice
+%%COCKATRICE%%bin/dbconverter
 %%COCKATRICE%%bin/oracle
 %%COCKATRICE%%share/applications/cockatrice.desktop
 %%COCKATRICE%%share/applications/oracle.desktop
