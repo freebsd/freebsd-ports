@@ -51,8 +51,6 @@ CARGO_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_B
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
-RUST_CHANNEL=	${PKGNAMESUFFIX:Ustable:S/^-//}
-
 # Rust's target arch string is different from *BSD arch strings
 RUST_ARCH_aarch64=	aarch64
 RUST_ARCH_amd64=	x86_64
@@ -67,19 +65,12 @@ PLIST_SUB+=		RUST_TARGET=${RUST_TARGET}
 
 USES=		compiler gmake libedit pkgconfig python:2.7,build ssl tar:xz
 
-OPTIONS_DEFINE=		DOCS GDB LLNEXTGEN SOURCES
+OPTIONS_DEFINE=		DOCS GDB SOURCES
 GDB_DESC=		Install ports gdb (necessary for debugging rust programs)
-LLNEXTGEN_DESC=		Build with grammar verification
 SOURCES_DESC=		Install source files
 
 GDB_RUN_DEPENDS=		${LOCALBASE}/bin/gdb:devel/gdb
-LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:devel/llnextgen
 
-# Rust manifests list all files and directories installed by rust-installer.
-# We use them in:
-#     - pre-install to cleanup the ${STAGEDIR}
-#     - post-install to populate the ${TMPPLIST}
-RUST_MANIFESTS=		lib/rustlib/manifest-*
 PLIST_FILES=		lib/rustlib/components \
 			lib/rustlib/rust-installer-version
 
@@ -151,7 +142,7 @@ do-configure:
 		-e 's,%SYSCONFDIR%,${PREFIX}/etc,' \
 		-e 's,%MANDIR%,${MANPREFIX}/man,' \
 		-e 's,%PYTHON_CMD%,${PYTHON_CMD},' \
-		-e 's,%CHANNEL%,${RUST_CHANNEL},' \
+		-e 's,%CHANNEL%,${PKGNAMESUFFIX:Ustable:S/^-//},' \
 		-e 's,%TARGET%,${RUST_TARGET},' \
 		-e 's,%CCACHE%,${CCACHE_VALUE},' \
 		-e 's,%CC%,${CC},' \
@@ -182,23 +173,6 @@ do-build:
 		--config ./config.toml \
 		--jobs ${MAKE_JOBS_NUMBER}
 
-# In case the previous "make stage" failed, this ensures rust's
-# install.sh won't backup previously staged files before reinstalling
-# new ones. Otherwise, the staging directory is polluted with unneeded
-# files.
-pre-install:
-	@for f in ${RUST_MANIFESTS:S,^,${STAGEDIR}${PREFIX}/,}; do \
-	    if test -f "$$f"; then \
-	        ${SED} -E -e 's,^(file|dir):,${STAGEDIR},' \
-	            < "$$f" \
-	            | ${XARGS} ${RM} -r; \
-	        ${RM} "$$f"; \
-	    fi; \
-	done
-	@for f in ${PLIST_FILES:S,^,${STAGEDIR}${PREFIX}/,}; do \
-	    ${RM} "$$f"; \
-	done
-
 do-install:
 	cd ${WRKSRC} && \
 	${SETENV} ${X_PY_ENV} \
@@ -223,7 +197,7 @@ do-install:
 # We fix manpage entries in the generated manifests because Rust
 # installs them uncompressed but the Ports framework compresses them.
 post-install:
-	for f in ${RUST_MANIFESTS:S,^,${STAGEDIR}${PREFIX}/,}; do \
+	for f in ${STAGEDIR}${PREFIX}/lib/rustlib/manifest-*; do \
 	    ${REINPLACE_CMD} -i '' -E \
 	        -e 's|:${STAGEDIR}|:|' \
 	        -e 's|(man/man[1-9]/.*\.[0-9])|\1.gz|' \
