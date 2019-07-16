@@ -1,0 +1,10 @@
+Prance provides parsers for Swagger/OpenAPI 2.0 and 3.0 API specifications in
+Python. It uses flex, swagger_spec_validator or openapi_spec_validator to
+validate specifications, but additionally resolves JSON references in accordance
+with the OpenAPI spec.
+
+Mostly the latter involves handling non-URI references; OpenAPI is fine with
+providing relative file paths, whereas JSON references require URIs at this
+point in time.
+
+WWW: https://github.com/jfinkhaeuser/prance
