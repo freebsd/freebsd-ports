@@ -1,4 +1,3 @@
-etc/xdg/syndication.categories
 include/KF5/Syndication/Syndication/AbstractParser
 include/KF5/Syndication/Syndication/Atom/Atom
 include/KF5/Syndication/Syndication/Atom/Category
@@ -139,3 +138,4 @@ lib/libKF5Syndication.so
 lib/libKF5Syndication.so.5
 lib/libKF5Syndication.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_Syndication.pri
+share/qlogging-categories5/syndication.categories

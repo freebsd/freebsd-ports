@@ -1,4 +1,3 @@
-etc/xdg/kitemmodels.categories
 include/KF5/KItemModels/KBreadcrumbSelectionModel
 include/KF5/KItemModels/KCheckableProxyModel
 include/KF5/KItemModels/KConcatenateRowsProxyModel
@@ -29,3 +28,4 @@ lib/libKF5ItemModels.so
 lib/libKF5ItemModels.so.5
 lib/libKF5ItemModels.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KItemModels.pri
+share/qlogging-categories5/kitemmodels.categories

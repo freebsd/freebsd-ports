@@ -4,7 +4,6 @@ bin/balooctl
 bin/baloosearch
 bin/balooshow
 etc/xdg/autostart/baloo_file.desktop
-etc/xdg/baloo.categories
 include/KF5/Baloo/Baloo/File
 include/KF5/Baloo/Baloo/FileMonitor
 include/KF5/Baloo/Baloo/IndexerConfig
@@ -500,3 +499,4 @@ share/locale/zh_TW/LC_MESSAGES/balooshow5.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_tags.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_timeline.mo
+share/qlogging-categories5/baloo.categories

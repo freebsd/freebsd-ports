@@ -1,4 +1,3 @@
-etc/xdg/purpose.categories
 include/KF5/purpose/Purpose/AlternativesModel
 include/KF5/purpose/Purpose/Configuration
 include/KF5/purpose/Purpose/Job
@@ -77,6 +76,9 @@ share/locale/ar/LC_MESSAGES/purpose_phabricator.mo
 share/locale/ar/LC_MESSAGES/purpose_saveas.mo
 share/locale/ar/LC_MESSAGES/purpose_twitter.mo
 share/locale/ar/LC_MESSAGES/purpose_youtube.mo
+share/locale/ast/LC_MESSAGES/purpose_email.mo
+share/locale/ast/LC_MESSAGES/purpose_kdeconnectsms.mo
+share/locale/ast/LC_MESSAGES/purpose_ktp-sendfile.mo
 share/locale/bg/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/ca/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ca/LC_MESSAGES/libpurpose_widgets.mo
@@ -512,4 +514,4 @@ share/locale/zh_TW/LC_MESSAGES/purpose_youtube.mo
 %%DATADIR%%/reviewboardplugin_config.qml
 %%DATADIR%%/saveasplugin_config.qml
 %%DATADIR%%/youtubeplugin_config.qml
-
+share/qlogging-categories5/purpose.categories

@@ -1,4 +1,3 @@
-etc/xdg/kcodecs.categories
 include/KF5/KCodecs/KCharsets
 include/KF5/KCodecs/KCodecs
 include/KF5/KCodecs/KEmailAddress
@@ -116,3 +115,4 @@ share/locale/xh/LC_MESSAGES/kcodecs5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kcodecs5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kcodecs5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kcodecs5_qt.qm
+share/qlogging-categories5/kcodecs.categories

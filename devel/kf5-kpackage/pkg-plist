@@ -1,5 +1,4 @@
 bin/kpackagetool5
-etc/xdg/kpackage.categories
 include/KF5/KPackage/KPackage/Package
 include/KF5/KPackage/KPackage/PackageLoader
 include/KF5/KPackage/KPackage/PackageStructure
@@ -80,3 +79,4 @@ share/locale/ug/LC_MESSAGES/libkpackage5.mo
 share/locale/uk/LC_MESSAGES/libkpackage5.mo
 share/locale/zh_CN/LC_MESSAGES/libkpackage5.mo
 share/locale/zh_TW/LC_MESSAGES/libkpackage5.mo
+share/qlogging-categories5/kpackage.categories

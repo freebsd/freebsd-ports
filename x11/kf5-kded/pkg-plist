@@ -1,5 +1,4 @@
 bin/kded5
-etc/xdg/kded.categories
 lib/cmake/KDED/KDEDConfig.cmake
 lib/cmake/KDED/KDEDConfigVersion.cmake
 lib/cmake/KDED/KDEDTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -20,3 +19,4 @@ share/applications/org.kde.kded5.desktop
 share/dbus-1/interfaces/org.kde.kded5.xml
 share/dbus-1/services/org.kde.kded5.service
 share/kservicetypes5/kdedmodule.desktop
+share/qlogging-categories5/kded.categories

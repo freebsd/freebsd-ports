@@ -3,7 +3,6 @@ bin/ktelnetservice5
 bin/ktrash5
 bin/protocoltojson
 etc/xdg/accept-languages.codes
-etc/xdg/kio.categories
 etc/xdg/kshorturifilterrc
 include/KF5/KIOCore/KACL
 include/KF5/KIOCore/KCoreDirLister
@@ -134,6 +133,7 @@ include/KF5/KIOFileWidgets/KDirOperator
 include/KF5/KIOFileWidgets/KDirSortFilterProxyModel
 include/KF5/KIOFileWidgets/KEncodingFileDialog
 include/KF5/KIOFileWidgets/KFileCopyToMenu
+include/KF5/KIOFileWidgets/KFileCustomDialog
 include/KF5/KIOFileWidgets/KFileFilterCombo
 include/KF5/KIOFileWidgets/KFilePlaceEditDialog
 include/KF5/KIOFileWidgets/KFilePlacesModel
@@ -152,6 +152,7 @@ include/KF5/KIOFileWidgets/kdiroperator.h
 include/KF5/KIOFileWidgets/kdirsortfilterproxymodel.h
 include/KF5/KIOFileWidgets/kencodingfiledialog.h
 include/KF5/KIOFileWidgets/kfilecopytomenu.h
+include/KF5/KIOFileWidgets/kfilecustomdialog.h
 include/KF5/KIOFileWidgets/kfilefiltercombo.h
 include/KF5/KIOFileWidgets/kfileplaceeditdialog.h
 include/KF5/KIOFileWidgets/kfileplacesmodel.h
@@ -1036,3 +1037,4 @@ share/locale/wa/LC_MESSAGES/kio5.mo
 share/locale/xh/LC_MESSAGES/kio5.mo
 share/locale/zh_CN/LC_MESSAGES/kio5.mo
 share/locale/zh_TW/LC_MESSAGES/kio5.mo
+share/qlogging-categories5/kio.categories

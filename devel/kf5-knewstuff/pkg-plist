@@ -1,4 +1,3 @@
-etc/xdg/knewstuff.categories
 include/KF5/KNewStuff3/KNS3/Button
 include/KF5/KNewStuff3/KNS3/DownloadDialog
 include/KF5/KNewStuff3/KNS3/DownloadManager
@@ -222,3 +221,4 @@ share/locale/xh/LC_MESSAGES/knewstuff5.mo
 share/locale/zh_CN/LC_MESSAGES/knewstuff5.mo
 share/locale/zh_HK/LC_MESSAGES/knewstuff5.mo
 share/locale/zh_TW/LC_MESSAGES/knewstuff5.mo
+share/qlogging-categories5/knewstuff.categories

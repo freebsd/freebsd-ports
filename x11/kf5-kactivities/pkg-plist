@@ -1,5 +1,4 @@
 bin/kactivities-cli
-etc/xdg/kactivities.categories
 include/KF5/KActivities/KActivities/ActivitiesModel
 include/KF5/KActivities/KActivities/Consumer
 include/KF5/KActivities/KActivities/Controller
@@ -25,3 +24,4 @@ lib/libKF5Activities.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/activities/libkactivitiesextensionplugin.so
 %%QT_QMLDIR%%/org/kde/activities/qmldir
 libdata/pkgconfig/libKActivities.pc
+share/qlogging-categories5/kactivities.categories

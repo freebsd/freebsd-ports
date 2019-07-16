@@ -1,4 +1,3 @@
-etc/xdg/ktexteditor.categories
 include/KF5/KTextEditor/KTextEditor/AbstractAnnotationItemDelegate
 include/KF5/KTextEditor/KTextEditor/AnnotationInterface
 include/KF5/KTextEditor/KTextEditor/Application
@@ -163,3 +162,4 @@ share/locale/xh/LC_MESSAGES/ktexteditor5.mo
 share/locale/zh_CN/LC_MESSAGES/ktexteditor5.mo
 share/locale/zh_TW/LC_MESSAGES/ktexteditor5.mo
 share/polkit-1/actions/org.kde.ktexteditor.katetextbuffer.policy
+share/qlogging-categories5/ktexteditor.categories

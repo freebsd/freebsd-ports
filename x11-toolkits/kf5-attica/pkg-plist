@@ -1,4 +1,3 @@
-etc/xdg/attica.categories
 include/KF5/Attica/Attica/AccountBalance
 include/KF5/Attica/Attica/Achievement
 include/KF5/Attica/Attica/Activity
@@ -91,3 +90,4 @@ lib/libKF5Attica.so.5
 lib/libKF5Attica.so.%%KDE_FRAMEWORKS_VERSION%%
 libdata/pkgconfig/libKF5Attica.pc
 %%QT_MKSPECDIR%%/modules/qt_Attica.pri
+share/qlogging-categories5/attica.categories

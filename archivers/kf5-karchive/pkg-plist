@@ -1,4 +1,3 @@
-etc/xdg/karchive.categories
 include/KF5/KArchive/K7Zip
 include/KF5/KArchive/KAr
 include/KF5/KArchive/KArchive
@@ -35,3 +34,4 @@ lib/libKF5Archive.so
 lib/libKF5Archive.so.5
 lib/libKF5Archive.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KArchive.pri
+share/qlogging-categories5/karchive.categories

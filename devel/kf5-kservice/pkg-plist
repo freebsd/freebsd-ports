@@ -1,5 +1,4 @@
 bin/kbuildsycoca5
-etc/xdg/kservice.categories
 etc/xdg/menus/kf5-applications.menu
 include/KF5/KService/KAutostart
 include/KF5/KService/KDBusServiceStarter
@@ -163,3 +162,4 @@ share/locale/xh/LC_MESSAGES/kservice5.mo
 share/locale/zh_CN/LC_MESSAGES/kservice5.mo
 share/locale/zh_HK/LC_MESSAGES/kservice5.mo
 share/locale/zh_TW/LC_MESSAGES/kservice5.mo
+share/qlogging-categories5/kservice.categories

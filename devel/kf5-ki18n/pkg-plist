@@ -26,6 +26,7 @@ lib/libKF5I18n.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KI18n.pri
 share/locale/af/LC_MESSAGES/ki18n5.mo
 share/locale/ar/LC_MESSAGES/ki18n5.mo
+share/locale/ast/LC_MESSAGES/ki18n5.mo
 share/locale/as/LC_MESSAGES/ki18n5.mo
 share/locale/be/LC_MESSAGES/ki18n5.mo
 share/locale/be@latin/LC_MESSAGES/ki18n5.mo

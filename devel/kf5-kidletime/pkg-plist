@@ -1,4 +1,3 @@
-etc/xdg/kidletime.categories
 include/KF5/KIdleTime/KIdleTime
 include/KF5/KIdleTime/kidletime.h
 include/KF5/KIdleTime/kidletime_export.h
@@ -14,3 +13,4 @@ lib/libKF5IdleTime.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KIdleTime.pri
 %%QT_PLUGINDIR%%/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin0.so
 %%QT_PLUGINDIR%%/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin1.so
+share/qlogging-categories5/kidletime.categories

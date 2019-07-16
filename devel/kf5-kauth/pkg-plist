@@ -1,4 +1,3 @@
-etc/xdg/kauth.categories
 include/KF5/KAuth/KAuth
 include/KF5/KAuth/KAuthAction
 include/KF5/KAuth/KAuthActionReply
@@ -133,3 +132,4 @@ share/locale/xh/LC_MESSAGES/kauth5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kauth5_qt.qm
 share/locale/zh_HK/LC_MESSAGES/kauth5_qt.qm
 share/locale/zh_TW/LC_MESSAGES/kauth5_qt.qm
+share/qlogging-categories5/kauth.categories
