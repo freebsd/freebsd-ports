@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS_REASON=	uses x86 assembly
 
 LIB_DEPENDS=	libcppunit.so:devel/cppunit
 
-USES=		autoreconf libtool
+USES=		autoreconf libtool pkgconfig
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
