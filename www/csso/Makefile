@@ -12,12 +12,14 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	CSS optimizer
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt
 
 RUN_DEPENDS=	node:www/node
 
 GH_ACCOUNT=	css
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 USE_GITHUB=	yes
 
