@@ -7,7 +7,7 @@ CATEGORIES=	misc python
 MASTER_SITES=	https://launchpad.net/pastebinit/trunk/${PORTVERSION}/+download/
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT=	Command line utility for pastebing
+COMMENT=	Command line utility for pastebin
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
