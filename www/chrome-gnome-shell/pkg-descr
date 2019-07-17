@@ -1,0 +1,5 @@
+Native host messaging connector that provides integration
+with GNOME Shell and the corresponding extensions repository
+https://extensions.gnome.org
+
+WWW: https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome

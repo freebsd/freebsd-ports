@@ -1,0 +1,9 @@
+bin/chrome-gnome-shell
+etc/chrome/native-messaging-hosts/org.gnome.chrome_gnome_shell.json
+lib/mozilla/native-messaging-hosts/org.gnome.chrome_gnome_shell.json
+%%PYTHON_SITELIBDIR%%/chrome_gnome_shell-0.0.0-py%%PYTHON_VER%%.egg-info
+share/applications/org.gnome.ChromeGnomeShell.desktop
+share/dbus-1/services/org.gnome.ChromeGnomeShell.service
+share/icons/gnome/128x128/apps/org.gnome.ChromeGnomeShell.png
+share/icons/gnome/16x16/apps/org.gnome.ChromeGnomeShell.png
+share/icons/gnome/48x48/apps/org.gnome.ChromeGnomeShell.png
