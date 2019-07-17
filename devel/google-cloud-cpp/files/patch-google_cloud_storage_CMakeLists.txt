@@ -1,0 +1,12 @@
+--- google/cloud/storage/CMakeLists.txt.orig	2019-07-11 02:46:50 UTC
++++ google/cloud/storage/CMakeLists.txt
+@@ -227,9 +227,6 @@ target_link_libraries(storage_client
+                              Crc32c::crc32c
+                              CURL::libcurl
+                              Threads::Threads
+-                             OpenSSL::SSL
+-                             OpenSSL::Crypto
+-                             ZLIB::ZLIB
+                       PRIVATE storage_common_options)
+ target_include_directories(storage_client
+                            PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>

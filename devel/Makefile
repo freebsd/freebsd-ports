@@ -869,6 +869,7 @@
     SUBDIR += gogland-eap
     SUBDIR += gogs
     SUBDIR += golint
+    SUBDIR += google-cloud-cpp
     SUBDIR += google-gdata
     SUBDIR += google-perftools
     SUBDIR += google-styleguide
