@@ -22,19 +22,7 @@ namespace media {
 
 class AudioManagerBase;
 
-// call-backs invoked from C libraries, thus requiring C linkage
-extern "C" {
-  // Invoked (on the real-time thread) at each sound card clock tick
-  void sndio_in_onmove(void *arg, int delta);
-  // Invoked (on the real-time thread) whenever the volume changes
-  void sndio_in_onvol(void *arg, unsigned int vol);
-  // Real-time thread entry point
-  void *sndio_in_threadstart(void *arg);
-}
-
-// Provides an input stream for audio capture based on the SNDIO PCM interface.
-// This object is not thread safe and all methods should be invoked in the
-// thread that created the object.
+// Implementation of AudioOutputStream using sndio(7)
 class SndioAudioInputStream : public AgcAudioStream<AudioInputStream> {
  public:
   // Pass this to the constructor if you want to attempt auto-selection
@@ -61,45 +49,39 @@ class SndioAudioInputStream : public AgcAudioStream<AudioInputStream> {
   bool IsMuted() override;
   void SetOutputDeviceForAec(const std::string& output_device_id) override;
 
-  // C-linkage call-backs are friends to access private data
-  friend void sndio_in_onmove(void *arg, int delta);
-  friend void sndio_in_onvol(void *arg, unsigned int vol);
-  friend void *sndio_in_threadstart(void *arg);
-
  private:
-  // Logs the error and invokes any registered callbacks.
-  void HandleError(const char* method, int error);
 
-  // Reads one or more buffers of audio from the device, passes on to the
-  // registered callback and schedules the next read.
-  void ReadAudio();
+  enum StreamState {
+    kClosed,            // Not opened yet
+    kStopped,           // Device opened, but not started yet
+    kRunning,           // Started, device playing
+    kStopWait           // Stopping, waiting for the real-time thread to exit
+  };
 
-  // Recovers from any device errors if possible.
-  bool Recover(int error);
+  // C-style call-backs
+  static void OnMoveCallback(void *arg, int delta);
+  static void* ThreadEntry(void *arg);
 
-  // Non-refcounted pointer back to the audio manager.
-  // The AudioManager indirectly holds on to stream objects, so we don't
-  // want circular references.  Additionally, stream objects live on the audio
-  // thread, which is owned by the audio manager and we don't want to addref
-  // the manager from that thread.
-  AudioManagerBase* audio_manager_;
-  std::string device_name_;
-  AudioParameters params_;
-  int bytes_per_buffer_;
-  base::TimeDelta buffer_duration_;  // Length of each recorded buffer.
-  AudioInputCallback* callback_;  // Valid during a recording session.
-  base::TimeTicks next_read_time_;  // Scheduled time for next read callback.
-  struct sio_hdl* device_handle_;  // Handle to the SNDIO PCM recording device.
-  std::unique_ptr<uint8_t[]> audio_buffer_;  // Buffer used for reading audio data.
-  bool read_callback_behind_schedule_;
-  std::unique_ptr<AudioBus> audio_bus_;
-
-  int hw_delay_;
-  int sndio_rec_bufsize_;
-  int sndio_rec_bufsz_;
-
-  // High priority thread running RealTimeThread()
-  pthread_t thread_;
+  // Continuously moves data from the device to the consumer
+  void ThreadLoop();
+  // Our creator, the audio manager needs to be notified when we close.
+  AudioManagerBase* manager;
+  // Parameters of the source
+  AudioParameters params;
+  // We store data here for consumer
+  std::unique_ptr<AudioBus> audio_bus;
+  // Call-back that consumes recorded data
+  AudioInputCallback* callback;  // Valid during a recording session.
+  // Handle of the audio device
+  struct sio_hdl* hdl;
+  // Current state of the stream
+  enum StreamState state;
+  // High priority thread running ThreadLoop()
+  pthread_t thread;
+  // Number of frames buffered in the hardware
+  int hw_delay;
+  // Temporary buffer where data is stored sndio-compatible format
+  char* buffer;
 
   DISALLOW_COPY_AND_ASSIGN(SndioAudioInputStream);
 };
