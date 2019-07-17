@@ -11,11 +11,10 @@ COMMENT=	Fast, secure, efficient backup program
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
 USE_GITHUB=	yes
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
-GO_TARGET=	${GO_PKGNAME}/cmd/${PORTNAME}
+GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_SUB=	PORTNAME=${PORTNAME}
 
