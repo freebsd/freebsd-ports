@@ -414,3 +414,4 @@
 %%WWWDIR%%/skins/moono-lisa/images/spinner.gif
 %%WWWDIR%%/skins/moono-lisa/readme.md
 %%WWWDIR%%/styles.js
+%%WWWDIR%%/vendor/promise.js
