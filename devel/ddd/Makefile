@@ -7,8 +7,11 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	sergio@softshark.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data Display Debugger -- a common graphical front-end for GDB/DBX/XDB
+
+DEPRECATED=	does not work with modern gdb
+EXPIRATION_DATE=	2019-07-31
 
 USES=		cpe gmake makeinfo motif
 USE_XORG=	xpm
