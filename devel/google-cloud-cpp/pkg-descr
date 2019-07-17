@@ -1,7 +1,5 @@
-Nsync is a C library that exports various synchronization primitives.
-The library is intended to be portable, and to be compilable on a system with
-only a C90 compiler, assuming atomic operations are available from the
-compiler, operating system, or assembler routines.  It is able to use C11 or
-C++11 atomic operations if they are available.
+Google cloud C++ libraries are C++ libraries for use with the Google Cloud
+platform. Google Cloud Platform provides infrastructure as a service, platform
+as a service, and serverless computing environments.
 
-WWW: https://github.com/google/nsync
+WWW: https://github.com/googleapis/google-cloud-cpp
