@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	aerc
-DISTVERSION=	0.1.1-77
-DISTVERSIONSUFFIX=	-g61ef404
+DISTVERSION=	0.1.1-117
+DISTVERSIONSUFFIX=	-g8bb115d
 CATEGORIES=	mail
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -20,12 +20,17 @@ GH_TUPLE=	danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.c
 		ddevault:go-libvterm:b7d861da3810:ddevault_go_libvterm/vendor/github.com/ddevault/go-libvterm \
 		emersion:go-imap-idle:2704abd7050e:emersion_go_imap_idle/vendor/github.com/emersion/go-imap-idle \
 		emersion:go-imap:v1.0.0-beta.6:emersion_go_imap/vendor/github.com/emersion/go-imap \
-		emersion:go-message:v0.10.3:emersion_go_message/vendor/github.com/emersion/go-message \
-		emersion:go-sasl:47d427600317:emersion_go_sasl/vendor/github.com/emersion/go-sasl \
+		emersion:go-maildir:cec913e0802c:emersion_go_maildir/vendor/github.com/emersion/go-maildir \
+		emersion:go-message:v0.10.4:emersion_go_message/vendor/github.com/emersion/go-message \
+		emersion:go-sasl:36b50694675c:emersion_go_sasl/vendor/github.com/emersion/go-sasl \
 		emersion:go-smtp:v0.11.1:emersion_go_smtp/vendor/github.com/emersion/go-smtp \
 		emersion:go-textwrapper:d0e65e56babe:emersion_go_textwrapper/vendor/github.com/emersion/go-textwrapper \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
 		go-ini:ini:v1.42.0:go_ini_ini/vendor/github.com/go-ini/ini \
+		golang:appengine:v1.4.0:golang_appengine/vendor/google.golang.org/appengine \
+		golang:net:d8887717615a:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.2.0:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:4c4f7f33c9ed:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		google:shlex:c34317bd91bf:google_shlex/vendor/github.com/google/shlex \
@@ -43,10 +48,10 @@ GH_TUPLE=	danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.c
 		stretchr:testify:v1.3.0:stretchr_testify/vendor/github.com/stretchr/testify
 
 # Additional distfiles to fetch from https://git.sr.ht
-SRHT_TUPLE=	sircmpwn aerc ${DISTVERSIONFULL} "" \
-		sircmpwn getopt e7e23d1cd3a3 vendor/git.sr.ht/~sircmpwn/getopt \
-		sircmpwn pty 3a43678975a9 vendor/git.sr.ht/~sircmpwn/pty \
-		sircmpwn tcell 1f7dcc638286 vendor/github.com/gdamore/tcell
+_SRHT_TUPLE=	sircmpwn:aerc:${DISTVERSIONFULL}:"" \
+		sircmpwn:getopt:e7e23d1cd3a3:vendor/git.sr.ht/~sircmpwn/getopt \
+		sircmpwn:pty:3a43678975a9:vendor/git.sr.ht/~sircmpwn/pty \
+		sircmpwn:tcell:1f7dcc638286:vendor/github.com/gdamore/tcell
 
 MAKE_ARGS=	MANDIR=${STAGEDIR}${PREFIX}/man
 MAKE_ENV=	${GO_ENV} \
@@ -63,13 +68,13 @@ HTML_FILTER_RUN_DEPENDS=	socksify:net/dante \
 
 .include <bsd.port.pre.mk>
 
-.for account project tag subdir in ${SRHT_TUPLE}
+.for account project tag subdir in ${_SRHT_TUPLE:S/:/ /g}
 MASTER_SITES+=	https://git.sr.ht/~${account}/${project}/archive/${tag}${EXTRACT_SUFX}?dummy=/:${account}_${project}
 DISTFILES+=	${account}-${project}-${tag}_SRHT0${EXTRACT_SUFX}:${account}_${project}
 .endfor
 
 post-extract:
-.for account project tag subdir in ${SRHT_TUPLE:[5..-1]}
+.for account project tag subdir in ${_SRHT_TUPLE:S/:/ /g:[5..-1]}
 	@${MKDIR} ${WRKSRC}/${subdir:H}
 	@${MV} ${WRKDIR}/${project}-${tag} ${WRKSRC}/${subdir}
 .endfor
