@@ -249,6 +249,7 @@
     SUBDIR += bsdbuild
     SUBDIR += bsdcflow
     SUBDIR += bsdowl
+    SUBDIR += buildstream
     SUBDIR += bugzilla44
     SUBDIR += bugzilla50
     SUBDIR += build

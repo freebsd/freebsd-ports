@@ -1,0 +1,16 @@
+BuildStream is a Free Software tool for integrating software stacks.
+
+It takes inspiration, lessons and use-cases from various projects including
+Bazel, OBS, Reproducible Builds, Yocto, Baserock, Buildroot, Aboriginal, GNOME
+Continuous, JHBuild, Flatpak Builder and Android repo.
+
+BuildStream supports multiple build-systems (e.g. autotools, cmake, cpan,
+distutils, make, meson, qmake, pip) through its core plugins. External plugins
+allow the creation of a range of output formats (e.g. debian packages, flatpak
+runtimes, system images) for multiple platforms and chipsets.
+
+BuildStream's core users are application developers and system integrators who
+create production-ready software systems that need to be maintained efficiently
+and reliably in the long term.
+
+WWW: https://buildstream.build/
