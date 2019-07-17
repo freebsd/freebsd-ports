@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Plack-Middleware-RemoveRedundantBody
-PORTVERSION=	0.07
+PORTVERSION=	0.09
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,8 +18,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Plack>=0:www/p5-Plack
 TEST_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
