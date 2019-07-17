@@ -1,0 +1,10 @@
+--- elm-format.cabal.orig	2019-07-15 11:59:50 UTC
++++ elm-format.cabal
+@@ -83,7 +83,6 @@ library
+         AST.Json
+         AST.MapExpr
+         AST.MapNamespace
+-        Build_elm_format
+         Cheapskate.Inlines
+         Cheapskate.Parse
+         Cheapskate.ParserCombinators
