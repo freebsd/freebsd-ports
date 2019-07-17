@@ -1,0 +1,8 @@
+This only installs the native host connector.
+
+You will need to install a browser extension in order to use properly
+
+Chromium: https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep
+Firefox: https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
+Opera: https://addons.opera.com/en/extensions/details/gnome-shell-integration/
+Epiphany has built in support.
