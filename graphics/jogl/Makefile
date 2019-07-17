@@ -51,20 +51,20 @@ ALL_TARGET+=	javadoc
 
 .include <bsd.port.pre.mk>
 
-.if ${JAVA_PORT_VERSION:M1.6.*}
+.if ${JAVA_PORT_VERSION:M*6*}
 PLIST_SUB+=	JDK6=""
 PLIST_SUB+=	JDK7="@comment "
 .endif
-.if ${JAVA_PORT_VERSION:M1.7.*}
+.if ${JAVA_PORT_VERSION:M*7*}
 PLIST_SUB+=	JDK6="@comment "
 PLIST_SUB+=	JDK7=""
 .endif
-.if ${JAVA_PORT_VERSION:M1.8.*}
+.if ${JAVA_PORT_VERSION:M*8*}
 PLIST_SUB+=	JDK6="@comment "
 PLIST_SUB+=	JDK7="@comment "
 .endif
 
-.if ${JAVA_PORT_VERSION:M1.8.*}
+.if ${JAVA_PORT_VERSION:M*8*}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-build.xml
 .endif
 
