@@ -1,0 +1,4 @@
+elm-format is an Elm source code formatter according to a standard set of rules
+based on the official Elm Style Guide. It is inspired by the popular gofmt.
+
+WWW: https://github.com/avh4/elm-format/
