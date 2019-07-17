@@ -2,7 +2,7 @@
 
 PORTNAME=	mlpack
 DISTVERSION=	3.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	http://mlpack.org/files/
 
