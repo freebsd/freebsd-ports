@@ -20,6 +20,7 @@
     SUBDIR += libtubo
     SUBDIR += mucommander
     SUBDIR += nautilus
+    SUBDIR += nautilus-python
     SUBDIR += nemo
     SUBDIR += pcmanfm
     SUBDIR += pcmanfm-qt
