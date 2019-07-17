@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20190717:
+  AFFECTS: users of sysutils/py-borgmatic
+  AUTHOR: egypcio@FreeBSD.org
+
+  The default location for borgmatic's configurations changed. We moved it
+  from '/etc/borgmatic' to '/usr/local/etc/borgmatic' in order to follow
+  recommended standards used on FreeBSD.
+
 20190710:
   AFFECTS: users with DEFAULT_VERSIONS+=linux=c6 or c6_64 in /etc/make.conf
   AUTHOR: tij@FreeBSD.org
