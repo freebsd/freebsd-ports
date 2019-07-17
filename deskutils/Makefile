@@ -27,6 +27,7 @@
     SUBDIR += calcurse
     SUBDIR += calibre
     SUBDIR += cartotheque
+    SUBDIR += cfiles
     SUBDIR += charmtimetracker
     SUBDIR += chart
     SUBDIR += cherrytree
