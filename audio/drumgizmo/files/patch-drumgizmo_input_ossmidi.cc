@@ -1,4 +1,4 @@
---- drumgizmo/input/ossmidi.cc.orig	2018-10-06 16:29:02 UTC
+--- drumgizmo/input/ossmidi.cc.orig	2019-05-08 15:53:39 UTC
 +++ drumgizmo/input/ossmidi.cc
 @@ -30,6 +30,7 @@
  #include <stdlib.h>
@@ -7,4 +7,4 @@
 +#include <cstring>
  
  
- static int const NOTE_ON = 0x90;
+ OSSInputEngine::OSSInputEngine()
