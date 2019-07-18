@@ -1,3 +1,7 @@
-%%JAVAJARDIR%%/JTS_Test.jar
-%%JAVAJARDIR%%/jts.jar
-%%JAVAJARDIR%%/jtsio.jar
+%%JAVAJARDIR%%/jts-app-1.15.1.jar
+%%JAVAJARDIR%%/jts-core-1.15.1.jar
+%%JAVAJARDIR%%/jts-io-common-1.15.1.jar
+%%JAVAJARDIR%%/jts-lab-1.15.1.jar
+%%PORTDOCS%%%%JAVAJARDIR%%/jts-core-1.15.1-javadoc.jar
+%%PORTDOCS%%%%JAVAJARDIR%%/jts-io-common-1.15.1-javadoc.jar
+%%PORTDOCS%%%%JAVAJARDIR%%/jts-lab-1.15.1-javadoc.jar
