@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
-USES=		cmake mysql
+USES=		cmake compiler:c++11-lang mysql
 
 CMAKE_ARGS=	-DWITH_UNIXODBC=1 -DDISABLE_GUI=1
 USE_LDCONFIG=	yes
