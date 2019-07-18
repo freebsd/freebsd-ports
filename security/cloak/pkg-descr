@@ -1,0 +1,5 @@
+A command line OTP (One Time Password) Authenticator application
+written in Rust that generates time-based and counter-based OTP
+codes.
+
+WWW: https://github.com/evansmurithi/cloak
