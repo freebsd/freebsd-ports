@@ -1,7 +1,7 @@
-%%JAVAJARDIR%%/jts-app-1.15.1.jar
-%%JAVAJARDIR%%/jts-core-1.15.1.jar
-%%JAVAJARDIR%%/jts-io-common-1.15.1.jar
-%%JAVAJARDIR%%/jts-lab-1.15.1.jar
-%%PORTDOCS%%%%JAVAJARDIR%%/jts-core-1.15.1-javadoc.jar
-%%PORTDOCS%%%%JAVAJARDIR%%/jts-io-common-1.15.1-javadoc.jar
-%%PORTDOCS%%%%JAVAJARDIR%%/jts-lab-1.15.1-javadoc.jar
+%%JAVAJARDIR%%/jts-app-%%VERSION%%.jar
+%%JAVAJARDIR%%/jts-core-%%VERSION%%.jar
+%%JAVAJARDIR%%/jts-io-common-%%VERSION%%.jar
+%%JAVAJARDIR%%/jts-lab-%%VERSION%%.jar
+%%PORTDOCS%%%%JAVAJARDIR%%/jts-core-%%VERSION%%-javadoc.jar
+%%PORTDOCS%%%%JAVAJARDIR%%/jts-io-common-%%VERSION%%-javadoc.jar
+%%PORTDOCS%%%%JAVAJARDIR%%/jts-lab-%%VERSION%%-javadoc.jar
