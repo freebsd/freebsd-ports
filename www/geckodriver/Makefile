@@ -3,6 +3,7 @@
 PORTNAME=	geckodriver
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.24.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	daniel@blodan.se
@@ -148,7 +149,7 @@ CARGO_CRATES=	Inflector-0.11.2 \
 		lazy_static-1.0.1 \
 		lazycell-0.4.0 \
 		lazycell-0.6.0 \
-		libc-0.2.43 \
+		libc-0.2.60 \
 		libloading-0.5.0 \
 		libudev-0.2.0 \
 		libudev-sys-0.1.3 \

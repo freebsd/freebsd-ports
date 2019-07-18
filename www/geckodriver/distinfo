@@ -1,4 +1,4 @@
-TIMESTAMP = 1563353187
+TIMESTAMP = 1563436381
 SHA256 (rust/crates/Inflector-0.11.2.tar.gz) = 1b33cd9b653730fc539c53c7b3c672d2f47108fa20c6df571fa5817178f5a14c
 SIZE (rust/crates/Inflector-0.11.2.tar.gz) = 23756
 SHA256 (rust/crates/adler32-1.0.2.tar.gz) = 6cbd0b9af8587c72beadc9f72d35b9fbb070982c9e6203e46e93f10df25f8f45
@@ -263,8 +263,8 @@ SHA256 (rust/crates/lazycell-0.4.0.tar.gz) = ce12306c4739d86ee97c23139f3a34ddf03
 SIZE (rust/crates/lazycell-0.4.0.tar.gz) = 8456
 SHA256 (rust/crates/lazycell-0.6.0.tar.gz) = a6f08839bc70ef4a3fe1d566d5350f519c5912ea86be0df1740a7d247c7fc0ef
 SIZE (rust/crates/lazycell-0.6.0.tar.gz) = 10099
-SHA256 (rust/crates/libc-0.2.43.tar.gz) = 76e3a3ef172f1a0b9a9ff0dd1491ae5e6c948b94479a3021819ba7d860c8645d
-SIZE (rust/crates/libc-0.2.43.tar.gz) = 353810
+SHA256 (rust/crates/libc-0.2.60.tar.gz) = d44e80633f007889c7eff624b709ab43c92d708caad982295768a7b13ca3b5eb
+SIZE (rust/crates/libc-0.2.60.tar.gz) = 409744
 SHA256 (rust/crates/libloading-0.5.0.tar.gz) = 9c3ad660d7cb8c5822cd83d10897b0f1f1526792737a179e73896152f85b88c2
 SIZE (rust/crates/libloading-0.5.0.tar.gz) = 15990
 SHA256 (rust/crates/libudev-0.2.0.tar.gz) = ea626d3bdf40a1c5aee3bcd4f40826970cae8d80a8fec934c82a63840094dcfe
