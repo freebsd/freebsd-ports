@@ -19,6 +19,8 @@ COMMENT=	Sphinx Full-Text Search Engine
 
 LICENSE=	GPLv2
 
+USES=		compiler:c++11-lang
+
 # If expat is present on the system and configure finds it, it will
 # unconditionally link the output binary against it.  There's no way
 # of turning this off.  So for consistency, make sure it's always on.
