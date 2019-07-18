@@ -1,0 +1,53 @@
+From 42761668c0300afa7f8bf5ba736458a818cd5d15 Mon Sep 17 00:00:00 2001
+From: Akim Demaille <akim@lrde.epita.fr>
+Date: Tue, 19 Mar 2013 11:19:17 -0700
+Subject: AC_PROG_YACC: don't force Bison to warn against its own features
+
+When invoked with -y/--yacc, Bison warns when its extensions over
+POSIX Yacc are used.  Yet many packages requiring GNU Bison use
+Autoconf/Automake's Yacc support, which passes -y to Bison.  It
+turns out that passing '-o y.tab.c' has exactly the desired
+effect: generating not only y.tab.c but also y.tab.h with -d and
+y.output with -v.  See:
+http://lists.gnu.org/archive/html/bison-patches/2013-02/msg00100.html
+* lib/autoconf/programs.m4 (AC_PROG_YACC): Use bison -o y.tab.c.
+* NEWS, doc/autoconf.texi: Document this change.
+---
+ NEWS                     | 4 ++++
+ doc/autoconf.texi        | 2 +-
+ lib/autoconf/programs.m4 | 4 ++--
+ 3 files changed, 7 insertions(+), 3 deletions(-)
+
+diff --git a/doc/autoconf.texi b/doc/autoconf.texi
+index c54c5b3..f895e47 100644
+--- doc/autoconf.texi
++++ doc/autoconf.texi
+@@ -4222,7 +4222,7 @@ and is cached in the @code{ac_cv_path_SED} variable.
+ @ovindex YACC
+ @caindex prog_YACC
+ If @code{bison} is found, set output variable @code{YACC} to @samp{bison
+--y}.  Otherwise, if @code{byacc} is found, set @code{YACC} to
++-o y.tab.c}.  Otherwise, if @code{byacc} is found, set @code{YACC} to
+ @samp{byacc}.  Otherwise set @code{YACC} to @samp{yacc}.
+ The result of this test can be influenced by setting the variable
+ @code{YACC} or the cache variable @code{ac_cv_prog_YACC}.
+diff --git a/lib/autoconf/programs.m4 b/lib/autoconf/programs.m4
+index f7af8b5..2057e78 100644
+--- lib/autoconf/programs.m4
++++ lib/autoconf/programs.m4
+@@ -892,10 +892,10 @@ AN_PROGRAM([yacc],  [AC_PROG_YACC])
+ AN_PROGRAM([byacc], [AC_PROG_YACC])
+ AN_PROGRAM([bison], [AC_PROG_YACC])
+ AC_DEFUN([AC_PROG_YACC],
+-[AC_CHECK_PROGS(YACC, 'bison -y' byacc, yacc)dnl
++[AC_CHECK_PROGS(YACC, 'bison -o y.tab.c' byacc, yacc)dnl
+ AC_ARG_VAR(YACC,
+ [The `Yet Another Compiler Compiler' implementation to use.  Defaults to
+-the first program found out of: `bison -y', `byacc', `yacc'.])dnl
++the first program found out of: `bison -o y.tab.c', `byacc', `yacc'.])dnl
+ AC_ARG_VAR(YFLAGS,
+ [The list of arguments that will be passed by default to $YACC.  This script
+ will default YFLAGS to the empty string to avoid a default value of `-d' given
+-- 
+cgit v1.0-41-gc330
+
