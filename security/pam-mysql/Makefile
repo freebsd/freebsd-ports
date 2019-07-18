@@ -14,7 +14,7 @@ COMMENT=	Pam module for authenticating with MySQL
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool:keepla
+USES=		compiler:c11 libtool:keepla
 USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} \
