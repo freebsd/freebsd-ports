@@ -1,10 +1,12 @@
---- cucumber-core.gemspec.orig	2017-12-02 20:04:02 UTC
+--- cucumber-core.gemspec.orig	2019-07-18 18:16:20 UTC
 +++ cucumber-core.gemspec
-@@ -25,7 +25,6 @@ Gem::Specification.new do |s|
+@@ -24,8 +24,7 @@ Gem::Specification.new do |s|
+ 
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
        s.add_runtime_dependency(%q<gherkin>.freeze, ["~> 5.0"])
-       s.add_runtime_dependency(%q<cucumber-tag_expressions>.freeze, ["~> 1.1.0"])
+-      s.add_runtime_dependency(%q<cucumber-tag_expressions>.freeze, ["~> 1.1.0"])
 -      s.add_runtime_dependency(%q<backports>.freeze, [">= 3.8.0"])
++      s.add_runtime_dependency(%q<cucumber-tag_expressions>.freeze, [">= 1.1.0"])
        s.add_development_dependency(%q<bundler>.freeze, ["~> 1.16.0"])
        s.add_development_dependency(%q<rake>.freeze, [">= 0.9.2"])
        s.add_development_dependency(%q<rspec>.freeze, ["~> 3.6"])

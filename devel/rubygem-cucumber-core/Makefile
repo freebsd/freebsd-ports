@@ -3,6 +3,7 @@
 
 PORTNAME=	cucumber-core
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
