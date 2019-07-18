@@ -1,0 +1,17 @@
+Should you installed the py36 flavor of this package and are presented to
+the following error:
+
+  RuntimeError: Click will abort further execution because Python 3 was
+  configured to use ASCII as encoding for the environment. Either switch
+  to Python 2 or consult the Python 3 section of the docs for
+  mitigation steps.
+
+It's an issue related to Click, not muacrypt. You can workaround that by
+exporting LC_ALL and LANG variables, using your locale settings and
+running muacrypt again:
+
+  # setenv LC_ALL en_US.UTF-8
+  # setenv LANG en_US.UTF-8
+  # muacrypt
+
+Read https://click.palletsprojects.com/en/7.x/python3/ for more details.
