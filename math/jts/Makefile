@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jts
-DISTVERSION=	1.15.1
+DISTVERSION=	1.16.1
 DISTVERSIONPREFIX=	jts-
 CATEGORIES=	math databases java
 
@@ -24,6 +24,7 @@ NO_ARCH=	yes
 VER=		${PORTVERSION:tl}
 JARFILES=	core/target/jts-core app/target/jts-app io/common/target/jts-io-common lab/target/jts-lab
 JARDOCFILES=	io/common/target/jts-io-common core/target/jts-core lab/target/jts-lab
+PLIST_SUB=	VERSION=${VER}
 
 PORTDOCS=	*
 
@@ -88,7 +89,7 @@ pushToGH:
 	cd ${WRKDIR}/.m2 && git add .
 	cd ${WRKDIR}/.m2 && git status
 	cd ${WRKDIR}/.m2 && git commit -m "Update deps for version ${VER}."
-	read Continue to push new version ${VER} to GH
+	read -p "Continue to push new version ${VER} to GH" dummy
 	cd ${WRKDIR}/.m2 && git push -u origin master
 	cd ${WRKDIR}/.m2 && git tag -f ${VER}
 	cd ${WRKDIR}/.m2 && git push --tags -f
