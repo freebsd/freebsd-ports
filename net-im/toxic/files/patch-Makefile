@@ -1,0 +1,13 @@
+--- Makefile.orig	2019-07-14 18:05:38 UTC
++++ Makefile
+@@ -23,6 +23,10 @@ UNAME_S = $(shell uname -s)
+ ifeq ($(UNAME_S), Linux)
+ LDFLAGS += -ldl -lrt
+ endif
++ifeq ($(UNAME_S), FreeBSD)
++LIBS := $(filter-out ncursesw, $(LIBS))
++LDFLAGS += -lncursesw
++endif
+ ifeq ($(UNAME_S), OpenBSD)
+ LIBS := $(filter-out ncursesw, $(LIBS))
+ LDFLAGS += -lncursesw
