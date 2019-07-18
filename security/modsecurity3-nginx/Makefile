@@ -7,7 +7,7 @@ MASTER_SITES=	http://nginx.org/download/
 DISTFILES=	${_NGINX_DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	joneum@FreeBSD.org
-COMMENT=	Intrustion detection and prevention engine / nginx Wrapper
+COMMENT=	Instruction detection and prevention engine / nginx Wrapper
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
