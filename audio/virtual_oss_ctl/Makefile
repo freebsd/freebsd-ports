@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org/distfiles/
 
 MAINTAINER=	hselasky@FreeBSD.org
-COMMENT=	Grapical control panel for the virtual OSS daemon
+COMMENT=	Graphical control panel for the virtual OSS daemon
 
 LICENSE=	BSD2CLAUSE
 
