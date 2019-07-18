@@ -700,6 +700,7 @@
     SUBDIR += py-webrtcvad
     SUBDIR += py-xmms2
     SUBDIR += pytone
+    SUBDIR += qaudiosonar
     SUBDIR += qjackctl
     SUBDIR += qmidiarp
     SUBDIR += qmidictl
