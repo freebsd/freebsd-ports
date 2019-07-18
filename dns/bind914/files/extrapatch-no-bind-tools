@@ -1,6 +1,6 @@
 Exclude the "tools" from building and installing.
 
---- bin/Makefile.in.orig	2019-03-20 05:57:56 UTC
+--- bin/Makefile.in.orig	2019-07-09 18:15:48 UTC
 +++ bin/Makefile.in
 @@ -11,8 +11,8 @@ srcdir =	@srcdir@
  VPATH =		@srcdir@
@@ -13,9 +13,9 @@ Exclude the "tools" from building and installing.
  TARGETS =
  
  @BIND9_MAKE_RULES@
---- bin/tools/Makefile.in.orig	2019-04-15 14:30:39 UTC
+--- bin/tools/Makefile.in.orig	2019-07-09 18:15:48 UTC
 +++ bin/tools/Makefile.in
-@@ -39,10 +39,7 @@ SUBDIRS =
+@@ -40,10 +40,7 @@ SUBDIRS =
  
  DNSTAPTARGETS =	dnstap-read@EXEEXT@
  NZDTARGETS =	named-nzd2nzf@EXEEXT@
@@ -27,7 +27,7 @@ Exclude the "tools" from building and installing.
  
  DNSTAPSRCS  =	dnstap-read.c
  NZDSRCS  =	named-nzd2nzf.c
-@@ -118,21 +115,6 @@ dnstap:
+@@ -119,21 +116,6 @@ dnstap:
  	${INSTALL_DATA} ${srcdir}/dnstap-read.1 ${DESTDIR}${mandir}/man1
  
  install:: ${TARGETS} installdirs @DNSTAP@ @NZD_TOOLS@
