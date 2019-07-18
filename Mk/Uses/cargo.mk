@@ -139,10 +139,10 @@ CARGO_ENV+=	GETTEXT_BIN_DIR=${LOCALBASE}/bin \
 # https://github.com/rust-lang/libc/commit/969ad2b73cdc
 _libc_VER=	${libc:C/.*-//}
 . if ${_libc_VER:R:R} == 0 && (${_libc_VER:R:E} < 2 || ${_libc_VER:R:E} == 2 && ${_libc_VER:E} < 38)
-DEV_WARNING+=	"CARGO_CRATES=${libc} may be unstable on FreeBSD 12.0. Consider updating to the latest version (higher than 0.2.37)."
+DEV_ERROR+=	"CARGO_CRATES=${libc} may be unstable on FreeBSD 12.0. Consider updating to the latest version \(higher than 0.2.37\)."
 . endif
 . if ${_libc_VER:R:R} == 0 && (${_libc_VER:R:E} < 2 || ${_libc_VER:R:E} == 2 && ${_libc_VER:E} < 49)
-DEV_WARNING+=	"CARGO_CRATES=${libc} may be unstable on aarch64 or not build on armv6, armv7, powerpc64. Consider updating to the latest version (higher than 0.2.49)."
+DEV_ERROR+=	"CARGO_CRATES=${libc} may be unstable on aarch64 or not build on armv6, armv7, powerpc64. Consider updating to the latest version \(higher than 0.2.49\)."
 . endif
 .undef _libc_VER
 .endfor
