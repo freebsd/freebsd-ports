@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ristretto
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	graphics xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
