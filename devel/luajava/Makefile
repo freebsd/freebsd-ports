@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${JAVA_PORT_VERSION} == 1.7
+.if ${JAVA_PORT_VERSION:M*7*}
 PLIST_SUB+=	JDK17=""
 .else
 PLIST_SUB+=	JDK17="@comment "
