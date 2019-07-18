@@ -1,0 +1,4 @@
+Fog::Gridscale is a library that can be used as a module for fog or as
+standalone gridscale provider.
+
+WWW: https://github.com/gridscale/fog-gridscale
