@@ -6,7 +6,7 @@ PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	gblach@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert UCL config file to desired format
 
 LICENSE=	BSD2CLAUSE
