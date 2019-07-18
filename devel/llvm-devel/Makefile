@@ -27,7 +27,7 @@ BUILD_DEPENDS=
 USES=		cmake compiler:c++11-lib libedit perl5 \
 		shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
-_USES_PYTHON?=	python:build:3.6
+_USES_PYTHON?=	python:build,3.6
 USES+=		${_USES_PYTHON}
 SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
 		tools/clang/utils/hmaptool/hmaptool \
