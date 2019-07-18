@@ -39,8 +39,8 @@ x509_CONFLICTS_INSTALL=		openssh-portable openssh-portable-hpn \
 				openssh-portable-gssapi
 x509_PKGNAMESUFFIX=		-portable-x509
 
-GSSAPI_BROKEN=		GSSAPI not yet updated for ${DISTVERSION}
-X509_BROKEN=		X509 not yet updated for ${DISTVERSION} - Does anyone use this? Contact maintainer bdrewery@FreeBSD.org
+gssapi_BROKEN=		GSSAPI not yet updated for ${DISTVERSION}
+x509_BROKEN=		X509 not yet updated for ${DISTVERSION} - Does anyone use this? Contact maintainer bdrewery@FreeBSD.org
 OPTIONS_DEFINE=		DOCS PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN X509 KERB_GSSAPI \
 			LDNS NONECIPHER XMSS
