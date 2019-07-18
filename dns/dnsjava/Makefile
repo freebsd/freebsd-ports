@@ -23,12 +23,12 @@ DOCS_ALL_TARGET=	docs
 
 .include <bsd.port.pre.mk>
 
-.if ${JAVA_PORT_VERSION} == "1.6.0"
+.if ${JAVA_PORT_VERSION:M*6*}
 PLIST_SUB+=	JDK6=""
 .else
 PLIST_SUB+=	JDK6="@comment "
 .endif
-.if ${JAVA_PORT_VERSION} == "1.8.0"
+.if ${JAVA_PORT_VERSION:M*8*}
 PLIST_SUB+=	JDK8=""
 .else
 PLIST_SUB+=	JDK8="@comment "
