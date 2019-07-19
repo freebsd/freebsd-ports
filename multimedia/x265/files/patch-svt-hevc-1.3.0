@@ -1,0 +1,53 @@
+encoderColorFormat, tileColumnCount, etc. were added after 1.3.0, so omit it for now.
+
+source/x265.cpp:570:13: error: no member named 'encoderColorFormat' in 'EB_H265_ENC_CONFIGURATION'
+                svtParam->encoderColorFormat = (EB_COLOR_FORMAT)param->internalCsp;
+                ~~~~~~~~  ^
+source/x265.cpp:570:35: error: use of undeclared identifier 'EB_COLOR_FORMAT'
+                svtParam->encoderColorFormat = (EB_COLOR_FORMAT)param->internalCsp;
+                                                ^
+source/common/param.cpp:2505:19: error: no member named 'tileColumnCount' in 'EB_H265_ENC_CONFIGURATION'
+    svtHevcParam->tileColumnCount = 1;
+    ~~~~~~~~~~~~  ^
+source/common/param.cpp:2506:19: error: no member named 'tileRowCount' in 'EB_H265_ENC_CONFIGURATION'
+    svtHevcParam->tileRowCount = 1;
+    ~~~~~~~~~~~~  ^
+source/common/param.cpp:2507:19: error: no member named 'tileSliceMode' in 'EB_H265_ENC_CONFIGURATION'
+    svtHevcParam->tileSliceMode = 0;
+    ~~~~~~~~~~~~  ^
+source/common/param.cpp:2508:19: error: no member named 'unrestrictedMotionVector' in 'EB_H265_ENC_CONFIGURATION'
+    svtHevcParam->unrestrictedMotionVector = 1;
+    ~~~~~~~~~~~~  ^
+
+--- source/common/param.cpp.orig	2019-07-08 11:10:19 UTC
++++ source/common/param.cpp
+@@ -2454,7 +2454,6 @@ void svt_param_default(x265_param* param)
+     svtHevcParam->frameRateNumerator = 0;
+     svtHevcParam->frameRateDenominator = 0;
+     svtHevcParam->encoderBitDepth = 8;
+-    svtHevcParam->encoderColorFormat = EB_YUV420;
+     svtHevcParam->compressedTenBitFormat = 0;
+     svtHevcParam->rateControlMode = 0;
+     svtHevcParam->sceneChangeDetection = 1;
+@@ -2502,11 +2501,6 @@ void svt_param_default(x265_param* param)
+     svtHevcParam->logicalProcessors = 0;
+     svtHevcParam->switchThreadsToRtPriority = 1;
+     svtHevcParam->fpsInVps = 0;
+-
+-    svtHevcParam->tileColumnCount = 1;
+-    svtHevcParam->tileRowCount = 1;
+-    svtHevcParam->tileSliceMode = 0;
+-    svtHevcParam->unrestrictedMotionVector = 1;
+ }
+ 
+ int svt_set_preset_tune(x265_param* param, const char* preset, const char* tune)
+--- source/x265.cpp.orig	2019-07-08 11:10:19 UTC
++++ source/x265.cpp
+@@ -567,7 +567,6 @@ bool CLIOptions::parse(int argc, char **argv)
+         svtParam->frameRateNumerator = param->fpsNum;
+         svtParam->frameRateDenominator = param->fpsDenom;
+         svtParam->framesToBeEncoded = param->totalFrames;
+-		svtParam->encoderColorFormat = (EB_COLOR_FORMAT)param->internalCsp;
+     }
+ #endif
+     
