@@ -1,13 +1,6 @@
 ********************************************************************
 Xastir is now installed.
 
-**** Important ****
-If you are upgrading from v2.0.0 and using the
-"TNC with GPS on AUX port" interface then unless you have a KPC-3+ TNC
-or other TNC that requires a Control-E to be sent to receive GPS data
-you will need to deselect "Send Control-E to receive GPS data?" in
-the interface properties.  D700s and similar do NOT need this setting.
-
 Hop on over to http://www.xastir.org/ for details on getting
 maps and for more information on using Xastir.
 
