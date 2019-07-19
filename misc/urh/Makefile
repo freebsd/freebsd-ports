@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>0:net/py-pyzmq@${PY_FLAVOR}
 
-USES=		fortran python:3.4+ localbase pyqt:5
+USES=		compiler:c++11-lang fortran python:3.4+ localbase pyqt:5
 USE_PYQT=	core gui test widgets
 USE_PYTHON=	distutils cython noflavors autoplist
 
