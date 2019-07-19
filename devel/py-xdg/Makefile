@@ -3,10 +3,9 @@
 #   $MCom: ports/devel/py-xdg/Makefile,v 1.4 2007/09/10 05:35:05 mezz Exp $
 
 PORTNAME=	xdg
-PORTVERSION=	0.25
-PORTREVISION=	1
+PORTVERSION=	0.26
 CATEGORIES=	devel python
-MASTER_SITES=	https://people.freedesktop.org/~takluyver/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
