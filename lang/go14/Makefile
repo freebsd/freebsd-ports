@@ -2,7 +2,7 @@
 
 PORTNAME=	go14
 PORTVERSION=	1.4.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	https://dl.google.com/go/
 DISTNAME=	go1.4-bootstrap-20171003
@@ -15,28 +15,12 @@ LICENSE=	BSD3CLAUSE
 ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
 
 USES=		compiler shebangfix
-SHEBANG_LANG=	sh perl
-SHEBANG_FILES=	src/*.bash \
-		src/cmd/go/*.bash \
-		doc/progs/run \
-		doc/articles/wiki/*.bash \
-		test/bench/shootout/timing.sh \
-		misc/nacl/*_exec misc/benchcmp \
-		src/net/http/cgi/testdata/*.cgi \
-		src/regexp/syntax/*.pl \
-		lib/codereview/*.sh
 
-sh_OLD_CMD=	"/usr/bin/env bash"
-sh_CMD=		${SH}
+SHEBANG_GLOB=	*.bash *.pl *.cgi
 
 WRKSRC=		${WRKDIR}/go
 
 .include <bsd.port.pre.mk>
-
-# If cc is clang, change it to clang to help Go identify the compiler
-.if ${COMPILER_TYPE} == "clang" && ${CC} == "cc"
-CC=clang
-.endif
 
 .if ${ARCH} == i386
 GOARCH=386
@@ -56,15 +40,19 @@ PLIST_SUB+=	ARCH=${GOARCH} \
 
 post-patch:
 	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete
+	@${REINPLACE_CMD} -e 's|^if ulimit -T|false \&\& &|' ${WRKSRC}/src/run.bash
+	@${REINPLACE_CMD} -e 's|<<<.int main() {}.|< $$\(echo "int main() {}"\)|' ${WRKSRC}/src/run.bash
 
 do-build:
 	cd ${WRKSRC}/src && \
-		CC=${CC} \
 		GOROOT=${WRKSRC} GOROOT_FINAL=${PREFIX}/go14 \
 		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:tl} \
 		GO386=387 \
 		CGO_ENABLED=0 \
 		${SH} make.bash
+	${RM} ${WRKSRC}/.[a-z]* ${WRKSRC}/favicon.ico ${WRKSRC}/robots.txt
+	${RM} -r ${WRKSRC}/lib/codereview ${WRKSRC}/misc \
+		${WRKSRC}/pkg/obj ${WRKSRC}/pkg/${OPSYS:tl}_${GOARCH}/cmd
 
 do-install:
 	@${CP} -a ${WRKSRC} ${STAGEDIR}${PREFIX}/go14
