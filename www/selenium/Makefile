@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	selenium
-PORTVERSION=	3.13.0
+PORTVERSION=	3.141.59
 CATEGORIES=	www devel java
-MASTER_SITES=	http://selenium-release.storage.googleapis.com/3.13/
+MASTER_SITES=	http://selenium-release.storage.googleapis.com/3.141/
 DISTNAME=	selenium-server-standalone-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
@@ -32,7 +32,7 @@ SUB_LIST+=	JAVA_HOME=${JAVA_HOME} \
 		SELENIUM_VERSION=${PORTVERSION}
 
 PLIST_FILES=	\@dir\(${USERS},${GROUPS},\)\ selenium \
-		%%DATADIR%%/${DISTNAME}${EXTRACT_SUFX}
+		${DATADIR}/${DISTNAME}${EXTRACT_SUFX}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${SELENIUM_HOME}
