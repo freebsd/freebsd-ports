@@ -32,7 +32,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 RUN_DEPENDS=	bash:shells/bash	\
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		alias cmake gl jpeg localbase python:2.7 qt:5 shebangfix
+USES=		alias cmake compiler:c11 gl jpeg localbase python:2.7 qt:5 shebangfix
 USE_QT=		core gui help network sql widgets x11extras xmlpatterns \
 		buildtools_build qmake_build
 USE_GL=		gl glu
