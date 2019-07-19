@@ -1,6 +1,6 @@
---- hangul/hangulctype.c.orig	2011-08-28 10:06:23.000000000 -0400
-+++ hangul/hangulctype.c	2013-12-24 17:50:52.000000000 -0500
-@@ -518,6 +518,10 @@
+--- hangul/hangulctype.c.orig	2011-10-16 15:03:13 UTC
++++ hangul/hangulctype.c
+@@ -518,6 +518,10 @@ hangul_jamo_to_cjamo(ucschar c)
  	0x0000,     /* 0xd7c4 */
  	0x0000,     /* 0xd7c5 */
  	0x0000,     /* 0xd7c6 */
