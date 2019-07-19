@@ -1,4 +1,6 @@
-============================================================
+[
+{ type: install
+  message: <<EOD
 To use doas,
 
 %%PREFIX%%/etc/doas.conf
@@ -6,4 +8,6 @@ To use doas,
 must be created.
 
 Refer to doas.conf(5).
-============================================================
+EOD
+}
+]
