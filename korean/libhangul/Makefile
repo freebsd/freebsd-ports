@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/check.pc:devel/check
 
+USES=		autoreconf iconv libtool pathfix pkgconfig
+
 GH_ACCOUNT=	choehwanjin
 GH_TAGNAME=	9fe2d4e
 USE_GITHUB=	yes
@@ -22,12 +24,13 @@ GNU_CONFIGURE=	yes
 TEST_TARGET=	test
 TEST_WRKSRC=	${WRKSRC}/test
 USE_LDCONFIG=	yes
-USES=		autoreconf iconv libtool pathfix pkgconfig
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
+
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
+NLS_USES_OFF=	gettext-tools
 
 post-test:
 	@${TEST_WRKSRC}/test
