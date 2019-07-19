@@ -12,7 +12,7 @@ COMMENT=	Multi platform Qt notification framework
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL-3
 
-USES=		cmake kde:5 qt:5
+USES=		cmake compiler:c++11-lang kde:5 qt:5
 USE_KDE=	ecm
 USE_QT=		core dbus gui network widgets buildtools_build qmake_build
 USE_GITHUB=	yes
