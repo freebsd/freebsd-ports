@@ -38,10 +38,10 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS?=	libx264.so:multimedia/libx264
 
 X264_BUILD=	157
-X264_REV=	2945
-X264_COMMIT=	72db437770fd1ce3961f624dd57a8e75ff65ae0b
+X264_REV=	2980
+X264_COMMIT=	34c06d1c17ad968fbdda153cb772f77ee31b3095
 X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
-X264_SNAPSHOT=	20190311
+X264_SNAPSHOT=	20190719
 
 USES?=		pkgconfig
 USES+=		gmake localbase shebangfix tar:bzip2
