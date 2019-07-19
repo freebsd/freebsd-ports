@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.txt
 
 # Configure script is written in perl
-USES=		cpe gmake perl5
+USES=		compiler:c++11-lang cpe gmake perl5
 USE_GITHUB=	yes
 USE_PERL5=	build
 
