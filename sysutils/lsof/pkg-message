@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOD
 NOTE: Due to the way the FreeBSD build clusters make packages,
 you may see a warning similar to the following:
 
@@ -8,3 +11,6 @@ corresponding kernel installed, so they don't know that the kernel version is di
 
 This warning can be ignored if you are using a system that is updated via freebsd-update
 and are using pre-built packages. 
+EOD
+}
+]
