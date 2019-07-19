@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://storage.googleapis.com/collectd-tarballs/
 PKGNAMESUFFIX=	5
@@ -84,27 +84,24 @@ LIBS+=		-L${LOCALBASE}/lib
 
 # NOTE: Plugins without dependencies are defined further down.
 CONFIGURE_ARGS=	--disable-all-plugins \
+		--disable-amqp \
 		--disable-ceph \
 		--disable-cgroups \
 		--disable-fhcount \
+		--disable-lvm \
 		--disable-static \
 		--disable-turbostat \
 		--enable-disk \
 		--localstatedir=/var \
-		--without-amqp \
 		--without-libaquaero5 \
 		--without-libganglia \
 		--without-libiptc \
-		--without-libkstat \
 		--without-libldap \
 		--without-liblvm2app \
 		--without-libmnl \
 		--without-libnetapp \
-		--without-libnetlink \
 		--without-libowcapi \
-		--without-libperfstat \
 		--without-libsensors \
-		--without-lvm \
 		--without-mic \
 		--without-oracle
 
@@ -130,13 +127,13 @@ JAVA_CONFIGURE_ENABLE=	java
 JAVA_CONFIGURE_WITH=	java=${LOCALBASE} libjvm
 
 DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
-DBI_CONFIGURE_WITH=	libdbi=${LOCALBASE}
+DBI_CONFIGURE_ENABLE=	libdbi=${LOCALBASE}
 DBI_CONFIGURE_ENABLE=	dbi
 DBI_CFLAGS=		-Wno-deprecated-declarations
 
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 			libgpg-error.so:security/libgpg-error
-GCRYPT_CONFIGURE_WITH=	-with-libgcrypt=${LOCALBASE}
+GCRYPT_CONFIGURE_WITH=	libgcrypt=${LOCALBASE}
 GCRYPT_LIBS=		-lgcrypt
 
 IPMI_LIB_DEPENDS=	libOpenIPMI.so:sysutils/openipmi
@@ -250,8 +247,9 @@ SIGROK_USE=			GNOME=glib20
 SIGROK_CFLAGS=			`pkg-config --cflags glib-2.0`
 SIGROK_LIB_DEPENDS=		libsigrok.so:devel/libsigrok
 SIGROK_CONFIGURE_ENABLE=	sigrok
-SIGROK_CONFIGURE_WITH=		libsigrok
+SIGROK_CONFIGURE_WITH=		libsigrok=${LOCALBASE}
 SIGROK_USES=			gettext-runtime
+SIGROK_BROKEN=			fails to configure with sigrok option
 
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_ENABLE=	snmp
@@ -276,8 +274,9 @@ VIRT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 VIRT_CONFIGURE_ENABLE=	virt
 VIRT_CONFIGURE_WITH=	virt=${LOCALBASE}
 
+XML_CFLAGS=		`pkg-config --cflags libxml-2.0`
 XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2
-XML_CONFIGURE_WITH=	libxml2=${LOCALBASE}
+XML_CONFIGURE_WITH=	libxml2
 
 ZOOKEEPER_LIB_DEPENDS=		libzookeeper_mt.so:devel/libzookeeper
 ZOOKEEPER_CONFIGURE_ENABLE=	zookeeper
