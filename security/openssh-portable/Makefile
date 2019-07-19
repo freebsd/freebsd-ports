@@ -39,7 +39,6 @@ x509_CONFLICTS_INSTALL=		openssh-portable openssh-portable-hpn \
 				openssh-portable-gssapi
 x509_PKGNAMESUFFIX=		-portable-x509
 
-gssapi_BROKEN=		GSSAPI not yet updated for ${DISTVERSION}
 x509_BROKEN=		X509 not yet updated for ${DISTVERSION} - Does anyone use this? Contact maintainer bdrewery@FreeBSD.org
 OPTIONS_DEFINE=		DOCS PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN X509 KERB_GSSAPI \
@@ -101,7 +100,7 @@ ETCDIR?=		${PREFIX}/etc/ssh
 
 .include <bsd.port.pre.mk>
 
-PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509,hpn,gsskex
+PATCH_SITES+=	http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509,hpn,gsskex
 
 # X509 patch includes TCP Wrapper support already
 .if ${PORT_OPTIONS:MX509}
@@ -111,16 +110,19 @@ EXTRA_PATCHES:=		${EXTRA_PATCHES:N${TCP_WRAPPERS_EXTRA_PATCHES}}
 # Must add this patch before HPN due to conflicts
 .if ${PORT_OPTIONS:MKERB_GSSAPI}
 #BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
-# Patch from:
-# https://sources.debian.org/data/main/o/openssh/1:7.7p1-2/debian/patches/gssapi.patch
-# which was originally based on 5.7 patch from
-# http://www.sxw.org.uk/computing/patches/
-# It is mirrored simply to apply gzip -9.
 .  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
 # Needed glue for applying HPN patch without conflict
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-hpn-gss-glue
 .  endif
-PATCHFILES+=	openssh-7.9p1-gsskex-all-20141021-debian-rh-20181020.patch.gz:-p1:gsskex
+# - See https://sources.debian.org/data/main/o/openssh/ for which subdir to
+# pull from.
+GSSAPI_DEBIAN_SUBDIR=	${DISTVERSION}-3
+# - Debian does not use a versioned filename so we trick fetch to make one for
+# us with the ?<anything>=/ trick.
+PATCH_SITES+=	https://sources.debian.org/data/main/o/openssh/1:${GSSAPI_DEBIAN_SUBDIR}/debian/patches/gssapi.patch?dummy=/:gsskex
+# Bump this when updating the patch location
+GSSAPI_UPDATE_DATE=	20190719
+PATCHFILES+=	openssh-${DISTVERSION}-gsskex-all-20141021-debian-rh-${GSSAPI_UPDATE_DATE}.patch:-p1:gsskex
 .endif
 
 # https://www.psc.edu/hpn-ssh https://github.com/rapier1/openssh-portable/tree/hpn-openssl1.1-7_7_P1
