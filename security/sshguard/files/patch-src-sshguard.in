@@ -1,8 +1,0 @@
---- src/sshguard.in.orig	2018-07-08 18:07:01 UTC
-+++ src/sshguard.in
-@@ -96,4 +96,4 @@ elif [ -z "$tailcmd" ]; then
- fi
- 
- eval $tailcmd | $libexec/sshg-parser | \
--    $libexec/sshg-blocker $flags | ($BACKEND; kill -PIPE $$)
-+    $libexec/sshg-blocker $flags | ($BACKEND ; pkill -PIPE -P $$)
