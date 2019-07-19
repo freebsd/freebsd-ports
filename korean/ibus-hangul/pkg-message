@@ -29,7 +29,3 @@ export QT_IM_MODULE=xim
 export XMODIFIERS=@im=ibus
 export XIM_PROGRAM="ibus-daemon"
 export XIM_ARGS="-r --daemonize --xim"
-
-If ibus cannot start or the panel does not appear, please ensure
-that you are using up-to-date python.
-There's a bug in python 2.5, which may prevent the panel from appearing.
