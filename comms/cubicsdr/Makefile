@@ -21,7 +21,7 @@ LIB_DEPENDS=	libSoapySDR.so:misc/soapysdr \
 		libEGL.so:graphics/mesa-libs \
 		libwx_gtk3u_core-3.1.so:x11-toolkits/wxgtk31
 
-USES=		cmake gl python
+USES=		cmake compiler:c++0x gl python
 USE_GL+=	glu
 
 OPTIONS_DEFINE=	HAMLIB
