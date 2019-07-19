@@ -772,7 +772,10 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/i.ortho.camera.html
 %%GRASS_INST_DIR%%/docs/html/i.ortho.elev.html
 %%GRASS_INST_DIR%%/docs/html/i.ortho.init.html
+%%GRASS_INST_DIR%%/docs/html/i.ortho.photo.html
 %%GRASS_INST_DIR%%/docs/html/i.ortho.rectify.html
+%%GRASS_INST_DIR%%/docs/html/i.ortho.target.html
+%%GRASS_INST_DIR%%/docs/html/i.ortho.transform.html
 %%GRASS_INST_DIR%%/docs/html/i.pansharpen.html
 %%GRASS_INST_DIR%%/docs/html/i.pca.html
 %%GRASS_INST_DIR%%/docs/html/i.rectify.html
@@ -1901,7 +1904,10 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/i.ortho.camera.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.ortho.elev.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.ortho.init.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/i.ortho.photo.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.ortho.rectify.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/i.ortho.target.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/i.ortho.transform.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.pansharpen.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.pca.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.rectify.1.gz
