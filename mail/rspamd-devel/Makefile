@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	1.9.1.a1.20190316
-PORTREVISION=	1
+PORTVERSION=	2.0.a1.20190719
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -13,9 +12,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libevent.so:devel/libevent \
 		libluajit-5.1.so:lang/luajit \
-		libicui18n.so:devel/icu
+		libicui18n.so:devel/icu \
+		libsodium.so:security/libsodium
 BUILD_DEPENDS=	ragel:devel/ragel
 RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 
@@ -30,26 +29,17 @@ CONFLICTS_INSTALL=	rspamd
 USERS=		rspamd
 GROUPS=		rspamd
 
-OPTIONS_DEFINE=		GPERF GD CGP TORCH_BLAS
+OPTIONS_DEFINE=		CGP GPERF
 OPTIONS_DEFINE_amd64=	HYPERSCAN
-OPTIONS_DEFAULT_amd64=	TORCH
 OPTIONS_SUB=	yes
 
-OPTIONS_RADIO=	NEURAL_NETWORK
-OPTIONS_RADIO_NEURAL_NETWORK=	FANN TORCH
-
 CGP_DESC=		Install Communigate Pro(tm) helper
-GD_DESC=		Enable libgd support for images fuzzy hashes
 GPERF_DESC=		Google perf-tools profiling
 HYPERSCAN_DESC=		Use hyperscan optimizations (amd64 only)
-FANN_DESC=		Use Fast Artificial Neural Network Library (FANN)
-TORCH_DESC=		Machine learning support using torch
-TORCH_BLAS_DESC=	Build torch with OpenBLAS
-TORCH_BLAS_IMPLIES=	TORCH
 
 SUB_FILES=	pkg-message rspamd.newsyslog.conf.sample
 PLIST_SUB+=	ETCDIR=etc/rspamd \
-		RSPAMDVERSION=${PORTVERSION:C/^([^.]+\.[^.]+\.[^.]+).*/\1/}
+		RSPAMDVERSION=${PORTVERSION:C/^([^.]+\.[^.]+).*/\1/}
 CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DLOGDIR=/var/log/rspamd \
 		-DDBDIR=/var/db/rspamd \
@@ -58,34 +48,21 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 		-DBUILD_PORT=yes \
 		-DLIBDIR=${PREFIX}/lib/rspamd \
-		-DNO_SHARED=ON \
 		-DDEBUG=ON \
 		-DGIT_ID=${GH_TAGNAME}
 USE_GITHUB=	yes
-GH_TAGNAME=	dbfdd2b
+GH_TAGNAME=	06a167b
 
 DEBUG_FLAGS=	-g -O0
 WITH_DEBUG=	yes
 
 USE_RC_SUBR=	rspamd
 
-GD_CMAKE_ON=	-DENABLE_GD=ON
-GD_LIB_DEPENDS=	libgd.so:graphics/gd
-
 GPERF_CMAKE_ON=	-DENABLE_GPERF_TOOLS=ON
 GPERF_LIB_DEPENDS=	libprofiler.so:devel/google-perftools
 
 HYPERSCAN_CMAKE_ON=	-DENABLE_HYPERSCAN=ON
 HYPERSCAN_LIB_DEPENDS=	libhs.so:devel/hyperscan
-
-FANN_CMAKE_ON=	-DENABLE_FANN=ON
-FANN_LIB_DEPENDS=libfann.so:math/fann
-
-TORCH_CMAKE_ON=	-DENABLE_TORCH=ON
-TORCH_CMAKE_OFF=-DENABLE_TORCH=OFF
-
-TORCH_BLAS_USES=	blaslapack:openblas
-TORCH_BLAS_CMAKE_ON=	-DWITH_BLAS=open
 
 CGP_RUN_DEPENDS+=	\
 	p5-AnyEvent-HTTP>=0:www/p5-AnyEvent-HTTP \
@@ -94,10 +71,6 @@ CGP_RUN_DEPENDS+=	\
 	p5-JSON-XS>=0:converters/p5-JSON-XS
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTORCH_BLAS}
-USE_GCC=	yes
-.endif
 
 post-install:
 	@${MKDIR} \
