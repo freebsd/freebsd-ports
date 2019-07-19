@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmsgpuck.so:devel/msgpuck
 
-USES=		cmake compiler
+USES=		cmake compiler:c11
 
 CMAKE_OFF=	ENABLE_BUNDLED_DOCS ENABLE_BUNDLED_MSGPUCK
 
