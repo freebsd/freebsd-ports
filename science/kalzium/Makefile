@@ -13,7 +13,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/facile/facile.a:math/facile \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:science/chemical-mime-data
 
-USES=		cmake desktop-file-utils gettext kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
+		pkgconfig qt:5 tar:xz
 USE_GL=		gl glew glu
 USE_KDE=	auth archive attica bookmarks codecs completion config configwidgets \
 		coreaddons crash doctools ecm emoticons guiaddons i18n \
