@@ -86,6 +86,7 @@ lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_health_check.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_hipe.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_lager.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_limiter.beam
+lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_log_tail.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_looking_glass.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_memory_monitor.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_metrics.beam
