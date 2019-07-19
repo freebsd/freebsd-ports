@@ -12849,3 +12849,4 @@ misc/tcb||2019-07-13|Has expired: Abandonware that uses sys/dir.h
 editors/xed||2019-07-13|Has expired: Abandonware using sys/dir.h
 databases/gtksql||2019-07-13|Has expired: Abandonware using sys/dir.h
 security/snortreport||2019-07-16|Has expired: Abandonware
+databases/pecl-redis3|databases/pecl-redis|2019-07-19|No longer needed after PHP 5 removal
