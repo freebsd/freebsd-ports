@@ -19,7 +19,8 @@ LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		autoreconf gettext gmake pathfix pkgconfig
+USES=		autoreconf compiler:c++11-lang gettext gmake gnome pathfix \
+		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GIMPTOOL=${LOCALBASE}/bin/gimptool-2.0
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
