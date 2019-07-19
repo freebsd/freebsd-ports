@@ -14,6 +14,17 @@ FREETYPE_PROPERTIES=truetype:interpreter-version=35 \
 This allows to select, say, the subpixel hinting mode at runtime for a given
 application.
 
+If LONG_PCF_NAMES port's option was enabled, the PCF family names may include
+the foundry and information whether they contain wide characters. For example,
+"Sony Fixed" or "Misc Fixed Wide", instead of "Fixed". This can be disabled at
+run time with using pcf:no-long-family-names property, if needed. Example:
+
+FREETYPE_PROPERTIES=pcf:no-long-family-names=1
+
+How to recreate fontconfig cache with using such environment variable,
+if needed:
+# env FREETYPE_PROPERTIES=pcf:no-long-family-names=1 fc-cache -fsv
+
 The controllable properties are listed in the section "Controlling FreeType
 Modules" in the reference's table of contents
 (%%DOCSDIR%%/reference/site/index.html, if documentation was installed).
