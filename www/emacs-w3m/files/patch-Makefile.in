@@ -1,15 +1,15 @@
---- Makefile.in.orig	2017-12-31 05:59:39 UTC
+--- Makefile.in.orig	2019-07-18 23:39:24 UTC
 +++ Makefile.in
-@@ -66,7 +66,7 @@ install-ja: install-lisp install-info-ja
+@@ -59,7 +59,7 @@ install-ja: install-lisp install-info-ja
  
  install-lisp: lisp
  	@$(SHELL) $(srcdir)/mkinstalldirs "$(DESTDIR)$(lispdir)";\
--	for p in ChangeLog ChangeLog.[1-9] ChangeLog.[1-9][0-9] *.el; do\
-+	for p in *.el; do\
+-	for p in ChangeLog ChangeLog.[1-9] ChangeLog.[1-9][0-9] *.el .dir-locals.el; do\
++	for p in *.el ; do\
  	  if test -f "$$p"; then\
  	    case "$$p" in\
  	      $(IGNORES)) ;;\
-@@ -93,7 +93,7 @@ install-lisp: lisp
+@@ -80,7 +80,7 @@ install-lisp: lisp
  	  fi;\
  	done;\
  	if test -f shimbun/shimbun.elc; then\

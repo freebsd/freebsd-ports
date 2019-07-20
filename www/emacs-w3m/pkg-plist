@@ -323,8 +323,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-bookmark.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-bug.el
 %%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-bug.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-ccl.el
-%%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-ccl.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-cookie.el
 %%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-cookie.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-dtree.el
@@ -367,7 +365,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-symbol.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-tabmenu.el
 %%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-tabmenu.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-ucs.el
 %%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-util.el
 %%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-util.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/w3m/w3m-weather.el
