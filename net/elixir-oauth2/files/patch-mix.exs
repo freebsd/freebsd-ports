@@ -1,10 +1,10 @@
---- mix.exs.orig	2017-02-03 00:24:43 UTC
+--- mix.exs.orig	2019-07-20 15:23:52 UTC
 +++ mix.exs
-@@ -8,7 +8,6 @@ defmodule OAuth2.Mixfile do
-      name: "OAuth2",
-      version: @version,
-      elixir: "~> 1.2",
--     deps: deps(),
-      package: package(),
-      description: description(),
-      docs: docs(),
+@@ -9,7 +9,6 @@ defmodule OAuth2.Mixfile do
+       name: "OAuth2",
+       version: @version,
+       elixir: "~> 1.2",
+-      deps: deps(),
+       package: package(),
+       description: description(),
+       docs: docs(),
