@@ -180,6 +180,7 @@ lib/emscripten/src/library_cyberdwarf.js
 lib/emscripten/src/library_debugger_toolkit.js
 lib/emscripten/src/library_egl.js
 lib/emscripten/src/library_exceptions.js
+lib/emscripten/src/library_exceptions_stub.js
 lib/emscripten/src/library_fetch.js
 lib/emscripten/src/library_formatString.js
 lib/emscripten/src/library_fs.js
@@ -812,6 +813,7 @@ lib/emscripten/system/lib/compiler-rt/lib/asan/asan_blacklist.txt
 lib/emscripten/system/lib/compiler-rt/lib/asan/asan_debugging.cc
 lib/emscripten/system/lib/compiler-rt/lib/asan/asan_descriptions.cc
 lib/emscripten/system/lib/compiler-rt/lib/asan/asan_descriptions.h
+lib/emscripten/system/lib/compiler-rt/lib/asan/asan_emscripten.cc
 lib/emscripten/system/lib/compiler-rt/lib/asan/asan_errors.cc
 lib/emscripten/system/lib/compiler-rt/lib/asan/asan_errors.h
 lib/emscripten/system/lib/compiler-rt/lib/asan/asan_fake_stack.cc
@@ -838,6 +840,7 @@ lib/emscripten/system/lib/compiler-rt/lib/asan/asan_malloc_local.h
 lib/emscripten/system/lib/compiler-rt/lib/asan/asan_malloc_mac.cc
 lib/emscripten/system/lib/compiler-rt/lib/asan/asan_malloc_win.cc
 lib/emscripten/system/lib/compiler-rt/lib/asan/asan_mapping.h
+lib/emscripten/system/lib/compiler-rt/lib/asan/asan_mapping_emscripten.h
 lib/emscripten/system/lib/compiler-rt/lib/asan/asan_mapping_myriad.h
 lib/emscripten/system/lib/compiler-rt/lib/asan/asan_memory_profile.cc
 lib/emscripten/system/lib/compiler-rt/lib/asan/asan_new_delete.cc
@@ -952,9 +955,9 @@ lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_allocator.cc
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_allocator.h
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_common.cc
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_common.h
+lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_common_emscripten.cc
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_common_linux.cc
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_common_mac.cc
-lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_emscripten.cc
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_flags.inc
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_interceptors.cc
 lib/emscripten/system/lib/compiler-rt/lib/lsan/lsan_linux.cc
@@ -1205,7 +1208,14 @@ lib/emscripten/system/lib/libc-extras.symbols
 lib/emscripten/system/lib/libc-wasm.symbols
 lib/emscripten/system/lib/libc.symbols
 lib/emscripten/system/lib/libc/README.md
+lib/emscripten/system/lib/libc/emscripten_asan_fcntl.c
+lib/emscripten/system/lib/libc/emscripten_asan_memchr.c
+lib/emscripten/system/lib/libc/emscripten_asan_strchrnul.c
+lib/emscripten/system/lib/libc/emscripten_asan_strcpy.c
+lib/emscripten/system/lib/libc/emscripten_asan_strlen.c
 lib/emscripten/system/lib/libc/emscripten_memcpy.c
+lib/emscripten/system/lib/libc/emscripten_memmove.c
+lib/emscripten/system/lib/libc/emscripten_memset.c
 lib/emscripten/system/lib/libc/extras.c
 lib/emscripten/system/lib/libc/musl/COPYRIGHT
 lib/emscripten/system/lib/libc/musl/INSTALL
