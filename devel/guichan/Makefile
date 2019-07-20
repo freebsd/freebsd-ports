@@ -13,7 +13,7 @@ COMMENT=	Small, efficient C++ GUI library designed for games
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pathfix libtool localbase:ldflags
+USES=		compiler:c++11-lang gmake pathfix libtool localbase:ldflags
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
