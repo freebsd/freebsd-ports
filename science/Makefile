@@ -163,6 +163,7 @@
     SUBDIR += msms
     SUBDIR += multiwfn
     SUBDIR += namd
+    SUBDIR += ncnn
     SUBDIR += nest
     SUBDIR += netcdf
     SUBDIR += netcdf-cxx
