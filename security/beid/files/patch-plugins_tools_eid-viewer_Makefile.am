@@ -1,10 +1,10 @@
---- plugins_tools/eid-viewer/Makefile.am.orig	2018-10-02 14:14:29 UTC
+--- plugins_tools/eid-viewer/Makefile.am.orig	2019-07-11 14:08:46 UTC
 +++ plugins_tools/eid-viewer/Makefile.am
-@@ -197,7 +197,9 @@ dist_trust_DATA = \
+@@ -200,7 +200,9 @@ dist_trust_DATA = \
  	certs/belgiumrca4.pem
  
  install-data-hook:
--	$(SSL_PREFIX)/bin/openssl rehash $(DESTDIR)/$(trustdir)
+-	if ( $(SSL_PREFIX)/bin/openssl help | grep -q rehash); then $(SSL_PREFIX)/bin/openssl rehash $(DESTDIR)/$(trustdir); else $(SSL_PREFIX)/bin/c_rehash $(DESTDIR)/$(trustdir); fi
 +	(cd $(DESTDIR)$(trustdir) && for i in *.pem; do \
 +	ln -sfh $$i $$($(SSL_PREFIX)/bin/openssl x509 -hash -noout -in $$i).0; \
 +	done)
