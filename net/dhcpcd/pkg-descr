@@ -2,4 +2,4 @@ dhcpcd is a DHCP/IPv4LL/IPv6RS/DHCPv6 client.
 It can also act as a network manager, responding to new interfaces,
 listening for carrier up/down events and managing routes.
 
-WWW: http://roy.marples.name/projects/dhcpcd
+WWW: https://roy.marples.name/projects/dhcpcd
