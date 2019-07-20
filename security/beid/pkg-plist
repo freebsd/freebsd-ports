@@ -49,4 +49,6 @@ share/icons/hicolor/512x512/apps/eid-viewer.png
 %%NLS%%share/locale/fr/LC_MESSAGES/eid-viewer.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/dialogs-beid.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/eid-viewer.mo
+share/metainfo/be.belgium.eid.eidmw.metainfo.xml
+share/metainfo/eid-viewer.appdata.xml
 share/p11-kit/modules/beid.module
