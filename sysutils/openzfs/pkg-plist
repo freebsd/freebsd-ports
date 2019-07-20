@@ -208,6 +208,7 @@ include/libzfs/sys/sdt.h
 include/libzfs/sys/sha2.h
 include/libzfs/sys/skein.h
 include/libzfs/sys/spa.h
+include/libzfs/sys/spa_log_spacemap.h
 include/libzfs/sys/spa_boot.h
 include/libzfs/sys/spa_checkpoint.h
 include/libzfs/sys/spa_checksum.h
@@ -226,6 +227,7 @@ include/libzfs/sys/trace_dbuf.h
 include/libzfs/sys/trace_dmu.h
 include/libzfs/sys/trace_dnode.h
 include/libzfs/sys/trace_multilist.h
+include/libzfs/sys/trace_rrwlock.h
 include/libzfs/sys/trace_txg.h
 include/libzfs/sys/trace_vdev.h
 include/libzfs/sys/trace_zil.h
@@ -388,6 +390,7 @@ man/man1/raidz_test.1.gz
 man/man1/test-runner.1.gz
 man/man1/zhack.1.gz
 man/man1/ztest.1.gz
+man/man1/zvol_wait.1.gz
 man/man5/spl-module-parameters.5.gz
 man/man5/vdev_id.conf.5.gz
 man/man5/zfs-events.5.gz
@@ -413,11 +416,6 @@ sbin/zinject
 sbin/zpool
 sbin/zstreamdump
 sbin/ztest
-share/initramfs-tools/conf-hooks.d/zfs
-share/initramfs-tools/conf.d/zfs
-share/initramfs-tools/hooks/zfs
-share/initramfs-tools/scripts/local-top/zfs
-share/initramfs-tools/scripts/zfs
 share/pkgconfig/libzfs.pc
 share/pkgconfig/libzfs_core.pc
 share/zfs/common.sh
@@ -723,7 +721,9 @@ share/zfs/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_013_pos.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_014_pos.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_common.kshlib
 share/zfs/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_crypt_combos.ksh
+share/zfs/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_dryrun.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_encrypted.ksh
+share/zfs/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_verbose.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zfs_destroy/cleanup.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zfs_destroy/setup.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zfs_destroy/zfs_destroy.cfg
@@ -803,6 +803,7 @@ share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_all_fail.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_all_mountpoints.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_encrypted.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_remount.ksh
+share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_test_race.sh
 share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_multi_mount.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zfs_program/cleanup.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zfs_program/setup.ksh
@@ -1236,12 +1237,8 @@ share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_vdevs.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_wholedisk.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/cleanup.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/setup.ksh
-share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_-c_disable.ksh
-share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_-c_homedir.ksh
-share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_-c_searchpath.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_001_pos.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_002_pos.ksh
-share/zfs/zfs-tests/tests/functional/cli_root/zpool_status/zpool_status_003_pos.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zpool_sync/cleanup.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zpool_sync/setup.ksh
 share/zfs/zfs-tests/tests/functional/cli_root/zpool_sync/zpool_sync_001_pos.ksh
@@ -1403,6 +1400,12 @@ share/zfs/zfs-tests/tests/functional/cli_user/zpool_list/cleanup.ksh
 share/zfs/zfs-tests/tests/functional/cli_user/zpool_list/setup.ksh
 share/zfs/zfs-tests/tests/functional/cli_user/zpool_list/zpool_list_001_pos.ksh
 share/zfs/zfs-tests/tests/functional/cli_user/zpool_list/zpool_list_002_neg.ksh
+share/zfs/zfs-tests/tests/functional/cli_user/zpool_status/cleanup.ksh
+share/zfs/zfs-tests/tests/functional/cli_user/zpool_status/setup.ksh
+share/zfs/zfs-tests/tests/functional/cli_user/zpool_status/zpool_status_-c_disable.ksh
+share/zfs/zfs-tests/tests/functional/cli_user/zpool_status/zpool_status_-c_homedir.ksh
+share/zfs/zfs-tests/tests/functional/cli_user/zpool_status/zpool_status_-c_searchpath.ksh
+share/zfs/zfs-tests/tests/functional/cli_user/zpool_status/zpool_status_003_pos.ksh
 share/zfs/zfs-tests/tests/functional/compression/cleanup.ksh
 share/zfs/zfs-tests/tests/functional/compression/compress.cfg
 share/zfs/zfs-tests/tests/functional/compression/compress_001_pos.ksh
@@ -1607,6 +1610,7 @@ share/zfs/zfs-tests/tests/functional/link_count/cleanup.ksh
 share/zfs/zfs-tests/tests/functional/link_count/link_count_001.ksh
 share/zfs/zfs-tests/tests/functional/link_count/link_count_root_inode.ksh
 share/zfs/zfs-tests/tests/functional/link_count/setup.ksh
+share/zfs/zfs-tests/tests/functional/log_spacemap/log_spacemap_import_logs.ksh
 share/zfs/zfs-tests/tests/functional/migration/cleanup.ksh
 share/zfs/zfs-tests/tests/functional/migration/migration.cfg
 share/zfs/zfs-tests/tests/functional/migration/migration.kshlib
