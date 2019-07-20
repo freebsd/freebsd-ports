@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOD
 Pulseaudio tries to determine default values for FreeBSD OSS driver at first
 start, based on /dev/sndstat output. The hw.snd.default_unit sysctl may affect
 these values, but restart of the Pulseaudio might be needed to rescan it again,
@@ -17,3 +20,6 @@ Replace the number '3' with the new default you want to set.
 
 The audio/freedesktop-sound-theme is needed if the default sound files
 are uncommented in the %%PREFIX%%/etc/pulse/default.pa file.
+EOD
+}
+]
