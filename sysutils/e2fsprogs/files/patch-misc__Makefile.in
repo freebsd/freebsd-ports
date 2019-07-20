@@ -1,4 +1,4 @@
---- misc/Makefile.in.orig	2018-07-10 05:14:26 UTC
+--- misc/Makefile.in.orig	2019-07-15 01:03:14 UTC
 +++ misc/Makefile.in
 @@ -34,17 +34,17 @@ INSTALL = @INSTALL@
  
@@ -6,7 +6,7 @@
  			$(E2IMAGE_PROG) @FSCK_PROG@ e2undo
 -USPROGS=	mklost+found filefrag e2freefrag $(UUIDD_PROG) \
 +USPROGS=	mklost+found e2freefrag $(UUIDD_PROG) \
- 			$(E4DEFRAG_PROG) $(E4CRYPT_PROG) $(FUSE_PROG)
+ 			$(E4DEFRAG_PROG) $(E4CRYPT_PROG)
  SMANPAGES=	tune2fs.8 mklost+found.8 mke2fs.8 dumpe2fs.8 badblocks.8 \
  			e2label.8 $(FINDFS_MAN) $(BLKID_MAN) $(E2IMAGE_MAN) \
 -			logsave.8 filefrag.8 e2freefrag.8 e2undo.8 \
@@ -16,9 +16,9 @@
  			e2mmpstatus.8
  FMANPAGES=	mke2fs.conf.5 ext4.5
  
--UPROGS=		chattr lsattr @UUID_CMT@ uuidgen
+-UPROGS=		chattr lsattr $(FUSE_PROG) @UUID_CMT@ uuidgen
 -UMANPAGES=	chattr.1 lsattr.1 @UUID_CMT@ uuidgen.1
-+UPROGS=		chattr lsattr
++UPROGS=		chattr lsattr $(FUSE_PROG)
 +UMANPAGES=	chattr.1 lsattr.1
  UMANPAGES+=	@FUSE_CMT@ fuse2fs.1
  
@@ -41,7 +41,7 @@
  		>  default_profile.c
  findsuper: findsuper.o
  	$(E) "	LD $@"
-@@ -600,34 +600,9 @@ install: all $(SMANPAGES) $(UMANPAGES) i
+@@ -600,34 +600,9 @@ install: all $(SMANPAGES) $(UMANPAGES) installdirs
  		(cd $(DESTDIR)$(man5dir); \
  			$(LN) $(LINK_INSTALL_FLAGS) ext4.5 $$i.5); \
  	done

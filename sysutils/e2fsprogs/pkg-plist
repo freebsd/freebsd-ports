@@ -1,5 +1,6 @@
 bin/chattr
 bin/e2fsprogs-compile_et
+%%FUSEFS%%bin/fuse2fs
 bin/lsattr
 etc/mke2fs.conf.dist
 include/e2fsprogs/com_err.h
@@ -77,7 +78,6 @@ sbin/fsck.ext2
 sbin/fsck.ext3
 sbin/fsck.ext4
 sbin/fsck_ext2fs
-%%FUSEFS%%sbin/fuse2fs
 sbin/logsave
 sbin/mke2fs
 sbin/mkfs.ext2
