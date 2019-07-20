@@ -1,6 +1,6 @@
-TIMESTAMP = 1561243668
-SHA256 (bazelbuild-buildtools-0.26.0_GH0.tar.gz) = 86592d703ecbe0c5cbb5139333a63268cf58d7efd2c459c8be8e69e77d135e29
-SIZE (bazelbuild-buildtools-0.26.0_GH0.tar.gz) = 214048
+TIMESTAMP = 1563649356
+SHA256 (bazelbuild-buildtools-0.28.0_GH0.tar.gz) = 5ec71602e9b458b01717fab1d37492154c1c12ea83f881c745dbd88e9b2098d8
+SIZE (bazelbuild-buildtools-0.28.0_GH0.tar.gz) = 218694
 SHA256 (golang-protobuf-v1.3.1_GH0.tar.gz) = 3f3a6123054a9847093c119895f1660612f301fe95358f3a6a1a33fd0933e6cf
 SIZE (golang-protobuf-v1.3.1_GH0.tar.gz) = 310884
 SHA256 (google-skylark-a5f7082_GH0.tar.gz) = afa870e3b20d398c2e377d4dfaf4d43ad198451da047f93c9367c34a6b5cb975
