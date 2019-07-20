@@ -12850,3 +12850,5 @@ editors/xed||2019-07-13|Has expired: Abandonware using sys/dir.h
 databases/gtksql||2019-07-13|Has expired: Abandonware using sys/dir.h
 security/snortreport||2019-07-16|Has expired: Abandonware
 databases/pecl-redis3|databases/pecl-redis|2019-07-19|No longer needed after PHP 5 removal
+www/weblint||2019-07-20|Broken, uses nonexistant perl libraries, and upstream disappeared. Use www/p5-HTML-Lint instead
+www/august||2019-07-20|Uses removed weblint
