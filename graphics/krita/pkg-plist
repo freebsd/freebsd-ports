@@ -117,7 +117,7 @@ lib/kritaplugins/kritaseparatechannels.so
 lib/kritaplugins/kritashearimage.so
 lib/kritaplugins/kritasimplexnoisegenerator.so
 lib/kritaplugins/kritasketchpaintop.so
-lib/kritaplugins/kritasmallcolorselector.so
+%%OPENEXR%%lib/kritaplugins/kritasmallcolorselector.so
 lib/kritaplugins/kritasmalltilesfilter.so
 lib/kritaplugins/kritaspecificcolorselector.so
 lib/kritaplugins/kritaspraypaintop.so
