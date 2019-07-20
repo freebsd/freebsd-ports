@@ -1,6 +1,6 @@
-TIMESTAMP = 1560404812
-SHA256 (havoc-io-mutagen-v0.9.1_GH0.tar.gz) = a13286742d0b58d4c1a9a33c7308a0de056d87ce1d2a9233809f914467f20d60
-SIZE (havoc-io-mutagen-v0.9.1_GH0.tar.gz) = 337467
+TIMESTAMP = 1563650327
+SHA256 (havoc-io-mutagen-v0.9.2_GH0.tar.gz) = 388bbdd23a01566dd3030543f51f1317510a0d187badfe3d930e40d5966b4c93
+SIZE (havoc-io-mutagen-v0.9.2_GH0.tar.gz) = 337590
 SHA256 (bmatcuk-doublestar-85a7880_GH0.tar.gz) = 6d30093611ae3ab83b12b0f9b678290114b189f910d38722be91f8b35b9411f9
 SIZE (bmatcuk-doublestar-85a7880_GH0.tar.gz) = 8238
 SHA256 (BurntSushi-toml-3012a1d_GH0.tar.gz) = 06b9ec2bf3d541346a130de22b0801cff82c789a70a1d1b6efc479882da50be2
