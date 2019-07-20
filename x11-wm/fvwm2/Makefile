@@ -6,7 +6,9 @@ PORTVERSION=	2.6.8
 PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm/releases/download/${PORTVERSION}/ \
-		http://www.fvwm.org/generated/icon_download/
+		http://fvwm.sourceforge.net/generated/icon_download/ \
+		http://cschubert.com/distfiles/ \
+		https://people.freebsd.org/~cy/distfiles/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
