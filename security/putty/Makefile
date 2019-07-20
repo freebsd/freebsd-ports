@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	putty
-PORTVERSION=	0.71
+PORTVERSION=	0.72
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
@@ -34,7 +34,7 @@ CONFLICTS_INSTALL?=	pssh-[0-9]* putty-gtk2-[0-9]* putty-nogtk-[0-9]*
 
 .include <bsd.port.options.mk>
 
-CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP -DIPV6
+CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP -DIPV6 -DHAVE_FUTIMES
 LDFLAGS+=	-Wl,--as-needed
 
 .if (${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3}) && !defined(WITHOUT_X11)
@@ -64,15 +64,12 @@ MAKE_ARGS+=	GTK_CONFIG=:
 .endif
 
 .if ${PORT_OPTIONS:MGSSAPI_BASE}
-_COMPAT=		-DSTATIC_GSSAPI
 USES+=		gssapi:base,flags
 MAKE_ARGS+=	KRB5CONFIG=${KRB5CONFIG}
 .elif ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
-_COMPAT=		-DSTATIC_GSSAPI
 USES+=		gssapi:heimdal,flags
 MAKE_ARGS+=	KRB5CONFIG=${KRB5CONFIG}
 .elif ${PORT_OPTIONS:MGSSAPI_MIT}
-_COMPAT=		-DSTATIC_GSSAPI
 USES+=		gssapi:mit,flags
 MAKE_ARGS+=	KRB5CONFIG=${KRB5CONFIG}
 .else
