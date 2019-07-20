@@ -2,7 +2,7 @@
 
 PORTNAME=	padthv1
 DISTVERSIONPREFIX=	${PORTNAME}_
-DISTVERSION=	0_9_8
+DISTVERSION=	0_9_9
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -26,5 +26,7 @@ USE_GL=		gl
 USE_QT=		core gui widgets xml buildtools_build qmake_build
 
 CONFIGURE_ARGS=	--disable-alsa-midi
+
+BINARY_ALIAS=	qmake-qt5=${QMAKE}
 
 .include <bsd.port.mk>
