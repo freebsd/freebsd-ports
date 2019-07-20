@@ -1,35 +1,27 @@
-# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
 # $FreeBSD$
 
 PORTNAME=	ftputil
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	3.4
 CATEGORIES=	ftp python
-MASTER_SITES=	# http://ftputil.sschwarzer.net/trac/attachment/wiki/Download/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level FTP client library
 
-USES=		python:2.7
-USE_PYTHON=	distutils
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-PORTDOC_FILES=	README.html README.txt ftputil.html ftputil.txt ftputil_ru_utf8.txt
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
+NO_ARCH=	yes
+PORTDOCS=	doc/*
 
-do-fetch:
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-	${FETCH_CMD} -o "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}" "http://ftputil.sschwarzer.net/trac/attachment/wiki/Download/${DISTNAME}${EXTRACT_SUFX}?format=raw"
-.endif
-
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${PORTDOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
