@@ -3,7 +3,7 @@
 PORTNAME=	cfiles
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,20 +28,27 @@ MAKE_ARGS=	CC=${CC}
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz \
 		${DATADIR}/scripts/clearimg \
-		${DATADIR}/scripts/clearimg_uberzug \
-		${DATADIR}/scripts/displayimg \
-		${DATADIR}/scripts/displayimg_uberzug
+		${DATADIR}/scripts/displayimg
 
 post-patch:
-	@${REINPLACE_CMD} -E 's,"(atool|fzf|pdftoppm)","${LOCALBASE}/bin/\1",g; s|"/bin/bash"|"${LOCALBASE}/bin/bash"|' \
+	@${REINPLACE_CMD} -E '\
+		s,"(atool|fzf|pdftoppm)","${LOCALBASE}/bin/\1",g; \
+		s|"/bin/bash"|"${LOCALBASE}/bin/bash"|; \
+		s|CLEARIMG|"${DATADIR}/scripts/clearimg"|g; \
+		s|DISPLAYIMG|"${DATADIR}/scripts/displayimg"|g' \
 		${WRKSRC}/cf.c
-	@${REINPLACE_CMD} -E 's|W3MIMGDISPLAY="/usr/lib/w3m/w3mimgdisplay"|W3MIMGDISPLAY="${LOCALBASE}/libexec/w3m/w3mimgdisplay"|' \
+	@${REINPLACE_CMD} -E '\
+		s|IMG "/usr/share|IMG "${PREFIX}/share|; \
+		s|W3MIMGDISPLAY="/usr/lib/w3m/w3mimgdisplay"|W3MIMGDISPLAY="${LOCALBASE}/libexec/w3m/w3mimgdisplay"|' \
 		${WRKSRC}/scripts/displayimg ${WRKSRC}/scripts/clearimg
+	@${REINPLACE_CMD} -E '\
+		s|IMG "/usr/share|IMG "${PREFIX}/share|' \
+		${WRKSRC}/config.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/cfiles/scripts
-.for s in clearimg displayimg displayimg_uberzug clearimg_uberzug
+.for s in clearimg displayimg
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/${s} ${STAGEDIR}${DATADIR}/scripts
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/cfiles.1 ${STAGEDIR}${MAN5PREFIX}/man/man1
