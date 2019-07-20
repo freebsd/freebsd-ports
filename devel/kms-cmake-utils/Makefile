@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kms-cmake-utils
-DISTVERSION=	6.10.0
+DISTVERSION=	6.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
