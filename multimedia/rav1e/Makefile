@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190708
+PORTVERSION=	s20190719
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	98f4d66d
+GH_TAGNAME=	28ef0c07
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.7.4 \
@@ -24,16 +24,16 @@ CARGO_CRATES=	aho-corasick-0.7.4 \
 		aom-sys-0.1.2 \
 		arc-swap-0.3.11 \
 		arg_enum_proc_macro-0.1.1 \
-		arrayvec-0.4.10 \
-		atty-0.2.11 \
-		autocfg-0.1.4 \
-		backtrace-0.3.32 \
-		backtrace-sys-0.1.30 \
+		arrayvec-0.4.11 \
+		atty-0.2.13 \
+		autocfg-0.1.5 \
+		backtrace-0.3.33 \
+		backtrace-sys-0.1.31 \
 		bincode-1.1.4 \
 		bindgen-0.49.2 \
 		bitflags-1.1.0 \
-		bitstream-io-0.8.2 \
-		bstr-0.2.1 \
+		bitstream-io-0.8.3 \
+		bstr-0.2.2 \
 		byteorder-1.3.2 \
 		cast-0.2.2 \
 		cc-1.0.37 \
@@ -67,10 +67,10 @@ CARGO_CRATES=	aho-corasick-0.7.4 \
 		itertools-0.8.0 \
 		itoa-0.4.4 \
 		lazy_static-1.3.0 \
-		libc-0.2.58 \
-		libloading-0.5.1 \
-		log-0.4.6 \
-		memchr-2.2.0 \
+		libc-0.2.60 \
+		libloading-0.5.2 \
+		log-0.4.7 \
+		memchr-2.2.1 \
 		memoffset-0.2.1 \
 		metadeps-1.1.2 \
 		nodrop-0.1.13 \
@@ -79,7 +79,6 @@ CARGO_CRATES=	aho-corasick-0.7.4 \
 		num-integer-0.1.41 \
 		num-traits-0.2.8 \
 		num_cpus-1.10.1 \
-		numtoa-0.1.0 \
 		output_vt100-0.1.2 \
 		paste-0.1.5 \
 		paste-impl-0.1.5 \
@@ -89,7 +88,7 @@ CARGO_CRATES=	aho-corasick-0.7.4 \
 		proc-macro-hack-0.5.8 \
 		proc-macro2-0.4.30 \
 		quick-error-1.2.2 \
-		quote-0.6.12 \
+		quote-0.6.13 \
 		rand-0.6.5 \
 		rand_chacha-0.1.1 \
 		rand_core-0.3.1 \
@@ -105,28 +104,26 @@ CARGO_CRATES=	aho-corasick-0.7.4 \
 		rayon-core-1.5.0 \
 		rdrand-0.4.0 \
 		redox_syscall-0.1.56 \
-		redox_termios-0.1.1 \
-		regex-1.1.8 \
+		regex-1.1.9 \
 		regex-automata-0.1.7 \
-		regex-syntax-0.6.7 \
+		regex-syntax-0.6.8 \
 		rustc-demangle-0.1.15 \
 		ryu-1.0.0 \
-		same-file-1.0.4 \
+		same-file-1.0.5 \
 		scan_fmt-0.2.3 \
 		scopeguard-0.3.3 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.94 \
-		serde_derive-1.0.94 \
+		serde-1.0.97 \
+		serde_derive-1.0.97 \
 		serde_json-1.0.40 \
 		shlex-0.1.1 \
-		signal-hook-0.1.9 \
+		signal-hook-0.1.10 \
 		signal-hook-registry-1.0.1 \
 		strsim-0.8.0 \
 		syn-0.15.39 \
 		synstructure-0.10.2 \
 		termcolor-1.0.5 \
-		termion-1.5.3 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
 		time-0.1.42 \
