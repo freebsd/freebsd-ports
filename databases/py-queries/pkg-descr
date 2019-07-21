@@ -1,10 +1,10 @@
 Queries is a BSD licensed opinionated wrapper of the psycopg2 library for
 interacting with PostgreSQL.
 
-The popular psycopg2 package is a full-featured python client. Unfortunately
-as a developer, you're often repeating the same steps to get started with
-your applications that use it. Queries aims to reduce the complexity of
-psycopg2 while adding additional features to make writing PostgreSQL client
-applications both fast and easy.
+The popular psycopg2 package is a full-featured python client. Unfortunately as
+a developer, you're often repeating the same steps to get started with your
+applications that use it. Queries aims to reduce the complexity of psycopg2
+while adding additional features to make writing PostgreSQL client applications
+both fast and easy.
 
-WWW: https://queries.readthedocs.org/en/latest/
+WWW: https://github.com/gmr/queries
