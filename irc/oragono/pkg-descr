@@ -1,0 +1,7 @@
+Oragono is a modern, experimental IRC server written in Go. It's designed to be
+simple to setup and use, and it includes features such as UTF-8 nicks/channel
+names, client accounts with SASL, and other assorted IRCv3 support.
+
+Oragono is a fork of the Ergonomadic IRC daemon.
+
+WWW: https://oragono.io/

@@ -70,6 +70,7 @@
     SUBDIR += ngircd
     SUBDIR += ninja
     SUBDIR += onis
+    SUBDIR += oragono
     SUBDIR += p5-AnyEvent-IRC
     SUBDIR += p5-Bot-BasicBot
     SUBDIR += p5-IRC-Bot-Hangman
