@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	slurm
-DISTVERSION=	18.08.7
+DISTVERSION=	19.05.1-2
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -12,13 +12,16 @@ COMMENT=	Simple Linux Utility for Resource Management
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc
+NOT_FOR_ARCHS_REASON=	32-bit support is deprecated
+
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libsysinfo.so:devel/libsysinfo \
 		libmunge.so:security/munge \
 		liblz4.so:archivers/liblz4
 
 USES=		compiler:c11 gmake gnome libtool lua pkgconfig python:build \
-		readline:port shebangfix ssl tar:bz2
+		readline:port shebangfix tar:bz2
 USE_LDCONFIG=	yes
 USE_PERL5=	configure
 USE_RC_SUBR=	slurmctld slurmd
@@ -26,13 +29,12 @@ USE_RC_SUBR=	slurmctld slurmd
 USERS=		slurm
 GROUPS=		${USERS}
 
-LINUX_USES=	linux
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 SHEBANG_FILES=	doc/html/shtml2html.py doc/man/man2html.py
 
-OPTIONS_DEFINE=		CURL DOCS GUI HDF5 HWLOC IPMI MYSQL RRD LINUX
+OPTIONS_DEFINE=		CURL DOCS GUI HDF5 HWLOC IPMI MYSQL RRD
 OPTIONS_DEFAULT=	HDF5 HWLOC
 OPTIONS_SUB=		yes
 
@@ -42,7 +44,6 @@ HDF5_DESC=	Job profiling using HDF5
 HWLOC_DESC=	Portable hardware locality
 IPMI_DESC=	IPMI energy consumption accounting
 RRD_DESC=	RRD external sensor data collection
-LINUX_DESC=	Support jobacct_gather/linux (requires linprocfs)
 
 DOCS_BUILD_DEPENDS=	man2html:textproc/man2html
 
@@ -126,17 +127,15 @@ pre-configure:
 		${WRKSRC}/src/plugins/jobacct_gather/cgroup/jobacct_gather_cgroup.c \
 		${WRKSRC}/src/plugins/jobacct_gather/common/common_jag.c \
 		${WRKSRC}/src/plugins/jobacct_gather/linux/jobacct_gather_linux.c \
-		${WRKSRC}/src/plugins/switch/cray/scaling.c \
-		${WRKSRC}/src/plugins/switch/cray/switch_cray.c \
-		${WRKSRC}/src/plugins/proctrack/cray/proctrack_cray.c \
+		${WRKSRC}/src/plugins/switch/cray_aries/scaling.c \
+		${WRKSRC}/src/plugins/switch/cray_aries/switch_cray_aries.c \
+		${WRKSRC}/src/plugins/proctrack/cray_aries/proctrack_cray_aries.c \
 		${WRKSRC}/src/plugins/proctrack/cgroup/proctrack_cgroup.c \
 		${WRKSRC}/src/plugins/proctrack/pgid/proctrack_pgid.c \
 		${WRKSRC}/src/plugins/proctrack/linuxproc/kill_tree.c \
-		${WRKSRC}/src/plugins/proctrack/lua/proctrack_lua.c \
 		${WRKSRC}/src/plugins/acct_gather_filesystem/lustre/acct_gather_filesystem_lustre.c \
 		${WRKSRC}/src/plugins/node_features/knl_generic/node_features_knl_generic.c \
-		${WRKSRC}/contribs/cray/pam_job.c \
-		${WRKSRC}/contribs/lua/proctrack.lua
+		${WRKSRC}/contribs/cray/pam_job.c
 
 	@if ${WHICH} sbatch > /dev/null; then \
 		${ECHO_CMD} "********************************************"; \
