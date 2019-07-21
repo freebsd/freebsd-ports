@@ -3,6 +3,7 @@
 
 PORTNAME=	mpg123
 PORTVERSION=	1.25.10
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
@@ -12,14 +13,11 @@ COMMENT=	Command-line player for MPEG Layer 1, 2, and 3 audio files
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libltdl.so:devel/libltdl
-
 USES=		tar:bzip2 gmake libtool localbase pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-optimization=0 \
-		--with-module-suffix=.so
+CONFIGURE_ARGS=	--with-optimization=0
 
 INSTALL_TARGET=	install-strip
 
