@@ -1,4 +1,4 @@
---- etc/slurm.conf.example.orig	2018-10-26 20:10:17 UTC
+--- etc/slurm.conf.example.orig	2019-07-11 00:40:34 UTC
 +++ etc/slurm.conf.example
 @@ -8,8 +8,8 @@
  #
@@ -52,10 +52,10 @@
  # LOGGING
  SlurmctldDebug=3
 -SlurmctldLogFile=/var/log/slurmctld.log
-+SlurmctldLogFile=/var/log/slurm/slurmctld.log
++SlurmctldLogFile=/var/log/slurm/slurmctld
  SlurmdDebug=3
 -SlurmdLogFile=/var/log/slurmd.log
-+SlurmdLogFile=/var/log/slurm/slurm_accounting.log
++SlurmdLogFile=/var/log/slurm/slurmd
  JobCompType=jobcomp/none
  #JobCompLoc=
  #

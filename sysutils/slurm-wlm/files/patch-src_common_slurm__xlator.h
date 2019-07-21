@@ -1,6 +1,6 @@
---- src/common/slurm_xlator.h.orig	2019-04-12 04:20:25 UTC
+--- src/common/slurm_xlator.h.orig	2019-05-28 17:23:14 UTC
 +++ src/common/slurm_xlator.h
-@@ -299,7 +299,9 @@
+@@ -300,7 +300,9 @@
   * The header file used only for #define values. */
  
  /* strlcpy.[ch] functions */

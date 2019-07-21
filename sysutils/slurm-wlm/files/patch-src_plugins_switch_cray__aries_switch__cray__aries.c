@@ -1,10 +1,10 @@
---- src/plugins/switch/cray/switch_cray.c.orig	2019-04-12 04:20:25 UTC
-+++ src/plugins/switch/cray/switch_cray.c
+--- src/plugins/switch/cray_aries/switch_cray_aries.c.orig	2019-05-30 01:52:34 UTC
++++ src/plugins/switch/cray_aries/switch_cray_aries.c
 @@ -35,7 +35,6 @@
   *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA.
  \*****************************************************************************/
  
--#if !(defined(__FreeBSD__) || defined(__NetBSD__))
+-#if !(defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__))
  #include "config.h"
  
  #define _GNU_SOURCE
@@ -18,7 +18,7 @@
  #include <math.h>
  #include <sched.h>
  #include <signal.h>
-@@ -1056,4 +1057,3 @@ extern int switch_p_job_step_post_resume(stepd_step_re
+@@ -1078,4 +1079,3 @@ extern int switch_p_job_step_post_resume(stepd_step_re
  #endif
  	return SLURM_SUCCESS;
  }
