@@ -3,12 +3,13 @@
 PORTNAME=	bitwise
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.32
-CATEGORIES=	misc
+PORTREVISION=	1
+CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Terminal-based bitwise manipulator in curses
+COMMENT=	Terminal-based bit manipulator in curses
 
-LICENSE=	APACHE20
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		autoreconf localbase ncurses readline

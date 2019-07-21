@@ -141,6 +141,7 @@
     SUBDIR += barvinok
     SUBDIR += bcal
     SUBDIR += biggles
+    SUBDIR += bitwise
     SUBDIR += blacs
     SUBDIR += blas
     SUBDIR += blaze

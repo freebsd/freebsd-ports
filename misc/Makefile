@@ -27,7 +27,6 @@
     SUBDIR += binclock
     SUBDIR += biosfont-demos
     SUBDIR += birthday
-    SUBDIR += bitwise
     SUBDIR += bogosort
     SUBDIR += bottlerocket
     SUBDIR += box2d
