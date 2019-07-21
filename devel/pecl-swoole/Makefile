@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swoole
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -16,15 +16,11 @@ USE_PHP=	hash:build pcre
 
 CONFIGURE_ARGS+=	--enable-mysqlnd
 
-OPTIONS_DEFINE=	CARES HTTP2 SOCKETS PGSQL
-CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
-CARES_CONFIGURE_ON=	--enable-cares
+OPTIONS_DEFINE=	HTTP2 SOCKETS
 HTTP2_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 HTTP2_CONFIGURE_ON=	--enable-http2 --enable-openssl
 SOCKETS_USE=	PHP=sockets:build
 SOCKETS_DESC=	Use native php sockets extension
 SOCKETS_CONFIGURE_ON=	--enable-sockets
-PGSQL_USES=	pgsql
-PGSQL_CONFIGURE_ON=	--enable-coroutine-postgresql
 
 .include <bsd.port.mk>
