@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# PROVIDE: ioq3ded
+# REQUIRE: LOGIN
+
+####
+# Add the following line to /etc/rc.conf to enable ioq3ded
+#
+#  ioq3ded_enable="YES"
+#  # optional
+#  ioq3ded_args="+set dedicated 1 +set com_hunkmegs 32 +exec server.cfg"
+#  ioq3ded_home="/var/run/ioq3ded"
+#  ioq3ded_data="%%Q3DIR%%"
+#  ioq3ded_user="games"
+#  ioq3ded_group="games"
+#
+# Note:
+# This script is set to execute server.cfg from the system baseq3
+#  folder at launch.  Most server config can be placed there.
+# Some options MUST go on command-line and should be placed in
+#  "ioq3ded_args" instead - these include "dedicated",
+#  "com_hunkmegs", etc.
+####
+
+. /etc/rc.subr
+
+name=ioq3ded
+rcvar=ioq3ded_enable
+
+load_rc_config $name
+
+: ${ioq3ded_enable:="NO"}
+: ${ioq3ded_args="+set dedicated 1 +set com_hunkmegs 32 +exec server.cfg"}
+: ${ioq3ded_home:="/var/run/ioq3ded"}
+: ${ioq3ded_data:="%%Q3DIR%%"}
+: ${ioq3ded_user:="games"}
+: ${ioq3ded_group:="games"}
+
+start_precmd="ioq3ded_precmd"
+
+ioq3ded_precmd()
+{
+    install -d -o ${ioq3ded_user} -g ${ioq3ded_group} ${ioq3ded_home}
+}
+
+pidfile="${ioq3ded_home}/ioq3ded-daemon.pid"
+child_pidfile="${ioq3ded_home}/ioq3ded.pid"
+
+command="/usr/sbin/daemon"
+command_args="-c -f -P ${pidfile} -p ${child_pidfile} %%PREFIX%%/bin/ioq3ded +set fs_basepath ${ioq3ded_data} +set fs_homepath ${ioq3ded_home} ${ioq3ded_args}"
+
+run_rc_command "$1"
