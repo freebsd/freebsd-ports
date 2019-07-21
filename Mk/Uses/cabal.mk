@@ -107,7 +107,8 @@ cabal-extract-deps:
 # Generates USE_CABAL= ... line ready to be pasted into the port based on artifacts of cabal-extract-deps.
 make-use-cabal:
 	@echo ====================
-	@find ${CABAL_HOME} -name '*.conf' -exec basename {} + | sed -E 's|-[0-9a-z]{64}\.conf||' | sort | xargs echo -n USE_CABAL= && echo
+	@echo -n USE_CABAL=
+	@find ${CABAL_HOME} -name '*.conf' -exec basename {} + | sed -E 's|-[0-9a-z]{64}\.conf||' | sort | sed 's/$$/ \\/'
 
 # Checks USE_CABAL items that have revisions.
 check-revs:
