@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libcss
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
+MASTER_SITES=	https://download.netsurf-browser.org/libs/releases/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	neel@neelc.org
@@ -18,6 +18,7 @@ LIB_DEPENDS=	libwapcaplet.so:textproc/libwapcaplet \
 		libparserutils.so:devel/libparserutils
 
 USES=		gmake iconv:wchar_t localbase pkgconfig
+
 USE_LDCONFIG=	yes
 MAKE_ENV=	COMPONENT_TYPE="lib-shared"
 LDFLAGS+=	${ICONV_LIB}
