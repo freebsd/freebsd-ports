@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stp
-DISTVERSION=	2.3.2
-PORTREVISION=	2
+DISTVERSION=	2.3.3
 PORTEPOCH=	1
 CATEGORIES=	math
 
@@ -23,8 +22,5 @@ USES=		bison:build compiler:c++11-lang cmake perl5 python
 USE_GITHUB=	yes
 USE_PERL5=	build
 USE_LDCONFIG=	yes
-
-post-install:
-	@${MV} ${STAGEDIR}${PREFIX}/bin/stp-${PORTVERSION} ${STAGEDIR}${PREFIX}/bin/stp
 
 .include <bsd.port.mk>
