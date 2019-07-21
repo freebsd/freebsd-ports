@@ -18,7 +18,7 @@ LICENSE_FILE_MPL11=	${WRKSRC}/COPYING-MPL-1.1
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gnome pkgconfig python
+USES=		compiler:c11 gnome pkgconfig python
 USE_PYTHON=	distutils py3kplist
 USE_GNOME=	cairo
 
