@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qutebrowser
-DISTVERSION=	1.6.3
+DISTVERSION=	1.7.0
 CATEGORIES=	www
 MASTER_SITES=	CHEESESHOP
 
@@ -41,7 +41,7 @@ WEBKIT_USE=	PYQT=webkit,webkitwidgets
 WEBENGINE_USE=	PYQT=webengine,webchannel
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/misc/${PORTNAME}.desktop \
+	${INSTALL_DATA} ${WRKSRC}/misc/org.qutebrowser.qutebrowser.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}-${PYTHON_VER}.desktop
 
 .include <bsd.port.mk>
