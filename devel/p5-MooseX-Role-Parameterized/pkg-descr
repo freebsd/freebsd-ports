@@ -1,21 +1,22 @@
-Roles are composable units of behavior.  They are useful for factoring
-out functionality common to many classes from any part of your class
-hierarchy.  See Moose::Cookbook::Roles::Recipe1 for an introduction to
-Moose::Role.
+Roles are composable units of behavior. They are useful for factoring out
+functionality common to many classes from any part of your class hierarchy. See
+L<Moose::Cookbook::Roles::Comparable_CodeReuse> for an introduction to
+L<Moose::Role>.
 
-While combining roles affords you a great deal of flexibility,
-individual roles have very little in the way of configurability.  Core
-Moose provides alias for renaming methods and excludes for ignoring
-methods.  These options are primarily (perhaps solely) for
-disambiguating role conflicts.  See Moose::Cookbook::Roles::Recipe2 for
-more about alias and excludes.
+While combining roles affords you a great deal of flexibility, individual roles
+have very little in the way of configurability. Core Moose provides C<-alias>
+for renaming methods and C<-excludes> for ignoring methods. These options are
+primarily for resolving role conflicts. Depending on how much of a purist you
+are, these options are I<solely> for resolving role conflicts. See
+L<Moose::Cookbook::Roles::Restartable_AdvancedComposition> for more about
+C<-alias> and C<-excludes>.
 
-Because roles serve many different masters, they usually provide only
-the least common denominator of functionality.  To empower roles
-further, more configurability than alias and excludes is required.
-Perhaps your role needs to know which method to call when it is done.
-Or what default value to use for its url attribute.
+Because roles serve many different masters, they usually provide only the least
+common denominator of functionality. To empower roles further, more
+configurability than C<-alias> and C<-excludes> is required. Perhaps your role
+needs to know which method to call when it is done processing. Or what default
+value to use for its C<url> attribute.
 
-Parameterized roles offer exactly this solution.
+Parameterized roles offer a solution to these (and other) kinds of problems.
 
 WWW: https://metacpan.org/release/MooseX-Role-Parameterized
