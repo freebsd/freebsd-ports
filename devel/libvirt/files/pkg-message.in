@@ -21,7 +21,7 @@ If you have libvirtd already running you'll need to restart it for changes
 to take effect.
 %%BHYVE%%
 %%BHYVE%%For more details on using libvirt with bhyve please refer to:
-%%BHYVE%% %%DOCSDIR%%%%PORTVERSION%%/html/drvbhyve.html
+%%BHYVE%% %%DOCSDIR%%/html/drvbhyve.html
 %%BHYVE%%   or:
 %%BHYVE%% http://libvirt.org/drvbhyve.html
 %%BHYVE%%
