@@ -23,8 +23,9 @@ TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:devel/p5-Test-Requires
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuildtiny
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
