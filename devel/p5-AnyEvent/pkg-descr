@@ -1,17 +1,16 @@
-AnyEvent provides an identical interface to multiple event loops.
-This allows module authors to utilise an event loop without forcing
-module users to use the same event loop (as only a single event loop
-can coexist peacefully at any one time).
+AnyEvent provides a uniform interface to various event loops. This allows module
+authors to use event loop functionality without forcing module users to use a
+specific event loop implementation (since more than one event loop cannot
+coexist peacefully).
 
-The interface itself is vaguely similar but not identical to the Event
-module.
+The interface itself is vaguely similar, but not identical to the Event module.
 
-On the first call of any method, the module tries to detect the
-currently loaded event loop by probing wether any of the following
-modules is loaded: Coro::Event, Event, Glib, Tk. The first one found
-is used. If none is found, the module tries to load these modules in
-the order given. The first one that could be successfully loaded will
-be used. If still none could be found, AnyEvent will fall back to a
-pure-perl event loop, which is also not very efficient.
+During the first call of any watcher-creation method, the module tries to detect
+the currently loaded event loop by probing whether one of the following modules
+is already loaded: EV, AnyEvent::Loop, Event, Glib, Tk, Event::Lib, Qt, POE. The
+first one found is used. If none are detected, the module tries to load the
+first four modules in the order given; but note that if EV is not available, the
+pure-perl AnyEvent::Loop should always work, so the other two are not normally
+tried.
 
 WWW: https://metacpan.org/release/AnyEvent

@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	AnyEvent
-PORTVERSION=	7.15
+PORTVERSION=	7.16
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provide framework for multiple event loops
 
 LICENSE=	ART10 GPLv1+
