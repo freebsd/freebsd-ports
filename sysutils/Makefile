@@ -107,6 +107,7 @@
     SUBDIR += biosfont
     SUBDIR += bkpupsd
     SUBDIR += bksh
+    SUBDIR += boot-extract
     SUBDIR += boxbackup-devel
     SUBDIR += brasero
     SUBDIR += bsd-splash-changer
