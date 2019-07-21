@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	APACHE20
@@ -16,7 +16,7 @@ LICENSE=	APACHE20
 CONFLICTS=	py[0-9]*-tornado-* py[0-9]*-tornado6-*
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>
 
