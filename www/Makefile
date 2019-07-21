@@ -33,7 +33,6 @@
     SUBDIR += archiva
     SUBDIR += aria2
     SUBDIR += asql
-    SUBDIR += august
     SUBDIR += awffull
     SUBDIR += aws
     SUBDIR += aws-demos
@@ -2424,7 +2423,6 @@
     SUBDIR += webhook
     SUBDIR += webinject
     SUBDIR += webkit2-gtk3
-    SUBDIR += weblint
     SUBDIR += weblint++
     SUBDIR += webpy
     SUBDIR += webreport
