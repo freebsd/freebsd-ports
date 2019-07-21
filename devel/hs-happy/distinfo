@@ -1,3 +1,3 @@
-TIMESTAMP = 1559582367
-SHA256 (cabal/happy-1.19.10.tar.gz) = 22eb606c97105b396e1c7dc27e120ca02025a87f3e44d2ea52be6a653a52caed
-SIZE (cabal/happy-1.19.10.tar.gz) = 181506
+TIMESTAMP = 1563716379
+SHA256 (cabal/happy-1.19.11.tar.gz) = 9094d19ed0db980a34f1ffd58e64c7df9b4ecb3beed22fd9b9739044a8d45f77
+SIZE (cabal/happy-1.19.11.tar.gz) = 181528
