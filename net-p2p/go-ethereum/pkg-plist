@@ -3,5 +3,5 @@ bin/geth
 %%DEVTOOLS%%bin/bootnode
 %%DEVTOOLS%%bin/evm
 %%DEVTOOLS%%bin/rlpdump
-%%DEVTOOLS%%bin/swarm
+%%DEVTOOLS%%bin/clef
 %%DEVTOOLS%%bin/puppeth
