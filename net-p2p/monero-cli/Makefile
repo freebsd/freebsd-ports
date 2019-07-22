@@ -3,9 +3,8 @@
 
 PORTNAME=	monero-cli
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	0.14.0.2
+PORTVERSION=	0.14.1.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 # and uncomment the following two lines (use for example -git-HEAD or -git-b6420e1)
 #PORTVERSION=	0
 #PKGNAMESUFFIX=	-git-HEAD
@@ -45,7 +44,6 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	monero-project
 GH_PROJECT=	monero
-GH_TAGNAME=	1f809e7485fc3085
 .if defined(PKGNAMESUFFIX)
 GH_TAGNAME=	${PKGNAMESUFFIX:C/-git-//}
 .endif
