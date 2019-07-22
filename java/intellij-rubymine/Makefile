@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubymine
-PORTVERSION=	2018.1.1
+PORTVERSION=	2019.1.2
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/ruby/ \
 		http://download.jetbrains.com/ruby/
@@ -29,7 +29,7 @@ SHEBANG_FILES=	bin/printenv.py bin/restart.py
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-WRKDIST=	${WRKDIR}/RubyMine-2018.1.1
+WRKDIST=	${WRKDIR}/RubyMine-${PORTVERSION}
 
 .include "${.CURDIR}/../intellij/common.mk"
 
@@ -43,36 +43,22 @@ do-install:
 	@${RM} ${STAGEDIR}${DATADIR}/bin/fsnotifier \
 		${STAGEDIR}${DATADIR}/bin/fsnotifier-arm \
 		${STAGEDIR}${DATADIR}/bin/fsnotifier64 \
-		${STAGEDIR}${DATADIR}/bin/libbreakgen.so \
-		${STAGEDIR}${DATADIR}/bin/libbreakgen64.so \
-		${STAGEDIR}${DATADIR}/plugins/gradle/lib/native-platform-linux-amd64-0.10.jar \
-		${STAGEDIR}${DATADIR}/plugins/gradle/lib/native-platform-linux-i386-0.10.jar \
-		${STAGEDIR}${DATADIR}/plugins/gradle/lib/native-platform-osx-amd64-0.10.jar \
-		${STAGEDIR}${DATADIR}/plugins/gradle/lib/native-platform-osx-i386-0.10.jar \
-		${STAGEDIR}${DATADIR}/plugins/gradle/lib/native-platform-windows-amd64-0.10.jar \
-		${STAGEDIR}${DATADIR}/plugins/gradle/lib/native-platform-windows-i386-0.10.jar \
+		${STAGEDIR}${DATADIR}/bin/lib*.so \
 		${STAGEDIR}${DATADIR}/bin/libyjpagent-linux.so \
 		${STAGEDIR}${DATADIR}/bin/libyjpagent-linux64.so
-	@${RM} -r ${STAGEDIR}${DATADIR}/plugins/tfsIntegration/lib/native/hpux/ \
-		${STAGEDIR}${DATADIR}/plugins/tfsIntegration/lib/native/linux/ \
-		${STAGEDIR}${DATADIR}/plugins/tfsIntegration/lib/native/macosx/ \
-		${STAGEDIR}${DATADIR}/plugins/tfsIntegration/lib/native/solaris/ \
-		${STAGEDIR}${DATADIR}/plugins/tfsIntegration/lib/native/win32/ \
-		${STAGEDIR}${DATADIR}/plugins/tfsIntegration/lib/native/aix/
+	@${RM} ${STAGEDIR}${DATADIR}/plugins/performanceTesting/lib/lib*.so
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by java/intellij-pty4j
-	@${RM} -r ${STAGEDIR}${DATADIR}/lib/libpty
-	@${RM} -r ${STAGEDIR}${DATADIR}/jre/jre
-	@${RM} ${STAGEDIR}${DATADIR}/lib/pty4j-0.7.1.jar
+	@${RM} -r ${STAGEDIR}${DATADIR}/lib/pty4j-native
+	@${RM} ${STAGEDIR}${DATADIR}/lib/pty4j-0.7.10.jar
+# Remove bundled linux OpenJDK and DroidSerif fonts
+	@${RM} -r ${STAGEDIR}${DATADIR}/jre/jre64
 	${INSTALL_SCRIPT} ${WRKDIR}/rubymine ${STAGEDIR}${PREFIX}/bin/rubymine
 	${INSTALL_MAN} ${FILESDIR}/rubymine.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/rubymine.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	cd ${WRKDIST}/lib && ${JAVA_HOME}/bin/jar xf icons.jar
 	${INSTALL_DATA} ${WRKDIST}/lib/icon.png ${STAGEDIR}${DATADIR}/rubymine.png
-# TODO: Remove and enable fsnotifier when devel/libinotify is fixed
-# Disable filewatcher warning message on IDEA startup
-	${ECHO} "idea.filewatcher.disabled=true" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
 # Use fsnotifier replacement provided by java/intellij-fsnotifier
-#	${ECHO} "idea.filewatcher.executable.path=${DATADIR}/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
+	${ECHO} "idea.filewatcher.executable.path=${DATADIR}/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
 
 .include <bsd.port.mk>
