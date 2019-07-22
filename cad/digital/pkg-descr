@@ -1,0 +1,24 @@
+Features:
+* Visualization of signal states with measurement graphs.
+* Single gate mode to analyze oscillations.
+* Analysis and synthesis of combinatorial and sequential circuits.
+* Simple testing of circuits: You can create test cases and execute them to
+  verify your design.
+* Includes a simple editor for finite state machines (FSM). A FSM can then be
+  converted to a state transition table and a circuit implementing the FSM.
+* Contains a library with the most commonly used 74xx series integrated circuits
+* Supports generic circuits. This allows the creation of circuits that can be
+  parameterized when used. In this way, it is possible, for e.g., to create a
+  barrel shifter with a selectable bit width.
+* Supports large circuits: The "Conway's Game of Life" example consists of about
+  2400 active components and works just fine.
+* It is possible to use custom components which are implemented in Java and
+  packed in a jar file. See this example for details.
+* Simple remote TCP interface which e.g. allows an assembler IDE to control the
+  simulator.
+* Components can be described using VHDL or Verilog. The open source VHDL
+  simulator ghdl needs to be installed to simulate a VHDL defined component, and
+  the open source Verilog simulator Icarus Verilog is required to simulate a
+  Verilog defined component.
+
+WWW: https://github.com/hneemann/Digital
