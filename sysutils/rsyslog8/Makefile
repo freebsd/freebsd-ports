@@ -2,6 +2,7 @@
 
 PORTNAME=	rsyslog
 PORTVERSION=	8.1907.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -11,8 +12,7 @@ COMMENT=	Syslogd supporting SQL, TCP, and TLS
 LICENSE=	GPLv3 LGPL3 APACHE20
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libee.so:devel/libee \
-		libestr.so:devel/libestr \
+LIB_DEPENDS=	libestr.so:devel/libestr \
 		libfastjson.so:devel/libfastjson \
 		liblogging-rfc3195.so:devel/liblogging \
 		libuuid.so:misc/e2fsprogs-libuuid \
