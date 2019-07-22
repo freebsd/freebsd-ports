@@ -1,7 +1,7 @@
---- mysys_ssl/my_default.cc.orig	2016-11-28 13:36:22 UTC
+--- mysys_ssl/my_default.cc.orig	2019-07-16 14:08:43 UTC
 +++ mysys_ssl/my_default.cc
-@@ -110,7 +110,7 @@ static my_bool defaults_already_read= FA
- 
+@@ -116,7 +116,7 @@ char wsrep_defaults_group_suffix[FN_EXTLEN]={0,};
+ #endif /* WITH_WREP */
  /* Which directories are searched for options (and in which order) */
  
 -#define MAX_DEFAULT_DIRS 6
@@ -9,9 +9,9 @@
  #define DEFAULT_DIRS_SIZE (MAX_DEFAULT_DIRS + 1)  /* Terminate with NULL */
  static const char **default_directories = NULL;
  
-@@ -903,6 +903,14 @@ static int search_default_file_with_ext(
-       return 1;                                 /* Ignore wrong files */
-   }
+@@ -921,6 +921,14 @@ static int search_default_file_with_ext(Process_option
+     strncpy(wsrep_defaults_file, name, sizeof(wsrep_defaults_file) - 1);
+ #endif /* WITH_WSREP */
  
 +  if (strstr(name, "/etc") == name)
 +  {
@@ -24,7 +24,7 @@
    while (mysql_file_getline(buff, sizeof(buff) - 1, fp, is_login_file))
    {
      line++;
-@@ -1241,7 +1249,8 @@ void my_print_default_files(const char *
+@@ -1259,7 +1267,8 @@ void my_print_default_files(const char *conf_file)
              end[(strlen(end)-1)] = ' ';
            else
              strxmov(end, conf_file, *ext , " ",  NullS);
@@ -34,23 +34,24 @@
          }
        }
      }
-@@ -1400,13 +1409,8 @@ static const char **init_default_directo
+@@ -1418,14 +1427,9 @@ static const char **init_default_directories(MEM_ROOT 
  
  #else
  
 -  errors += add_directory(alloc, "/etc/", dirs);
 -  errors += add_directory(alloc, "/etc/mysql/", dirs);
--
++  errors += add_directory(alloc, "/usr/local/etc/", dirs);
++  errors += add_directory(alloc, "/usr/local/etc/mysql/", dirs);
+ 
 -#if defined(DEFAULT_SYSCONFDIR)
 -  if (DEFAULT_SYSCONFDIR[0])
 -    errors += add_directory(alloc, DEFAULT_SYSCONFDIR, dirs);
 -#endif /* DEFAULT_SYSCONFDIR */
-+  errors += add_directory(alloc, "/usr/local/etc/", dirs);
-+  errors += add_directory(alloc, "/usr/local/etc/mysql/", dirs);
- 
+-
  #endif
  
-@@ -1477,7 +1481,7 @@ int check_file_permissions(const char *f
+   if ((env= getenv("MYSQL_HOME")))
+@@ -1495,7 +1499,7 @@ int check_file_permissions(const char *file_name, my_b
    MY_STAT stat_info;
  
    if (!my_stat(file_name,&stat_info,MYF(0)))
