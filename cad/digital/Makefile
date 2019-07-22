@@ -2,7 +2,8 @@
 
 PORTNAME=	digital
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22
+DISTVERSION=	0.22-250
+DISTVERSIONSUFFIX=	-gebc913a3
 CATEGORIES=	cad java
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,6 +51,7 @@ do-build:
 		-fae install \
 		-Dmaven.test.skip=true \
 		-Duser.home=${WRKDIR} \
+		-P no-git-rev -Dgit.commit.id.describe=${DISTVERSIONFULL} \
 		package
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/target/Digital.jar ${STAGEDIR}${JAVAJARDIR}
