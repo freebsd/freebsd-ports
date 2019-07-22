@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	highwayhash
-PORTVERSION=	g20181002
+PORTVERSION=	g20190324
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -20,14 +20,7 @@ ONLY_FOR_ARCHS_REASON=	Assembly is implemented only for specific architectures i
 USES=		compiler:c++11-lib gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	c5ee50b
+GH_TAGNAME=	30bd801
 USE_LDCONFIG=	yes
-
-# workaround for https://github.com/google/highwayhash/issues/69
-
-post-install:
-	# Symlink upstream issue: https://github.com/google/highwayhash/issues/57
-	${RM} ${STAGEDIR}${PREFIX}/lib/libhighwayhash.so
-	${LN} -s libhighwayhash.so.0 ${STAGEDIR}${PREFIX}/lib/libhighwayhash.so
 
 .include <bsd.port.mk>

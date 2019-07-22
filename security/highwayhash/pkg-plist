@@ -5,6 +5,7 @@ include/highwayhash/data_parallel.h
 include/highwayhash/endianess.h
 include/highwayhash/hh_avx2.h
 include/highwayhash/hh_buffer.h
+include/highwayhash/hh_neon.h
 include/highwayhash/hh_portable.h
 include/highwayhash/hh_sse41.h
 include/highwayhash/hh_types.h
@@ -16,6 +17,7 @@ include/highwayhash/iaca.h
 include/highwayhash/instruction_sets.h
 include/highwayhash/load3.h
 include/highwayhash/nanobenchmark.h
+include/highwayhash/os_mac.h
 include/highwayhash/os_specific.h
 include/highwayhash/profiler.h
 include/highwayhash/robust_statistics.h
@@ -27,6 +29,7 @@ include/highwayhash/state_helpers.h
 include/highwayhash/tsc_timer.h
 include/highwayhash/vector128.h
 include/highwayhash/vector256.h
+include/highwayhash/vector_neon.h
 include/highwayhash/vector_test_target.h
 lib/libhighwayhash.a
 lib/libhighwayhash.so
