@@ -1,5 +1,5 @@
---- plugin/password_validation/validate_password.cc.orig	2013-09-10 07:38:25.000000000 +0000
-+++ plugin/password_validation/validate_password.cc	2013-10-05 15:40:20.790380179 +0000
+--- plugin/password_validation/validate_password.cc.orig	2019-07-16 14:08:43 UTC
++++ plugin/password_validation/validate_password.cc
 @@ -16,6 +16,8 @@
  #include <my_sys.h>
  #include <string>
@@ -7,5 +7,5 @@
 +/* solve clash between libc++ bitset::test() and test macro from my_global.h */
 +#undef test
  #include <set>
+ #include <ios>       // std::streamoff
  #include <iostream>
- #include <fstream>
