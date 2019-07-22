@@ -5,7 +5,7 @@ PORTNAME=	ipfmeta
 PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://cschubert.com/distfiles/ \
-		https://people.freebsd.org/~cy/distfiles/
+		LOCAL/cy
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	ipfmeta - use objects in IPfilter files
