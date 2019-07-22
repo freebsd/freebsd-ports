@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: ntopng
-# REQUIRE: LOGIN netif
+# REQUIRE: LOGIN netif mysql
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable ntopng:
