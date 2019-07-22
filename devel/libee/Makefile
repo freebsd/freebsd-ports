@@ -10,6 +10,9 @@ MASTER_SITES=	http://download.rsyslog.com/
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Event expression library inspired by CEE
 
+DEPRECATED=	No longer required by rsyslog, which was its only consumer.  No longer maintained upstream
+EXPIRATION_DATE=	2019-09-23
+
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
