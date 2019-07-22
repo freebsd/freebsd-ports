@@ -1,0 +1,5 @@
+Fugit is a time tools for flor and the floraison group. It uses et-orbi to represent
+time instances and raabro as a basis for its parsers. Fugit will probably become
+the foundation for rufus-scheduler 4.x
+
+WWW: https://github.com/floraison/fugit
