@@ -1,6 +1,6 @@
-TIMESTAMP = 1558333231
-SHA256 (gokcehan-lf-r12_GH0.tar.gz) = 8a3ca71dd18ca01f34a08573049c5f9f4302b5c7a998443d2b0855792fdca7f2
-SIZE (gokcehan-lf-r12_GH0.tar.gz) = 64921
+TIMESTAMP = 1563763077
+SHA256 (gokcehan-lf-r13_GH0.tar.gz) = fe99ed9785fbdc606835139c0c52c854b32b1f1449ba83567a115b21d2e882f4
+SIZE (gokcehan-lf-r13_GH0.tar.gz) = 67064
 SHA256 (mattn-go-runewidth-703b5e6_GH0.tar.gz) = 62c40ad7642da0ad00a3d47887cc7404c09703e580d65c709b2ecb65d721e9c8
 SIZE (mattn-go-runewidth-703b5e6_GH0.tar.gz) = 19884
 SHA256 (nsf-termbox-go-288510b_GH0.tar.gz) = f4f60382dbf63d1e453110e9dd44f8517316c8be3d40f0f101a845c7aae351b1
