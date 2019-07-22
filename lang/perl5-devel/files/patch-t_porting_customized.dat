@@ -1,16 +1,16 @@
 Fix tests for modified files.
 
---- t/porting/customized.dat.orig	2019-03-31 21:08:28 UTC
+--- t/porting/customized.dat.orig	2019-07-22 10:18:26 UTC
 +++ t/porting/customized.dat
-@@ -2,6 +2,7 @@
- #     cd t
+@@ -3,6 +3,7 @@
  #     ./perl -I../lib porting/customized.t --regen
+ Config::Perl::V cpan/Config-Perl-V/V.pm 0a0f7207e6505b78ee345a933acb0246a13579f5
  Digest cpan/Digest/Digest.pm 43f7f544cb11842b2f55c73e28930da50774e081
 +ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm ac29a8dc1c7d6f0aca4abff0730c05bde1dab3ad
  Locale::Maketext::Simple cpan/Locale-Maketext-Simple/lib/Locale/Maketext/Simple.pm 57ed38905791a17c150210cd6f42ead22a7707b6
  Math::Complex cpan/Math-Complex/lib/Math/Complex.pm 198ea6c6c584f5ea79a0fd7e9d411d0878f3b2af
  Math::Complex cpan/Math-Complex/t/Complex.t 4f307ed6fc59f1e5fb0e6b11103fc631b6bdb335
-@@ -17,7 +18,7 @@ Pod::Checker cpan/Pod-Checker/t/pod/contains_bad_pod.x
+@@ -14,7 +15,7 @@ Pod::Checker cpan/Pod-Checker/t/pod/contains_bad_pod.x
  Pod::Checker cpan/Pod-Checker/t/pod/selfcheck.t 8ce3cfd38e4b9bcf5bc7fe7f2a14195e49aed7d8
  Pod::Checker cpan/Pod-Checker/t/pod/testcmp.pl a0cd5c8eca775c7753f4464eee96fa916e3d8a16
  Pod::Checker cpan/Pod-Checker/t/pod/testpchk.pl b2072c7f4379fd050e15424175d7cac5facf5b3b
