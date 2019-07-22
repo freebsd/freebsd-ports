@@ -8,7 +8,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm/releases/download/${PORTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/ \
 		http://cschubert.com/distfiles/ \
-		https://people.freebsd.org/~cy/distfiles/
+		LOCAL/cy
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
