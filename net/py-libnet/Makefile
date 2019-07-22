@@ -2,49 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	libnet
-PORTVERSION=	1.1
-PORTREVISION=	3
+DISTVERSION=	3.0rc1
 CATEGORIES=	net python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pylibnet-${DISTVERSION}
 
 MAINTAINER=	sbz@FreeBSD.org
-COMMENT=	Python module for the libnet packet construction library
+COMMENT=	Python extension for the Libnet packet injection library
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libnet.so:net/libnet
 
-BROKEN_aarch64=		fails to package: lib.freebsd-11.0-RELEASE-p1-aarch64-2.7/libnet.so: No such file or directory
-BROKEN_armv6=		fails to package: lib.freebsd-11.0-RELEASE-p1-armv6-2.7/libnet.so: No such file or directory
-BROKEN_armv7=		fails to package: lib.freebsd-11.0-RELEASE-p1-armv7-2.7/libnet.so: No such file or directory
-BROKEN_mips64=		fails to package: lib.freebsd-11.0-RELEASE-p1-mips64-2.7/libnet.so: No such file or directory
-
 USES=		python:-2.7
-USE_PYTHON=	distutils pythonprefix
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	allfro
-GH_PROJECT=	pylibnet
-GH_TAGNAME=	b2fa552
-
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+USE_PYTHON=	autoplist concurrent distutils
 
 OPTIONS_DEFINE=	EXAMPLES
-LIBNET_ARCH=	${ARCH:S/powerpc64/powerpc/}
-OSVER=		uname -r
 
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/setup.py
 
-do-install:
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-	${INSTALL_LIB} \
-	${WRKSRC}/build/lib.${OPSYS:tl}-$$(${OSVER})-${LIBNET_ARCH}-${PYTHON_VER}/${PORTNAME}.so \
-	${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/libnet.so
 
 .include <bsd.port.mk>
