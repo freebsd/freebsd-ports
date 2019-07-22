@@ -2,8 +2,11 @@ bin/xournal-thumbnailer
 bin/xournalpp
 share/locale/cs/LC_MESSAGES/xournalpp.mo
 share/locale/de/LC_MESSAGES/xournalpp.mo
+share/locale/hr_HR/LC_MESSAGES/xournalpp.mo
 share/locale/it/LC_MESSAGES/xournalpp.mo
+share/locale/nl_NL/LC_MESSAGES/xournalpp.mo
 share/locale/pl/LC_MESSAGES/xournalpp.mo
+share/locale/tlh_AA/LC_MESSAGES/xournalpp.mo
 share/locale/zh/LC_MESSAGES/xournalpp.mo
 share/locale/zh_HK/LC_MESSAGES/xournalpp.mo
 share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
@@ -27,9 +30,11 @@ share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/centerPage.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/circle-draw.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/coordinate-system-draw.svg
+%%DATADIR%%/ui/icons/hicolor/scalable/actions/customize_toolbars.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/default.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/delPage.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/fill.svg
+%%DATADIR%%/ui/icons/hicolor/scalable/actions/floating_toolbox.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/fullscreen.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/goto.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/grid_snapping.svg
@@ -40,6 +45,7 @@ share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/line-style-dash.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/line-style-dot.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/line-style-plain.svg
+%%DATADIR%%/ui/icons/hicolor/scalable/actions/manage_toolbars.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/nextAnnotatedPage.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/object-play.svg
 %%DATADIR%%/ui/icons/hicolor/scalable/actions/object-select.svg
@@ -103,7 +109,9 @@ share/locale/zh_TW/LC_MESSAGES/xournalpp.mo
 %%DATADIR%%/ui/pluginEntry.glade
 %%DATADIR%%/ui/settings.glade
 %%DATADIR%%/ui/settingsButtonConfig.glade
+%%DATADIR%%/ui/settingsDeviceClassConfig.glade
 %%DATADIR%%/ui/texdialog.glade
 %%DATADIR%%/ui/toolbar.ini
 %%DATADIR%%/ui/toolbarCustomizeDialog.glade
 %%DATADIR%%/ui/toolbarManageDialog.glade
+%%DATADIR%%/ui/xournalpp.css
