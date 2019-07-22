@@ -1,14 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	8.0.0
-PORTREVISION=	2
+DISTVERSION=	8.0.1
 CATEGORIES=	devel lang
-.if ${DISTVERSION:M*rc*}
-MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_RELEASE}-${DISTVERSION:S/${LLVM_RELEASE}//}/
-.else
-MASTER_SITES=	http://releases.llvm.org/${LLVM_RELEASE}/
-.endif
+MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION}/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
 DISTFILES=	${PORTNAME}-${DISTVERSION}.src${EXTRACT_SUFX}

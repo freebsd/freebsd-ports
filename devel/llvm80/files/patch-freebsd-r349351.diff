@@ -1,0 +1,12 @@
+--- lib/Target/PowerPC/PPCSubtarget.cpp.orig	2019-06-25 23:46:37.175257000 +0100
++++ lib/Target/PowerPC/PPCSubtarget.cpp	2019-06-25 23:48:13.189675000 +0100
+@@ -138,7 +138,8 @@
+   if (isDarwin())
+     HasLazyResolverStubs = true;
+ 
+-  if (TargetTriple.isOSNetBSD() || TargetTriple.isOSOpenBSD())
++  if ((TargetTriple.isOSFreeBSD() && TargetTriple.getOSMajorVersion() >= 13) ||
++      TargetTriple.isOSNetBSD() || TargetTriple.isOSOpenBSD())
+     SecurePlt = true;
+ 
+   if (HasSPE && IsPPC64)
