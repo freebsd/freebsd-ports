@@ -1,4 +1,4 @@
---- bin/named/config.c.orig	2019-07-04 16:38:26 UTC
+--- bin/named/config.c.orig	2019-07-22 02:18:48 UTC
 +++ bin/named/config.c
 @@ -177,6 +177,7 @@ options {\n\
  	notify-source *;\n\
@@ -8,9 +8,9 @@
  	provide-ixfr true;\n\
  	qname-minimization relaxed;\n\
  	query-source address *;\n\
---- bin/named/server.c.orig	2019-07-04 16:38:26 UTC
+--- bin/named/server.c.orig	2019-07-22 02:18:48 UTC
 +++ bin/named/server.c
-@@ -4225,6 +4225,11 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
+@@ -4226,6 +4226,11 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
  	}
  
  	obj = NULL;
@@ -22,7 +22,7 @@
  	result = named_config_get(maps, "max-cache-ttl", &obj);
  	INSIST(result == ISC_R_SUCCESS);
  	view->maxcachettl = cfg_obj_asuint32(obj);
---- lib/dns/include/dns/view.h.orig	2019-07-04 16:38:26 UTC
+--- lib/dns/include/dns/view.h.orig	2019-07-22 02:18:48 UTC
 +++ lib/dns/include/dns/view.h
 @@ -152,6 +152,7 @@ struct dns_view {
  	bool				requestnsid;
@@ -32,7 +32,7 @@
  	dns_ttl_t			maxncachettl;
  	dns_ttl_t			mincachettl;
  	dns_ttl_t			minncachettl;
---- lib/dns/resolver.c.orig	2019-07-04 16:38:26 UTC
+--- lib/dns/resolver.c.orig	2019-07-22 02:18:48 UTC
 +++ lib/dns/resolver.c
 @@ -6048,6 +6048,12 @@ cache_name(fetchctx_t *fctx, dns_name_t *name, dns_adb
  		}
@@ -47,7 +47,7 @@
  		 * Enforce the configure maximum cache TTL.
  		 */
  		if (rdataset->ttl > res->view->maxcachettl) {
---- lib/isccfg/namedconf.c.orig	2019-07-04 16:38:26 UTC
+--- lib/isccfg/namedconf.c.orig	2019-07-22 02:18:48 UTC
 +++ lib/isccfg/namedconf.c
 @@ -1911,6 +1911,7 @@ view_clauses[] = {
  #endif
