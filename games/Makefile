@@ -1005,6 +1005,7 @@
     SUBDIR += vitetris
     SUBDIR += vkquake
     SUBDIR += vms-empire
+    SUBDIR += voadi
     SUBDIR += vodovod
     SUBDIR += volleyball
     SUBDIR += vor
