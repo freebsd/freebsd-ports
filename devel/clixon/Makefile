@@ -25,6 +25,7 @@ MAKE_ARGS=	wwwdir=${PREFIX}/sbin wwwuser=${WWWOWN}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cligen=${LOCALBASE} --sysconfdir=${ETCDIR}
+CONFIGURE_ENV=	YACC="bison -y"
 
 MAKE_JOBS_UNSAFE=yes
 

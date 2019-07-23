@@ -19,6 +19,7 @@ CONFIGURE_ARGS+=--with-mhash \
 		--with-zlib \
 		--mandir=${MANPREFIX}/man \
 		--with-config_file=${PREFIX}/etc/aide.conf
+CONFIGURE_ENV=	YACC="bison -y"
 
 LDFLAGS+=	-lpthread
 
