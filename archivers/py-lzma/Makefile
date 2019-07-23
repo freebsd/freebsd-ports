@@ -14,7 +14,7 @@ COMMENT=	Python binding for the LZMA compression library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 USES=		dos2unix python
 USE_PYTHON=	concurrent distutils autoplist
 
