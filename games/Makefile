@@ -52,6 +52,7 @@
     SUBDIR += apricots
     SUBDIR += aquaria
     SUBDIR += arkanoidsb
+    SUBDIR += armagetronad
     SUBDIR += arx-libertatis
     SUBDIR += asc
     SUBDIR += ascii-invaders
