@@ -1,6 +1,6 @@
---- ldb_tdb/ldb_cache.c.orig	2018-03-04 05:41:25 UTC
-+++ ldb_tdb/ldb_cache.c
-@@ -91,7 +91,9 @@ static int ldb_schema_attribute_compare(
+--- ldb_key_value/ldb_kv_cache.c.orig	2019-01-14 23:24:45 UTC
++++ ldb_key_value/ldb_kv_cache.c
+@@ -90,7 +90,9 @@ static int ldb_schema_attribute_compare(
  {
  	const struct ldb_schema_attribute *sa1 = (const struct ldb_schema_attribute *)p1;
  	const struct ldb_schema_attribute *sa2 = (const struct ldb_schema_attribute *)p2;
