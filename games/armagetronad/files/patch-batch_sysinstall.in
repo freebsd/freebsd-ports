@@ -1,0 +1,11 @@
+--- batch/sysinstall.in.orig	2011-09-11 10:41:39 UTC
++++ batch/sysinstall.in
+@@ -205,7 +205,7 @@ if test $MODE = install; then
+     for script in $DESTDIR$SCRIPTDIR/* $DESTDIR$CONFIGDIR/rc.config; do
+         if test $script != $DESTDIR$SCRIPTDIR/sysinstall; then
+             sed -e ${sedcommands} < $script > $script.trans || exit 1
+-            mv $script.trans $script
++            mv -f $script.trans $script
+             chmod 755 $script
+         fi
+     done
