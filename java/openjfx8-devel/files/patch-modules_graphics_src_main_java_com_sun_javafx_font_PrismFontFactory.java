@@ -1,4 +1,4 @@
---- modules/graphics/src/main/java/com/sun/javafx/font/PrismFontFactory.java.orig	2017-09-08 16:56:55 UTC
+--- modules/graphics/src/main/java/com/sun/javafx/font/PrismFontFactory.java.orig	2018-12-10 16:30:22 UTC
 +++ modules/graphics/src/main/java/com/sun/javafx/font/PrismFontFactory.java
 @@ -51,6 +51,7 @@ public abstract class PrismFontFactory implements Font
      public static final boolean debugFonts;
@@ -39,7 +39,7 @@
                      }
                  }
 -                if (fontResource == null && isLinux) {
-+                if (fontResource == null && isLinux && isFreeBSD) {
++                if (fontResource == null && (isLinux || isFreeBSD)) {
                      String path = FontConfigManager.getDefaultFontPath();
                      if (path != null) {
                          fontResource = createFontResource(jreDefaultFontLC,

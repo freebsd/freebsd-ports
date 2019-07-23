@@ -4,6 +4,8 @@
 %%JAVA_HOME%%/jre/lib/%%ARCH%%/libdecora_sse.so
 %%MEDIA%%%%JAVA_HOME%%/jre/lib/%%ARCH%%/libfxplugins.so
 %%JAVA_HOME%%/jre/lib/%%ARCH%%/libglass.so
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/libglassgtk2.so
+%%JAVA_HOME%%/jre/lib/%%ARCH%%/libglassgtk3.so
 %%MEDIA%%%%JAVA_HOME%%/jre/lib/%%ARCH%%/libgstreamer-lite.so
 %%JAVA_HOME%%/jre/lib/%%ARCH%%/libjavafx_font.so
 %%JAVA_HOME%%/jre/lib/%%ARCH%%/libjavafx_font_freetype.so

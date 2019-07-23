@@ -1,29 +1,21 @@
---- modules/web/src/main/native/Source/cmake/OptionsJava.cmake.orig	2018-03-23 23:53:57 UTC
+--- modules/web/src/main/native/Source/cmake/OptionsJava.cmake.orig	2018-12-10 16:30:22 UTC
 +++ modules/web/src/main/native/Source/cmake/OptionsJava.cmake
-@@ -49,9 +49,9 @@ elseif (APPLE)
-     set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
- elseif (UNIX)
-     #### ICU ####
--    set(ICU_JAVA_COMMON_LIB icuuc)
--    set(ICU_I18N_LIBRARIES icui18n)
--    set(ICU_JAVA_DATA_LIB ${CMAKE_BINARY_DIR}/lib/libicudata.a)
-+    set(ICU_JAVA_COMMON_LIB ${CMAKE_INSTALL_PREFIX}/lib/libicuuc.so)
-+    set(ICU_I18N_LIBRARIES ${CMAKE_INSTALL_PREFIX}/lib/libicui18n.so)
-+    set(ICU_JAVA_DATA_LIB ${CMAKE_INSTALL_PREFIX}/lib/libicudata.so)
-     #### ICU-END ####
+@@ -26,14 +26,10 @@ endif ()
+ set(LIB_INSTALL_DIR "${CMAKE_INSTALL_FULL_LIBDIR}" CACHE PATH "Absolute path to library installation directory")
+ set(EXEC_INSTALL_DIR "${CMAKE_INSTALL_FULL_BINDIR}" CACHE PATH "Absolute path to executable installation directory")
  
-     set(CMAKE_SKIP_RPATH TRUE)
-@@ -60,11 +60,12 @@ else ()
- endif ()
- 
- set(ICU_INCLUDE_DIRS
-+    "${CMAKE_INSTALL_PREFIX}/include"
-     "${THIRDPARTY_DIR}/icu/source/common"
-     "${THIRDPARTY_DIR}/icu/source/i18n"
- )
- set(ICU_LIBRARIES ${ICU_JAVA_COMMON_LIB} ${ICU_JAVA_DATA_LIB})
+-set(SQLITE_LIBRARIES SqliteJava)
+-set(LIBXML2_LIBRARIES XMLJava)
+-set(LIBXSLT_LIBRARIES XSLTJava)
 -
-+set(ICU_LIBRARIES ${ICU_JAVA_COMMON_LIB} ${ICU_JAVA_DATA_LIB})
+-set(ICU_LIBRARIES icuuc icudata)
+-set(ICU_I18N_LIBRARIES icui18n icuuc icudata)
+-set(ICU_DATA_LIBRARIES icudata)
+-
++find_package(LibXml2 2.8.0 REQUIRED)
++find_package(LibXslt REQUIRED)
++find_package(Sqlite REQUIRED)
++find_package(ICU REQUIRED)
  find_package(JNI REQUIRED)
  find_package(Threads REQUIRED)
  
