@@ -1,5 +1,6 @@
 /*
- * Copyright (C) <2008> Jacob Meuser <jakemsr@sdf.lonestar.org>
+ * Copyright (C) 2008 Jacob Meuser <jakemsr@sdf.lonestar.org>
+ * Copyright (C) 2012 Alexandre Ratchov <alex@caoua.org>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -22,6 +23,7 @@
 
 #include <gst/gst.h>
 #include <gst/audio/gstaudiosink.h>
+#include "gstsndio.h"
 
 G_BEGIN_DECLS
 
@@ -40,20 +42,8 @@ typedef struct _GstSndioSink GstSndioSink;
 typedef struct _GstSndioSinkClass GstSndioSinkClass;
 
 struct _GstSndioSink {
-  GstAudioSink   sink;
-
-  struct sio_hdl *hdl;
-  gchar    *host;
-
-  /* bytes per frame */
-  int bpf;
-
-  /* frames counts */
-  volatile long long realpos;
-  volatile long long playpos;
-  volatile guint latency;
-
-  GstCaps  *cur_caps;
+  GstAudioSink sink;
+  struct gstsndio sndio;
 };
 
 struct _GstSndioSinkClass {

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gradle
-PORTVERSION=	4.6
+PORTVERSION=	4.10.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://downloads.gradle.org/distributions/
 PKGNAMESUFFIX=	4
