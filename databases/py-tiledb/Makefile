@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.5.4:devel/py-setuptools_
 LIB_DEPENDS=	libtiledb.so:databases/tiledb
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++11-lang localbase python
-USE_PYTHON=	autoplist concurrent cython distutils
+USES=		compiler:c++11-lang localbase python:3.5+
+USE_PYTHON=	autoplist cython distutils
 
 .include <bsd.port.mk>
