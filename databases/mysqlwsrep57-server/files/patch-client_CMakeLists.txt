@@ -1,6 +1,6 @@
---- client/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
+--- client/CMakeLists.txt.orig	2019-07-17 18:38:36 UTC
 +++ client/CMakeLists.txt
-@@ -32,8 +32,6 @@ INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compil
+@@ -31,8 +31,6 @@ INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compile_flags.cmake)
  
  ## Subdirectory with common client code.
  ADD_SUBDIRECTORY(base)
@@ -9,7 +9,7 @@
  
  ## We will need libeay32.dll and ssleay32.dll when running client executables.
  COPY_OPENSSL_DLLS(copy_openssl_client)
-@@ -41,11 +39,13 @@ COPY_OPENSSL_DLLS(copy_openssl_client)
+@@ -40,11 +38,13 @@ COPY_OPENSSL_DLLS(copy_openssl_client)
  INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compile_flags.cmake)
  
  ADD_DEFINITIONS(${SSL_DEFINES})
@@ -23,7 +23,7 @@
  
  IF(NOT WITHOUT_SERVER)
    MYSQL_ADD_EXECUTABLE(mysql_upgrade
-@@ -65,6 +65,7 @@ TARGET_LINK_LIBRARIES(mysqltest mysqlcli
+@@ -65,6 +65,7 @@ ADD_DEPENDENCIES(mysqltest GenError)
  ADD_CONVENIENCE_LIBRARY(mysqlcheck_core check/mysqlcheck_core.cc)
  TARGET_LINK_LIBRARIES(mysqlcheck_core mysqlclient)
  
@@ -31,7 +31,7 @@
  MYSQL_ADD_EXECUTABLE(mysqlcheck check/mysqlcheck.cc)
  TARGET_LINK_LIBRARIES(mysqlcheck mysqlcheck_core)
  
-@@ -77,10 +78,12 @@ TARGET_LINK_LIBRARIES(mysqlimport mysqlc
+@@ -77,10 +78,12 @@ TARGET_LINK_LIBRARIES(mysqlimport mysqlclient)
  
  MYSQL_ADD_EXECUTABLE(mysqlshow mysqlshow.c)
  TARGET_LINK_LIBRARIES(mysqlshow mysqlclient)
@@ -44,7 +44,7 @@
  MYSQL_ADD_EXECUTABLE(mysqlbinlog mysqlbinlog.cc)
  ADD_COMPILE_FLAGS(
    mysqlbinlog.cc
-@@ -97,6 +100,7 @@ TARGET_LINK_LIBRARIES(mysqlslap mysqlcli
+@@ -97,6 +100,7 @@ TARGET_LINK_LIBRARIES(mysqlslap mysqlclient)
  
  MYSQL_ADD_EXECUTABLE(mysql_config_editor mysql_config_editor.cc)
  TARGET_LINK_LIBRARIES(mysql_config_editor mysqlclient)
