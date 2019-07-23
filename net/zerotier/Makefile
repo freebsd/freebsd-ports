@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	zerotier
-DISTVERSION=	1.2.12
-PORTREVISION=	3
+DISTVERSION=	1.2.12-310
+DISTVERSIONSUFFIX=	-g8a0b75c
+
 CATEGORIES=	net
 
 MAINTAINER=	dch@FreeBSD.org
@@ -19,6 +20,7 @@ USE_RC_SUBR=	zerotier
 
 USE_GITHUB=	yes
 GH_PROJECT=	ZeroTierOne
+GH_TAGNAME=	8a0b75c
 
 CFLAGS+=	-flax-vector-conversions
 
