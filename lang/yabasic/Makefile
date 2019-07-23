@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yabasic
-PORTVERSION=	2.83.1
+PORTVERSION=	2.84.1
 PORTEPOCH=	1
 CATEGORIES=	lang
 
@@ -12,7 +12,9 @@ COMMENT=	Yet another Basic for Unix and Windows
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf bison gmake ncurses
+LIB_DEPENDS=	libffi.so:devel/libffi
+
+USES=		autoreconf bison gmake localbase ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	marcIhm
 
