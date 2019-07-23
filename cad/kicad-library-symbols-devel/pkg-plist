@@ -216,6 +216,10 @@
 %%DATADIR%%/library/MCU_Nordic.lib
 %%DATADIR%%/library/MCU_Parallax.dcm
 %%DATADIR%%/library/MCU_Parallax.lib
+%%DATADIR%%/library/MCU_Renesas_Synergy_S1.dcm
+%%DATADIR%%/library/MCU_Renesas_Synergy_S1.lib
+%%DATADIR%%/library/MCU_STC.dcm
+%%DATADIR%%/library/MCU_STC.lib
 %%DATADIR%%/library/MCU_ST_STM32F0.dcm
 %%DATADIR%%/library/MCU_ST_STM32F0.lib
 %%DATADIR%%/library/MCU_ST_STM32F1.dcm
