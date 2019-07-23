@@ -1,7 +1,7 @@
-TIMESTAMP = 1555424200
+TIMESTAMP = 1563530272
 SHA256 (boost_1_59_0.tar.gz) = 47f11c8844e579d02691a607fbd32540104a9ac7a2534a8ddaef50daf502baac
 SIZE (boost_1_59_0.tar.gz) = 83709983
-SHA256 (codership-mysql-wsrep-wsrep_5.7.25-25.17_GH0.tar.gz) = 87c1ef4277a60c36166b737813d4898ace7797870fa813d514107133ea257260
-SIZE (codership-mysql-wsrep-wsrep_5.7.25-25.17_GH0.tar.gz) = 52350103
+SHA256 (codership-mysql-wsrep-wsrep_5.7.26-25.18_GH0.tar.gz) = 91d44918284e2f8e5ec7aabbf15e0c7ccefefd32a7a0206494d16ea8216098fc
+SIZE (codership-mysql-wsrep-wsrep_5.7.26-25.18_GH0.tar.gz) = 54333146
 SHA256 (codership-wsrep-API-eab2d5d5a31672c0b7d116ef1629ff18392fd7d0_GH0.tar.gz) = 3c235868ed330d8d702e7b7541c24c1926b1fd9e6b8aa673b032a2318896e8a0
 SIZE (codership-wsrep-API-eab2d5d5a31672c0b7d116ef1629ff18392fd7d0_GH0.tar.gz) = 47032

@@ -1,14 +1,14 @@
---- rapid/unittest/gunit/xplugin/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
+--- rapid/unittest/gunit/xplugin/CMakeLists.txt.orig	2019-07-17 18:38:36 UTC
 +++ rapid/unittest/gunit/xplugin/CMakeLists.txt
-@@ -65,7 +65,6 @@ ENDIF()
- ADD_DEFINITIONS(${GMOCK_CFLAGS} -DBOOST_ALL_NO_LIB -DBOOST_NO_AUTO_PTR -DUSE_MYSQLX_FULL_PROTO)
+@@ -71,7 +71,6 @@ ADD_DEFINITIONS(
+ )
  
  INCLUDE_DIRECTORIES(SYSTEM
 -    ${BOOST_INCLUDE_DIR}
      ${PROTOBUF_INCLUDE_DIRS}
      ${SSL_INCLUDE_DIRS}
-     ${LIBEVENT_INCLUDE_DIR}
-@@ -75,6 +74,7 @@ INCLUDE_DIRECTORIES(SYSTEM
+     ${LIBEVENT_INCLUDE_DIRS}
+@@ -81,6 +80,7 @@ INCLUDE_DIRECTORIES(SYSTEM
  )
  
  INCLUDE_DIRECTORIES(
