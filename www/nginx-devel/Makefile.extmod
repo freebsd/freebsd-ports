@@ -125,7 +125,7 @@ HTTP_NOTICE_GH_TUPLE=		kr:nginx-notice:3c95966:notice
 HTTP_NOTICE_CONFIGURE_ON=	--add-module=${WRKSRC_notice}
 HTTP_NOTICE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c
 
-HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.2.3:push
+HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.2.6:push
 HTTP_PUSH_VARS=			DSO_EXTMODS+=push
 
 HTTP_PUSH_STREAM_GH_TUPLE=	wandenberg:nginx-push-stream-module:0.5.4:pushstream
