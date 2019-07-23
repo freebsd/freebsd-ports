@@ -18,10 +18,7 @@ bin/armagetronad
 %%ETCDIR%%/settings_dedicated.cfg
 %%ETCDIR%%/settings_visual.cfg
 %%ETCDIR%%/subcultures.srv
-%%DATADIR%%/desktop/armagetronad.desktop
-%%DATADIR%%/desktop/icons/large/armagetronad.png
-%%DATADIR%%/desktop/icons/medium/armagetronad.png
-%%DATADIR%%/desktop/icons/small/armagetronad.png
+share/applications/armagetronad.desktop
 %%DATADIR%%/language/american.txt
 %%DATADIR%%/language/british.txt
 %%DATADIR%%/language/deutsch.txt
@@ -74,3 +71,6 @@ bin/armagetronad
 %%DATADIR%%/textures/shadow.png
 %%DATADIR%%/textures/sky.png
 %%DATADIR%%/textures/title.jpg
+share/icons/hicolor/16x16/apps/armagetronad.png
+share/icons/hicolor/32x32/apps/armagetronad.png
+share/icons/hicolor/48x48/apps/armagetronad.png
