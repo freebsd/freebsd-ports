@@ -5,7 +5,7 @@ include/libtasn1.h
 lib/libtasn1.a
 lib/libtasn1.so
 lib/libtasn1.so.6
-lib/libtasn1.so.6.5.5
+lib/libtasn1.so.6.5.6
 libdata/pkgconfig/libtasn1.pc
 man/man1/asn1Coding.1.gz
 man/man1/asn1Decoding.1.gz
@@ -52,7 +52,7 @@ man/man3/asn1_strerror.3.gz
 man/man3/asn1_write_value.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/libtasn1.html
