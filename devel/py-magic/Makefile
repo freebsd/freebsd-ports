@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	magic
-PORTVERSION=	5.36
+PORTVERSION=	5.37
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
@@ -15,11 +15,11 @@ COMMENT=	Python module for determining file type
 
 LICENSE=	BSD2CLAUSE
 
-# both install module as magic.py
-CONFLICTS=	${PYTHON_PKGNAMEPREFIX}python-magic-*
-
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+# both install module as magic.py
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}python-magic-*
 
 WRKSRC=	${WRKDIR}/file-${PORTVERSION}/python
 
