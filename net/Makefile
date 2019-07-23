@@ -27,6 +27,7 @@
     SUBDIR += arp-sk
     SUBDIR += arpdig
     SUBDIR += arping
+    SUBDIR += arpoison
     SUBDIR += arprelease
     SUBDIR += asio
     SUBDIR += aslookup
