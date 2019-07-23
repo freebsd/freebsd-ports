@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	libtasn1
-PORTVERSION=	4.13
-PORTREVISION=	1
+PORTVERSION=	4.14
 CATEGORIES=	security
-MASTER_SITES=	GNU
+MASTER_SITES=	GNU \
+		GNUPG/gnutls/${PORTNAME}
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	ASN.1 structure parser library
 
-LICENSE=	LGPL21+
-LICENSE_FILE=	${WRKSRC}/COPYING.LIB
+LICENSE=	LGPL21+ GPLv3
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe pkgconfig pathfix gmake libtool
 USE_LDCONFIG=	yes
@@ -21,7 +22,7 @@ CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS=		AUTHORS NEWS README THANKS doc/TODO \
+DOCS=		AUTHORS NEWS README.md THANKS doc/TODO \
 		doc/libtasn1.html doc/libtasn1.pdf doc/libtasn1.ps
 INFO=		libtasn1
 
