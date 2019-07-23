@@ -26,6 +26,7 @@
 %%DATADIR%%/common/annotations/en_AU.xml
 %%DATADIR%%/common/annotations/en_CA.xml
 %%DATADIR%%/common/annotations/en_GB.xml
+%%DATADIR%%/common/annotations/en_IN.xml
 %%DATADIR%%/common/annotations/es.xml
 %%DATADIR%%/common/annotations/es_419.xml
 %%DATADIR%%/common/annotations/es_MX.xml
@@ -52,6 +53,7 @@
 %%DATADIR%%/common/annotations/is.xml
 %%DATADIR%%/common/annotations/it.xml
 %%DATADIR%%/common/annotations/ja.xml
+%%DATADIR%%/common/annotations/jv.xml
 %%DATADIR%%/common/annotations/ka.xml
 %%DATADIR%%/common/annotations/kab.xml
 %%DATADIR%%/common/annotations/kk.xml
@@ -87,6 +89,7 @@
 %%DATADIR%%/common/annotations/si.xml
 %%DATADIR%%/common/annotations/sk.xml
 %%DATADIR%%/common/annotations/sl.xml
+%%DATADIR%%/common/annotations/so.xml
 %%DATADIR%%/common/annotations/sq.xml
 %%DATADIR%%/common/annotations/sr.xml
 %%DATADIR%%/common/annotations/sr_Cyrl.xml
@@ -114,6 +117,7 @@
 %%DATADIR%%/common/annotationsDerived/af.xml
 %%DATADIR%%/common/annotationsDerived/am.xml
 %%DATADIR%%/common/annotationsDerived/ar.xml
+%%DATADIR%%/common/annotationsDerived/ar_SA.xml
 %%DATADIR%%/common/annotationsDerived/as.xml
 %%DATADIR%%/common/annotationsDerived/ast.xml
 %%DATADIR%%/common/annotationsDerived/az.xml
@@ -136,6 +140,7 @@
 %%DATADIR%%/common/annotationsDerived/en_AU.xml
 %%DATADIR%%/common/annotationsDerived/en_CA.xml
 %%DATADIR%%/common/annotationsDerived/en_GB.xml
+%%DATADIR%%/common/annotationsDerived/en_IN.xml
 %%DATADIR%%/common/annotationsDerived/es.xml
 %%DATADIR%%/common/annotationsDerived/es_419.xml
 %%DATADIR%%/common/annotationsDerived/es_MX.xml
@@ -157,16 +162,19 @@
 %%DATADIR%%/common/annotationsDerived/hr.xml
 %%DATADIR%%/common/annotationsDerived/hu.xml
 %%DATADIR%%/common/annotationsDerived/hy.xml
+%%DATADIR%%/common/annotationsDerived/ia.xml
 %%DATADIR%%/common/annotationsDerived/id.xml
 %%DATADIR%%/common/annotationsDerived/is.xml
 %%DATADIR%%/common/annotationsDerived/it.xml
 %%DATADIR%%/common/annotationsDerived/ja.xml
+%%DATADIR%%/common/annotationsDerived/jv.xml
 %%DATADIR%%/common/annotationsDerived/ka.xml
 %%DATADIR%%/common/annotationsDerived/kab.xml
 %%DATADIR%%/common/annotationsDerived/kk.xml
 %%DATADIR%%/common/annotationsDerived/km.xml
 %%DATADIR%%/common/annotationsDerived/kn.xml
 %%DATADIR%%/common/annotationsDerived/ko.xml
+%%DATADIR%%/common/annotationsDerived/ku.xml
 %%DATADIR%%/common/annotationsDerived/ky.xml
 %%DATADIR%%/common/annotationsDerived/lo.xml
 %%DATADIR%%/common/annotationsDerived/lt.xml
@@ -187,6 +195,7 @@
 %%DATADIR%%/common/annotationsDerived/ps.xml
 %%DATADIR%%/common/annotationsDerived/pt.xml
 %%DATADIR%%/common/annotationsDerived/pt_PT.xml
+%%DATADIR%%/common/annotationsDerived/qu.xml
 %%DATADIR%%/common/annotationsDerived/ro.xml
 %%DATADIR%%/common/annotationsDerived/root.xml
 %%DATADIR%%/common/annotationsDerived/ru.xml
@@ -194,11 +203,13 @@
 %%DATADIR%%/common/annotationsDerived/si.xml
 %%DATADIR%%/common/annotationsDerived/sk.xml
 %%DATADIR%%/common/annotationsDerived/sl.xml
+%%DATADIR%%/common/annotationsDerived/so.xml
 %%DATADIR%%/common/annotationsDerived/sq.xml
 %%DATADIR%%/common/annotationsDerived/sr.xml
 %%DATADIR%%/common/annotationsDerived/sr_Cyrl.xml
 %%DATADIR%%/common/annotationsDerived/sr_Cyrl_BA.xml
 %%DATADIR%%/common/annotationsDerived/sr_Latn.xml
+%%DATADIR%%/common/annotationsDerived/sr_Latn_BA.xml
 %%DATADIR%%/common/annotationsDerived/sv.xml
 %%DATADIR%%/common/annotationsDerived/sw.xml
 %%DATADIR%%/common/annotationsDerived/ta.xml
@@ -255,6 +266,7 @@
 %%DATADIR%%/common/casing/bs.xml
 %%DATADIR%%/common/casing/bs_Cyrl.xml
 %%DATADIR%%/common/casing/ca.xml
+%%DATADIR%%/common/casing/ceb.xml
 %%DATADIR%%/common/casing/cgg.xml
 %%DATADIR%%/common/casing/chr.xml
 %%DATADIR%%/common/casing/cs.xml
@@ -460,6 +472,7 @@
 %%DATADIR%%/common/collation/bs.xml
 %%DATADIR%%/common/collation/bs_Cyrl.xml
 %%DATADIR%%/common/collation/ca.xml
+%%DATADIR%%/common/collation/ceb.xml
 %%DATADIR%%/common/collation/chr.xml
 %%DATADIR%%/common/collation/cs.xml
 %%DATADIR%%/common/collation/cu.xml
@@ -659,6 +672,8 @@
 %%DATADIR%%/common/main/ccp_IN.xml
 %%DATADIR%%/common/main/ce.xml
 %%DATADIR%%/common/main/ce_RU.xml
+%%DATADIR%%/common/main/ceb.xml
+%%DATADIR%%/common/main/ceb_PH.xml
 %%DATADIR%%/common/main/cgg.xml
 %%DATADIR%%/common/main/cgg_UG.xml
 %%DATADIR%%/common/main/chr.xml
@@ -706,6 +721,7 @@
 %%DATADIR%%/common/main/en.xml
 %%DATADIR%%/common/main/en_001.xml
 %%DATADIR%%/common/main/en_150.xml
+%%DATADIR%%/common/main/en_AE.xml
 %%DATADIR%%/common/main/en_AG.xml
 %%DATADIR%%/common/main/en_AI.xml
 %%DATADIR%%/common/main/en_AS.xml
@@ -1137,6 +1153,7 @@
 %%DATADIR%%/common/main/prg_001.xml
 %%DATADIR%%/common/main/ps.xml
 %%DATADIR%%/common/main/ps_AF.xml
+%%DATADIR%%/common/main/ps_PK.xml
 %%DATADIR%%/common/main/pt.xml
 %%DATADIR%%/common/main/pt_AO.xml
 %%DATADIR%%/common/main/pt_BR.xml
@@ -1329,6 +1346,9 @@
 %%DATADIR%%/common/properties/ExtendedPictographic.txt
 %%DATADIR%%/common/properties/labels.txt
 %%DATADIR%%/common/properties/scriptMetadata.txt
+%%DATADIR%%/common/properties/segments/GraphemeBreakTest-12.0.0mod.html
+%%DATADIR%%/common/properties/segments/GraphemeBreakTest-12.0.0mod.txt
+%%DATADIR%%/common/properties/segments/readme.txt
 %%DATADIR%%/common/rbnf/af.xml
 %%DATADIR%%/common/rbnf/ak.xml
 %%DATADIR%%/common/rbnf/am.xml
@@ -1440,6 +1460,7 @@
 %%DATADIR%%/common/subdivisions/bs.xml
 %%DATADIR%%/common/subdivisions/ca.xml
 %%DATADIR%%/common/subdivisions/ccp.xml
+%%DATADIR%%/common/subdivisions/ceb.xml
 %%DATADIR%%/common/subdivisions/ckb.xml
 %%DATADIR%%/common/subdivisions/cs.xml
 %%DATADIR%%/common/subdivisions/cy.xml
@@ -1459,20 +1480,24 @@
 %%DATADIR%%/common/subdivisions/gd.xml
 %%DATADIR%%/common/subdivisions/gl.xml
 %%DATADIR%%/common/subdivisions/gu.xml
+%%DATADIR%%/common/subdivisions/ha.xml
 %%DATADIR%%/common/subdivisions/he.xml
 %%DATADIR%%/common/subdivisions/hi.xml
 %%DATADIR%%/common/subdivisions/hr.xml
 %%DATADIR%%/common/subdivisions/hu.xml
 %%DATADIR%%/common/subdivisions/hy.xml
 %%DATADIR%%/common/subdivisions/id.xml
+%%DATADIR%%/common/subdivisions/ig.xml
 %%DATADIR%%/common/subdivisions/is.xml
 %%DATADIR%%/common/subdivisions/it.xml
 %%DATADIR%%/common/subdivisions/ja.xml
+%%DATADIR%%/common/subdivisions/jv.xml
 %%DATADIR%%/common/subdivisions/ka.xml
 %%DATADIR%%/common/subdivisions/kk.xml
 %%DATADIR%%/common/subdivisions/km.xml
 %%DATADIR%%/common/subdivisions/kn.xml
 %%DATADIR%%/common/subdivisions/ko.xml
+%%DATADIR%%/common/subdivisions/ky.xml
 %%DATADIR%%/common/subdivisions/lo.xml
 %%DATADIR%%/common/subdivisions/lt.xml
 %%DATADIR%%/common/subdivisions/lv.xml
@@ -1498,6 +1523,7 @@
 %%DATADIR%%/common/subdivisions/si.xml
 %%DATADIR%%/common/subdivisions/sk.xml
 %%DATADIR%%/common/subdivisions/sl.xml
+%%DATADIR%%/common/subdivisions/so.xml
 %%DATADIR%%/common/subdivisions/sq.xml
 %%DATADIR%%/common/subdivisions/sr.xml
 %%DATADIR%%/common/subdivisions/sr_Latn.xml
@@ -1512,6 +1538,8 @@
 %%DATADIR%%/common/subdivisions/ur.xml
 %%DATADIR%%/common/subdivisions/uz.xml
 %%DATADIR%%/common/subdivisions/vi.xml
+%%DATADIR%%/common/subdivisions/yo.xml
+%%DATADIR%%/common/subdivisions/yo_BJ.xml
 %%DATADIR%%/common/subdivisions/yue.xml
 %%DATADIR%%/common/subdivisions/yue_Hans.xml
 %%DATADIR%%/common/subdivisions/zh.xml
