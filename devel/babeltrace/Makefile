@@ -26,6 +26,7 @@ GH_ACCOUNT=	efficios
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug-info
+CONFIGURE_ENV=	YACC="bison -y"
 USE_GNOME=	glib20
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
