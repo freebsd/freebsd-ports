@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xterm
-PORTVERSION=	347
+PORTVERSION=	348
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.invisible-island.net/xterm/:src1 \
 		https://invisible-mirror.net/archives/xterm/:src1 \
@@ -17,7 +17,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe ncurses tar:tgz
-USE_XORG=	xft xmu xt x11 xpm ice
+USE_XORG=	xft xmu xt x11 xext xpm ice
 
 GNU_CONFIGURE=	yes
 
