@@ -2,7 +2,7 @@
 
 PORTNAME=		shards
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.8.1
+DISTVERSION=		0.9.0
 CATEGORIES=		devel
 
 MAINTAINER=	greg@unrelenting.technology
@@ -20,7 +20,8 @@ RUN_DEPENDS=	git:devel/git
 USE_GITHUB=	yes
 GH_ACCOUNT=	crystal-lang
 
-MAKE_ARGS+=	CRFLAGS="--release --no-debug"
+MAKE_ARGS+=	CRFLAGS="--release --no-debug" \
+		MANDIR="${STAGEDIR}${PREFIX}/man"
 
 PLIST_FILES=	bin/shards \
 		man/man1/shards.1.gz \
