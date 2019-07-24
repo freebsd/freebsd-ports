@@ -1,10 +1,9 @@
 bin/janet
-include/janet.h
-include/janetconf.h
-lib/janet/bars.janet
+bin/jpm
+include/janet/janet.h
+include/janet/janetconf.h
 lib/janet/cook.janet
-lib/janet/highlight.janet
-lib/janet/janet.h
-lib/janet/janetconf.h
+lib/janet/path.janet
+lib/libjanet.a
 lib/libjanet.so
 man/man1/janet.1.gz
