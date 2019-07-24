@@ -142,15 +142,17 @@
  
  /*
   * Class:     sun_font_FreetypeFontScaler
-@@ -726,32 +850,15 @@ Java_sun_font_FreetypeFontScaler_getGlyp
+@@ -698,31 +826,15 @@
          return ptr_to_jlong(getNullGlyphImage());
      }
  
--    /* if algorithmic styling is required then we do not request bitmap */
--    if (context->doBold || context->doItalize) {
--        renderFlags =  FT_LOAD_DEFAULT;
+-    if (!context->useSbits) {
+-        renderFlags |= FT_LOAD_NO_BITMAP;
 -    }
--
++    RenderingProperties renderingProperties;
++    readFontconfig((const FcChar8 *) scalerInfo->face->family_name,
++                   context->ptsz, context->aaType, &renderingProperties);
+ 
 -    /* NB: in case of non identity transform
 -     we might also prefer to disable transform before hinting,
 -     and apply it explicitly after hinting is performed.
@@ -168,10 +170,7 @@
 -        target = FT_LOAD_TARGET_LCD_V;
 -    }
 -    renderFlags |= target;
-+    RenderingProperties renderingProperties;
-+    readFontconfig((const FcChar8 *) scalerInfo->face->family_name,
-+                   context->ptsz, context->aaType, &renderingProperties);
- 
+-
      glyph_index = FT_Get_Char_Index(scalerInfo->face, glyphCode);
  
 -    error = FT_Load_Glyph(scalerInfo->face, glyphCode, renderFlags);
