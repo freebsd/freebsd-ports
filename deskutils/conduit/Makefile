@@ -11,6 +11,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Synchronization application for GNOME
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:graphics/py-goocanvas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:deskutils/py-vobject@${PY_FLAVOR} \
@@ -22,29 +25,23 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:graphics/py-goocanvas@${PY_
 		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		xdg-open:devel/xdg-utils
 
-GNU_CONFIGURE=	yes
-USES=		gettext gmake pathfix pkgconfig python:2.7 \
+USES=		gettext gmake localbase:ldflags pathfix pkgconfig python:2.7 \
 		shebangfix
+GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	intltool pygnome2 gnomeprefix gnomedocutils
 CONFIGURE_ARGS=	--disable-nautilus-extension
 SHEBANG_FILES=	conduit/conduit.real \
 		tools/conduit-client
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	EOG
 OPTIONS_DEFAULT=EOG
 EOG_DESC=	Build Eye-Of-Gnome Plugin
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEOG}
-BUILD_DEPENDS+=	eog:graphics/eog
-RUN_DEPENDS+=	eog:graphics/eog
-CONFIGURE_ARGS+=	--enable-eog-plugin
-.endif
+EOG_BUILD_DEPENDS=	eog:graphics/eog
+EOG_RUN_DEPENDS=	eog:graphics/eog
+EOG_CONFIGURE_ON=	--enable-eog-plugin
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
