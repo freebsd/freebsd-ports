@@ -31,6 +31,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	battleblow
 GH_PROJECT=	openjdk-jdk12u
 
+NO_CCACHE=	yes
+
 _MAKE_JOBS=	#
 MAKE_ENV=	LANG="C" \
 		LC_ALL="C" \
