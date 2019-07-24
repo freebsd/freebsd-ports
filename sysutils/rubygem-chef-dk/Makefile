@@ -3,6 +3,7 @@
 
 PORTNAME=	chef-dk
 PORTVERSION=	2.5.13
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ COMMENT=	Systems integration framework. Development Kit
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-addressable>=2.3.5:www/rubygem-addressable \
+RUN_DEPENDS=	rubygem-addressable25>=2.3.5<2.6:www/rubygem-addressable25 \
 		rubygem-chef>=13.0:sysutils/rubygem-chef \
 		rubygem-chef-provisioning>=2.0:devel/rubygem-chef-provisioning \
 		rubygem-cookbook-omnifetch>=0.5:devel/rubygem-cookbook-omnifetch \
@@ -24,9 +25,10 @@ RUN_DEPENDS=	rubygem-addressable>=2.3.5:www/rubygem-addressable \
 		rubygem-paint1>=1.0:devel/rubygem-paint1 \
 		rubygem-solve>=2.0:devel/rubygem-solve
 
-NO_ARCH=	yes
+USES=		gem
 USE_RUBY=	yes
-USES=		gem shebangfix
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/chef
 
