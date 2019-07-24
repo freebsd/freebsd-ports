@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mailfront
-PORTVERSION=	2.12
-PORTREVISION=	1
+PORTVERSION=	2.22
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		http://untroubled.org/${PORTNAME}/archive/
