@@ -2,9 +2,9 @@ bin/poudriere
 @sample etc/poudriere.conf.sample
 %%ETCDIR%%/hooks/bulk.sh.sample
 %%ETCDIR%%/hooks/pkgbuild.sh.sample
-@sample etc/poudriered.conf.sample
+@sample(0,0,0) etc/poudriered.conf.sample
 etc/rc.d/poudriered
-libexec/poudriere/cachec
+@comment libexec/poudriere/cachec
 libexec/poudriere/cached
 libexec/poudriere/clock
 libexec/poudriere/cpdup
