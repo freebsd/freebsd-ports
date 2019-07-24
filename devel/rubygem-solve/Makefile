@@ -17,4 +17,6 @@ RUN_DEPENDS=	rubygem-molinillo>=0.6:devel/rubygem-molinillo \
 USES=		gem
 USE_RUBY=	yes
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
