@@ -278,6 +278,7 @@
     SUBDIR += l5
     SUBDIR += lasso
     SUBDIR += lastpass-cli
+    SUBDIR += lego
     SUBDIR += libadacrypt
     SUBDIR += libargon2
     SUBDIR += libassuan

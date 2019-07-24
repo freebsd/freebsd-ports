@@ -1,0 +1,4 @@
+lego is a client for Let's Encrypt users, written in Go. It has support for a
+number of ACME challenges, and no external dependencies.
+
+WWW: https://github.com/go-acme/lego

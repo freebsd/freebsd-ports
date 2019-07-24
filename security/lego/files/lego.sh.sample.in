@@ -1,0 +1,40 @@
+#!/bin/sh -e
+
+# Email used for registration and recovery contact.
+EMAIL=""
+
+BASEDIR="%%ETCDIR%%"
+SSLDIR="%%PREFIX%%/etc/ssl/lego"
+DOMAINSFILE="${BASEDIR}/domains.txt"
+
+if [ -z "${EMAIL}" ]; then
+	echo "Please set EMAIL to a valid address in ${BASEDIR}/lego.sh"
+	exit 1
+fi
+
+if [ ! -e "${DOMAINSFILE}" ]; then
+	echo "Please create ${DOMAINSFILE} as specified in ${BASEDIR}/lego.sh"
+	exit 1
+fi
+
+if [ "$1" = "run" ]; then
+	command="run"
+else
+	command="renew --days 30"
+fi
+
+run_or_renew() {
+	%%PREFIX%%/bin/lego --path "${SSLDIR}" \
+		--email="${EMAIL}" \
+		$(printf -- "--domains=%s " $line) \
+		--http --http.webroot="%%WWWDIR%%" \
+		$1
+}
+
+while read line <&3; do
+	if [ "$command" = "run" ]; then
+		run_or_renew "$command"
+	else
+		output=$(run_or_renew "$command") || (echo "$output" && exit 1)
+	fi
+done 3<"${DOMAINSFILE}"

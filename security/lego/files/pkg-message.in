@@ -1,0 +1,37 @@
+
+There are example scripts in
+    %%ETCDIR%%
+that you can use for renewing and deploying certificates.
+
+In order to run the script regularly to update the certificates add this line
+to /etc/periodic.conf:
+
+    weekly_lego_enable="YES"
+
+Additionally the following parameters may be added to /etc/periodic.conf:
+
+Script to run to renew certificates, will be run as %%LEGO_USER%% (required)
+    weekly_lego_renewscript="%%ETCDIR%%/lego.sh"
+
+To run a script after the renewal to deploy certificates
+    weekly_lego_deployscript="%%ETCDIR%%/deploy.sh"
+
+If using the example renew script, add the domains for which lego will manage
+certificates to
+    %%ETCDIR%%/domains.txt, one domain on each line.
+
+To add a Subject Alternate Name to the certificate, append the domain(s) to the
+line:
+    example.com www.example.com
+
+To run lego for the first time, edit
+    %%ETCDIR%%/lego.sh
+and set the EMAIL variable.
+
+Then run lego.sh with the run argument as the %%LEGO_USER%% user:
+    $ %%ETCDIR%%/lego.sh run
+
+Subsequent periodic runs will run with the renew argument by default, with a
+renewal interval of 30 days.
+
+
