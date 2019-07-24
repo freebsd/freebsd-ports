@@ -762,9 +762,6 @@ bin/symilar
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/pylint/test/functional/unknown_encoding_py29.py
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/pylint/test/functional/unknown_encoding_py29.rc
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/pylint/test/functional/unknown_encoding_py29.txt
-%%PYTHON2%%%%PYTHON_SITELIBDIR%%/pylint/test/functional/unknown_encoding_pypy.py
-%%PYTHON2%%%%PYTHON_SITELIBDIR%%/pylint/test/functional/unknown_encoding_pypy.rc
-%%PYTHON2%%%%PYTHON_SITELIBDIR%%/pylint/test/functional/unknown_encoding_pypy.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unnecessary_lambda.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unnecessary_lambda.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/unnecessary_pass.py
