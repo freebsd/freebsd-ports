@@ -544,7 +544,7 @@ _xsi:*:600:
 _tss:*:601:
 _pkcs11:*:602:
 _acme:*:603:
-# free: 604
+_lego:*:604:
 _hockeypuck:*:605:
 # free: 606
 # free: 607
