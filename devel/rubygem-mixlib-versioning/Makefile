@@ -13,6 +13,9 @@ LICENSE=	APACHE20
 
 USES=		gem shebangfix
 USE_RUBY=	yes
+
 SHEBANG_FILES=	.expeditor/update_version.sh
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
