@@ -17,4 +17,6 @@ RUN_DEPENDS=	rubygem-chef-zero>=13.0:sysutils/rubygem-chef-zero \
 USES=		gem
 USE_RUBY=	yes
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
