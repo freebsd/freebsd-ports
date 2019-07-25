@@ -17,6 +17,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-X11
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
+USES=		compiler
 USE_GITHUB=	yes
 GH_ACCOUNT=	ar-
 GH_TAGNAME=	81421d3a8bde0989d7e167d8a814d5232896c930
@@ -34,7 +35,7 @@ post-patch:
 		${WRKSRC}/*conf* ${WRKSRC}/Makefile ${WRKSRC}/*.[158h]	\
 		${WRKSRC}/*.cpp
 	${REINPLACE_CMD} -e '/INITDIR/d' ${WRKSRC}/Makefile
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 	${REINPLACE_CMD} -e '/pragma/d' ${WRKSRC}/inotify-cxx.cpp \
 		${WRKSRC}/usertable.cpp
 .endif

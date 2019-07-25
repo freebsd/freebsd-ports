@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-USES=		alias bdb cpe perl5 ssl
+USES=		alias bdb compiler cpe perl5 ssl
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
@@ -34,7 +34,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\$$(docdir)/examples|\$$(sysconfdir)|g' \
 	    ${WRKSRC}/src/Makefile.in ${WRKSRC}/src/compat/Makefile.in
 	@${REINPLACE_CMD} -e 's|-ansi||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 	@${REINPLACE_CMD} -e '/pragma/d' ${WRKSRC}/src/util.c
 .endif
 
