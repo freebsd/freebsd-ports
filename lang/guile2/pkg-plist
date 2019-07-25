@@ -439,8 +439,8 @@ lib/guile/%%GUILE_VER%%/extensions/guile-readline.so.0.0.0
 lib/libguile-%%GUILE_VER%%.a
 lib/libguile-%%GUILE_VER%%.so
 lib/libguile-%%GUILE_VER%%.so.1
-lib/libguile-%%GUILE_VER%%.so.1.4.0
-lib/libguile-%%GUILE_VER%%.so.1.4.0-gdb.scm
+lib/libguile-%%GUILE_VER%%.so.1.4.1
+lib/libguile-%%GUILE_VER%%.so.1.4.1-gdb.scm
 libdata/pkgconfig/guile-%%GUILE_VER%%.pc
 man/man1/guile.1.gz
 share/aclocal/guile.m4
