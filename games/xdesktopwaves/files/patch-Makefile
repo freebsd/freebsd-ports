@@ -1,18 +1,18 @@
---- ./Makefile.orig	2004-12-18 03:47:40.000000000 -0200
-+++ ./Makefile	2013-11-13 00:35:29.000000000 -0200
-@@ -11,19 +11,19 @@
+--- Makefile.orig	2019-07-14 14:57:50 UTC
++++ Makefile
+@@ -11,19 +11,19 @@ XDW_MAX_OPTIMIZATION=2
  
  #=========================== C compiler configuration ==========================
  
 -CC     = gcc
 -CFLAGS = -I/usr/X11R6/include -O2
 +#CC     = gcc
-+CFLAGS += -I$(LOCALBASE)/include
++CFLAGS = -I$(LOCALBASE)/include
  
  #============================= Linker configuration ============================
  
 -LINK   = gcc
--LFLAGS = -L/usr/X11R6/lib
+-LFLAGS = -L/usr/X11R6/lib64 -L/usr/X11R6/lib
 +LINK   = $(CC)
 +LFLAGS = -L$(LOCALBASE)/lib
  LIBS   = -lm -lX11 -lXext
@@ -26,7 +26,7 @@
  INSTALL = install
  RM      = rm -f -v
  
-@@ -41,8 +41,8 @@
+@@ -41,8 +41,8 @@ clean:
  	$(RM) xdesktopwaves.o
  
  install: xdesktopwaves xdesktopwaves.1
