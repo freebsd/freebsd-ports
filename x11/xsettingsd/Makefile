@@ -24,7 +24,7 @@ PLIST_FILES=	bin/dump_xsettings \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 pre-configure:
 	${REINPLACE_CMD} -e 's|-Wno-narrowing||' ${WRKSRC}/SConstruct
 .endif

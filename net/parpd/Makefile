@@ -19,7 +19,7 @@ PLIST_FILES=	sbin/parpd man/man8/parpd.8.gz
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 pre-configure:
 	${REINPLACE_CMD} -e 's|-Wpedantic||' ${WRKSRC}/Makefile
 .endif

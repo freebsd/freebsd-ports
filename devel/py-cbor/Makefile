@@ -12,13 +12,13 @@ COMMENT=	RFC 7049 - Concise Binary Object Representation
 
 LICENSE=	APACHE20
 
-USES=		python
+USES=		compiler python
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>
 
+.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
 post-patch:
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
 	@${REINPLACE_CMD} -e '/pragma/d' ${WRKSRC}/c/cbormodule.c
 .endif
 

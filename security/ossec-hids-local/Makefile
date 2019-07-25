@@ -12,7 +12,7 @@ COMMENT=	Security tool to monitor and check logs and intrusions
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake ssl
+USES=		compiler gmake ssl
 
 OSSEC_TYPE?=	local
 
@@ -201,7 +201,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-DLUA_USE_LINUX|& ${CPPFLAGS}|' \
 		-e 's|-lreadline|& ${LDFLAGS}|' \
 		${WRKSRC}/src/external/lua/src/Makefile
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 	@${REINPLACE_CMD} -e 's|-Wno-implicit-fallthrough||g' ${WRKSRC}/src/Makefile
 .endif
 
