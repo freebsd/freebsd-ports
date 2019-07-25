@@ -3,12 +3,13 @@
 
 PORTNAME=	rsync
 DISTVERSION=	3.1.3
+PORTREVISION=	1
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://rsync.samba.org/ftp/rsync/ \
-		https://rsync.samba.org/ftp/rsync/ \
+MASTER_SITES=	https://rsync.samba.org/ftp/rsync/ \
+		https://www.mirrorservice.org/sites/rsync.samba.org/ \
+		http://rsync.samba.org/ftp/rsync/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/ \
-		http://www.mirrorservice.org/sites/rsync.samba.org/ \
-		https://www.mirrorservice.org/sites/rsync.samba.org/
+		http://www.mirrorservice.org/sites/rsync.samba.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	rodrigo@FreeBSD.org
