@@ -1,6 +1,6 @@
---- electron/BUILD.gn.orig	2019-03-16 09:51:23 UTC
+--- electron/BUILD.gn.orig	2019-07-19 22:22:11 UTC
 +++ electron/BUILD.gn
-@@ -307,6 +307,15 @@ static_library("electron_lib") {
+@@ -308,6 +308,15 @@ static_library("electron_lib") {
      "//extensions/common/url_pattern.h",
    ]
  
@@ -16,7 +16,7 @@
    if (is_component_build) {
      defines += [ "NODE_SHARED_MODE" ]
    }
-@@ -376,7 +385,7 @@ static_library("electron_lib") {
+@@ -377,7 +386,7 @@ static_library("electron_lib") {
      sources += filenames.lib_sources_win
      libs += [ "dwmapi.lib" ]
    }
