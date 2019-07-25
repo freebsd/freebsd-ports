@@ -1,23 +1,18 @@
---- texmaker.pro.orig	2015-10-24 09:05:27 UTC
+--- texmaker.pro.orig	2018-10-31 06:58:22 UTC
 +++ texmaker.pro
-@@ -19,11 +19,11 @@ DEFINES += HAVE_SPLASH
- unix:!macx {
- contains( QT_VERSION, "^5.*" ) {
- CONFIG		+= link_pkgconfig
--PKGCONFIG 	= poppler-qt5
-+PKGCONFIG 	= hunspell poppler-qt5
- DEFINES += POPPLER24
- } else {
- CONFIG		+= link_pkgconfig
--PKGCONFIG 	= poppler-qt4
-+PKGCONFIG 	= hunspell poppler-qt4
- DETECTEDPOPPLER=$$system(pkg-config --modversion poppler)
- contains( DETECTEDPOPPLER, "^0.18.*" ){
- DEFINES += OLDPOPPLER
-@@ -98,25 +98,6 @@ HEADERS	+= texmaker.h \
+@@ -21,6 +21,8 @@ QT += webenginewidgets
+ message("Qt>=5.7 is required.")
+ }
+ 
++CONFIG      += link_pkgconfig
++PKGCONFIG   += hunspell
+ 
+ CONFIG	+= qt hide_symbols warn_off rtti_off exceptions_off c++11 release
+ CONFIG -= precompile_header
+@@ -117,25 +119,6 @@ HEADERS	+= texmaker.h \
  	unicodeview.h \
- 	quickbeamerdialog.h \
  	svnhelper.h \
+ 	quickbeamerdialog.h \
 -	hunspell/affentry.hxx \
 -	hunspell/affixmgr.hxx \
 -	hunspell/atypes.hxx \
@@ -40,7 +35,7 @@
  	singleapp/qtlocalpeer.h \
  	singleapp/qtlockedfile.h \
  	singleapp/qtsingleapplication.h \
-@@ -210,18 +191,6 @@ SOURCES	+= main.cpp \
+@@ -502,18 +485,6 @@ SOURCES	+= main.cpp \
  	unicodeview.cpp \
  	quickbeamerdialog.cpp \
  	svnhelper.cpp \
@@ -59,7 +54,7 @@
  	singleapp/qtlocalpeer.cpp \
  	singleapp/qtlockedfile.cpp \
  	singleapp/qtsingleapplication.cpp \
-@@ -395,13 +364,6 @@ utilities.files = doc/doc1.png \
+@@ -1104,13 +1075,6 @@ utilities.files = doc/doc10.png \
  	utilities/AUTHORS \
  	utilities/COPYING \
  	utilities/CHANGELOG.txt \
@@ -72,8 +67,8 @@
 -	utilities/texmaker.svg \
  	scripts/titlecase_selection.tms \
  	scripts/hardwordwrap_selection_80col.tms \
- 	locale/qt_cs.qm \
-@@ -477,4 +439,20 @@ INSTALLS += desktop
+ 	locale/qt_ar.qm \
+@@ -1201,6 +1165,22 @@ INSTALLS += desktop
  
  icon.files = utilities/texmaker.png
  INSTALLS += icon
@@ -93,4 +88,6 @@
 +iconscale.path=$${PREFIX}/share/icons/hicolor/scalable/apps
 +iconscale.files=utilities/texmaker.svg
 +INSTALLS += icon16 icon22 icon32 icon48 icon64 icon128 iconscale
- }
+ 
+ #not for openSUSE :
+ metainfo.files = utilities/texmaker.appdata.xml
