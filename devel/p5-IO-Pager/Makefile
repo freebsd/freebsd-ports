@@ -20,6 +20,6 @@ USES=		perl5 tar:tgz
 USE_PERL5=	configure
 
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C|0$||}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S|0$||}
 
 .include <bsd.port.mk>
