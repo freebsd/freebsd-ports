@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guile
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.6
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	2
@@ -18,15 +18,14 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libunistring.so:devel/libunistring \
 		libffi.so:devel/libffi
 
+USES=		charsetfix compiler:c11 gmake iconv libtool makeinfo ncurses pathfix \
+		pkgconfig readline tar:lz
+USE_LDCONFIG=	yes
+
 CONFLICTS_INSTALL=	guile-[0-9]*
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		charsetfix ${USES_${ARCH}} gmake iconv libtool makeinfo ncurses pathfix \
-		pkgconfig readline tar:lz
-USES_powerpc64=	compiler:c11
-
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
