@@ -1,6 +1,6 @@
---- Makefile.am.orig	2019-03-20 12:52:07 UTC
+--- Makefile.am.orig	2019-06-21 03:28:22 UTC
 +++ Makefile.am
-@@ -131,19 +131,19 @@ installdir:
+@@ -132,24 +132,24 @@ installdir:
  
  installconfig: installdir
  	@echo "Installing basic configuration ..."
@@ -15,6 +15,12 @@
 +		chown $(USER) $(DESTDIR)$(confdir)/sympa.conf.sample; \
 +		chgrp $(GROUP) $(DESTDIR)$(confdir)/sympa.conf.sample; \
  	fi
+ 	@echo "Installing configuration template ..."
+ 	-@echo "installing sympa.conf-dist"; \
+-	$(INSTALL) -m 644 -T sympa.conf-dist $(DESTDIR)$(confdir)/sympa.conf-dist; \
++	$(INSTALL) -m 644 sympa.conf-dist $(DESTDIR)$(confdir)/sympa.conf-dist; \
+ 	chown $(USER) $(DESTDIR)$(confdir)/sympa.conf-dist; \
+ 	chgrp $(GROUP) $(DESTDIR)$(confdir)/sympa.conf-dist
 -	-@if [ ! -f $(DESTDIR)$(sysconfdir)/data_structure.version ]; then \
 +	-@if [ ! -f $(DESTDIR)$(sysconfdir)/data_structure.version.sample ]; then \
  		cd $(DESTDIR)$(sysconfdir); \
@@ -31,14 +37,15 @@
  	fi
  	-@for dir in create_list_templates custom_actions custom_conditions \
  		data_sources families tasks \
-@@ -184,9 +184,9 @@ nextstep: 
+@@ -197,10 +197,10 @@ nextstep: 
  	@echo "#######################################################"
  
  uninstall-hook:
 -	cd $(DESTDIR)$(confdir) && rm -f sympa.conf
++	cd $(DESTDIR)$(confdir) && rm -f sympa.conf.sample
+ 	cd $(DESTDIR)$(confdir) && rm -f sympa.conf-dist
 -	cd $(DESTDIR)$(confdir) && rm -f wwsympa.conf
 -	cd $(DESTDIR)$(sysconfdir) && rm -f data_structure.version
-+	cd $(DESTDIR)$(confdir) && rm -f sympa.conf.sample
 +	cd $(DESTDIR)$(confdir) && rm -f wwsympa.conf.sample
 +	cd $(DESTDIR)$(sysconfdir) && rm -f data_structure.version.sample
  	cd $(DESTDIR)$(sysconfdir) && rm -f README
