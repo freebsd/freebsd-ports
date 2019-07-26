@@ -184,7 +184,7 @@ openhab:*:235:235::0:0:openHAB user:/var/db/openhab2/home:/usr/sbin/nologin
 rspamd:*:236:236::0:0:rspamd pseudo-user:/nonexistent:/usr/sbin/nologin
 paperless:*:237:237::0:0:paperless user:/var/db/paperless:/bin/sh
 sonic:*:238:238::0:0:sonic user:/var/db/sonic:/usr/sbin/nologin
-# free: 239
+restserver:*:239:239::0:0:restic rest-server Daemon:/var/db/restserver:/usr/sbin/nologin
 aprsd:*:240:240::0:0:aprsd:/nonexistent:/bin/sh
 tnc:*:241:241::0:0:aprsd:/nonexistent:/bin/sh
 prosody:*:242:242::0:0:Prosody Jabber Server:/nonexistent:/usr/sbin/nologin

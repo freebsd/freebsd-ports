@@ -1,0 +1,5 @@
+Rest Server is a high performance HTTP server that implements restic's
+REST backend API. It provides secure and efficient way to backup data
+remotely, using restic backup client via the rest: URI over the network.
+
+WWW: https://github.com/restic/rest-server
