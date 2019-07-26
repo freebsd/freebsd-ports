@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	2.52c
-PORTREVISION=	1
+PORTVERSION=	2.53c
 CATEGORIES=	security
 PKGNAMESUFFIX=	++
+
+PATCH_SITES=	https://github.com/vanhauser-thc/AFLplusplus/commit/
+PATCHFILES=	30586e634ddb58bad08e9cb662f0ccc44f45b91a.patch:-p1
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Fast instrumented fuzzer

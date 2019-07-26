@@ -1,3 +1,5 @@
-TIMESTAMP = 1560577710
-SHA256 (vanhauser-thc-AFLplusplus-2.52c_GH0.tar.gz) = 013b3c56722d48de5ebb50ef0146696cef8ed42e29981988027b80102c7709e6
-SIZE (vanhauser-thc-AFLplusplus-2.52c_GH0.tar.gz) = 851177
+TIMESTAMP = 1564147654
+SHA256 (vanhauser-thc-AFLplusplus-2.53c_GH0.tar.gz) = 3147d44f01378b46c4234090781e5cb13c9721a72701c28ed4f18b7256d452e7
+SIZE (vanhauser-thc-AFLplusplus-2.53c_GH0.tar.gz) = 934915
+SHA256 (30586e634ddb58bad08e9cb662f0ccc44f45b91a.patch) = f3c22bbac12426d30e06a1d9521e7669e884c41e898df2ee4b66759bdb61aef6
+SIZE (30586e634ddb58bad08e9cb662f0ccc44f45b91a.patch) = 2252
