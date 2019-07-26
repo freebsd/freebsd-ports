@@ -1099,6 +1099,7 @@
     SUBDIR += reoback
     SUBDIR += reptyr
     SUBDIR += respond
+    SUBDIR += rest-server
     SUBDIR += restic
     SUBDIR += retail
     SUBDIR += rex

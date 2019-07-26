@@ -179,7 +179,7 @@ openhab:*:235:
 rspamd:*:236:
 paperless:*:237:
 sonic:*:238:
-# free: 239
+restserver:*:239:
 aprsd:*:240:
 tnc:*:241:
 prosody:*:242:
