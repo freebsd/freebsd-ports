@@ -2,6 +2,7 @@
 
 PORTNAME=	devilutionX
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	benny.goemans@gmail.com

@@ -3,7 +3,7 @@
 
 PORTNAME=	connectagram
 PORTVERSION=	1.2.9
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/connectagram/

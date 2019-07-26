@@ -3,6 +3,7 @@
 
 PORTNAME=		cutecom
 DISTVERSION=		0.51.0
+PORTREVISION=	1
 CATEGORIES=		comms
 
 MAINTAINER=	jwb@FreeBSD.org

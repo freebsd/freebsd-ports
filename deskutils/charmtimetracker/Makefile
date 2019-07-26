@@ -3,7 +3,7 @@
 
 PORTNAME=	charmtimetracker
 DISTVERSION=	1.12.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 
 # PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

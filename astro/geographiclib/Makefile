@@ -3,7 +3,7 @@
 
 PORTNAME=	geographiclib
 PORTVERSION=	1.49
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	SF/geographiclib/distrib\
 		SF/geographiclib:geoids,gravity,magnetic

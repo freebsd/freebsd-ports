@@ -3,7 +3,7 @@
 
 PORTNAME=	pycogent
 PORTVERSION=	1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology python
 
 MAINTAINER=	python@FreeBSD.org

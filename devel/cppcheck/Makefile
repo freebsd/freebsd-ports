@@ -3,7 +3,7 @@
 
 PORTNAME=	cppcheck
 PORTVERSION=	1.88
-PORTREVISION?=	0	# devel/cppcheck-gui
+PORTREVISION?=	1	# devel/cppcheck-gui
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org

@@ -2,6 +2,7 @@
 
 PORTNAME=	powerdxx
 DISTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	rigoletto@FreeBSD.org

@@ -3,6 +3,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.zeek.org/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

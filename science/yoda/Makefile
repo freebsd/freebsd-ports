@@ -2,6 +2,7 @@
 
 PORTNAME=	yoda
 DISTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://www.hepforge.org/archive/${PORTNAME}/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}

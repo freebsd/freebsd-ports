@@ -3,6 +3,7 @@
 
 PORTNAME=	pg_dirtyread
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	meteo
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	tagattie@yandex.com

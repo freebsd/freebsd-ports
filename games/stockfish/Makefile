@@ -3,6 +3,7 @@
 
 PORTNAME=	stockfish
 DISTVERSION=	10
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	http://stockfish.s3.amazonaws.com/

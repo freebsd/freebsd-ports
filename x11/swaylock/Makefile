@@ -2,6 +2,7 @@
 
 PORTNAME=	swaylock
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

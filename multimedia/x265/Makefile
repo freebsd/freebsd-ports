@@ -3,6 +3,7 @@
 
 PORTNAME=	x265
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.videolan.org/pub/videolan/x265/ \
 		https://mirror.leaseweb.com/videolan/x265/ \

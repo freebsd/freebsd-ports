@@ -3,7 +3,7 @@
 
 PORTNAME=	ctrlproxy
 PORTVERSION=	3.0.8
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	irc
 MASTER_SITES=	http://launchpadlibrarian.net/50016234/ \
 		LOCAL/ashish/

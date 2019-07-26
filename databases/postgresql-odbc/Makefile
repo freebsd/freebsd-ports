@@ -2,6 +2,7 @@
 
 PORTNAME=	postgresql
 PORTVERSION=	11.01.0000
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	PGSQL/odbc/versions/src
 PKGNAMESUFFIX=	-odbc

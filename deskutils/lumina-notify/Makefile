@@ -3,7 +3,7 @@
 
 PORTNAME=	lumina-notify
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	jt@ixsystems.com

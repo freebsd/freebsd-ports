@@ -2,6 +2,7 @@
 
 PORTNAME=	kdiff3
 DISTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	textproc kde
 
 MAINTAINER=	kde@FreeBSD.org

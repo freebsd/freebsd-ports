@@ -2,7 +2,7 @@
 
 PORTNAME=	timewarrior
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	https://taskwarrior.org/download/
 DISTNAME=	timew-${PORTVERSION}

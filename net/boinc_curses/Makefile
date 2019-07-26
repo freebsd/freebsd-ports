@@ -3,6 +3,7 @@
 
 PORTNAME=	boinc_curses
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.oook.cz/bsd/boinc_curses/
 

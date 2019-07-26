@@ -3,6 +3,7 @@
 
 PORTNAME=	poco
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-all
 CATEGORIES=	devel net
 MASTER_SITES=	http://pocoproject.org/releases/${PORTNAME}-${PORTVERSION}/

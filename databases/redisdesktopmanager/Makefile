@@ -2,6 +2,7 @@
 
 PORTNAME=	redisdesktopmanager
 PORTVERSION=	2019.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	swills@FreeBSD.org

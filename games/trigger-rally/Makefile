@@ -3,6 +3,7 @@
 
 PORTNAME=	trigger-rally
 PORTVERSION=	0.6.6.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/trigger-rally/trigger-${PORTVERSION}
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	MDB2_Driver_pgsql
 DISTVERSION=	1.5.0b4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases www pear
 
 MAINTAINER=	joneum@FreeBSD.org

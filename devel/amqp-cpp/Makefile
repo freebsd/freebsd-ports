@@ -3,6 +3,7 @@
 PORTNAME=	amqp-cpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.1.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	aleksandr.fedorov@vstack.com

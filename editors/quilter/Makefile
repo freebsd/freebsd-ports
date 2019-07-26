@@ -2,6 +2,7 @@
 
 PORTNAME=	quilter
 DISTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org

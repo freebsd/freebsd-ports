@@ -3,6 +3,7 @@
 
 PORTNAME=	qimageblitz
 PORTVERSION=	0.1.0 # a made-up version also used in some linux distros, otherwise we need to add PORTEPOCH
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -2,6 +2,7 @@
 
 PORTNAME=	kiwix-tools
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	me@int19h.org

@@ -3,6 +3,7 @@
 
 PORTNAME=	antlr
 PORTVERSION=	2.7.7
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr2.org/download/
 

@@ -3,6 +3,7 @@
 PORTNAME=	SoapyBladeRF
 DISTVERSIONPREFIX=	soapy-bladerf-
 DISTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org

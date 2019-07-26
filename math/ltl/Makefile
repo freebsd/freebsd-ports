@@ -3,7 +3,7 @@
 
 PORTNAME=	ltl
 DISTVERSION=	2.0.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.mpe.mpg.de/~drory/ltl/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	libzdb
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.tildeslash.com/libzdb/dist/
 

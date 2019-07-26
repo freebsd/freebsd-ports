@@ -3,6 +3,7 @@
 
 PORTNAME=	glance
 PORTVERSION=	16.0.1
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	https://tarballs.openstack.org/glance/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

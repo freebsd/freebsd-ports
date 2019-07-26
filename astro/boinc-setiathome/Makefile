@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-setiathome
 PORTVERSION=	8.00
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	LOCAL/ler/setiathome \
 		http://www.lerctr.org/setiathome/

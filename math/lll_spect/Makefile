@@ -3,7 +3,7 @@
 
 PORTNAME=	lll_spect
 DISTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	LOCAL/bf/lll_spect/
 DISTFILES=	lll_spect.C lll_search.C examples.txt

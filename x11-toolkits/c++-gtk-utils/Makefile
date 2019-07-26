@@ -3,7 +3,7 @@
 
 PORTNAME=	c++-gtk-utils
 PORTVERSION=	2.2.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/cxx-gtk-utils/cxx-gtk-utils/${PORTVERSION}/
 

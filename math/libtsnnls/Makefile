@@ -3,7 +3,7 @@
 
 PORTNAME=	libtsnnls
 PORTVERSION=	2.3.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	math
 MASTER_SITES=	http://www.jasoncantarella.com/downloads/
 

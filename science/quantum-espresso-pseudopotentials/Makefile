@@ -2,7 +2,7 @@
 
 PORTNAME=	quantum-espresso-pseudopotentials
 DISTVERSION=	g20180406
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org

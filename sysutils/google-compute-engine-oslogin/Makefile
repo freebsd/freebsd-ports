@@ -2,7 +2,7 @@
 
 PORTNAME=	google-compute-engine-oslogin
 DISTVERSION=	1.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	lucas.kanashiro@collabora.com

@@ -3,6 +3,7 @@
 
 PORTNAME=	netradiant
 PORTVERSION=	20150621
+PORTREVISION=	1
 CATEGORIES=	games cad
 MASTER_SITES=	http://ingar.intranifty.net/gtkradiant/files/ LOCAL/danfe \
 		http://ingar.intranifty.net/gtkradiant/files/gamepacks/:gp

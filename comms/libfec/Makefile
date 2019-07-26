@@ -3,7 +3,7 @@
 
 PORTNAME=	libfec
 PORTVERSION=	3.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms astro hamradio math
 MASTER_SITES=	http://www.ka9q.net/code/fec/ \
 		LOCAL/db

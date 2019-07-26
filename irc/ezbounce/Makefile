@@ -3,7 +3,7 @@
 
 PORTNAME=	ezbounce
 PORTVERSION=	1.99.15
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	irc
 MASTER_SITES=	http://BSDforge.com/projects/source/irc/ezbounce/
 

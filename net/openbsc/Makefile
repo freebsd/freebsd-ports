@@ -2,7 +2,7 @@
 
 PORTNAME=	openbsc
 PORTVERSION=	0.15.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	http://git.osmocom.org/${PORTNAME}/snapshot/ \
 		http://chaosophia.net/downloads/osmocom/${PORTNAME}/

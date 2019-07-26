@@ -3,7 +3,7 @@
 
 PORTNAME=	molden
 DISTVERSION=	5.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.umcn.nl/pub/molgraph/molden/

@@ -2,6 +2,7 @@
 
 PORTNAME=	libvmod-maxminddb
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	minitube
 DISTVERSION=	2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia www
 
 MAINTAINER=	ports@FreeBSD.org

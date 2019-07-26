@@ -3,6 +3,7 @@
 PORTNAME=	vulkan-loader
 DISTVERSIONPREFIX=sdk-
 DISTVERSION=	1.1.108.0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	greg@unrelenting.technology

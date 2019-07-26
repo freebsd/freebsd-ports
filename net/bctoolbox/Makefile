@@ -2,7 +2,7 @@
 
 PORTNAME=	bctoolbox
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://www.linphone.org/releases/sources/bctoolbox/
 

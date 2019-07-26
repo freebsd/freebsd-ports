@@ -3,7 +3,7 @@
 
 PORTNAME=	rust
 PORTVERSION?=	1.36.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://static.rust-lang.org/dist/:rust_bootstrap \

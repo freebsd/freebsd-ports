@@ -2,6 +2,7 @@
 
 PORTNAME=	seal
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	lwhsu@FreeBSD.org

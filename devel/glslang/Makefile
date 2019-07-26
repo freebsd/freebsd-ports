@@ -2,6 +2,7 @@
 
 PORTNAME=	glslang
 DISTVERSION=	7.11.3214
+PORTREVISION=	1
 CATEGORIES=	devel graphics
 
 MAINTAINER=	greg@unrelenting.technology

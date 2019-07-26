@@ -2,6 +2,7 @@
 
 PORTNAME=	spectral
 PORTVERSION=	603
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org

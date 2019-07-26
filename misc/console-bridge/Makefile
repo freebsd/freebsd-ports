@@ -2,6 +2,7 @@
 
 PORTNAME=	console-bridge
 DISTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org

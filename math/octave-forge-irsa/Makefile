@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-irsa
 PORTVERSION=	1.0.7
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

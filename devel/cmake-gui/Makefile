@@ -2,6 +2,7 @@
 
 PORTNAME=	cmake
 DISTVERSION=	3.14.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-gui

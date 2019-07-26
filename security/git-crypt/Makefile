@@ -3,6 +3,7 @@
 
 PORTNAME=	git-crypt
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.agwa.name/projects/git-crypt/downloads/ \
 		LOCAL/ashish/

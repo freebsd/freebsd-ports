@@ -2,6 +2,7 @@
 
 PORTNAME=	cassandra
 DISTVERSION=	3.11.4
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	APACHE/cassandra/${PORTVERSION}:apache \
 		LOCAL/yuri:repo

@@ -3,7 +3,7 @@
 
 PORTNAME=	animorph
 PORTVERSION=	0.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/makehuman/MakeHuman%20Source/MakeHuman_091
 

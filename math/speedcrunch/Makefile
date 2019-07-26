@@ -4,7 +4,7 @@
 PORTNAME=	speedcrunch
 PORTVERSION=	0.12.0	# XXX: should really be 0.12, change upon next update
 DISTVERSIONSUFFIX=	-${BB_COMMIT}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	flac
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/flac/ \
 		https://download.videolan.org/contrib/flac/ \

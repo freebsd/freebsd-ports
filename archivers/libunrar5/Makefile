@@ -2,6 +2,7 @@
 
 PORTNAME=	libunrar5
 PORTVERSION=	5.6.8
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-${PORTVERSION}

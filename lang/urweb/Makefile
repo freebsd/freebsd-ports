@@ -3,7 +3,7 @@
 
 PORTNAME=	urweb
 PORTVERSION=	20150520
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang www
 MASTER_SITES=	http://www.impredicative.com/ur/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	stella
 PORTVERSION=	6.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	acm@FreeBSD.org

@@ -3,7 +3,7 @@
 
 PORTNAME=	bddsolve
 PORTVERSION=	1.04
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 MASTER_SITES=	http://www.win.tue.nl/~wieger/bddsolve/_downloads/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}

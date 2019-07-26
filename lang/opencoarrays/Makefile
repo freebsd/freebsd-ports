@@ -3,6 +3,7 @@
 
 PORTNAME=	opencoarrays
 DISTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	lang parallel
 
 MAINTAINER=	ports@FreeBSD.org

@@ -3,7 +3,7 @@
 
 PORTNAME=	goaccess
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tar.goaccess.io/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	polygraph
 DISTVERSION=	4.13.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/
 EXTRACT_SUFX=	-src.tgz

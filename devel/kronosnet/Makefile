@@ -3,7 +3,7 @@
 
 PORTNAME=	kronosnet
 PORTVERSION=	1.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	https://kronosnet.org/releases/
 

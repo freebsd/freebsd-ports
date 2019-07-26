@@ -3,7 +3,7 @@
 
 PORTNAME=	libastylej
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java textproc
 MASTER_SITES=	SF/astyle/astyle/astyle%20${PORTVERSION}
 PKGNAMESUFFIX?=	# for slave port

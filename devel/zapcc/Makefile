@@ -2,6 +2,7 @@
 
 PORTNAME=	zapcc
 PORTVERSION=	g20180622
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz

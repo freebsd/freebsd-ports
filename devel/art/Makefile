@@ -3,7 +3,7 @@
 
 PORTNAME=	art
 PORTVERSION=	0.9.01
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://skylark.tsu.ru/art/0.9/download/src/ \
 		SF/art-project/src/

@@ -3,7 +3,7 @@
 
 PORTNAME=	bigbluebutton
 PORTVERSION=	0.71
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www java
 MASTER_SITES=	http://bigbluebutton.org/downloads/${PORTVERSION}/ \
 		http://bigbluebutton.org/downloads/0.70/:2 \

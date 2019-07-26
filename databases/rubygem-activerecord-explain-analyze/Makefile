@@ -3,6 +3,7 @@
 
 PORTNAME=	activerecord-explain-analyze
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

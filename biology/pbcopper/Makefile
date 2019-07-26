@@ -2,7 +2,7 @@
 
 PORTNAME=	pbcopper
 DISTVERSION=	0.4.1 # Test with biology/unanimity before upgrading!
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org

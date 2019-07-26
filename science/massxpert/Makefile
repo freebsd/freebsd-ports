@@ -3,6 +3,7 @@
 
 PORTNAME=	massxpert
 DISTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	ports@FreeBSD.org

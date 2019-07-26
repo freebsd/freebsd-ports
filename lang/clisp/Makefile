@@ -3,6 +3,7 @@
 
 PORTNAME=	clisp
 PORTVERSION=	2.49.93+
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 
 MAINTAINER=	kiri@TrueFC.org

@@ -3,6 +3,7 @@
 PORTNAME=	rpclib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	aleksandr.fedorov@itglobal.com

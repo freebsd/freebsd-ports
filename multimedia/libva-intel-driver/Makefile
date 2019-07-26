@@ -2,7 +2,7 @@
 
 PORTNAME=	libva-intel-driver
 PORTVERSION=	2.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

@@ -3,7 +3,7 @@
 
 PORTNAME=	cmogstored
 PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bogomips.org/cmogstored/files/
 

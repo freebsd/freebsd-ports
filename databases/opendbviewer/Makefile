@@ -2,7 +2,7 @@
 
 PORTNAME=	opendbviewer
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 
 MAINTAINER=	lbartoletti@tuxfamily.org

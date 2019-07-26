@@ -3,7 +3,7 @@
 
 PORTNAME=	pnetcdf
 PORTVERSION=	1.8.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	science parallel
 MASTER_SITES=	http://cucis.ece.northwestern.edu/projects/PnetCDF/Release/ \
 		LOCAL/sunpoet

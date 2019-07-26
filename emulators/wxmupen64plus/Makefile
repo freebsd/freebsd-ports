@@ -3,7 +3,7 @@
 
 PORTNAME=	wxmupen64plus
 PORTVERSION=	0.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	emulators
 MASTER_SITES=	https://bitbucket.org/auria/wxmupen64plus/get/
 DISTNAME=	${PORTVERSION}
