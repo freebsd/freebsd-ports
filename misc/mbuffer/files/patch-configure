@@ -2,7 +2,7 @@ Remove objdump and open/read/write/fstat symbol names check.  objdump
 is not available on all architectures and the symbol names are
 unlikely to ever change from their visible names on FreeBSD.
 
---- configure.orig	2018-05-05 15:01:58 UTC
+--- configure.orig	2019-07-25 21:31:45 UTC
 +++ configure
 @@ -628,7 +628,6 @@ ALLOCA
  EGREP
@@ -12,7 +12,7 @@ unlikely to ever change from their visible names on FreeBSD.
  AWK
  TAR
  MT
-@@ -4242,51 +4241,7 @@ $as_echo "no" >&6; }
+@@ -4283,51 +4282,6 @@ $as_echo "no" >&6; }
  fi
  
  
@@ -44,7 +44,7 @@ unlikely to ever change from their visible names on FreeBSD.
 -done
 -  done
 -IFS=$as_save_IFS
- 
+-
 -  ;;
 -esac
 -fi
@@ -61,10 +61,10 @@ unlikely to ever change from their visible names on FreeBSD.
 -  test -n "$OBJDUMP" && break
 -done
 -
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking return type of signal handlers" >&5
- $as_echo_n "checking return type of signal handlers... " >&6; }
- if ${ac_cv_type_signal+:} false; then :
-@@ -4931,11 +4886,7 @@ fi
+ # Check whether --enable-largefile was given.
+ if test "${enable_largefile+set}" = set; then :
+   enableval=$enable_largefile;
+@@ -4939,11 +4893,7 @@ fi
  
  
  
@@ -76,7 +76,7 @@ unlikely to ever change from their visible names on FreeBSD.
    { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to enable assertions" >&5
  $as_echo_n "checking whether to enable assertions... " >&6; }
    # Check whether --enable-assert was given.
-@@ -6129,86 +6080,12 @@ fi
+@@ -5948,86 +5898,12 @@ fi
  fi
  
  

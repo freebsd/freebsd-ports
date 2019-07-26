@@ -1,0 +1,21 @@
+--- Makefile.in.orig	2019-07-25 21:31:45 UTC
++++ Makefile.in
+@@ -42,7 +42,7 @@ TAR		= @TAR@
+ 
+ TARGET		= mbuffer$(EXE)
+ SOURCES		= log.c network.c mbuffer.c hashing.c input.c common.c settings.c globals.c
+-OBJECTS		= $(SOURCES:%.c=build/%.o)
++OBJECTS		= $(SOURCES:.c=.o)
+ 
+ TESTTREE	= /bin /usr/bin
+ 
+@@ -54,9 +54,6 @@ $(OBJECTS): build config.h Makefile
+ 
+ build:
+ 	mkdir build
+-
+-build/%.o: %.c
+-	$(CC) $(CFLAGS) -c $< -o $@
+ 
+ $(TARGET): $(OBJECTS)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJECTS) $(LIBS) -o $@
