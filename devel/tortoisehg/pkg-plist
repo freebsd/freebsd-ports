@@ -404,6 +404,7 @@ share/applications/tortoisehg.desktop
 %%NLS%%share/locale/es/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/et/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/tortoisehg.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/he/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/tortoisehg.mo
