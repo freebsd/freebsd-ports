@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sympa
-DISTVERSION=	6.2.42
+DISTVERSION=	6.2.44
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-marseille.fr
@@ -36,7 +36,7 @@ RUN_DEPENDS=	\
 	p5-IO-stringy>=0:devel/p5-IO-stringy	\
 	p5-Locale-libintl>=1.22:devel/p5-Locale-libintl	\
 	p5-Mail-Tools>=0:mail/p5-Mail-Tools	\
-	p5-Mail-DKIM>=0.37:mail/p5-Mail-DKIM	\
+	p5-Mail-DKIM>=0.55:mail/p5-Mail-DKIM	\
 	p5-MIME-Charset>=1.011.3:mail/p5-MIME-Charset	\
 	p5-MIME-EncWords>=1.014:mail/p5-MIME-EncWords	\
 	p5-MIME-Lite-HTML>=1.23:mail/p5-MIME-Lite-HTML	\
