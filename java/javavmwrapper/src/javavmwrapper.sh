@@ -176,14 +176,16 @@ sortConfiguration () {
             # Consistent version numbering for various install directory names
             # including 'openjdk6', 'jdk1.6.0', 'linux-sun-jdk1.6.0', etc.
             VERSION=`echo ${VM} | sed -e 's|[^0-9]*||' -e 's|1\.||' \
-		                      -e 's|\.[0-9]||' 2>/dev/null`
+		                      -e 's|\.[0-9]||' -e 's|-jre||' \
+				      2>/dev/null`
             _VERSION=`echo ${_VM} | sed -e 's|[^0-9]*||' -e 's|1\.||' \
-		                        -e 's|\.[0-9]||' 2>/dev/null`
-            if [ "${VERSION}" \> "${_VERSION}" ]; then
+		                        -e 's|\.[0-9]||' -e 's|-jre||' \
+					2>/dev/null`
+            if [ "${VERSION}" -gt "${_VERSION}" ]; then
                 _JAVAVMS="${_JAVAVMS}:${JAVAVM}:${_JAVAVM}"
                 JAVAVM=
                 continue
-            elif [ "${VERSION}" \< "${_VERSION}" ]; then
+            elif [ "${VERSION}" -lt "${_VERSION}" ]; then
                 _JAVAVMS="${_JAVAVMS}:${_JAVAVM}"
                 continue
             else
