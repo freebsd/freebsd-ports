@@ -1,9 +1,7 @@
 bin/lmp
-bin/msi2lmp
 etc/profile.d/lammps.csh
 etc/profile.d/lammps.sh
 man/man1/lmp.1.gz
-man/man1/msi2lmp.1.gz
 %%DATADIR%%/frc_files/README
 %%DATADIR%%/frc_files/cff91.frc
 %%DATADIR%%/frc_files/clayff.frc
