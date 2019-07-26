@@ -12,7 +12,8 @@ COMMENT=	SoftEther VPN 5 (Developer Edition)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES+=		cmake:noninja dos2unix iconv:wchar_t localbase:ldflags ncurses readline ssl
+USES+=		cmake:noninja compiler:c11 dos2unix iconv:wchar_t \
+		localbase:ldflags ncurses readline ssl
 USE_RC_SUBR=	softether_bridge softether_client softether_server
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
