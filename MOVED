@@ -12852,3 +12852,4 @@ databases/pecl-redis3|databases/pecl-redis|2019-07-19|No longer needed after PHP
 www/weblint||2019-07-20|Broken, uses nonexistant perl libraries, and upstream disappeared. Use www/p5-HTML-Lint instead
 www/august||2019-07-20|Uses removed weblint
 misc/bitwise|math/bitwise|2019-07-21|Moved to math category
+devel/gradle46||2019-07-26|Removed because the only user, biology/gatk, doesn't need it any more
