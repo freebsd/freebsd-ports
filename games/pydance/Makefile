@@ -3,7 +3,7 @@
 
 PORTNAME=	pydance
 PORTVERSION=	1.1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://people.freebsd.org/~sylvio/pydance/ \
 		http://icculus.org/pyddr/ \

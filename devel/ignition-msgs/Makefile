@@ -2,7 +2,7 @@
 
 PORTNAME=	ignition-msgs
 DISTVERSION=	3.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 

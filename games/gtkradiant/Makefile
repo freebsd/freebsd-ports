@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkradiant
 PORTVERSION=	1.5.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games cad
 MASTER_SITES=	IDSOFTWARE/source/:id \
 		http://www.bsd-geek.de/FreeBSD/distfiles/:fb

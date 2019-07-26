@@ -3,6 +3,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.${CFENGINE_COMMIT_DATE}
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
 PKGNAMESUFFIX=	-devel

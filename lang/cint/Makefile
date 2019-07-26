@@ -3,7 +3,7 @@
 
 PORTNAME=	cint
 PORTVERSION=	5.18.00
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	lang
 MASTER_SITES=	http://root.cern.ch/drupal/sites/default/files/
 

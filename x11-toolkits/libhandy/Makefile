@@ -2,6 +2,7 @@
 
 PORTNAME=	libhandy
 PORTVERSION=	0.0.9
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 DIST_SUBDIR=	gnome
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	liquid-tag-parser
 PORTVERSION=	1.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

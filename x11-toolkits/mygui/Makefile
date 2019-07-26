@@ -3,6 +3,7 @@
 
 PORTNAME=	mygui
 PORTVERSION=	3.2.3.git20190127
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits graphics devel
 
 MAINTAINER=	amdmi3@FreeBSD.org

@@ -3,7 +3,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	3.0.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \

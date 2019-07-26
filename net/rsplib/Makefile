@@ -3,6 +3,7 @@
 
 PORTNAME=	rsplib
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://www.uni-due.de/~be0001/rserpool/download/
 

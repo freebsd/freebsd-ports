@@ -2,7 +2,7 @@
 
 PORTNAME=	openmesh
 DISTVERSION=	7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.openmesh.org/media/Releases/${DISTVERSION}/
 DISTNAME=	OpenMesh-${DISTVERSION}

@@ -3,7 +3,7 @@
 
 PORTNAME=	pgloader
 PORTVERSION=	2.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1814/
 

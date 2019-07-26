@@ -3,6 +3,7 @@
 
 PORTNAME=	flamethrower
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	pcarboni@gmail.com

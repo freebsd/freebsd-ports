@@ -2,6 +2,7 @@
 
 PORTNAME=	wlroots
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org

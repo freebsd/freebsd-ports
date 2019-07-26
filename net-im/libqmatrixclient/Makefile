@@ -2,6 +2,7 @@
 
 PORTNAME=	libqmatrixclient
 DISTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org

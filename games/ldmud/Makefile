@@ -3,7 +3,7 @@
 
 PORTNAME=	ldmud
 PORTVERSION=	3.3.720
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	games net
 MASTER_SITES=	http://www.bearnip.com/ftp/mud/ \

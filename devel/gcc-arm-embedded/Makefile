@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc-arm-embedded
 PORTVERSION=	8.2.20181220
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/8-2018q4/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src

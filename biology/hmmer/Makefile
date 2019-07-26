@@ -3,6 +3,7 @@
 
 PORTNAME=	hmmer
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://eddylab.org/software/hmmer/
 

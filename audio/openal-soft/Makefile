@@ -2,7 +2,7 @@
 
 PORTNAME=	openal-soft
 PORTVERSION=	1.19.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://openal-soft.org/openal-releases/
 

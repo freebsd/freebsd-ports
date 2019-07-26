@@ -2,6 +2,7 @@
 
 PORTNAME=	uefi-edk2-qemu
 DISTVERSION=	g20190307
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	bcran@FreeBSD.org

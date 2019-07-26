@@ -3,7 +3,7 @@
 
 PORTNAME=	wiimms
 DISTVERSION=	2.23a
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gugus69.free.fr/wiimms/ \
 		LOCAL/martymac

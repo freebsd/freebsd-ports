@@ -2,6 +2,7 @@
 
 PORTNAME=	kbruch
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	math kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

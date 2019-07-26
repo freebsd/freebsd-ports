@@ -2,7 +2,7 @@
 
 PORTNAME=	vfront
 DISTVERSION=	0.96c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases www
 MASTER_SITES=	SF/vfront/vfront/vfront-${DISTVERSION}
 

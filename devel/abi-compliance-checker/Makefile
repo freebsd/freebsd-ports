@@ -3,7 +3,7 @@
 
 PORTNAME=	abi-compliance-checker
 DISTVERSION=	2.0b1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 
 MAINTAINER=	ports@FreeBSD.org

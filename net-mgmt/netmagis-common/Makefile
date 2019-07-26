@@ -3,7 +3,7 @@
 
 PORTNAME?=	netmagis
 PORTVERSION?=	2.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	net-mgmt
 MASTER_SITES=	http://netmagis.org/files/
 PKGNAMESUFFIX?=	-common

@@ -3,6 +3,7 @@
 
 PORTNAME=	include-what-you-use
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	koobs@FreeBSD.org

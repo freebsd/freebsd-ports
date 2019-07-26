@@ -2,6 +2,7 @@
 
 PORTNAME=	uefi-edk2-bhyve-devel
 DISTVERSION=	g20190424
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	araujo@FreeBSD.org

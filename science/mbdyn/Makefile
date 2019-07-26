@@ -3,7 +3,7 @@
 
 PORTNAME=	mbdyn
 PORTVERSION=	1.7.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science
 MASTER_SITES=	https://www.mbdyn.org/userfiles/downloads/
 

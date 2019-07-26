@@ -3,6 +3,7 @@
 
 PORTNAME=	3omns
 DISTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/chazomaticus/3omns/releases/download/${DISTVERSION}/
 

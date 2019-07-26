@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netmagis
+PORTREVISION=	1
 PKGNAMESUFFIX=	-servers
 
 COMMENT=	Netmagis module for dhcp, bind and mail servers

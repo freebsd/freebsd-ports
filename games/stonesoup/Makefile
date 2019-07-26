@@ -3,6 +3,7 @@
 
 PORTNAME=	stonesoup
 PORTVERSION=	0.23.2
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	lifanov@FreeBSD.org

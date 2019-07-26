@@ -4,7 +4,7 @@ PORTNAME=	gnuradio
 #MASTER_SITES=	http://gnuradio.org/releases/gnuradio/
 DISTVERSION=	3.8tech-preview-381
 DISTVERSIONSUFFIX=	-g27dd99e49
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms astro hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org

@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netmagis
+PORTREVISION=	1
 PKGNAMESUFFIX=	-www
 
 COMMENT=	Netmagis web module

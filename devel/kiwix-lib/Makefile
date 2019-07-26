@@ -2,6 +2,7 @@
 
 PORTNAME=	kiwix-lib
 DISTVERSION=	5.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	me@int19h.org

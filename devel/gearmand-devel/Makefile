@@ -3,7 +3,7 @@
 
 PORTNAME=	gearmand
 PORTVERSION=	1.1.8
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/1.2/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-devel

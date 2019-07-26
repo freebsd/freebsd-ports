@@ -3,6 +3,7 @@
 
 PORTNAME=	xtide
 PORTVERSION=	2.15.2
+PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	https://flaterco.com/files/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

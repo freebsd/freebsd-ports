@@ -2,7 +2,7 @@
 
 PORTNAME=	verilator
 PORTVERSION=	4.008
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	https://www.veripool.org/ftp/
 

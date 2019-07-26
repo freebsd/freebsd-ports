@@ -3,6 +3,7 @@
 
 PORTNAME=	sigil
 PORTVERSION=	0.9.13
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	jonc@chen.org.nz

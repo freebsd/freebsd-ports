@@ -2,6 +2,7 @@
 
 PORTNAME=	yami4
 PORTVERSION=	1.11.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.inspirel.com/yami4/files/
 DISTNAME=	yami4-gpl-${PORTVERSION}

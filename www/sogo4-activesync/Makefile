@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=		-activesync
 
 MAINTAINER=		acm@FreeBSD.org

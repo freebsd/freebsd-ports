@@ -3,7 +3,7 @@
 
 PORTNAME=	pgespresso
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 
 MAINTAINER=	matthew@FreeBSD.org

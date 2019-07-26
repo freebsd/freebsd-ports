@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr-plugin-extrecmenu
 PORTVERSION=	1.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/936/
 DISTNAME=	vdr-${PLUGIN}-${PORTVERSION}

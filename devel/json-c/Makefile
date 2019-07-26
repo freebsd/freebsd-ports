@@ -3,6 +3,7 @@
 
 PORTNAME=	json-c
 PORTVERSION=	0.13.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://s3.amazonaws.com/json-c_releases/releases/ \
 		LOCAL/sunpoet

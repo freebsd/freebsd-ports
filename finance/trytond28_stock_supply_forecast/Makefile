@@ -3,7 +3,7 @@
 
 PORTNAME=	trytond28_stock_supply_forecast
 PORTVERSION=	2.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance python
 MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_stock_supply_forecast/ \
 		http://downloads.tryton.org/${PORTVERSION:R}/

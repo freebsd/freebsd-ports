@@ -3,6 +3,7 @@
 PORTNAME=	SoapyRedPitaya
 DISTVERSIONPREFIX=	soapy-redpitaya-
 DISTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org

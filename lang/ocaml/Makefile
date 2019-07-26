@@ -4,6 +4,7 @@
 
 PORTNAME=	ocaml
 PORTVERSION=	4.05.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ GENTOO \
 		http://caml.inria.fr/pub/distrib/${DISTNAME:R}/:docs

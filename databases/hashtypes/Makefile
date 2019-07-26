@@ -3,7 +3,7 @@
 
 PORTNAME=	hashtypes
 PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases security
 MASTER_SITES=	http://api.pgxn.org/dist/hashtypes/${PORTVERSION}/ \
 		http://oss-files.dreamindustries.co/mirror/

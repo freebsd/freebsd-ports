@@ -3,7 +3,7 @@
 
 PORTNAME=	quassel
 PORTVERSION=	0.13.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 

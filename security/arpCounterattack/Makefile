@@ -3,7 +3,7 @@
 
 PORTNAME=	arpCounterattack
 PORTVERSION=	1.2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	http://isis.poly.edu/~bk/${PORTNAME}/ \
 		http://bk.macroblock.net/${PORTNAME}/

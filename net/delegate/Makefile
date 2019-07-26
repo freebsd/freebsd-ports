@@ -3,6 +3,7 @@
 
 PORTNAME=	delegate
 PORTVERSION=	9.9.13
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	ftp://ftp.delegate.org/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}

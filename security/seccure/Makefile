@@ -3,7 +3,7 @@
 
 PORTNAME=	seccure
 PORTVERSION=	0.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	http://point-at-infinity.org/seccure/ \
 		NETBSD

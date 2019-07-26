@@ -3,6 +3,7 @@
 
 PORTNAME=	zathura
 DISTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	https://pwmt.org/projects/zathura/download/ \
 		http://www.madpilot.net/~mad/pwmt.org/

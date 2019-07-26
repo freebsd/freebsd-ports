@@ -2,7 +2,7 @@
 
 PORTNAME=	photoprint
 DISTVERSION=	0.4.2-pre2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.blackfiveimaging.co.uk/photoprint/
 

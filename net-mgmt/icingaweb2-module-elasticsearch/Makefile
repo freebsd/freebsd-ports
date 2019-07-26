@@ -3,7 +3,7 @@
 PORTNAME=	icingaweb2-module-elasticsearch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org

@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-optics
 PORTVERSION=	0.1.3
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

@@ -2,7 +2,7 @@
 
 PORTNAME=	charm
 DISTVERSION=	6.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://charm.cs.illinois.edu/distrib/
 PKGNAMESUFFIX=	-uiuc

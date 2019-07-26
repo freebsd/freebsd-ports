@@ -3,6 +3,7 @@
 
 PORTNAME=	minipro
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lhondareyte@laposte.net

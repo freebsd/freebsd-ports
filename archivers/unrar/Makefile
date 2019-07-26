@@ -3,6 +3,7 @@
 
 PORTNAME=	unrar
 DISTVERSION=	5.71
+PORTREVISION=	1
 PORTEPOCH=	6
 CATEGORIES+=	archivers
 MASTER_SITES=	https://rarlab.com/rar/ \

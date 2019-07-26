@@ -3,6 +3,7 @@
 
 PORTNAME=	proj
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/proj/

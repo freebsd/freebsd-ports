@@ -3,7 +3,7 @@
 
 PORTNAME=	cassandra-cpp-driver
 PORTVERSION=	2.13.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	gahr@FreeBSD.org

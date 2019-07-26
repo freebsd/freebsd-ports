@@ -3,7 +3,7 @@
 
 PORTNAME=	megatools
 PORTVERSION=	1.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://megatools.megous.com/builds/
 

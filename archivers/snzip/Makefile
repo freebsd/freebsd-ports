@@ -2,6 +2,7 @@
 
 PORTNAME=	snzip
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	archivers
 
 MAINTAINER=	mizhka@gmail.com

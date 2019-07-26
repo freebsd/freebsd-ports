@@ -3,7 +3,7 @@
 
 PORTNAME=	hashcat-legacy
 PORTVERSION=	2.00
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 
 MAINTAINER=	lifanov@FreeBSD.org

@@ -2,7 +2,7 @@
 
 PORTNAME=	emby-server
 PORTVERSION=	4.1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
 		https://mediabrowser.github.io/embytools/

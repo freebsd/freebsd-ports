@@ -3,7 +3,7 @@
 
 PORTNAME?=	percona
 DISTVERSION=	5.7.26-29
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.7/Percona-Server-${DISTVERSION}/source/tarball/:percona \
 		SF/boost/boost/1.59.0:boost

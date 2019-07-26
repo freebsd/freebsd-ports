@@ -3,6 +3,7 @@
 
 PORTNAME=	libpreludedb
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-siem.org/attachments/download/408/
 

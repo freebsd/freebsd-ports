@@ -3,6 +3,7 @@
 PORTNAME=	goxel
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	greg@unrelenting.technology

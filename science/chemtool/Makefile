@@ -3,7 +3,7 @@
 
 PORTNAME=	chemtool
 DISTVERSION=	1.6.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 

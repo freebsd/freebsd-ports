@@ -3,7 +3,7 @@
 
 PORTNAME=	ggobi
 PORTVERSION=	2.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.ggobi.org/downloads/
 

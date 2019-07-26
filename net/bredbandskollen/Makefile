@@ -2,6 +2,7 @@
 
 PORTNAME=	bredbandskollen
 PORTVERSION=	0.20190705
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	zeising@FreeBSD.org

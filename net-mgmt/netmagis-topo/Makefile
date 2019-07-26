@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netmagis
+PORTREVISION=	1
 PKGNAMESUFFIX=	-topo
 
 COMMENT=	Netmagis topology module

@@ -3,6 +3,7 @@
 
 PORTNAME=	redis
 DISTVERSION=	5.0.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 PKGNAMESUFFIX=	-devel

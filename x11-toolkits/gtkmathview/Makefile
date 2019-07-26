@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkmathview
 PORTVERSION=	0.8.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://helm.cs.unibo.it/mml-widget/sources/
 

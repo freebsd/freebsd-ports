@@ -3,6 +3,7 @@
 
 PORTNAME=	cinder
 PORTVERSION=	12.0.4
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	https://tarballs.openstack.org/cinder/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

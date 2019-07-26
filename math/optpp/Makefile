@@ -2,6 +2,7 @@
 
 PORTNAME=	optpp
 DISTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://software.sandia.gov/opt++/downloads/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	trytond28_analytic_sale
 PORTVERSION=	2.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance python
 MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_analytic_sale/ \
 		http://downloads.tryton.org/${PORTVERSION:R}/

@@ -3,6 +3,7 @@
 PORTNAME=	SoapyAirspy
 DISTVERSIONPREFIX=	soapy-airspy-
 DISTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org

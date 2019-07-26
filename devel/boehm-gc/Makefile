@@ -3,6 +3,7 @@
 
 PORTNAME=	gc
 PORTVERSION=	8.0.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/ \
 		https://github.com/ivmai/bdwgc/releases/download/v${PORTVERSION}/

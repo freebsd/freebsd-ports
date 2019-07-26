@@ -3,7 +3,7 @@
 
 PORTNAME=	farblazer
 PORTVERSION=	0.7
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	https://www.pygame.org/gamelets/games/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

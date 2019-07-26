@@ -3,6 +3,7 @@
 PORTNAME=	pict
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.7.1
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 
 MAINTAINER=	greg@unrelenting.technology

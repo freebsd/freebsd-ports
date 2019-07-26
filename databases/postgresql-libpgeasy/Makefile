@@ -4,7 +4,7 @@
 PKGNAMEPREFIX=	postgresql-
 PORTNAME=	libpgeasy
 PORTVERSION=	3.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	PGSQL/projects/gborg/pgeasy/stable
 DIST_SUBDIR=	postgresql

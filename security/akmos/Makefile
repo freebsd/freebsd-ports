@@ -2,7 +2,7 @@
 
 PORTNAME=	akmos
 PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	melanhit@gmail.com

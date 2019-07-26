@@ -3,7 +3,7 @@
 
 PORTNAME=	ircservices
 PORTVERSION=	5.1.18
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	irc
 MASTER_SITES=	http://www.ircservices.za.net/download/ \
 		http://banana.irc.gr/ircservices/ \

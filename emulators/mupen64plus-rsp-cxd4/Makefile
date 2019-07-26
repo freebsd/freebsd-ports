@@ -1,7 +1,7 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	4
+PORTREVISION=	5
 PKGNAMESUFFIX=	-rsp-cxd4
 DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-src-${PORTVERSION}${EXTRACT_SUFX}:plugin
 

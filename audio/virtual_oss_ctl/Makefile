@@ -3,6 +3,7 @@
 
 PORTNAME=	virtual_oss_ctl
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org/distfiles/

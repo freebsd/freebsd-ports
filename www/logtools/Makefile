@@ -3,7 +3,7 @@
 
 PORTNAME=	logtools
 PORTVERSION=	0.13e
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.coker.com.au/logtools/
 

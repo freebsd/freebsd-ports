@@ -3,7 +3,7 @@
 
 PORTNAME=	pldebugger
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://git.postgresql.org/gitweb/?p=pldebugger.git;a=snapshot;h=v${PORTVERSION};sf=tgz;dummy=/

@@ -2,7 +2,7 @@
 
 PORTNAME=	nuvolaplayer
 PORTVERSION=	3.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio www
 
 MAINTAINER=	ports@FreeBSD.org

@@ -3,6 +3,7 @@
 PORTNAME=	wf-recorder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia wayland
 
 MAINTAINER=	tobik@FreeBSD.org

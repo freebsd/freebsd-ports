@@ -2,7 +2,7 @@
 
 PORTNAME=	solarus
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.solarus-games.org/downloads/solarus/
 DISTNAME=	solarus-${PORTVERSION}-src

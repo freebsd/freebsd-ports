@@ -3,6 +3,7 @@
 
 PORTNAME=	gtkwave
 PORTVERSION=	3.3.101
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 

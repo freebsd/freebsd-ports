@@ -3,6 +3,7 @@
 
 PORTNAME=	divide-and-succeed
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://projects.haxx.es/media/upload/${PORTNAME}/files/
 

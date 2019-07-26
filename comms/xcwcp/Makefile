@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcwcp
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	X11 CW Tutor using unixcw
 

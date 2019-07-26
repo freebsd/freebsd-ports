@@ -3,6 +3,7 @@
 
 PORTNAME=	scipy
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	https://docs.scipy.org/doc/scipy-${PORTVERSION:R}.1/:doc \
 		CHEESESHOP:source \

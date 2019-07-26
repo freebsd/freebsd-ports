@@ -3,6 +3,7 @@
 PORTNAME=	SoapyHackRF
 DISTVERSIONPREFIX=	soapy-hackrf-
 DISTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org

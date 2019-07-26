@@ -3,7 +3,7 @@
 
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-web
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	Free Pascal web application libary (FCL)
 

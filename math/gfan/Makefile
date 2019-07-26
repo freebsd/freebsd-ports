@@ -3,6 +3,7 @@
 
 PORTNAME=	gfan
 DISTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://home.math.au.dk/jensen/software/gfan/
 DISTNAME=	${PORTNAME}${DISTVERSION}
