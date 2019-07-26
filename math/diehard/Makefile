@@ -10,6 +10,8 @@ DISTNAME=	die-c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Marsaglia's Diehard Battery of Tests of Randomness
 
+LICENSE=	NONE
+
 ALL_TARGET=	diehard
 WRKSRC=		${WRKDIR}/die.c
 PLIST_SUB=	DOCSDIR="share/doc/${PORTNAME}" DATADIR="share/${PORTNAME}"
