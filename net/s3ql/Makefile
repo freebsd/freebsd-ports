@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apsw>=3.7:databases/py-apsw@${PY_FLAVOR} \
 		ca_root_nss>=0:security/ca_root_nss
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		localbase python:3.3+ sqlite tar:bz2
+USES=		compiler:c++11-lang localbase python:3.3+ sqlite tar:bz2
 USE_PYTHON=	autoplist distutils optsuffix
 
 post-install:
