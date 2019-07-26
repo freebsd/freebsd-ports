@@ -2,8 +2,12 @@
 #
 # Provide support for building Haskell packages using Cabal.
 #
-# Feature:      cabal
-# Usage:        USES=cabal
+# Feature:	cabal
+# Usage:	USES=cabal or USES=cabal:ARGS
+# Valid ARGS:	hpack
+#
+# hpack:	The port doesn't have a .cabal file and needs devel/hs-hpack to
+#		generate it from package.yaml file
 #
 # Variables, which can be set by the port:
 #
@@ -36,10 +40,6 @@
 .if !defined(_INCLUDE_USES_CABAL_MK)
 _INCLUDE_USES_CABAL_MK=    yes
 
-.if !empty(cabal_ARGS)
-IGNORE=		Incorrect 'USES= cabal:${cabal_ARGS}' cabal takes no arguments
-.endif
-
 PKGNAMEPREFIX?=	hs-
 
 EXECUTABLES?=	${PORTNAME}
@@ -50,6 +50,10 @@ CABAL_EXTRACT_SUFX=	.tar.gz
 .  if !defined(CABAL_BOOTSTRAP)
 BUILD_DEPENDS+=	cabal:devel/hs-cabal-install \
 		ghc:lang/ghc
+.  endif
+
+.  if ${cabal_ARGS:Mhpack}
+EXTRACT_DEPENDS+=	hpack:devel/hs-hpack
 .  endif
 
 # Inherited via lang/ghc we need to depend on iconv and libgmp.so (stage q/a)
@@ -92,6 +96,7 @@ DISTFILES+=	${package:C/_[0-9]+//}/revision/${package:C/[^_]*//:S/_//}.cabal:${p
 
 # Fetches and unpacks package source from Hackage using only PORTNAME and PORTVERSION.
 cabal-extract: ${WRKDIR}
+	${RM} -rf ${CABAL_HOME}/.cabal
 	${SETENV} HOME=${CABAL_HOME} cabal new-update
 	cd ${WRKDIR} && \
 		${SETENV} HOME=${CABAL_HOME} cabal get ${PORTNAME}-${PORTVERSION}
@@ -99,6 +104,9 @@ cabal-extract: ${WRKDIR}
 # Fetches and unpacks dependencies sources for a cabal-extract'ed package.
 # Builds them as side-effect.
 cabal-extract-deps:
+.  if ${cabal_ARGS:Mhpack}
+	cd ${WRKSRC} && ${SETENV} HOME=${CABAL_HOME} hpack
+.  endif
 	cd ${WRKSRC} && \
 		${SETENV} HOME=${CABAL_HOME} cabal new-configure --flags="${CABAL_FLAGS}" ${CONFIGURE_ARGS}
 	cd ${WRKSRC} && \
@@ -120,6 +128,9 @@ make-use-cabal-revs:
 .  if !defined(CABAL_BOOTSTRAP)
 
 cabal-post-extract:
+.    if ${cabal_ARGS:Mhpack}
+	cd ${WRKSRC} && ${SETENV} HOME=${CABAL_HOME} hpack
+.    endif
 .    for package in ${_use_cabal}
 .      if ${package:C/[^_]*//:S/_//} != ""
 		cp ${DISTDIR}/${DIST_SUBDIR}/${package:C/_[0-9]+//}/revision/${package:C/[^_]*//:S/_//}.cabal `find ${WRKDIR}/${package:C/_[0-9]+//} -name *.cabal -depth 1`
