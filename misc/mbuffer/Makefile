@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mbuffer
-PORTVERSION=	20190127
+PORTVERSION=	20190725
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 
@@ -14,12 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	gtar:archivers/gtar
 
-USES=		gmake localbase ssl tar:tgz
+USES=		localbase ssl tar:tgz
+
 GNU_CONFIGURE=	yes
-TEST_ARGS=	TAR=gtar # for --ignore-failed-read
+
+# for --ignore-failed-read
+TEST_ARGS=	TAR=gtar
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	GCRYPT MHASH RHASH
+OPTIONS_DEFINE=		GCRYPT MHASH RHASH
 OPTIONS_DEFAULT=	MHASH
 
 GCRYPT_DESC=	Use gcrypt for hash generation
