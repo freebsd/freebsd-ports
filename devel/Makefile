@@ -951,6 +951,7 @@
     SUBDIR += hs-dlist
     SUBDIR += hs-extensible-exceptions
     SUBDIR += hs-ghc-events
+    SUBDIR += hs-ghcprofview
     SUBDIR += hs-git-annex
     SUBDIR += hs-haddock
     SUBDIR += hs-happy
