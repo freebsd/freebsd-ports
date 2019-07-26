@@ -87,9 +87,8 @@ The on-line manual pages to be displayed must come from a Java VM that has
 been released by one of the vendors in the list.
 .Pp
 Currently allowed vendors are
-.Ql bsdjava ,
-.Ql freebsd ,
-.Ql openjdk
+.Ql openjdk ,
+.Ql oracle ,
 and
 .Ql sun .
 .It Ev JAVA_VERSION
@@ -101,13 +100,29 @@ to a version, the on-line manual pages from any Java VM with a version
 greater than or equal to the given version will be used.
 .Pp
 Currently allowed versions are
-.Ql 1.5 ,
-.Ql 1.5+ ,
 .Ql 1.6 ,
 .Ql 1.6+ ,
-.Ql 1.7
+.Ql 1.7 ,
+.Ql 1.7+ ,
+.Ql 1.8 ,
+.Ql 1.8+ ,
+.Ql 1.9 ,
+.Ql 1.9+ ,
+.Ql 6 ,
+.Ql 6+ ,
+.Ql 7 ,
+.Ql 7+ ,
+.Ql 8 ,
+.Ql 8+ ,
+.Ql 9 ,
+.Ql 9+ ,
+.Ql 10 ,
+.Ql 10+ ,
+.Ql 11 ,
+.Ql 11+ ,
+.Ql 12 ,
 and
-.Ql 1.7+ .
+.Ql 12+ .
 .It Ev JAVAVM_OPTS
 The contents of this environment variable will be passed to the invoked
 .Nm man
@@ -125,10 +140,10 @@ programme of the the most up to date and
 .Dq native
 Java VM registered with
 .Nm javavm .
-.It Ev JAVA_VERSION=1.5 Pa %%LOCALBASE%%/bin/manvm javac
+.It Ev JAVA_VERSION=8 Pa %%LOCALBASE%%/bin/manvm javac
 Display the on-line manual page for the
 .Nm javac
-programme for a Java VM which is version 1.5.
+programme for a Java VM which is version 8.
 .El
 .Sh SEE ALSO
 .Xr javavm 1 ,
