@@ -14,12 +14,9 @@ DEPRECATED=	Abandoned upstream
 EXPIRATION_DATE=	2019-10-15
 
 USES=		go:modules
-GO_PKGNAME=	github.com/saibing/bingo
 USE_GITHUB=	yes
 GH_ACCOUNT=	saibing
 GH_TAGNAME=	76bcd777316dde1684ff59793f695e4337c0e62a
-
-# generated with gomod-deps below
 GH_TUPLE=	davecgh:go-spew:v1.1.1:go_spew/vendor/github.com/davecgh/go-spew \
 		fsnotify:fsevents:v0.1.1:fsevents/vendor/github.com/fsnotify/fsevents \
 		fsnotify:fsnotify:v1.4.7:fsnotify/vendor/github.com/fsnotify/fsnotify \
@@ -39,9 +36,5 @@ GH_TUPLE=	davecgh:go-spew:v1.1.1:go_spew/vendor/github.com/davecgh/go-spew \
 		stretchr:testify:v1.3.0:testify/vendor/github.com/stretchr/testify
 
 PLIST_FILES=	bin/bingo
-
-# XXX: Check if useful for other ports and maybe put it in a USES=gomod
-gomod-deps: patch
-	@${AWK} -f ${FILESDIR}/gomod.awk ${WRKSRC}/go.mod
 
 .include <bsd.port.mk>
