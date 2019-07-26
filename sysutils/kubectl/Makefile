@@ -11,7 +11,7 @@ COMMENT=	Kubernetes command-line tool
 
 LICENSE=	APACHE20
 
-USES=		go
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kubernetes
