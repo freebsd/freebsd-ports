@@ -48,7 +48,7 @@
 #
 #	This variable must not be set by individual ports!
 #
-# MAINTAINER: jlaffaye@FreeBSD.org
+# MAINTAINER: dg@syrec.org
 
 .if !defined(_INCLUDE_USES_GO_MK)
 _INCLUDE_USES_GO_MK=	yes
@@ -117,13 +117,13 @@ post-extract:
 .if !target(do-build) && empty(go_ARGS:Mno_targets)
 do-build:
 	(cd ${GO_WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install ${GO_BUILDFLAGS} ${GO_TARGET})
+		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install ${GO_BUILDFLAGS} ${GO_TARGET:S/^${PORTNAME}$/./})
 .endif
 
 .if !target(do-install) && empty(go_ARGS:Mno_targets)
 do-install:
 .for _TARGET in ${GO_TARGET}
-	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${_TARGET:T} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${_TARGET:T:S/^.$/${PORTNAME}/} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .endif
 
