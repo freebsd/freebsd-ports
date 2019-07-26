@@ -44,7 +44,7 @@ FORTRAN_DEFAULT?=	gfortran
 # Possible values: 3.0.4
 FPC_DEFAULT?=		3.0.4
 # Possible values: 7, 8, 9
-GCC_DEFAULT?=		8
+GCC_DEFAULT?=		9
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
 # Possible values: 0.6, 0.7, 1.0, 1.1
