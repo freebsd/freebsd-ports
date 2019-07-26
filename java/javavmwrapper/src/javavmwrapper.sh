@@ -500,24 +500,45 @@ setJavaHome() {
         _JAVAVM_VERSION=
         for version in ${JAVA_VERSION}; do
             case "${version}" in
-                1.6+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.6 1.7 1.8 1.9"
+                *6+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 6 7 8 9 10 11 12"
                     ;;
-                1.7+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.7 1.8 1.9"
+                *7+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 7 8 9 10 11 12"
                     ;;
-                1.8+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.8 1.9"
+                *8+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 8 9 10 11 12"
                     ;;
-                1.9+)
-                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.9"
+                *9+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 9 10 11 12"
+                    ;;
+                10+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 10 11 12"
+                    ;;
+                11+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 11 12"
+                    ;;
+                12+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 12"
+                    ;;
+                1.6)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 6"
+                    ;;
+                1.7)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 7"
+                    ;;
+                1.8)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 8"
+                    ;;
+                1.9)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 9"
                     ;;
                 *)
                     _JAVAVM_VERSION="${_JAVAVM_VERSION} ${version}"
                     ;;
             esac
         done
-        JAVA_VERSION=`echo "${_JAVAVM_VERSION}" | sort | uniq`
+        JAVA_VERSION=`echo "${_JAVAVM_VERSION}" | sort -n | uniq`
     fi
 
     # Finally try to run one of the ${_JAVAVM_VMS}
@@ -528,8 +549,8 @@ setJavaHome() {
         # Respect JAVA_VERSION
         if [ -n "${JAVA_VERSION}" ]; then
             _JAVAVM_VERSION=`echo ${_JAVAVM_VM} | \
-                sed -e 's|^[^0-9]*\([0-9]\)\.\([0-9]\)\.[0-9]$|\1.\2|' \
-                    -e 's|^[^0-9]*\([0-9]\)$|1.\1|'`
+                sed -e 's|^[^0-9]*\([0-9]\)\.\([0-9]\)\.[0-9]$|\2|' \
+                    -e 's|^[^0-9]*\([0-9][0-9]*\)$|\1|'`
             for _JAVAVM_REQUESTED_VERSION in ${JAVA_VERSION}; do
                 if [ "${_JAVAVM_VERSION}" = "${_JAVAVM_REQUESTED_VERSION}" ]; then
                     _JAVAVM_VERSION=
