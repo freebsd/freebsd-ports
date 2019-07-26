@@ -139,6 +139,8 @@ HTTP_RESPONSE_MASTER_SITES=	http://catap.ru/downloads/nginx/:response
 HTTP_RESPONSE_DISTFILES=	ngx_http_response-0.3.tar.gz:response
 HTTP_RESPONSE_CONFIGURE_ON=	--add-module=${WRKDIR}/ngx_http_response-0.3
 
+HTTP_SLICE_AHEAD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_http_modules_ngx__http__slice_read_ahead.c
+
 HTTP_SUBS_FILTER_GH_TUPLE=	yaoweibin:ngx_http_substitutions_filter_module:v0.6.4:subs_filter
 HTTP_SUBS_FILTER_CONFIGURE_ON=	--add-module=${WRKSRC_subs_filter}
 
