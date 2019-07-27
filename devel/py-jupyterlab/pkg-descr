@@ -1,0 +1,13 @@
+JupyterLab is an extensible environment for interactive and reproducible
+computing, based on the Jupyter Notebook and Architecture.
+
+JupyterLab is the next-generation user interface for Project Jupyter offering
+all the familiar building blocks of the classic Jupyter Notebook (notebook,
+terminal, text editor, file browser, rich outputs, etc.) in a flexible and
+powerful user interface. JupyterLab will eventually replace the classic Jupyter
+Notebook.
+
+The current JupyterLab releases are suitable for general usage, and the
+extension APIs will continue to evolve for JupyterLab extension developers.
+
+WWW: https://jupyter.org/
