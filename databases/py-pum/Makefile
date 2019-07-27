@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pum
-DISTVERSION=	0.8.6
-PORTREVISION=	1
+DISTVERSION=	0.9.8
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.7.3:databases/py-psycopg2@${PY_F
 
 USES=		python:3.4+
 USE_PYTHON=	distutils concurrent autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
