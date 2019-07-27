@@ -3,6 +3,8 @@ bin/ack
 %%SITE_PERL%%/App/Ack/ConfigDefault.pm
 %%SITE_PERL%%/App/Ack/ConfigFinder.pm
 %%SITE_PERL%%/App/Ack/ConfigLoader.pm
+%%SITE_PERL%%/App/Ack/File.pm
+%%SITE_PERL%%/App/Ack/Files.pm
 %%SITE_PERL%%/App/Ack/Filter.pm
 %%SITE_PERL%%/App/Ack/Filter/Collection.pm
 %%SITE_PERL%%/App/Ack/Filter/Default.pm
@@ -16,6 +18,4 @@ bin/ack
 %%SITE_PERL%%/App/Ack/Filter/IsPathGroup.pm
 %%SITE_PERL%%/App/Ack/Filter/Match.pm
 %%SITE_PERL%%/App/Ack/Filter/MatchGroup.pm
-%%SITE_PERL%%/App/Ack/Resource.pm
-%%SITE_PERL%%/App/Ack/Resources.pm
 %%PERL5_MAN1%%/ack.1.gz
