@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-Accessor-Grouped
-PORTVERSION=	0.10012
-PORTREVISION=	1
+PORTVERSION=	0.10014
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RIBASUSHI
@@ -18,7 +17,6 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Module-Runtime>=0.012:devel/p5-Module-Runtime \
 		p5-Class-XSAccessor>=1.19:devel/p5-Class-XSAccessor \
-		p5-MRO-Compat>=0:devel/p5-MRO-Compat \
 		p5-Sub-Name>=0.05:devel/p5-Sub-Name
 TEST_DEPENDS=	p5-Test-Exception>=0.31:devel/p5-Test-Exception
 
