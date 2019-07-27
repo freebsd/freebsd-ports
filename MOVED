@@ -11422,7 +11422,6 @@ security/pecl-ssh2-0|security/pecl-ssh2|2019-01-01|Has expired: Works only with 
 security/bitwarden-ruby||2019-01-01|Has expired: Expects very specific rubygem versions for new updates. Please follow instructions in git repo
 devel/pecl-intl||2019-01-01|Has expired: Works only with EOL php 5.6
 devel/pecl-APCu4|devel/pecl-APCu|2019-01-01|Has expired: Works only with EOL php 5.6
-databases/pecl-memcache||2019-01-01|Has expired: Works only with EOL php 5.6
 databases/pecl-memcached2|databases/pecl-memcached|2019-01-01|Has expired: Works only with EOL php 5.6
 math/pecl-bitset2|math/pecl-bitset|2019-01-01|Has expired: Works only with EOL php 5.6
 multimedia/zoneminder-h264|multimedia/zoneminder|2019-01-01|Has expired: h264 feature was commited to main branch, please upgrade to www/zoneminder
