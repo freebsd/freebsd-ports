@@ -558,6 +558,7 @@
     SUBDIR += pecl-cassandra
     SUBDIR += pecl-couchbase
     SUBDIR += pecl-leveldb
+    SUBDIR += pecl-memcache
     SUBDIR += pecl-memcached
     SUBDIR += pecl-mongodb
     SUBDIR += pecl-redis
