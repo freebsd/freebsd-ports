@@ -1,8 +1,12 @@
 %%SITE_PERL%%/App/CLI.pm
 %%SITE_PERL%%/App/CLI/Command.pm
+%%SITE_PERL%%/App/CLI/Command/Commands.pm
 %%SITE_PERL%%/App/CLI/Command/Help.pm
+%%SITE_PERL%%/App/CLI/Command/Version.pm
 %%SITE_PERL%%/App/CLI/Helper.pm
 %%PERL5_MAN3%%/App::CLI.3.gz
 %%PERL5_MAN3%%/App::CLI::Command.3.gz
+%%PERL5_MAN3%%/App::CLI::Command::Commands.3.gz
 %%PERL5_MAN3%%/App::CLI::Command::Help.3.gz
+%%PERL5_MAN3%%/App::CLI::Command::Version.3.gz
 %%PERL5_MAN3%%/App::CLI::Helper.3.gz
