@@ -1,0 +1,17 @@
+pyjson5 is a Python implementation of the JSON5 data format.
+
+JSON5 extends the JSON data interchange format to make it slightly more usable
+as a configuration language:
+- JavaScript-style comments (both single and multi-line) are legal.
+- Object keys may be unquoted if they are legal ECMAScript identifiers
+- Objects and arrays may end with trailing commas.
+- Strings can be single-quoted, and multi-line string literals are allowed.
+
+This project implements a reader and writer implementation for Python; where
+possible, it mirrors the standard Python JSON API package for ease of use.
+
+There is one notable difference from the JSON api: the load() and loads()
+methods support optionally checking for (and rejecting) duplicate object keys;
+pass allow_duplicate_keys=False to do so (duplicates are allowed by default).
+
+WWW: https://github.com/dpranke/pyjson5
