@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	aerc
-DISTVERSION=	0.1.1-117
-DISTVERSIONSUFFIX=	-g8bb115d
+DISTVERSION=	0.1.1-166
+DISTVERSIONSUFFIX=	-g7a3765a
 CATEGORIES=	mail
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -20,11 +20,12 @@ GH_TUPLE=	danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.c
 		ddevault:go-libvterm:b7d861da3810:ddevault_go_libvterm/vendor/github.com/ddevault/go-libvterm \
 		emersion:go-imap-idle:2704abd7050e:emersion_go_imap_idle/vendor/github.com/emersion/go-imap-idle \
 		emersion:go-imap:v1.0.0-beta.6:emersion_go_imap/vendor/github.com/emersion/go-imap \
-		emersion:go-maildir:cec913e0802c:emersion_go_maildir/vendor/github.com/emersion/go-maildir \
+		emersion:go-maildir:c01dc1254320:emersion_go_maildir/vendor/github.com/emersion/go-maildir \
 		emersion:go-message:v0.10.4:emersion_go_message/vendor/github.com/emersion/go-message \
 		emersion:go-sasl:36b50694675c:emersion_go_sasl/vendor/github.com/emersion/go-sasl \
 		emersion:go-smtp:v0.11.1:emersion_go_smtp/vendor/github.com/emersion/go-smtp \
 		emersion:go-textwrapper:d0e65e56babe:emersion_go_textwrapper/vendor/github.com/emersion/go-textwrapper \
+		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
 		go-ini:ini:v1.42.0:go_ini_ini/vendor/github.com/go-ini/ini \
 		golang:appengine:v1.4.0:golang_appengine/vendor/google.golang.org/appengine \
