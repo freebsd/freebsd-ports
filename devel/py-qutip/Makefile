@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qutip
-DISTVERSION=	4.3.1
-PORTREVISION=	2
+DISTVERSION=	4.4.0
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +26,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
 USES=		python:2.7
 USE_PYTHON=	distutils cython cython_run autoplist
+
+post-patch: # https://github.com/qutip/qutip/issues/1059
+	@${FIND} ${WRKSRC} -name "*.pyx" -o -name "*.pxd" | ${XARGS} ${REINPLACE_CMD} 's|^#!python|#!${PYTHON_CMD}|'
 
 do-test:
 	@${ECHO} "==> Running tests. Please note that tests require X11 display access."
