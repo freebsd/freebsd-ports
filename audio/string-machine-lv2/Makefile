@@ -3,6 +3,7 @@
 PORTNAME=	string-machine
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/boost/intrusive/list.hpp:devel/boost-libs
 
-USES=		gmake gnome localbase pkgconfig
+USES=		compiler:c++0x gmake gnome localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	jpcima
 GH_TUPLE=	DISTRHO:DPF:7a056bb:d/dpf
@@ -23,6 +24,12 @@ USE_GNOME=	cairo
 USE_XORG=	x11
 
 CFLAGS+=	-I${FILESDIR} -pthread
+
+SIMD_CFLAGS_i386=	"-msse -mfpmath=sse"
+SIMD_CFLAGS_amd64=	"-msse2 -mfpmath=sse"
+SIMD_CFLAGS_armv7=	"-march=armv7 -mfpu=vfpv3"
+
+MAKE_ARGS=	SIMD_CFLAGS=${SIMD_CFLAGS_${ARCH}}
 
 PLIST_FILES=	lib/lv2/string-machine.lv2/manifest.ttl \
 		lib/lv2/string-machine.lv2/presets.ttl \
