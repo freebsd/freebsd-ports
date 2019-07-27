@@ -3,7 +3,6 @@
 
 PORTNAME=	gdcm
 PORTVERSION=	${GDCM_MAJOR}.${GDCM_MINOR}.${GDCM_PATCH}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/gdcm/gdcm%20${GDCM_MAJOR}.x/GDCM%20${PORTVERSION}
 
@@ -28,7 +27,7 @@ VTK6_CMAKE_ON=		-DGDCM_USE_VTK:BOOL=ON \
 # Change this when updating the port
 GDCM_MAJOR=	3
 GDCM_MINOR=	0
-GDCM_PATCH=	0
+GDCM_PATCH=	1
 
 # Change this whenever VTK is updated
 VTK6_VERSION=	6.2
