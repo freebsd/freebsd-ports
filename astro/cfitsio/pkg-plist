@@ -7,3 +7,5 @@ lib/libcfitsio.so
 lib/libcfitsio.so.%%SHLIB_MAJOR%%
 lib/libcfitsio.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
 libdata/pkgconfig/cfitsio.pc
+%%PORTDOCS%%%%DOCSDIR%%/cfortran.doc
+%%PORTDOCS%%%%DOCSDIR%%/fitsio.doc

@@ -3,7 +3,7 @@
 
 PORTNAME=	monetdb
 PORTVERSION=	11.15.19
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.monetdb.org/downloads/sources/Feb2013-SP6/
 DISTNAME=	MonetDB-${PORTVERSION}
