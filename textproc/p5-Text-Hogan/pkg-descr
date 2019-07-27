@@ -1,0 +1,8 @@
+Text::Hogan is a statement-for-statement rewrite of hogan.js in Perl.
+
+It is a mustache templating engine which supports pre-compilation of your
+templates into pure Perl code, which then renders very quickly.
+
+It passes the full mustache spec.
+
+WWW: https://metacpan.org/release/Text-Hogan
