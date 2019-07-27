@@ -2,6 +2,7 @@
 
 PORTNAME=	acme.sh
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -15,12 +16,13 @@ GH_ACCOUNT=	Neilpang
 USERS=	acme
 GROUPS=	acme
 
-OPTIONS_DEFINE=	DOCS BINDTOOLS STANDALONE
+OPTIONS_DEFINE=	DOCS BINDTOOLS IDN STANDALONE
 OPTIONS_SINGLE=	HTTP
 OPTIONS_SINGLE_HTTP=	CURL WGET
 OPTIONS_DEFAULT=	CURL STANDALONE
 BINDTOOLS_DESC=	Depend on bind-tools for nsupdate
 BINDTOOLS_RUN_DEPENDS=	${LOCALBASE}/bin/nsupdate:dns/bind-tools
+IDN_RUN_DEPENDS=	${LOCALBASE}/bin/idn2:dns/idnkit2
 STANDALONE_DESC=	Standalone mode requires SOCAT
 STANDALONE_RUN_DEPENDS=	socat>0:net/socat
 
@@ -36,6 +38,10 @@ WGET_RUN_DEPENDS=	wget:ftp/wget
 PORTDOCS=	README.md
 
 SUB_FILES=	pkg-message
+
+post-patch-IDN-on:
+	${REINPLACE_CMD} -e 's|^ *idn |      idn2 |'\
+		-e 's|_exists idn|_exists idn2|' ${WRKSRC}/acme.sh
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
