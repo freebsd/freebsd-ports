@@ -1690,10 +1690,10 @@
 %%WWWDIR%%/test/fixtures/changes.yml
 %%WWWDIR%%/test/fixtures/changesets.yml
 %%WWWDIR%%/test/fixtures/comments.yml
-%%WWWDIR%%/test/fixtures/configuration/default.yml
-%%WWWDIR%%/test/fixtures/configuration/empty.yml
-%%WWWDIR%%/test/fixtures/configuration/no_default.yml
-%%WWWDIR%%/test/fixtures/configuration/overrides.yml
+%%WWWDIR%%/test/fixtures/configuration/default.yml.example
+%%WWWDIR%%/test/fixtures/configuration/empty.yml.example
+%%WWWDIR%%/test/fixtures/configuration/no_default.yml.example
+%%WWWDIR%%/test/fixtures/configuration/overrides.yml.example
 %%WWWDIR%%/test/fixtures/custom_fields.yml
 %%WWWDIR%%/test/fixtures/custom_fields_projects.yml
 %%WWWDIR%%/test/fixtures/custom_fields_trackers.yml
@@ -1968,6 +1968,7 @@
 %%WWWDIR%%/test/integration/sessions_test.rb
 %%WWWDIR%%/test/integration/sudo_mode_test.rb
 %%WWWDIR%%/test/integration/users_test.rb
+%%WWWDIR%%/test/integration/wiki_test.rb
 %%WWWDIR%%/test/mocks/open_id_authentication_mock.rb
 %%WWWDIR%%/test/object_helpers.rb
 %%WWWDIR%%/test/test_helper.rb
