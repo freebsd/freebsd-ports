@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	geopandas
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,9 +17,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproj>=1.9.3:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.3.0:devel/py-six@${PY_FLAVOR}
 
-NO_ARCH=	yes
-
 USES=		python
 USE_PYTHON=	autoplist cython distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
