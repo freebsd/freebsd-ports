@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	mixlib-install
-PORTVERSION=	3.11.5
+PORTVERSION=	3.11.18
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to interact with the software distribution system in Chef
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-mixlib-shellout>0:devel/rubygem-mixlib-shellout \
 		rubygem-mixlib-versioning>0:devel/rubygem-mixlib-versioning \
