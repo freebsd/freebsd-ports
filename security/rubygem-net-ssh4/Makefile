@@ -20,9 +20,11 @@ PROMPT_PASSPHRASES_DESC=	Prompt for passphrases on keys
 
 PORTSCOUT=	limit:^4\.
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem shebangfix
+USE_RUBY=	yes
+
+NO_ARCH=	yes
+
 SHEBANG_FILES=	support/ssh_tunnel_bug.rb
 
 PROMPT_PASSPHRASES_RUN_DEPENDS=	rubygem-ruby-termios>=0:comms/rubygem-ruby-termios
