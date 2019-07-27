@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	cfitsio
-PORTVERSION=	3.430
-PORTREVISION=	1
+PORTVERSION=	3.470
 CATEGORIES=	astro
 MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
 		ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/ \
 		ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/oldvers/ \
 		LOCAL/sunpoet
-DISTNAME=	${PORTNAME}${PORTVERSION:R}${PORTVERSION:E}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S|0$||}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for reading and writing files in FITS data format
@@ -20,19 +19,18 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		localbase pkgconfig
+
 ALL_TARGET=	libcfitsio.a shared
 CONFIGURE_ARGS=	ac_cv_prog_FC=f2c
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ZLIB_SOURCES="zlib/zcompress.c zlib/zuncompress.c"
 USE_LDCONFIG=	yes
-USES=		localbase pkgconfig
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_SUB=	SHLIB_MAJOR=${SHLIB_MAJOR} \
 		SHLIB_MINOR=${SHLIB_MINOR}
-PORTDOCS=	*
 
-SHLIB_MAJOR=	5
+SHLIB_MAJOR=	8
 SHLIB_MINOR=	${PORTVERSION:S|0$||}
 
 post-patch:
