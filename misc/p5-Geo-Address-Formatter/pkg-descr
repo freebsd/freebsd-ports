@@ -1,0 +1,9 @@
+Geo::Address::Formatter takes structured address data and formats it according
+to the various global/country rules.
+
+If you have a structured postal address (hash) and need to convert it into a
+readable address based on the format of the address country, it gets more
+complicated with 200+ countries and territories and dozens more address
+components to consider.
+
+WWW: https://metacpan.org/release/Geo-Address-Formatter
