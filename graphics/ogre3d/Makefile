@@ -2,60 +2,120 @@
 # $FreeBSD$
 
 PORTNAME=	ogre3d
-PORTVERSION=	1.9.0
-PORTREVISION=	19
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.11.5
+PORTREVISION=	0
 CATEGORIES=	graphics devel
-MASTER_SITES=   https://bitbucket.org/sinbad/ogre/get/
-DISTNAME=	v1-9-0
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	OGRECave
+GH_PROJECT=	ogre
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Scene-oriented, flexible 3D engine written in C++
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	pkgconf:devel/pkgconf
 LIB_DEPENDS=	libzzip.so:devel/zziplib \
-		libfreetype.so:print/freetype2 \
-		libfreeimage.so:graphics/freeimage
+		libfreetype.so:print/freetype2
 
 CONFLICTS=	ogre3d19-[0-9]*
 
 USE_LDCONFIG=	yes
-USES=		tar:bzip2 cmake pkgconfig compiler:c++11-lib
-USE_SDL=	sdl
-USE_XORG=	xaw xrandr
-WRKSRC=		${WRKDIR}/sinbad-ogre-dd30349ea667
+USES=		cmake pkgconfig compiler:c++11-lib sdl
+USE_SDL=	sdl sdl2
+USE_XORG=	x11 xaw xext xrandr xt
 
-OPTIONS_DEFINE=	BOOST DOCS
-OPTIONS_SUB=	yes
+CMAKE_OFF=	DOXYGEN_GENERATE_LATEX
+CMAKE_ARGS+=	-DOGRE_BUILD_RENDERSYSTEM_GL3PLUS:BOOL=OFF \
+		-DOGRE_BUILD_RENDERSYSTEM_GL:BOOL=OFF \
+		-DOGRE_BUILD_RENDERSYSTEM_GLES2:BOOL=OFF \
+		-DOGRE_BUILD_COMPONENT_PYTHON:BOOL=OFF \
+		-DOGRE_BUILD_COMPONENT_JAVA:BOOL=OFF \
+		-DOGRE_BUILD_COMPONENT_CSHARP:BOOL=OFF \
+		-DOGRE_BUILD_PLUGIN_FREEIMAGE:BOOL=OFF \
+		-DOGRE_BUILD_PLUGIN_EXRCODEC:BOOL=OFF \
+		-DOGRE_CONFIG_ENABLE_ZIP:BOOL=ON \
+		-DOGRE_INSTALL_DOCS:BOOL=OFF \
+		-DOGRE_INSTALL_SAMPLES_SOURCE:BOOL=OFF
 
-BOOST_BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
-BOOST_RUN_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+OPTIONS_DEFINE=		CSHARP DOCS FREEIMAGE JAVA OPENEXR OPENGL PROFILE \
+			PYTHON
+OPTIONS_DEFAULT=	DOCS OPENGL
+OPTIONS_SUB=		yes
 
-BROKEN_aarch64=		does not compile: error: class member cannot be redeclared
-BROKEN_powerpc=		does not install
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOCS_CMAKE_BOOL=	OGRE_INSTALL_DOCS
+ 
+FREEIMAGE_DESC=		Build FreeImage codec
+FREEIMAGE_CMAKE_BOOL=	OGRE_BUILD_PLUGIN_FREEIMAGE
+FREEIMAGE_LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
+
+OPENEXR_DESC=		Build EXR Codec plugin
+OPENEXR_USE=		XORG=ice
+OPENEXR_CMAKE_BOOL=	OGRE_BUILD_PLUGIN_EXRCODEC
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
+			libIlmThread-2_3.so:graphics/ilmbase \
+			libHalf.so:graphics/ilmbase \
+			libIex-2_3.so:graphics/ilmbase
+
+OPENGL_DESC=		OpenGL support
+OPENGL_CMAKE_BOOL=	OGRE_BUILD_RENDERSYSTEM_GL3PLUS \
+			OGRE_BUILD_RENDERSYSTEM_GL \
+			OGRE_BUILD_RENDERSYSTEM_GLES2
+OPENGL_LIB_DEPENDS=	libGL.so:graphics/mesa-libs
+OPENGL_VARS=		USE_XORG+=sm ice
+
+PROFILE_DESC=		Enable internal profiling support
+PROFILE_CMAKE_BOOL=	OGRE_PROFILING
+
+CSHARP_DESC=		Build Csharp bindings
+CSHARP_CMAKE_BOOL=	OGRE_BUILD_COMPONENT_CSHARP
+CSHARP_BUILD_DEPENDS=	swig3.0:devel/swig30
+
+JAVA_DESC=		Build java bindings
+JAVA_CMAKE_BOOL=	OGRE_BUILD_COMPONENT_JAVA
+JAVA_BUILD_DEPENDS=	swig3.0:devel/swig30
+JAVA_VARS=		USE_JAVA=yes \
+			CMAKE_ARGS+=-DJAVA_HOME=${JAVA_HOME}
+
+PYTHON_DESC=		Build python bindings
+PYTHON_CMAKE_BOOL=	OGRE_BUILD_COMPONENT_PYTHON
+PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
+PYTHON_USES=		python
+
+CXXFLAGS+=		-DNDEBUG -I${LOCALBASE}/include
+
+# BROKEN_aarch64=		does not compile: error: class member cannot be redeclared
+# BROKEN_powerpc=		does not install
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|include(FindPkgMacros)|return()|g' \
-		${WRKSRC}/CMake/Packages/FindOIS.cmake \
-		${WRKSRC}/CMake/Packages/FindPOCO.cmake \
-		${WRKSRC}/CMake/Packages/FindTBB.cmake
-	@${REINPLACE_CMD} -e 's|\(OGRE_RW_MUTEX[^;]*\)$$|\1;|g' \
-		${WRKSRC}/OgreMain/include/OgreWorkQueue.h
-	@${REINPLACE_CMD} -e 's|\(OGRE_RW_MUTEX.*\);$$|\1|g' \
-		${WRKSRC}/OgreMain/include/Threading/OgreThreadDefinesBoost.h
 	@${REINPLACE_CMD} -e '\
-		s,defined(__x86_64__),& || defined(__powerpc__) || defined(__sparc64__) || defined(__amd64__),' \
+		s,defined(__x86_64__),& || defined(__sparc64__) || defined(__amd64__),' \
 		${WRKSRC}/OgreMain/include/OgrePlatform.h
 
-post-patch-BOOST-off:
-	@${REINPLACE_CMD} -e 's|Boost|No_Boost|g' \
+post-patch-PYTHON-on:
+	${REINPLACE_CMD} -e 's/\(Python_ADDITIONAL_VERSIONS\) [0-9\.]*/\$1 ${PYTHON_VER}/' \
 		${WRKSRC}/CMake/Dependencies.cmake
+	${REINPLACE_CMD} -e "s/dist-packages/site-packages/" \
+		${WRKSRC}/Components/Python/CMakeLists.txt
+
+post-build-DOCS-on:
+	${MAKE_CMD} -C ${BUILD_WRKSRC} OgreDoc
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for docfile in README COPYING AUTHORS
+.for docfile in README.md LICENSE AUTHORS
 	${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+post-install-JAVA-on:
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/OGRE/java
+	${INSTALL_DATA} ${BUILD_WRKSRC}/java/Ogre-${DISTVERSION}.jar \
+		${STAGEDIR}${LOCALBASE}/share/OGRE/java
+	${INSTALL_LIB} ${BUILD_WRKSRC}/java/libs/libOgreJNI.so \
+		${STAGEDIR}${LOCALBASE}/lib/OGRE
 
 .include <bsd.port.mk>
