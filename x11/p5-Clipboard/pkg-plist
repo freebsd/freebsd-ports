@@ -3,7 +3,6 @@ bin/clipbrowse
 bin/clipedit
 bin/clipfilter
 bin/clipjoin
-%%PERL5_MAN3%%/Clipboard.3.gz
 %%SITE_PERL%%/Clipboard.pm
 %%SITE_PERL%%/Clipboard/MacPasteboard.pm
 %%SITE_PERL%%/Clipboard/Win32.pm
@@ -13,3 +12,7 @@ bin/clipjoin
 %%PERL5_MAN1%%/clipedit.1.gz
 %%PERL5_MAN1%%/clipfilter.1.gz
 %%PERL5_MAN1%%/clipjoin.1.gz
+%%PERL5_MAN3%%/Clipboard.3.gz
+%%PERL5_MAN3%%/Clipboard::MacPasteboard.3.gz
+%%PERL5_MAN3%%/Clipboard::Win32.3.gz
+%%PERL5_MAN3%%/Clipboard::Xclip.3.gz
