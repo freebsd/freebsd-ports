@@ -17,9 +17,11 @@ RUN_DEPENDS=	rubygem-json>=1.0:devel/rubygem-json \
 		rubygem-terminal-table>=1.4.0:textproc/rubygem-terminal-table \
 		rubygem-thor>=0.16.0:devel/rubygem-thor
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/jenkinscli
 
 .include <bsd.port.mk>
