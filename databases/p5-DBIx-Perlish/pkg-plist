@@ -1,3 +1,4 @@
+bin/perlish-parse
 %%SITE_PERL%%/DBIx/Perlish.pm
 %%SITE_PERL%%/DBIx/Perlish/Parse.pm
 %%PERL5_MAN3%%/DBIx::Perlish.3.gz
