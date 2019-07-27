@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	r10k
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -29,6 +29,7 @@ SHEBANG_FILES=	integration/*/*.sh
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+		${WRKSRC}/lib/r10k/settings.rb \
 		${WRKSRC}/lib/r10k/settings/loader.rb
 
 .include <bsd.port.mk>
