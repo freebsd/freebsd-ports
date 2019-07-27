@@ -74,6 +74,7 @@
     SUBDIR += randomio
     SUBDIR += rubygem-benchmark-ips
     SUBDIR += rubygem-benchmark-memory
+    SUBDIR += rubygem-derailed_benchmarks
     SUBDIR += rubygem-railsbench
     SUBDIR += scimark2
     SUBDIR += scimark2c
