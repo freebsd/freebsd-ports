@@ -9,7 +9,7 @@
  
  ### Locations - it is recommended to keep the default
  #\$config\['install_dir'\]  = "$install_dir";
-@@ -389,14 +389,14 @@ $config_file = <<<"EOD"
+@@ -392,14 +392,14 @@
  
  # Update configuration
  #\$config\['update_channel'\] = 'release';  # uncomment to follow the monthly release channel
@@ -17,7 +17,7 @@
 +\$config\['update'\] = 0;  # uncomment to completely disable updates
  EOD;
  
- if (!file_exists("config.php")) {
+ if (!file_exists("{$librenms_dir}/config.php")) {
      $conf = fopen("config.php", 'w');
      if ($conf != false) {
          if (fwrite($conf, "<?php\n") === false) {
