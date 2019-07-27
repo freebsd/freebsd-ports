@@ -2,7 +2,7 @@
 
 PORTNAME=	ridl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	g20190520
+DISTVERSION=	g20190530
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 USES=		cmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	vusec
-GH_TAGNAME=	7e4fc98
+GH_TAGNAME=	11b3240
 GH_TUPLE=	nothings:stb:1034f5e:stb/stb \
 		vurtun:nuklear:509c75b:nuklear/nuklear
 
