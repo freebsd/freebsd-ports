@@ -1,5 +1,7 @@
 bin/kim-api-collections-management
 etc/bash_completion.d/kim-api-collections-management.bash
+etc/zsh_completion.d/kim-api-collections-management.bash
+etc/zsh_completion.d/kim-api-collections-management.zsh
 include/kim-api/KIM_ChargeUnit.h
 include/kim-api/KIM_ChargeUnit.hpp
 include/kim-api/KIM_Collection.h
