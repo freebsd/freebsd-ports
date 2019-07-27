@@ -4,9 +4,10 @@
 PORTNAME=	acts
 PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils archivers
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Another Calendar-based Tarsnap Script
 
 LICENSE=	PD
@@ -20,7 +21,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/acts ${STAGEDIR}${PREFIX}/bin/acts
-	${INSTALL_DATA} ${WRKSRC}/acts.conf.sample ${STAGEDIR}${PREFIX}/etc/acts.conf.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/acts ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/acts.conf.sample ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>
