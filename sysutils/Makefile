@@ -590,6 +590,7 @@
     SUBDIR += linux-c7-lttng-ust
     SUBDIR += linux-c7-userspace-rcu
     SUBDIR += linux-crashplan
+    SUBDIR += linux-rkbin
     SUBDIR += linuxfdisk
     SUBDIR += livecd
     SUBDIR += lizardfs

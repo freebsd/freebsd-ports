@@ -1,0 +1,6 @@
+Firmware files and tools for RockChip SoC
+
+This package contain the tools and firmware files needed for booting
+on a rockchip SoC board using their miniloader.
+
+WWW: https://github.com/rockchip-linux/rkbin
