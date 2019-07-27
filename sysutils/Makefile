@@ -1400,6 +1400,7 @@
     SUBDIR += u-boot-pine64-lts
     SUBDIR += u-boot-pinebook
     SUBDIR += u-boot-riotboard
+    SUBDIR += u-boot-rock64
     SUBDIR += u-boot-rpi
     SUBDIR += u-boot-rpi-0-w
     SUBDIR += u-boot-rpi2
