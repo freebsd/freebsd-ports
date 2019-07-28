@@ -3,7 +3,7 @@
 
 PORTNAME=	ogre3d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.5
+DISTVERSION=	1.11.6
 PORTREVISION=	0
 CATEGORIES=	graphics devel
 
@@ -17,7 +17,6 @@ COMMENT=	Scene-oriented, flexible 3D engine written in C++
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pkgconf:devel/pkgconf
 LIB_DEPENDS=	libzzip.so:devel/zziplib \
 		libfreetype.so:print/freetype2
 
@@ -25,10 +24,9 @@ CONFLICTS=	ogre3d19-[0-9]*
 
 USE_LDCONFIG=	yes
 USES=		cmake pkgconfig compiler:c++11-lib sdl
-USE_SDL=	sdl sdl2
+USE_SDL=	sdl2
 USE_XORG=	x11 xaw xext xrandr xt
 
-CMAKE_OFF=	DOXYGEN_GENERATE_LATEX
 CMAKE_ARGS+=	-DOGRE_BUILD_RENDERSYSTEM_GL3PLUS:BOOL=OFF \
 		-DOGRE_BUILD_RENDERSYSTEM_GL:BOOL=OFF \
 		-DOGRE_BUILD_RENDERSYSTEM_GLES2:BOOL=OFF \
@@ -53,7 +51,6 @@ FREEIMAGE_DESC=		Build FreeImage codec
 FREEIMAGE_CMAKE_BOOL=	OGRE_BUILD_PLUGIN_FREEIMAGE
 FREEIMAGE_LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 
-OPENEXR_DESC=		Build EXR Codec plugin
 OPENEXR_USE=		XORG=ice
 OPENEXR_CMAKE_BOOL=	OGRE_BUILD_PLUGIN_EXRCODEC
 OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
@@ -61,35 +58,28 @@ OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
 			libHalf.so:graphics/ilmbase \
 			libIex-2_3.so:graphics/ilmbase
 
-OPENGL_DESC=		OpenGL support
 OPENGL_CMAKE_BOOL=	OGRE_BUILD_RENDERSYSTEM_GL3PLUS \
 			OGRE_BUILD_RENDERSYSTEM_GL \
 			OGRE_BUILD_RENDERSYSTEM_GLES2
-OPENGL_LIB_DEPENDS=	libGL.so:graphics/mesa-libs
-OPENGL_VARS=		USE_XORG+=sm ice
+OPENGL_USES=		gl
+OPENGL_USE=		XORG=sm,ice GL=gl
 
-PROFILE_DESC=		Enable internal profiling support
 PROFILE_CMAKE_BOOL=	OGRE_PROFILING
 
 CSHARP_DESC=		Build Csharp bindings
 CSHARP_CMAKE_BOOL=	OGRE_BUILD_COMPONENT_CSHARP
 CSHARP_BUILD_DEPENDS=	swig3.0:devel/swig30
 
-JAVA_DESC=		Build java bindings
 JAVA_CMAKE_BOOL=	OGRE_BUILD_COMPONENT_JAVA
 JAVA_BUILD_DEPENDS=	swig3.0:devel/swig30
-JAVA_VARS=		USE_JAVA=yes \
-			CMAKE_ARGS+=-DJAVA_HOME=${JAVA_HOME}
+JAVA_VARS=		CMAKE_ARGS+=-DJAVA_HOME=${JAVA_HOME}
+JAVA_USE=		JAVA=yes
 
-PYTHON_DESC=		Build python bindings
 PYTHON_CMAKE_BOOL=	OGRE_BUILD_COMPONENT_PYTHON
 PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
 PYTHON_USES=		python
 
 CXXFLAGS+=		-DNDEBUG -I${LOCALBASE}/include
-
-# BROKEN_aarch64=		does not compile: error: class member cannot be redeclared
-# BROKEN_powerpc=		does not install
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
