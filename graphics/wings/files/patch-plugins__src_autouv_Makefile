@@ -1,0 +1,11 @@
+--- plugins_src/autouv/Makefile.orig	2019-05-28 10:07:25 UTC
++++ plugins_src/autouv/Makefile
+@@ -18,7 +18,7 @@ ESRC=.
+ WINGS_INTL=../../intl_tools
+ EBIN=../../plugins/autouv
+ ERLC=erlc
+-WINGS_TOP=../../..
++WINGS_TOP=../..
+ 
+ ifeq ($(TYPE),debug)
+ TYPE_FLAGS=-DDEBUG

@@ -1,0 +1,11 @@
+--- plugins_src/commands/Makefile.orig	2019-05-28 10:00:46 UTC
++++ plugins_src/commands/Makefile
+@@ -18,7 +18,7 @@ ESRC=.
+ WINGS_INTL=../../intl_tools
+ EBIN=../../plugins/commands
+ ERLC=erlc
+-WINGS_TOP=../../..
++WINGS_TOP=../..
+ WINGS_E3D=../../e3d
+ 
+ ifeq ($(TYPE),debug)
