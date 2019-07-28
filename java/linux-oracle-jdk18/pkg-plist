@@ -419,10 +419,11 @@
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/cssref/cssexample2.png
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/cssref/cssref.html
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/cssref/fx_code_header.jpg
-%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/legal/THIRDPARTYLICENSEREADME.txt
-%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/lib/lucene-core-7.4.0.jar
-%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/lib/lucene-grouping-7.4.0.jar
-%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/lib/lucene-queryparser-7.4.0.jar
+%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/legal/lucene.md
+%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/legal/syntaxhighlighter.md
+%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/lib/lucene-core-7.7.1.jar
+%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/lib/lucene-grouping-7.7.1.jar
+%%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/lib/lucene-queryparser-7.7.1.jar
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/nbproject/build-impl.xml
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/nbproject/configs/Build_index.properties
 %%DEMO%%%%T%%/demo/javafx_samples/src/Ensemble8/nbproject/genfiles.properties
@@ -1393,6 +1394,7 @@
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libavplugin-57.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libavplugin-ffmpeg-56.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libavplugin-ffmpeg-57.so
+%%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libavplugin-ffmpeg-58.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libawt.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libawt_headless.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libawt_xawt.so
