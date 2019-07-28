@@ -94,6 +94,7 @@ bin/freeplane
 %%DATADIR%%/doc/api/org/freeplane/api/MapRO.html
 %%DATADIR%%/doc/api/org/freeplane/api/Node.html
 %%DATADIR%%/doc/api/org/freeplane/api/NodeCondition.html
+%%DATADIR%%/doc/api/org/freeplane/api/NodeNotFoundException.html
 %%DATADIR%%/doc/api/org/freeplane/api/NodeRO.html
 %%DATADIR%%/doc/api/org/freeplane/api/NodeStyle.html
 %%DATADIR%%/doc/api/org/freeplane/api/NodeStyleRO.html
