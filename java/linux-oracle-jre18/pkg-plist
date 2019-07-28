@@ -31,6 +31,7 @@
 %%T%%/lib/%%JAVA_ARCHLIBDIR%%/libavplugin-57.so
 %%T%%/lib/%%JAVA_ARCHLIBDIR%%/libavplugin-ffmpeg-56.so
 %%T%%/lib/%%JAVA_ARCHLIBDIR%%/libavplugin-ffmpeg-57.so
+%%T%%/lib/%%JAVA_ARCHLIBDIR%%/libavplugin-ffmpeg-58.so
 %%T%%/lib/%%JAVA_ARCHLIBDIR%%/libawt.so
 %%T%%/lib/%%JAVA_ARCHLIBDIR%%/libawt_headless.so
 %%T%%/lib/%%JAVA_ARCHLIBDIR%%/libawt_xawt.so
