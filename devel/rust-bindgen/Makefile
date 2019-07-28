@@ -1,13 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	bindgen
-DISTVERSION=	0.50.0
-PORTREVISION=	1
+DISTVERSION=	0.51.0
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 PKGNAMEPREFIX=	rust-
 # XXX Teach USES=cargo to have proper default
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES+=	https://github.com/rust-lang/rust-bindgen/commit/
+PATCHFILES+=	84ea6bfc719d.patch:-p1
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Generate Rust bindings from C (and some C++) code
@@ -22,12 +24,12 @@ PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.7.4 \
 		ansi_term-0.11.0 \
-		atty-0.2.11 \
-		backtrace-0.3.32 \
-		backtrace-sys-0.1.30 \
+		atty-0.2.13 \
+		backtrace-0.3.33 \
+		backtrace-sys-0.1.31 \
 		bitflags-1.1.0 \
 		byteorder-1.3.2 \
-		cc-1.0.37 \
+		cc-1.0.38 \
 		cexpr-0.3.5 \
 		cfg-if-0.1.9 \
 		clang-sys-0.28.0 \
@@ -39,28 +41,24 @@ CARGO_CRATES=	aho-corasick-0.7.4 \
 		glob-0.2.11 \
 		humantime-1.2.0 \
 		lazy_static-1.3.0 \
-		libc-0.2.58 \
-		libloading-0.5.1 \
-		log-0.4.6 \
-		memchr-2.2.0 \
+		libc-0.2.60 \
+		libloading-0.5.2 \
+		log-0.4.7 \
+		memchr-2.2.1 \
 		nom-4.2.3 \
-		numtoa-0.1.0 \
 		peeking_take_while-0.1.2 \
 		proc-macro2-0.4.30 \
 		quick-error-1.2.2 \
-		quote-0.6.12 \
-		redox_syscall-0.1.54 \
-		redox_termios-0.1.1 \
-		regex-1.1.7 \
-		regex-syntax-0.6.7 \
+		quote-0.6.13 \
+		regex-1.2.0 \
+		regex-syntax-0.6.10 \
 		rustc-demangle-0.1.15 \
 		shlex-0.1.1 \
 		strsim-0.8.0 \
 		termcolor-1.0.5 \
-		termion-1.5.3 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
-		ucd-util-0.1.3 \
+		ucd-util-0.1.5 \
 		unicode-width-0.1.5 \
 		unicode-xid-0.1.0 \
 		utf8-ranges-1.0.3 \
