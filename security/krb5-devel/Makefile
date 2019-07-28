@@ -29,8 +29,8 @@ USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
 GNU_CONFIGURE=		yes
-USES=			autoreconf cpe gmake localbase perl5 libtool:build \
-			gssapi:bootstrap,mit pkgconfig ssl
+USES=			autoreconf compiler:c11 cpe gmake localbase perl5 \
+			libtool:build gssapi:bootstrap,mit pkgconfig ssl
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
 			--disable-rpath --localstatedir="${PREFIX}/var"
 CONFIGURE_ENV=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}"
