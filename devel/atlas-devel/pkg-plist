@@ -34,6 +34,7 @@ include/Atlas-C++-0.6/Atlas/Objects/RootOperation.h
 include/Atlas-C++-0.6/Atlas/Objects/SmartPtr.h
 include/Atlas-C++-0.6/Atlas/Objects/loadDefaults.h
 include/Atlas-C++-0.6/Atlas/Objects/objectFactory.h
+include/Atlas-C++-0.6/Atlas/PresentationBridge.h
 include/Atlas-C++-0.6/Atlas/Task.h
 include/Atlas-C++-0.6/Atlas/Version.h
 include/Atlas-C++-0.6/Atlas/float.h
@@ -60,7 +61,6 @@ lib/libAtlasObjects-0.6.so.3
 lib/libAtlasObjects-0.6.so.3.0.0
 libdata/pkgconfig/atlascpp-0.6.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
