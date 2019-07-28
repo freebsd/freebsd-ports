@@ -1,0 +1,6 @@
+Cucumber-Rails is a Rails generators for Cucumber with special support for
+Capybara and DatabaseCleaner. It brings Cucumber to Rails 4.2 and Rails 5.x.
+This gem is also compatible with Rails 6.0+ but this is currently in a beta
+phase, so there may be issues.
+
+WWW: https://github.com/cucumber/cucumber-rails
