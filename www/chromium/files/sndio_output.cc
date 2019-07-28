@@ -140,7 +140,7 @@ void SndioAudioOutputStream::GetVolume(double* v) {
 }
 
 void SndioAudioOutputStream::ThreadLoop(void) {
-  int avail, count;
+  int avail, count, result;
 
   while (state == kRunning) {
     // Update volume if needed
@@ -152,7 +152,8 @@ void SndioAudioOutputStream::ThreadLoop(void) {
     pthread_mutex_unlock(&mutex);
 
     // Get data to play
-    const base::TimeDelta delay = AudioTimestampHelper::FramesToTime(hw_delay, params.sample_rate() * 1000);
+    const base::TimeDelta delay = AudioTimestampHelper::FramesToTime(hw_delay,
+        params.sample_rate());
     count = source->OnMoreData(delay, base::TimeTicks::Now(), 0, audio_bus.get());
     audio_bus->ToInterleaved(count, SampleFormatToBytesPerChannel(kSampleFormat), buffer);
     if (count == 0) {
@@ -164,8 +165,8 @@ void SndioAudioOutputStream::ThreadLoop(void) {
 
     // Submit data to the device
     avail = count * params.GetBytesPerFrame(kSampleFormat);
-    count = sio_write(hdl, buffer, avail);
-    if (count == 0) {
+    result = sio_write(hdl, buffer, avail);
+    if (result == 0) {
       LOG(WARNING) << "Audio device disconnected.";
       break;
     }

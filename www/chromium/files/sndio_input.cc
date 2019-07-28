@@ -188,7 +188,7 @@ void SndioAudioInputStream::ThreadLoop(void) {
 
     // convert frames count to TimeDelta
     const base::TimeDelta delay = AudioTimestampHelper::FramesToTime(hw_delay,
-      params.sample_rate() * 1000);
+      params.sample_rate());
 
     // push into bus
     audio_bus->FromInterleaved(buffer, nframes, SampleFormatToBytesPerChannel(kSampleFormat));
