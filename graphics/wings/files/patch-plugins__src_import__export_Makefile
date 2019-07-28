@@ -1,0 +1,11 @@
+--- plugins_src/import_export/Makefile.orig	2019-05-28 09:51:15 UTC
++++ plugins_src/import_export/Makefile
+@@ -19,7 +19,7 @@ WINGS_INTL=../../intl_tools
+ EBIN=../../plugins/import_export
+ ERLC=erlc
+ WINGS_E3D=../../e3d
+-WINGS_TOP=../../..
++WINGS_TOP=../..
+ 
+ ifeq ($(TYPE),debug)
+ TYPE_FLAGS=-DDEBUG

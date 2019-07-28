@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wings
-PORTVERSION=	1.5.4
-PORTREVISION=	2
+PORTVERSION=	2.2.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DIST_SUBDIR=	erlang
@@ -16,11 +15,10 @@ LICENSE_NAME=	Wings 3D License # similar to TclTk license
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN=		fails to build
-
 BUILD_DEPENDS=	erl:lang/erlang \
 		erlang-esdl>0:devel/erlang-esdl \
-		erlang-cl>0:devel/erlang-cl
+		erlang-cl>0:devel/erlang-cl \
+		erlang-wx>0:lang/erlang-wx
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_ENV=	ESDL_PATH=${LOCALBASE}/lib/erlang/lib/esdl
@@ -30,7 +28,7 @@ USE_GL=		gl glu
 
 SUB_FILES=	${PORTNAME}.sh
 
-USES=		tar:bzip2 gmake
+USES=		gl tar:bzip2 gmake
 
 PORTSCOUT=	limitw:1,even
 
@@ -44,16 +42,22 @@ DESKTOP_ENTRIES="Wings" \
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(GCC)|${CC} -I${LOCALBASE}/include -L${LOCALBASE}/lib|g' \
 		${WRKSRC}/plugins_src/accel/Makefile
-	@${REINPLACE_CMD} -e 's|random:|rand:|' \
-		${WRKSRC}/src/wings_deform.erl \
-		${WRKSRC}/src/wings_sel_cmd.erl \
-		${WRKSRC}/e3d/e3d_util.erl \
-		${WRKSRC}/plugins_src/autouv/auv_mapping.erl
+	@${REINPLACE_CMD} -e 's,include_lib("wings/,include_lib(",g' \
+		${WRKSRC}/src/*.erl \
+		${WRKSRC}/plugins_src/*.erl \
+		${WRKSRC}/plugins_src/import_export/*.erl \
+		${WRKSRC}/plugins_src/primitives/*.erl \
+		${WRKSRC}/plugins_src/commands/*.erl \
+		${WRKSRC}/plugins_src/commands/*.hrl \
+		${WRKSRC}/plugins_src/autouv/*.erl \
+		${WRKSRC}/icons/*.erl
 #	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "src ebin fonts plugins textures shaders patches" \
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "ebin icons plugins textures shaders patches" \
 		${STAGEDIR}${PREFIX}/lib/erlang/lib/${DISTNAME}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "src" \
+		${STAGEDIR}${PREFIX}/lib/erlang/lib/${DISTNAME} "-name *\.erl"
 	${LN} -sf ${DISTNAME} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}.icon ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico

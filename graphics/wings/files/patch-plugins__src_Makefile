@@ -1,0 +1,11 @@
+--- plugins_src/Makefile.orig	2019-05-28 09:45:19 UTC
++++ plugins_src/Makefile
+@@ -18,7 +18,7 @@ ESRC=.
+ WINGS_INTL=../intl_tools
+ EBIN=../plugins/default
+ ERLC=erlc
+-WINGS_TOP=../..
++WINGS_TOP=..
+ 
+ ifeq ($(TYPE),debug)
+ TYPE_FLAGS=-DDEBUG

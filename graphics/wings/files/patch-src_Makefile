@@ -1,11 +1,11 @@
---- src/Makefile.orig	2015-08-06 10:38:19 UTC
+--- src/Makefile.orig	2019-04-06 15:47:18 UTC
 +++ src/Makefile
-@@ -132,7 +132,7 @@ TARGET_FILES= $(MODULES:%=$(EBIN)/%.beam
+@@ -142,7 +142,7 @@ APP_TARGET = $(EBIN)/$(APP_FILE)
  # ----------------------------------------------------
  # FLAGS
  # ----------------------------------------------------
--ERL_COMPILE_FLAGS += -Werror -I ../e3d $(TYPE_FLAGS) \
-+ERL_COMPILE_FLAGS += -I ../e3d $(TYPE_FLAGS) \
- '-Dwings_version="$(WINGS_VSN)"' -pa $(WINGS_INTL) $(USE_WX)
+-ERL_COMPILE_FLAGS += -Werror -I ../.. -I../_deps $(TYPE_FLAGS) \
++ERL_COMPILE_FLAGS += -I .. -I../_deps $(TYPE_FLAGS) \
+ '-Dwings_version="$(WINGS_VSN)"' -pa $(WINGS_INTL)
  
  # ----------------------------------------------------
