@@ -1,13 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	esdl
-PORTVERSION=	1.0.1
-PORTREVISION=	13
+DISTVERSIONPREFIX=	esdl-
+DISTVERSION=	1.3.1
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	erlang-
-DISTNAME=	${PORTNAME}-${PORTVERSION}.src
-DIST_SUBDIR=	erlang
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Library for accessing SDL and OpenGL through Erlang
@@ -18,31 +15,17 @@ LICENSE_FILE=	${WRKSRC}/license.terms
 BUILD_DEPENDS=	erl:lang/erlang
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USES=		erlang:rebar gl sdl
+USE_GITHUB=	yes
+GH_ACCOUNT=	dgud
 
-USES=		dos2unix gmake
-DOS2UNIX_GLOB=	Makefile
 USE_GL=		gl glu
-USE_SDL=	sdl
-ALL_TARGET=	target
+USE_SDL=	sdl image ttf
+
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-OPTIONS_DEFINE=	SDL_TTF SDL_IMAGE
-OPTIONS_DEFAULT=SDL_TTF SDL_IMAGE
-OPTIONS_SUB=	yes
-SDL_TTF_DESC=	SDL_ttf support
-SDL_TTF_USE=	SDL=ttf
-SDL_IMAGE_DESC=	SDL_image support
-SDL_IMAGE_USE=	SDL=image
-
 post-patch:
-	@${REINPLACE_CMD} -Ee 's|addons|lib|' ${WRKSRC}/Makefile
-
-post-patch-SDL_TTF-on:
-	@${REINPLACE_CMD} -e '/ENABLE_SDL_TTF = / s|no|yes|' ${WRKSRC}/Makefile
-
-post-patch-SDL_IMAGE-on:
-	@${REINPLACE_CMD} -e '/ENABLE_SDL_IMAGE = / s|no|yes|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} "s/\(vsn,\) git/\1 \"${DISTVERSION}\"/" "${WRKSRC}/src/sdl.app.src"
 
 post-install:
 	@${LN} -sf ${PORTNAME}-${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}
