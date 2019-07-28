@@ -128,6 +128,7 @@
     SUBDIR += twm
     SUBDIR += vtwm
     SUBDIR += w9wm
+    SUBDIR += wayfire
     SUBDIR += weewm
     SUBDIR += windowlab
     SUBDIR += windowmaker
