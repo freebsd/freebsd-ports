@@ -332,6 +332,7 @@
     SUBDIR += wbar
     SUBDIR += wbarconf
     SUBDIR += wdm
+    SUBDIR += wf-shell
     SUBDIR += wl-clipboard
     SUBDIR += wmappl
     SUBDIR += wmblob

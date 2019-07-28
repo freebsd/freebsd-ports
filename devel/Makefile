@@ -6257,6 +6257,7 @@
     SUBDIR += wandio
     SUBDIR += websocketpp
     SUBDIR += websvn
+    SUBDIR += wf-config
     SUBDIR += wininfo
     SUBDIR += wizardkit
     SUBDIR += woff2
