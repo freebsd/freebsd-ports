@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cl
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 DISTVERSIONPREFIX=	cl-
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
@@ -14,17 +14,15 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BUILD_DEPENDS=	opencl>=0:devel/opencl
+LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
+
+USES=		gmake erlang:rebar3 localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tonyrog
 
-USES=		gmake erlang:rebar3 localbase
-
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-
-post-build:
-	@${RMDIR} ${WRKSRC}/priv
 
 .include <bsd.port.mk>
