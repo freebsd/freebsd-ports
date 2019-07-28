@@ -4,6 +4,16 @@ bin/fs_encode
 bin/fs_ivrd
 bin/fsxs
 bin/gentls_cert
+bin/switch_core
+bin/switch_event
+bin/switch_hash
+bin/switch_ivr_originate
+bin/switch_utils
+%%ALL_MODULES%%bin/test_avformat
+%%ALL_MODULES%%bin/test_iks
+%%ALL_MODULES%%bin/test_mod_av
+%%ALL_MODULES%%bin/test_nlsml
+%%ALL_MODULES%%bin/test_srgs
 bin/tone2wav
 include/freeswitch/libteletone.h
 include/freeswitch/libteletone_detect.h
@@ -57,6 +67,8 @@ include/freeswitch/switch_vad.h
 include/freeswitch/switch_vpx.h
 include/freeswitch/switch_xml.h
 include/freeswitch/switch_xml_config.h
+include/freeswitch/test/switch_fct.h
+include/freeswitch/test/switch_test.h
 include/freeswitch/tpl.h
 %%ALL_MODULES%%lib/freeswitch/mod/mod_abstraction.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_alsa.so
@@ -643,6 +655,7 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/amqp.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/amr.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/amrwb.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/av.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/avmd.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/blacklist.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/callcenter.conf.xml
@@ -655,6 +668,7 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/conference.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/conference_layouts.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/console.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/curl.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/db.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/dialplan_directory.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/dingaling.conf.xml
