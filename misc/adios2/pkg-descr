@@ -1,0 +1,21 @@
+The Adaptable Input/Output (I/O) System, ADIOS 2 is developed as part of the
+United States Department of Energy's Exascale Computing Program.
+
+ADIOS 2 is a framework designed for scientific data I/O to publish and subscribe
+(put/get) data when and where required.
+
+ADIOS 2 transports data as groups of self-describing variables and attributes
+across different media types (such as files, wide-area-networks, and remote
+direct memory access) using a common application programming interface for all
+transport modes. ADIOS 2 can be used on supercomputers, commercial clouds, and
+personal computers.
+
+ADIOS 2 focuses on:
+* Performance I/O scalability in high performance computing (HPC) applications.
+* Adaptability unified interfaces to allow for several modes of transport
+  (files, memory-to-memory)
+* Ease of Use two-level application programming interface (APIs)
+* Full APIs for HPC applications: C++11, Fortran 90, C 99, Python 2 and 3
+* Simplified High-Level APIs for data analysis: Python 2 and 3, C++11, Matlab
+
+WWW: https://github.com/ornladios/ADIOS2
