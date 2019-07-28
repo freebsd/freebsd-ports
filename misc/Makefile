@@ -8,6 +8,7 @@
     SUBDIR += achievo
     SUBDIR += aclgen
     SUBDIR += actiona
+    SUBDIR += adios2
     SUBDIR += amanda-client
     SUBDIR += amanda-perl-wrapper
     SUBDIR += amanda-server
