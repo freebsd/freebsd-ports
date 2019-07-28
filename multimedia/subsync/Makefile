@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	subsync
-DISTVERSION=	g20190408
-PORTREVISION=	1
+DISTVERSION=	g20190702
 CATEGORIES=	multimedia python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +23,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	smacke # tympanix account has another version of the same project requiring tensorflow
-GH_TAGNAME=	3b9c66f
+GH_TAGNAME=	d9798a5
 USE_PYTHON=	distutils concurrent noflavors autoplist
 
 NO_ARCH=	yes
