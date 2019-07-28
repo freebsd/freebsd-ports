@@ -1,0 +1,34 @@
+--- Makefile.in.orig	2004-04-09 23:38:56 UTC
++++ Makefile.in
+@@ -6,10 +6,11 @@
+ # $date: Sun Jul 25 17:56:15 MET DST 1999$ 
+ # $rev: 3$ 
+ 
+-CC= gcc
++CC?= gcc
+ AR=/usr/bin/ar
+ RANLIB=/usr/bin/ranlib
+-CCOPT= -O2 -Wall @PCAP_INCLUDE@ @TCL_INC@ @USE_TCL@
++CCOPT= -Wall @CFLAGS@ @PCAP_INCLUDE@ @TCL_INC@ @USE_TCL@
++LDFLAGS=@LDFLAGS@
+ DEBUG= -g
+ #uncomment the following if you need libpcap based build under linux
+ #(not raccomanded)
+@@ -50,7 +51,7 @@ libars.a: $(ARSOBJ)
+ 	$(RANLIB) $@
+ 
+ hping3: byteorder.h $(OBJ)
+-	$(CC) -o hping3 $(CCOPT) $(DEBUG) $(OBJ) -L/usr/local/lib $(PCAP) @SOLARISLIB@ @TCL_LIB@
++	$(CC) -o hping3 $(CCOPT) $(OBJ) $(LDFLAGS) $(PCAP) @SOLARISLIB@ @TCL_LIB@
+ 	@echo
+ 	./hping3 -v
+ 	@echo "use \`make strip' to strip hping3 binary"
+@@ -63,7 +64,7 @@ byteorder.h:
+ 	./configure
+ 
+ .c.o:
+-	$(CC) -c $(CCOPT) $(DEBUG) $(COMPILE_TIME) $<
++	$(CC) -c $(CCOPT) $(COMPILE_TIME) $<
+ 
+ clean:
+ 	rm -rf hping3 *.o libars.a
