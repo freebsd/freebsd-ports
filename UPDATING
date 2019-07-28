@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20190728:
+  AFFECTS: users of net-im/py-matrix-synapse
+  AUTHOR: kai@FreeBSD.org
+
+  The support for Python 2.7 has been dropped with the 1.1.0 release of
+  net/py-matrix-synapse.
+
+  Users that still use the Python 2.7 version of net-im/py-matrix-synapse
+  should switch to a newer Python version, e.g. 3.6, which is the default
+  Python version since April 2019. 
+
 20190717:
   AFFECTS: users of sysutils/py-borgmatic
   AUTHOR: egypcio@FreeBSD.org
