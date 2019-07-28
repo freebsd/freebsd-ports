@@ -40,6 +40,14 @@
 .if !defined(_INCLUDE_USES_CABAL_MK)
 _INCLUDE_USES_CABAL_MK=    yes
 
+_valid_ARGS=	hpack
+
+.  for arg in ${cabal_ARGS}
+.    if !${_valid_ARGS:M${arg}}
+IGNORE=		USES=cabal: invalid arguments: ${cabal_ARGS}
+.    endif
+.  endfor
+
 PKGNAMEPREFIX?=	hs-
 
 EXECUTABLES?=	${PORTNAME}
