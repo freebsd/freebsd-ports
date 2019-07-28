@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	icdiff
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.9.4
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	textproc
-MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Improved colored diff
@@ -14,6 +13,9 @@ LICENSE=	PSFL
 
 USES=		python
 USE_PYTHON=	distutils autoplist concurrent optsuffix
+USE_GITHUB=	yes
+GH_ACCOUNT=	jeffkaufman
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
