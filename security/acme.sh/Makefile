@@ -2,7 +2,7 @@
 
 PORTNAME=	acme.sh
 PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -21,8 +21,8 @@ OPTIONS_SINGLE=	HTTP
 OPTIONS_SINGLE_HTTP=	CURL WGET
 OPTIONS_DEFAULT=	CURL STANDALONE
 BINDTOOLS_DESC=	Depend on bind-tools for nsupdate
-BINDTOOLS_RUN_DEPENDS=	${LOCALBASE}/bin/nsupdate:dns/bind-tools
-IDN_RUN_DEPENDS=	${LOCALBASE}/bin/idn2:dns/idnkit2
+BINDTOOLS_RUN_DEPENDS=	nsupdate:dns/bind-tools
+IDN_RUN_DEPENDS=	idn2:dns/idnkit2
 STANDALONE_DESC=	Standalone mode requires SOCAT
 STANDALONE_RUN_DEPENDS=	socat>0:net/socat
 
