@@ -36,7 +36,6 @@ libdata/pkgconfig/libemos.pc
 libdata/pkgconfig/libemosR64.pc
 %%DATADIR%%/cmake/libemos-config-version.cmake
 %%DATADIR%%/cmake/libemos-config.cmake
-%%DATADIR%%/cmake/libemos-config.cmake.tpls
 %%DATADIR%%/cmake/libemos-targets-%%CMAKE_BUILD_TYPE%%.cmake
 %%DATADIR%%/cmake/libemos-targets.cmake
 %%DATADIR%%/tables/bufrtables/.gitignore
