@@ -12853,3 +12853,4 @@ www/august||2019-07-20|Uses removed weblint
 misc/bitwise|math/bitwise|2019-07-21|Moved to math category
 devel/gradle46||2019-07-26|Removed because the only user, biology/gatk, doesn't need it any more
 devel/subversion19|devel/subversion|2019-07-27|Has expired: subversion 1.9.x is end of life log time ago. Consider installing devel/subversion or devel/subversion-lts.
+www/p5-WebService-MusicBrainz0|www/p5-WebService-MusicBrainz|2019-07-28|0.9x branch is no longer required after audio/abcde was updated to 2.9.1
