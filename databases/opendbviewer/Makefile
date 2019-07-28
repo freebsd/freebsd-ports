@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	opendbviewer
-PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTVERSION=	1.1.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
 MAINTAINER=	lbartoletti@tuxfamily.org
