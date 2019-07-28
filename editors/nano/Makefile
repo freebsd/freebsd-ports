@@ -27,9 +27,8 @@ MAKE_ARGS+=	install_htmlmanDATA=install-htmlmanDATA
 OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=		gettext
+NLS_USES=		gettext localbase
 NLS_CONFIGURE_ENABLE=	nls
-NLS_CPPFLAGS=	-I${LOCALBASE}/include
 
 INFO=		nano
 
