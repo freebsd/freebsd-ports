@@ -43,8 +43,6 @@ SVTHEVC_DESC=	HEVC encoding via SVT-HEVC
 
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DENABLE_PIC=on -DENABLE_TESTS=on
-CFLAGS_mips=	-DNO_ATOMICS # cannot use lang/gcc
-CFLAGS_mips64=	-DNO_ATOMICS # cannot use lang/gcc
 LDFLAGS_i386=	-Wl,-znotext
 EXTRACT_AFTER_ARGS+=	--exclude compat
 PATCH_WRKSRC=	${WRKSRC:H}
