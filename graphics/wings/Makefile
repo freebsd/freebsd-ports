@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 DIST_SUBDIR=	erlang
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Polygon mesh modeler written in Erlang
 
 LICENSE=	Wings3D
