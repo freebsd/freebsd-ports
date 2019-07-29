@@ -5,7 +5,7 @@ PORTNAME=	idnkit
 PORTVERSION=	2.3
 PORTREVISION=	2
 CATEGORIES=	dns
-MASTER_SITES=	http://jprs.co.jp/idn/
+MASTER_SITES=	https://jprs.co.jp/idn/
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	fbsd@grid.einherjar.de
