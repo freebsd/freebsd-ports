@@ -22,7 +22,9 @@ TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
 CONFLICTS_INSTALL?=	p5-DBD-mysql[45][0-9]-[0-9]*
 
-USES=		mysql perl5
+USES=		compiler:c11 mysql perl5
+CONFIGURE_ARGS=	${CONFIGURE_ARGS_${CHOSEN_COMPILER_TYPE}}
+CONFIGURE_ARGS_gcc=	--libs="-L${PREFIX}/lib/gcc${GCC_DEFAULT} `mysql_config --libs | ${SED} 's/-pthread //'`"
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	SSL
