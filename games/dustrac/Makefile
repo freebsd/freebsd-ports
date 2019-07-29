@@ -1,38 +1,39 @@
 # $FreeBSD$
 
 PORTNAME=	dustrac
-PORTVERSION=	1.11.0
-PORTREVISION=	7
+PORTVERSION=	2.0.3
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D top-view racing game
+
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 
-USES=		compiler:c++11-lib cmake openal pkgconfig qt:5
-USE_GL=		glu
-USE_QT=		core opengl xml widgets \
+USE_GITHUB=	yes
+GH_ACCOUNT=	juzzlin
+GH_PROJECT=	DustRacing2D
+
+USES=		compiler:c++11-lib cmake gl openal pkgconfig qt:5
+USE_GL=		gl glu
+USE_QT=		core gui opengl xml widgets testlib \
 		buildtools_build linguisttools_build qmake_build
 CMAKE_ARGS=	-DReleaseBuild=on \
 		-DDATA_PATH=${DATADIR} \
 		-DDOC_PATH=${DOCSDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	juzzlin
-GH_PROJECT=	DustRacing2D
+PORTDATA=	*
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 STRIP_FILES=	bin/dustrac-game \
 		bin/dustrac-editor
 
-post-patch:
-	${REINPLACE_CMD} -e '/add_subdirectory(UnitTests)/d' \
-		${WRKSRC}/src/game/MiniCore/CMakeLists.txt
-
 post-install:
-	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dustrac-*
 
 .include <bsd.port.mk>
