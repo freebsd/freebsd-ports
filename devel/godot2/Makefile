@@ -31,7 +31,7 @@ USE_GL=		gl glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	godotengine
 
-MAKE_ARGS+=		platform=x11 builtin_speex=no builtin_libmpcdec=no verbose=True
+MAKE_ARGS+=		platform=x11 builtin_speex=no builtin_libmpcdec=no verbose=yes
 MAKE_ARGS+=		${MAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
 MAKE_ARGS_clang=	use_llvm=yes
 CXXFLAGS+=		-DGLEW_NO_GLU -DRTAUDIO_ENABLED
