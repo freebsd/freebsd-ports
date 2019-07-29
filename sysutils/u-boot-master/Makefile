@@ -25,6 +25,8 @@ USES=		bison gmake python:2.7,build shebangfix tar:bz2
 .if defined(FAMILY) && ${FAMILY} == rk3399
 USES+=		linux
 USE_LINUX+=	base:build
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	RockChip tools are only for amd64
 .endif
 BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison dtc=${LOCALBASE}/bin/dtc sed=gsed swig=swig3.0 python2=python2.7
 
