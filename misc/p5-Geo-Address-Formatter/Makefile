@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-Address-Formatter
-PORTVERSION=	1.77
+PORTVERSION=	1.78
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
+RUN_DEPENDS=	p5-Clone>=0.41:devel/p5-Clone \
 		p5-File-Find-Rule>=0:devel/p5-File-Find-Rule \
 		p5-File-Slurper>=0:devel/p5-File-Slurper \
 		p5-Text-Hogan>=2.01:textproc/p5-Text-Hogan \
