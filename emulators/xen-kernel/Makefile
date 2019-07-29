@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.12.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
@@ -48,6 +48,9 @@ EXTRA_PATCHES+=	${PATCHDIR}/xsa297-4.12-1.patch:-p1 \
 EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-linker-add-a-reloc-section-to-ELF-linker-script.patch:-p1 \
 		${PATCHDIR}/0003-xen-link-handle-.init.rodata.cst-sections-in-the-lin.patch:-p1 \
 		${PATCHDIR}/0004-x86-check-for-multiboot-1-2-header-presence.patch:-p1
+
+# Fix for Intel foreign mapping issues.
+EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-ept-pass-correct-level-to-p2m_entry_modify.patch:-p1
 
 .include <bsd.port.options.mk>
 
