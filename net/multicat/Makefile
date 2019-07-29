@@ -6,7 +6,7 @@ PORTVERSION=	2.2
 CATEGORIES=	net multimedia
 MASTER_SITES=	https://get.videolan.org/multicat/${PORTVERSION}/
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and efficient multicast and transport stream manipulation
 
 LICENSE=	GPLv2+
