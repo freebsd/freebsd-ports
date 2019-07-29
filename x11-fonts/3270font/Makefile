@@ -2,11 +2,11 @@
 
 PORTNAME=	3270font
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://${PORTNAME}.s3.amazonaws.com/ \
 		https://github.com/rbanffy/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
-DISTNAME=	3270_fonts_6086dd2
+DISTNAME=	3270_fonts_2851f93
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	IBM 3270 font for the nostalgic
