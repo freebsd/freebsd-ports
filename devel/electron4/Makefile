@@ -3,6 +3,7 @@
 PORTNAME=	electron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER:S/-beta./.b/}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v4.1.0/:chromium \
 		https://commondatastorage.googleapis.com/chromium-nodejs/:chromium_node \
@@ -116,7 +117,7 @@ DIST_DESC=	Build distribution zip files
 DRIVER_DESC=	Install chromedriver
 OPTIONS_GROUP=	AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
-OPTIONS_DEFAULT=	CUPS DIST DRIVER KERBEROS ALSA
+OPTIONS_DEFAULT=	CUPS DRIVER KERBEROS ALSA
 OPTIONS_SUB=	yes
 
 .if make(makesum)
