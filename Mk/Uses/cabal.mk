@@ -44,7 +44,7 @@ _valid_ARGS=	hpack
 
 .  for arg in ${cabal_ARGS}
 .    if !${_valid_ARGS:M${arg}}
-IGNORE=		USES=cabal: invalid arguments: ${cabal_ARGS}
+IGNORE=		USES=cabal: invalid arguments: ${arg}
 .    endif
 .  endfor
 
