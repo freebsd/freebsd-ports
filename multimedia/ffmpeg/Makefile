@@ -586,19 +586,11 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--enable-pthreads \
 		--cc="${CC}"
 
-CONFIGURE_ENV_aarch64_clang=	ASFLAGS=-no-integrated-as
-CONFIGURE_ENV_armv6_clang=	ASFLAGS=-no-integrated-as
-CONFIGURE_ENV_armv7_clang=	ASFLAGS=-no-integrated-as
-
 DOC_FILES=	Changelog CREDITS INSTALL.md LICENSE.md MAINTAINERS \
 		README.md RELEASE_NOTES
 # under doc subdirectory
 DOC_DOCFILES=	APIchanges *.txt
 PORTDOCS=	*
-
-# Custom helpers. FOO_${ARCH} style from bsd.port.mk
-CONFIGURE_ENV+=	${CONFIGURE_ENV_${ARCH}_${CHOSEN_COMPILER_TYPE}}
-CONFIGURE_ARGS+=${CONFIGURE_ARGS_${OPSYS}_${OSREL:R}_${ARCH}}
 
 post-patch:
 # {C,LD}FLAGS safeness
