@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	radiance
-DISTVERSION=	0.6.0
-PORTREVISION=	5
+DISTVERSION=	0.6.1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-video
 
@@ -22,7 +21,6 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 USES=		cmake compiler:c++14-lang gl localbase:ldflags qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	zbanks
-GH_TAGNAME=	2b947cf
 GH_TUPLE=	zbanks:BTrack:1c5b72e:bt/BTrack
 USE_QT=		core declarative graphicaleffects gui network  quickcontrols widgets \
 		buildtools_build qmake_build
