@@ -15,8 +15,7 @@ LICENSE_COMB=		multi
 LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LOGO_LICENSE.md
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.txt
 
-BROKEN_armv6=		fails to build: KeyError: 'android_arch'
-BROKEN_armv7=		fails to build: KeyError: 'android_arch'
+BROKEN_armv6=		tries to build NEON files without -march=armv7-a -mfpu=neon
 BROKEN_powerpc64=	fails to compile: inv_txfm_sse2.h:14:32: emmintrin.h: No such file or directory
 
 BUILD_DEPENDS=	yasm:devel/yasm
