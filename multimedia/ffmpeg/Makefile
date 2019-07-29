@@ -568,6 +568,10 @@ INSTALL_TARGET=	install-progs install-doc install-data \
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 MAKE_ENV+=	V=1
+LDFLAGS_aarch64=-Wl,-z,notext
+LDFLAGS_armv6=	-Wl,-z,notext
+LDFLAGS_armv7=	-Wl,-z,notext
+LDFLAGS_i386=	-Wl,-z,notext
 
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--mandir="${PREFIX}/man" \
