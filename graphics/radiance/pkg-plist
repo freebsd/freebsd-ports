@@ -2,6 +2,7 @@ bin/radiance
 %%DATADIR%%/config/cli.json
 %%DATADIR%%/config/gui_default.json
 %%DATADIR%%/glsl/effect_header.glsl
+%%DATADIR%%/images/logo.png
 %%DATADIR%%/library/effects/afix.glsl
 %%DATADIR%%/library/effects/afixhighlight.glsl
 %%DATADIR%%/library/effects/allwhite.glsl
@@ -175,7 +176,9 @@ bin/radiance
 %%DATADIR%%/library/images/logo.png
 %%DATADIR%%/library/images/nyancat.gif
 %%DATADIR%%/qml/.gitignore
+%%DATADIR%%/qml/AutoDJ.qml
 %%DATADIR%%/qml/BeatIndicator.qml
+%%DATADIR%%/qml/BusyBrokenIndicator.qml
 %%DATADIR%%/qml/Button.qml
 %%DATADIR%%/qml/CheckBox.qml
 %%DATADIR%%/qml/CheckerboardBackground.qml
@@ -192,11 +195,14 @@ bin/radiance
 %%DATADIR%%/qml/ImageNodeTile.qml
 %%DATADIR%%/qml/Instantiators/ConsoleOutputInstantiator.qml
 %%DATADIR%%/qml/Instantiators/FFmpegOutputInstantiator.qml
+%%DATADIR%%/qml/Instantiators/LightOutputInstantiator.qml
 %%DATADIR%%/qml/Instantiators/MPVInstantiator.qml
 %%DATADIR%%/qml/Instantiators/PlaceholderInstantiator.qml
 %%DATADIR%%/qml/Instantiators/ScreenOutputInstantiator.qml
 %%DATADIR%%/qml/Instantiators/YoutubeInstantiator.qml
+%%DATADIR%%/qml/Label.qml
 %%DATADIR%%/qml/LibraryWidget.qml
+%%DATADIR%%/qml/LightOutputNodeTile.qml
 %%DATADIR%%/qml/MidiMappingSelector.qml
 %%DATADIR%%/qml/MidiMappings/DJControlAir.qml
 %%DATADIR%%/qml/MidiMappings/DJControlCompact.qml
