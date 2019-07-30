@@ -1,6 +1,6 @@
 --- arpCounterattack.cpp.orig	2019-03-13 08:10:31 UTC
 +++ arpCounterattack.cpp
-@@ -25,13 +25,14 @@
+@@ -25,13 +25,15 @@
  #include <fstream>
  #include <iostream>
  #include <queue>
@@ -12,6 +12,7 @@
    #include <sys/ioctl.h>
  #endif
  
++#include <sys/types.h>
 +#include <net/bpf.h>
  #include <errno.h>
  #include <pcap.h>
