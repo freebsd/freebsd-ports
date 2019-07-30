@@ -10,13 +10,9 @@ COMMENT=		IETF Peer-to-Peer Streaming Peer Protocol implementation
 
 LICENSE=		LGPL21
 
-BROKEN_mips=		fails to build: gmake: clang++: Command not found
-BROKEN_mips64=		fails to build: gmake: clang++: Command not found
-BROKEN_powerpc64=	fails to build: gmake: clang++: Command not found
-
 LIB_DEPENDS=		libevent.so:devel/libevent
 
-USES=			gmake ssl
+USES=			compiler:c++11-lang gmake ssl
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		skunkwerks
@@ -45,6 +41,9 @@ USE_RC_SUBR=	${PORTNAME}
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e 's/CXX=clang++/CXX?=clang++/' ${WRKSRC}/Makefile
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} \
