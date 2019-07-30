@@ -11,7 +11,7 @@ COMMENT=		Hierarchical pool based memory allocator
 
 LICENSE=		LGPL3
 
-IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
+IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be built with THREADS support
 
 CONFLICTS_INSTALL=	talloc1-*
 
