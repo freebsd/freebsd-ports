@@ -2,17 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	musescore
-DISTVERSION=	3.0.5
-PORTREVISION=	1
+DISTVERSION=	3.2.3
 CATEGORIES=	audio
-MASTER_SITES=	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${DISTVERSION}/
-DISTNAME=	MuseScore-${DISTVERSION}
+# DISTNAME=	MuseScore-${DISTVERSION}
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Free music composition & notation software
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
+# LICENSE_FILE=	LICENSE.GPL
 
 LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libsndfile.so:audio/libsndfile \
@@ -21,16 +19,19 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libfreetype.so:print/freetype2
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
-		pkgconfig qt:5 shared-mime-info zip
+		pkgconfig qt:5 shared-mime-info
 USE_QT=		core declarative gui widgets opengl concurrent designer help network \
 		scripttools svg sql printsupport testlib \
 		xml xmlpatterns \
 		buildtools_build linguisttools_build qmake_build uitools_build
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	musescore
+GH_PROJECT=	MuseScore
+GH_TAGNAME=	v${DISTVERSION}
+
 # Each release gets a subdir containing the distfiles for that release,
 # so hope that scanning the parent dir finds new ones.
-PORTSCOUT=	site:http://ftp.osuosl.org/pub/musescore/releases/
-NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/share/mscore-${PORTVERSION:R}
 
 ALL_TARGET=	lrelease manpages all
