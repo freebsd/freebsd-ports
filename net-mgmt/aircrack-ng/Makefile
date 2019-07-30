@@ -16,7 +16,6 @@ LICENSE_COMB=	dual
 BROKEN_aarch64=		fails to configure: _AX_COMPILER_VERSION_GNU unknown gcc major
 BROKEN_armv6=		fails to configure: _AX_COMPILER_VERSION_GNU unknown gcc major
 BROKEN_armv7=		fails to configure: _AX_COMPILER_VERSION_GNU unknown gcc major
-BROKEN_powerpc64=	fails to compile: sse-intrinsics.c: error: emmintrin.h: No such file or directory
 
 USES=		autoreconf cpe dos2unix gmake libtool ssl
 USE_GCC=	yes
@@ -45,6 +44,16 @@ SQLITE_DESC=	Use SQLite for storing pre-computed key tables
 SQLITE_USES=	sqlite
 SQLITE_MAKE_ARGS=	sqlite=true
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == powerpc || ${ARCH} == powerpc64
+PLIST_SUB+=	PPC="" \
+		X86="@comment "
+.elif ${ARCH} == amd64 || ${ARCH} == i386
+PLIST_SUB+=	PPC="@comment " \
+		X86=""
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|%%ETCDIR%%|${ETCDIR}|' ${WRKSRC}/scripts/airodump-ng-oui-update
@@ -52,4 +61,4 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
