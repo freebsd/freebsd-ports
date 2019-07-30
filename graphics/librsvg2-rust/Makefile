@@ -29,11 +29,11 @@ CONFIGURE_ARGS=	--enable-vala \
 		--disable-Bsymbolic \
 		--disable-dependency-tracking \
 		--disable-static
-INSTALL_TARGET=	install-strip
 # Make sure it uses the Rust toolchain from ports.
 CONFIGURE_ENV=	CARGO=${LOCALBASE}/bin/cargo \
 		RUSTC=${LOCALBASE}/bin/rustc
 MAKE_ENV=	RUSTC=${LOCALBASE}/bin/rustc
+INSTALL_TARGET=	install-strip
 
 CONFLICTS_INSTALL=	librsvg2
 
