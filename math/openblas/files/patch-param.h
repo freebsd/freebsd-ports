@@ -1,0 +1,11 @@
+--- param.h.orig	2019-06-28 14:19:50 UTC
++++ param.h
+@@ -1877,7 +1877,7 @@ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILI
+ #define ZGEMM_DEFAULT_UNROLL_M 2
+ #define ZGEMM_DEFAULT_UNROLL_N 2
+ 
+-#ifdef OS_LINUX
++#if defined(OS_LINUX) || defined(OS_FREEBSD)
+ #if L2_SIZE == 1024976
+ #define SGEMM_DEFAULT_P 320
+ #define DGEMM_DEFAULT_P 256
