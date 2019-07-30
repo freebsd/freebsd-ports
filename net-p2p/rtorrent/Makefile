@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rtorrent
-PORTVERSION=	0.9.7
-PORTREVISION=	4
+PORTVERSION=	0.9.8
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://rtorrent.net/downloads/
 
@@ -17,9 +16,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtorrent.so:net-p2p/libtorrent
 
 USES=		compiler:c++11-lang ncurses pkgconfig
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
-LDFLAGS+=	-pthread
+LDFLAGS+=	-lexecinfo -pthread
 
 PLIST_FILES=	bin/rtorrent
 PORTDOCS=	README
