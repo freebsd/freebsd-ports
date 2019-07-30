@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	SimGrid
-DISTVERSION=	3.22.2.20190515
-PORTREVISION=	1
+DISTVERSION=	3.23.2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +19,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://framagit.org/
 GL_ACCOUNT=	simgrid
 GL_PROJECT=	simgrid
-GL_COMMIT=	79b7f7a89ad565a17012ee12c9774c1bd9fa508c
+GL_COMMIT=	5c2fa73cd308b08d88910f5f28df80cdde7f2243
 SHEBANG_FILES=	tools/simgrid_convert_TI_traces.py
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install/strip
