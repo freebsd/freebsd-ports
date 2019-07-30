@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kim-api
-DISTVERSION=	2.1.1
+DISTVERSION=	2.1.2
 CATEGORIES=	science
 MASTER_SITES=	https://s3.openkim.org/kim-api/
 
