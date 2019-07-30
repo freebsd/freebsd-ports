@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	storcli
-DISTVERSION=	7.709
+DISTVERSION=	7.1017
 CATEGORIES=	sysutils
 MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/
-DISTNAME=	007.0709.0000.0000_Unified_StorCLI
+DISTNAME=	MR_SAS_Unified_StorCLI_007.1017.0000.0000
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	SAS MegaRAID FreeBSD StorCLI
@@ -25,7 +25,7 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	sbin/storcli
 PKGMESSAGE=	${WRKDIR}/pkg-message
-BINSRC=		${WRKSRC}/Unified_storcli_all_os/FreeBSD
+BINSRC=		${WRKSRC}/FreeBSD
 
 .include <bsd.port.pre.mk>
 
@@ -38,7 +38,6 @@ IGNORE?=	You must manually fetch the distribution file\
 .endif
 
 post-extract:
-	@${TAR} xf ${WRKSRC}/Unified_storcli_all_os${EXTRACT_SUFX} -C${WRKSRC}
 	@${TAR} xf ${BINSRC}/storcli${ARCH:S/i386//:S/amd64/64/}.tar -C${WRKSRC}
 	@${REINPLACE_CMD} 's#\(StorCli\).*StorCli64#\1#'\
 		${BINSRC}/FreeBSD_readme.txt
