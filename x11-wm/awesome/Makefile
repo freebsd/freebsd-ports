@@ -36,7 +36,8 @@ GH_ACCOUNT=	awesomewm
 SHEBANG_FILES=	utils/awesome-client
 CMAKE_ARGS=	-DSYSCONFDIR=${PREFIX}/etc \
 		-DAWESOME_MAN_PATH=${MANPREFIX}/man \
-		-DGENERATE_DOC=OFF
+		-DGENERATE_DOC=OFF \
+		-DLUA_INCLUDE_DIR=${LUA_INCDIR}
 USE_GNOME=	glib20 pango gdkpixbuf2
 USE_XORG=	pixman x11 xau xcb xdmcp xext xft xinerama xrandr xrender \
 		xorgproto
