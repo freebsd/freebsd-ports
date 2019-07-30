@@ -5,4 +5,4 @@ Duktape is easy to integrate into a C/C++ project: add duktape.c and duktape.h
 to your build, and use the Duktape API to call Ecmascript functions from C code
 and vice versa.
 
-WWW: http://duktape.org/
+WWW: https://duktape.org/
