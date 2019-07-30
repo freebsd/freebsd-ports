@@ -2,6 +2,14 @@ bin/opendbviewer
 share/applications/opendbviewer.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/icons/hicolor/128x128/apps/opendbviewer.png
+share/icons/hicolor/16x16/apps/opendbviewer.png
+share/icons/hicolor/22x22/apps/opendbviewer.png
+share/icons/hicolor/24x24/apps/opendbviewer.png
+share/icons/hicolor/32x32/apps/opendbviewer.png
+share/icons/hicolor/48x48/apps/opendbviewer.png
+share/icons/hicolor/64x64/apps/opendbviewer.png
+share/icons/opendbviewer.png
 %%DATADIR%%/icons_themes/app_default/actions/128/database-add.png
 %%DATADIR%%/icons_themes/app_default/actions/128/database.png
 %%DATADIR%%/icons_themes/app_default/actions/128/folder.png
