@@ -124,6 +124,16 @@ list_cmd="${BINMISCCTL} list"
 	else
 		echo "$0: interpreter ${interpreter} not found, cannot register."
 	fi
+	# register riscv64 interpreter styled 'riscv64'
+	interpreter=${QEMU_DIR}/${QEMU_PREFIX}riscv64${QEMU_SUFFIX}
+	if [ -x "${interpreter}" ]; then
+		${BINMISCCTL} add riscv64 --interpreter "${interpreter}" \
+			--magic "\x7f\x45\x4c\x46\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\xf3\x00" \
+			--mask "\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff" \
+			--size 20 --set-enabled
+	else
+		echo "$0: interpreter ${interpreter} not found, cannot register."
+	fi
 	# register sparc64 interpreter styled 'sparc64'
 	interpreter=${QEMU_DIR}/${QEMU_PREFIX}sparc64${QEMU_SUFFIX}
 	if [ -x "${interpreter}" ]; then
@@ -147,6 +157,7 @@ list_cmd="${BINMISCCTL} list"
 	${BINMISCCTL} remove mipsel
 	${BINMISCCTL} remove powerpc
 	${BINMISCCTL} remove powerpc64
+	${BINMISCCTL} remove riscv64
 	${BINMISCCTL} remove sparc64
 }
 
