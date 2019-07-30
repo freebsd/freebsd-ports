@@ -6814,6 +6814,7 @@
 %%WWWDIR%%/config/initializers/mysql_ignore_postgresql_options.rb
 %%WWWDIR%%/config/initializers/mysql_set_length_for_binary_indexes.rb
 %%WWWDIR%%/config/initializers/new_framework_defaults.rb
+%%WWWDIR%%/config/initializers/octokit.rb
 %%WWWDIR%%/config/initializers/omniauth.rb
 %%WWWDIR%%/config/initializers/pages.rb
 %%WWWDIR%%/config/initializers/peek.rb
@@ -11409,6 +11410,7 @@
 %%WWWDIR%%/lib/gitlab/namespaced_session_store.rb
 %%WWWDIR%%/lib/gitlab/null_request_store.rb
 %%WWWDIR%%/lib/gitlab/object_hierarchy.rb
+%%WWWDIR%%/lib/gitlab/octokit/middleware.rb
 %%WWWDIR%%/lib/gitlab/omniauth_initializer.rb
 %%WWWDIR%%/lib/gitlab/optimistic_locking.rb
 %%WWWDIR%%/lib/gitlab/other_markup.rb
@@ -11612,6 +11614,7 @@
 %%WWWDIR%%/lib/gitlab/utils/deep_size.rb
 %%WWWDIR%%/lib/gitlab/utils/merge_hash.rb
 %%WWWDIR%%/lib/gitlab/utils/override.rb
+%%WWWDIR%%/lib/gitlab/utils/sanitize_node_link.rb
 %%WWWDIR%%/lib/gitlab/utils/strong_memoize.rb
 %%WWWDIR%%/lib/gitlab/verify/batch_verifier.rb
 %%WWWDIR%%/lib/gitlab/verify/job_artifacts.rb
@@ -12805,7 +12808,7 @@
 %%WWWDIR%%/spec/features/merge_request/user_selects_branches_for_new_mr_spec.rb
 %%WWWDIR%%/spec/features/merge_request/user_suggests_changes_on_diff_spec.rb
 %%WWWDIR%%/spec/features/merge_request/user_toggles_whitespace_changes_spec.rb
-%%WWWDIR%%/spec/features/merge_request/user_tries_to_access_private_repository_through_new_mr_spec.rb
+%%WWWDIR%%/spec/features/merge_request/user_tries_to_access_private_project_info_through_new_mr_spec.rb
 %%WWWDIR%%/spec/features/merge_request/user_uses_quick_actions_spec.rb
 %%WWWDIR%%/spec/features/merge_request/user_views_diffs_spec.rb
 %%WWWDIR%%/spec/features/merge_request/user_views_open_merge_request_spec.rb
@@ -15239,6 +15242,7 @@
 %%WWWDIR%%/spec/lib/gitlab/namespaced_session_store_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/null_request_store_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/object_hierarchy_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/octokit/middleware_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/omniauth_initializer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/optimistic_locking_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/other_markup_spec.rb
@@ -15385,6 +15389,7 @@
 %%WWWDIR%%/spec/lib/gitlab/utils/deep_size_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/utils/merge_hash_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/utils/override_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/utils/sanitize_node_link_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/utils/strong_memoize_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/utils_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/verify/job_artifacts_spec.rb
