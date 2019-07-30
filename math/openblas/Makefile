@@ -3,7 +3,7 @@
 
 PORTNAME=	openblas
 PORTVERSION=	0.2.20
-PORTREVISION=	9
+PORTREVISION=	10
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	math
@@ -40,6 +40,7 @@ BUILDFLAGS=	FCOMMON_OPT=-frecursive MAKE_NB_JOBS=-1
 OPTIONS_DEFINE=		INTERFACE64 OPENMP
 OPTIONS_DEFINE_i386=	DYNAMIC_ARCH AVX AVX2
 OPTIONS_DEFINE_amd64=	${OPTIONS_DEFINE_i386}
+OPTIONS_DEFINE_powerpc64=	POWER6
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT_i386=	DYNAMIC_ARCH
@@ -51,11 +52,16 @@ INTERFACE64_DESC=	Use 8 byte integers on 64-bit architectures
 OPENMP_DESC=		Use OpenMP for threading
 AVX_DESC=		Support Advanced Vector Extensions (AVX)
 AVX2_DESC=		Support Advanced Vector Extensions 2 (AVX2)
+POWER6_DESC=		Optimize for POWER6, instead of the default PPC970
 
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64
+.  if ${PORT_OPTIONS:MPOWER6}
 TARGET_CPU_ARCH=	POWER6
+.else
+TARGET_CPU_ARCH=	PPC970
+.  endif
 .endif
 
 .if defined(TARGET_CPU_ARCH)
