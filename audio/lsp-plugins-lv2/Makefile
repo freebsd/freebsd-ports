@@ -2,8 +2,7 @@
 
 PORTNAME=	lsp-plugins
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1.1.9
-PORTREVISION=	1
+DISTVERSION=	1.1.10
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -19,12 +18,13 @@ ONLY_FOR_ARCHS_REASON=	assembly only for these architectures
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
-USES=		gmake gnome iconv:wchar_t pkgconfig
+USES=		gmake gl gnome iconv:wchar_t pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	sadko4u
 USE_GCC=	any # clang breaks: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=232911
 USE_GNOME=	cairo
 USE_XORG=	x11
+USE_GL=		gl
 
 BINARY_ALIAS=	g++=${CXX}
 MAKE_ARGS=	BUILD_MODULES='lv2'
