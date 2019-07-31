@@ -21,33 +21,33 @@
      fg_color = PM_COLOR("Foreground");
      bg_color = PM_COLOR("Background");
      XRecolorCursor(disp, zoomCursor, &fg_color, &bg_color);
-+    init_X(win_info->dev_info.user_state);
++    init_X(NULL);
  
      Num_Windows = 1;
      while (Num_Windows > 0) {
-@@ -415,6 +415,12 @@ char *argv[];
+@@ -415,6 +415,13 @@ char *argv[];
  	    continue;
  	}
  	switch (theEvent.type) {
 +	case ConfigureNotify:
 +		win_info->dev_info.area_w = theEvent.xconfigure.width;
 +		win_info->dev_info.area_h = theEvent.xconfigure.height;
++		init_X(win_info->dev_info.user_state);
 +		XClearArea(disp, theEvent.xany.window, 1, 1, win_info->dev_info.area_w, win_info->dev_info.area_h, 0);
 +		DrawWindow(win_info);
 +		break;
  	case Expose:
  	    if (theEvent.xexpose.count <= 0) {
  		XWindowAttributes win_attr;
-@@ -422,7 +428,7 @@ char *argv[];
- 		XGetWindowAttributes(disp, theEvent.xany.window, &win_attr);
+@@ -423,6 +430,7 @@ char *argv[];
  		win_info->dev_info.area_w = win_attr.width;
  		win_info->dev_info.area_h = win_attr.height;
--		init_X(win_info->dev_info.user_state);
+ 		init_X(win_info->dev_info.user_state);
 +		XClearArea(disp, theEvent.xany.window, 1, 1, win_info->dev_info.area_w, win_info->dev_info.area_h, 0);
  		DrawWindow(win_info);
  	    }
  	    break;
-@@ -715,7 +721,7 @@ int primary;			/* Is this the primary wi
+@@ -715,7 +723,7 @@ int primary;			/* Is this the primary window? */
          if (sizehints.x<0) sizehints.x = 0;
          sizehints.y += 25; 
      }
@@ -56,7 +56,7 @@
  
      /* Aspect ratio computation */
      if (asp < 1.0) {
-@@ -723,6 +729,7 @@ int primary;			/* Is this the primary wi
+@@ -723,6 +731,7 @@ int primary;			/* Is this the primary window? */
      } else {
  	height = ((int) (((double) NORMSIZE) / asp));
      }
@@ -64,7 +64,7 @@
      height = MAX(MINDIM, height);
      width = MAX(MINDIM, width);
  
-@@ -789,7 +796,7 @@ int primary;			/* Is this the primary wi
+@@ -789,7 +798,7 @@ int primary;			/* Is this the primary window? */
  
  	new_info->flags = 0;
  	XSelectInput(disp, new_window,
@@ -73,7 +73,7 @@
  	if (!theCursor) {
  	    theCursor = XCreateFontCursor(disp, XC_top_left_arrow);
  	    fg_color = PM_COLOR("Foreground");
-@@ -1478,6 +1485,8 @@ LineInfo *result;		/* Returned result */
+@@ -1478,6 +1487,8 @@ LineInfo *result;		/* Returned result */
  	    while (*line && (*line != '\n') && (*line != '"')) line++;
  	    if (*line) *line = '\0';
  	} else {
