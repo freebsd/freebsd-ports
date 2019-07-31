@@ -53,6 +53,7 @@ PKGNAMEPREFIX?=	hs-
 EXECUTABLES?=	${PORTNAME}
 
 CABAL_HOME=	${WRKDIR}/cabal-home
+CABAL_LIBEXEC=	libexec/cabal
 CABAL_EXTRACT_SUFX=	.tar.gz
 
 .  if !defined(CABAL_BOOTSTRAP)
@@ -157,11 +158,11 @@ do-build:
 
 .    if !target(do-install)
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/cabal
+	${MKDIR} ${STAGEDIR}${PREFIX}/${CABAL_LIBEXEC}
 .      for exe in ${EXECUTABLES}
 	${INSTALL_PROGRAM} \
 		$$(find ${WRKSRC}/dist-newstyle -name ${exe} -type f -perm +111) \
-		${STAGEDIR}${PREFIX}/libexec/cabal/${exe}
+		${STAGEDIR}${PREFIX}/${CABAL_LIBEXEC}/${exe}
 	${ECHO} '#!/bin/sh' > ${STAGEDIR}${PREFIX}/bin/${exe}
 	${ECHO} '' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 	${ECHO} 'export ${exe:S/-/_/}_datadir=${DATADIR}' >> ${STAGEDIR}${PREFIX}/bin/${exe}
@@ -169,7 +170,7 @@ do-install:
 	${ECHO} 'export ${dep:S/-/_/}_datadir=${DATADIR}' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 .         endfor
 	${ECHO} '' >> ${STAGEDIR}${PREFIX}/bin/${exe}
-	${ECHO} '${PREFIX}/libexec/cabal/${exe} "$$@"' >> ${STAGEDIR}${PREFIX}/bin/${exe}
+	${ECHO} '${PREFIX}/${CABAL_LIBEXEC}/${exe} "$$@"' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${exe}
 .      endfor
 .    endif
@@ -178,7 +179,7 @@ do-install:
 cabal-post-install-script:
 .      for exe in ${EXECUTABLES}
 		${ECHO_CMD} 'bin/${exe}' >> ${TMPPLIST}
-		${ECHO_CMD} 'libexec/cabal/${exe}' >> ${TMPPLIST}
+		${ECHO_CMD} '${CABAL_LIBEXEC}/${exe}' >> ${TMPPLIST}
 .      endfor
 .    endif
 
