@@ -17,7 +17,7 @@
 name=otrecorder
 rcvar=${name}_enable
 pidfile="/var/run/otrecorder/${name}.pid"
-otrecorder_command="stdbuf -o0 /usr/local/sbin/ot-recorder"
+otrecorder_command="stdbuf -o0 %%PREFIX%%/sbin/ot-recorder"
 command="/usr/sbin/daemon"
 
 load_rc_config $name
