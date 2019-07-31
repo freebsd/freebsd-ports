@@ -3,9 +3,12 @@
 
 PORTNAME=	mailutils
 PORTVERSION=	3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	GNU GNU_ALPHA
+
+EXTRA_PATCHES=	${FILESDIR}/git-018df5d:-p1 \
+		${FILESDIR}/git-113e144:-p1
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	Utilities, daemons, and filters for processing e-mail
