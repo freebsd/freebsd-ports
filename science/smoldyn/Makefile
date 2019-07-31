@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smoldyn
-DISTVERSION=	2.60
+DISTVERSION=	2.61
 CATEGORIES=	science
 MASTER_SITES=	http://www.smoldyn.org/
 
