@@ -46,7 +46,7 @@ share/applications/webstorm.desktop
 %%DATADIR%%/lib/fluent-hc-4.5.6.jar
 %%DATADIR%%/lib/forms-1.1-preview.jar
 %%DATADIR%%/lib/forms_rt.jar
-%%DATADIR%%/lib/fst-2.57.jar
+%%DATADIR%%/lib/fst-2.57-1.jar
 %%DATADIR%%/lib/gson-2.8.5.jar
 %%DATADIR%%/lib/guava-25.1-jre.jar
 %%DATADIR%%/lib/httpclient-4.5.6.jar
