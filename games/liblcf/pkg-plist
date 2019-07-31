@@ -61,8 +61,8 @@ include/liblcf/rpg_save.h
 include/liblcf/rpg_saveactor.h
 include/liblcf/rpg_savecommonevent.h
 include/liblcf/rpg_saveeasyrpgdata.h
-include/liblcf/rpg_saveeventcommands.h
-include/liblcf/rpg_saveeventdata.h
+include/liblcf/rpg_saveeventexecframe.h
+include/liblcf/rpg_saveeventexecstate.h
 include/liblcf/rpg_saveinventory.h
 include/liblcf/rpg_savemapevent.h
 include/liblcf/rpg_savemapeventbase.h
