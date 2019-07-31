@@ -126,7 +126,14 @@ for _file in "${@}"; do
 		# There is a lot of escaping, but the " needs to survive echo/eval.
 		case ${file} in
 			*/*)
-				mkdir -p "${file%/*}"
+				case ${dp_TARGET} in
+				fetch-list|fetch-url-list-int)
+					echo "mkdir -p \"${file%/*}\" && "
+					;;
+				*)
+					mkdir -p "${file%/*}"
+					;;
+				esac
 				args="-o ${file} ${site}${file}"
 				;;
 			*)
