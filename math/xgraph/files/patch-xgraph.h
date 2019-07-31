@@ -13,7 +13,7 @@
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
  #include <X11/cursorfont.h>
-@@ -33,20 +38,9 @@ extern void do_hardcopy();	/* Carries ou
+@@ -33,20 +38,9 @@ extern void do_hardcopy();	/* Carries out hardcopy    
  extern void ho_dialog();	/* Hardcopy dialog         */
  extern void set_X();		/* Initializes X device    */
  
@@ -33,7 +33,7 @@
 +#define MAX(a,b)	((a) > (b) ? (a) : (b))
 +#define MIN(a,b)	((a) < (b) ? (a) : (b))
  #endif
- 
--extern void abort();
 -
+-extern void abort();
+ 
  #endif /* _XGRAPH_H_ */
