@@ -1,4 +1,5 @@
 bin/protoc
+include/google/protobuf/stubs/map_util.h
 include/google/protobuf/any.h
 include/google/protobuf/any.pb.h
 include/google/protobuf/any.proto
@@ -115,15 +116,15 @@ include/google/protobuf/wrappers.pb.h
 include/google/protobuf/wrappers.proto
 lib/libprotobuf-lite.a
 lib/libprotobuf-lite.so
-lib/libprotobuf-lite.so.19
-lib/libprotobuf-lite.so.19.0.0
+lib/libprotobuf-lite.so.20
+lib/libprotobuf-lite.so.20.0.0
 lib/libprotobuf.a
 lib/libprotobuf.so
-lib/libprotobuf.so.19
-lib/libprotobuf.so.19.0.0
+lib/libprotobuf.so.20
+lib/libprotobuf.so.20.0.0
 lib/libprotoc.a
 lib/libprotoc.so
-lib/libprotoc.so.19
-lib/libprotoc.so.19.0.0
+lib/libprotoc.so.20
+lib/libprotoc.so.20.0.0
 libdata/pkgconfig/protobuf-lite.pc
 libdata/pkgconfig/protobuf.pc
