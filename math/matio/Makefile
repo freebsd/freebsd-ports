@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	matio
-PORTVERSION=	1.5.16
-PORTREVISION=	1
+PORTVERSION=	1.5.17
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -12,8 +11,9 @@ COMMENT=	Library for reading and writing Matlab MAT files
 
 LICENSE=	BSD2CLAUSE
 
-GNU_CONFIGURE=	yes
 USES=		7z compiler:c11 libtool pathfix
+
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
