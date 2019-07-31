@@ -503,6 +503,7 @@
     SUBDIR += opera-linuxplugins
     SUBDIR += orangehrm
     SUBDIR += osrm-backend
+    SUBDIR += ot-recorder
     SUBDIR += otrs
     SUBDIR += otter-browser
     SUBDIR += owncloud

@@ -1,0 +1,11 @@
+The OwnTracks Recorder is a lightweight program for storing and accessing
+location data published via MQTT (or HTTP) by the OwnTracks apps. It is a
+compiled program which is easy to install and operate even on low-end hardware,
+and it doesn't require an external database.
+
+There are two main components: the Recorder obtains data via MQTT subscribes or
+HTTP POST, stores the data in plain files and serve it via its built-in REST
+API, and the ocat command-line utility reads stored data in a variety of
+formats.
+
+WWW: https://github.com/owntracks/recorder

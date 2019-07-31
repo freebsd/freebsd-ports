@@ -188,7 +188,7 @@ restserver:*:239:239::0:0:restic rest-server Daemon:/var/db/restserver:/usr/sbin
 aprsd:*:240:240::0:0:aprsd:/nonexistent:/bin/sh
 tnc:*:241:241::0:0:aprsd:/nonexistent:/bin/sh
 prosody:*:242:242::0:0:Prosody Jabber Server:/nonexistent:/usr/sbin/nologin
-# free: 243
+ot-recorder:*:243:243::0:0:OwnTracks Recorder:/nonexistent:/usr/sbin/nologin
 mastodon:*:244:244::0:0:Mastodon User:/usr/local/www/mastodon:/bin/sh
 # free: 245
 # free: 246

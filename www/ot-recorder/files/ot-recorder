@@ -1,0 +1,30 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: otrecorder
+# REQUIRE: LOGIN mosquitto hass
+# KEYWORD: shutdown
+#
+#
+# Add the following lines to /etc/rc.conf to configure ot-recorder:
+# otrecorder_enable (bool):     Set it to "YES" to enable ot-recorder.
+#                               Default is "NO".
+# otrecorder_args (str):        Arguments passed to ot-recorder on startup.
+#                               Default is "".
+
+. /etc/rc.subr
+
+name=otrecorder
+rcvar=${name}_enable
+pidfile="/var/run/otrecorder/${name}.pid"
+otrecorder_command="stdbuf -o0 %%PREFIX%%/sbin/ot-recorder"
+command="/usr/sbin/daemon"
+
+load_rc_config $name
+: ${otrecorder_enable:=NO}
+: ${otrecorder_args:=""}
+: ${otrecorder_user:="ot-recorder"}
+
+command_args="-P ${pidfile} -r -f -o /var/log/ot-recorder/ot-recorder.log ${otrecorder_command} ${otrecorder_args}"
+
+run_rc_command "$1"
