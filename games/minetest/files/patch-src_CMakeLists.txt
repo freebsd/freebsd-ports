@@ -1,10 +1,12 @@
---- src/CMakeLists.txt.orig	2018-06-03 15:35:20 UTC
+Fixes random crashes (especially reproducible when moving in dense
+forests), still relevant for 5.0.1
+--- src/CMakeLists.txt.orig	2019-03-31 20:57:45 UTC
 +++ src/CMakeLists.txt
-@@ -758,7 +758,6 @@ else()
+@@ -729,7 +729,6 @@ else()
  
  	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -Wall -pipe -funroll-loops")
- 	if(CMAKE_SYSTEM_NAME MATCHES "(Darwin|FreeBSD)")
+ 	if(CMAKE_SYSTEM_NAME MATCHES "(Darwin|BSD|DragonFly)")
 -		set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Os")
  	else()
  		set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -ffast-math -fomit-frame-pointer")
- 	endif(CMAKE_SYSTEM_NAME MATCHES "(Darwin|FreeBSD)")
+ 	endif(CMAKE_SYSTEM_NAME MATCHES "(Darwin|BSD|DragonFly)")
