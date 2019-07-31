@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	poppler
-DISTVERSION=	0.78.0
-PORTREVISION=	2
+DISTVERSION=	0.79.0
+PORTREVISION?=	0
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
 

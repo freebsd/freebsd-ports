@@ -3,6 +3,7 @@
 PORTNAME=	engauge-digitizer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	11.3
+PORTREVISION=	1
 CATEGORIES=	graphics math science
 
 MAINTAINER=	yuri@FreeBSD.org
