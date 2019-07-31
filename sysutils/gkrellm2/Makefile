@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	gkrellm
-PORTVERSION=	2.3.10
-PORTREVISION=	1
+PORTVERSION=	2.3.11
+#PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://gkrellm.srcbox.net/releases/ \
 		LOCAL/ume
