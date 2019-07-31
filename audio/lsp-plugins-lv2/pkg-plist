@@ -54,6 +54,8 @@
 %%JACK%%bin/lsp-plugins-phase-detector
 %%JACK%%bin/lsp-plugins-profiler-mono
 %%JACK%%bin/lsp-plugins-profiler-stereo
+%%JACK%%bin/lsp-plugins-room-builder-mono
+%%JACK%%bin/lsp-plugins-room-builder-stereo
 %%JACK%%bin/lsp-plugins-sampler-mono
 %%JACK%%bin/lsp-plugins-sampler-stereo
 %%JACK%%bin/lsp-plugins-sc-compressor-lr
@@ -90,7 +92,8 @@
 %%JACK%%bin/lsp-plugins-trigger-midi-stereo
 %%JACK%%bin/lsp-plugins-trigger-mono
 %%JACK%%bin/lsp-plugins-trigger-stereo
-%%JACK%%lib/lsp-plugins-jack-core-1.1.9.so
+%%JACK%%lib/lsp-plugins/lsp-plugins-jack-core-1.1.10.so
+%%JACK%%lib/lsp-plugins/lsp-plugins-r3d-glx.so
 lib/lv2/lsp-plugins.lv2/comp_delay_mono.ttl
 lib/lv2/lsp-plugins.lv2/comp_delay_stereo.ttl
 lib/lv2/lsp-plugins.lv2/comp_delay_x2_stereo.ttl
@@ -126,6 +129,7 @@ lib/lv2/lsp-plugins.lv2/latency_meter.ttl
 lib/lv2/lsp-plugins.lv2/limiter_mono.ttl
 lib/lv2/lsp-plugins.lv2/limiter_stereo.ttl
 lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2.so
+lib/lv2/lsp-plugins.lv2/lsp-plugins-r3d-glx.so
 lib/lv2/lsp-plugins.lv2/manifest.ttl
 lib/lv2/lsp-plugins.lv2/mb_compressor_lr.ttl
 lib/lv2/lsp-plugins.lv2/mb_compressor_mono.ttl
@@ -149,6 +153,8 @@ lib/lv2/lsp-plugins.lv2/para_equalizer_x32_stereo.ttl
 lib/lv2/lsp-plugins.lv2/phase_detector.ttl
 lib/lv2/lsp-plugins.lv2/profiler_mono.ttl
 lib/lv2/lsp-plugins.lv2/profiler_stereo.ttl
+lib/lv2/lsp-plugins.lv2/room_builder_mono.ttl
+lib/lv2/lsp-plugins.lv2/room_builder_stereo.ttl
 lib/lv2/lsp-plugins.lv2/sampler_mono.ttl
 lib/lv2/lsp-plugins.lv2/sampler_stereo.ttl
 lib/lv2/lsp-plugins.lv2/sc_compressor_lr.ttl
