@@ -183,7 +183,7 @@ restserver:*:239:
 aprsd:*:240:
 tnc:*:241:
 prosody:*:242:
-# free: 243
+ot-recorder:*:243:
 mastodon:*:244:
 # free: 245
 # free: 246
