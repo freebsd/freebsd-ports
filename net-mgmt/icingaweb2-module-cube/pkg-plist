@@ -1,12 +1,15 @@
-%%WWWDIR%%/.github/ISSUE_TEMPLATE.md
+%%WWWDIR%%/.github/ISSUE_TEMPLATE/bug_report.md
+%%WWWDIR%%/.github/ISSUE_TEMPLATE/feature_request.md
 %%WWWDIR%%/.gitignore
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
+%%WWWDIR%%/application/controllers/HostsController.php
 %%WWWDIR%%/application/controllers/IndexController.php
+%%WWWDIR%%/application/controllers/ServicesController.php
 %%WWWDIR%%/application/forms/DimensionsForm.php
 %%WWWDIR%%/application/views/helpers/FormSimpleNote.php
-%%WWWDIR%%/application/views/scripts/index/details.phtml
-%%WWWDIR%%/application/views/scripts/index/index.phtml
+%%WWWDIR%%/application/views/scripts/cube-details.phtml
+%%WWWDIR%%/application/views/scripts/cube-index.phtml
 %%WWWDIR%%/configuration.php
 %%WWWDIR%%/doc/img/cube_action-links.png
 %%WWWDIR%%/doc/img/cube_configuration.png
@@ -23,6 +26,8 @@
 %%WWWDIR%%/library/Cube/Ido/IdoCube.php
 %%WWWDIR%%/library/Cube/Ido/IdoHostStatusCube.php
 %%WWWDIR%%/library/Cube/Ido/IdoHostStatusCubeRenderer.php
+%%WWWDIR%%/library/Cube/Ido/IdoServiceStatusCube.php
+%%WWWDIR%%/library/Cube/Ido/IdoStatusCubeRenderer.php
 %%WWWDIR%%/library/Cube/ProvidedHook/Cube/MonitoringActions.php
 %%WWWDIR%%/library/Cube/Web/ActionLink.php
 %%WWWDIR%%/library/Cube/Web/ActionLinks.php
@@ -34,6 +39,8 @@
 %%WWWDIR%%/library/Cube/Web/Form/QuickBaseForm.php
 %%WWWDIR%%/library/Cube/Web/Form/QuickForm.php
 %%WWWDIR%%/library/Cube/Web/IconHelper.php
+%%WWWDIR%%/library/Cube/Web/IdoController.php
+%%WWWDIR%%/library/Cube/ZfSelectWrapper.php
 %%WWWDIR%%/module.info
 %%WWWDIR%%/public/css/module.less
 %%WWWDIR%%/run.php
