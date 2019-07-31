@@ -2,8 +2,7 @@
 
 PORTNAME=	qmcpack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.0
-PORTREVISION=	4
+DISTVERSION=	3.8.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,13 +21,15 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libopenblas.so:math/openblas \
 		libsz.so:science/szip
 
-USES=		cmake compiler:c++11-lang fortran gnome localbase:ldflags pkgconfig
+USES=		cmake compiler:c++11-lang fortran gnome localbase:ldflags pkgconfig python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 USE_GNOME=	libxml2
 
 PROGS=		convert4qmc qmc-check-affinity qmc-extract-eshdf-kvectors qmc-get-supercell qmcpack
 PLIST_FILES=	${PROGS:C/^/bin\//}
+
+BINARY_ALIAS=	python=${PYTHON_CMD}
 
 do-install:
 .for p in ${PROGS}
