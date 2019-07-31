@@ -241,6 +241,7 @@
     SUBDIR += gqradio
     SUBDIR += gradio
     SUBDIR += gramofile
+    SUBDIR += grip
     SUBDIR += gsequencer
     SUBDIR += gsm
     SUBDIR += gsound
