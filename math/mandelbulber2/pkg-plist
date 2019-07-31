@@ -63,6 +63,8 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/img/hypercomplex.png
 %%DATADIR%%/formula/img/ides.png
 %%DATADIR%%/formula/img/ides2.png
+%%DATADIR%%/formula/img/ifs_xy.fract
+%%DATADIR%%/formula/img/ifs_xy.png
 %%DATADIR%%/formula/img/imaginary_scator_power2.png
 %%DATADIR%%/formula/img/iq_bulb.png
 %%DATADIR%%/formula/img/jos_kleinian.png
@@ -101,6 +103,8 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/img/mandelbulb_multi2.png
 %%DATADIR%%/formula/img/mandelbulb_pow2_v2.fract
 %%DATADIR%%/formula/img/mandelbulb_pow2_v2.png
+%%DATADIR%%/formula/img/mandelbulb_power1234.fract
+%%DATADIR%%/formula/img/mandelbulb_power1234.png
 %%DATADIR%%/formula/img/mandelbulb_power2.png
 %%DATADIR%%/formula/img/mandelbulb_quat.fract
 %%DATADIR%%/formula/img/mandelbulb_quat.png
@@ -118,6 +122,8 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/img/menger_mod1.png
 %%DATADIR%%/formula/img/menger_octo.fract
 %%DATADIR%%/formula/img/menger_octo.png
+%%DATADIR%%/formula/img/menger_poly_fold.fract
+%%DATADIR%%/formula/img/menger_poly_fold.png
 %%DATADIR%%/formula/img/menger_prism_shape.png
 %%DATADIR%%/formula/img/menger_prism_shape2.fract
 %%DATADIR%%/formula/img/menger_prism_shape2.png
@@ -181,6 +187,8 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/img/testing_log.png
 %%DATADIR%%/formula/img/transf_abs_add_conditional.fract
 %%DATADIR%%/formula/img/transf_abs_add_conditional.png
+%%DATADIR%%/formula/img/transf_abs_add_conditional2.fract
+%%DATADIR%%/formula/img/transf_abs_add_conditional2.png
 %%DATADIR%%/formula/img/transf_abs_add_conditional4d.fract
 %%DATADIR%%/formula/img/transf_abs_add_conditional4d.png
 %%DATADIR%%/formula/img/transf_abs_add_constant.png
@@ -233,6 +241,8 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/img/transf_box_wrap4d.png
 %%DATADIR%%/formula/img/transf_clamp4d.fract
 %%DATADIR%%/formula/img/transf_clamp4d.png
+%%DATADIR%%/formula/img/transf_diagonal_fold.fract
+%%DATADIR%%/formula/img/transf_diagonal_fold.png
 %%DATADIR%%/formula/img/transf_folding_tetra3d.png
 %%DATADIR%%/formula/img/transf_gnarl.fract
 %%DATADIR%%/formula/img/transf_gnarl.png
@@ -252,10 +262,14 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/img/transf_parab_fold.fract
 %%DATADIR%%/formula/img/transf_parab_fold.png
 %%DATADIR%%/formula/img/transf_platonic_solid.png
-%%DATADIR%%/formula/img/transf_poly_fold_sym.fract
-%%DATADIR%%/formula/img/transf_poly_fold_sym.png
+%%DATADIR%%/formula/img/transf_poly_fold_atan.fract
+%%DATADIR%%/formula/img/transf_poly_fold_atan.png
+%%DATADIR%%/formula/img/transf_poly_fold_atan2.fract
+%%DATADIR%%/formula/img/transf_poly_fold_atan2.png
 %%DATADIR%%/formula/img/transf_poly_fold_sym_multi.fract
 %%DATADIR%%/formula/img/transf_poly_fold_sym_multi.png
+%%DATADIR%%/formula/img/transf_poly_fold_sym_xy.fract
+%%DATADIR%%/formula/img/transf_poly_fold_sym_xy.png
 %%DATADIR%%/formula/img/transf_pwr2_polynomial.png
 %%DATADIR%%/formula/img/transf_quaternion_fold.png
 %%DATADIR%%/formula/img/transf_r_power.png
@@ -368,6 +382,7 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/opencl/hypercomplex.cl
 %%DATADIR%%/formula/opencl/ides.cl
 %%DATADIR%%/formula/opencl/ides2.cl
+%%DATADIR%%/formula/opencl/ifs_xy.cl
 %%DATADIR%%/formula/opencl/imaginary_scator_power2.cl
 %%DATADIR%%/formula/opencl/iq_bulb.cl
 %%DATADIR%%/formula/opencl/jos_kleinian.cl
@@ -396,6 +411,7 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/opencl/mandelbulb_multi.cl
 %%DATADIR%%/formula/opencl/mandelbulb_multi2.cl
 %%DATADIR%%/formula/opencl/mandelbulb_pow2_v2.cl
+%%DATADIR%%/formula/opencl/mandelbulb_power1234.cl
 %%DATADIR%%/formula/opencl/mandelbulb_power2.cl
 %%DATADIR%%/formula/opencl/mandelbulb_quat.cl
 %%DATADIR%%/formula/opencl/mandelbulb_vary_power_v1.cl
@@ -407,6 +423,7 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/opencl/menger_middle_mod.cl
 %%DATADIR%%/formula/opencl/menger_mod1.cl
 %%DATADIR%%/formula/opencl/menger_octo.cl
+%%DATADIR%%/formula/opencl/menger_poly_fold.cl
 %%DATADIR%%/formula/opencl/menger_prism_shape.cl
 %%DATADIR%%/formula/opencl/menger_prism_shape2.cl
 %%DATADIR%%/formula/opencl/menger_pwr2_poly.cl
@@ -448,6 +465,7 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/opencl/testing4d.cl
 %%DATADIR%%/formula/opencl/testing_log.cl
 %%DATADIR%%/formula/opencl/transf_abs_add_conditional.cl
+%%DATADIR%%/formula/opencl/transf_abs_add_conditional2.cl
 %%DATADIR%%/formula/opencl/transf_abs_add_conditional4d.cl
 %%DATADIR%%/formula/opencl/transf_abs_add_constant.cl
 %%DATADIR%%/formula/opencl/transf_abs_add_constant4d.cl
@@ -488,6 +506,7 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/opencl/transf_box_tiling4d.cl
 %%DATADIR%%/formula/opencl/transf_box_wrap4d.cl
 %%DATADIR%%/formula/opencl/transf_clamp4d.cl
+%%DATADIR%%/formula/opencl/transf_diagonal_fold.cl
 %%DATADIR%%/formula/opencl/transf_folding_tetra3d.cl
 %%DATADIR%%/formula/opencl/transf_gnarl.cl
 %%DATADIR%%/formula/opencl/transf_hybrid_color.cl
@@ -503,8 +522,11 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/opencl/transf_offset_s_curve4d.cl
 %%DATADIR%%/formula/opencl/transf_parab_fold.cl
 %%DATADIR%%/formula/opencl/transf_platonic_solid.cl
+%%DATADIR%%/formula/opencl/transf_poly_fold_atan.cl
+%%DATADIR%%/formula/opencl/transf_poly_fold_atan2.cl
 %%DATADIR%%/formula/opencl/transf_poly_fold_sym.cl
 %%DATADIR%%/formula/opencl/transf_poly_fold_sym_multi.cl
+%%DATADIR%%/formula/opencl/transf_poly_fold_sym_xy.cl
 %%DATADIR%%/formula/opencl/transf_pwr2_polynomial.cl
 %%DATADIR%%/formula/opencl/transf_quaternion_fold.cl
 %%DATADIR%%/formula/opencl/transf_r_power.cl
@@ -594,6 +616,7 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/ui/hypercomplex.ui
 %%DATADIR%%/formula/ui/ides.ui
 %%DATADIR%%/formula/ui/ides2.ui
+%%DATADIR%%/formula/ui/ifs_xy.ui
 %%DATADIR%%/formula/ui/iq_bulb.ui
 %%DATADIR%%/formula/ui/jos_kleinian.ui
 %%DATADIR%%/formula/ui/jos_kleinian_v2.ui
@@ -621,6 +644,7 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/ui/mandelbulb_multi.ui
 %%DATADIR%%/formula/ui/mandelbulb_multi2.ui
 %%DATADIR%%/formula/ui/mandelbulb_pow2_v2.ui
+%%DATADIR%%/formula/ui/mandelbulb_power1234.ui
 %%DATADIR%%/formula/ui/mandelbulb_power2.ui
 %%DATADIR%%/formula/ui/mandelbulb_quat.ui
 %%DATADIR%%/formula/ui/mandelbulb_vary_power_v1.ui
@@ -632,6 +656,7 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/ui/menger_middle_mod.ui
 %%DATADIR%%/formula/ui/menger_mod1.ui
 %%DATADIR%%/formula/ui/menger_octo.ui
+%%DATADIR%%/formula/ui/menger_poly_fold.ui
 %%DATADIR%%/formula/ui/menger_prism_shape.ui
 %%DATADIR%%/formula/ui/menger_prism_shape2.ui
 %%DATADIR%%/formula/ui/menger_pwr2_poly.ui
@@ -680,8 +705,9 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/ui/sierpinski4d.ui
 %%DATADIR%%/formula/ui/testing.ui
 %%DATADIR%%/formula/ui/testing4d.ui
-%%DATADIR%%/formula/ui/testing_par.ui
+%%DATADIR%%/formula/ui/testing_log.ui
 %%DATADIR%%/formula/ui/transf_abs_add_conditional.ui
+%%DATADIR%%/formula/ui/transf_abs_add_conditional2.ui
 %%DATADIR%%/formula/ui/transf_abs_add_conditional4d.ui
 %%DATADIR%%/formula/ui/transf_abs_add_constant.ui
 %%DATADIR%%/formula/ui/transf_abs_add_constant4d.ui
@@ -722,6 +748,7 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/ui/transf_box_tiling4d.ui
 %%DATADIR%%/formula/ui/transf_box_wrap4d.ui
 %%DATADIR%%/formula/ui/transf_clamp4d.ui
+%%DATADIR%%/formula/ui/transf_diagonal_fold.ui
 %%DATADIR%%/formula/ui/transf_folding_tetra3d.ui
 %%DATADIR%%/formula/ui/transf_gnarl.ui
 %%DATADIR%%/formula/ui/transf_hybrid_color.ui
@@ -737,8 +764,10 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/formula/ui/transf_offset_s_curve4d.ui
 %%DATADIR%%/formula/ui/transf_parab_fold.ui
 %%DATADIR%%/formula/ui/transf_platonic_solid.ui
-%%DATADIR%%/formula/ui/transf_poly_fold_sym.ui
+%%DATADIR%%/formula/ui/transf_poly_fold_atan.ui
+%%DATADIR%%/formula/ui/transf_poly_fold_atan2.ui
 %%DATADIR%%/formula/ui/transf_poly_fold_sym_multi.ui
+%%DATADIR%%/formula/ui/transf_poly_fold_sym_xy.ui
 %%DATADIR%%/formula/ui/transf_pwr2_polynomial.ui
 %%DATADIR%%/formula/ui/transf_quaternion_fold.ui
 %%DATADIR%%/formula/ui/transf_r_power.ui
@@ -841,6 +870,7 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/opencl/engines/shader_main_shadow.cl
 %%DATADIR%%/opencl/engines/shader_normal_map_texture.cl
 %%DATADIR%%/opencl/engines/shader_object.cl
+%%DATADIR%%/opencl/engines/shader_roughness_texture.cl
 %%DATADIR%%/opencl/engines/shader_specular_highlight.cl
 %%DATADIR%%/opencl/engines/shader_specular_highlight_combined.cl
 %%DATADIR%%/opencl/engines/shader_surface_color.cl
@@ -897,6 +927,9 @@ share/icons/hicolor/256x256/apps/mandelbulber.png
 %%DATADIR%%/textures/luminosity_texture.jpg
 %%DATADIR%%/textures/material is not defined.png
 %%DATADIR%%/textures/normal_map_texture.jpg
+%%DATADIR%%/textures/reflectance_texture.jpg
+%%DATADIR%%/textures/roughness_texture.jpg
+%%DATADIR%%/textures/transparency_texture.jpg
 %%DATADIR%%/toolbar/dodecahedron.fract
 %%DATADIR%%/toolbar/icosahedron.fract
 %%DATADIR%%/toolbar/mandelbox scale -2.fract
