@@ -2,7 +2,6 @@
 
 PORTNAME=	breeze-gtk
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org

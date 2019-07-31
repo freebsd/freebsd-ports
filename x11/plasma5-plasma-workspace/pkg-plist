@@ -3350,6 +3350,7 @@ share/locale/ru/LC_MESSAGES/kio_desktop.mo
 share/locale/ru/LC_MESSAGES/klipper.mo
 share/locale/ru/LC_MESSAGES/krunner.mo
 share/locale/ru/LC_MESSAGES/ksmserver.mo
+share/locale/ru/LC_MESSAGES/libnotificationmanager.mo
 share/locale/ru/LC_MESSAGES/libkworkspace.mo
 share/locale/ru/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
