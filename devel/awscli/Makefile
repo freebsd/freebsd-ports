@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.12.197:devel/py-botocore@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}rsa>=3.1.2:security/py-rsa@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml@${PY_FLAVOR}
 
-USES=		python
+USES=		python groff:run
 USE_PYTHON=	autoplist distutils concurrent noflavors
 NO_ARCH=	yes
 
