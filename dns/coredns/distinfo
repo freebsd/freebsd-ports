@@ -1,6 +1,6 @@
-TIMESTAMP = 1562307534
-SHA256 (coredns-coredns-v1.5.2_GH0.tar.gz) = 559c7b26edd6dddc03470ac5629707b002a60f77f6fa67842160d9114d15304a
-SIZE (coredns-coredns-v1.5.2_GH0.tar.gz) = 463878
+TIMESTAMP = 1564595333
+SHA256 (coredns-coredns-v1.6.0-9-g7be2226e_GH0.tar.gz) = 9d91a80d0f2cdac37e108c9e35799185d2cd29501f1ec6dac14c849d9c82bfa7
+SIZE (coredns-coredns-v1.6.0-9-g7be2226e_GH0.tar.gz) = 466342
 SHA256 (DataDog-dd-trace-go-v1.15.0_GH0.tar.gz) = 9b9ea8e7dbbacf9796a6c4a4e3071959966b4fc0d3c0a81ac4e63f310be32aa4
 SIZE (DataDog-dd-trace-go-v1.15.0_GH0.tar.gz) = 3721785
 SHA256 (DataDog-zstd-v1.3.5_GH0.tar.gz) = 930508b329b99aa89f2c72ec8e5a5acb1a8452ce0c1f4611897dc7fffd93e999
