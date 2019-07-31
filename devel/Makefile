@@ -459,7 +459,6 @@
     SUBDIR += dcd-server
     SUBDIR += dconf
     SUBDIR += dconf-editor
-    SUBDIR += ddd
     SUBDIR += debugedit
     SUBDIR += dee
     SUBDIR += deforaos-libsystem
@@ -4741,7 +4740,6 @@
     SUBDIR += py-pip
     SUBDIR += py-pip-api
     SUBDIR += py-pip-tools
-    SUBDIR += py-pip-tools2
     SUBDIR += py-pipdeptree
     SUBDIR += py-pipenv
     SUBDIR += py-pkgconfig

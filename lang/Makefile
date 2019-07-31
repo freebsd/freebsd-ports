@@ -34,7 +34,6 @@
     SUBDIR += chicken
     SUBDIR += chicken5
     SUBDIR += cim
-    SUBDIR += cint
     SUBDIR += cjs
     SUBDIR += cling
     SUBDIR += clips
