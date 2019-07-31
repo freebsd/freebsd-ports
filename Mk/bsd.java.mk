@@ -25,13 +25,14 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 #
 # JAVA_VERSION		List of space-separated suitable java versions for the
 #					port. An optional "+" allows you to specify a range of
-#					versions. (allowed values: 1.6[+] 1.7[+] 1.8[+])
+#					versions. (allowed values: 6[+] 7[+] 8[+] 9[+] 10[+]
+#					11[+] 12[+])
 #
 # JAVA_OS			List of space-separated suitable JDK port operating systems
 #					for the port. (allowed values: native linux)
 #
 # JAVA_VENDOR		List of space-separated suitable JDK port vendors for the
-#					port. (allowed values: openjdk oracle sun)
+#					port. (allowed values: openjdk oracle)
 #
 # JAVA_BUILD		When set, it means that the selected JDK port should be
 #					added to build dependencies for the port.
@@ -54,11 +55,11 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 #
 # JAVA_PORT			The name of the JDK port. (e.g. 'java/openjdk6')
 #
-# JAVA_PORT_VERSION	The version of the JDK port. (e.g. '1.6')
+# JAVA_PORT_VERSION	The version of the JDK port. (e.g. '6')
 #
 # JAVA_PORT_OS		The operating system used by the JDK port. (e.g. 'linux')
 #
-# JAVA_PORT_VENDOR	The vendor of the JDK port. (e.g. 'sun')
+# JAVA_PORT_VENDOR	The vendor of the JDK port. (e.g. 'openjdk')
 #
 # JAVA_PORT_OS_DESCRIPTION		Description of the operating system used by the
 #								JDK port. (e.g. 'Linux')
@@ -76,7 +77,7 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 #					'/usr/local/openjdk6/bin/jar' or '/usr/local/bin/fastjar')
 #
 # APPLETVIEWER		Path to the appletviewer utility. (e.g.
-#					'/usr/local/linux-jdk1.7.0/bin/appletviewer')
+#					'/usr/local/linux-jdk1.8.0/bin/appletviewer')
 #
 # JAVA				Path to the java executable. Use this for executing Java
 #					programs. (e.g. '/usr/local/openjdk6/bin/java')
@@ -130,6 +131,9 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 
 .	if defined(USE_JAVA)
 
+.		if !defined(JAVA_VERSION) && empty(USE_JAVA:C/[0-9]*[\.]*[0-9]*[+]*//)
+JAVA_VERSION=${USE_JAVA}
+.		endif
 
 #-------------------------------------------------------------------------------
 # Stage 1: Define constants
@@ -159,39 +163,47 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 .		endif
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	1.6 1.7 1.8 1.9
+__JAVA_VERSION_LIST=	6 7 8 9 10 11 12
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
 _JAVA_OS_LIST=			native linux
-_JAVA_VENDOR_LIST=		openjdk oracle sun
+_JAVA_VENDOR_LIST=		openjdk oracle
 
 # Set all meta-information about JDK ports:
 # port location, corresponding JAVA_HOME, JDK version, OS, vendor
-_JAVA_PORT_NATIVE_OPENJDK_JDK_1_6_INFO=		PORT=java/openjdk6			HOME=${LOCALBASE}/openjdk6 \
-											VERSION=1.6.0	OS=native	VENDOR=openjdk
-_JAVA_PORT_NATIVE_OPENJDK_JDK_1_7_INFO=		PORT=java/openjdk7			HOME=${LOCALBASE}/openjdk7 \
-											VERSION=1.7.0	OS=native	VENDOR=openjdk
-_JAVA_PORT_NATIVE_OPENJDK_JDK_1_8_INFO=		PORT=java/openjdk8			HOME=${LOCALBASE}/openjdk8 \
-											VERSION=1.8.0	OS=native	VENDOR=openjdk
-_JAVA_PORT_LINUX_ORACLE_JDK_1_8_INFO=		PORT=java/linux-oracle-jdk18	HOME=${LOCALBASE}/linux-oracle-jdk1.8.0 \
-											VERSION=1.8.0	OS=linux	VENDOR=oracle
-_JAVA_PORT_LINUX_ORACLE_JDK_1_9_INFO=		PORT=java/linux-oracle-jdk9	HOME=${LOCALBASE}/linux-oracle-jdk9 \
-											VERSION=1.9.0	OS=linux	VENDOR=oracle
+_JAVA_PORT_NATIVE_OPENJDK_JDK_6_INFO=		PORT=java/openjdk6			HOME=${LOCALBASE}/openjdk6 \
+											VERSION=6	OS=native	VENDOR=openjdk
+_JAVA_PORT_NATIVE_OPENJDK_JDK_7_INFO=		PORT=java/openjdk7			HOME=${LOCALBASE}/openjdk7 \
+											VERSION=7	OS=native	VENDOR=openjdk
+_JAVA_PORT_NATIVE_OPENJDK_JDK_8_INFO=		PORT=java/openjdk8			HOME=${LOCALBASE}/openjdk8 \
+											VERSION=8	OS=native	VENDOR=openjdk
+_JAVA_PORT_NATIVE_OPENJDK_JDK_11_INFO=		PORT=java/openjdk11			HOME=${LOCALBASE}/openjdk11 \
+											VERSION=11	OS=native	VENDOR=openjdk
+_JAVA_PORT_NATIVE_OPENJDK_JDK_12_INFO=		PORT=java/openjdk12			HOME=${LOCALBASE}/openjdk12 \
+											VERSION=12	OS=native	VENDOR=openjdk
+_JAVA_PORT_LINUX_ORACLE_JDK_8_INFO=		PORT=java/linux-oracle-jdk18	HOME=${LOCALBASE}/linux-oracle-jdk1.8.0 \
+											VERSION=8	OS=linux	VENDOR=oracle
+_JAVA_PORT_LINUX_ORACLE_JDK_9_INFO=		PORT=java/linux-oracle-jdk9	HOME=${LOCALBASE}/linux-oracle-jdk9 \
+											VERSION=9	OS=linux	VENDOR=oracle
+_JAVA_PORT_LINUX_ORACLE_JDK_10_INFO=		PORT=java/linux-oracle-jdk10	HOME=${LOCALBASE}/linux-oracle-jdk10 \
+											VERSION=10	OS=linux	VENDOR=oracle
 
 # Verbose description for each VENDOR
 _JAVA_VENDOR_openjdk=		"OpenJDK BSD Porting Team"
 _JAVA_VENDOR_oracle=		Oracle
-_JAVA_VENDOR_sun=			Sun
 
 # Verbose description for each OS
 _JAVA_OS_native=	Native
 _JAVA_OS_linux=		Linux
 
 # List all JDK ports in order of preference
-__JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_OPENJDK_JDK_1_8 \
-					JAVA_PORT_NATIVE_OPENJDK_JDK_1_7 \
-					JAVA_PORT_NATIVE_OPENJDK_JDK_1_6 \
-					JAVA_PORT_LINUX_ORACLE_JDK_1_8 \
-					JAVA_PORT_LINUX_ORACLE_JDK_1_9
+__JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_OPENJDK_JDK_8  \
+					JAVA_PORT_NATIVE_OPENJDK_JDK_11 \
+					JAVA_PORT_NATIVE_OPENJDK_JDK_12 \
+					JAVA_PORT_NATIVE_OPENJDK_JDK_7  \
+					JAVA_PORT_NATIVE_OPENJDK_JDK_6  \
+					JAVA_PORT_LINUX_ORACLE_JDK_8    \
+					JAVA_PORT_LINUX_ORACLE_JDK_9    \
+					JAVA_PORT_LINUX_ORACLE_JDK_10
 _JAVA_PORTS_ALL=	${JAVA_PREFERRED_PORTS} \
 					${__JAVA_PORTS_ALL}
 
@@ -264,7 +276,7 @@ JAVA_RUN=	jre
 .		undef _JAVA_PORTS_INSTALLED
 .		undef _JAVA_PORTS_POSSIBLE
 .		if defined(JAVA_VERSION)
-_JAVA_VERSION=	${JAVA_VERSION:S/1.6+/1.6 1.7+/:S/1.7+/1.7 1.8+/:S/1.8+/1.8 1.9+/:S/1.9+/1.9/}
+_JAVA_VERSION=	${JAVA_VERSION:S/1.6+/1.6 1.7+/:S/1.7+/1.7 1.8+/:S/1.8+/1.8 1.9+/:S/1.9+/1.9 10+/:S/1.6/6/:S/1.7/7/:S/1.8/8/:S/1.9/9/:S/6+/6 7+/:S/7+/7 8+/:S/8+/8 9+/:S/9+/9 10+/:S/10+/10 11+/:S/11+/11 12+/:S/12+/12/}
 .		else
 _JAVA_VERSION=	${__JAVA_VERSION_LIST}
 .		endif
@@ -282,7 +294,7 @@ _JAVA_VENDOR=	${_JAVA_VENDOR_LIST}
 .		for A_JAVA_PORT in ${_JAVA_PORTS_ALL}
 A_JAVA_PORT_INFO:=			${A_JAVA_PORT:S/^/\${_/:S/$/_INFO}/}
 A_JAVA_PORT_HOME=			${A_JAVA_PORT_INFO:MHOME=*:S,HOME=,,}
-A_JAVA_PORT_VERSION=		${A_JAVA_PORT_INFO:MVERSION=*:C/VERSION=([0-9])\.([0-9])(.*)/\1.\2/}
+A_JAVA_PORT_VERSION=		${A_JAVA_PORT_INFO:MVERSION=*:S,VERSION=,,}
 A_JAVA_PORT_OS=				${A_JAVA_PORT_INFO:MOS=*:S,OS=,,}
 A_JAVA_PORT_VENDOR=			${A_JAVA_PORT_INFO:MVENDOR=*:S,VENDOR=,,}
 .if !defined(_JAVA_PORTS_INSTALLED) && exists(${A_JAVA_PORT_HOME}/${_JDK_FILE})
