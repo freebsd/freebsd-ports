@@ -3,6 +3,7 @@
 
 PORTNAME=	ot-recorder
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	dvl@FreeBSD.org
