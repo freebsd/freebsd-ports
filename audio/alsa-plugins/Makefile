@@ -16,7 +16,6 @@ LICENSE=	LGPL21+
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 USES=		alias libtool:keepla localbase pkgconfig tar:bzip2
-
 GNU_CONFIGURE=	yes
 EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins.patch
 INSTALL_TARGET=	install-strip
