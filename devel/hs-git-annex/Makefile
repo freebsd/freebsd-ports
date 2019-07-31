@@ -3,6 +3,7 @@
 
 PORTNAME=	git-annex
 PORTVERSION=	7.20190626
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -288,7 +289,13 @@ post-install:
 .endfor
 
 post-stage:
-	${LN} -sf git-annex ${STAGEDIR}${PREFIX}/bin/git-annex-shell
-	${LN} -sf git-annex ${STAGEDIR}${PREFIX}/bin/git-remote-tor-annex
+	${LN} -sf git-annex ${STAGEDIR}${PREFIX}/${CABAL_LIBEXEC}/git-annex-shell
+	${LN} -sf git-annex ${STAGEDIR}${PREFIX}/${CABAL_LIBEXEC}/git-remote-tor-annex
+	${CP} ${STAGEDIR}${PREFIX}/bin/git-annex ${STAGEDIR}${PREFIX}/bin/git-annex-shell
+	${CP} ${STAGEDIR}${PREFIX}/bin/git-annex ${STAGEDIR}${PREFIX}/bin/git-remote-tor-annex
+	${REINPLACE_CMD} 's|${PREFIX}/${CABAL_LIBEXEC}/git-annex|${PREFIX}/${CABAL_LIBEXEC}/git-annex-shell|' \
+		${STAGEDIR}${PREFIX}/bin/git-annex-shell
+	${REINPLACE_CMD} 's|${PREFIX}/${CABAL_LIBEXEC}/git-annex|${PREFIX}/${CABAL_LIBEXEC}/git-remote-tor-annex|' \
+		${STAGEDIR}${PREFIX}/bin/git-remote-tor-annex
 
 .include <bsd.port.mk>
