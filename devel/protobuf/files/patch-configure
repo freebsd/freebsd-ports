@@ -1,0 +1,11 @@
+--- configure.orig	2019-07-12 16:18:37 UTC
++++ configure
+@@ -20165,7 +20165,7 @@ if test "x$ax_pthread_clang" = "xyes"; t
+ 	# ignore this macro, third-party headers might not.)
+ 
+ 	PTHREAD_CFLAGS="-pthread"
+-	PTHREAD_LIBS=
++	PTHREAD_LIBS="-pthread"
+ 
+ 	ax_pthread_ok=yes
+ 
