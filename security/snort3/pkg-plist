@@ -41,6 +41,7 @@ include/snort/flow/expect_cache.h
 include/snort/flow/flow.h
 include/snort/flow/flow_key.h
 include/snort/flow/flow_stash.h
+include/snort/flow/ha.h
 include/snort/flow/stash_item.h
 include/snort/framework/api_options.h
 include/snort/framework/base_api.h
@@ -105,6 +106,7 @@ include/snort/network_inspectors/appid/http_xff_fields.h
 include/snort/network_inspectors/packet_tracer/packet_tracer.h
 include/snort/packet_io/active.h
 include/snort/packet_io/sfdaq.h
+include/snort/packet_io/sfdaq_instance.h
 include/snort/profiler/memory_context.h
 include/snort/profiler/memory_defs.h
 include/snort/profiler/memory_profiler_defs.h
@@ -138,6 +140,7 @@ include/snort/protocols/vlan.h
 include/snort/protocols/wlan.h
 include/snort/pub_sub/appid_events.h
 include/snort/pub_sub/expect_events.h
+include/snort/pub_sub/finalize_packet_event.h
 include/snort/pub_sub/http_events.h
 include/snort/pub_sub/sip_events.h
 include/snort/search_engines/search_common.h
@@ -156,6 +159,8 @@ include/snort/time/tsc_clock.h
 include/snort/utils/bitop.h
 include/snort/utils/cpp_macros.h
 include/snort/utils/endian.h
+include/snort/utils/event_gen.h
+include/snort/utils/infractions.h
 include/snort/utils/kmap.h
 include/snort/utils/primed_allocator.h
 include/snort/utils/safec.h
@@ -191,7 +196,6 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/connectors.txt
 %%PORTDOCS%%%%DOCSDIR%%/counts.txt
 %%PORTDOCS%%%%DOCSDIR%%/daq.txt
-%%PORTDOCS%%%%DOCSDIR%%/daq_readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/data.txt
 %%PORTDOCS%%%%DOCSDIR%%/dcerpc.txt
 %%PORTDOCS%%%%DOCSDIR%%/differences.txt
