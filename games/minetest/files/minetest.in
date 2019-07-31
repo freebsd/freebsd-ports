@@ -54,7 +54,7 @@ esac
 command=/usr/sbin/daemon
 procname=/usr/local/bin/minetestserver
 pidfile=${minetest_rundir}/minetest.pid
-command_args="-c -f -p ${pidfile} ${procname} ${minetest_args}"
+command_args="-c -f -p ${pidfile} /usr/bin/env HOME='${minetest_dbdir}' ${procname} ${minetest_args}"
 required_files=${minetest_config}
 start_precmd=minetest_prestart
 
