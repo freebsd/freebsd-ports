@@ -411,7 +411,7 @@ index 2f64d82ee5..82726d90d9 100644
     -------------------------------------------------------------------------- */
  
 -#if defined(powerpc64_HOST_ARCH)
-+#if defined(ELF_V1)
++#if defined(_CALL_ELF) && (_CALL_ELF == 1)
  
 -#if defined(linux_HOST_OS)
  static void GNUC3_ATTRIBUTE(used)
@@ -428,7 +428,7 @@ index 2f64d82ee5..82726d90d9 100644
 -#endif
 -
 -#if defined(powerpc64le_HOST_ARCH)
-+#if defined(ELF_V2)
++#if defined(_CALL_ELF) && (_CALL_ELF == 2)
  /* -----------------------------------------------------------------------------
     PowerPC 64 little endian architecture
  
