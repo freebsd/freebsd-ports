@@ -29,6 +29,7 @@
 %%WWWDIR%%/app/controllers/CControllerDashboardWidgetEdit.php
 %%WWWDIR%%/app/controllers/CControllerDashboardWidgetRfRate.php
 %%WWWDIR%%/app/controllers/CControllerDiscoveryView.php
+%%WWWDIR%%/app/controllers/CControllerExportXml.php
 %%WWWDIR%%/app/controllers/CControllerFavouriteCreate.php
 %%WWWDIR%%/app/controllers/CControllerFavouriteDelete.php
 %%WWWDIR%%/app/controllers/CControllerMapView.php
@@ -119,6 +120,7 @@
 %%WWWDIR%%/app/views/layout.json.php
 %%WWWDIR%%/app/views/layout.warning.php
 %%WWWDIR%%/app/views/layout.widget.php
+%%WWWDIR%%/app/views/layout.xml.php
 %%WWWDIR%%/app/views/monitoring.acknowledge.edit.js.php
 %%WWWDIR%%/app/views/monitoring.acknowledge.edit.php
 %%WWWDIR%%/app/views/monitoring.dashboard.breadcrumbs.php
@@ -320,6 +322,7 @@
 %%WWWDIR%%/include/classes/debug/CProfiler.php
 %%WWWDIR%%/include/classes/export/CConfigurationExport.php
 %%WWWDIR%%/include/classes/export/CConfigurationExportBuilder.php
+%%WWWDIR%%/include/classes/export/CConfigurationExportException.php
 %%WWWDIR%%/include/classes/export/writers/CExportWriter.php
 %%WWWDIR%%/include/classes/export/writers/CExportWriterFactory.php
 %%WWWDIR%%/include/classes/export/writers/CJsonExportWriter.php
