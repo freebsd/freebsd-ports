@@ -1,10 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	cvc4
-DISTVERSION=	1.6
-PORTREVISION=	5
+DISTVERSION=	1.7
 CATEGORIES=	math java
-MASTER_SITES=	https://cvc4.cs.stanford.edu/downloads/builds/src/
+MASTER_SITES+=	http://www.antlr3.org/download/:antlr3
+DISTFILES+=	antlr-3.4-complete.jar:antlr3
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	fc8907afc08d.patch:-p1 # Install Java bindings
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Automatic theorem prover for SMT (Satisfiability Modulo Theories)
@@ -12,65 +16,78 @@ COMMENT=	Automatic theorem prover for SMT (Satisfiability Modulo Theories)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libboost_system.so:devel/boost-libs
-BUILD_DEPENDS=	bash:shells/bash \
-		antlr3:devel/antlr3
 
-USES=		autoreconf compiler:c++17-lang gmake libtool localbase \
+USES=		cmake ncurses compiler:c++17-lang \
 		pkgconfig python:3.5+,build shebangfix
+
+SHEBANG_FILES=	src/base/mktagheaders \
+		src/base/mktags
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	CVC4
+GH_PROJECT=	CVC4
+
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--disable-dependency-tracking \
-			--with-swig=${LOCALBASE}/bin/swig3.0 \
-			ANTLR=${LOCALBASE}/bin/antlr3
-CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
 USE_LDCONFIG=		yes
-SHEBANG_FILES=		src/mk* src/theory/mk* src/base/mk* src/expr/mk* src/options/mk* test/regress/run_regression.py
 
-OPTIONS_DEFINE=		CRYPTOMINISAT JAVA READLINE DEBUG
+CMAKE_BUILD_TYPE=	Production
+CMAKE_ARGS+=		-DANTLR_BINARY=${WRKDIR}/antlr3
+
+OPTIONS_DEFINE=		CRYPTOMINISAT JAVA PYTHON READLINE
 OPTIONS_RADIO=		NUMLIB
 OPTIONS_RADIO_NUMLIB=	GMP CLN
-OPTIONS_DEFAULT=	CRYPTOMINISAT READLINE GMP
+OPTIONS_DEFAULT=	CRYPTOMINISAT JAVA PYTHON READLINE GMP
 OPTIONS_SUB=		yes
 
 CRYPTOMINISAT_DESC=	Use CryptoMiniSat as the SAT solver
 GMP_DESC=		Use GMP numeric library
 CLN_DESC=		Use CLN numeric library (disables portfolio mode)
 
-CRYPTOMINISAT_CONFIGURE_ON=	--with-cryptominisat --with-cryptominisat-dir=${LOCALBASE}
+CRYPTOMINISAT_CMAKE_BOOL=	USE_CRYPTOMINISAT
 CRYPTOMINISAT_LIB_DEPENDS=	libcryptominisat5.so:math/cryptominisat
 
-JAVA_CONFIGURE_ON=		--enable-language-bindings=c,c++,java \
-				JAVA_CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd" \
-				JAVAC=${JAVAC} JAVAH=${JAVAH} JAR=${JAR}
-JAVA_CONFIGURE_OFF=		--enable-language-bindings=c,c++
-JAVA_BUILD_DEPENDS=		swig3.0:devel/swig30
+JAVA_CMAKE_BOOL=	BUILD_BINDINGS_JAVA
+JAVA_CMAKE_ON=		-DJAVA_INCLUDE_PATH:PATH=${JAVA_HOME}/include \
+			-DJAVA_AWT_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ARCH}/libjawt.so \
+			-DJAVA_JVM_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ATCH}/libjava.so
+JAVA_BUILD_DEPENDS=	swig3.0:devel/swig30
 
-READLINE_CONFIGURE_WITH=	readline
-READLINE_USES=			readline
+PYTHON_CMAKE_BOOL=	BUILD_BINDINGS_PYTHON USE_PYTHON3
+PYTHON_BUILD_DEPENDS=	swig3.0:devel/swig30
 
-GMP_CONFIGURE_WITH=		gmp
-GMP_CONFIGURE_ON=		--with-portfolio
-GMP_LIB_DEPENDS=		libgmp.so:math/gmp \
-				libboost_thread.so:devel/boost-libs
+READLINE_CMAKE_BOOL=	USE_READLINE
+READLINE_USES=		readline:port
+
+GMP_CMAKE_BOOL=		ENABLE_PORTFOLIO
+GMP_CMAKE_ON=		-DENABLE_DUMPING=OFF
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp \
+			libboost_thread.so:devel/boost-libs
 # note: CVC4 already depends on boost-libs, so portfolio mode is "free" in terms of pkg dependencies
 
-CLN_CONFIGURE_WITH=		cln
-CLN_LIB_DEPENDS=		libcln.so:math/cln \
-				libgmp.so:math/gmp
-
-DEBUG_CONFIGURE_ON=		--with-build=debug
-DEBUG_CONFIGURE_OFF=		--with-build=production
-DEBUG_INSTALL_TARGET_OFF=	install-strip
+CLN_CMAKE_BOOL=		USE_CLN
+CLN_LIB_DEPENDS=	libcln.so:math/cln \
+			libgmp.so:math/gmp
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE} || ${PORT_OPTIONS:MCLN}
 LICENSE=		GPLv3
-CONFIGURE_ARGS+=	--enable-gpl
+CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 .endif
+
+post-extract:
+	@${CP} ${DISTDIR}/antlr-3.4-complete.jar ${WRKDIR}/antlr3.jar
+	@${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/antlr3
+	@${ECHO_CMD} "JAVA_VERSION=1.7+ exec \"${LOCALBASE}/bin/java\" -classpath \"${WRKDIR}/antlr3.jar\" org.antlr.Tool \"\$$@\"" >> ${WRKDIR}/antlr3
+	@${CHMOD} +x ${WRKDIR}/antlr3
+
+# make a relative symlink instead of absolute to build dir
+post-install-JAVA-on:
+	@${LN} -sf CVC4-1.7.0.jar ${STAGEDIR}${PREFIX}/share/java/cvc4/CVC4.jar
 
 .include <bsd.port.mk>
