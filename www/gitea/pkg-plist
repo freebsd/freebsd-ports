@@ -564,6 +564,7 @@ sbin/gitea
 %%DATADIR%%/options/locale/locale_ko-KR.ini
 %%DATADIR%%/options/locale/locale_lt-LT.ini
 %%DATADIR%%/options/locale/locale_lv-LV.ini
+%%DATADIR%%/options/locale/locale_ml-IN.ini
 %%DATADIR%%/options/locale/locale_nb-NO.ini
 %%DATADIR%%/options/locale/locale_nl-NL.ini
 %%DATADIR%%/options/locale/locale_nn-NO.ini
@@ -606,8 +607,11 @@ sbin/gitea
 %%DATADIR%%/public/img/gitea-safari.svg
 %%DATADIR%%/public/img/gitea-sm.png
 %%DATADIR%%/public/img/gogs.ico
+%%DATADIR%%/public/img/msteams.png
 %%DATADIR%%/public/img/openid-16x16.png
+%%DATADIR%%/public/img/repo_default.png
 %%DATADIR%%/public/img/slack.png
+%%DATADIR%%/public/img/telegram.png
 %%DATADIR%%/public/js/draw.js
 %%DATADIR%%/public/js/index.js
 %%DATADIR%%/public/less/_admin.less
@@ -1876,6 +1880,7 @@ sbin/gitea
 %%DATADIR%%/public/vendor/plugins/highlight/default.css
 %%DATADIR%%/public/vendor/plugins/highlight/github.css
 %%DATADIR%%/public/vendor/plugins/highlight/highlight.pack.js
+%%DATADIR%%/public/vendor/plugins/jquery-migrate/jquery-migrate.min.js
 %%DATADIR%%/public/vendor/plugins/jquery.areyousure/LICENSE
 %%DATADIR%%/public/vendor/plugins/jquery.areyousure/jquery.are-you-sure.js
 %%DATADIR%%/public/vendor/plugins/jquery.datetimepicker/LICENSE
@@ -2033,6 +2038,8 @@ sbin/gitea
 %%DATADIR%%/templates/admin/base/search.tmpl
 %%DATADIR%%/templates/admin/config.tmpl
 %%DATADIR%%/templates/admin/dashboard.tmpl
+%%DATADIR%%/templates/admin/hook_new.tmpl
+%%DATADIR%%/templates/admin/hooks.tmpl
 %%DATADIR%%/templates/admin/monitor.tmpl
 %%DATADIR%%/templates/admin/nav.tmpl
 %%DATADIR%%/templates/admin/navbar.tmpl
@@ -2093,8 +2100,10 @@ sbin/gitea
 %%DATADIR%%/templates/pwa/manifest_json.tmpl
 %%DATADIR%%/templates/pwa/serviceworker_js.tmpl
 %%DATADIR%%/templates/repo/activity.tmpl
+%%DATADIR%%/templates/repo/blame.tmpl
 %%DATADIR%%/templates/repo/branch/list.tmpl
 %%DATADIR%%/templates/repo/branch_dropdown.tmpl
+%%DATADIR%%/templates/repo/commit_page.tmpl
 %%DATADIR%%/templates/repo/commit_status.tmpl
 %%DATADIR%%/templates/repo/commits.tmpl
 %%DATADIR%%/templates/repo/commits_table.tmpl
@@ -2103,9 +2112,9 @@ sbin/gitea
 %%DATADIR%%/templates/repo/diff/comment_form.tmpl
 %%DATADIR%%/templates/repo/diff/comment_form_datahandler.tmpl
 %%DATADIR%%/templates/repo/diff/comments.tmpl
+%%DATADIR%%/templates/repo/diff/compare.tmpl
 %%DATADIR%%/templates/repo/diff/new_comment.tmpl
 %%DATADIR%%/templates/repo/diff/new_review.tmpl
-%%DATADIR%%/templates/repo/diff/page.tmpl
 %%DATADIR%%/templates/repo/diff/section_unified.tmpl
 %%DATADIR%%/templates/repo/diff/whitespace_dropdown.tmpl
 %%DATADIR%%/templates/repo/editor/commit_form.tmpl
@@ -2140,9 +2149,9 @@ sbin/gitea
 %%DATADIR%%/templates/repo/issue/view_title.tmpl
 %%DATADIR%%/templates/repo/migrate.tmpl
 %%DATADIR%%/templates/repo/pulls/commits.tmpl
-%%DATADIR%%/templates/repo/pulls/compare.tmpl
 %%DATADIR%%/templates/repo/pulls/files.tmpl
 %%DATADIR%%/templates/repo/pulls/fork.tmpl
+%%DATADIR%%/templates/repo/pulls/status.tmpl
 %%DATADIR%%/templates/repo/pulls/tab_menu.tmpl
 %%DATADIR%%/templates/repo/release/list.tmpl
 %%DATADIR%%/templates/repo/release/new.tmpl
@@ -2164,9 +2173,11 @@ sbin/gitea
 %%DATADIR%%/templates/repo/settings/webhook/gogs.tmpl
 %%DATADIR%%/templates/repo/settings/webhook/history.tmpl
 %%DATADIR%%/templates/repo/settings/webhook/list.tmpl
+%%DATADIR%%/templates/repo/settings/webhook/msteams.tmpl
 %%DATADIR%%/templates/repo/settings/webhook/new.tmpl
 %%DATADIR%%/templates/repo/settings/webhook/settings.tmpl
 %%DATADIR%%/templates/repo/settings/webhook/slack.tmpl
+%%DATADIR%%/templates/repo/settings/webhook/telegram.tmpl
 %%DATADIR%%/templates/repo/sub_menu.tmpl
 %%DATADIR%%/templates/repo/user_cards.tmpl
 %%DATADIR%%/templates/repo/view_file.tmpl
@@ -2209,13 +2220,13 @@ sbin/gitea
 %%DATADIR%%/templates/user/dashboard/navbar.tmpl
 %%DATADIR%%/templates/user/meta/followers.tmpl
 %%DATADIR%%/templates/user/meta/header.tmpl
-%%DATADIR%%/templates/user/meta/stars.tmpl
 %%DATADIR%%/templates/user/notification/notification.tmpl
 %%DATADIR%%/templates/user/profile.tmpl
 %%DATADIR%%/templates/user/settings/account.tmpl
 %%DATADIR%%/templates/user/settings/applications.tmpl
 %%DATADIR%%/templates/user/settings/applications_oauth2.tmpl
 %%DATADIR%%/templates/user/settings/applications_oauth2_edit.tmpl
+%%DATADIR%%/templates/user/settings/grants_oauth2.tmpl
 %%DATADIR%%/templates/user/settings/keys.tmpl
 %%DATADIR%%/templates/user/settings/keys_gpg.tmpl
 %%DATADIR%%/templates/user/settings/keys_ssh.tmpl
