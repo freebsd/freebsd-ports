@@ -189,6 +189,7 @@ lib/libgroonga.so.0.0.0
 libdata/pkgconfig/groonga.pc
 sbin/groonga-httpd
 sbin/groonga-httpd-restart
+%%DATADIR%%/COPYING
 %%DATADIR%%/examples/dictionary/edict/edict-import.sh
 %%DATADIR%%/examples/dictionary/edict/edict2grn.rb
 %%DATADIR%%/examples/dictionary/eijiro/eijiro-import.sh
