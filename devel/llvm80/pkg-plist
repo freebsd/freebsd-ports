@@ -57,8 +57,8 @@ bin/sancov%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-format%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-import-test%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-offload-bundler%%LLVM_SUFFIX%%
-bin/diagtool%%LLVM_SUFFIX%%
-bin/hmaptool%%LLVM_SUFFIX%%
+%%CLANG%%bin/diagtool%%LLVM_SUFFIX%%
+%%CLANG%%bin/hmaptool%%LLVM_SUFFIX%%
 %%CLANG%%bin/scan-build%%LLVM_SUFFIX%%
 %%CLANG%%bin/scan-view%%LLVM_SUFFIX%%
 %%EXTRAS%%bin/clang-apply-replacements%%LLVM_SUFFIX%%
@@ -129,11 +129,11 @@ llvm%%LLVM_SUFFIX%%/bin/bugpoint
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-tblgen
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/clang-tidy
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/clangd
-llvm%%LLVM_SUFFIX%%/bin/diagtool
+%%CLANG%%llvm%%LLVM_SUFFIX%%/bin/diagtool
 llvm%%LLVM_SUFFIX%%/bin/dsymutil
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/find-all-symbols
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/git-clang-format
-llvm%%LLVM_SUFFIX%%/bin/hmaptool
+%%CLANG%%llvm%%LLVM_SUFFIX%%/bin/hmaptool
 %%LLD%%llvm%%LLVM_SUFFIX%%/bin/ld.lld
 %%LLD%%llvm%%LLVM_SUFFIX%%/bin/ld64.lld
 llvm%%LLVM_SUFFIX%%/bin/llc
