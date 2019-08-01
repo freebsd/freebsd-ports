@@ -18,4 +18,6 @@ GH_ACCOUNT= grahamedgecombe
 GH_PROJECT= ct-submit
 GH_TAGNAME= 7bb2541
 
+PLIST_FILES=	bin/ct-submit
+
 .include <bsd.port.mk>
