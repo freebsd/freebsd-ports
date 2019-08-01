@@ -19,12 +19,12 @@ lib/midori/status-clock.plugin
 lib/midori/statusbar-features.plugin
 lib/midori/web-extensions.plugin
 share/applications/org.midori_browser.Midori.desktop
-share/metainfo/midori.appdata.xml
+share/metainfo/org.midori_browser.Midori.appdata.xml
 %%DOCSDIR%%/COPYING
 share/gir-1.0/Midori-0.6.gir
-share/icons/hicolor/16x16/apps/midori.png
-share/icons/hicolor/22x22/apps/midori.png
-share/icons/hicolor/scalable/apps/midori.svg
+share/icons/hicolor/16x16/apps/org.midori_browser.Midori.png
+share/icons/hicolor/22x22/apps/org.midori_browser.Midori.png
+share/icons/hicolor/scalable/apps/org.midori_browser.Midori.svg
 share/locale/af/LC_MESSAGES/midori.mo
 share/locale/am/LC_MESSAGES/midori.mo
 share/locale/ar/LC_MESSAGES/midori.mo
