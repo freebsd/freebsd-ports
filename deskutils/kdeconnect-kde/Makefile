@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdeconnect-kde
-DISTVERSION=	1.3.4
-PORTREVISION=	1
+DISTVERSION=	1.3.5
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/stable/kdeconnect/${DISTVERSION}
 DIST_SUBDIR=	KDE
