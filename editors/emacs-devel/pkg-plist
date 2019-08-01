@@ -1069,6 +1069,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/holidays.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/iso8601.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/iso8601.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/lunar.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/lunar.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/parse-time.el.gz

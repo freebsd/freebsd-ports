@@ -33,7 +33,7 @@ USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xrender xt
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	ed29d9f
+GH_TAGNAME=	b22b59c
 
 CONFIGURE_ARGS=	--disable-build-details \
 		--localstatedir=/var
@@ -199,7 +199,7 @@ XWIDGETS_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 XWIDGETS_IMPLIES=	GTK3
 
 EMACS_VER=	27.0.50
-EMACS_REV=	20190714
+EMACS_REV=	20190801
 
 .include <bsd.port.options.mk>
 
