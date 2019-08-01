@@ -100,7 +100,6 @@ BUILD_DEPENDS+=	${GO_CMD}:${GO_PORT}
 .if ${go_ARGS:Mrun}
 RUN_DEPENDS+=	${GO_CMD}:${GO_PORT}
 .endif
-PLIST_SUB+=	GO_PKGNAME=${GO_PKGNAME}
 
 _USES_POST+=	go
 .endif # !defined(_INCLUDE_USES_GO_MK)
