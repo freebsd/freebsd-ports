@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 
+20190801:
+  AFFECTS: users of www/ot-recorder
+  AUTHOR: dvl@FreeBSD.org
+
+  The data directory has moved from /var/spool/owntracks to 
+  /var/db/owntracks
+
+  Be sure to stop otrecorder, move the directory, and start otrecorder.
+
+  service ot-recorder stop
+  cd /var/spool
+  mv owntracks /var/db
+  service ot-recorder start
+
 20190728:
   AFFECTS: users of net-im/py-matrix-synapse
   AUTHOR: kai@FreeBSD.org

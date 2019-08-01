@@ -15,8 +15,12 @@
  #
  # Now build recorder with the "gmake" command:
  #
-@@ -60,7 +60,7 @@ WITH_GREENWICH ?= no
- STORAGEDEFAULT = /var/spool/owntracks/recorder/store
+@@ -57,10 +57,10 @@ WITH_GREENWICH ?= no
+ 
+ # Where should the recorder store its data? This directory must
+ # exist and be writeable by recorder (and readable by ocat)
+-STORAGEDEFAULT = /var/spool/owntracks/recorder/store
++STORAGEDEFAULT = /var/db/owntracks/recorder/store
  
  # Where should the recorder find its document root (HTTP)?
 -DOCROOT = /var/spool/owntracks/recorder/htdocs

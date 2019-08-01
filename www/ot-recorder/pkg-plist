@@ -1,4 +1,4 @@
-@sample(,,640) %%ETCDIR%%/ot-recorder.conf.sample
+@sample(,ot-recorder,640) %%ETCDIR%%/ot-recorder.conf.sample
 bin/ocat
 etc/rc.d/ot-recorder
 sbin/ot-recorder
@@ -300,5 +300,6 @@ sbin/ot-recorder
 @dir %%WWWDIR%%/table
 @dir %%WWWDIR%%/views
 @dir(ot-recorder,ot-recorder,) /var/log/ot-recorder
-@dir(ot-recorder,ot-recorder,) /var/spool/owntracks/recorder
-@dir /var/spool/owntracks
+@dir(ot-recorder,ot-recorder,) /var/run/ot-recorder
+@dir(ot-recorder,ot-recorder,750) /var/db/owntracks/recorder
+@dir /var/db/owntracks
