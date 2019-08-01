@@ -105,7 +105,6 @@
     SUBDIR += pcem
     SUBDIR += pcemu
     SUBDIR += pcsxr
-    SUBDIR += pearpc
     SUBDIR += pipelight
     SUBDIR += playonbsd
     SUBDIR += ppsspp
