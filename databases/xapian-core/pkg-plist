@@ -55,7 +55,7 @@ lib/cmake/xapian/xapian-config-version.cmake
 lib/cmake/xapian/xapian-config.cmake
 lib/libxapian.so
 lib/libxapian.so.30
-lib/libxapian.so.30.8.0
+lib/libxapian.so.30.9.0
 libdata/pkgconfig/xapian-core.pc
 man/man1/copydatabase.1.gz
 man/man1/quest.1.gz
@@ -457,6 +457,7 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespaceXapian_1_1Unicode.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers_enum.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers_eval.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers_func.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers_type.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers_vars.html
