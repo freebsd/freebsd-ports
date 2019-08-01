@@ -7,7 +7,7 @@ DISTVERSION=	0.2.3
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source re-implementation of RollerCoaster Tycoon 2
 
 LICENSE=	GPLv3+
@@ -50,9 +50,9 @@ post-patch:
 		${WRKSRC}/src/openrct2/config/Config.cpp
 
 post-install:
-	(cd ${WRKDIR}/title-sequences-0.1.2b; \
+	(cd ${WRKSRC_title_sequences}; \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/title)
-	(cd ${WRKDIR}/objects-1.0.11; \
+	(cd ${WRKSRC_objects}; \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/object)
 
 .include <bsd.port.mk>
