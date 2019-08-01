@@ -35,7 +35,15 @@
    powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
    powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd_elf;;
    s390x*-*-linux*)              arch=s390x; model=z10; system=elf;;
-@@ -946,6 +951,7 @@ case "$target" in
+@@ -930,6 +935,7 @@ case "$target" in
+   armv6t2*-*-linux-gnueabi)     arch=arm; model=armv6t2; system=linux_eabi;;
+   armv6*-*-linux-gnueabi)       arch=arm; model=armv6; system=linux_eabi;;
+   armv6*-*-freebsd*)            arch=arm; model=armv6; system=freebsd;;
++  armv7*-*-freebsd*)            arch=arm; model=armv7; system=freebsd;;
+   earmv6*-*-netbsd*)            arch=arm; model=armv6; system=netbsd;;
+   earmv7*-*-netbsd*)            arch=arm; model=armv7; system=netbsd;;
+   armv5te*-*-linux-gnueabi)     arch=arm; model=armv5te; system=linux_eabi;;
+@@ -946,6 +952,7 @@ case "$target" in
    x86_64-*-darwin*)             arch=amd64; system=macosx;;
    x86_64-*-mingw*)              arch=amd64; system=mingw;;
    aarch64-*-linux*)             arch=arm64; system=linux;;
@@ -43,7 +51,7 @@
    x86_64-*-cygwin*)             arch=amd64; system=cygwin;;
  esac
  
-@@ -1051,10 +1057,12 @@ case "$arch,$system" in
+@@ -1051,10 +1058,12 @@ case "$arch,$system" in
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
    amd64,linux) profiling='true';;
    amd64,openbsd) profiling='true';;
@@ -56,7 +64,16 @@
    arm,linux*) profiling='true';;
    power,elf) profiling='true';;
    power,bsd*) profiling='true';;
-@@ -2029,7 +2037,7 @@ MKLIB=${TOOLPREF}ar rc \$(1) \$(2); ${TOOLPREF}ranlib 
+@@ -1168,7 +1177,7 @@ fi
+ 
+ if test "$with_curses" = "yes"; then
+   for libs in "" "-lcurses" "-ltermcap" "-lcurses -ltermcap" "-lncurses"; do
+-    if sh ./hasgot $libs tgetent tgetstr tgetnum tputs; then
++    if sh ./hasgot -i term.h $libs tgetent tgetstr tgetnum tputs; then
+       inf "termcap functions found (with libraries '$libs')"
+       echo "#define HAS_TERMCAP" >> s.h
+       curseslibs="${libs}"
+@@ -2029,7 +2037,7 @@ MKLIB=${TOOLPREF}ar rc \$(1) \$(2); ${TOOLPREF}ranlib
  #ml   Printf.sprintf "${TOOLPREF}ar rc %s %s %s; ${TOOLPREF}ranlib %s"
  #ml                  out opts files out;;
  EOF
