@@ -95,6 +95,10 @@ CONFIGURE_ARGS+=	--enable-dtrace=0
 LLVM_VERSION=		60
 .endif
 
+.if ${ARCH} == powerpc64
+CONFIGURE_ARGS+=	--enable-dtrace=0
+.endif
+
 .if ${ARCH} == amd64 || ${ARCH} == i386
 BOOT_GHC_VERSION=	8.4.3
 .else
