@@ -1,15 +1,15 @@
-A screen capture CLI utility that utilizes Imlib2.
+Scrot (SCReenshOT) is a simple command line screen capture
+utility that uses imlib2 to grab and save images. Multiple
+image formats are supported through imlib2's dynamic saver
+modules.
 
-It has the following set of features:
+Some features of the scrot:
+  - support to multiple image formats (JPG, PNG, GIF, etc.).
+  - optimization of the screen shots image quality.
+  - capture a specific window or a rectangular area on the
+    screen with the help of switch.
 
- - user-definable time delay
- - image quality control
- - interactive rectangular mouse selection of any screen part
- - screen capture for individual windows
- - scriptable screen shot processing
+scrot also can be used to monitor a desktop PC in admin absent
+and register unwanted activities.
 
-Although scrot is no longer in active development, it is still widely used
-today. Similar programs, which were either based on or inspired by scrot, are
-graphics/maim and x11/slop.
-
-WWW: https://github.com/dreamer/scrot
+WWW: https://github.com/resurrecting-open-source-projects
