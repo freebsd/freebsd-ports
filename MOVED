@@ -10956,7 +10956,6 @@ devel/pecl-jsonc||2018-12-30|Has expired: Works only with EOL php 5.6
 devel/pecl-weakref||2018-12-30|Has expired: Works only with EOL php 5.6
 devel/pecl-pthreads2|devel/pecl-pthreads|2018-12-30|Has expired: Works only with EOL php 5.6
 devel/pecl-gearman||2018-12-30|Has expired: Works only with EOL php 5.6
-devel/pecl-inotify||2018-12-30|Has expired: Works only with EOL php 5.6
 devel/pecl-raphf||2018-12-30|Has expired: Works only with EOL php 5.6
 devel/php5-thrift||2018-12-30|Has expired: Works only with EOL php 5.6
 devel/php5-ice||2018-12-30|Has expired: Works only with EOL php 5.6
