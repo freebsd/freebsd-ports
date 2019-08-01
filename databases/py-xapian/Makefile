@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian
-PORTVERSION=	1.4.11
-PORTREVISION=	1
+PORTVERSION=	1.4.12
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases python
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
