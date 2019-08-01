@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYNUMPY}
 # are set. We will pull boost in just to be on the safe side.
 
 # USES=compiler is needed to support gcc built archs
-USES=		cmake compiler:c++14-lang desktop-file-utils \
+USES=		cmake compiler:c++14-lang desktop-file-utils gl \
 		jpeg python:3.5 shebangfix
 USE_XORG=	x11 xext xfixes xmu xrender
 USE_GL=		gl glu glew
@@ -39,6 +39,8 @@ SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
 		release/scripts/modules/bl_i18n_utils/merge_po.py \
 		release/scripts/modules/bl_i18n_utils/utils_rtl.py \
 		release/scripts/modules/blend_render_info.py
+CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
+CFLAGS_gcc=	-Wno-float-conversion
 CFLAGS_i386=	-march=i586
 CXXFLAGS_i386=	-march=i586
 
@@ -70,6 +72,7 @@ COLLADA_CMAKE_BOOL=		WITH_OPENCOLLADA
 COLLADA_LIB_DEPENDS=		libOpenCOLLADABaseUtils.so:graphics/opencollada \
 				libpcre.so:devel/pcre
 COLLADA_USE=			GNOME=libxml2
+COLLADA_USES=			gnome
 COMPOSITOR_CMAKE_BOOL=		WITH_COMPOSITOR
 CYCLES_IMPLIES=			OPENIMAGEIO
 CYCLES_CMAKE_BOOL=		WITH_CYCLES
@@ -137,6 +140,7 @@ PLAYER_CMAKE_BOOL=		WITH_PLAYER
 RAYOPTIMIZATION_CMAKE_BOOL=	WITH_RAYOPTIMIZATION
 SDL_CMAKE_BOOL=			WITH_SDL
 SDL_USE=			SDL=sdl2
+SDL_USES=			sdl
 SNDFILE_CMAKE_BOOL=		WITH_CODEC_SNDFILE
 SNDFILE_LIB_DEPENDS=		libsndfile.so:audio/libsndfile
 TIFF_CMAKE_BOOL=		WITH_IMAGE_TIFF
