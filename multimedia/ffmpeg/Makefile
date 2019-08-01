@@ -214,6 +214,9 @@ FDK_AAC_IMPLIES=	NONFREE
 # flite
 FLITE_LIB_DEPENDS=	libflite.so:audio/flite
 FLITE_CONFIGURE_ENABLE=	libflite
+.if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
+FLITE_LDFLAGS=		-fuse-ld=lld
+.endif
 
 # fontconfig
 FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
