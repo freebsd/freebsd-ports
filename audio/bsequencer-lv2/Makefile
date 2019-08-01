@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
-USES=		gmake gnome pkgconfig
+USES=		compiler:c++11-lang gmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	sjaehn
 GH_PROJECT=	BSEQuencer
