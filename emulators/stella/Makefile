@@ -12,9 +12,6 @@ COMMENT=	Multi-platform Atari 2600 VCS emulator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-BROKEN_armv6=		fails to compile: Checking for compiler version... 5.0.0, bad; Please ensure you are using GCC 4.7 / Clang 3.4 or above
-BROKEN_armv7=		fails to compile: Checking for compiler version... 5.0.0, bad; Please ensure you are using GCC 4.7 / Clang 3.4 or above
-
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		compiler:c++11-lib gmake tar:xz
