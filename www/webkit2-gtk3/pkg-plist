@@ -213,10 +213,10 @@ lib/girepository-1.0/WebKit2-4.0.typelib
 lib/girepository-1.0/WebKit2WebExtension-4.0.typelib
 lib/libjavascriptcoregtk-4.0.so
 lib/libjavascriptcoregtk-4.0.so.18
-lib/libjavascriptcoregtk-4.0.so.18.13.3
+lib/libjavascriptcoregtk-4.0.so.18.13.6
 lib/libwebkit2gtk-4.0.so
 lib/libwebkit2gtk-4.0.so.37
-lib/libwebkit2gtk-4.0.so.37.37.2
+lib/libwebkit2gtk-4.0.so.37.37.5
 lib/webkit2gtk-4.0/injected-bundle/libwebkit2gtkinjectedbundle.so
 libdata/pkgconfig/javascriptcoregtk-4.0.pc
 libdata/pkgconfig/webkit2gtk-4.0.pc
@@ -235,6 +235,7 @@ share/locale/as/LC_MESSAGES/WebKit2GTK-4.0.mo
 share/locale/bg/LC_MESSAGES/WebKit2GTK-4.0.mo
 share/locale/ca/LC_MESSAGES/WebKit2GTK-4.0.mo
 share/locale/cs/LC_MESSAGES/WebKit2GTK-4.0.mo
+share/locale/da/LC_MESSAGES/WebKit2GTK-4.0.mo
 share/locale/de/LC_MESSAGES/WebKit2GTK-4.0.mo
 share/locale/el/LC_MESSAGES/WebKit2GTK-4.0.mo
 share/locale/en_CA/LC_MESSAGES/WebKit2GTK-4.0.mo
