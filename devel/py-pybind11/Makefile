@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pybind11
-DISTVERSION=	2.2.4
+DISTVERSION=	2.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
