@@ -1,0 +1,3 @@
+The inotify extension allows to use inotify functions in a PHP script.
+
+WWW: https://pecl.php.net/package/inotify
