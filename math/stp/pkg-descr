@@ -11,4 +11,4 @@ and the output of STP is a single bit of information that indicates whether
 the formula is satisfiable or not. If the input is satisfiable, then it also
 generates a variable assignment to satisfy the input formula.
 
-WWW: http://people.csail.mit.edu/vganesh/STP_files/stp.html
+WWW: https://stp.github.io/
