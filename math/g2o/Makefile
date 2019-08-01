@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libcxsparse.so:math/suitesparse \
 		libQGLViewer-qt5.so:graphics/libQGLViewer
 
-USES=		cmake eigen:3 qt:5
+USES=		cmake compiler:c++11-lang gl eigen:3 qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	RainerKuemmerle
 USE_GL=		gl glu
@@ -47,6 +47,12 @@ SSE2_CMAKE_ON=		-DDISABLE_SSE3:BOOL=ON -DDISABLE_SSE4_1:BOOL=ON -DDISABLE_SSE4_2
 SSE3_CMAKE_ON=		-DDISABLE_SSE4_1:BOOL=ON -DDISABLE_SSE4_2:BOOL=ON -DDISABLE_SSE4_A:BOOL=ON
 SSE41_CMAKE_ON=		-DDISABLE_SSE4_2:BOOL=ON -DDISABLE_SSE4_A:BOOL=ON
 SSE42_CMAKE_ON=		-DDISABLE_SSE4_A:BOOL=ON
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CMAKE_ARGS+=	-DDISABLE_SSE2:BOOL=ON -DDISABLE_SSE3:BOOL=ON -DDISABLE_SSE4_1:BOOL=ON -DDISABLE_SSE4_2:BOOL=ON -DDISABLE_SSE4_A:BOOL=ON
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
