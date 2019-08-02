@@ -17,7 +17,7 @@ LIB_DEPENDS=	libeccodes.so:science/eccodes \
 		libfftw3.so:math/fftw3 \
 		libpng.so:graphics/png
 
-USES=		cmake:noninja fortran
+USES=		cmake:noninja compiler:c11 fortran
 
 CMAKE_ON=	BUILD_SHARED_LIBS # not respected: https://jira.ecmwf.int/browse/SUP-2691
 CMAKE_OFF=	HAVE_TESTS
