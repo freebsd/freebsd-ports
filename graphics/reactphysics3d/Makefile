@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	reactphysics3d
-DISTVERSION=	0.7.0
-PORTREVISION=	2
+DISTVERSION=	0.7.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
