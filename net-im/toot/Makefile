@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	toot
-DISTVERSION=	0.21.0
+DISTVERSION=	0.22.0
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,7 +18,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.5.0:www/py-beautifulsoup@$
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=2.4.0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=3.0.0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.3+
+USES=		python:3.4+
 USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes
