@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	the3dfxdude
 
 USES=		autoreconf compiler:c++11-lang gettext-tools gmake localbase \
-		openal:al pkgconfig sdl
+		openal:al pkgconfig sdl iconv
 USE_SDL=	sdl2
 GNU_CONFIGURE=	yes
 
