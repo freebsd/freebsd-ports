@@ -52,7 +52,7 @@ BUILD_DEPENDS=	autoconf-2.13:devel/autoconf213 \
 		yasm:devel/yasm \
 		zip:archivers/zip
 
-USES=		tar:xz gmake pkgconfig gnome python desktop-file-utils \
+USES=		tar:xz gmake pkgconfig gnome python:2.7,build desktop-file-utils \
 		compiler:c11 shebangfix
 
 USE_GNOME=	gconf2 gtk20 gtk30 cairo gdkpixbuf2
