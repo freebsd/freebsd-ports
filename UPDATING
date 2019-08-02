@@ -41,7 +41,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20190710:
   AFFECTS: users with DEFAULT_VERSIONS+=linux=c6 or c6_64 in /etc/make.conf
-  AUTHOR: tij@FreeBSD.org
+  AUTHOR: tijl@FreeBSD.org
 
   On amd64 adding DEFAULT_VERSIONS+=linux=c6 to /etc/make.conf made Linux
   infrastructure ports (linux_base-c6 and linux-c6*) install i386 CentOS 6
