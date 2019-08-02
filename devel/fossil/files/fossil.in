@@ -62,7 +62,7 @@ esac
 [ -n "${fossil_notfound}"  ] && fossil_args="${fossil_args} --notfound \"${fossil_notfound}\""
 [ -n "${fossil_repolist}"  ] && fossil_args="${fossil_args} --repolist"
 
-command_args="-f -p ${pidfile} ${procname} server -P ${fossil_port} ${fossil_args} ${fossil_directory}"
+command_args="-S -T ${name} -p ${pidfile} ${procname} server -P ${fossil_port} ${fossil_args} ${fossil_directory}"
 
 fossil_precmd()
 {
