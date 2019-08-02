@@ -174,6 +174,7 @@
     SUBDIR += octopus
     SUBDIR += openbabel
     SUBDIR += openkim
+    SUBDIR += openkim-models
     SUBDIR += openmx
     SUBDIR += opensim-core
     SUBDIR += opensph
