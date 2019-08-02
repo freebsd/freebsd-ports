@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tty-table
-PORTVERSION=	0.10.0
-PORTREVISION=	3
+PORTVERSION=	0.11.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,11 +12,11 @@ COMMENT=	Fexible and intuitive table generator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-equatable>=0.5.0:devel/rubygem-equatable \
-		rubygem-necromancer>=0.4.0:devel/rubygem-necromancer \
+RUN_DEPENDS=	rubygem-equatable>=0.6:devel/rubygem-equatable \
+		rubygem-necromancer>=0.5:devel/rubygem-necromancer \
 		rubygem-pastel>=0.7.2:devel/rubygem-pastel \
 		rubygem-strings>=0.1.0:devel/rubygem-strings \
-		rubygem-tty-screen>=0.6.4:devel/rubygem-tty-screen
+		rubygem-tty-screen>=0.7:devel/rubygem-tty-screen
 
 USES=		gem
 USE_RUBY=	yes
