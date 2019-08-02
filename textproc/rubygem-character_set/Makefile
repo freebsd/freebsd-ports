@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	character_set
-PORTVERSION=	1.1.2
+PORTVERSION=	1.4.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
