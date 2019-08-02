@@ -6,6 +6,7 @@ include/libdazzle-1.0/actions/dzl-settings-flag-action.h
 include/libdazzle-1.0/actions/dzl-widget-action-group.h
 include/libdazzle-1.0/animation/dzl-animation.h
 include/libdazzle-1.0/animation/dzl-box-theatric.h
+include/libdazzle-1.0/animation/dzl-frame-source.h
 include/libdazzle-1.0/app/dzl-application-window.h
 include/libdazzle-1.0/app/dzl-application.h
 include/libdazzle-1.0/bindings/dzl-binding-group.h
@@ -79,12 +80,14 @@ include/libdazzle-1.0/shortcuts/dzl-shortcut-phase.h
 include/libdazzle-1.0/shortcuts/dzl-shortcut-simple-label.h
 include/libdazzle-1.0/shortcuts/dzl-shortcut-theme-editor.h
 include/libdazzle-1.0/shortcuts/dzl-shortcut-theme.h
+include/libdazzle-1.0/shortcuts/dzl-shortcut-tooltip.h
 include/libdazzle-1.0/shortcuts/dzl-shortcuts-group.h
 include/libdazzle-1.0/shortcuts/dzl-shortcuts-section.h
 include/libdazzle-1.0/shortcuts/dzl-shortcuts-shortcut.h
 include/libdazzle-1.0/shortcuts/dzl-shortcuts-window.h
 include/libdazzle-1.0/statemachine/dzl-state-machine-buildable.h
 include/libdazzle-1.0/statemachine/dzl-state-machine.h
+include/libdazzle-1.0/suggestions/dzl-suggestion-button.h
 include/libdazzle-1.0/suggestions/dzl-suggestion-entry-buffer.h
 include/libdazzle-1.0/suggestions/dzl-suggestion-entry.h
 include/libdazzle-1.0/suggestions/dzl-suggestion-popover.h
@@ -107,8 +110,10 @@ include/libdazzle-1.0/util/dzl-gdk.h
 include/libdazzle-1.0/util/dzl-gtk.h
 include/libdazzle-1.0/util/dzl-heap.h
 include/libdazzle-1.0/util/dzl-int-pair.h
+include/libdazzle-1.0/util/dzl-list-model-filter.h
 include/libdazzle-1.0/util/dzl-macros.h
 include/libdazzle-1.0/util/dzl-pango.h
+include/libdazzle-1.0/util/dzl-read-only-list-model.h
 include/libdazzle-1.0/util/dzl-rgba.h
 include/libdazzle-1.0/util/dzl-ring.h
 include/libdazzle-1.0/util/dzl-variant.h
