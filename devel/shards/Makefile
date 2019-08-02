@@ -3,6 +3,7 @@
 PORTNAME=		shards
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.9.0
+PORTREVISION=		1
 CATEGORIES=		devel
 
 MAINTAINER=	greg@unrelenting.technology

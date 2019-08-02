@@ -3,7 +3,7 @@
 
 PORTNAME=	nylon
 PORTVERSION=	1.21
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/nylon/
 

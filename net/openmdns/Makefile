@@ -2,6 +2,7 @@
 
 PORTNAME=	openmdns
 DISTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	jbeich@FreeBSD.org

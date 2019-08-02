@@ -2,7 +2,7 @@
 
 PORTNAME=	openmpi
 PORTVERSION=	2.1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 PKGNAMESUFFIX=	2

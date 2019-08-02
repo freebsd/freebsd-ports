@@ -2,6 +2,7 @@
 
 PORTNAME=	openiked
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 
 MAINTAINER=	marcel@FreeBSD.org
