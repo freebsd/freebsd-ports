@@ -1,0 +1,19 @@
+# $FreeBSD$
+
+PORTNAME=	openkim-models
+DISTVERSION=	2019-07-25
+CATEGORIES=	science
+MASTER_SITES=	https://s3.openkim.org/archives/collection/
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Open Knowledgebase of Interatomic Models
+
+LICENSE=	CDDL
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	xxd:editors/vim-console
+LIB_DEPENDS=	libkim-api.so:science/kim-api
+
+USES=		cmake:noninja fortran tar:txz
+
+.include <bsd.port.mk>

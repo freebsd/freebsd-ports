@@ -1,0 +1,8 @@
+OpenKIM is an online framework for making molecular simulations reliable,
+reproducible, and portable.  Models conforming to the KIM application
+programming interface work seamlessly with major simulation codes that have
+adopted the KIM-API standard.
+
+This package contains the models from openkim.org.
+
+WWW: https://openkim.org/
