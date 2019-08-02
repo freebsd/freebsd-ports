@@ -27,8 +27,11 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	swaywm
 MESON_ARGS=	-Dexamples=false
 
+# XXX Drop after FreeBSD 12.0 EOL
+.if exists(/usr/lib/clang/8.0.0)
 # https://github.com/swaywm/wlroots/issues/1450
 LLD_UNSAFE=	yes
+.endif
 
 OPTIONS_DEFINE=	FREERDP X11
 OPTIONS_DEFAULT=FREERDP X11
