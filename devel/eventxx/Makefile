@@ -3,7 +3,7 @@
 
 PORTNAME=	eventxx
 PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://proj.llucax.com.ar/home/eventxx/releases/ \
 		LOCAL/glarkin
