@@ -4,9 +4,8 @@
 # PORTREVISION bump when lang/sbcl is updated.  The compiled fasl files are
 # pinned to exact versions of everything used to build them.
 
-
 PORTNAME=	sbcl
-DISTVERSION=	1.5.4
+DISTVERSION=	1.5.5
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
