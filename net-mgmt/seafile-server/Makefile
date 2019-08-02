@@ -4,7 +4,6 @@ PORTNAME=	seafile-server
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${SEAFILE_VER}
 DISTVERSIONSUFFIX=	-server
-PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -22,7 +21,8 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libccnet.so:net-mgmt/ccnet-server \
 		libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid \
-		libjansson.so:devel/jansson
+		libjansson.so:devel/jansson \
+		libonig.so:devel/oniguruma
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR} \
 		bash:shells/bash
