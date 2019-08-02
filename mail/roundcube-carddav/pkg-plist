@@ -10,6 +10,7 @@
 %%WWWDIR%%/carddav_discovery.php
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/composer.lock
+%%WWWDIR%%/composer.phar                                                                                                                   
 %%WWWDIR%%/config.inc.php.dist
 %%WWWDIR%%/dbmigrations/0000-dbinit/mysql.sql
 %%WWWDIR%%/dbmigrations/0000-dbinit/postgres.sql
@@ -46,6 +47,7 @@
 %%WWWDIR%%/localization/sv_SE.inc
 %%WWWDIR%%/localization/uk_UK.inc
 %%WWWDIR%%/package.xml
+%%WWWDIR%%/skins/elastic/carddav.css
 %%WWWDIR%%/skins/classic/carddav.css
 %%WWWDIR%%/skins/larry/carddav.css
 %%WWWDIR%%/vendor/autoload.php
