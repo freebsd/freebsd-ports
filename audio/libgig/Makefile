@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgig
-DISTVERSION=	4.1.0
+DISTVERSION=	4.2.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/qsampler/${PORTNAME}/${PORTVERSION} \
 		http://download.linuxsampler.org/packages/
