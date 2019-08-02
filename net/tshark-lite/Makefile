@@ -1,7 +1,7 @@
 # Created by: Bill Fumerola <billf@mu.org>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 LITE=		yes
 

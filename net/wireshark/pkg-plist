@@ -2,7 +2,7 @@
 %%CAPTYPE%%
 @group network
 @mode 2555
-%%DUMPCAP%%
+bin/dumpcap
 @mode
 @group
 %%EDITCAP%%
@@ -649,7 +649,7 @@ libdata/pkgconfig/wireshark.pc
 %%CAPTYPE_MAN%%man/man1/captype.1.gz
 %%CISCODUMP_MAN%%man/man1/ciscodump.1.gz
 %%DFTEST_MAN%%man/man1/dftest.1.gz
-%%DUMPCAP_MAN%%man/man1/dumpcap.1.gz
+man/man1/dumpcap.1.gz
 %%EDITCAP_MAN%%man/man1/editcap.1.gz
 %%MERGECAP_MAN%%man/man1/mergecap.1.gz
 %%MAXMIND%%man/man1/mmdbresolve.1.gz
