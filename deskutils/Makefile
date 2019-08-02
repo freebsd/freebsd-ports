@@ -41,6 +41,7 @@
     SUBDIR += dailystrips
     SUBDIR += deforaos-todo
     SUBDIR += devd-notifier
+    SUBDIR += dfshow
     SUBDIR += dlume
     SUBDIR += docear
     SUBDIR += dosage

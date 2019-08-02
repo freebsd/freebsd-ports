@@ -1,0 +1,17 @@
+dfshow is a set of applications which display files and directories.
+
+The following programs are included:
+* sf
+  The Show File application displays a text file on screen and allows for easy
+  navigation. The program can be invoked by the sf command for a specific file
+  or from the show application.
+
+* show
+  The Show Directory application displays all or some of the names of the files
+  on a system with information about the files. From this program, files can be
+  copied, deleted, displayed, edited (in your favorite editor), or renamed by
+  simply positioning the cursor to the desired file name and using a single
+  command character. The application is invoked by the show command similar to
+  the standard ls command.
+
+WWW: https://dfshow.op-ezy.co.uk/
