@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	regexp_parser
-PORTVERSION=	1.3.0
+PORTVERSION=	1.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
