@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	linuxsampler
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	audio
 MASTER_SITES=	https://download.linuxsampler.org/packages/
 
