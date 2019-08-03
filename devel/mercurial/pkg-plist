@@ -390,9 +390,6 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/share.py
 %%PYTHON_SITELIBDIR%%/hgext/share.pyc
 %%PYTHON_SITELIBDIR%%/hgext/share.pyo
-%%PYTHON_SITELIBDIR%%/hgext/shelve.py
-%%PYTHON_SITELIBDIR%%/hgext/shelve.pyc
-%%PYTHON_SITELIBDIR%%/hgext/shelve.pyo
 %%PYTHON_SITELIBDIR%%/hgext/show.py
 %%PYTHON_SITELIBDIR%%/hgext/show.pyc
 %%PYTHON_SITELIBDIR%%/hgext/show.pyo
@@ -627,6 +624,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/help/internals/config.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/internals/extensions.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/internals/linelog.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/internals/mergestate.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/internals/requirements.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/internals/revlogs.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/internals/wireprotocol.txt
@@ -872,6 +870,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/setdiscovery.py
 %%PYTHON_SITELIBDIR%%/mercurial/setdiscovery.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/setdiscovery.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/shelve.py
+%%PYTHON_SITELIBDIR%%/mercurial/shelve.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/shelve.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/similar.py
 %%PYTHON_SITELIBDIR%%/mercurial/similar.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/similar.pyo
