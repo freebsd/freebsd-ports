@@ -15,23 +15,16 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 MAKE_ENV=	USE_PGXS=0
-USES=		gmake pgsql uidfix
+USES=		gmake pgsql:9.1-9.5 uidfix
 LLD_UNSAFE=	yes
-WANT_PGSQL_VER=	91+
 WANT_PGSQL=	server
 INSTALL_TARGET=	install-strip
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${PGSQL_VER:R} >= 11
-IGNORE=	incompatible with PostgreSQL 11 or newer
-.endif
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
