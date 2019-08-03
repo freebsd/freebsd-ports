@@ -11,6 +11,8 @@ COMMENT=	Microsoft .CABinet file creator
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 PLIST_FILES=	bin/lcab
 
