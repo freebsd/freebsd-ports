@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mypy
-PORTVERSION=	0.711
+PORTVERSION=	0.720
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typed-ast>=1.4.0<1.5.0:devel/py-typed-ast@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=4.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy_extensions>=0.4.0<0.5.0:devel/py-mypy_extensions@${PY_FLAVOR} \
-		${PY_TYPING}
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python:3.5+ shebangfix
 USE_PYTHON=	autoplist distutils
