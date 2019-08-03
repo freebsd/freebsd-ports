@@ -4,14 +4,12 @@
 PORTNAME=	lbzip2
 PORTVERSION=	2.5
 CATEGORIES=	archivers
-MASTER_SITES=	http://archive.lbzip2.org/
+MASTER_SITES=	http://archive.lbzip2.org/ LOCAL/danfe
 
 LICENSE=	GPLv3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Multi-threaded bzip2/bunzip2 filter
-
-BROKEN=		unfetchable
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
