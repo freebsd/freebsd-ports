@@ -14,6 +14,8 @@ COMMENT=	Orbital simulator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		gmake tar:tgz
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
