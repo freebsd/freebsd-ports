@@ -1,3 +1,10 @@
+[
+{
+  type: install
+  message: <<EOM
 To use pspg as psql pager, add this line to ~/.psqlrc:
 
 \setenv PAGER '%%PREFIX%%/bin/pspg -bX'
+EOM
+}
+]
