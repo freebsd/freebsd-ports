@@ -4,7 +4,7 @@
 PORTNAME=	dadadodo
 PORTVERSION=	1.04
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.jwz.org/dadadodo/
+MASTER_SITES=	https://www.jwz.org/dadadodo/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text processor which analyses text and generates random sentences
