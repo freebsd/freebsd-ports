@@ -2,12 +2,7 @@
 
 PORTNAME=	lammps
 PORTVERSION=	${GH_TAGNAME:C/(stable|patch)_([0-9]{1,2})([A-Z][a-z][a-z])([0-9]{4})/\4.\3.\2/S/Jan/01/S/Feb/02/S/Mar/03/S/Apr/04/S/May/05/S/Jun/06/S/Jul/07/S/Aug/08/S/Sep/09/S/Oct/10/S/Nov/11/S/Dec/12/}
-PORTREVISION=	1
 CATEGORIES=	science
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	e8d891c0ddb78c5be220fb9ccdcdbba1fa24509f.patch:-p1 \
-		0bb9df76c2d132e66e79f482432ac2f33ec9781e.patch:-p1 # fix of potentials and frc folder installation: https://github.com/lammps/lammps/pull/1588
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Classical molecular dynamics code with a focus on materials modeling
@@ -20,7 +15,7 @@ CONFLICTS_BUILD=	ga # conflicts with include/error.h, already fixed in the head
 
 USES=		blaslapack:openblas cmake:noninja eigen:3 fortran localbase:ldflags shebangfix
 USE_GITHUB=	yes
-GH_TAGNAME=	patch_19Jul2019
+GH_TAGNAME=	patch_2Aug2019
 SHEBANG_GLOB=	*.sh *.bash
 SHEBANG_FILES=	lib/kokkos/bin/nvcc_wrapper
 
