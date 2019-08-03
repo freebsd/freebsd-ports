@@ -11,6 +11,8 @@ DISTNAME=	hpack79src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-System Archiver with open keys PGP-based security
 
+BROKEN=		unfetchable
+
 USES=		alias ncurses
 USE_CSTD=	gnu89
 NO_WRKSUBDIR=	yes
