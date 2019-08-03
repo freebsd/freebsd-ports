@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.icehouse.net/kew/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sunrise and sunset time calculator
 
+BROKEN=		unfetchable
+
 OPTIONS_DEFINE=	DOCS
 
 pre-fetch:
