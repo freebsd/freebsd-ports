@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	docutils
-PORTVERSION=	0.14
-PORTREVISION=	4
+PORTVERSION=	0.15
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +15,10 @@ LICENSE_COMB=	multi
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
-NO_ARCH=	yes
-USE_PYTHON=	autoplist concurrent distutils
 USES=		python
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	PYGMENTS
 PYGMENTS_DESC=	Syntax highlighting
