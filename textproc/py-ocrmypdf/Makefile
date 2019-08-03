@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocrmypdf
-DISTVERSION=	8.3.1
+DISTVERSION=	8.3.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.9.1:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruffus>=2.7.0:science/py-ruffus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=3.0.4,<4:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdfminer.six>=20181108:textproc/py-pdfminer.six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pikepdf>=1.3.0,<2:textproc/py-pikepdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pikepdf>=1.5.0,<2:textproc/py-pikepdf@${PY_FLAVOR} \
 		pngquant:graphics/pngquant \
 		tesseract:graphics/tesseract
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.4.1,<5:devel/py-pytest@${PY_FLAVOR} \
