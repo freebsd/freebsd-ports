@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/licenses/LICENSE.rst
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.3:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lz4>=0.10:archivers/py-lz4@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.8:math/py-numpy@${PY_FLAVOR} \
+		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}semantic_version>=2.3.1:devel/py-semantic_version@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml@${PY_FLAVOR}
