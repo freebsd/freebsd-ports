@@ -5,7 +5,7 @@ DISTVERSION=	2.8.16
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lucas.kanashiro@collabora.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Guest Environment for Google Compute Engine
 
 LICENSE=	APACHE20

@@ -5,7 +5,7 @@ DISTVERSION=	1.5.3
 PORTREVISION=	2
 CATEGORIES=	sysutils
 
-MAINTAINER=	lucas.kanashiro@collabora.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OS Login Guest Environment for Google Compute Engine
 
 LICENSE=	APACHE20
