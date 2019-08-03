@@ -9,7 +9,7 @@ bin/repeatgen
 bin/straingen
 bin/waveplot
 bin/xyz2gen
-%%PYTHON_SITELIBDIR%%/dptools-18.2-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/dptools-19.1-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/dptools/__init__.py
 %%PYTHON_SITELIBDIR%%/dptools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dptools/__init__.pyo

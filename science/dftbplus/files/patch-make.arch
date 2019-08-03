@@ -1,13 +1,13 @@
---- make.arch.orig	2018-09-12 23:49:19 UTC
+--- make.arch.orig	2019-08-03 19:28:08 UTC
 +++ make.arch
-@@ -13,17 +13,17 @@ FXX = mpif90
+@@ -18,12 +18,12 @@ FXX = mpifort
  CC = gcc
  
  # Compiler options
--FXXOPT = -O2 -funroll-all-loops -fopenmp
--CCOPT = -O2 -funroll-all-loops -fall-intrinsics
-+FXXOPT = $(FFLAGS) -funroll-all-loops -fopenmp
-+CCOPT = $(CFLAGS) -funroll-all-loops -fall-intrinsics
+-FXXOPT = -O2 -funroll-all-loops -fopenmp -fall-intrinsics
+-CCOPT = -O2 -funroll-all-loops
++FXXOPT = $(FFLAGS) -funroll-all-loops -fopenmp -fall-intrinsics
++CCOPT = $(CFLAGS) -funroll-all-loops
  
  # Linker
  LN = $(FXX)
@@ -16,42 +16,38 @@
  
  # How to link specific libraries
  
- # ScaLAPACK
--SCALAPACKDIR = /usr/lib
-+SCALAPACKDIR = $(PREFIX)/lib
- LIB_SCALAPACK = -L$(SCALAPACKDIR) -lscalapack
- 
- # LAPACK/BLAS
-@@ -49,12 +49,12 @@ FXX = gfortran
+@@ -75,12 +75,12 @@ FXX = gfortran
  CC = gcc
  
  # Compiler options
--FXXOPT = -O2 -funroll-all-loops -fopenmp
--CCOPT = -O2 -funroll-all-loops -fall-intrinsics
-+FXXOPT = $(FFLAGS) -funroll-all-loops -fopenmp
-+CCOPT = $(CFLAGS) -funroll-all-loops -fall-intrinsics
+-FXXOPT = -O2 -funroll-all-loops -fopenmp -fall-intrinsics
+-CCOPT = -O2 -funroll-all-loops
++FXXOPT = $(FFLAGS) -funroll-all-loops -fopenmp -fall-intrinsics
++CCOPT = $(CFLAGS) -funroll-all-loops
  
  # Linker
  LN = $(FXX)
 -LNOPT = -fopenmp
 +LNOPT = $(LDFLAGS) -fopenmp
  
- # How to link specific libraries
- 
-@@ -88,12 +88,12 @@ LIBOPT = 
+ # GPU extra settings
+ ifeq ($(strip $(WITH_GPU)),1)
+@@ -159,14 +159,14 @@ ARPACK_NEEDS_LAPACK = 0
  # Override options for different DEBUG modes
  ifeq ($(strip $(DEBUG)),1)
-     OTHERLIBS = 
--    FXXOPT = -fopenmp -g -Wall -std=f2008 -pedantic
--    CCOPT = -g -Wall -pedantic -fall-intrinsics
-+    FXXOPT = $(FFLAGS) -fopenmp -g -Wall -std=f2008 -pedantic
-+    CCOPT = $(CFLAGS) -g -Wall -pedantic -fall-intrinsics
+     OTHERLIBS =
+-    FXXOPT = -fopenmp -g -Wall -pedantic -fall-intrinsics #-std=f2008
+-    CCOPT = -g -Wall -pedantic
++    FXXOPT = $(FFLAGS) -fopenmp -g -Wall -pedantic -fall-intrinsics #-std=f2008
++    CCOPT = $(CFLAGS) -g -Wall -pedantic
  endif
  
  ifeq ($(strip $(DEBUG)),2)
-     OTHERLIBS = 
--    FXXOPT = -fopenmp -g -Wall -std=f2008 -pedantic -fbounds-check
--    CCOPT = -g -Wall -pedantic -fall-intrinsics -fbounds-check
-+    FXXOPT = $(FFLAGS) -fopenmp -g -Wall -std=f2008 -pedantic -fbounds-check
-+    CCOPT = $(CFLAGS) -g -Wall -pedantic -fall-intrinsics -fbounds-check
+     OTHERLIBS =
+-    FXXOPT = -fopenmp -g -Wall -pedantic -fbounds-check #-std=f2008
++    FXXOPT = $(FFLAGS) -fopenmp -g -Wall -pedantic -fbounds-check #-std=f2008
+     FXXOPT += -Wno-unused-variable -Wno-unused-dummy-argument -Wno-unused-function -Wno-uninitialized
+     FXXOPT += -fall-intrinsics
+-    CCOPT = -g -Wall -pedantic -fbounds-check
++    CCOPT = $(CFLAGS) -g -Wall -pedantic -fbounds-check
  endif

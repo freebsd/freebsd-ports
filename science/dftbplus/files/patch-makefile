@@ -1,22 +1,24 @@
---- makefile.orig	2018-08-17 17:13:08 UTC
+--- makefile.orig	2019-08-03 19:41:26 UTC
 +++ makefile
-@@ -10,7 +10,9 @@ ROOT := $(PWD)
- .PHONY: default misc all
- default: dftb+ modes waveplot
+@@ -20,9 +20,11 @@ ifeq ($(strip $(WITH_TRANSPORT)),1)
+   default: setupgeom transporttools
+ endif
  misc: misc_skderivs misc_slakovalue
 -all: default misc
 +all: print-WITH_DFTD3 print-WITH_MPI print-WITH_SOCKETS print-WITH_ARPACK default misc
-+
-+print-%  : ; @echo "Build variable: " $* = $($*)
+ api: api_mm
  
- .PHONY: install install_misc install_all
++print-%  : ; @echo "Build variable: " $* = $($*)
++
+ .PHONY: install install_misc install_all install_api
  install: install_dftb+ install_modes install_waveplot install_dptools
-@@ -127,7 +129,7 @@ PYTHON := python
+ ifeq ($(strip $(WITH_TRANSPORT)),1)
+@@ -203,7 +205,7 @@ PYTHON := python
  .PHONY: install_dptools
  install_dptools:
  	cd $(ROOT)/tools/dptools \
 -            && $(PYTHON) setup.py install --prefix $(INSTALLDIR)
 +            && $(PYTHON) setup.py install $(FREEBSD_PYDISTUTILS_INSTALLARGS)
  
- ################################################################################
- # Check targets
+ 
+ .PHONY: install_tools_misc

@@ -1,6 +1,6 @@
-TIMESTAMP = 1536799309
-SHA256 (dftbplus-dftbplus-18.2_GH0.tar.gz) = 21846f0866cc8ca40d80776d2786c41aac3b05d759e8137c10490b677ab93e6c
-SIZE (dftbplus-dftbplus-18.2_GH0.tar.gz) = 1053090
+TIMESTAMP = 1564860270
+SHA256 (dftbplus-dftbplus-19.1_GH0.tar.gz) = 4d07f5c6102f06999d8cfdb1d17f5b59f9f2b804697f14b3bc562e3ea094b8a8
+SIZE (dftbplus-dftbplus-19.1_GH0.tar.gz) = 3437908
 SHA256 (dftbplus-mpifx-099ff75_GH0.tar.gz) = 444d5f73eb112a9bb8e225e394aa5cd52406c69e652fd39a491fff696f5f8573
 SIZE (dftbplus-mpifx-099ff75_GH0.tar.gz) = 59513
 SHA256 (dftbplus-scalapackfx-86cd6e4_GH0.tar.gz) = 81e6330f392d3766199f646877e3fd2fe2bf2be6da26b3163a8fdb6a51ff88f1
