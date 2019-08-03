@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bayesian-optimization>=1.0.1:math/py-bayesian-optimization@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cma>=2.6.0:math/py-cma@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.15.0:math/py-numpy@${PY_FLAVOR} \
+		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=0.23.4:math/py-pandas@${PY_FLAVOR}
 
 USES=		python:3.6+
