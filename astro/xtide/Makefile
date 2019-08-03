@@ -18,6 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
+BROKEN=		unfetchable
+
 USES=		compiler:c++0x gmake libtool localbase tar:bzip2
 USE_LDCONFIG=	yes
 
