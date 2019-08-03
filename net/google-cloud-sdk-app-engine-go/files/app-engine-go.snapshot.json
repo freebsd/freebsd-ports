@@ -1,0 +1,29 @@
+{
+  "components": [
+    {
+      "dependencies": [
+        "core"
+      ], 
+      "details": {
+        "description": "Provides the tools to develop Go applications on App Engine.", 
+        "display_name": "App Engine Go Extensions"
+      }, 
+      "id": "app-engine-go", 
+      "is_configuration": false, 
+      "is_hidden": false, 
+      "is_required": false, 
+      "platform": {}, 
+      "version": {
+        "build_number": 0, 
+        "version_string": ""
+      }
+    }
+  ], 
+  "revision": 0, 
+  "schema_version": {
+    "no_update": false, 
+    "url": "https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.tar.gz", 
+    "version": 0
+  }, 
+  "version": ""
+}

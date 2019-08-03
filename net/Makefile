@@ -198,6 +198,7 @@
     SUBDIR += gofish
     SUBDIR += gogoc
     SUBDIR += google-cloud-sdk
+    SUBDIR += google-cloud-sdk-app-engine-go
     SUBDIR += googlecl
     SUBDIR += gopher
     SUBDIR += goreplay
