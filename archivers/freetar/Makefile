@@ -12,6 +12,8 @@ COMMENT=	TAR archiver for GNUstep
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 USES=		gnustep
 USE_GNUSTEP=	back build
 
