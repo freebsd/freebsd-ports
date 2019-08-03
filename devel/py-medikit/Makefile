@@ -3,6 +3,7 @@
 
 PORTNAME=	medikit
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.9<3:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}git_semver>=0.2.0<0.3:devel/py-git_semver@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mondrian>=0.7<1:devel/py-mondrian@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=19.0<20:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pip-tools>=3.0<4:devel/py-pip-tools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pip-tools3>=3.0<4:devel/py-pip-tools3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.28<2:devel/py-stevedore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}whistle>=1.0<2:devel/py-whistle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yapf>=0.20<1:textproc/py-yapf@${PY_FLAVOR}
