@@ -11,6 +11,8 @@ LICENSE=	GPLv3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-threaded bzip2/bunzip2 filter
 
+BROKEN=		unfetchable
+
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
