@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190726
+PORTVERSION=	s20190802
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	132b008a
+GH_TAGNAME=	df6451a
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler32-1.0.3 \
@@ -28,7 +28,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		arrayvec-0.4.11 \
 		atty-0.2.13 \
 		autocfg-0.1.5 \
-		backtrace-0.3.33 \
+		backtrace-0.3.34 \
 		backtrace-sys-0.1.31 \
 		better-panic-0.1.2 \
 		bincode-1.1.4 \
@@ -42,7 +42,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		cexpr-0.3.5 \
 		cfg-if-0.1.9 \
 		chrono-0.4.7 \
-		clang-sys-0.28.0 \
+		clang-sys-0.28.1 \
 		clap-2.33.0 \
 		clicolors-control-1.0.0 \
 		cloudabi-0.0.3 \
@@ -70,7 +70,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		fuchsia-cprng-0.1.1 \
 		fxhash-0.2.1 \
 		gif-0.10.2 \
-		glob-0.2.11 \
+		glob-0.3.0 \
 		humantime-1.2.0 \
 		image-0.21.2 \
 		inflate-0.4.5 \
@@ -82,7 +82,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		libc-0.2.60 \
 		libloading-0.5.2 \
 		lock_api-0.3.1 \
-		log-0.4.7 \
+		log-0.4.8 \
 		lzw-0.10.0 \
 		memchr-2.2.1 \
 		memoffset-0.5.1 \
@@ -135,8 +135,8 @@ CARGO_CRATES=	adler32-1.0.3 \
 		scopeguard-1.0.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.97 \
-		serde_derive-1.0.97 \
+		serde-1.0.98 \
+		serde_derive-1.0.98 \
 		serde_json-1.0.40 \
 		shlex-0.1.1 \
 		signal-hook-0.1.10 \
