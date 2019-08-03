@@ -12858,3 +12858,4 @@ devel/ddd||2019-07-31|Has expired: does not work with modern gdb
 devel/py-pip-tools2|devel/py-pip-tools|2019-07-31|Has expired: Use devel/py-pip-tools instead
 lang/cint|lang/cling|2019-07-31|Has expired: Abandonware; superseded by lang/cling
 emulators/pearpc||2019-08-01|Has expired: Abandonware
+sysutils/bbcp||2019-08-03|Has expired: the port is broken for more than a year
