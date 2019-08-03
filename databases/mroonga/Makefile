@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mroonga
-PORTVERSION=	9.03
+PORTVERSION=	9.05
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/mroonga/
 
@@ -11,16 +11,16 @@ COMMENT=	Open-source fulltext search engine for MySQL
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${NONEXISTENT}:${_MYSQL_SERVER}:patch
+BUILD_DEPENDS=	${NONEXISTENT}:${_MYSQL_SERVER}:configure
 LIB_DEPENDS=	libgroonga.so:textproc/groonga
 
 USES=		libtool mysql pkgconfig
 
-IGNORE_WITH_MYSQL=	57 80 101m 102m 103m 57p 57w
+IGNORE_WITH_MYSQL=	101m 102m 103m 57p 57w
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql-source="$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V WRKSRC)" \
 		--with-mysql-build="$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V BUILD_WRKSRC)" \
-		--with-mysql-config=${PREFIX}/bin/mysql_config
+		--with-mysql-config=${PREFIX}/bin/mysql_config --with-libmysqlservices-compat
 
 SUB_FILES=	pkg-message
 
