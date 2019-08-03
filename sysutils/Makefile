@@ -97,7 +97,6 @@
     SUBDIR += batmon
     SUBDIR += battmond
     SUBDIR += battray
-    SUBDIR += bbcp
     SUBDIR += bchunk
     SUBDIR += beadm
     SUBDIR += beadm-devel
