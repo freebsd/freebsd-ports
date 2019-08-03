@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sandsifter
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 DISTVERSIONPREFIX=v
 CATEGORIES=	security
 
@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS_REASON=Designed for x86
 BUILD_DEPENDS=	${LOCALBASE}/include/capstone/capstone.h:devel/capstone3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}capstone>0:devel/py-capstone@${PY_FLAVOR}
 
-USES=		gmake python localbase shebangfix
+USES=		gmake python:2.7 localbase shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	rigred
 
@@ -28,9 +28,7 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	references/*
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/proc/cpuinfo,/compat/linux/proc/cpuinfo,' \
-			-e 's,/usr/sbin,${PREFIX}/sbin,' \
-			${WRKSRC}/sifter.py
+	${REINPLACE_CMD} -e 's,/usr/sbin,${PREFIX}/sbin,' ${WRKSRC}/sifter.py
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} gui ${STAGEDIR}${DATADIR})
