@@ -13,6 +13,8 @@ COMMENT=	File compressor based on Huffman coding
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/hffzip
