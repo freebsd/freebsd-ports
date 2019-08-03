@@ -5,7 +5,7 @@ The following enhancements are added to the mysql_fdw:
 	Where clause push-down
 	Column push-down
 	Prepared Statment
-Please note that this version of mysql_fdw works with PostgreSQL 9.3, 9.4, 9.5
-and 9.6.
+Please note that this version of mysql_fdw works with PostgreSQL
+9.3, 9.4, 9.5, 9.6, 10, and 11.
 
 WWW: https://github.com/EnterpriseDB/mysql_fdw
