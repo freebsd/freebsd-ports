@@ -12,6 +12,9 @@ COMMENT=	Logs changes on a table in PostgreSQL
 
 LICENSE=	PostgreSQL
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2019-09-15
+
 WRKSRC=		${WRKDIR}/table_log-${DISTVERSION}
 
 USES=		gmake pgsql
