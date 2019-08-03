@@ -14,7 +14,7 @@ COMMENT=	CMA-ES for non-linear numerical optimization in Python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
