@@ -4,4 +4,4 @@ aims to produce small executables that run in small amounts of memory. It comes
 with extensive tool support for automatic compilation, foreign language
 interfacing, heap and time profiling, tracing, and debugging.
 
-WWW: http://www.haskell.org/nhc98/
+WWW: https://www.haskell.org/nhc98/
