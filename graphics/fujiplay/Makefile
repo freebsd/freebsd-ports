@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digital camera downloading tool for Fujifilm digital cameras
 
+BROKEN=		unfetchable
+
 NO_WRKSUBDIR=	yes
 
 USES=		tar:tgz

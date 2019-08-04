@@ -14,6 +14,8 @@ COMMENT=	Java style checker
 LICENSE=	LGPL21 APACHE20
 LICENSE_COMB=	dual
 
+BROKEN=		unfetchable
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

@@ -12,6 +12,8 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eclipse plugin to use logger easily in Java projects
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:java/eclipse
 
 USES=		zip

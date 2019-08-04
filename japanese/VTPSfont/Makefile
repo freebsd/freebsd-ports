@@ -11,6 +11,8 @@ EXTRACT_SUFX=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create Virtual PostScript fonts produced by VFlib (Truetype fonts)
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/VTPSfont
 RUN_DEPENDS=	bash:shells/bash
 

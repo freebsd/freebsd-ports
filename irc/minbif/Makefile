@@ -12,6 +12,8 @@ COMMENT=	IRC to instant messaging gateway
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libpurple.so:net-im/libpurple
 
 USES=		cmake:insource pkgconfig

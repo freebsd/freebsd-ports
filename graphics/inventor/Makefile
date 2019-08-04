@@ -14,6 +14,8 @@ COMMENT=	SGI's Open Inventor (TM)
 
 LICENSE=	LGPL21
 
+BROKEN=		unfetchable
+
 ONLY_FOR_ARCHS=	amd64 i386
 CONFLICTS=	Coin-[0-9]* SoXt-[0-9]*
 

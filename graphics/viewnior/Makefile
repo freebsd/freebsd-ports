@@ -12,6 +12,8 @@ COMMENT=	Fast and simple image viewer
 
 LICENSE=	GPLv3
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
 USE_GITHUB=	yes

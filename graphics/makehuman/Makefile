@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/MakeHuman%20Source/MakeHuman_091
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for parametrical modeling of 3D humanoid characters
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libanimorph.so:graphics/animorph \
 		libmhgui.so:graphics/mhgui
 

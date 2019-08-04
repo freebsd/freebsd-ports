@@ -11,6 +11,8 @@ DISTFILES=	${DICTFILES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese-English edict UTF-8 dictionaries
 
+BROKEN=		unfetchable
+
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
 USES=		iconv

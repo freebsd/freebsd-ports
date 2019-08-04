@@ -15,6 +15,8 @@ COMMENT=	Baekmuk family Korean TrueType Fonts
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 
 USES=		fonts
