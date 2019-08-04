@@ -34,12 +34,14 @@ share/teamspeak/server/serverquerydocs/channellist.txt
 share/teamspeak/server/serverquerydocs/channelmove.txt
 share/teamspeak/server/serverquerydocs/channelpermlist.txt
 share/teamspeak/server/serverquerydocs/clientaddperm.txt
+share/teamspeak/server/serverquerydocs/clientaddservergroup.txt
 share/teamspeak/server/serverquerydocs/clientdbdelete.txt
 share/teamspeak/server/serverquerydocs/clientdbedit.txt
 share/teamspeak/server/serverquerydocs/clientdbfind.txt
 share/teamspeak/server/serverquerydocs/clientdbinfo.txt
 share/teamspeak/server/serverquerydocs/clientdblist.txt
 share/teamspeak/server/serverquerydocs/clientdelperm.txt
+share/teamspeak/server/serverquerydocs/clientdelservergroup.txt
 share/teamspeak/server/serverquerydocs/clientedit.txt
 share/teamspeak/server/serverquerydocs/clientfind.txt
 share/teamspeak/server/serverquerydocs/clientgetdbidfromuid.txt

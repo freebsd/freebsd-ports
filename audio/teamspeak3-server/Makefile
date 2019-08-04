@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.8.0
+PORTVERSION=	3.9.1
 PORTEPOCH=	1
 CATEGORIES=	audio net
-MASTER_SITES=	http://dl.4players.de/ts/releases/${PORTVERSION}/ \
-		http://teamspeak.gameserver.gamed.de/ts3/releases/${PORTVERSION}/
+MASTER_SITES=	https://files.teamspeak-services.com/releases/server/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_freebsd_${TEAMSPEAK_ARCH}-${PORTVERSION}
 
 MAINTAINER=	ultima@FreeBSD.org
