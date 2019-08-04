@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	double-conversion
-PORTVERSION=	3.0.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	3.1.5-11
+DISTVERSIONSUFFIX=	-g7da5db9
 CATEGORIES=	devel
 
-MAINTAINER=	waitman@waitman.net
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Binary-decimal and decimal-binary routines for IEEE doubles
 
 LICENSE=	BSD3CLAUSE
