@@ -14,6 +14,8 @@ COMMENT=	Dockable Shuffle game for WindowMaker and AfterStep
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USE_XORG=	xpm
 USES=		gmake
 

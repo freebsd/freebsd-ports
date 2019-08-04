@@ -14,6 +14,8 @@ COMMENT=	2D pool game using the GTK+ toolkit
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		autoreconf compiler:c++11-lang gmake perl5 pkgconfig
 USE_CXXSTD=	c++11
 USE_GNOME=	gtk20

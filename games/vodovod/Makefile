@@ -17,6 +17,8 @@ COMMENT=	Cross-platform pipe connecting action puzzle game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-src
 
 USES=		gmake

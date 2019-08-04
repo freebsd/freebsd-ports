@@ -11,6 +11,8 @@ DISTNAME=	reaprb81
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake 1 bots
 
+BROKEN=		unfetchable
+
 USES=		dos2unix zip
 DOS2UNIX_GLOB=	${PORTDOCS}
 NO_BUILD=	yes

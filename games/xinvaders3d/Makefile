@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Vector-graphics Space Invaders clone for X
 
+BROKEN=		unfetchable
+
 USE_XORG=	x11
 PLIST_FILES=	bin/xinv3d
 WRKSRC=		${WRKDIR}/${PORTNAME}

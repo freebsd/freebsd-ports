@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.tinyorange.com/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arkanoid and space game
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		linux tar:bzip2

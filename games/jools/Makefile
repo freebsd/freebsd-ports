@@ -15,6 +15,8 @@ COMMENT=	Addictive jewel-swapping puzzle game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${PYGAME}
 
 USES=		python:2.7

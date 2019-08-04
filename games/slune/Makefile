@@ -13,6 +13,8 @@ COMMENT=	3D game. includes racing, car-crashing, and lots of action
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libcal3d.so:graphics/cal3d
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openal>0:audio/py-openal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vorbis>0:audio/py-vorbis@${PY_FLAVOR} \

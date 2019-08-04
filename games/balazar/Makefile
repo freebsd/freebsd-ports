@@ -13,6 +13,8 @@ COMMENT=	3D adventure and roleplaying game
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libcal3d.so:graphics/cal3d \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}soya3d>0:graphics/py-soya3d@${PY_FLAVOR} \

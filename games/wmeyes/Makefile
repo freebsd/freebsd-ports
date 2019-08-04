@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.bstern.org/wmeyes/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	World's most useless WindowMaker dock app
 
+BROKEN=		unfetchable
+
 USES=		imake:noman
 USE_XORG=	xpm xmu
 

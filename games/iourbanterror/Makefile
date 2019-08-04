@@ -15,6 +15,8 @@ RUN_DEPENDS=	urbanterror-data>0:games/urbanterror-data
 
 LICENSE?=	GPLv2
 
+BROKEN=		unfetchable
+
 MASTERDIR=	${.CURDIR}/../ioquake3
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files

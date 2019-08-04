@@ -13,6 +13,8 @@ DIST_SUBDIR=	pysycache
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The pysycache lang support
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	pysycache.py:games/pysycache
 
 USES=		zip:infozip

@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.bsddiary.net/gru/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gru makes your eyes happy
 
+BROKEN=		unfetchable
+
 USES=		imake
 USE_XORG=	x11 xext xmu xpm xaw xt sm ice
 

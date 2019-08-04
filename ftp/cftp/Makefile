@@ -14,6 +14,8 @@ COMMENT=	Comfortable, full screen (S)FTP client
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sftp

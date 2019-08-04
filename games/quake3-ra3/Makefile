@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena mod: Rocket Arena 3
 
+BROKEN=		unfetchable
+
 USES=		zip
 NO_BUILD=	yes
 
