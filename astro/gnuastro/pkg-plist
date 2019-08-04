@@ -55,6 +55,7 @@ include/gnuastro/permutation.h
 include/gnuastro/pointer.h
 include/gnuastro/polygon.h
 include/gnuastro/qsort.h
+include/gnuastro/speclines.h
 include/gnuastro/statistics.h
 include/gnuastro/table.h
 include/gnuastro/threads.h
@@ -65,8 +66,8 @@ include/gnuastro/type.h
 include/gnuastro/wcs.h
 lib/libgnuastro.a
 lib/libgnuastro.so
-lib/libgnuastro.so.7
-lib/libgnuastro.so.7.0.0
+lib/libgnuastro.so.8
+lib/libgnuastro.so.8.0.0
 libdata/pkgconfig/gnuastro.pc
 man/man1/astarithmetic.1.gz
 man/man1/astbuildprog.1.gz
