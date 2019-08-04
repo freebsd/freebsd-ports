@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.itojun.org/pub/misc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Crosspad data downloader/converter
 
+BROKEN=		unfetchable
+
 USES=		ncurses perl5
 USE_PERL5=	run
 GNU_CONFIGURE=	yes

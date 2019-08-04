@@ -13,6 +13,8 @@ COMMENT=	Dvorak typing tutor
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		ncurses tar:bzip2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

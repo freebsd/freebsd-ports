@@ -17,6 +17,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ARPACK++ is an object-oriented version of the ARPACK package
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libsuperlu.so:math/superlu \
 		libumfpack.so:math/suitesparse

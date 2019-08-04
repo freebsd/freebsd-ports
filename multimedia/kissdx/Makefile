@@ -13,6 +13,7 @@ COMMENT=	Multimedia streaming server for KiSS/Linksys player
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		unfetchable
 BROKEN_armv6=		fails to compile: kissdx.c: function definition is not allowed here
 BROKEN_armv7=		fails to compile: kissdx.c: function definition is not allowed here
 

@@ -10,6 +10,8 @@ MASTER_SITES=	http://audiopreview.codealpha.net/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tool to play previews of audio and video files
 
+BROKEN=		unfetchable
+
 USES=		gettext gmake pkgconfig
 USE_GSTREAMER=	core
 USE_GNOME=	intltool

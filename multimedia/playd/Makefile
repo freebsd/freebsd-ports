@@ -13,6 +13,8 @@ COMMENT=	Very easy-to-use mplayer sh wrapper script (supports playlists)
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 PLIST_FILES=	bin/playd \

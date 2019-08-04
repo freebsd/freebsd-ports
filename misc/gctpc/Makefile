@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	USGS General Cartographic Transformation Package (GCTP)
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}/source
 
 USES=		gmake tar:Z
