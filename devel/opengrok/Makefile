@@ -13,6 +13,8 @@ LICENSE=	CDDL APACHE20
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	exctags:devel/ctags
 
 USE_JAVA=	yes

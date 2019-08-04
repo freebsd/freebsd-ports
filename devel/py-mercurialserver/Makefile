@@ -13,6 +13,8 @@ COMMENT=	Software for hosting mercurial repositories
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	hg:devel/mercurial
 
 WRKSRC=		${WRKDIR}/${SNAME}_${SVERSION}.orig

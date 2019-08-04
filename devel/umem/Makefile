@@ -13,6 +13,8 @@ COMMENT=	Port of the Solaris memory allocator
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/OPENSOLARIS.LICENSE
 
+BROKEN=		unfetchable
+
 USES=		libtool tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

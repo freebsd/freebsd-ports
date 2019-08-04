@@ -16,6 +16,8 @@ LICENSE=	PD
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	never ported to non-x86 architectures
 
+BROKEN=		unfetchable
+
 USES=		gmake zip
 MAKEFILE=	makefile.unx
 MAKE_ARGS=	CC="${CC}"

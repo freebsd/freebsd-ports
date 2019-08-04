@@ -15,6 +15,8 @@ COMMENT=	Fibonacci-Heap based Priority-Queue Extension for Python
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		python:2.7 tar:bzip2
 USE_PYTHON=	distutils autoplist
 

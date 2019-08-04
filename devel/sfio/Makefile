@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.src.unix.cpio
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Safe/Fast I/O Library
 
+BROKEN=		unfetchable
+
 EXTRACT_CMD=	${CPIO}
 EXTRACT_BEFORE_ARGS=	-idF
 EXTRACT_AFTER_ARGS=	# empty

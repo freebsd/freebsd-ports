@@ -14,6 +14,8 @@ COMMENT=	Python/Tkinter based source browser
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE_GPL2.txt
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Pmw>0:x11-toolkits/py-Pmw@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	More TCL commands
 
+BROKEN=		unfetchable
+
 USES=		gmake makeinfo tcl:tea
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_src$//}
