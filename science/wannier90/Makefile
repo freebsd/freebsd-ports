@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	wannier90
-DISTVERSION=	2.1.0
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.0.0
 CATEGORIES=	science
-MASTER_SITES=	http://www.wannier.org/code/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Maximally-localized Wannier functions (MLWFs) and Wannier90
@@ -16,6 +15,8 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack
 
 USES=		fortran gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	wannier-developers
 USE_LDCONFIG=	yes
 
 MAKE_ARGS=	FCOPTS="-fPIC -O3"
@@ -33,6 +34,6 @@ do-install:
 .for p in wannier90.x postw90.x w90chk2chk.x
 	${INSTALL_PROGRAM} ${WRKSRC}/${p} ${STAGEDIR}${PREFIX}/bin/${p}
 .endfor
-	${INSTALL_LIB} ${WRKSRC}/libwannier.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/obj/libwannier.so ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
