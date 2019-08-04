@@ -13,6 +13,8 @@ COMMENT=	Viewer/converter for CBR/CBZ comic book archives
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	unrar:archivers/unrar \
 		p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-String-ShellQuote>=0:textproc/p5-String-ShellQuote

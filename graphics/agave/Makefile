@@ -12,6 +12,8 @@ COMMENT=	Color scheme builder for the GNOME desktop
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libglademm-2.4.so:devel/libglademm24
 

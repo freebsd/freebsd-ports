@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plain C converter of jpeg images to PDF or PostScript
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/jpg2pdf man/man1/jpg2pdf.1.gz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

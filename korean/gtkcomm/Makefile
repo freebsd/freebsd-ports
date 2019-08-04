@@ -12,6 +12,8 @@ COMMENT=	Serial controlling software, with gtk+ widget
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/baekmukfonts/gulim12.pcf.gz:korean/baekmukfonts-bdf
 
 USES=		gettext pathfix perl5 pkgconfig

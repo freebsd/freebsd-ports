@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple dictionary server for the SKK
 
+BROKEN=		unfetchable
+
 EXTRACT_DEPENDS=	${NONEXISTENT}:databases/cdb:build
 RUN_DEPENDS=	${LOCALBASE}/${SKKDIR}/SKK-JISYO.${SKKJISYO_TYPE}.cdb:japanese/skk-jisyo-cdb
 

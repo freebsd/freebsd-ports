@@ -17,6 +17,8 @@ COMMENT=	GIMP script to create a jagged border around an image
 
 LICENSE=	GPLv3
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/bin/gimp:graphics/gimp-app
 
 USES=		dos2unix

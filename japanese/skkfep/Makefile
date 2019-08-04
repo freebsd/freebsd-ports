@@ -10,6 +10,8 @@ MASTER_SITES=	http://aitoweb.world.coocan.jp/skkfep/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SKK-like Kana-to-Kanji FrontEnd Processor
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	ja-skk>0:japanese/skk
 
 USES=		ncurses

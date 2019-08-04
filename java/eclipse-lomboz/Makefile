@@ -15,6 +15,8 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	J2EE developer tool build as a plugin for the eclipse platform
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:java/eclipse
 
 CONFLICTS=	eclipse-webtools-0.7*

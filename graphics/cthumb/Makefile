@@ -12,6 +12,8 @@ COMMENT=	Themeable web picture album generator
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/bin/pnmscale:graphics/netpbm \
 		${LOCALBASE}/bin/jhead:graphics/jhead \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser \
