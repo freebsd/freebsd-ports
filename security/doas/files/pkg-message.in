@@ -5,9 +5,27 @@ To use doas,
 
 %%PREFIX%%/etc/doas.conf
 
-must be created.
+must be created. Refer to doas.conf(5) for further details.
 
-Refer to doas.conf(5).
+Note: In order to be able to run most desktop (GUI) applications, the user
+needs to have the keepenv keyword specified. If keepenv is not specified then
+key elements, like the user's $HOME variable, will be reset and cause the GUI
+application to crash.
+
+Users who only need to run command line applications can usually get away
+without keepenv.
+
+When in doubt, try to avoid using keepenv as it is less secure to have
+environment variables passed to privileged users.
+EOD
+}
+{ type: upgrade
+  maximum_version: "6.1"
+  message: <<EOD
+With the 6.1 release the transfer of most environment variables (e.g. USER,
+HOME and PATH) from the original user to the target user has changed.
+
+Please refer to doas.conf(5) for further details.
 EOD
 }
 ]
