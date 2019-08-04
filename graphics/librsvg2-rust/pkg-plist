@@ -9,6 +9,7 @@ lib/librsvg-2.so.2
 lib/librsvg-2.so.2.46.0
 libdata/pkgconfig/librsvg-2.0.pc
 man/man1/rsvg-convert.1.gz
+share/doc/rsvg-2.0/RsvgHandle.html
 share/doc/rsvg-2.0/annotation-glossary.html
 share/doc/rsvg-2.0/api-index-full.html
 share/doc/rsvg-2.0/ch01.html
@@ -21,7 +22,6 @@ share/doc/rsvg-2.0/object-tree.html
 share/doc/rsvg-2.0/right-insensitive.png
 share/doc/rsvg-2.0/right.png
 share/doc/rsvg-2.0/rsvg-2.0.devhelp2
-share/doc/rsvg-2.0/rsvg-RsvgHandle.html
 share/doc/rsvg-2.0/rsvg-Using-RSVG-with-GIO.html
 share/doc/rsvg-2.0/rsvg-Using-RSVG-with-GdkPixbuf.html
 share/doc/rsvg-2.0/rsvg-Using-RSVG-with-cairo.html
