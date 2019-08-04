@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	a-Source
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.exiv2.org/builds/
+MASTER_SITES=	https://www.exiv2.org/releases/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Exif, IPTC, and XMP metadata manipulation library and tools
