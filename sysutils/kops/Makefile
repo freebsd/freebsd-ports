@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kops
-PORTVERSION=	1.12.2
+PORTVERSION=	1.13.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
