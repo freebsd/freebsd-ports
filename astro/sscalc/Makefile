@@ -4,12 +4,10 @@
 PORTNAME=	sscalc
 PORTVERSION=	1.0
 CATEGORIES=	astro
-MASTER_SITES=	http://www.icehouse.net/kew/
+MASTER_SITES=	https://opsec.eu/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sunrise and sunset time calculator
-
-BROKEN=		unfetchable
 
 OPTIONS_DEFINE=	DOCS
 
