@@ -15,6 +15,8 @@ COMMENT=	Benchmarking tool for analysing TCP and UDP performance
 
 LICENSE=	PD
 
+BROKEN=		unfetchable
+
 NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS
