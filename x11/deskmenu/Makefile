@@ -10,9 +10,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	matt@peterson.org
 COMMENT=	X11 application launcher
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig
+USES=		pkgconfig gnome
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 
