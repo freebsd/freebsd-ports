@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	InsightToolkit
-PORTVERSION=	4.13.0
-PORTREVISION=	9
+PORTVERSION=	5.0.1
+DISTVERSIONPREFIX=v
 CATEGORIES=	science biology
-MASTER_SITES=	SF/itk/itk/${ITK_VER}
+MASTER_SITES=	https://github.com/InsightSoftwareConsortium/ITK/releases/download/v5.0.1/:data
+DISTFILES=	InsightData-5.0.1.tar.gz:data
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Insight Toolkit
@@ -21,18 +22,26 @@ LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
 		libsz.so:science/szip \
 		libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c11 jpeg
+USES=		cmake compiler:c++11-lang eigen:3 jpeg pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	InsightSoftwareConsortium
+GH_PROJECT=	ITK
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON \
+		-DITK_FORBID_DOWNLOADS:BOOL=ON \
+		-DITK_LEGACY_SILENT:BOOL=ON \
 		-DITK_USE_KWSTYLE:BOOL=OFF \
-		-DITK_USE_SYSTEM_LIBRARIES:BOOL=ON \
 		-DITK_USE_SYSTEM_EXPAT:BOOL=ON \
 		-DITK_USE_SYSTEM_FFTW:BOOL=ON \
 		-DITK_USE_SYSTEM_GDCM:BOOL=ON \
 		-DITK_USE_SYSTEM_HDF5:BOOL=ON \
 		-DITK_USE_SYSTEM_JPEG:BOOL=ON \
+		-DITK_USE_SYSTEM_LIBRARIES:BOOL=ON \
 		-DITK_USE_SYSTEM_PNG:BOOL=ON \
 		-DITK_USE_SYSTEM_TIFF:BOOL=ON \
-		-DITK_USE_SYSTEM_ZLIB:BOOL=ON
+		-DITK_USE_SYSTEM_ZLIB:BOOL=ON \
+		-DModule_ITKIOMIC:BOOL=ON \
+		-DModule_ITKIOTransformMINC:BOOL=ON \
+		-DModule_ITKReview:BOOL=ON
 USE_LDCONFIG=	${PREFIX}/lib/InsightToolkit
 ITK_VER=	${PORTVERSION:R}
 PLIST_SUB+=	ITK_VER=${ITK_VER}
@@ -43,5 +52,9 @@ TESTING_DESC=	Build testing programs (very time consuming)
 
 EXAMPLES_CMAKE_ON=	-DBUILD_EXAMPLES:BOOL=ON
 TESTING_CMAKE_ON=	-DBUILD_TESTING:BOOL=ON
+
+post-extract:
+	${MV} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/.ExternalData/* ${WRKSRC}/.ExternalData/
+	${RM} -r ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
