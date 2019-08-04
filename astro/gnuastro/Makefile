@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuastro
-PORTVERSION=	0.9
-PORTREVISION=	2
+PORTVERSION=	0.10
 CATEGORIES=	astro
 MASTER_SITES=	GNU
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		gmake jpeg libtool:build localbase
+USES=		gmake jpeg libtool:build localbase tar:lz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
@@ -32,8 +31,6 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e 's,gcc,${CC},' ${WRKSRC}/bin/buildprog/buildprog.c
 	@${REINPLACE_CMD} -e 's,/bash,/sh,' ${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e '31s,^,#include <time.h>,' \
-		${WRKSRC}/lib/gnuastro/table.h
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/etc -name \*.conf \
