@@ -11,8 +11,6 @@ COMMENT=	Ispell compatibility script for aspell
 
 LICENSE=	LGPL21
 
-CONFLICTS+=	ispell* ??-ispell*
-
 RUN_DEPENDS=	aspell:textproc/aspell
 
 NO_ARCH=	yes
