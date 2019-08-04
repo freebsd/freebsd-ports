@@ -13,6 +13,8 @@ COMMENT=	Solidity Contract-Oriented Programming Language
 
 LICENSE=	GPLv3
 
+BROKEN=		'cvc4_public.h' file not found
+
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp
 
