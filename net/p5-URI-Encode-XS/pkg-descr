@@ -1,0 +1,5 @@
+URI::Encode::XS is a Perl URI encoder/decoder written in XS based on RFC3986.
+This module always encodes characters that are not unreserved. When decoding,
+invalid escape sequences are preserved.
+
+WWW: https://metacpan.org/release/URI-Encode-XS
