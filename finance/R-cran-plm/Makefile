@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plm
-DISTVERSION=	2.0-2
-PORTREVISION=	1
+DISTVERSION=	2.1-0
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -18,7 +17,7 @@ CRAN_DEPENDS=	R-cran-bdsmatrix>0:math/R-cran-bdsmatrix \
 		R-cran-lmtest>0:finance/R-cran-lmtest \
 		R-cran-maxLik>0:math/R-cran-maxLik \
 		R-cran-Rdpack>0:devel/R-cran-Rdpack \
-		R-cran-Formula>=0.2.0:math/R-cran-Formula
+		R-cran-Formula>0:math/R-cran-Formula
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
