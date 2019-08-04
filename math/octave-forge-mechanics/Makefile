@@ -13,6 +13,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 BROKEN=		depends upon octave-forge-linear-algebra which is broken
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/general.tar.gz:math/octave-forge-general
 RUN_DEPENDS+=	${TARBALLS_DIR}/geometry.tar.gz:math/octave-forge-geometry

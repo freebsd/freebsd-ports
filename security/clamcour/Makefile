@@ -11,6 +11,8 @@ MAINTAINER=	bsd@dino.sk
 COMMENT=	ClamAV courier filter
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 BUILD_DEPENDS=	courier-config:mail/courier
 LIB_DEPENDS=	libclamav.so:security/clamav

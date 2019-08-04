@@ -14,6 +14,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		conflicts with irssi
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 BUILD_DEPENDS=	${LOCALBASE}/include/irssi/src/common.h:irc/irssi \
 		${LOCALBASE}/bin/libgcrypt-config:security/libgcrypt

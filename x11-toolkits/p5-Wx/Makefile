@@ -15,6 +15,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-ExtUtils-XSpp>=0.16.03:devel/p5-ExtUtils-XSpp \

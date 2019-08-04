@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ACE+TAO HTML documentation
 
 BROKEN=		empty package
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 WRKSRC=		${WRKDIR}/html
 

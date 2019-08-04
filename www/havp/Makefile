@@ -13,6 +13,8 @@ MAINTAINER=	ayu@commun.jp
 COMMENT=	HTTP Antivirus Proxy
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 LIB_DEPENDS=	libclamav.so:security/clamav
 

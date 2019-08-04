@@ -15,6 +15,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		fails to patch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		${LOCALBASE}/bin/analyseplugin:audio/ladspa

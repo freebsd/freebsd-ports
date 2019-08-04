@@ -12,6 +12,8 @@ COMMENT=	Collection of high-performance ray tracing kernels
 LICENSE=	APACHE20
 
 BROKEN=		fails to link
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	heavy use of SSE instructions

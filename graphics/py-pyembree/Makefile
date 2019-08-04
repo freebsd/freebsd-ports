@@ -13,6 +13,9 @@ COMMENT=	Python wrapper for Embree
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expiring graphics/embree
+EXPIRATION_DATE=	2019-09-04
+
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libembree.so:graphics/embree
 RUN_DEPENDS=	${PYNUMPY}

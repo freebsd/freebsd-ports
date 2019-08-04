@@ -11,6 +11,9 @@ COMMENT=	IDE for the D programming language
 
 LICENSE=	BSL
 
+DEPRECATED=	Depends on expiring devel/dfmt
+EXPIRATION_DATE=	2019-09-04
+
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		${LOCALBASE}/lib/d/libiz.a:devel/iz \
 		${LOCALBASE}/lib/d/libmir-core.a:devel/mir-core \

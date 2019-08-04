@@ -13,6 +13,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 
 BROKEN=		depends upon octave-forge-optim which is broken
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
