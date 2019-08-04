@@ -14,6 +14,8 @@ COMMENT=	Multi-player network action game for TCP/IP with 3D graphics
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright
 
+BROKEN=		unfetchable
+
 USE_XORG=	x11 xaw xmu xt
 
 HAS_CONFIGURE=	yes

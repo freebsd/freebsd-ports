@@ -13,6 +13,8 @@ COMMENT=	Multiplayer tank shoot-em-up
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 OPTIONS_DEFINE=	MIKMOD
 OPTIONS_DEFAULT=	MIKMOD
 

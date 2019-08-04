@@ -14,6 +14,8 @@ COMMENT=	Abacus for X Window System
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		tar:bzip2
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

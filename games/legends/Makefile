@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast-paced first-person-perspective online multiplayer game
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		linux makeself

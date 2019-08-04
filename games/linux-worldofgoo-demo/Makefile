@@ -12,6 +12,7 @@ DISTNAME=	WorldOfGooDemo.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Demo version of incredible physics based puzzle/construction game
 
+BROKEN=		unfetchable
 ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		linux

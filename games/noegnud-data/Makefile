@@ -11,6 +11,8 @@ DISTFILES=	${DISTNAME}_linux_src-minimal${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The noeGNUd Data Files
 
+BROKEN=		unfetchable
+
 NOEGNUDVERSION=	${PORTNAME}-0.8.0
 DATADIR=	${PREFIX}/share/${NOEGNUDVERSION}
 USES=		tar:bzip2

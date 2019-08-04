@@ -12,6 +12,8 @@ COMMENT=	Multi-player curses space warfare game similar to Netrek
 
 LICENSE=	ART10
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc/conquest \
 		--datadir=${LOCALBASE}/share/conquest \

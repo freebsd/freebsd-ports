@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.dfsg.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced TFTP server and client
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.dfsg
 
 USE_RC_SUBR=	atftpd
