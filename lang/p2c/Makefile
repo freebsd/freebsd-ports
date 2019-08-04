@@ -11,6 +11,8 @@ COMMENT=	Pascal to C translator
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 WRKSRC_SUBDIR=	src
 
 BROKEN_aarch64=	Fails to link: missing sbrk

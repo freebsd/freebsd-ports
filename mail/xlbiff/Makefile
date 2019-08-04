@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The X Literate Biff - displays the from and subject from incoming mails
 
+BROKEN=		unfetchable
+
 USES=		imake tar:Z
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 

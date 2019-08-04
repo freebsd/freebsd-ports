@@ -10,6 +10,8 @@ DISTNAME=	STL_doc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The STL reference manual by SGI
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 
 do-install:

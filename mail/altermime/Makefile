@@ -9,6 +9,8 @@ MASTER_SITES=	http://ionut.tetcu.info/FreeBSD/ports/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small C program which is used to alter your mime-encoded mailpacks
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/altermime
 PORTDOCS=	CHANGELOG LICENCE README
 
