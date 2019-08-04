@@ -1,6 +1,8 @@
-This package contains a command-line tool that displays as much detail
-about itself and its environment as possible.  It can be used as a test
-tool, to understand the type of environment a process runs in, and for
-comparing system environments.
+procenv is a simple command-line utility, written in C and licensed under the
+GPL, that dumps all attributes of the environment in which it runs, in
+well-structured plain ASCII, JSON (YAML), XML or CSV.
+
+It is useful as a test tool, to understand what environment a process runs in
+and for system comparison.
 
 WWW: https://github.com/jamesodhunt/procenv
