@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	procenv
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,21 +18,21 @@ USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jamesodhunt
-GH_TAGNAME=	d89b0ac
 
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 
-PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 PLIST_FILES=	bin/procenv \
 		man/man1/procenv.1.gz
+PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+	@${REINPLACE_CMD} -e '/^PKG_/d' ${WRKSRC}/configure.ac
+
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
