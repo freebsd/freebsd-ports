@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dalton
-DISTVERSION=	2018.0
-PORTREVISION=	2
+DISTVERSION=	2018.2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +16,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		cmake:noninja fortran python:build shebangfix
 SHEBANG_FILES=	dalton.in
 USE_GITLAB=	yes
-GL_COMMIT=	d16802317e0785578e491e600c73cfb6bfb70ff0
+GL_COMMIT=	4aa945ecd235fbf67ed0c1609617c553ef40be89
 USE_GITHUB=	nodefault
 
 GL_TUPLE=	bingao:gen1int:1e4148ecd676761b3399801acba443925a1fee6b:gen1int/external/gen1int \
