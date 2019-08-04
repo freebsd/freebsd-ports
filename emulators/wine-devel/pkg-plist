@@ -298,6 +298,8 @@ include/wine/windows/dimm.h
 include/wine/windows/dimm.idl
 include/wine/windows/dinput.h
 include/wine/windows/dinputd.h
+%%STAGING%%include/wine/windows/directmanipulation.h
+%%STAGING%%include/wine/windows/directmanipulation.idl
 include/wine/windows/dispdib.h
 include/wine/windows/dispex.h
 include/wine/windows/dispex.idl
@@ -389,6 +391,8 @@ include/wine/windows/exdispid.h
 include/wine/windows/fci.h
 include/wine/windows/fdi.h
 include/wine/windows/fileapi.h
+include/wine/windows/filter.h
+include/wine/windows/filter.idl
 include/wine/windows/fltdefs.h
 include/wine/windows/fontsub.h
 include/wine/windows/fusion.h
@@ -775,6 +779,7 @@ include/wine/windows/sti.h
 include/wine/windows/storage.h
 include/wine/windows/strmif.h
 include/wine/windows/strmif.idl
+include/wine/windows/strongname.h
 include/wine/windows/strsafe.h
 include/wine/windows/structuredquerycondition.h
 include/wine/windows/structuredquerycondition.idl
@@ -790,6 +795,8 @@ include/wine/windows/tcpmib.h
 include/wine/windows/textserv.h
 include/wine/windows/textstor.h
 include/wine/windows/textstor.idl
+include/wine/windows/thumbcache.h
+include/wine/windows/thumbcache.idl
 include/wine/windows/timezoneapi.h
 include/wine/windows/tlhelp32.h
 include/wine/windows/tlogstg.h
@@ -1349,6 +1356,7 @@ lib/wine/dhtmled.ocx.so
 lib/wine/difxapi.dll.so
 lib/wine/dinput.dll.so
 lib/wine/dinput8.dll.so
+%%STAGING%%lib/wine/directmanipulation.dll.so
 lib/wine/dism.exe.so
 %%WINE32%%lib/wine/dispdib.dll16.so
 lib/wine/dispex.dll.so
@@ -1799,6 +1807,7 @@ lib/wine/fakedlls/dhtmled.ocx
 lib/wine/fakedlls/difxapi.dll
 lib/wine/fakedlls/dinput.dll
 lib/wine/fakedlls/dinput8.dll
+%%STAGING%%lib/wine/fakedlls/directmanipulation.dll
 lib/wine/fakedlls/dism.exe
 %%WINE32%%lib/wine/fakedlls/dispdib.dll16
 lib/wine/fakedlls/dispex.dll
@@ -2003,6 +2012,7 @@ lib/wine/fakedlls/msasn1.dll
 lib/wine/fakedlls/mscat32.dll
 lib/wine/fakedlls/mscms.dll
 lib/wine/fakedlls/mscoree.dll
+lib/wine/fakedlls/mscorwks.dll
 lib/wine/fakedlls/msctf.dll
 lib/wine/fakedlls/msctfp.dll
 lib/wine/fakedlls/msdaps.dll
@@ -2693,6 +2703,7 @@ lib/wine/msasn1.dll.so
 lib/wine/mscat32.dll.so
 lib/wine/mscms.dll.so
 lib/wine/mscoree.dll.so
+lib/wine/mscorwks.dll.so
 lib/wine/msctf.dll.so
 lib/wine/msctfp.dll.so
 lib/wine/msdaps.dll.so
@@ -3110,6 +3121,7 @@ man/man1/wmc.1.gz
 man/man1/wrc.1.gz
 %%WINE32%%man/pl.UTF-8/man1/wine.1.gz
 share/applications/wine.desktop
+%%STAGING%%%%DATADIR%%/winebus.inf
 %%DATADIR%%/winehid.inf
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
