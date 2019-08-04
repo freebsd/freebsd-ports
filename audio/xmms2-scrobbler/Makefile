@@ -13,6 +13,8 @@ COMMENT=	Last.fm submission client for XMMS2
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libxmmsclient.so:audio/xmms2 \
 		libcurl.so:ftp/curl
 

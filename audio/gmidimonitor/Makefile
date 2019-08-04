@@ -13,6 +13,8 @@ COMMENT=	GTK+ application that shows MIDI events
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libjack.so:audio/jack \
 		liblash.so:audio/lash
 
