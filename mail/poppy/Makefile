@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.cnpbagwell.com/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client to perform simple tasks with a POP3/IMAP server
 
+BROKEN=		unfetchable
+
 USES=		shebangfix
 NO_BUILD=	yes
 

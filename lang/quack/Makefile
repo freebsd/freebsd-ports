@@ -16,6 +16,8 @@ COMMENT=	Enhanced support for editing and running Scheme code
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	wget:ftp/wget
 
 USES=		emacs

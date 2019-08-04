@@ -11,6 +11,8 @@ DIST_SUBDIR=	nawk-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brian Kernighan's pattern scanning and processing language
 
+BROKEN=		unfetchable
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	a.out

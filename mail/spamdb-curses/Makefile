@@ -11,6 +11,8 @@ COMMENT=	Curses interface for OpenBSD spamd spam database (spamdb)
 
 LICENSE=	MIT
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/spamdb:mail/spamd
 
 USES=		python:2.7

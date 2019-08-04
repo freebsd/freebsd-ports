@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast mail searching for mutt
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	namazu:databases/namazu2
 
 GNU_CONFIGURE=	yes

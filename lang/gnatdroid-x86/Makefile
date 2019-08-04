@@ -7,6 +7,8 @@ PORTREVISION=	${X86_PR}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/Ada cross-compiler, target: Android x86
 
+BROKEN=		unfetchable
+
 DROID_TARGET=	i686-aux-linux-android
 CPUVERSION=	x86_32
 ARG_ARCH=	# don't specify

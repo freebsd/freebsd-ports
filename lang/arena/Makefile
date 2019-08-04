@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.minimalinux.org/arena/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C-like scripting language with automatic memory management
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_PCRE)

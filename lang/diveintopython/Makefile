@@ -14,6 +14,8 @@ COMMENT=	Free Python tutorial book that is "not For Dummies(tm)"
 
 LICENSE=	GFDL
 
+BROKEN=		unfetchable
+
 USES=		zip
 NO_BUILD=	yes
 

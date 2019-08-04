@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.irendi.com/~msharpe/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Random .signature generator with header file included
 
+BROKEN=		unfetchable
+
 MAKEFILE=	makefile
 PLIST_FILES=	bin/autosig
 ALL_TARGET=	${PORTNAME}
