@@ -11,6 +11,8 @@ COMMENT=	Append-only low-level I/O library
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang

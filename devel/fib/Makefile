@@ -10,6 +10,8 @@ MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fibonacci Heap Library
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 ALL_TARGET=	libfib.a libfib.so.1

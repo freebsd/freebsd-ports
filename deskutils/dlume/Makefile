@@ -10,6 +10,8 @@ MASTER_SITES=	TUCOWS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 address book
 
+BROKEN=		unfetchable
+
 USES=		pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk20 libxml2
 GNU_CONFIGURE=	yes

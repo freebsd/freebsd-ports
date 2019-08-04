@@ -13,6 +13,8 @@ COMMENT=	GTK2-based toolbar, like a smaller GNOME panel
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		gmake pkgconfig localbase tar:bzip2
 USE_GNOME=	gtk20
 USE_XORG=	x11

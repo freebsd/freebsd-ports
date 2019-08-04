@@ -14,6 +14,8 @@ COMMENT=	MySQL load analysis fetcher for MRTG
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	mrtg:net-mgmt/mrtg
 
 USES=		perl5 shebangfix
