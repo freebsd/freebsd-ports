@@ -4,14 +4,12 @@
 PORTNAME=	libds
 PORTVERSION=	2.1
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	SF/libds/libds/libds-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ANSI Generic Data Structures Library
 
 LICENSE=	BSD4CLAUSE
-
-BROKEN=		unfetchable
 
 USE_LDCONFIG=	yes
 LLD_UNSAFE=	yes	# Needs linker to provide library search paths.
