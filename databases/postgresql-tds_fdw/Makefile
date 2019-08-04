@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tds_fdw
-PORTVERSION=	1.0.8
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.0-alpha.3
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
@@ -16,13 +15,12 @@ LICENSE=	PostgreSQL
 LIB_DEPENDS=	libsybdb.so:databases/freetds
 
 USES=		gmake pgsql:9.2+
-LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	tds-fdw
 
 PLIST_FILES=	lib/postgresql/tds_fdw.so \
 		share/doc/postgresql/extension/README.tds_fdw.md \
-		share/postgresql/extension/tds_fdw--1.0.8.sql \
+		share/postgresql/extension/tds_fdw--${DISTVERSION}.sql \
 		share/postgresql/extension/tds_fdw.control
 
 post-install:
