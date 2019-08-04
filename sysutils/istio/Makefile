@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	istio
-PORTVERSION=	1.1.8
+PORTVERSION=	1.2.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 
 GO_PKGNAME=	istio.io/istio
 GO_TARGET=	${GO_PKGNAME}/istioctl/cmd/istioctl
-GO_BUILDFLAGS=	-ldflags="-X istio.io/istio/pkg/version.buildVersion=${PORTVERSION} \
+GO_BUILDFLAGS=	-ldflags="-X istio.io/istio/vendor/istio.io/pkg/version.buildVersion=${PORTVERSION} \
 		-X istio.io/istio/pkg/version.buildDockerHub=docker.io/istio"
 
 post-install:
