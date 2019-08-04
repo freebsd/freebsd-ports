@@ -13,6 +13,8 @@ COMMENT=	X11 programmer's editor and development environment
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		compiler
 USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes

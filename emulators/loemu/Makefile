@@ -12,6 +12,8 @@ COMMENT=	Simple frontend for various game emulators
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libxml2>=0:textproc/py-libxml2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libxslt>=0:textproc/py-libxslt@${PY_FLAVOR}
 

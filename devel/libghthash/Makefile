@@ -13,6 +13,8 @@ COMMENT=	Generic Hash Table
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -12,6 +12,8 @@ COMMENT=	Lua -> C FFI
 
 LICENSE=	MIT
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libffi.so:devel/libffi
 
 USE_GITHUB=	yes

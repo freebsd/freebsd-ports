@@ -10,6 +10,8 @@ DISTNAME=	html${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML Documentation for Root framework
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/htmldoc

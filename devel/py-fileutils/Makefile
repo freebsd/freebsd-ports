@@ -11,6 +11,8 @@ DISTNAME=	FileUtils-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File I/O related functions and classes
 
+BROKEN=		unfetchable
+
 USES=		python tar:bzip2
 USE_PYTHON=	distutils autoplist
 
