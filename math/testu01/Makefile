@@ -18,6 +18,8 @@ LICENSE_NAME=	TestU01 license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 CONFLICTS=	emboss-[0-9]*

@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to distribute config files
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	wget:ftp/wget
 
 NO_BUILD=	yes

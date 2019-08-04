@@ -14,6 +14,8 @@ COMMENT=	Allows usage of special keys on internet/multimedia keyboards
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

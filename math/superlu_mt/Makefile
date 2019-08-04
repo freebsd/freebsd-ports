@@ -18,6 +18,7 @@ COMMENT=	Routines for performing multithreaded sparse factorization
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
+BROKEN=		unfetchable
 BROKEN_aarch64=		fails to build: undefined reference to sbrk
 BROKEN_powerpc64=	fails to build: pstest runs away and consumes all memory
 BROKEN_sparc64=		fails to link

@@ -12,6 +12,8 @@ COMMENT=	Yet another dump utility
 
 LICENSE=	BSD4CLAUSE
 
+BROKEN=		unfetchable
+
 USES=		uidfix
 MAKE_ARGS=	CC="${CC}" BINDIR="${PREFIX}/bin" \
 		MANDIR="${MAN1PREFIX}/man/man"

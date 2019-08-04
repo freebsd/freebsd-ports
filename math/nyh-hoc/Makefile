@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Order Calculator
 
+BROKEN=		unfetchable
+
 MAKE_JOBS_UNSAFE= yes
 
 GNU_CONFIGURE=	yes

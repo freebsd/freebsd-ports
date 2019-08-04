@@ -18,6 +18,8 @@ COMMENT=	Astrology program for X11 and alpha-numeric terminals
 # http://www.astro.com/ftp/swisseph/LICENSE.TXT
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+
 EPHE=		sweph_00.tar.gz:ephe sweph_06.tar.gz:ephe \
 		sweph_12.tar.gz:ephe sweph_18.tar.gz:ephe \
 		sweph_24.tar.gz:ephe sweph_30.tar.gz:ephe \

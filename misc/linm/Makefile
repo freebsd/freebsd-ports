@@ -14,6 +14,8 @@ COMMENT=	Clone of Mdir, mc-style terminal file manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		gettext iconv:translit pkgconfig gmake localbase libtool ncurses ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cfgpath="${ETCDIR}" ${ICONV_CONFIGURE_ARG}

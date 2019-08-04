@@ -12,6 +12,8 @@ COMMENT=	Subtitle editor
 
 LICENSE=	GPLv3
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	iso-codes>0:misc/iso-codes
 LIB_DEPENDS=	libglademm-2.4.so:devel/libglademm24 \
 		libpcre.so:devel/pcre \
