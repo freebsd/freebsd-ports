@@ -12,6 +12,8 @@ COMMENT=	Model-based file system workload generator
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

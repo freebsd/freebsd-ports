@@ -17,6 +17,7 @@ LICENSE_NAME=	Alliance VLSI Cad System License
 LICENSE_FILE=	${WRKSRC}/LICENCE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		unfetchable
 BROKEN_aarch64=		fails to link: collect2: error: ld returned 1 exit status
 
 CONFLICTS_INSTALL=	fspclient-*

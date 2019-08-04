@@ -15,6 +15,8 @@ COMMENT=	Outputs LaTeX code for chemical reaction
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.5
 

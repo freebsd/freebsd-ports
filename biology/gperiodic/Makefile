@@ -14,6 +14,8 @@ COMMENT=	Displays a periodic table of the elements
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
+BROKEN=		unfetchable
+
 USE_GNOME=	gtk20
 USES=		pkgconfig
 

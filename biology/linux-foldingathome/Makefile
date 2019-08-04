@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.exe
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed client for Protein Folding
 
+BROKEN=		unfetchable
+
 USES=		linux
 ONLY_FOR_ARCHS=	i386 amd64
 REINPLACE_ARGS=
