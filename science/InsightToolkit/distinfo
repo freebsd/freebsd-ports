@@ -1,3 +1,5 @@
-TIMESTAMP = 1514461384
-SHA256 (InsightToolkit-4.13.0.tar.gz) = 956f3383e93eb8ffcfdfde96fc27a7d38f2e577f0001c4011f4123be6eb65eda
-SIZE (InsightToolkit-4.13.0.tar.gz) = 19073696
+TIMESTAMP = 1564828215
+SHA256 (InsightData-5.0.1.tar.gz) = 5fc343de9ae8e5fd14ac743a8321f5fb699928c08bf8f426aab7835a92fc805e
+SIZE (InsightData-5.0.1.tar.gz) = 290801718
+SHA256 (InsightSoftwareConsortium-ITK-v5.0.1_GH0.tar.gz) = c6b3c33ecc73104c906e0e1a1bfaa41a09af24bf53a4ec5e5c265d7e82bdf69f
+SIZE (InsightSoftwareConsortium-ITK-v5.0.1_GH0.tar.gz) = 20881765
