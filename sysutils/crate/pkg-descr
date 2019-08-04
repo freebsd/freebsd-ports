@@ -1,0 +1,17 @@
+crate is a FreeBSD containerizer utilizing FreeBSD jails.
+
+crate creates application containers based on the description provided by the
+user, and then runs containers as a monolithic processes, with all dependencies
+included in the container.
+
+Containers can be useful in these scenarios:
+* You can keep any version of your application, and it will always run later the
+  same way, regardless of what packages will be installed on your system.
+* You can run a web browser from the crate container, and every time it will run
+  in the clean environment not allowing any tracking.
+* You can run closed source applications, they will be isolated from the rest of
+  your system, and there will be no chance for them seeing your disks.
+
+crate is in its alpha stage. Things might not work as expected!
+
+WWW: https://github.com/yurivict/crate
