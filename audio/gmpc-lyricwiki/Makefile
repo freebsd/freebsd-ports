@@ -13,6 +13,8 @@ COMMENT=	Lyricswiki Provider plugin for gmpc
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libmpd.so:audio/libmpd
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:audio/gmpc
 RUN_DEPENDS=	gmpc:audio/gmpc

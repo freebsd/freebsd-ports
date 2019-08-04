@@ -12,6 +12,8 @@ COMMENT=	Program intended to help with organizing your music files
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ogg>0:audio/py-ogg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vorbis>0:audio/py-vorbis@${PY_FLAVOR} \
 		lame:audio/lame \

@@ -15,6 +15,8 @@ COMMENT=	Splits SHOUTcast stream into tracks
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libmad.so:audio/libmad \
 		libtre.so:textproc/libtre
 

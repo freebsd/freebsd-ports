@@ -13,6 +13,8 @@ COMMENT=	GTK+-based client for the Last.fm online radio
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libcurl.so:ftp/curl
 
