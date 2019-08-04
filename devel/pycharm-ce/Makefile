@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycharm-ce
-PORTVERSION=	2019.1.3
+PORTVERSION=	2019.2
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -33,12 +33,12 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${TAR} -czf - -C ${WRKSRC} . | ${TAR} xzf - -C ${STAGEDIR}${DATADIR}
 # Linux/Windows/OS X only so remove them
-	@${RM} ${STAGEDIR}${DATADIR}/bin/*fsnotifier*
+	@${RM} ${STAGEDIR}${DATADIR}/bin/*fsnotifier* ${STAGEDIR}${DATADIR}/bin/*.so
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by java/intellij-pty4j
 	@${RM} -r ${STAGEDIR}${DATADIR}/lib/pty4j-native
 # Remove bundled linux-only JRE
-	@${RM} -r ${STAGEDIR}${DATADIR}/jre64
+	@${RM} -r ${STAGEDIR}${DATADIR}/jbr
 	@${RM} -r ${STAGEDIR}${DATADIR}/helpers/pydev/pydevd_attach_to_process
 	@${RM} ${STAGEDIR}${DATADIR}/lib/pty4j-0.5.jar
 	${INSTALL_SCRIPT} ${WRKDIR}/pycharm ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
