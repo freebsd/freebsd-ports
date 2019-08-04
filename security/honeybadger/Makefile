@@ -8,6 +8,8 @@ MAINTAINER=	shawn.webb@hardenedbsd.org
 COMMENT=	Quantum Insert detector and 0-day catcher
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 USES=		go
 

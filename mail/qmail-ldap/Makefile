@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	-ldap
 COMMENT=	Secure, reliable, and fast MTA for UNIX systems with LDAP support
 
 BROKEN=		fails to package
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 RUN_DEPENDS=	${LOCALBASE}/bin/svscan:sysutils/daemontools \
 		${LOCALBASE}/bin/tcprules:sysutils/ucspi-tcp

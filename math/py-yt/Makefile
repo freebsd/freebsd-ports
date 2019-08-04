@@ -14,6 +14,9 @@ COMMENT=	Analysis and visualization toolkit for volumetric data
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+DEPRECATED=	Depends on expiring graphics/embree
+EXPIRATION_DATE=	2019-09-04
+
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyembree>0:graphics/py-pyembree@${PY_FLAVOR}
 LIB_DEPENDS=	libembree.so:graphics/embree \

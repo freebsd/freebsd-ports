@@ -16,6 +16,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/License.txt
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 BUILD_DEPENDS=	${LOCALBASE}/include/zenxml/xml.h:textproc/zenxml
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \

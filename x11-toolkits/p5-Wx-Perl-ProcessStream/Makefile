@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to access IO of external processes via events
 
+DEPRECATED=	Depends on expiring x11-toolkits/p5-Wx
+EXPIRATION_DATE=	2019-09-04
+
 BUILD_DEPENDS=	p5-Wx>=0.5000:x11-toolkits/p5-Wx
 RUN_DEPENDS=	p5-Wx>=0.5000:x11-toolkits/p5-Wx
 

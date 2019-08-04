@@ -12,6 +12,8 @@ COMMENT=	Formatter for D source code
 LICENSE=	BSL
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \

@@ -12,6 +12,8 @@ COMMENT=	Modern editor for Doom-engine based games and source ports
 LICENSE=	GPLv2
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libsfml-system.so:devel/sfml \

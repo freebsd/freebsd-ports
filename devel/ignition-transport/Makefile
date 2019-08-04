@@ -12,6 +12,8 @@ COMMENT=	Ignition transport classes and functions for robot applications
 LICENSE=	APACHE20
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 BUILD_DEPENDS=	ignition-cmake==2:devel/ignition-cmake \
 		ignition-tools>0:devel/ignition-tools \

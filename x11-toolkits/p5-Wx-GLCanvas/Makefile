@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Perl interface to wxWidgets' OpenGL canvas
 
+DEPRECATED=	Depends on expiring x11-toolkits/p5-Wx
+EXPIRATION_DATE=	2019-09-04
+
 BUILD_DEPENDS=  p5-OpenGL>=0.66:graphics/p5-OpenGL \
 		p5-Wx>=0.5000:x11-toolkits/p5-Wx
 RUN_DEPENDS=    p5-OpenGL>=0.66:graphics/p5-OpenGL \

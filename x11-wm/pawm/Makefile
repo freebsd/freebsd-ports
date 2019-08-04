@@ -14,6 +14,8 @@ LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/GPL
 
 BROKEN=		Does not start 'BUG [35339] [pawindow_init]'
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-09-04
 
 USE_XORG=	x11 xft xrandr xrender xpm
 USES=		cmake pkgconfig tar:bzip2

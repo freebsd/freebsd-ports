@@ -17,6 +17,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expiring x11-toolkits/p5-Wx
+EXPIRATION_DATE=	2019-09-04
+
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-Module-Build>=0.36:devel/p5-Module-Build
 RUN_DEPENDS=	p5-Algorithm-Diff>=1.19:devel/p5-Algorithm-Diff \
