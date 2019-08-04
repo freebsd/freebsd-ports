@@ -10,6 +10,8 @@ DISTNAME=	funnelweb_v320_source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful literate-programming macro pre-processor
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/fw
 WRKSRC=		${WRKDIR}/fw_src/source
 

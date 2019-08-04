@@ -11,6 +11,8 @@ DISTNAME=	FujabaToolSuite_Developer${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another UML CASE tool
 
+BROKEN=		unfetchable
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

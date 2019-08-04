@@ -13,6 +13,7 @@ COMMENT=	Create patchset information from CVS
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
 CONFLICTS=	cvsps-[0-9]*
 
 USES=		gmake

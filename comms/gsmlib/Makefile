@@ -16,6 +16,8 @@ COMMENT=	Library to access GSM mobile phones through GSM modems
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		gmake libtool
 USE_CXXSTD=	c++98
 USE_LDCONFIG=	yes

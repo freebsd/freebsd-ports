@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.daimi.au.dk/~mailund/dprog/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language for specifying dynamic programming algorithms
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libpopt.so:devel/popt
 
 GNU_CONFIGURE=	yes

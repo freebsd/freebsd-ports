@@ -12,6 +12,8 @@ COMMENT=	Scalable open source PostgreSQL-based database cluster
 
 LICENSE=	PostgreSQL
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	bash:shells/bash
 
 CONFLICTS=	postgresql[^${PORTVERSION:R:R}]?-client* \

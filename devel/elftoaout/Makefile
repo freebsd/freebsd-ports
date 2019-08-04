@@ -13,6 +13,8 @@ COMMENT=	ELF to a.out conversion tool by Jakub Jelinek and Pete Zaitcev
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/sparc-utils-1.9.orig/elftoaout-2.3
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 PLIST_FILES=	bin/elftoaout \
