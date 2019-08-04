@@ -11,4 +11,4 @@ including multi-parameter classes, extensible records, rank-2
 polymorphism, existentials, scoped type variables, and restricted
 type synonyms.
 
-WWW: http://www.haskell.org/hugs/
+WWW: https://www.haskell.org/hugs/

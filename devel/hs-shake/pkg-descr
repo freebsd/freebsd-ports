@@ -11,4 +11,4 @@ provides highly accurate dependency tracking, including seamless support
 for generated files, and dependencies on system information (e.g. compiler
 version).
 
-WWW: http://shakebuild.com/
+WWW: https://shakebuild.com/
