@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	phpstorm
-PORTVERSION=	2019.1.2
+PORTVERSION=	2019.2
 CATEGORIES=	devel java
-MASTER_SITES=	https://download.jetbrains.com/webide/ \
-		http://download.jetbrains.com/webide/
+MASTER_SITES=	https://download-cf.jetbrains.com/webide/
 PKGNAMEPREFIX=	jetbrains-
 DISTNAME=	PhpStorm-${PORTVERSION}
+DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	JetBrains PhpStorm IDE
@@ -30,25 +30,25 @@ SHEBANG_FILES=	bin/printenv.py bin/restart.py
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/PhpStorm-191.7141.52
+WRKSRC=		${WRKDIR}/PhpStorm-192.5728.108
 
 SUB_FILES=	phpstorm phpstorm.desktop pkg-message
 SUB_LIST=	DATADIR=${DATADIR}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	@${TAR} -czf - -C ${WRKSRC} . | ${TAR} xzf - -C ${STAGEDIR}${DATADIR}
 # Linux/Windows/OS X only so remove them
-	@${RM}  ${STAGEDIR}${DATADIR}/bin/fsnotifier \
-		${STAGEDIR}${DATADIR}/bin/fsnotifier-arm \
-		${STAGEDIR}${DATADIR}/bin/fsnotifier64 \
-		${STAGEDIR}${DATADIR}/bin/lib*.so
-	@${RM} ${STAGEDIR}${DATADIR}/plugins/performanceTesting/lib/lib*.so
+	@${RM} -r ${WRKSRC}/bin/fsnotifier \
+		${WRKSRC}/bin/fsnotifier-arm \
+		${WRKSRC}/bin/fsnotifier64
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by java/intellij-pty4j
-	@${RM} -r ${STAGEDIR}${DATADIR}/lib/pty4j-native
-# Remove bundled linux OpenJDK and DroidSerif fonts
-	@${RM} -r ${STAGEDIR}${DATADIR}/jre64
+	@${RM} -r ${WRKSRC}/lib/pty4j-native
+# Remove bundled linux JetBrains Runtime and OpenJDK
+	@${RM} -r ${WRKSRC}/jbr ${WRKSRC}/jre64
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
+		"! -name *\.so ! -name *\.dll ! -name *\.dylib ! -name *\.pdb ! -name *\.sh")
+	@(cd ${WRKSRC} && ${COPYTREE_BIN} . ${STAGEDIR}${DATADIR} "-name *\.sh")
 	${INSTALL_SCRIPT} ${WRKDIR}/phpstorm ${STAGEDIR}${PREFIX}/bin/phpstorm
 	${INSTALL_MAN} ${FILESDIR}/phpstorm.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/phpstorm.desktop ${STAGEDIR}${PREFIX}/share/applications/
@@ -56,5 +56,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/icon.png ${STAGEDIR}${DATADIR}/phpstorm.png
 # Use fsnotifier replacement provided by java/intellij-fsnotifier
 	${ECHO} "idea.filewatcher.executable.path=${PREFIX}/intellij/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
+# Fix slow render
+	${ECHO} "-Dsun.java2d.xrender=false" >> ${STAGEDIR}${DATADIR}/bin/phpstorm.vmoptions
+	${ECHO} "-Dsun.java2d.xrender=false" >> ${STAGEDIR}${DATADIR}/bin/phpstorm64.vmoptions
 
 .include <bsd.port.mk>
