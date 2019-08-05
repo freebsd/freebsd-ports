@@ -10,7 +10,9 @@ DISTNAME=	Feedjack-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Feed aggregator written in Python using the Django framework
 
+BROKEN=		unfetchable
 DEPRECATED=	Upstream gone
+EXPIRATION_DATE=	2019-09-05
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:textproc/py-feedparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django111>0:www/py-django111@${PY_FLAVOR}

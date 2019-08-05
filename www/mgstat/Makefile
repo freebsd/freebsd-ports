@@ -10,6 +10,8 @@ MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce graphs from mod_gzip log files
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libgd.so:graphics/gd
 
 GNU_CONFIGURE=	yes

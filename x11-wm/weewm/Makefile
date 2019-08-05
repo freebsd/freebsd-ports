@@ -11,6 +11,8 @@ MASTER_SITES=	http://weewm.flashtux.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and ultra light windowmanager with total keyboard control
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/weewm
 USE_XORG=	x11
 

@@ -16,6 +16,8 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code to efficiently read/write XML data with Elisp
 
+BROKEN=		unfetchable
+
 USES=		emacs
 
 NO_BUILD=	yes

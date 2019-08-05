@@ -12,6 +12,8 @@ COMMENT=	Yet another Motif file manager
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 USES=		imake motif
 USE_XORG=	xpm
 MAKE_JOBS_UNSAFE=yes

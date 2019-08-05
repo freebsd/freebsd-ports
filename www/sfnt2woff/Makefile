@@ -13,6 +13,8 @@ COMMENT=	Convert TTF/OTF fonts to WOFF web embeddable format and back
 LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	multi
 
+BROKEN=		unfetchable
+
 NO_WRKSUBDIR=	yes
 USES=		gmake zip
 

@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend for the Prelude IDS
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	cheetah-compile:devel/py-cheetah
 LIB_DEPENDS=	libprelude.so:security/libprelude \
 		libpreludedb.so:security/libpreludedb

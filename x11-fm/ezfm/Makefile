@@ -13,6 +13,8 @@ COMMENT=	EZWGL-based file manager for X Window System
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libEZ.so:graphics/EZWGL
 
 USES=		gmake jpeg tar:tgz

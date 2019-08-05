@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blast blows holes through windows
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.1.orig
 USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xt xrandr
 PLIST_FILES=	bin/blast man/man1/blast.1.gz

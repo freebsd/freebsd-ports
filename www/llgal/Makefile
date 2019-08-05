@@ -13,6 +13,8 @@ COMMENT=	Command-line online gallery generator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	p5-Image-Size>=0:graphics/p5-Image-Size \
 		p5-URI>=0:net/p5-URI \
 		p5-Locale-gettext>=0:devel/p5-Locale-gettext \

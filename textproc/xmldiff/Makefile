@@ -12,6 +12,8 @@ DISTFILES=	xmldiff.pl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display meaningful differences between XML files
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	xmlprpr:textproc/xmlprpr
 
 USES=		shebangfix perl5

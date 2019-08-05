@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple analog clock program for the Window Maker dock
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig/src
 
 USE_XORG=	x11 xau xdmcp xext xpm

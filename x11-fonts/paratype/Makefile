@@ -13,6 +13,8 @@ COMMENT=	ParaType font collection for the languages of Russia
 
 LICENSE=	OFL11
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USES=		fonts zip

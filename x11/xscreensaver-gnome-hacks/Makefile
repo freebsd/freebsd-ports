@@ -7,6 +7,8 @@ PORTREVISION=	3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Screensaver modules for use with xscreensaver and gnome-screensaver
 
+BROKEN=		unfetchable
+
 MASTERDIR=	${.CURDIR}/../xscreensaver-gnome
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist

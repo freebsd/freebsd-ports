@@ -11,6 +11,8 @@ DISTNAME=	tenr.de-styles-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tenner themes pack for fluxbox
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	fluxbox:x11-wm/fluxbox
 
 INSTALL_DIR=	${PREFIX}/share/fluxbox/styles/

@@ -11,6 +11,8 @@ DISTNAME=	34132-Gray
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gray theme for GTK+ 2.0
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	icons-tango>0:x11-themes/icons-tango
 
 NO_BUILD=	yes

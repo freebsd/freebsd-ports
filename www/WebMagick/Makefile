@@ -15,6 +15,8 @@ COMMENT=	Image Web Generator - recursively build HTMLs, imagemaps, thumbnails
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick6
 RUN_DEPENDS=	p5-Sort-Naturally>=0:textproc/p5-Sort-Naturally
 

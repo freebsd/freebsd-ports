@@ -13,6 +13,8 @@ COMMENT=	HTTP proxy server that eliminates ads
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+
 USES=		dos2unix tar:tgz
 ALL_TARGET=	# yes, an empty target.
 JDIR=		${PREFIX}/etc/junkbuster

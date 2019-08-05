@@ -11,6 +11,8 @@ DISTNAME=	14484-Grounation-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Moshi's Grounation cursors
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 USES=	tar:bzip2
 

@@ -13,6 +13,8 @@ COMMENT=	Convert between XML and a line-oriented format similar to XPath
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 USE_GNOME=	libxml2

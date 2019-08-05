@@ -12,6 +12,8 @@ COMMENT=	Fuzzy clock WindowMaker dockapp
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 USES=		tar:tgz
 USE_XORG=	xpm
 WRKSRC_SUBDIR=	src

@@ -10,6 +10,8 @@ MASTER_SITES=	http://swish-e.org/distribution/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple web indexing for humans - enhanced
 
+BROKEN=		unfetchable
+
 USES=		gmake libtool perl5 shebangfix
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2

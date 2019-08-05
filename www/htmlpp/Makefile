@@ -13,6 +13,8 @@ COMMENT=	Perl script to allow easy creation of HTML from template files
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+
 USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	htmlpp
 NO_WRKSUBDIR=	yes

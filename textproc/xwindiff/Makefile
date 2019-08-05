@@ -8,6 +8,8 @@ MASTER_SITES=	http://www.lurklurk.org/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical Diff for X
 
+BROKEN=		unfetchable
+
 USE_XORG=	x11 xt ice xaw
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=${STAGEDIR}${PREFIX}/bin

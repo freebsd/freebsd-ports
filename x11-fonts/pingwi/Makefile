@@ -13,6 +13,8 @@ DISTNAME=	fonts_test
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PingWi Typography fonts
 
+BROKEN=		unfetchable
+
 USES=		fonts zip
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

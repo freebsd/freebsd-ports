@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rotates a file so that lines become columns and vice versa
 
+BROKEN=		unfetchable
+
 ALL_TARGET=	${PORTNAME}
 CFLAGS+=	-Wno-return-type
 
