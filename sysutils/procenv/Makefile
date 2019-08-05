@@ -11,6 +11,8 @@ COMMENT=	Utility to show process environment
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		this file includes <sys/capability.h> which is deprecated
+
 BUILD_DEPENDS=	xmlwf:textproc/expat2
 
 USES=		autoreconf gmake perl5
