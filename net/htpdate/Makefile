@@ -7,7 +7,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.vervest.org/htp/archive/c/ \
 		http://twekkel.home.xs4all.nl/htp/
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time synchronization over http utility
 
 LICENSE=	GPLv2+

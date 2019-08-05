@@ -7,7 +7,7 @@ CATEGORIES=	games java
 MASTER_SITES=	SF/t-blackjack/
 DISTNAME=	t-blackjack-beta
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Blackjack game in Java
 
 USES=		zip

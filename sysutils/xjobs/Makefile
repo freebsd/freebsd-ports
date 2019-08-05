@@ -6,7 +6,7 @@ PORTVERSION=	20170829
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.maier-komor.de/xjobs/
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility reads job descriptions line by line and executes in parallel
 
 LICENSE=	GPLv2

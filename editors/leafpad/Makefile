@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ based simple text editor
 
 LICENSE=	GPLv2

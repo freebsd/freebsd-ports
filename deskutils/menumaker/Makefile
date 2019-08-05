@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Menu generator for X Window Managers and desktop environments
 
 LICENSE=	BSD2CLAUSE

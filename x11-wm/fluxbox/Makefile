@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast window manager based on BlackBox
 
 LICENSE=	MIT

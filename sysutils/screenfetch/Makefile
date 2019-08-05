@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/jgh/sysutils/${PORTNAME:tl}/
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bash Screenshot Information Tool
 
 LICENSE=	GPLv3+

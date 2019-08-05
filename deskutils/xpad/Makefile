@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual note-pad system for your X11 desktop
 
 LICENSE=	GPLv3

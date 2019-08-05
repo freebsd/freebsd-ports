@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	SF
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to download or view your favorite online comic strips daily
 
 LICENSE=	GPLv2
