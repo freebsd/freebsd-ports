@@ -8,7 +8,7 @@ MASTER_SITES=	https://bitbucket.org/blacktrash/${PORTNAME}/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTVERSION}
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python utilities for console mail clients (eg. mutt)
 
 CONFLICTS=	zh-wenju-[0-9]* talkfilters-[0-9]* reed-[0-9]*

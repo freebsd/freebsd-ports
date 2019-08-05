@@ -8,7 +8,7 @@ CATEGORIES?=	x11
 MASTER_SITES=	http://www.sillycycle.com/xlock/ \
 		LOCAL/jgh/x11/${PORTNAME}/
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more
 
 LICENSE=	BSD2CLAUSE

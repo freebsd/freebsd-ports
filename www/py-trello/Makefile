@@ -8,7 +8,7 @@ CATEGORIES=	www devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library for interacting with the Trello API
 
 LICENSE=	FOG

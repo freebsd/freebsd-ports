@@ -8,7 +8,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpad.net/xpad/stable/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual note-pad system for your X11 desktop
 
 LICENSE=	GPLv3

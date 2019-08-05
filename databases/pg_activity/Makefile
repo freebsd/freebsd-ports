@@ -7,7 +7,7 @@ PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases python
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Htop like application for PostgreSQL server activity monitoring
 
 LICENSE=	BSD3CLAUSE

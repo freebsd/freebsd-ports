@@ -6,7 +6,7 @@ PORTVERSION=	0.8.0
 PORTREVISION=	1
 CATEGORIES=	sysutils java
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight console application to monitor running jvms
 
 LICENSE=	GPLv2
