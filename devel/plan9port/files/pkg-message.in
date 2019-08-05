@@ -1,3 +1,6 @@
+[
+{ type: install,
+  message: <<EOM
 The plan9port tools consist of many small binaries intimately tied
 together, some of them conflicting with %%OPSYS%% base utilities.  To
 avoid runtime conflicts, you may wish to append
@@ -6,3 +9,6 @@ avoid runtime conflicts, you may wish to append
 Alternatively, plan9port tools can be run with %%PREFIX%%/bin/9
 
     9 man 1 intro
+EOM
+}
+]

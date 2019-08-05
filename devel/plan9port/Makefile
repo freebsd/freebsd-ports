@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plan9port
-PORTVERSION=	20180205
+PORTVERSION=	20190619
 CATEGORIES=	devel plan9
 DIST_SUBDIR=	plan9port
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 USES=		localbase:ldflags perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	9fans
-GH_TAGNAME=	4798a8a5560552480efde5fe8b1f7963a25a96d3
+GH_TAGNAME=	e995a0c101863688d5f14649ae3de45a7c43789c
 USE_PERL5=	build
 USE_XORG=	x11 xt xext
 
@@ -59,13 +59,11 @@ post-patch:
 		${WRKSRC}/src/cmd/upas/ml/mlmgr.c \
 		${WRKSRC}/src/cmd/tcs/font/mkfile
 	@${REINPLACE_CMD} -e 's|ulong|u64int|' ${WRKSRC}/src/libmach/FreeBSD.c
-# Fix 9term: no ptys
-	@${SED} -e 's|util\.h|lib&|' ${WRKSRC}/src/cmd/9term/OpenBSD.c \
-		> ${WRKSRC}/src/cmd/9term/${OPSYS}.c
 
 do-configure:
 	@${ECHO_CMD} 'CFLAGS="${CFLAGS}"' > ${WRKSRC}/LOCAL.config
 	@${ECHO_CMD} 'LDFLAGS="${LDFLAGS}"' >> ${WRKSRC}/LOCAL.config
+	@${ECHO_CMD} 'FONTSRV=fontsrv' >> ${WRKSRC}/LOCAL.config
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} CC9=${CC} ./INSTALL -b

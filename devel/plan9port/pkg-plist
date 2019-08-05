@@ -192,6 +192,7 @@ plan9/bin/nroff
 plan9/bin/osxvers
 plan9/bin/p
 plan9/bin/page
+plan9/bin/paint
 plan9/bin/passwd
 plan9/bin/pbd
 plan9/bin/pemdecode
@@ -4287,6 +4288,7 @@ plan9/man/man1/netfiles.1
 plan9/man/man1/news.1
 plan9/man/man1/p.1
 plan9/man/man1/page.1
+plan9/man/man1/paint.1
 plan9/man/man1/passwd.1
 plan9/man/man1/pem.1
 plan9/man/man1/pic.1
@@ -5380,6 +5382,7 @@ plan9/src/cmd/dd.c
 plan9/src/cmd/delatex.lx
 plan9/src/cmd/deroff.c
 plan9/src/cmd/devdraw/bigarrow.h
+plan9/src/cmd/devdraw/cocoa-screen-metal.m
 plan9/src/cmd/devdraw/cocoa-screen.h
 plan9/src/cmd/devdraw/cocoa-screen.m
 plan9/src/cmd/devdraw/cocoa-srv.c
@@ -5400,9 +5403,6 @@ plan9/src/cmd/devdraw/nowsys.c
 plan9/src/cmd/devdraw/o.devdraw
 plan9/src/cmd/devdraw/osx-draw.c
 plan9/src/cmd/devdraw/osx-keycodes.h
-plan9/src/cmd/devdraw/osx-screen-carbon.m
-plan9/src/cmd/devdraw/osx-screen.h
-plan9/src/cmd/devdraw/osx-srv.c
 plan9/src/cmd/devdraw/snarf.c
 plan9/src/cmd/devdraw/winsize.c
 plan9/src/cmd/devdraw/x11-alloc.c
@@ -5927,6 +5927,9 @@ plan9/src/cmd/page/ps.c
 plan9/src/cmd/page/rotate.c
 plan9/src/cmd/page/util.c
 plan9/src/cmd/page/view.c
+plan9/src/cmd/paint/eenter.c
+plan9/src/cmd/paint/mkfile
+plan9/src/cmd/paint/paint.c
 plan9/src/cmd/pbd.c
 plan9/src/cmd/pic/arcgen.c
 plan9/src/cmd/pic/blockgen.c
@@ -6119,7 +6122,6 @@ plan9/src/cmd/rc/x.tab.h
 plan9/src/cmd/read.c
 plan9/src/cmd/readcons.c
 plan9/src/cmd/resample.c
-plan9/src/cmd/rio/Imakefile
 plan9/src/cmd/rio/README
 plan9/src/cmd/rio/client.c
 plan9/src/cmd/rio/color.c
@@ -7036,8 +7038,9 @@ plan9/src/libdraw/chan.c
 plan9/src/libdraw/cloadimage.c
 plan9/src/libdraw/computil.c
 plan9/src/libdraw/creadimage.c
+plan9/src/libdraw/cursor.c
 plan9/src/libdraw/debug.c
-plan9/src/libdraw/defont.c
+plan9/src/libdraw/defont.h
 plan9/src/libdraw/draw.c
 plan9/src/libdraw/drawclient.c
 plan9/src/libdraw/drawfcall.c
@@ -7048,7 +7051,6 @@ plan9/src/libdraw/emenuhit.c
 plan9/src/libdraw/event.c
 plan9/src/libdraw/font.c
 plan9/src/libdraw/freesubfont.c
-plan9/src/libdraw/getdefont.c
 plan9/src/libdraw/getrect.c
 plan9/src/libdraw/getsubfont.c
 plan9/src/libdraw/icossin.c
@@ -7252,7 +7254,6 @@ plan9/src/libmemdraw/cload-stub.c
 plan9/src/libmemdraw/cload.c
 plan9/src/libmemdraw/cmap.c
 plan9/src/libmemdraw/cread.c
-plan9/src/libmemdraw/defont.c
 plan9/src/libmemdraw/draw-stub.c
 plan9/src/libmemdraw/draw.c
 plan9/src/libmemdraw/drawtest.c
