@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-GO_PKGNAME=	github.com/motemen/ghq
 USE_GITHUB=	yes
 GH_ACCOUNT=	motemen
 GH_TUPLE=	Songmu:gitconfig:v0.0.2:songmu_gitconfig/vendor/github.com/Songmu/gitconfig \
