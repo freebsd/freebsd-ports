@@ -14,6 +14,8 @@ COMMENT=	Small, fast and secure yet powerful IMAP webmail
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 

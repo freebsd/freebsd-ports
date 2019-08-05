@@ -10,6 +10,8 @@ MASTER_SITES=	http://odur.let.rug.nl/~kleiweg/abclock/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clock for X that displays hours and minutes in an analog fashion
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/abclock bin/abc_img
 
 MAKE_ARGS=	CC="${CC}" OPT="${CFLAGS}"

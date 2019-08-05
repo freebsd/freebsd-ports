@@ -14,6 +14,8 @@ COMMENT=	Library for emitting XML from Ada programs
 LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi
 
+BROKEN=		unfetchable
+
 USES=		ada dos2unix tar:tgz
 WRKSRC=		${WRKDIR}/xml_ez_out
 BUILD_WRKSRC=	${WRKSRC}/mckae

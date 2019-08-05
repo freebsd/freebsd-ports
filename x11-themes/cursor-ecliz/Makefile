@@ -12,6 +12,8 @@ DISTNAME=	76605-Ecliz_Port
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ecliz X cursor theme
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/Ecliz

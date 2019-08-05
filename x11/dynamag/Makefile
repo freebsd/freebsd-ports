@@ -11,6 +11,8 @@ DISTNAME=	unwindows
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Magnifying utility which updates continuously
 
+BROKEN=		unfetchable
+
 ALL_TARGET=	dynamag
 PLIST_FILES=	bin/dynamag
 USES=		imake tar:Z

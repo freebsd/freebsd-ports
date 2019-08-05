@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME:C|(.*)-(.*)|\2-\1|}${PKGNAMESUFFIX}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of truetype Indic fonts
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S|_|-|}
 
 USES=		fonts

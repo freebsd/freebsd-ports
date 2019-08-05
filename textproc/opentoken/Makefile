@@ -13,6 +13,8 @@ COMMENT=	Lexical analyser and parser for the Ada language
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	gprbuild>=20130416:devel/gprbuild
 
 USES=		ada tar:bzip2

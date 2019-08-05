@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.dixongroup.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple weblog
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
 		p5-XML-RSS>=0:textproc/p5-XML-RSS \

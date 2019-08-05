@@ -11,6 +11,8 @@ COMMENT=	JavaScript plotting library for jQuery
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		unfetchable
+
 USES=		zip
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

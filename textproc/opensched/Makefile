@@ -12,6 +12,8 @@ COMMENT=	Project scheduler
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 USES=		gmake
 
 ALL_TARGET=	build

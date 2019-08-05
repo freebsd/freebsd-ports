@@ -10,6 +10,8 @@ MASTER_SITES=	http://download.gna.org/bins/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate HTML photo albums with XML support
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	\
 	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 	convert:graphics/ImageMagick6 \

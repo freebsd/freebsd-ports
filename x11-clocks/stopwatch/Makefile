@@ -13,6 +13,8 @@ COMMENT=	Stopwatch enables hand timing much like a physical stopwatch
 
 LICENSE=	PD
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.4
 USES=		tk:run
 NO_BUILD=	yes

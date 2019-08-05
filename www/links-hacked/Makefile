@@ -12,6 +12,8 @@ COMMENT=	Hacked version of a Links WWW browser
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 USES=		autoreconf ssl
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes

@@ -10,6 +10,8 @@ MASTER_SITES=	http://macslow.thepimp.net/projects/cairo-clock/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MacSlow's Cairo-Clock
 
+BROKEN=		unfetchable
+
 USE_GNOME=	gtk20 intlhack libglade2 librsvg2
 USES=		pathfix iconv gmake localbase:ldflags pkgconfig gettext
 GNU_CONFIGURE=	yes

@@ -14,6 +14,8 @@ DIST_SUBDIR=	repacked
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs major mode to create HTML files from Emacs buffers (in colour!)
 
+BROKEN=		unfetchable
+
 USES=		emacs
 
 NO_WRKSUBDIR=	yes

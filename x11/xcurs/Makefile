@@ -11,6 +11,8 @@ MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor for new X.Org style full-color cursors properties
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
 
 USES=		python:2.7

@@ -9,6 +9,8 @@ MASTER_SITES=	http://flate.dead-inside.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Template library used to deal with html code in CGI applications
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	lib/${PORTNAME}.a bin/checktpl
 
 MAKE_ARGS+=	CC="${CC}"

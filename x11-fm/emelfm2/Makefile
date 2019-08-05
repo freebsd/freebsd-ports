@@ -12,6 +12,8 @@ COMMENT=	Gtk2+ port of emelfm, a fast graphical filemanager
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		gmake pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install

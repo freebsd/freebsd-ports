@@ -12,6 +12,8 @@ DISTNAME=	27913-PolarCursorThemes
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Polar is a smooth and simple cursor set
 
+BROKEN=		unfetchable
+
 USES=	tar:bzip2
 
 NO_BUILD=	yes

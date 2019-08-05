@@ -16,6 +16,8 @@ COMMENT=	PHP script encryption tool
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		unfetchable
+
 CRYPTKEY?=	11152, 368, 192, 1281, 62
 
 USES=		php:phpize libtool

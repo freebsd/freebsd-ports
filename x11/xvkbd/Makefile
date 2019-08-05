@@ -11,6 +11,8 @@ COMMENT=	Virtual keyboard for X applications
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 

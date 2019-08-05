@@ -14,6 +14,8 @@ EXTRACT_ONLY=	clit${MAJ_VER}${MIN_VER}src.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Lit to HTML and Open eBooks converter
 
+BROKEN=		unfetchable
+
 PATCH_WRKSRC=	${WRKSRC}/${PORTNAME}${MAJ_VER}${MIN_VER}
 NO_WRKSUBDIR=	yes
 

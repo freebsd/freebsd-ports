@@ -12,6 +12,8 @@ COMMENT=	Agile plugin for Redmine
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	rubygem-holidays>=1.0.3:devel/rubygem-holidays \
 		rubygem-icalendar>=0.4.2:devel/rubygem-icalendar \
 		rubygem-nokogiri>=0:textproc/rubygem-nokogiri \
