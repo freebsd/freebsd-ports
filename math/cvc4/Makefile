@@ -86,6 +86,11 @@ post-extract:
 	@${ECHO_CMD} "JAVA_VERSION=1.7+ exec \"${LOCALBASE}/bin/java\" -classpath \"${WRKDIR}/antlr3.jar\" org.antlr.Tool \"\$$@\"" >> ${WRKDIR}/antlr3
 	@${CHMOD} +x ${WRKDIR}/antlr3
 
+post-patch:
+	@${REINPLACE_CMD} -e "s|sed -i 's|sed -i.bak 's|g" \
+	${WRKSRC}/src/fix-install-headers.sh
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
+
 # make a relative symlink instead of absolute to build dir
 post-install-JAVA-on:
 	@${LN} -sf CVC4-1.7.0.jar ${STAGEDIR}${PREFIX}/share/java/cvc4/CVC4.jar
