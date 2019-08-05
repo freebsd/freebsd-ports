@@ -12,6 +12,8 @@ COMMENT=	Simple traffic analysis and data reporting collection server for LFAP
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 

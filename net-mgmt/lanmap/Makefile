@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.parseerror.com/lanmap/rev/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lanmap sits quietly on a network and builds a picture of what it sees
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	twopi:graphics/graphviz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -9,6 +9,8 @@ DISTNAME=	stardict-en-ru-bars-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	New Comprehensive English-Russian dictionary
 
+BROKEN=		unfetchable
+
 USES=		tar:bzip2
 
 .include "${.CURDIR}/../stardict-mueller7/files/Makefile.common"

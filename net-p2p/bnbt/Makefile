@@ -12,6 +12,8 @@ SNAPSHOT=	20060727
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ BitTorrent Tracker
 
+BROKEN=		unfetchable
+
 OPTIONS_DEFINE=	MYSQL DOCS
 
 USES=		dos2unix gmake tar:bzip2

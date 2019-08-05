@@ -12,6 +12,8 @@ DISTNAME=	wmnet-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice network monitor for WindowMaker
 
+BROKEN=		unfetchable
+
 USES=		imake
 USE_XORG=	x11 xext
 

@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.c.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple command-line pseudo terminal manager
 
+BROKEN=		unfetchable
+
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/cotty
 EXTRACT_CMD=	${GZCAT}

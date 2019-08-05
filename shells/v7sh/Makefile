@@ -20,6 +20,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the UNIX 7th Edition shell
 
+BROKEN=		unfetchable
 BROKEN_aarch64=	Fails to link: missing sbrk
 
 USES=		uidfix

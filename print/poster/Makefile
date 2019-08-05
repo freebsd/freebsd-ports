@@ -13,6 +13,8 @@ COMMENT=	Resize a postscript image to print on larger media and/or multiple shee
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		unfetchable
+
 ALL_TARGET=	poster
 MAKEFILE=	/dev/null
 MAKE_ENV=	LDLIBS="-lm"

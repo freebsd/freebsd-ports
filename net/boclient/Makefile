@@ -10,6 +10,8 @@ DISTNAME=	bo121unix
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client program for the Back Orifice Windows program
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/bounix
 WRKSRC=		${WRKDIR}/bo
 GNU_CONFIGURE=	yes

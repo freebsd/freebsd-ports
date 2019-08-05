@@ -13,6 +13,8 @@ COMMENT=	Library for communicating with network devices by MikroTik
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 GNU_CONFIGURE=	yes

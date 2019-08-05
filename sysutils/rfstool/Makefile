@@ -10,6 +10,8 @@ DISTNAME=	rfstool-0.14-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read from a Reiser file system
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/rfstool
 USES=		dos2unix zip
 USE_CXXSTD=	c++98

@@ -12,6 +12,8 @@ COMMENT=	RADIUS-compliant remote authentication and accounting server
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+
 CONFLICTS?=	freeradius-0.* gnu-radius-1.* openradius-0.*
 
 USES=		shebangfix

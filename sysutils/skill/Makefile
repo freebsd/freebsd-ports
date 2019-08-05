@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.flux.utah.edu/pub/skill/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SuperKILL, kill, or renice processes by pid, name, tty, or uid
 
+BROKEN=		unfetchable
+
 USES=		tar:tgz
 
 .include <bsd.port.mk>

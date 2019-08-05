@@ -12,6 +12,8 @@ COMMENT=	Utility that extracts a summary of useful data from logs
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL="${PERL}"

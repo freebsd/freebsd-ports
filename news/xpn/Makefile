@@ -12,6 +12,8 @@ COMMENT=	X Python Newsreader
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>=2.24.0:x11-toolkits/py-gtk2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7.9:databases/py-sqlite3@${PY_FLAVOR}
 

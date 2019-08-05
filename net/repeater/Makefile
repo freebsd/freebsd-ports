@@ -12,6 +12,8 @@ COMMENT=	UltraVNC repeater
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+
 USES=		zip
 USE_RC_SUBR=	${PORTNAME}
 WRKSRC=		${WRKDIR}/Ver${PORTVERSION:C/\.//}

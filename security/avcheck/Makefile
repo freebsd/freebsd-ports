@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.corpit.ru/ftp/avcheck/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple antivirus solution for a mail system
 
+BROKEN=		unfetchable
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	man/man1/avcheck.1.gz sbin/avcheck sbin/uchroot

@@ -12,6 +12,8 @@ COMMENT=	Recover files and discs with damaged sectors
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	bin/mergebad bin/recoverdm man/man1/${PORTNAME}.1.gz
 
 post-install:

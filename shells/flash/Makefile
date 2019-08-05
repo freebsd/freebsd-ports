@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.sourcefiles.org/Shells/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses-based restriction shell
 
+BROKEN=		unfetchable
+
 USES=		gmake ncurses
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-rdynamic

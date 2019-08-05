@@ -13,6 +13,8 @@ COMMENT=	ClamAV anti-virus SMTP Filter
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_RC_SUBR=	clamsmtpd

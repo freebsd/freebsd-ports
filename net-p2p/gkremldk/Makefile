@@ -13,6 +13,8 @@ COMMENT=	Shows current mldonkey donwload/upload rates and allows setting them
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:sysutils/gkrellm2
 

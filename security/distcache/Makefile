@@ -13,6 +13,8 @@ COMMENT=	Distributed OpenSSL session caching tools
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		unfetchable
+
 USES=		libtool ssl tar:bzip2
 USE_RC_SUBR=	dc_server
 USE_LDCONFIG=	yes

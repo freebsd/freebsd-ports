@@ -12,6 +12,7 @@ COMMENT=	GNU bash shell extended with visual two-panel file browser
 
 MAKE_JOBS_UNSAFE=	yes
 
+BROKEN=		unfetchable
 BROKEN_aarch64=		Fails to link: missing sbrk
 
 USES=		tar:tgz

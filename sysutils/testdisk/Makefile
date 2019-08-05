@@ -11,6 +11,8 @@ COMMENT=	Tool to check and undelete partitions
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		jpeg localbase:ldflags ncurses tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-qt --without-ewf

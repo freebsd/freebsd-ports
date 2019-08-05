@@ -21,6 +21,8 @@ DISTFILES=	devils-dict-pre.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dictd words database
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:net/dictd
 
 NO_BUILD=	yes

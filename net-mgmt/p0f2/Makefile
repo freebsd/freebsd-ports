@@ -11,6 +11,8 @@ DISTNAME=	p0f-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passive OS fingerprinting tool
 
+BROKEN=		unfetchable
+
 CONFLICTS=	p0f-3.*
 
 USES=		gmake tar:tgz

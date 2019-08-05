@@ -11,6 +11,8 @@ DISTNAME=	NewsCache-${PORTVERSION:S/.r./rc/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NewsCache is a free cache server for USENET News
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libsocket++.so:net/libsocket++
 
 USES=		autoreconf

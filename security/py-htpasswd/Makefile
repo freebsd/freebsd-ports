@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for htpasswd
 
+BROKEN=		unfetchable
+
 USES=		python shebangfix tar:xz
 
 PLIST_FILES=	bin/${PORTNAME}.py

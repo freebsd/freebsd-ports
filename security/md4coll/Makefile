@@ -13,6 +13,8 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast MD4 collision generator
 
+BROKEN=		unfetchable
+
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/${PORTNAME}
 

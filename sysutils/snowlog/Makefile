@@ -13,6 +13,8 @@ COMMENT=	Webserver access log browser/analyzer
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		ncurses

@@ -12,6 +12,8 @@ COMMENT=	Generate a pkg-plist for a port
 
 LICENSE=	MIT
 
+BROKEN=		unfetchable
+
 USES=		python:run shebangfix
 SHEBANG_FILES=	pkg-plist
 NO_BUILD=	yes

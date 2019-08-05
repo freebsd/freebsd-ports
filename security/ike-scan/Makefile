@@ -12,6 +12,8 @@ COMMENT=	VPN scanner and identifier
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 USES=		ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share --with-openssl=${LOCALBASE}

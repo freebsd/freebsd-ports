@@ -11,6 +11,8 @@ MASTER_SITES=	http://pl.ekg2.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-mode Gadu-Gadu, Jabber, and IRC client
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libgadu.so:polish/libgadu \
 		libgnutls.so:security/gnutls \
 		libexpat.so:textproc/expat2

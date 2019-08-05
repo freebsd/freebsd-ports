@@ -18,6 +18,8 @@ COMMENT=	Data Test Program - disk/tape error diagnostic tool
 
 LICENSE=	ISCL
 
+BROKEN=		unfetchable
+
 OPTIONS_DEFINE=	DOCS
 
 USES=		shebangfix

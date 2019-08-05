@@ -13,6 +13,8 @@ COMMENT=	HTTP authentication brute forcer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 NO_CCACHE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

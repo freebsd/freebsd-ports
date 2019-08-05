@@ -11,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to patch modules and kernel
 
+BROKEN=		unfetchable
+
 PLIST_FILES=	man/man8/${PORTNAME}.8.gz sbin/kldpatch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

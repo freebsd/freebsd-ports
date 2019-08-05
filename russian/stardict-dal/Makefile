@@ -9,6 +9,8 @@ DISTNAME=	${PORTNAME}-ru-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dal's Explanatory Dictionary
 
+BROKEN=		unfetchable
+
 USES=		tar:bzip2
 
 .include "${.CURDIR}/../stardict-mueller7/files/Makefile.common"

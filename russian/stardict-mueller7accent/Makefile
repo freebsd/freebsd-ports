@@ -9,6 +9,8 @@ DISTNAME=	stardict-Mueller7accentGPL-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mueller English-Russian dictionary with accents
 
+BROKEN=		unfetchable
+
 USES=		tar:bzip2
 
 .include "${.CURDIR}/../stardict-mueller7/files/Makefile.common"

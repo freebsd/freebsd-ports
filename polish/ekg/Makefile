@@ -14,6 +14,8 @@ COMMENT=	Text-mode Gadu-Gadu client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/src/COPYING
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libgadu.so:polish/libgadu
 
 USES=		gmake localbase ncurses pathfix pkgconfig
