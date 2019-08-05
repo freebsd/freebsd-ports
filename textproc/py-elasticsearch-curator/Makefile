@@ -12,6 +12,8 @@ COMMENT=	Python index manager for Elasticsearch
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to configure
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.7.24:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=2018.10.15:security/py-certifi@${PY_FLAVOR} \
