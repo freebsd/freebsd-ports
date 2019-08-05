@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla2atom
-PORTVERSION=	g20190710
+PORTVERSION=	g20190711
 CATEGORIES=	www
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -13,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	t6
-GH_TAGNAME=	56126912bf314a80744827758d582e5e60e7178c
-GH_TUPLE=	golang:tools:7b25e351ac0e:golang_tools/vendor/golang.org/x/tools
+GH_TAGNAME=	02fec79c229d67abfdde4b310b05f41c079ce5ec
+GH_TUPLE=	golang:sys:d0b11bdaac8a:golang_sys/vendor/golang.org/x/sys \
+		golang:tools:7b25e351ac0e:golang_tools/vendor/golang.org/x/tools
 
 GO_TARGET=	./cmd/bugzilla2atom
 
