@@ -1,4 +1,5 @@
 bin/bear
 lib/bear/libear.so
 man/man1/bear.1.gz
+share/bash-completion/completions/bear
 %%PORTDOCS%%%%DOCSDIR%%/README.md
