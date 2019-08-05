@@ -5,7 +5,7 @@ PORTNAME=	zeronet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.5-25
 DISTVERSIONSUFFIX=	-gabb566e3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -61,6 +61,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}/var/log/zeronet
 	@${LN} -s /var/db/zeronet ${STAGEDIR}${DATADIR}/data
 	@${LN} -s /var/log/zeronet ${STAGEDIR}${DATADIR}/log
+	@${LN} -s /var/db/zeronet/zeronet.conf ${STAGEDIR}${DATADIR}/zeronet.conf # ZeroNet writes this file when it is used w/out the 'tor' option
 	${INSTALL_SCRIPT} ${WRKDIR}/zeronet-cmd ${STAGEDIR}${PREFIX}/bin/zeronet
 	${INSTALL_SCRIPT} ${WRKDIR}/zeronet-service ${STAGEDIR}${PREFIX}/etc/rc.d/zeronet
 
