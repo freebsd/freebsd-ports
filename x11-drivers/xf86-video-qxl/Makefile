@@ -5,7 +5,7 @@ DISTVERSION=	0.1.5
 PORTREVISION=	3
 CATEGORIES=	x11-drivers
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org X server -- QXL display driver
 
 LICENSE=	MIT
