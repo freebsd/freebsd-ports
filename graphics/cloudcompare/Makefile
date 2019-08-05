@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 
 BROKEN_aarch64=		fails to compile: mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 
-USES=		cmake localbase:ldflags qt:5
+USES=		cmake compiler:c++11-lang localbase:ldflags qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	CloudCompare
 GH_PROJECT=	${GH_ACCOUNT}
@@ -48,14 +48,15 @@ PDAL_LIB_DEPENDS=	libpdal_base.so:math/pdal
 SHAPELIB_CMAKE_BOOL=	OPTION_USE_SHAPE_LIB
 SHAPELIB_LIB_DEPENDS=	libshp.so:devel/shapelib
 
-PLUGINS_USES=		eigen:3 jpeg python:2.7
+PLUGINS_USES=		eigen:3 gl jpeg python:2.7
 PLUGINS_CMAKE_BOOL=	INSTALL_QANIMATION_PLUGIN INSTALL_QBLUR_PLUGIN INSTALL_QBROOM_PLUGIN INSTALL_QCOMPASS_PLUGIN \
 			INSTALL_QCSF_PLUGIN INSTALL_QCSV_MATRIX_IO_PLUGIN INSTALL_QDUMMY_PLUGIN INSTALL_QEDL_PLUGIN INSTALL_QFACETS_PLUGIN \
 			INSTALL_QHPR_PLUGIN INSTALL_QM3C2_PLUGIN \
 			INSTALL_QPCV_PLUGIN INSTALL_QPHOTOSCAN_IO_PLUGIN INSTALL_QRANSAC_SD_PLUGIN \
 			INSTALL_QSRA_PLUGIN INSTALL_QSSAO_PLUGIN # plugins requiring rare external libs are left out, TODO maybe add some of them?
 PLUGINS_CMAKE_ON=	-DEIGEN_ROOT_DIR:BOOL=${LOCALBASE}/include/eigen3
-PLUGINS_CXXFLAGS=	-Wno-narrowing
+PLUGINS_CXXFLAGS=	${PLUGINS_CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+PLUGINS_CXXFLAGS_clang=	-Wno-narrowing
 PLUGINS_CXXFLAGS+=	-DEIGEN_DONT_PARALLELIZE # OpenMP is broken in cmake: see bug#223678
 PLUGINS_USE=		XORG=ice,sm,x11,xext,xt GL=gl,glu
 PLUGINS_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
@@ -66,6 +67,8 @@ PLUGINS_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libtiff.so:graphics/tiff \
 			libvtkDomainsChemistry-6.2.so:math/vtk6
 PLUGINS_IMPLIES=	SHAPELIB
+
+CXXFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS -mvsx
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},1' ${WRKSRC}/snap/gui/ccViewer.desktop ${WRKSRC}/snap/gui/cloudcompare.desktop
