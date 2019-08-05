@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2
-PORTVERSION=	0.208000
+PORTVERSION=	0.208001
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install
+BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
+		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-App-Cmd>=0:devel/p5-App-Cmd \
 		p5-Capture-Tiny>=0.12:devel/p5-Capture-Tiny \
 		p5-Clone>=0:devel/p5-Clone \
@@ -57,8 +57,8 @@ TEST_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Test-MockTime>=0:devel/p5-Test-MockTime \
 		p5-YAML>=0.86:textproc/p5-YAML
 
-OPTIONS_DEFINE=		XS
-OPTIONS_DEFAULT=	XS
+OPTIONS_DEFINE=	XS
+OPTIONS_DEFAULT=XS
 
 XS_RUN_DEPENDS=	p5-CGI-Deurl-XS>=0:www/p5-CGI-Deurl-XS \
 		p5-Class-Load-XS>=0:devel/p5-Class-Load-XS \
