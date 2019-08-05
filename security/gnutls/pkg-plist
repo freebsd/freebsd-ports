@@ -32,7 +32,7 @@ include/gnutls/x509.h
 %%DANE%%lib/libgnutls-dane.so.0.4.1
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.24.0
+lib/libgnutls.so.30.25.0
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.28
 lib/libgnutlsxx.so.28.1.0
@@ -263,6 +263,7 @@ man/man3/gnutls_ext_set_data.3.gz
 man/man3/gnutls_fingerprint.3.gz
 man/man3/gnutls_fips140_mode_enabled.3.gz
 man/man3/gnutls_fips140_set_mode.3.gz
+man/man3/gnutls_get_system_config_file.3.gz
 man/man3/gnutls_global_deinit.3.gz
 man/man3/gnutls_global_init.3.gz
 man/man3/gnutls_global_set_audit_log_function.3.gz
@@ -288,6 +289,7 @@ man/man3/gnutls_handshake_set_private_extensions.3.gz
 man/man3/gnutls_handshake_set_random.3.gz
 man/man3/gnutls_handshake_set_timeout.3.gz
 man/man3/gnutls_hash.3.gz
+man/man3/gnutls_hash_copy.3.gz
 man/man3/gnutls_hash_deinit.3.gz
 man/man3/gnutls_hash_fast.3.gz
 man/man3/gnutls_hash_get_len.3.gz
@@ -305,6 +307,7 @@ man/man3/gnutls_hex_decode2.3.gz
 man/man3/gnutls_hex_encode.3.gz
 man/man3/gnutls_hex_encode2.3.gz
 man/man3/gnutls_hmac.3.gz
+man/man3/gnutls_hmac_copy.3.gz
 man/man3/gnutls_hmac_deinit.3.gz
 man/man3/gnutls_hmac_fast.3.gz
 man/man3/gnutls_hmac_get_len.3.gz
