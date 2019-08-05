@@ -5,7 +5,7 @@ PORTNAME=	rendercheck
 PORTVERSION=	1.5
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Small program for testing basic Render extension conformance
 
 XORG_CAT=	app
