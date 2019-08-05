@@ -1,5 +1,5 @@
-TIMESTAMP = 1557588190
-SHA256 (videolan-dav1d-c9427fd43a17d654402f49f8ce28c4991c7024da_GL0.tar.gz) = fad9d74887ad228e580fe09ffb1382e8ed001abe940f8ab6aedc5b538a6b72fa
-SIZE (videolan-dav1d-c9427fd43a17d654402f49f8ce28c4991c7024da_GL0.tar.gz) = 574244
+TIMESTAMP = 1564781751
+SHA256 (videolan-dav1d-5f63e531b9d10a09afe0a6b4875ca4852a7e58c1_GL0.tar.gz) = afbb904d89bb4a29e0993d10a99dcb38ebbd769e31b707d6c5a61a37b3ce39c6
+SIZE (videolan-dav1d-5f63e531b9d10a09afe0a6b4875ca4852a7e58c1_GL0.tar.gz) = 635412
 SHA256 (videolan-dav1d-test-data-3ccdd3df4fb8583d58bcc0101e315b00ec3ae130_GL0.tar.gz) = 4ac0c3fa7993f53c6e5f03fda28252269ecd6ca11bcd96f6026cb0c2edb64d41
 SIZE (videolan-dav1d-test-data-3ccdd3df4fb8583d58bcc0101e315b00ec3ae130_GL0.tar.gz) = 31340228
