@@ -10,14 +10,15 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Utility similar to indent for C++ code
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	DOCS
-
+USES=		tar:tgz
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
-USES=		tar:tgz
 
 CFLAGS+=	-DBCPP_CONFIG_DIR=\\\"${PREFIX}/etc/${PORTNAME}\\\"
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/code/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
