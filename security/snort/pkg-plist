@@ -54,6 +54,7 @@ include/snort/dynamic_preproc/reg_test.h
 include/snort/dynamic_preproc/reload_api.h
 include/snort/dynamic_preproc/segment_mem.h
 include/snort/dynamic_preproc/session_api.h
+include/snort/dynamic_preproc/sf_decompression_define.h
 include/snort/dynamic_preproc/sfPolicy.h
 include/snort/dynamic_preproc/sfPolicyUserData.h
 include/snort/dynamic_preproc/sf_decompression.h
@@ -88,6 +89,10 @@ include/snort/dynamic_preproc/ssl_inspect.h
 include/snort/dynamic_preproc/ssl_session.h
 include/snort/dynamic_preproc/str_search.h
 include/snort/dynamic_preproc/stream_api.h
+lib/libsf_sorules.a
+lib/libsf_sorules.so
+lib/libsf_sorules.so.0
+lib/libsf_sorules.so.0.0.0
 lib/snort/dynamic_output/libsf_dynamic_output.a
 lib/snort/dynamic_preproc/libsf_dynamic_preproc.a
 %%APPID%%lib/snort/dynamic_preproc/libsf_dynamic_utils.a
@@ -263,7 +268,9 @@ src/snort_dynamicsrc/sfPolicyUserData.c
 src/snort_dynamicsrc/sfPolicyUserData.h
 src/snort_dynamicsrc/sf_base64decode.c
 src/snort_dynamicsrc/sf_base64decode.h
+src/snort_dynamicsrc/cip_common.h
 src/snort_dynamicsrc/sf_decompression.h
+src/snort_dynamicsrc/sf_decompression_define.h
 src/snort_dynamicsrc/sf_dynamic_common.h
 src/snort_dynamicsrc/sf_dynamic_define.h
 src/snort_dynamicsrc/sf_dynamic_engine.h
