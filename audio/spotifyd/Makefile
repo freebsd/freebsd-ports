@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spotifyd
-DISTVERSION=	0.2.9
-PORTREVISION=	1
+DISTVERSION=	0.2.11
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -17,7 +16,7 @@ USES=		cargo ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	Spotifyd
 GH_TUPLE=	plietar:dns-parser:1d3e5a5591bc72eb061c23bd426c4a25f2f73791:dnsparser \
-		librespot-org:librespot:5d2cb32e20815f3b7879962e8af2fb9ef4c3870d:librespot \
+		librespot-org:librespot:4e3576ba7c6146cf68e1953daeec929d619b26b1:librespot \
 		plietar:rust-mdns:66a74033da6c9f1a06e7b0a29f4544fd189d6479:mdns \
 		plietar:rust-tremor:5958cc302e78f535dad90e9665da981ddff4000a:tremor
 
@@ -36,7 +35,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		arrayvec-0.4.10 \
 		atty-0.2.11 \
 		autocfg-0.1.4 \
-		backtrace-0.3.26 \
+		backtrace-0.3.30 \
 		backtrace-sys-0.1.28 \
 		base64-0.10.1 \
 		base64-0.5.2 \
@@ -47,7 +46,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		bitflags-0.3.3 \
 		bitflags-0.7.0 \
 		bitflags-0.9.1 \
-		bitflags-1.0.4 \
+		bitflags-1.1.0 \
 		block-buffer-0.7.3 \
 		block-cipher-trait-0.6.2 \
 		block-modes-0.2.0 \
@@ -55,7 +54,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		build_const-0.2.1 \
 		byte-tools-0.3.1 \
 		byteorder-0.5.3 \
-		byteorder-1.3.1 \
+		byteorder-1.3.2 \
 		bytes-0.4.12 \
 		c_linked_list-1.1.1 \
 		cc-1.0.37 \
@@ -87,8 +86,8 @@ CARGO_CRATES=	adler32-1.0.3 \
 		dtoa-0.4.4 \
 		either-1.5.2 \
 		encoding_rs-0.8.17 \
-		env_logger-0.4.3 \
 		env_logger-0.5.13 \
+		env_logger-0.6.1 \
 		error-chain-0.10.0 \
 		error-chain-0.11.0 \
 		error-chain-0.12.1 \
@@ -96,7 +95,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		failure-0.1.5 \
 		failure_derive-0.1.5 \
 		fake-simd-0.1.2 \
-		flate2-1.0.7 \
+		flate2-1.0.8 \
 		fnv-1.0.6 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -110,7 +109,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		get_if_addrs-0.5.3 \
 		get_if_addrs-sys-0.1.1 \
 		getopts-0.2.19 \
-		h2-0.1.20 \
+		h2-0.1.24 \
 		hex-0.3.2 \
 		hmac-0.7.0 \
 		hostname-0.1.5 \
@@ -119,7 +118,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		httparse-1.3.3 \
 		humantime-1.2.0 \
 		hyper-0.11.27 \
-		hyper-0.12.29 \
+		hyper-0.12.30 \
 		hyper-proxy-0.4.1 \
 		hyper-tls-0.3.2 \
 		idna-0.1.5 \
@@ -133,7 +132,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		lazy_static-0.2.11 \
 		lazy_static-1.3.0 \
 		lewton-0.9.4 \
-		libc-0.2.55 \
+		libc-0.2.58 \
 		libdbus-sys-0.1.5 \
 		libpulse-sys-0.0.0 \
 		linear-map-1.2.0 \
@@ -147,7 +146,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		mime_guess-2.0.0-alpha.6 \
 		miniz_oxide-0.2.1 \
 		miniz_oxide_c_api-0.2.1 \
-		mio-0.6.18 \
+		mio-0.6.19 \
 		mio-named-pipes-0.1.6 \
 		mio-uds-0.6.7 \
 		miow-0.2.1 \
@@ -155,7 +154,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		multimap-0.4.0 \
 		native-tls-0.2.3 \
 		net2-0.2.33 \
-		nix-0.11.0 \
+		nix-0.11.1 \
 		nix-0.9.0 \
 		nodrop-0.1.13 \
 		num-0.1.42 \
@@ -166,7 +165,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		num-rational-0.1.42 \
 		num-traits-0.1.43 \
 		num-traits-0.2.8 \
-		num_cpus-1.10.0 \
+		num_cpus-1.10.1 \
 		numtoa-0.1.0 \
 		ogg-0.7.0 \
 		ogg-sys-0.0.9 \
@@ -184,13 +183,13 @@ CARGO_CRATES=	adler32-1.0.3 \
 		phf_generator-0.7.24 \
 		phf_shared-0.7.24 \
 		pkg-config-0.3.14 \
-		portaudio-rs-0.3.0 \
+		portaudio-rs-0.3.1 \
 		portaudio-sys-0.1.1 \
 		proc-macro2-0.4.30 \
 		protobuf-1.7.5 \
-		protobuf-2.6.1 \
-		protobuf-codegen-2.6.1 \
-		protobuf-codegen-pure-2.6.1 \
+		protobuf-2.6.2 \
+		protobuf-codegen-2.6.2 \
+		protobuf-codegen-pure-2.6.2 \
 		publicsuffix-1.5.2 \
 		quick-error-1.2.2 \
 		quote-0.3.15 \
@@ -213,19 +212,19 @@ CARGO_CRATES=	adler32-1.0.3 \
 		redox_syscall-0.1.54 \
 		redox_termios-0.1.1 \
 		regex-0.2.11 \
-		regex-1.1.6 \
+		regex-1.1.7 \
 		regex-syntax-0.5.6 \
-		regex-syntax-0.6.6 \
+		regex-syntax-0.6.7 \
 		relay-0.1.1 \
-		remove_dir_all-0.5.1 \
-		reqwest-0.9.17 \
+		remove_dir_all-0.5.2 \
+		reqwest-0.9.18 \
 		rpassword-0.3.1 \
 		rpassword-2.1.0 \
 		rspotify-0.2.5 \
 		rust-crypto-0.2.36 \
 		rust-gmp-0.3.2 \
 		rust-ini-0.13.0 \
-		rustc-demangle-0.1.14 \
+		rustc-demangle-0.1.15 \
 		rustc-serialize-0.3.24 \
 		rustc_version-0.2.3 \
 		ryu-0.2.8 \
@@ -239,8 +238,8 @@ CARGO_CRATES=	adler32-1.0.3 \
 		security-framework-sys-0.3.1 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.91 \
-		serde_derive-1.0.91 \
+		serde-1.0.92 \
+		serde_derive-1.0.92 \
 		serde_json-1.0.39 \
 		serde_urlencoded-0.5.5 \
 		sha-1-0.8.1 \
@@ -253,16 +252,16 @@ CARGO_CRATES=	adler32-1.0.3 \
 		slab-0.3.0 \
 		slab-0.4.2 \
 		smallvec-0.2.1 \
-		smallvec-0.6.9 \
+		smallvec-0.6.10 \
 		socket2-0.2.4 \
 		socket2-0.3.9 \
 		stable_deref_trait-1.1.1 \
 		stream-cipher-0.3.0 \
-		string-0.1.3 \
+		string-0.2.0 \
 		strsim-0.8.0 \
 		subtle-1.0.0 \
 		syn-0.11.11 \
-		syn-0.15.34 \
+		syn-0.15.36 \
 		synom-0.11.3 \
 		synstructure-0.10.2 \
 		syslog-4.0.1 \
@@ -270,13 +269,13 @@ CARGO_CRATES=	adler32-1.0.3 \
 		tempfile-2.2.0 \
 		tempfile-3.0.8 \
 		term-0.4.6 \
-		termcolor-1.0.4 \
-		termion-1.5.2 \
+		termcolor-1.0.5 \
+		termion-1.5.3 \
 		termios-0.2.2 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
 		time-0.1.42 \
-		tokio-0.1.20 \
+		tokio-0.1.21 \
 		tokio-buf-0.1.1 \
 		tokio-codec-0.1.1 \
 		tokio-core-0.1.17 \
@@ -290,11 +289,11 @@ CARGO_CRATES=	adler32-1.0.3 \
 		tokio-service-0.1.0 \
 		tokio-signal-0.1.5 \
 		tokio-signal-0.2.7 \
-		tokio-sync-0.1.5 \
+		tokio-sync-0.1.6 \
 		tokio-tcp-0.1.3 \
 		tokio-threadpool-0.1.14 \
 		tokio-timer-0.2.11 \
-		tokio-trace-core-0.1.0 \
+		tokio-trace-core-0.2.0 \
 		tokio-udp-0.1.3 \
 		tokio-uds-0.2.5 \
 		try-lock-0.1.0 \
@@ -310,7 +309,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		unicode-xid-0.0.4 \
 		unicode-xid-0.1.0 \
 		url-1.7.2 \
-		utf8-ranges-1.0.2 \
+		utf8-ranges-1.0.3 \
 		uuid-0.4.0 \
 		uuid-0.7.4 \
 		vcpkg-0.2.6 \
