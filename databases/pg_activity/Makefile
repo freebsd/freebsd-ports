@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pg_activity
-PORTVERSION=	1.4.0
-PORTREVISION=	3
+PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases python
 
@@ -15,9 +14,10 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=0:databases/py-psycopg2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR}
 
+USES=		python
+
 OPTIONS_DEFINE=	DOCS
 
-USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	julmon
 
