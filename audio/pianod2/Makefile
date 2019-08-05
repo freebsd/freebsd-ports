@@ -3,7 +3,7 @@
 
 PORTNAME=	pianod2
 PORTVERSION=	301
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://deviousfish.com/Downloads/pianod2/Devel/
 

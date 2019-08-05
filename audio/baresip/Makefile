@@ -2,7 +2,7 @@
 
 PORTNAME=	baresip
 PORTVERSION=	0.5.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.creytiv.com/pub/
 

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
-PORTVERSION=	4.1.4
-PORTREVISION=	6
+PORTVERSION=	4.2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -35,11 +34,11 @@ NOPRECIOUSMAKEVARS=	yes # ARCH
 PORTSCOUT=	limit:^4\.
 
 # Option CHROMAPRINT disabled, it cannot work and people are baffled.
-OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB AOM ASS BEIGNET BS2B CACA CDIO CELT CODEC2 DAV1D DAVS2 DC1394 \
-		DEBUG DOCS DRM FDK_AAC FLITE FONTCONFIG \
+OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB AOM ARIBB24 ASS BEIGNET BS2B CACA CDIO CELT CODEC2 \
+		DAV1D DAVS2 DC1394 DEBUG DOCS DRM FDK_AAC FLITE FONTCONFIG \
 		FREETYPE FREI0R FRIBIDI GME GSM ICONV ILBC JACK KLVANC KVAZAAR LADSPA \
 		LAME LENSFUN LIBBLURAY LIBRSVG2 LIBXML2 LV2 MODPLUG MYSOFA OPENAL OPENCL OPENCV OPENGL \
-		OPENH264 OPENJPEG OPENMPT OPTIMIZED_CFLAGS OPUS PULSEAUDIO \
+		OPENH264 OPENJPEG OPENMPT OPTIMIZED_CFLAGS OPUS POCKETSPHINX PULSEAUDIO \
 		RUBBERBAND RTCPU SDL SMB SNAPPY SNDIO SOXR SPEEX SRT SSH TENSORFLOW \
 		TESSERACT THEORA TWOLAME V4L VAAPI VAPOURSYNTH VDPAU VIDSTAB VORBIS \
 		VO_AMRWBENC VPX WAVPACK WEBP X264 X265 XAVS2 XCB XVID \
@@ -48,6 +47,11 @@ OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB AOM ASS BEIGNET BS2B CACA CDIO CELT CODEC2 DA
 OPTIONS_DEFAULT=	DAV1D FONTCONFIG FREETYPE FREI0R GMP GNUTLS ICONV \
 			OPENCV OPTIMIZED_CFLAGS OPUS RTCPU THEORA V4L VAAPI VDPAU \
 			VORBIS VPX X264 X265 XCB XVID
+
+.if !exists(${.CURDIR:H:H}/multimedia/aribb24)
+# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/100bfac6d6ec
+OPTIONS_EXCLUDE+=	ARIBB24
+.endif
 
 .if !exists(${.CURDIR:H:H}/multimedia/davs2)
 # https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/5985a1bf7233
@@ -88,6 +92,7 @@ OPTIONS_DEFAULT_i386=	MMX SSE
 
 ASS_DESC=	Subtitles rendering via libass
 AOM_DESC=	AV1 video encoding/decoding via libaom
+ARIBB24_DESC=	ARIB text and caption decoding via libaribb24
 BEIGNET_DESC=	DRM/VAAPI to OpenCL mapping for i965 + Beignet
 BS2B_DESC=	Bauer Stereophonic-to-Binaural filter
 CHROMAPRINT_DESC=	Audio fingerprinting with chromaprint
@@ -110,6 +115,7 @@ NEON_DESC=	Media Processing Engine instructions
 NONFREE_DESC=	Allow use of nonfree code
 OPENMPT_DESC=	Decoding tracked files via libopenmpt
 OPENH264_DESC=	H.264 video codec support via OpenH264
+POCKETSPHINX_DESC=	Automatic Speech Recognition via PocketSphinx
 RUBBERBAND_DESC=Time-stretching and pitch-shifting with librubberband
 RTCPU_DESC=	Detect CPU capabilities at runtime
 RTMP_DESC=	RTMP(T)E protocol support
@@ -148,6 +154,10 @@ AMR_WB_IMPLIES=		GPL3
 # aom
 AOM_LIB_DEPENDS=	libaom.so:multimedia/aom
 AOM_CONFIGURE_ENABLE=	libaom
+
+# arib
+ARIBB24_LIB_DEPENDS=	libaribb24.so:multimedia/aribb24
+ARIBB24_CONFIGURE_ENABLE=	libaribb24
 
 # ass
 ASS_LIB_DEPENDS=	libass.so:multimedia/libass
@@ -368,6 +378,11 @@ OPTIMIZED_CFLAGS_CONFIGURE_ENABLE=	optimizations
 # opus
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 OPUS_CONFIGURE_ENABLE=	libopus
+
+# pocketsphinx
+POCKETSPHINX_LIB_DEPENDS=	libpocketsphinx.so:audio/pocketsphinx
+POCKETSPHINX_CONFIGURE_ENABLE=	pocketsphinx
+POCKETSPHINX_BROKEN=	pocketsphinx < 5prealpha is not supported
 
 # pulseaudio
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio

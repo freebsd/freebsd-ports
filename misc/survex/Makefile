@@ -2,7 +2,7 @@
 
 PORTNAME=	survex
 DISTVERSION=	1.2.38
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	https://survex.com/software/${DISTVERSION}/
 
