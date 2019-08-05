@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	claws-mail
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	mail news ipv6
 
 COMMENT=	Lightweight and featureful GTK+ based e-mail and news client

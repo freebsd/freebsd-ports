@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Python scripting plugin for Claws Mail
 
