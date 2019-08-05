@@ -13,8 +13,6 @@ COMMENT=	Open source re-implementation of Caesar III
 
 LICENSE=	GPLv3
 
-BROKEN=		use of undeclared identifier 'SDL_HINT_ANDROID_SEPARATE_MOUSE_AND_TOUCH'
-
 USES=		cmake sdl
 
 USE_GITHUB=	yes
