@@ -13,6 +13,8 @@ COMMENT=	Generates packets to match a list of Cisco PIX access lists
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libnet.so:net/libnet
 
 WRKSRC=		${WRKDIR}/pixilate

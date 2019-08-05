@@ -12,6 +12,8 @@ COMMENT=	Maintain DNS zones using an LDAP directory
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
 		p5-perl-ldap>=0:net/p5-perl-ldap
 

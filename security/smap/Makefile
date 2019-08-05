@@ -14,6 +14,8 @@ COMMENT=	SIP scanner and identifier
 # with strictest variant to be on a safe side
 LICENSE=	BSD4CLAUSE
 
+BROKEN=		unfetchable
+
 USES=		gmake
 
 do-install:

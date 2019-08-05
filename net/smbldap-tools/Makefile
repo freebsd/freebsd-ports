@@ -12,6 +12,8 @@ COMMENT=	Samba-LDAP management and support tools
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap \
 		p5-Crypt-SmbHash>=0:security/p5-Crypt-SmbHash \
 		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \

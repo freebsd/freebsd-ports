@@ -12,6 +12,8 @@ COMMENT=	TCP dump file analysis tool
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 ALL_TARGET=	tcptrace
 

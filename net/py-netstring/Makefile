@@ -11,6 +11,8 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module implementing the netstring protocol
 
+BROKEN=		unfetchable
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 

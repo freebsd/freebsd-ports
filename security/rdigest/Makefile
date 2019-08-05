@@ -5,6 +5,8 @@ PORTNAME=	rdigest
 
 COMMENT=	Recursive message digest wrapper utility
 
+BROKEN=		unfetchable
+
 DISTNAME=	digest-${PORTVERSION}
 
 DESCR=		${.CURDIR}/pkg-descr

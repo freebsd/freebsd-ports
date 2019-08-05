@@ -13,6 +13,8 @@ COMMENT=	Fake IKE PSK+XAUTH daemon based on VPNC
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 USES=		gmake tar:bzip2

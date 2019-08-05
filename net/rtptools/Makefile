@@ -12,6 +12,8 @@ COMMENT=	Set of tools to record, playback, and monitor RTPv2 data streams
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		unfetchable
+
 USES=		dos2unix
 DOS2UNIX_GLOB=	*.c
 GNU_CONFIGURE=	yes

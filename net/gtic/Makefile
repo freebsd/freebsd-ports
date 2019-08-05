@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-1.3b
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU file forwarder (FSC-0087) for fidonet-like networks
 
+BROKEN=		unfetchable
+
 MAKE_ENV+=	DEFINES="${DEFINES}"
 
 .if defined(WITH_AMIGA4D)

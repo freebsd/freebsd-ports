@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WepLab is a tool designed to teach how WEP works
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 

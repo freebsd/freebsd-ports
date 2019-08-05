@@ -10,6 +10,8 @@ MASTER_SITES=	http://rsug.itd.umich.edu/software/nefu/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitoring daemon
 
+BROKEN=		unfetchable
+
 USES=		tar:tgz ssl
 USE_RC_SUBR=	nefu
 GNU_CONFIGURE=	yes

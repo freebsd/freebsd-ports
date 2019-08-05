@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-user-ru-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English-Russian PC-user dictionary
 
+BROKEN=		unfetchable
+
 USES=	tar:bzip2
 
 .include "${.CURDIR}/../stardict-mueller7/files/Makefile.common"

@@ -12,6 +12,8 @@ COMMENT=	Simple and secure ident (RFC1413) server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README

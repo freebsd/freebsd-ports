@@ -12,6 +12,8 @@ COMMENT=	Cryptographic library implemented in SPARK
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		unfetchable
+
 USES=		ada dos2unix gmake tar:tgz
 DOS2UNIX_FILES=	Makefile build/libsparkcrypto.gpr \
 		src/shared/generic/lsc-byteswap64.ads \

@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.jeenyus.net/linux/software/fwipe/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	djb-style file wiping utility
 
+BROKEN=		unfetchable
+
 ALL_TARGET=	it
 INSTALL_TARGET=	setup
 USES=		groff

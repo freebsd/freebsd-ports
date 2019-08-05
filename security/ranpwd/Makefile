@@ -16,6 +16,8 @@ COMMENT=	Tool to generate random passwords
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 

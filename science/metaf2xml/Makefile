@@ -12,6 +12,8 @@ COMMENT=	Parse and Decode METAR, TAF, SYNOP, BUOY and AMDAR and Write as XML
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	p5-CGI>0:www/p5-CGI
 
 OPTIONS_DEFINE=	APACHE DOCS

@@ -10,6 +10,8 @@ DISTNAME=	nettest.92.11.09
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performs client and server functions for timing data throughput
 
+BROKEN=		unfetchable
+
 NO_WRKSUBDIR=	yes
 USES=		tar:Z
 

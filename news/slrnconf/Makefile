@@ -13,6 +13,8 @@ COMMENT=	Graphical configuration utility for the newsreader slrn
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-Parse-RecDescent>=0:devel/p5-Parse-RecDescent
 

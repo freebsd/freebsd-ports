@@ -11,6 +11,8 @@ MASTER_SITES=	http://deathbeforedecaf.net/misc/ports/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Summarise ipfw logs by counting and sorting the fields
 
+BROKEN=		unfetchable
+
 USES=		perl5 shebangfix
 SHEBANG_FILES=	ipfwcount
 

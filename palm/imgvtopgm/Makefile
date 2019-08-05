@@ -13,6 +13,8 @@ COMMENT=	Palm Pilot Image Viewer to PGM Converter
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
 USES=	localbase

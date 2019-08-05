@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.py
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sort MASTER_SITE_* based upon TCP handshake times
 
+BROKEN=		unfetchable
+
 USES=		python shebangfix
 NO_BUILD=	yes
 

@@ -12,6 +12,8 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin for checking SpamAssassins spamd
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS+=	${LOCALBASE}/${NAGIOS_PLUGIN_DIR}/utils.pm:net-mgmt/nagios-plugins
 
 USES=		perl5 shebangfix

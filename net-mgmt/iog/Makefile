@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.dynw.com/iog/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphs Byte Counts for switches/routers/etc
 
+BROKEN=		unfetchable
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		perl5 shebangfix tar:tgz

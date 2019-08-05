@@ -10,6 +10,8 @@ MASTER_SITES=	SF/gnome-password/Gnome%20Password%20Generator/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME 2 password generator
 
+BROKEN=		unfetchable
+
 USE_GNOME=	pygnome2
 USES=		python:2.7
 

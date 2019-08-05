@@ -14,6 +14,8 @@ LICENSE_NAME=	IBM Bluemix Service Description
 LICENSE_FILE=	${WRKSRC}/bin/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	cf:net/cf
 
 USES=		linux

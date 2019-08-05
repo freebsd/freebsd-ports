@@ -13,6 +13,8 @@ COMMENT=	Program that allows you to securely store the passwords
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USES=		gmake localbase pkgconfig tar:bzip2

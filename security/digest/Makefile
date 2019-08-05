@@ -10,6 +10,8 @@ MASTER_SITES?=	NETBSD/../../misc/digest
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Message digest wrapper utility
 
+BROKEN=		unfetchable
+
 CONFLICTS?=	emboss-[0-9]* qmail-ldap2-*
 
 GNU_CONFIGURE=	yes
