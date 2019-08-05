@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wireguard-go
-PORTVERSION=	0.0.20190517
+PORTVERSION=	0.0.20190805
 CATEGORIES=	net
 MASTER_SITES=	https://git.zx2c4.com/wireguard-go/snapshot/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake go:modules,no_targets tar:xz
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	golang:crypto:b7391e95e576:crypto/vendor/golang.org/x/crypto \
-		golang:net:1272bf9dcd53:net/vendor/golang.org/x/net \
-		golang:sys:f7bb7a8bee54:sys/vendor/golang.org/x/sys
+GH_TUPLE=	golang:crypto:57b3e21c3d56:crypto/vendor/golang.org/x/crypto \
+		golang:net:d28f0bde5980:net/vendor/golang.org/x/net \
+		golang:sys:516e3c20635f:sys/vendor/golang.org/x/sys
 
 MAKE_ENV+=	GOFLAGS="${GO_BUILDFLAGS}"
 
