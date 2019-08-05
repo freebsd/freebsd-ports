@@ -11,8 +11,6 @@ COMMENT=	Utility to show process environment
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		this file includes <sys/capability.h> which is deprecated
-
 BUILD_DEPENDS=	xmlwf:textproc/expat2
 
 USES=		autoreconf gmake perl5
@@ -32,6 +30,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^PKG_/d' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|sys/capability.h|sys/capsicum.h|' ${WRKSRC}/src/platform-headers.h ${WRKSRC}/src/platform/freebsd/platform-freebsd.h
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
