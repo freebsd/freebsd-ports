@@ -32,6 +32,7 @@ CONFIGURE_ARGS=	--disable-guile \
 		--with-trousers-lib=${LOCALBASE}/lib/libtspi.so.1 \
 		AUTOGEN=false \
 		ac_cv_type_max_align_t=yes
+LDFLAGS_i386=	-Wl,-z,notext
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
