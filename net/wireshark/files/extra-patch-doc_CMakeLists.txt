@@ -1,6 +1,6 @@
---- doc/CMakeLists.txt.orig2	2019-03-04 18:52:33.373076000 -0500
-+++ doc/CMakeLists.txt	2019-03-04 18:54:06.412930000 -0500
-@@ -100,23 +100,7 @@ if (BUILD_xxx2deb)
+--- doc/CMakeLists.txt.orig	2019-08-05 13:37:15 UTC
++++ doc/CMakeLists.txt
+@@ -100,23 +100,8 @@ if (BUILD_xxx2deb)
  endif()
  
  set(MAN1_INSTALL_FILES
@@ -10,7 +10,7 @@
 -	${CMAKE_CURRENT_BINARY_DIR}/ciscodump.1
 -	${CMAKE_CURRENT_BINARY_DIR}/ciscodump.1
 -	${CMAKE_CURRENT_BINARY_DIR}/dftest.1
--	${CMAKE_CURRENT_BINARY_DIR}/dumpcap.1
+ 	${CMAKE_CURRENT_BINARY_DIR}/dumpcap.1
 -	${CMAKE_CURRENT_BINARY_DIR}/editcap.1
 -	${CMAKE_CURRENT_BINARY_DIR}/mergecap.1
 -	${CMAKE_CURRENT_BINARY_DIR}/randpkt.1
