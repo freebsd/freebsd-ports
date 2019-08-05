@@ -2,19 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	lybniz
-PORTVERSION=	1.3.2
-PORTREVISION=	6
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.0.4-2
+DISTVERSIONSUFFIX=	-gf1ec282
 CATEGORIES=	math
-MASTER_SITES=	SF/${PORTNAME}2/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Mathematical function graph plotter
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:2.7
-USE_PYTHON=	distutils
+USES=		gnome python
+USE_GITHUB=	yes
+GH_ACCOUNT=	thomasfuhringer
+USE_PYTHON=	distutils noflavors autoplist
 USE_GNOME=	pygtk2
+
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g'\
