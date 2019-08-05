@@ -1,4 +1,5 @@
 bin/dav1d
+%%SDL%%bin/dav1dplay
 include/dav1d/common.h
 include/dav1d/data.h
 include/dav1d/dav1d.h
@@ -6,6 +7,6 @@ include/dav1d/headers.h
 include/dav1d/picture.h
 include/dav1d/version.h
 lib/libdav1d.so
-lib/libdav1d.so.1
-lib/libdav1d.so.1.1.0
+lib/libdav1d.so.2
+lib/libdav1d.so.2.0.0
 libdata/pkgconfig/dav1d.pc
