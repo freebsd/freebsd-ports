@@ -2,6 +2,7 @@
 
 PORTNAME=	moonlight-embedded
 DISTVERSION=	2.4.10
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/irtimmer/moonlight-embedded/releases/download/v${DISTVERSION}/
 

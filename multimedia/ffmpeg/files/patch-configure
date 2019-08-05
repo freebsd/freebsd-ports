@@ -1,12 +1,13 @@
 --- configure.orig	2018-04-20 10:02:55 UTC
 +++ configure
-@@ -3516,12 +3516,7 @@ target_os_default=$(tolower $(uname -s))
+@@ -3516,13 +3516,7 @@ target_os_default=$(tolower $(uname -s))
  host_os=$target_os_default
  
  # machine
 -if test "$target_os_default" = aix; then
 -    arch_default=$(uname -p)
 -    strip_default="strip -X32_64"
+-    nm_default="nm -g -X32_64"
 -else
 -    arch_default=$(uname -m)
 -fi
