@@ -14,17 +14,19 @@ COMMENT=	QEMU CPU Emulator
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Latest 3.X branch is in ports tree
+EXPIRATION_DATE=2019-09-04
 BROKEN_powerpc64=	fails to compile: In function aio_bh_poll: internal compiler error: Segmentation fault
 
 LIB_DEPENDS=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		cpe gl gmake gnome pkgconfig bison perl5 python:build tar:xz
+USES=		cpe gmake gnome pkgconfig bison perl5 python:build tar:xz
 USE_GNOME=	cairo libxml2
 USE_PERL5=	build
 
-PORTSCOUT=      limit:^2\.
+PORTSCOUT=	limit:^2\.
 
 HAS_CONFIGURE=	yes
 MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
@@ -58,12 +60,13 @@ GTK3_LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 			libdrm.so:graphics/libdrm \
 			libpcre2-8.so:devel/pcre2
 GTK3_USE=	GL=gbm GNOME=gdkpixbuf2,gtk30,vte3 XORG=x11,xext
-GTK3_USES=	gettext
+GTK3_USES=	gettext gl
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_OFF=	--disable-vnc-jpeg
 NCURSES_USES=		ncurses:base
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 OPENGL_USE=	GL=glu
+OPENGL_USES=		gl
 PCAP_CONFIGURE_ON=	--enable-pcap
 PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch ${FILESDIR}/pcap-patch-net_net.c \
 			${FILESDIR}/pcap-patch-net_clients.h
