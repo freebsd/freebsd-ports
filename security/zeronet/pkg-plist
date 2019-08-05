@@ -1136,6 +1136,7 @@ etc/rc.d/zeronet
 %%DATADIR%%/zeronet.py
 %%DATADIR%%/zeronet.pyc
 %%DATADIR%%/zeronet.pyo
+%%DATADIR%%/zeronet.conf
 @owner %%USER%%
 @group %%GROUP%%
 @dir /var/db/zeronet

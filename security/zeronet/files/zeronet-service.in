@@ -54,6 +54,9 @@ zeronet_start() {
   chown -R %%USER%%:%%GROUP%% /var/db/zeronet /var/log/zeronet
   # workaround for https://github.com/HelloZeroNet/ZeroNet/issues/477: ZeroNet shouldn't be re-running coffee on the pre-installed files.
   (cd %%LOCALBASE%%/share/zeronet && touch `find . -name all.js`)
+  # create /var/db/zeronet/zeronet.conf because it is written to by ZeroNet when the 'tor' option isn't used
+  touch /var/db/zeronet/zeronet.conf
+  chown -R %%USER%%:%%GROUP%% /var/db/zeronet/zeronet.conf
   # run
   cd %%LOCALBASE%%/share/zeronet
   /usr/sbin/daemon -P $pidfile -u %%USER%% %%LOCALBASE%%/share/zeronet/zeronet.py ${zeronet_args} >>$logfile 2>&1
