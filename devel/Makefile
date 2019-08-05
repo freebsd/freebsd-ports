@@ -1458,6 +1458,7 @@
     SUBDIR += llvm60
     SUBDIR += llvm70
     SUBDIR += llvm80
+    SUBDIR += llvm90
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
