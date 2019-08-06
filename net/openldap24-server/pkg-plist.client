@@ -17,6 +17,7 @@ include/ldap_features.h
 include/ldap_schema.h
 include/ldap_utf8.h
 include/ldif.h
+include/openldap.h
 include/slapi-plugin.h
 lib/liblber-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%
 lib/liblber-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
