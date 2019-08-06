@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	htpdate
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.vervest.org/htp/archive/c/ \
 		http://twekkel.home.xs4all.nl/htp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Time synchronization over http utility
 
 LICENSE=	GPLv2+
 
-USES=	tar:bzip2
+USES=	tar:xz
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/${PORTNAME} man/man8/${PORTNAME}.8.gz
