@@ -58,6 +58,7 @@ HTTP_RESPONSE_DESC=		3rd party http_response module
 HTTP_REWRITE_DESC=		Enable http_rewrite module
 HTTP_SECURE_LINK_DESC=		Enable http_secure_link module
 HTTP_SLICE_DESC=		Enable http_slice module
+HTTP_SLICE_AHEAD_DESC=		Enable http_slice_ahead module
 HTTP_SSL_DESC=			Enable http_ssl module
 HTTP_STATUS_DESC=		Enable http_stub_status module
 HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
