@@ -50,7 +50,8 @@ function split_url(s) {
 	url["port"] = url_host[2]
 }
 
-/^source = "git\+(https|http|git):\/\/github.com\/.*#.*"/ {
+!gh_tuple_seen[$0] && /^source = "git\+(https|http|git):\/\/github.com\/.*#.*"/ {
+	gh_tuple_seen[$0] = 1
 	split_url(substr($3, 1, length($3) - 1))
 	
 	split(url["path"], path, "/")
