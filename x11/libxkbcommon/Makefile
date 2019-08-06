@@ -3,7 +3,7 @@
 PORTNAME=	libxkbcommon
 PORTVERSION=	0.8.4
 CATEGORIES=	x11
-MASTER_SITES=	http://xkbcommon.org/download/
+MASTER_SITES=	https://xkbcommon.org/download/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Keymap handling library for toolkits and window systems
