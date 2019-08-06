@@ -1,5 +1,5 @@
---- libI77/fio.h.orig	Tue Nov  9 15:58:43 1999
-+++ libI77/fio.h	Tue Dec 16 23:53:43 2003
+--- libI77/fio.h.orig	1999-11-09 14:58:43 UTC
++++ libI77/fio.h
 @@ -17,6 +17,12 @@
  #endif
  #endif
