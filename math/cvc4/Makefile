@@ -2,6 +2,7 @@
 
 PORTNAME=	cvc4
 DISTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	math java
 MASTER_SITES+=	http://www.antlr3.org/download/:antlr3
 DISTFILES+=	antlr-3.4-complete.jar:antlr3
@@ -87,9 +88,8 @@ post-extract:
 	@${CHMOD} +x ${WRKDIR}/antlr3
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|sed -i 's|sed -i.bak 's|g" \
+	@${REINPLACE_CMD} -e "s|sed -i 's|sed -i '' 's|g" \
 	${WRKSRC}/src/fix-install-headers.sh
-	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 # make a relative symlink instead of absolute to build dir
 post-install-JAVA-on:

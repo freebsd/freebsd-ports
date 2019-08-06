@@ -13,8 +13,6 @@ COMMENT=	High-performance reflective language
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		'cvc4_public.h' file not found
-
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 LIB_DEPENDS=	libbdd.so:science/buddy \
 		libtecla.so:devel/libtecla \
