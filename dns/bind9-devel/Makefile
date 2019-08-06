@@ -41,13 +41,13 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 # XXX: remove tar:bz2
 USES=	compiler:c11 cpe libedit pkgconfig ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.15.0a0.2019.07.29
+ISCVERSION=	9.15.0a0.2019.08.06
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	03de34194d7c02eb946d7c9f3ee2496b55568724
+GL_COMMIT=	48213633ce13299d4e5934dfc90f4f7dd5ec4730
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
