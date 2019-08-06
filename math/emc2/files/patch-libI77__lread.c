@@ -1,6 +1,6 @@
---- ./libI77/lread.c.orig	2010-08-31 08:39:32.000000000 -0400
-+++ ./libI77/lread.c	2010-08-31 08:40:19.000000000 -0400
-@@ -369,7 +369,7 @@
+--- libI77/lread.c.orig	1999-11-09 14:58:44 UTC
++++ libI77/lread.c
+@@ -369,7 +369,7 @@ l_CHAR(Void)
  			*p++ = ch;
  			f__lcount = 10*f__lcount + ch - '0';
  			if (++i == size) {
@@ -9,7 +9,7 @@
  					(unsigned int)(size += BUFSIZE));
  				p = f__lchar + i;
  				}
-@@ -401,7 +401,7 @@
+@@ -401,7 +401,7 @@ l_CHAR(Void)
   noquote:
  			*p++ = ch;
  			if (++i == size) {
@@ -18,7 +18,7 @@
  					(unsigned int)(size += BUFSIZE));
  				p = f__lchar + i;
  				}
-@@ -414,7 +414,7 @@
+@@ -414,7 +414,7 @@ l_CHAR(Void)
  		if(i==size)
  		{
  		newone:

@@ -17,11 +17,11 @@ LICENSE_NAME=	INRIA license, perhaps specific to emc2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	auto-accept no-dist-sell no-pkg-sell
 
-RESTRICTED=	No resale, contact author for commercial usage
-
 USES=		gmake
 USE_XORG=	x11 xau xcb xdmcp
+
 ALL_TARGET=	${PORTNAME}
+RESTRICTED=	No resale, contact author for commercial usage
 
 .if defined(LANG) && ${LANG:Mfr*} != ""
 CFLAGS+=	-DFRENCH

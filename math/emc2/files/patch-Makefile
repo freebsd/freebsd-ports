@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Feb 10 09:17:51 2003
-+++ Makefile	Tue Dec 16 23:22:42 2003
+--- Makefile.orig	2003-02-10 08:17:51 UTC
++++ Makefile
 @@ -8,9 +8,9 @@
  # for IBM RS6000
  #CC=xlc
