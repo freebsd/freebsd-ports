@@ -100,6 +100,7 @@ share/pixmaps/sigil.png
 %%DATADIR%%/plugin_launchers/python/epub_utils.py
 %%DATADIR%%/plugin_launchers/python/inputcontainer.py
 %%DATADIR%%/plugin_launchers/python/launcher.py
+%%DATADIR%%/plugin_launchers/python/navprocessor.py
 %%DATADIR%%/plugin_launchers/python/opf_parser.py
 %%DATADIR%%/plugin_launchers/python/outputcontainer.py
 %%DATADIR%%/plugin_launchers/python/pluginhunspell.py
@@ -131,6 +132,7 @@ share/pixmaps/sigil.png
 %%DATADIR%%/polyfills/MJ/extensions/fast-preview.js
 %%DATADIR%%/polyfills/MJ/extensions/jsMath2jax.js
 %%DATADIR%%/polyfills/MJ/extensions/mml2jax.js
+%%DATADIR%%/polyfills/MJ/extensions/toMathML.js
 %%DATADIR%%/polyfills/MJ/jax/element/mml/jax.js
 %%DATADIR%%/polyfills/MJ/jax/element/mml/optable/Arrows.js
 %%DATADIR%%/polyfills/MJ/jax/element/mml/optable/BasicLatin.js
