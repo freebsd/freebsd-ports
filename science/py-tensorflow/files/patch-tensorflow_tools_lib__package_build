@@ -1,0 +1,18 @@
+--- tensorflow/tools/lib_package/BUILD.orig	2019-07-06 21:58:28.528046000 +0100
++++ tensorflow/tools/lib_package/BUILD	2019-07-06 21:58:46.410184000 +0100
+@@ -152,7 +152,6 @@
+         "@gemmlowp//:LICENSE",
+         "@gif_archive//:COPYING",
+         "@highwayhash//:LICENSE",
+-        "@hwloc//:COPYING",
+         "@icu//:icu4c/LICENSE",
+         "@jpeg//:LICENSE.md",
+         "@lmdb//:LICENSE",
+@@ -223,7 +222,6 @@
+         "@gemmlowp//:LICENSE",
+         "@gif_archive//:COPYING",
+         "@highwayhash//:LICENSE",
+-        "@hwloc//:COPYING",
+         "@icu//:icu4j/main/shared/licenses/LICENSE",
+         "@jpeg//:LICENSE.md",
+         "@lmdb//:LICENSE",

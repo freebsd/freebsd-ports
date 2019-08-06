@@ -1,0 +1,47 @@
+--- tensorflow/core/BUILD.orig	2019-06-18 23:48:23.000000000 +0100
++++ tensorflow/core/BUILD	2019-07-14 09:27:38.471527000 +0100
+@@ -2412,7 +2412,7 @@
+     copts = tf_copts(),
+     defines = LIB_INTERNAL_DEFINES,
+     linkopts = select({
+-        "//tensorflow:freebsd": [],
++        "//tensorflow:freebsd": ["-lexecinfo",],
+         "//tensorflow:windows": [],
+         "//tensorflow:android": [],
+         "//conditions:default": [
+@@ -2512,7 +2512,7 @@
+     hdrs = ["lib/gif/gif_io.h"],
+     copts = tf_copts(),
+     linkopts = select({
+-        "//tensorflow:freebsd": [],
++        "//tensorflow:freebsd": ["-lexecinfo",],
+         "//tensorflow:windows": [],
+         "//conditions:default": ["-ldl"],
+     }),
+@@ -2536,7 +2536,7 @@
+     ],
+     copts = tf_copts(),
+     linkopts = select({
+-        "//tensorflow:freebsd": [],
++        "//tensorflow:freebsd": ["-lexecinfo",],
+         "//tensorflow:windows": [],
+         "//conditions:default": ["-ldl"],
+     }),
+@@ -2566,7 +2566,7 @@
+     ],
+     copts = tf_copts(),
+     linkopts = select({
+-        "//tensorflow:freebsd": [],
++        "//tensorflow:freebsd": ["-lexecinfo",],
+         "//tensorflow:windows": [],
+         "//conditions:default": ["-ldl"],
+     }),
+@@ -2897,7 +2897,7 @@
+     hdrs = FRAMEWORK_INTERNAL_PUBLIC_HEADERS,
+     copts = tf_copts(),
+     linkopts = select({
+-        "//tensorflow:freebsd": ["-lm"],
++        "//tensorflow:freebsd": ["-lm", "-lexecinfo",],
+         "//tensorflow:windows": [],
+         "//conditions:default": [
+             "-ldl",

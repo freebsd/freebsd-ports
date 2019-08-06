@@ -1,0 +1,49 @@
+--- ./tensorflow/contrib/makefile/Makefile.orig	2019-07-08 16:51:36.748365000 +0100
++++ ./tensorflow/contrib/makefile/Makefile	2019-07-08 16:51:21.774903000 +0100
+@@ -60,12 +60,15 @@
+ 	ifeq ($(UNAME_S),Linux)
+ 	        HOST_OS := LINUX
+ 	endif
++        ifeq ($(UNAME_S),FreeBSD)
++                HOST_OS := FREEBSD
++        endif
+ 	ifeq ($(UNAME_S),Darwin)
+ 		HOST_OS := OSX
+ 	endif
+ endif
+ 
+-HOST_ARCH := $(shell if [[ $(shell uname -m) =~ i[345678]86 ]]; then echo x86_32; else echo $(shell uname -m); fi)
++HOST_ARCH := $(shell if uname -m | grep -q i[345678]86; then echo x86_32; elif uname -m | grep -q amd64; then echo x86_64; else uname -m; fi)
+ 
+ # Where compiled objects are stored.
+ HOST_OBJDIR := $(MAKEFILE_DIR)/gen/host_obj/
+@@ -111,6 +114,9 @@
+ ifeq ($(HOST_OS),LINUX)
+ 	HOST_LIBS += -ldl -lpthread
+ endif
++ifeq ($(HOST_OS),FREEBSD)
++        HOST_LIBS += -lexecinfo -lpthread
++endif
+ 
+ # If we're on a Pi, link in pthreads and dl
+ ifeq ($(HOST_OS),PI)
+@@ -248,7 +254,7 @@
+ 	LDFLAGS += -all_load
+ endif
+ # Make sure that we don't strip global constructors on Linux.
+-ifeq ($(TARGET),LINUX)
++ifeq ($(TARGET),LINUX,FREEBSD)
+ ifeq ($(HAS_GEN_HOST_PROTOC),true)
+ 	LIBFLAGS += -L$(MAKEFILE_DIR)/gen/protobuf-host/lib
+ 	export LD_LIBRARY_PATH=$(MAKEFILE_DIR)/gen/protobuf-host/lib
+@@ -261,6 +267,10 @@
+ ifeq ($(TARGET),LINUX)
+ 	LIBS += -ldl -lpthread
+ endif
++ifeq ($(TARGET),FREEBSD)
++        LIBS += -lexecinfo -lpthread
++endif
++
+ # If we're cross-compiling for the Raspberry Pi, use the right gcc.
+ ifeq ($(TARGET),PI)
+ 	CXXFLAGS += $(ANDROID_TYPES) -DRASPBERRY_PI

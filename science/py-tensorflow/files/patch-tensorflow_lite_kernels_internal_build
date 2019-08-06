@@ -1,0 +1,11 @@
+--- tensorflow/lite/kernels/internal/BUILD.orig	2019-07-09 13:22:19.397153000 +0100
++++ tensorflow/lite/kernels/internal/BUILD	2019-07-09 13:22:38.288994000 +0100
+@@ -607,7 +607,7 @@
+             ":neon_tensor_utils",
+         ],
+         "//conditions:default": [
+-            ":portable_tensor_utils",
++	    ":neon_tensor_utils",
+         ],
+     }),
+ )

@@ -1,0 +1,21 @@
+--- tensorflow/core/protobuf/autotuning.proto.orig	2019-06-18 23:48:23.000000000 +0100
++++ tensorflow/core/protobuf/autotuning.proto	2019-07-30 11:45:04.342068000 +0100
+@@ -11,14 +11,14 @@
+ import "google/protobuf/duration.proto";
+ 
+ message CudnnVersion {
+-  int32 major = 1;
+-  int32 minor = 2;
++  int32 major_val = 1;
++  int32 minor_val = 2;
+   int32 patch = 3;
+ }
+ 
+ message ComputeCapability {
+-  int32 major = 1;
+-  int32 minor = 2;
++  int32 major_val = 1;
++  int32 minor_val = 2;
+ }
+ 
+ message AutotuneResult {
