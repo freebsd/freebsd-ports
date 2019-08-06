@@ -3,7 +3,6 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/apr
 DISTFILES=	apr-${APR_VERSION}.tar.gz \
@@ -20,7 +19,7 @@ USES=		iconv pathfix libtool cpe
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-APR_VERSION=	1.6.5
+APR_VERSION=	1.7.0
 APU_VERSION=	1.6.1
 
 CPE_VENDOR=	apache
@@ -121,10 +120,6 @@ APU_CONF_ARGS+=	--without-crypto
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MMYSQL} && ${MYSQL_VER} == 80
-BROKEN=	Does not build with MySQL 8.0, see https://bz.apache.org/bugzilla/show_bug.cgi?id=62631
-.endif
 
 post-extract:
 # cleanup files not used on this platform
