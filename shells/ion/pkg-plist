@@ -11,12 +11,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/expansions/03-brace.md
 %%PORTDOCS%%%%DOCSDIR%%/expansions/04-arithmetic.md
 %%PORTDOCS%%%%DOCSDIR%%/expansions/05-method.md
-%%PORTDOCS%%%%DOCSDIR%%/features.md
 %%PORTDOCS%%%%DOCSDIR%%/functions.md
 %%PORTDOCS%%%%DOCSDIR%%/history.md
 %%PORTDOCS%%%%DOCSDIR%%/introduction.md
 %%PORTDOCS%%%%DOCSDIR%%/jobs.md
-@comment %%PORTDOCS%%%%DOCSDIR%%/misc/.md
+%%PORTDOCS%%%%DOCSDIR%%/migrating.md
 %%PORTDOCS%%%%DOCSDIR%%/misc/01-implicitcd.md
 %%PORTDOCS%%%%DOCSDIR%%/misc/02-xdg.md
 %%PORTDOCS%%%%DOCSDIR%%/misc/03-quotation.md
@@ -36,6 +35,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/variables/04-arithmetic.md
 %%PORTDOCS%%%%DOCSDIR%%/variables/05-exporting.md
 %%PORTDOCS%%%%DOCSDIR%%/variables/06-scopes.md
+%%PORTDOCS%%%%DOCSDIR%%/variables/07-namespaces.md
 @comment %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/advanced/cpu-model.ion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/advanced/rxtx-stats.ion
@@ -75,6 +75,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/continue.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/else_if.ion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/else_if.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/empty_loop_test.ion
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/empty_loop_test.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exists.ion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exists.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fail.ion
@@ -82,6 +84,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fibonacci.ion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fibonacci.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fibonacci.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fn-root-vars.ion
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fn-root-vars.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fn.ion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fn.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/for.ion
@@ -98,6 +102,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/if_with_builtins.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/inner_expansions.ion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/inner_expansions.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inplace_ops.ion
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inplace_ops.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/issues.ion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/issues.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/let.ion
@@ -124,27 +130,33 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pipelines.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quotes.ion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quotes.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/return.ion
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/return.out
 @comment %%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_benches
 @comment %%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_examples.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scopes-2.ion
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scopes-2.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scopes-3.ion
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scopes-3.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scopes-4.ion
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scopes-4.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scopes.ion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scopes.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec.ion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec/array_methods.ion
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec/array_methods.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec/arrays.ion
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec/arrays.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec/basic_condition.ion
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec/basic_condition.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec/braces.ion
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec/braces.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec/break.ion
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec/break.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec/builtin_piping.ion
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/script_exec/builtin_piping.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/string_ops.ion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/string_ops.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/strings.ion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/strings.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unicode.ion
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unicode.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/variables.ion
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/variables.out
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/while.ion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/while.out
