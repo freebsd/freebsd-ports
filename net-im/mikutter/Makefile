@@ -3,6 +3,7 @@
 
 PORTNAME=	mikutter
 PORTVERSION=	3.9.2
+PORTREVISION=	1
 CATEGORIES=	net-im ruby
 MASTER_SITES=	https://mikutter.hachune.net/bin/ \
 		LOCAL/meta/${PORTNAME}
@@ -30,7 +31,6 @@ RUN_DEPENDS=	rubygem-gtk2>=3.3.1:x11-toolkits/rubygem-gtk2 \
 		rubygem-nokogiri>=1.8.5:textproc/rubygem-nokogiri \
 		rubygem-oauth>=0.5.4:net/rubygem-oauth \
 		rubygem-pluggaloid>=1.2.0:devel/rubygem-pluggaloid \
-		rubygem-public_suffix>=3.0.3:dns/rubygem-public_suffix \
 		rubygem-text>=1.3.1:textproc/rubygem-text \
 		rubygem-totoridipjp>=0.1.0:www/rubygem-totoridipjp \
 		rubygem-twitter-text>=2.1.0:textproc/rubygem-twitter-text \
