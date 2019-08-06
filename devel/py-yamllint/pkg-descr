@@ -4,4 +4,4 @@ yamllint does not only check for syntax validity, but for weirdnesses
 like key repetition and cosmetic problems such as lines length,
 trailing spaces, indentation, etc.
 
-WWW: https://pypi.org/project/yamllint/
+WWW: https://github.com/adrienverge/yamllint
