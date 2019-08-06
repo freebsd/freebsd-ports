@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	sigil
-PORTVERSION=	0.9.13
-PORTREVISION=	1
+PORTVERSION=	0.9.16
 CATEGORIES=	textproc
 
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	WYSIWYG ePub editor
 
 LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libpcre.so:devel/pcre \
@@ -26,8 +26,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Sigil-Ebook
 GH_PROJECT=	Sigil
 
-USE_QT=		concurrent core gui network printsupport svg webkit \
-		widgets xml xmlpatterns \
+USE_QT=		concurrent core declarative gui location network printsupport \
+		svg webchannel webengine widgets xml xmlpatterns \
 		buildtools_build linguisttools_build qmake_build \
 		imageformats_run
 
