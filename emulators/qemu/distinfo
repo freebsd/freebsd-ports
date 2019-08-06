@@ -1,3 +1,3 @@
-TIMESTAMP = 1555276984
-SHA256 (qemu/3.0.1/qemu-3.0.1.tar.xz) = cf5747aa3bf0e7ec6cb166f48be4680097c333ce320e8e58140980b0d99512f3
-SIZE (qemu/3.0.1/qemu-3.0.1.tar.xz) = 35626524
+TIMESTAMP = 1564890466
+SHA256 (qemu/3.1.1/qemu-3.1.1.tar.xz) = d7c69fef3fb4bfbac99e3f2ac9fb8d6409db4faadf2e37337d544e3fdb4fde3a
+SIZE (qemu/3.1.1/qemu-3.1.1.tar.xz) = 36072500

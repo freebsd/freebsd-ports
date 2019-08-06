@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	3.0.1
-PORTREVISION=	2
+PORTVERSION=	3.1.1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -25,7 +24,7 @@ USE_XORG=	pixman
 USE_GNOME+=	cairo glib20 libxml2
 .endif
 
-USES?=		cpe gl gmake gnome pkgconfig bison perl5 python:build tar:xz
+USES?=		cpe gmake gnome pkgconfig bison perl5 python:build tar:xz
 USE_PERL5=	build
 
 PORTSCOUT=	limit:^3\.0\.
@@ -61,12 +60,13 @@ GTK3_LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 			libepoxy.so:graphics/libepoxy \
 			libpcre2-8.so:devel/pcre2
 GTK3_USE=	GNOME=gtk30,vte3,gdkpixbuf2 XORG=x11,xext GL=gbm
-GTK3_USES=	gettext
+GTK3_USES=	gettext gl
 JPEG_CONFIGURE_OFF=	--disable-vnc-jpeg
 JPEG_USES=		jpeg
 NCURSES_USES=		ncurses:base
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 OPENGL_USE=	GL=glu
+OPENGL_USES=		gl
 PCAP_CONFIGURE_ON=	--enable-pcap
 PCAP_EXTRA_PATCHES=	${FILESDIR}/pcap-patch ${FILESDIR}/pcap-patch-net_net.c \
 			${FILESDIR}/pcap-patch-net_clients.h
