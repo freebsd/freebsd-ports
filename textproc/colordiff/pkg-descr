@@ -4,4 +4,4 @@ coloured syntax highlighting at the command line to improve readability.
 The output is similar to how a diff-generated patch might appear in Vim or Emacs
 with the appropriate syntax highlighting options enabled.
 
-WWW: http://www.colordiff.org/
+WWW: https://www.colordiff.org/
