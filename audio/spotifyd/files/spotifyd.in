@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: spotifyd
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf.local, /etc/rc.conf or
+# /etc/rc.conf.d/spotifyd to enable this service:
+#
+# spotifyd_enable (bool):       Set to NO by default.
+#                               Set it to "YES" to enable spotifyd.
+# spotifyd_config (str):        Set to %%PREFIX%%/etc/spotifyd.conf by default.
+#                               Path to configuration file.
+# spotifyd_user (str):          Set to "nobody" by default.
+#                               User to run spotifyd
+
+. /etc/rc.subr
+
+name=spotifyd
+rcvar=spotifyd_enable
+start_precmd="${name}_precmd"
+
+load_rc_config $name
+
+: ${spotifyd_enable:="NO"}
+: ${spotifyd_config:="%%PREFIX%%/etc/spotifyd.conf"}
+: ${spotifyd_user:="nobody"}
+
+pidfile="/var/run/${name}/${name}.pid"
+procname="%%PREFIX%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-S -m 3 -s info -l daemon -p ${pidfile} ${procname} --no-daemon -c ${spotifyd_config} ${spotifyd_args}"
+
+spotifyd_precmd()
+{
+	/usr/bin/install -d -m 0755 -o ${spotifyd_user} /var/run/${name}
+}
+
+run_rc_command "$1"

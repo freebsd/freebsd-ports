@@ -2,6 +2,7 @@
 
 PORTNAME=	spotifyd
 DISTVERSION=	0.2.11
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -19,6 +20,7 @@ GH_TUPLE=	plietar:dns-parser:1d3e5a5591bc72eb061c23bd426c4a25f2f73791:dnsparser 
 		librespot-org:librespot:4e3576ba7c6146cf68e1953daeec929d619b26b1:librespot \
 		plietar:rust-mdns:66a74033da6c9f1a06e7b0a29f4544fd189d6479:mdns \
 		plietar:rust-tremor:5958cc302e78f535dad90e9665da981ddff4000a:tremor
+USE_RC_SUBR=	spotifyd
 
 CARGO_CRATES=	adler32-1.0.3 \
 		advapi32-sys-0.2.0 \
@@ -336,7 +338,8 @@ CARGO_BUILD_ARGS=	--no-default-features
 CARGO_INSTALL_ARGS=	--no-default-features
 CARGO_TEST_ARGS=	--no-default-features
 
-PLIST_FILES=	bin/spotifyd
+PLIST_FILES=	bin/spotifyd \
+		"@sample etc/spotifyd.conf.sample"
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=		DBUS DOCS PORTAUDIO PULSEAUDIO
@@ -358,6 +361,7 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spotifyd
+	${INSTALL_DATA} ${FILESDIR}/spotifyd.conf ${STAGEDIR}${PREFIX}/etc/spotifyd.conf.sample
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
