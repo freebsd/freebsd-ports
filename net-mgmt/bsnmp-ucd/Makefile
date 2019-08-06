@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsnmp-ucd
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	trociny@FreeBSD.org
