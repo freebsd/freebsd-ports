@@ -1,4 +1,4 @@
-# MAINTAINER: ports@FreeBSD.org
+# MAINTAINER: rust@FreeBSD.org
 # $FreeBSD$
 
 BEGIN {
