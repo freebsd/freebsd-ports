@@ -1,0 +1,13 @@
+--- third_party/aws/BUILD.bazel.orig	2019-07-07 15:57:49.887118000 +0100
++++ third_party/aws/BUILD.bazel	2019-07-07 15:58:39.817675000 +0100
+@@ -27,7 +27,9 @@
+         "@org_tensorflow//tensorflow:raspberry_pi_armeabi": glob([
+             "aws-cpp-sdk-core/source/platform/linux-shared/*.cpp",
+         ]),
+-        "//conditions:default": [],
++        "//conditions:default":glob([
++            "aws-cpp-sdk-core/source/platform/linux-shared/*.cpp",
++        ]),
+     }) + glob([
+         "aws-cpp-sdk-core/include/**/*.h",
+         "aws-cpp-sdk-core/source/*.cpp",

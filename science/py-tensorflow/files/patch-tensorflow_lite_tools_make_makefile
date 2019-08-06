@@ -1,0 +1,19 @@
+--- tensorflow/lite/tools/make/Makefile.orig	2019-07-08 14:04:30.373727000 +0100
++++ tensorflow/lite/tools/make/Makefile	2019-07-08 16:44:36.249811000 +0100
+@@ -16,12 +16,15 @@
+ 	ifeq ($(UNAME_S),Linux)
+ 		HOST_OS := linux
+ 	endif
++        ifeq ($(UNAME_S),FreeBSD)
++                HOST_OS := freebsd
++        endif
+ 	ifeq ($(UNAME_S),Darwin)
+ 		HOST_OS := osx
+ 	endif
+ endif
+ 
+-HOST_ARCH := $(shell if uname -m | grep -q i[345678]86; then echo x86_32; else uname -m; fi)
++HOST_ARCH := $(shell if uname -m | grep -q i[345678]86; then echo x86_32; elif uname -m | grep -q amd64; then echo x86_64; else uname -m; fi)
+ 
+ # Override these on the make command line to target a specific architecture. For example:
+ # make -f tensorflow/lite/tools/make/Makefile TARGET=rpi TARGET_ARCH=armv7l

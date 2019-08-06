@@ -1,0 +1,17 @@
+startup --batch
+
+build --strip=never
+build --verbose_failures --noshow_loading_progress
+test --verbose_test_summary --verbose_failures --noshow_loading_progress
+
+build --spawn_strategy=local --genrule_strategy=local
+test --spawn_strategy=local --genrule_strategy=local
+
+# make bazel only fetch distfiles from the cache
+fetch --repository_cache="%%BAZEL_DIR%%/bazel-cache/" --distdir="%%BAZEL_DIST%%/bazel-distdir/"
+build --repository_cache="%%BAZEL_DIR%%/bazel-cache/" --distdir="%%BAZEL_DIST%%/bazel-distdir/"
+
+build --define=PREFIX=%%LOCALBASE%%
+build --define=LIBDIR=%%LOCALBASE%%/lib
+
+build --config=noaws --config=nohdfs --config=noignite --config=nokafka

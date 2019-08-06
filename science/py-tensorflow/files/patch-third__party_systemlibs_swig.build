@@ -1,0 +1,11 @@
+--- third_party/systemlibs/swig.BUILD.orig	2019-07-13 11:28:32.539254000 +0100
++++ third_party/systemlibs/swig.BUILD	2019-07-13 11:28:47.485432000 +0100
+@@ -13,7 +13,7 @@
+ genrule(
+     name = "lnswiglink",
+     outs = ["swiglink"],
+-    cmd = "ln -s $$(which swig) $@",
++    cmd = "ln -s $$(which swig3.0) $@",
+ )
+ 
+ sh_binary(

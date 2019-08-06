@@ -1,0 +1,11 @@
+--- third_party/systemlibs/grpc.BUILD.orig	2019-06-18 23:48:23.000000000 +0100
++++ third_party/systemlibs/grpc.BUILD	2019-07-13 14:03:35.671155000 +0100
+@@ -7,7 +7,7 @@
+ 
+ cc_library(
+     name = "grpc",
+-    linkopts = ["-lgrpc"],
++    linkopts = ["-lgrpc", "-lgpr"],
+     visibility = ["//visibility:public"],
+ )
+ 

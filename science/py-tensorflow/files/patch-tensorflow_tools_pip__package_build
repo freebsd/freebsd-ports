@@ -1,0 +1,10 @@
+--- tensorflow/tools/pip_package/BUILD.orig	2019-07-06 22:03:09.438361000 +0100
++++ tensorflow/tools/pip_package/BUILD	2019-07-06 22:03:18.385021000 +0100
+@@ -175,7 +175,6 @@
+         "@gemmlowp//:LICENSE",
+         "@gif_archive//:COPYING",
+         "@highwayhash//:LICENSE",
+-        "@hwloc//:COPYING",
+         "@icu//:icu4c/LICENSE",
+         "@jpeg//:LICENSE.md",
+         "@keras_applications_archive//:LICENSE",
