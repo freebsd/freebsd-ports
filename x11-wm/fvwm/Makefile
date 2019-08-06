@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fvwm window manager
 
 BROKEN=		unfetchable
+DEPRECATED=	unsupported upstream
+EXPIRATION_DATE=	2019-10-05
 
 CONFLICTS=	fvwm-2.*
 
