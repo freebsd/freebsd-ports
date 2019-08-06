@@ -5,7 +5,7 @@ PORTNAME=	xcb-proto
 PORTVERSION=	1.13
 PORTREVISION=	1
 CATEGORIES=	x11 python
-MASTER_SITES=	http://xcb.freedesktop.org/dist/
+MASTER_SITES=	https://xcb.freedesktop.org/dist/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	The X protocol C-language Binding (XCB) protocol
