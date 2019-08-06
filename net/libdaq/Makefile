@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcap.so:net/libpcap	# avoid base libpcap
 
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf compiler:c++11-lang libtool pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
@@ -25,4 +25,5 @@ LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 CONFLICTS=	daq-2*
+
 .include <bsd.port.mk>
