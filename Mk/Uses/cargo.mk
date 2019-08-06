@@ -289,7 +289,7 @@ cargo-crates: extract
 			--manifest-path ${CARGO_CARGOTOML} \
 			--verbose; \
 	fi
-	@${SETENV} USE_GITHUB=${USE_GITHUB} \
+	@${SETENV} USE_GITHUB=${USE_GITHUB} USE_GITLAB=${USE_GITLAB} GL_SITE=${GL_SITE} \
 		${AWK} -f ${SCRIPTSDIR}/cargo-crates.awk ${CARGO_CARGOLOCK}
 
 # cargo-crates-licenses will try to grab license information from
