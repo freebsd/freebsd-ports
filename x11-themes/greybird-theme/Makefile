@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	greybird
-PORTVERSION=	3.22.9
+PORTVERSION=	3.22.10
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Gtk and xfwm4 themes for the Xfce Desktop
 
 LICENSE=	GPLv2 CC-BY-SA-3.0
@@ -24,14 +23,13 @@ GH_PROJECT=	Greybird
 USE_GITHUB=	yes
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	NOTIFYD
+OPTIONS_DEFINE=		NOTIFYD
 OPTIONS_DEFAULT=	NOTIFYD
+OPTIONS_SUB=		yes
+
 NOTIFYD_DESC=	Install xfce4-notifyd theme
 
-.include <bsd.port.options.mk>
-
 post-patch:
-# Remove .orig file
 	@${RM} ${WRKSRC}/gtk-?.0/*.orig
 
 do-install:
@@ -41,13 +39,9 @@ do-install:
 		${COPYTREE_SHARE} ${dir} ${STAGEDIR}${PREFIX}/share/themes/Greybird
 .endfor
 
-.if ${PORT_OPTIONS:MNOTIFYD}
+do-install-NOTIFYD-on:
 	@cd ${WRKSRC} && \
 		${COPYTREE_SHARE} xfce-notify-4.0/ \
 		${STAGEDIR}${PREFIX}/share/themes/Greybird
-PLIST_SUB+=	NOTIFYD=""
-.else
-PLIST_SUB+=	NOTIFYD="@comment "
-.endif
 
 .include <bsd.port.mk>
