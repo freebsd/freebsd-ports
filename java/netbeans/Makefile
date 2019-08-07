@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	netbeans
-DISTVERSION=	11.0
+DISTVERSION=	11.1
 CATEGORIES=	java devel
-MASTER_SITES=	APACHE/incubator/netbeans/incubating-netbeans/incubating-${PORTVERSION}/
-#MASTER_SITES=	https://dist.apache.org/repos/dist/dev/incubator/netbeans/incubating-netbeans/incubating-${DISTVERSION}/
-DISTNAME=	incubating-netbeans-${DISTVERSION}-bin
+MASTER_SITES=	APACHE/netbeans/netbeans/${PORTVERSION}/
+DISTNAME=	netbeans-${DISTVERSION}-bin
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Modular, standards-based integrated development environment
