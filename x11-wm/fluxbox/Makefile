@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Small and fast window manager based on BlackBox
 
 LICENSE=	MIT
@@ -20,8 +20,9 @@ LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USE_XORG=	x11 xext xorgproto xft xpm xrandr
 USES=		gmake pkgconfig
+
+USE_XORG=	x11 xext xorgproto xft xpm xrandr
 GNU_CONFIGURE=	yes
 
 PORTDATA=	*
