@@ -1,13 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	mujs
-DISTVERSION=	1.0.5-35
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-g00d4606
+DISTVERSION=	1.0.6
 CATEGORIES=	lang devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	d9a1f4c57f976eeb67d877101fcdca89ecc047ed.patch:-p1
+PATCHFILES=	d9a1f4c57f976eeb67d877101fcdca89ecc047ed.patch:-p1 # Enable readline on FreeBSD
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Embeddable Javascript interpreter in C
