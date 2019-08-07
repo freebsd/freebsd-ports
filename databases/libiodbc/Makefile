@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libiodbc
-PORTVERSION=	3.52.12
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.52.13
 CATEGORIES=	databases
-MASTER_SITES=	SF/iodbc/iodbc/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	ODBC 3.x driver manager, for universal data source access
@@ -14,13 +14,16 @@ LICENSE_COMB=		dual
 LICENSE_FILE_BSD=	${WRKSRC}/LICENSE.BSD
 LICENSE_FILE_LGPL20=	${WRKSRC}/LICENSE.LGPL
 
-USES=		libtool pathfix pkgconfig
+USES=		autoreconf libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-iodbc-inidir=${ETCDIR} \
 		--includedir=${LOCALBASE}/include/libiodbc \
 		--disable-libodbc
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	openlink
+GH_PROJECT=	iODBC
 
 OPTIONS_DEFINE=	GTK2 DOCS EXAMPLES
 OPTIONS_SUB=	yes
@@ -33,8 +36,6 @@ GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 GTK2_CONFIGURE_ENABLE=	gui
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^SUBDIRS/s|samples||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|-ldl||g' ${WRKSRC}/admin/libiodbc.pc.in
 
