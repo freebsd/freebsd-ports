@@ -4,14 +4,11 @@ PORTNAME=	p0f2
 PORTVERSION=	2.0.8
 PORTREVISION=	1
 CATEGORIES=	net-mgmt security
-MASTER_SITES=	http://lcamtuf.coredump.cx/p0f/ \
-		http://farrokhi.net/distfiles/
+MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/old/2.x/
 DISTNAME=	p0f-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passive OS fingerprinting tool
-
-BROKEN=		unfetchable
 
 CONFLICTS=	p0f-3.*
 
