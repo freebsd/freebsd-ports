@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--without-motif --without-ttf --without-editres \
 USE_XORG=	x11 xaw ice sm xpm xext xinerama
 
 LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
-		libpng16.so:graphics/png
+		libpng.so:graphics/png
 
 OPTIONS_DEFINE=	MESAGL MB SYSLOG DISABLE_ALLOW_ROOT NICE_ONLY BLANK_ONLY \
 		KERBEROS4 BAD_PAM GTK2 TIME_BOMB CUSTOMIZATION MAGICK JP \

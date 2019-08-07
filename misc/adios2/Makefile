@@ -16,7 +16,7 @@ LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
 		libfabric.so:net/libfabric \
 		libffi.so:devel/libffi \
 		libmpi.so:net/openmpi \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libzfp.so:devel/zfp
 RUN_DEPENDS=	bash:shells/bash
 
