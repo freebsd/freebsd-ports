@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2019-08-07 17:55:25 UTC
++++ Makefile.am
+@@ -73,7 +73,7 @@
+ 
+ AUTOMAKE_OPTIONS	= gnu dist-zip 1.9.6
+ 
+-SUBDIRS 		= admin bin etc man include iodbcinst iodbc iodbcadm drvproxy samples
++SUBDIRS 		= admin bin etc man include iodbcinst iodbc iodbcadm drvproxy
+ 
+ ACLOCAL_AMFLAGS		= -I admin
+ 
