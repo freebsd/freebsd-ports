@@ -1,6 +1,6 @@
---- util/fbsetbg.orig	2008-09-22 13:47:05.000000000 -0500
-+++ util/fbsetbg	2008-09-22 13:52:03.000000000 -0500
-@@ -49,7 +49,7 @@
+--- util/fbsetbg.orig	2015-02-08 10:44:45 UTC
++++ util/fbsetbg
+@@ -49,7 +49,7 @@ lastwallpaper="${HOME}/.fluxbox/lastwallpaper"
  
  
  WHOAMI=`whoami`
@@ -9,7 +9,7 @@
  
  command="`basename \"$0\"`"
  
-@@ -129,9 +129,28 @@
+@@ -133,9 +133,28 @@ Common tips to use with $command:
  EOF
  }
  

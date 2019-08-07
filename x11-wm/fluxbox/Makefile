@@ -3,11 +3,9 @@
 
 PORTNAME=	fluxbox
 PORTVERSION=	1.3.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Small and fast window manager based on BlackBox
@@ -28,13 +26,9 @@ GNU_CONFIGURE=	yes
 PORTDATA=	*
 PORTDOCS=	*
 
-DOCSVERSION=	20060629
-
-OPTIONS_DEFINE=	DOCS DOCHTML PDFDOCS DEBUG IMLIB2 XINERAMA \
+OPTIONS_DEFINE=	DOCS DEBUG IMLIB2 XINERAMA \
 		XRENDER NLS SLIT SYSTRAY REMEMBER TOOLBAR
 OPTIONS_DEFAULT=	XRENDER SLIT SYSTRAY REMEMBER TOOLBAR XINERAMA
-DOCHTML_DESC=	Install html documentation
-PDFDOCS_DESC=	Build and install PDF documentation
 REMEMBER_DESC=	Enable remember feature
 SLIT_DESC=	Enable slit feature
 SYSTRAY_DESC=	Enable systray feature
@@ -57,16 +51,6 @@ XINERAMA_USE=	XORG=xinerama
 XRENDER_USE=	XORG=xrender
 XRENDER_CONFIGURE_ENABLE=	xrender
 
-# http://fluxbox.org/docbook/en/tarballs/
-DOCHTML_MASTER_SITES=	LOCAL/mezz:html \
-			http://people.freebsd.org/~mezz/distfiles/:html
-DOCHTML_DISTFILES=	fb-doc-mfhtml-${DOCSVERSION}.tgz:html
-DOCHTML_EXTRACT_ONLY=	fb-doc-mfhtml-${DOCSVERSION}.tgz
-# http://fluxbox.org/docbook/en/pdf/
-PDFDOCS_MASTER_SITES=	LOCAL/mezz:pdf \
-			http://people.freebsd.org/~mezz/distfiles/:pdf
-PDFDOCS_DISTFILES=	fluxbook-${DOCSVERSION}.pdf:pdf
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/util/fluxbox-generate_menu.in ${WRKSRC}/util/fbsetbg
@@ -78,16 +62,5 @@ post-patch-NLS-off:
 post-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "AUTHORS ChangeLog NEWS README TODO" \
 		${STAGEDIR}${DOCSDIR})
-
-post-install-PDFDOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pdf
-	${INSTALL_DATA} ${DISTDIR}/fluxbook-${DOCSVERSION}.pdf \
-		${STAGEDIR}${DOCSDIR}/pdf/
-
-post-install-DOCHTML-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
-. for h in *.css *.html
-	(cd ${WRKDIR}/html && ${INSTALL_DATA} ${h} ${STAGEDIR}${DOCSDIR}/html)
-. endfor
 
 .include <bsd.port.mk>
