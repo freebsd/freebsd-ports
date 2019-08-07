@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	3.1.0
-PORTREVISION=	2
+PORTVERSION=	4.0.0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 PKGNAMESUFFIX=	-devel
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libnettle.so:security/nettle \
 		libepoxy.so:graphics/libepoxy \
 		libpcre2-8.so:devel/pcre2
 
-USES=		cpe gmake gnome pkgconfig bison perl5 python:2.7,build tar:xz
+USES=		bison cpe gmake gnome iconv:wchar_t perl5 pkgconfig python:build tar:xz
 USE_GNOME=	cairo glib20 libxml2
 USE_PERL5=	build
 USE_XORG=	pixman
@@ -51,12 +50,12 @@ STATIC_LINK_DESC=	Statically link the executables
 VDE_DESC=		vde dependency (for vde networking)
 OPTIONS_DEFAULT=X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP NCURSES VDE
 OPTIONS_SUB=	yes
-X11_USE=	SDL=sdl XORG=x11,xext GNOME=gdkpixbuf2
+X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
 X11_USES=	sdl
 X11_CONFIGURE_ENABLE=	sdl
 GTK3_LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 GTK3_USE=	GNOME=gdkpixbuf2,gtk30,vte3 XORG=x11,xext
-GTK3_USES=	gettext
+GTK3_USES=	gettext gl
 GTK3_CONFIGURE_OFF=	--disable-gtk --disable-vte
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_OFF=	--disable-gnutls
@@ -69,6 +68,7 @@ PNG_CONFIGURE_OFF=	--disable-vnc-png
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_OFF=	--disable-curl
 OPENGL_USE=	GL=gl
+OPENGL_USES=	gl
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 USBREDIR_BUILD_DEPENDS=	usbredir>=0.6:net/usbredir
 USBREDIR_RUN_DEPENDS=	usbredir>=0.6:net/usbredir
@@ -84,11 +84,12 @@ STATIC_LINK_PREVENTS_MSG=	X11 ui cannot be built static
 NCURSES_USES=		ncurses:base
 SAMBA_USES=		samba:run # smbd
 SAMBA_CONFIGURE_ON=	--smbd=${LOCALBASE}/sbin/smbd
-DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
+DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html \
+			sphinx-build:textproc/py-sphinx
 DOCS_USES=		makeinfo
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=1
 
-PORTDOCS=	docs qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \
+PORTDOCS=	docs interop/.buildinfo interop/* qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \
 	       	qemu-qmp-ref.html qemu-qmp-ref.txt
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
@@ -99,6 +100,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
 		--disable-linux-user --disable-linux-aio --disable-xen \
 		--enable-debug-info --python=${PYTHON_CMD} \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.options.mk>
 
@@ -130,21 +132,10 @@ post-patch:
 	@${REINPLACE_CMD} -e '/LIBS/s|-lprocstat|-lprocstat -lelf|' \
 		 -e '/libusb/s/ --atleast-version=1\.0\.[0-9]*//' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/libs_qga=/s|glib_libs|glib_libs -lintl|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -E \
-		-e "/^by Tibor .TS. S/s|Sch.*z.$$|Schuetz.|" \
-		${WRKSRC}/qemu-doc.texi
-	@${REINPLACE_CMD} -E \
-		-e "s|^(CFLAGS=).*|\1${CFLAGS} -fno-strict-aliasing|" \
-		-e "s|^(LDFLAGS=).*|\1${LDFLAGS}|" \
-		${WRKSRC}/Makefile.target
 	@${REINPLACE_CMD} -E \
 		-e "s|^(CFLAGS=).*|\1${CFLAGS} -fno-strict-aliasing -I.|" \
 		-e "s|^(LDFLAGS=).*|\1${LDFLAGS}|" \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -E \
-		-e "1s|^(#! )/usr/bin/perl|\1${PERL}|" \
-		${WRKSRC}/scripts/texi2pod.pl
 
 post-patch-CDROM_DMA-off:
 	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h
