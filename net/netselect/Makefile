@@ -2,22 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	netselect
-PORTVERSION=	0.3
+PORTVERSION=	0.4
+DISTVERSIONPREFIX=${PORTNAME}-
 CATEGORIES=	net
-MASTER_SITES=	http://apenwarr.ca/netselect/ \
-		GENTOO
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Ultrafast implementation of ping
 
 LICENSE=	BSD3CLAUSE
 
+USES=		gmake
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	apenwarr
+
 OPTIONS_DEFINE=	SUID DOCS
 OPTIONS_SUB=	yes
 SUID_DESC=	Install with the setuid bit to allow use by non-root users
-EXTRACT_AFTER_ARGS=netselect/netselect.c netselect/README
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
@@ -25,6 +26,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
