@@ -1,0 +1,57 @@
+--- ./ld/configure.tgt.orig	2019-01-19 16:01:33.000000000 +0000
++++ ./ld/configure.tgt	2019-08-07 20:41:31.800693000 +0000
+@@ -651,6 +651,10 @@ rs6000-*-aix*)		targ_emul=aixrs6
+ 			;;
+ rl78-*-*)		targ_emul=elf32rl78 ;;
+ rx-*-*)			targ_emul=elf32rx ;;
++s390x-*-freebsd*)	targ_emul=elf64_s390
++			targ_extra_emuls=elf_s390
++			targ_extra_libpath=$targ_extra_emuls
++			tdir_elf_s390=`echo ${targ_alias} | sed -e 's/s390x/s390/'` ;;
+ s390x-*-linux*)		targ_emul=elf64_s390
+ 			targ_extra_emuls=elf_s390
+ 			targ_extra_libpath=$targ_extra_emuls
+--- ./gas/configure.orig	2019-02-02 15:50:20.000000000 +0000
++++ ./gas/configure	2019-08-07 20:44:45.468441000 +0000
+@@ -7095,6 +7095,7 @@ ia64-*-hpux*)
+   ;;
+ 
+ x86_64-*kfreebsd*-gnu|x86_64-*linux*|powerpc*-*linux*| \
++s390*-*freebsd*| \
+ s390*-*linux*|s390*-*tpf*|sparc*-*linux*)
+   # Find out which ABI we are using.
+   echo 'int i;' > conftest.$ac_ext
+@@ -7125,6 +7126,9 @@ s390*-*linux*|s390*-*tpf*|sparc*-*linux*)
+ 	  powerpc64-*linux*)
+ 	    LD="${LD-ld} -m elf32ppclinux"
+ 	    ;;
++	  s390x-*freebsd*)
++	    LD="${LD-ld} -m elf_s390"
++	    ;;
+ 	  s390x-*linux*)
+ 	    LD="${LD-ld} -m elf_s390"
+ 	    ;;
+@@ -7146,6 +7150,9 @@ s390*-*linux*|s390*-*tpf*|sparc*-*linux*)
+ 	    ;;
+ 	  powerpc-*linux*)
+ 	    LD="${LD-ld} -m elf64ppc"
++	    ;;
++	  s390*-*freebsd*)
++	    LD="${LD-ld} -m elf64_s390"
+ 	    ;;
+ 	  s390*-*linux*|s390*-*tpf*)
+ 	    LD="${LD-ld} -m elf64_s390"
+--- ./bfd/config.bfd.orig	2019-08-07 20:35:52.161591000 +0000
++++ ./bfd/config.bfd	2019-08-07 20:40:33.579807000 +0000
+@@ -1213,6 +1213,11 @@ case "${targ}" in
+     want64=true
+     ;;
+ #ifdef BFD64
++  s390x-*-freebsd*)
++    targ_defvec=s390_elf64_vec
++    targ_selvecs=s390_elf32_vec
++    want64=true
++    ;;
+   s390x-*-linux*)
+     targ_defvec=s390_elf64_vec
+     targ_selvecs=s390_elf32_vec
