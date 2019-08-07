@@ -1,0 +1,6 @@
+mkcue generates CUE sheets from a CD TOC (Table Of Contents).
+
+It is a perfect companion for abcde to generate backups of your audio CDs using
+the FLAC codec and the single track option.
+
+WWW: https://packages.debian.org/sid/mkcue
