@@ -3,6 +3,7 @@
 
 PORTNAME=	xtide
 PORTVERSION=	2.15.2
+PORTREVISION=	2
 CATEGORIES=	astro geography
 MASTER_SITES=	https://flaterco.com/files/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -40,7 +41,7 @@ X11_DESKTOP_ENTRIES=	"XTide" "" "xtide" "xtide" "" ""
 
 DISTNAME_TCD=	libtcd-2.2.7-r2
 WRKSRC_TCD=	${WRKDIR}/${DISTNAME_TCD:C/-r[0-9]+//}
-DISTNAME_HARM=	harmonics-dwf-20151227-free
+DISTNAME_HARM=	harmonics-dwf-20190620-free
 WRKSRC_HARM=	${WRKDIR}/${DISTNAME_HARM:C/-free//}
 DISTNAME_WVS=	wvs
 
