@@ -8,8 +8,9 @@ MASTER_SITES=	http://embed.cs.utah.edu/creduce/
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Produces small test cases
 
-BUILD_DEPENDS=	llvm-config80:devel/llvm80
-RUN_DEPENDS=	llvm-config80:devel/llvm80 \
+LLVM_VER=	80
+BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
+RUN_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER} \
 		topformflat:devel/delta \
 		astyle:devel/astyle \
 		p5-Benchmark-Timer>=0:devel/p5-Benchmark-Timer \
@@ -22,10 +23,10 @@ RUN_DEPENDS=	llvm-config80:devel/llvm80 \
 BROKEN_powerpc64=	fails to configure: cannot compile and link test program with selected LLVM
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config80 \
-		CC=${LOCALBASE}/bin/clang80 \
-		CXX=${LOCALBASE}/bin/clang++80 \
-		CPP=${LOCALBASE}/bin/clang-cpp80
+CONFIGURE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VER} \
+		CC=${LOCALBASE}/bin/clang${LLVM_VER} \
+		CXX=${LOCALBASE}/bin/clang++${LLVM_VER} \
+		CPP=${LOCALBASE}/bin/clang-cpp${LLVM_VER}
 
 USES=		autoreconf gmake libtool perl5
 
