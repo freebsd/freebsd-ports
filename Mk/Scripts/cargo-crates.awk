@@ -72,7 +72,9 @@ function split_url(s) {
 		tag = url["fragment"]
 	}
 
+	added = 0
 	if (url["host"] == "github.com") {
+		added = 1
 		gh_tuple[gh_tuple_len++] = sprintf(\
 			"%s:%s:%s:%s", account, project, tag, package_name)
 	} else {
@@ -88,8 +90,13 @@ function split_url(s) {
 				gl_tuple[gl_tuple_len++] = sprintf(\
 					"%s:%s:%s:%s:%s", site, account, project, tag, package_name)
 			}
+			added = 1
 			break
 		}
+	}
+
+	if (!added) {
+		printf "Warning: Ignoring git source on line %d: %s\n", NR, $3 > "/dev/stderr"
 	}
 }
 
