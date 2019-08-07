@@ -27,13 +27,13 @@ CMAKE_ARGS=	-DClang_DIR:PATH="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/cmake/clang" 
 CXXFLAGS+=	-DNDEBUG
 
 PLIST_FILES=	bin/ccls
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_DISTFILES=		MaskRay-ccls.wiki-20190226.tar.gz:docs
 DOCS_MASTER_SITES=	LOCAL/tobik:docs \
 			https://pkg.tobik.me/distfiles/:docs
-PORTDOCS=		*
+DOCS_DISTFILES=		MaskRay-ccls.wiki-20190226.tar.gz:docs
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
