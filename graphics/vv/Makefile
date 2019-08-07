@@ -13,6 +13,8 @@ COMMENT=	Fast and simple 4D image viewer
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		wrong LIB_DEPENDS
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
 		libgdcmCommon.so:devel/gdcm \
