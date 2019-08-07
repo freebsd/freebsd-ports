@@ -1,6 +1,6 @@
---- style/style.pro.orig	2019-03-19 23:11:41 UTC
+--- style/style.pro.orig	2019-07-30 23:03:59 UTC
 +++ style/style.pro
-@@ -62,7 +62,6 @@ unix {
+@@ -69,7 +69,6 @@ unix {
    isEmpty(PREFIX) {
      PREFIX = /usr
    }

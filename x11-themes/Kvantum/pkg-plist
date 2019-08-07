@@ -15,6 +15,8 @@ bin/kvantumpreview
 %%DATADIR%%/KvArcDark/KvArcDark.svg
 %%DATADIR%%/KvBeige/KvBeige.kvconfig
 %%DATADIR%%/KvBeige/KvBeige.svg
+%%DATADIR%%/KvBlender/KvBlender.kvconfig
+%%DATADIR%%/KvBlender/KvBlender.svg
 %%DATADIR%%/KvBrown/KvBrown.kvconfig
 %%DATADIR%%/KvBrown/KvBrown.svg
 %%DATADIR%%/KvCurves/KvCurves.kvconfig
@@ -71,6 +73,7 @@ share/color-schemes/KvAmbience.colors
 share/color-schemes/KvArc.colors
 share/color-schemes/KvArcDark.colors
 share/color-schemes/KvBeige.colors
+share/color-schemes/KvBlender.colors
 share/color-schemes/KvBrown.colors
 share/color-schemes/KvCurves.colors
 share/color-schemes/KvCurvesLight.colors
@@ -103,15 +106,18 @@ share/kvantummanager/translations/kvantummanager_et.qm
 share/kvantummanager/translations/kvantummanager_fr.qm
 share/kvantummanager/translations/kvantummanager_id.qm
 share/kvantummanager/translations/kvantummanager_it.qm
+share/kvantummanager/translations/kvantummanager_ja.qm
 share/kvantummanager/translations/kvantummanager_lt.qm
 share/kvantummanager/translations/kvantummanager_nl.qm
 share/kvantummanager/translations/kvantummanager_pl.qm
 share/kvantummanager/translations/kvantummanager_pt_BR.qm
+share/kvantummanager/translations/kvantummanager_sk_SK.qm
 share/kvantumpreview/translations/kvantumpreview_cy.qm
 share/kvantumpreview/translations/kvantumpreview_de.qm
 share/kvantumpreview/translations/kvantumpreview_eo.qm
 share/kvantumpreview/translations/kvantumpreview_es.qm
 share/kvantumpreview/translations/kvantumpreview_fr.qm
+share/kvantumpreview/translations/kvantumpreview_ja.qm
 share/kvantumpreview/translations/kvantumpreview_lt.qm
 share/kvantumpreview/translations/kvantumpreview_nl.qm
 share/kvantumpreview/translations/kvantumpreview_pt_BR.qm
