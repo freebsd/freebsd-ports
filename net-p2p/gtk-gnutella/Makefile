@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	1.1.14
+PORTVERSION=	1.1.15
+DISTVERSIONPREFIX=v
 CATEGORIES=	net-p2p ipv6
-MASTER_SITES=	SF
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	GTK based Gnutella client
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		gnome iconv localbase:ldflags pkgconfig tar:xz
+USE_GITHUB=	yes
 USE_GNOME=	glib20 libxml2
 
 HAS_CONFIGURE=	yes
