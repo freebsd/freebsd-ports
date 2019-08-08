@@ -1,8 +1,8 @@
 crate is a FreeBSD containerizer utilizing FreeBSD jails.
 
-crate creates application containers based on the description provided by the
-user, and then runs containers as a monolithic processes, with all dependencies
-included in the container.
+crate can create the application container based on the description provided by
+the user, and then runs this container any number of times as a monolithic
+process, with all dependencies included in the container.
 
 Containers can be useful in these scenarios:
 * You can keep any version of your application, and it will always run later the
