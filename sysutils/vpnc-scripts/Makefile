@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vpnc-scripts
-PORTVERSION=	20190117
+PORTVERSION=	20190611
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
 		ZI
