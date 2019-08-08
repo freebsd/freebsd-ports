@@ -2,14 +2,8 @@
 
 PORTNAME=	nuspell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
-PORTREVISION=	3
+DISTVERSION=	2.3.0
 CATEGORIES=	textproc
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	35ae2bd38585.patch:-p1
-PATCHFILES+=	1d4c96d3fe0f.patch:-p1
-PATCHFILES+=	ad0eea5e8028.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Free and open source C++ spell checking library
