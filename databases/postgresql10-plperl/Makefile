@@ -3,4 +3,4 @@
 
 WANT_PGSQL_VER=	10
 
-.include "${.CURDIR}/../postgresql95-plperl/Makefile"
+.include "${.CURDIR}/../postgresql12-plperl/Makefile"
