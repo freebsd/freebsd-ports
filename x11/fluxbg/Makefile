@@ -7,7 +7,7 @@ PORTREVISION=	15
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Background changer for fluxbox/blackbox
 
 LIB_DEPENDS=	libgtkmm-2.0.so:x11-toolkits/gtkmm20

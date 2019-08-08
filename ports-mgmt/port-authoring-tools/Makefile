@@ -5,7 +5,7 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	"meta-port" for tools to test and submit changes to ports
 
 USES=	metaport
