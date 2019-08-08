@@ -1,0 +1,6 @@
+Chainer Chemistry is a deep learning framework (based on Chainer) with
+applications in Biology and Chemistry. It supports various state-of-the-art
+models (especially GCNN - Graph Convolutional Neural Network) for chemical
+property prediction.
+
+WWW: https://github.com/pfnet-research/chainer-chemistry
