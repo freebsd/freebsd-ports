@@ -1,0 +1,5 @@
+Celluloid (formerly GNOME MPV) is a simple GTK+ frontend for
+mpv. Celluloid interacts with mpv via the client API exported by
+libmpv, allowing access to mpv's powerful playback capabilities.
+
+WWW: https://celluloid-player.github.io/

@@ -31,6 +31,7 @@
     SUBDIR += camserv
     SUBDIR += ccextractor
     SUBDIR += cclive
+    SUBDIR += celluloid
     SUBDIR += cheese
     SUBDIR += chilitags
     SUBDIR += cinelerra-gg
@@ -86,7 +87,6 @@
     SUBDIR += gmp-api
     SUBDIR += gmtk
     SUBDIR += gnome-mplayer
-    SUBDIR += gnome-mpv
     SUBDIR += gnome-subtitles
     SUBDIR += gnome-twitch
     SUBDIR += gpac-libgpac
