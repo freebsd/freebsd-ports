@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsp
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/dsc/ \
 		https://dns.company/files/dsc/
