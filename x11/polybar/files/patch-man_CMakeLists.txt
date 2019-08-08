@@ -1,8 +1,0 @@
---- man/CMakeLists.txt.orig	2018-05-18 04:58:51 UTC
-+++ man/CMakeLists.txt
-@@ -1,4 +1,4 @@
- set(MAN_PAGES_1 polybar.1)
- INSTALL(FILES ${MAN_PAGES_1}
--  DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1
-+  DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1
-   COMPONENT doc)
