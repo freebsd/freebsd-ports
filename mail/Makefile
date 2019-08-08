@@ -23,6 +23,7 @@
     SUBDIR += ask
     SUBDIR += asmail
     SUBDIR += assp
+    SUBDIR += astroid
     SUBDIR += automx
     SUBDIR += autorespond
     SUBDIR += autosig
