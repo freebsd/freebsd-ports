@@ -23,7 +23,7 @@
      'numpy',
      'six',
 -    'typing>=3.6.4',
-+    'typing>=3.6.4; python_version < 3.5',
++    'typing>=3.6.4; python_version < "3.5"',
      'typing-extensions>=3.6.2.1',
  ])
  
