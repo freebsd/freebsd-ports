@@ -2,12 +2,15 @@
 
 PORTNAME=		crystal
 DISTVERSION=		0.28.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		lang
 MASTER_SITES=		https://unrelentingtech.s3.dualstack.eu-west-1.amazonaws.com/crystal/:bootstrap
 DISTFILES=		${BOOTSTRAP_PATH}:bootstrap
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=		2fafc7d60825.patch:-p1
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Language with Ruby-like syntax and static type checking

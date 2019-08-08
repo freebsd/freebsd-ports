@@ -7,3 +7,5 @@ SHA256 (crystal/crystal-0.27.2-freebsd12-aarch64) = d50b23d2b7b0302e91d57d1a43cc
 SIZE (crystal/crystal-0.27.2-freebsd12-aarch64) = 9692352
 SHA256 (crystal/crystal-lang-crystal-0.28.0_GH0.tar.gz) = 4206f57c6345454504ec4cd8cbd1b9354b9be29fae4cdcdd173f4a28cc13b102
 SIZE (crystal/crystal-lang-crystal-0.28.0_GH0.tar.gz) = 2108702
+SHA256 (crystal/2fafc7d60825.patch) = bb7022add31c2042132978e0edaedf4340689bb8d1f057d5dc4b5cccf20fb1ee
+SIZE (crystal/2fafc7d60825.patch) = 1974
