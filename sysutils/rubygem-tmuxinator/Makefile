@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tmuxinator
-PORTVERSION=	0.14.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -14,7 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-erubis>=2.6:www/rubygem-erubis \
 		rubygem-thor>=0.15.0:devel/rubygem-thor \
-		rubygem-xdg2>=2.2.3:devel/rubygem-xdg2
+		rubygem-xdg2>=2.2.5:devel/rubygem-xdg2
 
 USES=		gem
 USE_RUBY=	yes
