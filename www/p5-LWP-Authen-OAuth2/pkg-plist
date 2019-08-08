@@ -9,6 +9,7 @@
 %%SITE_PERL%%/LWP/Authen/OAuth2/ServiceProvider/Line.pm
 %%SITE_PERL%%/LWP/Authen/OAuth2/ServiceProvider/Line/AccessToken.pm
 %%SITE_PERL%%/LWP/Authen/OAuth2/ServiceProvider/Strava.pm
+%%SITE_PERL%%/LWP/Authen/OAuth2/ServiceProvider/Yahoo.pm
 %%PERL5_MAN3%%/LWP::Authen::OAuth2.3.gz
 %%PERL5_MAN3%%/LWP::Authen::OAuth2::AccessToken.3.gz
 %%PERL5_MAN3%%/LWP::Authen::OAuth2::AccessToken::Bearer.3.gz
@@ -18,3 +19,4 @@
 %%PERL5_MAN3%%/LWP::Authen::OAuth2::ServiceProvider::Google.3.gz
 %%PERL5_MAN3%%/LWP::Authen::OAuth2::ServiceProvider::Line.3.gz
 %%PERL5_MAN3%%/LWP::Authen::OAuth2::ServiceProvider::Strava.3.gz
+%%PERL5_MAN3%%/LWP::Authen::OAuth2::ServiceProvider::Yahoo.3.gz
