@@ -6,6 +6,7 @@ bin/mmaker
 %%DATADIR%%/MenuMaker/Deskmenu.py
 %%DATADIR%%/MenuMaker/FluxBox.py
 %%DATADIR%%/MenuMaker/IceWM.py
+%%DATADIR%%/MenuMaker/JWM.py
 %%DATADIR%%/MenuMaker/OpenBox3.py
 %%DATADIR%%/MenuMaker/PekWM.py
 %%DATADIR%%/MenuMaker/WindowMaker.py
