@@ -1,10 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	gnome-mpv
-PORTVERSION=	0.16
-PORTREVISION=	1
+PORTNAME=	celluloid
+PORTVERSION=	0.17
 CATEGORIES=	multimedia
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}-player/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple GTK+ frontend for mpv
@@ -18,7 +17,7 @@ USES=		compiler:c11 desktop-file-utils gettext-tools gmake pkgconfig tar:xz
 USE_GNOME=	cairo gtk30
 GNU_CONFIGURE=	yes
 GLIB_SCHEMAS=	io.github.GnomeMpv.gschema.xml \
-		org.gnome-mpv.gschema.xml
+		io.github.celluloid_player.Celluloid.gschema.xml
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-Wl,--as-needed # gdkpixbuf2
 
