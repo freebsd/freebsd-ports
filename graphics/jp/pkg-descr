@@ -1,0 +1,5 @@
+jp is a dead simple terminal plots from JSON (or CSV) data. Bar charts, line
+charts, scatter plots, histograms and heatmaps are supported. It reads data on
+stdin and prints plots to stdout.
+
+WWW: https://github.com/sgreben/jp

@@ -378,6 +378,7 @@
     SUBDIR += jhead
     SUBDIR += jogamp-jogl
     SUBDIR += jogl
+    SUBDIR += jp
     SUBDIR += jp2a
     SUBDIR += jpatch
     SUBDIR += jpeg
