@@ -18,6 +18,8 @@ man/man1/le.1.gz
 %%DATADIR%%/syntax.d/ada
 %%DATADIR%%/syntax.d/as
 %%DATADIR%%/syntax.d/awk
+%%DATADIR%%/syntax.d/c
+%%DATADIR%%/syntax.d/c++
 %%DATADIR%%/syntax.d/c++-comment
 %%DATADIR%%/syntax.d/c-comment
 %%DATADIR%%/syntax.d/c-literal
@@ -43,6 +45,7 @@ man/man1/le.1.gz
 %%DATADIR%%/syntax.d/perl
 %%DATADIR%%/syntax.d/php
 %%DATADIR%%/syntax.d/pod
+%%DATADIR%%/syntax.d/puppet
 %%DATADIR%%/syntax.d/python
 %%DATADIR%%/syntax.d/sather
 %%DATADIR%%/syntax.d/shell
