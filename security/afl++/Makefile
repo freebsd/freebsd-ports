@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	2.53c
+PORTVERSION=	2.53d.a1
 CATEGORIES=	security
 PKGNAMESUFFIX=	++
-
-PATCH_SITES=	https://github.com/vanhauser-thc/AFLplusplus/commit/
-PATCHFILES=	30586e634ddb58bad08e9cb662f0ccc44f45b91a.patch:-p1
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Fast instrumented fuzzer
@@ -24,6 +21,7 @@ USES=		gmake tar:tgz
 USE_GITHUB=	yes
 GH_ACCOUNT=	vanhauser-thc
 GH_PROJECT=	AFLplusplus
+GH_TAGNAME=	8b6a4e575978fac83155efd90d39030c84b2a755
 
 ALL_TARGET=	all libdislocator
 TEST_TARGET=	test_build
