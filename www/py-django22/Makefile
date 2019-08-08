@@ -19,6 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0:databases/py-sqlparse@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tblib>0:devel/py-tblib@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		cpe python:3.5+ shebangfix
@@ -61,5 +62,8 @@ post-install:
 post-install-HTMLDOCS-on:
 	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/_build/html ${STAGEDIR}/${DOCSDIR}
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} tests/runtests.py --settings=test_sqlite
 
 .include <bsd.port.mk>
