@@ -3,7 +3,7 @@
 PORTNAME=	simbody
 DISTVERSIONPREFIX=	Simbody-
 DISTVERSION=	3.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science biology
 
 PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
@@ -22,10 +22,10 @@ USES=		blaslapack:openblas cmake compiler:c++11-lang fortran # fortran only for 
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	BUILD_TESTING BUILD_EXAMPLES
-CMAKE_ARGS=	-DBLAS_LIBRARIES:STRING=${LOCALBASE}/lib/libopenblas.so -DLAPACK_LIBRARIES:STRING=${LOCALBASE}/lib/libopenblas.so
+CMAKE_OFF=	BUILD_TESTING
+CMAKE_ARGS=	-DBLAS_LIBRARIES:STRING=${LOCALBASE}/lib/libopenblas.so -DLAPACK_LIBRARIES:STRING=${LOCALBASE}/lib/libopenblas.so -DFREEBSD_EXAMPLESDIR=${EXAMPLESDIR}
 
-OPTIONS_DEFINE=		DOCS VISUALIZER
+OPTIONS_DEFINE=		DOCS VISUALIZER EXAMPLE_PROGRAMS # EXAMPLE_PROGRAMS significanly increases the build time and package size, so it is not called EXAMPLES to prevent it from being installed by default
 OPTIONS_DEFAULT=	VISUALIZER
 OPTIONS_SUB=		yes
 
@@ -36,7 +36,11 @@ VISUALIZER_CMAKE_BOOL=	BUILD_VISUALIZER
 VISUALIZER_USES=	gl
 VISUALIZER_USE=		GL=gl,glu,glut XORG=xi,xmu
 
+EXAMPLE_PROGRAMS_DESC=	Build and install example programs
+EXAMPLE_PROGRAMS_CMAKE_BOOL=	BUILD_EXAMPLES
+
 PORTDOCS=	*
+# this port installs examples into ${EXAMPLESDIR} when EXAMPLE_PROGRAMS=ON, but check-plist doesn't complain for some reason
 
 post-install-DOCS-on: # https://github.com/simbody/simbody/issues/652
 	@${RMDIR} ${STAGEDIR}${DOCSDIR}/api
