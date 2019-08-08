@@ -1,0 +1,7 @@
+Astroid is a lightweight and fast Mail User Agent that provides a graphical
+interface to searching, display and composing email, organized in thread and
+tags. Astroid uses the notmuch backend for blazingly fast searches through tons
+of email. Astroid searches, displays and composes emails - and relies on other
+programs for fetching, syncing and sending email.
+
+WWW: http://astroidmail.github.io/
