@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.thp.uni-due.de/pub/source/ \
 		LOCAL/jgh/sysutils/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	List processes as a tree
 
 USES=		alias

@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.hydrus.org.uk/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Desktop pager for the Fluxbox Slit
 
 LICENSE=	GPLv2

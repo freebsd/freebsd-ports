@@ -8,7 +8,7 @@ CATEGORIES=	games java
 MASTER_SITES=	SF
 DISTNAME=	JChessBoard-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Chess game and PGN viewer/editor written in Java
 
 LICENSE=	GPLv2

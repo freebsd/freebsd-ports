@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	games java
 MASTER_SITES=	SF/javagamessuite
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Simple Java games collection
 
 USE_JAVA=	yes
