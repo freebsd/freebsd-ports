@@ -3,12 +3,13 @@
 PORTNAME=	simbody
 DISTVERSIONPREFIX=	Simbody-
 DISTVERSION=	3.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science biology
 
 PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
 PATCHFILES=	1b306f66bcd15e9bf6b27882e2daa6375ac4cd2e.patch:-p1 \
-		eaff90b304291ab9ffdf60d7abfb48e23e102ecb.patch:-p1
+		eaff90b304291ab9ffdf60d7abfb48e23e102ecb.patch:-p1 \
+		54f04cfef5f184c72df479c8c8eddd6d5eaf1f5b.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multibody dynamics library for (bio)mechanical systems simulation
@@ -45,7 +46,7 @@ PORTDOCS=	*
 post-install-DOCS-on: # https://github.com/simbody/simbody/issues/652
 	@${RMDIR} ${STAGEDIR}${DOCSDIR}/api
 
-do-test: # one test is known to fail: https://github.com/simbody/simbody/issues/653
+do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
