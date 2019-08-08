@@ -1,10 +1,10 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION?=	9.6.14
+DISTVERSION?=	9.6.15
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	1
+PORTREVISION?=	0
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}${COMPONENT}
 
 MAINTAINER?=	pgsql@FreeBSD.org
@@ -19,11 +19,7 @@ INSTALL_DIRS?=	src/common src/timezone src/backend \
 		src/bin/pg_test_fsync src/bin/pg_test_timing \
 		src/bin/pg_xlogdump src/bin/pg_upgrade
 
-PG_USER?=	postgres
-PG_GROUP?=	postgres
-PG_UID?=	770
-
 ICU_PATCHFILE=	pg-96b4-icu-2016-10-02.diff.gz
 OPTIONS_DEFAULT+=ICU
 
-.include "${.CURDIR}/../postgresql11-server/Makefile"
+.include "${.CURDIR}/../postgresql12-server/Makefile"
