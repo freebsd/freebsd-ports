@@ -1,0 +1,11 @@
+--- config.h.in.orig	2019-08-08 11:15:24 UTC
++++ config.h.in
+@@ -57,7 +57,7 @@
+ #undef HAVE_MALLOC
+ 
+ /* Define to 1 if you have the <malloc.h> header file. */
+-#undef HAVE_MALLOC_H
++/* #undef HAVE_MALLOC_H */
+ 
+ /* Define to 1 if you have the `memmove' function. */
+ #undef HAVE_MEMMOVE
