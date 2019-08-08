@@ -219,6 +219,7 @@ share/icons/hicolor/scalable/apps/terminator.svg
 %%NLS%%share/locale/ka/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/terminator.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/la/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/terminator.mo
@@ -257,3 +258,11 @@ share/icons/hicolor/scalable/apps/terminator.svg
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/terminator.mo
 share/pixmaps/terminator.png
+%%DATADIR%%/terminatorlib/themes/Adwaita/gtk-3.0/apps/terminator.css
+%%DATADIR%%/terminatorlib/themes/Ambiance/gtk-3.0/apps/terminator.css
+%%DATADIR%%/terminatorlib/themes/Ambiance/gtk-3.0/apps/terminator_styling.css
+%%DATADIR%%/terminatorlib/themes/Breeze/gtk-3.0/apps/terminator.css
+%%DATADIR%%/terminatorlib/themes/HighContrast/gtk-3.0/apps/terminator.css
+%%DATADIR%%/terminatorlib/themes/Radiance/gtk-3.0/apps/terminator.css
+%%DATADIR%%/terminatorlib/themes/Radiance/gtk-3.0/apps/terminator_styling.css
+%%DATADIR%%/terminatorlib/themes/Raleigh/gtk-3.0/apps/terminator.css
