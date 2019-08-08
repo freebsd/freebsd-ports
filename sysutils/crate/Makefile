@@ -10,7 +10,7 @@ COMMENT=	Containerizer for FreeBSD (alpha-software, expect bugs)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-xBROKEN_FreeBSD_11=		STL feature 'filesystem' isn't available on 11
+BROKEN_FreeBSD_11=		STL feature 'filesystem' isn't available on 11
 .if defined(PACKAGE_BUILDING)
 BROKEN_FreeBSD_12=		STL feature 'filesystem' isn't available in 12.0-RELEASE-p7
 .endif
