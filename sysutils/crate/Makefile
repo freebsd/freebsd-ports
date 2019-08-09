@@ -2,7 +2,7 @@
 
 PORTNAME=	crate
 DISTVERSION=	0.1.1
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils emulators
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Containerizer for FreeBSD (alpha-software, expect bugs)
@@ -10,9 +10,8 @@ COMMENT=	Containerizer for FreeBSD (alpha-software, expect bugs)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_11=		STL feature 'filesystem' isn't available on 11
-.if defined(PACKAGE_BUILDING)
-BROKEN_FreeBSD_12=		STL feature 'filesystem' isn't available in 12.0-RELEASE-p7
+.if exists(/usr/include/c++/v1) && !exists(/usr/include/c++/v1/filesystem)
+BROKEN=		STL feature 'filesystem' isn't available # '
 .endif
 
 BUILD_DEPENDS=	rang>0:devel/rang
