@@ -57,9 +57,16 @@ share/wxMaxima/COPYING
 share/wxMaxima/README
 share/wxMaxima/README.md
 share/wxMaxima/a.png
+share/wxMaxima/all-celltypes.wxmx
 share/wxMaxima/b.png
 share/wxMaxima/c.png
 share/wxMaxima/d.png
+share/wxMaxima/foreign-characters.wxmx
 share/wxMaxima/io.github.wxmaxima_developers.wxMaxima.png
 share/wxMaxima/io.github.wxmaxima_developers.wxMaxima.svg
+share/wxMaxima/misc-problematic-things.wxmx
+share/wxMaxima/other-features.wxmx
+share/wxMaxima/testbench_all_celltypes.wxmx
+share/wxMaxima/testbench_automatic.wxmx
 share/wxMaxima/testbench_simple.wxmx
+share/wxMaxima/textcells.wxmx
