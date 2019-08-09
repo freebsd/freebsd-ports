@@ -3,7 +3,7 @@ Forwarded: no
 Author: Peter Pentchev <roam@FreeBSD.org>
 Last-Update: 2015-05-07
 
---- xvkbd.man.orig	2015-09-12 07:21:58 UTC
+--- xvkbd.man.orig	2018-02-25 00:56:26 UTC
 +++ xvkbd.man
 @@ -29,7 +29,7 @@ which may make it easier to enter long w
  .PP
@@ -23,7 +23,7 @@ Last-Update: 2015-05-07
  or on the Property panel.
  
  .SH "    Main Menu"
-@@ -242,17 +242,17 @@ You may want to set \fIJump Pointer?\fP 
+@@ -242,38 +242,38 @@ You may want to set \fIJump Pointer?\fP 
  \fICompletion Dictionary\fP
  Set the filename to be used for word completion.
  This setting take precedence over the `\fBxvkbd.dictFile\fP' resource
@@ -45,7 +45,15 @@ Last-Update: 2015-05-07
  Make \fIxvkbd\fP to use \fIXSendEvent()\fP to simulate keyboard events,
  as it was in \fIxvkbd\fP version 1.0.
  \fIxvkbd\fP version 1.1 and later will try to use XTEST extension instead
-@@ -263,14 +263,14 @@ If XTEST extension is not supported by t
+ in the default configuration.
+ Because it is not unusual applications to ignore keyboard events
+-generated with \fB-xsendevent\fP,
+-you shouldn't use \fB-xsendevent\fP option unless it is really required.
++generated with \fB\-xsendevent\fP,
++you shouldn't use \fB\-xsendevent\fP option unless it is really required.
+ .sp 0.5
+ If XTEST extension is not supported by the X server,
+ \fIxvkbd\fP will automatically switch to this mode.
  .sp 0.5
  Resource `\fBxvkbd.xtest: false\fP' has the same function.
  .TP 4
@@ -63,7 +71,7 @@ Last-Update: 2015-05-07
  Make \fIxvkbd\fP not to jump the pointer when sending events.
  In the default, \fIxvkbd\fP will temporary jump the pointer to the focused window,
  if input focus is set explicitly via \fIFocus\fP button,
-@@ -278,14 +278,14 @@ and XTEST extension is to be used to sim
+@@ -281,14 +281,14 @@ and XTEST extension is to be used to sim
  .sp 0.5
  Resource `\fBxvkbd.jumpPointer: false\fP' has the same function.
  .TP 4
@@ -80,7 +88,7 @@ Last-Update: 2015-05-07
  Make labels on keys in the \fIxvkbd\fP window
  to be set independently for each of four shift states,
  not shifted, \fIShift\fP, \fIAltGr\fP and \fIShift\fP-\fIAltGr\fP.
-@@ -296,27 +296,27 @@ and resouce files in the distribution.
+@@ -299,27 +299,27 @@ and resouce files in the distribution.
  .sp 0.5
  Resource `\fBxvkbd.modalKeytop: true\fP' has the same function.
  .TP 4
@@ -99,24 +107,24 @@ Last-Update: 2015-05-07
 +by using \fB\-\fP instead of \fB+\fP,
  but please note that you must take account of size of the window border.
 -(If you specify `\fB-geometry -0-0\fP',
-+(If you specify `\fB\-geometry \-0\-0\fP',
++(If you specify `\fB\-geometry -0-0\fP',
  the window will not fit in the screen.)
  .sp 0.5
  This can be set by \fBxvkbd.windowGeometry\fP resource
  (note that it is not \fBxvkbd.geometry\fP), too.
  .TP 4
 -.B "-no-resize"
-+.B "\-no\-resize"
-   Disable resize of the \fIxvkbd\fP window.
++.B "\-no-resize"
+ Disable resize of the \fIxvkbd\fP window.
  .sp 0.5
  Resource `\fBxvkbd.resizable: false\fP' has the same function.
  .TP 4
 -.B "-no-repeat"
-+.B "\-no\-repeat"
++.B "\-no-repeat"
  Do not auto-repeat even if key is depressed long time.
  .sp 0.5
  If auto-repeat is enabled (this is the default),
-@@ -328,31 +328,31 @@ and period of repeat can be set as
+@@ -331,31 +331,31 @@ and period of repeat can be set as
  .sp 0.5
  Resource `\fBxvkbd.autoRepeat: false\fP' has the same function.
  .TP 4
@@ -155,7 +163,7 @@ Last-Update: 2015-05-07
  .sp 0.5
  If this option is specified,
  \fIxvkbd\fP will not open its window
-@@ -399,28 +399,28 @@ will simulate press and release of the k
+@@ -402,28 +402,28 @@ will simulate press and release of the k
  .IP "    - " 6
  \fB\\m\fP\fIdigit\fP - simulate click of the specified mouse button
  .TP 4
@@ -173,9 +181,9 @@ Last-Update: 2015-05-07
  and terminate soon after sending the string.
  .TP 4
 -.B "-utf16"
--  When used with \fB-file\fP option,
+-When used with \fB-file\fP option,
 +.B "\-utf16"
-+  When used with \fB\-file\fP option,
++When used with \fB\-file\fP option,
  make \fIxvkbd\fP to accept UTF16 characters in the file.
  .TP 4
 -.BI "-delay " value
@@ -192,7 +200,7 @@ Last-Update: 2015-05-07
  Specify the ID 
  (hexadecimal value leaded with `\fB0x\fP', or decimal value),
  the name (instance name or class name) of the window,
-@@ -438,10 +438,10 @@ or clear the input focus.
+@@ -441,10 +441,10 @@ or clear the input focus.
  If there are two or more windows which have the name specified with this option,
  the window which was found first will be selected.
  .TP 4
@@ -205,7 +213,7 @@ Last-Update: 2015-05-07
  .sp 0.5
  If you want to set input focus to the widget \fBfoo.bar.zot\fP,
  you can write \fBzot\fP, \fBbar.zot\fP or \fBfoo.bar.zot\fP
-@@ -452,24 +452,24 @@ with a single widget of the client.
+@@ -455,24 +455,24 @@ with a single widget of the client.
  For example,
  .sp
  .in +4
@@ -220,9 +228,9 @@ Last-Update: 2015-05-07
 +.BI "\-remote\-display " display
  Specify the display (in the meaning of the X Window System) to connect;
    see also \fIConnect to Remote Display...\fP.
-   .TP 4
+ .TP 4
 -.B "-true-keypad"
-+.B "\-true\-keypad"
++.B "\-true-keypad"
  If this option is specified,
  \fIxvkbd\fP will attempt to use \fIkeysym\fPs such as 
  \fIXK_KP_1\fP instead of \fIXK_1\fP.
@@ -234,7 +242,7 @@ Last-Update: 2015-05-07
  Specify the default dictionary (list of words) file to be used for
  word completion.
  The `\fICompletion Dictionary\fP' filename
-@@ -479,7 +479,7 @@ Resource `\fBxvkbd.dictFile: \fP\fIfilen
+@@ -482,7 +482,7 @@ Resource `\fBxvkbd.dictFile: \fP\fIfilen
  .sp 0.5
  See also ``Making your own completion dictionary''.
  .TP 4
@@ -243,7 +251,7 @@ Last-Update: 2015-05-07
  Make \fIxvkbd\fP window can be minimized (iconified)
  even if no window manager is in use.
  When this feature is enabled,
-@@ -488,7 +488,7 @@ and \fIxvkbd\fP window will be minimized
+@@ -491,7 +491,7 @@ and \fIxvkbd\fP window will be minimized
  .sp 0.5
  Resource `\fBxvkbd.minimizable: true\fP' has the same function.
  .TP 4
@@ -252,7 +260,7 @@ Last-Update: 2015-05-07
  Disable invocation of external commands,
  including user assigned command and the online manual reader.
  Connection to another displays would also be disabled.
-@@ -496,25 +496,25 @@ This option may be useful when \fIxvkbd\
+@@ -499,25 +499,25 @@ This option may be useful when \fIxvkbd\
  .sp 0.5
  Resource `\fBxvkbd.secure: true\fP' has the same function.
  .TP 4
@@ -283,7 +291,7 @@ Last-Update: 2015-05-07
  to apply this for those four modifiers.
  Maybe this can be useful when attempting to decorate
  the mouse operations with the modifiers.
-@@ -524,101 +524,101 @@ and which can prevent the correct operat
+@@ -527,105 +527,105 @@ and which can prevent the correct operat
  .sp 0.5
  Resource `\fBxvkbd.positiveModifiers: \fP\fImodifiers...\fP' has the same function.
  .TP 4
@@ -298,123 +306,128 @@ Last-Update: 2015-05-07
 +.B "\-version"
  Output version information and exit.
  
- .SH "Screen Shot"
+ .SH "Screenshot"
  .TP 4
  Default (US)
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-normal.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-normal.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-normal.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-normal.gif
  .TP 4
  Belgian
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-belgian.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-belgian.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-belgian.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-belgian.gif
  .TP 4
  Danish
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-danish.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-danish.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-danish.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-danish.gif
  .TP 4
  French
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-french.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-french.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-french.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-french.gif
  .sp 0.5
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-french2.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-french2.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-french2.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-french2.gif
  .TP 4
  German
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-german.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-german.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-german.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-german.gif
  .TP 4
  Icelandic
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-icelandic.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-icelandic.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-icelandic.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-icelandic.gif
  .TP 4
  Italian
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-italian.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-italian.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-italian.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-italian.gif
  .TP 4
  Japanese (JIS-X-6002)
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-jisx6002.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-jisx6002.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-jisx6002.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-jisx6002.gif
  .TP 4
  Japanese (JIS-X-6004)
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-jisx6004.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-jisx6004.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-jisx6004.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-jisx6004.gif
  .TP 4
  Norwegian
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-norwegian.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-norwegian.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-norwegian.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-norwegian.gif
  .TP 4
  Portuguese
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-portuguese.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-portuguese.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-portuguese.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-portuguese.gif
  .TP 4
  Spanish
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-spanish.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-spanish.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-spanish.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-spanish.gif
  .TP 4
  Swedish
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-swedish.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-swedish.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-swedish.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-swedish.gif
  .TP 4
  Swiss/German
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-swissgerman.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-swissgerman.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-swissgerman.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-swissgerman.gif
  .TP 4
  United Kingdom
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-uk.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-uk.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-uk.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-uk.gif
  .TP 4
  Latin-1
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-latin1.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-latin1.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-latin1.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-latin1.gif
  .TP 4
  Small Keyboard (maybe suitable for PDAs)
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-small.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-small.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-small.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-small.gif
  .TP 4
  Hebrew
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-hebrew.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-hebrew.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-hebrew.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-hebrew.gif
  .TP 4
  Greek
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-greek.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-greek.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-greek.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-greek.gif
  .TP 4
  Turkish
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-turkish.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-turkish.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-turkish.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-turkish.gif
  .TP 4
  Slovene
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-slovene.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-slovene.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-slovene.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-slovene.gif
  .TP 4
  Korean
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-korean.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-korean.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-korean.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-korean.gif
  .TP 4
  Russian (Cyrillic)
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-russian.gif
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-russian.gif
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-russian.gif
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-russian.gif
  
  .SH "Download"
  .TP 4
  \fILatest Official Release\fP
--\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.7.tar.gz\fP
-+\fIhttp://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.7.tar.gz\fP
+-\fIhttp://t-sato.in.coocan.jp/xvkbd/xvkbd-3.9.tar.gz\fP
++\fIhttp://t-sato.in.coocan.jp/xvkbd/xvkbd\-3.9.tar.gz\fP
  .br
- - source of version 3.7 (2015-09-12)
+ - source of version 3.9 (2018-02-25)
  .TP 4
  previous release
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.6.tar.gz
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.6.tar.gz
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-3.8.tar.gz
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-3.8.tar.gz
+ .br
+ - source of version 3.8 (2017-06-06)
+ .sp 0.5
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-3.7.tar.gz
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-3.7.tar.gz
+ .br
+ - source of version 3.7 (2015-09-12)
+ .sp 0.5
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-3.6.tar.gz
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-3.6.tar.gz
  .br
  - source of version 3.6 (2015-02-15)
- .sp 0.5
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-3.5.tar.gz
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-3.5.tar.gz
- .br
- - source of version 3.5 (2013-07-15)
  .PP
-@@ -655,8 +655,8 @@ load them via \fIxrdb\fP(1), or
+@@ -662,8 +662,8 @@ load them via \fIxrdb\fP(1), or
  .IP "  o " 4
  set the filename to the \fB$XENVIRONMENT\fP environment variable, or
  .IP "  o " 4
@@ -425,7 +438,7 @@ Last-Update: 2015-05-07
  .IP "  o " 4
  put them in application default directory as \fBXVkbd\fP.
  .PP
-@@ -668,11 +668,11 @@ directories specified with \fB$XUSERFILE
+@@ -675,11 +675,11 @@ directories specified with \fB$XUSERFILE
  system's application default directory specified with
  \fB$XFILESEACHPATH\fP environment variable,
  or else the directory specified when compiling the X
@@ -439,7 +452,7 @@ Last-Update: 2015-05-07
  near top of the file.
  .PP
  \fIxvkbd\fP is distributed with some application default files,
-@@ -703,7 +703,7 @@ You may also want to set:
+@@ -710,7 +710,7 @@ You may also want to set:
  to display only the labels for the current shift state,
  instead of trying to always display all of them in the small keytop.
  .PP
@@ -448,7 +461,7 @@ Last-Update: 2015-05-07
  
  .SH "    Removing Unwanted Keys"
  Keys on \fIxvkbd\fP window can be removed by setting their width to 1.
-@@ -777,12 +777,12 @@ when \fBxvkbd.modalKeytop\fP resoruce is
+@@ -784,12 +784,12 @@ when \fBxvkbd.modalKeytop\fP resoruce is
  In all of those resources, each keys are separated by spaces,
  and rows of keys are terminated with `\fB \\n\\\fP'
  (note that `\fB\\n\fP' must have space before it).
@@ -464,7 +477,7 @@ Last-Update: 2015-05-07
  will make \fIxvkbd\fP to use the German layout.
  For another method to activate those settings, please refer
  "How to Customize \fIxvkbd\fP" above.
-@@ -844,7 +844,7 @@ You can use \fBxev\fP command to check w
+@@ -851,7 +851,7 @@ You can use \fBxev\fP command to check w
  .IP "  o " 4
  If \fIAlt\fP or \fIMeta\fP is not defined as modifier,
  the key can't be used as modifier.
@@ -473,21 +486,20 @@ Last-Update: 2015-05-07
  .IP "  o " 4
  \fINum Lock\fP (and maybe other modifiers) on the physical keyboard
  may not work correctly when \fIxvkbd\fP is in use.
-@@ -855,10 +855,10 @@ FAQ - Possible Problems and Solutions
- http://homepage3.nifty.com/tsato/xvkbd/faq.html
+@@ -862,10 +862,10 @@ FAQ - Possible Problems and Solutions
+ http://t-sato.in.coocan.jp/xvkbd/faq.html
  .TP 4
  Making your own completion dictionary
--http://homepage3.nifty.com/tsato/xvkbd/make-dic.html
-+http://homepage3.nifty.com/tsato/xvkbd/make\-dic.html
+-http://t-sato.in.coocan.jp/xvkbd/make-dic.html
++http://t-sato.in.coocan.jp/xvkbd/make\-dic.html
  .TP 4
--Hints to use \fBxvkbd -text\fP
--http://homepage3.nifty.com/tsato/xvkbd/xvkbd-text.html
-+Hints to use \fBxvkbd \-text\fP
-+http://homepage3.nifty.com/tsato/xvkbd/xvkbd\-text.html
+ Hints to use \fBxvkbd -text\fP
+-http://t-sato.in.coocan.jp/xvkbd/xvkbd-text.html
++http://t-sato.in.coocan.jp/xvkbd/xvkbd\-text.html
  .TP 4
  Note about how to send key events
- http://homepage3.nifty.com/tsato/xvkbd/events.html
-@@ -879,26 +879,26 @@ which can't be entered directly from key
+ http://t-sato.in.coocan.jp/xvkbd/events.html
+@@ -886,26 +886,26 @@ which can't be entered directly from key
  can be entered using dedicated key combinations.
  .IP "    - " 6
  Make keyboard layout not to be disturbed when
@@ -519,7 +531,7 @@ Last-Update: 2015-05-07
  .IP "    - " 6
  \fIxvkbd\fP can now send keys
  with \fIMode_switch\fP (\fIAltGr\fP) modifier,
-@@ -906,9 +906,9 @@ which enables those characters in the po
+@@ -913,9 +913,9 @@ which enables those characters in the po
  .IP "    - " 6
  \fIxvkbd\fP now support \fIAltGr\fP key
  so that German (and some other) keyboard layout can be used.
@@ -531,7 +543,7 @@ Last-Update: 2015-05-07
  in the distribution, which modifies keyboard layout
  and put some non-ASCII keys on the \fIxvkbd\fP window.
  .IP "    - " 6
-@@ -924,7 +924,7 @@ Labels on keys can now be set independen
+@@ -931,7 +931,7 @@ Labels on keys can now be set independen
  not shifted, \fIShift\fP, \fIAltGr\fP and \fIShift\fP-\fIAltGr\fP.
  (thanks, Jim)
  .IP "    - " 6
@@ -540,7 +552,7 @@ Last-Update: 2015-05-07
  .TP 4
  Version 1.2 (2001-02-18)
  .IP "    - " 6
-@@ -952,7 +952,7 @@ so that it will not terminated accidentl
+@@ -959,7 +959,7 @@ so that it will not terminated accidentl
  .TP 4
  Version 1.3 (2001-03-19)
  .IP "    - " 6
@@ -549,7 +561,7 @@ Last-Update: 2015-05-07
  (contributed from Marcel Portner)
  .IP "    - " 6
  \fIxvkbd\fP now catches MappingNotify event and reload the new mapping.
-@@ -1002,7 +1002,7 @@ and older \fIxvkbd\fP may not work corre
+@@ -1009,7 +1009,7 @@ and older \fIxvkbd\fP may not work corre
  .TP 4
  Version 1.6 (2001-11-10)
  .IP "    - " 6
@@ -558,7 +570,7 @@ Last-Update: 2015-05-07
  (thanks, Gregory)
  .IP "    - " 6
  New entry `\fIUse XTEST Extension?\fP' is added
-@@ -1021,7 +1021,7 @@ after \fIxvkbd\fP is invoked.
+@@ -1028,7 +1028,7 @@ after \fIxvkbd\fP is invoked.
  Show/hide of the keypad and funcion keys on the main window
  can now be toggled from the main menu.
  .IP "    - " 6
@@ -567,7 +579,7 @@ Last-Update: 2015-05-07
  (contributed from Jean-Pierre Demailly)
  .TP 4
  Version 2.1 (2002-01-27)
-@@ -1029,9 +1029,9 @@ Version 2.1 (2002-01-27)
+@@ -1036,9 +1036,9 @@ Version 2.1 (2002-01-27)
  When height of the \fIxvkbd\fP window is smaller than
  \fBXVkbd.modalThreshold\fP,
  \fIxvkbd\fP will now automatically switch the keytop
@@ -579,7 +591,7 @@ Last-Update: 2015-05-07
  would send wrong keys - this problem is now fixed.
  .IP "    - " 6
  Target \fBdistclean\fP in the \fBImakefile\fP is renamed
-@@ -1044,8 +1044,8 @@ Version 2.2 (2002-03-17)
+@@ -1051,8 +1051,8 @@ Version 2.2 (2002-03-17)
  String assigned to function keys can now be edited on a panel popped up via
  "\fIEdit Function Keys...\fP" in the main menu.
  .IP "    - " 6
@@ -590,7 +602,7 @@ Last-Update: 2015-05-07
  its standard input (stdin) to get the string to be sent.
  .IP "    - " 6
  In the previous release,
-@@ -1074,7 +1074,7 @@ Swiss/German,
+@@ -1081,7 +1081,7 @@ Swiss/German,
  United Kingdom
  and Latin-1.
  .IP "    - " 6
@@ -599,7 +611,7 @@ Last-Update: 2015-05-07
  - this problem is now fixed.
  .TP 4
  Version 2.4 (2002-10-02)
-@@ -1135,24 +1135,24 @@ Yet another Japanese keyboard layout, JI
+@@ -1142,24 +1142,24 @@ Yet another Japanese keyboard layout, JI
  .IP "    - " 6
  It is now possible to minimize (iconify) the main window
  even if no window manager is in use.
@@ -631,7 +643,7 @@ Last-Update: 2015-05-07
  and maybe useful when run \fIxvkbd\fP from a display manager.
  .TP 4
  Version 2.7a (2005-05-07)
-@@ -1168,17 +1168,17 @@ where we must use \fIISO_Level3_Shift\fP
+@@ -1175,17 +1175,17 @@ where we must use \fIISO_Level3_Shift\fP
  Reference to the target bitmap is changed from
  \fB/usr/X11R6/include/X11/bitmaps/target\fP to \fB/usr/include/X11/bitmaps/target\fP.
  .IP "    - " 6
@@ -653,7 +665,7 @@ Last-Update: 2015-05-07
  via \fB\\x\fP, \fB\\y\fP and \fB\\m\fP special sequences.
  .TP 4
  Version 3.0 (2008-05-05)
-@@ -1193,7 +1193,7 @@ Version 3.1 (2010-01-17)
+@@ -1200,7 +1200,7 @@ Version 3.1 (2010-01-17)
  .IP "    - " 6
  Changed the default setting for automatic click to OFF, which was set ON in the previous release in error and caused confusion.
  .IP "    - " 6
@@ -662,7 +674,7 @@ Last-Update: 2015-05-07
  .IP "    - " 6
  Up to 25x25 keys can now be supported both for the main keyboard and the keypad.
  .IP "    - " 6
-@@ -1201,7 +1201,7 @@ Able to open the keypad panel when start
+@@ -1208,7 +1208,7 @@ Able to open the keypad panel when start
  .IP "    - " 6
  Fixed errors in some keyboard layout files (Korean, Slovene, UK).
  .IP "    - " 6
@@ -671,22 +683,22 @@ Last-Update: 2015-05-07
  .TP 4
  Version 3.2 (2010-03-14)
  .IP "    - " 6
-@@ -1212,10 +1212,10 @@ New option `\fIBehave as Toolbar Window?
+@@ -1219,10 +1219,10 @@ such as Matchbox window manager. (Thanks
  `\fIAlways on Top\fP' will work rather better with window managers
-   which support extended window manager hint \fB_NET_WM_STATE_ABOVE\fP.
+ which support extended window manager hint \fB_NET_WM_STATE_ABOVE\fP.
  .IP "    - " 6
 -\fB-window\fP option can now find window which have title match with
 +\fB\-window\fP option can now find window which have title match with
-   the specified string.
+ the specified string.
  .IP "    - " 6
 -\fB-window\fP option now accept wildcard characters
 +\fB\-window\fP option now accept wildcard characters
-   `\fB*\fP' and `\fB?\fP'.
+ `\fB*\fP' and `\fB?\fP'.
  .IP "    - " 6
  Word completion dictionary file to be used with `\fIWord Completion...\fP'
-@@ -1224,18 +1224,18 @@ Word completion dictionary file to be us
+@@ -1231,18 +1231,18 @@ can now be specified on the Property pan
  Only the words which have two or more characters will be appeared
-   in the word completion list.
+ in the word completion list.
  .IP "    - " 6
 -New \fB-version\fP option to display version information.
 +New \fB\-version\fP option to display version information.
@@ -695,18 +707,18 @@ Last-Update: 2015-05-07
  .IP "    - " 6
 -\fB-text\fP can now accept \fB\\{\fP\fIkeysym\fP\fB}\fP
 +\fB\-text\fP can now accept \fB\\{\fP\fIkeysym\fP\fB}\fP
-   so that the specified key can be processed in more primitive manner,
-   and so that modofier keys such as \fIControl_L\fP, \fIMeta_L\fP, etc.
-   can also be simulated.
-   Also, \fB\\{+\fP\fIkeysym\fP\fB}\fP and \fB\\{-\fP\fIkeysym\fP\fB}\fP
-   will now simulate press and release of the key, respectively.
+ so that the specified key can be processed in more primitive manner,
+ and so that modofier keys such as \fIControl_L\fP, \fIMeta_L\fP, etc.
+ can also be simulated.
+ Also, \fB\\{+\fP\fIkeysym\fP\fB}\fP and \fB\\{-\fP\fIkeysym\fP\fB}\fP
+ will now simulate press and release of the key, respectively.
  .IP "    - " 6
 -New option \fB-remote-display\fP to make \fIxvkbd\fP connect to
 +New option \fB\-remote\-display\fP to make \fIxvkbd\fP connect to
-   the specified display when startup.
+ the specified display when startup.
  .IP "    - " 6
  Bug fixed: \fBKP_0\fP now works.
-@@ -1251,7 +1251,7 @@ as it seems delay of 0 caused problems i
+@@ -1258,7 +1258,7 @@ as it seems delay of 0 caused problems i
  ISO_Left_Tab is assigned to the shifted position of the Tab key on the \fIxvkbd\fP window,
  so that Shift-Tab can be simulated.
  .IP "    - " 6
@@ -715,7 +727,7 @@ Last-Update: 2015-05-07
  .TP 4
  Version 3.5 (2013-07-15)
  .IP "    - " 6
-@@ -1262,8 +1262,8 @@ Fixed a problem that "Always on Top" not
+@@ -1269,8 +1269,8 @@ Fixed a problem that "Always on Top" not
  .TP 4
  Version 3.6 (2015-02-15)
  .IP "    - " 6
@@ -726,3 +738,12 @@ Last-Update: 2015-05-07
  make \fIxvkbd\fP to accept UTF16 characters in the file.
  .IP "    - " 6
  Keyboard layout selected with "Change Keyboard Layout..." will be kept
+@@ -1306,7 +1306,7 @@ A workaround for this problem is now imp
+ .TP 4
+ Version 3.9 (2018-02-25)
+ .IP "    - " 6
+-Modifiers (Alt, etc.) not working with \fB-text\fP option in the recent releases (Debian Bug#891082). This bug is now fixed.
++Modifiers (Alt, etc.) not working with \fB\-text\fP option in the recent releases (Debian Bug#891082). This bug is now fixed.
+     
+ 
+ .SH "Author"

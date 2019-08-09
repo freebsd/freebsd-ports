@@ -7,7 +7,7 @@ Forwarded: no
 Author: Peter Pentchev <roam@FreeBSD.org>
 Last-Update: 2015-05-07
 
---- xvkbd.c.orig	2015-02-14 11:32:32 UTC
+--- xvkbd.c.orig	2018-02-25 00:55:33 UTC
 +++ xvkbd.c
 @@ -470,8 +470,8 @@ static int altgr_mask = 0;
  static int level3_shift_mask = 0;
@@ -33,7 +33,7 @@ Last-Update: 2015-05-07
  static void DeleteWindowProc(Widget w, XEvent *event, String *pars, Cardinal *n_pars);
  static void SaveProperty(void);
  
-+static void SignalUser1(int sig);
++static void SignalUser1(int dummy);
 +
  /*
   * Search for window which has specified instance name (WM_NAME)
@@ -48,7 +48,7 @@ Last-Update: 2015-05-07
    XClassHint hint;
    char *win_name;
  
-@@ -802,7 +803,9 @@ static int MyErrorHandler(Display *my_dp
+@@ -824,7 +825,9 @@ static int MyErrorHandler(Display *my_dp
   */
  static void SendEvent(XKeyEvent *event)
  {
@@ -58,7 +58,7 @@ Last-Update: 2015-05-07
  
    if (!appres.no_sync) {
      XSync(event->display, FALSE);
-@@ -1099,11 +1102,11 @@ static void SendKeyPressedEvent(KeySym k
+@@ -1136,11 +1139,11 @@ static void SendKeyPressedEvent(KeySym k
  
  #ifdef USE_XTEST
    if (appres.xtest && press_release == 0) {
@@ -72,7 +72,7 @@ Last-Update: 2015-05-07
  
      event.type = KeyRelease;
      event.state = 0;
-@@ -1281,7 +1284,7 @@ static int n_word_list = 0;
+@@ -1332,7 +1335,7 @@ static int n_word_list = 0;
  
  static void SetDefaultDictionary(void)
  {
@@ -81,7 +81,7 @@ Last-Update: 2015-05-07
    XtVaSetValues(props_dict_entry, XtNstring, dict_filename, NULL);
  }
  
-@@ -1296,7 +1299,7 @@ static void ReadCompletionDictionary(voi
+@@ -1347,7 +1350,7 @@ static void ReadCompletionDictionary(voi
    struct WORDLIST *p;
  
    if (strcmp(cur_dict_filename, dict_filename) == 0) return;
@@ -90,7 +90,7 @@ Last-Update: 2015-05-07
  
    if (!first) {
      int cnt = 0;
-@@ -1346,7 +1349,7 @@ static void ReadCompletionDictionary(voi
+@@ -1397,7 +1400,7 @@ static void ReadCompletionDictionary(voi
  
  static void AddToCompletionText(KeySym keysym)
  {
@@ -99,7 +99,7 @@ Last-Update: 2015-05-07
    struct WORDLIST *node_ptr;
  
    if (completion_entry != None) {
-@@ -1436,7 +1439,7 @@ static void PopupCompletionPanel(void)
+@@ -1487,7 +1490,7 @@ static void PopupCompletionPanel(void)
  
    ReadCompletionDictionary();
  
@@ -108,7 +108,7 @@ Last-Update: 2015-05-07
    XtVaSetValues(completion_entry, XtNlabel, msg, NULL);
  
    completion_text[0] = '\0';
-@@ -1451,11 +1454,11 @@ static void PopupCompletionPanel(void)
+@@ -1502,11 +1505,11 @@ static void PopupCompletionPanel(void)
   */
  static void KeyPressed(Widget w, char *key, char *data);
  
@@ -123,7 +123,7 @@ Last-Update: 2015-05-07
    int val;
    Window target_root, child, junk_w;
    int junk_i;
-@@ -1480,8 +1483,7 @@ static void SendString(const unsigned ch
+@@ -1536,8 +1539,7 @@ static void SendString(const unsigned ch
          } else {
            len = cp2 - cp - 1;
            if (sizeof(key) <= len) len = sizeof(key) - 1;
@@ -133,7 +133,7 @@ Last-Update: 2015-05-07
            KeyPressed(None, key, NULL);
            cp = cp2;
          }
-@@ -1528,11 +1530,12 @@ static void SendString(const unsigned ch
+@@ -1584,11 +1586,12 @@ static void SendString(const unsigned ch
  	if ('1' <= *cp && *cp <= '9') {
  	  usleep((*cp - '0') * 100000);
  	} else {
@@ -147,7 +147,7 @@ Last-Update: 2015-05-07
  	cp++;
  	if ('1' <= *cp && *cp <= '9') {
  	  if (appres.debug) fprintf(stderr, "XTestFakeButtonEvent(%d)\n", *cp - '0');
-@@ -1543,10 +1546,18 @@ static void SendString(const unsigned ch
+@@ -1599,10 +1602,18 @@ static void SendString(const unsigned ch
            fprintf(stderr, "%s: no digit after \"\\m\"\n",
                    PROGRAM_NAME);
  	}
@@ -167,7 +167,7 @@ Last-Update: 2015-05-07
  	target_root = RootWindow(target_dpy, DefaultScreen(target_dpy));
  	XQueryPointer(target_dpy, target_root, &junk_w, &child,
  		      &cur_x, &cur_y, &junk_i, &junk_i, &junk_u);
-@@ -1628,7 +1639,7 @@ static void Highlight(char *name, int st
+@@ -1684,7 +1695,7 @@ static void Highlight(char *name, int st
    char name1[50];
    Widget w;
  
@@ -176,7 +176,7 @@ Last-Update: 2015-05-07
    w = XtNameToWidget(toplevel, name1);
    if (w != None) {
      if (strstr(name, "Focus") != NULL) {
-@@ -1674,13 +1685,13 @@ static Boolean CheckShiftState(int row, 
+@@ -1730,13 +1741,13 @@ static Boolean CheckShiftState(int row, 
  static void RefreshShiftState(Boolean force)
  {
    static Boolean first = TRUE;
@@ -195,7 +195,7 @@ Last-Update: 2015-05-07
    int first_row, row, col;
    Boolean shifted;
    char *label;
-@@ -1768,7 +1779,7 @@ static void RefreshShiftState(Boolean fo
+@@ -1824,7 +1835,7 @@ static void RefreshShiftState(Boolean fo
  
      Window root, child;
      int root_x, root_y, x, y;
@@ -204,7 +204,7 @@ Last-Update: 2015-05-07
  
      XKeyEvent event;
  
-@@ -1784,28 +1795,28 @@ static void RefreshShiftState(Boolean fo
+@@ -1840,28 +1851,28 @@ static void RefreshShiftState(Boolean fo
      event.same_screen = TRUE;
      event.state = 0;
  
@@ -238,7 +238,7 @@ Last-Update: 2015-05-07
        event.keycode = XKeysymToKeycode(target_dpy, XK_Meta_L);
        event.type = (shift_state & meta_mask) ? KeyPress : KeyRelease;
        SendEvent(&event);
-@@ -1866,7 +1877,7 @@ static char *GetWindowGeometry(Widget w)
+@@ -1922,7 +1933,7 @@ static char *GetWindowGeometry(Widget w)
  
    XtVaGetValues(w, XtNx, &x0, XtNy, &y0, NULL);
    XGetGeometry(dpy, XtWindow(w), &root, &x1, &y1, &wd, &ht, &bd, &dp);
@@ -247,7 +247,7 @@ Last-Update: 2015-05-07
  
    return geom;
  }
-@@ -1908,7 +1919,7 @@ static void SetWindowManagerHint(Boolean
+@@ -1964,7 +1975,7 @@ static void SetWindowManagerHint(Boolean
  	       FALSE, SubstructureNotifyMask | SubstructureRedirectMask,
  	       (XEvent *)&ev);
      if (appres.debug)
@@ -256,7 +256,7 @@ Last-Update: 2015-05-07
    }
  }
  
-@@ -1930,7 +1941,7 @@ static void LayoutSelected(Widget w, cha
+@@ -1986,7 +1997,7 @@ static void LayoutSelected(Widget w, cha
    if (key != NULL) {
      if (strcmp(key, "default") != 0) {
        sscanf(key, "%29[^/]/%29s", customization, lang);
@@ -265,7 +265,7 @@ Last-Update: 2015-05-07
        xenv = XtResolvePathname(dpy, "app-defaults", name, NULL, NULL, NULL, 0, NULL);
        if (xenv == NULL) {
  	fprintf(stderr, "%s: app-default file \"%s\" not installed\n",
-@@ -1938,12 +1949,10 @@ static void LayoutSelected(Widget w, cha
+@@ -1994,12 +2005,10 @@ static void LayoutSelected(Widget w, cha
        }
      }
  
@@ -280,7 +280,7 @@ Last-Update: 2015-05-07
        putenv(env_xenv);
  
        keyboard_layout = XtNewString(key);
-@@ -2063,6 +2072,7 @@ static void PropsItemToggled(Widget w, c
+@@ -2119,6 +2128,7 @@ static void PropsItemToggled(Widget w, c
    XtVaGetValues(XtNameToWidget(props_panel, "*jump_pointer"),
  		XtNstate, &appres.jump_pointer, NULL);
  
@@ -288,7 +288,7 @@ Last-Update: 2015-05-07
    appres.key_click_duration = (int)XawToggleGetCurrent(click_buttons);
    appres.autoclick_delay = (int)XawToggleGetCurrent(autoclick_buttons);
  
-@@ -2129,7 +2139,7 @@ static void PopupPropsPanel(void)
+@@ -2185,7 +2195,7 @@ static void PopupPropsPanel(void)
    if (props_panel == None) {
      Widget label, button;
      Widget form, w;
@@ -297,7 +297,7 @@ Last-Update: 2015-05-07
      int val;
  
      props_panel = XtVaCreatePopupShell("props_panel", transientShellWidgetClass,
-@@ -2155,7 +2165,7 @@ static void PopupPropsPanel(void)
+@@ -2211,7 +2221,7 @@ static void PopupPropsPanel(void)
      click_buttons = button;
      for (val = 1; val <= 50; val *= 2) {
        char s1[10];
@@ -306,7 +306,7 @@ Last-Update: 2015-05-07
        button = XtVaCreateManagedWidget(s1, toggleWidgetClass,
  			       form, XtNfromVert, w, XtNfromHoriz, button,
  			       XtNradioData, (XtPointer)val,
-@@ -2177,7 +2187,7 @@ static void PopupPropsPanel(void)
+@@ -2233,7 +2243,7 @@ static void PopupPropsPanel(void)
      autoclick_buttons = button;
      for (val = 500; val <= 1000; val += 100) {
        char s1[10];
@@ -315,7 +315,7 @@ Last-Update: 2015-05-07
        button = XtVaCreateManagedWidget(s1, toggleWidgetClass,
  			       form, XtNfromVert, w, XtNfromHoriz, button,
  			       XtNradioData, (XtPointer)val,
-@@ -2239,7 +2249,7 @@ static void OpenRemoteDisplay(Widget w, 
+@@ -2295,7 +2305,7 @@ static void OpenRemoteDisplay(Widget w, 
    focused_subwindow = None;
    if (target_dpy != NULL && target_dpy != dpy) XCloseDisplay(target_dpy);
  
@@ -324,16 +324,7 @@ Last-Update: 2015-05-07
    for (cp = name; isascii(*cp) && isprint(*cp); cp++) ;
    *cp = '\0';
  
-@@ -2443,7 +2453,7 @@ static void IconifyWindow(Widget w, Bool
-   }
- }
- 
--static void SignalUser1(void)
-+static void SignalUser1(int sig)
- {
-   XWindowAttributes attr;
-   XGetWindowAttributes(dpy, XtWindow(toplevel), &attr);
-@@ -2752,7 +2762,7 @@ static Widget MakeKey(Widget parent, con
+@@ -2806,7 +2816,7 @@ static Widget MakeKey(Widget parent, con
    XtAddCallback(w, XtNcallback, (XtCallbackProc)KeyPressed, (XtPointer)name);
  
    if (label != NULL) {
@@ -342,7 +333,7 @@ Last-Update: 2015-05-07
      if (strcmp(str, "space") == 0) strcpy(str, "");
      len = strlen(str);
      if (3 <= len) {
-@@ -2824,9 +2834,9 @@ static void MakeKeypad(Widget form, Widg
+@@ -2878,9 +2888,9 @@ static void MakeKeypad(Widget form, Widg
  	       || (strncmp(keypad_shift[row][col], "KP_", 3) == 0
  		   && isdigit(keypad_shift[row][col][3])))
  	color = appres.general_background;
@@ -354,7 +345,7 @@ Last-Update: 2015-05-07
        key = MakeKey(keypad_box, XtNewString(name),
  		    keypad_label[row][col], color);
        XtVaSetValues(key, XtNfont, font, NULL);
-@@ -2928,12 +2938,12 @@ static void MakeKeyboard(Boolean remake)
+@@ -2982,12 +2992,12 @@ static void MakeKeyboard(Boolean remake)
    Widget form, key, left;
    Pixel color;
    XFontStruct *font;
@@ -369,7 +360,7 @@ Last-Update: 2015-05-07
  
  #include "xvkbd.xbm"
  #include "iconify.xbm"
-@@ -2953,7 +2963,7 @@ static void MakeKeyboard(Boolean remake)
+@@ -3007,7 +3017,7 @@ static void MakeKeyboard(Boolean remake)
      for (row = first_row; row < NUM_KEY_ROWS; row++) {
        if (keys_normal[row][0] == NULL) continue;
  
@@ -378,7 +369,7 @@ Last-Update: 2015-05-07
        key_box[row] = XtVaCreateManagedWidget(name, formWidgetClass, form, NULL);
        key_box[row + 1] = None;
        if (row != first_row)
-@@ -2963,7 +2973,7 @@ static void MakeKeyboard(Boolean remake)
+@@ -3017,7 +3027,7 @@ static void MakeKeyboard(Boolean remake)
          
        left = None;
        for (col = 0; keys_normal[row][col] != NULL; col++) {
@@ -387,7 +378,7 @@ Last-Update: 2015-05-07
  	if (strcmp(name, "MainMenu") == 0) {
  	  Widget iconify_button = None;
  
-@@ -3005,11 +3015,11 @@ static void MakeKeyboard(Boolean remake)
+@@ -3059,11 +3069,11 @@ static void MakeKeyboard(Boolean remake)
  	    color = appres.general_background;
  	    font = appres.general_font;
  	    if (isalpha(name[0])) font = appres.letter_font;
@@ -402,7 +393,7 @@ Last-Update: 2015-05-07
  	    /* keys can be removed by setting its width to 1 */
  	    XtDestroyWidget(key);
  	    key = None;
-@@ -3045,7 +3055,7 @@ static void MakeKeyboard(Boolean remake)
+@@ -3099,7 +3109,7 @@ static void MakeKeyboard(Boolean remake)
      Window root;
      int x1, y1;
      unsigned int wd, ht, bd, dp;
@@ -411,7 +402,7 @@ Last-Update: 2015-05-07
  
      XGetGeometry(dpy, XtWindow(toplevel), &root, &x1, &y1, &wd, &ht, &bd, &dp);
      max_wd = XtScreen(toplevel)->width * appres.max_width_ratio;
-@@ -3063,16 +3073,16 @@ static void MakeKeyboard(Boolean remake)
+@@ -3118,16 +3128,16 @@ static void MakeKeyboard(Boolean remake)
  
    if (!appres.debug && key_box[first_row] != None) {
      if (appres.keypad) {
@@ -433,7 +424,7 @@ Last-Update: 2015-05-07
      }
    }
    if (0 < strlen(appres.geometry)) {
-@@ -3180,11 +3190,11 @@ static void ReadProperty(void)
+@@ -3236,11 +3246,11 @@ static void ReadProperty(void)
    home = getenv("HOME");
    if (appres.key_file[0] != '/' && home != NULL
        && strlen(home) + strlen(appres.key_file) + 1 < sizeof(fkey_filename))
@@ -448,16 +439,16 @@ Last-Update: 2015-05-07
  
    fp = fopen(fkey_filename, "r");
    if (fp == NULL) return;
-@@ -3199,7 +3209,7 @@ static void ReadProperty(void)
- 	  LayoutSelected(None, keyboard_layout, NULL);
- 	}
+@@ -3253,7 +3263,7 @@ static void ReadProperty(void)
+ 				  keyboard_layout, getenv("XENVIRONMENT"));
+ 	if (getenv("XENVIRONMENT") == NULL) layout_selected = TRUE;
        } else if (sscanf(&str[1], "dict_file %s", key) == 1) {
 -	strncpy(dict_filename, key, sizeof(dict_filename));
 +	snprintf(dict_filename, sizeof(dict_filename), "%s", key);
        } else if (sscanf(&str[1], "%s %d", key, &val) == 2) {
  	if (strcmp(key, "quick_modifiers") == 0)
  	  appres.quick_modifiers = val;
-@@ -3273,9 +3283,9 @@ static void FKeyMenuSelected(Widget w, c
+@@ -3329,9 +3339,9 @@ static void FKeyMenuSelected(Widget w, c
    if (key == NULL)
      strcpy(key2, "");
    else if (strncmp(key, "Shift-", strlen("Shift-")) == 0)
@@ -469,7 +460,7 @@ Last-Update: 2015-05-07
  
    if (strcmp(cur_fkey, key2) != 0) {
      if (strlen(cur_fkey) != 0) {
-@@ -3298,7 +3308,7 @@ static void FKeyMenuSelected(Widget w, c
+@@ -3354,7 +3364,7 @@ static void FKeyMenuSelected(Widget w, c
  	prefix = "";
  	if (cur_fkey_value_mode[0] == 'c') prefix = "!";
  	else if (fkey_value[0] == '!' || fkey_value[0] == '\\') prefix = "\\";
@@ -478,7 +469,7 @@ Last-Update: 2015-05-07
        } else {  /* empty string - remove the entry for the function key */
  	if (sp != NULL) {
  	  if (sp2 != NULL) sp2->next = sp->next;
-@@ -3318,10 +3328,10 @@ static void FKeyMenuSelected(Widget w, c
+@@ -3374,10 +3384,10 @@ static void FKeyMenuSelected(Widget w, c
        FKeyValueMenuSelected(None, (value[0] == '!') ? "command" : "string");
  
        if (value[0] == '!' || value[0] == '\\') value = value + 1;
@@ -491,7 +482,7 @@ Last-Update: 2015-05-07
      }
    }
  }
-@@ -3385,9 +3395,9 @@ static void PopupFunctionKeyEditor(void)
+@@ -3441,9 +3451,9 @@ static void PopupFunctionKeyEditor(void)
      for (j = 0; j <= 1; j++) {
        for (i = 1; i <= appres.editable_function_keys; i++) {
  	if (j == 0)
@@ -503,7 +494,7 @@ Last-Update: 2015-05-07
  	key = XtNewString(label);
  	menu_entry = XtVaCreateManagedWidget(key, smeBSBObjectClass, menu, NULL);
  	XtAddCallback(menu_entry, XtNcallback, (XtCallbackProc)FKeyMenuSelected,
-@@ -3449,8 +3459,8 @@ static const char *FindFunctionKeyValue(
+@@ -3514,8 +3524,8 @@ static const char *FindFunctionKeyValue(
      else if (shift_state & ControlMask) prefix = 'c';
      else if (shift_state & ShiftMask) prefix = 's';
    }
@@ -514,7 +505,7 @@ Last-Update: 2015-05-07
    len = strlen(label);
    
    for (sp = fkey_list; sp != NULL; sp = sp->next) {
-@@ -3508,8 +3518,10 @@ static void Autoclick(void)
+@@ -3573,8 +3583,10 @@ static void Autoclick(void)
  {
    StopAutoclick();
  
@@ -525,16 +516,7 @@ Last-Update: 2015-05-07
  }
  
  static void ShowBalloon(Widget w, XEvent *event, String *pars, Cardinal *n_pars)
-@@ -3590,7 +3602,7 @@ static void SetIconBitmap(Widget w)
- static void VisibilityChanged(Widget w, XEvent *event,
- 			      String *pars, Cardinal *n_pars)
- {
--  static cnt = 0;
-+  static int cnt = 0;
-   static time_t t1 = 0;
-   time_t t2;
- 
-@@ -3638,7 +3650,9 @@ int main(int argc, char *argv[])
+@@ -3703,7 +3715,9 @@ int main(int argc, char *argv[])
    Boolean open_keypad_panel = FALSE;
    char ch;
    Window child;
@@ -544,7 +526,7 @@ Last-Update: 2015-05-07
  
    argc1 = argc;
    argv1 = malloc(sizeof(char *) * (argc1 + 5));
-@@ -3841,14 +3855,14 @@ char *setlocale(int category, const char
+@@ -3905,14 +3919,14 @@ char *setlocale(int category, const char
    if (locale == NULL) {
      return cur_locale;
    } else if (category == LC_ALL) {
