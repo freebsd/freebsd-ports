@@ -20,11 +20,12 @@ lib/X11/app-defaults/XVkbd-portuguese
 lib/X11/app-defaults/XVkbd-russian
 lib/X11/app-defaults/XVkbd-slovene
 lib/X11/app-defaults/XVkbd-small
-lib/X11/app-defaults/XVkbd-strip
 lib/X11/app-defaults/XVkbd-spanish
+lib/X11/app-defaults/XVkbd-strip
 lib/X11/app-defaults/XVkbd-swedish
 lib/X11/app-defaults/XVkbd-swissgerman
 lib/X11/app-defaults/XVkbd-turkish
+lib/X11/app-defaults/XVkbd-turkishF
 lib/X11/app-defaults/XVkbd-uk
 man/man1/xvkbd.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
