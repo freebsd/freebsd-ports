@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Tool for use with clang to analyze #includes in C and C++ source files
+COMMENT=	Tool for use with clang to analyze \#includes in C and C++ source files
 
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
