@@ -17,7 +17,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	minetest
 
-USES=		cmake iconv:wchar_t
+USES=		cmake compiler:c11 iconv:wchar_t
 LLD_UNSAFE=	yes
 CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \
 		-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc"
