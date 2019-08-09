@@ -20,4 +20,4 @@ include/redkite/RkRect.h
 include/redkite/RkSize.h
 include/redkite/RkTimer.h
 include/redkite/RkWidget.h
-lib/libredkite.so
+lib/libredkite.a
