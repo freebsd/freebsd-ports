@@ -20,4 +20,9 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	TAGGIT
+TAGGIT_DESC=	Tagging support
+
+TAGGIT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dj22-django-taggit>=0.20:www/py-dj22-django-taggit@${PY_FLAVOR}
+
 .include <bsd.port.mk>
