@@ -17,7 +17,7 @@
 load_rc_config htpdate
 
 htpdate_enable="${htpdate_enable:-"NO"}"
-htpdate_servers="${htpdate_servers:-"www.freebsd.org www.linux.com"}"
+htpdate_servers="${htpdate_servers:-"www.example.com"}"
 htpdate_flags="${htpdate_flags:-"-l -s -D"}"
 
 name=htpdate
