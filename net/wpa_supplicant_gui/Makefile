@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wpa_supplicant_gui
-DISTVERSION=	2.8
+DISTVERSION=	2.9
 CATEGORIES=	net
 MASTER_SITES=	http://w1.fi/releases/ \
 		http://partmedia.users.sourceforge.net/dist/:icons \
