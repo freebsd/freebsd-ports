@@ -4,6 +4,7 @@ bin/fs_encode
 bin/fs_ivrd
 bin/fsxs
 bin/gentls_cert
+bin/switch_console
 bin/switch_core
 bin/switch_event
 bin/switch_hash
