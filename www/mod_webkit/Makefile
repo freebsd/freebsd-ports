@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_webkit
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	www
 
 MAINTAINER=	apache@FreeBSD.org
@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Cito
 GH_PROJECT=	w4py
 
-USES=		apache:2.2+
+USES=		apache:2.4+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_EXTRAS=	marshal.c
