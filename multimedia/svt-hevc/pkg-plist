@@ -1,5 +1,4 @@
 bin/SvtHevcEncApp
-bin/SvtHevcEncSimpleApp
 include/svt-hevc/EbApi.h
 include/svt-hevc/EbErrorCodes.h
 include/svt-hevc/EbTime.h
