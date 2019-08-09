@@ -5,14 +5,14 @@ PORTVERSION=	2.1
 CATEGORIES=	cad
 MASTER_SITES=	http://cdn.bitbucket.org/starling13/tkgate/downloads/
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Event driven digital circuit simulator
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES+=		iconv:translit tk:build,run autoreconf
+USES+=		iconv:translit tk:build,run autoreconf libtool pkgconfig
 USE_GNOME=	pango
 OPTIONS_DEFINE=	DOCS
 
