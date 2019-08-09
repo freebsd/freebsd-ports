@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mypy_extensions>=0.4.0<0.5.0:devel/py-mypy_e
 		${PYTHON_PKGNAMEPREFIX}typed-ast>=1.4.0<1.5.0:devel/py-typed-ast@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python:3.5+ shebangfix
+USES=		python:3.5-3.6 shebangfix
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
