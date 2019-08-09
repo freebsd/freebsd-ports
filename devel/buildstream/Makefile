@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	BuildStream
-DISTVERSION=	1.2.7
+DISTVERSION=	1.2.8
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}grpcio>=1.18.0:devel/py-grpcio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=1.1.0:textproc/py-MarkupSafe@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pluginbase>=0.7:devel/py-pluginbase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.6.1:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.4.8:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.15.51:devel/py-ruamel.yaml@${PY_FLAVOR} \
