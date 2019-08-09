@@ -204,6 +204,7 @@ lib/emscripten/src/library_pthread_stub.js
 lib/emscripten/src/library_sdl.js
 lib/emscripten/src/library_signals.js
 lib/emscripten/src/library_sockfs.js
+lib/emscripten/src/library_stack_trace.js
 lib/emscripten/src/library_strtok_r.c
 lib/emscripten/src/library_syscall.js
 lib/emscripten/src/library_trace.js
@@ -229,11 +230,11 @@ lib/emscripten/src/preamble_sharedlib.js
 lib/emscripten/src/proxyClient.js
 lib/emscripten/src/proxyWorker.js
 lib/emscripten/src/runtime.js
+lib/emscripten/src/runtime_assertions.js
 lib/emscripten/src/runtime_math.js
 lib/emscripten/src/runtime_sab_polyfill.js
 lib/emscripten/src/runtime_safe_heap.js
 lib/emscripten/src/runtime_stack_check.js
-lib/emscripten/src/runtime_stack_trace.js
 lib/emscripten/src/runtime_strings.js
 lib/emscripten/src/settings.js
 lib/emscripten/src/shell.html
@@ -3489,6 +3490,7 @@ lib/emscripten/tools/optimizer/simple_ast.h
 lib/emscripten/tools/optimizer/snprintf.h
 lib/emscripten/tools/ports/__init__.py
 lib/emscripten/tools/ports/binaryen.py
+lib/emscripten/tools/ports/boost_headers.py
 lib/emscripten/tools/ports/bullet.py
 lib/emscripten/tools/ports/bzip2.py
 lib/emscripten/tools/ports/cocos2d.py
