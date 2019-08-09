@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cucumber-rails
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,9 +12,9 @@ COMMENT=	Cucumber generator and runtime for Rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-capybara>=2.3.0<4:devel/rubygem-capybara \
+RUN_DEPENDS=	rubygem-capybara>=2.12<4:devel/rubygem-capybara \
 		rubygem-cucumber>=3.0.2<4:devel/rubygem-cucumber \
-		rubygem-mime-types>=1.17<4:misc/rubygem-mime-types \
+		rubygem-mime-types>=2.0<4:misc/rubygem-mime-types \
 		rubygem-nokogiri>=1.8:textproc/rubygem-nokogiri \
 		rubygem-railties5>=4.2:www/rubygem-railties5
 
