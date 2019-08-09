@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	V_
 DISTVERSION=	0_8_1
 CATEGORIES=	security
 
-MAINTAINER=	la5lbtyi@aon.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon that provides fingerprint scanning functionality over D-Bus
 
 LICENSE=	GPLv2
