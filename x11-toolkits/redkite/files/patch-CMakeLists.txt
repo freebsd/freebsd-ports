@@ -9,12 +9,3 @@
  else()
    message(FATAL_ERROR "Redkite not implemented yet for ${CMAKE_SYSTEM_NAME}")
  endif()
-@@ -174,7 +176,7 @@ else() # defualt GNU/Linux
- include_directories(${RK_INCLUDE_PATH}/impl/platforms/xwin)
- endif()
- 
--add_library(redkite STATIC
-+add_library(redkite SHARED
-   ${RK_HEADERS}
-   ${RK_HEADERS_IMPL}
-   ${RK_HEADERS_PLATFORM}
