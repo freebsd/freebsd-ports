@@ -1,5 +1,5 @@
-TIMESTAMP = 1559318790
-SHA256 (bro-2.6.2.tar.gz) = 6df6876f3f7b1dd8afeb3d5f88bfb9269f52d5d796258c4414bdd91aa2eac0a6
-SIZE (bro-2.6.2.tar.gz) = 28477996
+TIMESTAMP = 1565320389
+SHA256 (bro-2.6.3.tar.gz) = 469dd7456af388ba65d8722fbfdd5b9182f14def16149aa5ebceb1cfd881697f
+SIZE (bro-2.6.3.tar.gz) = 28480249
 SHA256 (bro-bro-netmap-cf88debf487b31ab30dc3b5bac64783b4e49997e_GH0.tar.gz) = 383423f92932c3ef244194954708b3a237b4f37ebc358014f51dcb3b9786896b
 SIZE (bro-bro-netmap-cf88debf487b31ab30dc3b5bac64783b4e49997e_GH0.tar.gz) = 24630
