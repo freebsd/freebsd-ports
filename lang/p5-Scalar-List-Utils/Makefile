@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Scalar-List-Utils
-PORTVERSION=	1.50
+PORTVERSION=	1.51
 PORTEPOCH=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl subroutines that would be nice to have in the perl core
 
 LICENSE=	ART10 GPLv1+
