@@ -167,6 +167,7 @@
     SUBDIR += jython
     SUBDIR += kawa
     SUBDIR += kf5-kross
+    SUBDIR += kotlin
     SUBDIR += kross-interpreters
     SUBDIR += kturtle
     SUBDIR += lafontaine
