@@ -17,8 +17,9 @@ RUN_DEPENDS=	rubygem-actionpack50>=4.0:www/rubygem-actionpack50 \
 		rubygem-activesupport50>=4.0:devel/rubygem-activesupport50 \
 		rubygem-sprockets3>=3.0.0:devel/rubygem-sprockets3
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
