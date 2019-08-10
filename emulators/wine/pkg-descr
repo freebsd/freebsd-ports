@@ -11,6 +11,11 @@ Use this port for 32-bit Windows binaries in an i386 environment or
 64-bit Windows binaries in an amd64 environment; use emulators/i386-wine
 for 32-bit Windows binaries in an amd64 environment.
 
+If you receive a message of "Did you reconfigure your kernel with
+"options USER_LDT"?" add the line
+    machdep.max_ldt_segment="2048"
+to /boot/loader.conf and reboot.
+
 WWW: http://www.winehq.org/
 
 Gerald Pfeifer <gerald@FreeBSD.org>
