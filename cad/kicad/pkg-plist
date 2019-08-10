@@ -45,7 +45,6 @@ share/appdata/kicad.appdata.xml
 %%PORTDOCS%%%%DOCSDIR%%/development/compiling.md
 %%PORTDOCS%%%%DOCSDIR%%/development/config-strings.md
 %%PORTDOCS%%%%DOCSDIR%%/development/pcbnew-plugins.md
-%%PORTDOCS%%%%DOCSDIR%%/development/road-map-r5.md
 %%PORTDOCS%%%%DOCSDIR%%/development/road-map-r6.md
 %%PORTDOCS%%%%DOCSDIR%%/development/road-map.md
 %%PORTDOCS%%%%DOCSDIR%%/development/stable-release-policy.md
