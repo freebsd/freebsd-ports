@@ -3,7 +3,7 @@
 
 PORTNAME=	lsof
 DISTVERSION=	4.93.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	8
 CATEGORIES=	sysutils
 
@@ -36,7 +36,8 @@ IGNORE+=		requires kernel sources
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lsof ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/Lsof.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/lsof.8
+	(cd ${WRKSRC} && ${SED} 's/\\$$/\\DUMMY/' Lsof.8 | mandoc -T man | ${SED} 's/DUMMY$$//' > ${WRKSRC}/lsof.8)
+	${INSTALL_MAN} ${WRKSRC}/lsof.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/lsof.8
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/lsof
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${STAGEDIR}${PREFIX}/share/lsof
 	@${CHMOD} 0444 ${STAGEDIR}${PREFIX}/share/lsof/00*
