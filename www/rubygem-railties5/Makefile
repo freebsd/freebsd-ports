@@ -19,15 +19,15 @@ RUN_DEPENDS=	rubygem-actionpack5>=${PORTVERSION}:www/rubygem-actionpack5 \
 		rubygem-rake>=0.8.7:devel/rubygem-rake \
 		rubygem-thor>=0.18.1:devel/rubygem-thor
 
-CONFLICTS_INSTALL=	rubygem-railties4 rubygem-railties50
-
-PORTSCOUT=	limit:^5\.1\.
-
 USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/rails
+
+CONFLICTS_INSTALL=	rubygem-railties4 rubygem-railties50 rubygem-railties52
+
+PORTSCOUT=	limit:^5\.1\.
 
 .include <bsd.port.mk>
