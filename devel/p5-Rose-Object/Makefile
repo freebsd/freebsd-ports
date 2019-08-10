@@ -19,4 +19,6 @@ TEST_DEPENDS=	p5-Class-XSAccessor>=0:devel/p5-Class-XSAccessor
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
