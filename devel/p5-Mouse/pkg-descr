@@ -1,13 +1,17 @@
 Moose is a postmodern object system for Perl5. Moose is wonderful.
 
-Unfortunately, Moose has a compile-time penalty. Though significant progress
-has been made over the years, the compile time penalty is a non-starter for
-some very specific applications. If you are writing a command-line application
-or CGI script where startup time is essential, you may not be able to use Moose
-(we recommend that you instead use persistent Perl executing environments like
+Unfortunately, Moose has a compile-time penalty. Though significant progress has
+been made over the years, the compile time penalty is a non-starter for some
+very specific applications. If you are writing a command-line application or CGI
+script where startup time is essential, you may not be able to use Moose (we
+recommend that you instead use persistent Perl executing environments like
 FastCGI for the latter, if possible).
 
 Mouse is a Moose compatible object system, which aims to alleviate this penalty
 by providing a subset of Moose's functionality.
 
-WWW: https://metacpan.org/pod/Mouse
+We're also going as light on dependencies as possible. Mouse currently has no
+dependencies except for building/testing modules. Mouse also works without XS,
+although it has an XS backend to make it much faster.
+
+WWW: https://metacpan.org/release/Mouse
