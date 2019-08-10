@@ -19,11 +19,11 @@ RUN_DEPENDS=	rubygem-actionpack50>=${PORTVERSION}:www/rubygem-actionpack50 \
 		rubygem-mail>=2.5.4:mail/rubygem-mail \
 		rubygem-rails-dom-testing-rails50>=2.0:textproc/rubygem-rails-dom-testing-rails50
 
-PORTSCOUT=	limit:^5\.0\.
-
 USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^5\.0\.
 
 .include <bsd.port.mk>
