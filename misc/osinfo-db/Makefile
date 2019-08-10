@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	osinfo-db
-PORTVERSION=	20190726
+PORTVERSION=	20190805
 CATEGORIES=	misc
 MASTER_SITES=	https://releases.pagure.org/libosinfo/
 
