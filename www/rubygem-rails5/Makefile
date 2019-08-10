@@ -49,8 +49,6 @@ RUN_DEPENDS=	rubygem-actioncable5>=${PORTVERSION}:www/rubygem-actioncable5 \
 		rubygem-uglifier>=3.2.0:www/rubygem-uglifier \
 		rubygem-web-console>=3.5.0:devel/rubygem-web-console
 
-PORTSCOUT=	limit:^5\.1\.
-
 USES=		gem
 USE_RUBY=	yes
 
@@ -58,5 +56,7 @@ NO_ARCH=	yes
 
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails
+
+PORTSCOUT=	limit:^5\.1\.
 
 .include <bsd.port.mk>
