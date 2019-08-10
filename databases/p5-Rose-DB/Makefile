@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Rose-DB
-PORTVERSION=	0.778
+PORTVERSION=	0.779
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -28,9 +28,11 @@ RUN_DEPENDS=	p5-Bit-Vector>=6.4:math/p5-Bit-Vector \
 		p5-Time-Clock>=0:devel/p5-Time-Clock \
 		p5-YAML-Syck>=0:textproc/p5-YAML-Syck
 
-PORTSCOUT=	skipv:0.7591
-
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+PORTSCOUT=	skipv:0.7591
 
 .include <bsd.port.mk>
