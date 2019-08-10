@@ -1,0 +1,13 @@
+bin/geonkick
+lib/lv2/geonkick.lv2/geonkick.ttl
+lib/lv2/geonkick.lv2/libgeonkick_lv2.so
+lib/lv2/geonkick.lv2/manifest.ttl
+share/icons/hicolor/128x128/apps/geonkick.png
+share/icons/hicolor/16x16/apps/geonkick.png
+share/icons/hicolor/22x22/apps/geonkick.png
+share/icons/hicolor/24x24/apps/geonkick.png
+share/icons/hicolor/32x32/apps/geonkick.png
+share/icons/hicolor/48x48/apps/geonkick.png
+share/icons/hicolor/64x64/apps/geonkick.png
+share/icons/hicolor/scalable/apps/geonkick.svg
+share/mime/packages/geonkick.xml
