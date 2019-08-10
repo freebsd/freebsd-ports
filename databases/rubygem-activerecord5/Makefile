@@ -17,11 +17,11 @@ RUN_DEPENDS=	rubygem-activemodel5>=${PORTVERSION}:databases/rubygem-activemodel5
 		rubygem-activesupport5>=${PORTVERSION}:devel/rubygem-activesupport5 \
 		rubygem-arel8>=8.0:databases/rubygem-arel8
 
-PORTSCOUT=	limit:^5\.1\.
-
 USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^5\.1\.
 
 .include <bsd.port.mk>
