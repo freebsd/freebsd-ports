@@ -1,5 +1,6 @@
 %%VTYSH%%bin/vtysh
 include/frr/agg_table.h
+include/frr/atomlist.h
 include/frr/yang.h
 include/frr/yang_translator.h
 include/frr/yang_wrappers.h
@@ -18,9 +19,7 @@ include/frr/distribute.h
 include/frr/eigrpd/eigrp_dump.h
 include/frr/eigrpd/eigrp_topology.h
 include/frr/eigrpd/eigrpd.h
-include/frr/event_counter.h
 include/frr/ferr.h
-include/frr/fifo.h
 include/frr/filter.h
 include/frr/freebsd-queue.h
 include/frr/frr_pthread.h
@@ -48,6 +47,7 @@ include/frr/lua.h
 include/frr/md5.h
 include/frr/memory.h
 include/frr/memory_vty.h
+include/frr/mlag.h
 include/frr/module.h
 include/frr/monotime.h
 include/frr/mpls.h
@@ -84,6 +84,7 @@ include/frr/ringbuf.h
 include/frr/route_types.h
 include/frr/routemap.h
 include/frr/sbuf.h
+include/frr/seqlock.h
 include/frr/sha256.h
 include/frr/sigevent.h
 include/frr/smux.h
@@ -97,6 +98,8 @@ include/frr/systemd.h
 include/frr/table.h
 include/frr/termtable.h
 include/frr/thread.h
+include/frr/typerb.h
+include/frr/typesafe.h
 include/frr/vector.h
 include/frr/version.h
 include/frr/vlan.h
