@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	elm-format
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	devel textproc
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,13 +19,13 @@ USE_CABAL=	ansi-terminal-0.8.2 \
 		ansi-wl-pprint-0.6.8.2_2 \
 		base-orphans-0.8.1 \
 		bifunctors-5.5.4_1 \
-		binary-0.8.6.0 \
+		binary-0.8.7.0 \
 		Cabal-2.4.1.0_1 \
 		cabal-doctest-1.0.6_2 \
 		colour-2.3.5 \
 		comonad-5.0.5 \
 		concatenative-1.0.1 \
-		containers-0.5.11.0_3 \
+		containers-0.6.0.1 \
 		contravariant-1.5.1 \
 		distributive-0.6 \
 		exceptions-0.10.2 \
@@ -49,7 +49,6 @@ USE_CABAL=	ansi-terminal-0.8.2 \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|g' \
-		${WRKSRC}/Setup.hs \
 		${WRKSRC}/src/ElmFormat/Version.hs
 
 .include <bsd.port.mk>
