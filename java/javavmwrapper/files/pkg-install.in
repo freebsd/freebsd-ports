@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/java/javavmwrapper/files/pkg-install.in,v 1.3 2006-06-03 17:32:24 glewis Exp $
+# $FreeBSD$
 
 LOCALBASE=%%LOCALBASE%%
 
@@ -10,16 +10,19 @@ if [ "x${2}" != "xPOST-INSTALL" ]; then
 fi
 
 # Ensure all JDKs and JREs are installed
-_excl_dirs='bootstrap-openjdk'
+jdirs=$(cd "${LOCALBASE}" && find *jdk* *jre* -depth 0 -type d 2> /dev/null)
+set -o noglob
+_excl_dirs='bootstrap-openjdk.*'
 _find_expr='-depth 2 -regex .*/bin/java'
 for dir in ${_excl_dirs}; do
     _find_expr="${_find_expr} ! -regex ${dir}/bin/java"
 done
-for jvm in `cd "${LOCALBASE}" && find *jdk* *jre* ${_find_expr} 2> /dev/null`; do
+for jvm in `cd "${LOCALBASE}" && find $jdirs ${_find_expr} 2> /dev/null`; do
     if [ -x "${LOCALBASE}/${jvm}" ]; then
         "${PKG_PREFIX}"/bin/registervm "${LOCALBASE}/${jvm}" > /dev/null 2>&1
     fi
 done
+set +o noglob
 
 # Ensure all VMs are configured correctly
 "${PKG_PREFIX}"/bin/checkvms
