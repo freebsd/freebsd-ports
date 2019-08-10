@@ -1,4 +1,4 @@
 colwide is a Perl script which displays either 80 or specified number of hash
 (#) characters on the screen. Can be useful to determine terminal width.
 
-WWW: http://www.neelc.org/software/colwide/
+WWW: https://github.com/neelchauhan/colwide
