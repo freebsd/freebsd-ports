@@ -1,3 +1,3 @@
-TIMESTAMP = 1565319986
-SHA256 (certbot-dns-rfc2136-0.37.0.tar.gz) = 0ebb42200aa51e999cf2a07947cbf9edd84912b3f562f8b36b40ad0e059e303b
-SIZE (certbot-dns-rfc2136-0.37.0.tar.gz) = 13682
+TIMESTAMP = 1565381298
+SHA256 (certbot-dns-rfc2136-0.37.1.tar.gz) = 6baee5db3d7f064cbca6ef7bbc4be9fed245cafa0a3a3252b49693c478318e16
+SIZE (certbot-dns-rfc2136-0.37.1.tar.gz) = 13975
