@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	frr
-PORTVERSION=	7.0
-PORTREVISION=	1
+PORTVERSION=	7.1
 DISTVERSIONPREFIX=	frr-
 CATEGORIES=	net ipv6
 PKGNAMESUFFIX=	7
@@ -65,7 +64,8 @@ CONFIGURE_ARGS=	--enable-user=frr \
 		--sysconfdir=${ETCDIR} \
 		--localstatedir=/var/run/frr \
 		--disable-nhrpd \
-		--disable-pimd
+		--disable-pimd \
+		--with-vtysh-pager=cat
 
 MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
 MANPAGES_CONFIGURE_OFF=	--disable-doc
