@@ -39,11 +39,15 @@
  
          # packagedcode
          'pefile >= 2018.8.8',
-@@ -183,7 +178,6 @@ setup(
+@@ -182,9 +177,8 @@ setup(
+         'click >= 6.0.0, < 7.0.0',
          'colorama >= 0.3.9',
          'pluggy >= 0.4.0, < 1.0',
-         'attrs >=17.4, < 19.0',
+-        'attrs >=17.4, < 19.0',
 -        'cattrs',
-         'typing >=3.6, < 3.7',
+-        'typing >=3.6, < 3.7',
++        'attrs >=17.4',
++        'typing >=3.6',
  
          # scancode outputs
+         'jinja2 >= 2.7.0, < 3.0.0',
