@@ -2200,6 +2200,7 @@
     SUBDIR += rubygem-url_mount
     SUBDIR += rubygem-vegas
     SUBDIR += rubygem-wasabi
+    SUBDIR += rubygem-webdrivers
     SUBDIR += rubygem-webmock
     SUBDIR += rubygem-webpack-rails-rails5
     SUBDIR += rubygem-webrobots
