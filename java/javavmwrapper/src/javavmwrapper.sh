@@ -175,12 +175,16 @@ sortConfiguration () {
             _VM=`basename "${_VM}"`
             # Consistent version numbering for various install directory names
             # including 'openjdk6', 'jdk1.6.0', 'linux-sun-jdk1.6.0', etc.
-            VERSION=`echo ${VM} | sed -e 's|[^0-9]*||' -e 's|1\.||' \
-		                      -e 's|\.[0-9]||' -e 's|-jre||' \
-				      2>/dev/null`
-            _VERSION=`echo ${_VM} | sed -e 's|[^0-9]*||' -e 's|1\.||' \
-		                        -e 's|\.[0-9]||' -e 's|-jre||' \
-					2>/dev/null`
+            VERSION=`echo ${VM} | sed -e 's|[^0-9]*||' \
+                                      -e 's|1\.\([0-9][0-9]*\)|\1|' \
+                                      -e 's|\([0-9][0-9]*\)\.[0-9]|\1|' \
+                                      -e 's|[^0-9]*\([0-9][0-9]*\)[^0-9]*|\1|'
+                                      2>/dev/null`
+            _VERSION=`echo ${_VM} | sed -e 's|[^0-9]*||' \
+                                        -e 's|1\.\([0-9][0-9]*\)|\1|' \
+                                        -e 's|\([0-9][0-9]*\)\.[0-9]|\1|' \
+                                        -e 's|[^0-9]*\([0-9][0-9]*\)[^0-9]*|\1|'
+                                        2>/dev/null`
             if [ "${VERSION}" -gt "${_VERSION}" ]; then
                 _JAVAVMS="${_JAVAVMS}:${JAVAVM}:${_JAVAVM}"
                 JAVAVM=
