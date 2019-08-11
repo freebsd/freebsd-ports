@@ -1,12 +1,11 @@
 # Created by: William Grzybowski
 # $FreeBSD$
 
-PORTNAME=	mimeparse
+PORTNAME=	python-mimeparse
 PORTVERSION=	1.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Basic functions for handling mime-types in Python
