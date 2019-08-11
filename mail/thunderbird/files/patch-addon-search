@@ -5,9 +5,9 @@ diff --git mail/app/profile/all-thunderbird.js mail/app/profile/all-thunderbird.
 index 75c2c5e435e35..4d8c09c02759b 100644
 --- comm/mail/app/profile/all-thunderbird.js
 +++ comm/mail/app/profile/all-thunderbird.js
-@@ -166,10 +166,10 @@ pref("extensions.getAddons.maxResults", 15);
- pref("extensions.getAddons.get.url", "https://live.thunderbird.net/services.addons/api/v3/addons/search/?guid=%IDS%&lang=%LOCALE%");
- pref("extensions.getAddons.compatOverides.url", "https://live.thunderbird.net/services.addons/api/v3/addons/compat-override/?guid=%IDS%&lang=%LOCALE%");
+@@ -153,10 +153,10 @@ pref("extensions.getAddons.maxResults", 15);
+ pref("extensions.getAddons.get.url", "https://services.addons.thunderbird.net/api/v3/addons/search/?guid=%IDS%&lang=%LOCALE%");
+ pref("extensions.getAddons.compatOverides.url", "https://services.addons.thunderbird.net/api/v3/addons/compat-override/?guid=%IDS%&lang=%LOCALE%");
  pref("extensions.getAddons.link.url", "https://addons.thunderbird.net/%LOCALE%/%APP%/");
 -pref("extensions.getAddons.recommended.url", "https://services.addons.thunderbird.net/%LOCALE%/%APP%/api/%API_VERSION%/list/recommended/all/%MAX_RESULTS%/%OS%/%VERSION%?src=thunderbird");
 +pref("extensions.getAddons.recommended.url", "https://services.addons.thunderbird.net/%LOCALE%/%APP%/api/%API_VERSION%/list/recommended/all/%MAX_RESULTS%/Linux/%VERSION%?src=thunderbird");
@@ -16,10 +16,10 @@ index 75c2c5e435e35..4d8c09c02759b 100644
 -pref("extensions.webservice.discoverURL", "https://services.addons.thunderbird.net/%LOCALE%/%APP%/discovery/pane/%VERSION%/%OS%");
 +pref("extensions.getAddons.search.url", "https://services.addons.thunderbird.net/%LOCALE%/%APP%/api/%API_VERSION%/search/%TERMS%/all/%MAX_RESULTS%/Linux/%VERSION%/%COMPATIBILITY_MODE%?src=thunderbird");
 +pref("extensions.webservice.discoverURL", "https://services.addons.thunderbird.net/%LOCALE%/%APP%/discovery/pane/%VERSION%/Linux");
- pref("extensions.getAddons.themes.browseURL", "https://addons.thunderbird.net/%LOCALE%/thunderbird/themes/?src=thunderbird");
  pref("extensions.getAddons.siteRegExp", "^https://.*addons\\.thunderbird\\.net");
+ pref("extensions.getAddons.langpacks.url", "https://services.addons.thunderbird.net/api/v3/addons/language-tools/?app=thunderbird&type=language&appversion=%VERSION%");
  
-@@ -190,9 +190,9 @@ pref("security.cert_pinning.enforcement_level", 1);
+@@ -180,9 +180,9 @@ pref("security.cert_pinning.enforcement_level", 1);
  //  .. etc ..
  //
  pref("extensions.update.enabled", true);
@@ -44,11 +44,11 @@ index f70fd8d7e3bd8..81e8cd7764fdf 100644
              if (file.url) {
                addon.sourceURI = NetUtil.newURI(file.url);
              }
-diff --git toolkit/mozapps/extensions/internal/XPIProvider.jsm toolkit/mozapps/extensions/internal/XPIProvider.jsm 
+diff --git toolkit/mozapps/extensions/internal/XPIDatabase.jsm toolkit/mozapps/extensions/internal/XPIDatabase.jsm
 index f70fd8d7e3bd8..81e8cd7764fdf 100644
---- toolkit/mozapps/extensions/internal/XPIProvider.jsm
-+++ toolkit/mozapps/extensions/internal/XPIProvider.jsm
-@@ -4974,7 +4974,7 @@ AddonInternal.prototype = {
+--- toolkit/mozapps/extensions/internal/XPIDatabase.jsm
++++ toolkit/mozapps/extensions/internal/XPIDatabase.jsm
+@@ -355,7 +355,7 @@ class AddonInternal {
      // Something is causing errors in here
      try {
        for (let platform of this.targetPlatforms) {
