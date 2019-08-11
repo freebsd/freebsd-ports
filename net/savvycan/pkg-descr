@@ -1,0 +1,5 @@
+CSavvyCAN is a CAN bus reverse engineering and capture tool. It
+supports EVTV hardware, socketCAN compatible devices, and other
+hardware.
+
+WWW: https://www.savvycan.com/

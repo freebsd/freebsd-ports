@@ -1341,6 +1341,7 @@
     SUBDIR += samba48
     SUBDIR += samba410
     SUBDIR += samplicator
+    SUBDIR += savvycan
     SUBDIR += sbd
     SUBDIR += sbm
     SUBDIR += scamper
