@@ -2,34 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	60.8.0
-PORTREVISION=	3
+DISTVERSION=	68.0
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source
 DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
-BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
-		nss>=3.36.7:security/nss \
-		icu>=59.1,1:devel/icu \
+BUILD_DEPENDS=	nspr>=4.21:devel/nspr \
+		nss>=3.44.1:security/nss \
+		icu>=63.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=1.7.6:print/harfbuzz \
-		graphite2>=1.3.11:graphics/graphite2 \
-		png>=1.6.34:graphics/png \
+		harfbuzz>=2.4.0:print/harfbuzz \
+		graphite2>=1.3.13:graphics/graphite2 \
+		png>=1.6.35:graphics/png \
 		libvpx>=1.5.0:multimedia/libvpx \
-		sqlite3>=3.22.0:databases/sqlite3 \
+		sqlite3>=3.28.0:databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf-2.13:devel/autoconf213 \
-		yasm:devel/yasm \
+		nasm:devel/nasm \
 		zip:archivers/zip
 
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
-USE_MOZILLA=	-webp -vpx
+USE_MOZILLA=	-hunspell -vpx
 
 USES=		tar:xz
 
@@ -44,6 +43,7 @@ SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}/defaults/pref/${PORTNAME}.js
 
 OPTIONS_DEFINE=	LIGHTNING
 OPTIONS_DEFAULT=CANBERRA LIGHTNING
+OPTIONS_EXCLUDE=WAYLAND
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
