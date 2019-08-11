@@ -1708,7 +1708,6 @@
     SUBDIR += sowing
     SUBDIR += spellutils
     SUBDIR += sphinxsearch
-    SUBDIR += sphinxsearch-devel
     SUBDIR += spiff
     SUBDIR += splitpatch
     SUBDIR += sq-hunspell
