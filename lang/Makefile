@@ -53,7 +53,6 @@
     SUBDIR += dlang-tools
     SUBDIR += dlv
     SUBDIR += dmd1
-    SUBDIR += dmd2
     SUBDIR += duktape
     SUBDIR += duktape-lib
     SUBDIR += ecl
