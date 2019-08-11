@@ -329,7 +329,6 @@ bin/bp_unflatten_seq
 %%SITE_PERL%%/Bio/Seq/SeqBuilder.pm
 %%SITE_PERL%%/Bio/Seq/SeqFactory.pm
 %%SITE_PERL%%/Bio/Seq/SeqFastaSpeedFactory.pm
-%%SITE_PERL%%/Bio/Seq/SeqWithQuality.pm
 %%SITE_PERL%%/Bio/Seq/SequenceTrace.pm
 %%SITE_PERL%%/Bio/Seq/SimulatedRead.pm
 %%SITE_PERL%%/Bio/Seq/TraceI.pm
@@ -412,13 +411,6 @@ bin/bp_unflatten_seq
 %%SITE_PERL%%/Bio/SimpleAlign.pm
 %%SITE_PERL%%/Bio/SimpleAnalysisI.pm
 %%SITE_PERL%%/Bio/Species.pm
-%%SITE_PERL%%/Bio/Symbol/Alphabet.pm
-%%SITE_PERL%%/Bio/Symbol/AlphabetI.pm
-%%SITE_PERL%%/Bio/Symbol/DNAAlphabet.pm
-%%SITE_PERL%%/Bio/Symbol/ProteinAlphabet.pm
-%%SITE_PERL%%/Bio/Symbol/README.Symbol
-%%SITE_PERL%%/Bio/Symbol/Symbol.pm
-%%SITE_PERL%%/Bio/Symbol/SymbolI.pm
 %%SITE_PERL%%/Bio/Taxon.pm
 %%SITE_PERL%%/Bio/Tools/Alignment/Consed.pm
 %%SITE_PERL%%/Bio/Tools/Alignment/Trim.pm
@@ -474,7 +466,6 @@ bin/bp_unflatten_seq
 %%SITE_PERL%%/Bio/Tools/Run/GenericParameters.pm
 %%SITE_PERL%%/Bio/Tools/Run/ParametersI.pm
 %%SITE_PERL%%/Bio/Tools/Run/Phylo/PhyloBase.pm
-%%SITE_PERL%%/Bio/Tools/Run/README
 %%SITE_PERL%%/Bio/Tools/Run/WrapperBase.pm
 %%SITE_PERL%%/Bio/Tools/Run/WrapperBase/CommandExts.pm
 %%SITE_PERL%%/Bio/Tools/Seg.pm
@@ -852,7 +843,6 @@ bin/bp_unflatten_seq
 %%PERL5_MAN3%%/Bio::Seq::SeqBuilder.3.gz
 %%PERL5_MAN3%%/Bio::Seq::SeqFactory.3.gz
 %%PERL5_MAN3%%/Bio::Seq::SeqFastaSpeedFactory.3.gz
-%%PERL5_MAN3%%/Bio::Seq::SeqWithQuality.3.gz
 %%PERL5_MAN3%%/Bio::Seq::SequenceTrace.3.gz
 %%PERL5_MAN3%%/Bio::Seq::SimulatedRead.3.gz
 %%PERL5_MAN3%%/Bio::Seq::TraceI.3.gz
@@ -935,12 +925,6 @@ bin/bp_unflatten_seq
 %%PERL5_MAN3%%/Bio::SimpleAlign.3.gz
 %%PERL5_MAN3%%/Bio::SimpleAnalysisI.3.gz
 %%PERL5_MAN3%%/Bio::Species.3.gz
-%%PERL5_MAN3%%/Bio::Symbol::Alphabet.3.gz
-%%PERL5_MAN3%%/Bio::Symbol::AlphabetI.3.gz
-%%PERL5_MAN3%%/Bio::Symbol::DNAAlphabet.3.gz
-%%PERL5_MAN3%%/Bio::Symbol::ProteinAlphabet.3.gz
-%%PERL5_MAN3%%/Bio::Symbol::Symbol.3.gz
-%%PERL5_MAN3%%/Bio::Symbol::SymbolI.3.gz
 %%PERL5_MAN3%%/Bio::Taxon.3.gz
 %%PERL5_MAN3%%/Bio::Tools::Alignment::Consed.3.gz
 %%PERL5_MAN3%%/Bio::Tools::Alignment::Trim.3.gz
