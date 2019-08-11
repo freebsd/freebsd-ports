@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
-USES=		meson pkgconfig
+USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	emersion
 GH_TAGNAME=	76e9f41
