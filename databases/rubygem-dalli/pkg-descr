@@ -1,0 +1,8 @@
+Dalli is a high performance pure Ruby client for accessing memcached servers. It
+works with memcached 1.4+ only as it uses the newer binary protocol. It should
+be considered a replacement for the memcache-client gem.
+
+The name is a variant of Salvador Dali for his famous painting The Persistence
+of Memory.
+
+WWW: https://github.com/petergoldstein/dalli
