@@ -3,6 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	5.0.7.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	50
@@ -39,11 +40,11 @@ RUN_DEPENDS=	rubygem-actioncable50>=${PORTVERSION}:www/rubygem-actioncable50 \
 		rubygem-sass-listen>=4.0.0:textproc/rubygem-sass-listen \
 		rubygem-sass-rails-rails50>=5.0.3:textproc/rubygem-sass-rails-rails50 \
 		rubygem-sass>=3.4.23:textproc/rubygem-sass \
-		rubygem-spring-rails50>=2.0.1:devel/rubygem-spring-rails50 \
+		rubygem-spring>=2.0.1:devel/rubygem-spring \
 		rubygem-sqlite3>=1.3.13:databases/rubygem-sqlite3 \
 		rubygem-tilt>=2.0.7:devel/rubygem-tilt \
+		rubygem-turbolinks>=5:www/rubygem-turbolinks \
 		rubygem-turbolinks-source>=5.0.0:www/rubygem-turbolinks-source \
-		rubygem-turbolinks-rails50>=5.0.1:www/rubygem-turbolinks-rails50 \
 		rubygem-uglifier>=3.2.0:www/rubygem-uglifier \
 		rubygem-web-console-rails50>=3.5.0:devel/rubygem-web-console-rails50
 
