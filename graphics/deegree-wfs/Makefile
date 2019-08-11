@@ -3,7 +3,7 @@
 
 PORTNAME=	wfs
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics java
 MASTER_SITES=	http://download.deegree.org/deegree${PORTVERSION}/
 PKGNAMEPREFIX=	deegree-
@@ -27,26 +27,14 @@ PLIST_SUB=	TOMCATDIR=${TOMCATDIR:S|^${PREFIX}/||} WWWOWN="${WWWOWN}" WWWGRP="${W
 SUB_FILES=	pkg-message
 SUB_LIST=	TCPORT=${TCPORT}
 
-OPTIONS_SINGLE=	AS
-OPTIONS_SINGLE_AS=	TOMCAT6 TOMCAT7
-OPTIONS_DEFAULT=	TOMCAT6
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTOMCAT6}
-TOMCATVER=	apache-tomcat-6.0
-TCPORT=		8180
-BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat6
-RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat6
-.endif
-
-.if ${PORT_OPTIONS:MTOMCAT7}
 TOMCATVER=	apache-tomcat-7.0
 TCPORT=		8080
 BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat7
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat7
-.endif
 
 post-extract:
 	@${MKDIR} ${WRKDIR}/${PKGBASE}
