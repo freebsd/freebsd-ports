@@ -13,7 +13,6 @@ COMMENT=	Scheme script interpreter with multibyte character handling
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=	Fails to link: missing sbrk
 BROKEN_mips=	Fails to build: redefinition of GC_register_dynamic_libraries
 BROKEN_mips64=	Fails to build: redefinition of GC_register_dynamic_libraries
 
