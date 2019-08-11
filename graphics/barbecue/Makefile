@@ -3,6 +3,7 @@
 
 PORTNAME=	barbecue
 DISTVERSION=	1.5-beta1
+PORTREVISION=	1
 CATEGORIES=	graphics print java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 DIST_SUBDIR=	java
@@ -29,25 +30,13 @@ PORTEXAMPLES=	*
 
 PLIST_SUB=	TOMCATDIR=${TOMCATDIR:S|^${PREFIX}/||}
 
-OPTIONS_SINGLE=	AS
-OPTIONS_SINGLE_AS=	TOMCAT6 TOMCAT7
-OPTIONS_DEFAULT=	TOMCAT6
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTOMCAT6}
-TOMCATVER=	apache-tomcat-6.0
-BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat6
-RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat6
-.endif
-
-.if ${PORT_OPTIONS:MTOMCAT7}
 TOMCATVER=	apache-tomcat-7.0
 BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat7
 RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:www/tomcat7
-.endif
 
 post-extract:
 	${MV} ${WRKSRC}/${JARFILES} ${WRKSRC}/${JARFILES:S|-${DISTVERSION}||}
@@ -58,7 +47,7 @@ do-install:
 	${INSTALL_DATA} ${JARFILES:S|-${DISTVERSION}||:S|^|${WRKSRC}/|} \
 		${STAGEDIR}${JAVAJARDIR}
 
-.if ${PORT_OPTIONS:MTOMCAT6} || ${PORT_OPTIONS:MTOMCAT7}
+.if ${PORT_OPTIONS:MTOMCAT7}
 	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${STAGEDIR}${WEBAPPDIR}/${PORTNAME}
 	@(cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${WEBAPPDIR}/${PORTNAME})
