@@ -15,10 +15,6 @@ COMMENT=	Library for editing command lines as they are typed
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	TERMCAP DOCS
-OPTIONS_DEFAULT=TERMCAP
-TERMCAP_DESC=	Link against libtermcap
-
 USES=		cpe
 
 GNU_CONFIGURE=	yes
@@ -31,11 +27,15 @@ CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
 CPE_UPDATE=	${PATCHLEVEL}
 
+OPTIONS_DEFINE=	TERMCAP DOCS
+OPTIONS_DEFAULT=TERMCAP
+TERMCAP_DESC=	Link against libtermcap
+
 #PATCHES=	1 2 3 4 5
 #PATCHLEVEL=	${PATCHES:O:[-1]}
 PATCHLEVEL=	0
 #.for patch in ${PATCHES}
-#PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:C|.*(...)$|\1|}
+#PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
 #.endfor
 
 post-patch:
