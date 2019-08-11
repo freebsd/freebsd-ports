@@ -19,9 +19,11 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS
 
-OPTIONS_DEFINE=	DOCS TEST
+OPTIONS_DEFINE=	MANPAGES TEST
+OPTIONS_DEFAULT=MANPAGES
 
-DOCS_BUILD_DEPENDS=	ronn:textproc/rubygem-ronn
+MANPAGES_BUILD_DEPENDS=	ronn:textproc/rubygem-ronn
+MANPAGES_PLIST_FILES=	man/man1/nuspell.1.gz
 
 TEST_BUILD_DEPENDS=	catch>0:devel/catch \
 			bash:shells/bash

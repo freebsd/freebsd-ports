@@ -13,4 +13,3 @@ lib/libnuspell.so
 lib/libnuspell.so.2
 lib/libnuspell.so.2.3.0
 libdata/pkgconfig/nuspell.pc
-%%PORTDOCS%%man/man1/nuspell.1.gz
