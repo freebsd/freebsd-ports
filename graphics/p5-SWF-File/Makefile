@@ -18,4 +18,6 @@ RUN_DEPENDS=	p5-Data-TemporaryBag>=0:devel/p5-Data-TemporaryBag
 USES=		perl5 dos2unix
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
