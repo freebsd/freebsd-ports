@@ -3,6 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	5.1.7
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	5
@@ -41,13 +42,13 @@ RUN_DEPENDS=	rubygem-actioncable5>=${PORTVERSION}:www/rubygem-actioncable5 \
 		rubygem-sass-rails-rails5>=5.0.3:textproc/rubygem-sass-rails-rails5 \
 		rubygem-sass>=3.4.23:textproc/rubygem-sass \
 		rubygem-selenium-webdriver>=3.4.0:www/rubygem-selenium-webdriver \
-		rubygem-spring-rails5>=2.0.1:devel/rubygem-spring-rails5 \
+		rubygem-spring>=2.0.1:devel/rubygem-spring \
 		rubygem-sqlite3>=1.3.13:databases/rubygem-sqlite3 \
 		rubygem-tilt>=2.0.7:devel/rubygem-tilt \
+		rubygem-turbolinks>=5:www/rubygem-turbolinks \
 		rubygem-turbolinks-source>=5.0.0:www/rubygem-turbolinks-source \
-		rubygem-turbolinks-rails5>=5.0.1:www/rubygem-turbolinks-rails5 \
 		rubygem-uglifier>=3.2.0:www/rubygem-uglifier \
-		rubygem-web-console>=3.5.0:devel/rubygem-web-console
+		rubygem-web-console-rails5>=3.5.0:devel/rubygem-web-console-rails5
 
 USES=		gem
 USE_RUBY=	yes
