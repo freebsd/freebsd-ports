@@ -16,6 +16,7 @@ man/man8/debootstrap.8.gz
 %%DATADIR%%/scripts/debian-common
 %%DATADIR%%/scripts/disco
 %%DATADIR%%/scripts/edgy
+%%DATADIR%%/scripts/eoan
 %%DATADIR%%/scripts/etch
 %%DATADIR%%/scripts/etch-m68k
 %%DATADIR%%/scripts/feisty
