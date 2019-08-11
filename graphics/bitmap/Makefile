@@ -2,8 +2,12 @@
 
 PORTNAME=	bitmap
 DISTVERSION=	g20181222
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-graphics-library
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	db80ca605a952e6a8ccd42eba3fcc5b40fba5640.patch:-p1 # https://github.com/ArashPartow/bitmap/pull/8: Implement write_image()/read_image() functions
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Minimalistic library manipulating 24-bit per pixel bitmap images
