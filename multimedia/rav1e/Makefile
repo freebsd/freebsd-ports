@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190802
+PORTVERSION=	s20190809
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,14 +16,14 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	df6451a
+GH_TAGNAME=	ec0c7787
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler32-1.0.3 \
-		aho-corasick-0.7.4 \
+		aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
 		aom-sys-0.1.2 \
-		arc-swap-0.3.11 \
+		arc-swap-0.4.1 \
 		arg_enum_proc_macro-0.1.1 \
 		arrayvec-0.4.11 \
 		atty-0.2.13 \
@@ -111,7 +111,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		rand-0.6.5 \
 		rand_chacha-0.1.1 \
 		rand_core-0.3.1 \
-		rand_core-0.4.0 \
+		rand_core-0.4.2 \
 		rand_hc-0.1.0 \
 		rand_isaac-0.1.1 \
 		rand_jitter-0.1.4 \
@@ -125,7 +125,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		redox_syscall-0.1.56 \
 		regex-1.1.9 \
 		regex-automata-0.1.8 \
-		regex-syntax-0.6.10 \
+		regex-syntax-0.6.11 \
 		rustc-demangle-0.1.15 \
 		rustc_version-0.2.3 \
 		ryu-1.0.0 \
@@ -140,10 +140,10 @@ CARGO_CRATES=	adler32-1.0.3 \
 		serde_json-1.0.40 \
 		shlex-0.1.1 \
 		signal-hook-0.1.10 \
-		signal-hook-registry-1.1.0 \
+		signal-hook-registry-1.1.1 \
 		smallvec-0.6.10 \
 		strsim-0.8.0 \
-		syn-0.15.42 \
+		syn-0.15.43 \
 		synstructure-0.10.2 \
 		termcolor-1.0.5 \
 		termios-0.3.1 \
@@ -153,10 +153,9 @@ CARGO_CRATES=	adler32-1.0.3 \
 		time-0.1.42 \
 		tinytemplate-1.0.2 \
 		toml-0.2.1 \
-		ucd-util-0.1.5 \
 		unicode-width-0.1.5 \
 		unicode-xid-0.1.0 \
-		utf8-ranges-1.0.3 \
+		utf8-ranges-1.0.4 \
 		vec_map-0.8.1 \
 		vergen-3.0.4 \
 		version_check-0.1.5 \
