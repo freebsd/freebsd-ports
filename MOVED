@@ -12864,3 +12864,4 @@ devel/rubygem-spring-rails5|devel/rubygem-spring|2019-08-11|Remove unnecessary p
 devel/rubygem-spring-rails50|devel/rubygem-spring|2019-08-11|Remove unnecessary port after devel/rubygem-spring update
 www/rubygem-turbolinks-rails5|www/rubygem-turbolinks|2019-08-11|Remove unnecessary port after www/rubygem-turbolinks RUN_DEPENDS fix
 www/rubygem-turbolinks-rails50|www/rubygem-turbolinks|2019-08-11|Remove unnecessary port after www/rubygem-turbolinks RUN_DEPENDS fix
+textproc/sphinxsearch-devel|textproc/sphinxsearch|2019-08-11|Has expired: Broken for more than 6 months
