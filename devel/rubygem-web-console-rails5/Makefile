@@ -4,6 +4,7 @@ PORTNAME=	web-console
 PORTVERSION=	3.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	-rails5
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Debugging tool for your Ruby on Rails applications
