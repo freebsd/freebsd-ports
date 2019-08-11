@@ -41,6 +41,7 @@ etc/logrotate.d/libvirtd.qemu
 etc/logrotate.d/libvirtd.libxl
 include/libvirt/libvirt-admin.h
 include/libvirt/libvirt-common.h
+include/libvirt/libvirt-domain-checkpoint.h
 include/libvirt/libvirt-domain-snapshot.h
 include/libvirt/libvirt-domain.h
 include/libvirt/libvirt-event.h
@@ -102,6 +103,7 @@ share/gtk-doc/html/libvirt/home.png
 share/gtk-doc/html/libvirt/index.html
 share/gtk-doc/html/libvirt/left.png
 share/gtk-doc/html/libvirt/libvirt-libvirt-common.html
+share/gtk-doc/html/libvirt/libvirt-libvirt-domain-checkpoint.html
 share/gtk-doc/html/libvirt/libvirt-libvirt-domain-snapshot.html
 share/gtk-doc/html/libvirt/libvirt-libvirt-domain.html
 share/gtk-doc/html/libvirt/libvirt-libvirt-event.html
@@ -185,6 +187,7 @@ share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/schemas/cputypes.rng
 %%DATADIR%%/schemas/domain.rng
 %%DATADIR%%/schemas/domaincaps.rng
+%%DATADIR%%/schemas/domaincheckpoint.rng
 %%DATADIR%%/schemas/domaincommon.rng
 %%DATADIR%%/schemas/domainsnapshot.rng
 %%DATADIR%%/schemas/interface.rng
