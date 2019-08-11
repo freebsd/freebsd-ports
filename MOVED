@@ -12860,3 +12860,7 @@ sysutils/bbcp||2019-08-03|Has expired: the port is broken for more than a year
 multimedia/gnome-mpv|multimedia/celluloid|2019-08-08|Renamed upstream
 devel/py-mimeparse|devel/py-python-mimeparse|2019-08-11|Rename to match upstream naming
 devel/rubygem-web-console|devel/rubygem-web-console-rails5|2019-08-11|Rename to match our rubygem- port naming
+devel/rubygem-spring-rails5|devel/rubygem-spring|2019-08-11|Remove unnecessary port after devel/rubygem-spring update
+devel/rubygem-spring-rails50|devel/rubygem-spring|2019-08-11|Remove unnecessary port after devel/rubygem-spring update
+www/rubygem-turbolinks-rails5|www/rubygem-turbolinks|2019-08-11|Remove unnecessary port after www/rubygem-turbolinks RUN_DEPENDS fix
+www/rubygem-turbolinks-rails50|www/rubygem-turbolinks|2019-08-11|Remove unnecessary port after www/rubygem-turbolinks RUN_DEPENDS fix
