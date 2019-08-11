@@ -12859,3 +12859,4 @@ emulators/pearpc||2019-08-01|Has expired: Abandonware
 sysutils/bbcp||2019-08-03|Has expired: the port is broken for more than a year
 multimedia/gnome-mpv|multimedia/celluloid|2019-08-08|Renamed upstream
 devel/py-mimeparse|devel/py-python-mimeparse|2019-08-11|Rename to match upstream naming
+devel/rubygem-web-console|devel/rubygem-web-console-rails5|2019-08-11|Rename to match our rubygem- port naming
