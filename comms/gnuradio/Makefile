@@ -2,10 +2,9 @@
 
 PORTNAME=	gnuradio
 #MASTER_SITES=	http://gnuradio.org/releases/gnuradio/
-DISTVERSION=	3.8tech-preview-381
-DISTVERSIONSUFFIX=	-g27dd99e49
-PORTREVISION=	2
+PORTVERSION=	3.8.0.0.r2
 CATEGORIES=	comms astro hamradio
+DISTNAME=	v3.8.0.0-rc2
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio Software defined radio
@@ -24,6 +23,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/ephem/__init__.py:astro/pyephem@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/mako/__init__.py:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/six.py:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/click/__init__.py:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/click_plugins/__init__.py:devel/py-click-plugins@${PY_FLAVOR} \
 		aconnect:audio/alsa-utils \
 		cheetah:devel/py-cheetah@${PY_FLAVOR} \
 		cppzmq>0:net/cppzmq \
@@ -55,23 +56,25 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 # volk/lib/volk_cpu.c:62: error: 'asm' operand has impossible constraints
 USES=		cmake compiler:c11 desktop-file-utils fortran gnome iconv \
 		perl5 pkgconfig pyqt:5 python:2.7 qt:5 shared-mime-info shebangfix
+USE_GITHUB=	yes
+GH_TUPLE=	gnuradio:gnuradio:${DISTNAME} \
+		gnuradio:volk:d250816:volk/volk
+
 SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-ctrlport-monitor \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-perf-monitorx
-USE_GITHUB=	yes
-GH_TUPLE=	gnuradio:volk:d250816:volk/volk
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_RPATH:STRING="${LOCALBASE}/lib/gcc${_GCC_VER}" \
 		-DENABLE_GR_CTRLPORT="YES" \
 		-DICONV_LIB:STRING="X${ICONV_LIB}" \
 		-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 		-DLOCALBASE:STRING="${LOCALBASE}" \
+		-DGR_PKG_DOC_DIR:STRING="${DOCSDIR}" \
 		-DPYTHON_EXECUTABLE:STRING="${PYTHON_CMD}" \
 		-DSWIG_EXECUTABLE:STRING="${LOCALBASE}/bin/swig3.0"\
 		-DXMLTO_EXECUTABLE:STRING=minixmlto
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=	--debug-output --trace
-DOCSDIR=	share/doc/${PORTNAME}-3.8git
 USE_GNOME=	pygtk2
 USE_PYQT=	core gui opengl
 USE_WX=		3.0
