@@ -83,7 +83,7 @@ Implement Linux-like memory stats for BSDs
 +        return 0;
 +    }
 +    return (u64)(vms.v_free_count + vms.v_inactive_count
-+		 + vms.v_cache_count) * getpagesize() / byte_size;
++                 + vms.v_cache_count) * getpagesize() / byte_size;
 +#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 +    u_int v_free_count = 0, v_inactive_count = 0, v_cache_count = 0;
 +    size_t sz = sizeof(u_int);
@@ -94,7 +94,7 @@ Implement Linux-like memory stats for BSDs
 +    sysctlbyname("vm.stats.vm.v_cache_count",
 +                 &v_cache_count, &sz, NULL, 0);
 +    return (u64)(v_free_count + v_inactive_count
-+		 + v_cache_count) * getpagesize() / byte_size;
++                 + v_cache_count) * getpagesize() / byte_size;
 +#elif defined(__NetBSD__) || defined(__OpenBSD__)
 +# if defined(__NetBSD__)
 +#undef VM_UVMEXP
@@ -116,7 +116,7 @@ Implement Linux-like memory stats for BSDs
 +        return 0;
 +    }
 +    return (u64)(uvmexp.free + uvmexp.inactive + uvmexp.filepages
-+		 + uvmexp.execpages) * uvmexp.pagesize / byte_size;
++                 + uvmexp.execpages) * uvmexp.pagesize / byte_size;
  #elif LINUX
      struct sysinfo info;
      sysinfo(&info);
