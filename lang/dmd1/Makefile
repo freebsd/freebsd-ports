@@ -18,6 +18,10 @@ LICENSE_NAME_DMD=	digital mars license
 LICENSE_FILE_DMD=	${WRKSRC}/../../license.txt
 LICENSE_PERMS_DMD=	no-pkg-mirror auto-accept
 
+DEPRECATED=     No longer supported upstream
+EXPIRATION_DATE=        2021-08-31
+
+
 NO_PACKAGE=	No redistribution of non validated binaries
 USES=		gmake zip
 PORTDOCS=	*.txt html/ phobos/
