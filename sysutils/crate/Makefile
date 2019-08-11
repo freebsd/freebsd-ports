@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	crate
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.3
 CATEGORIES=	sysutils emulators
 
 MAINTAINER=	yuri@FreeBSD.org
