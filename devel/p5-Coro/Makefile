@@ -6,7 +6,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C|0$||}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S|0$||}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Coroutine process abstraction for perl
@@ -24,13 +24,10 @@ RUN_DEPENDS=	p5-AnyEvent>=7:devel/p5-AnyEvent \
 		p5-IO-AIO>=3.1:devel/p5-IO-AIO \
 		p5-common-sense>=0:devel/p5-common-sense
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 SHEBANG_FILES=	Coro/*.pl eg/*
 perl_OLD_CMD=	/.*/bin/perl
