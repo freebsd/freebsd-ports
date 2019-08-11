@@ -8,7 +8,6 @@ Supported runtimes
 * Mozilla SpiderMonkey
 * Microsoft Windows Script Host (JScript)
 * SlimerJS
-* PhantomJS
 * Nashorn - Included with Oracle Java 8
 
 WWW: https://pypi.org/project/PyExecJS/
