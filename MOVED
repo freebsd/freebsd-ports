@@ -12858,3 +12858,4 @@ lang/cint|lang/cling|2019-07-31|Has expired: Abandonware; superseded by lang/cli
 emulators/pearpc||2019-08-01|Has expired: Abandonware
 sysutils/bbcp||2019-08-03|Has expired: the port is broken for more than a year
 multimedia/gnome-mpv|multimedia/celluloid|2019-08-08|Renamed upstream
+devel/py-mimeparse|devel/py-python-mimeparse|2019-08-11|Rename to match upstream naming
