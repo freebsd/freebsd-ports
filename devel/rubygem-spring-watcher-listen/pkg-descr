@@ -1,0 +1,9 @@
+Listen watcher for Spring
+
+This gem makes Spring watch the filesystem for changes using Listen rather than
+by polling the filesystem.
+
+On larger projects this means spring will be more responsive, more accurate and
+use less cpu on local filesystems.
+
+WWW: https://github.com/jonleighton/spring-watcher-listen
