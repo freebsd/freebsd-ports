@@ -11,6 +11,9 @@ COMMENT=	Automate interaction with javascript websites
 
 LICENSE=	ARTPERL10
 
+DEPRECATED=	uses expired lang/phantomjs
+EXPIRATION_DATE=2019-12-01
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	phantomjs:lang/phantomjs \
 		p5-WWW-Mechanize>=1.73:www/p5-WWW-Mechanize \
