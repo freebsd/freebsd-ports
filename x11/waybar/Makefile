@@ -2,6 +2,7 @@
 
 PORTNAME=	waybar
 DISTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -12,11 +13,11 @@ PATCHFILES+=	f0dfa34e651c.patch:-p1
 PATCHFILES+=	25d4420904bd.patch:-p1
 PATCHFILES+=	bf0d2621504e.patch:-p1
 PATCHFILES+=	82844ce8a6f3.patch:-p1
-PATCHFILES+=	f3ed50fa3364.patch:-p1
-PATCHFILES+=	964d7030f7af.patch:-p1
-PATCHFILES+=	c73a8162a265.patch:-p1
-PATCHFILES+=	997f7787fdbe.patch:-p1
-PATCHFILES+=	726ba2cf79f1.patch:-p1
+PATCHFILES+=	7bc3577137af.patch:-p1
+PATCHFILES+=	96ef80d06c00.patch:-p1
+PATCHFILES+=	cf114a111fe0.patch:-p1
+PATCHFILES+=	684d9121a721.patch:-p1
+PATCHFILES+=	f1b288adf8b5.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Highly customizable Wayland bar for Sway and wlroots-based compositors
@@ -56,6 +57,6 @@ PULSEAUDIO_MESON_ENABLED=	pulseaudio
 UDEV_DESC=		Monitor backlight level via libudev
 UDEV_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 			libudev.so:devel/libudev-devd
-UDEV_MESON_ENABLED=	libepoll libudev
+UDEV_MESON_ENABLED=	libudev
 
 .include <bsd.port.mk>
