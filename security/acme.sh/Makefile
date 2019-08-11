@@ -2,6 +2,7 @@
 
 PORTNAME=	acme.sh
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -48,10 +49,12 @@ do-install:
 	${MKDIR} ${STAGEDIR}/var/db/acme/.acme.sh ${STAGEDIR}/var/db/acme/certs
 	( cd ${WRKSRC} && ${COPYTREE_BIN} deploy ${STAGEDIR}${EXAMPLESDIR} )
 	( cd ${WRKSRC} && ${COPYTREE_BIN} dnsapi ${STAGEDIR}${EXAMPLESDIR} )
+	( cd ${WRKSRC} && ${COPYTREE_BIN} notify ${STAGEDIR}${EXAMPLESDIR} )
 	${INSTALL_DATA} ${FILESDIR}/acme.sh.conf ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/account.conf.sample ${STAGEDIR}/var/db/acme/.acme.sh
 	${RLN} ${STAGEDIR}/${EXAMPLESDIR}/deploy ${STAGEDIR}/var/db/acme/.acme.sh
 	${RLN} ${STAGEDIR}/${EXAMPLESDIR}/dnsapi ${STAGEDIR}/var/db/acme/.acme.sh
+	${RLN} ${STAGEDIR}/${EXAMPLESDIR}/notify ${STAGEDIR}/var/db/acme/.acme.sh
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
