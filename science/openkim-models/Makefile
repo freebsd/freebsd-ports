@@ -14,6 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	xxd:editors/vim-console
 LIB_DEPENDS=	libkim-api.so:science/kim-api
 
-USES=		cmake:noninja fortran tar:txz
+USES=		cmake:noninja compiler:c++11-lang fortran tar:txz
 
 .include <bsd.port.mk>
