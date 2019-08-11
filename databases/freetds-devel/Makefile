@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	1.1.50
+PORTVERSION=	1.1.51
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/current/
+MASTER_SITES=  https://www.freetds.org/files/current/ \
+               ftp://ftp.freetds.org/pub/freetds/current/
+
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-dev.${PORTVERSION}
 
