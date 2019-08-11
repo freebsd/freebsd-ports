@@ -5933,6 +5933,7 @@
     SUBDIR += rubygem-spring
     SUBDIR += rubygem-spring-rails5
     SUBDIR += rubygem-spring-rails50
+    SUBDIR += rubygem-spring-watcher-listen
     SUBDIR += rubygem-sprockets
     SUBDIR += rubygem-sprockets-es6
     SUBDIR += rubygem-sprockets-helpers
