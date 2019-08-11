@@ -11,6 +11,8 @@ bin/testH264VideoStreamer
 bin/testH264VideoToTransportStream
 bin/testH265VideoStreamer
 bin/testH265VideoToTransportStream
+bin/testMKVSplitter
+bin/testMKVStreamer
 bin/testMP3Receiver
 bin/testMP3Streamer
 bin/testMPEG1or2AudioVideoStreamer
@@ -19,10 +21,10 @@ bin/testMPEG1or2Splitter
 bin/testMPEG1or2VideoReceiver
 bin/testMPEG1or2VideoStreamer
 bin/testMPEG2TransportReceiver
+bin/testMPEG2TransportStreamSplitter
 bin/testMPEG2TransportStreamTrickPlay
 bin/testMPEG2TransportStreamer
 bin/testMPEG4VideoStreamer
-bin/testMKVStreamer
 bin/testOggStreamer
 bin/testOnDemandRTSPServer
 bin/testRTSPClient
@@ -136,6 +138,7 @@ include/liveMedia/MPEG1or2VideoStreamFramer.hh
 include/liveMedia/MPEG2IndexFromTransportStream.hh
 include/liveMedia/MPEG2TransportFileServerMediaSubsession.hh
 include/liveMedia/MPEG2TransportStreamAccumulator.hh
+include/liveMedia/MPEG2TransportStreamDemux.hh
 include/liveMedia/MPEG2TransportStreamFramer.hh
 include/liveMedia/MPEG2TransportStreamFromESSource.hh
 include/liveMedia/MPEG2TransportStreamFromPESSource.hh
