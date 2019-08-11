@@ -14,4 +14,6 @@ COMMENT=	Convert cubic and quadratic Bezier each other
 USES=		perl5 dos2unix
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
