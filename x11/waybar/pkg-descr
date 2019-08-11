@@ -1,0 +1,18 @@
+Waybar is highly customizable Wayland bar for Sway and wlroots-based
+compositors providing the following features:
+
+- Sway (Workspaces, Binding mode, Focused window name)
+- Tray [#21](https://github.com/Alexays/Waybar/issues/21)
+- Local time
+- Battery (Linux-only)
+- Network (Linux-only)
+- Pulseaudio
+- Memory
+- Cpu load average
+- Temperature (Linux-only)
+- MPD
+- Custom scripts
+- Multiple output configuration
+- And much more customizations
+
+WWW: https://github.com/Alexays/Waybar

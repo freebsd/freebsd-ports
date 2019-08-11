@@ -331,6 +331,7 @@
     SUBDIR += vdesk
     SUBDIR += viewres
     SUBDIR += virtualgl
+    SUBDIR += waybar
     SUBDIR += wbar
     SUBDIR += wbarconf
     SUBDIR += wdm
