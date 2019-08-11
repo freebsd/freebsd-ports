@@ -3,10 +3,10 @@
 
 PORTNAME=	protobuf
 PORTVERSION=	3.9.1
+DISTVERSIONPREFIX=	all-
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/protocolbuffers/protobuf/releases/download/v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-all-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data interchange format library
