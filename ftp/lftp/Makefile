@@ -71,8 +71,4 @@ NEED_PTHREAD=	# empty
 LDFLAGS+=	-pthread
 .endif
 
-.if ${ARCH} == powerpc64
-USE_GCC=	yes
-.endif
-
 .include <bsd.port.post.mk>
