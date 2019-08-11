@@ -100,8 +100,7 @@ post-patch-JDK12-on:
 	@${ECHO_CMD} "org.gradle.java.home=${LOCALBASE}/openjdk12" > ${WRKSRC}/gradle.properties
 
 do-build:
-	cd ${WRKSRC} && ${GRADLE_RUN} yajswDevUnpack
-	cd ${WRKSRC} && ${GRADLE_RUN} buildGhidra
+	cd ${WRKSRC} && ${GRADLE_RUN} yajswDevUnpack buildGhidra
 
 post-build:
 	@${RM} ${GRADLE_HOME_BASE}/gradle-${PORTNAME}
