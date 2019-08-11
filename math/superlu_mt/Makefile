@@ -1,13 +1,14 @@
-# Created by: Pedro Giffuni
+# Created by: Pedro Giffuni <giffunip@asme.org>
 # $FreeBSD$
 
 PORTNAME=	superlu_mt
 PORTVERSION=	3.1.20160319
 PORTREVISION=	6
 CATEGORIES=	math
-MASTER_SITES=	https://portal.nersc.gov/project/sparse/superlu/ \
-		https://portal.nersc.gov/project/sparse/xiaoye-web/:doc
+MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
+		http://crd.lbl.gov/~xiaoye/:doc
 DISTNAME=	${PORTNAME}_3.1
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} simax97.ps.gz:doc
 DIST_SUBDIR=	superlu2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -17,6 +18,7 @@ COMMENT=	Routines for performing multithreaded sparse factorization
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
+BROKEN=		unfetchable
 BROKEN_aarch64=		fails to build: undefined reference to sbrk
 BROKEN_powerpc64=	fails to build: pstest runs away and consumes all memory
 BROKEN_sparc64=		fails to link
@@ -24,7 +26,6 @@ BROKEN_sparc64=		fails to link
 USES=		fortran gmake
 
 OPTIONS_DEFINE=	DOCS
-DOCS_DISTFILES= simax97.ps.gz:doc
 
 .include <bsd.port.pre.mk>
 
