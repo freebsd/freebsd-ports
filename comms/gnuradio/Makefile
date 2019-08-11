@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	gnuradio
-#MASTER_SITES=	http://gnuradio.org/releases/gnuradio/
-PORTVERSION=	3.8.0.0.r2
+PORTVERSION=	3.8.0.0
 CATEGORIES=	comms astro hamradio
-DISTNAME=	v3.8.0.0-rc2
+MASTER_SITES=	http://gnuradio.org/releases/gnuradio/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio Software defined radio
@@ -56,9 +55,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 # volk/lib/volk_cpu.c:62: error: 'asm' operand has impossible constraints
 USES=		cmake compiler:c11 desktop-file-utils fortran gnome iconv \
 		perl5 pkgconfig pyqt:5 python:2.7 qt:5 shared-mime-info shebangfix
-USE_GITHUB=	yes
-GH_TUPLE=	gnuradio:gnuradio:${DISTNAME} \
-		gnuradio:volk:d250816:volk/volk
 
 SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-ctrlport-monitor \
