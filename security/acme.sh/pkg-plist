@@ -84,9 +84,19 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/dnsapi/dns_yandex.sh
 %%EXAMPLESDIR%%/dnsapi/dns_zilore.sh
 %%EXAMPLESDIR%%/dnsapi/dns_zonomi.sh
+%%EXAMPLESDIR%%/notify/smtp.sh
+%%EXAMPLESDIR%%/notify/pop.sh
+%%EXAMPLESDIR%%/notify/mail.sh
+%%EXAMPLESDIR%%/notify/postmark.sh
+%%EXAMPLESDIR%%/notify/slack.sh
+%%EXAMPLESDIR%%/notify/pushover.sh
+%%EXAMPLESDIR%%/notify/sendgrid.sh
+%%EXAMPLESDIR%%/notify/ifttt.sh
+%%EXAMPLESDIR%%/notify/mailgun.sh
 @sample(acme,acme,0640) /var/db/acme/.acme.sh/account.conf.sample
 /var/db/acme/.acme.sh/deploy
 /var/db/acme/.acme.sh/dnsapi
+/var/db/acme/.acme.sh/notify
 @dir(acme,acme,0750) /var/db/acme/.acme.sh
 @dir(acme,acme,0750) /var/db/acme/certs
 @dir(acme,acme,0750) /var/db/acme
