@@ -3,10 +3,9 @@
 #    $MCom: ports/biology/gperiodic/Makefile,v 1.1 2006/09/29 23:42:13 ahze Exp $
 
 PORTNAME=	gperiodic
-PORTVERSION=	2.0.10
-PORTREVISION=	8
+PORTVERSION=	3.0.3
 CATEGORIES=	biology
-MASTER_SITES=	http://www.frantz.fi/software/
+MASTER_SITES=	https://sourceforge.net/projects/gperiodic/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a periodic table of the elements
@@ -14,14 +13,12 @@ COMMENT=	Displays a periodic table of the elements
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
-BROKEN=		unfetchable
-
-USE_GNOME=	gtk20
 USES=		pkgconfig
-
-LANGS=		da fr gl it pl ru sv tr
+USE_GNOME=	gtk20
 
 PORTDOCS=	AUTHORS ChangeLog README
+
+LANGS=		be cs da de es fi fr gl is it ms pl pt ru sv tr uk zh_CN
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
@@ -39,9 +36,7 @@ do-build-NLS-on:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gperiodic ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/gperiodic.desktop \
-		${STAGEDIR}${PREFIX}/share/applications
-	(cd ${WRKSRC} && ${INSTALL_DATA} gperiodic.png gperiodic-crystal.png \
+	(cd ${WRKSRC}/icons && ${INSTALL_DATA} gperiodic-crystal.png gperiodic.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps)
 
 do-install-NLS-on:
@@ -50,6 +45,13 @@ do-install-NLS-on:
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/gperiodic
+	${INSTALL_DATA} ${WRKSRC}/table_data.h \
+		${STAGEDIR}${PREFIX}/share/locale/gperiodic
+	${INSTALL_DATA} ${WRKSRC}/po/gperiodic.pot \
+		${STAGEDIR}${PREFIX}/share/locale/gperiodic
+	${INSTALL_DATA} ${WRKSRC}/po/README \
+		${STAGEDIR}/${PREFIX}/share/locale/gperiodic	
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
