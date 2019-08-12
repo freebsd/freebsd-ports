@@ -58,7 +58,7 @@ bool SndioAudioOutputStream::Open() {
   sio_initpar(&par);
   par.rate = params.sample_rate();
   par.pchan = params.channels();
-  par.bits = SampleFormatToBitsPerChannel(kSampleFormat);
+  par.bits = SampleFormatToBitsPerChannel(kSampleFormat); 
   par.bps = par.bits / 8;
   par.sig = sig = par.bits != 8 ? 1 : 0;
   par.le = SIO_LE_NATIVE;
@@ -139,6 +139,10 @@ void SndioAudioOutputStream::GetVolume(double* v) {
   pthread_mutex_unlock(&mutex);
 }
 
+// This stream is always used with sub second buffer sizes, where it's
+// sufficient to simply always flush upon Start().
+void SndioAudioOutputStream::Flush() {}
+
 void SndioAudioOutputStream::ThreadLoop(void) {
   int avail, count, result;
 
@@ -153,7 +157,7 @@ void SndioAudioOutputStream::ThreadLoop(void) {
 
     // Get data to play
     const base::TimeDelta delay = AudioTimestampHelper::FramesToTime(hw_delay,
-        params.sample_rate());
+	params.sample_rate());
     count = source->OnMoreData(delay, base::TimeTicks::Now(), 0, audio_bus.get());
     audio_bus->ToInterleaved(count, SampleFormatToBytesPerChannel(kSampleFormat), buffer);
     if (count == 0) {
