@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml2
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -17,8 +17,5 @@ RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=	cran:auto-plist,compiles gnome
 USE_GNOME=	libxml2
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|bin/bash|bin/sh|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
