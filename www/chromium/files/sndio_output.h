@@ -31,6 +31,7 @@ class SndioAudioOutputStream : public AudioOutputStream {
   void Stop() override;
   void SetVolume(double volume) override;
   void GetVolume(double* volume) override;
+  void Flush() override;
 
   friend void sndio_onmove(void *arg, int delta);
   friend void sndio_onvol(void *arg, unsigned int vol);
