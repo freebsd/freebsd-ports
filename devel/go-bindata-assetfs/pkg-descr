@@ -1,0 +1,4 @@
+go-bindata-assetfs serves embedded files from go-bindata with Go's net/http
+support, allowing packages to serve static content.
+
+WWW: https://github.com/elazarl/go-bindata-assetfs
