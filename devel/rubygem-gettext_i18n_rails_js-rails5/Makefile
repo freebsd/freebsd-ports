@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-gettext>=3.0.2:devel/rubygem-gettext \
 		rubygem-gettext_i18n_rails>=0.7.1:devel/rubygem-gettext_i18n_rails \
 		rubygem-po_to_json>=1.0.0:converters/rubygem-po_to_json \
-		rubygem-rails5>=5.0.7:www/rubygem-rails5
+		rubygem-rails5>=3.2.0:www/rubygem-rails5
 
 USES=		gem
 USE_RUBY=	yes
