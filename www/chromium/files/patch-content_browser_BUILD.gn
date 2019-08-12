@@ -1,14 +1,11 @@
---- content/browser/BUILD.gn.orig	2019-06-04 18:55:22 UTC
+--- content/browser/BUILD.gn.orig	2019-07-24 18:58:23 UTC
 +++ content/browser/BUILD.gn
-@@ -1982,11 +1982,6 @@ jumbo_source_set("browser") {
-       "tracing/cros_tracing_agent.h",
+@@ -2058,7 +2058,7 @@ jumbo_source_set("browser") {
+       "//chromeos/resources",
+       "//components/chromeos_camera:mojo_mjpeg_decode_accelerator",
      ]
-     deps += [ "//chromeos/resources" ]
 -  } else {
--    sources += [
--      "memory/memory_monitor_linux.cc",
--      "memory/memory_monitor_linux.h",
--    ]
-   }
- 
-   if (is_chromeos || is_android || is_chromecast) {
++  } else if (!is_bsd) {
+     sources += [
+       "memory/memory_monitor_linux.cc",
+       "memory/memory_monitor_linux.h",

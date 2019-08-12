@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2019-06-04 18:55:18 UTC
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2019-07-24 18:58:13 UTC
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
 @@ -47,7 +47,7 @@
  #include "ui/views/window/vector_icons/vector_icons.h"
@@ -17,7 +17,7 @@
 +#if defined(OS_LINUX) || defined(OS_BSD)
    views::MenuRunner menu_runner(frame()->GetSystemMenuModel(),
                                  views::MenuRunner::HAS_MNEMONICS);
-   menu_runner.RunMenuAt(browser_view()->GetWidget(), window_icon_,
+   menu_runner.RunMenuAt(
 @@ -479,7 +479,7 @@ bool OpaqueBrowserFrameView::EverHasVisibleBackgroundT
  
  OpaqueBrowserFrameView::FrameButtonStyle

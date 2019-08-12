@@ -1,6 +1,6 @@
---- gpu/vulkan/vulkan_function_pointers.cc.orig	2019-06-04 18:55:24 UTC
+--- gpu/vulkan/vulkan_function_pointers.cc.orig	2019-07-24 18:58:27 UTC
 +++ gpu/vulkan/vulkan_function_pointers.cc
-@@ -305,7 +305,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -352,7 +352,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
  
  #endif
  
@@ -9,7 +9,7 @@
  
    vkGetSemaphoreFdKHRFn = reinterpret_cast<PFN_vkGetSemaphoreFdKHR>(
        vkGetDeviceProcAddrFn(vk_device, "vkGetSemaphoreFdKHR"));
-@@ -319,7 +319,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -366,7 +366,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
  
  #endif
  

@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/webrtc_logging_handler_host.cc.orig	2019-04-30 22:22:34 UTC
+--- chrome/browser/media/webrtc/webrtc_logging_handler_host.cc.orig	2019-07-24 18:58:09 UTC
 +++ chrome/browser/media/webrtc/webrtc_logging_handler_host.cc
 @@ -26,10 +26,10 @@
  #include "content/public/browser/content_browser_client.h"
@@ -22,9 +22,9 @@
  void WebRtcLoggingHandlerHost::GetLogsDirectory(
      const LogsDirectoryCallback& callback,
      const LogsDirectoryErrorCallback& error_callback) {
-@@ -327,7 +327,7 @@ void WebRtcLoggingHandlerHost::GrantLogsDirectoryAcces
+@@ -328,7 +328,7 @@ void WebRtcLoggingHandlerHost::GrantLogsDirectoryAcces
        FROM_HERE, {BrowserThread::UI},
-       base::BindOnce(callback, filesystem_id, registered_name));
+       base::BindOnce(callback, file_system.id(), registered_name));
  }
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD

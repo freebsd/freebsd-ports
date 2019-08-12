@@ -1,6 +1,6 @@
---- ui/gfx/mojo/buffer_types_struct_traits.h.orig	2019-06-04 18:55:50 UTC
+--- ui/gfx/mojo/buffer_types_struct_traits.h.orig	2019-07-24 18:59:22 UTC
 +++ ui/gfx/mojo/buffer_types_struct_traits.h
-@@ -186,7 +186,7 @@ struct StructTraits<gfx::mojom::GpuMemoryBufferIdDataV
+@@ -188,7 +188,7 @@ struct StructTraits<gfx::mojom::GpuMemoryBufferIdDataV
    }
  };
  
@@ -9,7 +9,7 @@
  template <>
  struct StructTraits<gfx::mojom::NativePixmapPlaneDataView,
                      gfx::NativePixmapPlane> {
-@@ -218,7 +218,7 @@ struct StructTraits<gfx::mojom::NativePixmapHandleData
+@@ -232,7 +232,7 @@ struct StructTraits<gfx::mojom::NativePixmapHandleData
    static bool Read(gfx::mojom::NativePixmapHandleDataView data,
                     gfx::NativePixmapHandle* out);
  };

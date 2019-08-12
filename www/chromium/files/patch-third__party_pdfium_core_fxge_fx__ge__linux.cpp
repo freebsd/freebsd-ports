@@ -1,6 +1,6 @@
---- third_party/pdfium/core/fxge/fx_ge_linux.cpp.orig	2019-04-30 22:25:55 UTC
+--- third_party/pdfium/core/fxge/fx_ge_linux.cpp.orig	2019-07-24 19:03:29 UTC
 +++ third_party/pdfium/core/fxge/fx_ge_linux.cpp
-@@ -147,9 +147,8 @@ std::unique_ptr<SystemFontInfoIface> SystemFontInfoIfa
+@@ -151,9 +151,8 @@ std::unique_ptr<SystemFontInfoIface> SystemFontInfoIfa
      const char** pUserPaths) {
    auto pInfo = pdfium::MakeUnique<CFX_LinuxFontInfo>();
    if (!pInfo->ParseFontCfg(pUserPaths)) {

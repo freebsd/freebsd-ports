@@ -1,6 +1,6 @@
---- content/public/common/content_switches.cc.orig	2019-06-04 18:55:23 UTC
+--- content/public/common/content_switches.cc.orig	2019-07-24 18:58:24 UTC
 +++ content/public/common/content_switches.cc
-@@ -959,7 +959,7 @@ const char kEnableAutomation[] = "enable-automation";
+@@ -949,7 +949,7 @@ const char kEnableAutomation[] = "enable-automation";
  const char kDisablePanelFitting[]           = "disable-panel-fitting";
  #endif
  

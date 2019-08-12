@@ -1,6 +1,6 @@
---- third_party/perfetto/src/base/unix_socket.cc.orig	2019-04-30 22:25:55 UTC
+--- third_party/perfetto/src/base/unix_socket.cc.orig	2019-07-24 19:03:29 UTC
 +++ third_party/perfetto/src/base/unix_socket.cc
-@@ -524,7 +524,8 @@ void UnixSocket::DoConnect(const std::string& socket_n
+@@ -523,7 +523,8 @@ void UnixSocket::DoConnect(const std::string& socket_n
  
  void UnixSocket::ReadPeerCredentials() {
  #if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \

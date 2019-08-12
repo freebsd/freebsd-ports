@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/fonts/font_metrics.cc.orig	2019-03-11 22:01:04 UTC
+--- third_party/blink/renderer/platform/fonts/font_metrics.cc.orig	2019-07-24 18:58:42 UTC
 +++ third_party/blink/renderer/platform/fonts/font_metrics.cc
-@@ -39,7 +39,7 @@
+@@ -38,7 +38,7 @@
  
  namespace blink {
  
@@ -9,7 +9,7 @@
  // This is the largest VDMX table which we'll try to load and parse.
  static const size_t kMaxVDMXTableSize = 1024 * 1024;  // 1 MB
  #endif
-@@ -61,7 +61,7 @@ void FontMetrics::AscentDescentWithHacks(
+@@ -60,7 +60,7 @@ void FontMetrics::AscentDescentWithHacks(
    int vdmx_ascent = 0, vdmx_descent = 0;
    bool is_vdmx_valid = false;
  
@@ -18,7 +18,7 @@
    // Manually digging up VDMX metrics is only applicable when bytecode hinting
    // using FreeType.  With DirectWrite or CoreText, no bytecode hinting is ever
    // done.  This code should be pushed into FreeType (hinted font metrics).
-@@ -107,7 +107,7 @@ void FontMetrics::AscentDescentWithHacks(
+@@ -106,7 +106,7 @@ void FontMetrics::AscentDescentWithHacks(
        visual_overflow_inflation_for_ascent = 1;
      if (descent < metrics.fDescent) {
        visual_overflow_inflation_for_descent = 1;

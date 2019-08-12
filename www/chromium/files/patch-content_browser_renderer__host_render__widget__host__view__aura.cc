@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2019-06-04 18:55:23 UTC
+--- content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2019-07-24 18:58:24 UTC
 +++ content/browser/renderer_host/render_widget_host_view_aura.cc
-@@ -124,7 +124,7 @@
+@@ -117,7 +117,7 @@
  #include "content/browser/accessibility/browser_accessibility_auralinux.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
  #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
  #endif
-@@ -2287,7 +2287,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
+@@ -2200,7 +2200,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
@@ -18,7 +18,7 @@
    return NeedsInputGrab();
  #endif
    return false;
-@@ -2485,7 +2485,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
+@@ -2397,7 +2397,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
    if (!target_host)
      return;
  

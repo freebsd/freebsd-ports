@@ -1,6 +1,6 @@
---- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2019-06-04 18:55:24 UTC
+--- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2019-07-24 18:58:27 UTC
 +++ gpu/ipc/service/gpu_watchdog_thread.cc
-@@ -54,8 +54,10 @@ const int kGpuTimeout = 10000;
+@@ -55,8 +55,10 @@ const int kGpuTimeout = 10000;
  #endif
  
  #if defined(USE_X11)
@@ -11,7 +11,7 @@
  const unsigned char text[20] = "check";
  #endif
  
-@@ -78,8 +80,10 @@ GpuWatchdogThread::GpuWatchdogThread()
+@@ -79,8 +81,10 @@ GpuWatchdogThread::GpuWatchdogThread()
        display_(nullptr),
        window_(0),
        atom_(x11::None),
@@ -22,7 +22,7 @@
        weak_factory_(this) {
    base::subtle::NoBarrier_Store(&awaiting_acknowledge_, false);
  
-@@ -94,7 +98,9 @@ GpuWatchdogThread::GpuWatchdogThread()
+@@ -95,7 +99,9 @@ GpuWatchdogThread::GpuWatchdogThread()
  #endif
  
  #if defined(USE_X11)
@@ -32,7 +32,7 @@
    SetupXServer();
  #endif
    base::MessageLoopCurrent::Get()->AddTaskObserver(&task_observer_);
-@@ -242,8 +248,10 @@ GpuWatchdogThread::~GpuWatchdogThread() {
+@@ -231,8 +237,10 @@ GpuWatchdogThread::~GpuWatchdogThread() {
      power_monitor->RemoveObserver(this);
  
  #if defined(USE_X11)
@@ -43,7 +43,7 @@
    if (display_) {
      DCHECK(window_);
      XDestroyWindow(display_, window_);
-@@ -467,7 +475,7 @@ void GpuWatchdogThread::DeliberatelyTerminateToRecover
+@@ -436,7 +444,7 @@ void GpuWatchdogThread::DeliberatelyTerminateToRecover
      return;
  #endif
  
@@ -52,7 +52,7 @@
    // Don't crash if we're not on the TTY of our host X11 server.
    int active_tty = GetActiveTTY();
    if (host_tty_ != -1 && active_tty != -1 && host_tty_ != active_tty) {
-@@ -554,7 +562,9 @@ void GpuWatchdogThread::SetupXServer() {
+@@ -510,7 +518,9 @@ void GpuWatchdogThread::SetupXServer() {
                        CopyFromParent, InputOutput, CopyFromParent, 0, nullptr);
      atom_ = XInternAtom(display_, "CHECK", x11::False);
    }
@@ -62,7 +62,7 @@
  }
  
  void GpuWatchdogThread::SetupXChangeProp() {
-@@ -657,7 +667,7 @@ base::ThreadTicks GpuWatchdogThread::GetWatchedThreadT
+@@ -611,7 +621,7 @@ base::ThreadTicks GpuWatchdogThread::GetWatchedThreadT
  }
  #endif
  

@@ -1,4 +1,4 @@
---- chrome/common/features.gni.orig	2019-03-11 22:00:54 UTC
+--- chrome/common/features.gni.orig	2019-07-24 18:58:14 UTC
 +++ chrome/common/features.gni
 @@ -41,9 +41,9 @@ declare_args() {
                                  (is_desktop_linux && use_dbus) || is_chromeos
@@ -7,8 +7,8 @@
 -      is_win || is_mac || (is_linux && !is_chromeos && !is_chromecast)
 +      is_win || is_mac || is_bsd || (is_linux && !is_chromeos && !is_chromecast)
  
--  enable_service_discovery = (enable_mdns && !is_android && !is_ios) || is_mac
-+  enable_service_discovery = (enable_mdns && !is_android && !is_ios) || is_mac || is_bsd
+-  enable_service_discovery = (enable_mdns && !is_android) || is_mac
++  enable_service_discovery = (enable_mdns && !is_android) || is_mac || is_bsd
  
    # Enables use of the session service, which is enabled by default.
    # Android stores them separately on the Java side.
