@@ -2,6 +2,7 @@
 
 PORTNAME=	scdoc
 DISTVERSION=	1.9.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -21,6 +22,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		man/man5/${PORTNAME}.5.gz
 
 post-patch:
+	@${REINPLACE_CMD} '/-static/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -i '' -e 's,--date=,-jf "%F %T" ,' \
 		${WRKSRC}/test/preamble
 
