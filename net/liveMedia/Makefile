@@ -25,7 +25,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	genMakefiles
 CONFIGURE_ARGS=		fixed-freebsd
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
