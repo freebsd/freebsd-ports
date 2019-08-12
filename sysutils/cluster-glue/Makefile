@@ -35,23 +35,20 @@ WRKSRC=		${WRKDIR}/Reusable-Cluster-Components-glue--${DISTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-fatal-warnings \
 		--with-initdir=${PREFIX}/etc/rc.d \
-		--with-ocf-root=${PREFIX}/etc/ocf
+		--with-ocf-root=${PREFIX}/etc/ocf \
+		ac_cv_header_openhpi_SaHpi_h=no
 INSTALL_TARGET=	install-strip
 
 USERS=		hacluster
 GROUPS=		haclient
 
-OPTIONS_DEFINE=		DOCS DRAC3 HPI IPMI MANPAGES SNMP
+OPTIONS_DEFINE=		DOCS DRAC3 IPMI MANPAGES SNMP
 OPTIONS_DEFAULT=	DRAC3 IPMI MANPAGES SNMP
 OPTIONS_SUB=		yes
 
 DRAC3_CONFIGURE_OFF=	ac_cv_header_curl_curl_h=no
 DRAC3_DESC=		Dell DRAC III support
 DRAC3_LIB_DEPENDS=	libcurl.so:ftp/curl
-
-HPI_CONFIGURE_OFF=	ac_cv_header_openhpi_SaHpi_h=no
-HPI_DESC=		SAF Hardware Platform Interface support
-HPI_LIB_DEPENDS=	libopenhpi.so:sysutils/openhpi
 
 IPMI_CONFIGURE_ENABLE=	ipmilan
 IPMI_DESC=		Intelligent Platform Management Interface support
