@@ -7,6 +7,7 @@ bin/erkale_copt_plateau%%SUFFIX%%
 bin/erkale_cube%%SUFFIX%%
 bin/erkale_emd%%SUFFIX%%
 bin/erkale_fchkpt%%SUFFIX%%
+bin/erkale_genlinconf%%SUFFIX%%
 bin/erkale_geom%%SUFFIX%%
 bin/erkale_loc%%SUFFIX%%
 bin/erkale_pop%%SUFFIX%%
