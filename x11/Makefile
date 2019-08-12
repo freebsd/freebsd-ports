@@ -330,6 +330,7 @@
     SUBDIR += urxvt-perls
     SUBDIR += vdesk
     SUBDIR += viewres
+    SUBDIR += virtboard
     SUBDIR += virtualgl
     SUBDIR += waybar
     SUBDIR += wbar
