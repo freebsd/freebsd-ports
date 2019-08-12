@@ -26,7 +26,7 @@ USES=	compiler go
 
 USE_GITHUB=	yes
 
-GH_TUPLE	 \
+GH_TUPLE=	\
 	BurntSushi:toml:v0.2.0:toml/src/github.com/BurntSushi/toml                                       \
 	Unknwon:com:v1:com/src/github.com/Unknwon/com                                                    \
 	aws:aws-sdk-go:v1.1.36:aws_sdk_go/src/github.com/aws/aws-sdk-go                                  \
