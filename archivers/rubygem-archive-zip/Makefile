@@ -6,7 +6,7 @@ PORTVERSION=	0.12.0
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides interface to working with ZIP archives
 
 LICENSE=	MIT
