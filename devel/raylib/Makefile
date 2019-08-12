@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	raylib
-DISTVERSION=	2.0.0
-DISTVERSIONSUFFIX=	-dev
+DISTVERSION=	2.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -11,9 +10,10 @@ COMMENT=	Library to learn videogames programming
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BUILD_DEPENDS=	glfw>=3.3:graphics/glfw
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 
-USES=		cmake localbase:ldflags
+USES=		cmake gl localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	raysan5
 USE_LDCONFIG=	yes
@@ -24,9 +24,11 @@ CMAKE_ON=	SHARED USE_EXTERNAL_GLFW
 CMAKE_OFF=	STATIC BUILD_EXAMPLES BUILD_GAMES
 
 PLIST_FILES=	include/raylib.h \
+		lib/cmake/raylib/raylib-config-version.cmake \
+		lib/cmake/raylib/raylib-config.cmake \
 		lib/libraylib.so \
-		lib/libraylib.so.1 \
 		lib/libraylib.so.${DISTVERSION} \
+		lib/libraylib.so.2 \
 		libdata/pkgconfig/raylib.pc
 
 post-patch: # the equivalent of https://github.com/raysan5/raylib/pull/558 for the -dev branch
