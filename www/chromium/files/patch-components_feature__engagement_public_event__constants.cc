@@ -1,7 +1,7 @@
---- components/feature_engagement/public/event_constants.cc.orig	2019-03-11 22:00:56 UTC
+--- components/feature_engagement/public/event_constants.cc.orig	2019-07-24 18:58:19 UTC
 +++ components/feature_engagement/public/event_constants.cc
-@@ -26,9 +26,9 @@ const char kReopenTabConditionsMet[] = "reopen_tab_con
- const char kTabReopened[] = "tab_reopened";
+@@ -29,9 +29,9 @@ const char kFocusModeOpened[] = "focus_mode_opened";
+ const char kFocusModeConditionsMet[] = "focus_mode_conditions_met";
  #endif  // BUILDFLAG(ENABLE_DESKTOP_IN_PRODUCT_HELP)
  
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS)

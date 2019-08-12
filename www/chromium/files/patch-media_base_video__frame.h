@@ -1,6 +1,6 @@
---- media/base/video_frame.h.orig	2019-06-04 18:55:25 UTC
+--- media/base/video_frame.h.orig	2019-07-24 18:58:30 UTC
 +++ media/base/video_frame.h
-@@ -72,7 +72,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -74,7 +74,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
      STORAGE_UNOWNED_MEMORY = 2,  // External, non owned data pointers.
      STORAGE_OWNED_MEMORY = 3,  // VideoFrame has allocated its own data buffer.
      STORAGE_SHMEM = 4,         // Pixels are backed by Shared Memory.
@@ -9,7 +9,7 @@
      // TODO(mcasas): Consider turning this type into STORAGE_NATIVE
      // based on the idea of using this same enum value for both DMA
      // buffers on Linux and CVPixelBuffers on Mac (which currently use
-@@ -266,7 +266,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -268,7 +268,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
        uint8_t* a_data,
        base::TimeDelta timestamp);
  
@@ -18,7 +18,7 @@
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/html/latest/driver-api/dma-buf.html) with a
    // VideoFrame. The frame will take ownership of |dmabuf_fds|, and will
-@@ -458,7 +458,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -464,7 +464,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // Returns the offset into the shared memory where the frame data begins.
    size_t shared_memory_offset() const;
  
@@ -27,7 +27,7 @@
    // Returns a vector containing the backing DmaBufs for this frame. The number
    // of returned DmaBufs will be equal or less than the number of planes of
    // the frame. If there are less, this means that the last FD contains the
-@@ -652,7 +652,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -663,7 +663,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // memory.
    size_t shared_memory_offset_;
  

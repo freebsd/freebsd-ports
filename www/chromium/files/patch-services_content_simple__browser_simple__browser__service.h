@@ -1,6 +1,6 @@
---- services/content/simple_browser/simple_browser_service.h.orig	2019-03-11 22:01:01 UTC
+--- services/content/simple_browser/simple_browser_service.h.orig	2019-07-24 18:58:34 UTC
 +++ services/content/simple_browser/simple_browser_service.h
-@@ -16,7 +16,7 @@
+@@ -15,7 +15,7 @@
  #include "services/service_manager/public/cpp/service_binding.h"
  #include "services/service_manager/public/mojom/service.mojom.h"
  
@@ -9,7 +9,7 @@
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #endif
  
-@@ -50,7 +50,7 @@ class COMPONENT_EXPORT(SIMPLE_BROWSER) SimpleBrowserSe
+@@ -45,7 +45,7 @@ class COMPONENT_EXPORT(SIMPLE_BROWSER) SimpleBrowserSe
    // service_manager::Service:
    void OnStart() override;
  

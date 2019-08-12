@@ -1,8 +1,8 @@
---- third_party/blink/renderer/core/layout/layout_view.cc.orig	2019-03-17 20:57:47 UTC
+--- third_party/blink/renderer/core/layout/layout_view.cc.orig	2019-07-24 18:58:40 UTC
 +++ third_party/blink/renderer/core/layout/layout_view.cc
 @@ -58,7 +58,7 @@
+ #include "third_party/blink/renderer/platform/instrumentation/tracing/traced_value.h"
  #include "third_party/blink/renderer/platform/runtime_enabled_features.h"
- #include "third_party/blink/renderer/platform/transforms/transform_state.h"
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)

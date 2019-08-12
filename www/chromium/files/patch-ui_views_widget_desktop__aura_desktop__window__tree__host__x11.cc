@@ -1,6 +1,6 @@
---- ui/views/widget/desktop_aura/desktop_window_tree_host_x11.cc.orig	2019-06-04 18:55:50 UTC
+--- ui/views/widget/desktop_aura/desktop_window_tree_host_x11.cc.orig	2019-07-24 18:59:23 UTC
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_x11.cc
-@@ -1423,24 +1423,15 @@ void DesktopWindowTreeHostX11::InitX11Window(
+@@ -1463,24 +1463,15 @@ void DesktopWindowTreeHostX11::InitX11Window(
    if (override_redirect_)
      attribute_mask |= CWOverrideRedirect;
  

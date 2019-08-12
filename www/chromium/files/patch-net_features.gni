@@ -1,6 +1,6 @@
---- net/features.gni.orig	2019-03-11 22:01:01 UTC
+--- net/features.gni.orig	2019-07-24 18:58:32 UTC
 +++ net/features.gni
-@@ -27,7 +27,7 @@ declare_args() {
+@@ -26,7 +26,7 @@ declare_args() {
    disable_brotli_filter = false
  
    # Multicast DNS.

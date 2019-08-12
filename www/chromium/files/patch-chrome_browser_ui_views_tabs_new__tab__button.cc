@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/new_tab_button.cc.orig	2019-06-04 18:55:18 UTC
+--- chrome/browser/ui/views/tabs/new_tab_button.cc.orig	2019-07-24 18:58:13 UTC
 +++ chrome/browser/ui/views/tabs/new_tab_button.cc
-@@ -65,7 +65,7 @@ const gfx::Size NewTabButton::kButtonSize{28, 28};
+@@ -69,7 +69,7 @@ const gfx::Size NewTabButton::kButtonSize{28, 28};
  NewTabButton::NewTabButton(TabStrip* tab_strip, views::ButtonListener* listener)
      : views::ImageButton(listener), tab_strip_(tab_strip) {
    set_animate_on_state_change(true);

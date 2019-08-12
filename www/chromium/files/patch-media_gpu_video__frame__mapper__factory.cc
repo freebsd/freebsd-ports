@@ -1,6 +1,6 @@
---- media/gpu/video_frame_mapper_factory.cc.orig	2019-06-04 18:55:25 UTC
+--- media/gpu/video_frame_mapper_factory.cc.orig	2019-07-24 18:58:30 UTC
 +++ media/gpu/video_frame_mapper_factory.cc
-@@ -7,36 +7,36 @@
+@@ -7,38 +7,38 @@
  #include "build/build_config.h"
  #include "media/gpu/buildflags.h"
  
@@ -19,29 +19,31 @@
  namespace media {
  
  // static
- std::unique_ptr<VideoFrameMapper> VideoFrameMapperFactory::CreateMapper() {
+ std::unique_ptr<VideoFrameMapper> VideoFrameMapperFactory::CreateMapper(
+     VideoPixelFormat format) {
 -#if BUILDFLAG(USE_VAAPI) && defined(OS_LINUX)
 +#if BUILDFLAG(USE_VAAPI) && (defined(OS_LINUX) || defined(OS_BSD))
-   return CreateMapper(false);
+   return CreateMapper(format, false);
  #else
-   return CreateMapper(true);
+   return CreateMapper(format, true);
 -#endif  // BUILDFLAG(USE_VAAPI) && defined(OS_LINUX)
 +#endif  // BUILDFLAG(USE_VAAPI) && (defined(OS_LINUX) || defined(OS_BSD))
  }
  
  // static
  std::unique_ptr<VideoFrameMapper> VideoFrameMapperFactory::CreateMapper(
+     VideoPixelFormat format,
      bool linear_buffer_mapper) {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    if (linear_buffer_mapper)
-     return std::make_unique<GenericDmaBufVideoFrameMapper>();
+     return GenericDmaBufVideoFrameMapper::Create(format);
 -#endif  // defined(OS_LINUX)
 +#endif  // defined(OS_LINUX) || defined(OS_BSD)
  
 -#if BUILDFLAG(USE_VAAPI) && defined(OS_LINUX)
 +#if BUILDFLAG(USE_VAAPI) && (defined(OS_LINUX) || defined(OS_BSD))
-   return VaapiDmaBufVideoFrameMapper::Create();
+   return VaapiDmaBufVideoFrameMapper::Create(format);
 -#endif  // BUILDFLAG(USE_VAAPI) && defined(OS_LINUX)
 +#endif  // BUILDFLAG(USE_VAAPI) && (defined(OS_LINUX) || defined(OS_BSD))
  

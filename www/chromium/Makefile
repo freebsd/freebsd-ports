@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	75.0.3770.142
-PORTREVISION=	3
+PORTVERSION=	76.0.3809.100
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/cpm/chromium/:fonts
@@ -315,8 +314,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/chrome/tools/build/linux/chrome-wrapper \
 		${STAGEDIR}${DATADIR}
 
-	# ANGLE
-.for f in libEGL.so libGLESv2.so
+	# ANGLE, EGL, Vk
+.for f in libEGL.so libGLESv2.so libVkICD_mock_icd.so libVkLayer_core_validation.so libVkLayer_object_lifetimes.so \
+	libVkLayer_stateless_validation.so libVkLayer_thread_safety.so libVkLayer_unique_objects.so
 	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/${f} ${STAGEDIR}${DATADIR}
 .endfor
 

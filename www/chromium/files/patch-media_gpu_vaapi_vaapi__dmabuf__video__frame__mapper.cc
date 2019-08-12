@@ -1,4 +1,4 @@
---- media/gpu/vaapi/vaapi_dmabuf_video_frame_mapper.cc.orig	2019-06-04 18:55:25 UTC
+--- media/gpu/vaapi/vaapi_dmabuf_video_frame_mapper.cc.orig	2019-07-24 18:58:30 UTC
 +++ media/gpu/vaapi/vaapi_dmabuf_video_frame_mapper.cc
 @@ -15,7 +15,7 @@
  #include "media/gpu/vaapi/vaapi_wrapper.h"
@@ -9,7 +9,7 @@
  #include "media/gpu/linux/platform_video_frame_utils.h"
  #endif
  
-@@ -124,7 +124,7 @@ scoped_refptr<VideoFrame> VaapiDmaBufVideoFrameMapper:
+@@ -137,7 +137,7 @@ scoped_refptr<VideoFrame> VaapiDmaBufVideoFrameMapper:
    }
  
    gfx::GpuMemoryBufferHandle gmb_handle;

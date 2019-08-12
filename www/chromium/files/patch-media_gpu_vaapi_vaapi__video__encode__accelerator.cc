@@ -1,4 +1,4 @@
---- media/gpu/vaapi/vaapi_video_encode_accelerator.cc.orig	2019-06-04 18:55:25 UTC
+--- media/gpu/vaapi/vaapi_video_encode_accelerator.cc.orig	2019-07-24 18:58:30 UTC
 +++ media/gpu/vaapi/vaapi_video_encode_accelerator.cc
 @@ -41,7 +41,7 @@
  #include "media/gpu/vp8_reference_frame_vector.h"
@@ -9,7 +9,7 @@
  #include "media/gpu/linux/platform_video_frame_utils.h"
  #endif
  
-@@ -555,7 +555,7 @@ scoped_refptr<VaapiEncodeJob> VaapiVideoEncodeAccelera
+@@ -558,7 +558,7 @@ scoped_refptr<VaapiEncodeJob> VaapiVideoEncodeAccelera
          vaapi_wrapper_, MakeGLContextCurrentCallback(), BindGLImageCallback(),
          PictureBuffer(kDummyPictureBufferId, frame->coded_size()));
      gfx::GpuMemoryBufferHandle gmb_handle;

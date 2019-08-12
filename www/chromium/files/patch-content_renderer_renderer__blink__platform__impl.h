@@ -1,4 +1,4 @@
---- content/renderer/renderer_blink_platform_impl.h.orig	2019-06-04 18:55:23 UTC
+--- content/renderer/renderer_blink_platform_impl.h.orig	2019-07-24 18:58:25 UTC
 +++ content/renderer/renderer_blink_platform_impl.h
 @@ -30,7 +30,7 @@
  #include "third_party/blink/public/mojom/loader/code_cache.mojom.h"
@@ -9,7 +9,7 @@
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -273,7 +273,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -258,7 +258,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    std::unique_ptr<service_manager::Connector> connector_;
    scoped_refptr<base::SingleThreadTaskRunner> io_runner_;
  
@@ -18,7 +18,7 @@
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
-@@ -311,7 +311,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -296,7 +296,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    std::unique_ptr<blink::WebTransmissionEncodingInfoHandler>
        web_transmission_encoding_info_handler_;
  

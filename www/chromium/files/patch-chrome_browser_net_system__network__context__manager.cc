@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2019-06-04 18:55:17 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2019-07-24 18:58:09 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -72,12 +72,12 @@
  #include "chrome/browser/chromeos/policy/browser_policy_connector_chromeos.h"
@@ -15,7 +15,7 @@
  
  namespace {
  
-@@ -198,10 +198,10 @@ network::mojom::HttpAuthDynamicParamsPtr CreateHttpAut
+@@ -191,10 +191,10 @@ network::mojom::HttpAuthDynamicParamsPtr CreateHttpAut
    auth_dynamic_params->enable_negotiate_port =
        local_state->GetBoolean(prefs::kEnableAuthNegotiatePort);
  
@@ -28,7 +28,7 @@
  
  #if defined(OS_POSIX)
    auth_dynamic_params->ntlm_v2_enabled =
-@@ -433,10 +433,10 @@ SystemNetworkContextManager::SystemNetworkContextManag
+@@ -434,10 +434,10 @@ SystemNetworkContextManager::SystemNetworkContextManag
    pref_change_registrar_.Add(prefs::kEnableAuthNegotiatePort,
                               auth_pref_callback);
  
@@ -41,7 +41,7 @@
  
  #if defined(OS_POSIX)
    pref_change_registrar_.Add(prefs::kNtlmV2Enabled, auth_pref_callback);
-@@ -481,10 +481,10 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -486,10 +486,10 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterStringPref(prefs::kAuthServerWhitelist, std::string());
    registry->RegisterStringPref(prefs::kAuthNegotiateDelegateWhitelist,
                                 std::string());
@@ -54,7 +54,7 @@
  
  #if defined(OS_POSIX)
    registry->RegisterBooleanPref(
-@@ -532,7 +532,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+@@ -586,7 +586,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
    content::GetNetworkService()->ConfigureStubHostResolver(
        stub_resolver_enabled, std::move(dns_over_https_servers));
  
