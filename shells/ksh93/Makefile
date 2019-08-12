@@ -13,6 +13,10 @@ LICENSE=	EPL
 
 USES=		compiler:c11 meson ninja python:build
 
+.if ${USE_GCC} == "9"
+BROKEN=		GCC 9.1 changes the output of `gcc -E` which breaks the conf.sh script, fixed in shells/ksh93-devel
+.endif
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	att
 GH_PROJECT=	ast
