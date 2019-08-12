@@ -6,9 +6,9 @@ The OpenConnect protocol provides a dual TCP/UDP VPN channel, and
 uses the standard IETF security protocols to secure it. Both IPv4
 and IPv6 are supported.
 
-Ocserv's main features are security through provilege separation
+Ocserv's main features are security through privilege separation
 and sandboxing, accounting, and resilience due to a combined use
-of TCP and UDP.  Authentication occurs in an isolated security
+of TCP and UDP. Authentication occurs in an isolated security
 module process, and each user is assigned an unprivileged worker
 process, and a networking (tun) device. That not only eases the
 control of the resources of each user or group of users, but also
