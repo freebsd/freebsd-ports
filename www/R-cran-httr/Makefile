@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httr
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,7 +11,7 @@ COMMENT=	Tools for Working with URLs and HTTP
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-curl>=0.9.1:ftp/R-cran-curl \
+CRAN_DEPENDS=	R-cran-curl>=3.0.0:ftp/R-cran-curl \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-mime>0:misc/R-cran-mime \
 		R-cran-openssl>=0.8:security/R-cran-openssl \
