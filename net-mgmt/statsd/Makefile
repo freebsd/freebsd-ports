@@ -2,8 +2,8 @@
 
 PORTNAME=	statsd
 PORTVERSION=	0.7.2
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	kimor79@yahoo.com
@@ -11,6 +11,9 @@ COMMENT=	Simple daemon for easy stats aggregation
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	depends on expired www/node6
+EXPIRATION_DATE=2019-11-01
 
 RUN_DEPENDS=	node6>=0:www/node6
 
