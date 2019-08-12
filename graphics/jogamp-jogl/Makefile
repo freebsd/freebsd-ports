@@ -3,7 +3,7 @@
 
 PORTNAME=	jogamp-jogl
 PORTVERSION=	2.2.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics devel java
 MASTER_SITES=	http://jogamp.org/deployment/jogamp-current/archive/Sources/ \
 		http://jogamp.org/deployment/v${PORTVERSION}/archive/Sources/
@@ -14,8 +14,8 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Java bindings for OpenGL
 
 EXTRACT_DEPENDS=	${7Z_CMD}:archivers/p7zip
-BUILD_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:x11-toolkits/swt-devel
-RUN_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:x11-toolkits/swt-devel
+BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt
+RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:x11-toolkits/swt
 
 ONLY_FOR_ARCHS=	i386 amd64
 

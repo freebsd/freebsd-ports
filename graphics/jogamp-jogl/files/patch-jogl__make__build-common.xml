@@ -6,7 +6,7 @@
          </condition>
 -        <condition property="swt.jar" value="${project.root}/make/lib/swt/gtk-freebsd-x86_64/swt.jar">
 -          <istrue value="${isFreeBSDAMD64}" />
-+        <condition property="swt.jar" value="%%JAVALIBDIR%%/swt-devel.jar">
++        <condition property="swt.jar" value="%%JAVALIBDIR%%/swt.jar">
 +          <istrue value="${isFreeBSD}" />
          </condition>
          <condition property="swt.jar" value="${project.root}/make/lib/swt/gtk-linux-x86_64/swt-debug.jar">
