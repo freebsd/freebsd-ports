@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yank
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/mptre/yank/releases/download/v${DISTVERSION}/
 
