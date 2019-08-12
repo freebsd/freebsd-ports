@@ -61,6 +61,7 @@ CONFIGURE_ARGS+=	--disable-multilib
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 
 .elif ${ARCH} == powerpc64
+PORTREVISION=	2
 CONFIGURE_ENV+=	UNAME_m="powerpc64"
 USE_GCC=	8
 .endif
