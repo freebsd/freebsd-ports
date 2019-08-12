@@ -17,7 +17,4 @@ APEL stands for "A Portable Emacs Library" and contains these modules:
      - poem: provide basic functions to write portable MULE programs
      - static: utility for static evaluation
 
-To use apel, put the following setup into your ~/.emacs:
-	(require 'apel-setupel)
-
-WWW: http://git.chise.org/elisp/apel/index.html.en
+WWW: https://github.com/wanderlust/apel
