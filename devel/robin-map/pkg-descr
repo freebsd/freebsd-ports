@@ -1,0 +1,5 @@
+A C++ implementation of a fast hash map and hash set using
+open-addressing and linear robin hood hashing with backward
+shift deletion to resolve collisions.
+
+WWW: https://github.com/Tessil/robin-map

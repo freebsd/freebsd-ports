@@ -5340,6 +5340,7 @@
     SUBDIR += riscv64-xtoolchain-gcc
     SUBDIR += rlog
     SUBDIR += rlwrap
+    SUBDIR += robin-map
     SUBDIR += roboctl
     SUBDIR += robodoc
     SUBDIR += root-doc
