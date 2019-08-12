@@ -851,6 +851,7 @@
     SUBDIR += gnustep
     SUBDIR += gnustep-make
     SUBDIR += go-bindata
+    SUBDIR += go-bindata-assetfs
     SUBDIR += go-git
     SUBDIR += go-glide
     SUBDIR += go-godef
