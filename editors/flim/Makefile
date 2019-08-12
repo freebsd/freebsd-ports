@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	flim
-PORTVERSION=	1.14.9
-PORTREVISION=	21
+PORTVERSION=	1.14.9.${SNAPDATE}
 PORTEPOCH=	1
 CATEGORIES=	editors elisp
-MASTER_SITES=	http://git.chise.org/elisp/dist/${PORTNAME}/${PORTNAME}-${DISTVERSION:R}/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -14,12 +12,15 @@ COMMENT=	Message representation or encoding elisp library for emacs
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	apel${EMACS_PKGNAMESUFFIX}>0:editors/apel@${EMACS_FLAVOR} \
-		nkf:japanese/nkf
+BUILD_DEPENDS=	apel${EMACS_PKGNAMESUFFIX}>0:editors/apel@${EMACS_FLAVOR}
 RUN_DEPENDS=	apel${EMACS_PKGNAMESUFFIX}>0:editors/apel@${EMACS_FLAVOR}
 
-USES=		cpe emacs makeinfo
+USES=		cpe emacs iconv makeinfo
+USE_GITHUB=	yes
+GH_ACCOUNT=	wanderlust
+GH_TAGNAME=	e4bd54f
 
+SNAPDATE=	20190526
 CPE_VENDOR=	gnu
 NO_ARCH=	yes
 
@@ -36,8 +37,8 @@ OPTIONS_DEFINE=	DOCS
 post-build:
 	@(cd ${WRKSRC} ; \
 	for i in mime-en.texi mime-ja.texi; do \
-		${CAT} $${i} | nkf -e > $${i}.jis ; \
-		${MAKEINFO} --no-split --no-validate $${i}.jis ; \
+		${ICONV_CMD} -f ISO-2022-JP -t UTF-8 $${i} > $${i}.utf8 ; \
+		${MAKEINFO} --no-split --no-validate $${i}.utf8 ; \
 	done)
 
 post-install:

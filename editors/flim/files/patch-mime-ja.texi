@@ -1,15 +1,11 @@
---- mime-ja.texi.orig	2002-10-08 15:50:05 UTC
+--- mime-ja.texi.orig	2019-05-26 10:34:29 UTC
 +++ mime-ja.texi
-@@ -1,7 +1,11 @@
- \input texinfo.tex
+@@ -2,7 +2,7 @@
  @c Generated automatically from mime-ja.sgml by sinfo 3.7.
  @setfilename mime-ja.info
--@settitle{FLIM 1.14 MIME 機能説明書}
-+@settitle FLIM 1.14 MIME 機能説明書
-+@dircategory The Emacs editor and associated tools 
-+@direntry 
-+* mime-ja: (mime-ja).		MIME features for GNU Emacs. (Japanese)
-+@end direntry 
- @titlepage
- @title FLIM 1.14 MIME 機能説明書
- @author 守岡 知彦 <morioka@@jaist.ac.jp>
+ @documentlanguage ja
+-@documentencoding iso-2022-jp
++@documentencoding utf-8
+ @settitle FLIM 1.14 MIME 機能説明書
+ @dircategory GNU Emacs Lisp
+ @direntry
