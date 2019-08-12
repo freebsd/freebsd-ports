@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ponyc
-DISTVERSION=	0.29.0
-PORTREVISION=	1
+DISTVERSION=	0.30.0
 CATEGORIES=	lang
 
 MAINTAINER=	greg@unrelenting.technology
@@ -57,12 +56,8 @@ PONYARCH?=	core2
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085
-MAKE_ENV+=	default_ssl=openssl_1.1.0
-.endif
-
 .if ${CHOSEN_COMPILER_TYPE} == clang
-# Building the bitcode with clang70 and linking with llvm50 fails,
+# Building the bitcode with clangX and linking with llvmY often fails,
 # so let's use the clang from the LLVM version that will be used by ponyc
 CC=		${LOCALBASE}/bin/clang${LLVM_VERSION}
 CXX=		${LOCALBASE}/bin/clang++${LLVM_VERSION}

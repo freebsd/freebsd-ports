@@ -82,11 +82,6 @@ lib/pony/%%VERSION%%/packages/collections/reverse.pony
 lib/pony/%%VERSION%%/packages/collections/ring_buffer.pony
 lib/pony/%%VERSION%%/packages/collections/set.pony
 lib/pony/%%VERSION%%/packages/collections/sort.pony
-lib/pony/%%VERSION%%/packages/crypto/_test.pony
-lib/pony/%%VERSION%%/packages/crypto/constant_time_compare.pony
-lib/pony/%%VERSION%%/packages/crypto/crypto.pony
-lib/pony/%%VERSION%%/packages/crypto/digest.pony
-lib/pony/%%VERSION%%/packages/crypto/hash_fn.pony
 lib/pony/%%VERSION%%/packages/debug/debug.pony
 lib/pony/%%VERSION%%/packages/encode/base64/_test.pony
 lib/pony/%%VERSION%%/packages/encode/base64/base64.pony
@@ -109,8 +104,6 @@ lib/pony/%%VERSION%%/packages/format/align.pony
 lib/pony/%%VERSION%%/packages/format/format.pony
 lib/pony/%%VERSION%%/packages/format/format_spec.pony
 lib/pony/%%VERSION%%/packages/format/prefix_spec.pony
-lib/pony/%%VERSION%%/packages/glob/_test.pony
-lib/pony/%%VERSION%%/packages/glob/glob.pony
 lib/pony/%%VERSION%%/packages/ini/_test.pony
 lib/pony/%%VERSION%%/packages/ini/ini.pony
 lib/pony/%%VERSION%%/packages/ini/ini_map.pony
@@ -132,15 +125,6 @@ lib/pony/%%VERSION%%/packages/net/net.pony
 lib/pony/%%VERSION%%/packages/net/net_address.pony
 lib/pony/%%VERSION%%/packages/net/ossocket.pony
 lib/pony/%%VERSION%%/packages/net/ossockopt.pony
-lib/pony/%%VERSION%%/packages/net/ssl/_ssl_init.pony
-lib/pony/%%VERSION%%/packages/net/ssl/_ssl_versions.pony
-lib/pony/%%VERSION%%/packages/net/ssl/_test.pony
-lib/pony/%%VERSION%%/packages/net/ssl/alpn.pony
-lib/pony/%%VERSION%%/packages/net/ssl/ssl.pony
-lib/pony/%%VERSION%%/packages/net/ssl/ssl_connection.pony
-lib/pony/%%VERSION%%/packages/net/ssl/ssl_context.pony
-lib/pony/%%VERSION%%/packages/net/ssl/ssl_versions.pony
-lib/pony/%%VERSION%%/packages/net/ssl/x509.pony
 lib/pony/%%VERSION%%/packages/net/tcp_connection.pony
 lib/pony/%%VERSION%%/packages/net/tcp_connection_notify.pony
 lib/pony/%%VERSION%%/packages/net/tcp_listen_notify.pony
@@ -182,10 +166,6 @@ lib/pony/%%VERSION%%/packages/random/random.pony
 lib/pony/%%VERSION%%/packages/random/splitmix64.pony
 lib/pony/%%VERSION%%/packages/random/xoroshiro.pony
 lib/pony/%%VERSION%%/packages/random/xorshift.pony
-lib/pony/%%VERSION%%/packages/regex/_test.pony
-lib/pony/%%VERSION%%/packages/regex/match.pony
-lib/pony/%%VERSION%%/packages/regex/match_iterator.pony
-lib/pony/%%VERSION%%/packages/regex/regex.pony
 lib/pony/%%VERSION%%/packages/serialise/_test.pony
 lib/pony/%%VERSION%%/packages/serialise/serialise.pony
 lib/pony/%%VERSION%%/packages/signals/_test.pony
@@ -236,9 +216,7 @@ lib/pony/%%VERSION%%/packages/time/timers.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/message-ubench/main.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mixed/main.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/n-body/n-body.pony
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/net/cert.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/net/client.pony
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/net/key.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/net/listener.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/net/net.pony
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/net/ping.pony
