@@ -13,6 +13,9 @@ COMMENT=	Kibana 5.3 Search Guard plugin
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Depends on expired www/node6 via textproc/kibana5
+EXPIRATION_DATE=2019-11-01
+
 RUN_DEPENDS=	kibana5>=5.3.0:textproc/kibana5
 
 NO_BUILD=	yes
