@@ -21,7 +21,7 @@ LIB_DEPENDS=	libderiv.so:science/libint \
 		libopenblas.so:math/openblas \
 		libsz.so:science/szip \
 		libxc.so:science/libxc
-xRUN_DEPENDS=	erkale-pseudopotentials>=0:science/erkale-pseudopotentials
+RUN_DEPENDS=	erkale-pseudopotentials>=0:science/erkale-pseudopotentials
 
 FLAVORS=	serial parallel
 FLAVOR?=	${FLAVORS:[1]}
