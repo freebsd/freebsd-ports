@@ -5,3 +5,4 @@ use DTDs or XSL. It doesn't have the STL support of TinyXML-1, but uses less
 memory, has a proper namespace, and is faster.
 
 WWW: http://grinninglizard.com/tinyxml2/index.html
+WWW: https://github.com/leethomason/tinyxml2

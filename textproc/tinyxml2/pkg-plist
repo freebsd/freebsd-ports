@@ -1,5 +1,6 @@
 include/tinyxml2.h
 lib/cmake/tinyxml2/tinyxml2Config.cmake
+lib/cmake/tinyxml2/tinyxml2ConfigVersion.cmake
 lib/cmake/tinyxml2/tinyxml2Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/tinyxml2/tinyxml2Targets.cmake
 lib/libtinyxml2.a
@@ -7,3 +8,12 @@ lib/libtinyxml2.so
 lib/libtinyxml2.so.7
 lib/libtinyxml2.so.%%PORTVERSION%%
 libdata/pkgconfig/tinyxml2.pc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/dream.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/empty.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/out/readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/utf8test.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/utf8testverify.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/xmltest-4636783552757760.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/xmltest-5330.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/xmltest-5662204197076992.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/xmltest-5720541257269248.xml
