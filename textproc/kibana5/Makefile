@@ -15,6 +15,9 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
+DEPRECATED=	depends on expired www/node6
+EXPIRATION_DATE=2019-11-01
+
 RUN_DEPENDS=	node6>=6.12.2:www/node6
 
 CONFLICTS=	kibana[3-4]*
