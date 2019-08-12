@@ -1,6 +1,6 @@
---- INSTALL.orig	Fri Apr 19 21:26:39 2002
-+++ INSTALL	Wed Oct  8 09:22:22 2003
-@@ -73,7 +73,7 @@
+--- INSTALL.orig	2003-07-28 12:34:07 UTC
++++ INSTALL
+@@ -73,7 +73,7 @@ sub x
  }
     
  
@@ -9,7 +9,7 @@
  ($u_os, $u_host, $u_osrel) = split(/\s+/, $uname);
  
  #  Try to find things in the usual places, but failing those,
-@@ -122,6 +122,7 @@
+@@ -122,6 +122,7 @@ if ($op eq "install")
      if    ( ! (    ($u_os eq "SunOS" && $u_osrel =~ /^5\./)
                  || ($u_os eq "SunOS" && $u_osrel =~ /^4\./)
                  || ($u_os eq "OSF1" && $u_osrel =~ /^V[34]\./)
@@ -17,7 +17,7 @@
  	        || ($u_os eq "Linux")))
        {
          print STDERR <<MSG;
-@@ -134,7 +135,7 @@
+@@ -134,13 +135,13 @@ $Myname:
  
    (press Return to continue with the install...)
  MSG
@@ -26,7 +26,14 @@
        }
  
      $cvs_versmsg = `cvs -v`;
-@@ -151,7 +152,7 @@
+     if ($cvs_versmsg !~ /\nConcurrent Versions System\s+\(CVS\)\s+1\.11\s+/)
+       {
+-        $starsave = $*; $* = 1; $cvs_versmsg =~ s/^/    /g; $* = $starsave;
++        $cvs_versmsg =~ s/^/    /gm;
+         print STDERR <<MSG;
+ $Myname:
+ 
+@@ -151,7 +152,7 @@ $Myname:
  $cvs_versmsg
    (press Return to continue with the install...)
  MSG
