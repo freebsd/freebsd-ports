@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	markdown
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,7 +11,8 @@ COMMENT=	Markdown Rendering for R
 
 LICENSE=	GPLv2
 
-CRAN_DEPENDS=	R-cran-mime>=0.3:misc/R-cran-mime
+CRAN_DEPENDS=	R-cran-xfun>0:misc/R-cran-xfun \
+		R-cran-mime>=0.3:misc/R-cran-mime
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
