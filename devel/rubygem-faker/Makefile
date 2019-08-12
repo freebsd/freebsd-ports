@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	faker
-PORTVERSION=	1.9.6
+PORTVERSION=	2.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Library for generating fake data: names, addresses, phone numbers
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-RUN_DEPENDS=	rubygem-i18n>=0.7:devel/rubygem-i18n
+RUN_DEPENDS=	rubygem-i18n>=0.8:devel/rubygem-i18n
 
 USES=		gem
 USE_RUBY=	yes
