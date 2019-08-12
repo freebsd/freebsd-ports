@@ -283,6 +283,7 @@
     SUBDIR += py-scoria
     SUBDIR += py-spglib
     SUBDIR += py-tensorflow
+    SUBDIR += py-tensorflow-estimator
     SUBDIR += py-veusz
     SUBDIR += py-ws2300
     SUBDIR += pybrain
