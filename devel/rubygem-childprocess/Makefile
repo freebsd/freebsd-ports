@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	childprocess
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	External background process controller
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-ffi>=1.0.11:devel/rubygem-ffi
+RUN_DEPENDS=	rubygem-rake>=0<13.0:devel/rubygem-rake
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
