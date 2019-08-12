@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	modules2tuple
-PORTVERSION=	1.7.3
+PORTVERSION=	1.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-X main.version=${PORTVERSION}"
 
 USE_GITHUB=	yes
