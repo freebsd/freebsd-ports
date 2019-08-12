@@ -1,15 +1,11 @@
---- mime-en.texi.orig	2002-10-08 15:50:05 UTC
+--- mime-en.texi.orig	2019-05-26 10:34:29 UTC
 +++ mime-en.texi
-@@ -1,7 +1,11 @@
- \input texinfo.tex
+@@ -2,7 +2,7 @@
  @c Generated automatically from mime-en.sgml by sinfo 3.7.
  @setfilename mime-en.info
--@settitle{FLIM 1.14 Reference Manual about MIME Features}
-+@settitle FLIM 1.14 Reference Manual about MIME Features
-+@dircategory The Emacs editor and associated tools 
-+@direntry 
-+* mime-en: (mime-en).		MIME features for GNU Emacs. (English)
-+@end direntry 
- @titlepage
- @title FLIM 1.14 Reference Manual about MIME Features
- @author MORIOKA Tomohiko <morioka@@jaist.ac.jp>
+ @settitle FLIM 1.14 Reference Manual about MIME Features
+-@documentencoding iso-2022-jp
++@documentencoding utf-8
+ @documentlanguage en
+ @dircategory GNU Emacs Lisp
+ @direntry

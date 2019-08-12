@@ -62,8 +62,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/sasl-scram.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/sasl.el
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/sasl.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/flim/sha1-el.el
-%%EMACS_VERSION_SITE_LISPDIR%%/flim/sha1-el.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/sha1.el
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/sha1.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/smtp.el
