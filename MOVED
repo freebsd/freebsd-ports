@@ -12867,3 +12867,4 @@ www/rubygem-turbolinks-rails50|www/rubygem-turbolinks|2019-08-11|Remove unnecess
 textproc/sphinxsearch-devel|textproc/sphinxsearch|2019-08-11|Has expired: Broken for more than 6 months
 lang/dmd2||2019-08-11|Has expired: Broken for more than 6 months and upstream has no fix for statfs64
 cad/elmerfem||2019-08-12|Has expired: Broken for more than 6 months
+sysutils/openhpi||2019-08-12|Has expired: Broken for more than 6 months
