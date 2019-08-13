@@ -2,6 +2,7 @@ bin/xpad
 man/man1/xpad.1.gz
 share/applications/xpad.desktop
 share/icons/hicolor/scalable/apps/xpad.svg
+share/metainfo/xpad.appdata.xml
 %%DATADIR%%/help/xpad-user-help.txt
 %%NLS%%share/locale/af/LC_MESSAGES/xpad.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xpad.mo
