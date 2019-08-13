@@ -46,14 +46,11 @@ post-extract:
 do-install:
 	${INSTALL_DATA} ${JARFILES:S|-${DISTVERSION}||:S|^|${WRKSRC}/|} \
 		${STAGEDIR}${JAVAJARDIR}
-
-.if ${PORT_OPTIONS:MTOMCAT7}
 	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${STAGEDIR}${WEBAPPDIR}/${PORTNAME}
 	@(cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${WEBAPPDIR}/${PORTNAME})
 	${TOUCH} \
 	${STAGEDIR}${WEBAPPDIR}/${PORTNAME}/WEB-INF/classes/net/sourceforge/barbecue/postnet/.empty
-.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
