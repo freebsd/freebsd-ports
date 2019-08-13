@@ -1,4 +1,6 @@
-------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 RoadMap is at an early stage of development, and is not thoroughly
 documented.  It would be very unwise to rely on RoadMap for real
 navigation.
@@ -11,5 +13,6 @@ TIGER data are located in:
 Make sure that you either have a program called flite (a voice
 synthesizer) or disable (mute) audio throught the menu.  Other
 voice synthesizer can be used, like festival.
-
-------------------------------------------------------------------
+EOM
+}
+]

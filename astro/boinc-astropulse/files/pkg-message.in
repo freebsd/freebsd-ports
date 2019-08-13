@@ -1,4 +1,6 @@
-*****************************************************************************
+[
+{ type: install
+  message: <<EOM
 ATTACHING PROJECT
 
 Just run boinc_gui (if installed), choose Attach, and follow instructions.
@@ -13,4 +15,6 @@ MANUAL INSTALLATION
  *) Attach to the project:
     cd %%BOINC_CLIENT_HOME%%
     boinccmd --project_attach %%SETI_SITE%% <account key>
-*****************************************************************************
+EOM
+}
+]

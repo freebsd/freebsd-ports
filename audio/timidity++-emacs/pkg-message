@@ -1,4 +1,6 @@
-========================================================================
+[
+{ type: install
+  message: <<EOM
 "timidity.el" has been installed in ${PREFIX}/share/emacs/site-lisp/ .
 If this place is not proper for your Emacs(en), copy it to load-path.
 
@@ -11,4 +13,6 @@ Add these line to your "~/.emacs"
 (setq timidity-prog-path "/usr/local/bin/timidity")
 
 And then, type "M-x timidity" on Emacs. Enjoy!
-========================================================================
+EOM
+}
+]

@@ -1,7 +1,11 @@
-====
+[
+{ type: install
+  message: <<EOM
 To use verilog-mode features in Emacs/XEmacs, add the
 following lines to your Emacs configuration file (usually ~/.emacs):
 
 (autoload 'verilog-mode "verilog-mode" "Verilog mode" t )
 (add-to-list 'auto-mode-alist '("\\.[ds]?v\\'" . verilog-mode))
-====
+EOM
+}
+]

@@ -1,4 +1,6 @@
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[
+{ type: install
+  message: <<EOM
 Remember to set these environment varibles (such as your ~/.xinitrc):
 
   export XMODIFIERS='@im=gcin'
@@ -6,5 +8,6 @@ Remember to set these environment varibles (such as your ~/.xinitrc):
 
   # Finally, to start the GCIN input method daemon, use command:
   exec gcin &
-
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+EOM
+}
+]

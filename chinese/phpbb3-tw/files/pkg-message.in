@@ -1,4 +1,6 @@
-----------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 phpBB3 has been installed, but is not quite ready to be used yet!
 
 You have to ensure that you have a database server (or ODBC access to a
@@ -18,5 +20,6 @@ configure your installation of phpBB3:
 
 After configuring phpBB3 and ensuring that it is operational, you MUST
 remove or rename the install/ directory from %%PREFIX%%/%%PHPBBDIR%%:
-
-----------------------------------------------------------------------------
+EOM
+}
+]

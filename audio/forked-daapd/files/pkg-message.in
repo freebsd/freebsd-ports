@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 forked-daapd uses FFmpeg for transcoding audio playback.
 The default ports/pkg build of FFmpeg on FreeBSD has a number
 of options which could be SET/UNSET to provide support for
@@ -19,3 +22,6 @@ To then manually start forked-daapd without rebooting:
 # service dbus start
 # service avahi-daemon start
 # service forked-daapd start
+EOM
+}
+]

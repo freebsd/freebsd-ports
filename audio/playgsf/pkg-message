@@ -1,5 +1,9 @@
-================================================================================
+[
+{ type: install
+  message: <<EOM
 A huge gsf collection can be found at:
   * http://www.caitsith2.com/gsf/
   * http://www.zophar.net/gsf/
-================================================================================
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 In order to mount locally a remote archive or an entire repository as a FUSE
 filesystem, it is required to load fuse module:
 
@@ -20,3 +23,6 @@ and add the line
 vfs.usermount=1
 
 to /etc/sysctl.conf to ensure the setting is loaded at boot time.
+EOM
+}
+]

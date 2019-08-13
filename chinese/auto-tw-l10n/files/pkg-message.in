@@ -1,5 +1,6 @@
-**************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 English Instructions:
  Please tell your users to merge their old dotfiles with the new ones, in
  	%%PREFIX%%/share/skel/zh_TW.UTF-8/dot.*
@@ -21,5 +22,6 @@ English Instructions:
 
  最後，請參考下面這檔案來修改 /etc/make.conf 以做更好的設定：
  ==> %%PREFIX%%/share/skel/zh_TW.UTF-8/make.conf
-
-**************************************************************************
+EOM
+}
+]

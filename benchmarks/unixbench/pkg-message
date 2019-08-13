@@ -1,5 +1,9 @@
-------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 If you want to run unixbench, please type the following commands:
 
 	% unixbench
-------------------------------------------------------------------------
+EOM
+}
+]

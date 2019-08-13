@@ -1,4 +1,6 @@
-**********************************************************************
+[
+{ type: install
+  message: <<EOM
 This port does not contain any FreeBSD device drivers for infrared
 devices. This port installs the LIRC daemons and tools for interacting
 with drivers that support the LIRC device interface.
@@ -79,5 +81,6 @@ them apply) notes re ir-keytable(1) and the lirc devinput change
 are also here:
 
 	http://forum.xbmc.org/showthread.php?t=101151
-
-**********************************************************************
+EOM
+}
+]

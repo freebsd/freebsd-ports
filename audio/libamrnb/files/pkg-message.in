@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 AMR codecs incorporate several patents, held by Ericsson, Universite de
 Sherbrooke (VoiceAge) and Nokia. VoiceAge claims to provide patent portfolio
 for AMR codecs. Depending on law in your country, manufacturers and developers
@@ -10,3 +13,6 @@ Patent portfolio seems to be licensed by Via Licensing.
 Depending on law in your country, you may need a license for distribution, any
 use, commercial use or even development.
 You don't have permission to distribute the source code and attached .doc file.
+EOM
+}
+]

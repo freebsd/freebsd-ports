@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Speaker sound support:
 ======================
 
@@ -27,3 +30,6 @@ devfs_speaker_ruleset="speaker"
 Then restart devfs to load the new rules:
 
 % /etc/rc.d/devfs restart
+EOM
+}
+]

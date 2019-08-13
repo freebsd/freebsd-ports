@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To set the default PCM to the sndio plugin, create ~/.asoundrc with
 
 pcm.!default {
@@ -6,3 +9,6 @@ pcm.!default {
 
 Optionally, use the 'volume' option to set the initial volume and
 'device' to set the device to use.
+EOM
+}
+]

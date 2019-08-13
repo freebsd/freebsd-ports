@@ -1,4 +1,6 @@
-********************************************************************
+[
+{ type: install
+  message: <<EOM
 Unless this file already existed, a sample configuration file
 has been placed in %%ETCDIR%%.cfg.
 
@@ -16,4 +18,6 @@ present, the client will be started now.  Otherwise, edit
 /etc/rc.conf and execute this command:
 
     %%ETCDIR%%/rc.d/darkice start
-********************************************************************
+EOM
+}
+]

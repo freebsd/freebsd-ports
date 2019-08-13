@@ -1,4 +1,6 @@
-====
+[
+{ type: install
+  message: <<EOM
 To activate dinotrace Emacs extensions add the following lines
 to your Emacs configuration file (usually ~/.emacs):
 
@@ -11,5 +13,6 @@ to your Emacs configuration file (usually ~/.emacs):
 ;; Sim-Log mode
 (autoload 'sim-log-mode "sim-log" "Mode for Simulation Log files." t)
 (setq auto-mode-alist (append (list '("\\.log$" . sim-log-mode)) auto-mode-alist))
-
-====
+EOM
+}
+]

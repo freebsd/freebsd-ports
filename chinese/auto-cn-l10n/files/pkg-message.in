@@ -1,5 +1,6 @@
-**************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 English Instructions:
  Please tell your users to merge their old dotfiles with the new ones, in
     %%PREFIX%%/share/skel/zh_CN.eucCN/dot.*
@@ -15,6 +16,6 @@ English Instructions:
 
  如果以后需要新增用户,请用类似以下的方式:
     # adduser -k %%PREFIX%%/share/skel/zh_CN.eucCN
-
-**************************************************************************
-
+EOM
+}
+]

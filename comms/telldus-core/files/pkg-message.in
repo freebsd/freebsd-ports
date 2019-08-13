@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 ======
 NOTICE
 ======
@@ -17,4 +19,6 @@ Then start telldusd.
 
 When starting for the first time, you might need to unplug/plugin the device
 to allow devd to fix the permissions on the /dev/ugenX.X device.
-
+EOM
+}
+]

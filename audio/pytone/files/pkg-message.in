@@ -1,5 +1,6 @@
-###############################################################
-
+[
+{ type: install
+  message: <<EOM
 To use pytone, you should copy %%PREFIX%%/etc/pytonerc.sample to:
 
 ~/.pytone/pytonerc
@@ -9,5 +10,6 @@ collection:
 
 [database.main]
 musicbasedir=/root/of/your/music/collection
-
-###############################################################
+EOM
+}
+]

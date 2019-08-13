@@ -1,3 +1,10 @@
+[
+{ type: upgrade
+  maximum_version: 2.1
+  message: <<EOM
 Starting with 2.1, Audacity's settings file format is not 100% compatible
 with previous versions. If Audacity fails to start up, the affected users
 can resolve the issue by removing the ~/.audacity-data directory.
+EOM
+}
+]

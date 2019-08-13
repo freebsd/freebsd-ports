@@ -1,6 +1,12 @@
+[
+{ type: install
+  message: <<EOM
 linrad is now installed.
 linrad is a shell script which "wraps" xlinrad.
 When used for the first time, the linrad wrapper will create a ~/.linrad
 directory which will be your working directory.
 
 Now, go chase some DX.
+EOM
+}
+]

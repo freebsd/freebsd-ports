@@ -1,6 +1,8 @@
-=======================================================================
-
+[
+{ type: install
+  message: <<EOM
 For best performance, it is recommended to build diamond on the
 target system.
-
-=======================================================================
+EOM
+}
+]

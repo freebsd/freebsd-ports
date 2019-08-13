@@ -1,5 +1,6 @@
-=============================================================================
-
+[
+{ type: install
+  message: <<EOM
  The EMBOSS suite has been successfully installed under
  %%PREFIX%%
 
@@ -23,5 +24,6 @@
  biology/embassy port. Remember, though that if you installed EMBOSS in a
  PREFIX other than the default, you will have to install EMBASSY into this
  same PREFIX.
-
-=============================================================================
+EOM
+}
+]

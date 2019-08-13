@@ -1,5 +1,6 @@
---------------------------------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 The FASTA3 package has been successfully installed.
 
 NB:  A sample configuration file has been installed to %%PREFIX%%/etc as
@@ -11,5 +12,6 @@ variable FASTLIBS to contain the full path of the FASTA3 configuration
 file, e.g.:
 
 - set FASTLIBS to:  "%%PREFIX%%/etc/fastlibs"
-
---------------------------------------------------------------------------
+EOM
+}
+]

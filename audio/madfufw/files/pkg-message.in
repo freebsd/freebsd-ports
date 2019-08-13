@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 A devd(8) configuration has been installed at:
 %%PREFIX%%/etc/devd/maudio-devd.conf.
 
@@ -14,3 +17,6 @@ sysctl modifications:
 
 hw.usb.uaudio.default_bits=16
 hw.usb.uaudio.default_rate=48000
+EOM
+}
+]

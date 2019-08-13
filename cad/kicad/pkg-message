@@ -1,4 +1,6 @@
-..........................................................
+[
+{ type: install
+  message: <<EOM
 If you plan to create 3D shapes for Printed board modules,
 install the 3D modeler wings3D (port graphics/wings).
 
@@ -7,4 +9,6 @@ wings3d (not the native .wings format).
 
 Libraries are now available in separate packages: please
 see cad/kicad-library-* .
-..........................................................
+EOM
+}
+]

@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed foo-yc20: an implementation of 1969 designed Yamaha
 combo organ, the YC-20.
 
@@ -13,4 +15,6 @@ In order to use it, please:
   * the MIDI input of foo-yc20 to the output of jack-keyboard.
   * the foo-yc20 audio output to speakers through the Jack's 'system'.
 * Play the jack-keyboard.
-======================================================================
+EOM
+}
+]
