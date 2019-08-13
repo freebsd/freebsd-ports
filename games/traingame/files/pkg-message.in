@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Train Game has been installed.
 
 Now you can play the game by running:
@@ -14,5 +15,6 @@ or manually with
 To use the editor, run:
 
      %%PREFIX%%/bin/traingame edit <map_name_here>
-
-===============================================================================
+EOM
+}
+]

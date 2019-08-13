@@ -1,3 +1,9 @@
+[
+{ type: install
+  message: <<EOM
 You can put default command line switches into a configuration file,
 please see %%EXAMPLESDIR%%/config.example
 for how to do it.
+EOM
+}
+]

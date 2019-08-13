@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Art of Illusion has been installed.
 
 This package does not include all Plugins and Scripts.
@@ -17,5 +18,6 @@ and other Sites and put it in:
 
     %%DATADIR%%/Plugins
     %%DATADIR%%/Scripts/...
-
-===============================================================================
+EOM
+}
+]

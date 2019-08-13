@@ -1,4 +1,8 @@
-===============================================================================
+[
+{ type: install
+  message: <<EOM
 To install an example config file, log into your user account and type
 'make install-user'.
-===============================================================================
+EOM
+}
+]

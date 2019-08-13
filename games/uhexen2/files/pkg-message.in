@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Hexen II: Hammer of Thyrion has been installed.
 
 To complete the installation of this port you have to copy the original
@@ -8,5 +9,6 @@ To complete the installation of this port you have to copy the original
 
 Then see the documentation about patching the data files in
 "%%DOCSDIR%%". The update files are installed.
-
-==============================================================================
+EOM
+}
+]

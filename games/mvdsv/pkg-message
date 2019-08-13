@@ -1,6 +1,8 @@
-==========================================================
-
+[
+{ type: install
+  message: <<EOM
     Make sure to provide required run-time environment
     and server configuration file first before running
-
-==========================================================
+EOM
+}
+]

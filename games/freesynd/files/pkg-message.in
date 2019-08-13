@@ -1,5 +1,6 @@
-==========================================================================
-
+[
+{ type: install
+  message: <<EOM
     Freesynd has been installed.
 
     To actually play the game you need to copy the original game
@@ -9,5 +10,6 @@
     have a different language, you can try setting the test_data
     configuration option to false and see if the game runs with
     that data.
-
-==========================================================================
+EOM
+}
+]

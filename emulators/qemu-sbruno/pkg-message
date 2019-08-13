@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 FreeBSD host notes
 ==================
 
@@ -170,3 +173,6 @@ processing error - resetting ehci HC
   while using pcap.
 
   )
+EOM
+}
+]

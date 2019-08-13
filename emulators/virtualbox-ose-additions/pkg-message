@@ -1,5 +1,6 @@
-=============================================================================
-
+[
+{ type: install
+  message: <<EOM
 VirtualBox Guest Additions were installed.
 
 
@@ -17,5 +18,6 @@ features (clipboard sharing, window scaling) to the wheel group.
 Reboot the machine to load the needed kernel modules.
 
 For detailed informations please visit http://wiki.freebsd.org/VirtualBox
-
-=============================================================================
+EOM
+}
+]

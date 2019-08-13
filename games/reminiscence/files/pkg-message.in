@@ -1,5 +1,6 @@
-==========================================================================
-
+[
+{ type: install
+  message: <<EOM
 REminiscence requires original Flashback datafiles. Copy the following
 files to %%PREFIX%%/share/REminiscence/data/ directory:
 
@@ -14,5 +15,6 @@ If you have a version distributed by SSI, you'll have to rename some files :
   menu1ssi.pal -> menu1.pal
 
 See README for details
-
-==========================================================================
+EOM
+}
+]

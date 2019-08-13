@@ -1,5 +1,6 @@
-=============================================================================
-
+[
+{ type: install
+  message: <<EOM
 VirtualBox was installed.
 
 You need to load the vboxdrv kernel module via /boot/loader.conf:
@@ -63,5 +64,6 @@ Check wiki page for known issues and troubleshooting:
 http://wiki.freebsd.org/VirtualBox
 
 Please report any problems to emulation@. Thanks!
-
-=============================================================================
+EOM
+}
+]

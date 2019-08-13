@@ -1,6 +1,6 @@
-
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 The Unreal Gold game was installed
 
 1) Run the game using:
@@ -14,6 +14,6 @@ The Unreal Gold game was installed
    %%DOCSDIR%%
 
 4) Enjoy it ;)
-
-###############################################################################
-
+EOM
+}
+]

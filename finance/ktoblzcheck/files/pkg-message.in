@@ -1,4 +1,6 @@
---------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 The bankdata included with the ktoblzcheck distribution is outdated.
 You should update this bankdata upon installation and periodically
 afterwards. New bankdata is typically available every three months.
@@ -10,4 +12,6 @@ To update the bankdata, run (as root):
 The script is interactive and will present you with the bankdata
 available for download. Follow the prompts and it will write the
 new bankdata to %%DATADIR%%.
---------------------------------------------------------------------
+EOM
+}
+]

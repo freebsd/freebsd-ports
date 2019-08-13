@@ -1,3 +1,9 @@
+[
+{ type: install
+  message: <<EOM
 Only the english gimp manual is supplied with this port. But other
 translations are available. Please use "pkg search gimp-help" or check
 the graphics/gimp-help meta port.
+EOM
+}
+]

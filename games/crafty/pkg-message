@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This package is set to allow per-user config files, and a shared books
 directory.  To accomplish this, crafty is setgid nobody, and the books
 and learning information are owned by the user 'nobody.'
@@ -17,3 +20,6 @@ where n is a number between 1 and 100.  100 is max (default) skill.
 Skill 70 will drop the playing Elo by about 200 points.  Skill 50 will
 drop it about 400 points.  The curve is not linear, and the closer you
 get to 1, the lower the rating.
+EOM
+}
+]

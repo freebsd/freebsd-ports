@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 The UFO ALien Invasion was installed
 
 1) Run the UFO Client using:
@@ -22,5 +23,6 @@ The UFO ALien Invasion was installed
    avoids some problems during the game.
 
 6) Enjoy it ;)
-
-###############################################################################
+EOM
+}
+]

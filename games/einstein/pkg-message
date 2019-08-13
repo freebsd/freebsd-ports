@@ -1,3 +1,9 @@
+[
+{ type: install
+  message: <<EOM
 This game doesn't come with a proper manual. Please see
 http://www.babichev.info/en/projects/einstein/ for more information
 on how the game is supposed to be played.
+EOM
+}
+]

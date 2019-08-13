@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 3rd Zigock II bots has been installed.
 
 Due to the fact that game library (i.e. game.so file) is unable to read the
@@ -21,5 +22,6 @@ Then run it from the recently created directory.
 See the docs in %%DOCSDIR%% for help on using it.
 
 Check the website for additional DM and CTF maps (respective routes section).
-
-==============================================================================
+EOM
+}
+]

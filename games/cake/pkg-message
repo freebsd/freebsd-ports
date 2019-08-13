@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 You can put custom configuration file in the same directory where you
 run cake binary from, named `config.ini'.  Some default values are:
 
@@ -15,3 +18,6 @@ NOTE: cake requires a gfx card that supports following extensions:
 
     * GL_EXT_compiled_vertex_array
     * GL_ARB_multitexture
+EOM
+}
+]

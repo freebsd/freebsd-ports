@@ -1,10 +1,12 @@
---------------------------------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 The pydance package has been successfully installed.
 
 NB:  A sample configuration file has been installed to %%PREFIX%%/etc as
 "pydance.cfg.sample". This should be renamed to "pydance.cfg" and edited
 to suit the requirements of a particular site (for example in order
 to add song directories).
-
---------------------------------------------------------------------------
+EOM
+}
+]

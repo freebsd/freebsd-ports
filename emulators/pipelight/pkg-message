@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This port installs the Pipelight plugin wrapper for running Silverlight,
 Flash and others. Before enabling Pipelight for your users, run the
 following as root:
@@ -16,3 +19,6 @@ To create the UFS filesystem
 
 To remove the UFS filesystem
 # pipelight-mkufs --delete <username>
+EOM
+}
+]

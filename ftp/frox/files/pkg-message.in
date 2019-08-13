@@ -1,4 +1,6 @@
-**************************************************************************
+[
+{ type: install
+  message: <<EOM
 Don't forget to create %%PREFIX%%/etc/frox.conf.
 See an example in %%EXAMPLESDIR%%/frox.conf
 
@@ -12,4 +14,6 @@ Add `frox_enable="YES"' in /etc/rc.conf and run %%PREFIX%%/etc/rc.d/frox.sh
 frox     stream  tcp     nowait  nobody    %%PREFIX%%/sbin/frox    frox
 * assign a port number for frox inside /etc/services (e.g. 2121):
 frox	2121/tcp
-**************************************************************************
+EOM
+}
+]

@@ -1,4 +1,6 @@
------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 The default configuration file has been installed as
 %%LOCALBASE%%/bin/VisualBoyAdvance.cfg-default. Please copy it to
 %%LOCALBASE%%/bin/VisualBoyAdvance.cfg before you start the emulator.
@@ -6,4 +8,6 @@ The default configuration file has been installed as
 If all you see after loading a ROM is a black screen and/or
 VisualBoy Advance crashes, try switching the video filter.
 Either change it in the global config file or use the -f switch.
------------------------------------------------------------------
+EOM
+}
+]

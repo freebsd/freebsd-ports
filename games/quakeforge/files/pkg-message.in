@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 QuakeForge has been installed.
 
 If you have sound problems try increasing the sound rate. This can be done
@@ -12,5 +13,6 @@ nq-glx +set snd_speed 44100
 Alternatively you can put it in the global configuration file (as root):
 
 echo "set snd_speed 44100" >> %%PREFIX%%/etc/quakeforge.conf
-
-==============================================================================
+EOM
+}
+]

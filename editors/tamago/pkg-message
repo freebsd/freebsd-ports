@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Enabling Tamago
 =================
 
@@ -8,3 +11,6 @@ Japanese:	(set-language-environment "Japanese")
 Korean:		(set-language-environment "Korean")
 Chinese-GB:	(set-language-environment "Chinese-GB")
 Chinese-CNS:	(set-language-environment "Chinese-CNS")
+EOM
+}
+]

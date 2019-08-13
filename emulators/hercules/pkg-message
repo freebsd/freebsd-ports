@@ -1,8 +1,8 @@
-######################################################################
-
-                           IMPORTANT
-
+[
+{ type: install
+  message: <<EOM
   Be sure to have a look at the docs and edit the hercules.cnf file to
 your needs (The sample is in ${PREFIX}/share/doc/hercules)
-
-######################################################################
+EOM
+}
+]

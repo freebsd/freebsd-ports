@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed RetroArch: libretro-based entertainment platform.
 
 RetroArch is the lowest tier of the entertainment platform. The middle
@@ -9,4 +11,6 @@ You can run the stack with this command:
 $ retroarch -L some-core-libretro.so some-game.game
 
 Enjoy!
-======================================================================
+EOM
+}
+]

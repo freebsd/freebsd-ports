@@ -1,6 +1,6 @@
-
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 JonoF's Shadow Warrior is now installed.
 
 Before playing, you need to copy the following files from the original (or
@@ -19,6 +19,6 @@ directory. They must be Ogg Vorbis files and named:
 Launch the game by typing 'jfsw'
 
 Enjoy!
-
-===============================================================================
-
+EOM
+}
+]

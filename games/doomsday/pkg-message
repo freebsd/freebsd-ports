@@ -1,5 +1,6 @@
-========================================================================
-
+[
+{ type: install
+  message: <<EOM
 If you use an Intel graphics adapter and experience missing or
 corrupted textures during gameplay, try launching doomsday with the
 "-notexcomp" option.
@@ -7,5 +8,6 @@ corrupted textures during gameplay, try launching doomsday with the
 If you get the error message "Variable 'audio.soundPlugin' not found"
 after upgrade from 1.15, remove the file ~/.doomsday/runtime/persist.pack
 and try to start doomsday again.
-
-========================================================================
+EOM
+}
+]

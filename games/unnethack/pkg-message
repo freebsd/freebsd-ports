@@ -1,8 +1,12 @@
-====================================================
+[
+{ type: install
+  message: <<EOM
 A sample .unnethackrc file has been copied to
 ${PREFIX}/share/doc/unnethack as sample.unnethackrc.
 Copy it to your home directory as .unnethackrc and
 edit it to taste.
 The options for it are described in
 ${PREFIX}/share/doc/unnethack/Guidebook.txt.
-====================================================
+EOM
+}
+]

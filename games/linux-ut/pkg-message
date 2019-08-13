@@ -1,4 +1,6 @@
-==========================================================================
+[
+{ type: install
+  message: <<EOM
 If you are experiencing problems reading the Unreal Tournament CD/DVD,
 then try mounting it with the -b option.
 
@@ -9,4 +11,6 @@ WITH_451PATCH		Install the v451 patch.  This patch fixes some
 			patch is completely network compatible with v436,
 			so you do not need it for online play.
 WITHOUT_MAPS		Do not install the maps.
-==========================================================================
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Barony requires the original game files from Barony: Blessed Edition
 (e.g. 3.2.x) to work properly.  These can come from the GOG.com
 or the Steam versions of the game.
@@ -23,3 +26,6 @@ for example:
 $ barony -datadir=$HOME/.barony
 
 You do not have to fix file permissions in this case.
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To enable LSP support for configured languages just add following
 commands to your kakrc:
 
@@ -7,3 +10,6 @@ eval %sh{
 		-s $kak_session
 }
 lsp-enable
+EOM
+}
+]

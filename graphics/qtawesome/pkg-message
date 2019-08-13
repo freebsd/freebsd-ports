@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 For the library to be useful, fontawesome-*.ttf must be known to
 fontconfig.
+EOM
+}
+]

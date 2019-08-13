@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Aleph One has been installed.
 
 This package does not include any Aleph One data files. To obtain the original
@@ -8,5 +9,6 @@ contains more (unofficial) scenarios. In addition, you can search for game
 stuff here:
 
 * http://www.simplici7y.com/
-
-==============================================================================
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Some ZFS tuning guides recommend setting KVA_PAGES=512 in your kernel
 configuration.  This is incompatible with Wine.  The maximum possible
 is KVA_PAGES=500, which should still be enough for ZFS.
@@ -7,3 +10,6 @@ additional programs that are not in the manual pages under
   %%PREFIX%%/share/doc/wine
 There is more in the source tree but the others are only useful in
 conjunction with the rest of the source tree.
+EOM
+}
+]

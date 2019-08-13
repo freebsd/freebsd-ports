@@ -1,6 +1,6 @@
-
-=========================================================
-
+[
+{ type: install
+  message: <<EOM
 OpenJazz is now installed. In order to work, the game
 needs additional files. Please buy the full version or
 download the shareware version (e.g.) here :
@@ -11,6 +11,6 @@ and copy every file of the game *uppercase* to
 %%DATADIR%%
 
 Once this is done, run 'openjazz'. Enjoy !
-
-=========================================================
-
+EOM
+}
+]

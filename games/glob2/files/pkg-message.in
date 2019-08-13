@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Globulation 2 has been installed.
 
 You can try to launch it typing
@@ -14,5 +15,6 @@ and read about command lines arguments.
 
 Try to use -G option if you have problems with dri and glx (OpenGL),
 or -m if you have problems with sound, or -C to disable custom cursor.
-
-===============================================================================
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 You need data files from original Doom 3 version 1.3.1 (NOT BFG
 edition):
 
@@ -23,3 +26,6 @@ These should be placed under %%DATADIR%%/d3xp
 
 Please consult https://github.com/dhewm/dhewm3/wiki/FAQ for more
 info.
+EOM
+}
+]

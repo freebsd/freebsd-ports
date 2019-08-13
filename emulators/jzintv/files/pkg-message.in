@@ -1,6 +1,6 @@
-
-=============================================================
-
+[
+{ type: install
+  message: <<EOM
 jzIntv is now installed. To use the emulator, you will need
 an EXEC image (exec.bin), a GROM image (grom.bin), and a
 GAME image. Each file must be copied to this directory :
@@ -15,6 +15,6 @@ http://www.intellivisiongames.com
 
 You can test the emulator by running 'jzintv emu_ver'. If
 everything is ok, run 'jzintv <game>' to play. Enjoy !
-
-=============================================================
-
+EOM
+}
+]

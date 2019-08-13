@@ -1,1 +1,7 @@
+[
+{ type: install
+  message: <<EOM
 Use "digger /A" command to run Digger with sound enabled.
+EOM
+}
+]

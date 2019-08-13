@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 JoeQuake has been installed.
 
 To start it in full-screen mode you can run it with the "-fullscreen"
@@ -15,5 +16,6 @@ If you have sound problems try running it with the parameter
 If you enable water alpha ("r_wateralpha" or from the menu), set "r_novis" to
 "1" or you will have problems with water/lava. Note that the value of
 "r_novis" will be saved in the configuration file.
-
-==============================================================================
+EOM
+}
+]

@@ -1,6 +1,6 @@
-Post-install of GeoServer
-=========================
-
+[
+{ type: install
+  message: <<EOM
 To run geoserver at startup, add
   geoserver_enable="YES"
 in you /etc/rc.conf .
@@ -15,3 +15,6 @@ On your client machine, open the browser with:
 to configure the GIS server.
 
 Enjoy it!
+EOM
+}
+]

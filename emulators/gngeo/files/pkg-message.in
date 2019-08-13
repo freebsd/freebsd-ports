@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 GnGeo has been installed.
 
 1) You need to manually download neogeo-bios or neogeo-unibios. It's available
@@ -31,5 +32,6 @@ GnGeo has been installed.
    Note: Use rom's name (romname) without zip extension.
 
 5) Enjoy it ;)
-
-##############################################################################
+EOM
+}
+]

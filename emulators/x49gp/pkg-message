@@ -1,6 +1,8 @@
--------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
  Instructions
--------------------------------------------------------
+
  - Start a HP 50g with "hp50g"
 
  - Start a HP 49G+ with "hp49g+"
@@ -31,10 +33,12 @@
    When finished:
      umount /mnt
      mdconfig -d -u 0
--------------------------------------------------------
+
  Known limitations
--------------------------------------------------------
+
  - Cannot write to port 2. Libs will eat up your RAM.
 
  - HPGCC2/3 SD I/O is unstable.
--------------------------------------------------------
+EOM
+}
+]

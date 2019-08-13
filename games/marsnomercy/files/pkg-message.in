@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 1) I renamed this port to marsnomercy (Mars Land of No Mercy), because exist a
    port using mars name (cad/mars).
 
@@ -8,5 +9,6 @@
    # mars-nomercy
 
 3) Enjoy it ;)
-
-###############################################################################
+EOM
+}
+]

@@ -1,4 +1,10 @@
+[
+{ type: install
+  message: <<EOM
 After restarting the Gimp you should find the following new item
 in the menu:
 
  * Layer/Liquid rescale
+EOM
+}
+]

@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Naval Robocode has been installed.
 
 Naval Robocode requires a java compiler. By default Naval Robocode will
@@ -12,5 +13,6 @@ You can override this in the Naval Robocode compiler preferences menu:
 Attention not all with Rumble games works, this is work in Progress.
 
 Have fun!
-
-==============================================================================
+EOM
+}
+]

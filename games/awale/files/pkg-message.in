@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Free Awale has been installed.
 
 To start Free Awale please use
@@ -12,5 +13,6 @@ for CLI
 for GUI
 
     %%PREFIX%%/share/applications/awale.desktop
-
-===============================================================================
+EOM
+}
+]

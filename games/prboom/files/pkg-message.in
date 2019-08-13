@@ -1,5 +1,6 @@
-#############################################################
-
+[
+{ type: install
+  message: <<EOM
 1) This port does not install any doom .wad ,
 so you have to download it and run prboom -iwad /path/to/doom.wad
 or put it in /usr/local/share/games/doom/ !
@@ -9,4 +10,6 @@ if you like prboom and  want a newer version
 you should look at http://prboom-plus.sourceforge.net!
 
 3)Have fun!
-############################################################
+EOM
+}
+]

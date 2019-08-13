@@ -1,3 +1,9 @@
+[
+{ type: install
+  message: <<EOM
 Joystick support is untested and it is unknown if it works.
 
 Do not hesitate to contact x11@FreeBSD.org if this causes issues.
+EOM
+}
+]

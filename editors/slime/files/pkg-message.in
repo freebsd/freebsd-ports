@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 To activate SLIME, add these lines to your Emacs initialization.
 
 (setq inferior-lisp-program "PATH_TO_YOUR_LISP_BINARY")
@@ -7,4 +9,6 @@ To activate SLIME, add these lines to your Emacs initialization.
              "%%SLIME_LISPDIR%%/contrib")
 (require 'slime)
 (slime-setup '(slime-repl))
-======================================================================
+EOM
+}
+]

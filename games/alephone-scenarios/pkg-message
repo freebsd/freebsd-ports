@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 The Aleph One scenarios have been installed.
 
 In addition, wrapper scripts for the selected games were installed.
@@ -11,5 +12,6 @@ Red				- alephone-red
 Rubicon X			- alephone-rubicon
 Tempus Irae			- alephone-tempus_irae
 The Gray Incident		- alephone-gray
-
-==============================================================================
+EOM
+}
+]

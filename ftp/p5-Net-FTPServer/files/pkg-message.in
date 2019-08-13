@@ -1,6 +1,10 @@
---------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 You have installed p5-Net-FTPServer, a full-featured ftp daemon written in
 Perl.  For more information, please type `perldoc Net::FTPServer'.  The
 ftpd is installed as %%PREFIX%%/sbin/ftpd.pl, with an example config
 file in %%PREFIX%%/share/examples/Net-FTPServer.
---------------------------------------------------------------------------
+EOM
+}
+]

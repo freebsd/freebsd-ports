@@ -1,6 +1,6 @@
-
-
-
+[
+{ type: install
+  message: <<EOM
 These tablebases do not include the pawn tablebases, which are quite
 large.  This port alone will eat up around 2G. The pawn ending
 tablebases will need to be installed with the
@@ -18,3 +18,6 @@ added to your ~/.craftyrc file:
 
 	egtb
 	cache 12M
+EOM
+}
+]

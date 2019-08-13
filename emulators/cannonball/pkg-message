@@ -1,4 +1,6 @@
-===========================================================================
+[
+{ type: install
+  message: <<EOM
 $FreeBSD$
 
 In order for Cannonball to work you need to provide a copy of the
@@ -13,4 +15,6 @@ which defaults to $HOME/.local/share/cannonball/config.xml
 
 NOTE: The directories will be created on the first run of Cannonball
 if they do not exist.
-===========================================================================
+EOM
+}
+]

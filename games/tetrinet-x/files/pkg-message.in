@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 A startup script for the Tetrinet server has been installed in
 %%PREFIX%%/etc/rc.d/tetrinetx.
 
 Please modify configuration files located in %%DATADIR%%
 before attempting to run Tetrinet server.
+EOM
+}
+]
