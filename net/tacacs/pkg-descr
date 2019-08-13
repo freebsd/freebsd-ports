@@ -1,0 +1,17 @@
+tac_plus is a TACACS+ daemon. It provides Cisco Systems routers and
+access servers with authentication, authorisation and accounting services.
+
+This version is a major rewrite of the original Cisco source code.
+Key features include:
+- NAS specific host keys, prompts, enable passwords
+- NAS- and ACL-dependent group memberships
+- Flexible external backends for user profiles (e.g. via PERL scripts or C;
+ LDAP (including ActiveDirectory), RADIUS and others are included )
+- Connection multiplexing (multiple concurrent NAS clients per process)
+- Session multiplexing
+- Scalable, no limit on users, clients or servers
+- CLI context aware. At the time of writing this, no other TACACS+ daemon is.
+- Both IPv4 and IPv6 are fully supported.
+- Compliant to latest TACACS+ protocol specification (draft 1.78)
+
+WWW: http://www.pro-bono-publico.de/projects/tac_plus.html
