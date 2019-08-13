@@ -4,4 +4,4 @@ developer documentation. c2man already claims to do such a thing, but seems
 crippled in the face of our kernel source. The toolchain used by this port
 winces, but still generates markup.
 
-WWW: http://bsdforge.com/projects/devel/c2mdoc/
+WWW: https://bsdforge.com/projects/devel/c2mdoc/
