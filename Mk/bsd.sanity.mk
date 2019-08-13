@@ -168,6 +168,14 @@ DEV_ERROR+=	"PORT${_type} does not do anything unless the ${_type} option is pre
 .  endif
 .endfor
 
+.if empty(PORTEPOCH) || !empty(PORTEPOCH:C/[0-9]+//)
+DEV_ERROR+=	"PORTEPOCH needs to be an integer \>= 0"
+.endif
+
+.if empty(PORTREVISION) || !empty(PORTREVISION:C/[0-9]+//)
+DEV_ERROR+=	"PORTREVISION needs to be an integer \>= 0"
+.endif
+
 # Whitelist of options helper lookalikes that should not be reported on:
 _OPTIONS_HELPERS_SEEN+=	OPENSSL_LDFLAGS
 _BROKEN_OPTIONS_HELPERS=

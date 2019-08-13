@@ -11,9 +11,6 @@ COMMENT=	Apache module for subversion serving
 
 USES=		apache:2.2+
 
-PORTREVISION_111=	1
-PORTREVISION_19=	0
-
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 
 CONFIGURE_ARGS+=	--with-apxs=${APXS} \
