@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Welcome to Wise2.2
 
 You must set your WISECONFIGDIR to the config directory before
@@ -10,3 +13,6 @@ To try an example:
 
 cd %%PREFIX%%/share/examples/wise
 genewise road.pep human.genomic
+EOM
+}
+]

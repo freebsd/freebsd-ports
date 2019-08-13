@@ -1,5 +1,6 @@
-*****************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 You need to add following to /etc/rc.conf:
 
 dictd_flags="--locale zh_TW.UTF-8"
@@ -14,5 +15,6 @@ database pydict    { data "%%PREFIX%%/lib/dict/pydict.dict.dz"
                      index "%%PREFIX%%/lib/dict/pydict.index" }
 database cedict    { data "%%PREFIX%%/lib/dict/cedict.dict.dz"
                      index "%%PREFIX%%/lib/dict/cedict.index" }
-
-*****************************************************************************
+EOM
+}
+]

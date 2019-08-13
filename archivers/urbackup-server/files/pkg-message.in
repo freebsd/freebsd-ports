@@ -1,5 +1,6 @@
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
+[
+{ type: install
+  message: <<EOM
 archivers/urbackup-server includes an RC script:
 %%PREFIX%%/etc/rc.d/urbackup_server
 
@@ -25,5 +26,6 @@ This port sets the SUID/SGID bits on the following files:
 
 For details, see:
 https://www.urbackup.org/administration_manual.html
-
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+EOM
+}
+]

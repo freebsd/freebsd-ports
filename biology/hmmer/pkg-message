@@ -1,4 +1,6 @@
----------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 HMMER reads three optional environment variables:
   HMMERDB  - directory location of HMM databases (e.g. PFAM)
   BLASTDB  - directory location of FASTA-formatted sequence databases
@@ -10,4 +12,6 @@ variables are set, you do not have to specify the full path to your
 databases on the command line when using HMMER.
 
 Please see the documentation for more information.
----------------------------------------------------------------------------
+EOM
+}
+]

@@ -1,3 +1,7 @@
-=====================================================================
+[
+{ type: install
+  message: <<EOM
 Notice, that You need a full duplex soundcard to use this software.
-=====================================================================
+EOM
+}
+]

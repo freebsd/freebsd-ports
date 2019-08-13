@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
   Flacon uses external programs to perform audio conversion.  Install
   them manually, depending on your needs, from the following ports or
   corresponding packages:
@@ -7,3 +10,6 @@
 		audio/mp3gain		audio/opus-tools
 		audio/tta		audio/vorbisgain
 		audio/vorbis-tools	audio/wavpack
+EOM
+}
+]

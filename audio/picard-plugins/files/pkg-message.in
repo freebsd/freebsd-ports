@@ -1,5 +1,6 @@
-========================================================================
-
+[
+{ type: install
+  message: <<EOM
 Due to toolchain issues, if you enabled the BPM option, the bpm plugin
 will probably not work out-of-the-box. Upon startup, picard will likely
 write to stderr something like:
@@ -14,5 +15,6 @@ solution can be worked out:
   $ env LD_LIBRARY_PATH=%%LOCALBASE%%/lib/gcc%%GCC_VER%% picard
 
 See: https://wiki.freebsd.org/libgcc%20problem
-
-========================================================================
+EOM
+}
+]

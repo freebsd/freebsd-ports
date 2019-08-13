@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Des fichiers de configuration standards ont été préparés dans le répertoire
 %%inst_dir%%/ASTK_CLIENT/etc/astkrc/.
 Veuillez les vérifier, et n'oubliez pas d'installer la partie serveur
@@ -33,3 +36,6 @@ your configuration.
 
 ASTK launches xterm with -display: check that Xorg is not launched with
 -nolisten tcp
+EOM
+}
+]

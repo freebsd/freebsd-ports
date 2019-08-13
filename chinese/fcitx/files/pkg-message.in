@@ -1,5 +1,6 @@
-************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Remember to set the environment variable XMODIFIERS:
 
 	csh/tcsh:	setenv XMODIFIERS @im=fcitx
@@ -22,5 +23,6 @@ To start fcitx with your desktop, just
 
 	cp %%PREFIX%%/share/applications/fcitx.desktop \
 	    ~/.config/autostart/
-
-************************************************************************
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To start icecast at system boot, copy
 %%PREFIX%%/etc/icecast.xml.sample to %%PREFIX%%/etc/icecast.xml, customize
 to your environment as desired and add:
@@ -16,3 +19,6 @@ icecast_flags="-c /path/to/your/configuration.xml"
 ** Also make sure that the user you choose is able to write to your **
 **  configured log directory, otherwise icecast will refuse to run. **
 **********************************************************************
+EOM
+}
+]

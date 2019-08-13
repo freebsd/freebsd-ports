@@ -1,8 +1,12 @@
-********************************************************************
+[
+{ type: install
+  message: <<EOM
 Xastir is now installed.
 
 Hop on over to http://www.xastir.org/ for details on getting
 maps and for more information on using Xastir.
 
 Your map directory is %%PREFIX%%/share/xastir/maps
-********************************************************************
+EOM
+}
+]

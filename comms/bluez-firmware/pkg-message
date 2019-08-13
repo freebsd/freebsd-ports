@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 NOTICE
 ======
 
@@ -37,4 +39,6 @@ you should then see the following lines in your dmesg(8):
  ubt0: <Broadcom Corp. BCM2033, class 224/1, rev 1.01/0.a0, addr 7> on uhub0
  ubt0: Interface 0 endpoints: interrupt=0x81, bulk-in=0x82, bulk-out=0x2
  ubt0: Interface 1 (alt.config 4) endpoints: isoc-in=0x83, isoc-out=0x3; wMaxPacketSize=64; nframes=5, buffer size=320
-
+EOM
+}
+]

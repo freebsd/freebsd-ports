@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 GVolWheel has been installed.
 
 You could adjust which mixer you wish to use with
@@ -13,5 +14,6 @@ Default is used ALSA with
 You could use aumix with similar settings
 
     aumix -d /dev/mixer2 -I
-
-===============================================================================
+EOM
+}
+]

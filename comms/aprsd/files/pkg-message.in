@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 aprsd is now installed
 
 aprsd has various config files to set up in %%PREFIX%%/etc/aprsd
@@ -5,3 +8,6 @@ logs are kept in /var/log/aprsd
 
 To enable aprsd you need to add: aprsd_enable="YES" to /etc/rc.conf
 to run aprsd as UID aprsd   add: aprsd_root="NO" to /etc/rc.conf
+EOM
+}
+]

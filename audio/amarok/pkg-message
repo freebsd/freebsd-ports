@@ -1,5 +1,6 @@
-======================================================================
-
+[
+{ type: install
+  message: <<EOM
 In order to use certain devices (MTP, iPod...) with Amarok you need to
 be able to mount USB devices as the user running Amarok. If HAL
 automount doesn't work, read more on how to set this up on FreeBSD
@@ -9,5 +10,6 @@ http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/usb-disks.html
 If you are not running a full KDE workspace, you should consider
 installing a Phonon backend (multimedia/phonon-gstreamer or
 multimedia/phonon-vlc) to get audio playback.
-
-======================================================================
+EOM
+}
+]

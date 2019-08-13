@@ -1,4 +1,10 @@
+[
+{ type: install
+  message: <<EOM
 The default sndiod configuration on FreeBSD already has monitor mode
 enabled.  To start spectrogram run
 
 	env AUDIODEVICE=snd/0.monitor spectrogram
+EOM
+}
+]

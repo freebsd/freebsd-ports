@@ -1,3 +1,9 @@
+[
+{ type: install
+  message: <<EOM
 If you need to tune osm2mp configuration files, you may copy
 %%DATADIR%% to some directory you own and use
 osm2mp's --config option to point it to modified files.
+EOM
+}
+]

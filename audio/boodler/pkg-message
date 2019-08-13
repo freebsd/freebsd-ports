@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The wrapper "boodler" has been installed. Use it to create
 soundscapes.
 
@@ -8,3 +11,6 @@ python boodler.py module.ClassName
 
 You can instead run:
 boodler module.ClassName
+EOM
+}
+]

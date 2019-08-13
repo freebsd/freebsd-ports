@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed Faust: the programming language for realtime audio
 signal processing.
 
@@ -11,4 +13,6 @@ $ faust2jaqt sine.dsp
 $ ./sine;
 
 It will create the window with sliders for two tunable oscillators.
-======================================================================
+EOM
+}
+]

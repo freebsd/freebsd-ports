@@ -1,5 +1,6 @@
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
+[
+{ type: install
+  message: <<EOM
 archivers/urbackup-client includes an RC script:
 %%PREFIX%%/etc/rc.d/urbackup_client
 
@@ -27,5 +28,6 @@ needs to have one of the following in its PATH:
 
 The client can also be configured via the UrBackup Server, or
 %%PREFIX%%/bin/urbackupclientctl
-
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 You need to set up XMMS2-Scrobbler's config files.
 Config values that are specific to the AudioScrobbler server go in
 	~/.config/xmms2/clients/xmms2-scrobbler/$SERVER_NAME/config.
@@ -24,3 +27,6 @@ about that proxy.  This information applies to all servers and so goes in
 
 If you wish for XMMS2Scrobbler to start when you start xmms2d, make a
 symbolic link from %%PREFIX%%/bin/xmms2-scrobbler to ~/.xmms2/startup.d/
+EOM
+}
+]

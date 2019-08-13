@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 To enable/start the TeamSpeak server
 
 sysrc teamspeak_enable="YES"
@@ -12,8 +14,15 @@ into the logs in %%LOGDIR%%
 
 TeamSpeak DNS server (tsdns) is not handled by this port. If you
 need it, please download and install it manually.
-
+EOM
+}
+{ type: upgrade
+  maximum_version: 3.0.13
+  message: <<EOM
 Version 3.0.13 adds ipv6 support. To disable ipv6
 printf "voice_ip=0.0.0.0\nfiletransfer_ip=0.0.0.0\n" >>\
 %%ETCDIR%%/ts3server.ini
 The default value is 0.0.0.0 / 0::0, which activates IPv6.
+EOM
+}
+]

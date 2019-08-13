@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Yasr requires a text-to-speech engine to work. FreeBSD offers two: Festival
 and FLite (Festival Lite). Edit the system configuration file
 %%DATADIR%%/yasr.conf
@@ -22,5 +23,6 @@ FLite
     synthesizer port=|%%LOCALBASE%%/bin/eflite
 
 See man page for more information.
-
-==============================================================================
+EOM
+}
+]

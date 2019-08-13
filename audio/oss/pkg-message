@@ -1,9 +1,11 @@
----------------------------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 This port uses installation procedure that is very different from
 the one used by 4Front and is not supported by them.  All bug reports
 should go to the port maintainer via the usual PR mechanism.
 
 To load OSS at boot, add oss_enable="YES" to your /etc/rc.conf.
-
----------------------------------------------------------------------
+EOM
+}
+]

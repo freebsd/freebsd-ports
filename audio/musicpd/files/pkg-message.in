@@ -1,5 +1,6 @@
-****************************************************************
-
+[
+{ type: install
+  message: <<EOM
 The musicpd package has been successfully installed.
 
 In order to run the MPD server, you need to edit the provided
@@ -37,5 +38,6 @@ NOTE: The musicpd server does not come with a client. In order
       GNOME / GTK: ario, gimmix, glurp, gmpc, sonata
       KDE / Qt: cantana, quimup, qmpdlient
       Web: phpmp
-
-****************************************************************
+EOM
+}
+]

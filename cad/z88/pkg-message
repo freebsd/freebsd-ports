@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Z88 normally assumes that all the files for the software are located
 in the same directory - i.e. all binaries, configuration files, input
 and output files should be in the same directory. The port instead
@@ -15,3 +18,6 @@ ${HOME}/.z88/z88.fcd.
 No explicit dependency on gedit or firefox is set in the port, hence
 if a user really wants to use gedit or firefox it is necessary to
 install them manually on the system.
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Hylafax was installed.  You'll need manual configurations to actually
 activate it.
 
@@ -21,3 +24,6 @@ Documentation:
 	On Line Manuals: 	man hylafax-client
 				man hylafax-server
 	World Wide Web site:	http://www.hylafax.org/
+EOM
+}
+]

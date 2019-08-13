@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The Arduino Uno uses a specific vendor ID of 0x2341 and product ID of 0x0001
 
 If you modify your Arduino Uno to use a DIFFERENT vendor ID or product ID, you
@@ -16,3 +19,6 @@ To automatically load the driver on startup, add the following line to
 your /boot/loader.conf file:
 
   uarduno_load="YES"
+EOM
+}
+]

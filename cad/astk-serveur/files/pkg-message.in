@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 N'oubliez pas d'installer la partie cliente sur vos stations.
 
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 Do not forget to install the client side on your stations.
+EOM
+}
+]
