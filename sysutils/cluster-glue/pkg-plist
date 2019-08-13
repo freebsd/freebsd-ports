@@ -119,8 +119,6 @@ lib/stonith/plugins/stonith2/apcsmart.a
 lib/stonith/plugins/stonith2/apcsmart.so
 lib/stonith/plugins/stonith2/baytech.a
 lib/stonith/plugins/stonith2/baytech.so
-%%HPI%%lib/stonith/plugins/stonith2/bladehpi.a
-%%HPI%%lib/stonith/plugins/stonith2/bladehpi.so
 lib/stonith/plugins/stonith2/cyclades.a
 lib/stonith/plugins/stonith2/cyclades.so
 %%DRAC3%%lib/stonith/plugins/stonith2/drac3.a
