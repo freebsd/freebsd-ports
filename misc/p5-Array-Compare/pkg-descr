@@ -12,5 +12,3 @@ of columns which differ or an array containing the indexes of the
 differing columns.
 
 WWW: https://metacpan.org/release/Array-Compare
-
-Seamus Venasse <svenasse@polaris.ca>
