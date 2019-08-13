@@ -138,7 +138,13 @@ for _line in ${dp_RAWDEPENDS} ; do
 	depends_args="${dp_DEPENDS_ARGS}"
 	target=${dp_DEPENDS_TARGET}
 	if [ -n "${last}" ]; then
-		target=${last}
+		# In case we depend on the fetch stage, actually run checksum,
+		# this prevent a MITM attack.
+		if [ "${last}" = "fetch" ]; then
+			target=checksum
+		else
+			target=${last}
+		fi
 		if [ -n "${dp_DEPENDS_PRECLEAN}" ]; then
 			target="clean ${target}"
 			depends_args="${depends_args:+${depends_args} }NOCLEANDEPENDS=yes"
