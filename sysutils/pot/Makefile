@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pot
-PORTVERSION=	0.6.1
+PORTVERSION=	0.9.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -40,6 +40,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/pot/pot.conf.sample \
 		${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/pot/flavours/dns.sh \
+		${STAGEDIR}${ETCDIR}/flavours
+	${INSTALL_DATA} ${WRKSRC}/etc/pot/flavours/slim.sh \
 		${STAGEDIR}${ETCDIR}/flavours
 
 do-install-ZSH-on:
