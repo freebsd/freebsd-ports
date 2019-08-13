@@ -2,8 +2,8 @@
 
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
-PORTVERSION=	4.12.0
-PORTREVISION=	2
+PORTVERSION=	4.12.1
+PORTREVISION=	0
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -55,20 +55,6 @@ INSTALL_TARGET=		install-tools
 DOCS_INSTALL_TARGET=	install-docs
 
 EXTRA_PATCHES+=	${PATCHDIR}/0001-tools-include-propagate-python-interpreter-path.patch:-p1
-
-# Pre-patches for XSA-297 to apply cleanly
-EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-tsx-Implement-controls-for-RTM-force-abort-mode.patch:-p1 \
-		${PATCHDIR}/0001-x86-msr-Shorten-ARCH_CAPABILITIES_-constants.patch:-p1 \
-		${PATCHDIR}/0002-x86-spec-ctrl-Extend-repoline-safey-calcuations-for-.patch:-p1
-
-# Fixes for XSA-297 (MDS)
-EXTRA_PATCHES+=	${PATCHDIR}/xsa297-4.12-1.patch:-p1 \
-		${PATCHDIR}/xsa297-4.12-2.patch:-p1 \
-		${PATCHDIR}/xsa297-4.12-3.patch:-p1 \
-		${PATCHDIR}/xsa297-4.12-4.patch:-p1 \
-		${PATCHDIR}/xsa297-4.12-5.patch:-p1 \
-		${PATCHDIR}/xsa297-4.12-6.patch:-p1 \
-		${PATCHDIR}/xsa297-4.12-7.patch:-p1
 
 # LLD 8 changed the behaviour re the placement of orphaned sections, which
 # produces a non-bootable Xen kernel:
