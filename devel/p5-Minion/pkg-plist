@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Minion.pm
 %%SITE_PERL%%/Minion/Backend.pm
 %%SITE_PERL%%/Minion/Backend/Pg.pm
+%%SITE_PERL%%/Minion/Backend/resources/migrations/pg.sql
 %%SITE_PERL%%/Minion/Command/minion.pm
 %%SITE_PERL%%/Minion/Command/minion/job.pm
 %%SITE_PERL%%/Minion/Command/minion/worker.pm
