@@ -1,5 +1,6 @@
-========================================================================
-
+[
+{ type: install
+  message: <<EOM
 The rbldnsd port has been installed with an example zone file, located
 in %%PREFIX%%/etc/rbldnsd/.
 
@@ -13,5 +14,6 @@ or
 	% nslookup -query=any 1.1.31.172.bl.example.com. localhost
 
 If you see a response that mentions 127.0.0.2, the install worked!
-
-========================================================================
+EOM
+}
+]

@@ -1,6 +1,6 @@
-
-======================================================================
-
+[
+{ type: install
+  message: <<EOM
 Before being able to run wfb2sql, you need to obtain a copy of the
 CIA's World Fact Book.  A copy of the WFB can be found here:
 
@@ -32,3 +32,6 @@ NOTE: wfb2sql inserts data into the wfb schema!
         ^$$$B  $$$$\     $$$$$$$$$$$$   d$$R"
           "*$bd$$$$      '*$$$$$$$$$$$o+#"
                """"          """""""
+EOM
+}
+]

@@ -1,5 +1,6 @@
-	ATTENTION:
-
+[
+{ type: install
+  message: <<EOM
 TIGCC is now installed but in order for it
 to work you need to define some stuff.
 
@@ -14,3 +15,6 @@ setenv TIGCC	%%PREFIX%%/tigcc
 setenv PATH	$PATH:$TIGCC/bin
 
 into the .cshrc file in your home directory.
+EOM
+}
+]

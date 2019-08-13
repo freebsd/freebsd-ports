@@ -1,5 +1,6 @@
-################################################################################
-
+[
+{ type: install
+  message: <<EOM
 Parcellite has been installed.
 
 This program will attempt to obtain some system information by accessing files
@@ -17,5 +18,6 @@ mount /proc
 
 kldload linprocfs
 mount /compat/linux/proc
-
-################################################################################
+EOM
+}
+]

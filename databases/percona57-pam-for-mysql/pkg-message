@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Documentation for using percona-pam-for-mysql authentication plugin can
 be found at:
 
@@ -8,3 +11,6 @@ server for authentication to be successful.
 
 This version of the plugin is compatible with the new auth plugin API
 introduced in MySQL 5.7.
+EOM
+}
+]

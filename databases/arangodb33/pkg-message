@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed ArangoDB: a distributed NoSQL database.
 
 To enable the service at startup, you should execute the command:
@@ -20,4 +22,6 @@ data.
 
 ArangoDB uses the AQL language to query and modify data, as opposed to
 the SQL language used by relational databases.
-======================================================================
+EOM
+}
+]

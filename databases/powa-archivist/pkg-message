@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To activate powa-archvist on your PostgreSQL server, add 'powa' to the list of
 shared_preload_libraries in $PGDATA/postgresql.conf:
 
@@ -22,3 +25,6 @@ Optionally, but warmly recommended, is the use of databases/pg_qualstats and
 databases/pg_stat_kcache together with powa.
 
 Use the databases/powa-web port to visualize the data.
+EOM
+}
+]

@@ -1,4 +1,6 @@
-***********************************************************
+[
+{ type: install
+  message: <<EOM
 If this is the first time you are installing %%PORTNAME%%, you will need
 to add a default administrator, and initialise the database node.
 
@@ -30,4 +32,6 @@ Then use the admin interface at http://127.0.0.1:5984/_utils/# as usual.
 
 For more information see
 http://docs.couchdb.org/en/latest/install/setup.html
-***********************************************************
+EOM
+}
+]

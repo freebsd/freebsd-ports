@@ -1,7 +1,11 @@
-
+[
+{ type: install
+  message: <<EOM
 FrontBase JDBC support installed!
 
 frontbasejdbc.jar resides in
 %%JAVAJARDIR%%/frontbasejdbc.jar
 Add this to your CLASSPATH!
-
+EOM
+}
+]

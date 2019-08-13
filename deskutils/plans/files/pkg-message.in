@@ -1,6 +1,10 @@
-===========================================================
+[
+{ type: install
+  message: <<EOM
 Plans is now installed at %%WWWDIR%%
 You'll need to configure your server to accept CGI scripts
 in the directory. Plans can be configured by editing
 %%WWWDIR%%/plans_config.pl
-===========================================================
+EOM
+}
+]

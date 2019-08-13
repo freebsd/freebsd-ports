@@ -1,7 +1,12 @@
-
+[
+{ type: install
+  message: <<EOM
 Starting with CIDER 0.7, the installation of cider-nrepl is manual.
 Please install devel/leiningen and add the following to
 ~/.lein/profiles.clj:
 
 { :user
  { :plugins [[cider/cider-nrepl "0.7.0-SNAPSHOT"]] }
+EOM
+}
+]

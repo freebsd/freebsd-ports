@@ -1,5 +1,6 @@
-==========================================================================
-
+[
+{ type: install
+  message: <<EOM
 FreeBSD phpBugTracker installation instructions:
 
 Optional: Install JpGraph (http://www.aditus.nu/jpgraph/) if you
@@ -18,5 +19,6 @@ wish to use it.
 * Note: You must have magic_quotes_gpc set to On either in php.ini
 or in .htaccess (see http://www.php.net/manual/en/configuration.php
 for more info).
-
-==========================================================================
+EOM
+}
+]

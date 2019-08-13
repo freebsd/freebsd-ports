@@ -1,6 +1,6 @@
-----------------------------------------------------------------------------
-Post installation instructions:
-----------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 MyITCRM is now installed in documentroot: %%WWWDIR%%.
 
 1) Create user, MySQL database and set privileges:
@@ -29,4 +29,6 @@ Recommended php.ini settings:
 - memory_limit=32M
 - register_globals=off
 - safe_mode=off
-============================================================================
+EOM
+}
+]

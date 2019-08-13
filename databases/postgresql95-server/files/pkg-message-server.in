@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 For procedural languages and postgresql functions, please note that
 you might have to update them when updating the server.
 
@@ -61,4 +64,6 @@ NB. If you're not using a checksumming filesystem like ZFS, you might
 
 To run PostgreSQL at startup, add
 'postgresql_enable="YES"' to /etc/rc.conf
-
+EOM
+}
+]

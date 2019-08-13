@@ -1,5 +1,6 @@
-************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Remember to run mysql_upgrade (with the optional --datadir=<dbdir> flag)
 the first time you start the MySQL server after an upgrade from an
 earlier version.
@@ -11,5 +12,6 @@ my.cnf. Please move existing my.cnf files from those paths to
 This port does NOT include the mytop perl script, this is included in
 the MariaDB tarball but the most recent version can be found in the
 databases/mytop port
-
-************************************************************************
+EOM
+}
+]

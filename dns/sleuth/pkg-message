@@ -1,7 +1,9 @@
-============================================================
-
+[
+{ type: install
+  message: <<EOM
 Before you can run "sleuth" you will need to copy
 
 ${PREFIX}etc/sleuth.conf.sample to ${PREFIX}etc/sleuth.conf
-
-============================================================
+EOM
+}
+]

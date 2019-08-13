@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 If your system is the build master, i.e. it is the system that runs
 the Trac instance and integrates with the SCM, you need to configure
 Trac to load the Bitten plugin and give permissions to the build
@@ -10,3 +13,6 @@ username and password appropriately for the build slaves.
 
 For more detailed instructions please have a look at the documentation
 at http://bitten.edgewall.org/wiki/Documentation/install.html
+EOM
+}
+]

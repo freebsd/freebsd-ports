@@ -1,5 +1,6 @@
-======================================================================
-
+[
+{ type: install
+  message: <<EOM
 Add the following to the /etc/profile.d/chruby.sh, ~/.bash_profile or
 ~/.zprofile file:
 
@@ -23,5 +24,6 @@ rbfu: RUBIES=('~/.rbfu/rubies/*)
 To enable auto-switching of Rubies specified by .ruby-version files:
 
 source %%PREFIX%%/share/chruby/auto.sh
-
-======================================================================
+EOM
+}
+]

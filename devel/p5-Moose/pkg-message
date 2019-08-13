@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Note that this release of p5-Moose is incompatible with
 older versions of the following modules:
 
@@ -29,3 +32,6 @@ older versions of the following modules:
        Pod::Elemental                  <= 0.093280
 
 They will need to be updated.
+EOM
+}
+]

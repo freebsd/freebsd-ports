@@ -1,4 +1,6 @@
-**********************************************************************
+[
+{ type: install
+  message: <<EOM
 To enable dnsproxy you need:
 
 1) Enable dnsproxy in /etc/rc.conf with the following line:
@@ -8,7 +10,6 @@ To enable dnsproxy you need:
    dnsproxy.conf.sample file.
 
 For more information see man dnsproxy(1)
-
-**********************************************************************
-
-
+EOM
+}
+]

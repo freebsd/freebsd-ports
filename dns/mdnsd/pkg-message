@@ -1,4 +1,10 @@
+[
+{ type: install
+  message: <<EOM
 To use:
      mdnsd 'unique name' 12.34.56.78 80 '/optionalpath'
 For example:
      mdnsd audiotron 192.168.123.195 80 '/index.asp' &
+EOM
+}
+]

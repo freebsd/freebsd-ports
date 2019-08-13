@@ -1,4 +1,6 @@
-************************************************************************
+[
+{ type: install
+  message: <<EOM
 Note for Oracle users:
 
     In order to connect in a simple way to an Oracle database, it is needed to
@@ -18,5 +20,6 @@ Note for MySQL users:
     menu, select Database -> Third Party JDBC Drivers and add the proper jar.
     Do not install 5.1 version of mysql jdbc connector; see
     https://docs.oracle.com/en/database/oracle/sql-developer/18.4/rptig/installing-sql-developer.html#GUID-3F68CF20-D03D-431C-A9A2-0EB971F06448
-
-************************************************************************
+EOM
+}
+]

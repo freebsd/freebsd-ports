@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 You will need to enable CAM support in the kernel.  Your kernel
 configuation should include:
     for SCSI CD/DVD devices:
@@ -14,3 +17,6 @@ In /etc/devfs.rules, add the following:
 	add path 'cd*' mode 0666
 	add path 'pass*' mode 0666
 	add path 'xpt*' mode 0666
+EOM
+}
+]

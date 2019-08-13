@@ -1,4 +1,6 @@
-########################################################################
+[
+{ type: install
+  message: <<EOM
 Add this line to your Emacs initialization.
 
 (require 'bbdb-loaddefs)
@@ -11,4 +13,6 @@ use, you may also want to add something similar to these lines.
 
 Refer to Emacs' help for these two functions, bbdb-initialize and
 bbdb-mua-auto-update-init, for details.
-########################################################################
+EOM
+}
+]

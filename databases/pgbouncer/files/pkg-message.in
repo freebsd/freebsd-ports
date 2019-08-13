@@ -1,6 +1,6 @@
-
-===>  CONFIGURATION NOTE:
-
+[
+{ type: install
+  message: <<EOM
       To setup pgbouncer you need to edit the configuration file:
       %%PREFIX%%/etc/pgbouncer.ini
 
@@ -10,3 +10,6 @@
 
       To run pgbouncer from startup, add pgbouncer_enable="YES"
       in your /etc/rc.conf.
+EOM
+}
+]

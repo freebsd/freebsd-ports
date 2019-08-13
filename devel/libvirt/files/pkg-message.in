@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 To enable libvirtd please add libvirtd_enable="YES" to
 /etc/rc.conf.
 
@@ -25,3 +27,6 @@ to take effect.
 %%BHYVE%%   or:
 %%BHYVE%% http://libvirt.org/drvbhyve.html
 %%BHYVE%%
+EOM
+}
+]

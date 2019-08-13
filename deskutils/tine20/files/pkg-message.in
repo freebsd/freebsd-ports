@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 Preparing the database
 ---------------------------------------------
 
@@ -61,3 +63,6 @@ https://wiki.tine20.org/Admins/Synchronisation
 More information on how to setup CalDAV can be found here:
 
 https://wiki.tine20.org/Admins/Thunderbird-Synchronisation
+EOM
+}
+]

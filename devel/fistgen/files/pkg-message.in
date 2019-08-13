@@ -1,5 +1,6 @@
-============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Templates were installed in %%DATADIR%%.
 Examples were installed in %%EXAMPLESDIR%%.
 
@@ -17,5 +18,6 @@ Then you can chdir to out/OS-VER/FSNAME and type 'make'.
 
 See %%DOCSDIR%%/README, %%DOCSDIR%%/INSTALL
 and http://www.filesystems.org for further instructions.
-
-============================================================================
+EOM
+}
+]

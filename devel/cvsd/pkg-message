@@ -1,4 +1,8 @@
-************************************************************
+[
+{ type: install
+  message: <<EOM
 You should set up user and group ids for cvsd, create a
 chrooted filesystem and create repositories.
-************************************************************
+EOM
+}
+]

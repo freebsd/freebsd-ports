@@ -1,4 +1,6 @@
-**********************************************************************
+[
+{ type: install
+  message: <<EOM
 To get MyDNS working you will need to do some configuration, first you
 will need to create %%PREFIX%%/etc/mydns.conf based on the
 installed sample file. Following that you will need to setup your
@@ -11,4 +13,6 @@ as a template. Finally enable MyDNS by adding
  mydns_enable="YES"
 
 into your rc.conf.
-*********************************************************************
+EOM
+}
+]

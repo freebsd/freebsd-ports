@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 You are suggested to set the following on php.ini:
 
 	include_path should include "."
@@ -12,3 +14,6 @@ calendar2, it has a somewhat unclear future.
 
 The admin3 is not finished yet, don't use it, or READ THE DOCS
 if you really want to try it!
+EOM
+}
+]

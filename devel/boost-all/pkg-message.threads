@@ -1,4 +1,10 @@
+[
+{ type: install
+  message: <<EOM
 You have built the Boost library with thread support.
 
 Don't forget to add -pthread to your linker options when
 linking your code.
+EOM
+}
+]

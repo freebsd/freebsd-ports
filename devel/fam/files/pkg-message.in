@@ -1,5 +1,6 @@
-************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 1. In order to run this port, please add the following line to /etc/rpc if
 it is not already there:
 
@@ -27,5 +28,6 @@ Add portmap_enable="YES" and either reboot or run /usr/sbin/portmap.
 
 For 5.x and later:
 Add rpcbind_enable="YES" and either reboot or run /etc/rc.d/rpcbind start.
-
-************************************************************************
+EOM
+}
+]

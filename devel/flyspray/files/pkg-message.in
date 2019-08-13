@@ -1,7 +1,9 @@
-##
-
+[
+{ type: install
+  message: <<EOM
 Please read the installation instructions in:
 
 	%%DOCSDIR%%/README.FreeBSD
-
-##
+EOM
+}
+]

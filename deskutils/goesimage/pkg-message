@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed goesimage, the program that downloads images from the
 NOAA Geostationary Operational Environment Satellite and makes them
 your wallpaper.
@@ -19,4 +21,6 @@ $ goesimage-disable
 
 You can also download and update the wallpaper any time:
 $ goesimage-run-now
-======================================================================
+EOM
+}
+]

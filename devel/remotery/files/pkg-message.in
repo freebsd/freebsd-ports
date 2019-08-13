@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Compiling the sample program
 ============================
 
@@ -11,3 +14,6 @@ Using the Remote Web Viewer
 ===========================
 
 Open %%DATADIR%%/index.html in a web browser.
+EOM
+}
+]

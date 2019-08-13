@@ -1,9 +1,11 @@
-########################################################################
-
+[
+{ type: install
+  message: <<EOM
                       dynip
 
              Dynamic IP Address Updater
 
    Issue "man dynip"  For set up and usage information
-
-########################################################################
+EOM
+}
+]

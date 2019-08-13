@@ -1,5 +1,7 @@
-****************************************************************************
-
+[
+{ type: upgrade
+  maximum_version: 1.6
+  message: <<EOM
 If you are upgrading cstore_fdw from a version prior to 1.6, you need 
 to execute the following steps:
 
@@ -10,5 +12,6 @@ to execute the following steps:
 Please, visit the following URL for more information:
 
 https://github.com/citusdata/cstore_fdw/blob/master/README.md
-
-***************************************************************************
+EOM
+}
+]

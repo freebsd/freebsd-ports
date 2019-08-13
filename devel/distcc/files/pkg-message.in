@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 WARNING: distcc[d] performs NO AUTHENTICATION at all and should
 ONLY be used in trusted networks!
 
@@ -24,3 +27,6 @@ instead override the value of distccd_flags in /etc/rc.conf.
 
 Note that remote daemons currently won't work if they cannot
 resolve the reverse DNS of the master machine
+EOM
+}
+]

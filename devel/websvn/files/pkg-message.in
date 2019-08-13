@@ -1,7 +1,11 @@
-----------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 To setup WebSVN, please edit the configuration file:
 %%WWWDIR%%/include/config.php
 
 and modify your web server's configuration to serve
 WebSVN actually!
-----------------------------------------------------
+EOM
+}
+]

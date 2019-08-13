@@ -1,5 +1,6 @@
-************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 	Before start the SonarQube, prepare the Database and
 	the Web Server, when installing for the first time.
 
@@ -11,5 +12,6 @@
 
 	To run the SonarQube from startup, add sonarqube_enable="YES"
 	in your /etc/rc.conf
-
-************************************************************************
+EOM
+}
+]

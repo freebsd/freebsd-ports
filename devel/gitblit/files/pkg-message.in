@@ -1,5 +1,6 @@
-************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 	By default, Gitblit stores all data (users, settings,
 	repositories, etc) in ${contextFolder}/WEB-INF/data.
 	Specifying an alternate "baseFolder" allows for simple
@@ -20,5 +21,6 @@
 
 	More informations:
 	http://gitblit.com/setup_war.html
-
-************************************************************************
+EOM
+}
+]

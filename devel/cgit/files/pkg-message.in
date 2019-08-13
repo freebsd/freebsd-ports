@@ -1,4 +1,6 @@
----------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 cgit has been successfully installed.
 
 To enable cgit in Apache, use something like the following:
@@ -11,4 +13,6 @@ To enable cgit in Apache, use something like the following:
 
 Documentation and sample configuration can be found
 in %%DOCSDIR%%/cgitrc.5.txt.
----------------------------------------------------
+EOM
+}
+]

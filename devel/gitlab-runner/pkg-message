@@ -1,4 +1,6 @@
-==============================================================================
+[
+{ type: install
+  message: <<EOM
 To enable gitlab-runner:
 
   sysrc gitlab_runner_enable=yes
@@ -14,4 +16,6 @@ To register with GitLab:
 To list status of GitLab:
 
   service gitlab_runner list
-==============================================================================
+EOM
+}
+]

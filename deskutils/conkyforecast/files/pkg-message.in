@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Make sure that the freetype module is loaded.  If it is not, add the following
 line to the "Modules" section of your X Windows configuration file:
 
@@ -16,3 +19,6 @@ To copy and edit the config, using the command line, run:
 
 	cp %%DATADIR%%/conkyForecast.config ~/.conkyForecast.config
 
+EOM
+}
+]

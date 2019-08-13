@@ -1,3 +1,7 @@
-=====================================================================
+[
+{ type: install
+  message: <<EOM
 Review and update %%PREFIX%%/etc/github.backup.config for your needs.
-=====================================================================
+EOM
+}
+]

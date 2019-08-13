@@ -1,5 +1,6 @@
-=====================================================================
-
+[
+{ type: install
+  message: <<EOM
 STAFProc requires machine's hostname to be resolvable.
 
 If you haven't already, please add the following to /etc/hosts:
@@ -11,5 +12,6 @@ To verify do the following:
 
 	ping6 $(hostname)
 	ping  $(hostname)
-
-=====================================================================
+EOM
+}
+]

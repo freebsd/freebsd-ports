@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To connect to your favorite database you can install one of the following JDBC
 drivers.
 
@@ -5,3 +8,6 @@ drivers.
 * databases/postgresql-jdbc
 
 After that you have to configure the driver via the GUI (see Help).
+EOM
+}
+]

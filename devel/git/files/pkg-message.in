@@ -1,6 +1,6 @@
-
-------------------------------------------------------------------------
-*************************** GITWEB *************************************
+[
+{ type: install
+  message: <<EOM
 If you installed the GITWEB option please follow these instructions:
 
 In the directory %%EXAMPLESDIR%%/gitweb you can find all files to
@@ -12,13 +12,12 @@ All you have to do to make gitweb work is:
 2) Set the GITWEB_CONFIG variable in your webserver's config to
    %%ETCDIR%%/gitweb.conf. This variable is passed to gitweb.cgi.
 3) Restart server.
-*************************** GITWEB *************************************
 
-*************************** CONTRIB ************************************
+
 If you installed the CONTRIB option please note that the scripts are
 installed in %%PREFIX%%/share/git-core/contrib. Some of them require
 other ports to be installed (perl, python, etc), which you may need to
 install manually.
-*************************** CONTRIB ************************************
-------------------------------------------------------------------------
-
+EOM
+}
+]

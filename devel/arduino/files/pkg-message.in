@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Notes on using the Arduino IDE:
 
 To allow serial port locking, add your user to the dialer group:
@@ -16,3 +19,6 @@ visible if you started the IDE from a console):
 
 To start the IDE:
     %%PREFIX%%/bin/arduino
+EOM
+}
+]

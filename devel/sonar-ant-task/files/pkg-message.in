@@ -1,5 +1,6 @@
-************************************************************************
-
+[
+{ type: install
+  message: <<EOM
   To integrate SonarQube with SonarQube Scanner for Ant (default
   settings):
   - define a new sonar Ant target in your Ant build script
@@ -9,5 +10,6 @@
 
   More information:
   http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Ant
-
-************************************************************************
+EOM
+}
+]

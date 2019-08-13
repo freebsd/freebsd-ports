@@ -1,4 +1,6 @@
-###########################################################
+[
+{ type: install
+  message: <<EOM
 You must have a registered host with No-IP (www.noip.com)
 to use the noip Dynamic DNS Update Client (DUC).
 
@@ -27,4 +29,6 @@ Refer to the following for more information:
 
 /usr/local/bin/noip2 --help
 /usr/local/share/doc/noip/README.FIRST
-###########################################################
+EOM
+}
+]

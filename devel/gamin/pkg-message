@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Gamin will only provide realtime notification of changes for at most n files,
 where n is the minimum value between (kern.maxfiles * 0.7) and
 (kern.maxfilesperproc - 200). Beyond that limit, files will be polled.
@@ -17,5 +18,6 @@ in one of the gaminrc files:
 # reduce polling frequency to once per 10 seconds
 # for UFS file systems in order to lower CPU load
 fsset ufs poll 10
-
-===============================================================================
+EOM
+}
+]

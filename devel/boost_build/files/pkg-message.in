@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To use boost_build, it is necessary to set BOOST_ROOT in
 your environment:
 
@@ -13,3 +16,6 @@ To override this on a system-wide basis, edit this file:
 For an example of a per-user settings file which may be
 copied to your home directory, see:
 	 %%DATADIR%%/user-config.jam
+EOM
+}
+]

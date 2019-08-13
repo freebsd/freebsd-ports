@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 1. Minimum OS version.
 ======================
 Anydesk is a binary package for FreeBSD.
@@ -15,3 +18,6 @@ Since Version 2.9.1 the following prerequisites have to be met:
 	manually: # mount -t procfs proc /proc
 2. You need a loaded mqueuefs module:
 	manual load: kldload mqueuefs (as root!)
+EOM
+}
+]

@@ -1,4 +1,8 @@
-====
+[
+{ type: install
+  message: <<EOM
 Note that the stackoverflow handling functions of this library need
 procfs mounted on /proc.
-====
+EOM
+}
+]

@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 PostgreSQL JDBC support installed!
 
 postgresql.jar resides in
 %%JAVAJARDIR%%/postgresql.jar
 Add this to your CLASSPATH!
+EOM
+}
+]

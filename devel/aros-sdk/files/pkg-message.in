@@ -1,4 +1,8 @@
-        ATTENTION:
-
+[
+{ type: install
+  message: <<EOM
 Remember to add %%AROS_SDK_PATH%%/bin to your PATH environment
 variable before using the AROS SDK.
+EOM
+}
+]

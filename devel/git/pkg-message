@@ -1,4 +1,6 @@
--------------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 git is installed.
 
 You might wish to configure git for your user (author) name and email.
@@ -8,5 +10,6 @@ applied) please consult the core.pager option in the git-config(1) manual, and
 your preferred pager's manual for color output options.
 
 bash completion script was renamed to git-completion.bash to keep original name
-
--------------------------------------------------------------------------------
+EOM
+}
+]

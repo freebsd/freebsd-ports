@@ -1,6 +1,6 @@
-
-=== INSTALLATION ===
-
+[
+{ type: install
+  message: <<EOM
 Artifactory is now installed in %%APP_HOME%%
 
 You may want to activate it in /etc/rc.conf:
@@ -23,9 +23,10 @@ Please don't forget to review and edit the files in the
 Full documentation may be found at:
 
 https://www.jfrog.com/confluence/display/RTF/Welcome+to+Artifactory
-
-=== DEINSTALLATION ==
-
+EOM
+}
+{ type: remove
+  message: <<EOM
 If, when, Artifactory is removed, and you no longer require the
 runtime database and configuration files, you can delete the
 following directory:
@@ -37,3 +38,6 @@ the database files that Artifactory requires if you do decide to
 re-install it again.
 
 Enjoy!
+EOM
+}
+]

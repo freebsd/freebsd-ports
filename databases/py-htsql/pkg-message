@@ -1,6 +1,10 @@
-**********************************************************************
-* Additional backends to HTSQL are available in the following ports: *
-*                                                                    *
-* PostgreSQL:	databases/py-htsql-pgsql                             *
-* MySQL:	databases/py-htsql-mysql                             *
-**********************************************************************
+[
+{ type: install
+  message: <<EOM
+Additional backends to HTSQL are available in the following ports:
+
+PostgreSQL:	databases/py-htsql-pgsql
+MySQL:	databases/py-htsql-mysql
+EOM
+}
+]

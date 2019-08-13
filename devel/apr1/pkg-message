@@ -1,7 +1,9 @@
-/!\ ================================================================== /!\
-
+[
+{ type: install
+  message: <<EOM
 The Apache Portable Runtime project removed support for FreeTDS with
 version 1.6. Users requiring MS-SQL connectivity must migrate
 configurations to use the added ODBC driver and FreeTDS' ODBC features.
-
-/!\ ================================================================== /!\
+EOM
+}
+]

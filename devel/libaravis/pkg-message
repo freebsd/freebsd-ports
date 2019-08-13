@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Aravis require broadcast to find devices.
 
 Dont forget run:
@@ -8,3 +11,6 @@ static_routes="bcast:lan0"
 route_bcast="255.255.255.255 -iface lan0"
 
 where lan0 - network interface name.
+EOM
+}
+]

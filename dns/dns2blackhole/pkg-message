@@ -1,9 +1,11 @@
-########################################################################
-
+[
+{ type: install
+  message: <<EOM
                       dns2blackhole
 
    Malware Prevention through Domain Blocking (Black Hole)
 
    Issue "man dns2blackhole"  For configuration and usage information
-
-########################################################################
+EOM
+}
+]

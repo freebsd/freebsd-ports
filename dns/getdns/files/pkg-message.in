@@ -1,12 +1,18 @@
-***
-***  !!! IMPORTANT !!!!  libgetdns needs a DNSSEC trust anchor!
-***
-***  For the library to be able to perform DNSSEC, the root
-***  trust anchor needs to be present in presentation format
-***  in the file:
-***     %%LOCALBASE%%/etc/unbound/root.key
-***
-***  We recomend using unbound-anchor to retrieve and install
-***  the root trust anchor like this:
-***     su -m unbound -c /usr/local/sbin/unbound-anchor
-***
+[
+{ type: install
+  message: <<EOM
+
+  !!! IMPORTANT !!!!  libgetdns needs a DNSSEC trust anchor!
+
+  For the library to be able to perform DNSSEC, the root
+  trust anchor needs to be present in presentation format
+  in the file:
+     %%LOCALBASE%%/etc/unbound/root.key
+
+  We recomend using unbound-anchor to retrieve and install
+  the root trust anchor like this:
+     su -m unbound -c /usr/local/sbin/unbound-anchor
+
+EOM
+}
+]

@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 %%PKGNAME%% has been installed into:
 
     %%PREFIX%%/www/truc
@@ -30,4 +32,6 @@ that you add something like the following to httpd.conf:
 Point your browser to http://localhost/truc/, follow the
 instructions to create a config file and save it into
 truc's root directory.
-
+EOM
+}
+]

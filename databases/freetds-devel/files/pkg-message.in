@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 Sample configuration files have been installed in %%PREFIX%%/etc.
 You should edit them and remove the .dist-suffix from their names.
+EOM
+}
+]
