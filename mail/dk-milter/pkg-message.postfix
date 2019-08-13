@@ -1,5 +1,6 @@
-************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 In order to run this port, please add the following lines to
 ${PREFIX}/etc/postfix/main.cf:
 
@@ -8,5 +9,6 @@ smtpd_milters = unix:/var/run/milterdk/filter
 And to run the milter from startup, add milterdk_enable="YES" in
 your /etc/rc.conf.
 Extra options can be found in startup script.
-
-************************************************************************
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 %%PKGNAME%% is now installed in %%PREFIX%%/%%COMPILERDIR%%, to use it you
 have to put your license into your INTEL_FLEXLM_LICENSE (default:
 %%PREFIX%%/%%COMPILERDIR%%/licenses) directory and add
@@ -28,3 +31,6 @@ Please use FreeBSD as the name of your OS in communications with the
 support, the larger the FreeBSD userbase is, more gets done on FreeBSD
 specific issues by Intel. And please thank them for the FreeBSD support,
 they are already spending some time to improve icc on FreeBSD.
+EOM
+}
+]

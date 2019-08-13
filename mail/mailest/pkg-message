@@ -1,6 +1,7 @@
-------------
+[
+{ type: install
+  message: <<EOM
 How to start
-------------
 
 + For existing `mewest` user, backup and/or delete the database
   (`~/Mail/casket`)
@@ -27,3 +28,6 @@ How to start
 + Try `km`, `kM`, `k/`, `k?`, `V` in Mew.  See
   http://mew.org/en/info/release/mew_6.html#dbsearch for search commands
   in Mew.
+EOM
+}
+]

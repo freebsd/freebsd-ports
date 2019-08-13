@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Emacs and Vim editing facilities for CLISP were installed into:
 %%DATADIR%%
 
@@ -10,5 +11,6 @@ Emacs:	%%PREFIX%%/share/emacs/site-lisp
 Vim:	$VIMRUNTIME/vimfiles/after/syntax
 
 Alternatively you may do per-user installations.
-
-==============================================================================
+EOM
+}
+]

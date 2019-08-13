@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 	ATTENTION:
 
 Do not forget to read %%PREFIX%%/doc/QLDAPINSTALL. After all,
@@ -26,3 +29,6 @@ If you've built this port with TLS support (WITH_TLS=yes)
 
 Now, you need to use it. Check a little FreeBSD specific how-to at
 http://freebsd.cg.nu/postfixqmail-ldap.html
+EOM
+}
+]

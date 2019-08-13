@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 Please copy %%PREFIX%%/etc/spook.conf.dist to %%PREFIX%%/etc/spook.conf
 and edit before running spook.
 
 There is no daemonization support or rc script for spook yet,
 please feel free to contribute patches.
+EOM
+}
+]

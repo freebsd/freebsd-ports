@@ -1,4 +1,6 @@
-*********************************************************************
+[
+{ type: install
+  message: <<EOM
 1) webcamd requires the cuse4bsd(3) or cuse(3) kernel module, depending on
 how webcamd was compiled. Please load this dependency by doing:
 
@@ -30,4 +32,6 @@ to your /etc/rc.conf
 
 5) If webcamd still did not start, consult the installed webcamd rc.d
 script for more help and instructions on how to start webcamd.
-*********************************************************************
+EOM
+}
+]

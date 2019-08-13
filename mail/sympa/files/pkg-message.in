@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 If you upgrade:
  * read https://sympa-community.github.io/manual/upgrade/notes.html
  * run # sympa.pl --upgrade
@@ -9,3 +12,6 @@ First install:
    see https://sympa-community.github.io/manual/install/setup-database.html
 
 for wwsympa server, see samples configs in %%EXAMPLESDIR%%
+EOM
+}
+]

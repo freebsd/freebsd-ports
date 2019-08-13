@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 To enable dma please edit /etc/mail/mailer.conf to replace all lines
 referring to another MTA with the following:
 
@@ -30,4 +32,6 @@ daily_clean_hoststat_enable="NO"
 daily_status_mail_rejects_enable="NO"
 daily_status_include_submit_mailq="NO"
 daily_submit_queuerun="NO"
-
+EOM
+}
+]

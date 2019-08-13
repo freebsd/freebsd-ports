@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 1. Configure sgwi
 -----------------
 Edit the %%WWWDIR%%/includes/config.inc.php file to reflect your
@@ -21,4 +23,6 @@ Add a line in your httpd.conf to allow the use of .htaccess file.
         Options Indexes
         AllowOverride AuthConfig
 </Directory>
-
+EOM
+}
+]

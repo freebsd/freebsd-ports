@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 	ATTENTION:
 
 Do not forget to read %%PREFIX%%/doc/TLS.readme. After all,
@@ -13,3 +16,6 @@ You can enable qmail as your default mailer executing:
 
 # makes a certificate request
 4) do "make certificate-req"
+EOM
+}
+]

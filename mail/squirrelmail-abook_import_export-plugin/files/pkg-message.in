@@ -1,7 +1,11 @@
-================================================================
+[
+{ type: install
+  message: <<EOM
 You may want to copy the file
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config_default.php
 to
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config.php
 and edit the configuration to meet your needs.
-================================================================
+EOM
+}
+]

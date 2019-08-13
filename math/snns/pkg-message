@@ -1,8 +1,10 @@
-
-         ************************************************
+[
+{ type: install
+  message: <<EOM
          Please read the licensing terms described in the
          Readme.license file.  In particular, please note
          that this software is not public domain and that
          it comes with NO WARRANTY OF ANY KIND.
-         ************************************************
-
+EOM
+}
+]

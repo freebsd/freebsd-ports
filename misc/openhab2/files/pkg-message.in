@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The openHAB2 user interface "Paper UI" writes to /var/db/openhab2
 (config) and to %%ETCDIR%% (when installing add-onds).
 The config in %%ETCDIR%% is evaluated additionally to
@@ -26,5 +29,6 @@ If you upgrade from a pevious version, make a backup of
 	/var/db/openhab2
 and run
 	%%PREFIX%%/libexec/openhab2/runtime/bin/update.freebsd
-
-
+EOM
+}
+]

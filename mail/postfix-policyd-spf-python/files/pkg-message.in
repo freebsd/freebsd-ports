@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 #
 # To configure Postfix
 #
@@ -29,3 +32,6 @@ This package must be integrated with Postfix to be effective:
      configuration.
 
   4. Reload postfix.
+EOM
+}
+]

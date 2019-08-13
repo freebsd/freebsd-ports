@@ -1,5 +1,6 @@
-**********
-
+[
+{ type: install
+  message: <<EOM
 MythTV has now been installed, but it still needs to be configured.
 
 1.  To create the database, use the following command:
@@ -9,5 +10,6 @@ MythTV has now been installed, but it still needs to be configured.
 2.  Next, run mythtv-setup.
 
 See http://www.mythtv.org/docs/ for more information.
-
-**********
+EOM
+}
+]

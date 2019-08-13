@@ -1,4 +1,6 @@
-*************
+[
+{ type: install
+  message: <<EOM
 * Start postfwd with:
 
 # %%PREFIX%%/etc/rc.d/postfwd start
@@ -23,5 +25,6 @@ smtpd_recipient_restrictions =
 *
 * Create and edit %%PREFIX%%/etc/postfwd.conf
 * An example is provided in %%PREFIX%%/etc/postfwd.conf.sample
-*
-*************
+EOM
+}
+]

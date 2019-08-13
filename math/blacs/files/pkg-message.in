@@ -1,4 +1,6 @@
-*********************************************************************
+[
+{ type: install
+  message: <<EOM
  Please test your blacs installation
  Test programs are located at %%PREFIX%%/share/BLACS/TESTING
 
@@ -18,4 +20,6 @@
 
 You can change -np 4 to any number to meet your local environment.
 See files at %%DOCSDIR%% for detail.
-*********************************************************************
+EOM
+}
+]

@@ -1,7 +1,9 @@
-===========================================================================
-
+[
+{ type: install
+  message: <<EOM
 You can access the full documentation from here:
 
     %%LOCALBASE%%/share/doc/erlang/html/doc/index.html
-
-===========================================================================
+EOM
+}
+]

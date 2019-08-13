@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To Upgrade from prev version backup the db !
 
 $> mysqldump -aCceQx --hex-blob --routines --triggers -u root -p -r /tmp/openemm-db.sql openemm
@@ -119,3 +122,6 @@ service tomcat85 start
 service openemm2015 start
 or
 %%PREFIX%%/etc/rc.d/openemm2015 start
+EOM
+}
+]

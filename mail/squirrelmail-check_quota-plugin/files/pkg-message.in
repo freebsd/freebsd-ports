@@ -1,7 +1,11 @@
-================================================================
+[
+{ type: install
+  message: <<EOM
 For the port to work properly you must copy the file
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config.sample.php
 to
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config.php
 and edit the configuration to meet your needs.
-================================================================
+EOM
+}
+]

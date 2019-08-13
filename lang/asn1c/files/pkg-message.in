@@ -1,8 +1,10 @@
-===========================================================================
-
+[
+{ type: install
+  message: <<EOM
 Please read %%DOCSDIR%%/asn1c-usage.pdf and other files
 in that directory.
 
 Also check the asn1c(1), unber(1) and enber(1) manual pages.
-
-===========================================================================
+EOM
+}
+]

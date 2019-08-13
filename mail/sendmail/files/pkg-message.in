@@ -1,5 +1,6 @@
----------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 you should add in /etc/make.conf:
 SENDMAIL_CF_DIR=	%%PREFIX%%/share/sendmail/cf
 
@@ -30,4 +31,6 @@ hoststat	%%PREFIX%%/sbin/sendmail
 purgestat	%%PREFIX%%/sbin/sendmail
 
 You may also need to update /etc/rc.conf.
----------------------------------------------------
+EOM
+}
+]

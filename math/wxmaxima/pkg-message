@@ -1,6 +1,8 @@
-************************************************************************
-
+[
+{ type: install
+  message: <<EOM
     When you update wxMaxima or maxima, you should delete the file
     .wxMaxima in your home directory.
-
-************************************************************************
+EOM
+}
+]

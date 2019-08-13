@@ -1,5 +1,6 @@
-=====================================================================
-
+[
+{ type: install
+  message: <<EOM
 Note that some standard Python modules are provided as separate ports
 as they require additional dependencies. They are available as:
 
@@ -11,5 +12,6 @@ Note that PyPy does not implement the following module that would
 have been provided as a separate port:
 
 bsddb           databases/pypy-bsddb
-
-=====================================================================
+EOM
+}
+]

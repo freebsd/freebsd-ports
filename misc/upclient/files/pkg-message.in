@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Before running the client for the first time, be sure to:
 
  1. visit the Uptimes project's web site and register yourself
@@ -21,3 +24,6 @@ You will also have to edit %%PREFIX%%/etc/upclient.conf:
     uptimes.hostingwired.com (Since the official Uptimes Project's
     server has been terminated, uptimes.wonko.com and data.uptimes.net
     must not be used anymore.  So, please, take care about that).
+EOM
+}
+]

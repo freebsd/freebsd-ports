@@ -1,6 +1,12 @@
+[
+{ type: install
+  message: <<EOM
 To start the application, go to the ${PREFIX}/opencyc-0.7.0/scripts/linux and
 run
 
 ./run-cyc.sh
 
 Read the supplied documentation about details and other options.
+EOM
+}
+]

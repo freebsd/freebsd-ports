@@ -1,4 +1,6 @@
-**********
+[
+{ type: install
+  message: <<EOM
 * Start with:
 
 # %%PREFIX%%/bin/policyd-weight start
@@ -25,5 +27,6 @@ smtpd_recipient_restrictions =
 *
 * Please compare existing configuration with the provided sample
 * and remove deprecated DNSBL/RHSBL lists
-*
-*************
+EOM
+}
+]

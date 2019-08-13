@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To use clojure-mode in Emacs, add the following lines to your ~/.emacs:
 
   (autoload 'clojure-mode "clojure-mode" "A mode for clojure lisp" t)
@@ -14,3 +17,6 @@ more Clojure aware:
 
        (define-key clojure-mode-map "{" 'paredit-open-brace)
        (define-key clojure-mode-map "}" 'paredit-close-brace)))
+EOM
+}
+]

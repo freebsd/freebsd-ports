@@ -1,5 +1,7 @@
-* * *
-
+[
+{ type: install
+  message: <<EOM
 Usage: fortune %%PREFIX%%/share/games/fortune/bofh
-
-* * *
+EOM
+}
+]

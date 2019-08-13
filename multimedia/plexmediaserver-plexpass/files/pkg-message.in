@@ -1,5 +1,6 @@
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
+[
+{ type: install
+  message: <<EOM
 multimedia/%%PORTNAME%% includes an RC script:
 %%PREFIX%%/etc/rc.d/%%PORTNAME%%
 
@@ -57,5 +58,6 @@ utilities.
 
 This is the PlexPass release channel of Plex. It is bleeding edge and
 new features may not function without an active PlexPass account.
-
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+EOM
+}
+]

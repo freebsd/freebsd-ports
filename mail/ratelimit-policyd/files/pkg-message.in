@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This package must be integrated with Postfix to be effective:
 
  * Add a new MySQL user account for ratelimit-policyd with the
@@ -35,3 +38,6 @@ This package must be integrated with Postfix to be effective:
 
  * See the documentation in %%LOCALBASE%%/share/ratelimit-policyd/README.md
    or visit https://github.com/MirLach/ratelimit-policyd
+EOM
+}
+]

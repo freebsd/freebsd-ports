@@ -1,5 +1,6 @@
----------------------------------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 %%WebUI%%  The WebUI files have been installed to:
 %%WebUI%%    %%WWWDIR%%
 %%WebUI%%
@@ -9,6 +10,6 @@
   Additional setup instructions can be found at:
     %%DOCSDIR%%
     %%EXAMPLESDIR%%
-
----------------------------------------------------------------------------
-
+EOM
+}
+]

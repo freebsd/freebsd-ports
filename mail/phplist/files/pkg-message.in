@@ -1,4 +1,6 @@
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+[
+{ type: install
+  message: <<EOM
 1.  phplist needs a MySQL database in order to operate.
 You can create this database by using something like  the following commands:
 
@@ -30,5 +32,6 @@ Alias /phplist %%WWWDIR%%
 
 5.  Please see the documentation directory (%%DOCSDIR%%)
     for full documentation on how to get the best out of phplist.
-
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+EOM
+}
+]

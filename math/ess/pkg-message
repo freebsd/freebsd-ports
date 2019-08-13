@@ -1,9 +1,12 @@
-*****************************************************************************
+[
+{ type: install
+  message: <<EOM
 For convenience, users may want to add:
 
 ;;;Emacs ESS
   (require 'ess-site)
 
 to their ~/.emacs or ~/.xemacs/init.el file.
-
-*****************************************************************************
+EOM
+}
+]

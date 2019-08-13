@@ -1,8 +1,9 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 If GGobi does not find its plugin files, start with a copy of
 
 %%PREFIX%%/etc/xdc/ggobi/ggobirc.sample
-
-===============================================================================
-
+EOM
+}
+]

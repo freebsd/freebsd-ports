@@ -1,4 +1,6 @@
------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 ezmlm-idx has been installed successfully.
 
 However, before you can use the programs, you should copy the
@@ -12,4 +14,6 @@ carefully.
 If you have enabled the database extensions, you need to create an
 ezmlm database. See section 5 in %%PREFIX%%/share/doc/ezmlm-idx/FAQ
 for further instructions.
------------------------------------------------------------------
+EOM
+}
+]

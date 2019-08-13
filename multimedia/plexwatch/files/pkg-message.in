@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 plexWatch needs to run frequently, this is a suggested cron job
 
 * * * * * nobody %%PREFIX%%/sbin/plexWatch.pl
@@ -6,3 +9,6 @@ plexWatch needs to run frequently, this is a suggested cron job
 Optionally, if you want recently added notifications, add this
 
 */15 * * * * nobody %%PREFIX%%/sbin/plexWatch.pl --recently_added=movie,tv
+EOM
+}
+]

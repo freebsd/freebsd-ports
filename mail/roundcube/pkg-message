@@ -1,12 +1,15 @@
----------------------------------------------------------------------
-FIRST INSTALLATION
-
+[
+{ type: install
+  message: <<EOM
 If this is a first installation of RoundCube you have to create
 a new database and a db user. Read INSTALL for detailed instructions.
-
-UPGRADING
-
+EOM
+}
+{ type: install
+  message: <<EOM
 If you already had a previous version of RoundCube installed,
 you should check your config files and DB schema are up-to-date.
 Read UPGRADING for detailed instructions.
----------------------------------------------------------------------
+EOM
+}
+]

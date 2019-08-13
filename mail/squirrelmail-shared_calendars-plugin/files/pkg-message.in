@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 For the port to work properly you must copy the file
 %%SQUIRRELDIR%%/plugins/shared_calendars/data/config.sample.php
 to
 %%SQUIRRELDIR%%/plugins/shared_calendars/data/config.php
 and edit the configuration to meet your needs.
+EOM
+}
+]

@@ -1,4 +1,6 @@
-************************************************************************
+[
+{ type: install
+  message: <<EOM
 If you have build/runtime errors with Mono and Gtk# apps please try the
 following first:
 
@@ -30,4 +32,6 @@ following first:
 * Some process information are accessed through /proc (e.g. when using
   NUnit) and procfs(5) has to be mounted for these features to work:
     # echo "proc            /proc   procfs  rw 0 0" >> /etc/fstab
-************************************************************************
+EOM
+}
+]

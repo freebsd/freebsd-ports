@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To integrate the OpenEMM 2013 R2 to the installed Tomcat add this
 chunk to the server.xml of Tomcat:
 TOMCAT_HOME= %%PREFIX%%/apache-tomcat-8.0/lib/
@@ -82,3 +85,6 @@ service tomcat8 start
 service openemm2013 start
 or
 %%PREFIX%%/etc/rc.d/openemm2013 start
+EOM
+}
+]

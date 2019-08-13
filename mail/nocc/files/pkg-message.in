@@ -1,5 +1,9 @@
-****************************************************************
+[
+{ type: install
+  message: <<EOM
 Nocc has been installed in %%PREFIX%%/www/nocc directory.
 Change into this directory and create/modify the config file
 (config/conf.php). The sample file is fairly well documented.
-****************************************************************
+EOM
+}
+]

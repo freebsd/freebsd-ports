@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 ** Upgrade note from a previous version to mailagent-3.1.78_1 or later **
 
 In order to make building of this port non-interactive, the build-time
@@ -12,4 +15,6 @@ Please consult mailagent(1) for more details.
 This package is configured to read %%ORGFILE%%
 file to retrieve the name of your organization.  An empty file had been
 installed to suppress warning messages.  Please modify as necessary.
-
+EOM
+}
+]

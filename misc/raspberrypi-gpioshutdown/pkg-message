@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 raspberrypi-gpioshutdown kernel module:
 
 This port installs a startup script in your ${LOCALBASE} etc/rc.d directory
@@ -18,3 +21,6 @@ If you have other modules in 'kld_list' just add 'gpioshutdown' to the end of
 that list.
 
 For more detailed information, type 'man 4 gpioshutdown'.
+EOM
+}
+]

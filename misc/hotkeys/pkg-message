@@ -1,3 +1,9 @@
+[
+{ type: install
+  message: <<EOM
  At this current stage CDROM & APM support has been disabled.
  The linux CDROM cdrom.h code needs to be remapped to work with
  FreeBSD's cdio.h library
+EOM
+}
+]

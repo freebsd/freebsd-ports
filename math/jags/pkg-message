@@ -1,3 +1,9 @@
+[
+{ type: install
+  message: <<EOM
 Please note that the name of the jags script has been changed
 from "jags" to "mcmc-jags" on this platform, to avoid a conflict
 with net/jags, and usage should be adjusted accordingly.
+EOM
+}
+]

@@ -1,5 +1,6 @@
-============================================================================
-
+[
+{ type: install
+  message: <<EOM
 For the first start in your /etc/rc.conf:
   tvheadend_enable="YES"
   tvheadend_flags="-C"
@@ -15,5 +16,6 @@ Some IPTV channel lists expect ffmpeg on a static path (/usr/bin/ffmpeg)
 so either fix the m3u file or add an symlink.
 
 Patches, feedback and help are always welcome!
-
-============================================================================
+EOM
+}
+]

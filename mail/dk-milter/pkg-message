@@ -1,5 +1,6 @@
-************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 In order to run this port, please add the following lines to
 /etc/mail/<your_configuration>.mc:
 
@@ -8,5 +9,6 @@ INPUT_MAIL_FILTER(`dk-filter', `S=unix:/var/run/milterdk/filter, F=T, T=R:2m')
 And to run the milter from startup, add milterdk_enable="YES" in
 your /etc/rc.conf.
 Extra options can be found in startup script.
-
-************************************************************************
+EOM
+}
+]

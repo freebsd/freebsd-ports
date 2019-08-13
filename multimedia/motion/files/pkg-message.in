@@ -1,4 +1,6 @@
-****************************************************************
+[
+{ type: install
+  message: <<EOM
 To use the motion service properly, you should edit
 
 	%%ETCDIR%%/motion.conf
@@ -37,5 +39,6 @@ add the following line to /etc/rc.conf:
 Then, to start the service right now without reboot, execute
 
 	service motion start
-
-****************************************************************
+EOM
+}
+]

@@ -1,6 +1,6 @@
-
-######################################################################
-
+[
+{ type: install
+  message: <<EOM
 Unlike to windows systems, saga_cmd should be instantly available in
 the shell as it is usually installed in %%PREFIX%%/bin.
 
@@ -17,9 +17,11 @@ e.g.:
 
 Now your system is prepared for using SAGA CMD to execute SAGA
 modules.
-
-######################################################################
-
+EOM
+}
+{ type: upgrade
+  maximum_version: 2.2.0
+  message: <<EOM
 From SAGA GIS 2.2.0 on, there is some example and test data installed.
 
 Predefined ToolChains are located at
@@ -27,6 +29,6 @@ Predefined ToolChains are located at
 
 Python scripts with examples, helpers and test data reside at
   %%DATADIR%%/python/
-
-######################################################################
-
+EOM
+}
+]

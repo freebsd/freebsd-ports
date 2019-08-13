@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 	RTFM before configuring and running Courier!!!
 
 Check and/or modify the following configuration files to suit your needs:
@@ -58,3 +61,6 @@ job that runs at regular intervals (once every few hours is fine) that
 executes the following script to update the shared folder index:
 
 	%%PREFIX%%/share/courier/sharedindexupdate
+EOM
+}
+]

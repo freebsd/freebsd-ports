@@ -1,6 +1,8 @@
-
-***************************************************************************
+[
+{ type: install
+  message: <<EOM
 To learn how to configure Alpine to use these filters, see the docs
 in %%PREFIX%%/share/doc/pine-pgp-filters.
-***************************************************************************
-
+EOM
+}
+]

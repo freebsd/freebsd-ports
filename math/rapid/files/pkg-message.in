@@ -1,6 +1,6 @@
-
-**************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 The RAPID code is offered "as is" and is free for non-commercial use.
 
 To use RAPID for any commercial purpose, you must request a license from
@@ -8,5 +8,6 @@ To use RAPID for any commercial purpose, you must request a license from
 	http://www.cs.unc.edu/~geom/OBB/OBBT.html
 
 Redistribution of RAPID code in any form is strictly prohibited.
-
-**************************************************************************
+EOM
+}
+]

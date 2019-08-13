@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Telemetry
 ---------
 The .NET Core tools collect usage data in order to improve your experience.
@@ -46,3 +49,6 @@ vm.max_wired: 1331964
 then increasing 'vm.max_wired' will enable .NET Core to run:
 
 # sysctl vm.max_wired=1333000
+EOM
+}
+]

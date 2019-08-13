@@ -1,5 +1,9 @@
-------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
  To complete the install of FuzzyOcr, copy FuzzyOcr.cf, FuzzyOcr.preps,
 FuzzyOcr.scansets and FuzzyOcr.words from %%EXAMPLESDIR%% into your
  SpamAssassin configuration directory.
-------------------------------------------------------------------------
+EOM
+}
+]

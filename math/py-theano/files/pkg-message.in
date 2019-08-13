@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To use Theano in multi-threaded mode, install OpenBLAS with option
 OPENMP enabled, install py-numpy with OpenBLAS support and use this
 minimal ~/.theanorc:
@@ -13,3 +16,6 @@ ldflags = -lopenblasp
 
 You can control the number of threads used with OMP_NUM_THREADS environment
 variable.
+EOM
+}
+]

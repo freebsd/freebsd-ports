@@ -1,5 +1,6 @@
- ------------------------- Please note: -------------------------
-
+[
+{ type: install
+  message: <<EOM
   In order to be able to make use of squeak you need to have an
     image and a changes file in your working directory as well
     as access to a source file. This is easy by using inisqueak.
@@ -10,5 +11,6 @@
     PATH:            %%PREFIX%%/bin
     LD_LIBRARY_PATH: %%PREFIX%%/lib
                      %%PREFIX%%/lib/squeak/%%SQUEAK_LIB_DIR%%
-
- ------------------ Thanks for your attention! ------------------
+EOM
+}
+]

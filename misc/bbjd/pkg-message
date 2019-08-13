@@ -1,4 +1,8 @@
--------------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 This program has no man-pages. Please read documentation installed in
 share/bbjd directory.
--------------------------------------------------------------------------------
+EOM
+}
+]

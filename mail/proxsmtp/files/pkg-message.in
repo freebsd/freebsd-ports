@@ -1,4 +1,6 @@
-/* ================================================================= */
+[
+{ type: install
+  message: <<EOM
 Edit /etc/rc.conf and set
 
 proxsmtpd_enable="YES"
@@ -15,4 +17,6 @@ You can also specify the following make variables:
      PROXSMTP_SMTP_EHLO_RSP="250-smtp.passthru"
 
 to define default values (or to override the defaults).
-/* ================================================================= */
+EOM
+}
+]

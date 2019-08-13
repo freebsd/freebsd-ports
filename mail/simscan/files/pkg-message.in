@@ -1,5 +1,6 @@
-
-=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+[
+{ type: install
+  message: <<EOM
 NOTES:
 
 * You have to configure your anti-virus and anti-spam products!
@@ -19,5 +20,6 @@ QMAILQUEUE variable. For example:
 attachment blocking and per domain processing.
 Additional documentation can be found here:
 http://qmailwiki.inter7.com/index.php?title=Simscan
-
-=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+EOM
+}
+]

@@ -1,5 +1,6 @@
-===> IMPORTANT NOTE
-
+[
+{ type: install
+  message: <<EOM
     A sample configuration file has been installed in %%PREFIX%%/etc/mail
     directory. Copy and edit it to suit your needs before launching
     scam-backscatter milter.
@@ -18,4 +19,6 @@
     in your /etc/rc.conf or your /etc/rc.conf.local
 
     See %%DOCSDIR%%/INSTALL for configuration details.
-
+EOM
+}
+]

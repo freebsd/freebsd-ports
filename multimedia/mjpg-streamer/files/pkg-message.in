@@ -1,5 +1,6 @@
-=============================================================================
-
+[
+{ type: install
+  message: <<EOM
 To launch MJPG-streamer demo, run
 %%PREFIX%%/etc/rc.d/mjpg_streamer start
 
@@ -8,5 +9,6 @@ http://your.server.com:8080
 
 To run MJPG-streamer at startup, add
 'mjpg_streamer_enable="YES"' to /etc/rc.conf
-
-=============================================================================
+EOM
+}
+]

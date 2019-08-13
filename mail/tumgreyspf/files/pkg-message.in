@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 #
 # To configure Postfix
 #
@@ -30,3 +33,6 @@ tumgreyspf_time_limit = 3600
 Please consult the postfix documentation for more information on
 these and other settings you may wish to have in the
 "smtpd_recipient_restrictions" configuration.
+EOM
+}
+]
