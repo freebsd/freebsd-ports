@@ -3,6 +3,7 @@
 
 PORTNAME=	winrm
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -18,13 +19,13 @@ RUN_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 		rubygem-gyoku>=1.0:devel/rubygem-gyoku \
 		rubygem-httpclient>=2.2.0.2:www/rubygem-httpclient \
 		rubygem-logging>=1.6.1:devel/rubygem-logging \
-		rubygem-nokogiri>=1.6.1:textproc/rubygem-nokogiri \
 		rubygem-nori>=2.0:devel/rubygem-nori \
 		rubygem-rubyntlm>=0.6.1:net/rubygem-rubyntlm
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/rwinrm
 
