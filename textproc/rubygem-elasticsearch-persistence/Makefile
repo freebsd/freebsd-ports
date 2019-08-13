@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch-persistence
-PORTVERSION=	6.0.0
-PORTREVISION=	1
+PORTVERSION=	6.1.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
