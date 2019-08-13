@@ -12,9 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go
-
 USE_GITHUB=	yes
-
 GH_TUPLE=	\
 		exercism:cli:v${PORTVERSION}:DEFAULT/src/github.com/exercism/cli \
 		armon:consul-api:eb2c6b5:consulapi/src/github.com/armon/consul-api \
@@ -62,7 +60,6 @@ GH_TUPLE=	\
 		go4org:go4:417644f:go4/src/go4.org \
 		go-check:check:788fd78:gocheck/src/gopkg.in/check.v1 \
 		go-yaml:yaml:25c4ec8:yaml/src/gopkg.in/yaml.v2
-
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
 PLIST_FILES=	bin/exercism
