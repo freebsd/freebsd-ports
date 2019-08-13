@@ -3,6 +3,7 @@
 PORTNAME=	tensorflow-estimator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.14.0
+PORTREVISION=	1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,6 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tensorflow
 GH_PROJECT=	estimator
 
+NO_ARCH=	yes
+
 BAZEL_BOOT=	--output_user_root=${WRKDIR}/bazel_out
 
 post-patch:
@@ -38,10 +41,10 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}/${PYTHON_SITELIBDIR}
 	@${MKDIR} ${WRKDIR}/tmp
-	@${UNZIP_NATIVE_CMD} -d ${WRKDIR}/tmp ${WRKDIR}/whl/${PORTNAME}-${PORTVERSION}-*.whl
-	cd ${WRKDIR}/tmp && ${COPYTREE_SHARE} ${PORTNAME} \
+	@${UNZIP_NATIVE_CMD} -d ${WRKDIR}/tmp ${WRKDIR}/whl/${PORTNAME:S/-/_/}-${PORTVERSION}-*.whl
+	cd ${WRKDIR}/tmp && ${COPYTREE_SHARE} ${PORTNAME:S/-/_/} \
 		${STAGEDIR}${PYTHON_SITELIBDIR}
-	cd ${WRKDIR}/tmp && ${COPYTREE_SHARE} ${PORTNAME}-${PORTVERSION}.dist-info \
+	cd ${WRKDIR}/tmp && ${COPYTREE_SHARE} ${PORTNAME:S/-/_/}-${PORTVERSION}.dist-info \
 		${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>
