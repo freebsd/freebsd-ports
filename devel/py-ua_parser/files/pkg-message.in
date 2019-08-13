@@ -1,5 +1,9 @@
-
+[
+{ type: install
+  message: <<EOM
 To allow user_agent_parser python module to find regexes.yaml file,
 define UA_PARSER_YAML environment variable to point to
 %%LOCALBASE%%/share/ua_parser/regexes.yaml
-
+EOM
+}
+]

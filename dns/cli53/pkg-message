@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Please configure your AWS credentials, either through environment variables or
 ~/.aws/credentials config file.
 
@@ -17,3 +20,6 @@ You can switch between different sets in the credentials file by passing
 
 For example:
     cli53 list --profile my_profile
+EOM
+}
+]

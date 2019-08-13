@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To override the default configuration, you must copy the rc-file:
 
 	mkdir ~/.config/tumbler
@@ -6,3 +9,6 @@ To override the default configuration, you must copy the rc-file:
 The COVER plugin requires manual configuration.
 
 For more information see http://docs.xfce.org/xfce/thunar/tumbler
+EOM
+}
+]

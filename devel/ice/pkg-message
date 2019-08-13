@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The default on-the-wire encoding for Ice changed in version 3.5 and IPv6
 is now enabled by default. ABI versions are not compatible.
 
@@ -12,3 +15,6 @@ For on-the-wire background compatibility add
 	Ice.Default.EncodingVersion=1.0
 
 to your Ice application configuration.
+EOM
+}
+]

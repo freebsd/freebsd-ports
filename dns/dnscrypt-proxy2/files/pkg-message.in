@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 Version 2 of dnscrypt-proxy is written in Go and therefore isn't capable
 of dropping privileges after binding to a low port on FreeBSD.
 
@@ -56,4 +58,6 @@ Below are a few examples on how to redirect local connections from port
   If you are using local_unbound, DNSSEC is enabled by default. You should
   comment the "auto-trust-anchor-file" line or change dnscrypt-proxy to use
   servers with DNSSEC support only.
-======================================================================
+EOM
+}
+]

@@ -1,5 +1,6 @@
----
-
+[
+{ type: install
+  message: <<EOM
 NOTE: Calibre requires Hal to be running for access to devices.  The user who
 is running Calibre also needs to be able to mount devices.  For non-root users,
 this means modifying %%PREFIX%%/etc/PolicyKit/PolicyKit.conf and adding the
@@ -65,5 +66,6 @@ headers of the startup script.
 The command line options are documented here:
 
 https://manual.calibre-ebook.com/generated/en/calibre-server.html
-
----
+EOM
+}
+]

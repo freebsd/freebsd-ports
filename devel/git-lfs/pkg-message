@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To get started with Git LFS, the following commands can be used:
 
   1. Setup Git LFS on your system. You only have to do this once per
@@ -20,3 +23,6 @@ To get started with Git LFS, the following commands can be used:
      $ git add file.iso
      $ git commit -m "Add disk image"
      $ git push
+EOM
+}
+]

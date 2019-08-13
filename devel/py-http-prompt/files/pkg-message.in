@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 For the output colors work properly you need to use LESS as your 
 default pager instead of MORE.
 
@@ -7,4 +9,6 @@ $ export PAGER=less
 
 csh:
 $ setenv PAGER less
-======================================================================
+EOM
+}
+]

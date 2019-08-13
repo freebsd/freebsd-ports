@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To run the phabricator daemons from startup, add phd_enable="YES"
 to /etc/rc.conf. You can control the daemons using
 
@@ -70,3 +73,6 @@ Match User git
  PermitTunnel no
  X11Forwarding no
 ========================================================================
+EOM
+}
+]

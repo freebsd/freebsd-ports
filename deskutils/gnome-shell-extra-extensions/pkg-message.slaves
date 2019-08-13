@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The gnome-shell extensions won't be usable until the gnome-shell
 gets restarted. To do so, running the shell, press ALT+F2 and
 type 'r'. That will restart the shell.
@@ -7,3 +10,6 @@ have to open a new gnome-tweak-tool instance. The new extensions
 should appear in the extensions section.
 
 Use the extension at your own risk.
+EOM
+}
+]

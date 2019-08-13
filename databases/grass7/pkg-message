@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To run the wxpython based GUI:
 
     export GRASS_PYTHON=python2.7 (or your local python version)
@@ -14,3 +17,6 @@ to %%LOCALBASE%%/etc/libmap.d/gcc.conf. Use your local gcc version
 instead of gcc6.
 
 This is required for some modules using fortran.
+EOM
+}
+]

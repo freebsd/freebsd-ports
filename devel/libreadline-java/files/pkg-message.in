@@ -1,5 +1,9 @@
---------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 To use readline-java add the file
 %%JAVAJARDIR%%/libreadline-java.jar
 to your classpath!
---------------------------------------------------
+EOM
+}
+]

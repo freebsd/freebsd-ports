@@ -1,4 +1,6 @@
-========================================================================
+[
+{ type: install
+  message: <<EOM
 ddns configuration files were installed in the following directory:
 
 	%%ETCDIR%%
@@ -38,4 +40,6 @@ Then you can start a ddns daemon by issuing the following command:
     or
 
 	%%PREFIX%%/etc/rc.d/ddns_client start
-========================================================================
+EOM
+}
+]

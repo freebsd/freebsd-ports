@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 %%PKGNAME%% has been installed into:
 
     %%WWWDIR%%
@@ -41,3 +43,6 @@ advises that any instance be protected with an additional protection layer,
 e.g. a different access control mechanism implemented by the web server
 as shown in the example.  Do consider enabling phpMyAdmin only when it
 is in use.
+EOM
+}
+]

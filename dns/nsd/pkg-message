@@ -1,12 +1,14 @@
-**************************************************************************
-*
-*   To run nsd from startup, add nsd_enable="YES" to your etc/rc.conf
-*
-*   Starting with nsd version 4 the old nsdc control program has been
-*   replaced by nsd-control. This requires some manual setup with
-*   nsd-control-setup and editing of the config files.
-*
-*   nsd-control is incompatible with nsdc so when that is used in scripts,
-*   these should be adapted
-*
-**************************************************************************
+[
+{ type: install
+  message: <<EOM
+   To run nsd from startup, add nsd_enable="YES" to your etc/rc.conf
+
+   Starting with nsd version 4 the old nsdc control program has been
+   replaced by nsd-control. This requires some manual setup with
+   nsd-control-setup and editing of the config files.
+
+   nsd-control is incompatible with nsdc so when that is used in scripts,
+   these should be adapted
+EOM
+}
+]

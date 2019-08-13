@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You have just installed StatCVS, a CVS repository activity report
 generator.
 
@@ -8,4 +10,6 @@ java -jar %%DATADIR%%/statcvs.jar
 
 Full usage instructions and command options are found at:
 http://statcvs.sourceforge.net/manual.html
-======================================================================
+EOM
+}
+]

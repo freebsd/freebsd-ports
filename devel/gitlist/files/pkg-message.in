@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 The port will install an htdocs dir %%WWWDIR%%.
 Copy %%WWWDIR%%/config.ini-example
 to %%WWWDIR%%/config.ini and
 edit it to make it use your git repositories.
 Then configure your webserver to use the htdocs directory.
+EOM
+}
+]

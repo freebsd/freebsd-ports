@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To use GNUstep you need to source the envoroment in your shell:
 
 for sh/bash:
@@ -7,3 +10,6 @@ for csh:
 source /usr/local/GNUstep/System/Library/Makefiles/GNUstep.csh
 
 then start your applications with "openapp <name>".
+EOM
+}
+]

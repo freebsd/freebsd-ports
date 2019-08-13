@@ -1,5 +1,6 @@
-*****************************************************************
-
+[
+{ type: install
+  message: <<EOM
  To use ViewVC, modify the configuration file located at
  %%PREFIX%%/viewvc/viewvc.conf.
 
@@ -54,5 +55,6 @@
        ".cgi" => "%%PYTHON_CMD%%",
      )
  }
-
-*****************************************************************
+EOM
+}
+]

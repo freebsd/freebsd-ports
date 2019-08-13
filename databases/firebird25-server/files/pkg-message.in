@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 Firebird was installed.
 
 1) Support for Super Server has been added
@@ -47,5 +48,6 @@ before doing anything serious with Firebird.
 	%%PREFIX%%/bin/gsplit	->	%%PREFIX%%/bin/fbsplit
 
 9) Enjoy it ;)
-
-################################################################################
+EOM
+}
+]

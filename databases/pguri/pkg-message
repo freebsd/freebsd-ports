@@ -1,3 +1,9 @@
+[
+{ type: install
+  message: <<EOM
 In order to use the extension within database execute the following command:
 
 CREATE EXTENSION uri;
+EOM
+}
+]

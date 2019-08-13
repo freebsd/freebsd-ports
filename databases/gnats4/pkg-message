@@ -1,5 +1,6 @@
-************************************************************
-
+[
+{ type: install
+  message: <<EOM
 GNATS has been successfully installed.
 
 If you want to run the GNATS server, enter
@@ -20,5 +21,6 @@ Try `man gnats', `info gnats' and the online manual at
   http://www.gnu.org/software/gnats/gnats_toc.html
 
 for more information.
-
-************************************************************
+EOM
+}
+]

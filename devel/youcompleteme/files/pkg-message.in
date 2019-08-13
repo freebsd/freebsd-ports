@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 For JavaScript Semantic Completion:
 	cd %%VIMFILESDIR%%/third_party/ycmd/third_party/tern_runtime
 	pkg install npm
@@ -7,3 +10,6 @@ For TypeScript Semantic Completion:
 	pkg install npm
 	npm install -g typescript
 
+EOM
+}
+]

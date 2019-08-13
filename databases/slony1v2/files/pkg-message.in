@@ -1,12 +1,10 @@
-*******************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Please read the docs on configuring and running slony-1.
 
 Unless you did not specify the DOCS options, they are in the
 %%LOCALBASE%%/share/doc/slony1v2 directory.
-
-If you are upgrading from a prior version of slony, please read the UPGRADING
-file in the above docs directory.
 
 The script %%LOCALBASE%%/sbin/slon-mkservice can be used to create a control
 directory to run and monitor the slon daemon under svscan from daemontools.
@@ -21,5 +19,12 @@ is documented in %%LOCALBASE%%/share/doc/slony1/adminguide/runtime-config.html
 %%PERLTOOLS%%
 %%PERLTOOLS%%To use the perl slony configuration and monitoring tools, you must
 %%PERLTOOLS%%create %%LOCALBASE%%/etc/slon_tools.conf based on the sample file.
-
-*******************************************************************************
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+If you are upgrading from a prior version of slony, please read the UPGRADING
+file in the above docs directory.
+EOM
+}
+]

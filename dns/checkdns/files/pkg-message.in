@@ -1,8 +1,12 @@
-   --------------------------------------------------------------------
-  |            >>> ATTENTION PLEASE <<<                                |
-  |                                                                    |
-  |   Please don't forget these :                                      |
-  |         - editing %%PREFIX%%/etc/checkdns.conf file !              |
-  |         - copying checkdns.css file to Html Output Directory !     |
-  |                                                                    |
-   --------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
+              >>> ATTENTION PLEASE <<<
+
+     Please don't forget these :
+           - editing %%PREFIX%%/etc/checkdns.conf file !
+           - copying checkdns.css file to Html Output Directory !
+
+EOM
+}
+]

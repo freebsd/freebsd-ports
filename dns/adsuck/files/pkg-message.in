@@ -1,5 +1,6 @@
-
-
+[
+{ type: install
+  message: <<EOM
 Quick way to use adsuck chrooted in /var/adsuck
 
 mkdir /var/adsuck
@@ -17,5 +18,6 @@ echo "nameserver 127.0.0.1" > /etc/resolv.conf
 
 If you're using DHCP consider configuring your dhclient.conf(5) to prevent
 resolv.conf updates.
-
-
+EOM
+}
+]

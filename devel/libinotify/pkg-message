@@ -1,5 +1,6 @@
-============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Libinotify functionality on FreeBSD is missing support for
 
   - detecting a file being moved into or out of a directory within the
@@ -32,8 +33,9 @@ notifications are available from:
 
 https://github.com/libinotify-kqueue/libinotify-kqueue/tree/master/patches
 
-=============================================================================
 You might want to consider increasing the kern.maxfiles tunable if you plan
 to use this library for applications that need to monitor activity of a lot
 of files.
-=============================================================================
+EOM
+}
+]

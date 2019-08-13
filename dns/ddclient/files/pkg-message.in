@@ -1,5 +1,6 @@
-***********************************************************
-
+[
+{ type: install
+  message: <<EOM
 To configure ddclient, edit the following file:
 
 	%%PREFIX%%/etc/ddclient.conf
@@ -14,5 +15,6 @@ daily regardless of IP changes add the following line to
 your /etc/periodic.conf
 
 	daily_ddclient_force_enable="YES"
-
-***********************************************************
+EOM
+}
+]

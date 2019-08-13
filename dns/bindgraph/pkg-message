@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To get bindgraph working, you have to set querylog for bind. An example
 named.conf will be
 
@@ -10,3 +13,6 @@ named.conf will be
   };
 
 Make sure BINDGRAPH_USER (default www) can read this log file.
+EOM
+}
+]

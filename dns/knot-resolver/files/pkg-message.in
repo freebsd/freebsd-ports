@@ -1,5 +1,6 @@
-######################################################################
-
+[
+{ type: install
+  message: <<EOM
   Please consult the documentation:
    - man kresd
    - https://knot-resolver.readthedocs.io/
@@ -9,5 +10,6 @@
 
   If upgrading:
    - https://knot-resolver.readthedocs.io/en/stable/upgrading.html
-
-######################################################################
+EOM
+}
+]

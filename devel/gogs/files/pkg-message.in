@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed %%PORTNAME%%: Go Git Service.
 
 It is recommended to run %%PORTNAME%% as a service:
@@ -20,4 +22,6 @@ You can only edit it when %%PORTNAME%% isn't running.
 sysrc sshd_enable="YES"
 and sshd is configured to listen on the same port that is configured
 in %%PORTNAME%%.
-======================================================================
+EOM
+}
+]

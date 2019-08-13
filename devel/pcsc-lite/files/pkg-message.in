@@ -1,5 +1,6 @@
-------------------------------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 PC/SC-Lite has been installed.
 
 You need to install a driver for your smartcard reader e.g.,
@@ -22,5 +23,6 @@ detach 100 {
         device-name "ugen[0-9]+";
         action "%%PREFIX%%/sbin/pcscd -H";
 };
-
-------------------------------------------------------------------------
+EOM
+}
+]

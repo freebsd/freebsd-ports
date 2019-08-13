@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Add the following to your emacs initialization file to enable pymacs:
 
 (autoload 'pymacs-apply "pymacs")
@@ -9,3 +12,6 @@ Add the following to your emacs initialization file to enable pymacs:
 
 See http://pymacs.progiciels-bpi.ca/pymacs.html for
 documentation on using pymacs.
+EOM
+}
+]

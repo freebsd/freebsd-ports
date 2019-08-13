@@ -1,4 +1,6 @@
-========================================================================
+[
+{ type: install
+  message: <<EOM
 Nexus Repository Manager OSS %%VERSION%% has been successfully installed!
 
 To enable Nexus, add the following line to /etc/rc.conf[.local]:
@@ -28,4 +30,6 @@ Documentation
 =============
 Further documentation can be found in the official Nexus Book at:
   https://books.sonatype.com/nexus-book/%%BOOKVERSION%%/reference/index.html
-========================================================================
+EOM
+}
+]

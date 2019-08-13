@@ -1,5 +1,6 @@
-====
-
+[
+{ type: install
+  message: <<EOM
 To enable the Hg-Git extension it has to be added in either
 
 '$PREFIX/etc/mercurial/hgrc' (per-system),
@@ -10,5 +11,6 @@ Mercurial configuration file:
 
 [extensions]
 hggit =
-
-====
+EOM
+}
+]

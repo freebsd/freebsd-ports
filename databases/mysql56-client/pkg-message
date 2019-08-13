@@ -1,5 +1,6 @@
-* * * * * * * * * * * * * * * * * * * * * * * *
-
+[
+{ type: install
+  message: <<EOM
 Please be aware the database client is vulnerable
 to CVE-2015-3152 - SSL Downgrade aka "BACKRONYM".
 You may find more information at the following URL:
@@ -10,5 +11,6 @@ Although this database client is not listed as
 "affected", it is vulnerable and will not be
 receiving a patch. Please take note of this when
 deploying this software.
-
-* * * * * * * * * * * * * * * * * * * * * * * *
+EOM
+}
+]

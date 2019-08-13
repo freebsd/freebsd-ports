@@ -1,5 +1,6 @@
-==========================================================================
-
+[
+{ type: install
+  message: <<EOM
 	Known problems:
 	1) DRD/Helgrind tool gives excessive false-positivies for the
 	   internals of pthreads library.  This is now under
@@ -9,5 +10,6 @@
 	If you'll encounter any problems when using Valgrind do not
 	hesitate to contact the maintainer with the description of
 	these problems.
-
-==========================================================================
+EOM
+}
+]

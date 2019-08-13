@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To add the custom functions to your MySQL server use the following syntax:
 (you may install only the functions you need):
 
@@ -23,3 +26,6 @@ DROP FUNCTION median;
 
 For function descriptions, see the following webpage:
 http://mysql-udf.sourceforge.net/
+EOM
+}
+]

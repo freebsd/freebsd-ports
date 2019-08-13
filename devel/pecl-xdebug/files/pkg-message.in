@@ -1,4 +1,6 @@
-*****************************************************************************
+[
+{ type: install
+  message: <<EOM
 The php debugger 'xdebug' has been installed successful.
 Add a line containing
 
@@ -17,5 +19,6 @@ Add following section to enable profiling:
 
 xdebug.profiler_enable = 1
 xdebug.profiler_output_dir = /tmp/profiler
-
-*****************************************************************************
+EOM
+}
+]

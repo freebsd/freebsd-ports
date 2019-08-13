@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 To use psvn, add the following line to your ~/.emacs:
 
 (require 'psvn)
 
 Start the svn interface with `M-x svn-status'.
+EOM
+}
+]

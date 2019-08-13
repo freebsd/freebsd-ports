@@ -1,4 +1,6 @@
-=======================================================================
+[
+{ type: install
+  message: <<EOM
 taskd requires user directed configuration prior to use.
 
 See taskwarrior.org/docs/taskserver/configure.html for configuration
@@ -19,4 +21,6 @@ To add users see: taskwarrior.org/docs/taskserver/user.html
 
 To configure taskwarrior to use your taskd server see:
 taskwarrior.org/docs/taskserver/taskwarrior.html
-=======================================================================
+EOM
+}
+]

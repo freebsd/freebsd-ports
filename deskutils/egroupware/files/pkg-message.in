@@ -1,4 +1,6 @@
-==============================================================
+[
+{ type: install
+  message: <<EOM
 POST-INSTALL CONFIGURATION FOR eGroupware
 
 
@@ -41,5 +43,6 @@ and backup's full path with:
 For more information, see the INSTALL DOCUMENTATION:
 
 http://www.egroupware.org/index.php?page_name=wiki&lang=&wikipage=ManualSetup
-
-======================================================
+EOM
+}
+]

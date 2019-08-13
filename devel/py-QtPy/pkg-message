@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed py-QtPy: the abstraction layer on top of Qt bindings.
 
 One of PyQt5, PyQt4, PySide2 or PySide bindings is required to be
@@ -7,4 +9,6 @@ bindings, PyQt5 will be chosen first when available.
 
 The QT_API environment variable can be used to force a particular
 binding.
-======================================================================
+EOM
+}
+]

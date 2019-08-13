@@ -1,5 +1,9 @@
----------------------------------------
+[
+{ type: install
+  message: <<EOM
 To use JLine add the file
 %%JAVAJARDIR%%/jline.jar
 to your classpath!
----------------------------------------
+EOM
+}
+]

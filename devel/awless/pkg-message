@@ -1,9 +1,11 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Setup your AWS account by exporting AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
 environment variables.
 
 If you have previously used aws CLI or aws-shell, your credentials will be
 automatically loaded by awless from the ~/.aws/credentials folder.
-
-===============================================================================
+EOM
+}
+]

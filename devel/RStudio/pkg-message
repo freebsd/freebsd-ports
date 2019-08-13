@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed RStudio: Integrated development environment (IDE) for R.
 
 Please note that RStudio requires /proc to be mounted.
@@ -8,4 +10,6 @@ proc /proc procfs rw 0 0
 
 and then run this command as root:
 # mount /proc
-======================================================================
+EOM
+}
+]

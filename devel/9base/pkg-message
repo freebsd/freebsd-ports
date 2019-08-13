@@ -1,7 +1,9 @@
-======================================================
-
+[
+{ type: install
+  message: <<EOM
 Some of 9base tools require fdescfs to be mounted.
 Please refer manpages fdescfs(5) and fstab(5) to 
 mount it.
-
-======================================================
+EOM
+}
+]

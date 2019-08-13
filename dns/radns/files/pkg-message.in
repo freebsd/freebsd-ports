@@ -1,5 +1,6 @@
-****************************************************
-
+[
+{ type: install
+  message: <<EOM
 To enable radns, edit /etc/rc.conf and add:
 
   radns_enable="YES"
@@ -9,5 +10,6 @@ own file %%PREFIX%%/etc/radns/radns-resolv.conf.
 
 To make sure the system's /etc/resolv.conf file is created from all
 sources, read %%PREFIX%%/share/doc/radns/README.FreeBSD.
-
-****************************************************
+EOM
+}
+]

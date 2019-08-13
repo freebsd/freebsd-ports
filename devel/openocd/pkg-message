@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 OpenOCD is now installed, this software can damage your hardware, enjoy!
 
 User's guide is at:
@@ -20,5 +21,6 @@ FreeBSD USB NOTE:
 
  ***/etc/rc.conf:
 	devfs_system_ruleset="localrules"
-
-===============================================================================
+EOM
+}
+]

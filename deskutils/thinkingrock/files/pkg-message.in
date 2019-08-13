@@ -1,5 +1,6 @@
-*****************************************************************
-
+[
+{ type: install
+  message: <<EOM
  Please note that Thinkingrock will not work with diablo-jdk16
  or diablo-jre16. Set the JAVA_HOME variable to a different
  Java installation:
@@ -11,5 +12,6 @@
  e.g. sh:
  $ export JAVA_HOME=/usr/local/diablo-jre1.5.0
  $ thinkingrock
-
-*****************************************************************
+EOM
+}
+]

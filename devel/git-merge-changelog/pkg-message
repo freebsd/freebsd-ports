@@ -1,4 +1,6 @@
-************************************************************************
+[
+{ type: install
+  message: <<EOM
 Usage of git-merge-changelog:
 
 - Add to .git/config of the checkout (or to your $HOME/.gitconfig) the
@@ -12,5 +14,6 @@ Usage of git-merge-changelog:
   '.gitattributes' with this line:
 
 	ChangeLog	merge=merge-changelog
-
-************************************************************************
+EOM
+}
+]
