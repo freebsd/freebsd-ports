@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mojolicious
-PORTVERSION=	8.22
+PORTVERSION=	8.23
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,8 +29,8 @@ EV_BUILD_DEPENDS=	p5-EV>=4:devel/p5-EV
 EV_RUN_DEPENDS=		p5-EV>=4:devel/p5-EV
 
 JSONXS_DESC=		High-performance JSON parsing via p5-Cpanel-JSON-XS
-JSONXS_BUILD_DEPENDS=	p5-Cpanel-JSON-XS>=4.04:converters/p5-Cpanel-JSON-XS
-JSONXS_RUN_DEPENDS=	p5-Cpanel-JSON-XS>=4.04:converters/p5-Cpanel-JSON-XS
+JSONXS_BUILD_DEPENDS=	p5-Cpanel-JSON-XS>=4.09:converters/p5-Cpanel-JSON-XS
+JSONXS_RUN_DEPENDS=	p5-Cpanel-JSON-XS>=4.09:converters/p5-Cpanel-JSON-XS
 
 TLS_BUILD_DEPENDS=	p5-IO-Socket-SSL>=2.009:security/p5-IO-Socket-SSL
 TLS_RUN_DEPENDS=	p5-IO-Socket-SSL>=2.009:security/p5-IO-Socket-SSL
