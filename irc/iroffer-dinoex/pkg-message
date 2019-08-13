@@ -1,5 +1,6 @@
-=========================================================================
-
+[
+{ type: install
+  message: <<EOM
 Sample configuration and crontab files have been placed in
 ${PREFIX}/share/examples/iroffer.
 
@@ -17,5 +18,6 @@ For more details on how to use the program see the comments in
 ${PREFIX}/share/examples/iroffer/sample.config, as well as the README
 files ${PREFIX}/share/doc/iroffer/README and
 ${PREFIX}/share/doc/iroffer/WHATSNEW.
-
-=========================================================================
+EOM
+}
+]

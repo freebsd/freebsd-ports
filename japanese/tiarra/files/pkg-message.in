@@ -1,3 +1,7 @@
-
+[
+{ type: install
+  message: <<EOM
 You need to edit %%PREFIX%%/tiarra/tiarra.conf to work properly.
-
+EOM
+}
+]

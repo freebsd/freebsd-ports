@@ -1,4 +1,6 @@
----------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 To use pircbot add %%JAVAJARDIR%%/pircbot.jar to
 your classpath. A short tutorial can be found here:
     http://www.jibble.org/pircbot.php
@@ -6,4 +8,6 @@ your classpath. A short tutorial can be found here:
 If you have the DOCS option enabled the pircbot javadoc
 documentation will also have been installed in:
     %%DOCSDIR%%
----------------------------------------------------------------
+EOM
+}
+]

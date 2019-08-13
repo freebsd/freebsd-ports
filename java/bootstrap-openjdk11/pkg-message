@@ -1,5 +1,6 @@
-======================================================================
-
+[
+{ type: install
+  message: <<EOM
 WARNING: This port only exists for bootstrapping java/openjdk11.
 You are advised to remove this port as soon as a stable JDK is built.
 
@@ -15,5 +16,6 @@ To make it permanent, you need the following lines in /etc/fstab:
 
 	fdesc	/dev/fd		fdescfs		rw	0	0
 	proc	/proc		procfs		rw	0	0
-
-======================================================================
+EOM
+}
+]

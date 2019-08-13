@@ -1,5 +1,6 @@
-
-***************************************************************************
+[
+{ type: install
+  message: <<EOM
 	SOCKS support has been added.  To take advantage of it you
 	must add the following to ~/.sircrc.pl:
 
@@ -8,5 +9,6 @@ $ENV{"SOCKS_SERVER"}	=		# You must set this
 # $ENV{"SOCKS_DNS"}	= 1		# For DNS through the proxy
 
 &load("socks.pl");
-***************************************************************************
-
+EOM
+}
+]

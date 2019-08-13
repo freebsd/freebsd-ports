@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To activate uim-mozc, please add the following into ~/.xinitrc,
 ~/.xsession, or ~/.kde4/env (for KDE4):
 
@@ -7,3 +10,6 @@ export XMODIFIERS=@im=uim
 export XIM=uim
 %%PREFIX%%/bin/mozc start
 uim-xim &
+EOM
+}
+]

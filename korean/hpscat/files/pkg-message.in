@@ -1,3 +1,9 @@
+[
+{ type: install
+  message: <<EOM
 To use hpscat with font loading in gs, use hpscat.sh instead.
 Otherwise, you must setup ghostscript to load font first.
 Read %%FONTDIR%%/README.jshin(.ks)
+EOM
+}
+]

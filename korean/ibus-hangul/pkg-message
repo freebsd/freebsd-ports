@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 ibus-hangul installation finished. To use ibus-hangul, please do the following:
 
 If you are using bash or zsh, please add following lines to your $HOME/.bashrc or
@@ -29,3 +32,6 @@ export QT_IM_MODULE=xim
 export XMODIFIERS=@im=ibus
 export XIM_PROGRAM="ibus-daemon"
 export XIM_ARGS="-r --daemonize --xim"
+EOM
+}
+]

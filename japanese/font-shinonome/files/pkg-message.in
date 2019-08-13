@@ -1,4 +1,3 @@
-*******************************************************************
 You can start using the font(s) by following these instructions:
 
 Either type the following in an X terminal:
@@ -12,4 +11,3 @@ of your X.Org configuration file (typically /etc/X11/xorg.conf):
         FontPath "%%FONTSDIR%%/"
 
 then restart X.
-*******************************************************************

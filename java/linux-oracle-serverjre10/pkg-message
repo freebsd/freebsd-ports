@@ -1,5 +1,6 @@
-======================================================================
-
+[
+{ type: install
+  message: <<EOM
 Warning: This JRE may be unstable. You are advised to use the native
 FreeBSD JDK 8, in ports/java/openjdk8.
 
@@ -15,5 +16,6 @@ and then, as root, executing the commands:
 
 kldload linprocfs
 mount /compat/linux/proc
-
-======================================================================
+EOM
+}
+]

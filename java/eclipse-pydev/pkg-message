@@ -1,5 +1,6 @@
-*********************************************************************
-
+[
+{ type: install
+  message: <<EOM
   The first time, run Eclipse with the option -clean, and configure
   a Python or Jython interpreter in  Window -> Preferences -> PyDev
   -> Interpreter before creating a new Pydev project
@@ -9,5 +10,6 @@
     eclipse -consoleLog -initialize
 
   as root or sudoer.
-
-*********************************************************************
+EOM
+}
+]

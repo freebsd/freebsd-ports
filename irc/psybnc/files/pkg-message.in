@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 If you have not created SSL certificates for psybnc already, do so using the
 following commands:
 
@@ -8,3 +11,6 @@ cd %%PSYBASE%%
         -key key/psybnc.key.pem -out key/psybnc.cert.pem
 /usr/bin/openssl x509 -subject -dates -fingerprint -noout \
         -in key/psybnc.cert.pem
+EOM
+}
+]

@@ -1,4 +1,6 @@
-------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 ratbox-respond has been successfully installed.
 
 Be sure to look in:
@@ -6,4 +8,6 @@ Be sure to look in:
   %%EXAMPLESDIR%%/client-scripts
 
 for some example scripts for various popular IRC clients.
-------------------------------------------------------------------------
+EOM
+}
+]

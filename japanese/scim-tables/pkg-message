@@ -1,4 +1,6 @@
---------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 Remember to set environment variable XMODIFIERS:
 
   csh/tcsh: setenv XMODIFIERS @im=SCIM
@@ -10,5 +12,6 @@ utility to configure the supported locale.
 To start the SCIM input method daemon, use command:
 
   scim -d
-
---------------------------------------------------------------------
+EOM
+}
+]

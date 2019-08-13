@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 You'll have to add this port's directory (%%PREFIX%%/lib/X11/fonts/culmus
 to you're X font path. Here's how:
 
@@ -11,3 +14,6 @@ X-server.
 If you're using XFS it is also a good idea to add this directory to
 your "catalogue" line in the XFS configuration file:
 %%PREFIX%%/lib/X11/fs/config
+EOM
+}
+]

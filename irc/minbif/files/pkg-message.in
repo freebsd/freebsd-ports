@@ -1,4 +1,6 @@
-/************************************************************************
+[
+{ type: install
+  message: <<EOM
 To configure minbif, do the following:
 
 Copy %%PREFIX%%/etc/minbif/minbif.conf-dist
@@ -14,5 +16,6 @@ minbif.
 To launch the minbif daemon, add the following line to /etc/rc.conf:
 
 minbif_enable="YES"
-
-*************************************************************************/
+EOM
+}
+]

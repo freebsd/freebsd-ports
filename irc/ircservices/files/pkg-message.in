@@ -1,4 +1,8 @@
-**********          IMPORTANT           **********
+[
+{ type: install
+  message: <<EOM
 The configuration directory has changed to %%PREFIX%%/etc/ircservices
 Please copy your old config files there if updating
-**********          IMPORTANT           *********
+EOM
+}
+]

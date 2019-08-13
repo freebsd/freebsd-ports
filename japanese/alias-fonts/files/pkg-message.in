@@ -1,4 +1,6 @@
-********************************************************************
+[
+{ type: install
+  message: <<EOM
 You can start using the fonts by the following instructions.  It is
 required for an application which uses XLFD.
 
@@ -20,4 +22,6 @@ Font Path setting:
 whether the following directories are listed:
 
     %%PREFIX%%/share/fonts/alias-fonts/	(This port)
-********************************************************************
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 There is a native (faster) file watching support backed by kqueue which is
 enabled by default.  If you encounter problems with watching large
 trees, you can disable it by appending the following property into
@@ -10,3 +13,6 @@ Only enable fsnotifier if your projects have < 600 files.
 At systems which use links for /usr/home/user or /home/user apparently
 IDEA finds two different VCS roots while trying to integrate with Git.
 Please, use as a VCS root only one of them.
+EOM
+}
+]

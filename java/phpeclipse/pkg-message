@@ -1,6 +1,10 @@
-------------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 If you are experiencing problems while saving files or opening HTML files
 please select
 "Window->Preferences->PHPeclipse Web Development->Browser Preview Defaults"
 and uncheck all checkboxes.
-------------------------------------------------------------------------------
+EOM
+}
+]

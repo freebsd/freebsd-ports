@@ -1,3 +1,9 @@
-Note: the dbskkd-cdb requires inetd or daemontools to run.
+[
+{ type: install
+  message: <<EOM
+The dbskkd-cdb requires inetd or daemontools to run.
+dbskkd-cdb must not be invoked with the root privilege.
 Example configurations are available at %%DOCSDIR%%/examples.md.
-*Note well*: dbskkd-cdb must not be invoked with the root privilege.
+EOM
+}
+]
