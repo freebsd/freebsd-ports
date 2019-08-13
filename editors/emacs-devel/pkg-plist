@@ -1525,8 +1525,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-print.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-seq.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-seq.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/copyright.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/copyright.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/crm.el.gz
@@ -2862,6 +2860,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/bruce.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cc-compat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cc-compat.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cl.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cl.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cl-compat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cl-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/complete.el.gz
