@@ -1,4 +1,6 @@
-------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 ircd-ratbox has been successfully installed.
 
 Sample 'ircd.conf' and 'ircd.motd' files have been created in the
@@ -33,4 +35,6 @@ For more information on upgrading, see:
 	http://svn.ratbox.org/svnroot/ircd-ratbox/trunk/INSTALL
 
 Be sure to check out 'ratbox-services' if you need a services package.
-------------------------------------------------------------------------
+EOM
+}
+]

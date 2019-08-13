@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To activate fcitx-mozc, please add the following into ~/.xinitrc,
 ~/.xsession, or ~/.kde4/env (for KDE4):
 
@@ -6,3 +9,6 @@ export QT_IM_MODULE=xim
 export XMODIFIERS=@im=fcitx
 %%PREFIX%%/bin/mozc start
 fcitx -r -d
+EOM
+}
+]

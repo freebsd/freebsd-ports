@@ -1,4 +1,6 @@
---------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 Remember to set environment variables XMODIFIERS and LANG:
 
   csh/tcsh: setenv XMODIFIERS @im=SCIM  ; setenv LANG ja_JP.eucJP
@@ -7,5 +9,6 @@ Remember to set environment variables XMODIFIERS and LANG:
 To start the SCIM input method daemon, use command:
 
   scim -d
-
---------------------------------------------------------------------
+EOM
+}
+]

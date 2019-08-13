@@ -1,6 +1,6 @@
-
-----------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 ircd-RU has now been installed.
 
 This port create user ircd and group ircd
@@ -12,5 +12,6 @@ You should now edit %%PREFIX%%/ircd-RU/etc/ircd.conf
 You may then start the server by running:
  echo ircd_enable=\"YES\" >> /etc/rc.conf
  %%PREFIX%%/etc/rc.d/ircd.sh start
-
-----------------------------------------------------
+EOM
+}
+]

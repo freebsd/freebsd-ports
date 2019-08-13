@@ -1,5 +1,6 @@
-===========================================================================
-
+[
+{ type: install
+  message: <<EOM
 To use migemo.el, please set the following elisp to your own
 ~/.emacs.d/init.el file.
 
@@ -14,5 +15,6 @@ To use migemo.el, please set the following elisp to your own
 (setq migemo-coding-system 'utf-8-unix)
 (load-library "migemo")
 (migemo-init)
-
-===========================================================================
+EOM
+}
+]

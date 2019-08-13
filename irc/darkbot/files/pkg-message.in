@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 Before using darkbot, it must be configured.
 
 Configuration is achieved using:
 
 # sh %%ETCDIR%%/configure
+EOM
+}
+]

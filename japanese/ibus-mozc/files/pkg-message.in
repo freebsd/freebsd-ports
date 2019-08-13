@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To activate ibus-mozc, please add the following into ~/.xinitrc,
 ~/.xsession, or ~/.kde4/env (for KDE4):
 
@@ -9,3 +12,6 @@ ibus-daemon -r --daemonize --xim
 
 Note that textproc/ibus-qt with IBUS option is required to
 make QT_IM_MODULE=ibus work.
+EOM
+}
+]

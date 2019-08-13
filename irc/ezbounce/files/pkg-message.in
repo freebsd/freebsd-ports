@@ -1,4 +1,8 @@
-------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 You will need to edit %%PREFIX%%/etc/ezb.conf and read the docs in
 %%DOCSDIR%%/README to set up this program.
-------------------------------------------------------------------
+EOM
+}
+]

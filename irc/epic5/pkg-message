@@ -1,4 +1,10 @@
+[
+{ type: install
+  message: <<EOM
 You will find EPIC to be a bit primitive without a script of some sort.
 
 Some of the more popular scripts can be found at:
 http://scripts.epicsol.org/doku.php/scripts
+EOM
+}
+]

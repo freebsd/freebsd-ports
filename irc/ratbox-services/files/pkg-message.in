@@ -1,4 +1,6 @@
-------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 ratbox-services has been successfully installed.
 
 A sample configuration file 'ratbox-services.conf' has been created in
@@ -62,5 +64,6 @@ Database Support Note:
 In recent versions, support for MySQL and PgSQL lib detection has been slightly
 broken and currently does not work as expected. This problem should be resolved
 in the next release.
-
-------------------------------------------------------------------------
+EOM
+}
+]

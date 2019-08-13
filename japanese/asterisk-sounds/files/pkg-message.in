@@ -1,4 +1,6 @@
-=============================================================================
+[
+{ type: install
+  message: <<EOM
 [FYI]
 
  To get natural word order in Japanese sentences
@@ -17,5 +19,6 @@
 
      [options]
      languageprefix=yes
-
-=============================================================================
+EOM
+}
+]

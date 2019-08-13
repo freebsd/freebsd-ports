@@ -1,4 +1,6 @@
----------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 - The default key-binding is now "egg" style.  See the following line in
   in ${LOCALBASE}/lib/X11/app-defaults/Kinput2:
 
@@ -11,4 +13,6 @@
 
   Note that $JSERVER environment variable can be used to override the
   configuration file.
----------------------------------------------------------------------------
+EOM
+}
+]

@@ -1,4 +1,6 @@
-----------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 Mailman has been installed, but requires further configuration before use!
 
 You will have to configure both your MTA (mail server) and web server to
@@ -25,4 +27,6 @@ or link %%LOCALBASE%%/libexec/namazu.cgi to
 to refer to %%LOCALBASE%%/etc/namazu/namazu-sample.
 You can also see the Japanese document in
 <http://www.python.jp/pipermail/mailman-users-jp/2004-August/001008.html>
-----------------------------------------------------------------------------
+EOM
+}
+]

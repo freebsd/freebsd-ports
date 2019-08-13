@@ -1,4 +1,6 @@
-=============================================================================
+[
+{ type: install
+  message: <<EOM
 To run quasselcore at system start-up, add quasselcore_enable="YES"
 to /etc/rc.conf.
 
@@ -14,4 +16,6 @@ or
 By default quasselcore listens on 4242 port at localhost.
 To change default behavior set quasselcore_args variable in /etc/rc.conf.
 See 'quasselcore --help' for available arguments.
-=============================================================================
+EOM
+}
+]

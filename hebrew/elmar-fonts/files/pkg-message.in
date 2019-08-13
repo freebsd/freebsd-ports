@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 You'll have to add this port's directory PREFIX/lib/X11/fonts/hebrew
 to your X font path:
 
@@ -6,3 +9,6 @@ $ xset fp rehash
 
 or by adding a FontPath line for it in the X-server configuration file (usually
 /etc/X11/xorg.conf) and restarting the X-server.
+EOM
+}
+]

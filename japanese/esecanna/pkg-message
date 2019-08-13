@@ -1,4 +1,6 @@
-************************************************************
+[
+{ type: install
+  message: <<EOM
 Quick Setup:
   Take the following steps all as root.
     1) Install one of the esecanna-module ports.
@@ -17,4 +19,6 @@ ${PREFIX}/share/doc/esecanna/ and log output kept in
 Note:
   Using VJE-Delta 3.0 trial, esecannaserver will fail to
 connect to vjed until after once you run vje.
-************************************************************
+EOM
+}
+]

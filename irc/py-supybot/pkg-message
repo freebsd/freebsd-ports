@@ -1,4 +1,6 @@
--------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 Supybot is installed.
 
 For a quick start:
@@ -11,4 +13,6 @@ installed.
 
 **WARNING** Some config names changed between some versions.
 Review the ChangeLog document in the documentation directory.
--------------------------------------------------------------
+EOM
+}
+]

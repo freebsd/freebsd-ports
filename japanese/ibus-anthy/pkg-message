@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 ibus-anthy installation finished. To use ibus-anthy, please do the following:
 
 If you are using bash or zsh, please add following lines to your $HOME/.bashrc or
@@ -33,3 +36,6 @@ export XIM_ARGS="-r --daemonize --xim"
 If ibus cannot start or the panel does not appear, please ensure
 that you are using up-to-date python.
 There's a bug in python 2.5, which may prevent the panel from appearing.
+EOM
+}
+]

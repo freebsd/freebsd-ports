@@ -1,4 +1,6 @@
-------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 ircd-ratbox-devel has been successfully installed.
 
 Sample 'ircd.conf' and 'ircd.motd' files have been created in the
@@ -28,4 +30,6 @@ should be added as a configuration setting (use_sslonly) in the
 ircd.conf file in order to activate the +S channel mode.
 
 Be sure to check out 'ratbox-services' if you need a services package.
-------------------------------------------------------------------------
+EOM
+}
+]

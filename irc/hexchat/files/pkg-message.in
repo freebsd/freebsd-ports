@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 HexChat has been installed.
 
 If you want spell-check to work, you need to install Aspell
@@ -7,5 +8,6 @@ dictionary for your language.
 
 For FiSH Protection it is best to use irc/py-fishcrypt, HexChat has one
 Option FiSHLiM which doesn't work good.
-
-===============================================================================
+EOM
+}
+]

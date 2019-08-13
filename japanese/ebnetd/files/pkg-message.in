@@ -1,4 +1,6 @@
-**********************************************************************
+[
+{ type: install
+  message: <<EOM
 You'll need manual configurations to actually activate EBNETD servers
 (ebhttpd/ebnetd/ndtpd).
 
@@ -30,4 +32,6 @@ Step 2b:
 To start EBNETD servers as child processes of 'inetd', edit
 /etc/inetd.conf. Consult the "Run `xxxx' as a child of `inetd'"
 sections of info file.
-**********************************************************************
+EOM
+}
+]

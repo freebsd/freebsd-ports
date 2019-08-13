@@ -1,4 +1,6 @@
-**********************************************************************
+[
+{ type: install
+  message: <<EOM
 Quick Setup:
 
 (1) Add the following two lines in your $HOME/.emacs file;
@@ -13,9 +15,11 @@ Quick Setup:
 
   These values are also configurable in .emacs by setting variables
   'yc-server-host' and 'yc-canna-lib-path'.
-**********************************************************************
+
 Note:
   If you want to use UNIX-domain socket for communication with cannaserver
   in emacs21 or former version of emacsen, define WITH_ICANNA to add
   dependency to ports ja-icanna.
-**********************************************************************
+EOM
+}
+]

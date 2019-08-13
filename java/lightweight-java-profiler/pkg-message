@@ -1,3 +1,9 @@
+[
+{ type: install
+  message: <<EOM
 To use the lightweight-java-profiler, you can invoke Java as follows:
 
 java -agentpath:path/to/liblagent.so[:file=fname] It will spit out stack traces into traces.txt (or into the optional fname passed to the agent). The current implementation samples every 1/100th of a second. It stores the first 3000 stack traces it encounters; additional stack traces will be ignored, but duplicate stack traces will continue to be counted indefinitely (or until the counter overflows, which will take a while).
+EOM
+}
+]

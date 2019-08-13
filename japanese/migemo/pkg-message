@@ -1,7 +1,10 @@
-********************************************************
-* Before using Migemo, you must set following elisp to *
-* your own .emacs file.                                *
-*                                                      *
-* (load-library "migemo")                              *
-*                                                      *
-********************************************************
+[
+{ type: install
+  message: <<EOM
+ Before using Migemo, you must set following elisp to
+ your own .emacs file.
+
+ (load-library "migemo")
+EOM
+}
+]
