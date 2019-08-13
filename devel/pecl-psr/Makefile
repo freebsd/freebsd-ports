@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	psr
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
