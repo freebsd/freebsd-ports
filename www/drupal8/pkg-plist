@@ -2457,6 +2457,7 @@
 %%WWWDIR%%/core/lib/Drupal/Core/TypedData/Validation/RecursiveValidator.php
 %%WWWDIR%%/core/lib/Drupal/Core/TypedData/Validation/TypedDataAwareValidatorTrait.php
 %%WWWDIR%%/core/lib/Drupal/Core/TypedData/Validation/TypedDataMetadata.php
+%%WWWDIR%%/core/lib/Drupal/Core/Update/UpdateCompilerPass.php
 %%WWWDIR%%/core/lib/Drupal/Core/Update/UpdateKernel.php
 %%WWWDIR%%/core/lib/Drupal/Core/Update/UpdateRegistry.php
 %%WWWDIR%%/core/lib/Drupal/Core/Update/UpdateRegistryFactory.php
@@ -4700,6 +4701,7 @@
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/FieldDataCountTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/FieldDefinitionIntegrityTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/FieldDisplayTest.php
+%%WWWDIR%%/core/modules/field/tests/src/Kernel/FieldFormatterTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/FieldImportChangeTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/FieldImportCreateTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/FieldImportDeleteTest.php
@@ -8682,6 +8684,7 @@
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.seven-secondary-local-tasks-block-2569529.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.site-branding-into-block-2005546.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.stable-base-theme-2575421.php
+%%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.taxonomy-parent-multilingual-3066439.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.test-config-init.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.update-test-block-disabled-2513534.php
 %%WWWDIR%%/core/modules/system/tests/fixtures/update/drupal-8.update-test-postupdate-enabled.php
@@ -8976,6 +8979,7 @@
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test_update/entity_test_update.install
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test_update/entity_test_update.module
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test_update/src/Entity/EntityTestUpdate.php
+%%WWWDIR%%/core/modules/system/tests/modules/entity_test_update/src/EntityTestUpdateStorage.php
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test_update/src/EntityTestUpdateStorageSchema.php
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test_update/src/Plugin/Field/FieldType/MultiValueTestItem.php
 %%WWWDIR%%/core/modules/system/tests/modules/entity_test_update/update/entity_rev_pub_updates_8400.inc
@@ -9201,6 +9205,15 @@
 %%WWWDIR%%/core/modules/system/tests/modules/module_test/module_test.post_update.php
 %%WWWDIR%%/core/modules/system/tests/modules/module_test/module_test.routing.yml
 %%WWWDIR%%/core/modules/system/tests/modules/module_test/src/Controller/ModuleTestController.php
+%%WWWDIR%%/core/modules/system/tests/modules/new_dependency_test/new_dependency_test.info.yml
+%%WWWDIR%%/core/modules/system/tests/modules/new_dependency_test/new_dependency_test.install
+%%WWWDIR%%/core/modules/system/tests/modules/new_dependency_test/new_dependency_test.services.yml
+%%WWWDIR%%/core/modules/system/tests/modules/new_dependency_test/src/InjectedService.php
+%%WWWDIR%%/core/modules/system/tests/modules/new_dependency_test/src/Service.php
+%%WWWDIR%%/core/modules/system/tests/modules/new_dependency_test/src/ServiceWithDependency.php
+%%WWWDIR%%/core/modules/system/tests/modules/new_dependency_test_with_service/new_dependency_test_with_service.info.yml
+%%WWWDIR%%/core/modules/system/tests/modules/new_dependency_test_with_service/new_dependency_test_with_service.services.yml
+%%WWWDIR%%/core/modules/system/tests/modules/new_dependency_test_with_service/src/NewService.php
 %%WWWDIR%%/core/modules/system/tests/modules/off_canvas_test/off_canvas_test.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/off_canvas_test/off_canvas_test.routing.yml
 %%WWWDIR%%/core/modules/system/tests/modules/off_canvas_test/src/Controller/TestController.php
@@ -9641,6 +9654,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/StableBaseThemeUpdateTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/UpdateActionsWithEntityPluginsTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/UpdateEntityDisplayTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Update/UpdatePathNewDependencyTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/UpdatePathRC1TestBaseFilledTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/UpdatePathRC1TestBaseTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Update/UpdatePathTestBaseFilledTest.php
@@ -9964,6 +9978,7 @@
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/ThemeTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TokenReplaceTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Update/TaxonomyParentUpdateTest.php
+%%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Update/TaxonomyTermParentMultilingualTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Update/TaxonomyTermUpdatePathTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Update/TaxonomyVocabularyHierarchyUpdateTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Views/RelationshipNodeTermDataTest.php
