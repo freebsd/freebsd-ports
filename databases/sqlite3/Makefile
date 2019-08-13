@@ -252,7 +252,7 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/include/msvc.h
 
 # for compares with checksum from of the site
-sha1: fetch
+sha1: checksum
 .if defined(SHA1) && !empty(SHA1)
 	@sha1 -c ${SHA1} ${DISTDIR}/${ALLFILES}
 .else
