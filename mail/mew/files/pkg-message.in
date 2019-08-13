@@ -1,4 +1,6 @@
-*************************************************************************
+[
+{ type: install
+  message: <<EOM
 You may want to add following lines to your ~/.emacs and/or ~/.mew.el.
 
     (autoload 'mew "mew" nil t)
@@ -12,4 +14,6 @@ You may want to add following lines to your ~/.emacs and/or ~/.mew.el.
 
 Please consult sample files %%DOCSDIR%%/dot.{emacs,mew}.
 See also %%DOCSDIR%%/00diff for the changes from previous versions.
-*************************************************************************
+EOM
+}
+]

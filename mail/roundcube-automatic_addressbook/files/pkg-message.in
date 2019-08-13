@@ -1,6 +1,6 @@
----------------------------------------------------------------------
-FIRST INSTALLATION
-
+[
+{ type: install
+  message: <<EOM
 If this is a first installation of automatic addressbook plugin, you
 have to execute the relevant initialisation SQL script for your
 chosen database backend :
@@ -18,13 +18,15 @@ Finally, you will need to add the plugin to your list of loadable
 plugins in %%RCDIR%%/config/main.inc.php or %%RCDIR%%/config/config.inc.php depending on your roundcube version, for example:
 
     $rcmail_config['plugins'] = array('automatic_addressbook',);
-
-UPGRADING
-
+EOM
+}
+{ type: upgrade
+  message: <<EOM
 If you already had a previous version of automatic addressbook plugin
 installed, you should update your database schema by executing the
 relevant upgrade SQL script for your chosen database backend :
 
 %%PLUGINDIR%%/SQL/<dbtype>.update.sql scripts.
-
----------------------------------------------------------------------
+EOM
+}
+]

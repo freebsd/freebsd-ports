@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Before actually using it, it is necessary to prepare a word database.
 
 1. The word contained in clean mail is counted.
@@ -19,3 +22,6 @@ Before actually using it, it is necessary to prepare a word database.
 3. A database is updated for every word.
 
   $ bsfilter -u
+EOM
+}
+]

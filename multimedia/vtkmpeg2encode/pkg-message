@@ -1,5 +1,6 @@
-*****************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 The MPEG2 format and all software that uses it is subject to patent
 restrictions. Please see http://www.mpegla.com/m2/m2-agreement.cfm
 for more information.
@@ -16,5 +17,6 @@ make deinstall
 make clean
 make config
 make reinstall
-
-*****************************************************************************
+EOM
+}
+]

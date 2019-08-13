@@ -1,5 +1,6 @@
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
+[
+{ type: install
+  message: <<EOM
 multimedia/%%PORTNAME%% includes an RC script:
 %%PREFIX%%/etc/rc.d/%%PORTNAME%%
 
@@ -54,5 +55,6 @@ Please refer to documentation for all other FreeBSD jail management
 utilities.
 
 @@@ INTEL GPU OFFLOAD NOTES @@@
-
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Edit Postfix's master configuration file, master.cf, and add the following:
 
     greyfix    unix  -       n       n       -       -       spawn
@@ -19,3 +22,6 @@ that you should add check_policy_service unix:private/greyfix to it.
 Finally have postfix reload its configuration with:
 
     %%PREFIX%%/etc/rc.d/postfix reload
+EOM
+}
+]

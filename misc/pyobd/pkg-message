@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed pyOBD: OBD-II compliant car diagnostic tool.
 
 pyOBD expects the device /dev/ttyU0 that should be created when you
@@ -12,4 +14,6 @@ add path 'ttyU*' mode 0660 group users
 
 You also need this line in /etc/rc.conf to allow localrules to take effect:
 devfs_system_ruleset="localrules"
-======================================================================
+EOM
+}
+]

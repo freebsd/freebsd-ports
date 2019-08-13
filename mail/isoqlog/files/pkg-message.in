@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 First edit %%PREFIX%%/etc/isoqlog.conf
 After that edit %%PREFIX%%/etc/isoqlog.domains
 
@@ -7,4 +9,6 @@ Finally you have to add a crontab entry in order to get isoqlog work like:
 58 * * * * %%PREFIX%%/bin/isoqlog 1>/dev/null 2>/dev/null
 
 You can read %%PREFIX%%/share/doc/isoqlog/EnderUNIX about our other projects
-
+EOM
+}
+]

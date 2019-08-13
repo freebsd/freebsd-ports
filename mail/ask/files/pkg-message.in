@@ -1,5 +1,6 @@
-=============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Sample configuration files were installed in
 %%EXAMPLESDIR%%
 
@@ -9,5 +10,6 @@ For additional information see supplied documentation in
 %%DOCSDIR%%
 
 and/or manpages: askfilter(1) asksenders(1) asksetup(1)
-
-=============================================================================
+EOM
+}
+]

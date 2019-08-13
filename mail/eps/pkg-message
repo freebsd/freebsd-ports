@@ -1,2 +1,7 @@
-
+[
+{ type: install
+  message: <<EOM
 Please read the %%PREFIX%%/share/doc/eps/howto
+EOM
+}
+]

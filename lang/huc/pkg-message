@@ -1,4 +1,8 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 Huc is now installed!
 Set the $PCE_INCLUDE environment variable to ${PREFIX}/include/huc/pce
-======================================================================
+EOM
+}
+]

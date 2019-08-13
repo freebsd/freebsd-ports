@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
  ArchiveSMTP has been installed! You will, however, need to configure your MTA
  to use it as a 'milter'. Please consult your MTA's documentation reguarding
  this. For rule formats check the manpage and sample configuration file. The
@@ -16,5 +17,6 @@
  Please note: Only the owner my have write permissions on the socket directory.
 
  Visit the website at: http://www.dancingfortune.com/projects/archivesmtp/
-
-###############################################################################
+EOM
+}
+]

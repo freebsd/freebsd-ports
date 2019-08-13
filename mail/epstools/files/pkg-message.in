@@ -1,3 +1,8 @@
-
+[
+{ type: install
+  message: <<EOM
 Please read the %%DOCSDIR%%/README
 Example mail files are under %%EXAMPLESDIR%%
+EOM
+}
+]

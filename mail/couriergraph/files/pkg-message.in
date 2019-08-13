@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Make sure this script should be invoked with privilege to read
 /var/log/maillog.
 
@@ -5,3 +8,6 @@ Make sure this script should be invoked with privilege to read
 
 The RRD database has been moved to %%DATADIR%%.
 If you have previous ones, please move them to %%DATADIR%%.
+EOM
+}
+]

@@ -1,6 +1,10 @@
-**********************************************************************
+[
+{ type: install
+  message: <<EOM
 After the installation:
 - create ~/.pymsgauth directory;
 - copy %%EXAMPLESDIR%%/pymsgauthrc-example to
   ~/.pymsgauth/pymsgauthrc and edit the config file to fit your needs.
-**********************************************************************
+EOM
+}
+]

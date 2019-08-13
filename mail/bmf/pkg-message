@@ -1,6 +1,7 @@
-============================
+[
+{ type: install
+  message: <<EOM
 === How to integrate bmf ===
-============================
 
 For maildrop(1), use only one of the following examples.  The first
 sample invokes bmf in its normal mode of operation and the second
@@ -59,3 +60,6 @@ These will override these commands:
   <Esc>u = de-register as spam, register as non-spam, and move to inbox folder.
 
 Please see the ${PREFIX}/share/bmf/README for further details.
+EOM
+}
+]

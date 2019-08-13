@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 You have just installed %%PREFIX%%/bin/qmail-auditor
 which can be enabled by wrapping qmail-queue and naming the original qmail-queue
 as qmail-queue-real, for example:
@@ -26,3 +29,6 @@ to	user@some.domain.br	auditing@mycompany.com
 all	sales@domain.br		salesauditing@mycompany.com
 
 The README file was installed on %%DOCSDIR%%
+EOM
+}
+]

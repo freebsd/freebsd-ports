@@ -1,7 +1,11 @@
-***************************************************
+[
+{ type: install
+  message: <<EOM
 Before using Elscreen, you must set following elisp
 to your own .emacs file.
 
 (require 'elscreen)
 (elscreen-start)
-***************************************************
+EOM
+}
+]

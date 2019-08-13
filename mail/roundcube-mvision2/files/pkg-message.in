@@ -1,6 +1,6 @@
-
-*******************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Make the following changes to RoundCube main configuration:
 
 %%LOCALBASE%%/www/roundcube/config/main.inc.php
@@ -14,6 +14,6 @@ Make the following changes to RoundCube main configuration:
 
 4) Add new configuration line:
    $rcmail_config['preview_pane_vertical'] = true;
-
-*******************************************************************************
-
+EOM
+}
+]

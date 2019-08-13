@@ -1,4 +1,10 @@
+[
+{ type: install
+  message: <<EOM
   Add to path: %%PREFIX%%/bin
   All binaries have prefix of %%TARGET%%-
   e.g. %%TARGET%%-gcc
        %%TARGET%%-gnatmake
+EOM
+}
+]

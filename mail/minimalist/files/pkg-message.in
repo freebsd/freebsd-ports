@@ -1,4 +1,6 @@
--------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 Minimalist files are in: %%PREFIX%%/share/minimalist
 Minimalist binary is: %%PREFIX%%/bin/minimalist.pl
 Minimalist main config is: %%PREFIX%%/etc/minimalist.conf-sample
@@ -13,4 +15,6 @@ aliases file
 
 A sample configuration for a mailing list can be
 found in %%PREFIX%%/share/minimalist/sample.
--------------------------------------------------------------------
+EOM
+}
+]

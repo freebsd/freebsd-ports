@@ -1,5 +1,6 @@
-************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 In order to run this port, write your opendkim.conf and:
 
 if you use sendmail, add the milter socket `socketspec' in
@@ -19,5 +20,6 @@ Extra options can be found in startup script.
 
 Note: milter sockets must be accessible from postfix/smtpd;
   using inet sockets might be preferred.
-
-************************************************************************
+EOM
+}
+]

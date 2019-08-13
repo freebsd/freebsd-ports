@@ -1,9 +1,6 @@
-
-==========================================================================
-
-Installation Notes
-------------------
-
+[
+{ type: install
+  message: <<EOM
 Make certain you edit %%DCCHOME%%/dcc_conf to enable the daemons you
 wish to run, in addition to adding their respective dcc*_enable="YES"
 lines to /etc/rc.conf or /etc/rc.conf.local.
@@ -29,8 +26,6 @@ the global network of DCC servers.  See:
 http://www.dcc-servers.net/dcc/#local-server
 
 
-==========================================================================
-
 
 DCC Usage Restrictions Notice
 -----------------------------
@@ -48,6 +43,6 @@ Please read the LICENSE file in the DCC source:
 or at:
 
 http://www.dcc-servers.net/dcc/dcc-tree/LICENSE
-
-
-==========================================================================
+EOM
+}
+]

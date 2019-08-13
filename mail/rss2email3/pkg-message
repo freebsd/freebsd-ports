@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Quick Howto
 
 Create a new feed database:
@@ -19,3 +22,6 @@ Run it through cron. Feel free to increase or decrease the interval.
 
 There is only output if there's an error (which you probably want emailed to you
 from cron anyway).
+EOM
+}
+]

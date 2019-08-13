@@ -1,4 +1,6 @@
-**********************************************************************
+[
+{ type: install
+  message: <<EOM
 To enable spamd you need:
 
 1) Enable spamd in /etc/rc.conf with the following line:
@@ -34,5 +36,6 @@ To enable spamd you need:
 FreeBSD only features (not in OpenBSD):
   - sync for spamdb (parameter -Y)
     See %%PREFIX%%/%%DOCSDIR%%/ for usage.
-
-**********************************************************************
+EOM
+}
+]

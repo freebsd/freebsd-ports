@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The service is not enabled by default.  Enable it by doing the following:
 
 1. Add the following to /etc/postfix/master.cf:
@@ -24,3 +27,6 @@ The service is not enabled by default.  Enable it by doing the following:
    system may become an open relay.
 
 4. Restart Postfix.
+EOM
+}
+]

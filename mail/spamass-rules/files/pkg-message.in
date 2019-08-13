@@ -1,5 +1,6 @@
-*************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 The custom rulesets are installed in %%DATADIR%%
 
 Before running these rules please do the following:
@@ -11,5 +12,6 @@ Before running these rules please do the following:
 3. Make sure to --lint the rules after loading them.
 4. Test the new rulesets. Keep an eye on hits from the new rules to
    determine if the scoring is right for you.
-
-*************************************************************************
+EOM
+}
+]

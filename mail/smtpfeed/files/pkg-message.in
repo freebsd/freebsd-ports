@@ -1,4 +1,6 @@
-**************************************************************
+[
+{ type: install
+  message: <<EOM
 smtpfeed is installed into %%PREFIX%%/libexec/smtpfeed.
 You'll need to perform 2 steps, (a) to (b), to make smtpfeed
 work:
@@ -10,4 +12,6 @@ with sendmail.cf.  Read through documentation in
 %%DOCSDIR%% for details.
 (b) see file named INSTALL in
 %%DOCSDIR%% for details.
-**************************************************************
+EOM
+}
+]

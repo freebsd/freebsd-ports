@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To activate SquirrelMail, you must complete the following steps:
 
 1) Set up a VirtualHost or an alias in httpd.conf that points to
@@ -13,3 +16,6 @@ To activate SquirrelMail, you must complete the following steps:
 4) It is best practice to change the data/user preference directory
    (under General Options) to somewhere outside of
    %%SQUIRRELDIR%%.
+EOM
+}
+]

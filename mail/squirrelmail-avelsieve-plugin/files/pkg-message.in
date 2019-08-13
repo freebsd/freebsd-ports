@@ -1,8 +1,10 @@
-*** IMPORTANT *** IMPORTANT *** IMPORTANT ***
-
+[
+{ type: install
+  message: <<EOM
 To configure the plugin, please copy
     %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config/config_sample.php to
     %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config/config.php
 then review, and modify, its content for your environment.
-
-*** IMPORTANT *** IMPORTANT *** IMPORTANT ***
+EOM
+}
+]

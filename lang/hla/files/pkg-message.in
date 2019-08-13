@@ -1,4 +1,10 @@
+[
+{ type: install
+  message: <<EOM
 Remember to set the following environment variables:
 
 hlainc=%%PREFIX%%/include/hla
 hlalib=%%PREFIX%%/lib/hlalib.c
+EOM
+}
+]

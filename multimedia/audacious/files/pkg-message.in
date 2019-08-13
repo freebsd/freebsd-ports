@@ -1,4 +1,10 @@
+[
+{ type: install
+  message: <<EOM
 Audacious supports Gzipped and uncompressed skins.  If you would like to use
 Zip format skins you will need to ensure archivers/unzip is installed.
 
 You should install plugins port, without it, Audacious is useless!
+EOM
+}
+]

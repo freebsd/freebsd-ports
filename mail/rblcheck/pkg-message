@@ -1,3 +1,7 @@
-
+[
+{ type: install
+  message: <<EOM
 Please copy rblcheckrc.sample to rblcheckrc and modify it as you wish.
-
+EOM
+}
+]

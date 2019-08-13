@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To finish installation please follow these steps:
 
 1. Edit %%ETCDIR%%/mimedefang-filter
@@ -16,3 +19,6 @@ Also, you can install some anti-virus software to check your mail, for example:
       Open source AV package with automatic virus definition updates
    security/f-prot
       F-Prot Antivirus for BSD Workstations
+EOM
+}
+]

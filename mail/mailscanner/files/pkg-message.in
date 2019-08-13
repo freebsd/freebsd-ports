@@ -1,4 +1,6 @@
-*************************************************************************
+[
+{ type: install
+  message: <<EOM
 	    _  _____ _____ _____ _   _ _____ ___ ___  _   _
 	   / \|_   _|_   _| ____| \ | |_   _|_ _/ _ \| \ | |
 	  / _ \ | |   | | |  _| |  \| | | |  | | | | |  \| |
@@ -23,7 +25,7 @@
 
 	Either create those directories or change the configuration.
 
-	*****************************************************************
+
 	A new optional rc variable called mailscanner_user has been added
 	to the startup script. This is a temporary workaround to address
 	any possible taint mode problems that may still be present in the
@@ -44,6 +46,6 @@
 
 	The new variable uses su to start the master perl script as the
 	specified user, this effectively disables perl's taint mode.
-	*****************************************************************
-
-*************************************************************************
+EOM
+}
+]

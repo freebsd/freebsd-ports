@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To support more than ASCII, please set in your enviroment:
 SPUNK_CTYPE=iso_8859_1
 
@@ -5,3 +8,6 @@ If you want to try this under X-Windows, do this:
 env SPUNK_LANGUAGE=001 SPUNK_XFONT=8x13 xestic
 If you have no Istec 100[38] connected, append "-n"
 A BUGS & PROBLEMS section exists, see README.
+EOM
+}
+]

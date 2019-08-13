@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 Auto Multiple Choice uses some optional helper software to view and/or
 edit various files such as PDF, Image, CSV, TeX, etc.
 You may want to install software from the following command list or
@@ -12,4 +14,6 @@ specify your favorite one in the GUI preference menu.
   Text editor: gedit, kedit, kwrite, mousepad, emacs, leafpad.
   Web browser: sensible-browser, firefox, galeon, konqueror, dillo, chromium.
   File manager: nautilus, pcmanfm, Thunar, konqueror, dolphin.
-======================================================================
+EOM
+}
+]

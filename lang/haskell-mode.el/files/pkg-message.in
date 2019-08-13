@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To use haskell-mode in Emacs, add the following lines to your ~/.emacs:
 
 (add-to-list 'load-path "%%PREFIX%%/share/emacs/site-lisp/haskell-mode/")
@@ -13,3 +16,6 @@ Add the following lines according to which modules you want to use:
 
 Note that the three indentation modules are mutually exclusive - add at
 most one.
+EOM
+}
+]

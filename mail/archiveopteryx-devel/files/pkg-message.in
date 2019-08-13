@@ -1,5 +1,6 @@
-********************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Please install PostgreSQL client/server (databases/postgresqlXX-client
 and databases/postgresqlXX-server) separately. The latest 9.x version
 is recommended but any version newer than 9.1.0 should work.
@@ -19,5 +20,6 @@ The logfile is syslog/mail by default.
 If you have any problems, the FAQ is at
 http://www.archiveopteryx.org/faq/ and you can always ask
 info@aox.org for help.
-
-********************************************************************************
+EOM
+}
+]

@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 wmweather+ has been installed.
 
 All options are given in the config file and in command line (CLI)
@@ -18,5 +19,6 @@ If you prefer a global configuration file, do
     exit
 
 Have fun!
-
-===============================================================================
+EOM
+}
+]

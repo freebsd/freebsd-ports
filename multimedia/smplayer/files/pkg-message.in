@@ -1,7 +1,9 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 SMPlayer has been installed.
 
 For Youtube Videos please use multimedia/smtube port.
-
-===============================================================================
+EOM
+}
+]

@@ -1,4 +1,8 @@
-===
+[
+{ type: install
+  message: <<EOM
 Install math/py-statsmodels to enable parts of pandas.stats.
 Install devel/py-xarray to enable the to_xarray() function.
-===
+EOM
+}
+]

@@ -1,6 +1,6 @@
-IMPORTANT NOTE:
-===============
-
+[
+{ type: install
+  message: <<EOM
 All installations having Exim set-uid root and using 'perl_startup' are
 vulnerable to a local privilege escalation. Any user who can start an
 instance of Exim (and this is normally *any* user) can gain root
@@ -32,6 +32,11 @@ directory to $spool_directory, as usual.)
 Exim only accepts an absolute configuration file path now, when using
 the -C option.
 
+EOM
+}
+{ type: upgrade
+  maximum_version: 4.80
+  message: <<EOM
 Upgrades to Exim 4.80
 =====================
 
@@ -47,3 +52,6 @@ There are more details, covering more changes, in README.UPDATING.
 We now enable accept_8bitmime by default, as the Exim maintainers agree
 with Dan Bernstein about the best way to deal with the 8BITMIME
 extension.
+EOM
+}
+]

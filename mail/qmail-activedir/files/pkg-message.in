@@ -1,4 +1,6 @@
-*****************************************************************************
+[
+{ type: install
+  message: <<EOM
 You have installed the qmail-activedir.
 
 Now you need follow this steps:
@@ -42,4 +44,6 @@ Do %%PREFIX%%/bin/create_alias_files -h for more info.
 and restart.  Run some trial tests.
 
 For more information you should read %%DOCSDIR%%/README.
-
+EOM
+}
+]

@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 This port has installed the pwc kernel module.
 
 To load the kernel module immediately, type the following command:
@@ -16,5 +17,6 @@ To load the kernel module at boot, add the following line to
 
 CAUTION: If you enabled mmap support in the driver, beware that
 unplugging your webcam while it is in use may crash your system.
-
-===============================================================================
+EOM
+}
+]

@@ -1,5 +1,6 @@
----------------------------------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
   The program is intended to be run by cron every hour.
 
     42 * * * * perl %%PREFIX%%/bin/mirmon -q -get update
@@ -22,5 +23,6 @@
   The probe should return something that looks like "1043625600\n",
   that is, a timestamp followed by a newline. The exit status of
   the probe is ignored.
-
----------------------------------------------------------------------------
+EOM
+}
+]

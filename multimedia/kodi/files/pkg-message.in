@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 gpu_mem should be set to 128M on a Pi1 and 256M on a Pi2,
 the file to modify is /boot/msdos/config.txt
 
@@ -24,3 +27,6 @@ kodi ; sysctl dev.fb.0.resync=1
 
 Keyboard is in QWERTY, the layout can be changed in kodi:
 System -> Settings -> Appearance -> International -> Keyboard layouts
+EOM
+}
+]

@@ -1,5 +1,6 @@
-==================================================================
-
+[
+{ type: install
+  message: <<EOM
 Please take %%PREFIX%%/etc/nullmailer/remotes.sample
 as an example and edit your own
 %%PREFIX%%/etc/nullmailer/remotes
@@ -17,5 +18,6 @@ NOTE for the ones upgrading from 1.00:
 The smtp authentication option has been changed from
 --auth=joe,secret to --user=joe and --pass=secret, see nullmailer-send(8)
 for details.
-
-==================================================================
+EOM
+}
+]

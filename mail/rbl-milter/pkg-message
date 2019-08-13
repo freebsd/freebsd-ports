@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Add to your /etc/rc.conf
 rblmilter_enable="YES"
 Then run the milter with: $PREFIX/etc/rc.d/rbl-milter start
@@ -25,3 +28,6 @@ and rebuild it
 
 By default, the INPUT_MAIL_FILTER line will ignore the filter if
 rbl-milter is not running.
+EOM
+}
+]

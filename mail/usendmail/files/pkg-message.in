@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 usendmail has been successfully installed!
 
 Now you have to change your sendmail(8) wrapping:
@@ -17,4 +19,6 @@ send-mail	%%PREFIX%%/sbin/usendmail
 
 Otherwise replace the link from /usr/sbin/sendmail to
 %%QMAIL_PREFIX%%/bin/sendmail with one to %%PREFIX%%/sbin/usendmail.
-
+EOM
+}
+]

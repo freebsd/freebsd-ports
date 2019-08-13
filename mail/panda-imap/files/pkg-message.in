@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The ipop2d, ipop3d, and imapd daemons should be invoked by your
 /etc/inetd.conf file with lines such as:
 
@@ -40,3 +43,6 @@ non-encrypted logins.
 %%SSL%%pop3s   stream  tcp     nowait  root    ${PREFIX}/libexec/ipop3d       ipop3d
 %%SSL%%imaps   stream  tcp     nowait  root    ${PREFIX}/libexec/imapd        imapd
 %%SSL%%================================================================================
+EOM
+}
+]

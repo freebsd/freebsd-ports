@@ -1,4 +1,6 @@
-**************************************************
+[
+{ type: install
+  message: <<EOM
 NOTE:
 
 For generating faces out of xbm files you must use
@@ -23,4 +25,6 @@ Note uncompface -X is the same as
    uncompface | ikon2xbm
 
 useful for exmh!
-**************************************************
+EOM
+}
+]

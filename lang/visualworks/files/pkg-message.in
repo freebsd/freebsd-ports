@@ -1,5 +1,6 @@
- --------------------------- Please note: ---------------------------
- 
+[
+{ type: install
+  message: <<EOM
   To start using VisualWorks, copy the default image to your
   home directory:
     # cp %%DATADIR%%/image/visualnc.im ~
@@ -7,5 +8,6 @@
     # chmod u+w ~/visualnc.im
   Then run it using:
     # visual ~/visualnc.im
- 
- -------------------- Thanks for your attention! --------------------
+EOM
+}
+]

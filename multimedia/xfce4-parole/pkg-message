@@ -1,4 +1,6 @@
-------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 The Clutter backend has been removed from the multimedia/xfce4-parole
 port, as it induces a crash with Gtk >= 3.22.
 
@@ -10,4 +12,6 @@ $ xfconf-query -c parole -p /video/videosink -s "xvimagesink"
 You can choose 'xvimagesink' or 'ximagesink'.
 Alternatively you can remove previously specified backend:
 $ xfconf-query -c parole -p /video/videosink -r
-------------------------------------------------------------------------
+EOM
+}
+]

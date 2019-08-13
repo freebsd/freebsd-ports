@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This is a fully-functional version.  Mulberry is now freeware.
 Support is through the community.  If you need support, you
 can start here - http://www.mulberrymail.com/support.shtml
@@ -8,3 +11,6 @@ and attachments (respectively) in email.  They assume that you are
 using Firefox, KDE, openoffice and acroread.  If you want to override
 their values, copy them to .url.helpers and .mailcap in your home
 directory and then edit them appropriately.
+EOM
+}
+]

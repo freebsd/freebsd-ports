@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Thank You for installing the Ecartis Listserver package.  Please
 read the documentation located in %%PREFIX%%/ecartis/
 or online at:
@@ -5,3 +8,6 @@ or online at:
 http://www.ecartis.net/
 
 -- The Ecartis Developers
+EOM
+}
+]
