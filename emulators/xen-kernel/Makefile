@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	xen
-PORTVERSION=	4.12.0
-PORTREVISION=	4
+PORTVERSION=	4.12.1
+PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
@@ -24,20 +24,6 @@ NO_MTREE=	yes
 STRIP=		#
 PLIST_FILES=	/boot/xen \
 		lib/debug/boot/xen.debug
-
-# Pre-patches for XSA-297 to apply cleanly
-EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-tsx-Implement-controls-for-RTM-force-abort-mode.patch:-p1 \
-		${PATCHDIR}/0001-x86-msr-Shorten-ARCH_CAPABILITIES_-constants.patch:-p1 \
-		${PATCHDIR}/0002-x86-spec-ctrl-Extend-repoline-safey-calcuations-for-.patch:-p1
-
-# Fixes for XSA-297 (MDS)
-EXTRA_PATCHES+=	${PATCHDIR}/xsa297-4.12-1.patch:-p1 \
-		${PATCHDIR}/xsa297-4.12-2.patch:-p1 \
-		${PATCHDIR}/xsa297-4.12-3.patch:-p1 \
-		${PATCHDIR}/xsa297-4.12-4.patch:-p1 \
-		${PATCHDIR}/xsa297-4.12-5.patch:-p1 \
-		${PATCHDIR}/xsa297-4.12-6.patch:-p1 \
-		${PATCHDIR}/xsa297-4.12-7.patch:-p1
 
 # LLD 8 changed the behaviour re the placement of orphaned sections, which
 # produces a non-bootable Xen kernel:
