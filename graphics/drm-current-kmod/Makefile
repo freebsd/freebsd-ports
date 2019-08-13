@@ -3,6 +3,7 @@
 
 PORTNAME=	drm-current-kmod
 PORTVERSION=	4.16.g20190806
+PORTREVISION=	1
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
@@ -21,7 +22,13 @@ CONFLICTS_INSTALL=	drm-devel-kmod \
 			drm-fbsd12.0-kmod \
 			drm-legacy-kmod
 
-OPTIONS_DEFINE=	DEBUG
+OPTIONS_DEFINE=	DEBUG SOURCE
+
+OPTIONS_DEFAULT=	SOURCE
+
+SOURCE_DESC=	Install kernel module sources
+
+OPTIONS_SUB=	yes
 
 USES=		kmod uidfix compiler:c++11-lang
 
@@ -60,5 +67,23 @@ PLIST_SUB+=	AMDKFD="@comment "
 PLIST_SUB+=	I915="@comment "
 PLIST_SUB+=     VMWGFX="@comment "
 .endif
+
+KMODSRC=	${STAGEDIR}${PREFIX}/sys/modules/${PORTNAME}
+SRCDIRS=	amd drivers drm i915 include linuxkpi radeon ttm vmwgfx
+
+PLIST_SUB+=	KMODSRC="sys/modules/${PORTNAME}"
+
+MAKE_ENV+=	MAKEOBJDIRPREFIX=${WRKSRC}/obj
+
+pre-build:
+		${MKDIR} ${WRKSRC}/obj
+		(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} obj)
+
+post-install-SOURCE-on:
+		${MKDIR} ${KMODSRC}
+		${INSTALL_DATA} ${WRKSRC}/Makefile ${KMODSRC}
+.for dir in ${SRCDIRS}
+		cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${KMODSRC}
+.endfor
 
 .include <bsd.port.mk>
