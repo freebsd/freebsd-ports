@@ -23,10 +23,6 @@ After modifying /etc/inetd.conf, you must (as root) run:
 Fam also requires that portmapper is running.  Add the appropriate
 entry to /etc/rc.conf:
 
-For 4.x:
-Add portmap_enable="YES" and either reboot or run /usr/sbin/portmap.
-
-For 5.x and later:
 Add rpcbind_enable="YES" and either reboot or run /etc/rc.d/rpcbind start.
 EOM
 }
