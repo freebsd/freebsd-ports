@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To play Return to Castle Wolfenstein:
 
 1. Install RtCW from your CD using emulators/i386-wine
@@ -8,3 +11,6 @@ To play Return to Castle Wolfenstein:
 4. Extract all patch-data-*.zip in ~/.wolf
 5a. Start a single player game with iowolfsp
 5b. Or a multiplayer game with iowolfmp
+EOM
+}
+]

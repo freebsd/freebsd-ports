@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 o Make sure your kernel has been configured with options SHMMAXPGS=4096
   when you run on display 16bpp or deeper color.
 
@@ -13,3 +15,6 @@ o pcm0 sound device doesn't work well with this program for now.
   `-devdsp none' command line option as the last resort.
 
 Enjoy!
+EOM
+}
+]

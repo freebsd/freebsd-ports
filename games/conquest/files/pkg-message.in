@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Before Conquest can be run it must be configured, you need to
 initialise and enable the game:
 
@@ -5,3 +8,6 @@ initialise and enable the game:
 # sbin/conqoper -Ie -E
 
 Conqoper is documented in %%DOCSDIR%%/README.
+EOM
+}
+]

@@ -1,7 +1,9 @@
-===================================================
-
+[
+{ type: install
+  message: <<EOM
 You should add the following line to your ~/.emacs:
 
     (require 'paredit)
-
-===================================================
+EOM
+}
+]

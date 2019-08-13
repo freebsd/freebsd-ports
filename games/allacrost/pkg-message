@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Remember that Allacrost is still a work in progress, and this release
 remains a fair distance from what we want this game to eventually
 become. Please share with us your comments, critiques, and thoughts
@@ -11,3 +14,6 @@ NOTE: If you experience sound problems with allacrost (music is
 harsh and choppy), try creating ~/.openalrc with single line:
 
 (define devices '(sdl))
+EOM
+}
+]

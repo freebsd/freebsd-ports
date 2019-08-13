@@ -1,4 +1,6 @@
-=============================================
+[
+{ type: install
+  message: <<EOM
 1 Congratulations! You have successfully installed
 PRESTASHOP e-Commerce platform.
 
@@ -21,4 +23,6 @@ PRESTASHOP e-Commerce platform.
 
 4 More detailed document could be found here:
   http://www.prestashop.com/wiki/Installing_And_Updating_PrestaShop_Software/
-=============================================
+EOM
+}
+]

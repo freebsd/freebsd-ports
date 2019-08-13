@@ -1,5 +1,6 @@
-****************************************************************
-
+[
+{ type: install
+  message: <<EOM
     Start Mapyrus from a terminal window with a command like:
 
 java -classpath %%DATADIR%%/%%MAPYRUSJAR%% org.mapyrus.Mapyrus myfile.mapyrus
@@ -10,5 +11,6 @@ java -classpath %%DATADIR%%/%%MAPYRUSJAR%% org.mapyrus.Mapyrus myfile.mapyrus
     or simply:
 
 mapyrus myfile.mapyrus
-
-****************************************************************
+EOM
+}
+]

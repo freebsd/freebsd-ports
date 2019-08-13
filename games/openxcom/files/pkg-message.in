@@ -1,5 +1,6 @@
-==========================================================================
-
+[
+{ type: install
+  message: <<EOM
 OpenXcom requires original UFO: Enemy Unknown / X-Com: UFO Defense
 data files. Please copy all subfolders from original game into
 %%DATADIR%%/data directory.
@@ -11,5 +12,6 @@ version. See section `Data Patch' of
   http://openxcom.org/index.php/downloads-extras/
 
 for details.
-
-==========================================================================
+EOM
+}
+]

@@ -1,5 +1,6 @@
-==================================================================
-
+[
+{ type: install
+  message: <<EOM
 saned will log to the 'daemon' facility; this is a hard-coded
 default. Also, saned has no support for SSL/TLS or cryptographic
 authentication; you may wish to deploy security/stunnel to wrap
@@ -40,5 +41,6 @@ on client machines; be sure to point it at your scan server.
 If you are setting up a scan server, you may also wish to edit
 %%PREFIX%%/etc/sane.d/saned.conf
 to only permit specific machines.
-
-==================================================================
+EOM
+}
+]

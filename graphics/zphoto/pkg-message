@@ -1,4 +1,6 @@
-******************************************************************************
+[
+{ type: install
+  message: <<EOM
  This port requires a kernel built with
  the directive:
 
@@ -24,4 +26,6 @@
   % setenv ZPHOTO_TEMPLATE_DIR %%PREFIX%%/share/zphoto/templates/all (both)
   % setenv ZPHOTO_FONT %%PREFIX%%/share/zphoto/fonts/EfontSerifB.fdb
 
-******************************************************************************
+EOM
+}
+]

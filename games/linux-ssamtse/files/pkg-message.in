@@ -1,8 +1,12 @@
-
+[
+{ type: install
+  message: <<EOM
 You need to edit %%PREFIX%%/etc/ssamtse.conf
 to set correct CPU frequency in SERIOUS_MHZ variable.
 
 Run the game using:
 
 # ssamtse
-
+EOM
+}
+]

@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 Quake 4 game (Linux version) was installed
 
 1) In order to play Quake 4, you need to copy some data files
@@ -11,5 +12,6 @@ file:
 2) Need minimal 24bits resolution in your desktop for to play it.
 
 3) Enjoy it ;)
-
-###############################################################################
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The Netrek client is now installed.  You may start it by typing "netrek".
 
 Be sure and read the Netrek web site (http://www.netrek.org/) before you
@@ -12,3 +15,6 @@ file:
 metaserver:		metaserver.netrek.org
 
 Enjoy, have fun, and may you live long and prosper...
+EOM
+}
+]

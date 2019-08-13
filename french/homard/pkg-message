@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Avertissement
 =============
 
@@ -17,3 +20,6 @@ port french/aster).
 
 If you want to use homard for any other purpose, you have to acquire a
 license: please contact the Homard's administrators at <homard@edf.fr>.
+EOM
+}
+]

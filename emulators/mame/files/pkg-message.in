@@ -1,8 +1,10 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 An example configuration file has been installed in
 "%%EXAMPLESDIR%%/%%MTARGET%%.ini"
 Should you create a "~/.%%MTARGET%%" directory and place it here or
 launch "%%MTARGET%% -createconfig" and place the %%MTARGET%%.ini created instead.
-
-==============================================================================
+EOM
+}
+]

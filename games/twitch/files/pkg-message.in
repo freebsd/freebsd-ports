@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Twitch has been installed.
 
 All options are given only in the command line
@@ -16,5 +17,6 @@ Or can use desktop file
 
 
 Have fun!
-
-===============================================================================
+EOM
+}
+]

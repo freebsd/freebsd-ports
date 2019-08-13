@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Rocks'n'Diamonds data has been installed.
 
 These levels can use Rocks'n'Diamonds and R'n'D jue.
@@ -32,5 +33,6 @@ If you wish can delete them with
 
     /bin/rm -fr %%PREFIX%%/share/rocksndiamonds
     /bin/rm -fr %%PREFIX%%/share/rnd_jue
-
-===============================================================================
+EOM
+}
+]

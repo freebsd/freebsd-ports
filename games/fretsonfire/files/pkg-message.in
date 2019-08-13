@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 The Frets On Fire was installed
 
 1) You can read the documentation about FretsOnFire at:
@@ -14,5 +15,6 @@ The Frets On Fire was installed
    # FretsOnFire
 
 4) Enjoy it ;)
-
-###############################################################################
+EOM
+}
+]

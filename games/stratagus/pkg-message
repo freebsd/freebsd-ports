@@ -1,5 +1,6 @@
-------------------------------------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 NOTE: This is only the engine. If you wish to play a game that uses the
 Stratagus engine, you must manually download the Stratagus game data.
 
@@ -12,5 +13,6 @@ For more information, please take a look at the following URL:
 http://stratagus.sourceforge.net/games.shtml
 
 Enjoy!
-
-------------------------------------------------------------------------------
+EOM
+}
+]

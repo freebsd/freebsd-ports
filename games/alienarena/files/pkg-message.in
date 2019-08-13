@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 Alien Arena (native version) has been installed.
 
 1) The OSS (native FreeBSD sound) version of Alien Arena 2011 (named
@@ -13,5 +14,6 @@ delay is 11025, and the SDL version uses 22050). The value of "sndspeed" will
 be saved in the configuration file for future runs.
 
 2) Enjoy it :)
-
-###############################################################################
+EOM
+}
+]

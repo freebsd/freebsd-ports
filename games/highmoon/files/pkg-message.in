@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 HighMoon has been installed.
 
 All options are given in the command line or GUI shortcuts
@@ -16,5 +17,6 @@ Or can use desktop file with shortcuts
 
 
 Have fun!
-
-===============================================================================
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Congratulations, SANE-FRONTENDS is now installed.
 
 If you built it with WITH_GIMP set to yes, you can use
@@ -9,3 +12,6 @@ Then run the GIMP, and a new "xscanimage" menu item should appear in the
 "File->Acquire" menu.  Use this to access your scanner.
 
 Have fun!
+EOM
+}
+]

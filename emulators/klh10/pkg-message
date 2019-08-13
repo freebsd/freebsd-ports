@@ -1,4 +1,8 @@
-Install notice:
-
+[
+{ type: install
+  message: <<EOM
 KLH10 contains a setuid that accepts network connections.
 Consider using a firewall to limit access to KLH10.
+EOM
+}
+]

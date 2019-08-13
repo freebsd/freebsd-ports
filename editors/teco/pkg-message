@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Powerful and compact editor with nongraphical user interface
 
 The FreeBSD port implements pretty well all that the Linux version does.
@@ -35,3 +38,6 @@ inconsistent, and thus of limited use.
 
 Before starting to use tecoc, see the sections "DESCRIPTION/Command
 names" and "SEE ALSO" in the manual page.
+EOM
+}
+]

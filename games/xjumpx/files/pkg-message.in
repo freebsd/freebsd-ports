@@ -1,4 +1,6 @@
----  NOTICE ---
+[
+{ type: install
+  message: <<EOM
 Original xjumpx is setgid games to protect scorefiles.
 However, due to security concerns, xjumpx is not installed setgid games,
 so everybody can change scorefiles.
@@ -7,3 +9,6 @@ In order to protect scorefiles, you will need to run these commands:
 	chgrp games %%PREFIX%%/bin/xjumpx %%PREFIX%%/lib/X11/xjumpx
 	chmod g+s %%PREFIX%%/bin/xjumpx
 	chmod 770 %%PREFIX%%/lib/X11/xjumpx
+EOM
+}
+]

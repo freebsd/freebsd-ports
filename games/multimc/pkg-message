@@ -1,5 +1,6 @@
-Important note about LWJGL:
-
+[
+{ type: install
+  message: <<EOM
 Minecraft requires LWJGL (the Lightweight Java Game Library) to run.
 Mojang hosts prebuilt LWJGL shared objects for Windows, macOS, and Linux,
 which MultiMC is written to download and add to a new instance. The FreeBSD
@@ -12,3 +13,6 @@ instances in MultiMC, LWJGL 3 will have to be ported, and ideally MultiMC should
 be patched to use version 2 or 3 depending on the Minecraft version of a given instance.
 This is planned for the future, but as of now it is only possible to play versions
 up to 1.12.x with this port.
+EOM
+}
+]

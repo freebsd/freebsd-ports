@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 The Aleph One data has been installed.
 
 In addition, wrapper scripts for the selected games were installed.
@@ -9,5 +10,6 @@ Marathon 2: Durandal	- alephone-durandal
 Marathon Infinity	- alephone-infinity
 
 Texture Packs for all scenarios can be found on a http://www.simplici7y.com.
-
-==============================================================================
+EOM
+}
+]

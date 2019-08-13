@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Piglit opens and closes a lot of files during a run, putting pressure
 on FreeBSD's VFS. To keep Piglit smooth, you will have to increase the
 default maxvnodes:
@@ -8,3 +11,6 @@ Instructions to use Piglit are available in:
 
 The same documentation is also available online:
   http://cgit.freedesktop.org/piglit/tree/README
+EOM
+}
+]

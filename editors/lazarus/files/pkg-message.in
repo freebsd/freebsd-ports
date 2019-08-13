@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 The Lazarus RAD was installed
 
 1) You can run it using:
@@ -32,5 +33,6 @@ The Lazarus RAD was installed
    how use it
 
 6) Enjoy it ;)
-
-###############################################################################
+EOM
+}
+]

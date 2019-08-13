@@ -1,4 +1,6 @@
--------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 GvGen is installed.
 
 For a quick start:
@@ -9,4 +11,6 @@ Generate your graph require the graphics/graphviz port to be
 installed.
 
 Review the ChangeLog document in the documentation directory.
--------------------------------------------------------------
+EOM
+}
+]

@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 The mupen64plus emulator was installed
 
 1) If you have installed/upgraded any new plugins or are upgrading from a
@@ -28,5 +29,6 @@ video) of Mupen64Plus and
    emulators/wxmupen64plus
 
 6) Enjoy it ;)
-
-###############################################################################
+EOM
+}
+]

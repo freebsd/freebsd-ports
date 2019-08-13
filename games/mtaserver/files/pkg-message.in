@@ -1,4 +1,8 @@
-***********************************************************************
+[
+{ type: install
+  message: <<EOM
 Edit %%ETCDIR%%/mtaserver.conf before using
 Read %%DOCSDIR%%/README for details
-***********************************************************************
+EOM
+}
+]

@@ -1,5 +1,6 @@
-========================================================================
-
+[
+{ type: install
+  message: <<EOM
 To complete your installation of TomeNET, you should create a
 configuration file to suit your needs:
 
@@ -14,5 +15,6 @@ If installed, extensive documentation can be found in
 otherwise the guide is available online at:
 
 http://www.tomenet.eu/guide.php
-
-========================================================================
+EOM
+}
+]

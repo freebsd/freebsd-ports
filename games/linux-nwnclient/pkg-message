@@ -1,5 +1,6 @@
-======================================================================
-
+[
+{ type: install
+  message: <<EOM
 If the game is installed with movie support (NWMovies), there is a way
 to skip various movies, especially the five introduction movies at the
 start of the game:  create a skip file ($HOME/.nwn/nwmovies.skip) and
@@ -17,5 +18,6 @@ the NWMovies README file:
     The main menu music does not work after starting NWN w/ NWMovies.
     Entering the game, and backing out to the main menu, the music
     works.  Known issue, no known cause, nor resolution.
-
-======================================================================
+EOM
+}
+]

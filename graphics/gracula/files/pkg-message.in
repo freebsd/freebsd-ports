@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
         Please read the file %%DOCSDIR%%/README
         to learn how to use Graphic Counter Language (if you haven't
 	installed WITHOUT=DOCS).
@@ -11,4 +13,6 @@
         Also, sample scripts and graphics are available from
         Count Gracula's Gallery,
         http://www.whizkidtech.redprince.net/gcl/gallery/
-
+EOM
+}
+]

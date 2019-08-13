@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Xye has been installed.
 
 Xye can use Kye and Sokoban levels.
@@ -27,5 +28,6 @@ In addition, you can use skins
 and other Sites and put it in:
 
     ~/.xye/res
-
-===============================================================================
+EOM
+}
+]

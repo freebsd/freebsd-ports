@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 OpenJK requires the original game files from Star Wars: Jedi Knight:
 Jedi Academy to work properly.  These can come from an original CD or
 from GOG.com.
@@ -26,3 +29,6 @@ is jasp.
 If you own a copy of Star Wars: Jedi Knight: Jedi Outcast, its game
 files may be used to play that game, though upstream makes no
 guarantees on your success in playing this game.
+EOM
+}
+]

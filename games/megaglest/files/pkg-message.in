@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 The megaglest game has been installed.
 
 1) The megaglest configuration files are stored in ~/.megaglest.
@@ -17,5 +18,6 @@ The megaglest game has been installed.
 5) If you upgraded from version 3.4.0, your personal settings are stored in
    ~/.megaglest3.4.0.  If you copy glestuser.ini and glestuserkeys.ini to
    ~/.megaglest, you will have your old settings again.
-
-###############################################################################
+EOM
+}
+]

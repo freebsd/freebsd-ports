@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 dxx-rebirth requires the original game files from Descent I and/or
 Descent II to work properly.  These can come from an original CD or from
 GOG.com.
@@ -20,3 +23,6 @@ You can then delete everything extracted from the exe.
 If you own the GOG.com version of Descent II, follow the above steps
 with the setup_descent_2_1.1_(16596).exe file and using
 ~/.d2x-rebirth/Data as the directory name.
+EOM
+}
+]

@@ -1,8 +1,10 @@
-************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Additional files were installed into %%EXAMPLESDIR%%/.
 
 See http://members.iinet.net.au/~tom-hunter/dtcyber.pdf for usage
 instructions.
-
-************************************************************************
+EOM
+}
+]

@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Python Kye has been installed.
 
 
@@ -25,5 +26,6 @@ and other Sites and put it in:
 You could manually change Permissions these Levels with:
 
     /bin/chmod 444 %%DATADIR%%/*.kye
-
-===============================================================================
+EOM
+}
+]

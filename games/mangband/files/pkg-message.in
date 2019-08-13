@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 MAngband has been installed.
 
 The following mangclient directories could be copied to a user-writable
@@ -26,5 +27,6 @@ To run mangband server as an unpriviliged user, such user must be added
 to the games group. For example:
 
     pw usermod <user> -G games
-
-==============================================================================
+EOM
+}
+]

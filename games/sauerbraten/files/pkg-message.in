@@ -1,10 +1,12 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 1) Config files are in the ~/.sauerbraten directory.
 2) If you want add new bindings into ~/.sauerbraten/config.cfg, see
 
    %%DATADIR%%/data/keymap.cfg.
 
 3) Enjoy it ;)
-
-###############################################################################
+EOM
+}
+]

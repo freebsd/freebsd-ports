@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 The glest game was installed
 
 1) You can see the glest configuration files into your ~/.glest directory
@@ -12,5 +13,6 @@ The glest game was installed
    directory and try again
 
 4) Enjoy it ;)
-
-###############################################################################
+EOM
+}
+]

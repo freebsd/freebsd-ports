@@ -1,5 +1,6 @@
-==========================================================================
-
+[
+{ type: install
+  message: <<EOM
     OpenTTD requires the original Windows version of "Transport Tycoon
     Deluxe" data files in order to function.  Copy the following files
     to %%DATADIR%%/data/ (or better, $HOME/.openttd/data/)
@@ -31,5 +32,6 @@
 	large_font =
 
     Enjoy!!
-
-==========================================================================
+EOM
+}
+]

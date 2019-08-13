@@ -1,5 +1,6 @@
-******************************************************
-
+[
+{ type: install
+  message: <<EOM
 The default location for a configuration files and
 saves is no longer ~/.chocolate-doom, current one is
 ~/.local/share/chocolate-doom/.
@@ -40,5 +41,6 @@ Examples:
 If you choose either Gravis Ultrasound emulation or
 native MIDI and provide no path, there will be no
 music.
-
-******************************************************
+EOM
+}
+]

@@ -1,5 +1,6 @@
-=========================================================================
-
+[
+{ type: install
+  message: <<EOM
 The default color scheme for GUI drivers changed in version 5.30 to a
 dark background and softer colors. If you want to revert to the classic
 bright colors on white background theme, edit the configuration file
@@ -19,5 +20,6 @@ bright colors on white background theme, edit the configuration file
     mp.colors.tag.gui           = [ 0x8888ff, 0xffffff ];
     mp.colors.spell.gui         = [ 0xff8888, 0xffffff ];
     mp.colors.search.gui        = [ 0x000000, 0x00cc77 ];
-
-=========================================================================
+EOM
+}
+]

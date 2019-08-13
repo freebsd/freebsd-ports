@@ -1,4 +1,10 @@
+[
+{ type: install
+  message: <<EOM
 After updating, game may fail to start unable to find some data
 files. In this case, please remove ~/.config/pony.options left
 from the previous install and retry. Unfortunately, the game
 currently doesn't properly handle config file updating.
+EOM
+}
+]

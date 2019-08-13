@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Some programs need linprocfs mounted on /compat/linux/proc.  Add the
 following line to /etc/fstab:
 
@@ -18,3 +21,6 @@ following line to /etc/fstab:
 tmpfs    /compat/linux/dev/shm	tmpfs	rw,mode=1777	0	0
 
 Then run "mount /compat/linux/dev/shm".
+EOM
+}
+]

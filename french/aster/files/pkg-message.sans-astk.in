@@ -1,6 +1,12 @@
+[
+{ type: install
+  message: <<EOM
 After Code_Aster installation you could install ASTK
 [cad/astk-serveur and cad/astk-client].
 ASTK is a graphic interface to run Code_Aster.
 
 On i386 platform, we suggest you install the ports french/gibi and
 french/homard, two additional meshing tools.
+EOM
+}
+]

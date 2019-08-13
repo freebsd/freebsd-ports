@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Apache OpenOffice Build %%AOOTAG%% Personal Install How-To
 
 Written by:	Martin Blapp <mbr@freebsd.org>
@@ -43,3 +46,6 @@ OpenOffice does need $LANG to be set to a suitable value.
 If you somehow run into problems, please remove the already installed
 "%%AOOUDIR%%" directory in your home directory, then redo the
 user installation and the problems should go away.
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 After restarting the Gimp you should find the following new items
 in the menu:
 
@@ -10,3 +13,6 @@ in the menu:
  * Filters/Map/Resynthesize
  * Filters/Map/Style
  * Filters/Render/Texture
+EOM
+}
+]

@@ -1,5 +1,9 @@
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+[
+{ type: install
+  message: <<EOM
 SaberNet DCS Client is now installed.
 Change the settings in %%PREFIX%%/etc/sndcs/sndcs2.conf
 to suit your needs.
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+EOM
+}
+]

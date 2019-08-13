@@ -1,6 +1,8 @@
----------------------------------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 %%PORTNAME%% looks in /usr/share/dict for a dictionary-file. If you want
 more words, please install more dictionary-file.
-
----------------------------------------------------------------------------
+EOM
+}
+]

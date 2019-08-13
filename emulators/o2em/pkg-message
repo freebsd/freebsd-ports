@@ -1,4 +1,6 @@
-===============================================================================
+[
+{ type: install
+  message: <<EOM
  * The Odyessey2 ROM is included in the source, although the documentation says
    it isn't.
  * The main voice samples are included with this port, but not the sidsamp
@@ -14,4 +16,6 @@
    - be compliant with allegro 4.1.12
 
 Read O2EM.txt.
-===============================================================================
+EOM
+}
+]

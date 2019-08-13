@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 R'n'D jue has been installed.
 
 R'n'D jue can use some Rocks'n'Diamonds levels.
@@ -7,5 +8,6 @@ R'n'D jue can use some Rocks'n'Diamonds levels.
 You can install Port Rocks'n'Diamonds data 'games/rocksndiamonds-data'.
 
 Rocks'n'Diamonds data can use Rocks'n'Diamonds and R'n'D jue.
-
-===============================================================================
+EOM
+}
+]

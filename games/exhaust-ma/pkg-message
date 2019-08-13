@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 This MARS does not have a parser, so you have to do it separately.
 
 To parse Redcode programs with pMARS do the following:
 
 pmars-server -r 0 b-scanner.red | sed '1,2d' > b-scanner.rc
+EOM
+}
+]

@@ -1,7 +1,9 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 To complete the installation of this port you need to copy the file
 "baseq2/pak0.pak" from the original Quake II distribution to
 %%DATADIR%%/baseq2.
-
-==============================================================================
+EOM
+}
+]

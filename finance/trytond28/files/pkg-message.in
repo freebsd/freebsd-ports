@@ -1,6 +1,6 @@
-POST-INSTALL CONFIGURATION FOR TRYTOND
-==================================================
-
+[
+{ type: install
+  message: <<EOM
 Before you start the trytond server, you should:
 
 1) Install a PostgreSQL server.
@@ -11,5 +11,6 @@ to customize the daemon.
 For more information, see the DOCUMENTATION:
 
    http://www.tryton.org/documentation.html
-
-====================================================
+EOM
+}
+]

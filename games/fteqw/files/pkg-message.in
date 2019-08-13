@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 FTE QuakeWorld has been installed.
 
 By default it saves configuration to ~/.fte, to avoid run with "-nohome".
@@ -9,5 +10,6 @@ Quake use "-basedir %%Q1DIR%%".
 
 For a complete list of supported games see:
 http://www.fteqw.com/wiki/index.php?title=SupportedGames
-
-==============================================================================
+EOM
+}
+]

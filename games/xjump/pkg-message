@@ -1,5 +1,6 @@
-
----  NOTICE ---
+[
+{ type: install
+  message: <<EOM
 xjump is set to use /var/games/xjump.record for its scorekeeping.
 However, due to security concerns, xjump is not installed setgid
 games, and thus cannot write this file.  In order to enable keeping
@@ -12,3 +13,6 @@ scores, you will need to run these commands:
 where ${PREFIX} is the prefix that xjump was installed under,
 which is usually /usr/X11R6.
 
+EOM
+}
+]

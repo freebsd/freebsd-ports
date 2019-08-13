@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 GNU Robots has been installed.
 
 Where to find things
@@ -8,5 +9,6 @@ Where to find things
   - Example maps:     %%DATADIR%%/maps/
   - Example robots:   %%DATADIR%%/scheme/
   - Binaries:         gnurobots
-
-===============================================================================
+EOM
+}
+]

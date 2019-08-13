@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 1) Run mednafen [OPTION] [FILE]
 
 2) See complete documentation at:
@@ -7,5 +8,6 @@
    %%DOCSDIR%%/mednafen.html
 
 3) Enjoy it ;)
-
-###############################################################################
+EOM
+}
+]

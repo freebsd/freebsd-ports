@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Please add the following entries in order to boot the xen kernel
 
 In /etc/sysctl.conf:
@@ -12,3 +15,6 @@ In /boot/loader.conf for a dom0 with 2G memory and 4 vcpus:
 
 Add to the above xen_cmdline in order to activate the serial console:
 	console=com1
+EOM
+}
+]

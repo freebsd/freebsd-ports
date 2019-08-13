@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Robocode has been installed.
 
 Robocode requires a java compiler. By default Robocode will look for
@@ -13,5 +14,6 @@ You can override this in the Robocode compiler preferences menu:
 Attention not all with Rumble games works, this is work in Progress.
 
 Have fun!
-
-==============================================================================
+EOM
+}
+]

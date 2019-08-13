@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Freeminer engine has been installed.
 
 Note that for offline play or for server hosting you also need
@@ -7,3 +10,6 @@ port.
 
 For online play engine is sufficient as it will downloaded all
 required data automatically.
+EOM
+}
+]

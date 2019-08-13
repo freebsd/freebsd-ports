@@ -1,5 +1,6 @@
-==========================================================================
-
+[
+{ type: install
+  message: <<EOM
 FreeRA requires original .mix files from Red Alert. Copy those files from
 Red Alert CD's to %%DATADIR%%/mix/ directory:
 
@@ -8,5 +9,6 @@ Red Alert CD's to %%DATADIR%%/mix/ directory:
 
 PS. Both files can be found on either Red Alert CD. Both CDs have the
     maps for both campaigns but only the videos for one.
-
-==========================================================================
+EOM
+}
+]

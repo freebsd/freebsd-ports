@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 You can download and install Adobe's ICC profiles from:
 http://download.adobe.com/pub/adobe/iccprofiles/win/AdobeICCProfilesWin_bundler.zip
+EOM
+}
+]
