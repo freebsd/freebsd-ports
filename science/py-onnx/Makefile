@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PY_TYPING} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python
+USES=		compiler:c11 python
 USE_PYTHON=	distutils concurrent autoplist
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
