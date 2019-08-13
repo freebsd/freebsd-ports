@@ -4,7 +4,7 @@
 PORTNAME=	mixxx
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	2.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
@@ -14,7 +14,6 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to compile: Exception("invalid machine type")
-BROKEN_powerpc64=	fails to configure: unmet dependencies: Could not find libprotobuf, libchromaprint, libmp4, and libwavpack
 
 BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
@@ -48,7 +47,7 @@ USE_QT=		buildtools concurrent core dbus gui network opengl script scripttools \
 CONFLICTS=	mixxx20* mixxx21*
 
 MAKE_ARGS=	qtdir="${PREFIX}" install_root="${PREFIX}" \
-		build=release optimize=native ${GUI} battery=0 vamp=1 modplug=1
+		build=release optimize=off ${GUI} battery=0 vamp=1 modplug=1
 LATE_INSTALL_ARGS=	--install-sandbox=${STAGEDIR}
 
 GUI=		qt5=1
