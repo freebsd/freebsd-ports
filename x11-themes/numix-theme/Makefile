@@ -3,6 +3,7 @@
 
 PORTNAME=	numix
 PORTVERSION=	2.6.7
+PORTREVISION=	1
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
 
@@ -10,8 +11,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk flat themes
 
 LICENSE=	GPLv3
-
-BROKEN=		unfetchable
 
 BUILD_DEPENDS=	rubygem-sass>=3.4:textproc/rubygem-sass
 RUN_DEPENDS=	gtk-murrine-engine>=0.98.2:x11-themes/gtk-murrine-engine
