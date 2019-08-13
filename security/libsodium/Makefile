@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsodium
-PORTVERSION=	1.0.16
+PORTVERSION=	1.0.18
 CATEGORIES=	security
 MASTER_SITES=	https://download.libsodium.org/libsodium/releases/
 
@@ -14,7 +14,6 @@ GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS+=	--enable-blocking-random
 INSTALL_TARGET?=	install-strip
 TEST_TARGET=		check
 
