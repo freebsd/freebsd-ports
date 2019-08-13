@@ -12,7 +12,7 @@ CONFLICTS_BUILD+=	${PORTNAME}-1.[0-9].[0-9]* \
 			${PORTNAME}-1.[^1][0-9].[0-9]* \
 			${PORTNAME}-1.1[0-1].[0-9]* \
 			${PORTNAME}-lts-1.[0-9][0-9].[0-9]*
-PORTREVISION=		${PORTREVISION_112}
+PORTREVISION=		${PORTREVISION_112:U0}
 PLIST_SUB+=		SVN112="" SVNLTS="@comment "
 LIB_DEPENDS+=		libsvn_client-1.so:devel/subversion
 OPTIONS_NAME=		devel_subversion
@@ -22,7 +22,7 @@ MASTERDIR=		${.CURDIR}/../../devel/subversion
 PKGNAMESUFFIX:=		${PKGNAMESUFFIX}-lts
 CONFLICTS_BUILD+=	${PORTNAME}-1.[0-9].[0-9]* \
 			${PORTNAME}-1.[0-9][0-9].[0-9]*
-PORTREVISION=		${PORTREVISION_LTS}
+PORTREVISION=		${PORTREVISION_LTS:U0}
 PLIST_SUB+=		SVN112="@comment " SVNLTS=""
 LIB_DEPENDS+=		libsvn_client-1.so:devel/subversion-lts
 OPTIONS_NAME=		devel_subversion-lts
