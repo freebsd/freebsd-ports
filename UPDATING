@@ -18,7 +18,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of www/ot-recorder
   AUTHOR: dvl@FreeBSD.org
 
-  The data directory has moved from /var/spool/owntracks to 
+  The data directory has moved from /var/spool/owntracks to
   /var/db/owntracks
 
   Be sure to stop otrecorder, move the directory, and start otrecorder.
@@ -37,7 +37,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Users that still use the Python 2.7 version of net-im/py-matrix-synapse
   should switch to a newer Python version, e.g. 3.6, which is the default
-  Python version since April 2019. 
+  Python version since April 2019.
 
 20190717:
   AFFECTS: users of sysutils/py-borgmatic
@@ -154,7 +154,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: timur@FreeBSD.org
 
   The port of the new version of Samba 4.10 is introduced. Due necessarily
-  to keep backwards compatibility for the legacy samba4[6-8] ports the 
+  to keep backwards compatibility for the legacy samba4[6-8] ports the
   upgrade procedure is a bit convoluted.
 
   You are safe to perform fresh new install of samba410 port. In case you
