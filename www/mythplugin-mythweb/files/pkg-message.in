@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 mythweb has been installed into:
 
     %%WWWDIR%%
@@ -9,3 +12,6 @@ You need to configure mythweb now according to the instructions in
 For lighttpd you should have a look at the MythTV Wiki
 
     http://www.mythtv.org/wiki/MythWeb_on_Lighttpd
+EOM
+}
+]

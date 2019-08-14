@@ -1,6 +1,6 @@
-
-===============================================================
-
+[
+{ type: install
+  message: <<EOM
 Serendipity installed in %%PREFIX%%/%%SERENDIPITY%%
 
 If this is your first install:
@@ -17,6 +17,6 @@ If you are upgrading an existing installation:
  1- Read %%PREFIX%%/%%SERENDIPITY%%/docs/UPGRADE
  2- Serendipity web based installation wizard will take care
     of the upgrade procedure
-
-===============================================================
-
+EOM
+}
+]

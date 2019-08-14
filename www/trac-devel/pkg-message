@@ -1,5 +1,6 @@
-*******************************************************************************
-
+[
+{ type: upgrade, maximum_version: 1
+  message: <<EOM
 From 0.12.x to 1.0.x
 ---------------------
 You should be careful to check that the plugins you depend on have
@@ -11,5 +12,6 @@ See: http://trac.edgewall.org/wiki/TracDev/ApiChanges/1.0
 Consult the upgrade instructions at:
 
   http://trac.edgewall.org/wiki/TracUpgrade
-
-*******************************************************************************
+EOM
+}
+]

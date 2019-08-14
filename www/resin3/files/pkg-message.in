@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Resin is now installed in %%APP_HOME%%
 
 You may want to activate it in /etc/rc.conf:
@@ -29,7 +32,7 @@ http://localhost:%%PORT%%/ to read the documentation and test the samples.
 Resin configuration is located at %%PREFIX%%/etc/%%APP_NAME%%/resin.xml
 Enjoy!
 
---------------------------------------------------------------------------------
+
 ADVANCED USAGE
 
 If you need to pass special options to Java, please set the
@@ -50,3 +53,6 @@ If you need to pass special options to Java, please set the
 To specify the java version to use, please use %%APP_NAME%%_java_version:
 
   %%APP_NAME%%_java_version="1.4"
+EOM
+}
+]

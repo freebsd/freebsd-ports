@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This is the core code base for the Calendar and Contacts Server,
 which is a CalDAV, CardDAV, WebDAV, and HTTP server.
 
@@ -66,11 +69,10 @@ In this case there is no need to define a server path on the client.
 Updates from earlier versions may require a DB schema update, which is done
 automatically on server start up, if <key>FailIfUpgradeNeeded</key> is set to
 <false/>.
-
-
-Upgrading
----------
-
+EOM
+}
+{ type: upgrade
+  message: <<EOM
 Upgrading from the previous version of this port (5.1) requires adjustments
 to the configuration:
 
@@ -112,4 +114,6 @@ to the configuration:
 	Starting schema upgrade from version 24 to 60.
 	Schema upgraded from version 24 to 60.
    These schould complete without errors.
-
+EOM
+}
+]

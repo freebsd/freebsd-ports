@@ -1,5 +1,6 @@
-
-*********************************************************************
+[
+{ type: install
+  message: <<EOM
 You have just installed the CodeIgniter web application framework.
 
 Note that you should restart your web server to ensure that
@@ -18,3 +19,6 @@ To use CodeIgniter:
 - If you are upgrading from a prior release, please visit:
   http://codeigniter.com/user_guide/installation/upgrading.html
   for additional post-installation instructions.
+EOM
+}
+]

@@ -1,4 +1,6 @@
-/* ================================================================= */
+[
+{ type: install
+  message: <<EOM
 Note:
 	Kwiki software installed! Now you should create
 	your kwiki web directory by yourself:
@@ -11,4 +13,6 @@ $ cd cgi-bin/my-kwiki
 $ kwiki-install
 
 	Finally remember to point your browser at required location.
-/* ================================================================= */
+EOM
+}
+]

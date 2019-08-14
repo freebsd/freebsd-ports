@@ -1,8 +1,6 @@
-*************************************
-
-POST-INSTALL CONFIGURATION FOR TYPO3
-=====================================
-
+[
+{ type: install
+  message: <<EOM
 1) Add the following to your Apache configuration file
    httpd.conf and restart the web server:
 
@@ -21,5 +19,6 @@ POST-INSTALL CONFIGURATION FOR TYPO3
 For more information, see the INSTALL DOCUMENTATION:
 
   https://docs.typo3.org/typo3cms/GettingStartedTutorial/latest/Installation/Index.html
-
-*************************************
+EOM
+}
+]

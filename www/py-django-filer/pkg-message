@@ -1,5 +1,6 @@
-================================================================================
-
+[
+{ type: install
+  message: <<EOM
 Add "filer" and related apps to your INSTALLED_APPS setting and run
 manage.py migrate:
 
@@ -21,5 +22,6 @@ THUMBNAIL_HIGH_RESOLUTION = True
 
 If you forget this, you may not see thumbnails for your uploaded files. Adding
 this line and refreshing the admin page will create the missing thumbnails.
-
-================================================================================
+EOM
+}
+]

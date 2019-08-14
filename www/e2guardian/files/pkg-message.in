@@ -1,4 +1,6 @@
-####################################################################################
+[
+{ type: install
+  message: <<EOM
      o You can find the configuration files for this package in the
        directory %%PREFIX%%/etc/e2guardian.
 
@@ -46,4 +48,6 @@
          - GitHub repository https://github.com/e2guardian/e2guardian/
          - support forum https://groups.google.com/forum/#!forum/e2guardian
          - link for bug reports https://github.com/e2guardian/e2guardian/issues
-####################################################################################
+EOM
+}
+]

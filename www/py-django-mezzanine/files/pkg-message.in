@@ -1,5 +1,6 @@
-================================================================================
-
+[
+{ type: install
+  message: <<EOM
 Quick start instructions:
 
 1. Create a new project
@@ -21,5 +22,6 @@ $ env LC_ALL=en_US.UTF-8 python%%PYTHON_VER%% manage.py createdb
 $ env LC_ALL=en_US.UTF-8 python%%PYTHON_VER%% manage.py runserver
 
 Please refer to the full documentation at: http://mezzanine.jupo.org/docs/
-
-================================================================================
+EOM
+}
+]

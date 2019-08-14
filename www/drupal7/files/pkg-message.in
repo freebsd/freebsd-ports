@@ -1,4 +1,6 @@
-################################################################################
+[
+{ type: install
+  message: <<EOM
 Complete instructions for installing and configuring Drupal can be found here:
 
 %%DOCSDIR%%/INSTALL.txt
@@ -36,7 +38,12 @@ configuration:
 - PHP "register_globals" is set to "Off"
 - PHP "safe_mode" is set to "Off"
 - PHP "session.cache_limiter" is set to "nocache"
-
+EOM
+}
+{ type: UPGRADE
+  message: <<EOM
 For important information about upgrading from previous versions of Drupal, please
 please see: %%DOCSDIR%%/UPGRADE.txt
-################################################################################
+EOM
+}
+]

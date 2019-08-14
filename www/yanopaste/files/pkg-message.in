@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 yanopaste has been installed into:
 
     %%WWWDIR%%
@@ -8,3 +11,6 @@ somethinglike this:
         Alias /yanopaste "%%WWWDIR%%"
 
 And restart Apache.
+EOM
+}
+]

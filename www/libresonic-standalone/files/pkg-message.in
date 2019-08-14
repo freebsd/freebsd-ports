@@ -1,12 +1,12 @@
-
-========================================================================
-
+[
+{ type: install
+  message: <<EOM
 Enable Libresonic by putting the following line in /etc/rc.conf
   libresonic_enable="YES"
 
 See %%LOCALBASE%%/etc/rc.d/libresonic for all the options.
 
-========================================================================
+
 
 Transcoding in Libresonic is a way to re-encode music on the fly to a format
 your listening device supports. A common use is transcoding FLAC, WMA, and
@@ -46,6 +46,6 @@ the heavy FFmpeg dependency:
 
   [Trackers to MP3] [mod s3m xm it] [mp3] ...
     [xmp -q -c %s] [lame --silent -h -b %b -]
-
-========================================================================
-
+EOM
+}
+]

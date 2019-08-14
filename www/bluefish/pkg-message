@@ -1,4 +1,6 @@
-----------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 WARNING:
 
 DUE CHANGE OF tidy to tidy4
@@ -6,5 +8,6 @@ DUE CHANGE OF tidy to tidy4
 If ~/.bluefish exists, the commands should be manually fixed opening the
 preferences window (Edit->Preferences) and then changing tidy to tidy4 in
 "External filters" and "Output parser" preferences.
-
-----------------------------------------------------------------------------
+EOM
+}
+]

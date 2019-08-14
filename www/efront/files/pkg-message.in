@@ -1,5 +1,6 @@
-POST-INSTALL CONFIGURATION FOR EFRONT
-=====================================
+[
+{ type: install
+  message: <<EOM
 1 Add the following to your Apache configuration, and
    restart the server:
 
@@ -17,5 +18,6 @@ POST-INSTALL CONFIGURATION FOR EFRONT
    be taken to the install.php script, which will lead
    you through creating a config file and then
    setting up eFront, creating an admin account, etc.
-=====================================================
-
+EOM
+}
+]

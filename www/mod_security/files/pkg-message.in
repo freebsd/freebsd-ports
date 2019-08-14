@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 You have installed ModSecurity.
 To enable ModSecurity in Apache, follow the instructions in
 
@@ -6,3 +8,6 @@ To enable ModSecurity in Apache, follow the instructions in
 
 Most users will use the signatures from the OWASP Core Rule Set (CRS).
 For configuration instructions, see %%DOCSDIR%%/README.
+EOM
+}
+]

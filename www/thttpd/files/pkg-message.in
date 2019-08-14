@@ -1,4 +1,6 @@
------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 If you want users to be able to create their own web
 subdirectories off of the main web directory, you need to:
 
@@ -9,4 +11,6 @@ subdirectories off of the main web directory, you need to:
 
 See http://www.acme.com/software/thttpd/notes.html for more
 detailed instructions.
------------------------------------------------------------------
+EOM
+}
+]

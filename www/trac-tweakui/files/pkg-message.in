@@ -1,4 +1,6 @@
-**************************************************
+[
+{ type: install
+  message: <<EOM
 To complete the installation, please add:
 
 [components]
@@ -21,4 +23,6 @@ cp -Rp %%EXAMPLESDIR%%/* \
 $TRAC_ENV is the root directory of your Trac
 project. You can copy the TweakUi examples into
 as many Trac projects as you like.
-**************************************************
+EOM
+}
+]

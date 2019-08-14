@@ -1,5 +1,6 @@
-
-===================================================================
+[
+{ type: install
+  message: <<EOM
 Recent version of the NGINX introduces dynamic modules support.  In
 FreeBSD ports tree this feature was enabled by default with the DSO
 knob.  Several vendor's and third-party modules have been converted
@@ -19,5 +20,6 @@ details.
 Default path for the NGINX dynamic modules is
 
 %%PREFIX%%/libexec/nginx.
-===================================================================
-
+EOM
+}
+]

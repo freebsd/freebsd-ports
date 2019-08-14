@@ -1,4 +1,6 @@
-===============================================
+[
+{ type: install
+  message: <<EOM
 YaBB is now installed in %%DIR%%
 
 Make it available through your web server and
@@ -8,4 +10,6 @@ you're done for security reasons.
 
 For additional documentation please visit the
 official site at: http://www.yabbforum.com/
-===============================================
+EOM
+}
+]

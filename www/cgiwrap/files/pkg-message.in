@@ -1,4 +1,6 @@
------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 The cgiwrap binaries have been installed in the following
 directory:
 
@@ -9,4 +11,6 @@ not function as expected:
 
   %%ALLOW_FILE%%
   %%DENY_FILE%%
------------------------------------------------------------------
+EOM
+}
+]

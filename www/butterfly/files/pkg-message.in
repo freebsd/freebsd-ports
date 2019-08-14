@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed butterfly, the web terminal that works through your
 browser.
 
@@ -11,4 +13,6 @@ http://localhost:57575
 
 The port and other parameters can be configured in
 %%ETCDIR%%/butterfly.conf
-======================================================================
+EOM
+}
+]

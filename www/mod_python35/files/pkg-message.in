@@ -1,5 +1,6 @@
-================================================================================
-
+[
+{ type: install
+  message: <<EOM
 The mod_python module is no longer activated in httpd.conf!
 There is now a dedicated modules file in %%APACHEETCDIR%%/modules.d
 
@@ -11,5 +12,6 @@ PythonHandler foobar
 PythonDebug On
 
 For more information, see http://www.modpython.org/.
-
-================================================================================
+EOM
+}
+]

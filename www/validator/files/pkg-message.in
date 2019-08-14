@@ -1,4 +1,6 @@
--------------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 The W3C Markup Validation Service has been installed. However, it will not do
 anything until you set up your web server to utilize it. An httpd.conf for the
 Apache web server can be found at
@@ -24,4 +26,6 @@ you can place it where you would like and set the environment variable
 W3C_VALIDATOR_CFG to the complete path (including filename) of validator.conf.
 An example of how to set this environment variable in Apache has been included
 in the above referenced httpd.conf file.
--------------------------------------------------------------------------------
+EOM
+}
+]

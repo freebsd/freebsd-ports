@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 Before running webstone make sure that the non-root user
 who runs webstone has rexec access to the webclients and
 the web server. This user must also have write access to
@@ -13,4 +15,6 @@ To run configure webstones, run it, and see the results:
     ./webstone -genfiles
     ./webstone
     ./webstone -results
-
+EOM
+}
+]

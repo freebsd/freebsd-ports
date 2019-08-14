@@ -1,5 +1,6 @@
-*****************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 You have installed the formication package.
 
 Edit %%LOCALBASE%%/etc/apache/httpd.conf and add:
@@ -8,5 +9,6 @@ Edit %%LOCALBASE%%/etc/apache/httpd.conf and add:
     AddHandler formication .fcn
 
 Read %%DOCSDIR%%/formication.txt to learn how to use
-
-*****************************************************************************
+EOM
+}
+]

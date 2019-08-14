@@ -1,5 +1,6 @@
-=====================================================================
-
+[
+{ type: install
+  message: <<EOM
 Before you start the server you must create a config file.
 The easiest way to do it is to copy /usr/local/etc/mathopd.conf.sample
 to /usr/local/etc/mathopd.conf and edit this file to your taste.
@@ -9,5 +10,6 @@ and run it.
 
 Also do not forget to create your web hierarchy and to set its
 permissions to something secure.
-
-=====================================================================
+EOM
+}
+]

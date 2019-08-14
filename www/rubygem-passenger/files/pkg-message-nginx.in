@@ -1,9 +1,12 @@
+[
+{ type: install
+  message: <<EOM
 The nginx flavor of this port installs passenger core binaries only,
 to make it works with nginx make sure www/nginx or www/nginx-devel
 port has been compiled with third-party PASSENGER module support and
 installed into a system.
 
-#####################################################################
+
 
 Please edit a nginx configuration file, and add these lines:
 
@@ -16,5 +19,6 @@ Please edit a nginx configuration file, and add these lines:
    
 Once nginx restarts it's possible to deploy a Ruby on Rails
 application without any further Ruby on Rails-specific configuration!
-
-#####################################################################
+EOM
+}
+]

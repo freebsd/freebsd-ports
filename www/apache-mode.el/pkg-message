@@ -1,6 +1,6 @@
-
-===================================================================
-
+[
+{ type: install
+  message: <<EOM
 Put this in your .emacs file to enable autoloading of apache-mode,
 and auto-recognition of Apache configs:
 
@@ -11,5 +11,6 @@ and auto-recognition of Apache configs:
  (add-to-list 'auto-mode-alist '("access\\.conf\\'" . apache-mode))
  (add-to-list 'auto-mode-alist
                '("sites-\\(available\\|enabled\\)/" . apache-mode))
-
-===================================================================
+EOM
+}
+]

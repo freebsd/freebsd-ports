@@ -1,4 +1,6 @@
-========================================================================
+[
+{ type: install
+  message: <<EOM
 Please visit :
 https://confluence.sakaiproject.org/pages/viewpage.action?pageId=82249313
 for more post-install information.
@@ -9,4 +11,6 @@ catalina.properties, you can start your Tomcat server and browse with:
 
 Login into the Sakai system with the user/admin and password/admin
 to configure and setup the system.
-=========================================================================
+EOM
+}
+]

@@ -1,4 +1,6 @@
-****************************************************************
+[
+{ type: install
+  message: <<EOM
 The Piwigo Photo Gallery has been installed in the directory
 %%WWWDIR%%
 and optionally, with the documentation at
@@ -35,4 +37,6 @@ A typical configuration would be:
     </Directory>
 
 For installation and upgrade information, check the readme file.
-****************************************************************
+EOM
+}
+]

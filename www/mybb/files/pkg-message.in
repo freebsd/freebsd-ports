@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 mybb has been installed into:
 
     %%WWWDIR%%
@@ -11,4 +14,6 @@ And restart Apache.
 
 Open the following page in your browser and follow the instructions:
 http://www.your.host/mybb/install/index.php
-
+EOM
+}
+]

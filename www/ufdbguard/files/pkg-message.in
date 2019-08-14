@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Please, note the following statements about %%PORTNAME%% port:
 
     o it's decided during compilation if ufdbguardd will work through Unix
@@ -11,3 +14,6 @@ Please, note the following statements about %%PORTNAME%% port:
       To make ufdbUpdate work it should be significantly rewritten for
       non-linux systems. It's not worth it due to the fact ufdbUpdate can
       be replaced by much more simple script written by local administator.
+EOM
+}
+]

@@ -1,4 +1,6 @@
-******************************************************************
+[
+{ type: install
+  message: <<EOM
 To run the demo:
 
 1. copy %%EXAMPLESDIR%% to ~/qp_sites
@@ -9,4 +11,6 @@ To run the demo:
    http://localhost:8002
 
 Read %%DOCSDIR%%/README.txt for more info.
-******************************************************************
+EOM
+}
+]

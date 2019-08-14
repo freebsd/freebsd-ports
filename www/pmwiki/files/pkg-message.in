@@ -1,10 +1,12 @@
-**********************************************************************
-
+[
+{ type: install
+  message: <<EOM
  Before the first use of PmWiki, copy sample-config.php to config.php
 
  in %%PREFIX%%/%%PMWIKIDIR%%
 
  Please visit 'http://{host.domain}/pmwiki/pmwiki.php' in a
  web-browser and follow the configuration instructions.
-
-**********************************************************************
+EOM
+}
+]

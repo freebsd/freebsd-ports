@@ -1,10 +1,6 @@
-POST-UPGRADE INSTRUCTIONS
-=========================
-Please follow instructions in %%WWWDIR%%/UPGRADE.txt.
-
-
-POST-INSTALL CONFIGURATION FOR ELGG
-===================================
+[
+{ type: install
+  message: <<EOM
 1) Make sure your apache's mod_rewrite extension is working,
 and change the AllowOverride setting of the DocumentRoot to
     AllowOverride all
@@ -28,5 +24,11 @@ For more information, see the INSTALL DOCUMENTATION:
 
    http://docs.elgg.org/wiki/Installation
    http://docs.elgg.org/wiki/Troubleshooting
-
-=====================================
+EOM
+}
+{ type: install
+  message: <<EOM
+Please follow instructions in %%WWWDIR%%/UPGRADE.txt.
+EOM
+}
+]

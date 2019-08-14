@@ -1,5 +1,6 @@
-==========================================================================
-
+[
+{ type: install
+  message: <<EOM
 In order to install GeneWeb in a user's public_html directory, please run:
 	%%DATADIR%%/install.sh
 OR from directory to install in, run:
@@ -25,5 +26,6 @@ using an up-to-date template. Additional attributes, e.g., occupation got
 added around v6.06, and if your template does not include this, you will
 likely experience problems as the code throws an exception when trying to
 edit a family.
-
-==========================================================================
+EOM
+}
+]

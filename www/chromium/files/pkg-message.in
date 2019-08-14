@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Chromium has a known problem of hanging tabs. The bug has been fixed
 in r337328. Therefore, it is recommended to upgrade the system after
 the correction date.
@@ -5,3 +8,6 @@ the correction date.
     # svn diff -c337328 --summarize svn://svn.freebsd.org/base
 
 See PR 212812 for further details.
+EOM
+}
+]

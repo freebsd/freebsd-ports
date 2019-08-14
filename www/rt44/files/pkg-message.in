@@ -1,5 +1,6 @@
-=====================================================================
-
+[
+{ type: install
+  message: <<EOM
 To initialize RT's database:
 
 $ sudo perl rt-setup-database --action init --dba dba --dba-password X
@@ -24,7 +25,10 @@ RT does not work with perl taint mode (-T) you must disable it.
 Note, some other ports like devel/bugzilla have you add this to your
 httpd.conf.  This isn't actually a flaw of RT, but of a subset of the
 CPAN modules that RT uses.
-
+EOM
+}
+{ type: install
+  message: <<EOM
 If you're upgrading RT then it is worth reading the UPGRADING document
 at this point. Some extension you're using may have been integrated
 into core. It's recommended to use new clean directory when you're
@@ -43,5 +47,6 @@ To upgrade your database schema, preserving ticket history:
      --action upgrade --prompt-for-dba-password
 
 and answer the prompts.
-
-=====================================================================
+EOM
+}
+]

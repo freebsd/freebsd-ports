@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To complete the installation of DAViCal:
 
 1. Create DAViCal's database
@@ -18,3 +21,6 @@ top of the accounts
 	%%DATADIR%%/httpd-davical.conf
 
 to the Apache Include directory and restart Apache.
+EOM
+}
+]

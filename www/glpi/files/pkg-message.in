@@ -1,4 +1,6 @@
-*****************************************************************
+[
+{ type: install
+  message: <<EOM
 First time installation notes:
 
 Before using GLPI, you will need to configure your database.
@@ -30,4 +32,6 @@ Then reload Apache: 'apachectl graceful'
 
 Please visit 'http://{host.domain}/glpi/' in a
 web-browser and follow the configuration instructions.
-*****************************************************************
+EOM
+}
+]

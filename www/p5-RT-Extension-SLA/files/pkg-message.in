@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
   If this is a first-time installation of RT::Extension::SLA, you will need
   to run the following in order to initialise various settings in the RT
   database:
@@ -13,4 +15,6 @@
 
      rt-setup-database --action insert --datafile \
          %%PREFIX%%/%%RTHOME%%/%%SCHEMAUPGRADE%%
-
+EOM
+}
+]

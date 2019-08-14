@@ -1,5 +1,6 @@
-#####################################################################
-
+[
+{ type: install
+  message: <<EOM
 Please edit your Apache configuration file, and add these lines:
 
    LoadModule passenger_module %%PASSENGER_INSTALL_DIR%%/buildout/apache2/mod_passenger.so
@@ -9,5 +10,6 @@ Please edit your Apache configuration file, and add these lines:
 After you restart Apache, you are ready to deploy any number of Ruby on Rails
 applications on Apache, without any further Ruby on Rails-specific
 configuration!
-
-#####################################################################
+EOM
+}
+]

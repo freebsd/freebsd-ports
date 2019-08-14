@@ -1,4 +1,6 @@
-=========================================================
+[
+{ type: install
+  message: <<EOM
 You need to create a PostgreSQL database for your logs:
 
   # su - postgres
@@ -15,4 +17,6 @@ pglogd can then be started with:
 
 Read the complete documentation on configuring pglogd
 and apache at http://www.digitalstratum.com/pglogd/
-=========================================================
+EOM
+}
+]

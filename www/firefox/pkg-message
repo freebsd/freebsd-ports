@@ -1,5 +1,6 @@
-======================================================================
-
+[
+{ type: install
+  message: <<EOM
 Some features available on other platforms are not implemented:
 - Native audio (requires OSS backend, feature parity with ALSA or PulseAudio)
 - Encrypted Media Extensions (requires Widevine CDM binary)
@@ -12,21 +13,21 @@ Some features available on other platforms are not implemented:
 - TCP fast open
 - about:networking (requires link state notification)
 
-======================================================================
+
 
 On FreeBSD < 11.3 Web Content process may frequently crash due to bug 181741.
 If you cannot upgrade try applying the following workaround:
 
 $ sysctl net.local.stream.recvspace=16384
 
-======================================================================
+
 
 To select non-default audio backend open about:config page and create
 media.cubeb.backend preference. Supported values are: alsa, jack,
 pulse, pulse-rust, sndio. Currently used backend can be inspected
 on about:support page.
 
-======================================================================
+
 
 smb:// issues (Gvfs/GIO option):
 Network group, machine, and share browsing does not work correctly.
@@ -39,5 +40,6 @@ ssh-keygen
 cat ~/.ssh/id_rsa.pub | ssh remote_host "cat >> .ssh/authorized_keys"
 
 The SSH server on remote_host must allow pub key authentication.
-
-======================================================================
+EOM
+}
+]

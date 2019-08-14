@@ -1,4 +1,6 @@
-===================================================================
+[
+{ type: install
+  message: <<EOM
 Simple config:
 
   LoadModule perl_module %%APACHEMODDIR%%/mod_perl.so
@@ -15,5 +17,6 @@ or online:
 
 The module can be enabled in
  %%APACHEETCDIR%%/modules.d/260_mod_perl.conf
-
-===================================================================
+EOM
+}
+]

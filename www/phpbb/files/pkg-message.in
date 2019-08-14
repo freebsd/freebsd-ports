@@ -1,4 +1,6 @@
-----------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 phpBB2 has been installed, but is not quite ready to be used yet!
 
 You have to ensure that you have a database server (or ODBC access to a
@@ -24,4 +26,6 @@ delete the following files manually for security purposes from
 
 Duplicates of these files have been installed to %%DATADIR%%.
 %%DATADIR%%/contrib contains contributed software for phpBB2.
-----------------------------------------------------------------------------
+EOM
+}
+]

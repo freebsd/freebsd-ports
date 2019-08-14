@@ -1,5 +1,6 @@
-
-***************************************************************
+[
+{ type: install
+  message: <<EOM
 Now you need to adjust PHP's include_path to contain
 	`%%DATADIR%%/library'
 
@@ -25,4 +26,6 @@ http://framework.zend.com/manual/1.12/en/zend.tool.framework.introduction.html
 
 For more general information about the Zend Framework, please
 visit: http://framework.zend.com/
-***************************************************************
+EOM
+}
+]

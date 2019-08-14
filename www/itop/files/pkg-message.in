@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Installation:
 
 1. Ensure that all the scripts have the appropriate owner (if PHP is running in
@@ -25,3 +28,6 @@ Installation:
 
 3. Open the main iTop directory in your web browser. iTop should then display
    the setup instructions on screen.
+EOM
+}
+]

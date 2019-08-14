@@ -1,5 +1,6 @@
-
-------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 NOTE:
 
 - safe_mode must be turned off in php.ini
@@ -7,4 +8,6 @@ NOTE:
 - JavaScript turned on for the browser. Setting the flags and
   encrypting the supplied URL initially requires the use of
   JavaScript.
-------------------------------------------------------------
+EOM
+}
+]

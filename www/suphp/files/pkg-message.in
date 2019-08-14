@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 SuPHP has no upstream maintainer and thus is not actively having
 bugs and security issues addressed.
 
@@ -14,3 +17,6 @@ The port maintainer's thoughts on sandboxing PHP are here:
 An overview of using PHP-FPM for application sandboxing is here:
 
   http://blog.shatow.net/post/2013-11-27-sandboxing-php-part2.markdown
+EOM
+}
+]

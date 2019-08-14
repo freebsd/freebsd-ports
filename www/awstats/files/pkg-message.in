@@ -1,10 +1,12 @@
-*********************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Use %%PREFIX%%/www/awstats/tools/awstats_configure.pl to set up your
 hosts.
 
 To activate awstats in your webserver, see the example files for
 apache: %%DOCSDIR%%/httpd_conf
 nginx:  %%DOCSDIR%%/nginx/
-
-*********************************************************************
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To run the Payara Java Application Server from startup, add
 payara_enable="YES" in your /etc/rc.conf.
 Extra options can be found in the startup script.
@@ -11,4 +14,6 @@ default location, issue the command:
 
 Because default payara user is low-privileged, to allow Payara to listen
 ports under 1024 you will need to tweak Mandatory Access Control policies.
-
+EOM
+}
+]

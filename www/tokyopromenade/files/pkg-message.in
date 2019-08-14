@@ -1,6 +1,6 @@
-POST-INSTALL CONFIGURATION FOR Tokyo Promenade
-==============================================
-
+[
+{ type: install
+  message: <<EOM
 1) Install an arbitrary web server which supports the CGI mechanism.
    Then, create a directory where CGI scripts can be executed. We call
    it the base directory, which contains some files of Tokyo Promenade.
@@ -57,3 +57,6 @@ POST-INSTALL CONFIGURATION FOR Tokyo Promenade
 
 When all steps above are finished, access the CGI script with a Web
 browser.
+EOM
+}
+]

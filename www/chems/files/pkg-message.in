@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 mybb has been installed into:
 
     %%WWWDIR%%
@@ -8,4 +11,6 @@ somethinglike this:
         Alias /chems "%%WWWDIR%%"
 
 And restart Apache.
-
+EOM
+}
+]

@@ -1,4 +1,6 @@
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+[
+{ type: install
+  message: <<EOM
 Please read:
 
 %%WWWDIR%%/docs/INSTALL.UNIX
@@ -6,4 +8,6 @@ Please read:
 If you are upgrading then read this too:
 
 %%WWWDIR%%/docs/UPGRADE.TXT
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+EOM
+}
+]

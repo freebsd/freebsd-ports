@@ -1,6 +1,6 @@
-POST-INSTALL CONFIGURATION FOR e107
-=====================================
-
+[
+{ type: install
+  message: <<EOM
 1) Create a user and a database for e107 to store all
    its tables in (or choose an existing database).
 
@@ -24,7 +24,6 @@ For more information, see the INSTALL DOCUMENTATION:
 
    http://wiki.e107.org/?title=HOWTO:Install_e107
    http://wiki.e107.org/?title=HOWTO:Install_troubleshoot
-
-Enjoying it !
-
-=========================================================
+EOM
+}
+]

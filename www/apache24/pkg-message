@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To run apache www server from startup, add apache24_enable="yes"
 in your /etc/rc.conf. Extra options can be found in startup script.
 
@@ -5,7 +8,6 @@ Your hostname must be resolvable using at least 1 mechanism in
 /etc/nsswitch.conf typically DNS or /etc/hosts or apache might
 have issues starting depending on the modules you are using.
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 - apache24 default build changed from static MPM to modular MPM
 - more modules are now enabled per default in the port
@@ -18,5 +20,6 @@ have issues starting depending on the modules you are using.
 
 Please compare the existing httpd.conf with httpd.conf.sample
 and merge missing modules/instructions into httpd.conf!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+EOM
+}
+]

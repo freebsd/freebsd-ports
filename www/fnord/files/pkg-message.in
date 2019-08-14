@@ -1,4 +1,6 @@
-------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 Now that fnord is installed, do the following :
 
 1) If you chose to use daemontools and/or tcpserver, I assume you
@@ -23,4 +25,6 @@ know how to do it, go to 4). If you chose to use inetd go to 2).
 5- Test with your favorite web browser.
 
    # links http://host.tld/index.html
-------------------------------------------------------------------
+EOM
+}
+]
