@@ -9,8 +9,8 @@
        <condition property="output.lib.name.os" value="lib${output.lib.name}.so"><isset property="isUnix"/></condition>
        <condition property="output.lib.name.os" value="${output.lib.name}.dll"><isset property="isWindows"/></condition>
        <condition property="output.lib.name.os" value="lib${output.lib.name}.jnilib"><isset property="isOSX"/></condition>
-@@ -604,14 +604,14 @@
-         <srcfiles dir= "${src.java}"  includes="**"/>
+@@ -605,7 +605,7 @@
+         <srcfiles dir= "${src.jcpp}"  includes="**"/>
          <srcfiles dir= "${c.grammar}" includes="*.g"/>
          <srcfiles dir= "${j.grammar}" includes="*.g"/>
 -        <mapper type="merge" to="${build}/gluegen.jar"/>
@@ -18,7 +18,8 @@
        </uptodate>
        <uptodate property="gluegen.build.skip.java2">
          <srcfiles dir= "."            includes="*.xml"/>
-         <srcfiles dir= "${src.java}"  includes="**"/>
+@@ -613,7 +613,7 @@
+         <srcfiles dir= "${src.jcpp}"  includes="**"/>
          <srcfiles dir= "${c.grammar}" includes="*.g"/>
          <srcfiles dir= "${j.grammar}" includes="*.g"/>
 -        <mapper type="merge" to="${build}/gluegen-rt.jar"/>
@@ -57,14 +58,14 @@
      // static initialization order:
 --- gluegen/src/junit/com/jogamp/common/util/TestTempJarCache.java.orig	2014-10-10 13:20:51 UTC
 +++ gluegen/src/junit/com/jogamp/common/util/TestTempJarCache.java
-@@ -197,8 +197,8 @@ public class TestTempJarCache extends Ju
+@@ -196,8 +196,8 @@ public class TestTempJarCache extends SingletonJunitCase {
      @Test
      public void testTempJarCache02AddNativeLibs() throws IOException, IllegalArgumentException, URISyntaxException {
          if(AndroidVersion.isAvailable) { System.err.println("n/a on Android"); return; }
--        final String nativeJarName = "gluegen-rt-natives-"+Platform.getOSAndArch()+".jar";
+-        final Uri.Encoded nativeJarName = Uri.Encoded.cast("gluegen-rt-natives-"+Platform.getOSAndArch()+".jar");
 -        final String libBaseName = "gluegen-rt";
-+        final String nativeJarName = "gluegen2-rt-natives-"+Platform.getOSAndArch()+".jar";
++        final Uri.Encoded nativeJarName = Uri.Encoded.cast("gluegen2-rt-natives-"+Platform.getOSAndArch()+".jar");
 +        final String libBaseName = "gluegen2-rt";
          final ClassLoader cl = getClass().getClassLoader();
  
-         URI jarUriRoot = JarUtil.getJarSubURI(TempJarCache.class.getName(), cl);
+         final Uri jarUri = JarUtil.getJarUri(TempJarCache.class.getName(), cl);
