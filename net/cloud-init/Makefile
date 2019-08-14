@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloud-init
-PORTVERSION=	18.3
-PORTREVISION=	2
+PORTVERSION=	19.2
 CATEGORIES=	net python
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +11,9 @@ COMMENT=	Init scripts for use on cloud images
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	currently depends on dmidecode which is x86-only
 
 RUN_DEPENDS=	dmidecode>0:sysutils/dmidecode \
 		sudo>0:security/sudo \
@@ -24,21 +26,17 @@ RUN_DEPENDS=	dmidecode>0:sysutils/dmidecode \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oauthlib>0:security/py-oauthlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpatch>0:devel/py-jsonpatch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cheetah>0:devel/py-cheetah@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpointer>0:devel/py-jsonpointer@${PY_FLAVOR}
 
-ETCDIR=		${PREFIX}/etc/cloud
+USES=		python shebangfix
 
-USES=		python:2.7 shebangfix
 SHEBANG_FILES=	tools/validate-yaml.py tools/read-dependencies \
 		tools/read-version
 USE_PYTHON=	autoplist distutils
+ETCDIR=		${PREFIX}/etc/cloud
 
 PYDISTUTILS_INSTALLARGS+=	"--init-system=sysvinit_freebsd"
-
-ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	currently depends on dmidecode which is x86-only
 
 post-patch:
 	${REINPLACE_CMD} -e 's|"etc"|"${STAGEDIR}${PREFIX}/etc"|g' ${WRKSRC}/setup.py
@@ -47,5 +45,6 @@ post-patch:
 
 post-build:
 	(cd ${WRKSRC} && ${MV} sysvinit/freebsd/cloudconfig config/cloud.cfg)
+	@cd ${WRKSRC} && ${MV} config/cloud.cfg.d/05_logging.cfg config/cloud.cfg.d/05_logging.cfg.sample
 
 .include <bsd.port.mk>
