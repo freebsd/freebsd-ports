@@ -3,9 +3,9 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.17.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://nginx.org/download/ \
+MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
 PKGNAMESUFFIX?=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
