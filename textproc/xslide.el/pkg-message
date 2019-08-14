@@ -1,4 +1,6 @@
-****************************************************************************
+[
+{ type: install
+  message: <<EOM
 To use xsl-mode, add to your ~/.emacs the following lines:
 
 ;; XSL mode
@@ -17,4 +19,6 @@ To use xsl-mode, add to your ~/.emacs the following lines:
 
 ;; Uncomment if using abbreviations
 ;; (abbrev-mode t)
-****************************************************************************
+EOM
+}
+]

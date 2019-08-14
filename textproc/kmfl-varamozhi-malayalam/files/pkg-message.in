@@ -1,4 +1,6 @@
----------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
   You should now have the new keyboard in the section
   "Malayalam" in your SCIM/IBus menu. If you don't see
   it, restart X.
@@ -7,4 +9,6 @@
   documentation. For the details on the Mozhi scheme,
   please see the Project's homepage, especially
   https://sites.google.com/site/cibu/mozhi.
----------------------------------------------------------
+EOM
+}
+]

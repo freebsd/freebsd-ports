@@ -1,5 +1,6 @@
-========================================================================
-
+[
+{ type: install
+  message: <<EOM
 To use markdown-mode in Emacs/XEmacs, add the following lines to
 your ~/.emacs replacing "text" with your preferred markdown extension.
 
@@ -8,5 +9,6 @@ your ~/.emacs replacing "text" with your preferred markdown extension.
 
 (setq auto-mode-alist
   (cons '("\\.text" . markdown-mode) auto-mode-alist))
-
-========================================================================
+EOM
+}
+]

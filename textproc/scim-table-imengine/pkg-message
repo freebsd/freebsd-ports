@@ -1,4 +1,6 @@
-------------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 The installation of SCIM table-based im engine has finished. Please note this
 port is only an engine for table-based input methods and does not contain any
 actual input methods.
@@ -16,4 +18,6 @@ The following ports can utilize this table-based imengine:
 
 As a common rule, set XMODIFIERS to '@im=SCIM' and use `scim -d' to start the
 scim daemon.
-------------------------------------------------------------------------------
+EOM
+}
+]

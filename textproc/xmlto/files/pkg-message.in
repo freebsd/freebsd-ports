@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 For benefits of conversions away from XHTML1 through XSL-FO,
 a stylesheet xhtml2fo.xsl has been installed
 into %%DATADIR%%. Example use:
@@ -7,3 +10,6 @@ into %%DATADIR%%. Example use:
 More style sheets for XHTML1 conversions can be found at
 <http://www.antennahouse.com/XSLsample/XSLsample.htm>
 under "Stylesheet for XHTML to XSL-FO transformation"
+EOM
+}
+]

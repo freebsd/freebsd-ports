@@ -1,4 +1,6 @@
-------------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 The installation of SCIM has finished. Please note this port is only a common
 framework for input methods and does not contain any actual input methods.
 
@@ -60,4 +62,6 @@ Additional SCIM-related projects
 
 As a common rule, set XMODIFIERS to '@im=SCIM' and use `scim -d' to start the
 scim daemon.
-------------------------------------------------------------------------------
+EOM
+}
+]

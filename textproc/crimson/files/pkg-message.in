@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The following jar file has been installed:
 
   %%PREFIX%%/share/java/classes/crimson.jar
@@ -11,3 +14,6 @@ NOTE:
 
 Documentation is in %%PREFIX%%/share/doc/crimson
 Examples is in %%PREFIX%%/share/examples/crimson
+EOM
+}
+]

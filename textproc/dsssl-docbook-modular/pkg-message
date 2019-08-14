@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 These are DSSSL stylesheets for the DocBook DTD by Norm Walsh. Use them
 in conjunction with a DSSSL processor (such as jade) to convert documents
 marked up as DocBook to other formats.
@@ -14,3 +17,6 @@ To further parse the output of the 'tex' transformation you will need the
 More documentation (in HTML format) is available in
 
    $PREFIX/share/sgml/docbook/dsssl/modular/doc/
+EOM
+}
+]

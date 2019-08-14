@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 extract_url has been installed.
 
 If you don't have ~/.extract_urlview
@@ -11,5 +12,6 @@ the extract_url configuration file can be copied, please type as user:
     cp %%DATADIR%%/extract_urlview.sample ~/.extract_urlview
 
     exit
-
-===============================================================================
+EOM
+}
+]
