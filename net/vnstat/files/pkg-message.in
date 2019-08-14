@@ -1,4 +1,6 @@
-###########################################################################
+[
+{ type: install
+  message: <<EOM
 vnstat has been installed.
 
 A sample configuration file has been installed in %%PREFIX%%/etc/
@@ -7,4 +9,6 @@ before starting vnstat service.
 
 For more information about vnStat use "man vnstat" or visit:
 http://humdi.net/vnstat/
-###########################################################################
+EOM
+}
+]

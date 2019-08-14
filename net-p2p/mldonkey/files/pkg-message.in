@@ -1,5 +1,6 @@
-	ATTENTION:
-
+[
+{ type: install
+  message: <<EOM
 - If you want to know how to use mldonkey, read "INSTALL" or
   "FAQ.html" in the port docs (%%DOCSDIR%%)
 
@@ -20,8 +21,13 @@
 - You have to enable the different protocols on the client
   console. Go to the (mldonkey-) console, and try the commands
   'set enable_<protocol> true' (try 'voo' for reference).
-
-+------------------------------------------------------------+
-|- For upgraders: The names of the binaries have changed.    |
-|  Core and GUI are called "mlnet" and "mlgui", respectively.|
-+------------------------------------------------------------+
+EOM
+}
+{ type: upgrade
+  maximum_version: 2.5.3
+  message: <<EOM
+- For upgraders: The names of the binaries have changed.
+  Core and GUI are called "mlnet" and "mlgui", respectively.
+EOM
+}
+]

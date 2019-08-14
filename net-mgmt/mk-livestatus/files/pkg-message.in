@@ -1,5 +1,6 @@
-=============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Notes:
 
  * See the documentation at https://mathias-kettner.com/checkmk_livestatus.html
@@ -14,5 +15,6 @@ Notes:
 
  * livecheck was removed in 1.2.3.i5. Please adjust your "broker_module=..."
    directive in %%PREFIX%%/etc/nagios/nagios.cfg!
-
-=============================================================================
+EOM
+}
+]

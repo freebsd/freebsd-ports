@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed torsocks, which is part of the Tor Project.
 If you have non-local or non-standard Tor SOCKS server location,
 please edit %%PREFIX%%/etc/tor/torsocks.conf
@@ -18,4 +20,6 @@ ways how general programs can purposefully or inadvertently defeat
 torsocks. One way is to reset the environment variable for the child
 process. You can use ex. wireshark to see where network packets are
 actually sent by the program in question.
-======================================================================
+EOM
+}
+]

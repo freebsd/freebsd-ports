@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To start iodined at boot, put these lines to your rc.conf:
 
   iodined_enable="YES"
@@ -23,3 +26,6 @@ To run the client,
 Replace 192.168.1.1 with your DNS server.
 
 See iodine(1) for more information.
+EOM
+}
+]

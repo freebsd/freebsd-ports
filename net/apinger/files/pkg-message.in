@@ -1,5 +1,9 @@
-#########################################################################
-# Please copy:								#
-# ${PREFIX}/etc/apinger.conf.sample to ${PREFIX}/etc/apinger.conf	#
-# & edit to your needs.							#
-#########################################################################
+[
+{ type: install
+  message: <<EOM
+ Please copy:
+ ${PREFIX}/etc/apinger.conf.sample to ${PREFIX}/etc/apinger.conf
+ & edit to your needs.
+EOM
+}
+]

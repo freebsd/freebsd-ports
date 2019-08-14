@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Please add
 
 	ntpd_program="%%PREFIX%%/sbin/ntpd"
@@ -5,3 +8,6 @@ Please add
 
 to your /etc/rc.conf to enable ntp from ports/packages instead
 of base ntp.
+EOM
+}
+]

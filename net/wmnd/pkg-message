@@ -1,4 +1,6 @@
-	----------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 	Existing users of 'wmnd' be aware that the graph scrolling
 	speed is now specified in tenths of a second (previous
 	setting was per-second), so you may want to update
@@ -6,4 +8,6 @@
 	variable).
 
 	Some modes look much nicer with a fast update. YMMV.
-	----------------------------------------------------------
+EOM
+}
+]

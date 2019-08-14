@@ -1,6 +1,6 @@
-=========================================================================
-IMPORTANT! MAKE SURE TO READ THE FOLLOWING!
-
+[
+{ type: install
+  message: <<EOM
 To start the YATE sever automatically when the system is started, append
 the following in your ${PREFIX}/etc/rc.conf file:
 
@@ -11,5 +11,6 @@ To manually start the yate server run (as root):
 
 To manually stop it:
 # %%PREFIX%%/etc/rc.d/yate stop
-
-=========================================================================
+EOM
+}
+]

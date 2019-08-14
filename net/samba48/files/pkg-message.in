@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 How to start: http://wiki.samba.org/index.php/Samba4/HOWTO
 
 * Your configuration is: %%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%
@@ -18,5 +19,6 @@ How to start: http://wiki.samba.org/index.php/Samba4/HOWTO
 For additional documentation check: http://wiki.samba.org/index.php/Samba4
 
 Bug reports should go to the: https://bugzilla.samba.org/
-
-===============================================================================
+EOM
+}
+]

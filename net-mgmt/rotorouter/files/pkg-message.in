@@ -1,7 +1,6 @@
-========================================================================
-   NOTICE    NOTICE    NOTICE    NOTICE    NOTICE    NOTICE    NOTICE
-========================================================================
-
+[
+{ type: install
+  message: <<EOM
 The rotorouter port has been installed with an example configuration
 file, located at %%PREFIX%%/etc/rotorouter.conf-example.
 
@@ -9,5 +8,6 @@ You need to build your own config file using local network information,
 and add the following line to /etc/rc.conf:
 
 	rotorouter_enable="YES"
-
-========================================================================
+EOM
+}
+]

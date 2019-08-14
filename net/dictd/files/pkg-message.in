@@ -1,5 +1,6 @@
-==================================================================
-
+[
+{ type: install
+  message: <<EOM
 This port installs the dict daemon but does not envoke dictd
 by default.
 
@@ -11,5 +12,6 @@ The dict client can be found within %%PORTSDIR%%/textproc/dict
 
 Don't forget to install %%PORTSDIR%%/net/dictd-database
 to run a dictd server without pain.
-
-==================================================================
+EOM
+}
+]

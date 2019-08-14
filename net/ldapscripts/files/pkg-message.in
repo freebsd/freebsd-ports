@@ -1,6 +1,6 @@
-
-===============================================================
-
+[
+{ type: install
+  message: <<EOM
  Security warning :
 
  For security reasons, ldapscripts.conf and ldapscripts.passwd
@@ -14,5 +14,6 @@
         chgrp ldapadmins %%ETCDIR%%/ldapscripts.passwd
 
  The ldapscripts are now installed, enjoy !
-
-===============================================================
+EOM
+}
+]

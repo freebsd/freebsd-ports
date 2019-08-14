@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 For Zabbix server and proxy daemons, as well as Zabbix frontend, a database is
 required. It is not needed to run Zabbix agent.
 
@@ -22,7 +24,7 @@ For Zabbix frontend "Welcome" screen. Enter the user name Admin with password
 zabbix to log in as a Zabbix superuser.
 
 For use NMAP please edit sudoers
-======================================================================
+
 This is a Zabbix LTS release!
 
 Zabbix LTS releases are supported for Zabbix customers during five (5) years
@@ -37,4 +39,6 @@ End of Limited Support: 31 October, 2023
 
 Zabbix Life Cycle & Release Policy:
 https://www.zabbix.com/life_cycle_and_release_policy
-======================================================================
+EOM
+}
+]

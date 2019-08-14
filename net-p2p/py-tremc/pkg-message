@@ -1,5 +1,6 @@
-##########################################################################
-
+[
+{ type: install
+  message: <<EOM
 Authentication and host/port can be set via command line with one of these
 patterns:
 
@@ -20,5 +21,6 @@ $ tremc -c johndoe:secretbirthday@homeserver:1234 --create-config
 No configuration file is created automatically. You must create it.
 
 $ tremc --create-config
-
-##########################################################################
+EOM
+}
+]

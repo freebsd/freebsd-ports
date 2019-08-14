@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 check_pf has been installed to %%PREFIX%%/libexec/nagios.
 
 check_pf needs read permission to the pf(4) pseudo-device, i.e. /dev/pf.
@@ -18,4 +20,6 @@ to /etc/devfs.conf:
 Please refer to the online documentation for additional information.
 
 https://github.com/kian/nagios-pf-plugin/
-
+EOM
+}
+]

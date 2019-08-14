@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 In order for nethogs to work properly add the following entry to 
 /etc/fstab:
 
@@ -8,3 +11,6 @@ noauto prevents /proc from being automatically mounted at boot.
 To mount the file system without rebooting:
 
 # mount /proc
+EOM
+}
+]

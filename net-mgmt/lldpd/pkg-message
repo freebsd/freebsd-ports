@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 To run lldpd at startup, add the following line to rc.conf:
 
 	lldpd_enable="YES"
 
 Add lldpd_flags to rc.conf control its behaviour.
+EOM
+}
+]

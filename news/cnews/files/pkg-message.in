@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 you MUST change the configuration of this news setup:
   cd to %%NEWSCTL%% and change the following files...
 mailname, whoami, organization, mailpaths, sys, readnews.ctl, postdefltgroup
@@ -7,3 +10,6 @@ check that you have vaild aliases in report.ctl,
 
 for ease of administration you may add a shell:
 pw usermod news -d %%NEWSCTL%% -s /bin/csh
+EOM
+}
+]

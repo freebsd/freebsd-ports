@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed CJDNS: IPv6 routing engine
 
 It is recommended to run CJDNS as a service:
@@ -35,4 +37,6 @@ Here are some websites on the CJDNS Hyperboria network:
 Warning: When the CJDNS daemon is connected to an outside network, tunN
 interface will generally directly expose your computer to that network,
 bypassing the regular firewall that you normally use.
-======================================================================
+EOM
+}
+]

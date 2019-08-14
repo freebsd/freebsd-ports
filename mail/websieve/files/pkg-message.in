@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Websieve has been installed in %%WWWDIR%%
 
 However, before you can use the program, you should copy the file
@@ -16,3 +19,6 @@ your Apache configuration:
 	require host .example.com
     </Directory>
 
+EOM
+}
+]

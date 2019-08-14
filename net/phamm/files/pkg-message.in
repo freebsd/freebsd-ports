@@ -1,5 +1,6 @@
-===================================================
-
+[
+{ type: install
+  message: <<EOM
 %%PKGNAME%% has been installed into:
 
     %%PREFIX%%/%%PHAMMDIR%%
@@ -20,5 +21,6 @@ I suggest that you add the following to httpd.conf:
              DirectoryIndex index.php
          </IfModule>
     </Directory>
-
-===================================================
+EOM
+}
+]

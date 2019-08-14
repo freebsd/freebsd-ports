@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 Now it is time to configure this package.
 Update %%PREFIX%%/etc/dhcp_probe.cf with desired configuration.
+EOM
+}
+]

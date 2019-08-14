@@ -1,4 +1,6 @@
-========================================================================
+[
+{ type: install
+  message: <<EOM
 kippo has been installed in the following directory:
 
 	%%DATADIR%%
@@ -33,4 +35,6 @@ Before starting kippo you need to perform the following steps:
 Then you can start kippo by issuing the following command:
 
 	service kippo start
-========================================================================
+EOM
+}
+]

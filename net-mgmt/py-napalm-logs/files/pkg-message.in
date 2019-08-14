@@ -1,8 +1,7 @@
-===============================================================================
-
-=====================
+[
+{ type: install
+  message: <<EOM
  Paths / CLI version
-=====================
 
 napalm-logs has been installed into:
 
@@ -16,9 +15,8 @@ The default path for logfiles (will be created automatically on first run) is:
 
 /var/log/napalm/logs
 
-==================================
+
  Message encryption / CLI version
-==================================
 
 If the messaging between server/client should be encrypted, one will require a
 certificate and a key otherwise the program will throw an exception and exits.
@@ -30,9 +28,8 @@ $ openssl req -nodes -x509 -newkey rsa:4096 -keyout napalm-logs.key -out napalm-
 If no encryption is required, please read further below how to start the server
 without a certificate.
 
-===================================
+
  Starting the server / CLI version
-===================================
 
 a) with encrypted messaging:
 
@@ -53,5 +50,6 @@ In case a) when security is enabled, the server will listen also on:
 
 Please read https://napalm-logs.readthedocs.io/en/latest for further
 information.
-
-==============================================================================
+EOM
+}
+]

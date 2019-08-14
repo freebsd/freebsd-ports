@@ -1,5 +1,6 @@
-==============================================================
-
+[
+{ type: install
+  message: <<EOM
 Note that traefik starts as unpriviliged user. Thus, it cannot
 bind to privileged ports (by default, ports below 1024) and
 will exit when configured to do so.
@@ -12,5 +13,6 @@ are options to achieve this:
   traefik's configuration file e.g. the rdr rules in pf(4).
 - The mac_portacl kernel module allows unprivileged processes
   to bind to privileged ports.
-
-==============================================================
+EOM
+}
+]

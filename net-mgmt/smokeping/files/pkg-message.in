@@ -1,5 +1,6 @@
-=================================================================
-
+[
+{ type: install
+  message: <<EOM
 SmokePing has now been installed in %%PREFIX%%/smokeping/.
 
 NOTE: A set of sample configuration files have been installed in
@@ -24,5 +25,6 @@ For configuration of web access, please see the 'smokeping_install'
 manpage.
 
 Enjoy!
-
-=================================================================
+EOM
+}
+]

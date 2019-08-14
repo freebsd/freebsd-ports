@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Tkabber is a heavily extensible Jabber client, a lot of things can be
 scripted or customized. For complete documentation please refer to
 tkabber.html which comes with the package if you selected DOCS option,
@@ -21,3 +24,6 @@ Also, you can install net-im/tkabber-plugins port, which provides a lot
 of additional Tkabber plugins, such as games to play with you jabber
 buddies (chess, checkers, etc), otr plugin for encrypted conversations,
 whiteboard for collaboration drawings, etc.
+EOM
+}
+]

@@ -1,7 +1,6 @@
-
-POST-INSTALL CONFIGURATION FOR GUIFI SNPSERVICES
-------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 1) Install and/or configure a webserver of your choice to serve
    php files from %%WWWDIR%%/ (you also might have to
    increase your webserver's upstream timeout for certain requests
@@ -27,6 +26,6 @@ For more information, see various guifi.net doc pages, and related:
    http://www3.uji.es/~vrubert/guifi_linux/graph.html#slide1
    http://es.wiki.guifi.net/wiki/Monitor
    http://guifi.net/ca/node/9071
-
-------------------------------------------------
-
+EOM
+}
+]

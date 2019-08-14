@@ -1,6 +1,6 @@
-
-Post-Installation Procedure
-===========================
+[
+{ type: install
+  message: <<EOM
 Before starting the rrdbot daemon for the first time, you need to
 perform some necessary steps:
 
@@ -29,4 +29,6 @@ rrdbot_enable="yes" in rc.conf, and then execute:
 If you forgot to run rrdbot-create, rrdbotd will start but will silently
 fail when trying to write data to the non-existent RRD.  So please be
 sure to follow the above!
-
+EOM
+}
+]

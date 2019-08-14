@@ -1,6 +1,6 @@
--------------------------------------------------------------------------------
-IMPORTANT! MAKE SURE TO READ THE FOLLOWING!
-
+[
+{ type: install
+  message: <<EOM
 Please remember to reinstall this port after kernel source update.
 
 ndproxy is configured using four sysctl kernel states. The boot script
@@ -17,6 +17,6 @@ net.inet6.ndproxyconf_uplink_ipv6_addresses    ndproxy_uplink_ipv6_addresses
 
 The network interface set in ndproxy_uplink_interface will be put into
 permanently promiscuous mode.
-
-IMPORTANT! MAKE SURE TO READ THE ABOVE!
--------------------------------------------------------------------------------
+EOM
+}
+]

@@ -1,10 +1,12 @@
-
-
+[
+{ type: install
+  message: <<EOM
 You can update the ethercodes.dat file executing the following steps
 
 cd %%PREFIX%%/arpwatch
 fetch -o- http://standards-oui.ieee.org//oui.txt | tr -d "\15" > oui.txt
 ./massagevendor oui.txt > ethercodes.dat
 rm oui.txt
-
-
+EOM
+}
+]

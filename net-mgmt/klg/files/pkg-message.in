@@ -1,6 +1,6 @@
-=======================================================================
-KLG is now installed.
-
+[
+{ type: install
+  message: <<EOM
 If this is the first installation, you need to configure a few things first.
 
 1. Create the MySQL database, a klg user, and initialise:
@@ -40,5 +40,6 @@ If this is the first installation, you need to configure a few things first.
 5. Access your new looking glass:
 
    http://HOSTNAME/klg/klg.php
-
-=======================================================================
+EOM
+}
+]

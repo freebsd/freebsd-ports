@@ -1,4 +1,8 @@
-===================== NOTE ======================
+[
+{ type: install
+  message: <<EOM
 You must be in the UK, or use a UK proxy, to gain
 access to most iPlayer content.
-=================================================
+EOM
+}
+]

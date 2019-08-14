@@ -1,5 +1,6 @@
-#################################
-
+[
+{ type: install
+  message: <<EOM
 First start the zerotier service:
 
 service zerotier start
@@ -26,5 +27,6 @@ network is established before proceeding. Note that this flag *does not*
 work for systems confgured with statically assigned IP addresses, and
 these will hang indefinitely due to an irreducible loop in rc(8) startup
 files. This flag is disabled by default.
-
-#################################
+EOM
+}
+]

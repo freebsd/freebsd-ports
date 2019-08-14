@@ -1,4 +1,6 @@
-=========================================================================
+[
+{ type: install
+  message: <<EOM
 Please note that this port requires configuration before it will function
 
 Add these to /etc/rc.conf:
@@ -14,5 +16,6 @@ Database-related files/information can be found in %%DATADIR%%.
 
 Additional documentation is available at:
 WWW: http://wiki.pmacct.net/
-=========================================================================
-
+EOM
+}
+]

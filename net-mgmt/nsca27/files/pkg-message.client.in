@@ -1,9 +1,11 @@
-
-*** ATTENTION ***
-
+[
+{ type: install
+  message: <<EOM
 This port installs only the client part of NSCA ("send_nsca").
 If you need the nsca daemon install the net-mgmt/nsca port.
 
 The default configuration file is installed at:
 %%PREFIX%%/etc/nagios/send_nsca.cfg-sample
-
+EOM
+}
+]

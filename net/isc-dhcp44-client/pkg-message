@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 ****  To setup dhclient, you may need to edit /etc/rc.conf to replace the
       base system dhclient as follows:
 
@@ -8,3 +11,6 @@
       possible options:
 
 	    MANPATH=%%MAN1PREFIX%%/man man 8 dhclient
+EOM
+}
+]

@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 net-mgmt/seafile-server is a dependency of Seafile. To install the
 full application, www/seahub must be installed.
+EOM
+}
+]

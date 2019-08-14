@@ -1,11 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+This port has been converted to use fastcgi.  Please read the installation
+documentation available at:
+
+http://torrus.org/install.pod.html
+EOM
+}
+{ type: upgrade
+  message: <<EOM
 A complete re-compile of the XML is required after upgrading.
 
 * Shutdown the collector
 * Remove all of the dbs under db/
 * run 'torrus compilexml --all'
 * Restart the collector
-
-This port has been converted to use fastcgi.  Please read the installation
-documentation available at:
-
-http://torrus.org/install.pod.html
+EOM
+}
+]

@@ -1,4 +1,6 @@
-=====================================================================
+[
+{ type: install
+  message: <<EOM
 Please note that mosh requires UTF-8 character set.  To set this on a
 per-user basis, you should add the following to ~/.login_conf:
 me:\
@@ -7,4 +9,6 @@ me:\
         :setenv=LC_COLLATE=C:
 
 This only needs to be completed on the client.
-=====================================================================
+EOM
+}
+]

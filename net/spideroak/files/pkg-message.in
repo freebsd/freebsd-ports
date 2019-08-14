@@ -1,5 +1,6 @@
-********************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 You have just installed the Linux client for the SpiderOak service.
 
 Note that SpiderOak does not follow symbolic links when doing a backup scan,
@@ -29,5 +30,6 @@ Abort trap
 Try to fix that with the following command (as root):
 
  # %%LOCALBASE%%/bin/dbus-uuidgen --ensure=%%LINUXBASE%%/var/lib/dbus/machine-id
-
-********************************************************************************
+EOM
+}
+]

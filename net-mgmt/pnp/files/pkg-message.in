@@ -1,5 +1,6 @@
-========================================================================
-
+[
+{ type: install
+  message: <<EOM
 You just installed/upgraded PNP graphing tool for %%NAGIOSUSER%%.
 
 You will need to read the documentation at
@@ -88,5 +89,6 @@ start from adding Apache user to the group '%%NAGIOSGROUP%%'.
 
 Remember to restart NPCD service after upgrade if you're using
 'bulk' mode with NPCD.
-
-========================================================================
+EOM
+}
+]

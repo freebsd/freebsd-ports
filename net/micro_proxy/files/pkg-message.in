@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Micro_proxy has been successfully installed. If you want to run micro_proxy
 with inetd add
 
@@ -14,5 +15,6 @@ to inetd.conf(5),
   inetd_enable="YES"
 
 to rc.conf(5) and restart inetd(8). See micro_proxy(8) for more information.
-
-===============================================================================
+EOM
+}
+]

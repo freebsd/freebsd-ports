@@ -1,6 +1,7 @@
-
-******************* IMPORTANT UPGRADE NOTIFICATION *******************
-
+[
+{ type: upgrade
+  maximum_version: 1.4
+  message: <<EOM
 If you're upgrading from earlier release to 1.4.x, please read UPGRADE
 document, which is installed in docs folder, or check it online:
 
@@ -8,5 +9,6 @@ http://www.inet.no/dante/doc/1.4.x/config/upgrade.html
 
 The 1.4.x release has syntax changes and various new functionality
 additions.
-
-******************* IMPORTANT UPGRADE NOTIFICATION *******************
+EOM
+}
+]

@@ -1,4 +1,6 @@
-===========================================================================
+[
+{ type: install
+  message: <<EOM
 Please set the hostname of your fiche server by running:
 sysrc fiche_domain="mypaste.domain.com"
 
@@ -12,4 +14,6 @@ If you wish to serve the content over HTTPS, please run the following to
 ensure that fiche hands out URLs prefixed with https://:
 
 sysrc fiche_flags="-S"
-===========================================================================
+EOM
+}
+]

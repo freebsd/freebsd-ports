@@ -1,5 +1,6 @@
-
-========================================================================
+[
+{ type: install
+  message: <<EOM
 Please note that, by default, an underlying Perl module does certificate
 verification when communicating with vSphere hosts.
 
@@ -11,4 +12,6 @@ $ENV{HTTPS_CA_FILE} = "/path/to/file";
 If you want to disable this important security feature, you may set the
 following variable to 0:
 $ENV{PERL_LWP_SSL_VERIFY_HOSTNAME}
-========================================================================
+EOM
+}
+]

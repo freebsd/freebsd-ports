@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This tracker is open in a sense that everyone announcing a torrent is welcome
 to do so and will be informed about anyone else announcing the same torrent.
 Unless -DWANT_IP_FROM_QUERY_STRING is enabled (which is meant for debugging
@@ -12,3 +15,6 @@ sysctl kern.ipc.somaxconn=1024
 sysctl kern.ipc.nmbclusters=32768
 sysctl net.inet.tcp.msl=10000
 sysctl kern.maxfiles=10240
+EOM
+}
+]

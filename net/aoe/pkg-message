@@ -1,6 +1,6 @@
--------------------------------------------------------------------------------
-IMPORTANT! MAKE SURE TO READ THE FOLLOWING!
-
+[
+{ type: install
+  message: <<EOM
 Please remember to reinstall this port after kernel source update.  Using AoE
 devices on boot is a little tricky because the network must be up before the
 system can access an AoE device. The current rc boot method for automounting
@@ -34,8 +34,6 @@ and the following added to /etc/fstab:
 will automatically start the AoE driver and mount the /mnt/a and /mnt/b
 "blades".  See aoe(4) and http://www.coraid.com/support/freebsd/usingaoe.html
 for more information.
-
--stacey.
-
-IMPORTANT! MAKE SURE TO READ THE ABOVE!
--------------------------------------------------------------------------------
+EOM
+}
+]

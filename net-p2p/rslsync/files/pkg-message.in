@@ -1,5 +1,6 @@
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
+[
+{ type: install
+  message: <<EOM
 net-p2p/rslsync includes an RC script:
 %%PREFIX%%/etc/rc.d/rslsync
 
@@ -11,5 +12,6 @@ START MANUALLY:
 
 Once started, visit the following to configure:
 http://localhost:8888/
-
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+EOM
+}
+]

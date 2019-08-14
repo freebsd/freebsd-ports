@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 Configuration sample files were installed in etc/proxy-suite/, you will need
 to copy these over to create real configuration files.
+EOM
+}
+]

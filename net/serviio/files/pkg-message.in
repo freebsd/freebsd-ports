@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The configuration files are installed in %%PREFIX%%/etc/serviio --
 but only the logging configuration and the player device-profiles
 may be changed there -- the library is set via the GUI program
@@ -20,3 +23,6 @@ to rc.conf. Note, that there is NO AUTHENTICATION between console and
 the server processes.
 
 For support, visit the lively forum at http://forum.serviio.org/
+EOM
+}
+]

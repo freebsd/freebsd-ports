@@ -1,8 +1,10 @@
-###########################################################################
-cowpatty has been installed
-
+[
+{ type: install
+  message: <<EOM
 If you have questions read %%DOCSDIR%%/FAQ
 For more information about coWPAtty visit:
 
 http://www.willhackforsushi.com/?page_id=50
-###########################################################################
+EOM
+}
+]

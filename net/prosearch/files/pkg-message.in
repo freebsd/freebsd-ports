@@ -1,6 +1,7 @@
-=======================================================================
-Pro-search is now installed. If you intall it for the first time,
-you may have to follow this steps to make it work correctly:
+[
+{ type: install
+  message: <<EOM
+You may have to follow this steps to make it work correctly:
 
 1. Create the MySQL database:
 # mysqladmin --user=root create prosearch
@@ -19,4 +20,6 @@ or
 8. scan your resources
 # perl crawler.pl 10.0.0.0/24 ftp://files.net
 9. enjoy: http://your.site/search/ or cd web && perl index.cgi q=test
-=======================================================================
+EOM
+}
+]

@@ -1,5 +1,6 @@
-================================================================================
-
+[
+{ type: install
+  message: <<EOM
 To setup a nyancat telnet server via inetd enable inetd in /etc/rc.conf:
 
 inetd_enable="YES"
@@ -8,5 +9,6 @@ Add the following lines to /etc/inetd.conf:
 
 telnet  stream  tcp     nowait  nobody  %%PREFIX%%/bin/nyancat  nyancat -t
 telnet  stream  tcp6    nowait  nobody  %%PREFIX%%/bin/nyancat  nyancat -t
-
-================================================================================
+EOM
+}
+]

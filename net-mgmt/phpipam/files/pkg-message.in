@@ -1,5 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 Automatic installation of database files
----------------------------------------------
+
 Since v0.4 phpipam can automatically install database files for you.
 Point browser to phpipam directory and set MySQL login details (root
 username and password).
@@ -19,3 +22,6 @@ In case your URL for phpipam is not root please set the following variables
 config.php is where site configuration and database details are configured.
 
 Default user/password is Admin/ipamadmin
+EOM
+}
+]

@@ -1,8 +1,6 @@
-
-*********************************************************************
-*                            Please Read                            *
-*********************************************************************
-
+[
+{ type: install
+  message: <<EOM
 DATABASE SETUP:
 If you have selected PostgreSQL or MySQL databases, you will need to
 read the documentation on how to edit the config file, as well as how
@@ -29,3 +27,6 @@ Alias /rackmonkey %%WWWDIR%%
    SetEnv RACKMONKEY_CONF %%WWWDIR%%/rackmonkey.conf
 </Location>
 
+EOM
+}
+]

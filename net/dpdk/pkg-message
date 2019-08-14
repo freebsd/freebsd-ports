@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 The Intel(R) DPDK requires two kernel modules to be loaded in order to run.
 To load these modules add loading lines to /boot/loader.conf
 
@@ -24,5 +25,6 @@ before the above two lines to load the module.
   For example:
 
 	hw.nic_uio.bdfs="2:0:0,2:0:1"
-
-===============================================================================
+EOM
+}
+]

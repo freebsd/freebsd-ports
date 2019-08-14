@@ -1,6 +1,7 @@
-Welcome to netdisco 2 !
-
-to get it running, you just have to:
+[
+{ type: install
+  message: <<EOM
+to get Netdisco running, you just have to:
  * edit %%ETCDIR%%/environments/deployment.yml to suit your needs
    (perldoc App::Netdisco::Manual::Configuration)
  * edit rc.conf according to %%PREFIX%%/etc/rc.d/netdisco
@@ -13,3 +14,6 @@ to get it running, you just have to:
 
 Always use "su - netdisco" before running netdisco-do or netdisco-deploy
  (because of locallib use)
+EOM
+}
+]

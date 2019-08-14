@@ -1,4 +1,6 @@
-###############################################################################
+[
+{ type: install
+  message: <<EOM
 1. If you do not already have a Site.conf configuration file, you will need
 to create one.  Simply copy %%WWWDIR%%/etc/Default.conf
 to Site.conf and edit to suit.
@@ -35,4 +37,6 @@ LoadModule perl_module		libexec/apache24/mod_perl.so
 LoadModule apreq_module		libexec/apache24/mod_apreq2.so
 
 Note that any changes to Site.conf require an apache reload.
-###############################################################################
+EOM
+}
+]
