@@ -2,6 +2,8 @@
 # $FreeBSD$
 
 PORTVERSION=	1.38.0.${NIGHTLY_DATE:C,-,,g}
+# Always set PORTREVISION explicitly as otherwise it is inherited from lang/rust
+PORTREVISION=	1
 PKGNAMESUFFIX=	-nightly
 DISTNAME=	rustc-nightly-src
 
