@@ -1,0 +1,34 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: sensu-agent
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable sensu-agent:
+#
+# sensu_agent_enable (bool):	Set to YES to enable sensu-agent
+# 				Default: NO
+# sensu_agent_config (str):	sensu-agent configuration file
+#				Default: ${PREFIX}/etc/sensu-agent.yml
+
+. /etc/rc.subr
+
+name=sensu_agent
+rcvar=sensu_agent_enable
+
+load_rc_config ${name}
+
+: ${sensu_agent_enable:="NO"}
+: ${sensu_agent_config:="%%PREFIX%%/etc/sensu-agent.yml"}
+: ${sensu_agent_restart_delay:="10"}
+
+pidfile="/var/run/sensu-agent.pid"
+command=/usr/sbin/daemon
+sensu_agent_command=%%PREFIX%%/bin/sensu-agent
+command_args="-rP ${pidfile} -S -R ${sensu_agent_restart_delay} \
+    -T ${name} ${sensu_agent_command} \
+    start -c ${sensu_agent_config}"
+
+load_rc_config $name
+run_rc_command "$1"
