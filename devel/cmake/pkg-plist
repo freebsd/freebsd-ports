@@ -1064,7 +1064,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/release/3.3.rst
 %%DATADIR%%/Help/release/3.4.rst
 %%DATADIR%%/Help/release/3.5.rst
-%%DATADIR%%/Help/release/%%PYTHON_VER%%.rst
+%%DATADIR%%/Help/release/3.6.rst
 %%DATADIR%%/Help/release/3.7.rst
 %%DATADIR%%/Help/release/3.8.rst
 %%DATADIR%%/Help/release/3.9.rst
