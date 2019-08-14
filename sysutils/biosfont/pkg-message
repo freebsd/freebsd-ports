@@ -9,6 +9,6 @@ To load the kernel module at boot, add the following line to /boot/loader.conf:
 
 	biosfont_load="YES"
 EOM
-  type: [install, upgrade]
+  type: install
 }
 ]
