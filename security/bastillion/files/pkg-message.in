@@ -1,0 +1,17 @@
+
+=== INSTALLATION ===
+
+Bastille is now installed in %%PREFIX%%/%%WWWDIR%% and %%PREFIX%%/jetty_bastillion.
+
+Before the first start (but not if you update), you have to set a DB password in
+    %%PREFIX%%/jetty_bastillion/bastillion/WEB-INF/classes/BastillionConfig.properties
+You can do that via e.g.:
+    # sed -i '' -e "s:dbPassword=:dbPassword=$(dd if=/dev/urandom bs=1 count=10 | openssl base64):" \
+       %%PREFIX%%/jetty_bastillion/bastillion/WEB-INF/classes/BastillionConfig.properties
+
+You may want to activate it in /etc/rc.conf:
+    # sysrc bastillion_enable="YES"
+
+Once Bastille is started, point your web browser to the login page at
+    https://<hostname>:8443/.
+
