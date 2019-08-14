@@ -41,6 +41,9 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
+# ignore #![deny(warnings)]
+RUSTFLAGS+=	--cap-lints warn
+
 WRKSRC_SUBDIR=	svgbob_cli
 
 PLIST_FILES=	bin/svgbob
