@@ -25,4 +25,6 @@ OPTIONS_DEFAULT=	PGSQL
 PGSQL_USE=	QT=sql-pgsql
 MYSQL_USE=	QT=sql-mysql
 
+CMAKE_ARGS+=	-DCMAKE_CXX_STANDARD=11
+
 .include <bsd.port.mk>

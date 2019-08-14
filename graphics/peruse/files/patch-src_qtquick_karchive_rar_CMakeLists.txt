@@ -1,0 +1,57 @@
+commit bea1c027ed5c863ae21df895d62d7a519bc24eaf
+Author: Adriaan de Groot <groot@kde.org>
+Date:   Sat Aug 10 21:54:33 2019 +0200
+
+    Fix build with CMake 3.15
+    
+    Summary:
+     - The build flags for the C part of the library overwrite the
+       compile flags for C++, in particular, they add -std=c99
+       to the C++ compilation.
+     - The C parts get auto-mocced (!) which generates a C++
+       file (although it's empty), which then gets compiled with
+       the C flags (and weird -std= setting).
+     - For clang, that leads to a build failure.
+    
+    So switch out some things:
+    
+     - Build the C parts as an OBJECT library,
+     - Don't apply the C flags to anything but that OBJECT library,
+     - and don't automoc C code.
+    
+    Test Plan: It now builds when CMake 3.15.2 is used.
+    
+    Reviewers: leinir
+    
+    Differential Revision: https://phabricator.kde.org/D23076
+diff --git src/qtquick/karchive-rar/CMakeLists.txt src/qtquick/karchive-rar/CMakeLists.txt
+index 3928dfd..022ecd1 100644
+--- src/qtquick/karchive-rar/CMakeLists.txt
++++ src/qtquick/karchive-rar/CMakeLists.txt
+@@ -2,10 +2,6 @@ project(karchive-rar)
+ 
+ find_package(ZLIB)
+ 
+-if (UNIX OR MINGW)
+-    add_compile_options(-std=gnu99 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -fPIC)
+-endif (UNIX OR MINGW)
+-
+ set(unarr_SRCS
+     unarr/rar/uncompress-rar.c
+     unarr/rar/huffman-rar.c
+@@ -31,7 +27,14 @@ set(karchive_rar_SRCS
+     KRarFileEntry.cpp
+ )
+ 
+-add_library(karchive-rar STATIC ${karchive_rar_SRCS} ${unarr_SRCS})
++add_library(karchive-c-unarr OBJECT ${unarr_SRCS})
++if (UNIX OR MINGW)
++    target_compile_options(karchive-c-unarr PRIVATE -std=gnu99 -fomit-frame-pointer -D_FILE_OFFSET_BITS=64 -fPIC)
++    set_property(TARGET karchive-c-unarr PROPERTY AUTOMOC OFF)
++endif (UNIX OR MINGW)
++
++
++add_library(karchive-rar STATIC ${karchive_rar_SRCS} $<TARGET_OBJECTS:karchive-c-unarr>)
+ target_link_libraries(karchive-rar
+     PUBLIC KF5::Archive
+ )

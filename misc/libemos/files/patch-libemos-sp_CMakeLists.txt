@@ -1,0 +1,13 @@
+Fix build: the symlink to libemosR64.a was not created
+in ${STAGEDIR}, leading to fs_violations during poudriere test-builds.
+
+--- libemos-sp/CMakeLists.txt.orig	2019-08-10 23:49:07 UTC
++++ libemos-sp/CMakeLists.txt
+@@ -45,6 +45,6 @@ ecbuild_add_library(
+ #               libemos.so ${CMAKE_INSTALL_PREFIX}/${INSTALL_LIB_DIR}/libemos.R32.D64.I32.so)" )
+ #else()
+   install(CODE "execute_process(COMMAND \"${CMAKE_COMMAND}\" -E create_symlink
+-               libemos.a ${CMAKE_INSTALL_PREFIX}/${INSTALL_LIB_DIR}/libemos.R32.D64.I32.a)" )
++               libemos.a \$ENV{DESTDIR}/${CMAKE_INSTALL_PREFIX}/${INSTALL_LIB_DIR}/libemos.R32.D64.I32.a)" )
+ #endif()
+ 
