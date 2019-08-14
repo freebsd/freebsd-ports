@@ -1,7 +1,11 @@
-********************************************************************************
+[
+{ type: install
+  message: <<EOM
 To start the pager at the startup of sawfish add the following to
 your sawfish resource file (e.g. ~/.sawfishrc):
 
   (require 'sawfish.wm.ext.pager)
   (add-hook 'after-initialization-hook pager t)
-********************************************************************************
+EOM
+}
+]

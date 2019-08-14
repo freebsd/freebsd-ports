@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This is ancient software that is ported for curiosity purposes.  It is
 unlikely to be useful in everyday use, and should not be used in untrusted
 environments as there are highly likely to be unresolved security issues.
@@ -17,3 +20,6 @@ the calendar to work).
 To start the Common Desktop Environment,
 % ln -s %%PREFIX%%/dt/bin/Xsession ~/.Xsession
 % env LANG=C startx
+EOM
+}
+]

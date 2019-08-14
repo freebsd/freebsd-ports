@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 Krusader can use several external programs for additional functionality, from
 diff utilities to email programs.
 
@@ -8,3 +10,6 @@ contains a list of programs Krusader optionally looks for.
 To use 'update DB' button in the locate dialog, open "Settings->Configure
 Krusader -> Dependencies" and write '/usr/libexec/locate.updatedb' into the
 field 'updatedb'.
+EOM
+}
+]

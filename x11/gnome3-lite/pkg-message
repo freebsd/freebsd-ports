@@ -1,5 +1,6 @@
-************************************************************
-
+[
+{ type: install
+  message: <<EOM
 The GNOME 3 desktop Lite edition has been successfully installed.
 
 The Lite edition only includes the minimal components to get a working GNOME 3
@@ -17,5 +18,6 @@ using either their ports or packages.
 
 For more help on using GNOME on FreeBSD, please see the FreeBSD GNOME project
 site at http://www.FreeBSD.org/gnome.
-
-************************************************************
+EOM
+}
+]

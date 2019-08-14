@@ -1,4 +1,8 @@
-*
-* To customize clementine, copy the keys file to ~/keys and
-* copy one of the look- files to ~/look; edit them as needed.
-*
+[
+{ type: install
+  message: <<EOM
+ To customize clementine, copy the keys file to ~/keys and
+ copy one of the look- files to ~/look; edit them as needed.
+EOM
+}
+]

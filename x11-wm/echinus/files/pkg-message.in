@@ -1,9 +1,11 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Echinus has been installed.
 
 A standard config file with its pixmaps has been installed to:
  %%PREFIX%%/etc/echinus/
 Copy this folder to ~/.echinus/ and modify the echinusrc as you wish.
-
-==============================================================================
+EOM
+}
+]

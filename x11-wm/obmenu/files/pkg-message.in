@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Obmenu has been installed.
 
 If you don't have ~/.config/openbox/menu.xml
@@ -15,5 +16,6 @@ the Obmenu config can be copied, please type as user:
     exit
 
 Have fun!
-
-===============================================================================
+EOM
+}
+]

@@ -1,4 +1,6 @@
-******************************************************************
+[
+{ type: install
+  message: <<EOM
 You will have to install your TrueType fonts in
 
 	%%PREFIX%%/share/fonts/TrueType
@@ -10,4 +12,6 @@ You should also add the following line to the "Files"
 section of your xorg.conf file:
 
 	FontPath   "unix/:7101"
-******************************************************************
+EOM
+}
+]

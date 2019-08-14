@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Polybar was originally built with Linux in mind, so certain modules do
 not function in FreeBSD.
 
@@ -27,3 +30,6 @@ Unknown:
 - backlight
 - battery
 - xbacklight
+EOM
+}
+]

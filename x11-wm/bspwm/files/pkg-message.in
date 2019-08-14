@@ -1,4 +1,6 @@
-#######################################################################
+[
+{ type: install
+  message: <<EOM
 Copy the files bspwmrc and sxhkdrc from %%EXAMPLESDIR%% to
 ~/.config/bspwm/ and ~/.config/sxhkd/ and configure them as you wish.
 
@@ -7,4 +9,6 @@ sxhkd &
 exec bspwm
 
 Then type startx from tty to run bspwm.
-#######################################################################
+EOM
+}
+]

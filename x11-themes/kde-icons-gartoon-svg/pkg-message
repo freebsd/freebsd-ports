@@ -1,5 +1,6 @@
-	ATTENTIONATTENTION:
-
+[
+{ type: install
+  message: <<EOM
 How to install a new icon theme
 
 1) Open the KDE-Menu and start the Control Center
@@ -7,3 +8,6 @@ How to install a new icon theme
 3) Select Gartoon theme iconset
 4) Click "Apply"
 5) Have fun! :-)
+EOM
+}
+]

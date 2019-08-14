@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 IMPORTANT - READ CAREFULLY: Code2000 is *NOT* free software!
 It is offered as a shareware demo. If you like it and use it after a
 reasonable evaluation period, you are obliged to register the
@@ -13,3 +16,6 @@ line to the "Modules" section of your X11 / x.org configuration file:
 Add the following line to the "Files" section of XF86Config:
 
 	FontPath "%%FONTSDIR%%/"
+EOM
+}
+]

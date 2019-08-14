@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To use these fonts, add the following line to the "Files" section of
 xorg.conf:
 
@@ -9,5 +12,6 @@ messages.  If freetype is required, add the following line to the
 "Modules" section of xorg.conf:
 
 	Load "freetype"
-
-
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Please add the following paths to your X11 font path:
 
 %%PREFIX%%/lib/X11/fonts/ol100dpi
@@ -8,4 +11,6 @@ Otherwise you will get the following error:
 XView warning: Cannot load font '-b&h-lucida-medium-r-*-*-*-120-*-*-*-*-*-*' (Font package)
 XView warning: Cannot load font '-b&h-lucida-medium-r-normal-sans-*-120-*-*-*-*-*-*' (Font package)
 XView error: Cannot open connection to window server: :0.0 (Server package)
-
+EOM
+}
+]

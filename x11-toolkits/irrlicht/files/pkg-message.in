@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 The Irrlicht Engine was installed
 
 1) See the complete documentation at:
@@ -11,5 +12,6 @@ The Irrlicht Engine was installed
    %%EXAMPLESDIR%%
 
 3) Enjoy it ;)
-
-###############################################################################
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Make sure that the "freetype" module is loaded. If it is not, add
 the following line to the "Modules" section of your X server
 configuration file:
@@ -27,3 +30,6 @@ For each font collection information and the copyright can be
 found in the font subdirectories at:
 
 	"%%FONTSDIR%%"
+EOM
+}
+]

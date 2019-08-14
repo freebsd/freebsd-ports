@@ -1,4 +1,6 @@
-============================================================
+[
+{ type: install
+  message: <<EOM
 You'll have to add %%FONTSDIR%%
 to your X font path by either:
 
@@ -12,4 +14,6 @@ NOTE: These fonts are SHAREWARE. You must pay a fee if you
 find that you are using them a lot. Please read the
 *.shareware files in %%FONTSDIR%%
 for each font's licensing restrictions.
-============================================================
+EOM
+}
+]

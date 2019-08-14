@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Fira has been installed.
 
 Fira has advanced Open Type typographic layout features and language support.
@@ -17,5 +18,6 @@ or
     http://en.wikipedia.org/wiki/List_of_typographic_features
 
 For Web Font please use www/fira-webfont port.
-
-===============================================================================
+EOM
+}
+]

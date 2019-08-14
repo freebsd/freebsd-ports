@@ -1,5 +1,8 @@
-===================================================================================
+[
+{ type: install
+  message: <<EOM
 Sample configuration files have been installed to %%PREFIX%%/etc/mrxvt
 Useful scripts have been installed to %%EXAMPLESDIR%%/scripts
-===================================================================================
-
+EOM
+}
+]

@@ -1,5 +1,6 @@
-##################################################################
-
+[
+{ type: install
+  message: <<EOM
  To enable this theme edit:
 
  %%PREFIX%%/etc/slim.conf
@@ -8,5 +9,6 @@
  that can be changed to any desired font editing:
 
  %%PREFIX%%/share/slim/themes/slim-freebsd-black-theme/slim.theme
-
-##################################################################
+EOM
+}
+]
