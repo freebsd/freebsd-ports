@@ -1,5 +1,9 @@
-
+[
+{ type: install
+  message: <<EOM
 Examine the %%PREFIX%%/etc/minidlna.conf and adjust it to match your system.
 
 The DB-directory should exist and be writable to user running minidlna.
-
+EOM
+}
+]

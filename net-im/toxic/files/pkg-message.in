@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 + toxic is set for IPv6 by default; if you have no IPv6 connectivity, try
 	toxic -4
 
@@ -11,4 +12,6 @@
 
   or try to define another TERM, e.g.:
 	TERM=vt100 toxic
-===============================================================================
+EOM
+}
+]

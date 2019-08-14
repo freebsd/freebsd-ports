@@ -1,4 +1,6 @@
-----------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 gutenfetch can be run once to pick out local Project Gutenberg
 servers with the following command line.
 
@@ -12,4 +14,6 @@ servers.
 gutenfetch also performs best with a caching proxy server such
 as wwwoffle or squid.  Although, this version will cache fetched
 books in the ~/.libgutenfetch/ directory by default.
-----------------------------------------------------------------
+EOM
+}
+]

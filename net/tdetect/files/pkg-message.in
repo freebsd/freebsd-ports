@@ -1,6 +1,8 @@
-
-IMPORTANT!
-
+[
+{ type: install
+  message: <<EOM
 Dont forget to edit %%PREFIX%%/etc/rc.d/tdetect.sh
 and set ETHERNETDEV to the name of the ethernet device you wish to monitor
-
+EOM
+}
+]

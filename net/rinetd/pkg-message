@@ -1,8 +1,12 @@
-#
-# You can use the following parameters on /etc/rc.conf:
-#
-# rinetd_enable (bool): Set to "NO" by default.
-#                       Set it to "YES" to enable rinetd
-# rinetd_flags (str):   Set to "" by default.
-#                       Extra flags passed to start command
-#
+[
+{ type: install
+  message: <<EOM
+ You can use the following parameters on /etc/rc.conf:
+
+ rinetd_enable (bool): Set to "NO" by default.
+                       Set it to "YES" to enable rinetd
+ rinetd_flags (str):   Set to "" by default.
+                       Extra flags passed to start command
+EOM
+}
+]

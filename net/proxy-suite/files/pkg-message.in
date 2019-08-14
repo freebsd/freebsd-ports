@@ -1,7 +1,11 @@
-
+[
+{ type: install
+  message: <<EOM
 This port provides a configuration file at
 
 %%ETCDIR%%/ftp-proxy.conf
 
 Edit to fit your needs.
-
+EOM
+}
+]

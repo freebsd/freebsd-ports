@@ -1,4 +1,8 @@
-
+[
+{ type: install
+  message: <<EOM
  Remmina is pretty useless without a plugins.
  Consider installing net/remmina-plugins.
-
+EOM
+}
+]

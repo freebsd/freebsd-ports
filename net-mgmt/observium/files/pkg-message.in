@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 === Configuration details ===
 You can mostly follow the guide at:
 http://observium.org/wiki/Installation
@@ -73,3 +76,6 @@ sudo -u www %%WWWDIR%%/poller.php -h all -d
 
    Hosts can be added from the webinterface or from the commandline.
 
+EOM
+}
+]

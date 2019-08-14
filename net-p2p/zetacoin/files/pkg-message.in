@@ -1,4 +1,6 @@
-*******************************************************************
+[
+{ type: install
+  message: <<EOM
 To configure the Zetacoin server please edit:
 %%PREFIX%%/etc/%%PORTNAME%%.conf
 
@@ -8,5 +10,6 @@ To run the %%PORTNAME%%d server at startup, add the following
 settings to your /etc/rc.conf
 
 %%PORTNAME%%_enable="YES"
-
-*******************************************************************
+EOM
+}
+]

@@ -1,6 +1,7 @@
-*******************************************************************************
-
-Configuration expamle:
+[
+{ type: install
+  message: <<EOM
+Configuration example:
 
 1. On the client side in snmpd.conf(5) create a new exec command:
 
@@ -32,5 +33,6 @@ snmpwalk(1) command. The first OID should be the STRING output from exec, the
 second should point to the INTEGER exit code.
 
 Restart Nagios and SNMP daemons to apply new configuration.
-
-*******************************************************************************
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 For further configuration information please look at
 %%PREFIX%%/share/rancid/README.
 
@@ -15,4 +18,6 @@ hourly_rancid_enable="YES" to /etc/periodic.conf for automatic hourly
 runs. Note, you'll need to enable an hourly job in /etc/crontab:
 
 0       *       *       *       *       root    periodic hourly
-
+EOM
+}
+]

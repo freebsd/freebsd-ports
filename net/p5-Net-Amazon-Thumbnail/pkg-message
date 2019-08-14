@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 You need to do some things before you can use the Amazon Alexa Site
 Thumbnail service:
 
@@ -14,3 +16,6 @@ Thumbnail service:
 	       use the Thumbnail service. The service does not have
 	       a free sandbox area, so be aware how much money you
 	       are spending to use the service.
+EOM
+}
+]

@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 To enable FreeRADIUS, put the following line in /etc/rc.conf
 
 radiusd_enable="YES"
@@ -49,5 +50,6 @@ well break things!
 Useful configuration advice can be found in the FreeRADIUS Wiki at
 http://wiki.freeradius.org
 
-===============================================================================
-
+EOM
+}
+]

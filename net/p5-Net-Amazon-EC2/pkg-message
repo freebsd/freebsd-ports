@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 You need to do some things before you can use the Amazon Elastic
 Compute Cloud:
 
@@ -12,3 +14,6 @@ Compute Cloud:
                service, unless you are signed up for the AWS Free Usage
                Tier. More information about the Free Usage Tier may be
                found at: http://aws.amazon.com/free/
+EOM
+}
+]

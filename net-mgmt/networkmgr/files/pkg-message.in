@@ -1,5 +1,6 @@
-======================================================================
-
+[
+{ type: install
+  message: <<EOM
 Any bug reports or request of new feature should be addressed at:
     https://github.com/GhostBSD/networkmgr/issues
 
@@ -13,5 +14,6 @@ Make sure that the %%PREFIX%%/etc/doas.conf have someting simular like this:
 
 When rebooting it should automaticaly start is the desktop support xdg and make
 sure that the user using NetworkMgr is in the wheel group.
-
-======================================================================
+EOM
+}
+]

@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 To enable the web interface, copy %%PREFIX%%/bin/rtgplot to your site cgi-bin as rtgplot.cgi
 Without this step, your graphs will be broken.
+EOM
+}
+]

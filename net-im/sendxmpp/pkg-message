@@ -1,7 +1,11 @@
-----------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 Existing users of 'sendxmpp' be aware that the format of
 the config file has changed and you need to update your
 ~/.sendxmpprc file accordingly.
 
 The new config file format is described in the man page.
-----------------------------------------------------------
+EOM
+}
+]

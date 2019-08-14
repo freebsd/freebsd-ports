@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed qTox: Qt 5 based Tox client.
 
 To have video working, you need:
@@ -13,4 +15,6 @@ To have spell checking working, you need:
    environment.
 2. Have some dictionary installed that is supported by KDE sonnet,
    for example en-hunspell.
-======================================================================
+EOM
+}
+]

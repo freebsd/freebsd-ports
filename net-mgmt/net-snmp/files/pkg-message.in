@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 **** This port installs snmpd, header files and libraries but does not
      start snmpd by default.
      If you want to auto-start snmpd and snmptrapd:, add the following to
@@ -25,3 +28,6 @@
      You may also define the following to avoid all interactive configuration:
 
 	BATCH="yes"
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 ****  To setup dhcpd, please edit %%PREFIX%%/etc/dhcpd.conf.
 
 ****  This port installs the dhcp daemon, but doesn't invoke dhcpd by default.
@@ -24,3 +27,6 @@
 ****  WARNING: never edit the chrooted or jailed dhcpd.conf file but
       %%PREFIX%%/etc/dhcpd.conf instead which is always copied where
       needed upon startup.
+EOM
+}
+]

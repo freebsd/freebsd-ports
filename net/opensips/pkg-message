@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 OpenSIPS was installed.
 
 For further installation and configuration instructions,
@@ -14,5 +15,6 @@ http://www.opensips.org/Documentation/Migration
 
 An rtpproxy server will most likely be needed, running on an accessible host.
 It may be worth looking at net/rtpproxy.
-
-##############################################################################
+EOM
+}
+]

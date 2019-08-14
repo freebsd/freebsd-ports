@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 To do the initial %%PORTNAME%% configuration, get a Slack token from
 https://api.slack.com/custom-integrations/legacy-tokens and create
 ~/.slack-term with the following format:
@@ -10,5 +11,6 @@ https://api.slack.com/custom-integrations/legacy-tokens and create
 
 See %%DOCSDIR%%/README.md or the online documentation
 for more configuration options.
-
-==============================================================================
+EOM
+}
+]

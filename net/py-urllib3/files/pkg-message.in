@@ -1,1 +1,7 @@
+[
+{ type: install
+  message: <<EOM
 Be careful, support of IPv6 is broken with PySocks 1.5.7.
+EOM
+}
+]

@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 To enable startup script, please add openradius_enable=yes
 in your rc.conf.
 
 Configuration sample files were installed, you will need to copy
 these over to create real configuration files.
+EOM
+}
+]

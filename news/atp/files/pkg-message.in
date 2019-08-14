@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Each user who wishes to use ATP must do the following:
 
 1.  set environment variable ATP to the location where s/he
@@ -18,3 +21,6 @@ Each user who wishes to use ATP must do the following:
     the pretty PC ANSI-style graphics characters!)
 
 see the atp(1) man page for more details.
+EOM
+}
+]

@@ -1,10 +1,12 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 SSVNC has been installed, and the following commands are available:
 
 ssvncviewer	- SSVNC viewer
 ssvnc-ts	- Wrapper script for Terminal Services mode
 ssvnc-stunnel	- Wrapper script for SSVNC + stunnel (SSH/SSL tunnels)
 ssvnc-gui	- GUI for the previous commands
-
-==============================================================================
+EOM
+}
+]

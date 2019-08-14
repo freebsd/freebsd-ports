@@ -1,5 +1,6 @@
-**********************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Pandora FMS %%PANDORA_VERSION%% console has been installed into:
 
     %%WWWDIR%%
@@ -16,6 +17,6 @@ For detailed installation instructions, please read:
 Upgrading from prior version, please read:
 
   http://wiki.pandorafms.com/index.php?title=Pandora:Documentation_en:Anexo_Upgrade
-
-**********************************************************************
-
+EOM
+}
+]

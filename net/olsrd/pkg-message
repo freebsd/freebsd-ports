@@ -1,3 +1,7 @@
-
+[
+{ type: install
+  message: <<EOM
 Set olsrd_enable="YES" in /etc/rc.conf to enable
-
+EOM
+}
+]

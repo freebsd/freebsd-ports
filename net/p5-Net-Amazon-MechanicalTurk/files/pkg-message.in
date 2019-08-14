@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 You need to do some things before you can use the Amazon Mechanical Turk:
 
 1) Visit http://aws.amazon.com/ to create an Amazon AWS account.
@@ -25,4 +27,6 @@ You need to do some things before you can use the Amazon Mechanical Turk:
                that you submit to the live service. Please make sure
                you know which MTurk service you are submitting HITs to -
                the sandbox (default) or the production service.
-
+EOM
+}
+]

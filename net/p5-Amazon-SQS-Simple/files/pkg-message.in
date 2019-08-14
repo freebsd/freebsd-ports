@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 You need to do some things before you can use the Amazon Simple
 Queue Service:
 
@@ -17,4 +19,6 @@ Queue Service:
                the SQS service. SQS does not have a free sandbox area,
                so be aware how much money you are spending to use the
                service.
-
+EOM
+}
+]

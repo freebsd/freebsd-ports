@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Sample configuration files for Apache and NGinx have been installed in:
 %%EXAMPLESDIR%%
 
@@ -14,3 +17,6 @@ SQL files at %%WWWDIR%%/etc/schema
 
 Be sure to always read the upgrading instructions and update database schemas
 if needed: https://www.icinga.com/docs/icingaweb2/latest/doc/80-Upgrading/
+EOM
+}
+]

@@ -1,7 +1,11 @@
-
+[
+{ type: install
+  message: <<EOM
 To use ifstated, you must create one or more configration files (a
 sample is provided).  This version of ifstated allows for multiple
 "profiles" or instances, each with its own configuration.  Please see
 the comments in %%PREFIX%%/etc/rc.d/ifstated for the variables to set
 in /etc/rc.conf.
-
+EOM
+}
+]

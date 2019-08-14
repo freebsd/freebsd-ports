@@ -1,12 +1,12 @@
-------------------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 Hans runs on Linux as a client and a server.
 It runs on FreeBSD client only.
 
 NOTE: that Hans cannot receive echo requests on BSD systems.
 Therefore the server only works on Linux.
 
-------------------------------------------------------------
 
 ### Running as a server ###
 
@@ -19,5 +19,6 @@ Therefore the server only works on Linux.
 ### Help ###
 
 % hans
-
-------------------------------------------------------------
+EOM
+}
+]

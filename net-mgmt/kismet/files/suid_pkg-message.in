@@ -1,6 +1,12 @@
+[
+{ type: install
+  message: <<EOM
 kismet has been installed with a setuid-root capture helper binary,
 %%LOCALBASE%%/bin/kismet_capture, which may be executed by users in the
 kismet group.  USERS IN THIS GROUP WILL BE ABLE TO ALTER NETWORK
 INTERFACE STATES, but this is more secure than running all of kismet
 as root.  ONLY users in this group will be able to run kismet and capture
 from physical network devices.
+EOM
+}
+]

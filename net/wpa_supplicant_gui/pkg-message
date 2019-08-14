@@ -1,7 +1,11 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed wpa_supplicant_gui: Qt frontend for wpa_supplicant.
 
 To use the matching versions of wpa_supplicant_gui and wpa_supplicant,
 use the wpa_supplicant package instead of wpa_supplicant supplied in
 the base system.
-======================================================================
+EOM
+}
+]

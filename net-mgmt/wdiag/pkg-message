@@ -1,3 +1,9 @@
+[
+{ type: install
+  message: <<EOM
 Remember, wstart and wstop must be run as root or with the binaries setuid.
 
 westell can be run by any user that can bind to port udp/1875
+EOM
+}
+]

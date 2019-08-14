@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 For correct operation, maximum socket buffer size must be tuned
 by performing the following command as root :
 
@@ -7,3 +10,6 @@ To preserve this setting across reboots, append the following
 to /etc/sysctl.conf :
 
 kern.ipc.maxsockbuf=18874368
+EOM
+}
+]

@@ -1,7 +1,6 @@
-###############################################################################
-
-The Transmisson Remote GUI was installed
-
+[
+{ type: install
+  message: <<EOM
 1) You can run it using:
 
    # transgui
@@ -12,5 +11,6 @@ The Transmisson Remote GUI was installed
 3) Run "transmission-daemon --help" for more configuration options
 
 4) Enjoy it ;)
-
-###############################################################################
+EOM
+}
+]

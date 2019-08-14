@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 To run tac_plus at startup, add the following line to rc.conf:
 
 	tac_plus_enable="YES"
 
 Extra options can be foud in the startup script.
+EOM
+}
+]

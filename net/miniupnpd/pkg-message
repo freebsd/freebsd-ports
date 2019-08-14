@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 *** !!WARNING!! !!WARNING!! !!WARNING!! ***
 This port allows machines within your network to create holes in your
 firewall.  Please ensure this is really what you want!
@@ -15,3 +17,6 @@ rdr-anchor "miniupnpd"
 # Rules section
 # uPnPd rule anchor
 anchor "miniupnpd"
+EOM
+}
+]

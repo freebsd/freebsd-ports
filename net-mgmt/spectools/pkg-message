@@ -1,4 +1,8 @@
-====
+[
+{ type: install
+  message: <<EOM
 In order to use the tools you need read/write access to the ugen(4)
 device node(s) corresponding to the Wi-Spy device(s).
-====
+EOM
+}
+]

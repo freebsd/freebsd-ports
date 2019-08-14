@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This port requires additional tasks before it will function properly.
 
 1.  Create and initialize the database:
@@ -22,3 +25,6 @@ service pwhoisd start
 
 6.  To enable daily updates, edit /etc/periodic.conf and add:
 daily_pwhois_updatedb_enable="YES"
+EOM
+}
+]

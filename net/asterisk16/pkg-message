@@ -1,5 +1,6 @@
-###########################################################################
-
+[
+{ type: install
+  message: <<EOM
   This port supports custom Asterisk configurations using a *user-supplied*
   menuselect.makeopt file.
 
@@ -32,5 +33,6 @@
 
     * https://wiki.asterisk.org/wiki/display/AST/Using+Menuselect+to+Select+Asterisk+Options
     * http://www.asteriskdocs.org/en/3rd_Edition/asterisk-book-html-chunk/installing_base_configuration.html#Installing_id293213
-
-################################################################################
+EOM
+}
+]

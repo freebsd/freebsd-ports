@@ -1,4 +1,6 @@
-******************************************************************************
+[
+{ type: install
+  message: <<EOM
 Remember to edit %%PREFIX%%/etc/muc.xml to suit your needs.
 
 If necessary, please create directories owned by user "%%JABBER_USER%%":
@@ -18,4 +20,6 @@ to use another or an external jabber server. Please read instructions from:
 
 If you are using MySQL, sample database script can be found in:
 %%DOCSDIR%%/mu-conference.sql
-******************************************************************************
+EOM
+}
+]

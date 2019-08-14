@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 In order to run the periodic UUCP maintenance tasks, please add
 the following to your /etc/periodic.conf.local file:
 
@@ -12,3 +15,6 @@ weekly_uucp_enable="YES"				# Clean uucp weekly
 
 # in your sendmail.mc file you need to set the path:
 define(`UUCP_MAILER_PATH', `/usr/local/bin/uux')dnl
+EOM
+}
+]

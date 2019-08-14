@@ -1,13 +1,16 @@
-************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 NTP Analyzer has been installed. If this is the first time remember to
 create a MariaDB, MySQL or PostgreSQL user and database first.
 
 If you are upgrading from a previous version of NTP Analyzer be sure to
 take a backup of your database before starting ntpa in upgrade mode.
-
-************************************************************************
-
+EOM
+}
+{ type: upgrade
+  maximum_version: 0.8.2_4
+  message: <<EOM
 The ntpa newsyslog.conf(5) filename has been changed:
   OLD: ${PREFIX}/etc/newsyslog.conf.d/ntpa
   NEW: ${PREFIX}/etc/newsyslog.conf.d/ntpa.conf
@@ -21,5 +24,6 @@ newsyslog configuration now only includes filenames that end with
 If you use provisioning/configuration management tools to create or
 edit this file, you will need to change their configuration to use
 the new filename.
-
-************************************************************************
+EOM
+}
+]

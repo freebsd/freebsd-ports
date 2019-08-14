@@ -1,5 +1,6 @@
-*****************************************************************
-
+[
+{ type: install
+  message: <<EOM
 This port disabled the post installation script during the build
 process to allow the package to be built without interaction.
 
@@ -8,5 +9,6 @@ If you wish to run this script it is located here:
 
 Note: It may not be required to run this script depending on
 your environment.
-
-*****************************************************************
+EOM
+}
+]

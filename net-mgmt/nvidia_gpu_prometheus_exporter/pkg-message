@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The libnvidia-ml.so.1 library has to be installed on the system for
 nvidia_gpu_prometheus_exporter to be able to query GPUs.
 
@@ -7,3 +10,6 @@ Ports Collection:
 - nvidia-driver
 - nvidia-driver-304
 - nvidia-driver-340
+EOM
+}
+]

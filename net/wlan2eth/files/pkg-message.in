@@ -1,9 +1,9 @@
-===============================================================================
-
-wlan2eth has been installed.
-
+[
+{ type: install
+  message: <<EOM
 For more information about wlan2eth visit:
 
 http://www.willhackforsushi.com/?page_id=79
-
-===============================================================================
+EOM
+}
+]

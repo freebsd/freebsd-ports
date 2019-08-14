@@ -1,10 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+ $ mysqladmin -uroot -pXXXX create nagios
 
-******************************************************************************
-* $ mysqladmin -uroot -pXXXX create nagios
-*
-* $ mysql -uroot -pXXXX -e \
-*   "GRANT SELECT,INSERT,UPDATE,DELETE TO 'nagios'@'%' IDENTIFIED BY 'YYYYY'
-*
-* $ cd %%DATADIR%%/db
-* $ ./installdb
-******************************************************************************
+ $ mysql -uroot -pXXXX -e \
+   "GRANT SELECT,INSERT,UPDATE,DELETE TO 'nagios'@'%' IDENTIFIED BY 'YYYYY'
+
+ $ cd %%DATADIR%%/db
+ $ ./installdb
+EOM
+}
+]

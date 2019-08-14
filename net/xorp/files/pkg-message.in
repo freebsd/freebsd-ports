@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Add the following lines to /etc/rc.conf to enable xorp:
 
 defaultrouter="NO"
@@ -12,3 +15,6 @@ before use.
 Users who will be changing the xorp configuration via
 %%PREFIX%%/sbin/xorpsh
 must be members of the group xorp.
+EOM
+}
+]

@@ -1,4 +1,6 @@
-==========================================================
+[
+{ type: install
+  message: <<EOM
 To enable quagga, add the following lines to rc.conf:
 
 defaultrouter="NO"
@@ -10,4 +12,6 @@ quagga_flags="...."
 quagga_extralibs_path="... ..."
 router_enable="NO"
 watchquagga_enable="YES"
-==========================================================
+EOM
+}
+]

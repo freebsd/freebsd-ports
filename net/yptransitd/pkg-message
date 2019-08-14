@@ -1,6 +1,6 @@
-************************************************************
-NOTE!
-
+[
+{ type: install
+  message: <<EOM
 a) Make sure the following is in your slapd.conf file.
 
 #needed for yptransitd
@@ -17,5 +17,6 @@ b) Make sure the following files have been localised.
 c) The following URL should help in getting this beast running.
 
 http://www.openldap.org/lists/openldap-software/200010/msg00097.html
-
-************************************************************
+EOM
+}
+]

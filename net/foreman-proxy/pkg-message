@@ -1,3 +1,7 @@
+[
+{ type: upgrade
+  maximum_version: 1.11
+  message: <<EOM
 WARNING:
 
 In version 1.11+ Foreman Smart Proxy splits its configuration in even smaller
@@ -8,3 +12,6 @@ ${PREFIX}/etc/foreman-proxy/settings.d
 You can use a bundled script to convert your old settings to new settings:
 
 ${PREFIX}/share/foreman/extra/migrate_settings.rb
+EOM
+}
+]

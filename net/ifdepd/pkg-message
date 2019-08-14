@@ -1,6 +1,6 @@
-
-*** ATTENTION ***
-
+[
+{ type: install
+  message: <<EOM
 To run ifdepd from startup, add
 ifdepd_enable="YES" to /etc/rc.conf
 
@@ -13,3 +13,6 @@ Available variables you add/set to /etc/rc.conf.
 - ifdepd_dst_ifaces(str):      Set to "" by default.
                                Contains a space separated list
                                of destination interfaces.
+EOM
+}
+]

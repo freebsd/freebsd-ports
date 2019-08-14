@@ -1,4 +1,6 @@
-------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 To allow clients to connect to the transmission daemon using DNS with
 any hostname other than localhost, do one of the following:
   - Enable password authentication, then any hostname is allowed.
@@ -15,4 +17,6 @@ any hostname other than localhost, do one of the following:
     in settings.json (must be done whilst the transmission service is
     stopped). Note that this value is NOT a list of allowed CLIENTS,
     but instead a list of allowed SERVER hostnames.
-------------------------------------------------------------------------
+EOM
+}
+]

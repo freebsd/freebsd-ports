@@ -1,14 +1,6 @@
-=== UPGRADE details ===
-
-Depending on the version, you may have to run the upgrade script.
-
-cd %%WWWDIR%%
-./build-base.php
-
-re: https://docs.librenms.org/#General/Updating/
-
-=== Configuration details ===
-
+[
+{ type: install
+  message: <<EOM
 NOTE: setting sql-mode="" is no longer required. You can remove
 it from /usr/local/etc/mysql/my.cnf
 
@@ -56,3 +48,16 @@ Application key [base64:P62La9V........qw=] set successfully.
 
 After that, follow the LibreNMS documentation for configuration.
 
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+Depending on the version, you may have to run the upgrade script.
+
+cd %%WWWDIR%%
+./build-base.php
+
+re: https://docs.librenms.org/#General/Updating/
+EOM
+}
+]

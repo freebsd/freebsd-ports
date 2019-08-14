@@ -1,7 +1,10 @@
-*******************************************************************
+[
+{ type: install
+  message: <<EOM
  If you want to run ladvd at startup you'll need the following
  line in %%PREFIX%%/rc.conf(.local):
 
     ladvd_enable="YES"
-
-*******************************************************************
+EOM
+}
+]

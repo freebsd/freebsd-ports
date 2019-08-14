@@ -1,5 +1,6 @@
-==================================================================
-
+[
+{ type: install
+  message: <<EOM
 1) You can start and stop the turnserver manually. But, if you want
 to enable turnserver as an automatically started system service,
 you have to:
@@ -36,6 +37,6 @@ The TURN Server supports (optionally) SQLite, MySQL, PostgreSQL, Redis.
    $ man turnserver
    $ man turnadmin
    $ man turnutils
-
-==================================================================
-
+EOM
+}
+]

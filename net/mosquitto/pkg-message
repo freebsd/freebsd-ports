@@ -1,1 +1,7 @@
+[
+{ type: install
+  message: <<EOM
 The mosquitto MQTT Python driver is now provided by net/py-paho-mqtt
+EOM
+}
+]

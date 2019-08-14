@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 xrdp has been installed.
 
 There is an rc.d script, so the service can be enabled by adding this line
@@ -10,5 +11,6 @@ xrdp_sesman_enable="YES" # if you want to run xrdp-sesman on the same machine
 
 Do not forget to edit the configuration files in "%%PREFIX%%/etc/xrdp"
 and the "%%PREFIX%%/etc/xrdp/startwm.sh" script.
-
-==============================================================================
+EOM
+}
+]

@@ -1,5 +1,6 @@
-**********************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Pandora FMS %%PANDORA_VERSION%% server has been installed.
 
 If your perl installation doesn't support threads, rebuild your perl
@@ -27,11 +28,13 @@ Please put like a following line to your /etc/crontab:
 
 If you have a "daily_clean_pandoradb_enable" entry in /etc/periodic.conf,
 you can safely remove this line.
-
-**********************************************************************
-
+EOM
+}
+{ type: upgrade
+  message: <<EOM
 For upgrade instructions, please read:
 
   http://wiki.pandorafms.com/index.php?title=Pandora:Documentation_en:Anexo_Upgrade
-
-**********************************************************************
+EOM
+}
+]

@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 - Add the following lines to /etc/rc.conf to enable nncp-daemon,
   nncp-caller and nncp-toss:
 
@@ -14,4 +16,6 @@
 
     # umask 077
     # nncp-cfgnew > %%PREFIX%%/etc/nncp.yaml
-======================================================================
+EOM
+}
+]

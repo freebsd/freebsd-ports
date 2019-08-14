@@ -1,4 +1,6 @@
-*************************************************************
+[
+{ type: install
+  message: <<EOM
 Before using ldapsh, you'll probably want to :
 
 - Create the configuration file (an example is in
@@ -8,4 +10,6 @@ Before using ldapsh, you'll probably want to :
   configuration file $HOME/.ldapsh_config.
 - See %%DOCSDIR%%/COMMANDS for an overview of
   the available commands.
-*************************************************************
+EOM
+}
+]

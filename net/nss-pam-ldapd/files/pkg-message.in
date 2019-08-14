@@ -1,5 +1,6 @@
-=====================================================================
-
+[
+{ type: install
+  message: <<EOM
 LDAP and nslcd daemon parameters should be set in:
 %%CONFIG_FILE%%.
 
@@ -16,4 +17,6 @@ If you also want to supervise the nslcd daemon
 add nslcd_supervisor="YES" to rc.conf as well.
 
 See the comments in %%PREFIX%%/etc/rc.d/nslcd for additional tunables.
-=====================================================================
+EOM
+}
+]

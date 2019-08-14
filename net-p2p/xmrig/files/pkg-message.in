@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 XMRig configuration file available at:
 %%ETCDIR%%/config.json
 
@@ -6,3 +9,6 @@ To automatically start XMRig at boot time:
 
 To then manually start XMRig without rebooting:
 # service xmrig start
+EOM
+}
+]

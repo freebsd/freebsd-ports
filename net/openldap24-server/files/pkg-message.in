@@ -1,5 +1,6 @@
-************************************************************
-
+[
+{ type: install
+  message: <<EOM
 The OpenLDAP server package has been successfully installed.
 
 In order to run the LDAP server, you need to edit
@@ -19,5 +20,6 @@ for more information.
 
 slapd runs under a non-privileged user id (by default `ldap'),
 see %%PREFIX%%/etc/rc.d/slapd for more information.
-
-************************************************************
+EOM
+}
+]
