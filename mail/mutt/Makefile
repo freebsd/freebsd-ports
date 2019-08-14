@@ -167,10 +167,9 @@ SMTP_CONFIGURE_ENABLE=	smtp
 
 GREETING_PATCH_PATCHFILES=	mutt-${GREETING_PATCH_VERSION}.vc.greeting:vc
 
-QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv
-QUOTE_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-vvv.quote
+QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv \
+	patch-${VVV_PATCH_VERSION}.vvv.quote.xz:vvv
 
-NNTP_BROKEN=		NNTP broken with 1.12.0
 NNTP_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.nntp.xz:-p1:vvv
 NNTP_EXTRA_PATCHES=	${PATCHDIR}/extra-nntp-depfiles
 NNTP_CONFIGURE_ON=	--enable-nntp
@@ -183,7 +182,7 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 .include <bsd.port.options.mk>
 
 # un/comment as each VERSION is created for PORTVERSION
-VVV_PATCH_VERSION=	1.11.1
+#VVV_PATCH_VERSION=	1.12.1
 GREETING_PATCH_VERSION=	1.12.0
 
 .if !defined(VVV_PATCH_VERSION)
