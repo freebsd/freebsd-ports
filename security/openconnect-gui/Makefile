@@ -5,7 +5,7 @@ PORTNAME=	openconnect-gui
 PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=v
 PORTREVISION=	3
-CATEGORIES=	security
+CATEGORIES=	security net-vpn
 
 MAINTAINER=	pkubaj@anongoth.pl
 COMMENT=	Graphical OpenConnect client

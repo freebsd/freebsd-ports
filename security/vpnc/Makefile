@@ -4,7 +4,7 @@
 PORTNAME=	vpnc
 PORTVERSION=	0.5.3
 PORTREVISION=	13
-CATEGORIES=	security
+CATEGORIES=	security net-vpn
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
 		LOCAL/ehaupt
 

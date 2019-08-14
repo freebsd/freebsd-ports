@@ -2,7 +2,7 @@
 
 PORTNAME=	wireguard-go
 PORTVERSION=	0.0.20190805
-CATEGORIES=	net
+CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-go/snapshot/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 

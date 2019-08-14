@@ -2,7 +2,7 @@
 
 PORTNAME=	wireguard
 PORTVERSION=	0.0.20190702
-CATEGORIES=	net
+CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/WireGuard/snapshot/
 DISTNAME=	WireGuard-${PORTVERSION}
 

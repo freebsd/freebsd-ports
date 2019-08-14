@@ -3,7 +3,7 @@
 
 PORTNAME=	openconnect
 PORTVERSION=	8.03
-CATEGORIES=	security
+CATEGORIES=	security net-vpn
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		ZI
 

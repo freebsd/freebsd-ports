@@ -3,7 +3,7 @@
 
 PORTNAME=	n2n
 PORTVERSION=	2.4
-CATEGORIES=	security net
+CATEGORIES=	security net net-vpn
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Layer Two Peer-to-peer VPN

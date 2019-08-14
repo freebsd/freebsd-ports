@@ -3,7 +3,7 @@
 
 PORTNAME=	ike-scan
 PORTVERSION=	1.9
-CATEGORIES=	security
+CATEGORIES=	security net-vpn
 MASTER_SITES=	http://www.nta-monitor.com/tools/ike-scan/download/
 
 MAINTAINER=	ports@FreeBSD.org

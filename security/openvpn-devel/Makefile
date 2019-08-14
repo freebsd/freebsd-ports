@@ -3,7 +3,7 @@
 
 PORTNAME=		openvpn
 DISTVERSION=		201907
-CATEGORIES=		security net
+CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://secure-computing.net/files/openvpn/ \
 			ftp://ftp2.secure-computing.net/pub/FreeBSD/openvpn-devel/
 PKGNAMESUFFIX=		-devel

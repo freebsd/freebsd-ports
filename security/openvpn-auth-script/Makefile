@@ -2,7 +2,7 @@
 
 PORTNAME=	openvpn-auth-script
 DISTVERSION=	1.0.0.3
-CATEGORIES=	security net
+CATEGORIES=	security net net-vpn
 
 MAINTAINER=	pdemon@gmail.com
 COMMENT=	Generic script-based deferred auth plugin for OpenVPN
