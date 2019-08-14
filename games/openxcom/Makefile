@@ -15,13 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libyaml-cpp.so:devel/yaml-cpp
 
-BROKEN_powerpc64=	fails to compile: XcomResourcePack.cpp: undefined reference to YAML::LoadFile
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	SupSuper
 GH_PROJECT=	OpenXcom
 
-USES=		compiler:c++11-lang gmake pkgconfig
+USES=		compiler:c++11-lang gl gmake pkgconfig sdl
 USE_CXXSTD=	c++11
 USE_SDL=	sdl mixer image gfx
 USE_GL=		gl
