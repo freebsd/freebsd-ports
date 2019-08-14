@@ -117,13 +117,15 @@ pre-install:
 	@cd ${WRKSRC}; ${FIND} . -type d | cut -c2- \
 		| ${SED} 's|^|@dir ${WEBAPPDIR:S,${PREFIX}/,,}/${PORTNAME}|' \
 		| ${SORT} -r >> ${PLIST}
-	@${RM} ${PKGMESSAGE}
-	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
+	@${ECHO_CMD} "[" > ${PKGMESSAGE}
+	@${ECHO_CMD} "{ type: install, message: <<EOM" >> ${PKGMESSAGE}
 	@${CAT} ${PKGDIR}/${APPPKGMESSAGE} >> ${PKGMESSAGE}
 	@${CAT} ${WRKDIR}/message-common >> ${PKGMESSAGE}
 	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
 	@${CAT} ${WRKDIR}/message-transcoding >> ${PKGMESSAGE}
-	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
+	@${ECHO_CMD} "EOM" >> ${PKGMESSAGE}
+	@${ECHO_CMD} "}" >> ${PKGMESSAGE}
+	@${ECHO_CMD} "]" >> ${PKGMESSAGE}
 
 do-install:
 	cd ${WRKDIR} && ${COPYTREE_SHARE} ${PORTNAME} ${STAGEDIR}${WEBAPPDIR}
