@@ -1,0 +1,10 @@
+Sensu is an open source monitoring tool for ephemeral infrastructure and
+distributed applications. It is an agent based monitoring system with
+built-in auto-discovery, making it very well-suited for cloud environments.
+
+Sensu uses service checks to monitor service health and collect telemetry
+data. It also has a number of well defined APIs for configuration, external
+data input, and to provide access to Sensu's data. Sensu is extremely
+extensible and is commonly referred to as "the monitoring router".
+
+WWW: https://github.com/sensu/sensu-go/
