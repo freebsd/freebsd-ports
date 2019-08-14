@@ -4,7 +4,7 @@
 PORTNAME=	Mail-SPF
 PORTVERSION=	2.9.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,10 +23,11 @@ RUN_DEPENDS=	p5-Error>=0:lang/p5-Error \
 		p5-URI>=1.13:net/p5-URI
 TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod
 
+USES=		perl5 shebangfix
+USE_PERL5=	modbuild
+
 CONFIGURE_ARGS=	--install_path sbin=${PREFIX}/sbin
 NO_ARCH=	yes
-USE_PERL5=	modbuild
-USES=		perl5 shebangfix
 
 SHEBANG_FILES=	bin/spfquery sbin/spfd
 
