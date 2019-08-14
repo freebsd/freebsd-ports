@@ -13,7 +13,9 @@ COMMENT=	Minimalist PBKDF2 (RFC 2898) with HMAC-SHA1 or HMAC-SHA2
 
 LICENSE=	APACHE20
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
