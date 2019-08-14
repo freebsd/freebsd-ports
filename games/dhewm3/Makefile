@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USE_GITHUB=	yes
 GH_ACCOUNT=	dhewm
 
-USES=		cmake compiler:c++11-lang jpeg openal:al
+USES=		cmake compiler:c++11-lang jpeg openal:al sdl
 USE_SDL=	sdl2
 LLD_UNSAFE=	yes
 
