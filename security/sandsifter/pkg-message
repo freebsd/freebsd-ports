@@ -7,6 +7,6 @@ Before using this tool you should do the following as root:
 
 Also make sure you use a 256-color capable terminal of at least 40 rows high.
 EOM
-  type: [install, upgrade]
+  type: install
 }
 ]
