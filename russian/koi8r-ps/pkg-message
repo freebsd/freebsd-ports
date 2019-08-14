@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 	This  port  tries  to patch  the  GhostScript's  Fontmap
 	automaticly, so unless you have non-standard GhostScript
 	installation   (or   if    you   installed   GhostScript
@@ -25,3 +28,6 @@
 	on PostScript printers --  they use their own PostScript
 	engines  (not GhostScript).  The port  russian/koify may
 	help you with those.
+EOM
+}
+]

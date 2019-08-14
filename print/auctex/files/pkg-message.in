@@ -1,5 +1,6 @@
-Customizing
-===========
+[
+{ type: install
+  message: <<EOM
    You should edit the file
 `%%PREFIX%%/share/emacs/site-lisp/tex-site.el' to fit your local site.
 You do this by looking at the customization section in the beginning
@@ -13,11 +14,14 @@ all your customizations.
    You probably want to copy and edit `TeX-printer-list' to contain the
 printers available at your site.
 
+
 Enabling AUC TeX
-================
    You can now tell your users to enable AUC TeX by adding
 
      (load "auctex.el" nil t t)
      (load "preview-latex.el" nil t t)
 
 to their `~/.emacs' file.
+EOM
+}
+]

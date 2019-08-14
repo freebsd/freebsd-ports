@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Typical use :
 
   1) Choose a port
@@ -10,3 +13,6 @@ Typical use :
 
   3) Install everything
 # make install clean
+EOM
+}
+]

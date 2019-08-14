@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 CUPS smb backend is now installed.
 
 Please configure your samba environment if
@@ -15,3 +18,6 @@ smb://username:password@workgroup/server/printer
 
 But a CUPS article describes another syntax,
 so beware.
+EOM
+}
+]

@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 1) Please read the detailed installation instructions in the file:
 
    * %%DOCSDIR%%/INSTALL
@@ -19,5 +20,6 @@
    and restart devd.
 
 5) Enjoy it ;)
-
-###############################################################################
+EOM
+}
+]
