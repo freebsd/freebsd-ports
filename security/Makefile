@@ -39,6 +39,7 @@
     SUBDIR += barnyard2-sguil
     SUBDIR += base
     SUBDIR += base-audit
+    SUBDIR += bastillion
     SUBDIR += bcrypt
     SUBDIR += bcwipe
     SUBDIR += bdes
