@@ -1,5 +1,6 @@
-
-=================================================================
+[
+{ type: install
+  message: <<EOM
 Configuration file %%PREFIX%%/etc/login_duo.conf was created.
 You must edit it to add your Duo integration and secret keys.
 
@@ -10,5 +11,6 @@ auth	required	%%PREFIX%%/lib/security/pam_duo.so
 Additionally, you must edit %%PREFIX%%/etc/pam_duo.conf
 
 duo headers have been installed to %%PREFIX%%/include/duo
-=================================================================
-
+EOM
+}
+]

@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 Before starting geomWatch, you should edit its configuration file,
 %%PREFIX%%/etc/geomWatch.conf. Then, add the following line to /etc/rc.conf:
 
@@ -11,4 +13,6 @@ Finally, to start it, run the following command:
 You can also test your SMTP configuration by running the following command:
 
 %%PREFIX%%/sbin/geomWatch -t
-
+EOM
+}
+]

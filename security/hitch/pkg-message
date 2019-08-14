@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 Don't forget to append DH params to your pem file using:
 openssl dhparam -rand - 2048 >> /path/to/cert.pem
+EOM
+}
+]

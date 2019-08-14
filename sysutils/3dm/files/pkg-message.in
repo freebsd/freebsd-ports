@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 3DM2 includes an rc.d script to control a daemon mode.
 
 You can start the daemon with these commands:
@@ -6,3 +9,6 @@ You can start the daemon with these commands:
 
 Do not forget to edit '%%PREFIX%%/etc/3dm2/3dm2.conf'
 Visit https://localhost:888/
+EOM
+}
+]

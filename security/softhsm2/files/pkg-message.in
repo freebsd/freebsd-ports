@@ -1,2 +1,8 @@
+[
+{ type: upgrade, maximum_version: 2.3.0_1
+  message: <<EOM
 As of version 2.3.0_1, the storage directory for softhsm has changed from
 /usr/local/var/lib/softhsm to /var/lib/softhsm
+EOM
+}
+]

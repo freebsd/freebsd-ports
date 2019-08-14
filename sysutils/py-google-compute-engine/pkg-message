@@ -1,6 +1,6 @@
-
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 google-compute-engine has been installed, and the following services are
 available:
 
@@ -17,5 +17,6 @@ google_startup			Implement support for running host provided
 To enable the above services, sysrc <servicename>_enable=YES
 
 Reboot your system or start the services, service <servicename> start
-
-==============================================================================
+EOM
+}
+]

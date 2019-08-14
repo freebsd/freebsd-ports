@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 You can use sasldb2 for authentication, to add users use:
 
 	saslpasswd2 -c username
@@ -19,4 +21,6 @@ NOTE: This port has been compiled with a default pwcheck_method of
       ports/security/cyrus-sasl2-srp.
       If you want to use LDAP auxprop plugin, install
       ports/security/cyrus-sasl2-ldapdb.
-
+EOM
+}
+]

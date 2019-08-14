@@ -1,4 +1,6 @@
-************************************************************
+[
+{ type: install
+  message: <<EOM
 Scalpel has been successfully installed on your system.
 
 Now it is time to configure this package.
@@ -7,5 +9,6 @@ directory as scalpel.conf and edit it.
 
 Scalpel will always use scalpel.conf in your current working
 directory, if not specified with "-c /path/to/scalpel.conf".
-
-************************************************************
+EOM
+}
+]

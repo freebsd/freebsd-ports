@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 smartmontools has been installed
 
 To check the status of drives, use the following:
@@ -18,3 +21,6 @@ Copy this file to %%PREFIX%%/etc/smartd.conf and edit appropriately
 
 To have smartd start at boot
 	echo 'smartd_enable="YES"' >> /etc/rc.conf
+EOM
+}
+]

@@ -1,5 +1,6 @@
-***************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Installer instructions.  This port has installed the
 %%DISTNAME%% script into %%PREFIX%%/sbin directory.
 
@@ -20,5 +21,6 @@ Also contained in the ppars-1.0 port is instructions on how to auto
 launch the scripts only when the ipfilter log is rotated by
 newsyslog, which you may find useful for launching the dshield
 script installed by this port.
-
-***************************************************************************
+EOM
+}
+]

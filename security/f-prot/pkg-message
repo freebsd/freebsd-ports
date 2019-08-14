@@ -1,5 +1,6 @@
-***************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 F-Prot Antivirus for BSD Workstations has been installed.
 
 By default fpupdate will run daily to update F-Prot's virus
@@ -7,5 +8,6 @@ definitions. If you do not want this behaviour please set the
 following in /etc/periodic.conf or /etc/periodic.conf.local:
 
 fpupdate_enable="NO"
-
-***************************************************************************
+EOM
+}
+]

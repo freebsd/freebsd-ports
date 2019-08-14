@@ -1,5 +1,7 @@
-=================================================================
-
+[
+{ type: install
+  message: <<EOM
 For more information on using cmocka, see https://api.cmocka.org
-
-=================================================================
+EOM
+}
+]

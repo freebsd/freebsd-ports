@@ -1,12 +1,6 @@
-
-#                                                      #
-##                                                    ##
-###                                                  ###
-########################################################
-###                                                  ###
-##                                                    ##
-#                                                      #
-
+[
+{ type: install
+  message: <<EOM
     CONFIGURATION:
     - Please read the below site for configuration
       changes between version 1 and 2.
@@ -21,12 +15,6 @@
     CAVEATS:
     - bcast is not available on FreeBSD.
     - BasicSanityCheck is not available on FreeBSD.
-
-#                                                      #
-##                                                    ##
-###                                                  ###
-########################################################
-###                                                  ###
-##                                                    ##
-#                                                      #
-
+EOM
+}
+]

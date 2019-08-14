@@ -1,6 +1,8 @@
-
+[
+{ type: install
+  message: <<EOM
 Using periodic for flexible snapshot backup creation
-----------------------------------------------------
+
 
 Edit your crontab and include this:
 
@@ -15,13 +17,16 @@ and edit your periodic.conf and include this:
 snapshot_enable="YES"
 snapshot_schedule="/,/usr:2:1:0 /var:0:2:4 /home:2:6:8@8,12,16,20"
 
-----
+
 
 Using auto-mount for easy access to snapshot data
---------------------------------------------------
+
 
 Edit your rc.conf and include this:
 
 # UFS2/ZFS Snapshot Access
 amd_enable="YES"
 amd_flags="-a /.am -c 1800 -w 60 -l syslog /snap %%PREFIX%%/etc/amd.map.snap"
+EOM
+}
+]

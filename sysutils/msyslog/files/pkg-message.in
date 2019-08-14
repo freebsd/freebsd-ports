@@ -1,4 +1,6 @@
-================================================================================
+[
+{ type: install
+  message: <<EOM
 To replace FreeBSD's standard syslogd with msyslog, do this:
 
 1) Create a configuration in %%PREFIX%%/etc/syslog.conf.
@@ -17,4 +19,6 @@ To replace FreeBSD's standard syslogd with msyslog, do this:
     in the end of /etc/rc.conf:
 
     syslogd_enable="NO"
-================================================================================
+EOM
+}
+]

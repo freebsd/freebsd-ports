@@ -1,4 +1,6 @@
-/* ================================================================= */
+[
+{ type: install
+  message: <<EOM
 Edit /etc/rc.conf and set
 
 clamsmtpd_enable="YES"
@@ -11,4 +13,6 @@ config file.
 
 To work with postfix, See also
 http://memberwebs.com/nielsen/software/clamsmtp/postfix.html
-/* ================================================================= */
+EOM
+}
+]

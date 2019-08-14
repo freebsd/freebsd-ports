@@ -1,5 +1,6 @@
-=======================================================
-
+[
+{ type: install
+  message: <<EOM
   In order for cp2fwb to work, you need the following
   files from your Checkpoint FW1 installation:
 
@@ -11,5 +12,6 @@
    cp2fwbuilder --objects=objects.C \
 			--rules=Rulebase.W \
 			--output_xml=Rulebase.xml
-
-=======================================================
+EOM
+}
+]

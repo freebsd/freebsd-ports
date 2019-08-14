@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 1. The FreeBSD k3b port supports SCSI drives only. If you have IDE CD or DVD
    drives, use them through the cam system. See Chapter 17.5.1 of the handbook
    (http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/creating-cds.html)
@@ -39,4 +42,6 @@
    a. Either use the (default) HAL backend, and enable HAL in /etc/rc.conf via
       # sysrc hald_enable="YES"
    b. *or* use the (experimental) BSDISKS backend.
-
+EOM
+}
+]

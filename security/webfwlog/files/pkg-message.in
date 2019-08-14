@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Webfwlog-%%VERSION%% has been installed in %%WWWDIR%%.
 
 You should update your web server's configuration to provide access to
@@ -8,3 +11,6 @@ You should also read the README in the mysql or pgsql directoy in
 PostgreSQL server for use with webfwlog, and edit the webfwlog.conf file in
 %%ETCDIR%% and adjust it to your installation.  This file is
 well-commented.
+EOM
+}
+]

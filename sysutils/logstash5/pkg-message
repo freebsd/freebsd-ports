@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To start logstash as an agent during startup, add
 
     logstash_enable="YES"
@@ -12,3 +15,6 @@ distribution.
 
 NOTE: Since version 2, logstash does not support an embedded
 ElasticSearch instance.
+EOM
+}
+]

@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 To use uhidd daemon for USB HID devices, depends on which sub class
 driver you want to attach, to avoid conflicts between the daemon and
 the kernel drivers, you should either use the command line option '-u'
@@ -28,5 +29,6 @@ To manually start/stop uhidd daemon on certain device, run:
 
 See http://wiki.FreeBSD.org/uhidd for more details about how to install and
 setup the daemon.
-
-==============================================================================
+EOM
+}
+]

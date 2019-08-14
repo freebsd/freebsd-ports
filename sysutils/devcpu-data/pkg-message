@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Installing this port will allow host startup to update the CPU microcode on 
 a FreeBSD system automatically.  There are two methods for updating CPU
 microcode: the first methods loads and applies the update before the kernel
@@ -38,3 +41,6 @@ Updating CPU Microcode...
 /usr/local/share/cpucontrol/m32306c3_00000022.fw: updating cpu /dev/cpuctl4 from rev 0x17 to rev 0x22... done.
 /usr/local/share/cpucontrol/m32306c3_00000022.fw: updating cpu /dev/cpuctl6 from rev 0x17 to rev 0x22... done.
 Done.
+EOM
+}
+]

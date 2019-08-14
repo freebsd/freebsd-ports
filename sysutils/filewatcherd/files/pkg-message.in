@@ -1,4 +1,6 @@
-========================================================================
+[
+{ type: install
+  message: <<EOM
 filwatcherd configuration files were installed in the following directory:
 
 	%%PREFIX%%
@@ -22,4 +24,6 @@ following steps:
 Then you can start filewatcherd by issuing the following command:
 
 	service filewatcherd start
-========================================================================
+EOM
+}
+]

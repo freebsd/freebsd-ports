@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed BSDstats: script reporting statistics about your machine
 
 To disable monthly reporting, add this line to /etc/periodic.conf:
@@ -18,4 +20,6 @@ To view current statistics, go to:
 	http://www.bsdstats.org/
 
 @@TOR_MESSAGE@@
-======================================================================
+EOM
+}
+]

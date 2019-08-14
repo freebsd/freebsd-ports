@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 bacula server was installed
 
 A database upgrade is required if upgrading from Bacula < 9.0.
@@ -53,5 +54,6 @@ ReleaseNotes
 
 If you are using sqlite you need to run the make_sqlite_tables script as
 the bacula user. Do this using 'sudo su -m bacula'.
-
-################################################################################
+EOM
+}
+]

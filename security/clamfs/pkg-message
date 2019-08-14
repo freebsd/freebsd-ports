@@ -1,7 +1,11 @@
-**************************************************************************
+[
+{ type: install
+  message: <<EOM
 In order to use clamfs, you should load fuse.ko module.
 
 Type "sudo kldload fuse.ko"
 
 For more info please visit http://clamfs.sourceforge.net
-**************************************************************************
+EOM
+}
+]

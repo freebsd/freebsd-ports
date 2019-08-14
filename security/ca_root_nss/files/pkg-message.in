@@ -1,5 +1,6 @@
-********************************* WARNING *********************************
-
+[
+{ type: install
+  message: <<EOM
 FreeBSD does not, and can not warrant that the certification authorities
 whose certificates are included in this package have in any way been
 audited for trustworthiness or RFC 3647 compliance.
@@ -7,7 +8,6 @@ audited for trustworthiness or RFC 3647 compliance.
 Assessment and verification of trust is the complete responsibility of the
 system administrator.
 
-*********************************** NOTE **********************************
 
 This package installs symlinks to support root certificates discovery by
 default for software that uses OpenSSL.
@@ -21,5 +21,6 @@ either an empty file or your site-local certificate bundle.
   * /etc/ssl/cert.pem
   * %%PREFIX%%/etc/ssl/cert.pem
   * %%PREFIX%%/openssl/cert.pem
-
-***************************************************************************
+EOM
+}
+]

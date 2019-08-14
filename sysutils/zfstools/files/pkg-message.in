@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To enable automatic snapshots, place lines such as these into /etc/crontab:
 
     PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin
@@ -24,3 +27,6 @@ Or for specific intervals:
     zfs set com.sun:auto-snapshot:frequent=false DATASET
 
 See website and command usage output for further details.
+EOM
+}
+]

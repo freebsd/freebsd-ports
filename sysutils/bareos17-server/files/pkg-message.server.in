@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 bareos server was installed
 
 1) Sample files are installed in %%PREFIX%%/etc/bareos/bareos-dir.d/ and
@@ -68,5 +69,6 @@ database update procedure.
 
 If you are using sqlite you need to run the make_sqlite_tables script as
 the bareos user. Do this using 'sudo su -m bareos'.
-
-################################################################################
+EOM
+}
+]

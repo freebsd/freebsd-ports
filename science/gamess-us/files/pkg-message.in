@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed GAMESS (US): General Atomic and Molecular Electronic
                            Structure System
 
@@ -12,4 +14,6 @@ computation to perform.
 
 You can use the wxmacmolplt command from science/wxmacmolplt to view
 the computation results.
-======================================================================
+EOM
+}
+]

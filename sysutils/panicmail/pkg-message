@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To enable sending of panic reports, add
 	dumpdev="AUTO"
 	panicmail_enable="YES"
@@ -8,3 +11,6 @@ them if they do not contain any sensitive information.  To automatically
 submit panic reports directly, add
 	panicmail_autosubmit="YES"
 to your /etc/rc.conf in addition.
+EOM
+}
+]

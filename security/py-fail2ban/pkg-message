@@ -1,6 +1,6 @@
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+[
+{ type: install
+  message: <<EOM
 Please do not edit the fail2ban.conf, jail.conf, or any other 
 files in the distributen as they will be overwritten upon each 
 upgrade of the port. Instead, create new files named *.local e.g. 
@@ -16,5 +16,6 @@ Users of pf: please read the notes in action.d/pf.conf and the
 discussion at https://github.com/fail2ban/fail2ban/pull/1925
 Please note that fail2ban will put curly braces '{}' around the
 ports in the action so you shouldn't do it yourself.
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To use ammonite as a shell you must(!) setup a configuration file
 ~/.ammonite/predef.sc with a least the following minimal content:
 
@@ -17,3 +20,6 @@ import shellSession._
 import ammonite.ops._
 import ammonite.shell._
 ammonite.shell.Configure(interp, repl, wd)
+EOM
+}
+]

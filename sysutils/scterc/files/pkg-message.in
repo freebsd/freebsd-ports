@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To enable setting hard disk SCT ERC on system boot time, add the
 following to your /etc/rc.conf:
 
@@ -13,3 +16,6 @@ following to your /etc/rc.conf:
   scterc_write_timeout="70"
 
 See %%DOCSDIR%%/README.md for more info.
+EOM
+}
+]

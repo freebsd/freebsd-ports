@@ -1,9 +1,11 @@
-==========================================================================
-
+[
+{ type: install
+  message: <<EOM
 To use the shell:
 
 # echo %%PREFIX%%/bin/ibsh >> /etc/shells
 
 Also check %%PREFIX%%/etc/ibsh
-
-==========================================================================
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This port depends on security/rubygem-net-ssh which has stricter defaults that
 OpenSSH: when using strict host key checking, security/rubygem-net-ssh will
 refuse the connexion if both the remote host name and IP address are not on the
@@ -28,3 +31,6 @@ As a consequence, host key verification may need additional work:
 Some future version of security/rubygem-net-ssh should drop strict host key
 checking entirely, for more details, see:
 https://github.com/net-ssh/net-ssh/pull/663
+EOM
+}
+]

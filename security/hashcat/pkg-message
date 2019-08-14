@@ -1,6 +1,12 @@
+[
+{ type: install
+  message: <<EOM
 This port requires an OpenCL runtime.
 Please see this for information on how to obtain one:
 https://wiki.freebsd.org/Graphics/OpenCL
 
 If it is not possible to obtain an OpenCL runtime,
 please use security/hashcat-legacy instead.
+EOM
+}
+]

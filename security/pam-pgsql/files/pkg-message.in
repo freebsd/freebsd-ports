@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 Follow the instructions in the
 
  %%PREFIX%%/share/doc/pam-pgsql/README
@@ -6,3 +8,6 @@ Follow the instructions in the
 to use this module. Note, that unlike most other ports, this port
 installs a file into /usr/lib directly (/usr/lib/pam_pgsql.so),
 because PAM requires that.
+EOM
+}
+]

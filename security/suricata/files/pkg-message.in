@@ -1,5 +1,6 @@
-===========================================================================
-
+[
+{ type: install
+  message: <<EOM
 If you want to run Suricata in IDS mode, add to /etc/rc.conf:
 
 	suricata_enable="YES"
@@ -40,5 +41,6 @@ You may want to try BPF in zerocopy mode to test performance improvements:
 	sysctl -w net.bpf.zerocopy_enable=1
 
 Don't forget to add net.bpf.zerocopy_enable=1 to /etc/sysctl.conf
-
-===========================================================================
+EOM
+}
+]

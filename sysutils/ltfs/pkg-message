@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This only works with IBM-branded LTO-5 or newer tape drives, although there is
 a file backend for simulation purposes.
 
@@ -7,3 +10,6 @@ recompile/reinstall to allow reading and writing tapes up to the maximum LTFS
 blocksize of 1MB:
 
 options MAXPHYS=(1024*1056)
+EOM
+}
+]

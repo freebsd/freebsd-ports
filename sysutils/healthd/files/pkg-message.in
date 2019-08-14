@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 It is recommended to edit %%PREFIX%%/etc/healthd.conf
 so it match the monitored system before running the program.
+EOM
+}
+]

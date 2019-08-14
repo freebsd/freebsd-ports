@@ -1,4 +1,6 @@
-================================================================================
+[
+{ type: install
+  message: <<EOM
 If you are using meek with tor, here are some instructions:
 
 As a client, add the following to %%PREFIX%%/etc/tor/torrc:
@@ -9,5 +11,6 @@ As a client, add the following to %%PREFIX%%/etc/tor/torrc:
 	  --url=https://meek-reflect.example.com \
 	  --front=www.example.com \
 	  --log meek-client.log
-
-================================================================================
+EOM
+}
+]

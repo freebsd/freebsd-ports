@@ -1,5 +1,6 @@
-========================================================================
-
+[
+{ type: install
+  message: <<EOM
 Please read the README file located at:
 
 %%DOCSDIR%%/README
@@ -22,5 +23,6 @@ If you built BASE with PDF support, make sure you include the FPDF
 path in your %%LOCALBASE%%/etc/php.ini configuration file, like:
 
     include_path = ".:%%LOCALBASE%%/share/pear:%%LOCALBASE%%/share/fpdf"
-
-========================================================================
+EOM
+}
+]

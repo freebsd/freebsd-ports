@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 hfm includes an rc.d script to control a daemon mode.  Use:
 
 sysrc hfm_enable=yes
 
 to enable.
+EOM
+}
+]

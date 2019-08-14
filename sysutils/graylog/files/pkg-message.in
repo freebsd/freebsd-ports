@@ -1,5 +1,6 @@
-======================================================================
-
+[
+{ type: install
+  message: <<EOM
 Please see %%ETCDIR%% for sample versions of graylog.conf, log4j.xml, and
 and adjust them for your configuration.
 
@@ -17,3 +18,6 @@ And ensure that the elasticsearch cluster name matches that used by graylog.
 
 The locations for configuration files have changed to match upstream
 versions in 3.0 of this port, refer to UPDATING for migration steps.
+EOM
+}
+]

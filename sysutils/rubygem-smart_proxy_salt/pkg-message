@@ -1,5 +1,11 @@
+[
+{ type: install
+  message: <<EOM
 Further configuration is required to connect salt and foreman-proxy, see:
 http://theforeman.org/plugins/foreman_salt/
 
 To upload reports from SaltStack highstates to Foreman, add a line like this to your /etc/crontab:
 */10 * * * * root /usr/local/sbin/upload-salt-reports >>/var/log/foreman-proxy/salt-cron.log 2>&1
+EOM
+}
+]

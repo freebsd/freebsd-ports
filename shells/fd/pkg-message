@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 Read the document files in /usr/local/share/doc/fd, and use the
 example fd2rc files in /usr/local/etc.
+EOM
+}
+]

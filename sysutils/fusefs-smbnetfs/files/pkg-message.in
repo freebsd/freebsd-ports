@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 ===>  Basic Instructions:
 
 After kldload fuse.ko and setting
@@ -19,3 +22,6 @@ Now you can get access to smb shares in your network, for example:
 
 XXX Note, use of Gnome keyring was replaced in version 0.6.1 with
 XXX libsecret, which this port does not enable by default.
+EOM
+}
+]

@@ -1,5 +1,6 @@
-===========================================================================
-
+[
+{ type: install
+  message: <<EOM
 This port installs the "standalone" client only, which does not use and
 is not the certbot-auto bootstrap/wrapper script.
 
@@ -23,5 +24,6 @@ will be made available in the following ports:
 
  * Apache plugin: security/py-certbot-apache
  * Nginx plugin: security/py-certbot-nginx
-
-===========================================================================
+EOM
+}
+]

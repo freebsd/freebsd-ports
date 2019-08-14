@@ -1,5 +1,7 @@
-================================================================
-NOTE:   SNORT have to be build with OPTION SNORTSAM.
+[
+{ type: install
+  message: <<EOM
+        SNORT have to be build with OPTION SNORTSAM.
 
 	To enable snortsam as output plugin for snort a config
 	line like the following should be present in snort.conf
@@ -13,6 +15,6 @@ NOTE:   SNORT have to be build with OPTION SNORTSAM.
         files in %%DOCSDIR%%
 
         Additional consolidate http://snortsam.net
-
-==============================================================
-
+EOM
+}
+]

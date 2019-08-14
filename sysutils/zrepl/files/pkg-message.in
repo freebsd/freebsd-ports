@@ -1,4 +1,6 @@
-------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 Messages from sysutils/zrepl:
 
 SETUP BEFORE FIRST USE:
@@ -33,4 +35,6 @@ is different from previous releases where pruning only affected snapshots with
 the configured snapshotting prefix. Make sure that snapshots to be kept or
 ignored by zrepl are covered, e.g. by using the regex keep rule.
 This also applies to snapshots taken by means other than zrepl (e.g. manually).
-------------------------------------------------------------------------
+EOM
+}
+]

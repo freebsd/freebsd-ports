@@ -1,5 +1,6 @@
-* WARNING * WARNING * WARNING * WARNING * WARNING * WARNING *
-
+[
+{ type: install
+  message: <<EOM
     THERE ARE POTENTIAL ISSUES YOU SHOULD BE AWARE OF PRIOR
     TO THE USE OF AFIO
 
@@ -8,5 +9,6 @@
    %%PREFIX%%/share/doc/afio/README
 
    for details.
-
-* WARNING * WARNING * WARNING * WARNING * WARNING * WARNING *
+EOM
+}
+]

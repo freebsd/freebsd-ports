@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 	To run zfSnap periodically you can add these options to your
 	/etc/periodic.conf
 
@@ -48,3 +50,6 @@
 	info.
 
 	Feedback welcomed: graudeejs@gmail.com
+EOM
+}
+]

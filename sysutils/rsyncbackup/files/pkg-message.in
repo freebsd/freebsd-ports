@@ -1,6 +1,6 @@
-NOTE:
-==========
-
+[
+{ type: install
+  message: <<EOM
 rsyncbackup is now installed on your system.
 
 - rsyncbackup installed into %%PREFIX%%/bin/rsyncbackup
@@ -16,3 +16,6 @@ rsyncbackup is now installed on your system.
   %%DOCSDIR%%
 
 Official page: 	http://BSDforge.com/projects/sysutils/rsync-backup/
+EOM
+}
+]

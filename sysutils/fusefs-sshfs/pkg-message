@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Basic Instructions:
 There are three ways to do this:
 
@@ -18,3 +21,6 @@ or
 % mount_fusefs /dev/fuse0 /path/to/mount/point
 
 For further options see ``sshfs -h''.
+EOM
+}
+]

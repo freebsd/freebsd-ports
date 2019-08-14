@@ -1,5 +1,6 @@
-**********************************************************************
-
+[
+{ type: install
+  message: <<EOM
 In order to start using clamav-unofficial-sigs, you need to configure
 it first. Sample configuration files have been installed to:
 
@@ -21,5 +22,6 @@ obsolete configuration file:
 
 To run the script periodically by cron, you also need to add it to
 your crontab.
-
-**********************************************************************
+EOM
+}
+]

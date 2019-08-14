@@ -1,7 +1,11 @@
-=============================================================
+[
+{ type: install
+  message: <<EOM
 See
 
 http://ftfl.ca/blog/2016-12-27-zfs-replication.html
 
 for a description of a replication strategy.
-=============================================================
+EOM
+}
+]

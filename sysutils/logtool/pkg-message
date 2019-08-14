@@ -1,9 +1,11 @@
-###########################################################################
-#
-# Sample configuration files are installed in
-#
-# 	PREFIX/share/examples/logtool
-#
-# Please copy them to PREFIX/etc/logtool and edit to suit your needs.
-#
-###########################################################################
+[
+{ type: install
+  message: <<EOM
+ Sample configuration files are installed in
+
+ 	PREFIX/share/examples/logtool
+
+ Please copy them to PREFIX/etc/logtool and edit to suit your needs.
+EOM
+}
+]

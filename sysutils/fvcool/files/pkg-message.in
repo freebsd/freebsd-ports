@@ -1,5 +1,6 @@
-===> How to enable the %%PORTNAME%% package
-
+[
+{ type: install
+  message: <<EOM
     If you want to invoke %%PORTNAME%% automatically on system startup,
     add the following line to /etc/rc.conf:
 
@@ -19,3 +20,6 @@
     Also note that this software is supposed to be used with AMD
     Athlon (XP) an AMD Duron processors only.
 
+EOM
+}
+]

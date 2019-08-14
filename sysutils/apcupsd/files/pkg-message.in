@@ -1,4 +1,6 @@
-**********************************************************************
+[
+{ type: install
+  message: <<EOM
 Read the manual: http://www.apcupsd.org/manual/manual.html
                  http://www.apcupsd.org/manual/manual.pdf
 
@@ -26,5 +28,6 @@ line:
   test -f /var/run/powerfail && /usr/local/sbin/apcupsd --hibernate
   or
   test -f /var/run/powerfail && /usr/local/sbin/apcupsd --power-off
-
-**********************************************************************
+EOM
+}
+]

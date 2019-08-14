@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To use this script you should copy the examples in
 %%PREFIX%%/etc/%%PORTNAME%%/ and at least add a
 domain and a contact mail address.
@@ -18,4 +21,6 @@ weekly_dehydrated_deployscript="%%PREFIX%%/etc/%%PORTNAME%%/deploy.sh"
 
 Additional flags for the periodic run go into
 weekly_dehydrated_flags="-g"
-
+EOM
+}
+]

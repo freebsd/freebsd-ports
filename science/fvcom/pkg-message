@@ -1,4 +1,8 @@
------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 FVCOM has many build options that can be used in combination.  To build
 other variants, use one of the slave ports science/fvcom-*.
------------------------------------------------------------------------
+EOM
+}
+]

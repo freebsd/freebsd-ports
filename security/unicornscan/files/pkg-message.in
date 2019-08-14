@@ -1,7 +1,11 @@
-Unicornscan has been successfully installed!
-
+[
+{ type: install
+  message: <<EOM
 Check the sample configuration files under
 
 	%%PREFIX%%/etc/unicornscan
 
 and rename or copy without the .sample suffix.
+EOM
+}
+]

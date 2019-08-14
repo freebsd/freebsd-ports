@@ -1,4 +1,6 @@
-=================================================================
+[
+{ type: install
+  message: <<EOM
 - Universal server building block (OpenXPKI) for arbitrary PKI: installed.
 - SCEP prerequisite binary and i18n tools for UI: installed.
 - Enable utf8 locale (e.g. en_US.utf8) for the translation staff to operate
@@ -48,8 +50,13 @@ install -m 660 -o www -g www /dev/null /var/log/openxpki/soap.log
     /var/openxpki/session: session files.
     /var/log/openxpki: server log files.
     /var/tmp: temporary directory.
-==================================================================
+EOM
+}
+{ type: upgrade
+  message: <<EOM
 If you update existing installation, please check if extra handwork 
 is needed in your case:
 http://openxpki.readthedocs.io/en/latest/upgrading.html
-==================================================================
+EOM
+}
+]

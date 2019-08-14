@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 If you want to finish setting up AIDE, don't forget to customise your
 own aide.conf in %%PREFIX%%/etc/aide.conf. You will also need to run
 the following commands:
@@ -10,3 +13,6 @@ You may want to change the permissions of the /var/adm/aide/ directory tree.
 
 For your reference, a copy of the original aide.conf is supplied in
 %%PREFIX%%/etc/aide.conf.sample.
+EOM
+}
+]

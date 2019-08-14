@@ -1,4 +1,6 @@
----------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 Apache users should create a racktables.conf file under their apache
 Includes directory with the following contents:
 <Directory %%WWWDIR%%/wwwroot>
@@ -13,4 +15,6 @@ locally.
 
 Then, visit http://your.system/racktables/ and follow the
 instructions to complete the setup.
----------------------------------------------------------------------
+EOM
+}
+]

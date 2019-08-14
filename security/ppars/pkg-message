@@ -1,11 +1,10 @@
-
-***************************************************************************
-
-Installer instructions.
-
+[
+{ type: install
+  message: <<EOM
 First issue rehash command and then run  abuse.Reporting.system.pl
 it contains an overview of how the system works and how to setup the
 ipfilter log so when it's rotated all the abuse scripts will be auto
 launched.
-
-***************************************************************************
+EOM
+}
+]

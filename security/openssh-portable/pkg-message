@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To enable this port, add openssh_enable="YES" in your rc.conf. To
 prevent conflict with openssh in the base system add sshd_enable="NO"
 in your rc.conf. Also you can configure openssh at another TCP port (via
@@ -14,3 +17,6 @@ Users are encouraged to create single-purpose users with ssh keys, disable
 Password authentication by setting 'PasswordAuthentication no' and
 'ChallengeResponseAuthentication no', and to define very narrow sudo
 privileges instead of using root for automated tasks.
+EOM
+}
+]

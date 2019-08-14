@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 A set of script files named `definitions.<shell-type>' should now
 exist in the `bin' directory.
 `<shell-type>' specifies the type of shell (command interpreter)
@@ -27,3 +30,6 @@ Because aliases are not available when using the Bourne shell,
 the toolkit programs must be invoked by specifying the actual
 name of the executable file.  The script file `definitions.B'
 describes how to do this.
+EOM
+}
+]

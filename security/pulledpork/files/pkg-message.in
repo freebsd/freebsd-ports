@@ -1,5 +1,6 @@
-=====================================================================
-
+[
+{ type: install
+  message: <<EOM
 In order to use pulled pork, adjust the config files located in
 %%ETCDIR%%
 
@@ -16,5 +17,6 @@ for your version of Snort.
 The new versioning mechanism will require a four digit version in the
 file name. To get the new download naming schema visit snort.org,
 and look at 'My Account' -> 'Subscriptions and Oinkcodes'
-
-=====================================================================
+EOM
+}
+]

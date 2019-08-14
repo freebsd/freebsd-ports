@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 Edit %%PREFIX%%/etc/condor_config.local to taste to get started.
 
 Settings in condor_config.local override the defaults in condor_config.
@@ -15,4 +17,6 @@ To start the condor daemons, add 'condor_enable="YES"' to
 and run
 
 	service condor start
-
+EOM
+}
+]

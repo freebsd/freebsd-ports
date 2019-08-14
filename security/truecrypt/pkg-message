@@ -1,6 +1,6 @@
-===========================================================
-*** WARNING ***
-
+[
+{ type: install
+  message: <<EOM
 TrueCrypt is not offically supported under FreeBSD, however
 it does seem to function fine under certain conditions.
 
@@ -11,4 +11,6 @@ cites that system instability is possible.
 Please ensure that the fusefs kmod is loaded prior to use.
 
 WWW: http://www.truecrypt.org/misc/freebsd
-===========================================================
+EOM
+}
+]

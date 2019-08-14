@@ -1,4 +1,6 @@
-========================================================================
+[
+{ type: install
+  message: <<EOM
 This port has installed ELF image of memtest86+ to
 %%BOOT_DIR%%/memtest86+.  You can load it from from boot prompt by
 interrupting boot process and entering
@@ -16,4 +18,6 @@ it and entering the following commands:
 	boot
 
 As already advised, see loader(8) for details.
-========================================================================
+EOM
+}
+]

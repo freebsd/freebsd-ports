@@ -1,6 +1,12 @@
+[
+{ type: install
+  message: <<EOM
 After this port has been installed, you will need to copy and edit the
 sample configuration (rzb_yara.conf.sample) to rzb_yara.conf.
 
 Additionally, you will need to provide rules for yara.  The rules should be
 placed in the directory specified in the rzb_yara.conf file.  The rules may
 be placed in subdirectories or symlinked.
+EOM
+}
+]

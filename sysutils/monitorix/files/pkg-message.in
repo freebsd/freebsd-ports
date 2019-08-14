@@ -1,5 +1,6 @@
-================================================================
-
+[
+{ type: install
+  message: <<EOM
  The port has a generic default config, please adjust your
  settings in file: %%PREFIX%%/etc/monitorix.conf
 
@@ -12,5 +13,6 @@
      %%PREFIX%%/etc/monitorix.conf
 
  and have a look at the new configuration file options.
-
-================================================================
+EOM
+}
+]

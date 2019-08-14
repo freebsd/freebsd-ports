@@ -1,5 +1,6 @@
-################################################################################
-
+[
+{ type: install
+  message: <<EOM
 bareos client was installed
 
 1) Sample files are installed in %%PREFIX%%/etc/bareos/bareos-fd.d/ and 
@@ -11,5 +12,6 @@ bareos client was installed
    to /etc/rc.conf
 
   bareos_fd_config="%%PREFIX%%/etc/bareos/bareos-fd.conf"
-
-################################################################################
+EOM
+}
+]

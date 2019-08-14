@@ -1,4 +1,6 @@
-==========================================================================
+[
+{ type: install
+  message: <<EOM
  - If this is a new installation or version upgrade,
     to create/update configuration you should run
 
@@ -24,4 +26,6 @@
     restore command to 5 ('-d 5') in the main configuration, for instance
 
      $Conf{SmbClientRestoreCmd} = '$smbClientPath \\\\$host\\$shareName $I_option -U $userName -E -d 5 -c tarmode\\ full -Tx -';
-==========================================================================
+EOM
+}
+]

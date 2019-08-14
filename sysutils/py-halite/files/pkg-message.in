@@ -1,6 +1,6 @@
-======================================================
-Halite Configuration Instructions
-======================================================
+[
+{ type: install
+  message: <<EOM
 step 1: modify external_auth params in master config
         repeat username for each user allowed access
 
@@ -26,4 +26,6 @@ halite:
 
 step 3: restart salt_master daemon
 step 4: point browser to https://saltmaster:8080
-======================================================
+EOM
+}
+]

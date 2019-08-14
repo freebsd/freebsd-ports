@@ -1,4 +1,6 @@
-===============================================================================
+[
+{ type: install
+  message: <<EOM
 You might want to put something like
 
 .if defined(HILITE)
@@ -7,4 +9,6 @@ CXX=	hilite c++
 .endif
 
 in your /etc/make.conf
-===============================================================================
+EOM
+}
+]

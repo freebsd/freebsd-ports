@@ -1,7 +1,11 @@
-
+[
+{ type: install
+  message: <<EOM
 Gnome-keyring uses pinentry-gnome3 for gpg interactions, please add the
 following line to your ~/.gnupg/gpg-agent.conf to enable the pinentry
 dialog.
 
 pinentry-program %%PREFIX%%/bin/pinentry-gnome3
-
+EOM
+}
+]

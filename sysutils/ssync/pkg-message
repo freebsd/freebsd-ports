@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 You will need to copy ssyncd.conf.sample to ssyncd.conf and
 ssyncd.work.sample to ssyncd.work before this port can be used.
+EOM
+}
+]

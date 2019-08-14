@@ -1,4 +1,6 @@
-----------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 Please make sure that all files listed in
 
   %%ETCDIR%%/logcheck.logfiles
@@ -9,5 +11,6 @@ or remove them from the aforementioned logcheck configuration file.
 For information on how to write local rulesets see
 
   %%DOCSDIR%%/README.logcheck-database
-
-----------------------------------------------------------------------------
+EOM
+}
+]

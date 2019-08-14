@@ -1,4 +1,6 @@
-============================================================
+[
+{ type: install
+  message: <<EOM
 To use gsh
 
 %%ETCDIR%%/ghosts
@@ -6,4 +8,6 @@ To use gsh
 should be created.
 
 Refer to ghosts(1).
-============================================================
+EOM
+}
+]

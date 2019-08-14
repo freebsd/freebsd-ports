@@ -1,6 +1,12 @@
+[
+{ type: install
+  message: <<EOM
 If upgrading from a version of node_exporter <0.15.0 you'll need to update any
 custom command line flags that you may have set as it now requires a
 double-dash (--flag) instead of a single dash (-flag).
 The collector flags in 0.15.0 have now been replaced with individual boolean
 flags and the -collector.procfs` and -collector.sysfs` flags have been renamed
 to --path.procfs and --path.sysfs respectively.
+EOM
+}
+]

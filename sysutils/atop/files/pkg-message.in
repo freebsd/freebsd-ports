@@ -1,5 +1,6 @@
-****************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 atop succesfully installed. To run in interactive mode use "atop" command.
 
 To run the atop in collecting mode from startup, add
@@ -17,5 +18,6 @@ variable in your /etc/rc.conf file.
 
 To change default (10 seconds) interval use atop_inteval (e.g. atop_interval=5)
 in /etc/rc.conf
-
-****************************************************************************
+EOM
+}
+]

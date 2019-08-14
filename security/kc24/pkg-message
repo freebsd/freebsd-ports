@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 IMPORTANT:
 kc v2.4 has introduced a new database file format that is incompatible
 with the older one (<2.4).
@@ -38,3 +41,6 @@ Save OK
 6) Remove the dump
 
 rm -P kcdump.xml
+EOM
+}
+]

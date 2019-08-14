@@ -1,5 +1,6 @@
-**************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 In order to be able to execute shutdown as regular user, you can either
 use sudo(8) (see below), or you can add your username to the operator
 group:
@@ -14,5 +15,6 @@ to ${PREFIX}/etc/sudoers.
 
 NOTE: On FreeBSD >= 12, members of the operator group are allowed to
       suspend the system via acpiconf(8). Using sudo(8) is not necessary.
-
-**************************************************************************
+EOM
+}
+]

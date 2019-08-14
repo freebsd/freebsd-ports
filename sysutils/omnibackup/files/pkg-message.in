@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 In order to run OmniBackup, you will need to create and configure the main
 configuration file, e.g.:
 
@@ -28,5 +29,6 @@ or
 * https://github.com/NuLL3rr0r/omnibackup
 
 Before you use it in production.
-
-###############################################################################
+EOM
+}
+]

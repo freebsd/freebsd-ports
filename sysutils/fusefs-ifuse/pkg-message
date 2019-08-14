@@ -1,5 +1,6 @@
-======================================================================
-
+[
+{ type: install
+  message: <<EOM
 To mount your iGadget you first need to launch usbmuxd; see...
 
 $ usbmuxd --help
@@ -10,5 +11,6 @@ $ usbmuxd --help
 
 After that, you'll be able to reach its files and use, e.g., gtkpod to
 add/delete music/pictures.
-
-======================================================================
+EOM
+}
+]

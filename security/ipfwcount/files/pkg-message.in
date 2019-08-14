@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
   To summarise ipfw(8) logs in your daily security check:
 
   * Copy %%EXAMPLESDIR%%/100.ipfwcount to
@@ -9,4 +11,6 @@
       daily_status_security_ipfwcount_enable="YES"
 
     to /etc/periodic.conf
-
+EOM
+}
+]

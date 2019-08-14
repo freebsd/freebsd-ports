@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Configuration is done completely though rc.conf.
 The rc script won't touch any devices for you (neither disk, nor tap)
 so you need to make sure all of those have been initialized properly.
@@ -53,3 +56,6 @@ service bhyve stop virt2 # stop individual
 service bhyve stop # stop all
 
 (by default ctrl-b d detaches from tmux).
+EOM
+}
+]

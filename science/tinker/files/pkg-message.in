@@ -1,4 +1,6 @@
-**********************************************************
+[
+{ type: install
+  message: <<EOM
    The author requests that you return a license form
    to him if you find Tinker to be useful.
 
@@ -8,4 +10,6 @@
    to 'analyze_t' during installation to allow for use on
    systems where the very common hunspell package is
    installed as well.
-**********************************************************
+EOM
+}
+]

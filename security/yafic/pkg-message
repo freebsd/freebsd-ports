@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 A sample configuration file has be installed in
 @@PREFIX@@/share/examples/yafic
+EOM
+}
+]

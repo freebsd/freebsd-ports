@@ -1,5 +1,6 @@
-======================================================================
-
+[
+{ type: install
+  message: <<EOM
 byobu requires linprocfs(5) mounted on /compat/linux/proc
 
 If you have not done it yet, please do the following:
@@ -10,5 +11,6 @@ If you have not done it yet, please do the following:
 To make it permanent, you need the following line in /etc/fstab:
 
 	linproc  /compat/linux/proc  linprocfs  rw,late  0 0
-
-======================================================================
+EOM
+}
+]
