@@ -3,7 +3,7 @@
 PORTNAME=	mlvpn
 PORTVERSION=	2.3.1
 PORTREVISION=	2
-CATEGORIES=	net
+CATEGORIES=	net net-vpn
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Multi-link VPN

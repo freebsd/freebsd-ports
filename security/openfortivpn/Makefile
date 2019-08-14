@@ -3,7 +3,7 @@
 PORTNAME=	openfortivpn
 PORTVERSION=	1.10.0
 DISTVERSIONPREFIX=v
-CATEGORIES=	security
+CATEGORIES=	security net-vpn
 
 MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Client for PPP+SSL VPN tunnel services

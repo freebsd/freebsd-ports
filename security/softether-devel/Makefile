@@ -3,7 +3,7 @@
 PORTNAME=	softether
 DISTVERSION=	4.30-9700-beta
 #PORTREVISION=	0
-CATEGORIES=	security
+CATEGORIES=	security net-vpn
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-2019.07.13-tree/Source_Code/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}

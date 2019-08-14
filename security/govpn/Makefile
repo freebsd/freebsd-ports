@@ -4,7 +4,7 @@
 PORTNAME=	govpn
 DISTVERSION=	7.5
 PORTREVISION=	1
-CATEGORIES=	security
+CATEGORIES=	security net-vpn
 MASTER_SITES=	http://www.govpn.info/download/
 
 MAINTAINER=	stargrave@stargrave.org
