@@ -1,4 +1,8 @@
-===============================================================
+[
+{ type: install
+  message: <<EOM
 You will have to manually grant user permissions to access this
 module from Webmin.
-===============================================================
+EOM
+}
+]

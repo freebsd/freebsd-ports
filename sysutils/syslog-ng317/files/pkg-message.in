@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 syslog-ng is now installed!  To replace FreeBSD's standard syslogd
 (/usr/sbin/syslogd), complete these steps:
 
@@ -26,4 +28,6 @@ syslog-ng is now installed!  To replace FreeBSD's standard syslogd
 5. Start syslog-ng:
 
      %%PREFIX%%/etc/rc.d/syslog-ng start
-
+EOM
+}
+]

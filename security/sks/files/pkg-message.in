@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 => When updating from a previous sks version be aware that the PGP key
 => database files are not compatible. You should run db_recover-5.
 => See %%DOCSDIR%%/UPGRADING for details.
@@ -16,3 +18,6 @@ When installing for the first time, you will need to obtain a PGP
 key database dump from somewhere and build database files from this.
 See %%DOCSDIR%%/README.md for details.
 More information is available online at http://www.keysigning.org/sks/
+EOM
+}
+]

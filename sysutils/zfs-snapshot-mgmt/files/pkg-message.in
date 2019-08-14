@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 To actually turn on the automatic snapshots you have to do the following:
 
 1. Add an appropriate crontab entry, e.g.:
@@ -6,4 +8,6 @@ To actually turn on the automatic snapshots you have to do the following:
     echo "*/5 * * * *	root   %%PREFIX%%/bin/zfs-snapshot-mgmt" >> /etc/crontab
 
 See zfs-snapshot-mgmt(8) manpage for more details.
-
+EOM
+}
+]

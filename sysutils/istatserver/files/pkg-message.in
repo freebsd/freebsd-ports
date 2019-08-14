@@ -1,7 +1,9 @@
-================================================================================
-
+[
+{ type: install
+  message: <<EOM
 %%PREFIX%%/etc/istatserver/istatserver.conf is the daemon's configuration file.
 Please edit the "server_code" framework with a unique numeric code for your
 server.
-
-================================================================================
+EOM
+}
+]

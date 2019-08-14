@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
     This port requires procfs(5) filesystem mounted under /proc.
     Please note that this can pose a security risk.
+EOM
+}
+]

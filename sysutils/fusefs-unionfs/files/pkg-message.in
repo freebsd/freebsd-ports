@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 You will need to load the kernel module 'fuse' to use this package. To load
 this at boot time, add the following line to /boot/loader.conf:
 
@@ -12,3 +15,6 @@ You can enable them immediately with:
 
 kldload fuse
 sysctl vfs.usermount=1
+EOM
+}
+]

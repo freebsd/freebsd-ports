@@ -1,6 +1,6 @@
-
--------------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 Please visit froxlor's website for more information.
 
 You will want to check and eventually modify some of
@@ -14,4 +14,6 @@ for more information.
 Froxlor has been installed to the following location:
 
   %%WWWDIR%%
--------------------------------------------------------
+EOM
+}
+]

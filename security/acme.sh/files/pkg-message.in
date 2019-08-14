@@ -1,5 +1,6 @@
-
-
+[
+{ type: install
+  message: <<EOM
 This script will create the following directories if they do not exist:
 
  ~acme/.acme.sh
@@ -29,4 +30,6 @@ MAILTO=dan@example.org
 ############################################################################
 
 Change x & y to some minute and hour of the day.
-
+EOM
+}
+]

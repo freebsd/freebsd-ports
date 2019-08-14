@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 In order to enable periodic tarsnap backups you need
 to add these lines to your /etc/periodic.conf
 
@@ -11,3 +13,6 @@ weekly_tarsnap_backup_keep=5
 monthly_tarsnap_backup_enable="YES"
 monthly_tarsnap_backup_paths="/"
 monthly_tarsnap_backup_keep=2
+EOM
+}
+]

@@ -1,4 +1,6 @@
-=========================================================================
+[
+{ type: install
+  message: <<EOM
 If you want to run logstash-forwarder, add to /etc/rc.conf
 
 	logstash_forwarder_enable="YES"
@@ -28,4 +30,6 @@ logstash-forwarder as well as the logstash instances receiving logs will
 require these files on disk to verify the authenticity of messages.
 
 PROTECT YOUR KEYS!
-=========================================================================
+EOM
+}
+]

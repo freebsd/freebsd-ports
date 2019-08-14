@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To run pkcsslotd automatically, add the following line to /etc/rc.conf
 
 pkcsslotd_enable="YES"
@@ -5,3 +8,6 @@ pkcsslotd_enable="YES"
 To use PKCS#11 token, add your_account to '%%GROUPS%%':
 
 # pw groupmod %%GROUPS%% -m your_account
+EOM
+}
+]

@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 THIS PACKAGE INSTALLS THE NEWER VERSION OF THE SOFTWARE WHICH CAN CAUSE SYSTEM
 INSTABILITY WHILE USED. USE THE UPDATED VERSION ONLY IF YOU EXPERIENCE
 PROBLEMS WITH THE PRESENT NVM IMAGE VERSION
@@ -23,5 +24,6 @@ Usage:
 
 Getting help:
 # nvmupdate -h
-
-==============================================================================
+EOM
+}
+]

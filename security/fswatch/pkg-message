@@ -1,4 +1,6 @@
------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 The default fswatch.conf checks directories:
   /etc /bin /sbin /lib /libexec /usr/bin /usr/sbin /usr/lib
   /usr/libexec /usr/libdata /usr/local/etc /usr/local/bin
@@ -6,4 +8,6 @@ The default fswatch.conf checks directories:
   /usr/local/libdata
 
 See fswatch(7) for more details.
------------------------------------------------------------------
+EOM
+}
+]

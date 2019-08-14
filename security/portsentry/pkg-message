@@ -1,12 +1,14 @@
-
-
+[
+{ type: install
+  message: <<EOM
        Edit ${PREFIX}/etc/portsentry.conf and change
        your settings if you haven't already. (route, etc)
 
-       ***************************************************
-       * IGNORE stealth mode.  It is for Linux only.     *
-       * The author hopes to have a platform independent *
-       * version at some time.  So don't even bother     *
-       * trying it now.                                  *
-       ***************************************************
 
+       IGNORE stealth mode.  It is for Linux only.
+       The author hopes to have a platform independent
+       version at some time.  So don't even bother
+       trying it now.
+EOM
+}
+]

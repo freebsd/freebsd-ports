@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable this service:
 
  pksd_enable (bool):           Set to NO by default.
@@ -16,7 +19,7 @@ Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable this ser
  pksd_queue_delay (int):       Periodically process incoming mail.
                                Set to 60 seconds by default.
 
-        #############################################
+
 
           To enable adding keys via the web interface
           please create a configuration file at:
@@ -33,6 +36,6 @@ Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable this ser
           do that refer to:
 
             man 8 pksclient
-
-        #############################################
-
+EOM
+}
+]

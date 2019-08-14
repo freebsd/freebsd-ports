@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Using runit with FreeBSD init:
 
 # mkdir %%SERVICE_DIR%%
@@ -41,3 +44,6 @@ Note: On FreeBSD, runit-init works in %%PREFIX%%/sbin, but
 # echo 'init_path="%%PREFIX%%/sbin/runit-init:/sbin/init:/sbin/oninit:/sbin/init.bak:/rescue/init"' >> /boot/loader.conf
 
       making upgrades easier.
+EOM
+}
+]

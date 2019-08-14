@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed vm-to-tor: framework that allows to connect virtual
 machines to the tor network.
 
@@ -39,4 +41,6 @@ security reasons. Machine is isolated from the host environment, and
 is not host-aware. Besides the optional NFS connection, all
 communication initiated by the virtual machine happens only through
 tor.
-======================================================================
+EOM
+}
+]

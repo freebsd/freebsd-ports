@@ -1,8 +1,10 @@
-
+[
+{ type: install
+  message: <<EOM
 This port requires additional configuration before it can be used.
 
 The MySQL database schema must be loaded:
-==================================================================
+
 cd %%PREFIX%%/share/razorback/
 mysql
 create database razorback;
@@ -16,7 +18,7 @@ edit the activemq.xml file %%ACTIVEMQ_LOCATION%%
 %%ACTIVEMQ_CONFIG%%
 
 ActiveMQ's configuration must be updated:
-==================================================================
+
 In the transportConnectors property, the entry needs to look like
 the following:
 
@@ -31,7 +33,10 @@ it is advised that you use 127.0.0.1 instead of 0.0.0.0.
 
 The razorback dispatcher's configuration must be created and
 customized:
-==================================================================
+
 cp rzb.conf.sample rzb.conf
 cp magic.sample magic
 cp dispatcher.conf.sample dispatcher.conf
+EOM
+}
+]

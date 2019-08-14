@@ -1,5 +1,6 @@
-**********************************************************************
-
+[
+{ type: install
+  message: <<EOM
 To enable LPRng, put the following lines in /etc/rc.conf
 
 lpd_enable="NO"
@@ -19,4 +20,6 @@ papowell@astart.com            6741 Convoy Court
 Network and System             San Diego, CA 92111
   Consulting                   858-874-6543 FAX 858-751-2435
 LPRng - Print Spooler (http://www.lprng.com)
-**********************************************************************
+EOM
+}
+]

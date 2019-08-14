@@ -1,5 +1,6 @@
-
-#########################################################################
+[
+{ type: install
+  message: <<EOM
 NOTES FOR RUNNING COURIERPASSWD
 
 In order to use courierpasswd, it must be able to access the
@@ -47,5 +48,6 @@ attacks against account passwords if courierpasswd is set up this way.
 
 The location of the authdaemon domain socket is listed in the
 authdaemonrc configuration file as the parameter authdaemonvar.
-
-#########################################################################
+EOM
+}
+]

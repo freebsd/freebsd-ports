@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 In order to enable periodic snapshots you need
 to add these lines to your /etc/periodic.conf
 
@@ -23,3 +25,6 @@ To get hourly snapshots you also need to add
 something like this to /etc/crontab:
 
 2       *       *       *       *       root    periodic hourly
+EOM
+}
+]

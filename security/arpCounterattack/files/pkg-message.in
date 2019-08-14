@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 Before starting arpCounterattack, you should edit its configuration file,
 %%PREFIX%%/etc/arpCounterattack/arpCounterattack.conf. Then, add the following
 line to /etc/rc.conf:
@@ -8,4 +10,6 @@ arpcounterattack_enable="YES"
 Finally, to start it, run the following command:
 
 %%PREFIX%%/etc/rc.d/arpCounterattack start
-
+EOM
+}
+]

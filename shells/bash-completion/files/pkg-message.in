@@ -1,6 +1,6 @@
-
-=====================================================================
-
+[
+{ type: install
+  message: <<EOM
 To enable the bash completion library, add the following to
 your .bashrc file:
 
@@ -8,6 +8,6 @@ your .bashrc file:
 	source %%RUNFILE%%
 
 See %%DOCSDIR%%/README.md for more information.
-
-=====================================================================
-
+EOM
+}
+]

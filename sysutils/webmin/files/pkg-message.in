@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 After installing Webmin for the first time you should perform the following
 steps as root:
 
@@ -10,4 +12,6 @@ steps as root:
 
 The parameters requested by setup.sh may then be changed from within Webmin
 itself.
-
+EOM
+}
+]

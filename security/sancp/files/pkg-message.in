@@ -1,7 +1,6 @@
-	***********************************
-	* !!!!!!!!!!! WARNING !!!!!!!!!!! *
-	***********************************
-
+[
+{ type: install
+  message: <<EOM
 A startup script was installed in %%PREFIX%%/etc/rc.d/.  Enable the script
 in /etc/rc.conf using the usual rc.subr syntax.  See rc.conf(5) or go to
 http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/configtuning-rcng.html
@@ -16,3 +15,6 @@ the one that came with sguil in %%PREFIX%%/etc/sguil-sensor directory.
 
 If you're running sguil, you probably want to use at least the following flags:
 sancp_flags="-D -P -R -u sancp -g sancp -d /var/log/sancp -c %%PREFIX%%/etc/sguil-sensor/sancp.conf"
+EOM
+}
+]

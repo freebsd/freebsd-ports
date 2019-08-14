@@ -1,7 +1,11 @@
-*******************************************************************************
+[
+{ type: install
+  message: <<EOM
  GapcMon requires apcupsd's Network Information Service (NIS) even for local
  installations.  You may enable apcupsd's NIS by adding the following line
  to your %%LOCALBASE%%/etc/apcupsd/apcupsd.conf:
 
  NETSERVER on
-*******************************************************************************
+EOM
+}
+]

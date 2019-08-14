@@ -1,3 +1,9 @@
+[
+{ type: install
+  message: <<EOM
 A startup script 'passivedns' was installed in %%PREFIX%%/etc/rc.d/.
 
 Type "passivedns -h" on the commandline for usage instructions.
+EOM
+}
+]

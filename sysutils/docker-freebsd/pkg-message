@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 Docker requires a bit of setup before usage.
 
 You will need to create a ZFS dataset on /usr/docker
@@ -19,3 +21,6 @@ Where $iface is the default NIC on the system, or the value
 of $docker_nat_iface. This is for network connectivity to docker
 containers in this early port. This should not be needed in future
 versions of docker.
+EOM
+}
+]

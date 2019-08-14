@@ -1,5 +1,6 @@
-################################################################################
-
+[
+{ type: install
+  message: <<EOM
 This program will attempt to obtain some system information by accessing files
 in linprocfs. You must mount linprocfs filesystem for this to work correctly.
 This can be accomplished by adding the following line to your /etc/fstab file:
@@ -10,5 +11,6 @@ linprocfs               /compat/linux/proc      linprocfs       rw      0       
 and then, as root, executing the command:
 
 mount linprocfs
-
-################################################################################
+EOM
+}
+]

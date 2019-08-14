@@ -1,6 +1,6 @@
-
-****************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 After installing anvil, this is a short checklist of things to do, depending
 on which tools are using.
 
@@ -43,6 +43,6 @@ MAILTO=you@example.org
 
 19 20 * * * /usr/local/bin/cert-shifter
 ###
-
-****************************************************************************
-
+EOM
+}
+]

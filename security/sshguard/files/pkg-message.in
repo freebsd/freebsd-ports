@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To enable SSHGuard at startup, add the following line to your 'rc.conf':
 sshguard_enable="YES"
 
@@ -12,3 +15,6 @@ better reflect the documentation:
 sshguard_safety_thresh -> sshguard_danger_thresh
 sshguard_pardon_min_interval -> sshguard_release_interval
 sshguard_prescribe_interval -> sshguard_reset_interval
+EOM
+}
+]

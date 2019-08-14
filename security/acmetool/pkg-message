@@ -1,5 +1,10 @@
-============================================================
+[
+{ type: install
+  message: <<EOM
 Use "acmetool quickstart" for initial configuration.
 
 See https://github.com/hlandau/acme for more details
 about how to configure and use the client.
+EOM
+}
+]

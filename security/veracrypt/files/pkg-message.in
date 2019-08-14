@@ -1,7 +1,6 @@
-###############################################################################
-
-Veracrypt was installed
-
+[
+{ type: install
+  message: <<EOM
 1) Veracrypt needs security/sudo port to mount disk volumes. You must modify 
    %%PREFIX%%/etc/sudoers file to add Veracrypt user(s). Don't use root user
 
@@ -14,5 +13,6 @@ If you want load fuse.ko on boot time, please add the following to /boot/loader.
 fuse_load="YES"
 
 3) Enjoy it
-
-###############################################################################
+EOM
+}
+]

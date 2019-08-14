@@ -1,7 +1,11 @@
-====
+[
+{ type: install
+  message: <<EOM
 heimdal-7.1.0_1 uses a new database format which is incompatible
 with Heimdal in the base system and heimdal-1.5.3_6 or prior.
 
 Please read 20161112 in /usr/ports/UPDATING carefully to upgrade
 your database.
-====
+EOM
+}
+]

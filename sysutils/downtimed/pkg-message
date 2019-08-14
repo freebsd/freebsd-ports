@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 ===> IMPORTANT NOTE:
 
     To set up downtimed, you need to edit one of the following
@@ -11,3 +14,6 @@
 
     Add the following line to change the default options, see downtimed(8):
         downtimed_flags="<set as needed>"
+EOM
+}
+]

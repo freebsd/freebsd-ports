@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 OpenVAS 9 ports were installed
 
 1) Redis  is a dependency of OpenVAS. Please, configure redis-server for 
@@ -51,5 +52,6 @@ OpenVAS 9 ports were installed
    It will install 1G of data
 
 9) Enjoy it
-
-###############################################################################
+EOM
+}
+]

@@ -1,1 +1,7 @@
-If you are upgrading, be sure to upgrade Tiller with 'helm init --upgrade'.
+[
+{ type: upgrade
+  message: <<EOM
+Be sure to upgrade Tiller with 'helm init --upgrade'.
+EOM
+}
+]

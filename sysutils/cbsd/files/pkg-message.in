@@ -1,5 +1,6 @@
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 cbsd is now installed, but requires additional setup steps:
 
 Upon initial installation, run:
@@ -11,5 +12,6 @@ Where /path is the path to the cbsd workdir, e.g.: /usr/jails
 For upgrading an existing installation, run:
 
   cbsd initenv
-
-===============================================================================
+EOM
+}
+]

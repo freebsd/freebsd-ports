@@ -1,4 +1,6 @@
-================================================================================
+[
+{ type: install
+  message: <<EOM
 To enable the tor server, set tor_enable="YES" in your /etc/rc.conf
 and edit %%PREFIX%%/etc/tor/torrc as desired. (However, note that the
 %%PREFIX%%/etc/rc.d/tor rc.subr script can override some torrc
@@ -19,4 +21,6 @@ corresponding additional configuration files %%PREFIX%%/etc/tor/torrc@inst1, ...
 Alternatively, you can use the extended instance definition to specify all
 instance parameteres explicitly:
 inst_name{:inst_conf:inst_user:inst_group:inst_pidfile:inst_data_dir}
-================================================================================
+EOM
+}
+]

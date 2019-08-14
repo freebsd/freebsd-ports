@@ -1,7 +1,9 @@
-================================================================================
-
+[
+{ type: install
+  message: <<EOM
 LMon is now installed in /usr/local/lmon. You need to create configuration and
 rulesets. See documentation under /usr/local/share/doc/lmon and examples under
 /usr/local/share/examples/lmon.
-
-================================================================================
+EOM
+}
+]

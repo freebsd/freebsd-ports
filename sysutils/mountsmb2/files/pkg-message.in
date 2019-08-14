@@ -1,5 +1,6 @@
-***********************************************************
-
+[
+{ type: install
+  message: <<EOM
 Please, read %%EXAMPLESDIR%%/README.FreeBSD
 *B*E*F*O*R*E* the FIRST RUN of Mountsmb2!
 
@@ -18,5 +19,6 @@ Keep in mind, that:
 1. Mountsmb2 only calls mount_smbfs to mount shares with params, described in
    a .mssmbrc file
 2. DO NOT DISTURB ME ABOUT FreeBSD's SMB IMPLEMENTATION!
-
-************************************************************
+EOM
+}
+]

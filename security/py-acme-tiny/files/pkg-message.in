@@ -1,6 +1,8 @@
-===========================================================================
-
+[
+{ type: install
+  message: <<EOM
 Have a look at the README.md file in the documentation directory:
 %%DOCSDIR%%
-
-===========================================================================
+EOM
+}
+]

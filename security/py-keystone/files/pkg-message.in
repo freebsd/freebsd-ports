@@ -1,5 +1,6 @@
-================================================================================
-
+[
+{ type: install
+  message: <<EOM
 ==================
  1. Prerequisites
 ==================
@@ -122,5 +123,6 @@ $ openstack --os-auth-url http://HOSTNAME:35357/v3 \
 $ openstack --os-auth-url http://HOSTNAME:5000/v3 \
   --os-project-domain-name Default --os-user-domain-name Default \
   --os-project-name demo --os-username demo token issue
-
-================================================================================
+EOM
+}
+]

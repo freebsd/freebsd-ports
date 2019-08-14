@@ -1,5 +1,6 @@
-**********************************************************************
-
+[
+{ type: install
+  message: <<EOM
 To setup statistics gathering you could e.g. add something like this
 to /etc/crontab:
 
@@ -19,5 +20,6 @@ After setting cron up, you can check if gathering works running:
   gather show -t 1h grep . uptime
 
 See gather(1) and %%DOCSDIR%%/README for more details.
-
-**********************************************************************
+EOM
+}
+]

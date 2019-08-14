@@ -1,6 +1,6 @@
-
-###############################################################
-
+[
+{ type: install
+  message: <<EOM
 To start the osiris daemons at system boot, add:
 
 osirisd_enable="YES"
@@ -10,6 +10,6 @@ and/or
 osirismd_enable="YES"
 
 to /etc/rc.conf.
-
-###############################################################
-
+EOM
+}
+]

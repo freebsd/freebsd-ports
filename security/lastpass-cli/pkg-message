@@ -1,7 +1,6 @@
-===============================================================================
-Important security considerations
-===============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Before using the 'edit' subcommand interactively, it's recommended to set the
 SECURE_TMPDIR environment variable to a location that isn't written to disk,
 such as a tmpfs mount, ideally using encrypted swap:
@@ -13,4 +12,6 @@ locations - consider disabling these features for files matching the pattern
 lpass.* or within your $SECURE_TMPDIR.  For example, with vim:
 
 	autocmd BufRead lpass.* setlocal noundofile nowritebackup noswapfile
-
+EOM
+}
+]

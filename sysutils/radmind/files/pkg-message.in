@@ -1,4 +1,6 @@
-####################
+[
+{ type: install
+  message: <<EOM
 The radmind daemon for this port runs as user "%%RADMINUSER%%"
 by default.  If you wish to change this behavior you may
 set the radmind_user variable in /etc/rc.conf
@@ -8,4 +10,6 @@ A template configuration file has been installed as
 Please modify this file as necessary and place it in
 %%RADMIND_BASE_DIR%%/config to ensure proper operation of the
 radmind daemon.
-####################
+EOM
+}
+]

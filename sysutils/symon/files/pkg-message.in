@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 For the system monitor symon, use the following steps
 
   1. Copy %%PREFIX%%/share/examples/symon/symon.conf
@@ -13,3 +16,6 @@ For the data collector symux, use the following steps
 	%%PREFIX%%/share/symon/c_smrrds.sh all
      to create the RR database.
   3. Run symux
+EOM
+}
+]

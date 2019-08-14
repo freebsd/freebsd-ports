@@ -1,6 +1,8 @@
-****************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 To run saslauthd from startup, add saslauthd_enable="YES" in your
 /etc/rc.conf.
-
-****************************************************************************
+EOM
+}
+]

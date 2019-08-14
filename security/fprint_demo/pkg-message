@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 In order to enroll new finger prints, you must have r/w access to the
 usb device node(s) of your finger print reader (i.e., /dev/{ugen, usb}*).
 
@@ -16,3 +19,6 @@ add path 'usb' mode 0770 group operator
 add path 'usb/*' mode 0660 group operator
 
 # /etc/rc.d/devfs restart
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To use open it must be installed setuid root
 (type "chmod u+s %%PREFIX%%/bin/open")
 
@@ -7,3 +10,6 @@ all the VT devices that are not allocated
 to getty should be read/write by all, e.g.
 
 chmod a=rw /dev/ttyv[9abc]
+EOM
+}
+]

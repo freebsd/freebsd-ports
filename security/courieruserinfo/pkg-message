@@ -1,5 +1,6 @@
-
-#########################################################################
+[
+{ type: install
+  message: <<EOM
 NOTES FOR RUNNING COURIERUSERINFO
 
 In order to use courieruserinfo, it must be able to access the
@@ -39,6 +40,6 @@ setgid, courieruserinfo cannot retrieve passwords.
 
 The location of the authdaemon domain socket is listed in the
 authdaemonrc configuration file as the parameter authdaemonvar.
-
-#########################################################################
-
+EOM
+}
+]

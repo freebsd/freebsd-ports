@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed ZeroNet: Decentralized websites using Bitcoin crypto.
 
 It is recommended to run ZeroNet as a service:
@@ -29,4 +31,6 @@ has either UPnP enabled, or port 15441 open.
 
 For more details please see the ZeroNet documentation here:
 http://zeronet.readthedocs.io/en/latest
-======================================================================
+EOM
+}
+]

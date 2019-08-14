@@ -1,5 +1,6 @@
-
-*******************************************************************
+[
+{ type: install
+  message: <<EOM
  To use amavisd-new, you need to install at least one virus scanner.
  The following virus scanners are available in the FreeBSD ports
  collection:
@@ -38,5 +39,6 @@
  Configuration templates are available in %%PREFIX%%/etc
  as amavisd.conf.sample, amavisd.conf-default and amavisd-custom.conf.sample
  Documentation is available in %%DOCSDIR%%.
-*******************************************************************
-
+EOM
+}
+]

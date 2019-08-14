@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 There are example scripts in
     %%ETCDIR%%
 that you can use for renewing and deploying certificates.
@@ -33,5 +35,6 @@ Then run lego.sh with the run argument as the %%LEGO_USER%% user:
 
 Subsequent periodic runs will run with the renew argument by default, with a
 renewal interval of 30 days.
-
-
+EOM
+}
+]

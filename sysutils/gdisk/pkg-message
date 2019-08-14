@@ -1,6 +1,6 @@
-###############################################################
-!!! WARNING !!! WARNING !!! WARNING !!! WARNING !!! WARNING !!!
-
+[
+{ type: install
+  message: <<EOM
         PLEASE, READ DOCUMENTATION BEFORE USE
 
 See `man gdisk' , `man cgdisk', `man sgdisk', `man fixparts'.
@@ -9,5 +9,6 @@ Any errors in usage gdisk (cgdisk, sgdisk, fixparts) or
 not understanding of that you do, can call loss of your data.
 Make a backup copy of all data of a disk before you use
 these programs for its processing.
-
-###############################################################
+EOM
+}
+]

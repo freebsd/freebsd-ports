@@ -1,6 +1,10 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+[
+{ type: install
+  message: <<EOM
 You should edit openssl.cnf configuration file as specified below
 to start using GOST Engine through OpenSSL.
 For details, refer to the section `How to Configure' in
 %%DOCSDIR%%/INSTALL.md
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+EOM
+}
+]

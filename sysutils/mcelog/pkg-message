@@ -1,4 +1,6 @@
-======================================================
+[
+{ type: install
+  message: <<EOM
 You can decode MCE output from the FreeBSD kernel by
 using the following command:
 
@@ -8,5 +10,6 @@ Or if you wish to paste the MCE via stdin:
 
   mcelog --no-dmi --ascii
   {...paste MCE and send EOF/press Ctrl-D...}
-
-======================================================
+EOM
+}
+]

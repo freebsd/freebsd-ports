@@ -1,8 +1,8 @@
-
-=========================================================
-
+[
+{ type: install
+  message: <<EOM
 Please copy the file %%PREFIX%%/etc/pydfrc.sample
 to %%PREFIX%%/etc/pydfrc and edit your configuration.
-
-=========================================================
-
+EOM
+}
+]

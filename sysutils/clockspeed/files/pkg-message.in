@@ -1,5 +1,6 @@
-	ATTENTIONATTENTION:
-
+[
+{ type: install
+  message: <<EOM
 Please make sure that you read %%PREFIX%%/share/doc/clockspeed/INSTALL.
 It contains important information about testing and configuring
 clockspeed, and finally installing it in your system.
@@ -48,3 +49,6 @@ A port to non-i386 platforms was done using the clock_gettime(2)
 function. Since this is somewhat experimental, there might be some
 tiny precision differences from the i386 platform versions. You
 have been warned!
+EOM
+}
+]

@@ -1,4 +1,6 @@
-=========================================================================
+[
+{ type: install
+  message: <<EOM
 Snort uses rcNG startup script and must be enabled via /etc/rc.conf
 Please see %%PREFIX%%/etc/rc.d/snort
 for list of available variables and their description.
@@ -10,4 +12,6 @@ Stream5 target-based reassembly.  It is recommended to disable LRO, if
 your card supports it.
 
 This can be done by appending '-lro' to your ifconfig_ line in rc.conf.
-=========================================================================
+EOM
+}
+]

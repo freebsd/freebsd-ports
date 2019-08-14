@@ -1,6 +1,6 @@
-
-##############################################################################
-
+[
+{ type: install
+  message: <<EOM
 In order to run this port, please add the following line to
 /etc/inetd.conf if not already there:
 
@@ -13,5 +13,6 @@ its value defaults to "login".
 After modifying /etc/inetd.conf, you must (as root) run:
 
 	killall -HUP inetd
-
-##############################################################################
+EOM
+}
+]

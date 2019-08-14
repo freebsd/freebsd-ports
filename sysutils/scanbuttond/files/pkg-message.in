@@ -1,4 +1,6 @@
--------------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 scanbuttond has been installed, but is not quite ready to be used yet.
 
 To make scanbuttond actually do something you have to edit
@@ -34,4 +36,6 @@ detach 20 {
 	match "product" "0x220e";
 	action "/usr/bin/killall scanbuttond";
 };
--------------------------------------------------------------------------------
+EOM
+}
+]

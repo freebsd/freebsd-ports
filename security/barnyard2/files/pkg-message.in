@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Read the notes in the barnyard2.conf file for how to configure
 %%PREFIX%%/etc/barnyard2.conf after installation.  For addtional information
 see the Securixlive FAQ at http://www.securixlive.com/barnyard2/faq.php.
@@ -12,5 +15,6 @@ the options in the startup script - in %%PREFIX%%/etc/rc.d.
 Barnyard2 can process unified2 files from snort or suricata.  It can also
 interact with snortsam firewall rules as well as the sguil-sensor. Those
 ports must be installed separately if you wish to use them.
-
-************************************************************************
+EOM
+}
+]

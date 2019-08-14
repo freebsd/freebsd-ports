@@ -1,12 +1,11 @@
-************************************************************
-                         ATTENTION!
-
+[
+{ type: install
+  message: <<EOM
 You must be root to use xcdroast.  To use it as normal user,
 click "enable-nonroot" after starting it at first as root.
 But beware!  This is a security risk!
 It modifies the following files and gives them the
 set-user-ID-on-execution bit:
-
-xcdwrap
-
-************************************************************
+EOM
+}
+]

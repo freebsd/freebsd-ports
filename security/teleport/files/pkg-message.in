@@ -1,4 +1,6 @@
-====
+[
+{ type: install
+  message: <<EOM
 Quick getting started guide:
 
 1. Read through the Quick Start Guide (see below).
@@ -19,4 +21,6 @@ Admin Manual:	https://gravitational.com/teleport/docs/admin-guide/
 User Manual:	https://gravitational.com/teleport/docs/user-manual/
 Architecture:	https://gravitational.com/teleport/docs/architecture/
 FAQ:		https://gravitational.com/teleport/docs/faq/
-====
+EOM
+}
+]

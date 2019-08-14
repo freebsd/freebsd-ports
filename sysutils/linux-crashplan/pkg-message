@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 For users upgrading from previous versions of CrashPlan, note that the headless
 mode configuration has been changed significantly and older clients will no
 longer connect. Please check the Code42 website for up to date instructions on
@@ -5,3 +8,6 @@ setting up a headless CrashPlan server.
 
 On FreeBSD, the authentication token file can be found in
 /compat/linux/var/lib/CrashPlan/.ui_info
+EOM
+}
+]

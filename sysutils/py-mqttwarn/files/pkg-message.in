@@ -1,6 +1,6 @@
-
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-
+[
+{ type: install
+  message: <<EOM
 After installing mqttwarn for the first time, we recommend making the
 following change to supervisord configuration settings:
 
@@ -29,5 +29,6 @@ environment=MQTTWARNINI="%%PREFIX%%/etc/mqttwarn/mqttwarn.ini",MQTTWARNLOG="/var
 
 [include]
 files = mqttwarn.conf
-
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+EOM
+}
+]

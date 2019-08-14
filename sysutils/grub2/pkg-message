@@ -1,4 +1,6 @@
-#############################################################
+[
+{ type: install
+  message: <<EOM
 To install GRUB on the master boot record of your hard drive
 use 'grub-install <drive-to-install>' command.
 
@@ -8,4 +10,6 @@ menuentry "FreeBSD" {
 	kfreebsd /boot/loader
 }
 Or use grub-mkconfig to create the config file.
-#############################################################
+EOM
+}
+]

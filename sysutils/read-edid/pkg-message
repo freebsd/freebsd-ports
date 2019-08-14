@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 FreeBSD has mapping at zero address feature turned off since 8.0-RC2:
 
   http://security.freebsd.org/advisories/FreeBSD-EN-09:05.null.asc
@@ -11,3 +14,6 @@ disable this protection, issue the following command:
 To return to secure state:
 
   # sysctl security.bsd.map_at_zero=0
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 *** Note ssh-add will NOT use GUI tools like lxqt-openssh-askpass 
 *** when it is attached to a terminal. 
 
@@ -8,3 +11,6 @@ ssh-agent -a "/tmp/${USER}-ssh-agent"
 SSH_ASKPASS=lxqt-openssh-askpass
 SSH_AUTH_SOCK=<SOCKET_PATH>
 then run ssh-add from lxqt-runner or a .desktop entry
+EOM
+}
+]

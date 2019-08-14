@@ -1,7 +1,9 @@
-======================================================================
-
+[
+{ type: install
+  message: <<EOM
 If s2n fails due mlock(2) syscall try to increase vm.max_wired.
 Example:
  - sysctl vm.max_wired=1572864
-
-======================================================================
+EOM
+}
+]

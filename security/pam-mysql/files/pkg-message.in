@@ -1,5 +1,6 @@
-*****************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Read files in %%DOCSDIR%% for info on how to set up.
 
 The PAM subsystem only looks for modules in /usr/lib: to use any pam module
@@ -9,5 +10,6 @@ from the ports, either specify the full pathname in your pam.d config file
 
 Example:
 ln -sf %%PREFIX%%/lib/pam_mysql.so /usr/lib/pam_mysql.so
-
-*****************************************************************************
+EOM
+}
+]

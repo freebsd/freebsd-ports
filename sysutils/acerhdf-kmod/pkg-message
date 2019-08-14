@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The acerhdf fan control is disabled by default.  To enable it add the
 following settings to /boot/loader.conf
 
@@ -9,3 +12,6 @@ and to /etc/sysctl.conf
 
 Refer to acerhdf(4) for additonal settings.  Choose wisely and be
 careful that your system does not overheat!
+EOM
+}
+]

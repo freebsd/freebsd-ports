@@ -1,1 +1,7 @@
+[
+{ type: install
+  message: <<EOM
 Install the fuse kernel module to use this port.
+EOM
+}
+]

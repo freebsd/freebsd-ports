@@ -1,5 +1,6 @@
-===================================================
-
+[
+{ type: install
+  message: <<EOM
 You should add the following line to your ~/.emacs:
 
 ;;
@@ -8,5 +9,6 @@ You should add the following line to your ~/.emacs:
 (autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
 
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
-
-===================================================
+EOM
+}
+]

@@ -1,8 +1,9 @@
+[
+{ type: install
+  message: <<EOM
 Idled Copyright (c) 1995-1996  Mike Crider (crider@cs.hope.edu)
 All rights reserved.
 
-*****************************************************************
-*****************************************************************
 
 REDISTRIBUTION AND USE IN SOURCE AND BINARY FORMS FOR NON-PROFIT
 USE ARE PERMITTED PROVIDED THAT:
@@ -33,6 +34,6 @@ requests for modification of this program, please contact:
 
       Mike Crider
       crider@cs.hope.edu
-
-*****************************************************************
-*****************************************************************
+EOM
+}
+]

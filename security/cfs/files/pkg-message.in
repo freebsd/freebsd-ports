@@ -1,4 +1,6 @@
-===============================================================================
+[
+{ type: install
+  message: <<EOM
 Quick start instructions:
 
   - add the following entry to /etc/exports:
@@ -19,4 +21,6 @@ Quick start instructions:
 
     # service mountd start
     # service cfsd start
-===============================================================================
+EOM
+}
+]

@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To run tcsd automatically, add the following line to /etc/rc.conf:
 
 tcsd_enable="YES"
@@ -14,3 +17,6 @@ tpmd_enable="YES"
 To use TPM, add your_account to '%%GROUPS%%' group like following:
 
 # pw groupmod %%GROUPS%% -m your_account
+EOM
+}
+]

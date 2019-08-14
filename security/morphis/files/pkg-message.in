@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed MORPHiS: Secure decentralized data store and mail.
 
 It is recommended to run MORPHiS as a service:
@@ -10,4 +12,6 @@ http://localhost:4251
 
 You can also run MORPHiS manually (not recommended) with the command:
 # su -m %%USER%% -c morphis
-======================================================================
+EOM
+}
+]

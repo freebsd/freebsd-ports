@@ -1,10 +1,12 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 NTFS-3G has been installed, for information, known issues and how to report
 bugs see the FreeBSD README:
 
 %%DOCSDIR%%/README.FreeBSD
 
 Also see the official README (but has some Linux specific parts).
-
-==============================================================================
+EOM
+}
+]

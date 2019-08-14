@@ -1,4 +1,6 @@
-*****************************************************************
+[
+{ type: install
+  message: <<EOM
 To activate minimunin, add the line
 
     munin stream tcp nowait nobody /usr/libexec/tcpd %%PREFIX%%/bin/minimunin
@@ -19,5 +21,6 @@ in your /etc/rc.conf and restart inetd with the
 
 command. You may also want to restrict access to your munin node via the
 /etc/hosts.allow and /etc/hosts.deny configuration files.
-
-*****************************************************************
+EOM
+}
+]

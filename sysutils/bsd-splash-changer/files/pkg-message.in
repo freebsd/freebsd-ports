@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 To use the port you need to perform the following steps:
 
 1) Place your image files into %%DATADIR%%.
@@ -14,5 +15,6 @@ To use the port you need to perform the following steps:
 
 Also, be careful if you already have a file "/boot/splash" because it will be
 replaced when the script is executed.
-
-==============================================================================
+EOM
+}
+]

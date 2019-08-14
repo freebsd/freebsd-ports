@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The vault user created by the vault package is now a member of the daemon
 class, which will allow it to use mlock() when started by the rc script. This
 will not be reflected in systems where the user already exists. Please add the
@@ -17,3 +20,6 @@ Or to disable mlock, add:
 disable_mlock = 1
 
 to %%PREFIX%%/etc/vault.hcl
+EOM
+}
+]

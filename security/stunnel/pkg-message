@@ -1,3 +1,7 @@
-************************************************************
+[
+{ type: install
+  message: <<EOM
 Don't forget to check out the FAQ at http://www.stunnel.org/
-************************************************************
+EOM
+}
+]

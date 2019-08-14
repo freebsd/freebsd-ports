@@ -1,5 +1,6 @@
-==============================================================================
-
+[
+{ type: install
+  message: <<EOM
 Now sqlfs filesystem is installed.
 You can mount it by issuing
 % sqlfs -o /path/to/sqlite/database /path/to/mountpoint
@@ -7,5 +8,6 @@ You can mount it by issuing
 Alternatively you can supply database name via SQLFS_DBNAME env variable
 
 For additional information see supplied documentation.
-
-==============================================================================
+EOM
+}
+]
