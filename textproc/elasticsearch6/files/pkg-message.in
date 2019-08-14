@@ -1,5 +1,6 @@
-======================================================================
-
+[
+{ type: install
+  message: <<EOM
 Please see %%ETCDIR%% for sample versions of
 elasticsearch.yml and logging.yml.
 
@@ -28,5 +29,6 @@ e.g., after installing X-Pack you will have to correct:
 %%ETCDIR%%/x-pack directory/files to be owned by elasticsearch:elasticsearch
 
 !!! PLUGINS NOTICE !!!
-
-======================================================================
+EOM
+}
+]

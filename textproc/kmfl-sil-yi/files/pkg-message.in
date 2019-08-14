@@ -1,4 +1,6 @@
----------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
   You should now have the new keyboard in the section
   "Others" in your SCIM/IBus menu. If you don't see it,
   restart X.
@@ -7,4 +9,6 @@
   As a general rule, type the Pinyin romanization for
   that syllable, followed by a space. For punctuation,
   try usual punctuation keystrokes.
----------------------------------------------------------
+EOM
+}
+]

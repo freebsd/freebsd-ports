@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The following catalogs are installed:
 
  1) %%PREFIX%%/share/sgml/catalog
@@ -19,3 +22,6 @@ The following catalogs are installed:
 
    This catalog is for handling XML stuff installed under
    %%PREFIX%%/share/xml.  It is changed by ports/packages.
+EOM
+}
+]

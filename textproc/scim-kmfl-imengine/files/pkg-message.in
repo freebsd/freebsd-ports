@@ -1,5 +1,6 @@
-
-------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
   SCIM-Setup IMEngine list should now have KMFL section.
 
   The documentation for KMN language and use of KMFL SCIM interface
@@ -9,4 +10,6 @@
 
   You need textproc/kmfl-* ports in order to use actual keyboards
   through SCIM.
-------------------------------------------------------------------------
+EOM
+}
+]

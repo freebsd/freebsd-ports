@@ -1,3 +1,9 @@
+[
+{ type: install
+  message: <<EOM
 ****  Individual user configurations can be accomplished by placing a copy
       of %%DATADIR%%/dot.latex2html-init in the user's home
       directory and editing to preference.
+EOM
+}
+]

@@ -1,7 +1,11 @@
-=====================================================================
+[
+{ type: install
+  message: <<EOM
 A set of dictionary ports is available for StarDict:
  chinese/stardict-*
  japanese/stardict-dict-ja
  textproc/stardict-*
  russian/stardict-*
-=====================================================================
+EOM
+}
+]

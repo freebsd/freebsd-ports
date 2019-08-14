@@ -1,4 +1,6 @@
--------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 ibus installation finished. To use ibus, please do the following:
 
 If you are using bash, please add following lines to your $HOME/.bashrc:
@@ -48,4 +50,6 @@ and QT4 input method module, textproc/ibus-qt.
 
 If ibus cannot start or the panel does not appear, please ensure
 that you are using up-to-date python.
--------------------------------------------------------------------
+EOM
+}
+]

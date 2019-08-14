@@ -1,8 +1,12 @@
----------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
   You should now have the new keyboard in the section
   "Greek" in your SCIM/IBus menu. If you don't see it,
   restart X.
 
   The documentation is installed into:
   %%DOCSDIR%%
----------------------------------------------------------
+EOM
+}
+]

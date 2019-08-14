@@ -1,4 +1,6 @@
--------------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 cd into %%PREFIX%%/lib/elasticsearch/plugins/search-guard-5/tools/
 
 Execute ./install_demo_configuration.sh, chmod the script first if necessary. 
@@ -18,4 +20,6 @@ to the cluster.
 
 Display information about the currently logged in user by visiting
  https://localhost:9200/_searchguard/authinfo
--------------------------------------------------------------------------------
+EOM
+}
+]

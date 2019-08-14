@@ -1,5 +1,6 @@
-=======================================================================
-
+[
+{ type: install
+  message: <<EOM
 Make sure to edit the following files to adapt to your setup:
 
 %%LOCALBASE%%/etc/solr.in.sh
@@ -26,9 +27,10 @@ sysrc solr_enable="YES"
 
 And start it with:
 service solr start
-
------------------------------------------------------------------------
-
+EOM
+}
+{ type: upgrade
+  message: <<EOM
 If you update, make sure you update your %%LOCALBASE%%/etc/solr.in.sh
 The LOG4J_PROPS has changed.
 If you would like to change logging, copy:
@@ -38,5 +40,6 @@ Change it and make sure it is loaded in %%LOCALBASE%%/etc/solr.in.sh.
 Make also sure to always check the manual if you need to modify your
 configs or schemas:
 https://www-eu.apache.org/dist/lucene/solr/8.0.0/changes/Changes.html
-
-=======================================================================
+EOM
+}
+]

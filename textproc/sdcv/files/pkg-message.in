@@ -1,4 +1,6 @@
-**************************************************************************
+[
+{ type: install
+  message: <<EOM
 sdcv is now installed.
 you have to fetch the dictionaries to make it work correctly.
 
@@ -10,5 +12,6 @@ you have to fetch the dictionaries to make it work correctly.
 2. Please put your dictionary file at :
 
  	%%PREFIX%%/share/stardict/dic/
-
-**************************************************************************
+EOM
+}
+]

@@ -1,4 +1,6 @@
-****************************************************************************
+[
+{ type: install
+  message: <<EOM
 To use htmlize mode, add to your ~/.emacs the following lines:
 
 ;; Enable syntax colouring
@@ -6,5 +8,6 @@ To use htmlize mode, add to your ~/.emacs the following lines:
 
 ;; General emacs to HTML converter
 (require 'htmlize)
-
-****************************************************************************
+EOM
+}
+]
