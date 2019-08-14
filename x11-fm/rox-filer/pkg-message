@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 Please note: if you get the following error while running ROX-Filer,
 you may be browsing a directory containing filenames that do not
 comply with UTF-8.
@@ -8,4 +10,6 @@ comply with UTF-8.
 
 To fix that, just set your CHARSET variable to any preferred fallback
 encoding (like CHARSET=iso-8859-1).
-======================================================================
+EOM
+}
+]

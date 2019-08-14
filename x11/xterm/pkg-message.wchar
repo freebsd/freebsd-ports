@@ -1,4 +1,6 @@
-================================================================================
+[
+{ type: install
+  message: <<EOM
 You installed xterm with wide chars support. This introduces some limitations
 comparing to the plain single chars version: this version of xterm will use
 UTF-8 charset for selection buffers, breaking 8-bit copy/paste support unless
@@ -7,4 +9,6 @@ work as before, use "eightBitSelectTypes" XTerm resource setting.
 
 For further information refer to the SELECT/PASTE section of xterm(1) manual
 page.
-================================================================================
+EOM
+}
+]

@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 Iwidgets is a "mega-widget" set built using itk.  It includes
 a set of megawidgets, installed in %%PREFIX%%/lib/iwidgets4.0.1
 (and symlinked to %%PREFIX%%/lib/iwidgets), a set of man pages
@@ -18,4 +20,6 @@ that are available to you.
 Finally, you may want to read iwidgets.ps (use a Postcript viewer),
 installed in %%DOCSDIR%%, which is a comprehensive
 explanation of iwidgets.
-
+EOM
+}
+]

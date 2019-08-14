@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 Gnome-shell requires acceleration of to work. For this a nvidia card
 with the nvidia-driver, or a Intel/ATI KMS enabled card is needed.
 
@@ -9,3 +12,6 @@ gdm user also needs this access.
 Access can be granted by adding the user(s) to the video group.
 
 % pw groupmod video -m jerry
+EOM
+}
+]

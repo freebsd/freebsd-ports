@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To be able to shutdown or reboot your system, you'll have to add .rules
 files in %%LOCALBASE%%/etc/polkit-1/rules.d directory. Which looks
 like this (replace PUTYOURGROUPHERE by your group):
@@ -18,3 +21,6 @@ polkit.addRule(function (action, subject) {
     return polkit.Result.YES;
   }
 });
+EOM
+}
+]

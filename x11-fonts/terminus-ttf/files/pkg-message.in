@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 You can start using the fonts by following these instructions:
 
 Add the following line to the "Files" section of your X.Org
@@ -17,3 +20,6 @@ following sizes:
         24 px or 18 pt
         28 px or 21 pt
         32 px or 24 pt
+EOM
+}
+]

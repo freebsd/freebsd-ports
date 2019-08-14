@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To use these drivers, make sure that you have loaded the NVidia kernel
 module, by doing
 
@@ -43,3 +46,6 @@ in their /boot/loader.conf or /etc/rc.conf configuration files, depending
 on how they prefer to load NVidia driver kernel module.
 
 See %%DOCSDIR%%/README for more information.
+EOM
+}
+]

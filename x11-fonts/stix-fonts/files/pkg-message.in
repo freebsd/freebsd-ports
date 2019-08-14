@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 You can start using the fonts by following these instructions:
 
 Make sure that the freetype module is loaded.  If it is not, add the following
@@ -8,3 +11,6 @@ line to the "Modules" section of your X11 / x.org configuration file:
 Add the following line to the "Files" section:
 
 	FontPath "%%FONTSDIR%%/"
+EOM
+}
+]

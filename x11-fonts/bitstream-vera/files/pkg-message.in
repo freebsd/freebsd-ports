@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 IMPORTANT - READ CAREFULLY: Please read the COPYRIGHT included with these fonts
 before using.  The copyright can be found at %%FONTSDIR%%/COPYRIGHT.TXT.  To
 use these fonts, follow the instructions below.
@@ -12,3 +15,6 @@ Add the following line to the "Files" section of X Windows configuration file:
 	FontPath "%%FONTSDIR%%/"
 
 Note: your X Windows configuration file is typically /etc/X11/xorg.conf
+EOM
+}
+]

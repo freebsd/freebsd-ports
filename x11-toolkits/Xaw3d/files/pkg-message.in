@@ -1,8 +1,12 @@
-*******************************************************************
+[
+{ type: install
+  message: <<EOM
 If you want Xaw3d to replace the default Athena Widget Set
 so most X applications will get a 3-D look, do this (as root):
 
 cd %%LOCALBASE%%/lib
 mv libXaw.so.%%XAWVER%% libXaw2d.so.%%XAWVER%%
 ln -s libXaw3d.so.%%XAWVER%% libXaw.so.%%XAWVER%%
-*******************************************************************
+EOM
+}
+]

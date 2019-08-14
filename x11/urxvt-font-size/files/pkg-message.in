@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To enable this urxvt extension, modify ~/.Xresources as follows:
 
 URxvt.perl-ext-common: ...,font-size
@@ -10,3 +13,6 @@ The extension automatically binds:
 
 For further customization consult
 %%DOCSDIR%%/README
+EOM
+}
+]

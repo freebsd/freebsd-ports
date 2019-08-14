@@ -1,5 +1,6 @@
-*************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Thanks to Nikos Ntarmos, it is now possible to start slim from /etc/ttys.
 Please see %%PREFIX%%/etc/rc.d/slim for instructions on how to do that.
 
@@ -15,5 +16,6 @@ Now you need to put session files in the directory specified by option
 "sessiondir". They should be xdg-style .desktop files.
 The "Name" entry in the session file would be used as session name.
 The "Exec" entry would replace %session in login_cmd.
-
-*************************************************************************
+EOM
+}
+]

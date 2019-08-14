@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This port has installed compiz-manager which is a wrapper to start
 compiz.
 
@@ -7,3 +10,6 @@ value of:
 desktop->gnome->session->required_components->windowmanager = compiz-manager
 
 This will enable compiz as your default window manager.
+EOM
+}
+]

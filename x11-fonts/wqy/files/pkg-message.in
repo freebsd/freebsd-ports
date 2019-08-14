@@ -1,4 +1,6 @@
-**************************************************************************
+[
+{ type: install
+  message: <<EOM
 Please add %%FONTSDIR%% for your X server by either:
 
 # xset fp+ %%FONTSDIR%%
@@ -13,5 +15,6 @@ Section "Files"
     FontPath   "%%FONTSDIR%%"
 ...
 EndSection
-
-**************************************************************************
+EOM
+}
+]
