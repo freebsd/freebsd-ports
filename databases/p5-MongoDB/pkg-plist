@@ -37,6 +37,7 @@
 %%SITE_PERL%%/MongoDB/Op/_DropCollection.pm
 %%SITE_PERL%%/MongoDB/Op/_DropDatabase.pm
 %%SITE_PERL%%/MongoDB/Op/_DropIndexes.pm
+%%SITE_PERL%%/MongoDB/Op/_EndTxn.pm
 %%SITE_PERL%%/MongoDB/Op/_Explain.pm
 %%SITE_PERL%%/MongoDB/Op/_FSyncUnlock.pm
 %%SITE_PERL%%/MongoDB/Op/_FindAndDelete.pm
@@ -69,6 +70,7 @@
 %%SITE_PERL%%/MongoDB/Role/_ReadPrefModifier.pm
 %%SITE_PERL%%/MongoDB/Role/_SessionSupport.pm
 %%SITE_PERL%%/MongoDB/Role/_SingleBatchDocWrite.pm
+%%SITE_PERL%%/MongoDB/Role/_TopologyMonitoring.pm
 %%SITE_PERL%%/MongoDB/Role/_UpdatePreEncoder.pm
 %%SITE_PERL%%/MongoDB/Role/_WriteOp.pm
 %%SITE_PERL%%/MongoDB/Role/_WriteResult.pm
