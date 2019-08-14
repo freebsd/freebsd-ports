@@ -1,5 +1,6 @@
-=== NOTE ===
-
+[
+{ type: install
+  message: <<EOM
 The CJK font selection will be performed in the following order:
 
  1. %%PREFIX%%/%%GS_RESDIR%%/Font/<fontname>
@@ -11,3 +12,6 @@ The CJK font selection will be performed in the following order:
 So, to use CIDFnmap you have to make sure that there is no font file that
 has the same name as you want to customize in Resource/Font and
 Resource/CIDFont.
+EOM
+}
+]

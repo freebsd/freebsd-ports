@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 Examples to add printer for EP-803AW
 Start cupsd and then do the following:
 
@@ -17,3 +19,6 @@ lpadmin -p EPSON_EP-803AW -m "`lpinfo --make-and-model 'EPSON EP-803A' -m | cut 
 # The printer joined network (using port 9100)
 
 lpadmin -p EPSON_EP-803AW -m "`lpinfo --make-and-model 'EPSON EP-803A' -m | cut -f 1 -w | grep escpr | head -n 1`" -v 'socket://192.0.2.100:9100' -D 'EPSON EP-803AW (RAW)' -E
+EOM
+}
+]

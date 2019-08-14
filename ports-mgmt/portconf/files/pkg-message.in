@@ -1,10 +1,11 @@
-*********************************************************
-
+[
+{ type: install
+  message: <<EOM
 To set port-specific make variables, create the
 %%PREFIX%%/etc/ports.conf configuration file
 with the following syntax:
 
----------------------------------------------------------
+
 # this is a comment
 *: NOPORTDOCS
 editors/openoffice-3: WITH_CCACHE|LOCALIZED_LANG=it
@@ -12,11 +13,12 @@ print/ghostscript-* print/lpr-wrapper: A4
 sysutils/fusefs-kmod*: !KERNCONF | !NOPORTDOCS
 www/firefox-i18n: WITHOUT_SWITCHER | FIREFOX_I18N=fr it
 x11/fakeport: CONFIGURE_ARGS=--with-modules="aaa bbb ccc"
----------------------------------------------------------
+
 
 Global port directory patterns and blanks around the
 pipe "|" symbol are allowed.
 Values shouldn't be quoted even if they contain spaces.
 Lines beginning with a '#' are comments.
-
-*********************************************************
+EOM
+}
+]

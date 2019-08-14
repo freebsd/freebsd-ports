@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 To enable PC speaker sound output support, install `audio/beep' package or
 from the ports.
+EOM
+}
+]

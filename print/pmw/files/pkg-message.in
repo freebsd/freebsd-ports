@@ -1,5 +1,6 @@
----------------------------------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 If you wish to use ghostview to view or print the Postscript output
 from PMW, then you need to create symlinks for the font files:
 
@@ -9,5 +10,6 @@ and also add the following line to
 %%LOCALBASE%%/share/ghostscript/x.xx/lib/Fontmap.GS
 
     /PMW-Music		(PMW-Music.pfa) ;
-
----------------------------------------------------------------------------
+EOM
+}
+]
