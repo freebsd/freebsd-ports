@@ -31,6 +31,8 @@ include/libemos/libemos_config.h
 include/libemos/libemos_ecbuild_config.h
 include/libemos/libemos_version.h
 lib/libemos.a
+lib/libemos.R32.D64.I32.a
+lib/libemos.R64.D64.I32.a
 lib/libemosR64.a
 libdata/pkgconfig/libemos.pc
 libdata/pkgconfig/libemosR64.pc

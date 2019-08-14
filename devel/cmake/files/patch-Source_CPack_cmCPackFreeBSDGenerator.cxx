@@ -1,11 +1,9 @@
-diff --git Source/CPack/cmCPackFreeBSDGenerator.cxx Source/CPack/cmCPackFreeBSDGenerator.cxx
-index 91ae1a23f..a676302e7 100644
---- Source/CPack/cmCPackFreeBSDGenerator.cxx
+--- Source/CPack/cmCPackFreeBSDGenerator.cxx.orig	2019-06-04 16:37:41 UTC
 +++ Source/CPack/cmCPackFreeBSDGenerator.cxx
-@@ -339,6 +339,13 @@ int cmCPackFreeBSDGenerator::PackageFiles()
+@@ -331,6 +331,13 @@ int cmCPackFreeBSDGenerator::PackageFiles()
  
-   std::string output_dir =
-     cmSystemTools::CollapseCombinedPath(toplevel, "../");
+   std::string broken_suffix = std::string("-") +
+     var_lookup("CPACK_TOPLEVEL_TAG") + std::string(GetOutputExtension());
 +  if (!pkg_initialized() && pkg_init(NULL, NULL) != EPKG_OK)
 +  {
 +    cmCPackLogger(cmCPackLog::LOG_ERROR, 
@@ -13,6 +11,6 @@ index 91ae1a23f..a676302e7 100644
 +    return 0;
 +  }
 +
-   pkg_create_from_manifest(output_dir.c_str(), ::TXZ, toplevel.c_str(),
-                            manifestname.c_str(), NULL);
- 
+   for (std::string& name : packageFileNames) {
+     cmCPackLogger(cmCPackLog::LOG_DEBUG, "Packagefile " << name << std::endl);
+     if (has_suffix(name, broken_suffix)) {
