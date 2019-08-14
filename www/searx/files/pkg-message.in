@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed Searx: privacy-respecting, hackable metasearch engine.
 
 It is recommended to run Searx as a service:
@@ -12,4 +14,6 @@ By default, Searx uses the network of long running Searx instances.
 You can see the list here: http://stats.searx.oe5tpo.com
 
 Please adjust Searx settings in %%PREFIX%%/etc/searx-settings.yml
-======================================================================
+EOM
+}
+]

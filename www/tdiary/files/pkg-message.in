@@ -1,5 +1,6 @@
-
-=============================================================================
+[
+{ type: install
+  message: <<EOM
 There is a script to install tDiary in a user directory.
 This script should be run manually.
 
@@ -14,5 +15,6 @@ This script should be run manually.
 There are documents in the following directories.
   See ...
   %%DOCSDIR%%
-=============================================================================
-
+EOM
+}
+]

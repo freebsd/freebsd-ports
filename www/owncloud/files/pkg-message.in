@@ -1,8 +1,6 @@
-
-***********************************************************************
-*                         POST INSTALL CONFIGURATION                  *
-***********************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Please note that everything has been installed in %%WWWDIR%%.
 
 You will probably want to add an alias to your httpd.conf file, something
@@ -17,7 +15,7 @@ like this:
 
 And restart Apache.
 
-********************************************************************
+
 The owncloud newsyslog.conf(5) filename has been changed:
   OLD: ${PREFIX}/etc/newsyslog.conf.d/owncloud
   NEW: ${PREFIX}/etc/newsyslog.conf.d/owncloud.conf
@@ -31,4 +29,6 @@ newsyslog configuration now only includes filenames that end with
 If you use provisioning/configuration management tools to create or
 edit this file, you will need to change their configuration to use
 the new filename.
-********************************************************************
+EOM
+}
+]

@@ -1,2 +1,8 @@
+[
+{ type: install
+  message: <<EOM
 The bokeh.charts interface and various examples depend on the Pandas library.
 If you want to use this functionality - please install math/py-pandas
+EOM
+}
+]

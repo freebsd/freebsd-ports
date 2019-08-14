@@ -1,5 +1,6 @@
-========================================================================
-
+[
+{ type: install
+  message: <<EOM
 Please note that this port/package overrides the default installation layout
 for Graphite! To setup graphite, you will need to:
 
@@ -80,5 +81,6 @@ Setup Apache by creating a vhost similar to the following:
 
 Now you should be able to access the graphite virtual host you created in the
 first step.
-
-==============================================================================
+EOM
+}
+]

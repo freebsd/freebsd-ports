@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
      o You can find the configuration files for this package in the
        directory %%PREFIX%%/etc/squid.
 
@@ -45,4 +48,6 @@
 
      Additionally, you should check your configuration by calling
      'squid -f /path/to/squid.conf -k parse' before starting Squid.
-
+EOM
+}
+]

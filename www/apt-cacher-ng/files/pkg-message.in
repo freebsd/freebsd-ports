@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This port sets up apt-cacher-ng to be used in a FreeBSD context.
 
 The FreeBSD installer on the official media does not allow to provide the name of a proxy server.
@@ -12,3 +15,6 @@ proxy settings for pkgng can be persisted by editing /usr/local/etc/pkg.conf and
 pkg_env: {
         http_proxy: "http://myproxy:3142",
 }
+EOM
+}
+]

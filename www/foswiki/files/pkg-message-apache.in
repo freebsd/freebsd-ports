@@ -1,4 +1,6 @@
-*********************************************************************
+[
+{ type: install
+  message: <<EOM
 You have just installed Foswiki with a sample Apache configuration
 file.
 
@@ -36,4 +38,6 @@ To complete the installation, please:
 
 - Visit http://foswiki.org/System/InstallationGuide#Configure_Foswiki for
   additional post-installation configuration information.
-
+EOM
+}
+]

@@ -1,7 +1,9 @@
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
+[
+{ type: install
+  message: <<EOM
 WARNING:
     Do not forget compile www/nginx or www/nginx-devel
     with HTTP_PERL_MODULE support
-
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+EOM
+}
+]

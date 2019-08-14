@@ -1,5 +1,6 @@
-
-*********************************************************************
+[
+{ type: install
+  message: <<EOM
 You have just installed the CodeIgniter web application framework.
 
 Note that you should restart your Apache web server to ensure that
@@ -21,3 +22,6 @@ Optional post-installation instructions include:
 - If you are upgrading from a prior release, please visit:
   http://codeigniter.com/user_guide/installation/upgrading.html
   for additional post-installation instructions.
+EOM
+}
+]

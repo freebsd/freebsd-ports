@@ -1,5 +1,6 @@
-
-====================================================
+[
+{ type: install
+  message: <<EOM
 Remember to modify your apache configuration file
 to load mod_rivet and set the appropriate handlers:
 
@@ -9,5 +10,6 @@ AddType application/x-httpd-rivet .rvt
 AddType application/x-rivet-tcl .tcl
 
 Visit http://tcl.apache.org/rivet/ for documentation
-
-====================================================
+EOM
+}
+]

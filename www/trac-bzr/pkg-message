@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 The following lines must be added to your trac.ini and Trac must be restarted.
 
 [trac]
@@ -6,3 +9,6 @@ repository_type = bzr
 
 [components]
 tracbzr.* = enabled
+EOM
+}
+]

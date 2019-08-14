@@ -1,6 +1,6 @@
-
-                 **** PLEASE READ THIS ****
-
+[
+{ type: install
+  message: <<EOM
    o  To run Cherokee at startup or using the rc script, you need
       to add
 
@@ -20,4 +20,6 @@
    o  By default, the cherokee daemon runs as www:www user.
       If you need it to run as another user, you'll need to manually
       adjust Makefile and recompile the port.
-
+EOM
+}
+]

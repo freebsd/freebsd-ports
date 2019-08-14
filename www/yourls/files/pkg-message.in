@@ -1,10 +1,10 @@
-
-***************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 yourls has been installed into %%WWWDIR%%
 
 Please visit https://yourls.org/#Install for further install/upgrade
 instructions.
-
-***************************************************************************
-
+EOM
+}
+]

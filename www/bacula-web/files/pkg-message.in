@@ -1,8 +1,6 @@
-
-***********************************************************************
-*                         POST INSTALL CONFIGURATION                  *
-***********************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Please note that everything has been installed in %%BASE%%.
 
 You need to copy %%BASE%%/application/config/config.php.sample to
@@ -17,4 +15,6 @@ And restart Apache.
 
 Alternatively, you can create a host dedicated to bacula-web and use
 a DocumentRoot of %%BASE%%/.
-
+EOM
+}
+]

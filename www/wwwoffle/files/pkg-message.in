@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 If you are upgrading from an old version of wwwoffle, you may need to
 convert the cache directory structure to work with the new version.  You
 can find programs in the WWWOFFLE distribution tarball to do this, along
@@ -9,3 +11,6 @@ configuration file, e.g.:
 
      $ perl %%WWWOFFLE_SPOOL%%/upgrade-config.pl \
             %%PREFIX%%/etc/wwwoffle.conf
+EOM
+}
+]

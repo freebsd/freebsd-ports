@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 QUICK-START GUIDE
 
 It's two in the morning and someone posted a link to your website on
@@ -10,3 +13,6 @@ front of your web server:
 4) %%PREFIX%%/etc/rc.d/varnishd start
 
 Refer to the documentation for more advanced configuration.
+EOM
+}
+]

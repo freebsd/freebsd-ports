@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 POST-INSTALLATION NOTES:
 
 Before you can use NanoBlogger, you will have to create a global configuration
@@ -21,4 +24,6 @@ SIDE NOTES FOR OLD USERS:
 
 As always with new release, don't forget to read the documentation and to
 update your weblog configuration file, e.g. ${blog_dir}/blog.conf.
-
+EOM
+}
+]

@@ -1,4 +1,6 @@
-==========================================================================
+[
+{ type: install
+  message: <<EOM
 Now you should start your Tomcat server and browse with:
 
    http://your-server:8180/JSPWiki/
@@ -6,4 +8,6 @@ Now you should start your Tomcat server and browse with:
 to do some configuration.
 
 Enjoy it !
-==========================================================================
+EOM
+}
+]

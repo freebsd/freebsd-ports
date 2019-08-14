@@ -1,4 +1,6 @@
-===============================================================================
+[
+{ type: install
+  message: <<EOM
 Tiny Tiny RSS is now installed, but it requires some additional setup.
 
 You now need to create the DB used by Tiny Tiny RSS as its back-end:
@@ -30,4 +32,6 @@ forget to empty the cache of your browser!
 
 Please read <https://git.tt-rss.org/fox/tt-rss/wiki/InstallationNotes> and
 <https://git.tt-rss.org/fox/tt-rss/wiki/UpdatingFeeds> for important points.
-===============================================================================
+EOM
+}
+]

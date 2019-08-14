@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This plugin needs external viewers before it can display any content.
 External viewers that are supported include:
 	Mplayer
@@ -9,3 +12,6 @@ External viewers that are supported include:
 	Gnumeric
 	Abiword
 	and others...
+EOM
+}
+]

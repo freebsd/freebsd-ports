@@ -1,5 +1,6 @@
-*****************************************************************
-
+[
+{ type: install
+  message: <<EOM
 www/caddy does not ship with any in-tree documentation. Online
 documentation can be found at https://caddyserver.com/docs.
 
@@ -47,5 +48,6 @@ Specific metrics can be disabled at run-time using the
 
 More information about the Caddy Telemetry Project can be found
 at https://caddyserver.com/docs/telemetry.
-
-*****************************************************************
+EOM
+}
+]

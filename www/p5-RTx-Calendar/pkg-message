@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
     To use MyCalendar portlet you must add MyCalendar to $HomepageComponents
     in etc/RT_SiteConfig.pm like that :
 
@@ -7,3 +9,6 @@
 
     To enable private searches ICal feeds, you need to give
     CreateSavedSearch and LoadSavedSearch rights to your users.
+EOM
+}
+]

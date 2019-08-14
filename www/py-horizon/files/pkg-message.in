@@ -1,5 +1,6 @@
-================================================================================
-
+[
+{ type: install
+  message: <<EOM
 ======================
  Apache configuration
 ======================
@@ -97,5 +98,6 @@ OPENSTACK_KEYSTONE_DEFAULT_ROLE = "_member_"
 To enable django-compressor add this option:
 
 STATIC_ROOT = '%%PYTHON_SITELIBDIR%%/openstack_dashboard/static'
-
-================================================================================
+EOM
+}
+]

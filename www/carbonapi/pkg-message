@@ -1,4 +1,10 @@
+[
+{ type: install
+  message: <<EOM
 NOTE ABOUT CARBONAPI:
 
 This daemon can be configured with both yaml and toml. Choose one and specify 
 it's path in carbonapi_conf in /etc/rc.conf or with sysrc.
+EOM
+}
+]

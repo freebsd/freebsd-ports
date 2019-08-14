@@ -1,6 +1,6 @@
-
-                **** NOTE ****
-
+[
+{ type: install
+  message: <<EOM
         Sinatra optionally integrates with haml/sass or Builder
         for templating and mongrel or thin as an HTTP server.
         To use them, install the respective ports separately:
@@ -9,3 +9,6 @@
                 devel/rubygem-builder
                 www/rubygem-mongrel
                 www/rubygem-thin
+EOM
+}
+]

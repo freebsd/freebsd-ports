@@ -1,4 +1,6 @@
-***********************************************************
+[
+{ type: install
+  message: <<EOM
   To start Privoxy on boot, add: privoxy_enable="YES"
   to /etc/rc.conf.
 
@@ -19,5 +21,6 @@
   overwritten with each Privoxy update. Instead of
   changing them you should use your own action and
   filter files as described in Privoxy's manual.
-
-***********************************************************
+EOM
+}
+]

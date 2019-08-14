@@ -1,4 +1,6 @@
-===================================================================
+[
+{ type: install
+  message: <<EOM
  In order to activate %%PORTNAME%% you have to edit squid.conf
  To the contain "url_rewrite_program %%PREFIX%%/bin/%%PORTNAME%%"
  and create a configuration file for %%PORTNAME%%.
@@ -21,4 +23,6 @@
  http://www.squidguard.org/Doc/
 
  To activate the changes do a %%PREFIX%%/sbin/squid -k reconfigure
-===================================================================
+EOM
+}
+]

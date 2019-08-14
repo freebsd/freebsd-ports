@@ -1,20 +1,24 @@
-********************************************************************
-* Before using emacs-w3m, you must add this to your own .emacs:    *
-*                                                                  *
-* (autoload 'w3m "w3m" "Interface for w3m on Emacs." t)            *
-*                                                                  *
-* To use emacs-w3m on Wanderlust, add this to your own .emacs:     *
-*                                                                  *
-* (require 'mime-w3m)                                              *
-*                                                                  *
-* To use emacs-w3m on Mew, add this to your own .mew.el:           *
-*                                                                  *
-* (require 'mew-w3m)                                               *
-* (setq mew-prog-html '(mew-mime-text/html-w3m nil nil))           *
-*                                                                  *
-* And to use octet stream viewer, add this to your own .emacs:     *
-*                                                                  *
-* (require 'w3m)                                                   *
-* (require 'octet)                                                 *
-* (octet-mime-setup)                                               *
-********************************************************************
+[
+{ type: install
+  message: <<EOM
+ Before using emacs-w3m, you must add this to your own .emacs:
+
+ (autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
+
+ To use emacs-w3m on Wanderlust, add this to your own .emacs:
+
+ (require 'mime-w3m)
+
+ To use emacs-w3m on Mew, add this to your own .mew.el:
+
+ (require 'mew-w3m)
+ (setq mew-prog-html '(mew-mime-text/html-w3m nil nil))
+
+ And to use octet stream viewer, add this to your own .emacs:
+
+ (require 'w3m)
+ (require 'octet)
+ (octet-mime-setup)
+EOM
+}
+]

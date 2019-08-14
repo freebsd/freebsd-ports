@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 To get volta up and running, you'll still need to do two things:
 
  - Enable url rewriting from within the squid configuration file.
@@ -8,3 +11,6 @@ To get volta up and running, you'll still need to do two things:
  - Create a volta rule database! For detailed instructions, please
  reference %%DOCSDIR%%/README, or volta's website at:
  https://bitbucket.org/mahlon/volta/
+EOM
+}
+]

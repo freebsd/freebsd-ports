@@ -1,4 +1,6 @@
-*****************************************************************
+[
+{ type: install
+  message: <<EOM
 Before using Gallery 2, you will need to configure your database.
 Full instructions are available here:
 
@@ -27,4 +29,6 @@ Then restart Apache: 'apachectl graceful'
 
 Please visit 'http://{host.domain}/gallery2/' in a
 web-browser and follow the configuration instructions.
-*****************************************************************
+EOM
+}
+]

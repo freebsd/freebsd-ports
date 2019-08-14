@@ -1,6 +1,7 @@
-=============================================
-1 Congratulations! You have successfully installed
-ILIAS e-learning platform. Please keep in mind that
+[
+{ type: install
+  message: <<EOM
+1 Please keep in mind that
 heavily used ILIAS installation can cause huge growth
 of your log file, so remember to disable notices logging
 in your PHP installation.
@@ -30,4 +31,6 @@ with username/root and password/homer as the administrator.
 
 For more information, see the INSTALL DOCUMENTATION:
 http://www.ilias.de/docu/goto.php?target=lm_367&client_id=docu
-=============================================
+EOM
+}
+]

@@ -1,5 +1,9 @@
-*****************************************************************************
+[
+{ type: install
+  message: <<EOM
 Make sure mod_jk.so is enabled in %%APACHEETCDIR%%/httpd.conf and
 mod_jk is configured.  Have a look at
 %%APACHEETCDIR%%/mod_jk.conf.sample for an example.
-*****************************************************************************
+EOM
+}
+]

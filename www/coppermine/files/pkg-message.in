@@ -1,4 +1,6 @@
-****************************************************************
+[
+{ type: install
+  message: <<EOM
 The Coppermine Photo Gallery has been installed in the directory
 %%WWWDIR%%.
 
@@ -14,5 +16,6 @@ A typical configuration would be:
 	Order allow,deny
 	Allow from all
     </Directory>
-
-****************************************************************
+EOM
+}
+]

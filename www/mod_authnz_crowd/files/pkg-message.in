@@ -1,5 +1,6 @@
-=================================================================
-
+[
+{ type: install
+  message: <<EOM
 authnz_crowd apache config was installed as
   %%PREFIX%%/%%APACHEETCDIR%%/Includes/zzz_authnz_crowd.conf
 
@@ -10,5 +11,6 @@ modules are enabled and loaded first, like this:
   LoadModule authz_svn_module %%APACHEMODDIR%%/mod_authz_svn.so
 
   Include %%APACHEETCDIR%%/Includes/zzz_authnz_crowd.conf
-
-=================================================================
+EOM
+}
+]

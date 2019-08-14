@@ -1,5 +1,9 @@
-
+[
+{ type: install
+  message: <<EOM
    Sample scripts installed in the
    ${PREFIX}/share/examples/gracula/
    directory.
-
+EOM
+}
+]

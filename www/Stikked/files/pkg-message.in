@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 The configuration file is in %%ETCDIR%%/stikked.php
 
 This package contains a true_paste feature which has been sent
@@ -13,4 +15,6 @@ Set driver to one of:
 * 'sqlite'
 
 Set appropriate values in the 'Database connection' section.
-
+EOM
+}
+]

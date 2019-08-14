@@ -1,4 +1,6 @@
------------------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 1. Modify your httpd.conf to allow access to HTML output like follow:
         Alias /squidreport %%PREFIX%%/www/squidreport
         <Directory %%PREFIX%%/www/squidreport>
@@ -19,4 +21,6 @@
 
 or run it manually.
 For more information, see %%PREFIX%%/share/doc/squidanalyzer/README file.
------------------------------------------------------------------------------
+EOM
+}
+]

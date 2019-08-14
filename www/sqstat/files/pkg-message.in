@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 - Copy file config.inc.php.defaults to config.inc.php, edit
   config.inc.php to specify your squid proxy server IP and port.
 
@@ -13,4 +15,6 @@ http_access deny manager
 - Set up apache web server:
 
 Alias /sqstat "%%PREFIX%%/%%SQSTATDIR%%/"
-======================================================================
+EOM
+}
+]

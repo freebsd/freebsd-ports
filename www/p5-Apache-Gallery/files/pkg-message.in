@@ -1,5 +1,6 @@
----------------------------------------------------------------------------------------
-
+[
+{ type: install
+  message: <<EOM
 <VirtualHost 123.123.123.123>
         ServerName   gallery.yourdomain.org
         DocumentRoot /data/pictures/
@@ -17,5 +18,6 @@
 </VirtualHost>
 
 And copy %%DATADIR%%/templates/default/gallery.css to your DocumentRoot
-
----------------------------------------------------------------------------------------
+EOM
+}
+]

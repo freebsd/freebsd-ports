@@ -1,5 +1,6 @@
--=*** FCGI::Spawn and fcgi_spawn are installed ***=-
-
+[
+{ type: install
+  message: <<EOM
 For the first time, check all the docs supplied wwith the package.
 
 To run the fcgi_spawn on boot time, create the system user for it, and group,
@@ -10,3 +11,6 @@ fcgi_spawn_username="fcgi"
 fcgi_spawn_groupname="fcgi"
 
 You may want to set fcgi_spawn_flags also according to taste.
+EOM
+}
+]

@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
 You installed restbed, the framework to build RESTful applications
 in C++11.
 
@@ -11,4 +13,6 @@ this library can fail.
 
 See https://github.com/Corvusoft/restbed/issues/231 for further
 information.
-======================================================================
+EOM
+}
+]

@@ -1,4 +1,10 @@
+[
+{ type: install
+  message: <<EOM
 Run gnome-file-share-properties as the user with which you want
 to use gnome-user-share, then logout and log back into GNOME.  Now everything
 under ~/Public should be shared.  You can view this by opening Nautilus, and
 clicking on the Network icon under Computer.
+EOM
+}
+]

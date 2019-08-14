@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 Please note that you have just installed ThunderCache Pro on
 
 	%%PREFIX%%/thunder
@@ -41,3 +43,6 @@ the following line to rc.conf:
 	thundercache_enable="YES"
 
 And start it from %%PREFIX%%/etc/rc.d/thundercache
+EOM
+}
+]

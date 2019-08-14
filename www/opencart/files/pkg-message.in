@@ -1,7 +1,6 @@
-
-POST-INSTALL CONFIGURATION FOR OPENCART
-=====================================
-
+[
+{ type: install
+  message: <<EOM
 1) Create a user and a database for opencart to store all
    its tables in (or choose an existing database).
 
@@ -23,5 +22,6 @@ POST-INSTALL CONFIGURATION FOR OPENCART
 For more information, see the INSTALL DOCUMENTATION:
 
    http://www.opencart.com/documentation
-
-=====================================
+EOM
+}
+]

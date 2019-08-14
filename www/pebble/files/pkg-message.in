@@ -1,4 +1,6 @@
-
+[
+{ type: install
+  message: <<EOM
 Pebble will store its data files in:
 
   %%PEBBLE_HOME%%
@@ -16,4 +18,6 @@ overwritten. Rather, a sample configuration file will be provided:
 To setup your blog, read the documentation at:
 
   file://%%DOCSDIR%%/index.html
-
+EOM
+}
+]

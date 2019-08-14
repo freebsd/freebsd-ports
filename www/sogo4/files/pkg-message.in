@@ -1,5 +1,6 @@
-###############################################################################
-
+[
+{ type: install
+  message: <<EOM
 SOGo 4 was installed
 
 In order to run the sogo daemon (sogod), you will need to create and configure
@@ -55,5 +56,6 @@ Then add the following lines to the root users' crontab (crontab -e):
 
 For more information about using SOGo, visit:
 http://www.sogo.nu/downloads/documentation.html
-
-###############################################################################
+EOM
+}
+]

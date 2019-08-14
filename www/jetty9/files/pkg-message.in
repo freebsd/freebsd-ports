@@ -1,6 +1,6 @@
-
-=== INSTALLATION ===
-
+[
+{ type: install
+  message: <<EOM
 Jetty is now installed in %%APP_HOME%%
 
 From Jetty 9, the way to configure it has changed. You are **strongly**
@@ -46,11 +46,13 @@ variables in the configuration file, e.g.,
   JAVA_OPTIONS="-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8186"
 
 More configuration options are presented in the sample file.
-
-== DEINSTALLATION ==
-
+EOM
+}
+{ type: remove
+  message: <<EOM
 If, when, Jetty is removed, you can safely delete this directory:
 
     %%WWWDIR%%
-
-Enjoy!
+EOM
+}
+]

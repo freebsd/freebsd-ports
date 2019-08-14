@@ -1,5 +1,6 @@
-*************************************************************************
-
+[
+{ type: install
+  message: <<EOM
 The following configuration will need to be done prior to using
 webtrees for the first time:
 
@@ -32,5 +33,6 @@ webtrees for the first time:
    through setting up webtrees: asking for the database server, database
    user and database name, and then assist you in creating a webtrees
    admin account, etc.
-
-*************************************************************************
+EOM
+}
+]

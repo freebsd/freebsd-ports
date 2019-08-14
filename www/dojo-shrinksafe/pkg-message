@@ -1,6 +1,12 @@
+[
+{ type: install
+  message: <<EOM
 You have just installed Dojo Toolkit Shrinksafe, a Javascript
 code compressor.  Type "dojo-shrinksafe -help" to view the
 available program options.
 
 Full documentation with usage examples may be found at:
 http://dojotoolkit.org/reference-guide/1.9/util/shrinksafe/index.html
+EOM
+}
+]

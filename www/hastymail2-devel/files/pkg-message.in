@@ -1,5 +1,6 @@
-******************************************************
-
+[
+{ type: install
+  message: <<EOM
 You have successfully installed Hastymail webmail client.
 Don't forget to edit your own config file. A sample config
 has been installed in:
@@ -17,5 +18,6 @@ after you edit config file run:
     hastymail2.conf hastymail2.rc
 
 Note: if hastymail2.rc already exists, you must remove it
-
-******************************************************
+EOM
+}
+]

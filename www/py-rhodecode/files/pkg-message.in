@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 For upgrade instructions please read:
 http://pythonhosted.org/RhodeCode/upgrade.html
 
@@ -7,3 +10,6 @@ To create a rhodecode configuration file run the following commands:
 
 Further instructions for setup:
 http://packages.python.org/RhodeCode/setup.html#setup
+EOM
+}
+]

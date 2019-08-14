@@ -1,5 +1,6 @@
-==========================================================================
-
+[
+{ type: install
+  message: <<EOM
   Adzap has now been installed.  To get it up and running, copy
   %%EXAMPLESDIR%%/adzap.conf to %%PREFIX%%/etc/ and
   modify it to match your setup.  Then edit your squid configuration
@@ -11,5 +12,6 @@
 
   You can find JavaScript proxy auto-configuration scripts in
   %%EXAMPLESDIR%%/rc
-
-==========================================================================
+EOM
+}
+]

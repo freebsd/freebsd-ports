@@ -1,8 +1,7 @@
-===============================================================================
-
-****************************************************************************
+[
+{ type: install
+  message: <<EOM
  IMPORTANT / 
-****************************************************************************
 
 If you're upgrading from a older version of py-django-cms please read the
 upgrade instructions at: 
@@ -20,15 +19,15 @@ full documentation available at:
 
 http://docs.django-cms.org/en/latest/index.html
 
-****************************************************************************
+
  1. Create a new Django project
-****************************************************************************
+
 
 $ django-admin.py startproject myproject
 
-****************************************************************************
+
  2. Edit settings.py
-****************************************************************************
+
 
 --- Set a SITE_ID by adding the following line:
 
@@ -108,9 +107,9 @@ CMS_TEMPLATES = [
 --- Note: See Django's template language documentation for more on how template
 --- inheritance works.
 
-****************************************************************************
+
  3. Edit urls.py
-****************************************************************************
+
 
 --- Edit urls.py and add url(r'^', include('cms.urls')) to the urlpatterns
 --- list. It should come after other patterns, so that specific URLs for other
@@ -128,9 +127,9 @@ urlpatterns = [
     url(r'^', include('cms.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-****************************************************************************
+
  4. Setup the relational database backend
-****************************************************************************
+
 
 --- For testing purpose SQLite can be used and it is configured by default
 --- in a new Django project's DATABASES.
@@ -138,26 +137,26 @@ urlpatterns = [
 --- Refer to Django's DATABASES setting documentation for the appropriate
 --- configuration when PostgreSQL or MySQL are used as database backends.
 
-****************************************************************************
+
  5. Run migrations to create database tables
-****************************************************************************
+
 
 --- When a database backend has been choosen and set up properly, run the
 --- following command:
 
 $ python manage.py migrate
 
-****************************************************************************
+
  6. Create an admin superuser
-****************************************************************************
+
 
 --- For maintenance purposes it is necessary to create a admin user:
 
 $ python manage.py createsuperuser
 
-****************************************************************************
+
  7. Check CMS installation
-****************************************************************************
+
 
 --- This will check your configuration, your applications, your database and
 --- report on any problems:
@@ -166,9 +165,9 @@ $ python manage.py cms check
 
 --- When there are no errors continue with the last step.
 
-****************************************************************************
+
  8. Start the CMS
-****************************************************************************
+
 
 --- The django CMS project will now run by issuing:
 
@@ -176,5 +175,6 @@ $ python manage.py runserver
 
 --- The CMS can now be reached http://localhost:8000/ and the admin interface
 --- at http://localhost:8000/admin/
-
-===============================================================================
+EOM
+}
+]

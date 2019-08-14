@@ -1,5 +1,6 @@
-=================================================================
-          	**** NOTE ****
+[
+{ type: install
+  message: <<EOM
 1) Please add the following to your apache config, and restart.
     #
     # Directives to allow use of tikiwiki
@@ -11,5 +12,6 @@
 
   For FULL configuration instructions see
   http://http://doc.tiki.org/Tiki+Installation+Guide
-
-=================================================================
+EOM
+}
+]

@@ -1,10 +1,12 @@
-========================================================================
-
+[
+{ type: install
+  message: <<EOM
 Maypole has now been installed.
 
 Documentation:	%%DOCSDIR%%/
 Examples:	%%EXAMPLESDIR%%/
 
 Enjoy!
-
-========================================================================
+EOM
+}
+]

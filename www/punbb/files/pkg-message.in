@@ -1,5 +1,6 @@
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
+[
+{ type: install
+  message: <<EOM
 Congratulations, PunBB is now installed!
 
 
@@ -11,5 +12,6 @@ If you want to optimize PunBB, read the following website:
 http://punbb.org/docs/install.html
 
 PunBB has been installed in %%WWWDIR%%.
-
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+EOM
+}
+]

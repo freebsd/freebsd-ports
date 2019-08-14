@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 For migration from RhodeCode please read:
 http://kallithea.readthedocs.io/en/latest/readme.html#converting-from-rhodecode
 
@@ -6,3 +9,6 @@ To create a Kallithea configuration file run the following commands:
 
 Current instructions for setup:
 http://kallithea.readthedocs.io/en/latest/setup.html
+EOM
+}
+]

@@ -1,4 +1,6 @@
-----------------------------------------------------------------------
+[
+{ type: install
+  message: <<EOM
 To use the TracGantt plugin, please follow these instructions:
 
 Edit your Trac config file to add custom fields to tickets, as well
@@ -70,4 +72,6 @@ Python search path.
 If you are using Trac with Apache and mod_python, you may also need
 to restart Apache, to avoid the plugin being accessible from one
 Apache process, but not others.
-----------------------------------------------------------------------
+EOM
+}
+]

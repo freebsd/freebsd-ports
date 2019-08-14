@@ -1,5 +1,6 @@
-
-******************************************************************************
+[
+{ type: install
+  message: <<EOM
 To complete the polipo installation you should:
 
 1. copy the configuration file example and modify it if desired
@@ -14,5 +15,6 @@ To complete the polipo installation you should:
    %%DESTDIR%%%%PREFIX%%/etc/rc.d/polipo start
 
 4. point your browser to the new proxy server, the default port is 8123
-******************************************************************************
-
+EOM
+}
+]

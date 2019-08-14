@@ -1,4 +1,6 @@
-======================================================================
+[
+{ type: install
+  message: <<EOM
  Set a few required parameters in your Apache configuration:
 
  CASCookiePath   /var/cache/apache2/mod_auth_cas/
@@ -29,4 +31,6 @@
 
  For more informations see:
  https://github.com/Jasig/mod_auth_cas
-======================================================================
+EOM
+}
+]

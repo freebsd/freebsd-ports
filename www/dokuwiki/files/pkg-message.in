@@ -1,6 +1,6 @@
-======================================================================
-                          INSTALLATION NOTES
-
+[
+{ type: install
+  message: <<EOM
 The wiki program have been installed to %%WWWDIR%%.
 
 Please configure your web server to allow running PHP scripts there.
@@ -20,5 +20,6 @@ http://wiki.splitbrain.org/wiki:config
 
 After installation please change the permissions of
 %%WWWDIR%%/conf back to root:wheel.
-
-======================================================================
+EOM
+}
+]

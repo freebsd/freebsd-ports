@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 # To finish installing Blogsum, the following steps must be completed.
 
 1)  Setup the SQLite database:
@@ -9,12 +12,6 @@
 
 	$ cp %%WWWDIR%%/Blogsum/Config.pm.dist \
 		%%WWWDIR%%/Blogsum/Config.pm
-
-################################################################
-NOTE: If you are updating from blogsum 0.9 you should merge the
-relevant changes from %%WWWDIR%%/Blogsum/Config.pm.dist
-into your current %%WWWDIR%%/Blogsum/Config.pm
-###############################################################
 
 3)  If comments will be enabled, visit the CAPTCHA (http://www.captcha.net/)
     project and register your account.  Add your keys to Config.pm.
@@ -45,3 +42,13 @@ edited at http://localhost/blogsum/admin.cgi.
 Please refer to the online support resources if you have questions.
 
 	http://blogsum.obfuscurity.com/
+EOM
+}
+{ type: upgrade, maximum_version: 1.0
+  message: <<EOM
+NOTE: If you are updating from blogsum 0.9 you should merge the
+relevant changes from %%WWWDIR%%/Blogsum/Config.pm.dist
+into your current %%WWWDIR%%/Blogsum/Config.pm
+EOM
+}
+]

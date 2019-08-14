@@ -1,6 +1,6 @@
-
-*************************************************************************
-
+[
+{ type: install
+  message: <<EOM
   Set the environment variable:
 
       FORREST_HOME=%%DATADIR%%
@@ -16,5 +16,6 @@
 
   To avoid any issue with old classes being loaded, run a 'forrest clean-work'
   in your project directory, after you upgraded to this version (%%PORTVERSION%%)
-
-*************************************************************************
+EOM
+}
+]

@@ -1,8 +1,6 @@
-
-***********************************************************************
-*                         POST INSTALL CONFIGURATION                  *
-***********************************************************************
-
+[
+{ type: install
+  message: <<EOM
 Please note that everything has been installed in %%WWWDIR%%.
 
 Read %%WWWDIR%%/README.md.
@@ -18,3 +16,6 @@ like this:
 	</Directory>
 
 And restart Apache.
+EOM
+}
+]
