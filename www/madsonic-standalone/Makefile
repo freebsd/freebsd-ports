@@ -1,7 +1,7 @@
 # Created by: Jeremie Le Hen <jlh@FreeBSD.org>
-# Based on www/subsonic-standalone
-#
 # $FreeBSD$
+#
+# Based on www/subsonic-standalone
 #
 
 PORTNAME=	madsonic-standalone
@@ -70,9 +70,12 @@ SUB_LIST=	SUBSONIC_HOME="${SUBSONIC_HOME}" \
 CONFLICTS_INSTALL=	madsonic-jetty madsonic-resin3 madsonic-tomcat[678]
 
 do-install:
-	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
-	@${CAT} ${WRKDIR}/message-transcoding >> ${PKGMESSAGE}
-	@${CAT} ${PKGDIR}/pkg-message-spacer >> ${PKGMESSAGE}
+	${ECHO_CMD} "[" >> ${PKGMESSAGE}
+	${ECHO_CMD} "{ type: install, message: <<EOM" >> ${PKGMESSAGE}
+	${CAT} ${WRKDIR}/message-transcoding >> ${PKGMESSAGE}
+	${ECHO_CMD} "EOM" >> ${PKGMESSAGE}
+	${ECHO_CMD} "}" >> ${PKGMESSAGE}
+	${ECHO_CMD} "]" >> ${PKGMESSAGE}
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/madsonic.war ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/madsonic-booter.jar ${STAGEDIR}${DATADIR}/
