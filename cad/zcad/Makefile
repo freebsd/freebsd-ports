@@ -3,6 +3,7 @@
 
 PORTNAME=	zcad
 PORTVERSION=	0.9.8.4
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -46,7 +47,6 @@ LAZARUS_PROJECT_FILES=	anchordocking/anchordocking.lpk \
 			utils/typeexporter.lpi
 
 LAZBUILD_ARGS=	-d --pcp=${WRKSRC}/tmppcp
-LLD_UNSAFE=	yes
 
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
