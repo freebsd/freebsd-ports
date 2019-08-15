@@ -36,6 +36,8 @@
 %%DATADIR%%/lib/ant-commons-logging.pom
 %%DATADIR%%/lib/ant-commons-net.jar
 %%DATADIR%%/lib/ant-commons-net.pom
+%%DATADIR%%/lib/ant-imageio.jar
+%%DATADIR%%/lib/ant-imageio.pom
 %%DATADIR%%/lib/ant-jai.jar
 %%DATADIR%%/lib/ant-jai.pom
 %%DATADIR%%/lib/ant-javamail.jar
