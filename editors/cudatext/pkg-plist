@@ -1,4 +1,5 @@
 bin/cudatext
+share/applications/cudatext.desktop
 %%DATADIR%%/data/autocomplete/Bash script.acp
 %%DATADIR%%/data/autocomplete/Batch files.acp
 %%DATADIR%%/data/autocomplete/C++.acp
@@ -14,6 +15,8 @@ bin/cudatext
 %%DATADIR%%/data/autocomplete/SQL.acp
 %%DATADIR%%/data/autocomplete/VBScript.acp
 %%DATADIR%%/data/autocompletespec/css_list.ini
+%%DATADIR%%/data/autocompletespec/emmet_lorem.txt
+%%DATADIR%%/data/autocompletespec/emmet_snippets.ini
 %%DATADIR%%/data/autocompletespec/html_list.ini
 %%DATADIR%%/data/codetreeicons/default_16x16/ar1.png
 %%DATADIR%%/data/codetreeicons/default_16x16/ar2.png
@@ -606,50 +609,6 @@ bin/cudatext
 %%DATADIR%%/data/snippets/Std.HtmlTags/var.synw-snippet
 %%DATADIR%%/data/snippets/Std.HtmlTags/video.synw-snippet
 %%DATADIR%%/data/snippets/Std.HtmlTags/wbr.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/$_cookie.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/$_env.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/$_files.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/$_get.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/$_post.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/$_request.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/$_server.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/$_session.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/$globals.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/class.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/constructor.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/define.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/defined.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/do-while.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/docblock.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/echo.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/elseif.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/for.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/foreach.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/function.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/if-a-b.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/if-else.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/if.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/include-once.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/include.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/new-array.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/php-echo-_.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/php-echo-htmlentities.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/php-echo-this.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/php-else.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/php-foreach.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/php-if-else-endif.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/php-if-endif.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/php-this.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/php.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/require-once.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/require.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/return-false.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/return-true.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/return.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/switch-case.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/switch.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/throw.synw-snippet
-%%DATADIR%%/data/snippets/Std.Php/while.synw-snippet
 %%DATADIR%%/data/themes/Zeus-CudaText.license.txt
 %%DATADIR%%/data/themes/amy.cuda-theme-syntax
 %%DATADIR%%/data/themes/amy.cuda-theme-ui
@@ -680,6 +639,7 @@ bin/cudatext
 %%DATADIR%%/data/toolbaricons/default_24x24/f_save.png
 %%DATADIR%%/data/toolbaricons/default_24x24/indent.png
 %%DATADIR%%/data/toolbaricons/default_24x24/map.png
+%%DATADIR%%/data/toolbaricons/default_24x24/opt.png
 %%DATADIR%%/data/toolbaricons/default_24x24/sort.png
 %%DATADIR%%/data/toolbaricons/default_24x24/unindent.png
 %%DATADIR%%/data/toolbaricons/default_24x24/unpri.png
@@ -690,14 +650,19 @@ bin/cudatext
 %%DATADIR%%/py/cuda_addonman/work_cudatext_updates__sourceforge.py
 %%DATADIR%%/py/cuda_addonman/work_dlg_config.py
 %%DATADIR%%/py/cuda_addonman/work_github.py
+%%DATADIR%%/py/cuda_addonman/work_install_helper.py
 %%DATADIR%%/py/cuda_addonman/work_local.py
 %%DATADIR%%/py/cuda_addonman/work_remote.py
 %%DATADIR%%/py/cuda_comments/__init__.py
 %%DATADIR%%/py/cuda_comments/cd_comments.py
 %%DATADIR%%/py/cuda_comments/cd_plug_lib.py
 %%DATADIR%%/py/cuda_comments/install.inf
-%%DATADIR%%/py/cuda_comments/readme/history.txt
-%%DATADIR%%/py/cuda_comments/readme/readme.txt
+%%DATADIR%%/py/cuda_emmet/__init__.py
+%%DATADIR%%/py/cuda_emmet/content.css
+%%DATADIR%%/py/cuda_emmet/help.html
+%%DATADIR%%/py/cuda_emmet/install.inf
+%%DATADIR%%/py/cuda_emmet/proc_snip_insert.py
+%%DATADIR%%/py/cuda_emmet/profiles_list.py
 %%DATADIR%%/py/cuda_insert_time/__init__.py
 %%DATADIR%%/py/cuda_insert_time/cuda_insert_time.ini
 %%DATADIR%%/py/cuda_insert_time/install.inf
@@ -767,6 +732,8 @@ bin/cudatext
 %%DATADIR%%/py/cuda_testing_dlg_proc/testcall.py
 %%DATADIR%%/py/cuda_testing_gaps/__init__.py
 %%DATADIR%%/py/cuda_testing_gaps/install.inf
+%%DATADIR%%/py/cuda_tree_markdown/__init__.py
+%%DATADIR%%/py/cuda_tree_markdown/install.inf
 %%DATADIR%%/py/cudatext.py
 %%DATADIR%%/py/cudatext_cmd.py
 %%DATADIR%%/py/cudatext_init.py
@@ -913,3 +880,17 @@ bin/cudatext
 %%DATADIR%%/readme/wiki/cudatext_snippets_menu.png
 %%DATADIR%%/readme/wiki/synwrite-lexer-editor.png
 %%DATADIR%%/settings_default/default.json
+%%DATADIR%%/settings_default/lexer Assembly.json
+%%DATADIR%%/settings_default/lexer C++.json
+%%DATADIR%%/settings_default/lexer C.json
+%%DATADIR%%/settings_default/lexer CSS.json
+%%DATADIR%%/settings_default/lexer JSON.json
+%%DATADIR%%/settings_default/lexer JavaScript.json
+%%DATADIR%%/settings_default/lexer Lua.json
+%%DATADIR%%/settings_default/lexer Pascal.json
+%%DATADIR%%/settings_default/lexer Python.json
+%%DATADIR%%/settings_default/lexer Ruby.json
+%%DATADIR%%/settings_default/lexer TypeScript.json
+%%DATADIR%%/settings_default/lexer VBScript.json
+%%DATADIR%%/settings_default/lexer YAML.json
+share/icons/hicolor/512x512/apps/cudatext.png

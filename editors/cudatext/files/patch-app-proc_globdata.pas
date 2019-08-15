@@ -1,18 +1,21 @@
---- app/proc_globdata.pas	2018-04-19 12:59:47.000000000 -0500
-+++ app/proc_globdata.pas	2018-04-25 21:26:43.609078000 -0500
-@@ -745,7 +745,7 @@
+--- app/proc_globdata.pas	2019-07-18 15:40:29.000000000 -0500
++++ app/proc_globdata.pas	2019-07-20 23:37:23.078548000 -0500
+@@ -857,6 +857,9 @@
    Result:=
-   {$ifdef windows} '' {$endif}
-   {$ifdef linux} '/usr/share/cudatext' {$endif}
--  {$ifdef freebsd} '' {$endif}
-+  {$ifdef freebsd} '%%DATADIR%%' {$endif}
-   {$ifdef darwin} ExtractFileDir(OpDirExe)+'/Resources' {$endif}
- end;
- 
-@@ -895,6 +895,15 @@
+     {$ifdef linux} 
+     '/usr/share/cudatext'
++    {$endif}
++    {$ifdef freebsd}
++    '%%DATADIR%%'
+     {$else} 
+       {$ifdef darwin} 
+       ExtractFileDir(OpDirExe)+'/Resources'
+@@ -1032,6 +1035,15 @@
+         '/usr/share/cudatext/data',
+         '/usr/share/cudatext/readme',
          '/usr/share/cudatext/settings_default'
-         ], S);
-       {$endif}
++        ], S);
++      {$endif}
 +      {$ifdef freebsd}
 +      RunCommand('cp', ['-R',
 +        '%%DATADIR%%/py',
@@ -20,8 +23,6 @@
 +        '%%DATADIR%%/readme',
 +        '%%DATADIR%%/settings_default',
 +        OpDirLocal
-+        ], S);
-+      {$endif}
+         ], S);
+       {$endif}
        {$ifdef darwin}
-       //see rsync help. need options:
-       // -u (update)
