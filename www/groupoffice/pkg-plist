@@ -561,6 +561,7 @@
 %%WWWDIR%%/go/core/views/extjs3/form/multiselect/Field.js
 %%WWWDIR%%/go/core/views/extjs3/form/multiselect/Window.js
 %%WWWDIR%%/go/core/views/extjs3/go.js
+%%WWWDIR%%/go/core/views/extjs3/grid/ColumnRenderers.js
 %%WWWDIR%%/go/core/views/extjs3/grid/DateColumn.js
 %%WWWDIR%%/go/core/views/extjs3/grid/EditorGridPanel.js
 %%WWWDIR%%/go/core/views/extjs3/grid/GridPanel.js
