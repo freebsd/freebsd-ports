@@ -3,7 +3,7 @@
 
 PORTNAME=	WinFF
 PORTVERSION=	1.5.5
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	multimedia
 MASTER_SITES=	http://winff.org/docs/source/
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -21,7 +21,6 @@ USES=		fpc lazarus:flavors
 USE_FPC=	chm fcl-base fcl-image fcl-json fcl-xml pasjpeg regexpr x11
 
 NO_WRKSUBDIR=	yes
-LLD_UNSAFE=	yes
 _PORTNAME=	${PORTNAME:tl}
 DATADIR=	${PREFIX}/share/${_PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${_PORTNAME}
