@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	9.0.0rc1
-PORTREVISION=	1
+DISTVERSION=	9.0.0rc2
+PORTREVISION=	0
 CATEGORIES=	devel lang
 .if ${DISTVERSION:M*rc*}
 MASTER_SITES=  http://prereleases.llvm.org/${LLVM_RELEASE}/${RCDIR}
