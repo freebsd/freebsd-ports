@@ -2,7 +2,7 @@
 
 PORTNAME=	docker-credential-pass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	dg@syrec.org
@@ -25,8 +25,8 @@ GH_PROJECT=	docker-credential-helpers
 PLIST_FILES=	bin/docker-credential-pass
 
 pre-build:
-	${CP} ${GO_WRKSRC}/pass/cmd/main_linux.go ${GO_WRKSRC}/pass/cmd/main_freebsd.go
-	${CP} ${GO_WRKSRC}/pass/pass_linux.go ${GO_WRKSRC}/pass/pass_freebsd.go
+	${LN} -s ${GO_WRKSRC}/pass/cmd/main_linux.go ${GO_WRKSRC}/pass/cmd/main_freebsd.go
+	${LN} -s ${GO_WRKSRC}/pass/pass_linux.go ${GO_WRKSRC}/pass/pass_freebsd.go
 
 do-install:
 	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/cmd ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

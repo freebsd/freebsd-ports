@@ -1,3 +1,3 @@
-TIMESTAMP = 1556886368
-SHA256 (docker-docker-credential-helpers-v0.6.2_GH0.tar.gz) = 1b332d40e3d50ce084e54feea09750e18c87dadcfdfd2e8e9bd4622cbbf461b2
-SIZE (docker-docker-credential-helpers-v0.6.2_GH0.tar.gz) = 28238
+TIMESTAMP = 1565713791
+SHA256 (docker-docker-credential-helpers-v0.6.3_GH0.tar.gz) = 441684cf1d2434aa1024aa2f8455e11502c44858e93ea171b19caa656dd2b2e2
+SIZE (docker-docker-credential-helpers-v0.6.3_GH0.tar.gz) = 28971
