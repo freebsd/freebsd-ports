@@ -39,6 +39,7 @@
     SUBDIR += p5-Term-ShellUI
     SUBDIR += pdksh
     SUBDIR += pear-PHP_Shell
+    SUBDIR += poshinit
     SUBDIR += psh
     SUBDIR += rc
     SUBDIR += rush
