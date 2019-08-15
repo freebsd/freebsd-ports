@@ -1,7 +1,7 @@
-TIMESTAMP = 1541311258
-SHA256 (apache-ant-1.10.5-bin.tar.bz2) = 3f762e16c4b5446e64869d146efe76be865a1d83062eede2d0a8fc11d1e20b2d
-SIZE (apache-ant-1.10.5-bin.tar.bz2) = 4730768
+TIMESTAMP = 1565809890
+SHA256 (apache-ant-1.10.6-bin.tar.bz2) = 45c93201dcb0b90622d7c712aa828fc2eeea5819f6aad2b52d6850abcd60636a
+SIZE (apache-ant-1.10.6-bin.tar.bz2) = 5375076
 SHA256 (apache-ant-manpage-20030908.tgz) = 721981f64fae3577c04c527232edab9bfa0755af08319049cec206584dc8830c
 SIZE (apache-ant-manpage-20030908.tgz) = 9735
-SHA256 (apache-ant-1.10.5-manual.tar.bz2) = 5e1804f5d5662d4ada9b84732686f6ac6f6797fc4a9fa7566a30d7fcaba4c6d5
-SIZE (apache-ant-1.10.5-manual.tar.bz2) = 1994419
+SHA256 (apache-ant-1.10.6-manual.tar.bz2) = c7a2b2fdb93bb52a4b3a854b48f85cad731a610a0b497adbe5e8f8bca1f0d65d
+SIZE (apache-ant-1.10.6-manual.tar.bz2) = 2540667
