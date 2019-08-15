@@ -3,6 +3,7 @@
 
 PORTNAME=	doublecmd
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -40,7 +41,6 @@ LAZARUS_PROJECT_FILES+=	components/synunihighlighter/synuni.lpk
 
 LAZBUILD_ARGS=	-d --pcp=${WRKSRC}/tmppcp
 MAKE_ENV+=	LDVER=ld.bfd # for DragonFly
-LLD_UNSAFE=	yes
 
 HELPVERSION=	0.6.0
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
