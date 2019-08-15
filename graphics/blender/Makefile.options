@@ -12,11 +12,11 @@ OPTIONS_DEFINE=		\
 	CYCLES 		\
 	CYCLESOSL 	\
 	DDS 		\
+	DRACO		\
 	FFMPEG 		\
 	FFTW3 		\
 	FRAMESERVER	\
 	FREESTYLE	\
-	GAMEENGINE 	\
 	HDR 		\
 	HEADLESS 	\
 	INPUT_NDOF	\
@@ -34,9 +34,9 @@ OPTIONS_DEFINE=		\
 	OPENCOLORIO 	\
 	OPENEXR 	\
 	OPENIMAGEIO	\
-	OPENJPEG 	\
+	OPENMP 		\
 	OPENSUBDIV	\
-	PLAYER 		\
+	OPENVDB		\
 	RAYOPTIMIZATION	\
 	SDL		\
 	SNDFILE		\
@@ -51,14 +51,15 @@ OPTIONS_DEFAULT=	\
 	BULLET		\
 	CAMERATRACK	\
 	CINEON		\
+	COLLADA		\
 	COMPOSITOR	\
 	CYCLES		\
 	DDS		\
+	DRACO		\
 	FFMPEG 		\
 	FFTW3		\
 	FRAMESERVER	\
 	FREESTYLE	\
-	GAMEENGINE	\
 	HDR		\
 	INPUT_NDOF	\
 	LZO		\
@@ -73,7 +74,8 @@ OPTIONS_DEFAULT=	\
 	OPENCOLORIO	\
 	OPENEXR		\
 	OPENIMAGEIO	\
-	OPENJPEG	\
+	OPENSUBDIV	\
+	OPENVDB		\
 	RAYOPTIMIZATION	\
 	SDL		\
 	TIFF		\
@@ -91,10 +93,11 @@ COMPOSITOR_DESC=	Use the tile-based nodal compositor
 CYCLES_DESC=		Cycles render engine support
 CYCLESOSL_DESC=		Shading support for the cycles render engine
 DDS_DESC=		DDS graphics format support
+# this is required to supoprt gltf import/export
+DRACO_DESC=		Install draco python module
 FFTW3_DESC=		Use fftw for smoke and audio effects
 FRAMESERVER_DESC=	Image FrameServer support for rendering
 FREESTYLE_DESC=		Enable advanced edges rendering
-GAMEENGINE_DESC=	Enable the game engine
 HDR_DESC=		Generic high dynamic-range (HDR) support
 HEADLESS_DESC=		Disable user interface (for render-farms)
 INPUT_NDOF_DESC=	Enable NDOF input device support
@@ -109,7 +112,7 @@ MOD_SMOKE_DESC=		Smoke simulation support
 OPENCOLORIO_DESC=	OpenColorIO-based color management support
 OPENIMAGEIO_DESC=	OpenImageIO image processing support
 OPENSUBDIV_DESC=	Use the OpenSubDiv library for surface subdivision
-PLAYER_DESC=		Enable blender player
+OPENVDB_DESC=		Use openVDB library for volumetric data
 RAYOPTIMIZATION_DESC=	Enable SSE optimizatons for raytracing
 SDL_DESC=		Audio and Joystick support using SDL
 XINPUT_DESC=		X11 Xinput (tablet) support
