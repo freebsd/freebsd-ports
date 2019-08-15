@@ -1,4 +1,3 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.rog>
 # $FreeBSD$
 
 CATEGORIES=	databases lang

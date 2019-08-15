@@ -2,7 +2,7 @@
 
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-rtl-objpas
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Free Pascal compatibility unit with Delphi
 
