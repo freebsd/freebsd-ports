@@ -2,7 +2,7 @@
 
 PORTNAME=	nnn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5
+DISTVERSION=	2.6
 CATEGORIES=	misc shells
 
 MAINTAINER=	dg@syrec.org
@@ -20,7 +20,7 @@ MAKE_ARGS=	PREFIX=${PREFIX} MANPREFIX=${PREFIX}/man \
 CFLAGS+=	-D_WITH_DPRINTF # enable dprintf prototype
 
 OPTIONS_DEFINE=	ATOOL DOCS EXAMPLES MEDIAINFO XDG
-OPTIONS_DEFAULT=	ATOOL MEDIAINFO XDG
+OPTIONS_DEFAULT=ATOOL MEDIAINFO XDG
 
 ATOOL_DESC=	List and extract archives
 XDG_DESC=	Open files with xdg-open
@@ -42,13 +42,13 @@ PORTEXAMPLES=	*
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nnn
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	${INSTALL_DATA} ${WRKSRC}/scripts/auto-completion/bash/nnn-completion.bash \
+	${INSTALL_DATA} ${WRKSRC}/misc/auto-completion/bash/nnn-completion.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
-	${INSTALL_DATA} ${WRKSRC}/scripts/auto-completion/fish/nnn.fish \
+	${INSTALL_DATA} ${WRKSRC}/misc/auto-completion/fish/nnn.fish \
 		${STAGEDIR}${PREFIX}/share/fish/completions
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/scripts/auto-completion/zsh/_nnn \
+	${INSTALL_DATA} ${WRKSRC}/misc/auto-completion/zsh/_nnn \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
 post-install-DOCS-on:
@@ -57,7 +57,7 @@ post-install-DOCS-on:
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/scripts
-	cd ${WRKSRC}/scripts && ${COPYTREE_SHARE} "clipboard-copier natool nlaunch nlay quitcd" \
+	cd ${WRKSRC}/misc && ${COPYTREE_SHARE} "clipboard-copier natool nlaunch nlay quitcd" \
 		${STAGEDIR}${EXAMPLESDIR}/scripts
 	cd ${WRKSRC} && ${COPYTREE_SHARE} plugins ${STAGEDIR}${EXAMPLESDIR}
 
