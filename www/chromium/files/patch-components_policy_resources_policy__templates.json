@@ -1,6 +1,6 @@
---- components/policy/resources/policy_templates.json.orig	2019-06-04 18:55:21 UTC
+--- components/policy/resources/policy_templates.json.orig	2019-07-24 18:58:20 UTC
 +++ components/policy/resources/policy_templates.json
-@@ -984,7 +984,7 @@
+@@ -1019,7 +1019,7 @@
        'name': 'HomepageLocation',
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -9,7 +9,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1013,7 +1013,7 @@
+@@ -1048,7 +1048,7 @@
        'name': 'HomepageIsNewTabPage',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -18,7 +18,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1039,7 +1039,7 @@
+@@ -1074,7 +1074,7 @@
        'name': 'NewTabPageLocation',
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -27,7 +27,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1732,7 +1732,7 @@
+@@ -1767,7 +1767,7 @@
        'name': 'RemoteAccessHostMatchUsername',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -36,7 +36,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -3369,7 +3369,7 @@
+@@ -3399,7 +3399,7 @@
        'name': 'GSSAPILibraryName',
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -45,7 +45,7 @@
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -3421,7 +3421,7 @@
+@@ -3450,7 +3450,7 @@
        'name': 'NtlmV2Enabled',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -54,7 +54,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -6537,7 +6537,7 @@
+@@ -6637,7 +6637,7 @@
        'name': 'RequireOnlineRevocationChecksForLocalAnchors',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -63,7 +63,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -7667,7 +7667,7 @@
+@@ -7761,7 +7761,7 @@
        'name': 'BackgroundModeEnabled',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -72,7 +72,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -8183,7 +8183,7 @@
+@@ -8277,7 +8277,7 @@
        'name': 'FullscreenAllowed',
        'type': 'main',
        'schema': { 'type': 'boolean' },

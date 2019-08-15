@@ -1,7 +1,7 @@
---- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2019-06-04 18:55:15 UTC
+--- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2019-07-24 18:58:01 UTC
 +++ base/allocator/partition_allocator/page_allocator_internals_posix.h
-@@ -14,7 +14,7 @@
- #if defined(OS_MACOSX)
+@@ -16,7 +16,7 @@
+ 
  #include <mach/mach.h>
  #endif
 -#if defined(OS_LINUX)

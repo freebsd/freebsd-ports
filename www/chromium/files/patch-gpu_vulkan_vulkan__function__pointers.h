@@ -1,6 +1,6 @@
---- gpu/vulkan/vulkan_function_pointers.h.orig	2019-06-04 18:55:24 UTC
+--- gpu/vulkan/vulkan_function_pointers.h.orig	2019-07-24 18:58:27 UTC
 +++ gpu/vulkan/vulkan_function_pointers.h
-@@ -131,13 +131,13 @@ struct VulkanFunctionPointers {
+@@ -145,13 +145,13 @@ struct VulkanFunctionPointers {
  #endif
  
    // Device functions shared between Linux and Android.
@@ -16,7 +16,7 @@
    PFN_vkGetMemoryFdKHR vkGetMemoryFdKHRFn = nullptr;
  #endif
  
-@@ -286,14 +286,14 @@ struct VulkanFunctionPointers {
+@@ -313,14 +313,14 @@ struct VulkanFunctionPointers {
        ->vkGetAndroidHardwareBufferPropertiesANDROIDFn
  #endif
  

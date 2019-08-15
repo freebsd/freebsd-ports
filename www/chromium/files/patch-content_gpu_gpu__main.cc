@@ -1,4 +1,4 @@
---- content/gpu/gpu_main.cc.orig	2019-04-30 22:22:47 UTC
+--- content/gpu/gpu_main.cc.orig	2019-07-24 18:58:24 UTC
 +++ content/gpu/gpu_main.cc
 @@ -79,7 +79,7 @@
  #include "ui/gfx/x/x11_switches.h"    // nogncheck
@@ -27,7 +27,7 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -363,7 +363,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -369,7 +369,7 @@ int GpuMain(const MainFunctionParams& parameters) {
  
  namespace {
  
@@ -36,7 +36,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
-@@ -398,7 +398,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -404,7 +404,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
  
    return res;
  }

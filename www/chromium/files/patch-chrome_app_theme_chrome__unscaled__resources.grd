@@ -1,5 +1,14 @@
---- chrome/app/theme/chrome_unscaled_resources.grd.orig	2019-03-11 22:00:52 UTC
+--- chrome/app/theme/chrome_unscaled_resources.grd.orig	2019-07-24 18:58:07 UTC
 +++ chrome/app/theme/chrome_unscaled_resources.grd
+@@ -18,7 +18,7 @@
+         <include name="IDR_PRODUCT_LOGO_64" file="google_chrome/product_logo_64.png" type="BINDATA" />
+         <include name="IDR_PRODUCT_LOGO_128" file="google_chrome/product_logo_128.png" type="BINDATA" />
+         <include name="IDR_PRODUCT_LOGO_256" file="google_chrome/product_logo_256.png" type="BINDATA" />
+-        <if expr="is_linux">
++        <if expr="is_posix">
+           <include name="IDR_PRODUCT_LOGO_128_BETA" file="google_chrome/product_logo_128_beta.png" type="BINDATA" />
+           <include name="IDR_PRODUCT_LOGO_128_DEV" file="google_chrome/product_logo_128_dev.png" type="BINDATA" />
+         </if>
 @@ -100,7 +100,7 @@
          <include name="IDR_PROFILE_AVATAR_2X_25" file="default_200_percent/common/profile_avatar_sun_cloud.png" type="BINDATA" />
          <include name="IDR_PROFILE_AVATAR_2X_26" file="default_200_percent/common/profile_avatar_placeholder.png" type="BINDATA" />

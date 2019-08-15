@@ -1,4 +1,4 @@
---- build/config/compiler/BUILD.gn.orig	2019-06-04 18:55:15 UTC
+--- build/config/compiler/BUILD.gn.orig	2019-07-24 18:58:02 UTC
 +++ build/config/compiler/BUILD.gn
 @@ -54,7 +54,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
@@ -36,7 +36,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" +
                  rebase_path("//tools/clang/crashreports", root_build_dir) ]
  
-@@ -740,7 +740,7 @@ config("compiler_cpu_abi") {
+@@ -741,7 +741,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -45,16 +45,16 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1174,7 +1174,7 @@ config("assembler_debug_dir") {
-   # TODO(thakis): Once openmax_dl no longer uses -fno-integrated-as, move
-   # this behind the -fdebug-compilation-dir cflags in the "compiler" config.
-   if (symbol_level != 0 && is_clang && strip_absolute_paths_from_debug_symbols) {
+@@ -1102,7 +1102,7 @@ config("compiler_deterministic") {
+       "-Xclang",
+       ".",
+     ]
 -    if (!is_win) {
 +    if (!is_win && !is_bsd) {
        # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
        asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
      }
-@@ -1490,7 +1490,7 @@ config("default_warnings") {
+@@ -1492,7 +1492,7 @@ config("default_warnings") {
          cflags += [ "-Wno-nonportable-include-path" ]
        }
  
@@ -63,7 +63,7 @@
          # Flags NaCl (Clang 3.7) and Xcode 9.2 (Clang clang-900.0.39.2) do not
          # recognize.
          cflags += [
-@@ -1699,7 +1699,7 @@ config("thin_archive") {
+@@ -1701,7 +1701,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -72,7 +72,7 @@
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2286,7 +2286,7 @@ config("symbols") {
+@@ -2288,7 +2288,7 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {
@@ -81,7 +81,7 @@
      }
  
      if (use_debug_fission && !is_nacl && !is_android) {
-@@ -2307,7 +2307,7 @@ config("symbols") {
+@@ -2309,7 +2309,7 @@ config("symbols") {
      # DWARF info may be corrupt; offsets in a range list entry are in different
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
      if (!is_mac && !is_ios && !is_nacl && current_cpu != "x86" &&

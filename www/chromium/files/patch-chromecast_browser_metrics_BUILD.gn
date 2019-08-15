@@ -1,6 +1,6 @@
---- chromecast/browser/metrics/BUILD.gn.orig	2019-06-04 18:55:20 UTC
+--- chromecast/browser/metrics/BUILD.gn.orig	2019-07-24 18:58:17 UTC
 +++ chromecast/browser/metrics/BUILD.gn
-@@ -31,7 +31,7 @@ cast_source_set("metrics") {
+@@ -32,7 +32,7 @@ cast_source_set("metrics") {
      "//third_party/metrics_proto",
    ]
  

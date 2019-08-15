@@ -1,18 +1,8 @@
---- chrome/browser/flag_descriptions.cc.orig	2019-06-04 18:55:17 UTC
+--- chrome/browser/flag_descriptions.cc.orig	2019-07-24 18:58:09 UTC
 +++ chrome/browser/flag_descriptions.cc
-@@ -3465,29 +3465,29 @@ const char kInstallableInkDropDescription[] =
+@@ -3256,21 +3256,21 @@ const char kInstallableInkDropDescription[] =
  
  // Random platform combinations -----------------------------------------------
- 
--#if defined(OS_WIN) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
- 
- const char kEnableInputImeApiName[] = "Enable Input IME API";
- const char kEnableInputImeApiDescription[] =
-     "Enable the use of chrome.input.ime API.";
- 
--#endif  // defined(OS_WIN) || defined(OS_LINUX)
-+#endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
  
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)

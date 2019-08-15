@@ -1,6 +1,6 @@
---- chrome/common/webui_url_constants.cc.orig	2019-06-04 18:55:19 UTC
+--- chrome/common/webui_url_constants.cc.orig	2019-07-24 18:58:14 UTC
 +++ chrome/common/webui_url_constants.cc
-@@ -251,7 +251,7 @@ const char kChromeUIMetroFlowURL[] = "chrome://make-me
+@@ -299,7 +299,7 @@ const char kChromeUIMetroFlowURL[] = "chrome://make-me
  const char kChromeUICastHost[] = "cast";
  #endif
  
@@ -9,7 +9,7 @@
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  const char kChromeUIHatsHost[] = "hats";
-@@ -262,17 +262,17 @@ const char kChromeUIHatsURL[] = "chrome://hats/";
+@@ -310,17 +310,17 @@ const char kChromeUIHatsURL[] = "chrome://hats/";
  const char kChromeUILinuxProxyConfigHost[] = "linux-proxy-config";
  #endif
  
@@ -30,7 +30,7 @@
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
  
-@@ -463,13 +463,13 @@ const char* const kChromeHostURLs[] = {
+@@ -525,13 +525,13 @@ const char* const kChromeHostURLs[] = {
      kChromeUIInternetDetailDialogHost,
      kChromeUIAssistantOptInHost,
  #endif

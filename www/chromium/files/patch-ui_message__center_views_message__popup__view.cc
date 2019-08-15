@@ -1,6 +1,6 @@
---- ui/message_center/views/message_popup_view.cc.orig	2019-06-04 18:55:50 UTC
+--- ui/message_center/views/message_popup_view.cc.orig	2019-07-24 18:59:22 UTC
 +++ ui/message_center/views/message_popup_view.cc
-@@ -114,7 +114,7 @@ void MessagePopupView::AutoCollapse() {
+@@ -103,7 +103,7 @@ void MessagePopupView::AutoCollapse() {
  void MessagePopupView::Show() {
    views::Widget::InitParams params(views::Widget::InitParams::TYPE_POPUP);
    params.keep_on_top = true;

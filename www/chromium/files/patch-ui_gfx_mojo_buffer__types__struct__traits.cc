@@ -1,4 +1,4 @@
---- ui/gfx/mojo/buffer_types_struct_traits.cc.orig	2019-06-04 18:55:50 UTC
+--- ui/gfx/mojo/buffer_types_struct_traits.cc.orig	2019-07-24 18:59:22 UTC
 +++ ui/gfx/mojo/buffer_types_struct_traits.cc
 @@ -24,15 +24,15 @@ bool StructTraits<gfx::mojom::BufferUsageAndFormatData
    return data.ReadUsage(&out->usage) && data.ReadFormat(&out->format);
@@ -19,7 +19,7 @@
  }
  
  bool StructTraits<
-@@ -46,7 +46,7 @@ bool StructTraits<
+@@ -45,7 +45,7 @@ bool StructTraits<
  
    mojo::PlatformHandle handle =
        mojo::UnwrapPlatformHandle(data.TakeBufferHandle());
@@ -28,8 +28,8 @@
    if (!handle.is_fd())
      return false;
    out->fd = handle.TakeFD();
-@@ -54,7 +54,7 @@ bool StructTraits<
-   if (!handle.is_valid_handle())
+@@ -53,7 +53,7 @@ bool StructTraits<
+   if (!handle.is_handle())
      return false;
    out->vmo = zx::vmo(handle.TakeHandle());
 -#endif  // defined(OS_LINUX)
@@ -37,8 +37,8 @@
  
    return true;
  }
-@@ -65,7 +65,7 @@ bool StructTraits<
-                                    gfx::NativePixmapHandle* out) {
+@@ -71,7 +71,7 @@ bool StructTraits<
+   out->modifier = data.modifier();
    return data.ReadPlanes(&out->planes);
  }
 -#endif  // defined(OS_LINUX) || defined(USE_OZONE)
@@ -46,7 +46,7 @@
  
  gfx::mojom::GpuMemoryBufferPlatformHandlePtr StructTraits<
      gfx::mojom::GpuMemoryBufferHandleDataView,
-@@ -78,7 +78,7 @@ gfx::mojom::GpuMemoryBufferPlatformHandlePtr StructTra
+@@ -84,7 +84,7 @@ gfx::mojom::GpuMemoryBufferPlatformHandlePtr StructTra
        return gfx::mojom::GpuMemoryBufferPlatformHandle::NewSharedMemoryHandle(
            std::move(handle.region));
      case gfx::NATIVE_PIXMAP:
@@ -55,7 +55,7 @@
        return gfx::mojom::GpuMemoryBufferPlatformHandle::NewNativePixmapHandle(
            std::move(handle.native_pixmap_handle));
  #else
-@@ -154,7 +154,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
+@@ -160,7 +160,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
        out->type = gfx::SHARED_MEMORY_BUFFER;
        out->region = std::move(platform_handle->get_shared_memory_handle());
        return true;

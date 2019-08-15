@@ -1,13 +1,7 @@
---- components/crash/content/app/BUILD.gn.orig	2019-04-30 22:22:41 UTC
+--- components/crash/content/app/BUILD.gn.orig	2019-07-24 18:58:18 UTC
 +++ components/crash/content/app/BUILD.gn
-@@ -36,12 +36,12 @@ static_library("app") {
+@@ -37,7 +37,7 @@ static_library("app") {
      sources += [ "crashpad.cc" ]
-   }
- 
--  if (is_android || (is_linux && !is_chromeos)) {
-+  if (is_android || (is_linux && !is_chromeos && !is_bsd)) {
-     set_sources_assignment_filter([])
-     sources += [ "crashpad_linux.cc" ]
    }
  
 -  if (is_linux) {
@@ -15,14 +9,11 @@
      sources += [
        "breakpad_linux.cc",
        "breakpad_linux.h",
-@@ -82,7 +82,10 @@ static_library("app") {
-       "//third_party/crashpad/crashpad/snapshot",
+@@ -78,7 +78,7 @@ static_library("app") {
+       "//sandbox",
      ]
  
 -    if (is_linux) {
-+    if (is_bsd) {
-+      deps -= [ "//third_party/crashpad/crashpad/snapshot" ]
-+    }
 +    if (is_linux && !is_bsd) {
        deps += [ "//third_party/breakpad:client" ]
      }

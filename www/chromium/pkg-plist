@@ -7,6 +7,12 @@ bin/chrome
 %%DATADIR%%/icudtl.dat
 %%DATADIR%%/libEGL.so
 %%DATADIR%%/libGLESv2.so
+%%DATADIR%%/libVkICD_mock_icd.so
+%%DATADIR%%/libVkLayer_core_validation.so
+%%DATADIR%%/libVkLayer_object_lifetimes.so
+%%DATADIR%%/libVkLayer_stateless_validation.so
+%%DATADIR%%/libVkLayer_thread_safety.so
+%%DATADIR%%/libVkLayer_unique_objects.so
 %%DATADIR%%/locales/am.pak
 %%DATADIR%%/locales/am.pak.info
 %%DATADIR%%/locales/ar.pak
@@ -307,6 +313,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/timeline_model/timeline_model_module.js
 %%DATADIR%%/resources/inspector/toolbox.html
 %%DATADIR%%/resources/inspector/toolbox.js
+%%DATADIR%%/resources/inspector/web_audio/web_audio_module.js
 %%DATADIR%%/resources/inspector/worker_app.html
 %%DATADIR%%/resources/inspector/worker_app.js
 %%DATADIR%%/resources/inspector/workspace_diff/workspace_diff_module.js
@@ -314,14 +321,8 @@ bin/chrome
 %%NOT_AARCH64%%%%DATADIR%%/swiftshader/libEGL.so
 %%NOT_AARCH64%%%%DATADIR%%/swiftshader/libGLESv2.so
 %%DATADIR%%/v8_context_snapshot.bin
-%%DATADIR%%/views_mus_resources.pak
 %%DEBUG%%%%DATADIR%%/character_data_generator
-%%DEBUG%%%%DATADIR%%/libVkICD_mock_icd.so
-%%DEBUG%%%%DATADIR%%/libVkLayer_core_validation.so
-%%DEBUG%%%%DATADIR%%/libVkLayer_object_lifetimes.so
-%%DEBUG%%%%DATADIR%%/libVkLayer_stateless_validation.so
-%%DEBUG%%%%DATADIR%%/libVkLayer_thread_safety.so
-%%DEBUG%%%%DATADIR%%/libVkLayer_unique_objects.so
+%%DEBUG%%%%DATADIR%%/libimmediate_crash_test_helper.so
 %%DEBUG%%%%DATADIR%%/libmalloc_wrapper.so
 %%DEBUG%%%%DATADIR%%/libtest_shared_library.so
 %%DRIVER%%bin/chromedriver

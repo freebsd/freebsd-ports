@@ -1,7 +1,7 @@
---- components/feature_engagement/public/event_constants.h.orig	2019-03-11 22:00:56 UTC
+--- components/feature_engagement/public/event_constants.h.orig	2019-07-24 18:58:19 UTC
 +++ components/feature_engagement/public/event_constants.h
-@@ -49,7 +49,7 @@ extern const char kReopenTabConditionsMet[];
- extern const char kTabReopened[];
+@@ -57,7 +57,7 @@ extern const char kFocusModeOpened[];
+ extern const char kFocusModeConditionsMet[];
  #endif  // BUILDFLAG(ENABLE_DESKTOP_IN_PRODUCT_HELP)
  
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS)
@@ -9,7 +9,7 @@
  // This event is included in the deferred onboarding events for the New Tab
  // described above, but it is also used on iOS, so it must be compiled
  // separately.
-@@ -57,7 +57,7 @@ extern const char kTabReopened[];
+@@ -65,7 +65,7 @@ extern const char kFocusModeConditionsMet[];
  // The user has explicitly opened a new tab via an entry point from inside of
  // Chrome.
  extern const char kNewTabOpened[];

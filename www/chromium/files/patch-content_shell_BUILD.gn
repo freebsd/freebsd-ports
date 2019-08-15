@@ -1,11 +1,11 @@
---- content/shell/BUILD.gn.orig	2019-06-04 18:55:23 UTC
+--- content/shell/BUILD.gn.orig	2019-07-24 18:58:25 UTC
 +++ content/shell/BUILD.gn
-@@ -947,7 +947,7 @@ group("content_shell_crash_test") {
+@@ -961,7 +961,7 @@ group("content_shell_crash_test") {
    if (is_win) {
      data_deps += [ "//build/win:copy_cdb_to_output" ]
    }
--  if (is_posix && !is_android) {
-+  if (is_posix && !is_android && !is_bsd) {
+-  if (is_posix) {
++  if (is_posix && !is_bsd) {
      data_deps += [
-       "//third_party/breakpad:dump_syms($host_toolchain)",
-       "//third_party/breakpad:minidump_stackwalk($host_toolchain)",
+       "//third_party/breakpad:dump_syms",
+       "//third_party/breakpad:minidump_stackwalk",

@@ -1,6 +1,6 @@
---- components/download/internal/common/base_file.cc.orig	2019-04-30 22:22:41 UTC
+--- components/download/internal/common/base_file.cc.orig	2019-07-24 18:58:19 UTC
 +++ components/download/internal/common/base_file.cc
-@@ -494,7 +494,7 @@ DownloadInterruptReason BaseFile::PublishDownload() {
+@@ -516,7 +516,7 @@ DownloadInterruptReason BaseFile::PublishDownload() {
  }
  #endif  // defined(OS_ANDROID)
  
@@ -9,7 +9,7 @@
  
  namespace {
  
-@@ -578,7 +578,7 @@ DownloadInterruptReason BaseFile::AnnotateWithSourceIn
+@@ -600,7 +600,7 @@ DownloadInterruptReason BaseFile::AnnotateWithSourceIn
    }
    return DOWNLOAD_INTERRUPT_REASON_FILE_FAILED;
  }

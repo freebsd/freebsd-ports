@@ -1,4 +1,4 @@
---- base/process/process_metrics.h.orig	2019-04-30 22:22:28 UTC
+--- base/process/process_metrics.h.orig	2019-07-24 18:58:02 UTC
 +++ base/process/process_metrics.h
 @@ -41,7 +41,7 @@ namespace base {
  // Full declaration is in process_metrics_iocounters.h.
@@ -62,15 +62,15 @@
    // Same thing for idle wakeups.
    TimeTicks last_idle_wakeups_time_;
    uint64_t last_absolute_idle_wakeups_;
-@@ -293,7 +293,7 @@ BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_de
+@@ -292,7 +292,7 @@ BASE_EXPORT size_t GetMaxFds();
+ BASE_EXPORT void IncreaseFdLimitTo(unsigned int max_descriptors);
  #endif  // defined(OS_POSIX)
  
- #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
--    defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA)
-+    defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD) || \
+     defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA)
  // Data about system-wide memory consumption. Values are in KB. Available on
  // Windows, Mac, Linux, Android and Chrome OS.
- //
 @@ -326,7 +326,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
    int avail_phys = 0;
  #endif
@@ -80,30 +80,31 @@
    // This provides an estimate of available memory as described here:
    // https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773
    // NOTE: this is ONLY valid in kernels 3.14 and up.  Its value will always
-@@ -341,7 +341,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -340,7 +340,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+   int swap_free = 0;
  #endif
  
- #if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_AIX) || \
--    defined(OS_FUCHSIA)
-+    defined(OS_FUCHSIA) || defined(OS_BSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_AIX) || \
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_AIX) || defined(OS_BSD) || \
+     defined(OS_FUCHSIA)
    int buffers = 0;
    int cached = 0;
-   int active_anon = 0;
-@@ -351,7 +351,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -350,7 +350,7 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+   int inactive_file = 0;
    int dirty = 0;
    int reclaimable = 0;
- #endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_AIX) ||
--        // defined(OS_FUCHSIA)
-+        // defined(OS_FUCHSIA) || defined(OS_BSD)
+-#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_AIX) ||
++#endif  // defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_AIX) || defined(OS_BSD) ||
+         // defined(OS_FUCHSIA)
  
  #if defined(OS_CHROMEOS)
-   int shmem = 0;
-@@ -377,9 +377,9 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+@@ -376,10 +376,10 @@ struct BASE_EXPORT SystemMemoryInfoKB {
+ // Exposed for memory debugging widget.
  BASE_EXPORT bool GetSystemMemoryInfo(SystemMemoryInfoKB* meminfo);
  
- #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
--        // defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA)
-+        // defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+-#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
++#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+         // defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_FUCHSIA)
  
 -#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_AIX)
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_AIX) || defined(OS_BSD)
@@ -119,3 +120,12 @@
  
  #if defined(OS_CHROMEOS)
  // Data from files in directory /sys/block/zram0 about ZRAM usage.
+@@ -547,7 +547,7 @@ class BASE_EXPORT SystemMetrics {
+   FRIEND_TEST_ALL_PREFIXES(SystemMetricsTest, SystemMetrics);
+ 
+   size_t committed_memory_;
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+   SystemMemoryInfoKB memory_info_;
+   VmStatInfo vmstat_info_;
+   SystemDiskInfo disk_info_;

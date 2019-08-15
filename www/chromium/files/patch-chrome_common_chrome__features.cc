@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.cc.orig	2019-06-04 18:55:18 UTC
+--- chrome/common/chrome_features.cc.orig	2019-07-24 18:58:13 UTC
 +++ chrome/common/chrome_features.cc
-@@ -92,13 +92,13 @@ const base::Feature kAutoFetchOnNetErrorPage{"AutoFetc
+@@ -98,13 +98,13 @@ const base::Feature kAutoFetchOnNetErrorPage{"AutoFetc
                                               base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // defined(OS_ANDROID)
  
@@ -16,7 +16,7 @@
  
  // Enables or disables whether permission prompts are automatically blocked
  // after the user has explicitly dismissed them too many times.
-@@ -144,7 +144,7 @@ const base::Feature kThirdPartyModulesBlocking{
+@@ -150,7 +150,7 @@ const base::Feature kThirdPartyModulesBlocking{
      "ThirdPartyModulesBlocking", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif
  
@@ -25,12 +25,3 @@
  // Enables the dual certificate verification trial feature.
  // https://crbug.com/649026
  const base::Feature kCertDualVerificationTrialFeature{
-@@ -204,7 +204,7 @@ const base::Feature kUsageTimeLimitPolicy{"UsageTimeLi
- // Enables or disables windowing related features for desktop PWAs.
- const base::Feature kDesktopPWAWindowing {
-   "DesktopPWAWindowing",
--#if defined(OS_CHROMEOS) || defined(OS_WIN) || defined(OS_LINUX) || \
-+#if defined(OS_CHROMEOS) || defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD) || \
-     defined(OS_MACOSX)
-       base::FEATURE_ENABLED_BY_DEFAULT
- #else
