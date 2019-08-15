@@ -2,7 +2,7 @@
 
 PORTNAME=	awgg
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -43,7 +43,6 @@ USE_GNOME+=	${USE_GNOME_${FLAVOR}}
 
 LAZBUILD_ARGS=	-d
 LAZARUS_PROJECT_FILES=	src/awgg.lpi
-LLD_UNSAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} 's|/usr/bin/shutdown|/sbin/shutdown|g' ${WRKSRC}/src/fmain.pas
