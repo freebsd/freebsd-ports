@@ -1,0 +1,4 @@
+Test2::Suite dropped the explain() function that had been part of Test::More.
+For those who miss it in Test2, you can use Test2::Tools::Explain.
+
+WWW: https://metacpan.org/release/Test2-Tools-Explain
