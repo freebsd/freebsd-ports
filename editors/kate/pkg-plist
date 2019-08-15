@@ -162,6 +162,7 @@ share/locale/ca/LC_MESSAGES/katexmltools.mo
 share/locale/ca/LC_MESSAGES/kterustcompletion.mo
 share/locale/ca/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ca/LC_MESSAGES/kwrite.mo
+share/locale/ca/LC_MESSAGES/lspclient.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/ca/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/kate-ctags-plugin.mo
@@ -258,6 +259,7 @@ share/locale/de/LC_MESSAGES/katexmltools.mo
 share/locale/de/LC_MESSAGES/kterustcompletion.mo
 share/locale/de/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/de/LC_MESSAGES/kwrite.mo
+share/locale/de/LC_MESSAGES/lspclient.mo
 share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/de/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/el/LC_MESSAGES/kate-ctags-plugin.mo
@@ -306,6 +308,7 @@ share/locale/en_GB/LC_MESSAGES/katexmltools.mo
 share/locale/en_GB/LC_MESSAGES/kterustcompletion.mo
 share/locale/en_GB/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/en_GB/LC_MESSAGES/kwrite.mo
+share/locale/en_GB/LC_MESSAGES/lspclient.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/en_GB/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/eo/LC_MESSAGES/kate-ctags-plugin.mo
@@ -341,6 +344,7 @@ share/locale/es/LC_MESSAGES/katexmltools.mo
 share/locale/es/LC_MESSAGES/kterustcompletion.mo
 share/locale/es/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/es/LC_MESSAGES/kwrite.mo
+share/locale/es/LC_MESSAGES/lspclient.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/es/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/et/LC_MESSAGES/kate-ctags-plugin.mo
@@ -373,8 +377,8 @@ share/locale/eu/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/eu/LC_MESSAGES/katebuild-plugin.mo
 share/locale/eu/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/eu/LC_MESSAGES/katefilebrowserplugin.mo
-share/locale/eu/LC_MESSAGES/kategdbplugin.mo
 share/locale/eu/LC_MESSAGES/katefiletree.mo
+share/locale/eu/LC_MESSAGES/kategdbplugin.mo
 share/locale/eu/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/eu/LC_MESSAGES/kateopenheader.mo
 share/locale/eu/LC_MESSAGES/kateproject.mo
@@ -388,6 +392,7 @@ share/locale/eu/LC_MESSAGES/katexmltools.mo
 share/locale/eu/LC_MESSAGES/kterustcompletion.mo
 share/locale/eu/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/eu/LC_MESSAGES/kwrite.mo
+share/locale/eu/LC_MESSAGES/lspclient.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/eu/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/fa/LC_MESSAGES/kate-ctags-plugin.mo
@@ -448,6 +453,7 @@ share/locale/fr/LC_MESSAGES/katexmltools.mo
 share/locale/fr/LC_MESSAGES/kterustcompletion.mo
 share/locale/fr/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/fr/LC_MESSAGES/kwrite.mo
+share/locale/fr/LC_MESSAGES/lspclient.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/fr/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/ga/LC_MESSAGES/kate-ctags-plugin.mo
@@ -583,6 +589,8 @@ share/locale/id/LC_MESSAGES/katesearch.mo
 share/locale/id/LC_MESSAGES/katesnippetsplugin.mo
 share/locale/id/LC_MESSAGES/katesql.mo
 share/locale/id/LC_MESSAGES/katesymbolviewer.mo
+share/locale/id/LC_MESSAGES/katetextfilter.mo
+share/locale/id/LC_MESSAGES/kterustcompletion.mo
 share/locale/id/LC_MESSAGES/kwrite.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/id/LC_MESSAGES/tabswitcherplugin.mo
@@ -696,6 +704,7 @@ share/locale/ko/LC_MESSAGES/katexmltools.mo
 share/locale/ko/LC_MESSAGES/kterustcompletion.mo
 share/locale/ko/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ko/LC_MESSAGES/kwrite.mo
+share/locale/ko/LC_MESSAGES/lspclient.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/ko/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/lt/LC_MESSAGES/kate-ctags-plugin.mo
@@ -715,8 +724,10 @@ share/locale/lt/LC_MESSAGES/katesnippetsplugin.mo
 share/locale/lt/LC_MESSAGES/katesql.mo
 share/locale/lt/LC_MESSAGES/katesymbolviewer.mo
 share/locale/lt/LC_MESSAGES/katetextfilter.mo
+share/locale/lt/LC_MESSAGES/katexmlcheck.mo
 share/locale/lt/LC_MESSAGES/katexmltools.mo
 share/locale/lt/LC_MESSAGES/kterustcompletion.mo
+share/locale/lt/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/lt/LC_MESSAGES/kwrite.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/lt/LC_MESSAGES/tabswitcherplugin.mo
@@ -734,6 +745,30 @@ share/locale/lv/LC_MESSAGES/katesymbolviewer.mo
 share/locale/lv/LC_MESSAGES/katetextfilter.mo
 share/locale/lv/LC_MESSAGES/katexmltools.mo
 share/locale/lv/LC_MESSAGES/kwrite.mo
+share/locale/ml/LC_MESSAGES/kate-ctags-plugin.mo
+share/locale/ml/LC_MESSAGES/kate-replicode-plugin.mo
+share/locale/ml/LC_MESSAGES/kate.mo
+share/locale/ml/LC_MESSAGES/katebacktracebrowserplugin.mo
+share/locale/ml/LC_MESSAGES/katebuild-plugin.mo
+share/locale/ml/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/ml/LC_MESSAGES/katefilebrowserplugin.mo
+share/locale/ml/LC_MESSAGES/katefiletree.mo
+share/locale/ml/LC_MESSAGES/kategdbplugin.mo
+share/locale/ml/LC_MESSAGES/katekonsoleplugin.mo
+share/locale/ml/LC_MESSAGES/kateopenheader.mo
+share/locale/ml/LC_MESSAGES/kateproject.mo
+share/locale/ml/LC_MESSAGES/katesearch.mo
+share/locale/ml/LC_MESSAGES/katesnippetsplugin.mo
+share/locale/ml/LC_MESSAGES/katesql.mo
+share/locale/ml/LC_MESSAGES/katesymbolviewer.mo
+share/locale/ml/LC_MESSAGES/katetextfilter.mo
+share/locale/ml/LC_MESSAGES/katexmlcheck.mo
+share/locale/ml/LC_MESSAGES/katexmltools.mo
+share/locale/ml/LC_MESSAGES/kterustcompletion.mo
+share/locale/ml/LC_MESSAGES/ktexteditorpreviewplugin.mo
+share/locale/ml/LC_MESSAGES/kwrite.mo
+share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
+share/locale/ml/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/mr/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/mr/LC_MESSAGES/kate.mo
 share/locale/mr/LC_MESSAGES/katebacktracebrowserplugin.mo
@@ -813,6 +848,7 @@ share/locale/nl/LC_MESSAGES/katexmltools.mo
 share/locale/nl/LC_MESSAGES/kterustcompletion.mo
 share/locale/nl/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/nl/LC_MESSAGES/kwrite.mo
+share/locale/nl/LC_MESSAGES/lspclient.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/nl/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/nn/LC_MESSAGES/kate-ctags-plugin.mo
@@ -837,6 +873,7 @@ share/locale/nn/LC_MESSAGES/katexmltools.mo
 share/locale/nn/LC_MESSAGES/kterustcompletion.mo
 share/locale/nn/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/nn/LC_MESSAGES/kwrite.mo
+share/locale/nn/LC_MESSAGES/lspclient.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/nn/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/pa/LC_MESSAGES/kate-ctags-plugin.mo
@@ -881,6 +918,7 @@ share/locale/pl/LC_MESSAGES/katexmltools.mo
 share/locale/pl/LC_MESSAGES/kterustcompletion.mo
 share/locale/pl/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/pl/LC_MESSAGES/kwrite.mo
+share/locale/pl/LC_MESSAGES/lspclient.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/pl/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/pt/LC_MESSAGES/kate-ctags-plugin.mo
@@ -905,6 +943,7 @@ share/locale/pt/LC_MESSAGES/katexmltools.mo
 share/locale/pt/LC_MESSAGES/kterustcompletion.mo
 share/locale/pt/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/pt/LC_MESSAGES/kwrite.mo
+share/locale/pt/LC_MESSAGES/lspclient.mo
 share/locale/pt/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/pt/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/pt_BR/LC_MESSAGES/kate-ctags-plugin.mo
@@ -929,6 +968,7 @@ share/locale/pt_BR/LC_MESSAGES/katexmltools.mo
 share/locale/pt_BR/LC_MESSAGES/kterustcompletion.mo
 share/locale/pt_BR/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/pt_BR/LC_MESSAGES/kwrite.mo
+share/locale/pt_BR/LC_MESSAGES/lspclient.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/pt_BR/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/ro/LC_MESSAGES/kate-ctags-plugin.mo
@@ -973,6 +1013,7 @@ share/locale/ru/LC_MESSAGES/katexmltools.mo
 share/locale/ru/LC_MESSAGES/kterustcompletion.mo
 share/locale/ru/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ru/LC_MESSAGES/kwrite.mo
+share/locale/ru/LC_MESSAGES/lspclient.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/ru/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/sk/LC_MESSAGES/kate-ctags-plugin.mo
@@ -997,6 +1038,7 @@ share/locale/sk/LC_MESSAGES/katexmltools.mo
 share/locale/sk/LC_MESSAGES/kterustcompletion.mo
 share/locale/sk/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/sk/LC_MESSAGES/kwrite.mo
+share/locale/sk/LC_MESSAGES/lspclient.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/sk/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/sl/LC_MESSAGES/kate-ctags-plugin.mo
@@ -1069,6 +1111,7 @@ share/locale/sv/LC_MESSAGES/katexmltools.mo
 share/locale/sv/LC_MESSAGES/kterustcompletion.mo
 share/locale/sv/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/sv/LC_MESSAGES/kwrite.mo
+share/locale/sv/LC_MESSAGES/lspclient.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/sv/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/tr/LC_MESSAGES/kate-ctags-plugin.mo
@@ -1133,6 +1176,7 @@ share/locale/uk/LC_MESSAGES/katexmltools.mo
 share/locale/uk/LC_MESSAGES/kterustcompletion.mo
 share/locale/uk/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/uk/LC_MESSAGES/kwrite.mo
+share/locale/uk/LC_MESSAGES/lspclient.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/uk/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/wa/LC_MESSAGES/kate.mo
@@ -1161,6 +1205,7 @@ share/locale/zh_CN/LC_MESSAGES/katexmltools.mo
 share/locale/zh_CN/LC_MESSAGES/kterustcompletion.mo
 share/locale/zh_CN/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/zh_CN/LC_MESSAGES/kwrite.mo
+share/locale/zh_CN/LC_MESSAGES/lspclient.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/zh_CN/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kate-ctags-plugin.mo

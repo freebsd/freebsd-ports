@@ -74,6 +74,7 @@ share/locale/ko/LC_MESSAGES/umbrello.mo
 share/locale/ko/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/ko/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/lt/LC_MESSAGES/umbrello.mo
+share/locale/lt/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/lt/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/mr/LC_MESSAGES/umbrello.mo
 share/locale/mr/LC_MESSAGES/umbrello_kdevphp5.mo
@@ -147,6 +148,8 @@ share/umbrello5/layouts/activity-vertical.desktop
 share/umbrello5/layouts/class-export.desktop
 share/umbrello5/layouts/class-horizontal.desktop
 share/umbrello5/layouts/class-vertical.desktop
+share/umbrello5/layouts/component-horizontal.desktop
+share/umbrello5/layouts/component-vertical.desktop
 share/umbrello5/layouts/entityrelationship-export.desktop
 share/umbrello5/layouts/entityrelationship-horizontal.desktop
 share/umbrello5/layouts/entityrelationship-vertical.desktop

@@ -1,6 +1,6 @@
 bin/sieveeditor
-etc/xdg/sieveeditor.categories
-etc/xdg/sieveeditor.renamecategories
+share/qlogging-categories5/sieveeditor.categories
+share/qlogging-categories5/sieveeditor.renamecategories
 lib/libsieveeditor.so.5
 lib/libsieveeditor.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/applications/org.kde.sieveeditor.desktop

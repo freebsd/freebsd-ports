@@ -1,4 +1,4 @@
-etc/xdg/libkmahjongg.categories
+share/qlogging-categories5/libkmahjongg.categories
 include/KF5/KF5KMahjongg/kmahjonggbackground.h
 include/KF5/KF5KMahjongg/kmahjonggconfigdialog.h
 include/KF5/KF5KMahjongg/kmahjongglib_version.h
@@ -74,6 +74,7 @@ share/locale/km/LC_MESSAGES/libkmahjongg5.mo
 share/locale/ko/LC_MESSAGES/libkmahjongg5.mo
 share/locale/lt/LC_MESSAGES/libkmahjongg5.mo
 share/locale/lv/LC_MESSAGES/libkmahjongg5.mo
+share/locale/ml/LC_MESSAGES/libkmahjongg5.mo
 share/locale/mr/LC_MESSAGES/libkmahjongg5.mo
 share/locale/nb/LC_MESSAGES/libkmahjongg5.mo
 share/locale/nds/LC_MESSAGES/libkmahjongg5.mo

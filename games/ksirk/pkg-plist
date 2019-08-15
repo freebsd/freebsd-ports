@@ -1,6 +1,6 @@
 bin/ksirk
 bin/ksirkskineditor
-etc/xdg/ksirk.categories
+share/qlogging-categories5/ksirk.categories
 etc/xdg/ksirk.knsrc
 lib/libiris_ksirk.so
 lib/libiris_ksirk.so.2

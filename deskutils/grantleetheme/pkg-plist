@@ -1,10 +1,12 @@
-etc/xdg/grantleetheme.categories
-etc/xdg/grantleetheme.renamecategories
+share/qlogging-categories5/grantleetheme.categories
+share/qlogging-categories5/grantleetheme.renamecategories
+include/KF5/GrantleeTheme/GenericFormatter
 include/KF5/GrantleeTheme/GrantleeKi18nLocalizer
 include/KF5/GrantleeTheme/GrantleeTheme
 include/KF5/GrantleeTheme/GrantleeThemeEngine
 include/KF5/GrantleeTheme/GrantleeThemeManager
 include/KF5/GrantleeTheme/QtResourceTemplateLoader
+include/KF5/grantleetheme/GenericFormatter
 include/KF5/grantleetheme/GrantleeKi18nLocalizer
 include/KF5/grantleetheme/GrantleeTheme
 include/KF5/grantleetheme/GrantleeThemeEngine
@@ -12,6 +14,7 @@ include/KF5/grantleetheme/GrantleeThemeManager
 include/KF5/grantleetheme/QtResourceTemplateLoader
 include/KF5/grantleetheme/grantleeki18nlocalizer.h
 include/KF5/grantleetheme/grantleetheme.h
+include/KF5/grantleetheme/genericformatter.h
 include/KF5/grantleetheme/grantleetheme_export.h
 include/KF5/grantleetheme/grantleethemeengine.h
 include/KF5/grantleetheme/grantleethememanager.h

@@ -1,4 +1,4 @@
-etc/xdg/libkgapi.categories
+share/qlogging-categories5/libkgapi.categories
 include/KPim/KGAPI/KGAPI/Account
 include/KPim/KGAPI/KGAPI/AccountInfo
 include/KPim/KGAPI/KGAPI/AccountInfoFetchJob
@@ -61,6 +61,13 @@ include/KPim/KGAPI/KGAPI/Drive/ChildReference
 include/KPim/KGAPI/KGAPI/Drive/ChildReferenceCreateJob
 include/KPim/KGAPI/KGAPI/Drive/ChildReferenceDeleteJob
 include/KPim/KGAPI/KGAPI/Drive/ChildReferenceFetchJob
+include/KPim/KGAPI/KGAPI/Drive/Drives
+include/KPim/KGAPI/KGAPI/Drive/DrivesCreateJob
+include/KPim/KGAPI/KGAPI/Drive/DrivesDeleteJob
+include/KPim/KGAPI/KGAPI/Drive/DrivesFetchJob
+include/KPim/KGAPI/KGAPI/Drive/DrivesHideJob
+include/KPim/KGAPI/KGAPI/Drive/DrivesModifyJob
+include/KPim/KGAPI/KGAPI/Drive/DrivesSearchQuery
 include/KPim/KGAPI/KGAPI/Drive/File
 include/KPim/KGAPI/KGAPI/Drive/FileAbstractDataJob
 include/KPim/KGAPI/KGAPI/Drive/FileAbstractModifyJob
@@ -188,6 +195,13 @@ include/KPim/KGAPI/kgapi/drive/childreference.h
 include/KPim/KGAPI/kgapi/drive/childreferencecreatejob.h
 include/KPim/KGAPI/kgapi/drive/childreferencedeletejob.h
 include/KPim/KGAPI/kgapi/drive/childreferencefetchjob.h
+include/KPim/KGAPI/kgapi/drive/drives.h
+include/KPim/KGAPI/kgapi/drive/drivescreatejob.h
+include/KPim/KGAPI/kgapi/drive/drivesdeletejob.h
+include/KPim/KGAPI/kgapi/drive/drivesfetchjob.h
+include/KPim/KGAPI/kgapi/drive/driveshidejob.h
+include/KPim/KGAPI/kgapi/drive/drivesmodifyjob.h
+include/KPim/KGAPI/kgapi/drive/drivessearchquery.h
 include/KPim/KGAPI/kgapi/drive/file.h
 include/KPim/KGAPI/kgapi/drive/fileabstractdatajob.h
 include/KPim/KGAPI/kgapi/drive/fileabstractmodifyjob.h

@@ -1,6 +1,6 @@
 bin/kpat
 etc/xdg/kcardtheme.knsrc
-etc/xdg/kpat.categories
+share/qlogging-categories5/kpat.categories
 etc/xdg/kpat.knsrc
 lib/libkcardgame.so
 man/de/man6/kpat.6.gz

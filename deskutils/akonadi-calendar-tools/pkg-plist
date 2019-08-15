@@ -1,7 +1,7 @@
 bin/calendarjanitor
 bin/konsolekalendar
-etc/xdg/console.categories
-etc/xdg/console.renamecategories
+share/qlogging-categories5/console.categories
+share/qlogging-categories5/console.renamecategories
 share/applications/konsolekalendar.desktop
 share/icons/hicolor/128x128/apps/konsolekalendar.png
 share/icons/hicolor/16x16/apps/konsolekalendar.png

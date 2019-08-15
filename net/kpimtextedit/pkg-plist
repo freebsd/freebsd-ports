@@ -1,4 +1,4 @@
-etc/xdg/kpimtextedit.categories
+share/qlogging-categories5/kpimtextedit.categories
 include/KF5/KPIMTextEdit/KPIMTextEdit/AbstractTextToSpeechInterface
 include/KF5/KPIMTextEdit/KPIMTextEdit/EditorUtil
 include/KF5/KPIMTextEdit/KPIMTextEdit/EmoticonUnicodeTab

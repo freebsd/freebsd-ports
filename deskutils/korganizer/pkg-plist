@@ -1,9 +1,9 @@
 bin/korgac
 bin/korganizer
 etc/xdg/autostart/org.kde.korgac.desktop
-etc/xdg/korganizer.categories
-etc/xdg/korganizer.knsrc
-etc/xdg/korganizer.renamecategories
+share/dbus-1/services/org.kde.korganizer.service
+share/qlogging-categories5/korganizer.categories
+share/qlogging-categories5/korganizer.renamecategories
 lib/libkorganizer_core.so
 lib/libkorganizer_core.so.5
 lib/libkorganizer_core.so.%%KDE_APPLICATIONS_SHLIB_VER%%
@@ -61,6 +61,7 @@ share/icons/oxygen/16x16/actions/upindicator.png
 share/icons/oxygen/22x22/actions/checkmark.png
 share/kconf_update/korganizer-15.08-kickoff.sh
 share/kconf_update/korganizer.upd
+share/knsrcfiles/korganizer.knsrc
 share/kontact/ksettingsdialog/korganizer.setdlg
 share/kontact/ksettingsdialog/specialdates.setdlg
 share/korgac/icons/hicolor/128x128/apps/korgac.png
@@ -91,7 +92,7 @@ share/kservices5/korganizer_configtime.desktop
 share/kservices5/korganizer_configviews.desktop
 share/kservices5/korganizer_part.desktop
 share/kservices5/webcal.protocol
-share/kservicetypes5/dbuscalendar.desktop
+share/kservicetypes5/korganizerpart.desktop
 share/locale/ar/LC_MESSAGES/korgac.mo
 share/locale/ar/LC_MESSAGES/korganizer.mo
 share/locale/bg/LC_MESSAGES/korganizer.mo

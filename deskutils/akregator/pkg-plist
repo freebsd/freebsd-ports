@@ -1,7 +1,7 @@
 bin/akregator
 bin/akregatorstorageexporter
-etc/xdg/akregator.categories
-etc/xdg/akregator.renamecategories
+share/qlogging-categories5/akregator.categories
+share/qlogging-categories5/akregator.renamecategories
 lib/libakregatorinterfaces.so
 lib/libakregatorinterfaces.so.5
 lib/libakregatorinterfaces.so.%%KDE_APPLICATIONS_SHLIB_VER%%

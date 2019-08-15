@@ -2,7 +2,6 @@
 
 PORTNAME=	kdepim-addons
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -29,9 +28,9 @@ USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadiimportwizard \
 		akonadimime akonadinotes calendarcore calendarsupport \
 		calendarutils contacts eventviews gapi grantleetheme \
 		gravatar identitymanagement imap incidenceeditor \
-		kdepim-apps-libs kitinerary kpkpass libkdepim libkleo libksieve mailcommon \
-		mailimporter mailtransport messagelib mime pimcommon \
-		pimtextedit tnef
+		kdepim-apps-libs kitinerary kontactinterface kpkpass libkdepim \
+		libkleo libksieve mailcommon mailimporter mailtransport \
+		messagelib mime pimcommon pimtextedit tnef
 USE_QT=		concurrent core dbus declarative gui location network printsupport testlib \
 		webchannel webengine widgets xml \
 		buildtools_build qmake_build

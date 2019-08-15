@@ -1,7 +1,7 @@
 bin/kleopatra
 bin/kwatchgnupg
-etc/xdg/kleopatra.categories
-etc/xdg/kleopatra.renamecategories
+share/qlogging-categories5/kleopatra.categories
+share/qlogging-categories5/kleopatra.renamecategories
 lib/libkleopatraclientcore.so
 lib/libkleopatraclientcore.so.1
 lib/libkleopatraclientcore.so.1.3.0

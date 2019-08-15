@@ -1,5 +1,5 @@
-etc/xdg/kmailtransport.categories
-etc/xdg/kmailtransport.renamecategories
+share/qlogging-categories5/kmailtransport.categories
+share/qlogging-categories5/kmailtransport.renamecategories
 include/KF5/MailTransport/PrecommandJob
 include/KF5/MailTransport/ServerTest
 include/KF5/MailTransport/Transport

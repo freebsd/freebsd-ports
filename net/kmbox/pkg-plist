@@ -1,5 +1,5 @@
-etc/xdg/kmbox.categories
-etc/xdg/kmbox.renamecategories
+share/qlogging-categories5/kmbox.categories
+share/qlogging-categories5/kmbox.renamecategories
 include/KF5/KMbox/KMbox/MBox
 include/KF5/KMbox/KMbox/MBoxEntry
 include/KF5/KMbox/kmbox/kmbox_export.h

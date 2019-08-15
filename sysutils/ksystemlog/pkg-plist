@@ -50,3 +50,4 @@ share/locale/ug/LC_MESSAGES/ksystemlog.mo
 share/locale/uk/LC_MESSAGES/ksystemlog.mo
 share/locale/zh_CN/LC_MESSAGES/ksystemlog.mo
 share/locale/zh_TW/LC_MESSAGES/ksystemlog.mo
+share/metainfo/org.kde.ksystemlog.appdata.xml

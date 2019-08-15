@@ -1,7 +1,6 @@
 bin/konsole
 bin/konsoleprofile
-etc/xdg/konsole.categories
-etc/xdg/konsole.knsrc
+share/qlogging-categories5/konsole.categories
 lib/libkdeinit5_konsole.so
 lib/libkonsoleprivate.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libkonsoleprivate.so.%%KDE_APPLICATIONS_VERSION%%
@@ -24,6 +23,7 @@ share/knotifications5/konsole.notifyrc
 %%DATADIR%%/default.keytab
 %%DATADIR%%/linux.keytab
 %%DATADIR%%/solaris.keytab
+share/knsrcfiles/konsole.knsrc
 share/kservices5/ServiceMenus/konsolehere.desktop
 share/kservices5/ServiceMenus/konsolerun.desktop
 share/kservices5/konsolepart.desktop
@@ -62,6 +62,7 @@ share/locale/km/LC_MESSAGES/konsole.mo
 share/locale/ko/LC_MESSAGES/konsole.mo
 share/locale/lt/LC_MESSAGES/konsole.mo
 share/locale/lv/LC_MESSAGES/konsole.mo
+share/locale/ml/LC_MESSAGES/konsole.mo
 share/locale/mr/LC_MESSAGES/konsole.mo
 share/locale/nb/LC_MESSAGES/konsole.mo
 share/locale/nds/LC_MESSAGES/konsole.mo

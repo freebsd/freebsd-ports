@@ -1,4 +1,4 @@
-etc/xdg/akonadi-mime.categories
+share/qlogging-categories5/akonadi-mime.categories
 include/KF5/Akonadi/KMime/AddressAttribute
 include/KF5/Akonadi/KMime/CommandBase
 include/KF5/Akonadi/KMime/MarkAsCommand

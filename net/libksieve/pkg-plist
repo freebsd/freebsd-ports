@@ -1,6 +1,5 @@
-etc/xdg/ksieve_script.knsrc
-etc/xdg/libksieve.categories
-etc/xdg/libksieve.renamecategories
+share/qlogging-categories5/libksieve.categories
+share/qlogging-categories5/libksieve.renamecategories
 include/KF5/KManageSieve/SieveJob
 include/KF5/KSieveUi/AbstractMoveImapFolderWidget
 include/KF5/KSieveUi/AbstractRegexpEditorLineEdit
@@ -66,6 +65,7 @@ lib/libKF5KSieveUi.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KSieve.pri
 %%QT_MKSPECDIR%%/modules/qt_KSieveUi.pri
 %%QT_PLUGINDIR%%/kf5/kio/sieve.so
+share/knsrcfiles/ksieve_script.knsrc
 share/kservices5/sieve.protocol
 share/locale/ar/LC_MESSAGES/kio_sieve.mo
 share/locale/ar/LC_MESSAGES/libksieve.mo

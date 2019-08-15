@@ -1,6 +1,6 @@
 bin/kdf
 bin/kwikdisk
-etc/xdg/kdf.categories
+share/qlogging-categories5/kdf.categories
 lib/libkdfprivate.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libkdfprivate.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/libkcm_kdf.so

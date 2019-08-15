@@ -1,6 +1,7 @@
 bin/kontact
-etc/xdg/kontact.categories
-etc/xdg/kontact.renamecategories
+share/dbus-1/services/org.kde.kontact.service
+share/qlogging-categories5/kontact.categories
+share/qlogging-categories5/kontact.renamecategories
 lib/libkontactprivate.so.5
 lib/libkontactprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kcm_kontact.so

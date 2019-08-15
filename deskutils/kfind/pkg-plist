@@ -1,5 +1,5 @@
 bin/kfind
-etc/xdg/kfind.categories
+share/qlogging-categories5/kfind.categories
 man/ca/man1/kfind.1.gz
 man/de/man1/kfind.1.gz
 man/es/man1/kfind.1.gz
@@ -58,6 +58,7 @@ share/locale/km/LC_MESSAGES/kfind.mo
 share/locale/ko/LC_MESSAGES/kfind.mo
 share/locale/lt/LC_MESSAGES/kfind.mo
 share/locale/lv/LC_MESSAGES/kfind.mo
+share/locale/ml/LC_MESSAGES/kfind.mo
 share/locale/mr/LC_MESSAGES/kfind.mo
 share/locale/nb/LC_MESSAGES/kfind.mo
 share/locale/nds/LC_MESSAGES/kfind.mo

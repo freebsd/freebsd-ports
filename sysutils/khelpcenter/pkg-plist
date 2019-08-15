@@ -1,5 +1,5 @@
 bin/khelpcenter
-etc/xdg/khelpcenter.categories
+share/qlogging-categories5/khelpcenter.categories
 lib/libexec/khc_mansearch.pl
 lib/libexec/khc_xapianindexer
 lib/libexec/khc_xapiansearch
@@ -72,6 +72,7 @@ share/locale/km/LC_MESSAGES/khelpcenter5.mo
 share/locale/ko/LC_MESSAGES/khelpcenter5.mo
 share/locale/lt/LC_MESSAGES/khelpcenter5.mo
 share/locale/lv/LC_MESSAGES/khelpcenter5.mo
+share/locale/ml/LC_MESSAGES/khelpcenter5.mo
 share/locale/mr/LC_MESSAGES/khelpcenter5.mo
 share/locale/nb/LC_MESSAGES/khelpcenter5.mo
 share/locale/nds/LC_MESSAGES/khelpcenter5.mo

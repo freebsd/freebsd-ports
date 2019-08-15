@@ -1,8 +1,7 @@
 bin/akonadi_notes_agent
 bin/knotes
-etc/xdg/knotes.categories
-etc/xdg/knotes.renamecategories
-etc/xdg/knotes_printing_theme.knsrc
+share/qlogging-categories5/knotes.categories
+share/qlogging-categories5/knotes.renamecategories
 lib/libknotesprivate.so.5
 lib/libknotesprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libnotesharedprivate.so.5
@@ -29,6 +28,7 @@ share/icons/hicolor/64x64/apps/knotes.png
 share/icons/hicolor/scalable/apps/knotes.svg
 share/kconf_update/knotes-15.08-kickoff.sh
 share/kconf_update/knotes.upd
+share/knsrcfiles/knotes_printing_theme.knsrc
 %%DATADIR%%/print/themes/background-color/theme.desktop
 %%DATADIR%%/print/themes/background-color/theme.html
 %%DATADIR%%/print/themes/big-title/theme.desktop

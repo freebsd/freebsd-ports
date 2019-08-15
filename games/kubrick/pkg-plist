@@ -1,5 +1,5 @@
 bin/kubrick
-etc/xdg/kubrick.categories
+share/qlogging-categories5/kubrick.categories
 share/applications/org.kde.kubrick.desktop
 share/icons/hicolor/128x128/apps/kubrick.png
 share/icons/hicolor/16x16/apps/kubrick.png

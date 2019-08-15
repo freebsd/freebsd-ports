@@ -35,6 +35,7 @@ share/locale/km/LC_MESSAGES/kdialog.mo
 share/locale/ko/LC_MESSAGES/kdialog.mo
 share/locale/lt/LC_MESSAGES/kdialog.mo
 share/locale/lv/LC_MESSAGES/kdialog.mo
+share/locale/ml/LC_MESSAGES/kdialog.mo
 share/locale/mr/LC_MESSAGES/kdialog.mo
 share/locale/nb/LC_MESSAGES/kdialog.mo
 share/locale/nds/LC_MESSAGES/kdialog.mo
@@ -56,3 +57,4 @@ share/locale/uk/LC_MESSAGES/kdialog.mo
 share/locale/wa/LC_MESSAGES/kdialog.mo
 share/locale/zh_CN/LC_MESSAGES/kdialog.mo
 share/locale/zh_TW/LC_MESSAGES/kdialog.mo
+share/metainfo/org.kde.kdialog.metainfo.xml

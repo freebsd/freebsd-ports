@@ -1,4 +1,4 @@
-etc/xdg/kio-extras.categories
+share/qlogging-categories5/kio-extras.categories
 include/KF5/kio_archivebase.h
 include/KF5/libkioarchive_export.h
 lib/cmake/KioArchive/KioArchiveConfig.cmake
@@ -109,6 +109,8 @@ share/locale/ar/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/ar/LC_MESSAGES/kio5_sftp.mo
 share/locale/ar/LC_MESSAGES/kio5_smb.mo
 share/locale/ar/LC_MESSAGES/kio5_thumbnail.mo
+share/locale/ast/LC_MESSAGES/kio5_mtp.mo
+share/locale/ast/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/bg/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/bg/LC_MESSAGES/kio5_activities.mo
 share/locale/bg/LC_MESSAGES/kio5_archive.mo
@@ -268,6 +270,7 @@ share/locale/eu/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/eu/LC_MESSAGES/kio5_fish.mo
 share/locale/eu/LC_MESSAGES/kio5_info.mo
 share/locale/eu/LC_MESSAGES/kio5_man.mo
+share/locale/eu/LC_MESSAGES/kio5_mtp.mo
 share/locale/eu/LC_MESSAGES/kio5_nfs.mo
 share/locale/eu/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/eu/LC_MESSAGES/kio5_sftp.mo
@@ -506,6 +509,16 @@ share/locale/lv/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/lv/LC_MESSAGES/kio5_sftp.mo
 share/locale/lv/LC_MESSAGES/kio5_smb.mo
 share/locale/lv/LC_MESSAGES/kio5_thumbnail.mo
+share/locale/ml/LC_MESSAGES/kfileaudiopreview5.mo
+share/locale/ml/LC_MESSAGES/kio5_archive.mo
+share/locale/ml/LC_MESSAGES/kio5_bookmarks.mo
+share/locale/ml/LC_MESSAGES/kio5_fish.mo
+share/locale/ml/LC_MESSAGES/kio5_info.mo
+share/locale/ml/LC_MESSAGES/kio5_man.mo
+share/locale/ml/LC_MESSAGES/kio5_nfs.mo
+share/locale/ml/LC_MESSAGES/kio5_sftp.mo
+share/locale/ml/LC_MESSAGES/kio5_smb.mo
+share/locale/ml/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/mr/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/mr/LC_MESSAGES/kio5_activities.mo
 share/locale/mr/LC_MESSAGES/kio5_archive.mo

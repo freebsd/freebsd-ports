@@ -1,5 +1,5 @@
 bin/kshisen
-etc/xdg/kshisen.categories
+share/qlogging-categories5/kshisen.categories
 share/applications/org.kde.kshisen.desktop
 share/config.kcfg/kshisen.kcfg
 share/icons/hicolor/128x128/apps/kshisen.png

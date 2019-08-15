@@ -1,8 +1,8 @@
 bin/contactprintthemeeditor
 bin/contactthemeeditor
 bin/headerthemeeditor
-etc/xdg/grantleeditor.categories
-etc/xdg/grantleeditor.renamecategories
+share/qlogging-categories5/grantleeditor.categories
+share/qlogging-categories5/grantleeditor.renamecategories
 lib/libgrantleethemeeditor.so
 lib/libgrantleethemeeditor.so.5
 lib/libgrantleethemeeditor.so.%%KDE_APPLICATIONS_SHLIB_VER%%

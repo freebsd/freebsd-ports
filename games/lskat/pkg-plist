@@ -1,5 +1,5 @@
 bin/lskat
-etc/xdg/lskat.categories
+share/qlogging-categories5/lskat.categories
 share/applications/org.kde.lskat.desktop
 share/icons/hicolor/128x128/apps/lskat.png
 share/icons/hicolor/16x16/apps/lskat.png

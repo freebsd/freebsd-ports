@@ -1,6 +1,6 @@
 bin/akonadiimportwizard
-etc/xdg/importwizard.categories
-etc/xdg/importwizard.renamecategories
+share/qlogging-categories5/importwizard.categories
+share/qlogging-categories5/importwizard.renamecategories
 include/KF5/KPim/ImportWizard/AbstractAddressBook
 include/KF5/KPim/ImportWizard/AbstractBase
 include/KF5/KPim/ImportWizard/AbstractCalendar
