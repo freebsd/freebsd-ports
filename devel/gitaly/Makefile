@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	1.47.0
-PORTREVISION=	1
+DISTVERSION=	1.47.2
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -42,12 +42,12 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/tags
-GL_COMMIT=	333775253533ae4e9e9e66dc12b636821646551f
+GL_COMMIT=	abb937e08c36f0cb89e57eca3038364c44e435c7
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with gomod-deps below
-GH_TUPLE=       \
+GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DataDog:dd-trace-go:v1.7.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
 		beorn7:perks:v1.0.0:beorn7_perks/vendor/github.com/beorn7/perks \
@@ -84,7 +84,7 @@ GH_TUPLE=       \
 		tinylib:msgp:v1.1.0:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		uber:jaeger-client-go:v2.15.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v1.5.0:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
-GL_TUPLE=       \
+GL_TUPLE=	\
 		gitlab-org:gitaly-proto:f4db5d05d437abe1154d7308ca044d3577b5ccba:gitlab_org_gitaly_proto/vendor/gitlab.com/gitlab-org/gitaly-proto \
 		gitlab-org:labkit:0c3fc7cdd57c57da5ab474aa72b6640d2bdc9ebb:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
