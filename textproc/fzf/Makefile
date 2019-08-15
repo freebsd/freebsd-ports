@@ -11,12 +11,10 @@ COMMENT=	Blazing fast command-line fuzzy finder
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler go
+USES=		compiler go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	junegunn
-GH_SUBDIR:=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
-
 GH_TUPLE=	\
 		gdamore:encoding:b23993cbb635:gdamore_encoding/vendor/github.com/gdamore/encoding \
 		gdamore:tcell:0a0db94084df:gdamore_tcell/vendor/github.com/gdamore/tcell \
@@ -33,6 +31,8 @@ GH_TUPLE=	\
 		smartystreets:assertions:b2de0cb4f26d:smartystreets_assertions/vendor/github.com/smartystreets/assertions \
 		smartystreets:goconvey:044398e4856c:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey
 
+GO_BUILDFLAGS=	-ldflags="-X main.revision=0b33dc6 -w"
+
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/fzf man/man1/fzf.1.gz
 PORTEXAMPLES=	shell/completion.bash shell/completion.zsh \
@@ -47,34 +47,14 @@ TMUX_DESC=	Install fzf-tmux (depends on BASH)
 TMUX_RUN_DEPENDS=	bash:shells/bash
 TMUX_PLIST_FILES=	bin/fzf-tmux man/man1/fzf-tmux.1.gz
 
-GOENV=		GOPATH=${WRKSRC} CGO_CFLAGS="${CGO_CFLAGS}" \
-		CGO_LDFLAGS="${CGO_LDFLAGS}" GOBIN=""
-
-do-build:
-	cd ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME} && \
-	${SETENV} ${MAKE_ENV} ${GOENV} ${GO_CMD} build -a \
-		-ldflags "-X main.revision=0b33dc6 -w" -o bin/${PORTNAME}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}/bin/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/man/man1/fzf.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC} && \
 	    ${COPYTREE_SHARE} shell ${STAGEDIR}${EXAMPLESDIR})
-
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/man1/fzf.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 post-install-TMUX-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}-tmux ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/man1/fzf-tmux.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-# If cc is clang, change it to clang to help Go identify the compiler,
-# else we get -pthread warnings
-.if ${COMPILER_TYPE} == "clang" && ${CC} == "cc"
-CC=clang
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
