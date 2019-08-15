@@ -18,3 +18,4 @@ lib/libKF5WebKit.so
 lib/libKF5WebKit.so.5
 lib/libKF5WebKit.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KDEWebKit.pri
+%%QT_PLUGINDIR%%/designer/kdewebkit5widgets.so

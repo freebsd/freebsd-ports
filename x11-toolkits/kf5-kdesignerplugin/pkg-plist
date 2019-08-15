@@ -4,7 +4,6 @@ lib/cmake/KF5DesignerPlugin/KF5DesignerPluginConfigVersion.cmake
 lib/cmake/KF5DesignerPlugin/KF5DesignerPluginMacros.cmake
 lib/cmake/KF5DesignerPlugin/KF5DesignerPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5DesignerPlugin/KF5DesignerPluginTargets.cmake
-%%QT_PLUGINDIR%%/designer/kdewebkit5widgets.so
 %%QT_PLUGINDIR%%/designer/kf5widgets.so
 man/ca/man1/kgendesignerplugin.1.gz
 man/de/man1/kgendesignerplugin.1.gz
@@ -19,6 +18,7 @@ share/kf5/widgets/pics/k3iconview.png
 share/kf5/widgets/pics/k3listview.png
 share/kf5/widgets/pics/kactionselector.png
 share/kf5/widgets/pics/kactivelabel.png
+share/kf5/widgets/pics/kbusyindicatorwidget.png
 share/kf5/widgets/pics/kcharselect.png
 share/kf5/widgets/pics/kcmodule.png
 share/kf5/widgets/pics/kcolorbutton.png

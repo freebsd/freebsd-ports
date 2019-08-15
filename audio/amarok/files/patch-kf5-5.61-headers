@@ -1,0 +1,10 @@
+--- src/PluginManager.h.orig	2019-08-14 20:35:52.115749000 +0000
++++ src/PluginManager.h	2019-08-14 20:36:11.135552000 +0000
+@@ -22,6 +22,7 @@
+ #include <KPluginInfo>
+ #include <KPluginMetaData>
+ 
++#include <QVector>
+ 
+ namespace Plugins {
+ 

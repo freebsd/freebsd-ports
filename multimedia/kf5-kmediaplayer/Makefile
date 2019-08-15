@@ -2,7 +2,6 @@
 
 PORTNAME=	kmediaplayer
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
