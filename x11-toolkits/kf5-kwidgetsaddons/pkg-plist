@@ -3,6 +3,7 @@ include/KF5/KWidgetsAddons/KActionMenu
 include/KF5/KWidgetsAddons/KActionSelector
 include/KF5/KWidgetsAddons/KAnimatedButton
 include/KF5/KWidgetsAddons/KAssistantDialog
+include/KF5/KWidgetsAddons/KBusyIndicatorWidget
 include/KF5/KWidgetsAddons/KCapacityBar
 include/KF5/KWidgetsAddons/KCharSelect
 include/KF5/KWidgetsAddons/KCollapsibleGroupBox
@@ -77,6 +78,7 @@ include/KF5/KWidgetsAddons/kactionmenu.h
 include/KF5/KWidgetsAddons/kactionselector.h
 include/KF5/KWidgetsAddons/kanimatedbutton.h
 include/KF5/KWidgetsAddons/kassistantdialog.h
+include/KF5/KWidgetsAddons/kbusyindicatorwidget.h
 include/KF5/KWidgetsAddons/kcapacitybar.h
 include/KF5/KWidgetsAddons/kcharselect.h
 include/KF5/KWidgetsAddons/kcollapsiblegroupbox.h

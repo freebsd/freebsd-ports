@@ -83,6 +83,7 @@ share/locale/bg/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/ca/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ca/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/ca/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/ca/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/ca/LC_MESSAGES/purpose_email.mo
 share/locale/ca/LC_MESSAGES/purpose_imgur.mo
 share/locale/ca/LC_MESSAGES/purpose_kdeconnect.mo
@@ -113,6 +114,7 @@ share/locale/ca@valencia/LC_MESSAGES/purpose_youtube.mo
 share/locale/cs/LC_MESSAGES/libpurpose_quick.mo
 share/locale/cs/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/cs/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/cs/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/cs/LC_MESSAGES/purpose_email.mo
 share/locale/cs/LC_MESSAGES/purpose_imgur.mo
 share/locale/cs/LC_MESSAGES/purpose_kdeconnect.mo
@@ -165,6 +167,7 @@ share/locale/el/LC_MESSAGES/purpose_youtube.mo
 share/locale/en_GB/LC_MESSAGES/libpurpose_quick.mo
 share/locale/en_GB/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/en_GB/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/en_GB/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/en_GB/LC_MESSAGES/purpose_email.mo
 share/locale/en_GB/LC_MESSAGES/purpose_imgur.mo
 share/locale/en_GB/LC_MESSAGES/purpose_kdeconnect.mo
@@ -180,6 +183,7 @@ share/locale/en_GB/LC_MESSAGES/purpose_youtube.mo
 share/locale/es/LC_MESSAGES/libpurpose_quick.mo
 share/locale/es/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/es/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/es/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/es/LC_MESSAGES/purpose_email.mo
 share/locale/es/LC_MESSAGES/purpose_imgur.mo
 share/locale/es/LC_MESSAGES/purpose_kdeconnect.mo
@@ -195,6 +199,7 @@ share/locale/es/LC_MESSAGES/purpose_youtube.mo
 share/locale/eu/LC_MESSAGES/libpurpose_quick.mo
 share/locale/eu/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/eu/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/eu/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/eu/LC_MESSAGES/purpose_email.mo
 share/locale/eu/LC_MESSAGES/purpose_imgur.mo
 share/locale/eu/LC_MESSAGES/purpose_kdeconnect.mo
@@ -225,6 +230,7 @@ share/locale/fi/LC_MESSAGES/purpose_youtube.mo
 share/locale/fr/LC_MESSAGES/libpurpose_quick.mo
 share/locale/fr/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/fr/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/fr/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/fr/LC_MESSAGES/purpose_email.mo
 share/locale/fr/LC_MESSAGES/purpose_imgur.mo
 share/locale/fr/LC_MESSAGES/purpose_kdeconnect.mo
@@ -269,6 +275,7 @@ share/locale/hu/LC_MESSAGES/purpose_youtube.mo
 share/locale/id/LC_MESSAGES/libpurpose_quick.mo
 share/locale/id/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/id/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/id/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/id/LC_MESSAGES/purpose_email.mo
 share/locale/id/LC_MESSAGES/purpose_imgur.mo
 share/locale/id/LC_MESSAGES/purpose_kdeconnect.mo
@@ -282,6 +289,7 @@ share/locale/id/LC_MESSAGES/purpose_saveas.mo
 share/locale/id/LC_MESSAGES/purpose_twitter.mo
 share/locale/id/LC_MESSAGES/purpose_youtube.mo
 share/locale/it/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/it/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/it/LC_MESSAGES/purpose_kdeconnect.mo
 share/locale/it/LC_MESSAGES/purpose_kdeconnectsms.mo
 share/locale/it/LC_MESSAGES/purpose_phabricator.mo
@@ -305,6 +313,7 @@ share/locale/ja/LC_MESSAGES/purpose_youtube.mo
 share/locale/ko/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ko/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/ko/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/ko/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/ko/LC_MESSAGES/purpose_email.mo
 share/locale/ko/LC_MESSAGES/purpose_imgur.mo
 share/locale/ko/LC_MESSAGES/purpose_kdeconnect.mo
@@ -336,6 +345,7 @@ share/locale/nb/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/nl/LC_MESSAGES/libpurpose_quick.mo
 share/locale/nl/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/nl/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/nl/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/nl/LC_MESSAGES/purpose_email.mo
 share/locale/nl/LC_MESSAGES/purpose_imgur.mo
 share/locale/nl/LC_MESSAGES/purpose_kdeconnect.mo
@@ -351,6 +361,7 @@ share/locale/nl/LC_MESSAGES/purpose_youtube.mo
 share/locale/nn/LC_MESSAGES/libpurpose_quick.mo
 share/locale/nn/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/nn/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/nn/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/nn/LC_MESSAGES/purpose_email.mo
 share/locale/nn/LC_MESSAGES/purpose_imgur.mo
 share/locale/nn/LC_MESSAGES/purpose_kdeconnect.mo
@@ -366,6 +377,7 @@ share/locale/nn/LC_MESSAGES/purpose_youtube.mo
 share/locale/pl/LC_MESSAGES/libpurpose_quick.mo
 share/locale/pl/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/pl/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/pl/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/pl/LC_MESSAGES/purpose_email.mo
 share/locale/pl/LC_MESSAGES/purpose_imgur.mo
 share/locale/pl/LC_MESSAGES/purpose_kdeconnect.mo
@@ -381,6 +393,7 @@ share/locale/pl/LC_MESSAGES/purpose_youtube.mo
 share/locale/pt/LC_MESSAGES/libpurpose_quick.mo
 share/locale/pt/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/pt/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/pt/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/pt/LC_MESSAGES/purpose_email.mo
 share/locale/pt/LC_MESSAGES/purpose_imgur.mo
 share/locale/pt/LC_MESSAGES/purpose_kdeconnect.mo
@@ -396,6 +409,7 @@ share/locale/pt/LC_MESSAGES/purpose_youtube.mo
 share/locale/pt_BR/LC_MESSAGES/libpurpose_quick.mo
 share/locale/pt_BR/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/pt_BR/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/pt_BR/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/pt_BR/LC_MESSAGES/purpose_email.mo
 share/locale/pt_BR/LC_MESSAGES/purpose_imgur.mo
 share/locale/pt_BR/LC_MESSAGES/purpose_kdeconnect.mo
@@ -411,6 +425,7 @@ share/locale/pt_BR/LC_MESSAGES/purpose_youtube.mo
 share/locale/ru/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ru/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/ru/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/ru/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/ru/LC_MESSAGES/purpose_email.mo
 share/locale/ru/LC_MESSAGES/purpose_imgur.mo
 share/locale/ru/LC_MESSAGES/purpose_kdeconnect.mo
@@ -426,6 +441,7 @@ share/locale/ru/LC_MESSAGES/purpose_youtube.mo
 share/locale/sk/LC_MESSAGES/libpurpose_quick.mo
 share/locale/sk/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/sk/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/sk/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/sk/LC_MESSAGES/purpose_email.mo
 share/locale/sk/LC_MESSAGES/purpose_imgur.mo
 share/locale/sk/LC_MESSAGES/purpose_kdeconnect.mo
@@ -441,6 +457,7 @@ share/locale/sk/LC_MESSAGES/purpose_youtube.mo
 share/locale/sv/LC_MESSAGES/libpurpose_quick.mo
 share/locale/sv/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/sv/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/sv/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/sv/LC_MESSAGES/purpose_email.mo
 share/locale/sv/LC_MESSAGES/purpose_imgur.mo
 share/locale/sv/LC_MESSAGES/purpose_kdeconnect.mo
@@ -465,6 +482,7 @@ share/locale/tr/LC_MESSAGES/purpose_youtube.mo
 share/locale/uk/LC_MESSAGES/libpurpose_quick.mo
 share/locale/uk/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/uk/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/uk/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/uk/LC_MESSAGES/purpose_email.mo
 share/locale/uk/LC_MESSAGES/purpose_imgur.mo
 share/locale/uk/LC_MESSAGES/purpose_kdeconnect.mo

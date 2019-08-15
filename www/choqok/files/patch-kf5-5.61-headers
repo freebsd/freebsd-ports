@@ -1,0 +1,20 @@
+--- plugins/betternotify/notify.h.orig	2019-08-14 20:27:53.253748000 +0000
++++ plugins/betternotify/notify.h	2019-08-14 20:28:19.765006000 +0000
+@@ -23,6 +23,7 @@
+ #ifndef NOTIFY_H
+ #define NOTIFY_H
+ 
++#include <QMap>
+ #include <QQueue>
+ #include <QPoint>
+ #include <QPointer>
+--- plugins/untiny/untiny.h.orig	2019-08-14 20:29:41.454765000 +0000
++++ plugins/untiny/untiny.h	2019-08-14 20:30:33.646732000 +0000
+@@ -27,6 +27,7 @@
+ 
+ #include "plugin.h"
+ 
++#include <QMap>
+ #include <QQueue>
+ #include <QUrl>
+ #include <QPointer>
