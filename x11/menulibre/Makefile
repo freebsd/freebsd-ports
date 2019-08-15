@@ -20,6 +20,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 USES=		desktop-file-utils gettext gnome python:3.4+
 USE_GNOME=	intltool pygobject3
 USE_PYTHON=	distutils
+
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	DOCS
