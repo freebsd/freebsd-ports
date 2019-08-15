@@ -1,7 +1,7 @@
 bin/pea
 bin/peazip
 share/applications/peazip.desktop
-share/pixmaps/peazip.png
+share/icons/hicolor/256x256/apps/peazip.png
 %%DATADIR%%/peazip
 %%DATADIR%%/res/altconf.txt
 %%DATADIR%%/res/icons/PeaZip.ico
