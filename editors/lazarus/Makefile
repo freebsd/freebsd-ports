@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	lazarus
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.4
 PKGNAMESUFFIX?=  -gtk2
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION} \
 		LOCAL/acm/freepascal
@@ -15,11 +15,12 @@ COMMENT?=	Portable Delphi-like IDE for the FreePascal compiler (GTK2)
 CONFLICTS?=	${PORTNAME}-qt5-*
 
 BUILD_DEPENDS?=	fpcres:lang/fpc-utils
-RUN_DEPENDS?=	fpcres:lang/fpc-utils
+RUN_DEPENDS?=	fpcres:lang/fpc-utils \
+		${LOCALBASE}/share/fpc-source-${FPC_DEFAULT}/Makefile.fpc:lang/fpc-source
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		fpc gettext gmake iconv
+USES=		desktop-file-utils fpc gettext gmake iconv shared-mime-info
 USE_FPC?=	chm cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json fcl-net \
 		fcl-registry fcl-res fcl-web fcl-xml fppkg gtk2 ibase iconvenc mysql \
 		numlib odbc opengl openssl oracle pasjpeg postgres regexpr rtl-extra \
@@ -31,7 +32,6 @@ MAKE_ENV=	OPT=${OPT}
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC?=	${WRKDIR}/${PORTNAME}
 DATADIR?=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
-LLD_UNSAFE=	yes
 
 OPTIONS_DEFINE=		GDB
 GDB_DESC=		Install a newest version  of gdb
@@ -67,6 +67,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|startlazarus|${PORTNAME}|g' ${WRKSRC}/install/${PORTNAME}.desktop
 
 do-build:
 	@cd ${WRKSRC} && \
@@ -109,6 +110,18 @@ pre-install:
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
 		${FIND} * -type d -empty | ${SORT} | ${SED} -e 's|^|@dir %%DATADIR%%/|' >> ${PLIST}
 
+	@${ECHO_CMD} "share/applications/lazarus.desktop" >> ${PLIST}
+
+.	for RESO in 128 16 256 32 48 64
+		@${ECHO_CMD} share/icons/hicolor/${RESO}x${RESO}/apps/lazarus.png >> ${PLIST}
+.	endfor
+
+	@cd ${WRKSRC}/images/mimetypes && \
+		${FIND} * -type f -name "*.png" | ${SORT} | ${SED} -e 's|^|share/icons/hicolor/48x48/mimetypes/|' >> ${PLIST}
+
+	@${ECHO_CMD} "share/icons/hicolor/scalable/apps/lazarus.svg" >> ${PLIST}
+	@${ECHO_CMD} "share/mime/packages/lazarus.xml" >> ${PLIST}
+
 do-install:
 .for DIRE in components converter debugger designer doceditor ide images install languages lazarus.app lcl \
 	packager tools units
@@ -133,6 +146,24 @@ do-install:
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${EXAMPLESDIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${EXAMPLESDIR}/{}" \;
 	@${LN} -s ${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/examples
+
+
+.for RESO in 128 16 256 32 48 64
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${RESO}x${RESO}/apps
+	${INSTALL_DATA} ${WRKSRC}/images/icons/${PORTNAME}${RESO}x${RESO}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${RESO}x${RESO}/apps/${PORTNAME}.png
+.endfor
+
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/mimetypes
+	@cd ${WRKSRC}/images/mimetypes && \
+		${FIND} * -type f -name "*.png" -exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/mimetypes/{} \;
+
+	@${INSTALL_DATA} ${WRKSRC}/install/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
+
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	@${INSTALL_DATA} ${WRKSRC}/images/icons/${PORTNAME}.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}.svg
+
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
+	@${INSTALL_DATA} ${WRKSRC}/install/${PORTNAME}-mime.xml ${STAGEDIR}${PREFIX}/share/mime/packages/${PORTNAME}.xml
 
 	${INSTALL_SCRIPT} ${WRKSRC}/localize.sh ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/lazarus-wrapper ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
