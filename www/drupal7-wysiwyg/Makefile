@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wysiwyg
-DISTVERSION=	7.x-2.5
+DISTVERSION=	7.x-2.6
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
