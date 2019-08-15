@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${NONEXISTENT}:${_MYSQL_SERVER}:configure
 LIB_DEPENDS=	libgroonga.so:textproc/groonga
 
-USES=		libtool mysql pkgconfig
+USES=		compiler:c11 libtool mysql pkgconfig
 
 IGNORE_WITH_MYSQL=	101m 102m 103m 57p 57w
 GNU_CONFIGURE=	yes
