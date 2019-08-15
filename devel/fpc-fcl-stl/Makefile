@@ -2,7 +2,7 @@
 
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-stl
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Free Pascal generic container library (FCL)
 

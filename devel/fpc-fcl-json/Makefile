@@ -1,9 +1,8 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-json
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Free Pascal JavaScript Object Notation implemenation (FCL)
 
