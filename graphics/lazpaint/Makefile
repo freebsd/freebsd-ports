@@ -3,7 +3,7 @@
 PORTNAME=	lazpaint
 PORTVERSION=	6.4.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -37,7 +37,6 @@ LAZARUS_PROJECT_FILES+=	bgracontrols/bgracontrols.lpk
 LAZARUS_PROJECT_FILES+=	lazpaint/lazpaint.lpi
 
 LAZBUILD_ARGS=	-d
-LLD_UNSAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/lazpaint/utranslation.pas
