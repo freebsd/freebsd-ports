@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	peazip
-PORTVERSION=	6.7.0
+PORTVERSION=	6.8.1
 CATEGORIES=	archivers
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 MASTER_SITES=	https://github.com/giorgiotani/PeaZip/releases/download/${PORTVERSION}/
@@ -12,7 +12,7 @@ COMMENT=	Free archiver and file compressor
 
 LICENSE=	LGPL3
 
-USES=		dos2unix fpc lazarus:flavors zip
+USES=		desktop-file-utils dos2unix fpc lazarus:flavors zip
 USE_FPC=	cairo chm fcl-base fcl-image fcl-xml pasjpeg rtl-objpas x11
 USE_XORG=	x11
 
@@ -22,7 +22,6 @@ DOS2UNIX_REGEX=		.*\.([txt]|pas|lpi|txt)
 
 LAZARUS_PROJECT_FILES=	project_pea.lpi project_peach.lpi
 LAZBUILD_ARGS=		-d
-LLD_UNSAFE=		yes
 
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
@@ -94,9 +93,10 @@ do-install:
 	@cd ${WRKSRC} && ${INSTALL_DATA} altconf.txt ${STAGEDIR}${DATADIR}/res && \
 			${INSTALL_PROGRAM} pea ${STAGEDIR}${DATADIR}/res && \
 			${INSTALL_PROGRAM} peazip ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps
 	@cd ${WRKSRC}/FreeDesktop_integration && \
 		${INSTALL_DATA} peazip.desktop ${STAGEDIR}${DESKTOPDIR} && \
-		${INSTALL_DATA} peazip.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+		${INSTALL_DATA} peazip.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/${PORTNAME}.png
 	${INSTALL_SCRIPT} ${WRKDIR}/pea ${WRKDIR}/peazip ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
