@@ -11,11 +11,10 @@ The Lazarus RAD was installed
    source directory at lazarus configuration environment. Also it could be
    setting later.
 
-3) You can obtain freepascal source code from:
+3) Now you can obtain freepascal source installing lang/fpc-source port or 
+   package
 
-   %%PORTSDIR%%/distfiles/freepascal
-
-   It could be extracted to your home directory.
+   It will be extracted to %%LOCALBASE%%/share/fpc-source-X.X.X
 
 4) You can use %%LOCALBASE%%/bin/gdb debugger instead of gdb installed debugger
    installed from base system. Lazarus works better with this version.
