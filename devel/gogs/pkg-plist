@@ -159,6 +159,7 @@ libexec/gogs/conf/gitignore/TurboGears2
 libexec/gogs/conf/gitignore/Typo3
 libexec/gogs/conf/gitignore/Umbraco
 libexec/gogs/conf/gitignore/Unity
+libexec/gogs/conf/gitignore/UnrealEngine
 libexec/gogs/conf/gitignore/Vagrant
 libexec/gogs/conf/gitignore/Vim
 libexec/gogs/conf/gitignore/VirtualEnv
