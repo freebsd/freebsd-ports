@@ -40,7 +40,6 @@ LAZARUS_PROJECT_FILES+= uniqueinstance/uniqueinstance/uniqueinstance_package.lpk
 LAZARUS_PROJECT_FILES+=	app/cudatext.lpi
 
 LAZBUILD_ARGS=		-d
-LLD_UNSAFE=	yes
 
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
