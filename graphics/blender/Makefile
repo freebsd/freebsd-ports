@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.79b
-PORTREVISION=	14
-CATEGORIES=	graphics games
+DISTVERSION=	2.80
+CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
 		http://public.planetmirror.com/pub/blender/source/
 
 MAINTAINER=	FreeBSD@Shaneware.biz
-COMMENT=	3D modeling/rendering/animation/gaming package
+COMMENT=	3D modeling/rendering/animation package
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/license/GPL3-license.txt
 
+BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libboost_regex.so:devel/boost-libs
@@ -24,16 +24,16 @@ RUN_DEPENDS=	${PYNUMPY}
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
 
-# USES=compiler is needed to support gcc built archs
-USES=		cmake compiler:c++14-lang desktop-file-utils gl \
-		jpeg python:3.5 shebangfix
+USES=		cmake compiler:c++14-lang gl jpeg python:3.7 shebangfix
 USE_XORG=	x11 xext xfixes xmu xrender
 USE_GL=		gl glu glew
+
 INSTALLS_ICONS=	yes
 # always enable c++11, this needs to be enabled for several options
 CMAKE_ON=	WITH_CXX11
-CMAKE_OFF=	WITH_PYTHON_INSTALL WITH_PYTHON_INSTALL_NUMPY \
-		WITH_INSTALL_PORTABLE WITH_CYCLES_LOGGING
+CMAKE_OFF=	WITH_IMAGE_OPENJPEG WITH_PYTHON_INSTALL \
+		WITH_PYTHON_INSTALL_NUMPY WITH_INSTALL_PORTABLE \
+		WITH_CYCLES_LOGGING
 
 SHEBANG_FILES=	release/bin/blender-thumbnailer.py \
 		release/scripts/modules/bl_i18n_utils/merge_po.py \
@@ -44,7 +44,10 @@ CFLAGS_gcc=	-Wno-float-conversion
 CFLAGS_i386=	-march=i586
 CXXFLAGS_i386=	-march=i586
 
-PLIST_SUB+=	VER=2.79
+# version without trailing update letters
+VERDIR=		${DISTVERSION:C/[abcdef]//g}
+PLIST_SUB+=	VER=${VERDIR}
+LLVM_VER=	60
 OPTIONS_SUB=	yes
 
 .include "${.CURDIR}/Makefile.options"
@@ -79,18 +82,18 @@ CYCLES_CMAKE_BOOL=		WITH_CYCLES
 CYCLESOSL_IMPLIES=		CYCLES
 CYCLESOSL_CMAKE_BOOL=		WITH_CYCLES_OSL WITH_LLVM
 CYCLESOSL_CMAKE_ON=		-DLLVM_STATIC:BOOL=OFF \
-				-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config60"
-CYCLESOSL_BUILD_DEPENDS=	llvm-config60:devel/llvm60
+				-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VER}"
+CYCLESOSL_BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 CYCLESOSL_LIB_DEPENDS=		liboslcomp.so:graphics/openshadinglanguage
-CYCLESOSL_RUN_DEPENDS=		llvm-config60:devel/llvm60
+CYCLESOSL_RUN_DEPENDS=		llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 DDS_CMAKE_BOOL=			WITH_IMAGE_DDS
+DRACO_CMAKE_BOOL=		WITH_DRACO
 FFMPEG_CMAKE_BOOL=		WITH_CODEC_FFMPEG
 FFMPEG_LIB_DEPENDS=		libavutil.so:multimedia/ffmpeg
 FFTW3_CMAKE_BOOL=		WITH_FFTW3
 FFTW3_LIB_DEPENDS=		libfftw3.so:math/fftw3
 FRAMESERVER_CMAKE_BOOL=		WITH_IMAGE_FRAMESERVER
 FREESTYLE_CMAKE_BOOL=		WITH_FREESTYLE
-GAMEENGINE_CMAKE_BOOL=		WITH_GAMEENGINE
 HDR_CMAKE_BOOL=			WITH_IMAGE_HDR
 HEADLESS_PREVENTS=		MENU XINPUT XF86VMODE
 HEADLESS_PREVENTS_MSG=		X11 options can't be used in headless mode
@@ -124,19 +127,15 @@ OPENEXR_LIB_DEPENDS=		libIlmImf.so:graphics/openexr \
 OPENIMAGEIO_IMPLIES=		OPENEXR TIFF
 OPENIMAGEIO_CMAKE_BOOL=		WITH_OPENIMAGEIO
 OPENIMAGEIO_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio
-OPENJPEG_CMAKE_BOOL=		WITH_SYSTEM_OPENJPEG WITH_IMAGE_OPENJPEG
-OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:graphics/openjpeg15
 # openmp usually works on amd64
-#OPENMP_CMAKE_ON=		-DWITH_OPENMP:BOOL=ON \
-#				-DOpenMP_C_FLAGS:STRING=-fopenmp -lm \
-#				-DOpenMP_CXX_FLAGS:STRING=-fopenmp -lm
-#OPENMP_CMAKE_OFF=		-DWITH_OPENMP:BOOL=OFF
-#OPENMP_LIB_DEPENDS=		libomp.so:devel/openmp
-#OPENMP_LDFLAGS=			-L${LOCALBASE}/lib
+OPENMP_CMAKE_BOOL=		WITH_OPENMP
+OPENMP_LIB_DEPENDS=		libomp.so:devel/openmp
 OPENSUBDIV_CMAKE_BOOL=		WITH_OPENSUBDIV
 OPENSUBDIV_LIB_DEPENDS=		libosdCPU.so:graphics/opensubdiv
-PLAYER_IMPLIES=			GAMEENGINE
-PLAYER_CMAKE_BOOL=		WITH_PLAYER
+OPENVDB_CMAKE_BOOL=		WITH_OPENVDB WITH_OPENVDB_BLOSC
+OPENVDB_LIB_DEPENDS=		libblosc.so:archivers/c-blosc \
+				libopenvdb.so:misc/openvdb \
+				libtbb.so:devel/tbb
 RAYOPTIMIZATION_CMAKE_BOOL=	WITH_RAYOPTIMIZATION
 SDL_CMAKE_BOOL=			WITH_SDL
 SDL_USE=			SDL=sdl2
@@ -164,11 +163,18 @@ post-build:
 			${INSTALL_WRKSRC}/bin/blender \
 			${INSTALL_WRKSRC}/bin/${PORTNAME}.1)
 
-post-install-MENU-on:
-	@-update-desktop-database -q
-
 post-install:
 	${INSTALL_MAN} ${INSTALL_WRKSRC}/bin/${PORTNAME}.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
+
+post-install-DRACO-on:
+	# move draco pylib into site-packages
+	${MKDIR} ${STAGEDIR}/${PYTHON_SITELIBDIR}/
+	${INSTALL_LIB} ${INSTALL_WRKSRC}/lib/libextern_draco.so ${STAGEDIR}/${PYTHON_SITELIBDIR}/
+	${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/libextern_draco.so
+	@${RM} -R ${STAGEDIR}/${PREFIX}/share/blender/${VERDIR}/python
+
+post-install-MENU-on:
+	@-update-desktop-database -q
 
 .include <bsd.port.mk>
