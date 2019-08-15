@@ -3,11 +3,13 @@ lib/libkrfbprivate.so.5
 lib/libkrfbprivate.so.5.0
 %%QT_PLUGINDIR%%/krfb/krfb_framebuffer_qt.so
 %%QT_PLUGINDIR%%/krfb/krfb_framebuffer_xcb.so
+%%QT_PLUGINDIR%%/krfb/krfb_events_x11.so
 share/applications/org.kde.krfb.desktop
 %%DATADIR%%/krfb.notifyrc
 share/icons/hicolor/48x48/apps/krfb.png
 share/icons/hicolor/scalable/apps/krfb.svgz
 share/kservicetypes5/krfb-framebuffer.desktop
+share/kservicetypes5/krfb-events.desktop
 share/locale/ar/LC_MESSAGES/krfb.mo
 share/locale/bg/LC_MESSAGES/krfb.mo
 share/locale/bs/LC_MESSAGES/krfb.mo
@@ -41,6 +43,7 @@ share/locale/km/LC_MESSAGES/krfb.mo
 share/locale/ko/LC_MESSAGES/krfb.mo
 share/locale/lt/LC_MESSAGES/krfb.mo
 share/locale/lv/LC_MESSAGES/krfb.mo
+share/locale/ml/LC_MESSAGES/krfb.mo
 share/locale/mr/LC_MESSAGES/krfb.mo
 share/locale/nb/LC_MESSAGES/krfb.mo
 share/locale/nds/LC_MESSAGES/krfb.mo

@@ -1,6 +1,6 @@
 bin/akonadi_indexing_agent
-etc/xdg/akonadi-search.categories
-etc/xdg/akonadi-search.renamecategories
+share/qlogging-categories5/akonadi-search.categories
+share/qlogging-categories5/akonadi-search.renamecategories
 include/KF5/AkonadiSearch/Core/query.h
 include/KF5/AkonadiSearch/Core/resultiterator.h
 include/KF5/AkonadiSearch/Core/search_core_export.h

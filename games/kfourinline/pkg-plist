@@ -1,6 +1,6 @@
 bin/kfourinline
 bin/kfourinlineproc
-etc/xdg/kfourinline.categories
+share/qlogging-categories5/kfourinline.categories
 share/applications/org.kde.kfourinline.desktop
 share/config.kcfg/kwin4.kcfg
 share/icons/hicolor/128x128/apps/kfourinline.png

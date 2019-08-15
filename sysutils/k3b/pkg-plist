@@ -124,6 +124,7 @@ lib/libk3bdevice.so.7.0.0
 lib/libk3blib.so
 lib/libk3blib.so.7
 lib/libk3blib.so.7.0.0
+lib/libexec/k3bhelper
 %%QT_PLUGINDIR%%/k3baudiometainforenamerplugin.so
 %%QT_PLUGINDIR%%/k3baudioprojectcddbplugin.so
 %%QT_PLUGINDIR%%/k3bexternalencoder.so
@@ -141,6 +142,8 @@ lib/libk3blib.so.7.0.0
 %%QT_PLUGINDIR%%/kcm_k3bsoxencoder.so
 %%QT_PLUGINDIR%%/kf5/kio/videodvd.so
 share/applications/org.kde.k3b.desktop
+share/dbus-1/system-services/org.kde.k3b.service
+share/dbus-1/system.d/org.kde.k3b.conf
 share/icons/hicolor/128x128/apps/k3b.png
 share/icons/hicolor/128x128/mimetypes/application-x-k3b.png
 share/icons/hicolor/16x16/apps/k3b.png
@@ -323,6 +326,8 @@ share/kservicetypes5/k3bplugin.desktop
 share/kxmlgui5/k3b/k3bdeviceui.rc
 share/kxmlgui5/k3b/k3bui.rc
 share/locale/ar/LC_MESSAGES/k3b.mo
+share/locale/ast/LC_MESSAGES/kio_videodvd.mo
+share/locale/ast/LC_MESSAGES/libk3bdevice.mo
 share/locale/bg/LC_MESSAGES/k3b.mo
 share/locale/bg/LC_MESSAGES/kio_videodvd.mo
 share/locale/bg/LC_MESSAGES/libk3b.mo
@@ -441,6 +446,7 @@ share/locale/lv/LC_MESSAGES/k3b.mo
 share/locale/lv/LC_MESSAGES/kio_videodvd.mo
 share/locale/lv/LC_MESSAGES/libk3b.mo
 share/locale/lv/LC_MESSAGES/libk3bdevice.mo
+share/locale/ml/LC_MESSAGES/kio_videodvd.mo
 share/locale/mr/LC_MESSAGES/k3b.mo
 share/locale/mr/LC_MESSAGES/kio_videodvd.mo
 share/locale/mr/LC_MESSAGES/libk3b.mo
@@ -524,6 +530,7 @@ share/locale/zh_TW/LC_MESSAGES/libk3b.mo
 share/locale/zh_TW/LC_MESSAGES/libk3bdevice.mo
 share/metainfo/org.kde.k3b.appdata.xml
 share/mime/packages/x-k3b.xml
+share/polkit-1/actions/org.kde.k3b.policy
 share/solid/actions/k3b_audiocd_rip.desktop
 share/solid/actions/k3b_copy_disc.desktop
 share/solid/actions/k3b_create_audio_cd_from_blank_medium.desktop

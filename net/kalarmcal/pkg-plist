@@ -1,5 +1,5 @@
-etc/xdg/kalarmcal.categories
-etc/xdg/kalarmcal.renamecategories
+share/qlogging-categories5/kalarmcal.categories
+share/qlogging-categories5/kalarmcal.renamecategories
 include/KF5/KAlarmCal/KAlarmCal/AlarmText
 include/KF5/KAlarmCal/KAlarmCal/CollectionAttribute
 include/KF5/KAlarmCal/KAlarmCal/CompatibilityAttribute

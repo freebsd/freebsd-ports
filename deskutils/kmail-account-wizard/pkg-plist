@@ -1,13 +1,13 @@
 bin/accountwizard
 bin/ispdb
-etc/xdg/accountwizard.categories
-etc/xdg/accountwizard.knsrc
-etc/xdg/accountwizard.renamecategories
+share/qlogging-categories5/accountwizard.categories
+share/qlogging-categories5/accountwizard.renamecategories
 %%QT_PLUGINDIR%%/accountwizard_plugin.so
 share/akonadi/accountwizard/tine20/tine20wizard.desktop
 share/akonadi/accountwizard/tine20/tine20wizard.es
 share/akonadi/accountwizard/tine20/tine20wizard.ui
 share/applications/org.kde.accountwizard.desktop
+share/knsrcfiles/accountwizard.knsrc
 share/locale/ar/LC_MESSAGES/accountwizard.mo
 share/locale/ar/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/bs/LC_MESSAGES/accountwizard.mo

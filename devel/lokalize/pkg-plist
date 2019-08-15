@@ -1,5 +1,5 @@
 bin/lokalize
-etc/xdg/lokalize.categories
+share/qlogging-categories5/lokalize.categories
 share/applications/org.kde.lokalize.desktop
 share/config.kcfg/lokalize.kcfg
 share/icons/hicolor/128x128/apps/lokalize.png
@@ -14,6 +14,7 @@ share/kxmlgui5/lokalize/projectmanagerui.rc
 share/kxmlgui5/lokalize/scriptsui.rc
 share/kxmlgui5/lokalize/translationmemoryrui.rc
 share/locale/ar/LC_MESSAGES/lokalize.mo
+share/locale/ast/LC_MESSAGES/lokalize.mo
 share/locale/bg/LC_MESSAGES/lokalize.mo
 share/locale/bs/LC_MESSAGES/lokalize.mo
 share/locale/ca/LC_MESSAGES/lokalize.mo

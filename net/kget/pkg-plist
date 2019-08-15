@@ -1,5 +1,5 @@
 bin/kget
-etc/xdg/kget.categories
+share/qlogging-categories5/kget.categories
 lib/libkgetcore.so
 lib/libkgetcore.so.5
 lib/libkgetcore.so.5.0.0
@@ -100,6 +100,7 @@ share/locale/et/LC_MESSAGES/plasma_runner_kget.mo
 share/locale/eu/LC_MESSAGES/kget.mo
 share/locale/eu/LC_MESSAGES/kgetplugin.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_kget.mo
+share/locale/eu/LC_MESSAGES/plasma_runner_kget.mo
 share/locale/fa/LC_MESSAGES/kget.mo
 share/locale/fa/LC_MESSAGES/kgetplugin.mo
 share/locale/fi/LC_MESSAGES/kget.mo

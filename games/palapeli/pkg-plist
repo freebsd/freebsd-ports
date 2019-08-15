@@ -1,5 +1,5 @@
 bin/palapeli
-etc/xdg/palapeli.categories
+share/qlogging-categories5/palapeli.categories
 etc/xdg/palapeli-collectionrc
 include/Pala/Slicer
 include/Pala/SlicerJob

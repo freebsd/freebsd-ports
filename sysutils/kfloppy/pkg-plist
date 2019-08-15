@@ -1,5 +1,5 @@
 bin/kfloppy
-etc/xdg/kfloppy.categories
+share/qlogging-categories5/kfloppy.categories
 share/applications/org.kde.kfloppy.desktop
 share/icons/hicolor/128x128/apps/kfloppy.png
 share/icons/hicolor/16x16/apps/kfloppy.png

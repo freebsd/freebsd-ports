@@ -1,5 +1,5 @@
 bin/ksnakeduel
-etc/xdg/ksnakeduel.categories
+share/qlogging-categories5/ksnakeduel.categories
 etc/xdg/ksnakeduel.knsrc
 share/applications/org.kde.ksnakeduel.desktop
 share/config.kcfg/ksnakeduel.kcfg

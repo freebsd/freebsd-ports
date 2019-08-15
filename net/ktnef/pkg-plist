@@ -1,5 +1,5 @@
-etc/xdg/ktnef.categories
-etc/xdg/ktnef.renamecategories
+share/qlogging-categories5/ktnef.categories
+share/qlogging-categories5/ktnef.renamecategories
 include/KF5/KTNEF/KTNEF/Formatter
 include/KF5/KTNEF/KTNEF/KTNEFAttach
 include/KF5/KTNEF/KTNEF/KTNEFDefs

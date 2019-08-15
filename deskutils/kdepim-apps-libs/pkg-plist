@@ -1,5 +1,5 @@
-etc/xdg/kdepim-apps-lib.categories
-etc/xdg/kdepim-apps-lib.renamecategories
+share/qlogging-categories5/kdepim-apps-lib.categories
+share/qlogging-categories5/kdepim-apps-lib.renamecategories
 include/KF5/FollowupReminder/FollowUpReminderInfo
 include/KF5/FollowupReminder/FollowUpReminderUtil
 include/KF5/KAddressBookImportExport/KAddressBookContactSelectionDialog
@@ -142,6 +142,7 @@ share/locale/ko/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/ko/LC_MESSAGES/libsendlater.mo
 share/locale/lt/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/lt/LC_MESSAGES/libsendlater.mo
+share/locale/lt/LC_MESSAGES/libkaddressbookimportexport.mo
 share/locale/nb/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/nb/LC_MESSAGES/libsendlater.mo
 share/locale/nds/LC_MESSAGES/libkaddressbookgrantlee.mo

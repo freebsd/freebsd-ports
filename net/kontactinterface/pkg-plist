@@ -1,5 +1,5 @@
-etc/xdg/kontactinterface.categories
-etc/xdg/kontactinterface.renamecategories
+share/qlogging-categories5/kontactinterface.categories
+share/qlogging-categories5/kontactinterface.renamecategories
 include/KF5/KontactInterface/KontactInterface/Core
 include/KF5/KontactInterface/KontactInterface/PimUniqueApplication
 include/KF5/KontactInterface/KontactInterface/Plugin

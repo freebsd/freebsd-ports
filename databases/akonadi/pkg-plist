@@ -9,8 +9,8 @@ bin/akonadiselftest
 bin/akonadiserver
 bin/akonaditest
 bin/asapcat
-etc/xdg/akonadi.categories
-etc/xdg/akonadi.renamecategories
+share/qlogging-categories5/akonadi.categories
+share/qlogging-categories5/akonadi.renamecategories
 etc/xdg/akonadi/mysql-global-mobile.conf
 etc/xdg/akonadi/mysql-global.conf
 include/KF5/AkonadiAgentBase/AgentBase

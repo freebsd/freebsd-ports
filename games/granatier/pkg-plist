@@ -1,5 +1,5 @@
 bin/granatier
-etc/xdg/granatier.categories
+share/qlogging-categories5/granatier.categories
 share/applications/org.kde.granatier.desktop
 share/config.kcfg/granatier.kcfg
 %%DATADIR%%/arenas/clanbomber_Arena.desktop

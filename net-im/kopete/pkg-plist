@@ -1,7 +1,7 @@
 bin/kopete
 bin/winpopup-install
 bin/winpopup-send
-etc/xdg/kopete.categories
+share/qlogging-categories5/kopete.categories
 etc/xdg/kopeterc
 include/kopete/kabcpersistence.h
 include/kopete/kopeteaccount.h
@@ -672,6 +672,7 @@ share/locale/lt/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/lt/LC_MESSAGES/kopete.mo
 share/locale/lv/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/lv/LC_MESSAGES/kopete.mo
+share/locale/ml/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/mr/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/mr/LC_MESSAGES/kopete.mo
 share/locale/nb/LC_MESSAGES/kio_jabberdisco.mo

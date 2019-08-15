@@ -1,5 +1,5 @@
 bin/kbreakout
-etc/xdg/kbreakout.categories
+share/qlogging-categories5/kbreakout.categories
 share/applications/org.kde.kbreakout.desktop
 share/icons/hicolor/128x128/apps/kbreakout.png
 share/icons/hicolor/16x16/apps/kbreakout.png
@@ -65,6 +65,7 @@ share/locale/km/LC_MESSAGES/kbreakout.mo
 share/locale/ko/LC_MESSAGES/kbreakout.mo
 share/locale/lt/LC_MESSAGES/kbreakout.mo
 share/locale/lv/LC_MESSAGES/kbreakout.mo
+share/locale/ml/LC_MESSAGES/kbreakout.mo
 share/locale/mr/LC_MESSAGES/kbreakout.mo
 share/locale/nb/LC_MESSAGES/kbreakout.mo
 share/locale/nds/LC_MESSAGES/kbreakout.mo

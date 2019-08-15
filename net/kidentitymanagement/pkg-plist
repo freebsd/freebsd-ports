@@ -1,5 +1,5 @@
-etc/xdg/kidentitymanagement.categories
-etc/xdg/kidentitymanagement.renamecategories
+share/qlogging-categories5/kidentitymanagement.categories
+share/qlogging-categories5/kidentitymanagement.renamecategories
 include/KF5/KIdentityManagement/KIdentityManagement/Identity
 include/KF5/KIdentityManagement/KIdentityManagement/IdentityCombo
 include/KF5/KIdentityManagement/KIdentityManagement/IdentityManager

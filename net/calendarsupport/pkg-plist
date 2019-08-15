@@ -1,5 +1,5 @@
-etc/xdg/calendarsupport.categories
-etc/xdg/calendarsupport.renamecategories
+share/qlogging-categories5/calendarsupport.categories
+share/qlogging-categories5/calendarsupport.renamecategories
 include/KF5/CalendarSupport/ArchiveDialog
 include/KF5/CalendarSupport/CalPrintDefaultPlugins
 include/KF5/CalendarSupport/CalPrintPluginBase

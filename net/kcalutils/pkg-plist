@@ -1,11 +1,10 @@
-etc/xdg/kcalutils.categories
-etc/xdg/kcalutils.renamecategories
+share/qlogging-categories5/kcalutils.categories
+share/qlogging-categories5/kcalutils.renamecategories
 include/KF5/KCalUtils/KCalUtils/DndFactory
 include/KF5/KCalUtils/KCalUtils/HtmlExport
 include/KF5/KCalUtils/KCalUtils/ICalDrag
 include/KF5/KCalUtils/KCalUtils/IncidenceFormatter
 include/KF5/KCalUtils/KCalUtils/RecurrenceActions
-include/KF5/KCalUtils/KCalUtils/Scheduler
 include/KF5/KCalUtils/KCalUtils/Stringify
 include/KF5/KCalUtils/KCalUtils/VCalDrag
 include/KF5/KCalUtils/kcalutils/HTMLExportSettings
@@ -16,7 +15,6 @@ include/KF5/KCalUtils/kcalutils/icaldrag.h
 include/KF5/KCalUtils/kcalutils/incidenceformatter.h
 include/KF5/KCalUtils/kcalutils/kcalutils_export.h
 include/KF5/KCalUtils/kcalutils/recurrenceactions.h
-include/KF5/KCalUtils/kcalutils/scheduler.h
 include/KF5/KCalUtils/kcalutils/stringify.h
 include/KF5/KCalUtils/kcalutils/vcaldrag.h
 include/KF5/kcalutils_version.h

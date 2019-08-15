@@ -1,5 +1,5 @@
-etc/xdg/libkleo.categories
-etc/xdg/libkleo.renamecategories
+share/qlogging-categories5/libkleo.categories
+share/qlogging-categories5/libkleo.renamecategories
 etc/xdg/libkleopatrarc
 include/KF5/Libkleo/ChecksumDefinition
 include/KF5/Libkleo/Classify

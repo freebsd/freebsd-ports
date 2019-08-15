@@ -1,4 +1,4 @@
-etc/xdg/kcron.categories
+share/qlogging-categories5/kcron.categories
 %%QT_PLUGINDIR%%/kcm_cron.so
 share/kservices5/kcm_cron.desktop
 share/locale/ar/LC_MESSAGES/kcron.mo

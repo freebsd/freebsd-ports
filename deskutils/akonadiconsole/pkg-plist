@@ -1,6 +1,6 @@
 bin/akonadiconsole
-etc/xdg/akonadiconsole.categories
-etc/xdg/akonadiconsole.renamecategories
+share/qlogging-categories5/akonadiconsole.categories
+share/qlogging-categories5/akonadiconsole.renamecategories
 lib/libakonadiconsole.so.5
 lib/libakonadiconsole.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/applications/org.kde.akonadiconsole.desktop

@@ -86,9 +86,13 @@ share/locale/km/LC_MESSAGES/kalgebra.mo
 share/locale/ko/LC_MESSAGES/kalgebra.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/lt/LC_MESSAGES/kalgebra.mo
+share/locale/lt/LC_MESSAGES/kalgebramobile.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/lv/LC_MESSAGES/kalgebra.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
+share/locale/ml/LC_MESSAGES/kalgebra.mo
+share/locale/ml/LC_MESSAGES/kalgebramobile.mo
+share/locale/ml/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/mr/LC_MESSAGES/kalgebra.mo
 share/locale/mr/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/nb/LC_MESSAGES/kalgebra.mo

@@ -1,5 +1,5 @@
 bin/kblocks
-etc/xdg/kblocks.categories
+share/qlogging-categories5/kblocks.categories
 etc/xdg/kblocks.knsrc
 share/applications/org.kde.kblocks.desktop
 share/config.kcfg/kblocks.kcfg
@@ -50,6 +50,7 @@ share/locale/km/LC_MESSAGES/kblocks.mo
 share/locale/ko/LC_MESSAGES/kblocks.mo
 share/locale/lt/LC_MESSAGES/kblocks.mo
 share/locale/lv/LC_MESSAGES/kblocks.mo
+share/locale/ml/LC_MESSAGES/kblocks.mo
 share/locale/mr/LC_MESSAGES/kblocks.mo
 share/locale/nb/LC_MESSAGES/kblocks.mo
 share/locale/nds/LC_MESSAGES/kblocks.mo

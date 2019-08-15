@@ -1,5 +1,5 @@
-etc/xdg/kimap.categories
-etc/xdg/kimap.renamecategories
+share/qlogging-categories5/kimap.categories
+share/qlogging-categories5/kimap.renamecategories
 include/KF5/KIMAP/KIMAP/Acl
 include/KF5/KIMAP/KIMAP/AclJobBase
 include/KF5/KIMAP/KIMAP/AppendJob

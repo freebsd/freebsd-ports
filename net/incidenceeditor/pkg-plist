@@ -1,5 +1,5 @@
-etc/xdg/incidenceeditor.categories
-etc/xdg/incidenceeditor.renamecategories
+share/qlogging-categories5/incidenceeditor.categories
+share/qlogging-categories5/incidenceeditor.renamecategories
 include/KF5/IncidenceEditor/EditorItemManager
 include/KF5/IncidenceEditor/GroupwareUiDelegate
 include/KF5/IncidenceEditor/IncidenceDefaults

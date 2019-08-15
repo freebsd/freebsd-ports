@@ -1,5 +1,5 @@
 bin/kwalletmanager5
-etc/xdg/kwalletmanager.categories
+share/qlogging-categories5/kwalletmanager.categories
 lib/libexec/kauth/kcm_kwallet_helper5
 %%QT_PLUGINDIR%%/kcm_kwallet5.so
 share/applications/kwalletmanager5-kwalletd.desktop

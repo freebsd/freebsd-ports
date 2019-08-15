@@ -1,5 +1,5 @@
-etc/xdg/mailcommon.categories
-etc/xdg/mailcommon.renamecategories
+share/qlogging-categories5/mailcommon.categories
+share/qlogging-categories5/mailcommon.renamecategories
 include/KF5/MailCommon/AccountConfigOrderDialog
 include/KF5/MailCommon/AddTagDialog
 include/KF5/MailCommon/BackupJob

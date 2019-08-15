@@ -1,4 +1,4 @@
-etc/xdg/ksmtp.categories
+share/qlogging-categories5/ksmtp.categories
 include/KPim/KSMTP/KSMTP/Job
 include/KPim/KSMTP/KSMTP/LoginJob
 include/KPim/KSMTP/KSMTP/SendJob

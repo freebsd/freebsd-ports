@@ -1,8 +1,8 @@
 bin/kalarm
 bin/kalarmautostart
 etc/xdg/autostart/kalarm.autostart.desktop
-etc/xdg/kalarm.categories
-etc/xdg/kalarm.renamecategories
+share/qlogging-categories5/kalarm.categories
+share/qlogging-categories5/kalarm.renamecategories
 lib/libexec/kauth/kalarm_helper
 share/applications/org.kde.kalarm.desktop
 share/config.kcfg/kalarmconfig.kcfg

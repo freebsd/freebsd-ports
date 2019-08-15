@@ -2,7 +2,6 @@
 
 PORTNAME=	svgpart
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	graphics kde kde-applications
 PKGNAMEPREFIX=	kdegraphics-
 

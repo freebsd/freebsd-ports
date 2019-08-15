@@ -1,6 +1,5 @@
-etc/xdg/messagelib.categories
-etc/xdg/messagelib.renamecategories
-etc/xdg/messageviewer_header_themes.knsrc
+share/qlogging-categories5/messagelib.categories
+share/qlogging-categories5/messagelib.renamecategories
 include/KF5/MessageComposer/AbstractEncryptJob
 include/KF5/MessageComposer/AkonadiSender
 include/KF5/MessageComposer/AliasesExpandJob
@@ -464,6 +463,7 @@ share/config.kcfg/customtemplates_kfg.kcfg
 share/config.kcfg/templatesconfiguration_kfg.kcfg
 share/kconf_update/messageviewer.upd
 share/knotifications5/messageviewer.notifyrc
+share/knsrcfiles/messageviewer_header_themes.knsrc
 share/libmessageviewer/pics/enterprise_bottom.png
 share/libmessageviewer/pics/enterprise_bottom_left.png
 share/libmessageviewer/pics/enterprise_bottom_right.png
@@ -662,6 +662,7 @@ share/locale/lt/LC_MESSAGES/libmessagelist.mo
 share/locale/lt/LC_MESSAGES/libmessageviewer.mo
 share/locale/lt/LC_MESSAGES/libmimetreeparser.mo
 share/locale/lt/LC_MESSAGES/libtemplateparser.mo
+share/locale/lt/LC_MESSAGES/libwebengineviewer.mo
 share/locale/lv/LC_MESSAGES/libmessagecore.mo
 share/locale/lv/LC_MESSAGES/libmessagelist.mo
 share/locale/lv/LC_MESSAGES/libmessageviewer.mo

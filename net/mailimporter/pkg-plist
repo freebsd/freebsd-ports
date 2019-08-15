@@ -1,5 +1,5 @@
-etc/xdg/mailimporter.categories
-etc/xdg/mailimporter.renamecategories
+share/qlogging-categories5/mailimporter.categories
+share/qlogging-categories5/mailimporter.renamecategories
 include/KF5/MailImporter/FilterBalsa
 include/KF5/MailImporter/FilterClawsMail
 include/KF5/MailImporter/FilterEvolution

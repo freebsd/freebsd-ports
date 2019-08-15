@@ -1,5 +1,5 @@
-etc/xdg/eventviews.categories
-etc/xdg/eventviews.renamecategories
+share/qlogging-categories5/eventviews.categories
+share/qlogging-categories5/eventviews.renamecategories
 include/KF5/EventViews/AgendaView
 include/KF5/EventViews/CalendarDecoration
 include/KF5/EventViews/ConfigDialogInterface

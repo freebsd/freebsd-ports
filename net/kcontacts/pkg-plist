@@ -1,5 +1,5 @@
-etc/xdg/kcontacts.categories
-etc/xdg/kcontacts.renamecategories
+share/qlogging-categories5/kcontacts.categories
+share/qlogging-categories5/kcontacts.renamecategories
 include/KF5/KContacts/KContacts/Address
 include/KF5/KContacts/KContacts/Addressee
 include/KF5/KContacts/KContacts/AddresseeList
@@ -25,7 +25,6 @@ include/KF5/KContacts/KContacts/Related
 include/KF5/KContacts/KContacts/ResourceLocatorUrl
 include/KF5/KContacts/KContacts/Role
 include/KF5/KContacts/KContacts/Secrecy
-include/KF5/KContacts/KContacts/SortMode
 include/KF5/KContacts/KContacts/Sound
 include/KF5/KContacts/KContacts/TimeZone
 include/KF5/KContacts/KContacts/Title
@@ -57,7 +56,6 @@ include/KF5/KContacts/kcontacts/related.h
 include/KF5/KContacts/kcontacts/resourcelocatorurl.h
 include/KF5/KContacts/kcontacts/role.h
 include/KF5/KContacts/kcontacts/secrecy.h
-include/KF5/KContacts/kcontacts/sortmode.h
 include/KF5/KContacts/kcontacts/sound.h
 include/KF5/KContacts/kcontacts/timezone.h
 include/KF5/KContacts/kcontacts/title.h

@@ -1,5 +1,5 @@
-etc/xdg/kblog.categories
-etc/xdg/kblog.renamecategories
+share/qlogging-categories5/kblog.categories
+share/qlogging-categories5/kblog.renamecategories
 include/KF5/KBlog/KBlog/Blog
 include/KF5/KBlog/KBlog/BlogComment
 include/KF5/KBlog/KBlog/BlogMedia

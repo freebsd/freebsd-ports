@@ -1,5 +1,5 @@
-etc/xdg/akonadi-calendar.categories
-etc/xdg/akonadi-calendar.renamecategories
+share/qlogging-categories5/akonadi-calendar.categories
+share/qlogging-categories5/akonadi-calendar.renamecategories
 include/KF5/Akonadi/Calendar/BlockAlarmsAttribute
 include/KF5/Akonadi/Calendar/CalendarBase
 include/KF5/Akonadi/Calendar/CalendarClipboard

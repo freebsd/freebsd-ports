@@ -1,6 +1,6 @@
 bin/kgpg
 etc/xdg/autostart/org.kde.kgpg.desktop
-etc/xdg/kgpg.categories
+share/qlogging-categories5/kgpg.categories
 share/applications/org.kde.kgpg.desktop
 share/config.kcfg/kgpg.kcfg
 share/dbus-1/interfaces/org.kde.kgpg.Key.xml

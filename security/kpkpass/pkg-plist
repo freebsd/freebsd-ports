@@ -1,4 +1,4 @@
-etc/xdg/org_kde_kpkpass.categories
+share/qlogging-categories5/org_kde_kpkpass.categories
 include/KPim/KPkPass/Barcode
 include/KPim/KPkPass/BoardingPass
 include/KPim/KPkPass/Field
