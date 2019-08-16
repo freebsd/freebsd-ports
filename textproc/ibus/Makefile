@@ -2,12 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ibus
-PORTVERSION=	1.5.18
-PORTREVISION=	4
+PORTVERSION=	1.5.20
 CATEGORIES=	textproc
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Intelligent Input Bus for Linux / Unix OS
@@ -17,15 +13,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:devel/py-dbus@${PY_FLAVOR} \
 		${LOCALBASE}/share/unicode/ucd/NamesList.txt:textproc/UCD \
-		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
+		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+		gtkdocize:textproc/gtk-doc
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:devel/py-notify@${PY_FLAVOR} \
 		${LOCALBASE}/share/xml/iso-codes/iso_639.xml:misc/iso-codes \
 		setxkbmap:x11/setxkbmap
 
-USES=		compiler cpe gmake gnome libtool localbase pathfix pkgconfig python:2.7
+USES=		autoreconf compiler cpe gmake gnome libtool localbase pathfix pkgconfig python:2.7 shebangfix
 USE_GNOME=	glib20 intltool librsvg2 pygobject3
 USE_LDCONFIG=	yes
+
+SHEBANG_GLOB=	*.sh
+
+USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -111,6 +112,9 @@ PLIST_SUB+=	COMPDIR=""
 .else
 PLIST_SUB+=	COMPDIR="@comment "
 .endif
+
+pre-configure:
+	cd ${CONFIGURE_WRKSRC} && gtkdocize --copy --flavour no-tmpl
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart
