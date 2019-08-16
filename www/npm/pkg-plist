@@ -206,7 +206,6 @@ lib/node_modules/npm/lib/config/clear-credentials-by-uri.js
 lib/node_modules/npm/lib/config/cmd-list.js
 lib/node_modules/npm/lib/config/core.js
 lib/node_modules/npm/lib/config/defaults.js
-lib/node_modules/npm/lib/config/fetch-opts.js
 lib/node_modules/npm/lib/config/figgy-config.js
 lib/node_modules/npm/lib/config/gentle-fs.js
 lib/node_modules/npm/lib/config/get-credentials-by-uri.js
@@ -4148,6 +4147,7 @@ lib/node_modules/npm/scripts/gen-dev-ignores.js
 lib/node_modules/npm/scripts/index-build.js
 @(,,755) lib/node_modules/npm/scripts/install.sh
 lib/node_modules/npm/scripts/maketest
+lib/node_modules/npm/scripts/pr
 lib/node_modules/npm/scripts/publish-tag.js
 @(,,755) lib/node_modules/npm/scripts/release.sh
 @(,,755) lib/node_modules/npm/scripts/relocate.sh
