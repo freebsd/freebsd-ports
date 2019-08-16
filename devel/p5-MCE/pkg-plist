@@ -39,6 +39,14 @@
 %%PERL5_MAN3%%/MCE::Channel::Threads.3.gz
 %%PERL5_MAN3%%/MCE::Child.3.gz
 %%PERL5_MAN3%%/MCE::Core.3.gz
+%%PERL5_MAN3%%/MCE::Core::Input::Generator.3.gz
+%%PERL5_MAN3%%/MCE::Core::Input::Handle.3.gz
+%%PERL5_MAN3%%/MCE::Core::Input::Iterator.3.gz
+%%PERL5_MAN3%%/MCE::Core::Input::Request.3.gz
+%%PERL5_MAN3%%/MCE::Core::Input::Sequence.3.gz
+%%PERL5_MAN3%%/MCE::Core::Manager.3.gz
+%%PERL5_MAN3%%/MCE::Core::Validation.3.gz
+%%PERL5_MAN3%%/MCE::Core::Worker.3.gz
 %%PERL5_MAN3%%/MCE::Examples.3.gz
 %%PERL5_MAN3%%/MCE::Flow.3.gz
 %%PERL5_MAN3%%/MCE::Grep.3.gz
