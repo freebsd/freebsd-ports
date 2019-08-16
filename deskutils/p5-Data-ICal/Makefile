@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-ICal
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	deskutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,8 @@ TEST_DEPENDS=	p5-Test-LongString>=0:devel/p5-Test-LongString \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^auto_install/d' ${WRKSRC}/Makefile.PL
