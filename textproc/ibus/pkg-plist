@@ -3,6 +3,7 @@ bin/ibus-daemon
 bin/ibus-setup
 etc/xdg/autostart/ibus.desktop
 %%DCONF%%etc/dconf/db/ibus.d/00-upstream-settings
+%%DCONF%%man/man5/00-upstream-settings.5.gz
 %%DCONF%%@postunexec rm -f %D/etc/dconf/db/ibus
 %%DCONF%%@postexec dconf update
 %%DCONF%%etc/dconf/profile/ibus
@@ -55,7 +56,7 @@ include/ibus-1.0/ibusxml.h
 %%GTK3%%lib/gtk-3.0/3.0.0/immodules/im-ibus.so
 lib/libibus-1.0.so
 lib/libibus-1.0.so.5
-lib/libibus-1.0.so.5.0.518
+lib/libibus-1.0.so.5.0.520
 %%PYTHON_LIB%%%%PYTHON_SITELIBDIR%%/ibus/__init__.py
 %%PYTHON_LIB%%%%PYTHON_SITELIBDIR%%/ibus/__init__.pyc
 %%PYTHON_LIB%%%%PYTHON_SITELIBDIR%%/ibus/__init__.pyo
@@ -173,64 +174,13 @@ libexec/ibus-portal
 man/man1/ibus-daemon.1.gz
 man/man1/ibus-setup.1.gz
 man/man1/ibus.1.gz
+man/man5/ibus.5.gz
 %%EMOJI%%man/man7/ibus-emoji.7.gz
-share/applications/ibus-setup.desktop
+share/applications/org.freedesktop.IBus.Setup.desktop
 %%EMOJI%%share/applications/org.freedesktop.IBus.Panel.Emojier.desktop
 %%GTK3%%share/applications/org.freedesktop.IBus.Panel.Extension.Gtk3.desktop
 share/dbus-1/services/org.freedesktop.IBus.service
 share/dbus-1/services/org.freedesktop.portal.IBus.service
-%%PORTDOCS%%%%DOCSDIR%%/IBusAttrList.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusAttribute.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusBus.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusComponent.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusConfig.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusConfigService.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusEngine.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusEngineDesc.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusEngineSimple.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusHotkeyProfile.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusInputContext.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusKeymap.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusLookupTable.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusObject.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusObservedPath.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusPanelService.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusPropList.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusProperty.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusProxy.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusRegistry.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusSerializable.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusService.html
-%%PORTDOCS%%%%DOCSDIR%%/IBusText.html
-%%PORTDOCS%%%%DOCSDIR%%/ch01.html
-%%PORTDOCS%%%%DOCSDIR%%/ch02.html
-%%PORTDOCS%%%%DOCSDIR%%/ch03.html
-%%PORTDOCS%%%%DOCSDIR%%/ch04.html
-%%PORTDOCS%%%%DOCSDIR%%/ch05.html
-%%PORTDOCS%%%%DOCSDIR%%/ch06.html
-%%PORTDOCS%%%%DOCSDIR%%/home.png
-%%PORTDOCS%%%%DOCSDIR%%/ibus-IBusKeysyms.html
-%%PORTDOCS%%%%DOCSDIR%%/ibus-ibusdebug.html
-%%PORTDOCS%%%%DOCSDIR%%/ibus-ibuserror.html
-%%PORTDOCS%%%%DOCSDIR%%/ibus-ibusshare.html
-%%PORTDOCS%%%%DOCSDIR%%/ibus-ibustypes.html
-%%PORTDOCS%%%%DOCSDIR%%/ibus-ibusversion.html
-%%PORTDOCS%%%%DOCSDIR%%/ibus-ibusxml.html
-%%PORTDOCS%%%%DOCSDIR%%/ibus-ibuskeys.html
-%%PORTDOCS%%%%DOCSDIR%%/ibus-ibuskeysyms-compat.html
-%%PORTDOCS%%%%DOCSDIR%%/ibus-ibusutil.html
-%%PORTDOCS%%%%DOCSDIR%%/annotation-glossary.html
-%%PORTDOCS%%%%DOCSDIR%%/api-index-full.html
-%%PORTDOCS%%%%DOCSDIR%%/ibus.devhelp2
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/left.png
-%%PORTDOCS%%%%DOCSDIR%%/right.png
-%%PORTDOCS%%%%DOCSDIR%%/style.css
-%%PORTDOCS%%%%DOCSDIR%%/up.png
-%%PORTDOCS%%%%DOCSDIR%%/left-insensitive.png
-%%PORTDOCS%%%%DOCSDIR%%/right-insensitive.png
-%%PORTDOCS%%%%DOCSDIR%%/up-insensitive.png
 %%GTK3%%%%DATADIR%%/component/gtkextension.xml
 %%GTK3%%%%DATADIR%%/component/gtkpanel.xml
 %%GCONF%%%%DATADIR%%/component/gconf.xml
@@ -452,7 +402,6 @@ share/bash-completion/completions/ibus.bash
 @dir %%DATADIR%%/engine
 %%COMPDIR%%@dir %%DATADIR%%/component
 @dir %%DATADIR%%
-%%PORTDOCS%%@dir %%DOCSDIR%%
 %%PYTHON_LIB%%@dir %%PYTHON_SITELIBDIR%%/ibus/interface
 %%PYTHON_LIB%%@dir %%PYTHON_SITELIBDIR%%/ibus
 @dir include/ibus-1.0

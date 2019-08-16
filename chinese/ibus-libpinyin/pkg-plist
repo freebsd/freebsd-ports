@@ -9,7 +9,6 @@ libexec/ibus-setup-libpinyin
 share/appdata/libpinyin.appdata.xml
 share/applications/ibus-setup-libbopomofo.desktop
 share/applications/ibus-setup-libpinyin.desktop
-share/glib-2.0/schemas/com.github.libpinyin.ibus-libpinyin.gschema.xml
 %%ENGLISH%%%%DATADIR%%/db/english.db
 %%STROKE%%%%DATADIR%%/db/strokes.db
 %%DATADIR%%/icons/chinese.svg
