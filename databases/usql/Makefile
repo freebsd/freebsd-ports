@@ -11,41 +11,108 @@ COMMENT=	Universal command-line interface for SQL databases
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xo
+GH_TUPLE=	Masterminds:semver:v1.4.2:masterminds_semver/vendor/github.com/Masterminds/semver \
+		MichaelS11:go-cql-driver:6dafc35aac9b:michaels11_go_cql_driver/vendor/github.com/MichaelS11/go-cql-driver \
+		SAP:go-hdb:v0.14.1:sap_go_hdb/vendor/github.com/SAP/go-hdb \
+		SermoDigital:jose:803625baeddc:sermodigital_jose/vendor/github.com/SermoDigital/jose \
+		VoltDB:voltdb-client-go:v1.0.1:voltdb_voltdb_client_go/vendor/github.com/VoltDB/voltdb-client-go \
+		alecthomas:assert:405dbfeb8e38:alecthomas_assert/vendor/github.com/alecthomas/assert \
+		alecthomas:chroma:v0.6.6:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
+		alecthomas:colour:60882d9e2721:alecthomas_colour/vendor/github.com/alecthomas/colour \
+		alecthomas:kingpin:df19058c872c:alecthomas_kingpin/vendor/gopkg.in/alecthomas/kingpin.v3-unstable \
+		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/github.com/alecthomas/kingpin \
+		alecthomas:repr:d37bc2a10ba1:alecthomas_repr/vendor/github.com/alecthomas/repr \
+		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
+		alecthomas:units:c3de453c63f4:alecthomas_units/vendor/github.com/alecthomas/units \
+		alexbrainman:odbc:cf37ce290779:alexbrainman_odbc/vendor/github.com/alexbrainman/odbc \
+		alexflint:go-scalar:v1.0.0:alexflint_go_scalar/vendor/github.com/alexflint/go-scalar \
+		amsokol:ignite-go-client:v0.12.2:amsokol_ignite_go_client/vendor/github.com/amsokol/ignite-go-client \
+		apache:calcite-avatica-go:v3.2.0:apache_calcite_avatica_go/vendor/github.com/apache/calcite-avatica-go/v3 \
+		chzyer:logex:v1.1.10:chzyer_logex/vendor/github.com/chzyer/logex \
+		chzyer:readline:2972be24d48e:chzyer_readline/vendor/github.com/chzyer/readline \
+		chzyer:test:a1ea475d72b1:chzyer_test/vendor/github.com/chzyer/test \
+		cloudflare:golz4:ef862a3cdc58:cloudflare_golz4/vendor/github.com/cloudflare/golz4 \
+		couchbase:go-couchbase:a309852c6932:couchbase_go_couchbase/vendor/github.com/couchbase/go-couchbase \
+		couchbase:go_n1ql:6cf4e348b127:couchbase_go_n1ql/vendor/github.com/couchbase/go_n1ql \
+		couchbase:gomemcached:c4b4ca0eb21d:couchbase_gomemcached/vendor/github.com/couchbase/gomemcached \
+		couchbase:goutils:f9d42b11473b:couchbase_goutils/vendor/github.com/couchbase/goutils \
+		cznic:b:a26611c4d92d:cznic_b/vendor/github.com/cznic/b \
+		cznic:fileutil:4d67cfea8c87:cznic_fileutil/vendor/github.com/cznic/fileutil \
+		cznic:golex:9c343928389c:cznic_golex/vendor/github.com/cznic/golex \
+		cznic:internal:3279554c546e:cznic_internal/vendor/github.com/cznic/internal \
+		cznic:lldb:v1.1.0:cznic_lldb/vendor/github.com/cznic/lldb \
+		cznic:mathutil:297441e03548:cznic_mathutil/vendor/github.com/cznic/mathutil \
+		cznic:ql:v1.2.0:cznic_ql/vendor/github.com/cznic/ql \
+		cznic:sortutil:f5f958428db8:cznic_sortutil/vendor/github.com/cznic/sortutil \
+		cznic:strutil:275e90344537:cznic_strutil/vendor/github.com/cznic/strutil \
+		cznic:zappy:ca47d358d4b1:cznic_zappy/vendor/github.com/cznic/zappy \
+		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
+		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		denisenkom:go-mssqldb:db2462fef53b:denisenkom_go_mssqldb/vendor/github.com/denisenkom/go-mssqldb \
+		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
+		edsrzf:mmap-go:v1.0.0:edsrzf_mmap_go/vendor/github.com/edsrzf/mmap-go \
+		go-inf:inf:v0.9.1:go_inf_inf/vendor/gopkg.in/inf.v0 \
+		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
+		go-sql-driver:mysql:v1.4.1:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
+		gocql:gocql:df4b9cc33030:gocql_gocql/vendor/github.com/gocql/gocql \
+		gohxs:readline:a780388e6e7c:gohxs_readline/vendor/github.com/gohxs/readline \
+		golang:appengine:v1.6.1:golang_appengine/vendor/google.golang.org/appengine \
+		golang:crypto:4def268fd1a4:golang_crypto/vendor/golang.org/x/crypto \
+		golang:glog:23def4e6c14b:golang_glog/vendor/github.com/golang/glog \
+		golang:net:ca1201d0de80:golang_net/vendor/golang.org/x/net \
+		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
+		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:51ab0e2deafa:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
+		googleapis:google-cloud-go:v0.44.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		hailocab:go-hostpool:e80d13ce29ed:hailocab_go_hostpool/vendor/github.com/hailocab/go-hostpool \
+		hashicorp:go-uuid:v1.0.1:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
+		jackc:pgx:v3.5.0:jackc_pgx/vendor/github.com/jackc/pgx \
+		jcmturner:aescts:v1.0.1:jcmturner_aescts/vendor/gopkg.in/jcmturner/aescts.v1 \
+		jcmturner:dnsutils:v1.0.1:jcmturner_dnsutils/vendor/gopkg.in/jcmturner/dnsutils.v1 \
+		jcmturner:gofork:v1.0.0:jcmturner_gofork/vendor/github.com/jcmturner/gofork \
+		jcmturner:gokrb5:v6.1.1:jcmturner_gokrb5/vendor/gopkg.in/jcmturner/gokrb5.v6 \
+		jcmturner:rpc:v1.1.0:jcmturner_rpc/vendor/gopkg.in/jcmturner/rpc.v1 \
+		kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardianos/osext \
+		kshvakov:clickhouse:v1.3.11:kshvakov_clickhouse/vendor/github.com/kshvakov/clickhouse \
+		lib:pq:v1.2.0:lib_pq/vendor/github.com/lib/pq \
+		mattn:go-adodb:v0.0.1:mattn_go_adodb/vendor/github.com/mattn/go-adodb \
+		mattn:go-colorable:v0.0.9:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-sqlite3:v1.11.0:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		nakagami:firebirdsql:90ca2b3395f5:nakagami_firebirdsql/vendor/github.com/nakagami/firebirdsql \
+		nbutton23:zxcvbn-go:ae427f1e4c1d:nbutton23_zxcvbn_go/vendor/github.com/nbutton23/zxcvbn-go \
+		olekukonko:tablewriter:v0.0.1:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
+		pkg:browser:0a3d74bf9ce4:pkg_browser/vendor/github.com/pkg/browser \
+		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
+		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		prestodb:presto-go-client:a4497272570e:prestodb_presto_go_client/vendor/github.com/prestodb/presto-go-client \
+		rana:ora:v4.1.15:rana_ora/vendor/gopkg.in/rana/ora.v4 \
+		remyoudompheng:bigfft:6a916e37a237:remyoudompheng_bigfft/vendor/github.com/remyoudompheng/bigfft \
+		sergi:go-diff:v1.0.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
+		shopspring:decimal:cd690d0c9e24:shopspring_decimal/vendor/github.com/shopspring/decimal \
+		snowflakedb:gosnowflake:v1.2.0:snowflakedb_gosnowflake/vendor/github.com/snowflakedb/gosnowflake \
+		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
+		stretchr:testify:v1.3.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		thda:tds:v0.1.6:thda_tds/vendor/github.com/thda/tds \
+		xinsnake:go-http-digest-auth-client:v0.4.0:xinsnake_go_http_digest_auth_client/vendor/github.com/xinsnake/go-http-digest-auth-client \
+		xo:dburl:98997a05b24f:xo_dburl/vendor/github.com/xo/dburl \
+		xo:tblfmt:28c54ec42ce8:xo_tblfmt/vendor/github.com/xo/tblfmt \
+		xo:terminfo:1a4775eeeb62:xo_terminfo/vendor/github.com/xo/terminfo \
+		xo:xoutil:46189f4026a5:xo_xoutil/vendor/github.com/xo/xoutil \
+		zaf:temp:94e385923345:zaf_temp/vendor/github.com/zaf/temp \
+		ziutek:mymysql:v1.5.4:ziutek_mymysql/vendor/github.com/ziutek/mymysql
 
-GH_TUPLE=	xo:dburl:98997a0:dburl/src/github.com/xo/dburl \
-		xo:terminfo:1a4775e:terminfo/src/github.com/xo/terminfo \
-		xo:tblfmt:e2122a1:tblfmt/src/github.com/xo/tblfmt \
-		xo:xoutil:46189f4:xoutil/src/github.com/xo/xoutil \
-		alecthomas:chroma:v0.3.0:chroma/src/github.com/alecthomas/chroma \
-		alecthomas:kingpin:v2.2.6:kingpin/src/github.com/alecthomas/kingpin \
-		alecthomas:template:a0175ee:template/src/github.com/alecthomas/template \
-		alecthomas:units:2efee85:units/src/github.com/alecthomas/units \
-		alexflint:go-arg:0cc8e30:goarg/src/github.com/alexflint/go-arg \
-		danwakefield:fnmatch:cbb64ac:fnmatch/src/github.com/danwakefield/fnmatch \
-		denisenkom:go-mssqldb:ee49270:gomssqldb/src/github.com/denisenkom/go-mssqldb \
-		dlclark:regexp2:v1.1.6:regexp2/src/github.com/dlclark/regexp2 \
-		go-sql-driver:mysql:v1.3:mysql/src/github.com/go-sql-driver/mysql \
-		gohxs:readline:a780388:readline/src/github.com/gohxs/readline \
-		lib:pq:88edab0:pq/src/github.com/lib/pq \
-		mattn:go-isatty:v0.0.3:goisatty/src/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.2:gorunewidth/src/github.com/mattn/go-runewidth \
-		mattn:go-sqlite3:v1.6.0:gosqlite3/src/github.com/mattn/go-sqlite3 \
-		olekukonko:tablewriter:b8a9be0:tablewriter/src/github.com/olekukonko/tablewriter \
-		zaf:temp:94e3859:temp/src/github.com/zaf/temp \
-		golang:crypto:650f4a3:crypto/src/golang.org/x/crypto
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
+USE_GITLAB=	nodefault
+GL_TUPLE=	nyarla:go-crypt:d9a5dc2b789bc330075d4b805d9b7c971f2865a1:nyarla_go_crypt/vendor/gitlab.com/nyarla/go-crypt
 
 PLIST_FILES=	bin/usql
-
-do-build:
-	@cd ${WRKSRC}/${GH_SUBDIR} && \
-		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${GH_SUBDIR}/usql ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
