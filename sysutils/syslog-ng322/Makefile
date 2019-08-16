@@ -117,6 +117,7 @@ JAVA_USE=			JAVA=yes
 JAVA_PLIST_FILES=		lib/syslog-ng/libmod-java.so \
 				lib/syslog-ng/java-modules/syslog-ng-core.jar
 
+JAVA_MOD_IMPLIES=		JAVA
 JAVA_MOD_CONFIGURE_ENABLE=	java-modules
 JAVA_MOD_USE=			JAVA=yes
 JAVA_MOD_BUILD_DEPENDS=		gradle:devel/gradle \
