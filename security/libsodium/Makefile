@@ -9,13 +9,14 @@ MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Library to build higher-level cryptographic tools
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
-INSTALL_TARGET?=	install-strip
-TEST_TARGET=		check
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS
 
