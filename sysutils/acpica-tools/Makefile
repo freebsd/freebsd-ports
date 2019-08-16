@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	acpica
-PORTVERSION=	20190703
+PORTVERSION=	20190816
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://acpica.org/sites/acpica/files/ \
 		LOCAL/jkim
@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 
 BROKEN_powerpc64=	fails to compile: comparison is always true due to limited range of data type
 
-USES=		gmake
+USES=		bison gmake
 
 BUILD_WRKSRC=	${WRKSRC}/generate/unix
 
@@ -26,7 +26,7 @@ ACPICA_TOOLS+=	acpixtract iasl
 PLIST_FILES=	${ACPICA_TOOLS:S,^,bin/,}
 
 MAKE_ARGS=	HOST=_FreeBSD NOOPT=TRUE PROGS="${ACPICA_TOOLS}"
-MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" YACC="${YACC}"
+MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" YACC="${LOCALBASE}/bin/bison"
 
 do-install:
 	${INSTALL_PROGRAM} ${ACPICA_TOOLS:S,^,${BUILD_WRKSRC}/bin/,} \
