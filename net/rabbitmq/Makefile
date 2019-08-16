@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.7.16
+PORTVERSION=	3.7.17
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -14,7 +14,7 @@ LICENSE=	MPL11
 LICENSE_FILE=	${WRKSRC}/LICENSE-MPL-RabbitMQ
 
 BUILD_DEPENDS=	erlang-runtime21>=21.3:lang/erlang-runtime21 \
-		elixir>=1.8:lang/elixir \
+		elixir>=1.9:lang/elixir \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson@${PY_FLAVOR} \
 		xmlto:textproc/xmlto \
 		zip:archivers/zip \
