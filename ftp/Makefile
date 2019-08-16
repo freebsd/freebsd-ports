@@ -13,6 +13,7 @@
     SUBDIR += cftp
     SUBDIR += cmdftp
     SUBDIR += curl
+    SUBDIR += curlie
     SUBDIR += curlpp
     SUBDIR += dmachine
     SUBDIR += fastdfs
