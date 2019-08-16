@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lastpass-cli
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	tom@hur.st
@@ -15,23 +14,25 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake:noninja pkgconfig ssl
+USES=		cmake:noninja gnome pkgconfig ssl
 USE_GNOME=	libxml2
 
-USE_GITHUB=	YES
+USE_GITHUB=	yes
 GH_ACCOUNT=	lastpass
-
-PLIST_FILES=	bin/lpass share/bash-completion/completions/lpass
-CMAKE_ARGS=	-DBASH_COMPLETION_COMPLETIONSDIR=${PREFIX}/share/bash-completion/completions
 
 TEST_TARGET=	lpass-test test
 
-OPTIONS_DEFINE=		MANPAGES PINENTRY XCLIP XSEL
-OPTIONS_DEFAULT=	MANPAGES
+PLIST_FILES=	bin/lpass
+
+OPTIONS_DEFINE=		BASH MANPAGES PINENTRY XCLIP XSEL
+OPTIONS_DEFAULT=	BASH MANPAGES
 PINENTRY_DESC=		Use pinentry for password entry
 XCLIP_DESC=		Use xclip for interacting with X11 clipboard
 XSEL_DESC=		Use xsel for interacting with X11 clipboard
 
+BASH_BUILD_DEPENDS=	bash-completion>=0:shells/bash-completion
+BASH_RUN_DEPENDS=	bash-completion>=0:shells/bash-completion
+BASH_PLIST_FILES=	share/bash-completion/completions/lpass
 MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 			xmlto:textproc/xmlto
 MANPAGES_ALL_TARGET=	all doc-man
