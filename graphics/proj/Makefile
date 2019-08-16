@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	proj
-PORTVERSION=	6.1.0
-PORTREVISION=	1
+PORTVERSION=	6.1.1
 PORTEPOCH=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/proj/
@@ -31,9 +30,6 @@ DATUM_GRID_FILES=	proj-datumgrid-1.8.zip \
 			proj-datumgrid-oceania-1.0.zip \
 			proj-datumgrid-world-1.0.zip
 
-FMAN1=	cs2cs.1 geod.1 proj.1
-FMAN3=	geodesic.3 pj_init.3
-
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
@@ -44,10 +40,6 @@ post-extract:
 .endfor
 
 post-install:
-.for m in 1 3
-	(cd ${STAGEDIR}${MANPREFIX}/man/man${m} && ${GZIP_CMD} ${FMAN${m}})
-.endfor
-
 	cd ${WRKSRC}/datum && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
