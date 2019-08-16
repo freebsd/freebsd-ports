@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Calendar-Christian
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,8 +18,9 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSES/Copying
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DateTime-Calendar-Julian>=0.04:devel/p5-DateTime-Calendar-Julian
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
