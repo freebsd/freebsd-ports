@@ -13,10 +13,13 @@ COMMENT=	Bash Screenshot Information Tool
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	bash:shells/bash \
-		xdpyinfo:x11/xdpyinfo
+RUN_DEPENDS=	bash:shells/bash
+X11_RUN_DEPENDS=	xdpyinfo:x11/xdpyinfo
 
-OPTIONS_DEFINE=	DOCS
+CONFLICTS_INSTALL?=	screenFetch-nox11
+
+OPTIONS_DEFINE=	DOCS X11
+OPTIONS_DEFAULT=	X11
 
 NO_BUILD=	yes
 NO_ARCH=	yes
