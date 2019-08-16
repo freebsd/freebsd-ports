@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	19.05
+PORTVERSION=	19.08
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -46,9 +46,10 @@ GH_TUPLE=	erlang-lager:lager:${LAGER_VER}:lager/deps/lager \
 		dvv:base64url:f2c64ed8:base64url/deps/base64url \
 		processone:ezlib:${EZLIB_VER}:ezlib/deps/ezlib \
 		processone:pkix:${PKIX_VER}:pkix/deps/pkix \
-		processone:mqtree:${MQTREE_VER}:mqtree/deps/mqtree
+		processone:mqtree:${MQTREE_VER}:mqtree/deps/mqtree \
+		processone:yconf:${YCONF_VER}:yconf/deps/yconf
 
-OPTIONS_DEFINE=	ODBC PAM DOCS MYSQL PGSQL RIAK REDIS SIP SQLITE \
+OPTIONS_DEFINE=	ODBC PAM DOCS MYSQL PGSQL REDIS SIP SQLITE \
 		STUN TOOLS FULLXML
 
 EJABBERD_LIBDIR=lib/erlang/lib
@@ -68,7 +69,6 @@ SUBS= 		PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}		\
 		FAST_XML_VER=${FAST_XML_VER}				\
 		FAST_YAML_VER=${FAST_YAML_VER}				\
 		GOLDRUSH_VER=${GOLDRUSH_VER}				\
-		HAMCREST_VER=${HAMCREST_VER}				\
 		JIFFY_VER=${JIFFY_VER} JOSE_VER=${JOSE_VER}		\
 		LAGER_VER=${LAGER_VER} LUERL_VER=${LUERL_VER}		\
 		MQTREE_VER=${MQTREE_VER}				\
@@ -76,10 +76,9 @@ SUBS= 		PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}		\
 		P1_OAUTH2_VER=${P1_OAUTH2_VER}				\
 		P1_PGSQL_VER=${P1_PGSQL_VER}				\
 		P1_UTILS_VER=${P1_UTILS_VER} PKIX_VER=${PKIX_VER}	\
-		RIAK_PB_VER=${RIAK_PB_VER} RIAKC_VER=${RIAKC_VER}	\
 		SQLITE3_VER=${SQLITE3_VER}				\
 		STRINGPREP_VER=${STRINGPREP_VER} STUN_VER=${STUN_VER}	\
-		XMPP_VER=${XMPP_VER}
+		XMPP_VER=${XMPP_VER} YCONF_VER=${YCONF_VER}
 
 SUB_FILES=	pkg-message pkg-install
 PLIST_SUB=	${SUBS}
@@ -90,36 +89,33 @@ SUB_LIST=	${SUBS} \
 SHEBANG_FILES=	${WRKSRC}/ejabberdctl.template
 
 BASE64URL_VER=	0.0.1
-CACHE_TAB_VER=	1.0.19
-EIMP_VER=	1.0.11
+CACHE_TAB_VER=	1.0.20
+EIMP_VER=	1.0.12
 EPAM_VER=	1.0.6
 EREDIS_VER=	1.0.8
-ESIP_VER=	1.0.29
+ESIP_VER=	1.0.30
 EZLIB_VER=	1.0.6
-FAST_TLS_VER=	1.1.1
-FAST_XML_VER=	1.1.36
-FAST_YAML_VER=	1.0.19
+FAST_TLS_VER=	1.1.2
+FAST_XML_VER=	1.1.37
+FAST_YAML_VER=	1.0.20
 GOLDRUSH_VER=	0.1.9
-HAMCREST_VER=	0.4.1
 JIFFY_VER=	0.14.8
 JOSE_VER=	1.8.4
 LAGER_VER=	3.6.10
 LUERL_VER=	0.3
-MQTREE_VER=	1.0.3
+MQTREE_VER=	1.0.4
 P1_MYSQL_VER=	1.0.11
 P1_OAUTH2_VER=	0.6.5
 P1_PGSQL_VER=	1.1.8
-P1_UTILS_VER=	1.0.15
-PKIX_VER=	1.0.2
-RIAK_PB_VER=	2.3.2
-RIAKC_VER=	develop
+P1_UTILS_VER=	1.0.16
+PKIX_VER=	1.0.3
 SQLITE3_VER=	1.1.6
-STRINGPREP_VER=	1.0.16
-STUN_VER=	1.0.28
-XMPP_VER=	1.3.4
+STRINGPREP_VER=	1.0.17
+STUN_VER=	1.0.29
+XMPP_VER=	1.4.0
+YCONF_VER=	1.0.0
 
 OPTIONS_SUB=		yes
-RIAK_DESC=	Riak database support
 SIP_DESC=	SIP support
 STUN_DESC=	STUN/TURN support
 TOOLS_DESC=	Build development tools
@@ -131,10 +127,6 @@ MYSQL_CONFIGURE_ENABLE=	mysql
 MYSQL_GH_TUPLE=	processone:p1_mysql:${P1_MYSQL_VER}:p1_mysql/deps/p1_mysql
 PGSQL_CONFIGURE_ENABLE=	pgsql
 PGSQL_GH_TUPLE=	processone:p1_pgsql:${P1_PGSQL_VER}:p1_pgsql/deps/p1_pgsql
-RIAK_CONFIGURE_ENABLE=	riak
-RIAK_GH_TUPLE=	processone:riak-erlang-client:${RIAKC_VER}:riakc/deps/riakc \
-		basho:riak_pb:${RIAK_PB_VER}:riak_pb/deps/riak_pb \
-		basho:hamcrest-erlang:${HAMCREST_VER}:hamcrest/deps/hamcrest
 REDIS_CONFIGURE_ENABLE=	redis
 REDIS_GH_TUPLE=	wooga:eredis:v${EREDIS_VER}:eredis/deps/eredis
 SIP_CONFIGURE_ENABLE=	sip
@@ -162,10 +154,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,^convert,${LOCALBASE}/bin/convert,' ${WRKSRC}/tools/captcha.sh
 	@${REINPLACE_CMD} -e 's,%%PORTVERSION%%,${PORTVERSION},' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e '/vsn/s/git/"${JIFFY_VER}"/' ${WRKSRC}/deps/jiffy/src/jiffy.app.src
-
-post-patch-RIAK-on:
-	@${REINPLACE_CMD} -e '/vsn/s/git/"${RIAK_PB_VER}"/' ${WRKSRC}/deps/riak_pb/src/riak_pb.app.src
-	@${REINPLACE_CMD} -e '/vsn/s/git/"${RIAKC_VER}"/' ${WRKSRC}/deps/riakc/src/riakc.app.src
 
 pre-configure:
 	cd ${WRKSRC} && ${SH} autogen.sh
