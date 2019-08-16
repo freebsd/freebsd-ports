@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190816:
+  AFFECTS: users of net-im/ejabberd
+  AUTHOR: ashish@FreeBSD.org
+
+  Riak support has been removed by upstream. For update instructions from
+  19.05, please refer to:
+
+  https://docs.ejabberd.im/admin/upgrade/from_19.05_to_19.08/ 
+
 20190812:
   AFFECTS: users of lang/perl5*
   AUTHOR: mat@FreeBSD.org
