@@ -1,6 +1,6 @@
---- deps/v8/src/base/platform/platform-freebsd.cc.orig	2019-01-30 20:43:13 UTC
+--- deps/v8/src/base/platform/platform-freebsd.cc.orig	2019-08-06 20:46:24 UTC
 +++ deps/v8/src/base/platform/platform-freebsd.cc
-@@ -86,5 +86,47 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
+@@ -86,6 +86,48 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
  
  void OS::SignalCodeMovingGC() {}
  
@@ -46,5 +46,6 @@
 +
 +#endif // def __arm__
 +
+ void OS::AdjustSchedulingParams() {}
+ 
  }  // namespace base
- }  // namespace v8
