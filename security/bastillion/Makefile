@@ -1,13 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=		bastillion
-PORTVERSION=		3.06.04
-DVERSION=		3.06_04
-DISTVERSIONPREFIX=	v
+DISTVERSIONPREFIX=	jetty-v
+DISTVERSION=		3.06_04
 #PKGNAMESUFFIX=		0
 CATEGORIES=		security www java
-MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
-DISTNAME=		${PORTNAME}-jetty-v${DVERSION}
+MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Web-based SSH console
