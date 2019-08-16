@@ -18,11 +18,13 @@ lib/rabbitmq_server-%%VERSION%%/LICENSE-MIT-Sammy
 lib/rabbitmq_server-%%VERSION%%/LICENSE-MIT-Sammy060
 lib/rabbitmq_server-%%VERSION%%/LICENSE-MIT-jQuery
 lib/rabbitmq_server-%%VERSION%%/LICENSE-MIT-jQuery164
+lib/rabbitmq_server-%%VERSION%%/LICENSE-MPL
 lib/rabbitmq_server-%%VERSION%%/LICENSE-MPL-RabbitMQ
 lib/rabbitmq_server-%%VERSION%%/LICENSE-MPL2
 lib/rabbitmq_server-%%VERSION%%/LICENSE-erlcloud
 lib/rabbitmq_server-%%VERSION%%/LICENSE-httpc_aws
 lib/rabbitmq_server-%%VERSION%%/LICENSE-rabbitmq_aws
+lib/rabbitmq_server-%%VERSION%%/ebin/amqqueue.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/background_gc.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/code_server_cache.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/dtree.beam
@@ -78,6 +80,9 @@ lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_exchange_type_fanout.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_exchange_type_headers.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_exchange_type_invalid.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_exchange_type_topic.beam
+lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_feature_flags.beam
+lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_ff_extra.beam
+lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_ff_registry.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_fhc_helpers.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_file.beam
 lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_framing.beam
@@ -161,6 +166,8 @@ lib/rabbitmq_server-%%VERSION%%/ebin/term_to_binary_compat.beam
 lib/rabbitmq_server-%%VERSION%%/escript/rabbitmq-diagnostics
 lib/rabbitmq_server-%%VERSION%%/escript/rabbitmq-plugins
 lib/rabbitmq_server-%%VERSION%%/escript/rabbitmqctl
+lib/rabbitmq_server-%%VERSION%%/include/amqqueue.hrl
+lib/rabbitmq_server-%%VERSION%%/include/amqqueue_v1.hrl
 lib/rabbitmq_server-%%VERSION%%/include/gm_specs.hrl
 lib/rabbitmq_server-%%VERSION%%/include/rabbit.hrl
 lib/rabbitmq_server-%%VERSION%%/include/rabbit_core_metrics.hrl
@@ -215,6 +222,7 @@ lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_web_stomp-%%VERSION%%.ez
 lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_web_stomp_examples-%%VERSION%%.ez
 lib/rabbitmq_server-%%VERSION%%/plugins/ranch-1.7.1.ez
 lib/rabbitmq_server-%%VERSION%%/plugins/recon-2.5.0.ez
+lib/rabbitmq_server-%%VERSION%%/plugins/stdout_formatter-0.2.2.ez
 lib/rabbitmq_server-%%VERSION%%/plugins/syslog-3.4.5.ez
 lib/rabbitmq_server-%%VERSION%%/plugins/sysmon_handler-1.1.0.ez
 lib/rabbitmq_server-%%VERSION%%/priv/schema/rabbit.schema
