@@ -1668,7 +1668,6 @@
     SUBDIR += scdoc
     SUBDIR += scew
     SUBDIR += scim
-    SUBDIR += scim-bridge
     SUBDIR += scim-input-pad
     SUBDIR += scim-kmfl-imengine
     SUBDIR += scim-m17n
