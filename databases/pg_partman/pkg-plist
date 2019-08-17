@@ -1,10 +1,10 @@
 bin/check_unique_constraint.py
 bin/dump_partition.py
-bin/partition_data.py
-bin/reapply_constraints.py
-bin/reapply_foreign_keys.py
+%%OLDPG%%bin/partition_data.py
+%%OLDPG%%bin/reapply_constraints.py
+%%OLDPG%%bin/reapply_foreign_keys.py
 bin/reapply_indexes.py
-bin/undo_partition.py
+%%OLDPG%%bin/undo_partition.py
 bin/vacuum_maintenance.py
 lib/postgresql/pg_partman_bgw.so
 %%PORTDOCS%%%%DOCSDIR%%/migration_to_partman.md
