@@ -1189,23 +1189,16 @@ MASTER_SITE_XFCE+= \
 .if !defined(IGNORE_MASTER_SITE_XORG)
 MASTER_SITE_XORG+= \
 	https://xorg.freedesktop.org/releases/%SUBDIR%/ \
-	http://xorg.mirrors.pair.com/%SUBDIR%/ \
-	http://mirror.us.leaseweb.net/xorg/%SUBDIR%/ \
 	https://mirror.csclub.uwaterloo.ca/x.org/%SUBDIR%/ \
 	https://artfiles.org/x.org/pub/%SUBDIR%/ \
 	https://ftp.gwdg.de/pub/x11/x.org/pub/%SUBDIR%/ \
 	https://mi.mirror.garr.it/mirrors/x.org/%SUBDIR%/ \
-	http://mirror.switch.ch/ftp/mirror/X11/pub/%SUBDIR%/ \
 	https://mirrors.ircam.fr/pub/x.org/%SUBDIR%/ \
 	https://www.mirrorservice.org/sites/ftp.x.org/pub/%SUBDIR%/ \
-	http://www.portal-to-web.de/pub/mirrors/x.org/%SUBDIR%/ \
-	http://x.cybermirror.org/%SUBDIR%/ \
-	https://x.europnews.de/pub/%SUBDIR%/ \
-	http://xorg.mirror.solnet.ch/pub/%SUBDIR%/ \
 	https://mirror.nl.leaseweb.net/xorg/%SUBDIR%/ \
-	http://mirror.de.leaseweb.net/xorg/%SUBDIR%/ \
-	http://mirrors.go-part.com/xorg/%SUBDIR%/ \
 	https://ftp.yz.yamagata-u.ac.jp/pub/X11/x.org/%SUBDIR%/ \
+	http://piotrkosoft.net/pub/mirrors/ftp.x.org/pub/%SUBDIR%/ \
+	http://xorg.mirrors.pair.com/%SUBDIR%/ \
 	http://ftp.kaist.ac.kr/x.org/%SUBDIR%/
 .endif
 
