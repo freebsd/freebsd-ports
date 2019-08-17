@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/ui/widgets/labels.cpp.orig	2019-04-13 06:46:58 UTC
+--- Telegram/SourceFiles/ui/widgets/labels.cpp.orig	2019-07-07 13:34:35 UTC
 +++ Telegram/SourceFiles/ui/widgets/labels.cpp
-@@ -361,11 +361,11 @@ Text::StateResult FlatLabel::dragActionFinish(const QP
+@@ -391,11 +391,11 @@ Ui::Text::StateResult FlatLabel::dragActionFinish(cons
  		}
  	}
  

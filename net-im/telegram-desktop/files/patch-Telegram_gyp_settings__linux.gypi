@@ -1,4 +1,4 @@
---- Telegram/gyp/settings_linux.gypi.orig	2019-04-13 06:46:58 UTC
+--- Telegram/gyp/settings_linux.gypi.orig	2019-07-07 13:34:35 UTC
 +++ Telegram/gyp/settings_linux.gypi
 @@ -11,7 +11,6 @@
          'linux_common_flags': [
@@ -8,7 +8,7 @@
            '-W',
            '-fPIC',
            '-Wno-unused-variable',
-@@ -26,7 +25,7 @@
+@@ -28,7 +27,7 @@
          ],
        },
        'conditions': [
@@ -17,7 +17,7 @@
            'defines': [
              'Q_OS_LINUX64',
            ],
-@@ -61,7 +60,6 @@
+@@ -63,7 +62,6 @@
        ],
        'defines': [
          '_REENTRANT',
@@ -25,7 +25,7 @@
          'QT_PLUGIN',
        ],
        'cflags_c': [
-@@ -74,9 +72,6 @@
+@@ -76,9 +74,6 @@
          '-Wno-register',
        ],
        'make_global_settings': [

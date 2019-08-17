@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/logs.cpp.orig	2019-02-01 12:51:46 UTC
+--- Telegram/SourceFiles/logs.cpp.orig	2019-07-07 13:34:35 UTC
 +++ Telegram/SourceFiles/logs.cpp
-@@ -333,7 +333,7 @@ void start(not_null<Core::Launcher*> launcher) {
+@@ -338,7 +338,7 @@ void start(not_null<Core::Launcher*> launcher) {
  	if (cAlphaVersion()) {
  		workingDirChosen = true;
  
@@ -9,7 +9,7 @@
  	} else {
  		if (!cWorkingDir().isEmpty()) {
  			// This value must come from TelegramForcePortable
-@@ -348,16 +348,16 @@ void start(not_null<Core::Launcher*> launcher) {
+@@ -353,16 +353,16 @@ void start(not_null<Core::Launcher*> launcher) {
  		}
  		workingDirChosen = true;
  
@@ -30,7 +30,7 @@
  #ifdef _DEBUG
  		cForceWorkingDir(cExeDir());
  #else // _DEBUG
-@@ -374,7 +374,7 @@ void start(not_null<Core::Launcher*> launcher) {
+@@ -379,7 +379,7 @@ void start(not_null<Core::Launcher*> launcher) {
  			workingDirChosen = true;
  		}
  
