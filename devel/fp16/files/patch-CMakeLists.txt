@@ -1,0 +1,72 @@
+--- CMakeLists.txt.orig	2018-11-28 18:36:19 UTC
++++ CMakeLists.txt
+@@ -33,7 +33,7 @@ SET(CONFU_DEPENDENCIES_SOURCE_DIR ${CMAKE_SOURCE_DIR}/
+ SET(CONFU_DEPENDENCIES_BINARY_DIR ${CMAKE_BINARY_DIR}/deps
+   CACHE PATH "Confu-style dependencies binary directory")
+ 
+-IF(NOT DEFINED PSIMD_SOURCE_DIR)
++IF(FALSE AND NOT DEFINED PSIMD_SOURCE_DIR)
+   MESSAGE(STATUS "Downloading PSimd to ${CONFU_DEPENDENCIES_SOURCE_DIR}/psimd (define PSIMD_SOURCE_DIR to avoid it)")
+   CONFIGURE_FILE(cmake/DownloadPSimd.cmake "${CONFU_DEPENDENCIES_BINARY_DIR}/psimd-download/CMakeLists.txt")
+   EXECUTE_PROCESS(COMMAND "${CMAKE_COMMAND}" -G "${CMAKE_GENERATOR}" .
+@@ -68,8 +68,7 @@ IF(${CMAKE_VERSION} VERSION_LESS "3.0")
+   ADD_LIBRARY(fp16 STATIC
+     include/fp16.h
+     include/fp16/fp16.h
+-    include/fp16/bitcasts.h
+-    include/fp16/psimd.h)
++    include/fp16/bitcasts.h)
+   SET_TARGET_PROPERTIES(fp16 PROPERTIES LINKER_LANGUAGE C)
+ ELSE()
+   ADD_LIBRARY(fp16 INTERFACE)
+@@ -83,14 +82,13 @@ INSTALL(FILES include/fp16.h
+ INSTALL(FILES
+     include/fp16/bitcasts.h
+     include/fp16/fp16.h
+-    include/fp16/psimd.h
+     include/fp16/__init__.py
+     include/fp16/avx.py
+     include/fp16/avx2.py
+   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/fp16)
+ 
+ # ---[ Configure psimd
+-IF(NOT TARGET psimd)
++IF(FALSE AND NOT TARGET psimd)
+   ADD_SUBDIRECTORY(
+     "${PSIMD_SOURCE_DIR}"
+     "${CONFU_DEPENDENCIES_BINARY_DIR}/psimd")
+@@ -154,28 +152,28 @@ IF(FP16_BUILD_BENCHMARKS)
+   ADD_EXECUTABLE(ieee-element-bench bench/ieee-element.cc)
+   TARGET_COMPILE_DEFINITIONS(ieee-element-bench PRIVATE FP16_COMPARATIVE_BENCHMARKS=1)
+   TARGET_INCLUDE_DIRECTORIES(ieee-element-bench PRIVATE ${PROJECT_SOURCE_DIR})
+-  TARGET_LINK_LIBRARIES(ieee-element-bench fp16 psimd benchmark)
++  TARGET_LINK_LIBRARIES(ieee-element-bench fp16 benchmark)
+ 
+   ADD_EXECUTABLE(alt-element-bench bench/alt-element.cc)
+-  TARGET_LINK_LIBRARIES(alt-element-bench fp16 psimd benchmark)
++  TARGET_LINK_LIBRARIES(alt-element-bench fp16 benchmark)
+ 
+   ADD_EXECUTABLE(from-ieee-array-bench bench/from-ieee-array.cc)
+   FP16_TARGET_ENABLE_CXX11(from-ieee-array-bench)
+   TARGET_COMPILE_DEFINITIONS(from-ieee-array-bench PRIVATE FP16_COMPARATIVE_BENCHMARKS=1)
+   TARGET_INCLUDE_DIRECTORIES(from-ieee-array-bench PRIVATE ${PROJECT_SOURCE_DIR})
+-  TARGET_LINK_LIBRARIES(from-ieee-array-bench fp16 psimd benchmark)
++  TARGET_LINK_LIBRARIES(from-ieee-array-bench fp16 benchmark)
+ 
+   ADD_EXECUTABLE(from-alt-array-bench bench/from-alt-array.cc)
+   FP16_TARGET_ENABLE_CXX11(from-alt-array-bench)
+-  TARGET_LINK_LIBRARIES(from-alt-array-bench fp16 psimd benchmark)
++  TARGET_LINK_LIBRARIES(from-alt-array-bench fp16 benchmark)
+ 
+   ADD_EXECUTABLE(to-ieee-array-bench bench/to-ieee-array.cc)
+   FP16_TARGET_ENABLE_CXX11(to-ieee-array-bench)
+   TARGET_COMPILE_DEFINITIONS(to-ieee-array-bench PRIVATE FP16_COMPARATIVE_BENCHMARKS=1)
+   TARGET_INCLUDE_DIRECTORIES(to-ieee-array-bench PRIVATE ${PROJECT_SOURCE_DIR})
+-  TARGET_LINK_LIBRARIES(to-ieee-array-bench fp16 psimd benchmark)
++  TARGET_LINK_LIBRARIES(to-ieee-array-bench fp16 benchmark)
+ 
+   ADD_EXECUTABLE(to-alt-array-bench bench/to-alt-array.cc)
+   FP16_TARGET_ENABLE_CXX11(to-alt-array-bench)
+-  TARGET_LINK_LIBRARIES(to-alt-array-bench fp16 psimd benchmark)
++  TARGET_LINK_LIBRARIES(to-alt-array-bench fp16 benchmark)
+ ENDIF()

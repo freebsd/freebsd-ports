@@ -1,0 +1,12 @@
+Header-only library for conversion to/from half-precision floating point
+formats.
+
+Features:
+* Supports IEEE and ARM alternative half-precision floating-point format
+  o Property converts infinities and NaNs
+  o Properly converts denormal numbers, even on systems without denormal support
+* Header-only library, no installation or build required
+* Compatible with C99 and C++11
+* Fully covered with unit tests and microbenchmarks
+
+WWW: https://github.com/Maratyszcza/FP16
