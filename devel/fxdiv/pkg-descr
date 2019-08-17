@@ -1,0 +1,15 @@
+Header-only library for division via fixed-point multiplication by inverse.
+
+On modern CPUs and GPUs integer division is several times slower than
+multiplication. FXdiv implements an algorithm to replace an integer division
+with a multiplication and two shifts. This algorithm improves performance when
+an application performs repeated divisions by the same divisor.
+
+Features:
+* Integer division for uint32_t, uint64_t, and size_t
+* Header-only library, no installation or build required
+* Compatible with C99, C++, OpenCL, and CUDA
+* Uses platform-specific compiler intrinsics for optimal performance
+* Covered with unit tests and microbenchmarks
+
+WWW: https://github.com/Maratyszcza/FXdiv

@@ -711,6 +711,7 @@
     SUBDIR += fujaba
     SUBDIR += funnelweb
     SUBDIR += fuzzylite
+    SUBDIR += fxdiv
     SUBDIR += ga
     SUBDIR += gaa
     SUBDIR += gamin
