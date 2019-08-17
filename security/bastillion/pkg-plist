@@ -4,7 +4,6 @@
 @dir(www,www,755) /var/run/%%APP_NAME%%
 jetty_bastillion/README.TXT
 jetty_bastillion/VERSION.txt
-jetty_bastillion/bastillion/WEB-INF/classes/BastillionConfig.properties.sample
 jetty_bastillion/bastillion/WEB-INF/classes/VERSION.txt
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/common/db/DBInitServlet.class
 jetty_bastillion/bastillion/WEB-INF/classes/io/bastillion/common/filter/AuthFilter.class
