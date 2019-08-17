@@ -444,7 +444,6 @@
     SUBDIR += graid5
     SUBDIR += graveman
     SUBDIR += graylog
-    SUBDIR += grub2
     SUBDIR += grub2-bhyve
     SUBDIR += gsh
     SUBDIR += gsmartcontrol
