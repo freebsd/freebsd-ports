@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-railties5>=4.0.0<6:www/rubygem-railties5 \
-		rubygem-sass>=3.1<4.0:textproc/rubygem-sass \
+		rubygem-sass>=3.1<4:textproc/rubygem-sass \
 		rubygem-sprockets3>=2.8<4.0:devel/rubygem-sprockets3 \
 		rubygem-sprockets-rails-rails5>=2.0<4.0:devel/rubygem-sprockets-rails-rails5 \
 		rubygem-tilt>=1.1<3:devel/rubygem-tilt
@@ -23,5 +23,8 @@ USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+# It requires Rails 5.2.0+ since 5.0.8.
+PORTSCOUT=	ignore:1
 
 .include <bsd.port.mk>
