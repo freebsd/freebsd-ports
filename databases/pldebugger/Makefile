@@ -13,7 +13,7 @@ COMMENT=	PostgreSQL pl/pgsql Debugger API
 
 LICENSE=	ART20
 
-USES=		gmake pgsql
+USES=		gmake pgsql:10-
 LLD_UNSAFE=	yes
 WANT_PGSQL=	server
 
