@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/_other/packer.cpp.orig	2018-08-04 18:53:40 UTC
+--- Telegram/SourceFiles/_other/packer.cpp.orig	2019-07-07 13:34:35 UTC
 +++ Telegram/SourceFiles/_other/packer.cpp
-@@ -233,7 +233,7 @@ int main(int argc, char *argv[])
+@@ -254,7 +254,7 @@ int main(int argc, char *argv[])
  			}
  			QByteArray inner = f.readAll();
  			stream << name << quint32(inner.size()) << inner;

@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/ui/text/text.cpp.orig	2019-04-13 06:46:58 UTC
+--- Telegram/SourceFiles/ui/text/text.cpp.orig	2019-07-07 13:34:35 UTC
 +++ Telegram/SourceFiles/ui/text/text.cpp
-@@ -1762,11 +1762,11 @@ class TextPainter { (private)
+@@ -2016,11 +2016,11 @@ class Renderer { (private)
  		if (item == -1)
  			return;
  

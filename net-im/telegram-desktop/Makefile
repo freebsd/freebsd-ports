@@ -2,8 +2,7 @@
 
 PORTNAME=	telegram-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.7
-PORTREVISION=	3
+DISTVERSION=	1.7.14
 CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libopenal.so:audio/openal-soft \
 		libopus.so:audio/opus
 
-USES=		compiler:c++17-lang cmake:noninja desktop-file-utils gmake pkgconfig python:2.7,build qt:5 ssl
+USES=		compiler:c++17-lang cmake:noninja desktop-file-utils gmake gnome pkgconfig python:2.7,build qt:5 ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	telegramdesktop
@@ -34,9 +33,11 @@ GH_PROJECT=	tdesktop
 GH_TUPLE=	catchorg:Catch2:5ca44b68:catch/Telegram/ThirdParty/Catch \
 		mapbox:variant:550ac2f:variant/Telegram/ThirdParty/variant \
 		Microsoft:GSL:d846fe5:gsl/Telegram/ThirdParty/GSL \
-		telegramdesktop:libtgvoip:e701050:libtgvoip/Telegram/ThirdParty/libtgvoip \
-		telegramdesktop:crl:84072fb:crl/Telegram/ThirdParty/crl \
-		Cyan4973:xxHash:7cc9639:xxhash/Telegram/ThirdParty/xxHash
+		telegramdesktop:libtgvoip:0e92a22:libtgvoip/Telegram/ThirdParty/libtgvoip \
+		telegramdesktop:crl:9ea8700:crl/Telegram/ThirdParty/crl \
+		Cyan4973:xxHash:7cc9639:xxhash/Telegram/ThirdParty/xxHash \
+		john-preston:rlottie:302b7f9:rlottie/Telegram/ThirdParty/rlottie \
+		lz4:lz4:9a2a9f2:lz4/Telegram/ThirdParty/lz4
 USE_GNOME=	glib20
 USE_QT=		core gui imageformats network widgets buildtools_build qmake_build dbus
 USE_XORG=	x11 xcb
