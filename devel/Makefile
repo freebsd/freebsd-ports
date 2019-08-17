@@ -3980,6 +3980,7 @@
     SUBDIR += psvn
     SUBDIR += pth
     SUBDIR += pth-hard
+    SUBDIR += pthreadpool
     SUBDIR += pthsem
     SUBDIR += ptlib
     SUBDIR += ptmalloc
