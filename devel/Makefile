@@ -3966,6 +3966,7 @@
     SUBDIR += protobuf25
     SUBDIR += protozero
     SUBDIR += pructl
+    SUBDIR += psimd
     SUBDIR += psptoolchain
     SUBDIR += psptoolchain-binutils
     SUBDIR += psptoolchain-gcc-stage1

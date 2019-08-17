@@ -1,0 +1,4 @@
+psimd is a portable header-only zero-overhead C++ wrapper around
+single-instruction multiple-data (SIMD) 128-bit intrinsics.
+
+WWW: https://github.com/Maratyszcza/psimd
