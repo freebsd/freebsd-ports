@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190809
-PORTREVISION=	1
+PORTVERSION=	s20190816
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,14 +16,14 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	ec0c7787
+GH_TAGNAME=	50f6162c
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler32-1.0.3 \
 		aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
 		aom-sys-0.1.2 \
-		arc-swap-0.4.1 \
+		arc-swap-0.4.2 \
 		arg_enum_proc_macro-0.1.1 \
 		arrayvec-0.4.11 \
 		atty-0.2.13 \
@@ -35,11 +34,11 @@ CARGO_CRATES=	adler32-1.0.3 \
 		bincode-1.1.4 \
 		bindgen-0.49.2 \
 		bitflags-1.1.0 \
-		bitstream-io-0.8.3 \
-		bstr-0.2.6 \
+		bitstream-io-0.8.4 \
+		bstr-0.2.7 \
 		byteorder-1.3.2 \
 		cast-0.2.2 \
-		cc-1.0.38 \
+		cc-1.0.40 \
 		cexpr-0.3.5 \
 		cfg-if-0.1.9 \
 		chrono-0.4.7 \
@@ -57,7 +56,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		crossbeam-utils-0.6.6 \
 		csv-1.1.1 \
 		csv-core-0.1.6 \
-		ctor-0.1.9 \
+		ctor-0.1.10 \
 		dav1d-sys-0.2.0 \
 		deflate-0.7.20 \
 		difference-2.0.0 \
@@ -80,7 +79,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		itoa-0.4.4 \
 		jpeg-decoder-0.1.15 \
 		lazy_static-1.3.0 \
-		libc-0.2.60 \
+		libc-0.2.62 \
 		libloading-0.5.2 \
 		lock_api-0.3.1 \
 		log-0.4.8 \
@@ -99,16 +98,18 @@ CARGO_CRATES=	adler32-1.0.3 \
 		output_vt100-0.1.2 \
 		parking_lot-0.9.0 \
 		parking_lot_core-0.6.2 \
-		paste-0.1.5 \
-		paste-impl-0.1.5 \
+		paste-0.1.6 \
+		paste-impl-0.1.6 \
 		peeking_take_while-0.1.2 \
 		pkg-config-0.3.15 \
 		png-0.14.1 \
 		pretty_assertions-0.6.1 \
-		proc-macro-hack-0.5.8 \
+		proc-macro-hack-0.5.9 \
 		proc-macro2-0.4.30 \
+		proc-macro2-1.0.1 \
 		quick-error-1.2.2 \
 		quote-0.6.13 \
+		quote-1.0.1 \
 		rand-0.6.5 \
 		rand_chacha-0.1.1 \
 		rand_core-0.3.1 \
@@ -127,7 +128,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		regex-1.1.9 \
 		regex-automata-0.1.8 \
 		regex-syntax-0.6.11 \
-		rustc-demangle-0.1.15 \
+		rustc-demangle-0.1.16 \
 		rustc_version-0.2.3 \
 		ryu-1.0.0 \
 		same-file-1.0.5 \
@@ -136,15 +137,16 @@ CARGO_CRATES=	adler32-1.0.3 \
 		scopeguard-1.0.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.98 \
-		serde_derive-1.0.98 \
+		serde-1.0.99 \
+		serde_derive-1.0.99 \
 		serde_json-1.0.40 \
 		shlex-0.1.1 \
 		signal-hook-0.1.10 \
 		signal-hook-registry-1.1.1 \
 		smallvec-0.6.10 \
 		strsim-0.8.0 \
-		syn-0.15.43 \
+		syn-0.15.44 \
+		syn-1.0.2 \
 		synstructure-0.10.2 \
 		termcolor-1.0.5 \
 		termios-0.3.1 \
@@ -156,6 +158,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		toml-0.2.1 \
 		unicode-width-0.1.5 \
 		unicode-xid-0.1.0 \
+		unicode-xid-0.2.0 \
 		utf8-ranges-1.0.4 \
 		vec_map-0.8.1 \
 		vergen-3.0.4 \
@@ -166,7 +169,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		wincolor-1.0.1 \
+		wincolor-1.0.2 \
 		y4m-0.3.3
 
 post-install:
