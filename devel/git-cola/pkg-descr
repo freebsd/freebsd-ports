@@ -1,0 +1,13 @@
+git-cola is a powerful Git GUI, with a slick and intuitive interface.
+
+It comes with excellent documentation https://git-cola.readthedocs.io/
+and a plethora of useful functionality, including:
+
+- direct integration with git subcommands
+- git-tag, an interactive tree & commit history browser
+- an integrated file browser to view any file at a given commit
+- an interactive rebase and merge facility
+- search comimits, and grep content
+- partial file commit that is a delight to use
+
+WWW: https://git-cola.github.io/

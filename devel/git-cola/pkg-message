@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+For all features, git-cola requires devel/git to be built
+and installed with the GUI option on.
+EOM
+}
+]
