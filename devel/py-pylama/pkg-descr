@@ -1,0 +1,14 @@
+Code audit tool for Python and JavaScript. Pylama wraps these tools:
+
+- pycodestyle (formerly pep8) (c) 2012-2013, Florent Xicluna;
+- pydocstyle (formerly pep257 by Vladimir Keleshev) (c) 2014, Amir Rachum;
+- PyFlakes (c) 2005-2013, Kevin Watters;
+- Mccabe (c) Ned Batchelder;
+- Pylint (c) 2013, Logilab (should be installed 'pylama_pylint' module);
+- Radon (c) Michele Lacchia
+- gjslint (c) The Closure Linter Authors (should be installed 'pylama_gjslint'
+  module);
+- eradicate (c) Steven Myint;
+- Mypy (c) Jukka Lehtosalo and contributors;
+
+WWW: https://github.com/klen/pylama
