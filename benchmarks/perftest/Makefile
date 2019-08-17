@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	perftest
-DISTVERSIONPREFIX=	V
-DISTVERSION=	4.4-0.3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4.4-0.7
 CATEGORIES=	benchmarks
 
 MAINTAINER=	slavash@FreeBSD.org
@@ -16,10 +16,12 @@ LICENSE_COMB=	dual
 IGNORE=		missing OFED user space
 .endif
 
-USES=		autoreconf libtool
+USES=		autoreconf libtool shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linux-rdma
+
+SHEBANG_FILES=	run_perftest_multi_devices
 
 GNU_CONFIGURE=yes
 
