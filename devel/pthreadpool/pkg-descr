@@ -1,0 +1,12 @@
+pthreadpool is a pthread-based thread pool implementation. It is intended to
+provide functionality of #pragma omp parallel for for POSIX systems where OpenMP
+is not available.
+
+Features:
+* C interface (C++-compatible)
+* Run on user-specified or auto-detected number of threads
+* Work-stealing scheduling for efficient work balancing
+* Compatible with Linux, macOS, and Native Client environments
+* Covered with unit tests and microbenchmarks
+
+WWW: https://github.com/Maratyszcza/pthreadpool
