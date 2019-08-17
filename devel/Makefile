@@ -4012,6 +4012,7 @@
     SUBDIR += py-Missing
     SUBDIR += py-MultiMapping
     SUBDIR += py-PEAK-Rules
+    SUBDIR += py-PeachPy
     SUBDIR += py-Persistence
     SUBDIR += py-Pint
     SUBDIR += py-Products.ATContentTypes
