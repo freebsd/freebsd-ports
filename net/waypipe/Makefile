@@ -2,7 +2,7 @@
 
 PORTNAME=	waypipe
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	net
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +18,7 @@ USES=		compiler:c11 localbase:ldflags meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mstoeckl
-GL_COMMIT=	e66f42444d81633f5b413cfe158809efd9c437f0
+GL_COMMIT=	e9ed0829dc2b3207328f73d4e0ffe406c457cb2a
 PLIST_FILES=	bin/${PORTNAME}
 # XXX armv6 needs https://github.com/mesonbuild/meson/commit/147d3f752c41
 CONFIGURE_ENV=	UNAME_m=${ARCH}
@@ -52,6 +52,7 @@ OPENGL_MESON_ENABLED=	with_dmabuf
 
 VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 VAAPI_MESON_ENABLED=	with_vaapi
+VAAPI_IMPLIES=		FFMPEG
 
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_MESON_ENABLED=	with_zstd
