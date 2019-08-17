@@ -1,12 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	5.4.0
-PORTREVISION=	4
+PORTVERSION=	9.1.0
 CATEGORIES=	devel
-MASTER_SITES=	GCC/releases/gcc-${DIST_VERSION}
+MASTER_SITES=	GCC
 PKGNAMEPREFIX=	avr-
-DISTNAME=	gcc-${DIST_VERSION}
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	FSF GCC for Atmel AVR 8-bit RISC cross-development
@@ -14,13 +12,19 @@ COMMENT=	FSF GCC for Atmel AVR 8-bit RISC cross-development
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+BROKEN_aarch64=		Fails to package: cannot find manpages
+BROKEN_mips64=		Fails to configure: cannot compute suffix of object files
+
 BUILD_DEPENDS=	avr-as:devel/avr-binutils \
 		avr-ld:devel/avr-binutils
 LIB_DEPENDS=	libmpfr.so:math/mpfr \
 		libgmp.so:math/gmp \
-		libmpc.so:math/mpc
+		libmpc.so:math/mpc \
+		libisl.so:devel/isl
 RUN_DEPENDS=	avr-as:devel/avr-binutils \
 		avr-ld:devel/avr-binutils
+
+USES=		bison gmake iconv libtool makeinfo perl5 tar:xz
 
 # DIST_VERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.  A PORTVERSION of
@@ -30,14 +34,18 @@ DIST_VERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.s([0-9]+)/\1-\2/}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 
-USES=		bison gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_PERL5=	build
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	avr-gcc-devel*
 
-CONFIGURE_ARGS=	--target=avr --disable-libssp --with-gmp=${LOCALBASE} --enable-languages="c c++"
+USE_CXXSTD=	gnu++03
+
+CONFIGURE_ARGS=	--target=avr --disable-libssp --with-gmp=${LOCALBASE} --enable-languages="c c++" \
+		--with-isl=${LOCALBASE}
+
+USE_LDCONFIG=	${PREFIX}/lib/gcci/avr/${SUFFIX}
 
 WITHOUT_CPU_CFLAGS=This is a cross-compiler.
 
@@ -47,9 +55,6 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-BROKEN_aarch64=		Fails to package: cannot find manpages
-BROKEN_mips64=		Fails to configure: cannot compute suffix of object files
 
 .include <bsd.port.pre.mk>
 
