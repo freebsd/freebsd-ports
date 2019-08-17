@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	matterircd
-PORTVERSION=	0.19.2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.19.2
 CATEGORIES=	net-im irc
 
 MAINTAINER=	norrland@nullbyte.se
@@ -13,23 +13,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
 
-USES=		go
+USES=		go:modules
 
 USE_RC_SUBR=	matterircd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	42wim
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
 USERS=		matterircd
 GROUPS=		matterircd
 
-do-build:
-	@cd ${WRKSRC}/${GH_SUBDIR} && \
-		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/matterircd ${STAGEDIR}${PREFIX}/bin
+post-install:
 	${INSTALL_DATA} ${WRKSRC}/matterircd.toml.example \
 		${STAGEDIR}${PREFIX}/etc/matterircd.toml.sample
 
