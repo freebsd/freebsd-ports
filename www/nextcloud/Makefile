@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nextcloud
-DISTVERSION=	16.0.3
+DISTVERSION=	16.0.4
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
