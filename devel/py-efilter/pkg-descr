@@ -1,5 +1,0 @@
-EFILTER is a general-purpose destructuring and search language implemented in
-Python, and suitable for integration with any Python project that requires a
-search function for some of its data.
-
-WWW: https://github.com/google/dotty
