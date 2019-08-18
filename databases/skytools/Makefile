@@ -10,6 +10,9 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/3622/
 MAINTAINER=	sam@cassiba.com
 COMMENT=	PostgreSQL tools from Skype: walshipping, queueing, replication
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2019-09-15
+
 GNU_CONFIGURE=	yes
 USES=		gmake python:2.7 shebangfix pgsql
 LLD_UNSAFE=	yes
