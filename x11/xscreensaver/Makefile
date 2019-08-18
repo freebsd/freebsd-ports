@@ -39,6 +39,7 @@ CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--with-xf86gamma-ext --with-randr-ext --without-kerberos \
 		--without-setuid-hacks --enable-locking
 MAKE_ARGS+=	install_prefix=${STAGEDIR}
+MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	PAM SETUID_HACKS FIREF NLS NSFW XAOS1 XDALI XEARTH \
 		XFT XMOUN XPLANET XSNOW
