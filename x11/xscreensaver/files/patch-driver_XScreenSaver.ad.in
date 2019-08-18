@@ -1,26 +1,26 @@
---- driver/XScreenSaver.ad.in.orig	2016-05-24 18:02:30 UTC
+--- driver/XScreenSaver.ad.in.orig	2019-07-10 03:31:26 UTC
 +++ driver/XScreenSaver.ad.in
 @@ -56,7 +56,7 @@
  *splashDuration:	0:00:05
  *visualID:		default
- *captureStderr: 	True
+ *installColormap:	True
 -*ignoreUninstalledPrograms: False
 +*ignoreUninstalledPrograms: True
  *authWarningSlack:	20
  
  *textMode:		file
-@@ -123,7 +123,7 @@ GetViewPortIsFullOfLies: False
+@@ -124,7 +124,7 @@
  
  ! The format used for printing the date and time in the password dialog box
  ! (see the strftime(3) manual page for details.)
 -*dateFormat:		%d-%b-%y (%a); %I:%M %p
 +*dateFormat:		%Y-%m-%d %H:%M:%S
+ ! For day month date:
+ ! *dateFormat:		%a %b %d, %I:%M %p
  ! To show the time only:
- ! *dateFormat:		%I:%M %p
- ! For 24 hour time:
-@@ -158,6 +158,18 @@ GetViewPortIsFullOfLies: False
- ! screen savers interactively.
- !
+@@ -343,6 +343,18 @@ XScreenSaver.bourneShell:		/bin/sh
+ !=============================================================================
+ 
  *programs:								      \
 +				xaos -root -autopilot -nogui -delay 10000     \
 +                                  -maxframerate 30                            \
@@ -37,10 +37,10 @@
  				maze -root				    \n\
  @GL_KLUDGE@ GL: 				superquadrics -root			    \n\
  				attraction -root			    \n\
-@@ -465,7 +477,6 @@ XScreenSaver.bourneShell:		/bin/sh
- *hacks.cwaves.name:         CWaves
+@@ -610,7 +622,6 @@ XScreenSaver.bourneShell:		/bin/sh
  *hacks.dangerball.name:     DangerBall
  *hacks.decayscreen.name:    DecayScreen
+ *hacks.deepstars.name:      DeepStars
 -*hacks.dnalogo.name:        DNA Logo
  *hacks.dymaxionmap.name:    DymaxionMap
  *hacks.energystream.name:   EnergyStream
