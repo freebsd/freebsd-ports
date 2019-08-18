@@ -13,6 +13,8 @@ COMMENT=	PL/Ruby procedural language for the PostgreSQL database system
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
+DEPRECATED=		Abandonware
+EXPIRATION_DATE=	2019-09-15
 BROKEN_powerpc64=	fails to build: ruby.h:628:35: call to 'ruby_safe_level_2_error' declared with attribute error: $SAFE=2 to 4 are obsolete
 
 USES=		uidfix pgsql
