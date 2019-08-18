@@ -1,3 +1,3 @@
-TIMESTAMP = 1484715280
-SHA256 (xorg/driver/xf86-video-sis-0.10.9.tar.bz2) = 5226b7407c601afa32d6cbf155f9182da95d92cdc89c1f83471e1927e552c10d
-SIZE (xorg/driver/xf86-video-sis-0.10.9.tar.bz2) = 736272
+TIMESTAMP = 1566064121
+SHA256 (xorg/driver/xf86-video-sis-0.11.0.tar.bz2) = 2177901a21a980552f8be429f063388e4c5d5f2e24e8b0ce72d65bd93ccc3b6b
+SIZE (xorg/driver/xf86-video-sis-0.11.0.tar.bz2) = 735940
