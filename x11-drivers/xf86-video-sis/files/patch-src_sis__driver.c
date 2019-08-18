@@ -3,15 +3,6 @@
 #
 --- src/sis_driver.c.orig	2017-01-17 22:45:12 UTC
 +++ src/sis_driver.c
-@@ -1305,7 +1305,7 @@ SiSCopyModeNLink(ScrnInfoPtr pScrn, Disp
-  * (Code base taken from mga driver)
-  */
- static DisplayModePtr
--SiSGetModeFromName(char* str, DisplayModePtr i)
-+SiSGetModeFromName(const char* str, DisplayModePtr i)
- {
-     DisplayModePtr c = i;
-     if(!i) return NULL;
 @@ -6065,7 +6065,7 @@ SISPreInit(ScrnInfoPtr pScrn, int flags)
  	        free(newm);
  		break;

@@ -1,19 +1,17 @@
 # Cast away warnings filling const strings
 #
---- src/initextx.c.orig	2015-08-29 23:34:25 UTC
+--- src/initextx.c.orig	2019-07-26 23:38:52 UTC
 +++ src/initextx.c
-@@ -252,8 +252,8 @@ SiSBuildBuiltInModeList(ScrnInfoPtr pScr
+@@ -252,7 +252,7 @@ SiSBuildBuiltInModeList(ScrnInfoPtr pScrn, BOOLEAN inc
  
        current = new;
  
--      sprintf(current->name, "%dx%d", pSiS->SiS_Pr->SiS_RefIndex[i].XRes,
--				      pSiS->SiS_Pr->SiS_RefIndex[i].YRes);
-+      sprintf((char *)current->name, "%dx%d", pSiS->SiS_Pr->SiS_RefIndex[i].XRes,
-+					      pSiS->SiS_Pr->SiS_RefIndex[i].YRes);
+-      sprintf(current->name, "%hu%hu", pSiS->SiS_Pr->SiS_RefIndex[i].XRes,
++      sprintf((char *)current->name, "%hu%hu", pSiS->SiS_Pr->SiS_RefIndex[i].XRes,
+ 				      pSiS->SiS_Pr->SiS_RefIndex[i].YRes);
  
        current->status = MODE_OK;
- 
-@@ -402,7 +402,7 @@ SiSBuildBuiltInModeList(ScrnInfoPtr pScr
+@@ -402,7 +402,7 @@ SiSBuildBuiltInModeList(ScrnInfoPtr pScrn, BOOLEAN inc
  
  		  pSiS->AddedPlasmaModes = TRUE;
  
@@ -22,7 +20,7 @@
  
  		  current->status = MODE_OK;
  
-@@ -485,8 +485,8 @@ SiSBuildBuiltInModeList(ScrnInfoPtr pScr
+@@ -485,8 +485,8 @@ SiSBuildBuiltInModeList(ScrnInfoPtr pScrn, BOOLEAN inc
  
  	    current = new;
  
