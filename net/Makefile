@@ -1383,6 +1383,7 @@
     SUBDIR += sobby
     SUBDIR += socat
     SUBDIR += sock
+    SUBDIR += socketapi
     SUBDIR += socketbind
     SUBDIR += socketpipe
     SUBDIR += socketw
