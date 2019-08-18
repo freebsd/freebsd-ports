@@ -1,6 +1,6 @@
---- config/Xresources.cpp.orig	2011-09-25 07:35:47 UTC
-+++ config/Xresources.cpp
-@@ -60,9 +60,9 @@ xlogin*hiColor: black
+--- config/Xresources.in.orig	2019-03-02 22:06:13 UTC
++++ config/Xresources.in
+@@ -59,9 +59,9 @@ xlogin*hiColor: black
  XHASHendif
  #ifdef XPM
  XHASHif PLANES >= 8
