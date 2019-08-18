@@ -8,4 +8,4 @@ Additionally, comservd can serve up local serial ports to remote
 systems, effectively turning the system running comservd into a
 terminal server with respect to its own local serial ports.
 
-WWW: http://BSDforge.com/projects/comms/comserv/
+WWW: https://BSDforge.com/projects/comms/comserv/
