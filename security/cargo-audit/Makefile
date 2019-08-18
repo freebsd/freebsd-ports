@@ -2,8 +2,7 @@
 
 PORTNAME=	cargo-audit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
-PORTREVISION=	1
+DISTVERSION=	0.8.0
 CATEGORIES=	security
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -21,25 +20,34 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	RustSec
 
-CARGO_CRATES=	assert_cmd-0.11.1 \
-		autocfg-0.1.4 \
+CARGO_CRATES=	abscissa_core-0.3.0 \
+		abscissa_derive-0.3.0 \
+		aho-corasick-0.7.4 \
+		arc-swap-0.3.11 \
+		autocfg-0.1.5 \
 		backtrace-0.3.32 \
 		backtrace-sys-0.1.30 \
 		bitflags-1.1.0 \
 		c2-chacha-0.2.2 \
+		canonical-path-2.0.2 \
 		cc-1.0.37 \
 		cfg-if-0.1.9 \
 		chrono-0.4.7 \
 		curl-sys-0.4.20 \
-		difference-2.0.0 \
+		darling-0.9.0 \
+		darling_core-0.9.0 \
+		darling_macro-0.9.0 \
 		directories-1.0.2 \
-		escargot-0.4.0 \
 		failure-0.1.5 \
 		failure_derive-0.1.5 \
-		getrandom-0.1.6 \
+		fnv-1.0.6 \
+		generational-arena-0.2.2 \
+		getrandom-0.1.8 \
 		git2-0.8.0 \
 		gumdrop-0.6.0 \
 		gumdrop_derive-0.6.0 \
+		home-0.3.4 \
+		ident_case-1.0.1 \
 		idna-0.1.5 \
 		itoa-0.4.4 \
 		lazy_static-1.3.0 \
@@ -49,6 +57,7 @@ CARGO_CRATES=	assert_cmd-0.11.1 \
 		libz-sys-1.0.25 \
 		log-0.4.7 \
 		matches-0.1.8 \
+		memchr-2.2.1 \
 		num-integer-0.1.41 \
 		num-traits-0.2.8 \
 		openssl-probe-0.1.2 \
@@ -57,46 +66,51 @@ CARGO_CRATES=	assert_cmd-0.11.1 \
 		pkg-config-0.3.14 \
 		platforms-0.2.0 \
 		ppv-lite86-0.2.5 \
-		predicates-1.0.1 \
-		predicates-core-1.0.0 \
-		predicates-tree-1.0.0 \
 		proc-macro2-0.4.30 \
 		quote-0.6.13 \
 		rand-0.7.0 \
-		rand_chacha-0.2.0 \
+		rand_chacha-0.2.1 \
 		rand_core-0.5.0 \
 		rand_hc-0.2.0 \
 		redox_syscall-0.1.56 \
+		regex-1.1.9 \
+		regex-syntax-0.6.8 \
 		remove_dir_all-0.5.2 \
 		rustc-demangle-0.1.15 \
 		rustsec-0.12.0 \
 		ryu-1.0.0 \
+		scopeguard-0.3.3 \
+		secrecy-0.2.2 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.94 \
-		serde_derive-1.0.94 \
+		serde-1.0.95 \
+		serde_derive-1.0.95 \
 		serde_json-1.0.40 \
-		serial_test-0.2.0 \
-		serial_test_derive-0.2.0 \
+		signal-hook-0.1.10 \
+		signal-hook-registry-1.0.1 \
 		smallvec-0.6.10 \
-		spin-0.5.0 \
+		strsim-0.7.0 \
 		syn-0.15.39 \
 		synstructure-0.10.2 \
 		tempfile-3.1.0 \
 		termcolor-1.0.5 \
+		thread_local-0.3.6 \
 		time-0.1.42 \
 		toml-0.5.1 \
-		treeline-0.1.0 \
+		ucd-util-0.1.3 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.8 \
 		unicode-xid-0.1.0 \
 		url-1.7.2 \
+		utf8-ranges-1.0.3 \
 		vcpkg-0.2.7 \
+		wait-timeout-0.2.0 \
 		winapi-0.3.7 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		wincolor-1.0.1
+		wincolor-1.0.1 \
+		zeroize-0.9.2
 
 PLIST_FILES=	bin/cargo-audit
 
