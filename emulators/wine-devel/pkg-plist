@@ -32,6 +32,7 @@ include/wine/svcctl.h
 include/wine/svcctl.idl
 include/wine/msvcrt/assert.h
 include/wine/msvcrt/conio.h
+include/wine/msvcrt/corecrt.h
 include/wine/msvcrt/crtdbg.h
 include/wine/msvcrt/crtdefs.h
 include/wine/msvcrt/ctype.h
@@ -804,6 +805,7 @@ include/wine/windows/tlogstg.idl
 include/wine/windows/tmschema.h
 include/wine/windows/tom.h
 include/wine/windows/tom.idl
+include/wine/windows/tpcshrd.h
 include/wine/windows/traffic.h
 include/wine/windows/transact.h
 include/wine/windows/transact.idl
@@ -2258,6 +2260,7 @@ lib/wine/fakedlls/usbd.sys
 lib/wine/fakedlls/user32.dll
 lib/wine/fakedlls/userenv.dll
 lib/wine/fakedlls/usp10.dll
+lib/wine/fakedlls/utildll.dll
 lib/wine/fakedlls/uxtheme.dll
 lib/wine/fakedlls/vbscript.dll
 lib/wine/fakedlls/vcomp.dll
@@ -2340,6 +2343,7 @@ lib/wine/fakedlls/wintrust.dll
 lib/wine/fakedlls/winusb.dll
 lib/wine/fakedlls/winver.exe
 lib/wine/fakedlls/wlanapi.dll
+lib/wine/fakedlls/wlanui.dll
 lib/wine/fakedlls/wldap32.dll
 lib/wine/fakedlls/wmasf.dll
 lib/wine/fakedlls/wmi.dll
@@ -2949,6 +2953,7 @@ lib/wine/usbd.sys.so
 lib/wine/user32.dll.so
 lib/wine/userenv.dll.so
 lib/wine/usp10.dll.so
+lib/wine/utildll.dll.so
 lib/wine/uxtheme.dll.so
 lib/wine/vbscript.dll.so
 lib/wine/vcomp.dll.so
@@ -3031,6 +3036,7 @@ lib/wine/wintrust.dll.so
 lib/wine/winusb.dll.so
 lib/wine/winver.exe.so
 lib/wine/wlanapi.dll.so
+lib/wine/wlanui.dll.so
 lib/wine/wldap32.dll.so
 lib/wine/wmasf.dll.so
 lib/wine/wmi.dll.so
