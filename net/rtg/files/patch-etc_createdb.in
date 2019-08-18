@@ -1,20 +1,32 @@
---- etc/createdb.in.orig	2018-04-02 22:52:32 UTC
+--- etc/createdb.in.orig	2003-01-22 19:07:02 UTC
 +++ etc/createdb.in
-@@ -23,11 +23,8 @@ echo ""
+@@ -15,6 +15,8 @@
+ RTGPASS="rtgdefault"
+ DATABASE="rtg"
+ USER="snmp"
++MYSQL_FILE=`mktemp -q /tmp/mysql.XXXXXX`
++RTG_FILE=`mktemp -q /tmp/rtg.XXXXXX`
+ 
+ echo ""
+ echo "$0 setting up MySQL database for RTG."
+@@ -22,103 +24,98 @@
+ echo ""
  
  # Create the necessary SQL in two /tmp files
- cat <<EOT >/tmp/mysql.sql
+-cat <<EOT >/tmp/mysql.sql
 -INSERT INTO user (Host, User, Password) VALUES ('$HOST','$USER',PASSWORD("$RTGPASS"));
 -INSERT INTO db (Host, Db, User, Select_priv, Insert_priv, Update_priv, Delete_priv, 
 -Create_priv, Drop_priv, Grant_priv, References_priv, Index_priv, Alter_priv) 
 -VALUES ('$HOST','$DATABASE','$USER','Y','Y','Y','Y','Y','Y','Y','Y','Y','Y');
 -FLUSH PRIVILEGES;
++cat <<EOT >$MYSQL_FILE
 +CREATE USER '$USER'@'$HOST' IDENTIFIED BY '$RTG_PASS';
 +GRANT ALL ON '$DATABASE'.* TO '$USER'@'$HOST';
  EOT
  
- cat <<EOT >/tmp/rtg.sql
-@@ -35,81 +32,81 @@ cat <<EOT >/tmp/rtg.sql
+-cat <<EOT >/tmp/rtg.sql
++cat <<EOT >$RTG_FILE
+ #
  # Table structure for table 'router'
  #
  
@@ -135,12 +147,14 @@
  );
  EOT
  
-@@ -117,8 +114,6 @@ echo "Adding user \"$USER\" to MySQL dat
- cat /tmp/mysql.sql | $MYSQLBIN/mysql -u root -p$ROOTPASS mysql
+ echo "Adding user \"$USER\" to MySQL database..."
+-cat /tmp/mysql.sql | $MYSQLBIN/mysql -u root -p$ROOTPASS mysql
++cat $MYSQL_FILE | $MYSQLBIN/mysql -u root -p$ROOTPASS mysql
  echo "Creating RTG database \"$DATABASE\"..."
  $MYSQLBIN/mysqladmin -u root -p$ROOTPASS create $DATABASE
 -echo "Reloading MySQL privileges..."
 -$MYSQLBIN/mysqladmin -u root -p$ROOTPASS flush-privileges
  echo "Creating RTG tables..."
- cat /tmp/rtg.sql | $MYSQLBIN/mysql -u $USER -p$RTGPASS $DATABASE
+-cat /tmp/rtg.sql | $MYSQLBIN/mysql -u $USER -p$RTGPASS $DATABASE
++cat $RTG_FILE | $MYSQLBIN/mysql -u $USER -p$RTGPASS $DATABASE
  echo "Done."
