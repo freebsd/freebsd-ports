@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-video-s3-0.6.5.tar.bz2) = 4778cd4f1d61490c3562f9be03664576f065fa3acf22fe0d0689212d7ea3ad39
-SIZE (xorg/driver/xf86-video-s3-0.6.5.tar.bz2) = 325582
+TIMESTAMP = 1566063488
+SHA256 (xorg/driver/xf86-video-s3-0.7.0.tar.bz2) = cf12541557d88107364895273e384f97836b428eeb1e54ed66511d69639562c8
+SIZE (xorg/driver/xf86-video-s3-0.7.0.tar.bz2) = 348923
