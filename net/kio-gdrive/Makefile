@@ -12,6 +12,8 @@ COMMENT=	KDE IOSlave for accessing gdrive
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Does not build with current (19.08) release of libkgapi
+
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain \
 		libaccounts-qt5.so:net-im/libaccounts-qt5 \
 		libkaccounts.so:net-im/kaccounts-integration
