@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdrm
-PORTVERSION=	2.4.98
-PORTREVISION=	1
+PORTVERSION=	2.4.99
 PORTEPOCH=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	https://dri.freedesktop.org/libdrm/
