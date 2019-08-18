@@ -1,5 +1,6 @@
 bin/gnome-session-remmina
 bin/remmina
+bin/remmina-file-wrapper.sh
 bin/remmina-gnome
 include/remmina/plugin.h
 include/remmina/remmina_trace_calls.h
@@ -29,10 +30,13 @@ share/icons/hicolor/64x64/apps/org.remmina.Remmina.png
 share/icons/hicolor/72x72/apps/org.remmina.Remmina.png
 share/icons/hicolor/96x96/apps/org.remmina.Remmina.png
 share/icons/hicolor/scalable/actions/remmina-camera-photo-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-connect-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-disconnect-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-document-save-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-document-send-symbolic.svg
+share/icons/hicolor/scalable/actions/remmina-duplicate-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-dynres-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-fit-window-symbolic.svg
-share/icons/hicolor/scalable/actions/remmina-folder-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-fullscreen-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-go-bottom-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-keyboard-symbolic.svg
@@ -44,66 +48,68 @@ share/icons/hicolor/scalable/actions/remmina-preferences-system-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-scale-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-switch-page-symbolic.svg
 share/icons/hicolor/scalable/actions/remmina-system-run-symbolic.svg
+share/icons/hicolor/scalable/actions/view-list.svg
 share/icons/hicolor/scalable/apps/org.remmina.Remmina.svg
 share/icons/hicolor/scalable/emblems/remmina-sftp-symbolic.svg
 share/icons/hicolor/scalable/emblems/remmina-ssh-symbolic.svg
-%%NLS%%share/locale/ar/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/ast/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/bn/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/bs/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/ca@valencia/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/da/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/de/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/el/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/en_AU/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/es/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/et/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/eu/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/gl/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/he/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/id/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/it/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/kk/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/km/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/kn/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/lt/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/lv/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/ms/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/my/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/oc/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/pt_PT/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/shn/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/si/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/sq/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/sr/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/te/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/th/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/ug/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/uz@cyrillic/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/remmina.mo
+share/locale/ar/LC_MESSAGES/remmina.mo
+share/locale/ast/LC_MESSAGES/remmina.mo
+share/locale/bg/LC_MESSAGES/remmina.mo
+share/locale/bn/LC_MESSAGES/remmina.mo
+share/locale/bs/LC_MESSAGES/remmina.mo
+share/locale/ca/LC_MESSAGES/remmina.mo
+share/locale/ca@valencia/LC_MESSAGES/remmina.mo
+share/locale/cs/LC_MESSAGES/remmina.mo
+share/locale/da/LC_MESSAGES/remmina.mo
+share/locale/de/LC_MESSAGES/remmina.mo
+share/locale/el/LC_MESSAGES/remmina.mo
+share/locale/en_AU/LC_MESSAGES/remmina.mo
+share/locale/en_GB/LC_MESSAGES/remmina.mo
+share/locale/es/LC_MESSAGES/remmina.mo
+share/locale/es_VE/LC_MESSAGES/remmina.mo
+share/locale/et/LC_MESSAGES/remmina.mo
+share/locale/eu/LC_MESSAGES/remmina.mo
+share/locale/fi/LC_MESSAGES/remmina.mo
+share/locale/fr/LC_MESSAGES/remmina.mo
+share/locale/gl/LC_MESSAGES/remmina.mo
+share/locale/he/LC_MESSAGES/remmina.mo
+share/locale/hr/LC_MESSAGES/remmina.mo
+share/locale/hu/LC_MESSAGES/remmina.mo
+share/locale/id/LC_MESSAGES/remmina.mo
+share/locale/it/LC_MESSAGES/remmina.mo
+share/locale/ja/LC_MESSAGES/remmina.mo
+share/locale/kk/LC_MESSAGES/remmina.mo
+share/locale/km/LC_MESSAGES/remmina.mo
+share/locale/kn/LC_MESSAGES/remmina.mo
+share/locale/ko/LC_MESSAGES/remmina.mo
+share/locale/lt/LC_MESSAGES/remmina.mo
+share/locale/lv/LC_MESSAGES/remmina.mo
+share/locale/ms/LC_MESSAGES/remmina.mo
+share/locale/my/LC_MESSAGES/remmina.mo
+share/locale/nb/LC_MESSAGES/remmina.mo
+share/locale/nl/LC_MESSAGES/remmina.mo
+share/locale/oc/LC_MESSAGES/remmina.mo
+share/locale/pl/LC_MESSAGES/remmina.mo
+share/locale/pt/LC_MESSAGES/remmina.mo
+share/locale/pt_BR/LC_MESSAGES/remmina.mo
+share/locale/pt_PT/LC_MESSAGES/remmina.mo
+share/locale/ro/LC_MESSAGES/remmina.mo
+share/locale/ru/LC_MESSAGES/remmina.mo
+share/locale/shn/LC_MESSAGES/remmina.mo
+share/locale/si/LC_MESSAGES/remmina.mo
+share/locale/sk/LC_MESSAGES/remmina.mo
+share/locale/sl/LC_MESSAGES/remmina.mo
+share/locale/sq/LC_MESSAGES/remmina.mo
+share/locale/sr/LC_MESSAGES/remmina.mo
+share/locale/sv/LC_MESSAGES/remmina.mo
+share/locale/te/LC_MESSAGES/remmina.mo
+share/locale/th/LC_MESSAGES/remmina.mo
+share/locale/tr/LC_MESSAGES/remmina.mo
+share/locale/ug/LC_MESSAGES/remmina.mo
+share/locale/uk/LC_MESSAGES/remmina.mo
+share/locale/uz@cyrillic/LC_MESSAGES/remmina.mo
+share/locale/zh_CN/LC_MESSAGES/remmina.mo
+share/locale/zh_TW/LC_MESSAGES/remmina.mo
 share/metainfo/org.remmina.Remmina.appdata.xml
 share/mime/packages/remmina-mime.xml
 %%DATADIR%%/external_tools/functions.sh
@@ -118,6 +124,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/AdventureTime.colors
 %%DATADIR%%/theme/Afterglow.colors
 %%DATADIR%%/theme/AlienBlood.colors
+%%DATADIR%%/theme/Andromeda.colors
 %%DATADIR%%/theme/Argonaut.colors
 %%DATADIR%%/theme/Arthur.colors
 %%DATADIR%%/theme/AtelierSulphurpool.colors
@@ -146,11 +153,14 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Calamity.colors
 %%DATADIR%%/theme/Chalk.colors
 %%DATADIR%%/theme/Chalkboard.colors
+%%DATADIR%%/theme/ChallengerDeep.colors
+%%DATADIR%%/theme/Chester.colors
 %%DATADIR%%/theme/Ciapre.colors
 %%DATADIR%%/theme/Cobalt Neon.colors
 %%DATADIR%%/theme/Cobalt2.colors
 %%DATADIR%%/theme/CrayonPonyFish.colors
 %%DATADIR%%/theme/Dark Pastel.colors
+%%DATADIR%%/theme/Dark+.colors
 %%DATADIR%%/theme/Darkside.colors
 %%DATADIR%%/theme/Desert.colors
 %%DATADIR%%/theme/DimmedMonokai.colors
@@ -172,6 +182,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Flatland.colors
 %%DATADIR%%/theme/Floraverse.colors
 %%DATADIR%%/theme/ForestBlue.colors
+%%DATADIR%%/theme/Framer.colors
 %%DATADIR%%/theme/FrontEndDelight.colors
 %%DATADIR%%/theme/FunForrest.colors
 %%DATADIR%%/theme/Galaxy.colors
@@ -186,6 +197,8 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Highway.colors
 %%DATADIR%%/theme/Hipster Green.colors
 %%DATADIR%%/theme/Homebrew.colors
+%%DATADIR%%/theme/Hopscotch.256.colors
+%%DATADIR%%/theme/Hopscotch.colors
 %%DATADIR%%/theme/Hurtado.colors
 %%DATADIR%%/theme/Hybrid.colors
 %%DATADIR%%/theme/IC_Green_PPL.colors
@@ -196,6 +209,8 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Jellybeans.colors
 %%DATADIR%%/theme/JetBrains Darcula.colors
 %%DATADIR%%/theme/Kibble.colors
+%%DATADIR%%/theme/Kolorit.colors
+%%DATADIR%%/theme/Lab Fox.colors
 %%DATADIR%%/theme/Later This Evening.colors
 %%DATADIR%%/theme/Lavandula.colors
 %%DATADIR%%/theme/LiquidCarbon.colors
@@ -204,6 +219,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Man Page.colors
 %%DATADIR%%/theme/Material.colors
 %%DATADIR%%/theme/MaterialDark.colors
+%%DATADIR%%/theme/MaterialOcean.colors
 %%DATADIR%%/theme/Mathias.colors
 %%DATADIR%%/theme/Medallion.colors
 %%DATADIR%%/theme/Misterioso.colors
@@ -215,8 +231,10 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/N0tch2k.colors
 %%DATADIR%%/theme/Neopolitan.colors
 %%DATADIR%%/theme/Neutron.colors
+%%DATADIR%%/theme/Night Owlish Light.colors
 %%DATADIR%%/theme/NightLion v1.colors
 %%DATADIR%%/theme/NightLion v2.colors
+%%DATADIR%%/theme/Nocturnal Winter.colors
 %%DATADIR%%/theme/Novel.colors
 %%DATADIR%%/theme/Obsidian.colors
 %%DATADIR%%/theme/Ocean.colors
@@ -224,6 +242,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Ollie.colors
 %%DATADIR%%/theme/OneHalfDark.colors
 %%DATADIR%%/theme/OneHalfLight.colors
+%%DATADIR%%/theme/Operator Mono Dark.colors
 %%DATADIR%%/theme/Pandora.colors
 %%DATADIR%%/theme/Paraiso Dark.colors
 %%DATADIR%%/theme/Parasio Dark.colors
@@ -238,6 +257,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Red Alert.colors
 %%DATADIR%%/theme/Red Planet.colors
 %%DATADIR%%/theme/Red Sands.colors
+%%DATADIR%%/theme/Relaxed.colors
 %%DATADIR%%/theme/Rippedcasts.colors
 %%DATADIR%%/theme/Royal.colors
 %%DATADIR%%/theme/Ryuuko.colors
@@ -261,6 +281,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Spiderman.colors
 %%DATADIR%%/theme/Spring.colors
 %%DATADIR%%/theme/Square.colors
+%%DATADIR%%/theme/Subliminal.colors
 %%DATADIR%%/theme/Sundried.colors
 %%DATADIR%%/theme/Symfonic.colors
 %%DATADIR%%/theme/Tango Adapted.colors
@@ -279,7 +300,9 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Treehouse.colors
 %%DATADIR%%/theme/Twilight.colors
 %%DATADIR%%/theme/Ubuntu.colors
+%%DATADIR%%/theme/UltraViolent.colors
 %%DATADIR%%/theme/UnderTheSea.colors
+%%DATADIR%%/theme/Unikitty.colors
 %%DATADIR%%/theme/Urple.colors
 %%DATADIR%%/theme/Vaughn.colors
 %%DATADIR%%/theme/VibrantInk.colors
@@ -287,22 +310,31 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Violet Light.colors
 %%DATADIR%%/theme/WarmNeon.colors
 %%DATADIR%%/theme/Wez.colors
+%%DATADIR%%/theme/Whimsy.colors
 %%DATADIR%%/theme/WildCherry.colors
 %%DATADIR%%/theme/Wombat.colors
 %%DATADIR%%/theme/Wryan.colors
 %%DATADIR%%/theme/Zenburn.colors
 %%DATADIR%%/theme/ayu.colors
 %%DATADIR%%/theme/ayu_light.colors
+%%DATADIR%%/theme/cyberpunk.colors
 %%DATADIR%%/theme/deep.colors
+%%DATADIR%%/theme/idea.colors
 %%DATADIR%%/theme/idleToes.colors
+%%DATADIR%%/theme/lovelace.colors
+%%DATADIR%%/theme/midnight-in-mojave.colors
+%%DATADIR%%/theme/primary.colors
 %%DATADIR%%/theme/purplepeter.colors
+%%DATADIR%%/theme/rebecca.colors
 %%DATADIR%%/theme/synthwave.colors
 %%DATADIR%%/ui/remmina_about.glade
 %%DATADIR%%/ui/remmina_key_chooser.glade
 %%DATADIR%%/ui/remmina_main.glade
 %%DATADIR%%/ui/remmina_mpc.glade
+%%DATADIR%%/ui/remmina_news.glade
 %%DATADIR%%/ui/remmina_preferences.glade
 %%DATADIR%%/ui/remmina_snap_info_dialog.glade
 %%DATADIR%%/ui/remmina_spinner.glade
 %%DATADIR%%/ui/remmina_string_list.glade
+%%DATADIR%%/ui/remmina_unlock.glade
 share/xsessions/remmina-gnome.desktop

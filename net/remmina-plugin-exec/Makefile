@@ -5,7 +5,8 @@ PKGNAMESUFFIX=	-exec
 
 COMMENT=	Remmina plugin to execute a command
 
-USE_GNOME+=	cairo
+USES=		gnome
+USE_GNOME=	cairo
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 

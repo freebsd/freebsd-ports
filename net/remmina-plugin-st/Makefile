@@ -1,14 +1,9 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
 
-PKGNAMESUFFIX=	-xdmcp
+PKGNAMESUFFIX=	-st
 
-COMMENT=	Remmina plugin for XDMCP protocol
-
-RUN_DEPENDS=	Xephyr:x11-servers/xephyr
-
-USES=		gnome
-USE_GNOME=	cairo
+COMMENT=	Remmina plugin for (Simple) Terminal use cases
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
