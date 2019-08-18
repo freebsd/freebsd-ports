@@ -1460,6 +1460,7 @@
     SUBDIR += tramp
     SUBDIR += trickle
     SUBDIR += tsclient
+    SUBDIR += tsctp
     SUBDIR += tshark
     SUBDIR += tshark-lite
     SUBDIR += tsocks

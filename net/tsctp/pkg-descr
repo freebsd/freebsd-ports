@@ -1,0 +1,5 @@
+TSCTP is an SCTP test tool. Its purpose is to perform basic SCTP
+functionality tests to check implementations interoperability and
+to verify that the SCTP stack is working.
+
+WWW: https://www.uni-due.de/~be0001/tsctp/
