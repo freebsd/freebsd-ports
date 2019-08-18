@@ -2,6 +2,7 @@
 
 PORTNAME=		sensu-go
 DISTVERSION=		5.11.1
+PORTREVISION=		1
 CATEGORIES=		sysutils
 
 MAINTAINER=		jp+ports@supplntr.io
@@ -24,11 +25,11 @@ OPTIONS_DEFAULT=	SENSU_AGENT
 OPTIONS_SUB=		yes
 
 SENSU_AGENT_DESC=	Install sensu-agent daemon
-SENSU_AGENT_VARS=	GO_TARGETS+=agent GO_BIN_TARGETS+=sensu-agent
+SENSU_AGENT_VARS=	GO_TARGETS+=agent GO_BIN_TARGETS+=sensu-agent \
+			USE_RC_SUBR+=sensu-agent
 
 SENSU_CLI_DESC=		Install sensuctl binary
-SENSU_CLI_VARS=		GO_TARGETS+=cli GO_BIN_TARGETS+=sensuctl \
-			USE_RC_SUBR+=sensu-agent
+SENSU_CLI_VARS=		GO_TARGETS+=cli GO_BIN_TARGETS+=sensuctl
 
 SENSU_BE_DESC=		Install sensu-backend daemon (unsupported)
 SENSU_BE_VARS=		GO_TARGETS+=backend GO_BIN_TARGETS+=sensu-backend \
@@ -48,7 +49,7 @@ do-build:
 
 do-install:
 .for GO_BIN_TARGET in ${GO_BIN_TARGETS}
-	${INSTALL_PROGRAM} ${GO_WRKSRC}/target/freebsd-${ARCH}/${GO_BIN_TARGET} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${GO_WRKSRC}/target/freebsd-${ARCH:S/^i//}/${GO_BIN_TARGET} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
 post-install-SENSU_AGENT-on:
