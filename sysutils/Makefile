@@ -348,6 +348,7 @@
     SUBDIR += fpc-users
     SUBDIR += fpc-utmp
     SUBDIR += fpc-uuid
+    SUBDIR += frand
     SUBDIR += freebsd-snapshot
     SUBDIR += freecolor
     SUBDIR += freedt
