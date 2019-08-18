@@ -1,0 +1,5 @@
+Selects a random file from given directory using reservoir sampling algorithm.
+This means directory contents doesn't need to be read in memory and then sorted
+and so will perform much better than find+sort for big directories.
+
+WWW: https://github.com/serpent7776/frand
