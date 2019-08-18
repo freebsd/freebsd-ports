@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	quassel
-PORTVERSION=	0.13.0
-PORTREVISION=	6
+PORTVERSION=	0.13.1
 CATEGORIES=	irc
-MASTER_SITES=	http://www.quassel-irc.org/pub/
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT?=	Qt 5 based distributed IRC client (client and monolithic binary)
@@ -14,13 +12,13 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lib cpe pkgconfig qt:5 tar:bzip2
-
-CPE_VENDOR=	quassel-irc
-CPE_PRODUCT=	quassel_irc
-
+USE_GITHUB=	yes
 USE_QT=		buildtools_build core network qmake_build
+
 CMAKE_ARGS=	-DWITH_KDE=off \
 		-DUSE_QT5=on
+CPE_VENDOR=	quassel-irc
+CPE_PRODUCT=	quassel_irc
 
 OPTIONS_DEFINE=		NLS
 OPTIONS_MULTI=		MODULE DB
