@@ -7,12 +7,14 @@ share/applications/engauge-digitizer.desktop
 %%NLS%%%%DATADIR%%/translations/engauge_de.qm
 %%NLS%%%%DATADIR%%/translations/engauge_en.qm
 %%NLS%%%%DATADIR%%/translations/engauge_es.qm
+%%NLS%%%%DATADIR%%/translations/engauge_fa_IR.qm
 %%NLS%%%%DATADIR%%/translations/engauge_fr.qm
 %%NLS%%%%DATADIR%%/translations/engauge_hi.qm
 %%NLS%%%%DATADIR%%/translations/engauge_it.qm
 %%NLS%%%%DATADIR%%/translations/engauge_ja.qm
 %%NLS%%%%DATADIR%%/translations/engauge_kk.qm
 %%NLS%%%%DATADIR%%/translations/engauge_ko.qm
+%%NLS%%%%DATADIR%%/translations/engauge_nb.qm
 %%NLS%%%%DATADIR%%/translations/engauge_pt.qm
 %%NLS%%%%DATADIR%%/translations/engauge_ru.qm
 %%NLS%%%%DATADIR%%/translations/engauge_zh.qm
