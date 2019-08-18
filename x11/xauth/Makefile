@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	xauth
-PORTVERSION=	1.0.10
+PORTVERSION=	1.1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X authority file utility
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	cmdtest:devel/py-cmdtest
 
