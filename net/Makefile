@@ -1350,6 +1350,7 @@
     SUBDIR += scapy
     SUBDIR += scnc
     SUBDIR += scr_ipfm
+    SUBDIR += sctplib
     SUBDIR += sdl2_net
     SUBDIR += sdl_net
     SUBDIR += seda
