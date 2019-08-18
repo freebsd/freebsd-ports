@@ -75,6 +75,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/peers-v2.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/proxy-protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/queuing.fig
+%%PORTDOCS%%%%DOCSDIR%%/regression-testing.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl-content-sw.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/check
