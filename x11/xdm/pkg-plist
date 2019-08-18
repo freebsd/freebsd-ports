@@ -13,7 +13,7 @@ bin/xdm
 @sample etc/X11/xdm/xdm-config.sample
 lib/X11/xdm/chooser
 lib/X11/xdm/libXdmGreet.so
-man/man1/xdm.1.gz
+man/man8/xdm.8.gz
 %%XDMSHELL%%man/man1/xdmshell.1.gz
 share/X11/app-defaults/Chooser
 share/pixmaps/xorg-bw.xpm

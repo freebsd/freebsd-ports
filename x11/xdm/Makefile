@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xdm
-PORTVERSION=	1.1.11
-PORTREVISION=	8
+PORTVERSION=	1.1.12
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE=	MIT
 XORG_CAT=	app
 USES=		cpe libtool
 USE_LDCONFIG=	yes
-USE_XORG=	x11 xau xaw xdmcp xext xinerama xmu xpm xt
+USE_XORG=	x11 xau xaw xdmcp xext xinerama xmu xpm xrender xt
 CPE_PRODUCT=	x_display_manager
 CPE_VENDOR=	x
 
