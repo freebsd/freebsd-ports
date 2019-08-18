@@ -1,3 +1,0 @@
-lib/remmina/plugins/remmina-plugin-telepathy.so
-share/dbus-1/services/org.freedesktop.Telepathy.Client.Remmina.service
-share/telepathy/clients/Remmina.client

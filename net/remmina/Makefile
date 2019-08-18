@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	remmina
-DISTVERSION=	1.2.31.4
-PORTREVISION=	1
+DISTVERSION=	1.3.5
 CATEGORIES=	net gnome
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -13,20 +12,23 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libsodium.so:security/libsodium \
 		libsoup-2.4.so:devel/libsoup
+
+USES=		cmake desktop-file-utils gettext gnome localbase:ldflags pathfix \
+		pkgconfig shared-mime-info ssl shebangfix
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	Remmina
 GL_PROJECT=	Remmina
-GL_COMMIT=	65d552c9becc957cae124ab5c26562cf22c052b9
+GL_COMMIT=	e1a0ffd30a0d8e35ed86ec81ecb4719bb870d62c
 
-USES=		cmake desktop-file-utils gettext localbase:ldflags pathfix \
-		pkgconfig shared-mime-info ssl
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_XORG=	ice sm x11 xext xkbfile
 INSTALLS_ICONS=	yes
 CMAKE_ARGS=	--build=build \
 		-DWITH_APPINDICATOR:BOOL=false
+SHEBANG_FILES=	data/desktop/remmina-file-wrapper.sh.in
 
 OPTIONS_DEFINE=		AVAHI GCRYPT NLS SSH TERM
 OPTIONS_DEFAULT=	AVAHI GCRYPT SSH TERM
