@@ -3,7 +3,7 @@
 
 PORTNAME=	sqlitestudio
 DISTVERSION=	3.2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases
 MASTER_SITES=	http://sqlitestudio.pl/files/sqlitestudio3/complete/tar/
 
@@ -81,6 +81,6 @@ post-install:
 		${WRKSRC}/guiSQLiteStudio/img/sqlitestudio.svg \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/SQLiteStudio.svg
 	# add the lowercase link to the executable for convenience
-	@cd ${STAGEDIR}${PREFIX} && ${LN} -s bin/SQLiteStudio bin/sqlitestudio
+	@cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s SQLiteStudio sqlitestudio
 
 .include <bsd.port.mk>
