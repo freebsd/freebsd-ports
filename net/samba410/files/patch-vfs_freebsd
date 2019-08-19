@@ -27,7 +27,7 @@
  bld.SAMBA_GENERATOR('nfs41acl-xdr-c',
 --- source3/modules/vfs_freebsd.c.orig	2019-06-22 11:56:57 UTC
 +++ source3/modules/vfs_freebsd.c
-@@ -0,0 +1,808 @@
+@@ -0,0 +1,800 @@
 +/*
 + * This module implements VFS calls specific to FreeBSD
 + *
@@ -229,17 +229,13 @@
 +	ssize_t result;
 +
 +	switch(arg.method) {
-+#if defined(HAVE_EXTATTR_GET_FILE)
++#if defined(HAVE_XATTR_EXTATTR)
 +		case EXTATTR_FILE:
 +			result = extattr_get_file(arg.param.path, attr->namespace, attr->name, NULL, 0);
 +			break;
-+#endif
-+#if defined(HAVE_EXTATTR_GET_LINK)
 +		case EXTATTR_LINK:
 +			result = extattr_get_link(arg.param.path, attr->namespace, attr->name, NULL, 0);
 +			break;
-+#endif
-+#if defined(HAVE_EXTATTR_GET_FD)
 +		case EXTATTR_FDES:
 +			result = extattr_get_fd(arg.param.filedes, attr->namespace, attr->name, NULL, 0);
 +			break;
@@ -291,17 +287,13 @@
 +	/* Iterate through extattr(2) namespaces */
 +	for(; ns < ARRAY_SIZE(extattr); ns++) {
 +		switch(arg.method) {
-+#if defined(HAVE_EXTATTR_LIST_FILE)
++#if defined(HAVE_XATTR_EXTATTR)
 +			case EXTATTR_FILE:
 +				list_size = extattr_list_file(arg.param.path, extattr[ns].namespace, list, size);
 +				break;
-+#endif
-+#if defined(HAVE_EXTATTR_LIST_LINK)
 +			case EXTATTR_LINK:
 +				list_size = extattr_list_link(arg.param.path, extattr[ns].namespace, list, size);
 +				break;
-+#endif
-+#if defined(HAVE_EXTATTR_LIST_FD)
 +			case EXTATTR_FDES:
 +				list_size = extattr_list_fd(arg.param.filedes, extattr[ns].namespace, list, size);
 +				break;
@@ -431,7 +423,7 @@
 +				void *value,
 +				size_t size)
 +{
-+#if defined(HAVE_EXTATTR_GET_FILE)
++#if defined(HAVE_XATTR_EXTATTR)
 +	struct freebsd_handle_data *data;
 +	extattr_arg arg = { EXTATTR_FILE, .param.path = smb_fname->base_name };
 +	extattr_attr attr;
@@ -484,7 +476,7 @@
 +			      struct files_struct *fsp, const char *name,
 +			      void *value, size_t size)
 +{
-+#if defined(HAVE_EXTATTR_GET_FD)
++#if defined(HAVE_XATTR_EXTATTR)
 +	struct freebsd_handle_data *data;
 +	extattr_arg arg = { EXTATTR_FDES, .param.filedes = fsp->fh->fd };
 +	extattr_attr attr;
@@ -538,7 +530,7 @@
 +				char *list,
 +				size_t size)
 +{
-+#if defined(HAVE_EXTATTR_LIST_FILE)
++#if defined(HAVE_XATTR_EXTATTR)
 +	struct freebsd_handle_data *data;
 +
 +	SMB_VFS_HANDLE_GET_DATA(handle, data,
@@ -559,7 +551,7 @@
 +			       struct files_struct *fsp, char *list,
 +			       size_t size)
 +{
-+#if defined(HAVE_EXTATTR_LIST_FD)
++#if defined(HAVE_XATTR_EXTATTR)
 +	struct freebsd_handle_data *data;
 +	extattr_arg arg = { EXTATTR_FDES, .param.filedes = fsp->fh->fd };
 +
@@ -578,7 +570,7 @@
 +			const struct smb_filename *smb_fname,
 +			const char *name)
 +{
-+#if defined(HAVE_EXTATTR_DELETE_FILE)
++#if defined(HAVE_XATTR_EXTATTR)
 +	struct freebsd_handle_data *data;
 +	extattr_attr attr;
 +
@@ -604,7 +596,7 @@
 +static int freebsd_fremovexattr(vfs_handle_struct *handle,
 +			     struct files_struct *fsp, const char *name)
 +{
-+#if defined(HAVE_EXTATTR_DELETE_FD)
++#if defined(HAVE_XATTR_EXTATTR)
 +	struct freebsd_handle_data *data;
 +	extattr_attr attr;
 +
@@ -638,7 +630,7 @@
 +			size_t size,
 +			int flags)
 +{
-+#if defined(HAVE_EXTATTR_SET_FILE)
++#if defined(HAVE_XATTR_EXTATTR)
 +	struct freebsd_handle_data *data;
 +	extattr_attr attr;
 +	ssize_t res;
@@ -692,7 +684,7 @@
 +			  const char *name, const void *value, size_t size,
 +			  int flags)
 +{
-+#if defined(HAVE_EXTATTR_SET_FD)
++#if defined(HAVE_XATTR_EXTATTR)
 +	struct freebsd_handle_data *data;
 +	extattr_attr attr;
 +	ssize_t res;
