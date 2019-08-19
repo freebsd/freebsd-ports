@@ -2,7 +2,7 @@
 
 PORTNAME=	pbbam
 DISTVERSION=	0.18.0 # Test with biology/unanimity before upgrading!
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org

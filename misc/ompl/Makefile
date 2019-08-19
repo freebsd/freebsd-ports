@@ -2,8 +2,8 @@
 
 PORTNAME=	ompl
 DISTVERSION=	1.4.2
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-Source
+PORTREVISION=	2
 CATEGORIES=	misc comms
 MASTER_SITES=	http://cdn.bitbucket.org/${PORTNAME}/${PORTNAME}/downloads/
 

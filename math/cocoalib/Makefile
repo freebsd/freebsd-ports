@@ -2,7 +2,7 @@
 
 PORTNAME=	cocoalib
 DISTVERSION=	0.99600
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://cocoa.dima.unige.it/cocoalib/tgz/
 DISTNAME=	CoCoALib-0.99600
