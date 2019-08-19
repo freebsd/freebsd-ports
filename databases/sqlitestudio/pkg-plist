@@ -1,4 +1,5 @@
 bin/SQLiteStudio
+bin/sqlitestudio
 bin/sqlitestudiocli
 lib/libcoreSQLiteStudio.so
 lib/libcoreSQLiteStudio.so.1
