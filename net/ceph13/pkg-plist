@@ -3,6 +3,7 @@ bin/ceph-authtool
 bin/ceph-clsinfo
 bin/ceph-conf
 bin/ceph-coverage
+bin/ceph-crash
 bin/ceph-debugpack
 bin/ceph-dencoder
 bin/ceph-detect-init
@@ -98,6 +99,8 @@ lib/ceph/libceph-common.so.0
 lib/ceph/mgr/CMakeLists.txt
 lib/ceph/mgr/balancer/__init__.py
 lib/ceph/mgr/balancer/module.py
+lib/ceph/mgr/crash/__init__.py
+lib/ceph/mgr/crash/module.py
 lib/ceph/mgr/dashboard/.coveragerc
 lib/ceph/mgr/dashboard/.editorconfig
 lib/ceph/mgr/dashboard/.pylintrc
@@ -124,16 +127,17 @@ lib/ceph/mgr/dashboard/controllers/summary.py
 lib/ceph/mgr/dashboard/controllers/task.py
 lib/ceph/mgr/dashboard/controllers/tcmu_iscsi.py
 lib/ceph/mgr/dashboard/exceptions.py
-lib/ceph/mgr/dashboard/frontend/.angular-cli.json
-lib/ceph/mgr/dashboard/frontend/.editorconfig
 lib/ceph/mgr/dashboard/frontend/e2e/cluster/monitors.e2e-spec.ts
 lib/ceph/mgr/dashboard/frontend/e2e/cluster/monitors.po.ts
 lib/ceph/mgr/dashboard/frontend/e2e/cluster/osds.e2e-spec.ts
 lib/ceph/mgr/dashboard/frontend/e2e/cluster/osds.po.ts
 lib/ceph/mgr/dashboard/frontend/e2e/helper.po.ts
 lib/ceph/mgr/dashboard/frontend/e2e/tsconfig.e2e.json
+lib/ceph/mgr/dashboard/frontend/.editorconfig
+lib/ceph/mgr/dashboard/frontend/angular.json
 lib/ceph/mgr/dashboard/frontend/karma.conf.js
 lib/ceph/mgr/dashboard/frontend/package.json
+lib/ceph/mgr/dashboard/frontend/package-lock.json
 lib/ceph/mgr/dashboard/frontend/protractor.conf.js
 lib/ceph/mgr/dashboard/frontend/proxy.conf.json.sample
 lib/ceph/mgr/dashboard/frontend/src/app/app-routing.module.ts
@@ -431,6 +435,8 @@ lib/ceph/mgr/dashboard/frontend/src/app/shared/datatable/table/table.component.h
 lib/ceph/mgr/dashboard/frontend/src/app/shared/datatable/table/table.component.scss
 lib/ceph/mgr/dashboard/frontend/src/app/shared/datatable/table/table.component.spec.ts
 lib/ceph/mgr/dashboard/frontend/src/app/shared/datatable/table/table.component.ts
+lib/ceph/mgr/dashboard/frontend/src/app/shared/decorators/cd-encode.spec.ts
+lib/ceph/mgr/dashboard/frontend/src/app/shared/decorators/cd-encode.ts
 lib/ceph/mgr/dashboard/frontend/src/app/shared/directives/autofocus.directive.spec.ts
 lib/ceph/mgr/dashboard/frontend/src/app/shared/directives/autofocus.directive.ts
 lib/ceph/mgr/dashboard/frontend/src/app/shared/directives/copy2clipboard-button.directive.spec.ts
@@ -462,6 +468,8 @@ lib/ceph/mgr/dashboard/frontend/src/app/shared/pipes/dimless-binary.pipe.spec.ts
 lib/ceph/mgr/dashboard/frontend/src/app/shared/pipes/dimless-binary.pipe.ts
 lib/ceph/mgr/dashboard/frontend/src/app/shared/pipes/dimless.pipe.spec.ts
 lib/ceph/mgr/dashboard/frontend/src/app/shared/pipes/dimless.pipe.ts
+lib/ceph/mgr/dashboard/frontend/src/app/shared/pipes/encode-uri.pipe.spec.ts
+lib/ceph/mgr/dashboard/frontend/src/app/shared/pipes/encode-uri.pipe.ts
 lib/ceph/mgr/dashboard/frontend/src/app/shared/pipes/filter.pipe.spec.ts
 lib/ceph/mgr/dashboard/frontend/src/app/shared/pipes/filter.pipe.ts
 lib/ceph/mgr/dashboard/frontend/src/app/shared/pipes/health-color.pipe.spec.ts
@@ -527,6 +535,7 @@ lib/ceph/mgr/dashboard/tests/__init__.py
 lib/ceph/mgr/dashboard/tests/helper.py
 lib/ceph/mgr/dashboard/tests/test_notification.py
 lib/ceph/mgr/dashboard/tests/test_rbd_mirroring.py
+lib/ceph/mgr/dashboard/tests/test_rest_client.py
 lib/ceph/mgr/dashboard/tests/test_rest_tasks.py
 lib/ceph/mgr/dashboard/tests/test_settings.py
 lib/ceph/mgr/dashboard/tests/test_task.py

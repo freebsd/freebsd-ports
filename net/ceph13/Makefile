@@ -3,10 +3,9 @@
 
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	13.2.1
-PORTREVISION=	1
-PKGNAMESUFFIX=	13
+DISTVERSION=	13.2.6
 CATEGORIES=	net
+PKGNAMESUFFIX=	13
 
 MAINTAINER=	wjw@digiware.nl
 COMMENT=	Ceph delivers object, block, and file storage in a unified system
@@ -21,7 +20,7 @@ BUILD_DEPENDS=	\
 	bash:shells/bash \
 	git:devel/git \
 	yasm:devel/yasm \
-	sphinx-build:textproc/py-sphinx \
+	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
 	gperf:devel/gperf \
 	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 LIB_DEPENDS=	\
@@ -52,13 +51,14 @@ USES=		cmake:noninja fuse gettext-runtime gmake pkgconfig python:2.7 \
 USE_PYTHON=	cython
 USE_OPENLDAP=	yes
 USE_GITHUB=	yes
+GH_ACCOUNT=	ceph:DEFAULT
 
 CONFLICTS_INSTALL=	ceph
 PORTSCOUT=	limit:^v13\.
 
 GH_TUPLE+=	ceph:ceph-erasure-code-corpus:2d7d78b:ceph_erasure_code_corpus/ceph-erasure-code-corpus
 GH_TUPLE+=	ceph:ceph-object-corpus:e32bf8c:ceph_object_corpus/ceph-object-corpus
-GH_TUPLE+=	ceph:civetweb:de23828:civetweb/src/civetweb
+GH_TUPLE+=	ceph:civetweb:088b813:civetweb/src/civetweb
 GH_TUPLE+=	01org:isa-l_crypto:603529a:isa_l_crypto/src/crypto/isa-l/isa-l_crypto
 GH_TUPLE+=	ceph:gf-complete:7e61b44:gf_complete/src/erasure-code/jerasure/gf-complete
 GH_TUPLE+=	ceph:jerasure:96c76b8:jerasure/src/erasure-code/jerasure/jerasure
@@ -69,10 +69,6 @@ GH_TUPLE+=	ceph:rapidjson:f54b0e4:rapidjson/src/rapidjson
 GH_TUPLE+=	ceph:rocksdb:f4a857d:rocksdb/src/rocksdb
 GH_TUPLE+=	ceph:xxHash:1f40c65:xxHash/src/xxHash
 GH_TUPLE+=	facebook:zstd:f4340f4:zstd/src/zstd
-
-# oude hashes
-# GH_TUPLE+=	ceph:rocksdb:e15382c:rocksdb/src/rocksdb
-# GH_TUPLE+=      ceph:rocksdb:9090ae3:rocksdb/src/rocksdb
 
 CMAKE_BUILD_TYPE=	Release
 CMAKE_ARGS=	\
