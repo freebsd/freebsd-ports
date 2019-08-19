@@ -191,10 +191,6 @@ RIEMANN_CONFIGURE_OFF=		--disable-riemann
 RIEMANN_LIB_DEPENDS=		libriemann-client.so:net-mgmt/riemann-c-client
 RIEMANN_PLIST_FILES=		lib/syslog-ng/libriemann.so
 
-# Move Gradle's home below ${WRKDIR} instead of using ${HOME}/.gradle
-_GRADLE_ENV=	GRADLE_USER_HOME=${WRKDIR}/gradle-home
-_GRADLE_RUN=	${SETENV} ${_GRADLE_ENV} gradle4 --no-daemon
-
 .include <bsd.port.pre.mk>
 
 .if !${PORT_OPTIONS:MJSON}
