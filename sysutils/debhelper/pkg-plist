@@ -119,8 +119,10 @@ bin/prerm-wm
 %%SITE_PERL%%/Debian/Debhelper/Dh_Buildsystems.pm
 %%SITE_PERL%%/Debian/Debhelper/Dh_Getopt.pm
 %%SITE_PERL%%/Debian/Debhelper/Dh_Lib.pm
+%%SITE_PERL%%/Debian/Debhelper/Sequence.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/build_stamp.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/dwz.pm
+%%SITE_PERL%%/Debian/Debhelper/Sequence/elf_tools.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/installinitramfs.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/python_support.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/systemd.pm
