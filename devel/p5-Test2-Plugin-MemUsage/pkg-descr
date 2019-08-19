@@ -1,0 +1,5 @@
+Currently Test2::Plugin::MemUsage only works on unix systems that provide
+/proc/PID/status access. For all other systems this plugin is essentially a
+no-op.
+
+WWW: https://metacpan.org/release/Test2-Plugin-MemUsage
