@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-activesupport4>=0:devel/rubygem-activesupport4 \
 		rubygem-rack>=0:www/rubygem-rack \
 		rubygem-rack-test>=1.1.0<2.0:www/rubygem-rack-test \
 		rubygem-rest-client>=2.0.2<3.0:www/rubygem-rest-client \
-		rubygem-rspec>=3.8<4.0:devel/rubygem-rspec
+		rubygem-rspec>=3.8<4:devel/rubygem-rspec
 
 USES=		gem
 USE_RUBY=	yes
