@@ -21,3 +21,4 @@ lib/libguiSQLiteStudio.so.1.0.0
 %%PLUGIN_SQL_EXPORT%%lib/sqlitestudio/libSqlExport.so
 %%PLUGIN_SQL_ENTERPRISE_FORMATTER%%lib/sqlitestudio/libSqlEnterpriseFormatter.so
 %%PLUGIN_XML_EXPORT%%lib/sqlitestudio/libXmlExport.so
+share/icons/hicolor/scalable/apps/SQLiteStudio.svg
