@@ -1,0 +1,4 @@
+Protocol::HPACK provides a compressor and decompressor for HTTP 2.0 headers,
+HPACK, as defined by RFC7541.
+
+WWW: https://github.com/socketry/protocol-hpack
