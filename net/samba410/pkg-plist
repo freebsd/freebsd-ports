@@ -238,8 +238,6 @@ lib/samba4/private/libiov-buf-samba4.so
 %%GSSAPI_BUILTIN%%lib/samba4/private/libkdc-samba4.so.2
 %%GSSAPI_BUILTIN%%lib/samba4/private/libkrb5-samba4.so.26
 lib/samba4/private/libkrb5samba-samba4.so
-lib/samba4/private/libldb-tdb-err-map-samba4.so
-lib/samba4/private/libldb-tdb-int-samba4.so
 lib/samba4/private/libldbsamba-samba4.so
 lib/samba4/private/liblibcli-lsa3-samba4.so
 lib/samba4/private/liblibcli-netlogon3-samba4.so
@@ -310,6 +308,7 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/acl.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/aclread.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/anr.so
+%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/audit_log.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/descriptor.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/dirsync.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/dns_notify.so
@@ -318,6 +317,7 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/extended_dn_in.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/extended_dn_out.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/extended_dn_store.so
+%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/group_audit_log.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/ildap.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/instancetype.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/lazy_commit.so
@@ -556,6 +556,7 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%%%DATADIR%%/setup/provision_schema_basedn.ldif
 %%AD_DC%%%%DATADIR%%/setup/provision_self_join_config.ldif
 %%AD_DC%%%%DATADIR%%/setup/provision_self_join_modify_config.ldif
+%%AD_DC%%%%DATADIR%%/setup/provision_self_join_modify_schema.ldif
 %%AD_DC%%%%DATADIR%%/setup/provision_self_join_modify.ldif
 %%AD_DC%%%%DATADIR%%/setup/provision_self_join.ldif
 %%AD_DC%%%%DATADIR%%/setup/provision_users_add.ldif
@@ -775,58 +776,7 @@ man/man8/winbindd.8.gz
 %%CLUSTER%%@dir /var/lib/ctdb
 %%CLUSTER%%@dir /var/lib
 %%CLUSTER%%@dir /var/run/ctdb
-@comment Use bundled libraries
-%%SAMBA4_BUNDLED_CMOCKA%%lib/samba4/private/libcmocka-samba4.so
-%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/_ldb_text.py
-%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/ldb.so
-%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON%%lib/samba4/private/libpyldb-util.so.1
-%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbdump
-%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbadd
-%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbdel
-%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbedit
-%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbmodify
-%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbrename
-%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbsearch
-%%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-cmdline-samba4.so
-%%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-key-value-samba4.so
-%%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb.so.1
-%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/asq.so
-%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/ldb.so
-%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/paged_searches.so
-%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/rdn_name.so
-%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/sample.so
-%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/server_sort.so
-%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/skel.so
-%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/tdb.so
-@comment %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/audit_log.so
-@comment %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/group_audit_log.so
-@comment %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/mdb.so
-%%SAMBA4_BUNDLED_LDB%%man/man1/ldbadd.1.gz
-%%SAMBA4_BUNDLED_LDB%%man/man1/ldbdel.1.gz
-%%SAMBA4_BUNDLED_LDB%%man/man1/ldbedit.1.gz
-%%SAMBA4_BUNDLED_LDB%%man/man1/ldbmodify.1.gz
-%%SAMBA4_BUNDLED_LDB%%man/man1/ldbrename.1.gz
-%%SAMBA4_BUNDLED_LDB%%man/man1/ldbsearch.1.gz
-%%SAMBA4_BUNDLED_LDB%%man/man3/ldb.3.gz
-%%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/talloc.so
-%%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_PYTHON%%lib/samba4/private/libpytalloc-util.so.2
-%%SAMBA4_BUNDLED_TALLOC%%lib/samba4/private/libtalloc.so.2
-%%SAMBA4_BUNDLED_TALLOC%%man/man3/talloc.3.gz
-%%SAMBA4_BUNDLED_TDB%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/_tdb_text.py
-%%SAMBA4_BUNDLED_TDB%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/tdb.so
-%%SAMBA4_BUNDLED_TDB%%bin/tdbbackup
-%%SAMBA4_BUNDLED_TDB%%bin/tdbdump
-%%SAMBA4_BUNDLED_TDB%%bin/tdbrestore
-%%SAMBA4_BUNDLED_TDB%%bin/tdbtool
-%%SAMBA4_BUNDLED_TDB%%lib/samba4/private/libtdb.so.1
-%%SAMBA4_BUNDLED_TDB%%man/man8/tdbbackup.8.gz
-%%SAMBA4_BUNDLED_TDB%%man/man8/tdbdump.8.gz
-%%SAMBA4_BUNDLED_TDB%%man/man8/tdbrestore.8.gz
-%%SAMBA4_BUNDLED_TDB%%man/man8/tdbtool.8.gz
-%%SAMBA4_BUNDLED_TEVENT%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/_tevent.so
-%%SAMBA4_BUNDLED_TEVENT%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/tevent.py
-%%SAMBA4_BUNDLED_TEVENT%%lib/samba4/private/libtevent.so.0
-@comment Python2 block
+@comment Python block
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/dckeytab.so
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/posix_eadb.so
 %%AD_DC%%%%PYTHON_SITELIBDIR%%/samba/xattr_native.so
@@ -1055,6 +1005,7 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/tests/kcc/kcc_utils.py
 %%PYTHON_SITELIBDIR%%/samba/tests/kcc/ldif_import_export.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5_credentials.py
+%%PYTHON_SITELIBDIR%%/samba/tests/ldap_referrals.py
 %%PYTHON_SITELIBDIR%%/samba/tests/libsmb.py
 %%PYTHON_SITELIBDIR%%/samba/tests/loadparm.py
 %%PYTHON_SITELIBDIR%%/samba/tests/lsa_string.py
@@ -1141,7 +1092,6 @@ man/man8/winbindd.8.gz
 %%PYTHON_SITELIBDIR%%/samba/uptodateness.py
 %%PYTHON_SITELIBDIR%%/samba/werror.so
 %%PYTHON_SITELIBDIR%%/samba/xattr.py
-@unexec find %D/%%PYTHON_SITELIBDIR%%/samba -name '*.py[co]' -delete >/dev/null 2>&1
 @dir %%PYTHON_SITELIBDIR%%/samba/web_server
 @dir %%PYTHON_SITELIBDIR%%/samba/tests/samba_tool
 @dir %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc
@@ -1152,3 +1102,52 @@ man/man8/winbindd.8.gz
 @dir %%PYTHON_SITELIBDIR%%/samba/netcmd
 @dir %%PYTHON_SITELIBDIR%%/samba/dcerpc
 @dir %%PYTHON_SITELIBDIR%%/samba
+@comment Use bundled libraries
+%%SAMBA4_BUNDLED_CMOCKA%%lib/samba4/private/libcmocka-samba4.so
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/_ldb_text.py
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/ldb.so
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_PYTHON%%lib/samba4/private/libpyldb-util.so.1
+%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbdump
+%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbadd
+%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbdel
+%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbedit
+%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbmodify
+%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbrename
+%%SAMBA4_BUNDLED_LDB%%bin/samba-ldbsearch
+%%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-cmdline-samba4.so
+%%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-key-value-samba4.so
+%%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-tdb-err-map-samba4.so
+%%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-tdb-int-samba4.so
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/asq.so
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/ldb.so
+%%AD_DC%%%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/mdb.so
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/paged_searches.so
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/rdn_name.so
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/sample.so
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/server_sort.so
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/skel.so
+%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/tdb.so
+%%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/talloc.so
+%%SAMBA4_BUNDLED_TALLOC%%%%SAMBA4_PYTHON%%lib/samba4/private/libpytalloc-util.so.2
+%%SAMBA4_BUNDLED_TALLOC%%lib/samba4/private/libtalloc.so.2
+%%SAMBA4_BUNDLED_TALLOC%%man/man3/talloc.3.gz
+%%SAMBA4_BUNDLED_TDB%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/_tdb_text.py
+%%SAMBA4_BUNDLED_TDB%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/tdb.so
+%%SAMBA4_BUNDLED_TDB%%bin/samba-tdbbackup
+%%SAMBA4_BUNDLED_TDB%%bin/samba-tdbdump
+%%SAMBA4_BUNDLED_TDB%%bin/samba-tdbrestore
+%%SAMBA4_BUNDLED_TDB%%bin/samba-tdbtool
+%%SAMBA4_BUNDLED_TDB%%lib/samba4/private/libtdb.so.1
+%%SAMBA4_BUNDLED_TEVENT%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/_tevent.so
+%%SAMBA4_BUNDLED_TEVENT%%%%SAMBA4_PYTHON%%%%PYTHON_SITELIBDIR%%/tevent.py
+%%SAMBA4_BUNDLED_TEVENT%%lib/samba4/private/libtevent.so.0
+%%SAMBA4_BUNDLED_LDB%%man/man1/samba-ldbadd.1.gz
+%%SAMBA4_BUNDLED_LDB%%man/man1/samba-ldbdel.1.gz
+%%SAMBA4_BUNDLED_LDB%%man/man1/samba-ldbedit.1.gz
+%%SAMBA4_BUNDLED_LDB%%man/man1/samba-ldbmodify.1.gz
+%%SAMBA4_BUNDLED_LDB%%man/man1/samba-ldbrename.1.gz
+%%SAMBA4_BUNDLED_LDB%%man/man1/samba-ldbsearch.1.gz
+%%SAMBA4_BUNDLED_TDB%%man/man8/samba-tdbbackup.8.gz
+%%SAMBA4_BUNDLED_TDB%%man/man8/samba-tdbdump.8.gz
+%%SAMBA4_BUNDLED_TDB%%man/man8/samba-tdbrestore.8.gz
+%%SAMBA4_BUNDLED_TDB%%man/man8/samba-tdbtool.8.gz

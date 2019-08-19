@@ -5,7 +5,7 @@
  	}
  
 -	ret = listen(listen_sock, 5);
-+	ret = listen(listen_sock, -1);
++	ret = listen(listen_sock, DEFAULT_LISTEN_BACKLOG);
  	if (ret == -1) {
  		perror("listen() failed");
  		exit(1);
