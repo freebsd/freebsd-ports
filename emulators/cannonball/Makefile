@@ -2,6 +2,7 @@
 
 PORTNAME=	cannonball
 DISTVERSION=	g20171201
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	santhosh.raju@gmail.com
