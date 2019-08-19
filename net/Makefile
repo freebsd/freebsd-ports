@@ -1211,6 +1211,7 @@
     SUBDIR += rubygem-azure-core
     SUBDIR += rubygem-beefcake
     SUBDIR += rubygem-bunny
+    SUBDIR += rubygem-cloudflare
     SUBDIR += rubygem-connection_pool
     SUBDIR += rubygem-docker-api
     SUBDIR += rubygem-dogapi
