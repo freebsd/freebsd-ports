@@ -7,7 +7,7 @@ MASTER_SITES=	CRATESIO
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Rust subcommand to visualize a dependency graph in a tree-like format
+COMMENT=	Rust's cargo subcommand to visualize dependency graph as a tree #'
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
