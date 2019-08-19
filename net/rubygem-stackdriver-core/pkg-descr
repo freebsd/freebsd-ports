@@ -1,0 +1,4 @@
+This library contains shared types and utilities for Stackdriver-related
+libraries.
+
+WWW: https://github.com/googleapis/google-cloud-ruby/tree/master/stackdriver-core
