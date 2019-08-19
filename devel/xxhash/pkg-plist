@@ -5,7 +5,7 @@ include/xxhash.h
 lib/libxxhash.a
 lib/libxxhash.so
 lib/libxxhash.so.0
-lib/libxxhash.so.0.7.0
+lib/libxxhash.so.0.7.1
 man/man1/xxh32sum.1.gz
 man/man1/xxh64sum.1.gz
 man/man1/xxhsum.1.gz
