@@ -5,8 +5,10 @@ PORTNAME?=	fetchmail
 DISTVERSION=	6.4.0.rc2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/${PORTNAME}/branch_6.4/
+PKGNAMESUFFIX=	64
 
-MAINTAINER=	mandree@FreeBSD.org # chalpin@cs.wisc.edu has full permissions to this port except overriding MAINTAINER line.
+# chalpin@cs.wisc.edu has full permissions to this port except overriding MAINTAINER line.
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT?=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR - release candidate
 
 LICENSE=	GPLv2 LGPL21
@@ -15,13 +17,15 @@ LICENSE_COMB=	dual
 .if empty(MASTERDIR)
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
+USES=		cpe gmake tar:xz ssl
+
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
 
-USES=		cpe gmake tar:xz ssl
-
 USE_RC_SUBR=	fetchmail
 SUB_FILES=	pkg-message
+
+CONFLICTS_INSTALL=	fetchmail-6.3*
 
 GNU_CONFIGURE=	yes
 
