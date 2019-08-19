@@ -1,0 +1,67 @@
+https://github.com/glandium/git-cinnabar/commit/567078fb6031
+
+--- helper/GIT-VERSION.mk.orig	2019-07-01 04:57:48 UTC
++++ helper/GIT-VERSION.mk
+@@ -1,2 +1,2 @@
+-GIT_VERSION ?= v2.22.0
++GIT_VERSION ?= v2.23.0
+ WINDOWS_GIT_VERSION ?= $(GIT_VERSION).windows.1
+--- helper/cinnabar-fast-import.c.orig	2019-07-01 04:57:48 UTC
++++ helper/cinnabar-fast-import.c
+@@ -247,7 +247,8 @@ static uintmax_t parse_mark_ref(const char *p, char **
+ 		if (path_end) {
+ 			unsigned short mode;
+ 			char *path = xstrndup(*endptr, path_end - *endptr);
+-			if (!get_tree_entry(note, path, &git_oid, &mode))
++			if (!get_tree_entry(the_repository, note, path,
++			                    &git_oid, &mode))
+ 				note = &git_oid;
+ 			else
+ 				note = &empty_tree;
+--- helper/cinnabar-helper.c.orig	2019-07-01 04:57:48 UTC
++++ helper/cinnabar-helper.c
+@@ -1605,7 +1605,7 @@ static void upgrade_manifest_tree_v1(const struct obje
+ 	struct oid_map_entry k, *old2new;
+ 
+ 	oidcpy(&k.old_oid, tree_id);
+-	hashmap_entry_init(&k.ent, sha1hash(k.old_oid.hash));
++	hashmap_entry_init(&k.ent, oidhash(&k.old_oid));
+ 	old2new = hashmap_get(cache, &k, NULL);
+ 	if (!old2new) {
+ 		struct strbuf tree_buf = STRBUF_INIT;
+@@ -1748,7 +1748,7 @@ static void upgrade_manifest(struct commit *commit,
+ 		struct oid_map_entry k;
+ 		struct commit *p;
+ 		oidcpy(&k.old_oid, &commit->parents->item->object.oid);
+-		hashmap_entry_init(&k.ent, sha1hash(k.old_oid.hash));
++		hashmap_entry_init(&k.ent, oidhash(&k.old_oid));
+ 		entry = hashmap_get(&track->commit_cache, &k, NULL);
+ 		if (!entry)
+ 			die("Something went wrong");
+@@ -1784,7 +1784,7 @@ static void upgrade_manifest(struct commit *commit,
+ 		struct oid_map_entry k;
+ 		if (get_oid_hex(cursor, &k.old_oid))
+ 			die("Invalid sha1");
+-		hashmap_entry_init(&k.ent, sha1hash(k.old_oid.hash));
++		hashmap_entry_init(&k.ent, oidhash(&k.old_oid));
+ 		entry = hashmap_get(&track->commit_cache, &k, NULL);
+ 		if (!entry)
+ 			die("Something went wrong");
+@@ -1794,7 +1794,7 @@ static void upgrade_manifest(struct commit *commit,
+ 	}
+ 
+ 	entry = xmalloc(sizeof(*entry));
+-	hashmap_entry_init(&entry->ent, sha1hash(commit->object.oid.hash));
++	hashmap_entry_init(&entry->ent, oidhash(&commit->object.oid));
+ 	oidcpy(&entry->old_oid, &commit->object.oid);
+ 	store_git_commit(&new_commit, &entry->new_oid);
+ 	hashmap_add(&track->commit_cache, entry);
+@@ -1950,7 +1950,7 @@ static void recurse_create_git_tree(const struct objec
+ {
+ 	struct oid_map_entry k, *cache_entry;
+ 
+-	hashmap_entry_init(&k.ent, sha1hash(tree_id->hash));
++	hashmap_entry_init(&k.ent, oidhash(tree_id));
+ 	oidcpy(&k.old_oid, tree_id);
+ 	cache_entry = hashmap_get(cache, &k, NULL);
+ 	if (!cache_entry) {
