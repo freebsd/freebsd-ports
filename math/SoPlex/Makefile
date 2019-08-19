@@ -14,7 +14,7 @@ COMMENT=	Optimization package for solving linear programming problems (LPs)
 LICENSE=	ZIB
 LICENSE_NAME=	ZIB ACADEMIC LICENSE
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE_PERMS=	no-dist-mirror no-pkg-mirror no-auto-accept
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
