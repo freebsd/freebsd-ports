@@ -1,4 +1,4 @@
-%%PERL5_MAN3%%/XML::LibXML::Iterator.3.gz
-%%PERL5_MAN3%%/XML::LibXML::NodeList::Iterator.3.gz
 %%SITE_PERL%%/XML/LibXML/Iterator.pm
 %%SITE_PERL%%/XML/LibXML/NodeList/Iterator.pm
+%%PERL5_MAN3%%/XML::LibXML::Iterator.3.gz
+%%PERL5_MAN3%%/XML::LibXML::NodeList::Iterator.3.gz
