@@ -351,7 +351,6 @@
 %%DATADIR%%/Etc/GMT-9
 %%DATADIR%%/Etc/GMT0
 %%DATADIR%%/Etc/Greenwich
-%%DATADIR%%/Etc/UCT
 %%DATADIR%%/Etc/UTC
 %%DATADIR%%/Etc/Universal
 %%DATADIR%%/Etc/Zulu
@@ -472,9 +471,11 @@
 %%DATADIR%%/Pacific/Tongatapu
 %%DATADIR%%/Pacific/Wake
 %%DATADIR%%/Pacific/Wallis
+%%DATADIR%%/UTC
 %%DATADIR%%/WET
 %%DATADIR%%/posixrules
 %%DATADIR%%/zone.tab
+%%DATADIR%%/zone1970.tab
 %%BACKWARD%%%%DATADIR%%/Africa/Asmera
 %%BACKWARD%%%%DATADIR%%/Africa/Timbuktu
 %%BACKWARD%%%%DATADIR%%/America/Argentina/ComodRivadavia
@@ -542,6 +543,7 @@
 %%BACKWARD%%%%DATADIR%%/Cuba
 %%BACKWARD%%%%DATADIR%%/Egypt
 %%BACKWARD%%%%DATADIR%%/Eire
+%%BACKWARD%%%%DATADIR%%/Etc/UCT
 %%BACKWARD%%%%DATADIR%%/Europe/Belfast
 %%BACKWARD%%%%DATADIR%%/Europe/Tiraspol
 %%BACKWARD%%%%DATADIR%%/GB
@@ -589,7 +591,6 @@
 %%BACKWARD%%%%DATADIR%%/US/Mountain
 %%BACKWARD%%%%DATADIR%%/US/Pacific
 %%BACKWARD%%%%DATADIR%%/US/Samoa
-%%BACKWARD%%%%DATADIR%%/UTC
 %%BACKWARD%%%%DATADIR%%/Universal
 %%BACKWARD%%%%DATADIR%%/W-SU
 %%BACKWARD%%%%DATADIR%%/Zulu
