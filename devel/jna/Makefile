@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jna
-PORTVERSION=	4.5.1
+PORTVERSION=	4.5.2
 CATEGORIES=	devel java
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,6 +19,7 @@ BROKEN_armv7=		fails to compile: build.xml: compilation failed
 USES=		autoreconf:build gmake libtool
 USE_ANT=	yes
 USE_JAVA=	yes
+JAVA_VERSION=	8
 USE_XORG=	x11 xt
 MAKE_ARGS=	-DCC="${CC}" -DLD="${LD}"
 MAKE_ENV=	ANT_OPTS=-Drelease -DARCH=${ANT_ARCH}
