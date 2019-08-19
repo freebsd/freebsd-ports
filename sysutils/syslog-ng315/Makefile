@@ -183,10 +183,6 @@ CURL_CONFIGURE_OFF=		--with-libcurl=off
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
 CURL_PLIST_FILES=		lib/syslog-ng/libhttp.so
 
-# Move Gradle's home below ${WRKDIR} instead of using ${HOME}/.gradle
-_GRADLE_ENV=	GRADLE_USER_HOME=${WRKDIR}/gradle-home
-_GRADLE_RUN=	${SETENV} ${_GRADLE_ENV} gradle4 --no-daemon
-
 .include <bsd.port.pre.mk>
 
 post-patch:

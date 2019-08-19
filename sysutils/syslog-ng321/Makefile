@@ -197,10 +197,6 @@ KAFKA_CONFIGURE_OFF=		--disable-kafka
 KAFKA_LIB_DEPENDS=		librdkafka.so:net/librdkafka
 KAFKA_PLIST_FILES=		lib/syslog-ng/libkafka.so
 
-# Move Gradle's home below ${WRKDIR} instead of using ${HOME}/.gradle
-_GRADLE_ENV=	GRADLE_USER_HOME=${WRKDIR}/gradle-home
-_GRADLE_RUN=	${SETENV} ${_GRADLE_ENV} gradle4 --no-daemon
-
 .include <bsd.port.pre.mk>
 
 .if !${PORT_OPTIONS:MJSON}
