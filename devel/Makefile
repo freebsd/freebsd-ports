@@ -5407,6 +5407,7 @@
     SUBDIR += rubygem-ast
     SUBDIR += rubygem-astrolabe
     SUBDIR += rubygem-async
+    SUBDIR += rubygem-async-io
     SUBDIR += rubygem-atomic
     SUBDIR += rubygem-attic
     SUBDIR += rubygem-attr_required
