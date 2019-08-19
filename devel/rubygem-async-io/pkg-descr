@@ -1,0 +1,4 @@
+Async::IO provides builds on async and provides asynchronous wrappers for IO,
+Socket, and related classes.
+
+WWW: https://github.com/socketry/async-io
