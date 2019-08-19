@@ -1,0 +1,10 @@
+Roy Thomas Fielding's thesis Architectural Styles and the Design of
+Network-based Software Architectures describes Representational State Transfer
+which comprises several core concepts:
+- Resource: A conceptual mapping to one or more entities.
+- Representation: An instance of a resource at a given point in time.
+
+Async::REST models these abstractions as closely and practically as possible and
+serves as a basis for building asynchronous web clients.
+
+WWW: https://github.com/socketry/async-rest
