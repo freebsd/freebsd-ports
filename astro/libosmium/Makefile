@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libosmium
-PORTVERSION=	2.15.1
+PORTVERSION=	2.15.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	astro geography devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
