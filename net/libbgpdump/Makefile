@@ -1,18 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	libbgpdump
-PORTVERSION=	1.4.99.15
+PORTVERSION=	1.6.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.ris.ripe.net/source/bgpdump/
+MASTER_SITES=	https://www.ris.ripe.net/source/bgpdump/
 
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Analyzing dump files produced by Zebra/Quagga or MRT
 
 LICENSE=	GPLv2
 
+USES=		tar:tgz
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		tar:tgz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
