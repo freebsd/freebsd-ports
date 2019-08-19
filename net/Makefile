@@ -1403,6 +1403,7 @@
     SUBDIR += ssvnc
     SUBDIR += stone
     SUBDIR += stund
+    SUBDIR += subnetcalc
     SUBDIR += suckblow
     SUBDIR += sup
     SUBDIR += svnup
