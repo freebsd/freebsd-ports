@@ -13,9 +13,9 @@ COMMENT=	Manage various XKB features of X Window
 
 LICENSE=	BSD3CLAUSE
 
+USES=		perl5
 USE_XORG=	x11
 USE_PERL5=	build
-USES=		perl5
 
 MAKE_ARGS=	X11BASE="${LOCALBASE}" X11PREFIX="${PREFIX}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
