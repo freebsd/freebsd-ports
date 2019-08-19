@@ -994,10 +994,24 @@ depends_blacklist()
 	return $rc
 }
 
+pkgmessage()
+{
+	for message in ${PKGMESSAGES}; do
+		if [ -f "${message}" ]; then
+			if ! head -1 "${message}" | grep -q '^\['; then
+				warn "${message} not in UCL format, will be shown on initial install only."
+				warn "See https://www.freebsd.org/doc/en/books/porters-handbook/pkg-files.html#porting-message"
+			fi
+		fi
+	done
+
+	return 0
+}
+
 checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo"
 checks="$checks suidfiles libtool libperl prefixvar baselibs terminfo"
 checks="$checks proxydeps sonames perlcore no_arch gemdeps gemfiledeps flavors"
-checks="$checks license depends_blacklist"
+checks="$checks license depends_blacklist pkgmessage"
 
 ret=0
 cd ${STAGEDIR} || exit 1
