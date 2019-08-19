@@ -94,4 +94,14 @@ Other Erratas:
       require a local server.
 EOM
 }
+{ type: upgrade
+  maximum_version: "1.2.4"
+  message: <<EOM
+Starting with version 1.2.4 the option SNMPBIN is no longer required and has
+therefore been removed.
+
+Now you can enable PHP integrated support via the "$php_snmp_support" variable
+in config.php
+EOM
+}
 ]
