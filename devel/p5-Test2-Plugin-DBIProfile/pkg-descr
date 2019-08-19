@@ -1,0 +1,5 @@
+Test2::Plugin::DBIProfile will enable DBI::Profile globally so that DBI
+profiling data is collected. Once testing is complete an event will be produced
+which contains and displays the profiling data.
+
+WWW: https://metacpan.org/release/Test2-Plugin-DBIProfile
