@@ -4,6 +4,6 @@ include/spiro.h
 include/spiroentrypoints.h
 lib/libspiro.a
 lib/libspiro.so
-lib/libspiro.so.0
-lib/libspiro.so.0.0.5
+lib/libspiro.so.1
+lib/libspiro.so.1.0.0
 libdata/pkgconfig/libspiro.pc
