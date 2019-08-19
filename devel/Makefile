@@ -280,6 +280,7 @@
     SUBDIR += capnproto
     SUBDIR += capstone3
     SUBDIR += capstone4
+    SUBDIR += cargo-tree
     SUBDIR += cask
     SUBDIR += catch
     SUBDIR += cbrowser
