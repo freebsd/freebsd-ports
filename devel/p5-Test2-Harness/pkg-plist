@@ -62,9 +62,6 @@ bin/yath
 %%SITE_PERL%%/Test2/Harness/Util/TestFile.pm
 %%SITE_PERL%%/Test2/Harness/Util/UUID.pm
 %%SITE_PERL%%/Test2/Harness/Watcher.pm
-%%SITE_PERL%%/Test2/Plugin/DBIProfile.pm
-%%SITE_PERL%%/Test2/Plugin/MemUsage.pm
-%%SITE_PERL%%/Test2/Plugin/UUID.pm
 %%SITE_PERL%%/Test2/Tools/HarnessTester.pm
 %%PERL5_MAN1%%/yath.1.gz
 %%PERL5_MAN3%%/App::Yath.3.gz
