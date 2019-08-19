@@ -1,12 +1,12 @@
-TIMESTAMP = 1532787265
-SHA256 (ceph-ceph-v13.2.1_GH0.tar.gz) = f5ac4d242d969cebaba239bded165a98c087afc5e4b1ebc3cb1635494384d8a0
-SIZE (ceph-ceph-v13.2.1_GH0.tar.gz) = 12984612
+TIMESTAMP = 1565948132
+SHA256 (ceph-ceph-v13.2.6_GH0.tar.gz) = a4ed5599cd4ea045b79e691a2bc61fceab977f51b25a6e460139cf42891de2be
+SIZE (ceph-ceph-v13.2.6_GH0.tar.gz) = 13323448
 SHA256 (ceph-ceph-erasure-code-corpus-2d7d78b_GH0.tar.gz) = 8ab8f36f3e0a720c882b8bb4abb3f2e26bd6b025cc263119207f7d2eb3b1e490
 SIZE (ceph-ceph-erasure-code-corpus-2d7d78b_GH0.tar.gz) = 3685656
 SHA256 (ceph-ceph-object-corpus-e32bf8c_GH0.tar.gz) = 79ff0d1b9f959c9f5264a0dff193105d71885615deaa9c8469902400fd82d214
 SIZE (ceph-ceph-object-corpus-e32bf8c_GH0.tar.gz) = 1838192
-SHA256 (ceph-civetweb-de23828_GH0.tar.gz) = a9a95dd58e9b4a696fa0c822c1401856c55ef9b67fb28cf15d97f19f1af2ecbd
-SIZE (ceph-civetweb-de23828_GH0.tar.gz) = 6850197
+SHA256 (ceph-civetweb-088b813_GH0.tar.gz) = 7ae109f32ee92a3d81223ce88b6d2dfcadfa6b91cf2be877743a5cee30f115e2
+SIZE (ceph-civetweb-088b813_GH0.tar.gz) = 11349538
 SHA256 (01org-isa-l_crypto-603529a_GH0.tar.gz) = 52708b98c832bb7e6db60c949ece261d9609c822ae55239b0f2133cec2b3d155
 SIZE (01org-isa-l_crypto-603529a_GH0.tar.gz) = 439149
 SHA256 (ceph-gf-complete-7e61b44_GH0.tar.gz) = 7b0e5c1b41399d2c7d97ed7a7547ebf40023bcd104ed9a8b2b75bdee440c1a4d
