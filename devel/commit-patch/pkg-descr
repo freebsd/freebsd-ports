@@ -11,4 +11,4 @@ just hit C-c C-c in any patch buffer to apply and commit only the
 changes indicated by the patch, regardless of the changes in your
 working directory.
 
-WWW: http://www.porkrind.org/commit-patch/
+WWW: https://www.porkrind.org/commit-patch/
