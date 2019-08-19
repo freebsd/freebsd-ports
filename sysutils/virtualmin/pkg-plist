@@ -748,6 +748,7 @@ lib/webmin/virtual-server/help/config_pbzip2.nl.html
 lib/webmin/virtual-server/help/config_php_ini.html
 lib/webmin/virtual-server/help/config_php_ini.nl.html
 lib/webmin/virtual-server/help/config_php_paths.html
+lib/webmin/virtual-server/help/config_pigz.html
 lib/webmin/virtual-server/help/config_plan_auto.html
 lib/webmin/virtual-server/help/config_plan_auto.nl.html
 lib/webmin/virtual-server/help/config_post_check.html
