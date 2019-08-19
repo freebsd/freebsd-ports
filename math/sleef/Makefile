@@ -18,4 +18,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	shibatch
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+PLIST_SUB+=	NO_PPC64="@comment "
+.else
+PLIST_SUB+=	NO_PPC64=""
+.endif
+
 .include <bsd.port.mk>
