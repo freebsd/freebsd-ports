@@ -20,13 +20,15 @@ LICENSE_COMB=	dual
 .if empty(MASTERDIR)
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
+USES=		cpe gmake tar:xz ssl
+
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
 
-USES=		cpe gmake tar:xz ssl
-
 USE_RC_SUBR=	fetchmail
 SUB_FILES=	pkg-message
+
+CONFLICTS_INSTALL=	fetchmail-6.4*
 
 GNU_CONFIGURE=	yes
 
