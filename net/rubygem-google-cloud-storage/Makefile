@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-storage
-PORTVERSION=	1.20.0
+PORTVERSION=	1.21.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,12 +12,12 @@ COMMENT=	Official library for Google Cloud Storage
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-addressable>=2.5<3.0:www/rubygem-addressable \
-		rubygem-digest-crc>=0.4<1.0:security/rubygem-digest-crc \
-		rubygem-google-api-client>=0.26<1.0:devel/rubygem-google-api-client \
-		rubygem-google-cloud-core>=1.2<2.0:net/rubygem-google-cloud-core \
+RUN_DEPENDS=	rubygem-addressable>=2.5<3:www/rubygem-addressable \
+		rubygem-digest-crc>=0.4<1:security/rubygem-digest-crc \
+		rubygem-google-api-client>=0.26<1:devel/rubygem-google-api-client \
+		rubygem-google-cloud-core>=1.2<2:net/rubygem-google-cloud-core \
 		rubygem-googleauth>=0.6.2<0.10.0:security/rubygem-googleauth \
-		rubygem-mini_mime>=1.0<2.0:mail/rubygem-mini_mime
+		rubygem-mini_mime>=1.0<2:mail/rubygem-mini_mime
 
 USES=		gem
 USE_RUBY=	yes
