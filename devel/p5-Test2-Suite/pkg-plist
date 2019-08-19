@@ -32,7 +32,6 @@
 %%SITE_PERL%%/Test2/Compare/String.pm
 %%SITE_PERL%%/Test2/Compare/Undef.pm
 %%SITE_PERL%%/Test2/Compare/Wildcard.pm
-%%SITE_PERL%%/Test2/Event/Times.pm
 %%SITE_PERL%%/Test2/Manual.pm
 %%SITE_PERL%%/Test2/Manual/Anatomy.pm
 %%SITE_PERL%%/Test2/Manual/Anatomy/API.pm
