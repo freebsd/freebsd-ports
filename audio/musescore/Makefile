@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	musescore
+DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.3
 CATEGORIES=	audio
 # DISTNAME=	MuseScore-${DISTVERSION}
@@ -28,7 +29,6 @@ USE_QT=		core declarative gui widgets opengl concurrent designer help network \
 USE_GITHUB=	yes
 GH_ACCOUNT=	musescore
 GH_PROJECT=	MuseScore
-GH_TAGNAME=	v${DISTVERSION}
 
 # Each release gets a subdir containing the distfiles for that release,
 # so hope that scanning the parent dir finds new ones.
