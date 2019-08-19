@@ -1,3 +1,3 @@
-TIMESTAMP = 1557112535
-SHA256 (slackapi-python-slackclient-2.0.1_GH0.tar.gz) = e387881e22c2fade31e6274ac9f45378a873e061c13eb822c6f2bcb3f21adaeb
-SIZE (slackapi-python-slackclient-2.0.1_GH0.tar.gz) = 318677
+TIMESTAMP = 1566212113
+SHA256 (slackapi-python-slackclient-v2.1.0_GH0.tar.gz) = 247df5df4d5c83aa37f801fa272855c2c4c549492664117919e9a23fc4a3b21c
+SIZE (slackapi-python-slackclient-v2.1.0_GH0.tar.gz) = 352815
