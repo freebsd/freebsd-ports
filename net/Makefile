@@ -1338,8 +1338,6 @@
     SUBDIR += rude
     SUBDIR += ryu
     SUBDIR += s3ql
-    SUBDIR += samba46
-    SUBDIR += samba47
     SUBDIR += samba48
     SUBDIR += samba410
     SUBDIR += samplicator

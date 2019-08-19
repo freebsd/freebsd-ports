@@ -12871,3 +12871,5 @@ sysutils/openhpi||2019-08-12|Has expired: Broken for more than 6 months
 textproc/scim-bridge||2019-08-17|Has expired: Broken for more than 6 months
 devel/py-efilter||2019-08-17|Has expired: No longer maintained
 sysutils/grub2||2019-08-17|Has expired: Unmaintained (more than five years), not updated (one-and-a-half years), does not build with modern compilers
+net/samba46|net/samba48|2019-08-19|Has expired: yes
+net/samba47|net/samba48|2019-08-19|Has expired: yes
