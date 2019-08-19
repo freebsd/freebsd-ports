@@ -1,0 +1,4 @@
+Async::HTTP is an asynchronous client and server implementation of HTTP/1.0,
+HTTP/1.1 and HTTP/2 including TLS. It supports streaming requests and responses.
+
+WWW: https://github.com/socketry/async-http
