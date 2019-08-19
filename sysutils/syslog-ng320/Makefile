@@ -201,6 +201,9 @@ post-patch:
 	@${CP} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 	@${CP} ${WRKSRC}/scl/scl.conf ${WRKSRC}/scl/scl.conf.sample
 
+post-patch-JAVA_MOD-on:
+	@${REINPLACE_CMD} 's,$$(GRADLE),& --no-daemon,g' ${WRKSRC}/Makefile.in
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
