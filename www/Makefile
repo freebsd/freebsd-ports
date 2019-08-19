@@ -2103,6 +2103,7 @@
     SUBDIR += rubygem-protocol-hpack
     SUBDIR += rubygem-protocol-http
     SUBDIR += rubygem-protocol-http1
+    SUBDIR += rubygem-protocol-http2
     SUBDIR += rubygem-puma
     SUBDIR += rubygem-puma_worker_killer
     SUBDIR += rubygem-pusher-client
