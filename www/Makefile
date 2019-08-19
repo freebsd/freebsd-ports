@@ -2101,6 +2101,7 @@
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-platform-api
     SUBDIR += rubygem-protocol-hpack
+    SUBDIR += rubygem-protocol-http
     SUBDIR += rubygem-puma
     SUBDIR += rubygem-puma_worker_killer
     SUBDIR += rubygem-pusher-client
