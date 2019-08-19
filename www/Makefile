@@ -2443,6 +2443,7 @@
     SUBDIR += wsdlpull
     SUBDIR += wsmake
     SUBDIR += wt
+    SUBDIR += wt3
     SUBDIR += wuzz
     SUBDIR += www6to4
     SUBDIR += wwwoffle
