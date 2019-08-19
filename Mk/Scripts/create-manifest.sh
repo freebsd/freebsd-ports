@@ -119,7 +119,7 @@ for message in ${dp_PKGMESSAGES}; do
 		if head -1 "${message}" | grep -q '^\['; then
 			sed '1d;$d' "${message}"
 		else
-			echo '{message=<<EOD'
+			echo '{type: install, message=<<EOD'
 			cat "${message}"
 			printf 'EOD\n},\n'
 		fi
