@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinymce
-PORTVERSION=	5.0.13
+PORTVERSION=	5.0.14
 CATEGORIES=	www
 MASTER_SITES=	http://download.tiny.cloud/tinymce/community/ \
 		LOCAL/sunpoet
