@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @(,mail,2755) bin/dotlockfile
 include/lockfile.h
 include/maillock.h
