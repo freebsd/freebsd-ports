@@ -1,0 +1,3 @@
+Protocol::HTTP1 provides a low-level implementation of the HTTP/1 protocol.
+
+WWW: https://github.com/socketry/protocol-http1
