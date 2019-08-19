@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Commit patches or partial workspace changes to a VCS repository
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	interdiff:misc/patchutils \
