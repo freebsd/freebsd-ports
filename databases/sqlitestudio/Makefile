@@ -3,7 +3,7 @@
 
 PORTNAME=	sqlitestudio
 DISTVERSION=	3.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	http://sqlitestudio.pl/files/sqlitestudio3/complete/tar/
 
@@ -31,13 +31,20 @@ PLUGIN_PRINTING_USE=			QT=printsupport
 
 WRKSRC=		${WRKDIR}/SQLiteStudio3
 
-USES=		compiler:c++11-lib gmake ncurses qmake qt:5 readline sqlite
+USES=		compiler:c++11-lib gl gmake ncurses qmake qt:5 readline sqlite
 USE_CXXSTD=	c++11
 USE_QT=		core concurrent gui network script sql sql-sqlite3_run svg widgets xml \
 		uitools buildtools_build linguisttools_build
 USE_GL=		gl
 
 CXXFLAGS+=	-I${WRKSRC}/coreSQLiteStudio
+
+DESKTOP_ENTRIES=	"SQLite database manager" \
+			"Advanced SQLite database manager" \
+			"SQLiteStudio" \
+			"SQLiteStudio" \
+			"Database;Viewer;DataVisualization;Development;Qt;" \
+			""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/|${LOCALBASE}/|' \
@@ -56,15 +63,22 @@ post-configure:
 	  cd ${WRKDIR}/Plugins/$$plugin && \
 	  ${SETENV} ${QMAKE_ENV} ${_QMAKE} ${QMAKE_ARGS} ${QMAKE_SOURCE_PATH}; \
 	done;
+
 post-build:
 	@for plugin in ${PLUGIN_DIRS}; do \
 	  cd ${WRKDIR}/Plugins/$$plugin && \
 	  ${DO_MAKE_BUILD} ${ALL_TARGET}; \
 	done;
+
 post-install:
 	@for plugin in ${PLUGIN_DIRS}; do \
 	  cd ${WRKDIR}/Plugins/$$plugin && \
 	  ${SETENV} ${MAKE_ENV} ${FAKEROOT} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}; \
 	done;
+	# install icons for the .desktop file to work
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} \
+		${WRKSRC}/guiSQLiteStudio/img/sqlitestudio.svg \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/SQLiteStudio.svg
 
 .include <bsd.port.mk>
