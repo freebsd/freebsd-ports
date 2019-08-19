@@ -319,6 +319,7 @@ share/mime/packages/org.shotcut.Shotcut.xml
 %%NLS%%%%DATADIR%%/translations/shotcut_hu.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_it.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_ja.qm
+%%NLS%%%%DATADIR%%/translations/shotcut_ko.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_nb.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_ne.qm
 %%NLS%%%%DATADIR%%/translations/shotcut_nl.qm
