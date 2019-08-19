@@ -47,6 +47,7 @@
     SUBDIR += scponly
     SUBDIR += shell-include
     SUBDIR += sparforte
+    SUBDIR += starship
     SUBDIR += tcsh_nls
     SUBDIR += tcshrc
     SUBDIR += v7sh
