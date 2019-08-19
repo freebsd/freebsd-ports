@@ -16,6 +16,7 @@ bin/svgcpt
 bin/svgcss3
 bin/svggimp
 bin/svggpt
+bin/svgmap
 bin/svgpng
 bin/svgpov
 bin/svgpsp
@@ -42,6 +43,7 @@ man/man1/svgcpt.1.gz
 man/man1/svgcss3.1.gz
 man/man1/svggimp.1.gz
 man/man1/svggpt.1.gz
+man/man1/svgmap.1.gz
 man/man1/svgpng.1.gz
 man/man1/svgpov.1.gz
 man/man1/svgpsp.1.gz
