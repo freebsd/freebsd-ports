@@ -1,0 +1,8 @@
+Starship is the minimal, blazing fast, and extremely customizable prompt for any
+shell.
+The prompt shows information you need while you're working, while staying sleek
+and out of the way.
+
+To use it in bash, add the line 'eval "$(starship init bash)"' to your ~/.bashrc
+
+WWW: https://starship.rs/
