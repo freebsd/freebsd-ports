@@ -1,0 +1,10 @@
+Google API Extensions for Ruby (gax-ruby) is a set of modules which aids the
+development of APIs for clients and servers based on gRPC and Google API
+conventions.
+
+Application code will rarely need to use most of the classes within this library
+directly, but code generated automatically from the API definition files in
+Google APIs can use services such as page streaming and request bundling to
+provide a more convenient and idiomatic API surface to callers.
+
+WWW: https://github.com/googleapis/gax-ruby
