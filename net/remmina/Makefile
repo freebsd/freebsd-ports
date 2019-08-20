@@ -15,7 +15,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libsodium.so:security/libsodium \
 		libsoup-2.4.so:devel/libsoup
 
-USES=		cmake desktop-file-utils gettext gnome localbase:ldflags pathfix \
+USES=		cmake compiler:c11 desktop-file-utils gettext gnome localbase:ldflags pathfix \
 		pkgconfig shared-mime-info ssl shebangfix
 
 USE_GITLAB=	yes
