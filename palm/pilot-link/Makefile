@@ -14,6 +14,9 @@ COMMENT=	Suite of tools to connect and sync your Palm handheld
 
 LICENSE=	GPLv2
 
+DEPRECATED=	obsolete technology
+EXPIRATION_DATE=	2019-09-20
+
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
 GNU_CONFIGURE=	yes
