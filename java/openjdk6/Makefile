@@ -24,6 +24,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX}
 
+DEPRECATED=	Extended Support ended December 2018, please migrate to openjdk8
+EXPIRATION_DATE=2019-09-20
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/zip:archivers/zip \
 		${LOCALBASE}/bin/unzip:archivers/unzip \
 		${LOCALBASE}/include/cups/cups.h:print/cups
