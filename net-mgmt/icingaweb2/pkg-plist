@@ -196,6 +196,8 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/doc/accessibility/svg.html
 %%WWWDIR%%/doc/accessibility/text-cue-for-required-form-control-labels.html
 %%WWWDIR%%/doc/phpdoc.xml
+%%WWWDIR%%/doc/res/gitlab-job-artifacts.png
+%%WWWDIR%%/doc/res/gitlab-rpm-package-pipeline-jobs.png
 %%WWWDIR%%/doc/res/GraphExample#1.png
 %%WWWDIR%%/doc/res/GraphExample#2.png
 %%WWWDIR%%/doc/res/GraphExample#3.png
