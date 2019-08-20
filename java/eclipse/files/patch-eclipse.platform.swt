@@ -13,7 +13,7 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/.classpath_gtk eclipse.pla
 diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java
 --- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java	0000-00-00 00:00:00.000000000 +0000
-@@ -68,12 +68,12 @@
+@@ -69,12 +69,12 @@
  static String arch() {
  	String osArch = System.getProperty("os.arch"); //$NON-NLS-1$
  	if (osArch.equals ("i386") || osArch.equals ("i686")) return "x86"; //$NON-NLS-1$ $NON-NLS-2$ $NON-NLS-3$
@@ -88,7 +88,7 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library
  	"linux.x86")
  		if [ "${CC}" = "" ]; then
  			export CC=gcc
-@@ -194,7 +202,7 @@
+@@ -194,7 +199,7 @@
  
  
  # For 64-bit CPUs, we have a switch
@@ -97,7 +97,7 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library
  	SWT_PTR_CFLAGS=-DJNI64
  	if [ -d /lib64 ]; then
  		XLIB64=-L/usr/X11R6/lib64
-@@ -205,6 +213,11 @@
+@@ -205,6 +210,11 @@
  		XLIB64="${XLIB64} -L/usr/lib64"
  		SWT_LFLAGS=-m64
  		export SWT_LFLAGS
@@ -109,13 +109,6 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library
  	fi
  	export SWT_PTR_CFLAGS
  fi
-@@ -364,4 +377,4 @@
- elif [ "${GTK_VERSION}" = "3.0" -o "${GTK_VERSION}" = "" ]; then
- 	export GTK_VERSION="3.0"
- 	func_build_gtk3 "$@"
--fi
-\ No newline at end of file
-+fi
 diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak
 --- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak	0000-00-00 00:00:00.000000000 +0000
@@ -185,20 +178,6 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf eclipse.pl
  requires.5.range = [$version$,$version$]
 -requires.5.filter = (&(osgi.os=linux)(osgi.ws=gtk)(osgi.arch=ppc64le)(!(org.eclipse.swt.buildtime=true)))
 +requires.5.filter = (&(osgi.os=freebsd)(osgi.ws=gtk)(osgi.arch=powerpc64)(!(org.eclipse.swt.buildtime=true)))
-diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/buildFragment.xml eclipse.platform.swt/bundles/org.eclipse.swt/buildFragment.xml
---- eclipse.platform.swt/bundles/org.eclipse.swt/buildFragment.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.swt/bundles/org.eclipse.swt/buildFragment.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -237,8 +237,9 @@
- 		<condition property="is64" value="true">
- 			<or>
- 				<equals arg1="${swt.arch}" arg2="x86_64"/>
-+				<equals arg1="${swt.arch}" arg2="amd64"/>
- 				<equals arg1="${swt.arch}" arg2="ia64"/>
--				<equals arg1="${swt.arch}" arg2="ppc64le"/>
-+				<equals arg1="${swt.arch}" arg2="powerpc64"/>
- 				<equals arg1="${swt.arch}" arg2="s390x"/>
- 				<equals arg1="${swt.arch}" arg2="sparcv9"/>
- 				<equals arg1="${swt.arch}" arg2="aarch64"/>
 diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml
 --- eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml	0000-00-00 00:00:00.000000000 +0000
@@ -231,7 +210,7 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml eclipse.platf
  			<filename regex="[0-9][0-9][0-9][0-9]."/>
  			<filename regex="${swt_version}." negate="true"/>
  			<exclude name="**/.git/**"/>
-@@ -122,13 +122,13 @@
+@@ -115,13 +115,13 @@
  			trust="true"
  			outputproperty="m_linux_x86_64_output"
  			command="hostname"/>
@@ -247,7 +226,7 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml eclipse.platf
  			command="hostname"/>
  		<sshexec host="${m_mac}"
  			username="swtbuild"
-@@ -152,10 +152,10 @@
+@@ -139,10 +139,10 @@
  				<matches pattern="x${m_linux_x86_64_output}*" string="x${m_linux_x86_64}"/>
  			</and>
  		</condition>
@@ -261,20 +240,6 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml eclipse.platf
  			</and>
  		</condition>
  		<condition property="m_mac_test" value="${success_msg}" else="${fail_msg}">
-@@ -169,11 +169,11 @@
- 		<echo></echo>
- 		<echo>${m_linux_x86} - ${m_linux_x86_test}</echo>
- 		<echo>${m_linux_x86_64} - ${m_linux_x86_64_test}</echo>
--		<echo>${m_linux_ppc64le} - ${m_linux_ppc64le_test}</echo>
-+		<echo>${m_linux_powerpc64} - ${m_linux_powerpc64_test}</echo>
- 		<echo>${m_mac} - ${m_mac_test}</echo>
- 		<echo>-------------------------</echo>
- 		<condition property="m_fail">
--			<matches pattern="Fail" string="${m_linux_x86_test} ${m_linux_x86_64_test} ${m_linux_ppc64le_test} ${m_mac_test}"/>
-+			<matches pattern="Fail" string="${m_linux_x86_test} ${m_linux_x86_64_test} ${m_linux_powerpc64_test} ${m_mac_test}"/>
- 		</condition>
- 		<fail if="m_fail" message="Failed"/>
- 	</target>
 diff -ru eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup
 --- eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup	0000-00-00 00:00:00.000000000 +0000

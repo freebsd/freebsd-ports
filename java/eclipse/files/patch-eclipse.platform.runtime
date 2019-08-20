@@ -1,7 +1,7 @@
 diff -ru eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/InternalPlatform.java eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/InternalPlatform.java
 --- eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/InternalPlatform.java	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.runtime/bundles/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/InternalPlatform.java	0000-00-00 00:00:00.000000000 +0000
-@@ -59,7 +59,7 @@
+@@ -63,7 +63,7 @@
  	//XXX This is not synchronized
  	private Map<Bundle,Log> logs = new HashMap<>(5);
  

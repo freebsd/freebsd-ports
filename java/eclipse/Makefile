@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	eclipse
-PORTVERSION=	4.11
-PORTREVISION=	1
+PORTVERSION=	4.12
 CATEGORIES=	java devel
 
 # Update to git-tag on git.eclipse.org
-ECLIPSE_TAG=	R4_11
-ECLIPSE_TSTAMP=	20190321-0023
+ECLIPSE_TAG=	R4_12
+ECLIPSE_TSTAMP=	20190617-0403
 
 ECLIPSE_SUFX=	${ECLIPSE_TAG}.tar.xz
 ECLIPSE_MODULES=jdt/eclipse.jdt \
@@ -38,14 +37,15 @@ ECLIPSE_MODULES=jdt/eclipse.jdt \
 		equinox/rt.equinox.p2
 # Each Eclipse module has its own MASTER_SITE
 .for M in ${ECLIPSE_MODULES}
-MASTER_SITES+=	https://git.eclipse.org/c/${M}.git/snapshot/:${M:C/[\.\/]//g}
+MASTER_SITES+=	https://git.eclipse.org/c/${M}.git/snapshot/:${M:C/[\.\/]//g} \
+		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${PORTVERSION}/:${M:C/[\.\/]//g}
 DISTFILES+=	${M:C/.*\///}-${ECLIPSE_SUFX}:${M:C/[\.\/]//g}
 .endfor
 
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jonc@chen.org.nz
-COMMENT=	Eclipse IDE 2019-03
+COMMENT=	Eclipse IDE 2019-06
 
 LICENSE=	EPL
 
@@ -62,8 +62,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	daemonblade
 GH_PROJECT=	eclipse-maven-repo
 
-USE_JAVA=	yes
-JAVA_VERSION=	1.8
+USE_JAVA=	8
 
 DESKTOP_ENTRIES="Eclipse" \
 		"${COMMENT}" \
@@ -74,7 +73,7 @@ DESKTOP_ENTRIES="Eclipse" \
 
 SUB_FILES=	${PORTNAME}
 
-MAVEN_ENV=	MAVEN_OPTS=-Xmx1024m CC=${CC}
+MAVEN_ENV=	MAVEN_OPTS=-Xmx1024m CC=${CC} JAVA_HOME=${JAVA_HOME}
 MAVEN_REPO=	-Dmaven.repo.local=${WRKDIR}/${GH_PROJECT}-${PORTVERSION}
 MAVEN_ECLIPSE=	-Dnative=gtk.freebsd.${ARCH} -Dcomparator.repo=file://${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/p2-stub -DforceContextQualifier=v${ECLIPSE_TSTAMP}
 
