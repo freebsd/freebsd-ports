@@ -16,6 +16,9 @@ COMMENT=	Desktop Organizer Software for the Palm Pilot
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	obsolete technology
+EXPIRATION_DATE=	2019-09-20
+
 LIB_DEPENDS=	libpisock.so:palm/pilot-link \
 		libgcrypt.so:security/libgcrypt
 
