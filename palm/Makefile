@@ -7,7 +7,6 @@
     SUBDIR += jpilot-picsnvideos
     SUBDIR += p5-Palm
     SUBDIR += p5-Palm-PalmDoc
-    SUBDIR += palm-db-tools
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
     SUBDIR += synce-libsynce
