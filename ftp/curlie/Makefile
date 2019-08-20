@@ -3,6 +3,7 @@
 PORTNAME=	curlie
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	ftp net www
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -10,6 +11,8 @@ COMMENT=	Frontend to cURL that adds the ease of use of HTTPie
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	curl:ftp/curl
 
 USES=		go:modules
 USE_GITHUB=	yes
