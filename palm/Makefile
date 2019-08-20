@@ -5,7 +5,6 @@
 
     SUBDIR += jpilot
     SUBDIR += jpilot-picsnvideos
-    SUBDIR += mdbconv
     SUBDIR += p5-Palm
     SUBDIR += p5-Palm-PalmDoc
     SUBDIR += palm-db-tools
