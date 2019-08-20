@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mantis
-PORTVERSION=	2.21.1
+PORTVERSION=	2.21.2
 PORTEPOCH=	1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/mantisbt/mantis-stable/${PORTVERSION}
