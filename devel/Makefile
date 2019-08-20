@@ -1270,6 +1270,7 @@
     SUBDIR += libltdl
     SUBDIR += liblxqt
     SUBDIR += libmaa
+    SUBDIR += libmal
     SUBDIR += libmatheval
     SUBDIR += libmba
     SUBDIR += libmill

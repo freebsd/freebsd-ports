@@ -4,7 +4,7 @@
 PORTNAME=	libmal
 PORTVERSION=	0.44.1
 PORTREVISION=	2
-CATEGORIES=	palm
+CATEGORIES=	devel
 MASTER_SITES=	http://www.jlogday.com/code/libmal/
 
 MAINTAINER=	ports@FreeBSD.org

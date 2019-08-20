@@ -5,7 +5,6 @@
 
     SUBDIR += jpilot
     SUBDIR += jpilot-picsnvideos
-    SUBDIR += libmal
     SUBDIR += makeztxt
     SUBDIR += mdbconv
     SUBDIR += p5-Palm
