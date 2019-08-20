@@ -9,7 +9,7 @@ CATEGORIES=	net-im
 PKGNAMEPREFIX=	licq-
 PKGNAMESUFFIX=	${SOCKS_SUFFIX}${PKGNAMESUFFIX2}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Popular ICQ-compatible plugin-based program
 
 LICENSE=	GPLv2

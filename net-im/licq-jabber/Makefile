@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	net-im
 PKGNAMEPREFIX=	licq-
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber (XMPP) plugin for Licq
 
 LICENSE=	GPLv2
