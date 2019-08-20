@@ -199,6 +199,7 @@
     SUBDIR += fpc-rsvg
     SUBDIR += fpc-svgalib
     SUBDIR += fracplanet
+    SUBDIR += fractgen
     SUBDIR += fraqtive
     SUBDIR += freeglut
     SUBDIR += freeimage
