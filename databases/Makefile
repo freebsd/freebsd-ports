@@ -128,6 +128,7 @@
     SUBDIR += ldb12
     SUBDIR += ldb13
     SUBDIR += ldb14
+    SUBDIR += ldb15
     SUBDIR += leo_center
     SUBDIR += leofs
     SUBDIR += leveldb
