@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	net-im
 PKGNAMEPREFIX=	licq-
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICQ plugin for Licq
 
 LICENSE=	GPLv2

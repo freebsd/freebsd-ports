@@ -8,7 +8,7 @@ PORTEPOCH=	2
 CATEGORIES=	net-im
 PKGNAMEPREFIX=	licq-
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OnScreenDisplay messages in licq
 
 BUILD_DEPENDS=	licq:${LICQ_PORT}
