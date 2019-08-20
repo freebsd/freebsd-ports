@@ -295,9 +295,9 @@ include/rdkit/RDGeneral/test.h
 include/rdkit/RDGeneral/types.h
 include/rdkit/RDGeneral/utils.h
 include/rdkit/RDGeneral/versions.h
-include/rdkit/SimDivPickers/DistPicker.h
-include/rdkit/SimDivPickers/HierarchicalClusterPicker.h
-include/rdkit/SimDivPickers/MaxMinPicker.h
+%%LITTLE_ENDIAN%%include/rdkit/SimDivPickers/DistPicker.h
+%%LITTLE_ENDIAN%%include/rdkit/SimDivPickers/HierarchicalClusterPicker.h
+%%LITTLE_ENDIAN%%include/rdkit/SimDivPickers/MaxMinPicker.h
 lib/cmake/rdkit/rdkit-config-version.cmake
 lib/cmake/rdkit/rdkit-config.cmake
 lib/cmake/rdkit/rdkit-targets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -416,9 +416,9 @@ lib/libRDKitSLNParse.so.1.%%SHLIB_VER%%
 lib/libRDKitShapeHelpers.so
 lib/libRDKitShapeHelpers.so.1
 lib/libRDKitShapeHelpers.so.1.%%SHLIB_VER%%
-lib/libRDKitSimDivPickers.so
-lib/libRDKitSimDivPickers.so.1
-lib/libRDKitSimDivPickers.so.1.%%SHLIB_VER%%
+%%LITTLE_ENDIAN%%lib/libRDKitSimDivPickers.so
+%%LITTLE_ENDIAN%%lib/libRDKitSimDivPickers.so.1
+%%LITTLE_ENDIAN%%lib/libRDKitSimDivPickers.so.1.%%SHLIB_VER%%
 lib/libRDKitSmilesParse.so
 lib/libRDKitSmilesParse.so.1
 lib/libRDKitSmilesParse.so.1.%%SHLIB_VER%%
@@ -440,9 +440,9 @@ lib/libRDKitTrajectory.so.1.%%SHLIB_VER%%
 lib/libRDKitcoordgenlib.so
 lib/libRDKitcoordgenlib.so.1
 lib/libRDKitcoordgenlib.so.1.%%SHLIB_VER%%
-lib/libRDKithc.so
-lib/libRDKithc.so.1
-lib/libRDKithc.so.1.%%SHLIB_VER%%
+%%LITTLE_ENDIAN%%lib/libRDKithc.so
+%%LITTLE_ENDIAN%%lib/libRDKithc.so.1
+%%LITTLE_ENDIAN%%lib/libRDKithc.so.1.%%SHLIB_VER%%
 lib/libRDKitmaeparser.so
 lib/libRDKitmaeparser.so.1
 lib/libRDKitmaeparser.so.1.%%SHLIB_VER%%
@@ -640,7 +640,7 @@ lib/libRDKitmaeparser.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/Butina.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/ClusterUtils.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/ClusterVis.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/Clustering.so
+%%LITTLE_ENDIAN%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/Clustering.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/Clusters.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/Murtagh.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/ML/Cluster/Resemblance.py
@@ -724,7 +724,7 @@ lib/libRDKitmaeparser.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/RDRandom.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/SimDivFilters/SimilarityPickers.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/SimDivFilters/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/SimDivFilters/rdSimDivPickers.so
+%%LITTLE_ENDIAN%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/SimDivFilters/rdSimDivPickers.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/TestRunner.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/VLib/Filter.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/VLib/Node.py
