@@ -14,6 +14,10 @@ COMMENT=	Pixmap editor based on XPM library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BROKEN=		'sys/dir.h' file not found
+DEPRECATED=	No longer maintained
+EXPIRATION_DATE=	2019-09-20
+
 # requires rgb.txt
 BUILD_DEPENDS=	showrgb:x11/rgb \
 		xrdb:x11/xrdb
