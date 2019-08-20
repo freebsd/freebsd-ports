@@ -1,5 +1,4 @@
 # $FreeBSD$
-PORTREVISION=	2
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		${LOCALBASE}/include/sqlext.h:databases/unixODBC \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
-		${LOCALBASE}/bin/gperf:devel/gperf \
+		gperf31>=3.1:devel/gperf31 \
 		mdds>=1.4:devel/mdds \
 		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
@@ -26,7 +25,8 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		bash:shells/bash \
 		gsed:textproc/gsed \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
+		flex>=0.26:textproc/flex
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
 		libicutu.so:devel/icu \
@@ -92,7 +92,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
 DISTFILES+=	4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src \
-		49a64f3bcf20a7909ba2751349231d6652ded9cd2840e961b5164d09de3ffa63-opens___.ttf:ext
+		884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf:ext
 
 NOT_FOR_ARCHS=		aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
@@ -111,7 +111,7 @@ USE_GL=		gl glew glu
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xext xinerama xrandr xrender
-USES=		autoreconf:build bison compiler:c++14-lang cpe gmake jpeg \
+USES=		autoreconf:build bison compiler:c++14-lang cpe gl gmake jpeg \
 		mysql:client \
 		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz
 
@@ -267,6 +267,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--without-myspell-dicts
 
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
+		FLEX=${LOCALBASE}/bin/flex \
 		GNUTAR="${TAR}" \
 		GPERF=${LOCALBASE}/bin/gperf \
 		ICU_CFLAGS="`icu-config --cflags`" \

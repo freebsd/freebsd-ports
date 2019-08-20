@@ -1,5 +1,5 @@
---- vcl/unx/generic/app/geninst.cxx.orig	2018-08-10 05:57:19.112761000 +0800
-+++ vcl/unx/generic/app/geninst.cxx	2018-08-10 06:00:00.222887000 +0800
+--- vcl/unx/generic/app/geninst.cxx.orig	2019-08-07 01:26:35.000000000 +0800
++++ vcl/unx/generic/app/geninst.cxx	2019-08-08 20:11:15.760468000 +0800
 @@ -22,11 +22,8 @@
  #include <cassert>
  #include <string.h>
@@ -13,7 +13,7 @@
  #include <osl/module.hxx>
  #include <comphelper/solarmutex.hxx>
  #include <config_features.h>
-@@ -69,31 +66,22 @@
+@@ -54,30 +51,22 @@
  
  OUString SalGenericInstance::getOSVersion()
  {
@@ -36,9 +36,8 @@
 -        if ( fgets ( aVerBuffer, 511, pVersion ) )
 -        {
 -            aKernelVer = OUString::createFromAscii( aVerBuffer );
--            sal_Int32 nIndex = 0;
 -            // "Linux version 3.16.7-29-desktop ..."
--            OUString aVers = aKernelVer.getToken( 2, ' ', nIndex );
+-            OUString aVers = aKernelVer.getToken( 2, ' ' );
 -            // "3.16.7-29-desktop ..."
 -            sal_Int32 nTooDetailed = aVers.indexOf( '.', 2);
 -            if (nTooDetailed < 1 || nTooDetailed > 8)
