@@ -1,6 +1,6 @@
---- configure.ac.old	2018-12-30 15:36:04.692353000 -0600
-+++ configure.ac	2018-12-30 15:37:39.225930000 -0600
-@@ -3981,6 +3981,16 @@
+--- configure.ac.orig	2019-08-08 20:00:41.682261000 +0800
++++ configure.ac	2019-08-08 20:01:10.652575000 +0800
+@@ -4278,6 +4278,16 @@
          RTL_ARCH=X86_64
          PLATFORMID=freebsd_x86_64
          ;;
@@ -17,9 +17,9 @@
      *)
          AC_MSG_ERROR([Unsupported host_cpu $host_cpu for host_os $host_os])
          ;;
---- configure.old	2018-12-30 15:33:12.582597000 -0600
-+++ configure	2018-12-30 15:35:48.424447000 -0600
-@@ -11511,6 +11511,16 @@
+--- configure.orig	2019-08-07 01:54:44.000000000 +0800
++++ configure	2019-08-08 20:00:26.166619000 +0800
+@@ -12509,6 +12509,16 @@
          RTL_ARCH=X86_64
          PLATFORMID=freebsd_x86_64
          ;;
@@ -201,15 +201,15 @@
  #include <o3tl/safeint.hxx>
 +#include <osl/endian.h>
 +
- #include <vcl/salbtype.hxx>
+ #include <tools/helpers.hxx>
  #include <vcl/bitmap.hxx>
  
 --- vcl/source/filter/jpeg/Exif.cxx.orig
 +++ vcl/source/filter/jpeg/Exif.cxx
-@@ -19,6 +19,7 @@
+@@ -20,6 +20,7 @@
  
- #include "Exif.hxx"
  #include <memory>
+ #include <tools/stream.hxx>
 +#include <osl/endian.h>
  
  Exif::Exif() :

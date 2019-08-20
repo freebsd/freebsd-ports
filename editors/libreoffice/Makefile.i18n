@@ -4,12 +4,12 @@
 
 MASTER_SITES=	https://download.documentfoundation.org/libreoffice/${MASTER_SITE_SUBDIR}/
 .if defined(PRERELEASE)
-MASTER_SITES+=	https://dev-builds.libreoffice.org/pre-releases/deb/x86/
-MASTER_SITE_SUBDIR=	testing/${PORTVERSION}/deb/x86
-LO_I18N_FILE=	LibreOffice_${LOVERSION}_Linux_x86_deb
+MASTER_SITES+=	https://dev-builds.libreoffice.org/pre-releases/deb/x86_64/
+MASTER_SITE_SUBDIR=	testing/${PORTVERSION}/deb/x86_64
+LO_I18N_FILE=	LibreOffice_${LOVERSION}_Linux_x86-64_deb
 .else
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/deb/x86
-LO_I18N_FILE=	LibreOffice_${PORTVERSION}_Linux_x86_deb
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/deb/x86_64
+LO_I18N_FILE=	LibreOffice_${PORTVERSION}_Linux_x86-64_deb
 .endif
 PKGNAMEPREFIX=	${LO_I18N}-
 DISTFILES=	${LO_I18N_FILE}_langpack_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
@@ -33,7 +33,7 @@ EXTRACT_AFTER_ARGS=	--exclude '${PORTNAME}*-dict-*.deb' \
 post-extract:
 	@${MKDIR} ${WRKSRC}
 	for deb in ${WRKDIR}/DEBS/*.deb ; do \
-		${TAR} xfO $${deb} data.tar.gz | ${TAR} -C ${WRKSRC} -xf - ; \
+		${TAR} xfO $${deb} data.tar.xz | ${TAR} -C ${WRKSRC} -xf - ; \
 	done
 
 do-install:
