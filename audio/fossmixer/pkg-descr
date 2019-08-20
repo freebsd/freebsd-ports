@@ -1,0 +1,7 @@
+FOSS Mixer is a graphical mixer application for FreeBSD to control OSS
+audio backend. Mixer can be use to control audio levels, set recording
+source, and it includes white noise generator for testing the audio
+output. It is pretty much what mixer(1) does. FOSS Mixer does not need
+third party user interface library, it runs on plain X11/OpenGL.
+
+WWW: http://detroit.sourceforge.net/app_fossmixer.html
