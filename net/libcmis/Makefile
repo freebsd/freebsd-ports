@@ -3,7 +3,8 @@
 PORTNAME=	libcmis
 PORTVERSION=	0.5.2
 CATEGORIES=	net devel
-MASTER_SITES=	https://github.com/tdf/libcmis/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/tdf/libcmis/releases/download/v${PORTVERSION}/ \
+		https://dev-www.libreoffice.org/src/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Client library for the CMIS interface
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 
 USES=		compiler:c++11-lib gmake gnome libtool localbase pathfix \
-		pkgconfig
+		pkgconfig tar:xz
 USE_GNOME=	libxml2
 
 CONFIGURE_ARGS=	--disable-werror --with-boost=${LOCALBASE} --without-man
