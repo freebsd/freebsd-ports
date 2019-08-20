@@ -21,6 +21,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libspeexdsp.so:audio/speexdsp \
 		libcurl.so:ftp/curl \
 		libudev.so:devel/libudev-devd \
+		libexpat.so:textproc/expat2 \
 		libSimGearCore.so:devel/simgear
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto

@@ -15,12 +15,15 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libosg.so:graphics/osg \
-		libexpat.so:textproc/expat2
+		libexpat.so:textproc/expat2 \
+		libcurl.so:ftp/curl
 
 USES=		alias cmake compiler:c++11-lib cpe gl jpeg openal:al,alut \
 		tar:bzip2
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu glut
+
+USE_LDCONFIG=	yes
 
 LDFLAGS_gcc=	-losgDB
 LDFLAGS+=	${LDFLAGS_${CHOSEN_COMPILER_TYPE}}
