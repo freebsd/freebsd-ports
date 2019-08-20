@@ -1,5 +1,5 @@
 bin/courierauthconfig
-@postunexec if cmp -s %D/etc/authlib/authdaemonrc.dist %D/etc/authlib/authdaemonrc; then rm -f %D/etc/authlib/authdaemonrc; fi
+@preunexec if cmp -s %D/etc/authlib/authdaemonrc.dist %D/etc/authlib/authdaemonrc; then rm -f %D/etc/authlib/authdaemonrc; fi
 @(%%MAILOWN%%,%%MAILGRP%%,660) etc/authlib/authdaemonrc.dist
 @postexec %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/authlib/authdaemonrc
 include/courier_auth_config.h
