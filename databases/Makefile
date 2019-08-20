@@ -522,6 +522,7 @@
     SUBDIR += p5-Xapian
     SUBDIR += p5-mysql-genocide
     SUBDIR += p5-tokyotyrant
+    SUBDIR += palm-db-tools
     SUBDIR += pear-DB
     SUBDIR += pear-DBA
     SUBDIR += pear-DBA_Relational
