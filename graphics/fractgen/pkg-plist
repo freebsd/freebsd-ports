@@ -1,0 +1,13 @@
+%%DATADIR%%/examples/alpha01.fsf
+%%DATADIR%%/examples/alpha02.fsf
+%%DATADIR%%/examples/alpha03.fsf
+%%DATADIR%%/examples/alpha04.fsf
+%%DATADIR%%/examples/alpha05.fsf
+%%DATADIR%%/examples/alpha06.fsf
+%%DATADIR%%/examples/alpha07.fsf
+%%DATADIR%%/examples/alpha08.fsf
+%%DATADIR%%/examples/demo-fractal.fsf
+%%DATADIR%%/examples/test1.fsf
+%%DATADIR%%/examples/test2.fsf
+bin/fractgen
+man/man1/fractgen.1.gz
