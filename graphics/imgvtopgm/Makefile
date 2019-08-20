@@ -4,7 +4,7 @@
 PORTNAME=	imgvtopgm
 PORTVERSION=	2.0
 PORTREVISION=	5
-CATEGORIES=	palm graphics
+CATEGORIES=	graphics
 MASTER_SITES=	http://linuxmafia.com/pub/palmos/other-os/
 
 MAINTAINER=	ports@FreeBSD.org

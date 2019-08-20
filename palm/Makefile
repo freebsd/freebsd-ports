@@ -3,7 +3,6 @@
 
     COMMENT = Software support for handheld devices (Palm, PocketPC, ...)
 
-    SUBDIR += imgvtopgm
     SUBDIR += jpilot
     SUBDIR += jpilot-picsnvideos
     SUBDIR += libmal

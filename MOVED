@@ -12873,3 +12873,4 @@ sysutils/grub2||2019-08-17|Has expired: Unmaintained (more than five years), not
 net/samba46|net/samba48|2019-08-19|Has expired: yes
 net/samba47|net/samba48|2019-08-19|Has expired: yes
 palm/bibelot|sysutils/bibelot|2019-08-20|Move to more applicable category
+palm/imgvtopgm|graphics/imgvtopgm|2019-08-20|Move to more applicable category
