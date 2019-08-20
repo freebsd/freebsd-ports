@@ -3,6 +3,7 @@ include/libcmis-%%MAJVER%%/libcmis/allowable-actions.hxx
 include/libcmis-%%MAJVER%%/libcmis/document.hxx
 include/libcmis-%%MAJVER%%/libcmis/exception.hxx
 include/libcmis-%%MAJVER%%/libcmis/folder.hxx
+include/libcmis-%%MAJVER%%/libcmis/libcmis-api.h
 include/libcmis-%%MAJVER%%/libcmis/libcmis.hxx
 include/libcmis-%%MAJVER%%/libcmis/oauth2-data.hxx
 include/libcmis-%%MAJVER%%/libcmis/object-type.hxx
@@ -19,6 +20,7 @@ include/libcmis-c-%%MAJVER%%/libcmis-c/allowable-actions.h
 include/libcmis-c-%%MAJVER%%/libcmis-c/document.h
 include/libcmis-c-%%MAJVER%%/libcmis-c/error.h
 include/libcmis-c-%%MAJVER%%/libcmis-c/folder.h
+include/libcmis-c-%%MAJVER%%/libcmis-c/libcmis-c-api.h
 include/libcmis-c-%%MAJVER%%/libcmis-c/libcmis-c.h
 include/libcmis-c-%%MAJVER%%/libcmis-c/oauth2-data.h
 include/libcmis-c-%%MAJVER%%/libcmis-c/object-type.h
