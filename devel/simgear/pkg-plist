@@ -332,9 +332,11 @@ include/simgear/timing/timestamp.hxx
 include/simgear/timing/timezone.h
 include/simgear/version.h
 include/simgear/xml/easyxml.hxx
-lib/libSimGearCore.a
-lib/libSimGearScene.a
 lib/cmake/SimGear/SimGearConfig.cmake
 lib/cmake/SimGear/SimGearConfigVersion.cmake
 lib/cmake/SimGear/SimGearTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SimGear/SimGearTargets.cmake
+lib/libSimGearCore.so
+lib/libSimGearCore.so.2018.3.2
+lib/libSimGearScene.so
+lib/libSimGearScene.so.2018.3.2
