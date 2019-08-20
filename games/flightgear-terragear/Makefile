@@ -2,7 +2,7 @@
 
 PORTNAME=	flightgear-terragear
 PORTVERSION=	20171007
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 
 MAINTAINER=	mike.d.ft402@gmail.com
@@ -10,7 +10,6 @@ COMMENT=	Tools for building scenery for the FlightGear project
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libSimGearCore.a:devel/simgear
 LIB_DEPENDS=	libCGAL.so:math/cgal \
 		libgdal.so:graphics/gdal \
 		libmpfr.so:math/mpfr \
@@ -20,8 +19,8 @@ LIB_DEPENDS=	libCGAL.so:math/cgal \
 		libboost_chrono.so:devel/boost-libs \
 		libboost_date_time.so:devel/boost-libs \
 		libboost_atomic.so:devel/boost-libs \
-		libtiff.so:graphics/tiff
-RUN_DEPENDS=	${LOCALBASE}/lib/libSimGearCore.a:devel/simgear
+		libtiff.so:graphics/tiff \
+		libSimGearCore.so:devel/simgear
 
 USES=	cmake compiler:c++11-lang
 

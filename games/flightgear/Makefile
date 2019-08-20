@@ -3,7 +3,7 @@
 
 PORTNAME=	flightgear
 PORTVERSION=	2018.3.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -20,12 +20,11 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libspeex.so:audio/speex \
 		libspeexdsp.so:audio/speexdsp \
 		libcurl.so:ftp/curl \
-		libudev.so:devel/libudev-devd
+		libudev.so:devel/libudev-devd \
+		libSimGearCore.so:devel/simgear
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
-		${LOCALBASE}/lib/libSimGearCore.a:devel/simgear \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
-		${LOCALBASE}/lib/libSimGearCore.a:devel/simgear \
 		${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
 # Disable ninja, see https://sourceforge.net/p/flightgear/codetickets/2118/
