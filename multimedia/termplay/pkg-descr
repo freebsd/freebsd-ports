@@ -1,0 +1,17 @@
+termplay is the tool to convert images to ANSI sequences.
+It also supports playing videos.
+
+Features:
+* Multiple modes
+  * Sixels: Only supported by a few terminals, like xterm.
+  * Unicode halfblock: This is the same as TrueColor below, but uses unicode
+    half-blocks for smaller pixels.
+  * TrueColor: Any RGB color, supported by most terminals.
+  * 256 color: The closest representation of a color that can be fit within
+    1 byte. Use this if nothing else works.
+* Flexible
+  * Change framerate, size and more using command line switches.
+* Adapting size
+  * Automatically scales the image to fit your terminal.
+
+WWW: https://github.com/jD91mZM2/termplay

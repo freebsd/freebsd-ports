@@ -403,6 +403,7 @@
     SUBDIR += szap-s2
     SUBDIR += tautulli
     SUBDIR += tcmplex-panteltje
+    SUBDIR += termplay
     SUBDIR += tivodecode
     SUBDIR += totem
     SUBDIR += totem-pl-parser
