@@ -4,7 +4,7 @@
 PORTNAME=	picsnvideos
 PORTVERSION=	0.2
 PORTREVISION=	6
-CATEGORIES=	palm comms graphics
+CATEGORIES=	comms graphics
 MASTER_SITES=	SF/${PORTNAME}/source%20code/${PORTVERSION}
 PKGNAMEPREFIX=	jpilot-
 

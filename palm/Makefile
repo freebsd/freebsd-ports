@@ -4,7 +4,6 @@
     COMMENT = Software support for handheld devices (Palm, PocketPC, ...)
 
     SUBDIR += jpilot
-    SUBDIR += jpilot-picsnvideos
     SUBDIR += p5-Palm
     SUBDIR += p5-Palm-PalmDoc
     SUBDIR += pilot-link
