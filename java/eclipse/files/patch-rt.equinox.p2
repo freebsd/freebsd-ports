@@ -48,7 +48,7 @@ diff -ru rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/r
        <plugin id="org.eclipse.core.runtime"/>
        <plugin id="org.eclipse.e4.core.commands"/>
        <plugin id="org.eclipse.e4.core.contexts"/>
-@@ -121,7 +121,7 @@
+@@ -120,7 +120,7 @@
        <plugin id="org.eclipse.equinox.preferences"/>
        <plugin id="org.eclipse.equinox.registry"/>
        <plugin id="org.eclipse.equinox.security"/>
@@ -57,7 +57,7 @@ diff -ru rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/r
        <plugin id="org.eclipse.equinox.security.ui"/>
        <plugin id="org.eclipse.equinox.simpleconfigurator"/>
        <plugin id="org.eclipse.equinox.simpleconfigurator.manipulator"/>
-@@ -135,7 +135,7 @@
+@@ -134,7 +134,7 @@
        <plugin id="org.eclipse.osgi.util"/>
        <plugin id="org.eclipse.swt"/>
        <plugin id="org.eclipse.swt.cocoa.macosx.x86_64" fragment="true"/>
@@ -81,7 +81,7 @@ diff -ru rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.ui/All p2 UI tests.l
 diff -ru rt.equinox.p2/features/org.eclipse.equinox.p2.core.feature/feature.xml rt.equinox.p2/features/org.eclipse.equinox.p2.core.feature/feature.xml
 --- rt.equinox.p2/features/org.eclipse.equinox.p2.core.feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.p2/features/org.eclipse.equinox.p2.core.feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -185,9 +185,9 @@
+@@ -184,9 +184,9 @@
           unpack="false"/>
  
     <plugin

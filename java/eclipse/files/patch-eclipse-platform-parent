@@ -5,11 +5,11 @@ diff -ru eclipse-platform-parent/pom.xml eclipse-platform-parent/pom.xml
        'eclipiserun-repo' repository, such as for computing .api-descriptions and
        generating API Tools reports.
      -->
--    <eclipserun-repo>http://download.eclipse.org/eclipse/updates/4.11-I-builds/</eclipserun-repo>
-+    <eclipserun-repo>http://download.eclipse.org/eclipse/updates/4.11/</eclipserun-repo>
+-    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.12-I-builds/</eclipserun-repo>
++    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.12/</eclipserun-repo>
      
--    <comparator.repo>http://download.eclipse.org/eclipse/updates/4.11-I-builds</comparator.repo>
-+    <comparator.repo>http://download.eclipse.org/eclipse/updates/4.11</comparator.repo>
+-    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.12-I-builds</comparator.repo>
++    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.12</comparator.repo>
  
      <!--
        NOTE: this EMF and ECF URL must match exactly what is in the eclipse-sdk-prereqs.target file.
@@ -17,10 +17,10 @@ diff -ru eclipse-platform-parent/pom.xml eclipse-platform-parent/pom.xml
        it).
        And, of course, in the PDE target file, the URL is expected to be the actual URL, not a variable.
      -->
--    <emf-repo.url>http://download.eclipse.org/modeling/emf/emf/builds/milestone/S201903030654/</emf-repo.url>
-+    <emf-repo.url>http://download.eclipse.org/modeling/emf/emf/builds/release/2.17/</emf-repo.url>
+-    <emf-repo.url>https://download.eclipse.org/modeling/emf/emf/builds/milestone/S201905280646</emf-repo.url>
++    <emf-repo.url>https://download.eclipse.org/modeling/emf/emf/builds/release/2.18</emf-repo.url>
  
-     <ecf-repo.url>http://download.eclipse.org/rt/ecf/3.14.4/site.p2/</ecf-repo.url>
+     <ecf-repo.url>https://download.eclipse.org/rt/ecf/3.14.5/site.p2/</ecf-repo.url>
  
 @@ -262,14 +262,14 @@
            </target>
@@ -41,12 +41,3 @@ diff -ru eclipse-platform-parent/pom.xml eclipse-platform-parent/pom.xml
              </environment>
              <environment>
                <os>win32</os>
-@@ -639,7 +639,7 @@
-           For maintenance streams should always be "M-builds".
-           Ideally, this value would be provided by the environment, see bug 489789.
-         -->
--        <eclipse-p2-repo.url>http://download.eclipse.org/eclipse/updates/4.11-I-builds</eclipse-p2-repo.url>
-+        <eclipse-p2-repo.url>http://download.eclipse.org/eclipse/updates/4.11</eclipse-p2-repo.url>
-       </properties>
-       <repositories>
-         <repository>
