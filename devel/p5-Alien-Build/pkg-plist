@@ -7,6 +7,9 @@
 %%SITE_PERL%%/Alien/Build/CommandSequence.pm
 %%SITE_PERL%%/Alien/Build/Interpolate.pm
 %%SITE_PERL%%/Alien/Build/Interpolate/Default.pm
+%%SITE_PERL%%/Alien/Build/Log.pm
+%%SITE_PERL%%/Alien/Build/Log/Abbreviate.pm
+%%SITE_PERL%%/Alien/Build/Log/Default.pm
 %%SITE_PERL%%/Alien/Build/MM.pm
 %%SITE_PERL%%/Alien/Build/Manual/Alien.pod
 %%SITE_PERL%%/Alien/Build/Manual/AlienAuthor.pod
@@ -67,6 +70,7 @@
 %%SITE_PERL%%/Alien/Build/Plugin/Test/Mock.pm
 %%SITE_PERL%%/Alien/Build/Util.pm
 %%SITE_PERL%%/Alien/Build/Version/Basic.pm
+%%SITE_PERL%%/Alien/Build/rc.pm
 %%SITE_PERL%%/Alien/Role.pm
 %%SITE_PERL%%/Test/Alien.pm
 %%SITE_PERL%%/Test/Alien/Build.pm
@@ -84,6 +88,9 @@
 %%PERL5_MAN3%%/Alien::Build::CommandSequence.3.gz
 %%PERL5_MAN3%%/Alien::Build::Interpolate.3.gz
 %%PERL5_MAN3%%/Alien::Build::Interpolate::Default.3.gz
+%%PERL5_MAN3%%/Alien::Build::Log.3.gz
+%%PERL5_MAN3%%/Alien::Build::Log::Abbreviate.3.gz
+%%PERL5_MAN3%%/Alien::Build::Log::Default.3.gz
 %%PERL5_MAN3%%/Alien::Build::MM.3.gz
 %%PERL5_MAN3%%/Alien::Build::Manual::Alien.3.gz
 %%PERL5_MAN3%%/Alien::Build::Manual::AlienAuthor.3.gz
@@ -144,6 +151,7 @@
 %%PERL5_MAN3%%/Alien::Build::Plugin::Test::Mock.3.gz
 %%PERL5_MAN3%%/Alien::Build::Util.3.gz
 %%PERL5_MAN3%%/Alien::Build::Version::Basic.3.gz
+%%PERL5_MAN3%%/Alien::Build::rc.3.gz
 %%PERL5_MAN3%%/Alien::Role.3.gz
 %%PERL5_MAN3%%/Test::Alien.3.gz
 %%PERL5_MAN3%%/Test::Alien::Build.3.gz
