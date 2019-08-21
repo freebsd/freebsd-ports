@@ -1,8 +1,17 @@
 diff --git a/src/rgw/rgw_sync_module_es.cc b/src/rgw/rgw_sync_module_es.cc
-index aa58219b5a..de4200d75e 100644
+index b5be52413b..7275823314 100644
 --- src/rgw/rgw_sync_module_es.cc
 +++ src/rgw/rgw_sync_module_es.cc
-@@ -244,7 +244,7 @@ struct es_index_config {
+@@ -108,7 +108,7 @@ public:
+ #define ES_NUM_REPLICAS_DEFAULT 1
+ 
+ using ESVersion = std::pair<int,int>;
+-static constexpr ESVersion ES_V5{5,0};
++static const ESVersion ES_V5{5,0};
+ 
+ struct ESInfo {
+   std::string name;
+@@ -402,7 +402,7 @@ struct es_index_config : public es_index_config_base {
  };
  
  static bool is_sys_attr(const std::string& attr_name){
