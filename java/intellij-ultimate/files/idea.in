@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec "%%IDEA_HOME%%/bin/idea.sh" "$@"
+exec "%%DATADIR%%/bin/idea.sh" "$@"
