@@ -548,6 +548,8 @@ go/misc/cgo/testshared/src/iface_i/i.go
 go/misc/cgo/testshared/src/implicit/implicit.go
 go/misc/cgo/testshared/src/implicitcmd/implicitcmd.go
 go/misc/cgo/testshared/src/issue25065/a.go
+go/misc/cgo/testshared/src/issue30768/issue30768lib/lib.go
+go/misc/cgo/testshared/src/issue30768/x_test.go
 go/misc/cgo/testshared/src/trivial/trivial.go
 go/misc/cgo/testsigfwd/main.go
 go/misc/cgo/testso/cgoso.c
@@ -8201,6 +8203,7 @@ go/test/fixedbugs/issue32477.go
 go/test/fixedbugs/issue32560.go
 go/test/fixedbugs/issue32680.go
 go/test/fixedbugs/issue32680.out
+go/test/fixedbugs/issue33555.go
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
 go/test/fixedbugs/issue3552.go
