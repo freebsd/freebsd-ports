@@ -2,7 +2,7 @@
 
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-
-DISTVERSION=	19.3.pre1
+DISTVERSION=	19.3.pre2
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-intel-
 
