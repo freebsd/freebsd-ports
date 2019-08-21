@@ -1,2 +1,3 @@
-SHA256 (commons-io-2.4-src.tar.gz) = 961c8b41a891933c2d662d8e490667243ac82422668d1ccdd7bfedfdb944bb58
-SIZE (commons-io-2.4-src.tar.gz) = 330961
+TIMESTAMP = 1566334278
+SHA256 (commons-io-2.6-bin.tar.gz) = b6ba5fb49c5f6406dbabec2b77205c032b0b2ade6c217d20a9819a121fdaf3db
+SIZE (commons-io-2.6-bin.tar.gz) = 2241513
