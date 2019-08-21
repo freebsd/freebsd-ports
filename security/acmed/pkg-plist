@@ -1,0 +1,9 @@
+bin/acmed
+bin/tacd
+%%ETCDIR%%/acmed.toml
+%%ETCDIR%%/default_hooks.toml
+man/man5/acmed.toml.5.gz
+man/man8/acmed.8.gz
+man/man8/tacd.8.gz
+@dir(,,0700) %%ETCDIR%%/accounts
+@dir(,,0755) %%ETCDIR%%/certs
