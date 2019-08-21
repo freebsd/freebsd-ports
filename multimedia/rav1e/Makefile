@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190816
+PORTVERSION=	s20190821
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	50f6162c
+GH_TAGNAME=	2b20894d
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler32-1.0.3 \
@@ -24,11 +24,11 @@ CARGO_CRATES=	adler32-1.0.3 \
 		ansi_term-0.11.0 \
 		aom-sys-0.1.2 \
 		arc-swap-0.4.2 \
-		arg_enum_proc_macro-0.1.1 \
+		arg_enum_proc_macro-0.2.0 \
 		arrayvec-0.4.11 \
 		atty-0.2.13 \
-		autocfg-0.1.5 \
-		backtrace-0.3.34 \
+		autocfg-0.1.6 \
+		backtrace-0.3.35 \
 		backtrace-sys-0.1.31 \
 		better-panic-0.1.2 \
 		bincode-1.1.4 \
@@ -37,6 +37,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		bitstream-io-0.8.4 \
 		bstr-0.2.7 \
 		byteorder-1.3.2 \
+		c2-chacha-0.2.2 \
 		cast-0.2.2 \
 		cc-1.0.40 \
 		cexpr-0.3.5 \
@@ -48,6 +49,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		cloudabi-0.0.3 \
 		color_quant-1.0.1 \
 		console-0.7.7 \
+		crc32fast-1.2.0 \
 		criterion-0.2.11 \
 		criterion-plot-0.3.1 \
 		crossbeam-deque-0.6.3 \
@@ -69,10 +71,11 @@ CARGO_CRATES=	adler32-1.0.3 \
 		failure_derive-0.1.5 \
 		fuchsia-cprng-0.1.1 \
 		fxhash-0.2.1 \
+		getrandom-0.1.10 \
 		gif-0.10.2 \
 		glob-0.3.0 \
 		humantime-1.2.0 \
-		image-0.21.2 \
+		image-0.22.1 \
 		inflate-0.4.5 \
 		interpolate_name-0.2.2 \
 		itertools-0.8.0 \
@@ -102,24 +105,22 @@ CARGO_CRATES=	adler32-1.0.3 \
 		paste-impl-0.1.6 \
 		peeking_take_while-0.1.2 \
 		pkg-config-0.3.15 \
-		png-0.14.1 \
+		png-0.15.0 \
+		ppv-lite86-0.2.5 \
 		pretty_assertions-0.6.1 \
 		proc-macro-hack-0.5.9 \
 		proc-macro2-0.4.30 \
 		proc-macro2-1.0.1 \
 		quick-error-1.2.2 \
 		quote-0.6.13 \
-		quote-1.0.1 \
-		rand-0.6.5 \
-		rand_chacha-0.1.1 \
+		quote-1.0.2 \
+		rand-0.7.0 \
+		rand_chacha-0.2.1 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
-		rand_hc-0.1.0 \
-		rand_isaac-0.1.1 \
-		rand_jitter-0.1.4 \
+		rand_core-0.5.0 \
+		rand_hc-0.2.0 \
 		rand_os-0.1.3 \
-		rand_pcg-0.1.2 \
-		rand_xorshift-0.1.1 \
 		rand_xoshiro-0.1.0 \
 		rayon-1.1.0 \
 		rayon-core-1.5.0 \
@@ -146,17 +147,17 @@ CARGO_CRATES=	adler32-1.0.3 \
 		smallvec-0.6.10 \
 		strsim-0.8.0 \
 		syn-0.15.44 \
-		syn-1.0.2 \
+		syn-1.0.3 \
 		synstructure-0.10.2 \
 		termcolor-1.0.5 \
 		termios-0.3.1 \
 		textwrap-0.11.0 \
 		thread_local-0.3.6 \
-		tiff-0.2.2 \
+		tiff-0.3.1 \
 		time-0.1.42 \
 		tinytemplate-1.0.2 \
 		toml-0.2.1 \
-		unicode-width-0.1.5 \
+		unicode-width-0.1.6 \
 		unicode-xid-0.1.0 \
 		unicode-xid-0.2.0 \
 		utf8-ranges-1.0.4 \
@@ -164,6 +165,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		vergen-3.0.4 \
 		version_check-0.1.5 \
 		walkdir-2.2.9 \
+		wasi-0.5.0 \
 		which-2.0.1 \
 		winapi-0.3.7 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
