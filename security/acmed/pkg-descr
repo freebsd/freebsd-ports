@@ -1,0 +1,5 @@
+ACMEd is one of the many clients for the Automatic Certificate Management
+Environment (ACME), an internet standard (RFC 8555) which allows to
+automate X.509 certificates signing by a Certification Authority (CA).
+
+WWW: https://github.com/breard-r/acmed
