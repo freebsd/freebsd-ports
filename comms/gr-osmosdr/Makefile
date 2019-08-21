@@ -2,9 +2,8 @@
 
 PORTNAME=	gr-osmosdr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.4-99
-DISTVERSIONSUFFIX=	-gc98be5d
-PORTREVISION=	9
+DISTVERSION=	0.1.4-127
+DISTVERSIONSUFFIX=	-g4d83c60
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
@@ -13,17 +12,17 @@ COMMENT=	GNU Radio OsmoSDR module
 
 LICENSE=	GPLv3
 
-BROKEN=		does not build with Gnuradio 3.8
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2019-09-04
-
 BUILD_DEPENDS=	swig3.0:devel/swig30 \
 		cheetah:devel/py-cheetah
 LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libgnuradio-pmt.so:comms/gnuradio \
 		libgnuradio-blocks.so:comms/gnuradio \
 		libboost_system.so:devel/boost-libs \
-		libboost_thread.so:devel/boost-libs
+		libboost_thread.so:devel/boost-libs \
+		liblog4cpp.so:devel/log4cpp \
+		libgmpxx.so:math/gmp \
+		libgmp.so:math/gmp \
+		liborc-0.4.so:devel/orc
 
 USES=	cmake compiler:c++11-lang fortran pkgconfig python:2.7 tar:tgz
 
@@ -35,7 +34,6 @@ BINARY_ALIAS=	swig=swig3.0
 
 # See lib/CMakeLists.txt to enable more components
 CMAKE_ARGS+=	-DENABLE_DEFAULT:BOOL=OFF \
-		-DENABLE_FCD:BOOL=ON \
 		-DENABLE_FILE:BOOL=ON \
 		-DENABLE_PYTHON=ON \
 		-DPYTHON_EXECUTABLE:STRING="${PYTHON_CMD}"
