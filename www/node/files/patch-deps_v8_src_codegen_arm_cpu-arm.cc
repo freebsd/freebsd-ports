@@ -1,16 +1,16 @@
---- deps/v8/src/arm/cpu-arm.cc.orig	2019-08-06 20:46:23 UTC
-+++ deps/v8/src/arm/cpu-arm.cc
+--- deps/v8/src/codegen/arm/cpu-arm.cc.orig	2019-08-20 17:14:50 UTC
++++ deps/v8/src/codegen/arm/cpu-arm.cc
 @@ -7,6 +7,9 @@
  #ifdef __QNXNTO__
  #include <sys/mman.h>  // for cache flushing.
- #undef MAP_TYPE
+ #undef MAP_TYPE        // NOLINT
 +#elif defined(__FreeBSD__)
 +#include <sys/types.h>
 +#include <machine/sysarch.h> // for cache flushing.
  #else
  #include <sys/syscall.h>  // for cache flushing.
  #endif
-@@ -26,6 +29,9 @@ __attribute__((noinline)) void CpuFeatures::FlushICach
+@@ -25,6 +28,9 @@ V8_NOINLINE void CpuFeatures::FlushICache(void* start,
  #if !defined(USE_SIMULATOR)
  #if V8_OS_QNX
    msync(start, size, MS_SYNC | MS_INVALIDATE_ICACHE);
