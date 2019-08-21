@@ -1,0 +1,13 @@
+include/spng.h
+lib/libspng.so
+lib/libspng.so.%%SOVERSION%%
+libdata/pkgconfig/spng.pc
+%%PORTDOCS%%%%DOCSDIR%%/api.md
+%%PORTDOCS%%%%DOCSDIR%%/build.md
+%%PORTDOCS%%%%DOCSDIR%%/chunk.md
+%%PORTDOCS%%%%DOCSDIR%%/context.md
+%%PORTDOCS%%%%DOCSDIR%%/decode.md
+%%PORTDOCS%%%%DOCSDIR%%/errors.md
+%%PORTDOCS%%%%DOCSDIR%%/index.md
+%%PORTDOCS%%%%DOCSDIR%%/usage.md
+%%PORTDOCS%%%%DOCSDIR%%/version.md
