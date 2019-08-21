@@ -13,13 +13,15 @@ LICENSE=	BSD2CLAUSE MIT
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	rubygems-rouge
+CONFLICTS_INSTALL=	rubygem-rouge
 
-NO_ARCH=	yes
 USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/rougify
 
-PORTSCOUT=	limit:^2.*
+PORTSCOUT=	limit:^2\.*
 
 .include <bsd.port.mk>
