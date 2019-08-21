@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	xmlgraphics-commons
-PORTVERSION=	1.5
-DISTVERSIONSUFFIX=	-src
+PORTVERSION=	2.3
+DISTVERSIONSUFFIX=	-bin
 CATEGORIES=	graphics textproc java
-MASTER_SITES=	APACHE/xmlgraphics/commons/source
+MASTER_SITES=	APACHE/xmlgraphics/commons/binaries
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Several reusable components used by Apache Batik and FOP
@@ -13,18 +13,29 @@ COMMENT=	Several reusable components used by Apache Batik and FOP
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USE_JAVA=	1.6+
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_JAVA=	yes
-JAVA_VERSION=	1.6+
-USE_ANT=	yes
-NO_ARCH=	yes
+PLIST_FILES=	${JAVAJARDIR}/${JARFILE_VER} \
+		${JAVAJARDIR}/${JARFILE}
+PORTDOCS=	*
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+JARFILE=	${PORTNAME}.jar
+JARFILE_VER=	${PORTNAME}-${PORTVERSION}.jar
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}-${PORTVERSION}.jar \
-		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	${INSTALL_DATA} ${WRKSRC}/build/${JARFILE_VER} ${STAGEDIR}${JAVAJARDIR}
+	${LN} -sf ${JARFILE_VER} ${STAGEDIR}${JAVAJARDIR}/${JARFILE}
+
+do-install-DOCS-on:
+	(cd ${WRKSRC}/javadocs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} \
+		NOTICE README ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
