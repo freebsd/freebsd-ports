@@ -12,7 +12,7 @@ COMMENT=	Client for the ACME protocol
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-faraday>=0.9.1:www/rubygem-faraday
+RUN_DEPENDS=	rubygem-faraday>=0.9.1<1:www/rubygem-faraday
 
 USES=		gem shebangfix
 USE_RUBY=	yes
