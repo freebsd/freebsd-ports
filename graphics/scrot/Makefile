@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scrot
-DISTVERSION=	1.1.1
+DISTVERSION=	1.2
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
