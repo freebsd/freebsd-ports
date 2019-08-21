@@ -1,4 +1,4 @@
---- scripts/setup-seafile.sh.orig	2018-08-19 23:40:51 UTC
+--- scripts/setup-seafile.sh.orig	2019-08-20 19:25:53 UTC
 +++ scripts/setup-seafile.sh
 @@ -17,6 +17,8 @@ use_existing_seafile="false"
  
@@ -9,7 +9,7 @@
  function welcome () {
      echo "-----------------------------------------------------------------"
      echo "This script will guide you to config and setup your seafile server."
-@@ -352,10 +354,17 @@ fi
+@@ -343,10 +345,17 @@ fi
  }
  
  function copy_user_manuals() {
@@ -28,21 +28,36 @@
  }
  
  function parse_params() {
-@@ -713,6 +722,13 @@ chmod 0600 "$dest_settings_py"
+@@ -662,7 +671,12 @@ function get_seahub_admin_passwd () {
+ echo "Creating database now, it may take one minute, please wait... "
+ echo
+ 
+-cd ${TOPDIR}/ccnet && mkdir -m 0755 GroupMgr misc OrgMgr PeerMgr && cd -
++if [ $os_bsd == "1" ]; then
++    cd ${TOPDIR}/ccnet && install -d -m 0755 -o %%SEAFILE_USER%% -g %%SEAFILE_GROUP%% \
++    GroupMgr misc OrgMgr PeerMgr && cd -
++else
++    cd ${TOPDIR}/ccnet && mkdir -m 0755 GroupMgr misc OrgMgr PeerMgr && cd -
++fi
+ 
+ ccnet_group_db=${TOPDIR}/ccnet/GroupMgr/groupmgr.db
+ ccnet_group_sql=${INSTALLPATH}/sql/sqlite/groupmgr.sql
+@@ -740,6 +754,14 @@ chmod 0600 "$dest_settings_py"
  chmod 0700 "$default_ccnet_conf_dir"
  chmod 0700 "$seafile_data_dir"
  chmod 0700 "$default_conf_dir"
 +if [ $os_bsd == "1" ]; then
-+	chown %%SEAFILE_USER%%:%%SEAFILE_GROUP%% "$dest_settings_py"
-+	chown %%SEAFILE_USER%%:%%SEAFILE_GROUP%% "$default_ccnet_conf_dir"
++	for file in "$dest_settings_py" "$default_ccnet_conf_dir" \
++	"$default_conf_dir" "$seahub_db" "$ccnet_group_db" "$ccnet_config_db" \
++	"$ccnet_org_db" "$ccnet_user_db"; do
++		chown %%SEAFILE_USER%%:%%SEAFILE_GROUP%% "$file"
++	done
 +	chown -R %%SEAFILE_USER%%:%%SEAFILE_GROUP%% "$seafile_data_dir"
-+	chown %%SEAFILE_USER%%:%%SEAFILE_GROUP%% "$default_conf_dir"
-+	chown %%SEAFILE_USER%%:%%SEAFILE_GROUP%% "$seahub_db"
 +fi
  
  # -------------------------------------------
  # copy user manuals to library template
-@@ -729,9 +745,17 @@ echo
+@@ -756,9 +778,17 @@ echo
  echo "-----------------------------------------------------------------"
  echo "Your seafile server configuration has been completed successfully." 
  echo "-----------------------------------------------------------------"
