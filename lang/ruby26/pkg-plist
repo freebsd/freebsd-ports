@@ -158,6 +158,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/csv.rb
 %%RUBY_LIBDIR%%/csv/core_ext/array.rb
 %%RUBY_LIBDIR%%/csv/core_ext/string.rb
+%%RUBY_LIBDIR%%/csv/delete_suffix.rb
 %%RUBY_LIBDIR%%/csv/fields_converter.rb
 %%RUBY_LIBDIR%%/csv/match_p.rb
 %%RUBY_LIBDIR%%/csv/parser.rb
@@ -8905,7 +8906,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%EXAMPLES%%%%RUBY_EXAMPLESDIR%%/webrick/httpd.rb
 %%EXAMPLES%%%%RUBY_EXAMPLESDIR%%/webrick/httpproxy.rb
 %%EXAMPLES%%%%RUBY_EXAMPLESDIR%%/webrick/httpsd.rb
-%%RDOC%%%%RUBY_LIBDIR%%/csv/delete_suffix.rb
 %%RDOC%%%%RUBY_RIDIR%%/ACL/ACLEntry/cdesc-ACLEntry.ri
 %%RDOC%%%%RUBY_RIDIR%%/ACL/ACLEntry/dot_pat-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/ACL/ACLEntry/dot_pat_str-i.ri
