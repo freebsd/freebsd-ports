@@ -393,3 +393,7 @@ sbin/ipsec
 %%SWANCTL%%@dir etc/swanctl/x509ca
 %%SWANCTL%%@dir etc/swanctl/x509crl
 %%SWANCTL%%@dir etc/swanctl/x509ocsp
+%%VIA%%%%DATADIR%%/templates/config/plugins/padlock.conf
+%%VIA%%lib/ipsec/plugins/libstrongswan-padlock.la
+%%VIA%%lib/ipsec/plugins/libstrongswan-padlock.so
+%%VIA%%@sample %%ETCDIR%%.d/charon/padlock.conf.sample

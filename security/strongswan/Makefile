@@ -43,6 +43,7 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE GCM IKEV1 \
 		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MEDIATION MYSQL PKI SCEP SMP \
 		SQLITE SWANCTL TESTVECTOR TPM UNBOUND UNITY VICI XAUTH
+OPTIONS_DEFINE_i386=	VIA
 OPTIONS_DEFAULT=	BUILTIN CURL IKEV1 PKI SWANCTL VICI
 OPTIONS_SINGLE=	PRINTF_HOOKS
 OPTIONS_SINGLE_PRINTF_HOOKS=	BUILTIN LIBC VSTR
@@ -73,6 +74,7 @@ XAUTH_DESC=	Enable XAuth password verification
 BUILTIN_DESC=	Use builtin printf hooks
 LIBC_DESC=	Use libc printf hooks
 VSTR_DESC=	Use devel/vstr printf hooks
+VIA_DESC=	Enable VIA Padlock support
 
 # Extra options
 CURL_CONFIGURE_ON=	--enable-curl
@@ -114,6 +116,7 @@ BUILTIN_CONFIGURE_ON=	--with-printf-hooks=builtin
 LIBC_CONFIGURE_ON=	--with-printf-hooks=glibc
 VSTR_CONFIGURE_ON=	--with-printf-hooks=vstr
 VSTR_LIB_DEPENDS=	libvstr.so:devel/vstr
+VIA_CONFIGURE_ON=	--enable-padlock
 
 .include <bsd.port.options.mk>
 
@@ -134,6 +137,12 @@ PLIST_SUB+=	SQL="@comment "
 PLIST_SUB+=	XAUTHGEN=""
 .else
 PLIST_SUB+=	XAUTHGEN="@comment "
+.endif
+
+# Hack to disable VIA in plist of unsupported architectures
+.if ! ${OPTIONS_DEFINE:MVIA}
+PLIST_SUB+=	VIA="@comment "
+.else
 .endif
 
 post-install:
