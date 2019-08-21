@@ -1,0 +1,6 @@
+High-Performance Connectivity Tracer (HiPerConTracer) is
+a ping/traceroute service. It performs regular ping and
+traceroute runs among sites and can export the results
+into an SQL database.
+
+WWW: https://www.uni-due.de/~be0001/hipercontracer/

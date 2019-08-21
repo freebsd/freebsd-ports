@@ -26,6 +26,7 @@
     SUBDIR += gtkperf
     SUBDIR += hey
     SUBDIR += himenobench
+    SUBDIR += hipercontracer
     SUBDIR += hpl
     SUBDIR += httperf
     SUBDIR += hyperfine
