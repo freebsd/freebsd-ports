@@ -4,7 +4,7 @@
 PORTNAME=	gqrx
 PORTVERSION=	2.11.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
@@ -13,9 +13,6 @@ COMMENT=	Software defined radio receiver powered by GNU Radio and Qt
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Depends on expiring comms/gr-osmosdr
-EXPIRATION_DATE=	2019-09-04
 
 LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libgnuradio-analog.so:comms/gnuradio \
@@ -27,7 +24,9 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libgnuradio-osmosdr.so:comms/gr-osmosdr \
 		libboost_system.so:devel/boost-libs \
 		libboost_program_options.so:devel/boost-libs \
-		liblog4cpp.so:devel/log4cpp
+		liblog4cpp.so:devel/log4cpp \
+		libgmpxx.so:math/gmp \
+		libgmp.so:math/gmp
 
 USES=		gl pkgconfig qmake qt:5
 
