@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppetserver-ca
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,8 @@ RUN_DEPENDS=	facter:sysutils/facter
 
 USES=		gem
 USE_RUBY=	yes
+
+PLIST_FILES=	bin/puppetserver-ca
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
