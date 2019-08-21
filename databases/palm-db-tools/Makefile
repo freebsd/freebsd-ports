@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for the PalmOS flat-file database programs
 
+DEPRECATED=	obsolete technology
+EXPIRATION_DATE=	2019-09-21
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USES=		gmake

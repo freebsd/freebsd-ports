@@ -13,6 +13,9 @@ COMMENT=	Library encapsulating malsync
 LICENSE=	MPL10
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	obsolete technology
+EXPIRATION_DATE=	2019-09-21
+
 LIB_DEPENDS=	libpisock.so:palm/pilot-link
 
 USES=		gmake libtool

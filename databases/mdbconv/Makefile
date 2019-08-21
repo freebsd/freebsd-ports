@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}freebsd3x
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts CSV to MobileDB database
 
+DEPRECATED=	obsolete technology
+EXPIRATION_DATE=	2019-09-21
+
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/mdbconv
 
