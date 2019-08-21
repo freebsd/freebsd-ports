@@ -14,7 +14,7 @@ LICENSE=	GPLv3+
 RUN_DEPENDS=	fvwm>=2.5:x11-wm/fvwm2 \
 		bash:shells/bash
 
-USES=		gettext gmake python shebangfix
+USES=		gettext gmake python:2.7 shebangfix
 
 SHEBANG_FILES=	addons/* bin/* fvwm/scripts/* \
 		fvwm/scripts/FvwmMPD/*.py
