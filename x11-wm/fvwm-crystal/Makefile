@@ -3,9 +3,10 @@
 
 PORTNAME=	fvwm-crystal
 PORTVERSION=	3.0.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://download.gna.org/fvwm-crystal/${PORTVERSION}/
+MASTER_SITES=	https://sourceforge.net/projects/fvwm-crystal/files/${PORTVERSION}/
+DISTFILE_SUFX=  download
 
 MAINTAINER=	giacomomariani@yahoo.it
 COMMENT=	Easy, eye-candy, light, and powerful window manager for X11
@@ -13,7 +14,7 @@ COMMENT=	Easy, eye-candy, light, and powerful window manager for X11
 RUN_DEPENDS=	fvwm>=2.5:x11-wm/fvwm2 \
 		bash:shells/bash
 
-USES=		gettext gmake python shebangfix
+USES=		gettext gmake python:2.7 shebangfix
 SHEBANG_FILES=	addons/* bin/* fvwm/scripts/speed_value \
 		fvwm/scripts/FvwmMPD/*.py
 MAKE_ENV=	prefix="${PREFIX}" addondir="${DOCSDIR}/addons"
