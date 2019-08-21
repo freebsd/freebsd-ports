@@ -1258,6 +1258,7 @@
     SUBDIR += rubygem-gitaly
     SUBDIR += rubygem-gitaly-proto
     SUBDIR += rubygem-gitlab_omniauth-ldap
+    SUBDIR += rubygem-google-cloud-bigquery
     SUBDIR += rubygem-google-cloud-core
     SUBDIR += rubygem-google-cloud-env
     SUBDIR += rubygem-google-cloud-logging
