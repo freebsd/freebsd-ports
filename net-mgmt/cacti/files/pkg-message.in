@@ -1,4 +1,6 @@
-=======================================================================
+[
+{ type: install
+  message: <<EOM
 Cacti is now installed. If you install it for the first time,
 you may have to follow this steps to make it work correctly:
 
@@ -90,4 +92,16 @@ Other Erratas:
    2) This package does not install a MySQL server in case you wish to use an
       external MySQL server.  Install a package such as mysql57-server if you
       require a local server.
-=======================================================================
+EOM
+}
+{ type: upgrade
+  maximum_version: "1.2.4"
+  message: <<EOM
+Starting with version 1.2.4 the option SNMPBIN is no longer required and has
+therefore been removed.
+
+Now you can enable PHP integrated support via the "$php_snmp_support" variable
+in config.php
+EOM
+}
+]
