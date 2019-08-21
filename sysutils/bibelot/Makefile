@@ -9,6 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}/Bibelot/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Formats and converts text documents into compressed PalmDoc .pdb files
 
+DEPRECATED=	obsolete technology
+EXPIRATION_DATE=	2019-09-21
+
 USES=		perl5 shebangfix
 NO_BUILD=	yes
 

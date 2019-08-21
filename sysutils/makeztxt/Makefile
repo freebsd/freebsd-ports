@@ -12,6 +12,9 @@ COMMENT=	Command line utility to create GutenPalm's zTXT format databases
 
 LICENSE=	GPLv2
 
+DEPRECATED=	obsolete technology
+EXPIRATION_DATE=	2019-09-21
+
 PLIST_FILES=	bin/makeztxt
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		gmake

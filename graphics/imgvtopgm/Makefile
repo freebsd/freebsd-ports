@@ -13,6 +13,9 @@ COMMENT=	Palm Pilot Image Viewer to PGM Converter
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	obsolete technology
+EXPIRATION_DATE=	2019-09-21
+
 BROKEN=		unfetchable
 
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm

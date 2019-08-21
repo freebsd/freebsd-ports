@@ -14,6 +14,9 @@ COMMENT=	JPilot plugin to download photos and videos
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	obsolete technology
+EXPIRATION_DATE=	2019-09-21
+
 RUN_DEPENDS=	jpilot:palm/jpilot
 BUILD_DEPENDS=	jpilot:palm/jpilot
 LIB_DEPENDS=	libgdbm.so:databases/gdbm
