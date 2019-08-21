@@ -3,6 +3,7 @@
 PORTNAME=	acmed
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	greg@unrelenting.technology
@@ -138,8 +139,8 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/en/acmed.toml.5 ${STAGEDIR}${MAN5PREFIX}/man/man5/
 	${INSTALL_MAN} ${WRKSRC}/man/en/tacd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/acmed
-	${INSTALL_DATA} ${WRKSRC}/acmed/config/acmed.toml ${STAGEDIR}${PREFIX}/etc/acmed/
-	${INSTALL_DATA} ${WRKSRC}/acmed/config/default_hooks.toml ${STAGEDIR}${PREFIX}/etc/acmed/
+	${INSTALL_DATA} ${WRKSRC}/acmed/config/acmed.toml ${STAGEDIR}${PREFIX}/etc/acmed/acmed.toml.sample
+	${INSTALL_DATA} ${WRKSRC}/acmed/config/default_hooks.toml ${STAGEDIR}${PREFIX}/etc/acmed/default_hooks.toml.sample
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/acmed/accounts
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/acmed/certs
 
