@@ -881,6 +881,7 @@
     SUBDIR += googletest
     SUBDIR += goprotobuf
     SUBDIR += gorm
+    SUBDIR += goswagger
     SUBDIR += govendor
     SUBDIR += gperf
     SUBDIR += gperf31
