@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	relx
-PORTVERSION=	3.32.1
+PORTVERSION=	3.33.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
@@ -31,11 +31,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	erlware
 
 # from rebar.lock
-REBAR_DEPS=	bbmustache-1.8.0 \
+REBAR_DEPS=	bbmustache-1.5.0 \
 		cf-0.3.1 \
-		erlware_commons-1.3.1 \
+		erlware_commons-1.2.0 \
 		getopt-1.0.1 \
-		providers-1.8.1
+		providers-1.8.0
 
 .for _dep in ${REBAR_DEPS}
 DISTFILES+=	${_dep}.tar:hex
