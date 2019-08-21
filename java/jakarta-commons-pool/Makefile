@@ -2,48 +2,44 @@
 # $FreeBSD$
 
 PORTNAME=	commons-pool
-PORTVERSION=	1.6
+PORTVERSION=	2.7.0
 CATEGORIES=	java devel
-MASTER_SITES=	APACHE_COMMONS_SOURCE
+MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	jakarta-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}2-${PORTVERSION}-bin
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	Jakarta Object-pooling API
+COMMENT=	Apache Commons Object-pooling API
 
 LICENSE=	APACHE20
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		dos2unix
-DOS2UNIX_GLOB=	*.xml *.java
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	8+
+NO_BUILD=	yes
 
-USE_ANT=	yes
-ALL_TARGET=	build-jar
+WRKSRC=		${WRKDIR}/${PORTNAME}2-${PORTVERSION}
 
-PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar
+JARFILE=	${PORTNAME}2-${PORTVERSION}.jar
+DOCFILES=	LICENSE.txt \
+		NOTICE.txt \
+		RELEASE-NOTES.txt
 
 PORTDOCS=	*
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar \
+		${JAVAJARDIR}/${JARFILE}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-ALL_TARGET+=	javadoc
-.endif
-
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}.jar \
-		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_MSG} " [ DONE ]"
+	${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${STAGEDIR}${JAVAJARDIR}
+	${LN} -sf ${JARFILE} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 .if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/dist/docs && ${FIND} api \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1
-	@${ECHO_MSG} " [ DONE ]"
+	cd ${WRKSRC} && ${COPYTREE_SHARE} apidocs ${STAGEDIR}${DOCSDIR}
+.for FILE in ${DOCFILES}
+	${INSTALL_MAN} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
