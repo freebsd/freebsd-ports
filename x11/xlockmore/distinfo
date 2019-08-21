@@ -1,3 +1,5 @@
-TIMESTAMP = 1565032489
-SHA256 (xlockmore-5.57.tar.xz) = f9acf99befd798ac93909b2d7d6578a256d2dac283ddc562acc9b6ef10cc28a3
-SIZE (xlockmore-5.57.tar.xz) = 1835880
+TIMESTAMP = 1566409879
+SHA256 (xlockmore-5.58.tar.xz) = fc9f81773afef0dc7e3e62defbad4056d8d16af9ba8208eeec73d1b2970e41ed
+SIZE (xlockmore-5.58.tar.xz) = 1878452
+SHA256 (xlockmore.README) = 53d8827a2b1f256e1fc23da90936b25ee5f9c5f90228c15f383ef0f8f1dbec2b
+SIZE (xlockmore.README) = 178001
