@@ -1,2 +1,5 @@
-SHA256 (jlatexmath-src-all-1.0.3.zip) = 58b14f0f30250b7cd3d1e5cfae20a8d5f999c01e9ff5e03508cbdb8f922dd7fd
-SIZE (jlatexmath-src-all-1.0.3.zip) = 1203123
+TIMESTAMP = 1566401432
+SHA256 (jlatexmath-1.0.7.jar) = 6d04c3843fc98d2eea9ba4cff0be7b80540ca75c5a4e0b3463fd1219c48cc65d
+SIZE (jlatexmath-1.0.7.jar) = 669575
+SHA256 (jlatexmath-fop-1.0.7.jar) = cd3302fd0d7f17d44b82555f87689846e0bb70814f0639aae3b976dfac145496
+SIZE (jlatexmath-fop-1.0.7.jar) = 26141
