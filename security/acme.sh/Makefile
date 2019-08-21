@@ -22,7 +22,7 @@ OPTIONS_SINGLE_HTTP=	CURL WGET
 OPTIONS_DEFAULT=	CURL STANDALONE
 BINDTOOLS_DESC=	Depend on bind-tools for nsupdate
 BINDTOOLS_RUN_DEPENDS=	nsupdate:dns/bind-tools
-IDN_RUN_DEPENDS=	idn2:dns/idnkit2
+IDN_RUN_DEPENDS=	idn2:dns/libidn2
 STANDALONE_DESC=	Standalone mode requires SOCAT
 STANDALONE_RUN_DEPENDS=	socat>0:net/socat
 
