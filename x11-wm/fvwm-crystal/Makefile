@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	fvwm-crystal
-PORTVERSION=	3.0.6
-PORTREVISION=	11
+PORTVERSION=	3.4.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://sourceforge.net/projects/fvwm-crystal/files/${PORTVERSION}/
-DISTFILE_SUFX=  download
 
 MAINTAINER=	giacomomariani@yahoo.it
 COMMENT=	Easy, eye-candy, light, and powerful window manager for X11
 
+LICENSE=	GPLv3+
+
 RUN_DEPENDS=	fvwm>=2.5:x11-wm/fvwm2 \
 		bash:shells/bash
 
-USES=		gettext gmake python:2.7 shebangfix
-SHEBANG_FILES=	addons/* bin/* fvwm/scripts/speed_value \
+USES=		gettext gmake python shebangfix
+
+SHEBANG_FILES=	addons/* bin/* fvwm/scripts/* \
 		fvwm/scripts/FvwmMPD/*.py
 MAKE_ENV=	prefix="${PREFIX}" addondir="${DOCSDIR}/addons"
 PORTDOCS=	*
@@ -32,22 +33,26 @@ TRAYER_DESC=		Tray (notification area) support
 SUDO_DESC=		Run text-based applications as superuser
 HSETROOT_DESC=		Allow to set desktop wallpaper
 CMUS_DESC=		Play music via audio/cmus player
-MROX_RUN_DEPENDS=	rox:x11-fm/rox-filer
+ROX_RUN_DEPENDS=	rox:x11-fm/rox-filer
 IMAGEMAGICK_RUN_DEPENDS=	display:graphics/ImageMagick6
 XSCREENSAVER_RUN_DEPENDS=	xscreensaver:x11/xscreensaver
 TRAYER_RUN_DEPENDS=	trayer:x11/trayer
 SUDO_RUN_DEPENDS=	sudo:security/sudo
-SETROOT_RUN_DEPENDS=	hsetroot:x11/hsetroot
+HSETROOT_RUN_DEPENDS=	hsetroot:x11/hsetroot
 CMUS_RUN_DEPENDS=	cmus:audio/cmus
 DOCS_INSTALL_TARGET=	install-doc
 
 post-extract:
-	@cd ${WRKSRC} && ${FIND} . -depth -type d -name .svn \
+	cd ${WRKSRC} && ${FIND} . -depth -type d -name .svn \
 		-exec ${RM} -r {} \;
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|cp -r -d|cp -r|; s|cp -d|cp|' \
+	${REINPLACE_CMD} -e 's|cp -r -d|cp -r|; s|cp -d|cp|' \
 		${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e 's|/usr/bin|/usr/local/bin|' \
+		${WRKSRC}/fvwm/preferences/*
+	${GZIP_CMD} ${WRKSRC}/man/*.1
+
 scrivi:
 	${ECHO_CMD} ${LOCALBASE}
 	${ECHO_CMD} ${PREFIX}

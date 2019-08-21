@@ -1,61 +1,42 @@
---- Makefile.orig	2014-07-02 11:08:31.459626724 +0800
-+++ Makefile	2014-07-02 11:11:50.634611079 +0800
-@@ -1,7 +1,7 @@
- #!/usr/bin/make -f
- .PHONY: all install uninstall dist correctpermissions install-doc uninstall-doc
+--- Makefile.orig	2015-09-13 17:26:12 UTC
++++ Makefile
+@@ -16,14 +16,13 @@ install: correctpath install-doc
  
--prefix?=/usr/local
-+prefix=$(PREFIX)
- docdir?=$(prefix)/share/doc/fvwm-crystal/
- addondir?=$(prefix)/share/fvwm-crystal/addons
+ 	install -m 755 bin/fvwm-crystal.apps bin/fvwm-crystal.wallpaper bin/fvwm-crystal bin/fvwm-crystal.infoline bin/fvwm-crystal.mplayer-wrapper bin/fvwm-crystal.play-movies bin/fvwm-crystal.videomodeswitch- bin/fvwm-crystal.videomodeswitch+ $(DESTDIR)$(prefix)/bin
+ 	install -m 755 tmp/fvwm-crystal.generate-menu $(DESTDIR)$(prefix)/bin
+-	cp -d -r fvwm/* $(DESTDIR)$(prefix)/share/fvwm-crystal/fvwm/
++	cp  -r fvwm/* $(DESTDIR)$(prefix)/share/fvwm-crystal/fvwm/
+ 	cp tmp/fvwm-crystal $(DESTDIR)/etc/X11/Sessions
+ 	cp shared/fvwm-crystal.desktop $(DESTDIR)$(prefix)/share/xsessions
+ 	cp shared/fvwm-crystal.sudoers.d $(DESTDIR)/etc/sudoers.d/fvwm-crystal
+ 	chmod 440 $(DESTDIR)/etc/sudoers.d/fvwm-crystal
  
-@@ -12,13 +12,13 @@ all:
+-	mkdir -p $(DESTDIR)$(prefix)/share/man/man1
+-	cp -d -r man/* $(DESTDIR)$(prefix)/share/man/man1
++	cp -r man/*.1.gz $(DESTDIR)$(prefix)/man/man1
+ # restore the original file; needed for successive run
+ 	cp -f tmp/LastChoosenRecipe fvwm/preferences/LastChoosenRecipe
  
- install: uninstall correctpath
- 	@echo Installing fvwm-crystal $(RELEASE) to $(prefix)
--	mkdir -p $(prefix)/bin $(prefix)/share/fvwm-crystal/fvwm 
-+	mkdir -p $(DESTDIR)$(prefix)/bin $(DESTDIR)$(prefix)/share/fvwm-crystal/fvwm 
- 
--	install -m 755 bin/fvwm-crystal.apps bin/fvwm-crystal.wallpaper bin/fvwm-crystal bin/fvwm-crystal.generate-menu bin/fvwm-crystal.infoline bin/fvwm-crystal.mplayer-wrapper $(prefix)/bin
--	cp -d -r fvwm/* $(prefix)/share/fvwm-crystal/fvwm/
-+	install -m 755 bin/fvwm-crystal.apps bin/fvwm-crystal.wallpaper bin/fvwm-crystal bin/fvwm-crystal.generate-menu bin/fvwm-crystal.infoline bin/fvwm-crystal.mplayer-wrapper $(DESTDIR)$(prefix)/bin
-+	cp -r fvwm/* $(DESTDIR)$(prefix)/share/fvwm-crystal/fvwm/
- 
--	mkdir -p $(prefix)/share/man/man1
--	cp -d -r man/* $(prefix)/share/man/man1
-+	mkdir -p $(DESTDIR)$(prefix)/man/man1
-+	cp -r man/* $(DESTDIR)$(prefix)/man/man1
- 
- uninstall:
- 	@echo "Uninstalling previously installed fvwm-crystal"
-@@ -40,7 +40,7 @@ dist-minimal:
- 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)"
- 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm"
- 	# Copy basic files
--	cp -r AUTHORS COPYING INSTALL Makefile NEWS README fvwm-crystal-minimal-$(RELEASE)/
-+	cp -r AUTHORS INSTALL Makefile NEWS README fvwm-crystal-minimal-$(RELEASE)/
- 	cp -r fvwm/config fvwm-crystal-minimal-$(RELEASE)/fvwm/
- 	# Copy addons/
- 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/addons"
-@@ -190,15 +190,15 @@ dist-minimal:
- 
- # It is needed to adjust some path inside fvwm-crystal.generate-menu since this file must know the install path
- correctpath:
--	sed -i 's:FC_MENUBASEROOT="/usr/share:FC_MENUBASEROOT="$(prefix)/share:' bin/fvwm-crystal.generate-menu
--	sed -i 's:FC_ICONBASEROOT="/usr/share:FC_ICONBASEROOT="$(prefix)/share:' bin/fvwm-crystal.generate-menu
+@@ -215,11 +214,11 @@ correctpath:
+ 	cp -f bin/fvwm-crystal.generate-menu tmp
+ 	cp -f shared/fvwm-crystal tmp
+ 	cp -f fvwm/preferences/LastChoosenRecipe tmp
+-	sed -i 's:FC_MENUBASEROOT="/usr/share:FC_MENUBASEROOT="$(prefix)/share:' tmp/fvwm-crystal.generate-menu
+-	sed -i 's:FC_ICONBASEROOT="/usr/share:FC_ICONBASEROOT="$(prefix)/share:' tmp/fvwm-crystal.generate-menu
+-	sed -i 's:SYSPREFS="/usr/share:SYSPREFS="$(prefix)/share:' tmp/fvwm-crystal.generate-menu
+-	sed -i 's:/usr/bin:$(prefix)/bin:' tmp/fvwm-crystal
+-	sed -i 's:/usr/bin:$(prefix)/bin:' fvwm/preferences/LastChoosenRecipe
 +	sed 's:FC_MENUBASEROOT="/usr/share:FC_MENUBASEROOT="$(prefix)/share:' bin/fvwm-crystal.generate-menu > bin/fvwm-crystal.generate-menu.new
 +	sed 's:FC_ICONBASEROOT="/usr/share:FC_ICONBASEROOT="$(prefix)/share:' bin/fvwm-crystal.generate-menu.new > bin/fvwm-crystal.generate-menu
++	sed 's:SYSPREFS="/usr/share:SYSPREFS="$(prefix)/share:' tmp/fvwm-crystal.generate-menu
++	sed 's:/usr/bin:$(prefix)/bin:' tmp/fvwm-crystal
++	sed 's:/usr/bin:$(prefix)/bin:' fvwm/preferences/LastChoosenRecipe
  
  uninstall-doc:
- 	-rm -rf $(docdir)
- 	-rm -rf $(addondir)
- 
- install-doc:
--	mkdir -p $(addondir) $(docdir)
--	install -m 644 addons/* $(addondir)
--	install -m 644 AUTHORS COPYING NEWS ChangeLog README INSTALL $(docdir)
--	install -m 644 doc/* $(docdir)
-+	mkdir -p $(DESTDIR)$(addondir) $(DESTDIR)$(docdir)
-+	install -m 644 addons/* $(DESTDIR)$(addondir)
-+	install -m 644 AUTHORS NEWS ChangeLog README INSTALL $(DESTDIR)$(docdir)
-+	install -m 644 doc/* $(DESTDIR)$(docdir)
+ 	-rm -rf $(DESTDIR)$(docdir)
+@@ -229,4 +228,4 @@ install-doc:
+ 	mkdir -p $(DESTDIR)$(addondir) $(DESTDIR)$(docdir)/html
+ 	install -m 644 addons/* $(DESTDIR)$(addondir)
+ 	install -m 644 AUTHORS Contribute NEWS ChangeLog Export.README README INSTALL $(DESTDIR)$(docdir)
+-	cp -d -r doc/* $(DESTDIR)$(docdir)
++	cp -r doc/* $(DESTDIR)$(docdir)
