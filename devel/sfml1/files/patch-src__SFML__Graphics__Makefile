@@ -20,7 +20,7 @@
  
  $(OBJ): %.o: %.cpp
 -	$(CPP) -o $@ -c $< $(CFLAGS) -I/usr/include/freetype2
-+	$(CXX) -o $@ -c $< $(CFLAGS) -I/usr/include/freetype2
++	$(CXX) -o $@ -c $< $(CXXFLAGS) -I/usr/include/freetype2
  
  $(OBJGLEW) $(OBJJPEG) $(OBJPNG) $(OBJSOIL) $(OBJZLIB): %.o: %.c
 -	$(CC) -o $@ -c $< $(CFLAGSEXT) -DSTBI_FAILURE_USERMSG
