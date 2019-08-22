@@ -16,6 +16,9 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp
 
+NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe sparc64
+NOT_FOR_ARCHS_REASON=	solidity currently does not support big endian systems
+
 USES=		cmake compiler:c++14-lang
 
 OPTIONS_DEFINE=	Z3 CVC4
