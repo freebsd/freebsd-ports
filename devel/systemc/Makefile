@@ -11,6 +11,9 @@ COMMENT=	C++ classes and macros for describing complex hardware systems
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=		aarch64 amd64 i386
+ONLY_FOR_ARCHS_REASON=	configure: error: sorry...architecture not supported
+
 USES=		gmake libtool
 USE_LDCONFIG=	yes
 
