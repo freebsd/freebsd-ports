@@ -52,6 +52,7 @@ lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
 lib/mysql/plugin/test_udf_services.so
 %%TOKUDB%%lib/mysql/plugin/tokudb_backup.so
+lib/mysql/plugin/udf_example.so
 lib/mysql/plugin/validate_password.so
 libexec/mysqld
 man/man1/my_print_defaults.1.gz
