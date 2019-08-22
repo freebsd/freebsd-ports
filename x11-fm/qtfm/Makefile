@@ -3,6 +3,7 @@
 
 PORTNAME=	qtfm
 PORTVERSION=	6.2.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 
 MAINTAINER=	jgh@FreeBSD.org
@@ -23,11 +24,14 @@ GH_ACCOUNT=	rodlie
 
 QMAKE_ARGS=	MANDIR=${MANDIRS} \
 		PREFIX=${PREFIX} \
-		XDGDIR=${PREFIX}/etc/xdg
-
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+		XDGDIR=${PREFIX}/etc/xdg \
+		DOCDIR=${DOCSDIR}
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|docs.path.*|docs.path = $$$${DOCDIR}|' \
+		${WRKSRC}/libfm/libfm.pro
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qtfm
