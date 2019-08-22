@@ -3,6 +3,7 @@
 
 PORTNAME=	jasperreports
 PORTVERSION=	5.5.2
+PORTREVISION=	1
 CATEGORIES=	databases print java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/JasperReports%20${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.jar ${PORTNAME}-applet-${PORTVERSION}.jar
@@ -15,7 +16,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:devel/itext			\
 		${JAVALIBDIR}/crimson.jar:textproc/crimson		\
 		${JAVALIBDIR}/poi.jar:textproc/apache-poi		\
 		${JAVALIBDIR}/jfreechart.jar:java/jfreechart	\
-		${LOCALBASE}/share/java/batik/batik.jar:graphics/batik	\
+		${LOCALBASE}/share/java/batik/lib/batik-all.jar:graphics/batik	\
 		${JAVALIBDIR}/commons-beanutils.jar:java/jakarta-commons-beanutils\
 		${JAVALIBDIR}/commons-digester.jar:textproc/jakarta-commons-digester
 
