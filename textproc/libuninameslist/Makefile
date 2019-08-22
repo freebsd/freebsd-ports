@@ -2,22 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	libuninameslist
-PORTVERSION=	20091231
-PORTREVISION=	1
+PORTVERSION=	20190701
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20sources/Unicode_5.2-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Library of Unicode annotation data
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake tar:bzip2 libtool
+USES=		autoreconf gmake libtool
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	fontforge
+
 GNU_CONFIGURE=	yes
-ALL_TARGET=	both
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+OPTIONS_DEFINE=	FRENCH
+OPTIONS_DEFAULT=FRENCH
+OPTIONS_SUB=yes
+
+FRENCH_DESC=	Build French library
+FRENCH_CONFIGURE_ENABLE=	frenchlib
 
 .include <bsd.port.mk>
