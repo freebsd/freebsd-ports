@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	mathgl
-DISTVERSION=	2.4.2.1
-PORTREVISION=	5
+DISTVERSION=	2.4.4
 CATEGORIES=	math graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION:R}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for high-quality scientific data visualization
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
 		libsz.so:science/szip
 
-USES=		cmake compiler:c++11-lang gettext-runtime jpeg python:2.7
+USES=		cmake compiler:c++11-lang gettext-runtime gl jpeg python:2.7
 USE_GL=		gl glu glut
 USE_XORG=	xi xmu
 USE_LDCONFIG=	yes
