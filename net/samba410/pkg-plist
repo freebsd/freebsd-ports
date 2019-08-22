@@ -1120,7 +1120,6 @@ man/man8/winbindd.8.gz
 %%SAMBA4_BUNDLED_LDB%%lib/samba4/private/libldb-tdb-int-samba4.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/asq.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/ldb.so
-%%AD_DC%%%%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/mdb.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/paged_searches.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/rdn_name.so
 %%SAMBA4_BUNDLED_LDB%%%%SAMBA4_MODULEDIR%%/ldb/sample.so
