@@ -10,14 +10,17 @@ MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Simple Java games collection
 
 USE_JAVA=	yes
+
+NO_ARCH=	yes
+
 JAVA_VERSION=	1.6+
 PLIST_FILES=	bin/java-games-suite \
-		%%JAVAJARDIR%%/MM.jar \
-		%%JAVAJARDIR%%/reversi.jar \
-		%%JAVAJARDIR%%/Mine.jar \
-		%%JAVAJARDIR%%/Tetris.jar \
-		%%JAVAJARDIR%%/RT.jar \
-		%%JAVAJARDIR%%/Number.jar
+		${JAVAJARDIR}/MM.jar \
+		${JAVAJARDIR}/reversi.jar \
+		${JAVAJARDIR}/Mine.jar \
+		${JAVAJARDIR}/Tetris.jar \
+		${JAVAJARDIR}/RT.jar \
+		${JAVAJARDIR}/Number.jar
 SUB_FILES=	${PORTNAME}.sh
 GAMES=	MM reversi Mine Tetris RT Number
 
