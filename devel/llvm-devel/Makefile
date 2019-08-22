@@ -3,7 +3,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-devel
 
@@ -27,20 +27,9 @@ BUILD_DEPENDS=
 USES=		cmake compiler:c++11-lib libedit perl5 \
 		shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
-_USES_PYTHON?=	python:build,3.6
+_USES_PYTHON?=	python:build,3.6+
 USES+=		${_USES_PYTHON}
-SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
-		tools/clang/utils/hmaptool/hmaptool \
-		tools/clang/tools/scan-view/bin/scan-view \
-		tools/clang/tools/clang-format/git-clang-format \
-		tools/clang/tools/clang-format/clang-format-diff.py \
-		tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py \
-		tools/clang/tools/extra/clang-tidy/tool/run-clang-tidy.py \
-		tools/clang/tools/extra/clang-include-fixer/find-all-symbols/tool/run-find-all-symbols.py \
-		tools/opt-viewer/optrecord.py \
-		tools/opt-viewer/opt-diff.py \
-		tools/opt-viewer/opt-stats.py \
-		tools/opt-viewer/opt-viewer.py
+SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
@@ -57,6 +46,10 @@ CMAKE_ARGS+=	-DLLVM_HOST_TRIPLE=${CONFIGURE_TARGET}
 # redefine CMAKE_INSTALL_MANDIR
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH="share/man"
 CMAKE_ARGS+=	-DLLVM_PARALLEL_LINK_JOBS=1
+CMAKE_ARGS+=	-DLLVM_ENABLE_Z3_SOLVER=OFF
+CMAKE_ARGS+=	-DPYTHON_EXECUTABLE=${PYTHON_CMD} \
+		-DPYTHON_INCLUDE_DIR=${PYTHON_INCLUDEDIR} \
+		-DPYTHON_LIBRARY=${LOCALBASE}/lib/lib${PYTHON_VERSION}m.so
 
 # Disable assertions.  They should be disabled by cmake, but USES=cmake
 # overrides -DCMAKE_*_FLAGS_RELEASE.
@@ -111,7 +104,6 @@ EXTRAS_GH_PROJECT=	clang-tools-extra:extras
 EXTRAS_GH_SUBDIR=	tools/clang/tools/extra:extras
 EXTRAS_GH_TAGNAME=	${EXTRAS_COMMIT}:extras
 LIT_DESC=		Install lit and FileCheck test tools
-LIT_LIB_DEPENDS=	libz3.so:math/z3
 LLD_DESC=		Install lld, the LLVM linker
 LLD_GH_PROJECT=		lld:lld
 LLD_GH_SUBDIR=		tools/lld:lld
@@ -124,7 +116,7 @@ LLDB_GH_SUBDIR=		tools/lldb:lldb
 LLDB_GH_TAGNAME=	${LLDB_COMMIT}:lldb
 LLDB_IMPLIES=		CLANG
 LLDB_PORTDOCS=		lldb
-LLDB_VARS=		_USES_PYTHON=python:3.6
+LLDB_VARS=		_USES_PYTHON=python:3.6+
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
 OPENMP_GH_PROJECT=	openmp:openmp
@@ -222,7 +214,11 @@ COMMANDS+=	${CLANG_COMMANDS}
 MAN1SRCS+=	clang.1 \
 		diagtool.1 \
 		scan-build.1
-CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer)
+CLANG_PATTERN=	(c-index-test|clang|diagtool|hmaptool|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer)
+SHEBANG_FILES+= tools/clang/tools/clang-format/git-clang-format \
+		tools/clang/tools/clang-format/clang-format-diff.py \
+		tools/clang/tools/scan-view/bin/scan-view \
+		tools/clang/utils/hmaptool/hmaptool
 USES+=	gnome
 .endif
 
@@ -234,6 +230,9 @@ COMPILER_RT_PATTERN=	(sanitizer|include.xray)
 COMMANDS+=	${EXTRAS_COMMANDS}
 MAN1SRCS+=	extraclangtools.1
 PORTDOCS+=	clang-tools
+SHEBANG_FILES+=	tools/clang/tools/extra/clang-include-fixer/find-all-symbols/tool/run-find-all-symbols.py \
+		tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py \
+		tools/clang/tools/extra/clang-tidy/tool/run-clang-tidy.py
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
