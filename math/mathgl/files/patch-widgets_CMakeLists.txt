@@ -1,6 +1,6 @@
---- widgets/CMakeLists.txt.orig	2017-07-20 06:27:56 UTC
+--- widgets/CMakeLists.txt.orig	2019-07-08 18:56:57 UTC
 +++ widgets/CMakeLists.txt
-@@ -3,24 +3,24 @@ include(GenerateExportHeader)
+@@ -7,24 +7,24 @@ endif(MSVC)
  if(MGL_HAVE_FLTK)
  	mgl_add_lib(fltk fltk.cpp  image.cpp  image.h ../include/mgl2/fltk.h ../include/mgl2/Fl_MathGL.h)
  	target_include_directories(mgl-fltk SYSTEM PUBLIC ${FLTK_INCLUDE_DIR})

@@ -2,6 +2,7 @@
 %%QT5%%bin/mglview
 %%QT5%%bin/udav
 %%FLTK%%bin/mgllab
+bin/mgltask
 include/mgl2/Fl_MathGL.h
 include/mgl2/abstract.h
 include/mgl2/addon.h
@@ -47,10 +48,13 @@ include/mgl2/vect.h
 include/mgl2/vectors.fs
 include/mgl2/volume.h
 include/mgl2/wnd.h
+include/mgl2/wnd_cf.h
+lib/cgi-bin/mgl.cgi
 lib/cmake/mathgl/MathGL2Config.cmake
 lib/cmake/mathgl/MathGL2ConfigVersion.cmake
 lib/cmake/mathgl/MathGLTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mathgl/MathGLTargets.cmake
+lib/cmake/mathgl2/mathgl2-config.cmake
 lib/libmgl2-glut.so
 lib/libmgl2-glut.so.%%SHLIB_VER%%
 %%QT5%%lib/libmgl2-qt.so
@@ -81,7 +85,6 @@ share/locale/ru/LC_MESSAGES/mathgl.mo
 %%DATADIR%%/fonts/pagella.vfmb
 %%DATADIR%%/fonts/schola.vfmb
 %%DATADIR%%/fonts/termes.vfmb
-%%DATADIR%%/mgl.cgi
 %%QT5%%share/mime/packages/mgl.xml
 %%QT5%%share/pixmaps/udav.png
 %%QT5%%share/udav/udav_ru.qm

@@ -1,0 +1,42 @@
+--- utils/CMakeLists.txt.orig	2019-08-22 06:18:05 UTC
++++ utils/CMakeLists.txt
+@@ -13,7 +13,7 @@ set(link_type -static)
+ else(MSVC)
+ set(link_type)
+ endif(MSVC)
+-target_link_libraries(mglconv mgl${link_type} ${getopt_lib-static})
++target_link_libraries(mglconv mgl${link_type} ${getopt_lib})
+ install(
+ 	TARGETS mglconv
+ 	EXPORT MathGLTargets
+@@ -21,7 +21,7 @@ install(
+ )
+ 
+ add_executable(mgl.cgi mglcgi.cpp)
+-target_link_libraries(mgl.cgi mgl-static)
++target_link_libraries(mgl.cgi mgl)
+ install(
+ 	TARGETS mgl.cgi
+ 	EXPORT MathGLTargets
+@@ -34,7 +34,7 @@ mgl_po_src(mglconv.cpp mglview.cpp mglcgi.cpp)
+ if(MGL_HAVE_FLTK)
+ 	add_definitions(-DUSE_FLTK)
+ 	add_executable(mglview mglview.cpp)
+-	target_link_libraries(mglview mgl-fltk ${getopt_lib-static} ${FLTK_LIBRARIES})
++	target_link_libraries(mglview mgl-fltk ${getopt_lib} ${FLTK_LIBRARIES})
+ 	install(
+ 		TARGETS mglview
+ 		EXPORT MathGLTargets
+@@ -46,10 +46,10 @@ else(MGL_HAVE_FLTK)
+ 		add_executable(mglview mglview.cpp)
+ 		if(enable-qt5)
+ 			include(../scripts/qt5.cmake)
+-			target_link_libraries(mglview mgl-qt5${link_type} ${getopt_lib-static} ${MGL_QT5_LIBS})
++			target_link_libraries(mglview mgl-qt5${link_type} ${getopt_lib} ${MGL_QT5_LIBS})
+ 		else(enable-qt5)
+ 			include(../scripts/qt4.cmake)
+-			target_link_libraries(mglview mgl-qt4${link_type} ${getopt_lib-static} ${MGL_QT4_LIBS})
++			target_link_libraries(mglview mgl-qt4${link_type} ${getopt_lib} ${MGL_QT4_LIBS})
+ 		endif(enable-qt5)
+ 
+ 		install(
