@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cpe tar:bzip2
 USE_JAVA=	yes
+
 CPE_VENDOR=	netty_project
 JAVA_VERSION=	8+
 NO_BUILD=	yes
@@ -43,7 +44,7 @@ do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${DIR} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for FILE in ${DOCFILES}
-	@${INSTALL_MAN} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
