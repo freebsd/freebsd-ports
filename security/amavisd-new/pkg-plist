@@ -23,6 +23,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.postfix
 %%PORTDOCS%%%%DOCSDIR%%/README.postfix.html
 %%PORTDOCS%%%%DOCSDIR%%/README.protocol
+%%PORTDOCS%%%%DOCSDIR%%/README.rspamd
 %%PORTDOCS%%%%DOCSDIR%%/README.sendmail
 %%PORTDOCS%%%%DOCSDIR%%/README.sendmail-dual
 %%PORTDOCS%%%%DOCSDIR%%/README.sendmail-dual.old
