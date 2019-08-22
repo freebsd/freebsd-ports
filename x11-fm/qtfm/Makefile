@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	qtfm
-DISTVERSION=	6.1.8
-PORTREVISION=	1
+PORTVERSION=	6.2.0
 CATEGORIES=	x11-fm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Small, lightweight file manager based on pure Qt
 
 LICENSE=	GPLv2
@@ -25,6 +24,8 @@ GH_ACCOUNT=	rodlie
 QMAKE_ARGS=	MANDIR=${MANDIRS} \
 		PREFIX=${PREFIX} \
 		XDGDIR=${PREFIX}/etc/xdg
+
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 OPTIONS_DEFINE=	DOCS
 
