@@ -2,6 +2,7 @@
 
 PORTNAME=	acpica
 PORTVERSION=	20190816
+PORTREVISION=	1
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://acpica.org/sites/acpica/files/ \
 		LOCAL/jkim
@@ -25,7 +26,7 @@ ACPICA_TOOLS+=	acpixtract iasl
 
 PLIST_FILES=	${ACPICA_TOOLS:S,^,bin/,}
 
-MAKE_ARGS=	HOST=_FreeBSD NOOPT=TRUE PROGS="${ACPICA_TOOLS}"
+MAKE_ARGS=	HOST=_FreeBSD PROGS="${ACPICA_TOOLS}"
 MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" YACC="${LOCALBASE}/bin/bison"
 
 do-install:
