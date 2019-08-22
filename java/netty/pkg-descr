@@ -1,6 +1,4 @@
-The Netty is an effort to provide an asynchronous
-event-driven network application framework and tools
-for rapid development of maintainable high performance &
-high scalability protocol servers & clients.
+Netty is an asynchronous event-driven network application framework for
+rapid development of maintainable high performance protocol servers & clients.
 
 WWW: https://netty.io/
