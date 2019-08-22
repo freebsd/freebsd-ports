@@ -44,7 +44,7 @@
 #
 # tomcat85_logging_config (str):
 #   Set to "${catalina.base}/conf/logging.properties" by default.
-#   Set the JUL config file 
+#   Set the JUL config file
 #
 # tomcat85_java_home (str):
 #   Set to "%%JAVA_HOME%%" by default.
@@ -111,6 +111,17 @@ required_dirs="${_tomcat_catalina_tmpdir}"
 
 extra_commands="reload"
 
+_tomcat_java_version=`${_tomcat_java_home}/bin/java -version 2>&1 | /usr/bin/awk -F '"' '/version/ {print $2}'`
+
+case "${_tomcat_java_version}" in
+	9* | 1[0-9]* )
+		_tomcat_endorsed_dirs_option=
+		;;
+	*)
+		_tomcat_endorsed_dirs_option="-Djava.endorsed.dirs='${_tomcat_catalina_home}/endorsed'"
+		;;
+esac
+
 command="%%LOCALBASE%%/bin/jsvc"
 command_args="-java-home '${_tomcat_java_home}' \
 	-server \
@@ -124,7 +135,7 @@ command_args="-java-home '${_tomcat_java_home}' \
 	-Djava.util.logging.manager=${_tomcat_logging_manager} \
 	-Djava.util.logging.config.file='${_tomcat_logging_config}' \
 	${_tomcat_java_opts} \
-	-Djava.endorsed.dirs='${_tomcat_catalina_home}/endorsed' \
+	${_tomcat_endorsed_dirs_option} \
 	-Dcatalina.home='${_tomcat_catalina_home}' \
 	-Dcatalina.base='${_tomcat_catalina_base}' \
 	-Djava.io.tmpdir='${_tomcat_catalina_tmpdir}' \
