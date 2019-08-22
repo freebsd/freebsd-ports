@@ -4,15 +4,15 @@
 PORTNAME=	yasou-fpw
 PORTVERSION=	1.0.b0
 CATEGORIES=	japanese
-MASTER_SITES=	http://openlab.jp/edict/fpw/dist/yasou/ \
-		ftp://ftp.rediris.es/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
-		ftp://relay1.tomsk.gov.ru/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	ftp://relay1.tomsk.gov.ru/pub/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.b0/beta0/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yasou picture book (EPWING V1 format) by SAS
 
 NO_CDROM=	No commercial use, and no redistribution allowed with fee except media and/or shipping cost
+DEPRECATED=		the only remaining mastersite times out
+EXPIRATION_DATE=	2019-10-22
 
 USES=		zip
 NO_BUILD=	yes
