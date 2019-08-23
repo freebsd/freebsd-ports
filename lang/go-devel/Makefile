@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	g20190814
+PORTVERSION=	g20190821
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-devel
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	go14>=1.4:lang/go14
 USES=		shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
-GH_TAGNAME=	ad4ed87f80
+GH_TAGNAME=	ed4f3f3134
 
 SHEBANG_FILES=	misc/benchcmp \
 		misc/nacl/go_nacl_*_exec \
@@ -55,7 +55,6 @@ BINARIES=	go gofmt
 post-patch:
 	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete
 	@${REINPLACE_CMD} -e 's|^if ulimit -T|false \&\& &|' ${WRKSRC}/src/run.bash
-	@${ECHO_CMD} "devel +${GH_TAGNAME}" > ${WRKSRC}/VERSION
 
 do-build:
 	cd ${WRKSRC}/src && \
