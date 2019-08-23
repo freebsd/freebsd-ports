@@ -212,6 +212,5 @@
 %%WWWDIR%%/templates/calm/revision.tmpl
 %%WWWDIR%%/templates/calm/styles.css
 @sample %%WWWDIR%%/templates/calm/user_greeting.tmpl %%WWWDIR%%/templates/calm/user_greeting.tmpl.sample
-@postunexec echo "==> If your are permanently removing this package consider deleting %%PREFIX%%/%%ETCDIR%%!"
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/subversion
 @dir %%ETCDIR%%

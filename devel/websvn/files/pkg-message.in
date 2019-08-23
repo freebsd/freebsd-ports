@@ -7,5 +7,10 @@ To setup WebSVN, please edit the configuration file:
 and modify your web server's configuration to serve
 WebSVN actually!
 EOM
+},
+{ type: remove
+  message: <<EOM
+Consider deleting %%PREFIX%%/%%ETCDIR%%!
+EOM
 }
 ]
