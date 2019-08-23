@@ -1,0 +1,15 @@
+# $FreeBSD$
+#
+# MAINTAINER: portmgr@FreeBSD.org
+#
+
+post-install: <<EOD
+	if [ -n "$(/sbin/sysctl -q compat.linux.osrelease)" ]; then
+		%@/sbin/ldconfig
+	fi
+EOD
+post-deinstall: <<EOD
+	if [ -n "$(/sbin/sysctl -q compat.linux.osrelease)" ]; then
+		%@/sbin/ldconfig
+	fi
+EOD
