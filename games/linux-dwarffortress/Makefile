@@ -3,6 +3,7 @@
 
 PORTNAME=	dwarffortress
 DISTVERSION=	0.44.12
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.bay12games.com/dwarves/
 PKGNAMEPREFIX=	linux-
@@ -28,7 +29,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 RUN_DEPENDS=	linux-${linux_ARGS}-sdl_ttf>0:graphics/linux-${linux_ARGS}-sdl_ttf
 
-USES=		linux tar:bzip2
+USES=		linux:c6 tar:bzip2
 USE_LINUX=	dri gtk2 libsndfile openal-soft sdlimage xorglibs
 
 SUB_FILES=	dwarffortress
