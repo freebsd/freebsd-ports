@@ -366,6 +366,7 @@
 %%WWWDIR%%/go/core/language/el.php
 %%WWWDIR%%/go/core/language/en.php
 %%WWWDIR%%/go/core/language/en_au.php
+%%WWWDIR%%/go/core/language/en_ph.php
 %%WWWDIR%%/go/core/language/en_uk.php
 %%WWWDIR%%/go/core/language/es.php
 %%WWWDIR%%/go/core/language/et.php
@@ -549,6 +550,7 @@
 %%WWWDIR%%/go/core/views/extjs3/form/FormGroup.js
 %%WWWDIR%%/go/core/views/extjs3/form/GridField.js
 %%WWWDIR%%/go/core/views/extjs3/form/HtmlEditor.js
+%%WWWDIR%%/go/core/views/extjs3/form/ImageField.js
 %%WWWDIR%%/go/core/views/extjs3/form/KeyValueEditorGrid.js
 %%WWWDIR%%/go/core/views/extjs3/form/MultiEntityDialog.js
 %%WWWDIR%%/go/core/views/extjs3/form/PasswordGeneratorField.js
@@ -573,6 +575,7 @@
 %%WWWDIR%%/go/core/views/extjs3/groups/GroupDialog.js
 %%WWWDIR%%/go/core/views/extjs3/groups/GroupModuleGrid.js
 %%WWWDIR%%/go/core/views/extjs3/groups/GroupUserGrid.js
+%%WWWDIR%%/go/core/views/extjs3/groups/SelectUserGroup
 %%WWWDIR%%/go/core/views/extjs3/groups/SystemSettingsGroupGrid.js
 %%WWWDIR%%/go/core/views/extjs3/import/CsvMappingDialog.js
 %%WWWDIR%%/go/core/views/extjs3/layout/ResponsiveLayout.js
@@ -623,6 +626,7 @@
 %%WWWDIR%%/go/core/views/extjs3/users/CreateUserPasswordPanel.js
 %%WWWDIR%%/go/core/views/extjs3/users/CreateUserWizard.js
 %%WWWDIR%%/go/core/views/extjs3/users/PermissionsDialog.js
+%%WWWDIR%%/go/core/views/extjs3/users/SelectDialogPanel.js
 %%WWWDIR%%/go/core/views/extjs3/users/SystemSettingsUserGrid.js
 %%WWWDIR%%/go/core/views/extjs3/users/UserCombo.js
 %%WWWDIR%%/go/core/views/extjs3/users/UserDefaultsWindow.js
@@ -635,6 +639,7 @@
 %%WWWDIR%%/go/core/views/extjs3/util/Cookies.js
 %%WWWDIR%%/go/core/views/extjs3/util/Filters.js
 %%WWWDIR%%/go/core/views/extjs3/util/Format.js
+%%WWWDIR%%/go/core/views/extjs3/util/SelectDialog.js
 %%WWWDIR%%/go/core/webclient/CSP.php
 %%WWWDIR%%/go/core/webclient/Extjs3.php
 %%WWWDIR%%/go/modules/business/.git/FETCH_HEAD
@@ -966,7 +971,7 @@
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/Module.js
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/NameField.js
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/PhoneNumbersField.js
-%%WWWDIR%%/go/modules/community/addressbook/views/extjs3/SelectDialog.js
+%%WWWDIR%%/go/modules/community/addressbook/views/extjs3/SelectDialogPanel.js
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/SettingsPanel.js
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/SettingsProfilePanel.js
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/StarButton.js
@@ -982,6 +987,7 @@
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/resources/twitter.png
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/src/style.scss
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/style.css
+%%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/style.css.map
 %%WWWDIR%%/go/modules/community/apikeys/Module.php
 %%WWWDIR%%/go/modules/community/apikeys/controller/Key.php
 %%WWWDIR%%/go/modules/community/apikeys/examples/contact.php
@@ -1306,6 +1312,7 @@
 %%WWWDIR%%/language/holidays/de_ch.php
 %%WWWDIR%%/language/holidays/en.php
 %%WWWDIR%%/language/holidays/en_au.php
+%%WWWDIR%%/language/holidays/en_ph.php
 %%WWWDIR%%/language/holidays/en_uk.php
 %%WWWDIR%%/language/holidays/en_us.php
 %%WWWDIR%%/language/holidays/es.php
