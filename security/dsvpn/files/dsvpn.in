@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: dsvpn
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# dsvpn_enable		   (bool)	Default: NO
+# dsvpn_key		   (str)	Default: %%PREFIX%%/etc/dsvpn.key
+# dsvpn_bind		   (str)	Default: auto
+# dsvpn_port		   (str)	Default: 443
+# dsvpn_remote		   (str)	Default: <empty>
+#
+
+. /etc/rc.subr
+
+name="dsvpn"
+rcvar="${name}_enable"
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/sbin/${name}"
+
+: ${dsvpn_enable:="NO"}
+: ${dsvpn_key:="%%PREFIX%%/etc/dsvpn.key"}
+: ${dsvpn_bind:="auto"}
+: ${dsvpn_port:="443"}
+: ${dsvpn_remote:=""}
+
+required_files=${dsvpn_key}
+
+command=/usr/sbin/daemon
+[ -z ${dsvpn_remote} ] &&
+  command_args_dsvpn="server ${dsvpn_key} ${dsvpn_bind} ${dsvpn_port}" || \
+  command_args_dsvpn="client ${dsvpn_key} ${dsvpn_remote} ${dsvpn_port}"
+command_args="-o /var/log/${name}.log -p ${pidfile} ${procname} ${command_args_dsvpn}"
+
+load_rc_config $name
+run_rc_command "$1"
