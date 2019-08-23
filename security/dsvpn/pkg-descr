@@ -1,0 +1,4 @@
+DSVPN is a Dead Simple VPN, designed to address the most common use case for
+using a VPN with a shared key. It works in 'server' or 'client' mode using TCP.
+
+WWW: https://github.com/jedisct1/dsvpn
