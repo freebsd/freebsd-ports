@@ -318,7 +318,6 @@
 %%DATADIR%%/nexus/images/header_branding.png
 %%DATADIR%%/nexus/images/nexus650x55.png
 %%DATADIR%%/nexus/robots.txt
-@postunexec echo "==> If your are permanently removing this package consider deleting %%RUNDIR%%, %%LOGDIR%%, and %%WORKDIR%% manually!"
 @dir(%%USER%%,%%GROUP%%,750) %%RUNDIR%%
 @dir(%%USER%%,%%GROUP%%,750) %%LOGDIR%%
 @dir(%%USER%%,%%GROUP%%,750) %%WORKDIR%%
