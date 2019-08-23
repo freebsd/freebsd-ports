@@ -13,8 +13,11 @@ COMMENT=	Displays a periodic table of the elements
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig\
+		libfreetype.so:print/freetype2
+
 USES=		pkgconfig
-USE_GNOME=	gtk20
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 
 PORTDOCS=	AUTHORS ChangeLog README
 
@@ -45,13 +48,6 @@ do-install-NLS-on:
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/gperiodic
-	${INSTALL_DATA} ${WRKSRC}/table_data.h \
-		${STAGEDIR}${PREFIX}/share/locale/gperiodic
-	${INSTALL_DATA} ${WRKSRC}/po/gperiodic.pot \
-		${STAGEDIR}${PREFIX}/share/locale/gperiodic
-	${INSTALL_DATA} ${WRKSRC}/po/README \
-		${STAGEDIR}/${PREFIX}/share/locale/gperiodic	
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
