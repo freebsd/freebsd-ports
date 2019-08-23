@@ -1,0 +1,19 @@
+# $FreeBSD$
+#
+# MAINTAINER: portmgr@FreeBSD.org
+#
+
+post-install: <<EOD
+	if ! /usr/sbin/service ldconfig restart >/dev/null; then
+		if [ -z "${INSTALL_AS_USER}" ]; then
+			exit 1
+		fi
+	fi
+EOD
+post-deinstall: <<EOD
+	if ! /usr/sbin/service ldconfig restart >/dev/null; then
+		if [ -z "${INSTALL_AS_USER}" ]; then
+			exit 1
+		fi
+	fi
+EOD
