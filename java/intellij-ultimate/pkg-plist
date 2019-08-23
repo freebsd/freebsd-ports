@@ -10303,6 +10303,9 @@ share/applications/idea.desktop
 %%DATADIR%%/plugins/maven/lib/maven3/lib/guice-4.2.1-no_aop.jar
 %%DATADIR%%/plugins/maven/lib/maven3/lib/j2objc-annotations-1.1.jar
 %%DATADIR%%/plugins/maven/lib/maven3/lib/jansi-1.17.1.jar
+%%DATADIR%%/plugins/maven/lib/maven3/lib/jansi-native/README.txt
+%%DATADIR%%/plugins/maven/lib/maven3/lib/jansi-native/freebsd32/libjansi.so
+%%DATADIR%%/plugins/maven/lib/maven3/lib/jansi-native/freebsd64/libjansi.so
 %%DATADIR%%/plugins/maven/lib/maven3/lib/javax.inject-1.jar
 %%DATADIR%%/plugins/maven/lib/maven3/lib/jcl-over-slf4j-1.7.25.jar
 %%DATADIR%%/plugins/maven/lib/maven3/lib/jcl-over-slf4j.license
