@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	retro12
-DISTVERSION=	2019.6
+DISTVERSION=	2019.7
 CATEGORIES=	lang
 MASTER_SITES=	http://forthworks.com/retro/r/ \
 		https://forthworks.com/retro/r/
@@ -11,7 +11,7 @@ MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Clean, elegant, and pragmatic dialect of Forth
 
 LICENSE=	ISCL
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=	ncurses shebangfix
 
@@ -28,6 +28,8 @@ MAKE_ENV=	DATADIR=${DATADIR} \
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/retro \
+		bin/retro-describe \
+		bin/retro-document \
 		bin/retro-embedimage \
 		bin/retro-extend \
 		bin/retro-muri \
@@ -39,9 +41,8 @@ PORTDATA=	glossary.forth \
 		words.tsv
 
 PORTDOCS=	doc \
-		literate \
-		README.md \
-		RELEASE_NOTES.md
+		README \
+		RELEASE-NOTES
 
 PORTEXAMPLES=	example
 
