@@ -31,5 +31,10 @@ Documentation
 Further documentation can be found in the official Nexus Book at:
   https://books.sonatype.com/nexus-book/%%BOOKVERSION%%/reference/index.html
 EOM
+},
+{ type: remove
+  message: <<EOM
+Consider deleting %%RUNDIR%%, %%LOGDIR%% and %%WORKDIR%% manually!"
+EOM
 }
 ]
