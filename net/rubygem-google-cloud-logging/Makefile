@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-logging
-PORTVERSION=	1.6.6
+PORTVERSION=	1.7.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
