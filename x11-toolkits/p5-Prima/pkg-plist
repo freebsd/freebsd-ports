@@ -228,6 +228,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/label.pl
 %%SITE_ARCH%%/Prima/examples/launch.pl
 %%SITE_ARCH%%/Prima/examples/layered.pl
+%%SITE_ARCH%%/Prima/examples/lineplot.pl
 %%SITE_ARCH%%/Prima/examples/listbox.pl
 %%SITE_ARCH%%/Prima/examples/macro.pl
 %%SITE_ARCH%%/Prima/examples/markup.pl
@@ -281,6 +282,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/linepats.gif
 %%SITE_ARCH%%/Prima/markup.gif
 %%SITE_ARCH%%/Prima/mdi.gif
+%%SITE_ARCH%%/Prima/miterlimit.gif
 %%SITE_ARCH%%/Prima/msgbox.gif
 %%SITE_ARCH%%/Prima/noARGV.pm
 %%SITE_ARCH%%/Prima/noX11.pm
