@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tabulator
-PORTVERSION=	1.24.0
+PORTVERSION=	1.24.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cchardet>=1.0:textproc/py-cchardet@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}click>=6.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ijson>=2.0:devel/py-ijson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonlines>=1.1:devel/py-jsonlines@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openpyxl24>=2.4:textproc/py-openpyxl24@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openpyxl24>=2.4<2.5:textproc/py-openpyxl24@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.8:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy13>=0.9.6:databases/py-sqlalchemy13@${PY_FLAVOR} \
