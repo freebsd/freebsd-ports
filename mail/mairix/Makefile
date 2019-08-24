@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_armv6=	fails to build under emulation: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 BROKEN_armv7=	fails to build under emulation: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 
-USES=		bison gmake ssl
+USES=		bison compiler:c11 gmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	vandry
 
