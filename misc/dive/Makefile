@@ -11,7 +11,7 @@ COMMENT=	Tool for exploring each layer in a docker image
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	wagoodman
 GH_TUPLE=	\
@@ -59,8 +59,6 @@ GH_TUPLE=	\
 		spf13:pflag:v1.0.2:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.2.1:spf13_viper/vendor/github.com/spf13/viper \
 		wagoodman:keybinding:6a824da6df05:wagoodman_keybinding/vendor/github.com/wagoodman/keybinding
-
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
