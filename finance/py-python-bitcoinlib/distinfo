@@ -1,3 +1,3 @@
-TIMESTAMP = 1549630106
-SHA256 (python-bitcoinlib-0.10.1.tar.gz) = 0fe7de6c083e12479eb12d3764ece83e5c73b1c48e806009ee1a1aa02da098cf
-SIZE (python-bitcoinlib-0.10.1.tar.gz) = 135322
+TIMESTAMP = 1566385991
+SHA256 (python-bitcoinlib-0.10.2.tar.gz) = bdb270ded594b8dead58fd6830ad14f880c25ec1fd2ca1be24e9e85decefce04
+SIZE (python-bitcoinlib-0.10.2.tar.gz) = 144193
