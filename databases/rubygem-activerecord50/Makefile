@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel50>=${PORTVERSION}:databases/rubygem-activemodel50 \
 		rubygem-activesupport50>=${PORTVERSION}:devel/rubygem-activesupport50 \
-		rubygem-arel7>=7.0:databases/rubygem-arel7
+		rubygem-arel7>=7.0,1<8,1:databases/rubygem-arel7
 
 USES=		gem
 USE_RUBY=	yes
