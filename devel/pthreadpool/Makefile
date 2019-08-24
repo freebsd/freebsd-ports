@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fxdiv.h:devel/fxdiv
 
-USES=		cmake localbase
+USES=		cmake compiler:c11 localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	Maratyszcza
 GH_TAGNAME=	6673a4c
