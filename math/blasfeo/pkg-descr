@@ -1,0 +1,5 @@
+BLASFEO provides a set of basic linear algebra routines, performance-optimized
+for matrices fitting in cache (i.e. generally up to a couple hundreds size in
+each dimension), as typically encountered in embedded optimization application.
+
+WWW: https://github.com/giaf/blasfeo
