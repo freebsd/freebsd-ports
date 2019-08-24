@@ -2,6 +2,7 @@
 
 PORTNAME=	openjdk11
 PORTVERSION=	11.0.2.9.2
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/glewis/bootstrap-openjdk11
 PKGNAMEPREFIX=	bootstrap-
@@ -26,8 +27,12 @@ JDK_ARCH=	${ARCH}
 
 INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
 
+post-extract:
+	-${MV} ${WRKSRC}/include/bsd ${WRKSRC}/include/freebsd
+
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${INSTALLDIR}
 	@cd ${WRKSRC} && ${COPYTREE_BIN} bin ${INSTALLDIR}
+	@${CHMOD} a+x ${INSTALLDIR}/lib/jspawnhelper
 
 .include <bsd.port.mk>
