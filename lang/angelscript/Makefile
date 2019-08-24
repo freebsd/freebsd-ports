@@ -13,11 +13,12 @@ COMMENT=	AngelCode Scripting Library
 LICENSE=	ZLIB
 
 BROKEN_aarch64=	Does not build: invokes x86 asm
-BROKEN_powerpc64=	Does not build: invokes x86 asm
 BROKEN_sparc64=	Does not build: invokes x86 asm
 
-USES=		alias gmake zip
+USES=		alias compiler:c11 dos2unix gmake zip
 USE_LDCONFIG=	yes
+
+DOS2UNIX_FILES=	../../source/as_config.h
 
 MAKE_ARGS=	CP_SYMLINK="${INSTALL_LIB}"
 
