@@ -1,12 +1,12 @@
 # $FreeBSD$
 
-PORTREVISION=	1
-PKGNAMESUFFIX=	-icu
+PORTREVISION=	0
+PKGNAMESUFFIX=	-hb-view
 
-COMMENT=	Harfbuzz ICU support
+COMMENT=	Harfbuzz hb-view utility
 
 MASTERDIR=	${.CURDIR}/../../print/harfbuzz
 PLIST=		${.CURDIR}/pkg-plist
-HARFBUZZ_SLAVE=	icu
+HARFBUZZ_SLAVE=	hb-view
 
 .include "${MASTERDIR}/Makefile"
