@@ -13,7 +13,7 @@ COMMENT=	Support for creating state machines for attributes on ActiveRecord
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activerecord50>=4.1:databases/rubygem-activerecord50 \
+RUN_DEPENDS=	rubygem-activerecord50>=4.1<6.0:databases/rubygem-activerecord50 \
 		rubygem-state_machines-activemodel>=0.5.0:databases/rubygem-state_machines-activemodel
 
 USES=		gem
