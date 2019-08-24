@@ -75,9 +75,10 @@ RUN_DEPENDS=	rubygem-CFPropertyList>=2.3.1:devel/rubygem-CFPropertyList \
 		rubygem-unf_ext>=0.0.6:textproc/rubygem-unf_ext \
 		rubygem-xml-simple>=1.1.4:textproc/rubygem-xml-simple
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/backup
 
