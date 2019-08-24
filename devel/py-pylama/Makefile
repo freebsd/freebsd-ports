@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mccabe>=0.5.2:devel/py-mccabe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydocstyle>=2.0.0:devel/py-pydocstyle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>=1.5.0:devel/py-pyflakes@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.4+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
