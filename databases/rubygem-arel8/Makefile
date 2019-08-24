@@ -13,10 +13,11 @@ COMMENT=	Relational Algebra for Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt
 
-PORTSCOUT=	limit:^8\.
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
+
+PORTSCOUT=	limit:^8\.
 
 .include <bsd.port.mk>
