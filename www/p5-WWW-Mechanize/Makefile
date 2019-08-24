@@ -22,7 +22,8 @@ RUN_DEPENDS=	p5-CGI>=4.08:www/p5-CGI \
 		p5-HTTP-Server-Simple>=0.35:www/p5-HTTP-Server-Simple \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=5.829:www/p5-libwww
-TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
+TEST_DEPENDS=	p5-HTTP-Daemon>=6.05:www/p5-HTTP-Daemon \
+		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
@@ -30,8 +31,7 @@ TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Output>=0:devel/p5-Test-Output \
 		p5-Test-Taint>=0:devel/p5-Test-Taint \
 		p5-Test-Warn>=0.11:devel/p5-Test-Warn \
-		p5-Test-Warnings>=0:devel/p5-Test-Warnings \
-		p5-HTTP-Daemon>=6.05:www/p5-HTTP-Daemon
+		p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
 USES=		perl5
 USE_PERL5=	configure
