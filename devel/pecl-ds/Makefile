@@ -11,7 +11,7 @@ COMMENT=	Data Structures for PHP
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		localbase php:build,pecl
-USE_PHP=	json
+USES=		localbase php:pecl
+USE_PHP=	json:build
 
 .include <bsd.port.mk>
