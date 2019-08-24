@@ -1,0 +1,17 @@
+[
+{ type: upgrade
+  maximum_version: "1.4.3"
+  message: <<EOD
+Since the 1.4.2 release the behavior of "ip_helper_addresses()" function has
+changed.  Parsing helper-addresses under factory=True won't work anymore as
+expected.
+
+Also the method named "find_objects_w_all_children()" has changed since the
+1.4.0 release.  Former releases used the keyword "all_children" which has been
+replaced with "recurse".
+
+If you use one of those features mentioned above, please migrate your scripts
+to the new format.
+EOD
+}
+]
