@@ -11,6 +11,9 @@ COMMENT=	GitHub Language detection
 
 LICENSE=	MIT
 
+DEPRECATED=	Use textproc/rubygem-github-linguist instead
+EXPIRATION_DATE=2019-08-31
+
 RUN_DEPENDS=	rubygem-charlock_holmes>=0.6.6:textproc/rubygem-charlock_holmes \
 		rubygem-escape_utils>=0.2.4:textproc/rubygem-escape_utils \
 		rubygem-mime-types1>=1.19:misc/rubygem-mime-types1
