@@ -212,7 +212,6 @@ lib/node_modules/npm/lib/config/get-credentials-by-uri.js
 lib/node_modules/npm/lib/config/lifecycle.js
 lib/node_modules/npm/lib/config/load-cafile.js
 lib/node_modules/npm/lib/config/load-prefix.js
-lib/node_modules/npm/lib/config/load-uid.js
 lib/node_modules/npm/lib/config/nerf-dart.js
 lib/node_modules/npm/lib/config/set-credentials-by-uri.js
 lib/node_modules/npm/lib/config/set-user.js
@@ -948,15 +947,11 @@ lib/node_modules/npm/node_modules/clone/README.md
 lib/node_modules/npm/node_modules/clone/clone.iml
 lib/node_modules/npm/node_modules/clone/clone.js
 lib/node_modules/npm/node_modules/clone/package.json
-lib/node_modules/npm/node_modules/cmd-shim/.npmignore
-lib/node_modules/npm/node_modules/cmd-shim/.travis.yml
 lib/node_modules/npm/node_modules/cmd-shim/LICENSE
 lib/node_modules/npm/node_modules/cmd-shim/README.md
 lib/node_modules/npm/node_modules/cmd-shim/index.js
+lib/node_modules/npm/node_modules/cmd-shim/lib/to-batch-syntax.js
 lib/node_modules/npm/node_modules/cmd-shim/package.json
-lib/node_modules/npm/node_modules/cmd-shim/test/00-setup.js
-lib/node_modules/npm/node_modules/cmd-shim/test/basic.js
-lib/node_modules/npm/node_modules/cmd-shim/test/zz-cleanup.js
 lib/node_modules/npm/node_modules/co/History.md
 lib/node_modules/npm/node_modules/co/LICENSE
 lib/node_modules/npm/node_modules/co/Readme.md
@@ -1670,7 +1665,9 @@ lib/node_modules/npm/node_modules/gentle-fs/CHANGELOG.md
 lib/node_modules/npm/node_modules/gentle-fs/LICENSE
 lib/node_modules/npm/node_modules/gentle-fs/README.md
 lib/node_modules/npm/node_modules/gentle-fs/index.js
+lib/node_modules/npm/node_modules/gentle-fs/lib/chown.js
 lib/node_modules/npm/node_modules/gentle-fs/lib/link.js
+lib/node_modules/npm/node_modules/gentle-fs/lib/mkdir.js
 lib/node_modules/npm/node_modules/gentle-fs/lib/rm.js
 lib/node_modules/npm/node_modules/gentle-fs/node_modules/aproba/LICENSE
 lib/node_modules/npm/node_modules/gentle-fs/node_modules/aproba/README.md
@@ -3268,7 +3265,7 @@ lib/node_modules/npm/node_modules/read/LICENSE
 lib/node_modules/npm/node_modules/read/README.md
 lib/node_modules/npm/node_modules/read/lib/read.js
 lib/node_modules/npm/node_modules/read/package.json
-lib/node_modules/npm/node_modules/read-cmd-shim/.npmignore
+lib/node_modules/npm/node_modules/read-cmd-shim/LICENSE
 lib/node_modules/npm/node_modules/read-cmd-shim/README.md
 lib/node_modules/npm/node_modules/read-cmd-shim/index.js
 lib/node_modules/npm/node_modules/read-cmd-shim/package.json
