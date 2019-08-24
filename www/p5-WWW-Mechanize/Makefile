@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Mechanize
-PORTVERSION=	1.91
+PORTVERSION=	1.92
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,7 +30,8 @@ TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Output>=0:devel/p5-Test-Output \
 		p5-Test-Taint>=0:devel/p5-Test-Taint \
 		p5-Test-Warn>=0.11:devel/p5-Test-Warn \
-		p5-Test-Warnings>=0:devel/p5-Test-Warnings
+		p5-Test-Warnings>=0:devel/p5-Test-Warnings \
+		p5-HTTP-Daemon>=6.05:www/p5-HTTP-Daemon
 
 USES=		perl5
 USE_PERL5=	configure
