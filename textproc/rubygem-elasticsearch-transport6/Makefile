@@ -13,6 +13,9 @@ COMMENT=	Ruby client for Elasticsearch
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Use textproc/rubygem-elasticsearch-transport instead
+EXPIRATION_DATE=2019-09-30
+
 RUN_DEPENDS=	rubygem-faraday>=0:www/rubygem-faraday \
 		rubygem-multi_json>=0:devel/rubygem-multi_json
 
