@@ -3,6 +3,7 @@
 PORTNAME=	systemd
 PORTVERSION=	219
 DISTVERSIONSUFFIX=	-62.el7_6.9
+PORTREVISION=	1
 CATEGORIES=	devel linux
 PKGNAMESUFFIX=	-libs
 
@@ -19,7 +20,6 @@ USE_LINUX_RPM=	yes
 LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
 
 post-patch:
-	@${RM} -r ${WRKSRC}/usr/lib/security
-	@${RM} -r ${WRKSRC}/usr/lib64/security
+	@${RM} -r ${WRKSRC}/usr/lib*/libudev.so.* ${WRKSRC}/usr/lib*/security
 
 .include <bsd.port.mk>
