@@ -1551,6 +1551,7 @@
     SUBDIR += py-django-guardian
     SUBDIR += py-django-happenings
     SUBDIR += py-django-haystack
+    SUBDIR += py-django-hierarkey
     SUBDIR += py-django-hijack
     SUBDIR += py-django-htmlmin
     SUBDIR += py-django-js-asset
