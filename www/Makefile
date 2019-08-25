@@ -1880,6 +1880,7 @@
     SUBDIR += py-unit
     SUBDIR += py-url
     SUBDIR += py-urlgrabber
+    SUBDIR += py-urlman
     SUBDIR += py-urlobject
     SUBDIR += py-urlwatch
     SUBDIR += py-user_agent

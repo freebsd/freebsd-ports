@@ -1,0 +1,5 @@
+Replaces things like get_absolute_url with a .urls attribute that can reference
+other URLs and build sensible trees of things, and can then be accessed using
+instance.urls.name.
+
+WWW: https://github.com/andrewgodwin/urlman
