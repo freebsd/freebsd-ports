@@ -30,14 +30,6 @@ etc/mke2fs.conf
 etc/mtab
 @sample etc/nsswitch.conf.sample
 etc/os-release
-etc/pam.d/chfn
-etc/pam.d/chsh
-etc/pam.d/login
-etc/pam.d/remote
-etc/pam.d/runuser
-etc/pam.d/runuser-l
-etc/pam.d/su
-etc/pam.d/su-l
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Debug-7
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Testing-7
@@ -107,13 +99,11 @@ usr/bin/catchsegv
 usr/bin/cd
 usr/bin/chattr
 usr/bin/chcon
-usr/bin/chfn
 usr/bin/chgrp
 usr/bin/chmem
 usr/bin/chmod
 usr/bin/chown
 usr/bin/chrt
-usr/bin/chsh
 usr/bin/cksum
 usr/bin/clear
 usr/bin/col
@@ -159,7 +149,6 @@ usr/bin/fc
 usr/bin/fg
 usr/bin/fgrep
 usr/bin/find
-usr/bin/findmnt
 usr/bin/flock
 usr/bin/fmt
 usr/bin/fold
@@ -210,19 +199,12 @@ usr/bin/ln
 usr/bin/locale
 usr/bin/localedef
 usr/bin/logger
-usr/bin/login
 usr/bin/logname
 usr/bin/look
 usr/bin/ls
 usr/bin/lsattr
 usr/bin/lsb_release
-usr/bin/lsblk
-usr/bin/lscpu
-usr/bin/lsipc
 usr/bin/lslocks
-usr/bin/lslogins
-usr/bin/lsmem
-usr/bin/lsns
 usr/bin/makedb
 usr/bin/mcookie
 usr/bin/md5sum
@@ -266,12 +248,10 @@ usr/bin/rm
 usr/bin/rmdir
 usr/bin/rpcgen
 usr/bin/runcon
-usr/bin/script
 usr/bin/scriptreplay
 usr/bin/sed
 usr/bin/seq
 usr/bin/setarch
-usr/bin/setpriv
 usr/bin/setserial
 usr/bin/setsid
 usr/bin/setterm
@@ -820,9 +800,7 @@ usr/sbin/capsh
 usr/sbin/cfdisk
 usr/sbin/chcpu
 usr/sbin/chroot
-usr/sbin/clock
 usr/sbin/ctrlaltdel
-usr/sbin/debugfs
 usr/sbin/delpart
 usr/sbin/dumpe2fs
 usr/sbin/e2freefrag
@@ -846,7 +824,6 @@ usr/sbin/fstrim
 usr/sbin/getcap
 usr/sbin/getpcaps
 usr/sbin/glibc_post_upgrade.i686
-usr/sbin/hwclock
 usr/sbin/iconvconfig
 usr/sbin/iconvconfig.i686
 usr/sbin/install-info
@@ -873,7 +850,6 @@ usr/sbin/request-key
 usr/sbin/resize2fs
 usr/sbin/resizepart
 usr/sbin/rtcwake
-usr/sbin/runuser
 usr/sbin/sefcontext_compile
 usr/sbin/setcap
 usr/sbin/sfdisk
@@ -887,7 +863,6 @@ usr/sbin/tune2fs
 usr/sbin/wipefs
 usr/sbin/zdump
 usr/sbin/zic
-usr/sbin/zramctl
 usr/share/bash-completion/completions/addpart
 usr/share/bash-completion/completions/blkdiscard
 usr/share/bash-completion/completions/blkid

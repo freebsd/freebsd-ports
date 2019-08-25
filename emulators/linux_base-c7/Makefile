@@ -2,7 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nfilesystem-*:C/:[^:]+$//}
@@ -125,9 +125,14 @@ PLIST_SUB=	LINUXBASE=${LINUXBASE} SYSCTLMIB=${SYSCTLMIB}
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-REMOVE_DIRS=	boot home media mnt proc root run sys tmp var/log var/tmp
-REMOVE_FILES=	bin/su etc/exports etc/group etc/gshadow etc/motd \
-		etc/passwd etc/printcap etc/protocols etc/services etc/shadow
+REMOVE_DIRS=	boot etc/pam.d home media mnt proc root run sys tmp var/log \
+		var/tmp
+REMOVE_FILES=	bin/chfn bin/chsh bin/findmnt bin/login bin/lsblk bin/lscpu \
+		bin/lsipc bin/lslogins bin/lsmem bin/lsns bin/script \
+		bin/setpriv bin/su \
+		etc/exports etc/group etc/gshadow etc/motd \
+		etc/passwd etc/printcap etc/protocols etc/services etc/shadow \
+		sbin/clock sbin/debugfs sbin/hwclock sbin/runuser sbin/zramctl
 
 .include <bsd.port.options.mk>
 
