@@ -1498,6 +1498,7 @@
     SUBDIR += py-dj22-django_csp
     SUBDIR += py-dj22-django-debug-toolbar
     SUBDIR += py-dj22-django-filter
+    SUBDIR += py-dj22-django-jquery-js
     SUBDIR += py-dj22-django-js-asset
     SUBDIR += py-dj22-django-mptt
     SUBDIR += py-dj22-django-prometheus
