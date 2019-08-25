@@ -1,0 +1,6 @@
+rules is a tiny but powerful app providing object-level permissions to Django,
+without requiring a database. At its core, it is a generic framework for
+building rule-based systems, similar to decision trees. It can also be used as a
+standalone library in other contexts and frameworks.
+
+WWW: https://github.com/dfunckt/django-rules
