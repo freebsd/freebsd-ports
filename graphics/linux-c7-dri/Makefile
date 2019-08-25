@@ -11,7 +11,7 @@ COMMENT=	Mesa libGL runtime libraries (Linux CentOS ${LINUX_DIST_VER})
 
 USES=		linux:c7
 USE_LDCONFIG=	yes
-USE_LINUX=	expat libelf libglvnd libpciaccess wayland xorglibs
+USE_LINUX=	elfutils-libelf expat libglvnd libpciaccess wayland xorglibs
 USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	freeglut-3.0.0-8.el7 \

@@ -64,6 +64,7 @@ linux_dbusglib_DEP=		linux-${linux_ARGS}-dbus-glib>0:devel/linux-${linux_ARGS}-d
 linux_dbuslibs_DEP=		linux-${linux_ARGS}-dbus-libs>0:devel/linux-${linux_ARGS}-dbus-libs
 linux_devtools_DEP=		linux-${linux_ARGS}-devtools>0:devel/linux-${linux_ARGS}-devtools
 linux_dri_DEP=			linux-${linux_ARGS}-dri>0:graphics/linux-${linux_ARGS}-dri
+linux_elfutils-libelf_DEP=	linux-${linux_ARGS}-elfutils-libelf>0:devel/linux-${linux_ARGS}-elfutils-libelf
 linux_expat_DEP=		linux-${linux_ARGS}-expat>0:textproc/linux-${linux_ARGS}-expat
 .if ${linux_ARGS} == c6
 linux_flac_DEP=			linux-${linux_ARGS}-flac>0:audio/linux-${linux_ARGS}-flac
@@ -88,7 +89,6 @@ linux_libaudiofile_DEP=		linux-${linux_ARGS}-audiofile>0:audio/linux-${linux_ARG
 .else
 linux_libaudiofile_DEP=		linux-${linux_ARGS}-audiofile>0:audio/linux-${linux_ARGS}-audiofile
 .endif
-linux_libelf_DEP=		linux-${linux_ARGS}-elfutils-libelf>0:devel/linux-${linux_ARGS}-libelf
 linux_libgcrypt_DEP=		linux-${linux_ARGS}-libgcrypt>0:security/linux-${linux_ARGS}-libgcrypt
 linux_libgfortran_DEP=		linux-${linux_ARGS}-libgfortran>0:devel/linux-${linux_ARGS}-libgfortran
 linux_libglvnd_DEP=		linux-${linux_ARGS}-libglvnd>0:graphics/linux-${linux_ARGS}-libglvnd
