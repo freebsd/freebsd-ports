@@ -150,6 +150,7 @@
     SUBDIR += blis
     SUBDIR += blitz++
     SUBDIR += blocksolve95
+    SUBDIR += bonmin
     SUBDIR += boolector
     SUBDIR += bsdnt
     SUBDIR += btor2tools
