@@ -3,7 +3,7 @@
 PORTNAME=	lz4
 PORTVERSION=	1.7.5
 DISTVERSIONSUFFIX=	-2.el7
-CATEGORIES=	devel linux
+CATEGORIES=	archivers linux
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	LZ4 compression library and utilities (Linux CentOS ${LINUX_DIST_VER})
