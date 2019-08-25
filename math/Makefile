@@ -190,6 +190,7 @@
     SUBDIR += convertall
     SUBDIR += coq
     SUBDIR += couenne
+    SUBDIR += cppad
     SUBDIR += crlibm
     SUBDIR += cryptominisat
     SUBDIR += curv
