@@ -65,6 +65,7 @@ linux_dbuslibs_DEP=		linux-${linux_ARGS}-dbus-libs>0:devel/linux-${linux_ARGS}-d
 linux_devtools_DEP=		linux-${linux_ARGS}-devtools>0:devel/linux-${linux_ARGS}-devtools
 linux_dri_DEP=			linux-${linux_ARGS}-dri>0:graphics/linux-${linux_ARGS}-dri
 linux_elfutils-libelf_DEP=	linux-${linux_ARGS}-elfutils-libelf>0:devel/linux-${linux_ARGS}-elfutils-libelf
+linux_elfutils-libs_DEP=	linux-${linux_ARGS}-elfutils-libs>0:devel/linux-${linux_ARGS}-elfutils-libs
 linux_expat_DEP=		linux-${linux_ARGS}-expat>0:textproc/linux-${linux_ARGS}-expat
 .if ${linux_ARGS} == c6
 linux_flac_DEP=			linux-${linux_ARGS}-flac>0:audio/linux-${linux_ARGS}-flac
