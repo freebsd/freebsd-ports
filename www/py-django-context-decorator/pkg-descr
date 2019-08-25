@@ -1,0 +1,4 @@
+Python package for Django removing the need to call
+super().get_context_data(**kwargs) in nearly every Django view.
+
+WWW: https://github.com/rixx/django-context-decorator
