@@ -1896,6 +1896,7 @@
     SUBDIR += py-webunit
     SUBDIR += py-werkzeug
     SUBDIR += py-wfuzz
+    SUBDIR += py-whitenoise
     SUBDIR += py-wikipedia
     SUBDIR += py-wikitools
     SUBDIR += py-ws4py
