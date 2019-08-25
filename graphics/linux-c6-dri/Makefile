@@ -12,7 +12,7 @@ COMMENT=	Mesa libGL runtime libraries (Linux CentOS ${LINUX_DIST_VER})
 
 USES=		linux:c6
 USE_LDCONFIG=	yes
-USE_LINUX=	expat libelf libpciaccess xorglibs
+USE_LINUX=	elfutils-libelf expat libpciaccess xorglibs
 USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	mesa-libGL-${DISTVERSIONFULL} \
