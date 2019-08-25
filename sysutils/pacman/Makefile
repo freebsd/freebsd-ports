@@ -51,6 +51,10 @@ NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300000
+BROKEN=		does not build (undefined reference to MD5_Final)
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|m4|gm4|' ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e '2 s/.*/exit 0/' ${WRKSRC}/build-aux/missing
