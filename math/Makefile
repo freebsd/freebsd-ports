@@ -277,6 +277,7 @@
     SUBDIR += hexcalc
     SUBDIR += hipmcl
     SUBDIR += hmat-oss
+    SUBDIR += hpipm
     SUBDIR += hs-Agda
     SUBDIR += hs-semigroups
     SUBDIR += ignition-math
