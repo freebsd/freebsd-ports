@@ -13,7 +13,7 @@ COMMENT=	Java Development Kit 11
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 
 USES=		tar:xz
 
