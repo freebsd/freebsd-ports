@@ -1848,6 +1848,7 @@
     SUBDIR += py-rhodecode
     SUBDIR += py-rollbar
     SUBDIR += py-routes
+    SUBDIR += py-rules
     SUBDIR += py-scgi
     SUBDIR += py-scrapy
     SUBDIR += py-seafdav
