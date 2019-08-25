@@ -855,6 +855,7 @@
     SUBDIR += superlu
     SUBDIR += superlu_mt
     SUBDIR += symmetrica
+    SUBDIR += symphony
     SUBDIR += tablix
     SUBDIR += taucs
     SUBDIR += tblis

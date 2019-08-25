@@ -1,0 +1,9 @@
+SYMPHONY is an open-source solver for mixed-integer linear programs (MILPs)
+written in C. It can be used in four different main modes:
+* As a callable library through either the native C interface or through the
+  Osi.
+* As an interactive solver using a command-line interface.
+* As a framework to build customized solvers for specific problem classes.
+* Through a number of different modeling languages: AMPL, GMPL, GAMS, PuLP.
+
+WWW: https://projects.coin-or.org/SYMPHONY
