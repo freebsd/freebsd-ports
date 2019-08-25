@@ -10,8 +10,6 @@ usr/lib/libsystemd-login.so.0
 usr/lib/libsystemd-login.so.0.9.3
 usr/lib/libsystemd.so.0
 usr/lib/libsystemd.so.0.6.0
-usr/lib/libudev.so.1
-usr/lib/libudev.so.1.6.2
 usr/lib64/libnss_myhostname.so.2
 usr/lib64/libnss_mymachines.so.2
 usr/lib64/libsystemd-daemon.so.0
@@ -24,5 +22,3 @@ usr/lib64/libsystemd-login.so.0
 usr/lib64/libsystemd-login.so.0.9.3
 usr/lib64/libsystemd.so.0
 usr/lib64/libsystemd.so.0.6.0
-usr/lib64/libudev.so.1
-usr/lib64/libudev.so.1.6.2
