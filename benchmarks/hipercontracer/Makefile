@@ -20,7 +20,7 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs
 
-USES=		tar:xz cmake shebangfix python
+USES=		cmake compiler:c++14-lang python shebangfix tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/man
