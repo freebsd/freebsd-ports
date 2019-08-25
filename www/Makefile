@@ -1554,6 +1554,7 @@
     SUBDIR += py-django-hierarkey
     SUBDIR += py-django-hijack
     SUBDIR += py-django-htmlmin
+    SUBDIR += py-django-i18nfield
     SUBDIR += py-django-js-asset
     SUBDIR += py-django-json-rpc
     SUBDIR += py-django-jsonfield
