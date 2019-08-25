@@ -8,4 +8,4 @@ necessary conversions (for example, from PPM to Doom picture format).  In
 addition, DeuTex has functions such as merging WADs, etc.  If you're doing
 any WAD hacking beyond level editing, DeuTex is a must.
 
-WWW: http://www.teaser.fr/~amajorel/deutex/
+WWW: https://github.com/Doom-Utils/deutex
