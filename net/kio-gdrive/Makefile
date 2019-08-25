@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kio-gdrive
-DISTVERSION=	1.2.6
+DISTVERSION=	1.2.7
 CATEGORIES=	net kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -11,8 +11,6 @@ COMMENT=	KDE IOSlave for accessing gdrive
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		Does not build with current (19.08) release of libkgapi
 
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain \
 		libaccounts-qt5.so:net-im/libaccounts-qt5 \
