@@ -5,7 +5,7 @@
  # Space-separated list of directories to backup, relative to /. This is a required option.
  # Default: unset
 -#backuptargets="var etc home root"
-+#backuptargets="var etc home root usr/home"
++#backuptargets="var etc root usr/home"
  
  # tarsnap
  # What command to call for 'tarsnap'.

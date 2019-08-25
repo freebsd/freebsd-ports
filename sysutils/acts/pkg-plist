@@ -1,2 +1,3 @@
 bin/acts
 @sample etc/acts.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/README.md
