@@ -1,5 +1,7 @@
-TIMESTAMP = 1553143931
+TIMESTAMP = 1566697022
 SHA256 (bootstrap-openjdk11-amd64-11.0.2.9.2.tar.xz) = e53f16a33fca82db960b68ea200b6146eaf8b3ec8b09f5fe1c7711d926d94ffa
 SIZE (bootstrap-openjdk11-amd64-11.0.2.9.2.tar.xz) = 102199460
 SHA256 (bootstrap-openjdk11-i386-11.0.2.9.2.tar.xz) = 68b84741d7b8a7241fb30614881f15db3c174d973f999d34e0f53aca6190e00f
 SIZE (bootstrap-openjdk11-i386-11.0.2.9.2.tar.xz) = 96936056
+SHA256 (bootstrap-openjdk11-powerpc64-11.0.2.9.2.tar.xz) = 4ac1cfc66da594d981dc8d953f818bd6a83f69567e562212f2507e342c583aac
+SIZE (bootstrap-openjdk11-powerpc64-11.0.2.9.2.tar.xz) = 102988560
