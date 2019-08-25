@@ -1,0 +1,5 @@
+Couenne (Convex Over and Under ENvelopes for Nonlinear Estimation) is
+a branch&bound algorithm to solve Mixed-Integer Nonlinear Programming (MINLP)
+problems.
+
+WWW: https://projects.coin-or.org/Couenne

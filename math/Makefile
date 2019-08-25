@@ -188,6 +188,7 @@
     SUBDIR += concorde
     SUBDIR += convertall
     SUBDIR += coq
+    SUBDIR += couenne
     SUBDIR += crlibm
     SUBDIR += cryptominisat
     SUBDIR += curv
