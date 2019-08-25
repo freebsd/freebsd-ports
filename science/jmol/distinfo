@@ -1,6 +1,6 @@
-TIMESTAMP = 1566200256
-SHA256 (Jmol-14.29.51-full.tar.gz) = 9b962e28b72234a287409d2779ced572389aeed0ae3a7802b67d640e7a44f095
-SIZE (Jmol-14.29.51-full.tar.gz) = 132500587
+TIMESTAMP = 1566760699
+SHA256 (Jmol-14.29.52-full.tar.gz) = cdadfc4b0c76f50b5a6a21758f3c2ae3c1c064329c8e871e8f2d919f8521f31f
+SIZE (Jmol-14.29.52-full.tar.gz) = 132500903
 SHA256 (selfSignedCertificate.cer) = 0fa14fd5f21593a328ba4439ac17b3b507969d71a2734e392239b83ae8ec2920
 SIZE (selfSignedCertificate.cer) = 735
 SHA256 (selfSignedCertificate.store) = 81b69722530d94dc599ce79382a3386cce518baa7ab79fbb530d13483b51bed5
