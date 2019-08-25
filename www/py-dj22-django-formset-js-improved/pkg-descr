@@ -1,0 +1,6 @@
+This is a fork of django-formset-js that adds support for reordering and nested
+formsets.
+
+A wrapper for a JavaScript formset helper.
+
+WWW: https://github.com/pretix/django-formset-js
