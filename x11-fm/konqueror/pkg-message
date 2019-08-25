@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+If you get wrong colors when watching html5 videos, this is probably because
+your system does not support hardware acceleration (see bug 237277): you can
+disable it by starting the browser from command line with the --disable-gpu
+option.
+EOM
+}
+]
