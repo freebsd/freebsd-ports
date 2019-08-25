@@ -1,3 +1,3 @@
-TIMESTAMP = 1566247219
-SHA256 (fetchmail-6.4.0.rc2.tar.xz) = b90d2874d9710d2e2118e9210c55b4b094dcb872c6baedc97cea7a9bc411b988
-SIZE (fetchmail-6.4.0.rc2.tar.xz) = 1241744
+TIMESTAMP = 1566724627
+SHA256 (fetchmail-6.4.0.rc3.tar.xz) = 3ef9355263c2ce66166785278d6d1207ae1c2ebf9ec16e259f4d554a0562e6a5
+SIZE (fetchmail-6.4.0.rc3.tar.xz) = 1254100
