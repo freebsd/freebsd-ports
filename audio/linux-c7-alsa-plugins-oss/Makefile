@@ -4,6 +4,7 @@
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.1.6
 DISTVERSIONSUFFIX=	-1.el7
+PORTREVISION=	1
 CATEGORIES=	audio linux
 PKGNAMESUFFIX=	-oss
 
@@ -24,5 +25,8 @@ DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${RM} -r ${WRKSRC}/etc ${WRKSRC}/usr/share/alsa
 
 .include <bsd.port.mk>
