@@ -3,7 +3,7 @@
 PORTNAME=	elfutils
 PORTVERSION=	0.172
 DISTVERSIONSUFFIX=	-2.el7
-CATEGORIES=	devel
+CATEGORIES=	devel linux
 PKGNAMESUFFIX=	-libelf
 
 MAINTAINER=	emulation@FreeBSD.org
