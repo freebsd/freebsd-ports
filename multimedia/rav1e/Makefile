@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190821
+PORTVERSION=	s20190824
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	2b20894d
+GH_TAGNAME=	dc34123f
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler32-1.0.3 \
@@ -45,7 +45,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		chrono-0.4.7 \
 		clang-sys-0.28.1 \
 		clap-2.33.0 \
-		clicolors-control-1.0.0 \
+		clicolors-control-1.0.1 \
 		cloudabi-0.0.3 \
 		color_quant-1.0.1 \
 		console-0.7.7 \
@@ -63,7 +63,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		deflate-0.7.20 \
 		difference-2.0.0 \
 		either-1.5.2 \
-		encode_unicode-0.3.5 \
+		encode_unicode-0.3.6 \
 		env_logger-0.6.2 \
 		err-derive-0.1.5 \
 		error-chain-0.10.0 \
@@ -147,7 +147,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		smallvec-0.6.10 \
 		strsim-0.8.0 \
 		syn-0.15.44 \
-		syn-1.0.3 \
+		syn-1.0.4 \
 		synstructure-0.10.2 \
 		termcolor-1.0.5 \
 		termios-0.3.1 \
