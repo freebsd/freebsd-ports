@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	fetchmail
-DISTVERSION=	6.4.0.rc2
+DISTVERSION=	6.4.0.rc3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/${PORTNAME}/branch_6.4/
 PKGNAMESUFFIX=	64
@@ -15,6 +15,7 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 .if empty(MASTERDIR)
+PATCH_STRIP=	-p1
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		cpe gmake tar:xz ssl
