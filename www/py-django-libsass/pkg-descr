@@ -1,0 +1,6 @@
+django-libsass builds on libsass-python to make @import paths aware of Django's
+staticfiles mechanism, and provides a filter module for django-compressor which
+uses the libsass-python API directly, avoiding the overheads of calling an
+external executable to do the compilation.
+
+WWW: https://github.com/torchbox/django-libsass
