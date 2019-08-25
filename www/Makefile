@@ -1532,6 +1532,7 @@
     SUBDIR += py-django-configurations
     SUBDIR += py-django-constance
     SUBDIR += py-django-contact-form
+    SUBDIR += py-django-context-decorator
     SUBDIR += py-django-contrib-comments
     SUBDIR += py-django-cors-headers
     SUBDIR += py-django-countries
