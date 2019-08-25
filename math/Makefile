@@ -159,6 +159,7 @@
     SUBDIR += calcoo
     SUBDIR += calctool
     SUBDIR += cantor
+    SUBDIR += casadi
     SUBDIR += cbc
     SUBDIR += cblas
     SUBDIR += ccmath
