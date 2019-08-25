@@ -33,6 +33,7 @@ etc/os-release
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Debug-7
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Testing-7
+etc/pki/tls/openssl.cnf
 etc/prelink.conf.d/nss-softokn-prelink.conf
 etc/profile
 etc/profile.d/colorgrep.csh
@@ -316,6 +317,10 @@ usr/bin/whoami
 usr/bin/write
 usr/bin/xargs
 usr/bin/yes
+usr/lib/.libcrypto.so.1.0.2k.hmac
+usr/lib/.libcrypto.so.10.hmac
+usr/lib/.libssl.so.1.0.2k.hmac
+usr/lib/.libssl.so.10.hmac
 usr/lib/audit/sotruss-lib.so
 usr/lib/db4.7.25/libdb.so
 usr/lib/db4.7.25/libdb_cxx.so
@@ -615,6 +620,8 @@ usr/lib/libcom_err.so.2
 usr/lib/libcom_err.so.2.1
 usr/lib/libcrypt-2.17.so
 usr/lib/libcrypt.so.1
+usr/lib/libcrypto.so.1.0.2k
+usr/lib/libcrypto.so.10
 usr/lib/libdb-4.7.so
 usr/lib/libdb-5.3.so
 usr/lib/libdb-5.so
@@ -743,6 +750,8 @@ usr/lib/libselinux.so.1
 usr/lib/libsepol.so.1
 usr/lib/libslang.so.2
 usr/lib/libslang.so.2.2.4
+usr/lib/libssl.so.1.0.2k
+usr/lib/libssl.so.10
 usr/lib/libstdc++.so.5
 usr/lib/libstdc++.so.5.0.7
 usr/lib/libstdc++.so.6
@@ -763,6 +772,17 @@ usr/lib/locale/locale-archive
 usr/lib/lsb/init-functions
 usr/lib/lsb/install_initd
 usr/lib/lsb/remove_initd
+usr/lib/openssl/engines/lib4758cca.so
+usr/lib/openssl/engines/libaep.so
+usr/lib/openssl/engines/libatalla.so
+usr/lib/openssl/engines/libcapi.so
+usr/lib/openssl/engines/libchil.so
+usr/lib/openssl/engines/libcswift.so
+usr/lib/openssl/engines/libgmp.so
+usr/lib/openssl/engines/libnuron.so
+usr/lib/openssl/engines/libpadlock.so
+usr/lib/openssl/engines/libsureware.so
+usr/lib/openssl/engines/libubsec.so
 usr/lib/rtkaio/i686/nosegneg/librt.so.1
 usr/lib/rtkaio/i686/nosegneg/librtkaio-2.17.so
 usr/lib/rtkaio/librt.so.1
@@ -1728,6 +1748,7 @@ usr/share/licenses/gmp-6.0.0/COPYINGv2
 usr/share/licenses/gmp-6.0.0/COPYINGv3
 usr/share/licenses/krb5-libs-1.15.1/LICENSE
 usr/share/licenses/libsepol-2.5/COPYING
+usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/af/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/af/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/af/LC_MESSAGES/glib20.mo
@@ -2677,6 +2698,9 @@ var/mail
 @dir etc/krb5.conf.d
 @dir etc/ld.so.conf.d
 @dir etc/opt
+@dir etc/pki/tls/certs
+@dir etc/pki/tls/misc
+@dir etc/pki/tls/private
 @dir etc/pm/config.d
 @dir etc/pm/power.d
 @dir etc/pm/sleep.d

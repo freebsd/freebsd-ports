@@ -125,7 +125,7 @@ linux_openmotif_DEP=		linux-${linux_ARGS}-motif>0:x11-toolkits/linux-${linux_ARG
 .if ${linux_ARGS} == c6
 linux_openssl_DEP=		linux-${linux_ARGS}-openssl>0:security/linux-${linux_ARGS}-openssl
 .else
-linux_openssl_DEP=		linux-${linux_ARGS}-openssl-libs>0:security/linux-${linux_ARGS}-openssl
+linux_openssl_DEP=		# empty
 .endif
 linux_p11-kit_DEP=		linux-${linux_ARGS}-p11-kit>0:security/linux-${linux_ARGS}-p11-kit
 linux_pango_DEP=		linux-${linux_ARGS}-pango>0:x11-toolkits/linux-${linux_ARGS}-pango
