@@ -12879,3 +12879,6 @@ palm/makeztxt|sysutils/makeztxt|2019-08-20|Move to more applicable category
 palm/mdbconv|databases/mdbconv|2019-08-20|Move to more applicable category
 palm/palm-db-tools|databases/palm-db-tools|2019-08-20|Move to more applicable category
 palm/jpilot-picsnvideos|comms/jpilot-picsnvideos|2019-08-20|Move to more applicable category
+devel/linux-c6-libelf|devel/linux-c6-elfutils-libelf|2019-08-25|Moved to match package name
+devel/linux-c7-libelf|devel/linux-c7-elfutils-libelf|2019-08-25|Moved to match package name
+security/linux-c7-openssl||2019-08-25|Merged into linux_base-c7
