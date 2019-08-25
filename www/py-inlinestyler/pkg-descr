@@ -1,0 +1,17 @@
+inlinestyler is an easy way to locally inline CSS into an HTML email message.
+
+Styling HTML email is a black art. CSS works, but only when it's been placed
+inline on the individual elements (and event then, not always) - which makes
+development frustrating, and iteration slow.
+
+The general solution is to use an inlining service, which takes a message with
+the CSS placed externally, and rewrites it so that all CSS is applied to the
+individual elements. The most widely used of these services - and as far as I
+can tell, the one that powers CampaignMonitor - is Premailer. It's a great
+service, and the guys behind it put a lot of work into keeping it up to date
+with the most recent discoveries in what works and what doesn't.
+
+inlinestyler takes (most) of the functionality of Premailer, and makes it
+available locally, accessible without having call a remote service.
+
+WWW: https://github.com/dlanger/inlinestyler
