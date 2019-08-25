@@ -1453,6 +1453,7 @@
     SUBDIR += linux-c7-sdl12
     SUBDIR += linux-c7-sdl20
     SUBDIR += linux-c7-strace
+    SUBDIR += linux-c7-systemd-libs
     SUBDIR += linux-ltp
     SUBDIR += linux_libusb
     SUBDIR += lion
