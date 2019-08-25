@@ -1,0 +1,7 @@
+This is yet another way to store multi-lingual content in Django. In contrast to
+other options like django-hvad, django-modeltranslation or django-parler it does
+not require additonal database tables and you can reconfigure the available
+languages without any changes to the database schema. In constrast to nece, it
+is not specific to PostgreSQL.
+
+WWW: https://github.com/raphaelm/django-i18nfield
