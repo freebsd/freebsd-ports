@@ -3,13 +3,15 @@
 
 PORTNAME=	ondir
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://swapoff.org/files/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Automatically executes scripts as you traverse directories
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 ALL_TARGET=	${PORTNAME}
 MAKE_ARGS=	PREFIX="${PREFIX}" \
