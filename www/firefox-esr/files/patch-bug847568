@@ -4,8 +4,8 @@ diff --git config/system-headers.mozbuild config/system-headers.mozbuild
 index 7620b4d00623..09d3db5ca8c0 100644
 --- config/system-headers.mozbuild
 +++ config/system-headers.mozbuild
-@@ -1312,6 +1312,19 @@ if not CONFIG['MOZ_TREE_PIXMAN']:
-         'pixman.h',
+@@ -1300,6 +1300,19 @@ if CONFIG['MOZ_ENABLE_CONTENTMANAGER']:
+         'SelectSingleContentItemPage.h',
      ]
  
 +if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
@@ -28,7 +28,7 @@ diff --git dom/base/moz.build dom/base/moz.build
 index 8e19020315ae..2fcdbb6f7b42 100644
 --- dom/base/moz.build
 +++ dom/base/moz.build
-@@ -470,6 +470,9 @@ if CONFIG['MOZ_BUILD_APP'] in ['browser', 'mobile/android', 'xulrunner']:
+@@ -495,6 +495,9 @@ if CONFIG['MOZ_BUILD_APP'] in ['browser', 'mobile/android', 'xulrunner']:
  if CONFIG['MOZ_X11']:
      CXXFLAGS += CONFIG['TK_CFLAGS']
  
@@ -72,10 +72,10 @@ diff --git gfx/harfbuzz/README-mozilla gfx/harfbuzz/README-mozilla
 index 22c76a7df020..a01490bd49ee 100644
 --- gfx/harfbuzz/README-mozilla
 +++ gfx/harfbuzz/README-mozilla
-@@ -19,3 +19,8 @@ the mozilla tree.
+@@ -15,3 +15,8 @@ from within the gfx/harfbuzz directory.
  
  If the collection of source files changes, manual updates to moz.build may be
- needed, as we don't use the upstream makefiles.
+ needed as we don't use the upstream makefiles.
 +
 +The in-tree copy may be omitted during build by --with-system-harfbuzz.
 +Make sure to keep pkg-config version check within toolkit/moz.configure in sync
@@ -111,7 +111,7 @@ diff --git gfx/skia/generate_mozbuild.py gfx/skia/generate_mozbuild.py
 index e06ae3457a47..93faa61594a3 100755
 --- gfx/skia/generate_mozbuild.py
 +++ gfx/skia/generate_mozbuild.py
-@@ -135,6 +135,9 @@ if CONFIG['CLANG_CXX'] or CONFIG['CLANG_CL']:
+@@ -148,6 +148,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
      ]
  
@@ -125,7 +125,7 @@ diff --git gfx/skia/moz.build gfx/skia/moz.build
 index 2118677ca3a8..e4978b413784 100644
 --- gfx/skia/moz.build
 +++ gfx/skia/moz.build
-@@ -780,6 +780,9 @@ if CONFIG['CLANG_CXX'] or CONFIG['CLANG_CL']:
+@@ -822,6 +822,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
      ]
  
@@ -139,7 +139,7 @@ diff --git gfx/thebes/moz.build gfx/thebes/moz.build
 index 56f1b9fe3f4b..0ac1100b0df3 100644
 --- gfx/thebes/moz.build
 +++ gfx/thebes/moz.build
-@@ -267,7 +267,13 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk2', 'gtk3'):
+@@ -288,7 +288,13 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'gtk3':
  
  LOCAL_INCLUDES += CONFIG['SKIA_INCLUDES']
  
@@ -170,7 +170,7 @@ diff --git netwerk/dns/moz.build netwerk/dns/moz.build
 index 79c26e3e7001..c4d93bc5f7dc 100644
 --- netwerk/dns/moz.build
 +++ netwerk/dns/moz.build
-@@ -73,3 +73,6 @@ USE_LIBS += ['icu']
+@@ -76,3 +76,6 @@ USE_LIBS += ['icu']
  
  if CONFIG['CC_TYPE'] in ('clang', 'gcc'):
      CXXFLAGS += ['-Wno-error=shadow']
@@ -181,7 +181,7 @@ diff --git old-configure.in old-configure.in
 index 95a58b634593..b614eef85c89 100644
 --- old-configure.in
 +++ old-configure.in
-@@ -4333,6 +4333,27 @@ dnl ========================================================
+@@ -3951,6 +3951,27 @@ dnl ========================================================
  
  AC_SUBST(MOZ_LINUX_32_SSE2_STARTUP_ERROR)
  
@@ -198,7 +198,7 @@ index 95a58b634593..b614eef85c89 100644
 +                               * 100 + GR2_VERSION_BUGFIX >= \
 +                               (major) * 10000 + (minor) * 100 + (bugfix) )
 +                   ], [
-+                     #if !GR2_VERSION_REQUIRE(1,3,10)
++                     #if !GR2_VERSION_REQUIRE(1,3,12)
 +                     #error "Insufficient graphite2 version."
 +                     #endif
 +                   ], [],
@@ -213,9 +213,9 @@ diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 24f940e1ed7e..079a575adec3 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -231,6 +231,12 @@ if CONFIG['MOZ_SYSTEM_JPEG']:
- if CONFIG['MOZ_SYSTEM_PNG']:
-     OS_LIBS += CONFIG['MOZ_PNG_LIBS']
+@@ -226,6 +226,12 @@ if CONFIG['MOZ_SYSTEM_PNG']:
+ if CONFIG['MOZ_SYSTEM_WEBP']:
+     OS_LIBS += CONFIG['MOZ_WEBP_LIBS']
  
 +if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
 +    OS_LIBS += CONFIG['MOZ_GRAPHITE2_LIBS']
@@ -223,14 +223,14 @@ index 24f940e1ed7e..079a575adec3 100644
 +if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
 +    OS_LIBS += CONFIG['MOZ_HARFBUZZ_LIBS']
 +
- if CONFIG['MOZ_SYSTEM_HUNSPELL']:
-     OS_LIBS += CONFIG['MOZ_HUNSPELL_LIBS']
+ if CONFIG['MOZ_SYSTEM_LIBEVENT']:
+     OS_LIBS += CONFIG['MOZ_LIBEVENT_LIBS']
  
 diff --git toolkit/moz.configure toolkit/moz.configure
 index 9297e4d6f501..d8e273887e4b 100644
 --- toolkit/moz.configure
 +++ toolkit/moz.configure
-@@ -1065,6 +1065,26 @@ add_old_configure_assignment('FT2_LIBS',
+@@ -894,6 +894,26 @@ add_old_configure_assignment('FT2_LIBS',
  add_old_configure_assignment('FT2_CFLAGS',
                               ft2_info.cflags)
  
@@ -249,11 +249,11 @@ index 9297e4d6f501..d8e273887e4b 100644
 +option('--with-system-harfbuzz',
 +       help="Use system harfbuzz (located with pkgconfig)")
 +
-+system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 1.7.4',
++system_harfbuzz = pkg_check_modules('MOZ_HARFBUZZ', 'harfbuzz >= 2.4.0',
 +                                    when='--with-system-harfbuzz')
 +
 +set_config('MOZ_SYSTEM_HARFBUZZ', depends_if(system_harfbuzz)(lambda _: True))
 +
- # Mortar
+ # Marionette remote protocol
  # ==============================================================
- option('--enable-mortar', help='Enable mortar extension')
+ #
