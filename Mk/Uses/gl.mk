@@ -46,5 +46,10 @@ LIB_DEPENDS+=	${_GL_${_component}_LIB_DEPENDS}
 .endif
 .endfor
 
+# We onlu need USES=xorg if we want USE_XORG modules
+.if defined(USE_XORG) && !empty(USE_XORG)
+.include "${USESDIR}/xorg.mk"
+.endif
+
 # _INCLUDE_USES_GL_MK
 .endif

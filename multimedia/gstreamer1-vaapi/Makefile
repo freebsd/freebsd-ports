@@ -18,12 +18,12 @@ LIB_DEPENDS=	libva.so:multimedia/libva
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		compiler:c11 gettext-runtime gmake gnome libtool \
-		pkgconfig tar:xz
+		pkgconfig tar:xz xorg
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 USE_GSTREAMER1=	bad gl
 USE_GL=		gl
-USE_XORG=	x11 xrandr xrender xorgproto:build
+USE_XORG=	x11 xrandr xrender xorgproto
 
 OPTIONS_DEFINE=	DRM WAYLAND
 
