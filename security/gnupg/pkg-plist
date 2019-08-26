@@ -5,7 +5,7 @@ bin/gpg-agent
 bin/gpgscm
 bin/gpgsm
 bin/gpgtar
-bin/gpg-wks-server
+%%WKS_SERVER%%bin/gpg-wks-server
 bin/kbxutil
 %%SUID_GPG%%@(,,4555) bin/gpg2
 %%NO_SUID_GPG%%bin/gpg2
@@ -25,7 +25,7 @@ man/man1/gpg-agent.1.gz
 man/man1/gpg-connect-agent.1.gz
 man/man1/gpg-preset-passphrase.1.gz
 man/man1/gpg-wks-client.1.gz
-man/man1/gpg-wks-server.1.gz
+%%WKS_SERVER%%man/man1/gpg-wks-server.1.gz
 man/man1/gpg2.1.gz
 man/man1/gpgconf.1.gz
 man/man1/gpgparsemail.1.gz
