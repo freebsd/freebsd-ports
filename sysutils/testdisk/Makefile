@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	testdisk
-DISTVERSION=	7.1-WIP
+DISTVERSION=	7.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
@@ -12,6 +12,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		jpeg localbase:ldflags ncurses tar:bzip2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-qt --without-ewf
 
