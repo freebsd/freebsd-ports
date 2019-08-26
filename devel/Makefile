@@ -5817,6 +5817,7 @@
     SUBDIR += rubygem-peek-rblineprof-rails5
     SUBDIR += rubygem-peek-rblineprof-rails52
     SUBDIR += rubygem-peek-redis-rails5
+    SUBDIR += rubygem-peek-redis-rails52
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
     SUBDIR += rubygem-pleaserun
