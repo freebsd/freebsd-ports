@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MCE
-PORTVERSION=	1.844
+PORTVERSION=	1.845
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARIOROY
@@ -16,11 +16,11 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
-PORTSCOUT=	limit:^[0-9\.]*$$
-
 USES=		perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 .include <bsd.port.mk>
