@@ -970,6 +970,7 @@
     SUBDIR += rubygem-paranoia
     SUBDIR += rubygem-peek-mysql2-rails5
     SUBDIR += rubygem-peek-pg-rails5
+    SUBDIR += rubygem-peek-pg-rails52
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-pg0
     SUBDIR += rubygem-pg018
