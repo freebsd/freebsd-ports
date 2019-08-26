@@ -13,6 +13,8 @@ COMMENT=	Insight Toolkit
 
 LICENSE=	APACHE20
 
+BROKEN_powerpc64=	fails to package: ITK_COMPILER_INFO_Clang_CXX.h:No such file or directory
+
 BUILD_DEPENDS=	googletest>=0:devel/googletest
 LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
 		libexpat.so:textproc/expat2 \
