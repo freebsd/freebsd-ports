@@ -313,7 +313,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-modules.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n-basics.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n-compiling.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/lang-setup.html
