@@ -7,5 +7,5 @@ post-deinstall: <<EOD
 	/*) f="%@" ;;
 	 *) f="%D/%@" ;;
 	esac
-	/bin/rm -f $f 2>/dev/null || /usr/bin/true
+	/bin/rm -f ${PKG_ROOTDIR}/$f 2>/dev/null || /usr/bin/true
 EOD
