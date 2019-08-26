@@ -2078,6 +2078,7 @@
     SUBDIR += rubygem-kaminari-actionview
     SUBDIR += rubygem-kaminari-actionview-rails5
     SUBDIR += rubygem-kaminari-actionview-rails50
+    SUBDIR += rubygem-kaminari-actionview-rails52
     SUBDIR += rubygem-kaminari-activerecord
     SUBDIR += rubygem-kaminari-activerecord-rails5
     SUBDIR += rubygem-kaminari-activerecord-rails50
