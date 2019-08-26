@@ -109,8 +109,7 @@ libexec/pk-command-not-found
 share/PackageKit/helpers/test_spawn/search-name.sh
 share/PackageKit/pk-upgrade-distro.sh
 share/PackageKit/transactions.db
-@exec mkdir -p /var/lib/PackageKit
-@exec if [ ! -f /var/lib/PackageKit/%f ]; then cp -f %B/%f /var/lib/PackageKit; chmod o-r /var/lib/PackageKit/%f; fi
+@postexec if [ ! -f /var/lib/PackageKit/%f ]; then cp -f %B/%f /var/lib/PackageKit; chmod o-r /var/lib/PackageKit/%f; fi
 share/PackageKit/website/img/assassin.png
 share/PackageKit/website/img/author-alefebvre.png
 share/PackageKit/website/img/author-btimothy.png
