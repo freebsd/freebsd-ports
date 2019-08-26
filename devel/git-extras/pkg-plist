@@ -29,7 +29,6 @@ bin/git-guilt
 bin/git-ignore
 bin/git-ignore-io
 bin/git-info
-bin/git-line-summary
 bin/git-local-commits
 bin/git-lock
 bin/git-locked
@@ -46,6 +45,7 @@ bin/git-rebase-patch
 bin/git-refactor
 bin/git-release
 bin/git-rename-branch
+bin/git-rename-remote
 bin/git-rename-tag
 bin/git-repl
 bin/git-reset-file
@@ -114,6 +114,7 @@ man/man1/git-rebase-patch.1.gz
 man/man1/git-refactor.1.gz
 man/man1/git-release.1.gz
 man/man1/git-rename-branch.1.gz
+man/man1/git-rename-remote.1.gz
 man/man1/git-rename-tag.1.gz
 man/man1/git-repl.1.gz
 man/man1/git-reset-file.1.gz
