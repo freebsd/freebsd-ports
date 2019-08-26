@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grafana
-PORTVERSION=	6.2.5
+PORTVERSION=	6.3.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://s3-us-west-2.amazonaws.com/grafana-releases/release/:public
@@ -30,7 +30,7 @@ GRAFANA_GROUP?=	grafana
 USERS=		${GRAFANA_USER}
 GROUPS=		${GRAFANA_GROUP}
 
-GRAFANAHOMEDIR=		${PREFIX}/share/grafana/
+GRAFANAHOMEDIR=		${PREFIX}/share/grafana
 GRAFANADATADIR=		/var/db/${PORTNAME}/
 GRAFANALOGDIR=		/var/log/${PORTNAME}/
 GRAFANAPIDDIR=		/var/run/${PORTNAME}/
