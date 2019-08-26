@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	32
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Define default values for ActiveRecord models in a declarative manner
 
 LICENSE=	MIT
@@ -19,5 +19,7 @@ USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^3\.2\.
 
 .include <bsd.port.mk>
