@@ -40,11 +40,11 @@ index f70fd8d7e3bd8..81e8cd7764fdf 100644
              if (file.url) {
                addon.sourceURI = NetUtil.newURI(file.url);
              }
-diff --git toolkit/mozapps/extensions/internal/XPIProvider.jsm toolkit/mozapps/extensions/internal/XPIProvider.jsm 
+diff --git toolkit/mozapps/extensions/internal/XPIDatabase.jsm toolkit/mozapps/extensions/internal/XPIDatabase.jsm
 index f70fd8d7e3bd8..81e8cd7764fdf 100644
---- toolkit/mozapps/extensions/internal/XPIProvider.jsm
-+++ toolkit/mozapps/extensions/internal/XPIProvider.jsm
-@@ -4974,7 +4974,7 @@ AddonInternal.prototype = {
+--- toolkit/mozapps/extensions/internal/XPIDatabase.jsm
++++ toolkit/mozapps/extensions/internal/XPIDatabase.jsm
+@@ -355,7 +355,7 @@ class AddonInternal {
      // Something is causing errors in here
      try {
        for (let platform of this.targetPlatforms) {
