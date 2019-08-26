@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 
-USES=		gmake python:build qmake qt:5
+USES=		compiler:c++11-lang gmake python:build qmake qt:5
 USE_QT=		buildtools_build core gui help printsupport serialbus \
 		serialport websockets-qml widgets
 
