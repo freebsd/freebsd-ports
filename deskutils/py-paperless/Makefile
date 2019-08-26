@@ -2,6 +2,7 @@
 
 PORTNAME=	paperless
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,7 +25,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateparser>=0.7.1:devel/py-dateparser@${PY
 		${PYTHON_PKGNAMEPREFIX}pyocr>=0.5.3:graphics/py-pyocr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=0.10.1:www/py-python-dotenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-gnupg>=0.4.3:security/py-python-gnupg@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-magic>=0.4.10:devel/py-python-magic@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}python-magic>=0.4.10:devel/py-python-magic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	gpg2:security/gnupg \
 		optipng:graphics/optipng \
