@@ -6088,6 +6088,7 @@
     SUBDIR += rubygem-xpath
     SUBDIR += rubygem-yajl-ruby
     SUBDIR += rubygem-yui-compressor
+    SUBDIR += rubygem-zeitwerk
     SUBDIR += rubygem-zentest
     SUBDIR += rudeconfig
     SUBDIR += rudiments
