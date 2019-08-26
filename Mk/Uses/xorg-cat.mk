@@ -177,7 +177,7 @@ USE_XORG+=	fontutil
 
 .  endif # ${_XORG_CAT} == <category>
 
-# We onlu need USES=xorg if we want USE_XORG modules
+# We only need USES=xorg if we want USE_XORG modules
 .  if defined(USE_XORG) && !empty(USE_XORG)
 .include "${USESDIR}/xorg.mk"
 .  endif
