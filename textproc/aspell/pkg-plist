@@ -70,11 +70,11 @@ lib/aspell-%%VER%%/standard.kbd
 lib/libaspell.a
 lib/libaspell.so
 lib/libaspell.so.15
-lib/libaspell.so.15.2.0
+lib/libaspell.so.15.3.0
 lib/libpspell.a
 lib/libpspell.so
 lib/libpspell.so.15
-lib/libpspell.so.15.2.0
+lib/libpspell.so.15.3.0
 man/man1/aspell-import.1.gz
 man/man1/aspell.1.gz
 man/man1/prezip-bin.1.gz
@@ -85,6 +85,7 @@ man/man1/word-list-compress.1.gz
 %%DATADIR%%/comment.amf
 %%DATADIR%%/email.amf
 %%DATADIR%%/html.amf
+%%DATADIR%%/markdown.amf
 %%DATADIR%%/none.amf
 %%DATADIR%%/nroff.amf
 %%DATADIR%%/perl.amf
