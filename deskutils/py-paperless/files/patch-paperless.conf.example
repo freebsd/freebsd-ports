@@ -27,3 +27,12 @@
  
  
  # Override the MEDIA_URL here.  Unless you're hosting Paperless off a subdomain
+@@ -98,7 +98,7 @@ PAPERLESS_EMAIL_SECRET=""
+ # servers to the list of allowed hosts that can do CORS calls. By default
+ # Paperless allows calls from localhost:8080, but you'd like to change that,
+ # you can set this value to a comma-separated list.
+-#PAPERLESS_CORS_ALLOWED_HOSTS="localhost:8080,example.com,localhost:8000"
++#PAPERLESS_CORS_ALLOWED_HOSTS="http://localhost:8080,http://example.com,http://localhost:8000"
+ 
+ # To host paperless under a subpath url like example.com/paperless you set
+ # this value to /paperless. No trailing slash!
