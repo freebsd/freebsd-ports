@@ -3,12 +3,7 @@ bin/pk-debuginfo-install
 bin/pkcon
 bin/pkgenpack
 bin/pkmon
-@unexec if cmp -s %D/etc/PackageKit/CommandNotFound.conf %D/etc/PackageKit/CommandNotFound.conf.default; then rm -f %D/etc/PackageKit/CommandNotFound.conf; fi
-etc/PackageKit/CommandNotFound.conf
-@exec [ -f %B/CommandNotFound.conf ] || cp %B/%f %B/CommandNotFound.conf
-@unexec if cmp -s %D/etc/PackageKit/PackageKit.conf %D/etc/PackageKit/PackageKit.conf.default; then rm -f %D/etc/PackageKit/PackageKit.conf; fi
-etc/PackageKit/PackageKit.conf
-@exec [ -f %B/PackageKit.conf ] || cp %B/%f %B/PackageKit.conf
+@sample etc/PackageKit/PackageKit.conf.default etc/PackageKit/PackageKit.conf
 etc/PackageKit/Vendor.conf
 etc/PackageKit/events/post-transaction.d/README
 etc/PackageKit/events/pre-transaction.d/README
