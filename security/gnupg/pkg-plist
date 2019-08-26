@@ -1,10 +1,11 @@
-bin/gpg-agent
 bin/dirmngr
 bin/dirmngr-client
+bin/gpg-connect-agent
+bin/gpg-agent
 bin/gpgscm
 bin/gpgsm
 bin/gpgtar
-bin/gpg-connect-agent
+bin/gpg-wks-server
 bin/kbxutil
 %%SUID_GPG%%@(,,4555) bin/gpg2
 %%NO_SUID_GPG%%bin/gpg2

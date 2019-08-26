@@ -2,7 +2,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	2.2.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -28,8 +28,7 @@ USES=		compiler:c11 cpe gmake iconv pkgconfig readline sqlite tar:bzip2
 CONFLICTS=	gnupg-2.0.* dirmngr-[0-9]*
 CPE_VENDOR=	gnupg
 
-CONFIGURE_ARGS=	--disable-ntbtls --disable-wks-tools \
-		--enable-gpg-is-gpg2 --enable-symcryptrun
+CONFIGURE_ARGS=	--disable-ntbtls --enable-gpg-is-gpg2 --enable-symcryptrun
 GNU_CONFIGURE=	yes
 INFO=		gnupg
 TEST_TARGET=	check
