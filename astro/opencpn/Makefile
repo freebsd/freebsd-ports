@@ -11,8 +11,6 @@ COMMENT=	Concise ChartPlotter/Navigator
 
 LICENSE=	GPLv2+
 
-BROKEN_aarch64=		Fails to compile: use of undeclared identifier rand
-
 LIB_DEPENDS=	libportaudio.so:audio/portaudio \
 		libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \

@@ -16,15 +16,14 @@ COMMENT=	Fork of GtkRadiant v1.5 FPS games map editor
 
 LICENSE=	GPLv2
 
+BROKEN_armv6=		fails to build: h2data.armv6: No such file or directory
+BROKEN_armv7=		fails to build: h2data.armv7: No such file or directory
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libwebp.so:graphics/webp \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
-
-BROKEN_aarch64=		fails to link: ldd: install/modules/archivepak.so: not a FreeBSD ELF shared object
-BROKEN_armv6=		fails to build: h2data.armv6: No such file or directory
-BROKEN_armv7=		fails to build: h2data.armv7: No such file or directory
 
 USES=		compiler:c++11-lang gl gmake gnome jpeg localbase:ldflags \
 		pkgconfig tar:xz
