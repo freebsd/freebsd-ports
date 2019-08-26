@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	git-extras
-PORTVERSION=	4.7.0
+PORTVERSION=	5.0.0
 CATEGORIES=	devel
 
-MAINTAINER=	igor.ostapenko@gmail.com
+MAINTAINER=	igor.ostapenko@pm.me
 COMMENT=	Sub-commands for repo summary, repl, changelog population, and more
 
 LICENSE=	MIT
