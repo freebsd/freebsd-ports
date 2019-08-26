@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Simple
-PORTVERSION=	1.302166
+PORTVERSION=	1.302167
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Basic utilities for writing tests in perl
 
 LICENSE=	ART10 GPLv1+
