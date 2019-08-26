@@ -22,7 +22,6 @@
 %%PERL5_MAN3%%/Mail::LMLM::Types::Listserv.3.gz
 %%PERL5_MAN3%%/Mail::LMLM::Types::Mailman.3.gz
 %%PERL5_MAN3%%/Mail::LMLM::Types::Majordomo.3.gz
-%%DATADIR%%/COPYING
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Hamakor.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Iglu.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Ivrix.pm
