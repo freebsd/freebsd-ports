@@ -4,8 +4,6 @@
 PORTNAME=	xf86-video-intel
 PORTVERSION=	2.99.917.20181203
 CATEGORIES=	x11-drivers
-MASTER_SITES=	http://cgit.freedesktop.org/xorg/${XORG_CAT}/${PORTNAME}/snapshot/
-DISTNAME=	${PORTNAME}-${COMMIT_ID}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Driver for Intel integrated graphics chipsets
@@ -13,21 +11,19 @@ COMMENT=	Driver for Intel integrated graphics chipsets
 LICENSE=	MIT	# various
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxcb-util.so:x11/xcb-util \
-		libdrm.so:graphics/libdrm
-
-COMMIT_ID=	e5ff8e1828f97891c819c919d7115c6e18b2eb1f
-
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Intel integrated GPU only exists in Intel x86 processors/chipsets
 
+LIB_DEPENDS=	libxcb-util.so:x11/xcb-util \
+		libdrm.so:graphics/libdrm
+
+USES=		cpe xorg xorg-cat:driver
+USE_GITLAB=	yes
+GL_COMMIT=	e5ff8e1828f97891c819c919d7115c6e18b2eb1f
 USE_GL=		gl
-
-USE_LDCONFIG=	yes
-XORG_CAT=	driver
 USE_XORG=	pciaccess pixman x11 xcb xext xrender xv xvmc
+USE_LDCONFIG=	yes
 
-USES+=		cpe autoreconf
 CPE_VENDOR=	x
 
 OPTIONS_SINGLE=	ACCEL

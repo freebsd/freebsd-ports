@@ -56,13 +56,6 @@
 _INCLUDE_USES_AUTORECONF_MK=	yes
 _USES_POST+=	autoreconf
 
-BUILD_DEPENDS+=	autoconf>=2.69:devel/autoconf \
-		automake>=1.16.1:devel/automake
-
-.if defined(libtool_ARGS) && empty(libtool_ARGS:Mbuild)
-BUILD_DEPENDS+=	libtoolize:devel/libtool
-.endif
-
 AUTORECONF?=	${LOCALBASE}/bin/autoreconf
 AUTORECONF_WRKSRC?=	${WRKSRC}
 
@@ -70,6 +63,13 @@ AUTORECONF_WRKSRC?=	${WRKSRC}
 
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_AUTORECONF_POST_MK)
 _INCLUDE_USES_AUTORECONF_POST_MK=	yes
+
+BUILD_DEPENDS+=	autoconf>=2.69:devel/autoconf \
+		automake>=1.16.1:devel/automake
+
+.if defined(libtool_ARGS) && empty(libtool_ARGS:Mbuild)
+BUILD_DEPENDS+=	libtoolize:devel/libtool
+.endif
 
 .if empty(autoreconf_ARGS)
 _USES_configure+=	470:do-autoreconf
