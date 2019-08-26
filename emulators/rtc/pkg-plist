@@ -2,5 +2,5 @@ etc/rc.d/rtc.sh
 include/rtc.h
 modules/rtc.ko
 %%EXAMPLESDIR%%/test.c
-@exec rm -f %%DEVDIR%%/rtc
-@unexec rm -f /dev/rtc
+@postexec rm -f %%DEVDIR%%/rtc
+@postunexec rm -f /dev/rtc
