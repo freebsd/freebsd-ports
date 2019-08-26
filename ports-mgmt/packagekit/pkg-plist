@@ -3,6 +3,7 @@ bin/pk-debuginfo-install
 bin/pkcon
 bin/pkgenpack
 bin/pkmon
+@sample etc/PackageKit/CommandNotFound.conf.default etc/PackageKit/CommandNotFound.conf
 @sample etc/PackageKit/PackageKit.conf.default etc/PackageKit/PackageKit.conf
 etc/PackageKit/Vendor.conf
 etc/PackageKit/events/post-transaction.d/README
