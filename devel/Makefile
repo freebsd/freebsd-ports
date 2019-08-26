@@ -5851,6 +5851,7 @@
     SUBDIR += rubygem-rails-i18n-4
     SUBDIR += rubygem-rails-i18n-rails5
     SUBDIR += rubygem-rails-i18n-rails50
+    SUBDIR += rubygem-rails-i18n-rails52
     SUBDIR += rubygem-rails-observers
     SUBDIR += rubygem-rainbow
     SUBDIR += rubygem-rake
