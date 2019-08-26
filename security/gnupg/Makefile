@@ -43,7 +43,7 @@ LARGE_RSA_DESC=	Enable support for 8192-bit RSA keys
 LDAP_DESC=	LDAP keyserver interface
 SCDAEMON_DESC=	Enable Smartcard daemon (with libusb)
 SUID_GPG_DESC=	Install GPG with suid
-WKS_SERVER=	Install the Web Key Service server
+WKS_SERVER_DESC=Install the Web Key Service server
 
 GNUTLS_CONFIGURE_ENABLE=gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
