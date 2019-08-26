@@ -1034,6 +1034,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-python.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-qmail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-qmake.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-qt-dist.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-qt.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-readline.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-samba.html
