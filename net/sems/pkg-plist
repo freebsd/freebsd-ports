@@ -1,0 +1,316 @@
+@sample %%ETCDIR%%/default.template.sample
+@sample %%ETCDIR%%/etc/ann_b2b.conf.sample
+@sample %%ETCDIR%%/etc/announce_transfer.conf.sample
+@sample %%ETCDIR%%/etc/announcement.conf.sample
+@sample %%ETCDIR%%/etc/annrecorder.conf.sample
+@sample %%ETCDIR%%/etc/app_mapping.conf.sample
+@sample %%ETCDIR%%/etc/auth_b2b.sbcprofile.conf.sample
+@sample %%ETCDIR%%/etc/call_timer.sbcprofile.conf.sample
+@sample %%ETCDIR%%/etc/callback.conf.sample
+@sample %%ETCDIR%%/etc/cc_call_timer.conf.sample
+@sample %%ETCDIR%%/etc/cc_pcalls.conf.sample
+@sample %%ETCDIR%%/etc/cc_syslog_cdr.conf.sample
+@sample %%ETCDIR%%/etc/click2dial.conf.sample
+@sample %%ETCDIR%%/etc/codecfilter.sbcprofile.conf.sample
+@sample %%ETCDIR%%/etc/conference.conf.sample
+@sample %%ETCDIR%%/etc/dsm.conf.sample
+@sample %%ETCDIR%%/etc/dsm_in_prompts.conf.sample
+@sample %%ETCDIR%%/etc/dsm_out_prompts.conf.sample
+@sample %%ETCDIR%%/etc/early_announce.conf.sample
+@sample %%ETCDIR%%/etc/echo.conf.sample
+@sample %%ETCDIR%%/etc/mod_regex.conf.sample
+@sample %%ETCDIR%%/etc/monitoring.conf.sample
+@sample %%ETCDIR%%/etc/msg_storage.conf.sample
+@sample %%ETCDIR%%/etc/mwi.conf.sample
+@sample %%ETCDIR%%/etc/precoded_announce.conf.sample
+@sample %%ETCDIR%%/etc/prepaid.sbcprofile.conf.sample
+@sample %%ETCDIR%%/etc/refuse.sbcprofile.conf.sample
+@sample %%ETCDIR%%/etc/reg_agent.conf.sample
+@sample %%ETCDIR%%/etc/replytranslate.sbcprofile.conf.sample
+@sample %%ETCDIR%%/etc/rtmp.conf.sample
+@sample %%ETCDIR%%/etc/sbc.conf.sample
+@sample %%ETCDIR%%/etc/src_ipmap.conf.sample
+@sample %%ETCDIR%%/etc/sst_b2b.sbcprofile.conf.sample
+@sample %%ETCDIR%%/etc/stats.conf.sample
+@sample %%ETCDIR%%/etc/symmetricrtp.sbcprofile.conf.sample
+@sample %%ETCDIR%%/etc/transparent.sbcprofile.conf.sample
+@sample %%ETCDIR%%/etc/voicebox.conf.sample
+@sample %%ETCDIR%%/etc/voicemail.conf.sample
+@sample %%ETCDIR%%/etc/webconference.conf.sample
+@sample %%ETCDIR%%/sems.conf.sample
+lib/sems/audio/annrecorder/beep.wav
+lib/sems/audio/annrecorder/bye.wav
+lib/sems/audio/annrecorder/confirm.wav
+lib/sems/audio/annrecorder/greeting_set.wav
+lib/sems/audio/annrecorder/to_record.wav
+lib/sems/audio/annrecorder/welcome.wav
+lib/sems/audio/annrecorder/your_prompt.wav
+lib/sems/audio/beep.wav
+lib/sems/audio/conference/beep.wav
+lib/sems/audio/conference/first_participant.wav
+lib/sems/audio/default_en.wav
+lib/sems/audio/precoded_announce/test.predef
+lib/sems/audio/voicebox/0.wav
+lib/sems/audio/voicebox/1.wav
+lib/sems/audio/voicebox/10.wav
+lib/sems/audio/voicebox/11.wav
+lib/sems/audio/voicebox/12.wav
+lib/sems/audio/voicebox/13.wav
+lib/sems/audio/voicebox/14.wav
+lib/sems/audio/voicebox/15.wav
+lib/sems/audio/voicebox/16.wav
+lib/sems/audio/voicebox/17.wav
+lib/sems/audio/voicebox/18.wav
+lib/sems/audio/voicebox/19.wav
+lib/sems/audio/voicebox/2.wav
+lib/sems/audio/voicebox/20.wav
+lib/sems/audio/voicebox/3.wav
+lib/sems/audio/voicebox/30.wav
+lib/sems/audio/voicebox/4.wav
+lib/sems/audio/voicebox/40.wav
+lib/sems/audio/voicebox/5.wav
+lib/sems/audio/voicebox/50.wav
+lib/sems/audio/voicebox/6.wav
+lib/sems/audio/voicebox/60.wav
+lib/sems/audio/voicebox/7.wav
+lib/sems/audio/voicebox/70.wav
+lib/sems/audio/voicebox/8.wav
+lib/sems/audio/voicebox/80.wav
+lib/sems/audio/voicebox/9.wav
+lib/sems/audio/voicebox/90.wav
+lib/sems/audio/voicebox/and.wav
+lib/sems/audio/voicebox/bye.wav
+lib/sems/audio/voicebox/first_new_msg.wav
+lib/sems/audio/voicebox/first_saved_msg.wav
+lib/sems/audio/voicebox/in_your_voicebox.wav
+lib/sems/audio/voicebox/msg_deleted.wav
+lib/sems/audio/voicebox/msg_end_menu.wav
+lib/sems/audio/voicebox/msg_menu.wav
+lib/sems/audio/voicebox/msg_saved.wav
+lib/sems/audio/voicebox/new_msg.wav
+lib/sems/audio/voicebox/new_msgs.wav
+lib/sems/audio/voicebox/next_new_msg.wav
+lib/sems/audio/voicebox/next_saved_msg.wav
+lib/sems/audio/voicebox/no_more_msg.wav
+lib/sems/audio/voicebox/no_msg.wav
+lib/sems/audio/voicebox/pin_prompt.wav
+lib/sems/audio/voicebox/saved_msg.wav
+lib/sems/audio/voicebox/saved_msgs.wav
+lib/sems/audio/voicebox/x1.wav
+lib/sems/audio/voicebox/x2.wav
+lib/sems/audio/voicebox/x3.wav
+lib/sems/audio/voicebox/x4.wav
+lib/sems/audio/voicebox/x5.wav
+lib/sems/audio/voicebox/x6.wav
+lib/sems/audio/voicebox/x7.wav
+lib/sems/audio/voicebox/x8.wav
+lib/sems/audio/voicebox/x9.wav
+lib/sems/audio/voicebox/you_have.wav
+lib/sems/audio/voicemail/beep.wav
+lib/sems/audio/voicemail/default_en.wav
+lib/sems/audio/webconference/0.wav
+lib/sems/audio/webconference/1.wav
+lib/sems/audio/webconference/2.wav
+lib/sems/audio/webconference/3.wav
+lib/sems/audio/webconference/4.wav
+lib/sems/audio/webconference/5.wav
+lib/sems/audio/webconference/6.wav
+lib/sems/audio/webconference/7.wav
+lib/sems/audio/webconference/8.wav
+lib/sems/audio/webconference/9.wav
+lib/sems/audio/webconference/beep.wav
+lib/sems/audio/webconference/entering_conference.wav
+lib/sems/audio/webconference/first_participant.wav
+lib/sems/audio/webconference/pin_prompt.wav
+lib/sems/audio/webconference/wrong_pin.wav
+lib/sems/dsm/early_dbprompt.dsm
+lib/sems/dsm/inbound_call.dsm
+lib/sems/dsm/mobile_push.dsm
+lib/sems/dsm/mod_conference.so
+lib/sems/dsm/mod_dlg.so
+lib/sems/dsm/mod_groups.so
+lib/sems/dsm/mod_regex.so
+lib/sems/dsm/mod_sbc.so
+lib/sems/dsm/mod_subscription.so
+lib/sems/dsm/mod_sys.so
+lib/sems/dsm/mod_uri.so
+lib/sems/dsm/mod_utils.so
+lib/sems/dsm/outbound_call.dsm
+lib/sems/plug-in/adpcm.so
+lib/sems/plug-in/ann_b2b.so
+lib/sems/plug-in/announce_transfer.so
+lib/sems/plug-in/announcement.so
+lib/sems/plug-in/annrecorder.so
+lib/sems/plug-in/callback.so
+lib/sems/plug-in/cc_call_timer.so
+lib/sems/plug-in/cc_ctl.so
+lib/sems/plug-in/cc_dsm.so
+lib/sems/plug-in/cc_pcalls.so
+lib/sems/plug-in/cc_prepaid.so
+lib/sems/plug-in/cc_registrar.so
+lib/sems/plug-in/cc_syslog_cdr.so
+lib/sems/plug-in/click2dial.so
+lib/sems/plug-in/codec2.so
+lib/sems/plug-in/conference.so
+lib/sems/plug-in/dsm.so
+lib/sems/plug-in/early_announce.so
+lib/sems/plug-in/echo.so
+lib/sems/plug-in/g722.so
+lib/sems/plug-in/gsm.so
+lib/sems/plug-in/ilbc.so
+lib/sems/plug-in/isac.so
+lib/sems/plug-in/l16.so
+lib/sems/plug-in/monitoring.so
+lib/sems/plug-in/msg_storage.so
+lib/sems/plug-in/mwi.so
+lib/sems/plug-in/opus.so
+lib/sems/plug-in/precoded_announce.so
+lib/sems/plug-in/reg_agent.so
+lib/sems/plug-in/registrar_client.so
+lib/sems/plug-in/rtmp.so
+lib/sems/plug-in/sbc.so
+lib/sems/plug-in/session_timer.so
+lib/sems/plug-in/speex.so
+lib/sems/plug-in/stats.so
+lib/sems/plug-in/uac_auth.so
+lib/sems/plug-in/voicebox.so
+lib/sems/plug-in/voicemail.so
+lib/sems/plug-in/wav.so
+lib/sems/plug-in/webconference.so
+sbin/sems
+sbin/sems-get-callproperties
+sbin/sems-list-active-calls
+sbin/sems-list-calls
+sbin/sems-list-finished-calls
+sbin/sems-logfile-callextract
+sbin/sems-sbc-get-activeprofile
+sbin/sems-sbc-get-regex-map-names
+sbin/sems-sbc-list-profiles
+sbin/sems-sbc-load-profile
+sbin/sems-sbc-reload-profile
+sbin/sems-sbc-reload-profiles
+sbin/sems-sbc-set-activeprofile
+sbin/sems-sbc-set-regex-map
+sbin/sems-rtp-mux-get-max-frame-age-ms
+sbin/sems-rtp-mux-get-mtu-threshold
+sbin/sems-rtp-mux-set-max-frame-age-ms
+sbin/sems-rtp-mux-set-mtu-threshold
+sbin/sems-sbc-load-callcontrol-modules
+sbin/sems-sbc-teardown-call
+sbin/sems-stats
+%%DOCSDIR%%-%%SEMS_VERSION%%/Applications.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/CHANGELOG
+%%DOCSDIR%%-%%SEMS_VERSION%%/COPYING
+%%DOCSDIR%%-%%SEMS_VERSION%%/Howtostart_noproxy.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Howtostart_simpleproxy.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Howtostart_voicemail.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.ann_b2b.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.announce_transfer.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.announcement.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.annrecorder.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.callback.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.click2dial.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.conference.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.early_announce.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.echo.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.monitoring.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.msg_storage.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.reg_agent.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.registrar_client.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.sbc.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.uac_auth.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.voicebox.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.voicemail.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Readme.webconference.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/Tuning.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/Readme.dsm.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/dsm_errorhandling.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/dsm_sbc_syntax.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/dsm_syntax.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/dsm_todo.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/183_early_establish.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/b2b_connect_audio/aas_callee.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/b2b_connect_audio/aas_caller.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/b2b_connect_extension/connect_extension.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/b2b_connect_extension/wav/Makefile
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/b2b_connect_extension/wav/connecting.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/b2b_connect_extension/wav/enter_extension.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/b2b_connect_extension/wav/failed_enter_extension.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/b2b_connect_extension/wav/sorry_problems.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/call/callsub.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/call/calltest.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/dsm_di_monit/Readme_ddm.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/dsm_di_monit/dsm_di_monitoring.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/dsm_di_monit/wav/change.wav
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/dsm_di_monit/wav/taken.wav
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/dsm_di_monit/wav/welcome.wav
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/early_media.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/handle_cancel.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/late_reply.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/moddlg_late_early.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/pin/main.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/pin/ok_pin.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/play_file.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/sbc/sbc_test_app/howto.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/sbc/sbc_test_app/profile/sbc_test_app_profile.sbcprofile.conf
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/sbc/sbc_test_app/sbc_test_app.conf
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/sbc/sbc_test_app/test_sbc.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test_b2b.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test_byehdr.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test_conference.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test_conference_mute.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test_dbfile.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test_exception.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test_popen.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test_remoteunreachable.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test_request_events.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test_rtptimeout.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test_system_dsm.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test_systemevents.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/examples/test_teeconf.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_aws.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_conference.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_curl.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_dlg.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_groups.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_monitoring.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_mysql.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_py.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_redis
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_regex.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_subscription.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_sys.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_uri.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_utils.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_xml.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/mods/Readme.mod_zrtp.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/tutorials/quizconnect/Readme.quizconnect_tutorial.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/tutorials/quizconnect/prompts/Makefile
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/tutorials/quizconnect/prompts/sorry_pin_wrong.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/tutorials/quizconnect/prompts/sorry_pin_wrong.wav
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/tutorials/quizconnect/prompts/welcome_callee.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/tutorials/quizconnect/prompts/welcome_callee.wav
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/tutorials/quizconnect/prompts/welcome_caller.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/tutorials/quizconnect/prompts/welcome_caller.wav
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/tutorials/quizconnect/quizconnect.conf
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/tutorials/quizconnect/quizconnect_callee.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/tutorials/quizconnect/quizconnect_caller.dsm
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/tutorials/quizconnect/quizconnect_tutorial.pdf
+%%DOCSDIR%%-%%SEMS_VERSION%%/dsm/tutorials/quizconnect/quizconnect_tutorial.txt
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/conference.dia
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/png/conference.png
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/png/service_invocation.png
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/png/singleinstance.png
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/png/two_instances_app_fixed.png
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/png/two_instances_app_param.png
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/png/voicemail.png
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/png/webconference.png
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/png/webconference_dialout.png
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/service_invocation.dia
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/singleinstance.dia
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/two_instances_app_fixed.dia
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/two_instances_app_param.dia
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/voicemail.dia
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/webconference.dia
+%%DOCSDIR%%-%%SEMS_VERSION%%/figures/webconference_dialout.dia

@@ -1358,6 +1358,7 @@
     SUBDIR += sdl_net
     SUBDIR += seda
     SUBDIR += self-service-password
+    SUBDIR += sems
     SUBDIR += sendemail
     SUBDIR += sendsms
     SUBDIR += sendsnpp

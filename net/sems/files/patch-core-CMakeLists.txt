@@ -1,0 +1,21 @@
+--- core/CMakeLists.txt.orig	2019-08-22 14:04:22.265669000 -0700
++++ core/CMakeLists.txt	2019-08-22 14:05:02.760870000 -0700
+@@ -12,15 +12,12 @@
+ INCLUDE_DIRECTORIES (ampi)
+ INCLUDE_DIRECTORIES (amci)
+ 
+-ADD_LIBRARY (sems_core STATIC ${sems_core_SRCS})
+-ADD_LIBRARY (sems_sip STATIC ${sems_sip_SRCS})
++ADD_EXECUTABLE (sems sems.cpp ${sems_core_SRCS} ${sems_sip_SRCS})
++ADD_EXECUTABLE(sems_tests ${sems_tests_SRCS} ${sems_core_SRCS} ${sems_sip_SRCS})
+ 
+-ADD_EXECUTABLE (sems sems.cpp)
+-ADD_EXECUTABLE(sems_tests ${sems_tests_SRCS})
+-
+ FOREACH (EXE_TARGET sems sems_tests)
+ 
+-	TARGET_LINK_LIBRARIES(${EXE_TARGET} ${CMAKE_DL_LIBS} sems_core sems_sip event event_pthreads -rdynamic)
++	TARGET_LINK_LIBRARIES(${EXE_TARGET} ${CMAKE_DL_LIBS} event event_pthreads -rdynamic)
+ 
+ 	IF(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+ 		TARGET_LINK_LIBRARIES(${EXE_TARGET} execinfo)

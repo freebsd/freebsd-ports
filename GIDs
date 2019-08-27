@@ -190,7 +190,7 @@ mastodon:*:244:
 fcron:*:247:
 # free: 248
 # free: 249
-# free: 250
+sems:*:250:
 # free: 251
 # free: 252
 _adsuck:*:253:

@@ -1,0 +1,5 @@
+SEMS is an open-source SIP media server, implementing a B2BUA,
+voicemail, IVRs, announcements, etc. It is designed to be
+complementary to SIP proxy-only tools like Kamailio, OpenSIPS, etc.
+
+WWW: https://github.com/sems-server
