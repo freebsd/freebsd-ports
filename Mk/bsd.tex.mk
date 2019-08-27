@@ -329,6 +329,9 @@ TEX_FORMAT_CONTEXT_FILES=	\
 #	bin/metafun
 TEX_FORMAT_CONTEXT_DIRS= \
 	${TEXMFVARDIR}/web2c/pdftex
+post-install-context:
+	@${DO_NADA}
+#	${LN} -sf mpost ${PREFIX}/bin/metafun
 
 TEX_FORMAT_CSLATEX?= \
 	"cslatex pdftex - -etex cslatex.ini" \
@@ -472,8 +475,6 @@ TEX_FORMAT_METAFONT_FILES= \
 	${TEXMFVARDIR}/web2c/metafont/mf.base
 TEX_FORMAT_METAFONT_DIRS= \
 	${TEXMFVARDIR}/web2c/metafont
-post-install-metafont:
-	@${DO_NADA}
 
 TEX_FORMAT_MEX?= \
 	"mex pdftex mexconf.tex -translate-file=cp227.tcx *mex.ini" \
@@ -521,8 +522,6 @@ TEX_FORMAT_MPTOPDF_FILES= \
 	${TEXMFVARDIR}/web2c/pdftex/mptopdf.fmt
 TEX_FORMAT_MPTOPDF_DIRS= \
 	${TEXMFVARDIR}/web2c/pdftex
-post-install-mptopdf:
-	@${DO_NADA}
 
 TEX_FORMAT_PDFTEX?= \
 	"pdftex pdftex language.def -translate-file=cp227.tcx *pdfetex.ini" \
