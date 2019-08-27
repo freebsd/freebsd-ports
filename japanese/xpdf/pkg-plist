@@ -3,8 +3,8 @@
 %%DATADIR%%/japanese/ISO-2022-JP.unicodeMap
 %%DATADIR%%/japanese/README
 %%DATADIR%%/japanese/Shift-JIS.unicodeMap
-@exec exec < %D/etc/xpdfrc; rm -f %D/etc/xpdfrc; ( grep -v "%%EXTRARC%%"; echo "include %%EXTRARC%%" ) > %D/etc/xpdfrc; chmod 0644 %D/etc/xpdfrc
-@unexec exec < %D/etc/xpdfrc; rm -f %D/etc/xpdfrc; grep -v "%%EXTRARC%%" > %D/etc/xpdfrc; chmod 0644 %D/etc/xpdfrc
+@postexec exec < %D/etc/xpdfrc; rm -f %D/etc/xpdfrc; ( grep -v "%%EXTRARC%%"; echo "include %%EXTRARC%%" ) > %D/etc/xpdfrc; chmod 0644 %D/etc/xpdfrc
+@postunexec exec < %D/etc/xpdfrc; rm -f %D/etc/xpdfrc; grep -v "%%EXTRARC%%" > %D/etc/xpdfrc; chmod 0644 %D/etc/xpdfrc
 %%DATADIR%%/japanese/dot.xpdfrc
 %%DATADIR%%/japanese/CMap/78-EUC-H
 %%DATADIR%%/japanese/CMap/78-EUC-V
