@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: sems 
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable this service
+# at system startup:
+#
+# sems_enable (bool): Set to NO by default.
+# 		      Set it to YES to enable sems.
+#
+
+. /etc/rc.subr
+
+name=sems
+rcvar=sems_enable
+
+load_rc_config ${name}
+
+: ${sems_enable:=NO}
+: ${sems_config:=%%PREFIX%%/etc/sems/sems.conf}
+
+command="%%PREFIX%%/sbin/sems"
+pidfile=/var/run/sems/sems.pid
+start_precmd="sems_precmd"
+sems_precmd()
+{
+	install -d -o sems /var/run/sems
+}
+command_args="-P $pidfile -f $sems_config -u sems -g sems"
+
+run_rc_command $1
