@@ -1,0 +1,4 @@
+DMLC-Core is the backbone library to support all DMLC projects, offers the
+bricks to build efficient and scalable distributed machine learning libraries.
+
+WWW: https://github.com/dmlc/dmlc-core
