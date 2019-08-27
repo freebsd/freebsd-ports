@@ -480,6 +480,7 @@
     SUBDIR += octomap
     SUBDIR += ogdf
     SUBDIR += oleo
+    SUBDIR += onnx
     SUBDIR += openblas
     SUBDIR += openfst
     SUBDIR += openlibm
