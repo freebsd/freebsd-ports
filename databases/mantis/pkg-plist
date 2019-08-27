@@ -13,6 +13,7 @@
 %%WWWDIR%%/account_sponsor_update.php
 %%WWWDIR%%/account_update.php
 %%WWWDIR%%/adm_config_delete.php
+%%WWWDIR%%/adm_config_page.php
 %%WWWDIR%%/adm_config_report.php
 %%WWWDIR%%/adm_config_set.php
 %%WWWDIR%%/adm_permissions_report.php
@@ -825,6 +826,7 @@
 %%WWWDIR%%/javascript_translations.php
 %%WWWDIR%%/js/ace.js
 %%WWWDIR%%/js/ace.min.js
+%%WWWDIR%%/js/adm_config_report.js
 %%WWWDIR%%/js/bootstrap-3.4.0.js
 %%WWWDIR%%/js/bootstrap-3.4.0.min.js
 %%WWWDIR%%/js/bootstrap-datetimepicker-4.17.47.min.js
@@ -862,6 +864,7 @@
 %%WWWDIR%%/lang/strings_danish.txt
 %%WWWDIR%%/lang/strings_dutch.txt
 %%WWWDIR%%/lang/strings_english.txt
+%%WWWDIR%%/lang/strings_eo.txt
 %%WWWDIR%%/lang/strings_estonian.txt
 %%WWWDIR%%/lang/strings_finnish.txt
 %%WWWDIR%%/lang/strings_french.txt
@@ -1164,6 +1167,7 @@
 %%WWWDIR%%/plugins/Gravatar/lang/strings_danish.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_dutch.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_english.txt
+%%WWWDIR%%/plugins/Gravatar/lang/strings_eo.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_french.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_galician.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_german.txt
@@ -1229,6 +1233,7 @@
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_danish.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_dutch.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_english.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_eo.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_finnish.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_french.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_galician.txt
@@ -1283,10 +1288,10 @@
 %%WWWDIR%%/plugins/MantisGraph/MantisGraph.php
 %%WWWDIR%%/plugins/MantisGraph/core/Period.php
 %%WWWDIR%%/plugins/MantisGraph/core/graph_api.php
-%%WWWDIR%%/plugins/MantisGraph/files/Chart-2.7.3.min.js
-%%WWWDIR%%/plugins/MantisGraph/files/Chart.bundle-2.7.3.min.js
+%%WWWDIR%%/plugins/MantisGraph/files/Chart-2.8.0.min.js
+%%WWWDIR%%/plugins/MantisGraph/files/Chart.bundle-2.8.0.min.js
 %%WWWDIR%%/plugins/MantisGraph/files/MantisGraph.js
-%%WWWDIR%%/plugins/MantisGraph/files/chartjs-plugin-colorschemes.min.js
+%%WWWDIR%%/plugins/MantisGraph/files/chartjs-plugin-colorschemes-0.4.0.min.js
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_afrikaans.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_arabic.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_arabicegyptianspoken.txt
@@ -1302,6 +1307,7 @@
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_danish.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_dutch.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_english.txt
+%%WWWDIR%%/plugins/MantisGraph/lang/strings_eo.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_estonian.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_finnish.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_french.txt
@@ -1323,6 +1329,7 @@
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_norwegian_bokmal.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_norwegian_nynorsk.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_occitan.txt
+%%WWWDIR%%/plugins/MantisGraph/lang/strings_persian.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_piedmontese.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_polish.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_portuguese_brazil.txt
@@ -1458,6 +1465,7 @@
 %%SI%%%%WWWDIR%%/plugins/SourceCgit/strings_portuguese_brazil.txt
 %%SI%%%%WWWDIR%%/plugins/SourceGithub/LICENSE
 %%SI%%%%WWWDIR%%/plugins/SourceGithub/SourceGithub.php
+%%SI%%%%WWWDIR%%/plugins/SourceGithub/files/sourcegithub.js
 %%SI%%%%WWWDIR%%/plugins/SourceGithub/lang/strings_catalan.txt
 %%SI%%%%WWWDIR%%/plugins/SourceGithub/lang/strings_english.txt
 %%SI%%%%WWWDIR%%/plugins/SourceGithub/lang/strings_german.txt
@@ -1506,6 +1514,7 @@
 %%SI%%%%WWWDIR%%/plugins/SourceSVN/lang/strings_russian.txt
 %%SI%%%%WWWDIR%%/plugins/SourceSVN/lang/strings_spanish.txt
 %%SI%%%%WWWDIR%%/plugins/SourceSVN/post-commit.tmpl
+%%SI%%%%WWWDIR%%/plugins/SourceSVN/post-revprop-change.tmpl
 %%SI%%%%WWWDIR%%/plugins/SourceViewVC/LICENSE
 %%SI%%%%WWWDIR%%/plugins/SourceViewVC/SourceViewVC.php
 %%SI%%%%WWWDIR%%/plugins/SourceViewVC/lang/strings_english.txt
@@ -1526,15 +1535,25 @@
 %%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/assets/higher.png
 %%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/assets/lower.png
 %%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/assets/minus.png
-%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/devs_grid.js
-%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/easeljs-0.8.2.min.js
-%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/grid_common_utils.js
-%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/grid_draw_utils.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/block/block.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/block/block_graphics.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/block/block_list.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/card.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/card_transfer.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/column_handler.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/data_source.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/dev_page.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/drawable.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/fabric.min.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/grid.js
 %%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/issue_updater.js
-%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/on_load_opening.js
-%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/relationship_grid.js
-%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/scroller.js
-%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/status_grid.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/page.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/popup_alert.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/relationship_page.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/scrollbar.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/starter.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/status_page.js
+%%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/scripts/utils.js
 %%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/files/taskodrome.css
 %%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/lang/strings_english.txt
 %%TASKODROME%%%%WWWDIR%%/plugins/Taskodrome/lang/strings_french.txt
@@ -1577,6 +1596,7 @@
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_danish.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_dutch.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_english.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_eo.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_finnish.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_french.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_galician.txt
@@ -2041,6 +2061,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/TaskQueueInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/functions.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/functions_include.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/.editorconfig
 %%WWWDIR%%/vendor/guzzlehttp/psr7/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/psr7/LICENSE
 %%WWWDIR%%/vendor/guzzlehttp/psr7/README.md
@@ -2059,6 +2080,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/PumpStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Request.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Response.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/src/Rfc7230.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/ServerRequest.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Stream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/StreamDecoratorTrait.php
@@ -2678,6 +2700,11 @@
 %%WWWDIR%%/vendor/psr/http-message/src/StreamInterface.php
 %%WWWDIR%%/vendor/psr/http-message/src/UploadedFileInterface.php
 %%WWWDIR%%/vendor/psr/http-message/src/UriInterface.php
+%%WWWDIR%%/vendor/ralouphie/getallheaders/LICENSE
+%%WWWDIR%%/vendor/ralouphie/getallheaders/README.md
+%%WWWDIR%%/vendor/ralouphie/getallheaders/composer.json
+%%WWWDIR%%/vendor/ralouphie/getallheaders/phpunit.xml
+%%WWWDIR%%/vendor/ralouphie/getallheaders/src/getallheaders.php
 %%WWWDIR%%/vendor/sebastian/comparator/LICENSE
 %%WWWDIR%%/vendor/sebastian/comparator/README.md
 %%WWWDIR%%/vendor/sebastian/comparator/build/travis-ci.xml
@@ -2848,8 +2875,6 @@
 %%WWWDIR%%/vendor/vboctor/disposable_email_checker/license.txt
 %%WWWDIR%%/vendor/vboctor/disposable_email_checker/php/src/DisposableEmailChecker.php
 %%WWWDIR%%/vendor/vboctor/disposable_email_checker/readme.md
-%%WWWDIR%%/vendor/webmozart/assert/.composer-auth.json
-%%WWWDIR%%/vendor/webmozart/assert/.styleci.yml
 %%WWWDIR%%/vendor/webmozart/assert/CHANGELOG.md
 %%WWWDIR%%/vendor/webmozart/assert/LICENSE
 %%WWWDIR%%/vendor/webmozart/assert/README.md
