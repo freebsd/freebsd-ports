@@ -2,7 +2,7 @@
 
 PORTNAME=	waypipe
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.1
 CATEGORIES=	net
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +18,7 @@ USES=		compiler:c11 localbase:ldflags meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mstoeckl
-GL_COMMIT=	e9ed0829dc2b3207328f73d4e0ffe406c457cb2a
+GL_COMMIT=	f78ad85b04ef95daa9a1671aa0375d0e77d19b2f
 PLIST_FILES=	bin/${PORTNAME}
 # XXX armv6 needs https://github.com/mesonbuild/meson/commit/147d3f752c41
 CONFIGURE_ENV=	UNAME_m=${ARCH}
