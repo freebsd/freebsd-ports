@@ -1,0 +1,12 @@
+--- src/xml/papers/Makefile.in.orig	2019-08-27 14:36:22 UTC
++++ src/xml/papers/Makefile.in
+@@ -394,7 +394,8 @@ AM_CPPFLAGS = -I$(top_srcdir)/include -I$(top_builddir
+ pkgxmldatadir = $(pkgdatadir)/@GUTENPRINT_MAJOR_VERSION@.@GUTENPRINT_MINOR_VERSION@/xml/papers
+ pkgxmldata_DATA = \
+ 	standard.xml				\
+-	labels.xml
++	labels.xml				\
++	freebsd-addons.xml
+ 
+ CLEANFILES = xmli18n-tmp.h xml-stamp xml-stamp.tmp
+ EXTRA_DIST = $(pkgxmldata_DATA)
