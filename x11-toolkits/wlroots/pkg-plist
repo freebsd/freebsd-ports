@@ -34,7 +34,6 @@ include/wlr/types/wlr_data_device.h
 include/wlr/types/wlr_export_dmabuf_v1.h
 include/wlr/types/wlr_foreign_toplevel_management_v1.h
 include/wlr/types/wlr_fullscreen_shell_v1.h
-include/wlr/types/wlr_gamma_control.h
 include/wlr/types/wlr_gamma_control_v1.h
 include/wlr/types/wlr_gtk_primary_selection.h
 include/wlr/types/wlr_idle.h
@@ -60,7 +59,6 @@ include/wlr/types/wlr_primary_selection_v1.h
 include/wlr/types/wlr_region.h
 include/wlr/types/wlr_relative_pointer_v1.h
 include/wlr/types/wlr_screencopy_v1.h
-include/wlr/types/wlr_screenshooter.h
 include/wlr/types/wlr_seat.h
 include/wlr/types/wlr_server_decoration.h
 include/wlr/types/wlr_surface.h
@@ -84,5 +82,5 @@ include/wlr/xcursor.h
 %%X11%%include/wlr/xwayland.h
 lib/libwlroots.so
 lib/libwlroots.so.3
-lib/libwlroots.so.3.4.1
+lib/libwlroots.so.3.5.1
 libdata/pkgconfig/wlroots.pc
