@@ -6142,6 +6142,7 @@
     SUBDIR += simian
     SUBDIR += simple_components
     SUBDIR += skalibs
+    SUBDIR += skypat
     SUBDIR += slf4j
     SUBDIR += slibtool
     SUBDIR += smake

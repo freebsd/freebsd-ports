@@ -1,0 +1,13 @@
+SkyPat is a C++ performance analysis toolkit. SkyPat combines unit tests and
+perf_event to give programmers the power of accomplishing reliability and
+performance test simultaneously.
+
+Unlike traditional tools that manipulate entire program as a black-box, SkyPat
+works on a region of code like a white-box. It is used as a normal unit test
+library. It provides macros and assertions, into which perf_events are embedded,
+to ensure correctness and to evaluate performance of a region of code. With
+perf_events, SkyPat can evaluate running time precisely without interference to
+scheduler. Moreover, perf_event also gives SkyPat accurate cycle counts that are
+useful for tools that are sensitive to variance of timing, such as compilers.
+
+WWW: https://skypat.skymizer.com/
