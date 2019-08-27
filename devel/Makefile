@@ -490,6 +490,7 @@
     SUBDIR += dlib
     SUBDIR += dmake
     SUBDIR += dmalloc
+    SUBDIR += dmlc-core
     SUBDIR += dmucs
     SUBDIR += docopt.cpp
     SUBDIR += doctorj
