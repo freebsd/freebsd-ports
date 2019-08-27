@@ -5,8 +5,7 @@ PORTNAME=	aspell
 DISTVERSION=	0.60.8-20190817
 CATEGORIES=	textproc
 #MASTER_SITES=	GNU/aspell
-MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
-MASTER_SITE_SUBDIR=aspell
+MASTER_SITES=	GNU_ALPHA/aspell
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spelling checker with better suggestion logic than ispell
