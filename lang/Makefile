@@ -364,7 +364,6 @@
     SUBDIR += starlogo
     SUBDIR += stldoc
     SUBDIR += swi-pl
-    SUBDIR += swift
     SUBDIR += tcbasic
     SUBDIR += tcc
     SUBDIR += tcl-manual
