@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mantis
-PORTVERSION=	2.21.2
+PORTVERSION=	2.22.0
 PORTEPOCH=	1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/mantisbt/mantis-stable/${PORTVERSION}
@@ -68,9 +68,9 @@ PIWIK_GH_TUPLE=		mantisbt-plugins:piwik:a2dba46836bdc07a80b8040e889ba0606f97415e
 SAMPLEAUTH_GH_TUPLE=	mantisbt-plugins:SampleAuth:34856715f49a5c273f33e094c759c0e0b52b3912:sampleauth/plugins/SampleAuth
 SLACK_GH_TUPLE=		mantisbt-plugins:Slack:9286d2eeeb8a986ed949e378711fef5f0bf182dc:slack/plugins/Slack
 SNIPPETS_GH_TUPLE=	mantisbt-plugins:Snippets:v2.2.5:snippets/plugins/Snippets
-SI_GH_TUPLE=		mantisbt-plugins:source-integration:v2.1.5:si
+SI_GH_TUPLE=		mantisbt-plugins:source-integration:v2.2.0:si
 SI_USE=			php=curl
-TASKODROME_GH_TUPLE=	mantisbt-plugins:Taskodrome:43d8b2281e02a4e2fd566bcddbbaf11cab73820b:taskodrome
+TASKODROME_GH_TUPLE=	mantisbt-plugins:Taskodrome:8bb3dd80af9190d636ce1117a291d9f8d0fec78e:taskodrome
 TIMETRACKING_GH_TUPLE=	mantisbt-plugins:timetracking:3a560673d85e17651fc1994f5e09e2ae9df62336:timetracking
 
 MYSQL_USE=	php=mysqli
