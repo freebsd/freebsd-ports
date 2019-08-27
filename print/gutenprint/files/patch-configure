@@ -1,0 +1,14 @@
+# this is a workaround for a broken gimptool-2.0 (uses wrong plugin dir
+# when installing plugins)
+--- configure.orig	2019-08-27 19:37:57 UTC
++++ configure
+@@ -15324,8 +15324,7 @@ else
+   if test x${BUILD_GIMP2} = xyes ; then
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for GIMP 2.0 plug-in directory" >&5
+ $as_echo_n "checking for GIMP 2.0 plug-in directory... " >&6; }
+-    GIMPTOOL2_OUTPUT=`$GIMPTOOL2_CHECK --dry-run --install-${PLUG_IN_PATH} print | tail -n 1`
+-    GIMP2_PLUGIN_DIR=`echo "$GIMPTOOL2_OUTPUT" | cut -d ' ' -f 3 | tr -d "\'"`
++    GIMP2_PLUGIN_DIR=`$GIMPTOOL2_CHECK --gimpplugindir`/plug-ins
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GIMP2_PLUGIN_DIR" >&5
+ $as_echo "$GIMP2_PLUGIN_DIR" >&6; }
+     if test "x$NO_PKGCONFIG_PATHS" = x; then

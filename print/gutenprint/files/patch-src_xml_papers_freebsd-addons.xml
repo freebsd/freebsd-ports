@@ -1,9 +1,17 @@
---- src/xml/papers.xml.orig	2017-06-04 21:07:10 UTC
-+++ src/xml/papers.xml
-@@ -1712,6 +1712,65 @@
-       <unit value="metric"/>
-     </paper>
- 
+--- src/xml/papers/freebsd-addons.xml.orig	2019-08-27 14:36:36 UTC
++++ src/xml/papers/freebsd-addons.xml
+@@ -0,0 +1,71 @@
++<?xml version="1.0"?>
++
++<!--
++
++  XML description of papers known to libgutenprint.
++  Here: additional paper sizes for greeting cards etc.
++-->
++
++<gutenprint xmlns="http://gimp-print.sourceforge.net/xsd/gp.xsd-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++  xsi:schemaLocation="http://gimp-print.sourceforge.net/xsd/gp.xsd-1.0 gutenprint.xsd">
++  <paperdef name="freebsd-addons">
 +    <!-- Group: Greeting Card Sizes -->
 +    <paper name="7x10TopFoldCard">
 +      <description translate="value" value="5x7 Top Fold Card (7x10)"/>
@@ -62,7 +70,5 @@
 +      <unit value="english-extended"/>
 +    </paper>
 +    <!-- End of Greeting Card Sizes -->
-+
-     <!--
- 	Special dyesub-specific sizes
- 
++  </paperdef>
++</gutenprint>
