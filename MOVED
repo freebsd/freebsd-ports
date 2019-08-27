@@ -12882,3 +12882,4 @@ palm/jpilot-picsnvideos|comms/jpilot-picsnvideos|2019-08-20|Move to more applica
 devel/linux-c6-libelf|devel/linux-c6-elfutils-libelf|2019-08-25|Moved to match package name
 devel/linux-c7-libelf|devel/linux-c7-elfutils-libelf|2019-08-25|Moved to match package name
 security/linux-c7-openssl||2019-08-25|Merged into linux_base-c7
+science/py-onnx|math/py-onnx|2019-08-26|Move to a more appropriate category
