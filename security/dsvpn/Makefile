@@ -2,7 +2,7 @@
 
 PORTNAME=	dsvpn
 PORTVERSION=	0.1.3
-CATEGORIES=	security net
+CATEGORIES=	security net net-vpn
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Dead Simple VPN
