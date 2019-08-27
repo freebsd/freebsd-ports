@@ -1,5 +1,3 @@
-------------------------------------------------------------------------
-
 Congratulations, you have installed %%PORTNAME%%!
 
   o To enable ejabberd you need to add following string to your /etc/rc.conf:
@@ -13,5 +11,3 @@ Congratulations, you have installed %%PORTNAME%%!
     of this port! Users are advised to check all configuration files and data
     in /var/spool/ejabberd to ensure everything has the correct owner/group.
   o To start using CAPTCHA functionality, please install ImageMagick port.
-
-------------------------------------------------------------------------
