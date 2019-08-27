@@ -1,0 +1,5 @@
+TIMESTAMP = 1566889638
+SHA256 (dmlc-tvm-v0.4-1440-g347e3d9d_GH0.tar.gz) = 57caebe24afb19158cedf546d89d35f47d6a22c8ba6f1109d3017e756a1480db
+SIZE (dmlc-tvm-v0.4-1440-g347e3d9d_GH0.tar.gz) = 2694303
+SHA256 (dmlc-dlpack-0acb731_GH0.tar.gz) = e246632ccb182369e78a4028bfd9d3ff8a3507620ba414126fb0e860477248ba
+SIZE (dmlc-dlpack-0acb731_GH0.tar.gz) = 39435

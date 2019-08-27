@@ -1,0 +1,17 @@
+include/tvm/runtime/c_backend_api.h
+include/tvm/runtime/c_runtime_api.h
+include/tvm/runtime/device_api.h
+include/tvm/runtime/module.h
+include/tvm/runtime/ndarray.h
+include/tvm/runtime/node_base.h
+include/tvm/runtime/object.h
+include/tvm/runtime/packed_func.h
+include/tvm/runtime/registry.h
+include/tvm/runtime/serializer.h
+include/tvm/runtime/threading_backend.h
+include/tvm/runtime/util.h
+include/tvm/runtime/vm.h
+lib/libnnvm_compiler.so
+lib/libtvm.so
+lib/libtvm_runtime.so
+lib/libtvm_topi.so
