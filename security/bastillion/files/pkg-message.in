@@ -1,6 +1,3 @@
-
-=== INSTALLATION ===
-
 Bastille is now installed in %%PREFIX%%/%%WWWDIR%% and %%PREFIX%%/jetty_bastillion.
 
 Before the first start (but not if you update), you have to set a DB password in

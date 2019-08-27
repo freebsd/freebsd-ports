@@ -1,4 +1,3 @@
-======================================================================
 DSVPN uses a shared secret. Create it with the following command:
 
   # dd if=/dev/urandom of=%%PREFIX%%/etc/dsvpn.key count=1 bs=2048
@@ -22,4 +21,3 @@ the only thing you may have to change. Use a public resolver, a local
 resolver, or DNSCrypt.
 
 The default network created by DSVPN is 192.168.192.0/24.
-======================================================================
