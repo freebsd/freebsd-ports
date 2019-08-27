@@ -22,6 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	OpenZWave
 GH_PROJECT=	open-zwave
 GH_TAGNAME=	1e2d123c
+MAKE_ARGS=	VERSION_REV=${VERSION_REV} LIBDIR=${WRKSRC} docdir=${DOCSDIR}
 
 OPTIONS_DEFINE=	DOXYGEN
 OPTIONS_DEFAULT=
@@ -31,24 +32,13 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 DOXYGEN_DESCR=	Build docs (requires doxygen + graphviz)
 DOXYGEN_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen dot:${PORTSDIR}/graphics/graphviz
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOXYGEN}
-PORTDOCS=api/* default.htm general/* images+css/*
-.endif
+DOXYGEN_PORTDOCS=	api/* default.htm general/* images+css/*
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/libopenzwave.so.1.6
 	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/bin/MinOZW
-.if ! ${PORT_OPTIONS:MDOXYGEN}
-# If doxygen was installed in env, it was built anyway..
-# Or even if it isnt, some files are copied here.
-	${RM} -rf ${STAGEDIR}${DOCSDIR}
-.else
-	${RM} ${STAGEDIR}${DOCSDIR}/Doxyfile.in
-.endif
 
-MAKE_ARGS=VERSION_REV=${VERSION_REV} LIBDIR=${WRKSRC} docdir=${DOCSDIR}
+post-install-DOXYGEN-on:
+	${RM} ${STAGEDIR}${DOCSDIR}/Doxyfile.in
 
 .include <bsd.port.mk>
