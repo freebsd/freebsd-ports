@@ -12,7 +12,7 @@ In file included from /usr/local/include/wlr/types/wlr_data_device.h:13:
         struct timespec *when;
                ^
 
---- include/wlr/types/wlr_seat.h.orig	2019-01-04 15:02:33 UTC
+--- include/wlr/types/wlr_seat.h.orig	2019-08-01 16:00:48 UTC
 +++ include/wlr/types/wlr_seat.h
 @@ -10,6 +10,9 @@
  #define WLR_TYPES_WLR_SEAT_H
@@ -21,6 +21,6 @@ In file included from /usr/local/include/wlr/types/wlr_data_device.h:13:
 +#if defined(_C11_SOURCE) && defined(__FreeBSD__) && __FreeBSD__ < 12
 +#include <sys/_timespec.h>
 +#endif
- #include <wayland-server.h>
+ #include <wayland-server-core.h>
  #include <wlr/types/wlr_input_device.h>
  #include <wlr/types/wlr_keyboard.h>
