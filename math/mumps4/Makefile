@@ -3,7 +3,7 @@
 
 PORTNAME=	mumps4
 PORTVERSION=	4.10.0	# Please do not upgrade to 5+: use math/mumps
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://mumps.enseeiht.fr/		\
 		http://graal.ens-lyon.fr/MUMPS/		\
@@ -17,59 +17,57 @@ COMMENT=	MUltifrontal Massively Parallel sparse direct Solver
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#-----------------------------------------------------------------------
-
-# WARNING: Non-serviceable parts inside, can break other ports
-# You may define these options/knobs:
-#
-# FFLAGS: Fortran compiler flags for gfortran
-# WITH_OPTIMIZED_FLAGS:Try to use agressive (non-CPU) FFLAGS
-# BLAS_LIBS: specify other version of BLAS
-# WITH_ATLAS: Use ATLAS instead of the regular BLAS
-# WITH_METIS: Add METIS ordering
-#-----------------------------------------------------------------------
-
 USES=		fortran
 
 MAKE_JOBS_UNSAFE=yes
 
+FFLAGS+=	-ffast-math
 FORTRANLIBS=	-lgfortran
 GCCLIBDIR=	${LDFLAGS}
 USE_LDCONFIG=	yes
 VEM=		${PORTVERSION:R:R}
 LIBS=		cmumps dmumps mumps_common pord smumps zmumps
 
-.if defined(WITH_OPTIMIZED_FLAGS)
-FFLAGS+=	-O3 -ffast-math
-.endif
+CONFLICTS+=	mumps-mpich-4*
 
-.ifdef WITH_METIS
-BUILD_DEPENDS+=	${LOCALBASE}/bin/oemetis:math/metis4
-MAKE_ENV+=	ORDERINGSF=-Dmetis
-.endif
+OPTIONS_DEFINE=	METIS4 DOCS EXAMPLES
+
+METIS4_DESCR=	Use math/metis4 for Ordering
+
+METIS4_LIB_DEPENDS+=	libmetis.so.1:math/metis4
+
+LIBS+=		mpiseq
 
 PLIST_SUB+=	MUMPSVERSION=${PORTVERSION} MUMPSV=${VEM}
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+#-----------------------------------------------------------------------
+# WARNING: Non-serviceable parts inside, can break other ports
+# You may define these options/knobs:
+#
+# FFLAGS: Fortran compiler flags for gfortran
+# BLASLIB: specify other version of BLAS
+# WITH_ATLAS: Use ATLAS instead of the regular BLAS
+#-----------------------------------------------------------------------
 
 .include <bsd.port.pre.mk>
 
+.if ${PORT_OPTIONS:MMETIS4}
+MAKE_ENV+=	ORDERINGSF=-Dmetis
+.endif
+
+# This is like blaslapack, except we don't use lapack at all
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	libatlas.so:math/atlas
-BLAS_LIBS=	-lf77blas
-LAPACK_LIBS=	-lalapack -lcblas
+BLASLIB=	-lf77blas
+#LAPACKLIB=	-lalapack -lcblas
 .else
 LIB_DEPENDS+=	libblas.so:math/blas
-BLAS_LIBS=	-lblas
-LAPACK_LIBS=	-llapack
+BLASLIB=	-lblas
+#LAPACKLIB=	-llapack
 .endif
-
-CONFLICTS+=	mumps-mpich-4*
-
-LIBS+=		mpiseq
 
 pre-configure:
 	${INSTALL_DATA} ${WRKSRC}/Make.inc/Makefile.inc.generic.SEQ \
@@ -85,11 +83,11 @@ pre-build:
 	s+@SOVER@+${VEM}+g; \
 	s+@GCCLIBDIR@+${GCCLIBDIR}+g; \
 	s+@FORTRANLIBS@+${FORTRANLIBS}+g; \
-	s+@BLAS_LIBS@+${BLAS_LIBS}+ ; \
+	s+@BLAS_LIBS@+${BLASLIB}+ ; \
 	s+@LOCALBASE@+${LOCALBASE}+g;' \
 		${WRKSRC}/${MF}
 .endfor
-.ifdef WITH_METIS
+.if ${PORT_OPTIONS:MMETIS4}
 	${REINPLACE_CMD} -e 's+#LMETIS+LMETIS+' ${WRKSRC}/Makefile.inc
 .endif
 
