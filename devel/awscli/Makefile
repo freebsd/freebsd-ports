@@ -12,6 +12,8 @@ COMMENT=	Universal Command Line Interface for Amazon Web Services
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+OPTIONS_DEFINE=	DOCS
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.12.213:devel/py-botocore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.2.5:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}s3transfer>=0.2.0:net/py-s3transfer@${PY_FLAVOR} \
@@ -19,8 +21,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.12.213:devel/py-botocore@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}rsa>=3.1.2:security/py-rsa@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml@${PY_FLAVOR}
 
-USES=		python groff:run
+USES=		python
 USE_PYTHON=	autoplist distutils concurrent noflavors
+DOCS_USERS=	groff:run
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
