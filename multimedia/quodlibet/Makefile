@@ -3,7 +3,7 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	3.6.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://bitbucket.org/lazka/${PORTNAME}-files/raw/default/releases/
 
