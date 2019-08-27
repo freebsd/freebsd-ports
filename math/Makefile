@@ -873,6 +873,7 @@
     SUBDIR += triangle
     SUBDIR += trlan
     SUBDIR += truthtable
+    SUBDIR += tvm
     SUBDIR += tvmet
     SUBDIR += ump
     SUBDIR += units
