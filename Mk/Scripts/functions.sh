@@ -153,9 +153,11 @@ parse_plist() {
 validate_env() {
 	local envfault
 	for i ; do
+		set -f
 		if ! (eval ": \${${i}?}" ) >/dev/null; then
 			envfault="${envfault}${envfault:+" "}${i}"
 		fi
+		set +f
 	done
 	if [ -n "${envfault}" ]; then
 		echo "Environment variable ${envfault} undefined. Aborting." \
