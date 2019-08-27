@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	weberp
-PORTVERSION=	4.14.1
+PORTVERSION=	4.15.1
 CATEGORIES=	finance www
 MASTER_SITES=	SF/web-erp/
-DISTNAME=	webERP${PORTVERSION}
+DISTNAME=	webERP_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open-Source Web-Based ERP System
@@ -15,9 +15,11 @@ LICENSE=	GPLv2
 PORTSCOUT=	skipv:3.12
 
 USES=		gettext shebangfix zip
-SHEBANG_FILES=	report_runner.php make_release.sh
+SHEBANG_FILES=	report_runner.php \
+		build/make_release.sh \
+		build/check_syntax.sh
 USE_PHP=	mysqli gettext
-WRKSRC=		${WRKDIR}/webERP
+WRKSRC=		${WRKDIR}/webERP-${PORTVERSION}
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
