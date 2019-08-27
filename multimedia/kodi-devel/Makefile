@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	19.0.a20190604
-PORTREVISION=	2
+DISTVERSION=	19.0.a20190826
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-devel
 
@@ -56,7 +55,7 @@ USES=		autoreconf:build cmake:noninja compiler:c++11-lang gettext \
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	xbmc
-GH_TAGNAME=	d14a5bf1066d3412f488b2ce9e286fc9b30d2c8f
+GH_TAGNAME=	0bc5954818e6b55a98f551a540a4d3589b60297f
 USE_GNOME=	libxml2 libxslt
 USE_JAVA=	yes
 JAVA_BUILD=	yes
