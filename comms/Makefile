@@ -110,6 +110,7 @@
     SUBDIR += obexapp
     SUBDIR += openobex
     SUBDIR += openzwave
+    SUBDIR += openzwave-devel
     SUBDIR += owfs
     SUBDIR += p5-Cisco-UCS
     SUBDIR += p5-Device-Gsm
