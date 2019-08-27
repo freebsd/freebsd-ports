@@ -475,6 +475,8 @@ TEX_FORMAT_METAFONT_FILES= \
 	${TEXMFVARDIR}/web2c/metafont/mf.base
 TEX_FORMAT_METAFONT_DIRS= \
 	${TEXMFVARDIR}/web2c/metafont
+post-install-metafont:
+	@${DO_NADA}
 
 TEX_FORMAT_MEX?= \
 	"mex pdftex mexconf.tex -translate-file=cp227.tcx *mex.ini" \
