@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 # PROVIDE: litecoind
-# REQUIRE: DAEMON cleanvar
+# REQUIRE: LOGIN cleanvar
 # KEYWORD: shutdown
 
 #
@@ -10,53 +10,163 @@
 # litecoind_enable (bool):	Set to "NO" by default.
 #				Set it to "YES" to enable litecoind
 # litecoind_user (str)		Set to "litecoin" by default.
-#				Set it to preferred user
 # litecoind_group (str)		Set to "litecoin" by default.
-#				Set it to preferred group
-# litecoind_data_dir (str)	Set to "/var/lib/litecoin" by default.
-#				Set it to preferred data dir
-# litecoind_config_file (str)	Set to "%%PREFIX%%/etc/litecoind.conf" by default.
-#				Set it to preferred config file
-# litecoind_log_file (str)	Set to "/var/log/litecoind.log" by default.
-#				Set it to preferred log file
+# litecoind_conf (str)		Set to "%%PREFIX%%/etc/litecoind.conf" by default.
+# litecoind_data_dir (str)	Set to "/var/db/litecoin" by default.
+# litecoindlimits_enable (bool)	Set to "NO" by default.
+#				Set it to "YES" to enable litecoindlimits
+# litecoindlimits_args		Set to "-e -U ${litecoind_user}" by default
+
 
 . /etc/rc.subr
 
-name=litecoind
-desc="Litecoin Daemon"
+name="litecoind"
 rcvar=litecoind_enable
+
+start_precmd="litecoind_precmd"
+start_cmd="litecoind_start"
+restart_precmd="litecoind_checkconfig"
+reload_precmd="litecoind_checkconfig"
+configtest_cmd="litecoind_checkconfig"
+status_cmd="litecoind_status"
+stop_cmd="litecoind_stop"
+stop_postcmd="litecoind_wait"
+command="%%PREFIX%%/bin/litecoind"
+daemon_command="/usr/sbin/daemon"
+#pidfile="/var/run/${name}.pid"
+extra_commands="configtest"
+
+
+: ${litecoind_enable:="NO"}
+: ${litecoindlimits_enable:="NO"}
 
 load_rc_config ${name}
 
-: ${litecoind_enable:=NO}
-: ${litecoind_user:=litecoin}
-: ${litecoind_group:=litecoin}
-: ${litecoind_data_dir:=/var/db/litecoin}
-: ${litecoind_config_file:=%%PREFIX%%/etc/litecoin.conf}
-: ${litecoind_log_file:=/var/log/litecoind.log}
+: ${litecoind_user:="litecoin"}
+: ${litecoind_group:="litecoin"}
+: ${litecoind_data_dir:="/var/db/litecoin"}
+: ${litecoind_config_file:="%%PREFIX%%/etc/litecoin.conf"}
+: ${litecoindlimits_args:="-e -U ${litecoind_user}"}
 
+# set up dependant variables
+procname="${command}"
+pidfile="${litecoind_data_dir}/litecoind.pid"
 required_files="${litecoind_config_file}"
-litecoind_chdir="${litecoind_data_dir}"
-litecoind_env="HOME=${litecoind_data_dir}"
-pidfile="/var/run/${name}.pid"
-command="%%PREFIX%%/bin/litecoind"
-command_args="-daemon -pid=${pidfile} -conf=${litecoind_config_file} -datadir=${litecoind_data_dir} > ${litecoind_log_file} 2>&1"
 
-start_precmd=litecoind_startprecmd
 
-litecoind_startprecmd()
+litecoind_checkconfig()
 {
-        if [ ! -e ${pidfile} ]; then
-                install -o ${litecoind_user} -g ${litecoind_group} /dev/null ${pidfile};
-        fi
+  echo "Performing sanity check on litecoind configuration:"
+  if [ ! -d "${litecoind_data_dir}" ]
+  then
+    echo "Missing data directory: ${litecoind_data_dir}"
+    exit 1
+  fi
+  chown -R "${litecoind_user}:${litecoind_group}" "${litecoind_data_dir}"
 
-        if [ ! -e ${litecoind_log_file} ]; then
-                install -o ${litecoind_user} -g ${litecoind_group} /dev/null ${litecoind_log_file};
-        fi
+  if [ ! -f "${litecoind_config_file}" ]
+  then
+    echo "Missing configuration file: ${litecoind_config_file}"
+    exit 1
+  fi
+  if [ ! -x "${command}" ]
+  then
+    echo "Missing executable: ${command}"
+    exit 1
+  fi
+  return 0
+}
 
-        if [ ! -d ${litecoind_data_dir} ]; then
-                install -d -o ${litecoind_user} -g ${litecoind_group} ${litecoind_data_dir}
-        fi
+litecoind_cleanup()
+{
+  rm -f "${pidfile}"
+}
+
+litecoind_precmd()
+{
+  litecoind_checkconfig
+
+  pid=$(check_pidfile "${pidfile}" "${procname}")
+  if [ -z "${pid}" ]
+  then
+    echo "Litecoind is not running"
+    rm -f "${pidfile}"
+  fi
+
+  if checkyesno litecoindlimits_enable
+  then
+    eval $(/usr/bin/limits ${litecoindlimits_args}) 2>/dev/null
+  else
+    return 0
+  fi
+}
+
+litecoind_status()
+{
+  local pid
+  pid=$(check_pidfile "${pidfile}" "${procname}")
+  if [ -z "${pid}" ]
+  then
+    echo "Litecoind is not running"
+    return 1
+  else
+    echo "Litecoind running, pid: ${pid}"
+  fi
+}
+
+litecoind_start()
+{
+  echo "Starting litecoind:"
+  cd "${litecoind_data_dir}" || return 1
+  ${daemon_command} -u "${litecoind_user}" -p "${pidfile}" -f \
+    ${command} \
+    -conf="${litecoind_config_file}" \
+    -datadir="${litecoind_data_dir}"
+}
+
+litecoind_stop()
+{
+  echo "Stopping litecoind:"
+  pid=$(check_pidfile "${pidfile}" "${procname}")
+  if [ -z "${pid}" ]
+  then
+    echo "Litecoind is not running"
+    return 1
+  else
+    kill ${pid}
+  fi
+}
+
+litecoind_wait()
+{
+  local n=60
+  echo "Waiting for litecoind shutdown:"
+  while :
+  do
+    printf '.'
+    pid=$(check_pidfile "${pidfile}" "${procname}")
+    if [ -z "${pid}" ]
+    then
+      printf '\n'
+      break
+    fi
+    sleep 1
+    n=$((${n} - 1))
+    if [ ${n} -eq 0 -a -f "${pidfile}" ]
+    then
+      printf "\nForce shutdown"
+      kill -9 $(cat "${pidfile}")
+      for n in 1 2 3
+      do
+        printf '.'
+        sleep 1
+      done
+      printf '\n'
+      break
+    fi
+  done
+  rm -f "${pidfile}"
+  echo "Shutdown complete"
 }
 
 run_rc_command "$1"
