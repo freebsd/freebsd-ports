@@ -329,9 +329,6 @@ TEX_FORMAT_CONTEXT_FILES=	\
 #	bin/metafun
 TEX_FORMAT_CONTEXT_DIRS= \
 	${TEXMFVARDIR}/web2c/pdftex
-post-install-context:
-	@${DO_NADA}
-#	${LN} -sf mpost ${PREFIX}/bin/metafun
 
 TEX_FORMAT_CSLATEX?= \
 	"cslatex pdftex - -etex cslatex.ini" \
