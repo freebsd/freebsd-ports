@@ -77,9 +77,6 @@ BUNDLE_LIBS=	yes
 BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.34:lang/${RUST_DEFAULT}
 
 .if ${MOZILLA_VER:R:R} >= 56
-.if ${LLVM_DEFAULT:S,-devel,990,} >= 90 && ${ARCH} == i386
-LLVM_DEFAULT=	80
-.endif
 BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 MOZ_EXPORT+=	LLVM_CONFIG=llvm-config${LLVM_DEFAULT}
 # Require newer Clang than what's in base system unless user opted out
