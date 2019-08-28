@@ -12,8 +12,8 @@ LICENSE=	EPL
 
 USES=		compiler:c11 meson ninja python:build
 
-HASH=		5981a47
-AST_COMMIT_DATE=	2019.08.11
+HASH=		251e90c1
+AST_COMMIT_DATE=	2019.08.28
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	att
@@ -42,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/for name in/ s|python.*|${PYTHON_CMD}|g' ${WRKSRC}/scripts/python.sh
 	@${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' ${WRKSRC}/src/lib/libast/include/sfio*.h ${WRKSRC}/src/lib/libast/sfio/*.c
 .if ${PORT_OPTIONS:MKSH93}
-	@${MV} ${WRKSRC}/src/cmd/ksh93/ksh.1 ${WRKSRC}/src/cmd/ksh93/ksh93.1
+	@${MV} ${WRKSRC}/src/cmd/ksh93/docs/ksh.1 ${WRKSRC}/src/cmd/ksh93/docs/ksh93.1
 .endif
 .if ${PORT_OPTIONS:MKSH}
 	@# Keep portlint happy
