@@ -1,22 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	kanshi
-PORTVERSION=	s20190607
+DISTVERSIONPREFIX=	v
+PORTVERSION=	1.0.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic display configuration for Wayland
 
 LICENSE=	MIT
-# https://github.com/emersion/kanshi/issues/45
-#LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	emersion
-GH_TAGNAME=	76e9f41
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES

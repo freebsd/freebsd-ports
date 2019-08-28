@@ -5,6 +5,4 @@ turn a laptop's internal screen off when docked.
 This is a Wayland equivalent for tools like autorandr. kanshi can be
 used on Wayland compositors supporting wlr-output-management protocol.
 
-Sway users: kanshi requires Sway 1.2 or later.
-
 WWW: https://wayland.emersion.fr/kanshi/
