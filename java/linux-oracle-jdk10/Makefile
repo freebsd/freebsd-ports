@@ -11,8 +11,14 @@ DISTNAME=	jdk-${JDK_VERSION}.${JDK_UPDATE_VERSION}.${JDK_PATCH_VERSION}_linux-x6
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JDK_VERSION} Development Kit for Linux
 
+DEPRECATED=	No longer maintained upstream, please migrate to openjdk8
+EXPIRATION_DATE=2019-09-28
+
 ONLY_FOR_ARCHS=	amd64
 RUN_DEPENDS=	javavm:java/javavmwrapper
+
+USES=		linux:c7 shebangfix
+USE_LINUX=	xorglibs
 
 RESTRICTED=	Redistribution of repackaged binaries not permitted
 
@@ -20,8 +26,6 @@ WRKSRC=		${WRKDIR}/jdk-${DL_JDK_VERSION}
 PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
-USES=		linux:c7 shebangfix
-USE_LINUX=	xorglibs
 
 JDK_VENDOR=		oracle
 JDK_VERSION=		10
