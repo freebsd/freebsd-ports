@@ -12,7 +12,6 @@ COMMENT=	Advanced DNS server with multiple backends including SQL
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	Does not build: undefined reference to std::__throw_out_of_range_fmt
 BROKEN_sparc64=		Does not compile: error: to_string is not a member of std
 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
