@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libproj.so:graphics/proj
-RUN_DEPENDS=	rubygem-rgeo>=2.0:science/rubygem-rgeo
+RUN_DEPENDS=	rubygem-rgeo>=2.0<3:science/rubygem-rgeo
 
 USES=		gem
 USE_RUBY=	yes
