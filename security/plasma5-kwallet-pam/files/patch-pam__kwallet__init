@@ -1,0 +1,10 @@
+--- pam_kwallet_init.orig	2019-08-09 12:51:25.200806000 +0200
++++ pam_kwallet_init	2019-08-09 12:51:41.765221000 +0200
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+ if test -n "$PAM_KWALLET5_LOGIN" ; then
+-    env | socat STDIN UNIX-CONNECT:$PAM_KWALLET5_LOGIN
++    env | nc -U "$PAM_KWALLET5_LOGIN" | :
+ fi
+ 
