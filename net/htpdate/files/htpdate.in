@@ -3,8 +3,7 @@
 # $FreeBSD$
 
 # PROVIDE: htpdate
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
+# REQUIRE: NETWORKING syslogd
 # KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf to enable htpdate:
@@ -14,31 +13,27 @@
 
 . /etc/rc.subr
 
+name=htpdate
+desc="HTTP Time Protocol daemon"
+rcvar=htpdate_enable
+
 load_rc_config htpdate
 
-htpdate_enable="${htpdate_enable:-"NO"}"
-htpdate_servers="${htpdate_servers:-"www.example.com"}"
-htpdate_flags="${htpdate_flags:-"-l -s -D"}"
+: ${htpdate_enable:="NO"}
+: ${htpdate_servers:="www.example.com"}
+: ${htpdate_flags:="-l -s -D"}
 
-name=htpdate
-rcvar=htpdate_enable
-servers=${htpdate_servers}
-pidfile=/var/run/htpdate.pid
+start_precmd=htpdate_prestart
+command="%%PREFIX%%/bin/htpdate"
+command_args="${htpdate_servers}"
 
-command="/usr/local/bin/htpdate"
-command_args="${htpdate_flags} $servers"
-stop_cmd=htpdate_stop
-
-htpdate_stop ()
+htpdate_prestart()
 {
-	if [ -f ${pidfile} ]; then
-		echo "Stopping htpdate."
-		kill `cat ${pidfile}`
-	else
-		echo "htpdate is not running."
-	fi
+	local _pidfile="/var/run/htpdate.pid"
 
-	rm -f ${pidfile}
+	if [ -z "$(check_process "${command}")" ]; then
+		rm -f -- "${_pidfile}"
+	fi
 }
 
 run_rc_command "$1"
