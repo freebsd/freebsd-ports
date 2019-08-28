@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcf2bdf
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	tobik@FreeBSD.org
