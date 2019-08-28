@@ -21,7 +21,9 @@ TEST_DEPENDS=	p5-Any-Moose>=0.15:devel/p5-Any-Moose \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Requires>=0:devel/p5-Test-Requires
 
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
