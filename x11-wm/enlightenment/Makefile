@@ -20,7 +20,7 @@ LIB_DEPENDS=	libefl.so:devel/efl \
 BROKEN_sparc64=		Does not install on sparc64: signal 10
 
 GNU_CONFIGURE=	yes
-USES=		alias autoreconf desktop-file-utils gettext-tools \
+USES=		alias autoreconf compiler:c11 desktop-file-utils gettext-tools \
 		gmake iconv libtool pathfix pkgconfig tar:xz
 USE_XORG=	xcb
 USE_LDCONFIG=	yes
