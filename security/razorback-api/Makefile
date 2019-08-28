@@ -37,7 +37,7 @@ STOMP_DEBUG_CONFIGURE_ENABLE=	stomp-debug
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base
+.if ${SSL_DEFAULT} == base || ${SSL_DEFAULT} == openssl111
 BROKEN_FreeBSD_12=	incomplete definition of type 'struct rsa_st'
 BROKEN_FreeBSD_13=	incomplete definition of type 'struct rsa_st'
 .endif
