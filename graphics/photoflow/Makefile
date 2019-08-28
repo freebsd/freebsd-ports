@@ -29,6 +29,10 @@ GH_TAGNAME=	da84a071
 USE_GNOME=	atkmm cairomm glib20 glibmm gtk20 gtkmm24 libsigc++20 pangomm
 
 CMAKE_OFF=	BUNDLED_LENSFUN
+#Disable optimization for the builder CPU when building official packages
+.if defined(PACKAGE_BUILDING)
+CMAKE_ON=	BINARY_PACKAGE_BUILD
+.endif
 
 LDFLAGS+=	-lexecinfo
 
