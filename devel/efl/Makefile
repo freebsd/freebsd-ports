@@ -174,7 +174,7 @@ CONFIGURE_ARGS+=		--with-opengl=none
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
-.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+.if ${ARCH:Mpowerpc*} || ${ARCH} == "sparc64"
 USES+=				lua
 CONFIGURE_ARGS+=		--enable-lua-old
 PLIST_SUB+=			ELUA="@comment "
