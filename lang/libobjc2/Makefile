@@ -20,6 +20,7 @@ GH_ACCOUNT=	gnustep
 GH_TAGNAME=	0db500a
 
 SSP_UNSAFE=	yes
+LDFLAGS_armv7=	-Wl,-znotext
 
 SHLIB_MAJOR=	4
 SHLIB_MINOR=	6
