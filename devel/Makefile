@@ -5428,6 +5428,7 @@
     SUBDIR += rubygem-aws-sdk-core
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-v1
+    SUBDIR += rubygem-aws-sigv2
     SUBDIR += rubygem-aws-sigv4
     SUBDIR += rubygem-axiom-types
     SUBDIR += rubygem-backports
