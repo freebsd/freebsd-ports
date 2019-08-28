@@ -2,7 +2,7 @@
 
 PORTNAME=	packr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.2
+DISTVERSION=	2.6.0
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
@@ -24,8 +24,10 @@ GH_TUPLE=	\
 		gobuffalo:logger:v1.0.0:gobuffalo_logger/vendor/github.com/gobuffalo/logger \
 		gobuffalo:packd:v0.3.0:gobuffalo_packd/vendor/github.com/gobuffalo/packd \
 		golang:crypto:cc06ce4a13d4:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:eb5bcb51f2a3:golang_net/vendor/golang.org/x/net \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:06a5c4944438:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
 		golang:tools:6cdbf07be9d0:golang_tools/vendor/golang.org/x/tools \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		joho:godotenv:v1.3.0:joho_godotenv/vendor/github.com/joho/godotenv \
@@ -38,8 +40,7 @@ GH_TUPLE=	\
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag
 
 post-extract:
-		@${MKDIR} ${WRKSRC}/vendor/github.com/gobuffalo/packr
-		@${LN} -s ${WRKSRC}/v2 ${WRKSRC}/vendor/github.com/gobuffalo/packr/v2
+	@${RM} ${WRKSRC}/v2/go.mod
 
 PLIST_FILES=	bin/packr \
 		bin/packr2
