@@ -5571,6 +5571,7 @@
     SUBDIR += rubygem-fastri
     SUBDIR += rubygem-fattr
     SUBDIR += rubygem-ffi
+    SUBDIR += rubygem-ffi110
     SUBDIR += rubygem-ffi-compiler
     SUBDIR += rubygem-ffi-win32-extensions
     SUBDIR += rubygem-ffi-yajl
