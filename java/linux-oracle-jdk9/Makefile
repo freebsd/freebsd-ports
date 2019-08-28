@@ -11,7 +11,7 @@ DISTNAME=	jdk-${JDK_VERSION}.${JDK_UPDATE_VERSION}.${JDK_PATCH_VERSION}_linux-x6
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Oracle Java ${JDK_VERSION} Development Kit for Linux
 
-DEPRECATED=	No longer maintained upstream, please migrate to openjdk8
+DEPRECATED=	No longer maintained upstream, please migrate to openjdk11
 EXPIRATION_DATE=2019-09-28
 
 ONLY_FOR_ARCHS=	amd64
