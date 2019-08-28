@@ -54,12 +54,20 @@ PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} DATADIR=${DATADIR}
 GH_ACCOUNT=	BVLC
 USE_GITHUB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+TRUE_CXX=	clang++
+.else
+TRUE_CXX=	g++${GCC_DEFAULT}
+.endif
+
 post-extract:
 	@${CP} -v ${.CURDIR}/files/Makefile.config ${WRKSRC}/
 
 post-patch:
 	@${REINPLACE_CMD} \
-	-e "s|%%CXX%%|clang++|g" \
+	-e "s|%%CXX%%|${TRUE_CXX}|g" \
 	-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 	-e "s|%%DATADIR%%|${DATADIR}|g" \
 	-e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" \
@@ -75,4 +83,4 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/* ${STAGEDIR}/${PREFIX}/lib/*.so.* \
 	${STAGEDIR}/${PYTHON_SITELIBDIR}/${PORTNAME}/*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
