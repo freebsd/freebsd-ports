@@ -27,6 +27,7 @@ USE_LDCONFIG=	yes
 MAKE_FLAGS=	INSTALLDIR=${STAGEDIR}${PREFIX} OS=freebsd ENV=gnu \
 		FORTRAN=yes FC_freebsd=${F77}
 MAKE_JOBS_UNSAFE=	yes
+TEST_TARGET=	test  # XXX: test segfaults
 
 WRKSRC=		${WRKDIR}/cdf${VER}-dist
 SUB_FILES=	pkg-message
@@ -53,9 +54,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 	${SED} -i '' 's,${STAGEDIR},,g' ${STAGEDIR}${PREFIX}/bin/definitions.?
-
-regression-test: build
-	@${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
-		${MAKE_ARGS} test -C ${BUILD_WRKSRC}
 
 .include <bsd.port.mk>
