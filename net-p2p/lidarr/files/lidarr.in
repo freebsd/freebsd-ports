@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# Author: Michiel van Baak <michiel@vanbaak.eu>
+#
+# $FreeBSD$
+#
+
+# PROVIDE: lidarr
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable lidarr:
+# lidarr_enable="YES"
+
+. /etc/rc.subr
+
+name="lidarr"
+rcvar=lidarr_enable
+
+load_rc_config $name
+
+: ${lidarr_enable="NO"}
+: ${lidarr_user:="lidarr"}
+: ${lidarr_data_dir:="%%PREFIX%%/lidarr"}
+
+pidfile="${lidarr_data_dir}/lidarr.pid"
+procname="%%PREFIX%%/bin/mono"
+command="/usr/sbin/daemon"
+command_args="-f ${procname} %%DATADIR%%/Lidarr.exe --nobrowser --data=${lidarr_data_dir}"
+start_precmd=lidarr_precmd
+
+lidarr_precmd()
+{
+	export XDG_CONFIG_HOME=${lidarr_data_dir}
+
+	if [ ! -d ${lidarr_data_dir} ]; then
+		install -d -o ${lidarr_user} ${lidarr_data_dir}
+	fi
+}
+
+run_rc_command "$1"
