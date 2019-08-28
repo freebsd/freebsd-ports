@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cld3
-DISTVERSION=	3.2.2
-PORTREVISION=	2
+DISTVERSION=	3.2.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	protobuf>0:devel/protobuf \
-		rubygem-ffi>0:devel/rubygem-ffi
+		rubygem-ffi110>1.1.0<1.11.0:devel/rubygem-ffi110
 
 USES=		gem pkgconfig
 USE_RUBY=	yes
