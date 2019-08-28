@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	cliqz
-DISTVERSION=	1.28.1
-PORTREVISION=	1
+DISTVERSION=	1.28.2
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/cdn.cliqz.com/browser-f/APT/:amazon \
 		http://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/${CLIQZ_LAST_BUILD_ID}/:cliqz
 DISTFILES=	adult-domains.bin:amazon \
 		cliqz@cliqz.com.xpi:cliqz \
-		https-everywhere@cliqz.com.xpi:cliqz \
-		gdprtool@cliqz.com.xpi:cliqz
+		gdprtool@cliqz.com.xpi:cliqz \
+		https-everywhere@cliqz.com.xpi:cliqz
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${_GITHUB_EXTRACT_SUFX}
 
 MAINTAINER=	santhosh.raju@gmail.com
@@ -24,11 +24,15 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libnspr4.so:devel/nspr \
+		libnssutil3.so:security/nss \
 		libplc4.so:devel/nspr \
-		libplds4.so:devel/nspr \
-		libnssutil3.so:security/nss
+		libplds4.so:devel/nspr
 
-BUILD_DEPENDS=	autoconf-2.13:devel/autoconf213 \
+BUILD_DEPENDS=	${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio \
+		${LOCALBASE}/libdata/pkgconfig/xt.pc:x11-toolkits/libXt \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${RUST_DEFAULT}>=1.28:lang/${RUST_DEFAULT} \
+		autoconf-2.13:devel/autoconf213 \
 		bash:shells/bash \
 		graphite2>=1.3.12:graphics/graphite2 \
 		harfbuzz>=1.8.8:print/harfbuzz \
@@ -36,29 +40,25 @@ BUILD_DEPENDS=	autoconf-2.13:devel/autoconf213 \
 		libevent>=2.1.8:devel/libevent \
 		libvorbis>=1.3.6,3:audio/libvorbis \
 		libvpx>=1.5.0:multimedia/libvpx \
-		${LOCALBASE}/libdata/pkgconfig/xt.pc:x11-toolkits/libXt \
 		llvm${LLVM_DEFAULT}>=0:devel/llvm${LLVM_DEFAULT} \
 		nasm:devel/nasm \
 		node:www/node \
 		nspr>=4.19:devel/nspr \
 		nss>=3.39:security/nss \
 		png>=1.6.34:graphics/png \
-		${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
-		${RUST_DEFAULT}>=1.28:lang/${RUST_DEFAULT} \
 		rust-cbindgen>=0.6.2:devel/rust-cbindgen \
 		sqlite3>=3.24.0:databases/sqlite3 \
 		v4l_compat>0:multimedia/v4l_compat \
 		yasm:devel/yasm \
 		zip:archivers/zip
 
-USES=		tar:xz gmake pkgconfig gnome python:2.7,build desktop-file-utils \
-		compiler:c11 shebangfix
+USES=		compiler:c11 desktop-file-utils gmake gnome pkgconfig \
+		python:2.7,build shebangfix tar:xz
 
-USE_GNOME=	gconf2 gtk20 gtk30 cairo gdkpixbuf2
+USE_GNOME=	cairo gconf2 gdkpixbuf2 gtk20 gtk30
 
-USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xrender \
-		xcb xt
+USE_XORG=	x11 xcb xcb xcomposite xcursor xdamage xext xfixes xi xrender \
+		xt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cliqz-oss
@@ -73,17 +73,17 @@ SHEBANG_FILES=	magic_build_and_package.sh
 CLIQZ_CHANNEL=		release
 # If the DISTVERSION is updated, make sure to update the last build id from
 # fetch -qo - https://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/lastbuildid
-CLIQZ_LAST_BUILD_ID=	20190802181254
+CLIQZ_LAST_BUILD_ID=	20190816174655
 CLIQZ_ICON=		${PORTNAME}.png
 CLIQZ_ICON_SRC=		${WRKSRC}/mozilla-release/browser/branding/${PORTNAME}/default48.png
 MOZ_DESKTOP=		${WRKSRC}/mozilla-release/toolkit/mozapps/installer/linux/rpm/mozilla.desktop
 CLIQZ_DESKTOP=		${WRKSRC}/mozilla-release/toolkit/mozapps/installer/linux/rpm/cliqz.desktop
 
-MAKE_ENV+=	LLVM_CONFIG=llvm-config${LLVM_DEFAULT}
-MAKE_ENV+=	LLVM_OBJDUMP=${LOCALBASE}/llvm${LLVM_DEFAULT}/bin/llvm-objdump
-MAKE_ENV+=	CQZ_RELEASE_CHANNEL=${CLIQZ_CHANNEL}
-MAKE_ENV+=	CQZ_BUILD_ID=${CLIQZ_LAST_BUILD_ID}
-MAKE_ENV+=	MOZBUILD_STATE_PATH=${WRKDIR}
+MAKE_ENV+=	CQZ_BUILD_ID=${CLIQZ_LAST_BUILD_ID} \
+		CQZ_RELEASE_CHANNEL=${CLIQZ_CHANNEL} \
+		LLVM_CONFIG=llvm-config${LLVM_DEFAULT} \
+		LLVM_OBJDUMP=${LOCALBASE}/llvm${LLVM_DEFAULT}/bin/llvm-objdump \
+		MOZBUILD_STATE_PATH=${WRKDIR}
 
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/adult-domains.bin ${WRKSRC}
