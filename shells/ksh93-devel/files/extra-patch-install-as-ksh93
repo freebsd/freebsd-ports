@@ -1,8 +1,8 @@
---- src/cmd/ksh93/meson.build.orig	2019-05-16 22:08:26.000000000 -0700
-+++ src/cmd/ksh93/meson.build	2019-05-21 20:24:32.997423000 -0700
+--- ./src/cmd/ksh93/meson.build.orig	2019-08-25 15:52:12.000000000 -0700
++++ ./src/cmd/ksh93/meson.build	2019-08-28 12:34:47.804820000 -0700
 @@ -26,19 +26,19 @@
                   dependencies: [libm_dep, libexecinfo_dep, libdl_dep, libsocket_dep, libnsl_dep],
-                  install: false)
+                  install: get_option('default_library') == 'shared')
  
 -ksh93_exe = executable('ksh', ['sh/pmain.c'], c_args: shared_c_args,
 +ksh93_exe = executable('ksh93', ['sh/pmain.c'], c_args: shared_c_args,
@@ -18,8 +18,8 @@
      dependencies: [libm_dep, libexecinfo_dep, libdl_dep, libsocket_dep, libnsl_dep],
      install: true)
  
--install_man('ksh.1')
-+install_man('ksh93.1')
+-install_man('docs/ksh.1')
++install_man('docs/ksh93.1')
  
  test_dir = join_paths(meson.current_source_dir(), 'tests')
  test_driver = join_paths(test_dir, 'util', 'run_test.sh')
