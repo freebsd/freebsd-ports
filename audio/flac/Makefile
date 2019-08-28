@@ -25,7 +25,8 @@ CONFIGURE_ARGS=	--enable-static \
 		--with-ogg="${LOCALBASE}" \
 		--disable-doxygen-docs \
 		--disable-thorough-tests \
-		--disable-xmms-plugin
+		--disable-xmms-plugin \
+		--disable-vsx
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
