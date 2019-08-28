@@ -122,7 +122,7 @@ GEXIV2_CONFIGURE_WITH=	gexiv2
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_WITH=	libtiff
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPANGO} && ${PORT_OPTIONS:MCAIRO}
 PLIST_SUB+=	PANGOCAIRO=""
@@ -135,6 +135,9 @@ post-patch:
 	${REINPLACE_CMD} -e "s/lua >/lua-${LUA_VER} >/g" \
 		-e 's|\(lua\)\(5\.1\)|\1-\2|g ; s|x86_64|amd64|g' \
 		${WRKSRC}/configure
+.if ${CHOSEN_COMPILER_TYPE} == clang
+	${REINPLACE_CMD} -e '/altivec.h/d' ${WRKSRC}/gegl/opencl/cl_platform.h
+.endif
 
 post-patch-EXAMPLES-off:
 	${REINPLACE_CMD} -e 's|tools examples|tools|g' \
@@ -147,4 +150,4 @@ post-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/examples/${ex}.c ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
