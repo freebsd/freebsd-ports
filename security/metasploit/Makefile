@@ -3,7 +3,7 @@
 
 PORTNAME=	metasploit
 PORTVERSION=	5.0.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -144,7 +144,7 @@ post-patch:
 do-build:
 	${RM} ${WRKSRC}/Gemfile.lock
 	${TOUCH} ${WRKSRC}/Gemfile.lock
-	${REINPLACE_CMD} '/^group :coverage/,/^end/d ; /^group :development/,/^end/d ; /^group :test/,/^end/d ; /git:/d' \
+	${REINPLACE_CMD} "/^group :coverage/,/^end/d ; /^group :development/,/^end/d ; /^group :test/,/^end/d ; /git:/d ; /sqlite3/s|, '~>1.3.0'||" \
 		${WRKSRC}/Gemfile
 
 do-install:
