@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	latte-dock
-DISTVERSION=	0.8.9
-PORTREVISION=	1
+DISTVERSION=	0.9.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/stable/latte-dock
 
@@ -16,9 +15,10 @@ LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	activities archive attica auth codecs config configwidgets \
-		coreaddons crash dbusaddons globalaccel i18n iconthemes \
-		kdeclarative newstuff notifications package plasma-framework service \
-		wayland widgetsaddons windowsystem xmlgui \
+		coreaddons crash dbusaddons globalaccel guiaddons i18n \
+		iconthemes libksysguard kdeclarative newstuff notifications \
+		package plasma-framework service wayland widgetsaddons \
+		windowsystem xmlgui \
 		ecm_build
 USE_QT=		core dbus declarative gui network widgets x11extras xml \
 		buildtools_build qmake_build
