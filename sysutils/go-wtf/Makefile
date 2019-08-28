@@ -3,6 +3,7 @@
 PORTNAME=	wtf
 PORTVERSION=	0.20.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	go-
 
@@ -94,17 +95,10 @@ GH_TUPLE=	\
 		zmb3:spotify:158b1863f5b5:zmb3_spotify/vendor/github.com/zmb3/spotify \
 		zorkian:go-datadog-api:v2.21.0:zorkian_go_datadog_api/vendor/github.com/zorkian/go-datadog-api
 
-# this is missing, so use the local copy
+# this is missing, so use the local vendor copy
 #		yfronto:newrelic:7c9c2852e8f9:yfronto_newrelic/vendor/github.com/yfronto/newrelic
-post-extract:
-	${LN} -s ${PKGNAME}/vendor/github.com/yfronto/newrelic ${WRKDIR}/newrelic-7c9c2852e8f9
 
-do-build:
-	@cd ${WRKSRC} && \
-	  ${SETENV} ${MAKE_ENV} go 'install' -ldflags "-X main.version=${DISTVERSION}" -v -buildmode=exe -mod=vendor .
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/go/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+GO_BUILDFLAGS=	-ldflags "-X main.version=${DISTVERSION}"
 
 PORTDOCS=	README.md
 
