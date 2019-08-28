@@ -12,10 +12,11 @@ COMMENT=	Lightweight console application to monitor running jvms
 LICENSE=	GPLv2
 
 USE_JAVA=	yes
+
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar \
 		bin/${PORTNAME}
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 SUB_FILES=	${PORTNAME}.sh
