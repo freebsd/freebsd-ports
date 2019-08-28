@@ -87,8 +87,8 @@ lib/libkadm5srv_mit.so
 lib/libkadm5srv_mit.so.12
 lib/libkadm5srv_mit.so.12.0
 lib/libkdb5.so
-lib/libkdb5.so.9
-lib/libkdb5.so.9.0
+lib/libkdb5.so.10
+lib/libkdb5.so.10.0
 lib/libkrb5.so
 lib/libkrb5.so.3
 lib/libkrb5.so.3.3
