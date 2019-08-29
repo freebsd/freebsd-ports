@@ -20,8 +20,6 @@ GH_PROJECT=	core
 GH_TAGNAME=	${HASH}
 CPE_VENDOR=	gnu
 
-USE_GCC=	any
-
 CONFLICTS=	cfengine-2* cfengine3[0-9]-* cfengine31[02-9]-* cfengine-3.*
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
