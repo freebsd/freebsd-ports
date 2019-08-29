@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	schismtracker
-PORTVERSION=	20181223
-PORTREVISION=	1
+PORTVERSION=	20190805
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		autoreconf python compiler:c++11-lib desktop-file-utils
+USES=		autoreconf python compiler:c++11-lib desktop-file-utils sdl xorg
 USE_SDL=	sdl
 USE_XORG=	x11 xext xv
 
