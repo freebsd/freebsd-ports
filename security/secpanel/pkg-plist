@@ -2,7 +2,7 @@ bin/secpanel
 share/pixmaps/secpanel.png
 %%DATADIR%%/convert_history.tcl
 %%DATADIR%%/convert_profile.tcl
-%%DATADIR%%/default.config
+%%DATADIR%%/default.config.sample
 %%DATADIR%%/default.profile
 %%DATADIR%%/dppw.tcl
 %%DATADIR%%/export_profiles.tcl

@@ -14,7 +14,7 @@
      foreach {bintag binprog} \
  	{sshbin ssh keygenbin ssh-keygen agentbin ssh-agent \
 -	     addbin ssh-add askpassbin ssh-askpass scpbin scp sftpbin Filezilla termver Xterm browserbin firefox \
-+	     addbin ssh-add askpassbin ssh-askpass scpbin scp sftpbin Filezilla Thunar termver Xterm browserbin firefox \
++	     addbin ssh-add askpassbin ssh-askpass scpbin scp sftpbin Filezilla Thunar thunar termver Xterm browserbin firefox \
  	     } {
  		 if {! [info exists configs($bintag)]} {
  		     set configs($bintag) $binprog
