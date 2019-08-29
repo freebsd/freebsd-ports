@@ -19,13 +19,12 @@ LIB_DEPENDS=	libbdd.so:science/buddy \
 		libgmp.so:math/gmp \
 		libsigsegv.so:devel/libsigsegv
 
-USES=		alias autoreconf bison ncurses
+USES=		alias autoreconf bison compiler:c++11-lang localbase:ldflags \
+		ncurses
 
 WRKSRC=		${WRKDIR}/maude-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${NCURSESINC} -I${LOCALBASE}/include
-LDFLAGS+=	-L${NCURSESLIB} -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 MAKE_JOBS_UNSAFE=	yes
 
@@ -40,7 +39,12 @@ CVC4_CONFIGURE_WITH=	cvc4
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${NCURSESLIB} != /usr/lib
+CPPFLAGS+=	-I${NCURSESINC}
+LDFLAGS+=	-L${NCURSESLIB}
+.endif
 
 .if ${PORT_OPTIONS:MFULL_MAUDE}
 MASTER_SITES+=	http://maude.cs.illinois.edu/w/images/c/ca/:fm
@@ -71,4 +75,4 @@ post-install-DOCS-on:
 post-install-FULL_MAUDE-on:
 	${INSTALL_DATA} ${WRKDIR}/${FULL_MAUDE} ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
