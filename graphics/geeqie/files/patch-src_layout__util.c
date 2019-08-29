@@ -1,10 +1,11 @@
---- src/layout_util.c.orig	2017-12-31 12:31:21 UTC
+--- src/layout_util.c.orig	2019-07-26 18:19:11 UTC
 +++ src/layout_util.c
-@@ -59,6 +59,7 @@
- #include "desktop_file.h"
- 
+@@ -62,6 +62,8 @@
  #include <gdk/gdkkeysyms.h> /* for keyboard values */
-+#include <sys/wait.h> /* for WEXITSTATUS */
  #include "keymap_template.c"
  
++#include <sys/wait.h> /* for WEXITSTATUS */
++
  #define MENU_EDIT_ACTION_OFFSET 16
+ #define FILE_COLUMN_POINTER 0
+ 
