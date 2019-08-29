@@ -1,11 +1,9 @@
---- Makefile.am.orig	2017-12-31 12:31:21 UTC
+Don't install changelogs for they're too heavy and are a git logs (instead of real changelogs) anyway
+--- Makefile.am.orig	2019-07-26 18:19:11 UTC
 +++ Makefile.am
-@@ -10,9 +10,9 @@ man_MANS = geeqie.1
- readmedir = @readmedir@
- 
+@@ -12,7 +12,7 @@ readmedir = @readmedir@
  if HAVE_MARKDOWN
--readme_DATA = README.md COPYING ChangeLog TODO README.lirc AUTHORS README.html ChangeLog.html
-+readme_DATA = README.md TODO README.lirc AUTHORS
+ readme_DATA = README.md COPYING ChangeLog TODO README.lirc AUTHORS README.html ChangeLog.html
  else
 -readme_DATA = README.md COPYING ChangeLog TODO README.lirc AUTHORS ChangeLog.html
 +readme_DATA = README.md TODO README.lirc AUTHORS
