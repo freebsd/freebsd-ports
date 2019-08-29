@@ -7,4 +7,4 @@ Screen window manager and the more modern Tmux terminal multiplexer.
 The Python newt library is only needed if you wish to use the menu-
 based config editor.
 
-WWW: http://www.byobu.co
+WWW: https://byobu.org
