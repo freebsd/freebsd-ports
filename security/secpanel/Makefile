@@ -3,7 +3,7 @@
 
 PORTNAME=	secpanel
 PORTVERSION=	0.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	security tcl tk
 MASTER_SITES=	SF/${PORTNAME} \
@@ -20,12 +20,30 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	ssh-askpass:security/openssh-askpass
 
-WRKSRC=		${WRKDIR}/usr/local
-NO_BUILD=	yes
-
 USES=		tk:wrapper
 
-DESKTOP_ENTRIES="SecPanel" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" "" false
+OPTIONS_RADIO=	TERMINAL
+OPTIONS_RADIO_TERMINAL=	GNOMETERMINAL MATETERMINAL XTERM
+OPTIONS_DEFAULT=	GNOMETERMINAL
+
+GNOMETERMINAL_DESC=	build with gnome-terminal
+MATETERMINAL_DESC=	build with mate-terminal (you need mate-desktop)
+XTERM_DESC=		build with xterm
+GNOMETERMINAL_RUN_DEPENDS=	gnome-terminal>=3.0.0:x11/gnome-terminal
+MATETERMINAL_RUN_DEPENDS=	mate-terminal:x11/mate-terminal
+XTERM_RUN_DEPENDS=		xterm:x11/xterm
+
+WRKSRC=		${WRKDIR}/${PREFIX}
+NO_BUILD=	yes
+SUB_FILES=	pkg-message
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMATETERMINAL}
+USE_MATE=	desktop
+.endif
+
+DESKTOP_ENTRIES="SecPanel" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" ""  ${FALSE}
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -33,9 +51,22 @@ post-patch:
 			${WRKSRC}/bin/secpanel
 
 do-install:
+.if ${PORT_OPTIONS:MMATETERMINAL}
+	${REINPLACE_CMD} 's|set configs(termver) "Xterm"|set configs(termver) "MATE-Terminal"|' \
+		${WRKSRC}/bin/secpanel
+	${REINPLACE_CMD} 's|Xterm|MATE-Terminal|' \
+		${WRKSRC}/lib/secpanel/default.config
+.elif ${PORT_OPTIONS:MGNOMETERMINAL}
+	${REINPLACE_CMD} 's|set configs(termver) "Xterm"|set configs(termver) "GNOME-Terminal"|' \
+		${WRKSRC}/bin/secpanel
+	${REINPLACE_CMD} 's|Xterm|GNOME-Terminal|' \
+		${WRKSRC}/lib/secpanel/default.config
+.endif
+
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	@(cd ${WRKSRC}/lib/secpanel && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	@${CHMOD} u+rw ${STAGEDIR}${DATADIR}/default.config
+	${MV} ${STAGEDIR}${DATADIR}/default.config ${STAGEDIR}${DATADIR}/default.config.sample
 
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 
