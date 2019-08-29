@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MathJax
-DISTVERSION=	2.7.5
+DISTVERSION=	2.7.6
 CATEGORIES=	www
 
 MAINTAINER=	marko.cupac@mimar.rs
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+
 USE_GITHUB=	yes
 
 # Changing permissions of 30k files with find -exec (COPYTREE) is way
