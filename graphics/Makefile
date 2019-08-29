@@ -957,6 +957,7 @@
     SUBDIR += rubygem-gruff
     SUBDIR += rubygem-image_science
     SUBDIR += rubygem-imagesize
+    SUBDIR += rubygem-invisible_captcha
     SUBDIR += rubygem-mini_magick
     SUBDIR += rubygem-objectdetect
     SUBDIR += rubygem-opengl
