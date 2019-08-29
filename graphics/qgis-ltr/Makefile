@@ -3,8 +3,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	3_4_7
-PORTREVISION=	1
+DISTVERSION=	3_4_11
 CATEGORIES=	graphics geography
 PKGNAMESUFFIX=	-ltr
 
@@ -13,13 +12,14 @@ COMMENT=	Free and Open Source Geographic Information System
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gpsbabel>=1.5.4:astro/gpsbabel \
+BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
+		gpsbabel>=1.5.4:astro/gpsbabel \
 		txt2tags:textproc/txt2tags \
 		${PYTHON_PKGNAMEPREFIX}cycler>=0.10.0:devel/py-cycler@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.7.3:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.8.0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0.17.1:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0.12.1:www/py-httplib2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10.1:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=1.1.1:textproc/py-MarkupSafe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.2.4:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=2.0.0:devel/py-mock@${PY_FLAVOR} \
@@ -27,8 +27,8 @@ BUILD_DEPENDS=	gpsbabel>=1.5.4:astro/gpsbabel \
 		${PYTHON_PKGNAMEPREFIX}pbr>=3.1.1:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>=9.0.3:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}plotly>=3.0.2:graphics/py-plotly@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>=2.3.0:textproc/py-pygments@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyproj>=1.9.6:graphics/py-pyproj@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>=2.4.1:textproc/py-pygments@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyproj>=2.1.3:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2019.1:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.21.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.12.0:devel/py-six@${PY_FLAVOR} \
@@ -36,24 +36,30 @@ BUILD_DEPENDS=	gpsbabel>=1.5.4:astro/gpsbabel \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.1:devel/py-yaml@${PY_FLAVOR}
 RUN_DEPENDS=	astyle:devel/astyle \
 		${PYTHON_PKGNAMEPREFIX}cycler>=0.10.0:devel/py-cycler@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.7.3:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.8.0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0.17.1:devel/py-future@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gdal>=2.2.4:graphics/py-gdal@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gdal>=2.4.1:graphics/py-gdal@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}geojson>=2.3.0:devel/py-geojson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0.12.1:www/py-httplib2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10.1:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=1.1.1:textproc/py-MarkupSafe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.2.4:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=2.0.0:devel/py-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.11.2:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nbformat>=4.4.0:devel/py-nbformat@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}networkx>=2.1:math/py-networkx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16.1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}OWSLib>=0.17.1:graphics/py-OWSLib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>=3.1.1:devel/py-pbr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=6.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>=9.0.3:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}plotly>=3.0.2:graphics/py-plotly@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.7.6.1:databases/py-psycopg2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>=2.3.0:textproc/py-pygments@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyproj>=1.9.6:graphics/py-pyproj@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.8.3:databases/py-psycopg2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>=2.4.1:textproc/py-pygments@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyproj>=2.1.3:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2019.1:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.21.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-image>=0.14.2_2:graphics/py-scikit-image@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Shapely>=1.6.4:devel/py-shapely@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.12.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=3.6.8:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0:devel/py-termcolor@${PY_FLAVOR} \
@@ -101,7 +107,8 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DPYUIC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyuic5-${PYTHON_VER} \
 		-DQSCI_SIP_DIR:PATH=${PYQT_SIPDIR}/Qsci \
 		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt5/qwt6 \
-		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt6.so
+		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt6.so \
+		-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW
 CMAKE_ON=	BUILD_TESTING ENABLE_TESTS WITH_3D WITH_ASTYLE \
 		WITH_BINDINGS WITH_CUSTOM_WIDGETS WITH_POSTGRESQL
 CMAKE_OFF=	WITH_GLOBE WITH_QWTPOLAR
@@ -130,6 +137,13 @@ SERVER_CMAKE_BOOL=	WITH_SERVER
 
 PLIST_SUB=	DISTVERSION=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+# make describe needs them here, after bsd.port.pre.mk
+CPP=		clang-cpp${LLVM_DEFAULT}
+CC=		clang${LLVM_DEFAULT}
+CXX=		clang++${LLVM_DEFAULT}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|markupsafe ||g' \
 		${WRKSRC}/python/ext-libs/CMakeLists.txt
@@ -144,4 +158,4 @@ post-install:
 check:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
