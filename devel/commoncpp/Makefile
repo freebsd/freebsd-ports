@@ -7,21 +7,21 @@ PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
-DISTNAME=	${PORTNAME:S/$/2/}-${PORTVERSION}
+DISTNAME=	${PORTNAME}2-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	GNU project portable class framework for C++
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gmake libtool localbase:ldflags pathfix ssl
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix ssl
 USE_CXXSTD=	c++98
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_DOXYGEN=no
 INSTALL_TARGET=	install-strip
 
 INFO=		commoncpp2
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
