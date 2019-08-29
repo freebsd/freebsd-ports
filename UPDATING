@@ -5,6 +5,63 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190829:
+  AFFECTS: users of database/postgresql* and other software using PostgreSQL to run
+  AUTHOR: tz@FreeBSD.org
+
+  The default version of PostgreSQL has been switched from 9.5 to 11.
+  The upgrade procedure can use up twice the space the databases
+  currently needs. If you have a big amount of stored data take a
+  closer look at the manpage of pg_upgrade for avoidance and/or
+  speedup of the upgrade.
+
+  The upgrade instructions consider a basic usage and do not match
+  complex scenarious like replication, sharding or similar.
+
+  Upgrade instructions:
+
+  First stop your PostgreSQL, create PostgreSQL-binaries and backup your data.
+  If you have another Version of PostgreSQL installed, for example 9.5.19, your
+  files are named accourding to this.
+
+  # service postgresql stop
+  # pkg create postgresql95-server postgresql95-contrib
+  # mkdir /tmp/pg-upgrade
+  # tar xf postgresql95-server-9.5.19.txz -C /tmp/pg-upgrade
+  # tar xf postgresql95-contrib-9.5.19.txz -C /tmp/pg-upgrade
+  # pkg delete -f databases/postgresql95-server databases/postgresql95-contrib databases/postgresql95-client
+
+  Now update PostgreSQL:
+
+    pkg user:
+    # pkg install databases/postgresql11-server databases/postgresql11-contrib
+    # pkg upgrade
+
+    Portmaster users:
+    # portmaster databases/postgresql11-server databases/postgresql11-contrib
+    # portmaster -a
+
+    Portupgrade users:
+    # portinstall databases/postgresql11-server databases/postgresql11-contrib
+    # portupgrade -a
+
+  After installing the new PostgreSQL version you need to convert
+  all your databases to new version:
+
+  # su -l postgres -c "/usr/local/bin/initdb --encoding=utf-8 --lc-collate=C -D /var/db/postgres/data11 -U pgsql"
+  # chown -R postgres /usr/local/pgsql/data/
+  # su -l postgres -c "pg_upgrade -b /tmp/pg-upgrade/usr/local/bin/ -d /usr/local/pgsql/data/ -B /usr/local/bin/ -D /var/db/postgres/data11/ -U pgsql "
+
+  Now the migration is finished. You can start PostgreSQL again with:
+
+  # service postgresql start
+
+  ATTENTION:
+  1) The default user changed from "pgsql" to "postgres". The migration steps above prevent the
+     user "pgsql" as database user while the database itself is executed using the "postgres" user of FreeBSD
+  2) The default data dir changed from "/usr/local/pgsql/data/" to "/var/db/postgres/data11/"
+  3) If you use non-default initdb options, you have to adjust the initdb-command accordingly
+
 20190816:
   AFFECTS: users of net-im/ejabberd
   AUTHOR: ashish@FreeBSD.org
