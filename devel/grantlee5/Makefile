@@ -17,6 +17,7 @@ PORTSCOUT=	limit:^5\.
 
 USE_QT=		buildtools_build core gui qmake_build script
 USES=		cmake compiler:c++11-lib grantlee:5,selfbuild qt:5
+USE_CXXSTD=	c++11
 CMAKE_ARGS+=	-DBUILD_TESTS:BOOL=FALSE
 USE_LDCONFIG=	yes
 
