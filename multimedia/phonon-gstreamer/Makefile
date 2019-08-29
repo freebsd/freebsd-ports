@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.9.0
-PORTREVISION=	6
+DISTVERSION=	4.10.0
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTNAME}-backend-${PHONON_PLUGIN}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-backend-${PHONON_PLUGIN}-${DISTVERSION}
@@ -15,7 +14,7 @@ COMMENT=	GStreamer backend for Phonon
 
 LICENSE=	LGPL21
 
-USES=		cmake compiler:c++11-lang kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gl gnome kde:5 pkgconfig qt:5 tar:xz
 USE_GL=		gl
 USE_GNOME=	glib20 libxml2
 USE_GSTREAMER1=	yes
@@ -33,6 +32,6 @@ GST_PLUGINS_DESC=	Install GStreamer plugins
 GST_PLUGINS_RUN_DEPENDS=	gstreamer1-plugins-all>=0:multimedia/gstreamer1-plugins-all
 
 PHONON_PLUGIN=	gstreamer
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PHONON_PLUGIN}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-backend-${PHONON_PLUGIN}-${DISTVERSION}
 
 .include <bsd.port.mk>
