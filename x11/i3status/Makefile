@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	i3status
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	x11
 MASTER_SITES=	http://i3wm.org/i3status/
 
@@ -10,25 +10,23 @@ COMMENT=	Small program for generating a status bar
 
 LICENSE=	BSD3CLAUSE
 
-OPTIONS_DEFINE=	PULSEAUDIO
-
 LIB_DEPENDS=	libconfuse.so:devel/libconfuse \
 		libyajl.so:devel/yajl
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake tar:bzip2
-
-PULSEAUDIO_EXTRA_PATCHES_OFF=	${FILESDIR}/no-pulseaudio.diff
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	ac_cv_path_PATH_ASCIIDOC=${TRUE} \
+		ac_cv_path_PATH_XMLTO=${TRUE} \
+		--disable-dependency-tracking
+USES=		gmake pkgconfig tar:bzip2
+BUILD_WRKSRC=	${WRKSRC}/${CONFIGURE_TARGET}
+INSTALL_WRKSRC=	${WRKSRC}/${CONFIGURE_TARGET}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/i3status.c
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/i3status ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/i3status.1 ${STAGEDIR}${MANPREFIX}/man/man1
+post-install:
 	${INSTALL_DATA} ${WRKSRC}/i3status.conf \
 		${STAGEDIR}${PREFIX}/etc/i3status.conf.sample
+
 
 .include <bsd.port.mk>
