@@ -3,7 +3,7 @@
 
 PORTNAME=	inspircd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0
+DISTVERSION=	3.3.0
 CATEGORIES=	irc
 
 MAINTAINER=	dg@syrec.org
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.txt
 
 # Configure script is written in perl
-USES=		cpe gmake perl5
+USES=		compiler:c++11-lang cpe gmake localbase:ldflags perl5
 USE_GITHUB=	yes
 USE_PERL5=	build
 
@@ -28,7 +28,8 @@ CONFIGURE_ARGS=	--binary-dir=${PREFIX}/bin \
 		--manual-dir=${MANPREFIX}/man/man1 \
 		--module-dir=${PREFIX}/libexec/${PORTNAME}/modules \
 		--prefix=${PREFIX}/libexec/${PORTNAME} \
-		--distribution-label=${OPSYS}-${PORTVERSION}
+		--distribution-label=${OPSYS}-${PORTVERSION} \
+		--disable-auto-extras
 
 USE_RC_SUBR=	${PORTNAME}
 MAKEFILE=	GNUmakefile
@@ -42,7 +43,7 @@ INSPIRCD_DBDIR?=	/var/db/${PORTNAME}
 INSPIRCD_LOGDIR?=	/var/log/${PORTNAME}
 INSPIRCD_RUNDIR?=	/var/run/${PORTNAME}
 
-SUB_FILES=	pkg-deinstall
+SUB_FILES=	pkg-message
 SUB_LIST=	INSPIRCD_DBDIR=${INSPIRCD_DBDIR} \
 		INSPIRCD_GROUP=${GROUPS} \
 		INSPIRCD_LOGDIR=${INSPIRCD_LOGDIR} \
@@ -55,12 +56,13 @@ PLIST_SUB=	INSPIRCD_DBDIR=${INSPIRCD_DBDIR} \
 		INSPIRCD_RUNDIR=${INSPIRCD_RUNDIR} \
 		INSPIRCD_USER=${USERS}
 
-OPTIONS_DEFINE=		GNUTLS IPV6 LDAP MYSQL OPENSSL PCRE PGSQL POSIX SQLITE
+OPTIONS_DEFINE=		GNUTLS IPV6 LDAP MBEDTLS MYSQL OPENSSL PCRE PGSQL POSIX SQLITE
 OPTIONS_DEFAULT=	OPENSSL POSIX
 OPTIONS_SUB=		yes
 
 GNUTLS_DESC=	Build m_ssl_gnutls module
 LDAP_DESC=	Build m_ldap module
+MBEDTLS_DESC=	Build m_ssl_mbedtls module
 MYSQL_DESC=	Build m_mysql module
 OPENSSL_DESC=	Build m_ssl_openssl module
 PCRE_DESC=	Build m_regex_pcre module
@@ -74,6 +76,9 @@ GNUTLS_VARS=			EXTRAS+=m_ssl_gnutls.cpp
 
 LDAP_USE=	OPENLDAP=yes
 LDAP_VARS=	EXTRAS+=m_ldap.cpp
+
+MBEDTLS_LIB_DEPENDS=		libmbedtls.so:security/mbedtls
+MBEDTLS_VARS=			EXTRAS+=m_ssl_mbedtls.cpp
 
 MYSQL_USES=	mysql
 MYSQL_VARS=	EXTRAS+=m_mysql.cpp
