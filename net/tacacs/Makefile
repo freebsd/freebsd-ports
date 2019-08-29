@@ -12,8 +12,6 @@ LICENSE=	BSD3CLAUSE
 
 USES=		gmake perl5 ssl shebangfix
 
-WRKSRC=		${WRKDIR}/PROJECTS
-
 CONFLICTS=	tac_plus4
 
 HAS_CONFIGURE=	yes
