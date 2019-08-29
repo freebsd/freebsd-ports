@@ -1,0 +1,4 @@
+Unobtrusive, flexible and simple spam protection for Rails applications
+using honeypot strategy for better user experience.
+
+WWW: https://github.com/markets/invisible_captcha
