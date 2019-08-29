@@ -3,10 +3,9 @@
 
 PORTNAME=	polkit-qt-1
 DISTVERSION=	0.113.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	KDE/stable/${PORTNAME}/
-PKGNAMESUFFIX=	5
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt5 wrapper around Polkit libraries
