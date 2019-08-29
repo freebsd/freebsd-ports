@@ -1,13 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	waybar
-DISTVERSION=	0.7.2
-PORTREVISION=	1
+DISTVERSION=	0.8.0
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 # https://github.com/Alexays/Waybar/pull/425
-PATCHFILES+=	cff2704bfa73.patch:-p1
 PATCHFILES+=	a85ae0da0580.patch:-p1
 PATCHFILES+=	f0dfa34e651c.patch:-p1
 PATCHFILES+=	25d4420904bd.patch:-p1
@@ -18,6 +16,8 @@ PATCHFILES+=	96ef80d06c00.patch:-p1
 PATCHFILES+=	cf114a111fe0.patch:-p1
 PATCHFILES+=	684d9121a721.patch:-p1
 PATCHFILES+=	f1b288adf8b5.patch:-p1
+# https://github.com/Alexays/Waybar/pull/???
+PATCHFILES+=	0b008154d9de.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Highly customizable Wayland bar for Sway and wlroots-based compositors
@@ -41,11 +41,31 @@ PLIST_FILES=	bin/${PORTNAME} \
 		etc/xdg/${PORTNAME}/config \
 		etc/xdg/${PORTNAME}/style.css
 
-OPTIONS_DEFINE=	DBUS MPD PULSEAUDIO UDEV
-OPTIONS_DEFAULT=DBUS MPD PULSEAUDIO UDEV
+OPTIONS_DEFINE=	DBUS MANPAGES MPD PULSEAUDIO UDEV
+OPTIONS_DEFAULT=DBUS MANPAGES MPD PULSEAUDIO UDEV
 
 DBUS_LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu
 DBUS_MESON_ENABLED=	dbusmenu-gtk
+
+MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
+MANPAGES_MESON_ENABLED=	man-pages
+MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
+			man/man5/${PORTNAME}-battery.5.gz \
+			man/man5/${PORTNAME}-clock.5.gz \
+			man/man5/${PORTNAME}-cpu.5.gz \
+			man/man5/${PORTNAME}-custom.5.gz \
+			man/man5/${PORTNAME}-idle-inhibitor.5.gz \
+			man/man5/${PORTNAME}-memory.5.gz \
+			man/man5/${PORTNAME}-mpd.5.gz \
+			man/man5/${PORTNAME}-network.5.gz \
+			man/man5/${PORTNAME}-pulseaudio.5.gz \
+			man/man5/${PORTNAME}-states.5.gz \
+			man/man5/${PORTNAME}-sway-mode.5.gz \
+			man/man5/${PORTNAME}-sway-window.5.gz \
+			man/man5/${PORTNAME}-sway-workspaces.5.gz \
+			man/man5/${PORTNAME}-temperature.5.gz \
+			man/man5/${PORTNAME}-tray.5.gz \
+			man/man5/${PORTNAME}.5.gz \
 
 MPD_DESC=		Music Player Daemon support
 MPD_LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
