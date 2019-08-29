@@ -1,0 +1,11 @@
+--- usr/lib/byobu/memory.orig	2019-08-23 17:23:09 UTC
++++ usr/lib/byobu/memory
+@@ -52,7 +52,7 @@ __memory() {
+         buffers_plus_cached=$(($buffers+$cached))
+         # "free output" buffers and cache (output from 'free')
+         fo_buffers=$(($kb_main_used - $buffers_plus_cached))
+-        fpdiv $((100*${fo_buffers})) "${total}" 0;
++        fpdiv $((100*${kb_main_used})) "${total}" 0;
+         usage=${_RET}
+ 	if [ $total -ge 1048576 ]; then
+ 		fpdiv "$total" 1048567 1
