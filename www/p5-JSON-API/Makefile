@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	JSON-API
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -24,6 +24,7 @@ TEST_DEPENDS=	p5-IO-Capture>=0:devel/p5-IO-Capture \
 
 USES=		perl5
 USE_PERL5=	modbuild
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
