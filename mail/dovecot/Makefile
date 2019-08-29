@@ -7,9 +7,9 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.3.6
+PORTVERSION=	2.3.7.2
 CATEGORIES=	mail ipv6
-MASTER_SITES=	https://www.dovecot.org/releases/2.3/
+MASTER_SITES=	https://dovecot.org/releases/2.3/
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Secure, fast and powerful IMAP and POP3 server
