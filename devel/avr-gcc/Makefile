@@ -24,7 +24,8 @@ LIB_DEPENDS=	libmpfr.so:math/mpfr \
 RUN_DEPENDS=	avr-as:devel/avr-binutils \
 		avr-ld:devel/avr-binutils
 
-USES=		bison gmake iconv libtool makeinfo perl5 tar:xz
+USES=		bison compiler:c++11-lang gmake iconv libtool localbase \
+		makeinfo perl5 tar:xz
 
 # DIST_VERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.  A PORTVERSION of
@@ -35,8 +36,8 @@ GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 
 USE_PERL5=	build
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	avr-gcc-devel*
 
