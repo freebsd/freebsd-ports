@@ -2349,14 +2349,11 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/i18n/qgis_da.qm
 %%DATADIR%%/i18n/qgis_de.qm
 %%DATADIR%%/i18n/qgis_el.qm
-%%DATADIR%%/i18n/qgis_eo.qm
 %%DATADIR%%/i18n/qgis_es.qm
-%%DATADIR%%/i18n/qgis_et.qm
 %%DATADIR%%/i18n/qgis_eu.qm
 %%DATADIR%%/i18n/qgis_fi.qm
 %%DATADIR%%/i18n/qgis_fr.qm
 %%DATADIR%%/i18n/qgis_gl.qm
-%%DATADIR%%/i18n/qgis_hi.qm
 %%DATADIR%%/i18n/qgis_hu.qm
 %%DATADIR%%/i18n/qgis_id.qm
 %%DATADIR%%/i18n/qgis_is.qm
@@ -2767,7 +2764,8 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/python/plugins/processing/algs/grass7/description/r.stats.txt
 %%DATADIR%%/python/plugins/processing/algs/grass7/description/r.stats.zonal.txt
 %%DATADIR%%/python/plugins/processing/algs/grass7/description/r.stream.extract.txt
-%%DATADIR%%/python/plugins/processing/algs/grass7/description/r.sun.txt
+%%DATADIR%%/python/plugins/processing/algs/grass7/description/r.sun.incidout.txt
+%%DATADIR%%/python/plugins/processing/algs/grass7/description/r.sun.insoltime.txt
 %%DATADIR%%/python/plugins/processing/algs/grass7/description/r.sunhours.txt
 %%DATADIR%%/python/plugins/processing/algs/grass7/description/r.sunmask.datetime.txt
 %%DATADIR%%/python/plugins/processing/algs/grass7/description/r.sunmask.position.txt
@@ -3754,6 +3752,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/python/qsci_apis/QScintilla2-2.7.2.api
 %%DATADIR%%/python/qsci_apis/pyqgis.pap
 %%DATADIR%%/resources/2to3migration.txt
+%%DATADIR%%/resources/compdcs.csv
 %%DATADIR%%/resources/cpt-city-qgis-min/README-qgis.txt
 %%DATADIR%%/resources/cpt-city-qgis-min/README.txt
 %%DATADIR%%/resources/cpt-city-qgis-min/VERSION-parent.xml
@@ -4955,6 +4954,9 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/data/world_map.qml
 %%DATADIR%%/resources/data/world_map.shp
 %%DATADIR%%/resources/data/world_map.shx
+%%DATADIR%%/resources/datum_shift.csv
+%%DATADIR%%/resources/gcs.csv
+%%DATADIR%%/resources/geoccs.csv
 %%DATADIR%%/resources/metadata-ISO/LinkPropertyLookupTable.csv
 %%DATADIR%%/resources/metadata-ISO/country_code_ISO_3166.csv
 %%DATADIR%%/resources/metadata-ISO/language_codes_ISO_639.csv
@@ -4962,6 +4964,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/metadata-ISO/md_scope_codes.csv
 %%DATADIR%%/resources/metadata-ISO/mime.csv
 %%DATADIR%%/resources/palettes/new_layer_colors.gpl
+%%DATADIR%%/resources/pcs.csv
 %%DATADIR%%/resources/qgis.db
 %%DATADIR%%/resources/qgis_global_settings.ini
 %%SERVER%%%%DATADIR%%/resources/server/schemaExtension.xsd
@@ -4977,9 +4980,13 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/themes/Night Mapping/icons/eye.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/handle-horizontal.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/handle-vertical.svg
+%%DATADIR%%/resources/themes/Night Mapping/icons/qcheckbox-checked-disabled.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/qcheckbox-checked.svg
+%%DATADIR%%/resources/themes/Night Mapping/icons/qcheckbox-unchecked-disabled.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/qcheckbox-unchecked.svg
+%%DATADIR%%/resources/themes/Night Mapping/icons/qradiobox-checked-disabled.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/qradiobox-checked.svg
+%%DATADIR%%/resources/themes/Night Mapping/icons/qradiobox-unchecked-disabled.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/qradiobox-unchecked.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/separator-horizontal.svg
 %%DATADIR%%/resources/themes/Night Mapping/icons/separator-vertical.svg
@@ -4987,6 +4994,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/themes/Night Mapping/qscintilla.ini
 %%DATADIR%%/resources/themes/Night Mapping/style.qss
 %%DATADIR%%/resources/themes/Night Mapping/variables.qss
+%%DATADIR%%/resources/vertcs.csv
 %%DATADIR%%/svg/accommodation/accommodation_alpinehut.svg
 %%DATADIR%%/svg/accommodation/accommodation_bed_and_breakfast.svg
 %%DATADIR%%/svg/accommodation/accommodation_camping.svg
