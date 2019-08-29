@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scala
-PORTVERSION=	2.12.8
+PORTVERSION=	2.13.0
 CATEGORIES=	lang java
 MASTER_SITES=	http://www.scala-lang.org/files/archive/
 
@@ -14,9 +14,10 @@ LICENSE_FILE=	${WRKSRC}/doc/LICENSE.md
 
 RUN_DEPENDS=	bash:shells/bash
 
+USES=		tar:tgz
+
 OPTIONS_DEFINE=	DOCS
 
-USES=		tar:tgz
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
