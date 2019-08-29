@@ -533,7 +533,7 @@ kde-ksysguard_PORT=		sysutils/plasma5-ksysguard
 kde-ksysguard_PATH=		${KDE_PREFIX}/bin/ksysguard
 
 kde-kwallet-pam_PORT=		security/plasma5-kwallet-pam
-kde-kwallet-pam_PATH=		${KDE_PREFIX}/lib/security/pam_kwallet5.so
+kde-kwallet-pam_PATH=		${KDE_PREFIX}/lib/pam_kwallet5.so
 
 kde-kwayland-integration_PORT=	x11/plasma5-kwayland-integration
 kde-kwayland-integration_PATH=	${QT_PLUGINDIR}/kf5/org.kde.kidletime.platforms/KF5IdleTimeKWaylandPlugin.so
