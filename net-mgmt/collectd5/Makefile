@@ -127,7 +127,6 @@ JAVA_CONFIGURE_ENABLE=	java
 JAVA_CONFIGURE_WITH=	java=${LOCALBASE} libjvm
 
 DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
-DBI_CONFIGURE_ENABLE=	libdbi=${LOCALBASE}
 DBI_CONFIGURE_ENABLE=	dbi
 DBI_CFLAGS=		-Wno-deprecated-declarations
 
