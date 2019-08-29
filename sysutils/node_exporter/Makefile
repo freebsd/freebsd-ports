@@ -16,7 +16,7 @@ TEST_DEPENDS=	promtool:net-mgmt/prometheus2 \
 		bash:shells/bash \
 		gsed:textproc/gsed
 
-USES=		gmake go shebangfix
+USES=		gmake go:modules shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	prometheus
 USE_RC_SUBR=	node_exporter
@@ -25,7 +25,6 @@ USE_RC_SUBR=	node_exporter
 SHEBANG_FILES=	ttar
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
-GO_TARGET=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 # A "checkrules" target is being added in >0.17.0.
 TEST_TARGET=	test
@@ -42,9 +41,6 @@ LD_FLAG_STRING=	-s \
 GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/node_exporter ${STAGEDIR}${PREFIX}/bin
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
