@@ -67,7 +67,7 @@ post-install:
 	@(cd ${WRKSRC}/src/gutenprintui2 && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .else
-	@${RMDIR} ${STAGEDIR}/${DATADIR}/doc/reference-html
+	@(test -d ${STAGEDIR}/${DATADIR}/doc/reference-html && ${RMDIR} ${STAGEDIR}/${DATADIR}/doc/reference-html || :)
 .endif
 
 .include <bsd.port.mk>
