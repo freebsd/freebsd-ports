@@ -208,6 +208,7 @@ libexec/inspircd/modules/m_xline_db.so
 %%LDAP%%libexec/inspircd/modules/m_ldap.so
 %%LDAP%%libexec/inspircd/modules/m_ldapauth.so
 %%LDAP%%libexec/inspircd/modules/m_ldapoper.so
+%%MBEDTLS%%libexec/inspircd/modules/m_ssl_mbedtls.so
 %%MYSQL%%libexec/inspircd/modules/m_mysql.so
 %%OPENSSL%%libexec/inspircd/modules/m_ssl_openssl.so
 %%PCRE%%libexec/inspircd/modules/m_regex_pcre.so
