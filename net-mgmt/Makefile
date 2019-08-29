@@ -381,6 +381,7 @@
     SUBDIR += tcpreplay
     SUBDIR += tcptrack
     SUBDIR += telegraf
+    SUBDIR += thanos
     SUBDIR += tornova
     SUBDIR += torrus
     SUBDIR += triton-guesttools
