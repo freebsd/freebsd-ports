@@ -10,17 +10,17 @@ https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=240037
  #elif defined(__FreeBSD__)
 -    uint64_t id_aa64isar0;
 -    id_aa64isar0 = READ_SPECIALREG(ID_AA64ISAR0_EL1);
--    arm_aes_support_ = ID_AA64ISAR0_AES(id_aa64isar0) == ID_AA64ISAR0_AES_BASE && disable_hw_aes == NULL;
+-    arm_aes_support_ = ID_AA64ISAR0_AES(id_aa64isar0) >= ID_AA64ISAR0_AES_BASE && disable_hw_aes == NULL;
 -    arm_pmull_support_ = ID_AA64ISAR0_AES(id_aa64isar0) == ID_AA64ISAR0_AES_PMULL;
 -    arm_sha1_support_ = ID_AA64ISAR0_SHA1(id_aa64isar0) == ID_AA64ISAR0_SHA1_BASE;
--    arm_sha2_support_ = ID_AA64ISAR0_SHA2(id_aa64isar0) == ID_AA64ISAR0_SHA2_BASE;
+-    arm_sha2_support_ = ID_AA64ISAR0_SHA2(id_aa64isar0) >= ID_AA64ISAR0_SHA2_BASE;
 +    if (!PR_GetEnvSecure("QEMU_EMULATING")) {
 +        uint64_t id_aa64isar0;
 +        id_aa64isar0 = READ_SPECIALREG(ID_AA64ISAR0_EL1);
-+        arm_aes_support_ = ID_AA64ISAR0_AES(id_aa64isar0) == ID_AA64ISAR0_AES_BASE && disable_hw_aes == NULL;
++        arm_aes_support_ = ID_AA64ISAR0_AES(id_aa64isar0) >= ID_AA64ISAR0_AES_BASE && disable_hw_aes == NULL;
 +        arm_pmull_support_ = ID_AA64ISAR0_AES(id_aa64isar0) == ID_AA64ISAR0_AES_PMULL;
 +        arm_sha1_support_ = ID_AA64ISAR0_SHA1(id_aa64isar0) == ID_AA64ISAR0_SHA1_BASE;
-+        arm_sha2_support_ = ID_AA64ISAR0_SHA2(id_aa64isar0) == ID_AA64ISAR0_SHA2_BASE;
++        arm_sha2_support_ = ID_AA64ISAR0_SHA2(id_aa64isar0) >= ID_AA64ISAR0_SHA2_BASE;
 +    }
  #endif /* defined(__linux__) */
      /* aarch64 must support NEON. */

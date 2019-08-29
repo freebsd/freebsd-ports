@@ -42,7 +42,7 @@
    OPENSSL_armcap_P |= ARMV7_NEON;
  
 -  if (hwcap & kAES) {
-+  if (ID_AA64ISAR0_AES(id_aa64isar0) == ID_AA64ISAR0_AES_BASE) {
++  if (ID_AA64ISAR0_AES(id_aa64isar0) >= ID_AA64ISAR0_AES_BASE) {
      OPENSSL_armcap_P |= ARMV8_AES;
    }
 -  if (hwcap & kPMULL) {
@@ -54,7 +54,7 @@
      OPENSSL_armcap_P |= ARMV8_SHA1;
    }
 -  if (hwcap & kSHA256) {
-+  if(ID_AA64ISAR0_SHA2(id_aa64isar0) == ID_AA64ISAR0_SHA2_BASE) {
++  if(ID_AA64ISAR0_SHA2(id_aa64isar0) >= ID_AA64ISAR0_SHA2_BASE) {
      OPENSSL_armcap_P |= ARMV8_SHA256;
    }
  }
