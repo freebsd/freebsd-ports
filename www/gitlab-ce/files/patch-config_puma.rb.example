@@ -1,0 +1,34 @@
+--- config/puma.rb.example.orig	2019-08-17 12:35:36 UTC
++++ config/puma.rb.example
+@@ -5,11 +5,11 @@
+ # The default is "config.ru".
+ #
+ rackup 'config.ru'
+-pidfile '/home/git/gitlab/tmp/pids/puma.pid'
+-state_path '/home/git/gitlab/tmp/pids/puma.state'
++pidfile '%%PREFIX%%/www/gitlab-ce/tmp/pids/puma.pid'
++state_path '%%PREFIX%%/www/gitlab-ce/tmp/pids/puma.state'
+ 
+-stdout_redirect '/home/git/gitlab/log/puma.stdout.log',
+-  '/home/git/gitlab/log/puma.stderr.log',
++stdout_redirect '%%PREFIX%%/www/gitlab-ce/log/puma.stdout.log',
++  '%%PREFIX%%/www/gitlab-ce/log/puma.stderr.log',
+   true
+ 
+ # Configure "min" to be the minimum number of threads to use to answer
+@@ -31,12 +31,12 @@ queue_requests false
+ 
+ # Bind the server to "url". "tcp://", "unix://" and "ssl://" are the only
+ # accepted protocols.
+-bind 'unix:///home/git/gitlab/tmp/sockets/gitlab.socket'
++bind 'unix://%%PREFIX%%/www/gitlab-ce/tmp/sockets/gitlab.socket'
+ 
+ workers 3
+ 
+-require_relative "/home/git/gitlab/lib/gitlab/cluster/lifecycle_events"
+-require_relative "/home/git/gitlab/lib/gitlab/cluster/puma_worker_killer_initializer"
++require_relative "%%PREFIX%%/www/gitlab-ce/lib/gitlab/cluster/lifecycle_events"
++require_relative "%%PREFIX%%/www/gitlab-ce/lib/gitlab/cluster/puma_worker_killer_initializer"
+ 
+ on_restart do
+   # Signal application hooks that we're about to restart
