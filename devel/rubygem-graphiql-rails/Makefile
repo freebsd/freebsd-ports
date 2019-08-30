@@ -2,7 +2,7 @@
 
 PORTNAME=	graphiql-rails
 PORTVERSION=	1.4.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,8 @@ COMMENT=	Use the GraphiQL IDE for GraphQL with Ruby on Rails
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-sprockets-rails-rails5>=0:devel/rubygem-sprockets-rails-rails5 \
-		rubygem-railties5>=0:www/rubygem-railties5
+RUN_DEPENDS=	rubygem-sprockets-rails-rails52>=0:devel/rubygem-sprockets-rails-rails52 \
+		rubygem-railties52>=0:www/rubygem-railties52
 
 USES=		gem
 USE_RUBY=	yes
