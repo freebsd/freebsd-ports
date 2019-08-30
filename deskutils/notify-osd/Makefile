@@ -3,6 +3,7 @@
 
 PORTNAME=	notify-osd
 PORTVERSION=	0.9.34
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/notify-osd/precise/0.9.34/+download/ \
 		LOCAL/ehaupt
@@ -18,14 +19,16 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libnotify.so:devel/libnotify \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libwnck-3.so:x11-toolkits/libwnck3
-RUN_DEPENDS=	dbus-daemon:devel/dbus
+RUN_DEPENDS=	dbus-daemon:devel/dbus \
+		gsettings-desktop-schemas>=3.28.0:devel/gsettings-desktop-schemas
 
-CONFLICTS=	xfce4-notification-daemon-[0-9]*
-
-GNU_CONFIGURE=	yes
 USES=		gettext-runtime gmake libtool pkgconfig
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_XORG=	pixman x11
+
+GNU_CONFIGURE=	yes
+
+CONFLICTS=	xfce4-notification-daemon-[0-9]*
 
 LIBS+=		-L${LOCALBASE}/lib -lpixman-1 -lX11
 
