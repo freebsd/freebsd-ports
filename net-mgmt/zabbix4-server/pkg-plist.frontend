@@ -174,13 +174,6 @@
 %%WWWDIR%%/assets/styles/dark-theme.css
 %%WWWDIR%%/assets/styles/hc-dark.css
 %%WWWDIR%%/assets/styles/hc-light.css
-%%WWWDIR%%/audio/alarm_average.wav
-%%WWWDIR%%/audio/alarm_disaster.wav
-%%WWWDIR%%/audio/alarm_high.wav
-%%WWWDIR%%/audio/alarm_information.wav
-%%WWWDIR%%/audio/alarm_ok.wav
-%%WWWDIR%%/audio/alarm_warning.wav
-%%WWWDIR%%/audio/no_sound.wav
 %%WWWDIR%%/auditacts.php
 %%WWWDIR%%/auditlogs.php
 %%WWWDIR%%/browserwarning.php
@@ -796,7 +789,6 @@
 %%WWWDIR%%/js/class.cdate.js
 %%WWWDIR%%/js/class.cdebug.js
 %%WWWDIR%%/js/class.cmap.js
-%%WWWDIR%%/js/class.cmessages.js
 %%WWWDIR%%/js/class.cnavtree.js
 %%WWWDIR%%/js/class.cookie.js
 %%WWWDIR%%/js/class.coverride.js
@@ -934,6 +926,23 @@
 %%WWWDIR%%/usergrps.php
 %%WWWDIR%%/users.php
 %%WWWDIR%%/zabbix.php
+%%WWWDIR%%/app/controllers/CControllerNotificationsGet.php
+%%WWWDIR%%/app/controllers/CControllerNotificationsMute.php
+%%WWWDIR%%/app/controllers/CControllerNotificationsRead.php
+%%WWWDIR%%/audio/alarm_average.mp3
+%%WWWDIR%%/audio/alarm_disaster.mp3
+%%WWWDIR%%/audio/alarm_high.mp3
+%%WWWDIR%%/audio/alarm_information.mp3
+%%WWWDIR%%/audio/alarm_ok.mp3
+%%WWWDIR%%/audio/alarm_warning.mp3
+%%WWWDIR%%/audio/no_sound.mp3
+%%WWWDIR%%/js/class.browsertab.js
+%%WWWDIR%%/js/class.localstorage.js
+%%WWWDIR%%/js/class.notification.collection.js
+%%WWWDIR%%/js/class.notification.js
+%%WWWDIR%%/js/class.notifications.audio.js
+%%WWWDIR%%/js/class.notifications.js
+%%WWWDIR%%/js/class.promise.js
 @dir %%WWWDIR%%/local/app/controllers
 @dir %%WWWDIR%%/local/app/views
 @dir %%WWWDIR%%/local/conf

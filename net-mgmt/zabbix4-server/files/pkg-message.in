@@ -41,4 +41,20 @@ Zabbix Life Cycle & Release Policy:
 https://www.zabbix.com/life_cycle_and_release_policy
 EOM
 }
+{
+  type: upgrade
+  maximum_version: "4.0.12"
+  minimum_version: "4.0.10"
+  message: <<EOM
+A change in Zabbix 4.0.11 is causing trouble when stopping the agent, proxy, and
+server daemons. If you are using the default rc script and facing this issue,
+you'll need to send the kill signal to the daemon in order to stop it:
+
+  # killall -9 zabbix_process_name
+
+More details at:
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=239746
+https://support.zabbix.com/browse/ZBX-16460
+EOM
+}
 ]
