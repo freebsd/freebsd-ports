@@ -3,6 +3,7 @@
 
 PORTNAME=	apollo_upload_server
 DISTVERSION=	2.0.0.beta.3
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-graphql>=1.7:devel/rubygem-graphql \
-		rubygem-rails5>=5.0:www/rubygem-rails5
+		rubygem-rails52>=5.0:www/rubygem-rails52
 
 USES=		gem
 USE_RUBY=	yes
