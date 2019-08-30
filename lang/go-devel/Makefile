@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	g20190821
+PORTVERSION=	g20190829
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-devel
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	go14>=1.4:lang/go14
 USES=		shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
-GH_TAGNAME=	ed4f3f3134
+GH_TAGNAME=	d7b402a49a
 
 SHEBANG_FILES=	misc/benchcmp \
 		misc/nacl/go_nacl_*_exec \
