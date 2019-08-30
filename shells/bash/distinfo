@@ -1,4 +1,4 @@
-TIMESTAMP = 1566028543
+TIMESTAMP = 1567141536
 SHA256 (bash/bash-5.0.tar.gz) = b4a80f2ac66170b2913efbfb9f2594f1f76c7b1afd11f799e22035d63077fb4d
 SIZE (bash/bash-5.0.tar.gz) = 10135110
 SHA256 (bash/bash50-001) = f2fe9e1f0faddf14ab9bfa88d450a75e5d028fedafad23b88716bd657c737289
@@ -19,3 +19,7 @@ SHA256 (bash/bash50-008) = eec64588622a82a5029b2776e218a75a3640bef4953f09d6ee1f4
 SIZE (bash/bash50-008) = 2622
 SHA256 (bash/bash50-009) = ed3ca21767303fc3de93934aa524c2e920787c506b601cc40a4897d4b094d903
 SIZE (bash/bash50-009) = 1095
+SHA256 (bash/bash50-010) = d6fbc325f0b5dc54ddbe8ee43020bced8bd589ddffea59d128db14b2e52a8a11
+SIZE (bash/bash50-010) = 6407
+SHA256 (bash/bash50-011) = 2c4de332b91eaf797abbbd6c79709690b5cbd48b12e8dfe748096dbd7bf474ea
+SIZE (bash/bash50-011) = 1870
