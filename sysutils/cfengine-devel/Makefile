@@ -5,8 +5,9 @@ PORTNAME=	cfengine
 PORTVERSION=	3.${CFENGINE_COMMIT_DATE}
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
-HASH=		b417fb6
-CFENGINE_COMMIT_DATE=	2019.08.11
+CFENGINE_HASH=		35d777b0
+LIBNTECH_HASH=		34390bc8
+CFENGINE_COMMIT_DATE=	2019.08.30
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
@@ -16,13 +17,13 @@ COMMENT=	Systems administration tool for networks
 LICENSE=	GPLv3
 
 USE_GITHUB=	yes
-GH_PROJECT=	core
-GH_TAGNAME=	${HASH}
+# GH_PROJECT=	core libntech:libntech
+# GH_TAGNAME=	${CFENGINE_HASH} ${LIBNTECH_HASH}
+GH_TUPLE=	cfengine:core:${CFENGINE_HASH} \
+		cfengine:libntech:${LIBNTECH_HASH}:libntech/libntech
 CPE_VENDOR=	gnu
 
 CONFLICTS=	cfengine-2* cfengine3[0-9]-* cfengine31[02-9]-* cfengine-3.*
-
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
 CONFLICTS=	cfengine-[12-9]*
 
