@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	electrum
-PORTVERSION=	3.3.6
+PORTVERSION=	3.3.8
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
@@ -16,8 +16,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp-socks>0:net/py-aiohttp-socks@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiorpcX>0:devel/py-aiorpcX@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.3.0:www/py-aiohttp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aiorpcX>=0.18:devel/py-aiorpcX@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ecdsa>=0.9:security/py-ecdsa@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${PY_FLAVOR} \
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp-socks>0:net/py-aiohttp-socks@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}protobuf>=2.6.0:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyaes>0:security/py-pyaes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>=0:net/py-pysocks@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}QDarkStyle>2.6:textproc/py-QDarkStyle@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}QDarkStyle<2.7:textproc/py-QDarkStyle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qrcode>=5.1:textproc/py-qrcode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.4.3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}secp256k1>0:math/py-secp256k1@${PY_FLAVOR} \
