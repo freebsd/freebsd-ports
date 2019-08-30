@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lolcat
-PORTVERSION=	99.9.99
+PORTVERSION=	100.0.0
 CATEGORIES=	games
 MASTER_SITES=	RG
 
@@ -11,9 +11,9 @@ COMMENT=	Rainbows and unicorns
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-manpages>=0.6.1:devel/rubygem-manpages \
-		rubygem-optimist>=3.0.0:devel/rubygem-optimist \
-		rubygem-paint>=2.0.0:devel/rubygem-paint
+RUN_DEPENDS=	rubygem-manpages>=0.6.1<0.7:devel/rubygem-manpages \
+		rubygem-optimist>=3.0.0<3.1:devel/rubygem-optimist \
+		rubygem-paint>=2.1.0<2.2:devel/rubygem-paint
 
 USES=		gem
 USE_RUBY=	yes
