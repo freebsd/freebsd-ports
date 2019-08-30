@@ -21,7 +21,8 @@ USES=		gettext gnome gmake libtool pathfix pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 introspection:build
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-introspection	\
+CONFIGURE_ARGS=	--disable-check \
+		--disable-introspection \
 		--with-mdns=avahi
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags gtk+-3.0`
