@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	1.47.2
+DISTVERSION=	1.53.3
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -17,7 +17,7 @@ MY_DEPENDS=	git>=2.21:devel/git \
 		rubygem-rugged>=0.28.0:devel/rubygem-rugged \
 		rubygem-github-linguist>=6.1:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.7.0:textproc/rubygem-gitlab-markup \
-		rubygem-activesupport5>=5.1.7:devel/rubygem-activesupport5 \
+		rubygem-activesupport52>=5.2.3:devel/rubygem-activesupport52 \
 		rubygem-gitaly-proto>=1.32.0:net/rubygem-gitaly-proto \
 		rubygem-rdoc>=6.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.7:www/rubygem-gitlab-gollum-lib \
@@ -42,7 +42,7 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/tags
-GL_COMMIT=	abb937e08c36f0cb89e57eca3038364c44e435c7
+GL_COMMIT=	37b71fbdfe4375bb8eaf64f855f1182caf066ec7
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -57,12 +57,13 @@ GH_TUPLE=	\
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		getsentry:raven-go:v0.1.2:getsentry_raven_go/vendor/github.com/getsentry/raven-go \
 		golang:crypto:c2843e01d9a2:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:d8887717615a:golang_net/vendor/golang.org/x/net \
+		golang:net:d28f0bde5980:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:37e7f081c4d4:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:d0b11bdaac8a:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
 		google:go-genproto:bd91e49a0898:google_go_genproto/vendor/google.golang.org/genproto \
+		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		grpc-ecosystem:go-grpc-middleware:v1.0.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:v1.2.0:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
 		grpc:grpc-go:v1.16.0:grpc_grpc_go/vendor/google.golang.org/grpc \
@@ -75,18 +76,19 @@ GH_TUPLE=	\
 		philhofer:fwd:v1.0.0:philhofer_fwd/vendor/github.com/philhofer/fwd \
 		pkg:errors:v0.8.0:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		prometheus:client_golang:v0.9.3:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_golang:v1.0.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:fd36f4220a90:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.4.0:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:procfs:5867b95ac084:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		prometheus:common:v0.4.1:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.0.2:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		sirupsen:logrus:v1.2.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		stretchr:testify:v1.2.2:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.3.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		tinylib:msgp:v1.1.0:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		uber:jaeger-client-go:v2.15.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v1.5.0:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 GL_TUPLE=	\
-		gitlab-org:gitaly-proto:f4db5d05d437abe1154d7308ca044d3577b5ccba:gitlab_org_gitaly_proto/vendor/gitlab.com/gitlab-org/gitaly-proto \
+		gitlab-org:gitaly-proto:f5d7f3cf76555acb5a14ae80eb7db4ad9ff2c553:gitlab_org_gitaly_proto/vendor/gitlab.com/gitlab-org/gitaly-proto \
 		gitlab-org:labkit:0c3fc7cdd57c57da5ab474aa72b6640d2bdc9ebb:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
+
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example

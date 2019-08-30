@@ -19,6 +19,7 @@
 %%DATADIR%%/ruby/gitlab-shell/README.orig.md
 %%DATADIR%%/ruby/gitlab-shell/VERSION
 %%DATADIR%%/ruby/gitlab-shell/bin/check
+%%DATADIR%%/ruby/gitlab-shell/bin/dump-config
 %%DATADIR%%/ruby/gitlab-shell/bin/test-logger
 %%DATADIR%%/ruby/gitlab-shell/config.yml.example
 %%DATADIR%%/ruby/gitlab-shell/lib/gitlab_access.rb
@@ -135,6 +136,7 @@
 %%DATADIR%%/ruby/lib/gitlab/git/wiki_file.rb
 %%DATADIR%%/ruby/lib/gitlab/git/wiki_page.rb
 %%DATADIR%%/ruby/lib/gitlab/git/wiki_page_version.rb
+%%DATADIR%%/ruby/lib/gitlab/git/worktree.rb
 %%DATADIR%%/ruby/lib/gitlab/git_logger.rb
 %%DATADIR%%/ruby/lib/gitlab/gollum.rb
 %%DATADIR%%/ruby/lib/gitlab/rails_logger.rb
@@ -175,6 +177,7 @@
 %%DATADIR%%/ruby/spec/lib/gitlab/git/testdata/gitalycert.pem
 %%DATADIR%%/ruby/spec/lib/gitlab/git/user_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/wiki_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/worktree_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/ref_matcher_spec.rb
 %%DATADIR%%/ruby/spec/spec_helper.rb
 %%DATADIR%%/ruby/spec/support/generate-seed-repo-rb
