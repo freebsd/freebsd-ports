@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asciidoctor
-PORTVERSION=	1.5.8
+PORTVERSION=	2.0.10
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,6 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/asciidoctor bin/asciidoctor-safe
+PLIST_FILES=	bin/asciidoctor
 
 .include <bsd.port.mk>
