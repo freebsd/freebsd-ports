@@ -6,7 +6,7 @@ PORTVERSION=	4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful command-line bookmark manager
 
 LICENSE=	GPLv3
