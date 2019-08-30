@@ -433,7 +433,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/images/zoom.png
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/index.rhtml
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/js/darkfish.js
-%%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/js/jquery.js
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/js/search.js
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/page.rhtml
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/servlet_not_found.rhtml
@@ -918,6 +917,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%DOCS%%%%RUBY_DOCDIR%%/ChangeLog-2.3.0
 %%DOCS%%%%RUBY_DOCDIR%%/ChangeLog-2.4.0
 %%DOCS%%%%RUBY_DOCDIR%%/ChangeLog-2016
+%%DOCS%%%%RUBY_DOCDIR%%/ChangeLog-2017
 %%DOCS%%%%RUBY_DOCDIR%%/ChangeLog-YARV
 %%DOCS%%%%RUBY_DOCDIR%%/LEGAL
 %%DOCS%%%%RUBY_DOCDIR%%/NEWS-1.8.7
@@ -2798,7 +2798,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db0/stret__large_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db0/stret__large_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db1/struct_y_y_l_t_y_p_e.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db3/structbitset.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db3/vm__method_8c__dep__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db3/vm__method_8c__dep__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/db3/vm__method_8c__dep__incl.png
@@ -8317,7 +8316,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dee/struct6_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dee/struct6_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/dee/struct6_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/def/structsock__timestamp__info.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/df1/cls__1__1byte_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/df1/cls__1__1byte_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/df1/cls__1__1byte_8c__incl.png
