@@ -13,4 +13,4 @@ been applied to the other one, and if so, makes the other side win
 automatically. When there's a non automatically mergeable version conflict,
 Codeville behaves in almost exactly the same way as CVS.
 
-WWW: http://bsdforge.com/projects/devel/codeville/
+WWW: https://bsdforge.com/projects/devel/codeville/
