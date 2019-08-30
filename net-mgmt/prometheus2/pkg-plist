@@ -21,6 +21,7 @@ bin/promtool
 %%PORTDOCS%%%%DOCSDIR%%/images/remote_integrations.png
 %%PORTDOCS%%%%DOCSDIR%%/index.md
 %%PORTDOCS%%%%DOCSDIR%%/installation.md
+%%PORTDOCS%%%%DOCSDIR%%/management_api.md
 %%PORTDOCS%%%%DOCSDIR%%/migration.md
 %%PORTDOCS%%%%DOCSDIR%%/querying/api.md
 %%PORTDOCS%%%%DOCSDIR%%/querying/basics.md
