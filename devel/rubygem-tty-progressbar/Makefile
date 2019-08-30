@@ -12,10 +12,10 @@ COMMENT=	Flexible progress bars drawing in terminal emulators
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-strings-ansi>=0.1.0:devel/rubygem-strings-ansi \
-		rubygem-tty-cursor>=0.7:devel/rubygem-tty-cursor \
-		rubygem-tty-screen>=0.7:devel/rubygem-tty-screen \
-		rubygem-unicode-display_width>=1.6:devel/rubygem-unicode-display_width
+RUN_DEPENDS=	rubygem-strings-ansi>=0.1.0<0.2:devel/rubygem-strings-ansi \
+		rubygem-tty-cursor>=0.7<1:devel/rubygem-tty-cursor \
+		rubygem-tty-screen>=0.7<1:devel/rubygem-tty-screen \
+		rubygem-unicode-display_width>=1.6<2:devel/rubygem-unicode-display_width
 
 USES=		gem
 USE_RUBY=	yes
