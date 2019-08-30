@@ -2,6 +2,7 @@
 
 PORTNAME=	gwenview
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,6 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png
+RUN_DEPENDS=	kipi-plugins>=0:graphics/kipi-plugins
 
 USES=		compiler:c++11-lang cmake desktop-file-utils gettext jpeg pkgconfig \
 		kde:5 qt:5 tar:xz
