@@ -4512,7 +4512,6 @@ graphics/imgseek||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/kalbum||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/kbarcode||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/kdegraphics3||2013-07-26|Has expired: Depends on Qt 3.x
-graphics/kipi-plugins||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/kisomandel||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/kradview||2013-07-26|Has expired: Depends on Qt 3.x
 graphics/kuickshow||2013-07-26|Has expired: Depends on Qt 3.x
@@ -12888,3 +12887,4 @@ lang/swift||2019-08-27|Has expired: Broken for more than 6 months
 security/rubygem-devise-two-factor30-rails5|security/rubygem-devise-two-factor-rails5|2019-08-30|No longer needed after gitlab-ce 12.1 update (r510253)
 textproc/rubygem-asciidoctor-plantuml008|textproc/rubygem-asciidoctor-plantuml|2019-08-30|No longer needed after gitlab-ce 12.1 update (r510253)
 www/rubygem-responders2-rails5|www/rubygem-responders-rails5|2019-08-30|No longer needed after gitlab-ce 12.1 update (r510253)
+graphics/kipiplugins|graphics/kipi-plugins|2019-08-30|Renamed upstream

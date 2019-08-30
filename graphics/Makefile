@@ -405,7 +405,7 @@
     SUBDIR += kf5-prison
     SUBDIR += kgraphviewer
     SUBDIR += kimagemapeditor
-    SUBDIR += kipiplugins
+    SUBDIR += kipi-plugins
     SUBDIR += kix-kmod
     SUBDIR += klatexformula
     SUBDIR += kludge3d
