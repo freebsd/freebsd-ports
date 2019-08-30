@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmrig
-PORTVERSION=	2.14.4
+PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 
@@ -25,17 +25,24 @@ SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME} USERS=${USERS}
 USERS=		xmrig
 
-OPTIONS_DEFINE=	STATIC MICROHTTPD
+OPTIONS_DEFINE=	STATIC MICROHTTPD HWLOC
+HWLOC_DESC=	Portable hardware locality
 MICROHTTPD_DESC=Build with libmicrohttpd support
-OPTIONS_DEFAULT=MICROHTTPD
+OPTIONS_DEFAULT=MICROHTTPD HWLOC
 
-STATIC_PREVENTS=MICROHTTPD
-STATIC_PREVENTS_MSG=	libmicrohttpd support cannot be built static
+STATIC_PREVENTS=HWLOC MICROHTTPD
+STATIC_PREVENTS_MSG=	hwloc and libmicrohttpd support cannot be built static
+
+HWLOC_LIB_DEPENDS+=	libhwloc.so:devel/hwloc
 
 MICROHTTPD_LIB_DEPENDS+=	libmicrohttpd.so:www/libmicrohttpd \
 				libuv.so:devel/libuv
 
 STATIC_BUILD_DEPENDS+=	${LOCALBASE}/lib/libuv.a:devel/libuv
+
+post-patch-HWLOC-off:
+	@${REINPLACE_CMD} -e 's|\(.*WITH_HWLOC.*\)\(ON\)|\1OFF|' \
+		${WRKSRC}/CMakeLists.txt
 
 post-patch-MICROHTTPD-off:
 	@${REINPLACE_CMD} -e 's|\(.*WITH_HTTPD.*\)\(ON\)|\1OFF|' \
