@@ -15,8 +15,8 @@ lib/libKF5kipiplugins.so.5.9.1
 %%QT_PLUGINDIR%%/kipiplugin_remotestorage.so
 %%QT_PLUGINDIR%%/kipiplugin_sendimages.so
 %%QT_PLUGINDIR%%/kipiplugin_smug.so
-%%QT_PLUGINDIR%%/kipiplugin_vkontakte.so
-%%QT_PLUGINDIR%%/kipiplugin_wikimedia.so
+%%KVKONTAKTE%%%%QT_PLUGINDIR%%/kipiplugin_vkontakte.so
+%%MEDIAWIKI%%%%QT_PLUGINDIR%%/kipiplugin_wikimedia.so
 %%QT_PLUGINDIR%%/kipiplugin_yandexfotki.so
 share/applications/kipiplugins.desktop
 share/icons/hicolor/128x128/apps/kipi-flash.png
@@ -32,7 +32,7 @@ share/icons/hicolor/16x16/apps/kipi-jalbum.png
 share/icons/hicolor/16x16/apps/kipi-piwigo.png
 share/icons/hicolor/16x16/apps/kipi-rajce.png
 share/icons/hicolor/16x16/apps/kipi-smugmug.png
-share/icons/hicolor/16x16/apps/kipi-wikimedia.png
+%%MEDIAWIKI%%share/icons/hicolor/16x16/apps/kipi-wikimedia.png
 share/icons/hicolor/22x22/apps/kipi-dropbox.png
 share/icons/hicolor/22x22/apps/kipi-facebook.png
 share/icons/hicolor/22x22/apps/kipi-flash.png
@@ -43,7 +43,7 @@ share/icons/hicolor/22x22/apps/kipi-hq.png
 share/icons/hicolor/22x22/apps/kipi-imgur.png
 share/icons/hicolor/22x22/apps/kipi-piwigo.png
 share/icons/hicolor/22x22/apps/kipi-smugmug.png
-share/icons/hicolor/22x22/apps/kipi-wikimedia.png
+%%MEDIAWIKI%%share/icons/hicolor/22x22/apps/kipi-wikimedia.png
 share/icons/hicolor/24x24/apps/kipi-jalbum.png
 share/icons/hicolor/32x32/apps/kipi-dropbox.png
 share/icons/hicolor/32x32/apps/kipi-facebook.png
@@ -58,7 +58,7 @@ share/icons/hicolor/32x32/apps/kipi-jalbum.png
 share/icons/hicolor/32x32/apps/kipi-piwigo.png
 share/icons/hicolor/32x32/apps/kipi-rajce.png
 share/icons/hicolor/32x32/apps/kipi-smugmug.png
-share/icons/hicolor/32x32/apps/kipi-wikimedia.png
+%%MEDIAWIKI%%share/icons/hicolor/32x32/apps/kipi-wikimedia.png
 share/icons/hicolor/48x48/apps/kipi-dropbox.png
 share/icons/hicolor/48x48/apps/kipi-facebook.png
 share/icons/hicolor/48x48/apps/kipi-flash.png
@@ -71,7 +71,7 @@ share/icons/hicolor/48x48/apps/kipi-imgur.png
 share/icons/hicolor/48x48/apps/kipi-piwigo.png
 share/icons/hicolor/48x48/apps/kipi-rajce.png
 share/icons/hicolor/48x48/apps/kipi-smugmug.png
-share/icons/hicolor/48x48/apps/kipi-wikimedia.png
+%%MEDIAWIKI%%share/icons/hicolor/48x48/apps/kipi-wikimedia.png
 share/icons/hicolor/64x64/apps/kipi-imageshack.png
 share/icons/hicolor/64x64/apps/kipi-rajce.png
 share/icons/hicolor/scalable/apps/kipi-facebook.svgz
@@ -82,7 +82,7 @@ share/icons/hicolor/scalable/apps/kipi-hq.svgz
 share/icons/hicolor/scalable/apps/kipi-imgur.svgz
 share/icons/hicolor/scalable/apps/kipi-piwigo.svgz
 share/icons/hicolor/scalable/apps/kipi-smugmug.svgz
-share/icons/hicolor/scalable/apps/kipi-wikimedia.svgz
+%%MEDIAWIKI%%share/icons/hicolor/scalable/apps/kipi-wikimedia.svgz
 share/kipiplugin_flashexport/index.template
 share/kipiplugin_flashexport/index2.template
 share/kipiplugin_flashexport/index3.template
@@ -131,8 +131,8 @@ share/kservices5/kipiplugin_rajce.desktop
 share/kservices5/kipiplugin_remotestorage.desktop
 share/kservices5/kipiplugin_sendimages.desktop
 share/kservices5/kipiplugin_smug.desktop
-share/kservices5/kipiplugin_vkontakte.desktop
-share/kservices5/kipiplugin_wikimedia.desktop
+%%KVKONTAKTE%%share/kservices5/kipiplugin_vkontakte.desktop
+%%MEDIAWIKI%%share/kservices5/kipiplugin_wikimedia.desktop
 share/kservices5/kipiplugin_yandexfotki.desktop
 share/kxmlgui5/kipi/kipiplugin_dropboxui.rc
 share/kxmlgui5/kipi/kipiplugin_facebookui.rc
@@ -149,8 +149,8 @@ share/kxmlgui5/kipi/kipiplugin_rajceui.rc
 share/kxmlgui5/kipi/kipiplugin_remotestorageui.rc
 share/kxmlgui5/kipi/kipiplugin_sendimagesui.rc
 share/kxmlgui5/kipi/kipiplugin_smugui.rc
-share/kxmlgui5/kipi/kipiplugin_vkontakteui.rc
-share/kxmlgui5/kipi/kipiplugin_wikimediaui.rc
+%%KVKONTAKTE%%share/kxmlgui5/kipi/kipiplugin_vkontakteui.rc
+%%MEDIAWIKI%%share/kxmlgui5/kipi/kipiplugin_wikimediaui.rc
 share/kxmlgui5/kipi/kipiplugin_yandexfotkiui.rc
 share/locale/ar/LC_MESSAGES/kipiplugin_dropbox.mo
 share/locale/ar/LC_MESSAGES/kipiplugin_facebook.mo
