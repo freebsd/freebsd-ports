@@ -12,7 +12,7 @@ COMMENT=	Terminal spinner for tasks with non-deterministic time
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-tty-cursor>=0.7:devel/rubygem-tty-cursor
+RUN_DEPENDS=	rubygem-tty-cursor>=0.7<1:devel/rubygem-tty-cursor
 
 USES=		gem
 USE_RUBY=	yes
