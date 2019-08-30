@@ -10,22 +10,18 @@ MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Anarchic control version system without unnecessary re-merges
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NO_ARCH=	yes
 USES=		python:2.7 tar:xz
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
-PORTDOCS=	LICENSE.txt
 PORTEXAMPLES=	cdvserver.conf.sample
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES
 
-post-install:
-# examples
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
-# documentation
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
