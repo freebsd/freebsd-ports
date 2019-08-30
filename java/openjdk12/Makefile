@@ -127,6 +127,11 @@ CONFIGURE_ARGS+=	--disable-warnings-as-errors \
 MAKE_ENV+=	USE_CLANG=true
 .endif
 
+.if ${ARCH} == aarch64
+CONFIGURE_ARGS+=	--disable-warnings-as-errors \
+			--disable-dtrace
+.endif
+
 .if empty(ICONV_LIB)
 ICONV_CFLAGS=	-DLIBICONV_PLUG
 .else
