@@ -12,11 +12,11 @@ COMMENT=	Fexible and intuitive table generator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-equatable>=0.6:devel/rubygem-equatable \
-		rubygem-necromancer>=0.5:devel/rubygem-necromancer \
-		rubygem-pastel>=0.7.2:devel/rubygem-pastel \
-		rubygem-strings>=0.1.0:devel/rubygem-strings \
-		rubygem-tty-screen>=0.7:devel/rubygem-tty-screen
+RUN_DEPENDS=	rubygem-equatable>=0.6<1:devel/rubygem-equatable \
+		rubygem-necromancer>=0.5<1:devel/rubygem-necromancer \
+		rubygem-pastel>=0.7.2<0.8:devel/rubygem-pastel \
+		rubygem-strings>=0.1.5<0.2:devel/rubygem-strings \
+		rubygem-tty-screen>=0.7<1:devel/rubygem-tty-screen
 
 USES=		gem
 USE_RUBY=	yes
