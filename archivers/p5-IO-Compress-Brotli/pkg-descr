@@ -1,0 +1,4 @@
+IO::Compress::Brotli is a module that compresses/decompresses Brotli buffers
+and streams.
+
+WWW: https://metacpan.org/release/IO-Compress-Brotli
