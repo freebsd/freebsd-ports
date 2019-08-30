@@ -8,7 +8,7 @@ MASTER_SITES=	https://hg.prosody.im/${PORTNAME}/archive/  \
 DISTNAME=	6f289283feb1
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prosody modules repository snapshot
 
 LICENSE=	MIT
