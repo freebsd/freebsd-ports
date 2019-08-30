@@ -9,12 +9,12 @@ COMMENT=	Amazon S3 compatible object storage server
 
 LICENSE=	APACHE20
 
-USES=		compiler go
+USES=		compiler go:modules
 
 USE_GITHUB=	yes
 GHTAG=		RELEASE.2019-06-15T23-07-18Z
 COMMIT_ID=	99bf4d0c429f04dbd013ba98840d07b759ae1702
-GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT/src/github.com/${PORTNAME}/${PORTNAME} \
+GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-sdk-for-go:v27.0.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:go-autorest:v11.7.0:azure_go_autorest/vendor/github.com/Azure/go-autorest \
 		DataDog:zstd:v1.4.0:datadog_zstd/vendor/github.com/DataDog/zstd \
@@ -140,6 +140,13 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT/src/github.com/${PORTNAME}/${
 		tidwall:sjson:v1.0.4:tidwall_sjson/vendor/github.com/tidwall/sjson \
 		uber-go:atomic:v1.3.2:uber_go_atomic/vendor/go.uber.org/atomic \
 		valyala:tcplisten:ceec8f93295a:valyala_tcplisten/vendor/github.com/valyala/tcplisten
+
+GO_BUILDFLAGS=	-ldflags='\
+		-X github.com/minio/minio/cmd.Version=${GH_TAGNAME:C/RELEASE\.//:C|(..)-(..)-(..)Z|\1:\2:\3Z|} \
+		-X github.com/minio/minio/cmd.ReleaseTag=${GH_TAGNAME} \
+		-X github.com/minio/minio/cmd.CommitID=${COMMIT_ID} \
+		-X github.com/minio/minio/cmd.GOPATH=${WRKSRC} -s -w'
+
 PLIST_FILES=	bin/${PORTNAME}
 USE_RC_SUBR=	minio
 
@@ -148,13 +155,5 @@ GROUPS=		minio
 
 SUB_LIST=	GROUP="${GROUPS}" \
 		USER="${USERS}"
-
-do-build:
-	cd ${WRKSRC}/${GH_SUBDIR} ; \
-	${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} CGO_ENABLED=0 go build \
-		--ldflags '-X github.com/minio/minio/cmd.Version=${GH_TAGNAME:C/RELEASE\.//:C|(..)-(..)-(..)Z|\1:\2:\3Z|} -X github.com/minio/minio/cmd.ReleaseTag=${GH_TAGNAME} -X github.com/minio/minio/cmd.CommitID=${COMMIT_ID} -X github.com/minio/minio/cmd.GOPATH=${WRKSRC} -s -w' -o ${WRKSRC}/bin/minio
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
