@@ -27,6 +27,17 @@ JDK_ARCH=	${ARCH}
 
 INSTALLDIR=	${STAGEDIR}${PREFIX}/${JDK_ROOT}
 
+.include <bsd.port.pre.mk>
+
+# Support aarch64 on FreeBSD 12 and up
+.if ${OSVERSION} >= 1200500
+ONLY_FOR_ARCHS+=aarch64
+.endif
+
+.if ${ARCH} == aarch64
+DISTNAME=	${JDK_PORT}-${JDK_ARCH}-12-${PORTVERSION}
+.endif
+
 post-extract:
 	-${MV} ${WRKSRC}/include/bsd ${WRKSRC}/include/freebsd
 
@@ -35,4 +46,4 @@ do-install:
 	@cd ${WRKSRC} && ${COPYTREE_BIN} bin ${INSTALLDIR}
 	@${CHMOD} a+x ${INSTALLDIR}/lib/jspawnhelper
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
