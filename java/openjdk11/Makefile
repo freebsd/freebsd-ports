@@ -94,6 +94,11 @@ JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
 
+# Support aarch64 on FreeBSD 12 and up
+.if ${OSVERSION} >= 1200500
+ONLY_FOR_ARCHS+=aarch64
+.endif
+
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk11 \
 		${LOCALBASE}/bootstrap-openjdk11
 
