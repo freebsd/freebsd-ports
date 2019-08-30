@@ -57,8 +57,8 @@ you update your ports collection, before attempting any port upgrades.
   # service postgresql start
 
   ATTENTION:
-  1) The default user changed from "pgsql" to "postgres". The migration steps above prevent the
-     user "pgsql" as database user while the database itself is executed using the "postgres" user of FreeBSD
+  1) The default user changed from "pgsql" to "postgres". The migration steps above preserve
+     the "pgsql" database user while the database daemon is now executed as the "postgres" FreeBSD user.
   2) The default data dir changed from "/usr/local/pgsql/data/" to "/var/db/postgres/data11/"
   3) If you use non-default initdb options, you have to adjust the initdb-command accordingly
 
