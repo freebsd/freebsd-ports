@@ -16,7 +16,6 @@ USES=		compiler:c11 meson ninja python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	att
 GH_PROJECT=	ast
-GH_TAGNAME=	${HASH}
 
 KSH_CONFLICTS=		pdksh-*
 KSH93_CONFLICTS=	ksh93-devel-* ast-ksh-*
