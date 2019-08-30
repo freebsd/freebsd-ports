@@ -1,0 +1,11 @@
+--- bin/bro-perl.orig	2019-08-30 14:23:52 UTC
++++ bin/bro-perl
+@@ -21,7 +21,7 @@ GetOptions(
+     'o|output=s'            => \(my $OUTPUT),
+     'q|quality=i'           => \(my $QUALITY = 11),
+     'r|repeat=i'            => \(my $REPEAT = 1),
+-    's|stream=i'            => \(my $STREAM),
++    's|stream=i'            => \(my $STREAM = 8),
+     'v|verbose'             => \(my $VERBOSE),
+     'w|window=i'            => \(my $WINDOW = 22),
+ );
