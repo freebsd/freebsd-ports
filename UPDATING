@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190830:
+  AFFECTS: users of www/gitlab-ce
+  AUTHOR: mfechner@FreeBSD.org
+
+  Make sure you upgrade your PostgreSQL to version 11 as described in 20190829,
+  before you upgrade your gitlab-ce version.
+  Gitlab-ce 12.1 needs at least PostgreSQL version 9.6.
+
+  After this you can follow the usual upgrade guide:
+  https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/12.0-12.1-freebsd.md
+
 20190829:
   AFFECTS: users of database/postgresql* and other software using PostgreSQL to run
   AUTHOR: tz@FreeBSD.org
