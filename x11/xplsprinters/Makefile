@@ -7,6 +7,9 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Shows a list of Xprint printers
 
+DEPRECATED=     Deprecated upstream
+EXPIRATION_DATE=2019-10-01
+
 XORG_CAT=	app
 USE_XORG=	xp xprintutil x11
 

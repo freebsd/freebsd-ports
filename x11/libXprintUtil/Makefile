@@ -8,6 +8,9 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	The XprintUtil library
 
+DEPRECATED=     Deprecated upstream
+EXPIRATION_DATE=2019-10-01
+
 LICENSE=	MIT
 
 XORG_CAT=	lib
