@@ -4,7 +4,7 @@
 # WARNING: Do not upgrade to 0.18.0, this breaks finance/electrum
 
 PORTNAME=	aiorpcX
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.3
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
