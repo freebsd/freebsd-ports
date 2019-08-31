@@ -1,15 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	noto
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://noto-website.storage.googleapis.com/pkgs/ \
+MASTER_SITES=	https://noto-website-2.storage.googleapis.com/pkgs/ \
 		https://github.com/googlei18n/noto-emoji/raw/master/fonts/:emoji
 PKGNAMESUFFIX=	-basic
 DISTFILES=	Noto-hinted${EXTRACT_SUFX} \
-		NotoColorEmoji.ttf:emoji \
-		NotoEmoji-Regular.ttf:emoji
+		NotoColorEmoji.ttf:emoji
 EXTRACT_ONLY=	Noto-hinted${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -40,7 +38,7 @@ BASIC_FONTS=	NotoColorEmoji.ttf \
 		NotoSerif-Regular.ttf
 
 post-extract:
-	@${CP} ${DISTDIR}/NotoColorEmoji.ttf ${DISTDIR}/NotoEmoji-Regular.ttf ${WRKSRC}
+	@${CP} ${DISTDIR}/NotoColorEmoji.ttf ${WRKSRC}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
