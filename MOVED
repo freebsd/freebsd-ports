@@ -12888,3 +12888,6 @@ security/rubygem-devise-two-factor30-rails5|security/rubygem-devise-two-factor-r
 textproc/rubygem-asciidoctor-plantuml008|textproc/rubygem-asciidoctor-plantuml|2019-08-30|No longer needed after gitlab-ce 12.1 update (r510253)
 www/rubygem-responders2-rails5|www/rubygem-responders-rails5|2019-08-30|No longer needed after gitlab-ce 12.1 update (r510253)
 graphics/kipiplugins|graphics/kipi-plugins|2019-08-30|Renamed upstream
+devel/rubygem-rails-i18n|devel/rubygem-rails-i18n-rails5|2019-08-31|Has expired: Use devel/rubygem-rails-i18n-rails5 instead
+textproc/rubygem-gitlab-linguist|textproc/rubygem-github-linguist|2019-08-31|Has expired: Use textproc/rubygem-github-linguist instead
+textproc/rubygem-html-pipeline1|textproc/rubygem-html-pipeline|2019-08-31|Has expired: Use textproc/rubygem-html-pipeline instead
