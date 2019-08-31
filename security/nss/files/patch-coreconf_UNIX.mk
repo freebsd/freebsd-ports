@@ -8,6 +8,6 @@
  	DEFINES    += -UDEBUG -DNDEBUG
  else
 -	OPTIMIZER  += -g
- 	USERNAME   := $(shell whoami)
- 	USERNAME   := $(subst -,_,$(USERNAME))
- 	DEFINES    += -DDEBUG -UNDEBUG -DDEBUG_$(USERNAME)
+ 	DEFINES    += -DDEBUG -UNDEBUG
+ endif
+ 
