@@ -2,7 +2,6 @@
 libexec/dwarffortress/Dwarf_Fortress
 libexec/dwarffortress/libgcc_s.so.1
 libexec/dwarffortress/libgraphics.so
-libexec/dwarffortress/libstdc++.so.6
 %%DATADIR%%/data/announcement/diplomatrebuffed
 %%DATADIR%%/data/announcement/end2
 %%DATADIR%%/data/announcement/end3
