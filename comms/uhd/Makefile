@@ -1,27 +1,37 @@
 # $FreeBSD$
 
 PORTNAME=	uhd
-PORTVERSION=	3.10.3.0
-PORTREVISION=	12
+PORTVERSION=	3.14.1.0
+#PORTREVISION=	1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://files.ettus.com/binaries/images/
-DISTFILES=	${IMAGE_FILE}
+#MASTER_SITES=	http://files.ettus.com/binaries/images/
+#DISTFILES=	${IMAGE_FILE}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Ettus Research UHD driver framework
 
+# See https://www.ettus.com/sdr-software/detail/licenses.  Dual license
+# under GPLv3 and and "Alternate License" whose terms are not documented
+# on the web site (contact info@ettus.com).  Mark as GPLv3 for now
+# until terms of the "Alternate License" are made clear.  When that
+# is understood and if appropriate, we can add that license here.
+LICENSE=	GPLv3
+
+BROKEN_powerpc64=	fails to link: undefined reference to boost function
+
 LIB_DEPENDS=	${PY_BOOST} \
 		libboost_system.so:devel/boost-libs
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs \
-		cheetah-analyze:devel/py-cheetah@${PY_FLAVOR} \
+BUILD_DEPENDS=	cheetah-analyze:devel/py-cheetah@${PY_FLAVOR} \
 		rst2html:textproc/py-docutils \
 		orcc:devel/orc \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 
+USES=		compiler:c++14-lang cmake ncurses pkgconfig \
+		dos2unix python:2.7 shebangfix
 USE_GITHUB=     yes
 GH_ACCOUNT=     EttusResearch
-GH_TAGNAME=     ef1576780bc927b8611640091b15f3d051cb97ad
+GH_TAGNAME=     bfb9c1c77ecd06120a16cebce9de2225d87e50f2
 
 CONFLICTS=	usrp-[0-9]*
 
@@ -33,14 +43,11 @@ BROKEN_FreeBSD_13_armv6=	fails to configure: Could not find standard set_new_han
 BROKEN_FreeBSD_13_armv7=	fails to configure: Could not find standard set_new_handler function
 BROKEN_powerpc64=		fails to link: undefined reference to boost function
 
-USES=		compiler:c++11-lib cmake ncurses pkgconfig \
-		dos2unix python:2.7 shebangfix
 USE_LDCONFIG=		yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
-#MAKE_JOBS_UNSAFE=	yes
 #CXXFLAGS_amd64=	-msse2 -std=c++11
 #CXXFLAGS_i386=	-msse2 -std=c++11
-CXXFLAGS_amd64=	-msse2 -std=c++98
+CXXFLAGS_amd64=	-msse2 -std=c++11
 CXXFLAGS_i386=	-msse2 -std=c++98
 
 SHEBANG_GLOB=	*.py *.py.in
@@ -49,26 +56,15 @@ CMAKE_ARGS+=	-DPKG_LIB_DIR:STRING="share/uhd" -DUHD_TXRX_DEBUG_PRINTS="yes"
 # for excruciating debug use this -db
 #CMAKE_ARGS+=	--debug-output --trace
 
-IMAGE_FILE=	uhd-images_003.010.003.000-release.zip
+IMAGE_FILE=	uhd-images_3.14.0.0-rc1.zip
 
-OPTIONS_DEFINE= DOXYGEN DOCS
-#OPTIONS_DEFAULT= DOXYGEN
+OPTIONS_DEFINE= DOCS DOXYGEN
+OPTIONS_DEFAULT= DOCS DOXYGEN
 
 OPTIONS_SUB=yes
 DOXYGEN_BUILD_DEPENDS=  doxygen:devel/doxygen
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen:devel/doxygen
-CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
-HAVEDOCS=	YES
-.endif
-
-post-patch:
-# USES=pathfix handles LIBRARY_INSTALL_DIR but not LIBRARY_DIR
-	@${REINPLACE_CMD} '/pkgconfig/s|LIBRARY_DIR}|CMAKE_INSTALL_PREFIX}/libdata|' \
-		${PATCH_WRKSRC}/host/CMakeLists.txt
+DOXYGEN_CMAKE_ON=	-DENABLE_DOXYGEN:STRING="ON"
+DOXYGEN_CMAKE_OFF=	-DENABLE_DOXYGEN:STRING="OFF" -DENABLE_MANUAL:STRING="OFF"
 
 do-install:
 # install host component
@@ -76,8 +72,8 @@ do-install:
 	@${REINPLACE_CMD} -e "s|/usr/local|${STAGEDIR}${PREFIX}|g" \
 		${CONFIGURE_WRKSRC}/cmake_install.cmake
 	cd ${CONFIGURE_WRKSRC} && ${MAKE_CMD} install
-.for subdir in images
-	${CP} -Rp ${WRKDIR}/${IMAGE_FILE:S|.zip||}/share/uhd/${subdir} ${STAGEDIR}${DATADIR}
-.endfor
+#.for subdir in images
+#	${CP} -Rp ${WRKDIR}/uhd-ef1576780bc927b8611640091b15f3d051cb97ad/share/uhd/${subdir} ${STAGEDIR}${DATADIR}
+#.endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
