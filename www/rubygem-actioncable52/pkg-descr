@@ -1,5 +1,3 @@
-Action Cable - Integrated WebSockets for Rails
-
 Action Cable seamlessly integrates WebSockets with the rest of your Rails
 application. It allows for real-time features to be written in Ruby in the same
 style and form as the rest of your Rails application, while still being
@@ -9,3 +7,4 @@ access to your full domain model written with Active Record or your ORM of
 choice.
 
 WWW: https://rubyonrails.org/
+WWW: https://github.com/rails/rails/tree/master/actioncable
