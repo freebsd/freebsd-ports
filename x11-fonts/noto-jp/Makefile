@@ -4,7 +4,7 @@ PORTNAME=	noto
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://noto-website2.storage.googleapis.com/pkgs/
+MASTER_SITES=	https://noto-website-2.storage.googleapis.com/pkgs/
 DISTNAME=	Noto-hinted
 PKGNAMESUFFIX=	-jp
 
