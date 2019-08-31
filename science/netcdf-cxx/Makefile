@@ -20,15 +20,12 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
-CONFLICTS=	netcdf-3.* netcdf-4.[0-2].*
+USES=		libtool localbase pathfix
 
 CPPFLAGS+=	-fPIC -DPIC
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		libtool localbase pathfix
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnetcdf_c++4.so.1
 
 .include <bsd.port.mk>
