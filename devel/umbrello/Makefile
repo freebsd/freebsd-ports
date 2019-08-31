@@ -20,9 +20,6 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 USE_QT=		concurrent core dbus gui network printsupport svg webkit widgets xml \
 		buildtools_build qmake_build
 
-# Build the KDE Frameworks 5 based version.
-CMAKE_BOOL=	BUILD_KF5
-
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
