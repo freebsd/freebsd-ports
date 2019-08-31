@@ -5459,6 +5459,7 @@
     SUBDIR += rubygem-aws-sdk-cloudwatchevents
     SUBDIR += rubygem-aws-sdk-cloudwatchlogs
     SUBDIR += rubygem-aws-sdk-codebuild
+    SUBDIR += rubygem-aws-sdk-codecommit
     SUBDIR += rubygem-aws-sdk-core
     SUBDIR += rubygem-aws-sdk-core2
     SUBDIR += rubygem-aws-sdk-resources
