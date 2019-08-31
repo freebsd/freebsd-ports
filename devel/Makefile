@@ -5563,6 +5563,7 @@
     SUBDIR += rubygem-aws-sdk-organizations
     SUBDIR += rubygem-aws-sdk-personalize
     SUBDIR += rubygem-aws-sdk-personalizeevents
+    SUBDIR += rubygem-aws-sdk-personalizeruntime
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-resources2
     SUBDIR += rubygem-aws-sdk-v1
