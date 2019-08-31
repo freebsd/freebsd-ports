@@ -5518,6 +5518,7 @@
     SUBDIR += rubygem-aws-sdk-iot
     SUBDIR += rubygem-aws-sdk-iot1clickdevicesservice
     SUBDIR += rubygem-aws-sdk-iot1clickprojects
+    SUBDIR += rubygem-aws-sdk-iotanalytics
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-resources2
     SUBDIR += rubygem-aws-sdk-v1
