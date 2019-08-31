@@ -41,7 +41,7 @@ RUN_DEPENDS=	rubygem-actioncable52>=${PORTVERSION}:www/rubygem-actioncable52 \
 		rubygem-uglifier>=1.3.0:www/rubygem-uglifier \
 		rubygem-web-console-rails52>=3.3.0:devel/rubygem-web-console-rails52
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
