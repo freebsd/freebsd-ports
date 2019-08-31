@@ -14,8 +14,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actionpack50>=${PORTVERSION}:www/rubygem-actionpack50 \
-		rubygem-nio4r>=1.2:devel/rubygem-nio4r \
-		rubygem-websocket-driver>=0.6.1:www/rubygem-websocket-driver
+		rubygem-nio4r>=1.2<3.0:devel/rubygem-nio4r \
+		rubygem-websocket-driver>=0.6.1<1:www/rubygem-websocket-driver
 
 USES=		gem
 USE_RUBY=	yes
