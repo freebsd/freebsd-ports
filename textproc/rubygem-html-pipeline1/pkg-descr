@@ -1,6 +1,0 @@
-This library provides a handful of chainable HTML filters to
-transform user content into markup. A filter takes an HTML
-string or Nokogiri::HTML::DocumentFragment, optionally
-manipulates it, and then outputs the result.
-
-WWW: https://github.com/jch/html-pipeline
