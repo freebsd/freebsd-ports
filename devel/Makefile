@@ -5618,6 +5618,7 @@
     SUBDIR += rubygem-aws-sdk-workdocs
     SUBDIR += rubygem-aws-sdk-worklink
     SUBDIR += rubygem-aws-sdk-workmail
+    SUBDIR += rubygem-aws-sdk-workspaces
     SUBDIR += rubygem-aws-sdk2
     SUBDIR += rubygem-aws-sigv2
     SUBDIR += rubygem-aws-sigv4
