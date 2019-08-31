@@ -106,7 +106,7 @@ EMACS_FLAVOR=	full
 EMACS_VER=			27.0.50
 EMACS_PORTDIR=		editors/emacs-devel
 .else
-EMACS_VER=		26.2
+EMACS_VER=		26.3
 EMACS_PORTDIR=		editors/emacs
 .endif
 
