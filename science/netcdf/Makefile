@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf
-PORTVERSION=	4.7.0
+PORTVERSION=	4.7.1
 DISTVERSIONPREFIX=	c-
 CATEGORIES=	science
 MASTER_SITES=	https://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
@@ -27,7 +27,7 @@ SZIP_DESC=	SZIP support (required if HDF5 was built with SZIP)
 USES=		gmake libtool localbase ncurses pathfix pkgconfig:run
 
 CONFIGURE_ARGS=	--disable-filter-testing \
-		--enable-dap --enable-netcdf-4
+		--enable-byterange --enable-dap --enable-netcdf-4
 CPPFLAGS+=	-fPIC -DPIC
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
