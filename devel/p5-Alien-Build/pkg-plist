@@ -68,6 +68,7 @@
 %%SITE_PERL%%/Alien/Build/Plugin/Probe/CBuilder.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Probe/CommandLine.pm
 %%SITE_PERL%%/Alien/Build/Plugin/Test/Mock.pm
+%%SITE_PERL%%/Alien/Build/Temp.pm
 %%SITE_PERL%%/Alien/Build/Util.pm
 %%SITE_PERL%%/Alien/Build/Version/Basic.pm
 %%SITE_PERL%%/Alien/Build/rc.pm
@@ -149,6 +150,7 @@
 %%PERL5_MAN3%%/Alien::Build::Plugin::Probe::CBuilder.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Probe::CommandLine.3.gz
 %%PERL5_MAN3%%/Alien::Build::Plugin::Test::Mock.3.gz
+%%PERL5_MAN3%%/Alien::Build::Temp.3.gz
 %%PERL5_MAN3%%/Alien::Build::Util.3.gz
 %%PERL5_MAN3%%/Alien::Build::Version::Basic.3.gz
 %%PERL5_MAN3%%/Alien::Build::rc.3.gz
