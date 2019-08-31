@@ -5522,6 +5522,7 @@
     SUBDIR += rubygem-aws-sdk-iotdataplane
     SUBDIR += rubygem-aws-sdk-iotevents
     SUBDIR += rubygem-aws-sdk-ioteventsdata
+    SUBDIR += rubygem-aws-sdk-iotjobsdataplane
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-resources2
     SUBDIR += rubygem-aws-sdk-v1
