@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Job class declarations for a variety of queueing backends
 
 LICENSE=	MIT
@@ -20,5 +20,7 @@ USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^4\.2\.
 
 .include <bsd.port.mk>
