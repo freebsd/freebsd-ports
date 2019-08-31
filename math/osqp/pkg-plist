@@ -2,8 +2,8 @@ include/osqp/auxil.h
 include/osqp/constants.h
 include/osqp/cs.h
 include/osqp/ctrlc.h
+include/osqp/error.h
 include/osqp/glob_opts.h
-include/osqp/kkt.h
 include/osqp/lin_alg.h
 include/osqp/lin_sys.h
 include/osqp/osqp.h
