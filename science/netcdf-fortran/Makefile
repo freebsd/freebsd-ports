@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf-fortran
-PORTVERSION=	4.4.5
-DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTVERSION=	4.5.0
 CATEGORIES=	science
+MASTER_SITES=	https://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
+		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fortran library for machine-independent, array-oriented data access
@@ -17,19 +18,14 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
-USES=		fortran libtool localbase makeinfo pathfix
+USES=		fortran gmake libtool localbase makeinfo pathfix
 
 CPPFLAGS+=	-fPIC -DPIC -DgFortran
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
 MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-
-GH_ACCOUNT=	Unidata
-USE_GITHUB=	yes
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnetcdff.so.6.1.1
 
 .include <bsd.port.mk>
