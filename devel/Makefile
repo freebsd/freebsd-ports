@@ -5515,6 +5515,7 @@
     SUBDIR += rubygem-aws-sdk-iam
     SUBDIR += rubygem-aws-sdk-importexport
     SUBDIR += rubygem-aws-sdk-inspector
+    SUBDIR += rubygem-aws-sdk-iot
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-resources2
     SUBDIR += rubygem-aws-sdk-v1
