@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x2goclient
-PORTVERSION=	4.1.0.0
-PORTREVISION=	2
+PORTVERSION=	4.1.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
