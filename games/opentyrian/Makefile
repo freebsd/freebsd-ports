@@ -3,6 +3,7 @@
 
 PORTNAME=	opentyrian
 PORTVERSION=	2.1.20130907
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://bitbucket.org/opentyrian/opentyrian/get/ \
 		http://mirror.amdmi3.ru/distfiles/${DIST_SUBDIR}/
@@ -17,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-77a8715634e3
 
-USES=		gmake tar:bzip2
+USES=		gmake sdl tar:bzip2
 MAKE_ENV=	ALL_CFLAGS="${CFLAGS}"
 USE_SDL=	sdl
 SUB_FILES=	pkg-message
@@ -31,8 +32,8 @@ OPTIONS_DEFINE=	NETWORK DOCS
 
 NETWORK_DESC=	Enable network support
 NETWORK_USE=		SDL=net
-NETWORK_MAKE_ON=	WITH_NETWORK=true
-NETWORK_MAKE_OFF=	WITH_NETWORK=false
+NETWORK_MAKE_ARGS=	WITH_NETWORK=true
+NETWORK_MAKE_ARGS_OFF=	WITH_NETWORK=false
 
 post-patch:
 	@${REINPLACE_CMD} -e '/custom_data_dir/ s|"."|"${DATADIR}"|' ${WRKSRC}/src/file.c
