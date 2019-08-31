@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-vsphere
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
