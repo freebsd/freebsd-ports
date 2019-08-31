@@ -1,3 +1,3 @@
-TIMESTAMP = 1567166205
-SHA256 (websockets-8.0.tar.gz) = 945d98696c94bfa5b6d9d3aa98f2344f402bffe6c07c1920632419a41363f509
-SIZE (websockets-8.0.tar.gz) = 57334
+TIMESTAMP = 1567236868
+SHA256 (websockets-8.0.2.tar.gz) = 882a7266fa867a2ebb2c0baaa0f9159cabf131cf18c1b4270d79ad42f9208dc5
+SIZE (websockets-8.0.2.tar.gz) = 57316
