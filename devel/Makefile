@@ -5607,6 +5607,7 @@
     SUBDIR += rubygem-aws-sdk-storagegateway
     SUBDIR += rubygem-aws-sdk-support
     SUBDIR += rubygem-aws-sdk-swf
+    SUBDIR += rubygem-aws-sdk-textract
     SUBDIR += rubygem-aws-sdk-v1
     SUBDIR += rubygem-aws-sdk2
     SUBDIR += rubygem-aws-sigv2
