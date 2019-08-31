@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-actionpack52>=${PORTVERSION}:www/rubygem-actionpack52 \
 		rubygem-activesupport52>=${PORTVERSION}:devel/rubygem-activesupport52 \
 		rubygem-method_source>=0:devel/rubygem-method_source \
 		rubygem-rake>=0.8.7:devel/rubygem-rake \
-		rubygem-thor>=0.19.0:devel/rubygem-thor
+		rubygem-thor>=0.19.0<2.0:devel/rubygem-thor
 
 USES=		gem
 USE_RUBY=	yes
