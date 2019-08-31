@@ -5467,6 +5467,7 @@
     SUBDIR += rubygem-aws-sdk-cognitoidentityprovider
     SUBDIR += rubygem-aws-sdk-cognitosync
     SUBDIR += rubygem-aws-sdk-comprehend
+    SUBDIR += rubygem-aws-sdk-comprehendmedical
     SUBDIR += rubygem-aws-sdk-core
     SUBDIR += rubygem-aws-sdk-core2
     SUBDIR += rubygem-aws-sdk-resources
