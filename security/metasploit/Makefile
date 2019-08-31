@@ -51,6 +51,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-sshkey>=0:security/rubygem-sshkey \
 		rubygem-bit-struct>=0:devel/rubygem-bit-struct \
 		rubygem-windows_error>=0:devel/rubygem-windows_error \
+		rubygem-xmlrpc>=0:net/rubygem-xmlrpc \
 		rubygem-pdf-reader>=0:print/rubygem-pdf-reader \
 		rubygem-ruby-macho>=0:devel/rubygem-ruby-macho \
 		rubygem-dnsruby>=0:dns/rubygem-dnsruby \
@@ -125,21 +126,12 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		tools/hardware/killerbee_msfrelay.py \
 		tools/modules/aws-aggregator-userdata.sh
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} >= 2.4
-RUN_DEPENDS+=	rubygem-xmlrpc>=0:net/rubygem-xmlrpc
-.endif
-
 post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
 		/rb-readline/d' \
 		${WRKSRC}/metasploit-framework.gemspec
 	${REINPLACE_CMD} "/pg/s|, '0.20.0'||; \
 		/concurrent-ruby/s|,'1.0.5'||" ${WRKSRC}/metasploit-framework.gemspec
-.if ${RUBY_VER} < 2.4
-	${REINPLACE_CMD} '/xmlrpc/d' ${WRKSRC}/metasploit-framework.gemspec
-.endif
 
 do-build:
 	${RM} ${WRKSRC}/Gemfile.lock
@@ -160,4 +152,4 @@ post-install:
 	@${FIND} -ds ${STAGEDIR}${DATADIR} -type d -empty | \
 		${SED} 's,${STAGEDIR}${PREFIX}/,, ; s,^,@dir ,' >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
