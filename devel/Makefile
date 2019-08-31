@@ -5489,6 +5489,7 @@
     SUBDIR += rubygem-aws-sdk-ec2instanceconnect
     SUBDIR += rubygem-aws-sdk-ecr
     SUBDIR += rubygem-aws-sdk-ecs
+    SUBDIR += rubygem-aws-sdk-efs
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-resources2
     SUBDIR += rubygem-aws-sdk-v1
