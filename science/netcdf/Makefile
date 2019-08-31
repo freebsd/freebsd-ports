@@ -15,26 +15,25 @@ COMMENT=	C library for machine-independent, array-oriented data access
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-LIB_DEPENDS=	libhdf5.so:science/hdf5
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libhdf5.so:science/hdf5
 
 CONFLICTS_INSTALL=	hdf-4.[0-9]* netcdf-3.[0-9]* netcdf3-3.[0-9]*
 
-OPTIONS_DEFINE=	DAP DOCS DOXYGEN SZIP
-OPTIONS_DEFAULT=DAP SZIP
-DAP_DESC=	Build DAP client and remote testing
+OPTIONS_DEFINE=	DOCS DOXYGEN SZIP
+OPTIONS_DEFAULT=SZIP
 SZIP_DESC=	SZIP support (required if HDF5 was built with SZIP)
 
 USES=		gmake libtool localbase ncurses pathfix pkgconfig:run
 
-CONFIGURE_ARGS=	--disable-filter-testing --enable-netcdf-4
+CONFIGURE_ARGS=	--disable-filter-testing \
+		--enable-dap --enable-netcdf-4
 CPPFLAGS+=	-fPIC -DPIC
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
-DAP_CONFIGURE_ENABLE=	dap
-DAP_LIB_DEPENDS=	libcurl.so:ftp/curl
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENABLE=	doxygen
 DOXYGEN_IMPLIES=	DOCS
