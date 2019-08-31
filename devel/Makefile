@@ -5571,6 +5571,7 @@
     SUBDIR += rubygem-aws-sdk-polly
     SUBDIR += rubygem-aws-sdk-pricing
     SUBDIR += rubygem-aws-sdk-quicksight
+    SUBDIR += rubygem-aws-sdk-ram
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-resources2
     SUBDIR += rubygem-aws-sdk-v1
