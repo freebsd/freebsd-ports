@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Net-DNS
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 PORTEPOCH=	1
 CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 
 LICENSE=	MIT

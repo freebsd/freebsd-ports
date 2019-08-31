@@ -20,7 +20,6 @@
 %%SITE_PERL%%/Net/DNS/RR/CNAME.pm
 %%SITE_PERL%%/Net/DNS/RR/CSYNC.pm
 %%SITE_PERL%%/Net/DNS/RR/DHCID.pm
-%%SITE_PERL%%/Net/DNS/RR/DLV.pm
 %%SITE_PERL%%/Net/DNS/RR/DNAME.pm
 %%SITE_PERL%%/Net/DNS/RR/DNSKEY.pm
 %%SITE_PERL%%/Net/DNS/RR/DS.pm
@@ -68,6 +67,7 @@
 %%SITE_PERL%%/Net/DNS/RR/TXT.pm
 %%SITE_PERL%%/Net/DNS/RR/URI.pm
 %%SITE_PERL%%/Net/DNS/RR/X25.pm
+%%SITE_PERL%%/Net/DNS/RR/ZONEMD.pm
 %%SITE_PERL%%/Net/DNS/Resolver.pm
 %%SITE_PERL%%/Net/DNS/Resolver/Base.pm
 %%SITE_PERL%%/Net/DNS/Resolver/MSWin32.pm
@@ -102,7 +102,6 @@
 %%PERL5_MAN3%%/Net::DNS::RR::CNAME.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::CSYNC.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::DHCID.3.gz
-%%PERL5_MAN3%%/Net::DNS::RR::DLV.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::DNAME.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::DNSKEY.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::DS.3.gz
@@ -150,6 +149,7 @@
 %%PERL5_MAN3%%/Net::DNS::RR::TXT.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::URI.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::X25.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::ZONEMD.3.gz
 %%PERL5_MAN3%%/Net::DNS::Resolver.3.gz
 %%PERL5_MAN3%%/Net::DNS::Resolver::Base.3.gz
 %%PERL5_MAN3%%/Net::DNS::Resolver::MSWin32.3.gz
