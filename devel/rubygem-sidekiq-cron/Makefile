@@ -12,7 +12,7 @@ COMMENT=	Enables to set jobs to be run in specified time (using CRON notation)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-fugit>=1.1:devel/rubygem-fugit \
+RUN_DEPENDS=	rubygem-fugit>=1.1<2:devel/rubygem-fugit \
 		rubygem-sidekiq>=4.2.1:devel/rubygem-sidekiq
 
 USES=		gem
