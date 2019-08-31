@@ -3,6 +3,7 @@
 
 PORTNAME=	cfitsio
 PORTVERSION=	3.470
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -24,7 +25,6 @@ USES=		localbase pkgconfig
 ALL_TARGET=	libcfitsio.a shared
 CONFIGURE_ARGS=	ac_cv_prog_FC=f2c
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	ZLIB_SOURCES="zlib/zcompress.c zlib/zuncompress.c"
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	SHLIB_MAJOR=${SHLIB_MAJOR} \
