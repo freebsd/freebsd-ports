@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-core
-DISTVERSION=	2.11.343
+DISTVERSION=	2.11.344
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,8 @@ COMMENT=	AWS SDK for Ruby - Core
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-aws-sigv4>=1.0:devel/rubygem-aws-sigv4 \
-		rubygem-jmespath>=1.0:devel/rubygem-jmespath
+RUN_DEPENDS=	rubygem-aws-sigv4>=1.0<2:devel/rubygem-aws-sigv4 \
+		rubygem-jmespath>=1.0<2:devel/rubygem-jmespath
 
 USES=		gem
 USE_RUBY=	yes
