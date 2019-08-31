@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-08-30 21:55:44 UTC
++++ CMakeLists.txt
+@@ -14,6 +14,8 @@ set(ECM_MIN_VERSION     "1.5.0")
+ 
+ cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
+ 
++cmake_policy(SET CMP0063 OLD) # Suppress visibility warnings
++
+ ############## ECM setup #################################################################################################################
+ 
+ find_package(ECM ${ECM_MIN_VERSION} CONFIG REQUIRED)

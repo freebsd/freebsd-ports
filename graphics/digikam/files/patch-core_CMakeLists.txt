@@ -1,6 +1,14 @@
---- core/CMakeLists.txt.orig	2019-02-10 22:44:01 UTC
+--- core/CMakeLists.txt.orig	2019-07-31 16:12:57 UTC
 +++ core/CMakeLists.txt
-@@ -389,6 +389,11 @@ endif()
+@@ -8,6 +8,7 @@
+ 
+ project(digikam)
+ 
++cmake_policy(SET CMP0063 OLD) # Suppress visibility warnings
+ message(STATUS "----------------------------------------------------------------------------------")
+ message(STATUS "Starting CMake configuration for: ${PROJECT_NAME}")
+ 
+@@ -401,6 +402,11 @@ endif()
  
  find_package(Doxygen)
  find_package(Lqr-1)
