@@ -5581,6 +5581,7 @@
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-resources2
     SUBDIR += rubygem-aws-sdk-robomaker
+    SUBDIR += rubygem-aws-sdk-route53
     SUBDIR += rubygem-aws-sdk-v1
     SUBDIR += rubygem-aws-sdk2
     SUBDIR += rubygem-aws-sigv2
