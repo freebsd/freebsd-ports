@@ -1,0 +1,3 @@
+Provides interfaces to enumerate AWS partitions, regions, and services.
+
+WWW: https://github.com/aws/aws-sdk-ruby/tree/master/gems/aws-partitions
