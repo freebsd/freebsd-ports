@@ -5605,6 +5605,7 @@
     SUBDIR += rubygem-aws-sdk-ssm
     SUBDIR += rubygem-aws-sdk-states
     SUBDIR += rubygem-aws-sdk-storagegateway
+    SUBDIR += rubygem-aws-sdk-support
     SUBDIR += rubygem-aws-sdk-v1
     SUBDIR += rubygem-aws-sdk2
     SUBDIR += rubygem-aws-sigv2
