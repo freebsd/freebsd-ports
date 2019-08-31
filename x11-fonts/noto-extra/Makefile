@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	noto
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://noto-website.storage.googleapis.com/pkgs/
+MASTER_SITES=	https://noto-website-2.storage.googleapis.com/pkgs/
 DISTNAME=	Noto-hinted
 PKGNAMESUFFIX=	-extra
 
