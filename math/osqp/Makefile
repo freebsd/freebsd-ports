@@ -6,7 +6,7 @@ DISTVERSION=	0.6.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Operator Splitting QP Solver
+COMMENT=	Operator Splitting Quadratic Program solver for optimization problems
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
