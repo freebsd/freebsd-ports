@@ -18153,6 +18153,15 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.wehs.em.def
 %%DATADIR%%/definitions/mars/grib.wehs.es.def
 %%DATADIR%%/definitions/mars/grib.weov.pf.def
+%%DATADIR%%/definitions/mars/grib.wfas.cf.def
+%%DATADIR%%/definitions/mars/grib.wfas.fc.def
+%%DATADIR%%/definitions/mars/grib.wfas.fu.def
+%%DATADIR%%/definitions/mars/grib.wfas.pf.def
+%%DATADIR%%/definitions/mars/grib.wfas.sfo.def
+%%DATADIR%%/definitions/mars/grib.wfcl.cf.def
+%%DATADIR%%/definitions/mars/grib.wfcl.fc.def
+%%DATADIR%%/definitions/mars/grib.wfcl.pf.def
+%%DATADIR%%/definitions/mars/grib.wfcl.sfo.def
 %%DATADIR%%/definitions/mars/grib.wmfm.fcmax.def
 %%DATADIR%%/definitions/mars/grib.wmfm.fcmean.def
 %%DATADIR%%/definitions/mars/grib.wmfm.fcmin.def
