@@ -5596,6 +5596,7 @@
     SUBDIR += rubygem-aws-sdk-servicequotas
     SUBDIR += rubygem-aws-sdk-ses
     SUBDIR += rubygem-aws-sdk-shield
+    SUBDIR += rubygem-aws-sdk-signer
     SUBDIR += rubygem-aws-sdk-v1
     SUBDIR += rubygem-aws-sdk2
     SUBDIR += rubygem-aws-sigv2
