@@ -21,6 +21,6 @@ MAKE_ENV=	NOSYNC=1 # workaround for the console problem: https://gitlab.com/NTPs
 
 post-install: # autoplist: plist varies depending on the python version
 	@cd ${STAGEDIR}${PREFIX} && \
-		${FIND} * -type f -or -type l >> ${TMPPLIST}
+		${FIND} * -type f -or -type l | ${SED} -e 's|^man/.*|&.gz|' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
