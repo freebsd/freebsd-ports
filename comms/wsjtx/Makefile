@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wsjtx
-PORTVERSION=	2.0.1
-PORTREVISION=	5
+DISTVERSION=	2.1.0
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
@@ -25,9 +24,9 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 USES=		cmake compiler:c++11-lib fortran gl \
 		makeinfo pkgconfig qt:5 tar:tgz
 USE_GL=		glu
-USE_QT=		core gui buildtools network qmake_build widgets \
-		multimedia concurrent printsupport serialport sql \
-		sql-sqlite3
+USE_QT=		core gui network widgets \
+		multimedia concurrent printsupport serialport sql sql-sqlite3 \
+		buildtools_build linguisttools_build qmake_build
 
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH+=${LOCALBASE}/wsjtx/lib \
 		-DLOCALBASE::STRING="${LOCALBASE}"
