@@ -51,6 +51,8 @@ NO_ARCH=	yes
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails
 
+PORTSCOUT=	limit:^4\.2\.
+
 OPTIONS_DEFINE=	MEMCACHE_CLIENT
 MEMCACHE_CLIENT_DESC=	MemCache-Client support
 
