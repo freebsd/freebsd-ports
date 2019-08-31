@@ -5552,6 +5552,7 @@
     SUBDIR += rubygem-aws-sdk-mediapackagevod
     SUBDIR += rubygem-aws-sdk-mediastore
     SUBDIR += rubygem-aws-sdk-mediastoredata
+    SUBDIR += rubygem-aws-sdk-mediatailor
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-resources2
     SUBDIR += rubygem-aws-sdk-v1
