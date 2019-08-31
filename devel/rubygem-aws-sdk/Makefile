@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk
-DISTVERSION=	2.11.344
+DISTVERSION=	3.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ COMMENT=	AWS SDK for Ruby
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-aws-sdk-resources>=${PORTVERSION}:devel/rubygem-aws-sdk-resources
+RUN_DEPENDS=	rubygem-aws-sdk-resources>=${PORTVERSION:R:R}<4:devel/rubygem-aws-sdk-resources
 
 USES=		gem
 USE_RUBY=	yes
