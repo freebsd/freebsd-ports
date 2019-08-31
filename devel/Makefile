@@ -5614,6 +5614,7 @@
     SUBDIR += rubygem-aws-sdk-translate
     SUBDIR += rubygem-aws-sdk-v1
     SUBDIR += rubygem-aws-sdk-waf
+    SUBDIR += rubygem-aws-sdk-wafregional
     SUBDIR += rubygem-aws-sdk2
     SUBDIR += rubygem-aws-sigv2
     SUBDIR += rubygem-aws-sigv4
