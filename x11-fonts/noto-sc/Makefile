@@ -4,10 +4,8 @@ PORTNAME=	noto
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://noto-website.storage.googleapis.com/pkgs/
+MASTER_SITES=	https://noto-website-2.storage.googleapis.com/pkgs/
 DISTNAME=	Noto-hinted
-DISTFILES=	${DISTNAME}.zip \
-		NotoSerifCJKsc-hinted.zip
 PKGNAMESUFFIX=	-sc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE_OFL.txt
 
 USES=		fonts zip
 
-EXTRACT_AFTER_ARGS=	-d ${EXTRACT_WRKDIR} -x '*.ttf'
+EXTRACT_AFTER_ARGS=	-d ${EXTRACT_WRKDIR} '*CJKsc*.otf'
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
