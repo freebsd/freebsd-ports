@@ -3,7 +3,7 @@
 
 PORTNAME=	byobu
 PORTVERSION=	5.129
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -52,5 +52,7 @@ post-patch:
 		${WRKSRC}/etc/profile.d/Makefile.am
 	${FIND} ${WRKSRC}/usr/lib/byobu -type f -maxdepth 1 | ${XARGS} \
 		${REINPLACE_CMD} -e 's:/proc:/compat/linux/proc:g'
+	${REINPLACE_CMD} -e "s:BYOBU_SED -i:BYOBU_SED -i '':g" \
+		${WRKSRC}/usr/lib/byobu/include/constants
 
 .include <bsd.port.mk>
