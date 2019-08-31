@@ -3,7 +3,7 @@
 
 PORTNAME=	myBudget
 PORTVERSION=	0.60
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.abisource.com/~msevior/
 
@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_GNOME=	pygnome2
-INSTALL_ICONS=	yes
+INSTALLS_ICONS=	yes
 
-USES=		python:2.7 shebangfix
+USES=		gnome python:2.7 shebangfix
 SHEBANG_FILES=	myBudget.py
 
 OPTIONS_DEFINE=	DOCS
