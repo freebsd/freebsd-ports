@@ -190,7 +190,6 @@ libexec/inspircd/modules/m_sqlauth.so
 libexec/inspircd/modules/m_sqloper.so
 libexec/inspircd/modules/m_sslinfo.so
 libexec/inspircd/modules/m_sslmodes.so
-libexec/inspircd/modules/m_sslrehashsignal.so
 libexec/inspircd/modules/m_starttls.so
 libexec/inspircd/modules/m_stripcolor.so
 libexec/inspircd/modules/m_svshold.so

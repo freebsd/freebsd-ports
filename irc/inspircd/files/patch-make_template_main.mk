@@ -1,15 +1,16 @@
---- make/template/main.mk.orig	2019-05-10 08:54:28 UTC
+--- make/template/main.mk.orig	2019-07-06 12:03:50 UTC
 +++ make/template/main.mk
-@@ -203,32 +203,32 @@ finishmessage: target
+@@ -206,33 +206,33 @@ finishmessage: target
  	@echo "*************************************"
  
  install: target
 -	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(BASE)
--	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(DATPATH)
--	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(LOGPATH)
 -	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(BINPATH)
--	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(CONPATH)/examples/services
--	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(CONPATH)/examples/sql
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(CONPATH)
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(DATPATH)
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(EXAPATH)/services
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(EXAPATH)/sql
+-	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(LOGPATH)
 -	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(MANPATH)
 -	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(MODPATH)
 -	@-$(INSTALL) -d -g @GID@ -o @UID@ -m $(INSTMODE_DIR) $(SCRPATH)
@@ -18,11 +19,12 @@
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_BIN) @CONFIGURE_DIRECTORY@/inspircd $(SCRPATH) 2>/dev/null
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) .gdbargs $(SCRPATH)/.gdbargs 2>/dev/null
 +	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(BASE)
-+	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(DATPATH)
-+	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(LOGPATH)
 +	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(BINPATH)
-+	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(CONPATH)/examples/services
-+	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(CONPATH)/examples/sql
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(CONPATH)
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(DATPATH)
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(EXAPATH)/services
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(EXAPATH)/sql
++	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(LOGPATH)
 +	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(MANPATH)
 +	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(MODPATH)
 +	@-$(INSTALL) -d -m $(INSTMODE_DIR) $(SCRPATH)
@@ -39,16 +41,16 @@
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd.1 $(MANPATH) 2>/dev/null
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd-genssl.1 $(MANPATH) 2>/dev/null
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_BIN) tools/genssl $(BINPATH)/inspircd-genssl 2>/dev/null
--	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/conf/*.example $(CONPATH)/examples
--	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/conf/services/*.example $(CONPATH)/examples/services
--	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/sql/*.sql $(CONPATH)/examples/sql
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/conf/*.example $(EXAPATH)
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/conf/services/*.example $(EXAPATH)/services
+-	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_TXT) docs/sql/*.sql $(EXAPATH)/sql
 -	-$(INSTALL) -g @GID@ -o @UID@ -m $(INSTMODE_PRV) *.pem $(CONPATH) 2>/dev/null
 +	-$(INSTALL) -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd.1 $(MANPATH) 2>/dev/null
 +	-$(INSTALL) -m $(INSTMODE_TXT) @CONFIGURE_DIRECTORY@/inspircd-genssl.1 $(MANPATH) 2>/dev/null
 +	-$(INSTALL) -m $(INSTMODE_BIN) tools/genssl $(BINPATH)/inspircd-genssl 2>/dev/null
-+	-$(INSTALL) -m $(INSTMODE_TXT) docs/conf/*.example $(CONPATH)/examples
-+	-$(INSTALL) -m $(INSTMODE_TXT) docs/conf/services/*.example $(CONPATH)/examples/services
-+	-$(INSTALL) -m $(INSTMODE_TXT) docs/sql/*.sql $(CONPATH)/examples/sql
++	-$(INSTALL) -m $(INSTMODE_TXT) docs/conf/*.example $(EXAPATH)
++	-$(INSTALL) -m $(INSTMODE_TXT) docs/conf/services/*.example $(EXAPATH)/services
++	-$(INSTALL) -m $(INSTMODE_TXT) docs/sql/*.sql $(EXAPATH)/sql
 +	-$(INSTALL) -m $(INSTMODE_PRV) *.pem $(CONPATH) 2>/dev/null
  	@echo ""
  	@echo "*************************************"
