@@ -7,7 +7,7 @@ CATEGORIES=	sysutils linux
 MAINTAINER=	uboot@FreeBSD.org
 COMMENT=	Firmware and tools for RockChip SoCs
 
-ONLY_FOR_ARCH=	amd64
+ONLY_FOR_ARCHS=	amd64
 
 LEGAL_TEXT=	No license
 
