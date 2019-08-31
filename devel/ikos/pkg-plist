@@ -168,7 +168,7 @@ include/ikos/frontend/llvm/pass.hpp
 lib/libikos-ar.so
 lib/libikos-llvm-to-ar.so
 lib/libikos-pp.so
-%%PYTHON_SITELIBDIR%%/ikos-2.1-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/ikos-2.2-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/ikos/__init__.py
 %%PYTHON_SITELIBDIR%%/ikos/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ikos/abs_int.py
