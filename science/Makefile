@@ -331,8 +331,8 @@
     SUBDIR += vmd
     SUBDIR += voro++
     SUBDIR += wannier90
-    SUBDIR += wxmacmolplt
     SUBDIR += wwplot
+    SUBDIR += wxmacmolplt
     SUBDIR += xcrysden
     SUBDIR += xdrawchem
     SUBDIR += xfce4-equake-plugin

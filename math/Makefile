@@ -144,9 +144,9 @@
     SUBDIR += bitwise
     SUBDIR += blacs
     SUBDIR += blas
+    SUBDIR += blasfeo
     SUBDIR += blaze
     SUBDIR += blazeiterative
-    SUBDIR += blasfeo
     SUBDIR += blis
     SUBDIR += blitz++
     SUBDIR += blocksolve95

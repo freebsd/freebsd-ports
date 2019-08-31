@@ -249,10 +249,10 @@
     SUBDIR += bsdbuild
     SUBDIR += bsdcflow
     SUBDIR += bsdowl
-    SUBDIR += buildstream
     SUBDIR += bugzilla44
     SUBDIR += bugzilla50
     SUBDIR += build
+    SUBDIR += buildstream
     SUBDIR += buildtool
     SUBDIR += buildtool-doc
     SUBDIR += bullet
@@ -4015,7 +4015,6 @@
     SUBDIR += py-ExtensionClass
     SUBDIR += py-Faker
     SUBDIR += py-IBMQuantumExperience
-    SUBDIR += py-inifile
     SUBDIR += py-Jinja2
     SUBDIR += py-Jinja2-doc
     SUBDIR += py-Js2Py
@@ -4514,6 +4513,7 @@
     SUBDIR += py-incremental
     SUBDIR += py-inflect
     SUBDIR += py-inflection
+    SUBDIR += py-inifile
     SUBDIR += py-iniparse
     SUBDIR += py-initgroups
     SUBDIR += py-instant
@@ -5574,10 +5574,10 @@
     SUBDIR += rubygem-fastri
     SUBDIR += rubygem-fattr
     SUBDIR += rubygem-ffi
-    SUBDIR += rubygem-ffi110
     SUBDIR += rubygem-ffi-compiler
     SUBDIR += rubygem-ffi-win32-extensions
     SUBDIR += rubygem-ffi-yajl
+    SUBDIR += rubygem-ffi110
     SUBDIR += rubygem-file-tail
     SUBDIR += rubygem-filesize
     SUBDIR += rubygem-flexmock
