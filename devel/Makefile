@@ -5590,6 +5590,7 @@
     SUBDIR += rubygem-aws-sdk-sagemakerruntime
     SUBDIR += rubygem-aws-sdk-secretsmanager
     SUBDIR += rubygem-aws-sdk-securityhub
+    SUBDIR += rubygem-aws-sdk-serverlessapplicationrepository
     SUBDIR += rubygem-aws-sdk-v1
     SUBDIR += rubygem-aws-sdk2
     SUBDIR += rubygem-aws-sigv2
