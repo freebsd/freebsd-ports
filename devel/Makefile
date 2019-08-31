@@ -5567,6 +5567,7 @@
     SUBDIR += rubygem-aws-sdk-pi
     SUBDIR += rubygem-aws-sdk-pinpoint
     SUBDIR += rubygem-aws-sdk-pinpointemail
+    SUBDIR += rubygem-aws-sdk-pinpointsmsvoice
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-resources2
     SUBDIR += rubygem-aws-sdk-v1
