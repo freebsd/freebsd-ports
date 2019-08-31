@@ -5502,6 +5502,7 @@
     SUBDIR += rubygem-aws-sdk-firehose
     SUBDIR += rubygem-aws-sdk-fms
     SUBDIR += rubygem-aws-sdk-forecastqueryservice
+    SUBDIR += rubygem-aws-sdk-forecastservice
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-resources2
     SUBDIR += rubygem-aws-sdk-v1
