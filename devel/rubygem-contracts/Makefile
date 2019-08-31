@@ -10,7 +10,8 @@ MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Contracts for ruby
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+# Version 0.10.1 does not have this file
+# LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
 USE_RUBY=	yes
