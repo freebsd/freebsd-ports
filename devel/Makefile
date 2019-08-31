@@ -5529,6 +5529,7 @@
     SUBDIR += rubygem-aws-sdk-kinesisanalytics
     SUBDIR += rubygem-aws-sdk-kinesisanalyticsv2
     SUBDIR += rubygem-aws-sdk-kinesisvideo
+    SUBDIR += rubygem-aws-sdk-kinesisvideoarchivedmedia
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-resources2
     SUBDIR += rubygem-aws-sdk-v1
