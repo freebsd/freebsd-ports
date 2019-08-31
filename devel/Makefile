@@ -5477,6 +5477,7 @@
     SUBDIR += rubygem-aws-sdk-databasemigrationservice
     SUBDIR += rubygem-aws-sdk-datapipeline
     SUBDIR += rubygem-aws-sdk-datasync
+    SUBDIR += rubygem-aws-sdk-dax
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-resources2
     SUBDIR += rubygem-aws-sdk-v1
