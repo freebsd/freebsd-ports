@@ -1,6 +1,0 @@
-This module provides an interface to libffi which enables you to call C
-functions from Pure and vice versa. It extends and complements Pure's
-built-in C interface in that it also handles C structs and makes Pure
-functions callable from C without writing a single line of C code.
-
-WWW: https://puredocs.bitbucket.io/pure-ffi.html
