@@ -94,7 +94,6 @@ include/poppler/fofi/FoFiIdentifier.h
 include/poppler/fofi/FoFiTrueType.h
 include/poppler/fofi/FoFiType1.h
 include/poppler/fofi/FoFiType1C.h
-include/poppler/goo/FixedPoint.h
 include/poppler/goo/GooCheckedOps.h
 include/poppler/goo/GooLikely.h
 include/poppler/goo/GooString.h
@@ -133,8 +132,8 @@ lib/libpoppler-cpp.so
 lib/libpoppler-cpp.so.0
 lib/libpoppler-cpp.so.0.7.0
 lib/libpoppler.so
-lib/libpoppler.so.89
-lib/libpoppler.so.89.0.0
+lib/libpoppler.so.90
+lib/libpoppler.so.90.0.0
 libdata/pkgconfig/poppler-cairo.pc
 libdata/pkgconfig/poppler-cpp.pc
 libdata/pkgconfig/poppler-splash.pc
