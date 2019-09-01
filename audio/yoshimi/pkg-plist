@@ -16,6 +16,7 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Formant_Filter.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/NewFeatures.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshi-Zyn_Sound_Differences.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.3.5-features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.3.6-features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.3.7-features.txt
@@ -26,6 +27,7 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.0-features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.1-features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.10_features.txt
+%%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.11_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.2-features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.3-features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Histories/Yoshimi_1.5.4_features.txt
@@ -54,12 +56,11 @@ share/applications/yoshimi.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Using_NRPNs.txt
 %%PORTDOCS%%%%DOCSDIR%%/Vector_Control.txt
 %%PORTDOCS%%%%DOCSDIR%%/Voice_Mod_Oscillators.txt
-%%PORTDOCS%%%%DOCSDIR%%/Yoshi-Zyn_Sound_Differences.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshi_Zyn_NRPNs.txt
-%%PORTDOCS%%%%DOCSDIR%%/Yoshimi_1.5.11_features.txt
+%%PORTDOCS%%%%DOCSDIR%%/Yoshimi_1.6.0_features.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshimi_Only_NRPNs.txt
 %%PORTDOCS%%%%DOCSDIR%%/Yoshimi_Quote.txt
-%%PORTDOCS%%%%DOCSDIR%%/yoshimi-user-manual-1.5.11.pdf
+%%PORTDOCS%%%%DOCSDIR%%/yoshimi-user-manual-1.6.0.pdf
 share/icons/hicolor/scalable/apps/yoshimi.svg
 share/icons/hicolor/scalable/apps/yoshimi_alt.svg
 share/metainfo/yoshimi.appdata.xml
@@ -138,6 +139,137 @@ share/pixmaps/yoshimi.png
 %%DATADIR%%/banks/Choir_and_Voice/0069-Vocal Morph 5.xiz
 %%DATADIR%%/banks/Choir_and_Voice/0070-Vocal Morph 6.xiz
 %%DATADIR%%/banks/Choir_and_Voice/0071-Vocal Morph 7.xiz
+%%DATADIR%%/banks/Cormi_Sound/.bankdir
+%%DATADIR%%/banks/Cormi_Sound/0001-Bassoon.xiz
+%%DATADIR%%/banks/Cormi_Sound/0002-Bassoon2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0003-Bassoon3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0004-Volo.xiz
+%%DATADIR%%/banks/Cormi_Sound/0006-Arpeggio_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0007-Arpeggio_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0008-Arpeggio_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0009-Glass Arpeggio2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0011-abracadabra.xiz
+%%DATADIR%%/banks/Cormi_Sound/0012-Ghost Whistle.xiz
+%%DATADIR%%/banks/Cormi_Sound/0013-Spazio1.xiz
+%%DATADIR%%/banks/Cormi_Sound/0014-Spazio2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0015-Space Synth.xiz
+%%DATADIR%%/banks/Cormi_Sound/0016-SpaceAtmo.xiz
+%%DATADIR%%/banks/Cormi_Sound/0017-friendly sines.xiz
+%%DATADIR%%/banks/Cormi_Sound/0019-Acquoso_1.xiz
+%%DATADIR%%/banks/Cormi_Sound/0020-Acquoso_5.xiz
+%%DATADIR%%/banks/Cormi_Sound/0021-Acquoso_6.xiz
+%%DATADIR%%/banks/Cormi_Sound/0023-Fagotto_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0024-Fagotto_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0025-Fagotto_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0027-Delicato_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0028-Delicato_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0029-Delicato_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0031-Wah_dolce_1.xiz
+%%DATADIR%%/banks/Cormi_Sound/0032-Wah_dolce_2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0033-Long Space Choir 2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0034-Choir Pad4.xiz
+%%DATADIR%%/banks/Cormi_Sound/0035-Ancient_Echos.xiz
+%%DATADIR%%/banks/Cormi_Sound/0036-Campane.xiz
+%%DATADIR%%/banks/Cormi_Sound/0037-Chorus.xiz
+%%DATADIR%%/banks/Cormi_Sound/0038-HellVoice.xiz
+%%DATADIR%%/banks/Cormi_Sound/0039-Chorus2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0041-DarkNight.xiz
+%%DATADIR%%/banks/Cormi_Sound/0042-LightDawn.xiz
+%%DATADIR%%/banks/Cormi_Sound/0043-Fiiuu.xiz
+%%DATADIR%%/banks/Cormi_Sound/0045-Spazio_profondo1.xiz
+%%DATADIR%%/banks/Cormi_Sound/0046-Spazio_Profondo2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0047-Spazio_Profondo3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0049-DolcePiano_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0050-DolcePiano_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0051-DolcePiano_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0053-Ding_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0054-Ding_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0056-Senza_tempo.xiz
+%%DATADIR%%/banks/Cormi_Sound/0057-Senza_tempo_2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0058-Senza_tempo_3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0059-Senza_tempo_4.xiz
+%%DATADIR%%/banks/Cormi_Sound/0060-Senza_tempo_5.xiz
+%%DATADIR%%/banks/Cormi_Sound/0062-Sospirato_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0063-Sospirato_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0064-Sospirato_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0065-Synth_piano_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0066-Synth_Piano_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0068-Piano.xiz
+%%DATADIR%%/banks/Cormi_Sound/0069-Pianola.xiz
+%%DATADIR%%/banks/Cormi_Sound/0070-clavicembalo.xiz
+%%DATADIR%%/banks/Cormi_Sound/0072-Zufolo_1.xiz
+%%DATADIR%%/banks/Cormi_Sound/0073-Zufolo_2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0074-Zufolo_3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0075-Zufolo_4.xiz
+%%DATADIR%%/banks/Cormi_Sound/0076-Pinkollo.xiz
+%%DATADIR%%/banks/Cormi_Sound/0078-Tremulo_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0079-Tremulo_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0081-Organetto_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0082-Organetto_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0084-Organo_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0085-Organo_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0086-Organo_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0087-Harp 3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0088-Harp4.xiz
+%%DATADIR%%/banks/Cormi_Sound/0090-Dolcino_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0091-Dolcino_02.xiz
+%%DATADIR%%/banks/Cormi_Sound/0092-Dolcino_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0093-Dolcino_04.xiz
+%%DATADIR%%/banks/Cormi_Sound/0095-Accordian.xiz
+%%DATADIR%%/banks/Cormi_Sound/0096-padNice.xiz
+%%DATADIR%%/banks/Cormi_Sound/0097-k.xiz
+%%DATADIR%%/banks/Cormi_Sound/0098-z.xiz
+%%DATADIR%%/banks/Cormi_Sound/0099-a.xiz
+%%DATADIR%%/banks/Cormi_Sound/0100-Steel Rhodes.xiz
+%%DATADIR%%/banks/Cormi_Sound/0101-Sweet_Night.xiz
+%%DATADIR%%/banks/Cormi_Sound/0102-Sweet_Night_2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0103-Gocce.xiz
+%%DATADIR%%/banks/Cormi_Sound/0104-Ice Rhodes2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0105-Voluttuoso.xiz
+%%DATADIR%%/banks/Cormi_Sound/0106-Entropia.xiz
+%%DATADIR%%/banks/Cormi_Sound/0108-Arcano.xiz
+%%DATADIR%%/banks/Cormi_Sound/0109-Arcano2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0110-Arcano3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0112-Glass_01.xiz
+%%DATADIR%%/banks/Cormi_Sound/0113-Glass_02a.xiz
+%%DATADIR%%/banks/Cormi_Sound/0114-Glass_02b.xiz
+%%DATADIR%%/banks/Cormi_Sound/0115-Glass_03.xiz
+%%DATADIR%%/banks/Cormi_Sound/0116-Glass_04.xiz
+%%DATADIR%%/banks/Cormi_Sound/0119-Arcadia_1.xiz
+%%DATADIR%%/banks/Cormi_Sound/0120-Arcadia_2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0121-Arcadia_3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0122-Arcadia_4.xiz
+%%DATADIR%%/banks/Cormi_Sound/0124-Armonica.xiz
+%%DATADIR%%/banks/Cormi_Sound/0125-Fanfara.xiz
+%%DATADIR%%/banks/Cormi_Sound/0126-Polvere.xiz
+%%DATADIR%%/banks/Cormi_Sound/0127-Comb Filter.xiz
+%%DATADIR%%/banks/Cormi_Sound/0128-Synth Pad 5.xiz
+%%DATADIR%%/banks/Cormi_Sound/0129-Bello.xiz
+%%DATADIR%%/banks/Cormi_Sound/0130-abbellimento.xiz
+%%DATADIR%%/banks/Cormi_Sound/0131-Carino.xiz
+%%DATADIR%%/banks/Cormi_Sound/0132-Cigno.xiz
+%%DATADIR%%/banks/Cormi_Sound/0133-fluido.xiz
+%%DATADIR%%/banks/Cormi_Sound/0136-Romantico.xiz
+%%DATADIR%%/banks/Cormi_Sound/0137-Romantico2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0138-romanticone.xiz
+%%DATADIR%%/banks/Cormi_Sound/0139-Emptyness3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0140-Foglie.xiz
+%%DATADIR%%/banks/Cormi_Sound/0142-Solitudine.xiz
+%%DATADIR%%/banks/Cormi_Sound/0144-Inquietudine.xiz
+%%DATADIR%%/banks/Cormi_Sound/0145-c.xiz
+%%DATADIR%%/banks/Cormi_Sound/0146-Ancestrale.xiz
+%%DATADIR%%/banks/Cormi_Sound/0147-Attesa.xiz
+%%DATADIR%%/banks/Cormi_Sound/0148-vento.xiz
+%%DATADIR%%/banks/Cormi_Sound/0149-pioggia.xiz
+%%DATADIR%%/banks/Cormi_Sound/0150-nebbia.xiz
+%%DATADIR%%/banks/Cormi_Sound/0151-Memory.xiz
+%%DATADIR%%/banks/Cormi_Sound/0152-Memory2.xiz
+%%DATADIR%%/banks/Cormi_Sound/0153-Memory3.xiz
+%%DATADIR%%/banks/Cormi_Sound/0155-contorno.xiz
+%%DATADIR%%/banks/Cormi_Sound/0156-fantasia.xiz
+%%DATADIR%%/banks/Cormi_Sound/0157-nostalgia.xiz
+%%DATADIR%%/banks/Cormi_Sound/0158-patetico.xiz
+%%DATADIR%%/banks/Cormi_Sound/0159-Destino.xiz
 %%DATADIR%%/banks/Drums/.bankdir
 %%DATADIR%%/banks/Drums/0001-Drums Kit1.xiz
 %%DATADIR%%/banks/Drums/0002-subliminal-kit.xiz
@@ -698,6 +830,7 @@ share/pixmaps/yoshimi.png
 %%DATADIR%%/banks/Will_Godfrey_Companion/0056-Wide Bass.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0057-Ultra Bass.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0058-Simple Bass.xiz
+%%DATADIR%%/banks/Will_Godfrey_Companion/0059-Rich Bass.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0060-Stopped Pipe.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0062-Deep Matrix Kit.xiz
 %%DATADIR%%/banks/Will_Godfrey_Companion/0069-Multi Rushes.xiz
@@ -830,9 +963,14 @@ share/pixmaps/yoshimi.png
 %%DATADIR%%/examples/Out_There.txt
 %%DATADIR%%/examples/Out_There.xmz
 %%DATADIR%%/examples/synth_prelude.txt
-%%DATADIR%%/presets/A01.Presonance.xpz
+%%DATADIR%%/presets/AddnoteArp1.Padsyth.xpz
 %%DATADIR%%/presets/ChurchOrgan01.Poscilgen.xpz
-%%DATADIR%%/presets/JI12.xsz
+%%DATADIR%%/presets/Deep.Presonance.xpz
+%%DATADIR%%/presets/Delay.Plfoamplitude.xpz
 %%DATADIR%%/presets/Long Reverb.Peffect.xpz
+%%DATADIR%%/presets/SmoothSaw.Ppadsyth.xpz
 %%DATADIR%%/presets/WahWah1.Peffect.xpz
-%%DATADIR%%/presets/plucked1.Poscilgen.xpz
+%%DATADIR%%/presets/alienWah21.Peffect.xpz
+%%DATADIR%%/presets/sweep.Penvfilter.xpz
+%%DATADIR%%/presets/sweep.Penvfrequency.xpz
+%%DATADIR%%/presets/windpipes.Psubsyth.xpz
