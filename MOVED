@@ -12903,3 +12903,4 @@ x11-toolkits/pure-tk||2019-09-01|Has expired: Depends on expiring devel/llvm35
 databases/pure-sql3||2019-09-01|Has expired: Depends on expiring devel/llvm35
 devel/pure-readline||2019-09-01|Has expired: Depends on expiring devel/llvm35
 devel/pure-stllib||2019-09-01|Has expired: Depends on expiring devel/llvm35
+x11-toolkits/pure-gtk||2019-09-01|Has expired: Depends on expiring devel/llvm35
