@@ -4,6 +4,7 @@
 PORTNAME=	conky
 PORTVERSION=	1.11.5
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	db2x_xsltproc:textproc/docbook2X \
 USES=		cpe cmake:noninja compiler:c++11-lib gettext-runtime iconv \
 		localbase lua:52 pkgconfig tar:bzip2
 
-CMAKE_ARGS+=	-DBUILD_PORT_MONITORS:BOOL=false \
+CMAKE_ARGS=	-DBUILD_PORT_MONITORS:BOOL=false \
 		-DBUILD_IBM:BOOL=false \
 		-DBUILD_HDDTEMP:BOOL=false \
 		-DBUILD_IOSTATS:BOOL=false \
