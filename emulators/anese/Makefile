@@ -10,7 +10,7 @@ COMMENT=	NES Emulator written for fun and learning
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:insource sdl
+USES=		cmake:insource compiler:c++11-lang sdl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	daniel5151
