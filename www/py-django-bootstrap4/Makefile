@@ -6,7 +6,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alex@axanderio.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bootstrap 4 support for Django projects
 
 LICENSE=	BSD3CLAUSE
