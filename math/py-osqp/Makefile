@@ -2,7 +2,7 @@
 
 PORTNAME=	osqp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.1
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,7 +22,7 @@ USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	oxfordcontrol
 GH_PROJECT=	${PORTNAME}-python
-GH_TUPLE=	oxfordcontrol:${PORTNAME}:v${DISTVERSION}:s/${PORTNAME}_sources \
+GH_TUPLE=	oxfordcontrol:${PORTNAME}:0baddd3:s/${PORTNAME}_sources \
 		oxfordcontrol:qdldl:7ab0fca:q/${PORTNAME}_sources/lin_sys/direct/qdldl/qdldl_sources
 USE_PYTHON=	distutils autoplist
 
