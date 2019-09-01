@@ -14,6 +14,12 @@ COMMENT=	Read-only ext4 implementation for FUSE
 
 LICENSE=	GPLv2
 
+# PR associated with deprecation: 239564
+DEPRECATED=	Please consider using sysutils/fusefs-ext2 as upstream development is stalled. \
+		Contrary to what its name suggests it supports ext2, ext3, ext4 in read/write \
+		mode.
+EXPIRATION_DATE=2019-12-01
+
 USES=		fuse pkgconfig gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	gerard
