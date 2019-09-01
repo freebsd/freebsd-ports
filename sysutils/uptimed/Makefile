@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	uptimed
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Uptime daemon
 
 LICENSE=	GPLv2 # only
@@ -15,11 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf gmake libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	rpodgorny
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
-
 USE_RC_SUBR=	${PORTNAME}
+
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e \
