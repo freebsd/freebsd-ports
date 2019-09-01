@@ -1,8 +1,0 @@
-Pure is a modern-style functional programming language based on term
-rewriting. It offers equational definitions with pattern matching, full
-symbolic rewriting capabilities, dynamic typing, eager and lazy evaluation,
-lexical closures, built-in list and matrix support and an easy-to-use C
-interface. The interpreter uses LLVM as a backend to JIT-compile Pure
-programs to fast native code.
-
-WWW: https://purelang.bitbucket.io/

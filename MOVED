@@ -12904,3 +12904,6 @@ databases/pure-sql3||2019-09-01|Has expired: Depends on expiring devel/llvm35
 devel/pure-readline||2019-09-01|Has expired: Depends on expiring devel/llvm35
 devel/pure-stllib||2019-09-01|Has expired: Depends on expiring devel/llvm35
 x11-toolkits/pure-gtk||2019-09-01|Has expired: Depends on expiring devel/llvm35
+lang/pure||2019-09-01|Has expired: Depends on expiring devel/llvm35
+devel/pure-ffi||2019-09-01|Has expired: Depends on expiring devel/llvm35
+devel/llvm35||2019-09-01|Has expired: Obsolete and unmaintained

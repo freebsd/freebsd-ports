@@ -290,7 +290,6 @@
     SUBDIR += polyml
     SUBDIR += ponyc
     SUBDIR += ptoc
-    SUBDIR += pure
     SUBDIR += py-hy
     SUBDIR += py-mx-base
     SUBDIR += py-prolog
