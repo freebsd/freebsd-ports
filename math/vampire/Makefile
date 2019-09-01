@@ -10,7 +10,7 @@ COMMENT=	Automatic theorem prover
 LICENSE=	BSD2CLAUSE
 xLICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	vprover
 
