@@ -3280,14 +3280,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/proced.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/profiler.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/profiler.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ada-mode.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ada-mode.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ada-prj.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ada-prj.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ada-stmt.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ada-stmt.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ada-xref.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ada-xref.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/antlr-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/antlr-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/asm-mode.el.gz
