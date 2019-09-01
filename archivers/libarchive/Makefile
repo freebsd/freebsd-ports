@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	3.3.3
-PORTREVISION=	1
+PORTVERSION=	3.4.0
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://libarchive.org/downloads/
@@ -48,6 +47,7 @@ PLIST_FILES=	bin/bsdcat \
 		man/man3/archive_entry.3.gz \
 		man/man3/archive_entry_acl.3.gz \
 		man/man3/archive_entry_linkify.3.gz \
+		man/man3/archive_entry_misc.3.gz \
 		man/man3/archive_entry_paths.3.gz \
 		man/man3/archive_entry_perms.3.gz \
 		man/man3/archive_entry_stat.3.gz \
