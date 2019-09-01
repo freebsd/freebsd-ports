@@ -1,11 +1,34 @@
---- cdomso.c.orig	1998-04-02 15:29:02 UTC
+--- cdomso.c.orig	2019-08-03 10:18:08 UTC
 +++ cdomso.c
-@@ -89,7 +89,7 @@ unsigned long get_w(char *fn, short bits
+@@ -138,7 +138,7 @@ real monky_stat(char *filename, char *te
+       }
+ 
+       z=(no_mswds-mean)/std;
+-      printf("\t%d to %d  \t\t%d ", 33-rt-bits_pl, 32-rt, no_mswds);
++      printf("\t%lu to %lu  \t\t%lu ", 33-rt-bits_pl, 32-rt, no_mswds);
+       printf("\t\t% .4f\t\t%f\n", z, 1-Phi(z));
+     }
+  
+@@ -151,11 +151,11 @@ real monky_stat(char *filename, char *te
+   printf("\t------------------------------");
+   printf("-----------------------------------\n");
+   
+-  return;
++  return 0;
  }
  
- 
--real monky_stat(char *filename, char *test, int no_tests)
-+void monky_stat(char *filename, char *test, int no_tests)
+ /* type "OPSO" for OPSO test and so on */
+-void monky(char *filename, char *test)
++int monky(char *filename, char *test)
  {
-   const real bits_pw=20, mean=pow(2, bits_pw)*exp(-2);
-   const counter dim=pow(2, bits_pw-5);
+   const int no_tests=1;
+ 
+@@ -165,7 +165,7 @@ void monky(char *filename, char *test)
+ 
+   monky_stat(filename, test, no_tests);
+ 
+-  return;
++  return 0;
+ 
+ }
+ 
