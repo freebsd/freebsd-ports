@@ -1,4 +1,4 @@
-TIMESTAMP = 1565879155
+TIMESTAMP = 1567322590
 SHA256 (rust/rustc-1.37.0-src.tar.xz) = 10abffac50a729cf74cef6dd03193a2f4647541bd19ee9281be9e5b12ca8cdfd
 SIZE (rust/rustc-1.37.0-src.tar.xz) = 98654252
 SHA256 (rust/2019-07-04/rustc-1.36.0-aarch64-unknown-freebsd.tar.gz) = 8eec2d7750c96030b6b95eec2bc9ed1b7194780628d6017f615c2effdcc3b928
@@ -19,6 +19,8 @@ SHA256 (rust/2019-07-04/rust-std-1.36.0-armv6-unknown-freebsd.tar.gz) = 6c350361
 SIZE (rust/2019-07-04/rust-std-1.36.0-armv6-unknown-freebsd.tar.gz) = 79061925
 SHA256 (rust/2019-07-04/cargo-0.37.0-armv6-unknown-freebsd.tar.gz) = e4fa3e76ab448eb8bfdf323b4de976a6f07c35d0eca91cc2bf480b41faa157ec
 SIZE (rust/2019-07-04/cargo-0.37.0-armv6-unknown-freebsd.tar.gz) = 5544892
+SHA256 (rust/compiler-rt-8.0.1.src.tar.xz) = 11828fb4823387d820c6715b25f6b2405e60837d12a7469e7a8882911c721837
+SIZE (rust/compiler-rt-8.0.1.src.tar.xz) = 1954204
 SHA256 (rust/2019-07-04/rustc-1.36.0-armv7-unknown-freebsd.tar.gz) = c652bfb82d0e640e24a91aef39e9eeeedc0bd0b5b828546f9ef47bbae6a279bd
 SIZE (rust/2019-07-04/rustc-1.36.0-armv7-unknown-freebsd.tar.gz) = 70165782
 SHA256 (rust/2019-07-04/rust-std-1.36.0-armv7-unknown-freebsd.tar.gz) = 8750ff6013261b68f692413c7db97fabac6a83583b4c16c2175ebb6a81c1d0c6
