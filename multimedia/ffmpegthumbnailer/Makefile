@@ -6,7 +6,7 @@ PORTVERSION=	2.2.0
 PORTREVISION=	10
 CATEGORIES=	multimedia graphics
 
-MAINTAINER=	clutton@zoho.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight video thumbnailer that can be used by file managers
 
 LICENSE=	GPLv2+
