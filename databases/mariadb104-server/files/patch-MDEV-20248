@@ -1,0 +1,13 @@
+--- storage/rocksdb/rocksdb/port/jemalloc_helper.h.orig	2019-07-30 11:32:15 UTC
++++ storage/rocksdb/rocksdb/port/jemalloc_helper.h
+@@ -12,6 +12,10 @@
+ #include <jemalloc/jemalloc.h>
+ #endif
+ 
++#ifdef __FreeBSD__
++#define JEMALLOC_USABLE_SIZE_CONST const
++#endif
++
+ #ifndef JEMALLOC_CXX_THROW
+ #define JEMALLOC_CXX_THROW
+ #endif
