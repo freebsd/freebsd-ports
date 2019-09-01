@@ -15,3 +15,12 @@
  #endif
  
  /* try to tell the compiler that some condition is definitely true */
+@@ -478,7 +478,7 @@ ecb_byteorder_helper (void)
+ #elif __BYTE_ORDER__ && __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
+   return 0x44;
+ #elif __BYTE_ORDER__ && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
+-  retrurn 0x11;
++  return 0x11;
+ #else
+   union
+   {
