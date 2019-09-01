@@ -4000,9 +4000,6 @@
     SUBDIR += ptypes
     SUBDIR += publib
     SUBDIR += pure-ffi
-    SUBDIR += pure-readline
-    SUBDIR += pure-stldict
-    SUBDIR += pure-stllib
     SUBDIR += pushmi
     SUBDIR += py-Acquisition
     SUBDIR += py-AddOns

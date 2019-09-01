@@ -1,6 +1,0 @@
-Pure interface to the Berkeley socket functions. Provides most of the core
-functionality, so you can create sockets for both stream and datagram based
-protocols and use these to transmit messages. Unix-style file sockets are
-also available if the host system supports them.
-
-WWW: https://puredocs.bitbucket.io/pure-sockets.html

@@ -672,8 +672,6 @@
     SUBDIR += prng
     SUBDIR += proofgeneral
     SUBDIR += pspp
-    SUBDIR += pure-mpfr
-    SUBDIR += pure-rational
     SUBDIR += py-CyLP
     SUBDIR += py-Diofant
     SUBDIR += py-GridDataFormats

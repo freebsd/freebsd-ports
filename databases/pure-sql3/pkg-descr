@@ -1,6 +1,0 @@
-Sql3 is an interface to the popular Sqlite3 database. The module provides a
-minimal wrapper around Sqlite3's C interface which is designed to give the
-developer access to all of Sqlite3's features in a way that is convenient
-for Pure programmers.
-
-WWW: https://puredocs.bitbucket.io/pure-sql3.html

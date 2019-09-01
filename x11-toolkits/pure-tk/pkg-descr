@@ -1,6 +1,0 @@
-pure-tk provides a basic interface between Pure and Tcl/Tk. The
-operations of this module allow you to execute arbitrary commands
-in the Tcl interpreter, set and retrieve variable values in the
-interpreter, and invoke Pure callbacks from Tcl/Tk.
-
-WWW: https://puredocs.bitbucket.io/pure-tk.html
