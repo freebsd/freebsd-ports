@@ -50,6 +50,7 @@ bin/resolveip
 %%WSREP%%bin/wsrep_sst_rsync
 %%WSREP%%bin/wsrep_sst_rsync_wan
 @comment data/test/db.opt
+@comment include/mysql/mariadb_rpl.h
 @comment include/mysql/my_config.h
 @comment include/mysql/my_global.h
 @comment include/mysql/my_sys.h
