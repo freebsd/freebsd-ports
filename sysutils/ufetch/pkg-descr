@@ -1,0 +1,4 @@
+Tiny system info for Unix-like operating systems. It's a command line tool
+written in sh, it already supports more than thirty operating systems.
+
+WWW: https://gitlab.com/jschx/ufetch/
