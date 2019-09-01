@@ -22,6 +22,7 @@ AALIB_DESC?=		AAlib graphics library support
 ACOUSTID_DESC?=		AcoustID audio fingerprinting support
 ALAC_DESC?=		Apple Lossless audio format support
 ALSA_DESC?=		ALSA audio architecture support
+ALTIVEC_DESC?=		Use Altivec optimized routines
 AMR_DESC?=		AMR 3GPP speech codec support (opencore)
 AMR_NB_DESC?=		AMR Narrow Band audio support (opencore)
 AMR_WB_DESC?=		AMR Wide Band audio support (opencore)
