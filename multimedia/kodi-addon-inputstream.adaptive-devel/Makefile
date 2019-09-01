@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	inputstream.adaptive
-DISTVERSION=	2.4.0.a20190826
+DISTVERSION=	2.4.0
+DISTVERSIONSUFFIX=	-Matrix
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	kodi-addon-
 PKGNAMESUFFIX=	-devel
@@ -19,9 +20,8 @@ RUN_DEPENDS=	kodi-devel>=19.0.a20190826:multimedia/kodi-devel
 USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	peak3d
-GH_TAGNAME=	7074cc804b9ce996b54afebe855968f1f35e2985
 
-PLIST_SUB=	SOVERSION=${DISTVERSION:R}
+PLIST_SUB=	SOVERSION=${DISTVERSION}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/kodi/addons/inputstream.adaptive/libssd_wv.so
