@@ -3,6 +3,7 @@
 
 PORTNAME=	diehard
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://stat.fsu.edu/pub/diehard/
 DISTNAME=	die-c
