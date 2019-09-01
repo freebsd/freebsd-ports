@@ -178,7 +178,6 @@
     SUBDIR += pangoxsl
     SUBDIR += plasma5-kdeplasma-addons
     SUBDIR += plib
-    SUBDIR += pure-gtk
     SUBDIR += py-AnyQt
     SUBDIR += py-Pmw
     SUBDIR += py-SquareMap

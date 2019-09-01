@@ -1,5 +1,0 @@
-pure-gtk is a collection of bindings to use the GTK+ GUI toolkit version 2.x
-with Pure. The bindings include the gtk (+gdk), glib, atk, cairo and pango
-libraries, each in their own Pure module.
-
-WWW: https://puredocs.bitbucket.io/pure-gtk.html
