@@ -24,7 +24,4 @@ CMAKE_ON=	GEOGRAM_USE_SYSTEM_GLFW3 VORPALINE_BUILD_DYNAMIC
 CMAKE_ARGS=	-DVORPALINE_PLATFORM:STRING=FreeBSD
 LDFLAGS+=	-pthread
 
-xpost-stage:
-	@${RMDIR} ${STAGEDIR}${PREFIX}/include/geogram1/geogram_gfx/glup_viewer/colormaps
-
 .include <bsd.port.mk>
