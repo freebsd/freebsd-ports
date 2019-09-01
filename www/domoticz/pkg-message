@@ -1,6 +1,8 @@
 [
 { type: install
   message: <<EOM
+
+Notice:
  This port runs per default using uid:gid domoticz:domoticz to
  avoid security problems.
 
