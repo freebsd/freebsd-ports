@@ -28,6 +28,7 @@ include/mysql/mariadb/ma_io.h
 include/mysql/mariadb_com.h
 include/mysql/mariadb_ctype.h
 include/mysql/mariadb_dyncol.h
+include/mysql/mariadb_rpl.h
 include/mysql/mariadb_stmt.h
 include/mysql/mariadb_version.h
 include/mysql/my_config.h
