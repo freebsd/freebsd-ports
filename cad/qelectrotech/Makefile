@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	qelectrotech
-PORTVERSION=	0.5
-PORTREVISION=	7
+DISTVERSION=	0.7.0
 PORTEPOCH=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://download.tuxfamily.org/qet/tags/20151127/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+MASTER_SITES=	https://git.tuxfamily.org/qet/qet.git/snapshot/
+DISTNAME=	qet-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QElectroTech is application to design electric diagrams
@@ -15,9 +14,12 @@ COMMENT=	QElectroTech is application to design electric diagrams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lib desktop-file-utils qmake qt:5 shared-mime-info
-USE_QT=		buildtools_build gui network printsupport \
-		sql-sqlite3 svg xml
+USES=		compiler:c++11-lib desktop-file-utils kde:5 qmake qt:5 shared-mime-info
+USE_GL=		gl
+USE_QT=		concurrent core gui network printsupport sql sql-sqlite3 \
+		svg widgets xml \
+		buildtools_build
+USE_KDE=	coreaddons widgetsaddons
 
 OPTIONS_DEFINE=       DEBUG DOCS
 
@@ -34,5 +36,9 @@ pre-configure:
 		${WRKSRC}/${PORTNAME}.pro
 	${REINPLACE_CMD} -e 's,../share,share,g' \
 		${WRKSRC}/${PORTNAME}.pro
+
+post-stage:
+	# Sources come with accidental Dolphin state
+	${RM} ${STAGEDIR}${DATADIR}/elements/10_electric/20_manufacturers_articles/bosch_rexroth/.directory
 
 .include <bsd.port.mk>
