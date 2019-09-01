@@ -1,4 +1,4 @@
---- src/Makefile.defs.orig	2018-03-01 16:24:11 UTC
+--- src/Makefile.defs.orig	2019-08-14 09:43:03 UTC
 +++ src/Makefile.defs
 @@ -208,7 +208,7 @@ YACC := $(shell echo "$${YACC}")
  
@@ -18,7 +18,7 @@
  	RPAREN=)
  	CC_VER:=$(word 1,$(CC)) $(shell $(CC) - --version|head -n 1|\
  				sed  -e 's/([^$(RPAREN)]*)//g' \
-@@ -390,7 +390,7 @@ LIBDIR ?=
+@@ -392,7 +392,7 @@ LIBDIR ?=
  ifeq ($(LIBDIR),)
  ARCHBSZ= $(shell echo $(ARCH) | sed -e 's/.*64.*/64b/')
  ifeq ($(ARCHBSZ),64b)
@@ -27,16 +27,7 @@
  else
  	LIBDIR = lib
  endif
-@@ -464,7 +464,7 @@ doxygen_dir=doc/doxygen
- 
- BASEDIR ?= $(DESTDIR)
- basedir = $(BASEDIR)
--RUNBASEDIR ?= $(DESTDIR)
-+RUNBASEDIR ?= /
- runbasedir = $(RUNBASEDIR)
- 
- # install location
-@@ -1743,7 +1743,7 @@ ifeq ($(YACC),)
+@@ -1736,7 +1736,7 @@ ifeq ($(YACC),)
  endif
  YACC_FLAGS=-d -b core/cfg
  # on solaris add -lxnet (e.g. LIBS= -lxnet)

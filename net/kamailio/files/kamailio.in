@@ -21,9 +21,18 @@ rcvar=kamailio_enable
 load_rc_config ${name}
 
 : ${kamailio_enable:=NO}
+: ${kamailio_user:=%%USERS%%}
+: ${pidfile:=%%RUNDIR%%/kamailio.pid}
 
 command="/usr/local/sbin/kamailio"
-required_files="/usr/local/etc/kamailio/kamailio.cfg"
+command_args="-P ${pidfile}"
 
+start_precmd="kamailio_prestart"
+
+required_files="%%ETCDIR%%/kamailio.cfg"
+
+kamailio_prestart() {
+	install -d -m 0750 -o %%USERS%% -g %%GROUPS%% %%RUNDIR%%
+}
 
 run_rc_command $1
