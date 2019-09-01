@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Git-Repository
-PORTVERSION=	1.323
+PORTVERSION=	1.324
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to Git repositories
 
 LICENSE=	ART10 GPLv1+
