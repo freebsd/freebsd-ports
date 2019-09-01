@@ -3,7 +3,7 @@
 
 PORTNAME=	hpscat
 PORTVERSION=	1.3.1
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	korean print
 MASTER_SITES=	http://ftp.kaist.ac.kr/hangul/print/hpscat/ \
 		ftp://ftp.kaist.ac.kr/hangul/print/hpscat/ \
@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ked.tar.gz:ked
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hangul Text Printing Utility
 
-RUN_DEPENDS=    hcode:korean/hcode
+RUN_DEPENDS=	hcode:korean/hcode
 
 FONTDIR=	${PREFIX}/${FONTDIR_REL}
 FONTDIR_REL=	share/fonts/ked-${PORTNAME}
