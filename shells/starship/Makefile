@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	starship
-DISTVERSION=	0.10.1
+DISTVERSION=	0.13.1
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -30,7 +30,7 @@ CARGO_CRATES=	\
 		backtrace-sys-0.1.28 \
 		base64-0.10.1 \
 		battery-0.7.4 \
-		bitflags-1.0.4 \
+		bitflags-1.1.0 \
 		blake2b_simd-0.5.6 \
 		byteorder-1.3.2 \
 		c2-chacha-0.2.2 \
@@ -49,21 +49,21 @@ CARGO_CRATES=	\
 		dirs-2.0.2 \
 		dirs-sys-0.3.4 \
 		either-1.5.2 \
-		env_logger-0.6.1 \
+		env_logger-0.6.2 \
 		failure-0.1.5 \
 		failure_derive-0.1.5 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		getrandom-0.1.10 \
-		git2-0.9.2 \
+		git2-0.10.0 \
 		humantime-1.2.0 \
 		idna-0.2.0 \
 		itoa-0.4.4 \
 		lazycell-1.2.1 \
-		lazy_static-1.3.0 \
+		lazy_static-1.4.0 \
 		libc-0.2.58 \
 		libc-0.2.60 \
-		libgit2-sys-0.8.2 \
+		libgit2-sys-0.9.0 \
 		libssh2-sys-0.2.11 \
 		libz-sys-1.0.25 \
 		log-0.4.8 \
@@ -82,7 +82,7 @@ CARGO_CRATES=	\
 		path-slash-0.1.1 \
 		percent-encoding-2.0.0 \
 		pkg-config-0.3.14 \
-		pretty_env_logger-0.3.0 \
+		pretty_env_logger-0.3.1 \
 		ppv-lite86-0.2.5 \
 		quick-error-1.2.2 \
 		quote-0.6.3 \
