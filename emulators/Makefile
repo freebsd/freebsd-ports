@@ -9,6 +9,7 @@
     SUBDIR += advancemess
     SUBDIR += aftp
     SUBDIR += almostti
+    SUBDIR += anese 
     SUBDIR += aqemu
     SUBDIR += atari800
     SUBDIR += bfe
