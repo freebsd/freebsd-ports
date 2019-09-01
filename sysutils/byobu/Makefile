@@ -3,7 +3,7 @@
 
 PORTNAME=	byobu
 PORTVERSION=	5.129
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -14,7 +14,8 @@ COMMENT=	Profile and configuration utilities for GNU Screen and/or tmux
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash \
+		gsed:textproc/gsed
 
 USES=		autoreconf python shebangfix
 
@@ -52,7 +53,5 @@ post-patch:
 		${WRKSRC}/etc/profile.d/Makefile.am
 	${FIND} ${WRKSRC}/usr/lib/byobu -type f -maxdepth 1 | ${XARGS} \
 		${REINPLACE_CMD} -e 's:/proc:/compat/linux/proc:g'
-	${REINPLACE_CMD} -e "s:BYOBU_SED -i:BYOBU_SED -i '':g" \
-		${WRKSRC}/usr/lib/byobu/include/constants
 
 .include <bsd.port.mk>
