@@ -1,6 +1,0 @@
-pure-stllib is an "umbrella" package that contains a pair of Pure addons,
-pure-stlvec and pure-stlmap. These addons provide Pure interfaces to a
-selection of containers provided by the C++ Standard Library, specialized
-to hold pointers to arbitrary Pure expressions.
-
-WWW: https://puredocs.bitbucket.io/pure-stllib.html

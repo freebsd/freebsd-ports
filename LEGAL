@@ -60,7 +60,6 @@ defcon*			games/linux-defcon	Redistribution is limited, see license
 djbdns*			dns/djbdns		No license -- see http://cr.yp.to/softwarelaw.html
 djbfft-*		math/djbfft		No license -- see http://cr.yp.to/softwarelaw.html
 dlv			lang/dlv		Not sure if we can redistribute it
-dmd-*			lang/dmd1		No redistribution of non validated binaries
 dn*.tgz			emulators/darcnes	Commercial use is restricted
 doom3-linux-*		games/linux-doom3	Redistribution is limited, see license; Requested by id Software
 doom3-linux-*		games/linux-doom3-demo	Redistribution is limited, see license; Requested by id Software

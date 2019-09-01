@@ -52,7 +52,6 @@
     SUBDIR += diveintopython
     SUBDIR += dlang-tools
     SUBDIR += dlv
-    SUBDIR += dmd1
     SUBDIR += duktape
     SUBDIR += duktape-lib
     SUBDIR += ecl
@@ -132,7 +131,6 @@
     SUBDIR += go-devel
     SUBDIR += go14
     SUBDIR += gomacro
-    SUBDIR += gprolog
     SUBDIR += gravity
     SUBDIR += groovy
     SUBDIR += gscheme

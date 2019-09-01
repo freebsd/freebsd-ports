@@ -1,6 +1,0 @@
-This is a port of Q's XML module, which also includes support for XSLT. The
-module provides a simplified interface to the Gnome libxml2 and libxslt
-libraries, and supplies all the necessary data structures and operations to
-inspect, create, modify and transform XML documents with ease.
-
-WWW: https://puredocs.bitbucket.io/pure-xml.html

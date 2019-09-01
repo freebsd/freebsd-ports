@@ -747,7 +747,6 @@
     SUBDIR += puppetdb-terminus6
     SUBDIR += puppetdb5
     SUBDIR += puppetdb6
-    SUBDIR += pure-sql3
     SUBDIR += puredb
     SUBDIR += pxlib
     SUBDIR += pxtools

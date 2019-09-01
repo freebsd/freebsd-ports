@@ -1,5 +1,0 @@
-pure-mpfr makes the MPFR multiprecision floats (henceforth referred to as
-mpfr numbers or values) available in Pure, so that they work with the other
-types of Pure numbers in an almost seamless fashion.
-
-WWW: https://puredocs.bitbucket.io/pure-mpfr.html
