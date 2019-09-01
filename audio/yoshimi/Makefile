@@ -1,9 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	yoshimi
-DISTVERSION=	1.5.11.4
-PORTREVISION=	1
+DISTVERSION=	1.6.0
 CATEGORIES=	audio
+
+PATCH_SITES=	https://github.com/Yoshimi/yoshimi/commit/
+PATCHFILES=	e8304a0039134932ed68f60d83fbc86d4e5e972f.patch:-p1
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Sophisticated software synthesizer
