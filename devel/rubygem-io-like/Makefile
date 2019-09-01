@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/tota/${PORTNAME}
 PKGNAMEPREFIX=	rubygem-
 
 MAINTAINER=	tota@FreeBSD.org
-COMMENT=	The interface of IO objects to classes providing a few simple methods
+COMMENT=	Interface of IO objects to classes providing a few simple methods
 
 LICENSE=	RUBY
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${RUBYGEMBIN}:devel/ruby-gems \
 RUN_DEPENDS=	${RUBYGEMBIN}:devel/ruby-gems
 
 USE_RUBY=	yes
+
 NO_ARCH=	yes
 
 GEMS_BASE_DIR=	lib/ruby/gems/${RUBY_VER}
@@ -58,15 +59,8 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-ruby-1.9-temp
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	rubygem-allison>=0:devel/rubygem-allison
-DOCS_VARS_OFF=		RUBYGEM_ARGS+=--no-rdoc
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-RUBYGEM_ARGS+=	--document rdoc,ri
-.else
-RUBYGEM_ARGS+=	--no-document
-.endif
+DOCS_VARS=		RUBYGEM_ARGS+=--document rdoc,ri
+DOCS_VARS_OFF=		RUBYGEM_ARGS+=--no-document
 
 post-patch:
 .for l in 1.8.6 1.8.7 1.9.2 1.9.3
