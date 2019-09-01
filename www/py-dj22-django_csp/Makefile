@@ -6,7 +6,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX= ${PYTHON_PKGNAMEPREFIX}dj22-
 
-MAINTAINER=	alex@axanderio.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds Content-Security-Policy headers to Django
 
 LICENSE=	BSD3CLAUSE
