@@ -613,9 +613,6 @@ proxydeps_suggest_uses() {
 	# openal
 	elif [ ${pkg} = "audio/openal" -o ${pkg} = "audio/openal-soft" -o ${pkg} = "audio/freealut" ]; then
 		warn "you need USES+=openal"
-	# pure
-	elif [ ${pkg} = "lang/pure" ]; then
-		warn "you need USES+=pure"
 	# readline
 	elif [ ${pkg} = "devel/readline" ]; then
 		warn "you need USES+=readline"
