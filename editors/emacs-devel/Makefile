@@ -32,7 +32,7 @@ USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xrender xt
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	2b329ed
+GH_TAGNAME=	e8c46c2
 
 CONFIGURE_ARGS=	--disable-build-details \
 		--localstatedir=/var
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ENV=	ac_cv_header_sys_sysinfo_h=no
 CONFLICTS_INSTALL=	emacs emacs-canna emacs-nox
 GNU_CONFIGURE=	yes
-INFO=		ada-mode auth autotype bovine calc ccmode cl dbus dired-x \
+INFO=		auth autotype bovine calc ccmode cl dbus dired-x \
 		ebrowse ede ediff edt efaq eieio eintr elisp emacs emacs-gnutls \
 		emacs-mime epa erc ert eshell eudc eww flymake forms gnus \
 		htmlfontify idlwave ido info mairix-el message mh-e newsticker \
@@ -198,7 +198,7 @@ XWIDGETS_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 XWIDGETS_IMPLIES=	GTK3
 
 EMACS_VER=	27.0.50
-EMACS_REV=	20190812
+EMACS_REV=	20190901
 
 .include <bsd.port.options.mk>
 
