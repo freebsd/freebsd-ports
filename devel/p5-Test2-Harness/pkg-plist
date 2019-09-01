@@ -17,6 +17,7 @@ bin/yath
 %%SITE_PERL%%/App/Yath/Command/which.pm
 %%SITE_PERL%%/App/Yath/Plugin.pm
 %%SITE_PERL%%/App/Yath/Plugin/Git.pm
+%%SITE_PERL%%/App/Yath/Plugin/SysInfo.pm
 %%SITE_PERL%%/App/Yath/Util.pm
 %%SITE_PERL%%/Test2/Formatter/QVF.pm
 %%SITE_PERL%%/Test2/Formatter/Stream.pm
@@ -64,6 +65,7 @@ bin/yath
 %%SITE_PERL%%/Test2/Harness/Util/TestFile.pm
 %%SITE_PERL%%/Test2/Harness/Util/UUID.pm
 %%SITE_PERL%%/Test2/Harness/Watcher.pm
+%%SITE_PERL%%/Test2/Harness/Watcher/TimeTracker.pm
 %%SITE_PERL%%/Test2/Tools/HarnessTester.pm
 %%PERL5_MAN1%%/yath.1.gz
 %%PERL5_MAN3%%/App::Yath.3.gz
