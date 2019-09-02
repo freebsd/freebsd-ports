@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libhubbub
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
