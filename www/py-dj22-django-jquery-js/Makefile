@@ -6,7 +6,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj22-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alex@xanderio.de
 COMMENT=	jQuery, bundled up so apps can depend upon it
 
 LICENSE=	MIT
