@@ -15,8 +15,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go
 
 USE_GITHUB=	yes
-GH_TUPLE=	hashicorp:${PORTNAME}:${VAULTTAG}:DEFAULT/src/github.com/hashicorp/${PORTNAME} \
+GH_TUPLE=	hashicorp:${PORTNAME}:${VAULTTAG}:DEFAULT \
 		swills:vaultui:${VAULTUITAG}:vaultui
+
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_BUILDFLAGS=	-tags=ui \
+		-ldflags="\
+		-X github.com/hashicorp/vault/version.Version=${PORTVERSION} \
+		-X github.com/hashicorp/vault/version.VersionPrerelease= \
+		-X github.com/hashicorp/vault/version.VersionMetadata= \
+		-X github.com/hashicorp/vault/version.GitCommit='${COMMIT_ID}'"
 
 VAULTTAG=	${DISTVERSIONPREFIX}${PORTVERSION}
 VAULTUITAG=	${DISTVERSIONPREFIX}${PORTVERSION}
@@ -31,20 +39,5 @@ SUB_FILES=	pkg-message
 
 post-patch:
 	@${CP} ${WRKDIR}/vaultui-${PORTVERSION}/http/bindata_assetfs.go ${WRKDIR}/vault-${PORTVERSION}/http/bindata_assetfs.go
-
-do-build:
-	@cd ${WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${BUILD_ENV} CGO_ENABLED=0 GOPATH=${WRKSRC} \
-		go build \
-		-tags=ui \
-		-ldflags "\
-		-X github.com/hashicorp/vault/version.Version=${PORTVERSION} \
-		-X github.com/hashicorp/vault/version.VersionPrerelease= \
-		-X github.com/hashicorp/vault/version.VersionMetadata= \
-		-X github.com/hashicorp/vault/version.GitCommit='${COMMIT_ID}'" \
-		-o bin/${PORTNAME}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
