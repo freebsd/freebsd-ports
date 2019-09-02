@@ -1,12 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	spass
-PORTVERSION=	3.0
-PORTREVISION=	16
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.2-5
+DISTVERSIONSUFFIX=	-gd38d173
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Secure password generator with a true random number generator
+COMMENT?=	Secure password generator with a true random number generator
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -14,14 +15,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:devel/boost-libs
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
+USES+=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	guyru
-GH_TAGNAME=	cb0de64
-
-USES=		cmake compiler:c++11-lang
 
 CMAKE_ARGS=	-DWITH_ALSA:BOOL=off -DWITH_OSS:BOOL=on
 
-PLIST_FILES=	bin/spass
+PLIST_FILES?=	bin/spass
+
+# Disable the Qt5 GUI if we build the master port
+.if !defined(PKGNAMESUFFIX)
+CMAKE_ARGS+=	-DWITH_GUI:BOOL=off
+.endif
 
 .include <bsd.port.mk>
