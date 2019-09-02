@@ -1,6 +1,6 @@
-TIMESTAMP = 1566551536
-SHA256 (wtfutil-wtf-v0.20.0_GH0.tar.gz) = 88e4e017feefa7f7c23a8dba49bda09a14e9d04079317065de375937e06cbc4b
-SIZE (wtfutil-wtf-v0.20.0_GH0.tar.gz) = 6128052
+TIMESTAMP = 1567399058
+SHA256 (wtfutil-wtf-v0.21.0_GH0.tar.gz) = f1a5267f5b534026d7ae75ee2c13b4d3e08643b8f5b52637b41fb6c4fea1838d
+SIZE (wtfutil-wtf-v0.21.0_GH0.tar.gz) = 11162170
 SHA256 (PagerDuty-go-pagerduty-cf1437c7c8d6_GH0.tar.gz) = fc022e2ffdddf610a29a657382c7d4b4dc8227eb521693801988889e2d206b13
 SIZE (PagerDuty-go-pagerduty-cf1437c7c8d6_GH0.tar.gz) = 27616
 SHA256 (PuerkitoBio-goquery-v1.5.0_GH0.tar.gz) = 0307341d56ae12648584b3990fb1e84f465870247e46aff00381c98c5ad231c7
