@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	g2o
-DISTVERSION=	20170730_git-87
-DISTVERSIONSUFFIX=	-gbbe3c2b
-PORTREVISION=	5
+DISTVERSION=	20170730_git-239
+DISTVERSIONSUFFIX=	-ge7b5b7a
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,9 +12,11 @@ LICENSE=	LGPL3 GPLv3
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libcxsparse.so:math/suitesparse \
-		libQGLViewer-qt5.so:graphics/libQGLViewer
+		libQGLViewer-qt5.so:graphics/libQGLViewer \
+		libmetis.so:math/metis \
+		libopenblas.so:math/openblas
 
-USES=		cmake compiler:c++11-lang gl eigen:3 qt:5
+USES=		cmake compiler:c++11-lang gl eigen:3 blaslapack:netlib qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	RainerKuemmerle
 USE_GL=		gl glu
