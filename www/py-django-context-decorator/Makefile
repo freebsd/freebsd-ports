@@ -7,7 +7,7 @@ MASTER_SITES=	CHEESESHOP
 DISTNAME=	django_context_decorator-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alex@xanderio.de
 COMMENT=	Remove the need to call super().get_context_data(**kwargs) in nearly every view
 
 LICENSE=	BSD3CLAUSE
