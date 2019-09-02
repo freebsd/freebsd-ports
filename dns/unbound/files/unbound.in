@@ -2,41 +2,64 @@
 #
 # $FreeBSD$
 #
-# unbound freebsd startup rc.d script, modified from the named script.
+# unbound freebsd startup rc.d script
 # uses the default unbound installation path and pidfile location.
-# copy this to /etc/rc.d/unbound
+# copy this to %%PREFIX%%/etc/rc.d/unbound
 # and put unbound_enable="YES" into rc.conf
 #
 # unbound_anchorflags can be used to allow you to pass a custom flags to
 # unbound-anchor.  Examples include a custom resolv.conf (-f) or a custom
 # root.hints (-r).  Useful for when /etc/resolv.conf only contains 127.0.0.1
-
+#
 # PROVIDE: unbound
 # REQUIRE: SERVERS cleanvar
 # KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable unbound:
+#
+# unbound_enable="YES"
+#
+# You could set alternative config with
+# unbound_config="/path/to/config"
+#
+#
+# Multiple profiles are supported with
+#
+# unbound_profiles="name1 name2"
+# unbound_name1_enable="YES"
+# unbound_name1_config="/path/to/config1"
+# unbound_name2_enable="YES"
+# unbound_name2_config="/path/to/config2"
+#
+# A fib can be set for each profile as in
+# unbound_name1_fib=1
+#
 
 . /etc/rc.subr
 
-name="unbound"
+name=unbound
 rcvar=unbound_enable
 
-command="%%PREFIX%%/sbin/unbound"
-extra_commands="reload"
-start_precmd="start_precmd"
+# setfib
+unbound_startfib() {
+	${SYSCTL} net.fibs  >/dev/null 2>&1 || return 0
 
-load_rc_config $name
-
-pidfile=`%%PREFIX%%/sbin/unbound-checkconf -o pidfile ${unbound_conf}`
-unbound_enable=${unbound_enable:-"NO"}
-unbound_anchorflags=${unbound_anchorflags:-""}
-unbound_conf=${unbound_conf:-"%%ETCDIR%%/unbound.conf"}
-unbound_flags=${unbound_flags:-" -c ${unbound_conf}"}
-
-reload_precmd="%%PREFIX%%/sbin/unbound-checkconf ${unbound_conf} >/dev/null"
+	unbound_fib=${unbound_fib:-"NONE"}
+	case "$unbound_fib" in
+	[Nn][Oo][Nn][Ee])
+		;;
+	*)
+		echo "Using fib #: " $unbound_fib .
+		command="setfib -F ${unbound_fib} ${command}"
+			;;
+	esac
+}
 
 start_precmd()
 {
-	echo -n "Obtaining a trust anchor:"
+	unbound_startfib
+
+	echo -n "Obtaining a trust anchor.."
 	if [ "${unbound_anchorflags}T" = "T" ]; then
 		su -m unbound -c %%PREFIX%%/sbin/unbound-anchor
 	else
@@ -46,5 +69,84 @@ start_precmd()
 	%%PREFIX%%/sbin/unbound-checkconf ${unbound_conf} > /dev/null
 	return $?
 }
+
+# read settings, set default values
+load_rc_config "${name}"
+: ${unbound_enable:="NO"}
+: ${unbound_config:=%%PREFIX%%/etc/unbound/unbound.conf}
+
+# Set PID file
+pidfile=$(%%PREFIX%%/sbin/unbound-checkconf -o pidfile %%PREFIX%%/etc/unbound/unbound.conf)
+
+required_files=${unbound_config}
+command="%%PREFIX%%/sbin/${name}"
+command_args="-c ${unbound_config}"
+unbound_anchorflags=${unbound_anchorflags:-""}
+extra_commands="reload"
+start_precmd="start_precmd"
+reload_precmd="%%PREFIX%%/sbin/unbound-checkconf ${unbound_conf} >/dev/null"
+
+load_rc_config "${name}"
+
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ "x${unbound_profiles}" != "x" ]; then
+		eval unbound_config="\${unbound_${profile}_config:-%%PREFIX%%/etc/unbound/unbound-${profile}.conf}"
+		eval unbound_fib="\${unbound_${profile}_fib:-${unbound_fib}}"
+		if [ "x${unbound_config}" = "x" ]; then
+			echo "You must define a configuration file (unbound_${profile}_config)"
+			exit 1
+		fi
+
+		# Replace default value with profile-based (defined in the config file)
+		_cfgpidfile=$(%%PREFIX%%/sbin/unbound-checkconf -o pidfile ${unbound_config})
+		_defaultpidfile=$(%%PREFIX%%/sbin/unbound-checkconf -o pidfile /dev/null)
+
+		if [ "x${_cfgpidfile}" = "x" -o "x${_cfgpidfile}" = "x${_defaultpidfile}" ] ; then
+			pidfile=${_defaultpidfile}
+		else
+			pidfile=${_cfgpidfile}
+		fi
+		required_files="${unbound_config}"
+		eval unbound_enable="\${unbound_${profile}_enable:-${unbound_enable}}"
+		command_args="-c ${unbound_config}"
+	else
+		echo "$0: extra argument ignored"
+	fi
+else
+	if [ "x${unbound_profiles}" != "x" -a "x$1" != "x" ]; then
+		for profile in ${unbound_profiles}; do
+			eval _enable="\${unbound_${profile}_enable}"
+			case "x${_enable:-${unbound_enable}}" in
+			x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+				continue
+				;;
+			x[Yy][Ee][Ss])
+				;;
+			*)
+				if test -z "$_enable"; then
+					_var=unbound_enable
+				else
+					_var=unbound_"${profile}"_enable
+				fi
+				echo "Bad value" \
+				    "'${_enable:-${unbound_enable}}'" \
+				    "for ${_var}. " \
+				    "Profile ${profile} skipped."
+				continue
+				;;
+			esac
+			echo "===> unbound profile: ${profile}"
+			%%PREFIX%%/etc/rc.d/unbound $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
 
 run_rc_command "$1"
