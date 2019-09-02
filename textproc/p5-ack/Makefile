@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ack
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc sysutils perl5
 MASTER_SITES=	CPAN
@@ -16,18 +16,18 @@ LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-File-Next>=1.16:sysutils/p5-File-Next
+RUN_DEPENDS=	p5-File-Next>=1.18:sysutils/p5-File-Next
 TEST_DEPENDS=	bash:shells/bash \
 		p5-IO-Tty>=0:devel/p5-IO-Tty
-
-CONFLICTS_INSTALL=	ja-ack-[0-9]*
-
-PORTSCOUT=	limit:^[0-9\.]*$$
 
 USES=		cpe perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
+
+CONFLICTS_INSTALL=	ja-ack-[0-9]*
+
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 CPE_VENDOR=	beyondgrep
 
