@@ -876,6 +876,7 @@
     SUBDIR += ump
     SUBDIR += units
     SUBDIR += unuran
+    SUBDIR += vampire
     SUBDIR += viennacl
     SUBDIR += visualpolylib
     SUBDIR += vowpal_wabbit
