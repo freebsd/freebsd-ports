@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdom
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4.0
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 EXTRACT_SUFX=	-src.tar.gz
