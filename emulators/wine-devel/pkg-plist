@@ -517,6 +517,8 @@ include/wine/windows/mfapi.h
 include/wine/windows/mferror.h
 include/wine/windows/mfidl.h
 include/wine/windows/mfidl.idl
+include/wine/windows/mfmediaengine.h
+include/wine/windows/mfmediaengine.idl
 include/wine/windows/mfobjects.h
 include/wine/windows/mfobjects.idl
 include/wine/windows/mfplay.h
@@ -1935,6 +1937,7 @@ lib/wine/fakedlls/hidclass.sys
 lib/wine/fakedlls/hlink.dll
 lib/wine/fakedlls/hnetcfg.dll
 lib/wine/fakedlls/hostname.exe
+lib/wine/fakedlls/http.sys
 lib/wine/fakedlls/httpapi.dll
 lib/wine/fakedlls/icacls.exe
 lib/wine/fakedlls/iccvid.dll
@@ -1989,6 +1992,7 @@ lib/wine/fakedlls/mciwave.dll
 lib/wine/fakedlls/mf.dll
 lib/wine/fakedlls/mf3216.dll
 lib/wine/fakedlls/mferror.dll
+lib/wine/fakedlls/mfmediaengine.dll
 lib/wine/fakedlls/mfplat.dll
 lib/wine/fakedlls/mfplay.dll
 lib/wine/fakedlls/mfreadwrite.dll
@@ -2161,6 +2165,7 @@ lib/wine/fakedlls/reg.exe
 lib/wine/fakedlls/regapi.dll
 lib/wine/fakedlls/regasm.exe
 lib/wine/fakedlls/regedit.exe
+lib/wine/fakedlls/regini.exe
 lib/wine/fakedlls/regsvcs.exe
 lib/wine/fakedlls/regsvr32.exe
 lib/wine/fakedlls/resutils.dll
@@ -2369,7 +2374,7 @@ lib/wine/fakedlls/wsock32.dll
 lib/wine/fakedlls/wtsapi32.dll
 lib/wine/fakedlls/wuapi.dll
 lib/wine/fakedlls/wuaueng.dll
-%%STAGING%%lib/wine/fakedlls/wuauserv.exe
+lib/wine/fakedlls/wuauserv.exe
 lib/wine/fakedlls/wusa.exe
 %%OPENAL%%lib/wine/fakedlls/x3daudio1_0.dll
 %%OPENAL%%lib/wine/fakedlls/x3daudio1_1.dll
@@ -2431,6 +2436,7 @@ lib/wine/hidclass.sys.so
 lib/wine/hlink.dll.so
 lib/wine/hnetcfg.dll.so
 lib/wine/hostname.exe.so
+lib/wine/http.sys.so
 lib/wine/httpapi.dll.so
 lib/wine/icacls.exe.so
 lib/wine/iccvid.dll.so
@@ -2550,6 +2556,7 @@ lib/wine/libloadperf.def
 lib/wine/liblz32.def
 lib/wine/libmapi32.def
 lib/wine/libmf.def
+lib/wine/libmfmediaengine.def
 lib/wine/libmfplat.def
 lib/wine/libmfreadwrite.def
 lib/wine/libmfuuid.a
@@ -2682,6 +2689,7 @@ lib/wine/mciwave.dll.so
 lib/wine/mf.dll.so
 lib/wine/mf3216.dll.so
 lib/wine/mferror.dll.so
+lib/wine/mfmediaengine.dll.so
 lib/wine/mfplat.dll.so
 lib/wine/mfplay.dll.so
 lib/wine/mfreadwrite.dll.so
@@ -2854,6 +2862,7 @@ lib/wine/reg.exe.so
 lib/wine/regapi.dll.so
 lib/wine/regasm.exe.so
 lib/wine/regedit.exe.so
+lib/wine/regini.exe.so
 lib/wine/regsvcs.exe.so
 lib/wine/regsvr32.exe.so
 lib/wine/resutils.dll.so
@@ -3062,7 +3071,7 @@ lib/wine/wsock32.dll.so
 lib/wine/wtsapi32.dll.so
 lib/wine/wuapi.dll.so
 lib/wine/wuaueng.dll.so
-%%STAGING%%lib/wine/wuauserv.exe.so
+lib/wine/wuauserv.exe.so
 lib/wine/wusa.exe.so
 %%OPENAL%%lib/wine/x3daudio1_0.dll.so
 %%OPENAL%%lib/wine/x3daudio1_1.dll.so
