@@ -1,6 +1,8 @@
---- config.mk.orig	2018-09-25 15:27:43 UTC
+Index: config.mk
+===================================================================
+--- config.mk.orig
 +++ config.mk
-@@ -275,7 +275,7 @@ ifeq ($(WITH_WEBSOCKETS),static)
+@@ -283,7 +283,7 @@ ifeq ($(WITH_WEBSOCKETS),static)
  endif
  
  INSTALL?=install

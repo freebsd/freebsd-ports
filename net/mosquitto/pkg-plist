@@ -1,6 +1,7 @@
 bin/mosquitto_passwd
 bin/mosquitto_pub
 bin/mosquitto_sub
+bin/mosquitto_rr
 @sample %%ETCDIR%%/aclfile.sample
 @sample %%ETCDIR%%/mosquitto.conf.sample
 @sample %%ETCDIR%%/pskfile.sample
@@ -19,6 +20,7 @@ libdata/pkgconfig/libmosquitto.pc
 libdata/pkgconfig/libmosquittopp.pc
 man/man1/mosquitto_passwd.1.gz
 man/man1/mosquitto_pub.1.gz
+man/man1/mosquitto_rr.1.gz
 man/man1/mosquitto_sub.1.gz
 man/man3/libmosquitto.3.gz
 man/man5/mosquitto.conf.5.gz
