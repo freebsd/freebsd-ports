@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rdkafka
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.2
 CATEGORIES=	net pear
 
 MAINTAINER=	sergey@akhmatov.ru
