@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	i3
-DISTVERSION=	4.17
+DISTVERSION=	4.17.1
 CATEGORIES=	x11-wm
 PKGNAMESUFFIX=	-gaps
 
@@ -31,7 +31,7 @@ RUN_DEPENDS=	p5-AnyEvent-I3>=0:devel/p5-AnyEvent-I3 \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 
 USES=		autoreconf compiler:c11 gettext-runtime gmake gnome iconv \
-		localbase perl5 pkgconfig
+		localbase perl5 pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	Airblader
 USE_PERL5=	run
