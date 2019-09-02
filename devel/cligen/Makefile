@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cligen
-PORTVERSION=	3.9.0
+PORTVERSION=	4.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	dcornejo@netgate.com
