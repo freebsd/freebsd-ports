@@ -11,9 +11,7 @@ COMMENT=	Top-like interface for Docker container metrics
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
-
-GO_PKGNAME=	github.com/bcicen/ctop
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bcicen
