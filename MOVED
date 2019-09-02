@@ -12907,3 +12907,4 @@ x11-toolkits/pure-gtk||2019-09-01|Has expired: Depends on expiring devel/llvm35
 lang/pure||2019-09-01|Has expired: Depends on expiring devel/llvm35
 devel/pure-ffi||2019-09-01|Has expired: Depends on expiring devel/llvm35
 devel/llvm35||2019-09-01|Has expired: Obsolete and unmaintained
+archivers/py-attic|archivers/py-borg|2019-09-02|Has expired: Unsupported by upstream, please migrate to archivers/py-borg.  See https://borgbackup.readthedocs.io/en/stable/usage/upgrade.html#borg-upgrade
