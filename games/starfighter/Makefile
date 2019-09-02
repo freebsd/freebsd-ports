@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	starfighter
-PORTVERSION=	1.7
+PORTVERSION=	2.0.0.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games
-MASTER_SITES=	SAVANNAH/${PORTNAME}/${DISTVERSION} \
-		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}-src${EXTRACT_SUFX} \
-		${PORTNAME}-icons${EXTRACT_SUFX}:icons
+MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
+DISTFILES=	${PORTNAME}-icons${EXTRACT_SUFX}:icons
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	alfix86@gmail.com
@@ -16,12 +15,13 @@ COMMENT=	Liberate the universe from the evil company WEAPCO
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		dos2unix gmake gnome iconv pkgconfig sdl
-USE_SDL=	image2 mixer2
+USES=		autoreconf dos2unix gnome iconv pkgconfig sdl
+USE_SDL=	image2 mixer2 ttf2
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	pr-starfighter
 
 GNU_CONFIGURE=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-src
 
 DOS2UNIX_GLOB=	*.txt
 
