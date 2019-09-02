@@ -18,7 +18,9 @@ export PATH=$PATH:/usr/local/bin/
 
 tuptime_start()
 {
+	echo "Starting $name."
 	command_args="-x"
+
 	if /usr/sbin/pw usershow "${tuptime_user}" >/dev/null 2>&1; then
 		su -m ${tuptime_user} -c "$name $command_args"
 	else
@@ -28,7 +30,9 @@ tuptime_start()
 
 tuptime_stop()
 {
+	echo "Stopping $name."
 	command_args="-xg"
+
 	if /usr/sbin/pw usershow "${tuptime_user}" >/dev/null 2>&1; then
 		su -m ${tuptime_user} -c "$name $command_args"
 	else
