@@ -65,6 +65,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/scripts/init.sh
 %%DATADIR%%/scripts/master-init.sh
 %%DATADIR%%/scripts/network-init.sh
+%%DATADIR%%/scripts/pkg-upgrade.sh
 %%DATADIR%%/scripts/project-init.sh
 %%DATADIR%%/scripts/puppet-provision.sh
 %%DATADIR%%/scripts/register.sh
@@ -73,6 +74,8 @@ man/man1/reggae.1.gz
 %%DATADIR%%/scripts/shell-provision.sh
 %%DATADIR%%/scripts/ssh-ping.sh
 %%DATADIR%%/scripts/ssh.sh
+%%DATADIR%%/scripts/update-profiles.sh
+%%DATADIR%%/scripts/version.sh
 %%DATADIR%%/skel/ansible/ansible/group_vars/.keep
 %%DATADIR%%/skel/ansible/ansible/inventory/.keep
 %%DATADIR%%/skel/ansible/ansible/roles/.keep
@@ -92,6 +95,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/dhcpd-hook.sh
 %%DATADIR%%/templates/dhcpd.conf
 %%DATADIR%%/templates/empty.jconf
+%%DATADIR%%/templates/export-ports.sh
 %%DATADIR%%/templates/freebsd-update.conf
 %%DATADIR%%/templates/gitignore
 %%DATADIR%%/templates/initenv.conf
@@ -111,3 +115,4 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/unbound_cbsd_reverse.conf
 %%DATADIR%%/templates/unbound_cbsd_reverse.zone
 %%DATADIR%%/templates/unbound_control.conf
+%%DATADIR%%/templates/xorg.sh
