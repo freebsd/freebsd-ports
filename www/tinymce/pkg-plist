@@ -50,6 +50,7 @@
 %%WWWDIR%%/js/tinymce/plugins/visualblocks/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/visualchars/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/wordcount/plugin.min.js
+%%WWWDIR%%/js/tinymce/skins/content/dark/content.min.css
 %%WWWDIR%%/js/tinymce/skins/content/default/content.min.css
 %%WWWDIR%%/js/tinymce/skins/content/document/content.min.css
 %%WWWDIR%%/js/tinymce/skins/content/writer/content.min.css
