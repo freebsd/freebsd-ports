@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	istio
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -12,15 +12,14 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	kubectl:sysutils/kubectl
 
-USES=		go
+USES=		go:modules
 
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 
-GO_PKGNAME=	istio.io/istio
-GO_TARGET=	${GO_PKGNAME}/istioctl/cmd/istioctl
+GO_TARGET=	./istioctl/cmd/istioctl
 GO_BUILDFLAGS=	-ldflags="-X istio.io/istio/vendor/istio.io/pkg/version.buildVersion=${PORTVERSION} \
 		-X istio.io/istio/pkg/version.buildDockerHub=docker.io/istio"
 
