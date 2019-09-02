@@ -4,6 +4,7 @@
 %%WWWDIR%%/appinfo/app.php
 %%WWWDIR%%/appinfo/database.xml
 %%WWWDIR%%/appinfo/info.xml
+%%WWWDIR%%/appinfo/info.xsd
 %%WWWDIR%%/appinfo/routes.php
 %%WWWDIR%%/appinfo/signature.json
 %%WWWDIR%%/css/app-navigation.scss
