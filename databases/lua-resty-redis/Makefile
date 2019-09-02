@@ -2,7 +2,7 @@
 
 PORTNAME=	lua-resty-redis
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26
+DISTVERSION=	0.27
 CATEGORIES=	databases
 
 MAINTAINER=	arcade@b1t.name
