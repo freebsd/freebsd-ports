@@ -3,7 +3,7 @@
 
 PORTNAME=	recombine
 PORTVERSION=	1.41
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	http://evolution.gs.washington.edu/lamarc/recombine/
 DISTNAME=	${PORTNAME}${PORTVERSION}.src.doc
