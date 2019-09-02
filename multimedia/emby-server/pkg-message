@@ -4,14 +4,8 @@
 It is recommended to recompile this port from source
 with the LAME option enabled to support mp3 transcoding.
 
-If you had mediabrowser installed before the project was
-renamed to emby-server, you may want to rename the user and
-group (note that moving the database is not supported):
-# pw groupmod 989 -n mediabrowser -l emby
-# pw usermod 989 -n mediabrowser -l emby -g emby -c Emby\ Server
-
 To automatically start Emby Server at boot time:
-# echo 'emby_server_enable="YES"' >> /etc/rc.conf
+# sysrc emby_server_enable="YES"
 
 To then manually start Emby Server without rebooting:
 # service emby-server start

@@ -1,6 +1,5 @@
 #!/bin/sh
 # $FreeBSD$
-#
 
 case $2 in
 	DEINSTALL)
@@ -8,8 +7,5 @@ case $2 in
 		echo "    and you do *NOT* want to retain the database, logs"
 		echo "    configuration and media metadata, you should"
 		echo "    manually delete directory /var/db/emby-server"
-		if [ -d "/var/db/mediabrowser" ]; then
-			echo "    and /var/db/mediabrowser."
-		fi
 		;;
 esac
