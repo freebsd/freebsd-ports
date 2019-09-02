@@ -4,7 +4,7 @@
    char *s;
  
    do {
-+#define gets(a) fgets(a,sizeof(a),stdin)
++#define gets(a) gets_s(a,sizeof(a))
      if( gets(str) == NULL )
        return NULL;
      if( *str != '\t' && *str != ' ' && PrintFrames ) 
