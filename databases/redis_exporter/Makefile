@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis_exporter
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	databases
 
