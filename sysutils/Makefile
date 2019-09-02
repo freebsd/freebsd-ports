@@ -501,6 +501,7 @@
     SUBDIR += intel-pcm-devel
     SUBDIR += intel-qcu
     SUBDIR += intel-undervolt
+    SUBDIR += ioc
     SUBDIR += iocage
     SUBDIR += iocage-devel
     SUBDIR += iocell
