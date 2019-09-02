@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgpool-II
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	40
