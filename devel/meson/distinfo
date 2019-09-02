@@ -1,3 +1,5 @@
-TIMESTAMP = 1561108166
-SHA256 (meson-0.51.0.tar.gz) = 2f75fdf6d586d3595c03a07afcd0eaae11f68dd33fea5906a434d22a409ed63f
-SIZE (meson-0.51.0.tar.gz) = 1449724
+TIMESTAMP = 1566836953
+SHA256 (meson-0.51.2.tar.gz) = 23688f0fc90be623d98e80e1defeea92bbb7103bf9336a5f5b9865d36e892d76
+SIZE (meson-0.51.2.tar.gz) = 1453251
+SHA256 (efea48788ab2.patch) = eee556fb0cd6cbba5756bbfb508412081743cd813dd10d1b9cbc419769281d39
+SIZE (efea48788ab2.patch) = 953

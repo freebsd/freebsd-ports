@@ -2,9 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	meson
-PORTVERSION=	0.51.0
+PORTVERSION=	0.51.2
 CATEGORIES=	devel python
 MASTER_SITES=	https://github.com/mesonbuild/${PORTNAME}/releases/download/${PORTVERSION}/
+
+PATCH_SITES=	https://github.com/mesonbuild/${PORTNAME}/commit/
+PATCHFILES+=	efea48788ab2.patch:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	High performance build system

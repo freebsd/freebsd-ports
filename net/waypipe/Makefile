@@ -20,8 +20,6 @@ GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mstoeckl
 GL_COMMIT=	f78ad85b04ef95daa9a1671aa0375d0e77d19b2f
 PLIST_FILES=	bin/${PORTNAME}
-# XXX armv6 needs https://github.com/mesonbuild/meson/commit/147d3f752c41
-CONFIGURE_ENV=	UNAME_m=${ARCH}
 
 # XXX Drop after FreeBSD 12.0 EOL
 .if exists(/usr/lib/clang/6.0.0) || exists(/usr/lib/clang/6.0.1)
