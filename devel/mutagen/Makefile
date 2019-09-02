@@ -11,7 +11,7 @@ COMMENT=	Continuous multidirectional synchronization for remote development
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	havoc-io
 GH_TUPLE=	\
@@ -37,10 +37,9 @@ GH_TUPLE=	\
 		spf13:cobra:v0.0.3:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
-GO_TARGET=	${GO_PKGNAME}/cmd/mutagen \
-		${GO_PKGNAME}/cmd/mutagen-agent \
-		${GO_PKGNAME}/pkg/daemon/locktest
+GO_TARGET=	./cmd/mutagen \
+		./cmd/mutagen-agent \
+		./pkg/daemon/locktest
 
 PLIST_FILES=	bin/mutagen \
 		bin/mutagen-agent \
