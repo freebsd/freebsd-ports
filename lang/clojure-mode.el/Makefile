@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	lang elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	harrigan-s@outlook.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp module for the Clojure language
 
 LICENSE=	GPLv3+
