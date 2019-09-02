@@ -3,7 +3,7 @@
 
 PORTNAME=	adsuck
 PORTVERSION=	2.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	dns
 MASTER_SITES=	http://opensource.conformal.com/snapshots/adsuck/ \
 		http://philpep.org/pub/
