@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.8.4
-PORTREVISION=	1
+PORTVERSION=	1.8.5
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -16,6 +15,7 @@ BUILD_DEPENDS=	libgpg-error>=1.32:security/libgpg-error
 RUN_DEPENDS=	libgpg-error>=1.32:security/libgpg-error
 
 USES=		cpe libtool makeinfo tar:bzip2
+
 CPE_VENDOR=	gnupg
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
