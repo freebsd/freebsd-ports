@@ -1,0 +1,9 @@
+Aquantia AQC multigigabit NIC FreeBSD Driver
+
+Supports:
+
+ * Aquantia AQtion 10Gbit Network Adapter
+ * Aquantia AQtion 5Gbit Network Adapter
+ * Aquantia AQtion 2.5Gbit Network Adapter
+
+WWW: https://github.com/Aquantia/aqtion-freebsd
