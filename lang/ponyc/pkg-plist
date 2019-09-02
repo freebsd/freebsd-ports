@@ -125,6 +125,7 @@ lib/pony/%%VERSION%%/packages/net/net.pony
 lib/pony/%%VERSION%%/packages/net/net_address.pony
 lib/pony/%%VERSION%%/packages/net/ossocket.pony
 lib/pony/%%VERSION%%/packages/net/ossockopt.pony
+lib/pony/%%VERSION%%/packages/net/proxy.pony
 lib/pony/%%VERSION%%/packages/net/tcp_connection.pony
 lib/pony/%%VERSION%%/packages/net/tcp_connection_notify.pony
 lib/pony/%%VERSION%%/packages/net/tcp_listen_notify.pony
