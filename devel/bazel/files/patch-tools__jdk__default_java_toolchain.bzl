@@ -1,13 +1,9 @@
---- tools/jdk/default_java_toolchain.bzl.orig	1980-01-01 00:00:00.000000000 +0000
-+++ tools/jdk/default_java_toolchain.bzl	2019-03-04 15:02:00.395888000 +0000
-@@ -19,29 +19,6 @@
+--- tools/jdk/default_java_toolchain.bzl.orig	2019-08-06 08:09:07.930962000 +0000
++++ tools/jdk/default_java_toolchain.bzl	2019-08-06 08:16:15.674960000 +0000
+@@ -19,25 +19,6 @@
  ]
  
  JDK9_JVM_OPTS = [
--    # In JDK9 we have seen a ~30% slow down in JavaBuilder performance when using
--    # G1 collector and having compact strings enabled.
--    "-XX:+UseParallelOldGC",
--    "-XX:-CompactStrings",
 -    # Allow JavaBuilder to access internal javac APIs.
 -    "--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
 -    "--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
@@ -30,7 +26,7 @@
  ]
  
  DEFAULT_JAVACOPTS = [
-@@ -74,7 +51,7 @@
+@@ -70,7 +51,7 @@
          "@bazel_tools//tools/jdk:jdk_compiler_jar",
      ],
      "javac_supports_workers": 1,
