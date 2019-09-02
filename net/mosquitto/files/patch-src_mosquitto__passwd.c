@@ -1,6 +1,8 @@
---- src/mosquitto_passwd.c.orig	2019-02-28 17:18:59 UTC
+Index: src/mosquitto_passwd.c
+===================================================================
+--- src/mosquitto_passwd.c.orig
 +++ src/mosquitto_passwd.c
-@@ -100,7 +100,7 @@ int output_new_password(FILE *fptr, const char *userna
+@@ -141,7 +141,7 @@ int output_new_password(FILE *fptr, cons
  	unsigned char hash[EVP_MAX_MD_SIZE];
  	unsigned int hash_len;
  	const EVP_MD *digest;
@@ -9,7 +11,7 @@
  	EVP_MD_CTX context;
  #else
  	EVP_MD_CTX *context;
-@@ -127,7 +127,7 @@ int output_new_password(FILE *fptr, const char *userna
+@@ -168,7 +168,7 @@ int output_new_password(FILE *fptr, cons
  		return 1;
  	}
  
