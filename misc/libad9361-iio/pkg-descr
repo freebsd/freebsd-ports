@@ -1,0 +1,7 @@
+This is a simple library used for userspace management control and configuration
+of AD936X transceivers,
+* which manages multi-chip sync (on platforms (FMCOMMS5) where multiple AD9361
+  devices are use)
+* can create AD9361 specific FIR filters on the fly
+
+WWW: http://analogdevicesinc.github.io/libad9361-iio/
