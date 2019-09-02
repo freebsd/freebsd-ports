@@ -1,16 +1,6 @@
---- koch.nim.orig	2019-06-06 19:33:01 UTC
+--- koch.nim.orig	2019-07-22 09:56:30 UTC
 +++ koch.nim
-@@ -9,9 +9,6 @@
- #    See doc/koch.txt for documentation.
- #
- 
--const
--  NimbleStableCommit = "d15c8530cb7480ce39ffa85a2dd9819d2d4fc645" # 0.10.2
--
- when defined(gcc) and defined(windows):
-   when defined(x86):
-     {.link: "icons/koch.res".}
-@@ -43,15 +40,11 @@ Usage:
+@@ -43,15 +43,11 @@ Usage:
    koch [options] command [options for command]
  Options:
    --help, -h               shows this help and quits
@@ -27,11 +17,11 @@
  Boot options:
    -d:release               produce a release version of the compiler
    -d:useLinenoise          use the linenoise library for interactive mode
-@@ -126,39 +119,6 @@ proc bundleC2nim() =
-     exec("git clone https://github.com/nim-lang/c2nim.git dist/c2nim")
-   nimCompile("dist/c2nim/c2nim", options = "--noNimblePath --path:.")
+@@ -127,41 +123,6 @@ proc bundleC2nim(args: string) =
+   nimCompile("dist/c2nim/c2nim",
+              options = "--noNimblePath --path:. " & args)
  
--proc bundleNimbleExe(latest: bool) =
+-proc bundleNimbleExe(latest: bool, args: string) =
 -  if not dirExists("dist/nimble/.git"):
 -    exec("git clone https://github.com/nim-lang/nimble.git dist/nimble")
 -  if not latest:
@@ -39,9 +29,10 @@
 -      exec("git fetch")
 -      exec("git checkout " & NimbleStableCommit)
 -  # installer.ini expects it under $nim/bin
--  nimCompile("dist/nimble/src/nimble.nim", options = "-d:release --nilseqs:on")
+-  nimCompile("dist/nimble/src/nimble.nim",
+-             options = "-d:release --nilseqs:on " & args)
 -
--proc buildNimble(latest: bool) =
+-proc buildNimble(latest: bool, args: string) =
 -  # if koch is used for a tar.xz, build the dist/nimble we shipped
 -  # with the tarball:
 -  var installDir = "dist/nimble"
@@ -62,28 +53,29 @@
 -      else:
 -        exec("git fetch")
 -        exec("git checkout " & NimbleStableCommit)
--  nimCompile(installDir / "src/nimble.nim", options = "--noNimblePath --nilseqs:on -d:release")
+-  nimCompile(installDir / "src/nimble.nim",
+-             options = "--noNimblePath --nilseqs:on -d:release " & args)
 -
- proc bundleNimsuggest() =
-   nimCompileFold("Compile nimsuggest", "nimsuggest/nimsuggest.nim", options = "-d:release -d:danger")
- 
-@@ -177,7 +137,6 @@ proc bundleWinTools() =
-     nimCompile(r"tools\downloader.nim", options = r"--cc:vcc --app:gui -d:ssl --noNimblePath --path:..\ui")
+ proc bundleNimsuggest(args: string) =
+   nimCompileFold("Compile nimsuggest", "nimsuggest/nimsuggest.nim",
+                  options = "-d:release -d:danger " & args)
+@@ -182,7 +143,6 @@ proc bundleWinTools(args: string) =
+                options = r"--cc:vcc --app:gui -d:ssl --noNimblePath --path:..\ui " & args)
  
  proc zip(latest: bool; args: string) =
--  bundleNimbleExe(latest)
-   bundleNimsuggest()
-   bundleWinTools()
+-  bundleNimbleExe(latest, args)
+   bundleNimsuggest(args)
+   bundleWinTools(args)
    nimexec("cc -r $2 --var:version=$1 --var:mingw=none --main:compiler/nim.nim scripts compiler/installer.ini" %
-@@ -211,7 +170,6 @@ proc buildTools() =
-   nimCompileFold("Compile nimfind", "tools/nimfind.nim", options = "-d:release")
+@@ -219,7 +179,6 @@ proc buildTools(args: string = "") =
+                  options = "-d:release " & args)
  
  proc nsis(latest: bool; args: string) =
--  bundleNimbleExe(latest)
-   bundleNimsuggest()
-   bundleWinTools()
+-  bundleNimbleExe(latest, args)
+   bundleNimsuggest(args)
+   bundleWinTools(args)
    # make sure we have generated the niminst executables:
-@@ -457,17 +415,14 @@ proc runCI(cmd: string) =
+@@ -466,8 +425,6 @@ proc runCI(cmd: string) =
    # boot without -d:nimHasLibFFI to make sure this still works
    kochExecFold("Boot in release mode", "boot -d:release -d:danger")
  
@@ -91,18 +83,8 @@
 -  kochExecFold("Build Nimble", "nimble")
  
    when false:
--    execFold("nimble install -y libffi", "nimble install -y libffi")
-     kochExecFold("boot -d:release -d:nimHasLibFFI", "boot -d:release -d:nimHasLibFFI")
- 
-   if getEnv("NIM_TEST_PACKAGES", "false") == "true":
-     execFold("Test selected Nimble packages", "nim c -r testament/tester cat nimble-packages")
-   else:
--    buildTools() # altenatively, kochExec "tools --toolsNoNimble"
-+    buildTools()
- 
-     ## run tests
-     execFold("Test nimscript", "nim e tests/test_nimscript.nims")
-@@ -579,8 +534,6 @@ when isMainModule:
+     execFold("nimble install -y libffi", "nimble install -y libffi")
+@@ -588,8 +545,6 @@ when isMainModule:
      case op.kind
      of cmdLongOption, cmdShortOption:
        case normalize(op.key)
@@ -111,17 +93,17 @@
        else: showHelp()
      of cmdArgument:
        case normalize(op.key)
-@@ -604,13 +557,9 @@ when isMainModule:
+@@ -613,13 +568,9 @@ when isMainModule:
        of "temp": temp(op.cmdLineRest)
        of "xtemp": xtemp(op.cmdLineRest)
-       of "wintools": bundleWinTools()
--      of "nimble": buildNimble(latest)
-       of "nimsuggest": bundleNimsuggest()
+       of "wintools": bundleWinTools(op.cmdLineRest)
+-      of "nimble": buildNimble(latest, op.cmdLineRest)
+       of "nimsuggest": bundleNimsuggest(op.cmdLineRest)
 -      of "toolsnonimble":
--        buildTools()
+-        buildTools(op.cmdLineRest)
        of "tools":
-         buildTools()
--        buildNimble(latest)
+         buildTools(op.cmdLineRest)
+-        buildNimble(latest, op.cmdLineRest)
        of "pushcsource", "pushcsources": pushCsources()
        of "valgrind": valgrind(op.cmdLineRest)
-       of "c2nim": bundleC2nim()
+       of "c2nim": bundleC2nim(op.cmdLineRest)

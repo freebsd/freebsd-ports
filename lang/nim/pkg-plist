@@ -58,6 +58,7 @@ lib/posix/linux.nim
 lib/posix/posix.nim
 lib/posix/posix_linux_amd64.nim
 lib/posix/posix_linux_amd64_consts.nim
+lib/posix/posix_macos_amd64.nim
 lib/posix/posix_nintendoswitch.nim
 lib/posix/posix_nintendoswitch_consts.nim
 lib/posix/posix_other.nim
@@ -223,7 +224,6 @@ lib/system/hti.nim
 lib/system/inclrtl.nim
 lib/system/indexerrors.nim
 lib/system/io.nim
-lib/system/io.nim.cfg
 lib/system/iterators.nim
 lib/system/jssys.nim
 lib/system/memory.nim
@@ -307,6 +307,7 @@ nim/compiler/importer.nim
 nim/compiler/incremental.nim
 nim/compiler/injectdestructors.nim
 nim/compiler/installer.ini
+nim/compiler/int128.nim
 nim/compiler/jsgen.nim
 nim/compiler/jstypes.nim
 nim/compiler/lambdalifting.nim
@@ -385,6 +386,7 @@ nim/compiler/semtypinst.nim
 nim/compiler/sighashes.nim
 nim/compiler/sigmatch.nim
 nim/compiler/sizealignoffsetimpl.nim
+nim/compiler/spawn.nim
 nim/compiler/suggest.nim
 nim/compiler/syntaxes.nim
 nim/compiler/tccgen.nim
