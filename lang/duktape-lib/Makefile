@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	duktape
-DISTVERSION=	2.3.0
+DISTVERSION=	2.4.0
 CATEGORIES=	lang devel
-MASTER_SITES=	http://duktape.org/
+MASTER_SITES=	https://duktape.org/
 PKGNAMESUFFIX=	-lib
 
 MAINTAINER=	alfix86@gmail.com
@@ -22,9 +22,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/duktape.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/src/duk_config.h ${STAGEDIR}${PREFIX}/include
 .for l in libduktape.so libduktaped.so
-	${INSTALL_LIB} ${WRKSRC}/${l}.203.20300 ${STAGEDIR}${PREFIX}/lib
-	${RLN} ${STAGEDIR}${PREFIX}/lib/${l}.203.20300 ${STAGEDIR}${PREFIX}/lib/${l}
-	${RLN} ${STAGEDIR}${PREFIX}/lib/${l}.203.20300 ${STAGEDIR}${PREFIX}/lib/${l}.203
+	${INSTALL_LIB} ${WRKSRC}/${l}.204.20400 ${STAGEDIR}${PREFIX}/lib
+	${RLN} ${STAGEDIR}${PREFIX}/lib/${l}.204.20400 ${STAGEDIR}${PREFIX}/lib/${l}
+	${RLN} ${STAGEDIR}${PREFIX}/lib/${l}.204.20400 ${STAGEDIR}${PREFIX}/lib/${l}.204
 .endfor
 
 .include <bsd.port.mk>

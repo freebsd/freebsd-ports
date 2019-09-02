@@ -1,8 +1,8 @@
 include/duk_config.h
 include/duktape.h
 lib/libduktape.so
-lib/libduktape.so.203
-lib/libduktape.so.203.20300
+lib/libduktape.so.204
+lib/libduktape.so.204.20400
 lib/libduktaped.so
-lib/libduktaped.so.203
-lib/libduktaped.so.203.20300
+lib/libduktaped.so.204
+lib/libduktaped.so.204.20400
