@@ -1,3 +1,3 @@
-TIMESTAMP = 1565037500
-SHA256 (kubernetes-kubernetes-v1.15.2_GH0.tar.gz) = 05362a263bdc6329accd11efd1de6ce94b9612ff6570e5faf3ab90730510171b
-SIZE (kubernetes-kubernetes-v1.15.2_GH0.tar.gz) = 26628888
+TIMESTAMP = 1567465150
+SHA256 (kubernetes-kubernetes-v1.15.3_GH0.tar.gz) = 619555fb31eefb232eaa58ba7e16143a482d7fc8c9e38dd0909caa258ac09ff3
+SIZE (kubernetes-kubernetes-v1.15.3_GH0.tar.gz) = 26635140
