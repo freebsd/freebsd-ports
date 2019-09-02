@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldns
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.7.1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/ldns/ \
 		LOCAL/ehaupt
@@ -14,16 +13,17 @@ COMMENT=	Library for programs conforming to DNS RFCs and drafts
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GNU_CONFIGURE=	yes
-USES=		cpe gmake libtool ssl perl5
+USES=		cpe gmake libtool perl5 ssl
 USE_PERL5=	build
-CPE_VENDOR=	nlnetlabs
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE} --disable-dane-ta-usage
+CPE_VENDOR=	nlnetlabs
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--disable-dane-ta-usage \
+			--with-ssl=${OPENSSLBASE}
 
 .if ! (defined(BUILD_PYLDNS) || defined(BUILD_P5PERL))
-OPTIONS_DEFINE=	DOXYGEN EXAMPLES DRILL
+OPTIONS_DEFINE=		DOXYGEN DRILL EXAMPLES
 OPTIONS_DEFAULT=	DRILL
 
 DRILL_DESC=	With drill program
@@ -31,10 +31,10 @@ DRILL_DESC=	With drill program
 .endif
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-HTMLDOCS=	doc/html/*
+HTMLDOCS=		doc/html/*
 
-OPTIONS_DEFINE+=	GOST DANETAUSAGE \
-		RRTYPENINFO RRTYPERKEY RRTYPETA RRTYPEAVC 
+OPTIONS_DEFINE+=	DANETAUSAGE GOST RRTYPEAMTRELAY RRTYPEAVC RRTYPENINFO \
+			RRTYPERKEY RRTYPETA
 
 DANETAUSAGE_DESC=	Enable ta uasage, requires openssl >= 1.1.0
 GOST_DESC=		GOST signatures enabled, requires openssl >= 1.0.0
@@ -42,20 +42,22 @@ RRTYPENINFO_DESC=	Enable draft RR type ninfo.
 RRTYPERKEY_DESC=	Enable draft RR type rkey.
 RRTYPETA_DESC=		Enable draft RR type ta.
 RRTYPEAVC_DESC=		Enable draft RR type avc.
+RRTYPEAMTRELAY_DESC=	Enable draft RR type amtrelay.
 
 OPTIONS_SUB=	yes
 
-DANETAUSAGE_CONFIGURE_ENABLE=	dane-ta-usage
-DANETAUSAGE_IMPLIES=		RRTYPETA
-GOST_CONFIGURE_ENABLE=		gost
-RRTYPENINFO_CONFIGURE_ENABLE=	rrtype-ninfo
-RRTYPERKEY_CONFIGURE_ENABLE=	rrtype-rkey
-RRTYPETA_CONFIGURE_ENABLE=	rrtype-ta
-RRTYPEAVC_CONFIGURE_ENABLE=	rrtype-avc
-EXAMPLES_CONFIGURE_WITH=	examples
-DRILL_CONFIGURE_WITH=		drill
-DRILL_INSTALL_TARGET=	install-drill
-EXAMPLES_INSTALL_TARGET=	install-examples
+DANETAUSAGE_CONFIGURE_ENABLE=		dane-ta-usage
+DANETAUSAGE_IMPLIES=			RRTYPETA
+GOST_CONFIGURE_ENABLE=			gost
+RRTYPENINFO_CONFIGURE_ENABLE=		rrtype-ninfo
+RRTYPERKEY_CONFIGURE_ENABLE=		rrtype-rkey
+RRTYPETA_CONFIGURE_ENABLE=		rrtype-ta
+RRTYPEAVC_CONFIGURE_ENABLE=		rrtype-avc
+RRTYPEAMTRELAY_CONFIGURE_ENABLE=	rrtype-amtrelay
+EXAMPLES_CONFIGURE_WITH=		examples
+DRILL_CONFIGURE_WITH=			drill
+DRILL_INSTALL_TARGET=			install-drill
+EXAMPLES_INSTALL_TARGET=		install-examples
 
 .if defined(BUILD_PYLDNS)
 USES+=		python
@@ -64,11 +66,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 ALL_TARGET=	pyldns
 INSTALL_TARGET=	install-pyldns
 
-CONFIGURE_ARGS+=--with-pyldns
-LIB_DEPENDS+=	libldns.so:dns/ldns
-BUILD_DEPENDS+=	swig3.0:devel/swig30
-CFLAGS+=	-I${OPENSSLINC}
-BINARY_ALIAS=	swig=swig3.0
+CONFIGURE_ARGS+=	--with-pyldns
+LIB_DEPENDS+=		libldns.so:dns/ldns
+BUILD_DEPENDS+=		swig3.0:devel/swig30
+CFLAGS+=		-I${OPENSSLINC}
+BINARY_ALIAS=		swig=swig3.0
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -82,11 +84,11 @@ PKGNAMEPREFIX=	p5-DNS-
 ALL_TARGET=	p5-dns-ldns
 INSTALL_TARGET=	install-p5-dns-ldns
 
-CONFIGURE_ARGS+=--with-p5-dns-ldns
-LIB_DEPENDS+=	libldns.so:dns/ldns
-RUN_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
-		p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib
-BUILD_DEPENDS=${RUN_DEPENDS}
+CONFIGURE_ARGS+=	--with-p5-dns-ldns
+RUN_DEPENDS=		p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib \
+			p5-Test-Exception>=0:devel/p5-Test-Exception
+BUILD_DEPENDS=		${RUN_DEPENDS}
+LIB_DEPENDS+=		libldns.so:dns/ldns
 
 post-patch:
 	@${SED} -i '' -e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' ${WRKSRC}/Makefile.in
@@ -101,8 +103,9 @@ INSTALL_TARGET=	install-lib install-h install-config
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MDANETAUSAGE} && ${SSL_DEFAULT} != openssl111
-BROKEN=		this option requires openssl >= 1.1.0
+.if ${PORT_OPTIONS:MDANETAUSAGE} && \
+    ((${OSVERSION} < 1200084 && ${SSL_DEFAULT} == base))
+BROKEN=		this option requires openssl >= 1.1.0 ${OSVERSION} ${SSL_DEFAULT}
 .endif
 
 .if ! ${PORT_OPTIONS:MGOST}
@@ -113,7 +116,7 @@ NO_GOST=	--disable-gost
 
 post-build:
 .if ${PORT_OPTIONS:MDOXYGEN}
-	@(cd  ${WRKSRC}; ${MAKE_CMD} doxygen)
+	@(cd ${WRKSRC}; ${MAKE_CMD} doxygen)
 .endif
 
 post-install:
@@ -123,7 +126,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/ldns_*.3 \
 		${STAGEDIR}${PREFIX}/man/man3
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.2
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.3
 .if ${PORT_OPTIONS:MDRILL}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/drill
 .endif
