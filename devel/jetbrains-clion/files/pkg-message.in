@@ -1,10 +1,10 @@
 [
 { type: install
   message: <<EOM
-There is native (faster) file watching support backed by kqueue which is
-enabled by default.  If you encounter problems  problems with watching large
-trees, you disable it by appending the following property into
-%%DATADIR%%/bin/idea.properties:
+There is a native (faster) file watching support backed by kqueue which is
+enabled by default.  If you encounter problems with watching large
+trees, you can disable it by adding the following property via the menu
+entry Help -> Edit Custom Properties...
 
       idea.filewatcher.disabled=true
 EOM

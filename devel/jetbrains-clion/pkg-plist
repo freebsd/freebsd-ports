@@ -42,7 +42,6 @@ share/applications/clion.desktop
 %%DATADIR%%/bin/printenv.py
 %%DATADIR%%/bin/restart.py
 %%DATADIR%%/build.txt
-%%DATADIR%%/clion.png
 %%DATADIR%%/help/ReferenceCard.pdf
 %%DATADIR%%/help/ReferenceCardForMac.pdf
 %%DATADIR%%/lib/FastInfoset-1.2.15.jar
@@ -65,8 +64,8 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/batik-transcoder-1.12.0-8.jar
 %%DATADIR%%/lib/batik-util-1.12.0-8.jar
 %%DATADIR%%/lib/batik-xml-1.12.0-8.jar
-%%DATADIR%%/lib/bcpkix-jdk15on-1.61.jar
-%%DATADIR%%/lib/bcprov-jdk15on-1.61.jar
+%%DATADIR%%/lib/bcpkix-jdk15on-1.62.jar
+%%DATADIR%%/lib/bcprov-jdk15on-1.62.jar
 %%DATADIR%%/lib/bootstrap.jar
 %%DATADIR%%/lib/built-in-server.jar
 %%DATADIR%%/lib/cglib-nodep-3.2.4.jar
@@ -76,7 +75,7 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/common-image-3.4.1.jar
 %%DATADIR%%/lib/common-io-3.4.1.jar
 %%DATADIR%%/lib/common-lang-3.4.1.jar
-%%DATADIR%%/lib/commons-codec-1.12.jar
+%%DATADIR%%/lib/commons-codec-1.13.jar
 %%DATADIR%%/lib/commons-collections-3.2.2.jar
 %%DATADIR%%/lib/commons-compress-1.18.jar
 %%DATADIR%%/lib/commons-httpclient-3.1-patched.jar
@@ -92,7 +91,7 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/error_prone_annotations-2.3.1.jar
 %%DATADIR%%/lib/extensions.jar
 %%DATADIR%%/lib/external-system-rt.jar
-%%DATADIR%%/lib/fluent-hc-4.5.8.jar
+%%DATADIR%%/lib/fluent-hc-4.5.9.jar
 %%DATADIR%%/lib/forms-1.1-preview.jar
 %%DATADIR%%/lib/forms_rt.jar
 %%DATADIR%%/lib/gradle-api-5.2.1-sp1.jar
@@ -103,9 +102,9 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/gson-2.8.5.jar
 %%DATADIR%%/lib/guava-25.1-jre.jar
 %%DATADIR%%/lib/hamcrest-core-1.3.jar
-%%DATADIR%%/lib/httpclient-4.5.8.jar
+%%DATADIR%%/lib/httpclient-4.5.9.jar
 %%DATADIR%%/lib/httpcore-4.4.11.jar
-%%DATADIR%%/lib/httpmime-4.5.8.jar
+%%DATADIR%%/lib/httpmime-4.5.9.jar
 %%DATADIR%%/lib/icons.jar
 %%DATADIR%%/lib/imageio-core-3.4.1.jar
 %%DATADIR%%/lib/imageio-metadata-3.4.1.jar
@@ -133,7 +132,7 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/jbcrypt-1.0.0.jar
 %%DATADIR%%/lib/jcip-annotations-1.0.jar
 %%DATADIR%%/lib/jdom.jar
-%%DATADIR%%/lib/jediterm-pty-2.19.jar
+%%DATADIR%%/lib/jediterm-pty-2.20.jar
 %%DATADIR%%/lib/jetCheck-0.2.1.jar
 %%DATADIR%%/lib/jettison-1.4.0.jar
 %%DATADIR%%/lib/jing-20030619.jar
@@ -177,16 +176,16 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/minlog-1.2.jar
 %%DATADIR%%/lib/nanoxml-2.2.3.jar
 %%DATADIR%%/lib/nekohtml-1.9.22.jar
-%%DATADIR%%/lib/netty-buffer-4.1.36.Final.jar
-%%DATADIR%%/lib/netty-codec-4.1.36.Final.jar
-%%DATADIR%%/lib/netty-codec-http-4.1.36.Final.jar
-%%DATADIR%%/lib/netty-codec-http2-4.1.36.Final.jar
-%%DATADIR%%/lib/netty-codec-socks-4.1.36.Final.jar
-%%DATADIR%%/lib/netty-common-4.1.36.Final.jar
-%%DATADIR%%/lib/netty-handler-4.1.36.Final.jar
-%%DATADIR%%/lib/netty-handler-proxy-4.1.36.Final.jar
-%%DATADIR%%/lib/netty-resolver-4.1.36.Final.jar
-%%DATADIR%%/lib/netty-transport-4.1.36.Final.jar
+%%DATADIR%%/lib/netty-buffer-4.1.38.Final.jar
+%%DATADIR%%/lib/netty-codec-4.1.38.Final.jar
+%%DATADIR%%/lib/netty-codec-http-4.1.38.Final.jar
+%%DATADIR%%/lib/netty-codec-http2-4.1.38.Final.jar
+%%DATADIR%%/lib/netty-codec-socks-4.1.38.Final.jar
+%%DATADIR%%/lib/netty-common-4.1.38.Final.jar
+%%DATADIR%%/lib/netty-handler-4.1.38.Final.jar
+%%DATADIR%%/lib/netty-handler-proxy-4.1.38.Final.jar
+%%DATADIR%%/lib/netty-resolver-4.1.38.Final.jar
+%%DATADIR%%/lib/netty-transport-4.1.38.Final.jar
 %%DATADIR%%/lib/objenesis-3.0.1.jar
 %%DATADIR%%/lib/openapi.jar
 %%DATADIR%%/lib/org.eclipse.lsp4j-0.7.1.jar
@@ -209,11 +208,11 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/pty4j-0.9.4.jar
 %%DATADIR%%/lib/purejavacomm-0.0.11.1.jar
 %%DATADIR%%/lib/randomForestRegressor-0.0.11.jar
-%%DATADIR%%/lib/rd-core-0.191.46.jar
-%%DATADIR%%/lib/rd-swing-0.191.46.jar
+%%DATADIR%%/lib/rd-core-0.191.63.jar
+%%DATADIR%%/lib/rd-swing-0.191.63.jar
 %%DATADIR%%/lib/resources.jar
 %%DATADIR%%/lib/resources_en.jar
-%%DATADIR%%/lib/rhino-1.7.10.jar
+%%DATADIR%%/lib/rhino-1.7.11.jar
 %%DATADIR%%/lib/rngom-20051226-patched.jar
 %%DATADIR%%/lib/sa-jdwp-1.12.jar
 %%DATADIR%%/lib/serviceMessages.jar
@@ -221,6 +220,7 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/slf4j-log4j12-1.7.25.jar
 %%DATADIR%%/lib/snakeyaml-1.24.jar
 %%DATADIR%%/lib/spellchecker.jar
+%%DATADIR%%/lib/sqlite-jdbc-3.21.0.1.jar
 %%DATADIR%%/lib/sshj-0.27.0.jar
 %%DATADIR%%/lib/stax-api-1.0.1.jar
 %%DATADIR%%/lib/stax-ex-1.8.jar
@@ -285,6 +285,7 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/CSS/lib/css.jar
 %%DATADIR%%/plugins/CSS/lib/resources_en.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/database-impl.jar
+%%DATADIR%%/plugins/DatabaseTools/lib/database-minicat.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/database-openapi.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/dekaf-single-2.0.0.390.jar
 %%DATADIR%%/plugins/DatabaseTools/lib/jdbc-console.jar
@@ -2230,6 +2231,9 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2/typing.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2/unittest.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2and3/argparse.pyi
+%%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2and3/ctypes/__init__.pyi
+%%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2and3/ctypes/util.pyi
+%%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2and3/ctypes/wintypes.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2and3/datetime.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2and3/math.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2and3/shutil.pyi
@@ -2776,4 +2780,3 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/yaml/lib/resources_en.jar
 %%DATADIR%%/plugins/yaml/lib/yaml.jar
 %%DATADIR%%/product-info.json
-@dir %%DATADIR%%/plugins/performanceTesting/bin
