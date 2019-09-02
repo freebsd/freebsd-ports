@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ncnn
-DISTVERSION=	20190611-40
-DISTVERSIONSUFFIX=	-gd3be711
+DISTVERSION=	20190611-113
+DISTVERSIONSUFFIX=	-g46e7ac7
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,10 +14,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		cmake compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	Tencent
-
-post-install: # https://github.com/Tencent/ncnn/issues/1130
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake/${PORTNAME}
-	@${MV} ${STAGEDIR}${DATADIR}/* ${STAGEDIR}${PREFIX}/lib/cmake/${PORTNAME}
-	@${RMDIR} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
