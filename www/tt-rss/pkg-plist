@@ -24,6 +24,7 @@
 %%WWWDIR%%/classes/dbupdater.php
 %%WWWDIR%%/classes/debug.php
 %%WWWDIR%%/classes/digest.php
+%%WWWDIR%%/classes/diskcache.php
 %%WWWDIR%%/classes/dlg.php
 %%WWWDIR%%/classes/feedenclosure.php
 %%WWWDIR%%/classes/feeditem.php
@@ -2360,6 +2361,7 @@
 %%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMEntity.php
 %%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMEntityReference.php
 %%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMNode.php
+%%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMNodeList.php
 %%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMNotation.php
 %%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMProcessingInstruction.php
 %%WWWDIR%%/plugins/af_readability/vendor/andreskrey/Readability/Nodes/DOM/DOMText.php
@@ -2370,12 +2372,12 @@
 %%WWWDIR%%/plugins/af_fsckportal/init.php
 %%WWWDIR%%/plugins/af_psql_trgm/init.js
 %%WWWDIR%%/plugins/af_psql_trgm/init.php
+%%WWWDIR%%/plugins/af_proxy_http/init.php
 %%WWWDIR%%/plugins/af_readability/init.php
 %%WWWDIR%%/plugins/af_redditimgur/init.php
 %%WWWDIR%%/plugins/af_tumblr_1280/init.php
 %%WWWDIR%%/plugins/af_unburn/init.php
 %%WWWDIR%%/plugins/af_youtube_embed/init.php
-%%WWWDIR%%/plugins/af_zz_imgproxy/init.php
 %%WWWDIR%%/plugins/af_zz_noautoplay/init.js
 %%WWWDIR%%/plugins/af_zz_noautoplay/init.php
 %%WWWDIR%%/plugins/af_zz_vidmute/init.js
@@ -2388,8 +2390,6 @@
 %%WWWDIR%%/plugins/close_button/init.php
 %%WWWDIR%%/plugins/googlereaderkeys/init.php
 %%WWWDIR%%/plugins/hotkeys_noscroll/init.php
-%%WWWDIR%%/plugins/import_export/import_export.js
-%%WWWDIR%%/plugins/import_export/init.php
 %%WWWDIR%%/plugins/index.html
 %%WWWDIR%%/plugins/mail/init.php
 %%WWWDIR%%/plugins/mail/mail.js
@@ -2774,7 +2774,6 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/no_iframes
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/mailto
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/mail
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/import_export
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/googlereaderkeys
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/close_button
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/cache_starred_images
@@ -2784,7 +2783,6 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/auth_internal
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_zz_vidmute
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_zz_noautoplay
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_zz_imgproxy
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_youtube_embed
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_unburn
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_tumblr_1280
