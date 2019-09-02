@@ -3,6 +3,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.49
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	https://github.com/jedisct1/pure-ftpd/releases/download/${PORTVERSION}/ \
 		https://download.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -33,8 +34,8 @@ LANGUAGE?=	english
 
 OPTIONS_DEFINE=	ANONDELETE ANONRENAME ANONRESUME DOCS EXAMPLES LARGEFILE LDAP \
 		MYSQL PAM PERUSERLIMITS PGSQL PRIVSEP SCRYPT SENDFILE \
-		THROTTLING TLS UPLOADSCRIPT UTF8 VIRTUALCHROOT
-OPTIONS_DEFAULT=PAM PRIVSEP SENDFILE SCRYPT TLS UTF8 VIRTUALCHROOT
+		THROTTLING TLS UPLOADSCRIPT VIRTUALCHROOT
+OPTIONS_DEFAULT=PAM PRIVSEP SENDFILE SCRYPT TLS VIRTUALCHROOT
 ANONDELETE_DESC=	Allow anonymous user to delete files
 ANONRENAME_DESC=	Allow anonymous user to rename files
 ANONRESUME_DESC=	Allow anonymous user to resume file upload
@@ -49,7 +50,6 @@ SCRYPT_DESC=		Hash passwords in PureDB with scrypt
 SENDFILE_DESC=		Sendfile syscall
 THROTTLING_DESC=	Bandwidth throttling
 UPLOADSCRIPT_DESC=	Uploadscript daemon support
-UTF8_DESC=		UTF-8 filenames
 VIRTUALCHROOT_DESC=	Follow symlinks outside a chroot jail
 
 ANONDELETE_CPPFLAGS=	-DANON_CAN_DELETE
@@ -73,16 +73,7 @@ TLS_CPPFLAGS=		-I${OPENSSLINC}
 TLS_LDFLAGS=		-L${OPENSSLLIB}
 TLS_USES=		ssl
 UPLOADSCRIPT_CONFIGURE_WITH=	uploadscript
-UTF8_CONFIGURE_WITH=	rfc2640
-UTF8_USES=		iconv
 VIRTUALCHROOT_CONFIGURE_WITH=	virtualchroot
-
-.include <bsd.port.pre.mk>
-
-.if empty(ICONV_LIB)
-CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=no \
-		ac_cv_lib_iconv_libiconv_open=no
-.endif
 
 pre-fetch:
 	@${ECHO_MSG} "You can use the following additional options:"
@@ -109,4 +100,4 @@ post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/pam.d/
 	${INSTALL_DATA} ${FILESDIR}/pam.conf.5 ${STAGEDIR}${EXAMPLESDIR}/pam.d/pure-ftpd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
