@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ioc
+# REQUIRE: LOGIN cleanvar sshd ZFS
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable ioc start on boot:
+#
+# ioc_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="ioc"
+rcvar=ioc_enable
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${ioc_enable="NO"}
+: ${ioc_lang="en_US.UTF-8"}
+
+start_cmd="ioc_start"
+stop_cmd="ioc_stop"
+status_cmd="ioc_status"
+extra_commands="status"
+export LANG=$ioc_lang
+
+[ $# -ne 1 ] && rc_usage $_keywords
+
+ioc_start()
+{
+    if checkyesno ${rcvar}; then
+        echo "* [ioc] starting jails... "
+        %%PREFIX%%/bin/ioc start --rc
+    fi
+}
+
+ioc_stop()
+{
+    if checkyesno ${rcvar}; then
+        echo "* [ioc] stopping jails... "
+        %%PREFIX%%/bin/ioc stop --rc
+    fi
+}
+
+ioc_status()
+{
+    if checkyesno ${rcvar}; then
+        echo -n "* [ioc] checking jails status..."
+	test -z "$(%%PREFIX%%/bin/ioc list boot=yes running=no template=no,- --no-header --output=name --output-format=list)"
+	status=$?
+	if test ${status} -eq 0; then
+            echo " OK"
+	else
+            echo " Failed!"
+	fi
+	exit $status
+    fi
+}
+
+run_rc_command "$1"
