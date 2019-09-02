@@ -1,0 +1,8 @@
+The ADI IIO Oscilloscope is a example application, which demonstrates how to
+interface different evaluation boards from within a Linux system. The
+application supports plotting of the captured data in four different modes
+(time domain, frequency domain, constellation and cross-correlation). The
+application also allows to view and modify several settings of the evaluation
+board's devices.
+
+WWW: https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope

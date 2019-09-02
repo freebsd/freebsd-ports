@@ -188,6 +188,7 @@
     SUBDIR += hotkeys
     SUBDIR += hulgalugha
     SUBDIR += ignition-fuel-tools
+    SUBDIR += iio-oscilloscope
     SUBDIR += imerge
     SUBDIR += img2xterm
     SUBDIR += ini_file_manager
