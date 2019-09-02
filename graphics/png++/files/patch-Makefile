@@ -1,0 +1,25 @@
+--- Makefile.orig	2015-10-25 19:42:45 UTC
++++ Makefile
+@@ -47,18 +47,18 @@ dist_files := $(build_files) $(doc_files) \
+   $(headers) $(sources)
+ dist_subdirs := example test
+ 
+-all: examples
++all:
+ 
+ install: install-headers install-docs
+ 
+ uninstall: uninstall-headers uninstall-docs
+ 
+ install-headers:
+-	mkdir -p $(PREFIX)/include/png++
+-	cp $(headers) $(PREFIX)/include/png++
++	mkdir -p $(DESTDIR)$(PREFIX)/include/png++
++	cp $(headers) $(DESTDIR)$(PREFIX)/include/png++
+ 
+ uninstall-headers:
+-	rm -rf $(PREFIX)/include/png++
++	rm -rf $(DESTDIR)$(PREFIX)/include/png++
+ 
+ dist: dist-mkdir dist-copy-files dist-package
+ 

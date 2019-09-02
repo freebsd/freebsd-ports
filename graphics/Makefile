@@ -778,6 +778,7 @@
     SUBDIR += plasma-kmod
     SUBDIR += plotutils
     SUBDIR += png
+    SUBDIR += png++
     SUBDIR += png2html
     SUBDIR += png2ico
     SUBDIR += pngcheck
