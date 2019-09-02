@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	fspd
-PORTVERSION=	2.8.1.26
+PORTVERSION=	2.8.1.28
 CATEGORIES=	net
-MASTER_SITES=	SF/fsp/fsp/2.8.1b26
-DISTNAME=	fsp-2.8.1b26
+MASTER_SITES=	SF/fsp/fsp/2.8.1b28
+DISTNAME=	fsp-2.8.1b28
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	FSP daemon, clients, and scanner
@@ -13,22 +13,23 @@ COMMENT=	FSP daemon, clients, and scanner
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-CLIENTS=	fcatcmd fcdcmd fducmd ffindcmd fgetcmd fgrabcmd fhostcmd \
-		flscmd fmkdir fprocmd fput frmcmd frmdircmd fver fspmerge \
-		fstatcmd fmvcmd fbye fsetupcmd
-FSPDOCS=	BETA.README COPYRIGHT ChangeLog FILES INFO INSTALL MACHINES \
-		TODO PROTOCOL HISTORY faq.html
+USES=		scons tar:bzip2
+
+CLIENTS=	fbye fcatcmd fcdcmd fducmd ffindcmd fgetcmd fgrabcmd fhostcmd \
+		flscmd fmkdir fmvcmd fprocmd fput frmcmd frmdircmd fsetupcmd \
+		fspmerge fstatcmd fver
+FSPDOCS=	BETA.README ChangeLog COPYRIGHT faq.html FILES HISTORY INFO \
+		INSTALL MACHINES PROTOCOL TODO
 MAN1CLIENT=	fcatcmd.1 fcdcmd.1 fducmd.1 ffindcmd.1 fgetcmd.1 fgrabcmd.1 \
-		fhostcmd.1 flscmd.1 fmkdir.1 fprocmd.1 fput.1 frmcmd.1 \
-		frmdircmd.1 fver.1 fstatcmd.1 fmvcmd.1 fsetupcmd.1
-MAN1SERVER=	fspscan.1 fspd.1
+		fhostcmd.1 flscmd.1 fmkdir.1 fmvcmd.1 fprocmd.1 fput.1 frmcmd.1 \
+		frmdircmd.1 fsetupcmd.1 fstatcmd.1 fver.1
+MAN1SERVER=	fspd.1 fspscan.1
 MAN5CLIENT=	fsp_prof.5 fspsites.5
 MAN7CLIENT=	fsp_env.7
 
-USES=		scons tar:bzip2
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-OPTIONS_DEFINE=	CLIENTS INFINITE DOCS
+OPTIONS_DEFINE=	CLIENTS DOCS INFINITE
 CLIENTS_DESC=	Install client commands
 INFINITE_DESC=	Infinite retry in client commands
 
