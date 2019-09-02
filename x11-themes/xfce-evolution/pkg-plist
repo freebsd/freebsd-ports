@@ -1,5 +1,97 @@
 etc/fonts/conf.avail/90-xfce-evolution_qt5fontfix.conf
 etc/fonts/conf.d/90-xfce-evolution_qt5fontfix.conf
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/assets
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/gtkrc
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/button-pressed-dented.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/button-pressed-explicit.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/button-pressed-sunken.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/button-pressed-tx.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/default-button-contrast.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/default-button-explicit.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/default-button-off.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/default-button-themed.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/dpi-low.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/keyboard-navigation-on.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/menu-selection-bulged-rounded.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/menu-selection-bulged-slight.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/menu-selection-bulged.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/menu-selection-dented.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/menu-selection-flat-bordered.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/menu-selection-flat.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/menu-selection-rectangle.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/menu-selection-rounded.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/menu-separator-dark.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/menu-separator-dented.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/menubar-selection-rounded.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/pane-separator-auto.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/pane-separator-wide.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/panel-black.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/panel-contrast.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/panel-dark.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/panel-themed.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/tab-button.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/tab-flat.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/tab-notebook.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/options/tab-tab.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/tweaks.css
+share/themes/Xfce Evolution (HDPI)/gtk-2.0/widgets.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/assets
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/gtk.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/button-pressed-dented.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/button-pressed-dented_tab.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/button-pressed-explicit.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/button-pressed-sunken.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/button-pressed-sunken_tab.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/button-pressed-tx.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/default-button-contrast.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/default-button-explicit.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/default-button-off.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/default-button-themed.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/dpi-low.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/keyboard-navigation-on.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/menu-selection-bulged-rounded.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/menu-selection-bulged-slight.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/menu-selection-bulged.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/menu-selection-dented.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/menu-selection-flat-bordered.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/menu-selection-flat.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/menu-selection-rectangle.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/menu-selection-rounded.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/menu-separator-dark.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/menu-separator-dented.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/menubar-selection-rectangle.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/menubar-selection-rounded.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/pane-separator-auto.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/pane-separator-autohide.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/pane-separator-wide.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/panel-black.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/panel-contrast.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/panel-dark.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/panel-themed.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/tab-button.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/tab-flat.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/tab-tab_v1.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/options/tab-tab_v2.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/settings.ini
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/tweaks.css
+share/themes/Xfce Evolution (HDPI)/gtk-3.0/widgets.css
+share/themes/Xfce Evolution (HDPI)/themecolor.sh
+share/themes/Xfce Evolution (HDPI)/xfce-evolution_mark
 share/themes/Xfce Evolution Bronze/gtk-2.0/assets
 share/themes/Xfce Evolution Bronze/gtk-2.0/gtkrc
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/button-pressed-dented.css
@@ -13,6 +105,8 @@ share/themes/Xfce Evolution Bronze/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -55,6 +149,8 @@ share/themes/Xfce Evolution Bronze/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -101,6 +197,8 @@ share/themes/Xfce Evolution Crux/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -143,6 +241,8 @@ share/themes/Xfce Evolution Crux/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -189,6 +289,8 @@ share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -231,6 +333,8 @@ share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -277,6 +381,8 @@ share/themes/Xfce Evolution Graphite/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -319,6 +425,8 @@ share/themes/Xfce Evolution Graphite/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -365,6 +473,8 @@ share/themes/Xfce Evolution Greybird/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -407,6 +517,8 @@ share/themes/Xfce Evolution Greybird/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -453,6 +565,8 @@ share/themes/Xfce Evolution Icelake/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Icelake/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Icelake/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Icelake/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Icelake/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Icelake/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Icelake/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -495,6 +609,8 @@ share/themes/Xfce Evolution Icelake/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Icelake/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -541,6 +657,8 @@ share/themes/Xfce Evolution Irix/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Irix/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Irix/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Irix/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Irix/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Irix/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Irix/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Irix/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Irix/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -583,6 +701,8 @@ share/themes/Xfce Evolution Irix/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Irix/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Irix/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Irix/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -629,6 +749,8 @@ share/themes/Xfce Evolution Rainyday/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -671,6 +793,8 @@ share/themes/Xfce Evolution Rainyday/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -717,6 +841,8 @@ share/themes/Xfce Evolution Raleigh/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -759,6 +885,8 @@ share/themes/Xfce Evolution Raleigh/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -805,6 +933,8 @@ share/themes/Xfce Evolution Redmond/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -847,6 +977,8 @@ share/themes/Xfce Evolution Redmond/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -893,6 +1025,8 @@ share/themes/Xfce Evolution Solaris/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Solaris/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Solaris/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -935,6 +1069,8 @@ share/themes/Xfce Evolution Solaris/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -981,6 +1117,8 @@ share/themes/Xfce Evolution Straw/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -1023,6 +1161,8 @@ share/themes/Xfce Evolution Straw/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -1069,6 +1209,8 @@ share/themes/Xfce Evolution Summerfield/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Summerfield/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Summerfield/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Summerfield/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Summerfield/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Summerfield/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Summerfield/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -1111,6 +1253,8 @@ share/themes/Xfce Evolution Summerfield/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Summerfield/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -1157,6 +1301,8 @@ share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -1199,6 +1345,8 @@ share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -1232,8 +1380,240 @@ share/themes/Xfce Evolution Summerstorm/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/widgets.css
 share/themes/Xfce Evolution Summerstorm/themecolor.sh
 share/themes/Xfce Evolution Summerstorm/xfce-evolution_mark
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfce-evolution_mark
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/base-prelight.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/base.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/bottom-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/bottom-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/bottom-left-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/bottom-left-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/bottom-right-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/bottom-right-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/close-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/close-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/close-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/close-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/close-prelight.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/close-prelight.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/close-pressed.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/close-pressed.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/hide-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/hide-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/hide-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/hide-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/hide-prelight.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/hide-prelight.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/hide-pressed.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/hide-pressed.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/left-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/left-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-prelight.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-prelight.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-pressed.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-pressed.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-toggled-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-toggled-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-toggled-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-toggled-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-toggled-prelight.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-toggled-prelight.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-toggled-pressed.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/maximize-toggled-pressed.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/menu-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/menu-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/menu-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/menu-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/menu-prelight.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/menu-prelight.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/menu-pressed.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/menu-pressed.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-prelight.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-prelight.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-pressed.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-pressed.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-toggled-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-toggled-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-toggled-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-toggled-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-toggled-prelight.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-toggled-prelight.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-toggled-pressed.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/shade-toggled-pressed.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-prelight.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-prelight.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-pressed.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-pressed.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-toggled-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-toggled-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-toggled-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-toggled-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-toggled-prelight.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-toggled-prelight.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-toggled-pressed.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/not-used/stick-toggled-pressed.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/right-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/right-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/themerc
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/themerc-greybird-original
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-1-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-1-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-1-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-1-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-2-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-2-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-2-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-2-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-3-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-3-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-3-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-3-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-4-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-4-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-4-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-4-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-5-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-5-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-5-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/title-5-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/top-left-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/top-left-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/top-left-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/top-left-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/top-right-active.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/top-right-active.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/top-right-inactive.png
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/top-right-inactive.xpm
+share/themes/Xfce Evolution XFWM4 (HDPI)/xfwm4/xfwm4-hdpi
+share/themes/Xfce Evolution XFWM4/xfce-evolution_mark
+share/themes/Xfce Evolution XFWM4/xfwm4/base-prelight.png
+share/themes/Xfce Evolution XFWM4/xfwm4/base.png
+share/themes/Xfce Evolution XFWM4/xfwm4/bottom-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/bottom-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/bottom-left-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/bottom-left-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/bottom-right-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/bottom-right-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/close-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/close-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/close-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/close-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/close-prelight.png
+share/themes/Xfce Evolution XFWM4/xfwm4/close-prelight.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/close-pressed.png
+share/themes/Xfce Evolution XFWM4/xfwm4/close-pressed.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/hide-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/hide-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/hide-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/hide-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/hide-prelight.png
+share/themes/Xfce Evolution XFWM4/xfwm4/hide-prelight.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/hide-pressed.png
+share/themes/Xfce Evolution XFWM4/xfwm4/hide-pressed.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/left-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/left-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-prelight.png
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-prelight.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-pressed.png
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-pressed.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-toggled-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-toggled-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-toggled-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-toggled-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-toggled-prelight.png
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-toggled-prelight.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-toggled-pressed.png
+share/themes/Xfce Evolution XFWM4/xfwm4/maximize-toggled-pressed.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/menu-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/menu-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/menu-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/menu-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/menu-prelight.png
+share/themes/Xfce Evolution XFWM4/xfwm4/menu-prelight.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/menu-pressed.png
+share/themes/Xfce Evolution XFWM4/xfwm4/menu-pressed.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-prelight.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-prelight.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-pressed.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-pressed.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-toggled-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-toggled-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-toggled-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-toggled-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-toggled-prelight.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-toggled-prelight.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-toggled-pressed.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/shade-toggled-pressed.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-prelight.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-prelight.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-pressed.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-pressed.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-toggled-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-toggled-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-toggled-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-toggled-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-toggled-prelight.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-toggled-prelight.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-toggled-pressed.png
+share/themes/Xfce Evolution XFWM4/xfwm4/not-used/stick-toggled-pressed.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/right-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/right-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/themerc
+share/themes/Xfce Evolution XFWM4/xfwm4/themerc-greybird-original
+share/themes/Xfce Evolution XFWM4/xfwm4/title-1-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/title-1-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/title-1-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/title-1-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/title-2-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/title-2-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/title-2-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/title-2-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/title-3-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/title-3-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/title-3-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/title-3-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/title-4-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/title-4-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/title-4-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/title-4-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/title-5-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/title-5-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/title-5-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/title-5-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/top-left-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/top-left-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/top-left-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/top-left-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/top-right-active.png
+share/themes/Xfce Evolution XFWM4/xfwm4/top-right-active.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/top-right-inactive.png
+share/themes/Xfce Evolution XFWM4/xfwm4/top-right-inactive.xpm
+share/themes/Xfce Evolution XFWM4/xfwm4/xfmw4
 share/themes/Xfce Evolution/TOOLS/CONFIG/HACKING
-share/themes/Xfce Evolution/TOOLS/CONFIG/lib/set-theme-color
+share/themes/Xfce Evolution/TOOLS/CONFIG/lib/set-theme-color.sh
 share/themes/Xfce Evolution/gtk-2.0/assets/arrow-down.png
 share/themes/Xfce Evolution/gtk-2.0/assets/button-bg-hover.png
 share/themes/Xfce Evolution/gtk-2.0/assets/handle-h.png
@@ -1255,6 +1635,8 @@ share/themes/Xfce Evolution/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution/gtk-2.0/options/default-button-themed.css
 share/themes/Xfce Evolution/gtk-2.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution/gtk-2.0/options/dpi-high.css
+share/themes/Xfce Evolution/gtk-2.0/options/dpi-low.css
 share/themes/Xfce Evolution/gtk-2.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution/gtk-2.0/options/menu-selection-bulged-rounded.css
@@ -1301,30 +1683,43 @@ share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-selectionmode.png
 share/themes/Xfce Evolution/gtk-3.0/assets/checkbox-selectionmode@2.png
 share/themes/Xfce Evolution/gtk-3.0/assets/dash-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/dash-symbolic.symbolic.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-checked-active-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-checked-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-checked-disabled-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-checked-disabled.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-indeterminate-active-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-indeterminate-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-indeterminate-disabled-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-indeterminate-disabled.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-unchecked-active-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-unchecked-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-unchecked-disabled-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/checkbox-unchecked-disabled.png
-share/themes/Xfce Evolution/gtk-3.0/assets/extras/combo-symbolic-dim.png
-share/themes/Xfce Evolution/gtk-3.0/assets/extras/combo-symbolic.png
-share/themes/Xfce Evolution/gtk-3.0/assets/extras/combobox-symbolic-dim.png
-share/themes/Xfce Evolution/gtk-3.0/assets/extras/combobox-symbolic.png
-share/themes/Xfce Evolution/gtk-3.0/assets/extras/combobox-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-base-prelight.note
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-base-prelight.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-close-active-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-close-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-close-inactive-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-close-inactive.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-close-prelight-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-close-prelight.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-close-pressed-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-close-pressed.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-hide-active-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-hide-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-hide-inactive-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-hide-inactive.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-hide-prelight-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-hide-prelight.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-hide-pressed-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-hide-pressed.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-maximize-active-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-maximize-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-maximize-inactive-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-maximize-inactive.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-maximize-prelight-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-maximize-prelight.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-maximize-pressed-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/csd-maximize-pressed.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/pan-end2-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/pan-end3-symbolic.svg
@@ -1332,11 +1727,17 @@ share/themes/Xfce Evolution/gtk-3.0/assets/extras/pan-start2-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/pan-start3-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/pixel-bumps-horiz.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/pixel-bumps-vert.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-checked-active-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-checked-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-checked-disabled-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-checked-disabled.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-indeterminate-active-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-indeterminate-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-indeterminate-disabled-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-indeterminate-disabled.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-unchecked-active-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-unchecked-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-unchecked-disabled-large.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/radio-unchecked-disabled.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-bg-darker.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/separator-bg-lighter.png
@@ -1367,10 +1768,40 @@ share/themes/Xfce Evolution/gtk-3.0/assets/extras/switch-0-red.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/switch-0.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/switch-1-disabled.png
 share/themes/Xfce Evolution/gtk-3.0/assets/extras/switch-1.png
-share/themes/Xfce Evolution/gtk-3.0/assets/override/check-symbolic-v1.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/tmp/checkbox-checked-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/tmp/checkbox-checked-disabled.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/tmp/checkbox-indeterminate-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/tmp/checkbox-indeterminate-disabled.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/tmp/checkbox-unchecked-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/tmp/checkbox-unchecked-disabled.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/tmp/radio-checked-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/tmp/radio-indeterminate-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/tmp/radio-unchecked-active.png
+share/themes/Xfce Evolution/gtk-3.0/assets/extras/tmp/tmp1.png
 share/themes/Xfce Evolution/gtk-3.0/assets/override/check-symbolic.png
 share/themes/Xfce Evolution/gtk-3.0/assets/override/check-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/override/check-symbolic.symbolic.png
+share/themes/Xfce Evolution/gtk-3.0/assets/override/check-symbolic2.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/combo-symbolic-dim.png
+share/themes/Xfce Evolution/gtk-3.0/assets/override/combo-symbolic.png
+share/themes/Xfce Evolution/gtk-3.0/assets/override/combo-symbolic.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/combobox-large-base.png
+share/themes/Xfce Evolution/gtk-3.0/assets/override/combobox-symbolic-large-dim.png
+share/themes/Xfce Evolution/gtk-3.0/assets/override/combobox-symbolic-large.png
+share/themes/Xfce Evolution/gtk-3.0/assets/override/combobox-symbolic-large.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/combobox-symbolic-small-dim.png
+share/themes/Xfce Evolution/gtk-3.0/assets/override/combobox-symbolic-small.png
+share/themes/Xfce Evolution/gtk-3.0/assets/override/menu-arrow-large-down-symbolic.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/menu-arrow-large-left-symbolic.png
+share/themes/Xfce Evolution/gtk-3.0/assets/override/menu-arrow-large-left-symbolic.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/menu-arrow-large-right-base.png
+share/themes/Xfce Evolution/gtk-3.0/assets/override/menu-arrow-large-right-symbolic.png
+share/themes/Xfce Evolution/gtk-3.0/assets/override/menu-arrow-large-right-symbolic.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/menu-arrow-large-up-symbolic.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/menu-arrow-small-down-symbolic.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/menu-arrow-small-left-symbolic.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/menu-arrow-small-right-symbolic.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/menu-arrow-small-up-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/override/pan-down-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/override/pan-end-symbolic-rtl.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/override/pan-end-symbolic.svg
@@ -1379,6 +1810,10 @@ share/themes/Xfce Evolution/gtk-3.0/assets/override/pan-right-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/override/pan-start-symbolic-rtl.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/override/pan-start-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/override/pan-up-symbolic.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/scrollbar-arrow-down-large-symbolic.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/scrollbar-arrow-left-large-symbolic.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/scrollbar-arrow-right-large-symbolic.svg
+share/themes/Xfce Evolution/gtk-3.0/assets/override/scrollbar-arrow-up-large-symbolic.svg
 share/themes/Xfce Evolution/gtk-3.0/assets/slider-horz-scale-has-marks-above-active-dark.png
 share/themes/Xfce Evolution/gtk-3.0/assets/slider-horz-scale-has-marks-above-active-dark@2.png
 share/themes/Xfce Evolution/gtk-3.0/assets/slider-horz-scale-has-marks-above-active.png
@@ -1423,6 +1858,8 @@ share/themes/Xfce Evolution/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution/gtk-3.0/options/default-button-themed.css
 share/themes/Xfce Evolution/gtk-3.0/options/desktop-icon-background-off.css
 share/themes/Xfce Evolution/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution/gtk-3.0/options/dpi-high.css
+share/themes/Xfce Evolution/gtk-3.0/options/dpi-low.css
 share/themes/Xfce Evolution/gtk-3.0/options/keyboard-navigation-off.css
 share/themes/Xfce Evolution/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution/gtk-3.0/options/menu-selection-bulged-rounded.css
@@ -1617,120 +2054,3 @@ share/themes/Xfce Evolution/original/gtk-3.0/gtk-dark.css
 share/themes/Xfce Evolution/original/gtk-3.0/gtk.css
 share/themes/Xfce Evolution/themecolor.sh
 share/themes/Xfce Evolution/xfce-evolution_mark
-share/themes/Xfce Evolution/xfwm4/base-inactive.png
-share/themes/Xfce Evolution/xfwm4/base-prelight.png
-share/themes/Xfce Evolution/xfwm4/base.png
-share/themes/Xfce Evolution/xfwm4/base2-prelight.xcf
-share/themes/Xfce Evolution/xfwm4/base2.png
-share/themes/Xfce Evolution/xfwm4/bottom-active.xpm
-share/themes/Xfce Evolution/xfwm4/bottom-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/bottom-left-active.xpm
-share/themes/Xfce Evolution/xfwm4/bottom-left-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/bottom-right-active.xpm
-share/themes/Xfce Evolution/xfwm4/bottom-right-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/close-active.png
-share/themes/Xfce Evolution/xfwm4/close-active.xpm
-share/themes/Xfce Evolution/xfwm4/close-inactive.png
-share/themes/Xfce Evolution/xfwm4/close-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/close-prelight.png
-share/themes/Xfce Evolution/xfwm4/close-prelight.xpm
-share/themes/Xfce Evolution/xfwm4/close-pressed.png
-share/themes/Xfce Evolution/xfwm4/close-pressed.xpm
-share/themes/Xfce Evolution/xfwm4/hide-active.png
-share/themes/Xfce Evolution/xfwm4/hide-active.xpm
-share/themes/Xfce Evolution/xfwm4/hide-inactive.png
-share/themes/Xfce Evolution/xfwm4/hide-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/hide-prelight.png
-share/themes/Xfce Evolution/xfwm4/hide-prelight.xpm
-share/themes/Xfce Evolution/xfwm4/hide-pressed.png
-share/themes/Xfce Evolution/xfwm4/hide-pressed.xpm
-share/themes/Xfce Evolution/xfwm4/left-active.xpm
-share/themes/Xfce Evolution/xfwm4/left-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/maximize-active.png
-share/themes/Xfce Evolution/xfwm4/maximize-active.xpm
-share/themes/Xfce Evolution/xfwm4/maximize-inactive.png
-share/themes/Xfce Evolution/xfwm4/maximize-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/maximize-prelight.png
-share/themes/Xfce Evolution/xfwm4/maximize-prelight.xpm
-share/themes/Xfce Evolution/xfwm4/maximize-pressed.png
-share/themes/Xfce Evolution/xfwm4/maximize-pressed.xpm
-share/themes/Xfce Evolution/xfwm4/maximize-toggled-active.png
-share/themes/Xfce Evolution/xfwm4/maximize-toggled-active.xpm
-share/themes/Xfce Evolution/xfwm4/maximize-toggled-inactive.png
-share/themes/Xfce Evolution/xfwm4/maximize-toggled-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/maximize-toggled-prelight.png
-share/themes/Xfce Evolution/xfwm4/maximize-toggled-prelight.xpm
-share/themes/Xfce Evolution/xfwm4/maximize-toggled-pressed.png
-share/themes/Xfce Evolution/xfwm4/maximize-toggled-pressed.xpm
-share/themes/Xfce Evolution/xfwm4/menu-active.png
-share/themes/Xfce Evolution/xfwm4/menu-active.xpm
-share/themes/Xfce Evolution/xfwm4/menu-inactive.png
-share/themes/Xfce Evolution/xfwm4/menu-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/menu-prelight.png
-share/themes/Xfce Evolution/xfwm4/menu-prelight.xpm
-share/themes/Xfce Evolution/xfwm4/menu-pressed.png
-share/themes/Xfce Evolution/xfwm4/menu-pressed.xpm
-share/themes/Xfce Evolution/xfwm4/right-active.xpm
-share/themes/Xfce Evolution/xfwm4/right-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/shade-active.png
-share/themes/Xfce Evolution/xfwm4/shade-active.xpm
-share/themes/Xfce Evolution/xfwm4/shade-inactive.png
-share/themes/Xfce Evolution/xfwm4/shade-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/shade-prelight.png
-share/themes/Xfce Evolution/xfwm4/shade-prelight.xpm
-share/themes/Xfce Evolution/xfwm4/shade-pressed.png
-share/themes/Xfce Evolution/xfwm4/shade-pressed.xpm
-share/themes/Xfce Evolution/xfwm4/shade-toggled-active.png
-share/themes/Xfce Evolution/xfwm4/shade-toggled-active.xpm
-share/themes/Xfce Evolution/xfwm4/shade-toggled-inactive.png
-share/themes/Xfce Evolution/xfwm4/shade-toggled-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/shade-toggled-prelight.png
-share/themes/Xfce Evolution/xfwm4/shade-toggled-prelight.xpm
-share/themes/Xfce Evolution/xfwm4/shade-toggled-pressed.png
-share/themes/Xfce Evolution/xfwm4/shade-toggled-pressed.xpm
-share/themes/Xfce Evolution/xfwm4/stick-active.png
-share/themes/Xfce Evolution/xfwm4/stick-active.xpm
-share/themes/Xfce Evolution/xfwm4/stick-inactive.png
-share/themes/Xfce Evolution/xfwm4/stick-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/stick-prelight.png
-share/themes/Xfce Evolution/xfwm4/stick-prelight.xpm
-share/themes/Xfce Evolution/xfwm4/stick-pressed.png
-share/themes/Xfce Evolution/xfwm4/stick-pressed.xpm
-share/themes/Xfce Evolution/xfwm4/stick-toggled-active.png
-share/themes/Xfce Evolution/xfwm4/stick-toggled-active.xpm
-share/themes/Xfce Evolution/xfwm4/stick-toggled-inactive.png
-share/themes/Xfce Evolution/xfwm4/stick-toggled-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/stick-toggled-prelight.png
-share/themes/Xfce Evolution/xfwm4/stick-toggled-prelight.xpm
-share/themes/Xfce Evolution/xfwm4/stick-toggled-pressed.png
-share/themes/Xfce Evolution/xfwm4/stick-toggled-pressed.xpm
-share/themes/Xfce Evolution/xfwm4/themerc
-share/themes/Xfce Evolution/xfwm4/themerc-greybird-original
-share/themes/Xfce Evolution/xfwm4/title-1-active.png
-share/themes/Xfce Evolution/xfwm4/title-1-active.xpm
-share/themes/Xfce Evolution/xfwm4/title-1-inactive.png
-share/themes/Xfce Evolution/xfwm4/title-1-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/title-2-active.png
-share/themes/Xfce Evolution/xfwm4/title-2-active.xpm
-share/themes/Xfce Evolution/xfwm4/title-2-inactive.png
-share/themes/Xfce Evolution/xfwm4/title-2-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/title-3-active.png
-share/themes/Xfce Evolution/xfwm4/title-3-active.xpm
-share/themes/Xfce Evolution/xfwm4/title-3-inactive.png
-share/themes/Xfce Evolution/xfwm4/title-3-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/title-4-active.png
-share/themes/Xfce Evolution/xfwm4/title-4-active.xpm
-share/themes/Xfce Evolution/xfwm4/title-4-inactive.png
-share/themes/Xfce Evolution/xfwm4/title-4-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/title-5-active.png
-share/themes/Xfce Evolution/xfwm4/title-5-active.xpm
-share/themes/Xfce Evolution/xfwm4/title-5-inactive.png
-share/themes/Xfce Evolution/xfwm4/title-5-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/top-left-active.png
-share/themes/Xfce Evolution/xfwm4/top-left-active.xpm
-share/themes/Xfce Evolution/xfwm4/top-left-inactive.png
-share/themes/Xfce Evolution/xfwm4/top-left-inactive.xpm
-share/themes/Xfce Evolution/xfwm4/top-right-active.png
-share/themes/Xfce Evolution/xfwm4/top-right-active.xpm
-share/themes/Xfce Evolution/xfwm4/top-right-inactive.png
-share/themes/Xfce Evolution/xfwm4/top-right-inactive.xpm
