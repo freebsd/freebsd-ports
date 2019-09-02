@@ -417,7 +417,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/images/zoom.png
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/index.rhtml
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/js/darkfish.js
-%%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/js/jquery.js
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/js/search.js
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/page.rhtml
 %%RUBY_LIBDIR%%/rdoc/generator/template/darkfish/servlet_not_found.rhtml
