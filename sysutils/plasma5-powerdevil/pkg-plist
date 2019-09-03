@@ -222,7 +222,11 @@ share/locale/lv/LC_MESSAGES/powerdevil.mo
 share/locale/lv/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/lv/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/mai/LC_MESSAGES/powerdevil.mo
+share/locale/ml/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/ml/LC_MESSAGES/powerdevil.mo
+share/locale/ml/LC_MESSAGES/powerdevilactivitiesconfig.mo
+share/locale/ml/LC_MESSAGES/powerdevilglobalconfig.mo
+share/locale/ml/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/mr/LC_MESSAGES/powerdevil.mo
 share/locale/mr/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/mr/LC_MESSAGES/powerdevilglobalconfig.mo

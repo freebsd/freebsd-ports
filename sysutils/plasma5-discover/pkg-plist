@@ -114,6 +114,10 @@ share/locale/lt/LC_MESSAGES/libdiscover.mo
 share/locale/lt/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/lt/LC_MESSAGES/plasma-discover.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.discovernotifier.mo
+share/locale/ml/LC_MESSAGES/libdiscover.mo
+share/locale/ml/LC_MESSAGES/plasma-discover-notifier.mo
+share/locale/ml/LC_MESSAGES/plasma-discover.mo
+share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.discovernotifier.mo
 share/locale/mr/LC_MESSAGES/libdiscover.mo
 share/locale/mr/LC_MESSAGES/plasma-discover.mo
 share/locale/nb/LC_MESSAGES/libdiscover.mo

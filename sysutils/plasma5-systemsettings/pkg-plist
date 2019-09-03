@@ -158,6 +158,7 @@ share/locale/vi/LC_MESSAGES/systemsettings.mo
 share/locale/wa/LC_MESSAGES/systemsettings.mo
 share/locale/zh_CN/LC_MESSAGES/systemsettings.mo
 share/locale/zh_TW/LC_MESSAGES/systemsettings.mo
+share/metainfo/org.kde.systemsettings.metainfo.xml
 %%DATADIR%%/classic/main.html
 %%DATADIR%%/classic/systemsettings-classic.css
 %%DATADIR%%/systemsettings.kcfg
