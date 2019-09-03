@@ -14,7 +14,7 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
 DEPRECATED=		No longer supported by Balabit
-EXPIRATION_DATE=	2019-12-31
+EXPIRATION_DATE=	2019-08-31
 
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
