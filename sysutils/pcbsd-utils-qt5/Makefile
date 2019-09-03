@@ -45,6 +45,9 @@ GH_ACCOUNT=	pcbsd
 GH_PROJECT=	pcbsd
 GH_TAGNAME=	3c4d2b
 
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=	2019-11-01
+
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/share/pcbsd/doc/html -type f | \
 		${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST}
