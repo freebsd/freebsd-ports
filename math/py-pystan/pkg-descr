@@ -1,0 +1,7 @@
+PyStan provides a Python interface to Stan, a package for Bayesian inference
+using the No-U-Turn sampler, a variant of Hamiltonian Monte Carlo.
+
+For more information on Stan and its modeling language, see the Stan User's
+Guide and Reference Manual at http://mc-stan.org/.
+
+WWW: https://github.com/stan-dev/pystan
