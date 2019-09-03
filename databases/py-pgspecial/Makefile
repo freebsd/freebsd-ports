@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgspecial
-PORTVERSION=	1.11.6
+PORTVERSION=	1.11.7
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +20,5 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e '/psycopg2/ s|,*<2.8,*||' ${WRKSRC}/setup.py ${WRKSRC}/pgspecial.egg-info/requires.txt
 
 .include <bsd.port.mk>
