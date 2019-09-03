@@ -10,9 +10,11 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Abstract base class with no predefined methods
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
