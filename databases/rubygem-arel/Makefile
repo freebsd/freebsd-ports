@@ -6,7 +6,7 @@ PORTEPOCH=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Relational Algebra for Ruby
 
 LICENSE=	MIT
