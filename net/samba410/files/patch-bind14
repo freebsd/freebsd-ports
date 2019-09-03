@@ -43,13 +43,16 @@
  #else
 --- source4/setup/named.conf.dlz.orig	2019-06-22 09:56:57 UTC
 +++ source4/setup/named.conf.dlz
-@@ -22,5 +22,8 @@ dlz "AD DNS Zone" {
-     # For BIND 9.11.x
-     ${BIND9_11} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_11.so";
- 
-+    # For BIND 9.12.x
-+    ${BIND9_12} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_12.so";
+@@ -24,5 +24,11 @@ dlz "AD DNS Zone" {
+
+     # For BIND 9.12.x
+     ${BIND9_12} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_12.so";
 +
++    # For BIND 9.13.x
++    ${BIND9_13} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_13.so";
++
++    # For BIND 9.14.x
++    ${BIND9_14} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_14.so";
  };
  
 --- python/samba/provision/sambadns.py.orig	2019-01-15 10:07:00 UTC
