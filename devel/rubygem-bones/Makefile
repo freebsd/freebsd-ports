@@ -11,13 +11,14 @@ COMMENT=	Tool to create new projects from code skeleton
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-little-plugger>=1.1:devel/rubygem-little-plugger \
-		rubygem-loquacious>=1.9:devel/rubygem-loquacious \
-		rubygem-rake>=12.0:devel/rubygem-rake
+RUN_DEPENDS=	rubygem-little-plugger>=1.1<2:devel/rubygem-little-plugger \
+		rubygem-loquacious>=1.9<2:devel/rubygem-loquacious \
+		rubygem-rake>=12.0<13:devel/rubygem-rake
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 PLIST_FILES=	bin/bones
 
