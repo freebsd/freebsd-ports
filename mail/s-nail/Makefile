@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	s-nail
-PORTVERSION=	14.9.14
+PORTVERSION=	14.9.15
 CATEGORIES=	mail
 MASTER_SITES=	https://www.sdaoden.eu/downloads/
 
@@ -19,7 +19,7 @@ LICENSE_PERMS_RSA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libidn2.so:dns/libidn2
 RUN_DEPENDS=	mime-support>0:misc/mime-support
 
-USES=		iconv ssl tar:xz
+USES=		iconv localbase ssl tar:xz
 
 PLIST_FILES=	bin/s-nail \
 		"@sample etc/s-nail.rc.sample" \
@@ -27,7 +27,8 @@ PLIST_FILES=	bin/s-nail \
 		man/man1/s-nail.1.gz
 
 MAKEFILE=	makefile
-MAKE_ENV=	VAL_PREFIX=${PREFIX} VAL_MANDIR=${MANPREFIX}/man VAL_MIME_TYPES_SYS=${PREFIX}/etc/mime.types VAL_IDNA=idn2
+MAKE_ENV=	EXTRA_CFLAGS="-DLIBICONV_PLUG" INCS=-I${LOCALBASE}/include \
+		VAL_PREFIX=${PREFIX} VAL_MANDIR=${MANPREFIX}/man VAL_MIME_TYPES_SYS=${PREFIX}/etc/mime.types VAL_IDNA=idn2
 MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	NEWS README
