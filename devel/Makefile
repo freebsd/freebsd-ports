@@ -4619,6 +4619,7 @@
     SUBDIR += py-logilab-common
     SUBDIR += py-logutils
     SUBDIR += py-louie
+    SUBDIR += py-lunardate
     SUBDIR += py-lxml
     SUBDIR += py-macholib
     SUBDIR += py-magic
