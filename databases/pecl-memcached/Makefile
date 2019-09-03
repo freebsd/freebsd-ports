@@ -14,14 +14,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	libmemcached>=1.0.18:databases/libmemcached
 LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
-OPTIONS_DEFINE=	IGBINARY SASL
-OPTIONS_DEFAULT=SASL
-IGBINARY_DESC=	Binary serializer support
-
 USES=		php:pecl pkgconfig
 USE_PHP=	json:build session:build
 
 CONFIGURE_ARGS=	--with-libmemcached-dir=${LOCALBASE}
+
+OPTIONS_DEFINE=	IGBINARY SASL
+OPTIONS_DEFAULT=SASL
+IGBINARY_DESC=	Binary serializer support
 
 IGBINARY_CONFIGURE_ENABLE=	memcached-igbinary
 IGBINARY_USE=		PHP=igbinary:build
