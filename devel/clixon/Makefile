@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clixon
-PORTVERSION=	3.9.0
-PORTREVISION=	1
+PORTVERSION=	4.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	dcornejo@netgate.com
@@ -21,12 +20,16 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	clicon
-MAKE_ARGS=	wwwdir=${PREFIX}/sbin wwwuser=${WWWOWN}
+MAKE_ARGS=	wwwdir=${PREFIX}/sbin \
+		wwwuser=${WWWOWN}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-cligen=${LOCALBASE} --sysconfdir=${ETCDIR}
+CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} \
+		--with-cligen=${LOCALBASE}
 CONFIGURE_ENV=	YACC="bison -y"
 
-MAKE_JOBS_UNSAFE=yes
+SUB_FILES=	pkg-message
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
