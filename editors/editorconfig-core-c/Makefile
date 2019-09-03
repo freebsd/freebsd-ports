@@ -9,6 +9,9 @@ CATEGORIES=	editors
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	EditorConfig core library and executable written in C
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	doxygen:devel/doxygen
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
