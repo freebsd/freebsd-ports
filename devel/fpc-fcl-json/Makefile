@@ -2,7 +2,7 @@
 
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-json
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	Free Pascal JavaScript Object Notation implemenation (FCL)
 
