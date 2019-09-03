@@ -4493,6 +4493,7 @@
     SUBDIR += py-hghooks
     SUBDIR += py-hgsubversion
     SUBDIR += py-hgtools
+    SUBDIR += py-holidays
     SUBDIR += py-http-prompt
     SUBDIR += py-humanize
     SUBDIR += py-hypothesis
