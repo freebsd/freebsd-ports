@@ -22,4 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	sysadm-ui-qt
 
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=	2019-11-01
+
 .include <bsd.port.mk>
