@@ -12,7 +12,7 @@ COMMENT=	Provides interface to working with ZIP archives
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-io-like>=0.3.0:devel/rubygem-io-like
+RUN_DEPENDS=	rubygem-io-like>=0.3.0<0.4:devel/rubygem-io-like
 
 USES=		gem
 USE_RUBY=	yes
