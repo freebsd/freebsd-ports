@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	phabricator
-PORTVERSION=	20181231
+PORTVERSION=	20190831
 CATEGORIES=	devel
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -11,8 +11,8 @@ COMMENT=	Open source, software engineering platform
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PHP_PKGNAMEPREFIX}libphutil>0:devel/libphutil@${PHP_FLAVOR} \
-		arcanist-lib${PHP_PKGNAMESUFFIX}>0:devel/arcanist-lib@${PHP_FLAVOR} \
+RUN_DEPENDS=	${PHP_PKGNAMEPREFIX}libphutil>=20190831:devel/libphutil@${PHP_FLAVOR} \
+		arcanist-lib${PHP_PKGNAMESUFFIX}>=20190622:devel/arcanist-lib@${PHP_FLAVOR} \
 		git:devel/git
 
 OPTIONS_DEFINE=	GD OPCACHE
@@ -21,8 +21,7 @@ OPCACHE_DESC?=	Use OPcache to improve performance
 
 USES=		php:flavors shebangfix
 REINPLACE_ARGS=	-i ""
-SHEBANG_FILES=	externals/httpful/build \
-		externals/restful/build-phar \
+SHEBANG_FILES=	scripts/*.php \
 		scripts/almanac/*.php \
 		scripts/cache/*.php \
 		scripts/celerity/*.php \
@@ -35,19 +34,17 @@ SHEBANG_FILES=	externals/httpful/build \
 		scripts/install/install_ubuntu.sh \
 		scripts/lipsum/*.php \
 		scripts/mail/*.php \
-		scripts/people/*.php \
 		scripts/repository/*.php \
 		scripts/search/*.php \
 		scripts/setup/*.php \
-		scripts/sms/*.php \
+		scripts/ssh/*.php \
 		scripts/sql/*.php \
 		scripts/ssh/*.php \
 		scripts/symbols/*.php \
-		scripts/user/*.php \
 		scripts/util/*.php \
 		support/aphlict/server/*.php
 USE_PHP=	ctype curl fileinfo filter hash iconv mbstring mysqli openssl \
-		pcntl posix
+		pcntl posix zip
 
 GD_USE=		PHP=gd
 
@@ -59,7 +56,7 @@ NO_BUILD=	yes
 USE_RC_SUBR=	phd
 SUB_FILES=	pkg-message
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	106e90d
+GH_TAGNAME=	24dbff2
 
 PHP_DESTDIR=	lib/php/phabricator
 

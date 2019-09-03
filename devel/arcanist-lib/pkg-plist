@@ -823,6 +823,7 @@ lib/php/arcanist/src/parser/__tests__/patches/fb28468d25a5fdd063aca4ca559454c998
 lib/php/arcanist/src/parser/diff/ArcanistDiffChange.php
 lib/php/arcanist/src/parser/diff/ArcanistDiffChangeType.php
 lib/php/arcanist/src/parser/diff/ArcanistDiffHunk.php
+lib/php/arcanist/src/ref/ArcanistBuildPlanRef.php
 lib/php/arcanist/src/ref/ArcanistBuildRef.php
 lib/php/arcanist/src/repository/api/ArcanistGitAPI.php
 lib/php/arcanist/src/repository/api/ArcanistGitUpstreamPath.php
