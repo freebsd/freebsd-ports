@@ -12,8 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel4>=4.2.1:databases/rubygem-activemodel4 \
-		rubygem-faraday>=0.8:www/rubygem-faraday \
-		rubygem-multi_json>=1.7:devel/rubygem-multi_json
+		rubygem-faraday>=0.8<1.0:www/rubygem-faraday \
+		rubygem-multi_json>=1.7<2:devel/rubygem-multi_json
 
 USES=		gem
 USE_RUBY=	yes
