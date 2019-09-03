@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmic
-DISTVERSION=	2.7.0
+DISTVERSION=	2.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://gmic.eu/files/source/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -28,7 +28,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 
 PORTSCOUT=	limit:[0-9]\..* # not v.220 and similar
 
-USES=		cmake compiler:c++11-lang jpeg pkgconfig
+USES=		cmake compiler:c++11-lang jpeg pkgconfig xorg
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_LIB_STATIC
