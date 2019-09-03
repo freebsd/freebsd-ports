@@ -3,11 +3,11 @@
 
 PORTNAME=	phpldapadmin
 PORTVERSION=	1.2.3
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5/${PORTVERSION}
-PKGNAMESUFFIX=  ${PHP_PKGNAMESUFFIX}
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	PHP application to administer LDAP over the web
@@ -34,6 +34,12 @@ SUB_FILES+=	pkg-message
 
 .SILENT:
 
+.include <bsd.port.pre.mk>
+
+.if (${PHP_VER} == 73)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-lib__PageRender.php
+.endif
+
 post-patch:
 	cd ${WRKSRC} ;							    \
 	${FIND} . ! -type d ! -name ${CFGFILE}.example ! -name .cvsignore   \
@@ -52,4 +58,4 @@ do-install:
 	    fi						 \
 	done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
