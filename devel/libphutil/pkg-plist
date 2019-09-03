@@ -206,11 +206,14 @@ lib/php/libphutil/src/filesystem/PhutilFileLock.php
 lib/php/libphutil/src/filesystem/PhutilFileTree.php
 lib/php/libphutil/src/filesystem/PhutilLock.php
 lib/php/libphutil/src/filesystem/PhutilLockException.php
+lib/php/libphutil/src/filesystem/PhutilProcessQuery.php
+lib/php/libphutil/src/filesystem/PhutilProcessRef.php
 lib/php/libphutil/src/filesystem/TempFile.php
 lib/php/libphutil/src/filesystem/__tests__/FileFinderTestCase.php
 lib/php/libphutil/src/filesystem/__tests__/FilesystemTestCase.php
 lib/php/libphutil/src/filesystem/__tests__/PhutilDeferredLogTestCase.php
 lib/php/libphutil/src/filesystem/__tests__/PhutilFileLockTestCase.php
+lib/php/libphutil/src/filesystem/__tests__/PhutilProcessRefTestCase.php
 lib/php/libphutil/src/filesystem/__tests__/data/.hidden.txt
 lib/php/libphutil/src/filesystem/__tests__/data/exclude/file.txt
 lib/php/libphutil/src/filesystem/__tests__/data/exclude/test
@@ -425,6 +428,9 @@ lib/php/libphutil/src/markup/engine/__tests__/remarkup/percent-block-oneline.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/percent-block-solo.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/quoted-angry.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/quoted-code-block.txt
+lib/php/libphutil/src/markup/engine/__tests__/remarkup/quoted-indent-block.txt
+lib/php/libphutil/src/markup/engine/__tests__/remarkup/quoted-lists.txt
+lib/php/libphutil/src/markup/engine/__tests__/remarkup/quoted-quote.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/quotes.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/raw-escape.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/reply-basic.txt
@@ -434,6 +440,7 @@ lib/php/libphutil/src/markup/engine/__tests__/remarkup/simple-table-with-leading
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/simple-table-with-link.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/simple-table.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/simple.txt
+lib/php/libphutil/src/markup/engine/__tests__/remarkup/table-with-direct-content.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/table-with-leading-space.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/table-with-long-header.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/table.txt
@@ -455,6 +462,7 @@ lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupInterpreter
 lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupListBlockRule.php
 lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupLiteralBlockRule.php
 lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupNoteBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupQuotedBlockRule.php
 lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupQuotesBlockRule.php
 lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupReplyBlockRule.php
 lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupSimpleTableBlockRule.php
@@ -465,6 +473,8 @@ lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupDelRule.ph
 lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupDocumentLinkRule.php
 lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupEscapeRemarkupRule.php
 lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupHighlightRule.php
+lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupHyperlinkEngineExtension.php
+lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupHyperlinkRef.php
 lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupHyperlinkRule.php
 lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupItalicRule.php
 lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupLinebreaksRule.php
@@ -659,6 +669,16 @@ lib/php/libphutil/src/parser/generator/exception/PhutilParserGeneratorException.
 lib/php/libphutil/src/parser/generator/exception/PhutilUnknownSymbolParserGeneratorException.php
 lib/php/libphutil/src/parser/generator/exception/PhutilUnreachableRuleParserGeneratorException.php
 lib/php/libphutil/src/parser/generator/exception/PhutilUnreachableTerminalParserGeneratorException.php
+lib/php/libphutil/src/parser/html/PhutilDOMNode.php
+lib/php/libphutil/src/parser/html/PhutilHTMLParser.php
+lib/php/libphutil/src/parser/html/__tests__/PhutilHTMLParserTestCase.php
+lib/php/libphutil/src/parser/html/__tests__/data/attributes-basic.txt
+lib/php/libphutil/src/parser/html/__tests__/data/content-angle.txt
+lib/php/libphutil/src/parser/html/__tests__/data/content-simple.txt
+lib/php/libphutil/src/parser/html/__tests__/data/tag-angle.txt
+lib/php/libphutil/src/parser/html/__tests__/data/tag-mismatch.txt
+lib/php/libphutil/src/parser/html/__tests__/data/tag-simple.txt
+lib/php/libphutil/src/parser/html/__tests__/data/tag-table.txt
 lib/php/libphutil/src/parser/http/PhutilHTTPResponse.php
 lib/php/libphutil/src/parser/http/PhutilHTTPResponseParser.php
 lib/php/libphutil/src/parser/http/__tests__/PhutilHTTPResponseParserTestCase.php
@@ -726,6 +746,8 @@ lib/php/libphutil/src/phage/agent/PhagePHPAgent.php
 lib/php/libphutil/src/phage/bootloader/PhageAgentBootloader.php
 lib/php/libphutil/src/phage/bootloader/PhagePHPAgentBootloader.php
 lib/php/libphutil/src/phage/util/PhutilBallOfPHP.php
+lib/php/libphutil/src/progress/PhutilConsoleProgressSink.php
+lib/php/libphutil/src/progress/PhutilProgressSink.php
 lib/php/libphutil/src/readableserializer/PhutilReadableSerializer.php
 lib/php/libphutil/src/readableserializer/__tests__/PhutilReadableSerializerTestCase.php
 lib/php/libphutil/src/search/PhutilSearchQueryCompiler.php
