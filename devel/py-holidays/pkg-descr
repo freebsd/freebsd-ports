@@ -1,0 +1,11 @@
+A fast, efficient Python library for generating country, province and state
+specific sets of holidays on the fly. It aims to make determining whether a
+specific date is a holiday as fast and flexible as possible.
+
+from datetime import date
+import holidays
+
+date(2015, 1, 1) in us_holidays  # True
+date(2015, 1, 2) in us_holidays  # False
+
+WWW: https://github.com/dr-prodigy/python-holidays
