@@ -9,10 +9,13 @@ MASTER_SITES=	RG
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extracts token delimited entities from arbitrary inputs
 
-LICENSE=	MIT
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
