@@ -15,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-mail>=2.4.3:mail/rubygem-mail \
 		rubygem-term-ansicolor>=1.0.7:devel/rubygem-term-ansicolor
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/tj3 \
 		bin/tj3client \
