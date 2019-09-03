@@ -4406,6 +4406,7 @@
     SUBDIR += py-fastentrypoints
     SUBDIR += py-fastimport
     SUBDIR += py-fastnumbers
+    SUBDIR += py-fbprophet
     SUBDIR += py-filemagic
     SUBDIR += py-fileutils
     SUBDIR += py-first
