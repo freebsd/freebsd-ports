@@ -4,7 +4,7 @@
 PORTNAME=	cqrlog
 PORTVERSION=	2.3.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -15,7 +15,11 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libhamlib.so:comms/hamlib
 
-USES=		fpc lazarus:flavors shebangfix ssl:run dos2unix mysql
+USES=		fpc gnome lazarus:flavors shebangfix ssl:run dos2unix \
+		mysql:server xorg
+
+USE_GNOME+=	cairo
+USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	ok2cqr
 
@@ -32,7 +36,6 @@ MAKE_ENV+=	LAZBUILD_CMD="${LAZBUILD_CMD}" \
 		LCL_PLATFORM="${LCL_PLATFORM}" \
 		LAZARUS_DIR="${LAZARUS_DIR}"
 
-USE_XORG+=	x11
 NO_LAZBUILD=	yes
 LAZBUILD_ARGS=	-d --pcp=.
 LAZARUS_NO_FLAVORS=qt5
