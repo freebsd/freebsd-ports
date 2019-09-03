@@ -11,7 +11,7 @@ validate_env dp_RAWDEPENDS dp_DEPTYPE dp_DEPENDS_TARGET dp_DEPENDS_PRECLEAN \
 	dp_DEPENDS_CLEAN dp_DEPENDS_ARGS dp_USE_PACKAGE_DEPENDS \
 	dp_USE_PACKAGE_DEPENDS_ONLY dp_PKG_ADD dp_PKG_INFO dp_WRKDIR \
 	dp_PKGNAME dp_STRICT_DEPENDS dp_LOCALBASE dp_LIB_DIRS dp_SH \
-	dp_SCRIPTSDIR PORTSDIR dp_MAKE dp_MAKEFLAGS
+	dp_SCRIPTSDIR PORTSDIR dp_MAKE dp_MAKEFLAGS dp_OVERLAYS
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_DO_DEPENDS}" ] && set -x
 
@@ -125,7 +125,15 @@ for _line in ${dp_RAWDEPENDS} ; do
 
 	case "${origin}" in
 	/*) ;;
-	*) origin="${PORTSDIR}/${origin}" ;;
+	*)
+		for overlay in ${dp_OVERLAYS} ${PORTSDIR}; do
+			orig="${overlay}/${origin}"
+			if [ -f "${orig}/Makefile" ]; then
+				break
+			fi
+		done
+		origin="${orig}"
+		;;
 	esac
 	case "${origin}" in
 	*@*/*) ;; # Ignore @ in the path which would not be a flavor

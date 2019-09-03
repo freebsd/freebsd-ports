@@ -1029,6 +1029,7 @@ STAGEDIR?=	${WRKDIR}/stage
 NOTPHONY?=
 FLAVORS?=
 FLAVOR?=
+OVERLAYS?=
 # Disallow forced FLAVOR as make argument since we cannot change it to the
 # proper default.
 .if empty(FLAVOR) && !empty(.MAKEOVERRIDES:MFLAVOR)
@@ -1450,7 +1451,17 @@ ${_f}_ARGS:=	${f:C/^[^\:]*(\:|\$)//:S/,/ /g}
 .endif
 .endfor
 .for f in ${USES}
-.include "${USESDIR}/${f:C/\:.*//}.mk"
+.undef _usefound
+.for udir in ${OVERLAYS:C,$,/Mk/Uses,} ${USESDIR}
+_usefile=	${udir}/${f:C/\:.*//}.mk
+.if exists(${_usefile}) && !defined(_usefound)
+_usefound=
+.include "${_usefile}"
+.endif
+.endfor
+.if !defined(_usefound)
+ERROR+=	"Unkonwn USES=${f:C/\:.*//}"
+.endif
 .endfor
 
 .if !empty(FLAVORS)
@@ -1962,7 +1973,17 @@ ${_f}_ARGS:=	${f:C/^[^\:]*(\:|\$)//:S/,/ /g}
 .endif
 .endfor
 .for f in ${_USES_POST}
-.include "${USESDIR}/${f:C/\:.*//}.mk"
+.undef _usefound
+.for udir in ${OVERLAYS:C,$,/Mk/Uses,} ${USESDIR}
+_usefile=	${udir}/${f:C/\:.*//}.mk
+.if exists(${_usefile}) && !defined(_usefound)
+_usefound=
+.include "${_usefile}"
+.endif
+.endfor
+.if !defined(_usefound)
+ERROR+=	"Unkonwn USES=${f:C/\:.*//}"
+.endif
 .endfor
 
 .if defined(PORTNAME)
@@ -3964,6 +3985,7 @@ ${deptype:tl}-depends:
 		dp_SH="${SH}" \
 		dp_SCRIPTSDIR="${SCRIPTSDIR}" \
 		PORTSDIR="${PORTSDIR}" \
+		dp_OVERLAYS="${OVERLAYS}" \
 		dp_MAKE="${MAKE}" \
 		dp_MAKEFLAGS='${.MAKEFLAGS}' \
 		${SH} ${SCRIPTSDIR}/do-depends.sh
@@ -4018,6 +4040,7 @@ DEPENDS-LIST= \
 			dp_PKGNAME="${PKGNAME}" \
 			dp_PKG_INFO="${PKG_INFO}" \
 			dp_SCRIPTSDIR="${SCRIPTSDIR}" \
+			dp_OVERLAYS="${OVERLAYS}" \
 			${SH} ${SCRIPTSDIR}/depends-list.sh \
 			${DEPENDS_SHOW_FLAVOR:D-f}
 

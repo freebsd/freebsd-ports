@@ -58,7 +58,7 @@ ERROR+=	"${a} is unsupported, please use ${${a}_ALT}"
 
 # Warnings only when DEVELOPER=yes
 
-.if exists(${.CURDIR}/../../Mk/bsd.port.mk)
+.if exists(${.CURDIR}/../../Mk/bsd.port.mk) || ${OVERLAYS:tA:M${.CURDIR:H:H}} == ${.CURDIR:H:H}
 .if ${.CURDIR:H:T} != ${PKGCATEGORY}
 DEV_ERROR+=	"The first entry in CATEGORIES should be the directory where the port lives"
 .endif

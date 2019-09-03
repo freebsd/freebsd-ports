@@ -37,7 +37,7 @@ while getopts "fmrw" FLAG; do
 done
 shift $((OPTIND-1))
 
-validate_env PORTSDIR dp_PKGNAME
+validate_env PORTSDIR dp_OVERLAYS dp_PKGNAME
 if [ ${recursive} -eq 1 -o ${requires_wrkdir} -eq 1 ]; then
 	validate_env dp_MAKE
 	# Cache command executions to avoid looking them up again in every
@@ -65,16 +65,25 @@ check_dep() {
 
 		case "${2}" in
 		/*) d=${2} ;;
-		*) d=${PORTSDIR}/${2} ;;
+		*) for overlay in ${dp_OVERLAYS} ${PORTSDIR}; do
+			d=${overlay}/${2}
+			f=
+			case "${d}" in
+			*@*/*) ;; # Ignore @ in the path which would not be a flavor
+			*@*)
+				f=${d##*@}
+				d=${d%@*}
+				;;
+			esac
+			if [ -f ${d}/Makefile ]; then
+				if [ -n $f ]; then
+					export FLAVOR=$f
+				fi
+				break
+			fi
+		done
 		esac
 
-		case "${d}" in
-		*@*/*) ;; # Ignore @ in the path which would not be a flavor
-		*@*)
-			export FLAVOR=${d##*@}
-			d=${d%@*}
-			;;
-		esac
 		if [ ${flavors} -eq 1 -a -n "${FLAVOR:-}" ]; then
 			port_display="${d}@${FLAVOR}"
 		else
