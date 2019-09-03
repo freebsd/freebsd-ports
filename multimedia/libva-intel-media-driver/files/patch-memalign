@@ -61,3 +61,13 @@ media_driver/linux/common/os/mos_utilities_specific.h:91:43: note: expanded from
  
      static void FreeAlignedMemory(void *memory) { free(memory); }
  
+--- media_driver/media_driver_next/agnostic/common/os/mos_utilities_next.cpp.orig	2019-08-29 07:26:40 UTC
++++ media_driver/media_driver_next/agnostic/common/os/mos_utilities_next.cpp
+@@ -30,7 +30,6 @@
+ #include "mos_util_user_interface_next.h"
+ #include <sstream>
+ #include <fcntl.h>     //open
+-#include <malloc.h>    // For memalign
+ #include <string.h>    // memset
+ #include <stdlib.h>    // atoi atol
+ #include <math.h>
