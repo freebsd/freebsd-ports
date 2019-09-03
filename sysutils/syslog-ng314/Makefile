@@ -16,7 +16,7 @@ COMMENT=	Powerful syslogd replacement
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
 DEPRECATED=		No longer supported by Balabit
-EXPIRATION_DATE=	2019-12-31
+EXPIRATION_DATE=	2019-08-31
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
