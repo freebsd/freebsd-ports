@@ -59,7 +59,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-ruby-1.9-temp
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	rubygem-allison>=0:devel/rubygem-allison
-DOCS_VARS=		RUBYGEM_ARGS+=--document rdoc,ri
+DOCS_VARS=		RUBYGEM_ARGS+="--document rdoc,ri"
 DOCS_VARS_OFF=		RUBYGEM_ARGS+=--no-document
 
 post-patch:
