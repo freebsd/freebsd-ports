@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	purple-discord
-PORTVERSION=	g20181219
+PORTVERSION=	g20190804
 CATEGORIES=	net-im
 
 MAINTAINER=	swills@FreeBSD.org
@@ -10,15 +10,16 @@ COMMENT=	Discord plugin for libpurple
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpurple.so:net-im/libpurple \
-		libjson-glib-1.0.so:devel/json-glib
+BUILD_DEPENDS=	convert:graphics/ImageMagick6
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libpurple.so:net-im/libpurple
 
-USES=		dos2unix gettext gmake pkgconfig
+USES=		dos2unix gettext gmake gnome pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb
-GH_TAGNAME=	95d247c
+GH_TAGNAME=	7b46f4b
 
 DOS2UNIX_FILES=	Makefile
 
