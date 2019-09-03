@@ -11,7 +11,7 @@ COMMENT=	Ruby algorithms and data structures
 
 LICENSE=	MIT
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
