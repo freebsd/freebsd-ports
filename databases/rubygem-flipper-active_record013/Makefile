@@ -13,8 +13,8 @@ COMMENT=	ActiveRecord adapter for Flipper
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activerecord50>=3.2:databases/rubygem-activerecord50 \
-		rubygem-flipper013>=${PORTVERSION}:devel/rubygem-flipper013
+RUN_DEPENDS=	rubygem-activerecord50>=3.2<6:databases/rubygem-activerecord50 \
+		rubygem-flipper013>=${PORTVERSION}<0.14:devel/rubygem-flipper013
 
 USES=		gem
 USE_RUBY=	yes
