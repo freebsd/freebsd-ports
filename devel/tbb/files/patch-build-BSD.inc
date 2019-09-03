@@ -1,6 +1,6 @@
---- build/BSD.inc.orig	2018-06-19 16:04:20 UTC
+--- build/BSD.inc.orig	2019-03-21 15:28:21 UTC
 +++ build/BSD.inc
-@@ -26,17 +26,23 @@ ifndef arch
+@@ -26,17 +26,26 @@ ifndef arch
          ifeq ($(shell uname -m),amd64)
                  export arch:=intel64
          endif
@@ -9,6 +9,9 @@
 +        endif
 +        ifeq ($(shell uname -m),arm64)
 +                export arch:=arm64
++        endif
++        ifeq ($(shell uname -p),powerpc64)
++                export arch:=powerpc64
 +        endif
  endif
  
@@ -27,7 +30,7 @@
  debugger ?= gdb
  
  CMD=$(SHELL) -c
-@@ -46,7 +52,7 @@ RD?=rmdir
+@@ -46,7 +55,7 @@ RD?=rmdir
  MD?=mkdir -p
  NUL= /dev/null
  SLASH=/
