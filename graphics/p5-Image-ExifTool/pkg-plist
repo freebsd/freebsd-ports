@@ -64,6 +64,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/DjVu.pm
 %%SITE_PERL%%/Image/ExifTool/EXE.pm
 %%SITE_PERL%%/Image/ExifTool/Exif.pm
+%%SITE_PERL%%/Image/ExifTool/FITS.pm
 %%SITE_PERL%%/Image/ExifTool/FLAC.pm
 %%SITE_PERL%%/Image/ExifTool/FLIF.pm
 %%SITE_PERL%%/Image/ExifTool/FLIR.pm
@@ -145,6 +146,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Olympus.pm
 %%SITE_PERL%%/Image/ExifTool/OpenEXR.pm
 %%SITE_PERL%%/Image/ExifTool/Opus.pm
+%%SITE_PERL%%/Image/ExifTool/PCX.pm
 %%SITE_PERL%%/Image/ExifTool/PDF.pm
 %%SITE_PERL%%/Image/ExifTool/PGF.pm
 %%SITE_PERL%%/Image/ExifTool/PICT.pm
@@ -244,6 +246,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::EXE.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Exif.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::FLAC.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::FITS.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::FLIF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::FLIR.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Fixup.3.gz
@@ -324,6 +327,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Olympus.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::OpenEXR.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Opus.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::PCX.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PDF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PGF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PICT.3.gz
