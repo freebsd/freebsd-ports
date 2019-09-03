@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	png++
-DISTVERSION=	0.2.9
+DISTVERSION=	0.2.10
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.savannah.nongnu.org/releases/pngpp/
 
