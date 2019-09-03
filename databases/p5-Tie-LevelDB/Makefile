@@ -14,7 +14,7 @@ COMMENT=	Perl Interface to the Google LevelDB NoSQL database
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-NOT_FOR_ARCHS=		aarch64 powerpc powerpc64 powerpcspe
+NOT_FOR_ARCHS=		aarch64 powerpc powerpcspe
 NOT_FOR_ARCHS_REASON=	does not build: Please implement AtomicPointer for this platform
 BROKEN_sparc64=	does not build: unrecognized command line options
 
@@ -29,6 +29,8 @@ MAKE_ARGS=	CC="${CXX}"
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-reserved-user-defined-literal
+.else
+CFLAGS+=	-DLEVELDB_CSTDATOMIC_PRESENT
 .endif
 
 post-patch:
