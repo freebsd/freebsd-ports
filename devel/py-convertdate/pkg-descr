@@ -1,0 +1,24 @@
+Converts between Gregorian dates and other calendar systems. Calendars include:
+
+* Baha'i
+* French Republican
+* Hebrew
+* Indian Civil
+* Islamic
+* ISO
+* Julian
+* Mayan
+* Persian.
+
+The holidays module also provides some useful holiday-calculation, with a focus
+on North American and Jewish holidays. Note that in some calendar systems, the
+day begins at sundown. Convertdate uses noon of the day in question.
+
+from convertdate import french_republican
+from convertdate import hebrew
+french_republican.from_gregorian(2014, 10, 31)
+# (223, 2, 1, 9)
+hebrew.from_gregorian(2014, 10, 31)
+# (5775, 8, 7)
+
+WWW: https://github.com/fitnr/convertdate
