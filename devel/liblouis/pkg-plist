@@ -5,6 +5,7 @@
 %%DATADIR%%/tables/Pl-Pl-g1.utb
 %%DATADIR%%/tables/Se-Se-g1.utb
 %%DATADIR%%/tables/afr-za-g1.ctb
+%%DATADIR%%/tables/afr-za-g2.ctb
 %%DATADIR%%/tables/ar-ar-comp8.utb
 %%DATADIR%%/tables/ar-ar-g1.utb
 %%DATADIR%%/tables/ar-ar-g2.ctb
@@ -85,7 +86,6 @@
 %%DATADIR%%/tables/dra.ctb
 %%DATADIR%%/tables/dra.tbl
 %%DATADIR%%/tables/el.ctb
-%%DATADIR%%/tables/el.tbl
 %%DATADIR%%/tables/en_CA.ctb
 %%DATADIR%%/tables/en_CA.tbl
 %%DATADIR%%/tables/en-GB-g2.ctb
@@ -97,6 +97,7 @@
 %%DATADIR%%/tables/en-gb-comp8.ctb
 %%DATADIR%%/tables/en-gb-g1.utb
 %%DATADIR%%/tables/en-in-g1.ctb
+%%DATADIR%%/tables/en-nabcc.utb
 %%DATADIR%%/tables/en-ueb-chardefs.uti
 %%DATADIR%%/tables/en-ueb-g1.ctb
 %%DATADIR%%/tables/en-ueb-g2.ctb
@@ -129,8 +130,6 @@
 %%DATADIR%%/tables/fi1.ctb
 %%DATADIR%%/tables/fi2.ctb
 %%DATADIR%%/tables/fi-fi-8dot.ctb
-%%DATADIR%%/tables/fi-fi.ctb
-%%DATADIR%%/tables/fi.tbl
 %%DATADIR%%/tables/fi.utb
 %%DATADIR%%/tables/fr-bfu-comp68.cti
 %%DATADIR%%/tables/fr-bfu-comp6.utb
@@ -138,14 +137,16 @@
 %%DATADIR%%/tables/fr-bfu-g2.ctb
 %%DATADIR%%/tables/ga-g1.utb
 %%DATADIR%%/tables/ga-g2.ctb
-%%DATADIR%%/tables/ga.tbl
 %%DATADIR%%/tables/gd.ctb
 %%DATADIR%%/tables/gd.tbl
 %%DATADIR%%/tables/gez.tbl
 %%DATADIR%%/tables/gon.ctb
 %%DATADIR%%/tables/gon.tbl
-%%DATADIR%%/tables/gr-bb.ctb
 %%DATADIR%%/tables/gr-pl-comp8.uti
+%%DATADIR%%/tables/grc-international-common.uti
+%%DATADIR%%/tables/grc-international-composed.uti
+%%DATADIR%%/tables/grc-international-decomposed.uti
+%%DATADIR%%/tables/grc-international-en.utb
 %%DATADIR%%/tables/gu-in-g1.utb
 %%DATADIR%%/tables/gujarati.cti
 %%DATADIR%%/tables/gurumuki.cti
@@ -341,7 +342,6 @@
 %%DATADIR%%/tables/ukmaths_unicode_defs.cti
 %%DATADIR%%/tables/uk.utb
 %%DATADIR%%/tables/unicode-braille.utb
-%%DATADIR%%/tables/unicodedefs.cti
 %%DATADIR%%/tables/unicode.dis
 %%DATADIR%%/tables/unicode-without-blank.dis
 %%DATADIR%%/tables/uni-text.dis
@@ -380,13 +380,12 @@ bin/lou_maketable.d/wrap_patgen.sh
 bin/lou_tableinfo
 bin/lou_trace
 bin/lou_translate
-include/liblouis/internal.h
 include/liblouis/liblouis.h
 libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
-lib/liblouis.so.17
-lib/liblouis.so.17.0.2
+lib/liblouis.so.19
+lib/liblouis.so.19.0.0
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
