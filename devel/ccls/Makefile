@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ccls
-DISTVERSION=	0.20190823
+DISTVERSION=	0.20190823.1
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/tobik
 
@@ -28,9 +28,8 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_MASTER_SITES=	LOCAL/tobik:docs \
-			https://pkg.tobik.me/distfiles/:docs
-DOCS_DISTFILES=		MaskRay-ccls.wiki-20190226.tar.gz:docs
+DOCS_MASTER_SITES=	LOCAL/tobik:docs
+DOCS_DISTFILES=		MaskRay-ccls.wiki-20190903.tar.gz:docs
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
