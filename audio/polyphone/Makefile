@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	polyphone
-DISTVERSION=	2.0.1.20190716
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical user interface for editing soundfont (sf2 and sfz) files
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libjack.so:audio/jack \
@@ -18,10 +18,9 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libstk.so:audio/stk \
 		libvorbisfile.so:audio/libvorbis
 
-USES=		compiler:c++11-lang desktop-file-utils gl gnome pkgconfig qmake:outsource qt:5 shared-mime-info ssl
+USES=		compiler:c++11-lang desktop-file-utils gl gnome pkgconfig qmake:outsource qt:5 shared-mime-info ssl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	davy7125
-GH_TAGNAME=	d7459fa
 USE_GL=		gl
 USE_QT=		core concurrent gui network printsupport svg widgets buildtools_build qmake_build
 USE_GNOME=	glib20
