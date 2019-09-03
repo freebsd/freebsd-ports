@@ -3,7 +3,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	3.0.4
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -24,10 +24,11 @@ COMMENT?=	Free Pascal compiler with Turbo and Delphi
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES+=		gmake iconv
+USE_BINUTILS=	yes
 BOOTVER=	3.0.4
 MANVER=		3.0.4
 
-LDPATH=		"/usr/bin/ld.bfd"
+LDPATH=		"${LOCALBASE}/bin/ld.bfd"
 
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	fpc-svn

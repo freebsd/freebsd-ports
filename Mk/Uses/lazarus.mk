@@ -72,7 +72,8 @@ LAZARUS_DIR?=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386 and amd64
 
-BUILD_DEPENDS+=		fpcres:lang/fpc-utils
+BUILD_DEPENDS+=		${LOCALBASE}/bin/as:devel/binutils \
+			fpcres:lang/fpc-utils
 
 BUILDNAME=		${LAZARUS_ARCH}-${OPSYS:tl}
 LCL_UNITS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}

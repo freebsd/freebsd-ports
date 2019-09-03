@@ -2,7 +2,7 @@
 
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-passrc
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	Free Pascal language parsing library (FPC)
 

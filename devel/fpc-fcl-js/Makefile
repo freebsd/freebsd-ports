@@ -2,7 +2,7 @@
 
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-js
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	Free Pascal Javascript scanner/parser/syntax tree (FCL)
 

@@ -2,7 +2,7 @@
 
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-pdf
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	Free Pascal pdf (FCL)
 

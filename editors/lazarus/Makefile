@@ -3,7 +3,7 @@
 PORTNAME=	lazarus
 PORTVERSION=	2.0.4
 PKGNAMESUFFIX?=  -gtk2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION} \
 		LOCAL/acm/freepascal
@@ -14,8 +14,10 @@ COMMENT?=	Portable Delphi-like IDE for the FreePascal compiler (GTK2)
 
 CONFLICTS?=	${PORTNAME}-qt5-*
 
-BUILD_DEPENDS?=	fpcres:lang/fpc-utils
-RUN_DEPENDS?=	fpcres:lang/fpc-utils \
+BUILD_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
+		fpcres:lang/fpc-utils
+RUN_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
+		fpcres:lang/fpc-utils \
 		${LOCALBASE}/share/fpc-source-${FPC_DEFAULT}/Makefile.fpc:lang/fpc-source
 
 ONLY_FOR_ARCHS=	i386 amd64

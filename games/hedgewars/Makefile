@@ -3,7 +3,7 @@
 
 PORTNAME=	hedgewars
 PORTVERSION=	0.9.25
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.hedgewars.org/download/releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -27,7 +27,6 @@ USE_QT=		core gui widgets network \
 		qmake_build buildtools_build \
 		linguisttools_build
 USE_GL=		gl glu glew
-LLD_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/${PORTNAME} bin/hwengine \

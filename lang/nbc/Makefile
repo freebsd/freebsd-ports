@@ -3,7 +3,7 @@
 
 PORTNAME=		nbc
 PORTVERSION=		1.2.1.r4
-PORTREVISION=		13
+PORTREVISION=		14
 CATEGORIES=		lang
 MASTER_SITES=		SF/bricxcc/NBC_NXC/NBC%20release%20${PORTVERSION:S/.r/%20r/}
 DISTNAME=		${PORTNAME}-${PORTVERSION}.src
@@ -32,8 +32,6 @@ PLIST_FILES=		bin/nbc \
 
 PORTDOCS=		Changelog \
 			Readme
-
-LLD_UNSAFE=		yes # PR 228613, needs FPC changes?
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/${MAKEFILE}
