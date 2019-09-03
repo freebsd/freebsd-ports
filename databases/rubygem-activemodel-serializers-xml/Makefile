@@ -14,10 +14,11 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel5>=5.0:databases/rubygem-activemodel5 \
 		rubygem-activesupport5>=5.0:devel/rubygem-activesupport5 \
-		rubygem-builder>=3.1:devel/rubygem-builder
+		rubygem-builder>=3.1<4:devel/rubygem-builder
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
