@@ -9,6 +9,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby/GStreamer is a Ruby binding for GStreamer
 
 LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 LIB_DEPENDS=	libclutter-gst-3.0.so:multimedia/clutter-gst3
