@@ -26,13 +26,13 @@ nox_PKGNAMESUFFIX=	-devel-nox
 
 USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 .if ${FLAVOR:U} != nox
-USES+=		desktop-file-utils
+USES+=		desktop-file-utils xorg
 USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xrender xt
 .endif
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	e8c46c2
+GH_TAGNAME=	5f089ac
 
 CONFIGURE_ARGS=	--disable-build-details \
 		--localstatedir=/var
@@ -198,7 +198,7 @@ XWIDGETS_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 XWIDGETS_IMPLIES=	GTK3
 
 EMACS_VER=	27.0.50
-EMACS_REV=	20190901
+EMACS_REV=	20190903
 
 .include <bsd.port.options.mk>
 
