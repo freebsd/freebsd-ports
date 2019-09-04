@@ -9,6 +9,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby binding for gtksourceview-2.x
 
 LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 RUN_DEPENDS=	rubygem-gtk2>=${PORTVERSION}:x11-toolkits/rubygem-gtk2
 
