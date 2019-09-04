@@ -2,14 +2,16 @@
 
 PORTNAME=	convertdate
 PORTVERSION=	2.1.3
-CATEGORIES=	devel
-MASTER_SITES=	https://files.pythonhosted.org/packages/81/73/287ef9e7989661ed8218fe074603041d2ea6d76e06afebe1c646a7fd9d65/
+PORTREVISION=	1
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
 COMMENT=	Converts between Gregorian dates and other calendar systems
 
 LICENSE=	MIT
+LICENSE_FILE=	LICENSE
 
 USES=		python
 USE_PYTHON=	autoplist distutils
