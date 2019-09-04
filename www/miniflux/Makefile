@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	miniflux
+PORTREVISION=	1
 DISTVERSION=	2.0.17
 CATEGORIES=	www
 
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		go:modules pgsql
+USES=		go:modules
 
 USERS=	miniflux
 GROUPS=	miniflux
