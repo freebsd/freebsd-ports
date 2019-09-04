@@ -2,14 +2,16 @@
 
 PORTNAME=	fbprophet
 PORTVERSION=	0.5
-CATEGORIES=	devel
-MASTER_SITES=	https://files.pythonhosted.org/packages/33/fb/ad98d46773929079657706e6b2b6e366ba6c282bc2397d8f9b0ea8e5614c/
+PORTREVISION=	1
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
 COMMENT=	Forecasting time series data based on an additive model
 
 LICENSE=	MIT
+LICENSE_FILE=	LICENSE
 
 USES=		python
 USE_PYTHON=	autoplist distutils
