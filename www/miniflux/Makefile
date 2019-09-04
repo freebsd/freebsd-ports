@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		go pgsql
+USES=		go:modules pgsql
 
 USERS=	miniflux
 GROUPS=	miniflux
