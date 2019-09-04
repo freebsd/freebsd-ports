@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	toot
-DISTVERSION=	0.22.0
+DISTVERSION=	0.23.1
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -26,12 +26,12 @@ GH_ACCOUNT=	ihabunek
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS
-
 PORTDOCS=	CHANGELOG.md README.rst
 
 MAKE_ENV=	PATH+=${STAGEDIR}${PREFIX}/bin
 TEST_TARGET=	coverage test
+
+OPTIONS_DEFINE=	DOCS
 
 pre-test:
 	@${REINPLACE_CMD} -e 's|py.test |py.test-${PYTHON_VER} |' ${WRKSRC}/Makefile
