@@ -17,17 +17,19 @@ USES=		gmake fortran jpeg readline
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	usnistgov
-GH_PROJECT=	dataplot
 GH_TAGNAME=	7236db0
 
 USE_XORG=	x11 xi
-USE_GNOME+=	cairo
+USE_GNOME=	cairo
 WRKSRC_SUBDIR=	src
 MAXOBV?=	450000	# Change if you need more observations/variable
 
-OPTIONS_DEFINE=	DOCS
-
 FFLAGS+=	-DLINUX -fdefault-real-8 -fdefault-double-8 -std=legacy
+
+PORTDATA=	*
+PLIST_FILES=	bin/dataplot bin/xdataplot
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/MAXOBV=1500000/MAXOBV=${MAXOBV}/' \
@@ -41,6 +43,6 @@ post-patch:
 		-e 's;%%LOCALBASE%%;${LOCALBASE};g' ${WRKSRC}/Makefile
 
 post-build:
-	${STRIP_CMD} ${WRKSRC}/dataplot
+	@${STRIP_CMD} ${WRKSRC}/dataplot
 
 .include <bsd.port.mk>
