@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	irssi-scripts
-PORTVERSION=	20170711
+PORTVERSION=	20181120
 CATEGORIES=	irc
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -12,7 +12,7 @@ COMMENT=	Collection of useful scripts for the irssi IRC-client
 
 RUN_DEPENDS=	irssi:irc/irssi
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		shebangfix tar:xz
 SHEBANG_FILES=	scripts/*.pl
