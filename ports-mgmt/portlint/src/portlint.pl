@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.494 2019/04/05 13:21:00 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.498 2019/09/04 15:03:38 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 18;
-my $micro = 9;
+my $micro = 10;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -3167,12 +3167,12 @@ MAINTAINER COMMENT
 		}
 
 		# Check for proper license file usage
-		if ($tmp =~ /\nLICENSE_FILE_([^\s=]+)([\s=])/) {
+		while ($tmp =~ /\nLICENSE_FILE_([^\s=]+)([\s=])/g) {
 			my $lfn = $1;
 			my $nchar = $2;
 			if (!grep(/\b$lfn\b/, $makevar{LICENSE})) {
 				&perror("FATAL", $file, -1, "license specified is $makevar{LICENSE}, ".
-					"but LICENSE_FILE specified is for $lfn.");
+					"but found LICENSE_FILE for $lfn.");
 			}
 
 			if ($lfn =~ /\+$/ && $nchar eq '=') {
@@ -3316,7 +3316,10 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 
 		}
 
-		&checkextra($tmp, 'USES/USE_x', $file);
+		# XXX: We should check this.  But, one is allowed to add _related_ items to
+		# a USE_ or USES item in this same section.  Since this would be an ever-
+		# moving target, remove the check.
+		#&checkextra($tmp, 'USES/USE_x', $file);
 
 		$idx++;
 	}
@@ -3397,8 +3400,8 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 	my $lps = $makevar{LICENSE_PERMS} // '';
 	if ($committer && ($tmp =~ /\n(RESTRICTED|NO_CDROM|NO_PACKAGE)[+?]?=/ ||
 		$lps =~ /\bno-\b/)) {
-		&perror("WARN", $file, -1, "Restrictive licensing found.  ".
-			"Do not forget to update ports/LEGAL.");
+		&perror("WARN", $file, -1, "Possible restrictive licensing found.  ".
+			"If there are, in fact, limitations to use or distribution, please update ports/LEGAL.");
 	}
 
 	if ($tmp =~ /\nNO_PACKAGE[+?]?=/) {
