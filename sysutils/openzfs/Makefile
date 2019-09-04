@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openzfs
-PORTVERSION=	2019072200
+PORTVERSION=	2019080800
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -25,7 +25,7 @@ OPTIONS_SUB=    yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	zfsonfreebsd
 GH_PROJECT=	ZoF
-GH_TAGNAME=	05f627f
+GH_TAGNAME=	df21d39
 
 .include <bsd.port.pre.mk>
 
@@ -43,7 +43,7 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
 PLIST_SUB+=     PYTHON=""
 .else
-CONFIGURE_ARGS+=	--without-python --disable-pyzfs
+CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=     PYTHON="@comment "
 .endif
 
