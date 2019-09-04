@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	state_machines-activemodel
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Support for creating state machines for attributes on ActiveModel
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activemodel50>=4.1<6.1:databases/rubygem-activemodel50 \
+RUN_DEPENDS=	rubygem-activemodel50>=4.1:databases/rubygem-activemodel50 \
 		rubygem-state_machines>=0.5.0:devel/rubygem-state_machines
 
 USES=		gem
