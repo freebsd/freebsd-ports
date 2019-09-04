@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 
 USES=		autoreconf ssl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE}
 
 OPTIONS_DEFINE=	DOCS
 
