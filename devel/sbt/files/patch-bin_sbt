@@ -1,20 +1,55 @@
---- bin/sbt.orig	2018-12-30 07:45:19 UTC
+--- bin/sbt.orig	2019-09-04 07:20:45 UTC
 +++ bin/sbt
-@@ -63,7 +63,7 @@ cygwinpath() {
+@@ -72,7 +72,7 @@ cygwinpath() {
+ 
+ 
+ declare -r sbt_bin_dir="$(dirname "$(realpathish "$0")")"
+-declare -r sbt_home="$(dirname "$sbt_bin_dir")"
++declare -r sbt_home="$sbt_bin_dir"
+ 
+ echoerr () {
+   echo 1>&2 "$@"
+@@ -85,7 +85,7 @@ dlog () {
+ }
+ 
+ jar_file () {
+-  echo "$(cygwinpath "${sbt_home}/bin/sbt-launch.jar")"
++  echo "$(cygwinpath "${sbt_home}/sbt-launch.jar")"
+ }
+ 
+ acquire_sbt_jar () {
+@@ -277,14 +277,14 @@ getPreloaded() {
+ }
+ 
+ syncPreloaded() {
+-  local source_preloaded="$sbt_home/lib/local-preloaded/"
++  local source_preloaded="$sbt_home/local-preloaded/"
+   local target_preloaded="$(getPreloaded)"
+   if [[ "$init_sbt_version" == "" ]]; then
+     # FIXME: better $init_sbt_version detection
+     init_sbt_version="$(ls -1 "$source_preloaded/org/scala-sbt/sbt/")"
+   fi
+   [[ -f "$target_preloaded/org.scala-sbt/sbt/$init_sbt_version/jars/sbt.jar" ]] || {
+-    # lib/local-preloaded exists (This is optional)
++    # local-preloaded exists (This is optional)
+     [[ -d "$source_preloaded" ]] && {
+       command -v rsync >/dev/null 2>&1 && {
+         mkdir -p "$target_preloaded"
+@@ -401,7 +401,7 @@ run() {
  
  declare -r noshare_opts="-Dsbt.global.base=project/.sbtboot -Dsbt.boot.directory=project/.boot -Dsbt.ivy.home=project/.ivy"
  declare -r sbt_opts_file=".sbtopts"
 -declare -r etc_sbt_opts_file="/etc/sbt/sbtopts"
-+declare -r etc_sbt_opts_file="%%PREFIX%%/etc/sbtopts"
++declare -r etc_sbt_opts_file="%%PREFIX%%/etc/sbt/sbtopts"
  declare -r dist_sbt_opts_file="${sbt_home}/conf/sbtopts"
  declare -r win_sbt_opts_file="${sbt_home}/conf/sbtconfig.txt"
  
-@@ -101,7 +101,7 @@ Usage: `basename "$0"` [options]
-   SBT_OPTS           environment variable, if unset uses "$default_sbt_opts"
-   .sbtopts           if this file exists in the current directory, its contents
-                      are prepended to the runner args
--  /etc/sbt/sbtopts   if this file exists, it is prepended to the runner args
-+  %%PREFIX%%/etc/sbtopts   if this file exists, it is prepended to the runner args
-   -Dkey=val          pass -Dkey=val directly to the java runtime
-   -J-X               pass option -X directly to the java runtime 
-                      (-J is stripped)
+@@ -446,7 +446,7 @@ Usage: `basename "$0"` [options]
+   SBT_OPTS            environment variable, if unset uses "$default_sbt_opts"
+   .sbtopts            if this file exists in the current directory, its contents
+                       are prepended to the runner args
+-  /etc/sbt/sbtopts    if this file exists, it is prepended to the runner args
++  %%PREFIX%%/etc/sbt/sbtopts    if this file exists, it is prepended to the runner args
+   -Dkey=val           pass -Dkey=val directly to the java runtime
+   -J-X                pass option -X directly to the java runtime
+                       (-J is stripped)
