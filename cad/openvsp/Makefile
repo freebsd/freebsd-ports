@@ -2,8 +2,7 @@
 
 PORTNAME=	openvsp
 DISTVERSIONPREFIX=	${GH_PROJECT}_
-DISTVERSION=	3.17.1
-PORTREVISION=	1
+DISTVERSION=	3.18.0
 CATEGORIES=	cad
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -30,7 +29,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 
 USES=		compiler:c++11-lang cmake:noninja localbase\
-		gl gnome jpeg
+		gl gnome jpeg xorg
 USE_GITHUB=	yes
 GH_PROJECT=	OpenVSP
 GH_ACCOUNT=	${GH_PROJECT}
