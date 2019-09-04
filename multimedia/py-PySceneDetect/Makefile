@@ -18,9 +18,9 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}opencv>=0:graphics/py-opencv@${PY_FLAVOR} \
 		mkvmerge:multimedia/mkvtoolnix
 
-USES=		python
+USES=		python:2.7
 USE_GITHUB=	yes
 GH_ACCOUNT=	Breakthrough
-USE_PYTHON=	autoplist concurrent distutils flavors
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
