@@ -2,14 +2,16 @@
 
 PORTNAME=	lunardate
 PORTVERSION=	0.2.0
-CATEGORIES=	devel
-MASTER_SITES=	https://files.pythonhosted.org/packages/d7/ce/571488ce9f7c79f8e1e0e4269b72e32c990547d41c5c77ee81dc069795db/
+PORTREVISION=	1
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
 COMMENT=	Chinese Calendar Library in Pure Python
 
 LICENSE=	MIT
+LICENSE_FILE=	LICENSE.txt
 
 USES=		python
 USE_PYTHON=	autoplist distutils
