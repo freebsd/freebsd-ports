@@ -12908,3 +12908,8 @@ lang/pure||2019-09-01|Has expired: Depends on expiring devel/llvm35
 devel/pure-ffi||2019-09-01|Has expired: Depends on expiring devel/llvm35
 devel/llvm35||2019-09-01|Has expired: Obsolete and unmaintained
 archivers/py-attic|archivers/py-borg|2019-09-02|Has expired: Unsupported by upstream, please migrate to archivers/py-borg.  See https://borgbackup.readthedocs.io/en/stable/usage/upgrade.html#borg-upgrade
+sysutils/syslog-ng39|sysutils/syslog-ng|2019-09-04|Has expired: No longer supported by Balabit
+sysutils/syslog-ng312|sysutils/syslog-ng|2019-09-04|Has expired: No longer officially supported by Balabit
+sysutils/syslog-ng310|sysutils/syslog-ng|2019-09-04|Has expired: No longer supported by Balabit
+sysutils/syslog-ng313|sysutils/syslog-ng|2019-09-04|Has expired: No longer officially supported by Balabit
+sysutils/syslog-ng314|sysutils/syslog-ng|2019-09-04|Has expired: No longer supported by Balabit
