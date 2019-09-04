@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clixon
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	dcornejo@netgate.com
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libcligen.so:devel/cligen \
 		libfcgi.so:www/fcgi
-BUILD_DEPENDS=	cligen>=3.9.0:devel/cligen
+BUILD_DEPENDS=	cligen>=4.0.0:devel/cligen
 
 USES=		autoreconf bison gmake
 
@@ -29,7 +29,5 @@ CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} \
 CONFIGURE_ENV=	YACC="bison -y"
 
 SUB_FILES=	pkg-message
-
-MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
