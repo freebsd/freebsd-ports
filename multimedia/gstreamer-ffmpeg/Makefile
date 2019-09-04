@@ -33,7 +33,6 @@ CONFIGURE_ARGS=	--without-system-ffmpeg \
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
 LDFLAGS+=	-Wl,-Bsymbolic
-LDFLAGS_aarch64=-Wl,-znotext
 LDFLAGS_armv6=	-Wl,-znotext
 LDFLAGS_armv7=	-Wl,-znotext
 LDFLAGS_i386=	-Wl,-znotext
