@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sbt
-PORTVERSION=	1.2.8
+PORTVERSION=	1.3.0
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/sbt/sbt/releases/download/v${PORTVERSION}/
 
@@ -11,12 +11,13 @@ COMMENT=	Build tool for Scala projects
 
 LICENSE=	APACHE20
 
+USES=		tar:tgz
+
 OPTIONS_DEFINE=	ADVANCED PRELOADED
 OPTIONS_DEFAULT=ADVANCED
 ADVANCED_DESC=	Install advanced bash shell-script
 PRELOADED_DESC=	Install preloaded jars for offline usage
 
-USES=		tar:tgz
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_JAVA=	yes
@@ -41,7 +42,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/sbt-launch.jar ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MADVANCED}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/sbt ${STAGEDIR}${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/sbt-launch-lib.bash ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}/conf
 	${INSTALL_DATA} ${FILESDIR}/sbtopts ${STAGEDIR}${DATADIR}/conf
 .if ${PORT_OPTIONS:MPRELOADED}
