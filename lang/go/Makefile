@@ -2,17 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.12.9
+PORTVERSION=	1.13
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://golang.org/dl/
 DISTNAME=	go${PORTVERSION}.src
-
-PATCH_SITES=	https://github.com/golang/go/commit/
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=221297#c23
-PATCHFILES=	3b6216ed0601c81fe42c2a4738d419afccb62163.patch:-p1 \
-		0bd101cecc5458a8463b8d672bf1745c3cbb7c02.patch:-p1 \
-		a6e892d26d6ee59799f55bc50521605ebf75ea67.patch:-p1
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Go programming language
