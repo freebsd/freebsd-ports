@@ -8,7 +8,7 @@ CATEGORIES=	cad
 MASTER_SITES=	https://git.tuxfamily.org/qet/qet.git/snapshot/
 DISTNAME=	qet-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	QElectroTech is application to design electric diagrams
 
 LICENSE=	GPLv2
