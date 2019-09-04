@@ -9,6 +9,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby binding for cairo-gobject
 
 LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 RUN_DEPENDS=	rubygem-cairo>=1.16.2:graphics/rubygem-cairo \
 		rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2
