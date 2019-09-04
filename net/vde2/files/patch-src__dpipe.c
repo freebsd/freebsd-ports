@@ -1,6 +1,6 @@
---- src/dpipe.c.orig	2011-11-24 01:41:18.000000000 +0900
-+++ src/dpipe.c	2011-11-28 03:05:11.000000000 +0900
-@@ -201,7 +201,7 @@
+--- src/dpipe.c.orig	2011-11-23 16:41:18 UTC
++++ src/dpipe.c
+@@ -201,7 +201,7 @@ int main(int argc, char *argv[]) 
  
  	if (daemonize != 0)
  		daemon(0,0);

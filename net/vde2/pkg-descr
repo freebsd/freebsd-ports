@@ -4,4 +4,4 @@ multiple qemu instances together in a shared virtual network, or
 tunneling over the Internet.  Physical hosts can be joined to the
 virtual network by means of the tap(4) driver.
 
-WWW: http://vde.sourceforge.net/
+WWW: https://github.com/virtualsquare/vde-2
