@@ -3,6 +3,7 @@
 PORTNAME=	ghq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.6
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -19,7 +20,7 @@ GH_TUPLE=	Songmu:gitconfig:v0.0.2:songmu_gitconfig/vendor/github.com/Songmu/gitc
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:net:3ec191127204:golang_net/vendor/golang.org/x/net \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
-		golang:xerrors:3ee3066db522:golang_xerrors/vendor/golang.org/x/xerrors \
+		golang:xerrors:a985d3407aa7:golang_xerrors/vendor/golang.org/x/xerrors \
 		motemen:go-colorine:45d19169413a:motemen_go_colorine/vendor/github.com/motemen/go-colorine \
 		urfave:cli:v1.20.0:urfave_cli/vendor/github.com/urfave/cli
 
