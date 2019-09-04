@@ -1859,6 +1859,7 @@ share/locale/ja/LC_MESSAGES/kdevqmakemanager.mo
 share/locale/ja/LC_MESSAGES/kdevqmljs.mo
 share/locale/ja/LC_MESSAGES/kdevqthelp.mo
 share/locale/ja/LC_MESSAGES/kdevquickopen.mo
+share/locale/ja/LC_MESSAGES/kdevscratchpad.mo
 share/locale/ja/LC_MESSAGES/kdevsourceformatter.mo
 share/locale/ja/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/ja/LC_MESSAGES/kdevsubversion.mo
@@ -2962,6 +2963,7 @@ share/locale/zh_CN/LC_MESSAGES/kdevqmakemanager.mo
 share/locale/zh_CN/LC_MESSAGES/kdevqmljs.mo
 share/locale/zh_CN/LC_MESSAGES/kdevqthelp.mo
 share/locale/zh_CN/LC_MESSAGES/kdevquickopen.mo
+share/locale/zh_CN/LC_MESSAGES/kdevscratchpad.mo
 share/locale/zh_CN/LC_MESSAGES/kdevsourceformatter.mo
 share/locale/zh_CN/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/zh_CN/LC_MESSAGES/kdevsubversion.mo
