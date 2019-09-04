@@ -17,6 +17,5 @@ GH_ACCOUNT=	olofhagsand
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
