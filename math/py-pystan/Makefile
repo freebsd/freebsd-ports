@@ -11,7 +11,7 @@ MAINTAINER=	gmm@tutanota.com
 COMMENT=	PyStan is the Python interface for Stan
 
 LICENSE=	GPLv3
-LICENSE_FILE	LICENSE
+LICENSE_FILE=	LICENSE
 
 USES=		python shebangfix
 USE_PYTHON=	autoplist distutils
