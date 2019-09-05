@@ -1,0 +1,10 @@
+--- src/svxlink/modules/metarinfo/CMakeLists.txt.orig	2019-09-01 20:12:38 UTC
++++ src/svxlink/modules/metarinfo/CMakeLists.txt
+@@ -6,6 +6,7 @@ set(MODNAME MetarInfo)
+ 
+ # Project libraries to link to
+ set(LIBS ${LIBS} ${CURL_LIBRARY})
++include_directories(AFTER "${LOCALBASE}/include")
+ 
+ # The version tag name without the VER_ prefix
+ set(VERNAME ${MODNAME})

@@ -1,4 +1,4 @@
---- src/CMakeLists.txt.orig	2018-03-04 18:59:29 UTC
+--- src/CMakeLists.txt.orig	2019-09-01 20:12:38 UTC
 +++ src/CMakeLists.txt
 @@ -37,6 +37,7 @@ set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin
  list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules/")
@@ -21,7 +21,7 @@
  # Warnings should be enabled for GCC. Also turning off the NDEBUG flag
  # since that remove asserts.
  if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
-@@ -73,7 +68,6 @@ if(NOT CMAKE_BUILD_TYPE)
+@@ -79,7 +74,6 @@ if(NOT CMAKE_BUILD_TYPE)
        FORCE)
  endif(NOT CMAKE_BUILD_TYPE)
  
@@ -29,7 +29,7 @@
  ##############################################################################
  # Install targets properties setup
  ##############################################################################
-@@ -87,6 +81,18 @@ if(NOT DEFINED INCLUDE_INSTALL_DIR)
+@@ -93,6 +87,18 @@ if(NOT DEFINED INCLUDE_INSTALL_DIR)
    set(INCLUDE_INSTALL_DIR ${CMAKE_INSTALL_FULL_INCLUDEDIR})
  endif(NOT DEFINED INCLUDE_INSTALL_DIR)
  
@@ -48,12 +48,12 @@
  # Where to install libraries
  if(NOT DEFINED LIB_INSTALL_DIR)
    #set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX})
-@@ -327,21 +333,24 @@ set(LIBS ${LIBS} ${SIGC2_LIBRARIES})
+@@ -333,21 +339,23 @@ set(LIBS ${LIBS} ${SIGC2_LIBRARIES})
  # Find the chown utility
  include(FindCHOWN)
  
 -set(SVXLINK_USER "svxlink" CACHE STRING "Set SvxLink system user")
--set(SVXLINK_GROUP "daemon" CACHE STRING "Set SvxLink system group")
+-set(SVXLINK_GROUP "svxlink" CACHE STRING "Set SvxLink system group")
 -message(STATUS "SvxLink user = ${SVXLINK_USER}")
 -message(STATUS "SvxLink group = ${SVXLINK_GROUP}")
 -
@@ -74,7 +74,6 @@
 +set(SVXLINK_GROUP "daemon" CACHE STRING "Set SvxLink system group")
 +message(STATUS "SvxLink user = ${SVXLINK_USER}")
 +message(STATUS "SvxLink group = ${SVXLINK_GROUP}")
-+
  
  # Experimental CPack package building
  set(CPACK_SET_DESTDIR "ON")
