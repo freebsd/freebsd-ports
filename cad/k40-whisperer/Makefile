@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	k40-whisperer
-DISTVERSION=	0.19
+DISTVERSION=	0.35
 CATEGORIES=	cad python
 MASTER_SITES=	http://www.scorchworks.com/K40whisperer/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	K40_Whisperer-${DISTVERSION}_src
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -17,50 +16,46 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}usb>0:devel/py-usb@${PY_FLAVOR}
 
-USES=		python:2.7 zip
+USES=		python:run,-3.7 shebangfix zip
+SHEBANG_FILES=	*.py
 
-OPTIONS_DEFINE=		DOCS
-
+NO_ARCH=	yes
 NO_BUILD=	yes
 
-WHISPERER_COMMAND=	${PORTNAME}
+DESKTOP_ENTRIES=	"K40 Whisperer" "${COMMENT}" \
+			"${DATADIR}/scorchworks.ico" "${WHISPERER_COMMAND}" \
+			"Development;Art;Engineering;VectorGraphics;" false
+
+PLIST_SUB=	WHISPERER_COMMAND=${WHISPERER_COMMAND}
 SUB_FILES=	pkg-message ${WHISPERER_COMMAND}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} WHISPERER_COMMAND=${WHISPERER_COMMAND}
-PLIST_SUB=	WHISPERER_COMMAND=${WHISPERER_COMMAND}
 
-DATA=	bezmisc.py \
-	CC.png \
-	cspsubdiv.py \
-	cubicsuperpath.py \
-	down.png \
-	dxf.py \
-	egv.py \
-	emblem64 \
-	ffgeom.py \
-	g_code_library.py \
-	inkex.py \
-	interpolate.py \
-	k40_whisperer.py \
-	left.png \
-	LL.png \
-	LR.png \
-	nano_library.py \
-	right.png \
-	simplepath.py \
-	simplestyle.py \
-	simpletransform.py \
-	svg_reader.py \
-	UL.png \
-	up.png \
-	UR.png
+OPTIONS_DEFINE=	DOCS
 
-DOCS=	README_Linux.txt \
-	README_MacOS.md
+DOCS=		Change_Log.txt \
+		README_Linux.txt \
+		README_MacOS.md
+NON_DATA_FILES=	${DOCS} \
+		${LICENSE_FILE:S,${WRKSRC}/,,} \
+		build_exe.bat \
+		py2exe_setup.py \
+		requirements.txt
+WHISPERER_COMMAND=	${PORTNAME}
+
+post-patch:
+	# Replace every leading tab with 8 spaces. It is a workaround for
+	# misindented Python scripts.
+	@${REINPLACE_CMD} -e 's|^	|        |g' \
+		-e ':again' \
+		-e 's|^\(        \)*	|\1        |g' \
+		-e 't again' \
+		${WRKSRC}/*.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${WHISPERER_COMMAND} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${DATA:S,^,${WRKSRC}/,} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${DATADIR} "${NON_DATA_FILES:S,^,! -name &,}")
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
