@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocrmypdf
-DISTVERSION=	9.0.1
+DISTVERSION=	9.0.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,9 +26,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.9.1:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdfminer.six>=20181108:textproc/py-pdfminer.six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pikepdf>=1.6.0,<2:textproc/py-pikepdf@${PY_FLAVOR} \
 		tesseract:graphics/tesseract
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.4.1,<5:devel/py-pytest@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.4.1:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-helpers-namespace>=2019.1.8:devel/py-pytest-helpers-namespace@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=1.28.0:devel/py-pytest-xdist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=1.29.0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=2.6.1:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdf2>=1.26.0:print/py-pdf2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xmp-toolkit>=0:textproc/py-python-xmp-toolkit@${PY_FLAVOR}
@@ -58,6 +58,7 @@ NO_ARCH=	yes
 PLIST_FILES=	etc/bash_completion.d/ocrmypdf.bash share/fish/vendor_completions.d/ocrmypdf.fish
 
 OPTIONS_DEFINE=	PNGQUANT
+OPTIONS_DEFAULT=PNGQUANT
 
 PNGQUANT_DESC=	Optimizes the encoding of PNG-style images in PDFs
 
@@ -79,8 +80,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/completion/ocrmypdf.bash ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
 	${INSTALL_DATA} ${WRKSRC}/misc/completion/ocrmypdf.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/
 
-# Note: The test "test_mono_not_inverted" will fail if graphics/pngquant is installed.
-# See also: https://github.com/jbarlow83/OCRmyPDF/issues/417
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} -m pytest -rs -v \
 	       	-n ${MAKE_JOBS_NUMBER} -k ' \
