@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minitar
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
