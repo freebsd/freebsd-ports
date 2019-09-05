@@ -124,6 +124,7 @@ share/locale/zh_CN/LC_MESSAGES/step_qt.qm
 share/locale/zh_TW/LC_MESSAGES/step.mo
 share/locale/zh_TW/LC_MESSAGES/step_qt.qm
 share/metainfo/org.kde.step.appdata.xml
+share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/brownian.step
 %%DATADIR%%/examples/doublependulum.step
 %%DATADIR%%/examples/eightpendula.step

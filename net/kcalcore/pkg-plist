@@ -122,6 +122,7 @@ include/KF5/KCalendarCore/kcalendarcore/sorting.h
 include/KF5/KCalendarCore/kcalendarcore/todo.h
 include/KF5/KCalendarCore/kcalendarcore/vcalformat.h
 include/KF5/KCalendarCore/kcalendarcore/visitor.h
+include/KF5/kcalcore_version.h
 include/KF5/kcalendarcore_version.h
 lib/cmake/KF5CalendarCore/FindLibIcal.cmake
 lib/cmake/KF5CalendarCore/KF5CalendarCoreConfig.cmake
