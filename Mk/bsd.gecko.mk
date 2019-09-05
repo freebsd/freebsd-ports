@@ -247,7 +247,8 @@ RUN_DEPENDS+=	ffmpeg>=0.8,1:multimedia/ffmpeg
 .endif
 
 .if ${PORT_OPTIONS:MGCONF}
-USE_GNOME+=		gconf2
+# XXX USE_GNOME+=gconf2:build is not supported
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libgconf-2.so:devel/gconf2
 MOZ_OPTIONS+=	--enable-gconf
 .else
 MOZ_OPTIONS+=	--disable-gconf
