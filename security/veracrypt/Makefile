@@ -25,6 +25,8 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
 .if ${ARCH} == "i386"
 MAKE_ENV+=	LFLAGS=-Wl,-z,notext
 .endif
@@ -44,4 +46,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/License.txt ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/html
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
