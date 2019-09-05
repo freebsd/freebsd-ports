@@ -856,11 +856,11 @@ MASTER_SITE_MYSQL+= \
 .if !defined(IGNORE_MASTER_SITE_NETBSD)
 MASTER_SITE_NETBSD+= \
 	https://ftp.netbsd.org/pub/pkgsrc/distfiles/%SUBDIR%/ \
-	http://ftp.fr.netbsd.org/pub/pkgsrc/%%SUBDIR%%/ \
-	ftp://ftp2.fr.netbsd.org/pub/pkgsrc/%%SUBDIR%%/ \
-	ftp://ftp3.de.netbsd.org/pub/pkgsrc/%%SUBDIR%%/ \
-	ftp://ftp2.jp.netbsd.org/pub/pkgsrc/%%SUBDIR%%/ \
-	ftp://ftp7.jp.netbsd.org/pub/pkgsrc/%%SUBDIR%%/
+	http://ftp.fr.netbsd.org/pub/pkgsrc/%SUBDIR%/ \
+	ftp://ftp2.fr.netbsd.org/pub/pkgsrc/%SUBDIR%/ \
+	ftp://ftp3.de.netbsd.org/pub/pkgsrc/%SUBDIR%/ \
+	ftp://ftp2.jp.netbsd.org/pub/pkgsrc/%SUBDIR%/ \
+	ftp://ftp7.jp.netbsd.org/pub/pkgsrc/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_NETLIB)
