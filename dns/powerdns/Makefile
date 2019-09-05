@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-DISTVERSION=	4.1.10
-PORTREVISION=	4
+DISTVERSION=	4.2.0
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://downloads.powerdns.com/releases/
+MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
 
 MAINTAINER=	tremere@cainites.net
@@ -14,11 +13,11 @@ LICENSE=	GPLv2
 
 BROKEN_sparc64=		Does not compile: error: to_string is not a member of std
 
-LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
+LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
+		libcurl.so:ftp/curl
 
 USES=		compiler:c++11-lib cpe gmake libtool localbase:ldflags pathfix \
 		pkgconfig ssl tar:bzip2
-
 USE_LDCONFIG=	YES
 USE_RC_SUBR=	pdns
 USE_SUBMAKE=	YES
@@ -35,27 +34,25 @@ INSTALL_TARGET=	install-strip
 SCRIPTS_ENV=	CURDIR2="${.CURDIR}" DISTNAME="${DISTNAME}" MKDIR="${MKDIR}" \
 		POWERDNS_OPTIONS="${POWERDNS_OPTIONS}" \
 		WRKDIRPREFIX="${WRKDIRPREFIX}"
-
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		DOCS EXAMPLES LUAJIT MYDNS MYSQL OPENDBX OPENLDAP \
-			OPTALGO PGSQL PROTOBUF REMOTE SQLITE3 TINYDNS TOOLS \
-			UNIXODBC
-OPTIONS_DEFAULT=	MYSQL PGSQL SQLITE3
-
-OPTIONS_GROUP=			EXPERIMENTAL REMOTEOPT
-OPTIONS_GROUP_EXPERIMENTAL=	LUABACKEND
+OPTIONS_DEFINE=			DOCS EXAMPLES GEOIP LUABACKEND LUAJIT MYDNS \
+				MYSQL OPENDBX OPENLDAP PGSQL PROTOBUF REMOTE \
+				SQLITE3 TINYDNS TOOLS UNIXODBC
+OPTIONS_DEFAULT=		MYSQL PGSQL SQLITE3
+OPTIONS_GROUP=			GEOIPOPT REMOTEOPT
 OPTIONS_GROUP_REMOTEOPT=	ZEROMQ
 
 OPTIONS_SUB=	yes
 
-LUABACKEND_DESC=	Lua backend
+GEOIPOPT_DESC=		GeoIP DB options
+GEOIP_DESC=		GeoIP backend (GeoIP2 DB)
+LUABACKEND_DESC=	Lua2 backend
 LUAJIT_DESC=		Use LuaJIT instead of Lua
 MYDNS_DESC=		MyDNS backend
 MYSQL_DESC=		MySQL backend
 OPENDBX_DESC=		OpenDBX backend
 OPENLDAP_DESC=		OpenLDAP backend
-OPTALGO_DESC=		Enable optional algorithms (12, 15 & 16)
 PGSQL_DESC=		PostgreSQL backend
 PROTOBUF_DESC=		Protobuf support
 REMOTEOPT_DESC=		Remote backend connectors
@@ -65,11 +62,15 @@ TINYDNS_DESC=		TinyDNS backend
 TOOLS_DESC=		Build extra tools
 ZEROMQ_DESC=		Enable ZeroMQ connector (Implies REMOTE enabled)
 
-LUABACKEND_VARS=	MODULES+=lua
+GEOIP_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb \
+			libyaml-cpp.so:devel/yaml-cpp
+GEOIP_VARS=		MODULES+=geoip
+
+LUABACKEND_VARS=	MODULES+=lua2
 
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so.2:lang/luajit
 LUAJIT_USES_OFF=	lua
-LUAJIT_CONFIGURE_WITH=	luajit
+LUAJIT_CONFIGURE_ON=	--with-lua=luajit
 
 MYDNS_USES=		mysql
 MYDNS_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
@@ -86,13 +87,6 @@ OPENDBX_VARS=		MODULES+=opendbx
 OPENLDAP_USE=		OPENLDAP=YES
 OPENLDAP_CXXFLAGS=	-DLDAP_DEPRECATED=1
 OPENLDAP_VARS=		MODULES+=ldap
-
-OPTALGO_LIB_DEPENDS=	libbotan-2.so:security/botan2 \
-			libdecaf.so:security/libdecaf \
-			libsodium.so:security/libsodium
-OPTALGO_CONFIGURE_ON=	--enable-botan \
-			--enable-libdecaf \
-			--enable-libsodium
 
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-pg-config=${LOCALBASE}/bin/pg_config
@@ -120,9 +114,18 @@ ZEROMQ_IMPLIES=		REMOTE
 ZEROMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
 ZEROMQ_CONFIGURE_ON=	--enable-remotebackend-zeromq
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} != openssl111
+CONFIGURE_ARGS+=	--with-libdecaf \
+			--with-libsodium
+LIB_DEPENDS+=		libdecaf.so:security/libdecaf \
+			libsodium.so:security/libsodium
+.endif
+
 post-install::
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${STAGEDIR}${LOCALBASE}/sbin/pdns_server --module-dir=${STAGEDIR}${LOCALBASE}/lib/pdns --launch="pipe bind ${MODULES}" --config > ${STAGEDIR}${EXAMPLESDIR}/pdns.conf
 	@${REINPLACE_CMD} -e 's;${STAGEDIR};;' -i '' ${STAGEDIR}${EXAMPLESDIR}/pdns.conf
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
