@@ -10,7 +10,7 @@ bin/afl-fuzz
 bin/afl-gotcpu
 bin/afl-plot
 bin/afl-showmap
-@comment bin/afl-system-config
+bin/afl-system-config
 bin/afl-tmin
 bin/afl-whatsup
 %%X86%%lib/afl/afl-as
@@ -24,6 +24,15 @@ lib/afl/libdislocator.so
 %%LLVM%%lib/afl/libLLVMInsTrim.so
 %%LLVM%%lib/afl/split-compares-pass.so
 %%LLVM%%lib/afl/split-switches-pass.so
+man/man8/afl-cmin.8.gz
+man/man8/afl-fuzz.8.gz
+man/man8/afl-gcc.8.gz
+man/man8/afl-gotcpu.8.gz
+man/man8/afl-plot.8.gz
+man/man8/afl-showmap.8.gz
+man/man8/afl-system-config.8.gz
+man/man8/afl-tmin.8.gz
+man/man8/afl-whatsup.8.gz
 %%DATADIR%%/README.dictionaries
 %%DATADIR%%/README.testcases
 %%DATADIR%%/archives/common/ar/small_archive.a
@@ -79,13 +88,17 @@ lib/afl/libdislocator.so
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/QuickStartGuide.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/README.dislocator
-%%LLVM%%%%PORTDOCS%%%%DOCSDIR%%/README.laf-intel
-%%LLVM%%%%PORTDOCS%%%%DOCSDIR%%/README.llvm
 %%PORTDOCS%%%%DOCSDIR%%/binaryonly_fuzzing.txt
+%%PORTDOCS%%%%DOCSDIR%%/custom_mutator.txt
 %%PORTDOCS%%%%DOCSDIR%%/env_variables.txt
 %%PORTDOCS%%%%DOCSDIR%%/historical_notes.txt
+%%PORTDOCS%%%%DOCSDIR%%/libdislocator/README.md
 %%PORTDOCS%%%%DOCSDIR%%/life_pro_tips.txt
+%%LLVM%%%%PORTDOCS%%%%DOCSDIR%%/llvm_mode/README.md
+%%LLVM%%%%PORTDOCS%%%%DOCSDIR%%/llvm_mode/README.instrim.md
+%%LLVM%%%%PORTDOCS%%%%DOCSDIR%%/llvm_mode/README.laf-intel.md
+%%LLVM%%%%PORTDOCS%%%%DOCSDIR%%/llvm_mode/README.neverzero.md
+%%LLVM%%%%PORTDOCS%%%%DOCSDIR%%/llvm_mode/README.whitelist.md
 %%PORTDOCS%%%%DOCSDIR%%/notes_for_asan.txt
 %%PORTDOCS%%%%DOCSDIR%%/parallel_fuzzing.txt
 %%PORTDOCS%%%%DOCSDIR%%/perf_tips.txt
@@ -94,4 +107,3 @@ lib/afl/libdislocator.so
 %%PORTDOCS%%%%DOCSDIR%%/sister_projects.txt
 %%PORTDOCS%%%%DOCSDIR%%/status_screen.txt
 %%PORTDOCS%%%%DOCSDIR%%/technical_details.txt
-%%PORTDOCS%%%%DOCSDIR%%/unicorn_mode.txt

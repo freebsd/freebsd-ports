@@ -1,7 +1,7 @@
 .PHONY: libdislocator llvm_mode test_llvm_mode
 
 libdislocator:
-	$(MAKE) -C libdislocator
+	$(MAKE) -C libdislocator CFLAGS="-I../include ${CFLAGS}"
 	
 llvm_mode:
 	$(MAKE) -C llvm_mode
