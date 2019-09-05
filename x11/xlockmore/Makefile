@@ -3,19 +3,17 @@
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.58
+PORTREVISION=	1
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.sillycycle.com/xlock/ \
-		LOCAL/jgh/x11/${PORTNAME}/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}.README
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+		SF/bsdsrc/${.CURDIR:T}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more
 
 LICENSE=	BSD2CLAUSE
 
-USES=		tar:xz gnome
+USES=		tar:xz gnome xorg
 
 GNU_CONFIGURE=	yes
 PORTDOCS=	README ${PORTNAME}.README
@@ -29,7 +27,7 @@ LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 
 OPTIONS_DEFINE=	MESAGL MB SYSLOG DISABLE_ALLOW_ROOT NICE_ONLY BLANK_ONLY \
-		KERBEROS4 BAD_PAM GTK2 TIME_BOMB CUSTOMIZATION MAGICK JP \
+		KERBEROS5 BAD_PAM GTK2 TIME_BOMB CUSTOMIZATION MAGICK JP \
 		XINERAMA DOCS
 OPTIONS_DEFAULT=	XINERAMA
 OPTIONS_SUB=	yes
@@ -59,100 +57,40 @@ MAKE_ARGS+=	bindir=${PREFIX}/bin \
 		datarootdir=${PREFIX}/share \
 		xapploaddir=${PREFIX}/lib/X11/app-defaults
 
+MESAGL_CONFIGURE_WITH=	mesa
+MESAGL_VARS=	CFLAGS+="-I${LOCALBASE}/include/FTGL -I${LOCALBASE}/include/freetype2" USE_GL=yes
+MESAGL_LIB_DEPENDS=	libftgl.so:graphics/ftgl
+MESAGL_CONFIGURE_ENV=	XLOCKLIBS="-lpthread"
+MESAGL_CONFIGURE_OFF=	--without-opengl --without-ftgl
+KERBEROS5_CONFIGURE_ENABLE=	kerberos5
+KERBEROS5_VARS=		CFLAGS+=-I${KRB5_HOME}/include KRB5LIB=-L${KRB5_HOME}/lib
+KERBEROS5_CONFIGURE_ENV=	XLOCKLIBS="${KRB5LIB}"
+BAD_PAM_CONFIGURE_ENABLE=	bad-pam
+PAM_CONFIGURE_ENABLE=	pam
+NICE_ONLY_CONFIGURE_ENABLE=	nice-only
+BLANK_ONLY_CONFIGURE_ENABLE=	blank-only
+MB_CONFIGURE_ON=	--enable-use-mb
+MB_CONFIGURE_OFF=	--disable-mb
+SYSLOG_CONFIGURE_ENABLE=	syslog
+XINERAMA_CONFIGURE_WITH=	xinerama
+DISABLE_ALLOW_ROOT_CONFIGURE_ON=	--disable-allow-root
+XLOCK_GROUP_CONFIGURE_ENABLE=	xlock-group
+TIME_BOMB_CONFIGURE_ENABLE=		bomb
+CUSTOMIZATION_CONFIGURE_ENABLE=	customization
+JP_VARS=	XLOCKMORE_LANG=ja CATEGORIES+=japanese
+MAGICK_CONFIGURE_OFF=	--without-magick
+MAGICK_LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick6
+GTK2_CONFIGURE_WITH=	gtk2
+GTK2_VARS+=	USE_GNOME+=gtk20
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MKERBEROS4}
-CONFIGURE_ARGS+=--enable-kerberos4
-KRB4LIB=	-lcom_err -lcrypto
-.endif
-.if defined(KRB5_HOME) && exists(${KRB5_HOME})
-CONFIGURE_ARGS+=--enable-kerberos5
-CFLAGS+=	-I${KRB5_HOME}/include
-KRB5LIB=	-L${KRB5_HOME}/lib
-.endif
-
-.if ${PORT_OPTIONS:MMESAGL}
-CONFIGURE_ARGS+=	--with-mesa
-MESALIB=	-lpthread
-USE_GL=		yes
-LIB_DEPENDS+=	libftgl.so:graphics/ftgl
-CFLAGS+=	-I${LOCALBASE}/include/FTGL -I${LOCALBASE}/include/freetype2
-.else
-CONFIGURE_ARGS+=	--without-mesa --without-opengl --without-ftgl
-.endif
-
-.if ${PORT_OPTIONS:MNICE_ONLY}
-CONFIGURE_ARGS+=	--enable-nice-only
-.endif
-
-.if ${PORT_OPTIONS:MBAD_PAM}
-CONFIGURE_ARGS+=	--enable-bad-pam
-.endif
-
-.if ${PORT_OPTIONS:MPAM}
-CONFIGURE_ARGS+=	--enable-pam
-.endif
-
-.if ${PORT_OPTIONS:MNICE_ONLY}
-CONFIGURE_ARGS+=	--enable-nice-only
-.endif
-
-.if ${PORT_OPTIONS:MBLANK_ONLY}
-CONFIGURE_ARGS+=	--enable-blank-only
-.endif
-
-.if ${PORT_OPTIONS:MMB}
-CONFIGURE_ARGS+=	--enable-use-mb
-.endif
-
-.if ${PORT_OPTIONS:MJP}
-XLOCKMORE_LANG=	ja
-CATEGORIES+=	japanese
-.endif
 
 .if defined(XLOCKMORE_LANG)
 CONFIGURE_ARGS+=	--with-lang=${XLOCKMORE_LANG}
 .endif
 
-.if ${PORT_OPTIONS:MSYSLOG}
-CONFIGURE_ARGS+=	--enable-syslog
-.endif
-
-.if ${PORT_OPTIONS:MGTK2}
-CONFIGURE_ARGS+=	--with-gtk2
-USE_GNOME+=	gtk20
-.else
-CONFIGURE_ARGS+=	--without-gtk2
-.endif
-
-.if ${PORT_OPTIONS:MXLOCK_GROUP}
-CONFIGURE_ARGS+=	--enable-xlock-group
-.endif
-
-.if ${PORT_OPTIONS:MTIME_BOMB}
-CONFIGURE_ARGS+=	--enable-bomb
-.else
-CONFIGURE_ARGS+=	--disable-bomb
-.endif
-
-.if ${PORT_OPTIONS:MCUSTOMIZATION}
-CONFIGURE_ARGS+=	--enable-customization
-.endif
-
-.if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=	libMagickCore-6.so:graphics/ImageMagick6
-.else
-CONFIGURE_ARGS+=	--without-magick
-.endif
-
-CONFIGURE_ENV+=		XLOCKLIBS="${KRB5LIB} ${KRB4LIB} ${MESALIB}"
-
-.if ${PORT_OPTIONS:MDISABLE_ALLOW_ROOT}
-CONFIGURE_ARGS+=	--disable-allow-root
-.endif
-
-.if ${PORT_OPTIONS:MXINERAMA}
-CONFIGURE_ARGS+=	--with-xinerama
+.if ${PORT_OPTIONS:MKERBEROS5} && empty(KRB5_HOME)
+BROKEN=	KRB5_HOME is undefined!
 .endif
 
 .if ${PORT_OPTIONS:MPAM} && empty(PORT_OPTIONS:MBAD_PAM)
@@ -169,7 +107,7 @@ post-patch:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.README ${STAGEDIR}${DOCSDIR}/${PORTNAME}.README
+	${INSTALL_DATA} ${WRKSRC}/docs/Revisions ${STAGEDIR}${DOCSDIR}/${PORTNAME}.README
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
