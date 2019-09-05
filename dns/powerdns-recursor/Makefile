@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recursor
-DISTVERSION=	4.1.14
-PORTREVISION=	4
+DISTVERSION=	4.2.0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -14,7 +13,7 @@ COMMENT=	Advanced DNS recursor
 
 LICENSE=	GPLv2
 
-BROKEN_armv6=		fails to compile: use of overloaded operator << is ambiguous
+BROKEN_armv6=	fails to compile: use of overloaded operator << is ambiguous
 BROKEN_armv7=	fails to compile: use of overloaded operator << is ambiguous
 BROKEN_sparc64=	fails to compile: json11.cpp: undefined reference to std::__throw_out_of_range_fmt
 
@@ -37,26 +36,27 @@ CXXFLAGS+=	-D_GLIBCXX_USE_C99
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		LUAJIT OPTALGO SETUID
+OPTIONS_DEFINE=		LUAJIT SETUID
 OPTIONS_DEFAULT=	SETUID
 
 LUAJIT_DESC=	Use LuaJIT instead of Lua
-OPTALGO_DESC=	Enable optional algorithms (12, 15 & 16)
 SETUID_DESC=	Run as pdns_recursor user
 
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so.2:lang/luajit
 LUAJIT_USES_OFF=	lua
-LUAJIT_CONFIGURE_WITH=	luajit
-
-OPTALGO_LIB_DEPENDS=	libbotan-2.so:security/botan2 \
-			libdecaf.so:security/libdecaf \
-			libsodium.so:security/libsodium
-OPTALGO_CONFIGURE_ON=	--enable-botan \
-			--enable-libdecaf \
-			--enable-libsodium
+LUAJIT_CONFIGURE_ON=	--with-lua=luajit
 
 SETUID_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-setuid
 SETUID_VARS=		GROUPS=pdns \
 			USERS=pdns_recursor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} != openssl111
+CONFIGURE_ARGS+=	--enable-libdecaf \
+			--enable-libsodium
+LIB_DEPENDS+=		libdecaf.so:security/libdecaf \
+			libsodium.so:security/libsodium
+.endif
+
+.include <bsd.port.post.mk>
