@@ -1,6 +1,6 @@
---- bonnie++.cpp.orig	2016-06-30 09:41:41.000000000 +0000
-+++ bonnie++.cpp	2016-10-18 19:52:40.381679719 +0000
-@@ -294,11 +294,7 @@
+--- bonnie++.cpp.orig	2019-09-02 18:10:39.852145000 +0200
++++ bonnie++.cpp	2019-09-02 18:12:18.027222000 +0200
+@@ -298,11 +298,7 @@
        {
          char *sbuf = _strdup(optarg);
          char *size = strtok(sbuf, ":");
@@ -9,10 +9,10 @@
 -#else
 -        file_size = size_from_str(size, "g");
 -#endif
-         size = strtok(NULL, "");
-         if(size)
+         char * chunk_size = strtok(NULL, ":");
+         if(chunk_size)
          {
-@@ -384,15 +380,6 @@
+@@ -398,15 +394,6 @@
      if(file_size % 1024 > 512)
        file_size = file_size + 1024 - (file_size % 1024);
    }
@@ -28,7 +28,7 @@
    globals.byte_io_size = min(file_size, globals.byte_io_size);
    globals.byte_io_size = max(0, globals.byte_io_size);
  
-@@ -465,14 +452,6 @@
+@@ -479,14 +466,6 @@
       && (directory_max_size < directory_min_size || directory_max_size < 0
       || directory_min_size < 0) )
      usage();
