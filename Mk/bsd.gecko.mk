@@ -71,14 +71,23 @@ USE_PERL5=	build
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrender xt
 HAS_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
+LDFLAGS+=		-Wl,--as-needed
 
 BUNDLE_LIBS=	yes
 
-BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.35:lang/${RUST_DEFAULT}
+BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
+				rust-cbindgen>=0.8.7:devel/rust-cbindgen \
+				${RUST_DEFAULT}>=1.35:lang/${RUST_DEFAULT} \
+				${LOCALBASE}/bin/python${PYTHON3_DEFAULT}:lang/python${PYTHON3_DEFAULT:S/.//g} \
+				node:www/node
+MOZ_EXPORT+=	${CONFIGURE_ENV} \
+				LLVM_CONFIG=llvm-config${LLVM_DEFAULT} \
+				PERL="${PERL}" \
+				PYTHON3="${LOCALBASE}/bin/python${PYTHON3_DEFAULT}" \
+				RUSTFLAGS="${RUSTFLAGS}"
+MOZ_OPTIONS+=	--prefix="${PREFIX}"
+MOZ_MK_OPTIONS+=MOZ_OBJDIR="${BUILD_WRKSRC}"
 
-.if ${MOZILLA_VER:R:R} >= 56
-BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
-MOZ_EXPORT+=	LLVM_CONFIG=llvm-config${LLVM_DEFAULT}
 # Require newer Clang than what's in base system unless user opted out
 . if ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
@@ -87,35 +96,12 @@ CC=				${LOCALBASE}/bin/clang${LLVM_DEFAULT}
 CXX=			${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
 USES:=			${USES:Ncompiler\:*} # XXX avoid warnings
 . endif
-.endif
-
-.if ${MOZILLA_VER:R:R} >= 61
-BUILD_DEPENDS+=	${LOCALBASE}/bin/python${PYTHON3_DEFAULT}:lang/python${PYTHON3_DEFAULT:S/.//g}
-MOZ_EXPORT+=	PYTHON3="${LOCALBASE}/bin/python${PYTHON3_DEFAULT}"
-.endif
-
-.if ${MOZILLA_VER:R:R} >= 63
-BUILD_DEPENDS+=	rust-cbindgen>=0.8.7:devel/rust-cbindgen \
-				node:www/node
-.endif
-
-.if ${MOZILLA_VER:R:R} < 64
-MOZ_OPTIONS+=	--enable-pie
-.endif
 
 MOZSRC?=	${WRKSRC}
 PLISTF?=	${WRKDIR}/plist_files
 
 MOZCONFIG?=		${WRKSRC}/.mozconfig
 MOZILLA_PLIST_DIRS?=	bin lib share/pixmaps share/applications
-
-MOZ_EXPORT+=	${CONFIGURE_ENV} \
-				RUSTFLAGS="${RUSTFLAGS}" \
-				PERL="${PERL}"
-MOZ_OPTIONS+=	--prefix="${PREFIX}"
-MOZ_MK_OPTIONS+=MOZ_OBJDIR="${BUILD_WRKSRC}"
-
-LDFLAGS+=		-Wl,--as-needed
 
 # Adjust -C target-cpu if -march/-mcpu is set by bsd.cpu.mk
 .if ${ARCH} == amd64 || ${ARCH} == i386
@@ -217,13 +203,11 @@ MOZ_EXPORT+=	MOZ_OPTIMIZE_FLAGS="${CFLAGS:M-O*}"
 MOZ_OPTIONS+=	--enable-optimize
 .else
 MOZ_OPTIONS+=	--disable-optimize
-. if ${MOZILLA_VER:R:R} >= 56
 .  if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
 # ld 2.17 barfs on Stylo built with -C opt-level=0
 USE_BINUTILS=	yes
 LDFLAGS+=		-B${LOCALBASE}/bin
 .  endif
-. endif
 .endif
 
 .if ${PORT_OPTIONS:MCANBERRA}
@@ -285,20 +269,8 @@ post-patch-SNDIO-on:
 	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
 		${MOZSRC}/media/libcubeb/src/moz.build \
 		${MOZSRC}/toolkit/library/moz.build
-. for tests in tests gtest
-	@if [ -f "${MOZSRC}/media/libcubeb/${tests}/moz.build" ]; then \
-		${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
-			 ${MOZSRC}/media/libcubeb/${tests}/moz.build; \
-	fi
-. endfor
-	@if [ -f "${MOZSRC}/media/webrtc/trunk/webrtc/build/common.gypi" ]; then \
-		${REINPLACE_CMD} -e 's|OS==\"openbsd\"|OS==\"${OPSYS:tl}\"|g' \
-			${MOZSRC}/media/webrtc/trunk/webrtc/build/common.gypi; \
-	fi
-	@if [ -f "${MOZSRC}/media/webrtc/signaling/test/common.build" ]; then \
-		${ECHO_CMD} "OS_LIBS += ['sndio']" >> \
-			${MOZSRC}/media/webrtc/signaling/test/common.build; \
-	fi
+	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
+			 ${MOZSRC}/media/libcubeb/gtest/moz.build
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -306,7 +278,7 @@ MOZ_OPTIONS+=	--enable-debug --disable-release
 STRIP=	# ports/184285
 .else
 MOZ_OPTIONS+=	--disable-debug --disable-debug-symbols --enable-release
-. if ${MOZILLA_VER:R:R} >= 68 && (${ARCH:Maarch64} || ${MACHINE_CPU:Msse2})
+. if ${ARCH:Maarch64} || ${MACHINE_CPU:Msse2}
 MOZ_OPTIONS+=	--enable-rust-simd
 . endif
 .endif
@@ -406,10 +378,6 @@ gecko-post-patch:
 		-e 's|share/mozilla/extensions|lib/xpi|g' \
 		${MOZSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
 		${MOZSRC}/toolkit/xre/nsXREDirProvider.cpp
-.if ${MOZILLA_VER:R:R} < 61
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${MOZSRC}/extensions/spellcheck/hunspell/*/mozHunspell.cpp
-.endif
 
 post-install-script: gecko-create-plist
 
