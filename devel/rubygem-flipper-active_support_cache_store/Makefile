@@ -11,8 +11,8 @@ COMMENT=	ActiveSupport::Cache store adapter for Flipper
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport50>=3.2:devel/rubygem-activesupport50 \
-		rubygem-flipper>=${PORTVERSION}:devel/rubygem-flipper
+RUN_DEPENDS=	rubygem-activesupport50>=3.2<6:devel/rubygem-activesupport50 \
+		rubygem-flipper>=${PORTVERSION}<0.17:devel/rubygem-flipper
 
 USES=		gem
 USE_RUBY=	yes
