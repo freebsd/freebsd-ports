@@ -3,13 +3,9 @@
 
 PORTNAME=	unigine-valley
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games benchmarks linux
-MASTER_SITES=	http://de1-dl.techpowerup.com/Benchmarking/ \
-		http://nl1-dl.techpowerup.com/Benchmarking/ \
-		http://uk1-dl.techpowerup.com/Benchmarking/ \
-		http://us1-dl.techpowerup.com/Benchmarking/ \
-		http://us2-dl.techpowerup.com/Benchmarking/
+MASTER_SITES=	https://assets.unigine.com/d/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	Unigine_Valley-${PORTVERSION}
 EXTRACT_SUFX=	.run
@@ -22,23 +18,29 @@ LICENSE_NAME=	Unigine "Basic" License
 LICENSE_FILE=	${.CURDIR}/pkg-license
 LICENSE_PERMS=	no-dist-sell no-pkg-sell no-dist-mirror no-pkg-mirror
 
-ONLY_FOR_ARCHS=	i386 amd64
-USES=		linux
-USE_LINUX=	dri openal-soft xorglibs
+ONLY_FOR_ARCHS=	amd64 i386
+USES=		linux shebangfix
+USE_LINUX=	dri xorglibs
 USE_LDCONFIG=	yes
 NO_BUILD=	yes
+
+SHEBANG_FILES=	valley
+bash_CMD=	${LINUXBASE}/bin/bash
+
+DESKTOP_ENTRIES="Unigine Valley" "${COMMENT}" "${DATADIR}/data/launcher/icon.png" \
+		"${PKGNAMEPREFIX}${PORTNAME}" "Game;" ${FALSE}
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	cd ${WRKSRC} && ${TAIL} -n 1491255 ${_DISTDIR}/${DISTFILES} | ${TAR} zxf -
-	${PRINTF} "#\!/bin/sh\ncd ${DATADIR}/bin/\n" > ${WRKDIR}/${PORTNAME}
-	${ECHO} 'export LD_LIBRARY_PATH=./x86:$$LD_LIBRARY_PATH' >> ${WRKDIR}/${PORTNAME}
-	${ECHO} './browser_x86 -config ../data/launcher/launcher.xml' >> ${WRKDIR}/${PORTNAME}
+	${PRINTF} '#!/bin/sh\ncd ${DATADIR}\nexec\
+		${LINUXBASE}/bin/bash ./valley\n' > ${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}${PORTNAME}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ./data ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ./bin ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ./documentation ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/valley ${STAGEDIR}${DATADIR}/valley
 
 .include <bsd.port.mk>
