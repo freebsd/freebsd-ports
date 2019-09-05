@@ -96,7 +96,6 @@
     SUBDIR += abi-compliance-checker
     SUBDIR += abseil
     SUBDIR += ace
-    SUBDIR += ace+tao-doc
     SUBDIR += acsccid
     SUBDIR += activitymail
     SUBDIR += ada-util
@@ -473,7 +472,6 @@
     SUBDIR += dev86
     SUBDIR += devhelp
     SUBDIR += devtodo
-    SUBDIR += dfmt
     SUBDIR += dfuife-curses
     SUBDIR += dia2code
     SUBDIR += dia2code+
@@ -1000,7 +998,6 @@
     SUBDIR += ignition-msgs
     SUBDIR += ignition-plugin
     SUBDIR += ignition-tools
-    SUBDIR += ignition-transport
     SUBDIR += ikos
     SUBDIR += imake
     SUBDIR += inastemp
@@ -6365,7 +6362,6 @@
     SUBDIR += spatialindex
     SUBDIR += spdlog
     SUBDIR += spice-protocol
-    SUBDIR += spin
     SUBDIR += spirv-tools
     SUBDIR += splint
     SUBDIR += spread-sheet-widget

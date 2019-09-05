@@ -1,3 +1,0 @@
-%%SITE_ARCH%%/Mail/ClamAV.pm
-%%SITE_ARCH%%/auto/Mail/ClamAV/ClamAV.so
-%%PERL5_MAN3%%/Mail::ClamAV.3.gz

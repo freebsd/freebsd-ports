@@ -229,7 +229,6 @@
     SUBDIR += fftw3-float
     SUBDIR += fftw3-long
     SUBDIR += fftw3-quad
-    SUBDIR += fityk
     SUBDIR += flann
     SUBDIR += flint2
     SUBDIR += flintqs
@@ -407,10 +406,8 @@
     SUBDIR += octave-forge-dicom
     SUBDIR += octave-forge-divand
     SUBDIR += octave-forge-doctest
-    SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-fenv
     SUBDIR += octave-forge-financial
-    SUBDIR += octave-forge-fits
     SUBDIR += octave-forge-fpl
     SUBDIR += octave-forge-fuzzy-logic-toolkit
     SUBDIR += octave-forge-ga
@@ -427,11 +424,9 @@
     SUBDIR += octave-forge-io
     SUBDIR += octave-forge-irsa
     SUBDIR += octave-forge-level-set
-    SUBDIR += octave-forge-linear-algebra
     SUBDIR += octave-forge-lssa
     SUBDIR += octave-forge-ltfat
     SUBDIR += octave-forge-mapping
-    SUBDIR += octave-forge-mechanics
     SUBDIR += octave-forge-miscellaneous
     SUBDIR += octave-forge-missing-functions
     SUBDIR += octave-forge-msh
@@ -451,7 +446,6 @@
     SUBDIR += octave-forge-optim
     SUBDIR += octave-forge-optiminterp
     SUBDIR += octave-forge-outliers
-    SUBDIR += octave-forge-parallel
     SUBDIR += octave-forge-plot
     SUBDIR += octave-forge-quaternion
     SUBDIR += octave-forge-queueing
@@ -467,14 +461,11 @@
     SUBDIR += octave-forge-splines
     SUBDIR += octave-forge-statistics
     SUBDIR += octave-forge-stk
-    SUBDIR += octave-forge-strings
     SUBDIR += octave-forge-struct
     SUBDIR += octave-forge-symband
     SUBDIR += octave-forge-symbolic
     SUBDIR += octave-forge-tcl-octave
-    SUBDIR += octave-forge-tisean
     SUBDIR += octave-forge-tsa
-    SUBDIR += octave-forge-video
     SUBDIR += octave-forge-zenity
     SUBDIR += octave-forge-zeromq
     SUBDIR += octomap
@@ -793,7 +784,6 @@
     SUBDIR += py-uncertainties
     SUBDIR += py-vincenty
     SUBDIR += py-viper
-    SUBDIR += py-yt
     SUBDIR += py-z3-solver
     SUBDIR += qalculate
     SUBDIR += qd

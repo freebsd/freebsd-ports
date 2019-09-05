@@ -1,4 +1,0 @@
-dfmt is a formatter for D source code. dfmt is beta quality. Make backups of 
-your files or use source control when using the --inplace option.
-
-WWW: https://github.com/dlang-community/dfmt

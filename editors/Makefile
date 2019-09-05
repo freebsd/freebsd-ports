@@ -24,7 +24,6 @@
     SUBDIR += cream
     SUBDIR += cudatext
     SUBDIR += deforaos-editor
-    SUBDIR += dexed
     SUBDIR += dhex
     SUBDIR += diakonos
     SUBDIR += dkns
@@ -202,7 +201,6 @@
     SUBDIR += omegaT
     SUBDIR += openoffice-4
     SUBDIR += openoffice-devel
-    SUBDIR += p5-Padre
     SUBDIR += p5-Proc-InvokeEditor
     SUBDIR += p5-Vimana
     SUBDIR += paredit-mode.el

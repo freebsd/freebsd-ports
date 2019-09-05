@@ -158,7 +158,6 @@
     SUBDIR += faup
     SUBDIR += fcgi
     SUBDIR += fcgiwrap
-    SUBDIR += feedjack
     SUBDIR += ffproxy
     SUBDIR += ffsend
     SUBDIR += fgallery
@@ -235,7 +234,6 @@
     SUBDIR += habari
     SUBDIR += halberd
     SUBDIR += hastymail2-devel
-    SUBDIR += havp
     SUBDIR += helma
     SUBDIR += hiawatha
     SUBDIR += hiawatha-monitor
@@ -2229,7 +2227,6 @@
     SUBDIR += rubygem-wasabi
     SUBDIR += rubygem-webdrivers
     SUBDIR += rubygem-webmock
-    SUBDIR += rubygem-webpack-rails-rails5
     SUBDIR += rubygem-webpack-rails-rails52
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
