@@ -13,8 +13,8 @@ COMMENT=	Dots formatter for Cucumber
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-c21e>=1.2.:devel/rubygem-c21e \
-		rubygem-cucumber-messages>=3.0.0:devel/rubygem-cucumber-messages
+RUN_DEPENDS=	rubygem-c21e>=1.2.1<1.3:devel/rubygem-c21e \
+		rubygem-cucumber-messages>=3.0.0<3.1:devel/rubygem-cucumber-messages
 
 USES=		gem
 USE_RUBY=	yes
