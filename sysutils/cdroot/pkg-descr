@@ -6,4 +6,4 @@ allowing one to use the same CD/DVD image to boot multiple systems, where
 each system's hostname, IP address, etc is contained on a separate floppy
 disk. See the README file for more information.
 
-WWW: http://BSDforge.com/projects/sysutils/cdroot/
+WWW: https://BSDforge.com/projects/sysutils/cdroot/
