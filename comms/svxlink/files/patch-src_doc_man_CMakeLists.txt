@@ -1,4 +1,4 @@
---- src/doc/man/CMakeLists.txt.orig	2018-03-04 18:59:29 UTC
+--- src/doc/man/CMakeLists.txt.orig	2019-09-01 20:12:38 UTC
 +++ src/doc/man/CMakeLists.txt
 @@ -1,11 +1,18 @@
  # Set up which man pages to build and install
@@ -7,15 +7,15 @@
 +else(QT_ONLY)
  set(MAN_PAGES svxlink.1 svxlink.conf.5 remotetrx.1 remotetrx.conf.5
 -  siglevdetcal.1 devcal.1 svxreflector.1 svxreflector.conf.5 qtel.1
-+  siglevdetcal.1 devcal.1 svxreflector.1 svxreflector.conf.5 
++  siglevdetcal.1 devcal.1 svxreflector.1 svxreflector.conf.5
    ModuleHelp.conf.5 ModuleParrot.conf.5 ModuleEchoLink.conf.5
    ModuleTclVoiceMail.conf.5 ModuleDtmfRepeater.conf.5
    ModulePropagationMonitor.conf.5 ModuleSelCallEnc.conf.5
-   ModuleFrn.conf.5
+   ModuleFrn.conf.5 ModuleTrx.conf.5
 -)
-+ )
++  )
 +if(USE_QT)
-+  set(MAN_PAGES ${MAN_PAGES} qtel.1)
++   set(MAN_PAGES ${MAN_PAGES} qtel.1)
 +endif(USE_QT)
 +endif(QT_ONLY)
  
