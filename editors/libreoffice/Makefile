@@ -1,5 +1,4 @@
 # $FreeBSD$
-PORTREVISION=	1
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -112,9 +111,10 @@ USE_GL=		gl glew glu
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xext xinerama xrandr xrender
-USES=		autoreconf:build bison compiler:c++14-lang cpe gl gmake jpeg \
-		mysql:client \
-		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz
+USES=		autoreconf:build bison compiler:c++14-lang cpe gl gmake gnome \
+		jpeg mysql:client \
+		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz \
+		xorg
 
 OPTIONS_DEFINE=	CUPS DOCS GNOME GTK2 GTK3 JAVA KDE5 MMEDIA PGSQL QT5 SDK \
 		SYSTRAY TEST WEBDAV

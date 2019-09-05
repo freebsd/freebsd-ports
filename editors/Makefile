@@ -166,6 +166,7 @@
     SUBDIR += libreoffice-st
     SUBDIR += libreoffice-sv
     SUBDIR += libreoffice-sw_TZ
+    SUBDIR += libreoffice-szl
     SUBDIR += libreoffice-ta
     SUBDIR += libreoffice-te
     SUBDIR += libreoffice-tg
