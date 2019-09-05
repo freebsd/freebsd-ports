@@ -2,9 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	afl
-PORTVERSION=	2.53d.a1
+PORTVERSION=	2.54c
 CATEGORIES=	security
 PKGNAMESUFFIX=	++
+
+PATCH_SITES=	https://github.com/vanhauser-thc/AFLplusplus/commit/
+PATCHFILES=	52cbd650b7ae30c64152601fbc34350d61b3e02a.patch:-p1 \
+		efa205289662db40382f9c2a4e83420438419bba.patch:-p1
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Fast instrumented fuzzer
@@ -21,7 +25,6 @@ USES=		gmake tar:tgz
 USE_GITHUB=	yes
 GH_ACCOUNT=	vanhauser-thc
 GH_PROJECT=	AFLplusplus
-GH_TAGNAME=	8b6a4e575978fac83155efd90d39030c84b2a755
 
 ALL_TARGET=	all libdislocator
 TEST_TARGET=	test_build
@@ -41,6 +44,7 @@ LLVM_RUN_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 LLVM_MAKE_ARGS=		LLVM_CONFIG=llvm-config${LLVM_DEFAULT}
 LLVM_ALL_TARGET=	llvm_mode
 LLVM_TEST_TARGET=	test_llvm_mode
+LLVM_BINARY_ALIAS=	llvm-config=llvm-config${LLVM_DEFAULT}
 LLVM_VARS=		CC=clang${LLVM_DEFAULT} \
 			CXX=clang++${LLVM_DEFAULT}
 
@@ -67,7 +71,7 @@ post-patch:
 		${WRKSRC}/Makefile ${WRKSRC}/llvm_mode/Makefile
 .if ${ARCH} == "i386"
 	@${REINPLACE_CMD} 's@\(  as_params\[0\] = afl_as ? afl_as : \)\(.*\)@\1(u8*)"${LOCALBASE}/bin/as";@' \
-		${WRKSRC}/afl-as.c
+		${WRKSRC}/src/afl-as.c
 .endif
 	@${CAT} ${FILESDIR}/Makefile.extra >> ${WRKSRC}/Makefile
 
@@ -87,14 +91,15 @@ post-install:
 .endfor
 	${INSTALL_LIB} ${WRKSRC}/libdislocator/libdislocator.so \
 		${STAGEDIR}${PREFIX}/lib/afl
-	${INSTALL_DATA} ${WRKSRC}/libdislocator/README.dislocator \
-		${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/libdislocator
+	${INSTALL_MAN} ${WRKSRC}/libdislocator/README.md \
+		${STAGEDIR}${DOCSDIR}/libdislocator
 
 post-install-LLVM-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/afl/*.so \
 		${STAGEDIR}${PREFIX}/bin/afl-clang-fast
-	${INSTALL_MAN} ${WRKSRC}/llvm_mode/README.laf-intel \
-		${WRKSRC}/llvm_mode/README.llvm \
-		${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/llvm_mode
+	${INSTALL_MAN} ${WRKSRC}/llvm_mode/README.* \
+		${STAGEDIR}${DOCSDIR}/llvm_mode
 
 .include <bsd.port.mk>
