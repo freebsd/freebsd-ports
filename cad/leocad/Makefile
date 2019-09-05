@@ -3,8 +3,7 @@
 
 PORTNAME=	leocad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.02.20190517
-PORTREVISION=	1
+DISTVERSION=	19.07.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,10 +14,9 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 RUN_DEPENDS=	ldraw>0:cad/ldraw
 
-USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5 shared-mime-info
+USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5 shared-mime-info xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	leozide
-GH_TAGNAME=	f392e3c
 USE_QT=		core gui concurrent network opengl printsupport widgets xml buildtools_build linguisttools_build
 USE_GL=		gl
 
