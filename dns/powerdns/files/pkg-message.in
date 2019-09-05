@@ -15,9 +15,9 @@ EOM
 { type: upgrade
   maximum_versio: 3.4
   message: <<EOM
- ---------------------------------------------
- IMPORTANT: PowerDNS Authoritive Server 3.4.0+:
- ---------------------------------------------
+ -----------------------------------------------
+ IMPORTANT: PowerDNS Authoritative Server 3.4.0+:
+ -----------------------------------------------
  This version needs a mandatory schema change for the gmsyql,
  gpgsql and gsqlite3 backends. SQL statements are available in
  %%DOCSDIR%% or http://doc.powerdns.com
