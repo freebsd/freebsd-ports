@@ -254,7 +254,6 @@
     SUBDIR += gimp-refocus-plugin
     SUBDIR += gimp-resynthesizer
     SUBDIR += gimp-save-for-web
-    SUBDIR += gimp-wavelet-decompose-plugin
     SUBDIR += gimp-wavelet-denoise-plugin
     SUBDIR += gimp-wavelet-sharpen-plugin
     SUBDIR += giram
@@ -872,7 +871,6 @@
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot
-    SUBDIR += py-pyembree
     SUBDIR += py-pyepsg
     SUBDIR += py-pygal
     SUBDIR += py-pyganim

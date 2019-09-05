@@ -1,5 +1,0 @@
-This module provides the STDOUT, STDERR and exit codes of asynchronously running
-processes via events. It may be used for long running or blocking processes that
-provide periodic updates on state via STDOUT. Simple IPC is possible via STDIN.
-
-WWW: https://metacpan.org/release/Wx-Perl-ProcessStream

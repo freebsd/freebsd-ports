@@ -57,7 +57,6 @@
     SUBDIR += fvwm2
     SUBDIR += gcompmgr
     SUBDIR += genmenu
-    SUBDIR += golem
     SUBDIR += herbstluftwm
     SUBDIR += hikari
     SUBDIR += hs-xmonad
@@ -97,7 +96,6 @@
     SUBDIR += openbox
     SUBDIR += oroborus
     SUBDIR += pager
-    SUBDIR += pawm
     SUBDIR += peksystray
     SUBDIR += pekwm
     SUBDIR += phluid

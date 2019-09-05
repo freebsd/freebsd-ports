@@ -353,7 +353,6 @@
     SUBDIR += freebsd-snapshot
     SUBDIR += freecolor
     SUBDIR += freedt
-    SUBDIR += freefilesync
     SUBDIR += freeipmi
     SUBDIR += freesbie
     SUBDIR += froxlor
@@ -602,7 +601,6 @@
     SUBDIR += lmon
     SUBDIR += lnav
     SUBDIR += lockfile-progs
-    SUBDIR += log-courier
     SUBDIR += log_analysis
     SUBDIR += logrotate
     SUBDIR += logstalgia

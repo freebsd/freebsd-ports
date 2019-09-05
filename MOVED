@@ -12913,3 +12913,41 @@ sysutils/syslog-ng312|sysutils/syslog-ng|2019-09-04|Has expired: No longer offic
 sysutils/syslog-ng310|sysutils/syslog-ng|2019-09-04|Has expired: No longer supported by Balabit
 sysutils/syslog-ng313|sysutils/syslog-ng|2019-09-04|Has expired: No longer officially supported by Balabit
 sysutils/syslog-ng314|sysutils/syslog-ng|2019-09-04|Has expired: No longer supported by Balabit
+devel/ace+tao-doc||2019-09-05|Has expired: Broken for more than 6 months
+devel/dfmt||2019-09-05|Has expired: Broken for more than 6 months
+devel/ignition-transport||2019-09-05|Has expired: Broken for more than 6 months
+devel/spin||2019-09-05|Has expired: Broken for more than 6 months
+editors/dexed||2019-09-05|Has expired: Depends on expiring devel/dfmt
+editors/p5-Padre||2019-09-05|Has expired: Depends on expiring x11-toolkits/p5-Wx
+emulators/qemu2||2019-09-05|Has expired: Latest 3.X branch is in ports tree
+games/asc||2019-09-05|Has expired: Broken for more than 6 months
+games/slade||2019-09-05|Has expired: Broken for more than 6 months
+graphics/gimp-wavelet-decompose-plugin||2019-09-05|Has expired: Broken for more than 6 months
+graphics/py-pyembree||2019-09-05|Has expired: Depends on expiring graphics/embree
+irc/irssi-otr||2019-09-05|Has expired: Broken for more than 6 months
+mail/p5-Mail-ClamAV||2019-09-05|Has expired: Broken for more than 6 months
+mail/qmail-ldap||2019-09-05|Has expired: Broken for more than 6 months
+math/fityk||2019-09-05|Has expired: Broken for more than 6 months
+math/octave-forge-econometrics||2019-09-05|Has expired: Broken for more than 6 months
+math/octave-forge-fits||2019-09-05|Has expired: Broken for more than 6 months
+math/octave-forge-linear-algebra||2019-09-05|Has expired: Broken for more than 6 months
+math/octave-forge-mechanics||2019-09-05|Has expired: Broken for more than 6 months
+math/octave-forge-parallel||2019-09-05|Has expired: Broken for more than 6 months
+math/octave-forge-strings||2019-09-05|Has expired: Broken for more than 6 months
+math/octave-forge-tisean||2019-09-05|Has expired: Broken for more than 6 months
+math/octave-forge-video||2019-09-05|Has expired: Broken for more than 6 months
+math/py-yt||2019-09-05|Has expired: Depends on expiring graphics/embree
+misc/gnustep-examples||2019-09-05|Has expired: Broken for more than 6 months
+net/turses||2019-09-05|Has expired: Depends on expiring net/py-tweepy
+security/clamcour||2019-09-05|Has expired: Broken for more than 6 months
+security/honeybadger||2019-09-05|Has expired: Broken for more than 6 months
+sysutils/freefilesync||2019-09-05|Has expired: Broken for more than 6 months
+sysutils/log-courier||2019-09-05|Has expired: Broken for more than 6 months
+textproc/py-orange3-text||2019-09-05|Has expired: Broken for more than 6 months
+www/feedjack||2019-09-05|Has expired: Upstream gone
+www/havp||2019-09-05|Has expired: Broken for more than 6 months
+www/rubygem-webpack-rails-rails5|devel/rubygem-webpacker-rails5|2019-09-05|Has expired: Upstream no longer maintained, use devel/rubygem-webpacker-rails* instead
+x11-toolkits/p5-Wx-GLCanvas||2019-09-05|Has expired: Depends on expiring x11-toolkits/p5-Wx
+x11-toolkits/p5-Wx-Perl-ProcessStream||2019-09-05|Has expired: Depends on expiring x11-toolkits/p5-Wx
+x11-wm/golem||2019-09-05|Has expired: Broken for more than 6 months
+x11-wm/pawm||2019-09-05|Has expired: Broken for more than 6 months
