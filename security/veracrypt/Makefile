@@ -2,7 +2,7 @@
 
 PORTNAME=	veracrypt
 PORTVERSION=	1.23
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/v/V/:S/c/C/}%20${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/v/V/:S/c/C/}_${PORTVERSION}_Source
@@ -24,6 +24,10 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
+
+.if ${ARCH} == "i386"
+MAKE_ENV+=	LFLAGS=-Wl,-z,notext
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g' ${WRKSRC}/src/Makefile
