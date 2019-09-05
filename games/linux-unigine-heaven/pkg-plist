@@ -4,6 +4,7 @@ bin/linux-unigine-heaven
 %%DATADIR%%/bin/browser_x86
 %%DATADIR%%/bin/heaven_x64
 %%DATADIR%%/bin/heaven_x86
+%%DATADIR%%/heaven
 @mode
 %%DATADIR%%/bin/libAppStereo_x64.so
 %%DATADIR%%/bin/libAppStereo_x86.so
