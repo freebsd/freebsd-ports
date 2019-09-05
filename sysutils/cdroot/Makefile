@@ -11,6 +11,6 @@ COMMENT=	Scripts automating setup of a bootable CD-ROM based FreeBSD system
 
 LICENSE=	BSD2CLAUSE
 
-USES=	tar:xz
+USES=		tar:xz
 
 .include <bsd.port.mk>
