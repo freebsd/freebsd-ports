@@ -44,7 +44,6 @@ SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}/defaults/pref/${PORTNAME}.js
 
 OPTIONS_DEFINE=	LIGHTNING
 OPTIONS_DEFAULT=CANBERRA LIGHTNING
-OPTIONS_EXCLUDE=WAYLAND
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>

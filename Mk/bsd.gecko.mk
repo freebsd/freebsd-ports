@@ -199,7 +199,6 @@ BUILD_DEPENDS+=	${-${dep}_BUILD_DEPENDS}
 
 # Standard options
 MOZ_OPTIONS+=	\
-		--enable-default-toolkit=cairo-gtk3${PORT_OPTIONS:MWAYLAND:tl:C/.+/-&/} \
 		--enable-update-channel=${PKGNAMESUFFIX:Urelease:S/^-//} \
 		--disable-updater \
 		--with-system-zlib \
@@ -410,17 +409,6 @@ gecko-post-patch:
 .if ${MOZILLA_VER:R:R} < 61
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${MOZSRC}/extensions/spellcheck/hunspell/*/mozHunspell.cpp
-.endif
-
-pre-configure: gecko-pre-configure
-
-gecko-pre-configure:
-.if ${PORT_OPTIONS:MWAYLAND}
-# .if !exists() evaluates too early before gtk3 has a chance to be installed
-	@if ! pkg-config --exists gtk+-wayland-3.0; then \
-		${ECHO_MSG} "${PKGNAME}: Needs gtk3 with WAYLAND support enabled."; \
-		${FALSE}; \
-	fi
 .endif
 
 post-install-script: gecko-create-plist
