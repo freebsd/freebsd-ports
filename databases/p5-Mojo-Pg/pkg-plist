@@ -12,3 +12,17 @@
 %%PERL5_MAN3%%/Mojo::Pg::Results.3.gz
 %%PERL5_MAN3%%/Mojo::Pg::Transaction.3.gz
 %%PERL5_MAN3%%/SQL::Abstract::Pg.3.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/blog.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/lib/Blog.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/lib/Blog/Controller/Posts.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/lib/Blog/Model/Posts.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/migrations/blog.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/script/blog
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/t/blog.t
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/templates/layouts/blog.html.ep
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/templates/posts/_form.html.ep
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/templates/posts/create.html.ep
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/templates/posts/edit.html.ep
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/templates/posts/index.html.ep
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/templates/posts/show.html.ep
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chat.pl
