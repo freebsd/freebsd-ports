@@ -14,13 +14,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
-		rubygem-excon>=0.58:devel/rubygem-excon \
-		rubygem-formatador>=0.2:devel/rubygem-formatador
+		rubygem-excon>=0.58<1:devel/rubygem-excon \
+		rubygem-formatador>=0.2<1:devel/rubygem-formatador
 
-PORTSCOUT=	limit:^1\.
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
+
+PORTSCOUT=	limit:^1\.
 
 .include <bsd.port.mk>
