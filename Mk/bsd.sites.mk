@@ -855,15 +855,12 @@ MASTER_SITE_MYSQL+= \
 
 .if !defined(IGNORE_MASTER_SITE_NETBSD)
 MASTER_SITE_NETBSD+= \
-	https://ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.iastate.edu/pub/netbsd/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.plig.net/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.proxad.net/mirrors/ftp.netbsd.org/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.unina.it/pub/Unix/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.uninett.no/bsd/unix/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://sunsite.uio.no/bsd/unix/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.demon.co.uk/pub/mirrors/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/NetBSD/packages/distfiles/%SUBDIR%/
+	https://ftp.netbsd.org/pub/pkgsrc/distfiles/%SUBDIR%/ \
+	http://ftp.fr.netbsd.org/pub/pkgsrc/%%SUBDIR%%/ \
+	ftp://ftp2.fr.netbsd.org/pub/pkgsrc/%%SUBDIR%%/ \
+	ftp://ftp3.de.netbsd.org/pub/pkgsrc/%%SUBDIR%%/ \
+	ftp://ftp2.jp.netbsd.org/pub/pkgsrc/%%SUBDIR%%/ \
+	ftp://ftp7.jp.netbsd.org/pub/pkgsrc/%%SUBDIR%%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_NETLIB)
