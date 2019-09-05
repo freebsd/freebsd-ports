@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldraw
-DISTVERSION=	20181208
+DISTVERSION=	20190628
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://www.ldraw.org/library/updates/:parts \
@@ -15,8 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LDraw-format CAD files representing many of LEGO bricks produced
 
 LICENSE=	CC-BY-2.0
-
-BROKEN=		unfetchable
 
 USES=		zip
 
