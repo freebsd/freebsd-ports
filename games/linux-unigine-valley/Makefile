@@ -28,7 +28,7 @@ SHEBANG_FILES=	valley
 bash_CMD=	${LINUXBASE}/bin/bash
 
 DESKTOP_ENTRIES="Unigine Valley" "${COMMENT}" "${DATADIR}/data/launcher/icon.png" \
-		"${PKGNAMEPREFIX}${PORTNAME}" "Game;" ${FALSE}
+		"${PKGNAMEPREFIX}${PORTNAME}" "Game;" false
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
