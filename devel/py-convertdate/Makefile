@@ -11,7 +11,7 @@ MAINTAINER=	gmm@tutanota.com
 COMMENT=	Converts between Gregorian dates and other calendar systems
 
 LICENSE=	MIT
-LICENSE_FILE=	LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	autoplist distutils
