@@ -1,3 +1,4 @@
+%%WWWDIR%%/LICENSE
 %%WWWDIR%%/admin.php
 %%WWWDIR%%/admin/administration.php
 %%WWWDIR%%/admin/alarming.php
@@ -106,7 +107,6 @@
 %%WWWDIR%%/doc/CHANGELOG
 %%WWWDIR%%/doc/INSTALLATION_deDE.txt
 %%WWWDIR%%/doc/INSTALLATION_enGB.txt
-%%WWWDIR%%/doc/LICENSE
 %%WWWDIR%%/doc/README_SSH_KEY
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/functions/Autoloader.php
