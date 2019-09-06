@@ -109,5 +109,11 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/locale/pl/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/ru/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/uk/LC_MESSAGES/openscad.mo
+%%DATADIR%%/templates/difference.json
+%%DATADIR%%/templates/for.json
+%%DATADIR%%/templates/function.json
+%%DATADIR%%/templates/module.json
+%%DATADIR%%/templates/rotate.json
+%%DATADIR%%/templates/translate.json
 share/pixmaps/openscad.png
 @dir %%DATADIR%%/libraries/MCAD
