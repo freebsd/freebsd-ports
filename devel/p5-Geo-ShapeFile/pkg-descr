@@ -1,4 +1,4 @@
 The Geo::ShapeFile module reads ESRI ShapeFiles containing GIS mapping data, it
 has support for shp (shape), shx (shape index), and dbf (data base) formats.
 
-WWW: https://metacpan.org/release/Geo-ShapeFile
+WWW: https://metacpan.org/pod/Geo::ShapeFile
