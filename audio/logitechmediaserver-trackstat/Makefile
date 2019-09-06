@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	logitechmediaserver-
 DISTNAME=	TrackStat-${PORTVERSION:S/b/beta/}
 DIST_SUBDIR=	logitechmediaserver
 
-MAINTAINER=	mark@tranquillussoftware.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logitech Media Server plugin to store song ratings and statistics
 
 LICENSE=	GPLv2+

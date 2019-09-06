@@ -18,7 +18,7 @@ DISTFILES+=	snappy-${PORTVERSION:R}.tar.gz:source2 \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		FreeBSD-snappy-${PORTVERSION}-maven-repository.tar.gz
 
-MAINTAINER=	mark@tranquillussoftware.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast compressor/decompressor library
 
 LICENSE=	APACHE20
