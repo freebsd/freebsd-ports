@@ -8,6 +8,9 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Old X library
 
+DEPRECATED=	Deprecated upstream
+EXPIRATION_DATE=2019-10-01
+
 XORG_CAT=	lib
 USE_XORG=	x11
 
