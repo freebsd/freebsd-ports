@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libversion
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.1
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
