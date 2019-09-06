@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-Check_MK may collect additional data if the following ports are installed:
+Checkmk may collect additional data if the following ports are installed:
 - devel/libstatgrab
 - sysutils/ipmitool
 - sysutils/megacli
