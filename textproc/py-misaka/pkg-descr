@@ -1,0 +1,5 @@
+Misaka is a CFFI-based binding for Hoedown, a fast markdown processing
+library written in C. It features a fast HTML renderer and functionality
+to make custom renderers (e.g. man pages or LaTeX).
+
+WWW: https://github.com/FSX/misaka
