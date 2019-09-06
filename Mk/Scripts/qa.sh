@@ -77,6 +77,7 @@ shebangonefile() {
 	/usr/bin/nawk) ;;
 	/usr/bin/sed) ;;
 	/usr/sbin/dtrace) ;;
+	/usr/bin/make) ;;
 	*)
 		badinterp="${interp}"
 		;;
