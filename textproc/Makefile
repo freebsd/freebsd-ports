@@ -1283,6 +1283,7 @@
     SUBDIR += py-hypua2jamo
     SUBDIR += py-jaxml
     SUBDIR += py-jsonslicer
+    SUBDIR += py-jsx-lexer
     SUBDIR += py-jtextfsm
     SUBDIR += py-junit-xml
     SUBDIR += py-langdetect
