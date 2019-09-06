@@ -7,6 +7,9 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Set the mode for an X Input Device
 
+DEPRECATED=     Deprecated upstream
+EXPIRATION_DATE=2019-10-15
+
 XORG_CAT=	app
 USE_XORG=	xi x11
 
