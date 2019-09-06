@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	packer
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -13,11 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PLIST_FILES=	bin/${PORTNAME}
 
-USES=	go
+USES=	go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
-
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 .include <bsd.port.mk>
