@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grape_logging
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
