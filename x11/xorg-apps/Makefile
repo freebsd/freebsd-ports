@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org apps meta-port
 
-COMPONENTS=	appres bitmap xf86dga:dga iceauth luit \
+COMPONENTS=	appres bitmap xf86dga:dga iceauth \
 		x11-fonts/mkfontscale:mkfontscale sessreg \
 		setxkbmap smproxy x11perf xauth xbacklight xcalc \
 		xcmsdb xconsole xcursorgen xdpyinfo xdriinfo xev xgamma xgc \
