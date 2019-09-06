@@ -1,12 +1,10 @@
 %%SITE_PERL%%/CPS.pm
 %%SITE_PERL%%/CPS/Functional.pm
-%%SITE_PERL%%/CPS/Future.pm
 %%SITE_PERL%%/CPS/Governor.pm
 %%SITE_PERL%%/CPS/Governor/Deferred.pm
 %%SITE_PERL%%/CPS/Governor/Simple.pm
 %%PERL5_MAN3%%/CPS.3.gz
 %%PERL5_MAN3%%/CPS::Functional.3.gz
-%%PERL5_MAN3%%/CPS::Future.3.gz
 %%PERL5_MAN3%%/CPS::Governor.3.gz
 %%PERL5_MAN3%%/CPS::Governor::Deferred.3.gz
 %%PERL5_MAN3%%/CPS::Governor::Simple.3.gz
