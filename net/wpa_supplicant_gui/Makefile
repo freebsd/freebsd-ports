@@ -6,7 +6,7 @@ DISTVERSION=	2.9
 CATEGORIES=	net
 MASTER_SITES=	http://w1.fi/releases/ \
 		http://partmedia.users.sourceforge.net/dist/:icons \
-		LOCAL/jgh/net/wpa_gui/:icons
+		LOCAL/yuri/net/wpa_supplicant_gui/:icons
 DISTNAME=	wpa_supplicant-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz \
 		wpa-gui-icons.tar.gz:icons
@@ -17,7 +17,7 @@ COMMENT=	Qt-based frontend for wpa_supplicant
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-USES=		gl gmake qt:5
+USES=		gl gmake qt:5 xorg
 USE_QT=		qmake_build buildtools_build linguisttools_build core gui \
 		widgets svg_run
 USE_GL=		gl
