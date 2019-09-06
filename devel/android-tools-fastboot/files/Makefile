@@ -5,7 +5,7 @@ BINDIR?=/usr/bin
 FILESDIR?=${DOCDIR}/${PROG}
 VERSION?=0.0.0-0
 
-FILES=	*.md
+FILES=	README.md
 
 SRCS+=	bootimg_utils.cpp
 SRCS+=	engine.cpp
