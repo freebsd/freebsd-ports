@@ -19,6 +19,7 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL20+ =	${EDELIB_WRKSRC}/COPYING
 
 BUILD_DEPENDS=	doxygen:devel/doxygen \
+		gsed:textproc/gsed \
 		jam:devel/jam
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libcurl.so:ftp/curl \
@@ -27,6 +28,8 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 
 USES=		fam gettext iconv:translit localbase:ldflags pathfix \
 		pkgconfig python:2.7 shared-mime-info shebangfix
+
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 SHEBANG_FILES=	doc/asciidoc/asciidoc.py
 USE_XORG=	xcomposite xft xinerama xkbfile xpm xrandr
 USE_CSTD=	gnu89
