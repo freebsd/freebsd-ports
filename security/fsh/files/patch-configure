@@ -1,0 +1,20 @@
+--- configure.orig	2001-12-23 11:10:13 UTC
++++ configure
+@@ -2732,7 +2732,7 @@ s,@prefix@,$prefix,;t t
+ s,@program_transform_name@,$program_transform_name,;t t
+ s,@bindir@,$bindir,;t t
+ s,@sbindir@,$sbindir,;t t
+-s,@libexecdir@,$libexecdir,;t t
++s,@ac_libexecdir@,$libexecdir,;t t
+ s,@datadir@,$datadir,;t t
+ s,@sysconfdir@,$sysconfdir,;t t
+ s,@sharedstatedir@,$sharedstatedir,;t t
+@@ -2778,7 +2778,7 @@ s,@AMDEP_FALSE@,$AMDEP_FALSE,;t t
+ s,@AMDEPBACKSLASH@,$AMDEPBACKSLASH,;t t
+ s,@DEPDIR@,$DEPDIR,;t t
+ s,@DEFAULT_FSHD_TIMEOUT@,$DEFAULT_FSHD_TIMEOUT,;t t
+-s,@PYTHON@,$PYTHON,;t t
++s,@PYTHON_CMD@,$PYTHON,;t t
+ s,@PYTHON_SCRIPT_TEMPLATE@,$PYTHON_SCRIPT_TEMPLATE,;t t
+ s,@CC@,$CC,;t t
+ s,@CFLAGS@,$CFLAGS,;t t
