@@ -1,0 +1,12 @@
+Binary MOF buffer in WMI tools:
+* Decompile binary MOF file (BMF) to UTF-8 plain text MOF file.
+* Decompress binary MOF file (BMF)
+* Parse binary MOF file (BMF)
+
+EXAMPLES:
+ sysctl -b dev.acpi_wmi.0.bmof | bmf2mof
+
+SEE ALSO:
+ acpi_wmi(4)
+
+WWW: https://github.com/pali/bmfdec/
