@@ -43,26 +43,6 @@ A phabricator example configuration installed here:
 
   %%PREFIX%%lib/php/phabricator/conf/local/local.json.sample
 
-Don't forget to update the database schema after update:
-
-  service nginx stop
-  service php-fpm stop
-  service phd stop
-  cd %%PREFIX%%/lib/php/phabricator
-  ./bin/storage upgrade
-  service phd start
-  service php-fpm start
-  service nginx start
-
-The above procedure is for users of nginx and php-fpm, please adapt
-accordingly to match your setup.
-
-If your configuration uses an unprivileged user to connect to the database,
-you may have to override the default user so the schema changes can be
-applied with root or some other admin user:
-
-  ./bin/storage upgrade --user <user> --password <password>
-
 If you want to access phabricator hosted git repositories via git,
 you can add the following configuration snippet to /etc/sshd_config
 and reload sshd afterwards (`service sshd reload'):
@@ -84,6 +64,29 @@ Match User git
  PermitTunnel no
  X11Forwarding no
 ========================================================================
+EOM
+},
+{ type: upgrade
+  message: <<EOM
+Don't forget to update the database schema after update:
+
+  service nginx stop
+  service php-fpm stop
+  service phd stop
+  cd %%PREFIX%%/lib/php/phabricator
+  ./bin/storage upgrade
+  service phd start
+  service php-fpm start
+  service nginx start
+
+The above procedure is for users of nginx and php-fpm, please adapt
+accordingly to match your setup.
+
+If your configuration uses an unprivileged user to connect to the database,
+you may have to override the default user so the schema changes can be
+applied with root or some other admin user:
+
+  ./bin/storage upgrade --user <user> --password <password>
 EOM
 }
 ]
