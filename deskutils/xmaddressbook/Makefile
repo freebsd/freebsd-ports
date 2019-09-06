@@ -10,8 +10,8 @@ MASTER_SITES=	XCONTRIB/office
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11/Motif-based addressbook program
 
-DEPRECATED=     Deprecated upstream
-EXPIRATION_DATE=2019-10-01
+DEPRECATED=	Deprecated upstream
+EXPIRATION_DATE=2019-10-15
 
 USES=		imake motif tar:Z
 USE_XORG=	ice sm x11 xext xi xp xt oldx
