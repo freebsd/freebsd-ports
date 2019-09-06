@@ -43,7 +43,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dmx.pc:x11/libdmx \
 		${LOCALBASE}/libdata/pkgconfig/xv.pc:x11/libXv \
 		${LOCALBASE}/libdata/pkgconfig/xvmc.pc:x11/libXvMC \
 		${LOCALBASE}/libdata/pkgconfig/xxf86dga.pc:x11/libXxf86dga \
-		${LOCALBASE}/libdata/pkgconfig/xxf86misc.pc:x11/libXxf86misc \
 		${LOCALBASE}/libdata/pkgconfig/xxf86vm.pc:x11/libXxf86vm
 
 USES=		metaport
