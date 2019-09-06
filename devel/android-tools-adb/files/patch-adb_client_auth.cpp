@@ -1,5 +1,5 @@
---- adb/adb_auth_host.cpp.orig	2016-06-29 23:43:15 UTC
-+++ adb/adb_auth_host.cpp
+--- adb/client/auth.cpp.orig	2019-07-17 19:54:09 UTC
++++ adb/client/auth.cpp
 @@ -34,7 +34,9 @@
  #include <android-base/stringprintf.h>
  #include <android-base/strings.h>
@@ -10,10 +10,11 @@
  #include <openssl/evp.h>
  #include <openssl/objects.h>
  #include <openssl/pem.h>
-@@ -70,6 +72,30 @@ static std::string get_user_info() {
-     return " " + username + "@" + hostname;
- }
- 
+@@ -52,6 +54,30 @@ static std::mutex& g_keys_mutex = *new std::mutex;
+ static std::map<std::string, std::shared_ptr<RSA>>& g_keys =
+     *new std::map<std::string, std::shared_ptr<RSA>>;
+ static std::map<int, std::string>& g_monitored_paths = *new std::map<int, std::string>;
++
 +#if !defined(OPENSSL_IS_BORINGSSL)
 +// https://boringssl.googlesource.com/boringssl/+/6601402%5E!/
 +static int EVP_EncodedLength(size_t *out_len, size_t len) {
@@ -37,7 +38,6 @@
 +  return 1;
 +}
 +#endif
-+
- static bool write_public_keyfile(RSA* private_key, const std::string& private_key_path) {
-     uint8_t binary_key_data[ANDROID_PUBKEY_ENCODED_SIZE];
-     if (!android_pubkey_encode(private_key, binary_key_data, sizeof(binary_key_data))) {
+ 
+ static std::string get_user_info() {
+     std::string hostname;

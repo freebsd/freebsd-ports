@@ -1,24 +1,8 @@
---- adb/sysdeps.h.orig	2015-09-05 00:01:27 UTC
+--- adb/sysdeps.h.orig	2019-07-17 19:54:09 UTC
 +++ adb/sysdeps.h
-@@ -61,11 +61,13 @@
- #endif
- #endif
+@@ -330,6 +330,11 @@ size_t ParseCompleteUTF8(const char* first, const char
  
--#ifdef _WIN32
--
-+#if !defined(__clang__) || __clang_major__ < 3 || (__clang_major__ == 3 && __clang_minor__ < 7)
- // Clang-only nullability specifiers
- #define _Nonnull
- #define _Nullable
-+#endif
-+
-+#ifdef _WIN32
- 
- #include <ctype.h>
- #include <direct.h>
-@@ -401,6 +401,11 @@ typedef std::unique_ptr<HANDLE, handle_d
- 
- #include <string>
+ #include <cutils/sockets.h>
  
 +#if defined(__Bitrig__) || defined(__DragonFly__) || \
 +    defined(__FreeBSD__) || defined(__OpenBSD__)
@@ -28,7 +12,7 @@
  #define OS_PATH_SEPARATORS "/"
  #define OS_PATH_SEPARATOR '/'
  #define OS_PATH_SEPARATOR_STR "/"
-@@ -627,6 +632,12 @@ static __inline__ bool adb_thread_create
+@@ -516,6 +521,12 @@ inline int adb_socket_get_local_port(borrowed_fd fd) {
  static __inline__ int adb_thread_setname(const std::string& name) {
  #ifdef __APPLE__
      return pthread_setname_np(name.c_str());
@@ -39,5 +23,5 @@
 +#elif defined(__NetBSD__)
 +    return pthread_setname_np(pthread_self(), "%s", (void*)name.c_str());
  #else
-     const char *s = name.c_str();
- 
+     // Both bionic and glibc's pthread_setname_np fails rather than truncating long strings.
+     // glibc doesn't have strlcpy, so we have to fake it.

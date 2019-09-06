@@ -5,24 +5,14 @@ NOMAN= # DragonFly, NetBSD, OpenBSD
 NO_MAN= # FreeBSD
 BINDIR?=/usr/bin
 FILESDIR?=${DOCDIR}/${PROG}
-VERSION?=	28.0.0-0 ${VEREXT}
 
 FILES= OVERVIEW.TXT SERVICES.TXT SYNC.TXT protocol.txt
 
 SRCS+= adb.cpp
-SRCS+= adb_auth_host.cpp
-SRCS+= adb_client.cpp
 SRCS+= adb_io.cpp
 SRCS+= adb_listeners.cpp
 SRCS+= adb_trace.cpp
 SRCS+= adb_utils.cpp
-SRCS+= bugreport.cpp
-SRCS+= commandline.cpp
-SRCS+= console.cpp
-SRCS+= diagnose_usb.cpp
-SRCS+= fdevent.cpp
-SRCS+= file_sync_client.cpp
-SRCS+= line_printer.cpp
 SRCS+= services.cpp
 SRCS+= shell_service_protocol.cpp
 SRCS+= socket_spec.cpp
@@ -30,23 +20,36 @@ SRCS+= ../adb/sockets.cpp
 SRCS+= sysdeps_unix.cpp
 SRCS+= transport.cpp
 SRCS+= transport_local.cpp
-SRCS+= transport_mdns${MDNSEXT}.cpp
 SRCS+= transport_usb.cpp
 
 TEST_SRCS+= adb_io_test.cpp
 TEST_SRCS+= adb_listeners_test.cpp
 TEST_SRCS+= adb_utils_test.cpp
 TEST_SRCS+= bugreport_test.cpp
-TEST_SRCS+= fdevent_test.cpp
 TEST_SRCS+= shell_service_protocol_test.cpp
 TEST_SRCS+= socket_spec_test.cpp
 TEST_SRCS+= socket_test.cpp
 TEST_SRCS+= sysdeps_test.cpp
 TEST_SRCS+= transport_test.cpp
+TEST_SRCS+= types_test.cpp
 
 .PATH: ${.CURDIR}/client
+SRCS+= adb_client.cpp
+SRCS+= adb_install.cpp
+SRCS+= auth.cpp
+SRCS+= bugreport.cpp
+SRCS+= commandline.cpp
+SRCS+= console.cpp
+SRCS+= file_sync_client.cpp
+SRCS+= line_printer.cpp
 SRCS+= main.cpp
+SRCS+= transport_mdns${MDNSEXT}.cpp
 SRCS+= usb_libusb.cpp
+
+.PATH: ${.CURDIR}/fdevent
+SRCS+= fdevent.cpp
+SRCS+= fdevent_poll.cpp
+TEST_SRCS+= fdevent_test.cpp
 
 .PATH: ${.CURDIR}/sysdeps
 SRCS+= errno.cpp
@@ -56,6 +59,7 @@ TEST_SRCS+= stat_test.cpp
 SRCS+= network.cpp
 
 .PATH: ${.CURDIR}/../base
+SRCS+= chrono_utils.cpp
 SRCS+= file.cpp
 SRCS+= logging.cpp
 SRCS+= parsenetaddress.cpp
@@ -70,6 +74,9 @@ TEST_SRCS+= stringprintf_test.cpp
 TEST_SRCS+= strings_test.cpp
 TEST_SRCS+= test_main.cpp
 TEST_SRCS+= test_utils.cpp
+
+.PATH: ${.CURDIR}/../diagnose_usb
+SRCS+= diagnose_usb.cpp
 
 .PATH: ${.CURDIR}/../libcrypto_utils
 SRCS+= android_pubkey.c
@@ -90,29 +97,31 @@ CPPFLAGS.sockets.cpp+= -o ${.TARGET}
 
 # required by base/file.cpp
 .PATH: ${.CURDIR}/../liblog
-SRCS+= config_read.c
-SRCS+= config_write.c
-SRCS+= fake_log_device.c
-SRCS+= fake_writer.c
-SRCS+= local_logger.c
-SRCS+= logger_lock.c
-SRCS+= logger_name.c
-SRCS+= logger_write.c
-SRCS+= logprint.c
-SRCS+= stderr_write.c
+SRCS+= config_read.cpp
+SRCS+= config_write.cpp
+SRCS+= fake_log_device.cpp
+SRCS+= fake_writer.cpp
+SRCS+= logger_lock.cpp
+SRCS+= logger_name.cpp
+SRCS+= logger_write.cpp
+SRCS+= logprint.cpp
+SRCS+= stderr_write.cpp
 
-CPPFLAGS+= -DADB_VERSION="\"${VERSION}\""
+CPPFLAGS+= -DPLATFORM_TOOLS_VERSION="\"${VERSION:U0.0.0}\""
 CPPFLAGS+= -DADB_HOST=1
 CPPFLAGS+= -Doff64_t=off_t
+CPPFLAGS+= -Dlseek64=lseek
 CPPFLAGS+= -DFAKE_LOG_DEVICE=1
 CPPFLAGS+= -I${.CURDIR}
+CPPFLAGS+= -I${.CURDIR}/client
 CPPFLAGS+= -I${.CURDIR}/../include
 CPPFLAGS+= -I${.CURDIR}/../base/include
+CPPFLAGS+= -I${.CURDIR}/../diagnose_usb/include
 CPPFLAGS+= -I${.CURDIR}/../libcrypto_utils/include
 CPPFLAGS+= ${CPPFLAGS.${.IMPSRC:T}}
 CPPFLAGS+= $$(${PKG_CONFIG} libcrypto --cflags 2>/dev/null)
 CPPFLAGS+= $$(${PKG_CONFIG} libusb-1.0 --cflags 2>/dev/null)
-CXXFLAGS+= -std=gnu++14
+CXXFLAGS+= -std=gnu++2a
 
 .ifndef COMPILE.c
 CFLAGS+= ${CPPFLAGS}
@@ -147,5 +156,5 @@ beforeinstall:
 test: ${PROG}_test
 	@for f in ${.ALLSRC}; do ./$$f; done
 
-${PROG}_test: ${OBJS:Nmain.o:Ncommandline.o} ${TEST_OBJS}
+${PROG}_test: ${OBJS:Nmain.o:Nadb_install.o:Ncommandline.o} ${TEST_OBJS}
 	${CXX} ${CPPFLAGS} ${CXXFLAGS} ${LDFLAGS} -o $@ $> ${LDADD} ${TEST_LDADD}

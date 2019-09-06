@@ -1,5 +1,5 @@
---- include/cutils/trace.h.orig	2017-06-20 10:50:27 UTC
-+++ include/cutils/trace.h
+--- libcutils/include/cutils/trace.h.orig	2019-07-17 19:54:09 UTC
++++ libcutils/include/cutils/trace.h
 @@ -18,8 +18,14 @@
  #define _LIBS_CUTILS_TRACE_H
  
