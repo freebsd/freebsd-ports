@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190906:
+  AFFECTS: users of devel/py-fabric
+  AUTHOR: dbaio@FreeBSD.org
+
+  Fabric (devel/py-fabric) was upgraded to 2.5.0, Fabric (2+) represents
+  a near-total reimplementation and reorganization of the software.
+
+  Fabric 2 is not at 100% feature parity with 1.x! Some features have been
+  explicitly dropped, but others simply have not been ported over yet,
+  either due to time constraints or because said features need to be
+  re-examined in a modern context.
+
+  More information at:
+  https://www.fabfile.org/upgrading.html#upgrading
+  https://www.fabfile.org/upgrading.html#upgrade-specifics
+
+  If you would like to keep using 1.x, please run the following command to
+  update pkg database:
+
+    pkg set -n py27-fabric:py27-fabric1
+    pkg set -o devel/py-fabric:devel/py-fabric1
+
 20190830:
   AFFECTS: users of www/gitlab-ce
   AUTHOR: mfechner@FreeBSD.org
