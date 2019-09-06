@@ -8,7 +8,7 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org Bitstream Vera Speedo font
 
-DEPRECATED=     Deprecated upstream
+DEPRECATED=	Deprecated upstream
 EXPIRATION_DATE=2019-10-15
 
 XORG_CAT=	font
