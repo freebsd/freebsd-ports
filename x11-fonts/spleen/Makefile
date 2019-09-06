@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spleen
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/fcambus/spleen/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-font
