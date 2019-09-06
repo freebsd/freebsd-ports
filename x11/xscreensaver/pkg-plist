@@ -55,6 +55,7 @@ bin/xscreensaver-hacks/cynosure
 bin/xscreensaver-hacks/dangerball
 bin/xscreensaver-hacks/decayscreen
 bin/xscreensaver-hacks/deco
+bin/xscreensaver-hacks/deepstars
 bin/xscreensaver-hacks/deluxe
 bin/xscreensaver-hacks/demon
 bin/xscreensaver-hacks/discoball
@@ -103,6 +104,7 @@ bin/xscreensaver-hacks/glsnake
 bin/xscreensaver-hacks/gltext
 bin/xscreensaver-hacks/goop
 bin/xscreensaver-hacks/grav
+bin/xscreensaver-hacks/gravitywell
 bin/xscreensaver-hacks/greynetic
 bin/xscreensaver-hacks/halftone
 bin/xscreensaver-hacks/halo
@@ -249,6 +251,7 @@ man/man1/xscreensaver-demo.1.gz
 man/man1/xscreensaver-getimage-file.1.gz
 man/man1/xscreensaver-getimage-video.1.gz
 man/man1/xscreensaver-getimage.1.gz
+man/man1/xscreensaver-systemd.1.gz
 man/man1/xscreensaver-text.1.gz
 man/man1/xscreensaver.1.gz
 man/man6/abstractile.6.gz
@@ -301,6 +304,7 @@ man/man6/cynosure.6.gz
 man/man6/dangerball.6.gz
 man/man6/decayscreen.6.gz
 man/man6/deco.6.gz
+man/man6/deepstars.6.gz
 man/man6/deluxe.6.gz
 man/man6/demon.6.gz
 man/man6/discoball.6.gz
@@ -349,6 +353,7 @@ man/man6/glsnake.6.gz
 man/man6/gltext.6.gz
 man/man6/goop.6.gz
 man/man6/grav.6.gz
+man/man6/gravitywell.6.gz
 man/man6/greynetic.6.gz
 man/man6/halftone.6.gz
 man/man6/halo.6.gz
@@ -562,6 +567,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/dangerball.xml
 %%DATADIR%%/config/decayscreen.xml
 %%DATADIR%%/config/deco.xml
+%%DATADIR%%/config/deepstars.xml
 %%DATADIR%%/config/deluxe.xml
 %%DATADIR%%/config/demon.xml
 %%DATADIR%%/config/discoball.xml
@@ -610,6 +616,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/gltext.xml
 %%DATADIR%%/config/goop.xml
 %%DATADIR%%/config/grav.xml
+%%DATADIR%%/config/gravitywell.xml
 %%DATADIR%%/config/greynetic.xml
 %%DATADIR%%/config/halftone.xml
 %%DATADIR%%/config/halo.xml
