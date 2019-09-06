@@ -1,0 +1,4 @@
+Similiar to Django's native static templatetag, but this includes the file
+directly in the template, rather than a link to it.
+
+WWW: https://github.com/bartTC/django-staticinline
