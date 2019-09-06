@@ -3,6 +3,7 @@
 
 PORTNAME=	vnconvert
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	vietnamese
 MASTER_SITES=	LOCAL/obrien
 DISTNAME=	convert
