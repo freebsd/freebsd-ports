@@ -7,7 +7,7 @@ BINDIR?=/usr/bin
 FILESDIR?=${DOCDIR}/${PROG}
 VERSION?=	28.0.0-0 ${VEREXT}
 
-FILES= *.[Tt][Xx][Tt]
+FILES= OVERVIEW.TXT SERVICES.TXT SYNC.TXT protocol.txt
 
 SRCS+= adb.cpp
 SRCS+= adb_auth_host.cpp
