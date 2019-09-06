@@ -1,2 +1,5 @@
-SHA256 (mdf2iso-0.3.0.tar.xz) = a4244f7de0a68497fd34c064959ae79f5e461c9b64ab59aeb9eb9de5d54b05ea
-SIZE (mdf2iso-0.3.0.tar.xz) = 75020
+TIMESTAMP = 1565641242
+SHA256 (mdf2iso_0.3.1.orig.tar.gz) = 906f0583cb3d36c4d862da23837eebaaaa74033c6b0b6961f2475b946a71feb7
+SIZE (mdf2iso_0.3.1.orig.tar.gz) = 193860
+SHA256 (mdf2iso_0.3.1-2.debian.tar.xz) = 0cff242ef665c512c03999504e88f0fae77313ef6fd5e99c6a74f5060f2683f4
+SIZE (mdf2iso_0.3.1-2.debian.tar.xz) = 2392
