@@ -89,6 +89,9 @@ bin/sancov%%LLVM_SUFFIX%%
 %%LIT%%llvm%%LLVM_SUFFIX%%/bin/lit
 %%LIT%%bin/llvm-lit%%LLVM_SUFFIX%%
 %%LIT%%llvm%%LLVM_SUFFIX%%/bin/llvm-lit
+%%PYCLANG%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/clang/__init__.py
+%%PYCLANG%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/clang/cindex.py
+%%PYCLANG%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/clang/enumerations.py
 %%LLDB%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/lldb/__init__.py
 %%LLDB%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/lldb/_lldb.so
 %%LLDB%%llvm%%LLVM_SUFFIX%%/%%PYTHON_SITELIBDIR%%/lldb/embedded_interpreter.py

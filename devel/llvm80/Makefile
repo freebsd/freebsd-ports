@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	8.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION}/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -55,19 +55,20 @@ CMAKE_ARGS+=	-DPYTHON_EXECUTABLE=${PYTHON_CMD} \
 CFLAGS+=	-DNDEBUG
 CXXFLAGS+=	-DNDEBUG
 
-OPTIONS_DEFINE=	CLANG DOCS EXTRAS LIT LLD LLDB
+OPTIONS_DEFINE=	BE_AMDGPU CLANG DOCS EXTRAS LIT LLD LLDB PYCLANG
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
-OPTIONS_DEFAULT=	BE_STANDARD CLANG EXTRAS LIT LLD LLDB
+OPTIONS_DEFAULT=	BE_AMDGPU BE_STANDARD CLANG EXTRAS LIT LLD LLDB PYCLANG
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
 OPTIONS_SINGLE=		BACKENDS
 OPTIONS_SINGLE_BACKENDS=BE_FREEBSD BE_NATIVE BE_STANDARD
 OPTIONS_SUB=	yes
 
+BE_AMDGPU_DESC=		AMD GPU backend (required by mesa)
 BE_FREEBSD_DESC=	Backends for FreeBSD architectures
 BE_FREEBSD_CMAKE_ON=	-DLLVM_TARGETS_TO_BUILD="${FREEBSD_BACKENDS:ts;}"
-BE_NATIVE_DESC=		Backend(s) for this architecture (${NATIVE_BACKENDS})
+BE_NATIVE_DESC=		Backend(s) for this architecture (${_NATIVE_BACKENDS})
 BE_NATIVE_CMAKE_ON=	-DLLVM_TARGETS_TO_BUILD="${NATIVE_BACKENDS:ts;}"
 BE_STANDARD_DESC=	All non-experimental backends
 .for BE in FREEBSD NATIVE STANDARD
@@ -86,6 +87,7 @@ COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS:S|^|${_CRTLIBDIR}/|} \
 			${_COMPILER_RT_BLACKLISTS:S|^|${_CRTBLDIR}/|}
 DOCS_BUILD_DEPENDS=	sphinx-build-${PYTHON_VER}:textproc/py-sphinx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}recommonmark>=0.0.20180530:textproc/py-recommonmark@${PY_FLAVOR}
+DOCS_CONFLICTS_BUILD=	commonmark-cmark-*
 DOCS_PORTDOCS=		llvm
 DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
 			-DSPHINX_EXECUTABLE=${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} \
@@ -114,6 +116,10 @@ LLDB_VARS=		_USES_PYTHON=python:3.6+
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_DISTFILES=	openmp-${DISTVERSION}.src${EXTRACT_SUFX}
 OPENMP_EXTRA_PATCHES=	${PATCHDIR}/openmp
+PYCLANG_DESC=		Install python bindings to libclang
+PYCLANG_IMPLIES=	CLANG
+PYCLANG_VARS=		_USES_PYTHON=python:3.6+
+PYCLANG_CMAKE_ON=	-DCLANG_PYTHON_BINDINGS_VERSIONS=${PYTHON_VER}
 
 .if defined(WITH_DEBUG)
 CMAKE_BUILD_TYPE=	RelWithDebInfo
@@ -226,26 +232,36 @@ MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-profdata.1 llvm-readobj.1 llvm-stress.1 llvm-symbolizer.1 \
 		opt.1 tblgen.1
 
+.if ${PORT_OPTIONS:MPYCLANG}
+PYCLANG_PATTERN=	(clang\/(__init__|cindex|enumerations).py$)
+.endif
+
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/Makefile.COMMANDS"
 
-FREEBSD_BACKENDS=	AArch64 ARM Mips PowerPC Sparc X86
+_FREEBSD_BACKENDS=	AArch64 ARM Mips PowerPC Sparc X86
+FREEBSD_BACKENDS=	${_FREEBSD_BACKENDS}
 .if ${ARCH} == amd64
-NATIVE_BACKENDS=	X86
+_NATIVE_BACKENDS=	X86
 .elif ${ARCH} == arm64
-NATIVE_BACKENDS=	AAarch64
+_NATIVE_BACKENDS=	AAarch64
 .elif ${ARCH:Marmv*}
-NATIVE_BACKENDS=	ARM
+_NATIVE_BACKENDS=	ARM
 .elif ${ARCH} == i386
-NATIVE_BACKENDS=	X86
+_NATIVE_BACKENDS=	X86
 .elif ${ARCH:Mmips*}
-NATIVE_BACKENDS=	Mips
+_NATIVE_BACKENDS=	Mips
 .elif ${ARCH:Mpowerpc*}
-NATIVE_BACKENDS=	PowerPC
+_NATIVE_BACKENDS=	PowerPC
 .elif ${ARCH:Mriscv*}
 BROKEN_riscv=	No non-experimental native backend
 .endif
-STANDARD_BACKENDS=	${FREEBSD_BACKENDS} AMDGPU BPF Hexagon Lanai MSP430 \
+NATIVE_BACKENDS=	${_NATIVE_BACKENDS}
+.if ${PORT_OPTIONS:MBE_AMDGPU}
+FREEBSD_BACKENDS+=	AMDGPU
+NATIVE_BACKENDS+=	AMDGPU
+.endif
+STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU BPF Hexagon Lanai MSP430 \
 			NVPTX SystemZ WebAssembly XCore
 _BE_LIBS_COMMON=	CodeGen Desc Info
 _BE_LIBS_AArch64=	AsmParser AsmPrinter Disassembler Utils
@@ -529,7 +545,7 @@ build-plist:
 	    -e 's|\([^0-9]\)${LLVM_MAJOR}\([^0-9]\)|\1%%LLVM_MAJOR%%\2|' \
 	    | ${SORT} >> ${PLIST}.tmp
 	${AWK} '{ \
-	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(omp.h|ompt.h|${EXTRAS_PATTERN}|libclang_rt)/) {printf "%%%%CLANG%%%%"} \
+	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(omp.h|ompt.h|${EXTRAS_PATTERN}|libclang_rt|${PYCLANG_PATTERN})/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
@@ -537,6 +553,7 @@ build-plist:
 	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
 	    if ($$0 ~ /(lib.*omp|omp.h|ompt.h)/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /(LLVMgold)/) {printf "%%%%GOLD%%%%"} \
+	    if ($$0 ~ /${PYCLANG_PATTERN}/) {printf "%%%%PYCLANG%%%%"} \
 	    if ($$0 !~ /(libclang_rt)/ && $$0 !~ /(${BE_PATTERN})$$/) {print}}' ${PLIST}.tmp >> ${PLIST}
 	${ECHO_CMD} '@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
 	${ECHO_CMD} '@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
