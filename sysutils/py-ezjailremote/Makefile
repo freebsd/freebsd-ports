@@ -3,7 +3,7 @@
 
 PORTNAME=	ezjailremote
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,13 +13,15 @@ COMMENT=	Remote control and convenience wrapper for ezjail
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	ezjail-admin:sysutils/ezjail \
-		${PYTHON_PKGNAMEPREFIX}fabric>0:devel/py-fabric@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}fabric1>0:devel/py-fabric1@${PY_FLAVOR}
+
+USES=		python:2.7
+USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tomster
 GH_PROJECT=	ezjail-remote
 
-USES=		python:2.7
-USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

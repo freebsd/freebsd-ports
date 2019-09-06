@@ -4396,6 +4396,7 @@
     SUBDIR += py-extremes
     SUBDIR += py-ezpyinline
     SUBDIR += py-fabric
+    SUBDIR += py-fabric1
     SUBDIR += py-fabric3
     SUBDIR += py-fam
     SUBDIR += py-fastcache
