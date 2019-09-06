@@ -4,9 +4,9 @@ include/granite/widgets-utils.h
 lib/girepository-1.0/Granite-1.0.typelib
 lib/libgranite.so
 lib/libgranite.so.5
-lib/libgranite.so.5.2.4
+lib/libgranite.so.%%DISTVERSION%%
 libdata/pkgconfig/granite.pc
-share/applications/granite-demo.desktop
+share/applications/io.elementary.granite.demo.desktop
 share/gir-1.0/Granite-1.0.gir
 share/icons/hicolor/16x16/actions/appointment.svg
 share/icons/hicolor/16x16/actions/open-menu.svg
