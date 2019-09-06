@@ -1,0 +1,71 @@
+--- Makefile.in.orig	2001-12-23 11:10:13 UTC
++++ Makefile.in
+@@ -40,7 +40,7 @@ exec_prefix = @exec_prefix@
+ 
+ bindir = @bindir@
+ sbindir = @sbindir@
+-libexecdir = @libexecdir@
++libexecdir = @ac_libexecdir@
+ datadir = @datadir@
+ sysconfdir = @sysconfdir@
+ sharedstatedir = @sharedstatedir@
+@@ -81,7 +81,7 @@ EXEEXT = @EXEEXT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ OBJEXT = @OBJEXT@
+ PACKAGE = @PACKAGE@
+-PYTHON = @PYTHON@
++PYTHON = @PYTHON_CMD@
+ VERSION = @VERSION@
+ am__include = @am__include@
+ am__quote = @am__quote@
+@@ -576,16 +576,16 @@ uninstall-am: uninstall-binSCRIPTS uninstall-info-am \
+ 
+ starter: Makefile $(srcdir)/$(PYTHON_SCRIPT_TEMPLATE)
+ 	rm -f $@ $@.tmp
+-	sed -e 's%@\PYTHON@%$(PYTHON)%' \
+-	    -e 's%@\pkgdatadir@%$(pkgdatadir)%' \
++	sed -e 's%@PYTHON@%$(PYTHON)%' \
++	    -e 's%@pkgdatadir@%$(pkgdatadir)%' \
+ 	    < $(srcdir)/$(PYTHON_SCRIPT_TEMPLATE) > $@.tmp
+ 	mv $@.tmp $@
+ 
+ fsh: fsh.in Makefile starter
+ 	rm -f $@ $@.tmp
+ 	cat starter > $@.tmp
+-	sed -e 's%@\PYTHON@%$(PYTHON)%' \
+-	    -e 's%@\pkgdatadir@%$(pkgdatadir)%' \
++	sed -e 's%@PYTHON@%$(PYTHON)%' \
++	    -e 's%@pkgdatadir@%$(pkgdatadir)%' \
+ 	    < $(srcdir)/fsh.in >> $@.tmp
+ 	chmod +x $@.tmp
+ 	mv $@.tmp $@
+@@ -593,8 +593,8 @@ fsh: fsh.in Makefile starter
+ fshd: fshd.in Makefile starter
+ 	rm -f $@ $@.tmp
+ 	cat starter > $@.tmp
+-	sed -e 's%@\PYTHON@%$(PYTHON)%' \
+-	    -e 's%@\pkgdatadir@%$(pkgdatadir)%' \
++	sed -e 's%@PYTHON@%$(PYTHON)%' \
++	    -e 's%@pkgdatadir@%$(pkgdatadir)%' \
+ 	    < $(srcdir)/fshd.in >> $@.tmp
+ 	chmod +x $@.tmp
+ 	mv $@.tmp $@
+@@ -602,15 +602,15 @@ fshd: fshd.in Makefile starter
+ in.fshd: in.fshd.in Makefile starter
+ 	rm -f $@ $@.tmp
+ 	cat starter > $@.tmp
+-	sed -e 's%@\PYTHON@%$(PYTHON)%' \
+-	    -e 's%@\pkgdatadir@%$(pkgdatadir)%' \
++	sed -e 's%@PYTHON@%$(PYTHON)%' \
++	    -e 's%@pkgdatadir@%$(pkgdatadir)%' \
+ 	    < $(srcdir)/in.fshd.in >> $@.tmp
+ 	chmod +x $@.tmp
+ 	mv $@.tmp $@
+ 
+ fcp: fcp.sh Makefile
+ 	rm -f $@ $@.tmp
+-	sed -e 's%@\libexecdir@%$(libexecdir)%g' \
++	sed -e 's%@libexecdir@%$(libexecdir)%g' \
+ 	    < $(srcdir)/fcp.sh > $@.tmp
+ 	chmod +x $@.tmp
+ 	mv $@.tmp $@
