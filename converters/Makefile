@@ -13,6 +13,7 @@
     SUBDIR += base64
     SUBDIR += base91
     SUBDIR += bibtexconv
+    SUBDIR += bmfdec
     SUBDIR += bsdconv
     SUBDIR += btoa
     SUBDIR += chmview
