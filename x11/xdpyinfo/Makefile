@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 USES=		xorg xorg-cat:app
 USE_XORG=	dmx x11 xcb xcomposite xext xinerama xorgproto xrender \
-		xtst xxf86dga xxf86misc xxf86vm
+		xtst xxf86dga xxf86vm
 
 CONFIGURE_ARGS=	--without-xf86misc
 
