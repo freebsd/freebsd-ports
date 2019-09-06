@@ -1518,6 +1518,7 @@
     SUBDIR += py-django-assets
     SUBDIR += py-django-auth-ldap
     SUBDIR += py-django-babel
+    SUBDIR += py-django-bakery
     SUBDIR += py-django-bitfield
     SUBDIR += py-django-bootstrap-form
     SUBDIR += py-django-bootstrap3
