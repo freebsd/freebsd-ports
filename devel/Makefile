@@ -4154,6 +4154,7 @@
     SUBDIR += py-azure-batch
     SUBDIR += py-azure-cosmos
     SUBDIR += py-azure-datalake-store
+    SUBDIR += py-azure-functions-devops-build
     SUBDIR += py-azure-graphrbac
     SUBDIR += py-azure-keyvault
     SUBDIR += py-azure-mgmt-advisor
