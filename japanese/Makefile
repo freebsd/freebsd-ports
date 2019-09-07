@@ -92,6 +92,8 @@
     SUBDIR += font-mplus-bitmap
     SUBDIR += font-mplus-ipa
     SUBDIR += font-mplus-outline
+    SUBDIR += font-myrica
+    SUBDIR += font-myricam
     SUBDIR += font-naga10
     SUBDIR += font-nasu
     SUBDIR += font-ricty
