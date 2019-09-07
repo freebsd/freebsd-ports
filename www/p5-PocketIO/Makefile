@@ -23,8 +23,9 @@ RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 TEST_DEPENDS=	p5-Plack>=0:www/p5-Plack \
 		p5-Twiggy>=0:www/p5-Twiggy
 
-NO_ARCH=	yes
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
