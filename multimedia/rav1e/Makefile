@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190902
+PORTVERSION=	s20190906
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,19 +16,20 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	b9975f82
+GH_TAGNAME=	f39b1d75
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler32-1.0.3 \
 		aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
 		aom-sys-0.1.2 \
+		arbitrary-0.2.0 \
 		arc-swap-0.4.2 \
 		arg_enum_proc_macro-0.3.0 \
 		arrayvec-0.4.11 \
 		atty-0.2.13 \
 		autocfg-0.1.6 \
-		backtrace-0.3.35 \
+		backtrace-0.3.37 \
 		backtrace-sys-0.1.31 \
 		better-panic-0.1.2 \
 		bincode-1.1.4 \
@@ -36,14 +37,13 @@ CARGO_CRATES=	adler32-1.0.3 \
 		bitflags-1.1.0 \
 		bitstream-io-0.8.4 \
 		bstr-0.2.8 \
-		bumpalo-2.6.0 \
 		byteorder-1.3.2 \
 		c2-chacha-0.2.2 \
 		cast-0.2.2 \
-		cc-1.0.41 \
+		cc-1.0.42 \
 		cexpr-0.3.5 \
 		cfg-if-0.1.9 \
-		chrono-0.4.8 \
+		chrono-0.4.9 \
 		clang-sys-0.28.1 \
 		clap-2.33.0 \
 		clicolors-control-1.0.1 \
@@ -72,7 +72,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		failure_derive-0.1.5 \
 		fuchsia-cprng-0.1.1 \
 		fxhash-0.2.1 \
-		getrandom-0.1.11 \
+		getrandom-0.1.12 \
 		gif-0.10.2 \
 		glob-0.3.0 \
 		humantime-1.2.0 \
@@ -82,7 +82,6 @@ CARGO_CRATES=	adler32-1.0.3 \
 		itertools-0.8.0 \
 		itoa-0.4.4 \
 		jpeg-decoder-0.1.16 \
-		js-sys-0.3.27 \
 		lazy_static-1.4.0 \
 		libc-0.2.62 \
 		libloading-0.5.2 \
@@ -131,7 +130,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		redox_syscall-0.1.56 \
 		regex-1.1.9 \
 		regex-automata-0.1.8 \
-		regex-syntax-0.6.11 \
+		regex-syntax-0.6.12 \
 		rustc-demangle-0.1.16 \
 		rustc_version-0.2.3 \
 		ryu-1.0.0 \
@@ -168,12 +167,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		vergen-3.0.4 \
 		version_check-0.1.5 \
 		walkdir-2.2.9 \
-		wasi-0.5.0 \
-		wasm-bindgen-0.2.50 \
-		wasm-bindgen-backend-0.2.50 \
-		wasm-bindgen-macro-0.2.50 \
-		wasm-bindgen-macro-support-0.2.50 \
-		wasm-bindgen-shared-0.2.50 \
+		wasi-0.7.0 \
 		which-2.0.1 \
 		winapi-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
