@@ -11,6 +11,9 @@ COMMENT=	Microsoft Azure Command-Line Tools Network Command Module
 
 LICENSE=	MIT
 
+DEPRECATED=	Incorporated into azure-cli package
+EXPIRATION_DATE=2019-09-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-mgmt-network>=3.0.0:devel/py-azure-mgmt-network@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-trafficmanager>=0.51.0:devel/py-azure-mgmt-trafficmanager@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-dns>=2.1.0:devel/py-azure-mgmt-dns@${PY_FLAVOR} \

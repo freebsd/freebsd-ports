@@ -11,6 +11,9 @@ COMMENT=	Microsoft Azure Service Fabric Command-Line Tools
 
 LICENSE=	MIT
 
+DEPRECATED=	Incorporated into azure-cli package
+EXPIRATION_DATE=2019-09-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-graphrbac>=0.60.0:devel/py-azure-graphrbac@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-keyvault>=1.1.0:devel/py-azure-keyvault@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-network>=3.0.0:devel/py-azure-mgmt-network@${PY_FLAVOR} \

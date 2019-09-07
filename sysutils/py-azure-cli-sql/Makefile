@@ -11,6 +11,9 @@ COMMENT=	Microsoft Azure Command-Line Tools SQL Command Module
 
 LICENSE=	MIT
 
+DEPRECATED=	Incorporated into azure-cli package
+EXPIRATION_DATE=2019-09-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-mgmt-storage>=3.3.0:devel/py-azure-mgmt-storage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-sql>=0.12.0:devel/py-azure-mgmt-sql@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cli-core>=0:sysutils/py-azure-cli-core@${PY_FLAVOR} \

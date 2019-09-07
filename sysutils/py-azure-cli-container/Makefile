@@ -11,6 +11,9 @@ COMMENT=	Microsoft Azure Command-Line Tools container Command Module
 
 LICENSE=	MIT
 
+DEPRECATED=	Incorporated into azure-cli package
+EXPIRATION_DATE=2019-09-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerinstance>=1.4.0:devel/py-azure-mgmt-containerinstance@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-loganalytics>=0.2.0:devel/py-azure-mgmt-loganalytics@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-resource>=2.0.0:devel/py-azure-mgmt-resource@${PY_FLAVOR} \
