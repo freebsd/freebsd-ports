@@ -1,0 +1,11 @@
+--- jekyll.gemspec.orig	2018-02-14 14:08:19 UTC
++++ jekyll.gemspec
+@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.4"])
+       s.add_runtime_dependency(%q<colorator>.freeze, ["~> 1.0"])
+       s.add_runtime_dependency(%q<em-websocket>.freeze, ["~> 0.5"])
+-      s.add_runtime_dependency(%q<i18n>.freeze, ["~> 0.7"])
++      s.add_runtime_dependency(%q<i18n>.freeze, [">= 0.7"])
+       s.add_runtime_dependency(%q<jekyll-sass-converter>.freeze, ["~> 1.0"])
+       s.add_runtime_dependency(%q<jekyll-watch>.freeze, ["~> 2.0"])
+       s.add_runtime_dependency(%q<kramdown>.freeze, ["~> 1.14"])
