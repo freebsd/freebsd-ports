@@ -3,6 +3,7 @@
 
 PORTNAME=	mate-screensaver
 PORTVERSION=	1.22.1
+PORTREVISION=	1
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -22,10 +23,10 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake localbase pathfix pkgconfig tar:xz
+USES=		gettext gmake localbase pathfix pkgconfig tar:xz xorg
 USE_GL=		gl
 USE_MATE=	desktop libmatekbd menus session:run
-USE_XORG=	ice sm x11 xext xscrnsaver xxf86misc xxf86vm
+USE_XORG=	ice sm x11 xext xscrnsaver xxf86vm
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xscreensaverdir=${XSCREENSAVER_DIR} \

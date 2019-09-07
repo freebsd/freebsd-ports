@@ -3,7 +3,7 @@
 
 PORTNAME=	cinnamon-settings-daemon
 PORTVERSION=	2.4.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -33,7 +33,6 @@ USE_GNOME=	gnomeprefix intlhack libgnomekbd \
 		libxslt:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-USE_XORG=	xxf86misc
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
