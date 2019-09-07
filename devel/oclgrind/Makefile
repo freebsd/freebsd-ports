@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oclgrind
-PORTVERSION=	20190807
+PORTVERSION=	20190907
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -21,9 +21,9 @@ USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	jrprice
 GH_PROJECT=	Oclgrind
-GH_TAGNAME=	cd8cad1
+GH_TAGNAME=	e7c87b0
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS+=	-DLLVM_DIR=${LOCALBASE}/llvm${LLVM_DEFAULT}/share/llvm/cmake
+CMAKE_ARGS+=	-DLLVM_DIR=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/cmake/llvm
 
 .include <bsd.port.mk>
