@@ -2,7 +2,6 @@ bin/bp_aacomp
 bin/bp_bioflat_index
 bin/bp_biogetseq
 bin/bp_chaos_plot
-bin/bp_classify_hits_kingdom
 bin/bp_dbsplit
 bin/bp_extract_feature_seq
 bin/bp_fastam9_to_table
@@ -516,7 +515,6 @@ bin/bp_unflatten_seq
 %%PERL5_MAN1%%/bp_bioflat_index.1.gz
 %%PERL5_MAN1%%/bp_biogetseq.1.gz
 %%PERL5_MAN1%%/bp_chaos_plot.1.gz
-%%PERL5_MAN1%%/bp_classify_hits_kingdom.1.gz
 %%PERL5_MAN1%%/bp_dbsplit.1.gz
 %%PERL5_MAN1%%/bp_extract_feature_seq.1.gz
 %%PERL5_MAN1%%/bp_fastam9_to_table.1.gz
@@ -1035,6 +1033,7 @@ bin/bp_unflatten_seq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/align/align_on_codons.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/align/aligntutorial.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/align/simplealign.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/classify_hits_kingdom
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contributed/nmrpdb_parse.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contributed/prosite2perl.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contributed/rebase2list.pl
