@@ -4188,6 +4188,7 @@
     SUBDIR += py-azure-mgmt-keyvault
     SUBDIR += py-azure-mgmt-kusto
     SUBDIR += py-azure-mgmt-loganalytics
+    SUBDIR += py-azure-mgmt-managedservices
     SUBDIR += py-azure-mgmt-managementgroups
     SUBDIR += py-azure-mgmt-maps
     SUBDIR += py-azure-mgmt-marketplaceordering
