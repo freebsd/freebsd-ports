@@ -1,0 +1,6 @@
+This project provides the class AzureDevopsBuildManager and supporting classes.
+This manager class allows the caller to manage Azure Devops pipelines that are
+maintained within an Azure Devops account. This project was created to be able
+to support command line tooling for the AZ Cli.
+
+WWW: https://pypi.org/project/azure-functions-devops-build/
