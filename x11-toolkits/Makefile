@@ -169,7 +169,6 @@
     SUBDIR += p5-Tk-TableMatrix
     SUBDIR += p5-Tk-ToolBar
     SUBDIR += p5-Tk-WaitBox
-    SUBDIR += p5-Wx
     SUBDIR += pango
     SUBDIR += pangomm
     SUBDIR += pangox-compat
