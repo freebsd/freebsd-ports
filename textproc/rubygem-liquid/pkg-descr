@@ -1,4 +1,8 @@
-Ruby library for rendering safe templates which cannot affect the
-security of the server they are rendered on.
+Liquid is an open-source template language created by Shopify and written in
+Ruby. It is the backbone of Shopify themes and is used to load dynamic content
+on storefronts.
 
-WWW: http://www.liquidmarkup.org
+Liquid has been in production use at Shopify since 2006 and is now used by many
+other hosted web applications.
+
+WWW: https://shopify.github.io/liquid/
