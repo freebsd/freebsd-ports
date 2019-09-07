@@ -245,7 +245,7 @@ MOZ_OPTIONS+=	--disable-libproxy
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	libasound.so:audio/alsa-lib
+BUILD_DEPENDS+=	${LOCALBASE}/include/alsa/asoundlib.h:audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 RUN_DEPENDS+=	alsa-lib>=1.1.1_1:audio/alsa-lib
 MOZ_OPTIONS+=	--enable-alsa
@@ -264,7 +264,7 @@ MOZ_OPTIONS+=	--disable-pulseaudio
 .endif
 
 .if ${PORT_OPTIONS:MSNDIO}
-LIB_DEPENDS+=	libsndio.so:audio/sndio
+BUILD_DEPENDS+=	${LOCALBASE}/include/sndio.h:audio/sndio
 post-patch-SNDIO-on:
 	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
 		${MOZSRC}/media/libcubeb/src/moz.build \
