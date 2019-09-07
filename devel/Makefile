@@ -4157,6 +4157,7 @@
     SUBDIR += py-azure-graphrbac
     SUBDIR += py-azure-keyvault
     SUBDIR += py-azure-mgmt-advisor
+    SUBDIR += py-azure-mgmt-appconfiguration
     SUBDIR += py-azure-mgmt-applicationinsights
     SUBDIR += py-azure-mgmt-authorization
     SUBDIR += py-azure-mgmt-batch
