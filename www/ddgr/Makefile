@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ddgr
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR}
 USE_GITHUB=	yes
 GH_ACCOUNT=	jarun
 
-USES=		python:3.4+ shebangfix
+USES=		python:3.5+ shebangfix
 SHEBANG_FILES=	${PORTNAME}
 NO_ARCH=	yes
 NO_BUILD=	yes
