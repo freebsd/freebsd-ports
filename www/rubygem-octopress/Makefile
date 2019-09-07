@@ -12,17 +12,18 @@ COMMENT=	Static blogging framework leveraging Jekyll
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-jekyll>=2.0:www/rubygem-jekyll \
-		rubygem-mercenary>=0.3.2:devel/rubygem-mercenary \
+RUN_DEPENDS=	rubygem-jekyll3>=2.0:www/rubygem-jekyll3 \
+		rubygem-mercenary>=0.3.2<0.4:devel/rubygem-mercenary \
 		rubygem-octopress-deploy>=0:net/rubygem-octopress-deploy \
-		rubygem-octopress-escape-code>=2.0:textproc/rubygem-octopress-escape-code \
-		rubygem-octopress-hooks>=2.0:devel/rubygem-octopress-hooks \
-		rubygem-redcarpet>=3.0:textproc/rubygem-redcarpet \
+		rubygem-octopress-escape-code>=2.0<3:textproc/rubygem-octopress-escape-code \
+		rubygem-octopress-hooks>=2.0<3:devel/rubygem-octopress-hooks \
+		rubygem-redcarpet>=3.0<4:textproc/rubygem-redcarpet \
 		rubygem-titlecase>=0:devel/rubygem-titlecase
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/octopress
 
