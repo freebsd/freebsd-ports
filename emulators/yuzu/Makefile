@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yuzu
-PORTVERSION=	s20190901
+PORTVERSION=	s20190905
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	50b5bb44a
+GH_TAGNAME=	4ee994963
 GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
@@ -40,7 +40,7 @@ GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
 		facebook:zstd:v1.3.8:zstd/externals/zstd \
-		fmtlib:fmt:5.3.0:fmt/externals/fmt \
+		fmtlib:fmt:6.0.0:fmt/externals/fmt \
 		kinetiknz:cubeb:cubeb-0.2-1098-g6f2420d:cubeb/externals/cubeb \
 		lz4:lz4:v1.8.0-8-g4db65c1:lz4/externals/lz4 \
 		ogniK5377:opus:v1.3-rc-20-g562f8ba5:opus/externals/opus \
