@@ -1,17 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll-feed
-PORTVERSION=	0.11.0
+PORTVERSION=	0.12.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generates an Atom feed from Jekyll posts
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-jekyll>=3.3:www/rubygem-jekyll
+RUN_DEPENDS=	rubygem-jekyll>=3.7<5.0:www/rubygem-jekyll
 
 USES=		gem shebangfix
 USE_RUBY=	yes
