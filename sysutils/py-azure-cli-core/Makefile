@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli-core
-PORTVERSION=	2.0.67
+PORTVERSION=	2.0.72
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,8 @@ COMMENT=	Microsoft Azure Command-Line Tools Core Module
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}adal>=1.2.0:net-mgmt/py-adal@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}argcomplete>=1.8.0:devel/py-argcomplete@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}adal>=1.2:net-mgmt/py-adal@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}argcomplete>=1.8:devel/py-argcomplete@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cli-telemetry>=0:sysutils/py-azure-cli-telemetry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.9:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}humanfriendly>=4.7:textproc/py-humanfriendly@${PY_FLAVOR} \
@@ -21,18 +21,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}adal>=1.2.0:net-mgmt/py-adal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msrest>=0.4.4:net-mgmt/py-msrest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msrestazure>=0.4.25:net-mgmt/py-msrestazure@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=2.0.8:security/py-paramiko@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=17.1.0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.13:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.20.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tabulate>=0.7.7:devel/py-tabulate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.30.0:devel/py-wheel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-resource>=2.1.0:devel/py-azure-mgmt-resource@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyperclip>=1.7.0:devel/py-pyperclip@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psutil>=5.6.1:sysutils/py-psutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-resource>=2.1:devel/py-azure-mgmt-resource@${PY_FLAVOR} \
 		${PY_ENUM34} \
 		${PY_FUTURES}
 
