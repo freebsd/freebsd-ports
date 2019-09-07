@@ -21,4 +21,9 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
+post-patch:
+# Remove backports
+	@${REINPLACE_CMD} -e '/backports/d' ${WRKSRC}/cucumber-core.gemspec
+	@${REINPLACE_CMD} -e "/require 'backports/d" ${WRKSRC}/lib/cucumber/core/event.rb
+
 .include <bsd.port.mk>
