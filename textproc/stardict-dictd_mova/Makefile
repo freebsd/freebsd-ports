@@ -5,13 +5,11 @@ PORTNAME=	stardict-dictd_mova
 PORTVERSION=	2.4.2
 PORTREVISION=	8
 CATEGORIES=	textproc
-MASTER_SITES=	http://abloz.com/huzheng/stardict-dic/mova.org/
+MASTER_SITES=	http://download.huzheng.org/mova.org/
 DIST_SUBDIR=	stardict
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dictionaries from www.mova.org for StarDict
-
-BROKEN=		unfetchable
 
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -4,8 +4,8 @@
 This dictionary can be used with any of the following dictionary
 programs (consider to install one of them):
 
-textproc/goldendict	Goldendict (Qt4)
-textproc/qstardict	StarDict clone (Qt4)
+textproc/goldendict	Goldendict (Qt5)
+textproc/qstardict	StarDict clone (Qt5)
 textproc/stardict3	StarDict 3.x (GTK2)
 EOM
 }
