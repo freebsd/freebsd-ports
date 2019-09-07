@@ -1558,6 +1558,7 @@
     SUBDIR += rubygem-jekyll-paginate
     SUBDIR += rubygem-jekyll-redirect-from
     SUBDIR += rubygem-jekyll-sass-converter
+    SUBDIR += rubygem-jekyll-sass-converter1
     SUBDIR += rubygem-jekyll-sitemap
     SUBDIR += rubygem-jemoji
     SUBDIR += rubygem-js_regex
