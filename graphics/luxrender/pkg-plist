@@ -1,6 +1,0 @@
-bin/luxconsole
-bin/luxmerger
-include/luxrender/api.h
-lib/liblux.so
-share/pixmaps/luxrender.svg
-share/applications/luxrender.desktop
