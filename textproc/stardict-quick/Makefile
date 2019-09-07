@@ -5,13 +5,11 @@ PORTNAME=	stardict-quick
 PORTVERSION=	2.4.2
 PORTREVISION=	9
 CATEGORIES=	textproc
-MASTER_SITES=	http://abloz.com/huzheng/stardict-dic/Quick/
+MASTER_SITES=	http://download.huzheng.org/Quick/
 DIST_SUBDIR=	stardict
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dictionaries from Quick for StarDict
-
-BROKEN=		unfetchable
 
 NO_BUILD=	yes
 NO_ARCH=	yes

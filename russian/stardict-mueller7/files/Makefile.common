@@ -1,5 +1,6 @@
 DIST_SUBDIR=	stardict
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 PKGMESSAGE?=	${.CURDIR}/../../russian/stardict-mueller7/files/pkg-message
 
