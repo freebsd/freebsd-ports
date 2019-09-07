@@ -18,11 +18,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
 		p5-File-Listing>=0:sysutils/p5-File-Listing
 
-CONFLICTS=	backuppc-devel-[0-9]*
+USES=		cpe perl5
+
+CONFLICTS_INSTALL=	backuppc4 backuppc-devel
 
 USE_RC_SUBR=	backuppc
-
-USES=		cpe perl5
 CPE_VENDOR=	craig_barratt
 NO_ARCH=	yes
 NO_BUILD=	yes
