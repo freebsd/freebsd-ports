@@ -2,23 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	safe_yaml
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse YAML safely
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+USES=		gem shebangfix
+USE_RUBY=	yes
+
 NO_ARCH=	yes
 
-USE_RUBY=	yes
-USES=		gem shebangfix
-SHEBANG_FILES=	bundle_install_all_ruby_versions.sh \
-		run_specs_all_ruby_versions.sh
 PLIST_FILES=	bin/safe_yaml
+
+SHEBANG_GLOB=	*.sh
 
 .include <bsd.port.mk>
