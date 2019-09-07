@@ -9,6 +9,9 @@ MASTER_SITES=	http://files.etoilebsd.net/cplanet/
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	RSS Feed Aggregator that generate static html
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:www/clearsilver
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libcurl.so:ftp/curl
