@@ -12,6 +12,9 @@ DIST_SUBDIR=	GL
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL widgets library
 
+DEPRECATED=    Deprecated upstream
+EXPIRATION_DATE=       2019-11-01
+
 USES=		motif libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GL=		gl
