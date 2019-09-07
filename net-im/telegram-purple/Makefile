@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_armv6=		fails to link: undefined reference to 'backtrace'
 BROKEN_sparc64=		fails to compile: assertion fails
 
-BUILD_DEPENDS=	pidgin:net-im/pidgin
-RUN_DEPENDS=	pidgin:net-im/pidgin
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libwebp.so:graphics/webp \
 		libpurple.so:net-im/libpurple \
