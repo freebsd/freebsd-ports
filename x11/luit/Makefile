@@ -11,12 +11,12 @@ COMMENT=	Locale and ISO 2022 support for Unicode terminals
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/share/fonts/encodings/encodings.dir:x11-fonts/encodings
+
 USES=		iconv localbase:ldflags tar:tgz pkgconfig xorg
 USE_XORG=	ice x11 xt
 
 GNU_CONFIGURE=	yes
-
-BUILD_DEPENDS=	${LOCALBASE}/share/fonts/encodings/encodings.dir:x11-fonts/encodings
 
 CONFIGURE_ARGS=	--x-libraries=${LOCALBASE}/lib \
 		--x-includes=${LOCALBASE}/include \
