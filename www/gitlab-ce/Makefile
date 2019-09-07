@@ -3,7 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	12.1.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -208,7 +208,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-flipper-active_record013>=0.13.0:databases/rubygem-flipper-active_record013 \
 	rubygem-flipper-active_support_cache_store013>=0.13.0:devel/rubygem-flipper-active_support_cache_store013 \
 	rubygem-lograge-rails52>=0.5:www/rubygem-lograge-rails52 \
-	rubygem-grape_logging>=1.7:devel/rubygem-grape_logging
+	rubygem-grape_logging181=1.8.1:devel/rubygem-grape_logging181
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}
