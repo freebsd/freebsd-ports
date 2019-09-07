@@ -11,6 +11,9 @@ COMMENT=	Microsoft Azure Command-Line Tools VM Command Module
 
 LICENSE=	MIT
 
+DEPRECATED=	Incorporated into azure-cli package
+EXPIRATION_DATE=2019-09-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-mgmt-msi>=0.2.0:devel/py-azure-mgmt-msi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-authorization>=0.50.0:devel/py-azure-mgmt-authorization@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-compute>=5.0.0:devel/py-azure-mgmt-compute@${PY_FLAVOR} \

@@ -11,6 +11,9 @@ COMMENT=	Microsoft Azure Command-Line Tools AppService Command Module
 
 LICENSE=	MIT
 
+DEPRECATED=	Incorporated into azure-cli package
+EXPIRATION_DATE=2019-09-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-mgmt-storage>=3.1.1:devel/py-azure-mgmt-storage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-web>=0.40.0:devel/py-azure-mgmt-web@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerregistry>=2.7.0:devel/py-azure-mgmt-containerregistry@${PY_FLAVOR} \
