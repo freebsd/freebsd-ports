@@ -3,7 +3,7 @@
 
 PORTNAME=	bdb
 PORTVERSION=	0.6.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://ftp.idaemons.org/pub/distfiles/ruby/ \
 		http://idaemons.org/distfiles/ruby/ \
@@ -16,8 +16,11 @@ COMMENT=	Ruby interface to Oracle Berkeley DB revision 2 or later
 
 LICENSE=	RUBY
 
+BUILD_DEPENDS=	rubygem-rdoc>=0.a:devel/rubygem-rdoc
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+USES=		bdb shebangfix tar:bzip2
 USE_RUBY=		yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
@@ -34,7 +37,6 @@ SHAREMODE=	0644
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/bdb.so
 PORTDOCS=	*
 PORTEXAMPLES=	*
-USES=		bdb shebangfix tar:bzip2
 SHEBANG_FILES=	examples/record.rb \
 		examples/recno.rb \
 		examples/zeroc.rb \
