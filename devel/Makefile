@@ -5144,6 +5144,7 @@
     SUBDIR += py-virtualenvwrapper
     SUBDIR += py-visitor
     SUBDIR += py-voluptuous
+    SUBDIR += py-vsts
     SUBDIR += py-vsts-cd-manager
     SUBDIR += py-vulture
     SUBDIR += py-wadllib
