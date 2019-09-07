@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	h5py
-PORTVERSION=	2.9.0
-PORTREVISION=	2
+PORTVERSION=	2.10.0
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
-USES=		python
+USES=		pkgconfig python
 USE_PYTHON=	autoplist concurrent cython distutils
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

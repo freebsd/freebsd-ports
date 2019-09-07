@@ -1,5 +1,5 @@
-%%PORTDOCS%%%%DOCSDIR%%/README.rst
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/README.rst
 %%PORTDOCS%%%%DOCSDIR%%/build.rst
 %%PORTDOCS%%%%DOCSDIR%%/conf.py
 %%PORTDOCS%%%%DOCSDIR%%/config.rst
@@ -21,6 +21,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/vds.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/2.0.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/2.1.rst
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew/2.10.0.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/2.2.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/2.3.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/2.4.rst
