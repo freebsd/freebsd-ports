@@ -4175,6 +4175,7 @@
     SUBDIR += py-azure-mgmt-datalake-analytics
     SUBDIR += py-azure-mgmt-datalake-store
     SUBDIR += py-azure-mgmt-datamigration
+    SUBDIR += py-azure-mgmt-deploymentmanager
     SUBDIR += py-azure-mgmt-devtestlabs
     SUBDIR += py-azure-mgmt-dns
     SUBDIR += py-azure-mgmt-eventgrid
