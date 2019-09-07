@@ -2,17 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=		openvpn
-DISTVERSION=		201907
+DISTVERSION=		201935
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://secure-computing.net/files/openvpn/ \
 			ftp://ftp2.secure-computing.net/pub/FreeBSD/openvpn-devel/
 PKGNAMESUFFIX=		-devel
 
 MAINTAINER=		ecrist@secure-computing.net
+# let's use ?= in spite of portlint WARNings because this might become
+# security/openvpn one day which would then have a slave port:
 COMMENT?=		Secure IP/Ethernet tunnel daemon
 
 LICENSE=		GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT.GPL
+
+IGNORE_SSL=		libressl libressl-devel
 
 USES=			cpe libtool pkgconfig shebangfix tar:xz
 
@@ -41,7 +45,7 @@ OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	OPENSSL MBEDTLS
 PKCS11_DESC=		Use security/pkcs11-helper
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
-MBEDTLS_DESC=		SSL/TLS via mbedTLS
+MBEDTLS_DESC=		SSL/TLS via mbedTLS (lacks TLS v1.3)
 TUNNELBLICK_DESC=	Tunnelblick XOR scramble patch (READ HELP!)
 X509ALTUSERNAME_DESC=	Enable --x509-username-field (OpenSSL only)
 SMALL_DESC=		Build a smaller executable with fewer features
@@ -71,7 +75,6 @@ MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
 MBEDTLS_CONFIGURE_ON=	--with-crypto-library=mbedtls
 
 USE_RC_SUBR=		openvpn
-USE_LDCONFIG=		${PREFIX}/lib
 
 SUB_FILES=		pkg-message openvpn-client
 
@@ -115,22 +118,11 @@ _tlslibs=libmbedtls libmbedx509 libmbedcrypto
 _tlslibs=libssl libcrypto
 .endif
 
-.if ${SSL_DEFAULT:Mlibressl*} && empty(PORT_OPTIONS:MMBEDTLS)
-pre-everything::
-	@${ECHO_CMD} "WARNING: OpenVPN does not officially support LibreSSL."
-	@${ECHO_CMD} "If things break, rebuild with OpenSSL or mbedTLS."
-	@${ECHO_CMD} "You may wish to change your default SSL library"
-	@${ECHO_CMD} "and press Ctrl+C within the next 10 seconds to abort."
-.  if !(defined(PACKAGE_BUILDING) || defined(BATCH))
-	@sleep 10
-.  endif
-.endif
-
 # sanity check that we don't inherit incompatible SSL libs through,
 # for instance, pkcs11-helper:
 post-build:
-	   @a=$$(LC_ALL=C ldd -f '%o\n' ${WRKSRC}/src/openvpn/openvpn \
-	| ${SORT} -u) ; set -- $$(for i in ${_tlslibs} ; do ${PRINTF} '%s\n' "$$a" | ${GREP} $${i}.so | wc -l ; done | ${SORT} -u) ;\
+	@a=$$(LC_ALL=C ldd -f '%o\n' ${WRKSRC}/src/openvpn/openvpn \
+	|	${SORT} -u) ; set -- $$(for i in ${_tlslibs} ; do ${PRINTF} '%s\n' "$$a" | ${GREP} $${i}.so | wc -l ; done | ${SORT} -u) ;\
 	if test "$$*" != "1" ; then ${ECHO_CMD} >&2 "${.CURDIR} FAILED: either of ${_tlslibs} libraries linked multiple times" ; ${PRINTF} '%s\n' "$$a"; ${RM} ${BUILD_COOKIE} ; exit 1 ; fi
 
 post-install:
