@@ -79,6 +79,7 @@ sbin
 usr/bin/[
 usr/bin/alias
 usr/bin/arch
+usr/bin/awk
 usr/bin/base64
 usr/bin/basename
 usr/bin/bash
@@ -134,6 +135,7 @@ usr/bin/db47_upgrade
 usr/bin/db47_verify
 usr/bin/dd
 usr/bin/df
+usr/bin/dgawk
 usr/bin/dir
 usr/bin/dircolors
 usr/bin/dirname
@@ -156,6 +158,7 @@ usr/bin/flock
 usr/bin/fmt
 usr/bin/fold
 usr/bin/gapplication
+usr/bin/gawk
 usr/bin/gdbus
 usr/bin/gencat
 usr/bin/getconf
@@ -176,6 +179,7 @@ usr/bin/i386
 usr/bin/iconv
 usr/bin/id
 usr/bin/idn
+usr/bin/igawk
 usr/bin/info
 usr/bin/infocmp
 usr/bin/infokey
@@ -230,6 +234,7 @@ usr/bin/od
 usr/bin/oldfind
 usr/bin/paste
 usr/bin/pathchk
+usr/bin/pgawk
 usr/bin/pinky
 usr/bin/pldd
 usr/bin/pr
@@ -1256,6 +1261,8 @@ usr/lib64/openssl/engines/libubsec.so
 usr/lib64/rtkaio/librt.so.1
 usr/lib64/rtkaio/librtkaio-2.17.so
 usr/lib64/security/pam_cap.so
+usr/libexec/awk/grcat
+usr/libexec/awk/pwcat
 usr/libexec/coreutils/libstdbuf.so
 usr/libexec/gam_server
 usr/libexec/getconf/POSIX_V6_ILP32_OFF32
@@ -1345,6 +1352,26 @@ usr/sbin/tune2fs
 usr/sbin/wipefs
 usr/sbin/zdump
 usr/sbin/zic
+usr/share/awk/assert.awk
+usr/share/awk/bits2str.awk
+usr/share/awk/cliff_rand.awk
+usr/share/awk/ctime.awk
+usr/share/awk/ftrans.awk
+usr/share/awk/getopt.awk
+usr/share/awk/gettime.awk
+usr/share/awk/group.awk
+usr/share/awk/join.awk
+usr/share/awk/libintl.awk
+usr/share/awk/noassign.awk
+usr/share/awk/ord.awk
+usr/share/awk/passwd.awk
+usr/share/awk/quicksort.awk
+usr/share/awk/readable.awk
+usr/share/awk/rewind.awk
+usr/share/awk/round.awk
+usr/share/awk/strtonum.awk
+usr/share/awk/walkarray.awk
+usr/share/awk/zerofile.awk
 usr/share/bash-completion/completions/addpart
 usr/share/bash-completion/completions/blkdiscard
 usr/share/bash-completion/completions/blkid
@@ -1495,6 +1522,14 @@ usr/share/centos-release/EULA
 %%PORTDOCS%%usr/share/doc/gamin-0.1.10/server_structs.gif
 %%PORTDOCS%%usr/share/doc/gamin-0.1.10/socket.txt
 %%PORTDOCS%%usr/share/doc/gamin-0.1.10/using.html
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/COPYING
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/FUTURES
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/LIMITATIONS
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/NEWS
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/POSIX.STD
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/README
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/README.multibyte
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/README.tests
 %%PORTDOCS%%usr/share/doc/gdbm-1.10/AUTHORS
 %%PORTDOCS%%usr/share/doc/gdbm-1.10/COPYING
 %%PORTDOCS%%usr/share/doc/gdbm-1.10/NEWS
@@ -2197,6 +2232,8 @@ usr/share/info/coreutils.info.gz
 usr/share/info/dir
 usr/share/info/find-maint.info.gz
 usr/share/info/find.info.gz
+usr/share/info/gawk.info.gz
+usr/share/info/gawkinet.info.gz
 usr/share/info/grep.info.gz
 usr/share/info/history.info.gz
 usr/share/info/info-stnd.info.gz
@@ -2270,6 +2307,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/cy/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/da/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/libc.mo
@@ -2282,6 +2320,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/de/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/de/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/gdbm.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/grep.mo
@@ -2322,6 +2361,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/es/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/es/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/libc.mo
@@ -2347,6 +2387,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/fi/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/gdbm.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/grep.mo
@@ -2359,6 +2400,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/fr/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/libc.mo
@@ -2429,6 +2471,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/it/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/it/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/libc.mo
@@ -2440,6 +2483,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/ja/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/gdbm.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/grep.mo
@@ -2499,6 +2543,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/nl/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/libc.mo
@@ -2516,6 +2561,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/pl/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/gdbm.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/grep.mo
@@ -2594,6 +2640,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/sv/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/libc.mo
@@ -2635,6 +2682,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/vi/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/libc.mo
@@ -2683,6 +2731,7 @@ usr/share/man/man1/:.1.gz
 usr/share/man/man1/[.1.gz
 usr/share/man/man1/alias.1.gz
 usr/share/man/man1/arch.1.gz
+usr/share/man/man1/awk.1.gz
 usr/share/man/man1/base64.1.gz
 usr/share/man/man1/basename.1.gz
 usr/share/man/man1/bash.1.gz
@@ -2736,6 +2785,7 @@ usr/share/man/man1/date.1.gz
 usr/share/man/man1/dd.1.gz
 usr/share/man/man1/declare.1.gz
 usr/share/man/man1/df.1.gz
+usr/share/man/man1/dgawk.1.gz
 usr/share/man/man1/dir.1.gz
 usr/share/man/man1/dircolors.1.gz
 usr/share/man/man1/dirname.1.gz
@@ -2765,6 +2815,7 @@ usr/share/man/man1/flock.1.gz
 usr/share/man/man1/fmt.1.gz
 usr/share/man/man1/fold.1.gz
 usr/share/man/man1/gapplication.1.gz
+usr/share/man/man1/gawk.1.gz
 usr/share/man/man1/gdbus.1.gz
 usr/share/man/man1/getopt.1.gz
 usr/share/man/man1/getopts.1.gz
@@ -2782,6 +2833,7 @@ usr/share/man/man1/history.1.gz
 usr/share/man/man1/hostid.1.gz
 usr/share/man/man1/id.1.gz
 usr/share/man/man1/idn.1.gz
+usr/share/man/man1/igawk.1.gz
 usr/share/man/man1/info.1.gz
 usr/share/man/man1/infocmp.1m.gz
 usr/share/man/man1/infokey.1.gz
@@ -2836,6 +2888,7 @@ usr/share/man/man1/od.1.gz
 usr/share/man/man1/oldfind.1.gz
 usr/share/man/man1/paste.1.gz
 usr/share/man/man1/pathchk.1.gz
+usr/share/man/man1/pgawk.1.gz
 usr/share/man/man1/pinky.1.gz
 usr/share/man/man1/popd.1.gz
 usr/share/man/man1/pr.1.gz
