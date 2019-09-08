@@ -14,6 +14,7 @@ COMMENT=	Computation using data flow graphs for scalable machine learning
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
