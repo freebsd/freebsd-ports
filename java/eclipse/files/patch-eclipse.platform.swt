@@ -159,6 +159,18 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/ecl
  		if (osName.startsWith("Windows")) isWin32 = true;
  		IsLinux = isLinux;  IsWin32 = isWin32;
  
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java
+--- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java	0000-00-00 00:00:00.000000000 +0000
+@@ -155,7 +155,7 @@
+ 	 * https://www.nczonline.net/blog/2009/01/05/what-determines-that-a-script-is-long-running/
+ 	 * https://stackoverflow.com/questions/3030024/maximum-execution-time-for-javascript
+ 	 */
+-	static final int ASYNC_EXEC_TIMEOUT_MS = 10000; // Webkit2.
++	static final int ASYNC_EXEC_TIMEOUT_MS = 100; // Dirty hack for webkit issues on FreeBSD
+ 
+ 	static boolean bug522733FirstInstanceCreated = false; //Webkit2 workaround for Bug 522733
+ 
 diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf
 --- eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
