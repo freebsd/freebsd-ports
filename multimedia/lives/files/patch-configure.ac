@@ -1,0 +1,22 @@
+--- configure.ac.orig	2019-01-08 13:49:30 UTC
++++ configure.ac
+@@ -520,14 +520,16 @@ HAVE_OPENCV=false
+ 
+ dnl check for opencv
+ 
+-PKG_CHECK_MODULES(OPENCV, opencv >= 2.3.1, HAVE_OPENCV=true, HAVE_OPENCV=false)
++PKG_CHECK_MODULES(OPENCV, opencv >= 2.3.1, HAVE_OPENCV=true, HAVE_OPENCV=false)
+ 
+-if test "HAVE_OPENCV" = "true" ; then
+-OPENCV_LIBS_ONLY_L = `pkg-config opencv --libs-only-L`
++if test "$HAVE_OPENCV" = "true" ; then
++OPENCV_LIBS_ONLY_L=`$PKG_CONFIG opencv --libs-only-L`
++OPENCV_LIBS_ONLY_OTHER=`$PKG_CONFIG opencv --libs-only-other`
+ fi
+ 
+ AC_SUBST(OPENCV_CFLAGS)
+ AC_SUBST(OPENCV_LIBS_ONLY_L)
++AC_SUBST(OPENCV_LIBS_ONLY_OTHER)
+ 
+ AM_CONDITIONAL(HAVE_OPENCV,$HAVE_OPENCV)
+ 

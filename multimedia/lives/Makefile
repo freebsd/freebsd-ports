@@ -14,10 +14,6 @@ COMMENT=	Video editing system
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to patch
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2019-09-04
-
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		${LOCALBASE}/bin/analyseplugin:audio/ladspa
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
@@ -52,8 +48,10 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:audio/ladspa \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		compiler:c++11-lib gettext-runtime ghostscript:run libtool \
-		localbase pathfix perl5 pkgconfig python shebangfix tar:bzip2
+USES=		autoreconf compiler:c++11-lib gettext-runtime gettext-tools \
+		ghostscript:run gl gnome \
+		libtool localbase pathfix perl5 pkgconfig python sdl \
+		shebangfix tar:bzip2 xorg
 SHEBANG_FILES=	build-lives-rfx-plugin build-lives-rfx-plugin-multi \
 		smogrify tools/autolives.pl lives-plugins/plugins/encoders/*_encoder \
 		lives-plugins/marcos-encoders/*encoder* \
@@ -75,7 +73,7 @@ DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 		lives-plugins/marcos-encoders/README.multi_encoder \
 		weed-docs/weedspec.txt weed-docs/weedevents.txt
 
-OPTIONS_DEFINE=	DOCS DOXYGEN FREI0R MATROSKA NLS
+OPTIONS_DEFINE=	DOCS DOXYGEN FREI0R MATROSKA V4L NLS
 OPTIONS_SUB=	yes
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
@@ -84,6 +82,8 @@ FREI0R_BUILD_DEPENDS=	frei0r>0:graphics/frei0r
 FREI0R_RUN_DEPENDS=	frei0r>0:graphics/frei0r
 FREI0R_CONFIGURE_ENV_OFF=	ac_cv_header_frei0r_h=no
 MATROSKA_RUN_DEPENDS=	mkvmerge:multimedia/mkvtoolnix
+V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 NLS_USES=		gettext-tools
 NLS_CONFIGURE_OFF=	--disable-nls
 
@@ -113,7 +113,7 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 post-install-DOXYGEN-on:
-	@(cd ${STAGEDIR}${PREFIX} && ${FIND} ${DOCSDIR:S|${PREFIX}/||}/html \
-		! -type d >> ${TMPPLIST})
+	@(cd ${STAGEDIR}${PREFIX} && ${FIND} ${DOCSDIR_REL}/html \
+		-not -type d >> ${TMPPLIST})
 
 .include <bsd.port.mk>
