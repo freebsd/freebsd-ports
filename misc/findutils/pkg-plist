@@ -2,8 +2,6 @@ bin/gfind
 bin/glocate
 bin/gupdatedb
 bin/gxargs
-libexec/gbigram
-libexec/gcode
 libexec/gfrcode
 man/man1/gfind.1.gz
 man/man1/glocate.1.gz
@@ -40,7 +38,6 @@ man/man5/glocatedb.5.gz
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/findutils.mo
-%%NLS%%share/locale/rw/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/findutils.mo
