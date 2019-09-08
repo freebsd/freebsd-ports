@@ -9,6 +9,8 @@ COMMENT=	Qtel Echolink client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BROKEN=		fails to package
+
 LIB_DEPENDS=	libecholib.so:comms/svxlink \
 		libgsm.so:audio/gsm
 
