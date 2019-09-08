@@ -2,6 +2,3 @@ usr/lib/alsa-lib/libasound_module_ctl_oss.so
 usr/lib/alsa-lib/libasound_module_pcm_oss.so
 usr/lib64/alsa-lib/libasound_module_ctl_oss.so
 usr/lib64/alsa-lib/libasound_module_pcm_oss.so
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.GPL
-%%PORTDOCS%%%%DOCSDIR%%/README-pcm-oss
