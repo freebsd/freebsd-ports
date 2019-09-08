@@ -11,13 +11,16 @@ COMMENT=	Service discovery and configuration made easy
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build
-
-USES=		compiler go
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
+
+GO_BUILDFLAGS=	-ldflags="\
+		-X github.com/hashicorp/consul/version.Version=${PORTVERSION} \
+		-X github.com/hashicorp/consul/version.VersionPrerelease= \
+		-X github.com/hashicorp/consul/version.GitDescribe=v${PORTVERSION} \
+		"
 
 USE_RC_SUBR=	consul
 
@@ -27,26 +30,8 @@ USERS=		consul
 GROUPS=		consul
 
 post-extract:
-	@${MV} ${WRKSRC}/vendor/ ${WRKSRC}/src/
+	${MKDIR} ${WRKSRC}/vendor/github.com/${GH_ACCOUNT}/${PORTNAME}
+	${LN} -s ${WRKSRC}/api ${WRKSRC}/vendor/github.com/${GH_ACCOUNT}/${PORTNAME}/api
+	${LN} -s ${WRKSRC}/sdk ${WRKSRC}/vendor/github.com/${GH_ACCOUNT}/${PORTNAME}/sdk
 
-do-build:
-	@cd ${WRKSRC}/src/github.com/hashicorp/consul; ${SETENV} ${MAKE_ENV} CGO_ENABLED=0 ${BUILD_ENV} GOPATH=${WRKSRC} go build \
-		-ldflags "\
-		-X github.com/hashicorp/consul/version.Version=${PORTVERSION}  \
-		-X github.com/hashicorp/consul/version.VersionPrerelease=  \
-		-X github.com/hashicorp/consul/version.GitDescribe=v${PORTVERSION} \
-		" \
-		-o bin/consul
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/hashicorp/consul/bin/consul ${STAGEDIR}${PREFIX}/bin/consul
-
-.include <bsd.port.pre.mk>
-
-# golang assumes that if clang is in use, it is called "clang" and not "cc". If
-# it's called "cc", go fails.
-.if ${COMPILER_TYPE} == clang
-BUILD_ENV=	CC=clang
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
