@@ -11,6 +11,8 @@ COMMENT=	Service discovery and configuration made easy
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+
 USES=		compiler go
 
 USE_GITHUB=	yes
