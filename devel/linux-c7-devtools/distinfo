@@ -1,4 +1,4 @@
-TIMESTAMP = 1564859591
+TIMESTAMP = 1567936796
 SHA256 (centos/binutils-2.27-34.base.el7.i686.rpm) = 40f02c8e10d58e86e0d37ae4d3813ff1a2ece9d340f15371465758c0791e2c42
 SIZE (centos/binutils-2.27-34.base.el7.i686.rpm) = 6343144
 SHA256 (centos/binutils-2.27-34.base.el7.x86_64.rpm) = 45995236bc07a51d506c036a557540e9407024758027eb58635390e408823392
@@ -31,6 +31,10 @@ SHA256 (centos/glibc-headers-2.17-260.el7_6.6.i686.rpm) = ca43e46741f414d2848982
 SIZE (centos/glibc-headers-2.17-260.el7_6.6.i686.rpm) = 699932
 SHA256 (centos/glibc-headers-2.17-260.el7_6.6.x86_64.rpm) = 67de580f4cabd7625a050f101eb42ac93de27582d04ef939ab252059d11abedb
 SIZE (centos/glibc-headers-2.17-260.el7_6.6.x86_64.rpm) = 700036
+SHA256 (centos/glibc-static-2.17-260.el7_6.6.i686.rpm) = b67f91ceae9cbaedd450e9aa7fc79037fcaa95b40b758a73dc60a6d05c6ce40d
+SIZE (centos/glibc-static-2.17-260.el7_6.6.i686.rpm) = 1326892
+SHA256 (centos/glibc-static-2.17-260.el7_6.6.x86_64.rpm) = 69def216085fcc622f3795a68e25a43fed92be2b5e75a8d8c1e5eefc30846414
+SIZE (centos/glibc-static-2.17-260.el7_6.6.x86_64.rpm) = 1623928
 SHA256 (centos/kernel-headers-3.10.0-957.21.3.el7.centos.plus.i686.rpm) = 776f25e647161f6dcd4175742eb312427128d456a7cea147d58a0435f4ae8078
 SIZE (centos/kernel-headers-3.10.0-957.21.3.el7.centos.plus.i686.rpm) = 8393612
 SHA256 (centos/kernel-headers-3.10.0-957.27.2.el7.x86_64.rpm) = dcba6cda3e82004a9b75cc1a029bb5a822baaaefe17155579289b644f7c5a575
