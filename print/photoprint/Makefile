@@ -11,6 +11,8 @@ COMMENT=	Utility to print multiple images per sheet
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libcups.so:print/cups \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
