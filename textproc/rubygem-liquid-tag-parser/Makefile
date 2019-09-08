@@ -15,7 +15,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-extras>=0.3<1:devel/rubygem-extras \
 		rubygem-liquid>=3.0<5.0:textproc/rubygem-liquid
 
-USES=		compiler:c++11-lang gem
+USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
