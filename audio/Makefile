@@ -460,6 +460,7 @@
     SUBDIR += linux-c6-pulseaudio-utils
     SUBDIR += linux-c6-sdl_mixer
     SUBDIR += linux-c7-alsa-lib
+    SUBDIR += linux-c7-alsa-lib-devel
     SUBDIR += linux-c7-alsa-plugins-oss
     SUBDIR += linux-c7-alsa-plugins-pulseaudio
     SUBDIR += linux-c7-alsa-utils

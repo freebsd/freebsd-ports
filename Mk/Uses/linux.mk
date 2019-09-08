@@ -50,6 +50,7 @@ ONLY_FOR_ARCHS_REASON=	Linux compatibility is only available on amd64 and i386
 .endif
 
 linux_allegro_DEP=		linux-${linux_ARGS}-allegro>0:devel/linux-${linux_ARGS}-allegro
+linux_alsa-lib-devel_DEP=	linux-${linux_ARGS}-alsa-lib-devel>0:audio/linux-${linux_ARGS}-alsa-lib-devel
 linux_alsa-plugins-oss_DEP=	linux-${linux_ARGS}-alsa-plugins-oss>0:audio/linux-${linux_ARGS}-alsa-plugins-oss
 linux_alsa-plugins-pulseaudio_DEP=linux-${linux_ARGS}-alsa-plugins-pulseaudio>0:audio/linux-${linux_ARGS}-alsa-plugins-pulseaudio
 linux_alsalib_DEP=		linux-${linux_ARGS}-alsa-lib>0:audio/linux-${linux_ARGS}-alsa-lib
