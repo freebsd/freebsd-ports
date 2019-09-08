@@ -11,6 +11,8 @@ COMMENT=	Platform for building proxies to bypass network restrictions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+
 USES=		go
 USE_GITHUB=	yes
 USE_RC_SUBR=	v2ray
