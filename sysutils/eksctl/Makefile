@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eksctl
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -35,6 +35,7 @@ GH_TUPLE=	\
 		alecthomas:template:a0175ee3bccc:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:2efee857e7cf:alecthomas_units/vendor/github.com/alecthomas/units \
 		apex:log:v1.1.0:apex_log/vendor/github.com/apex/log \
+		aws:aws-sdk-go:v1.23.15:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.0:beorn7_perks/vendor/github.com/beorn7/perks \
 		bep:debounce:v1.2.0:bep_debounce/vendor/github.com/bep/debounce \
 		bep:gitmap:v1.0.0:bep_gitmap/vendor/github.com/bep/gitmap \
@@ -69,7 +70,6 @@ GH_TUPLE=	\
 		docker:spdystream:6480d4af844c:docker_spdystream/vendor/github.com/docker/spdystream \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		eknkc:amber:cdade1c07385:eknkc_amber/vendor/github.com/eknkc/amber \
-		errordeveloper:aws-sdk-go:v1.21.99:errordeveloper_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		errordeveloper:goformation:a31eae35e596:errordeveloper_goformation/vendor/github.com/awslabs/goformation \
 		evanphx:json-patch:v4.2.0:evanphx_json_patch/vendor/github.com/evanphx/json-patch \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
