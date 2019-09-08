@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	portalocker
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +16,5 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-post-extract:
-	@${RM} -r ${WRKSRC}/tests
 
 .include <bsd.port.mk>
