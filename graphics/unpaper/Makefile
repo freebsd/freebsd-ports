@@ -2,31 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	unpaper
-PORTVERSION=	0.3
+PORTVERSION=	6.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.flameeyes.eu/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Post-processing tool for scanned sheets of paper
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTDOCS=	*
-PLIST_FILES=	bin/${PORTNAME}
+BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+		bash:shells/bash
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libavformat.so:multimedia/ffmpeg \
+		libavutil.so:multimedia/ffmpeg
 
-OPTIONS_DEFINE=	DOCS
+USES=		autoreconf pkgconfig tar:xz
 
-do-build:
-	@${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} \
-		${WRKSRC}/src/${PORTNAME}.c -lm
+GNU_CONFIGURE=	yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGELOG README ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>
