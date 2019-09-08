@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	bogofilter
-PORTREVISION=	3
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tc
+
+DEPRECATED=	TokyoCabinet is being phased out in favor of KyotoCabinet.
+EXPIRATION_DATE=2020-12-31
 
 MAINTAINER=	mandree@FreeBSD.org
 # Blanket approval for changes by Zach Thompson (address above)
 
 LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
-CONFLICTS_INSTALL=	bogofilter-[0-9]* [a-z][a-z]-bogofilter-[1-9]* bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]*
+CONFLICTS_INSTALL=	bogofilter-[0-9]* bogofilter-sqlite-[0-9]* bogofilter-kc-[0-9]* bogofilter-lmdb-[0-9]*
 
 CONFIGURE_ARGS=	--with-database=tokyocabinet
 BF_CPPFLAGS=	-I${LOCALBASE}/include

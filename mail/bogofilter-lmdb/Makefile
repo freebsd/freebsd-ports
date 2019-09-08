@@ -1,16 +1,17 @@
-# Created by: Matthias Andree <mandree@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	bogofilter
+PORTREVISION=	0
 CATEGORIES=	mail
-PKGNAMESUFFIX=	-sqlite
+PKGNAMESUFFIX=	-lmdb
 
 MAINTAINER=	mandree@FreeBSD.org
 
-USES=		sqlite
-CONFLICTS_INSTALL=	bogofilter-[0-9]* bogofilter-lmdb-[0-9]* bogofilter-kc-[0-9]* bogofilter-tc-[0-9]*
+LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
-CONFIGURE_ARGS=	--with-database=sqlite
+CONFLICTS_INSTALL=	bogofilter-[0-9]* bogofilter-kc-[0-9]* bogofilter-sqlite-[0-9]* *bogofilter-tc-[0-9]*
+
+CONFIGURE_ARGS=	--with-database=lmdb
 BF_CPPFLAGS=	-I${LOCALBASE}/include
 BF_LIBS=
 DESCR=		${PKGDIR}/pkg-descr
