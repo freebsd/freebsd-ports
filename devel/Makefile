@@ -1446,6 +1446,7 @@
     SUBDIR += linux-c7-libsigc++20
     SUBDIR += linux-c7-libthai
     SUBDIR += linux-c7-libunwind
+    SUBDIR += linux-c7-make
     SUBDIR += linux-c7-nspr
     SUBDIR += linux-c7-qt
     SUBDIR += linux-c7-sdl12
