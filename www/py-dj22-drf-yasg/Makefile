@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	drf-yasg
-DISTVERSION=	1.16.0
+DISTVERSION=	1.16.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj22-
@@ -21,7 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11.7:www/py-django22@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.15.34:devel/py-ruamel.yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}swagger-spec-validator>=2.1.0:devel/py-swagger-spec-validator@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}uritemplate>=3.0.0:net/py-uritemplate@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}uritemplate>=3.0.0:net/py-uritemplate@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 
 USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
