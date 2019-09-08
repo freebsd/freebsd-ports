@@ -54,3 +54,4 @@ man/man1/nickle.1.gz
 %%DATADIR%%/test/round.5c
 %%DATADIR%%/test/scanf.5c
 %%DATADIR%%/test/signal.5c
+%%DATADIR%%/test/string-file.5c
