@@ -18,7 +18,7 @@ BUILD_DEPENDS=	opencl>=0:devel/opencl \
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
 RUN_DEPENDS=	opencl>=0:devel/opencl
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	jrprice
 GH_PROJECT=	Oclgrind
