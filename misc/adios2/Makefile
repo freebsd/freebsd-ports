@@ -11,6 +11,8 @@ COMMENT=	Next generation of ADIOS developed in the Exascale Computing Program
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to package
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
 		libepoll-shim.so:devel/libepoll-shim \
