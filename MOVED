@@ -12923,7 +12923,6 @@ emulators/qemu2||2019-09-05|Has expired: Latest 3.X branch is in ports tree
 games/asc||2019-09-05|Has expired: Broken for more than 6 months
 games/slade||2019-09-05|Has expired: Broken for more than 6 months
 graphics/gimp-wavelet-decompose-plugin||2019-09-05|Has expired: Broken for more than 6 months
-graphics/py-pyembree||2019-09-05|Has expired: Depends on expiring graphics/embree
 irc/irssi-otr||2019-09-05|Has expired: Broken for more than 6 months
 mail/p5-Mail-ClamAV||2019-09-05|Has expired: Broken for more than 6 months
 mail/qmail-ldap||2019-09-05|Has expired: Broken for more than 6 months
@@ -12936,7 +12935,6 @@ math/octave-forge-parallel||2019-09-05|Has expired: Broken for more than 6 month
 math/octave-forge-strings||2019-09-05|Has expired: Broken for more than 6 months
 math/octave-forge-tisean||2019-09-05|Has expired: Broken for more than 6 months
 math/octave-forge-video||2019-09-05|Has expired: Broken for more than 6 months
-math/py-yt||2019-09-05|Has expired: Depends on expiring graphics/embree
 misc/gnustep-examples||2019-09-05|Has expired: Broken for more than 6 months
 net/turses||2019-09-05|Has expired: Depends on expiring net/py-tweepy
 security/clamcour||2019-09-05|Has expired: Broken for more than 6 months
