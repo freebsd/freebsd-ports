@@ -3269,7 +3269,6 @@ lib/node_modules/npm/node_modules/read-cmd-shim/LICENSE
 lib/node_modules/npm/node_modules/read-cmd-shim/README.md
 lib/node_modules/npm/node_modules/read-cmd-shim/index.js
 lib/node_modules/npm/node_modules/read-cmd-shim/package.json
-lib/node_modules/npm/node_modules/read-cmd-shim/test/integration.js
 lib/node_modules/npm/node_modules/read-installed/.npmignore
 lib/node_modules/npm/node_modules/read-installed/.travis.yml
 lib/node_modules/npm/node_modules/read-installed/LICENSE
