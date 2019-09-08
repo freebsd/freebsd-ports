@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	bogofilter
-PORTVERSION=	1.2.4
-PORTREVISION?=	8
+DISTVERSION=	1.2.5.rc1
+PORTREVISION?=	0
 CATEGORIES?=	mail
-MASTER_SITES=	SF/bogofilter/bogofilter-current/bogofilter-${PORTVERSION}
+MASTER_SITES=	SF/bogofilter/bogofilter-current/bogofilter-1.2.5/
 
 MAINTAINER?=	mandree@FreeBSD.org
 COMMENT=	Fast, teachable, learning spam detector
@@ -22,9 +22,13 @@ OPTIONS_DEFAULT=	GSL UNICODE
 GSL_DESC=		Link with system-wide GSL dynamically (recommended)
 UNICODE_DESC=		Normalize tokens to Unicode (UTF-8) (recommended)
 
-CONFLICTS_INSTALL?=	bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]* bogofilter-tc-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
+CONFLICTS_INSTALL?=	bogofilter-sqlite-[0-9]* bogofilter-tc-[0-9]* bogofilter-lmdb-[0-9]* \
+			bogofilter-kc-[0-9]*
 
-USES+=		cpe perl5 shebangfix tar:bzip2
+# XXX FIXME: autoreconf:build should not be required,
+# but something hoses timestamps on src/tests/Makefile.am
+# but not src/tests/Makefile.in.
+USES+=		autoreconf:build cpe perl5 shebangfix tar:xz
 SHEBANG_FILES=	contrib/randomtrain.sh contrib/scramble.sh \
 		src/tests/unsort.pl contrib/*.pl
 USE_PERL5=	run
@@ -59,16 +63,16 @@ post-patch:
 		-e 's/ENVIRON_TESTS = t.abort/ENVIRON_TESTS =/' \
 		${WRKSRC}/src/tests/Makefile.am
 
-# XXX: disable self-tests until issue with automake-1.13 is sorted out
-# post-build::
-# 	cd ${WRKSRC}/src && make check SHELL=${SH}
+post-build:
+	cd ${WRKSRC}/src && ${SETENV} SHELL=${SH} ${MAKE_CMD} ${TEST_TARGET} ${_MAKE_JOBS} SHELL=${SH} \
+		|| { r=$$? ; head -n30000 ${WRKSRC}/src/tests/test-suite.log ; exit $$r ; }
 
-post-install::
+post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/contrib
 .for i in html programmer xml
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
-.for i in AUTHORS COPYING INSTALL NEWS README README.svn \
+.for i in AUTHORS COPYING INSTALL NEWS README README.git \
 	doc/README.validation TODO GETTING.STARTED \
 	RELEASE.NOTES doc/README.db doc/README.sqlite \
 	doc/integrating-with-postfix doc/integrating-with-qmail \
