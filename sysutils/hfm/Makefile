@@ -11,6 +11,8 @@ COMMENT=	Run tests in parallel at high frequency
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		fails to build
+
 # gb 0.4 includes FreeBSD-specific fixes that this port requires
 #   https://github.com/constabulary/gb/issues/506
 BUILD_DEPENDS=	gb>=0.4:devel/gb \
