@@ -16,8 +16,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:www/clearsilver
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libcurl.so:ftp/curl
 
-LICENSE=	BSD2CLAUSE
-
 OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
