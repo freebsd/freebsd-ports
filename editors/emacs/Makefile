@@ -35,7 +35,8 @@ nox_PKGNAMESUFFIX=	-nox
 
 USES=		cpe gmake localbase:ldflags makeinfo ncurses pkgconfig tar:xz
 .if ${FLAVOR:U} != nox
-USES+=		desktop-file-utils xorg
+USES+=		desktop-file-utils gnome xorg
+INSTALLS_ICONS=	yes
 USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xt
 .endif
 CPE_VENDOR=	gnu
@@ -70,10 +71,6 @@ INFO=		ada-mode auth autotype bovine calc ccmode cl dbus dired-x \
 		sasl sc semantic ses sieve smtpmail speedbar srecode todo-mode \
 		tramp url vhdl-mode vip viper widget wisent woman
 INFO_PATH=	${DATADIR_REL}/info
-.if ${FLAVOR:U} != nox
-INSTALLS_ICONS=	yes
-USES+=		gnome
-.endif
 .if ${FLAVOR:U} == canna
 PLIST_FILES+=	${DATADIR}/${DISTVERSION}/lisp/canna.el.gz \
 		${DATADIR}/${DISTVERSION}/lisp/canna.elc \
@@ -193,7 +190,7 @@ XFT_CONFIGURE_WITH=	xft
 XFT_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
 XIM_CONFIGURE_WITH=	xim
-XML_USES=		gnome
+XML_USES=		gnome # portlint complains, but necessary for nox flavor
 XML_USE=		GNOME=libxml2
 XML_CONFIGURE_WITH=	xml2
 XPM_USE=		XORG=xpm
