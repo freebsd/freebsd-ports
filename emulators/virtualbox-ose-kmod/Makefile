@@ -80,12 +80,12 @@ SYMBOLSUFFIX=	debug
 PLIST_SUB+=	SYMBOLSUFFIX=${SYMBOLSUFFIX}
 
 post-patch:
-	@${ECHO} 'VBOX_WITH_VBOXDRV = 1' > ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_NETFLT = 1' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_NETADP = 1' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_VBOXDRV = 1' > ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_NETFLT = 1' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_NETADP = 1' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
 .if ${PORT_OPTIONS:MVIMAGE}
-	@${ECHO} 'VBOX_WITH_NETFLT_VIMAGE = 1' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_NETFLT_VIMAGE = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 	    ${WRKSRC}/Config.kmk ${WRKSRC}/configure
