@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yfklog
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/yfklog/ \
 		LOCAL/db
