@@ -1695,7 +1695,6 @@ share/knotifications5/kstars.notifyrc
 %%DATADIR%%/venus.R4.vsop
 %%DATADIR%%/venus.R5.vsop
 %%DATADIR%%/venus.orbit
-%%DATADIR%%/windi.png
 %%DATADIR%%/wzdownload.png
 %%DATADIR%%/wzekos.png
 %%DATADIR%%/wzgeo.png
