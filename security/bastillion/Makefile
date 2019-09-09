@@ -2,8 +2,8 @@
 
 PORTNAME=		bastillion
 DISTVERSIONPREFIX=	jetty-v
-DISTVERSION=		3.06_04
-PORTREVISION=		1
+DISTVERSION=		3.08_00
+#PORTREVISION=		1
 CATEGORIES=		security www java
 MASTER_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
 
