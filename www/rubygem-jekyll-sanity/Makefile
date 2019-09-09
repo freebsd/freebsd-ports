@@ -12,7 +12,7 @@ COMMENT=	Patches to make Jekyll less insane and easier
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-jekyll3>=3.1:www/rubygem-jekyll3
+RUN_DEPENDS=	rubygem-jekyll3>=3.1<4:www/rubygem-jekyll3
 
 USES=		gem
 USE_RUBY=	yes
