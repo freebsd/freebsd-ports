@@ -230,60 +230,60 @@ CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}"
 pre-everything::
 .if ${ARCH} == "amd64"
 .if ${_ELF32} != yes
-	@${ECHO} 'Requires 32-bit runtime support in kernel.'
-	@${ECHO} 'Rebuild kernel with "options COMPAT_FREEBSD32" and reboot.'
+	@${ECHO_MSG} 'Requires 32-bit runtime support in kernel.'
+	@${ECHO_MSG} 'Rebuild kernel with "options COMPAT_FREEBSD32" and reboot.'
 	@${FALSE}
 .elif !exists(/usr/lib32/libc.so)
-	@${ECHO} 'Requires 32-bit libraries installed under /usr/lib32.'
-	@${ECHO} 'Do: cd /usr/src; make build32 install32; service ldconfig restart'
+	@${ECHO_MSG} 'Requires 32-bit libraries installed under /usr/lib32.'
+	@${ECHO_MSG} 'Do: cd /usr/src; make build32 install32; service ldconfig restart'
 	@${FALSE}
 .endif
 .endif
 
 post-patch:
-	@${ECHO} 'VBOX_PATH_APP_PRIVATE_ARCH = ${VBOX_DIR}' > \
+	@${ECHO_CMD} 'VBOX_PATH_APP_PRIVATE_ARCH = ${VBOX_DIR}' > \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_PATH_DOCBOOK = ${DBKXSLDIR}' >> \
+	@${ECHO_CMD} 'VBOX_PATH_DOCBOOK = ${DBKXSLDIR}' >> \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_PATH_DOCBOOK_DTD = ${DBKXMLDIR}' >> \
+	@${ECHO_CMD} 'VBOX_PATH_DOCBOOK_DTD = ${DBKXMLDIR}' >> \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_PATH_SHARED_LIBS = ${VBOX_DIR}' >> \
+	@${ECHO_CMD} 'VBOX_PATH_SHARED_LIBS = ${VBOX_DIR}' >> \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_RUNPATH = ${VBOX_DIR}' >> \
+	@${ECHO_CMD} 'VBOX_WITH_RUNPATH = ${VBOX_DIR}' >> \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_PATH_APP_PRIVATE = ${DATADIR}' >> \
+	@${ECHO_CMD} 'VBOX_PATH_APP_PRIVATE = ${DATADIR}' >> \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_PATH_APP_DOCS = ${DOCSDIR}' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_PATH_APP_DOCS = ${DOCSDIR}' >> ${WRKSRC}/LocalConfig.kmk
 .if ${SSL_DEFAULT} != base
-	@${ECHO} 'VBOX_WITH_ALT_HASH_CODE = 1' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_ALT_HASH_CODE = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
-	@${ECHO} 'VBOX_WITH_EXTPACK_VBOXDTRACE =' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_INSTALLER = 1' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_VBOXDRV =' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_TESTCASES =' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'SDK_VBOX_LIBPNG_INCS = ${PREFIX}/include/libpng' >> \
+	@${ECHO_CMD} 'VBOX_WITH_EXTPACK_VBOXDTRACE =' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_INSTALLER = 1' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_VBOXDRV =' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_TESTCASES =' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'SDK_VBOX_LIBPNG_INCS = ${PREFIX}/include/libpng' >> \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'SDK_VBOX_LIBPNG_LIBS = png' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_DRAG_AND_DROP = ${VBOX_WITH_QT}' >> \
+	@${ECHO_CMD} 'SDK_VBOX_LIBPNG_LIBS = png' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_DRAG_AND_DROP = ${VBOX_WITH_QT}' >> \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_DRAG_AND_DROP_GH = ${VBOX_WITH_QT}' >> \
+	@${ECHO_CMD} 'VBOX_WITH_DRAG_AND_DROP_GH = ${VBOX_WITH_QT}' >> \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_VALIDATIONKIT =' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_X11_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_VALIDATIONKIT =' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_X11_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
 .if ${PORT_OPTIONS:MR0LOGGING}
-	@${ECHO} 'VBOX_WITH_R0_LOGGING = 1' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_WITH_R0_LOGGING = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 .if ${PORT_OPTIONS:MWEBSERVICE}
-	@${ECHO} 'VBOX_WITH_WEBSERVICES = 1' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_GSOAP_INSTALLED = 1' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_PATH_GSOAP = ${PREFIX}/lib/gsoap' >> \
+	@${ECHO_CMD} 'VBOX_WITH_WEBSERVICES = 1' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_GSOAP_INSTALLED = 1' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_PATH_GSOAP = ${PREFIX}/lib/gsoap' >> \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_PATH_GSOAP_BIN = ${PREFIX}/bin' >> \
+	@${ECHO_CMD} 'VBOX_PATH_GSOAP_BIN = ${PREFIX}/bin' >> \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_PATH_GSOAP_IMPORT = ${PREFIX}/share/gsoap/import' >> \
+	@${ECHO_CMD} 'VBOX_PATH_GSOAP_IMPORT = ${PREFIX}/share/gsoap/import' >> \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_GCC_PEDANTIC_CXX = -Wshadow $$(VBOX_GCC_WARN) -Wno-long-long' >> \
+	@${ECHO_CMD} 'VBOX_GCC_PEDANTIC_CXX = -Wshadow $$(VBOX_GCC_WARN) -Wno-long-long' >> \
 	    ${WRKSRC}/LocalConfig.kmk
 .endif
 .if ${COMPILER_TYPE} == clang
@@ -291,7 +291,7 @@ post-patch:
 	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
 	@${REINPLACE_CMD} -e 's| -fpermissive||' ${WRKSRC}/Config.kmk \
 	    ${WRKSRC}/src/VBox/Main/webservice/Makefile.kmk
-	@${ECHO} 'TOOL_VBoxGccFreeBSD_LD = ${CXX}' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'TOOL_VBoxGccFreeBSD_LD = ${CXX}' >> ${WRKSRC}/LocalConfig.kmk
 	@${SED} -e 's|GXX3|VBoxGccFreeBSD|g' \
 	    ${LOCALBASE}/share/kBuild/tools/GXX3.kmk > \
 	    ${WRKSRC}/tools/kBuildTools/VBoxGccFreeBSD.kmk
@@ -308,7 +308,7 @@ post-patch:
 .if empty(ICONV_LIB)
 	@${REINPLACE_CMD} -e 's|iconv||' ${WRKSRC}/Config.kmk \
 	    ${WRKSRC}/src/VBox/Runtime/Makefile.kmk
-	@${ECHO} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/virtualbox|${VBOX_DIR}|' \
 	    -e 's|/usr/local|${PREFIX}|' \
