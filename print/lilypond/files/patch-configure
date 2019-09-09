@@ -1,6 +1,22 @@
 --- configure.orig	2014-03-17 15:29:16 UTC
 +++ configure
-@@ -10881,73 +10881,7 @@ test -n "$PKG_CONFIG" || PKG_CONFIG="no"
+@@ -9800,13 +9800,8 @@ $as_echo_n "checking $r version... " >&6; }
+     ## for compatibility reasons.
+ 
+     ## grab the first version number in  --version output.
+-    eval _ver=\"\`("$exe" --version || "$exe" -V) 2>&1 |
+-		grep -E '(^| )[0-9][0-9]*\.[0-9]' |
+-		head -n 1 |
+-		tr ' ' '\n' |
+-		sed 's/\([0-9][0-9]*\.[0-9][0-9.]*\).*/\1/g' |
+-		grep -E '(^| )[0-9][0-9]*\.[0-9]' |
+-		head -n 1\`\"
++    eval _ver=\"\`("$exe" --version || "$exe" -V) 2>/dev/null |
++		awk '$1 ~ "fontforge" { print $2 }'\`\"
+ 
+     if test -z "$_ver"; then
+         ## If empty, try date [fontforge]
+@@ -10881,73 +10876,7 @@ test -n "$PKG_CONFIG" || PKG_CONFIG="no"
  
      if test $? -eq 0 -a -n "0.9.0"; then
  
