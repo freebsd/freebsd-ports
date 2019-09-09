@@ -190,6 +190,7 @@
     SUBDIR += lua52
     SUBDIR += lua53
     SUBDIR += luajit
+    SUBDIR += luajit-openresty
     SUBDIR += malbolge
     SUBDIR += maude
     SUBDIR += mawk
