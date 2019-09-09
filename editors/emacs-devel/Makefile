@@ -87,7 +87,7 @@ OPTIONS_EXCLUDE=	ALSA CAIRO DBUS GCONF GFILE GIF GSETTINGS GTK2 GTK3 \
 OPTIONS_SUB=	YES
 
 ACL_DESC=	Access control list support
-CAIRO_DESC=	Experimental Cairo library support     (implies PNG, XFT)
+CAIRO_DESC=	Cairo graphics library support    [implies PNG, XFT]
 FILENOTIFY_DESC=	File notification support
 GFILE_DESC=	File notification via gfile
 GRAPHICS_DESC=	Graphics support
@@ -95,19 +95,18 @@ GSETTINGS_DESC=	GSettings API for application settings
 HARFBUZZ_DESC=	HarfBuzz for text shaping
 KQUEUE_DESC=	File notification via kqueue
 #LTO_DESC=	Enable link-time optimization
-M17N_DESC=	M17N support for text-shaping (implies XFT)
-MAGICK_DESC=	ImageMagick image processing support
+M17N_DESC=	M17N support for text-shaping     [implies XFT]
 MAILUTILS_DESC=	Mail framework via GNU Mailutils
 MODULES_DESC=	Dynamic modules support
-OTF_DESC=	Opentype fonts                         (implies XFT)
+OTF_DESC=	Opentype fonts                    [implies XFT]
 SCROLLBARS_DESC=	Toolkit scroll-bars
 SOURCES_DESC=	Install sources
-SVG_DESC=	Scalable vector graphics support       (implies PNG)
+SVG_DESC=	Scalable vector graphics support  [implies PNG]
 X11TOOLKIT_DESC=	X11 toolkit
 XAW3D_DESC=	Athena3D widgets
 XAW_DESC=	Athena widgets
 XIM_DESC=	X Input Method
-XWIDGETS_DESC=	Experimental GTK widgets               (requires GTK3)
+XWIDGETS_DESC=	Experimental GTK widgets          [implies GTK3]
 
 ACL_CONFIGURE_ENABLE=	acl
 ALSA_CONFIGURE_ON=	--with-sound=alsa
