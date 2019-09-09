@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	get_iplayer
-PORTVERSION=	3.17
+PORTVERSION=	3.22
 DISTVERSIONPREFIX=v
-PORTREVISION=	2
 CATEGORIES=	net multimedia
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	jamie@catflap.org
 COMMENT=	Search, index, or stream archive video from BBC iPlayer
 
 LICENSE=	GPLv3
