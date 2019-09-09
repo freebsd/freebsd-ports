@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	digikam
-DISTVERSION=	6.2.0
+DISTVERSION=	6.3.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/digikam/${PORTVERSION}
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libKF5KGeoMap.so:astro/libkgeomap \
 		libboost_graph.so:devel/boost-libs \
 		libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
+		libMagickCore-6.so:graphics/ImageMagick6 \
 		libgphoto2.so:graphics/libgphoto2 \
 		libicalss.so:devel/libical \
 		libjasper.so:graphics/jasper \
