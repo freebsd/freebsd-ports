@@ -10,6 +10,9 @@ CATEGORIES=	net-im
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Privacy plugin for the pidgin instant messenger
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2019-12-09
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
