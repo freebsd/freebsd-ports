@@ -95,6 +95,7 @@
     SUBDIR += corosync3
     SUBDIR += coturn
     SUBDIR += courier-authlib-ldap
+    SUBDIR += courier-sox
     SUBDIR += cppzmq
     SUBDIR += cryptcat
     SUBDIR += csocks

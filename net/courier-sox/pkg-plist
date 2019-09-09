@@ -1,0 +1,19 @@
+bin/mkbl4
+bin/socksify
+@sample etc/socksrc/system.sample
+include/socks.h
+lib/libsocks.a
+lib/libsocks.so
+lib/libsocks.so.0
+lib/libsocks.so.0.0.0
+lib/libsockswrap.a
+lib/libsockswrap.so
+lib/libsockswrap.so.0
+lib/libsockswrap.so.0.0.0
+libexec/sockd
+man/man1/sockd.1.gz
+man/man1/socksify.1.gz
+man/man3/socks.3.gz
+man/man5/socksrc.5.gz
+man/man8/mkbl4.8.gz
+sbin/sockd
