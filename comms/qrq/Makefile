@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qrq
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/qrq/
 
