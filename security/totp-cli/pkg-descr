@@ -1,0 +1,5 @@
+This is a simple TOTP (Time-based One-time Password) CLI tool. TOTP is the most
+common mechanism for 2FA (Two-Factor-Authentication). You can manage and
+organize your accounts with namespaces and protect your data with a password.
+
+WWW: https://github.com/yitsushi/totp-cli
