@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iplike
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.1.3
 CATEGORIES=	databases
 MASTER_SITES=	SF/opennms/IPLIKE/stable-2.1/
 
