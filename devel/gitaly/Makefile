@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	1.53.3
+DISTVERSION=	1.59.2
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -14,21 +14,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # define dependencies that are required for build and run under MY_DEPENDS
 MY_DEPENDS=	git>=2.21:devel/git \
 		rubygem-bundler>=1.17.3:sysutils/rubygem-bundler \
-		rubygem-rugged>=0.28.0:devel/rubygem-rugged \
-		rubygem-github-linguist>=6.1:textproc/rubygem-github-linguist \
-		rubygem-gitlab-markup>=1.7.0:textproc/rubygem-gitlab-markup \
-		rubygem-activesupport52>=5.2.3:devel/rubygem-activesupport52 \
-		rubygem-gitaly-proto>=1.32.0:net/rubygem-gitaly-proto \
+		rubygem-rugged>=0.28<1.0:devel/rubygem-rugged \
+		rubygem-github-linguist>=6.1<7.0:textproc/rubygem-github-linguist \
+		rubygem-gitlab-markup>=1.7.0<1.8.0:textproc/rubygem-gitlab-markup \
+		rubygem-activesupport52>=5.2.3<5.3.0:devel/rubygem-activesupport52 \
 		rubygem-rdoc>=6.0:devel/rubygem-rdoc \
-		rubygem-gitlab-gollum-lib>=4.2.7.7:www/rubygem-gitlab-gollum-lib \
-		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.2:www/rubygem-gitlab-gollum-rugged_adapter \
-		rubygem-grpc>=1.19.0:net/rubygem-grpc \
-		rubygem-sentry-raven>=2.9.0:devel/rubygem-sentry-raven \
-		rubygem-faraday>=0.12:www/rubygem-faraday \
+		rubygem-gitlab-gollum-lib>=4.2.7.7<4.2.8.0:www/rubygem-gitlab-gollum-lib \
+		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.2<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
+		rubygem-grpc>=1.19.0<1.20.0:net/rubygem-grpc \
+		rubygem-sentry-raven>=2.9.0<2.10.0:devel/rubygem-sentry-raven \
+		rubygem-faraday>=0.12<1.0:www/rubygem-faraday \
 		rubygem-rbtrace>0:devel/rubygem-rbtrace \
-		rubygem-gitlab-labkit>=0.3.0:devel/rubygem-gitlab-labkit \
-		rubygem-licensee8>=8.9.0:devel/rubygem-licensee8 \
-		rubygem-google-protobuf371>=3.7.1:devel/rubygem-google-protobuf371
+		rubygem-gitlab-labkit>=0.4.0<0.5.0:devel/rubygem-gitlab-labkit \
+		rubygem-licensee8>=8.9.0<8.10.0:devel/rubygem-licensee8 \
+		rubygem-google-protobuf371>=3.7.1<3.8.0:devel/rubygem-google-protobuf371
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 		${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS} \
@@ -42,7 +41,7 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/tags
-GL_COMMIT=	37b71fbdfe4375bb8eaf64f855f1182caf066ec7
+GL_COMMIT=	1e7005f12bda1dfd0b724ebc039cca75f1cd38d1
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -56,11 +55,11 @@ GH_TUPLE=	\
 		codahale:hdrhistogram:3a0bb77429bd:codahale_hdrhistogram/vendor/github.com/codahale/hdrhistogram \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		getsentry:raven-go:v0.1.2:getsentry_raven_go/vendor/github.com/getsentry/raven-go \
-		golang:crypto:c2843e01d9a2:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:20be4c3c3ed5:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:d28f0bde5980:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:37e7f081c4d4:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:d0b11bdaac8a:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:953cdadca894:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
 		google:go-genproto:bd91e49a0898:google_go_genproto/vendor/google.golang.org/genproto \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
@@ -86,9 +85,7 @@ GH_TUPLE=	\
 		uber:jaeger-client-go:v2.15.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v1.5.0:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 GL_TUPLE=	\
-		gitlab-org:gitaly-proto:f5d7f3cf76555acb5a14ae80eb7db4ad9ff2c553:gitlab_org_gitaly_proto/vendor/gitlab.com/gitlab-org/gitaly-proto \
 		gitlab-org:labkit:0c3fc7cdd57c57da5ab474aa72b6640d2bdc9ebb:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
-
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
