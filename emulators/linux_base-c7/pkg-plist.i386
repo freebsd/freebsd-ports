@@ -108,6 +108,7 @@ usr/bin/chown
 usr/bin/chrt
 usr/bin/cksum
 usr/bin/clear
+usr/bin/cmp
 usr/bin/col
 usr/bin/colcrt
 usr/bin/colrm
@@ -134,6 +135,8 @@ usr/bin/db47_verify
 usr/bin/dd
 usr/bin/df
 usr/bin/dgawk
+usr/bin/diff
+usr/bin/diff3
 usr/bin/dir
 usr/bin/dircolors
 usr/bin/dirname
@@ -255,6 +258,7 @@ usr/bin/rmdir
 usr/bin/rpcgen
 usr/bin/runcon
 usr/bin/scriptreplay
+usr/bin/sdiff
 usr/bin/sed
 usr/bin/seq
 usr/bin/setarch
@@ -1022,6 +1026,9 @@ usr/share/centos-release/EULA
 %%PORTDOCS%%usr/share/doc/coreutils-8.22/sh-utils/NEWS
 %%PORTDOCS%%usr/share/doc/coreutils-8.22/textutils/ChangeLog.bz2
 %%PORTDOCS%%usr/share/doc/coreutils-8.22/textutils/NEWS
+%%PORTDOCS%%usr/share/doc/diffutils-3.3/COPYING
+%%PORTDOCS%%usr/share/doc/diffutils-3.3/NEWS
+%%PORTDOCS%%usr/share/doc/diffutils-3.3/README
 %%PORTDOCS%%usr/share/doc/e2fsprogs-1.42.9/COPYING
 %%PORTDOCS%%usr/share/doc/e2fsprogs-1.42.9/README
 %%PORTDOCS%%usr/share/doc/e2fsprogs-1.42.9/RELEASE-NOTES
@@ -1764,6 +1771,7 @@ usr/share/i18n/locales/zu_ZA
 usr/share/icons
 usr/share/info/bash.info.gz
 usr/share/info/coreutils.info.gz
+usr/share/info/diffutils.info.gz
 usr/share/info/dir
 usr/share/info/find-maint.info.gz
 usr/share/info/find.info.gz
@@ -1818,6 +1826,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/bs/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ca/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/ca/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/ca/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/ca/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/ca/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/ca/LC_MESSAGES/glib20.mo
@@ -1829,6 +1838,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/ca@valencia/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/cs/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/cs/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/cs/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/cs/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/cs/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/cs/LC_MESSAGES/glib20.mo
@@ -1841,6 +1851,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/cs/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/cy/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/da/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/glib20.mo
@@ -1853,6 +1864,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/da/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/de/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/gawk.mo
@@ -1868,6 +1880,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/de/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/dz/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/el/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/el/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/el/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/el/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/el/LC_MESSAGES/grep.mo
@@ -1885,6 +1898,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/en_US/LC_MESSAGES/mit-krb5.mo
 %%NLS%%usr/share/locale/eo/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/eo/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/eo/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/eo/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/eo/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/eo/LC_MESSAGES/grep.mo
@@ -1894,6 +1908,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/eo/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/es/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/gawk.mo
@@ -1921,6 +1936,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/fa/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/fi/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/gdbm.mo
@@ -1933,6 +1949,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/fi/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/fr/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/gawk.mo
@@ -1947,6 +1964,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/fur/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/ga/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/grep.mo
@@ -1955,6 +1973,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/ga/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/gd/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/gl/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/gl/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/gl/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/gl/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/gl/LC_MESSAGES/grep.mo
@@ -1964,11 +1983,13 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/gl/LC_MESSAGES/util-linux.mo
 %%NLS%%usr/share/locale/gl/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/gu/LC_MESSAGES/glib20.mo
+%%NLS%%usr/share/locale/he/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/he/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/he/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/he/LC_MESSAGES/sed.mo
 %%NLS%%usr/share/locale/hi/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/hr/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/hr/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/hr/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/hr/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/hr/LC_MESSAGES/grep.mo
@@ -1979,6 +2000,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/hr/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/hu/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/hu/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/hu/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/hu/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/hu/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/hu/LC_MESSAGES/grep.mo
@@ -1992,6 +2014,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/ia/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/id/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/id/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/id/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/id/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/id/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/id/LC_MESSAGES/glib20.mo
@@ -2004,6 +2027,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/is/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/is/LC_MESSAGES/popt.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/it/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/gawk.mo
@@ -2017,6 +2041,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/it/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/ja/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/gdbm.mo
@@ -2054,6 +2079,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/lt/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/lt/LC_MESSAGES/libc.mo
 %%NLS%%usr/share/locale/lt/LC_TIME/coreutils.mo
+%%NLS%%usr/share/locale/lv/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/lv/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/mai/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/mg/LC_MESSAGES/glib20.mo
@@ -2062,6 +2088,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/mn/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/mr/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ms/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/ms/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/ms/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/ms/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ms/LC_TIME/coreutils.mo
@@ -2076,6 +2103,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/ne/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/nl/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/gawk.mo
@@ -2094,6 +2122,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/pa/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/pl/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/gawk.mo
@@ -2116,6 +2145,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/pt/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/grep.mo
@@ -2125,6 +2155,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/pt_BR/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/ro/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/ro/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/ro/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/ro/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/ro/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ro/LC_MESSAGES/grep.mo
@@ -2134,6 +2165,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/ro/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/ru/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/ru/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/ru/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/ru/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/ru/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ru/LC_MESSAGES/grep.mo
@@ -2164,6 +2196,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/sl/LC_MESSAGES/util-linux.mo
 %%NLS%%usr/share/locale/sl/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/sq/LC_MESSAGES/glib20.mo
+%%NLS%%usr/share/locale/sr/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/sr/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/sr/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/sr/LC_MESSAGES/grep.mo
@@ -2173,6 +2206,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/sr@latin/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/sv/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/gawk.mo
@@ -2191,6 +2225,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/tl/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/tr/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/tr/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/tr/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/tr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/tr/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/tr/LC_MESSAGES/glib20.mo
@@ -2204,6 +2239,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/ug/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/uk/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/uk/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/uk/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/uk/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/uk/LC_MESSAGES/gdbm.mo
 %%NLS%%usr/share/locale/uk/LC_MESSAGES/glib20.mo
@@ -2215,6 +2251,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/uk/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/vi/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/gawk.mo
@@ -2232,6 +2269,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/yi/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/glib20.mo
@@ -2245,6 +2283,7 @@ usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/zh_HK/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/grep.mo
@@ -2300,6 +2339,7 @@ usr/share/man/man1/chrt.1.gz
 usr/share/man/man1/chsh.1.gz
 usr/share/man/man1/cksum.1.gz
 usr/share/man/man1/clear.1.gz
+usr/share/man/man1/cmp.1.gz
 usr/share/man/man1/col.1.gz
 usr/share/man/man1/colcrt.1.gz
 usr/share/man/man1/colrm.1.gz
@@ -2318,6 +2358,8 @@ usr/share/man/man1/dd.1.gz
 usr/share/man/man1/declare.1.gz
 usr/share/man/man1/df.1.gz
 usr/share/man/man1/dgawk.1.gz
+usr/share/man/man1/diff.1.gz
+usr/share/man/man1/diff3.1.gz
 usr/share/man/man1/dir.1.gz
 usr/share/man/man1/dircolors.1.gz
 usr/share/man/man1/dirname.1.gz
@@ -2445,6 +2487,7 @@ usr/share/man/man1/runcon.1.gz
 usr/share/man/man1/runuser.1.gz
 usr/share/man/man1/script.1.gz
 usr/share/man/man1/scriptreplay.1.gz
+usr/share/man/man1/sdiff.1.gz
 usr/share/man/man1/sed.1.gz
 usr/share/man/man1/seq.1.gz
 usr/share/man/man1/set.1.gz
