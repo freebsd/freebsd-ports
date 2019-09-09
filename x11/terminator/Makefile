@@ -3,6 +3,7 @@
 
 PORTNAME=	terminator
 PORTVERSION=	1.91
+PORTREVISION=	1
 CATEGORIES=	x11 python
 MASTER_SITES=	http://launchpad.net/terminator/gtk3/${PORTVERSION}/+download/
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0:devel/py-notify@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 
 USES=		gnome python:2.7 shebangfix
-USE_GNOME=	pygobject3 intltool
+USE_GNOME=	pygobject3 intltool vte3
 USE_PYTHON=	distutils
 
 PYDISTUTILS_PKGNAME=	Terminator
