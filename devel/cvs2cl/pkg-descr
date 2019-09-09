@@ -4,4 +4,4 @@ This Perl script does what you think it does: It produces a GNU-style
 ChangeLog for CVS-controlled sources, by running "cvs log" and parsing
 the output. Duplicate log messages get unified in the Right Way.
 
-WWW: http://www.red-bean.com/cvs2cl/
+WWW: https://www.red-bean.com/cvs2cl/
