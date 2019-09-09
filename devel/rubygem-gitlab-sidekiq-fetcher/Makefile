@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-sidekiq-fetcher
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
