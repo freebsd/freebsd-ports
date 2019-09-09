@@ -510,6 +510,7 @@
     SUBDIR += usbids
     SUBDIR += usbrh-libusb
     SUBDIR += utftools
+    SUBDIR += utouch-kmod
     SUBDIR += valentina
     SUBDIR += valspeak
     SUBDIR += vdmfec

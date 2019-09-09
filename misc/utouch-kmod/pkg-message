@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+To load installed driver in to the kernel type:
+"kldload /boot/modules/utouch.ko"
+
+It may be necessary to unload conflicting uhid(4) driver
+with "kldunload uhid" after utouch.ko has been loaded.
+
+To load driver automaticaly at the boot time add
+utouch_load="YES" string to /boot/loader.conf file.
+EOM
+}
+]
