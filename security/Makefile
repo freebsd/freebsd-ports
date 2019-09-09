@@ -1279,6 +1279,7 @@
     SUBDIR += tlswrap
     SUBDIR += tor
     SUBDIR += tor-devel
+    SUBDIR += totp-cli
     SUBDIR += tpm-tools
     SUBDIR += trezord
     SUBDIR += trinokiller
