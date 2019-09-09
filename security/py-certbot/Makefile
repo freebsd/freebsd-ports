@@ -3,6 +3,7 @@
 
 PORTNAME=	certbot
 PORTVERSION=	${ACME_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
@@ -34,9 +35,16 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+SUB_FILES=	500.certbot
+PLIST_FILES=	etc/periodic/weekly/500.certbot
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/certbot/compat/misc.py
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/weekly
+	${INSTALL_SCRIPT} ${WRKDIR}/500.certbot \
+		${STAGEDIR}${PREFIX}/etc/periodic/weekly
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

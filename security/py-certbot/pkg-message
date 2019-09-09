@@ -24,6 +24,11 @@ will be made available in the following ports:
 
  * Apache plugin: security/py-certbot-apache
  * Nginx plugin: security/py-certbot-nginx
+
+In order to automatically renew the certificates, add this line to
+/etc/periodic.conf:
+
+    weekly_certbot_enable="YES"
 EOM
 }
 ]
