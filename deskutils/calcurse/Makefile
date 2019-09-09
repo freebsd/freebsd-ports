@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	calcurse
-PORTVERSION=	4.3.0
+PORTVERSION=	4.5.0
 CATEGORIES=	deskutils
-MASTER_SITES=	http://calcurse.org/files/
+MASTER_SITES=	https://calcurse.org/files/
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Text-based calendar and scheduling application
@@ -18,7 +18,9 @@ OPTIONS_SUB=	yes
 
 USES=		gmake ncurses shebangfix
 SHEBANG_FILES=	contrib/caldav/calcurse-caldav \
-		contrib/caldav/calcurse-caldav.py
+		contrib/caldav/calcurse-caldav.py \
+		contrib/vdir/calcurse-vdir \
+		contrib/vdir/calcurse-vdir.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-asciidoc
 

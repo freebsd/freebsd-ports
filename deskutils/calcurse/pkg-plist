@@ -1,6 +1,7 @@
 bin/calcurse
 bin/calcurse-caldav
 bin/calcurse-upgrade
+bin/calcurse-vdir
 man/man1/calcurse.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/add.txt
 %%PORTDOCS%%%%DOCSDIR%%/config.txt
