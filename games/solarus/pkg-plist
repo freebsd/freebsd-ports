@@ -35,6 +35,8 @@ include/solarus/core/Logger.h
 include/solarus/core/MainLoop.h
 include/solarus/core/Map.h
 include/solarus/core/MapData.h
+include/solarus/core/PerfCounter.h
+include/solarus/core/PerfCounter.inl
 include/solarus/core/PixelBits.h
 include/solarus/core/Point.h
 include/solarus/core/Point.inl
@@ -144,6 +146,7 @@ include/solarus/graphics/ShaderData.h
 include/solarus/graphics/ShaderPtr.h
 include/solarus/graphics/SoftwarePixelFilter.h
 include/solarus/graphics/SoftwareVideoMode.h
+include/solarus/graphics/SolarusGl.h
 include/solarus/graphics/Sprite.h
 include/solarus/graphics/SpriteAnimation.h
 include/solarus/graphics/SpriteAnimationDirection.h
@@ -164,7 +167,7 @@ include/solarus/graphics/Video.h
 include/solarus/graphics/glrenderer/GlRenderer.h
 include/solarus/graphics/glrenderer/GlShader.h
 include/solarus/graphics/glrenderer/GlTexture.h
-include/solarus/graphics/glrenderer/gles2funcs.h
+include/solarus/graphics/quest_icon.h
 include/solarus/graphics/sdlrenderer/SDLRenderer.h
 include/solarus/graphics/sdlrenderer/SDLShader.h
 include/solarus/graphics/sdlrenderer/SDLSurfaceImpl.h
@@ -235,6 +238,8 @@ include/solarus/movements/RandomPathMovement.h
 include/solarus/movements/RelativeMovement.h
 include/solarus/movements/StraightMovement.h
 include/solarus/movements/TargetMovement.h
+include/solarus/third_party/KHR/khrplatform.h
+include/solarus/third_party/glad/glad.h
 include/solarus/third_party/glm/CMakeLists.txt
 include/solarus/third_party/glm/common.hpp
 include/solarus/third_party/glm/detail/_features.hpp
@@ -502,9 +507,11 @@ include/solarus/third_party/snes_spc/blargg_source.h
 include/solarus/third_party/snes_spc/dsp.h
 include/solarus/third_party/snes_spc/spc.h
 lib/libsolarus-gui.so
+lib/libsolarus-gui.so.1
+lib/libsolarus-gui.so.1.6.2
 lib/libsolarus.so
 lib/libsolarus.so.1
-lib/libsolarus.so.1.6.0
+lib/libsolarus.so.1.6.2
 share/appdata/solarus.appdata.xml
 share/applications/solarus.desktop
 share/icons/hicolor/128x128/apps/solarus.png
