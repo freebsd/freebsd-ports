@@ -12,7 +12,7 @@ COMMENT=	Adds escape sequences for code blocks in Jekyll
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-jekyll3>=3.0:www/rubygem-jekyll3
+RUN_DEPENDS=	rubygem-jekyll3>=3.0<4:www/rubygem-jekyll3
 
 USES=		gem
 USE_RUBY=	yes
