@@ -13,8 +13,6 @@ COMMENT=	GNU music typesetter
 
 LICENSE=	GPLv3
 
-BROKEN=		fails to configure
-
 BUILD_DEPENDS=	pdftexi2dvi:print/texinfo \
 		t1ascii:print/t1utils \
 		bash:shells/bash \
