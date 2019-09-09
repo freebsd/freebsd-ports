@@ -31,4 +31,7 @@ BINARY_ALIAS=	lrelease=${LRELEASE}
 
 NO_ARCH=	yes
 
+post-patch:
+	${REINPLACE_CMD} -e "s,lrelease,${LOCALBASE}/bin/lrelease," ${WRKSRC}/setup.py
+
 .include <bsd.port.mk>
