@@ -1,6 +1,16 @@
-Don't install changelogs for they're too heavy and are a git logs (instead of real changelogs) anyway
---- Makefile.am.orig	2019-07-26 18:19:11 UTC
+--- Makefile.am.orig	2019-08-20 19:01:23 UTC
 +++ Makefile.am
+@@ -2,8 +2,8 @@
+ 
+ include $(top_srcdir)/aminclude.am
+ 
+-SUBDIRS = src po doc plugins
+-DIST_SUBDIRS = src po doc plugins
++SUBDIRS = src po plugins
++DIST_SUBDIRS = src po plugins
+ 
+ man_MANS = geeqie.1
+ 
 @@ -12,7 +12,7 @@ readmedir = @readmedir@
  if HAVE_MARKDOWN
  readme_DATA = README.md COPYING ChangeLog TODO README.lirc AUTHORS README.html ChangeLog.html
