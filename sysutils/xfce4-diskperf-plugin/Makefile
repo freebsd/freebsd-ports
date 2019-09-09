@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-diskperf-plugin
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
