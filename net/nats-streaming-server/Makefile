@@ -11,10 +11,7 @@ COMMENT=	Streaming system server for NATS
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build
-
-USES=		go
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	nats-io
 
