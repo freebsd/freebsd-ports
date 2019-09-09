@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	solarus-quest-editor
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	games
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -26,7 +25,7 @@ USES=		cmake compiler:c++11-lib openal qt:5 sdl
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	solarus-games
-GL_COMMIT=	47ebde229b805ebe076ab6ef7f8e947a06a17451
+GL_COMMIT=	a2aa91dc9bb60d3df6183b8e0a74a5d4c3b2d016
 
 CMAKE_ARGS+=	-DSOLARUS_USE_LUAJIT=OFF
 USE_SDL=	sdl2 ttf2 image2
