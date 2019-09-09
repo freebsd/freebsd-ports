@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Automatically renew Let's Encrypt certificates each week
+#
+# Add the following lines to /etc/periodic.conf:
+#
+# weekly_certbot_enable (bool):	Set to "NO" by default
+# weekly_certbot_service (str):	If defined, certbot will try to
+#					shutdown this this service before
+#					renewing the certificate, and restart
+#					it afterwards.  For example, set to
+#					"nginx" or "apache24"
+
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+case "$weekly_certbot_enable" in
+    [Yy][Ee][Ss])
+	echo
+	echo "Renewing Let's Encrypt certificates:"
+
+	PRE_HOOK=""
+	POST_HOOK=""
+	if [ -n "$weekly_certbot_service" ]
+	then
+	    if service "$weekly_certbot_service" onestatus
+	    then
+		PRE_HOOK="service $weekly_certbot_service onestop"
+		POST_HOOK="service $weekly_certbot_service onestart"
+	    fi
+	fi
+
+	anticongestion
+	if %%LOCALBASE%%/bin/certbot renew --pre-hook "$PRE_HOOK" \
+	                             --post-hook "$POST_HOOK" \
+	   			     --no-random-sleep-on-renew
+	then
+	    rc=0
+	else
+	    rc=1
+	fi
+	;;
+    *)  rc=0;;
+esac
+
+exit $rc
