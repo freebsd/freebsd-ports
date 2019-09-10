@@ -3,15 +3,15 @@
 
 PORTNAME=	phyml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.20190321
+DISTVERSION=	3.3.20190909
 PORTEPOCH=	1
 CATEGORIES=	biology
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, fast, and accurate algorithm to estimate large phylogenies
 
-LICENSE=	GPLv2
-#LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf libtool pkgconfig
 
