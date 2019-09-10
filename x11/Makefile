@@ -152,6 +152,7 @@
     SUBDIR += libXinerama
     SUBDIR += libXp
     SUBDIR += libXpm
+    SUBDIR += libXpresent
     SUBDIR += libXprintAppUtil
     SUBDIR += libXprintUtil
     SUBDIR += libXrandr

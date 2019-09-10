@@ -1,0 +1,7 @@
+include/X11/extensions/Xpresent.h
+lib/libXpresent.a
+lib/libXpresent.so
+lib/libXpresent.so.1
+lib/libXpresent.so.1.0.0
+libdata/pkgconfig/xpresent.pc
+man/man3/Xpresent.3.gz
