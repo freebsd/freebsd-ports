@@ -4858,6 +4858,7 @@
     SUBDIR += py-pylru-cache
     SUBDIR += py-pymarc
     SUBDIR += py-pymaven-patch
+    SUBDIR += py-pymisp
     SUBDIR += py-pympler
     SUBDIR += py-pymtbl
     SUBDIR += py-pyopencl
