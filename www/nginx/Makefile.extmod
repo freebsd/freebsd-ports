@@ -255,7 +255,7 @@ RDS_JSON_CONFIGURE_ON=	--add-module=${WRKSRC_rdsjson}
 REDIS2_GH_TUPLE=	openresty:redis2-nginx-module:v0.15:redis2
 REDIS2_VARS=		DSO_EXTMODS+=redis2
 
-RTMP_GH_TUPLE=		arut:nginx-rtmp-module:v1.2.1:rtmp
+RTMP_GH_TUPLE=		ut0mt8:nginx-rtmp-module:f0ea623:rtmp
 RTMP_VARS=		DSO_EXTMODS+=rtmp
 
 SET_MISC_IMPLIES=	DEVEL_KIT
