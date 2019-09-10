@@ -1462,7 +1462,7 @@ _usefound=
 .endif
 .endfor
 .if !defined(_usefound)
-ERROR+=	"Unkonwn USES=${f:C/\:.*//}"
+ERROR+=	"Unknown USES=${f:C/\:.*//}"
 .endif
 .endfor
 
@@ -1984,7 +1984,7 @@ _usefound=
 .endif
 .endfor
 .if !defined(_usefound)
-ERROR+=	"Unkonwn USES=${f:C/\:.*//}"
+ERROR+=	"Unknown USES=${f:C/\:.*//}"
 .endif
 .endfor
 
