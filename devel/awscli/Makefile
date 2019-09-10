@@ -3,6 +3,7 @@
 
 PORTNAME=	awscli
 PORTVERSION=	1.16.227
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 
@@ -25,6 +26,6 @@ USE_PYTHON=	autoplist distutils concurrent noflavors
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
-DOCS_USERS=	groff:run
+DOCS_USES=	groff:run
 
 .include <bsd.port.mk>
