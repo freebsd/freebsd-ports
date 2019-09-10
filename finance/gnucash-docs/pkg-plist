@@ -207,6 +207,7 @@ share/gnome/help/gnucash-guide/C/figures/txns_sxn_ledger1.png
 share/gnome/help/gnucash-guide/C/figures/txns_sxn_ledger2.png
 share/gnome/help/gnucash-guide/C/figures/txns_sxn_ledger3.png
 share/gnome/help/gnucash-guide/C/figures/txns_sxn_ledger4.png
+share/gnome/help/gnucash-guide/C/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/C/gnc-glossary.xml
 share/gnome/help/gnucash-guide/C/gnucash-guide.xml
 share/gnome/help/gnucash-guide/C/legal.xml
@@ -438,6 +439,7 @@ share/gnome/help/gnucash-guide/de/figures/txns_sxn_ledger2.png
 share/gnome/help/gnucash-guide/de/figures/txns_sxn_ledger3.png
 share/gnome/help/gnucash-guide/de/figures/txns_sxn_ledger4.png
 share/gnome/help/gnucash-guide/de/glossary.xml
+share/gnome/help/gnucash-guide/de/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/de/gnucash-guide.xml
 share/gnome/help/gnucash-guide/it/figures/accts_CreateAssetsAccount.png
 share/gnome/help/gnucash-guide/it/figures/accts_DefaultExpenseAccounts.png
@@ -603,6 +605,7 @@ share/gnome/help/gnucash-guide/it/figures/txns_sxn_ledger1.png
 share/gnome/help/gnucash-guide/it/figures/txns_sxn_ledger2.png
 share/gnome/help/gnucash-guide/it/figures/txns_sxn_ledger3.png
 share/gnome/help/gnucash-guide/it/figures/txns_sxn_ledger4.png
+share/gnome/help/gnucash-guide/it/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/it/gnucash-guide.xml
 share/gnome/help/gnucash-guide/ja/appendixa.xml
 share/gnome/help/gnucash-guide/ja/appendixb.xml
@@ -812,6 +815,7 @@ share/gnome/help/gnucash-guide/ja/figures/txns_sxn_ledger1.png
 share/gnome/help/gnucash-guide/ja/figures/txns_sxn_ledger2.png
 share/gnome/help/gnucash-guide/ja/figures/txns_sxn_ledger3.png
 share/gnome/help/gnucash-guide/ja/figures/txns_sxn_ledger4.png
+share/gnome/help/gnucash-guide/ja/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/ja/gnucash-guide.xml
 share/gnome/help/gnucash-guide/ja/legal.xml
 share/gnome/help/gnucash-guide/pt/appendixa.xml
@@ -1008,6 +1012,7 @@ share/gnome/help/gnucash-guide/pt/figures/txns_sxn_ledger1.png
 share/gnome/help/gnucash-guide/pt/figures/txns_sxn_ledger2.png
 share/gnome/help/gnucash-guide/pt/figures/txns_sxn_ledger3.png
 share/gnome/help/gnucash-guide/pt/figures/txns_sxn_ledger4.png
+share/gnome/help/gnucash-guide/pt/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/pt/gnucash-guide.xml
 share/gnome/help/gnucash-guide/pt/legal.xml
 share/gnome/help/gnucash-guide/ru/appendixa.xml
@@ -1217,6 +1222,7 @@ share/gnome/help/gnucash-guide/ru/figures/txns_sxn_ledger1.png
 share/gnome/help/gnucash-guide/ru/figures/txns_sxn_ledger2.png
 share/gnome/help/gnucash-guide/ru/figures/txns_sxn_ledger3.png
 share/gnome/help/gnucash-guide/ru/figures/txns_sxn_ledger4.png
+share/gnome/help/gnucash-guide/ru/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/ru/gnc-glossary.xml
 share/gnome/help/gnucash-guide/ru/gnucash-guide.xml
 share/gnome/help/gnucash-guide/ru/legal.xml
@@ -1266,6 +1272,7 @@ share/gnome/help/gnucash-help/C/figures/home.png
 share/gnome/help/gnucash-help/C/figures/left.png
 share/gnome/help/gnucash-help/C/figures/right.png
 share/gnome/help/gnucash-help/C/figures/up.png
+share/gnome/help/gnucash-help/C/gnc-docbookx.dtd
 share/gnome/help/gnucash-help/C/gnucash-help.xml
 share/gnome/help/gnucash-help/de/Help_ch_GettingStarted.xml
 share/gnome/help/gnucash-help/de/Help_ch_Intro.xml
@@ -1279,6 +1286,7 @@ share/gnome/help/gnucash-help/de/figures/home.png
 share/gnome/help/gnucash-help/de/figures/left.png
 share/gnome/help/gnucash-help/de/figures/right.png
 share/gnome/help/gnucash-help/de/figures/up.png
+share/gnome/help/gnucash-help/de/gnc-docbookx.dtd
 share/gnome/help/gnucash-help/de/gnucash-help.xml
 share/gnome/help/gnucash-help/it/figures/Help_AccountReg_Screen.png
 share/gnome/help/gnucash-help/it/figures/Help_AccountTree_Screen.png
@@ -1300,6 +1308,7 @@ share/gnome/help/gnucash-help/it/figures/home.png
 share/gnome/help/gnucash-help/it/figures/left.png
 share/gnome/help/gnucash-help/it/figures/right.png
 share/gnome/help/gnucash-help/it/figures/up.png
+share/gnome/help/gnucash-help/it/gnc-docbookx.dtd
 share/gnome/help/gnucash-help/it/gnucash-help.xml
 share/gnome/help/gnucash-help/pt/Help_ch_Account-Actions.xml
 share/gnome/help/gnucash-help/pt/Help_ch_Business.xml
@@ -1340,4 +1349,5 @@ share/gnome/help/gnucash-help/pt/figures/home.png
 share/gnome/help/gnucash-help/pt/figures/left.png
 share/gnome/help/gnucash-help/pt/figures/right.png
 share/gnome/help/gnucash-help/pt/figures/up.png
+share/gnome/help/gnucash-help/pt/gnc-docbookx.dtd
 share/gnome/help/gnucash-help/pt/gnucash-help.xml
