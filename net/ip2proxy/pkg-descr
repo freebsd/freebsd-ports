@@ -1,0 +1,6 @@
+This library is the C programming language library to support all IP2Proxy™
+BIN database products to query proxy IP address and its country, region,
+city, ISP name and proxy types. It has been optimized for speed and memory
+utilization.
+
+WWW: https://ip2location.com/development-libraries/ip2proxy/c

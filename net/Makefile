@@ -269,6 +269,7 @@
     SUBDIR += intel-ixl-kmod
     SUBDIR += iodine
     SUBDIR += ip2location
+    SUBDIR += ip2proxy
     SUBDIR += ip6_int
     SUBDIR += ipdecap
     SUBDIR += ipgrab
