@@ -1,0 +1,7 @@
+TIMESTAMP = 1567361597
+SHA256 (centos/libepoxy-1.5.2-1.el7.i686.rpm) = 856175aef5ac663d3eb404169539a300bb781dc232781f6a144442804d8aa8dc
+SIZE (centos/libepoxy-1.5.2-1.el7.i686.rpm) = 225316
+SHA256 (centos/libepoxy-1.5.2-1.el7.x86_64.rpm) = 34fb298fb5ea30cb6c7eca7a78ceb9cfb8d97d56ccd41aa3b1a4b023ad5a906f
+SIZE (centos/libepoxy-1.5.2-1.el7.x86_64.rpm) = 215620
+SHA256 (centos/libepoxy-1.5.2-1.el7.src.rpm) = a3322972bdbf3febae6fdc37d8712bb59475f832e504abd7d979fcac5400c50e
+SIZE (centos/libepoxy-1.5.2-1.el7.src.rpm) = 816159
