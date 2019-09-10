@@ -108,8 +108,9 @@ do-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}/build_info/
 	${FIND} ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR} -type f -name '*.so' -exec ${STRIP_CMD} {} +
 	${FIND} ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR} -type f \( -name mkmf.log -or -name gem_make.out \) -delete
-	${RM} -r ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/ext \
-		${STAGEDIR}${PREFIX}/${CACHE_DIR} 2> /dev/null || ${TRUE}
+	${FIND} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/ext -type f -not -name '*.so' -delete 2> /dev/null || ${TRUE}
+	${FIND} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/ext -type d -empty -delete 2> /dev/null || ${TRUE}
+	${RM} -r ${STAGEDIR}${PREFIX}/${CACHE_DIR} 2> /dev/null || ${TRUE}
 	${RMDIR} ${STAGEDIR}${PREFIX}/${EXT_DIR} 2> /dev/null || ${TRUE}
 .if !${PORT_OPTIONS:MDOCS}
 	-@${RMDIR} ${STAGEDIR}${PREFIX}/${DOC_DIR}
