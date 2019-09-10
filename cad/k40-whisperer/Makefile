@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	k40-whisperer
-DISTVERSION=	0.35
+DISTVERSION=	0.36
 CATEGORIES=	cad python
 MASTER_SITES=	http://www.scorchworks.com/K40whisperer/
 DISTNAME=	K40_Whisperer-${DISTVERSION}_src
@@ -41,15 +41,6 @@ NON_DATA_FILES=	${DOCS} \
 		py2exe_setup.py \
 		requirements.txt
 WHISPERER_COMMAND=	${PORTNAME}
-
-post-patch:
-	# Replace every leading tab with 8 spaces. It is a workaround for
-	# misindented Python scripts.
-	@${REINPLACE_CMD} -e 's|^	|        |g' \
-		-e ':again' \
-		-e 's|^\(        \)*	|\1        |g' \
-		-e 't again' \
-		${WRKSRC}/*.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${WHISPERER_COMMAND} ${STAGEDIR}${PREFIX}/bin
