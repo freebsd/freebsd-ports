@@ -17,6 +17,5 @@ USE_PYTHON=		autoplist distutils
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		grembo
-GH_PROJECT=		${PORTNAME}
 
 .include <bsd.port.mk>
