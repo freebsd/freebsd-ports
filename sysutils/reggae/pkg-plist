@@ -94,7 +94,6 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/cbsd.conf.tpl
 %%DATADIR%%/templates/dhcpd-hook.sh
 %%DATADIR%%/templates/dhcpd.conf
-%%DATADIR%%/templates/empty.jconf
 %%DATADIR%%/templates/export-ports.sh
 %%DATADIR%%/templates/freebsd-update.conf
 %%DATADIR%%/templates/gitignore
