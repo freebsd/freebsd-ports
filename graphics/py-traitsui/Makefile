@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	traitsui
-PORTVERSION=	6.1.2
+PORTVERSION=	6.1.3
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -57,6 +57,6 @@ do-test:
 # Note: The occurences of "qt4" aren't typos
 do-test-QT5-on:
 	@cd ${WRKSRC} && ${SETENV} ETS_TOOLKIT=qt4 QT_API=pyqt5 \
-		${PYTHON_CMD} -m nose -v -e 'test_wrap_text_narrow_short' traitsui.qt4.tests
+		${PYTHON_CMD} -m nose -v traitsui.qt4.tests
 
 .include <bsd.port.mk>
