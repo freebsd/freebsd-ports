@@ -14,17 +14,17 @@ ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	bash:shells/bash \
 		nasm:devel/nasm \
+		gcc:lang/gcc${GCC_DEFAULT} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7:databases/py-sqlite3@${PY_FLAVOR}
 
 FLAVORS=	x86_64 i386
 
-x86_64_PKGNAMESUFFIX=	-x86_64
-i386_PKGNAMESUFFIX=	-i386
-
 USES=		gmake \
 		python:2.7,build
 
-USE_GCC=	8+
+x86_64_PKGNAMESUFFIX=	-x86_64
+i386_PKGNAMESUFFIX=	-i386
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	tianocore openssl:ssl
 GH_PROJECT=	edk2 openssl:ssl
