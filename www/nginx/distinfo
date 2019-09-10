@@ -1,4 +1,4 @@
-TIMESTAMP = 1565945621
+TIMESTAMP = 1568029112
 SHA256 (nginx-1.16.1.tar.gz) = f11c2a6dd1d3515736f0324857957db2de98be862461b5a542a3ac6188dbe32b
 SIZE (nginx-1.16.1.tar.gz) = 1032630
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -117,8 +117,8 @@ SHA256 (openresty-rds-json-nginx-module-v0.14_GH0.tar.gz) = 99aedf222a9664484918
 SIZE (openresty-rds-json-nginx-module-v0.14_GH0.tar.gz) = 33496
 SHA256 (openresty-redis2-nginx-module-v0.15_GH0.tar.gz) = d255571bcfb9939b78099df39cb4d42f174d789aec8c8e5e47b93942b0299438
 SIZE (openresty-redis2-nginx-module-v0.15_GH0.tar.gz) = 25471
-SHA256 (arut-nginx-rtmp-module-v1.2.1_GH0.tar.gz) = 87aa597400b0b5a05274ee2d23d8cb8224e12686227a0abe31d783b3a645ea37
-SIZE (arut-nginx-rtmp-module-v1.2.1_GH0.tar.gz) = 519919
+SHA256 (ut0mt8-nginx-rtmp-module-f0ea623_GH0.tar.gz) = a66fc786e17c84a85db5e9598007b5934405945f19d4b9c5af1e12460bb649d9
+SIZE (ut0mt8-nginx-rtmp-module-f0ea623_GH0.tar.gz) = 563795
 SHA256 (openresty-set-misc-nginx-module-cda7e50_GH0.tar.gz) = 6fb2c99d4aecdd0335f55493b0dd4170efa46b0014a4c2e41f2ea519b633aca2
 SIZE (openresty-set-misc-nginx-module-cda7e50_GH0.tar.gz) = 29291
 SHA256 (sflow-nginx-sflow-module-543c72a_GH0.tar.gz) = 95efdb1f6cfd6c32c577707f693eb6795c6f21ae062842bf84fe762d8b842955
