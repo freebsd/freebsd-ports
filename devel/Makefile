@@ -5118,6 +5118,7 @@
     SUBDIR += py-tzlocal
     SUBDIR += py-u-msgpack-python
     SUBDIR += py-ua_parser
+    SUBDIR += py-uhid-freebsd
     SUBDIR += py-ujson
     SUBDIR += py-uncompyle2
     SUBDIR += py-unicodecsv
