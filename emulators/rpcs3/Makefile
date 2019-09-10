@@ -38,10 +38,14 @@ USES=		cmake compiler:c++17-lang iconv:wchar_t localbase:ldflags \
 USE_GL=		gl glew
 USE_QT=		qmake_build buildtools_build core dbus declarative gui network widgets
 USE_XORG=	x11
-LLD_UNSAFE=	yes # XXX ports/219089
 CMAKE_ON=	CMAKE_SKIP_RPATH USE_SYSTEM_FFMPEG USE_SYSTEM_LIBPNG
 CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS
 LDFLAGS+=	-Wl,--as-needed # GLU
+
+# XXX Drop after FreeBSD 12.0 EOL
+.if exists(/usr/lib/clang/6.0.1)
+LLD_UNSAFE=	yes # XXX ports/219089
+.endif
 
 # XXX Remove after FreeBSD 11.2/12.0 reach EOL i.e., around 2020-02-01
 .if !exists(/usr/include/c++/v1/charconv) && exists(/usr/lib/libc++.so)
