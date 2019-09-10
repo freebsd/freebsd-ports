@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocrmypdf
-DISTVERSION=	9.0.2
+DISTVERSION=	9.0.3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -57,12 +57,14 @@ NO_ARCH=	yes
 
 PLIST_FILES=	etc/bash_completion.d/ocrmypdf.bash share/fish/vendor_completions.d/ocrmypdf.fish
 
-OPTIONS_DEFINE=	PNGQUANT
-OPTIONS_DEFAULT=PNGQUANT
+OPTIONS_DEFINE=	PNGQUANT UNPAPER
+OPTIONS_DEFAULT=PNGQUANT UNPAPER
 
 PNGQUANT_DESC=	Optimizes the encoding of PNG-style images in PDFs
+UNPAPER_DESC=	Deskew and clean up pages before OCR processing
 
 PNGQUANT_RUN_DEPENDS=	pngquant:graphics/pngquant
+UNPAPER_RUN_DEPENDS=	unpaper:graphics/unpaper
 
 # This workaround copes with the files that are generated in the CFFI
 # out-of-line ABI mode (through devel/py-cffi). Those files are installed but
