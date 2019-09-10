@@ -3,4 +3,4 @@ to limit the number of simultaneous downloads permitted from a single
 IP address.
 Proxy tracking possibility is not supported yet since apache isn't patched.
 
-WWW: http://dominia.org/djao/limitipconn2.html
+WWW: https://dominia.org/djao/limitipconn2.html
