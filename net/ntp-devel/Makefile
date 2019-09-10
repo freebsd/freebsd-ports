@@ -3,6 +3,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.3.99
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		http://archive.ntp.org/ntp4/ntp-dev/
@@ -22,7 +23,7 @@ USES=		cpe pathfix shebangfix libedit libtool localbase:ldflags \
 LIB_DEPENDS+=	libdns_sd.so:net/mDNSResponder
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-leap-smear
+CONFIGURE_ARGS=	--enable-leap-smear --enable-trustedbsd-mac
 
 TEST_TARGET=	check
 
