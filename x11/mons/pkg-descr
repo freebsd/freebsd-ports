@@ -1,0 +1,11 @@
+Mons is a shell script to quickly manage 2-monitors display using XRandR.
+
+Perks:
+- No requirement: POSIX-compliant (minimal: xorg-xrandr)
+- Useful: Perfectly fit for laptops, quick and daily use
+- Well known: Laptop mode, projector mode, duplicate, mirror and extend
+- More: Select one or two monitors over several others
+- Extra: Cycle through every mode with only one shortcut
+- Auto: Daemon mode to automatically reset display
+
+WWW: https://github.com/Ventto/mons
