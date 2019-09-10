@@ -3,6 +3,7 @@
 
 PORTNAME=	scrypt
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +17,5 @@ RUN_DEPENDS=	rubygem-ffi-compiler>=1.0:devel/rubygem-ffi-compiler
 
 USES=		gem
 USE_RUBY=	yes
-
-NO_ARCH=	yes
 
 .include <bsd.port.mk>
