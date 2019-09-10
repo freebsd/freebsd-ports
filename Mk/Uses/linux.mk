@@ -135,6 +135,7 @@ _linux_c7_qtwebkit=			linux-c7-qtwebkit>0:www/linux-c7-qtwebkit
 _linux_${linux_ARGS}_sdl12=		linux-${linux_ARGS}-sdl>0:devel/linux-${linux_ARGS}-sdl12
 _linux_${linux_ARGS}_sdlimage=		linux-${linux_ARGS}-sdl_image>0:graphics/linux-${linux_ARGS}-sdl_image
 _linux_${linux_ARGS}_sdlmixer=		linux-${linux_ARGS}-sdl_mixer>0:audio/linux-${linux_ARGS}-sdl_mixer
+_linux_${linux_ARGS}_sdlttf=		linux-${linux_ARGS}-sdl_ttf>0:audio/linux-${linux_ARGS}-sdl_ttf
 _linux_${linux_ARGS}_sqlite3=		linux-${linux_ARGS}-sqlite>0:databases/linux-${linux_ARGS}-sqlite3
 _linux_c7_systemd-libs=			linux-c7-systemd-libs>0:devel/linux-c7-systemd-libs
 _linux_${linux_ARGS}_tcl85=		linux-${linux_ARGS}-tcl85>0:lang/linux-${linux_ARGS}-tcl85
