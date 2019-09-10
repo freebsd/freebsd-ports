@@ -23,7 +23,8 @@ USES=		cpe pathfix shebangfix libedit libtool localbase:ldflags \
 LIB_DEPENDS+=	libdns_sd.so:net/mDNSResponder
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-leap-smear --enable-trustedbsd-mac
+CONFIGURE_ARGS=	--enable-leap-smear --enable-trustedbsd-mac \
+		--with-locfile=freebsd
 
 TEST_TARGET=	check
 
