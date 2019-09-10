@@ -1,0 +1,7 @@
+TIMESTAMP = 1567344326
+SHA256 (centos/at-spi2-core-2.28.0-1.el7.i686.rpm) = c99ef2b942bf41c4bf1df3ed96ad5db1b64c9da72d785eeb43a34141d940ef6a
+SIZE (centos/at-spi2-core-2.28.0-1.el7.i686.rpm) = 160236
+SHA256 (centos/at-spi2-core-2.28.0-1.el7.x86_64.rpm) = 24fb8f259f1c458490f2b6413d92bfdd781c01d5f13b291324bcceeea519e3c4
+SIZE (centos/at-spi2-core-2.28.0-1.el7.x86_64.rpm) = 161696
+SHA256 (centos/at-spi2-core-2.28.0-1.el7.src.rpm) = b559d8c2134ee1d78506d308f8104c37660e459b5865e812b57cc710ae952768
+SIZE (centos/at-spi2-core-2.28.0-1.el7.src.rpm) = 201578
