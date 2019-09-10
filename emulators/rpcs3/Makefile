@@ -4,6 +4,7 @@ PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.7-8674 # git rev-list --count HEAD
 DISTVERSIONSUFFIX=	-gcb66d0569
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -54,7 +55,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-5bd17a44c972
 .endif
 
 OPTIONS_DEFINE=	ALSA EVDEV GDB LLVM PULSEAUDIO VULKAN
-OPTIONS_DEFAULT=ALSA LLVM VULKAN
+OPTIONS_DEFAULT=LLVM VULKAN
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
