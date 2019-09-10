@@ -3,5 +3,5 @@ MySQL is a very fast, multi-threaded, multi-user and robust SQL
 
 Modified to support replication using the Galera library.
 
-WWW: http://www.mysql.com/
-WWW: http://www.galeracluster.com/
+WWW: https://www.mysql.com/
+WWW: https://galeracluster.com/
