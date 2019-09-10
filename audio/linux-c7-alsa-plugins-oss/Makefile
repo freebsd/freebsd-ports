@@ -21,7 +21,7 @@ LICENSE=	LGPL21+
 
 USES=		autoreconf:build gmake libtool:build linux:c7 pkgconfig
 USE_LDCONFIG=	yes
-USE_LINUX=	alsalib:build,run alsa-lib-devel:build devtools:build
+USE_LINUX=	alsalib:build,run alsa-lib-devel:build base:build devtools:build
 USE_LINUX_PREFIX=yes
 
 RPM_PATCHES=	alsa-plugins-1.1.6-post.patch \
