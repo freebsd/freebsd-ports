@@ -1,0 +1,11 @@
+--- mons.orig	2019-09-10 11:15:08 UTC
++++ mons
+@@ -78,7 +78,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ # Helps to generate manpage with help2man before installing the library
+ [ "$1" = '-h' ] && { usage; exit; }
+ [ "$1" = '-v' ] && { version; exit; }
+-lib='/usr/lib/libshlist/liblist.sh'
++lib='%%PREFIX%%/lib/libshlist/liblist.sh'
+ [ ! -r "$lib" ] && { "$lib: library not found."; exit 1; }
+ . "${lib}"
+ 

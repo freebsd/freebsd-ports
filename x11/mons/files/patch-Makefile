@@ -1,0 +1,22 @@
+--- Makefile.orig	2017-11-25 13:46:52 UTC
++++ Makefile
+@@ -1,11 +1,12 @@
+-PKGNAME		= mons
+-PKGDESC		= POSIX Shell script to quickly manage 2-monitors display.
++PKGNAME		=	mons
++PKGDESC		=	POSIX Shell script to quickly manage 2-monitors display.
+ 
+-LICENSEDIR  = $(DESTDIR)/usr/share/licenses/$(PKGNAME)
+-MANDIR		= $(DESTDIR)/usr/share/man/man1
+-BINDIR  	= $(DESTDIR)/usr/bin
+-LIBDIR  	= $(DESTDIR)/usr/lib/libshlist
+-LIB     	= libshlist/liblist.sh
++PREFIX		=	/usr
++LICENSEDIR	=	$(DESTDIR)$(PREFIX)/share/licenses/$(PKGNAME)
++MANDIR		=	$(DESTDIR)$(PREFIX)/share/man/man1
++BINDIR		=	$(DESTDIR)$(PREFIX)/bin
++LIBDIR		=	$(DESTDIR)$(PREFIX)/lib/libshlist
++LIB		=	libshlist/liblist.sh
+ 
+ install:
+ 	@if ! [ -r "$(LIB)" ]; then \

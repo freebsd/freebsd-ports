@@ -226,6 +226,7 @@
     SUBDIR += metisse
     SUBDIR += mkcomposecache
     SUBDIR += mlterm
+    SUBDIR += mons
     SUBDIR += mrxvt
     SUBDIR += mrxvt-devel
     SUBDIR += multi-aterm
