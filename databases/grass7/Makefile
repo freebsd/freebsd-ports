@@ -3,7 +3,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	7.6.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases geography
 MASTER_SITES=	https://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -79,12 +79,12 @@ PLIST_SUB=	GRASS_INST_DIR="${GRASS_INST_DIR}" \
 		VERSION="${PORTVERSION}" VERS="${PORTVERSION:C/([0-9]+).([0-9]+)(.*)/\1.\2/}" \
 		VER="${VER}" MAJVER="${PKGNAMESUFFIX}"
 
-OPTIONS_DEFINE=		LAS MOTIF NETCDF PDAL
+OPTIONS_DEFINE=		LAS NETCDF PDAL
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL ODBC PGSQL SQLITE
 #OPTIONS_SINGLE=		BLAS
 #OPTIONS_SINGLE_BLAS=	ATLAS NETLIB GOTOBLAS OPENBLAS
-OPTIONS_DEFAULT=	LAS PDAL PGSQL SQLITE NETLIB MOTIF NETCDF MYSQL ODBC
+OPTIONS_DEFAULT=	LAS PDAL PGSQL SQLITE NETLIB NETCDF MYSQL ODBC
 OPTIONS_SUB=		yes
 
 #BLAS_DESC=		BLAS/LAPACK support
@@ -101,9 +101,6 @@ LAS_LIB_DEPENDS=	liblas.so:devel/liblas \
 			libboost_program_options.so:devel/boost-libs \
 			libboost_thread.so:devel/boost-libs \
 			libgeotiff.so:graphics/libgeotiff
-MOTIF_USES=		motif
-MOTIF_USE=		GL=glw
-MOTIF_CONFIGURE_ON=	--with-motif --with-glw
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--with-mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql \
