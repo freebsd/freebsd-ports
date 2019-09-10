@@ -74,6 +74,7 @@ XORG_MODULES=	dmx \
 		xorgproto \
 		xp \
 		xpm \
+		xpresent \
 		xprintapputil \
 		xprintutil \
 		xrandr \
@@ -131,6 +132,7 @@ xorg-server_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-server.pc:x11-se
 xorgproto_BUILD_DEPENDS=	xorgproto>=0:x11/xorgproto
 xp_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xp.pc:x11/libXp
 xpm_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xpm.pc:x11/libXpm
+xpresent_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xpresent.pc:x11/libXpresent
 xprintapputil_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xprintapputil.pc:x11/libXprintAppUtil
 xprintutil_LIB_PC_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xprintutil.pc:x11/libXprintUtil
 xrandr_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/xrandr.pc:x11/libXrandr
