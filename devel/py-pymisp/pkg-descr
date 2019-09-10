@@ -1,0 +1,4 @@
+PyMISP allows you to fetch events, add or update events/attributes, add or
+update samples or search for attributes.
+
+WWW: https://github.com/MISP/PyMISP
