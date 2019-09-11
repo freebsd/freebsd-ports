@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	1.1.1c
+PORTVERSION=	1.1.1d
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
@@ -66,7 +66,7 @@ GOST_DESC=	GOST (Russian standard)
 HASHES_DESC=	Hash Function Support
 I386_DESC=	i386 (instead of i486+)
 IDEA_DESC=	International Data Encryption Algorithm
-MAN3_DESC=	Install API manpages (section 3)
+MAN3_DESC=	Install API manpages (section 3, 7)
 MD2_DESC=	MD2 (obsolete)
 MD4_DESC=	MD4 (unsafe)
 MDC2_DESC=	MDC-2 (patented, requires DES)
@@ -96,7 +96,7 @@ ${_option:tu}_CONFIGURE_ON=	enable-${_option}
 .endfor
 
 # Upstream default enabled options
-.for _option in aria asm async ct des gost idea md4 mdc2 nextprotoneg \
+.for _option in aria asm async ct des gost idea md4 mdc2 nextprotoneg rc2 rc4 \
 	rfc3779 rmd160 shared sm2 sm3 sm4 sse2 threads tls1 tls1_1 tls1_2
 ${_option:tu}_CONFIGURE_OFF=	no-${_option}
 .endfor
