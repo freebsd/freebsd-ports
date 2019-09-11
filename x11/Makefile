@@ -335,6 +335,7 @@
     SUBDIR += viewres
     SUBDIR += virtboard
     SUBDIR += virtualgl
+    SUBDIR += wallutils
     SUBDIR += waybar
     SUBDIR += wbar
     SUBDIR += wbarconf
