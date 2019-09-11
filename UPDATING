@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190911:
+  AFFECTS: users of security/bastillion
+  AUTHOR: netchild@FreeBSD.org
+
+  The datastore of bastillion needs to be updated:
+    java -jar $PREFIX/jetty_bastillion/upgrade/bastillion-upgrade-3.08.00.jar \
+      $PREFIX/jetty_bastillion/bastillion/WEB-INF/classes/BastillionConfig.properties
+
 20190909:
   AFFECTS: users of lang/ruby25
   AUTHOR: mfechner@FreeBSD.org
