@@ -177,6 +177,8 @@ MASTER_SITE_SUBDIR=	centos/${LINUX_DIST_VER}/os/x86_64/Packages/:DEFAULT,amd64 \
 			centos/${LINUX_DIST_VER}/updates/Source/SPackages/:SOURCE
 .endif
 DIST_SUBDIR?=		centos
+DEPRECATED=		Superseded by CentOS 7
+EXPIRATION_DATE=	2019-12-31
 .elif ${linux_ARGS} == c7
 .ifndef MASTER_SITES
 MASTER_SITES=		${MASTER_SITE_CENTOS_LINUX}
