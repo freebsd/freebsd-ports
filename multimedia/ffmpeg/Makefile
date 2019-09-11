@@ -598,10 +598,7 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--enable-shared \
 		--enable-pic \
 		--enable-gpl \
-		--enable-postproc \
-		--enable-avfilter \
 		--enable-avresample \
-		--enable-pthreads \
 		--cc="${CC}"
 
 DOC_FILES=	Changelog CREDITS INSTALL.md LICENSE.md MAINTAINERS \
