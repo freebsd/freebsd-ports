@@ -10,7 +10,7 @@ COMMENT=	Manual tiling window manager for X11
 
 LICENSE=	BSD2CLAUSE
 
-USES=		compiler:c++11-lang gmake gnome pkgconfig shebangfix
+USES=		compiler:c++11-lang gmake gnome pkgconfig shebangfix xorg
 USE_GNOME=	glib20
 USE_XORG=	x11 xext xinerama
 
