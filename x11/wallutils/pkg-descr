@@ -1,0 +1,8 @@
+* Detect monitor resolutions and set the desktop wallpaper, for any
+  window manager (please file an issue if your window manager is not
+  supported yet).
+* Supports GNOME timed wallpapers, and includes a utility that can run
+  an event loop for changing them (also supports cross fading).
+* Introduces a new file format for timed wallpapers
+
+WWW: https://github.com/xyproto/wallutils
