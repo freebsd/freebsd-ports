@@ -1,17 +1,16 @@
---- src/Makefile.orig	2015-09-29 18:09:59 UTC
+--- src/Makefile.orig	2018-10-30 19:12:36 UTC
 +++ src/Makefile
-@@ -38,9 +38,7 @@ EXE=planetsplitter$(.EXE) planetsplitter
-     router+lib$(.EXE) router+lib-slim$(.EXE)
+@@ -39,8 +39,7 @@ EXE=planetsplitter$(.EXE) planetsplitter-slim$(.EXE) r
  
  ifneq ($(HOST),MINGW)
--LIB =libroutino.so               libroutino-slim.so
--LIB+=libroutino.so.$(SOVERSION)  libroutino-slim.so.$(SOVERSION)
--LIB+=libroutino.so.$(LIBVERSION) libroutino-slim.so.$(LIBVERSION)
-+LIB=libroutino.so.$(LIBVERSION) libroutino-slim.so.$(LIBVERSION)
+   LIB =libroutino.so               libroutino-slim.so
+-  LIB+=libroutino.so.$(SOVERSION)  libroutino-slim.so.$(SOVERSION)
+-  LIB+=libroutino.so.$(LIBVERSION) libroutino-slim.so.$(LIBVERSION)
++  LIB=libroutino.so.$(LIBVERSION) libroutino-slim.so.$(LIBVERSION)
  else
- LIB =routino.dll routino-slim.dll
- LIB+=routino.def routino-slim.def
-@@ -284,22 +282,23 @@ install-local: all-local
+   LIB =routino.dll routino-slim.dll
+   LIB+=routino.def routino-slim.def
+@@ -284,22 +283,23 @@ install-local: all-local
  	@[ -d $(DESTDIR)$(bindir) ] || mkdir -p $(DESTDIR)$(bindir)
  	@for file in $(EXE); do \
  	    if [ -f $$file ]; then \
