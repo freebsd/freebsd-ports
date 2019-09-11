@@ -9,6 +9,7 @@ bin/yath
 %%SITE_PERL%%/App/Yath/Command/replay.pm
 %%SITE_PERL%%/App/Yath/Command/run.pm
 %%SITE_PERL%%/App/Yath/Command/spawn.pm
+%%SITE_PERL%%/App/Yath/Command/speedtag.pm
 %%SITE_PERL%%/App/Yath/Command/start.pm
 %%SITE_PERL%%/App/Yath/Command/stop.pm
 %%SITE_PERL%%/App/Yath/Command/test.pm
@@ -78,6 +79,7 @@ bin/yath
 %%PERL5_MAN3%%/App::Yath::Command::replay.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::run.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::spawn.3.gz
+%%PERL5_MAN3%%/App::Yath::Command::speedtag.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::start.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::stop.3.gz
 %%PERL5_MAN3%%/App::Yath::Command::test.3.gz
