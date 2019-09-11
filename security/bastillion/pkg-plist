@@ -434,6 +434,7 @@ jetty_bastillion/modules/webapp.mod
 jetty_bastillion/modules/websocket.mod
 jetty_bastillion/notice.html
 jetty_bastillion/start.jar
+jetty_bastillion/upgrade/bastillion-upgrade-3.08.00.jar
 @dir(www,www,755) jetty_bastillion/bastillion/WEB-INF/classes
 @dir(www,www,755) %%WWWDIR%%
 @dir(www,www,755) %%WWWDIR%%/work
