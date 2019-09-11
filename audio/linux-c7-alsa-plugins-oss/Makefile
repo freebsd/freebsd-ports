@@ -73,7 +73,7 @@ do-configure:
 .if !empty(COMPAT32_CFLAGS_${ARCH})
 	@(cd ${WRKSRC32} && ${AUTORECONF} -f -i && ${SETENV} \
 		PATH=${LINUXBASE}/usr/bin ./configure CPPFLAGS="${CPPFLAGS}" \
-		CFLAGS="${CFLAGS} ${COMPAT32_CFLAGS_${ARCH}}" \
+		CFLAGS="${CFLAGS:N-march=*} ${COMPAT32_CFLAGS_${ARCH}}" \
 		LDFLAGS="${LDFLAGS}" MAKE="${LOCALBASE}/bin/gmake" \
 		MKDIR_P="${MKDIR}" PKG_CONFIG="${LOCALBASE}/bin/pkgconf" \
 		PKG_CONFIG_PATH=${LINUXBASE}/usr/lib/pkgconfig \
@@ -81,7 +81,7 @@ do-configure:
 .endif
 	@(cd ${WRKSRC} && ${AUTORECONF} -f -i && ${SETENV} \
 		PATH=${LINUXBASE}/usr/bin ./configure CPPFLAGS="${CPPFLAGS}" \
-		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
+		CFLAGS="${CFLAGS:N-march=*}" LDFLAGS="${LDFLAGS}" \
 		MAKE="${LOCALBASE}/bin/gmake" MKDIR_P="${MKDIR}" \
 		PKG_CONFIG="${LOCALBASE}/bin/pkgconf" \
 		PKG_CONFIG_PATH=${LINUXBASE}${LIBDIR_${ARCH}}/pkgconfig \
