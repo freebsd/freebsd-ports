@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	herbstluftwm
-PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTVERSION=	0.7.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://herbstluftwm.org/tarballs/
 
@@ -11,10 +10,11 @@ COMMENT=	Manual tiling window manager for X11
 
 LICENSE=	BSD2CLAUSE
 
-USES=		compiler:c++11-lib gettext-runtime gmake pkgconfig shebangfix
-SHEBANG_FILES=	scripts/*.sh share/autostart share/*.sh
-USE_XORG=	x11 xext xinerama
+USES=		compiler:c++11-lang gmake gnome pkgconfig shebangfix
 USE_GNOME=	glib20
+USE_XORG=	x11 xext xinerama
+
+SHEBANG_FILES=	scripts/*.sh share/*.sh
 
 MAKE_ARGS=	PREFIX=${PREFIX} SYSCONFDIR=${PREFIX}/etc \
 		DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR} \
@@ -24,6 +24,8 @@ MAKE_ARGS=	PREFIX=${PREFIX} SYSCONFDIR=${PREFIX}/etc \
 
 OPTIONS_DEFINE=	BASH FISH ZSH DOCS EXAMPLES
 OPTIONS_SUB=	yes
+
+SUB_FILES=	pkg-message
 
 ALL_TARGET=	all-nodoc
 INSTALL_TARGET=	install-nodoc
