@@ -11,10 +11,17 @@ include/ags/audio/ags_channel.h
 include/ags/audio/ags_char_buffer_util.h
 include/ags/audio/ags_devin.h
 include/ags/audio/ags_devout.h
+include/ags/audio/ags_diatonic_scale.h
 include/ags/audio/ags_fifoout.h
+include/ags/audio/ags_filter_util.h
+include/ags/audio/ags_fm_synth_util.h
+include/ags/audio/ags_fourier_transform_util.h
+include/ags/audio/ags_frequency_map.h
+include/ags/audio/ags_frequency_map_manager.h
 include/ags/audio/ags_generic_recall_channel_run.h
 include/ags/audio/ags_generic_recall_recycling.h
 include/ags/audio/ags_input.h
+include/ags/audio/ags_lfo_synth_util.h
 include/ags/audio/ags_midi.h
 include/ags/audio/ags_midiin.h
 include/ags/audio/ags_notation.h
@@ -48,6 +55,7 @@ include/ags/audio/ags_sequencer_util.h
 include/ags/audio/ags_sound_enums.h
 include/ags/audio/ags_sound_provider.h
 include/ags/audio/ags_soundcard_util.h
+include/ags/audio/ags_synth_enums.h
 include/ags/audio/ags_synth_generator.h
 include/ags/audio/ags_synth_util.h
 include/ags/audio/ags_track.h
@@ -67,6 +75,10 @@ include/ags/audio/file/ags_ipatch_dls2_reader.h
 include/ags/audio/file/ags_ipatch_gig_reader.h
 include/ags/audio/file/ags_ipatch_sample.h
 include/ags/audio/file/ags_ipatch_sf2_reader.h
+include/ags/audio/file/ags_sfz_file.h
+include/ags/audio/file/ags_sfz_group.h
+include/ags/audio/file/ags_sfz_region.h
+include/ags/audio/file/ags_sfz_sample.h
 include/ags/audio/file/ags_sndfile.h
 include/ags/audio/file/ags_sound_container.h
 include/ags/audio/file/ags_sound_resource.h
@@ -141,6 +153,10 @@ include/ags/audio/recall/ags_feed_audio_signal.h
 include/ags/audio/recall/ags_feed_channel.h
 include/ags/audio/recall/ags_feed_channel_run.h
 include/ags/audio/recall/ags_feed_recycling.h
+include/ags/audio/recall/ags_lfo_audio_signal.h
+include/ags/audio/recall/ags_lfo_channel.h
+include/ags/audio/recall/ags_lfo_channel_run.h
+include/ags/audio/recall/ags_lfo_recycling.h
 include/ags/audio/recall/ags_loop_channel.h
 include/ags/audio/recall/ags_loop_channel_run.h
 include/ags/audio/recall/ags_mute_audio.h
@@ -245,6 +261,7 @@ include/ags/audio/thread/ags_audio_thread.h
 include/ags/audio/thread/ags_channel_thread.h
 include/ags/audio/thread/ags_export_thread.h
 include/ags/audio/thread/ags_sequencer_thread.h
+include/ags/audio/thread/ags_sfz_loader.h
 include/ags/audio/thread/ags_soundcard_thread.h
 include/ags/audio/thread/ags_wave_loader.h
 include/ags/config.h
