@@ -1,7 +1,11 @@
-
+[
+{ type: upgrade, maximum_version: 4, message: <<EOT
 Version 4.0.0 is much stricter and more standards compliant
 
 It is very likely that you will need to change your code.
 
 See https://github.com/clicon/clixon/blob/master/CHANGELOG.md
 for details on the changes, especially the API changes.
+EOT
+}
+]
