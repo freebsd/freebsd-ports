@@ -5,6 +5,7 @@ PORTNAME=	glassfish
 PORTVERSION=	5.0
 CATEGORIES=	www java
 MASTER_SITES=	http://download.oracle.com/glassfish/${PORTVERSION}/release/
+PKGNAMESUFFIX=	5
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Reference implementation of the Java EE application server
@@ -30,8 +31,6 @@ SUB_LIST=	GLASSFISHVERSION=${PORTVERSION} \
 USE_RC_SUBR=	glassfish
 GLASSFISH_BIN_FILES=	appclient asadmin capture-schema jspc package-appclient schemagen startserv stopserv wscompile wsdeploy wsgen wsimport xjc
 
-.include <bsd.port.pre.mk>
-
 do-install:
 	@${FIND} ${WRKSRC} -name '*.bat' -delete
 	@${FIND} ${WRKSRC} -name '*.exe' -delete
@@ -42,4 +41,4 @@ do-install:
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/glassfish/bin/${x}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
