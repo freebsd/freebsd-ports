@@ -23,7 +23,6 @@ share/applications/barrage.desktop
 %%DATADIR%%/sounds/expl3.wav
 %%DATADIR%%/sounds/gunfire.wav
 %%DATADIR%%/sounds/highlight.wav
-share/icons/hicolor/16x16/apps/barrage.png
-share/icons/hicolor/32x32/apps/barrage.png
-share/icons/hicolor/48x48/apps/barrage.png
+share/icons/barrage48.png
 share/pixmaps/barrage.png
+/var/barrage.hscr
