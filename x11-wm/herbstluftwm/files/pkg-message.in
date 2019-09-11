@@ -1,0 +1,11 @@
+[
+{
+  message: <<EOM
+You need to specify your own autostart file with -c or place it in this path:
+%%PREFIX%%/etc/xdg/etc/xdg/herbstluftwm/autostart
+
+Keep in mind that most of the scripts are written in bash syntax.
+EOM
+  type: install
+}
+]
