@@ -3,6 +3,7 @@
 
 PORTNAME=	babeld
 PORTVERSION=	1.8.5
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net
 
 MAINTAINER=	gaod@hychen.org
@@ -18,7 +19,6 @@ PLIST_FILES=	bin/babeld \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jech
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 USE_RC_SUBR=	babeld
 
 do-install:
