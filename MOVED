@@ -12952,3 +12952,4 @@ x11-wm/pawm||2019-09-05|Has expired: Broken for more than 6 months
 x11-toolkits/p5-Wx||2019-09-07|Has expired: Broken for more than 6 months
 graphics/luxrender14||2019-09-07|Has expired: Depends on expiring graphics/embree, broken with boost 1.70
 graphics/luxrender||2019-09-07|Has expired: Depends on expiring graphics/embree, broken with boost 1.70
+sysutils/libutempter||2019-09-11|Belong to base in all supported version of FreeBSD
