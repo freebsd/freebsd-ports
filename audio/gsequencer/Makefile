@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsequencer
-DISTVERSION=	2.2.38
+DISTVERSION=	2.3.3
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH/gsequencer/${DISTVERSION:R}.x
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libuuid.so:misc/e2fsprogs-libuuid
 RUN_DEPENDS=	dssi>0:audio/dssi
 
-USES=		desktop-file-utils gettext-runtime gmake gnome libtool localbase pkgconfig shared-mime-info
+USES=		desktop-file-utils gettext-runtime gmake gnome libtool localbase pkgconfig shared-mime-info xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa --enable-oss
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 libxml2 pango
