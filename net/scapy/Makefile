@@ -1,11 +1,10 @@
 # Created by: vanhu <vanhu@netasq.com>
 # $FreeBSD$
 
-PORTNAME=		scapy
-PORTVERSION=		2.4.2
-DISTVERSIONPREFIX=	v
-PORTREVISION=		2
-CATEGORIES=		net
+PORTNAME=	scapy
+PORTVERSION=	2.4.3
+CATEGORIES=	net python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -15,11 +14,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libdnet>0:net/py-libdnet@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pcap>0:net/py-pcap@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pypcap>0:net/py-pypcap@${PY_FLAVOR}
 
 USE_PYTHON=	autoplist distutils
-USE_GITHUB=	yes
-GH_ACCOUNT=	secdev
 
 NO_ARCH=	yes
 
