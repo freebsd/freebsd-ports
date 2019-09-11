@@ -6,7 +6,8 @@ PORTVERSION?=	${DJBDNS_VER}
 PORTREVISION?=	22
 PORTEPOCH?=	1
 CATEGORIES?=	dns
-MASTER_SITES=	http://cr.yp.to/djbdns/ \
+MASTER_SITES=	https://cr.yp.to/djbdns/ \
+		http://cr.yp.to/djbdns/ \
 		ftp://cr.yp.to/djbdns/
 DISTNAME=	djbdns-${DJBDNS_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
