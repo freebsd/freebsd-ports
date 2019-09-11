@@ -1,0 +1,80 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: glassfish
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# glassfish_enable (bool):
+#   Set to NO by default.
+#   Set it to YES to enable glassfish. 
+#
+# glassfish_java_home (string):
+#   Used to set JAVA_HOME (optional).
+#
+# glassfish_java_opts (string):
+#   Used to set JAVA_OPTS (optional).
+#
+# glassfish_domain_name (string):
+#   Set the name of the Glassfish domain to start (default: domain1).
+
+. /etc/rc.subr
+
+name=glassfish
+rcvar=glassfish_enable
+
+load_rc_config $name
+
+: ${glassfish_enable:=NO}
+: ${glassfish_java_home=""}
+: ${glassfish_java_opts=""}
+: ${glassfish_domain_name="domain1"}
+: ${glassfish_home="%%DATADIR%%/glassfish"}
+
+procname="${glassfish_java_home}/bin/java"
+
+# Since we receive the JAVA_HOME variable by default from the Java package
+# we depend on, we override JAVA_HOME only if the user overrid it.
+if [ ! -z ${glassfish_java_home} ] ; then
+  export JAVA_HOME=${glassfish_java_home}
+else
+  export JAVA_HOME=%%JAVA_HOME%%
+fi
+
+export PATH=${JAVA_HOME}/bin:${PATH}
+export JAVA_OPTS=${glassfish_java_opts}
+
+start_precmd="glassfish_prestart"
+start_cmd="${glassfish_home}/bin/asadmin start-domain ${glassfish_domain_name}"
+stop_cmd="${glassfish_home}/bin/asadmin stop-domain ${glassfish_domain_name}"
+status_cmd="glassfish_status"
+
+glassfish_prestart()
+{
+  if [ -z ${glassfish_domain_name} ] ; then
+    warn "Glassfish domain name cannot be empty, Glassfish will NOT start."
+    return 1
+  fi
+}
+
+glassfish_status()
+{
+  # The output of list-domains -l in glassfish 4.1 is the following:
+  # 
+  # DOMAIN   ADMIN_HOST  ADMIN_PORT  RUNNING  RESTART_REQUIRED
+  # domain1  localhost   4848        true     false
+  IS_DOMAIN_RUNNING=$(${glassfish_home}/bin/asadmin list-domains -l | grep "^${glassfish_domain_name}" | awk '{ print $4; }')
+  if checkyesno IS_DOMAIN_RUNNING ; then
+    echo Glassfish is running.
+    return 0
+  else
+    echo Glassfish is not running.
+    return 1
+  fi
+}
+
+run_rc_command "$1"
