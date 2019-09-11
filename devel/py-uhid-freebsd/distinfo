@@ -1,3 +1,3 @@
-TIMESTAMP = 1568129281
-SHA256 (grembo-uhid-freebsd-v1.0_GH0.tar.gz) = 319501e3b2e24e892d5ab5c58cba69cd9eb7327056e8aa261efbe35fb96f8fc3
-SIZE (grembo-uhid-freebsd-v1.0_GH0.tar.gz) = 4017
+TIMESTAMP = 1568241061
+SHA256 (uhid-freebsd-1.2.1.tar.gz) = 13436ea492271b27cd4847fe3168fd467c0f31aa295abd4aeab61e92920fdd58
+SIZE (uhid-freebsd-1.2.1.tar.gz) = 4467
