@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	bash:shells/bash \
 		nasm:devel/nasm \
-		gcc:lang/gcc${GCC_DEFAULT} \
+		gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7:databases/py-sqlite3@${PY_FLAVOR}
 
 FLAVORS=	x86_64 i386
