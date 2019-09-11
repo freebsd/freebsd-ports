@@ -16,10 +16,3 @@ source/encoder/svt.h:32:10: fatal error: 'EbTime.h' file not found
  
  namespace X265_NS {
  
-@@ -49,4 +48,4 @@ int svt_initialise_input_buffer(x265_encoder *enc);
- 
- #endif // ifdef SVT_HEVC
- 
--#endif // ifndef SVT_H
-\ No newline at end of file
-+#endif // ifndef SVT_H
