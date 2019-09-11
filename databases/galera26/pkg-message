@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+Find the Galera Cluster documentation at
+http://galeracluster.com/documentation-webpages/
+EOM
+}
+]
