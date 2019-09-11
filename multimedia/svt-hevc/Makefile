@@ -2,7 +2,7 @@
 
 PORTNAME=	svt-hevc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,6 +26,7 @@ GH_ACCOUNT=	OpenVisualCloud
 GH_PROJECT=	SVT-HEVC
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	NATIVE
+CFLAGS+=	-D__STDC_WANT_LIB_EXT1__=0
 
 post-patch:
 # Keep using nasm and drop vendor -O/-g
