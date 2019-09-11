@@ -3,7 +3,7 @@
 
 PORTNAME=	x265
 PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265/downloads/ \
 		https://downloads.videolan.org/pub/videolan/x265/ \

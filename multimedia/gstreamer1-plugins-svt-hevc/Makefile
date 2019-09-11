@@ -2,7 +2,7 @@
 
 PORTNAME=	svt-hevc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	gstreamer1-plugins-
 
