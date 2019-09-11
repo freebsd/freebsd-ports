@@ -89,10 +89,11 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotations/ccp.xml
 %%DATADIR%%/data/annotations/ccp_BD.xml
 %%DATADIR%%/data/annotations/ccp_IN.xml
-%%DATADIR%%/data/annotations/ce.xml
 %%DATADIR%%/data/annotations/ce_RU.xml
-%%DATADIR%%/data/annotations/cgg.xml
+%%DATADIR%%/data/annotations/ce.xml
+%%DATADIR%%/data/annotations/ceb.xml
 %%DATADIR%%/data/annotations/cgg_UG.xml
+%%DATADIR%%/data/annotations/cgg.xml
 %%DATADIR%%/data/annotations/chr.xml
 %%DATADIR%%/data/annotations/chr_US.xml
 %%DATADIR%%/data/annotations/ckb.xml
