@@ -1,5 +1,5 @@
---- ext4_utils/ext4_utils.cpp.orig	2019-08-13 02:10:50 UTC
-+++ ext4_utils/ext4_utils.cpp
+--- extras/ext4_utils/ext4_utils.cpp.orig	2019-08-13 02:10:50 UTC
++++ extras/ext4_utils/ext4_utils.cpp
 @@ -32,8 +32,16 @@
  
  #if defined(__linux__)
