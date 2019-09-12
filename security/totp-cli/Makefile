@@ -25,7 +25,4 @@ GH_TUPLE=	golang:crypto:71b5226:golang_crypto/vendor/golang.org/x/crypto \
 		yitsushi:go-commander:v1.1.0:yitsushi_go_commander/vendor/github.com/yitsushi/go-commander
 USE_GITHUB=	yes
 
-do-install:
-	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/totp-cli ${STAGEDIR}${PREFIX}/bin/totp-cli
-
 .include <bsd.port.mk>
