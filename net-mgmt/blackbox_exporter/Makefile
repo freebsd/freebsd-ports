@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	blackbox_exporter
-PORTVERSION=	0.13.0
+PORTVERSION=	0.15.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
