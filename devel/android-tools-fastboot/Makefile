@@ -16,9 +16,9 @@ LICENSE=	APACHE20 BSD2CLAUSE
 LICENSE_COMB=	multi
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	aosp-mirror jbeich:extras,mkbootimg
-GH_PROJECT=	platform_system_core platform_system_extras:extras \
-		platform_system_tools_mkbootimg:mkbootimg
+GH_TUPLE=	aosp-mirror:platform_system_core:${DISTVERSIONFULL} \
+		jbeich:platform_system_extras:${DISTVERSIONFULL}:extras/extras \
+		jbeich:platform_system_tools_mkbootimg:${DISTVERSIONFULL}:mkbootimg/mkbootimg
 
 CONFLICTS_INSTALL?=	${PORTNAME}-devel-*
 
@@ -42,9 +42,7 @@ OPTIONS_SUB=	yes
 .MAKEFLAGS:	WITH="${OPTIONS_DEFINE}"
 .endif
 
-BASH_GH_ACCOUNT=	mbrubeck:bashcomp
-BASH_GH_PROJECT=	android-completion:bashcomp
-BASH_GH_TAGNAME=	c1b0656:bashcomp
+BASH_GH_TUPLE=		mbrubeck:android-completion:c1b0656:bashcomp
 BASH_PLIST_FILES=	etc/bash_completion.d/fastboot
 BASH_VARS=		LICENSE+=MIT
 
