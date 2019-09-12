@@ -2,7 +2,7 @@
 
 PORTNAME=	android-tools-adb
 DISTVERSIONPREFIX=	platform-tools-
-DISTVERSION?=	29.0.2
+DISTVERSION?=	29.0.3
 PORTREVISION?=	0
 CATEGORIES=	devel comms
 
