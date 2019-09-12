@@ -109,7 +109,7 @@ CFLAGS+=	${CPPFLAGS}
 CXXFLAGS+=	${CPPFLAGS}
 .endif
 
-LDADD+= $$(${PKG_CONFIG} libcrypto --libs 2>/dev/null || echo -lcrypto)
+LDADD+=	$$(${PKG_CONFIG} libcrypto --libs 2>/dev/null || echo -lcrypto)
 LDADD+=	$$(${PKG_CONFIG} libusb-1.0 --libs 2>/dev/null || echo -lusb)
 LDADD+=	-lz \-lpthread
 DPADD+=	${LIBPTHREAD} ${LIBUSB} ${LIBZ}
