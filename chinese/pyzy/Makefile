@@ -11,10 +11,6 @@ COMMENT=	Chinese PinYin and Bopomofo conversion library
 
 LICENSE=	LGPL21
 
-BROKEN_aarch64=		fails to compile: constant expression evaluates to -1
-BROKEN_armv6=		fails to compile: constant expression evaluates to -1
-BROKEN_armv7=		fails to compile: constant expression evaluates to -1
-
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 USE_GITHUB=	yes
@@ -36,13 +32,7 @@ OPENCC_DESC=	Use opencc for simplified and traditional Chinese conversion
 OPENCC_CONFIGURE_ENABLE=	opencc
 OPENCC_LIB_DEPENDS=		libopencc.so:chinese/opencc
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-CXXFLAGS+=	-Wno-error=narrowing
-.endif
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}-1.0.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
