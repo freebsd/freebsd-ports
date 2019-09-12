@@ -35,7 +35,7 @@ SRCS+=	threads.cpp
 SRCS+=	diagnose_usb.cpp
 
 # required by fs_mgr/liblp
-.PATH: ${.CURDIR}/../ext4_utils
+.PATH: ${.CURDIR}/../extras/ext4_utils
 SRCS+=	ext4_sb.cpp
 SRCS+=	ext4_utils.cpp
 
@@ -91,10 +91,10 @@ CPPFLAGS+=	-Dpread64=pread
 CPPFLAGS+=	-DFAKE_LOG_DEVICE=1
 CPPFLAGS+=	-I${.CURDIR}
 CPPFLAGS+=	-I${.CURDIR}/../include
-CPPFLAGS+=	-I${.CURDIR}/../include/bootimg
+CPPFLAGS+=	-I${.CURDIR}/../mkbootimg/include/bootimg
 CPPFLAGS+=	-I${.CURDIR}/../base/include
 CPPFLAGS+=	-I${.CURDIR}/../diagnose_usb/include
-CPPFLAGS+=	-I${.CURDIR}/../ext4_utils/include
+CPPFLAGS+=	-I${.CURDIR}/../extras/ext4_utils/include
 CPPFLAGS+=	-I${.CURDIR}/../fs_mgr/liblp/include
 CPPFLAGS+=	-I${.CURDIR}/../libsparse/include
 CPPFLAGS+=	-I${.CURDIR}/../libziparchive/include

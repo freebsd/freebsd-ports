@@ -51,9 +51,6 @@ DOCS_MAKE_ARGS_OFF=	FILES="" FILESDIR=""
 post-extract:
 	@${CP} ${_DISTDIR}/${DISTFILES:M*\:manpage:C/:.*//} \
 		${BUILD_WRKSRC}
-# Adjust paths relative to core
-	@(cd ${WRKSRC_extras} && ${COPYTREE_SHARE} . ${WRKSRC})
-	@(cd ${WRKSRC_mkbootimg} && ${COPYTREE_SHARE} . ${WRKSRC})
 
 post-install-BASH-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${BASH_PLIST_FILES:H}
