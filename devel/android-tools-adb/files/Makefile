@@ -63,13 +63,11 @@ SRCS+= chrono_utils.cpp
 SRCS+= file.cpp
 SRCS+= logging.cpp
 SRCS+= parsenetaddress.cpp
-SRCS+= quick_exit.cpp
 SRCS+= stringprintf.cpp
 SRCS+= strings.cpp
 TEST_SRCS+= file_test.cpp
 TEST_SRCS+= logging_test.cpp
 TEST_SRCS+= parsenetaddress_test.cpp
-TEST_SRCS+= quick_exit_test.cpp
 TEST_SRCS+= stringprintf_test.cpp
 TEST_SRCS+= strings_test.cpp
 TEST_SRCS+= test_main.cpp
@@ -90,28 +88,14 @@ SRCS+= socket_local_client_unix.cpp
 SRCS+= socket_local_server_unix.cpp
 SRCS+= socket_network_client_unix.cpp
 SRCS+= ../libcutils/sockets.cpp
-SRCS+= load_file.cpp
 SRCS+= threads.cpp
 # DragonFly, NetBSD, OpenBSD
 CPPFLAGS.sockets.cpp+= -o ${.TARGET}
-
-# required by base/file.cpp
-.PATH: ${.CURDIR}/../liblog
-SRCS+= config_read.cpp
-SRCS+= config_write.cpp
-SRCS+= fake_log_device.cpp
-SRCS+= fake_writer.cpp
-SRCS+= logger_lock.cpp
-SRCS+= logger_name.cpp
-SRCS+= logger_write.cpp
-SRCS+= logprint.cpp
-SRCS+= stderr_write.cpp
 
 CPPFLAGS+= -DPLATFORM_TOOLS_VERSION="\"${VERSION:U0.0.0}\""
 CPPFLAGS+= -DADB_HOST=1
 CPPFLAGS+= -Doff64_t=off_t
 CPPFLAGS+= -Dlseek64=lseek
-CPPFLAGS+= -DFAKE_LOG_DEVICE=1
 CPPFLAGS+= -I${.CURDIR}
 CPPFLAGS+= -I${.CURDIR}/client
 CPPFLAGS+= -I${.CURDIR}/../include
