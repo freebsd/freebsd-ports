@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	buildsystem
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	devel
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 PKGNAMEPREFIX=	netsurf-
