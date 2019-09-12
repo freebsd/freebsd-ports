@@ -195,8 +195,8 @@ LET_GH_TUPLE=		arut:nginx-let-module:v0.0.4:let
 LET_CONFIGURE_ON=	--add-module=${WRKSRC_let}
 
 LUA_IMPLIES=		DEVEL_KIT
-LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
-LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.0 \
+LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
 LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.15:lua
 LUA_VARS=		DSO_EXTMODS+=lua
