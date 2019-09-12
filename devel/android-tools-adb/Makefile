@@ -12,8 +12,7 @@ COMMENT=	Android debug bridge command line tool
 LICENSE=	APACHE20
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	aosp-mirror
-GH_PROJECT=	platform_system_core
+GH_TUPLE=	aosp-mirror:platform_system_core:${DISTVERSIONFULL}
 
 CONFLICTS_INSTALL?=	${PORTNAME}-devel-*
 
@@ -37,9 +36,7 @@ OPTIONS_SUB=	yes
 .MAKEFLAGS:	WITH="${OPTIONS_DEFINE}"
 .endif
 
-BASH_GH_ACCOUNT=	mbrubeck:bashcomp
-BASH_GH_PROJECT=	android-completion:bashcomp
-BASH_GH_TAGNAME=	c1b0656:bashcomp
+BASH_GH_TUPLE=		mbrubeck:android-completion:c1b0656:bashcomp
 BASH_PLIST_FILES=	etc/bash_completion.d/adb
 BASH_VARS=		LICENSE+=MIT LICENSE_COMB=multi
 
@@ -55,7 +52,7 @@ TEST_BUILD_DEPENDS+=	googlemock>=1.6.0:devel/googlemock \
 TEST_ALL_TARGET=	adb_test
 
 TEST_PYTHON_DESC=	${TEST_DESC:S/tests/python &/}
-TEST_PYTHON_GH_PROJECT=	platform_development:development
+TEST_PYTHON_GH_TUPLE=	aosp-mirror:platform_development:${DISTVERSIONFULL}:development
 TEST_PYTHON_BUILD_DEPENDS=${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
 TEST_PYTHON_USES=	python:2.7,build
 

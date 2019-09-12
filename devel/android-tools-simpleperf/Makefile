@@ -14,10 +14,9 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	android:bionic,core jbeich
-GH_PROJECT=	platform_bionic:bionic platform_system_core:core \
-		platform_system_extras
-GH_SUBDIR=	bionic:bionic
+GH_TUPLE=	jbeich:platform_system_extras:${DISTVERSIONFULL} \
+		aosp-mirror:platform_system_core:${DISTVERSIONFULL}:core \
+		aosp-mirror:platform_bionic:${DISTVERSIONFULL}:bionic/bionic
 
 USES=		compiler:c++11-lib ncurses uidfix
 BUILD_WRKSRC=	${WRKSRC}/simpleperf
