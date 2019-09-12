@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	confget
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://devel.ringlet.net/files/textproc/confget/ \
 		LOCAL/sunpoet
