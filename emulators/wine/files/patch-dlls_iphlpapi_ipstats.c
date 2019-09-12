@@ -1,3 +1,6 @@
+This has been merged upstream in Wine 4.15 (in a slightly tweaked manner),
+so we should be able to drop it latest with the next major release.
+
 --- UTC
 --- dlls/iphlpapi/ipstats.c.orig	2017-03-21 00:03:25.304042000 -0700
 +++ dlls/iphlpapi/ipstats.c	2017-03-21 00:09:42.312023000 -0700
