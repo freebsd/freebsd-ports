@@ -1,6 +1,6 @@
---- liblog/logger.h.orig	2019-07-17 19:54:09 UTC
+--- liblog/logger.h.orig	2019-08-13 02:10:58 UTC
 +++ liblog/logger.h
-@@ -16,8 +16,14 @@
+@@ -16,7 +16,13 @@
  
  #pragma once
  
@@ -10,7 +10,6 @@
 +using std::atomic_uintptr_t;
 +#else
  #include <stdatomic.h>
- #include <stdbool.h>
 +#endif
  
  #include <cutils/list.h>
