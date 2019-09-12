@@ -2,9 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.7-8674 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-gcb66d0569
-PORTREVISION=	1
+DISTVERSION=	0.0.7-8690 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g27af75fe7
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -51,6 +50,7 @@ LLD_UNSAFE=	yes # XXX ports/219089
 # XXX Remove after FreeBSD 11.2/12.0 reach EOL i.e., around 2020-02-01
 .if !exists(/usr/include/c++/v1/charconv) && exists(/usr/lib/libc++.so)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-f9ad6358563b
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-4504ac2d1248
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-revert-5bd17a44c972
 .endif
 
