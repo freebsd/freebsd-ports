@@ -1,17 +1,14 @@
---- base/file.cpp.orig	2017-06-20 10:50:27 UTC
+--- base/file.cpp.orig	2019-07-17 19:54:09 UTC
 +++ base/file.cpp
-@@ -19,6 +19,10 @@
- #include <errno.h>
+@@ -20,6 +20,7 @@
  #include <fcntl.h>
+ #include <ftw.h>
  #include <libgen.h>
-+#include <limits.h> // PATH_MAX
-+#include <stdio.h> // BUFSIZ
-+#include <stdlib.h> // realpath
-+#include <string.h> // strerror
- #include <sys/stat.h>
- #include <sys/types.h>
- #include <unistd.h>
-@@ -36,6 +39,9 @@
++#include <limits.h> // PATH_MAX for GCC
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -35,6 +36,9 @@
  #if defined(__APPLE__)
  #include <mach-o/dyld.h>
  #endif
@@ -19,9 +16,9 @@
 +#include <sys/sysctl.h>
 +#endif
  #if defined(_WIN32)
+ #include <direct.h>
  #include <windows.h>
- #define O_CLOEXEC O_NOINHERIT
-@@ -251,6 +258,23 @@ std::string GetExecutablePath() {
+@@ -421,6 +425,23 @@ std::string GetExecutablePath() {
    if (result == 0 || result == sizeof(path) - 1) return "";
    path[PATH_MAX - 1] = 0;
    return path;

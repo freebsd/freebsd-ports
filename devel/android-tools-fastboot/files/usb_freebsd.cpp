@@ -42,18 +42,20 @@ struct usb_handle {
 	unsigned char iface;
 };
 
-class LibusbUsbTransport : public Transport {
+class LibusbUsbTransport : public UsbTransport {
 public:
-	explicit LibusbUsbTransport(std::unique_ptr<usb_handle> handle):
-		h(std::move(handle)) {}
-	~LibusbUsbTransport() override = default;
+	explicit LibusbUsbTransport(std::unique_ptr<usb_handle> handle, uint32_t ms_timeout):
+		h(std::move(handle)), ms_timeout_(ms_timeout) {}
+	~LibusbUsbTransport() override;
 
 	ssize_t Read(void *_data, size_t len) override;
 	ssize_t Write(const void *_data, size_t len) override;
 	int Close() override;
+	int Reset() override;
 
 private:
 	std::unique_ptr<usb_handle> h;
+	const uint32_t ms_timeout_;
 
 	DISALLOW_COPY_AND_ASSIGN(LibusbUsbTransport);
 };
@@ -174,7 +176,7 @@ LibusbUsbTransport::Write(const void *_data, size_t len)
 	int actlen;
 
 	if (libusb_bulk_transfer(h->handle, h->ep_out,
-				 (unsigned char *)_data, len, &actlen, 0) < 0)
+				 (unsigned char *)_data, len, &actlen, ms_timeout_) < 0)
 		return (-1);
 	return (actlen);
 }
@@ -185,9 +187,14 @@ LibusbUsbTransport::Read(void *_data, size_t len)
 	int actlen;
 
 	if (libusb_bulk_transfer(h->handle, h->ep_in,
-				 (unsigned char *)_data, len, &actlen, 0) < 0)
+				 (unsigned char *)_data, len, &actlen, ms_timeout_) < 0)
 		return (-1);
 	return (actlen);
+}
+
+LibusbUsbTransport::~LibusbUsbTransport()
+{
+	Close();
 }
 
 int
@@ -200,9 +207,17 @@ LibusbUsbTransport::Close()
 	return (0);
 }
 
-Transport *
-usb_open(ifc_match_func callback)
+int
+LibusbUsbTransport::Reset()
+{
+	if (libusb_reset_device(h->handle))
+		return (-1);
+	return (0);
+}
+
+UsbTransport *
+usb_open(ifc_match_func callback, uint32_t timeout_ms)
 {
 	std::unique_ptr<usb_handle> h = enumerate(callback);
-	return (h ? new LibusbUsbTransport(std::move(h)) : nullptr);
+	return (h ? new LibusbUsbTransport(std::move(h), timeout_ms) : nullptr);
 }
