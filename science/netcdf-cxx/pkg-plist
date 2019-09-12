@@ -26,8 +26,9 @@ include/ncVar.h
 include/ncVarAtt.h
 include/ncVlenType.h
 include/netcdf
+lib/libh5bzip2.so
 lib/libnetcdf_c++4.a
 lib/libnetcdf_c++4.so
 lib/libnetcdf_c++4.so.1
-lib/libnetcdf_c++4.so.1.0.3
+lib/libnetcdf_c++4.so.1.1.0
 libdata/pkgconfig/netcdf-cxx4.pc
