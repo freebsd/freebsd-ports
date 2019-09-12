@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.libspf2.org/spf/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Sender Rewriting Scheme 2 C Implementation
+COMMENT=	Sender Policy Framework 2 C Implementation
 
 LICENSE=	BSD2CLAUSE LGPL21 LGPL3
 LICENSE_COMB=	dual
