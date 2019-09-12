@@ -1,0 +1,8 @@
+This project intends to provide a straightforward and simple way to configure
+FTS plugin for Dovecot, leveraging the efforts by the Xapian.org team.
+
+This effort came after Dovecot team decided to deprecate "fts_squat" included in
+the dovecot core, and due to the complexity of the Solr plugin capabilitles,
+un-needed for most users.
+
+WWW: https://github.com/grosjo/fts-xapian
