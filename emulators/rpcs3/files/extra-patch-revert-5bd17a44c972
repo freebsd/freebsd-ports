@@ -25,7 +25,7 @@ rpcs3/util/atomic.cpp:94:7: error: member reference base type 'unsigned long' is
                 ptls->mapped().cond.notify_one();
                 ~~~~^ ~~~~~~
 
---- rpcs3/util/atomic.cpp.orig	2019-08-04 18:16:19 UTC
+--- rpcs3/util/atomic.cpp.orig	2019-09-10 16:25:39 UTC
 +++ rpcs3/util/atomic.cpp
 @@ -2,10 +2,6 @@
  
@@ -38,7 +38,7 @@ rpcs3/util/atomic.cpp:94:7: error: member reference base type 'unsigned long' is
  // Should be at least 65536, currently 2097152.
  static constexpr std::uintptr_t s_hashtable_size = 1u << 21;
  
-@@ -31,113 +27,6 @@ static inline bool ptr_cmp(const void* data, std::size_t size, u64 old_value)
+@@ -40,134 +36,8 @@ static inline bool ptr_cmp(const void* data, std::size
  	return false;
  }
  
@@ -77,22 +77,41 @@ rpcs3/util/atomic.cpp:94:7: error: member reference base type 'unsigned long' is
 -		return s_waiter_maps[std::hash<const void*>()(ptr) % std::size(s_waiter_maps)];
 -	}
 -
--	void fallback_wait(const void* data, std::size_t size, u64 old_value)
+-	void fallback_wait(const void* data, std::size_t size, u64 old_value, u64 timeout)
 -	{
 -		auto& wmap = get_fallback_map(data);
+-
+-		if (!timeout)
+-		{
+-			return;
+-		}
 -
 -		// Update node key
 -		s_tls_waiter.key() = data;
 -
--		if (std::unique_lock lock(wmap.mutex); ptr_cmp(data, size, old_value))
+-		if (std::unique_lock lock(wmap.mutex); ptr_cmp(data, size, old_value) && s_tls_wait_cb(data))
 -		{
 -			// Add node to the waiter list
--			std::condition_variable& cond = wmap.list.insert(std::move(s_tls_waiter))->second.cond;
+-			const auto iter = wmap.list.insert(std::move(s_tls_waiter));
 -
 -			// Wait until the node is returned to its TLS location
+-			if (timeout + 1)
+-			{
+-				if (!iter->second.cond.wait_for(lock, std::chrono::nanoseconds(timeout), [&]
+-				{
+-					return 1 && s_tls_waiter;
+-				}))
+-				{
+-					// Put it back
+-					s_tls_waiter = wmap.list.extract(iter);
+-				}
+-
+-				return;
+-			}
+-
 -			while (!s_tls_waiter)
 -			{
--				cond.wait(lock);
+-				iter->second.cond.wait(lock);
 -			}
 -		}
 -	}
@@ -132,9 +151,9 @@ rpcs3/util/atomic.cpp:94:7: error: member reference base type 'unsigned long' is
 -
 -#if !defined(_WIN32) && !defined(__linux__)
 -
--void atomic_storage_futex::wait(const void* data, std::size_t size, u64 old_value)
--{
--	fallback_wait(data, size, old_value);
+ void atomic_storage_futex::wait(const void* data, std::size_t size, u64 old_value, u64 timeout)
+ {
+-	fallback_wait(data, size, old_value, timeout);
 -}
 -
 -void atomic_storage_futex::notify_one(const void* data)
@@ -149,12 +168,17 @@ rpcs3/util/atomic.cpp:94:7: error: member reference base type 'unsigned long' is
 -
 -#else
 -
- void atomic_storage_futex::wait(const void* data, std::size_t size, u64 old_value)
- {
- #ifdef _WIN32
-@@ -337,5 +226,3 @@ void atomic_storage_futex::notify_all(const void* data)
+-void atomic_storage_futex::wait(const void* data, std::size_t size, u64 old_value, u64 timeout)
+-{
+ 	if (!timeout)
+ 	{
+ 		return;
+@@ -402,8 +272,6 @@ void atomic_storage_futex::notify_all(const void* data
  	}
  #endif
  }
 -
 -#endif
+ 
+ void atomic_storage_futex::set_wait_callback(bool(*cb)(const void* data))
+ {
