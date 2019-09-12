@@ -1,5 +1,5 @@
---- liblog/logger_write.c.orig	2016-04-16 00:01:39 UTC
-+++ liblog/logger_write.c
+--- liblog/logger_write.cpp.orig	2019-07-17 19:54:09 UTC
++++ liblog/logger_write.cpp
 @@ -15,12 +15,12 @@
   */
  
@@ -9,7 +9,8 @@
  #include <string.h>
  #include <sys/time.h>
  
- #ifdef __BIONIC__
+-#ifdef __BIONIC__
++#if defined(__ANDROID__)
 +#include <stdatomic.h>
  #include <android/set_abort_message.h>
  #endif
