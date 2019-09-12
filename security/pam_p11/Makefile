@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pam_p11
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/OpenSC/pam_p11/releases/download/pam_p11-${PORTVERSION}/
 
