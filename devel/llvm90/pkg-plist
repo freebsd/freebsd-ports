@@ -141,6 +141,7 @@ llvm%%LLVM_SUFFIX%%/bin/dsymutil
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/find-all-symbols
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/git-clang-format
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/hmaptool
+%%LLD_LINK%%llvm%%LLVM_SUFFIX%%/bin/ld
 %%LLD%%llvm%%LLVM_SUFFIX%%/bin/ld.lld
 %%LLD%%llvm%%LLVM_SUFFIX%%/bin/ld64.lld
 llvm%%LLVM_SUFFIX%%/bin/llc
