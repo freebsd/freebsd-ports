@@ -145,7 +145,8 @@ _linux_${linux_ARGS}_tk85=		linux-${linux_ARGS}-tk85>0:x11-toolkits/linux-${linu
 _linux_c7_trousers=			linux-c7-trousers>0:security/linux-c7-trousers
 _linux_${linux_ARGS}_userspace-rcu=	linux-${linux_ARGS}-userspace-rcu>0:sysutils/linux-${linux_ARGS}-userspace-rcu
 _linux_c7_wayland=			linux-c7-wayland>0:graphics/linux-c7-wayland
-_linux_${linux_ARGS}_xorglibs=		linux-${linux_ARGS}-xorg-libs>0:x11/linux-${linux_ARGS}-xorg-libs
+_linux_c6_xorglibs=			linux-c6-xorg-libs>0:x11/linux-c6-xorg-libs
+_linux_c7_xorglibs=			linux-c7-xorg-libs>=7.7_7:x11/linux-c7-xorg-libs
 
 USE_LINUX?=		base
 .for i in ${USE_LINUX}
