@@ -799,7 +799,8 @@ MASTER_SITE_KDE+= \
 	https://ftp.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
 	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/
+	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
+	http://kde.cs.nctu.edu.tw/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_LIBREOFFICE_DEV)
