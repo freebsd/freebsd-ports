@@ -3,7 +3,7 @@
 
 PORTNAME=	bash-completion
 PORTVERSION=	2.9
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	shells
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -41,7 +41,7 @@ USE_GITHUB=	yes
 
 BASH_SHARED_RUN_DEPENDS=bash:shells/bash
 BASH_STATIC_RUN_DEPENDS=bash:shells/bash-static
-FREEBSD_GH_TUPLE=	0mp:bash-completion-freebsd:1.0.3:freebsd/freebsd
+FREEBSD_GH_TUPLE=	0mp:bash-completion-freebsd:1.1.1:freebsd/freebsd
 FREEBSD_VARS=		LICENSE="BSD2CLAUSE GPLv2+" \
 			LICENSE_COMB=multi \
 			LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/freebsd/LICENSE \
