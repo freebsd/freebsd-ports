@@ -91,12 +91,6 @@ CONFIGURE_ARGS+=--enable-qmail-queue=${QMAIL_QUEUE}
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
-if ! ${TEST} -f ${QMAIL_QUEUE}; then \
-	${ECHO_MSG} "Unable to find qmail-queue binary trying '${QMAIL_QUEUE}'.";  \
-	${ECHO_MSG} "Please set QMAIL_PREFIX to your qmail installation directory !"; \
-	exit 1; \
-fi
-
 post-patch:
 	@${REINPLACE_CMD} -E 's,($f/daily.cvd"),\1 || test -d "$$f/daily.inc",' \
 		${WRKSRC}/configure
