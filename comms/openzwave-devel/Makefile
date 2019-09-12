@@ -11,7 +11,7 @@ COMMENT=	Open-zwave - An open-source interface to Z-Wave networks
 
 LICENSE=	LGPL20
 
-USES=		compiler:c++11-lang gmake tar:bz2 iconv pkgconfig
+USES=		compiler:c++11-lang gmake iconv pkgconfig tar:bz2
 
 # Manually update this when makefile is updated
 # echo $(git describe --long --tags --dirty 2>/dev/null | sed s/^v//) | awk '{split($$0,a,"-"); print a[2]}'
