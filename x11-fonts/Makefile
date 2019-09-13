@@ -169,6 +169,7 @@
     SUBDIR += nucleus
     SUBDIR += ohsnap
     SUBDIR += oldschool-pc-fonts
+    SUBDIR += open-sans
     SUBDIR += orbitron
     SUBDIR += oxygen-fonts
     SUBDIR += p5-Font-AFM
