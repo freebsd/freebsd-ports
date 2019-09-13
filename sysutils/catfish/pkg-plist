@@ -1,7 +1,11 @@
 bin/catfish
+man/man1/catfish.1.gz
 %%PYTHON_SITELIBDIR%%/catfish/AboutCatfishDialog.py
 %%PYTHON_SITELIBDIR%%/catfish/AboutCatfishDialog.pyc
 %%PYTHON_SITELIBDIR%%/catfish/AboutCatfishDialog.pyo
+%%PYTHON_SITELIBDIR%%/catfish/CatfishPrefsDialog.py
+%%PYTHON_SITELIBDIR%%/catfish/CatfishPrefsDialog.pyc
+%%PYTHON_SITELIBDIR%%/catfish/CatfishPrefsDialog.pyo
 %%PYTHON_SITELIBDIR%%/catfish/CatfishSearchEngine.py
 %%PYTHON_SITELIBDIR%%/catfish/CatfishSearchEngine.pyc
 %%PYTHON_SITELIBDIR%%/catfish/CatfishSearchEngine.pyo
@@ -20,6 +24,9 @@ bin/catfish
 %%PYTHON_SITELIBDIR%%/catfish_lib/CatfishSettings.py
 %%PYTHON_SITELIBDIR%%/catfish_lib/CatfishSettings.pyc
 %%PYTHON_SITELIBDIR%%/catfish_lib/CatfishSettings.pyo
+%%PYTHON_SITELIBDIR%%/catfish_lib/PrefsDialog.py
+%%PYTHON_SITELIBDIR%%/catfish_lib/PrefsDialog.pyc
+%%PYTHON_SITELIBDIR%%/catfish_lib/PrefsDialog.pyo
 %%PYTHON_SITELIBDIR%%/catfish_lib/SudoDialog.py
 %%PYTHON_SITELIBDIR%%/catfish_lib/SudoDialog.pyc
 %%PYTHON_SITELIBDIR%%/catfish_lib/SudoDialog.pyo
@@ -40,8 +47,12 @@ bin/catfish
 %%PYTHON_SITELIBDIR%%/catfish_lib/helpers.pyo
 share/applications/org.xfce.Catfish.desktop
 %%DATADIR%%/ui/AboutCatfishDialog.ui
+%%DATADIR%%/ui/CatfishPreferences.ui
 %%DATADIR%%/ui/CatfishWindow.ui
 %%DATADIR%%/ui/about_catfish_dialog.xml
+%%DATADIR%%/ui/catfish-wl-headerbar.png
+%%DATADIR%%/ui/catfish-wl-titlebar.png
+%%DATADIR%%/ui/catfish_preferences.xml
 %%DATADIR%%/ui/catfish_window.xml
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/icons/hicolor/scalable/apps/catfish.svg
@@ -93,5 +104,4 @@ share/locale/tr/LC_MESSAGES/catfish.mo
 share/locale/uk/LC_MESSAGES/catfish.mo
 share/locale/zh_CN/LC_MESSAGES/catfish.mo
 share/locale/zh_TW/LC_MESSAGES/catfish.mo
-share/man/man1/catfish.1
 share/metainfo/catfish.appdata.xml
