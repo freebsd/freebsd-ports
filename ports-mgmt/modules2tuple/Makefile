@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	modules2tuple
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
