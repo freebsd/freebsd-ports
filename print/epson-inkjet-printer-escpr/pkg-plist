@@ -49,6 +49,7 @@ share/cups/model/epson-inkjet-printer-escpr/Epson-EP-708A_Series-epson-escpr-en.
 share/cups/model/epson-inkjet-printer-escpr/Epson-EP-709A_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-EP-710A_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-EP-711A_Series-epson-escpr-en.ppd
+share/cups/model/epson-inkjet-printer-escpr/Epson-EP-712A_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-EP-774A-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-EP-775A_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-EP-776A_Series-epson-escpr-en.ppd
@@ -63,6 +64,7 @@ share/cups/model/epson-inkjet-printer-escpr/Epson-EP-807A_Series-epson-escpr-en.
 share/cups/model/epson-inkjet-printer-escpr/Epson-EP-808A_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-EP-810A_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-EP-811A_Series-epson-escpr-en.ppd
+share/cups/model/epson-inkjet-printer-escpr/Epson-EP-812A_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-EP-901A-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-EP-901F-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-EP-902A-epson-escpr-en.ppd
@@ -98,6 +100,7 @@ share/cups/model/epson-inkjet-printer-escpr/Epson-ET-7700_Series-epson-escpr-en.
 share/cups/model/epson-inkjet-printer-escpr/Epson-ET-7750_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-ET-M1100_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-ET-M1120_Series-epson-escpr-en.ppd
+share/cups/model/epson-inkjet-printer-escpr/Epson-EW-052A_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-EW-M5071FT_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-EW-M571T_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-EW-M660FT_Series-epson-escpr-en.ppd
@@ -406,6 +409,7 @@ share/cups/model/epson-inkjet-printer-escpr/Epson-TX420_NX420-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-TX720_Artisan720-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-TX820_Artisan830-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-WF-100_Series-epson-escpr-en.ppd
+share/cups/model/epson-inkjet-printer-escpr/Epson-WF-110_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-WF-2510_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-WF-2520_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-WF-2530_Series-epson-escpr-en.ppd
@@ -415,6 +419,7 @@ share/cups/model/epson-inkjet-printer-escpr/Epson-WF-2650_Series-epson-escpr-en.
 share/cups/model/epson-inkjet-printer-escpr/Epson-WF-2660_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-WF-2750_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-WF-2760_Series-epson-escpr-en.ppd
+share/cups/model/epson-inkjet-printer-escpr/Epson-WF-2810_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-WF-2830_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-WF-2850_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-WF-3010_Series-epson-escpr-en.ppd
@@ -513,6 +518,7 @@ share/cups/model/epson-inkjet-printer-escpr/Epson-XP-243_245_247_Series-epson-es
 share/cups/model/epson-inkjet-printer-escpr/Epson-XP-255_257_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-XP-300_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-XP-302_303_305_306_Series-epson-escpr-en.ppd
+share/cups/model/epson-inkjet-printer-escpr/Epson-XP-3100_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-XP-310_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-XP-312_313_315_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-XP-320_Series-epson-escpr-en.ppd

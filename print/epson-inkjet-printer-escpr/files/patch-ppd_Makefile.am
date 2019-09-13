@@ -1,6 +1,6 @@
---- ppd/Makefile.am.orig	2019-05-08 06:19:49 UTC
+--- ppd/Makefile.am.orig	2019-08-28 05:35:05 UTC
 +++ ppd/Makefile.am
-@@ -616,8 +616,10 @@ EXTRA_DIST = $(cupsppd_DATA)
+@@ -624,8 +624,10 @@ EXTRA_DIST = $(cupsppd_DATA)
  
  # LSBビルド環境の場合、~/.rpmmacros %adjust_ppds が担っている処理を実施
  install-data-hook:

@@ -1,6 +1,6 @@
---- configure.ac.orig	2019-04-08 05:14:01 UTC
+--- configure.ac.orig	2019-08-28 05:40:03 UTC
 +++ configure.ac
-@@ -58,9 +58,9 @@ AC_ARG_WITH([cupsfilterdir],
+@@ -57,9 +57,9 @@ AC_ARG_WITH([cupsfilterdir],
  if test "xno" = "x${with_cupsfilterdir}"; then
     if test "xyes" = "x$have_cups_config" ; then
        dnl `@<:@' , `@:>@' are replaced with  `[' , `]'
@@ -12,7 +12,7 @@
     fi
  else
     CUPS_FILTER_DIR="${with_cupsfilterdir}"
-@@ -72,13 +72,11 @@ AC_ARG_WITH([cupsppddir],
+@@ -71,13 +71,11 @@ AC_ARG_WITH([cupsppddir],
    [],
    [with_cupsppddir=no])
  if test "xno" = "x${with_cupsppddir}"; then
@@ -29,7 +29,7 @@
     fi
  else
     CUPS_PPD_DIR="${with_cupsppddir}"
-@@ -109,6 +107,16 @@ AC_ARG_WITH([internal],
+@@ -108,6 +106,16 @@ AC_ARG_WITH([internal],
  AC_SUBST([INTERNAL_PPD])
  AC_SUBST([INTERNAL_PPD_OPTION])
  
@@ -46,7 +46,7 @@
  dnl Checks for header files.
  AC_HEADER_STDC
  AC_HEADER_STAT
-@@ -116,17 +124,23 @@ AC_HEADER_TIME
+@@ -115,17 +123,23 @@ AC_HEADER_TIME
  AC_STRUCT_TM
  AC_TYPE_PID_T
  AC_TYPE_SIZE_T
@@ -71,7 +71,7 @@
          signal.h \
          stdarg.h \
          stddef.h \
-@@ -137,21 +151,45 @@ AC_CHECK_HEADERS([\
+@@ -136,21 +150,45 @@ AC_CHECK_HEADERS([\
          time.h \
          unistd.h \
          ])

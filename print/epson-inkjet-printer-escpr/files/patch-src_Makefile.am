@@ -1,6 +1,6 @@
---- src/Makefile.am.orig	2017-03-24 04:35:04 UTC
+--- src/Makefile.am.orig	2019-07-31 06:49:48 UTC
 +++ src/Makefile.am
-@@ -28,7 +28,11 @@ cupsfilter_PROGRAMS =\
+@@ -27,7 +27,11 @@ cupsfilter_PROGRAMS =\
  epson_escpr_wrapper_CFLAGS =\
  	-Wall\
  	-DCUPS_FILTER_NAME=\"epson-escpr\" \

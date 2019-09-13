@@ -1,6 +1,6 @@
---- lib/Makefile.am.orig	2017-03-24 04:35:04 UTC
+--- lib/Makefile.am.orig	2019-07-31 06:49:48 UTC
 +++ lib/Makefile.am
-@@ -44,7 +44,7 @@ DEFINES 		+=	-DGCOMSW_ASYNCJOB_SUPPORT
+@@ -43,7 +43,7 @@ DEFINES 		+=	-DGCOMSW_ASYNCJOB_SUPPORT
  DEFINES 	    +=	-DGCOMSW_RAWFILE_SUPPORT
  
  lib_LTLIBRARIES = libescpr.la
@@ -9,7 +9,7 @@
  ## Make sure these will be cleaned even when they're not built by
  ## default.
  CLEANFILES = libescpr.la
-@@ -71,5 +71,5 @@ libescpr_la_SOURCES = \
+@@ -70,5 +70,5 @@ libescpr_la_SOURCES = \
  	epson-typedefs.h \
  	epson-usb.c epson-usb.h
  
