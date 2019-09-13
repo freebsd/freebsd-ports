@@ -106,8 +106,8 @@ QT5_VARS_OFF=		FORCE_IGNORE+="Qt5Widgets Qt5WebKitWidgets"
 SDL_USE=		sdl=sdl
 SDL_VARS=		FORCE_REQUIRE+=SDL
 SDL_VARS_OFF=		FORCE_IGNORE+=SDL
-SVG_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
-SVG_USE=		gnome=cairo
+SVG_USES=		gnome
+SVG_USE=		gnome=cairo,librsvg2
 SVG_VARS=		FORCE_REQUIRE+=RSVG
 SVG_VARS_OFF=		FORCE_IGNORE+=RSVG
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
