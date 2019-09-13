@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	synce-
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	Library to support communication with WinCE devices
 
+DEPRECATED=	obsolete technology
+EXPIRATION_DATE=	2019-10-13
+
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libhal.so:sysutils/hal
 
