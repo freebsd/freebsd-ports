@@ -1307,6 +1307,7 @@
     SUBDIR += vxquery
     SUBDIR += w3af
     SUBDIR += wapiti
+    SUBDIR += wazuh-agent
     SUBDIR += webfwlog
     SUBDIR += webscarab
     SUBDIR += whatweb
