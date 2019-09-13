@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTVERSION=	2.3.12
+PORTVERSION=	2.3.14
 PKGNAMESUFFIX=	-devel
 
 COMMENT=	Network backup and restore program (development)
