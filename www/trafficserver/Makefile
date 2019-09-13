@@ -26,7 +26,7 @@ USES=		compiler:c++17-lang cpe gmake libtool ncurses pathfix \
 
 CPE_VENDOR=	apache
 CPE_PRODUCT=	traffic_server
-USE_GCC=	7+
+USE_GCC=	yes
 USE_PERL5=	build run
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
