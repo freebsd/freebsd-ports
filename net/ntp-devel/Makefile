@@ -3,7 +3,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.3.99
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		http://archive.ntp.org/ntp4/ntp-dev/
@@ -19,12 +19,14 @@ CONFLICTS=	ntp-[0-9].* openntpd-*
 
 USES=		cpe pathfix shebangfix libedit libtool localbase:ldflags \
 		pkgconfig gettext-runtime
+USES+=		autoreconf # until rlimit_memlock changes accepted upstream
+
 
 LIB_DEPENDS+=	libdns_sd.so:net/mDNSResponder
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-leap-smear --enable-trustedbsd-mac \
-		--with-locfile=freebsd
+		--with-locfile=freebsd --with-memlock=-1
 
 TEST_TARGET=	check
 
