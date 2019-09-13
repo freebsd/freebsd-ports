@@ -29,7 +29,11 @@ USES=		cmake compiler:c++11-lib libedit perl5 \
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 _USES_PYTHON?=	python:build,3.6+
 USES+=		${_USES_PYTHON}
-SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in
+SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
+		tools/opt-viewer/optrecord.py \
+		tools/opt-viewer/opt-diff.py \
+		tools/opt-viewer/opt-stats.py \
+		tools/opt-viewer/opt-viewer.py
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
@@ -223,7 +227,7 @@ USES+=	gnome
 .endif
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
-COMPILER_RT_PATTERN=	(sanitizer|include.xray)
+COMPILER_RT_PATTERN=	(sanitizer|include.xray|include\/fuzzer)
 .endif
 
 .if ${PORT_OPTIONS:MEXTRAS}
