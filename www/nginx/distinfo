@@ -137,3 +137,7 @@ SHA256 (tg123-websockify-nginx-module-e82d254_GH0.tar.gz) = 1ea0fd35e3bed61c822a
 SIZE (tg123-websockify-nginx-module-e82d254_GH0.tar.gz) = 14378
 SHA256 (openresty-xss-nginx-module-v0.05_GH0.tar.gz) = 958bd8de773601d8d3138501cc4be0420f1c818a3987a70cc9c0023371e432cf
 SIZE (openresty-xss-nginx-module-v0.05_GH0.tar.gz) = 11477
+SHA256 (ip2location-ip2location-nginx-d47d248_GH0.tar.gz) = ae45341c361fb4ab11f8415c5d85b51ea1aa1027f8ab4fa9524df2074080bb9c
+SIZE (ip2location-ip2location-nginx-d47d248_GH0.tar.gz) = 5542
+SHA256 (ip2location-ip2proxy-nginx-d6fd05a_GH0.tar.gz) = 7b8df48216cd258d770b084b1768d6963a1ec850a748944f896098ce0fa0d993
+SIZE (ip2location-ip2proxy-nginx-d6fd05a_GH0.tar.gz) = 4573
