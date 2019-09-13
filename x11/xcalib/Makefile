@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xcalib
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.10
+PORTREVISION=	0
 CATEGORIES=	x11 graphics
-MASTER_SITES=	SF/openicc/xcalib/xcalib%200.9/
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Program for X11 display calibration with ICC profiles
@@ -13,10 +12,13 @@ COMMENT=	Program for X11 display calibration with ICC profiles
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bz2
-USE_XORG=	sm x11 xext xrandr xxf86vm
+USE_GITHUB=	yes
+GH_ACCOUNT=	OpenICC
 
-PORTDOCS=	README README.profilers
+USES=		tar:bz2 xorg
+USE_XORG=	x11 xext xrandr xxf86vm
+
+PORTDOCS=	README.md README.profilers
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -26,7 +28,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' -e 's|0644|0555|g'\
 	    -e 's|CFLAGS =|CFLAGS ?=|g' -e 's|/usr/X11R6|${LOCALBASE}|g' \
 	    ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|if(i=0)|else|g' ${WRKSRC}/xcalib.c
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
