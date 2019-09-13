@@ -3,7 +3,7 @@
 
 PORTNAME=	bambootracker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
+DISTVERSION=	0.2.3
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/ehaupt:extras
 DISTFILES=	${PORTNAME}-extras-${EXTRASVERSION}${EXTRACT_SUFX}:extras
@@ -48,7 +48,7 @@ do-install:
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/demos/*.btm \
+	${INSTALL_DATA} ${WRKSRC}/demos/modules/*.btm \
 		${WRKDIR}/${PORTNAME}-extras-${EXTRASVERSION}/*.btm \
 		${STAGEDIR}${EXAMPLESDIR}
 
