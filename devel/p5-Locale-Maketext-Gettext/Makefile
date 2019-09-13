@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Locale-Maketext-Gettext
-PORTVERSION=	1.28
-PORTREVISION=	2
+PORTVERSION=	1.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +13,14 @@ COMMENT=	Joins gettext and Maketext frameworks
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	BUGS Changes README THANKS
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
