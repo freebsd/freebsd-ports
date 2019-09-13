@@ -1,9 +1,9 @@
-# Created by: Stefan Bethke <stb@lassitu.de>
+
 # $FreeBSD$
 
 PORTNAME=	gitea
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.2
+DISTVERSION=	1.9.3
 CATEGORIES=	www
 
 MAINTAINER=	stb@lassitu.de
