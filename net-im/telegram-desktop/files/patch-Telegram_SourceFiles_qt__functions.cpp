@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/qt_functions.cpp.orig	2018-08-05 22:39:05 UTC
+--- Telegram/SourceFiles/qt_functions.cpp.orig	2019-09-07 21:39:10 UTC
 +++ Telegram/SourceFiles/qt_functions.cpp
-@@ -0,0 +1,94 @@
+@@ -0,0 +1,96 @@
 +/****************************************************************************
 +**
 +** Copyright (C) 2015 The Qt Company Ltd.
@@ -33,6 +33,8 @@
 +** $QT_END_LICENSE$
 +**
 +****************************************************************************/
++
++#include <private/qtextengine_p.h>
 +
 +/* TODO: find a dynamic library with these symbols. */
 +

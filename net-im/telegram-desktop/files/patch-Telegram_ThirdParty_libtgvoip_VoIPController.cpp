@@ -1,16 +1,5 @@
---- Telegram/ThirdParty/libtgvoip/VoIPController.cpp.orig	2019-06-24 11:42:33 UTC
+--- Telegram/ThirdParty/libtgvoip/VoIPController.cpp.orig	2019-07-15 12:59:17 UTC
 +++ Telegram/ThirdParty/libtgvoip/VoIPController.cpp
-@@ -2389,8 +2389,8 @@ simpleAudioBlock random_id:long random_bytes:string ra
- 					stm->decoder=NULL;
- 				}else if(stm->type==STREAM_TYPE_VIDEO){
- 					if(!stm->packetReassembler){
--						stm->packetReassembler=make_shared<PacketReassembler>();
--						stm->packetReassembler->SetCallback(bind(&VoIPController::ProcessIncomingVideoFrame, this, placeholders::_1, placeholders::_2, placeholders::_3));
-+						//stm->packetReassembler=make_shared<PacketReassembler>();
-+						//stm->packetReassembler->SetCallback(bind(&VoIPController::ProcessIncomingVideoFrame, this, placeholders::_1, placeholders::_2, placeholders::_3));
- 					}
- 				}else{
- 					LOGW("Unknown incoming stream type: %d", stm->type);
 @@ -3048,7 +3048,7 @@ static void initMachTimestart() {
  #endif
  
