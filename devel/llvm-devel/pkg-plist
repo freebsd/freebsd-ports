@@ -789,7 +789,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Tooling/Syntax/Tree.h
 %%CLANG%%llvm-devel/include/clang/Tooling/ToolExecutorPluginRegistry.h
 %%CLANG%%llvm-devel/include/clang/Tooling/Tooling.h
-llvm-devel/include/fuzzer/FuzzedDataProvider.h
+%%COMPILER_RT%%llvm-devel/include/fuzzer/FuzzedDataProvider.h
 %%LLD%%llvm-devel/include/lld/Common/Args.h
 %%LLD%%llvm-devel/include/lld/Common/Driver.h
 %%LLD%%llvm-devel/include/lld/Common/ErrorHandler.h
