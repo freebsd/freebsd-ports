@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Archive-Zip
-PORTVERSION=	1.64
+PORTVERSION=	1.65
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,9 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-MockModule>=0:devel/p5-Test-MockModule
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
