@@ -98,6 +98,7 @@
     SUBDIR += font-xfree86-type1
     SUBDIR += fontconfig
     SUBDIR += fontconfig-reference
+    SUBDIR += fontmatrix
     SUBDIR += fonts-indic
     SUBDIR += fonttosfnt
     SUBDIR += freefont-ttf
