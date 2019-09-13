@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geoipupdate
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
@@ -55,12 +55,12 @@ do-build-MANPAGES-on:
 		| ${SED} -e '1s/7/5/' > ${WRKSRC}/build/GeoIP.conf.5
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GeoIP
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/GeoIP
 	${INSTALL_PROGRAM} ${WRKSRC}/build/geoipupdate ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/build/GeoIP.conf ${STAGEDIR}${PREFIX}/etc/GeoIP.conf.sample
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/build && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 do-install-MANPAGES-on:
