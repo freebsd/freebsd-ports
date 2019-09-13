@@ -1,5 +1,9 @@
-Fake Identd is a tool that replies with a standard answer to all incoming
-identd requests on a host, making it nearly perfect for a masquerading
-router.
+This program is standalone 'fake' ident daemon. This program does
+not fork() but is configured to handle up to 20 concurrent connections.
+Since one connection should not last long, if all 20 connections are
+in use, the next connection will close the oldest connection data
+has been read. This way this program is not very vulnerable to so
+called `denial of service' attack, thus making this ideal "identd"
+to be used in a firewall, IP masquerading hosts etc.
 
-WWW: http://hangout.de/fakeidentd/index.html
+WWW: http://www.guru-group.fi/~too/sw/identd.readme
