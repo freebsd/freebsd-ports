@@ -1,4 +1,4 @@
---- Makefile.orig	2017-12-14 17:15:02 UTC
+--- Makefile.orig	2019-09-07 21:14:56 UTC
 +++ Makefile
 @@ -4,7 +4,7 @@
  # (c) 2009 Aaron Quinlan
@@ -9,42 +9,25 @@
  
  VERSION_FILE=./src/utils/version/version_git.h
  RELEASED_VERSION_FILE=./src/utils/version/version_release.txt
-@@ -16,11 +16,11 @@ export OBJ_DIR	= obj
- export BIN_DIR	= bin
- export SRC_DIR	= src
- export UTIL_DIR	= src/utils
--export CXX		= g++
-+export CXX		?= g++
- ifeq ($(DEBUG),1)
--export CXXFLAGS = -Wall -Wextra -DDEBUG -D_DEBUG -g -O0 -D_FILE_OFFSET_BITS=64 -fPIC $(INCLUDES)
-+export CXXFLAGS += -Wall -Wextra -DDEBUG -D_DEBUG -g -O0 -D_FILE_OFFSET_BITS=64 -fPIC $(INCLUDES)
- else
--export CXXFLAGS = -Wall -O2 -D_FILE_OFFSET_BITS=64 -fPIC $(INCLUDES)
-+export CXXFLAGS += -D_FILE_OFFSET_BITS=64 -fPIC $(INCLUDES)
- endif
+@@ -20,7 +20,7 @@ OBJ_DIR	= obj
+ BIN_DIR	= bin
+ SRC_DIR	= src
  
- # If the user has specified to do so, tell the compile to use rand() (instead of mt19937).
-@@ -33,7 +33,7 @@ endif 
- export LIBS		= -lz
- export BT_ROOT  = src/utils/BamTools/
+-CXX     = g++
++CXX     ?= g++
+ 
+ ifeq ($(DEBUG),1)
+ BT_CPPFLAGS = -DDEBUG -D_DEBUG -D_FILE_OFFSET_BITS=64 -DWITH_HTS_CB_API $(INCLUDES)
+@@ -40,7 +40,7 @@ endif
+ BT_LDFLAGS =
+ BT_LIBS    = -lz -lm -lbz2 -llzma -lpthread
  
 -prefix ?= /usr/local
 +PREFIX ?= /usr/local
  
  SUBDIRS = $(SRC_DIR)/annotateBed \
  		  $(SRC_DIR)/bamToBed \
-@@ -143,8 +143,8 @@ INCLUDES =	-I$(SRC_DIR)/utils/bedFile \
- 
- all: print_banner $(OBJ_DIR) $(BIN_DIR) autoversion $(UTIL_SUBDIRS) $(SUBDIRS)
- 	@echo "- Building main bedtools binary."
--	@$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c src/bedtools.cpp -o obj/bedtools.o $(INCLUDES)
--	@$(CXX) $(CXXFLAGS) $(CPPFLAGS) -o $(BIN_DIR)/bedtools $(BUILT_OBJECTS) -L$(UTIL_DIR)/BamTools/lib/ -lbamtools $(LIBS) $(LDFLAGS) $(INCLUDES)
-+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c src/bedtools.cpp -o obj/bedtools.o $(INCLUDES)
-+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -o $(BIN_DIR)/bedtools $(BUILT_OBJECTS) -L$(UTIL_DIR)/BamTools/lib/ -lbamtools $(LIBS) $(LDFLAGS) $(INCLUDES)
- 	@echo "done."
- 
- 	@echo "- Creating executables for old CLI."
-@@ -156,9 +156,9 @@ all: print_banner $(OBJ_DIR) $(BIN_DIR) 
+@@ -183,9 +183,9 @@ $(BIN_DIR)/intersectBed: | $(BIN_DIR)
  .PHONY: all
  
  install: all
@@ -56,12 +39,3 @@
  	done
  
  print_banner:
-@@ -193,7 +193,7 @@ clean:
- .PHONY: clean
- 
- test: all
--	@cd test; bash test.sh
-+	@cd test; $(SHELL) test.sh
- 
- .PHONY: test
- 

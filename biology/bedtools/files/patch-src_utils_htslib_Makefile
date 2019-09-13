@@ -1,0 +1,27 @@
+--- src/utils/htslib/Makefile.orig	2019-03-25 03:58:18 UTC
++++ src/utils/htslib/Makefile
+@@ -22,9 +22,9 @@
+ # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ # DEALINGS IN THE SOFTWARE.
+ 
+-CC     = gcc
+-AR     = ar
+-RANLIB = ranlib
++CC     ?= gcc
++AR     ?= ar
++RANLIB ?= ranlib
+ 
+ # Default libraries to link if configure is not used
+ htslib_default_libs = -lz -lm -lbz2 -llzma
+@@ -33,9 +33,9 @@ CPPFLAGS =
+ # TODO: probably update cram code to make it compile cleanly with -Wc++-compat
+ # For testing strict C99 support add -std=c99 -D_XOPEN_SOURCE=600
+ #CFLAGS   = -g -Wall -O2 -pedantic -std=c99 -D_XOPEN_SOURCE=600 -D__FUNCTION__=__func__
+-CFLAGS   = -g -Wall -O2
++CFLAGS   ?= -g -Wall -O2
+ EXTRA_CFLAGS_PIC = -fpic
+-LDFLAGS  =
++LDFLAGS  ?=
+ LIBS     = $(htslib_default_libs)
+ 
+ prefix      = /usr/local
