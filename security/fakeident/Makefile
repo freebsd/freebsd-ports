@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fakeident
-PORTVERSION=	1.7
-PORTREVISION=	3
+PORTVERSION=	2.7
 CATEGORIES=	security
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -15,11 +14,12 @@ COMMENT=	Tool that replies with a standard answer to incoming identd requests
 LICENSE=	GPLv2+
 
 PLIST_FILES=	sbin/identd
+
 USE_RC_SUBR=	fakeidentd
 
 do-build:
-	@${MKDIR} ${WRKSRC}
-	${CC} ${CFLAGS} -o ${WRKSRC}/identd ${FILESDIR}/identd.c
+	@${MKDIR} ${WRKSRC} && ${CP} ${FILESDIR}/identd.c ${WRKSRC}
+	cd ${WRKSRC} && ${SH} identd.c CC=${CC} ${CFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/identd ${STAGEDIR}${PREFIX}/sbin
