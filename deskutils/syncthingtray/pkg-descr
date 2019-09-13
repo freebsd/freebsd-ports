@@ -1,0 +1,8 @@
+Syncthing Tray
+
+Qt 5-based tray application
+Dolphin/Plasma integration
+command-line interface
+Qt-ish C++ interface to control Syncthing
+
+WWW: https://github.com/Martchus/syncthingtray
