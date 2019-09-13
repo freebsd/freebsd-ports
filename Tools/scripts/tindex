@@ -26,10 +26,9 @@ ERROR_ADDRESS=root@localhost
 # Location of ports tree and source trees
 export BASEDIR=/a/tindex
 export PORTSDIR=${BASEDIR}/ports
-export SRCDIR9=${BASEDIR}/src.9
-export SRCDIR10=${BASEDIR}/src.10
 export SRCDIR11=${BASEDIR}/src.11
 export SRCDIR12=${BASEDIR}/src.12
+export SRCDIR13=${BASEDIR}/src.13
 export OUTDIR=${BASEDIR}/out
 
 # Target architecture if not set in the environment
@@ -115,20 +114,18 @@ export INDEX_JOBS=3
 export INDEX_QUIET=1
 
 # First update the source trees to get current OSVERSION
-${SVN} -q up ${SRCDIR9}/sys/sys
-OSVERSION9=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR9}/sys/sys/param.h)
-
-${SVN} -q up ${SRCDIR10}/sys/sys
-OSVERSION10=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR10}/sys/sys/param.h)
-
 ${SVN} -q up ${SRCDIR11}/sys/sys
 OSVERSION11=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR11}/sys/sys/param.h)
 
 ${SVN} -q up ${SRCDIR12}/sys/sys
 OSVERSION12=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR12}/sys/sys/param.h)
 
+${SVN} -q up ${SRCDIR13}/sys/sys
+OSVERSION13=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR12}/sys/sys/param.h)
+
+
 cd ${PORTSDIR}
-rm -f INDEX-9 INDEX-9.bz2 INDEX-10 INDEX-10.bz2 INDEX-11 INDEX-11.bz2 INDEX-12 INDEX-12.bz2
+rm -f INDEX-11 INDEX-11.bz2 INDEX-12 INDEX-12.bz2 INDEX-13 INDEX-13.bz2
 (${SVN} up 2>1 ) > svn.log
 if grep -q ^C svn.log ; then
   (echo "svn update failed with conflicts:";
@@ -136,7 +133,7 @@ if grep -q ^C svn.log ; then
     exit 1
 fi
 
-for branch in 9.x 10.x 11.x 12.x; do
+for branch in 11.x 12.x 13.x; do
     release=$(echo $branch | sed -e 's,.x,,')
 
     eval _osver=\$OSVERSION${release}
@@ -144,14 +141,9 @@ for branch in 9.x 10.x 11.x 12.x; do
     export OSVERSION=${_osver}
     export UNAME_r=${_uname_r}
 
-    if [ "${release}" = "9" ]; then
-        MAKE_CMD=fmake
-    else
-        MAKE_CMD=make
-    fi
     echo "Building INDEX for ${branch} with OSVERSION=${OSVERSION}"
     cd ${PORTSDIR}
-    ((${MAKE_CMD} index 2> index.err) > index.out) || indexfail ${branch}
+    ((make index 2> index.err) > index.out) || indexfail ${branch}
     if [ -s index.err ]; then
         indexfail ${branch}
     fi
