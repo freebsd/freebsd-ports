@@ -111,7 +111,7 @@ lib/lives/plugins/effects/realtime/weed/onedTV.so
 lib/lives/plugins/effects/realtime/weed/palette_test.so
 lib/lives/plugins/effects/realtime/weed/plasma.so
 lib/lives/plugins/effects/realtime/weed/posterise.so
-lib/lives/plugins/effects/realtime/weed/projectM.so
+%%PROJECTM%%lib/lives/plugins/effects/realtime/weed/projectM.so
 lib/lives/plugins/effects/realtime/weed/puretext.so
 lib/lives/plugins/effects/realtime/weed/randomiser.so
 lib/lives/plugins/effects/realtime/weed/revTV.so
