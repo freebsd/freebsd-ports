@@ -1,6 +1,12 @@
 [
 { type: install
   message: <<EOM
+LENSFUN INFORMATION:
+
+This package uses lensfun to correct lens aberrations. In case
+your camera or lens seem unsupported, try running
+lensfun-update-data - this will download new lensfun databases.
+
 DISK SPACE WARNING:
 
 Note that RawTherapee uses version-dependent cache and configuration
