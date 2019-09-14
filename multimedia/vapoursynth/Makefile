@@ -69,7 +69,7 @@ VSPIPE_CONFIGURE_ENABLE=	vspipe
 VSPIPE_IMPLIES=			VSSCRIPT
 
 VSSCRIPT_DESC=			Scripting library
-VSSCRIPT_USES=			compiler:c++11-lib python:3.3-
+VSSCRIPT_USES=			compiler:c++11-lib python:3.3+
 VSSCRIPT_CONFIGURE_ENABLE=	vsscript
 
 # PLUGINS group
