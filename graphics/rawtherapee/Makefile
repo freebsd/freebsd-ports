@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rawtherapee
-PORTVERSION=	5.6
-PORTREVISION=	2
-#DISTNAME=	${PORTNAME}-${PORTVERSION:R}-rc2${DISTVERSIONSUFFIX}
+PORTVERSION=	5.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
 
@@ -28,17 +26,20 @@ LIB_DEPENDS=	\
 		libsigc-2.0.so:devel/libsigc++20 \
 		libtiff.so:graphics/tiff
 
-USES=		cmake desktop-file-utils gnome dos2unix \
+USES=		cmake desktop-file-utils compiler:gcc-c++11-lib gnome \
 		jpeg localbase:ldflags pkgconfig tar:xz
 
 DOS2UNIX_REGEX=	.*\.(cc|h)
 LDFLAGS+=	-Wl,--as-needed # fontconfig, freetype, gettext, libX11
 USE_GNOME=	gtkmm30 librsvg2
+USE_GCC=	9+
+USE_BINUTILS=	yes
 
-# The -D_GLIBCXX_USE_C99 works around stoi not being defined by default,
-# because the GCC headers believe FreeBSD insufficiently C99 compliant.
-CFLAGS+=	-I${LOCALBASE}/include -fPIC -D_GLIBCXX_USE_C99 -Wno-deprecated-declarations -Wno-unused-result -Wno-overloaded-virtual
-LDFLAGS+=	-lpthread
+_LTO_FLAGS=	-flto=${_MAKE_JOBS_NUMBER} -fuse-linker-plugin
+_AR=		${CC:S/gcc/gcc-ar/}
+_RANLIB=	${CC:S/gcc/gcc-ranlib/}
+CFLAGS+=	-I${LOCALBASE}/include -fPIC ${_LTO_FLAGS} ${_OPT_FLAGS}
+LDFLAGS+=	-Wl,--as-needed -lpthread ${_LTO_FLAGS} ${_OPT_FLAGS}
 CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 		-DCREDITSDIR="${DOCSDIR}" \
 		-DLICENCEDIR="${DOCSDIR}" \
@@ -46,6 +47,8 @@ CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 		-DDATADIR="${DATADIR}" \
 		-DCACHE_NAME_SUFFIX="" \
 		-Wno-dev \
+		-DCMAKE_AR:FILEPATH=${_AR} \
+		-DCMAKE_RANLIB:FILEPATH=${_RANLIB} \
 		-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW
 # 3.4.x: CMAKE_EXE_LINKER_FLAGS is not passed to TRY_COMPILE by default
 # any more. The CMP0056 policy must be explicitly set to NEW to ensure
@@ -63,12 +66,11 @@ CMAKE_ARGS+=	-DPROC_TARGET_NUMBER="1"
 
 RTDIR=		${PREFIX}/libdata/${PORTNAME}
 
-OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS NATIVE
-OPTIONS_DEFINE_i386=	DOCS OPTIMIZED_CFLAGS NATIVE OPENMP
-OPTIONS_DEFINE_amd64=	DOCS OPTIMIZED_CFLAGS NATIVE OPENMP
-OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS OPENMP
+OPTIONS_DEFINE=		DOCS NATIVE
+OPTIONS_DEFINE_i386=	DOCS NATIVE OPENMP
+OPTIONS_DEFINE_amd64=	DOCS NATIVE OPENMP
+OPTIONS_DEFAULT=	OPENMP
 OPENMP_DESC=		Enable OpenMP parallel processing (i386/amd64 only)
-OPTIMIZED_CFLAGS_DESC=	Use extra optimizations (needs SSE2 on i386/amd64)
 NATIVE_DESC=		Use -march=native (avoid for generic packages!)
 
 OPENMP_CMAKE_BOOL=	OPTION_OMP
@@ -76,7 +78,6 @@ OPENMP_CMAKE_BOOL=	OPTION_OMP
 .include <bsd.port.options.mk>
 
 # -------------------------------------------------------------------
-#
 
 .if (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1300000)
 # don't waste everybody's time with Tier-2 and moving targets.
@@ -100,38 +101,19 @@ LDFLAGS+=	${OPENMP_FLAGS}
 STRIP=
 .endif
 
-.if ${ARCH} == i386
-. if ${PORT_OPTIONS:MOPENMP}
-# OpenMP + clang on i386 will miss atomic ops => use GCC
-USES+=		compiler:gcc-c++11-lib
-. else
-USES+=		compiler:c++11-lib
-. endif
-# If we were to use GCC on i386, we'd need to use -mstackrealign or similar
-# options, else we get SIGBUS when SSE2 is enabled due to improper alignment.
-# Base clang is good enough though. Workaround implemented below.
-.else
-USES+=		compiler:c++14-lang
+_OPT_FLAGS=	-O3 -funroll-loops
+# GCC 5.4 includes -fexpensive-optimizations in -O2 already
+.if (${ARCH} == i386) || (${ARCH} == amd64)
+_OPT_FLAGS+=	-msse2
 .endif
 
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -funroll-loops
-# GCC 5.4 includes -fexpensive-optimizations in -O2 already
-. if (${ARCH} == i386) || (${ARCH} == amd64)
-CFLAGS+=	-msse2
-. endif
+.if ${ARCH} == i386
+_OPT_FLAGS+=	-mstackrealign
 .endif
 
 # -------------------------------------------------------------------
 
 .include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-# work around compiler faults
-.if ${ARCH} == i386
-CFLAGS+=	-mstackrealign
-.endif
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#DESTINATION "$${CMAKE_INSTALL_PREFIX}/share/man/man1"#DESTINATION "${MANPREFIX}/man/man1/"#' \
