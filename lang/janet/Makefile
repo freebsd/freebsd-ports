@@ -2,7 +2,7 @@
 
 PORTNAME=		janet
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.2.0
+DISTVERSION=		1.3.0
 CATEGORIES=		lang
 
 MAINTAINER=		dch@FreeBSD.org
@@ -15,7 +15,5 @@ USES=			meson
 USE_LDCONFIG=		yes
 USE_GITHUB=		yes
 GH_ACCOUNT=		janet-lang
-
-MESON_ARGS=		-DJANET_BUILD='\"release\"'
 
 .include <bsd.port.mk>
