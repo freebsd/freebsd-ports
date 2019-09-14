@@ -3,6 +3,7 @@
 
 PORTNAME=	fcitx-anthy
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
