@@ -23,15 +23,6 @@ PLIST_FILES=	bin/${PORTNAME}
 # XXX armv6 needs https://github.com/mesonbuild/meson/commit/147d3f752c41
 CONFIGURE_ENV=	UNAME_m=${ARCH}
 
-# XXX Drop after FreeBSD 12.0 EOL
-.if exists(/usr/lib/clang/6.0.0) || exists(/usr/lib/clang/6.0.1)
-.if ${CC} == cc && (${MACHINE_ARCH} == amd64 || ${MACHINE_ARCH} == i386)
-USES:=		${USES:Ncompiler*} # silence warning
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CC=		clang${LLVM_DEFAULT}
-.endif
-.endif
-
 OPTIONS_DEFINE=	FFMPEG LZ4 MANPAGES OPENGL VAAPI ZSTD
 OPTIONS_DEFAULT=FFMPEG LZ4 MANPAGES OPENGL VAAPI ZSTD
 
