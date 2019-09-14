@@ -16,12 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		${LOCALBASE}/bin/analyseplugin:audio/ladspa
-LIB_DEPENDS=	libasound.so:audio/alsa-lib \
-		libjack.so:audio/jack \
-		libogg.so:audio/libogg \
-		libpulse.so:audio/pulseaudio \
+LIB_DEPENDS=	libogg.so:audio/libogg \
 		liboil-0.3.so:devel/liboil \
-		libprojectM.so:graphics/libprojectm \
 		libvisual-0.4.so:graphics/libvisual04 \
 		libopencv_calib3d.so:graphics/opencv \
 		libopencv_core.so:graphics/opencv-core \
@@ -73,19 +69,28 @@ DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 		lives-plugins/marcos-encoders/README.multi_encoder \
 		weed-docs/weedspec.txt weed-docs/weedevents.txt
 
-OPTIONS_DEFINE=	DOCS DOXYGEN FREI0R MATROSKA V4L NLS
+OPTIONS_DEFINE=	ALSA DOCS DOXYGEN FREI0R JACK MATROSKA V4L NLS PROJECTM PULSEAUDIO
 OPTIONS_SUB=	yes
 
+ALSA_VARS_OFF=		--disable-alsa
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
 FREI0R_BUILD_DEPENDS=	frei0r>0:graphics/frei0r
 FREI0R_RUN_DEPENDS=	frei0r>0:graphics/frei0r
 FREI0R_CONFIGURE_ENV_OFF=	ac_cv_header_frei0r_h=no
+JACK_VARS_OFF=		--disable-jack
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
 MATROSKA_RUN_DEPENDS=	mkvmerge:multimedia/mkvtoolnix
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 NLS_USES=		gettext-tools
 NLS_CONFIGURE_OFF=	--disable-nls
+PROJECTM_DESC=		projectM support
+PROJECTM_VARS_OFF=	--disable-projectM
+PROJECTM_LIB_DEPENDS=	libprojectM.so:graphics/libprojectm
+PULSEAUDIO_VARS_OFF=	--disable-pulse
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
