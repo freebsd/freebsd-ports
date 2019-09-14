@@ -14,6 +14,9 @@ COMMENT=	Lightweight Java Game Library
 LICENSE=	BSD3CLAUSE
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64
+.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+BROKEN_i386=	ld: error: can't create dynamic relocation R_386_32 against local symbol in readonly segment
+.endif
 
 BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:games/jutils \
 		${JAVALIBDIR}/jinput/jinput.jar:games/jinput
