@@ -37,13 +37,15 @@ load_rc_config $name
 
 required_files=${%%PORTNAME%%_config}
 command=%%PREFIX%%/bin/%%PORTNAME%%d
+cli_command=%%PREFIX%%/bin/%%PORTNAME%%-cli
 %%PORTNAME%%_chdir=${%%PORTNAME%%_datadir}
 pidfile="${%%PORTNAME%%_datadir}/%%PORTNAME%%d.pid"
 stop_cmd=%%PORTNAME%%_stop
 command_args="-conf=${%%PORTNAME%%_config} -datadir=${%%PORTNAME%%_datadir} -noupnp -daemon -pid=${pidfile}"
 start_precmd="${name}_prestart"
-reindex_cmd=%%PORTNAME%%_reindex
-extra_commands="reindex"
+reindex_cmd="${name}_reindex"
+salvage_cmd="${name}_salvage"
+extra_commands="reindex salvage"
 
 %%PORTNAME%%_create_datadir()
 {
@@ -72,7 +74,7 @@ extra_commands="reindex"
     %%PORTNAME%%_requirepidfile
 
 	echo "Stopping ${name}."
-	eval ${command} -conf=${%%PORTNAME%%_config} -datadir=${%%PORTNAME%%_datadir} stop
+	eval ${cli_command} -conf=${%%PORTNAME%%_config} -datadir=${%%PORTNAME%%_datadir} stop
 	wait_for_pids ${rc_pid}
 }
 
@@ -84,6 +86,17 @@ extra_commands="reindex"
 
 	echo "Reindexing ${name} blockchain."
 	command_args="${command_args} -reindex"
+	eval ${command} ${command_args}
+}
+
+%%PORTNAME%%_salvage()
+{
+	if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+	    %%PORTNAME%%_stop
+	fi
+
+	echo "Attempting to salvage ${name} walllet."
+	command_args="${command_args} -salvagewallet"
 	eval ${command} ${command_args}
 }
 
