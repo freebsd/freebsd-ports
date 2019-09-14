@@ -22,7 +22,6 @@ EXCLUDE=	VSHelper.h VSScript.h VapourSynth.h
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static
-CPPFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 CPPFLAGS+=	`pkg-config vapoursynth --cflags`
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

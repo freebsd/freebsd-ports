@@ -21,21 +21,6 @@ USE_LDCONFIG=	yes
 PLATFORM=	linux-gcc-FreeBSD
 MAKE_ARGS=	platform=${PLATFORM}
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 33 || \
-    ${COMPILER_TYPE} == gcc   && ${COMPILER_VERSION} >= 48
-# Certain new compiler features unlock parts of jsoncpp API (ex. see JSON_HAS_RVALUE_REFERENCES).
-# Use c++11 above to be the most inclusive.
-USES+=		compiler:c++11-lang
-# lang/gcc5 fix
-.if ${COMPILER_TYPE} == clang
-CXXFLAGS+=	--std=c++11
-.else
-CXXFLAGS+=	--std=gnu++11 -D_GLIBCXX_USE_C99=1
-.endif
-.endif
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/jsoncpp
 	(cd ${WRKSRC}/include/ && ${COPYTREE_SHARE} json/ ${STAGEDIR}${PREFIX}/include/jsoncpp/)
@@ -56,4 +41,4 @@ do-test:
 	@${ECHO} "Please note that 3 testcases are known to fail: https://github.com/open-source-parsers/jsoncpp/issues/628"
 	@cd ${WRKSRC} && CXX=${CXX} ${SCONS} platform=${PLATFORM} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

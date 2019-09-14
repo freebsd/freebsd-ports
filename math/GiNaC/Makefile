@@ -24,7 +24,6 @@ INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
 
 INFO=		ginac ginac-examples
 

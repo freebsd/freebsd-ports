@@ -34,12 +34,6 @@ GH_ACCOUNT=	grzegorzmazur
 
 PLIST_SUB=	SHLIB_VERSION=${PORTVERSION:S/.//}.0
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == "gcc"
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
-.endif
-
 post-patch:
 #	Can't use USES=shebangfix here, cause the path appears several
 #	times in the file.
@@ -47,4 +41,5 @@ post-patch:
 		${WRKSRC}/tests/test-yacas
 	@${REINPLACE_CMD} -e '/^install/s|^|#|' \
 		${WRKSRC}/tests/CMakeLists.txt
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>

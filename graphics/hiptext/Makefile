@@ -25,7 +25,6 @@ GH_ACCOUNT=	jart
 GH_TAGNAME=	f89b44f
 
 USES=		compiler:c++11-lib gmake jpeg localbase
-CPPFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 CPPFLAGS+=	-I${LOCALBASE}/include/freetype2
 MAKE_ENV=	GTEST_DIR="${LOCALBASE}" \
 		TARGET_ARCH=""

@@ -32,8 +32,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pdns \
 		--with-protobuf \
 		--without-net-snmp
 
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
-
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		LUAJIT SETUID
