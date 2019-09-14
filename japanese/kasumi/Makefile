@@ -3,17 +3,22 @@
 
 PORTNAME=	kasumi
 PORTVERSION=	2.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese
 MASTER_SITES=	OSDN/${PORTNAME}/41436
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Dictionary management tool for anthy
 
-LIB_DEPENDS=	libanthy.so:japanese/anthy
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang gmake localbase:ldflags pkgconfig
-USE_GNOME=	gtk20
+LIB_DEPENDS=	libanthy.so:japanese/anthy \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+USES=		compiler:c++11-lang gmake gnome iconv:wchar_t localbase:ldflags pkgconfig
+USE_GNOME=	gtk20 cairo gdkpixbuf2
 
 GNU_CONFIGURE=	yes
 
