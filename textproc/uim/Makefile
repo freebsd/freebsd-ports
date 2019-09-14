@@ -3,7 +3,7 @@
 
 PORTNAME=	uim
 PORTVERSION=	1.8.8
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	textproc
 MASTER_SITES=	https://github.com/uim/uim/releases/download/${PORTVERSION}/
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
@@ -17,7 +17,7 @@ LICENSE=	BSD3CLAUSE GPLv2+ GPLv3+ LGPL21+ PD
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES+=		gettext gmake iconv libedit libtool pathfix pkgconfig perl5 sqlite tar:bzip2
+USES+=		gettext gmake gnome iconv libedit libtool pathfix pkgconfig perl5 sqlite tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME+=	glib20 intltool
 USE_PERL5=	build
