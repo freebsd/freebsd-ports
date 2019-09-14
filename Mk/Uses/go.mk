@@ -20,23 +20,27 @@
 # You can set the following variables to control the process.
 #
 # GO_PKGNAME
-#	The name of the package. When building in GOPATH mode, this is
-#	the directory that will be created in GOPATH/src and seen by the
-#	`go` command. When building in modules-aware mode, no directories
-#	will be created and GO_PKGNAME value will be only used as a default
-#	for GO_TARGET. If not set explicitly and GH_SUBDIR is present,
-#	GO_PKGNAME will be inferred from GH_SUBDIR.
+#	The name of the package when building in GOPATH mode.  This
+#	is the directory that will be created in GOPATH/src and seen
+#	by the `go` command.  If not set explicitly and GH_SUBDIR or
+#	GL_SUBDIR is present, GO_PKGNAME will be inferred from it.
+#	It is not needed when building in modules-aware mode.
 #
 # GO_TARGET
-#	The names of the package(s) to build. If not set explicitly,
-#	defaults to GO_PKGNAME.
+#	The packages to build.  If not set explicitly, defaults to
+#	GO_PKGNAME.  GO_TARGET can also be a tuple in the form
+#	package:path where path can be either a simple filename or a
+#	full path starting with ${PREFIX}.  Specifying a full path
+#	like ${PREFIX}/sbin/binary will install the resulting binary
+#	as ${PREFIX}/sbin/binary.  Using just simple filename is a
+#	shortcut to installing it as ${PREFIX}/bin/filename.
 #
 # CGO_CFLAGS
-#	Addional CFLAGS variables to be passed to the C compiler by the `go`
+#	Additional CFLAGS variables to be passed to the C compiler by the `go`
 #	command
 #
 # CGO_LDFLAGS
-#	Addional LDFLAGS variables to be passed to the C compiler by the `go`
+#	Additional LDFLAGS variables to be passed to the C compiler by the `go`
 #	command
 #
 # GO_BUILDFLAGS
@@ -61,6 +65,8 @@ IGNORE=	USES=go has invalid arguments: ${go_ARGS:Nmodules:Nno_targets:Nrun}
 .if empty(GO_PKGNAME)
 .  if !empty(GH_SUBDIR)
 GO_PKGNAME=	${GH_SUBDIR:S|^src/||}
+.  elif !empty(GL_SUBDIR)
+GO_PKGNAME=	${GL_SUBDIR:S|^src/||}
 .  else
 GO_PKGNAME=	${PORTNAME}
 .  endif
@@ -116,14 +122,31 @@ post-extract:
 .if !target(do-build) && empty(go_ARGS:Mno_targets)
 do-build:
 	(cd ${GO_WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install ${GO_BUILDFLAGS} ${GO_TARGET:S/^${PORTNAME}$/./})
+	for t in ${GO_TARGET}; do \
+		out=$$(${BASENAME} $$(${ECHO_CMD} $${t} | \
+			${SED} -Ee 's/^[^:]*:([^:]+).*$$/\1/' -e 's/^\.$$/${PORTNAME}/')); \
+		pkg=$$(${ECHO_CMD} $${t} | \
+			${SED} -Ee 's/^([^:]*).*$$/\1/' -e 's/^${PORTNAME}$$/./'); \
+		${ECHO_MSG} "===>  Building $${out} from $${pkg}"; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} build ${GO_BUILDFLAGS} \
+			-o ${GO_WRKDIR_BIN}/$${out} \
+			$${pkg}; \
+	done)
 .endif
 
 .if !target(do-install) && empty(go_ARGS:Mno_targets)
 do-install:
-.for _TARGET in ${GO_TARGET}
-	${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${_TARGET:T:S/^.$/${PORTNAME}/} ${STAGEDIR}${PREFIX}/bin
-.endfor
+	for t in ${GO_TARGET}; do \
+		dst=$$(${ECHO_CMD} $${t} | \
+			${SED} -Ee 's/^[^:]*:([^:]+).*$$/\1/' -e 's/^\.$$/${PORTNAME}/'); \
+		src=$$(${BASENAME} $${dst}); \
+		case $${dst} in \
+			/*) dst=${STAGEDIR}$${dst}; ${MKDIR} $$(${DIRNAME} $${dst}) ;; \
+			 *) dst=${STAGEDIR}${PREFIX}/bin/$${src} ;; \
+		esac; \
+		${ECHO_MSG} "===>  Installing $${src} as $${dst}"; \
+		${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/$${src} $${dst}; \
+	done
 .endif
 
 # Helper targets for port maintainers
