@@ -84,13 +84,6 @@ EXTRA_WARNINGS_CONFIGURE_WITH=	extra-warnings
 MODELCOMPILER_PLIST_FILES=	bin/${PORTNAME}-modelcompiler
 PROFILER_CONFIGURE_ON=	--enable-profiler
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-# Unhide std::to_string() for GCC (ports/193528)
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
-.endif
-
 post-patch: .SILENT
 	${REINPLACE_CMD} -e '/^OPTIMISE=/d ; s|lua5\.2|lua-5.2|' \
 		${WRKSRC}/configure.ac
@@ -128,4 +121,4 @@ post-install-MODELCOMPILER-on:
 	${MV} ${STAGEDIR}${PREFIX}/bin/modelcompiler \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-modelcompiler
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

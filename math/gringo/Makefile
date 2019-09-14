@@ -21,9 +21,6 @@ MAKE_ARGS=	${MAKE_ENV}
 CXXFLAGS+=	-std=c++11
 MAKE_ENV=	WITH_LUA=no
 
-# Unhide std::to_string() with GCC < 4.9 (ports/193528)
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
-
 PLIST_FILES=	bin/${PORTNAME} bin/clingo
 
 do-install:

@@ -37,10 +37,6 @@ QMAKE_ARGS+=	QBS_INSTALL_DIR=${PREFIX} CONFIG+=qbs_enable_project_file_updates
 # Enforce installation to ${PREFIX}.
 QMAKE_ARGS+=	QTC_PREFIX=${PREFIX} LLVM_INSTALL_DIR=${PREFIX}/llvm${LLVM_DEFAULT}
 
-# Required for building the port with GCC: the define below is required for
-# std::to_string() to exist. More details in ports/193528.
-QMAKE_ARGS+=	DEFINES+=_GLIBCXX_USE_C99
-
 DESKTOP_ENTRIES="Qt Creator" "" "QtProject-qtcreator" \
 		"${PREFIX}/bin/${PORTNAME}" "Development;Qt;" true
 

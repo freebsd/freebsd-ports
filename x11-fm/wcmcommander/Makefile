@@ -34,16 +34,10 @@ SMB_CMAKE_ON=		-DSMBCLIENT_LIBRARY=${SAMBALIBS}/libsmbclient.so -DSMBCLIENT_INCL
 SSH_LIB_DEPENDS=	libssh2.so:security/libssh2
 SSH_CMAKE_BOOL=		WITH_LIBSSH2
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-CXXFLAGS+=	-D_GLIBCXX_USE_C99 # gcc c++11 support is broken on FreeBSD
-.endif
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -80,12 +80,6 @@ CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
 CAIRO_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.2:graphics/py-cairo@${PY_FLAVOR}
 CAIRO_MAKE_ARGS_OFF=	CAIRO=False
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-CXXFLAGS+=	-D_GLIBCXX_USE_C99 # gcc c++11 support is broken on FreeBSD
-.endif
-
 pre-configure-SQLITE3-on:
 	@if ! ${LOCALBASE}/bin/sqlite3 :memory: 'create virtual table foo using rtree(pkid, xmin, xmax, ymin, ymax)' > /dev/null 2>&1; then \
 		${ECHO_MSG} "" ; \
@@ -112,4 +106,4 @@ post-install-DOCS-on:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "AUTHORS.md CHANGELOG.md README.md docs" \
 		${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -272,10 +272,6 @@ _COMPILER_RT_LIBS+= \
 	libclang_rt.ubsan_standalone_cxx-i386.a
 .endif
 
-.if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
-.endif
-
 .if ${ARCH} == "armv6"
 BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin

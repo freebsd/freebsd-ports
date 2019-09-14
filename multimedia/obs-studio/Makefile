@@ -44,14 +44,8 @@ CMAKE_ARGS=	-DUNIX_STRUCTURE:BOOL=ON \
 		-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}"
 CFLAGS+=	-D_WITH_GETLINE
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's| 3.4)| ${PYTHON_VER})|' \
 		${WRKSRC}/cmake/Modules/FindPythonDeps.cmake
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

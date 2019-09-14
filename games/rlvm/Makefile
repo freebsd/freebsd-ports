@@ -34,7 +34,6 @@ USE_SDL=	image mixer ttf
 EXCLUDE=	GLEW SDL_image SDL_mixer SDL_ttf gmock gtest guichan \
 		luabind utf8cpp # leaving only pygame, xclannad, *.cpp
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude vendor/,}
-CFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (gtk deps)
 MAKE_ARGS=	VERBOSE=1
 INSTALLS_ICONS=	yes
