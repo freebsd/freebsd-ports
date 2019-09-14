@@ -1,8 +1,6 @@
 # Created by: Bill Fumerola <billf@mu.org>
 # $FreeBSD$
 
-PORTREVISION=	1
-
 LITE=		yes
 
 CONFLICTS_INSTALL?=	wireshark-[0-9]* tshark-[0-9]* tshark-lite-[0-9]*
