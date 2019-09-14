@@ -1,8 +1,3 @@
-SHA256 (anthy/anthy-9100h.tar.gz) = d256f075f018b4a3cb0d165ed6151fda4ba7db1621727e0eb54569b6e2275547
-SIZE (anthy/anthy-9100h.tar.gz) = 4446148
-SHA256 (anthy/2ch.t) = 643a80d1f305e6b3cd7e3cf42afbe4c0328233416f6185172d6c6c2c76e28ec6
-SIZE (anthy/2ch.t) = 142157
-SHA256 (anthy/okinawa-20070717.t) = dd7c9d5e5bfe3f7632af3aa4dbf707da7578c1cd31a4d614944b26d6b194b204
-SIZE (anthy/okinawa-20070717.t) = 158199
-SHA256 (anthy/gskk-20041208.t.gz) = d366b0b76d8b39c33244aa289c758663c260ef4402eaf49f0f53d14d55efbad7
-SIZE (anthy/gskk-20041208.t.gz) = 760867
+TIMESTAMP = 1567086743
+SHA256 (anthy_0.4.orig.tar.gz) = fdf590beea7093f3327b1eee76013e4936e4c6659e7cc01dd1fdd6e6f2e9c9f7
+SIZE (anthy_0.4.orig.tar.gz) = 5619024
