@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zetacoin
-PORTVERSION=	0.11.2.3
+PORTVERSION=	0.13.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	29
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	daniel@morante.net
@@ -12,91 +11,121 @@ COMMENT=	Peer-to-Peer crypto currency with quick transactions
 
 LICENSE=	MIT
 
-BROKEN=		fails to build with boost 1.70, see bug 237017
+NOT_FOR_ARCHS=		powerpc powerpc64 sparc64
+NOT_FOR_ARCHS_REASON=	does not support big-endian architectures
 
-LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
+		libevent.so:devel/libevent
 
-USES+=		autoreconf compiler:c++11-lang gmake libtool pkgconfig:build ssl
-USE_CXXSTD=	c++11
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
-
-BROKEN_armv6=		AtomicPointer not implemented
-BROKEN_powerpc64=	fails to configure: No working boost sleep implementation found
+USES=		autoreconf compiler:c++11-lib gmake libtool pkgconfig shebangfix ssl
 
 USE_GITHUB=	yes
 
-OPTIONS_DEFINE=	UPNP WALLET CLI TEST
-OPTIONS_SUB=	yes
+GNU_CONFIGURE=	yes
 
-WALLET_DESC=	Build wallet or P2P server node only
-CLI_DESC=		Build command line RPC client
+SLAVE_PORT?=	no
 
-OPTIONS_DEFAULT=	WALLET
+.if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
+USES+=		desktop-file-utils qt:5
+USE_QT=		core gui network widgets \
+		buildtools_build linguisttools_build qmake_build
+
+BUILD_DEPENDS+=	protoc:devel/protobuf
+LIB_DEPENDS+=	libprotobuf.so:devel/protobuf
+
+TESTS_USES=	qt:5
+TESTS_USE=		QT=testlib
+TESTS_PLIST_FILES=	bin/test_${PORTNAME}-qt \
+			bin/test_${PORTNAME}
+.endif
+
+OPTIONS_DEFINE?=	DBUS DEBUG HARDENING QRCODES TESTS UPNP ZMQ
+OPTIONS_RADIO?=		WALLET
+OPTIONS_RADIO_WALLET?=	WALLET_BDB48 WALLET_BDBMODERN
+OPTIONS_DEFAULT?=	DBUS HARDENING QRCODES UPNP WALLET_BDBMODERN ZMQ
+OPTIONS_SUB=		yes
+
+HARDENING_DESC=	Attempt to harden binaries (PIE for ASLR, NX Stack)
+QRCODES_DESC=	Display QR Codes
+TESTS_DESC=	Build test binary and unit tests
+WALLET_DESC=	Wallet Management Support
+WALLET_BDB48_DESC=	Wallet using BDB 4.8
+WALLET_BDBMODERN_DESC=	Wallet using modern BDB 5.x or 6.x
+ZMQ_DESC=	Block and transaction broadcasting with ZeroMQ
+
+DBUS_CONFIGURE_WITH=	dbus
+DBUS_USES=	qt:5
+DBUS_USE=		QT=dbus
+
+DEBUG_CONFIGURE_ENABLE=		debug
+DEBUG_INSTALL_TARGET_OFF=	install-strip
+
+HARDENING_CONFIGURE_ENABLE=	hardening
+
+TESTS_CONFIGURE_ENABLE=	tests bench
+.if defined(SLAVE_PORT) && ${SLAVE_PORT} == "yes"
+TESTS_PLIST_FILES=	bin/test_${PORTNAME}
+.endif
+TESTS_PLIST_FILES+=	bin/bench_${PORTNAME}
 
 UPNP_CONFIGURE_WITH=	miniupnpc
 UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
 UPNP_CPPFLAGS=		-I${LOCALBASE}/include
 UPNP_LIBS=		-L${LOCALBASE}/lib
 
-WALLET_CONFIGURE_ENABLE=wallet
-WALLET_CXXFLAGS=	-I${BDB_INCLUDE_DIR}
-WALLET_LIBS=		-L${BDB_LIB_DIR}
-WALLET_USES=		bdb:48
+QRCODES_CONFIGURE_WITH=	qrencode
+QRCODES_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 
-CLI_CONFIGURE_WITH=	cli
+ZMQ_CONFIGURE_ENABLE=	zmq
+ZMQ_BUILD_DEPENDS=	libzmq4>0:net/libzmq4
+ZMQ_RUN_DEPENDS=	libzmq4>0:net/libzmq4
 
-TEST_CONFIGURE_ENABLE=	tests
-TEST_ALL_TARGET=	check
+CONFIGURE_ARGS?=	--without-libs \
+			--with-gui=qt5 \
+			--without-daemon \
+			--without-utils
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-daemon
 CONFIGURE_ENV=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto" \
 		SSL_CFLAGS="-I${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl" \
-		OBJC="${CC}" OBJCFLAGS="${CFLAGS}" OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
+		OBJCXX="${CXX}" OBJCXXFLAGS="${CXXFLAGS}"
+MAKE_ENV+=	V=1
 
-QT_BINARY=	${PORTNAME}-qt
-CLI_BINARY=	${PORTNAME}-cli
-DAEMON=		${PORTNAME}d
-
-PLIST_SUB+=	EXECUTABLE_QT=bin/${QT_BINARY} \
-		EXECUTABLE_CLI=bin/${CLI_BINARY} \
-		EXECUTABLE_DAEMON=bin/${DAEMON} \
-		PORTNAME=${PORTNAME}
+PLIST_FILES?=	bin/${PORTNAME}-qt share/applications/${PORTNAME}-qt.desktop \
+		share/pixmaps/${PORTNAME}256.png
 
 .include <bsd.port.options.mk>
 
-# tests will currently fail
-.if ${PORT_OPTIONS:MTEST}
-BROKEN=	automated testing fails
+.if ${PORT_OPTIONS:MWALLET_BDB48}
+CONFIGURE_ARGS+=	--enable-wallet
+USES+=			bdb:48
+.elif ${PORT_OPTIONS:MWALLET_BDBMODERN}
+CONFIGURE_ARGS+=	--enable-wallet --with-incompatible-bdb
+USES+=			bdb:5+
+.else
+CONFIGURE_ARGS+=	--disable-wallet
 .endif
-
-USE_RC_SUBR=	${PORTNAME}
-SUB_LIST+=	PORTNAME=${PORTNAME}
-SUB_FILES=	pkg-message
-USERS=		${PORTNAME}
-GROUPS=		${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	checking for RAND_egd in -lcrypto... no
-BROKEN_FreeBSD_13=	checking for RAND_egd in -lcrypto... no
+.if ${PORT_OPTIONS:MWALLET_BDB48} || ${PORT_OPTIONS:MWALLET_BDBMODERN}
+CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
+LIBS+=		-L${BDB_LIB_DIR}
 .endif
 
-.if ${SSL_DEFAULT:Mlibressl*}
-# The configure script will output this message, so save the user the trouble
-IGNORE=	detected LibreSSL: This is NOT supported, and may break consensus compatibility!
+.if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
+
+post-install:
+	${INSTALL} ${FILESDIR}/${PORTNAME}-qt.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL} ${WRKSRC}/src/qt/res/icons/bitcoin.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}256.png
+
 .endif
 
-post-patch:
-	${MKDIR} ${WRKSRC}/src/build-aux
+regression-test: build
+	# To use this sucessfully, remove --without-daemon and --without-utils
+	# from CONFIGURE_ARGS above.
 
-do-install:
-	${INSTALL_PROGRAM} -s ${WRKSRC}/src/${DAEMON} ${STAGEDIR}${PREFIX}/bin/${DAEMON}
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
-
-do-install-CLI-on:
-	${INSTALL_PROGRAM} -s ${WRKSRC}/src/${CLI_BINARY} ${STAGEDIR}${PREFIX}/bin/${CLI_BINARY}
+	@cd ${WRKSRC} && ${GMAKE} check
 
 .include <bsd.port.post.mk>

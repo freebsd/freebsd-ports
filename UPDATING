@@ -171,6 +171,21 @@ you update your ports collection, before attempting any port upgrades.
   Python version since April 2019.
 
 20190717:
+  AFFECTS: users of net-p2p/zetacoin and net-p2p/zetacoin-nox11
+  AUTHOR: daniel@morante.net
+
+  Zetacoin will default to using modern versions of BDB (5.x or 6.x) when
+  the WALLET option is selected.   See pkg-help for explanation.
+
+  The zetacoin-nox11 slave port was renamed to zetacoin-daemon to align
+  with the net-p2p/bitcoin format.
+  
+  The zetacoin-cli and zetacoin-tx utilities have been re-packaged into
+  a separate port. If you require these programs, or use the zetacoin-cli
+  program to access the daemon or the GUI, install net-p2p/zetacoin-utils
+  to reinstall them.
+
+20190717:
   AFFECTS: users of sysutils/py-borgmatic
   AUTHOR: egypcio@FreeBSD.org
 
