@@ -3,6 +3,14 @@ bin/virt-admin
 bin/virt-host-validate
 bin/virt-pki-validate
 bin/virt-xml-validate
+%%BHYVE%%sbin/virtbhyved
+sbin/virtnetworkd
+sbin/virtproxyd
+%%QEMU%%sbin/virtqemud
+sbin/virtsecretd
+sbin/virtstoraged
+sbin/virtvboxd
+%%XEN%%sbin/virtxend
 man/man1/virsh.1.gz
 man/man1/virt-admin.1.gz
 man/man1/virt-host-validate.1.gz
@@ -26,8 +34,16 @@ man/man8/virtlogd.8.gz
 @sample %%ETCDIR%%/libvirt-admin.conf.sample
 @sample %%ETCDIR%%/libvirt.conf.sample
 @sample %%ETCDIR%%/libvirtd.conf.sample
+%%BHYVE%%@sample %%ETCDIR%%/virtbhyved.conf.sample
 @sample %%ETCDIR%%/virtlockd.conf.sample
 @sample %%ETCDIR%%/virtlogd.conf.sample
+@sample %%ETCDIR%%/virtnetworkd.conf.sample
+@sample %%ETCDIR%%/virtproxyd.conf.sample
+%%QEMU%%@sample %%ETCDIR%%/virtqemud.conf.sample
+@sample %%ETCDIR%%/virtsecretd.conf.sample
+@sample %%ETCDIR%%/virtstoraged.conf.sample
+@sample %%ETCDIR%%/virtvboxd.conf.sample
+%%XEN%%@sample %%ETCDIR%%/virtxend.conf.sample
 %%EXAMPLESDIR%%/networks/default.xml
 %%BHYVE%%@sample %%ETCDIR%%/bhyve.conf.sample
 %%QEMU%%@sample %%ETCDIR%%/qemu.conf.sample
@@ -92,12 +108,28 @@ share/augeas/lenses/virtlogd.aug
 %%QEMU%%share/augeas/lenses/libvirtd_qemu.aug
 %%QEMU%%share/augeas/lenses/tests/test_libvirt_lockd.aug
 share/augeas/lenses/tests/test_libvirtd.aug
+%%BHYVE%%share/augeas/lenses/tests/test_virtbhyved.aug
 share/augeas/lenses/tests/test_virtlockd.aug
 share/augeas/lenses/tests/test_virtlogd.aug
+share/augeas/lenses/tests/test_virtnetworkd.aug
+share/augeas/lenses/tests/test_virtproxyd.aug
+%%QEMU%%share/augeas/lenses/tests/test_virtqemud.aug
+share/augeas/lenses/tests/test_virtsecretd.aug
+share/augeas/lenses/tests/test_virtstoraged.aug
+share/augeas/lenses/tests/test_virtvboxd.aug
+%%BHYVE%%share/augeas/lenses/virtbhyved.aug
+share/augeas/lenses/virtnetworkd.aug
+share/augeas/lenses/virtproxyd.aug
+%%QEMU%%share/augeas/lenses/virtqemud.aug
+share/augeas/lenses/virtsecretd.aug
+share/augeas/lenses/virtstoraged.aug
+share/augeas/lenses/virtvboxd.aug
 %%BHYVE%%share/augeas/lenses/tests/test_libvirtd_bhyve.aug
 %%QEMU%%share/augeas/lenses/tests/test_libvirtd_qemu.aug
 %%XEN%%share/augeas/lenses/libvirtd_libxl.aug
 %%XEN%%share/augeas/lenses/tests/test_libvirtd_libxl.aug
+%%XEN%%share/augeas/lenses/tests/test_virtxend.aug
+%%XEN%%share/augeas/lenses/virtxend.aug
 share/gtk-doc/html/libvirt/general.html
 share/gtk-doc/html/libvirt/home.png
 share/gtk-doc/html/libvirt/index.html
