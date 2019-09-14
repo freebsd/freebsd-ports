@@ -2,6 +2,7 @@
 
 PORTNAME=	leatherman
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	puppet@FreeBSD.org
