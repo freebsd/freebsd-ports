@@ -11,6 +11,9 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for yet another messagepack streaming deserializer
 
 BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ABS64 against local symbol in readonly segment
+.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+BROKEN_i386=	ld: error: relocation R_386_PC32 cannot be used against symbol malloc
+.endif
 BROKEN_mips=		fails to build: atomic operations are not found
 BROKEN_mips64=		fails to build: atomic operations are not found
 BROKEN_sparc64=		fails to build: atomic operations are not found
