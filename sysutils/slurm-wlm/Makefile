@@ -2,7 +2,7 @@
 
 PORTNAME=	slurm
 DISTVERSION=	19.05.1-2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
