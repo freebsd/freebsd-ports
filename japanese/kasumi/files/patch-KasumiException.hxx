@@ -1,6 +1,6 @@
---- KasumiException.hxx.orig	Fri Jan  7 23:18:09 2005
-+++ KasumiException.hxx	Sun May 22 19:58:45 2005
-@@ -5,6 +5,8 @@
+--- KasumiException.hxx.orig	2006-05-26 17:41:25 UTC
++++ KasumiException.hxx
+@@ -30,6 +30,8 @@
  #include "config.h"
  #endif
  
@@ -8,4 +8,4 @@
 +
  using namespace std;
  
- class KasumiDicExaminationException{
+ enum _output {STDOUT, STDERR, ERR_DIALOG, WARNING_DIALOG};
