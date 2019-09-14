@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	5.0.28
-PORTREVISION=	2
+PORTVERSION=	5.0.47
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -28,7 +27,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=3.0.10_2:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.3.70:security/rubygem-metasploit-payloads \
+		rubygem-metasploit-payloads>=1.3.77:security/rubygem-metasploit-payloads \
 		rubygem-metasploit_payloads-mettle>=0.5.16:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
@@ -87,7 +86,10 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-nexpose>=0:security/rubygem-nexpose \
 		rubygem-xdr>=0:converters/rubygem-xdr \
 		rubygem-faker>=0:devel/rubygem-faker \
-		rubygem-concurrent-ruby>=0:devel/rubygem-concurrent-ruby
+		rubygem-concurrent-ruby>=0:devel/rubygem-concurrent-ruby \
+		rubygem-aws-sdk-s3>=0:devel/rubygem-aws-sdk-s3 \
+		rubygem-aws-sdk-ec2>=0:devel/rubygem-aws-sdk-ec2 \
+		rubygem-aws-sdk-iam>=0:devel/rubygem-aws-sdk-iam
 
 SCRIPTS=	msfconsole msfd msfdb msfrpc msfrpcd msfvenom
 
@@ -130,8 +132,9 @@ post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
 		/rb-readline/d' \
 		${WRKSRC}/metasploit-framework.gemspec
-	${REINPLACE_CMD} "/pg/s|, '0.20.0'||; \
-		/concurrent-ruby/s|,'1.0.5'||" ${WRKSRC}/metasploit-framework.gemspec
+	${REINPLACE_CMD} "/pg/s|, '~> 0.20'||; \
+		/concurrent-ruby/s|,'1.0.5'||; \
+		/bcrypt/s|, '3.1.12'||" ${WRKSRC}/metasploit-framework.gemspec
 
 do-build:
 	${RM} ${WRKSRC}/Gemfile.lock
