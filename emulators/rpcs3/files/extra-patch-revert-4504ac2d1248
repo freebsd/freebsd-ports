@@ -8,27 +8,27 @@ rpcs3/util/atomic.cpp:307:5: error: use of undeclared identifier 'fallback_notif
                                 fallback_notify_all(data);
                                 ^
 
---- rpcs3/util/atomic.cpp.orig	2019-09-10 16:25:39 UTC
+--- rpcs3/util/atomic.cpp.orig	2019-09-13 21:02:48 UTC
 +++ rpcs3/util/atomic.cpp
-@@ -15,14 +15,11 @@
+@@ -15,14 +15,11 @@ static atomic_t<u64> s_hashtable[s_hashtable_size];
  // Pointer mask without bits used as hash, assuming signed 48-bit pointers
- static constexpr u64 s_pointer_mask = 0xffff'ffff'ffff & ~(s_hashtable_size - 1);
+ static constexpr u64 s_pointer_mask = 0xffff'ffff'ffff & (~(s_hashtable_size - 1) << 2);
  
 -// Max number of waiters is 32767
 -static constexpr u64 s_waiter_mask = 0x7fff'0000'0000'0000;
--
--//
--static constexpr u64 s_collision_bit = 0x8000'0000'0000'0000;
 +// Max number of waiters is 65535
 +static constexpr u64 s_waiter_mask = 0xffff'0000'0000'0000;
  
+-//
+-static constexpr u64 s_collision_bit = 0x8000'0000'0000'0000;
+-
  // Implementation detail (remaining bits out of 32 available for futex)
 -static constexpr u64 s_signal_mask = 0xffffffff & ~(s_waiter_mask | s_pointer_mask | s_collision_bit);
 +static constexpr u64 s_signal_mask = 0xffffffff & ~(s_waiter_mask | s_pointer_mask);
  
  // Callback for wait() function, returns false if wait should return
  static thread_local bool(*s_tls_wait_cb)(const void* data) = [](const void*)
-@@ -182,8 +179,6 @@
+@@ -182,8 +179,6 @@ void atomic_storage_futex::wait(const void* data, std:
  
  	u32 new_value = 0;
  
@@ -37,7 +37,7 @@ rpcs3/util/atomic.cpp:307:5: error: use of undeclared identifier 'fallback_notif
  	const auto [_, ok] = entry.fetch_op([&](u64& value)
  	{
  		if ((value & s_waiter_mask) == s_waiter_mask || (value & s_signal_mask) == s_signal_mask)
-@@ -196,17 +191,11 @@
+@@ -196,17 +191,11 @@ void atomic_storage_futex::wait(const void* data, std:
  		{
  			// Store pointer bits
  			value |= (iptr & s_pointer_mask);
@@ -57,20 +57,21 @@ rpcs3/util/atomic.cpp:307:5: error: use of undeclared identifier 'fallback_notif
  		}
  
  		// Add waiter
-@@ -220,11 +209,7 @@
+@@ -220,12 +209,8 @@ void atomic_storage_futex::wait(const void* data, std:
  		return;
  	}
  
 -	if (fallback)
--	{
--		fallback_wait(data, size, old_value, timeout);
--	}
--	else if (ptr_cmp(data, size, old_value) && s_tls_wait_cb(data))
-+	if (ptr_cmp(data, size, old_value) && s_tls_wait_cb(data))
++	if (ptr_cmp(data, size, old_value, mask) && s_tls_wait_cb(data))
  	{
+-		fallback_wait(data, size, old_value, timeout, mask);
+-	}
+-	else if (ptr_cmp(data, size, old_value, mask) && s_tls_wait_cb(data))
+-	{
  #ifdef _WIN32
  		LARGE_INTEGER qw;
-@@ -260,13 +245,6 @@
+ 		qw.QuadPart = -static_cast<s64>(timeout / 100);
+@@ -260,13 +245,6 @@ void atomic_storage_futex::wait(const void* data, std:
  			{
  				value -= s_waiter_mask & -s_waiter_mask;
  
@@ -84,7 +85,7 @@ rpcs3/util/atomic.cpp:307:5: error: use of undeclared identifier 'fallback_notif
  				if ((value & s_waiter_mask) == 0)
  				{
  					// Reset on last waiter
-@@ -279,7 +257,7 @@
+@@ -279,7 +257,7 @@ void atomic_storage_futex::wait(const void* data, std:
  			return false;
  		});
  
@@ -93,9 +94,9 @@ rpcs3/util/atomic.cpp:307:5: error: use of undeclared identifier 'fallback_notif
  		{
  			break;
  		}
-@@ -306,20 +284,15 @@
+@@ -306,20 +284,15 @@ void atomic_storage_futex::notify_one(const void* data
  
- 	atomic_t<u64>& entry = s_hashtable[iptr % s_hashtable_size];
+ 	atomic_t<u64>& entry = s_hashtable[(iptr >> 2) % s_hashtable_size];
  
 +	bool fallback = false;
 +
@@ -117,7 +118,7 @@ rpcs3/util/atomic.cpp:307:5: error: use of undeclared identifier 'fallback_notif
  
  			if ((value & s_waiter_mask) == 0)
  			{
-@@ -337,22 +310,30 @@
+@@ -337,22 +310,30 @@ void atomic_storage_futex::notify_one(const void* data
  
  			if ((value & s_signal_mask) == s_signal_mask)
  			{
@@ -153,7 +154,7 @@ rpcs3/util/atomic.cpp:307:5: error: use of undeclared identifier 'fallback_notif
  	if (ok)
  	{
  #ifdef _WIN32
-@@ -375,32 +356,11 @@
+@@ -375,32 +356,11 @@ void atomic_storage_futex::notify_all(const void* data
  	{
  		if (value & s_waiter_mask)
  		{
@@ -188,7 +189,7 @@ rpcs3/util/atomic.cpp:307:5: error: use of undeclared identifier 'fallback_notif
  		}
  
  		return false;
-@@ -411,7 +371,7 @@
+@@ -411,7 +371,7 @@ void atomic_storage_futex::notify_all(const void* data
  		return;
  	}
  
@@ -197,7 +198,7 @@ rpcs3/util/atomic.cpp:307:5: error: use of undeclared identifier 'fallback_notif
  	{
  		NtReleaseKeyedEvent(nullptr, &entry, false, nullptr);
  	}
-@@ -426,17 +386,11 @@
+@@ -426,16 +386,10 @@ void atomic_storage_futex::notify_all(const void* data
  				return false;
  			}
  
@@ -206,13 +207,12 @@ rpcs3/util/atomic.cpp:307:5: error: use of undeclared identifier 'fallback_notif
  			{
  				value += s_signal_mask & -s_signal_mask;
  				return true;
- 			}
+-			}
 -
 -			if (value & s_collision_bit)
 -			{
 -				fallback_notify_all(data);
 -				return false;
--			}
+ 			}
  		}
  
- 		return false;
