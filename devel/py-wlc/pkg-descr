@@ -1,0 +1,5 @@
+Command line utility for Weblate, translation tool with tight version control
+integration. It uses the Weblate's REST API.
+
+WWW: https://github.com/WeblateOrg/wlc
+WWW: https://pypi.org/project/wlc/
