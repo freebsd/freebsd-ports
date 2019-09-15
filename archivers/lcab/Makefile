@@ -2,23 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	lcab
-DISTVERSION=	1.0b12
+PORTVERSION=	1.0b12
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ohnopublishing.net/mirror/
+MASTER_SITES=	DEBIAN
+DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Microsoft .CABinet file creator
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
-BROKEN=		unfetchable
-DEPRECATED=	Unfetchable, unmaintained
-EXPIRATION_DATE=	2019-10-16
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
-PLIST_FILES=	bin/lcab
+PLIST_FILES=	bin/lcab man/man1/${PORTNAME}.1.gz
+
+pre-build:
+	@${REINPLACE_CMD} -e 's|1.0b11|1.0b12|' ${WRKSRC}/mytypes.h
+	@${REINPLACE_CMD} -e 's|1.0b8|1.0b12|' \
+		-e '/http:\/\/www.geekshop.be\/rien\/lcab\//d' \
+		${WRKSRC}/${PORTNAME}.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lcab ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
