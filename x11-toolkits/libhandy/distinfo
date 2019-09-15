@@ -1,5 +1,5 @@
 TIMESTAMP = 1562631211
 SHA256 (gnome/Librem5-libhandy-2d777677352d037b6f5cc24d9c1c8d9a74ac0ded_GL0.tar.gz) = 0337a7879523c49eec53b75d4fd8e60d27baee5eec9e870f8b47df151c8fd038
 SIZE (gnome/Librem5-libhandy-2d777677352d037b6f5cc24d9c1c8d9a74ac0ded_GL0.tar.gz) = 355632
-SHA256 (gnome/e1c500dd02b1.patch) = 7ef98cb4e3f16916a47f945aca7eada49e788b46c5d870eb4d5b2d36cfb98c5b
+SHA256 (gnome/e1c500dd02b1.patch) = 29038342d001fdcfde1031ac731f8b7f765504a947d9d4eecc03f08ff21d5038
 SIZE (gnome/e1c500dd02b1.patch) = 924
