@@ -2,4 +2,4 @@ libssh2 is a client-side C library implementing the SSH2 protocol. It supports
 regular terminal, SCP and SFTP sessions; port forwarding; password, key-based
 and keyboard-interactive authentication.
 
-WWW: http://www.libssh2.org/
+WWW: https://www.libssh2.org/
