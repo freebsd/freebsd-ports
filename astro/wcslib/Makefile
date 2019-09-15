@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wcslib
-PORTVERSION=	6.2
-PORTREVISION=	4
+PORTVERSION=	6.4
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 
@@ -35,6 +34,7 @@ PGPLOT_CONFIGURE_WITH=	pgplot
 PGPLOT_LIB_DEPENDS=	libpgplot.so:graphics/pgplot \
 			libpng.so:graphics/png
 PGPLOT_USE=		XORG=x11
+PGPLOT_USES=		xorg
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#%%PKGDIR%%#${STAGEDIR}${PREFIX}/libdata#g' \
