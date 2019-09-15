@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-System Archiver with open keys PGP-based security
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		alias ncurses
 USE_CSTD=	gnu89

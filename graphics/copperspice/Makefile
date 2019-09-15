@@ -13,6 +13,8 @@ COMMENT=	Modern cross-platform C++ GUI library (derived from Qt 4.8)
 LICENSE=	LGPL21
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libaudio.so:audio/nas \
 		libdrm.so:graphics/libdrm \

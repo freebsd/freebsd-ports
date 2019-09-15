@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SKK-like Kana-to-Kanji FrontEnd Processor
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 RUN_DEPENDS=	ja-skk>0:japanese/skk
 

@@ -13,6 +13,8 @@ COMMENT=	Yet another dump utility
 LICENSE=	BSD4CLAUSE
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		uidfix
 MAKE_ARGS=	CC="${CC}" BINDIR="${PREFIX}/bin" \

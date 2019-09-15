@@ -16,6 +16,8 @@ RUN_DEPENDS=	urbanterror-data>0:games/urbanterror-data
 LICENSE?=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 MASTERDIR=	${.CURDIR}/../ioquake3
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr

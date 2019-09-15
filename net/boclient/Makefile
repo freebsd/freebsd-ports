@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client program for the Back Orifice Windows program
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 PLIST_FILES=	bin/bounix
 WRKSRC=		${WRKDIR}/bo

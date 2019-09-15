@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create Virtual PostScript fonts produced by VFlib (Truetype fonts)
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 PLIST_FILES=	bin/VTPSfont
 RUN_DEPENDS=	bash:shells/bash

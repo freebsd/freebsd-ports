@@ -18,6 +18,8 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 BROKEN_aarch64=		fails to link: collect2: error: ld returned 1 exit status
 
 CONFLICTS_INSTALL=	fspclient-*

@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Lit to HTML and Open eBooks converter
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 PATCH_WRKSRC=	${WRKSRC}/${PORTNAME}${MAJ_VER}${MIN_VER}
 NO_WRKSUBDIR=	yes

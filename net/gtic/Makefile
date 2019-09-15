@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU file forwarder (FSC-0087) for fidonet-like networks
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 MAKE_ENV+=	DEFINES="${DEFINES}"
 

@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RTF to XML converter
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libmba.so:devel/libmba \
 		libdomc.so:textproc/domc

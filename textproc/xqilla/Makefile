@@ -15,6 +15,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3 \
 		libtidy.so:www/tidy-lib

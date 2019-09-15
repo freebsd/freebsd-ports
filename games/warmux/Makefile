@@ -15,6 +15,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libxml++-2.6.so:textproc/libxml++26 \
 		libcurl.so:ftp/curl

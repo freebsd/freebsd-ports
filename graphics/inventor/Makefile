@@ -15,6 +15,8 @@ COMMENT=	SGI's Open Inventor (TM)
 LICENSE=	LGPL21
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 DEPRECATED=	Depends on expiring graphics/libGLw
 EXPIRATION_DATE=	2019-11-01
 

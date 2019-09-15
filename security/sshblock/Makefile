@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Block abusive SSH login attempts
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 RUN_DEPENDS=	p5-File-Tail>=0:devel/p5-File-Tail
 

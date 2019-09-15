@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COM_LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 

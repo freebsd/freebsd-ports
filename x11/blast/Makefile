@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blast blows holes through windows
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.1.orig
 USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xt xrandr

@@ -17,6 +17,8 @@ COMMENT=	Norman Walsh's book "DocBook: The Definitive Guide"
 LICENSE=	GFDL
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		zip
 NO_BUILD=	yes

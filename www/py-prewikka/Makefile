@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend for the Prelude IDS
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 BUILD_DEPENDS=	cheetah-compile:devel/py-cheetah
 LIB_DEPENDS=	libprelude.so:security/libprelude \

@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plain C converter of jpeg images to PDF or PostScript
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 PLIST_FILES=	bin/jpg2pdf man/man1/jpg2pdf.1.gz
 

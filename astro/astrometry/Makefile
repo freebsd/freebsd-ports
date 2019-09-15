@@ -14,6 +14,8 @@ COMMENT=	Software for describing astronomical images
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 BROKEN_aarch64=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
 BROKEN_armv6=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
 BROKEN_armv7=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'

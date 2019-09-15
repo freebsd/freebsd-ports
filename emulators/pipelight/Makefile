@@ -19,6 +19,8 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gpg2:security/gnupg \
 		${LOCALBASE}/bin/bash:shells/bash

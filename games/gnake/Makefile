@@ -13,6 +13,8 @@ COMMENT=	Nibbles clone for GNU/Linux and *BSD
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		ncurses
 LDFLAGS+=	-L${LOCALBASE}/lib -lncurses

@@ -13,6 +13,8 @@ COMMENT=	Multi-player curses space warfare game similar to Netrek
 LICENSE=	ART10
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc/conquest \

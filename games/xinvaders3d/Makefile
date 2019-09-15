@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Vector-graphics Space Invaders clone for X
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USE_XORG=	x11
 PLIST_FILES=	bin/xinv3d

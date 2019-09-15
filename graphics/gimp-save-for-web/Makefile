@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP Save For Web plugin
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libgimp-2.0.so:graphics/gimp-app
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser

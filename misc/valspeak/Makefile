@@ -10,6 +10,8 @@ MAINTAINER=	dereckson@gmail.com
 COMMENT=	Filter that converts English text to valspeak
 
 BROKEN=		fails to fetch: http://dereckson.devio.us/software/valspeak/valspeak-1.0.tar.gz: Service Unavailable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 CONFLICTS=	filters-2* talkfilters-2*
 

@@ -14,6 +14,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}/freebsd/
 USES=		zip
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 RESTRICTED=	No cost for personal, education and non-commercial use.
 NO_BUILD=	yes
 

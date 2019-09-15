@@ -9,6 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical Diff for X
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USE_XORG=	x11 xt ice xaw
 GNU_CONFIGURE=	yes

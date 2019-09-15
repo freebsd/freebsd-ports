@@ -13,6 +13,8 @@ COMMENT=	Hacked version of a Links WWW browser
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		autoreconf ssl
 USE_CSTD=	gnu89

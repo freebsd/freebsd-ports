@@ -13,6 +13,8 @@ COMMENT=	Serial controlling software, with gtk+ widget
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/baekmukfonts/gulim12.pcf.gz:korean/baekmukfonts-bdf
 

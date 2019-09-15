@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple antivirus solution for a mail system
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 

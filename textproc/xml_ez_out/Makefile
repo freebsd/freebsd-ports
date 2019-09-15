@@ -15,6 +15,8 @@ LICENSE=	GPLv2 GMGPL
 LICENSE_COMB=	multi
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		ada dos2unix tar:tgz
 WRKSRC=		${WRKDIR}/xml_ez_out

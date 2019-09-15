@@ -13,6 +13,8 @@ COMMENT=	RADIUS-compliant remote authentication and accounting server
 LICENSE=	GPLv2+
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 CONFLICTS?=	freeradius-0.* gnu-radius-1.* openradius-0.*
 

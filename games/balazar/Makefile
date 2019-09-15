@@ -14,6 +14,8 @@ COMMENT=	3D adventure and roleplaying game
 LICENSE=	GPLv2+
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libcal3d.so:graphics/cal3d \
 		libfreetype.so:print/freetype2

@@ -13,6 +13,8 @@ COMMENT=	Automatically generate symlinks for virtual categories
 LICENSE=	BSD2CLAUSE
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		tar:bzip2
 NO_BUILD=	yes

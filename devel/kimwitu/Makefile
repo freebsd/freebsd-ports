@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for processing trees (i.e. terms)
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 ALL_TARGET=

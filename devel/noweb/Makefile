@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 BUILD_DEPENDS=	icont:lang/icon
 RUN_DEPENDS=	iconx:lang/icon

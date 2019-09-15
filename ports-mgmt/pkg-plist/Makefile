@@ -13,6 +13,8 @@ COMMENT=	Generate a pkg-plist for a port
 LICENSE=	MIT
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		python:run shebangfix
 SHEBANG_FILES=	pkg-plist

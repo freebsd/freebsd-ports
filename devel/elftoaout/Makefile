@@ -14,6 +14,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 WRKSRC=		${WRKDIR}/sparc-utils-1.9.orig/elftoaout-2.3
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

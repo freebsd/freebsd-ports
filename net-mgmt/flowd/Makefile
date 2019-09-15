@@ -15,6 +15,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		gmake shebangfix
 SHEBANG_FILES=	tools/*.pl

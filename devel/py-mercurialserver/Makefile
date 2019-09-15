@@ -14,6 +14,8 @@ COMMENT=	Software for hosting mercurial repositories
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 RUN_DEPENDS=	hg:devel/mercurial
 

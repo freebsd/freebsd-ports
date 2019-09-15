@@ -14,6 +14,8 @@ LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 BUILD_DEPENDS=	gprbuild>=20130416:devel/gprbuild
 

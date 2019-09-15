@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MacSlow's Cairo-Clock
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USE_GNOME=	gtk20 intlhack libglade2 librsvg2
 USES=		pathfix iconv gmake localbase:ldflags pkgconfig gettext

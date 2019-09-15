@@ -14,6 +14,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rsync:net/rsync \
 		${PYTHON_SITELIBDIR}/pokereval.py:games/py-poker-eval@${PY_FLAVOR} \

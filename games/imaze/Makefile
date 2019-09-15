@@ -15,6 +15,8 @@ LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USE_XORG=	x11 xaw xmu xt
 

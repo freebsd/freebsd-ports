@@ -17,6 +17,8 @@ ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	never ported to non-x86 architectures
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		gmake zip
 MAKEFILE=	makefile.unx

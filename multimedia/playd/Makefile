@@ -14,6 +14,8 @@ COMMENT=	Very easy-to-use mplayer sh wrapper script (supports playlists)
 LICENSE=	BSD3CLAUSE
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 RUN_DEPENDS=	mplayer:multimedia/mplayer
 
