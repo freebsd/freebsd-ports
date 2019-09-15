@@ -72,7 +72,7 @@ GSETTINGS_VARS=	GLIB_SCHEMAS=org.freedesktop.pulseaudio.gschema.xml
 SIMD_CONFIGURE_ENABLE=	orc
 SIMD_LIB_DEPENDS=	liborc-0.4.so:devel/orc
 TEST_TEST_TARGET=	check
-TEST_CONFIGURE_ENABLE=	default-build-tests
+TEST_CONFIGURE_ENABLE=	tests default-build-tests
 TEST_BUILD_DEPENDS=	check>0:devel/check
 
 OPTIONS_GROUP=	AUDIO
