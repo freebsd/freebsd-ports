@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pulseaudio-module-sndio
-DISTVERSION=	12.0
-PORTREVISION=	1
+DISTVERSION=	13.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/t6/pulseaudio-module-sndio/releases/download/${DISTVERSION}/
 
