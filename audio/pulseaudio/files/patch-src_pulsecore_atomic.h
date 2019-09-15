@@ -1,6 +1,15 @@
---- src/pulsecore/atomic.h.orig	2016-08-23 12:50:11 UTC
+--- src/pulsecore/atomic.h.orig	2019-09-13 13:10:23 UTC
 +++ src/pulsecore/atomic.h
-@@ -185,39 +185,6 @@ static inline bool pa_atomic_ptr_cmpxchg
+@@ -117,7 +117,7 @@ static inline void* pa_atomic_ptr_load(c
+ }
+ 
+ static inline void pa_atomic_ptr_store(pa_atomic_ptr_t *a, void* p) {
+-    __atomic_store_n(&a->value, p, __ATOMIC_SEQ_CST);
++    __atomic_store_n(&a->value, (uintptr_t)p, __ATOMIC_SEQ_CST);
+ }
+ 
+ #else
+@@ -218,39 +218,6 @@ static inline bool pa_atomic_ptr_cmpxchg
  #include <sys/param.h>
  #include <machine/atomic.h>
  
