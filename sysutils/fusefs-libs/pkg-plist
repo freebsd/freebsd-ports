@@ -18,6 +18,3 @@ lib/libulockmgr.so
 lib/libulockmgr.so.1
 lib/libulockmgr.so.1.0.1
 libdata/pkgconfig/fuse.pc
-man/man1/fusermount.1.gz
-man/man1/ulockmgr_server.1.gz
-man/man8/mount.fuse.8.gz
