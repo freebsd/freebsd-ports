@@ -1,10 +1,13 @@
+Removed tcl8.6, asound and jack flags, this is now handled in the ports
+script.
+
 --- src/Makefile.am.orig	2018-10-22 17:17:28 UTC
 +++ src/Makefile.am
 @@ -1,5 +1,5 @@
--AM_CXXFLAGS = -I ../include -I /usr/include/tcl8.6 -Wall -D __GPL20__ -D_THREAD_SAFE -DHAVE_OPENGL -D__LICENSED__ -D __SVG__ -DPREFIX=\"@prefix@\"
--LIBS +=  -ltcl8.6 -lSDL -lGL -lpthread -lasound -ljack
-+AM_CXXFLAGS = -I ../include -Wall -D __GPL20__ -D_THREAD_SAFE -DHAVE_OPENGL -D__LICENSED__ -D __SVG__ -DPREFIX=\"@prefix@\"
-+LIBS +=  -lSDL -lGL -lpthread -lasound -ljack
+-AM_CXXFLAGS = -I ../include -I /usr/include/tcl8.6 -Wall -D_THREAD_SAFE -DHAVE_OPENGL -D__EVALUATION__ -D __SVG__ -D__GPL20__ -DPREFIX=\"@prefix@\"
+-LIBS +=  -ltcl8.6 -lSDL -lGL -lpthread -lasound
++AM_CXXFLAGS = -I ../include -Wall -D_THREAD_SAFE -DHAVE_OPENGL -D__EVALUATION__ -D __SVG__ -D__GPL20__ -DPREFIX=\"@prefix@\"
++LIBS +=  -lSDL -lGL -lpthread
  
  AM_CFLAGS = -I ../include
  bin_PROGRAMS = din
