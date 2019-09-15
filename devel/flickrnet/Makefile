@@ -19,6 +19,8 @@ LICENSE_NAME_CPL-1.0=	Common Public License 1.0
 LICENSE_PERMS_CPL-1.0=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		dos2unix mono zip
 DOS2UNIX_GLOB=	*.cs

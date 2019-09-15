@@ -16,6 +16,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick6
 RUN_DEPENDS=	p5-Sort-Naturally>=0:textproc/p5-Sort-Naturally

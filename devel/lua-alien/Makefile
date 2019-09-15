@@ -13,6 +13,8 @@ COMMENT=	Lua -> C FFI
 LICENSE=	MIT
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 

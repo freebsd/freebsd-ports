@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Demo version of incredible physics based puzzle/construction game
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		linux

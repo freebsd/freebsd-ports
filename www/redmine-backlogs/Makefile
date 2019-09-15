@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 RUN_DEPENDS=	rubygem-holidays>=1.0.3:devel/rubygem-holidays \
 		rubygem-icalendar>=0.4.2:devel/rubygem-icalendar \

@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The noeGNUd Data Files
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 NOEGNUDVERSION=	${PORTNAME}-0.8.0
 DATADIR=	${PREFIX}/share/${NOEGNUDVERSION}

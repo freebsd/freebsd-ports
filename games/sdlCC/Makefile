@@ -13,6 +13,8 @@ COMMENT=	Extensible Chinese checkers game using SDL
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		libtool:keepla # ltdl used, .la may be needed to load plugins
 USE_SDL=	image mixer sdl

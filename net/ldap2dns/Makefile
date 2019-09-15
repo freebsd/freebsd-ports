@@ -13,6 +13,8 @@ COMMENT=	Maintain DNS zones using an LDAP directory
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
 		p5-perl-ldap>=0:net/p5-perl-ldap

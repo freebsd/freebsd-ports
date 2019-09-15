@@ -16,6 +16,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Bitstream Cyberbit TrueType font that covers Unicode 2.0
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 RESTRICTED=	Redistribution not permitted; single user license only
 
 USES=		fonts zip

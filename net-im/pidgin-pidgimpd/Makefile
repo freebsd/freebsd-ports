@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PidgiMPD is a Pidgin plugin for monitoring/controlling MPD
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libpurple.so:net-im/libpurple \
 		libmpd.so:audio/libmpd

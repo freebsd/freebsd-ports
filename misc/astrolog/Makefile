@@ -19,6 +19,8 @@ COMMENT=	Astrology program for X11 and alpha-numeric terminals
 LICENSE=	GPLv2+
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 EPHE=		sweph_00.tar.gz:ephe sweph_06.tar.gz:ephe \
 		sweph_12.tar.gz:ephe sweph_18.tar.gz:ephe \

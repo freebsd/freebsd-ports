@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/src/COPYING
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libgadu.so:polish/libgadu
 

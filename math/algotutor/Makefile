@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tutorial for algorithms and data structures
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 BUILD_DEPENDS=	p5-Tk>=0:x11-toolkits/p5-Tk
 RUN_DEPENDS:=	${BUILD_DEPENDS}

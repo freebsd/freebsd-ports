@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The X Literate Biff - displays the from and subject from incoming mails
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		imake tar:Z
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt

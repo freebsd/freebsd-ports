@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Regexp-based text colorizer with ASCII/HTML output
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 CONFIGURE_ARGS=	--with-system-directory=${ETCDIR}
 GNU_CONFIGURE=	yes

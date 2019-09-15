@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small C program which is used to alter your mime-encoded mailpacks
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 PLIST_FILES=	bin/altermime
 PORTDOCS=	CHANGELOG LICENCE README

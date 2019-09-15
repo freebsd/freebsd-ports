@@ -11,6 +11,8 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Message digest wrapper utility
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 CONFLICTS?=	emboss-[0-9]* qmail-ldap2-*
 

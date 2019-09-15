@@ -10,6 +10,8 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Atlassian Plugin SDK
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 RUN_DEPENDS=	mvn:devel/maven-wrapper
 

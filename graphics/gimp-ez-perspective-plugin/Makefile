@@ -20,6 +20,8 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 LICENSE_DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gimp-2.0.pc:graphics/gimp-app \
 		${LOCALBASE}/libexec/gimp/2.2/python/gimpfu.py:graphics/py-gimp

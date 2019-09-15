@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create and use hyperlinks and simple formatting in plain text files
 
+DEPRECATED=	Depends on expiring ports
+EXPIRATION_DATE=	2019-10-16
+
 RUN_DEPENDS=	xml-parse.el${EMACS_PKGNAMESUFFIX}>0:textproc/xml-parse.el@${EMACS_FLAVOR} \
 		htmlize.el${EMACS_PKGNAMESUFFIX}>0:textproc/htmlize.el@${EMACS_FLAVOR}
 

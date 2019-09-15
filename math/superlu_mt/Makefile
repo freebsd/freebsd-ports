@@ -19,6 +19,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 BROKEN_aarch64=		fails to build: undefined reference to sbrk
 BROKEN_powerpc64=	fails to build: pstest runs away and consumes all memory
 BROKEN_sparc64=		fails to link

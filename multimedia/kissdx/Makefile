@@ -14,6 +14,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 BROKEN_armv6=		fails to compile: kissdx.c: function definition is not allowed here
 BROKEN_armv7=		fails to compile: kissdx.c: function definition is not allowed here
 

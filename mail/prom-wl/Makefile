@@ -13,6 +13,8 @@ COMMENT=	Procmail reader for Wanderlust on GNU Emacs
 LICENSE=	GPLv2+
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 # This port requires Wanderlust. But we can't decide which Wanderlust to
 # depends, there is NO RUN_DEPENDS mail/wanderlust-*.

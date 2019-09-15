@@ -13,6 +13,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 BUILD_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap \
 		p5-Crypt-SmbHash>=0:security/p5-Crypt-SmbHash \

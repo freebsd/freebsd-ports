@@ -13,6 +13,8 @@ COMMENT=	TAR archiver for GNUstep
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		gnustep
 USE_GNUSTEP=	back build

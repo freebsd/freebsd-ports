@@ -9,6 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/Ada cross-compiler, target: ${LABEL_TARGET}
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LABEL_TARGET=	FreeBSD/ARM64
 DROID_TARGET=	aarch64-aux-freebsd11.0

@@ -13,6 +13,8 @@ COMMENT=	GNU bash shell extended with visual two-panel file browser
 MAKE_JOBS_UNSAFE=	yes
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 BROKEN_aarch64=		Fails to link: missing sbrk
 
 USES=		tar:tgz

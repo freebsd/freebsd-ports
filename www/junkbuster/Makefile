@@ -14,6 +14,8 @@ COMMENT=	HTTP proxy server that eliminates ads
 LICENSE=	GPLv2+
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		dos2unix tar:tgz
 ALL_TARGET=	# yes, an empty target.

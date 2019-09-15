@@ -14,6 +14,8 @@ COMMENT=	EZWGL-based file manager for X Window System
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libEZ.so:graphics/EZWGL
 

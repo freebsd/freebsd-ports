@@ -14,6 +14,8 @@ COMMENT=	Perl script to allow easy creation of HTML from template files
 LICENSE=	GPLv2+
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	htmlpp

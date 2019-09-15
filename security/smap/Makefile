@@ -15,6 +15,8 @@ COMMENT=	SIP scanner and identifier
 LICENSE=	BSD4CLAUSE
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		gmake
 

@@ -14,6 +14,8 @@ COMMENT=	ParaType font collection for the languages of Russia
 LICENSE=	OFL11
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

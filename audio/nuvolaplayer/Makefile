@@ -11,6 +11,8 @@ COMMENT=	Cloud music integration for your desktop
 LICENSE=	BSD2CLAUSE
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libdioritegtk-0.2.so:x11-toolkits/diorite \
 		libjson-glib-1.0.so:devel/json-glib \

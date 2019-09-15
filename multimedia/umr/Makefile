@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Media Ripper
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 PLIST_FILES=	bin/${PORTNAME}
 FETCH_AFTER_ARGS=	--referer=http://www.oldunreal.com/mods.html

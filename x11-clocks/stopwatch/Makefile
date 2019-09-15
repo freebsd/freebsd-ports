@@ -14,6 +14,8 @@ COMMENT=	Stopwatch enables hand timing much like a physical stopwatch
 LICENSE=	PD
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.4
 USES=		tk:run

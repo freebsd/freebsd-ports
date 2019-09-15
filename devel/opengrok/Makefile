@@ -14,6 +14,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 RUN_DEPENDS=	exctags:devel/ctags
 

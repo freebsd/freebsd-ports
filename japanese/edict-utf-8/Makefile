@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese-English edict UTF-8 dictionaries
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 

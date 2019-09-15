@@ -13,6 +13,8 @@ COMMENT=	Scalable open source PostgreSQL-based database cluster
 LICENSE=	PostgreSQL
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 BUILD_DEPENDS=	bash:shells/bash
 

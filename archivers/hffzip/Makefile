@@ -14,6 +14,8 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

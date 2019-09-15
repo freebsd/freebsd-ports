@@ -10,6 +10,8 @@ MAINTAINER=	dk@farm.org
 COMMENT=	NNTP bulk transfer
 
 BROKEN=		No more public distfiles
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=	tar:Z
 PLIST_FILES=	sbin/${PORTNAME} man/man1/${PORTNAME}.1.gz

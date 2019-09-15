@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Double entry accounting system
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 RUN_DEPENDS:=	${BUILD_DEPENDS}

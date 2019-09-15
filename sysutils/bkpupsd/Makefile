@@ -10,5 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple UPS daemon for APC BK Pro(TM)
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 .include <bsd.port.mk>

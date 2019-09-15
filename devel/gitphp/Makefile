@@ -12,6 +12,8 @@ COMMENT=	Web based git repository browser written in PHP
 LICENSE=	GPLv2
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 USES=		gettext php:web tar:bzip2
 USE_PHP=	bz2 fileinfo mbstring memcache posix simplexml spl zlib

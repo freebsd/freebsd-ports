@@ -17,6 +17,8 @@ DEPRECATED=	obsolete technology
 EXPIRATION_DATE=	2019-09-21
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 

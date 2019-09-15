@@ -13,6 +13,8 @@ COMMENT=	Subtitle editor
 LICENSE=	GPLv3
 
 BROKEN=		unfetchable
+DEPRECATED=	Unfetchable, unmaintained
+EXPIRATION_DATE=	2019-10-16
 
 BUILD_DEPENDS=	iso-codes>0:misc/iso-codes
 LIB_DEPENDS=	libglademm-2.4.so:devel/libglademm24 \
