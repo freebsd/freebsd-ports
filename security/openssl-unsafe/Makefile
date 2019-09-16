@@ -26,6 +26,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	PeterMosmans
 GH_TAGNAME=	c9ba19c
 
+.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+BROKEN_i386=	ld: error: unknown argument: -Bforcearchive
+.endif
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	enable-camellia enable-cms enable-ec enable-ec2m \
