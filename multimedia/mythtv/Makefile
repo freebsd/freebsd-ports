@@ -15,6 +15,9 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
+.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+BROKEN_i386=	ld: error: can't create dynamic relocation R_386_32 against local symbol in readonly segment
+.endif
 
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
 		libmp3lame.so:audio/lame \
