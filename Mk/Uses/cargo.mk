@@ -133,6 +133,10 @@ CARGO_ENV+=	GETTEXT_BIN_DIR=${LOCALBASE}/bin \
 		GETTEXT_LIB_DIR=${LOCALBASE}/lib
 .endif
 
+.if ${CARGO_CRATES:Mjemalloc-sys-[0-9]*}
+BUILD_DEPENDS+=	gmake:devel/gmake
+.endif
+
 .for libc in ${CARGO_CRATES:Mlibc-[0-9]*}
 # FreeBSD 12.0 changed ABI: r318736 and r320043
 # https://github.com/rust-lang/libc/commit/78f93220d70e

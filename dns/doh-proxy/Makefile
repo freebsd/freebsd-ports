@@ -12,9 +12,6 @@ COMMENT=	DNS-over-HTTP server proxy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# jemalloc-sys-0.1.8 needs gmake
-BUILD_DEPENDS=	gmake:devel/gmake
-
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	jedisct1
