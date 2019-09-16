@@ -2,8 +2,7 @@ include/pugiconfig.hpp
 include/pugixml.hpp
 lib/cmake/pugixml/pugixml-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/pugixml/pugixml-config.cmake
-lib/libpugixml.a
 lib/libpugixml.so
 lib/libpugixml.so.1
-lib/libpugixml.so.1.9
+lib/libpugixml.so.%%SOVERSION%%
 libdata/pkgconfig/pugixml.pc
