@@ -52,7 +52,7 @@
 #
 #	This variable must not be set by individual ports!
 #
-# MAINTAINER: dg@syrec.org
+# MAINTAINER: dmgk@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GO_MK)
 _INCLUDE_USES_GO_MK=	yes

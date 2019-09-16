@@ -13,7 +13,7 @@ PATCHFILES=	3c060f4d33530866496515b45fcfaa3fd2da5f32.patch:-p1 \
 		0197c982f6c961e8a44ec9895fcc33c1fe4c3ac2.patch:-p1 \
 		f397bb25e339dc4cf1e9bf2467336ba6fd48fd9f.patch:-p1
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Google Drive CLI Client
 
 LICENSE=	MIT

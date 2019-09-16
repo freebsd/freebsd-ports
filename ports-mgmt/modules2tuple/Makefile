@@ -5,7 +5,7 @@ PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Generate GH_TUPLE from modules.txt
 
 LICENSE=	BSD2CLAUSE

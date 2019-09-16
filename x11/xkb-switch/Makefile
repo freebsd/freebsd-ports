@@ -9,7 +9,7 @@ CATEGORIES=	x11
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	2075a8cdd5456c906fcd49278c1003dcb6b9f880.patch:-p1
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Switch your X keyboard layouts from the command line
 
 LICENSE=	GPLv3

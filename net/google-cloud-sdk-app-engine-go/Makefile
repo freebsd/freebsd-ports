@@ -6,7 +6,7 @@ CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/components/
 DISTNAME=	${PORTNAME}-linux-x86_64-${DISTVERSION:S/^g//}
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Google Cloud SDK App Engine Go Extensions
 
 LICENSE=	APACHE20 BSD3CLAUSE
