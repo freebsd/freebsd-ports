@@ -1,0 +1,17 @@
+TIMESTAMP = 1568574348
+SHA256 (openrdap-rdap-v0.9.0-e2ea151_GH0.tar.gz) = 087f5ec154db813948e9e546ef85f15bd0d49350c708af3bbde2d9911dbc22bd
+SIZE (openrdap-rdap-v0.9.0-e2ea151_GH0.tar.gz) = 78024
+SHA256 (alecthomas-kingpin-v2.2.6_GH0.tar.gz) = 4624eae43489de8a71ea60efaf6744c581b6bd62909f7514c484c1ea0efaba5a
+SIZE (alecthomas-kingpin-v2.2.6_GH0.tar.gz) = 44383
+SHA256 (alecthomas-template-fb15b899a751_GH0.tar.gz) = 2e2a44375eca48ce941182504b5d13aa98182b9a3f64ace33bfda52208bd0f5e
+SIZE (alecthomas-template-fb15b899a751_GH0.tar.gz) = 55339
+SHA256 (alecthomas-units-c3de453c63f4_GH0.tar.gz) = b2eb77de46e677edb150bb4bf81d213416a477525980e315264cbd70b22d0ece
+SIZE (alecthomas-units-c3de453c63f4_GH0.tar.gz) = 3485
+SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
+SIZE (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 42152
+SHA256 (golang-crypto-4def268fd1a4_GH0.tar.gz) = eaf2ba9df95911f41a340478d1fbb540d7bc21939e4688273995dabf58e8c7b0
+SIZE (golang-crypto-4def268fd1a4_GH0.tar.gz) = 1693117
+SHA256 (jarcoal-httpmock-v1.0.4_GH0.tar.gz) = a1d804455a31dc91db474224ce0190b63f405c86a5335c9f3801b01a90bd23f4
+SIZE (jarcoal-httpmock-v1.0.4_GH0.tar.gz) = 20389
+SHA256 (mitchellh-go-homedir-v1.1.0_GH0.tar.gz) = 646671c73a84a8dfb4a5a76b80c7b63549ffefa906524d45077301bc7da76600
+SIZE (mitchellh-go-homedir-v1.1.0_GH0.tar.gz) = 3362
