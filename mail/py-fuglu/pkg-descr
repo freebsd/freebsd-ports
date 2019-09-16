@@ -1,5 +1,5 @@
-A mail scanning daemon for Postfix written in Python. It acts as the 
-glue application between the MTA and spam checkers and antivirus 
+A mail scanning daemon for Postfix written in Python. It acts as the
+glue application between the MTA and spam checkers and antivirus
 software and focuses on being solid, easy to manage, debug and monitor.
 
-WWW: http://fuglu.org/
+WWW: https://fuglu.org/
