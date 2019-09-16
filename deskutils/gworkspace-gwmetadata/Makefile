@@ -13,6 +13,10 @@ COMMENT=	GWMetadata for GNUstep workspace manager
 
 LICENSE=	GPLv2
 
+.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+BROKEN=		ld: error: /usr/local/GNUstep/System/Library/Libraries/libFSNode.so: undefined reference to NSApplicationFileType
+.endif
+
 USES=		gnustep sqlite
 USE_GNUSTEP=	back build
 GNU_CONFIGURE=	yes
