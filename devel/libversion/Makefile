@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	repology
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_LDCONFIG=	yes
 TEST_TARGET=	test
 PORTDOCS=	*
