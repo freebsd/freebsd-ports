@@ -2,8 +2,7 @@
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	21.3.8.6
-PORTREVISION=	1
+DISTVERSION=	21.3.8.7
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
 PKGNAMESUFFIX=	-wx
@@ -17,7 +16,7 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	erlang>=21.3.8:lang/erlang
 RUN_DEPENDS=	erlang>=21.3.8:lang/erlang
 
-USES=		autoreconf:build gl gmake perl5
+USES=		autoreconf:build gl gmake perl5 xorg
 USE_GITHUB=	yes
 GH_PROJECT=	otp
 USE_GL=		gl glu
