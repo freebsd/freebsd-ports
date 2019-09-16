@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.57.1
+DISTVERSION=	0.58.2
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -27,12 +27,13 @@ GH_TUPLE=	\
 		armon:go-radix:v1.0.0:armon_go_radix/vendor/github.com/armon/go-radix \
 		aws:aws-sdk-go:v1.19.40:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		bep:debounce:v1.2.0:bep_debounce/vendor/github.com/bep/debounce \
-		bep:gitmap:v1.1.0:bep_gitmap/vendor/github.com/bep/gitmap \
+		bep:gitmap:v1.1.1:bep_gitmap/vendor/github.com/bep/gitmap \
 		bep:go-tocss:v0.6.0:bep_go_tocss/vendor/github.com/bep/go-tocss \
+		bep:tmc:v0.5.0:bep_tmc/vendor/github.com/bep/tmc \
 		census-instrumentation:opencensus-go:v0.22.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cpuguy83:go-md2man:v1.0.10:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
-		disintegration:imaging:v1.6.0:disintegration_imaging/vendor/github.com/disintegration/imaging \
+		disintegration:gift:v1.2.1:disintegration_gift/vendor/github.com/disintegration/gift \
 		dlclark:regexp2:v1.1.6:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		eknkc:amber:cdade1c07385:eknkc_amber/vendor/github.com/eknkc/amber \
@@ -43,7 +44,6 @@ GH_TUPLE=	\
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		gohugoio:testmodBuilder:c56af20f2e95:gohugoio_testmodbuilder/vendor/github.com/gohugoio/testmodBuilder/mods \
 		golang:appengine:v1.6.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:d864b10871cd:golang_crypto/vendor/golang.org/x/crypto \
 		golang:image:f03afa92d3ff:golang_image/vendor/golang.org/x/image \
 		golang:net:1492cefac77f:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:aaccbc9213b0:golang_oauth2/vendor/golang.org/x/oauth2 \
@@ -53,7 +53,7 @@ GH_TUPLE=	\
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:a985d3407aa7:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cloud:v0.15.0:google_go_cloud/vendor/gocloud.dev \
-		google:go-cmp:v0.3.0:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-cmp:v0.3.1:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:c2c4e71fbf69:google_go_genproto/vendor/google.golang.org/genproto \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		google:wire:v0.2.2:google_wire/vendor/github.com/google/wire \
@@ -80,12 +80,13 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		muesli:smartcrop:f6ebaa786a12:muesli_smartcrop/vendor/github.com/muesli/smartcrop \
 		nicksnyder:go-i18n:v1.10.0:nicksnyder_go_i18n/vendor/github.com/nicksnyder/go-i18n \
-		niklasfasching:go-org:v0.1.2:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
+		niklasfasching:go-org:v0.1.4:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
 		olekukonko:tablewriter:d4647c9c7a84:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pelletier:go-toml:v1.4.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
 		rogpeppe:go-internal:v1.3.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		russross:blackfriday:a477dd164691:russross_blackfriday/vendor/github.com/russross/blackfriday \
+		rwcarlsen:goexif:9e8deecbddbd:rwcarlsen_goexif/vendor/github.com/rwcarlsen/goexif \
 		sanity-io:litter:v1.1.0:sanity_io_litter/vendor/github.com/sanity-io/litter \
 		spf13:afero:v1.2.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
@@ -106,18 +107,16 @@ GO_BUILDFLAGS=	-ldflags="\
 		${BUILD_TAGS}
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
-COMMIT_ID=	58c56e9ded2e4b7f0c9ae7e02f89f3a1dcb0d3a7
+COMMIT_ID=	253e5fdc699fe915305c3f685843dcd45f05b3c9
 
 OPTIONS_DEFINE=		MANPAGES EXTENDED
+OPTIONS_DEFAULT=	MANPAGES EXTENDED
+OPTIONS_SUB=		yes
 
 EXTENDED_DESC=		Enable SCSS/SASS support
 
-OPTIONS_DEFAULT=	MANPAGES
-
 EXTENDED_VARS=		CGO_ENABLED=1 BUILD_TAGS="-tags extended"
 EXTENDED_VARS_OFF=	CGO_ENABLED=0
-
-OPTIONS_SUB=		yes
 
 PORTMANS=	hugo-config.1 hugo-convert-toJSON.1 hugo-convert-toTOML.1 \
 		hugo-convert-toYAML.1 hugo-convert.1 hugo-env.1 \
