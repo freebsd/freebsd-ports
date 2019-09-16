@@ -13,6 +13,10 @@ COMMENT=	Toolkit to explore video and human-computer interaction
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+BROKEN=		ld: error: /wrkdirs/usr/ports/x11-toolkits/nucleo/work/nucleo-0.7.6/nucleo/.libs/libNucleo.so: undefined reference to XCloseDisplay
+.endif
+
 LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
