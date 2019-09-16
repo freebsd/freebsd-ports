@@ -209,6 +209,7 @@
     SUBDIR += rbldnsd
     SUBDIR += rbllookup
     SUBDIR += rbllookup-ng
+    SUBDIR += rdap
     SUBDIR += renewck
     SUBDIR += rpsl2acl
     SUBDIR += rubygem-dnsruby
