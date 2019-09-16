@@ -17,7 +17,7 @@ SRCS+=	udp.cpp
 SRCS+=	util.cpp
 
 .PATH: ${EXTRADIR}
-SRCS+=	usb_freebsd.cpp
+SRCS+=	usb_libusb.cpp
 
 # required by fastboot, diagnose_usb and libziparchive
 .PATH: ${.CURDIR}/../base
