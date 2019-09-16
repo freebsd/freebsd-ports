@@ -4,7 +4,7 @@
 PORTNAME=	uemacs
 PORTVERSION=	4.0
 CATEGORIES=	editors
-MASTER_SITES=	http://dl.ozzmosis.com/uemacs/
+MASTER_SITES=	http://debian.physik.uni-essen.de/misc/memacs/disk2/
 DISTNAME=	ue400dev
 
 MAINTAINER=	mail@ozzmosis.com
