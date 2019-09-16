@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitflow
-PORTVERSION=	1.12.1
-PORTREVISION=	1
+PORTVERSION=	1.12.3
 CATEGORIES=	devel
 
 MAINTAINER=	nbari@tequila.io
@@ -15,16 +14,15 @@ LICENSE_COMB=	multi
 RUN_DEPENDS=	${LOCALBASE}/bin/getopt:misc/getopt
 
 USES=		gmake
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	petervanderdoes
 GH_PROJECT=	${PORTNAME}-avh
 
-OPTIONS_DEFINE=	EXAMPLES
-
 NO_BUILD=	yes
 NO_ARCH=	yes
 MAKE_ARGS=	prefix=${STAGEDIR}${PREFIX}
+
+OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
 	${MV} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
