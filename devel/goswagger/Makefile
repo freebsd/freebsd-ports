@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.20.1
 CATEGORIES=	devel
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Swagger 2.0 implementation for Go
 
 LICENSE=	APACHE20

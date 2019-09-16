@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
 CATEGORIES=	security
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Two-factor authentication on the command line
 
 LICENSE=	BSD3CLAUSE

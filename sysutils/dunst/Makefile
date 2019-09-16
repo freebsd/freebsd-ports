@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
 CATEGORIES=	sysutils
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Lightweight notification daemon
 
 LICENSE=	BSD3CLAUSE

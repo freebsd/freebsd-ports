@@ -6,7 +6,7 @@ DISTVERSION=	4.65
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	GNU Linear Programming Kit
 
 LICENSE=	GPLv3+

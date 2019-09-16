@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.2
 CATEGORIES=	editors
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Small and easy to use console text editor
 
 LICENSE=	GPLv2

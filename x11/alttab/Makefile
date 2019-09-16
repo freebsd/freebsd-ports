@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.0
 CATEGORIES=	x11
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Task switcher for minimalistic window managers
 
 LICENSE=	GPLv3

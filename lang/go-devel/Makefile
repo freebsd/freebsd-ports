@@ -6,7 +6,7 @@ PORTVERSION=	g20190903
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Go programming language (development version)
 
 LICENSE=	BSD3CLAUSE

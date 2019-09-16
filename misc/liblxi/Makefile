@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.13
 CATEGORIES=	misc
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Library for communicating with LXI compatible instruments
 
 LICENSE=	BSD3CLAUSE

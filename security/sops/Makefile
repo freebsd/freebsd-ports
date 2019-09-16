@@ -4,7 +4,7 @@ PORTNAME=	sops
 DISTVERSION=	3.3.1
 CATEGORIES=	security editors
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Editor of encrypted files that supports YAML, JSON and BINARY formats
 
 LICENSE=	MPL20

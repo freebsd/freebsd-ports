@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.0
 CATEGORIES=	devel
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Simple and easy way to embed static files into Go binaries
 
 LICENSE=	MIT

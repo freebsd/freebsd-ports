@@ -6,7 +6,7 @@ DISTVERSION=	0.3.2
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	dg@syrec.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Terminal interface for viewing git repositories
 
 LICENSE=	GPLv3
