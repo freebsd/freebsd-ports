@@ -1,0 +1,3 @@
+String utilities and common hash functions for ngx_lua and LuaJIT
+
+WWW: https://github.com/openresty/lua-resty-string
