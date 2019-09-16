@@ -466,6 +466,7 @@ include/wine/windows/inspectable.h
 include/wine/windows/inspectable.idl
 include/wine/windows/interactioncontext.h
 include/wine/windows/intshcut.h
+include/wine/windows/ip2string.h
 include/wine/windows/ipexport.h
 include/wine/windows/iphlpapi.h
 include/wine/windows/ipifcons.h
