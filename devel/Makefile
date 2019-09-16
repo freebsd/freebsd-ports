@@ -6444,6 +6444,7 @@
     SUBDIR += tclxml
     SUBDIR += tdl
     SUBDIR += template-glib
+    SUBDIR += termbox
     SUBDIR += terminality
     SUBDIR += tevent
     SUBDIR += tevent1
