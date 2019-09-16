@@ -108,6 +108,14 @@ HTTP_GEOIP2_CFLAGS=		-I${LOCALBASE}/include
 HTTP_GEOIP2_VARS=		DSO_EXTMODS+=geoip2
 HTTP_GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
+HTTP_IP2LOCATION_GH_TUPLE=	ip2location:ip2location-nginx:d47d248:ip2location
+HTTP_IP2LOCATION_LIB_DEPENDS=	libIP2Location.so:net/ip2location
+HTTP_IP2LOCATION_CONFIGURE_ON=	--add-module=${WRKSRC_ip2location}
+
+HTTP_IP2PROXY_GH_TUPLE=		ip2location:ip2proxy-nginx:d6fd05a:ip2proxy
+HTTP_IP2PROXY_LIB_DEPENDS=	libIP2Proxy.so:net/ip2proxy
+HTTP_IP2PROXY_CONFIGURE_ON=	--add-module=${WRKSRC_ip2proxy}
+
 HTTP_JSON_STATUS_GH_TUPLE=	nginx-modules:ngx_http_json_status_module:1d2f303:json_status
 HTTP_JSON_STATUS_CONFIGURE_ON=	--add-module=${WRKSRC_json_status}
 
@@ -138,6 +146,8 @@ HTTP_REDIS_VARS=		DSO_EXTDIRS+=ngx_http_redis-0.3.9
 HTTP_RESPONSE_MASTER_SITES=	http://catap.ru/downloads/nginx/:response
 HTTP_RESPONSE_DISTFILES=	ngx_http_response-0.3.tar.gz:response
 HTTP_RESPONSE_CONFIGURE_ON=	--add-module=${WRKDIR}/ngx_http_response-0.3
+
+HTTP_SLICE_AHEAD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_http_modules_ngx_http_slice_read_ahead.c
 
 HTTP_SUBS_FILTER_GH_TUPLE=	yaoweibin:ngx_http_substitutions_filter_module:v0.6.4:subs_filter
 HTTP_SUBS_FILTER_CONFIGURE_ON=	--add-module=${WRKSRC_subs_filter}
@@ -190,8 +200,8 @@ LET_GH_TUPLE=		arut:nginx-let-module:v0.0.4:let
 LET_CONFIGURE_ON=	--add-module=${WRKSRC_let}
 
 LUA_IMPLIES=		DEVEL_KIT
-LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
-LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.0 \
+LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
 LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.15:lua
 LUA_VARS=		DSO_EXTMODS+=lua
@@ -223,7 +233,7 @@ NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 NJS_GH_TUPLE=		nginx:njs:0.3.5:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
-PASSENGER_NGINX_VER=	6.0.2
+PASSENGER_NGINX_VER=	6.0.3
 PASSENGER_CATEGORIES=	ruby
 PASSENGER_USE=		ruby=yes
 PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake
@@ -288,3 +298,6 @@ VTS_CONFIGURE_ON=	--add-module=${WRKSRC_vts}
 
 XSS_GH_TUPLE=		openresty:xss-nginx-module:v0.05:xss
 XSS_CONFIGURE_ON=	--add-module=${WRKSRC_xss}
+
+WEBSOCKIFY_GH_TUPLE=	tg123:websockify-nginx-module:e82d254:websockify
+WEBSOCKIFY_CONFIGURE_ON=	--add-module=${WRKSRC_websockify}
