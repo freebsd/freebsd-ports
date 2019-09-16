@@ -3,20 +3,18 @@
 
 PORTNAME=	caf
 PORTVERSION=	0.15.3
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	devel
 
-MAINTAINER=	vallentin@icir.org
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	C++ actor framework
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CXXFLAGS+=	-std=c++11 -Wextra -Wall -pedantic
-LDFLAGS+=	-pthread
 USES=		cmake compiler:c++11-lang
 USE_LDCONFIG=	yes
-TEST_TARGET=	test
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	actor-framework
 GH_PROJECT=	${GH_ACCOUNT}
@@ -35,6 +33,11 @@ LOG_LEVEL_WARN=	Use log level WARN for console output
 LOG_LEVEL_INFO=	Use log level INFO for console output
 LOG_LEVEL_DEBUG=	Use log level DEBUG for console output
 LOG_LEVEL_TRACE=	Use log level TRACE for console output
+
+TEST_TARGET=	test
+
+CXXFLAGS+=	-std=c++11 -Wextra -Wall -pedantic
+LDFLAGS+=	-pthread
 
 # Until we cannot automatically disentangle examples from other binaries, we do
 # not support an EXAMPLES option. We also disable a few components that are
