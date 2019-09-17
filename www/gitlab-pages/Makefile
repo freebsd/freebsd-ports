@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-pages
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	www
 
 MAINTAINER=	swills@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		go
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-pages/tags
-GL_COMMIT=	1fa5c7b079831a73b55bb874b84a0b53fd4c0f23
+GL_COMMIT=	520398c7154a50f7768ee52da71afd52efff85b1
 
 PLIST_FILES=	bin/gitlab-pages
 
