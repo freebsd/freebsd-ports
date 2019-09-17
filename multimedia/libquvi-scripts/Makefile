@@ -11,7 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Embedded lua scripts for libquvi and utility scripts
 
 LICENSE=	LGPL21+
-LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING
 
 PORTSCOUT=	limit:^0\.4\.
 

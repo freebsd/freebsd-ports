@@ -11,8 +11,8 @@ COMMENT=	GNU gettext runtime libraries and programs
 
 LICENSE=	LGPL21+ GPLv3+
 LICENSE_COMB=	multi
-LICENSE_FILE_LGPL21=	${WRKSRC}/intl/COPYING.LIB
-LICENSE_FILE_GPLv3=	${WRKSRC}/../COPYING
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/intl/COPYING.LIB
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/../COPYING
 
 .include "${.CURDIR}/../gettext/Makefile.common"
 

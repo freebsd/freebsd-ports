@@ -12,7 +12,7 @@ MAINTAINER=	bar@FreeBSD.org
 COMMENT=	All-platform eMule p2p client
 
 LICENSE=	GPLv2+
-LICENSE_FILE_GPLv2=${WRKSRC}/docs/COPYING
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/docs/COPYING
 
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 

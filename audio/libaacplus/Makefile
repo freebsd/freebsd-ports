@@ -18,7 +18,6 @@ LICENSE=	libaacplus
 LICENSE_NAME=	3GPP
 LICENSE_TEXT=	${RESTRICTED}
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
-LICENSE_DISTFILES_LGPL=	${DISTNAME}${EXTRACT_SUFX}
 LICENSE_DISTFILES_3GPP=	${SRC26410}
 
 RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies

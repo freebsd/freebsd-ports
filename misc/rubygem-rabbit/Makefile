@@ -11,7 +11,7 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	RD-document-based presentation application
 
 LICENSE=	GPLv2+
-LICENSE_FILE_GPLv2=	${WRKSRC}/GPL
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/GPL
 
 RUN_DEPENDS=	rubygem-coderay>=1.0.0:textproc/rubygem-coderay \
 		rubygem-faraday>0:www/rubygem-faraday \

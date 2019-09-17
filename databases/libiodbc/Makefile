@@ -11,7 +11,7 @@ COMMENT=	ODBC 3.x driver manager, for universal data source access
 
 LICENSE=		BSD3CLAUSE LGPL20
 LICENSE_COMB=		dual
-LICENSE_FILE_BSD=	${WRKSRC}/LICENSE.BSD
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE.BSD
 LICENSE_FILE_LGPL20=	${WRKSRC}/LICENSE.LGPL
 
 USES=		autoreconf libtool pathfix pkgconfig

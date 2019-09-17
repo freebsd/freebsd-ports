@@ -12,7 +12,7 @@ MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	C++ Sequence Analysis Library
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE_BSD=${WRKSRC}/seqan/LICENSE
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/seqan/LICENSE
 
 USES=		zip
 NO_BUILD=	yes
