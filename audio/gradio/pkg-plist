@@ -1,5 +1,5 @@
 bin/gradio
-share/appdata/de.haeckerfelix.gradio.appdata.xml
+share/metainfo/de.haeckerfelix.gradio.appdata.xml
 share/applications/de.haeckerfelix.gradio.desktop
 share/dbus-1/services/de.haeckerfelix.gradio.service
 share/gnome-shell/search-providers/de.haeckerfelix.gradio.search-provider.ini
