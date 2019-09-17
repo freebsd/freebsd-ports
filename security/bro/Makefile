@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bro
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 CATEGORIES=	security
 MASTER_SITES=	https://www.zeek.org/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
