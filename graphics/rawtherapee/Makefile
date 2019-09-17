@@ -30,12 +30,11 @@ USES=		cmake desktop-file-utils compiler:gcc-c++11-lib gnome \
 		jpeg localbase:ldflags pkgconfig tar:xz
 
 DOS2UNIX_REGEX=	.*\.(cc|h)
-LDFLAGS+=	-Wl,--as-needed # fontconfig, freetype, gettext, libX11
 USE_GNOME=	gtkmm30 librsvg2
 USE_GCC=	9+
 USE_BINUTILS=	yes
 
-_LTO_FLAGS=	-flto=${_MAKE_JOBS_NUMBER} -fuse-linker-plugin
+_LTO_FLAGS=	-flto=${MAKE_JOBS_NUMBER} -fuse-linker-plugin -fno-fat-lto-objects
 _AR=		${CC:S/gcc/gcc-ar/}
 _RANLIB=	${CC:S/gcc/gcc-ranlib/}
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${_LTO_FLAGS} ${_OPT_FLAGS}
@@ -62,6 +61,11 @@ INSTALLS_ICONS=	yes
 # and as of GCC 8.3, it appears that among FreeBSD's supported architectures,
 # only the three listed above support this GCC option.
 CMAKE_ARGS+=	-DPROC_TARGET_NUMBER="1"
+.endif
+
+.if "${WITH_CCACHE_BUILD}" == "yes" && !defined(NO_CCACHE) 
+CMAKE_ARGS+=	-DCMAKE_C_COMPILER_LAUNCHER=${LOCALBASE}/bin/ccache \
+		-DCMAKE_CXX_COMPILER_LAUNCHER=${LOCALBASE}/bin/ccache
 .endif
 
 RTDIR=		${PREFIX}/libdata/${PORTNAME}
