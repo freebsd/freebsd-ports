@@ -13,6 +13,10 @@ COMMENT=	GTK Widget to Render MathML Documents
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+BROKEN=		ld: error: ../src/backend/ps/.libs/libmathview_backend_ps.so: undefined reference to T1_AddToFileSearchPath
+.endif
+
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libt1.so:devel/t1lib \
