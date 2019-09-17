@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imapfilter
-PORTVERSION=	2.6.12
+PORTVERSION=	2.6.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -10,6 +10,8 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	IMAP mail filtering utility
 
 LICENSE=	MIT
+
+BROKEN_FreeBSD_11=Requires openssl111 to build
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
