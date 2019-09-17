@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	12.2.4
+PORTVERSION=	12.2.5
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -18,7 +18,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	gitlab-shell>=9.3.0:devel/gitlab-shell \
 	gitlab-workhorse>=8.8.1:www/gitlab-workhorse \
 	gitaly>=1.59.2:devel/gitaly \
-	gitlab-pages>=1.7.1:www/gitlab-pages \
+	gitlab-pages>=1.7.2:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
 	yarn>=1.10.0:www/yarn \
 	rubygem-rails52>=5.2.3:www/rubygem-rails52 \
@@ -206,7 +206,7 @@ MY_DEPENDS=	git>=2.21.0:devel/git \
 	rubygem-flipper-active_record013>=0.13.0<0.14.0:databases/rubygem-flipper-active_record013 \
 	rubygem-flipper-active_support_cache_store013>=0.13.0<0.14.0:devel/rubygem-flipper-active_support_cache_store013 \
 	rubygem-lograge-rails52>=0.5<1.0:www/rubygem-lograge-rails52 \
-	rubygem-grape_logging181>=1.7<2.0:devel/rubygem-grape_logging181
+	rubygem-grape_logging>=1.7<2.0:devel/rubygem-grape_logging
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}
@@ -224,8 +224,9 @@ USE_RUBY=	yes
 USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
-# Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	fcd107681ab480f87d5328367d25734ef5b81046
+GL_PROJECT=	gitlab-foss
+# Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
+GL_COMMIT=	09f8edbc29a2e489e7dfefacdcb589affc5fae0f
 
 USERS=	git
 GROUPS=	git
