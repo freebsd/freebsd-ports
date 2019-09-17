@@ -18,3 +18,4 @@ libexec/softether/vpnserver/vpnserver
 @dir libexec/softether/vpnserver
 @dir %%SE_DBDIR%%
 @dir %%SE_LOGDIR%%
+@dir %%SE_PIDDIR%%
