@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pidgin-icyque
-DISTVERSION=	g20190421
-PORTREVISION=	1
+DISTVERSION=	g20190523
 CATEGORIES=	net-im
 
 MAINTAINER=	eugen@FreeBSD.org
@@ -24,7 +23,7 @@ PLIST_FILES=	lib/purple-2/libicyque.so
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb
 GH_PROJECT=	icyque
-GH_TAGNAME=	513fc16
+GH_TAGNAME=	a10e28e
 
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
