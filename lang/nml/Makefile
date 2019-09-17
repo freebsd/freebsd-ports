@@ -15,6 +15,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-0.92
 
 ONLY_FOR_ARCHS=	i386
 MAKE_JOBS_UNSAFE=	yes
+.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+BROKEN=		ld: error: relocation R_386_PC32 cannot be used against symbol BnnAdd
+.endif
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix ${PREFIX}
