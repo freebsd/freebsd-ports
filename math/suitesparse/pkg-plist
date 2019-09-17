@@ -83,7 +83,7 @@ lib/libccolamd.so.2
 lib/libccolamd.so.2.9.6
 lib/libcholmod.so
 lib/libcholmod.so.3
-lib/libcholmod.so.3.0.12
+lib/libcholmod.so.3.0.13
 lib/libcolamd.so
 lib/libcolamd.so.2
 lib/libcolamd.so.2.9.6
@@ -101,10 +101,10 @@ lib/librbio.so.2
 lib/librbio.so.2.2.6
 lib/libspqr.so
 lib/libspqr.so.2
-lib/libspqr.so.2.0.8
+lib/libspqr.so.2.0.9
 lib/libsuitesparseconfig.so
 lib/libsuitesparseconfig.so.5
-lib/libsuitesparseconfig.so.5.2.0
+lib/libsuitesparseconfig.so.5.4.0
 lib/libumfpack.so
 lib/libumfpack.so.5
-lib/libumfpack.so.5.7.6
+lib/libumfpack.so.5.7.8

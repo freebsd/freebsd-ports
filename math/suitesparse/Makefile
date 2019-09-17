@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	suitesparse
-DISTVERSION=	5.2.0
-PORTREVISION=	4
+DISTVERSION=	5.4.0
 CATEGORIES=	math
-MASTER_SITES=	http://faculty.cse.tamu.edu/davis/SuiteSparse/
+MASTER_SITES=	http://faculty.cse.tamu.edu/davis/SuiteSparse/	\
+		https://mirror.sobukus.de/files/src/suitesparse/
 DISTNAME=	SuiteSparse-${PORTVERSION}
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libmetis.so:math/metis \
 		liblapack.so:math/lapack
 
-USES=		compiler:openmp fortran gmake
+USES=		cmake:insource compiler:openmp fortran gmake
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/SuiteSparse
@@ -47,9 +47,9 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${WRKSRC}/lib # prevent linking with shared libs from the preinstalled older versions
 MAKE_ARGS+=	MY_METIS_LIB="-L${LOCALBASE}/lib -lmetis $(LDFLAGS)"
 
-post-patch:
-	@${RM} -r ${WRKSRC}/metis-5.1.0
-	@${FIND} -X ${WRKSRC} -type f -name 'Makefile' -or -name '*.mk' | ${XARGS} \
+pre-configure:
+	${RM} -r ${WRKSRC}/metis-5.1.0
+	${FIND} -X ${WRKSRC} -type f -name 'Makefile' -or -name '*.mk' | ${XARGS} \
 		${REINPLACE_CMD} \
 			-e '\|^AR =|s|ar|${AR}|' \
 			-e '\|^ *BLAS =|s|=.*|= ${LDFLAGS} ${BLASLIB}|' \
@@ -67,19 +67,22 @@ post-patch:
 			-e '\|^SPQR_CONFIG =|s|=.*|= ${CHOLMOD_CONFIG}|' \
 			-e 's|# MAKE = gmake|MAKE = gmake|g' \
 			-e 's|/usr/local|${LOCALBASE}|g'
-	@${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
-	@${FIND} -X ${WRKSRC_SHARED} -type f -name 'Makefile' -or -name '*.mk' | ${XARGS} \
+	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
+	${FIND} -X ${WRKSRC_SHARED} -type f -name 'Makefile' -or -name '*.mk' | ${XARGS} \
 		${REINPLACE_CMD} -e 's|$$(CFLAGS)|$$(CFLAGS) $$(PICFLAG)|g'
 
+do-configure:
+	@${DO_NADA}
+
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PICFLAG= \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PICFLAG= \
 		LD_LIBRARY_PATH=${WRKDIR}/SuiteSparse/lib ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS}
-	@cd ${WRKSRC_SHARED} && ${SETENV} ${MAKE_ENV} PICFLAG=${PICFLAG} \
+	cd ${WRKSRC_SHARED} && ${SETENV} ${MAKE_ENV} PICFLAG=${PICFLAG} \
 		LD_LIBRARY_PATH=${WRKDIR}/SuiteSparse/lib ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/suitesparse
-	@cd ${STAGEDIR}${PREFIX}/include && ${LN} -s suitesparse ufsparse
+	cd ${STAGEDIR}${PREFIX}/include && ${LN} -s suitesparse ufsparse
 .for d in AMD BTF CAMD CCOLAMD CHOLMOD COLAMD CSparse CXSparse KLU SPQR UMFPACK # CSparse: shared lib bot built
 	${INSTALL_DATA} ${WRKSRC}/${d}/Include/*.h ${STAGEDIR}${PREFIX}/include/suitesparse
 .endfor
