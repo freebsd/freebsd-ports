@@ -1,0 +1,4 @@
+This port contains the code for the TPM (Trusted Platform Module) 2.0 tools
+based on tpm2-tss.
+
+WWW: https://github.com/tpm2-software/tpm2-tools
