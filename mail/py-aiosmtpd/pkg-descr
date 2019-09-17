@@ -1,5 +1,5 @@
-This is a server for SMTP and related protocols, similar in utility to the 
-standard library's smtpd.py module, but rewritten to be based on asyncio for 
+This is a server for SMTP and related protocols, similar in utility to the
+standard library's smtpd.py module, but rewritten to be based on asyncio for
 Python 3.
 
-WWW: http://aiosmtpd.readthedocs.io
+WWW: https://aiosmtpd.readthedocs.io/
