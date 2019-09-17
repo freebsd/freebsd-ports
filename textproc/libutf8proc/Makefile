@@ -13,6 +13,9 @@ COMMENT=	UTF8 Processing library
 
 LICENSE=	MIT
 
+DEPRECATED=	No longer needed for www/netsurf
+EXPIRATION_DATE=2019-10-31
+
 BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem
 
 USES=		gmake
