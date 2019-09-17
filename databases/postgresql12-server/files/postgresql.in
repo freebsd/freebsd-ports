@@ -34,7 +34,7 @@ load_rc_config postgresql
 postgresql_enable=${postgresql_enable:-"NO"}
 postgresql_flags=${postgresql_flags:-"-w -s -m fast"}
 postgresql_user=${postgresql_user:-"%%PG_USER%%"}
-eval postgresql_data=${postgresql_data:-"~${postgresql_user}/data11"}
+eval postgresql_data=${postgresql_data:-"~${postgresql_user}/data12"}
 postgresql_class=${postgresql_class:-"default"}
 postgresql_initdb_flags=${postgresql_initdb_flags:-"--encoding=utf-8 --lc-collate=C"}
 
