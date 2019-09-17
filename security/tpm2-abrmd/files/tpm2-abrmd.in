@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: tpm2_abrmd
+# REQUIRE: DAEMON %%DBUS_DAEMON%%
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# tpm2_abrmd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=tpm2_abrmd
+desc=TPM2 Access Broker & Resource Management Daemon
+rcvar=tpm2_abrmd_enable
+load_rc_config ${name}
+
+: ${tpm2_abrmd_enable:=NO}
+
+command=%%PREFIX%%/sbin/tpm2-abrmd
+tpm2_abrmd_user=_tss
+
+run_rc_command "$1"
