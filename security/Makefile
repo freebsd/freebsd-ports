@@ -1281,6 +1281,7 @@
     SUBDIR += tor-devel
     SUBDIR += totp-cli
     SUBDIR += tpm-tools
+    SUBDIR += tpm2-tss
     SUBDIR += trezord
     SUBDIR += trinokiller
     SUBDIR += tripwire
