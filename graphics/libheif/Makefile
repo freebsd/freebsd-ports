@@ -37,7 +37,7 @@ THREADS_CONFIGURE_OFF=	--disable-multithreading
 .if ${PORT_OPTIONS:MEXAMPLES}
 LICENSE+=		GPLv3+
 LICENSE_COMB=		multi
-LICENSE_FILE_GPLv3+=	${WRKSRC}/examples/COPYING
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/examples/COPYING
 USES+=			shared-mime-info
 .endif
 
