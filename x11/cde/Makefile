@@ -11,6 +11,9 @@ COMMENT=	Common Desktop Environment
 
 LICENSE=	LGPL21
 
+.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+BROKEN=		Fails to build: ld: error: ../../../exports/lib/libDtHelp.so: undefined reference to jpeg_CreateDecompress
+.endif
 BROKEN_mips64=		fails to build: ./config/imake/imake: No such file or directory
 BROKEN_powerpc64=	fails to build: ./config/imake/imake: No such file or directory
 
@@ -40,12 +43,6 @@ ALL_TARGET=	World
 MAKE_ARGS+=	PERL=${PERL}
 MAKE_JOBS_UNSAFE=yes
 SUB_FILES=	pkg-message
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} >= 1300018
-BROKEN=	Fails to build: ld: error: ../../../exports/lib/libDtHelp.so: undefined reference to jpeg_CreateDecompress
-.endif
 
 post-patch:
 	@if [ -f /usr/include/iconv.h ]; then \
@@ -115,7 +112,6 @@ post-patch:
 #	@${LN} -s ${LOCALBASE}/include/Xm ${WRKSRC}/imports/x11/include
 #	@${LN} -s ${LOCALBASE}/include/fontconfig ${WRKSRC}/imports/x11/include
 #	@${LN} -s ${LOCALBASE}/include/freetype2 ${WRKSRC}/imports/x11/include
-
 
 do-install:
 	cd ${WRKSRC}/admin/IntegTools/dbTools && \
