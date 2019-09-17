@@ -1,0 +1,24 @@
+OSS implementation of the TCG TPM2 Software Stack (TSS2)
+* libtss2-esys - Enhanced System API (ESAPI) as described in the TSS 2.0
+  Enhanced System API   (ESAPI) Specification.
+  This API is a 1-to-1 mapping of the TPM2 commands documented in Part 3
+  of the TPM2 specification. Additionally there are asynchronous versions
+  of each command. In addition to SAPI, the ESAPI performs tracking of meta
+  data for TPM object and automatic calculation of session authorization and
+  parameters encryption.
+
+* libtss2-sys - System API (SAPI) as described in the system level API and TPM
+  command transmission interface specification. This API is a 1-to-1 mapping of
+  the TPM2 commands documented in Part 3 of the TPM2 specification.
+  Additionally there are asynchronous versions of each command.
+
+* libtss2-mu - Marshaling/Unmarshaling (MU) as described in the TCG TSS 2.0
+  Marshaling/Unmarshaling API Specification. This API provides a set of
+  marshaling and unmarshaling functions for all data types define by the TPM
+  library specification.
+
+* TPM Command Transmission Interface (TCTI) that is described in the same
+  specification. This API provides a standard interface to transmit/receive
+  TPM command/response buffers.
+
+  WWW: https://github.com/tpm2-software/tpm2-tss
