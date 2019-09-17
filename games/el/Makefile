@@ -10,7 +10,6 @@ CATEGORIES=	games
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands is a free 3D MMORPG
 
-BROKEN_powerpc64=	fails to compile: cal3d_io_wrapper.cpp: undefined reference to CalCoreAnimation::setFilename
 BROKEN_sparc64=		fails to build on sparc64
 
 LIB_DEPENDS=	libpng.so:graphics/png \
