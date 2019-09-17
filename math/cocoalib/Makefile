@@ -12,7 +12,7 @@ COMMENT=	C++ library for doing Computations in Commutative Algebra
 
 LICENSE=			GPLv3+ GFDL PD
 LICENSE_COMB=			multi
-LICENSE_FILE_GPL3+ =		${WRKSRC}/COPYING-GPLv3
+LICENSE_FILE_GPLv3+ =		${WRKSRC}/COPYING-GPLv3
 LICENSE_FILE_GFDL=		${WRKSRC}/doc/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash

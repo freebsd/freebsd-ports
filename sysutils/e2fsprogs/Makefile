@@ -14,7 +14,7 @@ LICENSE?=	GPLv2+
 .if !defined(_no_license_file)
 LICENSE_FILE?=	${WRKSRC}/NOTICE
 .endif
-LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
+LICENSE_DISTFILES_GPLv2+ =	${DISTNAME}${EXTRACT_SUFX}
 
 PORTSCOUT=	ignore	# cannot handle the version in the directory
 

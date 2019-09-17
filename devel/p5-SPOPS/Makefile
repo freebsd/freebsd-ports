@@ -13,7 +13,7 @@ COMMENT=	Simple Perl Object Persistence with Security
 
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual
-LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Accessor>=0.17:devel/p5-Class-Accessor \
