@@ -284,6 +284,7 @@
     SUBDIR += jspwiki
     SUBDIR += jtoolkit
     SUBDIR += junkbuster
+    SUBDIR += jwt-cli
     SUBDIR += kanboard
     SUBDIR += kannel
     SUBDIR += kannel-sqlbox
