@@ -5,7 +5,7 @@ DISTVERSION=	5.0.0-alpha1
 CATEGORIES=	databases www
 MASTER_SITES=	https://files.phpmyadmin.net/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
-PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
+PKGNAMESUFFIX=	-devel${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Set of PHP-scripts to manage MySQL over the web
