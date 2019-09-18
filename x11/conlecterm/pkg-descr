@@ -1,0 +1,11 @@
+This is a multi tabbed terminal that uses embedded windows and a gtk
+notebook.  Any program that has an option to be embedded can be used
+with it.
+
+Possible programs include:
+* rxvt-unicode
+* xterm
+* emacs
+* vim
+
+WWW: https://github.com/hxw/conlecterm

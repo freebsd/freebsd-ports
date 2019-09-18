@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+
+ Sample configuration files are located in:
+   ${PREFIX}/share/examples/conlecterm
+ copy these to ${XDG_CONFIG_HOME}/conlecterm directory
+
+ Notes
+ 1. conlecterm.conf can be modified to add new items
+    it will be reloaded when the +NEW tab is selected
+ 2. the CSS files are only loaded at startup so new items
+    are not immediately usable
+
+EOM
+}
+]

@@ -38,6 +38,7 @@
     SUBDIR += cl-clx
     SUBDIR += cl-clx-sbcl
     SUBDIR += compton-conf
+    SUBDIR += conlecterm
     SUBDIR += controllermap
     SUBDIR += cool-retro-term
     SUBDIR += decurs
