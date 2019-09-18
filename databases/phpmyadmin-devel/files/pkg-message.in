@@ -1,0 +1,48 @@
+[
+{ type: install
+  message: <<EOM
+%%PKGNAME%% has been installed into:
+
+    %%WWWDIR%%
+
+Please edit config.inc.php to suit your needs.
+
+To make phpMyAdmin available through your web site, I suggest
+that you add something like the following to httpd.conf:
+
+For Apache versions earlier than 2.4:
+
+    Alias /phpmyadmin/ "%%WWWDIR%%/"
+
+    <Directory "%%WWWDIR%%/">
+	Options none
+	AllowOverride Limit
+
+	Order Deny,Allow
+	Deny from all
+	Allow from 127.0.0.1 .example.com
+    </Directory>
+
+For Apache version 2.4.x or above:
+
+    Alias /phpmyadmin/ "%%WWWDIR%%/"
+
+    <Directory "%%WWWDIR%%/">
+	Options None
+	AllowOverride Limit
+
+	Require local
+    	Require host .example.com
+    </Directory>
+
+SECURITY NOTE: phpMyAdmin is an administrative tool that has had several
+remote vulnerabilities discovered in the past, some allowing remote
+attackers to execute arbitrary code with the web server's user credential.
+All known problems have been fixed, but the FreeBSD Security Team strongly
+advises that any instance be protected with an additional protection layer,
+e.g. a different access control mechanism implemented by the web server
+as shown in the example.  Do consider enabling phpMyAdmin only when it
+is in use.
+EOM
+}
+]
