@@ -3,7 +3,7 @@
 
 PORTNAME=	wheel
 PORTVERSION=	0.30.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +25,6 @@ SIGNATURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dirspec>=13.05:devel/py-dirspec@${
 			${PYTHON_PKGNAMEPREFIX}xdg>=0.25:devel/py-xdg@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
 
 .include <bsd.port.mk>
