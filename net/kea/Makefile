@@ -13,8 +13,6 @@ COMMENT=	Alternative DHCP implementation by ISC
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to configure: checking for log4cplus library... no
-
 LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \
 		libboost_system.so:devel/boost-libs
 
