@@ -13,9 +13,6 @@ COMMENT=	Cyrus mail server, supporting POP3 and IMAP4 protocols
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_armv6=		fails to compile: gmake[1]: *** [Makefile:6747: lib/imapopts.c] Error 1
-BROKEN_armv7=		fails to compile: gmake[1]: *** [Makefile:6718: lib/imapopts.c] Error 1
-
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libicuuc.so:devel/icu \
 		libjansson.so:devel/jansson \
