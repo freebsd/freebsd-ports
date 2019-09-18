@@ -2,8 +2,7 @@
 
 PORTNAME=	icingaweb2-module-grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.5
-PORTREVISION=	1
+DISTVERSION=	1.3.6
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org
@@ -23,7 +22,7 @@ NO_ARCH=	yes
 WWWDIR?=	${PREFIX}/www/icingaweb2/modules/${PORTNAME:C/^.*-//}
 
 do-install:
-	@${RM} -r ${WRKSRC}/.README.md.swp ${WRKSRC}/.github
+	@${RM} -r ${WRKSRC}/.idea ${WRKSRC}/.github
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
