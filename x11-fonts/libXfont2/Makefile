@@ -2,16 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	libXfont2
-PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTVERSION=	2.0.4
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X font library
 
+LICENSE=	MIT BSD3CLAUSE
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-XORG_CAT=	lib
+USES=		xorg-cat:lib xorg
 USE_XORG=	xorgproto xtrans fontenc
 INSTALL_TARGET=	install-strip
 #USES+=	cpe
