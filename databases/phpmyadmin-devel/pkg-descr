@@ -1,0 +1,34 @@
+Currently phpMyAdmin can:
+
+    * browse and drop databases, tables, views, columns and indexes
+    * display multiple results sets through stored procedures or queries
+    * create, copy, drop, rename and alter databases, tables, columns
+      and indexes
+    * maintain server, databases and tables, with proposals on server
+      configuration
+    * execute, edit and bookmark any SQL-statement, even batch-queries
+    * load text files into tables
+    * create and read dumps of tables
+    * export data to various formats: CSV, XML, PDF, ISO/IEC 26300 -
+      OpenDocument Text and Spreadsheet, Microsoft Word 2000, and
+      LATEX formats
+    * import data and MySQL structures from OpenDocument spreadsheets,
+      as well as XML, CSV, and SQL files
+    * administer multiple servers
+    * manage MySQL users and privileges
+    * check referential integrity in MyISAM tables
+    * using Query-by-example (QBE), create complex queries
+      automatically connecting required tables
+    * create PDF graphics of your database layout
+    * search globally in a database or a subset of it
+    * transform stored data into any format using a set of predefined
+      functions, like displaying BLOB-data as image or download-link
+    * track changes on databases, tables and views
+    * support InnoDB tables and foreign keys
+    * support mysqli, the improved MySQL extension
+    * create, edit, call, export and drop stored procedures and
+      functions
+    * create, edit, export and drop events and triggers
+    * communicate in 62 different languages
+
+WWW: https://www.phpmyadmin.net/
