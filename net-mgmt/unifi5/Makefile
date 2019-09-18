@@ -2,12 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	unifi5
-PORTVERSION=	5.11.39
+PORTVERSION=	5.11.46
 PORTREVISION=	0
 CATEGORIES=	net-mgmt java
-MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}/
-DISTNAME=	unifi_sysvinit_all
-EXTRACT_SUFX=	.deb
+MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
+		https://repo1.maven.org/maven2/%SUBDIR%/:jax
+MASTER_SITE_SUBDIR=	${PORTVERSION}/:unifi \
+			javax/activation/${JAX_DISTNAME}/${JAX_VERSION}/:jax
+DISTFILES=	unifi_sysvinit_all.deb:unifi \
+		${JAX_DISTNAME}-${JAX_VERSION}.jar:jax
+EXTRACT_ONLY=	unifi_sysvinit_all.deb
+
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
@@ -17,7 +22,7 @@ RUN_DEPENDS=	mongodb36>0:databases/mongodb36 \
 		snappyjava>0:archivers/snappy-java
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR} \
-		JAVA=${JAVA}
+		JAVA=${JAVA} JAVA_HOME=${JAVA_HOME}
 
 EXTRACT_CMD=	/usr/bin/ar
 EXTRACT_BEFORE_ARGS=	-p
@@ -27,7 +32,7 @@ USES=		cpe
 CPE_VENDOR=	ubnt
 CPE_PRODUCT=	unifi_controller
 USE_JAVA=	yes
-JAVA_VERSION=	1.8
+JAVA_VERSION=	8+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk bsdjava
 JAVA_RUN=	yes
@@ -40,11 +45,18 @@ USE_RC_SUBR=	unifi
 USERS=		unifi
 GROUPS=		unifi
 
+JAX_DISTNAME=	javax.activation-api
+JAX_VERSION=	1.2.0
+
 NO_WRKSUBDIR=	yes
 
 CONFLICTS=	unifi-devel-*
 
 DIR_LIST=	conf data logs run work
+
+post-extract:
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${JAX_DISTNAME}-${JAX_VERSION}.jar \
+		${WRKSRC}/usr/lib/unifi/lib/
 
 post-patch:
 	(cd ${WRKSRC}/usr/lib/unifi/lib && ${LN} -f -s ${JAVAJARDIR}/snappy-java.jar snappy-java-*.jar)
