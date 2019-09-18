@@ -2,7 +2,7 @@
 
 PORTNAME=	sid-milter
 PORTVERSION=	1.0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/SenderID%20Milter/${PORTVERSION}
 
@@ -53,7 +53,7 @@ pre-configure:
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${SITE} > ${WCONF}/site.config.m4
 
-pre-configure-NH_MFROM_on:
+pre-configure-NH_MFROM-on:
 	${ECHO_CMD} \
 		'APPENDDEF(`confENVDEF'\'', `-D_FFR_NH_MFROM'\'')' \
 		>> ${WCONF}/site.config.m4
