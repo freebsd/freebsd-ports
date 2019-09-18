@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.11.99.3
+DISTVERSION=	1.12.99.0
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 PKGNAMESUFFIX=	-devel
@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
-GH_TAGNAME=	45b5d943
+GH_TAGNAME=	8004f584
 
 WITH_DEBUG=	yes
 CFLAGS+=	-O0 -g -Wno-error
@@ -45,29 +45,6 @@ IGNORE=	WITH_PKG is not defined to 'devel', this version is the devel one
 PKGNAMESUFFIX=
 #define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
 PKG_DEPENDS=
-.endif
-.if exists(${LOCALBASE}/sbin/pkg_info) || exists(/usr/sbin/pkg_info)
-NB_OLDPKGS!=	pkg_info 2>/dev/null | wc -l
-.if exists(${PKG_BIN})
-NB_NEWPKGS!=	${PKG_INFO} -aq | wc -l
-.else
-NB_NEWPKGS=	0
-.endif
-# Only show the pre-everything notice if they have not already
-# converted any packages
-.if ${NB_OLDPKGS} > 0 && ${NB_NEWPKGS} == 0
-
-pre-everything::
-	@${ECHO_CMD} "You are about to convert your system to pkg while you have ports/packages"; \
-	 ${ECHO_CMD} "installed with the old pkg_install tools."; \
-	 ${ECHO_CMD} ""; \
-	 ${ECHO_CMD} "To switch to pkg:"; \
-	 ${ECHO_CMD} "    1) Install ports-mgmt/pkg"; \
-	 ${ECHO_CMD} "    2) Convert your package database by running pkg2ng"; \
-	 ${ECHO_CMD} ""; \
-	exit 1
-
-.endif
 .endif
 .endif
 
