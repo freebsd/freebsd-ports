@@ -3,7 +3,7 @@
 PORTNAME=	barnyard2
 PORTVERSION=	1.13
 DISTVERSIONPREFIX=	v2-
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -56,8 +56,9 @@ MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_CONFIGURE_ON=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql
 MYSQL_SSL_CONFIGURE_ENABLE=	mysql-ssl-support
+ODBC_BROKEN=		fails to build with ODBC=on
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
-ODBC_WITH=		odbc
+ODBC_CONFIGURE_WITH=	odbc
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}/bin/pg_config --with-pgsql-includes=${LOCALBASE}/include/postgresql/server
 PGSQL_CONFIGURE_OFF=	--without-postgresql
