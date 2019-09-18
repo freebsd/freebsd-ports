@@ -2,7 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	4.30-9700-beta
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-2019.07.13-tree/Source_Code/
 PKGNAMESUFFIX=	-devel
@@ -42,8 +42,9 @@ PORTDOCS=	AUTHORS.TXT ChangeLog LICENSE README THIRD_PARTY.TXT WARNING.TXT
 
 SE_DBDIR?=	/var/db/${PORTNAME}
 SE_LOGDIR?=	/var/log/${PORTNAME}
-PLIST_SUB=	SE_DBDIR="${SE_DBDIR}" SE_LOGDIR="${SE_LOGDIR}"
-SUB_LIST=	SE_DBDIR="${SE_DBDIR}" SE_LOGDIR="${SE_LOGDIR}"
+SE_PIDDIR?=	/var/run/${PORTNAME}
+PLIST_SUB=	SE_DBDIR="${SE_DBDIR}" SE_LOGDIR="${SE_LOGDIR}" SE_PIDDIR="${SE_PIDDIR}"
+SUB_LIST=	SE_DBDIR="${SE_DBDIR}" SE_LOGDIR="${SE_LOGDIR}" SE_PIDDIR="${SE_PIDDIR}"
 SUB_FILES=	pkg-message vpncmd
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -60,48 +61,10 @@ post-patch:
 	# SoftEther scatters logs, config files and PID files in PREFIX/libexec
 	# directory. To write them in the right place, replace it.
 	${REINPLACE_CMD} \
-		-e "s|@vpn_server_template|${SE_DBDIR}/vpn_server_template|" \
-		-e "s|@vpn_server|${SE_DBDIR}/vpn_server|" \
-		-e "s|@vpn_bridge|${SE_DBDIR}/vpn_bridge|" \
-		-e "s|@vpn_gate_svc|${SE_DBDIR}/vpn_gate_svc|" \
-		-e "s|@vpn_gate_relay|${SE_DBDIR}/vpn_gate_relay|" \
-		${WRKSRC}/src/Cedar/Server.c
-
-	${REINPLACE_CMD} \
-		-e "s|@adminip|${SE_DBDIR}/adminip|" \
-		-e "s|@etherlogger|${SE_DBDIR}/etherlogger|" \
-		-e "s|@vpn_client|${SE_DBDIR}/vpn_client|" \
-		-e "s|@vpn_router|${SE_DBDIR}/vpn_router|" \
-		-e "s|@custom|${SE_DBDIR}/custom|" \
-		-e "s|@backup|${SE_DBDIR}/backup|" \
-		-e "s|@save_binary|${SE_DBDIR}/save_binary|" \
-		-e "s|@lang|${SE_DBDIR}/lang|" \
-		-e "s|@azureserver|${SE_DBDIR}/azureserver|" \
-		-e "s|@server_log|${SE_LOGDIR}/server|" \
-		-e "s|@security_log|${SE_LOGDIR}/security|" \
-		-e "s|@packet_log|${SE_LOGDIR}/packet|" \
-		-e "s|@secure_nat_log|${SE_LOGDIR}/secure_nat|" \
-		-e "s|@client_log|${SE_LOGDIR}/client|" \
-		-e "s|@tiny_log|${SE_LOGDIR}/tiny|" \
-		-e "s|@carrier_log|${SE_LOGDIR}/carrier|" \
-		-e "s|@etherlogger_log|${SE_LOGDIR}/etherlogger|" \
-		${WRKSRC}/src/Cedar/Cedar.h \
-		${WRKSRC}/src/Cedar/Client.h \
-		${WRKSRC}/src/Cedar/Nat.h \
-		${WRKSRC}/src/Cedar/Server.c \
-		${WRKSRC}/src/Mayaqua/Cfg.c \
-		${WRKSRC}/src/Mayaqua/Cfg.h \
-		${WRKSRC}/src/Mayaqua/Table.h
-
-	${REINPLACE_CMD} \
-		-e "s|abort_error_log\.txt|${SE_LOGDIR}/abort_error_log.txt|" \
-		${WRKSRC}/src/Mayaqua/Kernel.c
-
-	${REINPLACE_CMD} \
 		-e "s|%%SE_DBDIR%%|${SE_DBDIR}|g" \
-		${WRKSRC}/src/Cedar/Protocol.c \
-		${WRKSRC}/src/Mayaqua/Unix.c \
-		${WRKSRC}/src/Mayaqua/Network.c
+		-e "s|%%SE_LOGDIR%%|${SE_LOGDIR}|g" \
+		-e "s|%%SE_PIDDIR%%|${SE_PIDDIR}|g" \
+		${WRKSRC}/src/Mayaqua/FileIO.c
 
 	# skip configure at all and copy the corresponding Makefile in place
 .if ${ARCH} != "amd64"
@@ -126,9 +89,11 @@ do-install:
 .for i in vpnbridge vpnclient vpncmd vpnserver
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/${i}
 .endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${SE_DBDIR}
-	@${MKDIR} ${STAGEDIR}${SE_LOGDIR}
+	@${MKDIR} \
+		${STAGEDIR}${DOCSDIR} \
+		${STAGEDIR}${SE_DBDIR} \
+		${STAGEDIR}${SE_LOGDIR} \
+		${STAGEDIR}${SE_PIDDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor

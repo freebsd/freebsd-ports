@@ -20,6 +20,7 @@ When removing SoftEther VPN without the desire to reinstall, please
 ensure to remove the following dirctories as well:
 - %%SE_DBDIR%%
 - %%SE_LOGDIR%%
+- %%SE_PIDDIR%%
 EOM
 }
 ]
