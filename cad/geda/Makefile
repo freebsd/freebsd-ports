@@ -14,6 +14,10 @@ COMMENT=	GPL Electronic Design Automation tools
 
 LICENSE=	GPLv2+
 
+.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+BROKEN=		ld: error: ../src/.libs/libgeda.so: undefined reference to g_input_stream_get_type
+.endif
+
 LIB_DEPENDS=	libstroke.so:devel/libstroke \
 		libguile.so:lang/guile
 RUN_DEPENDS=	gawk:lang/gawk\
