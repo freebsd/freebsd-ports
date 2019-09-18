@@ -78,6 +78,7 @@
     SUBDIR += rtorrent
     SUBDIR += shx
     SUBDIR += sonarr
+    SUBDIR += sonarr-devel
     SUBDIR += squall
     SUBDIR += torrent-file-editor
     SUBDIR += torrentcheck
