@@ -12,6 +12,29 @@
 # Add the following line to /etc/rc.conf to enable `unifi':
 #
 # unifi_enable="YES"
+#
+# Other configuration settings for unifi that can be set in /etc/rc.conf:
+#
+# unifi_user (str)
+#   This is the user that unifi runs as
+#   Set to %%USERS%% by default
+#
+# unifi_group (str)
+#   This is the group that unifi runs as
+#   Set to %%GROUPS%% by default
+#
+# unifi_chdir (str)
+#   This is the directory that unifi chdirs into before starting
+#   Set to %%JAVASHAREDIR%%/unifi by default
+#
+# unifi_java_home (str)
+#   The path to the base directory for the Java to use to run unifi
+#   Defaults to %%JAVA_HOME%%
+#
+# unifi_javaflags (str)
+#   Flags passed to Java to run unifi
+#   Set to "-Djava.awt.headless=true -Xmx1024M" by default
+#
 
 . /etc/rc.subr
 name=unifi
@@ -23,15 +46,18 @@ load_rc_config ${name}
 : ${unifi_user:=%%USERS%%}
 : ${unifi_group:=%%GROUPS%%}
 : ${unifi_chdir=%%JAVASHAREDIR%%/unifi}
-: ${unifi_javaflags:="-Djava.awt.headless=true -Xmx1024M"}
+: ${unifi_java_home=%%JAVA_HOME%%}
+: ${unifi_javaflags="-Djava.awt.headless=true -Xmx1024M"}
 
 pidfile="/var/run/unifi/${name}.pid"
-procname=%%JAVA%%
-command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} %%JAVA%% ${unifi_javaflags} -jar lib/ace.jar start"
+procname=${unifi_java_home}/bin/java
+command=/usr/sbin/daemon
+command_args="-f -p ${pidfile} ${unifi_java_home}/bin/java ${unifi_javaflags} com.ubnt.ace.Launcher start"
 start_precmd=start_precmd
 stop_precmd=stop_precmd
 stop_postcmd=stop_postcmd
+
+export CLASSPATH=$(echo ${unifi_chdir}/lib/*.jar | tr ' ' ':')
 
 start_precmd()
 {
