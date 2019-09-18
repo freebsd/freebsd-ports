@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+This OpenJDK implementation requires fdescfs(5) mounted on /dev/fd
+
+If you have not done it yet, please do the following:
+
+	mount -t fdescfs fdesc /dev/fd
+
+To make it permanent, you need the following lines in /etc/fstab:
+
+	fdesc	/dev/fd		fdescfs		rw	0	0
+EOM
+}
+]
