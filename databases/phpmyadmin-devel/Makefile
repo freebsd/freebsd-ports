@@ -1,4 +1,3 @@
-# Created by: nbm
 # $FreeBSD$
 
 PORTNAME=	phpMyAdmin
