@@ -1,2 +1,3 @@
-SHA256 (xwindiff-1.1.6.tar.gz) = ad1353456d384eb661c95fb9a934dcb61b74cda6dc47cce2fb5b9c9b38295782
-SIZE (xwindiff-1.1.6.tar.gz) = 164564
+TIMESTAMP = 1568837789
+SHA256 (repacked/xwindiff-1.1.6.tar.gz) = 96d982472079c59fd21256313d5e9c5e58207113d3c34e96c9242752da99bb12
+SIZE (repacked/xwindiff-1.1.6.tar.gz) = 164352
