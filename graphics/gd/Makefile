@@ -14,8 +14,7 @@ COMMENT?=	Graphics library for fast creation of images
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libtiff.so:graphics/tiff \
-		libpng.so:graphics/png \
+LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
 CONFLICTS=	bazaar-1.*
@@ -26,8 +25,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	FONTCONFIG ICONV XPM WEBP
-OPTIONS_DEFAULT=FONTCONFIG WEBP
+OPTIONS_DEFINE=	FONTCONFIG ICONV XPM WEBP TIFF
+OPTIONS_DEFAULT=FONTCONFIG WEBP TIFF
 NO_OPTIONS_SORT=yes
 FONTCONFIG_LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
 FONTCONFIG_CONFIGURE_OFF=	--with-fontconfig=no
@@ -38,6 +37,8 @@ XPM_CONFIGURE_ON=	--with-x
 XPM_CONFIGURE_OFF=	--with-xpm=no
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CONFIGURE_OFF=	--without-webp
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
+TIFF_CONFIGURE_OFF=	--without-tiff
 
 .include <bsd.port.options.mk>
 
