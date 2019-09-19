@@ -1,7 +1,0 @@
-%%RUBY_SITEARCHLIBDIR%%/plruby.so
-%%RUBY_SITEARCHLIBDIR%%/plruby/plruby_basic.so
-%%RUBY_SITEARCHLIBDIR%%/plruby/plruby_bitstring.so
-%%RUBY_SITEARCHLIBDIR%%/plruby/plruby_datetime.so
-%%RUBY_SITEARCHLIBDIR%%/plruby/plruby_geometry.so
-%%RUBY_SITEARCHLIBDIR%%/plruby/plruby_network.so
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/createlang.sql

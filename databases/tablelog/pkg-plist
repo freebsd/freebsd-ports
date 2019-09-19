@@ -1,4 +1,0 @@
-lib/postgresql/table_log.so
-share/postgresql/contrib/table_log_init.sql
-%%PORTDOCS%%%%DOCSDIR%%/README.table_log
-%%PORTDOCS%%%%DOCSDIR%%/table_log.sql
