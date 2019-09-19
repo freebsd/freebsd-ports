@@ -3,6 +3,7 @@
 
 PORTNAME=	mousepad
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	editors xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -12,8 +13,6 @@ COMMENT=	Simple text editor for the Xfce Desktop
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 USES=		desktop-file-utils gettext-tools gmake gnome libtool perl5 \
 		pkgconfig tar:bzip2
@@ -31,8 +30,8 @@ OPTIONS_SUB=		yes
 GTK3_CONFIGURE_ENABLE=	gtk3
 GTK3_USE=		gnome=gtk30,gtksourceview3,dconf
 GTK3_USE_OFF=		gnome=gtk20,gtksourceview2
-GTK3_USES=		xfce:gtk3
-GTK3_USES_OFF=		xfce
+GTK3_USES=		xfce
+GTK3_USES_OFF=		xfce:gtk2
 GTK3_CFLAGS_OFF=	-I${LOCALBASE}/include/gio-unix-2.0
 
 NLS_CONFIGURE_ENABLE=	nls

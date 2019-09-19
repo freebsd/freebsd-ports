@@ -1,6 +1,7 @@
 lib/xfce4/panel/plugins/libsmartbookmark.so
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
@@ -11,6 +12,7 @@ lib/xfce4/panel/plugins/libsmartbookmark.so
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/he/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
@@ -21,6 +23,7 @@ lib/xfce4/panel/plugins/libsmartbookmark.so
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/xfce4-smartbookmark-plugin.mo

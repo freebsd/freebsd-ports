@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	verve-plugin
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 PKGNAMEPREFIX=	xfce4-
@@ -15,14 +14,10 @@ COMMENT=	Command line plugin for the Xfce Desktop
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libdbus-glib-1.so:devel/dbus-glib \
-		libdbus-1.so:devel/dbus \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 intlhack intltool pango
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool pango
 USE_XFCE=	panel
 
 GNU_CONFIGURE=	yes

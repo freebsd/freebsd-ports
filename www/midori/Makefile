@@ -25,7 +25,7 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext gnome \
-		libarchive localbase:ldflags pkgconfig sqlite tar:bzip2
+		libarchive localbase:ldflags pkgconfig sqlite tar:bzip2 xorg
 USE_GNOME=	cairo glib20 gtk30 intltool introspection libxml2
 USE_XORG=	xscrnsaver
 

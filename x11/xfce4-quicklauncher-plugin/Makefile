@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-quicklauncher-plugin
 PORTVERSION=	1.9.4
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -16,8 +16,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext gmake gnome libtool pkgconfig tar:bzip2 xfce
-USE_GNOME=	cairo gdkpixbuf2 gtk20 intlhack intltool
+USES=		gettext gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk2
+USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool
 USE_XFCE=	libgui panel
 
 SSP_UNSAFE=	yes

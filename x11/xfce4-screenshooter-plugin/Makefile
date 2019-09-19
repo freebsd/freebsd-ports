@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-screenshooter-plugin
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.6
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DISTNAME=	xfce4-screenshooter-${DISTVERSIONFULL}
@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
+		xfce xorg
 USE_CSTD=	c99
 USE_GNOME=	cairo glib20 gtk30 intltool libxml2
 USE_XFCE=	panel

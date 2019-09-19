@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-equake-plugin
 PORTVERSION=	1.3.8.1
+PORTREVISION=	1
 CATEGORIES=	science xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -17,7 +18,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libcurl.so:ftp/curl
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
+		xfce:gtk2 xorg
 USE_GNOME=	cairo glib20 gtk20 intltool
 USE_XFCE=	panel
 USE_XORG=	x11

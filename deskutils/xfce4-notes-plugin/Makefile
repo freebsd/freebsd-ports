@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-notes-plugin
 PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -15,12 +15,11 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libunique-1.0.so:x11-toolkits/unique \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libdbus-glib-1.so:devel/dbus-glib \
-		libdbus-1.so:devel/dbus
+		libfreetype.so:print/freetype2
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
-USE_GNOME=	cairo glib20 gtk20 intlhack intltool
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
+		xfce:gtk2 xorg
+USE_GNOME=	cairo glib20 gtk20 intltool
 USE_XFCE=	panel
 USE_XORG=	ice sm x11
 

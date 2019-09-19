@@ -1,4 +1,4 @@
-lib/thunarx-2/thunar-vcs-plugin.so
+lib/thunarx-3/thunar-vcs-plugin.so
 %%GIT%%libexec/tvp-git-helper
 %%SVN%%libexec/tvp-svn-helper
 share/icons/hicolor/24x24/apps/git.png
@@ -6,6 +6,7 @@ share/icons/hicolor/24x24/apps/subversion.png
 share/icons/hicolor/48x48/apps/git.png
 share/icons/hicolor/48x48/apps/subversion.png
 %%NLS%%share/locale/ar/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/be/LC_MESSAGES/thunar-vcs-plugin.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/thunar-vcs-plugin.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/thunar-vcs-plugin.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/thunar-vcs-plugin.mo

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-mpc-plugin
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	audio xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -15,7 +15,7 @@ LICENSE=	ISCL
 LIB_DEPENDS=	libmpd.so:audio/libmpd
 RUN_DEPENDS=	musicpd:audio/musicpd
 
-USES=		gettext-tools gmake libtool pkgconfig tar:bzip2 xfce:gtk3
+USES=		gettext-tools gmake libtool pkgconfig tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_XFCE=	panel
 

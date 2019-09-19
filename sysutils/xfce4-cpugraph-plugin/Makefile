@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-cpugraph-plugin
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -12,11 +13,8 @@ COMMENT=	Graphical representation of the CPU load
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
-
 USES=		gettext-tools gmake gnome libtool pkgconfig \
-		tar:bzip2 xfce:gtk3
+		tar:bzip2 xfce
 USE_CSTD=	c99
 USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	panel

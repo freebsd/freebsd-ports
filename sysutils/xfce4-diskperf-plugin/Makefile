@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-diskperf-plugin
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -13,12 +14,13 @@ COMMENT=	Graphical representation of the disk IO
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext-tools gnome gmake libtool pkgconfig tar:bzip2 xfce:gtk3
+USES=		gettext-tools gnome gmake libtool pkgconfig tar:bzip2 xfce
+USE_GNOME=	cairo gtk30 intltool
+USE_XFCE=	panel
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USE_GNOME=	gtk30 intltool cairo
-USE_XFCE=	panel
 
 LIBS+=		-ldevstat
 

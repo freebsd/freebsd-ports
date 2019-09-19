@@ -1,0 +1,9 @@
+The xfce4-places-plugin brings much of the functionality of the GNOME Places
+menu to Xfce. The plugin looks a lot like a launcher with multiple items in a
+menu. The main "launcher" button opens up Thunar at the user's home directory.
+The arrow button opens up a menu with two sections: system- and user-defined
+locations. The system-defined locations are consistent with Thunar (including
+their icons). For user-defined bookmarks, the ~/.gtk-bookmarks file is being
+read in order to share bookmarks with Thunar, Nautilus, the GNOME Panel, etc.
+
+WWW: https://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin

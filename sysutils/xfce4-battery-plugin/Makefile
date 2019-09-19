@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-battery-plugin
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		alias gettext-tools gmake gnome libtool pkgconfig \
-		tar:bzip2 xfce:gtk3
+		tar:bzip2 xfce
 USE_GNOME=	cairo gtk30 glib20 intltool
 USE_XFCE=	panel
 USE_LDCONFIG=	yes

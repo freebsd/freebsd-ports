@@ -1,0 +1,22 @@
+--- panel-plugin/Makefile.in.orig	2014-04-09 19:40:22 UTC
++++ panel-plugin/Makefile.in
+@@ -416,7 +416,8 @@ libmixer_la_CFLAGS = \
+ 	$(LIBXFCE4PANEL_CFLAGS)						\
+ 	$(XFCONF_CFLAGS)						\
+ 	$(GST_PLUGINS_BASE_CFLAGS)					\
+-	$(KEYBINDER_CFLAGS)
++	$(KEYBINDER_CFLAGS)						\
++	$(DBUS_GLIB_CFLAGS)
+ 
+ libmixer_la_DEPENDENCIES = \
+ 	$(top_builddir)/libxfce4mixer/libxfce4mixer.la
+@@ -439,7 +440,8 @@ libmixer_la_LIBADD = \
+ 	$(GST_PLUGINS_BASE_LIBS)					\
+ 	-lgstaudio-0.10							\
+ 	-lgstinterfaces-0.10						\
+-	$(KEYBINDER_LIBS)
++	$(KEYBINDER_LIBS)						\
++	$(DBUS_GLIB_LIBS)
+ 
+ desktopdir = $(datadir)/xfce4/panel/plugins
+ desktop_in_files = mixer.desktop.in

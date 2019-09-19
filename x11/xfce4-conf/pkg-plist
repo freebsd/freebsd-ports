@@ -4,14 +4,17 @@ include/xfce4/xfconf-0/xfconf/xfconf-channel.h
 include/xfce4/xfconf-0/xfconf/xfconf-errors.h
 include/xfce4/xfconf-0/xfconf/xfconf-types.h
 include/xfce4/xfconf-0/xfconf/xfconf.h
+%%GIR%%lib/girepository-1.0/Xfconf-0.typelib
 lib/libxfconf-0.so
-lib/libxfconf-0.so.2
-lib/libxfconf-0.so.2.0.0
+lib/libxfconf-0.so.3
+lib/libxfconf-0.so.3.0.0
 lib/xfce4/xfconf/xfconfd
 libdata/pkgconfig/libxfconf-0.pc
 share/dbus-1/services/org.xfce.Xfconf.service
+%%GIR%%share/gir-1.0/Xfconf-0.gir
 %%NLS%%share/locale/ar/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfconf.mo
@@ -20,6 +23,7 @@ share/dbus-1/services/org.xfce.Xfconf.service
 %%NLS%%share/locale/de/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/el/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/en_CA/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfconf.mo
@@ -29,6 +33,7 @@ share/dbus-1/services/org.xfce.Xfconf.service
 %%NLS%%share/locale/he/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/hy_AM/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/is/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfconf.mo
@@ -69,3 +74,5 @@ share/dbus-1/services/org.xfce.Xfconf.service
 %%PERL%%%%SITE_ARCH%%/Xfce4/Xfconf/Install/xfconfperl-autogen.h
 %%PERL%%%%SITE_ARCH%%/Xfce4/Xfconf/Install/xfconfperl.typemap
 %%PERL%%%%SITE_ARCH%%/Xfce4/Xfconf.pm
+%%VAPI%%share/vala/vapi/libxfconf-0.deps
+%%VAPI%%share/vala/vapi/libxfconf-0.vapi

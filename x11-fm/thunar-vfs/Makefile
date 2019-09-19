@@ -3,13 +3,16 @@
 
 PORTNAME=	thunar-vfs
 PORTVERSION=	1.2.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	XFCE/archive
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	The virtual filesystem for Thunar
+COMMENT=	Virtual filesystem for Thunar
+
+DEPRECATED=	Functionality included in Thunar
+EXPIRATION_DATE=2019-11-01
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,9 +23,9 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libgamin-1.so:devel/gamin \
 		libdbus-1.so:devel/dbus
 
-USES=		desktop-file-utils gettext-tools gmake gnome jpeg libtool pathfix \
-		perl5 pkgconfig tar:bzip2 xfce
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 intlhack intltool
+USES=		gettext-tools gmake gnome jpeg libtool pathfix \
+		perl5 pkgconfig tar:bzip2 xfce:gtk2 xorg
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 intltool
 USE_XFCE=	libexo
 USE_XORG=	ice x11 sm
 USE_LDCONFIG=	yes
