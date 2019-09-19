@@ -5,16 +5,19 @@ PORTNAME=	agrep
 PORTVERSION=	2.04
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.cs.arizona.edu/agrep/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} agrep.ps.1.Z agrep.ps.2.Z
+MASTER_SITES=	GENTOO \
+		ftp://ftp.cs.arizona.edu/agrep/ \
+		ftp://ftp.cs.arizona.edu/agrep/:doc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		agrep.ps.1.Z:doc agrep.ps.2.Z:doc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Approximate grep (fast approximate pattern-matching tool)
 
-NO_CDROM=	No redistribution for profit
-
 USES=	tar:Z
+
+NO_CDROM=	No redistribution for profit
 
 ALL_TARGET=
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
