@@ -33,8 +33,10 @@ SUB_LIST=	XCC=${XCC} \
 		XLD=${XLD} \
 		X_COMPILER_TYPE=${X_COMPILER_TYPE}
 
-PLIST_FILES=	share/toolchains/llvm${LLVM_SUFFIX}.mk \
-		llvm${LLVM_SUFFIX}/bin/ld
+PLIST_FILES=	share/toolchains/llvm${LLVM_SUFFIX}.mk
+.ifndef NO_LLD_LINK
+PLIST_FILES+=	llvm${LLVM_SUFFIX}/bin/ld
+.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains/
