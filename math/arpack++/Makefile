@@ -2,24 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	arpack++
-PORTVERSION=	1.2
-PORTREVISION=	12
+PORTVERSION=	2.3.0
 CATEGORIES=	math
-MASTER_SITES=	http://www.ime.unicamp.br/%7echico/arpack++/
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-
-PATCH_SITES=	http://reuter.mit.edu/blue/software/ \
-		http://www.gdv.uni-hannover.de/~reuter/software/
-PATCHFILES=	arpack++1.2.patch.diff
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ARPACK++ is an object-oriented version of the ARPACK package
 
-BROKEN=		unfetchable
-DEPRECATED=	Unfetchable, unmaintained
-EXPIRATION_DATE=	2019-10-16
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libsuperlu.so:math/superlu \
@@ -39,42 +29,44 @@ BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	m-reuter
+GH_PROJECT=	arpackpp
+
+USES=		fortran gmake localbase
+
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
-USES=		gmake
 
-DOCS=		README doc/arpackpp.ps.gz doc/bugs.txt doc/structure.txt
+DOCS=		README.md doc/README doc/arpackpp.pdf doc/structure.txt
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-patch:
-	@${FIND} ${WRKSRC}/include -name "*.orig" -delete
-	@${FIND} ${WRKSRC}/examples -name "*.orig" -delete
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g"	\
+pre-configure:
+	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g"	\
+		-e "s|%%BLAS%%|${BLAS}|"			\
 		-e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/Makefile.inc
-	@${FIND} ${WRKSRC}/examples -name Makefile |	\
-	${XARGS} ${REINPLACE_CMD} -e "s|../../../Makefile.inc|../../Makefile.inc|" \
-				-e 's|$$(ARPACKPP_DIR)/examples|${EXAMPLESDIR}|'
+	${FIND} ${WRKSRC}/examples -name Makefile |	\
+	${XARGS} ${REINPLACE_CMD} -e 's|$$(ARPACKPP_DIR)/examples|${EXAMPLESDIR}|'
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/ARPACK++
-	@for inc in `${LS} ${WRKSRC}/include` ; do \
+	for inc in `${LS} ${WRKSRC}/include` ; do \
 		${INSTALL_DATA} ${WRKSRC}/include/$$inc ${STAGEDIR}${PREFIX}/include/ARPACK++; \
 	done
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${GUNZIP_CMD} ${STAGEDIR}${DOCSDIR}/arpackpp.ps.gz
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Makefile.inc ${STAGEDIR}${EXAMPLESDIR}
-	@${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/Makefile.inc ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 
 .if defined(MAINTAINER_MODE)
 test:	install
-	for sample in `${FIND} ${EXAMPLESDIR} -name Makefile` ; do \
+	for sample in `${FIND} ${WRKSRC}/examples -name Makefile` ; do \
 		(cd `dirname $$sample` ; \
 		${ECHO_MSG} "============" ; \
 		${ECHO_MSG} "*** Entering `pwd`" ; \
