@@ -112,9 +112,5 @@ post-patch:
 		${WRKSRC}/cmake/modules/FindLTDL.cmake
 	${GREP} -lR "/usr/local" ${WRKSRC}/cmake/modules | ${XARGS} \
 		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'
-post-patch-QHULL2015:
-	${REINPLACE_CMD} -e 's|qhull/qhull_a|libqhull/qhull_a|'	\
-		${WRKSRC}/lib/nn/delaunay.c \
-		${WRKSRC}/src/plgridd.c
 
 .include <bsd.port.mk>
