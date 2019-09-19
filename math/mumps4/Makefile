@@ -32,7 +32,7 @@ CONFLICTS+=	mumps-mpich-4*
 
 OPTIONS_DEFINE=	METIS4 DOCS EXAMPLES
 
-METIS4_DESCR=	Use math/metis4 for Ordering
+METIS4_DESC=	Use math/metis4 for Ordering
 
 METIS4_LIB_DEPENDS+=	libmetis.so.1:math/metis4
 
