@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-mount-plugin
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -12,10 +13,7 @@ COMMENT=	Mount and umount utility for the Xfce4 panel
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
-
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
 USE_GNOME=	cairo gtk30 intltool
 USE_LDCONFIG=	yes
 USE_XFCE=	panel

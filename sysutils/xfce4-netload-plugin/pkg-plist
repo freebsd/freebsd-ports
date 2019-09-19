@@ -4,6 +4,7 @@ share/icons/hicolor/48x48/apps/xfce4-netload-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-netload-plugin.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-netload-plugin.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-netload-plugin.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfce4-netload-plugin.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-netload-plugin.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-netload-plugin.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-netload-plugin.mo

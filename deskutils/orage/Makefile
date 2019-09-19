@@ -3,7 +3,7 @@
 
 PORTNAME=	orage
 PORTVERSION=	4.12.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -21,16 +21,18 @@ LIB_DEPENDS=	libpopt.so:devel/popt \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 USES=		desktop-file-utils gettext gmake gnome libtool pkgconfig \
-		tar:bzip2 xfce
-USE_GNOME=	cairo gtk20 intlhack intltool
+		tar:bzip2 xfce:gtk2 xorg
+USE_GNOME=	cairo gtk20 intltool
 USE_XFCE=	panel
 USE_XORG=	x11
 
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 CFLAGS+=	-I${LOCALBASE}/include/libical
 CONFIGURE_ARGS=	--enable-dbus
+
+PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=		NLS NOTIFY
 OPTIONS_DEFAULT=	NOTIFY

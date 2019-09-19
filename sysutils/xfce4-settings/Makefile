@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-settings
-PORTVERSION=	4.12.4
-PORTREVISION=	3
+PORTVERSION=	4.14.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -14,23 +13,22 @@ COMMENT=	Xfce 4 settings application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libdbus-glib-1.so:devel/dbus-glib \
+LIB_DEPENDS=	libcolord.so:graphics/colord \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
 		libxklavier.so:x11/libxklavier
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
-USE_GNOME=	cairo glib20 gtk20 intlhack intltool
-USE_XFCE=	garcon libexo
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
+		xfce xorg
+USE_GNOME=	cairo glib20 gtk30 intltool
+USE_XFCE=	garcon libexo xfconf
 USE_XORG=	xorgproto x11 xcursor xi xrandr
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-debug=yes \
-		--disable-xorg-libinput
+CONFIGURE_ARGS=	--disable-xorg-libinput \
+		--enable-pluggable-dialogs
 INSTALLS_ICONS=	yes
 
-PORTSCOUT=	limit:^4\.12\.
+PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=		NOTIFY NLS UPOWER
 OPTIONS_DEFAULT=	NOTIFY
@@ -47,11 +45,14 @@ NOTIFY_LIB_DEPENDS=		libnotify.so:devel/libnotify
 UPOWER_CONFIGURE_ENABLE=	upower-glib
 UPOWER_LIB_DEPENDS=		libupower-glib.so:sysutils/upower
 
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug=yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|Rodent|Adwaita|g' \
 		${WRKSRC}/dialogs/appearance-settings/main.c
-	@${REINPLACE_CMD} -e 's|IconThemeName" type="empty|IconThemeName" type="string" value="Adwaita|; \
-		s|"ThemeName" type="empty|"ThemeName" type="string" value="Xfce|' \
+	@${REINPLACE_CMD} -e 's|IconThemeName" type="empty|IconThemeName" type="string" value="Adwaita|' \
 		${WRKSRC}/xfsettingsd/xsettings.xml
 
 .include <bsd.port.mk>

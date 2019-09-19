@@ -1,6 +1,5 @@
 bin/xfce4-appfinder
 bin/xfrun4
-share/appdata/xfce4-appfinder.appdata.xml
 share/applications/xfce4-appfinder.desktop
 share/applications/xfce4-run.desktop
 %%NLS%%share/locale/am/LC_MESSAGES/xfce4-appfinder.mo
@@ -26,7 +25,9 @@ share/applications/xfce4-run.desktop
 %%NLS%%share/locale/he/LC_MESSAGES/xfce4-appfinder.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/xfce4-appfinder.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfce4-appfinder.mo
+%%NLS%%share/locale/hy_AM/LC_MESSAGES/xfce4-appfinder.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-appfinder.mo
+%%NLS%%share/locale/ie/LC_MESSAGES/xfce4-appfinder.mo
 %%NLS%%share/locale/is/LC_MESSAGES/xfce4-appfinder.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-appfinder.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfce4-appfinder.mo
@@ -62,3 +63,4 @@ share/applications/xfce4-run.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-appfinder.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/xfce4-appfinder.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-appfinder.mo
+share/metainfo/org.xfce.xfce4-appfinder.appdata.xml

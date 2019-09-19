@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-calculator-plugin
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	math xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -12,11 +13,8 @@ COMMENT=	Simple calculator for the Xfce panel
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
-
 USES=		gettext-tools gmake gnome libtool pkgconfig tar:bz2 \
-		xfce:gtk3
+		xfce xorg
 USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	panel
 USE_XORG=	x11

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-datetime-plugin
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -12,7 +12,7 @@ COMMENT=	Datetime panel plugin for the Xfce desktop
 
 LICENSE=	GPLv2
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
 USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	panel
 

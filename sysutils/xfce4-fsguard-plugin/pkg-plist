@@ -22,6 +22,7 @@ share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin-warning.svg
 share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-fsguard-plugin.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-fsguard-plugin.mo
@@ -39,6 +40,7 @@ share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin.svg
 %%NLS%%share/locale/hr/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-fsguard-plugin.mo
+%%NLS%%share/locale/ie/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/is/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-fsguard-plugin.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfce4-fsguard-plugin.mo

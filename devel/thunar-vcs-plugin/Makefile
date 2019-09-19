@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunar-vcs-plugin
-PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	devel xfce
 MASTER_SITES=	XFCE/thunar-plugins
 DIST_SUBDIR=	xfce4
@@ -14,13 +13,9 @@ COMMENT=	Version Control System plugin for Thunar
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libapr-1.so:devel/apr1
-
-USES=		gettext-tools gmake libtool localbase pkgconfig tar:bzip2 \
+USES=		gettext-tools gmake gnome libtool localbase pkgconfig tar:bzip2 \
 		xfce
-USE_GNOME=	cairo glib20 gtk20 intlhack intltool
+USE_GNOME=	cairo gtk30 glib20 intltool
 USE_XFCE=	libexo thunar
 
 GNU_CONFIGURE=	yes
@@ -40,6 +35,7 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
 
 SVN_CONFIGURE_ENABLE=	subversion
-SVN_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
+SVN_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
+			libapr-1.so:devel/apr1
 
 .include <bsd.port.mk>

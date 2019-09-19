@@ -1,0 +1,22 @@
+--- xfce4-mixer/Makefile.in.orig	2014-04-09 19:40:22 UTC
++++ xfce4-mixer/Makefile.in
+@@ -429,7 +429,8 @@ xfce4_mixer_CFLAGS = \
+ 	$(LIBXFCE4UTIL_CFLAGS)						\
+ 	$(LIBXFCE4UI_CFLAGS)						\
+ 	$(XFCONF_CFLAGS)						\
+-	$(GST_PLUGINS_BASE_CFLAGS)
++	$(GST_PLUGINS_BASE_CFLAGS)					\
++	$(DBUS_GLIB_CFLAGS)
+ 
+ xfce4_mixer_DEPENDENCIES = \
+ 	$(top_builddir)/libxfce4mixer/libxfce4mixer.la
+@@ -445,7 +446,8 @@ xfce4_mixer_LDFLAGS = \
+ 	$(XFCONF_LIBS)							\
+ 	$(GST_PLUGINS_BASE_LIBS)					\
+ 	-lgstaudio-0.10							\
+-	-lgstinterfaces-0.10
++	-lgstinterfaces-0.10						\
++	$(DBUS_GLIB_LIBS)
+ 
+ dist_man_MANS = xfce4-mixer.1
+ desktop_in_files = xfce4-mixer.desktop.in

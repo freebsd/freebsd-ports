@@ -12,8 +12,12 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Additional themes for xfwm4
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=	gmake tar:bzip2
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=	gmake tar:bzip2
 
 .include <bsd.port.mk>

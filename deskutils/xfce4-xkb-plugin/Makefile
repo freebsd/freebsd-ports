@@ -2,7 +2,7 @@
 
 PORTNAME=	xfce4-xkb-plugin
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 
@@ -11,11 +11,10 @@ COMMENT=	Keyboard layout switching plugin for the Xfce panel
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libxklavier.so:x11/libxklavier \
-		libdbus-glib-1.so:devel/dbus-glib \
-		libdbus-1.so:devel/dbus
+LIB_DEPENDS=	libxklavier.so:x11/libxklavier
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
+		xfce xorg
 USE_GNOME=	cairo gtk30 intltool librsvg2 libwnck3
 USE_XFCE=	panel
 USE_XORG=	x11

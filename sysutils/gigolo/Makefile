@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gigolo
-PORTVERSION=	0.4.91
+PORTVERSION=	0.5.0
 CATEGORIES=	sysutils
 MASTER_SITES=	XFCE/apps
 
@@ -16,8 +16,8 @@ ONLY_FOR_ARCHS_REASON=	Does not compile
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
-USES=		fuse gettext-tools gmake pkgconfig tar:bzip2 xfce:gtk3
-USE_GNOME=	cairo gdkpixbuf2 gtk30 gvfs intlhack
+USES=		fuse gettext-tools gmake pkgconfig tar:bzip2 xfce xorg
+USE_GNOME=	cairo gdkpixbuf2 gtk30 gvfs intltool
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-goodies
-PORTVERSION=	4.12
-PORTREVISION=	2
+PORTVERSION=	4.14
 CATEGORIES=	x11
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -11,23 +10,22 @@ COMMENT=	Meta-port for software and artwork from the Xfce4 Goodies Project
 
 USES=		metaport
 
-OPTIONS_DEFAULT=	DASHBOARD DICTIONARY GIGOLO PAROLE \
-			POWERMANAGER RISTRETTO SCREENSHOOTER TASKMANAGER \
+OPTIONS_DEFAULT=        DASHBOARD DICTIONARY GIGOLO PAROLE  POWERMANAGER \
+			RISTRETTO SCREENSAVER SCREENSHOOTER TASKMANAGER \
 			TERMINAL XFBURN \
-			BATTERY CALCULATOR CLIPMAN CPUGRAPH \
-			DATETIME DISKPERF EMBED FSGUARD GENMON \
-			MAILWATCH MENULIBRE MOUNT NETLOAD NOTES \
-			SMARTBOOKMARK SYSTEMLOAD TIMER TIMEOUT VERVE WAVELAN \
-			WEATHER WHISKERMENU XKB \
-			ARCHIVE MEDIATAGS VCS \
-			BSDCPUFREQ EQUAKE MIXER THEMES VOLUMED
+			BATTERY CALCULATOR CLIPMAN CPUGRAPH DATETIME \
+			DISKPERF EMBED FSGUARD GENMON MAILWATCH \
+			MENULIBRE MOUNT NETLOAD NOTES SMARTBOOKMARK \
+			SYSTEMLOAD TIMER TIMEOUT VERVE WAVELAN \
+			WEATHER WHISKERMENU XKB ARCHIVE MEDIATAGS \
+			VCS BSDCPUFREQ EQUAKE THEMES VOLUMED
 
 OPTIONS_GROUP=	APPLICATIONS PANELPLUGINS THUNARPLUGINS UNOFFICIAL
 
 OPTIONS_GROUP_APPLICATIONS=	DASHBOARD DICTIONARY GIGOLO MIDORI PAROLE \
 				POWERMANAGER RISTRETTO SCREENSHOOTER \
 				TASKMANAGER TERMINAL VOLUMEDPULSE XFBURN \
-				XFMPC
+				XFMPC SCREENSAVER
 DASHBOARD_DESC=			GNOME shell like dashboard for the Xfce desktop
 DICTIONARY_DESC=		Xfce4 plugin to query different dictionaries
 GIGOLO_DESC=			Frontend to easily manage filesystem connections
@@ -35,6 +33,7 @@ MIDORI_DESC=			Lightweight web browser using WebKit engine
 PAROLE_DESC=			Lightweight media player based on GStreamer
 POWERMANAGER_DESC=		Power manager for the Xfce Desktop
 RISTRETTO_DESC=			Image viewer with Xfce integration
+SCREENSAVER_DESC=		Screen Saver for the Xfce Desktop
 SCREENSHOOTER_DESC=		Application and panel plugin to take screenshots
 TASKMANAGER_DESC=		Task manager for the Xfce desktop
 TERMINAL_DESC=			Terminal emulator for the X windowing system
@@ -49,6 +48,7 @@ MIDORI_RUN_DEPENDS=		midori>=0:www/midori
 PAROLE_RUN_DEPENDS=		parole>=0:multimedia/xfce4-parole
 POWERMANAGER_RUN_DEPENDS=	xfce4-power-manager>=0:sysutils/xfce4-power-manager
 RISTRETTO_RUN_DEPENDS=		ristretto>=0:graphics/ristretto
+SCREENSAVER_RUN_DEPENDS=	xfce4-screensaver>=0:x11/xfce4-screensaver
 SCREENSHOOTER_RUN_DEPENDS=	xfce4-screenshooter-plugin>=0:x11/xfce4-screenshooter-plugin
 TASKMANAGER_RUN_DEPENDS=	xfce4-taskmanager>=0:x11/xfce4-taskmanager
 TERMINAL_RUN_DEPENDS=		xfce4-terminal>=0:x11/xfce4-terminal
@@ -120,7 +120,7 @@ XKB_RUN_DEPENDS=		xfce4-xkb-plugin>=0:deskutils/xfce4-xkb-plugin
 
 OPTIONS_GROUP_THUNARPLUGINS=	ARCHIVE MEDIATAGS VCS
 ARCHIVE_DESC=			Create/extract archives from file context menus
-MEDIATAGS_DESC=		View/edit id3/ogg tags in file properties dialog
+MEDIATAGS_DESC=			View/edit id3/ogg tags in file properties dialog
 VCS_DESC=			SVN+GIT Version Control System integration
 
 ARCHIVE_RUN_DEPENDS=		thunar-archive-plugin>=0:archivers/thunar-archive-plugin
@@ -128,15 +128,13 @@ MEDIATAGS_RUN_DEPENDS=		thunar-media-tags-plugin>=0:audio/thunar-media-tags-plug
 VCS_RUN_DEPENDS=		thunar-vcs-plugin>=0:devel/thunar-vcs-plugin
 
 OPTIONS_GROUP_UNOFFICIAL=	BSDCPUFREQ EQUAKE MENULIBRE MIXER PRINT THEMES \
-				VALA VFS VOLUMED
+				VOLUMED
 BSDCPUFREQ_DESC=		Display the CPU clock frequency in Xfce panel
 EQUAKE_DESC=			Earthquake monitor plugin for the Xfce panel
 MENULIBRE_DESC=			Advanced compliant menu editor
 MIXER_DESC=			Volume control for the Xfce desktop
 PRINT_DESC=			Print system support for the Xfce Desktop
 THEMES_DESC=			Additional themes for xfwm4
-VALA_DESC=			Vala binding for the Xfce core libraries
-VFS_DESC=			The virtual filesystem for Thunar
 VOLUMED_DESC=			Volume management daemon for the Xfce desktop
 
 BSDCPUFREQ_RUN_DEPENDS=		xfce4-bsdcpufreq-plugin>=0:sysutils/xfce4-bsdcpufreq-plugin
@@ -145,8 +143,6 @@ MENULIBRE_RUN_DEPENDS=		py${PYTHON3_DEFAULT:S/.//}-menulibre>=0:x11/menulibre
 MIXER_RUN_DEPENDS=		xfce4-mixer>=0:audio/xfce4-mixer
 PRINT_RUN_DEPENDS=		xfce4-print>=0:print/xfce4-print
 THEMES_RUN_DEPENDS=		xfce4-wm-themes>=0:misc/xfce4-wm-themes
-VALA_RUN_DEPENDS=		xfce4-vala>=0:devel/xfce4-vala
-VFS_RUN_DEPENDS=		thunar-vfs>=0:x11-fm/thunar-vfs
 VOLUMED_RUN_DEPENDS=		xfce4-volumed>=0:deskutils/xfce4-volumed
 
 .include <bsd.port.mk>

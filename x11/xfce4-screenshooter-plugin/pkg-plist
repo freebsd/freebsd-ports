@@ -1,7 +1,6 @@
 bin/xfce4-screenshooter
 lib/xfce4/panel/plugins/libscreenshooterplugin.so
 man/man1/xfce4-screenshooter.1.gz
-share/appdata/xfce4-screenshooter.appdata.xml
 share/applications/xfce4-screenshooter.desktop
 share/icons/hicolor/48x48/apps/applets-screenshooter.png
 share/icons/hicolor/scalable/apps/applets-screenshooter.svg
@@ -25,7 +24,9 @@ share/icons/hicolor/scalable/apps/applets-screenshooter.svg
 %%NLS%%share/locale/he/LC_MESSAGES/xfce4-screenshooter.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/xfce4-screenshooter.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfce4-screenshooter.mo
+%%NLS%%share/locale/hy_AM/LC_MESSAGES/xfce4-screenshooter.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-screenshooter.mo
+%%NLS%%share/locale/ie/LC_MESSAGES/xfce4-screenshooter.mo
 %%NLS%%share/locale/is/LC_MESSAGES/xfce4-screenshooter.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-screenshooter.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfce4-screenshooter.mo
@@ -60,4 +61,5 @@ share/icons/hicolor/scalable/apps/applets-screenshooter.svg
 %%NLS%%share/locale/vi/LC_MESSAGES/xfce4-screenshooter.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-screenshooter.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-screenshooter.mo
+share/metainfo/xfce4-screenshooter.appdata.xml
 share/xfce4/panel/plugins/screenshooter.desktop

@@ -3,6 +3,7 @@
 
 PORTNAME=	garcon
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		gettext-tools gmake gnome libtool pathfix pkgconfig \
-		tar:bzip2 xfce:gtk3
+		tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 gtk30 intltool
 USE_XFCE=	libmenu
 USE_LDCONFIG=	yes

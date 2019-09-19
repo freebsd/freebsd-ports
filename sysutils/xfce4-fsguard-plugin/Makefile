@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-fsguard-plugin
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -13,7 +13,8 @@ COMMENT=	Panel plugin which displays free space of mountpoint
 # COPYING file is wrong compared to license header
 LICENSE=	BSD2CLAUSE
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
+		xfce xorg
 USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	panel
 USE_XORG=	x11

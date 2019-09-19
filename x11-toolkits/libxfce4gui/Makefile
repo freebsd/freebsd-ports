@@ -3,7 +3,7 @@
 
 PORTNAME=	libxfce4gui
 PORTVERSION=	4.10.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits xfce
 MASTER_SITES=	XFCE/archive
 DISTNAME=	libxfcegui4-${DISTVERSIONFULL}
@@ -17,8 +17,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext-tools gmake gnome libtool pathfix pkgconfig tar:bzip2 xfce
-USE_GNOME=	cairo gtk20 intlhack intltool libglade2
+USES=		gettext-tools gmake gnome libtool pathfix pkgconfig \
+		tar:bzip2 xfce:gtk2 xorg
+USE_GNOME=	cairo gtk20 intltool libglade2
 USE_XFCE=	libutil
 USE_XORG=	ice sm x11
 USE_LDCONFIG=	yes

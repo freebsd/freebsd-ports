@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-power-manager
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -13,13 +13,11 @@ COMMENT=	Power manager for the Xfce Desktop
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
-		libdbus-1.so:devel/dbus \
-		libdbus-glib-1.so:devel/dbus-glib \
-		libpolkit-gobject-1.so:sysutils/polkit \
 		libupower-glib.so:sysutils/upower
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
-USE_GNOME=	cairo glib20 gtk30 intlhack intltool
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
+		xfce xorg
+USE_GNOME=	cairo glib20 gtk30 intltool
 USE_XFCE=	panel
 USE_XORG=	ice sm xrandr x11 xext xtst xscrnsaver
 

@@ -2903,7 +2903,6 @@ sysutils/rsyslog4-devel-relp||2011-11-02|Is now stable; see sysutils/rsyslog4
 sysutils/rsyslog4-devel-rfc3195||2011-11-02|Is now stable; see sysutils/rsyslog4
 sysutils/rsyslog4-devel-snmp||2011-11-02|Is now stable; see sysutils/rsyslog4
 www/php-yaf|www/pecl-yaf|2011-11-02|The project has been moved to PECL
-sysutils/xfce4-places-plugin||2011-11-06|Removed, integrated in Xfce 4.8 panel
 lang/p5-F77|lang/p5-ExtUtils-F77|2011-11-07|Move to a better place via repocopy
 devel/soup||2011-11-09|Has expired: Unmaintained, use devel/libsoup
 graphics/clutter-qt||2011-11-09|Has expired: upstream distfile disappeared, doesn't build, and doesn't seem to be developed anymore
@@ -12955,3 +12954,4 @@ sysutils/libutempter||2019-09-11|Belong to base in all supported version of Free
 databases/postgresql-plruby||2019-09-19|Has expired: Abandonware
 databases/tablelog||2019-09-19|Has expired: Abandonware
 databases/skytools||2019-09-19|Has expired: Abandonware
+devel/xfce4-vala||2019-09-19|Deprecated, functionality moved to xfce libraries with option VAPI on (default)

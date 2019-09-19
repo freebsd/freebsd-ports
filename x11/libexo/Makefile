@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libexo
-PORTVERSION=	0.12.7
+PORTVERSION=	0.12.8
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DISTNAME=	exo-${DISTVERSIONFULL}
@@ -22,8 +22,8 @@ BUILD_DEPENDS=	p5-URI>=1.70:net/p5-URI
 RUN_DEPENDS=	p5-URI>=1.70:net/p5-URI
 
 USES=		desktop-file-utils gettext-tools gmake gnome libtool pathfix \
-		perl5 pkgconfig tar:bzip2 xfce:gtk3
-USE_GNOME=	cairo glib20 gtk20 gtk30 intltool
+		perl5 pkgconfig tar:bzip2 xfce xorg
+USE_GNOME=	cairo glib20 gtk30 intltool
 USE_LDCONFIG=	yes
 USE_XFCE=	libmenu
 USE_XORG=	ice sm x11
@@ -34,8 +34,12 @@ INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--without-html-dir --disable-silent-rules
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	GTK2 NLS
+OPTIONS_DEFAULT=	GTK2
 OPTIONS_SUB=	yes
+
+GTK2_USE=	gnome=gtk20
+GTK2_CONFIGURE_ENABLE=	gtk2
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime

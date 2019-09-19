@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-wmdock-plugin
 PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -14,8 +14,9 @@ COMMENT=	WMdock plugin for Xfce
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
-USE_GNOME=	cairo gtk20 intlhack intltool libwnck
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 \
+		xfce:gtk2 xorg
+USE_GNOME=	cairo gtk20 intltool libwnck
 USE_XFCE=	libgui panel
 USE_XORG=	x11
 

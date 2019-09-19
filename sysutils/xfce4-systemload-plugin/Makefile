@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-systemload-plugin
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -13,7 +12,7 @@ COMMENT=	System Load plugin for Xfce4 panel
 
 LICENSE=	BSD2CLAUSE
 
-USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_XFCE=	panel
 
