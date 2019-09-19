@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simgear
-PORTVERSION=	2018.3.2
-PORTREVISION=	4
+PORTVERSION=	2019.1.1
 CATEGORIES=	devel games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 
 USES=		alias cmake compiler:c++11-lib cpe gl jpeg openal:al,alut \
-		tar:bzip2
+		tar:bzip2 xorg
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu glut
 
