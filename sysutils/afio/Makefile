@@ -14,9 +14,6 @@ LICENSE_COMB=	multi
 
 USES=		tar:tgz
 
-EXAMPLES_USES=	shebangfix
-EXAMPLES_SHEBANG_FILES=	${WRKSRC}/script1/backup ${WRKSRC}/script2/backup
-
 ALL_TARGET=	${PORTNAME}
 
 SUB_FILES=	pkg-message
