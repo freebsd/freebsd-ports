@@ -3,7 +3,7 @@
 
 PORTNAME=	tin
 PORTVERSION=	2.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/v${PORTVERSION:R}/ \
@@ -41,14 +41,14 @@ OPTIONS_SUB=		yes
 NNTP_ONLY_DESC=		Only read news via NNTP (no spool dir support)
 NNTP_ONLY_CONFIGURE_ENABLE=nntp-only
 GNUPG_RUN_DEPENDS=	gpg:security/gnupg
-GNUPG_CONFIGURE_ON=	--with-gpg=${PREFIX}/bin/gpg \
+GNUPG_CONFIGURE_ON=	--with-gpg=${LOCALBASE}/bin/gpg \
 			--without-pgp --without-pgpk
 GNUPG_CONFIGURE_OFF=	--disable-pgp-gpg
 ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
-ISPELL_CONFIGURE_ARGS=	--with-ispell=${PREFIX}/bin/ispell
+ISPELL_CONFIGURE_ON=	--with-ispell=${LOCALBASE}/bin/ispell
 METAMAIL_DESC?=		Use metamail to handle MIME attachments
 METAMAIL_RUN_DEPENDS=	metamail:mail/metamail
-METAMAIL_CONFIGURE_ARGS=--with-metamail=${PREFIX}/bin/metamail
+METAMAIL_CONFIGURE_ON=	--with-metamail=${LOCALBASE}/bin/metamail
 CANLOCK_DESC=		Enable Cancel-Lock key support via libcanlock
 CANLOCK_CONFIGURE_ENABLE=cancel-locks
 NLS_CONFIGURE_ENABLE=	nls
