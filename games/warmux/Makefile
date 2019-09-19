@@ -5,18 +5,16 @@ PORTNAME=	warmux
 DISTVERSION=	11.04.1
 PORTREVISION=	10
 CATEGORIES=	games
-MASTER_SITES=	http://download.gna.org/${PORTNAME}/ \
-		http://download.gna.org/${PORTNAME}/archive/
+MASTER_SITES=	http://ftp.nluug.nl/ibiblio/distributions/slitaz/sources/packages-cooking/w/ \
+		http://mirror.clarkson.edu/slitaz/sources/packages/w/ \
+		http://ftp.ec-m.fr/pub/OpenBSD/distfiles/ \
+		https://ftp.uni-erlangen.de/gentoo/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Turn-based artillery game with free software mascots
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		unfetchable
-DEPRECATED=	Unfetchable, unmaintained
-EXPIRATION_DATE=	2019-10-16
 
 LIB_DEPENDS=	libxml++-2.6.so:textproc/libxml++26 \
 		libcurl.so:ftp/curl
