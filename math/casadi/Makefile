@@ -12,7 +12,7 @@ COMMENT=	Symbolic framework for numeric optimization
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake pkgconfig
+USES=		cmake compiler:c++11-lang pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
