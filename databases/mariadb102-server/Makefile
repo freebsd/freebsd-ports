@@ -203,7 +203,7 @@ post-install:
 	# Fix https://mariadb.atlassian.net/browse/MDEV-9388
 	@${REINPLACE_CMD} 's/-l-pthread/-pthread/' ${STAGEDIR}${PREFIX}/bin/mysql_config
 
-post-install-GSSAPI_NONE:
+post-install-GSSAPI_NONE-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mysql/plugin/auth_gssapi_client.so
 
 .else # targets for -server
