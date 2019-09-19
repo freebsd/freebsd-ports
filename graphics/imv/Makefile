@@ -16,7 +16,8 @@ BUILD_DEPENDS=	a2x:textproc/asciidoc
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 TEST_DEPENDS=	${LOCALBASE}/lib/libcmocka.so:sysutils/cmocka
 
-USES=		desktop-file-utils gettext-runtime gl gmake gnome pkgconfig
+USES=		compiler:c11 desktop-file-utils gettext-runtime gl gmake gnome \
+		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	eXeC64
 USE_GL=		gl
