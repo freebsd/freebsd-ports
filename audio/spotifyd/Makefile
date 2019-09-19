@@ -2,7 +2,7 @@
 
 PORTNAME=	spotifyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.13
+DISTVERSION=	0.2.14
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -22,7 +22,7 @@ GH_TUPLE=	plietar:dns-parser:1d3e5a5591bc72eb061c23bd426c4a25f2f73791:dnsparser 
 		plietar:rust-tremor:5958cc302e78f535dad90e9665da981ddff4000a:tremor
 USE_RC_SUBR=	spotifyd
 
-CARGO_CRATES=	adler32-1.0.3 \
+CARGO_CRATES=	adler32-1.0.4 \
 		advapi32-sys-0.2.0 \
 		aes-0.3.2 \
 		aes-ctr-0.3.0 \
@@ -85,7 +85,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		dotenv-0.10.1 \
 		dtoa-0.4.4 \
 		either-1.5.3 \
-		encoding_rs-0.8.19 \
+		encoding_rs-0.8.20 \
 		env_logger-0.5.13 \
 		env_logger-0.6.2 \
 		error-chain-0.10.0 \
@@ -108,6 +108,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		generic-array-0.12.3 \
 		get_if_addrs-0.5.3 \
 		get_if_addrs-sys-0.1.1 \
+		gethostname-0.2.0 \
 		getopts-0.2.21 \
 		getrandom-0.1.12 \
 		h2-0.1.26 \
@@ -197,7 +198,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		rand-0.4.6 \
 		rand-0.5.6 \
 		rand-0.6.5 \
-		rand-0.7.1 \
+		rand-0.7.2 \
 		rand_chacha-0.1.1 \
 		rand_chacha-0.2.1 \
 		rand_core-0.3.1 \
@@ -232,7 +233,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		ryu-1.0.0 \
 		safemem-0.2.0 \
 		safemem-0.3.2 \
-		schannel-0.1.15 \
+		schannel-0.1.16 \
 		scoped-tls-0.1.2 \
 		scopeguard-0.3.3 \
 		scopeguard-1.0.0 \
@@ -241,8 +242,8 @@ CARGO_CRATES=	adler32-1.0.3 \
 		security-framework-sys-0.3.1 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.100 \
-		serde_derive-1.0.100 \
+		serde-1.0.101 \
+		serde_derive-1.0.101 \
 		serde_ini-0.2.0 \
 		serde_json-1.0.40 \
 		serde_urlencoded-0.5.5 \
@@ -262,8 +263,8 @@ CARGO_CRATES=	adler32-1.0.3 \
 		stream-cipher-0.3.2 \
 		string-0.2.1 \
 		strsim-0.8.0 \
-		structopt-0.3.1 \
-		structopt-derive-0.3.1 \
+		structopt-0.3.2 \
+		structopt-derive-0.3.2 \
 		subtle-1.0.0 \
 		syn-0.11.11 \
 		syn-0.15.44 \
@@ -325,6 +326,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		want-0.2.0 \
 		wasi-0.7.0 \
 		webbrowser-0.2.2 \
+		whoami-0.5.3 \
 		winapi-0.2.8 \
 		winapi-0.3.8 \
 		winapi-build-0.1.1 \
