@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	apache-openoffice
-PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	4
-#PORTREVISION=	1
+PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
+PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	editors java
-MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
+MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
 		LOCAL/truckman/openoffice:snap,extsrc
 .if defined(LANG_PKGNAME)
@@ -101,7 +100,7 @@ RUN_DEPENDS=								\
 
 USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 		gettext-runtime gl gmake gnome iconv jpeg perl5 pkgconfig \
-		python:2.7 shared-mime-info ssl tar:${TARTYPE}
+		python:2.7 shared-mime-info ssl tar:${TARTYPE} xorg
 USE_GL=		gl glu
 USE_GNOME=	gtk20 libxslt libidl glib20
 USE_JAVA=	yes
@@ -119,8 +118,9 @@ AOOVERSION1=	4
 AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO420m1\(Build:9820\)
-SVNREVISION=	1856382
+AOOTAG=		AOO420m1\(Build:9821\)
+GITREVISION=	d871312c80
+TIMESTAMP=	1568906168
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -128,12 +128,12 @@ AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
 AOOXXX=		${AOOVERSION1}${AOOVERSION2}${AOOVERSION3}
 .if defined(AOORC)
 AOOSUFFIX=	${AOOVERSION}-${AOORC}
-AOOSRC=		apache-openoffice-${AOOVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
+AOOSRC=		apache-openoffice-${AOOVERSION}-${GITREVISION}-src${EXTRACT_SUFX}
 AOODISTTAG=
 TARTYPE=	bzip2
 .else
 AOOSUFFIX=	${PORTVERSION}
-AOOSRC=		apache-openoffice-r${SVNREVISION}-src${EXTRACT_SUFX}
+AOOSRC=		apache-openoffice-${TIMESTAMP}-${GITREVISION}-src${EXTRACT_SUFX}
 AOODISTTAG=	:snap
 TARTYPE=	xz
 .endif
@@ -394,6 +394,8 @@ post-patch:
 		${WRKSRC}/sysui/desktop/productversion.mk
 	${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${JAVA_HOME}|" \
 		${WRKSRC}/desktop/scripts/soffice.sh
+	${REINPLACE_CMD} -e "/#test/i\\${.newline}	return '${GITREVISION}';" \
+		${WRKSRC}/solenv/bin/modules/SvnRevision.pm
 	${REINPLACE_CMD} -e '/^mkdir -p/,$$d' ${CREATE_TREE}
 
 do-build:
