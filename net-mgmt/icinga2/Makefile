@@ -2,8 +2,7 @@
 
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.5
-PORTREVISION=	2
+DISTVERSION=	2.11.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	lme@FreeBSD.org
@@ -12,8 +11,7 @@ COMMENT=	Monitoring and management system for hosts, services and networks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libyajl.so:devel/yajl
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USES=		alias bison cmake:insource compiler:c++0x libedit ssl
