@@ -13,13 +13,11 @@ COMMENT=	C glib interface to Thrift
 
 PKGNAMESUFFIX=	-c_glib
 
-BROKEN_powerpc64=	fails to link: Internal error: Segmentation fault (program ld)
-
 BUILDIR=	${WRKDIR}/${DISTNAME}/lib/c_glib
 
 DISTINFO_FILE=	${.CURDIR}/../thrift/distinfo
 
-USES=		autoreconf pathfix pkgconfig gmake libtool
+USES=		autoreconf compiler:c++11-lang pathfix pkgconfig gmake libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
