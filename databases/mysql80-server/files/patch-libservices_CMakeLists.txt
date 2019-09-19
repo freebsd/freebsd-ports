@@ -1,9 +1,13 @@
---- libservices/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
+--- libservices/CMakeLists.txt.orig	2019-06-25 10:23:30 UTC
 +++ libservices/CMakeLists.txt
-@@ -35,4 +35,6 @@ SET(MYSQLSERVICES_SOURCES
-   mysql_keyring_service.c)
+@@ -45,7 +45,9 @@ SET(MYSQLSERVICES_SOURCES
+   plugin_registry_service.c)
  
- ADD_CONVENIENCE_LIBRARY(mysqlservices ${MYSQLSERVICES_SOURCES})
+ ADD_LIBRARY(mysqlservices STATIC ${MYSQLSERVICES_SOURCES})
 +IF(FALSE)
- INSTALL(TARGETS mysqlservices DESTINATION ${INSTALL_LIBDIR} COMPONENT Development)
+ IF(INSTALL_STATIC_LIBRARIES)
+   INSTALL(TARGETS mysqlservices
+     DESTINATION ${INSTALL_LIBDIR} COMPONENT Development)
 +ENDIF()
+ ENDIF()
+

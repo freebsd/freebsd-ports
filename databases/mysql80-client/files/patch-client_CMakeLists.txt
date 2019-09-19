@@ -13,17 +13,18 @@
  
  SET(MYSQLTEST_SRC
    mysqltest/error_names.cc
-@@ -48,9 +50,11 @@
+@@ -49,10 +51,12 @@
    mysqltest/utils.cc
  )
  
 +IF(FALSE)
  MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc ${MYSQLTEST_SRC} COMPONENT Test)
+ SET_TARGET_PROPERTIES(mysqltest PROPERTIES ENABLE_EXPORTS TRUE)
  TARGET_LINK_LIBRARIES(mysqltest mysqlclient)
  ADD_DEPENDENCIES(mysqltest GenError GenClientError)
 +ENDIF()
  
- ADD_CONVENIENCE_LIBRARY(mysqlcheck_core check/mysqlcheck_core.cc)
+ ADD_LIBRARY(mysqlcheck_core STATIC check/mysqlcheck_core.cc)
  TARGET_LINK_LIBRARIES(mysqlcheck_core mysqlclient)
 @@ -108,8 +112,10 @@
  MYSQL_ADD_EXECUTABLE(mysql_config_editor mysql_config_editor.cc)
