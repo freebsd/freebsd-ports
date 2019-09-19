@@ -2,7 +2,7 @@
 
 PORTNAME=	softether
 DISTVERSION=	4.29-9680
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-rtm-2019.02.28-tree/Source_Code/
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}-rtm
@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-src-v${DISTVERSION}-rtm
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	SoftEther VPN 4 (RTM version)
 
-LICENSE=	GPLv2
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
@@ -35,6 +35,7 @@ OPTIONS_DEFINE=	DOCS UNLOCK
 UNLOCK_DESC=	Unlock regional lockout (JP and CN)
 UNLOCK_EXTRA_PATCHES=	${FILESDIR}/extra-patch-unrestrict-enterprise-functions
 
+MAKE_JOBS_UNSAFE=	yes
 CONFLICTS_INSTALL=	softether-devel-4.* softether5
 PORTDOCS=	AUTHORS.TXT ChangeLog LICENSE README THIRD_PARTY.TXT WARNING.TXT
 
