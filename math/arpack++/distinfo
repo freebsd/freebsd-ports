@@ -1,4 +1,3 @@
-SHA256 (arpack++-1.2/arpack++.tar.gz) = 61e85474b70ee5b0a2b0cc5a7db7acc26131a48269f546e2b8dc3e92264523b3
-SIZE (arpack++-1.2/arpack++.tar.gz) = 3485328
-SHA256 (arpack++-1.2/arpack++1.2.patch.diff) = 43e2b88aa6c76a3ddc49fd0ec8fd589914bda5a1593042572f99d76ad260c93a
-SIZE (arpack++-1.2/arpack++1.2.patch.diff) = 309992
+TIMESTAMP = 1565284527
+SHA256 (m-reuter-arpackpp-2.3.0_GH0.tar.gz) = 288fb4cd2dd08e02ed29db579bc1278023a06415dd2f63b1fdc323c7993fcb1a
+SIZE (m-reuter-arpackpp-2.3.0_GH0.tar.gz) = 4882794
