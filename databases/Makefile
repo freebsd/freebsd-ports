@@ -680,7 +680,6 @@
     SUBDIR += postgresql-odbc
     SUBDIR += postgresql-orafce
     SUBDIR += postgresql-plproxy
-    SUBDIR += postgresql-plruby
     SUBDIR += postgresql-plv8js
     SUBDIR += postgresql-prefix
     SUBDIR += postgresql-relay
@@ -1000,7 +999,6 @@
     SUBDIR += sequeler
     SUBDIR += sfcgal
     SUBDIR += sharedance
-    SUBDIR += skytools
     SUBDIR += slony1v2
     SUBDIR += soci
     SUBDIR += spatialite
@@ -1027,7 +1025,6 @@
     SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += squirrel-sql
-    SUBDIR += tablelog
     SUBDIR += tarantool
     SUBDIR += tarantool-c
     SUBDIR += tcl-Mysql

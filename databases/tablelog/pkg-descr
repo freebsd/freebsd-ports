@@ -1,6 +1,0 @@
-Tablelog is a contributed PostgreSQL module that uses a trigger to log
-any INSERTs, UPDATEs and DELETEs on a specific table into another table.
-The second part of tablelog is able to restore the state of the original
-table or of a specific row for any time in the past.
-
-WWW: http://pgfoundry.org/projects/tablelog/
