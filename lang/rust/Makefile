@@ -250,44 +250,4 @@ makesum:
 	${RM} ${DISTINFO_FILE}.powerpc64-elfv2
 .endif
 
-BOOTSTRAPS_SOURCE_PKG_FBSDVER=		10
-BOOTSTRAPS_SOURCE_PKG_FBSDVER_aarch64=	11
-BOOTSTRAPS_SOURCE_PKG_FBSDVER_armv6=	11
-BOOTSTRAPS_SOURCE_PKG_FBSDVER_armv7=	12
-BOOTSTRAPS_SOURCE_PKG_FBSDVER_powerpc64=	11
-BOOTSTRAPS_SOURCE_PKG_REV=
-BOOTSTRAPS_SOURCE_PKG_URL=	https://pkg.freebsd.org/FreeBSD:${BOOTSTRAPS_SOURCE_PKG_FBSDVER_${ARCH}:U${BOOTSTRAPS_SOURCE_PKG_FBSDVER}}:${ARCH}/latest/All/rust-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}${BOOTSTRAPS_SOURCE_PKG_REV}.txz
-BOOTSTRAPS_SOURCE_PKG=		${_DISTDIR}/${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${ARCH}.txz
-
-package-to-bootstraps: ${BOOTSTRAPS_SOURCE_PKG}
-	${MKDIR} ${WRKDIR}/bootstraps
-	${RM} -r ${WRKDIR}/bootstraps/usr
-	${EXTRACT_CMD} \
-		-C ${WRKDIR}/bootstraps \
-		--strip-components 3 \
-		${EXTRACT_BEFORE_ARGS} ${BOOTSTRAPS_SOURCE_PKG} ${LOCALBASE}
-# `rustc` bootstrap.
-	${RM} -r ${WRKDIR}/bootstraps/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
-	${MKDIR} ${WRKDIR}/bootstraps/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
-	cd ${WRKDIR}/bootstraps/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET} && \
-		${MKDIR} rustc/bin rustc/lib && \
-		${MV} ${WRKDIR}/bootstraps/bin/rust* rustc/bin && \
-		${MV} ${WRKDIR}/bootstraps/lib/*.so rustc/lib
-	${TAR} -cz --format=ustar -C ${WRKDIR}/bootstraps \
-		-f ${_DISTDIR}/${_RUSTC_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}.tar.gz \
-		rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
-# `rust-std` bootstrap.
-	${RM} -r ${WRKDIR}/bootstraps/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
-	${MKDIR} ${WRKDIR}/bootstraps/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
-	cd ${WRKDIR}/bootstraps/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET} && \
-		${MKDIR} rust-std-${_RUST_TARGET}/lib/rustlib/${_RUST_TARGET} && \
-		${MV} ${WRKDIR}/bootstraps/lib/rustlib/${_RUST_TARGET}/lib rust-std-${_RUST_TARGET}/lib/rustlib/${_RUST_TARGET}
-	${TAR} -cz --format=ustar -C ${WRKDIR}/bootstraps \
-		-f ${_DISTDIR}/${_RUST_STD_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}.tar.gz \
-		rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
-
-${BOOTSTRAPS_SOURCE_PKG}:
-	${MKDIR} ${@:H}
-	${FETCH_CMD} -o $@ ${BOOTSTRAPS_SOURCE_PKG_URL}
-
 .include <bsd.port.post.mk>
