@@ -18,6 +18,7 @@ include/measurement_kit/common/portable/time.h
 include/measurement_kit/common/shared_ptr.hpp
 include/measurement_kit/common/version.h
 include/measurement_kit/ffi.h
+include/measurement_kit/internal/engine/task.hpp
 include/measurement_kit/internal/mkapi/orchestra.h
 include/measurement_kit/internal/vendor/http_parser.h
 include/measurement_kit/internal/vendor/json.hpp
