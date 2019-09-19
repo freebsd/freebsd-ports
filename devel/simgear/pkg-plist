@@ -269,6 +269,7 @@ include/simgear/scene/util/QuadTreeBuilder.hxx
 include/simgear/scene/util/RenderConstants.hxx
 include/simgear/scene/util/SGDebugDrawCallback.hxx
 include/simgear/scene/util/SGEnlargeBoundingBox.hxx
+include/simgear/scene/util/SGImageUtils.hxx
 include/simgear/scene/util/SGNodeMasks.hxx
 include/simgear/scene/util/SGPickCallback.hxx
 include/simgear/scene/util/SGReaderWriterOptions.hxx
@@ -284,6 +285,11 @@ include/simgear/scene/util/UpdateOnceCallback.hxx
 include/simgear/scene/util/VectorArrayAdapter.hxx
 include/simgear/scene/util/parse_color.hxx
 include/simgear/scene/util/project.hxx
+include/simgear/scene/viewer/ClusteredForward.hxx
+include/simgear/scene/viewer/Compositor.hxx
+include/simgear/scene/viewer/CompositorBuffer.hxx
+include/simgear/scene/viewer/CompositorPass.hxx
+include/simgear/scene/viewer/CompositorUtil.hxx
 include/simgear/screen/colors.hxx
 include/simgear/screen/extensions.hxx
 include/simgear/screen/screen-dump.hxx
@@ -337,6 +343,6 @@ lib/cmake/SimGear/SimGearConfigVersion.cmake
 lib/cmake/SimGear/SimGearTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SimGear/SimGearTargets.cmake
 lib/libSimGearCore.so
-lib/libSimGearCore.so.2018.3.2
+lib/libSimGearCore.so.2019.1.1
 lib/libSimGearScene.so
-lib/libSimGearScene.so.2018.3.2
+lib/libSimGearScene.so.2019.1.1
