@@ -3,7 +3,7 @@
 
 PORTNAME=	bogofilter
 DISTVERSION=	1.2.5.rc1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	mail
 MASTER_SITES=	SF/bogofilter/bogofilter-current/bogofilter-1.2.5/
 
@@ -39,7 +39,7 @@ CPE_VENDOR=	bogofilter_project
 UNICODE_USES=	iconv
 UNICODE_CONFIGURE_ENABLE=	unicode
 GSL_LIB_DEPENDS=	libgsl.so:math/gsl
-GSL_CONFIGURE_ARGS_OFF=	--with-included-gsl
+GSL_CONFIGURE_OFF=	--with-included-gsl
 
 PORTDOCS=	*
 
