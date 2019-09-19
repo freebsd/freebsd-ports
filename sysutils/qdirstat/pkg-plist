@@ -8,10 +8,12 @@ share/icons/hicolor/scalable/apps/qdirstat.svg
 %%PORTDOCS%%%%DOCSDIR%%/DevHistory.md
 %%PORTDOCS%%%%DOCSDIR%%/GitHub-Workflow.md
 %%PORTDOCS%%%%DOCSDIR%%/Installing.md
+%%PORTDOCS%%%%DOCSDIR%%/Pkg-View.md
 %%PORTDOCS%%%%DOCSDIR%%/QDirStat-for-Servers.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/TODO.md
 %%PORTDOCS%%%%DOCSDIR%%/Troubleshooting.md
+%%PORTDOCS%%%%DOCSDIR%%/Unpkg-View.md
 %%PORTDOCS%%%%DOCSDIR%%/cache-file-format.txt
 %%PORTDOCS%%%%DOCSDIR%%/stats/Buckets-Table.md
 %%PORTDOCS%%%%DOCSDIR%%/stats/File-Size-Histogram.md
