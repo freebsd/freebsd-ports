@@ -23,6 +23,7 @@
     SUBDIR += bitter
     SUBDIR += c64bdf
     SUBDIR += cantarell-fonts
+    SUBDIR += cascadia-code
     SUBDIR += charis
     SUBDIR += charis-compact
     SUBDIR += clearsans
