@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.b0/beta0/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yasou picture book (EPWING V1 format) by SAS
 
+BROKEN=		unfetchable
 NO_CDROM=	No commercial use, and no redistribution allowed with fee except media and/or shipping cost
 DEPRECATED=		the only remaining mastersite times out
 EXPIRATION_DATE=	2019-10-22
