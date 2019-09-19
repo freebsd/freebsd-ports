@@ -5,4 +5,4 @@ and make sure that the email is authorized by the domain name that it
 is coming from. This prevents email forgery, commonly used by spammers,
 scammers and email viruses/worms.
 
-WWW: http://www.libspf2.org/
+WWW: https://www.libspf2.org/
