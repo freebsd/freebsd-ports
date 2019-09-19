@@ -12,6 +12,7 @@ COMMENT=	Weather data visualization, GRIB file viewer
 
 LICENSE=	GPLv3
 
+BROKEN=		checksum mismatch
 DEPRECATED=		Can not build with graphics/proj
 EXPIRATION_DATE=	2019-09-27
 
