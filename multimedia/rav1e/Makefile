@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190909
+PORTVERSION=	s20190918
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,10 +16,10 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	07ca598c
+GH_TAGNAME=	54532d67
 PLIST_FILES=	bin/${PORTNAME}
 
-CARGO_CRATES=	adler32-1.0.3 \
+CARGO_CRATES=	adler32-1.0.4 \
 		aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
 		aom-sys-0.1.2 \
@@ -34,13 +34,14 @@ CARGO_CRATES=	adler32-1.0.3 \
 		better-panic-0.1.2 \
 		bincode-1.1.4 \
 		bindgen-0.49.2 \
+		bindgen-0.51.0 \
 		bitflags-1.1.0 \
 		bitstream-io-0.8.4 \
 		bstr-0.2.8 \
 		byteorder-1.3.2 \
 		c2-chacha-0.2.2 \
 		cast-0.2.2 \
-		cc-1.0.42 \
+		cc-1.0.45 \
 		cexpr-0.3.5 \
 		cfg-if-0.1.9 \
 		chrono-0.4.9 \
@@ -60,10 +61,10 @@ CARGO_CRATES=	adler32-1.0.3 \
 		csv-1.1.1 \
 		csv-core-0.1.6 \
 		ctor-0.1.10 \
-		dav1d-sys-0.2.0 \
+		dav1d-sys-0.2.1 \
 		deflate-0.7.20 \
 		difference-2.0.0 \
-		either-1.5.2 \
+		either-1.5.3 \
 		encode_unicode-0.3.6 \
 		env_logger-0.6.2 \
 		err-derive-0.1.5 \
@@ -73,10 +74,10 @@ CARGO_CRATES=	adler32-1.0.3 \
 		fuchsia-cprng-0.1.1 \
 		fxhash-0.2.1 \
 		getrandom-0.1.12 \
-		gif-0.10.2 \
+		gif-0.10.3 \
 		glob-0.3.0 \
-		humantime-1.2.0 \
-		image-0.22.1 \
+		humantime-1.3.0 \
+		image-0.22.2 \
 		inflate-0.4.5 \
 		interpolate_name-0.2.3 \
 		itertools-0.8.0 \
@@ -105,18 +106,18 @@ CARGO_CRATES=	adler32-1.0.3 \
 		paste-0.1.6 \
 		paste-impl-0.1.6 \
 		peeking_take_while-0.1.2 \
-		pkg-config-0.3.15 \
+		pkg-config-0.3.16 \
 		png-0.15.0 \
 		ppv-lite86-0.2.5 \
 		pretty_assertions-0.6.1 \
 		pretty_env_logger-0.3.1 \
 		proc-macro-hack-0.5.9 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.2 \
+		proc-macro2-1.0.3 \
 		quick-error-1.2.2 \
 		quote-0.6.13 \
 		quote-1.0.2 \
-		rand-0.7.0 \
+		rand-0.7.2 \
 		rand_chacha-0.2.1 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
@@ -140,8 +141,8 @@ CARGO_CRATES=	adler32-1.0.3 \
 		scopeguard-1.0.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.99 \
-		serde_derive-1.0.99 \
+		serde-1.0.101 \
+		serde_derive-1.0.101 \
 		serde_json-1.0.40 \
 		shlex-0.1.1 \
 		signal-hook-0.1.10 \
