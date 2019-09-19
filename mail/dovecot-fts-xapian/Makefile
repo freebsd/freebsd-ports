@@ -16,7 +16,7 @@ LIB_DEPENDS=	libxapian.so:databases/xapian-core \
 BUILD_DEPENDS=	dovecot>=2.3.7:mail/dovecot
 RUN_DEPENDS=	dovecot>=2.3.7:mail/dovecot
 
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf compiler:c++11-lang libtool pkgconfig
 
 USE_LDCONFIG=	yes
 
