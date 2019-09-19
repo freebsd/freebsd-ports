@@ -11,11 +11,6 @@ COMMENT=	Quantum toolbox in python
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_aarch64=		fails to compile: the clang compiler does not support -march=native
-BROKEN_armv6=		fails to compile: the clang compiler does not support -march=native
-BROKEN_armv7=		fails to compile: the clang compiler does not support -march=native
-BROKEN_powerpc64=	fails to compile: the clang compiler does not support -march=native
-
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.0:science/py-scipy@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
