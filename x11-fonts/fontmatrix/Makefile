@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		cmake qt:5
+USES=		cmake compiler:c++11-lang qt:5
 
 USE_GITHUB=	yes
 USE_QT=		buildtools core gui linguisttools network printsupport \
