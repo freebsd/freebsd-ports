@@ -212,7 +212,7 @@ post-install:
 	${RM} -r ${STAGEDIR}${DATADIR}
 	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/server
 
-post-install-GSSAPI_NONE:
+post-install-GSSAPI_NONE-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mysql/plugin/auth_gssapi_client.so
 
 .else # ! ${PKGNAMESUFFIX:M*-client}
