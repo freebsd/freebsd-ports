@@ -31,7 +31,6 @@ load_rc_config "${name}"
 
 : ${icinga2_enable:="NO"}
 : ${icinga2_configfile="%%PREFIX%%/etc/${name}/${name}.conf"}
-: ${icinga2_mkvar:="NO"}
 : ${icinga2_user:="%%ICINGA2USER%%"}
 : ${icinga2_group:="%%ICINGA2GROUP%%"}
 : ${icinga2_webgroup:="www"}
@@ -86,24 +85,20 @@ reload_precmd() {
 }
 
 start_precmd() {
-  if checkyesno "icinga2_mkvar"; then
-    # Create necessary directories / change ownership
-    # While this is also done through pkg-plist, /var might be on a ramdisk,
-    # so make sure all needed files and directories are created before starting
-    # Icinga.
-    for d in "${icinga2_logdir}" "${icinga2_logdir}/compat" \
-             "${icinga2_logdir}/compat/archives" "${icinga2_libdir}" \
-             "${icinga2_spooldir}" "${icinga2_spooldir}/tmp" \
-             "${icinga2_rundir}" "${icinga2_cachedir}"; do
-        if [ ! -d "${d}" ]; then
-          install -d -o ${icinga2_user} -g ${icinga2_group} "${d}"
-        fi
-    done
+  # Create necessary directories / change ownership
+  # While this is also done through pkg-plist, /var might be on a ramdisk,
+  # so make sure all needed files and directories are created before starting
+  # Icinga.
+  for d in "${icinga2_logdir}" "${icinga2_logdir}/compat" \
+           "${icinga2_logdir}/compat/archives" "${icinga2_libdir}" \
+           "${icinga2_spooldir}" "${icinga2_spooldir}/tmp" \
+           "${icinga2_rundir}" "${icinga2_cachedir}"; do
+      if [ ! -d "${d}" ]; then
+        install -d -o ${icinga2_user} -g ${icinga2_group} "${d}"
+      fi
+  done
 
-    install -d -o ${icinga2_user} -g ${icinga2_webgroup} "${icinga2_rundir}/cmd"
-
-
-  fi
+  install -d -o ${icinga2_user} -g ${icinga2_webgroup} -m 2750 "${icinga2_rundir}/cmd"
 
   chown -R ${icinga2_user}:${icinga2_group} "${icinga2_libdir}"
   chown -R ${icinga2_user}:${icinga2_group} "${icinga2_spooldir}"

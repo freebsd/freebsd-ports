@@ -10,6 +10,9 @@ EOM
 If you do a major upgrade of Icinga 2 and use a database, please see
 http://docs.icinga.org/icinga2/latest/doc/module/icinga2/chapter/upgrading-icinga-2
 how to upgrade the database.
+
+Please remove the rc.conf variable 'icinga2_mkvar'. All needed directories are
+now created as needed. 
 EOM
 }
 ]
