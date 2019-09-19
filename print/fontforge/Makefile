@@ -3,7 +3,7 @@
 
 PORTNAME=	fontforge
 PORTVERSION=	20190801
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 
 MAINTAINER=	cyberbotx@cyberbotx.com
