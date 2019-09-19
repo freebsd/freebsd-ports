@@ -23,6 +23,7 @@ LLVM_COMMANDS=	\
 		llvm-elfabi \
 		llvm-exegesis \
 		llvm-extract \
+		llvm-ifs \
 		llvm-jitlink \
 		llvm-link \
 		llvm-lipo \
