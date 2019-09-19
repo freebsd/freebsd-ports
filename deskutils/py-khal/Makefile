@@ -3,6 +3,7 @@
 
 PORTNAME=	khal
 DISTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,18 +32,12 @@ USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS SETPROCTITLE
+OPTIONS_DEFINE=		SETPROCTITLE
 
-DOCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>1.6.1:textproc/py-sphinx@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-newsfeed>=0:textproc/py-sphinxcontrib-newsfeed@${PY_FLAVOR}
-
-SETPROCTITLE_DESC=	Set the process title
+SETPROCTITLE_DESC=		Set the process title
 SETPROCTITLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setproctitle>=0:devel/py-setproctitle@${PY_FLAVOR}
 
 PLIST_FILES=	share/zsh/site-functions/__khal
-
-build-DOCS-on:
-	(cd ${WRKSRC}/docs && ${MAKE})
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
