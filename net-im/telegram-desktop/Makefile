@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
-NOT_FOR_ARCHS_REASON=	Please add support for your architecture in base/build_config.h
+NOT_FOR_ARCHS_REASON=	Only little endian is supported
 
 BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib \
 		dee>0:devel/dee \
