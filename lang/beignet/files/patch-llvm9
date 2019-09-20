@@ -1,0 +1,194 @@
+Regressed by https://github.com/llvm/llvm-project/commit/2e97d2aa1bd3
+
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::MatchFinder::addMatcher(clang::ast_matchers::internal::Matcher<clang::Stmt> const&, clang::ast_matchers::MatchFinder::MatchCallback*)
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::MatchFinder::MatchCallback::~MatchCallback()
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::MatchFinder::match(clang::ast_type_traits::DynTypedNode const&, clang::ASTContext&)
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::MatchFinder::MatchFinder(clang::ast_matchers::MatchFinder::MatchFinderOptions)
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::MatchFinder::~MatchFinder()
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::cxxMethodDecl
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::cxxRecordDecl
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::unaryOperator
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::cxxConstructExpr
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::cxxConstructorDecl
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::cxxOperatorCallExpr
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::expr
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::allOf
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::anyOf
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::eachOf
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::unless
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::varDecl
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::callExpr
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::castExpr
+ld: error: backend/src/libgbe.so: undefined reference to clang::ast_matchers::internal::hasAnyNameFunc(llvm::ArrayRef<llvm::StringRef const*>)
+ld: error: too many errors emitted, stopping now (use -error-limit=0 to see all errors)
+c++: error: linker command failed with exit code 1 (use -v to see invocation)
+
+Regressed by https://github.com/llvm/llvm-project/commit/13680223b9d8
+
+backend/src/llvm/llvm_intrinsic_lowering.cpp:80:19: error:
+      no viable conversion from 'llvm::FunctionCallee' to 'llvm::Constant *'
+        Constant* FCache = M->getOrInsertFunction(NewFn,
+                  ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend/src/llvm/llvm_sampler_fix.cpp:85:18: error:
+      no viable conversion from 'llvm::FunctionCallee' to 'llvm::Value *'
+  ...Value* samplerCvt = M->getOrInsertFunction("__gen_ocl_sampler_to_int", i32Ty, I->getOperand(0)->getType());
+            ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend/src/llvm/llvm_sampler_fix.cpp:127:18: error:
+      no viable conversion from 'llvm::FunctionCallee' to 'llvm::Value *'
+  ...Value* samplerCvt = M->getOrInsertFunction("__gen_ocl_sampler_to_int", i32Ty, I->getOperand(0)->getType());
+            ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+backend/src/llvm/llvm_profiling.cpp:166:27: error: no
+      matching function for call to 'cast'
+      builder->CreateCall(cast<llvm::Function>(module->getOrInsertFunction(
+                          ^~~~~~~~~~~~~~~~~~~~
+backend/src/llvm/llvm_device_enqueue.cpp:401:52: error:
+      no matching function for call to 'cast'
+              CallInst* newCI = builder.CreateCall(cast<llvm::Function>(mod->getOrInsertFunction(
+                                                   ^~~~~~~~~~~~~~~~~~~~
+/usr/local/llvm90/include/llvm/Support/Casting.h:256:44: note: candidate function [with X = llvm::Function, Y
+      = llvm::FunctionCallee] not viable: expects an l-value for 1st argument
+inline typename cast_retty<X, Y>::ret_type cast(Y &Val) {
+                                           ^
+/usr/local/llvm90/include/llvm/Support/Casting.h:249:1: note: candidate template ignored: requirement
+      '!is_simple_type<llvm::FunctionCallee>::value' was not satisfied [with X = llvm::Function, Y =
+      llvm::FunctionCallee]
+cast(const Y &Val) {
+^
+/usr/local/llvm90/include/llvm/Support/Casting.h:263:46: note: candidate template ignored: could not match
+      'Y *' against 'llvm::FunctionCallee'
+inline typename cast_retty<X, Y *>::ret_type cast(Y *Val) {
+                                             ^
+/usr/local/llvm90/include/llvm/Support/Casting.h:271:1: note: candidate template ignored: could not match
+      'unique_ptr<type-parameter-0-1, default_delete<type-parameter-0-1> >' against 'llvm::FunctionCallee'
+cast(std::unique_ptr<Y> &&Val) {
+^
+backend/src/llvm/llvm_profiling.cpp:188:25: error: no
+      matching function for call to 'cast'
+    builder->CreateCall(cast<llvm::Function>(module->getOrInsertFunction(
+                        ^~~~~~~~~~~~~~~~~~~~
+/usr/local/llvm90/include/llvm/Support/Casting.h:256:44: note: candidate function [with X = llvm::Function, Y
+      = llvm::FunctionCallee] not viable: expects an l-value for 1st argument
+inline typename cast_retty<X, Y>::ret_type cast(Y &Val) {
+                                           ^
+/usr/local/llvm90/include/llvm/Support/Casting.h:249:1: note: candidate template ignored: requirement
+      '!is_simple_type<llvm::FunctionCallee>::value' was not satisfied [with X = llvm::Function, Y =
+      llvm::FunctionCallee]
+cast(const Y &Val) {
+^
+/usr/local/llvm90/include/llvm/Support/Casting.h:263:46: note: candidate template ignored: could not match
+      'Y *' against 'llvm::FunctionCallee'
+inline typename cast_retty<X, Y *>::ret_type cast(Y *Val) {
+                                             ^
+/usr/local/llvm90/include/llvm/Support/Casting.h:271:1: note: candidate template ignored: could not match
+      'unique_ptr<type-parameter-0-1, default_delete<type-parameter-0-1> >' against 'llvm::FunctionCallee'
+cast(std::unique_ptr<Y> &&Val) {
+^
+
+--- CMake/FindLLVM.cmake.orig	2017-09-22 08:05:22 UTC
++++ CMake/FindLLVM.cmake
+@@ -116,6 +116,9 @@ macro(add_one_lib name)
+ endmacro()
+ 
+ #Assume clang lib path same as llvm lib path
++if (LLVM_VERSION_NODOT VERSION_GREATER 80)
++add_one_lib("clang-cpp")
++endif (LLVM_VERSION_NODOT VERSION_GREATER 80)
+ add_one_lib("clangCodeGen")
+ add_one_lib("clangFrontend")
+ add_one_lib("clangSerialization")
+--- backend/src/llvm/llvm_intrinsic_lowering.cpp.orig	2017-10-24 06:04:48 UTC
++++ backend/src/llvm/llvm_intrinsic_lowering.cpp
+@@ -77,7 +77,11 @@ namespace gbe {
+         std::vector<Type *> ParamTys;
+         for (Value** I = ArgBegin; I != ArgEnd; ++I)
+           ParamTys.push_back((*I)->getType());
++#if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 90
++        FunctionCallee FCache = M->getOrInsertFunction(NewFn,
++#else
+         Constant* FCache = M->getOrInsertFunction(NewFn,
++#endif
+                                         FunctionType::get(RetTy, ParamTys, false));
+ 
+         IRBuilder<> Builder(CI->getParent(), BasicBlock::iterator(CI));
+--- backend/src/llvm/llvm_sampler_fix.cpp.orig	2017-10-24 06:04:48 UTC
++++ backend/src/llvm/llvm_sampler_fix.cpp
+@@ -82,7 +82,11 @@ namespace gbe {
+ #if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 40
+           Module *M = I->getParent()->getParent()->getParent();
+ #if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 50
++#if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 90
++          FunctionCallee samplerCvt = M->getOrInsertFunction("__gen_ocl_sampler_to_int", i32Ty, I->getOperand(0)->getType());
++#else
+           Value* samplerCvt = M->getOrInsertFunction("__gen_ocl_sampler_to_int", i32Ty, I->getOperand(0)->getType());
++#endif
+ #else
+           Value* samplerCvt = M->getOrInsertFunction("__gen_ocl_sampler_to_int", i32Ty, I->getOperand(0)->getType(), nullptr);
+ #endif
+@@ -124,7 +128,11 @@ namespace gbe {
+ #if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 40
+           Module *M = I->getParent()->getParent()->getParent();
+ #if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 50
++#if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 90
++          FunctionCallee samplerCvt = M->getOrInsertFunction("__gen_ocl_sampler_to_int", i32Ty, I->getOperand(0)->getType());
++#else
+           Value* samplerCvt = M->getOrInsertFunction("__gen_ocl_sampler_to_int", i32Ty, I->getOperand(0)->getType());
++#endif
+ #else
+           Value* samplerCvt = M->getOrInsertFunction("__gen_ocl_sampler_to_int", i32Ty, I->getOperand(0)->getType(), nullptr);
+ #endif
+--- backend/src/llvm/llvm_profiling.cpp.orig	2017-10-24 06:04:48 UTC
++++ backend/src/llvm/llvm_profiling.cpp
+@@ -163,10 +163,18 @@ namespace gbe
+       // __gen_ocl_store_timestamp(int nth, int type);
+       Value *Args[2] = {ConstantInt::get(intTy, pointNum++), ConstantInt::get(intTy, profilingType)};
+ #if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 50
++#if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 90
++      builder->CreateCall(module->getOrInsertFunction(
++#else
+       builder->CreateCall(cast<llvm::Function>(module->getOrInsertFunction(
++#endif
+               "__gen_ocl_calc_timestamp", Type::getVoidTy(module->getContext()),
+               IntegerType::getInt32Ty(module->getContext()),
++#if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 90
++              IntegerType::getInt32Ty(module->getContext())),
++#else
+               IntegerType::getInt32Ty(module->getContext()))),
++#endif
+               ArrayRef<Value*>(Args));
+ #else
+       builder->CreateCall(cast<llvm::Function>(module->getOrInsertFunction(
+@@ -185,10 +193,18 @@ namespace gbe
+     Value *Args2[2] = {profilingBuf, ConstantInt::get(intTy, profilingType)};
+ 
+ #if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 50
++#if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 90
++    builder->CreateCall(module->getOrInsertFunction(
++#else
+     builder->CreateCall(cast<llvm::Function>(module->getOrInsertFunction(
++#endif
+             "__gen_ocl_store_profiling", Type::getVoidTy(module->getContext()),
+             ptrTy,
++#if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 90
++            IntegerType::getInt32Ty(module->getContext())),
++#else
+             IntegerType::getInt32Ty(module->getContext()))),
++#endif
+             ArrayRef<Value*>(Args2));
+ #else
+     builder->CreateCall(cast<llvm::Function>(module->getOrInsertFunction(
+--- backend/src/llvm/llvm_device_enqueue.cpp.orig	2017-10-24 06:04:48 UTC
++++ backend/src/llvm/llvm_device_enqueue.cpp
+@@ -398,8 +398,13 @@ namespace gbe {
+               std::vector<Type *> ParamTys;
+               for (Value** iter = args.begin(); iter != args.end(); ++iter)
+                 ParamTys.push_back((*iter)->getType());
++#if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 90
++              CallInst* newCI = builder.CreateCall(mod->getOrInsertFunction(
++                              "__gen_enqueue_kernel_slm", FunctionType::get(intTy, ParamTys, false)), args);
++#else
+               CallInst* newCI = builder.CreateCall(cast<llvm::Function>(mod->getOrInsertFunction(
+                               "__gen_enqueue_kernel_slm", FunctionType::get(intTy, ParamTys, false))), args);
++#endif
+               CI->replaceAllUsesWith(newCI);
+               deadInsnSet.insert(CI);
+             }
