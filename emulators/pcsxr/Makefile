@@ -18,7 +18,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libavformat.so:multimedia/ffmpeg
 
 USES=		cmake desktop-file-utils dos2unix gettext gl gnome iconv \
-		libarchive libtool pkgconfig sdl tar:bzip2
+		libarchive libtool pkgconfig sdl tar:bzip2 xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	martymac
