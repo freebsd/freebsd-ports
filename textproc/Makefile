@@ -1404,6 +1404,7 @@
     SUBDIR += py-tinycss
     SUBDIR += py-toml
     SUBDIR += py-toronado
+    SUBDIR += py-towncrier
     SUBDIR += py-trans
     SUBDIR += py-transifex-client
     SUBDIR += py-translationstring
