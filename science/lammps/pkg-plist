@@ -125,6 +125,9 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/W_2940_2017_2_He_JW2013.snap
 %%DATADIR%%/potentials/W_He_JW2013.table
 %%DATADIR%%/potentials/W_zhou.eam.alloy
+%%DATADIR%%/potentials/WBe_Wood_PRB2019.snap
+%%DATADIR%%/potentials/WBe_Wood_PRB2019.snapcoeff
+%%DATADIR%%/potentials/WBe_Wood_PRB2019.snapparam
 %%DATADIR%%/potentials/Zr_mm.eam.fs
 %%DATADIR%%/potentials/charmm22.cmap
 %%DATADIR%%/potentials/charmm36.cmap
