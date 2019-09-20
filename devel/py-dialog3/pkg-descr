@@ -1,0 +1,7 @@
+pythondialog 3 is a Python 3 wrapper for the dialog utility originally
+written by Savio Lam, and later rewritten by Thomas E. Dickey.  Its purpose
+is to provide an easy to use, pythonic and comprehensive Python 3 interface
+to dialog.  This allows one to make simple text-mode user interfaces on
+Unix-like systems.
+
+WWW: http://pythondialog.sourceforge.net/
