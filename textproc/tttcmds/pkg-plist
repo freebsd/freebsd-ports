@@ -24,6 +24,7 @@ bin/conv_ssv2ssv
 bin/conv_ssv2transposedssv
 bin/conv_ssv2tsv
 bin/conv_ssv2txt
+bin/conv_ssv2yukossv
 bin/conv_ssvstr2str
 bin/conv_str2ssvstr
 bin/conv_tag2ssv
@@ -49,6 +50,7 @@ bin/leavefirst
 bin/leavelast
 bin/leftjoin
 bin/millisec
+bin/mkyuko
 bin/numfmt
 bin/numformat
 bin/ongs_awk
@@ -86,6 +88,7 @@ bin/ssv1txt
 bin/ssv2ssv
 bin/ssv2tsv
 bin/ssv2txt
+bin/ssv2yukossv
 bin/ssvstr2str
 bin/str2ssvstr
 bin/strfmt
@@ -103,11 +106,11 @@ bin/txt1txt
 bin/util_millisecond
 bin/val1txt
 bin/wait_filechanges
+include/ttt.h
 include/ttt_aliases.h
 include/ttt_debug.h
 include/ttt_text.h
 include/ttt_utils.h
-include/ttt.h
 lib/libttt.a
 lib/libttt.so
 lib/libttt.so.0
