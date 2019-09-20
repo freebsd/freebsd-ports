@@ -1,0 +1,5 @@
+A compiler that generates FlatBuffers code for C given a FlatBuffer schema
+file. This introduction also creates a separate test project with the
+traditional monster example, here in a C version.
+
+WWW: https://github.com/dvidelabs/flatcc
