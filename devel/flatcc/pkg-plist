@@ -1,4 +1,4 @@
-bin/flatcc
+bin/flatcc%%SUFFIX%%
 include/flatcc/flatcc.h
 include/flatcc/flatcc_accessors.h
 include/flatcc/flatcc_alloc.h
@@ -64,5 +64,5 @@ include/flatcc/support/cdump.h
 include/flatcc/support/elapsed.h
 include/flatcc/support/hexdump.h
 include/flatcc/support/readfile.h
-lib/libflatcc.so
-lib/libflatccrt.so
+lib/libflatcc%%SUFFIX%%.so
+lib/libflatccrt%%SUFFIX%%.so
