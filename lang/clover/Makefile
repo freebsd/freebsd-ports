@@ -17,6 +17,11 @@ ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	Clover needs a GPU supported by the Radeon KMS driver
 
 .include <bsd.port.options.mk>
+
+.if ${LLVM_DEFAULT:S,-devel,990,} >= 90
+LLVM_DEFAULT=	80
+.endif
+
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
 CONFIGURE_ARGS+=	--enable-opencl --enable-opencl-icd --disable-dri \
