@@ -12,7 +12,7 @@ COMMENT=	RSerPool Framework and Example Applications
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake qt:5 shebangfix tar:xz
+USES=		cmake compiler:c++11-lang qt:5 shebangfix tar:xz
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/man \
 		-DDOCSDIR="${DOCSDIR}" \
