@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libmetis.so:math/metis \
 		liblapack.so:math/lapack
 
-USES=		cmake:insource compiler:openmp fortran gmake
+USES=		cmake:insource compiler:c++0x fortran gmake
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/SuiteSparse
