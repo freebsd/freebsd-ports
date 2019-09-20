@@ -85,6 +85,10 @@ SHEBANG_FILES=		tests/system/tools/objectsToTable.py \
 
 .include <bsd.port.pre.mk>
 
+.if ${LLVM_DEFAULT:S,-devel,990,} >= 90
+LLVM_DEFAULT=	80
+.endif
+
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 PLIST_SUB+=	GCC=""
 .else

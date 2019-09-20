@@ -42,6 +42,10 @@ LLVM_VARS=		CC=clang${LLVM_DEFAULT} \
 
 .include <bsd.port.options.mk>
 
+.if ${LLVM_DEFAULT:S,-devel,990,} >= 90
+LLVM_DEFAULT=	80
+.endif
+
 .if ${ARCH} == "i386"
 # Clang i386 emits .cfi_sections which base as(1) doesn't understand
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
