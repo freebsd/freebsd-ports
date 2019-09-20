@@ -10,15 +10,13 @@ MASTER_SITES=	http://megapov.inetart.net/packages/unix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray
 
-BROKEN_powerpc64=	Does not build: nputoutput.cpp:1: error: 64 bit CPU requiredd
-
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 #RUN_DEPENDS=	povray:graphics/povray-meta
 
 INSTALL_WRKSRC=	${WRKSRC}/unix
 
-USES=		gmake jpeg localbase tar:bzip2
+USES=		compiler:c11 gmake jpeg localbase tar:bzip2
 USE_CXXSTD=	c++98
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	COMPILED_BY="ports@FreeBSD.org"
