@@ -41,7 +41,9 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cgroups.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/couchdb.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cpu.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dbengine.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/disks.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dnsmasq_dhcp.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dockerd.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/elasticsearch.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/entropy.conf.sample
@@ -70,12 +72,15 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/nginx.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/nginx_plus.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/phpfpm.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/pihole.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/portcheck.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/postgres.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/processes.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/qos.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ram.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/redis.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/retroshare.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/riakkv.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/softnet.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/squid.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/stiebeleltron.conf.sample
@@ -87,12 +92,15 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_resets.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/udp_errors.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/varnish.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/vsphere.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/web_log.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/wmi.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/x509check.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/zfs.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health_alarm_notify.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health_email_recipients.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/ioping.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/mongodb.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/node.d.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/adaptec_raid.conf.sample
@@ -146,6 +154,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/redis.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/rethinkdbs.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/retroshare.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/riakkv.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/samba.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/sensors.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/smartd_log.conf.sample
@@ -197,9 +206,11 @@ libexec/netdata/node.d/node_modules/pixl-xml.js
 libexec/netdata/node.d/sma_webbox.node.js
 libexec/netdata/node.d/snmp.node.js
 libexec/netdata/node.d/stiebeleltron.node.js
+libexec/netdata/plugins.d/acl.sh
 libexec/netdata/plugins.d/alarm-email.sh
 libexec/netdata/plugins.d/alarm-notify.sh
 libexec/netdata/plugins.d/alarm-test.sh
+libexec/netdata/plugins.d/alarm.sh
 libexec/netdata/plugins.d/anonymous-statistics.sh
 libexec/netdata/plugins.d/apps.plugin
 libexec/netdata/plugins.d/cgroup-name.sh
@@ -214,6 +225,7 @@ libexec/netdata/plugins.d/ioping.plugin
 libexec/netdata/plugins.d/loopsleepms.sh.inc
 libexec/netdata/plugins.d/node.d.plugin
 libexec/netdata/plugins.d/python.d.plugin
+libexec/netdata/plugins.d/request.sh
 libexec/netdata/plugins.d/system-info.sh
 libexec/netdata/plugins.d/tc-qos-helper.sh
 libexec/netdata/python.d/adaptec_raid.chart.py
@@ -356,6 +368,7 @@ libexec/netdata/python.d/rabbitmq.chart.py
 libexec/netdata/python.d/redis.chart.py
 libexec/netdata/python.d/rethinkdbs.chart.py
 libexec/netdata/python.d/retroshare.chart.py
+libexec/netdata/python.d/riakkv.chart.py
 libexec/netdata/python.d/samba.chart.py
 libexec/netdata/python.d/sensors.chart.py
 libexec/netdata/python.d/smartd_log.chart.py
@@ -375,7 +388,7 @@ sbin/netdata
 @owner netdata
 @group netdata
 %%DATADIR%%/web/.well-known/dnt/cookies
-%%DATADIR%%/web/console/index.html
+%%DATADIR%%/web/console.html
 %%DATADIR%%/web/css/bootstrap-3.3.7.css
 %%DATADIR%%/web/css/bootstrap-slate-flat-3.3.7.css
 %%DATADIR%%/web/css/bootstrap-slider-10.0.0.min.css
@@ -383,6 +396,7 @@ sbin/netdata
 %%DATADIR%%/web/css/bootstrap-toggle-2.2.2.min.css
 %%DATADIR%%/web/css/c3-0.4.18.min.css
 %%DATADIR%%/web/css/morris-0.5.1.css
+%%DATADIR%%/web/dash-example.html
 %%DATADIR%%/web/dashboard.css
 %%DATADIR%%/web/dashboard.html
 %%DATADIR%%/web/dashboard.js

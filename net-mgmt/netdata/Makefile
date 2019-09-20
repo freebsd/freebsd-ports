@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netdata
-PORTVERSION=	1.15.0
+PORTVERSION=	1.17.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
@@ -11,14 +11,12 @@ COMMENT=	Scalable distributed realtime performance and health monitoring
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
-		libuv.so:devel/libuv \
-		liblz4.so:archivers/liblz4
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
 RUN_DEPENDS=	bash:shells/bash \
 		curl:ftp/curl
 
-USES=		autoreconf pathfix pkgconfig:both python shebangfix ssl
+USES=		autoreconf cpe pathfix pkgconfig:both python shebangfix ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	firehol
@@ -49,16 +47,27 @@ SUB_FILES=	${PORTNAME}.conf.sample
 USERS=		netdata
 GROUPS=		netdata
 
-OPTIONS_DEFINE=	CUPS FREEIPMI
+OPTIONS_DEFINE=	CUPS DBENGINE FREEIPMI JSON
 OPTIONS_SUB=	YES
+OPTIONS_DEFAULT=	DBENGINE JSON
 
 CUPS_DESC=	Enable support for cups
 CUPS_CONFIGURE_ENABLE=	plugin-cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
+DBENGINE_DESC=	Enable support for database engine
+DBENGINE_CONFIGURE_ENABLE=	dbengine
+DBENGINE_LIB_DEPENDS=	libuv.so:devel/libuv \
+			liblz4.so:archivers/liblz4 \
+			libJudy.so:devel/judy
+
 FREEIPMI_DESC=	Enable support for freeipmi
 FREEIPMI_CONFIGURE_ENABLE=	plugin-freeipmi
 FREEIPMI_LIB_DEPENDS=	libfreeipmi.so:sysutils/freeipmi
+
+JSON_DESC=	Enable support for json
+JSON_CONFIGURE_ENABLE=	jsonc
+JSON_LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%NETDATA_CACHE%%|${NETDATA_CACHE}|g' \
