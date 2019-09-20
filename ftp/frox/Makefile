@@ -3,7 +3,7 @@
 
 PORTNAME=	frox
 PORTVERSION=	0.7.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.hollo.org/frox/download/ \
 		http://frox.sourceforge.net/download/ \
@@ -50,7 +50,7 @@ VIRUS_SCAN_CONFIGURE_ENABLE=	virus-scan
 HTTP_CACHE_CONFIGURE_ENABLE=	http-cache
 LOCAL_CACHE_CONFIGURE_ENABLE=	local-cache
 CCP_CONFIGURE_ENABLE=		ccp
-ROOT_RUN_CONFIGURE_ARGS=	run-as-root
+ROOT_RUN_CONFIGURE_ENABLE=	run-as-root
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/frox ${STAGEDIR}${PREFIX}/sbin
