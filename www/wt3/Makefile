@@ -11,8 +11,6 @@ COMMENT=	Widget-centric C++ library for developing web applications
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	fails to link: libwthttp.so. undefined reference to boost::program_options::abstract_variables_map::operator
-
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libboost_system.so:devel/boost-libs \
 		libGraphicsMagick.so:graphics/GraphicsMagick
