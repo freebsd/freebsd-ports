@@ -26,13 +26,6 @@ PLIST_FILES=	bin/slack-term
 
 OPTIONS_DEFINE=	DOCS
 
-do-build:
-	cd ${WRKSRC}/${GH_SUBDIR} && \
-		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build -o ${PORTNAME}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
