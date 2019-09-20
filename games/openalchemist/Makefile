@@ -20,7 +20,7 @@ LIB_DEPENDS=	libclanCore.so:devel/clanlib1 \
 		libpng.so:graphics/png
 
 USES=		autoreconf gl gmake gnome iconv jpeg pkgconfig python:2.7,run \
-		sdl shebangfix
+		sdl shebangfix xorg
 USE_GNOME=	pygtk2
 USE_XORG=	xxf86vm xi x11 xmu xext xdamage xfixes xau xdmcp xt sm ice
 USE_GL=		gl glu

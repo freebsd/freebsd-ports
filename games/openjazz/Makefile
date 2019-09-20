@@ -10,7 +10,7 @@ COMMENT=	Free re-implementation of the Jazz Jackrabbit(tm) game engine
 
 LICENSE=	GPLv2
 
-USES=	dos2unix gmake sdl
+USES=	dos2unix gmake sdl xorg
 USE_XORG=	x11 xext xrandr xrender xau xdmcp
 USE_SDL=	sdl
 
