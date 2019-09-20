@@ -1207,6 +1207,15 @@
     SUBDIR += php73-xmlreader
     SUBDIR += php73-xmlwriter
     SUBDIR += php73-xsl
+    SUBDIR += php74-ctype
+    SUBDIR += php74-dom
+    SUBDIR += php74-enchant
+    SUBDIR += php74-pspell
+    SUBDIR += php74-simplexml
+    SUBDIR += php74-xml
+    SUBDIR += php74-xmlreader
+    SUBDIR += php74-xmlwriter
+    SUBDIR += php74-xsl
     SUBDIR += pict
     SUBDIR += plover
     SUBDIR += po4a
