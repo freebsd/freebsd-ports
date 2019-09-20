@@ -3935,6 +3935,7 @@
     SUBDIR += php73-sysvsem
     SUBDIR += php73-sysvshm
     SUBDIR += php73-tokenizer
+    SUBDIR += php74-ffi
     SUBDIR += php74-gettext
     SUBDIR += php74-intl
     SUBDIR += php74-json
