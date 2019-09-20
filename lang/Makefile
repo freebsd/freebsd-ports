@@ -285,6 +285,8 @@
     SUBDIR += php72-extensions
     SUBDIR += php73
     SUBDIR += php73-extensions
+    SUBDIR += php74
+    SUBDIR += php74-extensions
     SUBDIR += picoc
     SUBDIR += plexil
     SUBDIR += pocl

@@ -363,6 +363,7 @@
     SUBDIR += php71-calendar
     SUBDIR += php72-calendar
     SUBDIR += php73-calendar
+    SUBDIR += php74-calendar
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pipe
