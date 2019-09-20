@@ -1,5 +1,5 @@
 #!/bin/sh
-# 
+#
 # $FreeBSD$
 
 # PROVIDE: pushgateway
@@ -9,35 +9,34 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# pushgateway_enable (bool):	 Set to NO by default
-#							   Set it to YES to enable pushgateway
-# pushgateway_user (string):	 Set user to run pushgateway
-#							   Default is "prometheus"
-# pushgateway_group (string):	Set group to run pushgateway
-#							   Default is "prometheus"
-# pushgateway_data_dir (string): Set dir to run pushgateway in
-#							   Default is "/var/db/pushgateway"
-# pushgateway_persistence_file (string): Set file in which the pushed
-#				metrics will be persisted
-#							   Default is "${pushgateway_data_dir}/persistent.data"
-# pushgateway_log_file (string): Set file that pushgateway will log to
-#							   Default is "/var/log/pushgateway.log"
-# pushgateway_args (string):	 Set additional command line arguments
-#							   Default is ""
+# pushgateway_enable (bool, default: "NO"):
+#	Set it to YES to enable pushgateway.
+# pushgateway_user (string, default: "prometheus"):
+#	Set user to run pushgateway.
+# pushgateway_group (string, default: "prometheus"):
+#	Set group to run pushgateway.
+# pushgateway_data_dir (string, default: "/var/db/pushgateway"):
+#	Set directory to run pushgateway in.
+# pushgateway_persistence_file (string, default: "${pushgateway_data_dir}/persistent.data")
+#	Set file in which the pushed metrics will be persisted.
+# pushgateway_log_file (string, default: "/var/log/pushgateway.log")
+#	Set file that pushgateway will log to.
+# pushgateway_args (string, default: ""):
+#	Set additional command line arguments.
 
 . /etc/rc.subr
 
 name=pushgateway
 rcvar=pushgateway_enable
 
-load_rc_config $name
+load_rc_config "$name"
 
 : ${pushgateway_enable:=NO}
 : ${pushgateway_user:=prometheus}
 : ${pushgateway_group:=prometheus}
-: ${pushgateway_data_dir=/var/db/pushgateway}
-: ${pushgateway_persistence_file=${pushgateway_data_dir}/persistent.data}
-: ${pushgateway_log_file=/var/log/pushgateway.log}
+: ${pushgateway_data_dir:=/var/db/pushgateway}
+: ${pushgateway_persistence_file:=${pushgateway_data_dir}/persistent.data}
+: ${pushgateway_log_file:=/var/log/pushgateway.log}
 
 pidfile=/var/run/pushgateway.pid
 command=/usr/sbin/daemon
@@ -45,18 +44,17 @@ procname="%%PREFIX%%/bin/pushgateway"
 sig_reload=HUP
 extra_commands=reload
 command_args="-p ${pidfile} /usr/bin/env ${procname} \
-				-persistence.file=${pushgateway_persistence_file} \
+				--persistence.file=${pushgateway_persistence_file} \
 				${pushgateway_args} > ${pushgateway_log_file} 2>&1"
-
 start_precmd=pushgateway_startprecmd
 
 pushgateway_startprecmd()
 {
-	if [ ! -e ${pidfile} ]; then
-		install -o ${pushgateway_user} -g ${pushgateway_group} /dev/null ${pidfile};
+	if [ ! -e "${pidfile}" ]; then
+		install -o ${pushgateway_user} -g ${pushgateway_group} /dev/null ${pidfile}
 	fi
 	if [ ! -f "${pushgateway_log_file}" ]; then
-		install -o ${pushgateway_user} -g ${pushgateway_group} -m 640 /dev/null ${pushgateway_log_file};
+		install -o ${pushgateway_user} -g ${pushgateway_group} -m 640 /dev/null ${pushgateway_log_file}
 	fi
 	if [ ! -d ${pushgateway_data_dir} ]; then
 		install -d -o ${pushgateway_user} -g ${pushgateway_group} -m 750 ${pushgateway_data_dir}
