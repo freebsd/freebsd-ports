@@ -1,0 +1,76 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: p0f
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+
+# p0f_enable (bool):	Set it to YES to enable p0f.
+#			Default: NO.
+#
+# p0f_user (str)	User to drop privileges and change to.
+#			Default: p0f.
+#
+# p0f_sock (path):	Path to socket used to communicate with p0f.
+#			Default: /var/run/p0f.sock
+#
+# p0f_db (path):	Location of fingerprint db.
+#			Default: %%PREFIX%%/etc/p0f.fp
+#
+# p0f_flags (str):	Options passed to the p0f daemon.
+#			Default: "-d -u ${p0f_user} -s ${p0f_sock} -f ${p0f_db}"
+#
+# command_args (str):	Optional pcap-style traffic filtering rules.
+#			See p0f README for details.
+
+. /etc/rc.subr
+
+name="p0f"
+rcvar=p0f_enable
+
+load_rc_config "$name"
+
+: ${p0f_enable:="NO"}
+: ${p0f_user:="p0f"}
+: ${p0f_sock:="/var/run/${name}.sock"}
+: ${p0f_db:="%%PREFIX%%/etc/p0f.fp"}
+: ${p0f_flags:="-d -u ${p0f_user} -s ${p0f_sock} -f ${p0f_db}"}
+
+command="%%PREFIX%%/bin/${name}"
+
+pidfile="/var/run/${name}.pid"
+required_files="${p0f_db}"
+
+start_cmd="${name}_start"
+stop_postcmd="rm -f ${p0f_sock} $pidfile"
+
+extra_commands="reload"
+
+p0f_get_pid() {
+	PID=$(/bin/ps waux | /usr/bin/grep ${command} | /usr/bin/grep -v grep | /usr/bin/grep ${p0f_sock} | /usr/bin/awk '{print $2}')
+}
+
+p0f_start() {
+	p0f_get_pid
+	if [ -z "${PID}" ] ; then
+		echo "Starting ${name}."
+		if [ ! -z "${command_args}" ] ; then
+			${command} ${p0f_flags} "${command_args}"
+		else
+			${command} ${p0f_flags}
+		fi
+		if [ ! -z "${pidfile}" ] ; then
+			p0f_get_pid
+			[ -z "${PID}" ] || echo ${PID} > ${pidfile}
+		fi
+	else
+		echo "${name} already running? (pid=${PID})."
+	fi
+}
+
+run_rc_command "$1"

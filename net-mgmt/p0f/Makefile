@@ -3,15 +3,21 @@
 
 PORTNAME=	p0f
 PORTVERSION=	3.09b
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/ \
 		http://fossies.org/unix/privat/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Passive OS fingerprinting tool
 
 LICENSE=	LGPL21
+
+USES=		tar:tgz
+USE_RC_SUBR=	p0f
+
+USERS=		p0f
+GROUPS=		p0f
 
 PLIST_FILES=	bin/p0f bin/p0f-client bin/p0f-sendsyn \
 		bin/p0f-sendsyn6 etc/p0f.fp
