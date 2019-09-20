@@ -3,7 +3,7 @@
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.7.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -175,7 +175,7 @@ SC68_CONFIGURE_OFF=	--disable-sc68
 
 SHN_CONFIGURE_OFF=	--disable-shn
 
-SHELLEXEC_CONFIGURE_ARGS+=	--disable-shellexec
+SHELLEXEC_CONFIGURE_OFF=	--disable-shellexec
 
 NLS_CONFIGURE_OFF=	--disable-nls
 
