@@ -22,14 +22,8 @@ OPTIONS_DEFINE=	DOCS
 PLIST_FILES=	bin/2fa
 PORTDOCS=	README.md
 
-do-build:
-	@cd ${WRKSRC}/${GH_SUBDIR} && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build -o ${PORTNAME}
-
 do-test:
-	@cd ${WRKSRC}/${GH_SUBDIR} && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go test
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} test ${GO_BUILDFLAGS}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

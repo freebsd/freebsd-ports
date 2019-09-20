@@ -1,7 +1,7 @@
 Temporarily disable libgit2 version check in git2go until v0.28 tag is added.
 Upstream issue: https://github.com/libgit2/git2go/issues/502
---- src/gopkg.in/libgit2/git2go.v27/git_dynamic.go.orig	2019-03-23 19:12:03 UTC
-+++ src/gopkg.in/libgit2/git2go.v27/git_dynamic.go
+--- vendor/gopkg.in/libgit2/git2go.v27/git_dynamic.go.orig	2019-03-23 19:12:03 UTC
++++ vendor/gopkg.in/libgit2/git2go.v27/git_dynamic.go
 @@ -6,9 +6,5 @@ package git
  #include <git2.h>
  #cgo pkg-config: libgit2
