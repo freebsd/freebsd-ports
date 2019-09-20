@@ -1,0 +1,7 @@
+towncrier is a utility to produce useful, summarised news files
+for your project. Rather than reading the Git history as some
+newer tools to produce it, or having one single file which
+developers all write to, towncrier reads "news fragments"
+which contain information useful to end users.
+
+WWW: https://github.com/hawkowl/towncrier
