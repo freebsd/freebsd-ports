@@ -1,0 +1,45 @@
+--- configure.ac.orig	2019-08-06 06:54:06 UTC
++++ configure.ac
+@@ -105,6 +105,7 @@ extern "C++" {
+ #endif
+ #endif /* ifndef ZEND_ACCONFIG_H_NO_C_PROTOS */
+ 
++#include <ext/php_config.h>
+ #endif /* PHP_CONFIG_H */
+ ])
+ 
+@@ -313,7 +314,6 @@ sinclude(Zend/Zend.m4)
+ 
+ dnl ----------------------------------------------------------------------------
+ 
+-PTHREADS_CHECK
+ PHP_HELP_SEPARATOR([SAPI modules:])
+ PHP_SHLIB_SUFFIX_NAMES
+ PHP_BUILD_PROGRAM
+@@ -654,7 +654,7 @@ memmem \
+ AX_FUNC_WHICH_GETHOSTBYNAME_R
+ 
+ dnl Some systems (like OpenSolaris) do not have nanosleep in libc.
+-PHP_CHECK_FUNC_LIB(nanosleep, rt)
++PHP_CHECK_FUNC(nanosleep, rt)
+ 
+ dnl Check for getaddrinfo, should be a better way, but... Also check for working
+ dnl getaddrinfo.
+@@ -1308,7 +1308,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfd
+ EXPANDED_DATADIR=$datadir
+ EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
+ EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
+-INCLUDE_PATH=.:$EXPANDED_PEAR_INSTALLDIR
++INCLUDE_PATH=.:${prefix}/share/pear
+ 
+ exec_prefix=$old_exec_prefix
+ libdir=$old_libdir
+@@ -1493,7 +1493,7 @@ PHP_SUBST(all_targets)
+ PHP_SUBST(install_targets)
+ PHP_SUBST(install_binary_targets)
+ 
+-PHP_INSTALL_HEADERS([Zend/ TSRM/ include/ main/ main/streams/])
++PHP_INSTALL_HEADERS([Zend/ TSRM/ main/ main/streams/])
+ 
+ PHP_ADD_SOURCES(TSRM, TSRM.c, -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1)
+ 
