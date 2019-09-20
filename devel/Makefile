@@ -4370,6 +4370,7 @@
     SUBDIR += py-deprecation
     SUBDIR += py-dexml
     SUBDIR += py-dialog
+    SUBDIR += py-dialog3
     SUBDIR += py-diazo
     SUBDIR += py-dill
     SUBDIR += py-dirspec
