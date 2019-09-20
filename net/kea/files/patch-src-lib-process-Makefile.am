@@ -1,9 +1,0 @@
---- src/lib/process/Makefile.am.orig	2018-12-30 16:56:27 UTC
-+++ src/lib/process/Makefile.am
-@@ -1,5 +1,5 @@
- SUBDIRS = . testutils tests
--dhcp_data_dir = @localstatedir@/@PACKAGE@
-+dhcp_data_dir = @localstatedir@/run
- AM_CPPFLAGS  = -I$(top_builddir)/src/lib -I$(top_srcdir)/src/lib
- AM_CPPFLAGS += -DDATA_DIR="\"$(dhcp_data_dir)\""
- 

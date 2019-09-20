@@ -2,12 +2,12 @@
 
 PORTNAME=	kea
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/-beta/b/:S/a/.a/:S/rc/.rc/}
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	ISC/kea/${ISCVERSION}
 DISTNAME=	${PORTNAME}-${ISCVERSION}
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	apevnev@me.com
 COMMENT=	Alternative DHCP implementation by ISC
 
 LICENSE=	MPL20
@@ -17,7 +17,7 @@ LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \
 		libboost_system.so:devel/boost-libs
 
 # ISC releases things like 1.4.0-P1, which our versioning doesn't like
-ISCVERSION=	1.5.0
+ISCVERSION=	1.6.0
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -38,9 +38,7 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 PORTDOCS=	AUTHORS COPYING ChangeLog README \
-		kea-guide.css kea-guide.html kea-guide.txt \
-		kea-messages.html kea-logo-100x70.png \
-		examples
+		CONTRIBUTING.md examples
 
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL
 OPTIONS_SUB=	yes
