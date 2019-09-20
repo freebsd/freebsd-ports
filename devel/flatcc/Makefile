@@ -1,0 +1,28 @@
+# $FreeBSD$
+
+PORTNAME=	flatcc
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.0
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	FlatBuffers compiler and library in C for C
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cmake compiler:c++11-lib
+USE_GITHUB=	yes
+GH_ACCOUNT=	dvidelabs
+USE_LDCONFIG=	yes
+
+CMAKE_ON=	BUILD_SHARED_LIBS FLATCC_INSTALL
+CMAKE_OFF=	FLATCC_TEST
+
+do-test:
+	@cd ${BUILD_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DFLATCC_TEST:BOOL=ON ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+.include <bsd.port.mk>
