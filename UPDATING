@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190920:
+  AFFECTS: users of net-mgmt/pushgateway
+  AUTHOR: 0mp@FreeBSD.org
+
+  The persistent storage format used by pushgateway in the lastest version is
+  not backwards compatible. See the pushgateway changelogs for details.
+
 20190911:
   AFFECTS: users of security/bastillion
   AUTHOR: netchild@FreeBSD.org

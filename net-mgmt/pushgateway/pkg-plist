@@ -1,2 +1,1 @@
 bin/pushgateway
-@dir(prometheus,prometheus) /var/db/pushgateway
