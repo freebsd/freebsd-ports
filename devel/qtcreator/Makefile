@@ -90,9 +90,9 @@ LLVM_DEFAULT=	80
 .endif
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
-PLIST_SUB+=	GCC=""
+PLIST_SUB+=	GCC="" CLANG="@comment "
 .else
-PLIST_SUB+=	GCC="@comment "
+PLIST_SUB+=	GCC="@comment " CLANG=""
 .endif
 
 post-patch:
