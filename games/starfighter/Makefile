@@ -16,6 +16,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf dos2unix gnome iconv pkgconfig sdl
+USE_CSTD=	c99
 USE_SDL=	image2 mixer2 ttf2
 
 USE_GITHUB=	yes
