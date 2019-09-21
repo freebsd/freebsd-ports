@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cegobridge
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
