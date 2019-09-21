@@ -2,6 +2,7 @@
 
 PORTNAME=	sdl2
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
@@ -16,8 +17,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake iconv libtool localbase:ldflags pathfix pkgconfig
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS+=	--disable-altivec \
-			--disable-arts \
+CONFIGURE_ARGS+=	--disable-arts \
 			--enable-diskaudio \
 			--enable-dummyaudio \
 			--enable-video-dummy \
@@ -65,6 +65,10 @@ OPTIONS_DEFAULT=	ASM DLOPEN OSS PTHREADS SDL_ATOMIC SDL_AUDIO	\
 			SDL_THREADS SDL_TIMERS SDL_VIDEO VIDEO_KMSDRM	\
 			VIDEO_OPENGL VIDEO_OPENGLES2 VIDEO_WAYLAND	\
 			VIDEO_X11
+OPTIONS_DEFINE_powerpc=	ALTIVEC
+OPTIONS_DEFINE_powerpc64=	ALTIVEC
+OPTIONS_DEFAULT_powerpc=	ALTIVEC
+OPTIONS_DEFAULT_powerpc64=	ALTIVEC
 
 ALSA_DESC=		Audio output via the ALSA audio architecture
 DLOPEN_DESC=		Use dlopen for loading 3rd party libraries
@@ -95,6 +99,7 @@ VIDEO_OPENGLES2_DESC=	OpenGL ES 2.x rendering support
 VIDEO_WAYLAND_DESC=	Wayland display support
 VIDEO_X11_DESC=		X11 display support
 
+ALTIVEC_CONFIGURE_ENABLE=	altivec
 ASM_CONFIGURE_ENABLE=		assembly
 DLOPEN_CONFIGURE_ENABLE=	sdl-dlopen
 DLOPEN_CONFIGURE_OFF=		--disable-video-vulkan
