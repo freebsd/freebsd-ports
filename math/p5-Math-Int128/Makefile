@@ -16,21 +16,12 @@ LICENSE=	ART10
 BUILD_DEPENDS=	p5-Math-Int64>=0.51:math/p5-Math-Int64
 RUN_DEPENDS=	p5-Math-Int64>=0.51:math/p5-Math-Int64
 
-USES=		perl5
+USES=		compiler:c11 perl5
 USE_PERL5=	configure
 
 NOT_FOR_ARCHS=	armv6 i386
 
-.include <bsd.port.pre.mk>
-
-# need clang 3.2+ or GCC 4.4+
-.if exists(/usr/bin/clang)
-CC=	/usr/bin/clang
-.else
-USE_GCC=	yes
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/Int128/Int128.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
