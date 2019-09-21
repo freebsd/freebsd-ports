@@ -30,6 +30,10 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/featartistsintitles.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/fix_tracknums.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/fix_tracknums.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/haikuattrs.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/haikuattrs.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/hyphen_unicode.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/hyphen_unicode.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/instruments.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/instruments.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/keep.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -52,6 +56,8 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/remove_perfect_albums.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/reorder_sides.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/reorder_sides.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/replace_forbidden_symbols.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/replace_forbidden_symbols.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/save_and_rewrite_header.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/save_and_rewrite_header.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/smart_title_case.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -127,6 +133,8 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/docs/default_settings.jpg
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/options_format_performer_tags.ui
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/ui_options_format_performer_tags.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/haikuattrs.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/hyphen_unicode.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/instruments.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/keep.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/__init__.py
@@ -159,6 +167,7 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/release_type.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/remove_perfect_albums.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/reorder_sides.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/replace_forbidden_symbols.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
