@@ -2,7 +2,7 @@
 
 PORTNAME=	c7
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	1
+PORTREVISION=	7
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 EXTRACT_ONLY=	${DISTFILES:N*${SRC_SUFX}*:Nfilesystem-*:C/:[^:]+$//}
@@ -17,11 +17,12 @@ USE_LINUX_RPM=	yes
 BIN_DISTNAMES=	bash-4.2.46-31.el7 \
 		bzip2-1.0.6-13.el7 \
 		coreutils-8.22-23.el7 \
+		diffutils-3.3-4.el7 \
 		e2fsprogs-1.42.9-13.el7 \
-		elfutils-0.172-2.el7 \
 		filesystem-3.2-25.el7 \
 		findutils-4.5.11-6.el7 \
-		glibc-common-2.17-260.el7_6.5 \
+		gawk-4.0.2-4.el7_3.1 \
+		glibc-common-2.17-260.el7_6.6 \
 		grep-2.20-3.el7 \
 		info-5.1-5.el7 \
 		keyutils-1.5.8-3.el7 \
@@ -37,7 +38,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		gamin-0.1.10-16.el7 \
 		gdbm-1.10-8.el7 \
 		glib2-2.56.1-4.el7_6 \
-		glibc-2.17-260.el7_6.5 \
+		glibc-2.17-260.el7_6.6 \
 		gmp-6.0.0-15.el7 \
 		keyutils-libs-1.5.8-3.el7 \
 		krb5-libs-1.15.1-37.el7_6 \
@@ -57,6 +58,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.6-13.el7 \
 		libuuid-2.23.2-59.el7_6.1 \
 		ncurses-libs-5.9-14.20130511.el7_4 \
 		nss-softokn-freebl-3.36.0-5.el7_5 \
+		openssl-libs-1.0.2k-16.el7_6.1 \
 		pcre-8.32-17.el7 \
 		popt-1.13-16.el7 \
 		readline-6.2-10.el7 \
@@ -86,15 +88,16 @@ SRC_DISTFILES=	acl-2.2.51-14.el7${SRC_SUFX}:SOURCE \
 		compat-db-4.7.25-28.el7${SRC_SUFX}:SOURCE \
 		compat-gcc-32-3.2.3-72.el7${SRC_SUFX}:SOURCE \
 		coreutils-8.22-23.el7${SRC_SUFX}:SOURCE \
+		diffutils-3.3-4.el7${SRC_SUFX}:SOURCE \
 		e2fsprogs-1.42.9-13.el7${SRC_SUFX}:SOURCE \
-		elfutils-0.172-2.el7${SRC_SUFX}:SOURCE \
 		filesystem-3.2-25.el7${SRC_SUFX}:SOURCE \
 		findutils-4.5.11-6.el7${SRC_SUFX}:SOURCE \
 		gamin-0.1.10-16.el7${SRC_SUFX}:SOURCE \
+		gawk-4.0.2-4.el7_3.1${SRC_SUFX}:SOURCE \
 		gcc-4.8.5-36.el7_6.2${SRC_SUFX}:SOURCE \
 		gdbm-1.10-8.el7${SRC_SUFX}:SOURCE \
 		glib2-2.56.1-4.el7_6${SRC_SUFX}:SOURCE \
-		glibc-2.17-260.el7_6.5${SRC_SUFX}:SOURCE \
+		glibc-2.17-260.el7_6.6${SRC_SUFX}:SOURCE \
 		gmp-6.0.0-15.el7${SRC_SUFX}:SOURCE \
 		grep-2.20-3.el7${SRC_SUFX}:SOURCE \
 		keyutils-1.5.8-3.el7${SRC_SUFX}:SOURCE \
@@ -108,6 +111,7 @@ SRC_DISTFILES=	acl-2.2.51-14.el7${SRC_SUFX}:SOURCE \
 		libsepol-2.5-10.el7${SRC_SUFX}:SOURCE \
 		ncurses-5.9-14.20130511.el7_4${SRC_SUFX}:SOURCE \
 		nss-softokn-3.36.0-5.el7_5${SRC_SUFX}:SOURCE \
+		openssl-1.0.2k-16.el7_6.1${SRC_SUFX}:SOURCE \
 		pcre-8.32-17.el7${SRC_SUFX}:SOURCE \
 		popt-1.13-16.el7${SRC_SUFX}:SOURCE \
 		readline-6.2-10.el7${SRC_SUFX}:SOURCE \
@@ -127,9 +131,14 @@ PLIST_SUB=	LINUXBASE=${LINUXBASE} SYSCTLMIB=${SYSCTLMIB}
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-REMOVE_DIRS=	boot home media mnt proc root run sys tmp var/log var/tmp
-REMOVE_FILES=	bin/su etc/exports etc/group etc/gshadow etc/motd \
-		etc/passwd etc/printcap etc/protocols etc/services etc/shadow
+REMOVE_DIRS=	boot etc/pam.d home media mnt proc root run sys tmp var/log \
+		var/tmp
+REMOVE_FILES=	bin/chfn bin/chsh bin/findmnt bin/login bin/lsblk bin/lscpu \
+		bin/lsipc bin/lslogins bin/lsmem bin/lsns bin/script \
+		bin/setpriv bin/su \
+		etc/exports etc/group etc/gshadow etc/motd \
+		etc/passwd etc/printcap etc/protocols etc/services etc/shadow \
+		sbin/clock sbin/debugfs sbin/hwclock sbin/runuser sbin/zramctl
 
 .include <bsd.port.pre.mk>
 

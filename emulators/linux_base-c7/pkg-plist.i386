@@ -30,17 +30,10 @@ etc/mke2fs.conf
 etc/mtab
 @sample etc/nsswitch.conf.sample
 etc/os-release
-etc/pam.d/chfn
-etc/pam.d/chsh
-etc/pam.d/login
-etc/pam.d/remote
-etc/pam.d/runuser
-etc/pam.d/runuser-l
-etc/pam.d/su
-etc/pam.d/su-l
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Debug-7
 etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-Testing-7
+etc/pki/tls/openssl.cnf
 etc/prelink.conf.d/nss-softokn-prelink.conf
 etc/profile
 etc/profile.d/colorgrep.csh
@@ -84,6 +77,7 @@ sbin
 usr/bin/[
 usr/bin/alias
 usr/bin/arch
+usr/bin/awk
 usr/bin/base64
 usr/bin/basename
 usr/bin/bash
@@ -107,15 +101,14 @@ usr/bin/catchsegv
 usr/bin/cd
 usr/bin/chattr
 usr/bin/chcon
-usr/bin/chfn
 usr/bin/chgrp
 usr/bin/chmem
 usr/bin/chmod
 usr/bin/chown
 usr/bin/chrt
-usr/bin/chsh
 usr/bin/cksum
 usr/bin/clear
+usr/bin/cmp
 usr/bin/col
 usr/bin/colcrt
 usr/bin/colrm
@@ -141,6 +134,9 @@ usr/bin/db47_upgrade
 usr/bin/db47_verify
 usr/bin/dd
 usr/bin/df
+usr/bin/dgawk
+usr/bin/diff
+usr/bin/diff3
 usr/bin/dir
 usr/bin/dircolors
 usr/bin/dirname
@@ -150,22 +146,6 @@ usr/bin/echo
 usr/bin/egrep
 usr/bin/eject
 usr/bin/env
-usr/bin/eu-addr2line
-usr/bin/eu-ar
-usr/bin/eu-elfcmp
-usr/bin/eu-elfcompress
-usr/bin/eu-elflint
-usr/bin/eu-findtextrel
-usr/bin/eu-make-debug-archive
-usr/bin/eu-nm
-usr/bin/eu-objdump
-usr/bin/eu-ranlib
-usr/bin/eu-readelf
-usr/bin/eu-size
-usr/bin/eu-stack
-usr/bin/eu-strings
-usr/bin/eu-strip
-usr/bin/eu-unstrip
 usr/bin/expand
 usr/bin/expr
 usr/bin/factor
@@ -175,11 +155,11 @@ usr/bin/fc
 usr/bin/fg
 usr/bin/fgrep
 usr/bin/find
-usr/bin/findmnt
 usr/bin/flock
 usr/bin/fmt
 usr/bin/fold
 usr/bin/gapplication
+usr/bin/gawk
 usr/bin/gdbus
 usr/bin/gencat
 usr/bin/getconf
@@ -199,6 +179,7 @@ usr/bin/i386
 usr/bin/iconv
 usr/bin/id
 usr/bin/idn
+usr/bin/igawk
 usr/bin/info
 usr/bin/infocmp
 usr/bin/infokey
@@ -226,19 +207,12 @@ usr/bin/ln
 usr/bin/locale
 usr/bin/localedef
 usr/bin/logger
-usr/bin/login
 usr/bin/logname
 usr/bin/look
 usr/bin/ls
 usr/bin/lsattr
 usr/bin/lsb_release
-usr/bin/lsblk
-usr/bin/lscpu
-usr/bin/lsipc
 usr/bin/lslocks
-usr/bin/lslogins
-usr/bin/lsmem
-usr/bin/lsns
 usr/bin/makedb
 usr/bin/mcookie
 usr/bin/md5sum
@@ -261,6 +235,7 @@ usr/bin/od
 usr/bin/oldfind
 usr/bin/paste
 usr/bin/pathchk
+usr/bin/pgawk
 usr/bin/pinky
 usr/bin/pldd
 usr/bin/pr
@@ -282,12 +257,11 @@ usr/bin/rm
 usr/bin/rmdir
 usr/bin/rpcgen
 usr/bin/runcon
-usr/bin/script
 usr/bin/scriptreplay
+usr/bin/sdiff
 usr/bin/sed
 usr/bin/seq
 usr/bin/setarch
-usr/bin/setpriv
 usr/bin/setserial
 usr/bin/setsid
 usr/bin/setterm
@@ -352,6 +326,10 @@ usr/bin/whoami
 usr/bin/write
 usr/bin/xargs
 usr/bin/yes
+usr/lib/.libcrypto.so.1.0.2k.hmac
+usr/lib/.libcrypto.so.10.hmac
+usr/lib/.libssl.so.1.0.2k.hmac
+usr/lib/.libssl.so.10.hmac
 usr/lib/audit/sotruss-lib.so
 usr/lib/db4.7.25/libdb.so
 usr/lib/db4.7.25/libdb_cxx.so
@@ -651,6 +629,8 @@ usr/lib/libcom_err.so.2
 usr/lib/libcom_err.so.2.1
 usr/lib/libcrypt-2.17.so
 usr/lib/libcrypt.so.1
+usr/lib/libcrypto.so.1.0.2k
+usr/lib/libcrypto.so.10
 usr/lib/libdb-4.7.so
 usr/lib/libdb-5.3.so
 usr/lib/libdb-5.so
@@ -779,6 +759,8 @@ usr/lib/libselinux.so.1
 usr/lib/libsepol.so.1
 usr/lib/libslang.so.2
 usr/lib/libslang.so.2.2.4
+usr/lib/libssl.so.1.0.2k
+usr/lib/libssl.so.10
 usr/lib/libstdc++.so.5
 usr/lib/libstdc++.so.5.0.7
 usr/lib/libstdc++.so.6
@@ -799,6 +781,17 @@ usr/lib/locale/locale-archive
 usr/lib/lsb/init-functions
 usr/lib/lsb/install_initd
 usr/lib/lsb/remove_initd
+usr/lib/openssl/engines/lib4758cca.so
+usr/lib/openssl/engines/libaep.so
+usr/lib/openssl/engines/libatalla.so
+usr/lib/openssl/engines/libcapi.so
+usr/lib/openssl/engines/libchil.so
+usr/lib/openssl/engines/libcswift.so
+usr/lib/openssl/engines/libgmp.so
+usr/lib/openssl/engines/libnuron.so
+usr/lib/openssl/engines/libpadlock.so
+usr/lib/openssl/engines/libsureware.so
+usr/lib/openssl/engines/libubsec.so
 usr/lib/rtkaio/i686/nosegneg/librt.so.1
 usr/lib/rtkaio/i686/nosegneg/librtkaio-2.17.so
 usr/lib/rtkaio/librt.so.1
@@ -816,6 +809,8 @@ usr/lib/systemd/system/fstrim.service
 usr/lib/systemd/system/fstrim.timer
 usr/lib/tmpfiles.d/libselinux.conf
 usr/lib/udev/rules.d/60-raw.rules
+usr/libexec/awk/grcat
+usr/libexec/awk/pwcat
 usr/libexec/coreutils/libstdbuf.so
 usr/libexec/gam_server
 usr/libexec/getconf/POSIX_V6_ILP32_OFF32
@@ -836,9 +831,7 @@ usr/sbin/capsh
 usr/sbin/cfdisk
 usr/sbin/chcpu
 usr/sbin/chroot
-usr/sbin/clock
 usr/sbin/ctrlaltdel
-usr/sbin/debugfs
 usr/sbin/delpart
 usr/sbin/dumpe2fs
 usr/sbin/e2freefrag
@@ -862,7 +855,6 @@ usr/sbin/fstrim
 usr/sbin/getcap
 usr/sbin/getpcaps
 usr/sbin/glibc_post_upgrade.i686
-usr/sbin/hwclock
 usr/sbin/iconvconfig
 usr/sbin/iconvconfig.i686
 usr/sbin/install-info
@@ -889,7 +881,6 @@ usr/sbin/request-key
 usr/sbin/resize2fs
 usr/sbin/resizepart
 usr/sbin/rtcwake
-usr/sbin/runuser
 usr/sbin/sefcontext_compile
 usr/sbin/setcap
 usr/sbin/sfdisk
@@ -903,7 +894,26 @@ usr/sbin/tune2fs
 usr/sbin/wipefs
 usr/sbin/zdump
 usr/sbin/zic
-usr/sbin/zramctl
+usr/share/awk/assert.awk
+usr/share/awk/bits2str.awk
+usr/share/awk/cliff_rand.awk
+usr/share/awk/ctime.awk
+usr/share/awk/ftrans.awk
+usr/share/awk/getopt.awk
+usr/share/awk/gettime.awk
+usr/share/awk/group.awk
+usr/share/awk/join.awk
+usr/share/awk/libintl.awk
+usr/share/awk/noassign.awk
+usr/share/awk/ord.awk
+usr/share/awk/passwd.awk
+usr/share/awk/quicksort.awk
+usr/share/awk/readable.awk
+usr/share/awk/rewind.awk
+usr/share/awk/round.awk
+usr/share/awk/strtonum.awk
+usr/share/awk/walkarray.awk
+usr/share/awk/zerofile.awk
 usr/share/bash-completion/completions/addpart
 usr/share/bash-completion/completions/blkdiscard
 usr/share/bash-completion/completions/blkid
@@ -1016,13 +1026,13 @@ usr/share/centos-release/EULA
 %%PORTDOCS%%usr/share/doc/coreutils-8.22/sh-utils/NEWS
 %%PORTDOCS%%usr/share/doc/coreutils-8.22/textutils/ChangeLog.bz2
 %%PORTDOCS%%usr/share/doc/coreutils-8.22/textutils/NEWS
+%%PORTDOCS%%usr/share/doc/diffutils-3.3/COPYING
+%%PORTDOCS%%usr/share/doc/diffutils-3.3/NEWS
+%%PORTDOCS%%usr/share/doc/diffutils-3.3/README
 %%PORTDOCS%%usr/share/doc/e2fsprogs-1.42.9/COPYING
 %%PORTDOCS%%usr/share/doc/e2fsprogs-1.42.9/README
 %%PORTDOCS%%usr/share/doc/e2fsprogs-1.42.9/RELEASE-NOTES
 %%PORTDOCS%%usr/share/doc/e2fsprogs-libs-1.42.9/COPYING
-%%PORTDOCS%%usr/share/doc/elfutils-0.172/CONTRIBUTING
-%%PORTDOCS%%usr/share/doc/elfutils-0.172/README
-%%PORTDOCS%%usr/share/doc/elfutils-0.172/TODO
 %%PORTDOCS%%usr/share/doc/findutils-4.5.11/AUTHORS
 %%PORTDOCS%%usr/share/doc/findutils-4.5.11/COPYING
 %%PORTDOCS%%usr/share/doc/findutils-4.5.11/ChangeLog
@@ -1057,6 +1067,14 @@ usr/share/centos-release/EULA
 %%PORTDOCS%%usr/share/doc/gamin-0.1.10/server_structs.gif
 %%PORTDOCS%%usr/share/doc/gamin-0.1.10/socket.txt
 %%PORTDOCS%%usr/share/doc/gamin-0.1.10/using.html
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/COPYING
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/FUTURES
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/LIMITATIONS
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/NEWS
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/POSIX.STD
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/README
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/README.multibyte
+%%PORTDOCS%%usr/share/doc/gawk-4.0.2/README.tests
 %%PORTDOCS%%usr/share/doc/gdbm-1.10/AUTHORS
 %%PORTDOCS%%usr/share/doc/gdbm-1.10/COPYING
 %%PORTDOCS%%usr/share/doc/gdbm-1.10/NEWS
@@ -1753,9 +1771,12 @@ usr/share/i18n/locales/zu_ZA
 usr/share/icons
 usr/share/info/bash.info.gz
 usr/share/info/coreutils.info.gz
+usr/share/info/diffutils.info.gz
 usr/share/info/dir
 usr/share/info/find-maint.info.gz
 usr/share/info/find.info.gz
+usr/share/info/gawk.info.gz
+usr/share/info/gawkinet.info.gz
 usr/share/info/grep.info.gz
 usr/share/info/history.info.gz
 usr/share/info/info-stnd.info.gz
@@ -1765,9 +1786,6 @@ usr/share/info/rluserman.info.gz
 usr/share/info/sed.info.gz
 usr/share/info/which.info.gz
 usr/share/keyutils/request-key-debug.sh
-usr/share/licenses/elfutils-0.172/COPYING
-usr/share/licenses/elfutils-0.172/COPYING-GPLV2
-usr/share/licenses/elfutils-0.172/COPYING-LGPLV3
 usr/share/licenses/glib2-2.56.1/COPYING
 usr/share/licenses/gmp-6.0.0/COPYING
 usr/share/licenses/gmp-6.0.0/COPYING.LESSERv3
@@ -1775,6 +1793,7 @@ usr/share/licenses/gmp-6.0.0/COPYINGv2
 usr/share/licenses/gmp-6.0.0/COPYINGv3
 usr/share/licenses/krb5-libs-1.15.1/LICENSE
 usr/share/licenses/libsepol-2.5/COPYING
+usr/share/licenses/openssl-libs-1.0.2k/LICENSE
 %%NLS%%usr/share/locale/af/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/af/LC_MESSAGES/coreutils.mo
 %%NLS%%usr/share/locale/af/LC_MESSAGES/glib20.mo
@@ -1807,6 +1826,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/bs/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ca/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/ca/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/ca/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/ca/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/ca/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/ca/LC_MESSAGES/glib20.mo
@@ -1818,6 +1838,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/ca@valencia/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/cs/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/cs/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/cs/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/cs/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/cs/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/cs/LC_MESSAGES/glib20.mo
@@ -1830,7 +1851,9 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/cs/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/cy/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/da/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/da/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/da/LC_MESSAGES/libc.mo
@@ -1841,8 +1864,10 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/da/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/de/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/de/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/gdbm.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/de/LC_MESSAGES/grep.mo
@@ -1855,6 +1880,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/de/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/dz/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/el/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/el/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/el/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/el/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/el/LC_MESSAGES/grep.mo
@@ -1872,6 +1898,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/en_US/LC_MESSAGES/mit-krb5.mo
 %%NLS%%usr/share/locale/eo/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/eo/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/eo/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/eo/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/eo/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/eo/LC_MESSAGES/grep.mo
@@ -1881,8 +1908,10 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/eo/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/es/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/es/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/libc.mo
@@ -1907,7 +1936,9 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/fa/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/fi/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/fi/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/gdbm.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/grep.mo
@@ -1918,8 +1949,10 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/fi/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/fr/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/fr/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/libc.mo
@@ -1931,6 +1964,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/fur/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/ga/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ga/LC_MESSAGES/grep.mo
@@ -1939,6 +1973,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/ga/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/gd/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/gl/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/gl/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/gl/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/gl/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/gl/LC_MESSAGES/grep.mo
@@ -1948,11 +1983,13 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/gl/LC_MESSAGES/util-linux.mo
 %%NLS%%usr/share/locale/gl/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/gu/LC_MESSAGES/glib20.mo
+%%NLS%%usr/share/locale/he/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/he/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/he/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/he/LC_MESSAGES/sed.mo
 %%NLS%%usr/share/locale/hi/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/hr/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/hr/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/hr/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/hr/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/hr/LC_MESSAGES/grep.mo
@@ -1963,6 +2000,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/hr/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/hu/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/hu/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/hu/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/hu/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/hu/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/hu/LC_MESSAGES/grep.mo
@@ -1976,6 +2014,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/ia/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/id/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/id/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/id/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/id/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/id/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/id/LC_MESSAGES/glib20.mo
@@ -1988,8 +2027,10 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/is/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/is/LC_MESSAGES/popt.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/it/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/it/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/libc.mo
@@ -2000,7 +2041,9 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/it/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/ja/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/ja/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/gdbm.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ja/LC_MESSAGES/grep.mo
@@ -2036,6 +2079,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/lt/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/lt/LC_MESSAGES/libc.mo
 %%NLS%%usr/share/locale/lt/LC_TIME/coreutils.mo
+%%NLS%%usr/share/locale/lv/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/lv/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/mai/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/mg/LC_MESSAGES/glib20.mo
@@ -2044,6 +2088,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/mn/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/mr/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ms/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/ms/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/ms/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/ms/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ms/LC_TIME/coreutils.mo
@@ -2058,8 +2103,10 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/ne/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/nl/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/nl/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/libc.mo
@@ -2075,8 +2122,10 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/pa/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/pl/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/pl/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/gdbm.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/grep.mo
@@ -2096,6 +2145,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/pt/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/grep.mo
@@ -2105,6 +2155,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/pt_BR/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/ro/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/ro/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/ro/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/ro/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/ro/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ro/LC_MESSAGES/grep.mo
@@ -2114,6 +2165,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/ro/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/ru/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/ru/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/ru/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/ru/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/ru/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/ru/LC_MESSAGES/grep.mo
@@ -2144,6 +2196,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/sl/LC_MESSAGES/util-linux.mo
 %%NLS%%usr/share/locale/sl/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/sq/LC_MESSAGES/glib20.mo
+%%NLS%%usr/share/locale/sr/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/sr/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/sr/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/sr/LC_MESSAGES/grep.mo
@@ -2153,8 +2206,10 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/sr@latin/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/sv/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/sv/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/libc.mo
@@ -2170,6 +2225,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/tl/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/tr/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/tr/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/tr/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/tr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/tr/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/tr/LC_MESSAGES/glib20.mo
@@ -2183,6 +2239,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/ug/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/uk/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/uk/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/uk/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/uk/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/uk/LC_MESSAGES/gdbm.mo
 %%NLS%%usr/share/locale/uk/LC_MESSAGES/glib20.mo
@@ -2194,8 +2251,10 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/uk/LC_TIME/coreutils.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/vi/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/findutils.mo
+%%NLS%%usr/share/locale/vi/LC_MESSAGES/gawk.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/grep.mo
 %%NLS%%usr/share/locale/vi/LC_MESSAGES/libc.mo
@@ -2210,6 +2269,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/yi/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/glib20.mo
@@ -2223,6 +2283,7 @@ usr/share/licenses/libsepol-2.5/COPYING
 %%NLS%%usr/share/locale/zh_HK/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/bash.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/coreutils.mo
+%%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/diffutils.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/findutils.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/glib20.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/grep.mo
@@ -2241,6 +2302,7 @@ usr/share/man/man1/:.1.gz
 usr/share/man/man1/[.1.gz
 usr/share/man/man1/alias.1.gz
 usr/share/man/man1/arch.1.gz
+usr/share/man/man1/awk.1.gz
 usr/share/man/man1/base64.1.gz
 usr/share/man/man1/basename.1.gz
 usr/share/man/man1/bash.1.gz
@@ -2277,6 +2339,7 @@ usr/share/man/man1/chrt.1.gz
 usr/share/man/man1/chsh.1.gz
 usr/share/man/man1/cksum.1.gz
 usr/share/man/man1/clear.1.gz
+usr/share/man/man1/cmp.1.gz
 usr/share/man/man1/col.1.gz
 usr/share/man/man1/colcrt.1.gz
 usr/share/man/man1/colrm.1.gz
@@ -2294,6 +2357,9 @@ usr/share/man/man1/date.1.gz
 usr/share/man/man1/dd.1.gz
 usr/share/man/man1/declare.1.gz
 usr/share/man/man1/df.1.gz
+usr/share/man/man1/dgawk.1.gz
+usr/share/man/man1/diff.1.gz
+usr/share/man/man1/diff3.1.gz
 usr/share/man/man1/dir.1.gz
 usr/share/man/man1/dircolors.1.gz
 usr/share/man/man1/dirname.1.gz
@@ -2323,6 +2389,7 @@ usr/share/man/man1/flock.1.gz
 usr/share/man/man1/fmt.1.gz
 usr/share/man/man1/fold.1.gz
 usr/share/man/man1/gapplication.1.gz
+usr/share/man/man1/gawk.1.gz
 usr/share/man/man1/gdbus.1.gz
 usr/share/man/man1/getopt.1.gz
 usr/share/man/man1/getopts.1.gz
@@ -2340,6 +2407,7 @@ usr/share/man/man1/history.1.gz
 usr/share/man/man1/hostid.1.gz
 usr/share/man/man1/id.1.gz
 usr/share/man/man1/idn.1.gz
+usr/share/man/man1/igawk.1.gz
 usr/share/man/man1/info.1.gz
 usr/share/man/man1/infocmp.1m.gz
 usr/share/man/man1/infokey.1.gz
@@ -2394,6 +2462,7 @@ usr/share/man/man1/od.1.gz
 usr/share/man/man1/oldfind.1.gz
 usr/share/man/man1/paste.1.gz
 usr/share/man/man1/pathchk.1.gz
+usr/share/man/man1/pgawk.1.gz
 usr/share/man/man1/pinky.1.gz
 usr/share/man/man1/popd.1.gz
 usr/share/man/man1/pr.1.gz
@@ -2418,6 +2487,7 @@ usr/share/man/man1/runcon.1.gz
 usr/share/man/man1/runuser.1.gz
 usr/share/man/man1/script.1.gz
 usr/share/man/man1/scriptreplay.1.gz
+usr/share/man/man1/sdiff.1.gz
 usr/share/man/man1/sed.1.gz
 usr/share/man/man1/seq.1.gz
 usr/share/man/man1/set.1.gz
@@ -2724,6 +2794,9 @@ var/mail
 @dir etc/krb5.conf.d
 @dir etc/ld.so.conf.d
 @dir etc/opt
+@dir etc/pki/tls/certs
+@dir etc/pki/tls/misc
+@dir etc/pki/tls/private
 @dir etc/pm/config.d
 @dir etc/pm/power.d
 @dir etc/pm/sleep.d

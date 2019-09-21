@@ -1,0 +1,7 @@
+TIMESTAMP = 1566730096
+SHA256 (centos/lz4-1.7.5-2.el7.i686.rpm) = b940e2adee207f83d7796a8ba1c3753612573b01124f185fd4ed159dba25284e
+SIZE (centos/lz4-1.7.5-2.el7.i686.rpm) = 113640
+SHA256 (centos/lz4-1.7.5-2.el7.x86_64.rpm) = d358d7a01c20da8ffb562d5c4b9c03f042119da8f33fb31283289a3b5dfb4fe3
+SIZE (centos/lz4-1.7.5-2.el7.x86_64.rpm) = 100668
+SHA256 (centos/lz4-1.7.5-2.el7.src.rpm) = 0f48f7d48095a18a9831348031573b72cd684f37a75ee0b02c4e24d120f8509c
+SIZE (centos/lz4-1.7.5-2.el7.src.rpm) = 217359

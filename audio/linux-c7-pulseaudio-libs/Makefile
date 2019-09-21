@@ -4,7 +4,7 @@
 PORTNAME=	pulseaudio
 PORTVERSION=	10.0
 DISTVERSIONSUFFIX=	-5.el7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio linux
 PKGNAMESUFFIX=	-libs
 
@@ -13,7 +13,8 @@ COMMENT=	Libraries for PulseAudio clients (Linux CentOS ${LINUX_DIST_VER})
 
 USES=		linux:c7
 USE_LDCONFIG=	yes
-USE_LINUX=	dbuslibs libasyncns libsndfile tcp_wrappers-libs xorglibs
+USE_LINUX=	dbuslibs libasyncns libsndfile systemd-libs tcp_wrappers-libs \
+		xorglibs
 USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL} \

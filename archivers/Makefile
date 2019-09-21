@@ -70,6 +70,7 @@
     SUBDIR += libunrar
     SUBDIR += libunrar5
     SUBDIR += libzip
+    SUBDIR += linux-c7-lz4
     SUBDIR += lizard
     SUBDIR += lrzip
     SUBDIR += lua-lzlib
