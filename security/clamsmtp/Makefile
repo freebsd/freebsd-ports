@@ -5,17 +5,14 @@ PORTNAME=	clamsmtp
 PORTVERSION=	1.10
 PORTREVISION=	4
 CATEGORIES=	security
-MASTER_SITES=	http://thewalter.net/stef/software/clamsmtp/
+MASTER_SITES=	https://jarasoft.net/clamsmtp/
+DISTFILES=	${DISTNAME:S/-/_/}.orig${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ClamAV anti-virus SMTP Filter
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		unfetchable
-DEPRECATED=	Unfetchable, unmaintained
-EXPIRATION_DATE=	2019-10-16
 
 GNU_CONFIGURE=	yes
 USES=		gmake
