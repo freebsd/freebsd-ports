@@ -1,6 +1,6 @@
---- base/compiler/Parse/lex/sml.lex.orig	2018-05-28 19:11:09.000000000 +0200
-+++ base/compiler/Parse/lex/sml.lex	2018-07-27 17:58:18.054955000 +0200
-@@ -114,7 +114,7 @@
+--- base/compiler/Parse/lex/sml.lex.orig	2018-05-28 17:11:09 UTC
++++ base/compiler/Parse/lex/sml.lex
+@@ -114,7 +114,7 @@ hexnum={xdigit}("_"*{xdigit})*;
  frac="."{num};
  exp=[eE](~?){num};
  real=(~?)(({num}{frac}?{exp})|({num}{frac}{exp}?));

@@ -1,25 +1,35 @@
---- base/runtime/include/ml-unixdep.h.orig	2014-08-17 21:09:56.000000000 +0200
-+++ base/runtime/include/ml-unixdep.h	2014-08-23 22:24:36.475122070 +0200
-@@ -33,6 +33,7 @@
-  *   HAS_UCONTEXT		if signal handlers have a ucontext_t argument.
-  *   HAS_STRERROR		if the system provides the ISO C strerror function.
+--- base/runtime/include/ml-unixdep.h.orig	2019-06-19 18:37:43 UTC
++++ base/runtime/include/ml-unixdep.h
+@@ -37,6 +37,7 @@
   *   INT_GIDLIST		if the second argument to getgroups is int[].
+  *   STAT_HAS_TIMESPEC		if the time fields in the "struct stat" type have
+  *				type "struct timespec".
 + *   HAS_MKSTEMP		if OS provides the POSIX mkstemp function.
   *
   * Note that only one of the following sets of symbols should be defined:
   *   { HAS_MMAP, HAS_ANON_MMAP, HAS_VM_ALLOCATE }
-@@ -295,6 +296,7 @@
- #  define HAS_ILOGB
+@@ -94,6 +95,7 @@
+ #  define HAS_POLL
  #  define HAS_SIGCONTEXT
  #  define HAS_STRERROR
 +#  define HAS_MKSTEMP
  
+ /* These declarations are not in <errno.h> */
+ extern int	sys_nerr;
+@@ -204,6 +206,7 @@ extern char	*sys_errlist[];
+ #  define HAS_SIGCONTEXT
+ #  define HAS_STRERROR
+ #  define STAT_HAS_TIMESPEC
++#  define HAS_MKSTEMP
+ 
  /* FreeBSD uses MAP_ANON for MAP_ANONYMOUS */
  #  define MAP_ANONYMOUS MAP_ANON
-@@ -377,6 +379,15 @@
- #  define __EXTENSIONS__
- #endif
+@@ -254,6 +257,16 @@ extern char	*sys_errlist[];
  
+ #include <features.h>
+ 
++#endif
++
 +#if defined(OPSYS_FREEBSD)
 +#  if defined(INCLUDE_FREEBSD_I386__TYPES)
 +#    include <sys/cdefs.h>
@@ -28,7 +38,6 @@
 +#  if defined(INCLUDE_FREEBSD_I386_SIGNAL)
 +#    include INCLUDE_FREEBSD_I386_SIGNAL
 +#  endif
-+#endif
- #include INCLUDE_TYPES_H
+ #endif
+ 
  #include <unistd.h>
- #include <string.h>

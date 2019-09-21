@@ -1,6 +1,6 @@
---- smlnj-lib/JSON/json-parser.sml.orig	2011-05-10 20:58:08.000000000 +0200
-+++ smlnj-lib/JSON/json-parser.sml	2017-10-03 22:49:26.569924000 +0200
-@@ -22,6 +22,26 @@
+--- smlnj-lib/JSON/json-parser.sml.orig	2011-05-10 18:58:08 UTC
++++ smlnj-lib/JSON/json-parser.sml
+@@ -22,6 +22,26 @@ structure JSONParser : sig
  		  msg, ", found '", JSONTokens.toString tok, "'"
  		])
  	  val lexer = Lex.lex srcMap
@@ -27,7 +27,7 @@
  	  fun parseValue (strm : Lex.strm) = let
  		val (tok, pos, strm) = lexer strm
  		in
-@@ -37,50 +57,29 @@
+@@ -37,50 +57,29 @@ structure JSONParser : sig
  		    | _ => error (pos, "parsing value", tok)
  		  (* end case *)
  		end

@@ -1,6 +1,6 @@
---- smlnj-lib/JSON/json-stream-printer.sml.orig	2017-07-14 22:32:40.000000000 +0200
-+++ smlnj-lib/JSON/json-stream-printer.sml	2017-10-25 20:33:53.541874000 +0200
-@@ -103,14 +103,14 @@
+--- smlnj-lib/JSON/json-stream-printer.sml.orig	2017-07-14 20:32:40 UTC
++++ smlnj-lib/JSON/json-stream-printer.sml
+@@ -103,14 +103,14 @@ structure JSONStreamPrinter : sig
  	  fun tr (i, chrs) = (case getWChar i
  		 of SOME(wchr, i) => if (wchr <= 0w126)
  		      then (case UTF8.toAscii wchr
