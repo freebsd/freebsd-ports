@@ -2,7 +2,7 @@
 
 PORTNAME=	mutagen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.2
+DISTVERSION=	0.10.0
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,34 +15,39 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	havoc-io
 GH_TUPLE=	\
-		bmatcuk:doublestar:85a7880:doublestar/vendor/github.com/bmatcuk/doublestar \
-		BurntSushi:toml:3012a1d:toml/vendor/github.com/BurntSushi/toml \
-		dustin:go-humanize:9f541cc:go_humanize/vendor/github.com/dustin/go-humanize \
-		fatih:color:3f9d52f:color/vendor/github.com/fatih/color \
-		havoc-io:gopass:9a121be:gopass/vendor/github.com/havoc-io/gopass \
-		golang:crypto:3cb0727:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:461777f:net/vendor/golang.org/x/net \
-		golang:protobuf:v1.3.1:protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:f49334f85ddc:golang_sys/vendor/golang.org/x/sys \
-		golang:text:17ff2d5:golang_text/vendor/golang.org/x/text \
-		google:go-genproto:02b4e95:go_genproto/vendor/google.golang.org/genproto \
-		google:uuid:v1.1.1:uuid/vendor/github.com/google/uuid \
-		grpc:grpc-go:v1.19.0:grpc_grpc_go/vendor/google.golang.org/grpc \
-		kubernetes:apimachinery:2b1284ed4c93:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
-		kubernetes:klog:8139d8cb77af:kubernetes_klog/vendor/k8s.io/klog \
-		mattn:go-colorable:v0.1.1:go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.7:go_isatty/vendor/github.com/mattn/go-isatty \
-		pkg:errors:v0.8.1:errors/vendor/github.com/pkg/errors \
-		shibukawa:extstat:4113c04:extstat/vendor/github.com/shibukawa/extstat \
+		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
+		Microsoft:go-winio:3fe4fa31662f:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
+		bmatcuk:doublestar:v1.1.1:bmatcuk_doublestar/vendor/github.com/bmatcuk/doublestar \
+		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
+		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
+		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		golang:crypto:b43e412143f9:golang_crypto/vendor/golang.org/x/crypto \
+		golang:groupcache:5b532d6fd5ef:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:net:1da14a5a36f2:golang_net/vendor/golang.org/x/net \
+		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:f0ce4c0180be:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
+		google:go-genproto:c66870c02cf8:google_go_genproto/vendor/google.golang.org/genproto \
+		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
+		grpc:grpc-go:v1.20.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		hashicorp:yamux:2f1d1f20f75d:hashicorp_yamux/vendor/github.com/hashicorp/yamux \
+		hectane:go-acl:e28f47eff0c4:hectane_go_acl/vendor/github.com/hectane/go-acl \
+		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
+		kubernetes:apimachinery:6a84e37a896d:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
+		kubernetes:klog:v0.3.0:kubernetes_klog/vendor/k8s.io/klog \
+		mattn:go-colorable:v0.1.1:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.7:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mutagen-io:fsevents:10556809b434:mutagen_io_fsevents/vendor/github.com/mutagen-io/fsevents \
+		mutagen-io:gopass:9a121bec1ae7:mutagen_io_gopass/vendor/github.com/mutagen-io/gopass \
+		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
+		shibukawa:extstat:4113c04d0977:shibukawa_extstat/vendor/github.com/shibukawa/extstat \
 		spf13:cobra:v0.0.3:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag
 
 GO_TARGET=	./cmd/mutagen \
-		./cmd/mutagen-agent \
-		./pkg/daemon/locktest
+		./cmd/mutagen-agent
 
 PLIST_FILES=	bin/mutagen \
-		bin/mutagen-agent \
-		bin/locktest
+		bin/mutagen-agent
 
 .include <bsd.port.mk>
