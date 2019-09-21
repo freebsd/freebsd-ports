@@ -39,7 +39,7 @@ linux_ARGS=		${LINUX_DEFAULT}
 .if ${linux_ARGS} == c6
 LINUX_DIST_VER?=	6.10
 .elif ${linux_ARGS} == c7
-LINUX_DIST_VER?=	7.6.1810
+LINUX_DIST_VER?=	7.7.1908
 .else
 IGNORE=			Invalid Linux distribution: ${linux_ARGS}
 .endif
@@ -89,6 +89,7 @@ _linux_${linux_ARGS}_jpeg=		linux-${linux_ARGS}-jpeg>0:graphics/linux-${linux_AR
 _linux_${linux_ARGS}_libasyncns=	linux-${linux_ARGS}-libasyncns>0:dns/linux-${linux_ARGS}-libasyncns
 _linux_c6_libaudiofile=			linux-c6-audiofile>0:audio/linux-c6-libaudiofile
 _linux_c7_libaudiofile=			linux-c7-audiofile>0:audio/linux-c7-audiofile
+_linux_c7_libdrm=			linux-c7-libdrm>0:graphics/linux-c7-libdrm
 _linux_c7_libepoxy=			linux-c7-libepoxy>0:graphics/linux-c7-libepoxy
 _linux_${linux_ARGS}_libgcrypt=		linux-${linux_ARGS}-libgcrypt>0:security/linux-${linux_ARGS}-libgcrypt
 _linux_${linux_ARGS}_libgfortran=	linux-${linux_ARGS}-libgfortran>0:devel/linux-${linux_ARGS}-libgfortran

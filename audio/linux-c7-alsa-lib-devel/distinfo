@@ -1,7 +1,7 @@
-TIMESTAMP = 1567880217
-SHA256 (centos/alsa-lib-devel-1.1.6-2.el7.i686.rpm) = 47cccf052146b269ba2c8dd269385fabade58450166eb640bfca6afff5792f85
-SIZE (centos/alsa-lib-devel-1.1.6-2.el7.i686.rpm) = 984608
-SHA256 (centos/alsa-lib-devel-1.1.6-2.el7.x86_64.rpm) = 9ae063780b8652153fe4c58015d00f651577f105cc30c944c665e2a27602f8e6
-SIZE (centos/alsa-lib-devel-1.1.6-2.el7.x86_64.rpm) = 984508
-SHA256 (centos/alsa-lib-1.1.6-2.el7.src.rpm) = 56cb2556210f4443f4ef81074ae396f82ba7a0ba3d224065628baddb8c6a55ef
-SIZE (centos/alsa-lib-1.1.6-2.el7.src.rpm) = 1028253
+TIMESTAMP = 1568988500
+SHA256 (centos/alsa-lib-devel-1.1.8-1.el7.i686.rpm) = 63e1dd5214e2d77c9d22bb64e20228d275fb048acbfccd414b849ff04e4d174b
+SIZE (centos/alsa-lib-devel-1.1.8-1.el7.i686.rpm) = 986576
+SHA256 (centos/alsa-lib-devel-1.1.8-1.el7.x86_64.rpm) = 2fe4a583293c229e5386e5087d6ca83d75b6402381f69bd291b5086bb919c725
+SIZE (centos/alsa-lib-devel-1.1.8-1.el7.x86_64.rpm) = 986516
+SHA256 (centos/alsa-lib-1.1.8-1.el7.src.rpm) = d4ad51cc82d8eb11bfeb49164dc6a3a310d34ffe6346a3bbea181258ddd5843a
+SIZE (centos/alsa-lib-1.1.8-1.el7.src.rpm) = 1031270

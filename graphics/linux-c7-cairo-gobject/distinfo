@@ -1,7 +1,7 @@
-TIMESTAMP = 1567362495
-SHA256 (centos/cairo-gobject-1.15.12-3.el7.i686.rpm) = e1ee61497557c14118ba7143aae631da9c5d82c0414063a0f3b730d3822642b2
-SIZE (centos/cairo-gobject-1.15.12-3.el7.i686.rpm) = 25076
-SHA256 (centos/cairo-gobject-1.15.12-3.el7.x86_64.rpm) = 3379f8913ca89146da289efce61c342f4e0143e01deae61d2ba9e5d9b1efe468
-SIZE (centos/cairo-gobject-1.15.12-3.el7.x86_64.rpm) = 26040
-SHA256 (centos/cairo-1.15.12-3.el7.src.rpm) = 466d800d523211017c26429c5d02597c20db40403334a57ced716d20c4a9fd84
-SIZE (centos/cairo-1.15.12-3.el7.src.rpm) = 41912306
+TIMESTAMP = 1568991423
+SHA256 (centos/cairo-gobject-1.15.12-4.el7.i686.rpm) = 130cbc9d6a93b28bdd50603cecd5db57171d8e9f9f4b2678f94a5d69989eb214
+SIZE (centos/cairo-gobject-1.15.12-4.el7.i686.rpm) = 25204
+SHA256 (centos/cairo-gobject-1.15.12-4.el7.x86_64.rpm) = 10b0eb65496e8b8c7b1d14fb3c529c4e5473e113d9b872cbb504fc4611a469af
+SIZE (centos/cairo-gobject-1.15.12-4.el7.x86_64.rpm) = 26160
+SHA256 (centos/cairo-1.15.12-4.el7.src.rpm) = ce9313d9c5a09b6caef16c0d19fbf975c420b5973bff7c20bc3899542f6608c4
+SIZE (centos/cairo-1.15.12-4.el7.src.rpm) = 41914802

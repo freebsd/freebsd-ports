@@ -527,6 +527,7 @@
     SUBDIR += linux-c7-jasper
     SUBDIR += linux-c7-jbigkit
     SUBDIR += linux-c7-jpeg
+    SUBDIR += linux-c7-libdrm
     SUBDIR += linux-c7-libepoxy
     SUBDIR += linux-c7-libglvnd
     SUBDIR += linux-c7-png

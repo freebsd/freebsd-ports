@@ -1694,11 +1694,15 @@ usr/include/protocols/timed.h
 usr/include/pthread.h
 usr/include/pty.h
 usr/include/pwd.h
+usr/include/rdma/bnxt_re-abi.h
 usr/include/rdma/cxgb3-abi.h
 usr/include/rdma/cxgb4-abi.h
 usr/include/rdma/hfi/hfi1_ioctl.h
 usr/include/rdma/hfi/hfi1_user.h
+usr/include/rdma/i40iw-abi.h
 usr/include/rdma/ib_user_cm.h
+usr/include/rdma/ib_user_ioctl_cmds.h
+usr/include/rdma/ib_user_ioctl_verbs.h
 usr/include/rdma/ib_user_mad.h
 usr/include/rdma/ib_user_sa.h
 usr/include/rdma/ib_user_verbs.h
@@ -1711,6 +1715,7 @@ usr/include/rdma/qedr-abi.h
 usr/include/rdma/rdma_netlink.h
 usr/include/rdma/rdma_user_cm.h
 usr/include/rdma/rdma_user_ioctl.h
+usr/include/rdma/rdma_user_ioctl_cmds.h
 usr/include/rdma/rdma_user_rxe.h
 usr/include/rdma/vmw_pvrdma-abi.h
 usr/include/re_comp.h
@@ -2113,7 +2118,7 @@ usr/lib64/libBrokenLocale.a
 usr/lib64/libBrokenLocale.so
 usr/lib64/libanl.a
 usr/lib64/libanl.so
-usr/lib64/libbfd-2.27-34.base.el7.so
+usr/lib64/libbfd-2.27-41.base.el7.so
 usr/lib64/libbfd.a
 usr/lib64/libbfd.so
 usr/lib64/libbsd-compat.a
@@ -2148,7 +2153,7 @@ usr/lib64/libnss_files.so
 usr/lib64/libnss_hesiod.so
 usr/lib64/libnss_nis.so
 usr/lib64/libnss_nisplus.so
-usr/lib64/libopcodes-2.27-34.base.el7.so
+usr/lib64/libopcodes-2.27-41.base.el7.so
 usr/lib64/libopcodes.a
 usr/lib64/libopcodes.so
 usr/lib64/libpthread.a

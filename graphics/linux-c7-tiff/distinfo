@@ -1,7 +1,7 @@
-TIMESTAMP = 1486132943
-SHA256 (centos/libtiff-4.0.3-27.el7_3.i686.rpm) = 539fea96e8048e1a5621580a7b9922ed99b5dbbcb7918b8ef57f3902f3593222
-SIZE (centos/libtiff-4.0.3-27.el7_3.i686.rpm) = 176420
-SHA256 (centos/libtiff-4.0.3-27.el7_3.x86_64.rpm) = 1f18c4d3858341c9b3663658117ffd6c1fe44124db7767b00b3589c72269278c
-SIZE (centos/libtiff-4.0.3-27.el7_3.x86_64.rpm) = 173660
-SHA256 (centos/libtiff-4.0.3-27.el7_3.src.rpm) = e37eb69267d9726561d23cd75cd0d5cbc539447fe812085c9578bc71d87d5255
-SIZE (centos/libtiff-4.0.3-27.el7_3.src.rpm) = 2109459
+TIMESTAMP = 1568992122
+SHA256 (centos/libtiff-4.0.3-32.el7.i686.rpm) = 5e4cd0f0c9ebd2e3d10e71b01e4ad86a65e50976f5c47a1a52e4b48139b438ba
+SIZE (centos/libtiff-4.0.3-32.el7.i686.rpm) = 177768
+SHA256 (centos/libtiff-4.0.3-32.el7.x86_64.rpm) = bbb78c00bb7ee7a0a51364ad74224ed41a467a87f36378e8a146a50d3d63459a
+SIZE (centos/libtiff-4.0.3-32.el7.x86_64.rpm) = 175136
+SHA256 (centos/libtiff-4.0.3-32.el7.src.rpm) = 6753273628f3e3ebdbdd6467fe48786d6788b69ccdd0d1aab235f3f19e77eb24
+SIZE (centos/libtiff-4.0.3-32.el7.src.rpm) = 2121930
