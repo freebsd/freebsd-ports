@@ -1,6 +1,6 @@
---- base/runtime/objs/makefile.orig	2012-04-18 02:28:08.000000000 +0200
-+++ base/runtime/objs/makefile	2018-12-20 21:57:09.499392000 +0100
-@@ -5,10 +5,11 @@
+--- base/runtime/objs/makefile.orig	2019-06-18 21:06:21 UTC
++++ base/runtime/objs/makefile
+@@ -5,10 +5,12 @@
  
  SHELL =		/bin/sh
  MAKE =		make
@@ -12,10 +12,11 @@
 -AS =		as
 +AS ?=		as
 +ASFLAGS ?=
++CPPASFLAGS ?=
  AR =		ar
  ARFLAGS =	rcv
  RANLIB =	ranlib
-@@ -38,7 +39,7 @@
+@@ -38,7 +40,7 @@ BC_DIR =	$(ROOT_DIR)/bytecode
  CLIB_DIR =	$(ROOT_DIR)/c-libs
  CONFIG_DIR =	$(ROOT_DIR)/config
  
@@ -24,16 +25,18 @@
  
  INCLUDES =	-I$(OBJS_DIR) -I$(INC_DIR)
  GC_INCLUDES =	$(INCLUDES) -I$(GC_DIR)
-@@ -275,7 +276,7 @@
+@@ -275,8 +277,8 @@ prim.o:		$(MACH_DIR)/$(TARGET).prim.asm \
  		$(INC_DIR)/asm-base.h \
+ 		$(MACH_DIR)/x86-syntax.h \
  		mlstate-offsets.h
- 	$(CPP) -D_ASM_ $(DEFS) -I$(BC_DIR) $(INCLUDES) $(MACH_DIR)/$(TARGET).prim.asm > prim.s
+-	$(CPP) -D_ASM_ $(DEFS) $(INCLUDES) $(MACH_DIR)/$(TARGET).prim.asm > prim.s
 -	$(AS) -o prim.o prim.s
-+	$(AS) ${ASFLAGS} -o prim.o prim.s
++	$(CPP) -D_ASM_ $(DEFS) $(CPPASFLAGS) $(INCLUDES) $(MACH_DIR)/$(TARGET).prim.asm > prim.s
++	$(AS) $(ASFLAGS) -o prim.o prim.s
  
  $(MACH_DIR)/BYTECODE.prim.asm: bc-instr-def.h $(BC_DIR)/bc-instrs.h $(BC_DIR)/bc.h
  
-@@ -317,7 +318,7 @@
+@@ -318,7 +320,7 @@ memory-trace.o:	$(BC_DIR)/memory-trace.c \
  primops.o:	$(BC_DIR)/primops.asm \
  		$(INC_DIR)/asm-base.h
  	$(CPP) -D_ASM_ $(DEFS) $(INCLUDES) $(BC_DIR)/primops.asm > primops.s
@@ -42,7 +45,7 @@
  
  bc-instr-def.h:	gen-bc-instr-def \
  		$(BC_DIR)/bc.h $(BC_DIR)/print-bc.h
-@@ -329,7 +330,7 @@
+@@ -330,7 +332,7 @@ bc-instr-def.h:	gen-bc-instr-def \
  #
  MK_ARGS =		VERSION="$(VERSION)" \
  			MAKE="$(MAKE)" \
@@ -51,7 +54,7 @@
  			AR="$(AR)" ARFLAGS="$(ARFLAGS)" \
  			RANLIB="$(RANLIB)" \
  			INCLUDES="$(GC_INCLUDES) -I../bytecode"
-@@ -420,7 +421,7 @@
+@@ -421,7 +423,7 @@ LIB_INCLUDES =	-I$(LIB_OBJS_DIR) -I$(LIB_INC_DIR) -I..
  #
  LIB_MK_ARGS =		VERSION="$(VERSION)" \
  			MAKE="$(MAKE)" \

@@ -1,6 +1,6 @@
---- config/_arch-n-opsys.orig	2018-06-22 14:49:01 UTC
+--- config/_arch-n-opsys.orig	2019-05-31 12:15:03 UTC
 +++ config/_arch-n-opsys
-@@ -91,6 +91,8 @@ case `uname -s` in
+@@ -97,6 +97,8 @@ case `uname -s` in
      HEAP_OPSYS=bsd
      case `uname -m` in
        *86) ARCH=x86;;

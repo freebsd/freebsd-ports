@@ -1,6 +1,6 @@
---- asdl/src/asdlgen/Makefile.in.orig	2018-08-28 17:36:58.000000000 +0200
-+++ asdl/src/asdlgen/Makefile.in	2018-12-17 21:42:50.793253000 +0100
-@@ -54,8 +54,10 @@
+--- asdl/src/asdlgen/Makefile.in.orig	2018-08-28 15:36:58 UTC
++++ asdl/src/asdlgen/Makefile.in
+@@ -54,8 +54,10 @@ CM_FILES =		back-end/sml/sources.cm \
  
  CODE_FRAG_DIRS =	back-end/sml
  
@@ -13,7 +13,7 @@
  
  SRCDIR =		@ASDLGEN_SRCDIR@
  
-@@ -94,14 +96,18 @@
+@@ -94,14 +96,18 @@ back-end/sml/fragments.sml:
  	touch .depend
  	$(ML_MAKEDEPEND) $(ML_MAKEDEPEND_FLAGS) -n -f .depend $(ROOT_CM) $(HEAP) || rm -f .depend
  

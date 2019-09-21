@@ -1,5 +1,6 @@
-+++ asdl/configure	2018-12-17 15:01:00.142964000 +0100
-@@ -4893,6 +4893,7 @@
+--- asdl/configure.orig	2019-06-20 16:01:17 UTC
++++ asdl/configure
+@@ -4893,6 +4893,7 @@ $as_echo "$SMLNJ_VERSION" >&6; }
      sparc:solaris2*)	SMLNJ_ARCH=sparc;	SMLNJ_OPSYS=sunos;;
      sparc:solaris3*)	SMLNJ_ARCH=sparc;	SMLNJ_OPSYS=solaris;;
      x86_64:linux*)	SMLNJ_ARCH=x86;		SMLNJ_OPSYS=linux;;

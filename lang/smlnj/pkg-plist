@@ -123,6 +123,7 @@ smlnj/lib/smlnj/.cm/%%MLARCH%%-unix/compiler.cm
 smlnj/lib/smlnj/.cm/%%MLARCH%%-unix/installer.cm
 smlnj/lib/smlnj/.cm/%%MLARCH%%-unix/library-install.cm
 smlnj/lib/smlnj/MLRISC/.cm/%%MLARCH%%-unix/ALPHA.cm
+smlnj/lib/smlnj/MLRISC/.cm/%%MLARCH%%-unix/AMD64.cm
 smlnj/lib/smlnj/MLRISC/.cm/%%MLARCH%%-unix/Control.cm
 smlnj/lib/smlnj/MLRISC/.cm/%%MLARCH%%-unix/Graphs.cm
 smlnj/lib/smlnj/MLRISC/.cm/%%MLARCH%%-unix/HPPA.cm
@@ -137,6 +138,7 @@ smlnj/lib/smlnj/basis/.cm/%%MLARCH%%-unix/basis.cm
 smlnj/lib/smlnj/cm/.cm/%%MLARCH%%-unix/cm.cm
 smlnj/lib/smlnj/cm/.cm/%%MLARCH%%-unix/tools.cm
 smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/alpha32-unix.cm
+smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/amd64-unix.cm
 smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/current.cm
 smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/hppa-unix.cm
 smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/ppc-macos.cm
@@ -146,6 +148,7 @@ smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/x86-unix.cm
 smlnj/lib/smlnj/cmb/.cm/%%MLARCH%%-unix/x86-win32.cm
 smlnj/lib/smlnj/compiler/.cm/%%MLARCH%%-unix/all.cm
 smlnj/lib/smlnj/compiler/.cm/%%MLARCH%%-unix/alpha32.cm
+smlnj/lib/smlnj/compiler/.cm/%%MLARCH%%-unix/amd64.cm
 smlnj/lib/smlnj/compiler/.cm/%%MLARCH%%-unix/compiler.cm
 smlnj/lib/smlnj/compiler/.cm/%%MLARCH%%-unix/current.cm
 smlnj/lib/smlnj/compiler/.cm/%%MLARCH%%-unix/hppa.cm
@@ -168,6 +171,7 @@ smlnj/lib/smlnj/smlnj-lib/.cm/%%MLARCH%%-unix/html-lib.cm
 smlnj/lib/smlnj/smlnj-lib/.cm/%%MLARCH%%-unix/pp-lib.cm
 smlnj/lib/smlnj/smlnj-lib/.cm/%%MLARCH%%-unix/smlnj-lib.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/alpha32.cm
+smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/amd64.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/basics.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/core.cm
 smlnj/lib/smlnj/viscomp/.cm/%%MLARCH%%-unix/debugprof.cm
