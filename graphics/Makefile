@@ -928,6 +928,7 @@
     SUBDIR += quesoglc
     SUBDIR += radiance
     SUBDIR += radius-engine
+    SUBDIR += rapid-photo-downloader
     SUBDIR += raster3d
     SUBDIR += rawtherapee
     SUBDIR += rayshade
