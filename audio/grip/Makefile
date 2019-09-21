@@ -18,7 +18,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libid3.so:audio/id3lib \
 		libpopt.so:devel/popt
 
-USES=		gmake libtool localbase pathfix pkgconfig
+USES=		compiler:c++11-lang gmake gnome libtool localbase \
+		pathfix pkgconfig xorg
 USE_XORG=	ice sm x11 xext
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix libgnomeui vte
 
@@ -50,6 +51,8 @@ DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
 DEFAULT_CDROM_DEVICE=/dev/cd0
 .endif
 
+.include <bsd.port.pre.mk>
+
 pre-everything::
 .if !defined(WITH_CDROM_DEVICE)
 	@${ECHO_MSG} "===> The default CDROM device is ${DEFAULT_CDROM_DEVICE}"
@@ -60,5 +63,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		${WRKSRC}/src/grip.c
+.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
+	${REINPLACE_CMD} -e '/pragma/d' ${WRKSRC}/src/cdpar.c
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
