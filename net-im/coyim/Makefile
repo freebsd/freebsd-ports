@@ -6,7 +6,7 @@ DISTVERSION=	0.3.11
 PORTREVISION=	2
 CATEGORIES=	net-im
 
-MAINTAINER=	santhosh.raju@gmail.com
+MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Safe and secure by default chat client
 
 LICENSE=	GPLv3
