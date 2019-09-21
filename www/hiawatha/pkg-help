@@ -13,19 +13,14 @@ properly, the CGI wrapper binary needs to have the setuid bit set.
 
 LEFH
 Install the 'lefh' (Let's Encrypt For Hiawatha) tool to help in
-obtaining and maintaining Let's Encrypt certificates.  It needs PHP
-and also implies having MBEDTLS enabled.
+obtaining and maintaining Let's Encrypt certificates.  It requires
+PHP.
 
 LOADCHECK
 Enable experimental support for MaxServerLoad.  When the host has
 a load higher than that value, Hiawatha will drop incoming connections.
 Officially this feature is only available on Linux.  FreeBSD support
 is largely untested.
-
-MBEDTLS
-Enable TLS support via security/mbedtls.  It is required for the
-MinTLSversion, PublicKeyPins, RequiredCA, RequireTLS, and TLScertFile
-settings.
 
 MONITOR
 Enable Hiawatha Monitor support.  The MonitorServer setting enables
