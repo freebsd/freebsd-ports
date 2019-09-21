@@ -103,9 +103,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/keyhelp
 %%DATADIR%%/knox.lev
 %%DATADIR%%/license
-@mode 664
-%%DATADIR%%/logfile
-@mode
+@sample(games,games,664) %%DATADIR%%/logfile.sample
 %%DATADIR%%/mapbg.xpm
 %%DATADIR%%/medusa-1.lev
 %%DATADIR%%/medusa-2.lev
@@ -133,9 +131,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/pet_mark.xbm
 %%DATADIR%%/pilemark.xbm
 %%DATADIR%%/quest.dat
-@mode 664
-%%DATADIR%%/record
-@mode
+@sample(games,games,664) %%DATADIR%%/record.sample
 @mode 02755
 %%DATADIR%%/recover
 @mode
@@ -151,7 +147,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/soko4-1.lev
 %%DATADIR%%/soko4-2.lev
 %%DATADIR%%/symbols
-%%DATADIR%%/sysconf
+@sample(games,games,) %%DATADIR%%/sysconf.sample
 %%DATADIR%%/tower1.lev
 %%DATADIR%%/tower2.lev
 %%DATADIR%%/tower3.lev
@@ -163,9 +159,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/wizard3.lev
 %%DATADIR%%/wizhelp
 %%DATADIR%%/x11tiles
-@mode 664
-%%DATADIR%%/xlogfile
-@mode
+@sample(games,games,664) %%DATADIR%%/xlogfile.sample
 @owner
 @group
 man/man6/dgn_comp%%HACKEXT%%.6.gz

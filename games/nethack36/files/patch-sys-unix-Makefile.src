@@ -1,6 +1,6 @@
---- sys/unix/Makefile.src.orig	2018-04-27 05:07:22.000000000 -0700
-+++ sys/unix/Makefile.src	2019-03-12 14:55:40.550273000 -0700
-@@ -151,13 +151,24 @@
+--- sys/unix/Makefile.src.orig	2019-05-08 00:00:16.000000000 -0700
++++ sys/unix/Makefile.src	2019-05-16 08:16:17.494864000 -0700
+@@ -165,13 +165,24 @@
  # directories.  The ones given below is the usual spot for linux systems.
  # The paths are for glibconfig.h and gnomesupport.h respectively.
  #
@@ -26,12 +26,11 @@
  
  # The Qt and Be window systems are written in C++, while the rest of
  # NetHack is standard C.  If using Qt, uncomment the LINK line here to get
-@@ -245,8 +256,27 @@
- 
- #
- #
--#WINSRC = $(WINTTYSRC)
--#WINOBJ = $(WINTTYOBJ)
+@@ -273,6 +284,29 @@
+ # Curses - Karl Garrison, Tangles
+ #WINSRC = $(WINCURSESSRC)
+ #WINOBJ = $(WINCURSESOBJ)
++
 +WINSRC = $(WINTTYSRC)
 +ifeq ("$(GRAPHICS)","X11_GRAPHICS")
 +WINSRC += $(WINX11SRC)
@@ -53,10 +52,11 @@
 +ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
 +WINOBJ += $(WINGNOMEOBJ)
 +endif
- 
++
+ #
  # on some systems the termcap library is in -ltermcap or -lcurses
  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
-@@ -263,16 +293,19 @@
+@@ -289,6 +323,7 @@
  # WINTTYLIB = -lcurses16
  # WINTTYLIB = -lncurses
  #WINTTYLIB = -ltermlib
@@ -64,21 +64,21 @@
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
--WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
-+#WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
-+WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -L${LOCALBASE}/lib
+@@ -296,10 +331,12 @@
  # WINX11LIB = -lXaw -lXmu -lXt -lX11
  # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
  # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
++WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -L${LOCALBASE}/lib
+ #
  #
  # libraries for Qt 3
 -WINQTLIB = -L$(QTDIR)/lib -lqt
 +#WINQTLIB = -L$(QTDIR)/lib -lqt
-+WINQTLIB = ${QTCFGLIBS} ${LIBQT}
+++WINQTLIB = ${QTCFGLIBS} ${LIBQT}
  #
  # libraries for Qt 4
  WINQT4LIB = `pkg-config QtGui --libs`
-@@ -281,7 +314,8 @@
+@@ -311,7 +348,8 @@
  WINKDELIB = -lkdecore -lkdeui -lXext
  #
  # libraries for Gnome
@@ -88,11 +88,20 @@
  #
  # libraries for Gem port
  WINGEMLIB = -le_gem -lgem
-@@ -289,7 +323,16 @@
- # libraries for BeOS 
- WINBELIB = -lbe
- 
--#WINLIB = $(WINTTYLIB)
+@@ -321,7 +359,7 @@
+ #
+ # libraries for curses port
+ # link with ncurses
+-WINCURSESLIB = -lncurses
++WINCURSESLIB = -lncurses -L${LOCALBASE}/lib
+ # link with pdcurses for SDL, installed in a separate directory
+ #WINCURSESLIB = -L/usr/local/lib/pdcurses -lpdcurses -lSDL
+ # same as above, for XCurses
+@@ -331,6 +369,18 @@
+ #
+ # For Curses
+ #WINLIB = $(WINCURSESLIB)
++
 +WINLIB = $(WINTTYLIB)
 +ifeq ("$(GRAPHICS)","X11_GRAPHICS")
 +WINLIB += $(WINX11LIB)
@@ -103,10 +112,11 @@
 +ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
 +WINLIB += $(WINGNOMELIB)
 +endif
- 
++
+ #
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
-@@ -322,7 +365,7 @@
+@@ -363,7 +413,7 @@
  LIBS =
  
  # make NetHack
@@ -115,7 +125,7 @@
  # GAME     = nethack.prg
  
  # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
-@@ -548,13 +591,13 @@
+@@ -597,13 +647,13 @@
  
  # Qt 3 windowport meta-object-compiler output
  qt_kde0.moc: ../include/qt_kde0.h
