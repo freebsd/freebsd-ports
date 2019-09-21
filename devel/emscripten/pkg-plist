@@ -772,6 +772,7 @@ lib/emscripten/system/include/libcxx/version
 lib/emscripten/system/include/libcxx/wchar.h
 lib/emscripten/system/include/libcxx/wctype.h
 lib/emscripten/system/include/uuid/uuid.h
+lib/emscripten/system/include/wasi/wasi.h
 lib/emscripten/system/include/wasm_simd128.h
 lib/emscripten/system/lib/al.c
 lib/emscripten/system/lib/al.symbols
@@ -3462,7 +3463,6 @@ lib/emscripten/tools/optimizer/simple_ast.cpp
 lib/emscripten/tools/optimizer/simple_ast.h
 lib/emscripten/tools/optimizer/snprintf.h
 lib/emscripten/tools/ports/__init__.py
-lib/emscripten/tools/ports/binaryen.py
 lib/emscripten/tools/ports/boost_headers.py
 lib/emscripten/tools/ports/bullet.py
 lib/emscripten/tools/ports/bzip2.py
