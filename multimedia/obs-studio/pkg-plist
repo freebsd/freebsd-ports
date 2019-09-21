@@ -139,7 +139,9 @@ share/obs/libobs/opaque.effect
 share/obs/libobs/premultiplied_alpha.effect
 share/obs/libobs/repeat.effect
 share/obs/libobs/solid.effect
+share/obs/obs-plugins/obs-%%LUA_LIBDIR%%fdk/locale/bg-BG.ini
 share/obs/obs-plugins/decklink-ouput-ui/.keepme
+share/obs/obs-plugins/frontend-tools/locale/af-ZA.ini
 share/obs/obs-plugins/frontend-tools/locale/ar-SA.ini
 share/obs/obs-plugins/frontend-tools/locale/bg-BG.ini
 share/obs/obs-plugins/frontend-tools/locale/bn-BD.ini
@@ -157,6 +159,7 @@ share/obs/obs-plugins/frontend-tools/locale/fi-FI.ini
 share/obs/obs-plugins/frontend-tools/locale/fil-PH.ini
 share/obs/obs-plugins/frontend-tools/locale/fr-FR.ini
 share/obs/obs-plugins/frontend-tools/locale/gd-GB.ini
+share/obs/obs-plugins/frontend-tools/locale/gl-ES.ini
 share/obs/obs-plugins/frontend-tools/locale/he-IL.ini
 share/obs/obs-plugins/frontend-tools/locale/hr-HR.ini
 share/obs/obs-plugins/frontend-tools/locale/hu-HU.ini
@@ -174,6 +177,7 @@ share/obs/obs-plugins/frontend-tools/locale/pt-BR.ini
 share/obs/obs-plugins/frontend-tools/locale/pt-PT.ini
 share/obs/obs-plugins/frontend-tools/locale/ro-RO.ini
 share/obs/obs-plugins/frontend-tools/locale/ru-RU.ini
+share/obs/obs-plugins/frontend-tools/locale/sl-SI.ini
 share/obs/obs-plugins/frontend-tools/locale/sk-SK.ini
 share/obs/obs-plugins/frontend-tools/locale/sr-CS.ini
 share/obs/obs-plugins/frontend-tools/locale/sr-SP.ini
@@ -193,6 +197,7 @@ share/obs/obs-plugins/frontend-tools/scripts/clock-source/minute.png
 share/obs/obs-plugins/frontend-tools/scripts/clock-source/second.png
 share/obs/obs-plugins/frontend-tools/scripts/countdown.lua
 share/obs/obs-plugins/frontend-tools/scripts/instant-replay.lua
+share/obs/obs-plugins/frontend-tools/scripts/pause-scene.lua
 share/obs/obs-plugins/frontend-tools/scripts/url-text.py
 share/obs/obs-plugins/image-source/locale/ar-SA.ini
 share/obs/obs-plugins/image-source/locale/bg-BG.ini
@@ -577,6 +582,7 @@ share/obs/obs-plugins/obs-outputs/locale/en-US.ini
 share/obs/obs-plugins/obs-outputs/locale/es-ES.ini
 share/obs/obs-plugins/obs-outputs/locale/et-EE.ini
 share/obs/obs-plugins/obs-outputs/locale/eu-ES.ini
+share/obs/obs-plugins/obs-outputs/locale/fa-IR.ini
 share/obs/obs-plugins/obs-outputs/locale/fi-FI.ini
 share/obs/obs-plugins/obs-outputs/locale/fil-PH.ini
 share/obs/obs-plugins/obs-outputs/locale/fr-FR.ini
@@ -645,6 +651,7 @@ share/obs/obs-plugins/obs-transitions/locale/pt-PT.ini
 share/obs/obs-plugins/obs-transitions/locale/ro-RO.ini
 share/obs/obs-plugins/obs-transitions/locale/ru-RU.ini
 share/obs/obs-plugins/obs-transitions/locale/sk-SK.ini
+share/obs/obs-plugins/obs-transitions/locale/sl-SI.ini
 share/obs/obs-plugins/obs-transitions/locale/sr-CS.ini
 share/obs/obs-plugins/obs-transitions/locale/sr-SP.ini
 share/obs/obs-plugins/obs-transitions/locale/sv-SE.ini
@@ -740,6 +747,7 @@ share/obs/obs-plugins/obs-x264/locale/vi-VN.ini
 share/obs/obs-plugins/obs-x264/locale/zh-CN.ini
 share/obs/obs-plugins/obs-x264/locale/zh-TW.ini
 share/obs/obs-plugins/rtmp-services/locale/ar-SA.ini
+share/obs/obs-plugins/rtmp-services/locale/bg-BG.ini
 share/obs/obs-plugins/rtmp-services/locale/bn-BD.ini
 share/obs/obs-plugins/rtmp-services/locale/ca-ES.ini
 share/obs/obs-plugins/rtmp-services/locale/cs-CZ.ini
@@ -750,6 +758,7 @@ share/obs/obs-plugins/rtmp-services/locale/en-US.ini
 share/obs/obs-plugins/rtmp-services/locale/es-ES.ini
 share/obs/obs-plugins/rtmp-services/locale/et-EE.ini
 share/obs/obs-plugins/rtmp-services/locale/eu-ES.ini
+share/obs/obs-plugins/rtmp-services/locale/fa-IR.ini
 share/obs/obs-plugins/rtmp-services/locale/fi-FI.ini
 share/obs/obs-plugins/rtmp-services/locale/fil-PH.ini
 share/obs/obs-plugins/rtmp-services/locale/fr-FR.ini
@@ -839,6 +848,7 @@ share/obs/obs-studio/license/gplv2.txt
 share/obs/obs-studio/locale.ini
 share/obs/obs-studio/locale/af-ZA.ini
 share/obs/obs-studio/locale/ar-SA.ini
+share/obs/obs-studio/locale/az-AZ.ini
 share/obs/obs-studio/locale/bg-BG.ini
 share/obs/obs-studio/locale/bn-BD.ini
 share/obs/obs-studio/locale/ca-ES.ini
@@ -913,6 +923,7 @@ share/obs/obs-studio/themes/Dark.qss
 share/obs/obs-studio/themes/Dark/down.svg
 share/obs/obs-studio/themes/Dark/expand.svg
 share/obs/obs-studio/themes/Dark/locked.svg
+share/obs/obs-studio/themes/Dark/media-pause.svg
 share/obs/obs-studio/themes/Dark/minus.svg
 share/obs/obs-studio/themes/Dark/mute.svg
 share/obs/obs-studio/themes/Dark/no_sources.svg
