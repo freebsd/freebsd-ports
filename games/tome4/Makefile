@@ -1,14 +1,14 @@
 # $FreeBSD$
 
-PORTNAME?=	tome4
+PORTNAME=	tome4
 DISTVERSION?=	1.5.10
 PORTREVISION?=	1
 CATEGORIES=	games
 MASTER_SITES=	https://te4.org/dl/t-engine/ \
 		SF/lifanov-ports-distfiles/${PORTNAME}/:icons
-DISTFILES=	t-engine4-src-${PORTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	t-engine4-src-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
-EXTRACT_ONLY=	t-engine4-src-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	t-engine4-src-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Epic tactical turn-based roguelike adventure
@@ -26,13 +26,11 @@ USE_GL=		gl glu
 USE_CSTD=	gnu89
 SUB_FILES=	tome4
 
-CONFLICTS=	tome4-beta-*
-
 DESKTOP_ENTRIES="ToME 4" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;RolePlaying;" ""
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-WRKSRC=		${WRKDIR}/t-engine4-src-${PORTVERSION}
+WRKSRC=		${WRKDIR}/t-engine4-src-${DISTVERSION}
 MAKE_ARGS+=	config=release verbose=yes ARCH="" CC=${CC}
 
 .include <bsd.port.pre.mk>
