@@ -889,6 +889,7 @@
     SUBDIR += py-pyqtgraph
     SUBDIR += py-python-poppler-qt5
     SUBDIR += py-qt5-svg
+    SUBDIR += py-rawkit
     SUBDIR += py-sane
     SUBDIR += py-scikit-image
     SUBDIR += py-seqdiag

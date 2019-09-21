@@ -1,0 +1,4 @@
+rawkit (pronounced rocket) is a ctypes-based LibRaw binding for
+Python inspired by the Wand API.
+
+WWW: https://rawkit.readthedocs.org
