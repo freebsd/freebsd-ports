@@ -13,18 +13,24 @@ COMMENT=	Powerful webserver security scanner for network
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	fails to compile: ruby.h:1381: error: wrong number of arguments specified for '__deprecated__' attribute
-
 LIB_DEPENDS=	lib${RUBY_NAME}.so:${RUBY_PORT}
 
-USES=		ssl
+USES=		compiler:c11 ssl
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/ruby-${RUBY_VER} -I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 CFLAGS+=	-DRUBY_19
+
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} != base
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's/cc/${CC}/g' ${WRKSRC}/extconf.rb
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arirang ${STAGEDIR}${PREFIX}/sbin
@@ -32,4 +38,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/scanrule/*.uxe ${STAGEDIR}${PREFIX}/share/arirang
 	${INSTALL_DATA} ${WRKSRC}/script/*.rb ${STAGEDIR}${PREFIX}/share/arirang
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
