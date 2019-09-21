@@ -11,7 +11,9 @@ COMMENT=	C++ Jupyter Kernel
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_13=	https://github.com/QuantStack/xeus-cling/issues/234
+.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+BROKEN=		https://github.com/QuantStack/xeus-cling/issues/234
+.endif
 
 BUILD_DEPENDS=	cppzmq>0:net/cppzmq \
 		cxxopts>0:devel/cxxopts \
