@@ -1,14 +1,14 @@
---- util/makedefs.c.orig	2015-11-09 11:13:10 UTC
-+++ util/makedefs.c
-@@ -135,6 +135,7 @@
- /*-end of vision defs-*/
+--- util/makedefs.c.orig	2019-05-08 00:00:16.000000000 -0700
++++ util/makedefs.c	2019-05-16 08:21:09.868001000 -0700
+@@ -139,6 +139,7 @@
+ #define MAXFNAMELEN 600
  
- static char filename[600];
-+static char tempfilename[600];  /* grep.tmp.<pid> */
+ static char filename[MAXFNAMELEN];
++static char tempfilename[MAXFNAMELEN];
  
  #ifdef FILE_PREFIX
  /* if defined, a first argument not starting with - is
-@@ -261,6 +262,12 @@
+@@ -272,6 +273,12 @@
          return 1;
      }
  
@@ -21,7 +21,7 @@
  #ifdef FILE_PREFIX
      if (argc >= 2 && argv[1][0] != '-') {
          file_prefix = argv[1];
-@@ -949,9 +956,9 @@
+@@ -967,9 +974,9 @@
      }
      Fprintf(ofp, "%s", Dont_Edit_Data);
  
@@ -33,7 +33,7 @@
  
      while ((line = fgetline(ifp)) != 0) {
          if (line[0] != '#' && line[0] != '\n')
-@@ -961,7 +968,7 @@
+@@ -979,7 +986,7 @@
      Fclose(ifp);
      Fclose(ofp);
  
@@ -42,7 +42,7 @@
      return;
  }
  
-@@ -1955,9 +1962,9 @@
+@@ -2230,9 +2237,9 @@
      }
      Fprintf(ofp, "%s", Dont_Edit_Data);
  
@@ -54,7 +54,7 @@
  
      while ((line = fgetline(ifp)) != 0) {
          SpinCursor(3);
-@@ -1973,7 +1980,7 @@
+@@ -2247,7 +2254,7 @@
      Fclose(ifp);
      Fclose(ofp);
  
