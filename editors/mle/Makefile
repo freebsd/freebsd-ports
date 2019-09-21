@@ -3,12 +3,8 @@
 
 PORTNAME=	mle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	editors
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-
-PATCH_SITES=	https://gist.githubusercontent.com/adsr/0fdf41a277bb0519f60d2225b782f66a/raw/9f0b59ce57827e69ec7e9b34061416f354032663/
-PATCHFILES=	foo.diff:-p1
 
 MAINTAINER=	as@php.net
 COMMENT=	Small, flexible, terminal-based text editor
