@@ -1,5 +1,5 @@
 gau2grid is a python-generated C library for vectorized computation of grid to
-gaussian collocation matrices
+gaussian collocation matrices.
 
 The core of gau2grid is generating the collocation matrices between a real space
 grid and a gaussian basis set expanded to a given angular momenta.

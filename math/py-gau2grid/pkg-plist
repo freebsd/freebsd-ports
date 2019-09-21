@@ -9,7 +9,6 @@
 %%PYTHON_SITELIBDIR%%/gau2grid/docs_generator.py
 %%PYTHON_SITELIBDIR%%/gau2grid/extras.py
 %%PYTHON_SITELIBDIR%%/gau2grid/gg.so
-%%PYTHON_SITELIBDIR%%/gau2grid/np_generator.py
 %%PYTHON_SITELIBDIR%%/gau2grid/order.py
 %%PYTHON_SITELIBDIR%%/gau2grid/python_reference.py
 %%PYTHON_SITELIBDIR%%/gau2grid/tests/__init__.py
@@ -17,7 +16,6 @@
 %%PYTHON_SITELIBDIR%%/gau2grid/tests/test_c_code.py
 %%PYTHON_SITELIBDIR%%/gau2grid/tests/test_c_generator.py
 %%PYTHON_SITELIBDIR%%/gau2grid/tests/test_helper.py
-%%PYTHON_SITELIBDIR%%/gau2grid/tests/test_np_generator.py
 %%PYTHON_SITELIBDIR%%/gau2grid/tests/test_order.py
 %%PYTHON_SITELIBDIR%%/gau2grid/tests/test_rsh.py
 %%PYTHON_SITELIBDIR%%/gau2grid/utility.py
