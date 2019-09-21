@@ -1,0 +1,5 @@
+TIMESTAMP = 1569070306
+SHA256 (mle-1.4.0/adsr-mle-v1.4.0_GH0.tar.gz) = c186fd8ffa756f26e48dfef818e5e40345dab53f60e73cce92caa81b6512cd5c
+SIZE (mle-1.4.0/adsr-mle-v1.4.0_GH0.tar.gz) = 104956
+SHA256 (mle-1.4.0/foo.diff) = a55dea8c7b63d84b416cfafa7a3cbe48e7a2378de370ed5e89ffc5aff4de2b9d
+SIZE (mle-1.4.0/foo.diff) = 2360
