@@ -3,11 +3,12 @@
 
 PORTNAME=	oss
 DISTVERSION=	4.2-build2019
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Open Sound System from 4Front Technologies
 
 LICENSE=	BSD2CLAUSE

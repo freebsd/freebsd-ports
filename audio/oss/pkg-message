@@ -6,6 +6,11 @@ the one used by 4Front and is not supported by them.  All bug reports
 should go to the port maintainer via the usual PR mechanism.
 
 To load OSS at boot, add oss_enable="YES" to your /etc/rc.conf.
+
+It is necessary to ensure that your kernel does not have sound.ko
+compiled in, which is always the case for GENERIC.  Please refer to
+the Handbook for advice on this.
+
 EOM
 }
 ]
