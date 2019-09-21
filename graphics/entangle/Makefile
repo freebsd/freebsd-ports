@@ -12,6 +12,10 @@ COMMENT=	Digital camera tethered control and capture program
 
 LICENSE=	GPLv3
 
+.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
+BROKEN=		ld: error: ./.libs/libentangle_backend.so: undefined reference to gst_base_src_get_type
+.endif
+
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/mate/scalable/devices/camera-photo-symbolic.svg:x11-themes/mate-icon-theme \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2 \
