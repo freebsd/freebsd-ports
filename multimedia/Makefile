@@ -348,6 +348,7 @@
     SUBDIR += py-openlp
     SUBDIR += py-periscope
     SUBDIR += py-pretty_midi
+    SUBDIR += py-pymediainfo
     SUBDIR += py-qt5-multimedia
     SUBDIR += py-qt5-multimediawidgets
     SUBDIR += py-soco
