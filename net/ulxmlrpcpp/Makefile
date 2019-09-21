@@ -15,7 +15,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		tar:bzip2 pathfix iconv libtool ssl
+USES=		compiler:c++11-lang tar:bzip2 pathfix iconv libtool ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
 INSTALL_TARGET=	install-strip
