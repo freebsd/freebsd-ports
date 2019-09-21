@@ -776,6 +776,7 @@
     SUBDIR += p5-File-Listing
     SUBDIR += p5-File-Log
     SUBDIR += p5-File-Next
+    SUBDIR += p5-File-Rename
     SUBDIR += p5-File-Signature
     SUBDIR += p5-File-Stat-Bits
     SUBDIR += p5-File-Stat-ModeString

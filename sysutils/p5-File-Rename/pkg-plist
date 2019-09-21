@@ -1,0 +1,6 @@
+bin/rename
+%%SITE_PERL%%/File/Rename.pm
+%%SITE_PERL%%/File/Rename/Options.pm
+%%PERL5_MAN1%%/rename.1.gz
+%%PERL5_MAN3%%/File::Rename.3.gz
+%%PERL5_MAN3%%/File::Rename::Options.3.gz

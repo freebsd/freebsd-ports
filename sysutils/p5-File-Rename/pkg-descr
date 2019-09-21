@@ -1,0 +1,8 @@
+rename renames the filenames supplied according to the rule specified as the
+first argument. The perlexpr argument is a Perl expression which is expected
+to modify the $_ string in Perl for at least some of the filenames specified.
+If a given filename is not modified by the expression, it will not be renamed.
+If no filenames are given on the command line, filenames will be read via
+standard input.
+
+WWW: https://metacpan.org/release/File-Rename
