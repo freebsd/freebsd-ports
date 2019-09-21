@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmysofa
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
@@ -13,11 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	node:www/node
 
-USES=		cmake shebangfix
+USES=		cmake:insource
 USE_LDCONFIG=	yes
-
-SHEBANG_FILES=	tests/compare.sh
-bash_CMD=	/bin/sh
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hoene
