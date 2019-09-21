@@ -2,7 +2,7 @@
 
 PORTNAME=	gabedit
 DISTVERSION=	2.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 #MASTER_SITES=	http://prdownloads.sourceforge.net/${PORTNAME}/ # old SF-based source
 #DISTNAME=	GabeditSrc${DISTVERSION:S/.//g}

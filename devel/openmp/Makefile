@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	openmp
-DISTVERSION=	8.0.0
+DISTVERSION=	9.0.0
 DISTVERSIONSUFFIX=	.src
-PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://llvm.org/releases/${DISTVERSION}/
 
@@ -20,6 +19,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 USES=		cmake compiler:c++11-lib perl5 tar:xz
 USE_PERL5=	build
 USE_LDCONFIG=	yes
+TEST_TARGET=	libomp-micro-tests
 PLIST_FILES=	include/omp.h \
 		include/ompt.h \
 		include/omp-tools.h \
