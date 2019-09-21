@@ -1,2 +1,3 @@
-SHA256 (clamsmtp-1.10.tar.gz) = a52fdb4b26e11ece30c478a806c95b1eda16f4e73937bd560ece7017fb0df92a
-SIZE (clamsmtp-1.10.tar.gz) = 217126
+TIMESTAMP = 1569082280
+SHA256 (clamsmtp_1.10.orig.tar.gz) = a52fdb4b26e11ece30c478a806c95b1eda16f4e73937bd560ece7017fb0df92a
+SIZE (clamsmtp_1.10.orig.tar.gz) = 217126
