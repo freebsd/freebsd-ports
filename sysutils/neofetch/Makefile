@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	neofetch
-DISTVERSION=	6.0.0
+DISTVERSION=	6.1.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	pkubaj@anongoth.pl
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Fast, highly customizable system info script
 
 LICENSE=	MIT
