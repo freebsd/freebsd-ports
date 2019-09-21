@@ -1,7 +1,7 @@
-TIMESTAMP = 1567881407
-SHA256 (centos/make-3.82-23.el7.i686.rpm) = 6417801fa80cb5b7c362eb0b74f938b8256a1dc4d248f44faa8c9c24fc831f34
-SIZE (centos/make-3.82-23.el7.i686.rpm) = 427472
-SHA256 (centos/make-3.82-23.el7.x86_64.rpm) = e02baba191334ec15234324f32b36f2384ec50135982811880e075b8e9281459
-SIZE (centos/make-3.82-23.el7.x86_64.rpm) = 430540
-SHA256 (centos/make-3.82-23.el7.src.rpm) = 284a9239fe74d9db5ce074e5f0c36658398c68b7ef20e9ea590017051121199b
-SIZE (centos/make-3.82-23.el7.src.rpm) = 1282509
+TIMESTAMP = 1568991120
+SHA256 (centos/make-3.82-24.el7.i686.rpm) = 894afc5cea2c6be459db56b40a498215df915395cfee7186a729c7422f28a270
+SIZE (centos/make-3.82-24.el7.i686.rpm) = 427696
+SHA256 (centos/make-3.82-24.el7.x86_64.rpm) = d4829aff887b450f0f3bd307f782e062d1067ca4f95fcad5511148679c14a668
+SIZE (centos/make-3.82-24.el7.x86_64.rpm) = 430712
+SHA256 (centos/make-3.82-24.el7.src.rpm) = 61678f00a7886b42491c167569a9b534636bd1b5873e58cb302fc7910d8ae40b
+SIZE (centos/make-3.82-24.el7.src.rpm) = 1283407

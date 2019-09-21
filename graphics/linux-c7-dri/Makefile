@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dri
-PORTVERSION=	18.0.5
-DISTVERSIONSUFFIX=	-4.el7_6
+PORTVERSION=	18.3.4
+DISTVERSIONSUFFIX=	-5.el7
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,12 +11,11 @@ COMMENT=	Mesa libGL runtime libraries (Linux CentOS ${LINUX_DIST_VER})
 
 USES=		linux:c7
 USE_LDCONFIG=	yes
-USE_LINUX=	elfutils-libelf expat libglvnd libpciaccess wayland xorglibs
+USE_LINUX=	elfutils-libelf expat libdrm libglvnd wayland xorglibs
 USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	freeglut-3.0.0-8.el7 \
-		libdrm-2.4.91-3.el7 \
-		llvm-private-6.0.1-2.el7 \
+		llvm-private-7.0.1-1.el7 \
 		mesa-dri-drivers-${DISTVERSIONFULL} \
 		mesa-libEGL-${DISTVERSIONFULL} \
 		mesa-libGL-${DISTVERSIONFULL} \
@@ -32,8 +31,7 @@ DISTFILES_amd64=${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 		${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 		mesa-vulkan-drivers-${DISTVERSIONFULL}${EXTRACT_SUFX_amd64}:amd64
 SRC_DISTFILES=	freeglut-3.0.0-8.el7${SRC_SUFX}:SOURCE \
-		libdrm-2.4.91-3.el7${SRC_SUFX}:SOURCE \
-		llvm-private-6.0.1-2.el7${SRC_SUFX}:SOURCE \
+		llvm-private-7.0.1-1.el7${SRC_SUFX}:SOURCE \
 		mesa-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE \
 		mesa-libGLU-9.0.0-4.el7${SRC_SUFX}:SOURCE
 

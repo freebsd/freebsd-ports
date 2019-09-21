@@ -1,7 +1,7 @@
-TIMESTAMP = 1556484648
-SHA256 (centos/libjpeg-turbo-1.2.90-6.el7.i686.rpm) = b09b1162056c6bd921fbc6f8da19b7b16dbf3660b86fb94d61be48bea841876d
-SIZE (centos/libjpeg-turbo-1.2.90-6.el7.i686.rpm) = 141060
-SHA256 (centos/libjpeg-turbo-1.2.90-6.el7.x86_64.rpm) = ace84e26a3446833b4750a646cfc3a6fdd2761002defbf15b9c00957bb3de3c7
-SIZE (centos/libjpeg-turbo-1.2.90-6.el7.x86_64.rpm) = 137464
-SHA256 (centos/libjpeg-turbo-1.2.90-6.el7.src.rpm) = 3612f8cd703f0b709e6c1b8508f97c1b205954e4c9615f90f39f23664a02baef
-SIZE (centos/libjpeg-turbo-1.2.90-6.el7.src.rpm) = 1358261
+TIMESTAMP = 1568992062
+SHA256 (centos/libjpeg-turbo-1.2.90-8.el7.i686.rpm) = 0adddfecc461305aacc70159dd34c51edf3c5f90ed5eb03cebb8db87638106b2
+SIZE (centos/libjpeg-turbo-1.2.90-8.el7.i686.rpm) = 141356
+SHA256 (centos/libjpeg-turbo-1.2.90-8.el7.x86_64.rpm) = f64aadb4c40d68afb2c453de820b4d263f630930fc63e09792fb7ab81bee2bbb
+SIZE (centos/libjpeg-turbo-1.2.90-8.el7.x86_64.rpm) = 137752
+SHA256 (centos/libjpeg-turbo-1.2.90-8.el7.src.rpm) = a1bf79998a7b88a5673a9e76fd5b28bb43558010a726a8468c436857fdc8672b
+SIZE (centos/libjpeg-turbo-1.2.90-8.el7.src.rpm) = 1362966

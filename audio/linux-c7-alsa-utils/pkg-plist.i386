@@ -15,6 +15,7 @@ usr/bin/arecord
 usr/bin/arecordmidi
 usr/bin/aseqdump
 usr/bin/aseqnet
+usr/bin/axfer
 usr/bin/iecset
 usr/bin/speaker-test
 usr/lib/alsa/init/00main
@@ -28,6 +29,7 @@ usr/lib/systemd/system/alsa-restore.service
 usr/lib/systemd/system/alsa-state.service
 usr/lib/systemd/system/sound.target.wants/alsa-restore.service
 usr/lib/systemd/system/sound.target.wants/alsa-state.service
+usr/lib/udev/rules.d/89-alsa-ucm.rules
 usr/lib/udev/rules.d/90-alsa-restore.rules
 usr/sbin/alsa-info
 usr/sbin/alsa-info.sh
@@ -37,7 +39,7 @@ usr/share/alsa/init
 usr/share/alsa/speaker-test/sample_map.csv
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%NLS%%usr/share/locale/de/LC_MESSAGES/alsa-utils.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/alsa-utils.mo
@@ -49,6 +51,7 @@ usr/share/man/man1/alsabat.1.gz
 usr/share/man/man1/alsactl.1.gz
 usr/share/man/man1/alsaloop.1.gz
 usr/share/man/man1/alsamixer.1.gz
+usr/share/man/man1/alsatplg.1.gz
 usr/share/man/man1/alsaucm.1.gz
 usr/share/man/man1/alsaunmute.1.gz
 usr/share/man/man1/amidi.1.gz
@@ -59,6 +62,9 @@ usr/share/man/man1/arecord.1.gz
 usr/share/man/man1/arecordmidi.1.gz
 usr/share/man/man1/aseqdump.1.gz
 usr/share/man/man1/aseqnet.1.gz
+usr/share/man/man1/axfer-list.1.gz
+usr/share/man/man1/axfer-transfer.1.gz
+usr/share/man/man1/axfer.1.gz
 usr/share/man/man1/iecset.1.gz
 usr/share/man/man1/speaker-test.1.gz
 usr/share/man/man7/alsactl_init.7.gz

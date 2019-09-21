@@ -71,6 +71,7 @@ etc/yum.repos.d/CentOS-Media.repo
 etc/yum.repos.d/CentOS-Sources.repo
 etc/yum.repos.d/CentOS-Vault.repo
 etc/yum.repos.d/CentOS-fasttrack.repo
+etc/yum/vars/contentdir
 etc/yum/vars/infra
 lib
 lib64

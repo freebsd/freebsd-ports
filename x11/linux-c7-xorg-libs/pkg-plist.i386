@@ -609,10 +609,10 @@ usr/share/X11/xkb/types/pc
 %%PORTDOCS%%usr/share/doc/libSM-1.2.2/AUTHORS
 %%PORTDOCS%%usr/share/doc/libSM-1.2.2/COPYING
 %%PORTDOCS%%usr/share/doc/libSM-1.2.2/ChangeLog
-%%PORTDOCS%%usr/share/doc/libX11-common-1.6.5/AUTHORS
-%%PORTDOCS%%usr/share/doc/libX11-common-1.6.5/COPYING
-%%PORTDOCS%%usr/share/doc/libX11-common-1.6.5/NEWS
-%%PORTDOCS%%usr/share/doc/libX11-common-1.6.5/README
+%%PORTDOCS%%usr/share/doc/libX11-common-1.6.7/AUTHORS
+%%PORTDOCS%%usr/share/doc/libX11-common-1.6.7/COPYING
+%%PORTDOCS%%usr/share/doc/libX11-common-1.6.7/NEWS
+%%PORTDOCS%%usr/share/doc/libX11-common-1.6.7/README
 %%PORTDOCS%%usr/share/doc/libXScrnSaver-1.2.2/COPYING
 %%PORTDOCS%%usr/share/doc/libXScrnSaver-1.2.2/ChangeLog
 %%PORTDOCS%%usr/share/doc/libXScrnSaver-1.2.2/README

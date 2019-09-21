@@ -1,7 +1,7 @@
-TIMESTAMP = 1556533831
-SHA256 (centos/freetype-2.8-12.el7.i686.rpm) = f7e88eff161bce032773746aecb93932e94a26ed2af7156e4018d9d23a522101
-SIZE (centos/freetype-2.8-12.el7.i686.rpm) = 385864
-SHA256 (centos/freetype-2.8-12.el7.x86_64.rpm) = 95b67d5ada6a7a05d511ebd23dacb27d713221c4f5688da4cbe7bdca192acffb
-SIZE (centos/freetype-2.8-12.el7.x86_64.rpm) = 388688
-SHA256 (centos/freetype-2.8-12.el7.src.rpm) = b8ff95c7279c48c927b3f6bafa622403ba1c836586f4f2793d70a9c0915ddd06
-SIZE (centos/freetype-2.8-12.el7.src.rpm) = 4276134
+TIMESTAMP = 1568992323
+SHA256 (centos/freetype-2.8-14.el7.i686.rpm) = a2595f23a0aa16a68a727bd2acd498c9e2681ef1f9506ed44f47675811bc7a8e
+SIZE (centos/freetype-2.8-14.el7.i686.rpm) = 386216
+SHA256 (centos/freetype-2.8-14.el7.x86_64.rpm) = 13f22ec33abf14d99dbdd456f1b2ac3b0ea84c1ceb756073a0df41de0de42b7a
+SIZE (centos/freetype-2.8-14.el7.x86_64.rpm) = 389068
+SHA256 (centos/freetype-2.8-14.el7.src.rpm) = cb8f7fde5f2c3c72c8e8be9a0a27dd319e1ff9ec66257f6ff140eb6a2e349d67
+SIZE (centos/freetype-2.8-14.el7.src.rpm) = 4279578
