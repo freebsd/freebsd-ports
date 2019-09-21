@@ -2,7 +2,7 @@
 
 PORTNAME=	CombBLAS
 DISTVERSION=	1.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	https://people.eecs.berkeley.edu/~aydin/${PORTNAME}_FILES/
 DISTNAME=	${PORTNAME}_beta_${DISTVERSION:S/.//:S/./_/}

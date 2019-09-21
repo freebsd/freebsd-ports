@@ -3,7 +3,7 @@
 
 PORTNAME=	abinit
 DISTVERSION=	8.10.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	https://www.abinit.org/sites/default/files/packages/
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	lis
 DISTVERSION=	2.0.19
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://www.ssisc.org/lis/dl/
 
