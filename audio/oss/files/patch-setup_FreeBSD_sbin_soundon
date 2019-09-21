@@ -1,5 +1,5 @@
---- setup/FreeBSD/sbin/soundon.orig	2014-02-14 22:59:55 UTC
-+++ setup/FreeBSD/sbin/soundon
+--- setup/FreeBSD/sbin/soundon.orig	2014-02-14 22:59:55.000000000 +0000
++++ setup/FreeBSD/sbin/soundon	2019-09-21 19:07:29.295818000 +0100
 @@ -1,10 +1,10 @@
  #!/bin/sh
  
@@ -14,7 +14,7 @@
  fi
  
  LOG=/var/log/soundon.log
-@@ -29,7 +29,7 @@ fi
+@@ -29,7 +29,7 @@
  
  if test -f $OSSLIBDIR/etc/license.asc
  then
@@ -23,7 +23,25 @@
  fi
  
  OPTIONS=
-@@ -70,7 +70,7 @@ do
+@@ -42,6 +42,17 @@
+ 	fi
+ fi
+ 
++if kldstat -v |grep -q sound; then
++	if kldstat |grep -q sound\\\.ko; then
++		echo Please remove the FreeBSD sound modules and try again
++		echo 'You can do this with # kldunload sound'
++	else
++		echo You must recompile your kernel without the built in sound
++		echo drivers\; please refer to the FreeBSD Handbook
++	fi
++	exit 4
++fi
++
+ if ! /sbin/kldload $OSSLIBDIR/modules/osscore.ko
+ then
+ 	echo Loading the osscore module failed
+@@ -70,7 +81,7 @@
  done
  
  echo "+++ ossinfo -v3 +++" >> $LOG
@@ -32,7 +50,7 @@
  echo "+++ /dev/sndstat +++" >> $LOG
  cat /dev/sndstat >> $LOG 2>&1
  echo "+++ dmesg +++" >> $LOG
-@@ -85,11 +85,11 @@ then
+@@ -85,11 +96,11 @@
  	sh $OSSLIBDIR/etc/legacy_devices >> $LOG 2>&1
  fi
  
@@ -46,7 +64,7 @@
  
  if test -x $OSSLIBDIR/soundon.user
  then
-@@ -97,7 +97,7 @@ then
+@@ -97,7 +108,7 @@
    $OSSLIBDIR/soundon.user >> $LOG 2>&1
  fi
  
@@ -55,7 +73,7 @@
  then
  	echo
  	echo "************************************************************"
-@@ -108,7 +108,7 @@ then
+@@ -108,7 +119,7 @@
  	sleep 1
  fi
  
