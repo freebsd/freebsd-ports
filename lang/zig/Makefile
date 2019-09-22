@@ -15,7 +15,6 @@ _LLVM_VER=	80
 BUILD_DEPENDS=	llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
 
 USES=		cmake compiler:c++11-lang tar:xz
-BINARY_ALIAS=	llvm-config=${LOCALBASE}/bin/llvm-config${_LLVM_VER}
 
 OPTIONS_DEFINE=		STATIC
 OPTIONS_DEFAULT=	STATIC
