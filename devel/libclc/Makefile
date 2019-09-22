@@ -3,7 +3,7 @@
 
 PORTNAME=	libclc
 DISTVERSION=	0.4.0.20190527
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
@@ -38,5 +38,12 @@ do-configure:
 		--with-llvm-config=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT} \
 		--pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--prefix=${PREFIX}
+
+.include <bsd.port.options.mk>
+
+# Keep in sync with lang/clover
+.if ${LLVM_DEFAULT:S,-devel,990,} >= 90
+LLVM_DEFAULT=	80
+.endif
 
 .include <bsd.port.mk>

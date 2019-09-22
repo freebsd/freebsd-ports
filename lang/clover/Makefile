@@ -18,6 +18,7 @@ ONLY_FOR_ARCHS_REASON=	Clover needs a GPU supported by the Radeon KMS driver
 
 .include <bsd.port.options.mk>
 
+# Keep in sync with devel/libclc
 .if ${LLVM_DEFAULT:S,-devel,990,} >= 90
 LLVM_DEFAULT=	80
 .endif
