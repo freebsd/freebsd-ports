@@ -1,0 +1,5 @@
+PACKMOL creates an initial point for molecular dynamics simulations by packing
+molecules in defined regions of space. The packing guarantees that short range
+repulsive interactions do not disrupt the simulations.
+
+WWW: http://m3g.iqm.unicamp.br/packmol/home.shtml

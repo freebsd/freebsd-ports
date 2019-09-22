@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+
+To ensure continued development of PACKMOL, please register at
+
+http://m3g.iqm.unicamp.br/packmol/download.shtml
+EOM
+}
+]

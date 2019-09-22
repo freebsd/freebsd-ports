@@ -210,6 +210,7 @@
     SUBDIR += p5-Mcstas-Tools
     SUBDIR += p5-PerlMol
     SUBDIR += p5-Physics-Unit
+    SUBDIR += packmol
     SUBDIR += pagmo2
     SUBDIR += paje
     SUBDIR += paraview
