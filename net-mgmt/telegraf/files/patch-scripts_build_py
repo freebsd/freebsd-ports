@@ -1,18 +1,19 @@
---- scripts/build.py.orig	2019-03-19 22:05:13.000000000 +0100
-+++ scripts/build.py	2019-03-25 10:29:47.545497000 +0100
-@@ -86,13 +86,13 @@
- supported_builds = {
+--- scripts/build.py.orig	2019-09-10 21:06:42.000000000 +0200
++++ scripts/build.py	2019-09-22 02:59:57.645581000 +0200
+@@ -91,14 +91,14 @@
+     'darwin': [ "amd64" ],
      "windows": [ "amd64", "i386" ],
-     "linux": [ "amd64", "i386", "armhf", "armel", "arm64", "static_amd64", "s390x", "mipsel"],
+     "linux": [ "amd64", "i386", "armhf", "armel", "arm64", "static_amd64", "s390x", "mipsel", "mips"],
 -    "freebsd": [ "amd64", "i386" ]
 +    "freebsd": [ "amd64", "i386", "armv6", "armv7" ]
  }
  
  supported_packages = {
+     "darwin": [ "tar" ],
      "linux": [ "deb", "rpm", "tar" ],
      "windows": [ "zip" ],
 -    "freebsd": [ "tar" ]
 +    "freebsd": [ "tar", "tgz" ]
  }
  
- next_version = '1.10.0'
+ next_version = '1.12.0'
