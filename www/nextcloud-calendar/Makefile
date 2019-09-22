@@ -19,6 +19,7 @@ LICENSE=	AGPLv3
 RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=15.9:www/nextcloud@${PHP_FLAVOR}
 
 USES=		php:flavors
+IGNORE_WITH_PHP=	74
 NO_BUILD=	yes
 NO_ARCH=	yes
 

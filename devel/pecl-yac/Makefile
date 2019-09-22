@@ -12,7 +12,7 @@ COMMENT=	Yac is a shared memory user data cache for PHP
 LICENSE=	PHP301
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	73
+IGNORE_WITH_PHP=	73 74
 
 OPTIONS_DEFINE=	MSGPACK
 MSGPACK_DESC=	Enable MSGPACK module

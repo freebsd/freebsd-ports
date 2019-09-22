@@ -14,7 +14,7 @@ LIB_DEPENDS=	libyaz.so:net/yaz
 
 USES=		php:pecl
 USE_GNOME+=	libxslt
-IGNORE_WITH_PHP=	73
+IGNORE_WITH_PHP=	73 74
 
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}
 

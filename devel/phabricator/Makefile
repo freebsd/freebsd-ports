@@ -16,6 +16,7 @@ RUN_DEPENDS=	${PHP_PKGNAMEPREFIX}libphutil>=20190831:devel/libphutil@${PHP_FLAVO
 		git:devel/git
 
 USES=		php:flavors shebangfix
+IGNORE_WITH_PHP=	74
 
 REINPLACE_ARGS=	-i ""
 SHEBANG_FILES=	scripts/*.php \

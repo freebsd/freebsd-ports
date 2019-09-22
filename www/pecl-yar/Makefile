@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		localbase php:pecl
 USE_PHP=	json:build curl:build
+IGNORE_WITH_PHP=	74
 
 OPTIONS_DEFINE=	MSGPACK
 MSGPACK_DESC=	Enable MSGPACK module

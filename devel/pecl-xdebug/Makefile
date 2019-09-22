@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFIGURE_ARGS=	--enable-xdebug
 USES=		php:pecl,zend tar:tgz
+IGNORE_WITH_PHP=	74
 
 SUB_FILES=	pkg-message
 
