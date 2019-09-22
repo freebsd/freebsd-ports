@@ -1,6 +1,6 @@
 Battmond is a small daemon monitoring the battery level on ACPI-enabled
 (laptop) computers, by probing the ACPI device on regular intervals. It
 can warn you (through syslog) when the battery level is running low, and
-halt the system when it drops below a critical level threshold.
+halt or suspend the system when it drops below a critical level threshold.
 
-WWW: http://ntarmos.dyndns.org/
+WWW: https://github.com/ntarmos/battmond/
