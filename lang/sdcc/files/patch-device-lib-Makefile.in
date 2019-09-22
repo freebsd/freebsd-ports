@@ -1,17 +1,18 @@
---- device/lib/Makefile.in.orig	2015-04-15 16:44:20 UTC
+--- device/lib/Makefile.in.orig	2019-03-21 14:49:01 UTC
 +++ device/lib/Makefile.in
-@@ -513,27 +513,6 @@ clean_intermediate-pic14:
+@@ -574,29 +574,7 @@ clean_intermediate-pic14:
  # ---------------------------------------------------
  install: all installdirs
  	[ ! -d "$(BUILDDIR)" ] || $(CP_U) -r $(BUILDDIR)/* $(sdcc_libdir)
 -	$(CP_U) -r $(MODELS) $(srcdir)/mcs51 $(srcdir)/ds390 $(srcdir)/ds400 \
--	                     $(srcdir)/z80 $(srcdir)/z180 $(srcdir)/r2k $(srcdir)/r3ka $(srcdir)/tlcs90 $(srcdir)/gbz80 \
+-	                     $(srcdir)/z80 $(srcdir)/z180 $(srcdir)/ez80_z80 $(srcdir)/r2k $(srcdir)/r3ka $(srcdir)/tlcs90 $(srcdir)/gbz80 \
 -	                     $(srcdir)/hc08 $(srcdir)/s08 \
 -	                     $(srcdir)/stm8 \
+-	                     $(srcdir)/pdk14 $(srcdir)/pdk15 \
 -	                     $(srcdir)/pic14 $(srcdir)/pic16 $(srcdir)/*.c $(sdcc_libdir)/src
--	$(CP_U) -r $(MODELS) mcs51 ds390 ds400 z80 z180 r2k r3ka tlcs90 gbz80 hc08 s08 stm8 $(sdcc_libdir)/src
--
--	for src in $(MODELS) ds390 ds400 z80 z180 r2k r3ka tlcs90 gbz80 hc08 s08 stm8 pic14 pic16; do \
+-	$(CP_U) -r $(MODELS) mcs51 ds390 ds400 z80 z180 ez80_z80 r2k r3ka tlcs90 gbz80 hc08 s08 stm8 pdk14 pdk15 $(sdcc_libdir)/src
+ 
+-	for src in $(MODELS) ds390 ds400 z80 z180 ez80_z80 r2k r3ka tlcs90 gbz80 hc08 s08 stm8 pdk14 pdk15 pic14 pic16; do \
 -	  find $(sdcc_libdir)/src/$$src -depth \
 -	    \( -name '*.rel' -o -name '*.dump*' -o -name '*.sym' -o -name '*.o' -o -name '*.lib' -o \
 -	    -name '*.lst' -o -name '*.asm' -o -name '.svn' -o -name 'autom4te.cache' -o \
@@ -25,10 +26,11 @@
 -	  -name '*.lst' -o -name '.svn' -o -name 'build' -o -name 'bin' -o \
 -	  -name 'Makefile*' \) \
 -	  -exec rm -rf {} +
- 
+-
  # Deleting all the installed files
  # --------------------------------
-@@ -553,13 +532,7 @@ installcheck:
+ uninstall:
+@@ -615,12 +593,6 @@ installcheck:
  # Creating installation directories
  # ---------------------------------
  installdirs:
@@ -38,8 +40,6 @@
 -	for libdir in small-stack-auto ds390 ds400 hc08 s08 pic16 pic14; do \
 -	  mkdir -p $(sdcc_libdir)/$$libdir; \
 -	done
--	mkdir -p $(sdcc_libdir)/src
-+	mkdir -p $(sdcc_libdir)
+ 	mkdir -p $(sdcc_libdir)/src
  
  # Creating dependencies
- # ---------------------
