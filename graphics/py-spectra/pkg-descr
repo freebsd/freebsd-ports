@@ -1,0 +1,16 @@
+Spectra is a Python library that makes color math, color scales, and
+color-space conversion easy.
+
+Support for:
+
+    Color scales
+    Color ranges
+    Color blending
+    Brightening/darkening colors
+    Saturating/desaturating colors
+    Conversion to/from multiple color spaces
+
+Spectra is built on colormath and grapefruit. Spectra is enormously inspired by
+chroma.js and d3's scales.
+
+WWW: https://pypi.python.org/pypi/spectra
