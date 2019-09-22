@@ -1,0 +1,22 @@
+Rosinstall is an SCM abstracton tool for holding ROS workspaces in sync.
+
+From the rosinstall documentation:
+
+Using rosinstall you can update several folders using a variety of
+SCMs (SVN, Mercurial, git, Bazaar) with just one command.
+
+That way you can more effectively manage source code workspaces.
+
+The rosinstall package provides a Python API for interacting with a
+source code workspace as well as a group of command line
+tools. Rosinstall leverages the vcstools package for source control
+and stores its state in .rosinstall files.
+
+rosinstall was developed to help with the ROS software, but it has no
+install dependencies to ROS. It offers support for ROS environments
+and thus makes some assumptions about ROS being present at runtime,
+but those can be easily removed and rosws provides all services even
+when there is no ROS installed. The vision is for the bulk of
+rosinstall to be a ROS agnostic tool one day.
+
+WWW: http://docs.ros.org/independent/api/rosinstall/html
