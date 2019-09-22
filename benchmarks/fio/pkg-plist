@@ -41,6 +41,7 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libhdfs.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libpmem.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mtd.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nbd.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio_multicast.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/null.fio
