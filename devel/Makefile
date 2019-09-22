@@ -5395,6 +5395,7 @@
     SUBDIR += root-doc
     SUBDIR += ros-catkin_pkg
     SUBDIR += ros-rosinstall_generator
+    SUBDIR += ros-rospkg
     SUBDIR += ros-vcstools
     SUBDIR += ros-wstool
     SUBDIR += rote
