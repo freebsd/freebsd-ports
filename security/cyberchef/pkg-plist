@@ -1,4 +1,3 @@
-%%WWWDIR%%/index.html
 %%WWWDIR%%/assets/fonts/Roboto72White.fnt
 %%WWWDIR%%/assets/fonts/Roboto72White.png
 %%WWWDIR%%/assets/fonts/RobotoBlack72White.fnt
@@ -9,12 +8,16 @@
 %%WWWDIR%%/assets/fonts/RobotoSlab72White.png
 %%WWWDIR%%/assets/main.css
 %%WWWDIR%%/assets/main.js
+%%WWWDIR%%/assets/tesseract/lang-data/eng.traineddata.gz
+%%WWWDIR%%/assets/tesseract/tesseract-core.wasm.js
+%%WWWDIR%%/assets/tesseract/worker.min.js
 %%WWWDIR%%/images/cook_male-32x32.png
 %%WWWDIR%%/images/cyberchef-128x128.png
 %%WWWDIR%%/images/file-128x128.png
 %%WWWDIR%%/images/file-32x32.png
 %%WWWDIR%%/images/fork_me.png
 %%WWWDIR%%/images/map.png
+%%WWWDIR%%/index.html
 %%WWWDIR%%/modules/BSON.js
 %%WWWDIR%%/modules/Charts.js
 %%WWWDIR%%/modules/Ciphers.js
@@ -25,6 +28,7 @@
 %%WWWDIR%%/modules/Encodings.js
 %%WWWDIR%%/modules/Hashing.js
 %%WWWDIR%%/modules/Image.js
+%%WWWDIR%%/modules/OCR.js
 %%WWWDIR%%/modules/PGP.js
 %%WWWDIR%%/modules/PublicKey.js
 %%WWWDIR%%/modules/Regex.js
