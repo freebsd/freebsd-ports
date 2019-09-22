@@ -1031,6 +1031,7 @@
     SUBDIR += py-google-compute-engine
     SUBDIR += py-halite
     SUBDIR += py-hared
+    SUBDIR += py-hcloud
     SUBDIR += py-honcho
     SUBDIR += py-hpilo
     SUBDIR += py-iowait
