@@ -1,0 +1,7 @@
+Scan Tailor Advanced is an interactive post-processing tool for
+scanned pages.  It performs operations such as page splitting,
+deskewing, and removing garbage. All operations can be done
+automatically, however it's still possible to manually correct their
+results
+
+WWW: https://github.com/4lex4/scantailor-advanced

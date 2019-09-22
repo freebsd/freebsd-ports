@@ -1,0 +1,7 @@
+bin/scantailor
+share/applications/scantailor.desktop
+share/icons/hicolor/scalable/apps/ScanTailor.svg
+share/mime/packages/scantailor-project.xml
+share/pixmaps/scantailor.png
+%%NLS%%%%DATADIR%%-advanced/translations/scantailor_es.qm
+%%NLS%%%%DATADIR%%-advanced/translations/scantailor_ru.qm
