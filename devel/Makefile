@@ -5393,6 +5393,7 @@
     SUBDIR += roboctl
     SUBDIR += robodoc
     SUBDIR += root-doc
+    SUBDIR += ros-rosinstall_generator
     SUBDIR += rote
     SUBDIR += rpc2
     SUBDIR += rpclib
