@@ -1,0 +1,16 @@
+A C++ library that provides an API to the COLLADA Document Object Model
+
+The COLLADA Document Object Model (DOM) is an application programming
+interface (API) that provides a C++ object representation of a COLLADA
+XML instance document.
+
+This project is a library for loading and saving COLLADA documents
+that can contain 2D, 3D, physics and other types of content. It allows
+developers to create applications that can exchange COLLADA documents
+with commercial content creation tools such as Maya, Max or Softimage.
+
+This project is a very lightweight version of the Sourceforce Collada
+Repository. It maintains only the base collada parser with minimal
+dependencies.
+
+WWW: https://github.com/rdiankov/collada-dom

@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2019-05-09 19:44:01 UTC
++++ CMakeLists.txt
+@@ -2,6 +2,8 @@ cmake_minimum_required (VERSION 2.6.0)
+ project (collada-dom)
+ set( CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS TRUE )
+ 
++set(CMAKE_POSITION_INDEPENDENT_CODE ON)
++
+ # Define here the needed parameters
+ set (COLLADA_DOM_VERSION_MAJOR 2)
+ set (COLLADA_DOM_VERSION_MINOR 5)
+@@ -138,7 +140,7 @@ if( APPLE OR ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+   add_definitions("-Dftello64=ftello")
+ endif()
+ 
+-set(COLLADA_DOM_INCLUDE_INSTALL_DIR "include/collada-dom${COLLADA_DOM_SOVERSION}")
++set(COLLADA_DOM_INCLUDE_INSTALL_DIR "include/collada-dom")
+ 
+ set(COLLADA_DOM_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/dom/include)
+ set(COLLADA_DOM_LINK_DIRS "")
