@@ -12,8 +12,8 @@ COMMENT=	Extension library for the Xfce desktop environment
 
 LICENSE=	GPLv2
 
-USES=		gettext-tools gmake gnome libtool pathfix perl5 pkgconfig \
-		tar:bzip2 xfce
+USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix perl5 \
+		pkgconfig tar:bzip2 xfce
 USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	yes
 
